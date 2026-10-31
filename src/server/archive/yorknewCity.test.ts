@@ -588,6 +588,85 @@ const AFFILIATION_STEPS = [
   })),
 ]
 
+/**
+ * The deaths that change a drawing: the record opens at `opens`, and the
+ * status and the drawing change together at `death`, in each unit.
+ */
+const DRAWN_DEATHS = [
+  {
+    id: 'baise',
+    episode: { opens: 40, death: 43 },
+    chapter: { opens: 68, death: 73 },
+  },
+  {
+    id: 'shachmono-tocino',
+    episode: { opens: 40, death: 43 },
+    chapter: { opens: 68, death: 73 },
+  },
+  {
+    id: 'ivlenkov',
+    episode: { opens: 42, death: 43 },
+    chapter: { opens: 72, death: 73 },
+  },
+  {
+    id: 'dalzollene',
+    episode: { opens: 41, death: 45 },
+    chapter: { opens: 70, death: 78 },
+  },
+  {
+    id: 'squala',
+    episode: { opens: 40, death: 56 },
+    chapter: { opens: 68, death: 112 },
+  },
+].flatMap(({ id, episode, chapter }) =>
+  LOCALES.flatMap((locale) => [
+    { id, unit: 'episode', ...episode, locale },
+    { id, unit: 'chapter', ...chapter, locale },
+  ]),
+)
+
+describe('the deaths drawn in Yorknew City', () => {
+  it.each(DRAWN_DEATHS)(
+    'pins $id’s death and drawing together in $unit units ($locale)',
+    ({ id, unit, opens, death, locale }) => {
+      const record = character(id)
+      const alive = readerFor(archive, at(unit, opens), locale)
+      const before = readerFor(archive, at(unit, death - 1), locale)
+      const reached = readerFor(archive, at(unit, death), locale)
+
+      expect(archive.latestOf(before, record, 'status')).toBe('alive')
+      expect(archive.latestOf(reached, record, 'status')).toBe('deceased')
+      expect(drawingsFor([id], before)).toStrictEqual(drawingsFor([id], alive))
+      expect(drawingsFor([id], reached)).not.toStrictEqual(
+        drawingsFor([id], before),
+      )
+    },
+  )
+})
+
+describe('Kurapika’s Dowsing Chain', () => {
+  it.each(
+    LOCALES.flatMap((locale) => [
+      { unit: 'episode', opens: 1, chain: 40, locale },
+      { unit: 'chapter', opens: 2, chain: 68, locale },
+    ]),
+  )(
+    'replaces the wooden swords at $unit $chain ($locale)',
+    ({ unit, opens, chain, locale }) => {
+      const first = readerFor(archive, at(unit, opens), locale)
+      const before = readerFor(archive, at(unit, chain - 1), locale)
+      const reached = readerFor(archive, at(unit, chain), locale)
+
+      expect(drawingsFor(['kurapika'], before)).toStrictEqual(
+        drawingsFor(['kurapika'], first),
+      )
+      expect(drawingsFor(['kurapika'], reached)).not.toStrictEqual(
+        drawingsFor(['kurapika'], before),
+      )
+    },
+  )
+})
+
 describe('the returning characters’ last steps', () => {
   it.each(AFFILIATION_STEPS)(
     'pins $id’s affiliation at $unit $count',

@@ -1,5 +1,130 @@
-import type { Drawings } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  type Stroke,
+} from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
+
+/** Baise's lipstick standing open: both her drawings keep it. */
+const LIPSTICK: Stroke[] = [
+  { d: 'M62 150 V96 M98 96 V150' },
+  { d: ellipse(80, 150, 18, 5) },
+  { d: ellipse(80, 96, 18, 5) },
+  { d: `M68 96 V80 H92 V96 ${ellipse(80, 80, 12, 3.5)}`, role: 'soft' },
+  { d: 'M70 80 V60 L90 48 V80', role: 'accent' },
+  { d: 'M90 108 l6 -4 M90 122 l6 -4 M90 136 l6 -4', role: 'ambient' },
+]
+
+/** The lipstick's cap lying on its side. */
+const LIPSTICK_CAP: Stroke[] = [
+  {
+    d: 'M112 152 L136 144 M115 162 L139 154 M136 144 C141 143 142 153 139 154',
+    role: 'soft',
+  },
+  {
+    d: 'M112 152 C107 153 110 163 115 162 C120 161 117 151 112 152',
+    role: 'soft',
+  },
+]
+
+/** The head of one of Squala's dogs, side on: the ears are the accent. */
+const DOG_HEAD: Stroke[] = [
+  { d: 'M30 66 L52 58 C58 50 64 46 72 46 C84 48 90 58 92 72' },
+  { d: 'M30 66 C38 72 52 72 62 76', role: 'soft' },
+  { d: 'M61 48 L62 33 L72 45 M73 46 L80 32 L84 50', role: 'accent' },
+]
+
+/** The same dog sitting, its haunch and tail on the ground. */
+const DOG: Stroke[] = [
+  ...DOG_HEAD,
+  { d: 'M92 72 C102 82 116 94 121 112 C126 128 123 144 110 150 H88' },
+  { d: 'M62 76 C58 98 62 122 64 150 H78 L78 112', role: 'soft' },
+  { d: 'M88 150 C88 132 96 120 110 120', role: 'soft' },
+  { d: 'M110 150 C124 151 136 150 146 146' },
+  { d: 'M108 104 l7 -5 M112 116 l7 -5 M114 130 l7 -5', role: 'ambient' },
+]
+
+/** One of Tocino's figures in black: an empty robe, its far half hatched. */
+const TOCINO_ROBE: Stroke[] = [
+  { d: ellipse(80, 40, 13, 4) },
+  {
+    d: 'M67 40 L46 50 L32 112 M47 117 L54 82 L44 172 H116 L106 82 L113 117 M128 112 L114 50 L93 40',
+  },
+  { d: 'M32 112 A8 3.5 12 1 0 47 117 A8 3.5 12 1 0 32 112', role: 'soft' },
+  { d: 'M128 112 A8 3.5 -12 1 1 113 117 A8 3.5 -12 1 1 128 112', role: 'soft' },
+  { d: 'M80 44 V172 M62 100 Q58 136 56 170', role: 'soft' },
+  {
+    d: 'M88 64 l12 -9 M88 86 l14 -10 M88 108 l15 -11 M88 130 l16 -11 M88 152 l17 -12 M90 170 l14 -10',
+    role: 'ambient',
+  },
+]
+
+/** The figure's sword, the guard in tint. */
+const TOCINO_SWORD: Stroke[] = [
+  { d: 'M117 104 L148 30 L152 34 L124 106' },
+  { d: 'M110 100 L130 110', role: 'accent' },
+  { d: 'M118 108 L114 118 M124 110 L120 120', role: 'soft' },
+]
+
+/** Dalzollene's screen on its stand, the frame in tint and its side hatched. */
+const DALZOLLENE_SCREEN: Stroke[] = [
+  { d: 'M24 44 L118 32 L122 118 L28 126 Z', role: 'accent' },
+  { d: 'M32 52 L110 42 L114 110 L36 117 Z', role: 'soft' },
+  { d: 'M118 32 L130 40 L134 120 L122 118' },
+  {
+    d: 'M126 56 l4 -3 M126 76 l4 -3 M127 96 l4 -3 M128 114 l4 -3',
+    role: 'ambient',
+  },
+  { d: 'M72 122 L68 148 M86 121 L90 148', role: 'soft' },
+  { d: ellipse(79, 152, 28, 6) },
+]
+
+/** Ivlenkov's black suit jacket, buttoned, the tie in tint. */
+const IVLENKOV_JACKET: Stroke[] = [
+  {
+    d: 'M66 38 L40 50 L28 124 M42 128 L47 86 C40 118 44 148 54 168 H106 C116 148 120 118 113 86 L118 128 M132 124 L120 50 L94 38',
+  },
+  { d: 'M28 124 A7 3 12 1 0 42 128 A7 3 12 1 0 28 124', role: 'soft' },
+  { d: 'M132 124 A7 3 -12 1 1 118 128 A7 3 -12 1 1 132 124', role: 'soft' },
+  { d: 'M66 38 L80 90 L94 38 M66 38 Q80 46 94 38', role: 'soft' },
+  {
+    d: 'M77 46 H83 L85 52 L82 80 L80 84 L78 80 L75 52 Z M75 52 H85',
+    role: 'accent',
+  },
+  {
+    d: `M80 90 V168 ${dots([
+      [86, 104],
+      [86, 124],
+    ])}`,
+    role: 'soft',
+  },
+  {
+    d: 'M96 78 l9 -7 M98 100 l10 -7 M100 122 l10 -7 M100 144 l10 -7 M98 164 l8 -6',
+    role: 'ambient',
+  },
+]
+
+/**
+ * The Cemetery Building seen from a corner, its floors in rows and the side
+ * turned away hatched, the doors in tint.
+ */
+const CEMETERY_BUILDING: Stroke[] = [
+  { d: 'M42 150 V36 H114 V150' },
+  { d: 'M42 36 L56 26 H128 L114 36 M128 26 V140 L114 150' },
+  { d: 'M38 36 H118 M38 32 H118', role: 'soft' },
+  {
+    d: 'M50 52 H106 M50 68 H106 M50 84 H106 M50 100 H106 M50 116 H106',
+    role: 'ambient',
+  },
+  {
+    d: 'M118 46 l6 -4 M118 66 l6 -4 M118 86 l6 -4 M118 106 l6 -4 M118 126 l6 -4',
+    role: 'ambient',
+  },
+  { d: 'M64 150 V128 H92 V150 M78 128 V150', role: 'accent' },
+  { d: 'M54 128 H58 M98 128 H102 M64 140 h4 M88 140 h4', role: 'soft' },
+  { d: 'M4 150 H156', role: 'ambient' },
+]
 
 /**
  * The Yorknew City records (#900), each at its named scene: first-pass
@@ -23,132 +148,93 @@ export const YORKNEW_CITY_DRAWINGS = {
     { d: 'M104 78 l6 -4 M108 90 l6 -4 M110 100 l5 -3', role: 'ambient' },
     shadow(80, 182, 50),
   ],
-  // A writing brush across a blank sheet, the inked tip in tint, an ink
-  // stone beside it: Basho writes the haiku that come true in the
-  // mansion's test, episode 40 / chapter 68. No words on the sheet.
+  // A writing brush across a stack of blank paper, the brush's tip in tint,
+  // the far edge of the stack hatched: Basho carries a brush and paper and
+  // writes the haiku that come true in the mansion's test, episode 40 /
+  // chapter 68. No words on the sheets.
   'basho': [
-    { d: 'M24 120 L108 96 L140 132 L56 158 Z' },
-    { d: 'M108 96 Q118 104 116 112', role: 'soft' },
-    { d: 'M38 62 L44 56 L110 120 L104 126 Z' },
+    { d: 'M24 124 L100 104 L140 128 L64 150 Z' },
+    { d: 'M24 124 V132 L64 158 L140 136 V128' },
+    { d: 'M24 128 L64 154 L140 132', role: 'soft' },
     {
-      d: 'M104 126 C108 136 116 142 124 142 C122 134 116 126 110 120',
+      d: 'M78 155 l3 -5 M96 150 l3 -5 M114 144 l3 -5 M130 140 l3 -5',
+      role: 'ambient',
+    },
+    { d: 'M34 58 L42 50 L100 108 L92 116 Z' },
+    { d: 'M92 116 L100 108 L107 115 L99 123 Z', role: 'soft' },
+    {
+      d: 'M99 123 C102 132 110 138 120 138 C119 129 113 121 107 115',
       role: 'accent',
     },
-    { d: 'M48 70 l6 -6 M56 78 l6 -6', role: 'soft' },
-    { d: ellipse(124, 80, 16, 6) },
-    { d: 'M108 80 V86 C112 92 136 92 140 86 V80', role: 'soft' },
-    { d: 'M62 152 l6 -6 M80 146 l6 -6 M98 140 l6 -6', role: 'ambient' },
-    shadow(82, 176, 56),
+    { d: 'M48 68 l4 -4 M60 80 l4 -4 M72 92 l4 -4', role: 'ambient' },
+    shadow(82, 176, 58),
   ],
-  // A lipstick standing open, its slanted tip in tint, the cap lying
-  // beside it: Baise's kiss makes Squala her servant in the mansion's test,
+  // A lipstick standing open, its slanted tip in tint, the cap lying on its
+  // side beside it: Baise's kiss makes Squala her servant in the mansion's
+  // test, episode 40 / chapter 68.
+  'baise': [...LIPSTICK, ...LIPSTICK_CAP, shadow(86, 174, 52)],
+  // One of Squala's dogs sitting side on, in silhouette, its ears pricked
+  // in tint: he places dogs round the mansion that all follow his orders,
+  // episode 40 / chapter 68 (episode 39 shows him among them). No face, no
+  // collar and no leash, which neither medium shows.
+  'squala': [...DOG, shadow(86, 160, 54)],
+  // One of Tocino's figures in black: an empty robe standing with no hood
+  // and no face, its far half hatched, a sword raised in its sleeve with
+  // the guard in tint. His figures attack the applicants with swords in
   // episode 40 / chapter 68.
-  'baise': [
-    { d: 'M62 150 V96 M98 96 V150' },
-    { d: ellipse(80, 150, 18, 5) },
-    { d: ellipse(80, 96, 18, 5) },
-    { d: `M68 96 V80 H92 V96 ${ellipse(80, 80, 12, 3.5)}`, role: 'soft' },
-    { d: 'M70 80 V60 L90 48 V80', role: 'accent' },
-    { d: 'M90 108 l6 -4 M90 122 l6 -4 M90 136 l6 -4', role: 'ambient' },
-    { d: 'M106 150 L134 140 L140 152 L112 162 Z', role: 'soft' },
-    shadow(86, 174, 52),
-  ],
-  // A dog's studded collar in 3/4, the band in tint, with its leash looped
-  // up beside it: Squala commands the dogs round the mansion, episode 40 /
-  // chapter 68.
-  'squala': [
-    { d: ellipse(70, 120, 40, 16), role: 'accent' },
-    { d: 'M30 120 V128 C40 146 100 146 110 128 V120' },
-    { d: 'M94 132 h12 v12 h-12 Z M100 132 V144', role: 'soft' },
-    {
-      d: dots([
-        [44, 132],
-        [56, 137],
-        [82, 138],
-      ]),
-      role: 'soft',
-    },
-    { d: 'M70 144 C74 166 120 164 126 124 C130 96 104 82 116 54' },
-    { d: ellipse(122, 44, 9, 12), role: 'soft' },
-    { d: 'M40 136 l4 6 M52 140 l4 6', role: 'ambient' },
-    shadow(78, 178, 52),
-  ],
-  // An empty black cloak in a heap on the floor with a sword across it,
-  // the guard in tint: Tocino's figures in black, made of his aura, fall
-  // empty when he is found out, episode 40 / chapter 68. The hood follows
-  // the manga; the episode 40 frame is not viewed (#901).
-  'shachmono-tocino': [
-    { d: 'M24 152 C30 128 52 114 70 118 C90 106 120 114 136 152' },
-    { d: 'M58 122 C56 102 72 94 84 100 C94 106 92 120 86 124' },
-    {
-      d: 'M44 148 C52 136 62 132 70 134 M96 148 C100 134 110 128 120 130',
-      role: 'soft',
-    },
-    { d: 'M68 108 l6 -4 M70 116 l6 -4 M78 104 l5 -3', role: 'ambient' },
-    { d: 'M28 168 L114 130 M30 174 L116 136 M28 168 Q24 172 30 174' },
-    { d: 'M108 124 L124 142', role: 'accent' },
-    { d: `M116 133 L140 123 L142 128 L118 138 ${circle(144, 125, 3)}` },
-    shadow(80, 182, 62),
-  ],
-  // A large screen on its stand, blank but for the glare, the frame in
-  // tint, with a data card in front: Dalzollene sets the applicants their
-  // test from a screen, and hires the four who pass, episode 41 /
-  // chapter 70. No face on the screen.
+  'shachmono-tocino': [...TOCINO_ROBE, ...TOCINO_SWORD, shadow(80, 186, 56)],
+  // A large screen on its stand, blank but for the glare, the frame in tint
+  // and its side hatched: Dalzollene sets the applicants their test from a
+  // screen, and hires the four who pass, episode 41 / chapter 70. No face
+  // on the screen.
   'dalzollene': [
-    { d: 'M24 40 H136 V120 H24 Z', role: 'accent' },
-    { d: 'M32 48 H128 V112 H32 Z', role: 'soft' },
-    { d: 'M40 100 L64 56 M52 104 L76 60', role: 'ambient' },
-    { d: 'M72 120 L66 150 M88 120 L94 150 M50 150 H110' },
-    { d: 'M100 160 L136 150 L142 164 L106 174 Z' },
-    { d: 'M108 162 h8 v6 h-8 Z', role: 'soft' },
-    shadow(80, 182, 56),
+    ...DALZOLLENE_SCREEN,
+    { d: 'M46 106 L70 60 M60 110 L82 66', role: 'ambient' },
+    shadow(80, 176, 56),
   ],
-  // A pen over a stack of blank sheets, the nib in tint: Neon writes her
-  // fortunes with a hand her power guides, episode 41 / chapter 71. No
-  // words on the sheets.
+  // A pen over a stack of blank sheets, the nib in tint and the stack's
+  // edge hatched: Neon writes her fortunes with a hand her power guides,
+  // episode 41 / chapter 71. No words on the sheets.
   'neon-nostrade': [
-    { d: 'M26 132 L104 112 L138 140 L60 160 Z' },
-    { d: 'M26 132 V138 L60 166 L138 146 V140', role: 'soft' },
-    { d: 'M42 50 L50 44 L112 116 L104 122 Z' },
-    { d: 'M104 122 L120 138 L112 116', role: 'accent' },
-    { d: 'M52 56 L76 84', role: 'soft' },
-    { d: 'M60 64 l4 -4 M70 76 l4 -4 M80 88 l4 -4', role: 'ambient' },
-    { d: 'M120 110 L140 104 L150 116', role: 'soft' },
-    shadow(84, 180, 58),
-  ],
-  // A blank square bidding paddle on its handle, the face in tint and its
-  // thickness drawn at one side: Dalzollene
-  // sends Ivlenkov to bid at the Underground Auction, episode 42 /
-  // chapter 72. No number on it.
-  'ivlenkov': [
+    { d: 'M22 130 L98 110 L140 138 L64 160 Z' },
+    { d: 'M22 130 V138 L64 168 L140 146 V138' },
+    { d: 'M22 134 L64 164 L140 142', role: 'soft' },
+    { d: 'M30 126 L96 108 M100 112 L134 134', role: 'soft' },
     {
-      d: 'M50 36 H110 Q118 36 118 44 V100 Q118 108 110 108 H50 Q42 108 42 100 V44 Q42 36 50 36 Z',
-      role: 'accent',
+      d: 'M78 164 l3 -5 M96 159 l3 -5 M114 153 l3 -5 M130 148 l3 -5',
+      role: 'ambient',
     },
-    { d: 'M52 46 H108 V98 H52 Z', role: 'soft' },
-    { d: 'M118 44 L124 48 V104 Q124 112 116 112 H56 L50 108', role: 'soft' },
-    { d: 'M74 108 L72 168 H88 L86 108' },
-    { d: 'M73 140 H87 M72 152 H88', role: 'soft' },
-    { d: 'M84 118 l3 -3 M84 128 l3 -3 M84 160 l3 -3', role: 'ambient' },
-    shadow(80, 184, 40),
+    { d: 'M44 48 L52 42 L114 112 L106 118 Z' },
+    { d: 'M44 48 C40 44 46 38 52 42', role: 'soft' },
+    { d: 'M58 62 L66 56 M62 66 L96 104', role: 'soft' },
+    { d: 'M106 118 L118 132 L114 112', role: 'accent' },
+    { d: 'M70 76 l4 -4 M80 88 l4 -4 M90 100 l4 -4', role: 'ambient' },
+    shadow(84, 184, 58),
   ],
-  // Linssen's high-collared Chinese jacket from the front, the frog
+  // Ivlenkov's black suit jacket from the front, buttoned over a round
+  // front, its far half hatched and the tie in tint: the plump bodyguard
+  // Dalzollene sends to bid at the Underground Auction, episode 42 /
+  // chapter 72. No number and no face.
+  'ivlenkov': [...IVLENKOV_JACKET, shadow(80, 186, 50)],
+  // Linssen's high-collared Chinese jacket from the front, the standing
+  // collar, the folds of the sleeves and the far half hatched, the frog
   // fastenings down the side in tint: the bodyguard Dalzollene posts at the
   // back entrance, episode 42 / chapter 72. No face.
   'linssen': [
-    { d: `${ellipse(80, 30, 12, 4)} M68 30 V40 M92 30 V40` },
+    { d: 'M68 34 C68 26 92 26 92 34 V42 C92 46 68 46 68 42 Z' },
     {
-      d: 'M68 38 L42 48 L30 126 M44 130 L50 80 L50 172 H110 L110 80 L116 130 M130 126 L118 48 L92 38',
+      d: 'M68 40 L42 50 L30 126 M44 130 L50 82 L50 172 H110 L110 82 L116 130 M130 126 L118 50 L92 40',
     },
     { d: 'M30 126 A7 3 12 1 0 44 130 A7 3 12 1 0 30 126', role: 'soft' },
     { d: 'M130 126 A7 3 -12 1 1 116 130 A7 3 -12 1 1 130 126', role: 'soft' },
-    { d: 'M68 40 C72 52 84 56 96 52 L96 172', role: 'soft' },
-    { d: 'M90 64 H102 M90 82 H102 M90 100 H102 M90 118 H102', role: 'accent' },
+    { d: 'M68 42 C72 54 84 58 96 54 L96 172', role: 'soft' },
+    { d: 'M90 66 H102 M90 84 H102 M90 102 H102 M90 120 H102', role: 'accent' },
+    { d: 'M38 74 l6 10 M122 74 l-6 10 M60 140 Q62 156 60 170', role: 'soft' },
     {
-      d: 'M54 96 l6 -5 M54 116 l6 -5 M54 136 l6 -5 M54 156 l6 -5',
+      d: 'M54 96 l6 -5 M54 116 l6 -5 M54 136 l6 -5 M54 156 l6 -5 M118 92 l4 -3 M120 108 l4 -3',
       role: 'ambient',
     },
-    shadow(80, 184, 46),
+    shadow(80, 186, 46),
   ],
   // Uvogin's bearskin vest from the front, the shaggy fur edging in tint
   // and the inside of the far half hatched: the Troupe member named on the
@@ -462,93 +548,202 @@ export const YORKNEW_CITY_DRAWINGS = {
     { d: 'M4 150 H156', role: 'ambient' },
     shadow(80, 158, 60),
   ],
-  // A round pincushion stuck with needles, the cushion in tint, a needle
-  // and its thread lying beside it: the woman who sewed Hisoka's arms back
-  // on, named on the way to the Troupe's gathering, episode 41 /
-  // chapter 71. No Nen thread. For #901: the pincushion, needle and thread
-  // are her Heavens Arena look (chapter 55 / episode 32); check them
-  // against the chapter 71 / episode 41 frame.
+  // Machi's fingerless glove from the back, the finger ends open, with the
+  // pincushion on it in tint and three needles stuck in it: the Troupe
+  // member named on the way to the gathering, episode 41 / chapter 71. The
+  // wiki gives the pincushion on her gloves. No thread, which is her Nen.
   'machi': [
-    { d: 'M36 120 C36 92 124 92 124 120', role: 'accent' },
-    { d: ellipse(80, 120, 44, 12) },
-    { d: 'M36 120 V128 C48 142 112 142 124 128 V120', role: 'soft' },
-    { d: 'M80 98 V118 M56 104 L62 120 M104 104 L98 120', role: 'soft' },
-    { d: 'M60 100 L52 70 M96 98 L108 64 M80 96 V58' },
     {
-      d: dots([
-        [52, 68],
-        [108, 62],
-        [80, 56],
-      ]),
+      d: 'M52 166 L52 126 C46 114 46 100 52 90 L52 70 H64 L65 84 M74 82 L74 60 H86 L86 82 M95 84 L96 68 H108 L108 92 C114 104 112 118 106 128 L106 166 C94 172 64 172 52 166',
     },
-    { d: 'M126 152 L150 134' },
+    { d: 'M65 84 L64 66 H74 M86 64 H96 L95 84', role: 'soft' },
     {
-      d: 'M150 134 C156 122 140 112 132 120 C122 130 116 150 100 156',
+      d: `${ellipse(58, 70, 6, 2)} ${ellipse(80, 60, 6, 2)} ${ellipse(102, 68, 6, 2)}`,
       role: 'soft',
     },
-    { d: 'M104 132 l6 -4 M114 128 l5 -4', role: 'ambient' },
-    shadow(80, 176, 52),
+    { d: 'M48 112 L34 96 L40 90 L50 98', role: 'soft' },
+    { d: 'M52 156 C64 162 94 162 106 156', role: 'soft' },
+    { d: 'M62 122 C62 98 98 98 98 122', role: 'accent' },
+    { d: ellipse(80, 122, 18, 5) },
+    { d: 'M70 106 L62 84 M80 102 V78 M90 106 L98 86' },
+    {
+      d: dots([
+        [62, 84],
+        [80, 78],
+        [98, 86],
+      ]),
+    },
+    { d: 'M96 136 l8 -6 M96 150 l8 -6 M96 166 l8 -6', role: 'ambient' },
+    shadow(80, 186, 40),
   ],
-  // Black-framed glasses folded on a table, seen low and at an angle, the
-  // frames in tint:
-  // Shizuku wears them when she takes on Gon at arm wrestling, episode
-  // 42 / chapter 72. No vacuum cleaner, which she conjures later.
+  // Black-framed glasses folded on a table, seen low and from the side, the
+  // frames in tint and the folded arms behind them: Shizuku wears them when
+  // she takes on Gon at arm wrestling, episode 42 / chapter 72. No vacuum
+  // cleaner, which she conjures later.
   'shizuku': [
     {
       d: 'M34 150 C36 140 62 134 68 142 C72 152 40 158 34 150 Z M84 136 C88 126 114 120 118 128 C122 138 90 144 84 136 Z',
       role: 'accent',
     },
+    {
+      d: 'M38 149 C40 143 60 139 64 144 M88 135 C91 129 110 125 114 129',
+      role: 'soft',
+    },
     { d: 'M68 142 Q74 134 84 136' },
-    { d: 'M36 146 L70 118 L126 104 M118 126 L132 114 L140 98' },
-    { d: 'M44 148 L52 142 M94 134 L102 128', role: 'soft' },
-    { d: 'M60 162 l6 -4 M108 148 l6 -4', role: 'ambient' },
-    { d: 'M14 170 L146 142', role: 'ambient', dashed: true },
+    {
+      d: 'M34 146 L40 140 L70 118 L126 104 L128 108 L74 122 M118 126 L124 120 L134 112 L140 98 L142 102 L136 116',
+    },
+    {
+      d: 'M44 156 l6 -4 M58 156 l6 -4 M96 142 l6 -4 M108 140 l6 -4',
+      role: 'ambient',
+    },
+    shadow(84, 170, 56),
   ],
-  // A fountain in a crowded square with tall buildings behind, the water in
-  // tint: Gon and Killua reach the city, episode 41 / chapter 70.
+  // A fountain in a plaza with tall buildings behind, their sides turned
+  // away hatched, the water in tint: Gon and Killua sell their way into
+  // the night and reach a fountain in a crowded plaza, episode 41 /
+  // chapter 70. No crowd is drawn.
   'yorknew-city': [
     {
       d: 'M10 150 V70 H34 V150 M34 150 V44 H58 V150 M102 150 V56 H126 V150 M126 150 V84 H150 V150',
       role: 'soft',
     },
-    { d: 'M110 72 l8 -6 M110 92 l8 -6 M110 112 l8 -6', role: 'ambient' },
+    {
+      d: 'M34 70 L40 66 V44 M58 44 L64 40 V150 M126 84 L132 80 V56',
+      role: 'soft',
+    },
+    {
+      d: 'M110 72 l8 -6 M110 92 l8 -6 M110 112 l8 -6 M138 100 l8 -6 M138 120 l8 -6',
+      role: 'ambient',
+    },
     { d: ellipse(80, 138, 40, 8) },
     { d: 'M40 138 V146 C52 156 108 156 120 146 V138' },
+    { d: ellipse(80, 138, 32, 5.5), role: 'soft' },
     { d: `M74 134 V104 M86 104 V134 ${ellipse(80, 104, 16, 4)}`, role: 'soft' },
     {
       d: 'M80 100 C76 86 64 84 60 98 M80 100 C84 86 96 84 100 98 M80 100 V84',
       role: 'accent',
     },
     { d: 'M4 156 H156', role: 'ambient' },
-    shadow(80, 160, 56),
+    shadow(80, 162, 56),
   ],
-  // An airship coming down over a runway beside the control tower, the
-  // envelope in tint: the Nostrade family lands here, episode 41 /
-  // chapter 71.
+  // An airship coming down over a runway, the envelope in tint, its
+  // gondola and fins, the far side of the envelope hatched: the Nostrade
+  // family's airship lands here, episode 41 / chapter 71. No tower, which
+  // neither synopsis describes.
   'lingon-airport': [
-    { d: ellipse(70, 60, 50, 18), role: 'accent' },
-    { d: 'M56 78 H84 L80 88 H60 Z', role: 'soft' },
-    { d: 'M22 56 L10 44 V76 L22 64', role: 'soft' },
-    { d: 'M126 150 V70 M138 150 V70 M120 70 H144 L140 54 H124 Z' },
-    { d: 'M4 150 H156', role: 'ambient' },
-    { d: 'M20 174 L60 152 M140 174 L100 152' },
-    { d: 'M80 156 V162 M80 168 V176', role: 'ambient', dashed: true },
-    shadow(70, 156, 40),
-  ],
-  // The tall stepped building with its guarded entrance, the doors in tint
-  // and the side turned away hatched: the Mafia's Underground Auction is
-  // held here, episode 42 / chapter 72.
-  'cemetery-building': [
-    { d: 'M44 150 V40 H116 V150' },
-    { d: 'M52 40 V28 H108 V40 M64 28 V18 H96 V28' },
-    { d: 'M54 56 H106 M54 72 H106 M54 88 H106 M54 104 H106', role: 'ambient' },
-    { d: 'M116 150 L132 140 V34 L116 40', role: 'soft' },
     {
-      d: 'M120 60 l8 -6 M120 80 l8 -6 M120 100 l8 -6 M120 120 l8 -6',
-      role: 'ambient',
+      d: 'M18 64 C18 46 46 38 80 38 C118 38 142 48 142 62 C142 76 118 86 80 86 C46 86 18 80 18 64 Z',
+      role: 'accent',
     },
-    { d: 'M66 150 V122 H94 V150 M80 122 V150', role: 'accent' },
+    {
+      d: 'M32 54 C56 46 110 46 134 56 M30 74 C56 80 110 80 134 70',
+      role: 'soft',
+    },
+    {
+      d: 'M60 86 L62 96 H98 L100 86 M70 96 V90 M80 96 V90 M90 96 V90',
+      role: 'soft',
+    },
+    { d: 'M138 56 L152 46 L150 64 L152 80 L138 70' },
+    { d: 'M96 82 l6 -4 M108 80 l6 -4 M120 76 l6 -4', role: 'ambient' },
     { d: 'M4 150 H156', role: 'ambient' },
-    shadow(80, 158, 60),
+    { d: 'M54 150 L34 190 M106 150 L126 190' },
+    { d: 'M80 156 V164 M80 172 V182', role: 'ambient', dashed: true },
   ],
+  // The tall building seen from a corner, its rows of floors and the side
+  // turned away hatched, the doors of its entrance in tint: the Mafia's
+  // Underground Auction is held here, episode 42 / chapter 72.
+  'cemetery-building': [...CEMETERY_BUILDING, shadow(84, 158, 60)],
 } satisfies Drawings
+
+/**
+ * The Yorknew City drawings that change with the story: the deaths, each
+ * pinned with its status entry.
+ */
+export const yorknewCityRedrawn: Redrawings = {
+  'baise': [
+    // The same lipstick lying on its side on the floor, its cap rolled away:
+    // Shizuku kills her outside the auction hall, episode 43 / chapter 73.
+    {
+      episode: 43,
+      chapter: 73,
+      value: [
+        ...moved(
+          LIPSTICK,
+          'translate(72 146) rotate(-84) scale(0.74) translate(-80 -100)',
+        ),
+        ...moved(LIPSTICK_CAP, 'translate(8 2)'),
+        { d: 'M4 166 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'shachmono-tocino': [
+    // The same robe fallen in a heap, empty, and its sword lying on the
+    // floor: Franklin's bullets break his figures and kill him at the
+    // auction, episode 43 / chapter 73.
+    {
+      episode: 43,
+      chapter: 73,
+      value: [
+        ...moved(
+          TOCINO_ROBE,
+          'translate(80 146) rotate(-5) scale(0.95 0.36) translate(-80 -106)',
+        ),
+        ...moved(
+          TOCINO_SWORD,
+          'translate(34 184) rotate(68) translate(-120 -108)',
+        ),
+        { d: 'M4 166 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'ivlenkov': [
+    // The same jacket and tie laid flat on the floor, empty: Shizuku kills
+    // him outside the auction hall, episode 43 / chapter 73.
+    {
+      episode: 43,
+      chapter: 73,
+      value: [
+        ...moved(
+          IVLENKOV_JACKET,
+          'translate(80 148) rotate(-4) scale(1 0.42) translate(-80 -104)',
+        ),
+        { d: 'M4 172 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'dalzollene': [
+    // The same screen gone dark, its glass hatched over: Phinks kills him
+    // when the Troupe frees Uvogin, episode 45 / chapter 78.
+    {
+      episode: 45,
+      chapter: 78,
+      value: [
+        ...DALZOLLENE_SCREEN,
+        {
+          d: 'M38 110 L52 54 M50 112 L66 52 M62 112 L80 50 M74 110 L94 48 M86 110 L106 46 M98 110 L112 54',
+          role: 'ambient',
+        },
+        { d: 'M4 166 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'squala': [
+    // The same dog lying down alone on the ground, its head up: Nobunaga
+    // kills Squala by his car, episode 56 / chapter 112. The dog rests: it
+    // is not drawn dead, as neither medium shows his dogs harmed.
+    {
+      episode: 56,
+      chapter: 112,
+      value: [
+        ...moved(DOG_HEAD, 'translate(0 62)'),
+        { d: 'M92 134 C108 124 134 124 144 136 C150 146 144 150 132 150 H62' },
+        { d: 'M62 138 L60 144 H28 Q22 150 30 150 H62', role: 'soft' },
+        { d: 'M112 150 C112 138 120 132 132 134', role: 'soft' },
+        { d: 'M144 146 C150 148 154 146 156 140' },
+        { d: 'M110 134 l7 -5 M122 134 l7 -5 M132 140 l7 -5', role: 'ambient' },
+        { d: 'M4 158 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+}

@@ -186,14 +186,14 @@ checks this block.
 
 ### `hunter-x-hunter`
 
-| Thing             | Count                                               |
-| ----------------- | --------------------------------------------------- |
-| Records           | 116                                                 |
-| Characters        | 93                                                  |
-| Arcs, places      | 7 · 16                                              |
-| Saga modules      | 7                                                   |
-| Line drawings     | 116, one per record, plus 9 redrawings of 9 records |
-| Chronicle stories | 247, for 93 characters                              |
+| Thing             | Count                                                 |
+| ----------------- | ----------------------------------------------------- |
+| Records           | 116                                                   |
+| Characters        | 93                                                    |
+| Arcs, places      | 7 · 16                                                |
+| Saga modules      | 7                                                     |
+| Line drawings     | 116, one per record, plus 15 redrawings of 15 records |
+| Chronicle stories | 247, for 93 characters                                |
 
 ### `game-of-thrones`
 
