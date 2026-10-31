@@ -15,7 +15,7 @@ import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
-import { YORKNEW_CITY_DRAWINGS } from './yorknew-city'
+import { YORKNEW_CITY_DRAWINGS, yorknewCityRedrawn } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
 import { ZOLDYCK_DRAWINGS } from './zoldyck'
 
@@ -894,9 +894,38 @@ export type ArtId = keyof typeof DRAWINGS
 
 /**
  * The early-exam drawings that change with the story: the applicants Tonpa
- * points out who die later in the exam.
+ * points out who die later in the exam, and Kurapika's wooden swords, which
+ * his chain replaces.
  */
 const hunterExamRedrawn: Redrawings = {
+  kurapika: [
+    // The Dowsing Chain hanging from its ring, the weight at its end in
+    // tint: Kurapika shows the chains on his right hand and stops the
+    // bullets with the one on his ring finger, then swings its ball to find
+    // the second plant, episode 40 / chapter 68. It replaces the wooden
+    // swords for good. Only this chain: the others come later. No hand and
+    // no aura.
+    {
+      episode: 40,
+      chapter: 68,
+      value: [
+        { d: ellipse(80, 40, 11, 4.5), role: 'soft' },
+        { d: 'M69 40 V44 C72 50 88 50 91 44 V40' },
+        {
+          d: 'M79.7 45.8 A6.5 3.4 80.9 1 0 81.7 58.8 A6.5 3.4 80.9 1 0 79.7 45.8 M82.5 63.1 A6.6 3.4 79.6 1 0 84.9 75.9 A6.6 3.4 79.6 1 0 82.5 63.1 M85.7 80.3 A6.5 3.4 80.4 1 0 87.9 93.2 A6.5 3.4 80.4 1 0 85.7 80.3 M88.5 97.4 A6.5 3.4 81.7 1 0 90.4 110.4 A6.5 3.4 81.7 1 0 88.5 97.4 M91 114.7 A6.5 3.4 81.6 1 0 92.9 127.6 A6.5 3.4 81.6 1 0 91 114.7',
+        },
+        {
+          d: 'M81 54.5 L83.3 67.4 M84.1 71.6 L86.4 84.6 M87.2 88.9 L89.2 101.8 M89.8 106.1 L91.6 119 M92.2 123.3 L94.4 136.1',
+          role: 'soft',
+        },
+        { d: circle(95, 150, 12), role: 'accent' },
+        { d: 'M91 140 h8', role: 'soft' },
+        { d: 'M88 143 C85 146 84 150 85 153', role: 'soft' },
+        { d: 'M100 156 l5 -4 M98 160 l6 -5 M102 150 l4 -3', role: 'ambient' },
+        shadow(92, 184, 22),
+      ],
+    },
+  ],
   geretta: [
     // The same hat tipped over on its side, and his blowgun dropped on the
     // ground with a dart beside it: Hisoka kills him off the page, just
@@ -943,4 +972,5 @@ export const REDRAWINGS: Redrawings = {
   ...hunterExamRedrawn,
   ...zevilRedrawn,
   ...heavensArenaRedrawn,
+  ...yorknewCityRedrawn,
 }
