@@ -623,6 +623,11 @@ const DRAWN_DEATHS = [
     episode: { opens: 43, death: 44 },
     chapter: { opens: 75, death: 76 },
   },
+  {
+    id: 'pakunoda',
+    episode: { opens: 49, death: 58 },
+    chapter: { opens: 90, death: 119 },
+  },
   // Captured again in chapter 82 alone, so a chapter reader meets the
   // grave from a capture.
   {
@@ -673,6 +678,29 @@ describe('the deaths drawn in Yorknew City', () => {
       expect(archive.latestOf(confirmed, worm, 'status')).toBe('deceased')
       expect(drawingsFor(['worm'], confirmed)).toStrictEqual(
         drawingsFor(['worm'], presumed),
+      )
+    },
+  )
+})
+
+describe('the Cemetery Building after the blast', () => {
+  it.each(
+    LOCALES.flatMap((locale) => [
+      { unit: 'episode', opens: 42, blast: 53, locale },
+      { unit: 'chapter', opens: 72, blast: 100, locale },
+    ]),
+  )(
+    'shows the smoke from $unit $blast ($locale)',
+    ({ unit, opens, blast, locale }) => {
+      const first = readerFor(archive, at(unit, opens), locale)
+      const before = readerFor(archive, at(unit, blast - 1), locale)
+      const reached = readerFor(archive, at(unit, blast), locale)
+
+      expect(drawingsFor(['cemetery-building'], before)).toStrictEqual(
+        drawingsFor(['cemetery-building'], first),
+      )
+      expect(drawingsFor(['cemetery-building'], reached)).not.toStrictEqual(
+        drawingsFor(['cemetery-building'], before),
       )
     },
   )
