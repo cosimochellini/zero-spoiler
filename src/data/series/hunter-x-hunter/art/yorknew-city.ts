@@ -572,7 +572,7 @@ export const YORKNEW_CITY_DRAWINGS = {
       d: 'M46 104 l14 -14 M50 110 l14 -14 M94 104 l14 -14 M98 110 l14 -14',
       role: 'ambient',
     },
-    shadow(80, 150, 50),
+    shadow(80, 126, 50),
   ],
   // Two identical vases standing side by side, the second, the copy, in
   // tint, their far sides hatched: Kortopi makes exact copies of the
@@ -595,9 +595,9 @@ export const YORKNEW_CITY_DRAWINGS = {
     shadow(80, 158, 66),
   ],
   // A roll of bandage on its side, its turns drawn round the core, the
-  // loose end unwinding in tint and the far side hatched: Bonolenov, covered
-  // in bandages, named when the Troupe splits into groups, episode 55 /
-  // chapter 108.
+  // loose end in tint unwinding down onto the floor, the far side
+  // hatched: Bonolenov, covered in bandages, named when the Troupe splits
+  // into groups, episode 55 / chapter 108.
   'bonolenov': [
     {
       d: 'M38 110 C38 86 50 74 64 74 C78 74 90 86 90 110 C90 134 78 146 64 146 C50 146 38 134 38 110 Z',
@@ -608,24 +608,29 @@ export const YORKNEW_CITY_DRAWINGS = {
       role: 'soft',
     },
     {
-      d: 'M88 120 C104 124 118 134 132 156 L116 162 C106 146 96 138 84 134',
+      d: 'M88 118 C100 124 104 138 98 150 C94 160 110 164 142 158 L144 166 C108 174 82 168 86 150 C90 138 88 128 82 124',
       role: 'accent',
     },
-    { d: 'M102 134 l4 8 M116 146 l4 6', role: 'soft' },
     { d: 'M76 84 l6 -4 M82 100 l6 -4 M82 118 l6 -4', role: 'ambient' },
-    shadow(82, 172, 58),
+    shadow(84, 172, 62),
   ],
-  // A shopping bag standing in 3/4, its handle in tint, its gusset folded
-  // in and the side hatched: Eliza is out shopping with Neon, chapter 109
-  // and episode 56, and named in Squala's memories, episode 56 / chapter
-  // 112. No name or mark on the bag.
+  // Eliza's dark kimono from the front, its long sleeves hanging, the
+  // collar crossed left over right, the obi in tint and the far half
+  // hatched: she always wears one, and is named in Squala's memories,
+  // episode 56 / chapter 112. No face.
   'eliza': [
-    { d: 'M40 80 H108 L114 164 H34 Z' },
-    { d: 'M108 80 L126 90 L132 158 L114 164', role: 'soft' },
-    { d: 'M58 80 C58 56 90 56 90 80', role: 'accent' },
-    { d: 'M40 80 L58 88 M108 80 L92 88', role: 'soft' },
-    { d: 'M118 104 l8 -4 M120 124 l8 -4 M122 144 l8 -4', role: 'ambient' },
-    shadow(84, 176, 52),
+    {
+      d: 'M66 34 L40 44 L16 54 V124 Q16 132 24 132 H44 L48 172 H112 L116 132 H136 Q144 132 144 124 V54 L120 44 L94 34',
+    },
+    { d: 'M66 34 L96 112 M94 34 L80 70', role: 'soft' },
+    { d: 'M66 34 Q80 40 94 34', role: 'soft' },
+    { d: 'M46 108 H114 V128 H46 Z', role: 'accent' },
+    { d: 'M44 132 V80 M116 132 V80 M22 64 V120', role: 'soft' },
+    {
+      d: 'M100 136 l8 -6 M100 152 l8 -6 M100 166 l8 -6 M102 60 l8 -6 M104 80 l8 -6 M124 64 l8 -6 M126 84 l8 -6 M128 100 l8 -6',
+      role: 'ambient',
+    },
+    shadow(80, 184, 50),
   ],
   // Chrollo's long coat from the front, open, its fur collar and cuffs in
   // tint, the folds of the sleeves and the far half hatched: the leader of
@@ -648,23 +653,21 @@ export const YORKNEW_CITY_DRAWINGS = {
     },
     shadow(80, 188, 52),
   ],
-  // A columned front with a pediment, seen from a corner, on two steps, its
-  // side hatched and the door in tint: the prestigious auction house Gon,
-  // Killua and Leorio visit, episode 48 / chapter 85. The front is not
-  // checked against a frame.
+  // The auction house's catalog, a big thick book lying closed, its pages
+  // in layers along two sides, the trim round its cover in tint and the
+  // dark cover hatched at the far corner: Gon, Killua and Leorio buy it
+  // there as their admission ticket, episode 48 / chapter 85. No words on
+  // the cover.
   'southernpiece-auction-house': [
-    { d: 'M20 60 H124 L72 30 Z M124 60 L140 52 L88 24 L72 30' },
+    { d: 'M20 100 L96 82 L140 108 L64 128 Z' },
+    { d: 'M20 100 V130 L64 158 L140 138 V108' },
     {
-      d: 'M26 60 V128 M44 60 V128 M62 60 V128 M82 60 V128 M100 60 V128 M118 60 V128',
+      d: 'M24 108 L64 134 L136 115 M24 116 L64 142 L136 123 M24 124 L64 150 L136 131',
       role: 'soft',
     },
-    { d: 'M20 60 V66 H124 V60 M124 66 L140 58 V52', role: 'soft' },
-    { d: 'M124 66 L140 58 V122 L124 128', role: 'soft' },
-    { d: 'M128 76 l8 -4 M128 92 l8 -4 M128 108 l8 -4', role: 'ambient' },
-    { d: 'M16 128 H128 V136 H16 Z M10 136 H134 L146 130 V136 L134 142 H10 Z' },
-    { d: 'M64 128 V96 H80 V128', role: 'accent' },
-    { d: 'M4 150 H156', role: 'ambient' },
-    shadow(76, 158, 64),
+    { d: 'M32 100 L96 86 L128 106 L64 122 Z', role: 'accent' },
+    { d: 'M100 92 l7 -3 M110 98 l7 -3 M120 104 l6 -3', role: 'ambient' },
+    shadow(82, 174, 62),
   ],
   // A tall hotel seen from a corner, its rows of windows, the side hatched
   // and the doors of the lobby in tint: the Troupe waits in its lobby,
@@ -951,34 +954,34 @@ export const yorknewCityRedrawn: Redrawings = {
       value: [
         ...moved(
           PAKUNODA_JACKET,
-          'translate(80 144) rotate(-4) scale(1 0.4) translate(-80 -104)',
+          'translate(66 153) rotate(-4) scale(1 0.4) translate(-80 -104)',
         ),
-        { d: 'M86 176 H140 V182 H112 L108 192 H96 L100 182 H86 Z' },
-        { d: `${ellipse(112, 179, 7, 5)} M140 176 v-3`, role: 'soft' },
-        { d: 'M4 194 H156', role: 'ambient', dashed: true },
+        { d: 'M118 166 H156 V171 H138 L135 180 H125 L128 171 H118 Z' },
+        { d: `${ellipse(132, 168.5, 6, 4)} M156 166 v-3`, role: 'soft' },
+        { d: 'M4 182 H156', role: 'ambient', dashed: true },
       ],
     },
   ],
   'cemetery-building': [
-    // The same building with smoke rising from its lowest floor: the
-    // Zoldycks' blast shakes it and smoke billows out of the first floor
-    // (chapter 100), the guests feel the explosion below them (episode 53),
-    // episode 53 / chapter 100. The ruined room is inside and not drawn. No
-    // rebuild follows, so this is its last drawing in the arc.
+    // The same building shaken by a blast below its ground line, a crack at
+    // its foot: the Zoldycks' blast shakes it (chapter 100) and the guests
+    // feel the explosion in the basement (episode 53), episode 53 /
+    // chapter 100. The ruined room is inside and not drawn. No rebuild
+    // follows, so this is its last drawing in the arc.
     {
       episode: 53,
       chapter: 100,
       value: [
         ...CEMETERY_BUILDING,
         {
-          d: 'M46 132 q-12 -8 -6 -22 q6 -12 -4 -24 q-8 -10 0 -22 M104 132 q12 -8 6 -22 q-6 -12 4 -24 q8 -10 0 -22',
-          role: 'soft',
-        },
-        {
-          d: 'M52 132 q-6 -10 0 -20 q6 -10 0 -20 M98 132 q6 -10 0 -20 q-6 -10 0 -20',
+          d: 'M78 186 V158 M70 186 L54 160 M86 186 L102 160 M64 190 L36 168 M92 190 L120 168 M60 194 L22 182 M96 194 L134 182',
           role: 'ambient',
         },
-        shadow(84, 158, 60),
+        { d: 'M58 150 l5 7 l6 -5 l5 8 l6 -6 l5 7 l6 -5 l5 6', role: 'soft' },
+        {
+          d: 'M34 50 v14 M28 60 v14 M34 96 v14 M136 50 v14 M142 60 v14 M136 96 v14',
+          role: 'soft',
+        },
       ],
     },
   ],
