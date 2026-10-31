@@ -618,27 +618,61 @@ const DRAWN_DEATHS = [
     episode: { opens: 40, death: 56 },
     chapter: { opens: 68, death: 112 },
   },
+  {
+    id: 'rabid-dog',
+    episode: { opens: 43, death: 44 },
+    chapter: { opens: 75, death: 76 },
+  },
+  // Captured again in chapter 82 alone, so a chapter reader meets the
+  // grave from a capture.
+  {
+    id: 'uvogin',
+    episode: { opens: 43, death: 47 },
+    chapter: { opens: 74, death: 84, was: 'captured' },
+  },
+  // One stage serves both readers: deceased at episode 45, presumed dead at
+  // chapter 78 (and confirmed at 89, below).
+  {
+    id: 'worm',
+    episode: { opens: 43, death: 45 },
+    chapter: { opens: 75, death: 78, now: 'presumed-dead' },
+  },
 ].flatMap(({ id, episode, chapter }) =>
   LOCALES.flatMap((locale) => [
-    { id, unit: 'episode', ...episode, locale },
-    { id, unit: 'chapter', ...chapter, locale },
+    { id, unit: 'episode', was: 'alive', now: 'deceased', ...episode, locale },
+    { id, unit: 'chapter', was: 'alive', now: 'deceased', ...chapter, locale },
   ]),
 )
 
 describe('the deaths drawn in Yorknew City', () => {
   it.each(DRAWN_DEATHS)(
     'pins $id’s death and drawing together in $unit units ($locale)',
-    ({ id, unit, opens, death, locale }) => {
+    ({ id, unit, opens, death, was, now, locale }) => {
       const record = character(id)
       const alive = readerFor(archive, at(unit, opens), locale)
       const before = readerFor(archive, at(unit, death - 1), locale)
       const reached = readerFor(archive, at(unit, death), locale)
 
-      expect(archive.latestOf(before, record, 'status')).toBe('alive')
-      expect(archive.latestOf(reached, record, 'status')).toBe('deceased')
+      expect(archive.latestOf(before, record, 'status')).toBe(was)
+      expect(archive.latestOf(reached, record, 'status')).toBe(now)
       expect(drawingsFor([id], before)).toStrictEqual(drawingsFor([id], alive))
       expect(drawingsFor([id], reached)).not.toStrictEqual(
         drawingsFor([id], before),
+      )
+    },
+  )
+
+  it.each(LOCALES)(
+    'keeps Worm’s drawing when chapter 89 confirms his death (%s)',
+    (locale) => {
+      const worm = character('worm')
+      const presumed = readerFor(archive, at('chapter', 88), locale)
+      const confirmed = readerFor(archive, at('chapter', 89), locale)
+
+      expect(archive.latestOf(presumed, worm, 'status')).toBe('presumed-dead')
+      expect(archive.latestOf(confirmed, worm, 'status')).toBe('deceased')
+      expect(drawingsFor(['worm'], confirmed)).toStrictEqual(
+        drawingsFor(['worm'], presumed),
       )
     },
   )
