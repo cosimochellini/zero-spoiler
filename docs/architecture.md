@@ -192,7 +192,7 @@ checks this block.
 | Characters        | 93                                                    |
 | Arcs, places      | 7 · 16                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 116, one per record, plus 18 redrawings of 18 records |
+| Line drawings     | 116, one per record, plus 20 redrawings of 20 records |
 | Chronicle stories | 247, for 93 characters                                |
 
 ### `game-of-thrones`
