@@ -329,19 +329,19 @@ export const YORKNEW_CITY_DRAWINGS = {
     },
     shadow(76, 160, 56),
   ],
-  // Franklin's pair of golden earrings, two rings each on its post, the
-  // nearer one in tint and their far sides hatched: they hang from his long
-  // earlobes, episode 44 / chapter 76. The rings' shape is not checked
-  // against a frame.
+  // Franklin's pair of golden earrings, two plain rings, the nearer one in
+  // tint and their far sides hatched: they hang from his long earlobes,
+  // episode 44 / chapter 76. The rings' shape is not checked against a
+  // frame.
   'franklin': [
     {
-      d: `${ellipse(70, 112, 34, 34)} ${ellipse(70, 112, 25, 25)}`,
+      d: 'M70 78 C89 78 104 93 104 112 C104 131 89 146 70 146 C51 146 36 131 36 112 C36 93 51 78 70 78 Z M70 87 C84 87 95 98 95 112 C95 126 84 137 70 137 C56 137 45 126 45 112 C45 98 56 87 70 87 Z',
       role: 'accent',
     },
     { d: 'M98 92 C108 104 108 122 98 134', role: 'soft' },
-    { d: 'M70 78 V56 M64 56 H76', role: 'soft' },
-    { d: `${ellipse(124, 120, 16, 16)} ${ellipse(124, 120, 11, 11)}` },
-    { d: 'M124 104 V92 M120 92 H128', role: 'soft' },
+    {
+      d: 'M124 104 C133 104 140 111 140 120 C140 129 133 136 124 136 C115 136 108 129 108 120 C108 111 115 104 124 104 Z M124 109 C130 109 135 114 135 120 C135 126 130 131 124 131 C118 131 113 126 113 120 C113 114 118 109 124 109 Z',
+    },
     {
       d: 'M86 96 l5 -4 M92 110 l5 -4 M90 126 l5 -4 M132 112 l4 -3 M134 124 l4 -3',
       role: 'ambient',
@@ -363,38 +363,43 @@ export const YORKNEW_CITY_DRAWINGS = {
     shadow(80, 176, 60),
   ],
   // Phinks's pharaoh headdress from the front, its cloth falling to two
-  // lappets, the far side hatched, the golden snake at its brow in tint:
-  // the look he is introduced in, as the Troupe frees Uvogin, episode 45 /
-  // chapter 78 (owner, #901). No face, and no tracksuit, which is later.
+  // short lappets over the broad collar of his necklace, the far side
+  // hatched, the golden snake at its brow in tint: the look he is
+  // introduced in, as the Troupe frees Uvogin, episode 45 / chapter 78
+  // (owner, #901). No face, and no tracksuit, which is later.
   'phinks': [
     {
-      d: 'M54 50 C54 30 106 30 106 50 L116 112 L104 150 H90 L96 112 L92 70 H68 L64 112 L70 150 H56 L44 112 Z',
+      d: 'M54 50 C54 30 106 30 106 50 L116 112 L102 118 L96 112 L92 70 H68 L64 112 L58 118 L44 112 Z',
     },
     { d: 'M54 50 C64 44 96 44 106 50', role: 'soft' },
     { d: 'M58 62 H102', role: 'soft' },
     { d: 'M80 44 C76 36 84 30 82 22 C88 26 88 34 84 40', role: 'accent' },
+    { d: 'M48 96 H62 M98 96 H112', role: 'soft' },
     {
-      d: 'M44 112 H64 M96 112 H116 M48 126 L66 126 M94 126 L112 126',
+      d: 'M36 120 C52 146 108 146 124 120 M46 124 C60 138 100 138 114 124',
       role: 'soft',
     },
-    {
-      d: 'M100 78 l8 -5 M102 96 l8 -5 M104 114 l8 -5 M102 134 l6 -4',
-      role: 'ambient',
-    },
-    shadow(80, 166, 44),
+    { d: 'M100 78 l8 -5 M102 96 l8 -5 M104 110 l6 -4', role: 'ambient' },
+    shadow(80, 164, 44),
   ],
-  // A laptop open on its hinge seen from the side and behind, the edge of
-  // its lid in tint and the back of the lid hatched: Shalnark looks up the
-  // Nostrade family on the Hunter website, episode 46 / chapter 79. Seen
-  // from the back, unlike Nicholas's, and with nothing on the screen.
+  // A laptop open on its hinge seen from its right side, the lid's frame in
+  // tint, the rows of keys on the base and the shade by the hinge hatched:
+  // Shalnark looks up the Nostrade family on the Hunter website, episode
+  // 46 / chapter 79. Seen side on, unlike Nicholas's, and with nothing on
+  // the screen.
   'shalnark': [
-    { d: 'M40 150 L120 150 L132 140 L52 140 Z' },
-    { d: 'M40 150 V156 H120 L132 146 V140', role: 'soft' },
-    { d: 'M52 140 L36 62 L44 58 L60 140', role: 'accent' },
-    { d: 'M44 58 L124 58 L132 140', role: 'soft' },
-    { d: 'M48 70 L116 70 M52 90 L120 90 M56 110 L124 110', role: 'ambient' },
-    { d: 'M62 146 H108', role: 'soft' },
-    shadow(86, 168, 56),
+    { d: 'M30 150 L44 126 L138 126 L124 150 Z' },
+    { d: 'M30 150 V158 H124 L138 134 V126', role: 'soft' },
+    { d: 'M30 150 L44 126 L34 40 L20 64 Z', role: 'accent' },
+    { d: 'M36 140 L46 124 L38 54 L28 70 Z', role: 'soft' },
+    {
+      d: 'M58 132 h8 M72 132 h8 M86 132 h8 M100 132 h8 M114 132 h6 M54 139 h8 M68 139 h8 M82 139 h8 M96 139 h8 M110 139 h6',
+      role: 'soft',
+    },
+    { d: 'M64 146 h28', role: 'soft' },
+    { d: 'M22 120 l6 -6 M22 134 l6 -6 M24 146 l5 -5', role: 'ambient' },
+    { d: 'M60 158 l4 -6 M84 158 l4 -6 M108 158 l4 -6', role: 'ambient' },
+    shadow(84, 172, 58),
   ],
   // A mobile phone standing in 3/4, its blank screen in tint, the keys
   // below and its side hatched: Light speaks to his daughter's bodyguards
