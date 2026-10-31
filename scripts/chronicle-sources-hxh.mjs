@@ -112,7 +112,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     57: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
-      note: 'The traffic is chapter 111 and episode 56; the lobby is chapter 112 and episode 57. The time on the radio is chapter-only. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the order follows both media: he drives Kurapika after the Troupe until traffic stops him, and the boys are caught. The traffic is chapter 111 and episode 56; the lobby is chapter 112 and episode 57. The time on the radio is chapter-only. Checked on the episode page and the chapter pages.',
     },
   },
   'kurapika': {
@@ -162,7 +162,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
-      note: 'Chapters 117-119 and episode 58. His words on the airship after the exchange are chapter-only. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “unharmed” dropped (episode 58 only), as in Pakunoda’s story; Melody confirms that Killua is not being controlled. Chapters 117-119 and episode 58. His words on the airship after the exchange are chapter-only. Checked on the episode page and the chapter pages.',
     },
   },
   'katzo': {
@@ -238,11 +238,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     55: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
-      note: 'His fortune is chapter 105 and episode 54; the fake and what he has told Kurapika are chapter 106 and episode 55. His real fortune is told only at chapter 119 and episode 58. Italian: Tela Fantasma (Italian Wikipedia, as in #973). Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: staying in Yorknew only might give him his chance. His fortune is chapter 105 and episode 54; the fake and what he has told Kurapika are chapter 106 and episode 55. His real fortune is told only at chapter 119 and episode 58. Italian: Tela Fantasma (Italian Wikipedia, as in #973). Checked on the episode page and the chapter pages.',
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
-      note: 'The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: he does not reach Kurapika’s airship: he turns up at the airport as Pakunoda and the boys board. In Italian, “mentre il capo è in ostaggio”. The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only. Checked on the episode page and the chapter pages.',
     },
   },
   'hanzo': {
@@ -852,7 +852,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
-      note: 'Chapters 109-112 (pages 1-8) and episode 56. The hotel is not named before episode 57. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: he leaves with the eyes Neon bought, which the Troupe’s copies lead to. Chapters 109-112 (pages 1-8) and episode 56. The hotel is not named before episode 57. Checked on the episode page and the chapter pages.',
     },
   },
   'shachmono-tocino': {
@@ -942,7 +942,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     54: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
-      note: 'Chapter 104 and episode 54. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the fortune is framed as what the verses say. Chapter 104 and episode 54. Checked on the episode page and the chapter pages.',
     },
   },
   'feitan': {
@@ -1038,11 +1038,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     54: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
-      note: 'Chapters 102-104 and episode 54. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the fortune is what it says, not a fact, as in Chrollo’s and Shizuku’s stories. Chapters 102-104 and episode 54. Checked on the episode page and the chapter pages.',
     },
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
-      note: 'Chapters 109-112 (pages 1-8) and episode 56. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: in Italian, it is clear that Pakunoda fires the image into Nobunaga’s head. Chapters 109-112 (pages 1-8) and episode 56. Checked on the episode page and the chapter pages.',
     },
   },
   'owl': {
@@ -1062,7 +1062,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
-      note: 'Chapter 118 and episode 58. His meeting with the boys at the auction is chapter 120 and is left out. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “controls them” became “controls Pakunoda and Machi”. Chapter 118 and episode 58. His meeting with the boys at the auction is chapter 120 and is left out. Checked on the episode page and the chapter pages.',
     },
   },
   'light-nostrade': {
@@ -1122,7 +1122,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
-      note: 'Chapters 117-119 and episode 58. Italian: Proiettile Mnemonico (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “unharmed” dropped (episode 58 only); she must free the boys by midnight without tricks. Chapters 117-119 and episode 58. Italian: Proiettile Mnemonico (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
     },
   },
   'zenji': {
@@ -1148,11 +1148,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'chrollo': {
     54: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
-      note: 'His record opens at episode 54 (unanchored), so his chronicle opens here and looks back over episodes 41-53: the order (chapter 71), Neon and the requiem (chapters 95-97), the Zoldycks and Illumi (chapters 98-100), the fake bodies (chapter 104). The fortunes are chapters 102-104 and episode 54. His book, the Indoor Fish and the copies he ordered are told differently by the two media and are left out. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: in Italian, “ingaggiato da lui”; the fortune is what it says, not a fact. His record opens at episode 54 (unanchored), so his chronicle opens here and looks back over episodes 41-53: the order (chapter 71), Neon and the requiem (chapters 95-97), the Zoldycks and Illumi (chapters 98-100), the fake bodies (chapter 104). The fortunes are chapters 102-104 and episode 54. His book, the Indoor Fish and the copies he ordered are told differently by the two media and are left out. Checked on the episode page and the chapter pages.',
     },
     55: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
-      note: 'The fake fortune is chapter 106, the groups and the copies chapter 108, all in episode 55. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: Hisoka’s answer now comes before Nobunaga draws his sword. The fake fortune is chapter 106, the groups and the copies chapter 108, all in episode 55. Checked on the episode page and the chapter pages.',
     },
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
@@ -1160,7 +1160,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     57: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
-      note: 'Chapters 112-114 and episode 57. His words in the car and as a hostage are chapter-only. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the lights go out just as Pakunoda reads the boys’ memories. Chapters 112-114 and episode 57. His words in the car and as a hostage are chapter-only. Checked on the episode page and the chapter pages.',
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
