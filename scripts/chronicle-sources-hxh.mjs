@@ -56,7 +56,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
-      note: 'Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “kick through” is one medium’s; they break out through the walls, as in Nobunaga’s story. Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
     },
   },
   'mito-freecss': {
@@ -146,7 +146,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     53: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
-      note: 'Corrected after review: “he no longer needs their help” is chapter-only; he calls Gon to tell him the members are dead. Chapters 100-101 and episode 53. Whether Kurapika sees the leader’s body himself differs between the pages and is left out. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the leader’s death and the bodies are what Kurapika hears and the Mafia reports, not facts: both media have shown the leader alive by then (chapter 100, episode 53). “he no longer needs their help” is chapter-only; he calls Gon to tell him the members are dead. Chapters 100-101 and episode 53. Whether Kurapika sees the leader’s body himself differs between the pages and is left out. Checked on the episode page and the chapter pages.',
     },
   },
   'katzo': {
@@ -846,11 +846,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     51: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_51_(2011)',
-      note: 'Corrected after review: the famous fortune-teller she saw as a child, later a fraud, is what both media give; she became a fortune-teller anyway. Chapters 94-96 and episode 51. The leader is not named before episode 54; the fortune’s lines differ between the media and are left out. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “checkpoints” became “security”. the famous fortune-teller she saw as a child, later a fraud, is what both media give; she became a fortune-teller anyway. Chapters 94-96 and episode 51. The leader is not named before episode 54; the fortune’s lines differ between the media and are left out. Checked on the episode page and the chapter pages.',
     },
     53: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
-      note: 'Chapters 100-101 and episode 53. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “at the auction” dropped from the knockout. Chapters 100-101 and episode 53. Checked on the episode page and the chapter pages.',
     },
   },
   'machi': {
@@ -982,7 +982,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
-      note: 'Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “on the table” (Italian) and “kick through” are each one medium’s; he slams Gon’s hand down, and the boys break out through the walls. Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
     },
   },
   'owl': {
@@ -1042,7 +1042,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'pakunoda': {
     49: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
-      note: 'Chapters 90-91 and episode 49. Her arm around Killua waits for her 50/92 story, since the chapters show it in 92. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the escape attempt and the call come in a different order in the two media, so neither is put first. Chapters 90-91 and episode 49. Her arm around Killua waits for her 50/92 story, since the chapters show it in 92. Checked on the episode page and the chapter pages.',
     },
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',

@@ -224,8 +224,8 @@ export const yorknewCityChronicles = {
           en: 'A fortune for a stranger',
         },
         body: {
-          it: 'Neon sfugge alle sue guardie del corpo per andare all’asta, e il capo della Brigata Fantasma le fa superare i posti di blocco. Mentre aspettano in un ristorante, lui loda il suo dono e le chiede la sua profezia. Lei la scrive, e lui piange leggendola e dice che è tutto vero. Neon gli parla di una famosa indovina che aveva visto da bambina e che si è poi rivelata un’imbrogliona; lei è diventata indovina lo stesso. Poi lui, parlando di un compagno morto, la stordisce con un colpo rapido.',
-          en: 'Neon slips away from her bodyguards to go to the auction, and the leader of the Phantom Troupe gets her past the checkpoints. While they wait in a restaurant, he praises her gift and asks for his own fortune. She writes it, and he cries as he reads it, saying it is all true. Neon tells him about a famous fortune-teller she saw as a child, one who turned out to be a fraud; she still became a fortune-teller herself. Then, speaking of a dead comrade, he knocks her out with a quick blow.',
+          it: 'Neon sfugge alle sue guardie del corpo per andare all’asta, e il capo della Brigata Fantasma le fa superare i controlli di sicurezza. Mentre aspettano in un ristorante, lui loda il suo dono e le chiede la sua profezia. Lei la scrive, e lui piange leggendola e dice che è tutto vero. Neon gli parla di una famosa indovina che aveva visto da bambina e che si è poi rivelata un’imbrogliona; lei è diventata indovina lo stesso. Poi lui, parlando di un compagno morto, la stordisce con un colpo rapido.',
+          en: 'Neon slips away from her bodyguards to go to the auction, and the leader of the Phantom Troupe gets her past security. While they wait in a restaurant, he praises her gift and asks for his own fortune. She writes it, and he cries as he reads it, saying it is all true. Neon tells him about a famous fortune-teller she saw as a child, one who turned out to be a fraud; she still became a fortune-teller herself. Then, speaking of a dead comrade, he knocks her out with a quick blow.',
         },
       },
     },
@@ -236,8 +236,8 @@ export const yorknewCityChronicles = {
       value: {
         title: { it: 'Gli occhi scarlatti', en: 'The Scarlet Eyes' },
         body: {
-          it: 'Dopo che il capo della Brigata l’ha stordita all’asta, Neon viene portata in ospedale, e un medico dice che dovrebbe stare bene. Intanto suo padre fa comprare a [[kurapika|Kurapika]] gli occhi scarlatti, superando [[zenji|Zenji]] a 2,9 miliardi di Jenny. Quando Neon si sveglia, è contenta degli occhi e ringrazia il padre.',
-          en: 'After the Troupe’s leader knocks her out at the auction, Neon is taken to hospital, and a doctor says she should be fine. Meanwhile her father has [[kurapika|Kurapika]] buy her the Scarlet Eyes, outbidding [[zenji|Zenji]] at 2.9 billion Jenny. When Neon wakes, she is happy with them and thanks her father.',
+          it: 'Dopo che il capo della Brigata l’ha stordita, Neon viene portata in ospedale, e un medico dice che dovrebbe stare bene. Intanto suo padre fa comprare a [[kurapika|Kurapika]] gli occhi scarlatti, superando [[zenji|Zenji]] a 2,9 miliardi di Jenny. Quando Neon si sveglia, è contenta degli occhi e ringrazia il padre.',
+          en: 'After the Troupe’s leader knocks her out, Neon is taken to hospital, and a doctor says she should be fine. Meanwhile her father has [[kurapika|Kurapika]] buy her the Scarlet Eyes, outbidding [[zenji|Zenji]] at 2.9 billion Jenny. When Neon wakes, she is happy with them and thanks her father.',
         },
       },
     },
@@ -588,8 +588,8 @@ export const yorknewCityChronicles = {
       value: {
         title: { it: 'Di guardia', en: 'On guard' },
         body: {
-          it: 'Al covo Nobunaga sfida [[gon-freecss|Gon]] a braccio di ferro e gli sbatte la mano sul tavolo più volte mentre parla di [[uvogin|Uborghin]]: lo conosceva meglio di chiunque altro, e piange mentre giura di trovare l’utilizzatore di catene. Quando Gon, arrabbiato, gli sbatte giù la mano a sua volta, Nobunaga gli chiede di entrare nella Brigata; Gon preferirebbe morire. Nobunaga intuisce che appartiene al Potenziamento e resta con la sua spada a sorvegliare i ragazzi finché non torna il capo: se il capo non li vuole, potranno andarsene. Invece Gon e [[killua|Killua]] sfondano con un calcio le pareti laterali e scappano. Nobunaga insegue Gon e usa l’En, ma i ragazzi sono già lontani.',
-          en: 'At the hideout Nobunaga arm-wrestles [[gon-freecss|Gon]] and slams his hand down again and again while he talks about [[uvogin|Uvogin]]: he knew Uvogin better than anyone, and he cries as he swears to find the chain user. When Gon, angry, slams Nobunaga’s hand down in turn, Nobunaga asks him to join the Troupe; Gon would rather die. Nobunaga guesses he is an Enhancer and stays behind with his sword to guard the boys until the leader returns: if the leader does not want them, they can go. Instead Gon and [[killua|Killua]] each kick through a side wall and run. Nobunaga chases Gon and uses En, but the boys are already gone.',
+          it: 'Al covo Nobunaga sfida [[gon-freecss|Gon]] a braccio di ferro e gli sbatte giù la mano più volte mentre parla di [[uvogin|Uborghin]]: lo conosceva meglio di chiunque altro, e piange mentre giura di trovare l’utilizzatore di catene. Quando Gon, arrabbiato, gli sbatte giù la mano a sua volta, Nobunaga gli chiede di entrare nella Brigata; Gon preferirebbe morire. Nobunaga intuisce che appartiene al Potenziamento e resta con la sua spada a sorvegliare i ragazzi finché non torna il capo: se il capo non li vuole, potranno andarsene. Invece Gon e [[killua|Killua]] scappano entrambi attraverso i muri. Nobunaga insegue Gon e usa l’En, ma i ragazzi sono già lontani.',
+          en: 'At the hideout Nobunaga arm-wrestles [[gon-freecss|Gon]] and slams his hand down again and again while he talks about [[uvogin|Uvogin]]: he knew Uvogin better than anyone, and he cries as he swears to find the chain user. When Gon, angry, slams Nobunaga’s hand down in turn, Nobunaga asks him to join the Troupe; Gon would rather die. Nobunaga guesses he is an Enhancer and stays behind with his sword to guard the boys until the leader returns: if the leader does not want them, they can go. Instead Gon and [[killua|Killua]] both break out through the walls. Nobunaga chases Gon and uses En, but the boys are already gone.',
         },
       },
     },
@@ -753,8 +753,8 @@ export const yorknewCityChronicles = {
       value: {
         title: { it: 'La trappola si chiude', en: 'Closing the trap' },
         body: {
-          it: 'Pakunoda segue [[gon-freecss|Gon]] e [[killua|Killua]] mentre pedinano [[machi|Machi]] e [[nobunaga|Nobunaga]]. Quando i ragazzi scappano, sbarra la strada a Gon e con Machi gli chiede se conosce l’utilizzatore di catene. Gon risponde di no. Quando prova a scappare Machi lo ferma, e una telefonata avverte Pakunoda che Killua si è arreso. I membri della Brigata portano i due ragazzi al loro covo.',
-          en: 'Pakunoda follows [[gon-freecss|Gon]] and [[killua|Killua]] while they tail [[machi|Machi]] and [[nobunaga|Nobunaga]]. When the boys run, she blocks Gon’s way out, and with Machi she asks him whether he knows the chain user. Gon says he does not. When he tries to slip away, Machi stops him, and a call tells Pakunoda that Killua has given himself up. The Troupe members take both boys to their hideout.',
+          it: 'Pakunoda segue [[gon-freecss|Gon]] e [[killua|Killua]] mentre pedinano [[machi|Machi]] e [[nobunaga|Nobunaga]]. Quando i ragazzi scappano, sbarra la strada a Gon e con Machi gli chiede se conosce l’utilizzatore di catene. Gon risponde di no. Machi ferma Gon quando prova a scappare, e una telefonata avverte Pakunoda che Killua si è arreso. I membri della Brigata portano i due ragazzi al loro covo.',
+          en: 'Pakunoda follows [[gon-freecss|Gon]] and [[killua|Killua]] while they tail [[machi|Machi]] and [[nobunaga|Nobunaga]]. When the boys run, she blocks Gon’s way out, and with Machi she asks him whether he knows the chain user. Gon says he does not. Machi stops Gon when he tries to slip away, and a call tells Pakunoda that Killua has given himself up. The Troupe members take both boys to their hideout.',
         },
       },
     },
