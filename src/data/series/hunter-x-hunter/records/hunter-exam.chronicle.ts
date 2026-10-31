@@ -160,6 +160,18 @@ export const hunterExamChronicles = {
         },
       },
     },
+    // Chapters 107-108 and episode 55. Why Gon asks for the chain differs between the media and is left out.
+    {
+      episode: 55,
+      chapter: 108,
+      value: {
+        title: { it: 'Una catena sul cuore', en: 'A chain on his heart' },
+        body: {
+          it: 'Gon tiene per sé il suo piano per avere il gioco e accetta di aiutare [[kurapika|Kurapika]] contro la Brigata facendo da esca. Chiede a Kurapika di usare anche su di lui la Catena del Giudizio. Kurapika spiega la Catena della Prigionia e la Catena del Giudizio, e che quando i suoi occhi diventano scarlatti passa alla Specializzazione. Anche [[killua|Killua]] e [[leorio-paradinight|Leorio]] chiedono la catena, ma Kurapika non ha mai pensato di usarla su di loro: ha parlato delle sue catene per ringraziarli. Gon risponde che deludere un amico gli pesa più che rischiare la vita, e i due ridono.',
+          en: 'Gon keeps his plan for getting the game to himself and agrees to help [[kurapika|Kurapika]] against the Troupe as a decoy. He asks Kurapika to use his Judgment Chain on him too. Kurapika explains his Chain Jail and his Judgment Chain, and that when his eyes turn scarlet he becomes a Specialist. [[killua|Killua]] and [[leorio-paradinight|Leorio]] ask for the chain as well, but Kurapika never meant to use it on any of them: he told them about his chains to thank them. Gon answers that letting down a friend weighs on him more than risking his life, and the two laugh.',
+        },
+      },
+    },
   ],
   'mito-freecss': [
     {
@@ -296,6 +308,18 @@ export const hunterExamChronicles = {
         },
       },
     },
+    // The traffic is chapter 111 and episode 56; the lobby is chapter 112 and episode 57. The time on the radio is chapter-only.
+    {
+      episode: 57,
+      chapter: 113,
+      value: {
+        title: { it: 'La telefonata nell’atrio', en: 'The call in the lobby' },
+        body: {
+          it: 'Leorio porta [[kurapika|Kurapika]] in auto dietro alla Brigata finché il traffico non lo ferma, e [[gon-freecss|Gon]] e [[killua|Killua]] vengono catturati. Aspetta nell’atrio dell’Hotel Beitacle quando i membri della Brigata ci portano i ragazzi. Lì finge di parlare al telefono e, in codice, fa sapere ai ragazzi il piano: quando la luce se ne andrà. Gon e Killua capiscono il messaggio.',
+          en: 'Leorio drives [[kurapika|Kurapika]] after the Troupe until traffic stops him, and [[gon-freecss|Gon]] and [[killua|Killua]] are caught. He is waiting in the lobby of the Hotel Beitacle when the Troupe members bring the boys there. He pretends to talk on the phone and, in code, lets the boys know the plan: when the lights will go out. Gon and Killua understand the message.',
+        },
+      },
+    },
   ],
   'kurapika': [
     {
@@ -414,6 +438,30 @@ export const hunterExamChronicles = {
         body: {
           it: 'Kurapika viene a sapere che il capo della Brigata è morto. Quando [[zenji|Zenji]] lo deride, Kurapika gli dà un pugno, dicendosi che non ci crederà finché non vedrà il corpo. La mafia annuncia di aver trovato i corpi del capo e di altri cinque membri. Poi all’asta compaiono gli occhi scarlatti, e su ordine di [[light-nostrade|Light]] Kurapika fa le sue offerte; Zenji fa salire il prezzo, e gli occhi costano 2,9 miliardi di Jenny. Quando più tardi Zenji gli punta contro una pistola, gli occhi di Kurapika diventano scarlatti e Zenji resta immobile. Kurapika chiama [[gon-freecss|Gon]] per dirgli che, a quanto sa, i membri della Brigata sono morti.',
           en: 'Kurapika hears that the Troupe’s leader is dead. When [[zenji|Zenji]] mocks him, Kurapika punches him, telling himself he will not believe it until he sees the body. The Mafia reports the bodies of the leader and five members. Then the Scarlet Eyes come up for auction, and on [[light-nostrade|Light]]’s orders Kurapika bids for them; Zenji drives the price up, and they cost 2.9 billion Jenny. When Zenji later points a gun at him, Kurapika’s eyes turn scarlet and Zenji freezes. Kurapika calls [[gon-freecss|Gon]] to tell him that, as far as he knows, the members of the Troupe are dead.',
+        },
+      },
+    },
+    // The reunion, the message from Hisoka and Melody’s call are chapters 102-105 and episode 54; the plan and the chains are chapters 107-108 and episode 55. Meteor City is left unnamed.
+    {
+      episode: 55,
+      chapter: 108,
+      value: {
+        title: { it: 'Le sue catene', en: 'His chains' },
+        body: {
+          it: 'Kurapika ritrova [[gon-freecss|Gon]], [[killua|Killua]] e [[leorio-paradinight|Leorio]] e racconta loro dei voti dietro le sue catene. Pensa di passare alla ricerca degli occhi della sua gente, finché [[hisoka|Hisoka]] non gli fa sapere che i corpi dei membri della Brigata erano falsi. Poi [[melody|Melody]] gli dice che la mafia ha rinunciato a dare la caccia alla Brigata. Kurapika decide di catturare [[pakunoda|Pakunoda]], che sa leggere i ricordi, con l’aiuto degli amici. Mostra a Gon la Catena della Prigionia e la Catena del Giudizio e spiega che ora può far diventare scarlatti i suoi occhi quando vuole, e così passa alla Specializzazione.',
+          en: 'Kurapika meets [[gon-freecss|Gon]], [[killua|Killua]] and [[leorio-paradinight|Leorio]] again and tells them about the vows behind his chains. He means to move on to finding his people’s eyes, until [[hisoka|Hisoka]] lets him know that the Troupe members’ bodies were fakes. Then [[melody|Melody]] tells him that the Mafia has called off its hunt for the Troupe. Kurapika decides to capture [[pakunoda|Pakunoda]], who can read memories, with his friends’ help. He shows Gon his Chain Jail and his Judgment Chain, and explains that he can now turn his eyes scarlet at will, which makes him a Specialist.',
+        },
+      },
+    },
+    // Chapters 117-119 and episode 58. His words on the airship after the exchange are chapter-only.
+    {
+      episode: 58,
+      chapter: 119,
+      value: {
+        title: { it: 'Lo scambio', en: 'The exchange' },
+        body: {
+          it: 'Kurapika incontra [[pakunoda|Pakunoda]] con [[chrollo|Quoll]] in catene e [[melody|Melody]] al suo fianco. Lega Quoll con la Catena del Giudizio: niente Nen e nessun contatto con gli altri membri. Prima di porre la seconda regola esita, ma decide che riavere [[gon-freecss|Gon]] e [[killua|Killua]] viene prima di tutto. Pakunoda dovrà liberare i ragazzi entro mezzanotte senza trucchi e non dire niente su di lui. [[hisoka|Hisoka]] chiede di venire allo scambio, e Kurapika lo lascia fare. Quando Melody conferma che Killua non è controllato, Kurapika scambia Quoll con loro e se ne va con i suoi amici.',
+          en: 'Kurapika meets [[pakunoda|Pakunoda]] with [[chrollo|Chrollo]] in chains and [[melody|Melody]] at his side. He binds Chrollo with his Judgment Chain: no Nen, and no contact with the other members. Before setting the second rule he hesitates, but decides that getting [[gon-freecss|Gon]] and [[killua|Killua]] back comes first. Pakunoda must free the boys by midnight without tricks and say nothing about him. [[hisoka|Hisoka]] asks to come to the exchange, and Kurapika lets him. Once Melody confirms that Killua is not being controlled, Kurapika trades Chrollo for them and leaves with his friends.',
         },
       },
     },
@@ -620,6 +668,30 @@ export const hunterExamChronicles = {
         body: {
           it: 'Quando [[gon-freecss|Gon]] e [[killua|Killua]] vengono portati al covo della Brigata, c’è anche Hisoka, e lui e Killua fanno finta di non essersi mai visti. Quando [[feitan|Feitan]] afferra Gon, Killua fa un passo per aiutarlo, e Hisoka gli punta una carta al collo per fermarlo. Più tardi i membri si dividono in coppie per cercare l’utilizzatore di catene, e [[machi|Machi]], rimasta senza compagno, deve andare con Hisoka.',
           en: 'When [[gon-freecss|Gon]] and [[killua|Killua]] are brought to the Troupe’s hideout, Hisoka is there, and he and Killua act as if they have never met. When [[feitan|Feitan]] grabs Gon, and Killua steps forward to help him, Hisoka holds a playing card to Killua’s neck to stop him. Later the members split into pairs to search for the chain user, and [[machi|Machi]], left without a partner, has to go with Hisoka.',
+        },
+      },
+    },
+    // His fortune is chapter 105 and episode 54; the fake and what he has told Kurapika are chapter 106 and episode 55. His real fortune is told only at chapter 119 and episode 58. Italian: Tela Fantasma (Italian Wikipedia, as in #973).
+    {
+      episode: 55,
+      chapter: 106,
+      value: {
+        title: { it: 'La profezia falsa', en: 'The fake fortune' },
+        body: {
+          it: 'Quando [[pakunoda|Pakunoda]] vuole vedere la sua profezia, Hisoka la copre con una falsa usando la Tela Fantasma prima di dargliela. Il falso fa pensare a [[nobunaga|Nobunaga]] che abbia venduto [[uvogin|Uborghin]] all’utilizzatore di catene, e Nobunaga sguaina la spada; Hisoka dice soltanto che il primo verso è vero e che si difenderà. In realtà ha rivelato all’utilizzatore di catene solo le abilità di Uborghin e di [[shizuku|Shizuku]]. [[chrollo|Quoll]] legge il falso come Hisoka sperava e decide che la Brigata resterà a York Shin City, e così Hisoka potrebbe avere l’occasione di combattere con lui.',
+          en: 'When [[pakunoda|Pakunoda]] wants to see his fortune, Hisoka covers it with a fake one using Texture Surprise before handing it over. The fake makes [[nobunaga|Nobunaga]] think that he sold out [[uvogin|Uvogin]] to the chain user, and Nobunaga draws his sword; Hisoka says only that the first verse is true and that he will defend himself. In fact he has told the chain user only Uvogin’s and [[shizuku|Shizuku]]’s abilities. [[chrollo|Chrollo]] reads the fake as Hisoka hoped and decides that the Troupe will stay in Yorknew City, which might give Hisoka his chance to fight him.',
+        },
+      },
+    },
+    // The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only.
+    {
+      episode: 58,
+      chapter: 119,
+      value: {
+        title: { it: 'Un giocattolo rotto', en: 'A broken toy' },
+        body: {
+          it: 'Hisoka vuole combattere con [[chrollo|Quoll]] mentre il capo è in ostaggio, così chiede aiuto a [[illumi|Illumi]] e lascia il covo della Brigata. Si presenta all’aeroporto mentre [[pakunoda|Pakunoda]] e i ragazzi salgono a bordo, e chiede a [[kurapika|Kurapika]] di venire allo scambio per poter combattere con Quoll. Quando Quoll è libero, Hisoka lo sfida, ma Quoll dice che non può usare il Nen. Hisoka, che non sa che farsene dei giocattoli rotti, lo lascia. Manda un messaggio a Illumi per dirgli che non ha più bisogno del suo aiuto, e racconta a [[pakunoda|Pakunoda]] la sua vera profezia: avrebbe affrontato Quoll e, quando se ne fosse andato, la Brigata sarebbe stata dimezzata.',
+          en: 'Hisoka wants to fight [[chrollo|Chrollo]] while the leader is a hostage, so he asks [[illumi|Illumi]] for help and slips away from the Troupe’s hideout. He turns up at the airport as [[pakunoda|Pakunoda]] and the boys board, and asks [[kurapika|Kurapika]] to let him come to the exchange so that he can fight Chrollo. Once Chrollo is free, Hisoka challenges him, but Chrollo says he cannot use Nen. Hisoka, who has no use for broken toys, leaves him. He texts Illumi that he no longer needs his help, and tells [[pakunoda|Pakunoda]] what his real fortune said: he would face Chrollo, and by the time he left, the Troupe would be cut in half.',
         },
       },
     },
@@ -837,6 +909,30 @@ export const hunterExamChronicles = {
         body: {
           it: 'Prigioniero al covo della Brigata sotto la sorveglianza di [[nobunaga|Nobunaga]], Killua sente nella testa la voce del fratello [[illumi|Illumi]] che gli dice che non può vincere. Si alza per affrontare Nobunaga, poi si blocca e prende invece a pugni il muro. Si offre di trattenere Nobunaga perché [[gon-freecss|Gon]] possa scappare, e Gon per questo gli dà un pugno in testa. Alla fine scappano entrambi attraverso i muri. Fuori, Killua dice a Gon che l’utilizzatore di catene è [[kurapika|Kurapika]] e che devono diventare molto più forti prima di affrontare la Brigata.',
           en: 'Held at the Troupe’s hideout under [[nobunaga|Nobunaga]]’s guard, Killua hears his brother [[illumi|Illumi]]’s voice in his head, telling him he cannot win. He stands up to face Nobunaga, then freezes and punches the wall instead. He offers to hold Nobunaga off so that [[gon-freecss|Gon]] can escape, and Gon hits him on the head for it. In the end they both escape through the walls. Outside, Killua tells Gon that the chain user is [[kurapika|Kurapika]], and that they need to get much stronger before they face the Troupe.',
+        },
+      },
+    },
+    // Chapters 107-108 and episode 55.
+    {
+      episode: 55,
+      chapter: 108,
+      value: {
+        title: { it: 'Il covo moltiplicato', en: 'The hideout multiplied' },
+        body: {
+          it: 'Senza più la taglia, Killua vuole smettere di dare la caccia alla Brigata e raccogliere invece i soldi per il gioco della scheda di memoria di Ging. [[gon-freecss|Gon]] dice di avere un piano per il gioco, ma non dice quale, e Killua accetta di continuare se li aiuta [[kurapika|Kurapika]]. Il piano di Kurapika è catturare [[pakunoda|Pakunoda]]: Killua sorveglierà il covo della Brigata, [[leorio-paradinight|Leorio]] guiderà e Gon farà da esca. Killua parte per il covo e trova la strada piena di edifici identici che prima non c’erano.',
+          en: 'With the reward canceled, Killua wants to stop chasing the Troupe and raise money for the game on Ging’s memory card instead. [[gon-freecss|Gon]] says he has a plan for the game, though he will not say what, and Killua agrees to keep going if [[kurapika|Kurapika]] helps them. Kurapika’s plan is to capture [[pakunoda|Pakunoda]], with Killua watching the Troupe’s hideout, [[leorio-paradinight|Leorio]] driving and Gon as the decoy. Killua leaves to watch the hideout and finds the street full of identical buildings that were not there before.',
+        },
+      },
+    },
+    // Chapters 112-114 and episode 57.
+    {
+      episode: 57,
+      chapter: 114,
+      value: {
+        title: { it: 'Il blackout', en: 'The blackout' },
+        body: {
+          it: 'Prigioniero nell’atrio dell’Hotel Beitacle, Killua chiude gli occhi dicendo di non voler vedere le facce della Brigata, così lui e [[gon-freecss|Gon]] si abituano al buio prima che la luce se ne vada. Al blackout si libera dal filo di [[machi|Machi]] e rompe il braccio sinistro a [[pakunoda|Pakunoda]], e Gon le dà un calcio sul mento. Killua prova a uccidere Machi per liberare Gon, ma Machi gli blocca la mano con i muscoli. [[nobunaga|Nobunaga]] afferra Gon. Poi la Brigata si accorge che [[chrollo|Quoll]] non c’è più.',
+          en: 'Held in the lobby of the Hotel Beitacle, Killua closes his eyes, saying he does not want to see the Troupe’s faces, so that he and [[gon-freecss|Gon]] are used to the dark before the lights go out. When the blackout comes, he frees himself from [[machi|Machi]]’s thread and breaks [[pakunoda|Pakunoda]]’s left arm, and Gon kicks her in the chin. Killua tries to kill Machi to free Gon, but Machi traps his hand in her muscles. [[nobunaga|Nobunaga]] catches Gon. Then the Troupe realizes that [[chrollo|Chrollo]] is gone.',
         },
       },
     },
