@@ -114,7 +114,7 @@ const EXPECTED: Record<string, Expected> = {
       linkedOrigins: 7,
       places: 16,
       statuses: 131,
-      timelines: 336,
+      timelines: 375,
       visits: 0,
     },
     namesSaidEarly: true,
