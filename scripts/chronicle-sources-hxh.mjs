@@ -242,7 +242,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
-      note: 'Corrected after review: he does not reach Kurapika’s airship: he turns up at the airport as Pakunoda and the boys board. In Italian, “mentre il capo è in ostaggio”. The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the text to Illumi says he no longer needs his help, since the stand-in it ends is left out. he does not reach Kurapika’s airship: he turns up at the airport as Pakunoda and the boys board. In Italian, “mentre il capo è in ostaggio”. The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only. Checked on the episode page and the chapter pages.',
     },
   },
   'hanzo': {
@@ -1038,7 +1038,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     54: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
-      note: 'Corrected after review: the fortune is what it says, not a fact, as in Chrollo’s and Shizuku’s stories. Chapters 102-104 and episode 54. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the English names Nobunaga where “his” was unclear. the fortune is what it says, not a fact, as in Chrollo’s and Shizuku’s stories. Chapters 102-104 and episode 54. Checked on the episode page and the chapter pages.',
     },
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
@@ -1062,7 +1062,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
-      note: 'Corrected after review: “controls them” became “controls Pakunoda and Machi”. Chapter 118 and episode 58. His meeting with the boys at the auction is chapter 120 and is left out. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: Gon says that Pakunoda and Machi want their leader back. “controls them” became “controls Pakunoda and Machi”. Chapter 118 and episode 58. His meeting with the boys at the auction is chapter 120 and is left out. Checked on the episode page and the chapter pages.',
     },
   },
   'light-nostrade': {
@@ -1152,11 +1152,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     55: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
-      note: 'Corrected after review: Hisoka’s answer now comes before Nobunaga draws his sword. The fake fortune is chapter 106, the groups and the copies chapter 108, all in episode 55. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the order follows both media, as in Hisoka’s 55/106 story: Nobunaga draws his sword, Hisoka says only that the first verse is true, and when Nobunaga attacks, Chrollo moves him away. The fake fortune is chapter 106, the groups and the copies chapter 108, all in episode 55. Checked on the episode page and the chapter pages.',
     },
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
-      note: 'Chapters 109-111 and episode 56. The hotel is not named before episode 57; Chrollo’s words to Gon differ between the pages, so the story says only that he gives no clear answer. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “where they are” became “where his copies are”, so it cannot be read as the original eyes. Chapters 109-111 and episode 56. The hotel is not named before episode 57; Chrollo’s words to Gon differ between the pages, so the story says only that he gives no clear answer. Checked on the episode page and the chapter pages.',
     },
     57: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
@@ -1176,7 +1176,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'eliza': {
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
-      note: 'Chapters 109 and 112 (pages 1-8) and episode 56. Her strange feeling when Squala dies is anime-only. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “a better future” is the episode’s phrasing; Squala thinks about their future together. Chapters 109 and 112 (pages 1-8) and episode 56. Her strange feeling when Squala dies is anime-only. Checked on the episode page and the chapter pages.',
     },
   },
 }
