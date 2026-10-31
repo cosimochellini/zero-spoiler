@@ -615,14 +615,14 @@ export const YORKNEW_CITY_DRAWINGS = {
     shadow(84, 172, 62),
   ],
   // Eliza's dark kimono from the front, its long sleeves hanging, the
-  // collar crossed left over right, the obi in tint and the far half
-  // hatched: she always wears one, and is named in Squala's memories,
-  // episode 56 / chapter 112. No face.
+  // collar crossed wearer's left over right, a 'y' seen from the front, the
+  // obi in tint and the far half hatched: she always wears one, and is
+  // named in Squala's memories, episode 56 / chapter 112. No face.
   'eliza': [
     {
       d: 'M66 34 L40 44 L16 54 V124 Q16 132 24 132 H44 L48 172 H112 L116 132 H136 Q144 132 144 124 V54 L120 44 L94 34',
     },
-    { d: 'M66 34 L96 112 M94 34 L80 70', role: 'soft' },
+    { d: 'M94 34 L64 112 M66 34 L80 70', role: 'soft' },
     { d: 'M66 34 Q80 40 94 34', role: 'soft' },
     { d: 'M46 108 H114 V128 H46 Z', role: 'accent' },
     { d: 'M44 132 V80 M116 132 V80 M22 64 V120', role: 'soft' },
@@ -963,11 +963,11 @@ export const yorknewCityRedrawn: Redrawings = {
     },
   ],
   'cemetery-building': [
-    // The same building shaken by a blast below its ground line, a crack at
-    // its foot: the Zoldycks' blast shakes it (chapter 100) and the guests
-    // feel the explosion in the basement (episode 53), episode 53 /
-    // chapter 100. The ruined room is inside and not drawn. No rebuild
-    // follows, so this is its last drawing in the arc.
+    // The same building shaken by a blast below its ground line: the
+    // Zoldycks' blast shakes it (chapter 100) and the guests feel the
+    // explosion in the basement (episode 53), episode 53 / chapter 100. The
+    // ruined room is inside and not drawn. No rebuild follows, so this is
+    // its last drawing in the arc.
     {
       episode: 53,
       chapter: 100,
@@ -977,7 +977,6 @@ export const yorknewCityRedrawn: Redrawings = {
           d: 'M78 186 V158 M70 186 L54 160 M86 186 L102 160 M64 190 L36 168 M92 190 L120 168 M60 194 L22 182 M96 194 L134 182',
           role: 'ambient',
         },
-        { d: 'M58 150 l5 7 l6 -5 l5 8 l6 -6 l5 7 l6 -5 l5 6', role: 'soft' },
         {
           d: 'M34 50 v14 M28 60 v14 M34 96 v14 M136 50 v14 M142 60 v14 M136 96 v14',
           role: 'soft',

@@ -690,7 +690,7 @@ describe('the Cemetery Building after the blast', () => {
       { unit: 'chapter', opens: 72, blast: 100, locale },
     ]),
   )(
-    'shows the smoke from $unit $blast ($locale)',
+    'shows the blast below it and the shaking from $unit $blast ($locale)',
     ({ unit, opens, blast, locale }) => {
       const first = readerFor(archive, at(unit, opens), locale)
       const before = readerFor(archive, at(unit, blast - 1), locale)
