@@ -956,8 +956,13 @@ export const yorknewCityRedrawn: Redrawings = {
           PAKUNODA_JACKET,
           'translate(66 153) rotate(-4) scale(1 0.4) translate(-80 -104)',
         ),
-        { d: 'M118 166 H156 V171 H138 L135 180 H125 L128 171 H118 Z' },
-        { d: `${ellipse(132, 168.5, 6, 4)} M156 166 v-3`, role: 'soft' },
+        {
+          d: 'M138 164 H156 V169 H138 M124 160 H138 V172 H124 Z M124 162 L116 163 L108 179 L116 182 L122 172 H124',
+        },
+        {
+          d: 'M124 164 H138 M124 168 H138 M156 164 v-3 M126 172 C126 179 134 179 134 172',
+          role: 'soft',
+        },
         { d: 'M4 182 H156', role: 'ambient', dashed: true },
       ],
     },
