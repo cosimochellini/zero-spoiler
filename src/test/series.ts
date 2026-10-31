@@ -110,7 +110,7 @@ const EXPECTED: Record<string, Expected> = {
       affiliations: 128,
       arcs: 7,
       characters: 93,
-      chronicles: 220,
+      chronicles: 247,
       linkedOrigins: 7,
       places: 16,
       statuses: 131,

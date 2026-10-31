@@ -55,6 +55,21 @@ export const yorknewCityChronicles = {
         },
       },
     },
+    // Chapters 109-111 and episode 56. What she says to calm Kurapika differs between the pages.
+    {
+      episode: 56,
+      chapter: 111,
+      value: {
+        title: {
+          it: 'Sulle tracce della Brigata',
+          en: 'On the Troupe’s trail',
+        },
+        body: {
+          it: '[[kurapika|Kurapika]] chiede a Melody di aiutare [[killua|Killua]] a sorvegliare il covo della Brigata. Con il suo udito sente i membri della Brigata muoversi, e lei e Killua li seguono fino a un treno diretto verso l’albergo della famiglia Nostrad. Quando la Brigata cattura [[gon-freecss|Gon]] e Killua, Kurapika vuole intervenire, e Melody lo calma.',
+          en: '[[kurapika|Kurapika]] asks Melody to help [[killua|Killua]] watch the Troupe’s hideout. With her hearing she picks up the Troupe members moving, and she and Killua follow them onto a train toward the Nostrade family’s hotel. When the Troupe catches [[gon-freecss|Gon]] and Killua, Kurapika wants to act, and Melody calms him down.',
+        },
+      },
+    },
   ],
   'basho': [
     // Chapter 68 and episode 40.
@@ -130,6 +145,18 @@ export const yorknewCityChronicles = {
         body: {
           it: 'Dopo la fuga di [[uvogin|Uborghin]], le guardie del corpo sopravvissute si ritrovano nell’albergo di [[neon-nostrade|Neon]]. Squala dice agli altri che chi li ha assunti è il padre di Neon, [[light-nostrade|Light Nostrad]]. Raccontano a Neon che alcune guardie sono morte nell’attacco all’asta e chiedono di parlare con suo padre per ricevere ordini. Il gruppo sceglie [[kurapika|Kurapika]] per parlargli.',
           en: 'After [[uvogin|Uvogin]] escapes, the surviving bodyguards regroup at [[neon-nostrade|Neon]]’s hotel. Squala tells the others that the one who hired them is Neon’s father, [[light-nostrade|Light Nostrade]]. They tell Neon that bodyguards died in the attack on the auction and ask to speak to her father for orders. The group chooses [[kurapika|Kurapika]] to talk to him.',
+        },
+      },
+    },
+    // Chapters 109-112 (pages 1-8) and episode 56. The hotel is not named before episode 57.
+    {
+      episode: 56,
+      chapter: 112,
+      value: {
+        title: { it: 'L’ultimo giorno', en: 'His last day' },
+        body: {
+          it: 'Squala aspetta in albergo con i suoi cani mentre [[eliza|Eliza]], la donna che ama, è fuori a fare acquisti con Neon. Quando [[kurapika|Kurapika]] lo avverte che la Brigata sta arrivando, se ne va con gli occhi scarlatti. Nel traffico [[nobunaga|Nobunaga]], [[pakunoda|Pakunoda]] e [[kortopi|Kortopi]] fermano la sua auto. Pakunoda gli punta contro una pistola, gli rompe un braccio e gli chiede dell’utilizzatore di catene; lui dice di non conoscere nessuno così. Poi lei legge il nome di Eliza nei suoi ricordi, e quando Squala reagisce, Nobunaga gli taglia la testa.',
+          en: 'Squala waits at the hotel with his dogs while [[eliza|Eliza]], the woman he loves, is out shopping with Neon. When [[kurapika|Kurapika]] warns him that the Troupe is coming, he leaves with the Scarlet Eyes. In traffic, [[nobunaga|Nobunaga]], [[pakunoda|Pakunoda]] and [[kortopi|Kortopi]] stop his car. Pakunoda holds a gun on him, breaks his arm and asks about the chain user; he says he knows no one like that. Then she reads Eliza’s name in his memories, and when Squala reacts, Nobunaga cuts off his head.',
         },
       },
     },
@@ -282,6 +309,18 @@ export const yorknewCityChronicles = {
         },
       },
     },
+    // Chapters 113-114 and episode 57. Her broken ribs are chapter-only.
+    {
+      episode: 57,
+      chapter: 114,
+      value: {
+        title: { it: 'Gli artigli di Killua', en: 'Killua’s claws' },
+        body: {
+          it: 'Machi tiene [[gon-freecss|Gon]] e [[killua|Killua]] legati con il suo filo nell’atrio dell’Hotel Beitacle. Quando la luce se ne va, Killua si libera e attacca [[pakunoda|Pakunoda]], ma Machi tira Gon indietro con il filo prima che possa scappare. Killua prova a ucciderla per liberare Gon, e Machi gli blocca la mano con i muscoli. Poi scoprono che [[chrollo|Quoll]] è sparito: un biglietto dell’utilizzatore di catene dice che morirà se Pakunoda parla.',
+          en: 'Machi holds [[gon-freecss|Gon]] and [[killua|Killua]] with her thread in the lobby of the Hotel Beitacle. When the lights go out, Killua frees himself and attacks [[pakunoda|Pakunoda]], but Machi pulls Gon back on his thread before he can get away. Killua tries to kill her to free Gon, and Machi traps his hand in her muscles. Then they find that [[chrollo|Chrollo]] is gone: a note from the chain user says he will die if Pakunoda talks.',
+        },
+      },
+    },
   ],
   'ivlenkov': [
     // The escort is chapter 71 and episode 41; the posts for the night are chapter 72 and episode 42.
@@ -357,6 +396,18 @@ export const yorknewCityChronicles = {
         body: {
           it: 'Al covo [[killua|Killua]] riconosce in Shizuku la donna che ha sfidato [[gon-freecss|Gon]] a braccio di ferro. Quando [[nobunaga|Nobunaga]] e [[feitan|Feitan]] si fronteggiano per Gon, lei ricorda una regola: i membri della Brigata non possono combattere tra loro. I due decidono invece con una moneta. [[franklin|Franklin]] dice anche che Gon gli ricorda [[uvogin|Uborghin]].',
           en: 'At the hideout [[killua|Killua]] recognizes Shizuku as the woman who arm-wrestled [[gon-freecss|Gon]]. When [[nobunaga|Nobunaga]] and [[feitan|Feitan]] face off over Gon, she reminds them of a rule: members of the Troupe may not fight each other. The two settle it with a coin instead. [[franklin|Franklin]] also says that Gon reminds him of [[uvogin|Uvogin]].',
+        },
+      },
+    },
+    // Chapter 104 and episode 54.
+    {
+      episode: 54,
+      chapter: 104,
+      value: {
+        title: { it: 'La sua profezia', en: 'Her fortune' },
+        body: {
+          it: 'Dopo che [[chrollo|Quoll]] ha scritto la profezia di [[nobunaga|Nobunaga]] con il potere preso a [[neon-nostrade|Neon]], Shizuku chiede la sua. Con l’aiuto di Quoll interpreta i versi: morirà entro la settimana successiva, e con lei [[shalnark|Shalnark]] e [[pakunoda|Pakunoda]]. Gli altri fanno notare a Nobunaga che dare la caccia all’utilizzatore di catene potrebbe costare loro la vita, e Quoll gli ricorda il suo posto.',
+          en: 'After [[chrollo|Chrollo]] has written [[nobunaga|Nobunaga]]’s fortune with the power he took from [[neon-nostrade|Neon]], Shizuku asks for her own. With Chrollo’s help she works out the verses: she will die within the next week, and so will [[shalnark|Shalnark]] and [[pakunoda|Pakunoda]]. The others point out to Nobunaga that hunting the chain user could get them killed, and Chrollo reminds him of his place.',
         },
       },
     },
@@ -554,6 +605,18 @@ export const yorknewCityChronicles = {
         },
       },
     },
+    // Chapter 118 and episode 58.
+    {
+      episode: 58,
+      chapter: 118,
+      value: {
+        title: { it: 'Il tradimento peggiore', en: 'The worst betrayal' },
+        body: {
+          it: 'Quando [[phinks|Phinks]] non vuole lasciar partire [[pakunoda|Pakunoda]] con gli ostaggi, interviene Franklin. Il caso peggiore, dice, è che la Brigata scompaia, e se si dividono combattendo tra loro sarebbe il tradimento peggiore verso il loro capo. Propone di lasciar andare Pakunoda: se [[chrollo|Quoll]] non torna, potranno uccidere i membri controllati dall’utilizzatore di catene e ricostruire la Brigata. [[machi|Machi]] dice che lei non è controllata e che non si lascerà uccidere.',
+          en: 'When [[phinks|Phinks]] will not let [[pakunoda|Pakunoda]] leave with the hostages, Franklin steps in. The worst that could happen, he says, is the Troupe dying out, and if they fall apart fighting each other, it would be the worst betrayal of their leader. He proposes letting Pakunoda go: if [[chrollo|Chrollo]] does not come back, they can kill any members the chain user controls and rebuild the Troupe. [[machi|Machi]] says that she is not being controlled and will not let them kill her.',
+        },
+      },
+    },
   ],
   'nobunaga': [
     // The cloth and the other Shadow Beasts’ arrival are chapter 77
@@ -590,6 +653,30 @@ export const yorknewCityChronicles = {
         body: {
           it: 'Al covo Nobunaga sfida [[gon-freecss|Gon]] a braccio di ferro e gli sbatte giù la mano più volte mentre parla di [[uvogin|Uborghin]]: lo conosceva meglio di chiunque altro, e piange mentre giura di trovare l’utilizzatore di catene. Quando Gon, arrabbiato, gli sbatte giù la mano a sua volta, Nobunaga gli chiede di entrare nella Brigata; Gon preferirebbe morire. Nobunaga intuisce che appartiene al Potenziamento e resta con la sua spada a sorvegliare i ragazzi finché non torna il capo: se il capo non li vuole, potranno andarsene. Invece Gon e [[killua|Killua]] scappano entrambi attraverso i muri. Nobunaga insegue Gon e usa l’En, ma i ragazzi sono già lontani.',
           en: 'At the hideout Nobunaga arm-wrestles [[gon-freecss|Gon]] and slams his hand down again and again while he talks about [[uvogin|Uvogin]]: he knew Uvogin better than anyone, and he cries as he swears to find the chain user. When Gon, angry, slams Nobunaga’s hand down in turn, Nobunaga asks him to join the Troupe; Gon would rather die. Nobunaga guesses he is an Enhancer and stays behind with his sword to guard the boys until the leader returns: if the leader does not want them, they can go. Instead Gon and [[killua|Killua]] both break out through the walls. Nobunaga chases Gon and uses En, but the boys are already gone.',
+        },
+      },
+    },
+    // Chapters 102-104 and episode 54.
+    {
+      episode: 54,
+      chapter: 104,
+      value: {
+        title: { it: 'Un ordine del capo?', en: 'An order from the leader?' },
+        body: {
+          it: 'Quando [[chrollo|Quoll]] ordina alla Brigata di lasciare York Shin City quella notte, Nobunaga si rifiuta: devono ancora trovare l’utilizzatore di catene che ha ucciso [[uvogin|Uborghin]]. [[franklin|Franklin]] gli dice di obbedire, e Nobunaga chiede a Quoll se quello è davvero un ordine del loro capo. Prima di rispondere, Quoll gli chiede data di nascita, gruppo sanguigno e nome e scrive la sua profezia con il potere preso a [[neon-nostrade|Neon]]: moriranno altri membri della Brigata. La profezia di [[shizuku|Shizuku]] dice che tra loro ci saranno lei, [[shalnark|Shalnark]] e [[pakunoda|Pakunoda]]. Quoll ricorda a Nobunaga il suo posto nella Brigata.',
+          en: 'When [[chrollo|Chrollo]] orders the Troupe to leave Yorknew City that night, Nobunaga refuses: they still have to find the chain user who killed [[uvogin|Uvogin]]. [[franklin|Franklin]] tells him to obey, and Nobunaga asks Chrollo whether that is really an order from their leader. Before answering, Chrollo asks for his birth date, blood type and name and writes his fortune with the power he took from [[neon-nostrade|Neon]]: more members of the Troupe will die. [[shizuku|Shizuku]]’s fortune says that she, [[shalnark|Shalnark]] and [[pakunoda|Pakunoda]] are among them. Chrollo reminds Nobunaga of his place in the Troupe.',
+        },
+      },
+    },
+    // Chapters 109-112 (pages 1-8) and episode 56.
+    {
+      episode: 56,
+      chapter: 112,
+      value: {
+        title: { it: 'Squala', en: 'Squala' },
+        body: {
+          it: 'Quando le copie degli occhi scarlatti fatte da [[kortopi|Kortopi]] portano la Brigata all’albergo della famiglia Nostrad, Nobunaga vuole andarci subito. Va avanti con [[pakunoda|Pakunoda]] e Kortopi e ferma l’auto di [[squala|Squala]] nel traffico. Mentre Pakunoda lo interroga, Nobunaga gli taglia la testa. Poi Pakunoda gli spara nella testa con il suo Nen l’immagine dell’utilizzatore di catene, e Nobunaga, vedendo la faccia di chi ha ucciso [[uvogin|Uborghin]], vuole vendetta.',
+          en: 'When [[kortopi|Kortopi]]’s copies of the Scarlet Eyes lead the Troupe to the Nostrade family’s hotel, Nobunaga wants to go at once. He goes ahead with [[pakunoda|Pakunoda]] and Kortopi and stops [[squala|Squala]]’s car in traffic. While Pakunoda questions Squala, Nobunaga cuts off his head. Then Pakunoda fires the chain user’s image into Nobunaga’s head with her Nen, and Nobunaga, seeing the face of the one who killed [[uvogin|Uvogin]], wants revenge.',
         },
       },
     },
@@ -633,6 +720,18 @@ export const yorknewCityChronicles = {
         body: {
           it: 'Mentre [[machi|Machi]] e [[nobunaga|Nobunaga]] si fanno seguire da [[gon-freecss|Gon]] e [[killua|Killua]], Phinks e [[pakunoda|Pakunoda]] seguono a loro volta i ragazzi. Quando i ragazzi provano a scappare, Phinks blocca Killua. Lo afferra per una gamba, non si lascia distrarre dai sassi che Killua gli lancia e ferma il suo calcio. Killua si libera con una torsione, ma compare Nobunaga e lo ferma, e Killua si arrende. I ragazzi vengono portati al covo.',
           en: 'While [[machi|Machi]] and [[nobunaga|Nobunaga]] draw [[gon-freecss|Gon]] and [[killua|Killua]] after them, Phinks and [[pakunoda|Pakunoda]] follow the boys in turn. When the boys try to run, Phinks blocks Killua. He catches Killua by the leg, is not fooled by the stones Killua throws to distract him, and stops his kick. Killua twists free, but Nobunaga appears and stops him, and Killua gives himself up. The boys are taken to the hideout.',
+        },
+      },
+    },
+    // Chapter 118 and episode 58. His meeting with the boys at the auction is chapter 120 and is left out.
+    {
+      episode: 58,
+      chapter: 118,
+      value: {
+        title: { it: 'Non lasciarla andare', en: 'Not letting her go' },
+        body: {
+          it: 'Quando [[pakunoda|Pakunoda]] torna dall’utilizzatore di catene, Phinks vuole sapere dov’è e non vuole lasciarla andare senza saperlo. Lei si rifiuta, e [[machi|Machi]] si schiera con lei; [[feitan|Feitan]] sospetta che l’utilizzatore di catene le controlli. [[gon-freecss|Gon]] grida che vogliono solo riavere il loro capo, e Phinks e Gon litigano finché [[franklin|Franklin]] non convince gli altri a lasciar andare Pakunoda. Quando [[kurapika|Kurapika]] chiama, Phinks lancia il telefono a Gon, poi dice a Kurapika che faranno come chiede.',
+          en: 'When [[pakunoda|Pakunoda]] comes back from the chain user, Phinks demands to know where he is and will not let her leave without telling. She refuses, and [[machi|Machi]] takes her side; [[feitan|Feitan]] suspects that the chain user controls them. [[gon-freecss|Gon]] shouts that they only want their leader back, and Phinks and Gon argue until [[franklin|Franklin]] persuades the others to let Pakunoda go. When [[kurapika|Kurapika]] calls, Phinks throws the phone to Gon, then tells Kurapika that they will do as he says.',
         },
       },
     },
@@ -770,6 +869,42 @@ export const yorknewCityChronicles = {
         },
       },
     },
+    // Chapters 111-112 (pages 1-8) and episode 56. Italian: Proiettile Mnemonico (Italian Wikipedia, Brigata Fantasma).
+    {
+      episode: 56,
+      chapter: 112,
+      value: {
+        title: { it: 'I ricordi di Squala', en: 'Squala’s memories' },
+        body: {
+          it: 'Pakunoda va avanti con [[nobunaga|Nobunaga]] e [[kortopi|Kortopi]] dietro a [[squala|Squala]]. Gli punta contro una pistola, gli rompe un braccio e gli chiede dell’utilizzatore di catene. Lui dice di non sapere niente, ma nei suoi ricordi lei trova il nome di [[eliza|Eliza]], la donna che ama, e Nobunaga lo uccide. Poi spara il suo Proiettile Mnemonico nella testa di Nobunaga e di Kortopi, e mostra loro quello che ha trovato: l’aspetto dell’utilizzatore di catene.',
+          en: 'Pakunoda goes ahead with [[nobunaga|Nobunaga]] and [[kortopi|Kortopi]] after [[squala|Squala]]. She holds a gun on him, breaks his arm and asks about the chain user. He says he knows nothing, but in his memories she finds the name of [[eliza|Eliza]], the woman he loves, and Nobunaga kills him. Then she fires her Memory Bomb into the heads of Nobunaga and Kortopi, showing them what she found: what the chain user looks like.',
+        },
+      },
+    },
+    // The blackout is chapters 113-114, the call chapter 115, all in episode 57. Her reading of the note and her memory of the Troupe’s founding are chapter-only.
+    {
+      episode: 57,
+      chapter: 115,
+      value: {
+        title: { it: 'Il biglietto', en: 'The note' },
+        body: {
+          it: 'Su ordine di [[chrollo|Quoll]], Pakunoda controlla di nuovo i ricordi di [[gon-freecss|Gon]] e [[killua|Killua]], proprio mentre la luce se ne va. Al buio Killua le rompe il braccio sinistro e Gon le dà un calcio sul mento. Poi Quoll non c’è più, e un biglietto dice che morirà se lei rivela quello che ha letto nei ricordi dei ragazzi, così lei tace. Quando arrivano [[phinks|Phinks]] e altri, [[kurapika|Kurapika]] chiama con le sue richieste e chiede di Pakunoda. Le dice di venire da sola in un posto che le indicherà, e lei se ne va da sola.',
+          en: 'At [[chrollo|Chrollo]]’s order Pakunoda checks [[gon-freecss|Gon]] and [[killua|Killua]]’s memories again, just as the lights go out. In the dark Killua breaks her left arm and Gon kicks her in the chin. Then Chrollo is gone, and a note says he will die if she reveals what she read in the boys’ memories, so she keeps quiet. When [[phinks|Phinks]] and others arrive, [[kurapika|Kurapika]] calls with his demands and asks for Pakunoda. He tells her to come alone to a place he will give her, and she leaves alone.',
+        },
+      },
+    },
+    // Chapters 117-119 and episode 58. Italian: Proiettile Mnemonico (Italian Wikipedia, Brigata Fantasma).
+    {
+      episode: 58,
+      chapter: 119,
+      value: {
+        title: { it: 'Sei proiettili', en: 'Six bullets' },
+        body: {
+          it: 'Pakunoda incontra [[kurapika|Kurapika]] da sola, e [[melody|Melody]] conferma che dice la verità. Kurapika la lega con la Catena del Giudizio: dovrà riportare [[gon-freecss|Gon]] e [[killua|Killua]] sani e salvi entro mezzanotte senza trucchi, e non dire niente su di lui. Al covo si rifiuta di dire a [[phinks|Phinks]] dov’è l’utilizzatore di catene; [[machi|Machi]] si schiera con lei, e [[franklin|Franklin]] convince gli altri a lasciarla andare. Dopo lo scambio torna, punta la pistola su sei membri e spara loro il suo Proiettile Mnemonico, condividendo i suoi ricordi. La Catena del Giudizio la uccide, e lei spera di essere l’ultima della Brigata a morire.',
+          en: 'Pakunoda meets [[kurapika|Kurapika]] alone, and [[melody|Melody]] confirms that she is telling the truth. Kurapika binds her with his Judgment Chain: she must bring back [[gon-freecss|Gon]] and [[killua|Killua]] unharmed by midnight without tricks, and say nothing about him. At the hideout she refuses to tell [[phinks|Phinks]] where the chain user is; [[machi|Machi]] takes her side, and [[franklin|Franklin]] persuades the others to let her go. After the exchange she returns, takes aim at six members and fires her Memory Bomb into them, sharing her memories. The Judgment Chain kills her, and she hopes to be the last member of the Troupe to die.',
+        },
+      },
+    },
   ],
   'zenji': [
     // Chapter 95 and episode 51.
@@ -810,6 +945,108 @@ export const yorknewCityChronicles = {
         body: {
           it: 'Kortopi è uno dei membri della Brigata Fantasma. Quando la Brigata manda avanti di nascosto l’asta riaperta, lui crea copie esatte degli oggetti rubati con la sua abilità, La Mano Sinistra di Dio e la Mano Destra del Diavolo. [[pakunoda|Pakunoda]] porta le copie sul palco, e le offerte vanno avanti senza che nessuno se ne accorga. Intanto [[shalnark|Shalnark]] controlla il banditore con il suo Nen.',
           en: 'Kortopi is one of the members of the Phantom Troupe. When the Troupe runs the reopened auction from backstage, he makes exact copies of the stolen items with his ability, Gallery Fake. [[pakunoda|Pakunoda]] brings the copies onto the stage, and the bidding goes on without anyone noticing. Meanwhile [[shalnark|Shalnark]] controls the auctioneer with his Nen.',
+        },
+      },
+    },
+    // Chapter 108 and episode 55.
+    {
+      episode: 55,
+      chapter: 108,
+      value: {
+        title: { it: 'Cinquanta covi', en: 'Fifty hideouts' },
+        body: {
+          it: 'Quando [[chrollo|Quoll]] divide la Brigata in gruppi, Kortopi finisce con [[phinks|Phinks]] e [[feitan|Feitan]]. [[machi|Machi]] ha un presentimento sui due ragazzi che sono scappati, così per prudenza Kortopi copia con la sua abilità l’edificio del covo cinquanta volte. Quando [[killua|Killua]] arriva per sorvegliare il covo, trova la strada piena di edifici identici.',
+          en: 'When [[chrollo|Chrollo]] splits the Troupe into groups, Kortopi is put with [[phinks|Phinks]] and [[feitan|Feitan]]. [[machi|Machi]] has a hunch about the two boys who escaped, so as a precaution Kortopi uses his ability to copy the hideout building fifty times. When [[killua|Killua]] comes to watch the hideout, he finds the street full of identical buildings.',
+        },
+      },
+    },
+  ],
+  'chrollo': [
+    // His record opens at episode 54 (unanchored), so his chronicle opens here and looks back over episodes 41-53: the order (chapter 71), Neon and the requiem (chapters 95-97), the Zoldycks and Illumi (chapters 98-100), the fake bodies (chapter 104). The fortunes are chapters 102-104 and episode 54. His book, the Indoor Fish and the copies he ordered are told differently by the two media and are left out.
+    {
+      episode: 54,
+      chapter: 104,
+      value: {
+        title: { it: 'Il capo della Brigata', en: 'The Troupe’s leader' },
+        body: {
+          it: 'Quoll è il capo della Brigata Fantasma. Ha ordinato l’attacco all’asta sotterranea, si è fatto predire il futuro da [[neon-nostrade|Neon]], poi l’ha stordita e le ha rubato il potere. Mentre la Brigata uccideva per la città, ha dedicato la strage a [[uvogin|Uborghin]] e ha affrontato [[silva|Silva]] e [[zeno|Zeno]], finché [[illumi|Illumi]], che aveva ingaggiato lui, non ha ucciso i Dieci Anziani. I corpi trovati dalla mafia erano falsi. Ora ordina alla Brigata di lasciare York Shin City, e quando [[nobunaga|Nobunaga]] si rifiuta, scrive la sua profezia con il potere di Neon: moriranno altri membri. La profezia di [[shizuku|Shizuku]] dice che tra loro ci saranno lei, [[shalnark|Shalnark]] e [[pakunoda|Pakunoda]].',
+          en: 'Chrollo is the leader of the Phantom Troupe. He ordered the raid on the Underground Auction, had [[neon-nostrade|Neon]] tell his fortune, then knocked her out and stole her power. While the Troupe killed its way through the city, he dedicated the slaughter to [[uvogin|Uvogin]] and fought [[silva|Silva]] and [[zeno|Zeno]], until [[illumi|Illumi]], whom he had hired, killed the Ten Dons. The bodies the Mafia found were fakes. Now he orders the Troupe to leave Yorknew City, and when [[nobunaga|Nobunaga]] refuses, he writes Nobunaga’s fortune with Neon’s power: more members will die. [[shizuku|Shizuku]]’s fortune says that she, [[shalnark|Shalnark]] and [[pakunoda|Pakunoda]] are among them.',
+        },
+      },
+    },
+    // The fake fortune is chapter 106, the groups and the copies chapter 108, all in episode 55.
+    {
+      episode: 55,
+      chapter: 108,
+      value: {
+        title: { it: 'La profezia di Hisoka', en: 'Hisoka’s fortune' },
+        body: {
+          it: 'Quando [[pakunoda|Pakunoda]] mostra agli altri la profezia di [[hisoka|Hisoka]], [[nobunaga|Nobunaga]] sguaina la spada, e Quoll lo allontana da Hisoka con un’abilità. Hisoka dice soltanto che il primo verso è vero. Dalla profezia Quoll deduce che l’utilizzatore di catene ha almeno due abilità: una con cui ha catturato [[uvogin|Uborghin]] e una che limita quello che Hisoka può dire. Non sa che la profezia è un falso di Hisoka. Quoll decide che la Brigata resterà a York Shin City, la divide in gruppi e, per prudenza verso i due ragazzi, fa copiare più volte il covo a [[kortopi|Kortopi]].',
+          en: 'When [[pakunoda|Pakunoda]] shows the others [[hisoka|Hisoka]]’s fortune, [[nobunaga|Nobunaga]] draws his sword, and Chrollo moves him away from Hisoka with an ability. Hisoka will say only that the first verse is true. From the fortune Chrollo works out that the chain user has at least two abilities: one that captured [[uvogin|Uvogin]] and one that restricts what Hisoka can say. He does not know that Hisoka faked the fortune. Chrollo decides that the Troupe will stay in Yorknew City, splits it into groups and, as a precaution against the two boys, has [[kortopi|Kortopi]] copy the hideout many times over.',
+        },
+      },
+    },
+    // Chapters 109-111 and episode 56. The hotel is not named before episode 57; Chrollo’s words to Gon differ between the pages, so the story says only that he gives no clear answer.
+    {
+      episode: 56,
+      chapter: 111,
+      value: {
+        title: { it: 'Sulle tracce degli occhi', en: 'Following the eyes' },
+        body: {
+          it: 'Quoll capisce che [[neon-nostrade|Neon]] colleziona parti di corpi e che l’utilizzatore di catene deve cercare gli occhi scarlatti. [[kortopi|Kortopi]] ha copiato gli occhi all’asta e sa dire dove si trovano: nell’albergo della famiglia Nostrad. Quoll ci va con cinque membri. Quando si accorge di essere seguito, si ferma con [[machi|Machi]] e [[shizuku|Shizuku]], e [[gon-freecss|Gon]] e [[killua|Killua]] escono allo scoperto e si arrendono. Gon gli chiede come possa uccidere persone che non hanno niente a che fare con lui, e Quoll non gli dà una risposta chiara.',
+          en: 'Chrollo realizes that [[neon-nostrade|Neon]] collects body parts and that the chain user must be after the Scarlet Eyes. [[kortopi|Kortopi]] copied the eyes at the auction and can tell where they are: at the Nostrade family’s hotel. Chrollo heads there with five members. When he senses they are being followed, he stops with [[machi|Machi]] and [[shizuku|Shizuku]], and [[gon-freecss|Gon]] and [[killua|Killua]] come out and give themselves up. Gon asks him how he can kill people who have nothing to do with him, and Chrollo gives him no clear answer.',
+        },
+      },
+    },
+    // Chapters 112-114 and episode 57. His words in the car and as a hostage are chapter-only.
+    {
+      episode: 57,
+      chapter: 114,
+      value: {
+        title: { it: 'Nel buio', en: 'In the dark' },
+        body: {
+          it: 'Quoll aspetta nell’atrio dell’Hotel Beitacle con alcuni membri della Brigata e i due prigionieri, [[gon-freecss|Gon]] e [[killua|Killua]], e dice a [[pakunoda|Pakunoda]] di controllare di nuovo i ricordi dei ragazzi. In quel momento la luce se ne va. Quando gli altri lo cercano, Quoll non c’è più: [[kurapika|Kurapika]] lo ha preso con le sue catene. Un biglietto dice che Quoll morirà se Pakunoda racconta agli altri quello che ha letto nei ricordi dei ragazzi.',
+          en: 'Chrollo waits in the lobby of the Hotel Beitacle with members of the Troupe and their two prisoners, [[gon-freecss|Gon]] and [[killua|Killua]], and tells [[pakunoda|Pakunoda]] to check the boys’ memories again. At that moment the lights go out. When the others look for him, Chrollo is gone: [[kurapika|Kurapika]] has taken him in his chains. A note says that Chrollo will die if Pakunoda tells the others what she read in the boys’ memories.',
+        },
+      },
+    },
+    // Chapters 117-119 and episode 58. Looking east for the last part of his fortune is chapter-only.
+    {
+      episode: 58,
+      chapter: 119,
+      value: {
+        title: { it: 'Senza Nen', en: 'No more Nen' },
+        body: {
+          it: 'Per riavere [[gon-freecss|Gon]] e [[killua|Killua]], [[kurapika|Kurapika]] accetta di liberare Quoll a due condizioni, imposte con la Catena del Giudizio: Quoll non potrà usare il Nen né avere contatti con gli altri membri della Brigata. [[pakunoda|Pakunoda]] porta i ragazzi, e lo scambio avviene. [[hisoka|Hisoka]], che è venuto con loro, sfida finalmente Quoll, ma Quoll gli dice che non può usare il Nen. Hisoka perde ogni interesse e lo lascia.',
+          en: 'To get [[gon-freecss|Gon]] and [[killua|Killua]] back, [[kurapika|Kurapika]] agrees to release Chrollo on two conditions, bound by his Judgment Chain: Chrollo may not use Nen, and he may not contact the other members of the Troupe. [[pakunoda|Pakunoda]] brings the boys, and the exchange is made. [[hisoka|Hisoka]], who came along, finally challenges Chrollo, but Chrollo tells him that he cannot use Nen. Hisoka loses interest and leaves him.',
+        },
+      },
+    },
+  ],
+  'bonolenov': [
+    // Chapter 108 and episode 55. His bandages and the members who stay at the hideout are on the chapter pages only.
+    {
+      episode: 55,
+      chapter: 108,
+      value: {
+        title: { it: 'Un gruppo di tre', en: 'A group of three' },
+        body: {
+          it: 'Bonolenov è uno dei membri della Brigata Fantasma. Dopo le profezie, quando [[chrollo|Quoll]] divide la Brigata in gruppi, Bonolenov finisce con [[franklin|Franklin]] e [[hisoka|Hisoka]]. Negli altri gruppi ci sono Shizuku, Machi e Pakunoda; Kortopi, Feitan e Phinks; e Quoll stesso con Shalnark e Nobunaga.',
+          en: 'Bonolenov is one of the members of the Phantom Troupe. After the fortunes, when [[chrollo|Chrollo]] splits the Troupe into groups, Bonolenov is put with [[franklin|Franklin]] and [[hisoka|Hisoka]]. The other groups are Shizuku, Machi and Pakunoda; Kortopi, Feitan and Phinks; and Chrollo himself with Shalnark and Nobunaga.',
+        },
+      },
+    },
+  ],
+  'eliza': [
+    // Chapters 109 and 112 (pages 1-8) and episode 56. Her strange feeling when Squala dies is anime-only.
+    {
+      episode: 56,
+      chapter: 112,
+      value: {
+        title: { it: 'Nei ricordi di Squala', en: 'In Squala’s memories' },
+        body: {
+          it: 'Eliza è al seguito di [[neon-nostrade|Neon]] ed è fuori con lei a fare acquisti, mentre [[squala|Squala]], che la ama, aspetta in albergo e pensa a un futuro migliore con lei. Quando la Brigata Fantasma cattura Squala, [[pakunoda|Pakunoda]] legge il nome di Eliza nei suoi ricordi, e [[nobunaga|Nobunaga]] uccide Squala.',
+          en: 'Eliza attends [[neon-nostrade|Neon]] and is out shopping with her, while [[squala|Squala]], who loves her, waits at the hotel and thinks about a better future with her. When the Phantom Troupe catches Squala, [[pakunoda|Pakunoda]] reads Eliza’s name in his memories, and [[nobunaga|Nobunaga]] kills Squala.',
         },
       },
     },

@@ -58,6 +58,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: Gon refuses to tell them anything, as both media have him, without ordering the refusal and the question. “kick through” is one medium’s; they break out through the walls, as in Nobunaga’s story. Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
     },
+    55: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
+      note: 'Chapters 107-108 and episode 55. Why Gon asks for the chain differs between the media and is left out. Checked on the episode page and the chapter pages.',
+    },
   },
   'mito-freecss': {
     1: {
@@ -106,6 +110,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Chapter 101 and episode 53. Who drinks at what age differs between the media and is left out. Checked on the episode page and the chapter pages.',
     },
+    57: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
+      note: 'The traffic is chapter 111 and episode 56; the lobby is chapter 112 and episode 57. The time on the radio is chapter-only. Checked on the episode page and the chapter pages.',
+    },
   },
   'kurapika': {
     1: {
@@ -147,6 +155,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     53: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Corrected after review: the leader’s death and the bodies are what Kurapika hears and the Mafia reports, not facts: both media have shown the leader alive by then (chapter 100, episode 53). “he no longer needs their help” is chapter-only; he calls Gon to tell him the members are dead. Chapters 100-101 and episode 53. Whether Kurapika sees the leader’s body himself differs between the pages and is left out. Checked on the episode page and the chapter pages.',
+    },
+    55: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
+      note: 'The reunion, the message from Hisoka and Melody’s call are chapters 102-105 and episode 54; the plan and the chains are chapters 107-108 and episode 55. Meteor City is left unnamed. Checked on the episode page and the chapter pages.',
+    },
+    58: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
+      note: 'Chapters 117-119 and episode 58. His words on the airship after the exchange are chapter-only. Checked on the episode page and the chapter pages.',
     },
   },
   'katzo': {
@@ -219,6 +235,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: Feitan grabs only Gon; Killua steps forward on his own. Chapters 91-92 and episode 50. Gon’s surprise at seeing him is chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    55: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
+      note: 'His fortune is chapter 105 and episode 54; the fake and what he has told Kurapika are chapter 106 and episode 55. His real fortune is told only at chapter 119 and episode 58. Italian: Tela Fantasma (Italian Wikipedia, as in #973). Checked on the episode page and the chapter pages.',
+    },
+    58: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
+      note: 'The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only. Checked on the episode page and the chapter pages.',
     },
   },
   'hanzo': {
@@ -295,6 +319,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: Illumi’s voice now says he cannot win, as both media have it (“do not fight anyone stronger” is episode-only), and the two escape “both” rather than together. Chapters 92-94 and episode 50. Checked on the episode page and the chapter pages.',
+    },
+    55: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
+      note: 'Chapters 107-108 and episode 55. Checked on the episode page and the chapter pages.',
+    },
+    57: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
+      note: 'Chapters 112-114 and episode 57. Checked on the episode page and the chapter pages.',
     },
   },
   'menchi': {
@@ -784,6 +816,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_44_(2011)',
       note: 'Chapter 77 (pages 1-11) and episode 44. Her finding Machi’s needle is chapter-only. Checked on the episode page and the chapter pages.',
     },
+    56: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
+      note: 'Chapters 109-111 and episode 56. What she says to calm Kurapika differs between the pages. Checked on the episode page and the chapter pages.',
+    },
   },
   'basho': {
     40: {
@@ -813,6 +849,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     46: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_46_(2011)',
       note: 'Chapter 79 and episode 46. The hotel is not named before episode 57. Checked on the episode page and the chapter pages.',
+    },
+    56: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
+      note: 'Chapters 109-112 (pages 1-8) and episode 56. The hotel is not named before episode 57. Checked on the episode page and the chapter pages.',
     },
   },
   'shachmono-tocino': {
@@ -866,6 +906,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
       note: 'Chapters 89-91 and episode 49. Checked on the episode page and the chapter pages.',
     },
+    57: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
+      note: 'Chapters 113-114 and episode 57. Her broken ribs are chapter-only. Checked on the episode page and the chapter pages.',
+    },
   },
   'ivlenkov': {
     42: {
@@ -895,6 +939,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: the time clause is dropped: Franklin also says that Gon reminds him of Uvogin. Killua pointing her out and the rule are chapters 91-92, Franklin’s words about Gon chapter 93, all in episode 50. That she does not remember the match is chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    54: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
+      note: 'Chapter 104 and episode 54. Checked on the episode page and the chapter pages.',
     },
   },
   'feitan': {
@@ -970,6 +1018,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: the time clause is dropped: he says that Gon reminds him of Uvogin, without tying it to the pictures or the pairing. The standoff and Pakunoda’s answer are chapter 92, his words about Uvogin chapter 93, both in episode 50. Checked on the episode page and the chapter pages.',
     },
+    58: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
+      note: 'Chapter 118 and episode 58. Checked on the episode page and the chapter pages.',
+    },
   },
   'nobunaga': {
     45: {
@@ -983,6 +1035,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: “on the table” (Italian) and “kick through” are each one medium’s; he slams Gon’s hand down, and the boys break out through the walls. Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
+    },
+    54: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
+      note: 'Chapters 102-104 and episode 54. Checked on the episode page and the chapter pages.',
+    },
+    56: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
+      note: 'Chapters 109-112 (pages 1-8) and episode 56. Checked on the episode page and the chapter pages.',
     },
   },
   'owl': {
@@ -999,6 +1059,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     49: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
       note: 'Corrected after review: “Nobunaga is behind him” is episode wording; he appears and stops Killua. Chapters 90-91 and episode 49. How Killua breaks free differs between the media; the story says only that he twists free. Checked on the episode page and the chapter pages.',
+    },
+    58: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
+      note: 'Chapter 118 and episode 58. His meeting with the boys at the auction is chapter 120 and is left out. Checked on the episode page and the chapter pages.',
     },
   },
   'light-nostrade': {
@@ -1048,6 +1112,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: in Italian, “sono quasi venuti alle mani”. Her arm around Killua is episode 49 and chapter 92 (his memory of the drive); the report and his deduction are chapter 92 and episode 50. Checked on the episode page and the chapter pages.',
     },
+    56: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
+      note: 'Chapters 111-112 (pages 1-8) and episode 56. Italian: Proiettile Mnemonico (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
+    },
+    57: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
+      note: 'The blackout is chapters 113-114, the call chapter 115, all in episode 57. Her reading of the note and her memory of the Troupe’s founding are chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    58: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
+      note: 'Chapters 117-119 and episode 58. Italian: Proiettile Mnemonico (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
+    },
   },
   'zenji': {
     51: {
@@ -1063,6 +1139,44 @@ export const HUNTER_X_HUNTER_SOURCES = {
     53: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Chapter 100 and episode 53. The copies of the members’ bodies are told in episode 53 but explained in the chapters only later, so they are left out. Italian: La Mano Sinistra di Dio e la Mano Destra del Diavolo (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
+    },
+    55: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
+      note: 'Chapter 108 and episode 55. Checked on the episode page and the chapter pages.',
+    },
+  },
+  'chrollo': {
+    54: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
+      note: 'His record opens at episode 54 (unanchored), so his chronicle opens here and looks back over episodes 41-53: the order (chapter 71), Neon and the requiem (chapters 95-97), the Zoldycks and Illumi (chapters 98-100), the fake bodies (chapter 104). The fortunes are chapters 102-104 and episode 54. His book, the Indoor Fish and the copies he ordered are told differently by the two media and are left out. Checked on the episode page and the chapter pages.',
+    },
+    55: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
+      note: 'The fake fortune is chapter 106, the groups and the copies chapter 108, all in episode 55. Checked on the episode page and the chapter pages.',
+    },
+    56: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
+      note: 'Chapters 109-111 and episode 56. The hotel is not named before episode 57; Chrollo’s words to Gon differ between the pages, so the story says only that he gives no clear answer. Checked on the episode page and the chapter pages.',
+    },
+    57: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
+      note: 'Chapters 112-114 and episode 57. His words in the car and as a hostage are chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    58: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
+      note: 'Chapters 117-119 and episode 58. Looking east for the last part of his fortune is chapter-only. Checked on the episode page and the chapter pages.',
+    },
+  },
+  'bonolenov': {
+    55: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
+      note: 'Chapter 108 and episode 55. His bandages and the members who stay at the hideout are on the chapter pages only. Checked on the episode page and the chapter pages.',
+    },
+  },
+  'eliza': {
+    56: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
+      note: 'Chapters 109 and 112 (pages 1-8) and episode 56. Her strange feeling when Squala dies is anime-only. Checked on the episode page and the chapter pages.',
     },
   },
 }

@@ -1008,6 +1008,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 53, chapter: 100, value: TROUPE }],
     },
     'bonolenov': {
+      chronicle: yorknewCityChronicles.bonolenov,
       role: TROUPE_MEMBER,
       log: {
         it: 'Quando Quoll divide la Brigata in gruppi, lui finisce con Franklin e Hisoka.',
@@ -1017,6 +1018,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 55, chapter: 108, value: TROUPE }],
     },
     'eliza': {
+      chronicle: yorknewCityChronicles.eliza,
       role: { it: 'Al seguito di Neon', en: 'Neon’s attendant' },
       log: {
         it: 'Pakunoda legge il suo nome nei ricordi di Squala poco prima che lui venga ucciso.',
@@ -1035,6 +1037,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'chrollo': {
+      chronicle: yorknewCityChronicles.chrollo,
       role: {
         it: 'Capo della Brigata Fantasma',
         en: 'Leader of the Phantom Troupe',
