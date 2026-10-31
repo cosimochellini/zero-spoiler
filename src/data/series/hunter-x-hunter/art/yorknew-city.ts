@@ -28,18 +28,26 @@ const LIPSTICK_CAP: Stroke[] = [
   },
 ]
 
-/** The head of one of Squala's dogs, side on: the ears are the accent. */
+/**
+ * The head of one of Squala's dogs, side on, in silhouette with no muzzle
+ * line: the drop ear is the accent. The dogs the wiki names (a Dalmatian, a
+ * Golden Retriever, a Bloodhound, chapter 109) all have drop ears.
+ */
 const DOG_HEAD: Stroke[] = [
-  { d: 'M30 66 L52 58 C58 50 64 46 72 46 C84 48 90 58 92 72' },
-  { d: 'M30 66 C38 72 52 72 62 76', role: 'soft' },
-  { d: 'M61 48 L62 33 L72 45 M73 46 L80 32 L84 50', role: 'accent' },
+  {
+    d: 'M60 80 C50 76 34 74 30 68 C28 62 40 58 52 56 C58 48 64 44 72 46 C84 48 90 58 92 72',
+  },
+  {
+    d: 'M68 48 C60 50 56 60 58 72 C62 76 68 72 70 64 C72 58 74 52 74 48',
+    role: 'accent',
+  },
 ]
 
 /** The same dog sitting, its haunch and tail on the ground. */
 const DOG: Stroke[] = [
   ...DOG_HEAD,
   { d: 'M92 72 C102 82 116 94 121 112 C126 128 123 144 110 150 H88' },
-  { d: 'M62 76 C58 98 62 122 64 150 H78 L78 112', role: 'soft' },
+  { d: 'M60 80 C58 100 62 122 64 150 H78 L78 112', role: 'soft' },
   { d: 'M88 150 C88 132 96 120 110 120', role: 'soft' },
   { d: 'M110 150 C124 151 136 150 146 146' },
   { d: 'M108 104 l7 -5 M112 116 l7 -5 M114 130 l7 -5', role: 'ambient' },
@@ -173,7 +181,7 @@ export const YORKNEW_CITY_DRAWINGS = {
   // side beside it: Baise's kiss makes Squala her servant in the mansion's
   // test, episode 40 / chapter 68.
   'baise': [...LIPSTICK, ...LIPSTICK_CAP, shadow(86, 174, 52)],
-  // One of Squala's dogs sitting side on, in silhouette, its ears pricked
+  // One of Squala's dogs sitting side on, in silhouette, its drop ear
   // in tint: he places dogs round the mansion that all follow his orders,
   // episode 40 / chapter 68 (episode 39 shows him among them). No face, no
   // collar and no leash, which neither medium shows.
@@ -687,13 +695,13 @@ export const yorknewCityRedrawn: Redrawings = {
       value: [
         ...moved(
           TOCINO_ROBE,
-          'translate(80 146) rotate(-5) scale(0.95 0.36) translate(-80 -106)',
+          'translate(80 140) rotate(-5) scale(0.95 0.36) translate(-80 -106)',
         ),
         ...moved(
           TOCINO_SWORD,
-          'translate(34 184) rotate(68) translate(-120 -108)',
+          'translate(30 172) rotate(68) translate(-120 -108)',
         ),
-        { d: 'M4 166 H156', role: 'ambient', dashed: true },
+        { d: 'M4 178 H156', role: 'ambient', dashed: true },
       ],
     },
   ],
@@ -708,7 +716,7 @@ export const yorknewCityRedrawn: Redrawings = {
           IVLENKOV_JACKET,
           'translate(80 148) rotate(-4) scale(1 0.42) translate(-80 -104)',
         ),
-        { d: 'M4 172 H156', role: 'ambient', dashed: true },
+        { d: 'M4 177 H156', role: 'ambient', dashed: true },
       ],
     },
   ],
@@ -738,7 +746,7 @@ export const yorknewCityRedrawn: Redrawings = {
       value: [
         ...moved(DOG_HEAD, 'translate(0 62)'),
         { d: 'M92 134 C108 124 134 124 144 136 C150 146 144 150 132 150 H62' },
-        { d: 'M62 138 L60 144 H28 Q22 150 30 150 H62', role: 'soft' },
+        { d: 'M60 142 V144 H28 Q22 150 30 150 H62', role: 'soft' },
         { d: 'M112 150 C112 138 120 132 132 134', role: 'soft' },
         { d: 'M144 146 C150 148 154 146 156 140' },
         { d: 'M110 134 l7 -5 M122 134 l7 -5 M132 140 l7 -5', role: 'ambient' },
