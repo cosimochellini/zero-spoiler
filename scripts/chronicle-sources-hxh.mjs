@@ -56,7 +56,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
-      note: 'Corrected after review: “kick through” is one medium’s; they break out through the walls, as in Nobunaga’s story. Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: Gon refuses to tell them anything, as both media have him, without ordering the refusal and the question. “kick through” is one medium’s; they break out through the walls, as in Nobunaga’s story. Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
     },
   },
   'mito-freecss': {
@@ -526,11 +526,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     52: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_52_(2011)',
-      note: 'Corrected after review: as in Silva’s story, Silva warns that the leader can steal abilities, and Zeno works out the book and its conditions. The warning is chapter 98, the fight chapters 98-99, both in episode 52. His dragon is chapter-only on the pages, so the story says only that he fights with his aura. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: Silva warns Zeno, by name, so that “him” cannot be read as the leader. as in Silva’s story, Silva warns that the leader can steal abilities, and Zeno works out the book and its conditions. The warning is chapter 98, the fight chapters 98-99, both in episode 52. His dragon is chapter-only on the pages, so the story says only that he fights with his aura. Checked on the episode page and the chapter pages.',
     },
     53: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
-      note: 'Chapter 100 and episode 53. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “if they had kept fighting” is episode wording; the leader only asks who would have won. Chapter 100 and episode 53. Checked on the episode page and the chapter pages.',
     },
   },
   'silva': {
@@ -978,7 +978,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     49: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
-      note: 'Chapters 89-91 and episode 49. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “Nobunaga is behind him” and “who taught him Nen” are episode wording; he appears, and asks who taught him. Chapters 89-91 and episode 49. Checked on the episode page and the chapter pages.',
     },
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
@@ -998,7 +998,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     49: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
-      note: 'Chapters 90-91 and episode 49. How Killua breaks free differs between the media; the story says only that he twists free. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: “Nobunaga is behind him” is episode wording; he appears and stops Killua. Chapters 90-91 and episode 49. How Killua breaks free differs between the media; the story says only that he twists free. Checked on the episode page and the chapter pages.',
     },
   },
   'light-nostrade': {
