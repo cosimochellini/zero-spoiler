@@ -8,6 +8,8 @@ import { LOADED_SERIES } from '~/test/series'
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import elbafEvidence from '../../docs/content-provenance/elbaf-relationships.json' with { type: 'json' }
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
+import thronesEvidence from '../../docs/content-provenance/game-of-thrones.json' with { type: 'json' }
+// eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import hunterRelationshipEvidence from '../../docs/content-provenance/hunter-x-hunter-relationships.json' with { type: 'json' }
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import hunterEvidence from '../../docs/content-provenance/hunter-x-hunter.json' with { type: 'json' }
@@ -207,6 +209,37 @@ describe('Hunter x Hunter relationship provenance', () => {
       ])
 
       expect(pages.filter((page) => !hunterTitles.has(page))).toStrictEqual([])
+    },
+  )
+})
+
+describe('Game of Thrones provenance', () => {
+  const thrones: Record<string, { sources?: string[]; unverified?: string[] }> =
+    thronesEvidence
+  const ids =
+    LOADED_SERIES.find(
+      ({ slug }) => slug === 'game-of-thrones',
+    )?.archive.entities.map(({ id }) => id) ?? []
+  // The lawful sources of #725: the two wikis and Italian Wikipedia.
+  const hosts = new Set([
+    'awoiaf.westeros.org',
+    'gameofthrones.fandom.com',
+    'it.wikipedia.org',
+  ])
+
+  it('keeps research for exactly the records filed', () => {
+    expect(Object.keys(thrones).toSorted(byId)).toStrictEqual(
+      ids.toSorted(byId),
+    )
+  })
+
+  it.each(Object.entries(thrones))(
+    'records what was read or is still open for %s',
+    (id, { sources: read = [], unverified = [] }) => {
+      expect(read.length + unverified.length, id).toBeGreaterThan(0)
+      expect(
+        read.map((url) => hostOf(url)).filter((host) => !hosts.has(host)),
+      ).toStrictEqual([])
     },
   )
 })

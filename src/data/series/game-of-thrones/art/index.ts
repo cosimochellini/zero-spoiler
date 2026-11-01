@@ -6,8 +6,13 @@ import type { Drawings, Redrawings } from '~/data/art/stroke'
  */
 export const DRAWINGS = {} satisfies Drawings
 
-/** A drawing filed in this folder, by the id of its record. */
-export type ArtId = keyof typeof DRAWINGS
+/**
+ * The drawing a record names, by its own id. Any id while the series is
+ * closed: its records are filed before their drawings (owner, #852), and
+ * #854 narrows this back to `keyof typeof DRAWINGS`.
+ */
+// eslint-disable-next-line sonarjs/redundant-type-aliases -- #854 narrows it to the drawings' keys
+export type ArtId = string
 
 /** The records drawn again later in the story: none yet. */
 export const REDRAWINGS: Redrawings = {}

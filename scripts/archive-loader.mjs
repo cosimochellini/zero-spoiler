@@ -102,7 +102,7 @@ export function importArchive(module) {
 
 /**
  * One series of `src/data/series/index.ts`, as a script reads it.
- * @typedef {{ slug: string, folder: string, archive: { entities: { id: string, kind: string }[], series: { chapterCeiling: number } }, wiki: { en: string, it: string } }} Series
+ * @typedef {{ slug: string, folder: string, archive: { entities: { id: string, kind: string, name: { en: string, it: string }, revealedAtChapter: number, revealedAtEpisode: number, source?: 'chapter' | 'episode' }[], series: { chapterCeiling: number, books?: { number: number, first: number, last: number }[] } }, wiki: { en: string, episodes?: string, it: string } }} Series
  */
 
 /**

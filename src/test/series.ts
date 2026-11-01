@@ -119,20 +119,27 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // Filed closed with no record yet (#849): only its place words' headers,
-  // and no floor. The first season's characters and places (#852, #853)
-  // raise it.
+  // Counted 2026-11-01, after the first season's main cast (#852): 63
+  // characters and the season's heading, no places yet (#853).
   'game-of-thrones': {
-    kinds: ['allRegions', 'copy', 'region'],
+    kinds: [
+      'affiliation',
+      'allRegions',
+      'copy',
+      'log',
+      'region',
+      'role',
+      'summary',
+    ],
     least: {
-      affiliations: 0,
-      arcs: 0,
-      characters: 0,
+      affiliations: 74,
+      arcs: 1,
+      characters: 63,
       chronicles: 0,
       linkedOrigins: 0,
       places: 0,
-      statuses: 0,
-      timelines: 0,
+      statuses: 76,
+      timelines: 146,
       visits: 0,
     },
     namesSaidEarly: false,

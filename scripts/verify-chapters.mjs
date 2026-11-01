@@ -20,6 +20,17 @@
 // filed below the wiki's first episode opens before the anime shows it,
 // unless a hand check found the wiki late (`EPISODE_KEPT`, issue #175).
 //
+// Game of Thrones reads its two media on two wikis (`wiki.en` and
+// `wiki.episodes` in the series list). A Wiki of Ice and Fire has no "first
+// appearance" field, so a character's chapter floor is the first chapter page
+// that links it, by its title or a redirect to it, or else
+// the earliest chapter its page cites (`{{Ref|AGOT|22}}`). The Game of
+// Thrones Wiki's infobox names the first episode by title (`| First =
+// "[[Lord Snow]]"`), counted through `EPISODES`. A record one medium alone
+// tells (`source`) is listed as such and not read on the other's wiki. A
+// chapter kept below its floor after a hand check goes in `CHAPTER_KEPT`. The
+// reading is `./verify-chapters.thrones.mjs`'s.
+//
 // Run it with `npm run verify:chapters`, or `npm run verify:chapters --
 // --series <slug>` for a series of `src/data/series/index.ts` other than One
 // Piece. It talks to the network, so it is not part of `npm run check` or CI;
@@ -30,59 +41,12 @@ import process from 'node:process'
 import { pathToFileURL } from 'node:url'
 
 import { seriesOrExit } from './archive-loader.mjs'
-import { chapterTexts, fetchPage, wikiOf } from './wiki.mjs'
+import { TITLES } from './verify-chapters.tables.mjs'
+import { thronesSourceOf } from './verify-chapters.thrones.mjs'
+import { chapterTexts, chapterTitles, fetchPage, wikiOf } from './wiki.mjs'
 
 /** @typedef {import('./wiki.mjs').Page} Page */
 /** @typedef {import('./wiki.mjs').Wiki} Wiki */
-
-/**
- * Records whose English name is not their wiki page, by series. A list names
- * the pages of a paired record (two fish-men filed as one), whose chapter is
- * the later of the two.
- * @type {Record<string, Record<string, string | string[]>>}
- */
-const TITLES = {
-  'one-piece': {
-    'artificial-dragon-dragon-fruit': 'Artificial Devil Fruit',
-    'cat-cat-fruit-ancient-model-sabre-tooth-tiger':
-      'Neko Neko no Mi, Model: Saber Tiger',
-    'dog-dog-fruit-mythical-model-nine-tailed-fox':
-      'Inu Inu no Mi, Model: Kyubi no Kitsune',
-    'egghead-island': 'Egghead',
-    'fish-fish-fruit-mythical-model-azure-dragon': 'Uo Uo no Mi, Model: Seiryu',
-    'kinemon': "Kin'emon",
-    'kiwi-and-mozu': ['Kiwi', 'Mozu'],
-    'lola': 'Lola (Zombie)',
-    'ninjin-piiman-and-tamanegi': ['Ninjin', 'Piiman', 'Tamanegi'],
-    'oimo-and-kashi': ['Oimo', 'Kashi'],
-    'rock-and-scotch': ['Rock', 'Scotch'],
-    'ryuma': 'Ryuma (Zombie)',
-    'sodom-and-gomorrah': ['Sodom', 'Gomorrah'],
-    'water-seven-arc': 'Water 7 Arc',
-  },
-  'hunter-x-hunter': {
-    'gittarackur': 'Illumi Zoldyck',
-    'illumi': 'Illumi Zoldyck',
-    'killua': 'Killua Zoldyck',
-    'hisoka': 'Hisoka Morow',
-    'netero': 'Isaac Netero',
-    'milluki': 'Milluki Zoldyck',
-    'zeno': 'Zeno Zoldyck',
-    'kalluto': 'Kalluto Zoldyck',
-    'machi': 'Machi Komacine',
-    'shizuku': 'Shizuku Murasaki',
-    'feitan': 'Feitan Portor',
-    'franklin': 'Franklin Bordeau',
-    'nobunaga': 'Nobunaga Hazama',
-    'phinks': 'Phinks Magcub',
-    'bonolenov': 'Bonolenov Ndongo',
-    'chrollo': 'Chrollo Lucilfer',
-    // The wiki's arc titles say more than an arc's name may, since the name
-    // is shown at every bookmark (#758): the archive's names are neutral.
-    'election-arc': '13th Hunter Chairman Election arc',
-    'kakin-arc': 'Succession Contest arc',
-  },
-}
 
 /**
  * The wiki pages a record is read from, in the order to try them. The English
@@ -221,6 +185,15 @@ const EPISODE_KEPT = {
   // page 1); the wiki dates his first flashback, episode 48.
   'gold-roger': 1,
 }
+
+/**
+ * Records kept below the wiki's chapter floor after a hand check found the
+ * wiki early: a chapter page links a character the chapter does not name
+ * yet. The value is the chapter checked, so a record moved since falls back
+ * to the rule.
+ * @type {Record<string, number>}
+ */
+const CHAPTER_KEPT = {}
 
 /** A naming verb: the chapter summary says who ate the fruit or what it is. */
 const NAMING =
@@ -393,15 +366,23 @@ function numberAfter(pattern, text) {
   return match?.groups === undefined ? undefined : Number(match.groups['n'])
 }
 
-/** @typedef {{ page?: string, wiki?: number, wikiEpisode?: number }} Source */
+/** @typedef {{ page?: string, wiki?: number, wikiEpisode?: number, only?: 'chapter' | 'episode' }} Source */
 
 /**
- * The chapter the wiki gives one record, trying each alternative in turn.
- * @param {{ id: string, kind: string, name: { en: string, it: string } }} record The record.
- * @param {{ chapters: Map<number, string>, wiki: Wiki }} read Every chapter's wikitext, and the wiki.
+ * The chapter the wiki gives one record, trying each alternative in turn;
+ * or, for a series whose show has a wiki of its own, what the two wikis say
+ * (`./verify-chapters.thrones.mjs`).
+ * @param {{ id: string, kind: string, name: { en: string, it: string }, source?: 'chapter' | 'episode' }} record The record.
+ * @param {{ chapters: Map<number, string>, wiki: Wiki, books?: { number: number, first: number, last: number }[] }} read Every chapter's wikitext, the wiki, and the series' books.
  * @returns {Promise<Source>} The page(s) read and the chapter, or neither.
  */
-async function sourceOf(record, { chapters, wiki }) {
+async function sourceOf(record, { chapters, wiki, books = [] }) {
+  if (wiki.episodes !== undefined) {
+    const titles = titlesOf(record, wiki.slug)[0] ?? []
+
+    return thronesSourceOf(record, { chapters, wiki, books, titles })
+  }
+
   const pages = await pagesOf(record, wiki)
 
   return pages === undefined ? {} : readingOf(record, pages, chapters)
@@ -460,18 +441,43 @@ export function readingOf(record, pages, chapters) {
  * Which way a record disagrees with its source, if it does.
  * @param {number} filed The record's chapter.
  * @param {Source} source What the wiki says.
- * @returns {'equal' | 'kept' | 'too low' | 'unresolved'} The verdict.
+ * @param {string} [id] The record's id, for `CHAPTER_KEPT`.
+ * @returns {'episode only' | 'equal' | 'kept' | 'too low' | 'unresolved'} The verdict.
  */
-export function verdictOf(filed, source) {
+export function verdictOf(filed, source, id = '') {
+  if (source.only === 'episode') {
+    return 'episode only'
+  }
+
   if (source.wiki === undefined) {
     return 'unresolved'
   }
 
   if (filed < source.wiki) {
-    return 'too low'
+    return CHAPTER_KEPT[id] === filed ? 'kept' : 'too low'
   }
 
   return filed === source.wiki ? 'equal' : 'kept'
+}
+
+/**
+ * Which way a record's episode stands (`episodeVerdictOf`). A record the
+ * books alone tell is listed apart; and where the show has a wiki of its own
+ * (Game of Thrones), a page that gives no first episode is unresolved, since
+ * the show is half of what that series checks.
+ * @param {{ id: string, revealedAtEpisode: number }} record The record.
+ * @param {Source} source What the wikis say.
+ * @param {boolean} apart Whether the show is read on a wiki of its own.
+ * @returns {'chapter only' | 'kept' | 'ok' | 'too low' | 'unresolved'} The verdict.
+ */
+export function episodeStandOf(record, source, apart) {
+  if (source.only === 'chapter') {
+    return 'chapter only'
+  }
+
+  return apart && source.wikiEpisode === undefined ?
+      'unresolved'
+    : episodeVerdictOf(record.id, record.revealedAtEpisode, source.wikiEpisode)
 }
 
 /** @typedef {{ id: string, kind: string, filed: number, episode: number, page?: string, wiki?: number, wikiEpisode?: number, verdict: string, episodeVerdict: string }} Row */
@@ -479,19 +485,20 @@ export function verdictOf(filed, source) {
 /**
  * Every record of the series on the command line against its page, in
  * archive order.
- * @returns {Promise<Row[]>} One row per record.
+ * @returns {Promise<{ rows: Row[], thrones: boolean }>} One row per record, and whether the series reads its show on a wiki of its own.
  */
 async function verify() {
   const series = await seriesOrExit()
   const wiki = wikiOf(series)
+  const { books, chapterCeiling } = series.archive.series
   const chapters = await chapterTexts(
-    series.archive.series.chapterCeiling,
+    chapterTitles(chapterCeiling, books),
     wiki,
   )
   /** @type {Row[]} */
   const rows = []
   for (const record of series.archive.entities) {
-    const source = await sourceOf(record, { chapters, wiki })
+    const source = await sourceOf(record, { chapters, wiki, books })
 
     rows.push({
       id: record.id,
@@ -499,16 +506,16 @@ async function verify() {
       filed: record.revealedAtChapter,
       episode: record.revealedAtEpisode,
       ...source,
-      verdict: verdictOf(record.revealedAtChapter, source),
-      episodeVerdict: episodeVerdictOf(
-        record.id,
-        record.revealedAtEpisode,
-        source.wikiEpisode,
+      verdict: verdictOf(record.revealedAtChapter, source, record.id),
+      episodeVerdict: episodeStandOf(
+        record,
+        source,
+        wiki.episodes !== undefined,
       ),
     })
   }
 
-  return rows
+  return { rows, thrones: wiki.episodes !== undefined }
 }
 
 /**
@@ -533,22 +540,27 @@ function table(title, rows, cells) {
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
-  const rows = await verify()
+  const { rows, thrones } = await verify()
   const wrong = rows.filter((row) => {
     return (
       row.verdict === 'too low'
       || row.verdict === 'unresolved'
       || row.episodeVerdict === 'too low'
+      || row.episodeVerdict === 'unresolved'
     )
   })
-  const tables = ['too low', 'unresolved', 'equal', 'kept'].map((verdict) => {
+  // Only Game of Thrones reads its media apart, so only it has these.
+  const apart = thrones ? ['episode only'] : []
+  const episodesApart = thrones ? ['unresolved', 'chapter only'] : []
+  const verdicts = ['too low', 'unresolved', 'equal', 'kept', ...apart]
+  const tables = verdicts.map((verdict) => {
     return table(
       verdict,
       rows.filter((row) => row.verdict === verdict),
       (row) => [row.filed, row.wiki, row.page],
     )
   })
-  const episodes = ['too low', 'kept'].map((verdict) => {
+  const episodes = ['too low', 'kept', ...episodesApart].map((verdict) => {
     return table(
       `episode ${verdict}`,
       rows.filter((row) => row.episodeVerdict === verdict),

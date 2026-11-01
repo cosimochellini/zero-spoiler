@@ -318,7 +318,11 @@ describe.each(LOADED_SERIES)(
         // A kind the leak scan expects next to a floor of 0 would let the
         // records behind it vanish with every rule here still green.
         const { kinds, least } = expectedOf(slug)
-        const floored = kinds.flatMap((kind) => KIND_FLOORS[kind] ?? [])
+        // Region headers print before a series files its first place (Game
+        // of Thrones until #853): only a series with places floors them.
+        const floored = kinds
+          .flatMap((kind) => KIND_FLOORS[kind] ?? [])
+          .filter((key) => key !== 'places' || archive.places.length > 0)
 
         for (const key of floored) {
           expect(least[key], key).toBeGreaterThan(0)

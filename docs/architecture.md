@@ -104,10 +104,15 @@ theirs in #898. Records are not added from unnamed appearances or supplemental
 names.
 
 Game of Thrones is filed closed (#849): its description (the show's seasons, the
-five books, the season 1 / first-book demo), its eight empty season modules, its
-copy, its red theme and its hub crown (#850). It files no arcs: a season with no
-record is left out of the engine's sagas until its records land (#852, #853),
-and the shared rules that need a record skip a series that files none.
+five books, the season 1 / first-book demo), its copy, its red theme and its hub
+crown (#850). It files no arcs: each season module is headed by its own
+`heading`, and a season with no record is left out of the engine's sagas until
+its records land. Season 1 files the main cast of the season and of _A Game of
+Thrones_ (#852): 63 characters, the six direwolves among them, each gated where
+it appears and is named in each medium, with every dated step pinned to both an
+episode and an absolute chapter; Ros, whom only the show has, is
+`source: 'episode'`. While the series is closed its records are filed before
+their drawings (#854), so the drawing tests wait for it to open.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -199,10 +204,10 @@ checks this block.
 
 | Thing             | Count                                             |
 | ----------------- | ------------------------------------------------- |
-| Records           | 0                                                 |
-| Characters        | 0                                                 |
+| Records           | 63                                                |
+| Characters        | 63                                                |
 | Places            | 0                                                 |
-| Saga modules      | 0                                                 |
+| Saga modules      | 1                                                 |
 | Line drawings     | 0, one per record, plus 0 redrawings of 0 records |
 | Chronicle stories | 0, for 0 characters                               |
 

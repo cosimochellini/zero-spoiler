@@ -1,8 +1,12 @@
-import { describe, expect, it } from 'vitest'
+import { mkdtempSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import path from 'node:path'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import {
   chapterOf,
   episodeOf,
+  episodeStandOf,
   episodeVerdictOf,
   japaneseNameOf,
   namingChapterOf,
@@ -10,6 +14,20 @@ import {
   titlesOf,
   verdictOf,
 } from './verify-chapters.mjs'
+import {
+  bookChapterOf,
+  bookFloorOf,
+  citedChaptersOf,
+  episodeNumberOf,
+  firstEpisodeOf,
+  linkingChapterOf,
+  thronesSourceOf,
+} from './verify-chapters.thrones.mjs'
+
+// Cache pacing needs no wall-clock time in unit tests.
+vi.mock('node:timers/promises', () => ({
+  setTimeout: vi.fn(() => Promise.resolve()),
+}))
 
 const name = (en, it) => ({ en, it })
 const page = (wikitext, text = '') => ({ title: 't', wikitext, text })
@@ -324,5 +342,205 @@ describe('the episode verdict', () => {
     expect(episodeVerdictOf('gold-roger', 1, 48)).toBe('kept')
     // A kept record moved since falls back to the rule.
     expect(episodeVerdictOf('gold-roger', 2, 48)).toBe('too low')
+  })
+})
+
+describe('Game of Thrones', () => {
+  const books = [
+    { number: 1, first: 1, last: 73 },
+    { number: 2, first: 74, last: 143 },
+    { number: 3, first: 144, last: 225 },
+  ]
+
+  it('counts an episode title from the start of the show', () => {
+    expect(episodeNumberOf('Winter Is Coming')).toBe(1)
+    expect(episodeNumberOf('Fire and Blood')).toBe(10)
+    expect(episodeNumberOf('Garden of Bones (episode)')).toBe(14)
+    expect(episodeNumberOf('The Iron Throne')).toBe(73)
+    expect(episodeNumberOf('Winterfell')).toBe(68)
+    expect(episodeNumberOf('Arya Stark')).toBeUndefined()
+  })
+
+  it('reads the first episode from the infobox', () => {
+    expect(
+      firstEpisodeOf(
+        '| Season = 1\n| First       = "[[Lord Snow]]"\n| Last = "[[The Pointy End]]"',
+      ),
+    ).toBe(3)
+    expect(
+      firstEpisodeOf(
+        '| First = "[[Walk of Punishment (episode)|Walk of Punishment]]"',
+      ),
+    ).toBe(23)
+    expect(firstEpisodeOf('| Last = "[[Baelor]]"')).toBeUndefined()
+  })
+
+  it('counts a book chapter from the book first, a prologue first, an epilogue last', () => {
+    expect(bookChapterOf('AGOT', '1', books)).toBe(2)
+    expect(bookChapterOf('agot', '22', books)).toBe(23)
+    expect(bookChapterOf('ACOK', 'Prologue', books)).toBe(74)
+    expect(bookChapterOf('ASOS', 'Epilogue', books)).toBe(225)
+    expect(bookChapterOf('AFFC', '1', books)).toBeUndefined()
+    expect(bookChapterOf('AWOIAF', '1', books)).toBeUndefined()
+    expect(bookChapterOf('AGOT', 'Appendix', books)).toBeUndefined()
+  })
+
+  it('reads the book chapters a page cites, in either case, and no other source', () => {
+    expect(
+      citedChaptersOf(
+        'a{{ref|AGOT|50}} b{{Ref|AGOT|22}} c{{Ref|AWOIAF|Syrio Forel}} d{{ref|ACOK|Prologue}}',
+        books,
+      ),
+    ).toStrictEqual([51, 23, 74])
+  })
+
+  const chapters = new Map([
+    [1, '[[Will]] and [[Waymar Royce]]'],
+    [22, '[[Arya Stark|Arya]] meets [[Syrio]]'],
+    [23, 'Arya trains with [[Syrio Forel]]'],
+    [24, '[[syrio Forel|the bravo]] again'],
+  ])
+
+  it('finds the first chapter linking a page, through its redirects and either case', () => {
+    expect(linkingChapterOf(chapters, ['Syrio Forel'])).toBe(23)
+    expect(linkingChapterOf(chapters, ['Syrio Forel', 'Syrio'])).toBe(22)
+    expect(linkingChapterOf(chapters, ['Arya Stark'])).toBe(22)
+    expect(linkingChapterOf(chapters, ['Will (prologue)'])).toBeUndefined()
+    // A link to a longer title is not a link to this one.
+    expect(linkingChapterOf(chapters, ['Waymar'])).toBeUndefined()
+  })
+
+  it('floors a character at its first linking chapter, else at its first citation', () => {
+    expect(
+      bookFloorOf(chapters, ['Syrio Forel'], '{{Ref|AGOT|1}}', books),
+    ).toBe(23)
+    expect(
+      bookFloorOf(
+        chapters,
+        ['Ser Nobody'],
+        '{{Ref|AGOT|30}}{{Ref|AGOT|9}}',
+        books,
+      ),
+    ).toBe(10)
+    expect(
+      bookFloorOf(chapters, ['Ser Nobody'], 'no refs', books),
+    ).toBeUndefined()
+  })
+
+  it('lists a record one medium alone tells apart, not as unresolved', () => {
+    expect(verdictOf(5, { only: 'episode' })).toBe('episode only')
+    expect(verdictOf(5, { only: 'chapter', wiki: 6 })).toBe('too low')
+    expect(
+      episodeStandOf(
+        { id: 'x', revealedAtEpisode: 1 },
+        { only: 'chapter' },
+        true,
+      ),
+    ).toBe('chapter only')
+  })
+
+  it('holds a show record to its first episode, and calls a missing one unresolved', () => {
+    const record = { id: 'syrio-forel', revealedAtEpisode: 3 }
+
+    expect(episodeStandOf(record, { wikiEpisode: 3 }, true)).toBe('ok')
+    expect(episodeStandOf(record, { wikiEpisode: 4 }, true)).toBe('too low')
+    expect(episodeStandOf(record, {}, true)).toBe('unresolved')
+    // One Piece reads both on one wiki, and a page without an episode passes.
+    expect(episodeStandOf(record, {}, false)).toBe('ok')
+  })
+})
+
+describe('what the two Game of Thrones wikis say of a record', () => {
+  let directory = ''
+  const parse = (wikitext) =>
+    JSON.stringify({
+      parse: {
+        title: 'Syrio Forel',
+        wikitext: { '*': wikitext },
+        text: { '*': '' },
+      },
+    })
+  const answers = {
+    'https://b/api.php?action=parse': parse('{{Ref|AGOT|50}}'),
+    'https://b/api.php?action=query&prop=redirects': JSON.stringify({
+      batchcomplete: '',
+      query: {
+        pages: { 1: { title: 'Syrio Forel', redirects: [{ title: 'Syrio' }] } },
+      },
+    }),
+    'https://s/api.php?action=parse': parse('| First = "[[Lord Snow]]"'),
+  }
+
+  const answer = (url) => {
+    const [, body] = Object.entries(answers).find(([prefix]) =>
+      url.startsWith(prefix),
+    )
+
+    return Promise.resolve(new Response(body))
+  }
+
+  beforeEach(() => {
+    directory = mkdtempSync(path.join(tmpdir(), 'thrones-'))
+    vi.stubGlobal('fetch', vi.fn(answer))
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    rmSync(directory, { recursive: true, force: true })
+  })
+
+  const read = () => {
+    const own = {
+      cache: directory,
+      en: 'https://b/api.php',
+      it: 'https://i',
+      slug: 'game-of-thrones',
+    }
+
+    return {
+      chapters: new Map([
+        [22, '[[Arya Stark]]'],
+        [23, '[[Syrio|the bravo]]'],
+      ]),
+      wiki: {
+        ...own,
+        episodes: {
+          ...own,
+          cache: path.join(directory, 'episodes'),
+          en: 'https://s/api.php',
+        },
+      },
+      books: [{ number: 1, first: 1, last: 73 }],
+      titles: ['Syrio Forel'],
+    }
+  }
+
+  it('floors the books at the first chapter linking a redirect, and reads the first episode', async () => {
+    await expect(
+      thronesSourceOf({ name: { en: 'Syrio Forel' } }, read()),
+    ).resolves.toStrictEqual({
+      page: 'Syrio Forel / Syrio Forel (show)',
+      wiki: 23,
+      wikiEpisode: 3,
+    })
+  })
+
+  it('reads a record one medium alone tells on that medium wiki only', async () => {
+    await expect(
+      thronesSourceOf(
+        { name: { en: 'Syrio Forel' }, source: 'episode' },
+        read(),
+      ),
+    ).resolves.toStrictEqual({
+      only: 'episode',
+      page: 'Syrio Forel (show)',
+      wikiEpisode: 3,
+    })
+    await expect(
+      thronesSourceOf(
+        { name: { en: 'Syrio Forel' }, source: 'chapter' },
+        read(),
+      ),
+    ).resolves.toStrictEqual({ only: 'chapter', page: 'Syrio Forel', wiki: 23 })
   })
 })
