@@ -189,9 +189,11 @@ describe('the world map', () => {
     ).toMatchObject([{ slug: 'one-piece' }])
   })
 
-  it('leaves One Piece’s pages unlabelled, its dictionaries label them', async () => {
+  it('leaves One Piece’s pages unlabelled but for its seas’ names', async () => {
     const onePiece = await filedArchiveOf('one-piece')
+    const page = placesPage(readerAt(onePiece))
 
-    expect(placesPage(readerAt(onePiece))).not.toHaveProperty('words')
+    expect(page).not.toHaveProperty('words')
+    expect(page).toHaveProperty('seas')
   })
 })

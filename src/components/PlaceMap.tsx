@@ -9,7 +9,6 @@ import {
   placeOf,
   type Point,
   type Rect,
-  regionsFor,
 } from '~/components/chartGeometry'
 import { legsOf, tailOf } from '~/components/chartRoute'
 import { tintOf } from '~/components/drawing'
@@ -22,6 +21,7 @@ import {
 } from '~/components/SeaChartDrawing'
 import { isOnRoute, sagaTintOf } from '~/components/seaChartNames'
 import { Spot } from '~/components/SeaChartPins'
+import { regionsFor } from '~/lib/view/chart'
 import type { PlaceChartView } from '~/lib/view/places'
 import { color, radius, rule } from '~/styles/tokens.stylex'
 

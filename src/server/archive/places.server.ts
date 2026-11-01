@@ -1,10 +1,16 @@
 import type { ReaderArchive } from '~/data/features'
 import type { Entity, LocalizedText } from '~/data/types'
-import type { ChartPoint } from '~/lib/view/chart'
+import { type ChartPoint, regionsFor } from '~/lib/view/chart'
 import type { PlacesView, SagaPick, StopView } from '~/lib/view/places'
-import type { PortView, RecordView, ShipView, Slot } from '~/lib/view/records'
+import type {
+  PortDossier,
+  PortView,
+  RecordView,
+  ShipView,
+  Slot,
+} from '~/lib/view/records'
 
-import { printedForm, printedRegion, wordsOf } from './printed.server'
+import { printedForm, printedRegion, seasOf, wordsOf } from './printed.server'
 import { deferredOf, namedOf, recordOf } from './project.server'
 import type { Reader } from './reader.server'
 
@@ -20,6 +26,7 @@ import type { Reader } from './reader.server'
 export function placesPage(r: Reader): PlacesView {
   const { covered, open, total } = r.split(r.archive.places, stopOf)
   const words = wordsOf(open, r)
+  const seas = seasOf(regionsFor(open.map(({ sea }) => sea)), r)
 
   return {
     // The ships sail the world map; a series without one has none to draw.
@@ -36,6 +43,7 @@ export function placesPage(r: Reader): PlacesView {
     sagas: sagasOf(open, r),
     covered,
     ...(words !== undefined && { words }),
+    ...(seas !== undefined && { seas }),
   }
 }
 
@@ -147,11 +155,6 @@ export function portOf(entity: Entity, r: Reader): PortView {
     dossier === undefined ? undefined : r.archive.getEntity(dossier.arc)
   const { locale } = r
 
-  const words =
-    dossier === undefined ? undefined : (
-      wordsOf([{ sea: dossier.region, form: dossier.form }], r)
-    )
-
   return {
     ...recordOf(entity, r),
     summary: entity.summary[locale],
@@ -168,9 +171,28 @@ export function portOf(entity: Entity, r: Reader): PortView {
             const record = r.archive.getEntity(filed)
             return record === undefined ? [] : [r.slot(record, recordOf)]
           }),
-          ...(words !== undefined && { words }),
+          ...labelsOf(dossier, r),
         }
       ),
+  }
+}
+
+/**
+ * The labels a port's facts print: its words, for a series that labels them
+ * itself, or its sea's name, for One Piece. Its own sea's and no other's: a
+ * port lifted from under the fog names its sea, not the others the chart
+ * would open with it.
+ */
+function labelsOf(
+  dossier: { form: string; region: string },
+  r: Reader,
+): Pick<PortDossier, 'seaName' | 'words'> {
+  const words = wordsOf([{ sea: dossier.region, form: dossier.form }], r)
+  const seaName = seasOf([dossier.region], r)?.[dossier.region]
+
+  return {
+    ...(words !== undefined && { words }),
+    ...(seaName !== undefined && { seaName }),
   }
 }
 

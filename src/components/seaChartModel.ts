@@ -3,8 +3,6 @@ import {
   ORIGIN,
   type Point,
   type Rect,
-  type Region,
-  regionsFor,
 } from '~/components/chartGeometry'
 import { type Leg, legsOf, tailOf } from '~/components/chartRoute'
 import {
@@ -17,7 +15,7 @@ import {
 } from '~/components/seaChartNames'
 import type { Translate } from '~/i18n/types'
 import { type Bookmark, modeOf } from '~/lib/progress/episode'
-import { sailedBy } from '~/lib/view/chart'
+import { type Region, regionsFor, sailedBy } from '~/lib/view/chart'
 import type { SagaPick, StopView } from '~/lib/view/places'
 import type { CoveredRecord, PortView, ShipView } from '~/lib/view/records'
 
@@ -45,6 +43,8 @@ export interface SeaChartProps {
   peekPort: (handle: string) => Promise<PortView>
   /** The sagas the open stops are filed under, in route order, named. */
   sagas: SagaPick[]
+  /** The names of the seas the open stops open (`seas` on the places page). */
+  seas?: Partial<Record<string, string>> | undefined
   /** The orientation the server drew, kept until the page hydrates. */
   served: Orientation
   /** The ships the reader has reached, in their order. */
@@ -74,6 +74,8 @@ export interface ChartModel {
   opening: Rect
   regions: Region[]
   sagaNames: SagaName[]
+  /** The names the server sent for the regions the reader has opened. */
+  seas: Partial<Record<string, string>> | undefined
   /** The open stops' names, the reader's own stop's left to its label. */
   stopNames: StopName[]
   /** What a screen reader hears for the drawing. */
@@ -125,6 +127,7 @@ export function modelOf(
     open,
     opening: openingOf(open, here),
     regions: [...regionsFor(open.flatMap((port) => port.sea))],
+    seas: props.seas,
     summary: [
       t('chart.title'),
       ...where,

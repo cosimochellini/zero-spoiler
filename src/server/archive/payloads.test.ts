@@ -7,11 +7,17 @@ import { descriptionOf } from '~/data/series'
 import { archiveIn } from '~/data/source'
 import type { Entity } from '~/data/types'
 import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
+import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import { type Bookmark, serialiseBookmark } from '~/lib/progress/episode'
+import { regionsFor } from '~/lib/view/chart'
 import * as api from '~/server/api'
 import * as shared from '~/server/series'
-import { opFruitAlbum as fruitAlbum } from '~/test/archive'
+import {
+  opFruitAlbum as fruitAlbum,
+  opPeekPort as peekPort,
+  opPlacesPage as placesPage,
+} from '~/test/archive'
 import { leaksOf } from '~/test/fog'
 import {
   type LoadedSeries as ListedSeries,
@@ -471,6 +477,111 @@ describe('a faction label', () => {
     // them otherwise. A faction added to this list needs a reason.
     expect(new Set(missed.map(({ faction }) => faction))).toStrictEqual(
       new Set(['galley-la', 'punk-hazard']),
+    )
+  })
+})
+
+/** A locale's sea names, with the region each names. */
+function seasByName(locale: Locale): Map<string, string> {
+  return new Map(
+    Object.entries(SEA_LABELS[locale]).map(([region, name]) => [name, region]),
+  )
+}
+
+const SEA_OF: Record<Locale, Map<string, string>> = {
+  en: seasByName('en'),
+  it: seasByName('it'),
+}
+
+/**
+ * The payload that sends a character's origin as its own prose, which can
+ * read the same as a sea ("Grand Line" for Momoo): the character page's
+ * facts. It sends only the entries the reader has reached, and the leak scan
+ * reads each at its own gate (`dated` in `~/data/leaks.test.ts`), so here its
+ * `origin` values are not read; every other key of it is.
+ */
+const ORIGIN_PROSE = new Set(['loadCharacter'])
+
+/** Every One Piece ask, with the regions its places page opens and names. */
+const OPENED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
+  const page = placesPage(bookmark, locale)
+
+  return {
+    bookmark,
+    locale,
+    regions: new Set<string>(regionsFor(page.open.map(({ sea }) => sea))),
+    seas: page.seas ?? {},
+  }
+})
+
+/** The names of these regions in a locale, for the regions the chart names. */
+function namesOf(
+  regions: Set<string>,
+  locale: Locale,
+): Partial<Record<string, string>> {
+  const labels: Partial<Record<string, string>> = SEA_LABELS[locale]
+
+  return Object.fromEntries(
+    [...regions].flatMap((region) => {
+      const label = labels[region]
+      return label === undefined ? [] : [[region, label]]
+    }),
+  )
+}
+
+/** Every sea name a page sends early at the asks it is sampled at. */
+function earlySeasOf({ keys, name, run }: Payload): string[] {
+  const all = keys?.()
+  const skip = ORIGIN_PROSE.has(name) ? 'origin' : undefined
+
+  return OPENED.flatMap(({ bookmark, locale, regions }, at) =>
+    sampled(all, at).flatMap((key) => {
+      // A lifted port's own sea is part of what the reader asked for.
+      const own =
+        name === 'liftPort' ?
+          peekPort(key, locale, bookmark)?.dossier?.sea
+        : undefined
+
+      return stringsIn(run(bookmark, locale, key), skip)
+        .map((word) => SEA_OF[locale].get(word))
+        .filter(
+          (region): region is string =>
+            region !== undefined && !regions.has(region) && region !== own,
+        )
+        .map(
+          (region) =>
+            `${region} via ${name} '${key}' @ ${JSON.stringify(bookmark)} ${locale}`,
+        )
+    }),
+  )
+}
+
+// Most seas are named well after the first episode ("New World"), so a sea's
+// name is sent with the places page once the chart opens it, with a place's
+// page or peek for its own sea, and nowhere else (#993).
+describe('a sea name', () => {
+  it.each(PAYLOADS)(
+    'is not in $name before the chart opens its sea',
+    (payload) => {
+      expect(earlySeasOf(payload)).toStrictEqual([])
+    },
+  )
+
+  it('comes with the places page from the bookmark the chart opens its sea', () => {
+    for (const { locale, regions, seas } of OPENED) {
+      expect(seas).toStrictEqual(namesOf(regions, locale))
+    }
+
+    // The sweep meets every named sea in both units and both locales.
+    const met = new Set<string>()
+    for (const { bookmark, locale, seas } of OPENED) {
+      for (const region of Object.keys(seas)) {
+        met.add(`${region} ${unitOf(bookmark)} ${locale}`)
+      }
+    }
+
+    expect(met.size).toBe(
+      Object.keys(SEA_LABELS.en).length * LOCALES.length * 2,
     )
   })
 })

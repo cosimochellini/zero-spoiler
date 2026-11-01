@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest'
 
 import type { SagaPick, StopView } from '~/lib/view/places'
 import type { CoveredRecord } from '~/lib/view/records'
-import { at, coveredRecord, stop } from '~/test/fixtures'
+import { at, coveredRecord, seasOf, stop } from '~/test/fixtures'
 import { ep, renderOnRoute } from '~/test/providers'
 
 import { PlaceIndex } from './-index'
@@ -52,6 +52,7 @@ function Index({
         mapAbove
         open={stops}
         sagas={sagas}
+        seas={seasOf(stops)}
         {...picks}
       />
     </>

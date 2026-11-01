@@ -1,6 +1,6 @@
 import { onlyUnder, useSeriesT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
-import type { PlaceForm, PlaceWordsView, Sea } from '~/lib/view/records'
+import type { PlaceForm, PlaceWordsView } from '~/lib/view/records'
 
 /** A page's place words, as its locale prints them. */
 export interface PlaceLabels {
@@ -14,17 +14,9 @@ export interface PlaceLabels {
   regionOf: (region: string) => string
 }
 
-// One Piece's words, labelled by its copy (the seas) and the shared one (the
-// forms), which its pages are sent. Keyed by every member of the unions, so a
-// sea or a form added to them does not compile until it is labelled here too.
-const SEAS: Record<Sea, TranslationKey<'one-piece'>> = {
-  'east-blue': 'sea.east-blue',
-  'grand-line': 'sea.grand-line',
-  'calm-belt': 'sea.calm-belt',
-  'red-line': 'sea.red-line',
-  'new-world': 'sea.new-world',
-}
-
+// One Piece's forms, labelled by its copy, which its pages are sent. Keyed by
+// every member of the union, so a form added to it does not compile until it
+// is labelled here too. Its seas' names come with the page (`seas`, #993).
 const FORMS: Record<PlaceForm, TranslationKey<'one-piece'>> = {
   archipelago: 'form.archipelago',
   city: 'form.city',
@@ -58,9 +50,12 @@ function own(label: string): string {
 /**
  * The labels of a page's place words: the ones the server sent with it, for
  * a series that labels its words itself (`PlaceWordsView`), or One Piece's,
- * from the dictionaries, when it sent none.
+ * from its copy and the seas' names the page came with, when it sent none.
  */
-export function usePlaceLabels(words?: PlaceWordsView): PlaceLabels {
+export function usePlaceLabels(
+  words?: PlaceWordsView,
+  seas: Partial<Record<string, string>> = {},
+): PlaceLabels {
   const onePiece = useSeriesT('one-piece')
   if (words !== undefined) {
     return {
@@ -71,13 +66,13 @@ export function usePlaceLabels(words?: PlaceWordsView): PlaceLabels {
     }
   }
 
-  // A series that sends no words of its own is One Piece, whose seas and
-  // forms its copy labels.
+  // A series that sends no words of its own is One Piece, whose forms its
+  // copy labels, and whose seas the page names.
   const t = onlyUnder(onePiece, 'one-piece')
   return {
     allRegions: t('places.allSeas'),
     formOf: (form) => lookUp<TranslationKey<'one-piece'>>(FORMS, form, t),
     region: t('places.sea'),
-    regionOf: (region) => lookUp<TranslationKey<'one-piece'>>(SEAS, region, t),
+    regionOf: (region) => lookUp(seas, region, own),
   }
 }

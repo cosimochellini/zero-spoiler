@@ -40,9 +40,11 @@ export interface PlaceControlsProps {
   params: PlaceParams
   /** The sagas the open places are filed under, in route order. */
   sagas: SagaPick[]
+  /** One Piece's: the names of the seas the reader has opened. */
+  seas?: Partial<Record<string, string>> | undefined
   /**
    * The labels of the open places' words, for a series that labels its
-   * words itself; One Piece's come from the dictionaries.
+   * words itself; One Piece's forms come from its copy.
    */
   words?: PlaceWordsView | undefined
 }
@@ -58,10 +60,11 @@ export function PlaceControls({
   open,
   params,
   sagas,
+  seas,
   words,
 }: PlaceControlsProps): ReactElement {
   const t = useT()
-  const labels = usePlaceLabels(words)
+  const labels = usePlaceLabels(words, seas)
   // Every pick goes through the parser, so a default ("all", a blank
   // query) is left out of the address rather than written into it.
   const pick: Pick = (next, replace = false) => {

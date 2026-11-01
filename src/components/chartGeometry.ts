@@ -1,5 +1,4 @@
-import type { TranslationKey } from '~/i18n/types'
-import type { Sea } from '~/lib/view/records'
+import type { Region } from '~/lib/view/chart'
 
 /**
  * The geometry of the sea chart, apart from any page: the world it is drawn
@@ -93,18 +92,6 @@ export const REVERSE_MOUNTAIN: Point = { x: 1588, y: 400 }
  */
 export const FOG_END: Point = { x: 44, y: 400 }
 
-/** One part of the world, drawn and named once the reader has opened it. */
-export type Region =
-  | 'calm-belt'
-  | 'east-blue'
-  | 'grand-line'
-  | 'new-world'
-  | 'new-world-calm-belt'
-  | 'north-blue'
-  | 'red-line'
-  | 'south-blue'
-  | 'west-blue'
-
 /** Half of something: the middle of a length. */
 const HALF = 0.5
 
@@ -152,45 +139,11 @@ export const REGIONS: Record<Region, Rect[]> = {
 }
 
 /**
- * What entering each sea opens. Reverse Mountain, on the way into the Grand
- * Line, shows and names the Red Line, both Calm Belts and the four Blues
- * (owner, #674), so the first stop in the Grand Line opens all of them. The
- * New World opens at its own first stop.
+ * Where a region's name is written, across. The name itself comes from the
+ * server with the regions the reader has opened (`seas` on the places page).
  */
-const OPENS: Record<Sea, Region[]> = {
-  'east-blue': ['east-blue'],
-  'grand-line': [
-    'east-blue',
-    'grand-line',
-    'calm-belt',
-    'red-line',
-    'north-blue',
-    'west-blue',
-    'south-blue',
-  ],
-  'new-world': ['new-world', 'new-world-calm-belt'],
-  'calm-belt': ['calm-belt'],
-  'red-line': ['red-line'],
-}
-
-/** Whether a region is one of the seas the map opens. */
-function isSea(region: string): region is Sea {
-  return Object.hasOwn(OPENS, region)
-}
-
-/**
- * The regions a reader who has entered these seas may see. A stop's region
- * is a word of its series (`PlaceWords`); only One Piece draws this map, and
- * a word that is none of its seas opens nothing.
- */
-export function regionsFor(seas: Iterable<string>): Set<Region> {
-  return new Set([...seas].flatMap((sea) => (isSea(sea) ? OPENS[sea] : [])))
-}
-
-/** A region's name, and where it is written, across. */
 export interface RegionLabel {
   at: Point
-  key: TranslationKey<'one-piece'>
   /** A band, named along its length when it stands upright. */
   upright?: true
 }
@@ -201,26 +154,23 @@ export interface RegionLabel {
  * Belt itself, where the sagas' names leave room (`sagaNamesOf`).
  */
 export const LABELS: Partial<Record<Region, RegionLabel>> = {
-  'east-blue': { key: 'sea.east-blue', at: { x: 1480, y: 36 } },
-  'north-blue': { key: 'sea.north-blue', at: { x: 400, y: 125 } },
-  'west-blue': { key: 'sea.west-blue', at: { x: 400, y: 675 } },
-  'south-blue': { key: 'sea.south-blue', at: { x: 1200, y: 675 } },
+  'east-blue': { at: { x: 1480, y: 36 } },
+  'north-blue': { at: { x: 400, y: 125 } },
+  'west-blue': { at: { x: 400, y: 675 } },
+  'south-blue': { at: { x: 1200, y: 675 } },
   'grand-line': {
-    key: 'sea.grand-line',
     at: { x: 1200, y: (BELT_TOP + BAND_TOP) * HALF },
     upright: true,
   },
   'new-world': {
-    key: 'sea.new-world',
     at: { x: 400, y: (BELT_TOP + BAND_TOP) * HALF },
     upright: true,
   },
   'calm-belt': {
-    key: 'sea.calm-belt',
     at: { x: 1200, y: (BAND_BOTTOM + BELT_BOTTOM) * HALF },
     upright: true,
   },
-  'red-line': { key: 'sea.red-line', at: { x: 800, y: 700 }, upright: true },
+  'red-line': { at: { x: 800, y: 700 }, upright: true },
 }
 
 /** Which side of a point something is set on. */

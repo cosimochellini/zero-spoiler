@@ -161,6 +161,7 @@ function PlaceCard({
   port: RecordView & {
     form?: string | undefined
     sea?: string | undefined
+    seaName?: string | undefined
     words?: PlaceWordsView | undefined
   }
 }): ReactElement {
@@ -169,7 +170,7 @@ function PlaceCard({
   const meta =
     port.sea === undefined || port.form === undefined ?
       undefined
-    : [regionOf(port.sea), formOf(port.form)].join(' · ')
+    : [port.seaName ?? regionOf(port.sea), formOf(port.form)].join(' · ')
 
   return (
     <Card
@@ -190,9 +191,15 @@ function PlaceCard({
 /** The peek of a stop the reader has reached. */
 export function StopPeek({
   port,
+  seas,
   stage,
   ...frame
-}: PeekFrameProps & { port: StopView; stage: string }): ReactElement {
+}: PeekFrameProps & {
+  port: StopView
+  /** The names of the seas the reader has opened, from the places page. */
+  seas: Partial<Record<string, string>> | undefined
+  stage: string
+}): ReactElement {
   const { onDismiss } = frame.peek
 
   return (
@@ -203,7 +210,7 @@ export function StopPeek({
       <p {...stylex.props(styles.stage)}>{stage}</p>
       <PlaceCard
         onDismiss={onDismiss}
-        port={port}
+        port={{ ...port, seaName: seas?.[port.sea] }}
       />
     </Frame>
   )
@@ -253,6 +260,7 @@ export function FogPeek({
                 ...port,
                 form: port.dossier?.form,
                 sea: port.dossier?.sea,
+                seaName: port.dossier?.seaName,
                 words: port.dossier?.words,
               }}
             />

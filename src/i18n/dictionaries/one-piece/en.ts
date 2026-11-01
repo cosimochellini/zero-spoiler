@@ -237,15 +237,6 @@ export const onePieceEn = {
   'fruitForm.zoan': 'Zoan',
   'fruitForm.logia': 'Logia',
 
-  'sea.east-blue': 'East Blue',
-  'sea.grand-line': 'Grand Line',
-  'sea.new-world': 'New World',
-  'sea.calm-belt': 'Calm Belt',
-  'sea.red-line': 'Red Line',
-  'sea.north-blue': 'North Blue',
-  'sea.west-blue': 'West Blue',
-  'sea.south-blue': 'South Blue',
-
   'kind.ship': 'Ship',
   'kind.fruit': 'Devil fruit',
 } as const satisfies OwnCopy

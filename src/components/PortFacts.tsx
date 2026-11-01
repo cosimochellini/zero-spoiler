@@ -19,7 +19,7 @@ export function PortFacts({ dossier }: { dossier: PortDossier }): ReactElement {
     <dl {...stylex.props(styles.facts)}>
       <Fact
         label={region}
-        value={regionOf(dossier.sea)}
+        value={dossier.seaName ?? regionOf(dossier.sea)}
       />
       <Fact
         label={t('places.form')}

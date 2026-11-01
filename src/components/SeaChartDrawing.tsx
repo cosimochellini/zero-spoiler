@@ -7,7 +7,6 @@ import {
   type Point,
   project,
   projectRect,
-  type Region,
   REGIONS,
 } from '~/components/chartGeometry'
 import {
@@ -21,6 +20,7 @@ import { tintOf } from '~/components/drawing'
 import { styles } from '~/components/SeaChart.styles'
 import { Compass, Continent, SeaKing } from '~/components/SeaChartDecor'
 import { worldStyles } from '~/components/SeaChartWorld.styles'
+import type { Region } from '~/lib/view/chart'
 import type { TintId } from '~/lib/view/records'
 
 /** What both halves of the drawing share: its orientation and its ids. */

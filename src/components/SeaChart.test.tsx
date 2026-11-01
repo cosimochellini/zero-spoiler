@@ -5,7 +5,16 @@ import { describe, expect, it, vi } from 'vitest'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { SagaPick, StopView } from '~/lib/view/places'
 import type { CoveredRecord, PortView, ShipView } from '~/lib/view/records'
-import { at, coveredRecord, peekTo, port, ship, stop } from '~/test/fixtures'
+import {
+  at,
+  coveredRecord,
+  dossier,
+  peekTo,
+  port,
+  seasOf,
+  ship,
+  stop,
+} from '~/test/fixtures'
 import { ep, renderWithProviders, settle } from '~/test/providers'
 
 import { SeaChart } from './SeaChart'
@@ -87,6 +96,7 @@ function draw({
       open={open}
       peekPort={peekPort}
       sagas={sagas}
+      seas={seasOf(open)}
       served="across"
       ships={ships}
     />,
@@ -595,7 +605,16 @@ describe('the peek', () => {
 
   it('veils a fogged stop and asks the server only on “Show anyway”', async () => {
     const user = userEvent.setup()
-    const whisky = port({ id: 'whisky-peak', name: 'Whisky Peak', ...at(64) })
+    const whisky = port({
+      id: 'whisky-peak',
+      name: 'Whisky Peak',
+      ...at(64),
+      dossier: dossier({
+        sea: 'grand-line',
+        seaName: 'Grand Line',
+        form: 'town',
+      }),
+    })
     const lift = vi.fn<(handle: string) => Promise<PortView>>(peekTo(whisky))
     draw({ bookmark: ep(30), open: eastBlue, covered: fogged, peekPort: lift })
 
@@ -618,6 +637,8 @@ describe('the peek', () => {
 
     expect(lift).toHaveBeenCalledWith(fogged[0]!.handle)
     expect(dialog).toHaveTextContent('Whisky Peak')
+    // The lifted place names its own sea, as the server sent it with it.
+    expect(dialog).toHaveTextContent('Grand Line · Town')
     expect(
       within(dialog).getByRole('link', { name: 'Open the entry' }),
     ).toHaveAttribute('href', '/one-piece/en/places/whisky-peak')
