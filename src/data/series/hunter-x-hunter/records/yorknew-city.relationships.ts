@@ -758,8 +758,8 @@ const links = {
       it: 'Utilizzatore di catene a cui dà la caccia',
     },
     summary: {
-      en: 'Kurapika captures Uvogin with his chain and punches him. Once he is free, Uvogin hunts the chain user and finds Kurapika, who has stayed behind alone to wait for him.',
-      it: 'Kurapika cattura Uborghin con la sua catena e lo colpisce con un pugno. Una volta libero, Uborghin dà la caccia all’utilizzatore di catene e trova Kurapika, che è rimasto da solo ad aspettarlo.',
+      en: 'Kurapika captures Uvogin with his chain and punches him. Once he is free, Uvogin hunts the chain user until he stands face to face with Kurapika.',
+      it: 'Kurapika cattura Uborghin con la sua catena e lo colpisce con un pugno. Una volta libero, Uborghin dà la caccia all’utilizzatore di catene finché non si trova faccia a faccia con Kurapika.',
     },
   },
   uvoginKurapikaDeath: {

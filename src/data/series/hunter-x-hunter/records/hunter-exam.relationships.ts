@@ -1403,8 +1403,8 @@ const links = {
       it: 'Membro della Brigata che cattura',
     },
     summary: {
-      en: 'Kurapika captures Uvogin with his chain, and when Uvogin says that the Troupe killed all the guests at the auction, punches him. After Uvogin escapes, Kurapika stays behind alone to wait for him.',
-      it: 'Kurapika cattura Uborghin con la sua catena e, quando Uborghin dice che la Brigata ha ucciso tutti gli ospiti dell’asta, gli dà un pugno. Dopo la fuga di Uborghin, Kurapika resta da solo ad aspettarlo.',
+      en: 'Kurapika captures Uvogin with his chain, and when Uvogin says that the Troupe killed all the guests at the auction, punches him. After Uvogin escapes, he hunts Kurapika down, and the two stand face to face.',
+      it: 'Kurapika cattura Uborghin con la sua catena e, quando Uborghin dice che la Brigata ha ucciso tutti gli ospiti dell’asta, gli dà un pugno. Dopo la fuga, Uborghin dà la caccia a Kurapika, e i due si trovano faccia a faccia.',
     },
   },
   kurapikaUvoginDeath: {

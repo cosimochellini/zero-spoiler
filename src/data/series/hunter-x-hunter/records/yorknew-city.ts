@@ -786,8 +786,8 @@ export const yorknewCity: HunterSaga = {
       chronicle: yorknewCityChronicles.uvogin,
       role: TROUPE_MEMBER,
       log: {
-        it: 'Fugge dall’asta in mongolfiera con altri membri della Brigata. Al telefono dice al capo che il caveau era già vuoto e che tra loro potrebbe esserci un traditore; il capo lo convince che non c’è. Il capo vuole che attirino le Bestie dell’Ombra.',
-        en: 'He flees the auction in a hot-air balloon with other Troupe members. On the phone he tells the leader that the vault was already empty and that there may be a traitor among them; the leader convinces him there is none. The leader wants them to draw out the Shadow Beasts.',
+        it: 'Fugge dall’asta in mongolfiera con altri membri della Brigata. Dice al capo che il caveau era già vuoto e che tra loro potrebbe esserci un traditore; il capo lo convince che non c’è. Il capo vuole che attirino le Bestie dell’Ombra.',
+        en: 'He flees the auction in a hot-air balloon with other Troupe members. He tells the leader that the vault was already empty and that there may be a traitor among them; the leader convinces him there is none. The leader wants them to draw out the Shadow Beasts.',
       },
       status: [
         { episode: 43, chapter: 74, value: 'alive' },

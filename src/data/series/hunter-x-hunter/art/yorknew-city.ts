@@ -990,8 +990,8 @@ export const yorknewCityRedrawn: Redrawings = {
     },
   ],
   'dalzollene': [
-    // The same screen gone dark, its glass hatched over: Phinks kills him
-    // when the Troupe frees Uvogin, episode 45 / chapter 78.
+    // The same screen gone dark, its glass hatched over: the Troupe kills him
+    // when it frees Uvogin, episode 45 / chapter 78.
     {
       episode: 45,
       chapter: 78,
