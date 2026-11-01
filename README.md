@@ -5,7 +5,7 @@
 <h1 align="center">Zero Spoiler</h1>
 
 <p align="center">
-  <strong>The wiki without spoilers for One Piece and Hunter x Hunter.</strong>
+  <strong>The wiki without spoilers for One Piece, Hunter x Hunter and Game of Thrones.</strong>
   <br>
   Set a bookmark at the last episode or chapter you reached. Everything after it stays on the server.
 </p>
@@ -72,8 +72,9 @@ flowchart LR
 ```
 
 The one exception is the landing page for a visitor with no bookmark. It carries
-the series’ introduction, East Blue or the Hunter Exam, so its dial can open and
-cover those entries in the browser, and nothing past it.
+the series’ introduction, East Blue, the Hunter Exam or the first season of Game
+of Thrones, so its dial can open and cover those entries in the browser, and
+nothing past it.
 
 The archive is never compiled into the client bundle, and a build gate fails if
 any of it gets there. Search, drawings and links follow the same rule. The full
@@ -84,10 +85,12 @@ design is in [docs/architecture.md](docs/architecture.md).
 One Piece has 500+ characters, 120+ devil fruits and about 40 places, from the
 first episode to the latest arc. Hunter x Hunter currently covers the Hunter
 Exam, the Heavens Arena, Yorknew City and Greed Island’s recruitment cast, with
-90+ characters and about fifteen places. Both series are available in Italian
-and English. Every entry has its own line drawing made for this project, and
-some are redrawn from the episode the story changes them. There is no official
-artwork.
+90+ characters and about fifteen places. Game of Thrones currently covers the
+first season and the first book, with 60+ characters. All three series are
+available in Italian and English. Every One Piece and Hunter x Hunter entry has
+its own line drawing made for this project, and some are redrawn from the
+episode the story changes them. Most Game of Thrones entries show a plain
+placeholder until theirs are drawn. There is no official artwork.
 
 |                                                                                                                                                                                              |                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -142,5 +145,5 @@ from either follows the same
 [MIT](LICENSE) © 2026 Cosimo Chellini, for the software and original technical
 documentation; [LICENSE-SCOPE.md](LICENSE-SCOPE.md) says what it leaves out.
 This is an unofficial fan project, not endorsed by the rights holders of One
-Piece or Hunter x Hunter. Credits, the rights contact, privacy and sources are
-on the [legal page](https://zerospoiler.app/en/legal).
+Piece, Hunter x Hunter or Game of Thrones. Credits, the rights contact, privacy
+and sources are on the [legal page](https://zerospoiler.app/en/legal).

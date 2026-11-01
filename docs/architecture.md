@@ -89,7 +89,7 @@ receive an end-of-anime bookmark; source filtering still applies. See
 
 ## Series and routing
 
-One Piece and Hunter x Hunter are open to readers. HxH files the verified Hunter
+All three series are open to readers. Hunter x Hunter files the verified Hunter
 Exam coverage through episode 26 / chapter 43, including the manga's chapter-one
 characters introduced later by the anime, the Heavens Arena characters and place
 up to episode 34 / chapter 59 (#896), and Yorknew City through episode 58 /
@@ -105,16 +105,20 @@ names. Greed Island’s recruitment cast (#1016) adds Battera, Tsezguerra and
 Puhat, plus Gon and Killua’s recruitment steps. The rest of that arc remains in
 #904.
 
-Game of Thrones is filed closed (#849): its description (the show's seasons, the
-five books, the season 1 / first-book demo), its copy, its red theme and its hub
-crown (#850). It files no arcs: each season module is headed by its own
-`heading`, and a season with no record is left out of the engine's sagas until
-its records land. Season 1 files the main cast of the season and of _A Game of
-Thrones_ (#852): 63 characters, the six direwolves among them, each gated where
-it appears and is named in each medium, with every dated step pinned to both an
-episode and an absolute chapter; Ros, whom only the show has, is
-`source: 'episode'`. While the series is closed its records are filed before
-their drawings (#854), so the drawing tests wait for it to open.
+Game of Thrones is open to readers (#856), filed in #849: its description (the
+show's seasons, the five books, the season 1 / first-book demo), its copy, its
+red theme and its hub crown (#850). It files no arcs: each season module is
+headed by its own `heading`, and a season with no record is left out of the
+engine's sagas until its records land. Season 1 files the main cast of the
+season and of _A Game of Thrones_ (#852): 63 characters, the six direwolves
+among them, each gated where it appears and is named in each medium, with every
+dated step pinned to both an episode and an absolute chapter; Ros, whom only the
+show has, is `source: 'episode'`. It opened before its drawings (#854): Eddard,
+Jon, Daenerys and Tyrion have their own, Eddard's with a death stage, and every
+other record maps to a shared placeholder in `art/index.ts`, `PERSON` or the
+direwolves' `WOLF`, so the drawing tests hold it like any series. It files no
+places yet (#853): the places page shows its empty state, and the demo leaves
+out an empty places shelf and an empty tail.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -207,13 +211,13 @@ checks this block.
 
 ### `game-of-thrones`
 
-| Thing             | Count                                             |
-| ----------------- | ------------------------------------------------- |
-| Records           | 63                                                |
-| Characters        | 63                                                |
-| Places            | 0                                                 |
-| Saga modules      | 1                                                 |
-| Line drawings     | 0, one per record, plus 0 redrawings of 0 records |
-| Chronicle stories | 0, for 0 characters                               |
+| Thing             | Count                                              |
+| ----------------- | -------------------------------------------------- |
+| Records           | 63                                                 |
+| Characters        | 63                                                 |
+| Places            | 0                                                  |
+| Saga modules      | 1                                                  |
+| Line drawings     | 63, one per record, plus 1 redrawings of 1 records |
+| Chronicle stories | 0, for 0 characters                                |
 
 <!-- End of the generated counts. -->

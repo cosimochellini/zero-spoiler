@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import { HUNTER_X_HUNTER_SERIES, ONE_PIECE_SERIES } from '~/lib/progress/series'
+import {
+  GAME_OF_THRONES_SERIES,
+  HUNTER_X_HUNTER_SERIES,
+  ONE_PIECE_SERIES,
+} from '~/lib/progress/series'
 
 import {
   archiveOf,
@@ -24,6 +28,17 @@ describe('the runtime series registry', () => {
     expect(OPEN_SERIES.map(({ slug }) => slug)).toContain('hunter-x-hunter')
     expect(COMING_SERIES.map(({ slug }) => slug)).not.toContain(
       'hunter-x-hunter',
+    )
+  })
+
+  it('opens Game of Thrones to readers and removes its coming announcement', async () => {
+    expect(descriptionOf('game-of-thrones')).toBe(GAME_OF_THRONES_SERIES)
+    await expect(archiveOf('game-of-thrones')).resolves.toMatchObject({
+      series: GAME_OF_THRONES_SERIES,
+    })
+    expect(OPEN_SERIES.map(({ slug }) => slug)).toContain('game-of-thrones')
+    expect(COMING_SERIES.map(({ slug }) => slug)).not.toContain(
+      'game-of-thrones',
     )
   })
 

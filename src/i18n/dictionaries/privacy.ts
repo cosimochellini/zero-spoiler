@@ -9,7 +9,7 @@ import type { Locale } from '~/i18n/locales'
  */
 const privacyEn = {
   'privacy.title': 'Privacy and cookies',
-  'privacy.updated': 'Last checked: 28 October 2026.',
+  'privacy.updated': 'Last checked: 1 November 2026.',
   'privacy.controllerTitle': 'Who runs the site',
   'privacy.controller':
     'Zero Spoiler is a personal, nonprofit fan project. Its operator and data controller is a private individual based in Italy, reachable as @cosimochellini on GitHub. Use the GitHub contact link below for an initial request.',
@@ -20,13 +20,13 @@ const privacyEn = {
   'privacy.cookiesIntro':
     'These first-party cookies support features you request. They are not used for advertising or tracking across sites. They do not require a consent banner under the Italian rules for necessary technical cookies.',
   'privacy.bookmark':
-    'zs_one-piece and zs_hunter-x-hunter: your bookmark for each series, by episode, season, chapter or live action where supported; kept for 365 days after saving it, or until you clear it. Opening a shared bookmark link also sets this cookie. The value is sent to the server to hide later events.',
+    'zs_one-piece, zs_hunter-x-hunter and zs_game-of-thrones: your bookmark for each series, by episode, season, chapter, book or live action where supported; kept for 365 days after saving it, or until you clear it. Opening a shared bookmark link also sets this cookie. The value is sent to the server to hide later events.',
   'privacy.language':
     'opzs_lang: your selected language (it or en); kept for 365 days after choosing it. Sent to the server to remember the language on later visits.',
   'privacy.trial':
-    'zs_one-piece_try and zs_hunter-x-hunter_try: a temporary bookmark for each series set when you try the site; a session cookie with no fixed expiry, removed when you save or clear a bookmark or leave the trial. Browser session restore can preserve session cookies.',
+    'zs_one-piece_try, zs_hunter-x-hunter_try and zs_game-of-thrones_try: a temporary bookmark for each series set when you try the site; a session cookie with no fixed expiry, removed when you save or clear a bookmark or leave the trial. Browser session restore can preserve session cookies.',
   'privacy.attributes':
-    'All five cookies use Path=/ and SameSite=Lax, with no Domain, Secure or HttpOnly attribute. The site is served over HTTPS. They can be read by this site’s JavaScript and sent on applicable same-site requests and top-level cross-site navigations.',
+    'All seven cookies use Path=/ and SameSite=Lax, with no Domain, Secure or HttpOnly attribute. The site is served over HTTPS. They can be read by this site’s JavaScript and sent on applicable same-site requests and top-level cross-site navigations.',
   'privacy.storage':
     'opzs_welcome is a sessionStorage flag used to show a welcome once after saving a bookmark. It is removed when the home page reads it, or when the tab session ends; it is not sent to the server. opzs_intro is a sessionStorage flag, value 1, set when you close the introduction a page shows when you arrive with no bookmark, or once a bookmark is in use, so the introduction is not shown in the rest of the tab session; it is not sent to the server. The application does not use localStorage.',
   'privacy.controlTitle': 'Your choices',
@@ -61,7 +61,7 @@ export type PrivacyKey = keyof typeof privacyEn
 
 const privacyIt: Record<PrivacyKey, string> = {
   'privacy.title': 'Privacy e cookie',
-  'privacy.updated': 'Ultima verifica: 28 ottobre 2026.',
+  'privacy.updated': 'Ultima verifica: 1 novembre 2026.',
   'privacy.controllerTitle': 'Chi gestisce il sito',
   'privacy.controller':
     'Zero Spoiler è un progetto amatoriale personale e senza scopo di lucro. Il gestore e titolare del trattamento è una persona privata in Italia, contattabile su GitHub come @cosimochellini. Per una richiesta iniziale usa il link di contatto GitHub qui sotto.',
@@ -72,13 +72,13 @@ const privacyIt: Record<PrivacyKey, string> = {
   'privacy.cookiesIntro':
     'Questi cookie di prima parte servono alle funzioni che richiedi. Non sono usati per pubblicità o tracciamento tra siti. Le regole italiane sui cookie tecnici necessari non richiedono un banner di consenso per questi usi.',
   'privacy.bookmark':
-    'zs_one-piece e zs_hunter-x-hunter: il tuo segnalibro per ciascuna serie, per episodio, stagione, capitolo o live action dove disponibile; dura 365 giorni dal salvataggio, oppure fino alla cancellazione. Anche aprire un link con un segnalibro imposta questo cookie. Il valore viene inviato al server per nascondere gli eventi successivi.',
+    'zs_one-piece, zs_hunter-x-hunter e zs_game-of-thrones: il tuo segnalibro per ciascuna serie, per episodio, stagione, capitolo, libro o live action dove disponibile; dura 365 giorni dal salvataggio, oppure fino alla cancellazione. Anche aprire un link con un segnalibro imposta questo cookie. Il valore viene inviato al server per nascondere gli eventi successivi.',
   'privacy.language':
     'opzs_lang: la lingua scelta (it o en); dura 365 giorni dalla scelta. Viene inviato al server per ricordare la lingua nelle visite successive.',
   'privacy.trial':
-    'zs_one-piece_try e zs_hunter-x-hunter_try: un segnalibro temporaneo per ciascuna serie impostato quando provi il sito; è un cookie di sessione senza scadenza fissa, rimosso quando salvi o cancelli un segnalibro o esci dalla prova. Il ripristino della sessione del browser può conservarlo.',
+    'zs_one-piece_try, zs_hunter-x-hunter_try e zs_game-of-thrones_try: un segnalibro temporaneo per ciascuna serie impostato quando provi il sito; è un cookie di sessione senza scadenza fissa, rimosso quando salvi o cancelli un segnalibro o esci dalla prova. Il ripristino della sessione del browser può conservarlo.',
   'privacy.attributes':
-    'Tutti e cinque i cookie usano Path=/ e SameSite=Lax, senza attributi Domain, Secure o HttpOnly. Il sito è servito tramite HTTPS. Sono leggibili dal JavaScript del sito e vengono inviati nelle richieste pertinenti allo stesso sito e nelle navigazioni principali da altri siti.',
+    'Tutti e sette i cookie usano Path=/ e SameSite=Lax, senza attributi Domain, Secure o HttpOnly. Il sito è servito tramite HTTPS. Sono leggibili dal JavaScript del sito e vengono inviati nelle richieste pertinenti allo stesso sito e nelle navigazioni principali da altri siti.',
   'privacy.storage':
     'opzs_welcome è un indicatore in sessionStorage che mostra un benvenuto una sola volta dopo il salvataggio del segnalibro. Viene rimosso quando la pagina iniziale lo legge o alla fine della sessione della scheda; non viene inviato al server. opzs_intro è un indicatore in sessionStorage, valore 1, impostato quando chiudi l’introduzione che una pagina mostra se arrivi senza segnalibro, o quando un segnalibro è in uso, perché l’introduzione non compaia nel resto della sessione della scheda; non viene inviato al server. L’applicazione non usa localStorage.',
   'privacy.controlTitle': 'Le tue scelte',

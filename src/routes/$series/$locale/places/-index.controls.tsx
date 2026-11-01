@@ -13,8 +13,8 @@ import { SearchField } from '~/components/SearchField'
 import { searchStyles } from '~/components/SearchField.styles'
 import { type PlaceLabels, usePlaceLabels } from '~/components/usePlaceLabels'
 import { useSettled } from '~/components/useSettled'
-import { useT } from '~/i18n/LocaleContext'
-import type { Translate } from '~/i18n/types'
+import { useSeriesT, useT } from '~/i18n/LocaleContext'
+import type { SeriesTranslate } from '~/i18n/types'
 import { parsePlaceParams, type PlaceParams } from '~/lib/search/placeParams'
 import type { SagaPick, StopView } from '~/lib/view/places'
 import type { PlaceWordsView } from '~/lib/view/records'
@@ -162,7 +162,7 @@ function PlaceChoices({
   pick: Pick
   sagas: SagaPick[]
 }): ReactElement {
-  const t = useT()
+  const t = useSeriesT()
 
   return (
     <div {...stylex.props(styles.choices)}>
@@ -222,7 +222,7 @@ function withAll(all: string, values: Counted[]): Option[] {
 
 /** Every saga an open place is filed under, after "All sagas". */
 function sagaOptions(
-  t: Translate,
+  t: SeriesTranslate,
   open: StopView[],
   sagas: SagaPick[],
 ): Option[] {

@@ -215,8 +215,8 @@ const GAME_OF_THRONES_BOOKMARK: BookmarkSeries = {
 }
 
 /**
- * Game of Thrones' public description, filed closed (#849). It files
- * characters and places and no arcs; none of One Piece's features.
+ * Game of Thrones' public description, filed in #849 and open since #856.
+ * It files characters and places and no arcs; none of One Piece's features.
  */
 export const GAME_OF_THRONES_SERIES: Series = {
   ...GAME_OF_THRONES_BOOKMARK,

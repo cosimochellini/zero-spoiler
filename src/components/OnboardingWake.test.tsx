@@ -2,6 +2,7 @@ import { act, fireEvent, screen, waitFor } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import type { DemoDrawings, OnboardingView } from '~/lib/view/records'
+import { coveredRecord } from '~/test/fixtures'
 import { renderWithProviders, settle } from '~/test/providers'
 
 import { OnboardingLanding } from './OnboardingLanding'
@@ -109,5 +110,54 @@ describe('demo drawing section', () => {
     } finally {
       vi.unstubAllGlobals()
     }
+  })
+
+  it('leaves out the places shelf and the tail when there are none', () => {
+    const place = {
+      id: 'shells-town',
+      kind: 'place' as const,
+      name: 'Shells Town',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 3,
+      affiliation: [],
+      bounty: [],
+      epithet: [],
+    }
+    const view: OnboardingView = {
+      arcs: [],
+      cast: [],
+      places: [],
+      chapterAt: [1, 2, 3],
+      fogged: 1,
+      start: null,
+      tail: [],
+    }
+    const { unmount } = renderWithProviders(<OnboardingLanding {...view} />)
+
+    expect(
+      screen.queryByRole('heading', { name: 'Places and ships' }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', { name: 'After East Blue' }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByText(/more entries stay under fog/u),
+    ).not.toBeInTheDocument()
+
+    unmount()
+    renderWithProviders(
+      <OnboardingLanding
+        {...view}
+        places={[place]}
+        tail={[coveredRecord()]}
+      />,
+    )
+
+    expect(
+      screen.getByRole('heading', { name: 'Places and ships' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'After East Blue' }),
+    ).toBeInTheDocument()
   })
 })

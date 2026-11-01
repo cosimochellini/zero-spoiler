@@ -90,17 +90,19 @@ const HUNTER_X_HUNTER: ListedSeries = {
 }
 
 /**
- * Filed closed until its first stage, season 1 and *A Game of Thrones*, is
- * ready (#844). Its book thresholds are checked on A Wiki of Ice and Fire,
- * its episodes on the Game of Thrones Wiki, and its Italian names, which
- * follow the Italian dub, on Italian Wikipedia (owner, 2026-10-26). The show
- * ran past the books, so no chapter is its last adapted one.
+ * Open to readers with its first stage, season 1 and *A Game of Thrones*
+ * (#856): the main cast, four of them drawn and the rest under a
+ * placeholder until #854, and no places yet (#853). Its book thresholds are
+ * checked on A Wiki of Ice and Fire, its episodes on the Game of Thrones
+ * Wiki, and its Italian names, which follow the Italian dub, on Italian
+ * Wikipedia (owner, 2026-10-26). The show ran past the books, so no chapter
+ * is its last adapted one.
  */
 const GAME_OF_THRONES: ListedSeries = {
   description: GAME_OF_THRONES_SERIES,
   slug: GAME_OF_THRONES_SERIES.slug,
   folder: 'game-of-thrones',
-  open: false,
+  open: true,
   placeWords: GAME_OF_THRONES_PLACE_WORDS,
   wiki: {
     en: 'https://awoiaf.westeros.org/api.php',
