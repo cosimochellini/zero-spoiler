@@ -1451,6 +1451,280 @@ const links = {
       it: 'Hisoka incontra Kurapika e si offre di rivelargli le capacità di sette membri della Brigata se lavorano insieme, perché è al capo della Brigata che punta. Kurapika rimanda la risposta al giorno dopo.',
     },
   },
+  gonZepile: {
+    character: 'zepile',
+    type: { en: 'Appraiser who helps him', it: 'Perito che lo aiuta' },
+    summary: {
+      en: 'Zepile outbids Gon on a vase he made himself and stops a dealer from cheating the boys over their wooden statue. Gon tells him that the vase is no junk, because it holds aura.',
+      it: 'Sepail supera l’offerta di Gon per un vaso fatto da lui stesso e impedisce a un commerciante di imbrogliare i ragazzi sulla loro statua di legno. Gon gli dice che il vaso non è robaccia, perché contiene aura.',
+    },
+  },
+  gonNobunaga: {
+    character: 'nobunaga',
+    type: {
+      en: 'Troupe member who wants him in the Troupe',
+      it: 'Membro della Brigata che lo vuole nella Brigata',
+    },
+    summary: {
+      en: 'At the Troupe’s hideout Nobunaga slams Gon’s hand down at arm wrestling again and again, until Gon slams Nobunaga’s hand down in turn. Later Nobunaga asks Gon to join the Troupe; Gon would rather die.',
+      it: 'Nel covo della Brigata Nobunaga schiaccia la mano di Gon sul tavolo a braccio di ferro più e più volte, finché Gon non schiaccia a sua volta la mano di Nobunaga. Più tardi Nobunaga chiede a Gon di entrare nella Brigata; Gon preferirebbe morire.',
+    },
+  },
+  gonKurapikaChain: {
+    character: 'kurapika',
+    type: {
+      en: 'Friend who is the chain user',
+      it: 'Amico che è l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'After Gon and Killua escape from the Troupe’s hideout, Killua tells Gon that the chain user is Kurapika.',
+      it: 'Dopo la fuga di Gon e Killua dal covo della Brigata, Killua dice a Gon che l’utilizzatore di catene è Kurapika.',
+    },
+  },
+  gonKurapikaRescue: {
+    character: 'kurapika',
+    type: {
+      en: 'Friend who gets him back',
+      it: 'Amico che lo riporta indietro',
+    },
+    summary: {
+      en: 'Gon helps Kurapika against the Troupe as a decoy. When the Troupe catches Gon and Killua, Kurapika trades its leader for them.',
+      it: 'Gon aiuta Kurapika contro la Brigata facendo da esca. Quando la Brigata cattura Gon e Killua, Kurapika li scambia con il suo capo.',
+    },
+  },
+  gonChrollo: {
+    character: 'chrollo',
+    type: {
+      en: 'Troupe leader he questions',
+      it: 'Capo della Brigata a cui fa una domanda',
+    },
+    summary: {
+      en: 'When Gon and Killua give themselves up to Chrollo, Gon asks him how he can kill people who have nothing to do with him. Kurapika later trades Chrollo for the two boys.',
+      it: 'Quando Gon e Killua si arrendono a Quoll, Gon gli chiede come possa uccidere persone che non hanno niente a che fare con lui. Più tardi Kurapika scambia Quoll con i due ragazzi.',
+    },
+  },
+  killuaKurapikaChain: {
+    character: 'kurapika',
+    type: {
+      en: 'Friend he unmasks as the chain user',
+      it: 'Amico che scopre essere l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'At the Troupe’s hideout Killua works out that Kurapika is the chain user, and once he and Gon have escaped he tells Gon.',
+      it: 'Nel covo della Brigata Killua capisce che l’utilizzatore di catene è Kurapika, e una volta fuggito con Gon lo dice a Gon.',
+    },
+  },
+  killuaKurapikaRescue: {
+    character: 'kurapika',
+    type: {
+      en: 'Friend who gets him back',
+      it: 'Amico che lo riporta indietro',
+    },
+    summary: {
+      en: 'Killua works out that Kurapika is the chain user and helps him against the Troupe by watching its hideout. When the Troupe catches Killua and Gon, Kurapika trades its leader for them.',
+      it: 'Killua capisce che l’utilizzatore di catene è Kurapika e lo aiuta contro la Brigata sorvegliandone il covo. Quando la Brigata cattura Killua e Gon, Kurapika li scambia con il suo capo.',
+    },
+  },
+  killuaIllumiVoice: {
+    character: 'illumi',
+    type: {
+      en: 'Brother whose voice holds him back',
+      it: 'Fratello la cui voce lo trattiene',
+    },
+    summary: {
+      en: 'Held by the Troupe, Killua hears Illumi’s voice in his head and cannot bring himself to attack Nobunaga.',
+      it: 'Prigioniero della Brigata, Killua sente nella testa la voce di Illumi e non riesce ad attaccare Nobunaga.',
+    },
+  },
+  killuaNobunaga: {
+    character: 'nobunaga',
+    type: {
+      en: 'Troupe member who guards him',
+      it: 'Membro della Brigata che lo sorveglia',
+    },
+    summary: {
+      en: 'Nobunaga questions Killua when the Troupe catches him and guards him and Gon at the hideout. The two break out through the walls and get away.',
+      it: 'Nobunaga interroga Killua quando la Brigata lo cattura e sorveglia lui e Gon nel covo. I due sfondano i muri e scappano.',
+    },
+  },
+  killuaSilva: {
+    character: 'silva',
+    type: {
+      en: 'Father who let him go',
+      it: 'Padre che lo ha lasciato andare',
+    },
+    summary: {
+      en: 'Killua’s father Silva let him leave home to join his friends. Killua tells his friends that his father once fought a member of the Phantom Troupe and told his children to stay away from them.',
+      it: 'Silva, il padre di Killua, lo ha lasciato partire da casa per raggiungere i suoi amici. Killua racconta agli amici che suo padre ha combattuto una volta contro un membro della Brigata Fantasma e ha detto ai figli di starne lontani.',
+    },
+  },
+  kurapikaGonDecoy: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Friend who asks for the chain',
+      it: 'Amico che chiede la catena',
+    },
+    summary: {
+      en: 'Gon agrees to help Kurapika capture Pakunoda as a decoy and asks him to use his Judgment Chain on him too, but Kurapika never meant to use it on his friends.',
+      it: 'Gon accetta di aiutare Kurapika a catturare Pakunoda facendo da esca e gli chiede di usare anche su di lui la Catena del Giudizio, ma Kurapika non ha mai voluto usarla sui suoi amici.',
+    },
+  },
+  kurapikaKilluaWatch: {
+    character: 'killua',
+    type: {
+      en: 'Friend who watches the Troupe for him',
+      it: 'Amico che sorveglia la Brigata per lui',
+    },
+    summary: {
+      en: 'Killua agrees to help Kurapika capture Pakunoda and leaves to watch the Troupe’s hideout.',
+      it: 'Killua accetta di aiutare Kurapika a catturare Pakunoda e va a sorvegliare il covo della Brigata.',
+    },
+  },
+  kurapikaLeorioDriver: {
+    character: 'leorio-paradinight',
+    type: { en: 'Friend who drives for him', it: 'Amico che guida per lui' },
+    summary: {
+      en: 'Leorio agrees to be Kurapika’s driver in the plan to capture Pakunoda.',
+      it: 'Leorio accetta di fare da autista a Kurapika nel piano per catturare Pakunoda.',
+    },
+  },
+  kurapikaHisokaFake: {
+    character: 'hisoka',
+    type: {
+      en: 'Man who offers him a deal',
+      it: 'Uomo che gli propone un patto',
+    },
+    summary: {
+      en: 'Hisoka offers Kurapika a deal against the Phantom Troupe, and later lets him know that the Troupe members’ bodies were fakes.',
+      it: 'Hisoka propone a Kurapika un patto contro la Brigata Fantasma, e più tardi gli fa sapere che i cadaveri dei membri della Brigata erano falsi.',
+    },
+  },
+  kurapikaChrollo: {
+    character: 'chrollo',
+    type: {
+      en: 'Troupe leader he captures',
+      it: 'Capo della Brigata che cattura',
+    },
+    summary: {
+      en: 'In the blackout at the Hotel Beitacle Kurapika takes Chrollo, binds him with his Judgment Chain, forbidding him to use Nen or contact the other members, and trades him for Gon and Killua.',
+      it: 'Durante il buio all’Hotel Beitacle Kurapika rapisce Quoll, lo vincola con la sua Catena del Giudizio, vietandogli di usare il Nen e di contattare gli altri membri, e lo scambia con Gon e Killua.',
+    },
+  },
+  kurapikaPakunoda: {
+    character: 'pakunoda',
+    type: {
+      en: 'Troupe member he binds',
+      it: 'Membro della Brigata che vincola',
+    },
+    summary: {
+      en: 'Kurapika binds Pakunoda with his Judgment Chain: she must free Gon and Killua by midnight without tricks and say nothing about him.',
+      it: 'Kurapika vincola Pakunoda con la sua Catena del Giudizio: deve liberare Gon e Killua entro mezzanotte senza trucchi e non dire niente di lui.',
+    },
+  },
+  leorioZepile: {
+    character: 'zepile',
+    type: { en: 'Appraiser he drinks with', it: 'Perito con cui beve' },
+    summary: {
+      en: 'Leorio helps Zepile at the auction while Gon and Killua tail the Troupe, and the boys come back to find the two drinking together.',
+      it: 'Leorio aiuta Sepail all’asta mentre Gon e Killua pedinano la Brigata, e i ragazzi tornano e trovano i due a bere insieme.',
+    },
+  },
+  leorioKurapikaDriver: {
+    character: 'kurapika',
+    type: { en: 'Friend he drives for', it: 'Amico per cui fa da autista' },
+    summary: {
+      en: 'Leorio drives Kurapika in the plan to capture Pakunoda, until traffic holds the car back.',
+      it: 'Leorio fa da autista a Kurapika nel piano per catturare Pakunoda, finché il traffico non blocca l’auto.',
+    },
+  },
+  leorioGonCode: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Friend he signals in code',
+      it: 'Amico a cui manda un messaggio in codice',
+    },
+    summary: {
+      en: 'While the Troupe holds Gon and Killua in the lobby of the Hotel Beitacle, Leorio pretends to talk on the phone and lets the boys know the plan in code.',
+      it: 'Mentre la Brigata tiene Gon e Killua nell’atrio dell’Hotel Beitacle, Leorio finge di parlare al telefono e fa sapere ai ragazzi il piano in codice.',
+    },
+  },
+  leorioKilluaCode: {
+    character: 'killua',
+    type: {
+      en: 'Friend he signals in code',
+      it: 'Amico a cui manda un messaggio in codice',
+    },
+    summary: {
+      en: 'While the Troupe holds Killua and Gon in the lobby of the Hotel Beitacle, Leorio pretends to talk on the phone and lets the boys know the plan in code.',
+      it: 'Mentre la Brigata tiene Killua e Gon nell’atrio dell’Hotel Beitacle, Leorio finge di parlare al telefono e fa sapere ai ragazzi il piano in codice.',
+    },
+  },
+  hisokaChrollo: {
+    character: 'chrollo',
+    type: {
+      en: 'Troupe leader he wants to fight',
+      it: 'Capo della Brigata che vuole affrontare',
+    },
+    summary: {
+      en: 'Hisoka is after the Troupe’s leader. He covers his fortune with a fake one, and from it Chrollo decides that the Troupe will stay in Yorknew City.',
+      it: 'Hisoka punta al capo della Brigata. Copre la sua profezia con una falsa, e da questa Quoll decide che la Brigata resterà a York Shin City.',
+    },
+  },
+  hisokaChrolloExchange: {
+    character: 'chrollo',
+    type: {
+      en: 'Troupe leader he gives up on',
+      it: 'Capo della Brigata a cui rinuncia',
+    },
+    summary: {
+      en: 'Hisoka comes to the exchange to fight Chrollo, but Chrollo tells him that he cannot use Nen, and Hisoka leaves him.',
+      it: 'Hisoka va allo scambio per affrontare Quoll, ma Quoll gli dice che non può usare il Nen, e Hisoka lo lascia.',
+    },
+  },
+  hisokaNobunaga: {
+    character: 'nobunaga',
+    type: {
+      en: 'Member who draws his sword on him',
+      it: 'Membro che sfodera la spada contro di lui',
+    },
+    summary: {
+      en: 'Hisoka’s fake fortune makes Nobunaga think that Hisoka sold out Uvogin, and Nobunaga draws his sword. Hisoka says he will defend himself.',
+      it: 'La profezia falsa di Hisoka fa pensare a Nobunaga che Hisoka abbia tradito Uborghin, e Nobunaga sfodera la spada. Hisoka dice che si difenderà.',
+    },
+  },
+  hisokaKurapikaExchange: {
+    character: 'kurapika',
+    type: {
+      en: 'Hunter he offers a deal',
+      it: 'Hunter a cui propone un patto',
+    },
+    summary: {
+      en: 'Hisoka offers Kurapika a deal against the Troupe and later asks to come to the exchange, so that he can fight Chrollo.',
+      it: 'Hisoka propone a Kurapika un patto contro la Brigata e più tardi chiede di venire allo scambio, per poter affrontare Quoll.',
+    },
+  },
+  hisokaIllumiHelp: {
+    character: 'illumi',
+    type: {
+      en: 'Acquaintance he asks for help',
+      it: 'Conoscente a cui chiede aiuto',
+    },
+    summary: {
+      en: 'Hisoka asks Illumi for help so that he can slip away from the Troupe, and after the exchange texts him that he can leave.',
+      it: 'Hisoka chiede aiuto a Illumi per potersi allontanare dalla Brigata, e dopo lo scambio gli scrive che può andarsene.',
+    },
+  },
+  hisokaPakunoda: {
+    character: 'pakunoda',
+    type: {
+      en: 'Troupe member he tells his fortune',
+      it: 'Membro della Brigata a cui racconta la sua profezia',
+    },
+    summary: {
+      en: 'After the exchange Hisoka tells Pakunoda what his real fortune said.',
+      it: 'Dopo lo scambio Hisoka racconta a Pakunoda cosa diceva la sua vera profezia.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const hunterExamRelationships = {
@@ -1677,8 +1951,46 @@ export const hunterExamRelationships = {
         links.gonLeorioFriend,
       ],
     },
-    // Anime-only, delayed to Kite's record (episode 76): Kite joins and Mito
-    // makes room, as in the manga's selection.
+    // Yorknew City (#974): Zepile joins in chapters 86-88, which episode 48
+    // adapts. As in Heavens Arena, Kite and Mito make room, so one entry
+    // serves both media; manga readers get Kite back with his next arc.
+    {
+      episode: 48,
+      chapter: 88,
+      value: [
+        links.gonKilluaTogether,
+        links.gonGing,
+        links.gonKurapikaFriend,
+        links.gonLeorioFriend,
+        links.gonZepile,
+      ],
+    },
+    // The hideout and the escape are chapters 91-94 and episode 50.
+    {
+      episode: 50,
+      chapter: 94,
+      value: [
+        links.gonKilluaTogether,
+        links.gonGing,
+        links.gonKurapikaChain,
+        links.gonLeorioFriend,
+        links.gonNobunaga,
+      ],
+    },
+    // The exchange is chapter 119 and episode 58.
+    {
+      episode: 58,
+      chapter: 119,
+      value: [
+        links.gonKilluaTogether,
+        links.gonGing,
+        links.gonKurapikaRescue,
+        links.gonLeorioFriend,
+        links.gonChrollo,
+      ],
+    },
+    // Anime-only, delayed to Kite's record (episode 76): Kite joins and
+    // Chrollo makes room.
     {
       episode: 76,
       chapter: 185,
@@ -1687,7 +1999,7 @@ export const hunterExamRelationships = {
         links.gonKilluaTogether,
         links.gonGing,
         links.gonKiteEpisode,
-        links.gonKurapikaFriend,
+        links.gonKurapikaRescue,
         links.gonLeorioFriend,
       ],
     },
@@ -1805,6 +2117,32 @@ export const hunterExamRelationships = {
         links.leorioGonYorknew,
         links.leorioKilluaYorknew,
         links.leorioIllumi,
+        links.leorioHisoka,
+      ],
+    },
+    // He joins Zepile in chapter 89 and episode 49; the drinks are chapter
+    // 101 and episode 53. Illumi makes room.
+    {
+      episode: 53,
+      chapter: 101,
+      value: [
+        links.leorioKurapikaTeam,
+        links.leorioGonYorknew,
+        links.leorioKilluaYorknew,
+        links.leorioZepile,
+        links.leorioHisoka,
+      ],
+    },
+    // The traffic is chapter 111 and episode 56; the lobby is chapter 112
+    // and episode 57.
+    {
+      episode: 57,
+      chapter: 113,
+      value: [
+        links.leorioKurapikaDriver,
+        links.leorioGonCode,
+        links.leorioKilluaCode,
+        links.leorioZepile,
         links.leorioHisoka,
       ],
     },
@@ -1932,6 +2270,32 @@ export const hunterExamRelationships = {
         links.kurapikaLight,
         links.kurapikaMelodyGuard,
         links.kurapikaLeorioTeam,
+      ],
+    },
+    // Hisoka's message is chapter 105 and episode 54; the plan and the
+    // chains chapters 107-108 and episode 55. Gon, Killua and Leorio come
+    // back; Light and Melody make room.
+    {
+      episode: 55,
+      chapter: 108,
+      value: [
+        links.kurapikaGonDecoy,
+        links.kurapikaKilluaWatch,
+        links.kurapikaLeorioDriver,
+        links.kurapikaHisokaFake,
+        links.kurapikaUvoginDeath,
+      ],
+    },
+    // Chapters 117-119 and episode 58.
+    {
+      episode: 58,
+      chapter: 119,
+      value: [
+        links.kurapikaChrollo,
+        links.kurapikaPakunoda,
+        links.kurapikaGonDecoy,
+        links.kurapikaKilluaWatch,
+        links.kurapikaLeorioDriver,
       ],
     },
   ],
@@ -2120,6 +2484,32 @@ export const hunterExamRelationships = {
         links.hisokaMachi,
         links.hisokaIllumiWarning,
         links.hisokaKastro,
+      ],
+    },
+    // The fortune is chapter 105 and episode 54, the fake chapter 106 and
+    // episode 55.
+    {
+      episode: 55,
+      chapter: 106,
+      value: [
+        links.hisokaChrollo,
+        links.hisokaNobunaga,
+        links.hisokaGonReturned,
+        links.hisokaKurapikaDeal,
+        links.hisokaMachi,
+      ],
+    },
+    // The call to Illumi is chapter 115 and episode 57; the exchange
+    // chapters 118-119 and episode 58.
+    {
+      episode: 58,
+      chapter: 119,
+      value: [
+        links.hisokaChrolloExchange,
+        links.hisokaKurapikaExchange,
+        links.hisokaIllumiHelp,
+        links.hisokaPakunoda,
+        links.hisokaGonReturned,
       ],
     },
   ],
@@ -2365,6 +2755,42 @@ export const hunterExamRelationships = {
         links.killuaZushiRescue,
         links.killuaIllumi,
         links.killuaSadaso,
+      ],
+    },
+    // Yorknew City (#974): the hideout and the escape are chapters 91-94
+    // and episode 50; Wing stays, Zushi and Sadaso make room.
+    {
+      episode: 50,
+      chapter: 94,
+      value: [
+        links.killuaGonTogether,
+        links.killuaKurapikaChain,
+        links.killuaIllumiVoice,
+        links.killuaNobunaga,
+        links.killuaWing,
+      ],
+    },
+    // Silva is named at the assassins' meeting, 51/95 (#834); Wing makes room.
+    {
+      episode: 51,
+      chapter: 95,
+      value: [
+        links.killuaGonTogether,
+        links.killuaKurapikaChain,
+        links.killuaIllumiVoice,
+        links.killuaSilva,
+        links.killuaNobunaga,
+      ],
+    },
+    {
+      episode: 58,
+      chapter: 119,
+      value: [
+        links.killuaGonTogether,
+        links.killuaKurapikaRescue,
+        links.killuaIllumiVoice,
+        links.killuaSilva,
+        links.killuaNobunaga,
       ],
     },
   ],

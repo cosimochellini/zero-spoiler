@@ -970,6 +970,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 44, chapter: 76, value: SHADOW_BEASTS }],
     },
     'zepile': {
+      relationships: yorknewCityRelationships.zepile,
       chronicle: yorknewCityChronicles.zepile,
       role: { it: 'Offerente rivale', en: 'Rival bidder' },
       log: {
@@ -990,6 +991,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'pakunoda': {
+      relationships: yorknewCityRelationships.pakunoda,
       chronicle: yorknewCityChronicles.pakunoda,
       role: TROUPE_MEMBER,
       log: {
@@ -1005,6 +1007,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 49, chapter: 90, value: TROUPE }],
     },
     'zenji': {
+      relationships: yorknewCityRelationships.zenji,
       chronicle: yorknewCityChronicles.zenji,
       role: { it: 'Rivale di Light Nostrad', en: 'Light Nostrade’s rival' },
       log: {
@@ -1019,6 +1022,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'kortopi': {
+      relationships: yorknewCityRelationships.kortopi,
       chronicle: yorknewCityChronicles.kortopi,
       role: TROUPE_MEMBER,
       log: {
@@ -1058,6 +1062,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'chrollo': {
+      relationships: yorknewCityRelationships.chrollo,
       chronicle: yorknewCityChronicles.chrollo,
       role: {
         it: 'Capo della Brigata Fantasma',

@@ -139,6 +139,42 @@ const links = {
       it: 'Quando Illumi pensa di sbarazzarsi di Gon, Hisoka lo avverte di non toccarlo.',
     },
   },
+  // Yorknew City (#974)
+  illumiSilva: {
+    character: 'silva',
+    type: { en: 'Father he calls', it: 'Padre che chiama' },
+    summary: {
+      en: 'Illumi kills the Ten Dons, then calls his father Silva on the family’s transmitter and asks whether his client, the leader of the Phantom Troupe, is still alive.',
+      it: 'Illumi uccide i Dieci Anziani, poi chiama suo padre Silva con il trasmettitore di famiglia e chiede se il suo cliente, il capo della Brigata Fantasma, è ancora vivo.',
+    },
+  },
+  illumiKalluto: {
+    character: 'kalluto',
+    type: { en: 'Brother who goes with him', it: 'Fratello che va con lui' },
+    summary: {
+      en: 'Kalluto is with Illumi when Illumi kills the Ten Dons.',
+      it: 'Carte è con Illumi quando Illumi uccide i Dieci Anziani.',
+    },
+  },
+  illumiChrollo: {
+    character: 'chrollo',
+    type: { en: 'Client', it: 'Cliente' },
+    summary: {
+      en: 'Chrollo hired Illumi. Illumi kills the Ten Dons and asks for his payment to be wired.',
+      it: 'Quoll ha ingaggiato Illumi. Illumi uccide i Dieci Anziani e chiede che il pagamento gli venga versato.',
+    },
+  },
+  illumiHisokaHelp: {
+    character: 'hisoka',
+    type: {
+      en: 'Acquaintance who asks his help',
+      it: 'Conoscente che gli chiede aiuto',
+    },
+    summary: {
+      en: 'Hisoka asks Illumi for help so that he can slip away from the Troupe, and after the exchange texts him that he can leave.',
+      it: 'Hisoka chiede aiuto a Illumi per potersi allontanare dalla Brigata, e dopo lo scambio gli scrive che può andarsene.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const finalPhaseRelationships = {
@@ -199,6 +235,44 @@ export const finalPhaseRelationships = {
         links.illumiHisokaWarns,
         links.illumiKurapikaAccuses,
         links.illumiLeorio,
+      ],
+    },
+    // Yorknew City (#974): the Ten Dons and the call are chapter 100 and
+    // episode 53.
+    {
+      episode: 53,
+      chapter: 100,
+      value: [
+        links.illumiKillua,
+        links.illumiSilva,
+        links.illumiKalluto,
+        links.illumiHisokaWarns,
+        links.illumiGonArm,
+      ],
+    },
+    // Chrollo is linked from 54/104.
+    {
+      episode: 54,
+      chapter: 104,
+      value: [
+        links.illumiKillua,
+        links.illumiSilva,
+        links.illumiChrollo,
+        links.illumiKalluto,
+        links.illumiHisokaWarns,
+      ],
+    },
+    // Hisoka's call is chapter 115 and episode 57, his text chapter 119 and
+    // episode 58.
+    {
+      episode: 58,
+      chapter: 119,
+      value: [
+        links.illumiKillua,
+        links.illumiSilva,
+        links.illumiChrollo,
+        links.illumiHisokaHelp,
+        links.illumiKalluto,
       ],
     },
   ],
