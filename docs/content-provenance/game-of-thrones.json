@@ -1,0 +1,862 @@
+{
+  "eddard-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Eddard_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_6",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_20",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+      "https://gameofthrones.fandom.com/wiki/Eddard_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://it.wikipedia.org/wiki/Eddard_Stark#Prima_stagione"
+    ],
+    "unverified": [
+      "Role step Hand of the King filed at episode 2: the show has him accept at the end of episode 1, which is also the gate, so it moves to the first episode he travels as Hand. Book step at Catelyn II (site 7), where he decides to accept."
+    ]
+  },
+  "catelyn-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Catelyn_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://gameofthrones.fandom.com/wiki/Catelyn_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://it.wikipedia.org/wiki/Catelyn_Stark"
+    ],
+    "unverified": [
+      "Italian name: it.wikipedia's page heads 'Catelyn Stark, nata Tully'; the dub form 'Catelyn Stark' is assumed."
+    ]
+  },
+  "robb-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Robb_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+      "https://gameofthrones.fandom.com/wiki/Robb_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://it.wikipedia.org/wiki/Casa_Stark#Robb_Stark"
+    ]
+  },
+  "sansa-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Sansa_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51",
+      "https://gameofthrones.fandom.com/wiki/Sansa_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Sansa_Stark#Prima_stagione"
+    ],
+    "unverified": [
+      "Status 'captured' at episode 8 / chapter 52 (held by the queen after her father's arrest): owner to confirm 'captured' fits a hostage kept at court."
+    ]
+  },
+  "arya-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Arya_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+      "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://it.wikipedia.org/wiki/Arya_Stark#Prima_stagione"
+    ],
+    "unverified": [
+      "Chapter gate 5 (Eddard I): AWOIAF lists her as appearing; that she is named in Eddard I is not stated by the synopsis. If not, the gate is 6 (Jon I, named as Tommen's partner at the feast)."
+    ]
+  },
+  "bran-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Bran_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_8",
+      "https://gameofthrones.fandom.com/wiki/Bran_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://it.wikipedia.org/wiki/Bran_Stark#Prima_stagione"
+    ]
+  },
+  "rickon-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Rickon_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+      "https://gameofthrones.fandom.com/wiki/Rickon_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://it.wikipedia.org/wiki/Casa_Stark#Rickon_Stark"
+    ],
+    "unverified": [
+      "Chapter gate 5 (Eddard I): AWOIAF lists him as appearing; whether he is named in that chapter is not in the synopsis.",
+      "Episode gate 1: Fandom gives 'Winter Is Coming' as first; that his name is said aloud in that episode is not confirmed."
+    ]
+  },
+  "jon-snow": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Jon_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://gameofthrones.fandom.com/wiki/Jon_Snow",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://it.wikipedia.org/wiki/Jon_Snow#Prima_stagione"
+    ]
+  },
+  "benjen-stark": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Benjen_Stark",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+      "https://gameofthrones.fandom.com/wiki/Benjen_Stark",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://it.wikipedia.org/wiki/Casa_Stark#Benjen_Stark"
+    ],
+    "unverified": [
+      "Role kept as 'Ranger'; both media call him First Ranger, but it is not checked that the title is given at the gate in each."
+    ]
+  },
+  "grey-wind": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Grey_Wind",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_8",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_10",
+      "https://gameofthrones.fandom.com/wiki/Grey_Wind",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Casa_Stark#Robb_Stark"
+    ],
+    "unverified": [
+      "Chapter gate 11 (Jon II): AWOIAF lists him as appearing; whether he is named in that chapter is not confirmed. Named but absent in Bran II (site 9); certainly named and present in Bran IV (site 25).",
+      "Italian 'Vento Grigio' comes from the books section of Casa Stark; the dub form is not confirmed.",
+      "Show gate moved to episode 8, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+    ]
+  },
+  "lady-direwolf": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Lady_(direwolf)",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_15",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+      "https://gameofthrones.fandom.com/wiki/Lady",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://it.wikipedia.org/wiki/Sansa_Stark#Prima_stagione"
+    ],
+    "unverified": [
+      "Episode gate 1 rests on Fandom ('Sansa named her direwolf Lady', GOT101). Her name is certainly said in episode 2, where she dies; a gate at 2 would clash with the death entry, so the owner must confirm episode 1."
+    ]
+  },
+  "nymeria": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Nymeria_(direwolf)",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+      "https://gameofthrones.fandom.com/wiki/Nymeria_(direwolf)",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://it.wikipedia.org/wiki/Arya_Stark#Prima_stagione"
+    ],
+    "unverified": [
+      "Show gate moved to episode 2, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+    ]
+  },
+  "summer-direwolf": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Summer",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_17",
+      "https://gameofthrones.fandom.com/wiki/Summer",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://it.wikipedia.org/wiki/Bran_Stark#Prima_stagione"
+    ],
+    "unverified": [
+      "Show gate moved to episode 4, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+    ]
+  },
+  "shaggydog": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Shaggydog",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+      "https://gameofthrones.fandom.com/wiki/Shaggydog",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://it.wikipedia.org/wiki/Casa_Stark#Rickon_Stark"
+    ],
+    "unverified": [
+      "Italian 'Cagnaccio' comes from the books section of Casa Stark; the dub form is not confirmed.",
+      "Show gate moved to episode 10, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+    ]
+  },
+  "ghost-direwolf": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Ghost",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+      "https://gameofthrones.fandom.com/wiki/Ghost",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://it.wikipedia.org/wiki/Jon_Snow#Prima_stagione"
+    ],
+    "unverified": [
+      "Show gate moved to episode 4, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+    ]
+  },
+  "theon-greyjoy": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Theon_Greyjoy",
+      "https://gameofthrones.fandom.com/wiki/Theon_Greyjoy",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Theon_Greyjoy"
+    ],
+    "unverified": [
+      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”."
+    ]
+  },
+  "luwin": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Luwin",
+      "https://gameofthrones.fandom.com/wiki/Luwin",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_6",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Luwin"
+    ],
+    "unverified": [
+      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”."
+    ]
+  },
+  "rodrik-cassel": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Rodrik_Cassel",
+      "https://gameofthrones.fandom.com/wiki/Rodrik_Cassel",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_55",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Rodrik_Cassel"
+    ],
+    "unverified": [
+      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
+      "The castellan step (chapter 56) is book-only; episode 8 only orders it (Rodrik is at Moat Cailin with Catelyn in both)."
+    ]
+  },
+  "old-nan": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Old_Nan",
+      "https://gameofthrones.fandom.com/wiki/Old_Nan",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Vecchia_Nan"
+    ],
+    "unverified": [
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”. If not, the gate is episode 4, where Theon speaks of her.",
+      "Book: named in mentions from chapter 2; first appears in chapter 15 (Catelyn III)."
+    ]
+  },
+  "hodor": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Hodor",
+      "https://gameofthrones.fandom.com/wiki/Hodor",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_17",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Hodor"
+    ],
+    "unverified": [
+      "Book: Bran III (chapter 18) lists him as “appearing in dream”; treated as not an appearance, so the gate is chapter 25.",
+      "Show: on screen unnamed in episode 1; Theon calls him by name in episode 4."
+    ]
+  },
+  "osha": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Osha",
+      "https://gameofthrones.fandom.com/wiki/Osha",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Osha"
+    ],
+    "unverified": [
+      "Episode 6: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “A Golden Crown”. If her name is first said in episode 7, the gate moves to 7 and the role/affiliation step must move later."
+    ]
+  },
+  "mordane": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Mordane",
+      "https://gameofthrones.fandom.com/wiki/Mordane",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_67",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Septa_Mordane"
+    ],
+    "unverified": [
+      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
+      "Death dated where both media confirm it (episode 10, chapter 68: her head on the spikes). Episode 8 leaves her facing Lannister soldiers without showing the death."
+    ]
+  },
+  "jory-cassel": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Jory_Cassel",
+      "https://gameofthrones.fandom.com/wiki/Jory_Cassel",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_35",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Jory_Cassel"
+    ],
+    "unverified": [
+      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”."
+    ]
+  },
+  "jeor-mormont": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Jeor_Mormont",
+      "https://gameofthrones.fandom.com/wiki/Jeor_Mormont",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Jeor_Mormont"
+    ],
+    "unverified": [
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+    ]
+  },
+  "aemon": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Aemon_Targaryen_(son_of_Maekar_I)",
+      "https://gameofthrones.fandom.com/wiki/Aemon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Maestro_Aemon"
+    ],
+    "unverified": [
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
+      "Blindness at the book gate (Tyrion III) is not in the chapter synopsis; check the text."
+    ]
+  },
+  "samwell-tarly": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Samwell_Tarly",
+      "https://gameofthrones.fandom.com/wiki/Samwell_Tarly",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Samwell_Tarly"
+    ]
+  },
+  "alliser-thorne": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Alliser_Thorne",
+      "https://gameofthrones.fandom.com/wiki/Alliser_Thorne",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Alliser_Thorne"
+    ],
+    "unverified": [
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+    ]
+  },
+  "yoren": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Yoren",
+      "https://gameofthrones.fandom.com/wiki/Yoren",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Yoren"
+    ],
+    "unverified": [
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+    ]
+  },
+  "cersei-lannister": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Cersei_Lannister",
+      "https://gameofthrones.fandom.com/wiki/Cersei_Lannister",
+      "https://it.wikipedia.org/wiki/Cersei_Lannister",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ],
+    "unverified": [
+      "The exact line that names Cersei aloud in episode 1 was not checked; the episode synopsis calls her the queen at the arrival."
+    ]
+  },
+  "jaime-lannister": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Jaime_Lannister",
+      "https://gameofthrones.fandom.com/wiki/Jaime_Lannister",
+      "https://it.wikipedia.org/wiki/Jaime_Lannister",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_57",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Baelor"
+    ]
+  },
+  "tyrion-lannister": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Tyrion_Lannister",
+      "https://gameofthrones.fandom.com/wiki/Tyrion_Lannister",
+      "https://it.wikipedia.org/wiki/Tyrion_Lannister",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_69",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ]
+  },
+  "tywin-lannister": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Tywin_Lannister",
+      "https://gameofthrones.fandom.com/wiki/Tywin_Lannister",
+      "https://it.wikipedia.org/wiki/Casa_Lannister#Tywin_Lannister",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_56",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_57",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_69",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Whether his name is said aloud in his first scene in episode 7 (Jaime calls him father; the name is not quoted in the synopsis).",
+      "When the show first says he is the new Hand: dated at episode 10, where he sends Tyrion to rule in his place; episode 8’s court scene may announce it earlier."
+    ]
+  },
+  "joffrey-baratheon": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Joffrey_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/Joffrey_Baratheon",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Re_Joffrey_I_Baratheon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ]
+  },
+  "myrcella-baratheon": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Myrcella_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/Myrcella_Baratheon",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Myrcella_Baratheon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
+    ],
+    "unverified": [
+      "Episode gate 1 is Fandom’s first appearance; no source quotes her name said aloud in season 1 episode 1 (or 2). Check when the show first names her.",
+      "Chapter gate 6 (Jon I): A Wiki of Ice and Fire lists her as appearing in Eddard I (chapter 5) but its synopsis there only says ‘the younger children’; Jon I names her."
+    ]
+  },
+  "tommen-baratheon": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Tommen_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/Tommen_Baratheon",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Re_Tommen_I_Baratheon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion"
+    ],
+    "unverified": [
+      "Episode gate 1 is Fandom’s first appearance; the first quoted line naming him is in episode 5 (‘Tommen is eight’). If episodes 1–4 never say his name, the gate is 5.",
+      "Chapter gate 6 (Jon I): listed as appearing in Eddard I (chapter 5) but named only in Jon I by the synopses."
+    ]
+  },
+  "robert-baratheon": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Robert_I_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/Robert_Baratheon",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Re_Robert_I_Baratheon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_47",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ]
+  },
+  "renly-baratheon": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Renly_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/Renly_Baratheon",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Renly_Baratheon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_15",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_69",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ]
+  },
+  "lysa-arryn": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Lysa_Arryn",
+      "https://gameofthrones.fandom.com/wiki/Lysa_Arryn",
+      "https://it.wikipedia.org/wiki/Casa_Arryn#Lysa_Tully",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion"
+    ],
+    "unverified": [
+      "Italian Wikipedia files her under her maiden name (Casa Arryn#Lysa Tully); ‘Lysa Arryn’ as the dub’s form is assumed."
+    ]
+  },
+  "robin-arryn": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Robert_Arryn",
+      "https://gameofthrones.fandom.com/wiki/Robin_Arryn",
+      "https://it.wikipedia.org/wiki/Casa_Arryn#Robin_Arryn",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown"
+    ]
+  },
+  "bronn": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Bronn",
+      "https://gameofthrones.fandom.com/wiki/Bronn",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Bronn",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_31",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown"
+    ],
+    "unverified": [
+      "Episode gate 4 is Fandom’s first appearance (he offers Tyrion his room). No source quotes his name said aloud in episodes 4–6; if it is first said later, the gate moves.",
+      "Book: present at the inn in Catelyn V (chapter 29) but absent from that chapter’s character list and synopsis; first named in Tyrion IV (chapter 32)."
+    ]
+  },
+  "shae": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Shae",
+      "https://gameofthrones.fandom.com/wiki/Shae",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Shae",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_69",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ]
+  },
+  "walder-frey": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Walder_Frey",
+      "https://gameofthrones.fandom.com/wiki/Walder_Frey",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Walder_Frey",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_59",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Baelor"
+    ]
+  },
+  "ros": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Ros",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Ros",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ],
+    "unverified": [
+      "Unnamed in episode 1 (Fandom: George R. R. Martin suggested she be given a name once the role grew); episode 4 is where Theon recommends her to Tyrion and Jon speaks of her by name, per Fandom’s summary, not a quoted line.",
+      "Ordering chapter 25 (Bran IV, Tyrion’s stop at Winterfell on the way back) and 48 for the move to the King’s Landing brothel are story-point choices."
+    ]
+  },
+  "ilyn-payne": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Ilyn_Payne",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_15",
+      "https://gameofthrones.fandom.com/wiki/Ilyn_Payne",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Ilyn_Payne"
+    ],
+    "unverified": [
+      "Episode 2: that his name is said aloud at the Crossroads inn (Fandom's episode synopsis says the Hound introduces him to Sansa as Ser Ilyn Payne)."
+    ]
+  },
+  "barristan-selmy": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Barristan_Selmy",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_15",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_57",
+      "https://gameofthrones.fandom.com/wiki/Barristan_Selmy",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barristan_Selmy"
+    ],
+    "unverified": [
+      "Episode 3: that he is named aloud and identified as Lord Commander in the war-stories scene.",
+      "Italian role wording 'Lord comandante della Guardia Reale' (it.wikipedia capitalisation, dub form not checked)."
+    ]
+  },
+  "syrio-forel": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Syrio_Forel",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50",
+      "https://gameofthrones.fandom.com/wiki/Syrio_Forel",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Syrio_Forel"
+    ],
+    "unverified": [
+      "That the book (Arya II) frames the lessons as 'dancing lessons' to the household as the show does; the book calls him her dancing master."
+    ]
+  },
+  "petyr-baelish": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Petyr_Baelish",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
+      "https://gameofthrones.fandom.com/wiki/Petyr_Baelish",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Petyr_Baelish"
+    ],
+    "unverified": [
+      "Episode 3: that the nickname Littlefinger is said aloud (the log says he is called Littlefinger).",
+      "Episode 3: that the show says he has known Catelyn since youth (Fandom: 'the affection he once bore Catelyn as a youngster')."
+    ]
+  },
+  "varys": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Varys",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
+      "https://gameofthrones.fandom.com/wiki/Varys",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Varys"
+    ],
+    "unverified": [
+      "Italian title 'Maestro dei sussurri' is it.wikipedia's form; the Mondadori books may say otherwise, but the dub governs."
+    ]
+  },
+  "pycelle": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Pycelle",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_20",
+      "https://gameofthrones.fandom.com/wiki/Pycelle",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pycelle"
+    ]
+  },
+  "sandor-clegane": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Sandor_Clegane",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_57",
+      "https://gameofthrones.fandom.com/wiki/Sandor_Clegane",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Sandor_Clegane"
+    ],
+    "unverified": [
+      "Episode gate: on screen from episode 1; gate set at 4, where Littlefinger names him to Sansa. If 'Sandor' or 'the Hound' is said aloud in episode 1 or 2, lower the gate.",
+      "Chapter 5 (Eddard I): that the chapter already marks him as Joffrey's guard (the log and summary say he guards the prince); the AWOIAF synopsis only says Eddard recognizes him.",
+      "Affiliation 'House Lannister' at the gate: neither source states it in so many words at chapter 5."
+    ]
+  },
+  "janos-slynt": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Janos_Slynt",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_27",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_57",
+      "https://gameofthrones.fandom.com/wiki/Janos_Slynt",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Janos_Slynt"
+    ]
+  },
+  "gendry": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Gendry",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_27",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+      "https://gameofthrones.fandom.com/wiki/Gendry_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Gendry"
+    ],
+    "unverified": [
+      "Fandom's page title is 'Gendry Baratheon'; filed as 'Gendry' (id gendry) because the surname is a later reveal.",
+      "Book: he does not appear among the recruits in A Game of Thrones; he first rides with them in A Clash of Kings, Arya I (site chapter 75). The ep-10 step is show-only, ordered at chapter 66 (Arya V, Yoren takes Arya)."
+    ]
+  },
+  "gregor-clegane": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Gregor_Clegane",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_29",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_43",
+      "https://gameofthrones.fandom.com/wiki/Gregor_Clegane",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Gregor_Clegane"
+    ],
+    "unverified": [
+      "Show step at episode 6 ('A Golden Crown'): Fandom's Gregor page cites GOT106 for Eddard's sentence; the episode page itself was not read."
+    ]
+  },
+  "loras-tyrell": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Loras_Tyrell",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_29",
+      "https://gameofthrones.fandom.com/wiki/Loras_Tyrell",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://it.wikipedia.org/wiki/Casa_Tyrell#Loras_Tyrell"
+    ]
+  },
+  "daenerys-targaryen": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Daenerys_Targaryen",
+      "https://gameofthrones.fandom.com/wiki/Daenerys_Targaryen",
+      "https://it.wikipedia.org/wiki/Daenerys_Targaryen",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Show wedding is in episode 1 (her gate); the khaleesi step is dated episode 2 only because episodes must strictly increase."
+    ]
+  },
+  "viserys-targaryen": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Viserys_Targaryen",
+      "https://gameofthrones.fandom.com/wiki/Viserys_Targaryen_(son_of_Aerys_II)",
+      "https://it.wikipedia.org/wiki/Casa_Targaryen#Re_Viserys_III_Targaryen_\"Il_Re_Mendicante\"",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown"
+    ]
+  },
+  "drogo": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Drogo",
+      "https://gameofthrones.fandom.com/wiki/Drogo",
+      "https://it.wikipedia.org/wiki/Dothraki#Drogo",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "name.it: Italian Wikipedia credits the character as “Khal Drogo”; “Drogo” is the bare name, matching the Fandom title. Owner to confirm."
+    ]
+  },
+  "jorah-mormont": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Jorah_Mormont",
+      "https://gameofthrones.fandom.com/wiki/Jorah_Mormont",
+      "https://it.wikipedia.org/wiki/Jorah_Mormont",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+    ],
+    "unverified": [
+      "That the show’s episode 1 makes clear he knows the Dothraki well (summary). The books say so at site chapter 4."
+    ]
+  },
+  "illyrio-mopatis": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Illyrio_Mopatis",
+      "https://gameofthrones.fandom.com/wiki/Illyrio_Mopatis",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Illyrio_Mopatis",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+    ]
+  },
+  "irri": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Irri",
+      "https://gameofthrones.fandom.com/wiki/Irri",
+      "https://it.wikipedia.org/wiki/Dothraki#Irri",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow"
+    ],
+    "unverified": [
+      "Show: whether her name is said aloud in episode 2 (Fandom lists her in episode 2 and its synopsis names her; the line is not checked)."
+    ]
+  },
+  "doreah": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Doreah",
+      "https://gameofthrones.fandom.com/wiki/Doreah",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Doreah",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
+    ],
+    "unverified": [
+      "Show: whether her name is said aloud in episode 2 (synopsis names her; the line is not checked)."
+    ]
+  },
+  "rakharo": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Rakharo",
+      "https://gameofthrones.fandom.com/wiki/Rakharo",
+      "https://it.wikipedia.org/wiki/Dothraki#Rakharo",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Book gate: AWOIAF lists him as appearing in AGOT chapter 23 (site 24), but his character page cites nothing before chapter 54 (site 55). If he is not named in chapter 23, the gate is 55.",
+      "Show: whether his name is said aloud in episode 3 (Jorah talks with him about his father; the line is not checked)."
+    ]
+  },
+  "mirri-maz-duur": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Mirri_Maz_Duur",
+      "https://gameofthrones.fandom.com/wiki/Mirri_Maz_Duur",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mirri_Maz_Durr",
+      "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Show: whether her name is said aloud in episode 8 (the synopsis names her; the line is not checked).",
+      "Italian Wikipedia’s book list spells her “Mirri Maz Durr”; its TV cast list gives “Mirri Maz Duur”, used here."
+    ]
+  }
+}

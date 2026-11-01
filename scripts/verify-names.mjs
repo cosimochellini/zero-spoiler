@@ -17,7 +17,9 @@
 // missing or wrong. Hunter x Hunter has no Italian wiki: its names come from
 // Italian Wikipedia (owner, 2026-10-24), whose minor characters are sections
 // of a list page, named in `ITALIAN_TITLES` as `Page#Section`. A section
-// accepts its heading and the bold name that opens it.
+// accepts its heading and the bold name that opens it. Game of Thrones' names
+// come from Italian Wikipedia too, which A Wiki of Ice and Fire does not
+// link, so every one of its pages is named in `ITALIAN_TITLES`.
 //
 // Run it with `npm run verify:names` (`-- --series <slug>` for a series of
 // `src/data/series/index.ts` other than One Piece). It talks to the network,
@@ -34,6 +36,12 @@ import { italianPages, italianTitles, wikiOf } from './wiki.mjs'
 /** @typedef {import('./wiki.mjs').Page & { section?: true }} Page */
 /** @typedef {{ title: string, dub: string[], aliases: string[] }} Names */
 /** @typedef {{ id: string, kind: string, name: { en: string, it: string } }} Record_ */
+
+/**
+ * Series whose English wiki links no Italian page (A Wiki of Ice and Fire):
+ * it is not asked, and a page `ITALIAN_TITLES` does not name is unresolved.
+ */
+const UNLINKED = new Set(['game-of-thrones'])
 
 /** An honorific the archive writes in front of a name the wiki files bare. */
 const HONORIFIC = /^(?:O-|(?:Baron|Don|Fratelli|Miss|San|Sant|Santa) )/u
@@ -285,22 +293,23 @@ async function verify() {
   const characters = /** @type {Record_[]} */ (series.archive.entities).filter(
     ({ kind }) => kind === 'character',
   )
+  const known = ITALIAN_TITLES[wiki.slug] ?? {}
   const english = characters
-    .filter(({ id }) => ITALIAN_TITLES[id] === undefined)
+    .filter(({ id }) => known[id] === undefined && !UNLINKED.has(wiki.slug))
     .flatMap((record) => titlesOf(record, wiki.slug)[0] ?? [])
   const asked = new Set(english)
   const linked = await italianTitles(asked.values().toArray(), wiki)
   const titles = new Map(
     characters.map((record) => {
-      const known = ITALIAN_TITLES[record.id]
+      const named = known[record.id]
 
       return [
         record.id,
-        known === undefined ?
+        named === undefined ?
           (titlesOf(record, wiki.slug)[0] ?? []).map((title) =>
             linked.get(title),
           )
-        : [known].flat(),
+        : [named].flat(),
       ]
     }),
   )

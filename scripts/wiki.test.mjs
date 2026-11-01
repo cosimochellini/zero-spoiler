@@ -19,11 +19,13 @@ import { animePairs, pairChapters } from './wiki-pairs.mjs'
 import {
   cached,
   chapterTexts,
+  chapterTitles,
   fetchPage,
   italianPages,
   italianTitles,
   pageOf,
   printPairs,
+  redirectsOf,
   textOf,
   wikiOf,
 } from './wiki.mjs'
@@ -91,23 +93,64 @@ describe('the wiki cache', () => {
 })
 
 describe('a chapter page', () => {
+  const titles = chapterTitles(12)
+
   it('pairs the chapter number with its wikitext', () => {
     expect(
-      textOf({
-        title: 'Chapter 12',
-        revisions: [{ slots: { main: { '*': 'text' } } }],
-      }),
+      textOf(
+        {
+          title: 'Chapter 12',
+          revisions: [{ slots: { main: { '*': 'text' } } }],
+        },
+        titles,
+      ),
     ).toStrictEqual([[12, 'text']])
   })
 
   it('gives nothing for a page the API does not know or a stray title', () => {
-    expect(textOf({ title: 'Chapter 12' })).toStrictEqual([])
+    expect(textOf({ title: 'Chapter 12' }, titles)).toStrictEqual([])
     expect(
-      textOf({
-        title: 'Chapter 12a',
-        revisions: [{ slots: { main: { '*': 'text' } } }],
-      }),
+      textOf(
+        {
+          title: 'Chapter 12a',
+          revisions: [{ slots: { main: { '*': 'text' } } }],
+        },
+        titles,
+      ),
     ).toStrictEqual([])
+  })
+})
+
+describe('the chapter pages a series is read from', () => {
+  it('titles One Piece chapters by number, up to the ceiling', () => {
+    expect(chapterTitles(3).entries().toArray()).toStrictEqual([
+      ['Chapter 1', 1],
+      ['Chapter 2', 2],
+      ['Chapter 3', 3],
+    ])
+  })
+
+  it('titles a book chapter by its book, counted from the book first', () => {
+    const titles = chapterTitles(344, [
+      { number: 1, first: 1, last: 73 },
+      { number: 3, first: 144, last: 225 },
+    ])
+
+    expect(titles.get('A Game of Thrones-Prologue')).toBe(1)
+    expect(titles.get('A Game of Thrones-Chapter 1')).toBe(2)
+    expect(titles.get('A Game of Thrones-Chapter 22')).toBe(23)
+    expect(titles.get('A Game of Thrones-Chapter 72')).toBe(73)
+    expect(titles.get('A Storm of Swords-Chapter 80')).toBe(224)
+    expect(titles.get('A Storm of Swords-Epilogue')).toBe(225)
+  })
+
+  it('leaves out what lies past the ceiling', () => {
+    const titles = chapterTitles(2, [{ number: 1, first: 1, last: 73 }])
+
+    expect(titles.keys().toArray()).toStrictEqual([
+      'A Game of Thrones-Prologue',
+      'A Game of Thrones-Chapter 1',
+    ])
   })
 })
 
@@ -417,6 +460,36 @@ describe('the wiki of a series', () => {
 
   it('keeps its answers in a folder of its own', () => {
     expect(wikiOf(onePiece).cache).toMatch(/\/\.gate\/wiki\/one-piece$/u)
+    expect(wikiOf(onePiece).episodes).toBeUndefined()
+  })
+
+  it('reads a show with a wiki of its own there, cached apart', () => {
+    const wiki = wikiOf({
+      slug: 'game-of-thrones',
+      wiki: { en: 'https://b/api.php', it: 'https://i', episodes: 'https://s' },
+    })
+
+    expect(wiki.episodes?.en).toBe('https://s')
+    expect(wiki.episodes?.cache).toBe(path.join(wiki.cache, 'episodes'))
+  })
+
+  it('reads the redirects that name a page, after its own title', async () => {
+    const wiki = { ...wikiOf(onePiece), cache: directory }
+    answering(
+      JSON.stringify({
+        batchcomplete: '',
+        query: {
+          pages: {
+            1: { title: 'Syrio Forel', redirects: [{ title: 'Syrio' }] },
+          },
+        },
+      }),
+    )
+
+    await expect(redirectsOf('Syrio Forel', wiki)).resolves.toStrictEqual([
+      'Syrio Forel',
+      'Syrio',
+    ])
   })
 
   it('asks the same queries the One Piece Wiki was asked before the list', async () => {
@@ -428,7 +501,7 @@ describe('the wiki of a series', () => {
     )
 
     await fetchPage('Nami', wiki)
-    await chapterTexts(1, wiki)
+    await chapterTexts(chapterTitles(1), wiki)
     await italianTitles(['Nami'], wiki)
     await italianPages(['Nami'], wiki)
 

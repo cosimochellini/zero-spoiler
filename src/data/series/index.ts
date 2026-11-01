@@ -39,9 +39,11 @@ export interface ListedSeries {
   slug: string
   /**
    * The `api.php` of the wiki the `verify:*` scripts read for its English
-   * names, thresholds and pages, and of the source of its Italian names.
+   * names, thresholds and pages, and of the source of its Italian names,
+   * plus, for a series whose show has a wiki of its own, that wiki's: its
+   * episode thresholds are read there.
    */
-  wiki: { en: string; it: string }
+  wiki: { en: string; episodes?: string; it: string }
 }
 
 export const ONE_PIECE: ListedSeries = {
@@ -102,6 +104,7 @@ const GAME_OF_THRONES: ListedSeries = {
   placeWords: GAME_OF_THRONES_PLACE_WORDS,
   wiki: {
     en: 'https://awoiaf.westeros.org/api.php',
+    episodes: 'https://gameofthrones.fandom.com/api.php',
     it: 'https://it.wikipedia.org/w/api.php',
   },
   load: async () => {

@@ -31,26 +31,37 @@ const LANGLINKS =
   '?action=query&prop=langlinks&lllang=it&lllimit=max&redirects=1&format=json&titles='
 const ITALIAN =
   '?action=query&prop=revisions&rvprop=content&rvslots=main&redirects=1&format=json&titles='
+const REDIRECTS = '?action=query&prop=redirects&rdlimit=max&format=json&titles='
 
-/** @typedef {{ cache: string, en: string, it: string, slug: string }} Wiki */
+/** @typedef {{ cache: string, en: string, it: string, slug: string, episodes?: Wiki }} Wiki */
 
 /**
  * The wiki a series' `verify:*` scripts read, and where its answers are
  * kept: the English and Italian `api.php` of the series list, and a cache
- * folder of its own, so two series' "Chapter 1" never meet.
+ * folder of its own, so two series' "Chapter 1" never meet. A series whose
+ * show has a wiki of its own (Game of Thrones) reads its episodes there,
+ * cached in a folder inside the series' one.
  * @param {import('./archive-loader.mjs').Series} series The series.
  * @returns {Wiki} Its wiki.
  */
 export function wikiOf({ slug, wiki }) {
   // fallow-ignore-next-line security-sink -- the slug comes from the repository's own series list
-  return { cache: path.join(CACHE, slug), en: wiki.en, it: wiki.it, slug }
+  const own = { cache: path.join(CACHE, slug), en: wiki.en, it: wiki.it, slug }
+  if (wiki.episodes === undefined) {
+    return own
+  }
+
+  // fallow-ignore-next-line security-sink -- the series' cache folder and a literal
+  const cache = path.join(own.cache, 'episodes')
+
+  return { ...own, episodes: { ...own, cache, en: wiki.episodes } }
 }
 
 /** How many chapter pages one API call asks for. */
 const BATCH = 50
 
 /** @typedef {{ title: string, wikitext: string, text: string }} Page */
-/** @typedef {{ title: string, revisions?: { slots?: { main?: Record<string, string> } }[], langlinks?: Record<string, string>[] }} ChapterPage */
+/** @typedef {{ title: string, revisions?: { slots?: { main?: Record<string, string> } }[], langlinks?: Record<string, string>[], redirects?: { title: string }[] }} ChapterPage */
 /** @typedef {{ from: string, to: string }} Rename */
 /** @typedef {{ pages?: Record<string, ChapterPage>, normalized?: Rename[], redirects?: Rename[] }} Query */
 /** @typedef {{ parse?: { title: string, wikitext: Record<string, string>, text: Record<string, string> }, error?: { code?: string }, query?: Query, batchcomplete?: string, continue?: unknown }} Answer */
@@ -163,20 +174,71 @@ export async function fetchPage(title, wiki) {
 }
 
 /**
+ * A Wiki of Ice and Fire's title for each book of Game of Thrones, by book
+ * number, and the code its `{{Ref}}` cites the book by.
+ */
+export const THRONES_BOOKS = [
+  { page: 'A Game of Thrones', ref: 'AGOT' },
+  { page: 'A Clash of Kings', ref: 'ACOK' },
+  { page: 'A Storm of Swords', ref: 'ASOS' },
+  { page: 'A Feast for Crows', ref: 'AFFC' },
+  { page: 'A Dance with Dragons', ref: 'ADWD' },
+]
+
+/**
+ * Every chapter page's title and the absolute chapter it is, up to the
+ * ceiling. One Piece's wiki titles a chapter by its number; A Wiki of Ice and
+ * Fire by its book and the book's own chapter (`A Game of Thrones-Chapter
+ * 22` is the book's `first` plus 22), a prologue being the book's first
+ * chapter and an epilogue its last. Every book is asked for an epilogue, and
+ * for a last numbered chapter where an epilogue takes its place: the API
+ * leaves out the page that does not exist.
+ * @param {number} ceiling The last chapter.
+ * @param {{ number: number, first: number, last: number }[]} [books] The series' books, if it is read in books.
+ * @returns {Map<string, number>} Title to absolute chapter.
+ */
+export function chapterTitles(ceiling, books) {
+  /** @type {[string, number][]} */
+  const titles =
+    books === undefined ?
+      Array.from({ length: ceiling }, (_, index) => [
+        `Chapter ${String(index + 1)}`,
+        index + 1,
+      ])
+    : books.flatMap(({ number, first, last }) => {
+        const book = THRONES_BOOKS[number - 1]?.page
+        if (book === undefined) {
+          throw new Error(`book ${String(number)} has no wiki title`)
+        }
+
+        return [
+          [`${book}-Prologue`, first],
+          ...Array.from({ length: last - first }, (_, index) => [
+            `${book}-Chapter ${String(index + 1)}`,
+            first + index + 1,
+          ]),
+          [`${book}-Epilogue`, last],
+        ]
+      })
+
+  return new Map(titles.filter(([, chapter]) => chapter <= ceiling))
+}
+
+/**
  * Every chapter's wikitext, in chapter order, from the cache or the API in
  * batches of fifty titles.
- * @param {number} ceiling The last chapter to ask for.
+ * @param {Map<string, number>} titles Each chapter page's title and chapter (`chapterTitles`).
  * @param {Wiki} wiki The series' wiki.
  * @returns {Promise<Map<number, string>>} Chapter to wikitext.
  */
-export async function chapterTexts(ceiling, wiki) {
+export async function chapterTexts(titles, wiki) {
+  const asked = [...titles]
   /** @type {[number, string][]} */
   const texts = []
-  for (let from = 1; from <= ceiling; from += BATCH) {
-    const to = Math.min(ceiling, from + BATCH - 1)
-    const pages = await fetchChapters({ from, to }, wiki)
+  for (let from = 0; from < asked.length; from += BATCH) {
+    const pages = await fetchChapters(asked.slice(from, from + BATCH), wiki)
     for (const page of pages) {
-      texts.push(...textOf(page))
+      texts.push(...textOf(page, titles))
     }
   }
 
@@ -184,17 +246,17 @@ export async function chapterTexts(ceiling, wiki) {
 }
 
 /**
- * One batch of chapter pages, from the cache or the API.
- * @param {{ from: number, to: number }} batch The first and last chapter.
+ * One batch of chapter pages, from the cache or the API, kept under its
+ * first and last chapter, the file names One Piece's batches always had.
+ * @param {[string, number][]} batch Each page's title and chapter.
  * @param {Wiki} wiki The series' wiki.
  * @returns {Promise<ChapterPage[]>} The pages the API knows.
  */
-async function fetchChapters({ from, to }, wiki) {
+async function fetchChapters(batch, wiki) {
+  const from = batch[0]?.[1] ?? 0
+  const to = batch.at(-1)?.[1] ?? 0
   const label = `chapters ${String(from)}-${String(to)}`
-  const titles = Array.from(
-    { length: to - from + 1 },
-    (_, index) => `Chapter ${String(from + index)}`,
-  )
+  const titles = batch.map(([title]) => title)
   const { query } = await fetchBatch(
     // fallow-ignore-next-line security-sink -- the series' cache folder, from its slug in the repository's own list, and numeric bounds from the batch loop
     path.join(wiki.cache, 'chapters', `${String(from)}-${String(to)}.json`),
@@ -234,15 +296,33 @@ function isCompleteBatch(answer) {
  * One chapter page as a (chapter, wikitext) pair, or nothing for a page the
  * API does not know.
  * @param {ChapterPage} page The page.
+ * @param {Map<string, number>} titles Each chapter page's title and chapter.
  * @returns {[number, string][]} The pair, or none.
  */
-export function textOf(page) {
-  const match = /^Chapter (?<n>\d+)$/u.exec(page.title)
+export function textOf(page, titles) {
+  const chapter = titles.get(page.title)
   const text = page.revisions?.[0]?.slots?.main?.['*']
 
-  return text === undefined || match?.groups === undefined ?
-      []
-    : [[Number(match.groups['n']), text]]
+  return text === undefined || chapter === undefined ? [] : [[chapter, text]]
+}
+
+/**
+ * A page's title and the titles that redirect to it, which a link can name
+ * it by (`[[Syrio]]` for Syrio Forel).
+ * @param {string} title The page title.
+ * @param {Wiki} wiki The series' wiki.
+ * @returns {Promise<string[]>} The title first, then its redirects.
+ */
+export async function redirectsOf(title, wiki) {
+  const { query } = await fetchBatch(
+    // fallow-ignore-next-line security-sink -- the series' cache folder, from its slug in the repository's own list, a literal, and a URI-encoded title that cannot contain a path separator
+    path.join(wiki.cache, 'redirects', `${encodeURIComponent(title)}.json`),
+    `redirects of ${title}`,
+    wiki.en + REDIRECTS + encodeURIComponent(title),
+  )
+  const redirects = pageOf(query, title)?.redirects ?? []
+
+  return [title, ...redirects.map((redirect) => redirect.title)]
 }
 
 /**

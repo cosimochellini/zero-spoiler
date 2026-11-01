@@ -327,7 +327,7 @@ function isArc(entity: Entity): boolean {
 
 describe.each(LOADED_SERIES)(
   'the archive of $slug',
-  ({ archive, description, folder, lastAdaptedChapter }) => {
+  ({ archive, description, folder, lastAdaptedChapter, open }) => {
     it('uses the same public description as its registry entry', () => {
       expect(archive.series).toBe(description)
     })
@@ -381,21 +381,25 @@ describe.each(LOADED_SERIES)(
       }
     })
 
-    it('has a drawing for every record, and none that no record uses', () => {
-      const ids = new Set(entities.map((entity) => entity.id))
-      const drawn = new Set(Object.keys(drawings))
+    // A closed series files its records before their drawings (owner,
+    // #852): no reader sees it, so the drawing rules wait for it to open.
+    it.skipIf(!open)(
+      'has a drawing for every record, and none that no record uses',
+      () => {
+        const ids = new Set(entities.map((entity) => entity.id))
+        const drawn = new Set(Object.keys(drawings))
 
-      for (const id of ids) {
-        expect(drawn.has(id), id).toBe(true)
-      }
-      for (const id of drawn) {
-        expect(ids.has(id), id).toBe(true)
-      }
-    })
+        for (const id of ids) {
+          expect(drawn.has(id), id).toBe(true)
+        }
+        for (const id of drawn) {
+          expect(ids.has(id), id).toBe(true)
+        }
+      },
+    )
 
-    // A series filed with no record yet (Game of Thrones, #849) has nothing
-    // to draw and no demo to end: these two rules wait for its first records.
-    it.skipIf(entities.length === 0)(
+    // A series with no record or no drawing yet has nothing to draw.
+    it.skipIf(!open || entities.length === 0)(
       'draws every record with at least four strokes and one in its colour',
       () => {
         expect.hasAssertions()
@@ -558,7 +562,9 @@ describe.each(LOADED_SERIES)(
       }
     })
 
-    it.skipIf(entities.length === 0)(
+    // A series whose records stop at its first saga (Game of Thrones, #852)
+    // has no second one for its demo to end before.
+    it.skipIf(archive.sagas.length < 2)(
       'ends its demo the episode and the chapter before its second saga',
       () => {
         // The demo is the first saga: a visitor with no bookmark is sent all of
