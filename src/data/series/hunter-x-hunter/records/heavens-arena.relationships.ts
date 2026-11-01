@@ -139,7 +139,7 @@ const links = {
     },
     summary: {
       en: 'Wing teaches Gon Water Divination, which shows that he is an Enhancer, and after weeks of training tells him that he has passed the secret Hunter Exam.',
-      it: 'Wing insegna a Gon il Test dell’Acqua, che lo rivela del Potenziamento, e dopo settimane di allenamento gli dice che ha superato l’esame segreto da Hunter.',
+      it: 'Wing insegna a Gon il Test dell’Acqua, che rivela che appartiene al Potenziamento, e dopo settimane di allenamento gli dice che ha superato l’esame segreto da Hunter.',
     },
   },
   wingKilluaExam: {
@@ -178,7 +178,7 @@ const links = {
     type: { en: 'Opponent he beats', it: 'Avversario che sconfigge' },
     summary: {
       en: 'Gido’s tops keep hitting Gon in Gon’s first match on the 200th floor, and Gido wins. Gon comes out of it with a broken arm.',
-      it: 'Le trottole di Ghido continuano a colpire Gon nel suo primo incontro al 200º piano, e Ghido vince. Gon ne esce con un braccio rotto.',
+      it: 'Le trottole di Ghido continuano a colpire Gon nel primo incontro di Gon al 200º piano, e Ghido vince. Gon ne esce con un braccio rotto.',
     },
   },
   gidoGonThreat: {
@@ -189,7 +189,7 @@ const links = {
     },
     summary: {
       en: 'Gido beats Gon in Gon’s first match on the 200th floor, and Gon comes out of it with a broken arm. Two months later Gido phones him and threatens him with Zushi.',
-      it: 'Ghido batte Gon nel suo primo incontro al 200º piano, e Gon ne esce con un braccio rotto. Due mesi dopo Ghido gli telefona e lo minaccia usando Zooci.',
+      it: 'Ghido batte Gon nel primo incontro di Gon al 200º piano, e Gon ne esce con un braccio rotto. Due mesi dopo Ghido gli telefona e lo minaccia usando Zooci.',
     },
   },
   // Gon's warning about Zushi after the rematch is the manga's alone.
@@ -265,7 +265,7 @@ const links = {
     character: 'killua',
     type: { en: 'Boy who drives him out', it: 'Ragazzo che lo caccia' },
     summary: {
-      en: 'Killua threatens to kill Sadaso if he ever shows his face again. Sadaso does not fight, warns his companions by phone that the boys are dangerous and leaves Heavens Arena.',
+      en: 'Killua threatens to kill Sadaso if he ever shows his face again. Sadaso does not show up for the match, warns his companions by phone that the boys are dangerous and leaves Heavens Arena.',
       it: 'Killua minaccia Sadaso di morte se si farà vedere ancora. Sadaso non si presenta all’incontro, avverte per telefono i compagni che i ragazzi sono pericolosi e lascia l’Arena Celeste.',
     },
   },
@@ -288,12 +288,14 @@ const links = {
       it: 'Due mesi dopo l’incontro di Gon con Ghido, il gruppo di Sadaso ferma di nuovo Gon e insiste per combattere, poi usa Zooci per costringerlo.',
     },
   },
+  // The match forced with Zushi is Gon against Sadaso in chapter 57 but
+  // against Gido in episode 33, so the card keeps the two apart.
   sadasoGonDefault: {
     character: 'gon-freecss',
     type: { en: 'Boy who wins by default', it: 'Ragazzo che vince a tavolino' },
     summary: {
-      en: 'Sadaso’s group uses Zushi to force a match with Gon, and Gon wins it by default once Sadaso has left.',
-      it: 'Il gruppo di Sadaso usa Zooci per imporre un incontro a Gon, e Gon lo vince a tavolino dopo che Sadaso se n’è andato.',
+      en: 'Sadaso’s group uses Zushi to force Gon into matches, and once Sadaso has left, Gon wins his match against him by default.',
+      it: 'Il gruppo di Sadaso usa Zooci per costringere Gon a combattere, e dopo che Sadaso se n’è andato Gon vince a tavolino l’incontro contro di lui.',
     },
   },
   // Riehlvelt
@@ -301,8 +303,8 @@ const links = {
     character: 'killua',
     type: { en: 'Opponent who beats him', it: 'Avversario che lo sconfigge' },
     summary: {
-      en: 'Killua warns Riehlvelt and Gido to play by the rules. In their match he catches both of Riehlvelt’s whips despite the electricity, throws him into the air and catches him with the whips still in his hands.',
-      it: 'Killua avverte Liroubert e Ghido di rispettare le regole. Nel loro incontro afferra entrambe le fruste di Liroubert nonostante la scarica elettrica, lo scaraventa in aria e lo prende con le fruste ancora in mano.',
+      en: 'Killua warns Riehlvelt and Gido to play by the rules. In their match he catches both of Riehlvelt’s whips and holds on when the current runs through them, throws him into the air and catches him with the whips still in his hands.',
+      it: 'Killua avverte Liroubert e Ghido di rispettare le regole. Nel loro incontro afferra entrambe le fruste di Liroubert e non le molla quando passa la corrente, lo scaraventa in aria e lo prende con le fruste ancora in mano.',
     },
   },
   riehlveltGon: {

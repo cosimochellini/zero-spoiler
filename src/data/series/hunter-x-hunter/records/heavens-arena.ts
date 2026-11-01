@@ -199,8 +199,8 @@ export const heavensArena: HunterSaga = {
       relationships: heavensArenaRelationships.riehlvelt,
       role: { it: 'Lottatore', en: 'Fighter' },
       log: {
-        it: 'Si muove in sedia a rotelle e combatte con due fruste elettriche. Con Sadaso e Ghido punta a diventare Maestro di piano. Nell’incontro principale contro Killua, Killua afferra le fruste nonostante la scossa e lo scaraventa fuori dalla sedia; lui sviene tra le sue braccia. Contro Gon perde di nuovo.',
-        en: 'He gets around in a wheelchair and fights with two electric whips. With Sadaso and Gido he aims to become a Floor Master. In the main event against Killua, Killua seizes the whips despite the shock and throws him out of his chair; he passes out in Killua’s arms. Against Gon he loses again.',
+        it: 'Si muove in sedia a rotelle e combatte con due fruste elettriche. Con Sadaso e Ghido punta a diventare Maestro di piano. Nell’incontro principale contro Killua, Killua afferra le fruste e non le molla quando passa la corrente, poi lo scaraventa fuori dalla sedia; lui sviene tra le sue braccia. Contro Gon perde di nuovo.',
+        en: 'He gets around in a wheelchair and fights with two electric whips. With Sadaso and Gido he aims to become a Floor Master. In the main event against Killua, Killua seizes the whips and holds on when the current runs through them, then throws him out of his chair; he passes out in Killua’s arms. Against Gon he loses again.',
       },
       status: [{ episode: 34, chapter: 59, value: 'alive' }],
       affiliation: [{ episode: 34, chapter: 59, value: FLOOR_200 }],

@@ -1155,8 +1155,8 @@ const links = {
       it: 'Avversario che non riesce a mettere KO',
     },
     summary: {
-      en: 'Killua beats Zushi on the 57th floor but cannot knock him out, and the new stance Zushi takes gives him the same feeling as his brother.',
-      it: 'Killua batte Zooci al 57º piano ma non riesce a metterlo KO, e la nuova posizione presa da Zooci gli dà la stessa sensazione di suo fratello.',
+      en: 'Killua beats Zushi on the 57th floor but cannot knock him out, and the new stance Zushi takes gives him the same feeling Illumi does.',
+      it: 'Killua batte Zooci al 57º piano ma non riesce a metterlo KO, e la nuova posizione presa da Zooci gli dà la stessa sensazione che gli dà Illumi.',
     },
   },
   killuaWing: {
@@ -1182,7 +1182,7 @@ const links = {
     character: 'sadaso',
     type: { en: 'Fighter he threatens', it: 'Lottatore che minaccia' },
     summary: {
-      en: 'When Sadaso’s group breaks the deal made for Zushi, Killua gets to Sadaso unseen before their match and threatens to kill him if he ever shows his face again. Sadaso does not fight.',
+      en: 'When Sadaso’s group breaks the deal made for Zushi, Killua gets to Sadaso unseen before their match and threatens to kill him if he ever shows his face again. Sadaso does not show up for the match.',
       it: 'Quando il gruppo di Sadaso rompe il patto fatto per Zooci, Killua raggiunge Sadaso di nascosto prima del loro incontro e lo minaccia di morte se si farà vedere ancora. Sadaso non si presenta all’incontro.',
     },
   },
