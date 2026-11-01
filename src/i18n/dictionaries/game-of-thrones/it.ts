@@ -8,7 +8,9 @@ import type { SeriesWords } from '~/i18n/types'
 export const gameOfThronesIt: SeriesWords<'game-of-thrones'> = {
   'characters.bookLede':
     'Tutti i personaggi della wiki, divisi per la stagione in cui compaiono per la prima volta.',
-  'dialog.saga': '{name}',
+  // Blank: season 1 is the only heading, so every later number would
+  // read "Season 1" (#856). The line keeps its height.
+  'dialog.saga': '',
   'onboarding.arcs': 'Stagioni',
   'characters.sectionFogged': 'Stagione nella nebbia',
   'kind.arc': 'Stagione',

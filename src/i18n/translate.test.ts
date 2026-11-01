@@ -32,12 +32,21 @@ function entriesOf(
   )
 }
 
+/**
+ * The keys a copy leaves blank on purpose, by copy name. Game of Thrones'
+ * only heading is season 1, so the bookmark dialog's saga line would read
+ * "Season 1" at every later number (#856).
+ */
+const BLANK = new Set(['game-of-thrones dialog.saga'])
+
 describe('the dictionaries', () => {
-  it.each(ALL)('translates every key of %s in every locale', (_, copy) => {
+  it.each(ALL)('translates every key of %s in every locale', (name, copy) => {
     // The TypeScript annotations already catch a missing key. This catches
     // the other half: a key that is present but left empty.
     for (const [locale, key, value] of entriesOf(copy)) {
-      expect(value.trim(), `${locale} ${key}`).not.toBe('')
+      const blank = BLANK.has(`${name} ${key}`)
+
+      expect(value.trim() === '', `${locale} ${key}`).toBe(blank)
     }
   })
 
@@ -206,7 +215,38 @@ const NOT_ON_THRONES = new Set<string>([
   'chart.seeSaga',
 ])
 
+/** "Arc" and "saga" in either language, in any of their forms. */
+const ARC_OR_SAGA = /\b(?:arc(?:s|o|hi)?|sag(?:a|as|he))\b/iu
+
 describe('the words a Game of Thrones page prints', () => {
+  it.each([
+    'Arc',
+    'Arcs',
+    'arco',
+    'archi',
+    'Saga',
+    'Sagas',
+    'All sagas',
+    'saghe',
+  ])('catches “%s”', (word) => {
+    expect(word).toMatch(ARC_OR_SAGA)
+  })
+
+  it.each(['archive', 'archiviata', 'sagace'])('lets “%s” through', (word) => {
+    expect(word).not.toMatch(ARC_OR_SAGA)
+  })
+
+  it.each([...NOT_ON_THRONES])(
+    'excuses %s only while it is a shared key that says it',
+    (key) => {
+      for (const shared of [enDictionary, itDictionary]) {
+        const value: unknown = Reflect.get(shared, key)
+
+        expect(value, key).toMatch(ARC_OR_SAGA)
+      }
+    },
+  )
+
   // It files no arcs: its records are grouped by show season (#844).
   it('name no arc or saga', () => {
     const shared = { en: enDictionary, it: itDictionary }
@@ -216,9 +256,7 @@ describe('the words a Game of Thrones page prints', () => {
     ].filter(([, key]) => !NOT_ON_THRONES.has(key))
 
     for (const [locale, key, value] of entries) {
-      expect(value, `${locale} ${key}`).not.toMatch(
-        /\b(?:arcs?|archi|arco|saghe|saga)\b/iu,
-      )
+      expect(value, `${locale} ${key}`).not.toMatch(ARC_OR_SAGA)
     }
   })
 })
