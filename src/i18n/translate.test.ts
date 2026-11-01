@@ -103,6 +103,7 @@ describe('each series’ own copy', () => {
 
 /** The keys every series words for itself, as the copies hold them. */
 const COMMON = new Set<string>([
+  'characters.bookLede',
   'characters.count',
   'characters.featuredLede',
   'credits.coverage',
@@ -112,10 +113,12 @@ const COMMON = new Set<string>([
   'credits.wikiEn',
   'credits.wikiIt',
   'credits.wikiTerms',
+  'dialog.saga',
   'faq.animeA',
   'faq.animeQ',
   'faq.bookmarkA',
   'legal.credits',
+  'onboarding.arcs',
   'onboarding.lede',
   'onboarding.places',
   'onboarding.tailTitle',
@@ -184,6 +187,19 @@ describe('the tone of voice', () => {
           pattern,
         )
       }
+    }
+  })
+})
+
+describe('Game of Thrones’ own copy', () => {
+  // It files no arcs: its records are grouped by show season (#844).
+  it('names no arc or saga', () => {
+    const entries = entriesOf(COPIES['game-of-thrones'])
+
+    for (const [locale, key, value] of entries) {
+      expect(value, `${locale} ${key}`).not.toMatch(
+        /\b(?:arcs?|archi|arco|saghe|saga)\b/iu,
+      )
     }
   })
 })

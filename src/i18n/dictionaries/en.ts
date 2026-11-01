@@ -54,7 +54,6 @@ export const enDictionary = {
   'onboarding.here': 'I’m here',
   'onboarding.further': 'I’m further on',
   'onboarding.start': 'Starting now · EP 1',
-  'onboarding.arcs': 'Arcs',
   'onboarding.cast': 'Characters',
   'onboarding.tryHint':
     'Open an entry to see its page at this point. Your bookmark is not saved.',
@@ -112,7 +111,6 @@ export const enDictionary = {
   'dialog.bookPlaceholder': 'Choose a book',
   'dialog.bookOption': 'Book {book} · {count} chapters',
   'dialog.bookChapterLabel': 'Chapter in that book',
-  'dialog.saga': 'Arc · {name}',
   'dialog.hint': 'From 1 to {max}.',
   'dialog.errorEmpty': 'Enter a number.',
   'dialog.errorRange': 'Enter a number from 1 to {max}.',
@@ -254,8 +252,6 @@ export const enDictionary = {
   'characters.featuredTitle': 'Main characters',
   'characters.bookTitle': 'All characters',
   'characters.loading': 'Loading characters…',
-  'characters.bookLede':
-    'Every character in the wiki, grouped by the arc they first appear in.',
   'characters.sectionOpensAt.episode': 'From episode {threshold}',
   'characters.sectionOpensAt.season': 'From {threshold}',
   'characters.sectionOpensAt.chapter': 'From chapter {threshold}',

@@ -10,7 +10,7 @@ import {
 import { counterStyles as styles } from '~/components/BookmarkCounter.styles'
 import { Button } from '~/components/ui/Button'
 import { onlyUnder, useSeriesT, useT } from '~/i18n/LocaleContext'
-import type { SeriesTranslate, Translate } from '~/i18n/types'
+import type { SeriesTranslate } from '~/i18n/types'
 import { useBookmarkSeries } from '~/lib/progress/BookmarkContext'
 import { type Draft, stepperOf } from '~/lib/progress/episode'
 import { type SagaAt, sagaAt, useSagaTable } from '~/lib/progress/sagaLabel'
@@ -268,7 +268,7 @@ export function SagaLine({
   draft: Draft
   id: string
 }): ReactElement {
-  const t = useT()
+  const t = useSeriesT()
   const onePiece = useSeriesT('one-piece')
   const table = useSagaTable()
   const series = useBookmarkSeries()
@@ -289,7 +289,7 @@ export function SagaLine({
 const NAMED_SAGA = /\b(?:arc|saga)\b/iu
 
 function sagaText(
-  t: Translate,
+  t: SeriesTranslate,
   onePiece: SeriesTranslate<'one-piece'> | undefined,
   saga: SagaAt,
 ): string {

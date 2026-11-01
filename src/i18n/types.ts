@@ -12,6 +12,7 @@ export type SharedKey = keyof typeof enDictionary
  * of them, so a page that prints one prints the words of its own series.
  */
 export type CommonKey =
+  | 'characters.bookLede'
   | 'characters.count'
   | 'characters.featuredLede'
   | 'credits.coverage'
@@ -21,10 +22,12 @@ export type CommonKey =
   | 'credits.wikiEn'
   | 'credits.wikiIt'
   | 'credits.wikiTerms'
+  | 'dialog.saga'
   | 'faq.animeA'
   | 'faq.animeQ'
   | 'faq.bookmarkA'
   | 'legal.credits'
+  | 'onboarding.arcs'
   | 'onboarding.lede'
   | 'onboarding.places'
   | 'onboarding.tailTitle'

@@ -6,6 +6,10 @@ import type { SeriesWords } from '~/i18n/types'
  * books alone, the Mondadori translation.
  */
 export const gameOfThronesIt: SeriesWords<'game-of-thrones'> = {
+  'characters.bookLede':
+    'Tutti i personaggi della wiki, divisi per la stagione in cui compaiono per la prima volta.',
+  'dialog.saga': '{name}',
+  'onboarding.arcs': 'Stagioni',
   'characters.count':
     '{count} personaggi, nell’ordine in cui compaiono nella serie. Quelli nella nebbia non compaiono nei risultati della ricerca.',
   'characters.featuredLede': 'I personaggi chiave della storia.',

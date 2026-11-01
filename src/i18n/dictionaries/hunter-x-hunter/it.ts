@@ -5,6 +5,10 @@ import type { SeriesWords } from '~/i18n/types'
  * follow the 2011 Italian dub, as Italian Wikipedia gives them.
  */
 export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
+  'characters.bookLede':
+    'Tutti i personaggi della wiki, divisi per la saga in cui compaiono per la prima volta.',
+  'dialog.saga': 'Saga · {name}',
+  'onboarding.arcs': 'Saghe',
   'characters.count':
     '{count} personaggi, nell’ordine in cui compaiono nell’anime. Quelli nella nebbia non compaiono nei risultati della ricerca.',
   'characters.featuredLede': 'I personaggi chiave della storia.',
