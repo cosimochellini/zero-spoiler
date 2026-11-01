@@ -690,6 +690,753 @@ const links = {
       it: 'Quoll scrive la profezia di Shizuku con il potere che ha preso a Neon, e con il suo aiuto lei capisce cosa dice: che morirà entro la prossima settimana.',
     },
   },
+  // Uvogin
+  uvoginWorm: {
+    character: 'worm',
+    type: {
+      en: 'Shadow Beast he blasts',
+      it: 'Bestia dell’Ombra che fa saltare in aria',
+    },
+    summary: {
+      en: 'Worm punches Uvogin in the face and gets a harder punch back. When Worm drags Uvogin’s arm under the ground, Uvogin blasts a crater with his Big Bang Impact and leaves him badly hurt.',
+      it: 'Lombrico colpisce Uborghin in faccia e riceve un pugno più forte. Quando Lombrico gli trascina il braccio sotto terra, Uborghin apre un cratere con il suo Colpo del Big Bang e lo lascia gravemente ferito.',
+    },
+  },
+  uvoginRabidDog: {
+    character: 'rabid-dog',
+    type: { en: 'Shadow Beast he kills', it: 'Bestia dell’Ombra che uccide' },
+    summary: {
+      en: 'Rabid Dog’s poisoned bites bring Uvogin down. Uvogin spits a piece of Leech’s skull through Rabid Dog’s head and kills him.',
+      it: 'I morsi avvelenati di Cane selvatico mettono a terra Uborghin. Uborghin gli sputa un pezzo del cranio di Sanguisuga attraverso la testa e lo uccide.',
+    },
+  },
+  uvoginLeech: {
+    character: 'leech',
+    type: { en: 'Shadow Beast he kills', it: 'Bestia dell’Ombra che uccide' },
+    summary: {
+      en: 'While the poison holds Uvogin down, Leech fills his body with leeches. Uvogin bites into Leech’s head and kills him.',
+      it: 'Mentre il veleno tiene a terra Uborghin, Sanguisuga gli riempie il corpo di sanguisughe. Uborghin gli affonda i denti nella testa e lo uccide.',
+    },
+  },
+  uvoginPorcupine: {
+    character: 'porcupine',
+    type: {
+      en: 'Shadow Beast he screams off',
+      it: 'Bestia dell’Ombra di cui si libera urlando',
+    },
+    summary: {
+      en: 'Porcupine’s hairs turn into needles that catch Uvogin’s fist and hold it. Uvogin frees himself by screaming at him as loud as he can.',
+      it: 'I peli di Porcospino diventano aghi che bloccano il pugno di Uborghin e lo trattengono. Uborghin se ne libera urlandogli contro più forte che può.',
+    },
+  },
+  uvoginKurapika: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user who captures him',
+      it: 'Utilizzatore di catene che lo cattura',
+    },
+    summary: {
+      en: 'After Uvogin’s fight with the Shadow Beasts, a chain wraps around him and pulls him away from the Troupe. Kurapika drives off with him and silences him when he tries to talk.',
+      it: 'Dopo lo scontro di Uborghin con le Bestie dell’Ombra, una catena lo avvolge e lo trascina via dalla Brigata. Kurapika parte in auto con lui e lo zittisce quando prova a parlare.',
+    },
+  },
+  uvoginKurapikaPunch: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user who captures him',
+      it: 'Utilizzatore di catene che lo cattura',
+    },
+    summary: {
+      en: 'Kurapika captures Uvogin with his chain. When Uvogin says that the Troupe killed all the guests at the auction, Kurapika punches him in the face.',
+      it: 'Kurapika cattura Uborghin con la sua catena. Quando Uborghin dice che la Brigata ha ucciso tutti gli ospiti dell’asta, Kurapika gli dà un pugno in faccia.',
+    },
+  },
+  uvoginKurapikaHunt: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user he hunts',
+      it: 'Utilizzatore di catene a cui dà la caccia',
+    },
+    summary: {
+      en: 'Kurapika captures Uvogin with his chain and punches him. Once he is free, Uvogin hunts the chain user and finds Kurapika, who has stayed behind alone to wait for him.',
+      it: 'Kurapika cattura Uborghin con la sua catena e lo colpisce con un pugno. Una volta libero, Uborghin dà la caccia all’utilizzatore di catene e trova Kurapika, che è rimasto da solo ad aspettarlo.',
+    },
+  },
+  uvoginKurapikaDeath: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user who kills him',
+      it: 'Utilizzatore di catene che lo uccide',
+    },
+    summary: {
+      en: 'Kurapika asks Uvogin about the Kurta Clan, catches him in a chain hidden with In and beats him. Uvogin will not say where the other members are, and Kurapika’s Judgment Chain kills him.',
+      it: 'Kurapika chiede a Uborghin del clan Kurta, lo cattura con una catena nascosta con l’In e lo picchia. Uborghin non vuole dire dove sono gli altri membri, e la Catena del Giudizio di Kurapika lo uccide.',
+    },
+  },
+  uvoginDalzollene: {
+    character: 'dalzollene',
+    type: {
+      en: 'Bodyguard who tries to stab him',
+      it: 'Guardia del corpo che cerca di colpirlo',
+    },
+    summary: {
+      en: 'Dalzollene questions the captured Uvogin and tries to stab him, but the blade breaks against Uvogin’s Nen. Uvogin offers to spare the bodyguards if they let him go.',
+      it: 'Dalzorne interroga Uborghin prigioniero e cerca di colpirlo con la spada, ma la lama si spezza contro il suo Nen. Uborghin promette di risparmiare le guardie del corpo se lo lasciano andare.',
+    },
+  },
+  uvoginPhinks: {
+    character: 'phinks',
+    type: { en: 'Comrade who frees him', it: 'Compagno che lo libera' },
+    summary: {
+      en: 'Phinks and other Troupe members, disguised as Mafia men, reach the place where the bodyguards hold Uvogin. Phinks kills Dalzollene, and they free Uvogin.',
+      it: 'Phinks e altri membri della Brigata, travestiti da mafiosi, raggiungono il posto dove le guardie del corpo tengono Uborghin. Phinks uccide Dalzorne, e liberano Uborghin.',
+    },
+  },
+  uvoginShizuku: {
+    character: 'shizuku',
+    type: {
+      en: 'Comrade who takes out the poison',
+      it: 'Compagna che gli toglie il veleno',
+    },
+    summary: {
+      en: 'After the fight with the Shadow Beasts, Shizuku tells Uvogin that Blinky can suck out the poison but not the leeches. Once the Troupe frees him, she sucks the poison out.',
+      it: 'Dopo lo scontro con le Bestie dell’Ombra, Shizuku dice a Uborghin che Deme può aspirare il veleno ma non le sanguisughe. Quando la Brigata lo libera, gli aspira il veleno.',
+    },
+  },
+  uvoginShalnark: {
+    character: 'shalnark',
+    type: {
+      en: 'Comrade who tracks the chain user for him',
+      it: 'Compagno che cerca per lui l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'While Uvogin drinks beer to get rid of the leeches, Shalnark searches the Hunter website for him and finds that the building where he was held belongs to the Nostrade family.',
+      it: 'Mentre Uborghin beve birra per liberarsi delle sanguisughe, Shalnark cerca per lui sul sito degli Hunter e scopre che l’edificio dove era tenuto prigioniero appartiene alla famiglia Nostrad.',
+    },
+  },
+  uvoginChrollo: {
+    character: 'chrollo',
+    type: { en: 'Leader', it: 'Capo' },
+    summary: {
+      en: 'From the Troupe’s balloon, Uvogin tells Chrollo that the vault was already empty and that there may be a traitor among them. Chrollo convinces him there is none.',
+      it: 'Dalla mongolfiera della Brigata, Uborghin dice a Quoll che il caveau era già vuoto e che tra loro potrebbe esserci un traditore. Quoll lo convince che non c’è.',
+    },
+  },
+  // Feitan
+  feitanFranklin: {
+    character: 'franklin',
+    type: {
+      en: 'Member on the stage with him',
+      it: 'Membro con lui sul palco',
+    },
+    summary: {
+      en: 'Feitan walks onto the stage of the Underground Auction with Franklin and welcomes the guests. Then Franklin’s bullets of aura kill nearly everyone in the hall.',
+      it: 'Feitan sale sul palco dell’asta sotterranea con Franklin e dà il benvenuto agli ospiti. Poi i proiettili di aura di Franklin uccidono quasi tutti i presenti.',
+    },
+  },
+  feitanOwl: {
+    character: 'owl',
+    type: {
+      en: 'Shadow Beast held prisoner',
+      it: 'Bestia dell’Ombra tenuta prigioniera',
+    },
+    summary: {
+      en: 'After the fight with the Shadow Beasts, Owl is held prisoner by the Troupe and tortured, with Feitan watching over him.',
+      it: 'Dopo lo scontro con le Bestie dell’Ombra, Civetta è tenuto prigioniero dalla Brigata e torturato, con Feitan a sorvegliarlo.',
+    },
+  },
+  feitanGon: {
+    character: 'gon-freecss',
+    type: { en: 'Boy he grabs', it: 'Ragazzo che blocca' },
+    summary: {
+      en: 'At the Troupe’s hideout Feitan recognizes Gon as the boy who beat Shizuku at arm wrestling. When Gon slams Nobunaga’s hand down, Feitan grabs him from behind, and he lets Gon go only after a coin toss with Nobunaga.',
+      it: 'Nel covo della Brigata Feitan riconosce Gon come il ragazzo che ha battuto Shizuku a braccio di ferro. Quando Gon schiaccia la mano di Nobunaga sul tavolo, Feitan lo afferra da dietro, e lo lascia andare solo dopo un lancio di moneta con Nobunaga.',
+    },
+  },
+  feitanNobunaga: {
+    character: 'nobunaga',
+    type: { en: 'Member he faces off with', it: 'Membro con cui si affronta' },
+    summary: {
+      en: 'When Nobunaga tells Feitan to let Gon go, the two face off until they settle it with a coin, and Nobunaga wins.',
+      it: 'Quando Nobunaga dice a Feitan di lasciare Gon, i due si affrontano finché non decidono con una moneta, e vince Nobunaga.',
+    },
+  },
+  feitanPakunoda: {
+    character: 'pakunoda',
+    type: { en: 'Member he suspects', it: 'Membro di cui sospetta' },
+    summary: {
+      en: 'When Pakunoda comes back from the chain user and will not say where he is, Feitan suspects that the chain user is controlling her.',
+      it: 'Quando Pakunoda torna dall’utilizzatore di catene e non vuole dire dov’è, Feitan sospetta che lui la stia controllando.',
+    },
+  },
+  feitanMachi: {
+    character: 'machi',
+    type: { en: 'Member he suspects', it: 'Membro di cui sospetta' },
+    summary: {
+      en: 'When Machi takes Pakunoda’s side against Phinks, Feitan suspects that the chain user is controlling them.',
+      it: 'Quando Machi si schiera con Pakunoda contro Phinks, Feitan sospetta che l’utilizzatore di catene le stia controllando.',
+    },
+  },
+  // Franklin
+  franklinFeitan: {
+    character: 'feitan',
+    type: {
+      en: 'Member on the stage with him',
+      it: 'Membro con lui sul palco',
+    },
+    summary: {
+      en: 'Franklin walks onto the stage of the Underground Auction with Feitan. Feitan welcomes the guests, and Franklin’s bullets of aura kill nearly everyone in the hall.',
+      it: 'Franklin sale sul palco dell’asta sotterranea con Feitan. Feitan dà il benvenuto agli ospiti, e i proiettili di aura di Franklin uccidono quasi tutti i presenti.',
+    },
+  },
+  franklinTocino: {
+    character: 'shachmono-tocino',
+    type: {
+      en: 'Bodyguard his bullets kill',
+      it: 'Guardia del corpo uccisa dai suoi proiettili',
+    },
+    summary: {
+      en: 'When Franklin fires bullets of aura into the auction hall, Tocino tries to shield himself and two other bodyguards with his Nen, but the bullets get through and kill him.',
+      it: 'Quando Franklin spara proiettili di aura sulla sala dell’asta, Tocino prova a proteggere sé stesso e altre due guardie del corpo con il suo Nen, ma i proiettili passano e lo uccidono.',
+    },
+  },
+  franklinGon: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Boy who reminds him of Uvogin',
+      it: 'Ragazzo che gli ricorda Uborghin',
+    },
+    summary: {
+      en: 'At the Troupe’s hideout Franklin recognizes Gon as the boy who beat Shizuku at arm wrestling. Later he says that Gon reminds him of Uvogin.',
+      it: 'Nel covo della Brigata Franklin riconosce Gon come il ragazzo che ha battuto Shizuku a braccio di ferro. Più tardi dice che Gon gli ricorda Uborghin.',
+    },
+  },
+  franklinNobunaga: {
+    character: 'nobunaga',
+    type: { en: 'Member he calms down', it: 'Membro che calma' },
+    summary: {
+      en: 'When Nobunaga and Feitan face off over Gon at the hideout, Franklin tells Nobunaga to calm down.',
+      it: 'Quando Nobunaga e Feitan si affrontano per Gon nel covo, Franklin dice a Nobunaga di calmarsi.',
+    },
+  },
+  franklinPakunoda: {
+    character: 'pakunoda',
+    type: { en: 'Member he questions', it: 'Membro che interroga' },
+    summary: {
+      en: 'Franklin asks Pakunoda what she found in the boys’ memories, and she says that they have no memory of the chain user.',
+      it: 'Franklin chiede a Pakunoda cosa ha trovato nei ricordi dei ragazzi, e lei risponde che non hanno ricordi dell’utilizzatore di catene.',
+    },
+  },
+  franklinPakunodaLeave: {
+    character: 'pakunoda',
+    type: { en: 'Member he lets go', it: 'Membro che lascia andare' },
+    summary: {
+      en: 'When Phinks will not let Pakunoda leave with the hostages, Franklin persuades the others to let her go.',
+      it: 'Quando Phinks non vuole lasciar partire Pakunoda con gli ostaggi, Franklin convince gli altri a lasciarla andare.',
+    },
+  },
+  franklinPhinks: {
+    character: 'phinks',
+    type: { en: 'Member he talks down', it: 'Membro che fa ragionare' },
+    summary: {
+      en: 'When Phinks will not let Pakunoda leave with the hostages, Franklin tells him that the worst that could happen is the Troupe dying out, and that falling apart would be the worst betrayal of their leader.',
+      it: 'Quando Phinks non vuole lasciar partire Pakunoda con gli ostaggi, Franklin gli dice che la cosa peggiore sarebbe la fine della Brigata, e che dividersi sarebbe il tradimento peggiore verso il loro capo.',
+    },
+  },
+  // Nobunaga
+  nobunagaOwl: {
+    character: 'owl',
+    type: {
+      en: 'Shadow Beast who traps him',
+      it: 'Bestia dell’Ombra che lo intrappola',
+    },
+    summary: {
+      en: 'Owl wraps the Troupe’s car in his cloth. The others get out, but Nobunaga is trapped inside because of where he sits.',
+      it: 'Civetta avvolge l’auto della Brigata nel suo telo. Gli altri riescono a uscire, ma Nobunaga resta intrappolato per il posto in cui è seduto.',
+    },
+  },
+  nobunagaMachi: {
+    character: 'machi',
+    type: { en: 'Member he works with', it: 'Membro con cui fa coppia' },
+    summary: {
+      en: 'Nobunaga and Machi notice that they are being watched, argue over whether to bring the chain user back dead or alive and settle it with a coin.',
+      it: 'Nobunaga e Machi si accorgono di essere osservati, discutono se riportare l’utilizzatore di catene vivo o morto e decidono con una moneta.',
+    },
+  },
+  nobunagaKillua: {
+    character: 'killua',
+    type: { en: 'Boy he questions', it: 'Ragazzo che interroga' },
+    summary: {
+      en: 'When Phinks catches Killua, Nobunaga asks him why they were following and whether he knows a Nen user with chains, then gives him three seconds to choose whether to die now or later.',
+      it: 'Quando Phinks cattura Killua, Nobunaga gli chiede perché li stavano seguendo e se conosce un utilizzatore di Nen con le catene, poi gli dà tre secondi per scegliere se morire subito o più tardi.',
+    },
+  },
+  nobunagaKilluaEscape: {
+    character: 'killua',
+    type: { en: 'Boy who escapes him', it: 'Ragazzo che gli sfugge' },
+    summary: {
+      en: 'Nobunaga questions Killua when the Troupe catches him, then guards him and Gon at the hideout. The two break out through the walls and get away.',
+      it: 'Nobunaga interroga Killua quando la Brigata lo cattura, poi sorveglia lui e Gon nel covo. I due sfondano i muri e scappano.',
+    },
+  },
+  nobunagaUvogin: {
+    character: 'uvogin',
+    type: {
+      en: 'Comrade he wonders about',
+      it: 'Compagno di cui si chiede la sorte',
+    },
+    summary: {
+      en: 'Nobunaga and Machi wonder whether Uvogin is really dead.',
+      it: 'Nobunaga e Machi si chiedono se Uborghin sia davvero morto.',
+    },
+  },
+  nobunagaUvoginFriend: {
+    character: 'uvogin',
+    type: { en: 'Friend he means to avenge', it: 'Amico che vuole vendicare' },
+    summary: {
+      en: 'Nobunaga knew Uvogin better than anyone in the Troupe, and he cries as he swears to find the chain user.',
+      it: 'Nobunaga conosceva Uborghin meglio di chiunque altro nella Brigata, e piange mentre giura di trovare l’utilizzatore di catene.',
+    },
+  },
+  nobunagaGon: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Boy he asks to join the Troupe',
+      it: 'Ragazzo a cui chiede di entrare nella Brigata',
+    },
+    summary: {
+      en: 'At the hideout Nobunaga arm-wrestles Gon and slams his hand down again and again while he talks about Uvogin, until Gon slams Nobunaga’s hand down in turn. Later Nobunaga asks him to join the Troupe; Gon would rather die.',
+      it: 'Nel covo Nobunaga sfida Gon a braccio di ferro e gli schiaccia la mano sul tavolo più e più volte mentre parla di Uborghin, finché Gon non schiaccia a sua volta la mano di Nobunaga. Più tardi Nobunaga gli chiede di entrare nella Brigata; Gon preferirebbe morire.',
+    },
+  },
+  nobunagaFeitan: {
+    character: 'feitan',
+    type: { en: 'Member he faces off with', it: 'Membro con cui si affronta' },
+    summary: {
+      en: 'When Feitan grabs Gon, Nobunaga tells him to let go. The two face off and settle it with a coin, which Nobunaga wins.',
+      it: 'Quando Feitan afferra Gon, Nobunaga gli dice di lasciarlo. I due si affrontano e decidono con una moneta, e vince Nobunaga.',
+    },
+  },
+  nobunagaChrollo: {
+    character: 'chrollo',
+    type: { en: 'Leader he defies', it: 'Capo a cui si oppone' },
+    summary: {
+      en: 'When Chrollo orders the Troupe to leave Yorknew City, Nobunaga refuses, because they still have to find the chain user. Chrollo writes Nobunaga’s fortune with the power he took from Neon, and it says that more members will die.',
+      it: 'Quando Quoll ordina alla Brigata di lasciare York Shin City, Nobunaga rifiuta, perché devono ancora trovare l’utilizzatore di catene. Quoll scrive la profezia di Nobunaga con il potere che ha preso a Neon, e dice che moriranno altri membri.',
+    },
+  },
+  nobunagaHisoka: {
+    character: 'hisoka',
+    type: {
+      en: 'Member he draws his sword on',
+      it: 'Membro contro cui sfodera la spada',
+    },
+    summary: {
+      en: 'Hisoka’s fortune makes Nobunaga think that Hisoka sold out Uvogin, and Nobunaga draws his sword. When he attacks, Chrollo moves him away from Hisoka.',
+      it: 'La profezia di Hisoka fa pensare a Nobunaga che Hisoka abbia tradito Uborghin, e Nobunaga sfodera la spada. Quando attacca, Quoll lo allontana da Hisoka.',
+    },
+  },
+  nobunagaSquala: {
+    character: 'squala',
+    type: { en: 'Bodyguard he kills', it: 'Guardia del corpo che uccide' },
+    summary: {
+      en: 'Nobunaga, Pakunoda and Kortopi catch Squala’s car in traffic. While Pakunoda questions him, Squala reacts to Eliza’s name, and Nobunaga cuts off his head.',
+      it: 'Nobunaga, Pakunoda e Kortopi bloccano l’auto di Squala ferma nel traffico. Mentre Pakunoda lo interroga, Squala reagisce al nome di Eliza, e Nobunaga gli taglia la testa.',
+    },
+  },
+  nobunagaPakunoda: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member who shows him the chain user',
+      it: 'Membro che gli mostra l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'After Squala’s death Pakunoda fires her Memory Bomb into Nobunaga’s head and shows him what the chain user looks like.',
+      it: 'Dopo la morte di Squala, Pakunoda spara il suo Proiettile Mnemonico nella testa di Nobunaga e gli mostra che aspetto ha l’utilizzatore di catene.',
+    },
+  },
+  // Phinks
+  phinksDalzollene: {
+    character: 'dalzollene',
+    type: { en: 'Bodyguard he kills', it: 'Guardia del corpo che uccide' },
+    summary: {
+      en: 'Disguised as a Mafia man with other Troupe members, Phinks reaches the place where the bodyguards hold Uvogin and kills Dalzollene.',
+      it: 'Travestito da mafioso con altri membri della Brigata, Phinks raggiunge il posto dove le guardie del corpo tengono Uborghin e uccide Dalzorne.',
+    },
+  },
+  phinksUvogin: {
+    character: 'uvogin',
+    type: { en: 'Comrade he frees', it: 'Compagno che libera' },
+    summary: {
+      en: 'Phinks and other Troupe members, disguised as Mafia men, reach the place where the bodyguards hold Uvogin and free him.',
+      it: 'Phinks e altri membri della Brigata, travestiti da mafiosi, raggiungono il posto dove le guardie del corpo tengono Uborghin e lo liberano.',
+    },
+  },
+  phinksKillua: {
+    character: 'killua',
+    type: { en: 'Boy he catches', it: 'Ragazzo che cattura' },
+    summary: {
+      en: 'When Gon and Killua try to run from the trap, Phinks catches Killua by the leg and stops his kick. Killua twists free, but then Nobunaga appears as well.',
+      it: 'Quando Gon e Killua cercano di scappare dalla trappola, Phinks afferra Killua per una gamba e blocca il suo calcio. Killua si libera con una torsione, ma poi compare anche Nobunaga.',
+    },
+  },
+  phinksPakunoda: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member he springs the trap with',
+      it: 'Membro con cui fa scattare la trappola',
+    },
+    summary: {
+      en: 'Phinks and Pakunoda follow Gon and Killua while the boys tail Machi and Nobunaga, and they block the boys’ way out.',
+      it: 'Phinks e Pakunoda seguono Gon e Killua mentre i ragazzi pedinano Machi e Nobunaga, e sbarrano loro la strada.',
+    },
+  },
+  phinksPakunodaLeave: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member he will not let go',
+      it: 'Membro che non vuole lasciar andare',
+    },
+    summary: {
+      en: 'When Pakunoda comes back from the chain user, Phinks demands to know where he is and will not let her leave with the hostages, until Franklin persuades the others to let her go.',
+      it: 'Quando Pakunoda torna dall’utilizzatore di catene, Phinks vuole sapere dov’è e non la lascia partire con gli ostaggi, finché Franklin non convince gli altri a lasciarla andare.',
+    },
+  },
+  phinksGon: {
+    character: 'gon-freecss',
+    type: { en: 'Boy he argues with', it: 'Ragazzo con cui litiga' },
+    summary: {
+      en: 'Gon shouts at Phinks that Pakunoda and Machi only want their leader back, and the two argue.',
+      it: 'Gon grida a Phinks che Pakunoda e Machi vogliono solo riavere il loro capo, e i due litigano.',
+    },
+  },
+  phinksKurapika: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user whose terms he accepts',
+      it: 'Utilizzatore di catene di cui accetta le condizioni',
+    },
+    summary: {
+      en: 'When Kurapika calls the hideout and asks for the hostages, Phinks throws the phone to Gon, then tells Kurapika that the Troupe will do as he says.',
+      it: 'Quando Kurapika chiama il covo e chiede degli ostaggi, Phinks lancia il telefono a Gon, poi dice a Kurapika che la Brigata farà come dice lui.',
+    },
+  },
+  phinksFranklin: {
+    character: 'franklin',
+    type: { en: 'Member who talks him down', it: 'Membro che lo fa ragionare' },
+    summary: {
+      en: 'Franklin tells Phinks that the worst that could happen is the Troupe dying out, and persuades him to let Pakunoda leave with the hostages.',
+      it: 'Franklin dice a Phinks che la cosa peggiore sarebbe la fine della Brigata, e lo convince a lasciar partire Pakunoda con gli ostaggi.',
+    },
+  },
+  // Shalnark
+  shalnarkUvogin: {
+    character: 'uvogin',
+    type: {
+      en: 'Comrade he tracks the chain user for',
+      it: 'Compagno per cui cerca l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'While Uvogin drinks beer to get rid of the leeches, Shalnark searches the Hunter website and finds that the building where Uvogin was held belongs to the Nostrade family.',
+      it: 'Mentre Uborghin beve birra per liberarsi delle sanguisughe, Shalnark cerca sul sito degli Hunter e scopre che l’edificio dove Uborghin era tenuto prigioniero appartiene alla famiglia Nostrad.',
+    },
+  },
+  shalnarkUvoginBlame: {
+    character: 'uvogin',
+    type: {
+      en: 'Comrade he tracks the chain user for',
+      it: 'Compagno per cui cerca l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'Shalnark finds the Nostrade family for Uvogin on the Hunter website. When Uvogin does not come back, Shalnark blames himself for not going with him.',
+      it: 'Shalnark trova per Uborghin la famiglia Nostrad sul sito degli Hunter. Quando Uborghin non torna, Shalnark si rimprovera di non essere andato con lui.',
+    },
+  },
+  shalnarkKortopi: {
+    character: 'kortopi',
+    type: {
+      en: 'Member he runs the auction with',
+      it: 'Membro con cui manda avanti l’asta',
+    },
+    summary: {
+      en: 'When the Troupe runs the reopened auction from backstage, Shalnark controls the auctioneer with his Nen while Kortopi makes exact copies of the items.',
+      it: 'Quando la Brigata manda avanti di nascosto l’asta riaperta, Shalnark controlla il banditore con il suo Nen mentre Kortopi fa copie esatte degli oggetti.',
+    },
+  },
+  shalnarkPakunoda: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member he runs the auction with',
+      it: 'Membro con cui manda avanti l’asta',
+    },
+    summary: {
+      en: 'When the Troupe runs the reopened auction from backstage, Shalnark controls the auctioneer with his Nen while Pakunoda brings the items onto the stage.',
+      it: 'Quando la Brigata manda avanti di nascosto l’asta riaperta, Shalnark controlla il banditore con il suo Nen mentre Pakunoda porta gli oggetti sul palco.',
+    },
+  },
+  // Light Nostrade
+  lightKurapika: {
+    character: 'kurapika',
+    type: {
+      en: 'Bodyguard he puts in charge',
+      it: 'Guardia del corpo che mette a capo',
+    },
+    summary: {
+      en: 'Kurapika tells Light on the phone that Dalzollene is probably dead and that the Phantom Troupe was behind the attack on the auction, and Light puts him in charge of the bodyguards.',
+      it: 'Kurapika dice a Light al telefono che Dalzorne è probabilmente morto e che dietro l’attacco all’asta c’è la Brigata Fantasma, e Light lo mette a capo delle guardie del corpo.',
+    },
+  },
+  lightKurapikaAssassins: {
+    character: 'kurapika',
+    type: {
+      en: 'Bodyguard he puts in charge',
+      it: 'Guardia del corpo che mette a capo',
+    },
+    summary: {
+      en: 'Light puts Kurapika in charge of the bodyguards, then sends him to join the assassins the Mafia has hired to kill the Phantom Troupe.',
+      it: 'Light mette Kurapika a capo delle guardie del corpo, poi lo manda a unirsi agli assassini che la mafia ha ingaggiato per uccidere la Brigata Fantasma.',
+    },
+  },
+  lightKurapikaEyes: {
+    character: 'kurapika',
+    type: {
+      en: 'Bodyguard he puts in charge',
+      it: 'Guardia del corpo che mette a capo',
+    },
+    summary: {
+      en: 'Light puts Kurapika in charge of the bodyguards and sends him to join the assassins. When the Scarlet Eyes come up at the auction, Light orders him to win them, and Kurapika does.',
+      it: 'Light mette Kurapika a capo delle guardie del corpo e lo manda a unirsi agli assassini. Quando all’asta arrivano gli occhi scarlatti, Light gli ordina di vincerli, e Kurapika ci riesce.',
+    },
+  },
+  lightNeon: {
+    character: 'neon-nostrade',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Light’s daughter Neon writes fortunes for his friends, and he keeps her away from the Underground Auction.',
+      it: 'Neon, la figlia di Light, scrive le profezie per i suoi amici, e lui la tiene lontana dall’asta sotterranea.',
+    },
+  },
+  lightNeonHome: {
+    character: 'neon-nostrade',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Light’s daughter Neon writes fortunes for his friends. He keeps her away from the auction and sends her home with Basho and Melody, promising her another one.',
+      it: 'Neon, la figlia di Light, scrive le profezie per i suoi amici. Lui la tiene lontana dall’asta e la manda a casa con Basho e Melody, promettendole un’altra asta.',
+    },
+  },
+  lightNeonAuction: {
+    character: 'neon-nostrade',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Light’s daughter Neon writes fortunes for his friends. He sends her home with Basho and Melody, promising her another auction, but she slips away from them to go to the auction.',
+      it: 'Neon, la figlia di Light, scrive le profezie per i suoi amici. Lui la manda a casa con Basho e Melody, promettendole un’altra asta, ma lei sfugge loro per andare all’asta.',
+    },
+  },
+  lightNeonEyes: {
+    character: 'neon-nostrade',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Light’s daughter Neon writes fortunes for his friends. Light has the Scarlet Eyes bought for her, and in hospital she thanks him for them.',
+      it: 'Neon, la figlia di Light, scrive le profezie per i suoi amici. Light le fa comprare gli occhi scarlatti, e in ospedale lei lo ringrazia.',
+    },
+  },
+  lightDalzollene: {
+    character: 'dalzollene',
+    type: {
+      en: 'Head of his daughter’s bodyguards',
+      it: 'Capo delle guardie del corpo di sua figlia',
+    },
+    summary: {
+      en: 'Dalzollene reports Neon’s fortunes to Light on the phone, and Light has Neon kept away from the Underground Auction.',
+      it: 'Dalzorne riferisce a Light al telefono le profezie di Neon, e Light fa tenere Neon lontana dall’asta sotterranea.',
+    },
+  },
+  lightBasho: {
+    character: 'basho',
+    type: {
+      en: 'Bodyguard he sends home with Neon',
+      it: 'Guardia del corpo che manda a casa con Neon',
+    },
+    summary: {
+      en: 'Light sends Basho and Melody to take Neon home.',
+      it: 'Light manda Basho e Melody a riportare Neon a casa.',
+    },
+  },
+  lightBashoLost: {
+    character: 'basho',
+    type: {
+      en: 'Bodyguard he sends home with Neon',
+      it: 'Guardia del corpo che manda a casa con Neon',
+    },
+    summary: {
+      en: 'Light sends Basho and Melody to take Neon home, but she slips away from them to go to the auction.',
+      it: 'Light manda Basho e Melody a riportare Neon a casa, ma lei sfugge loro per andare all’asta.',
+    },
+  },
+  lightMelody: {
+    character: 'melody',
+    type: {
+      en: 'Bodyguard he sends home with Neon',
+      it: 'Guardia del corpo che manda a casa con Neon',
+    },
+    summary: {
+      en: 'Light sends Melody and Basho to take Neon home.',
+      it: 'Light manda Melody e Basho a riportare Neon a casa.',
+    },
+  },
+  lightMelodyLost: {
+    character: 'melody',
+    type: {
+      en: 'Bodyguard he sends home with Neon',
+      it: 'Guardia del corpo che manda a casa con Neon',
+    },
+    summary: {
+      en: 'Light sends Melody and Basho to take Neon home, but she slips away from them to go to the auction.',
+      it: 'Light manda Melody e Basho a riportare Neon a casa, ma lei sfugge loro per andare all’asta.',
+    },
+  },
+  lightZenji: {
+    character: 'zenji',
+    type: { en: 'Rival who mocks him', it: 'Rivale che lo deride' },
+    summary: {
+      en: 'At the assassins’ meeting Zenji mocks Light until Kurapika threatens him, and Light tells Kurapika to stop.',
+      it: 'All’incontro degli assassini Zenji deride Light finché Kurapika non lo minaccia, e Light dice a Kurapika di fermarsi.',
+    },
+  },
+  lightZenjiBid: {
+    character: 'zenji',
+    type: { en: 'Rival who mocks him', it: 'Rivale che lo deride' },
+    summary: {
+      en: 'At the assassins’ meeting Zenji mocks Light until Kurapika threatens him. At the auction Zenji bids against Kurapika for the Scarlet Eyes, which cost 2.9 billion Jenny.',
+      it: 'All’incontro degli assassini Zenji deride Light finché Kurapika non lo minaccia. All’asta Zenji fa offerte contro Kurapika per gli occhi scarlatti, che costano 2,9 miliardi di Jenny.',
+    },
+  },
+  // Owl
+  owlNobunaga: {
+    character: 'nobunaga',
+    type: {
+      en: 'Troupe member he traps',
+      it: 'Membro della Brigata che intrappola',
+    },
+    summary: {
+      en: 'Owl wraps the Troupe’s car in his cloth. The others get out, but Nobunaga is trapped inside because of where he sits.',
+      it: 'Civetta avvolge l’auto della Brigata nel suo telo. Gli altri riescono a uscire, ma Nobunaga resta intrappolato per il posto in cui è seduto.',
+    },
+  },
+  owlFeitan: {
+    character: 'feitan',
+    type: {
+      en: 'Troupe member who holds him',
+      it: 'Membro della Brigata che lo tiene prigioniero',
+    },
+    summary: {
+      en: 'After the fight with the Shadow Beasts, Owl is held prisoner by the Troupe and tortured, with Feitan watching over him.',
+      it: 'Dopo lo scontro con le Bestie dell’Ombra, Civetta è tenuto prigioniero dalla Brigata e torturato, con Feitan a sorvegliarlo.',
+    },
+  },
+  // Worm
+  wormUvogin: {
+    character: 'uvogin',
+    type: {
+      en: 'Troupe member he fights',
+      it: 'Membro della Brigata che affronta',
+    },
+    summary: {
+      en: 'Worm punches Uvogin in the face and gets a harder punch back. When Worm drags Uvogin’s arm under the ground, Uvogin blasts a crater with his Big Bang Impact and leaves Worm badly hurt.',
+      it: 'Lombrico colpisce Uborghin in faccia e riceve un pugno più forte. Quando trascina il braccio di Uborghin sotto terra, Uborghin apre un cratere con il suo Colpo del Big Bang e lo lascia gravemente ferito.',
+    },
+  },
+  // Rabid Dog
+  rabidDogUvogin: {
+    character: 'uvogin',
+    type: {
+      en: 'Troupe member who kills him',
+      it: 'Membro della Brigata che lo uccide',
+    },
+    summary: {
+      en: 'Rabid Dog bites pieces out of Uvogin, and the poison in his fangs brings Uvogin down. Uvogin spits a piece of Leech’s skull through Rabid Dog’s head and kills him.',
+      it: 'Cane selvatico strappa a morsi pezzi di carne a Uborghin, e il veleno delle sue zanne lo mette a terra. Uborghin gli sputa un pezzo del cranio di Sanguisuga attraverso la testa e lo uccide.',
+    },
+  },
+  rabidDogPorcupine: {
+    character: 'porcupine',
+    type: {
+      en: 'Shadow Beast who holds Uvogin for him',
+      it: 'Bestia dell’Ombra che gli trattiene Uborghin',
+    },
+    summary: {
+      en: 'While Porcupine’s hairs hold Uvogin’s fist, Rabid Dog bites pieces out of Uvogin.',
+      it: 'Mentre i peli di Porcospino trattengono il pugno di Uborghin, Cane selvatico gli strappa a morsi pezzi di carne.',
+    },
+  },
+  rabidDogLeech: {
+    character: 'leech',
+    type: {
+      en: 'Shadow Beast who moves in after him',
+      it: 'Bestia dell’Ombra che attacca dopo di lui',
+    },
+    summary: {
+      en: 'Once Rabid Dog’s poison brings Uvogin down, Leech fills Uvogin’s body with leeches. Uvogin kills them both.',
+      it: 'Quando il veleno di Cane selvatico mette a terra Uborghin, Sanguisuga gli riempie il corpo di sanguisughe. Uborghin li uccide entrambi.',
+    },
+  },
+  // Porcupine
+  porcupineUvogin: {
+    character: 'uvogin',
+    type: {
+      en: 'Troupe member who screams him off',
+      it: 'Membro della Brigata che se ne libera urlando',
+    },
+    summary: {
+      en: 'Porcupine’s hairs turn into needles that catch Uvogin’s fist and hold it. Uvogin frees himself by screaming at him as loud as he can.',
+      it: 'I peli di Porcospino diventano aghi che bloccano il pugno di Uborghin e lo trattengono. Uborghin se ne libera urlandogli contro più forte che può.',
+    },
+  },
+  porcupineRabidDog: {
+    character: 'rabid-dog',
+    type: {
+      en: 'Shadow Beast he holds Uvogin for',
+      it: 'Bestia dell’Ombra per cui trattiene Uborghin',
+    },
+    summary: {
+      en: 'While Porcupine’s hairs hold Uvogin’s fist, Rabid Dog bites pieces out of Uvogin.',
+      it: 'Mentre i peli di Porcospino trattengono il pugno di Uborghin, Cane selvatico gli strappa a morsi pezzi di carne.',
+    },
+  },
+  // Leech
+  leechUvogin: {
+    character: 'uvogin',
+    type: {
+      en: 'Troupe member who kills him',
+      it: 'Membro della Brigata che lo uccide',
+    },
+    summary: {
+      en: 'Once the poison brings Uvogin down, Leech fills his body with leeches. Uvogin bites into Leech’s head and kills him.',
+      it: 'Quando il veleno mette a terra Uborghin, Sanguisuga gli riempie il corpo di sanguisughe. Uborghin gli affonda i denti nella testa e lo uccide.',
+    },
+  },
+  leechRabidDog: {
+    character: 'rabid-dog',
+    type: {
+      en: 'Shadow Beast he moves in after',
+      it: 'Bestia dell’Ombra dopo cui attacca',
+    },
+    summary: {
+      en: 'Once Rabid Dog’s poison brings Uvogin down, Leech fills Uvogin’s body with leeches. Uvogin kills them both.',
+      it: 'Quando il veleno di Cane selvatico mette a terra Uborghin, Sanguisuga gli riempie il corpo di sanguisughe. Uborghin li uccide entrambi.',
+    },
+  },
+  leechPorcupine: {
+    character: 'porcupine',
+    type: {
+      en: 'Shadow Beast who holds Uvogin',
+      it: 'Bestia dell’Ombra che trattiene Uborghin',
+    },
+    summary: {
+      en: 'Leech moves in on Uvogin while Porcupine’s hairs hold his fist and the poison brings him down.',
+      it: 'Sanguisuga attacca Uborghin mentre i peli di Porcospino gli trattengono il pugno e il veleno lo mette a terra.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const yorknewCityRelationships = {
@@ -1028,6 +1775,312 @@ export const yorknewCityRelationships = {
         links.shizukuNobunaga,
         links.shizukuFeitan,
       ],
+    },
+  ],
+  // The Shadow Beasts fight Uvogin in chapters 75-76, and the chain takes
+  // him in chapter 77, all in episode 44.
+  'uvogin': [
+    {
+      episode: 44,
+      chapter: 77,
+      value: [
+        links.uvoginKurapika,
+        links.uvoginWorm,
+        links.uvoginRabidDog,
+        links.uvoginLeech,
+        links.uvoginPorcupine,
+      ],
+    },
+    {
+      episode: 45,
+      chapter: 78,
+      value: [
+        links.uvoginKurapikaPunch,
+        links.uvoginPhinks,
+        links.uvoginDalzollene,
+        links.uvoginShizuku,
+      ],
+    },
+    // The beer is chapter 79, the door chapter 80, both in episode 46.
+    {
+      episode: 46,
+      chapter: 80,
+      value: [
+        links.uvoginKurapikaHunt,
+        links.uvoginShalnark,
+        links.uvoginPhinks,
+        links.uvoginShizuku,
+        links.uvoginDalzollene,
+      ],
+    },
+    // Chapters 81-84 and episode 47.
+    {
+      episode: 47,
+      chapter: 84,
+      value: [
+        links.uvoginKurapikaDeath,
+        links.uvoginShalnark,
+        links.uvoginPhinks,
+        links.uvoginShizuku,
+        links.uvoginDalzollene,
+      ],
+    },
+    // The call from the balloon is chapter 74 and episode 43; the leader is
+    // linked from 54/104.
+    {
+      episode: 54,
+      chapter: 104,
+      value: [
+        links.uvoginChrollo,
+        links.uvoginKurapikaDeath,
+        links.uvoginShalnark,
+        links.uvoginPhinks,
+        links.uvoginShizuku,
+      ],
+    },
+  ],
+  // On the stage in chapter 73 and episode 43; Franklin is named at 44/76.
+  'feitan': [
+    { episode: 44, chapter: 76, value: [links.feitanFranklin] },
+    // Owl is tortured in episode 45 and seen tortured beside Feitan in
+    // chapter 84, which episode 47 adapts.
+    {
+      episode: 47,
+      chapter: 84,
+      value: [links.feitanOwl, links.feitanFranklin],
+    },
+    // Chapters 91-92 and episode 50.
+    {
+      episode: 50,
+      chapter: 92,
+      value: [
+        links.feitanGon,
+        links.feitanNobunaga,
+        links.feitanOwl,
+        links.feitanFranklin,
+      ],
+    },
+    {
+      episode: 58,
+      chapter: 118,
+      value: [
+        links.feitanPakunoda,
+        links.feitanMachi,
+        links.feitanGon,
+        links.feitanNobunaga,
+        links.feitanOwl,
+      ],
+    },
+  ],
+  'franklin': [
+    {
+      episode: 44,
+      chapter: 76,
+      value: [links.franklinFeitan, links.franklinTocino],
+    },
+    // Chapters 91-93 and episode 50.
+    {
+      episode: 50,
+      chapter: 93,
+      value: [
+        links.franklinGon,
+        links.franklinNobunaga,
+        links.franklinPakunoda,
+        links.franklinFeitan,
+        links.franklinTocino,
+      ],
+    },
+    {
+      episode: 58,
+      chapter: 118,
+      value: [
+        links.franklinPhinks,
+        links.franklinPakunodaLeave,
+        links.franklinGon,
+        links.franklinNobunaga,
+        links.franklinFeitan,
+      ],
+    },
+  ],
+  'nobunaga': [
+    { episode: 45, chapter: 77, value: [links.nobunagaOwl] },
+    // Chapters 89-91 and episode 49.
+    {
+      episode: 49,
+      chapter: 91,
+      value: [
+        links.nobunagaMachi,
+        links.nobunagaKillua,
+        links.nobunagaUvogin,
+        links.nobunagaOwl,
+      ],
+    },
+    // Chapters 91-94 and episode 50.
+    {
+      episode: 50,
+      chapter: 94,
+      value: [
+        links.nobunagaGon,
+        links.nobunagaUvoginFriend,
+        links.nobunagaKilluaEscape,
+        links.nobunagaFeitan,
+        links.nobunagaMachi,
+      ],
+    },
+    // Chapters 102-104 and episode 54.
+    {
+      episode: 54,
+      chapter: 104,
+      value: [
+        links.nobunagaChrollo,
+        links.nobunagaGon,
+        links.nobunagaUvoginFriend,
+        links.nobunagaKilluaEscape,
+        links.nobunagaFeitan,
+      ],
+    },
+    // Hisoka's fortune is chapter 106; episode 55 adapts it from page 4.
+    {
+      episode: 55,
+      chapter: 106,
+      value: [
+        links.nobunagaChrollo,
+        links.nobunagaHisoka,
+        links.nobunagaGon,
+        links.nobunagaUvoginFriend,
+        links.nobunagaKilluaEscape,
+      ],
+    },
+    // Chapters 111-112, pages 1-8, and episode 56.
+    {
+      episode: 56,
+      chapter: 112,
+      value: [
+        links.nobunagaChrollo,
+        links.nobunagaSquala,
+        links.nobunagaPakunoda,
+        links.nobunagaUvoginFriend,
+        links.nobunagaGon,
+      ],
+    },
+  ],
+  'phinks': [
+    {
+      episode: 45,
+      chapter: 78,
+      value: [links.phinksDalzollene, links.phinksUvogin],
+    },
+    // The trap is chapters 90-91 and episode 49.
+    {
+      episode: 49,
+      chapter: 91,
+      value: [
+        links.phinksKillua,
+        links.phinksPakunoda,
+        links.phinksUvogin,
+        links.phinksDalzollene,
+      ],
+    },
+    {
+      episode: 58,
+      chapter: 118,
+      value: [
+        links.phinksPakunodaLeave,
+        links.phinksGon,
+        links.phinksKurapika,
+        links.phinksFranklin,
+        links.phinksKillua,
+      ],
+    },
+  ],
+  'shalnark': [
+    { episode: 46, chapter: 79, value: [links.shalnarkUvogin] },
+    { episode: 47, chapter: 84, value: [links.shalnarkUvoginBlame] },
+    // Chapter 100 and episode 53.
+    {
+      episode: 53,
+      chapter: 100,
+      value: [
+        links.shalnarkUvoginBlame,
+        links.shalnarkKortopi,
+        links.shalnarkPakunoda,
+      ],
+    },
+  ],
+  'light-nostrade': [
+    {
+      episode: 46,
+      chapter: 79,
+      value: [links.lightKurapika, links.lightNeon, links.lightDalzollene],
+    },
+    {
+      episode: 49,
+      chapter: 89,
+      value: [
+        links.lightKurapikaAssassins,
+        links.lightNeonHome,
+        links.lightBasho,
+        links.lightMelody,
+        links.lightDalzollene,
+      ],
+    },
+    // The meeting and Neon's escape are chapters 94-95 and episode 51.
+    {
+      episode: 51,
+      chapter: 95,
+      value: [
+        links.lightKurapikaAssassins,
+        links.lightNeonAuction,
+        links.lightZenji,
+        links.lightBashoLost,
+        links.lightMelodyLost,
+      ],
+    },
+    // Chapters 100-101 and episode 53.
+    {
+      episode: 53,
+      chapter: 101,
+      value: [
+        links.lightKurapikaEyes,
+        links.lightNeonEyes,
+        links.lightZenjiBid,
+        links.lightBashoLost,
+        links.lightMelodyLost,
+      ],
+    },
+  ],
+  'owl': [
+    { episode: 45, chapter: 77, value: [links.owlNobunaga] },
+    // Tortured in episode 45; seen tortured beside Feitan in chapter 84,
+    // which episode 47 adapts.
+    { episode: 47, chapter: 84, value: [links.owlFeitan, links.owlNobunaga] },
+  ],
+  // His punch lands at the end of chapter 75 (episode 44), so the card waits
+  // for the fight's pair, 44/76.
+  'worm': [{ episode: 44, chapter: 76, value: [links.wormUvogin] }],
+  'rabid-dog': [
+    {
+      episode: 44,
+      chapter: 76,
+      value: [
+        links.rabidDogUvogin,
+        links.rabidDogPorcupine,
+        links.rabidDogLeech,
+      ],
+    },
+  ],
+  'porcupine': [
+    {
+      episode: 44,
+      chapter: 76,
+      value: [links.porcupineUvogin, links.porcupineRabidDog],
+    },
+  ],
+  'leech': [
+    {
+      episode: 44,
+      chapter: 76,
+      value: [links.leechUvogin, links.leechRabidDog, links.leechPorcupine],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>

@@ -1385,6 +1385,72 @@ const links = {
       it: 'Dopo l’incontro di Hisoka con Kastro, Machi gli ricuce le braccia con fili di Nen e gli dice di essere a York Shin City entro il 30 agosto, quando tutti i membri della Brigata Fantasma si riuniscono.',
     },
   },
+  kurapikaMelodyGuard: {
+    character: 'melody',
+    type: {
+      en: 'Bodyguard he confides in',
+      it: 'Guardia del corpo a cui si confida',
+    },
+    summary: {
+      en: 'Melody backs Kurapika when his chain points out Squala. On guard at the auction, she asks him about the Scarlet Eyes, and he tells her he means to bring his people’s eyes back.',
+      it: 'Melody dà ragione a Kurapika quando la sua catena indica Squala. Di guardia all’asta, gli chiede degli occhi scarlatti, e lui le dice che vuole riportare indietro gli occhi della sua gente.',
+    },
+  },
+  kurapikaUvogin: {
+    character: 'uvogin',
+    type: {
+      en: 'Troupe member he captures',
+      it: 'Membro della Brigata che cattura',
+    },
+    summary: {
+      en: 'Kurapika captures Uvogin with his chain, and when Uvogin says that the Troupe killed all the guests at the auction, punches him. After Uvogin escapes, Kurapika stays behind alone to wait for him.',
+      it: 'Kurapika cattura Uborghin con la sua catena e, quando Uborghin dice che la Brigata ha ucciso tutti gli ospiti dell’asta, gli dà un pugno. Dopo la fuga di Uborghin, Kurapika resta da solo ad aspettarlo.',
+    },
+  },
+  kurapikaUvoginDeath: {
+    character: 'uvogin',
+    type: {
+      en: 'Troupe member he kills',
+      it: 'Membro della Brigata che uccide',
+    },
+    summary: {
+      en: 'Kurapika asks Uvogin about the Kurta Clan, catches him in a chain hidden with In and beats him. Uvogin will not say where the other members are, and the Judgment Chain kills him. Kurapika buries him.',
+      it: 'Kurapika chiede a Uborghin del clan Kurta, lo cattura con una catena nascosta con l’In e lo picchia. Uborghin non vuole dire dove sono gli altri membri, e la Catena del Giudizio lo uccide. Kurapika lo seppellisce.',
+    },
+  },
+  kurapikaHisokaDeal: {
+    character: 'hisoka',
+    type: {
+      en: 'Man who offers him a deal',
+      it: 'Uomo che gli propone un patto',
+    },
+    summary: {
+      en: 'Hisoka tells Kurapika what he knows about the Phantom Troupe and offers to reveal the abilities of seven members if they work together, because he is after the leader. Kurapika puts off his answer until the next day.',
+      it: 'Hisoka racconta a Kurapika quello che sa della Brigata Fantasma e si offre di rivelargli le capacità di sette membri se lavorano insieme, perché è al capo che punta. Kurapika rimanda la risposta al giorno dopo.',
+    },
+  },
+  kurapikaLight: {
+    character: 'light-nostrade',
+    type: {
+      en: 'Boss who puts him in charge',
+      it: 'Capo che lo mette a capo delle guardie',
+    },
+    summary: {
+      en: 'Kurapika tells Light on the phone that Dalzollene is probably dead and that the Phantom Troupe was behind the attack on the auction, and Light puts him in charge of the bodyguards.',
+      it: 'Kurapika dice a Light al telefono che Dalzorne è probabilmente morto e che dietro l’attacco all’asta c’è la Brigata Fantasma, e Light lo mette a capo delle guardie del corpo.',
+    },
+  },
+  hisokaKurapikaDeal: {
+    character: 'kurapika',
+    type: {
+      en: 'Hunter he offers a deal',
+      it: 'Hunter a cui propone un patto',
+    },
+    summary: {
+      en: 'Hisoka meets Kurapika and offers to reveal the abilities of seven Troupe members if they work together, because he is after the Troupe’s leader. Kurapika puts off his answer until the next day.',
+      it: 'Hisoka incontra Kurapika e si offre di rivelargli le capacità di sette membri della Brigata se lavorano insieme, perché è al capo della Brigata che punta. Kurapika rimanda la risposta al giorno dopo.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const hunterExamRelationships = {
@@ -1841,6 +1907,33 @@ export const hunterExamRelationships = {
         links.kurapikaSquala,
       ],
     },
+
+    // Hisoka is chapters 78-79, the call to Light chapter 79 and Uvogin at
+    // the door chapter 80, all by the end of episode 46. Gon, Killua and
+    // Squala make room.
+    {
+      episode: 46,
+      chapter: 80,
+      value: [
+        links.kurapikaUvogin,
+        links.kurapikaHisokaDeal,
+        links.kurapikaLight,
+        links.kurapikaMelodyGuard,
+        links.kurapikaLeorioTeam,
+      ],
+    },
+    // Chapters 81-84 and episode 47.
+    {
+      episode: 47,
+      chapter: 84,
+      value: [
+        links.kurapikaUvoginDeath,
+        links.kurapikaHisokaDeal,
+        links.kurapikaLight,
+        links.kurapikaMelodyGuard,
+        links.kurapikaLeorioTeam,
+      ],
+    },
   ],
   'katzo': [
     {
@@ -2013,6 +2106,20 @@ export const hunterExamRelationships = {
         links.hisokaKastro,
         links.hisokaIllumiWarning,
         links.hisokaKurapikaMatch,
+      ],
+    },
+
+    // The meeting is chapter 78 and episode 45, his answer on the Scarlet
+    // Eyes chapter 79 and episode 46.
+    {
+      episode: 46,
+      chapter: 79,
+      value: [
+        links.hisokaGonReturned,
+        links.hisokaKurapikaDeal,
+        links.hisokaMachi,
+        links.hisokaIllumiWarning,
+        links.hisokaKastro,
       ],
     },
   ],

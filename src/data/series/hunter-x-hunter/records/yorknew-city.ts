@@ -782,6 +782,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 41, chapter: 71, value: TROUPE }],
     },
     'uvogin': {
+      relationships: yorknewCityRelationships.uvogin,
       chronicle: yorknewCityChronicles.uvogin,
       role: TROUPE_MEMBER,
       log: {
@@ -804,6 +805,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 43, chapter: 74, value: TROUPE }],
     },
     'feitan': {
+      relationships: yorknewCityRelationships.feitan,
       chronicle: yorknewCityChronicles.feitan,
       role: TROUPE_MEMBER,
       log: {
@@ -814,6 +816,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 43, chapter: 74, value: TROUPE }],
     },
     'franklin': {
+      relationships: yorknewCityRelationships.franklin,
       chronicle: yorknewCityChronicles.franklin,
       role: TROUPE_MEMBER,
       log: {
@@ -824,6 +827,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 44, chapter: 76, value: TROUPE }],
     },
     'nobunaga': {
+      relationships: yorknewCityRelationships.nobunaga,
       chronicle: yorknewCityChronicles.nobunaga,
       role: TROUPE_MEMBER,
       log: {
@@ -840,6 +844,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 45, chapter: 77, value: TROUPE }],
     },
     'phinks': {
+      relationships: yorknewCityRelationships.phinks,
       chronicle: yorknewCityChronicles.phinks,
       role: TROUPE_MEMBER,
       log: {
@@ -850,6 +855,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 45, chapter: 78, value: TROUPE }],
     },
     'shalnark': {
+      relationships: yorknewCityRelationships.shalnark,
       chronicle: yorknewCityChronicles.shalnark,
       role: TROUPE_MEMBER,
       log: {
@@ -860,6 +866,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 46, chapter: 79, value: TROUPE }],
     },
     'light-nostrade': {
+      relationships: yorknewCityRelationships['light-nostrade'],
       chronicle: yorknewCityChronicles['light-nostrade'],
       role: { it: 'Padre di Neon', en: 'Neon’s father' },
       log: {
@@ -876,6 +883,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'owl': {
+      relationships: yorknewCityRelationships.owl,
       chronicle: yorknewCityChronicles.owl,
       role: SHADOW_BEAST,
       log: {
@@ -896,6 +904,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 45, chapter: 77, value: SHADOW_BEASTS }],
     },
     'worm': {
+      relationships: yorknewCityRelationships.worm,
       chronicle: yorknewCityChronicles.worm,
       role: SHADOW_BEAST,
       log: {
@@ -916,6 +925,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 43, chapter: 75, value: SHADOW_BEASTS }],
     },
     'rabid-dog': {
+      relationships: yorknewCityRelationships['rabid-dog'],
       chronicle: yorknewCityChronicles['rabid-dog'],
       role: SHADOW_BEAST,
       log: {
@@ -931,6 +941,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 43, chapter: 75, value: SHADOW_BEASTS }],
     },
     'porcupine': {
+      relationships: yorknewCityRelationships.porcupine,
       chronicle: yorknewCityChronicles.porcupine,
       role: SHADOW_BEAST,
       log: {
@@ -948,6 +959,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 44, chapter: 76, value: SHADOW_BEASTS }],
     },
     'leech': {
+      relationships: yorknewCityRelationships.leech,
       chronicle: yorknewCityChronicles.leech,
       role: SHADOW_BEAST,
       log: {
