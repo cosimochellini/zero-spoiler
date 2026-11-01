@@ -41,7 +41,6 @@ export const itDictionary: Dictionary = {
   'onboarding.here': 'Sono qui',
   'onboarding.further': 'Sono più avanti',
   'onboarding.start': 'Inizio ora · EP 1',
-  'onboarding.arcs': 'Saghe',
   'onboarding.cast': 'Personaggi',
   'onboarding.tryHint':
     'Apri una voce per vederne la pagina a questo punto. Il segnalibro non viene salvato.',
@@ -102,7 +101,6 @@ export const itDictionary: Dictionary = {
   'dialog.bookPlaceholder': 'Scegli un libro',
   'dialog.bookOption': 'Libro {book} · {count} capitoli',
   'dialog.bookChapterLabel': 'Capitolo del libro',
-  'dialog.saga': 'Saga · {name}',
   'dialog.hint': 'Da 1 a {max}.',
   'dialog.errorEmpty': 'Inserisci un numero.',
   'dialog.errorRange': 'Inserisci un numero da 1 a {max}.',
@@ -248,15 +246,12 @@ export const itDictionary: Dictionary = {
   'characters.featuredTitle': 'Personaggi principali',
   'characters.bookTitle': 'Tutti i personaggi',
   'characters.loading': 'Caricamento dei personaggi…',
-  'characters.bookLede':
-    'Tutti i personaggi della wiki, divisi per la saga in cui compaiono per la prima volta.',
   'characters.sectionOpensAt.episode': 'Dall’episodio {threshold}',
   'characters.sectionOpensAt.season': 'Da {threshold}',
   'characters.sectionOpensAt.chapter': 'Dal capitolo {threshold}',
   'characters.sectionOpensAt.book': 'Dal libro {book}, capitolo {chapter}',
   'characters.sectionCount': '{count} personaggi',
   'characters.sectionCountOne': '1 personaggio',
-  'characters.sectionFogged': 'Saga nella nebbia',
 
   'character.opensAt.episode':
     'Compare per la prima volta nell’episodio {threshold}',
@@ -323,7 +318,6 @@ export const itDictionary: Dictionary = {
   'places.firstSeen.book':
     'Compare per la prima volta nel libro {book}, capitolo {chapter}',
   'places.form': 'Tipo',
-  'places.arc': 'Saga',
   'places.landmark': 'Punto di riferimento',
   'places.filedHere': 'Collegati a questo luogo',
   'places.searchLabel': 'Cerca un luogo',
@@ -336,8 +330,6 @@ export const itDictionary: Dictionary = {
   'places.noneShown': 'Nessun luogo visibile corrisponde a questi filtri.',
   'places.showAll': 'Mostra tutti',
   'places.allForms': 'Tutti i tipi',
-  'places.saga': 'Saga',
-  'places.allSagas': 'Tutte le saghe',
   'places.groupCount': '{count} luoghi',
   'places.groupCountOne': '1 luogo',
 
@@ -383,7 +375,6 @@ export const itDictionary: Dictionary = {
   'status.unknown': 'Sorte ignota',
 
   'kind.character': 'Personaggio',
-  'kind.arc': 'Saga',
   'kind.place': 'Luogo',
 
   'locale.label': 'Lingua',

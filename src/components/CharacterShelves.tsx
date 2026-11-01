@@ -5,7 +5,7 @@ import { CatalogueSection } from '~/components/CatalogueSection'
 import { styles } from '~/components/CharacterGrid.styles'
 import { CharacterShelf } from '~/components/CharacterShelf'
 import { Button } from '~/components/ui/Button'
-import { useT } from '~/i18n/LocaleContext'
+import { useSeriesT, useT } from '~/i18n/LocaleContext'
 import type { CharacterView, ShelfView } from '~/lib/view/records'
 
 /**
@@ -66,7 +66,7 @@ export function CharacterShelves({
   onRetry,
   peek,
 }: CharacterShelvesProps): ReactElement {
-  const t = useT()
+  const t = useSeriesT()
 
   return (
     <CatalogueSection

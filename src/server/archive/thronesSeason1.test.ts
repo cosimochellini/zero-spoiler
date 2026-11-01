@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
+import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
@@ -7,7 +8,9 @@ import type { CharacterStatus } from '~/lib/view/records'
 import { LOADED_SERIES } from '~/test/series'
 
 import { homePage } from './home.server'
+import { onboardingPage } from './onboarding.server'
 import { characterPage } from './pages.server'
+import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
@@ -421,5 +424,49 @@ describe('the season’s leads', () => {
       'tyrion-lannister',
       'arya-stark',
     ])
+  })
+})
+
+/** The five leads, in the order the demo's cast shows them. */
+const CAST = [
+  'eddard-stark',
+  'jon-snow',
+  'daenerys-targaryen',
+  'tyrion-lannister',
+  'arya-stark',
+]
+
+describe('the first season’s demo', () => {
+  it('gives a new visitor the season and its five leads, with no places and no tail', () => {
+    const demo = onboardingPage(null, readerFor(archive, null, 'en'))
+
+    expect(demo.arcs.map(({ id }) => id)).toStrictEqual(['season-1'])
+    expect(demo.cast.map(({ id }) => id)).toStrictEqual(CAST)
+    expect(demo.places).toStrictEqual([])
+    expect(demo.tail).toStrictEqual([])
+    // Ros is the show's alone, so the two-unit demo cannot carry her.
+    expect(JSON.stringify(demo)).not.toContain('"ros"')
+  })
+})
+
+// Beheaded with Ice in "Baelor" (episode 9) and in Arya V (chapter 66).
+describe.each([
+  { unit: 'episode' as const, pin: 9 },
+  { unit: 'chapter' as const, pin: 66 },
+])('Eddard Stark’s death stage by $unit', ({ unit, pin }) => {
+  const [stage] = REDRAWINGS['eddard-stark'] ?? []
+  const ned = character('eddard-stark')
+
+  it('keeps Ice standing one before the pin', () => {
+    expect(drawingOf(ned, reader(unit, pin - 1)).strokes).toStrictEqual(
+      DRAWINGS['eddard-stark'],
+    )
+  })
+
+  it('lays Ice down at the pin', () => {
+    expect(stage).toBeDefined()
+    expect(drawingOf(ned, reader(unit, pin)).strokes).toStrictEqual(
+      stage?.value,
+    )
   })
 })

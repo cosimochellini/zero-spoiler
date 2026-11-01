@@ -7,6 +7,15 @@ import type { OwnCopy } from '~/i18n/types'
  * are the English Hunter x Hunter Wiki and Italian Wikipedia (#725).
  */
 export const hunterXHunterEn = {
+  'characters.bookLede':
+    'Every character in the wiki, grouped by the arc they first appear in.',
+  'dialog.saga': 'Arc · {name}',
+  'onboarding.arcs': 'Arcs',
+  'characters.sectionFogged': 'Arc under fog',
+  'kind.arc': 'Arc',
+  'places.allSagas': 'All sagas',
+  'places.arc': 'Arc',
+  'places.saga': 'Saga',
   'characters.count':
     '{count} characters, in the order they appear in the anime. Characters under fog do not show up in search.',
   'characters.featuredLede': 'The key characters of the story.',

@@ -47,6 +47,26 @@ describe('the sitemap', () => {
     }
   })
 
+  it('lists the opened Game of Thrones pages and leaves out the show-only Ros', () => {
+    for (const locale of ['en', 'it']) {
+      for (const path of [
+        '',
+        '/characters',
+        '/places',
+        '/characters/eddard-stark',
+      ]) {
+        expect(locations()).toContain(
+          `${SITE_ORIGIN}/game-of-thrones/${locale}${path}`,
+        )
+      }
+      for (const path of ['characters/ros', 'fruits', 'filler']) {
+        expect(locations()).not.toContain(
+          `${SITE_ORIGIN}/game-of-thrones/${locale}/${path}`,
+        )
+      }
+    }
+  })
+
   it('is a sitemap document with the alternates namespace declared', () => {
     expect(document.startsWith('<?xml version="1.0" encoding="UTF-8"?>')).toBe(
       true,

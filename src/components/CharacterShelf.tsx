@@ -11,7 +11,7 @@ import { styles } from '~/components/CharacterGrid.styles'
 import { CharacterTile } from '~/components/CharacterTile'
 import { type Match, matchesIn } from '~/components/recordMatches'
 import { SpoilerVeil } from '~/components/SpoilerVeil'
-import { useT } from '~/i18n/LocaleContext'
+import { useSeriesT } from '~/i18n/LocaleContext'
 import { useThreshold } from '~/lib/progress/BookmarkContext'
 import type {
   CharacterView,
@@ -77,7 +77,7 @@ function ShelfHead({
   headingId: string
   peek: (handle: string) => Promise<RecordView>
 }): ReactElement {
-  const t = useT()
+  const t = useSeriesT()
   const threshold = useThreshold()
 
   return (

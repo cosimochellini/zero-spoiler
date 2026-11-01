@@ -75,6 +75,8 @@ describe('LegalPage', () => {
         'zs_one-piece_try',
         'zs_hunter-x-hunter',
         'zs_hunter-x-hunter_try',
+        'zs_game-of-thrones',
+        'zs_game-of-thrones_try',
         'opzs_welcome',
         'opzs_intro',
       ]) {

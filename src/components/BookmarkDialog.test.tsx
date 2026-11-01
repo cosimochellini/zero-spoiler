@@ -12,6 +12,7 @@ import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { type Bookmark, serialiseBookmark } from '~/lib/progress/episode'
 import { type SagaTable, SagaTableContext } from '~/lib/progress/sagaLabel'
+import { GAME_OF_THRONES_SERIES } from '~/lib/progress/series'
 import { ep, renderWithProviders, settle } from '~/test/providers'
 
 import { preloadBookmarkForm } from './bookmarkFormLoader'
@@ -265,6 +266,39 @@ describe('EpisodeMark', () => {
     await user.type(field('Last episode you watched'), '100')
 
     expect(within(dialog()).getByText('Alabasta Saga')).toBeVisible()
+  })
+
+  it('names no season past the first on Game of Thrones, and describes the field without it', async () => {
+    // Its only heading is season 1, so every later number would read
+    // "Season 1"; the series leaves the line blank instead (#856).
+    const seasons: SagaTable = {
+      episode: [{ from: 1, name: 'Season 1' }],
+      chapter: [{ from: 1, name: 'Season 1' }],
+      filler: [],
+    }
+    const loadSeasons = vi
+      .fn<() => Promise<SagaTable>>()
+      .mockResolvedValue(seasons)
+    const user = userEvent.setup()
+    renderWithProviders(
+      <SagaTableContext value={loadSeasons}>
+        <EpisodeMark />
+      </SagaTableContext>,
+      {
+        bookmark: ep(43),
+        path: '/game-of-thrones/en',
+        series: GAME_OF_THRONES_SERIES,
+      },
+    )
+
+    await open(user)
+    await settle()
+
+    expect(within(dialog()).queryByText(/^Season 1/u)).not.toBeInTheDocument()
+    // The blank line adds nothing to the field's description.
+    expect(field('Last episode you watched')).toHaveAccessibleDescription(
+      /^\s*From 1 to 73\.$/u,
+    )
   })
 
   it('says nothing about validity until the field has been left', async () => {

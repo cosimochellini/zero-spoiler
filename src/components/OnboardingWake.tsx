@@ -28,6 +28,9 @@ const requests = new Map<string, Promise<DemoDrawings>>()
  * Every card decides for itself from the dial, in the browser: the server
  * sent East Blue and nothing past it, so there is nothing here the dial
  * could open by mistake.
+ *
+ * A series with no places yet shows no places shelf, and one with no
+ * record past its demo shows no tail: both would be empty (#856).
  */
 export function OnboardingWake({
   point,
@@ -73,12 +76,14 @@ export function OnboardingWake({
         point={point}
         title={t('onboarding.cast')}
       />
-      <Shelf
-        drawings={drawings}
-        entries={view.places}
-        point={point}
-        title={t('onboarding.places')}
-      />
+      {view.places.length > 0 && (
+        <Shelf
+          drawings={drawings}
+          entries={view.places}
+          point={point}
+          title={t('onboarding.places')}
+        />
+      )}
       <Tail
         fogged={view.fogged}
         point={point}
@@ -136,7 +141,7 @@ function Shelf({
   )
 }
 
-/** The covered records past East Blue, and how many there are. */
+/** The covered records past East Blue, and how many there are; none, nothing. */
 function Tail({
   fogged,
   point,
@@ -145,8 +150,12 @@ function Tail({
   fogged: number
   point: DialPoint
   tail: CoveredRecord[]
-}): ReactElement {
+}): null | ReactElement {
   const t = useSeriesT()
+
+  if (tail.length === 0) {
+    return null
+  }
 
   return (
     <section

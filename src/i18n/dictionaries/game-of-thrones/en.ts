@@ -8,6 +8,17 @@ import type { OwnCopy } from '~/i18n/types'
  * the Game of Thrones Wiki and Italian Wikipedia (#725).
  */
 export const gameOfThronesEn = {
+  'characters.bookLede':
+    'Every character in the wiki, grouped by the season they first appear in.',
+  // Blank: season 1 is the only heading, so every later number would
+  // read "Season 1" (#856). The line keeps its height.
+  'dialog.saga': '',
+  'onboarding.arcs': 'Seasons',
+  'characters.sectionFogged': 'Season under fog',
+  'kind.arc': 'Season',
+  'places.allSagas': 'All seasons',
+  'places.arc': 'Season',
+  'places.saga': 'Season',
   'characters.count':
     '{count} characters, in the order they appear in the show. Characters under fog do not show up in search.',
   'characters.featuredLede': 'The key characters of the story.',
