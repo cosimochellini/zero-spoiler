@@ -848,8 +848,8 @@ export const yorknewCity: HunterSaga = {
       chronicle: yorknewCityChronicles.phinks,
       role: TROUPE_MEMBER,
       log: {
-        it: 'Con altri membri della Brigata, travestiti da mafiosi, raggiunge il posto dove le guardie del corpo tengono Uborghin, uccide Dalzorne e libera il compagno.',
-        en: 'With other Troupe members, disguised as Mafia men, he reaches the place where the bodyguards hold Uvogin, kills Dalzollene and frees his comrade.',
+        it: 'Con altri membri della Brigata, travestiti da mafiosi, raggiunge il posto dove le guardie del corpo tengono Uborghin. Uccidono Dalzorne e liberano il compagno.',
+        en: 'With other Troupe members, disguised as Mafia men, he reaches the place where the bodyguards hold Uvogin. They kill Dalzollene and free his comrade.',
       },
       status: [{ episode: 45, chapter: 78, value: 'alive' }],
       affiliation: [{ episode: 45, chapter: 78, value: TROUPE }],
