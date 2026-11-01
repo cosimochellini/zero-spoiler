@@ -1335,6 +1335,56 @@ const links = {
       it: 'Leorio sostiene che dovrebbe essere bocciato lui al posto di Killua. Netero risponde che Leorio non aveva bisogno dell’aiuto di Killua.',
     },
   },
+  // Yorknew City (#974)
+  kurapikaMelody: {
+    character: 'melody',
+    type: { en: 'Applicant who backs him', it: 'Candidata che gli dà ragione' },
+    summary: {
+      en: 'When Kurapika’s chain reacts in front of Squala, Melody backs him: she heard Squala’s heart speed up, with the rhythm of a liar.',
+      it: 'Quando la catena di Kurapika reagisce davanti a Squala, Melody gli dà ragione: ha sentito il cuore di Squala accelerare, con il ritmo di chi mente.',
+    },
+  },
+  kurapikaSquala: {
+    character: 'squala',
+    type: { en: 'Plant he exposes', it: 'Infiltrato che smaschera' },
+    summary: {
+      en: 'Kurapika holds his chain in front of each applicant, and it reacts in front of Squala. Squala denies being a plant until Basho’s haiku makes him confess.',
+      it: 'Kurapika passa la sua catena davanti a ogni candidato, e la catena reagisce davanti a Squala. Squala nega di essere un infiltrato finché l’haiku di Basho non lo costringe a confessare.',
+    },
+  },
+  leorioGonYorknew: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Friend he meets again in Yorknew City',
+      it: 'Amico che ritrova a York Shin City',
+    },
+    summary: {
+      en: 'Leorio runs into Gon at a Yorknew City market and comes up with a way to raise money for the game on Ging’s memory card: whoever beats Gon at arm wrestling wins a diamond.',
+      it: 'Leorio ritrova Gon a un mercato di York Shin City e trova un modo per raccogliere i soldi per il gioco della scheda di memoria di Ging: chi batte Gon a braccio di ferro vince un diamante.',
+    },
+  },
+  leorioKilluaYorknew: {
+    character: 'killua',
+    type: {
+      en: 'Friend he meets again in Yorknew City',
+      it: 'Amico che ritrova a York Shin City',
+    },
+    summary: {
+      en: 'Leorio runs into Killua and Gon at a Yorknew City market, and with Killua he runs an arm-wrestling contest against Gon to raise money for the game on Ging’s memory card.',
+      it: 'Leorio ritrova Killua e Gon a un mercato di York Shin City, e con Killua organizza una sfida a braccio di ferro contro Gon per raccogliere i soldi per il gioco della scheda di memoria di Ging.',
+    },
+  },
+  hisokaMachi: {
+    character: 'machi',
+    type: {
+      en: 'Troupe member who calls him to Yorknew City',
+      it: 'Membro della Brigata che lo chiama a York Shin City',
+    },
+    summary: {
+      en: 'After Hisoka’s match with Kastro, Machi sews his arms back on with threads of Nen and tells him to be in Yorknew City by August 30, when all the Phantom Troupe’s members gather.',
+      it: 'Dopo l’incontro di Hisoka con Kastro, Machi gli ricuce le braccia con fili di Nen e gli dice di essere a York Shin City entro il 30 agosto, quando tutti i membri della Brigata Fantasma si riuniscono.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const hunterExamRelationships = {
@@ -1679,6 +1729,19 @@ export const hunterExamRelationships = {
         links.leorioHisoka,
       ],
     },
+    // Yorknew City (#974): the market, the phones and the arm-wrestling
+    // contest are chapters 71-72 and episode 42.
+    {
+      episode: 42,
+      chapter: 72,
+      value: [
+        links.leorioKurapikaTeam,
+        links.leorioGonYorknew,
+        links.leorioKilluaYorknew,
+        links.leorioIllumi,
+        links.leorioHisoka,
+      ],
+    },
   ],
   'kurapika': [
     {
@@ -1763,6 +1826,19 @@ export const hunterExamRelationships = {
         links.kurapikaKillua,
         links.kurapikaHisokaMatch,
         links.kurapikaIllumi,
+      ],
+    },
+    // Yorknew City (#974): the applicants' test is chapter 68 and episode
+    // 40; Hisoka and Illumi make room.
+    {
+      episode: 40,
+      chapter: 68,
+      value: [
+        links.kurapikaLeorioTeam,
+        links.kurapikaGonTree,
+        links.kurapikaKillua,
+        links.kurapikaMelody,
+        links.kurapikaSquala,
       ],
     },
   ],
@@ -1923,6 +1999,20 @@ export const hunterExamRelationships = {
         links.hisokaIllumiWarning,
         links.hisokaKurapikaMatch,
         links.hisokaBodoro,
+      ],
+    },
+
+    // Yorknew City (#974): Machi's record opens at 41/71, where the Troupe
+    // gathers; Bodoro makes room.
+    {
+      episode: 41,
+      chapter: 71,
+      value: [
+        links.hisokaGonReturned,
+        links.hisokaMachi,
+        links.hisokaKastro,
+        links.hisokaIllumiWarning,
+        links.hisokaKurapikaMatch,
       ],
     },
   ],
