@@ -1160,7 +1160,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     57: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
-      note: 'Corrected after review: the lights go out just as Pakunoda reads the boys’ memories. Chapters 112-114 and episode 57. His words in the car and as a hostage are chapter-only. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the lights go out just as Pakunoda reads the boys’ memories; the chains are on the chapter pages only, as episode 57 says only that he is gone, so the story says only that Kurapika has taken him. Chapters 112-114 and episode 57. His words in the car and as a hostage are chapter-only. Checked on the episode page and the chapter pages.',
     },
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',

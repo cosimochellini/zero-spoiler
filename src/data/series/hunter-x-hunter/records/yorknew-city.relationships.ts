@@ -1440,6 +1440,465 @@ const links = {
       it: 'Sanguisuga attacca Uborghin mentre i peli di Porcospino gli trattengono il pugno e il veleno lo tiene a terra.',
     },
   },
+  // Zepile
+  zepileGon: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Boy who sees aura in his vase',
+      it: 'Ragazzo che vede l’aura nel suo vaso',
+    },
+    summary: {
+      en: 'Zepile outbids Gon on a vase he made himself. Over lunch Zepile offers to help the boys, and Gon tells him that the vase is no junk, because it holds aura.',
+      it: 'Sepail supera l’offerta di Gon per un vaso fatto da lui stesso. A pranzo Sepail si offre di aiutare i ragazzi, e Gon gli dice che il vaso non è robaccia, perché contiene aura.',
+    },
+  },
+  zepileGonLesson: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Boy who sees aura in his vase',
+      it: 'Ragazzo che vede l’aura nel suo vaso',
+    },
+    summary: {
+      en: 'Gon tells Zepile that the vase he made is no junk, because it holds aura. Later Gon tells him that the forgers’ tricks he taught them were a help against the Troupe.',
+      it: 'Gon dice a Sepail che il vaso fatto da lui non è robaccia, perché contiene aura. Più tardi Gon gli dice che i trucchi dei falsari che ha insegnato loro sono stati utili contro la Brigata.',
+    },
+  },
+  zepileKillua: {
+    character: 'killua',
+    type: {
+      en: 'Boy who treats him to lunch',
+      it: 'Ragazzo che gli offre il pranzo',
+    },
+    summary: {
+      en: 'Zepile stops a dealer from cheating Gon and Killua over their wooden statue. Killua refuses to give him a share of the sale and treats him to lunch instead.',
+      it: 'Sepail impedisce a un commerciante di imbrogliare Gon e Killua sulla loro statua di legno. Killua rifiuta di dargli una parte della vendita e gli offre invece il pranzo.',
+    },
+  },
+  zepileKilluaSale: {
+    character: 'killua',
+    type: {
+      en: 'Boy who treats him to lunch',
+      it: 'Ragazzo che gli offre il pranzo',
+    },
+    summary: {
+      en: 'Killua refuses to give Zepile a share of the sale and treats him to lunch instead. When the boys go after the Troupe, they leave the sale of the wooden statue to Zepile.',
+      it: 'Killua rifiuta di dare a Sepail una parte della vendita e gli offre invece il pranzo. Quando i ragazzi si mettono dietro alla Brigata, lasciano a Sepail la vendita della statua di legno.',
+    },
+  },
+  zepileLeorio: {
+    character: 'leorio-paradinight',
+    type: { en: 'Friend he drinks with', it: 'Amico con cui beve' },
+    summary: {
+      en: 'While Gon and Killua tail the Troupe, Killua sends Leorio to help Zepile with the auction, and the boys come back to find the two drinking together.',
+      it: 'Mentre Gon e Killua pedinano la Brigata, Killua manda Leorio ad aiutare Sepail con l’asta, e i ragazzi tornano e trovano i due a bere insieme.',
+    },
+  },
+  // Pakunoda
+  pakunodaGon: {
+    character: 'gon-freecss',
+    type: { en: 'Boy she corners', it: 'Ragazzo che mette alle strette' },
+    summary: {
+      en: 'When Gon and Killua run from the trap, Pakunoda blocks Gon’s way, and with Machi she asks him whether he knows the chain user.',
+      it: 'Quando Gon e Killua cercano di scappare dalla trappola, Pakunoda sbarra la strada a Gon, e insieme a Machi gli chiede se conosce l’utilizzatore di catene.',
+    },
+  },
+  pakunodaMachi: {
+    character: 'machi',
+    type: {
+      en: 'Member she corners Gon with',
+      it: 'Membro con cui mette alle strette Gon',
+    },
+    summary: {
+      en: 'Pakunoda and Machi corner Gon and ask him whether he knows the chain user.',
+      it: 'Pakunoda e Machi mettono alle strette Gon e gli chiedono se conosce l’utilizzatore di catene.',
+    },
+  },
+  pakunodaMachiSide: {
+    character: 'machi',
+    type: {
+      en: 'Member who stands by her',
+      it: 'Membro che si schiera dalla sua parte',
+    },
+    summary: {
+      en: 'When Phinks will not let Pakunoda leave with the hostages, Machi takes her side, and in the end the others let Pakunoda go.',
+      it: 'Quando Phinks non vuole lasciar partire Pakunoda con gli ostaggi, Machi si schiera dalla sua parte, e alla fine gli altri la lasciano andare.',
+    },
+  },
+  pakunodaPhinks: {
+    character: 'phinks',
+    type: {
+      en: 'Member she springs the trap with',
+      it: 'Membro con cui fa scattare la trappola',
+    },
+    summary: {
+      en: 'Pakunoda and Phinks follow Gon and Killua while the boys tail Machi and Nobunaga, and they block the boys’ way out.',
+      it: 'Pakunoda e Phinks seguono Gon e Killua mentre i ragazzi pedinano Machi e Nobunaga, e sbarrano loro la strada.',
+    },
+  },
+  pakunodaPhinksLeave: {
+    character: 'phinks',
+    type: {
+      en: 'Member who will not let her go',
+      it: 'Membro che non vuole lasciarla andare',
+    },
+    summary: {
+      en: 'Phinks demands to know where the chain user is and will not let Pakunoda leave with the hostages, until Franklin tells him to let her go.',
+      it: 'Phinks vuole sapere dov’è l’utilizzatore di catene e non lascia partire Pakunoda con gli ostaggi, finché Franklin non gli dice di lasciarla andare.',
+    },
+  },
+  pakunodaKillua: {
+    character: 'killua',
+    type: {
+      en: 'Boy who works out her ability',
+      it: 'Ragazzo che capisce la sua capacità',
+    },
+    summary: {
+      en: 'On the way to the hideout Pakunoda puts her arm around Killua’s shoulders. Killua works out that she reads memories by touching people.',
+      it: 'Durante il tragitto verso il covo Pakunoda mette un braccio intorno alle spalle di Killua. Killua capisce che lei legge i ricordi toccando le persone.',
+    },
+  },
+  pakunodaKilluaArm: {
+    character: 'killua',
+    type: {
+      en: 'Boy who breaks her arm',
+      it: 'Ragazzo che le rompe il braccio',
+    },
+    summary: {
+      en: 'Killua works out that Pakunoda reads memories by touching people. In the blackout at the Hotel Beitacle he breaks her left arm, and Gon kicks her in the chin.',
+      it: 'Killua capisce che Pakunoda legge i ricordi toccando le persone. Durante il buio all’Hotel Beitacle le rompe il braccio sinistro, e Gon le dà un calcio al mento.',
+    },
+  },
+  pakunodaFranklin: {
+    character: 'franklin',
+    type: {
+      en: 'Member who asks what she found',
+      it: 'Membro che le chiede cosa ha trovato',
+    },
+    summary: {
+      en: 'Franklin asks Pakunoda what she found in the boys’ memories, and she says that they have no memory of the chain user.',
+      it: 'Franklin chiede a Pakunoda cosa ha trovato nei ricordi dei ragazzi, e lei risponde che non hanno ricordi dell’utilizzatore di catene.',
+    },
+  },
+  pakunodaSquala: {
+    character: 'squala',
+    type: {
+      en: 'Bodyguard she questions',
+      it: 'Guardia del corpo che interroga',
+    },
+    summary: {
+      en: 'Pakunoda holds a gun on Squala, breaks his arm and asks him about the chain user. He says he knows no one like that, but she reads Eliza’s name in his memories, and Nobunaga kills him.',
+      it: 'Pakunoda punta una pistola contro Squala, gli rompe un braccio e gli chiede dell’utilizzatore di catene. Lui dice di non conoscere nessuno così, ma lei legge il nome di Eliza nei suoi ricordi, e Nobunaga lo uccide.',
+    },
+  },
+  pakunodaNobunaga: {
+    character: 'nobunaga',
+    type: {
+      en: 'Member she shows the chain user',
+      it: 'Membro a cui mostra l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'After Squala’s death Pakunoda fires her Memory Bomb into Nobunaga’s head and shows him what the chain user looks like.',
+      it: 'Dopo la morte di Squala, Pakunoda spara il suo Proiettile Mnemonico nella testa di Nobunaga e gli mostra che aspetto ha l’utilizzatore di catene.',
+    },
+  },
+  pakunodaKortopi: {
+    character: 'kortopi',
+    type: {
+      en: 'Member she shows the chain user',
+      it: 'Membro a cui mostra l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'After Squala’s death Pakunoda fires her Memory Bomb into Kortopi’s head and shows him what the chain user looks like.',
+      it: 'Dopo la morte di Squala, Pakunoda spara il suo Proiettile Mnemonico nella testa di Kortopi e gli mostra che aspetto ha l’utilizzatore di catene.',
+    },
+  },
+  pakunodaChrollo: {
+    character: 'chrollo',
+    type: { en: 'Leader she keeps silent for', it: 'Capo per cui tace' },
+    summary: {
+      en: 'At Chrollo’s order Pakunoda reads Gon’s and Killua’s memories again, just as the lights go out. Then Chrollo is gone, and a note says he will die if she reveals what she read, so she keeps quiet.',
+      it: 'Su ordine di Quoll, Pakunoda legge di nuovo i ricordi di Gon e Killua, proprio mentre le luci si spengono. Poi Quoll è sparito, e un biglietto dice che morirà se lei rivela cosa ha letto, così lei tace.',
+    },
+  },
+  pakunodaChrolloBack: {
+    character: 'chrollo',
+    type: { en: 'Leader she gets back', it: 'Capo che riporta indietro' },
+    summary: {
+      en: 'Pakunoda keeps quiet about what she read to save Chrollo, accepts the chain user’s conditions and brings Gon and Killua to the exchange, which sets Chrollo free.',
+      it: 'Pakunoda tace su quello che ha letto per salvare Quoll, accetta le condizioni dell’utilizzatore di catene e porta Gon e Killua allo scambio, che rende la libertà a Quoll.',
+    },
+  },
+  pakunodaKurapika: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user who calls for her',
+      it: 'Utilizzatore di catene che la convoca',
+    },
+    summary: {
+      en: 'Kurapika calls the Troupe, asks for Pakunoda and tells her to come alone to a place he will give her.',
+      it: 'Kurapika chiama la Brigata, chiede di Pakunoda e le dice di venire da sola in un posto che le indicherà.',
+    },
+  },
+  pakunodaKurapikaChain: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user who binds her',
+      it: 'Utilizzatore di catene che la vincola',
+    },
+    summary: {
+      en: 'Pakunoda meets Kurapika alone. He binds her with his Judgment Chain: she must free Gon and Killua by midnight without tricks and say nothing about him. After the exchange she fires her Memory Bomb into six members, sharing her memories, and the chain kills her.',
+      it: 'Pakunoda incontra Kurapika da sola. Lui la vincola con la sua Catena del Giudizio: deve liberare Gon e Killua entro mezzanotte senza trucchi e non dire niente di lui. Dopo lo scambio spara il suo Proiettile Mnemonico a sei membri, condividendo i suoi ricordi, e la catena la uccide.',
+    },
+  },
+  pakunodaHisoka: {
+    character: 'hisoka',
+    type: {
+      en: 'Man who tells her his real fortune',
+      it: 'Uomo che le racconta la sua vera profezia',
+    },
+    summary: {
+      en: 'After the exchange Hisoka tells Pakunoda what his real fortune said.',
+      it: 'Dopo lo scambio Hisoka racconta a Pakunoda cosa diceva la sua vera profezia.',
+    },
+  },
+  // Zenji
+  zenjiLight: {
+    character: 'light-nostrade',
+    type: { en: 'Rival he mocks', it: 'Rivale che deride' },
+    summary: {
+      en: 'At the assassins’ meeting Zenji mocks Light until Kurapika threatens him, and Light tells Kurapika to stop.',
+      it: 'All’incontro degli assassini Zenji deride Light finché Kurapika non lo minaccia, e Light dice a Kurapika di fermarsi.',
+    },
+  },
+  zenjiLightBid: {
+    character: 'light-nostrade',
+    type: { en: 'Rival he mocks', it: 'Rivale che deride' },
+    summary: {
+      en: 'At the assassins’ meeting Zenji mocks Light until Kurapika threatens him. At the auction Zenji bids against Kurapika for the Scarlet Eyes, and Kurapika wins them at 2.9 billion Jenny.',
+      it: 'All’incontro degli assassini Zenji deride Light finché Kurapika non lo minaccia. All’asta Zenji fa offerte contro Kurapika per gli occhi scarlatti, e Kurapika li vince a 2,9 miliardi di Jenny.',
+    },
+  },
+  zenjiKurapika: {
+    character: 'kurapika',
+    type: {
+      en: 'Bodyguard who threatens him',
+      it: 'Guardia del corpo che lo minaccia',
+    },
+    summary: {
+      en: 'When Zenji mocks Light at the assassins’ meeting, Kurapika threatens him, and Zenji leaves with his men.',
+      it: 'Quando Zenji deride Light all’incontro degli assassini, Kurapika lo minaccia, e Zenji se ne va con i suoi uomini.',
+    },
+  },
+  zenjiKurapikaEyes: {
+    character: 'kurapika',
+    type: {
+      en: 'Bodyguard who freezes him',
+      it: 'Guardia del corpo che lo paralizza',
+    },
+    summary: {
+      en: 'Zenji mocks Kurapika, who was busy with the ambulance while the Troupe’s leader was reported killed, and Kurapika punches him. Zenji bids against him for the Scarlet Eyes. When Zenji later points a gun at him, Kurapika’s eyes turn scarlet, and Zenji is left frozen with fear as he walks past.',
+      it: 'Zenji deride Kurapika, che era occupato con l’ambulanza mentre il capo della Brigata veniva dato per morto, e Kurapika gli dà un pugno. Zenji fa offerte contro di lui per gli occhi scarlatti. Quando più tardi Zenji gli punta contro una pistola, gli occhi di Kurapika diventano scarlatti, e Zenji resta paralizzato dalla paura mentre lui passa.',
+    },
+  },
+  // Kortopi
+  kortopiShalnark: {
+    character: 'shalnark',
+    type: {
+      en: 'Member he runs the auction with',
+      it: 'Membro con cui manda avanti l’asta',
+    },
+    summary: {
+      en: 'When the Troupe runs the reopened auction from backstage, Kortopi makes an exact copy of an item while Shalnark controls the auctioneer with his Nen.',
+      it: 'Quando la Brigata manda avanti di nascosto l’asta riaperta, Kortopi fa una copia esatta di un oggetto mentre Shalnark controlla il banditore con il suo Nen.',
+    },
+  },
+  kortopiPakunoda: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member he runs the auction with',
+      it: 'Membro con cui manda avanti l’asta',
+    },
+    summary: {
+      en: 'When the Troupe runs the reopened auction from backstage, Kortopi makes an exact copy of an item while Pakunoda brings the items onto the stage.',
+      it: 'Quando la Brigata manda avanti di nascosto l’asta riaperta, Kortopi fa una copia esatta di un oggetto mentre Pakunoda porta gli oggetti sul palco.',
+    },
+  },
+  kortopiPakunodaBomb: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member who shows him the chain user',
+      it: 'Membro che gli mostra l’utilizzatore di catene',
+    },
+    summary: {
+      en: 'After Squala’s death Pakunoda fires her Memory Bomb into Kortopi’s head and shows him what the chain user looks like.',
+      it: 'Dopo la morte di Squala, Pakunoda spara il suo Proiettile Mnemonico nella testa di Kortopi e gli mostra che aspetto ha l’utilizzatore di catene.',
+    },
+  },
+  kortopiMachi: {
+    character: 'machi',
+    type: {
+      en: 'Member whose hunch he acts on',
+      it: 'Membro di cui segue l’intuito',
+    },
+    summary: {
+      en: 'Machi has a hunch about the two boys who escaped and know where the hideout is, and as a precaution Kortopi copies the Troupe’s hideout many times over.',
+      it: 'Machi ha un’intuizione sui due ragazzi fuggiti che sanno dov’è il covo, e per precauzione Kortopi copia molte volte il covo della Brigata.',
+    },
+  },
+  kortopiChrollo: {
+    character: 'chrollo',
+    type: {
+      en: 'Leader he leads to the eyes',
+      it: 'Capo che porta agli occhi',
+    },
+    summary: {
+      en: 'Kortopi traces his copies of the Scarlet Eyes, which leads Chrollo and the Troupe to the Nostrade family’s hotel.',
+      it: 'Kortopi rintraccia le sue copie degli occhi scarlatti, e questo porta Quoll e la Brigata all’albergo della famiglia Nostrad.',
+    },
+  },
+  kortopiNobunaga: {
+    character: 'nobunaga',
+    type: {
+      en: 'Member he goes after Squala with',
+      it: 'Membro con cui va dietro a Squala',
+    },
+    summary: {
+      en: 'Kortopi goes after Squala with Nobunaga and Pakunoda, and Nobunaga kills Squala.',
+      it: 'Kortopi va dietro a Squala con Nobunaga e Pakunoda, e Nobunaga uccide Squala.',
+    },
+  },
+  // Chrollo
+  chrolloNeon: {
+    character: 'neon-nostrade',
+    type: {
+      en: 'Fortune-teller whose power he takes',
+      it: 'Indovina a cui prende il potere',
+    },
+    summary: {
+      en: 'Chrollo gets Neon past security into the auction and has her write his fortune. Then he knocks her out with a quick blow; he has taken her power.',
+      it: 'Quoll fa superare a Neon i controlli di sicurezza dell’asta e le fa scrivere la sua profezia. Poi la stordisce con un colpo rapido; le ha preso il potere.',
+    },
+  },
+  chrolloSilva: {
+    character: 'silva',
+    type: { en: 'Assassin he fights', it: 'Assassino che affronta' },
+    summary: {
+      en: 'Silva and Zeno fight Chrollo in the Cemetery Building, and Chrollo cuts Silva’s arm with a poisoned knife. When their clients, the Ten Dons, are dead, the two stop and leave.',
+      it: 'Silva e Zeno affrontano Quoll nel Cemetery Building, e Quoll ferisce Silva a un braccio con un coltello avvelenato. Quando i loro clienti, i Dieci Anziani, sono morti, i due smettono e se ne vanno.',
+    },
+  },
+  chrolloZeno: {
+    character: 'zeno',
+    type: { en: 'Assassin he fights', it: 'Assassino che affronta' },
+    summary: {
+      en: 'Zeno keeps Chrollo at a distance with his aura, pins him down and has Silva strike them both. Once their clients are dead, Zeno ends the fight and tells Chrollo that he would have won.',
+      it: 'Zeno tiene Quoll a distanza con la sua aura, lo blocca e fa colpire entrambi da Silva. Quando i loro clienti sono morti, Zeno chiude lo scontro e dice a Quoll che avrebbe vinto lui.',
+    },
+  },
+  chrolloIllumi: {
+    character: 'illumi',
+    type: { en: 'Assassin he hired', it: 'Assassino che ha ingaggiato' },
+    summary: {
+      en: 'Chrollo hired Illumi, who kills the Ten Dons and asks for his payment to be wired.',
+      it: 'Quoll ha ingaggiato Illumi, che uccide i Dieci Anziani e chiede che il pagamento gli venga versato.',
+    },
+  },
+  chrolloNobunaga: {
+    character: 'nobunaga',
+    type: { en: 'Member who defies him', it: 'Membro che gli si oppone' },
+    summary: {
+      en: 'When Chrollo orders the Troupe to leave Yorknew City, Nobunaga refuses. Chrollo writes Nobunaga’s fortune with Neon’s power and reminds him of his place in the Troupe.',
+      it: 'Quando Quoll ordina alla Brigata di lasciare York Shin City, Nobunaga rifiuta. Quoll scrive la profezia di Nobunaga con il potere di Neon e gli ricorda qual è il suo posto nella Brigata.',
+    },
+  },
+  chrolloHisoka: {
+    character: 'hisoka',
+    type: {
+      en: 'Man whose fake fortune he reads',
+      it: 'Uomo di cui legge la profezia falsa',
+    },
+    summary: {
+      en: 'Hisoka hands over a fortune he has faked. From it Chrollo concludes that the chain user has at least two abilities, and he decides that the Troupe will stay in Yorknew City.',
+      it: 'Hisoka consegna una profezia che ha falsificato. Da questa Quoll deduce che l’utilizzatore di catene ha almeno due capacità, e decide che la Brigata resterà a York Shin City.',
+    },
+  },
+  chrolloHisokaExchange: {
+    character: 'hisoka',
+    type: {
+      en: 'Rival who comes to fight him',
+      it: 'Rivale che viene per affrontarlo',
+    },
+    summary: {
+      en: 'Hisoka comes to the exchange to fight Chrollo, but Chrollo tells him that he cannot use Nen, and Hisoka leaves him.',
+      it: 'Hisoka va allo scambio per affrontare Quoll, ma Quoll gli dice che non può usare il Nen, e Hisoka lo lascia.',
+    },
+  },
+  chrolloMachi: {
+    character: 'machi',
+    type: {
+      en: 'Member whose hunch he trusts',
+      it: 'Membro del cui intuito si fida',
+    },
+    summary: {
+      en: 'Machi warns Chrollo about two boys who know where the hideout is. Chrollo trusts her hunch, and as a precaution Kortopi copies the hideout many times over.',
+      it: 'Machi mette in guardia Quoll su due ragazzi che sanno dov’è il covo. Quoll si fida del suo intuito, e per precauzione Kortopi copia molte volte il covo.',
+    },
+  },
+  chrolloGon: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Boy who asks him why he kills',
+      it: 'Ragazzo che gli chiede perché uccide',
+    },
+    summary: {
+      en: 'When Gon and Killua give themselves up, Gon asks Chrollo how he can kill people who have nothing to do with him, and Chrollo gives him no clear answer.',
+      it: 'Quando Gon e Killua si arrendono, Gon chiede a Quoll come possa uccidere persone che non hanno niente a che fare con lui, e Quoll non gli dà una risposta chiara.',
+    },
+  },
+  chrolloKurapika: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user who takes him',
+      it: 'Utilizzatore di catene che lo rapisce',
+    },
+    summary: {
+      en: 'In the blackout at the Hotel Beitacle, Kurapika takes Chrollo and leaves a note: Chrollo will die if Pakunoda talks.',
+      it: 'Durante il buio all’Hotel Beitacle, Kurapika rapisce Quoll e lascia un biglietto: Quoll morirà se Pakunoda parla.',
+    },
+  },
+  chrolloKurapikaChain: {
+    character: 'kurapika',
+    type: {
+      en: 'Chain user who binds him',
+      it: 'Utilizzatore di catene che lo vincola',
+    },
+    summary: {
+      en: 'Kurapika takes Chrollo in the blackout at the Hotel Beitacle, binds him with his Judgment Chain, forbidding him to use Nen or contact the other members, and trades him for Gon and Killua.',
+      it: 'Kurapika rapisce Quoll durante il buio all’Hotel Beitacle, lo vincola con la sua Catena del Giudizio, vietandogli di usare il Nen e di contattare gli altri membri, e lo scambia con Gon e Killua.',
+    },
+  },
+  chrolloPakunoda: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member he has check the boys',
+      it: 'Membro a cui fa controllare i ragazzi',
+    },
+    summary: {
+      en: 'In the hotel lobby Chrollo tells Pakunoda to check Gon’s and Killua’s memories again, and the lights go out just as she reads them.',
+      it: 'Nell’atrio dell’albergo Quoll dice a Pakunoda di controllare di nuovo i ricordi di Gon e Killua, e le luci si spengono proprio mentre lei li legge.',
+    },
+  },
+  chrolloPakunodaExchange: {
+    character: 'pakunoda',
+    type: {
+      en: 'Member who gets him back',
+      it: 'Membro che lo riporta indietro',
+    },
+    summary: {
+      en: 'Pakunoda keeps quiet to save Chrollo, accepts Kurapika’s conditions and brings Gon and Killua to the exchange, which sets Chrollo free.',
+      it: 'Pakunoda tace per salvare Quoll, accetta le condizioni di Kurapika e porta Gon e Killua allo scambio, che rende la libertà a Quoll.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const yorknewCityRelationships = {
@@ -2084,6 +2543,187 @@ export const yorknewCityRelationships = {
       episode: 44,
       chapter: 76,
       value: [links.leechUvogin, links.leechRabidDog, links.leechPorcupine],
+    },
+  ],
+  // The bids are chapter 86, the dealer and the lunch chapters 87-88, all
+  // in episode 48.
+  'zepile': [
+    { episode: 48, chapter: 88, value: [links.zepileGon, links.zepileKillua] },
+    // The sale left to him is chapter 89 (episode 48); the drinks and Gon's
+    // thanks are chapter 101 and episode 53.
+    {
+      episode: 53,
+      chapter: 101,
+      value: [
+        links.zepileGonLesson,
+        links.zepileKilluaSale,
+        links.zepileLeorio,
+      ],
+    },
+  ],
+  'pakunoda': [
+    // The trap is chapters 90-91 and episode 49.
+    {
+      episode: 49,
+      chapter: 91,
+      value: [links.pakunodaGon, links.pakunodaMachi, links.pakunodaPhinks],
+    },
+    // Her arm around Killua is episode 49 and chapter 92; his deduction and
+    // Franklin's question are chapter 92 and episode 50.
+    {
+      episode: 50,
+      chapter: 92,
+      value: [
+        links.pakunodaKillua,
+        links.pakunodaFranklin,
+        links.pakunodaGon,
+        links.pakunodaMachi,
+        links.pakunodaPhinks,
+      ],
+    },
+    // Chapters 111-112, pages 1-8, and episode 56.
+    {
+      episode: 56,
+      chapter: 112,
+      value: [
+        links.pakunodaSquala,
+        links.pakunodaNobunaga,
+        links.pakunodaKortopi,
+        links.pakunodaKillua,
+        links.pakunodaFranklin,
+      ],
+    },
+    // The blackout is chapters 113-114, the call chapter 115, all in
+    // episode 57.
+    {
+      episode: 57,
+      chapter: 115,
+      value: [
+        links.pakunodaChrollo,
+        links.pakunodaKilluaArm,
+        links.pakunodaKurapika,
+        links.pakunodaSquala,
+        links.pakunodaMachi,
+      ],
+    },
+    // Chapters 117-119 and episode 58.
+    {
+      episode: 58,
+      chapter: 119,
+      value: [
+        links.pakunodaKurapikaChain,
+        links.pakunodaChrolloBack,
+        links.pakunodaMachiSide,
+        links.pakunodaPhinksLeave,
+        links.pakunodaHisoka,
+      ],
+    },
+  ],
+  'zenji': [
+    {
+      episode: 51,
+      chapter: 95,
+      value: [links.zenjiLight, links.zenjiKurapika],
+    },
+    // Chapters 100-101 and episode 53.
+    {
+      episode: 53,
+      chapter: 101,
+      value: [links.zenjiKurapikaEyes, links.zenjiLightBid],
+    },
+  ],
+  'kortopi': [
+    {
+      episode: 53,
+      chapter: 100,
+      value: [links.kortopiShalnark, links.kortopiPakunoda],
+    },
+    // Chapter 108 and episode 55.
+    {
+      episode: 55,
+      chapter: 108,
+      value: [links.kortopiMachi, links.kortopiShalnark, links.kortopiPakunoda],
+    },
+    // Chapters 109-112, pages 1-8, and episode 56.
+    {
+      episode: 56,
+      chapter: 112,
+      value: [
+        links.kortopiChrollo,
+        links.kortopiPakunodaBomb,
+        links.kortopiNobunaga,
+        links.kortopiMachi,
+        links.kortopiShalnark,
+      ],
+    },
+  ],
+  // Unanchored: open at episode 54 but chapter 71. His exchanges from
+  // chapter 74 on are told before episode 54, so, as his chronicle does,
+  // every entry starts at 54/104, the first pair after the episode that
+  // names him (#974).
+  'chrollo': [
+    // Neon is chapters 95-96 and episode 51; the Zoldycks and Illumi
+    // chapters 98-100 and episodes 52-53; the fortunes chapters 102-104 and
+    // episode 54.
+    {
+      episode: 54,
+      chapter: 104,
+      value: [
+        links.chrolloNeon,
+        links.chrolloSilva,
+        links.chrolloZeno,
+        links.chrolloIllumi,
+        links.chrolloNobunaga,
+      ],
+    },
+    // The fake fortune is chapter 106, the copies chapter 108, all in
+    // episode 55.
+    {
+      episode: 55,
+      chapter: 108,
+      value: [
+        links.chrolloHisoka,
+        links.chrolloNobunaga,
+        links.chrolloMachi,
+        links.chrolloNeon,
+        links.chrolloZeno,
+      ],
+    },
+    // Chapters 109-111 and episode 56.
+    {
+      episode: 56,
+      chapter: 111,
+      value: [
+        links.chrolloGon,
+        links.chrolloHisoka,
+        links.chrolloNobunaga,
+        links.chrolloMachi,
+        links.chrolloNeon,
+      ],
+    },
+    // Chapters 112-114 and episode 57.
+    {
+      episode: 57,
+      chapter: 114,
+      value: [
+        links.chrolloKurapika,
+        links.chrolloPakunoda,
+        links.chrolloGon,
+        links.chrolloHisoka,
+        links.chrolloNobunaga,
+      ],
+    },
+    // Chapters 117-119 and episode 58.
+    {
+      episode: 58,
+      chapter: 119,
+      value: [
+        links.chrolloKurapikaChain,
+        links.chrolloHisokaExchange,
+        links.chrolloPakunodaExchange,
+        links.chrolloGon,
+        links.chrolloNobunaga,
+      ],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>

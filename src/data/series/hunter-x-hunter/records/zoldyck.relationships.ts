@@ -291,6 +291,72 @@ const links = {
       it: 'Carte osserva dai cespugli Gon che cerca di superare Canaria, poi segue la madre.',
     },
   },
+  // Yorknew City (#974)
+  zenoSilvaHired: {
+    character: 'silva',
+    type: { en: 'Assassin hired with him', it: 'Assassino ingaggiato con lui' },
+    summary: {
+      en: 'Zeno and Silva are among the assassins hired to kill the Phantom Troupe.',
+      it: 'Zeno e Silva sono tra gli assassini ingaggiati per uccidere la Brigata Fantasma.',
+    },
+  },
+  zenoSilvaFight: {
+    character: 'silva',
+    type: { en: 'Son he fights beside', it: 'Figlio con cui combatte' },
+    summary: {
+      en: 'Zeno and his son Silva fight the Troupe’s leader together. Zeno pins the leader down and tells Silva to strike, and Silva fires two large balls of aura at the leader and at Zeno himself.',
+      it: 'Zeno e suo figlio Silva affrontano insieme il capo della Brigata. Zeno lo blocca e dice a Silva di colpire, e Silva lancia due grandi sfere di aura contro il capo e contro Zeno stesso.',
+    },
+  },
+  zenoChrollo: {
+    character: 'chrollo',
+    type: {
+      en: 'Troupe leader he fights',
+      it: 'Capo della Brigata che affronta',
+    },
+    summary: {
+      en: 'Zeno fights Chrollo with Silva. When their clients, the Ten Dons, are dead, Zeno ends the fight, because the Zoldycks do not kill for pleasure. Chrollo asks who would have won, and Zeno answers that he would.',
+      it: 'Zeno affronta Quoll con Silva. Quando i loro clienti, i Dieci Anziani, sono morti, Zeno chiude lo scontro, perché gli Zoldick non uccidono per piacere. Quoll chiede chi avrebbe vinto, e Zeno risponde che avrebbe vinto lui.',
+    },
+  },
+  zenoIllumi: {
+    character: 'illumi',
+    type: {
+      en: 'Family member whose call ends his fight',
+      it: 'Familiare la cui chiamata chiude il suo scontro',
+    },
+    summary: {
+      en: 'Illumi kills the Ten Dons, the Zoldycks’ clients, and calls Silva on the family’s transmitter. With their clients dead, Zeno stops fighting Chrollo.',
+      it: 'Illumi uccide i Dieci Anziani, i clienti degli Zoldick, e chiama Silva con il trasmettitore di famiglia. Con i loro clienti morti, Zeno smette di combattere contro Quoll.',
+    },
+  },
+  silvaZeno: {
+    character: 'zeno',
+    type: { en: 'Father he fights beside', it: 'Padre con cui combatte' },
+    summary: {
+      en: 'Silva and his father Zeno fight the Troupe’s leader together. When Zeno pins the leader down, Silva fires two large balls of aura at the leader and at his own father.',
+      it: 'Silva e suo padre Zeno affrontano insieme il capo della Brigata. Quando Zeno lo blocca, Silva lancia due grandi sfere di aura contro il capo e contro suo padre.',
+    },
+  },
+  silvaChrollo: {
+    character: 'chrollo',
+    type: {
+      en: 'Troupe leader he fights',
+      it: 'Capo della Brigata che affronta',
+    },
+    summary: {
+      en: 'Silva and Zeno fight Chrollo, who cuts Silva’s arm with a poisoned knife. When their clients, the Ten Dons, are dead, the two stop and leave.',
+      it: 'Silva e Zeno affrontano Quoll, che ferisce Silva a un braccio con un coltello avvelenato. Quando i loro clienti, i Dieci Anziani, sono morti, i due smettono e se ne vanno.',
+    },
+  },
+  silvaIllumi: {
+    character: 'illumi',
+    type: { en: 'Son who calls him', it: 'Figlio che lo chiama' },
+    summary: {
+      en: 'Illumi kills the Ten Dons, then calls Silva on the family’s transmitter to ask whether his own client, Chrollo, is still alive.',
+      it: 'Illumi uccide i Dieci Anziani, poi chiama Silva con il trasmettitore di famiglia per chiedere se il suo cliente, Quoll, è ancora vivo.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const zoldyckRelationships = {
@@ -422,11 +488,52 @@ export const zoldyckRelationships = {
   ],
   'zeno': [
     { episode: 24, chapter: 42, value: [links.zenoKillua, links.zenoMilluki] },
+    // Yorknew City (#974): Silva is named at the assassins' meeting, 51/95.
+    {
+      episode: 51,
+      chapter: 95,
+      value: [links.zenoKillua, links.zenoMilluki, links.zenoSilvaHired],
+    },
+    // The fight is chapters 98-99 and episode 52, which names Silva's father.
+    {
+      episode: 52,
+      chapter: 99,
+      value: [links.zenoSilvaFight, links.zenoKillua, links.zenoMilluki],
+    },
+    // Illumi's call and the end of the fight are chapter 100 and episode 53;
+    // Chrollo is linked from 54/104.
+    {
+      episode: 54,
+      chapter: 104,
+      value: [
+        links.zenoSilvaFight,
+        links.zenoChrollo,
+        links.zenoIllumi,
+        links.zenoKillua,
+        links.zenoMilluki,
+      ],
+    },
   ],
   // Unanchored: 24 / 95 vouches for nothing in the chapter table. Killua's
-  // and Zeno's cards for Silva wait for #974, since the two media name him
-  // 70 chapters apart.
-  'silva': [{ episode: 24, chapter: 95, value: [links.silvaKillua] }],
+  // and Zeno's cards for Silva open at 51/95, where both media name him
+  // (#974).
+  'silva': [
+    { episode: 24, chapter: 95, value: [links.silvaKillua] },
+    // Yorknew City (#974): the fight is chapters 98-99 and episode 52.
+    { episode: 52, chapter: 99, value: [links.silvaKillua, links.silvaZeno] },
+    // Illumi's call is chapter 100 and episode 53; Chrollo is linked from
+    // 54/104.
+    {
+      episode: 54,
+      chapter: 104,
+      value: [
+        links.silvaKillua,
+        links.silvaZeno,
+        links.silvaChrollo,
+        links.silvaIllumi,
+      ],
+    },
+  ],
   'kalluto': [
     {
       episode: 24,

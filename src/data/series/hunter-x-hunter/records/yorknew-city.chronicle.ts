@@ -1005,8 +1005,8 @@ export const yorknewCityChronicles = {
       value: {
         title: { it: 'Nel buio', en: 'In the dark' },
         body: {
-          it: 'Quoll aspetta nell’atrio dell’Hotel Beitacle con alcuni membri della Brigata e i due prigionieri, [[gon-freecss|Gon]] e [[killua|Killua]], e dice a [[pakunoda|Pakunoda]] di controllare di nuovo i ricordi dei ragazzi. Proprio mentre lei li legge, la luce se ne va. Quando gli altri lo cercano, Quoll non c’è più: [[kurapika|Kurapika]] lo ha preso con le sue catene. Un biglietto dice che Quoll morirà se Pakunoda racconta agli altri quello che ha letto nei ricordi dei ragazzi.',
-          en: 'Chrollo waits in the lobby of the Hotel Beitacle with members of the Troupe and their two prisoners, [[gon-freecss|Gon]] and [[killua|Killua]], and tells [[pakunoda|Pakunoda]] to check the boys’ memories again. Just as she reads them, the lights go out. When the others look for him, Chrollo is gone: [[kurapika|Kurapika]] has taken him in his chains. A note says that Chrollo will die if Pakunoda tells the others what she read in the boys’ memories.',
+          it: 'Quoll aspetta nell’atrio dell’Hotel Beitacle con alcuni membri della Brigata e i due prigionieri, [[gon-freecss|Gon]] e [[killua|Killua]], e dice a [[pakunoda|Pakunoda]] di controllare di nuovo i ricordi dei ragazzi. Proprio mentre lei li legge, la luce se ne va. Quando gli altri lo cercano, Quoll non c’è più: [[kurapika|Kurapika]] lo ha preso. Un biglietto dice che Quoll morirà se Pakunoda racconta agli altri quello che ha letto nei ricordi dei ragazzi.',
+          en: 'Chrollo waits in the lobby of the Hotel Beitacle with members of the Troupe and their two prisoners, [[gon-freecss|Gon]] and [[killua|Killua]], and tells [[pakunoda|Pakunoda]] to check the boys’ memories again. Just as she reads them, the lights go out. When the others look for him, Chrollo is gone: [[kurapika|Kurapika]] has taken him. A note says that Chrollo will die if Pakunoda tells the others what she read in the boys’ memories.',
         },
       },
     },
