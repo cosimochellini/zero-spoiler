@@ -284,8 +284,9 @@ function unfiledWord(word: string): Entity {
  * a form, its id and its label in every locale, is open from the first open
  * place filed under it and absent from every payload before that. Each
  * names the places filed under it, all covered, and a word no place is
- * filed under is fog at every bookmark. A series the dictionaries label (One
- * Piece) ships its words with every page, so it has none.
+ * filed under is fog at every bookmark. A series its copy labels (One
+ * Piece) ships its forms with every page, so it has none; its seas' names
+ * have their own sweep (`a sea name` in `~/server/archive/payloads.test`).
  */
 function wordFogOf(
   bookmark: Bookmark,

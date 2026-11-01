@@ -62,7 +62,7 @@ export function PlaceIndex({
   ...controls
 }: PlaceIndexProps): null | ReactElement {
   const t = useT()
-  const { regionOf } = usePlaceLabels(controls.words)
+  const { regionOf } = usePlaceLabels(controls.words, controls.seas)
   const fieldId = useId()
   const { onParams, open, params } = controls
 

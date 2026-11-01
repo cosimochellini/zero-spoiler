@@ -244,15 +244,6 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'fruitForm.zoan': 'Zoo Zoo',
   'fruitForm.logia': 'Logia',
 
-  'sea.east-blue': 'East Blue',
-  'sea.grand-line': 'Rotta Maggiore',
-  'sea.new-world': 'Nuovo Mondo',
-  'sea.calm-belt': 'Fascia di Bonaccia',
-  'sea.red-line': 'Red Line',
-  'sea.north-blue': 'North Blue',
-  'sea.west-blue': 'West Blue',
-  'sea.south-blue': 'South Blue',
-
   'kind.ship': 'Nave',
   'kind.fruit': 'Frutto del diavolo',
 }

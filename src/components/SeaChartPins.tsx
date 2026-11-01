@@ -9,7 +9,6 @@ import {
   placeOf,
   type Point,
   pullOf,
-  type Region,
   type Side,
   sideOf,
 } from '~/components/chartGeometry'
@@ -21,7 +20,7 @@ import {
   type ShipMark,
 } from '~/components/seaChartModel'
 import type { TriggerProps } from '~/components/useChartPeek'
-import { useSeriesOnlyT } from '~/i18n/LocaleContext'
+import type { Region } from '~/lib/view/chart'
 import type { StopView } from '~/lib/view/places'
 
 /**
@@ -72,22 +71,27 @@ function Pin({
   )
 }
 
-/** The names of the seas the reader has opened, each centred on its point. */
+/**
+ * The names of the seas the reader has opened, each centred on its point,
+ * as the server sent them with the page.
+ */
 export function RegionNames({
   orientation,
   regions,
+  seas,
 }: {
   orientation: Orientation
   regions: Region[]
+  seas: Partial<Record<string, string>> | undefined
 }): ReactElement {
-  const t = useSeriesOnlyT('one-piece')
-
   return (
     <>
       {regions.map((region) => {
         const label = LABELS[region]
-        return label === undefined ? null : (
-            <Pin
+        const name = seas?.[region]
+        return label === undefined || name === undefined ?
+            null
+          : <Pin
               key={region}
               at={label.at}
               orientation={orientation}
@@ -99,9 +103,8 @@ export function RegionNames({
                   && styles.upright,
               ]}
             >
-              {t(label.key)}
+              {name}
             </Pin>
-          )
       })}
     </>
   )

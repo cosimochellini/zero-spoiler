@@ -209,6 +209,7 @@ function Words({
       <RegionNames
         orientation={orientation}
         regions={model.regions}
+        seas={model.seas}
       />
       <StopNames
         here={here}

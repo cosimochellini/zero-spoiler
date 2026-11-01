@@ -1,5 +1,6 @@
 import type { BookmarkMode } from '~/lib/progress/episode'
 import { type Gated, thresholdIn } from '~/lib/progress/spoiler'
+import type { Sea } from '~/lib/view/records'
 
 /**
  * A port's place on the sea chart, in the chart's own box
@@ -42,4 +43,59 @@ export function sailedBy(
   )
 
   return at === -1 ? null : at
+}
+
+/**
+ * One part of the world, drawn and named once the reader has opened it: the
+ * sea chart (`~/components/chartGeometry`) draws it, and the server sends
+ * its name (`seasOf`, `~/server/archive/printed.server`).
+ */
+export type Region =
+  | 'calm-belt'
+  | 'east-blue'
+  | 'grand-line'
+  | 'new-world'
+  | 'new-world-calm-belt'
+  | 'north-blue'
+  | 'red-line'
+  | 'south-blue'
+  | 'west-blue'
+
+/**
+ * What entering each sea opens. Reverse Mountain, on the way into the Grand
+ * Line, shows and names the Red Line, both Calm Belts and the four Blues
+ * (owner, #674), so the first stop in the Grand Line opens all of them. The
+ * New World opens at its own first stop. The chart draws these regions and
+ * the server sends their names, both from here, so a name reaches a page no
+ * earlier than the chart draws its sea (#993). The one exception is the
+ * reader's own: a port lifted with "Show anyway" names its own sea.
+ */
+const OPENS: Record<Sea, Region[]> = {
+  'east-blue': ['east-blue'],
+  'grand-line': [
+    'east-blue',
+    'grand-line',
+    'calm-belt',
+    'red-line',
+    'north-blue',
+    'west-blue',
+    'south-blue',
+  ],
+  'new-world': ['new-world', 'new-world-calm-belt'],
+  'calm-belt': ['calm-belt'],
+  'red-line': ['red-line'],
+}
+
+/** Whether a region is one of the seas the map opens. */
+function isSea(region: string): region is Sea {
+  return Object.hasOwn(OPENS, region)
+}
+
+/**
+ * The regions a reader who has entered these seas may see. A stop's region
+ * is a word of its series (`PlaceWords`); only One Piece draws this map, and
+ * a word that is none of its seas opens nothing.
+ */
+export function regionsFor(seas: Iterable<string>): Set<Region> {
+  return new Set([...seas].flatMap((sea) => (isSea(sea) ? OPENS[sea] : [])))
 }

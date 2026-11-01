@@ -147,8 +147,10 @@ export type PlaceWords<V extends Vocabulary = Vocabulary> =
   DictionaryPlaceWords<V> | OwnPlaceWords<V>
 
 /**
- * Words the shared dictionaries label (One Piece's `sea.*`, `form.*`,
- * `places.sea`), which every page already ships: its pages send no label.
+ * Words the series' copy labels (One Piece's `form.*`, `places.sea`), which
+ * every page of it ships: its pages send no label for those. Its seas' names
+ * are not in the copy: a page is sent those of the seas its reader has
+ * opened (`seasOf` in `~/server/archive/printed.server`, #993).
  */
 export interface DictionaryPlaceWords<V extends Vocabulary = Vocabulary> {
   dictionary: true

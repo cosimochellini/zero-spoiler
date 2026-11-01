@@ -37,6 +37,7 @@ const baratie = port({
   ...at(20),
   summary: 'A restaurant that floats on the sea.',
   dossier: dossier({
+    seaName: 'East Blue',
     landmark: 'The fish-head prow',
     filedHere: [sanji, metLater],
   }),
@@ -118,6 +119,10 @@ describe('a place’s entry', () => {
       screen.getByRole('heading', { level: 1, name: 'Baratie' }),
     ).toBeVisible()
     expect(screen.getByText('The fish-head prow')).toBeVisible()
+    // The sea's name as the server sent it with the place.
+    expect(screen.getByText('Sea').nextElementSibling).toHaveTextContent(
+      'East Blue',
+    )
     expect(screen.getByText('The ship put in here.')).toBeVisible()
     expect(screen.getByRole('link', { name: 'Sanji' })).toHaveAttribute(
       'href',

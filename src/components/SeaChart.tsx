@@ -68,12 +68,12 @@ import { useT } from '~/i18n/LocaleContext'
  */
 export function SeaChart(props: SeaChartProps): ReactElement {
   const t = useT()
-  const { bookmark, covered, lit, open, sagas, ships } = props
+  const { bookmark, covered, lit, open, sagas, seas, ships } = props
   const orientation = useChartOrientation(props.served)
   // The picks only light stops: a keystroke must not place the names again.
   const drawn = useMemo(
-    () => modelOf({ bookmark, covered, open, sagas, ships }, t),
-    [bookmark, covered, open, sagas, ships, t],
+    () => modelOf({ bookmark, covered, open, sagas, seas, ships }, t),
+    [bookmark, covered, open, sagas, seas, ships, t],
   )
   const model = useMemo(() => ({ ...drawn, lit: lit ?? null }), [drawn, lit])
 
@@ -307,6 +307,7 @@ function Peek({
       <StopPeek
         at={pointOf(port)}
         port={port}
+        seas={model.seas}
         stage={stage}
         {...rest}
       />

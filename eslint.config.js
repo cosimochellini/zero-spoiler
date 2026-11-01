@@ -105,12 +105,13 @@ const ONE_PIECE_BY_NAME = {
 
 /**
  * A series' own copy stays on the server and reaches a page with its series
- * (#791), and One Piece's faction labels with the fruit album's groups only
- * (#988). Their types may be named; their words may not be imported, by the
- * alias or by a relative path (`./dictionaries/one-piece/en`,
- * `./one-piece/it`, `./one-piece/factions`).
+ * (#791), One Piece's faction labels with the fruit album's groups only
+ * (#988), and its seas' names with the places that open them (#993). Their
+ * types may be named; their words may not be imported, by the alias or by a
+ * relative path (`./dictionaries/one-piece/en`, `./one-piece/it`,
+ * `./one-piece/factions`, `./one-piece/seas`).
  */
-const SERIES_COPY_SPECIFIER = String.raw`^(?:~/i18n/dictionaries/|(?:\.\.?/)+(?:dictionaries/)?)(?!dictionaries/)(?:[a-z-]+/(?:en|it)|one-piece/factions)(?:\.[jt]sx?)?$|^~/server/copy\.server(?:\.[jt]sx?)?$`
+const SERIES_COPY_SPECIFIER = String.raw`^(?:~/i18n/dictionaries/|(?:\.\.?/)+(?:dictionaries/)?)(?!dictionaries/)(?:[a-z-]+/(?:en|it)|one-piece/(?:factions|seas))(?:\.[jt]sx?)?$|^~/server/copy\.server(?:\.[jt]sx?)?$`
 const SERIES_COPY_MESSAGE =
   'A series’ copy stays on the server: a page gets it through `loadSeriesCopy` and reads it with `useT` or `useSeriesT` (#791).'
 const SERIES_COPY = {
@@ -933,7 +934,7 @@ const config = defineConfig(
         },
         // Nor may a series' copy be imported dynamically into the client.
         {
-          selector: String.raw`ImportExpression[source.value=/^(?:~\/i18n\/dictionaries\/|(?:\.\.?\/)+(?:dictionaries\/)?)(?!dictionaries\/)(?:[a-z-]+\/(?:en|it)|one-piece\/factions)(?:\.[jt]sx?)?$|^~\/server\/copy\.server(?:\.[jt]sx?)?$/]`,
+          selector: String.raw`ImportExpression[source.value=/^(?:~\/i18n\/dictionaries\/|(?:\.\.?\/)+(?:dictionaries\/)?)(?!dictionaries\/)(?:[a-z-]+\/(?:en|it)|one-piece\/(?:factions|seas))(?:\.[jt]sx?)?$|^~\/server\/copy\.server(?:\.[jt]sx?)?$/]`,
           message: SERIES_COPY_MESSAGE,
         },
         // A template literal hides its specifier from the selector above.

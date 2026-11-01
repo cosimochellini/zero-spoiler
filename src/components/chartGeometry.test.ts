@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
+import { regionsFor } from '~/lib/view/chart'
+
 import {
   across,
   boxOf,
@@ -15,7 +17,6 @@ import {
   projectRect,
   pullIn,
   pullOf,
-  regionsFor,
   REVERSE_MOUNTAIN,
   sideOf,
 } from './chartGeometry'

@@ -357,9 +357,12 @@ describe('series copy canaries', () => {
     ])
     const phrases = canaries.map(({ phrase }) => phrase)
 
-    // One Piece's factions and Hunter x Hunter's demo, in both languages.
+    // One Piece's factions and seas and Hunter x Hunter's demo, in both
+    // languages.
     expect(phrases).toContain('Nine Red Scabbards')
     expect(phrases).toContain('Kozuki alliance')
+    expect(phrases).toContain('New World')
+    expect(phrases).toContain('Fascia di Bonaccia')
     expect(phrases).toContain('Dopo l’Esame Hunter')
     // A word the shared copy ships on every page is no canary.
     expect(phrases).not.toContain('Places')
@@ -372,6 +375,11 @@ describe('series copy canaries', () => {
     expect(judge(leaked, canaries).found.map(({ file }) => file)).toStrictEqual(
       ['src/i18n/dictionaries/one-piece/factions'],
     )
+    expect(
+      judge([chunk('index.js', 'const s = "Nuovo Mondo"')], canaries).found.map(
+        ({ file }) => file,
+      ),
+    ).toStrictEqual(['src/i18n/dictionaries/one-piece/seas'])
     expect(judge([chunk('index.js', 'export {}')], canaries).ok).toBe(true)
   })
 })

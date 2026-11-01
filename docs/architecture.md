@@ -139,13 +139,16 @@ dictionaries stay server-side and reach only the relevant pages; Italian keys
 are typed against English. A series' copy goes to every page at every bookmark,
 so gated names do not belong in it: One Piece's faction labels live in
 `src/i18n/dictionaries/one-piece/factions.ts` and reach a page only with the
-fruit album group an open eater stands in. The shared dictionary is one chunk
-per locale: the locale routes await `loadDictionary` in `beforeLoad` and the
-router awaits it before hydrating, so a page downloads its own language only. A
-chunk that fails to load reloads the page once per tab and address (a
-`sessionStorage` flag; without storage, no reload). If it fails again, a page
-that is hydrating deliberately stays as the server rendered it, while a
-client-side navigation shows the route error. The privacy notice
+fruit album group an open eater stands in; its seas' names live in
+`src/i18n/dictionaries/one-piece/seas.ts` and reach the places page only for the
+regions its open stops open on the chart (`regionsFor`,
+`src/lib/view/chart.ts`), and a place's page or peek for its own sea. The shared
+dictionary is one chunk per locale: the locale routes await `loadDictionary` in
+`beforeLoad` and the router awaits it before hydrating, so a page downloads its
+own language only. A chunk that fails to load reloads the page once per tab and
+address (a `sessionStorage` flag; without storage, no reload). If it fails
+again, a page that is hydrating deliberately stays as the server rendered it,
+while a client-side navigation shows the route error. The privacy notice
 (`src/i18n/dictionaries/privacy.ts`) ships with the legal page alone. Copy rules
 live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
 

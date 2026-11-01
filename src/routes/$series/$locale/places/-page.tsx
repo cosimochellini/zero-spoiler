@@ -50,7 +50,7 @@ export interface PlacesBodyProps {
  * without the map the render is small.
  */
 export function PlacesBody({
-  page: { covered, filed, open, sagas, ships, words },
+  page: { covered, filed, open, sagas, seas, ships, words },
   peekPort,
   served,
 }: PlacesBodyProps): ReactElement {
@@ -67,6 +67,7 @@ export function PlacesBody({
       mapAbove={served !== null}
       open={open}
       sagas={sagas}
+      seas={seas}
       words={words}
       {...picks}
     />
@@ -87,6 +88,7 @@ export function PlacesBody({
             open={open}
             peekPort={peekPort}
             sagas={sagas}
+            seas={seas}
             served={served}
             ships={ships}
           />

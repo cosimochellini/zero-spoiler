@@ -1,5 +1,6 @@
 import { placeWordsOf } from '~/data/series'
 import type { LocalizedText } from '~/data/types'
+import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { FACTIONS } from '~/lib/view/factions'
 import type { Faction, PlaceWordsView } from '~/lib/view/records'
 
@@ -52,7 +53,7 @@ function labelled(
 /**
  * The labels of the words these places use, for a series that labels its
  * words itself: only those, so a page never names a region or a form the
- * reader has not reached. `undefined` for a series the dictionaries label
+ * reader has not reached. `undefined` for a series its copy labels
  * (One Piece), whose pages send none.
  */
 export function wordsOf(
@@ -78,6 +79,29 @@ export function wordsOf(
       r,
     ),
   }
+}
+
+/**
+ * The names of these regions, in the reader's locale, for the series whose
+ * copy labels its other place words (One Piece): only those, so a page never
+ * names a sea the reader has not opened (#993). `undefined` for a series that
+ * labels its words itself, whose regions come with `wordsOf`.
+ */
+export function seasOf(
+  regions: Iterable<string>,
+  r: Reader,
+): Partial<Record<string, string>> | undefined {
+  if (!placeWordsOf(r.archive.series.slug).dictionary) {
+    return undefined
+  }
+  const labels: Partial<Record<string, string>> = SEA_LABELS[r.locale]
+
+  return Object.fromEntries(
+    [...regions].flatMap((region) => {
+      const label = Object.hasOwn(labels, region) ? labels[region] : undefined
+      return label === undefined ? [] : [[region, label]]
+    }),
+  )
 }
 
 /** Whether a group is one of the factions the pages print. */

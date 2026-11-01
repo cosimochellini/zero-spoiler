@@ -1,4 +1,6 @@
+import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { foldName } from '~/lib/search/fold'
+import { regionsFor } from '~/lib/view/chart'
 import type { FruitPlateCount } from '~/lib/view/fruits'
 import type { StopView } from '~/lib/view/places'
 import type {
@@ -193,6 +195,23 @@ export function stop(over: Partial<StopView> = {}): StopView {
     saga: 1,
     ...over,
   }
+}
+
+/**
+ * The names of the seas these stops open on the chart, in English, as One
+ * Piece's places page sends them (`seas`).
+ */
+export function seasOf(
+  stops: { sea: string }[],
+): Partial<Record<string, string>> {
+  const names: Partial<Record<string, string>> = SEA_LABELS.en
+
+  return Object.fromEntries(
+    [...regionsFor(stops.map(({ sea }) => sea))].flatMap((region) => {
+      const name = names[region]
+      return name === undefined ? [] : [[region, name]]
+    }),
+  )
 }
 
 export function dossier(over: Partial<PortDossier> = {}): PortDossier {

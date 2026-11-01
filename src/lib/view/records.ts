@@ -497,8 +497,8 @@ export interface PortView extends RecordView {
 /**
  * A series' own words for the places a page prints, in the reader's locale:
  * only the regions and forms its open places use, so a page never names one
- * the reader has not reached. One Piece's pages carry none: its dictionaries
- * label its words (`sea.*`, `form.*`).
+ * the reader has not reached. One Piece's pages carry none: its copy labels
+ * its forms (`form.*`), and its seas come as `seas`.
  */
 export interface PlaceWordsView {
   /** The region picker's first option: every region. */
@@ -517,9 +517,14 @@ export interface PortDossier {
   sea: string
   /**
    * The labels of its region and its form, for a series that labels its
-   * words itself; absent for One Piece, whose dictionaries label them.
+   * words itself; absent for One Piece, whose copy labels its forms.
    */
   words?: PlaceWordsView
+  /**
+   * One Piece's: its sea's name, and no other sea's (#993); absent for a
+   * series that labels its words itself.
+   */
+  seaName?: string
   /**
    * The arc this port is filed under, named outright rather than veiled: an
    * arc opens no later than any place filed under it, so an open port always

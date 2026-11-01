@@ -29,16 +29,17 @@
  *      a table shipped whole, which would name regions a reader has not
  *      reached, fails the gate. A series left with no such word, or
  *      dictionaries that do not load, leave the gate unusable rather than
- *      clean. One Piece's are its dictionaries'.
+ *      clean. One Piece's forms are its copy's, and its seas' names are
+ *      looked for with it (5).
  *      The server holds the tables statically, so these are client canaries
  *      only.
  *   5. Series copy canaries. Every series' own words (its description, its
- *      demo, its sources, One Piece's seas) stay on the server and reach a
- *      page with its series only (`loadSeriesCopy`), so a reader of one
- *      series never downloads another's (#791); One Piece's faction labels
- *      reach the fruit album's groups only (#988). Each word distinct enough
- *      to look for, and not also a word of the shared copy, is looked for in
- *      the chunks.
+ *      demo, its sources) stay on the server and reach a page with its
+ *      series only (`loadSeriesCopy`), so a reader of one series never
+ *      downloads another's (#791); One Piece's faction labels reach the
+ *      fruit album's groups only (#988), and its seas' names the places that
+ *      open them (#993). Each word distinct enough to look for, and not also
+ *      a word of the shared copy, is looked for in the chunks.
  * The SSR manifest also proves that every series archive enters through a
  * dynamic import, with no canary-bearing data in another runtime entry's
  * static dependency closure.
@@ -435,15 +436,20 @@ async function shippedCopy() {
 
 /**
  * The words that stay on the server, under the folder or file that holds
- * them: every series' own copy, and One Piece's faction labels.
+ * them: every series' own copy, and One Piece's faction labels and seas.
  * @returns {Promise<Record<string, Record<string, Record<string, string>>>>} Each one's words, by locale.
  */
 export async function serverCopies() {
-  const [{ COPIES }, { FACTION_LABELS }] = await Promise.all([
+  const [{ COPIES }, { FACTION_LABELS }, { SEA_LABELS }] = await Promise.all([
     importArchive('server/copy.server.ts'),
     importArchive('i18n/dictionaries/one-piece/factions.ts'),
+    importArchive('i18n/dictionaries/one-piece/seas.ts'),
   ])
-  return { ...COPIES, 'one-piece/factions': FACTION_LABELS }
+  return {
+    ...COPIES,
+    'one-piece/factions': FACTION_LABELS,
+    'one-piece/seas': SEA_LABELS,
+  }
 }
 
 /**

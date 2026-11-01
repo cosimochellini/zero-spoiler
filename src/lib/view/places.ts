@@ -52,6 +52,12 @@ export interface PlacesView {
   /** The ships the reader has reached, in their order. */
   ships: ShipView[]
   /**
+   * One Piece's: the names of the seas the open stops open on the chart
+   * (`regionsFor`), and of no other (#993); absent for a series that labels
+   * its words itself.
+   */
+  seas?: Partial<Record<string, string>>
+  /**
    * The labels of the words the open stops use, for a series that labels
    * its words itself; absent for One Piece.
    */
