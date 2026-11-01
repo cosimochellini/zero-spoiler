@@ -613,6 +613,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'melody': {
+      relationships: yorknewCityRelationships.melody,
       chronicle: yorknewCityChronicles.melody,
       role: HIRED,
       log: {
@@ -623,6 +624,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [NEON_GUARD],
     },
     'basho': {
+      relationships: yorknewCityRelationships.basho,
       chronicle: yorknewCityChronicles.basho,
       role: HIRED,
       log: {
@@ -633,6 +635,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [NEON_GUARD],
     },
     'baise': {
+      relationships: yorknewCityRelationships.baise,
       chronicle: yorknewCityChronicles.baise,
       role: HIRED,
       log: {
@@ -648,6 +651,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [NEON_GUARD],
     },
     'squala': {
+      relationships: yorknewCityRelationships.squala,
       chronicle: yorknewCityChronicles.squala,
       role: PLANT,
       log: {
@@ -663,6 +667,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [NEON_GUARD],
     },
     'shachmono-tocino': {
+      relationships: yorknewCityRelationships['shachmono-tocino'],
       chronicle: yorknewCityChronicles['shachmono-tocino'],
       role: PLANT,
       log: {
@@ -678,6 +683,7 @@ export const yorknewCity: HunterSaga = {
       affiliation: [NEON_GUARD],
     },
     'dalzollene': {
+      relationships: yorknewCityRelationships.dalzollene,
       chronicle: yorknewCityChronicles.dalzollene,
       role: {
         it: 'Capo delle guardie del corpo',
@@ -704,6 +710,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'neon-nostrade': {
+      relationships: yorknewCityRelationships['neon-nostrade'],
       chronicle: yorknewCityChronicles['neon-nostrade'],
       role: { it: 'Indovina', en: 'Fortune-teller' },
       log: {
@@ -720,6 +727,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'ivlenkov': {
+      relationships: yorknewCityRelationships.ivlenkov,
       chronicle: yorknewCityChronicles.ivlenkov,
       role: BODYGUARD,
       log: {
@@ -763,6 +771,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'machi': {
+      relationships: yorknewCityRelationships.machi,
       chronicle: yorknewCityChronicles.machi,
       role: TROUPE_MEMBER,
       log: {
@@ -1064,6 +1073,7 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'shizuku': {
+      relationships: yorknewCityRelationships.shizuku,
       chronicle: yorknewCityChronicles.shizuku,
       role: TROUPE_MEMBER,
       log: {

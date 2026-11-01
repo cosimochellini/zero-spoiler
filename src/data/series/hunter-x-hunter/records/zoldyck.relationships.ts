@@ -235,6 +235,19 @@ const links = {
       it: 'Zeno mette fine alla punizione di Killua e definisce Milki intelligente ma sciocco.',
     },
   },
+  // The call is chapter 69 and episode 38; the address comes by bird in
+  // chapter 70 and episode 40 (#974).
+  millukiKilluaTrade: {
+    character: 'killua',
+    type: {
+      en: 'Younger brother he trades with',
+      it: 'Fratello minore con cui fa uno scambio',
+    },
+    summary: {
+      en: 'When Killua calls, Milluki trades two leads on the game on Gon’s memory card for a copy of the card: a website for Hunters only, and a rumor that copies will be auctioned in Yorknew City. He sends Killua the website’s address by bird.',
+      it: 'Quando Killua lo chiama, Milki scambia due piste sul gioco della scheda di memoria di Gon con una copia della scheda: un sito riservato agli Hunter e la voce che alcune copie andranno all’asta a York Shin City. Poi manda a Killua l’indirizzo del sito con un uccello.',
+    },
+  },
   // Zeno
   zenoKillua: {
     character: 'killua',
@@ -398,6 +411,13 @@ export const zoldyckRelationships = {
       episode: 24,
       chapter: 42,
       value: [links.millukiKillua, links.millukiZeno],
+    },
+
+    // Yorknew City (#974).
+    {
+      episode: 40,
+      chapter: 70,
+      value: [links.millukiKilluaTrade, links.millukiZeno],
     },
   ],
   'zeno': [
