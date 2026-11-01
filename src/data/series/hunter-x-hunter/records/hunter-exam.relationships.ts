@@ -1174,8 +1174,8 @@ const links = {
       it: 'Compagno che riporta indietro',
     },
     summary: {
-      en: 'Killua trains with Zushi under Wing and, when Sadaso seizes Zushi, steps in and promises to let them all win in exchange for the boy.',
-      it: 'Killua si allena con Zooci sotto la guida di Wing e, quando Sadaso afferra Zooci, interviene e promette di lasciarli vincere tutti in cambio del ragazzo.',
+      en: 'Killua trains with Zushi under Wing and, when Sadaso seizes Zushi, steps in and promises to let Sadaso’s group win in exchange for the boy.',
+      it: 'Killua si allena con Zooci sotto la guida di Wing e, quando Sadaso afferra Zooci, interviene e promette di lasciar vincere il gruppo di Sadaso in cambio del ragazzo.',
     },
   },
   killuaSadaso: {

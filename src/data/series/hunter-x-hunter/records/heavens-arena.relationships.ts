@@ -51,8 +51,8 @@ const links = {
       it: 'Compagno che lo riporta indietro',
     },
     summary: {
-      en: 'Killua trains with Zushi under Wing and, when Sadaso seizes Zushi, steps in and promises to let them all win in exchange for the boy.',
-      it: 'Killua si allena con Zooci sotto la guida di Wing e, quando Sadaso afferra Zooci, interviene e promette di lasciarli vincere tutti in cambio del ragazzo.',
+      en: 'Killua trains with Zushi under Wing and, when Sadaso seizes Zushi, steps in and promises to let Sadaso’s group win in exchange for the boy.',
+      it: 'Killua si allena con Zooci sotto la guida di Wing e, quando Sadaso afferra Zooci, interviene e promette di lasciar vincere il gruppo di Sadaso in cambio del ragazzo.',
     },
   },
   zushiSadaso: {
@@ -177,8 +177,8 @@ const links = {
     character: 'gon-freecss',
     type: { en: 'Opponent he beats', it: 'Avversario che sconfigge' },
     summary: {
-      en: 'Gido’s tops keep hitting Gon in Gon’s first match on the 200th floor, and Gido wins. Gon comes out of it with a broken arm.',
-      it: 'Le trottole di Ghido continuano a colpire Gon nel primo incontro di Gon al 200º piano, e Ghido vince. Gon ne esce con un braccio rotto.',
+      en: 'Gido’s tops keep hitting Gon in Gon’s first match on the 200th floor, and Gon comes out of it with a broken arm.',
+      it: 'Le trottole di Ghido continuano a colpire Gon nel primo incontro di Gon al 200º piano, e Gon ne esce con un braccio rotto.',
     },
   },
   gidoGonThreat: {
@@ -257,8 +257,8 @@ const links = {
     character: 'killua',
     type: { en: 'Boy who threatens him', it: 'Ragazzo che lo minaccia' },
     summary: {
-      en: 'Killua promises Sadaso a win by default in exchange for Zushi. When the group breaks the deal, Killua gets to Sadaso unseen before their match and threatens to kill him if he ever shows his face again.',
-      it: 'Killua promette a Sadaso una vittoria a tavolino in cambio di Zooci. Quando il gruppo rompe il patto, Killua raggiunge Sadaso di nascosto prima del loro incontro e lo minaccia di morte se si farà vedere ancora.',
+      en: 'Killua promises to let Sadaso’s group win in exchange for Zushi. When the group breaks the deal, Killua gets to Sadaso unseen before their match and threatens to kill him if he ever shows his face again.',
+      it: 'Killua promette di lasciar vincere il gruppo di Sadaso in cambio di Zooci. Quando il gruppo rompe il patto, Killua raggiunge Sadaso di nascosto prima del loro incontro e lo minaccia di morte se si farà vedere ancora.',
     },
   },
   sadasoKilluaLeave: {
@@ -421,8 +421,8 @@ export const heavensArenaRelationships = {
       chapter: 57,
       value: [links.gidoGonThreat, links.gidoSadaso, links.gidoZushi],
     },
-    // The rematch and Killua's warning are chapter 58; Riehlvelt is named in
-    // chapter 59, and episode 34 adapts both.
+    // The rematch and Killua's warning are chapter 58; Riehlvelt's record
+    // opens at 34/59, and episode 34 adapts both chapters.
     {
       episode: 34,
       chapter: 59,
