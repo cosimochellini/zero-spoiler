@@ -392,6 +392,7 @@ export const thrillerBark: OnePieceSaga = {
       affiliation: [
         {
           episode: 370,
+          chapter: 476,
           value: {
             it: 'Pirati di Rolling, capitano',
             en: 'Rolling Pirates, captain',

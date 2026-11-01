@@ -773,7 +773,11 @@ export const fishManIsland: OnePieceSaga = {
             en: 'Flying Dutchman, Vander Decken’s underling',
           },
         },
-        { episode: 790, value: { it: 'Pirati del Sole', en: 'Sun Pirates' } },
+        {
+          episode: 790,
+          chapter: 830,
+          value: { it: 'Pirati del Sole', en: 'Sun Pirates' },
+        },
       ],
       epithet: [
         { episode: 537, value: { it: 'il Gigante', en: 'the Large Monk' } },
@@ -1309,11 +1313,13 @@ export const fishManIsland: OnePieceSaga = {
           episode: 543,
           value: { it: 'Pirati del Sole, medico', en: 'Sun Pirates, doctor' },
         },
+        // Vice captain in ch 830 p. 4 / ep 790, as his role.
         {
-          episode: 785,
+          episode: 790,
+          chapter: 830,
           value: {
-            it: 'Pirati del Sole, capitano, sotto Big Mom',
-            en: 'Sun Pirates, captain, under Big Mom',
+            it: 'Pirati del Sole, vicecapitano, sotto Big Mom',
+            en: 'Sun Pirates, vice captain, under Big Mom',
           },
         },
       ],

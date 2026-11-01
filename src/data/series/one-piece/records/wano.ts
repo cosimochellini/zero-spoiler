@@ -828,7 +828,7 @@ export const wano: OnePieceSaga = {
             en: 'Tea house of Okobore Town, waitress',
           },
         },
-        { episode: 936, value: RED_SCABBARDS },
+        { episode: 936, chapter: 939, value: RED_SCABBARDS },
       ],
       origin: [{ episode: 899, value: WANO }],
       epithet: [
@@ -883,7 +883,7 @@ export const wano: OnePieceSaga = {
             en: 'Mt. Atama Thieves, boss',
           },
         },
-        { episode: 936, value: RED_SCABBARDS },
+        { episode: 936, chapter: 939, value: RED_SCABBARDS },
       ],
       origin: [{ episode: 910, value: WANO }],
       epithet: [
@@ -1316,14 +1316,17 @@ export const wano: OnePieceSaga = {
         { episode: 948, chapter: 948, value: 'alive' },
       ],
       affiliation: [
+        // Hiyori names him a Scabbard in ch 939 / ep 936, below his record's
+        // chapter, and he breaks out in ch 948 / ep 948: as his role.
         {
           episode: 936,
+          chapter: 946,
           value: {
-            it: 'Prigioniero del campo di lavoro di Udon',
-            en: 'Prisoner of the Udon labour camp',
+            it: 'Nove Foderi Rossi; prigioniero del campo di lavoro di Udon',
+            en: 'Nine Red Scabbards; prisoner of the Udon labour camp',
           },
         },
-        { episode: 941, value: RED_SCABBARDS },
+        { episode: 948, chapter: 948, value: RED_SCABBARDS },
       ],
       origin: [{ episode: 936, value: WANO }],
       epithet: [
@@ -1741,6 +1744,7 @@ export const wano: OnePieceSaga = {
         },
         {
           episode: 906,
+          chapter: 918,
           value: {
             it: 'Al servizio di O-Tama, addomesticata da un suo dango',
             en: 'Tama’s servant, tamed by one of her dango',

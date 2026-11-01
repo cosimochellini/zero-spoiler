@@ -1178,6 +1178,7 @@ export const dressrosa: OnePieceSaga = {
       affiliation: [
         {
           episode: 599,
+          chapter: 673,
           value: {
             it: 'Marina, viceammiraglio della G-5, in segreto uomo di Do Flamingo',
             en: 'Marines, vice admiral of G-5, secretly Doflamingo’s man',
@@ -1288,8 +1289,10 @@ export const dressrosa: OnePieceSaga = {
             en: 'Donquixote Pirates, assassin and servant',
           },
         },
+        // Sai says he will marry her in ch 771 / ep 710, as her role.
         {
-          episode: 746,
+          episode: 710,
+          chapter: 771,
           factions: ['independent'],
           value: {
             it: 'Flotta Happo, fidanzata di Sai',
@@ -1343,8 +1346,10 @@ export const dressrosa: OnePieceSaga = {
             en: 'Colosseum gladiator of Dressrosa',
           },
         },
+        // Ch 796 / ep 740, where the Riku family is restored.
         {
-          episode: 741,
+          episode: 740,
+          chapter: 796,
           value: {
             it: 'Famiglia reale Riku, principessa',
             en: 'Riku royal family, princess',
@@ -1401,7 +1406,8 @@ export const dressrosa: OnePieceSaga = {
           value: { it: 'Barto Club, capitano', en: 'Barto Club, captain' },
         },
         {
-          episode: 746,
+          episode: 745,
+          chapter: 800,
           factions: ['straw-hat-grand-fleet'],
           value: {
             it: 'Grande Flotta di Cappello di Paglia; Barto Club',
@@ -1429,9 +1435,9 @@ export const dressrosa: OnePieceSaga = {
           chapter: 727,
           value: { it: 'Ex re di Dressrosa', en: 'Former king of Dressrosa' },
         },
-        // Gatz announces his return to the throne in chapter 796, episode 741.
+        // Gatz announces his return to the throne in chapter 796, episode 740.
         {
-          episode: 741,
+          episode: 740,
           chapter: 796,
           value: { it: 'Re di Dressrosa', en: 'King of Dressrosa' },
         },
@@ -1458,8 +1464,10 @@ export const dressrosa: OnePieceSaga = {
             en: 'Former king of Dressrosa, deposed',
           },
         },
+        // Ch 796 / ep 740: Doldo's return to the throne.
         {
-          episode: 741,
+          episode: 740,
+          chapter: 796,
           value: {
             it: 'Re di Dressrosa, restaurato',
             en: 'King of Dressrosa, restored',
@@ -1531,7 +1539,7 @@ export const dressrosa: OnePieceSaga = {
             en: 'Beautiful Pirates, captain',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       epithet: [
         {
@@ -1594,7 +1602,7 @@ export const dressrosa: OnePieceSaga = {
             en: 'Happo Navy, thirteenth leader',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       origin: [
         { episode: 633, value: { it: 'Paese di Kano', en: 'Kano Country' } },
@@ -1674,7 +1682,7 @@ export const dressrosa: OnePieceSaga = {
             en: 'XXX Gym Martial Arts Alliance',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       epithet: [
         {
@@ -1711,7 +1719,7 @@ export const dressrosa: OnePieceSaga = {
             en: 'Longleg Tribe fighter',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       origin: [
         {
@@ -1766,10 +1774,9 @@ export const dressrosa: OnePieceSaga = {
           chapter: 714,
           value: { it: 'Mercenario gigante', en: 'Giant mercenary' },
         },
-        // Captain of a ship of the Grand Fleet in chapter 800; the episode is
-        // his affiliation’s, 746.
+        // Captain of a ship of the Grand Fleet in chapter 800, episode 745.
         {
-          episode: 746,
+          episode: 745,
           chapter: 800,
           value: {
             it: 'Capitano dei Nuovi Pirati Guerrieri Giganti',
@@ -1796,7 +1803,8 @@ export const dressrosa: OnePieceSaga = {
           value: { it: 'Gladiatore del colosseo', en: 'Colosseum gladiator' },
         },
         {
-          episode: 746,
+          episode: 745,
+          chapter: 800,
           value: {
             it: 'Nuovi Pirati Guerrieri Giganti, capitano; Grande Flotta di Cappello di Paglia',
             en: 'New Giant Warrior Pirates, captain; Straw Hat Grand Fleet',
@@ -1939,8 +1947,10 @@ export const dressrosa: OnePieceSaga = {
             en: 'Donquixote Pirates, Violet',
           },
         },
+        // "Princess Viola" in ch 728 / ep 660, as her role.
         {
-          episode: 690,
+          episode: 660,
+          chapter: 728,
           factions: ['independent'],
           value: {
             it: 'Famiglia reale Riku, principessa',
@@ -2198,7 +2208,7 @@ export const dressrosa: OnePieceSaga = {
             en: 'Yonta Maria Grand Fleet, admiral',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       origin: [
         {
@@ -2263,6 +2273,7 @@ export const dressrosa: OnePieceSaga = {
         },
         {
           episode: 744,
+          chapter: 799,
           factions: ['tontatta'],
           value: {
             it: 'Regno di Tontatta, capo del Corpo Tonta',
@@ -2270,7 +2281,8 @@ export const dressrosa: OnePieceSaga = {
           },
         },
         {
-          episode: 746,
+          episode: 745,
+          chapter: 800,
           factions: ['straw-hat-grand-fleet'],
           value: GRAND_FLEET,
         },
@@ -2454,13 +2466,17 @@ export const dressrosa: OnePieceSaga = {
             en: 'Samurai of Wano, Kin’emon’s companion',
           },
         },
+        // Among the six Scabbards Zoro has met, ch 939 p. 6 / ep 936.
         {
-          episode: 955,
+          episode: 936,
+          chapter: 939,
           factions: ['nine-red-scabbards'],
           value: { it: 'Nove Foderi Rossi', en: 'Nine Red Scabbards' },
         },
+        // He reveals himself as the spy in ch 974 / ep 977.
         {
-          episode: 985,
+          episode: 977,
+          chapter: 974,
           factions: ['independent'],
           value: {
             it: 'Spia di Orochi, smascherato',
@@ -2827,9 +2843,10 @@ export const dressrosa: OnePieceSaga = {
         },
         {
           episode: 744,
+          chapter: 799,
           value: { it: 'Pirati Beautiful', en: 'Beautiful Pirates' },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       epithet: [
         {
@@ -2854,12 +2871,13 @@ export const dressrosa: OnePieceSaga = {
         },
         {
           episode: 744,
+          chapter: 799,
           value: {
             it: 'Alleanza di arti marziali della palestra XXX',
             en: 'XXX Gym Martial Arts Alliance',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
     },
     'jeet': {
@@ -2878,12 +2896,13 @@ export const dressrosa: OnePieceSaga = {
         },
         {
           episode: 744,
+          chapter: 799,
           value: {
             it: 'Alleanza di arti marziali della palestra XXX',
             en: 'XXX Gym Martial Arts Alliance',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
     },
     'boo': {
@@ -2921,7 +2940,7 @@ export const dressrosa: OnePieceSaga = {
             en: 'Happo Navy, vice-leader',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       origin: [
         { episode: 633, value: { it: 'Paese di Kano', en: 'Kano Country' } },
@@ -2948,7 +2967,8 @@ export const dressrosa: OnePieceSaga = {
           },
         },
         {
-          episode: 746,
+          episode: 745,
+          chapter: 800,
           value: {
             it: 'Grande Flotta di Cappello di Paglia; Barto Club',
             en: 'Straw Hat Grand Fleet; Barto Club',
@@ -3017,7 +3037,7 @@ export const dressrosa: OnePieceSaga = {
             en: 'Tontatta tribe, scouting unit',
           },
         },
-        { episode: 746, value: GRAND_FLEET },
+        { episode: 745, chapter: 800, value: GRAND_FLEET },
       ],
       origin: [
         {

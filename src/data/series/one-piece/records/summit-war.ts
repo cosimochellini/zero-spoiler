@@ -1204,7 +1204,7 @@ export const summitWar: OnePieceSaga = {
           },
         },
         // He tells Sengoku he resigns in chapter 557, which episode 466
-        // adapts. His affiliation's step at 486 is later; #980.
+        // adapts.
         {
           episode: 466,
           chapter: 557,
@@ -1232,14 +1232,16 @@ export const summitWar: OnePieceSaga = {
       ],
       affiliation: [
         { episode: 430, value: WARLORDS },
+        // He resigns to Sengoku in ch 557 / ep 466, the pair of his role.
         {
-          episode: 486,
+          episode: 466,
+          chapter: 557,
           value: {
             it: 'Ex membro della Flotta dei Sette',
             en: 'Former Warlord',
           },
         },
-        { episode: 980, value: STRAW_HATS },
+        { episode: 980, chapter: 976, value: STRAW_HATS },
       ],
       origin: [
         {
@@ -1612,6 +1614,7 @@ export const summitWar: OnePieceSaga = {
         { episode: 895, factions: ['beasts-pirates'], value: BEASTS_HEADLINER },
         {
           episode: 957,
+          chapter: 956,
           factions: ['marines'],
           value: {
             it: 'Marina, capitano dello SWORD',
@@ -2097,6 +2100,7 @@ export const summitWar: OnePieceSaga = {
         },
         {
           episode: 452,
+          chapter: 549,
           factions: ['blackbeard-pirates'],
           value: BLACKBEARD_CREW,
         },

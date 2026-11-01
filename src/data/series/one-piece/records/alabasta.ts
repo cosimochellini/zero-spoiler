@@ -953,10 +953,9 @@ export const alabasta: OnePieceSaga = {
       relationships: alabastaRelationships['mr-3'],
       role: [
         { episode: 70, chapter: 120, value: BW_AGENT_ROLE },
-        // One of Buggy’s escapees in chapter 593 (p. 19); the episode is his
-        // affiliation’s, 517.
+        // One of Buggy’s escapees in chapter 593 (p. 19), told in episode 512.
         {
-          episode: 517,
+          episode: 512,
           chapter: 593,
           value: {
             it: 'Membro della ciurma di Bagy',
@@ -998,8 +997,10 @@ export const alabasta: OnePieceSaga = {
           factions: ['independent'],
           value: FORMER_BW_OFFICER,
         },
+        // Ch 593 p. 19 / ep 512, with Buggy's escapees.
         {
-          episode: 517,
+          episode: 512,
+          chapter: 593,
           factions: ['buggy-pirates'],
           value: { it: 'Ciurma di Bagy', en: 'Buggy’s crew' },
         },
@@ -1112,8 +1113,7 @@ export const alabasta: OnePieceSaga = {
         },
         // Luffy sends him flying out of the kingdom in chapter 151, and the
         // villagers celebrate the end of his rule; episode 89 adapts it ("When
-        // the Kingdom's Rule Is Over"). His "Deposed" affiliation step at 91
-        // is later; #980 moves it.
+        // the Kingdom's Rule Is Over").
         {
           episode: 89,
           chapter: 151,
@@ -1150,8 +1150,10 @@ export const alabasta: OnePieceSaga = {
           factions: ['independent'],
           value: { it: 'Re di Drum, in esilio', en: 'King of Drum, in exile' },
         },
+        // Ch 151 / ep 89: Luffy sends him flying out of the kingdom.
         {
-          episode: 91,
+          episode: 89,
+          chapter: 151,
           factions: ['independent'],
           value: { it: 'Deposto', en: 'Deposed' },
         },
@@ -1591,11 +1593,14 @@ export const alabasta: OnePieceSaga = {
             en: 'Rebel army of Alabasta, leader',
           },
         },
+        // The rebellion ends in ch 211 / ep 127, the pair of his role. No
+        // minister entry: only the chapter 638 cover says it.
         {
-          episode: 130,
+          episode: 127,
+          chapter: 211,
           value: {
-            it: 'Regno di Alabasta, ministro dell’ambiente',
-            en: 'Kingdom of Alabasta, minister of the environment',
+            it: 'Esercito ribelle di Alabasta, ex capo',
+            en: 'Rebel army of Alabasta, former leader',
           },
         },
       ],

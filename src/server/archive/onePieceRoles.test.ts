@@ -287,7 +287,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
     id: 'mr-3',
     changes: [
       {
-        episode: 517,
+        episode: 512,
         chapter: 593,
         from: role('Agente di Baroque Works', 'Baroque Works agent'),
         to: role('Membro della ciurma di Bagy', 'Member of Buggy’s crew'),
@@ -398,13 +398,16 @@ const ROLES: { changes: Change[]; id: string }[] = [
         ),
       },
       {
-        episode: 958,
+        episode: 890,
         chapter: 909,
         from: role(
           'Ex capo dei superstiti dei Pirati di Barbabianca',
           'Former leader of the Whitebeard Pirates’ remnants',
         ),
-        to: role('Medico dell’isola di Sphinx', 'Doctor of Sphinx Island'),
+        to: role(
+          'Medico dell’isola natale di Barbabianca',
+          'Doctor on Whitebeard’s home island',
+        ),
       },
     ],
   },
@@ -798,7 +801,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
     id: 'riku-doldo-iii',
     changes: [
       {
-        episode: 741,
+        episode: 740,
         chapter: 796,
         from: role('Ex re di Dressrosa', 'Former king of Dressrosa'),
         to: role('Re di Dressrosa', 'King of Dressrosa'),
@@ -826,7 +829,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
     id: 'hajrudin',
     changes: [
       {
-        episode: 746,
+        episode: 745,
         chapter: 800,
         from: role('Mercenario gigante', 'Giant mercenary'),
         to: role(
@@ -952,8 +955,8 @@ const ROLES: { changes: Change[]; id: string }[] = [
         to: role('Agente del Cipher Pol 0', 'Cipher Pol 0 agent'),
       },
       {
-        episode: 1105,
-        chapter: 1073,
+        episode: 1104,
+        chapter: 1072,
         from: role('Agente del Cipher Pol 0', 'Cipher Pol 0 agent'),
         to: role('Ex agente del Cipher Pol 0', 'Former Cipher Pol 0 agent'),
       },
@@ -1018,7 +1021,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
         ),
       },
       {
-        episode: 1034,
+        episode: 1033,
         chapter: 1013,
         from: role(
           'Homie nuvola del tuono di Big Mom',
