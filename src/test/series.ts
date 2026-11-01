@@ -52,7 +52,7 @@ export interface Least {
 }
 
 const EXPECTED: Record<string, Expected> = {
-  // What it files on 2026-10-30.
+  // What it files on 2026-11-01 (#980 dropped Spandam's unsourced step).
   'one-piece': {
     kinds: [
       'affiliation',
@@ -73,7 +73,7 @@ const EXPECTED: Record<string, Expected> = {
       'visit',
     ],
     least: {
-      affiliations: 808,
+      affiliations: 807,
       arcs: 34,
       characters: 534,
       chronicles: 757,

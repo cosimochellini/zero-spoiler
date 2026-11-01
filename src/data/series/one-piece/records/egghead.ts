@@ -1300,6 +1300,7 @@ export const egghead: OnePieceSaga = {
         },
         {
           episode: 1155,
+          chapter: 1125,
           value: {
             it: 'Cinque Astri di Saggezza, Dio Guerriero della Scienza e della Difesa',
             en: 'Five Elders, Warrior God of Science and Defence',
@@ -1531,6 +1532,7 @@ export const egghead: OnePieceSaga = {
         },
         {
           episode: 1135,
+          chapter: 1101,
           value: {
             it: 'Governo Mondiale, agente dei servizi segreti',
             en: 'World Government, intelligence agent',

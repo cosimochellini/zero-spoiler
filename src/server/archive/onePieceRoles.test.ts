@@ -287,7 +287,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
     id: 'mr-3',
     changes: [
       {
-        episode: 517,
+        episode: 512,
         chapter: 593,
         from: role('Agente di Baroque Works', 'Baroque Works agent'),
         to: role('Membro della ciurma di Bagy', 'Member of Buggy’s crew'),
@@ -398,7 +398,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
         ),
       },
       {
-        episode: 958,
+        episode: 890,
         chapter: 909,
         from: role(
           'Ex capo dei superstiti dei Pirati di Barbabianca',
@@ -826,7 +826,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
     id: 'hajrudin',
     changes: [
       {
-        episode: 746,
+        episode: 745,
         chapter: 800,
         from: role('Mercenario gigante', 'Giant mercenary'),
         to: role(
@@ -952,8 +952,8 @@ const ROLES: { changes: Change[]; id: string }[] = [
         to: role('Agente del Cipher Pol 0', 'Cipher Pol 0 agent'),
       },
       {
-        episode: 1105,
-        chapter: 1073,
+        episode: 1104,
+        chapter: 1072,
         from: role('Agente del Cipher Pol 0', 'Cipher Pol 0 agent'),
         to: role('Ex agente del Cipher Pol 0', 'Former Cipher Pol 0 agent'),
       },

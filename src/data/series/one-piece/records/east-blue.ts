@@ -2515,8 +2515,7 @@ export const eastBlue: OnePieceSaga = {
           value: { it: 'Capitano della Marina', en: 'Marine captain' },
         },
         // He refuses the promotion offered in chapter 212. The rank is first
-        // shown in chapter 439 (p. 16), adapted in episode 324. His
-        // affiliation still steps at 130, which shows no promotion; #980.
+        // shown in chapter 439 (p. 16), adapted in episode 324.
         {
           episode: 324,
           chapter: 439,
@@ -2542,8 +2541,11 @@ export const eastBlue: OnePieceSaga = {
           factions: ['marines'],
           value: { it: 'Marina, capitano', en: 'Marines, captain' },
         },
+        // Ch 439 p. 16 / ep 324, as his role: he refused the chapter 212
+        // promotion, and chapter 217 still lists him as captain.
         {
-          episode: 130,
+          episode: 324,
+          chapter: 439,
           factions: ['marines'],
           value: { it: 'Marina, commodoro', en: 'Marines, commodore' },
         },
@@ -2570,8 +2572,7 @@ export const eastBlue: OnePieceSaga = {
         },
         // Smoker refuses their promotion in chapter 212. A subordinate first
         // addresses her by her new rank, ensign, in chapter 439 (p. 16),
-        // adapted in episode 324. Her affiliation still steps at 130, which
-        // shows no promotion; #980.
+        // adapted in episode 324.
         {
           episode: 324,
           chapter: 439,
@@ -2596,8 +2597,10 @@ export const eastBlue: OnePieceSaga = {
             en: 'Marines, sergeant major under Smoker',
           },
         },
+        // Ch 439 p. 16 / ep 324, as her role.
         {
-          episode: 130,
+          episode: 324,
+          chapter: 439,
           value: { it: 'Marina, guardiamarina', en: 'Marines, ensign' },
         },
         // Captioned at G-5 at 572 (chapter 652).

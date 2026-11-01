@@ -962,8 +962,10 @@ export const wholeCake: OnePieceSaga = {
       affiliation: [
         // Dated at 758, where the musketeers are first shown.
         { episode: 758, value: MOKOMO_MUSKETEERS },
+        // Appointed in ch 1056 / ep 1083.
         {
-          episode: 1085,
+          episode: 1083,
+          chapter: 1056,
           value: {
             it: 'Ducato di Mokomo, sovrana',
             en: 'Mokomo Dukedom, ruler',
@@ -1006,9 +1008,12 @@ export const wholeCake: OnePieceSaga = {
             en: 'Mokomo Dukedom, ruler of the day',
           },
         },
-        { episode: 955, value: RED_SCABBARDS },
+        // Among the six Scabbards Zoro has met, ch 939 / ep 936.
+        { episode: 936, chapter: 939, value: RED_SCABBARDS },
+        // He stays in Wano to serve Momonosuke, ch 1056 / ep 1083.
         {
-          episode: 1085,
+          episode: 1083,
+          chapter: 1056,
           value: {
             it: 'Wano, consiglio dello shogun',
             en: 'Wano, shogun’s council',
@@ -1245,8 +1250,10 @@ export const wholeCake: OnePieceSaga = {
             en: 'Big Mom Pirates, captain; Emperor',
           },
         },
+        // The new Emperors are named in ch 1053 / ep 1080, as her role.
         {
-          episode: 1085,
+          episode: 1080,
+          chapter: 1053,
           factions: ['big-mom-pirates'],
           value: {
             it: 'Pirati di Big Mom, capitano; caduta a Wano',
@@ -1361,10 +1368,10 @@ export const wholeCake: OnePieceSaga = {
           chapter: 871,
           value: { it: 'Agente del Cipher Pol 0', en: 'Cipher Pol 0 agent' },
         },
-        // She turns on the government in chapter 1073, episode 1105.
+        // She turns on the government in chapter 1072 (p. 17), episode 1104.
         {
-          episode: 1105,
-          chapter: 1073,
+          episode: 1104,
+          chapter: 1072,
           value: {
             it: 'Ex agente del Cipher Pol 0',
             en: 'Former Cipher Pol 0 agent',
@@ -1389,9 +1396,15 @@ export const wholeCake: OnePieceSaga = {
             en: 'Underworld, queen of the pleasure district',
           },
         },
-        { episode: 841, value: { it: 'Cipher Pol 0', en: 'Cipher Pol 0' } },
         {
-          episode: 1108,
+          episode: 841,
+          chapter: 871,
+          value: { it: 'Cipher Pol 0', en: 'Cipher Pol 0' },
+        },
+        // She bites Kaku and is revealed as a clone, ch 1072 p. 17 / ep 1104.
+        {
+          episode: 1104,
+          chapter: 1072,
           value: {
             it: 'Cipher Pol 0, disertrice, un tempo clone di Miss Buckingham Stussy',
             en: 'Cipher Pol 0, defector, once a clone of Miss Buckingham Stussy',
@@ -2008,6 +2021,7 @@ export const wholeCake: OnePieceSaga = {
         },
         {
           episode: 757,
+          chapter: 808,
           value: {
             it: 'Pirati delle Cento Bestie, headliner dei Gifters',
             en: 'Beasts Pirates, headliner of the Gifters',
@@ -2395,8 +2409,10 @@ export const wholeCake: OnePieceSaga = {
             en: 'Big Mom Pirates, Big Mom’s homie',
           },
         },
+        // Ch 890 / ep 865, as his role.
         {
-          episode: 878,
+          episode: 865,
+          chapter: 890,
           value: {
             it: 'Pirati di Cappello di Paglia, servitore di Nami',
             en: 'Straw Hat Pirates, Nami’s servant',
@@ -2412,10 +2428,12 @@ export const wholeCake: OnePieceSaga = {
         },
         {
           episode: 1034,
+          chapter: 1013,
           value: { it: 'Scartato da Big Mom', en: 'Cast off by Big Mom' },
         },
         {
           episode: 1040,
+          chapter: 1018,
           value: {
             it: 'Pirati di Cappello di Paglia, compagno di Nami',
             en: 'Straw Hat Pirates, Nami’s partner',

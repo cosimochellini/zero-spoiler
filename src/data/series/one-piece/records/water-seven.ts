@@ -1061,7 +1061,7 @@ export const waterSeven: OnePieceSaga = {
       status: [{ episode: 231, value: 'alive' }],
       affiliation: [
         { episode: 231, factions: ['galley-la'], value: GALLEY_LA_DOCK_ONE },
-        { episode: 244, factions: ['cp9'], value: CIPHER_POL_9 },
+        { episode: 244, chapter: 345, factions: ['cp9'], value: CIPHER_POL_9 },
         { episode: 886, chapter: 907, factions: ['cp0'], value: CIPHER_POL_0 },
       ],
       devilFruit: [{ episode: 286, value: ['ox-ox-fruit-model-giraffe'] }],
@@ -1104,7 +1104,7 @@ export const waterSeven: OnePieceSaga = {
           factions: ['galley-la'],
           value: GALLEY_LA_DOCK_ONE,
         },
-        { episode: 244, factions: ['cp9'], value: CIPHER_POL_9 },
+        { episode: 244, chapter: 345, factions: ['cp9'], value: CIPHER_POL_9 },
         {
           episode: 266,
           factions: ['cp9'],
@@ -1155,7 +1155,7 @@ export const waterSeven: OnePieceSaga = {
             en: 'Galley-La Company, Iceburg’s secretary',
           },
         },
-        { episode: 244, factions: ['cp9'], value: CIPHER_POL_9 },
+        { episode: 244, chapter: 345, factions: ['cp9'], value: CIPHER_POL_9 },
       ],
       devilFruit: [{ episode: 293, value: ['bubble-bubble-fruit'] }],
     },
@@ -1184,7 +1184,7 @@ export const waterSeven: OnePieceSaga = {
             en: 'Blueno’s Bar, barkeeper',
           },
         },
-        { episode: 244, factions: ['cp9'], value: CIPHER_POL_9 },
+        { episode: 244, chapter: 345, factions: ['cp9'], value: CIPHER_POL_9 },
       ],
       devilFruit: [{ episode: 243, value: ['door-door-fruit'] }],
     },
@@ -1204,6 +1204,7 @@ export const waterSeven: OnePieceSaga = {
         },
         {
           episode: 244,
+          chapter: 345,
           value: {
             it: 'Cipher Pol 9, piccione di Rob Lucci',
             en: 'Cipher Pol 9, Rob Lucci’s pigeon',
@@ -1369,7 +1370,7 @@ export const waterSeven: OnePieceSaga = {
           episode: 235,
           value: { it: 'Franky Family, capo', en: 'Franky Family, boss' },
         },
-        { episode: 322, value: STRAW_HATS },
+        { episode: 322, chapter: 437, value: STRAW_HATS },
       ],
       // Franky says it himself at 385 (chapter 490).
       origin: [
@@ -1471,16 +1472,12 @@ export const waterSeven: OnePieceSaga = {
           episode: 249,
           value: { it: 'Cipher Pol N. 5', en: 'Cipher Pol No. 5' },
         },
+        // Chief on the call in ch 358 / ep 250, raised to his record's 360.
+        // No demotion entry: neither ch 430–431 nor ep 313 shows one.
         {
           episode: 250,
+          chapter: 360,
           value: { it: 'Cipher Pol 9, capo', en: 'Cipher Pol 9, chief' },
-        },
-        {
-          episode: 313,
-          value: {
-            it: 'Degradato, sotto inchiesta',
-            en: 'Demoted, under investigation',
-          },
         },
         { episode: 746, chapter: 801, value: CIPHER_POL_0 },
       ],
@@ -1551,6 +1548,7 @@ export const waterSeven: OnePieceSaga = {
         { episode: 259, value: CIPHER_POL_9 },
         {
           episode: 262,
+          chapter: 373,
           value: {
             it: 'Ex agente del Cipher Pol 9, espulso',
             en: 'Former Cipher Pol 9 agent, expelled',
@@ -1600,6 +1598,7 @@ export const waterSeven: OnePieceSaga = {
         },
         {
           episode: 1116,
+          chapter: 1082,
           value: { it: 'Marina, viceammiraglio', en: 'Marines, vice admiral' },
         },
       ],
@@ -1708,8 +1707,11 @@ export const waterSeven: OnePieceSaga = {
             en: 'Enies Lobby, gatekeepers under the World Government',
           },
         },
+        // They turn on the government in ch 384 / ep 271, raised to their
+        // record's chapter 385.
         {
-          episode: 312,
+          episode: 271,
+          chapter: 385,
           value: {
             it: 'Pirati dei Giganti Guerrieri, liberati',
             en: 'Giant Warrior Pirates, freed',

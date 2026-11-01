@@ -25051,6 +25051,56 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=322262",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=322262",
       "contentSha256": "06eb0f62ba80b96517ff8ee2fd4af6a45d26391a69963c66fa45adef7ba7e488"
+    },
+    "en-Chapter_638.json": {
+      "locale": "en",
+      "title": "Chapter 638",
+      "revision": 2110053,
+      "revisionDate": "2026-04-01T09:43:08Z",
+      "url": "https://onepiece.fandom.com/wiki/Chapter_638",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2110053",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2110053",
+      "contentSha256": "cf1431025ffcc169d5fa290a07c9535ecffe2c95ead9f14c1cbe69eeca0ef1bc"
+    },
+    "en-Straw_Hat_Grand_Fleet.json": {
+      "locale": "en",
+      "title": "Straw Hat Grand Fleet",
+      "revision": 2132797,
+      "revisionDate": "2026-09-17T09:48:55Z",
+      "url": "https://onepiece.fandom.com/wiki/Straw_Hat_Grand_Fleet",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2132797",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2132797",
+      "contentSha256": "1b5780bb16759a45230d21af66449ceeeafd267cbdef6dd1b8b97e1315eed0ac"
+    },
+    "en-Walrus_School.json": {
+      "locale": "en",
+      "title": "Walrus School",
+      "revision": 2133507,
+      "revisionDate": "2026-09-27T01:20:09Z",
+      "url": "https://onepiece.fandom.com/wiki/Walrus_School",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2133507",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2133507",
+      "contentSha256": "bed4ff96aa707985b5c188d6b5f3f707db1b8c8de4ded67c783e8a8097894882"
+    },
+    "en-From_the_Decks_of_the_World.json": {
+      "locale": "en",
+      "title": "From the Decks of the World",
+      "revision": 2135633,
+      "revisionDate": "2026-10-14T21:59:30Z",
+      "url": "https://onepiece.fandom.com/wiki/From_the_Decks_of_the_World",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2135633",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2135633",
+      "contentSha256": "690a2e40719ae74603ecf50613a8e5c43b6d75c21cedb1babcaeb3380d3b0c13"
+    },
+    "en-Giant_Warrior_Pirates.json": {
+      "locale": "en",
+      "title": "Giant Warrior Pirates",
+      "revision": 2133918,
+      "revisionDate": "2026-09-29T13:43:55Z",
+      "url": "https://onepiece.fandom.com/wiki/Giant_Warrior_Pirates",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2133918",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2133918",
+      "contentSha256": "6fd1da22c9eaa557d4b7de45444b8660b219b986a0b146968f456b74c2aecbf8"
     }
   }
 }

@@ -1125,10 +1125,9 @@ export const skypiea: OnePieceSaga = {
             en: 'Former leader of the Whitebeard Pirates’ remnants',
           },
         },
-        // A doctor on Sphinx in chapter 909 (p. 4); the episode is his
-        // affiliation’s, 958.
+        // A doctor on Sphinx in chapter 909 (p. 4), told in episode 890.
         {
-          episode: 958,
+          episode: 890,
           chapter: 909,
           value: {
             it: 'Medico dell’isola di Sphinx',
@@ -1160,8 +1159,10 @@ export const skypiea: OnePieceSaga = {
             en: 'Whitebeard Pirates, acting captain',
           },
         },
+        // Ch 909 p. 4 / ep 890, as his role.
         {
-          episode: 958,
+          episode: 890,
+          chapter: 909,
           factions: ['independent'],
           value: {
             it: 'Medico dell’isola di Sphinx',
