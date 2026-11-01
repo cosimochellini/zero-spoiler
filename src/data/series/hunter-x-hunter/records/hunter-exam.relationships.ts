@@ -1414,8 +1414,8 @@ const links = {
       it: 'Membro della Brigata che uccide',
     },
     summary: {
-      en: 'Kurapika asks Uvogin about the Kurta Clan, catches him in a chain hidden with In and beats him. Uvogin will not say where the other members are, and the Judgment Chain kills him. Kurapika buries him.',
-      it: 'Kurapika chiede a Uborghin del clan Kurta, lo cattura con una catena nascosta con l’In e lo picchia. Uborghin non vuole dire dove sono gli altri membri, e la Catena del Giudizio lo uccide. Kurapika lo seppellisce.',
+      en: 'Kurapika tells Uvogin he is avenging the Kurta Clan, catches him in a chain hidden with In and beats him. Uvogin will not say where the other members are, and the Judgment Chain kills him. Kurapika buries him.',
+      it: 'Kurapika dice a Uborghin che sta vendicando il clan Kurta, lo cattura con una catena nascosta con l’In e lo picchia. Uborghin non vuole dire dove sono gli altri membri, e la Catena del Giudizio lo uccide. Kurapika lo seppellisce.',
     },
   },
   kurapikaHisokaDeal: {

@@ -286,8 +286,8 @@ const links = {
       it: 'Membro della Brigata che lo uccide',
     },
     summary: {
-      en: 'Nobunaga, Pakunoda and Kortopi catch Squala’s car in traffic. While Pakunoda questions him, Squala reacts to Eliza’s name, and Nobunaga cuts off his head.',
-      it: 'Nobunaga, Pakunoda e Kortopi bloccano l’auto di Squala ferma nel traffico. Mentre Pakunoda lo interroga, Squala reagisce al nome di Eliza, e Nobunaga gli taglia la testa.',
+      en: 'Nobunaga, Pakunoda and Kortopi catch Squala in his car. While Pakunoda questions him, Squala reacts to Eliza’s name, and Nobunaga cuts off his head.',
+      it: 'Nobunaga, Pakunoda e Kortopi bloccano Squala nella sua auto. Mentre Pakunoda lo interroga, Squala reagisce al nome di Eliza, e Nobunaga gli taglia la testa.',
     },
   },
   // Shachmono Tocino
@@ -395,12 +395,12 @@ const links = {
   dalzollenePhinks: {
     character: 'phinks',
     type: {
-      en: 'Troupe member who kills him',
-      it: 'Membro della Brigata che lo uccide',
+      en: 'Troupe member who comes for Uvogin',
+      it: 'Membro della Brigata che viene a prendere Uborghin',
     },
     summary: {
-      en: 'Phinks arrives with other Troupe members disguised as Mafia men, kills Dalzollene and frees Uvogin.',
-      it: 'Phinks arriva con altri membri della Brigata travestiti da mafiosi, uccide Dalzorne e libera Uborghin.',
+      en: 'Phinks and other Troupe members, disguised as Mafia men, reach the place where the bodyguards hold Uvogin. They kill Dalzollene and free Uvogin.',
+      it: 'Phinks e altri membri della Brigata, travestiti da mafiosi, raggiungono il posto dove le guardie del corpo tengono Uborghin. Uccidono Dalzorne e liberano Uborghin.',
     },
   },
   // Neon Nostrade
@@ -769,15 +769,15 @@ const links = {
       it: 'Utilizzatore di catene che lo uccide',
     },
     summary: {
-      en: 'Kurapika asks Uvogin about the Kurta Clan, catches him in a chain hidden with In and beats him. Uvogin will not say where the other members are, and Kurapika’s Judgment Chain kills him.',
-      it: 'Kurapika chiede a Uborghin del clan Kurta, lo cattura con una catena nascosta con l’In e lo picchia. Uborghin non vuole dire dove sono gli altri membri, e la Catena del Giudizio di Kurapika lo uccide.',
+      en: 'Kurapika tells Uvogin he is avenging the Kurta Clan, catches him in a chain hidden with In and beats him. Uvogin will not say where the other members are, and Kurapika’s Judgment Chain kills him.',
+      it: 'Kurapika dice a Uborghin che sta vendicando il clan Kurta, lo cattura con una catena nascosta con l’In e lo picchia. Uborghin non vuole dire dove sono gli altri membri, e la Catena del Giudizio di Kurapika lo uccide.',
     },
   },
   uvoginDalzollene: {
     character: 'dalzollene',
     type: {
       en: 'Bodyguard who tries to stab him',
-      it: 'Guardia del corpo che cerca di colpirlo',
+      it: 'Guardia del corpo che cerca di trafiggerlo',
     },
     summary: {
       en: 'Dalzollene questions the captured Uvogin and tries to stab him, but the blade breaks against Uvogin’s Nen. Uvogin offers to spare the bodyguards if they let him go.',
@@ -788,8 +788,8 @@ const links = {
     character: 'phinks',
     type: { en: 'Comrade who frees him', it: 'Compagno che lo libera' },
     summary: {
-      en: 'Phinks and other Troupe members, disguised as Mafia men, reach the place where the bodyguards hold Uvogin. Phinks kills Dalzollene, and they free Uvogin.',
-      it: 'Phinks e altri membri della Brigata, travestiti da mafiosi, raggiungono il posto dove le guardie del corpo tengono Uborghin. Phinks uccide Dalzorne, e liberano Uborghin.',
+      en: 'Phinks and other Troupe members, disguised as Mafia men, reach the place where the bodyguards hold Uvogin. They kill Dalzollene and free him.',
+      it: 'Phinks e altri membri della Brigata, travestiti da mafiosi, raggiungono il posto dove le guardie del corpo tengono Uborghin. Uccidono Dalzorne e lo liberano.',
     },
   },
   uvoginShizuku: {
@@ -849,8 +849,8 @@ const links = {
     character: 'gon-freecss',
     type: { en: 'Boy he grabs', it: 'Ragazzo che blocca' },
     summary: {
-      en: 'At the Troupe’s hideout Feitan recognizes Gon as the boy who beat Shizuku at arm wrestling. When Gon slams Nobunaga’s hand down, Feitan grabs him from behind, and he lets Gon go only after a coin toss with Nobunaga.',
-      it: 'Nel covo della Brigata Feitan riconosce Gon come il ragazzo che ha battuto Shizuku a braccio di ferro. Quando Gon schiaccia la mano di Nobunaga sul tavolo, Feitan lo afferra da dietro, e lo lascia andare solo dopo un lancio di moneta con Nobunaga.',
+      en: 'At the Troupe’s hideout Feitan recognizes Gon from Shizuku’s arm-wrestling match. When Gon slams Nobunaga’s hand down, Feitan grabs him from behind, and he lets Gon go only after a coin toss with Nobunaga.',
+      it: 'Nel covo della Brigata Feitan riconosce Gon dalla sfida a braccio di ferro con Shizuku. Quando Gon schiaccia la mano di Nobunaga sul tavolo, Feitan lo afferra da dietro, e lo lascia andare solo dopo un lancio di moneta con Nobunaga.',
     },
   },
   feitanNobunaga: {
@@ -939,8 +939,8 @@ const links = {
     character: 'phinks',
     type: { en: 'Member he talks down', it: 'Membro che fa ragionare' },
     summary: {
-      en: 'When Phinks will not let Pakunoda leave with the hostages, Franklin tells him that the worst that could happen is the Troupe dying out, and that falling apart would be the worst betrayal of their leader.',
-      it: 'Quando Phinks non vuole lasciar partire Pakunoda con gli ostaggi, Franklin gli dice che la cosa peggiore sarebbe la fine della Brigata, e che dividersi sarebbe il tradimento peggiore verso il loro capo.',
+      en: 'When Phinks will not let Pakunoda leave with the hostages, Franklin tells him to let her go and reminds the others that the worst that could happen is the Troupe dying out.',
+      it: 'Quando Phinks non vuole lasciar partire Pakunoda con gli ostaggi, Franklin gli dice di lasciarla andare e ricorda agli altri che la cosa peggiore sarebbe la fine della Brigata.',
     },
   },
   // Nobunaga
@@ -1022,7 +1022,7 @@ const links = {
     type: { en: 'Leader he defies', it: 'Capo a cui si oppone' },
     summary: {
       en: 'When Chrollo orders the Troupe to leave Yorknew City, Nobunaga refuses, because they still have to find the chain user. Chrollo writes Nobunaga’s fortune with the power he took from Neon, and it says that more members will die.',
-      it: 'Quando Quoll ordina alla Brigata di lasciare York Shin City, Nobunaga rifiuta, perché devono ancora trovare l’utilizzatore di catene. Quoll scrive la profezia di Nobunaga con il potere che ha preso a Neon, e dice che moriranno altri membri.',
+      it: 'Quando Quoll ordina alla Brigata di lasciare York Shin City, Nobunaga rifiuta, perché devono ancora trovare l’utilizzatore di catene. Quoll scrive la profezia di Nobunaga con il potere che ha rubato a Neon, e la profezia dice che moriranno altri membri.',
     },
   },
   nobunagaHisoka: {
@@ -1040,8 +1040,8 @@ const links = {
     character: 'squala',
     type: { en: 'Bodyguard he kills', it: 'Guardia del corpo che uccide' },
     summary: {
-      en: 'Nobunaga, Pakunoda and Kortopi catch Squala’s car in traffic. While Pakunoda questions him, Squala reacts to Eliza’s name, and Nobunaga cuts off his head.',
-      it: 'Nobunaga, Pakunoda e Kortopi bloccano l’auto di Squala ferma nel traffico. Mentre Pakunoda lo interroga, Squala reagisce al nome di Eliza, e Nobunaga gli taglia la testa.',
+      en: 'Nobunaga, Pakunoda and Kortopi catch Squala in his car. While Pakunoda questions him, Squala reacts to Eliza’s name, and Nobunaga cuts off his head.',
+      it: 'Nobunaga, Pakunoda e Kortopi bloccano Squala nella sua auto. Mentre Pakunoda lo interroga, Squala reagisce al nome di Eliza, e Nobunaga gli taglia la testa.',
     },
   },
   nobunagaPakunoda: {
@@ -1058,10 +1058,13 @@ const links = {
   // Phinks
   phinksDalzollene: {
     character: 'dalzollene',
-    type: { en: 'Bodyguard he kills', it: 'Guardia del corpo che uccide' },
+    type: {
+      en: 'Bodyguard killed in the rescue',
+      it: 'Guardia del corpo uccisa nel salvataggio',
+    },
     summary: {
-      en: 'Disguised as a Mafia man with other Troupe members, Phinks reaches the place where the bodyguards hold Uvogin and kills Dalzollene.',
-      it: 'Travestito da mafioso con altri membri della Brigata, Phinks raggiunge il posto dove le guardie del corpo tengono Uborghin e uccide Dalzorne.',
+      en: 'Phinks and other Troupe members, disguised as Mafia men, reach the place where the bodyguards hold Uvogin. They kill Dalzollene and free Uvogin.',
+      it: 'Phinks e altri membri della Brigata, travestiti da mafiosi, raggiungono il posto dove le guardie del corpo tengono Uborghin. Uccidono Dalzorne e liberano Uborghin.',
     },
   },
   phinksUvogin: {
@@ -1125,8 +1128,8 @@ const links = {
     character: 'franklin',
     type: { en: 'Member who talks him down', it: 'Membro che lo fa ragionare' },
     summary: {
-      en: 'Franklin tells Phinks that the worst that could happen is the Troupe dying out, and persuades him to let Pakunoda leave with the hostages.',
-      it: 'Franklin dice a Phinks che la cosa peggiore sarebbe la fine della Brigata, e lo convince a lasciar partire Pakunoda con gli ostaggi.',
+      en: 'When Phinks will not let Pakunoda leave with the hostages, Franklin tells him to let her go and reminds the others that the worst that could happen is the Troupe dying out.',
+      it: 'Quando Phinks non vuole lasciar partire Pakunoda con gli ostaggi, Franklin gli dice di lasciarla andare e ricorda agli altri che la cosa peggiore sarebbe la fine della Brigata.',
     },
   },
   // Shalnark
@@ -1159,8 +1162,8 @@ const links = {
       it: 'Membro con cui manda avanti l’asta',
     },
     summary: {
-      en: 'When the Troupe runs the reopened auction from backstage, Shalnark controls the auctioneer with his Nen while Kortopi makes exact copies of the items.',
-      it: 'Quando la Brigata manda avanti di nascosto l’asta riaperta, Shalnark controlla il banditore con il suo Nen mentre Kortopi fa copie esatte degli oggetti.',
+      en: 'When the Troupe runs the reopened auction from backstage, Shalnark controls the auctioneer with his Nen while Kortopi makes an exact copy of an item.',
+      it: 'Quando la Brigata manda avanti di nascosto l’asta riaperta, Shalnark controlla il banditore con il suo Nen mentre Kortopi fa una copia esatta di un oggetto.',
     },
   },
   shalnarkPakunoda: {
@@ -1220,7 +1223,7 @@ const links = {
     character: 'neon-nostrade',
     type: { en: 'Daughter', it: 'Figlia' },
     summary: {
-      en: 'Light’s daughter Neon writes fortunes for his friends. He keeps her away from the auction and sends her home with Basho and Melody, promising her another one.',
+      en: 'Light’s daughter Neon writes fortunes for his friends. He keeps her away from the auction and sends her home with Basho and Melody, promising her another auction.',
       it: 'Neon, la figlia di Light, scrive le profezie per i suoi amici. Lui la tiene lontana dall’asta e la manda a casa con Basho e Melody, promettendole un’altra asta.',
     },
   },
@@ -1361,8 +1364,8 @@ const links = {
   rabidDogPorcupine: {
     character: 'porcupine',
     type: {
-      en: 'Shadow Beast who holds Uvogin for him',
-      it: 'Bestia dell’Ombra che gli trattiene Uborghin',
+      en: 'Shadow Beast who holds Uvogin’s fist',
+      it: 'Bestia dell’Ombra che trattiene il pugno di Uborghin',
     },
     summary: {
       en: 'While Porcupine’s hairs hold Uvogin’s fist, Rabid Dog bites pieces out of Uvogin.',
@@ -1395,8 +1398,8 @@ const links = {
   porcupineRabidDog: {
     character: 'rabid-dog',
     type: {
-      en: 'Shadow Beast he holds Uvogin for',
-      it: 'Bestia dell’Ombra per cui trattiene Uborghin',
+      en: 'Shadow Beast who bites Uvogin while he holds him',
+      it: 'Bestia dell’Ombra che morde Uborghin mentre lui lo trattiene',
     },
     summary: {
       en: 'While Porcupine’s hairs hold Uvogin’s fist, Rabid Dog bites pieces out of Uvogin.',
@@ -1433,8 +1436,8 @@ const links = {
       it: 'Bestia dell’Ombra che trattiene Uborghin',
     },
     summary: {
-      en: 'Leech moves in on Uvogin while Porcupine’s hairs hold his fist and the poison brings him down.',
-      it: 'Sanguisuga attacca Uborghin mentre i peli di Porcospino gli trattengono il pugno e il veleno lo mette a terra.',
+      en: 'Leech moves in on Uvogin while Porcupine’s hairs hold his fist and the poison holds him down.',
+      it: 'Sanguisuga attacca Uborghin mentre i peli di Porcospino gli trattengono il pugno e il veleno lo tiene a terra.',
     },
   },
 } satisfies Record<string, Relationship>
