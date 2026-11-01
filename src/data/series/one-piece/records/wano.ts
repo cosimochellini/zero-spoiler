@@ -1320,6 +1320,7 @@ export const wano: OnePieceSaga = {
         // chapter, and he breaks out in ch 948 / ep 948: as his role.
         {
           episode: 936,
+          chapter: 946,
           value: {
             it: 'Nove Foderi Rossi; prigioniero del campo di lavoro di Udon',
             en: 'Nine Red Scabbards; prisoner of the Udon labour camp',

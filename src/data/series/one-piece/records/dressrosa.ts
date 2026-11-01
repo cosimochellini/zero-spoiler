@@ -1346,9 +1346,9 @@ export const dressrosa: OnePieceSaga = {
             en: 'Colosseum gladiator of Dressrosa',
           },
         },
-        // Ch 796 / ep 741, where the Riku family is restored.
+        // Ch 796 / ep 740, where the Riku family is restored.
         {
-          episode: 741,
+          episode: 740,
           chapter: 796,
           value: {
             it: 'Famiglia reale Riku, principessa',
@@ -1435,9 +1435,9 @@ export const dressrosa: OnePieceSaga = {
           chapter: 727,
           value: { it: 'Ex re di Dressrosa', en: 'Former king of Dressrosa' },
         },
-        // Gatz announces his return to the throne in chapter 796, episode 741.
+        // Gatz announces his return to the throne in chapter 796, episode 740.
         {
-          episode: 741,
+          episode: 740,
           chapter: 796,
           value: { it: 'Re di Dressrosa', en: 'King of Dressrosa' },
         },
@@ -1464,8 +1464,9 @@ export const dressrosa: OnePieceSaga = {
             en: 'Former king of Dressrosa, deposed',
           },
         },
+        // Ch 796 / ep 740: Doldo's return to the throne.
         {
-          episode: 741,
+          episode: 740,
           chapter: 796,
           value: {
             it: 'Re di Dressrosa, restaurato',

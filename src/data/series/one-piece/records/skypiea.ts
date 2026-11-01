@@ -1125,13 +1125,14 @@ export const skypiea: OnePieceSaga = {
             en: 'Former leader of the Whitebeard Pirates’ remnants',
           },
         },
-        // A doctor on Sphinx in chapter 909 (p. 4), told in episode 890.
+        // A doctor on Whitebeard's home island in chapter 909 (p. 4), told in
+        // episode 890. The island's name comes only from a Vivre Card.
         {
           episode: 890,
           chapter: 909,
           value: {
-            it: 'Medico dell’isola di Sphinx',
-            en: 'Doctor of Sphinx Island',
+            it: 'Medico dell’isola natale di Barbabianca',
+            en: 'Doctor on Whitebeard’s home island',
           },
         },
       ],
@@ -1159,14 +1160,14 @@ export const skypiea: OnePieceSaga = {
             en: 'Whitebeard Pirates, acting captain',
           },
         },
-        // Ch 909 p. 4 / ep 890, as his role.
+        // Ch 909 p. 4 / ep 890, as his role; the island is not named there.
         {
           episode: 890,
           chapter: 909,
           factions: ['independent'],
           value: {
-            it: 'Medico dell’isola di Sphinx',
-            en: 'Doctor of Sphinx Island',
+            it: 'Medico dell’isola natale di Barbabianca',
+            en: 'Doctor on Whitebeard’s home island',
           },
         },
       ],

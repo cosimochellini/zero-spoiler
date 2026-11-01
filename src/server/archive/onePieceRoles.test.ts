@@ -404,7 +404,10 @@ const ROLES: { changes: Change[]; id: string }[] = [
           'Ex capo dei superstiti dei Pirati di Barbabianca',
           'Former leader of the Whitebeard Pirates’ remnants',
         ),
-        to: role('Medico dell’isola di Sphinx', 'Doctor of Sphinx Island'),
+        to: role(
+          'Medico dell’isola natale di Barbabianca',
+          'Doctor on Whitebeard’s home island',
+        ),
       },
     ],
   },
@@ -798,7 +801,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
     id: 'riku-doldo-iii',
     changes: [
       {
-        episode: 741,
+        episode: 740,
         chapter: 796,
         from: role('Ex re di Dressrosa', 'Former king of Dressrosa'),
         to: role('Re di Dressrosa', 'King of Dressrosa'),
@@ -1018,7 +1021,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
         ),
       },
       {
-        episode: 1034,
+        episode: 1033,
         chapter: 1013,
         from: role(
           'Homie nuvola del tuono di Big Mom',

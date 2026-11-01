@@ -65,7 +65,7 @@ const MOVED: Moved[] = [
     890,
     909,
     'Whitebeard Pirates, acting captain',
-    'Doctor of Sphinx Island',
+    'Doctor on Whitebeard’s home island',
   ],
   [
     'kohza',
@@ -152,14 +152,14 @@ const MOVED: Moved[] = [
   ],
   [
     'riku-doldo-iii',
-    741,
+    740,
     796,
     'Former king of Dressrosa, deposed',
     'King of Dressrosa, restored',
   ],
   [
     'rebecca',
-    741,
+    740,
     796,
     'Colosseum gladiator of Dressrosa',
     'Riku royal family, princess',
@@ -193,7 +193,13 @@ const MOVED: Moved[] = [
     'Mokomo Dukedom, ruler of the day',
     'Nine Red Scabbards',
   ],
-  ['inuarashi', 1083, 1056, 'Nine Red Scabbards', 'Wano, shogun’s council'],
+  [
+    'inuarashi',
+    1083,
+    1056,
+    'Nine Red Scabbards',
+    'Wano, Momonosuke’s retainer',
+  ],
   [
     'charlotte-linlin',
     1080,
@@ -213,7 +219,7 @@ const MOVED: Moved[] = [
     1104,
     1072,
     'Cipher Pol 0',
-    'Cipher Pol 0, defector, once a clone of Miss Buckingham Stussy',
+    'Cipher Pol 0, defector, a clone of Miss Buckingham Stussy',
   ],
   [
     'sheepshead',
@@ -229,7 +235,7 @@ const MOVED: Moved[] = [
     'Big Mom Pirates, Big Mom’s homie',
     'Straw Hat Pirates, Nami’s servant',
   ],
-  ['zeus', 1034, 1013, 'Back under Big Mom’s command', 'Cast off by Big Mom'],
+  ['zeus', 1033, 1013, 'Back under Big Mom’s command', 'Cast off by Big Mom'],
   [
     'zeus',
     1040,
@@ -245,6 +251,13 @@ const MOVED: Moved[] = [
     'Nine Red Scabbards',
   ],
   ['ashura-doji', 936, 939, 'Mt. Atama Thieves, boss', 'Nine Red Scabbards'],
+  [
+    'kawamatsu',
+    936,
+    946,
+    undefined,
+    'Nine Red Scabbards; prisoner of the Udon labour camp',
+  ],
   [
     'kawamatsu',
     948,
@@ -358,6 +371,10 @@ const FACTIONS: [
   ['x-drake', 'marines', true, 957, 956],
   ['kanjuro', 'nine-red-scabbards', true, 936, 939],
   ['charlotte-linlin', 'emperors', false, 1080, 1053],
+  ['marco', 'whitebeard-pirates', false, 890, 909],
+  ['baby-5', 'donquixote-pirates', false, 710, 771],
+  ['viola', 'donquixote-pirates', false, 660, 728],
+  ['leo', 'straw-hat-grand-fleet', true, 745, 800],
 ]
 
 const FACTION_CASES = FACTIONS.flatMap(

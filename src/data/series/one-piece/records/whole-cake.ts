@@ -1015,8 +1015,8 @@ export const wholeCake: OnePieceSaga = {
           episode: 1083,
           chapter: 1056,
           value: {
-            it: 'Wano, consiglio dello shogun',
-            en: 'Wano, shogun’s council',
+            it: 'Wano, servitore di Momonosuke',
+            en: 'Wano, Momonosuke’s retainer',
           },
         },
       ],
@@ -1406,8 +1406,8 @@ export const wholeCake: OnePieceSaga = {
           episode: 1104,
           chapter: 1072,
           value: {
-            it: 'Cipher Pol 0, disertrice, un tempo clone di Miss Buckingham Stussy',
-            en: 'Cipher Pol 0, defector, once a clone of Miss Buckingham Stussy',
+            it: 'Cipher Pol 0, disertrice, clone di Miss Buckingham Stussy',
+            en: 'Cipher Pol 0, defector, a clone of Miss Buckingham Stussy',
           },
         },
       ],
@@ -2380,9 +2380,9 @@ export const wholeCake: OnePieceSaga = {
             en: 'Big Mom’s thundercloud homie',
           },
         },
-        // She casts him off in chapter 1013, episode 1034.
+        // She casts him off in chapter 1013, episode 1033.
         {
-          episode: 1034,
+          episode: 1033,
           chapter: 1013,
           value: {
             it: 'Nuvola del tuono scartata da Big Mom',
@@ -2426,8 +2426,9 @@ export const wholeCake: OnePieceSaga = {
             en: 'Back under Big Mom’s command',
           },
         },
+        // Ch 1013 / ep 1033: no longer needed in her crew.
         {
-          episode: 1034,
+          episode: 1033,
           chapter: 1013,
           value: { it: 'Scartato da Big Mom', en: 'Cast off by Big Mom' },
         },
