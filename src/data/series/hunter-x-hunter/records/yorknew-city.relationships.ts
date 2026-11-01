@@ -1448,8 +1448,8 @@ const links = {
       it: 'Ragazzo che vede l’aura nel suo vaso',
     },
     summary: {
-      en: 'Zepile outbids Gon on a vase he made himself. Over lunch Gon tells him that the vase is no junk, because it holds aura, and Zepile offers to help the boys.',
-      it: 'Sepail supera l’offerta di Gon per un vaso fatto da lui stesso. A pranzo Gon gli dice che il vaso non è robaccia, perché contiene aura, e Sepail si offre di aiutare i ragazzi.',
+      en: 'Zepile outbids Gon on a vase he made himself. Over lunch Zepile offers to help the boys, and Gon tells him that the vase is no junk, because it holds aura.',
+      it: 'Sepail supera l’offerta di Gon per un vaso fatto da lui stesso. A pranzo Sepail si offre di aiutare i ragazzi, e Gon gli dice che il vaso non è robaccia, perché contiene aura.',
     },
   },
   zepileGonLesson: {
@@ -1481,16 +1481,16 @@ const links = {
       it: 'Ragazzo che gli offre il pranzo',
     },
     summary: {
-      en: 'Killua refuses Zepile a share of the sale of the wooden vault and treats him to lunch instead. When the boys go after the Troupe, they leave the sale of the vault to Zepile.',
-      it: 'Killua rifiuta a Sepail una parte della vendita del forziere di legno e gli offre invece il pranzo. Quando i ragazzi si mettono dietro alla Brigata, lasciano a Sepail la vendita del forziere.',
+      en: 'Killua refuses to give Zepile a share of the sale and treats him to lunch instead. When the boys go after the Troupe, they leave the sale of the wooden statue to Zepile.',
+      it: 'Killua rifiuta di dare a Sepail una parte della vendita e gli offre invece il pranzo. Quando i ragazzi si mettono dietro alla Brigata, lasciano a Sepail la vendita della statua di legno.',
     },
   },
   zepileLeorio: {
     character: 'leorio-paradinight',
     type: { en: 'Friend he drinks with', it: 'Amico con cui beve' },
     summary: {
-      en: 'While Gon and Killua tail the Troupe, Leorio helps Zepile at the auction, and the boys come back to find the two drinking together.',
-      it: 'Mentre Gon e Killua pedinano la Brigata, Leorio aiuta Sepail all’asta, e i ragazzi tornano e trovano i due a bere insieme.',
+      en: 'While Gon and Killua tail the Troupe, Killua sends Leorio to help Zepile with the auction, and the boys come back to find the two drinking together.',
+      it: 'Mentre Gon e Killua pedinano la Brigata, Killua manda Leorio ad aiutare Sepail con l’asta, e i ragazzi tornano e trovano i due a bere insieme.',
     },
   },
   // Pakunoda
@@ -1653,8 +1653,8 @@ const links = {
   pakunodaHisoka: {
     character: 'hisoka',
     type: {
-      en: 'Member who tells her his fortune',
-      it: 'Membro che le racconta la sua profezia',
+      en: 'Man who tells her his real fortune',
+      it: 'Uomo che le racconta la sua vera profezia',
     },
     summary: {
       en: 'After the exchange Hisoka tells Pakunoda what his real fortune said.',
@@ -1696,8 +1696,8 @@ const links = {
       it: 'Guardia del corpo che lo paralizza',
     },
     summary: {
-      en: 'Zenji mocks Kurapika over the Troupe leader’s death, and Kurapika punches him. Zenji bids against him for the Scarlet Eyes. When Zenji later points a gun at him, Kurapika’s eyes turn scarlet, and Zenji is left frozen with fear as he walks past.',
-      it: 'Zenji deride Kurapika per la morte del capo della Brigata, e Kurapika gli dà un pugno. Zenji fa offerte contro di lui per gli occhi scarlatti. Quando più tardi Zenji gli punta contro una pistola, gli occhi di Kurapika diventano scarlatti, e Zenji resta paralizzato dalla paura mentre lui passa.',
+      en: 'Zenji mocks Kurapika, who was busy with the ambulance while the Troupe’s leader was reported killed, and Kurapika punches him. Zenji bids against him for the Scarlet Eyes. When Zenji later points a gun at him, Kurapika’s eyes turn scarlet, and Zenji is left frozen with fear as he walks past.',
+      it: 'Zenji deride Kurapika, che era occupato con l’ambulanza mentre il capo della Brigata veniva dato per morto, e Kurapika gli dà un pugno. Zenji fa offerte contro di lui per gli occhi scarlatti. Quando più tardi Zenji gli punta contro una pistola, gli occhi di Kurapika diventano scarlatti, e Zenji resta paralizzato dalla paura mentre lui passa.',
     },
   },
   // Kortopi
@@ -1741,8 +1741,8 @@ const links = {
       it: 'Membro di cui segue l’intuito',
     },
     summary: {
-      en: 'Machi has a hunch that the two boys who escaped have something to do with the chain user, and as a precaution Kortopi copies the Troupe’s hideout many times over.',
-      it: 'Machi ha l’intuizione che i due ragazzi fuggiti abbiano a che fare con l’utilizzatore di catene, e per precauzione Kortopi copia molte volte il covo della Brigata.',
+      en: 'Machi has a hunch about the two boys who escaped and know where the hideout is, and as a precaution Kortopi copies the Troupe’s hideout many times over.',
+      it: 'Machi ha un’intuizione sui due ragazzi fuggiti che sanno dov’è il covo, e per precauzione Kortopi copia molte volte il covo della Brigata.',
     },
   },
   kortopiChrollo: {
@@ -1814,8 +1814,8 @@ const links = {
   chrolloHisoka: {
     character: 'hisoka',
     type: {
-      en: 'Member whose fortune he reads',
-      it: 'Membro di cui legge la profezia',
+      en: 'Man whose fake fortune he reads',
+      it: 'Uomo di cui legge la profezia falsa',
     },
     summary: {
       en: 'Hisoka hands over a fortune he has faked. From it Chrollo concludes that the chain user has at least two abilities, and he decides that the Troupe will stay in Yorknew City.',
@@ -1825,8 +1825,8 @@ const links = {
   chrolloHisokaExchange: {
     character: 'hisoka',
     type: {
-      en: 'Member who comes to fight him',
-      it: 'Membro che viene per affrontarlo',
+      en: 'Rival who comes to fight him',
+      it: 'Rivale che viene per affrontarlo',
     },
     summary: {
       en: 'Hisoka comes to the exchange to fight Chrollo, but Chrollo tells him that he cannot use Nen, and Hisoka leaves him.',
@@ -1837,11 +1837,11 @@ const links = {
     character: 'machi',
     type: {
       en: 'Member whose hunch he trusts',
-      it: 'Membro di cui si fida dell’intuito',
+      it: 'Membro del cui intuito si fida',
     },
     summary: {
-      en: 'Machi tells Chrollo that she thinks the two boys have something to do with the chain user, and as a precaution Kortopi copies the hideout many times over.',
-      it: 'Machi dice a Quoll che secondo lei i due ragazzi hanno a che fare con l’utilizzatore di catene, e per precauzione Kortopi copia molte volte il covo.',
+      en: 'Machi warns Chrollo about two boys who know where the hideout is. Chrollo trusts her hunch, and as a precaution Kortopi copies the hideout many times over.',
+      it: 'Machi mette in guardia Quoll su due ragazzi che sanno dov’è il covo. Quoll si fida del suo intuito, e per precauzione Kortopi copia molte volte il covo.',
     },
   },
   chrolloGon: {

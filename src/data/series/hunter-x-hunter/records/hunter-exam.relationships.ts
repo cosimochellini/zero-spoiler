@@ -1606,8 +1606,8 @@ const links = {
       it: 'Capo della Brigata che cattura',
     },
     summary: {
-      en: 'In the blackout at the Hotel Beitacle Kurapika takes Chrollo, binds him with his Judgment Chain, forbidding him to use Nen or contact the other members, and trades him for Gon and Killua.',
-      it: 'Durante il buio all’Hotel Beitacle Kurapika rapisce Quoll, lo vincola con la sua Catena del Giudizio, vietandogli di usare il Nen e di contattare gli altri membri, e lo scambia con Gon e Killua.',
+      en: 'Kurapika takes Chrollo in the blackout at the Hotel Beitacle. Later he binds him with his Judgment Chain, forbidding him to use Nen or contact the other members, and trades him for Gon and Killua.',
+      it: 'Kurapika rapisce Quoll durante il buio all’Hotel Beitacle. Più tardi lo vincola con la sua Catena del Giudizio, vietandogli di usare il Nen e di contattare gli altri membri, e lo scambia con Gon e Killua.',
     },
   },
   kurapikaPakunoda: {
@@ -1617,16 +1617,16 @@ const links = {
       it: 'Membro della Brigata che vincola',
     },
     summary: {
-      en: 'Kurapika binds Pakunoda with his Judgment Chain: she must free Gon and Killua by midnight without tricks and say nothing about him.',
-      it: 'Kurapika vincola Pakunoda con la sua Catena del Giudizio: deve liberare Gon e Killua entro mezzanotte senza trucchi e non dire niente di lui.',
+      en: 'Kurapika binds Pakunoda with his Judgment Chain: she must free Gon and Killua by midnight without tricks and say nothing about him. When she shares her memories with the Troupe, the chain kills her.',
+      it: 'Kurapika vincola Pakunoda con la sua Catena del Giudizio: deve liberare Gon e Killua entro mezzanotte senza trucchi e non dire niente di lui. Quando condivide i suoi ricordi con la Brigata, la catena la uccide.',
     },
   },
   leorioZepile: {
     character: 'zepile',
     type: { en: 'Appraiser he drinks with', it: 'Perito con cui beve' },
     summary: {
-      en: 'Leorio helps Zepile at the auction while Gon and Killua tail the Troupe, and the boys come back to find the two drinking together.',
-      it: 'Leorio aiuta Sepail all’asta mentre Gon e Killua pedinano la Brigata, e i ragazzi tornano e trovano i due a bere insieme.',
+      en: 'While Gon and Killua tail the Troupe, Killua sends Leorio to help Zepile with the auction, and the boys come back to find the two drinking together.',
+      it: 'Mentre Gon e Killua pedinano la Brigata, Killua manda Leorio ad aiutare Sepail con l’asta, e i ragazzi tornano e trovano i due a bere insieme.',
     },
   },
   leorioKurapikaDriver: {
@@ -1714,11 +1714,30 @@ const links = {
       it: 'Hisoka chiede aiuto a Illumi per potersi allontanare dalla Brigata, e dopo lo scambio gli scrive che può andarsene.',
     },
   },
+  hisokaKurapikaTeam: {
+    character: 'kurapika',
+    type: { en: 'Hunter he teams up with', it: 'Hunter con cui si allea' },
+    summary: {
+      en: 'Hisoka offers Kurapika a deal against the Phantom Troupe. Kurapika teams up with him, and Hisoka gives him information about the Troupe.',
+      it: 'Hisoka propone a Kurapika un patto contro la Brigata Fantasma. Kurapika si allea con lui, e Hisoka gli dà informazioni sulla Brigata.',
+    },
+  },
+  killuaNobunagaHotel: {
+    character: 'nobunaga',
+    type: {
+      en: 'Troupe member who guards him',
+      it: 'Membro della Brigata che lo sorveglia',
+    },
+    summary: {
+      en: 'Nobunaga guards Killua and Gon at the hideout until they break out through the walls. In the blackout at the Hotel Beitacle he catches Gon.',
+      it: 'Nobunaga sorveglia Killua e Gon nel covo finché i due non sfondano i muri. Durante il buio all’Hotel Beitacle cattura Gon.',
+    },
+  },
   hisokaPakunoda: {
     character: 'pakunoda',
     type: {
-      en: 'Troupe member he tells his fortune',
-      it: 'Membro della Brigata a cui racconta la sua profezia',
+      en: 'Troupe member he tells his real fortune',
+      it: 'Membro della Brigata a cui racconta la sua vera profezia',
     },
     summary: {
       en: 'After the exchange Hisoka tells Pakunoda what his real fortune said.',
@@ -2133,8 +2152,9 @@ export const hunterExamRelationships = {
         links.leorioHisoka,
       ],
     },
-    // The traffic is chapter 111 and episode 56; the lobby is chapter 112
-    // and episode 57.
+    // The traffic is chapter 111 and episode 56; the lobby is chapter 112,
+    // from page 8, and chapter 113, both in episode 57. The pin is the
+    // lobby's last chapter, as in Leorio's 57/113 story.
     {
       episode: 57,
       chapter: 113,
@@ -2495,7 +2515,7 @@ export const hunterExamRelationships = {
         links.hisokaChrollo,
         links.hisokaNobunaga,
         links.hisokaGonReturned,
-        links.hisokaKurapikaDeal,
+        links.hisokaKurapikaTeam,
         links.hisokaMachi,
       ],
     },
@@ -2790,7 +2810,7 @@ export const hunterExamRelationships = {
         links.killuaKurapikaRescue,
         links.killuaIllumiVoice,
         links.killuaSilva,
-        links.killuaNobunaga,
+        links.killuaNobunagaHotel,
       ],
     },
   ],

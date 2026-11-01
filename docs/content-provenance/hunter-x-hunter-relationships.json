@@ -69,7 +69,9 @@
       "hxh-en-Chapter_94-416172.json",
       "hxh-en-Chapter_95-411638.json",
       "hxh-en-Chapter_108-322195.json",
-      "hxh-en-Chapter_119-322184.json"
+      "hxh-en-Chapter_119-322184.json",
+      "hxh-en-Chapter_113-416184.json",
+      "hxh-en-Episode_57_(2011)-416426.json"
     ],
     "ging-freecss": [
       "hxh-en-Ging_Freecss-425761.json",
@@ -97,7 +99,8 @@
       "hxh-en-Chapter_89-416168.json",
       "hxh-en-Chapter_101-329180.json",
       "hxh-en-Chapter_111-416182.json",
-      "hxh-en-Chapter_112-416183.json"
+      "hxh-en-Chapter_112-416183.json",
+      "hxh-en-Chapter_113-416184.json"
     ],
     "kurapika": [
       "hxh-en-Kurapika-425292.json",
@@ -174,7 +177,8 @@
       "hxh-en-Chapter_106-416178.json",
       "hxh-en-Chapter_115-329189.json",
       "hxh-en-Chapter_118-416188.json",
-      "hxh-en-Chapter_119-322184.json"
+      "hxh-en-Chapter_119-322184.json",
+      "hxh-en-Chapter_103-416177.json"
     ],
     "tonpa": ["hxh-en-Tonpa-423953.json"],
     "todo": ["hxh-en-Todo-423960.json"],
@@ -846,8 +850,8 @@
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",
     "linssen": "Through episode 58 / chapter 119 he is only ever part of the bodyguards as a group: the escort, his post at the back entrance, the regrouping at the hotel. His remarks on Uvogin's Nen and on the car tailing them (chapters 76-78) are on the chapter pages only, and episode 46 only has him with the others; he has no individual exchange with an archived character in both media. Judged from hxh-en-Linssen-424437.json and the episode 41-49 and chapter 71-89 pages.",
-    "bonolenov": "Through episode 58 / chapter 119 he is only ever part of the Troupe as a group: the gathering, the hideout, the fortunes and the group Chrollo puts him in with Franklin and Hisoka (chapter 108, episode 55). His lines to Franklin about the chain user and the child at the window (chapters 115-116) are on the chapter pages only; he has no individual exchange with an archived character in both media. Judged from hxh-en-Bonolenov_Ndongo-425603.json and the episode 41-58 and chapter 71-119 pages.",
-    "eliza": "Through episode 58 / chapter 119 her only exchange is Squala's phone call, which is on the episode 39 and 56 pages only; chapter 109 has him only think of her, and Pakunoda reading her name in his memories (chapter 112, episode 56) is no exchange with her. She has no individual exchange with an archived character in both media. Judged from hxh-en-Eliza-424831.json and the episode 39, 43, 56 and chapter 67-112 pages."
+    "bonolenov": "Through episode 58 / chapter 119 he is only ever part of the Troupe as a group: the gathering, the hideout, the fortunes and the group Chrollo puts him in with Franklin and Hisoka (chapter 108, episode 55). His question to Phinks about the fortunes (chapter 104) and his lines to Franklin about the chain user and the child at the window (chapters 115-116) are on the chapter pages only; he has no individual exchange with an archived character in both media. Judged from hxh-en-Bonolenov_Ndongo-425603.json and the episode 41-58 and chapter 71-119 pages.",
+    "eliza": "Through episode 58 / chapter 119 her only exchange is Squala's phone call, which is on the episode 39 and 56 pages only. Chapter 109 has him only think of her; her going to check the restroom when Neon slips away (chapter 94) is on the chapter page only; and Pakunoda reading her name in his memories (chapter 112, episode 56) is no exchange with her. She has no individual exchange with an archived character in both media. Judged from hxh-en-Eliza-424831.json and the episode 39, 43, 51, 56 and chapter 67-112 pages."
   },
   "pending": {}
 }
