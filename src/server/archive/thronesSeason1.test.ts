@@ -110,6 +110,178 @@ const CHANGES: {
   { id: 'mirri-maz-duur', episode: 10, chapter: 73, value: 'deceased' },
 ]
 
+/**
+ * Every role and affiliation step after the first, pinned in both media, by
+ * its English text; `source` for a step one medium alone tells.
+ */
+const STEPS: {
+  chapter: number
+  en: string
+  episode: number
+  id: string
+  source?: 'chapter' | 'episode'
+}[] = [
+  { chapter: 7, en: 'Hand of the King', episode: 2, id: 'eddard-stark' },
+  {
+    chapter: 21,
+    en: 'House Stark, small council',
+    episode: 3,
+    id: 'eddard-stark',
+  },
+  { chapter: 72, en: 'King in the North', episode: 10, id: 'robb-stark' },
+  {
+    chapter: 20,
+    en: 'Recruit of the Night’s Watch',
+    episode: 3,
+    id: 'jon-snow',
+  },
+  {
+    chapter: 49,
+    en: 'Sworn brother of the Night’s Watch, steward to the Lord Commander',
+    episode: 7,
+    id: 'jon-snow',
+  },
+  { chapter: 20, en: 'Night’s Watch', episode: 3, id: 'jon-snow' },
+  {
+    chapter: 56,
+    en: 'Castellan of Winterfell',
+    episode: 8,
+    id: 'rodrik-cassel',
+    source: 'chapter',
+  },
+  { chapter: 54, en: 'Captive servant at Winterfell', episode: 7, id: 'osha' },
+  { chapter: 54, en: 'Winterfell, captive', episode: 7, id: 'osha' },
+  {
+    chapter: 49,
+    en: 'Steward to Maester Aemon',
+    episode: 7,
+    id: 'samwell-tarly',
+  },
+  {
+    chapter: 50,
+    en: 'Queen, mother of the new king',
+    episode: 7,
+    id: 'cersei-lannister',
+  },
+  {
+    chapter: 58,
+    en: 'Lord Commander of the Kingsguard',
+    episode: 8,
+    id: 'jaime-lannister',
+  },
+  {
+    chapter: 70,
+    en: 'Acting Hand of the King',
+    episode: 10,
+    id: 'tyrion-lannister',
+  },
+  { chapter: 58, en: 'Hand of the King', episode: 10, id: 'tywin-lannister' },
+  {
+    chapter: 50,
+    en: 'King of the Seven Kingdoms',
+    episode: 7,
+    id: 'joffrey-baratheon',
+  },
+  {
+    chapter: 50,
+    en: 'The late king’s brother, fled from King’s Landing',
+    episode: 7,
+    id: 'renly-baratheon',
+  },
+  {
+    chapter: 70,
+    en: 'Claimant to the Iron Throne',
+    episode: 10,
+    id: 'renly-baratheon',
+  },
+  { chapter: 41, en: 'Tyrion’s sellsword', episode: 6, id: 'bronn' },
+  { chapter: 41, en: 'House Lannister', episode: 6, id: 'bronn' },
+  {
+    chapter: 48,
+    en: 'Littlefinger’s brothel',
+    episode: 7,
+    id: 'ros',
+    source: 'episode',
+  },
+  {
+    chapter: 58,
+    en: 'Knight dismissed from the Kingsguard',
+    episode: 8,
+    id: 'barristan-selmy',
+  },
+  {
+    chapter: 58,
+    en: 'Formerly of the Kingsguard',
+    episode: 8,
+    id: 'barristan-selmy',
+  },
+  {
+    chapter: 58,
+    en: 'Member of the Kingsguard',
+    episode: 8,
+    id: 'sandor-clegane',
+  },
+  { chapter: 58, en: 'Kingsguard', episode: 8, id: 'sandor-clegane' },
+  {
+    chapter: 58,
+    en: 'Lord of Harrenhal, commander of the City Watch',
+    episode: 8,
+    id: 'janos-slynt',
+  },
+  {
+    chapter: 66,
+    en: 'Night’s Watch recruit',
+    episode: 10,
+    id: 'gendry',
+    source: 'episode',
+  },
+  {
+    chapter: 66,
+    en: 'Night’s Watch recruits',
+    episode: 10,
+    id: 'gendry',
+    source: 'episode',
+  },
+  {
+    chapter: 44,
+    en: 'Knight stripped of his lands and titles by the Hand',
+    episode: 6,
+    id: 'gregor-clegane',
+  },
+  {
+    chapter: 12,
+    en: 'Khaleesi, Drogo’s wife',
+    episode: 2,
+    id: 'daenerys-targaryen',
+  },
+  {
+    chapter: 73,
+    en: 'Khaleesi at the head of her own khalasar',
+    episode: 10,
+    id: 'daenerys-targaryen',
+  },
+  {
+    chapter: 12,
+    en: 'House Targaryen, Drogo’s khalasar',
+    episode: 2,
+    id: 'daenerys-targaryen',
+  },
+  {
+    chapter: 73,
+    en: 'House Targaryen, her own khalasar',
+    episode: 10,
+    id: 'daenerys-targaryen',
+  },
+  {
+    chapter: 73,
+    en: 'Daenerys’s bloodrider',
+    episode: 10,
+    id: 'rakharo',
+    source: 'chapter',
+  },
+  { chapter: 73, en: 'Daenerys’s khalasar', episode: 10, id: 'rakharo' },
+]
+
 type Unit = 'chapter' | 'episode'
 const UNITS: Unit[] = ['episode', 'chapter']
 
@@ -195,6 +367,46 @@ describe.each(
     expect(archive.latestOf(before, owner, 'status')).not.toBe(value)
     expect(archive.latestOf(reached, owner, 'status')).toBe(value)
   })
+})
+
+describe.each(
+  STEPS.flatMap((step) =>
+    UNITS.filter((unit) => (step.source ?? unit) === unit).map((unit) => ({
+      ...step,
+      unit,
+    })),
+  ),
+)('$id: “$en” by $unit', ({ id, en, episode, chapter, unit }) => {
+  // A page names a role or an affiliation as a whole string of its own.
+  const shown = (count: number): boolean =>
+    JSON.stringify(characterPage(id, reader(unit, count)) ?? null).includes(
+      JSON.stringify(en),
+    )
+
+  it('at its pin, not one before', () => {
+    const pin = unit === 'chapter' ? chapter : episode
+
+    expect(shown(pin - 1)).toBe(false)
+    expect(shown(pin)).toBe(true)
+  })
+})
+
+describe('the steps one medium alone tells', () => {
+  it.each(STEPS.filter(({ source }) => source !== undefined))(
+    'never shows “$en” to a reader of the other medium',
+    ({ id, en, source }) => {
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
+      const last =
+        other === 'chapter' ?
+          archive.series.chapterCeiling
+        : archive.series.episodeCeiling
+      const page = JSON.stringify(
+        characterPage(id, reader(other, last)) ?? null,
+      )
+
+      expect(page).not.toContain(JSON.stringify(en))
+    },
+  )
 })
 
 describe('the season’s leads', () => {

@@ -69,22 +69,6 @@ describe('the names a page accepts', () => {
         .dub,
     ).toEqual(['Ozu'])
   })
-
-  it('takes a Wikipedia character box first name, surname and nickname', () => {
-    const sandor = {
-      title: 'Sandor Clegane',
-      wikitext:
-        "{{Personaggio\n|nome = Sandor\n|cognome = Clegane\n|soprannome = ''Mastino''\n}}",
-      text: '',
-    }
-
-    expect(namesOf(sandor).aliases).toEqual(['Sandor', 'Clegane', 'Mastino'])
-    expect(accepts('Mastino', [namesOf(sandor)])).toBe(true)
-  })
-
-  it('reads no first name off a box that is not a Wikipedia character box', () => {
-    expect(namesOf(page('Odr', '| nome = Oars')).aliases).toEqual([])
-  })
 })
 
 describe('whether a name passes', () => {

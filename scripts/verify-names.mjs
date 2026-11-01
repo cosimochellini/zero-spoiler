@@ -19,8 +19,7 @@
 // of a list page, named in `ITALIAN_TITLES` as `Page#Section`. A section
 // accepts its heading and the bold name that opens it. Game of Thrones' names
 // come from Italian Wikipedia too, which A Wiki of Ice and Fire does not
-// link, so every one of its pages is named in `ITALIAN_TITLES`. A Wikipedia
-// `{{Personaggio}}` box also gives its `nome`, `cognome` and `soprannome`.
+// link, so every one of its pages is named in `ITALIAN_TITLES`.
 //
 // Run it with `npm run verify:names` (`-- --series <slug>` for a series of
 // `src/data/series/index.ts` other than One Piece). It talks to the network,
@@ -126,26 +125,12 @@ export function namesOf(page) {
     title: page.title.replace(/ \([^)]*\)$/u, ''),
     dub: namesIn(fieldOf(page.wikitext, 'nomeita')),
     aliases: [
-      ...aliasFieldsOf(page.wikitext).flatMap((field) =>
-        namesIn(fieldOf(page.wikitext, field).replaceAll("''", '')),
+      ...['alias', 'nickname'].flatMap((field) =>
+        namesIn(fieldOf(page.wikitext, field)),
       ),
       ...(page.section === true ? openingBold(page.wikitext) : []),
     ],
   }
-}
-
-/**
- * The infobox fields a page's aliases are read from: the One Piece Wiki's
- * `alias` and `nickname`, and, on a Wikipedia page with a `{{Personaggio}}`
- * box, its first name, surname and nickname, since the archive can file a
- * character by one of them (Mastino, Sandor Clegane's `soprannome`).
- * @param {string} wikitext The page.
- * @returns {string[]} The fields.
- */
-function aliasFieldsOf(wikitext) {
-  return /\{\{\s*Personaggio\s*[|\n]/u.test(wikitext) ?
-      ['alias', 'nickname', 'nome', 'cognome', 'soprannome']
-    : ['alias', 'nickname']
 }
 
 /**
