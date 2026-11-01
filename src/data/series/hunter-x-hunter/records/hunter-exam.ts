@@ -386,6 +386,14 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; Wing’s pupil',
           },
         },
+        {
+          episode: 60,
+          chapter: 126,
+          value: {
+            it: 'Associazione Hunter, Hunter; allievo di Wing; al servizio di Battera per Greed Island',
+            en: 'Hunter Association, Hunter; Wing’s pupil; playing Greed Island for Battera',
+          },
+        },
       ],
       origin: [
         { episode: 1, chapter: 1, place: 'whale-island', value: WHALE_ISLAND },
@@ -809,6 +817,14 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'In viaggio con Gon; allievo di Wing',
             en: 'Travelling with Gon; Wing’s pupil',
+          },
+        },
+        {
+          episode: 60,
+          chapter: 126,
+          value: {
+            it: 'In viaggio con Gon; allievo di Wing; al servizio di Battera per Greed Island',
+            en: 'Travelling with Gon; Wing’s pupil; playing Greed Island for Battera',
           },
         },
       ],

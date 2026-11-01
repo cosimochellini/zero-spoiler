@@ -101,7 +101,9 @@ named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named
 only in credits and supplements, and Hishita only in chapter 329 (#912). Every
 Hunter Exam character has a chronicle (#762); the Heavens Arena characters get
 theirs in #898. Records are not added from unnamed appearances or supplemental
-names.
+names. Greed Island’s recruitment cast (#1016) adds Battera, Tsezguerra and
+Puhat, plus Gon and Killua’s recruitment steps. The rest of that arc remains in
+#904.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -200,11 +202,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 116                                                   |
-| Characters        | 93                                                    |
+| Records           | 119                                                   |
+| Characters        | 96                                                    |
 | Arcs, places      | 7 · 16                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 116, one per record, plus 20 redrawings of 20 records |
+| Line drawings     | 119, one per record, plus 21 redrawings of 21 records |
 | Chronicle stories | 247, for 93 characters                                |
 
 ### `game-of-thrones`

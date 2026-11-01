@@ -84,13 +84,13 @@ design is in [docs/architecture.md](docs/architecture.md).
 
 One Piece has 500+ characters, 120+ devil fruits and about 40 places, from the
 first episode to the latest arc. Hunter x Hunter currently covers the Hunter
-Exam, the Heavens Arena and Yorknew City, with 90+ characters and about fifteen
-places. Game of Thrones currently covers the first season and the first book,
-with 60+ characters. All three series are available in Italian and English.
-Every One Piece and Hunter x Hunter entry has its own line drawing made for this
-project, and some are redrawn from the episode the story changes them. Most Game
-of Thrones entries show a plain placeholder until theirs are drawn. There is no
-official artwork.
+Exam, the Heavens Arena, Yorknew City and Greed Island’s recruitment cast, with
+90+ characters and about fifteen places. Game of Thrones currently covers the
+first season and the first book, with 60+ characters. All three series are
+available in Italian and English. Every One Piece and Hunter x Hunter entry has
+its own line drawing made for this project, and some are redrawn from the
+episode the story changes them. Most Game of Thrones entries show a plain
+placeholder until theirs are drawn. There is no official artwork.
 
 |                                                                                                                                                                                              |                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

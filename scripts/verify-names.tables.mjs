@@ -41,6 +41,8 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'battera': 'Personaggi di Hunter × Hunter#Battera',
+    'tsezguerra': 'Associazione Hunter#Tsezgerah',
     'gittarackur': 'Personaggi di Hunter × Hunter#Ghitarakur',
     'ponzu': 'Personaggi di Hunter × Hunter#Ponzu',
     'bourbon': 'Personaggi di Hunter × Hunter#Burbon',
@@ -197,6 +199,8 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
+  // No entry in the Italian character/Hunter lists; dub check pending (#1016).
+  'puhat': 'Puhat',
   // Game of Thrones. Italian Wikipedia names each direwolf only in its
   // owner's entry (the page listed in `ITALIAN_TITLES`), in prose.
   'grey-wind': 'Vento Grigio',

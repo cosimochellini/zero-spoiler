@@ -79,11 +79,14 @@
       "https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)",
       "https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)",
       "https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)",
-      "https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)"
+      "https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_126",
+      "https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)"
     ],
     "unverified": [
       "Heavens Arena pupil step pinned at chapter 48 / episode 29, where Wing opens their aura; his offer in chapter 47 / episode 28 is left below the pin (#896)",
-      "Yorknew City captures (#900): taken to the Troupe’s hideout (chapter 91 / episode 49), out through the walls (chapter 94 / episode 50), caught again on the way to the hotel (chapter 111 / episode 56), handed back at the exchange (chapter 118 / episode 58), from the synopses"
+      "Yorknew City captures (#900): taken to the Troupe’s hideout (chapter 91 / episode 49), out through the walls (chapter 94 / episode 50), caught again on the way to the hotel (chapter 111 / episode 56), handed back at the exchange (chapter 118 / episode 58), from the synopses",
+      "Greed Island recruitment at chapter 126 / episode 60: contracts and entry into Battera’s game setup checked on wiki synopses; licensed scenes not viewed"
     ]
   },
   "menchi": {
@@ -640,11 +643,14 @@
       "https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)",
       "https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)",
       "https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)",
-      "https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)"
+      "https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_126",
+      "https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)"
     ],
     "unverified": [
       "Heavens Arena pupil step pinned at chapter 48 / episode 29, where Wing opens their aura; his offer in chapter 47 / episode 28 is left below the pin (#896)",
-      "Yorknew City captures (#900): taken to the Troupe’s hideout (chapter 91 / episode 49), out through the walls (chapter 94 / episode 50), caught again on the way to the hotel (chapter 111 / episode 56), handed back at the exchange (chapter 118 / episode 58), from the synopses"
+      "Yorknew City captures (#900): taken to the Troupe’s hideout (chapter 91 / episode 49), out through the walls (chapter 94 / episode 50), caught again on the way to the hotel (chapter 111 / episode 56), handed back at the exchange (chapter 118 / episode 58), from the synopses",
+      "Greed Island recruitment at chapter 126 / episode 60: contracts and entry into Battera’s game setup checked on wiki synopses; licensed scenes not viewed"
     ]
   },
   "melody": {
@@ -1242,6 +1248,38 @@
       "The chapter synopses name it from chapter 79; the episode synopses only in episode 57 (episode 41 says “a hotel”), so the gate is chapter 112 / episode 57, where the Troupe waits in its lobby",
       "Italian name kept as “Hotel Beitacle”: no Italian Wikipedia entry; the 2011 Italian dub form is not viewed",
       "Drawing motif against the threshold page/frame (first pass; graded in #901)"
+    ]
+  },
+  "battera": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Battera",
+      "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter#Battera"
+    ],
+    "unverified": [
+      "Manga pages and licensed 2011 anime timestamps not viewed; gates checked on pinned wiki narrative synopses, not debut metadata alone",
+      "Drawing object checked against the character page description; licensed scene reference not viewed",
+      "Chapter 120 interview is not in the episode 59 synopsis; the shared copy omits the motive stated in the manga interview"
+    ]
+  },
+  "tsezguerra": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Tsezguerra",
+      "https://it.wikipedia.org/wiki/Associazione_Hunter#Tsezgerah"
+    ],
+    "unverified": [
+      "Manga pages and licensed 2011 anime timestamps not viewed; gates checked on pinned wiki narrative synopses, not debut metadata alone",
+      "Drawing object checked against the character page description; licensed scene reference not viewed",
+      "Italian Wikipedia heads the section Tsezgerah but gives Tsezugera as its bold name; exact 2011 dub pronunciation/spelling not viewed"
+    ]
+  },
+  "puhat": {
+    "sources": ["https://hunterxhunter.fandom.com/wiki/Puhat"],
+    "unverified": [
+      "Manga pages and licensed 2011 anime timestamps not viewed; gates checked on pinned wiki narrative synopses, not debut metadata alone",
+      "Drawing object checked against the character page description; licensed scene reference not viewed",
+      "No entry in Italian Wikipedia character/Hunter lists; English form retained pending a licensed 2011 Italian dub check",
+      "Death checked at episode 64 / chapter 143; folded jacket is an original memorial composition, not an in-story scene",
+      "Role becomes player at chapter 126, but anime readers get the role at 61: the model requires distinct role episodes and both naming and hiring occur in episode 60. Source-specific steps preserve the true manga pin without a false chapter-table anchor. Employment affiliation still opens at episode 60 / chapter 126."
     ]
   }
 }
