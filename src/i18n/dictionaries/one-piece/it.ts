@@ -9,6 +9,11 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
     'Tutti i personaggi della wiki, divisi per la saga in cui compaiono per la prima volta.',
   'dialog.saga': 'Saga · {name}',
   'onboarding.arcs': 'Saghe',
+  'characters.sectionFogged': 'Saga nella nebbia',
+  'kind.arc': 'Saga',
+  'places.allSagas': 'Tutte le saghe',
+  'places.arc': 'Saga',
+  'places.saga': 'Saga',
   'characters.count':
     '{count} personaggi, nell’ordine in cui compaiono nell’anime. Quelli nella nebbia non compaiono nei risultati della ricerca.',
   'characters.featuredLede':

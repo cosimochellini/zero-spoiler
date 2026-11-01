@@ -106,6 +106,7 @@ const COMMON = new Set<string>([
   'characters.bookLede',
   'characters.count',
   'characters.featuredLede',
+  'characters.sectionFogged',
   'credits.coverage',
   'credits.otherTerms',
   'credits.source.wiki-en',
@@ -117,13 +118,17 @@ const COMMON = new Set<string>([
   'faq.animeA',
   'faq.animeQ',
   'faq.bookmarkA',
+  'kind.arc',
   'legal.credits',
   'onboarding.arcs',
   'onboarding.lede',
   'onboarding.places',
   'onboarding.tailTitle',
+  'places.allSagas',
+  'places.arc',
   'places.count',
   'places.pageDescription',
+  'places.saga',
   'site.description',
 ] satisfies CommonKey[])
 
@@ -191,10 +196,24 @@ describe('the tone of voice', () => {
   })
 })
 
-describe('Game of Thrones’ own copy', () => {
+/**
+ * The shared keys no Game of Thrones page can print, each with the reason. A
+ * shared key that says "arc" or "saga" must either move into each series'
+ * own copy (`CommonKey`) or be listed here.
+ */
+const NOT_ON_THRONES = new Set<string>([
+  // The world map's zoom toggle: `features.worldMap` is One Piece's alone.
+  'chart.seeSaga',
+])
+
+describe('the words a Game of Thrones page prints', () => {
   // It files no arcs: its records are grouped by show season (#844).
-  it('names no arc or saga', () => {
-    const entries = entriesOf(COPIES['game-of-thrones'])
+  it('name no arc or saga', () => {
+    const shared = { en: enDictionary, it: itDictionary }
+    const entries = [
+      ...entriesOf(shared),
+      ...entriesOf(COPIES['game-of-thrones']),
+    ].filter(([, key]) => !NOT_ON_THRONES.has(key))
 
     for (const [locale, key, value] of entries) {
       expect(value, `${locale} ${key}`).not.toMatch(

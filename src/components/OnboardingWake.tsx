@@ -29,9 +29,8 @@ const requests = new Map<string, Promise<DemoDrawings>>()
  * sent East Blue and nothing past it, so there is nothing here the dial
  * could open by mistake.
  *
- * A series with no places yet, or nothing filed past its demo, shows no
- * shelf for them: an empty tail's count could only name what one medium
- * alone tells (#856).
+ * A series with no places yet shows no places shelf, and one with no
+ * record past its demo shows no tail: both would be empty (#856).
  */
 export function OnboardingWake({
   point,

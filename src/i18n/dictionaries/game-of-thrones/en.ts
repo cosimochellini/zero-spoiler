@@ -12,6 +12,11 @@ export const gameOfThronesEn = {
     'Every character in the wiki, grouped by the season they first appear in.',
   'dialog.saga': '{name}',
   'onboarding.arcs': 'Seasons',
+  'characters.sectionFogged': 'Season under fog',
+  'kind.arc': 'Season',
+  'places.allSagas': 'All seasons',
+  'places.arc': 'Season',
+  'places.saga': 'Season',
   'characters.count':
     '{count} characters, in the order they appear in the show. Characters under fog do not show up in search.',
   'characters.featuredLede': 'The key characters of the story.',

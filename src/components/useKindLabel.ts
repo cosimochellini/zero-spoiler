@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-import { onlyUnder, useSeriesT, useT } from '~/i18n/LocaleContext'
+import { onlyUnder, useSeriesT } from '~/i18n/LocaleContext'
 import type { EntityKind } from '~/lib/view/records'
 
 /**
@@ -9,7 +9,7 @@ import type { EntityKind } from '~/lib/view/records'
  * record of either kind on another series' page throws.
  */
 export function useKindLabel(): (kind: EntityKind) => string {
-  const t = useT()
+  const t = useSeriesT()
   const onePiece = useSeriesT('one-piece')
 
   return useCallback(

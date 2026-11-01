@@ -89,7 +89,7 @@ receive an end-of-anime bookmark; source filtering still applies. See
 
 ## Series and routing
 
-One Piece and Hunter x Hunter are open to readers. HxH files the verified Hunter
+All three series are open to readers. Hunter x Hunter files the verified Hunter
 Exam coverage through episode 26 / chapter 43, including the manga's chapter-one
 characters introduced later by the anime, the Heavens Arena characters and place
 up to episode 34 / chapter 59 (#896), and Yorknew City through episode 58 /

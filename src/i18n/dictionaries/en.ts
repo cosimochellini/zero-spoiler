@@ -258,7 +258,6 @@ export const enDictionary = {
   'characters.sectionOpensAt.book': 'From book {book}, chapter {chapter}',
   'characters.sectionCount': '{count} characters',
   'characters.sectionCountOne': '1 character',
-  'characters.sectionFogged': 'Arc under fog',
 
   'character.opensAt.episode': 'First appears in episode {threshold}',
   'character.opensAt.season': 'First appears in {threshold}',
@@ -318,7 +317,6 @@ export const enDictionary = {
   'places.firstSeen.chapter': 'First seen in chapter {threshold}',
   'places.firstSeen.book': 'First seen in book {book}, chapter {chapter}',
   'places.form': 'Type',
-  'places.arc': 'Arc',
   'places.landmark': 'Landmark',
   'places.filedHere': 'Found here',
   'places.searchLabel': 'Search places',
@@ -331,8 +329,6 @@ export const enDictionary = {
   'places.noneShown': 'No open place matches these filters.',
   'places.showAll': 'Show all',
   'places.allForms': 'All types',
-  'places.saga': 'Saga',
-  'places.allSagas': 'All sagas',
   'places.groupCount': '{count} places',
   'places.groupCountOne': '1 place',
 
@@ -377,7 +373,6 @@ export const enDictionary = {
   'status.unknown': 'Fate unknown',
 
   'kind.character': 'Character',
-  'kind.arc': 'Arc',
   'kind.place': 'Place',
 
   'locale.label': 'Language',

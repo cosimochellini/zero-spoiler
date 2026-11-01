@@ -252,7 +252,6 @@ export const itDictionary: Dictionary = {
   'characters.sectionOpensAt.book': 'Dal libro {book}, capitolo {chapter}',
   'characters.sectionCount': '{count} personaggi',
   'characters.sectionCountOne': '1 personaggio',
-  'characters.sectionFogged': 'Saga nella nebbia',
 
   'character.opensAt.episode':
     'Compare per la prima volta nell’episodio {threshold}',
@@ -319,7 +318,6 @@ export const itDictionary: Dictionary = {
   'places.firstSeen.book':
     'Compare per la prima volta nel libro {book}, capitolo {chapter}',
   'places.form': 'Tipo',
-  'places.arc': 'Saga',
   'places.landmark': 'Punto di riferimento',
   'places.filedHere': 'Collegati a questo luogo',
   'places.searchLabel': 'Cerca un luogo',
@@ -332,8 +330,6 @@ export const itDictionary: Dictionary = {
   'places.noneShown': 'Nessun luogo visibile corrisponde a questi filtri.',
   'places.showAll': 'Mostra tutti',
   'places.allForms': 'Tutti i tipi',
-  'places.saga': 'Saga',
-  'places.allSagas': 'Tutte le saghe',
   'places.groupCount': '{count} luoghi',
   'places.groupCountOne': '1 luogo',
 
@@ -379,7 +375,6 @@ export const itDictionary: Dictionary = {
   'status.unknown': 'Sorte ignota',
 
   'kind.character': 'Personaggio',
-  'kind.arc': 'Saga',
   'kind.place': 'Luogo',
 
   'locale.label': 'Lingua',
