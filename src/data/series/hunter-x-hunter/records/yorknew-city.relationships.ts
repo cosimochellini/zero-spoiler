@@ -89,8 +89,8 @@ const links = {
     character: 'neon-nostrade',
     type: { en: 'Girl who slips away from her', it: 'Ragazza che le sfugge' },
     summary: {
-      en: 'Light sends Melody and Basho to take Neon home. While Neon shops, the two carry her bags, until she slips away from them to go to the auction.',
-      it: 'Light manda Melody e Basho a riportare Neon a casa. Mentre Neon fa acquisti, i due le portano le borse, finché lei non sfugge loro per andare all’asta.',
+      en: 'Light sends Melody and Basho to take Neon home. While Neon shops, she slips away from them to go to the auction.',
+      it: 'Light manda Melody e Basho a riportare Neon a casa. Mentre Neon fa acquisti, lei sfugge loro per andare all’asta.',
     },
   },
   melodyKillua: {
@@ -153,8 +153,8 @@ const links = {
     character: 'neon-nostrade',
     type: { en: 'Girl who slips away from him', it: 'Ragazza che gli sfugge' },
     summary: {
-      en: 'Light sends Basho and Melody to take Neon home. While Neon shops, the two carry her bags, until she slips away from them, and Kurapika finds with his chain that she has gone to the auction.',
-      it: 'Light manda Basho e Melody a riportare Neon a casa. Mentre Neon fa acquisti, i due le portano le borse, finché lei non sfugge loro, e Kurapika scopre con la sua catena che è andata all’asta.',
+      en: 'Light sends Basho and Melody to take Neon home. While Neon shops, she slips away from them, and Kurapika finds with his chain that she has gone to the auction.',
+      it: 'Light manda Basho e Melody a riportare Neon a casa. Mentre Neon fa acquisti, lei sfugge loro, e Kurapika scopre con la sua catena che è andata all’asta.',
     },
   },
   // Baise
@@ -286,8 +286,8 @@ const links = {
       it: 'Membro della Brigata che lo uccide',
     },
     summary: {
-      en: 'Nobunaga stops Squala’s car in traffic with Pakunoda and Kortopi. While Pakunoda questions him, Squala reacts to Eliza’s name, and Nobunaga cuts off his head.',
-      it: 'Nobunaga ferma l’auto di Squala nel traffico con Pakunoda e Kortopi. Mentre Pakunoda lo interroga, Squala reagisce al nome di Eliza, e Nobunaga gli taglia la testa.',
+      en: 'Nobunaga, Pakunoda and Kortopi catch Squala’s car in traffic. While Pakunoda questions him, Squala reacts to Eliza’s name, and Nobunaga cuts off his head.',
+      it: 'Nobunaga, Pakunoda e Kortopi bloccano l’auto di Squala ferma nel traffico. Mentre Pakunoda lo interroga, Squala reagisce al nome di Eliza, e Nobunaga gli taglia la testa.',
     },
   },
   // Shachmono Tocino
@@ -369,8 +369,8 @@ const links = {
     character: 'neon-nostrade',
     type: { en: 'Girl he guards', it: 'Ragazza che protegge' },
     summary: {
-      en: 'Dalzollene escorts Neon to a hotel in Yorknew City and asks her to write fortunes for some men who know her father.',
-      it: 'Dalzorne scorta Neon fino a un albergo di York Shin City e le chiede di scrivere le profezie di alcuni uomini che conoscono suo padre.',
+      en: 'Dalzollene escorts Neon toward a hotel in Yorknew City and asks her to write fortunes for some men who know her father.',
+      it: 'Dalzorne scorta Neon verso un albergo di York Shin City e le chiede di scrivere le profezie di alcuni uomini che conoscono suo padre.',
     },
   },
   dalzolleneMelody: {
@@ -411,8 +411,8 @@ const links = {
       it: 'Capo delle sue guardie del corpo',
     },
     summary: {
-      en: 'Dalzollene escorts Neon to her hotel in Yorknew City and asks her to write fortunes for some men who know her father.',
-      it: 'Dalzorne scorta Neon fino al suo albergo di York Shin City e le chiede di scrivere le profezie di alcuni uomini che conoscono suo padre.',
+      en: 'Dalzollene escorts Neon toward her hotel in Yorknew City and asks her to write fortunes for some men who know her father.',
+      it: 'Dalzorne scorta Neon verso il suo albergo di York Shin City e le chiede di scrivere le profezie di alcuni uomini che conoscono suo padre.',
     },
   },
   neonLight: {
@@ -468,8 +468,8 @@ const links = {
       it: 'Guardia del corpo a cui sfugge',
     },
     summary: {
-      en: 'Basho and Melody are sent to take Neon home. While she shops, they carry her bags, until she slips away from them to go to the auction.',
-      it: 'Basho e Melody devono riportare Neon a casa. Mentre lei fa acquisti, le portano le borse, finché lei non sfugge loro per andare all’asta.',
+      en: 'Basho and Melody are sent to take Neon home. While she shops, she slips away from them to go to the auction.',
+      it: 'Basho e Melody devono riportare Neon a casa. Mentre fa acquisti, lei sfugge loro per andare all’asta.',
     },
   },
   neonMelody: {
@@ -479,16 +479,16 @@ const links = {
       it: 'Guardia del corpo a cui sfugge',
     },
     summary: {
-      en: 'Melody and Basho are sent to take Neon home. While she shops, they carry her bags, until she slips away from them to go to the auction.',
-      it: 'Melody e Basho devono riportare Neon a casa. Mentre lei fa acquisti, le portano le borse, finché lei non sfugge loro per andare all’asta.',
+      en: 'Melody and Basho are sent to take Neon home. While she shops, she slips away from them to go to the auction.',
+      it: 'Melody e Basho devono riportare Neon a casa. Mentre fa acquisti, lei sfugge loro per andare all’asta.',
     },
   },
   neonChrollo: {
     character: 'chrollo',
     type: { en: 'Man who takes her power', it: 'Uomo che le prende il potere' },
     summary: {
-      en: 'Chrollo gets Neon past security into the auction and has her write his fortune. Then he knocks her out with a quick blow and takes her power.',
-      it: 'Quoll fa superare a Neon i controlli di sicurezza dell’asta e le fa scrivere la sua profezia. Poi la stordisce con un colpo rapido e le prende il potere.',
+      en: 'Chrollo gets Neon past security into the auction and has her write his fortune. Then he knocks her out with a quick blow; he has taken her power.',
+      it: 'Quoll fa superare a Neon i controlli di sicurezza dell’asta e le fa scrivere la sua profezia. Poi la stordisce con un colpo rapido; le ha preso il potere.',
     },
   },
   // Ivlenkov
@@ -530,8 +530,8 @@ const links = {
     character: 'uvogin',
     type: { en: 'Comrade she tracks', it: 'Compagno che segue' },
     summary: {
-      en: 'When a chain snatches Uvogin away, Machi attaches a needle and a thread of Nen to him, and the Troupe follows him until other members free him.',
-      it: 'Quando una catena trascina via Uborghin, Machi gli attacca un ago con un filo di Nen, e la Brigata lo segue finché altri membri non lo liberano.',
+      en: 'When a chain snatches Uvogin away, Machi throws a needle with a thread of Nen onto him so that the Troupe can follow him, and later the Troupe frees him.',
+      it: 'Quando una catena trascina via Uborghin, Machi gli lancia addosso un ago con un filo di Nen perché la Brigata possa seguirlo, e più tardi la Brigata lo libera.',
     },
   },
   machiNobunaga: {
@@ -651,10 +651,10 @@ const links = {
   },
   shizukuKillua: {
     character: 'killua',
-    type: { en: 'Boy who recognizes her', it: 'Ragazzo che la riconosce' },
+    type: { en: 'Boy who spots her', it: 'Ragazzo che la nota' },
     summary: {
-      en: 'At the Troupe’s hideout, Killua recognizes Shizuku as the woman who arm-wrestled Gon.',
-      it: 'Nel covo della Brigata, Killua riconosce Shizuku come la donna che ha sfidato Gon a braccio di ferro.',
+      en: 'At the Troupe’s hideout, Killua spots Shizuku, the woman who arm-wrestled Gon.',
+      it: 'Nel covo della Brigata, Killua nota Shizuku, la donna che ha sfidato Gon a braccio di ferro.',
     },
   },
   shizukuNobunaga: {
@@ -664,19 +664,19 @@ const links = {
       it: 'Membro a cui ricorda la regola',
     },
     summary: {
-      en: 'When Nobunaga and Feitan face off over Gon at the hideout, Shizuku reminds them that members of the Troupe may not fight each other, and the two settle it with a coin.',
-      it: 'Quando Nobunaga e Feitan si affrontano per Gon nel covo, Shizuku ricorda loro che i membri della Brigata non possono combattere tra loro, e i due decidono con una moneta.',
+      en: 'When Nobunaga and Feitan face off over Gon at the hideout, Shizuku reminds Nobunaga that members of the Troupe may not fight each other, and the two settle it with a coin.',
+      it: 'Quando Nobunaga e Feitan si affrontano per Gon nel covo, Shizuku ricorda a Nobunaga che i membri della Brigata non possono combattere tra loro, e i due decidono con una moneta.',
     },
   },
   shizukuFeitan: {
     character: 'feitan',
     type: {
-      en: 'Member she reminds of the rule',
-      it: 'Membro a cui ricorda la regola',
+      en: 'Member she stops from fighting',
+      it: 'Membro che ferma dal combattere',
     },
     summary: {
-      en: 'When Feitan and Nobunaga face off over Gon at the hideout, Shizuku reminds them that members of the Troupe may not fight each other, and the two settle it with a coin.',
-      it: 'Quando Feitan e Nobunaga si affrontano per Gon nel covo, Shizuku ricorda loro che i membri della Brigata non possono combattere tra loro, e i due decidono con una moneta.',
+      en: 'When Feitan and Nobunaga face off over Gon at the hideout, Shizuku reminds Nobunaga that members of the Troupe may not fight each other, and the two settle it with a coin.',
+      it: 'Quando Feitan e Nobunaga si affrontano per Gon nel covo, Shizuku ricorda a Nobunaga che i membri della Brigata non possono combattere tra loro, e i due decidono con una moneta.',
     },
   },
   shizukuChrollo: {
@@ -687,7 +687,7 @@ const links = {
     },
     summary: {
       en: 'Chrollo writes Shizuku’s fortune with the power he took from Neon, and with his help she works out what it says: that she will die within the next week.',
-      it: 'Quoll scrive la profezia di Shizuku con il potere che ha preso a Neon, e con il suo aiuto lei capisce cosa dice: che morirà entro la settimana.',
+      it: 'Quoll scrive la profezia di Shizuku con il potere che ha preso a Neon, e con il suo aiuto lei capisce cosa dice: che morirà entro la prossima settimana.',
     },
   },
 } satisfies Record<string, Relationship>
