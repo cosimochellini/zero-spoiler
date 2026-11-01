@@ -83,6 +83,18 @@ describe('a record lifted by hand', () => {
     }
   })
 
+  it('names a lifted port’s own sea in the reader’s language', () => {
+    // At episode 30 the chart has opened East Blue alone; the reader asked
+    // for Whisky Peak, so its sea's name comes with it, and no other.
+    const early: Bookmark = { mode: 'episode', episode: 30 }
+    const whisky = handleOf('whisky-peak')
+
+    expect(peekPort(whisky, 'en', early)?.dossier?.seaName).toBe('Grand Line')
+    expect(peekPort(whisky, 'it', early)?.dossier?.seaName).toBe(
+      'Rotta Maggiore',
+    )
+  })
+
   it('answers nothing at all to anything it did not mint', () => {
     for (const rubbish of ['', 'nami', 'zzzzzz', '-1', '../etc']) {
       expect(peekCharacter(rubbish, 'en', null), rubbish).toBeUndefined()

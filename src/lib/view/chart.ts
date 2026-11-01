@@ -66,8 +66,9 @@ export type Region =
  * Line, shows and names the Red Line, both Calm Belts and the four Blues
  * (owner, #674), so the first stop in the Grand Line opens all of them. The
  * New World opens at its own first stop. The chart draws these regions and
- * the server sends their names, both from here, so a name never reaches a
- * page before the chart draws its sea (#993).
+ * the server sends their names, both from here, so a name reaches a page no
+ * earlier than the chart draws its sea (#993). The one exception is the
+ * reader's own: a port lifted with "Show anyway" names its own sea.
  */
 const OPENS: Record<Sea, Region[]> = {
   'east-blue': ['east-blue'],

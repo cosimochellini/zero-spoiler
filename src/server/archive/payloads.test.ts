@@ -481,17 +481,15 @@ describe('a faction label', () => {
   })
 })
 
-/** A locale's sea names, with the region each names. */
-function seasByName(locale: Locale): Map<string, string> {
-  return new Map(
+/**
+ * Every sea name in either locale, with the region it names: read in every
+ * locale, so an English name in an Italian page, or the reverse, is caught.
+ */
+const SEA_OF = new Map(
+  LOCALES.flatMap((locale) =>
     Object.entries(SEA_LABELS[locale]).map(([region, name]) => [name, region]),
-  )
-}
-
-const SEA_OF: Record<Locale, Map<string, string>> = {
-  en: seasByName('en'),
-  it: seasByName('it'),
-}
+  ),
+)
 
 /**
  * The payload that sends a character's origin as its own prose, which can
@@ -543,7 +541,7 @@ function earlySeasOf({ keys, name, run }: Payload): string[] {
         : undefined
 
       return stringsIn(run(bookmark, locale, key), skip)
-        .map((word) => SEA_OF[locale].get(word))
+        .map((word) => SEA_OF.get(word))
         .filter(
           (region): region is string =>
             region !== undefined && !regions.has(region) && region !== own,

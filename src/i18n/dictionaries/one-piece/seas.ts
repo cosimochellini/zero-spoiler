@@ -7,8 +7,9 @@ import type { Region } from '~/lib/view/chart'
  * most are named well after the first episode ("New World", "Calm Belt"),
  * so a page is sent only the names of the seas its reader has opened
  * (`seasOf`, `~/server/archive/printed.server`), and the gate is the chart's
- * own (`regionsFor`, `~/lib/view/chart`), and nowhere else (#993). East Blue
- * is here too, so a page reads every sea's name from one place. The New
+ * own (`regionsFor`, `~/lib/view/chart`), and nowhere else (#993), but for
+ * a port the reader lifts with "Show anyway", which names its own sea. East
+ * Blue is here too, so a page reads every sea's name from one place. The New
  * World's Calm Belt is drawn but not named.
  */
 export const SEA_LABELS: Record<
