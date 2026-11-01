@@ -852,7 +852,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
-      note: 'Corrected after review: he leaves with the eyes Neon bought, which the Troupe’s copies lead to. Chapters 109-112 (pages 1-8) and episode 56. The hotel is not named before episode 57. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the traffic is chapter 111 only (episode 56 has Nobunaga in front of his car), so the Troupe members just stop his car; he leaves with the eyes Neon bought, which the Troupe’s copies lead to. Chapters 109-112 (pages 1-8) and episode 56. The hotel is not named before episode 57. Checked on the episode page and the chapter pages.',
     },
   },
   'shachmono-tocino': {
@@ -876,7 +876,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     45: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_45_(2011)',
-      note: 'Chapter 78 and episode 45. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: episode 45 names no single killer, so Phinks and the other members kill him together. Chapter 78 and episode 45. Checked on the episode page and the chapter pages.',
     },
   },
   'neon-nostrade': {
@@ -900,7 +900,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     45: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_45_(2011)',
-      note: 'Corrected after review: Owl is no longer said to survive, and no killers named: chapter 78 only reports the Shadow Beasts all dead, from a caller, and the Troupe is first named as the killer in chapter 79, page 1. The story says only that other Shadow Beasts arrive. The needle and the cloth are chapter 77 (pages 12-19), the rescue chapter 78, both in episode 45. Owl’s torture is left out.',
+      note: 'Corrected after review: episode 45 names no single killer, so the members kill Dalzollene together with Phinks; Owl is no longer said to survive, and no killers named: chapter 78 only reports the Shadow Beasts all dead, from a caller, and the Troupe is first named as the killer in chapter 79, page 1. The story says only that other Shadow Beasts arrive. The needle and the cloth are chapter 77 (pages 12-19), the rescue chapter 78, both in episode 45. Owl’s torture is left out.',
     },
     49: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
@@ -958,7 +958,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'uvogin': {
     43: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_43_(2011)',
-      note: 'Corrected after review: the leader convinces him because a traitor would gain nothing; the Shadow Beast who emptied the vault is what Uvogin reports, not the leader’s reason (chapter 74, episode 43). “The Mafia’s best fighters” became “the Mafia’s elite”, true in both. The call is chapter 74, the fight with the Mafia chapter 75 (pages 1-16), both in episode 43. The leader is not named before episode 54. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the phone is chapter 74 only, while episode 43 says he informs the leader, so he tells him from the balloon; the leader convinces him because a traitor would gain nothing; the Shadow Beast who emptied the vault is what Uvogin reports, not the leader’s reason (chapter 74, episode 43). “The Mafia’s best fighters” became “the Mafia’s elite”, true in both. The call is chapter 74, the fight with the Mafia chapter 75 (pages 1-16), both in episode 43. The leader is not named before episode 54. Checked on the episode page and the chapter pages.',
     },
     44: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_44_(2011)',
@@ -1042,7 +1042,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
-      note: 'Corrected after review: in Italian, it is clear that Pakunoda fires the image into Nobunaga’s head. Chapters 109-112 (pages 1-8) and episode 56. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: the traffic is chapter 111 only (episode 56 has him in front of the car), so he catches Squala in his car; in Italian, it is clear that Pakunoda fires the image into Nobunaga’s head. Chapters 109-112 (pages 1-8) and episode 56. Checked on the episode page and the chapter pages.',
     },
   },
   'owl': {
@@ -1054,7 +1054,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'phinks': {
     45: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_45_(2011)',
-      note: 'Chapter 78 and episode 45. Checked on the episode page and the chapter pages.',
+      note: 'Corrected after review: episode 45 names no single killer, so the members kill Dalzollene together. Chapter 78 and episode 45. Checked on the episode page and the chapter pages.',
     },
     49: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
