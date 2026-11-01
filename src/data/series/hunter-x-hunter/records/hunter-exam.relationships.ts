@@ -131,6 +131,32 @@ const links = {
       it: 'Ging ha lasciato Gon in fasce sull’Isola Balena e, su una cassetta lasciata per lui, gli chiede se vuole vederlo.',
     },
   },
+  // Heavens Arena (#947)
+  gonWing: {
+    character: 'wing',
+    type: { en: 'Teacher', it: 'Maestro' },
+    summary: {
+      en: 'When Hisoka’s Nen stops Gon and Killua on the 200th floor, Wing forces open the points their aura flows from, and they learn Ten before midnight.',
+      it: 'Quando il Nen di Hisoka blocca Gon e Killua al 200º piano, Wing apre a forza i punti da cui esce la loro aura, e i due imparano il Ten prima di mezzanotte.',
+    },
+  },
+  gonZushi: {
+    character: 'zushi',
+    type: { en: 'Wing’s pupil', it: 'Allievo di Wing' },
+    summary: {
+      en: 'Zushi rides up to the 50th floor with Gon and Killua and, when they ask him about Ren, lists the four principles of Nen.',
+      it: 'Zooci sale al 50º piano con Gon e Killua e, quando gli chiedono del Ren, elenca i quattro principi del Nen.',
+    },
+  },
+  // The debt of gonHisokaDebt, settled in chapter 62 and episode 36.
+  gonHisokaRepaid: {
+    character: 'hisoka',
+    type: { en: 'Rival he has repaid', it: 'Rivale con cui si è sdebitato' },
+    summary: {
+      en: 'In their match at Heavens Arena, Gon punched Hisoka in the face and handed back the badge Hisoka had given him on Zevil Island.',
+      it: 'Nel loro incontro all’Arena Celeste, Gon ha colpito Hisoka in faccia con un pugno e gli ha restituito la targhetta che Hisoka gli aveva dato sull’Isola di Zevil.',
+    },
+  },
   mitoGon: {
     character: 'gon-freecss',
     type: { en: 'Boy she has raised', it: 'Ragazzo che ha cresciuto' },
@@ -704,6 +730,27 @@ const links = {
       it: 'Dopo l’esame Illumi pensa di sbarazzarsi di Gon, e Hisoka lo avverte di non toccarlo.',
     },
   },
+  // Heavens Arena (#947)
+  hisokaKastro: {
+    character: 'kastro',
+    type: { en: 'Rival he kills', it: 'Rivale che uccide' },
+    summary: {
+      en: 'Hisoka beat Kastro two years ago and spared him for his talent. In the rematch he loses both arms to Kastro and his Double, then kills him with his cards.',
+      it: 'Hisoka ha battuto Kastro due anni fa e lo ha risparmiato per il suo talento. Nella rivincita perde entrambe le braccia contro Kastro e il suo Doppelgänger, poi lo uccide con le sue carte.',
+    },
+  },
+  // The badge of hisokaGonBadge, handed back in chapter 62 and episode 36.
+  hisokaGonReturned: {
+    character: 'gon-freecss',
+    type: {
+      en: 'Boy who returned his badge',
+      it: 'Ragazzo che gli ha restituito la targhetta',
+    },
+    summary: {
+      en: 'In their match at Heavens Arena, Gon punched Hisoka in the face and handed back the badge Hisoka had given him on Zevil Island.',
+      it: 'Nel loro incontro all’Arena Celeste, Gon ha colpito Hisoka in faccia con un pugno e gli ha restituito la targhetta che Hisoka gli aveva dato sull’Isola di Zevil.',
+    },
+  },
   // Todo
   todoMenchi: {
     character: 'menchi',
@@ -1100,6 +1147,45 @@ const links = {
       it: 'Dopo aver promesso a suo padre di non tradire mai i suoi amici, Killua raggiunge Gon agli alloggi dei maggiordomi e lascia con lui la tenuta di famiglia.',
     },
   },
+  // Heavens Arena (#947)
+  killuaZushi: {
+    character: 'zushi',
+    type: {
+      en: 'Opponent he cannot knock out',
+      it: 'Avversario che non riesce a mettere KO',
+    },
+    summary: {
+      en: 'Killua beats Zushi on the 57th floor but cannot knock him out, and the new stance Zushi takes gives him the same feeling Illumi does.',
+      it: 'Killua batte Zooci al 57º piano ma non riesce a metterlo KO, e la nuova posizione presa da Zooci gli dà la stessa sensazione che gli dà Illumi.',
+    },
+  },
+  killuaWing: {
+    character: 'wing',
+    type: { en: 'Teacher', it: 'Maestro' },
+    summary: {
+      en: 'Killua sees through Wing’s first, false lesson. When Hisoka’s Nen stops him and Gon on the 200th floor, Wing forces open the points their aura flows from, and they learn Ten before midnight.',
+      it: 'Killua non crede alla prima lezione, falsa, di Wing. Quando il Nen di Hisoka blocca lui e Gon al 200º piano, Wing apre a forza i punti da cui esce la loro aura, e i due imparano il Ten prima di mezzanotte.',
+    },
+  },
+  killuaZushiRescue: {
+    character: 'zushi',
+    type: {
+      en: 'Fellow pupil he gets back',
+      it: 'Compagno che riporta indietro',
+    },
+    summary: {
+      en: 'Killua trains with Zushi under Wing and, when Sadaso seizes Zushi, steps in and promises to let Sadaso’s group win in exchange for the boy.',
+      it: 'Killua si allena con Zooci sotto la guida di Wing e, quando Sadaso afferra Zooci, interviene e promette di lasciar vincere il gruppo di Sadaso in cambio del ragazzo.',
+    },
+  },
+  killuaSadaso: {
+    character: 'sadaso',
+    type: { en: 'Fighter he threatens', it: 'Lottatore che minaccia' },
+    summary: {
+      en: 'When Sadaso’s group breaks the deal made for Zushi, Killua gets to Sadaso unseen before their match and threatens to kill him if he ever shows his face again. Sadaso does not show up for the match.',
+      it: 'Quando il gruppo di Sadaso rompe il patto fatto per Zooci, Killua raggiunge Sadaso di nascosto prima del loro incontro e lo minaccia di morte se si farà vedere ancora. Sadaso non si presenta all’incontro.',
+    },
+  },
   // Menchi
   menchiBuhara: {
     character: 'buhara',
@@ -1254,7 +1340,8 @@ const links = {
 export const hunterExamRelationships = {
   // Kite and Kon open at chapter 1 but episode 76, so until the anime reaches
   // Kite every Gon selection is split: chapter entries carry Kite, episode
-  // entries do not. On a one-source entry the other number only orders it.
+  // entries do not, except the Heavens Arena ones, which carry neither Kite
+  // nor Mito. On a one-source entry the other number only orders it.
   'gon-freecss': [
     // Manga-only: Kite and Kon are chapter-1 records the anime opens at 76.
     {
@@ -1419,8 +1506,35 @@ export const hunterExamRelationships = {
         links.gonMito,
       ],
     },
-    // Anime-only, delayed to Ging's record (episode 37): Ging joins, Hisoka
-    // makes room; Mito stays because the anime has not opened Kite.
+    // Heavens Arena (#947): neither Kite nor Mito is in the arc, so both
+    // make room, with Leorio, for Wing and Zushi, and one entry serves both
+    // media until Ging's record splits them again.
+    {
+      episode: 29,
+      chapter: 48,
+      value: [
+        links.gonKilluaTogether,
+        links.gonWing,
+        links.gonZushi,
+        links.gonHisokaDebt,
+        links.gonKurapikaFriend,
+      ],
+    },
+    // Gon hands back Hisoka's badge in chapter 62 and episode 36.
+    {
+      episode: 36,
+      chapter: 62,
+      value: [
+        links.gonKilluaTogether,
+        links.gonHisokaRepaid,
+        links.gonWing,
+        links.gonZushi,
+        links.gonKurapikaFriend,
+      ],
+    },
+    // Anime-only, delayed to Ging's record (episode 37): Ging joins, Hisoka,
+    // Wing and Zushi make room; Mito comes back because the anime has not
+    // opened Kite.
     {
       episode: 37,
       chapter: 65,
@@ -1433,8 +1547,8 @@ export const hunterExamRelationships = {
         links.gonLeorioFriend,
       ],
     },
-    // Manga-only, delayed to Ging's record (chapter 66): Ging joins, Hisoka
-    // makes room.
+    // Manga-only, delayed to Ging's record (chapter 66): Ging joins, Kite
+    // comes back; Hisoka, Wing and Zushi make room.
     {
       episode: 38,
       chapter: 66,
@@ -1786,6 +1900,31 @@ export const hunterExamRelationships = {
         links.hisokaLeorio,
       ],
     },
+    // Kastro dies at the end of the match, chapter 54 and episode 32;
+    // Leorio makes room.
+    {
+      episode: 32,
+      chapter: 54,
+      value: [
+        links.hisokaGonBadge,
+        links.hisokaKastro,
+        links.hisokaIllumiWarning,
+        links.hisokaKurapikaMatch,
+        links.hisokaBodoro,
+      ],
+    },
+    // Gon hands back the badge in chapter 62 and episode 36.
+    {
+      episode: 36,
+      chapter: 62,
+      value: [
+        links.hisokaGonReturned,
+        links.hisokaKastro,
+        links.hisokaIllumiWarning,
+        links.hisokaKurapikaMatch,
+        links.hisokaBodoro,
+      ],
+    },
   ],
   'todo': [
     {
@@ -1992,6 +2131,43 @@ export const hunterExamRelationships = {
         links.killuaZeno,
         links.killuaMilluki,
         links.killuaLeorioFinal,
+      ],
+    },
+    // Heavens Arena (#947): the match with Zushi is chapter 45 and episode
+    // 27; Leorio makes room.
+    {
+      episode: 27,
+      chapter: 45,
+      value: [
+        links.killuaGonTogether,
+        links.killuaIllumi,
+        links.killuaZushi,
+        links.killuaZeno,
+        links.killuaMilluki,
+      ],
+    },
+    // Wing opens their aura nodes in chapter 48, which episode 29 adapts.
+    {
+      episode: 29,
+      chapter: 48,
+      value: [
+        links.killuaGonTogether,
+        links.killuaWing,
+        links.killuaIllumi,
+        links.killuaZushi,
+        links.killuaZeno,
+      ],
+    },
+    // Zushi's capture, the deal and the threat are chapter 57 and episode 33.
+    {
+      episode: 33,
+      chapter: 57,
+      value: [
+        links.killuaGonTogether,
+        links.killuaWing,
+        links.killuaZushiRescue,
+        links.killuaIllumi,
+        links.killuaSadaso,
       ],
     },
   ],

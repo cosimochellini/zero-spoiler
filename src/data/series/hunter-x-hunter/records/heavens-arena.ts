@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import { heavensArenaChronicles } from './heavens-arena.chronicle'
+import { heavensArenaRelationships } from './heavens-arena.relationships'
 import type { HunterSaga, HunterVocabulary } from './saga'
 
 /** The fighters' floor, as the dossiers of the arena's own fighters say it. */
@@ -136,6 +137,7 @@ export const heavensArena: HunterSaga = {
   dossiers: {
     zushi: {
       chronicle: heavensArenaChronicles.zushi,
+      relationships: heavensArenaRelationships.zushi,
       role: { it: 'Lottatore, allievo di Wing', en: 'Fighter, Wing’s pupil' },
       log: {
         it: 'Sale con Gon e Killua fino al 50º piano e si presenta con un inchino. Studia il kung fu Shingen-ryu sotto la guida di un maestro. Nell’incontro con Killua finisce a terra più volte e ogni volta si rialza; il suo maestro, dagli spalti, grida il suo nome.',
@@ -155,6 +157,7 @@ export const heavensArena: HunterSaga = {
     },
     wing: {
       chronicle: heavensArenaChronicles.wing,
+      relationships: heavensArenaRelationships.wing,
       role: { it: 'Maestro di arti marziali', en: 'Martial arts teacher' },
       log: {
         it: 'Insegna il kung fu Shingen-ryu a Zooci e lo segue all’Arena Celeste. Porta la camicia fuori dai pantaloni, e Zooci glielo fa notare. Si presenta a Gon e Killua, sorpreso di trovare lì altri ragazzi oltre a Zooci. Durante l’incontro con Killua grida il nome del suo allievo così forte che gli spettatori intorno si coprono le orecchie.',
@@ -171,6 +174,7 @@ export const heavensArena: HunterSaga = {
     },
     gido: {
       chronicle: heavensArenaChronicles.gido,
+      relationships: heavensArenaRelationships.gido,
       role: { it: 'Lottatore', en: 'Fighter' },
       log: {
         it: 'Con altri due lottatori si presenta a Gon e Killua appena arrivati al 200º piano per chiedere un incontro. Cammina con un bastone, e lungo il bastone fa girare dieci trottole che rimbalzano da ogni parte; girano per ore, e nemmeno lui sa dove andranno. Nel primo incontro di Gon a quel piano, una lo colpisce alla schiena.',
@@ -181,6 +185,7 @@ export const heavensArena: HunterSaga = {
     },
     sadaso: {
       chronicle: heavensArenaChronicles.sadaso,
+      relationships: heavensArenaRelationships.sadaso,
       role: { it: 'Lottatore', en: 'Fighter' },
       log: {
         it: 'Con Ghido e un terzo lottatore cerca vittorie facili contro chi è appena arrivato al 200º piano. Per costringere Killua a combattere afferra Zooci con una grande mano fatta della sua forza; Killua promette loro vittorie a tavolino in cambio del ragazzo. È noto come il cacciatore di novellini. Poco prima del suo incontro con Killua se lo ritrova alle spalle con un coltello, avvertito di non farsi più vedere.',
@@ -191,16 +196,18 @@ export const heavensArena: HunterSaga = {
     },
     riehlvelt: {
       chronicle: heavensArenaChronicles.riehlvelt,
+      relationships: heavensArenaRelationships.riehlvelt,
       role: { it: 'Lottatore', en: 'Fighter' },
       log: {
-        it: 'Si muove in sedia a rotelle e combatte con due fruste elettriche. Con Sadaso e Ghido punta a diventare Maestro di piano. Nell’incontro principale contro Killua, Killua afferra le fruste nonostante la scossa e lo scaraventa fuori dalla sedia; lui sviene tra le sue braccia. Contro Gon perde di nuovo.',
-        en: 'He gets around in a wheelchair and fights with two electric whips. With Sadaso and Gido he aims to become a Floor Master. In the main event against Killua, Killua seizes the whips despite the shock and throws him out of his chair; he passes out in Killua’s arms. Against Gon he loses again.',
+        it: 'Si muove in sedia a rotelle e combatte con due fruste elettriche. Con Sadaso e Ghido punta a diventare Maestro di piano. Nell’incontro principale contro Killua, Killua afferra le fruste e non le molla quando passa la corrente, poi lo scaraventa fuori dalla sedia; lui sviene tra le sue braccia. Contro Gon perde di nuovo.',
+        en: 'He gets around in a wheelchair and fights with two electric whips. With Sadaso and Gido he aims to become a Floor Master. In the main event against Killua, Killua seizes the whips and holds on when the current runs through them, then throws him out of his chair; he passes out in Killua’s arms. Against Gon he loses again.',
       },
       status: [{ episode: 34, chapter: 59, value: 'alive' }],
       affiliation: [{ episode: 34, chapter: 59, value: FLOOR_200 }],
     },
     kastro: {
       chronicle: heavensArenaChronicles.kastro,
+      relationships: heavensArenaRelationships.kastro,
       role: { it: 'Lottatore', en: 'Fighter' },
       log: {
         it: 'È l’unico che sia riuscito a mandare Hisoka al tappeto e gli ha tolto tre dei quattro punti che Hisoka ha concesso. Ha già perso una volta contro di lui; da allora ha vinto nove incontri di fila e gliene manca uno per sfidare un Maestro di piano. Lui e Hisoka hanno scelto insieme la data della rivincita.',
