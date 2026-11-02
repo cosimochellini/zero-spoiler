@@ -1,3 +1,4 @@
+import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { hunterExamChronicles } from './hunter-exam.chronicle'
 import { hunterExamRelationships } from './hunter-exam.relationships'
 import { type HunterSaga, passedExam } from './saga'
@@ -348,7 +349,10 @@ const earlyExam: HunterSaga = {
     ...zevil.dossiers,
     'gon-freecss': {
       relationships: hunterExamRelationships['gon-freecss'],
-      chronicle: hunterExamChronicles['gon-freecss'],
+      chronicle: [
+        ...hunterExamChronicles['gon-freecss'],
+        ...greedIslandReturningChronicles['gon-freecss'],
+      ],
       role: passedExam(1, 1),
       log: {
         it: 'È cresciuto sull’Isola Balena con Myto, che lo cresce da quando era in fasce. Suo padre, Ging Freecss, è un Hunter che non ha mai conosciuto. Myto gli lascia sostenere l’esame solo se pesca il pesce più grosso della palude, sicura che non ci riuscirà; lui ce la fa con la sua canna. Parte con la nave per diventare Hunter e per sapere di più su suo padre.',
@@ -532,7 +536,10 @@ const earlyExam: HunterSaga = {
     },
     'leorio-paradinight': {
       relationships: hunterExamRelationships['leorio-paradinight'],
-      chronicle: hunterExamChronicles['leorio-paradinight'],
+      chronicle: [
+        ...hunterExamChronicles['leorio-paradinight'],
+        ...greedIslandReturningChronicles['leorio-paradinight'],
+      ],
       role: passedExam(1, 2),
       log: {
         it: 'Non vuole dire al capitano perché sostiene l’esame, poi ammette che è per i soldi e per quello che si possono comprare. I modi di Kurapika lo irritano, e quando insulta il suo clan i due salgono in coperta nella tempesta per battersi. Il duello finisce quando Katzo viene sbalzato fuori bordo e Gon si tuffa ad afferrarlo: Leorio e Kurapika prendono Gon per le gambe, e dopo fanno pace.',
@@ -553,7 +560,10 @@ const earlyExam: HunterSaga = {
     },
     'kurapika': {
       relationships: hunterExamRelationships.kurapika,
-      chronicle: hunterExamChronicles.kurapika,
+      chronicle: [
+        ...hunterExamChronicles.kurapika,
+        ...greedIslandReturningChronicles.kurapika,
+      ],
       role: [
         ...passedExam(1, 2),
         // Dalzollene hires him with three other applicants, chapter 70 and
@@ -634,7 +644,10 @@ const earlyExam: HunterSaga = {
     },
     'kiriko': {
       relationships: hunterExamRelationships.kiriko,
-      chronicle: hunterExamChronicles.kiriko,
+      chronicle: [
+        ...hunterExamChronicles.kiriko,
+        ...greedIslandReturningChronicles.kiriko,
+      ],
       role: { it: 'Navigatori', en: 'Navigators' },
       log: {
         it: 'Padre, madre, un figlio e una figlia. I navigatori sanno dove si tiene l’esame di ogni anno e ci portano solo chi li convince: inscenano un’aggressione in casa loro, uno ferito a terra e un’altra portata via da una bestia, e guardano come reagisce ognuno. Gon li distingue dal viso e dalla voce, Kurapika riconosce i tatuaggi sul braccio della figlia, Leorio cura il ferito. Di notte portano in volo i tre fino all’esame.',
@@ -664,7 +677,10 @@ const earlyExam: HunterSaga = {
     },
     'tonpa': {
       relationships: hunterExamRelationships.tonpa,
-      chronicle: hunterExamChronicles.tonpa,
+      chronicle: [
+        ...hunterExamChronicles.tonpa,
+        ...greedIslandReturningChronicles.tonpa,
+      ],
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
         it: 'Dice di conoscere bene l’esame e presenta a Gon alcuni aspiranti abituali. Offre ai tre amici del succo con un lassativo per farli ritirare. Gon sente che c’è qualcosa che non va e sputa il primo sorso; anche Kurapika e Leorio rinunciano alla bevanda.',
@@ -707,7 +723,10 @@ const earlyExam: HunterSaga = {
     },
     'hisoka': {
       relationships: hunterExamRelationships.hisoka,
-      chronicle: hunterExamChronicles.hisoka,
+      chronicle: [
+        ...hunterExamChronicles.hisoka,
+        ...greedIslandReturningChronicles.hisoka,
+      ],
       role: passedExam(3, 5),
       log: {
         it: 'Tonpa lo indica a Gon come un aspirante da evitare: l’anno prima è stato squalificato per aver attaccato un esaminatore. Si presenta di nuovo all’esame e punisce un uomo che gli va addosso senza chiedere scusa.',
@@ -911,7 +930,10 @@ const earlyExam: HunterSaga = {
     },
     'killua': {
       relationships: hunterExamRelationships.killua,
-      chronicle: hunterExamChronicles.killua,
+      chronicle: [
+        ...hunterExamChronicles.killua,
+        ...greedIslandReturningChronicles.killua,
+      ],
       role: [
         {
           episode: 4,
@@ -1157,7 +1179,10 @@ const earlyExam: HunterSaga = {
     },
     'netero': {
       relationships: hunterExamRelationships.netero,
-      chronicle: hunterExamChronicles.netero,
+      chronicle: [
+        ...hunterExamChronicles.netero,
+        ...greedIslandReturningChronicles.netero,
+      ],
       role: {
         it: 'Presidente dell’Associazione Hunter',
         en: 'Chairman of the Hunter Association',

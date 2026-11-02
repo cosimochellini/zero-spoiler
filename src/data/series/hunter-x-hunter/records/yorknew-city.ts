@@ -1,5 +1,6 @@
 import type { PlaceDossier } from '~/data/types'
 
+import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga, HunterVocabulary } from './saga'
 import { yorknewCityChronicles } from './yorknew-city.chronicle'
 import { yorknewCityRelationships } from './yorknew-city.relationships'
@@ -589,7 +590,10 @@ export const yorknewCity: HunterSaga = {
   dossiers: {
     'ging-freecss': {
       relationships: yorknewCityRelationships['ging-freecss'],
-      chronicle: yorknewCityChronicles['ging-freecss'],
+      chronicle: [
+        ...yorknewCityChronicles['ging-freecss'],
+        ...greedIslandReturningChronicles['ging-freecss'],
+      ],
       role: { it: 'Hunter, padre di Gon', en: 'Hunter, Gon’s father' },
       log: {
         it: 'Da ragazzo è partito dall’Isola Balena. Dieci anni dopo è tornato con Gon in braccio e ha chiesto alla nonna di occuparsene, dicendo che lui e la madre si erano lasciati. A Gon ha lasciato una scatola con dentro un anello, una scheda di memoria e una cassetta: sul nastro chiede a Gon se vuole incontrarlo.',
@@ -711,7 +715,10 @@ export const yorknewCity: HunterSaga = {
     },
     'neon-nostrade': {
       relationships: yorknewCityRelationships['neon-nostrade'],
-      chronicle: yorknewCityChronicles['neon-nostrade'],
+      chronicle: [
+        ...yorknewCityChronicles['neon-nostrade'],
+        ...greedIslandReturningChronicles['neon-nostrade'],
+      ],
       role: [
         {
           episode: 41,
@@ -786,7 +793,10 @@ export const yorknewCity: HunterSaga = {
     },
     'machi': {
       relationships: yorknewCityRelationships.machi,
-      chronicle: yorknewCityChronicles.machi,
+      chronicle: [
+        ...yorknewCityChronicles.machi,
+        ...greedIslandReturningChronicles.machi,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'I membri della Brigata si riuniscono tutti a York Shin City per la prima volta da più di tre anni, e lei ci va a piedi con altri tre.',
@@ -820,7 +830,10 @@ export const yorknewCity: HunterSaga = {
     },
     'feitan': {
       relationships: yorknewCityRelationships.feitan,
-      chronicle: yorknewCityChronicles.feitan,
+      chronicle: [
+        ...yorknewCityChronicles.feitan,
+        ...greedIslandReturningChronicles.feitan,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Sale sul palco dell’asta sotterranea con un altro membro della Brigata e dà il benvenuto agli ospiti; subito dopo vengono uccisi quasi tutti i presenti.',
@@ -850,7 +863,10 @@ export const yorknewCity: HunterSaga = {
     },
     'franklin': {
       relationships: yorknewCityRelationships.franklin,
-      chronicle: yorknewCityChronicles.franklin,
+      chronicle: [
+        ...yorknewCityChronicles.franklin,
+        ...greedIslandReturningChronicles.franklin,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'All’asta sotterranea, sul palco con Feitan, uccide quasi tutti gli ospiti con proiettili fatti di aura. Poi gioca a carte con gli altri membri mentre Uborghin affronta da solo le Bestie dell’Ombra.',
@@ -871,7 +887,10 @@ export const yorknewCity: HunterSaga = {
     },
     'nobunaga': {
       relationships: yorknewCityRelationships.nobunaga,
-      chronicle: yorknewCityChronicles.nobunaga,
+      chronicle: [
+        ...yorknewCityChronicles.nobunaga,
+        ...greedIslandReturningChronicles.nobunaga,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Con altri membri della Brigata insegue l’auto che porta via Uborghin. Civetta atterra sulla loro auto e la avvolge in un telo: gli altri riescono a uscire, lui, per il posto in cui è seduto, resta intrappolato.',
@@ -888,7 +907,10 @@ export const yorknewCity: HunterSaga = {
     },
     'phinks': {
       relationships: yorknewCityRelationships.phinks,
-      chronicle: yorknewCityChronicles.phinks,
+      chronicle: [
+        ...yorknewCityChronicles.phinks,
+        ...greedIslandReturningChronicles.phinks,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Con altri membri della Brigata, travestiti da mafiosi, raggiunge il posto dove le guardie del corpo tengono Uborghin. Uccidono Dalzorne e liberano il compagno.',
@@ -917,7 +939,10 @@ export const yorknewCity: HunterSaga = {
     },
     'shalnark': {
       relationships: yorknewCityRelationships.shalnark,
-      chronicle: yorknewCityChronicles.shalnark,
+      chronicle: [
+        ...yorknewCityChronicles.shalnark,
+        ...greedIslandReturningChronicles.shalnark,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Mentre Uborghin beve birra, cerca la famiglia Nostrad sul sito degli Hunter, così che Uborghin possa scovare l’utilizzatore di catene.',
@@ -946,7 +971,10 @@ export const yorknewCity: HunterSaga = {
     },
     'light-nostrade': {
       relationships: yorknewCityRelationships['light-nostrade'],
-      chronicle: yorknewCityChronicles['light-nostrade'],
+      chronicle: [
+        ...yorknewCityChronicles['light-nostrade'],
+        ...greedIslandReturningChronicles['light-nostrade'],
+      ],
       role: { it: 'Padre di Neon', en: 'Neon’s father' },
       log: {
         it: 'Le guardie del corpo scoprono da Squala che è lui ad averle assunte. Al telefono Kurapika gli dice che Dalzorne è probabilmente morto, e lui lo mette a capo delle guardie.',
@@ -1050,7 +1078,10 @@ export const yorknewCity: HunterSaga = {
     },
     'zepile': {
       relationships: yorknewCityRelationships.zepile,
-      chronicle: yorknewCityChronicles.zepile,
+      chronicle: [
+        ...yorknewCityChronicles.zepile,
+        ...greedIslandReturningChronicles.zepile,
+      ],
       role: { it: 'Offerente rivale', en: 'Rival bidder' },
       log: {
         it: 'A un mercato di York Shin City il suo nome è sulle offerte che superano quelle di Gon e Killua, quattro volte più alte. Si aggiudica il vaso che volevano.',
@@ -1110,7 +1141,10 @@ export const yorknewCity: HunterSaga = {
     },
     'kortopi': {
       relationships: yorknewCityRelationships.kortopi,
-      chronicle: yorknewCityChronicles.kortopi,
+      chronicle: [
+        ...yorknewCityChronicles.kortopi,
+        ...greedIslandReturningChronicles.kortopi,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'All’asta sotterranea, che la Brigata manda avanti di nascosto, copia gli oggetti e sono le copie a essere vendute.',
@@ -1197,7 +1231,10 @@ export const yorknewCity: HunterSaga = {
     },
     'shizuku': {
       relationships: yorknewCityRelationships.shizuku,
-      chronicle: yorknewCityChronicles.shizuku,
+      chronicle: [
+        ...yorknewCityChronicles.shizuku,
+        ...greedIslandReturningChronicles.shizuku,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Sfida Gon a braccio di ferro per il premio, un diamante, e perde dopo averlo costretto a impegnarsi davvero per vincere.',

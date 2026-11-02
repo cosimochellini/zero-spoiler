@@ -1,5 +1,6 @@
 import type { PlaceDossier } from '~/data/types'
 
+import { greedIslandChronicles } from './greed-island.chronicle'
 import { greedIslandRelationships } from './greed-island.relationships'
 import type { HunterSaga, HunterVocabulary } from './saga'
 
@@ -330,6 +331,7 @@ export const greedIsland: HunterSaga = {
   ],
   dossiers: {
     'jitonoda': {
+      chronicle: greedIslandChronicles.jitonoda,
       role: { it: 'Sindaco di York Shin City', en: 'Mayor of Yorknew City' },
       log: {
         it: 'Una notizia riferisce che cerca di rassicurare i partecipanti all’asta sulla sicurezza della città. Nonostante le sue dichiarazioni, l’affluenza cala rispetto agli anni precedenti. La mafia finanzia gran parte della sua campagna elettorale.',
@@ -353,6 +355,7 @@ export const greedIsland: HunterSaga = {
       // establishes no directed interaction with an archived character.
     },
     'dwun': {
+      chronicle: greedIslandChronicles.dwun,
       relationships: greedIslandRelationships.dwun,
       role: { it: 'Creatore di Greed Island', en: 'Greed Island creator' },
       log: {
@@ -372,6 +375,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'list': {
+      chronicle: greedIslandChronicles.list,
       relationships: greedIslandRelationships.list,
       role: { it: 'Creatore di Greed Island', en: 'Greed Island creator' },
       log: {
@@ -394,6 +398,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'eta': {
+      chronicle: greedIslandChronicles.eta,
       relationships: greedIslandRelationships.eta,
       role: { it: 'Creatrice di Greed Island', en: 'Greed Island creator' },
       log: {
@@ -416,6 +421,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'elena': {
+      chronicle: greedIslandChronicles.elena,
       relationships: greedIslandRelationships.elena,
       role: { it: 'Creatrice di Greed Island', en: 'Greed Island creator' },
       log: {
@@ -447,6 +453,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'genthru': {
+      chronicle: greedIslandChronicles.genthru,
       relationships: greedIslandRelationships.genthru,
       role: { it: 'Capo del Boomer', en: 'Bomber leader' },
       log: {
@@ -479,6 +486,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'jispa': {
+      chronicle: greedIslandChronicles.jispa,
       relationships: greedIslandRelationships.jispa,
       role: { it: 'Giocatore di Greed Island', en: 'Greed Island player' },
       log: {
@@ -501,6 +509,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'razor': {
+      chronicle: greedIslandChronicles.razor,
       relationships: greedIslandRelationships.razor,
       role: { it: 'Creatore di Greed Island', en: 'Greed Island creator' },
       log: {
@@ -536,6 +545,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'jeitsari': {
+      chronicle: greedIslandChronicles.jeitsari,
       role: { it: 'Hunter', en: 'Hunter' },
       log: {
         it: 'Possedeva sette copie di Greed Island. Aveva stabilito che fossero affidate all’asta se nessuno avesse completato il gioco entro la data indicata nel suo contratto.',
@@ -553,6 +563,7 @@ export const greedIsland: HunterSaga = {
     },
 
     'biscuit-krueger': {
+      chronicle: greedIslandChronicles['biscuit-krueger'],
       relationships: greedIslandRelationships['biscuit-krueger'],
       role: { it: 'Maestra di Nen', en: 'Nen teacher' },
       log: {
@@ -649,6 +660,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'binolt': {
+      chronicle: greedIslandChronicles.binolt,
       relationships: greedIslandRelationships.binolt,
       role: {
         it: 'Cacciatore di taglie ricercato',
@@ -674,6 +686,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'kosofftro': {
+      chronicle: greedIslandChronicles.kosofftro,
       role: { it: 'Giocatore di Greed Island', en: 'Greed Island player' },
       log: {
         it: 'Accoglie le nuove reclute trasportate con un incantesimo. Chiede loro di ricordare il suo nome, necessario per raggiungerlo con le carte di viaggio senza rivelare il nascondiglio del gruppo.',
@@ -696,6 +709,7 @@ export const greedIsland: HunterSaga = {
     },
 
     'battera': {
+      chronicle: greedIslandChronicles.battera,
       relationships: greedIslandRelationships.battera,
       role: { it: 'Miliardario', en: 'Billionaire' },
       log: {
@@ -739,6 +753,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'tsezguerra': {
+      chronicle: greedIslandChronicles.tsezguerra,
       relationships: greedIslandRelationships.tsezguerra,
       role: [
         {
@@ -804,6 +819,7 @@ export const greedIsland: HunterSaga = {
       ],
     },
     'puhat': {
+      chronicle: greedIslandChronicles.puhat,
       relationships: greedIslandRelationships.puhat,
       role: [
         {
