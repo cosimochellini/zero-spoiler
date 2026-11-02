@@ -41,6 +41,8 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'biscuit-krueger': 'Associazione Hunter#Biscuit Krueger',
+    'binolt': 'Personaggi di Hunter × Hunter#Binolt',
     'battera': 'Personaggi di Hunter × Hunter#Battera',
     'tsezguerra': 'Associazione Hunter#Tsezgerah',
     'gittarackur': 'Personaggi di Hunter × Hunter#Ghitarakur',
@@ -199,6 +201,9 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
+  // No Kosofftro entry in the Italian character or Hunter lists (#1017).
+  'kosofftro': 'Kosofftro',
+  'jeitsari': 'Jeitsari',
   // No entry in the Italian character/Hunter lists; dub check pending (#1016).
   'puhat': 'Puhat',
   // Game of Thrones. Italian Wikipedia names each direwolf only in its

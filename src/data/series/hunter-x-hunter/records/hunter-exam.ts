@@ -394,6 +394,30 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; Wing’s pupil; playing Greed Island for Battera',
           },
         },
+        {
+          episode: 62,
+          chapter: 137,
+          value: {
+            it: 'Associazione Hunter, Hunter; al servizio di Battera per Greed Island; Biscuit offre di allenarlo',
+            en: 'Hunter Association, Hunter; playing Greed Island for Battera; Biscuit offers to train him',
+          },
+        },
+        {
+          episode: 63,
+          chapter: 138,
+          value: {
+            it: 'Associazione Hunter, Hunter; al servizio di Battera per Greed Island; allievo di Biscuit, si allena contro Binolt',
+            en: 'Hunter Association, Hunter; playing Greed Island for Battera; Biscuit’s pupil, training against Binolt',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 141,
+          value: {
+            it: 'Associazione Hunter, Hunter; al servizio di Battera per Greed Island; allievo di Biscuit, si allena con i mostri e impara Ken',
+            en: 'Hunter Association, Hunter; playing Greed Island for Battera; Biscuit’s pupil, training against monsters and learning Ken',
+          },
+        },
       ],
       origin: [
         { episode: 1, chapter: 1, place: 'whale-island', value: WHALE_ISLAND },
@@ -825,6 +849,30 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'In viaggio con Gon; allievo di Wing; al servizio di Battera per Greed Island',
             en: 'Travelling with Gon; Wing’s pupil; playing Greed Island for Battera',
+          },
+        },
+        {
+          episode: 62,
+          chapter: 137,
+          value: {
+            it: 'Al servizio di Battera per Greed Island; Biscuit offre di allenarlo',
+            en: 'Playing Greed Island for Battera; Biscuit offers to train him',
+          },
+        },
+        {
+          episode: 63,
+          chapter: 138,
+          value: {
+            it: 'Al servizio di Battera per Greed Island; allievo di Biscuit, si allena contro Binolt',
+            en: 'Playing Greed Island for Battera; Biscuit’s pupil, training against Binolt',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 141,
+          value: {
+            it: 'Al servizio di Battera per Greed Island; allievo di Biscuit, si allena con i mostri e impara Ken',
+            en: 'Playing Greed Island for Battera; Biscuit’s pupil, training against monsters and learning Ken',
           },
         },
       ],

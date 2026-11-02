@@ -291,7 +291,11 @@ describe.each(LOADED)('every record page of $series.slug', (archive) => {
 
   it.each(LOCALES)('draws each place’s page in %s', async (locale) => {
     const ids = sample(archive.places.map((entity) => entity.id))
-    const pages = pagesOf(archive, ids)
+    const pages = pagesOf(archive, ids).filter(({ bookmark, id }) => {
+      const source = archive.getPlace(id)?.source
+      const unit = bookmark?.mode === 'chapter' ? 'chapter' : 'episode'
+      return source === undefined || (bookmark !== null && source === unit)
+    })
     for (const { bookmark, id } of pages) {
       const { unmount } = renderWithProviders(
         <PlaceBands

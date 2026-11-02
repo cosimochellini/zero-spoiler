@@ -2,6 +2,24 @@ import type { Relationship, Timeline } from '~/data/types'
 
 /** Facts and threshold revisions: docs/content-provenance/hunter-x-hunter-relationships.json. */
 const links = {
+  killuaBiscuit: {
+    character: 'biscuit-krueger',
+    type: { it: 'Maestra di Nen', en: 'Nen teacher' },
+    summary: {
+      it: 'Biscuit offre di allenarlo dopo aver osservato le sue difficoltà contro i mostri di Greed Island.',
+      en: 'Biscuit offers to train him after watching him struggle against Greed Island’s monsters.',
+    },
+  },
+
+  gonBiscuit: {
+    character: 'biscuit-krueger',
+    type: { it: 'Maestra di Nen', en: 'Nen teacher' },
+    summary: {
+      it: 'Biscuit offre di allenarlo dopo aver osservato le sue difficoltà contro i mostri di Greed Island.',
+      en: 'Biscuit offers to train him after watching him struggle against Greed Island’s monsters.',
+    },
+  },
+
   // Gon Freecss
   gonMito: {
     character: 'mito-freecss',
@@ -2008,6 +2026,17 @@ export const hunterExamRelationships = {
         links.gonChrollo,
       ],
     },
+    {
+      episode: 62,
+      chapter: 137,
+      value: [
+        links.gonKilluaTogether,
+        links.gonGing,
+        links.gonKurapikaRescue,
+        links.gonLeorioFriend,
+        links.gonBiscuit,
+      ],
+    },
     // Anime-only, delayed to Kite's record (episode 76): Kite joins and
     // Chrollo makes room.
     {
@@ -2811,6 +2840,17 @@ export const hunterExamRelationships = {
         links.killuaIllumiVoice,
         links.killuaSilva,
         links.killuaNobunagaHotel,
+      ],
+    },
+    {
+      episode: 62,
+      chapter: 137,
+      value: [
+        links.killuaGonTogether,
+        links.killuaKurapikaRescue,
+        links.killuaIllumiVoice,
+        links.killuaSilva,
+        links.killuaBiscuit,
       ],
     },
   ],

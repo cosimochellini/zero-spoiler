@@ -813,7 +813,17 @@ export const yorknewCity: HunterSaga = {
         en: 'He walks onto the stage of the Underground Auction with another Troupe member and welcomes the guests; straight after, nearly everyone in the hall is killed.',
       },
       status: [{ episode: 43, chapter: 74, value: 'alive' }],
-      affiliation: [{ episode: 43, chapter: 74, value: TROUPE }],
+      affiliation: [
+        { episode: 43, chapter: 74, value: TROUPE },
+        {
+          episode: 59,
+          chapter: 123,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+      ],
     },
     'franklin': {
       relationships: yorknewCityRelationships.franklin,
@@ -852,7 +862,17 @@ export const yorknewCity: HunterSaga = {
         en: 'With other Troupe members, disguised as Mafia men, he reaches the place where the bodyguards hold Uvogin. They kill Dalzollene and free his comrade.',
       },
       status: [{ episode: 45, chapter: 78, value: 'alive' }],
-      affiliation: [{ episode: 45, chapter: 78, value: TROUPE }],
+      affiliation: [
+        { episode: 45, chapter: 78, value: TROUPE },
+        {
+          episode: 59,
+          chapter: 123,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+      ],
     },
     'shalnark': {
       relationships: yorknewCityRelationships.shalnark,
@@ -863,7 +883,17 @@ export const yorknewCity: HunterSaga = {
         en: 'While Uvogin drinks beer, he searches the Hunter website for the Nostrade family, so that Uvogin can track down the chain user.',
       },
       status: [{ episode: 46, chapter: 79, value: 'alive' }],
-      affiliation: [{ episode: 46, chapter: 79, value: TROUPE }],
+      affiliation: [
+        { episode: 46, chapter: 79, value: TROUPE },
+        {
+          episode: 62,
+          chapter: 134,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+      ],
     },
     'light-nostrade': {
       relationships: yorknewCityRelationships['light-nostrade'],
@@ -1030,7 +1060,17 @@ export const yorknewCity: HunterSaga = {
         en: 'At the Underground Auction, which the Troupe runs from backstage, he copies the items, and the copies are what gets sold.',
       },
       status: [{ episode: 53, chapter: 100, value: 'alive' }],
-      affiliation: [{ episode: 53, chapter: 100, value: TROUPE }],
+      affiliation: [
+        { episode: 53, chapter: 100, value: TROUPE },
+        {
+          episode: 62,
+          chapter: 134,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+      ],
     },
     'bonolenov': {
       chronicle: yorknewCityChronicles.bonolenov,
@@ -1098,7 +1138,17 @@ export const yorknewCity: HunterSaga = {
         en: 'She challenges Gon at arm wrestling for the prize, a diamond, and loses after making him try for real to win.',
       },
       status: [{ episode: 42, chapter: 72, value: 'alive' }],
-      affiliation: [{ episode: 42, chapter: 72, value: TROUPE }],
+      affiliation: [
+        { episode: 42, chapter: 72, value: TROUPE },
+        {
+          episode: 62,
+          chapter: 134,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+      ],
     },
   },
 }

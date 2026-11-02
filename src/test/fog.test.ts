@@ -121,12 +121,22 @@ describe('the place words of a series that labels its own', () => {
     [
       'its building label',
       { forms: { x: 'Building' } },
-      ['cemetery-building', 'southernpiece-auction-house', 'hotel-beitacle'],
+      [
+        'cemetery-building',
+        'southernpiece-auction-house',
+        'hotel-beitacle',
+        'shiso-tree',
+      ],
     ],
     [
       'its Italian building label',
       { forms: { x: 'Edificio' } },
-      ['cemetery-building', 'southernpiece-auction-house', 'hotel-beitacle'],
+      [
+        'cemetery-building',
+        'southernpiece-auction-house',
+        'hotel-beitacle',
+        'shiso-tree',
+      ],
     ],
     [
       'its Italian country label',

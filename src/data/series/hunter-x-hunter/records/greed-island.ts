@@ -1,5 +1,7 @@
+import type { PlaceDossier } from '~/data/types'
+
 import { greedIslandRelationships } from './greed-island.relationships'
-import type { HunterSaga } from './saga'
+import type { HunterSaga, HunterVocabulary } from './saga'
 
 /**
  * Greed Island: episodes 59–75 of the 2011 anime and chapters 120–185, as the
@@ -60,9 +62,205 @@ export const greedIsland: HunterSaga = {
       },
       visual: { art: 'puhat', tint: 'violet' },
     },
+    // Episode 62 explicitly ends with her naming herself; chapter 137
+    // introduces her as Biscuit Krueger. Episode 63 repeats the introduction.
+    {
+      id: 'biscuit-krueger',
+      kind: 'character',
+      revealedAtEpisode: 62,
+      revealedAtChapter: 137,
+      name: { it: 'Biscuit Krueger', en: 'Biscuit Krueger' },
+      summary: {
+        it: 'Una giocatrice che offre a Gon e Killua di insegnare loro a usare meglio il Nen.',
+        en: 'A player who offers to teach Gon and Killua to use Nen more effectively.',
+      },
+      visual: { art: 'biscuit-krueger', tint: 'pink' },
+    },
+    {
+      id: 'binolt',
+      kind: 'character',
+      revealedAtEpisode: 63,
+      revealedAtChapter: 138,
+      name: { it: 'Binolt', en: 'Binolt' },
+      summary: {
+        it: 'Un cacciatore di taglie ricercato che Biscuit costringe a combattere contro Gon e Killua.',
+        en: 'A wanted Bounty Hunter whom Biscuit makes fight Gon and Killua.',
+      },
+      visual: { art: 'binolt', tint: 'wine' },
+    },
+    // He introduces himself in chapter 132 and is absent from the 2011 anime.
+    {
+      id: 'kosofftro',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 62,
+      revealedAtChapter: 132,
+      name: { it: 'Kosofftro', en: 'Kosofftro' },
+      summary: {
+        it: 'Un giocatore che accoglie le nuove reclute di un’alleanza di Greed Island.',
+        en: 'A player who welcomes new recruits to a Greed Island alliance.',
+      },
+      visual: { art: 'kosofftro', tint: 'ocher' },
+    },
+    // Named on the episode's tournament schedule and, later than the
+    // manga visit, on the chapter 134 map alongside Shiso Tree.
+    {
+      id: 'antokiba',
+      kind: 'place',
+      revealedAtEpisode: 61,
+      revealedAtChapter: 134,
+      name: { it: 'Antokiba', en: 'Antokiba' },
+      summary: {
+        it: 'La città di Greed Island dove Gon e Killua scoprono un torneo mensile.',
+        en: 'The Greed Island town where Gon and Killua find a monthly tournament.',
+      },
+      visual: { art: 'antokiba', tint: 'orange' },
+    },
+    {
+      id: 'masadora',
+      kind: 'place',
+      revealedAtEpisode: 63,
+      revealedAtChapter: 140,
+      name: { it: 'Masadora', en: 'Masadora' },
+      summary: {
+        it: 'La città dove i giocatori di Greed Island comprano carte incantesimo.',
+        en: 'The town where Greed Island players buy spell cards.',
+      },
+      visual: { art: 'masadora', tint: 'violet' },
+    },
+    // The starting structure has already been visited in chapter 127;
+    // chapter 134's map supplies its proper name. No anime naming scene is verified.
+    {
+      id: 'shiso-tree',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 62,
+      revealedAtChapter: 134,
+      name: { it: 'Albero Shiso', en: 'Shiso Tree' },
+      summary: {
+        it: 'L’albero che segna il punto d’arrivo dei giocatori a Greed Island.',
+        en: 'The tree marking the arrival point for players entering Greed Island.',
+      },
+      visual: { art: 'shiso-tree', tint: 'sand' },
+    },
+    // Named and pictured in the manga's auction introduction; the anime
+    // names no owner in the corresponding scene.
+    {
+      id: 'jeitsari',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 59,
+      revealedAtChapter: 121,
+      name: { it: 'Jeitsari', en: 'Jeitsari' },
+      summary: {
+        it: 'Un Hunter le cui sette copie di Greed Island vengono messe all’asta.',
+        en: 'A Hunter whose seven copies of Greed Island are put up for auction.',
+      },
+      visual: { art: 'jeitsari', tint: 'azure' },
+    },
   ],
   dossiers: {
-    battera: {
+    'jeitsari': {
+      role: { it: 'Hunter', en: 'Hunter' },
+      log: {
+        it: 'Possedeva sette copie di Greed Island. Aveva stabilito che fossero affidate all’asta se nessuno avesse completato il gioco entro la data indicata nel suo contratto.',
+        en: 'He owned seven copies of Greed Island. He arranged for them to be entrusted to the auction if nobody completed the game by the date specified in his contract.',
+      },
+      // No in-scope scene establishes his current whereabouts or fate.
+      affiliation: [
+        {
+          episode: 59,
+          chapter: 121,
+          source: 'chapter',
+          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
+        },
+      ],
+    },
+
+    'biscuit-krueger': {
+      relationships: greedIslandRelationships['biscuit-krueger'],
+      role: { it: 'Maestra di Nen', en: 'Nen teacher' },
+      log: {
+        it: 'Segue Gon e Killua nel gioco e osserva le loro difficoltà contro i mostri. Interviene per mostrare come usare Gyo e offre di allenarli. Studia il Nen da quarant’anni.',
+        en: 'She follows Gon and Killua through the game and watches them struggle against its monsters. She intervenes to demonstrate Gyo and offers to train them. She has studied Nen for forty years.',
+      },
+      status: [{ episode: 62, chapter: 137, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 62,
+          chapter: 137,
+          value: {
+            it: 'Greed Island; propone di allenare Gon e Killua',
+            en: 'Greed Island; offers to train Gon and Killua',
+          },
+        },
+        // The boys explicitly accept after she defeats their attacker.
+        {
+          episode: 63,
+          chapter: 138,
+          value: {
+            it: 'Associazione Hunter; maestra di Gon e Killua',
+            en: 'Hunter Association; Gon and Killua’s teacher',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 141,
+          value: {
+            it: 'Associazione Hunter; insegna a Gon e Killua a studiare i mostri e a difendersi con Ken',
+            en: 'Hunter Association; teaches Gon and Killua to study monsters and defend with Ken',
+          },
+        },
+      ],
+    },
+    'binolt': {
+      relationships: greedIslandRelationships.binolt,
+      role: {
+        it: 'Cacciatore di taglie ricercato',
+        en: 'Wanted Bounty Hunter',
+      },
+      log: {
+        it: 'Segue Gon e Killua, poi prende di mira Biscuit quando si separa da loro. Dopo averle tagliato e mangiato una ciocca di capelli, scopre quanto è forte e le chiede un combattimento senza Nen. Lei lo sconfigge e lo costringe a restare in una conca per affrontare i due ragazzi.',
+        en: 'He follows Gon and Killua, then targets Biscuit when she separates from them. After cutting and eating a lock of her hair, he learns how strong she is and asks for a fight without Nen. She defeats him and makes him stay in a hollow to fight the two boys.',
+      },
+      // The entire capture and release occur in episode 63; its end state
+      // is free. Manga readers can stop between the two scenes.
+      status: [
+        { episode: 63, chapter: 138, source: 'chapter', value: 'captured' },
+        { episode: 63, chapter: 138, source: 'episode', value: 'alive' },
+        { episode: 64, chapter: 139, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 63,
+          chapter: 138,
+          value: { it: 'Greed Island, giocatore', en: 'Greed Island player' },
+        },
+      ],
+    },
+    'kosofftro': {
+      role: { it: 'Giocatore di Greed Island', en: 'Greed Island player' },
+      log: {
+        it: 'Accoglie le nuove reclute trasportate con un incantesimo. Chiede loro di ricordare il suo nome, necessario per raggiungerlo con le carte di viaggio senza rivelare il nascondiglio del gruppo.',
+        en: 'He welcomes the new recruits brought by a spell. He asks them to remember his name, which lets travel cards reach him without revealing the group’s hideout.',
+      },
+      status: [
+        { episode: 62, chapter: 132, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 62,
+          chapter: 132,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island, alleanza di giocatori',
+            en: 'Greed Island player alliance',
+          },
+        },
+      ],
+    },
+
+    'battera': {
       relationships: greedIslandRelationships.battera,
       role: { it: 'Miliardario', en: 'Billionaire' },
       log: {
@@ -81,7 +279,7 @@ export const greedIsland: HunterSaga = {
         },
       ],
     },
-    tsezguerra: {
+    'tsezguerra': {
       relationships: greedIslandRelationships.tsezguerra,
       role: { it: 'Esaminatore per Greed Island', en: 'Greed Island examiner' },
       log: {
@@ -97,7 +295,7 @@ export const greedIsland: HunterSaga = {
         },
       ],
     },
-    puhat: {
+    'puhat': {
       relationships: greedIslandRelationships.puhat,
       role: [
         {
@@ -150,5 +348,54 @@ export const greedIsland: HunterSaga = {
         },
       ],
     },
+  },
+}
+
+/** Named visited locations; their records carry the medium restrictions. */
+export const GREED_ISLAND_PLACES: Record<
+  string,
+  PlaceDossier<HunterVocabulary>
+> = {
+  'antokiba': {
+    form: 'city',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'La piazza dove si annuncia il torneo mensile',
+      en: 'The square advertising the monthly tournament',
+    },
+    log: {
+      it: 'Gon e Killua raggiungono la città dopo essere entrati nel gioco. Scoprono che il torneo del mese è una gara di morra cinese.',
+      en: 'Gon and Killua reach the town after entering the game. They learn that the month’s tournament is a rock-paper-scissors contest.',
+    },
+    filedHere: [],
+  },
+  'masadora': {
+    form: 'city',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'Il negozio che vende le carte incantesimo',
+      en: 'The shop selling spell cards',
+    },
+    log: {
+      it: 'Biscuit accompagna Gon e Killua in città. Invece di comprare gli incantesimi che i ragazzi vogliono, acquista attrezzi e li riporta tra le rocce per continuare l’allenamento.',
+      en: 'Biscuit takes Gon and Killua into town. Instead of buying the spells the boys want, she buys tools and takes them back to the rocks to continue their training.',
+    },
+    filedHere: [],
+  },
+  'shiso-tree': {
+    form: 'building',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'La struttura tra le radici dell’albero',
+      en: 'The structure among the tree’s roots',
+    },
+    log: {
+      it: 'Gon arriva qui entrando a Greed Island e attende Killua. Una donna gli spiega le regole del gioco prima che esca sull’isola. La mappa indica il luogo come Albero Shiso.',
+      en: 'Gon arrives here on entering Greed Island and waits for Killua. A woman explains the game’s rules before he steps out onto the island. The map labels the location Shiso Tree.',
+    },
+    filedHere: [],
   },
 }
