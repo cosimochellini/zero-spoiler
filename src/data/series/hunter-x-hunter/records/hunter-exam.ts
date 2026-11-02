@@ -779,8 +779,8 @@ const earlyExam: HunterSaga = {
           episode: 69,
           chapter: 161,
           value: {
-            it: 'Associazione Hunter, Hunter; affronta la squadra di Razer in una partita di palla avvelenata',
-            en: 'Hunter Association, Hunter; facing Razor’s team in a dodgeball match',
+            it: 'Associazione Hunter, Hunter; affronta la squadra di Razer in una partita di palla avvelenata mentre cerca un esorcista per Chrollo',
+            en: 'Hunter Association, Hunter; facing Razor’s team in a dodgeball match while seeking an Exorcist for Chrollo',
           },
         },
       ],
