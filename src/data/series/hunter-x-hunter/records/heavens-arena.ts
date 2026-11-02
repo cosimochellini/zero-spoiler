@@ -1,5 +1,6 @@
 import type { PlaceDossier } from '~/data/types'
 
+import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { heavensArenaChronicles } from './heavens-arena.chronicle'
 import { heavensArenaRelationships } from './heavens-arena.relationships'
 import type { HunterSaga, HunterVocabulary } from './saga'
@@ -156,7 +157,10 @@ export const heavensArena: HunterSaga = {
       ],
     },
     wing: {
-      chronicle: heavensArenaChronicles.wing,
+      chronicle: [
+        ...heavensArenaChronicles.wing,
+        ...greedIslandReturningChronicles.wing,
+      ],
       relationships: heavensArenaRelationships.wing,
       role: { it: 'Maestro di arti marziali', en: 'Martial arts teacher' },
       log: {

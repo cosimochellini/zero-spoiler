@@ -1,3 +1,4 @@
+import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga } from './saga'
 import { zoldyckChronicles } from './zoldyck.chronicle'
 import { zoldyckRelationships } from './zoldyck.relationships'
@@ -295,7 +296,10 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     'milluki': {
       relationships: zoldyckRelationships.milluki,
-      chronicle: zoldyckChronicles.milluki,
+      chronicle: [
+        ...zoldyckChronicles.milluki,
+        ...greedIslandReturningChronicles.milluki,
+      ],
       role: { it: 'Fratello di Killua', en: 'Killua’s brother' },
       log: {
         it: 'Colpisce Killua con una frusta mentre è incatenato. Si irrita perché il fratello non sembra pentito di averlo ferito prima della fuga.',
@@ -376,7 +380,10 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     'kalluto': {
       relationships: zoldyckRelationships.kalluto,
-      chronicle: zoldyckChronicles.kalluto,
+      chronicle: [
+        ...zoldyckChronicles.kalluto,
+        ...greedIslandReturningChronicles.kalluto,
+      ],
       role: { it: 'Fratello di Killua', en: 'Killua’s brother' },
       log: {
         it: 'La madre lo presenta ai tre visitatori della tenuta. Rimane in silenzio a osservarli anche quando lei si allontana, finché lo richiama perché la segua.',

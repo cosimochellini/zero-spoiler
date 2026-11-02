@@ -143,7 +143,8 @@ function chronicled(archive) {
 function section(character, chronicle, allSources) {
   const sources = allSources[character.id] ?? {}
   const rows = chronicle.map((story) => {
-    const source = sources[story.episode]
+    const source =
+      sources[`${story.episode}:${story.source}`] ?? sources[story.episode]
 
     if (source === undefined) {
       throw new Error(

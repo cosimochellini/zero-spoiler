@@ -2,7 +2,8 @@
  * Which wiki page settles each Hunter x Hunter chronicle story's episode, and
  * what the verification passes found there (#762). Keyed by character id and
  * then by episode, like `CHRONICLE_SOURCES`; the title and the episode come
- * from the chronicle data.
+ * from the chronicle data. Mutually exclusive stories in the same episode
+ * use `episode:source` keys so each medium cites its own evidence.
  */
 export const HUNTER_X_HUNTER_SOURCES = {
   'gon-freecss': {
@@ -62,6 +63,38 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'Chapters 107-108 and episode 55. Why Gon asks for the chain differs between the media and is left out. Checked on the episode page and the chapter pages.',
     },
+    59: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
+      note: 'Episode 59 and Chapters 121–124 (opening pages): rejection, Wing’s advice and fist training. Corrected during authoring: chapter 124 completes the concentration; anime-only knockback omitted.',
+    },
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and Chapter 127: Entry and recorded message are chapter 127; the unnamed receptionist remains unnamed.',
+    },
+    61: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_61_(2011)',
+      note: 'Episode 61 and Chapter 131: Chapters 128–131 cover first spells, restaurant and refusal; unnamed alliance members not named.',
+    },
+    63: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_63_(2011)',
+      note: 'Episode 63 and Chapter 140: Chapter 140 completes digging/Shu; Binolt training chapters 138–139.',
+    },
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
+      note: 'Episode 65 and Chapters 145–146: Rock, failed Paper and proposed Scissors. Independent verifier corrected chapter 145 to 146 because Scissors is explained in chapter 146.',
+    },
+    71: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
+      note: 'Episode 71 and Chapter 169: Chapters 160–169: dodgeball concludes in chapter 169; no earlier gate covers victory.',
+    },
+    74: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_74_(2011)',
+      note: 'Episode 74 and Chapter 182: Chapters 179–182 complete trap and healing; earlier chapter 181 alone lacks healing. Personal name of the Bomber is omitted because his record is manga-only.',
+    },
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
+      note: 'Episode 75 and Chapter 185: Chapters 183–185 complete quiz, castle and exit. Destination identity not disclosed.',
+    },
   },
   'mito-freecss': {
     1: {
@@ -114,6 +147,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
       note: 'Corrected after review: the order follows both media: he drives Kurapika after the Troupe until traffic stops him, and the boys are caught. The traffic is chapter 111 and episode 56; the lobby is chapter 112 and episode 57. The time on the radio is chapter-only. Checked on the episode page and the chapter pages.',
     },
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and Chapters 124–126: departure, money to reclaim the license and farewell meal. Corrected during authoring: the money handover differs between media, so no handover person is claimed.',
+    },
   },
   'kurapika': {
     1: {
@@ -164,6 +201,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
       note: 'Corrected after review: “unharmed” dropped (episode 58 only), as in Pakunoda’s story; Melody confirms that Killua is not being controlled. Chapters 117-119 and episode 58. His words on the airship after the exchange are chapter-only. Checked on the episode page and the chapter pages.',
     },
+    59: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
+      note: 'Episode 59 and Chapter 123: Chapter 123 contains the advice; no later departure details.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 include phone call and Nostrade household.',
+    },
   },
   'katzo': {
     1: {
@@ -175,6 +220,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     2: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_2_(2011)',
       note: "Corrected after review: Gon's line was reversed; the page has him telling the Kiriko cornering him it is not the one he was chasing, then the Kiriko calls its partner and the couple reveal themselves as the offspring. The tattoo, the fake Leorio and the flight to the site are all here.",
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Kiriko encounter begins episode 65/chapter 147 and ends at directions in episode 66/chapter 148.',
     },
   },
   'tonpa': {
@@ -189,6 +238,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     15: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_15_(2011)',
       note: 'Tonpa teams with Sommy, Leorio and Kurapika tie him to a rock with the sign, Kurapika takes his badge for six points and Leorio gets his own back.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66: return and total defeat, no invented individual attack.',
     },
   },
   'hisoka': {
@@ -243,6 +296,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
     58: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
       note: 'Corrected after review: the text to Illumi says he no longer needs his help, since the stand-in it ends is left out. he does not reach Kurapika’s airship: he turns up at the airport as Pakunoda and the boys board. In Italian, “mentre il capo è in ostaggio”. The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only. Checked on the episode page and the chapter pages.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 reveals alias and motive; participants left unspecified to avoid adaptation differences.',
+    },
+    68: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_68_(2011)',
+      note: 'Episode 68 and Chapter 159: Chapters 157–159 cover encounter, deceptive account and altered binder.',
+    },
+    71: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
+      note: 'Episode 71 and Chapter 169: Chapters 164–169; final rebound and victory in chapter 169.',
+    },
+    72: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
+      note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72: surveillance, replacement and negotiation. Exorcist unnamed because excluded record.',
     },
   },
   'hanzo': {
@@ -328,6 +397,34 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
       note: 'Chapters 112-114 and episode 57. Checked on the episode page and the chapter pages.',
     },
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and Chapters 125–126: electrical demonstration and both boys passing. Independent verifier corrected chapter 125 to 126 to include Gon’s successful test.',
+    },
+    63: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_63_(2011)',
+      note: 'Episode 63 and Chapter 140: Chapters 138–140 cover Binolt and Shu.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66 complete the exam, with all named participants already filed.',
+    },
+    67: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_67_(2011)',
+      note: 'Episode 67 and Chapter 153: necklace dispels curse on villagers’ cards and yields reward. Corrected during authoring: removed later alliance meeting, which belongs to chapter 154.',
+    },
+    71: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
+      note: 'Episode 71 and Chapter 169: Chapters 165–169 include hands, refusal of substitute, formation and victory.',
+    },
+    73: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_73_(2011)',
+      note: 'Episode 73 and Chapter 178: Chapter 178 completes Killua’s fight; opponent excluded from filed cast, not named. Personal name of the Bomber is omitted because his record is manga-only.',
+    },
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
+      note: 'Episode 75 and Chapter 185: Chapters 183–185: travel preparation, selected cards and departure; arrival identity omitted.',
+    },
   },
   'menchi': {
     6: {
@@ -353,6 +450,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     21: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_21_(2011)',
       note: 'Both defences of Killua, Netero calling them guesses, his agreeing Killua would pass again and declaring the seven Hunters are all in this episode.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66: examiner’s phone call and decision.',
     },
   },
   'lippo': {
@@ -424,6 +525,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_17_(2011)',
       note: 'Checked: Amori and Umori come to see if the youngest has taken the badge, scold him, form up, Killua appears behind Amori and holds him hostage (chapter 29).',
     },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66 explicitly show boast and brothers abandoning future attempts.',
+    },
   },
   'umori': {
     3: {
@@ -434,6 +539,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_17_(2011)',
       note: "Checked: Umori hands over the badge when Amori is held hostage and Killua throws the other badges far away. Corrected after review: dropped the unsupported 'che ha in mano / he is holding'.",
     },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66 explicitly show boast and brothers abandoning future attempts.',
+    },
   },
   'imori': {
     3: {
@@ -443,6 +552,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     17: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_17_(2011)',
       note: "Checked: Imori has stalked Killua planning to strike while he sleeps, is forced forward by his brothers, kicks him, and Killua pulls Imori's own badge from his pocket (not his target).",
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66 explicitly show boast and brothers abandoning future attempts.',
     },
   },
   'ponzu': {
@@ -550,6 +663,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_40_(2011)',
       note: 'The call and the deal are episode 38 and chapter 69, pages 1-16; the address sent by bird (an eagle in the episode, a hawk in chapter 70) closes episode 40. Also read: Episode 38 (2011), Chapter 69, Chapter 70.',
     },
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and Chapter 124: Chapter 124 concludes auction and Milluki’s meal; episode 60 completes the sequence.',
+    },
   },
   'zeno': {
     24: {
@@ -583,6 +700,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     24: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_24_(2011)',
       note: 'Ep 23 shows him entering the cell room and watching from the bushes; ep 24 has his mother introduce him and him asking Gon who he is before leaving. Filed at the later episode.',
+    },
+    72: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
+      note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72 establish membership and finding exorcist, not later motives.',
     },
   },
   'gotoh': {
@@ -627,6 +748,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     37: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_37_(2011)',
       note: "Checked against the episode page and chapters 64-65: the only children on the island, the village searching for Mito and Ging finding her, leaving at Gon's age, the return ten years later carrying Gon, the grandmother and the separation, the Nen and license boxes, the ring, memory card and cassette, and the tape's question. Corrected after review: 'cousin', 'baby', 'only' and the box's hand-over condition are not on the episode page; 'breaks' became neutral 'comes off'. Manga-only lines left out: Mito taking the boy, the steel sticks, the ring warning. Also read: Chapter 64, Chapter 65, Chapter 66.",
+    },
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and Chapter 127: Chapter 127 contains the recorded message; no later game-master identities named.',
+    },
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
+      note: 'Episode 75 and Chapter 184: castle friends explain creators’ initials and Ging changing a companion’s name to make the title fit. Added after independent verification to cover Ging’s later creation flashback separately from his recorded message.',
     },
   },
   'todo': {
@@ -766,6 +895,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_35_(2011)',
       note: 'Episode 35 and Chapter 60 both have the six types with Hisoka, Gido and Kastro as examples, Water Divination with the three results, the secret Hunter Exam, Netero heading Shingen-ryu and the advice to Killua. Wing’s own type and Gon’s cracked glass are only on the chapter page and are left out.',
     },
+    59: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
+      note: 'Episode 59 and Chapter 123: Chapter 123 phone call; no unsupported later ability interpretation.',
+    },
   },
   'gido': {
     29: {
@@ -892,6 +1025,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Corrected after review: “at the auction” dropped from the knockout. Chapters 100-101 and episode 53. Checked on the episode page and the chapter pages.',
     },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 confirm continuing loss; does not claim Neon understands the theft.',
+    },
   },
   'machi': {
     41: {
@@ -909,6 +1046,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     57: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
       note: 'Chapters 113-114 and episode 57. Her broken ribs are chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    72: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
+      note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72 show surveillance and warning; original wording, no quoted dialogue.',
     },
   },
   'ivlenkov': {
@@ -944,6 +1085,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
       note: 'Corrected after review: the fortune is framed as what the verses say. Chapter 104 and episode 54. Checked on the episode page and the chapter pages.',
     },
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
+      note: 'Episode 62 and Chapter 134: Chapter 134: vacuum restrictions and Shalnark’s hypothesis.',
+    },
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
+      note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
+    },
   },
   'feitan': {
     43: {
@@ -953,6 +1106,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
     50: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Chapters 91-92 and episode 50. His threat to Gon’s fingernails is chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    59: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
+      note: 'Episode 59 and Chapter 123: Chapters 122–123 show theft and entry; scene complete by episode 59. Independent verifier removed premature claims about using techniques on the island, retaining only theft and entry order.',
+    },
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
+      note: 'Episode 62 and Chapter 134: Chapter 134: murder, card theft and one-week rendezvous; victim remains anonymous.',
+    },
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
+      note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
     },
   },
   'uvogin': {
@@ -1022,6 +1187,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
       note: 'Chapter 118 and episode 58. Checked on the episode page and the chapter pages.',
     },
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
+      note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
+    },
   },
   'nobunaga': {
     45: {
@@ -1044,6 +1217,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
       note: 'Corrected after review: the traffic is chapter 111 only (episode 56 has him in front of the car), so he catches Squala in his car; in Italian, it is clear that Pakunoda fires the image into Nobunaga’s head. Chapters 109-112 (pages 1-8) and episode 56. Checked on the episode page and the chapter pages.',
     },
+    72: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
+      note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72: newcomer and negotiation; no mechanism invented.',
+    },
   },
   'owl': {
     45: {
@@ -1064,6 +1241,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
       note: 'Corrected after review: Gon says that Pakunoda and Machi want their leader back. “controls them” became “controls Pakunoda and Machi”. Chapter 118 and episode 58. His meeting with the boys at the auction is chapter 120 and is left out. Checked on the episode page and the chapter pages.',
     },
+    59: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
+      note: 'Episode 59 and Chapter 123: Chapters 122–123 show theft and entry; scene complete by episode 59. Independent verifier removed premature claims about using techniques on the island, retaining only theft and entry order.',
+    },
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
+      note: 'Episode 62 and Chapter 134: Chapter 134: murder, card theft and one-week rendezvous; victim remains anonymous.',
+    },
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
+      note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
+    },
   },
   'light-nostrade': {
     46: {
@@ -1077,6 +1270,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     53: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Chapters 100-101 and episode 53. His thoughts on the price are chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 show distressed Light and missing fortunes; no claims about later outcome.',
     },
   },
   'shalnark': {
@@ -1092,6 +1289,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Corrected after review: in Italian, the ability’s name comes before “la sua abilità Nen”. Chapter 100 and episode 53. Italian: Voce Nera, il Cellulare del Destino (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
     },
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
+      note: 'Episode 62 and Chapter 134: Chapter 134 explains deduction from copies, vacuum and disappearing bodies.',
+    },
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
+      note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
+    },
   },
   'zepile': {
     48: {
@@ -1101,6 +1310,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     53: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'The sale left to him is chapter 89 and episode 48; the drinks and Gon’s thanks are chapter 101 and episode 53. Checked on the episode page and the chapter pages.',
+    },
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and Chapter 124: Chapter 124 and episode 60 establish money and decision; organ collateral is manga-only and omitted.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66 show greeting, knockout and exam result.',
     },
   },
   'pakunoda': {
@@ -1144,6 +1361,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'Chapter 108 and episode 55. Checked on the episode page and the chapter pages.',
     },
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
+      note: 'Episode 62 and Chapter 134: Chapter 134: failed copied Rock card and shared deduction.',
+    },
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
+      note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
+    },
   },
   'chrollo': {
     54: {
@@ -1177,6 +1402,204 @@ export const HUNTER_X_HUNTER_SOURCES = {
     56: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
       note: 'Corrected after review: “a better future” is the episode’s phrasing; Squala thinks about their future together. Chapters 109 and 112 (pages 1-8) and episode 56. Her strange feeling when Squala dies is anime-only. Checked on the episode page and the chapter pages.',
+    },
+  },
+  'battera': {
+    '59:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_120',
+      note: 'Split by medium after verification: Chapter 120 contains the interview and love answer; episode 59 instead shows the purchase, Gon and Killua’s request, the memory card and ring, and the Ren examination (chapter 121). The chapter-only opening stays at 120; the episode-only opening contains no interview claim.',
+    },
+    '59:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
+      note: 'Split by medium after verification: Chapter 120 contains the interview and love answer; episode 59 instead shows the purchase, Gon and Killua’s request, the memory card and ring, and the Ren examination (chapter 121). The chapter-only opening stays at 120; the episode-only opening contains no interview claim.',
+    },
+    '60': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and chapters 124-126 show the remaining purchases, the successful second screening, the 50-billion reward and entry through the mansion consoles. The chapter is 126 so the complete entry sequence is reached.',
+    },
+    '73': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_73_(2011)',
+      note: 'Episode 73 and chapter 174 reveal that his lover died after being in a coma and that the desired game card was meant to heal her; the canceled project is chapter 173. The lover remains unnamed.',
+    },
+  },
+  'tsezguerra': {
+    59: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
+      note: 'Episode 59 and chapter 121 show Battera calling him, the boys’ Ren demonstration and his rejection. The story avoids later details from chapter 122.',
+    },
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and chapters 125-126 show Killua’s electricity, Gon’s fist, admission, contract and the mansion’s order of entry. The full story waits for chapter 126.',
+    },
+    67: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_67_(2011)',
+      note: 'Episode 67 and chapter 153 contain the actual trade, distraction, concealed accomplices, Levy theft and escape. Corrected from chapter 152, which only sets up the deal.',
+    },
+    69: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_69_(2011)',
+      note: 'Chapter 160 contains recruitment and the jump comparison; episode 69 begins with the recruited team before the return to the pirates. No dodgeball result is included.',
+    },
+    71: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
+      note: 'The match spans chapters 161-169 and episodes 69-71. Chapter 169 and episode 71 complete the team’s victory, so this retrospective waits until the result is known.',
+    },
+    72: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
+      note: 'Chapters 170-173 and episode 72 show the delaying deal, pursuit with travel cards, escape to the real world and discovery that Battera has canceled the project. No lover explanation appears before chapter 174 / episode 73.',
+    },
+    73: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_73_(2011)',
+      note: 'Episode 73 and chapter 174 show the team staying out beyond the limit and Battera explaining his lover’s death. Removed the location claim: the manga’s conversation occurs at a hotel, not necessarily the mansion.',
+    },
+  },
+  'puhat': {
+    60: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
+      note: 'Episode 60 and chapter 125 show him seated behind Gon and Killua, explaining why rushing is unnecessary, approving Gon’s reasoning and introducing himself before the test.',
+    },
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
+      note: 'Chapter 131 supplies joining the alliance; chapter 132 and episode 62 supply the Fortress / Angel’s Breath briefing. Removed the memorization quiz because the episode synopsis does not establish that anime scene.',
+    },
+    64: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_64_(2011)',
+      note: 'Episode 64 and chapter 143 show the revelation of Countdown, Puhat recalling the contact and threat, his attempt to mediate outside the game, and his killing. The Bomber stays anonymous because his record has no anime reach.',
+    },
+  },
+  'biscuit-krueger': {
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
+      note: 'Episode 62 ends with the Gyo demonstration, introduction and forty years of Nen; chapter 137 contains this introduction. The opening avoids later acceptance, Wing or Blue Planet disclosures.',
+    },
+    63: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_63_(2011)',
+      note: 'Episode 63 and chapters 138-140 include Binolt’s defeat, the training agreement, shovel purchase and Shu exercise. Corrected from chapter 139 to 140 because the digging and Shu lesson occur later.',
+    },
+    64: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_64_(2011)',
+      note: 'Episode 64 and chapters 141-142 cover studying monster weaknesses, Ken against Ko and then Ryu. Chapter 142 is required for the full aura-distribution lesson.',
+    },
+    66: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
+      note: 'Episode 66 and chapters 149-151 show Killua’s return, collecting and the beginning of trading. Corrected from chapter 150 to 151 because trading begins there.',
+    },
+    69: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_69_(2011)',
+      note: 'Recruitment and sports victories occur in chapters 157-160; chapter 161 and episode 69 introduce the eight-player dodgeball challenge. The whole story waits for chapter 161.',
+    },
+    71: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
+      note: 'Chapters 164-169 and episodes 70-71 show her dress elimination, exposure of Killua’s injured hands during the timeout, and tending them after the team wins.',
+    },
+    72: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
+      note: 'Episode 72 and chapter 171 show Killua asking for her ability and Biscuit materializing her Nen beautician and explaining massage and recovery. The beautician remains unnamed because she has no filed record.',
+    },
+    73: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_73_(2011)',
+      note: 'Episode 73 and chapter 177 show separating an accomplice, letting him strike her, revealing her muscular form and winning with one punch. The accomplice is anonymous in both languages (#1032).',
+    },
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
+      note: 'Chapter 184 selects Blue Planet; chapter 185 and episode 75 show using it outside the game and the farewell before Gon and Killua travel. No identity at their destination is disclosed.',
+    },
+  },
+  'binolt': {
+    '63:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_138',
+      note: 'Split by medium after verification: the chapter-only opening at 138 stops at capture and training. The episode-only opening at episode 63 / chapter 139 includes the release already completed by that episode, with Gon thanking Binolt. This avoids withholding the anime’s completed event or leaking manga chapter 139 at 138.',
+    },
+    '63:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_63_(2011)',
+      note: 'Split by medium after verification: the chapter-only opening at 138 stops at capture and training. The episode-only opening at episode 63 / chapter 139 includes the release already completed by that episode, with Gon thanking Binolt. This avoids withholding the anime’s completed event or leaking manga chapter 139 at 138.',
+    },
+    '64': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_139',
+      note: 'Chapter 139 shows Gon stopping the final blow, thanking Binolt, Biscuit letting him go and Binolt promising to turn himself in. This chapter-only entry has episode 64 solely for ordering; anime release is included in the episode-63 opening.',
+    },
+  },
+  'kosofftro': {
+    62: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_132',
+      note: 'Chapter 132 and Kosofftro’s character page show the travel-card checkpoint, his introduction and request to memorize his name, and the recruits’ movement to the hideout. He is absent from the 2011 anime; this is chapter-only. No inferred death is authored.',
+    },
+  },
+  'genthru': {
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_144',
+      note: 'Chapters 142-144 show Countdown’s revelation, Jispa’s attack and reported death, Puhat’s killing and detonation after the card handover. His verified naming gate is chapter 144; the chronicle remains manga-only.',
+    },
+    67: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_153',
+      note: 'Chapter 153 shows the completed trade, Genthru’s false protest and his accomplices’ Risky Dice / Levy theft. Corrected from chapter 152, which only plans the trick. The accomplices stay anonymous.',
+    },
+    71: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_170',
+      note: 'Chapter 170 contains the threat after obtaining the beach card, the claimed killing of the original fifteen-person team, Gon’s challenge and Tsezguerra’s delaying deal. Manga-only naming restriction preserved.',
+    },
+    72: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_173',
+      note: 'Chapters 171-173 show harassment to replenish travel cards, the pursuit and following the Hunters to Battera’s mansion. The story avoids naming either accomplice.',
+    },
+    74: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_181',
+      note: 'Chapters 178-181 show Little Flower, Gon’s sacrificed hand, gasoline, pitfall, large rock and final punch. Chapter 181 completes the trap and defeat; no chapter-182 healing is pulled forward.',
+    },
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_183',
+      note: 'Chapter 182 heals the captured Bombers; chapter 183 shows the surviving exorcist touching Genthru, saying the disarming phrase and losing his Nen beast. The exorcist is anonymous (#1032).',
+    },
+  },
+  'jispa': {
+    65: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_144',
+      note: 'Chapters 131-132 show escort and instruction, chapter 143 shows the failed attack and explosion, and chapter 144 reports his death. The opening waits for his personal-name gate at 144 and remains manga-only.',
+    },
+  },
+  'razor': {
+    67: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_67_(2011)',
+      note: 'Chapter 145 and episode 65 show expulsion of the boat intruders and destruction of their boat. The retrospective opening waits for the record’s verified anime personal-name gate at episode 67. It does not claim the expulsion happens in episode 67.',
+    },
+    71: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
+      note: 'Chapters 161-169 and episodes 69-71 show Nen-created dodgeball players, the team’s victory and Razor’s account of Ging capturing and recruiting him. The completed story waits for chapter 169 / episode 71.',
+    },
+  },
+  'jeitsari': {
+    59: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_121',
+      note: 'Chapter 121 and Jeitsari’s character page establish the seven copies and consoles entrusted to the auction under a contract with his lawyer. The story omits the disputed calendar year and makes no claim about his current fate. Manga-only naming restriction preserved.',
+    },
+  },
+  'jitonoda': {
+    61: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_129',
+      note: 'Chapter 129 contains the named mayor’s assurances and the attendance figure. Corrected after verification: attendance falls to 60 percent of normal, not by 60 percent. The report is absent from both anime and his name is omitted in Viz; the existing manga-only record policy is preserved.',
+    },
+  },
+  'dwun': {
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
+      note: 'Chapter 184 and episode 75 show the messy room, the final card and three-card case, and Ging changing his name for the game title. No source-only co-creator is named in this shared story.',
+    },
+  },
+  'list': {
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_184',
+      note: 'Chapter 184 introduces List, escorts Gon to Dwun, explains the eleven creators and title initials, then celebrates completion. His name is not proven in the anime, so the complete story remains chapter-only.',
+    },
+  },
+  'eta': {
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_184',
+      note: 'Chapters 127,182-184 and Eta’s character page establish her entrance explanation, final quiz and identification as Elena’s twin and a co-creator. The retrospective waits for her named record at chapter 184 and remains chapter-only.',
+    },
+  },
+  'elena': {
+    75: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_184',
+      note: 'Chapters 146,184 and Elena’s character page establish the exit attendant, Killua’s earlier departure, twin/co-creator identification and Gon choosing three cards. The retrospective waits for chapter 184 and remains chapter-only.',
     },
   },
 }

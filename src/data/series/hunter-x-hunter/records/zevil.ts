@@ -1,3 +1,4 @@
+import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { type HunterSaga, passedExam } from './saga'
 import { zevilChronicles } from './zevil.chronicle'
 import { zevilRelationships } from './zevil.relationships'
@@ -463,7 +464,10 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     amori: {
       relationships: zevilRelationships.amori,
-      chronicle: zevilChronicles.amori,
+      chronicle: [
+        ...zevilChronicles.amori,
+        ...greedIslandReturningChronicles.amori,
+      ],
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
         it: 'Tonpa indica a Gon i tre fratelli tra gli aspiranti abituali.',
@@ -474,7 +478,10 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     umori: {
       relationships: zevilRelationships.umori,
-      chronicle: zevilChronicles.umori,
+      chronicle: [
+        ...zevilChronicles.umori,
+        ...greedIslandReturningChronicles.umori,
+      ],
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
         it: 'Si presenta all’esame con i due fratelli. Tonpa li indica a Gon tra gli aspiranti abituali.',
@@ -485,7 +492,10 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     imori: {
       relationships: zevilRelationships.imori,
-      chronicle: zevilChronicles.imori,
+      chronicle: [
+        ...zevilChronicles.imori,
+        ...greedIslandReturningChronicles.imori,
+      ],
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
         it: 'Insieme ai due fratelli è tra gli aspiranti abituali che Tonpa indica a Gon.',
