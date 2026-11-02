@@ -6,9 +6,10 @@ import {
   type Orientation,
   type Point,
   project,
+  type Rect,
   sideOf,
 } from '~/components/chartGeometry'
-import { layoutLabels } from '~/components/chartLabelLayout'
+import { type LabelFrame, layoutLabels } from '~/components/chartLabelLayout'
 import type { LabelBox } from '~/components/chartLabels'
 import { styles } from '~/components/SeaChart.styles'
 import { pointOf, type StopName } from '~/components/seaChartModel'
@@ -21,49 +22,33 @@ interface PlacedName {
   at: Point
   box: LabelBox
   id: string
+  marked: boolean
   name: string
 }
 
-/** Reached names stay written at every zoom, with leaders when they need room. */
+/**
+ * Reached names stay written at every zoom, with leaders when they need room.
+ * A place's map keeps them inside its stretch (`bounds`) and sets its own
+ * stop's name in gold (`marked`).
+ */
 export function StopNames({
+  bounds,
   names,
   here,
+  marked,
   orientation,
   scale,
 }: {
+  bounds?: Rect | undefined
   here: null | StopView
+  /** The id of the stop whose name is set in gold. */
+  marked?: string | undefined
   names: StopName[]
   orientation: Orientation
   scale: number
 }): ReactElement {
   const world = boxOf(orientation)
-  const spots = names.map(({ port, side }) => ({
-    at: pointOf(port),
-    length: port.name.length,
-    side: side[orientation],
-  }))
-  const current =
-    here === null ? null : (
-      {
-        at: pointOf(here),
-        length: CURRENT_LETTERS,
-        side: sideOf(pointOf(here), orientation),
-      }
-    )
-  const boxes = layoutLabels(spots, { orientation, scale }, current)
-  const placed = names.flatMap(({ port }, index): PlacedName[] => {
-    const box = boxes[index]
-    return box === undefined ?
-        []
-      : [
-          {
-            at: project(pointOf(port), orientation),
-            box,
-            id: port.id,
-            name: port.name,
-          },
-        ]
-  })
+  const placed = placedOf(names, here, { bounds, marked, orientation, scale })
   const room = { x: world.x * scale, y: world.y * scale }
 
   return (
@@ -82,6 +67,44 @@ export function StopNames({
       ))}
     </>
   )
+}
+
+/** Every name with its box, the reader's own label's room kept clear. */
+function placedOf(
+  names: StopName[],
+  here: null | StopView,
+  { marked, ...frame }: LabelFrame & { marked?: string | undefined },
+): PlacedName[] {
+  const { orientation } = frame
+  const spots = names.map(({ port, side }) => ({
+    at: pointOf(port),
+    length: port.name.length,
+    side: side[orientation],
+  }))
+  const current =
+    here === null ? null : (
+      {
+        at: pointOf(here),
+        length: CURRENT_LETTERS,
+        side: sideOf(pointOf(here), orientation),
+      }
+    )
+  const boxes = layoutLabels(spots, frame, current)
+
+  return names.flatMap(({ port }, index): PlacedName[] => {
+    const box = boxes[index]
+    return box === undefined ?
+        []
+      : [
+          {
+            at: project(pointOf(port), orientation),
+            box,
+            id: port.id,
+            marked: port.id === marked,
+            name: port.name,
+          },
+        ]
+  })
 }
 
 /** Leaders keep a displaced name visibly attached to its own reached island. */
@@ -126,6 +149,7 @@ function NameLabel({
       data-chart-name={label.id}
       {...stylex.props(
         styles.stopName,
+        label.marked && styles.stopNameHere,
         styles.nameBox(
           `${String((label.box.x / room.x) * PERCENT)}%`,
           `${String((label.box.y / room.y) * PERCENT)}%`,

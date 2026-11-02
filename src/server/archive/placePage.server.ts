@@ -8,7 +8,7 @@ import type {
   ShipDetail,
   VisitView,
 } from '~/lib/view/places'
-import type { DocumentHead, RecordView, Slot } from '~/lib/view/records'
+import type { DocumentHead, RecordView } from '~/lib/view/records'
 
 import { headFor, type HeadKeys } from './head.server'
 import { portOf, reachedShips, sagaNumberOf, shipOf } from './places.server'
@@ -26,7 +26,7 @@ function seaOf(place: Entity, r: Reader): null | string {
 
 /**
  * A place's own page: the entry the places page used to stack, the map
- * around it, its drawings and the stops either side. A ship's page is served
+ * around it and its drawings. A ship's page is served
  * from the same address, with her entry and her drawings. Apart from the
  * places page's module, which it shares the port and the ships with.
  */
@@ -87,8 +87,6 @@ export function placePage(
       slot: r.slot(entity, portOf),
       index,
       total: order.length,
-      previous: neighbourOf(order[index - 1], r),
-      next: neighbourOf(order[index + 1], r),
       // Under fog the page places nothing and draws nothing: where the place
       // lies and how it looks are what the fog is for.
       // A series without the world map has none to draw.
@@ -122,14 +120,6 @@ function shipPage(entity: Entity, r: Reader): ShipPage {
   }
 }
 
-/** A stop beside this one in the reader's order, or `null` past either end. */
-function neighbourOf(
-  entity: Entity | undefined,
-  r: Reader,
-): null | Slot<RecordView> {
-  return entity === undefined ? null : r.slot(entity, recordOf)
-}
-
 /**
  * The route the reader has sailed, as the places page's chart draws it, and
  * where this place is on it. Only the open stops: a stop past the bookmark
@@ -154,6 +144,8 @@ function chartOf(
     }
     route.push({
       at,
+      id: place.id,
+      name: place.name[r.locale],
       sea: seaOf(place, r),
       saga: sagaNumberOf(place.id, r),
       ship: sailedBy(place, ships, r.mode),

@@ -343,11 +343,6 @@ export const enDictionary = {
   'place.drawingsTitle': 'How the drawing changes',
   'place.drawingsLede':
     'Every drawing of this place up to your bookmark, oldest first.',
-  'place.turn': 'Previous and next stop',
-  'place.previous': 'Previous stop',
-  'place.next': 'Next stop',
-  'place.routeStart': 'Nothing. This is the first stop.',
-  'place.routeEnd': 'Nothing yet. This is the last stop in story order.',
   'place.notFoundTitle': 'Place not found',
   'place.notFoundBody':
     'There is no place at this address. The places page lists all of them.',

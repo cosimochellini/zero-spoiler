@@ -37,7 +37,7 @@ import { ChronicleBand } from './characters/-$id.chronicle'
 import { DossierDiptych } from './characters/-$id.dossier'
 import { Route as FruitRoute } from './fruits/$id'
 import { Route as PlaceRoute } from './places/$id'
-import { DrawingsBand, MapBand, TurnBand } from './places/-$id.bands'
+import { DrawingsBand, MapBand } from './places/-$id.bands'
 import { PlaceEntry } from './places/-$id.entry'
 import { PlacesBody } from './places/-page'
 
@@ -161,10 +161,6 @@ function PlaceBands({
       />
       <MapBand detail={page.detail} />
       <DrawingsBand detail={page.detail} />
-      <TurnBand
-        detail={page.detail}
-        peek={peekPending()}
-      />
     </main>
   )
 }

@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { type ReactElement, useId } from 'react'
+import { type ReactElement, useId, useState } from 'react'
 
 import {
   CHART_HEIGHT,
@@ -19,8 +19,15 @@ import {
   SeaRoute,
   SeaWorld,
 } from '~/components/SeaChartDrawing'
-import { isOnRoute, sagaTintOf } from '~/components/seaChartNames'
+import { StopNames } from '~/components/SeaChartLabels'
+import {
+  isOnRoute,
+  nameSideOf,
+  sagaTintOf,
+  type StopName,
+} from '~/components/seaChartNames'
 import { Spot } from '~/components/SeaChartPins'
+import { ASSUMED_PHONE, useFrameWidth } from '~/components/useChartZoom'
 import { regionsFor } from '~/lib/view/chart'
 import type { PlaceChartView } from '~/lib/view/places'
 import { color, radius, rule } from '~/styles/tokens.stylex'
@@ -41,10 +48,11 @@ function percent(value: number, of: number): string {
  * line of the ship that sailed to it, and the seas the reader has entered
  * are the only ones drawn.
  *
- * Past the reader's last stop the route goes on dashed into fog, its dots
- * spaced evenly as on the places page, so the stop after the reader's is an
- * anonymous dot and not a place. The drawing is one image with one name:
- * the stops either side are links in the band under it.
+ * Every reached stop in the stretch is named as on the places page, this
+ * one in gold. Past the reader's last stop the route goes on dashed into
+ * fog, its dots spaced evenly as on the places page, so the stop after the
+ * reader's is an anonymous dot with no name. The drawing is one image with
+ * one label: the names are for the eye.
  */
 export function PlaceMap({
   label,
@@ -94,6 +102,10 @@ export function PlaceMap({
             orientation="across"
           />
         </svg>
+        <Names
+          crop={crop}
+          map={map}
+        />
         <Stops
           map={map}
           tail={tail}
@@ -118,6 +130,68 @@ function islesOf({ route }: PlaceChartView): IsleMark[] {
   }
 
   return isles
+}
+
+/**
+ * The names of the reached stops inside the stretch, kept inside it, this
+ * one's in gold. For the eye only: the frame's label speaks for the map.
+ */
+function Names({
+  crop,
+  map,
+}: {
+  crop: Rect
+  map: PlaceChartView
+}): ReactElement {
+  // The layer spans the whole chart, so its width over the chart's is the
+  // scale; a phone's frame is assumed until the browser measures it.
+  const [layer, setLayer] = useState<HTMLDivElement | null>(null)
+  const width = useFrameWidth(layer, (ASSUMED_PHONE * CHART_WIDTH) / crop.width)
+
+  return (
+    <div
+      aria-hidden="true"
+      ref={setLayer}
+      {...stylex.props(chart.layer)}
+    >
+      <StopNames
+        bounds={crop}
+        here={null}
+        marked={map.route[map.here]?.id}
+        names={namesIn(map, crop)}
+        orientation="across"
+        scale={width / CHART_WIDTH}
+      />
+    </div>
+  )
+}
+
+/**
+ * The reached stops inside the stretch, each named on its side: this one
+ * first, so its name is the one set right beside its dot.
+ */
+function namesIn({ here, route }: PlaceChartView, crop: Rect): StopName[] {
+  const names: StopName[] = []
+  const own = route[here]
+  const order = own === undefined ? route : [own, ...route.toSpliced(here, 1)]
+  for (const { at, id, name } of order) {
+    if (
+      at.x >= crop.x
+      && at.x <= crop.x + crop.width
+      && at.y >= crop.y
+      && at.y <= crop.y + crop.height
+    ) {
+      names.push({
+        port: { chart: at, id, name },
+        side: {
+          across: nameSideOf(at, 'across'),
+          down: nameSideOf(at, 'down'),
+        },
+      })
+    }
+  }
+
+  return names
 }
 
 /**

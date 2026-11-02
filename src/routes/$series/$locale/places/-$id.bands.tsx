@@ -1,6 +1,6 @@
 /**
- * The bands under a place's entry: where it is on the map, how its drawing
- * changes, and the stops either side of it. A ship's page has the drawings.
+ * The bands under a place's entry: where it is on the map and how its
+ * drawing changes. A ship's page has the drawings.
  *
  * Siblings of the route module; the leading `-` keeps the file out of the
  * generated route tree. Set in the character page's sheet, because the two
@@ -28,8 +28,6 @@ import {
   space,
   text,
 } from '~/styles/tokens.stylex'
-
-import { Neighbour } from './-$id.neighbour'
 
 /**
  * Whether the series in the address draws the world map. With no description
@@ -191,49 +189,6 @@ export function DrawingsBand({
   )
 }
 
-/**
- * The stops before and after this one in the reader's order: a small plate
- * and a name that leads to its page, or fog with the episode.
- */
-export function TurnBand({
-  detail,
-  peek,
-}: {
-  detail: PlaceDetail
-  peek: (handle: string) => Promise<RecordView>
-}): ReactElement {
-  const t = useT()
-  const titleId = useId()
-
-  return (
-    <section
-      aria-labelledby={titleId}
-      {...stylex.props(styles.nearby)}
-    >
-      <h2
-        id={titleId}
-        {...stylex.props(page.sectionTitle)}
-      >
-        {t('place.turn')}
-      </h2>
-      <dl {...stylex.props(styles.neighbours)}>
-        <Neighbour
-          empty={t('place.routeStart')}
-          label={t('place.previous')}
-          peek={peek}
-          slot={detail.previous}
-        />
-        <Neighbour
-          empty={t('place.routeEnd')}
-          label={t('place.next')}
-          peek={peek}
-          slot={detail.next}
-        />
-      </dl>
-    </section>
-  )
-}
-
 const ONE_COLUMN = 'minmax(0, 1fr)'
 
 const styles = stylex.create({
@@ -252,24 +207,6 @@ const styles = stylex.create({
     letterSpacing: '0.1em',
     lineHeight: leading.body,
     textTransform: 'uppercase',
-  },
-  nearby: {
-    gap: space.lg,
-    borderBlockStartColor: color.rule,
-    borderBlockStartStyle: 'solid',
-    borderBlockStartWidth: rule.hair,
-    display: 'grid',
-    paddingBlockStart: space.xl,
-  },
-  neighbours: {
-    columnGap: space.lg,
-    display: 'grid',
-    gridTemplateColumns: {
-      'default': ONE_COLUMN,
-      '@media (min-width: 40rem)': 'repeat(2, minmax(0, 1fr))',
-    },
-    marginBlockStart: space.xs,
-    rowGap: space.md,
   },
 
   // One visit to a row: the map band's column is too narrow for the
