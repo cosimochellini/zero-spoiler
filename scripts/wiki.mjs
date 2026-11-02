@@ -494,6 +494,16 @@ export async function printPairs(args, directory = CACHE) {
   return exitCode
 }
 
+/**
+ * Sets the exit code from inside a function: unicorn's no-top-level-side-effects
+ * rejects a module-level write to `process` in a file that exports, and
+ * `process.exit()` could cut off output still queued for a pipe.
+ * @param {string[]} args The command-line arguments after the script path.
+ */
+const run = async (args) => {
+  process.exitCode = await printPairs(args)
+}
+
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
-  process.exitCode = await printPairs(process.argv.slice(2))
+  await run(process.argv.slice(2))
 }

@@ -107,6 +107,7 @@ const config = defineConfig({
     'react-doctor/design-no-em-dash-in-jsx-text': 'error',
     'react-doctor/design-no-three-period-ellipsis': 'error',
     'react-doctor/form-control-requires-name': 'error',
+    'react-doctor/forwarded-set-state-in-effect': 'error',
     'react-doctor/hooks-no-nan-in-deps': 'error',
     'react-doctor/no-cascading-set-state': 'error',
     'react-doctor/no-children-prop': 'error',

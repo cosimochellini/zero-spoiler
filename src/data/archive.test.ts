@@ -580,13 +580,21 @@ describe.each(LOADED_SERIES)('the chronicles of $slug', ({ archive }) => {
   it('files every story once, across characters, by when it concludes', () => {
     const { stories } = archive
     const episodes = stories.map((filed) => filed.episode)
-    // The home page keys a story by its subject and its episode.
-    const keys = new Set(
-      stories.map((filed) => `${filed.character.id}:${String(filed.episode)}`),
-    )
 
     expect(stories).toHaveLength(STORIES.length)
-    expect(keys.size).toBe(stories.length)
+
+    // The home page filters by source before keying by subject and episode.
+    for (const source of ['episode', 'chapter'] as const) {
+      const applicable = stories.filter(({ gate }) => toldIn(gate, source))
+      const keys = new Set(
+        applicable.map(
+          (filed) => `${filed.character.id}:${String(filed.episode)}`,
+        ),
+      )
+
+      expect(keys.size, source).toBe(applicable.length)
+    }
+
     expect(episodes.toSorted(byNumber())).toStrictEqual(episodes)
   })
 

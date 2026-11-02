@@ -2,6 +2,84 @@ import type { Relationship, Timeline } from '~/data/types'
 
 /** Facts and threshold revisions: docs/content-provenance/hunter-x-hunter-relationships.json. */
 const links = {
+  gonHisokaTeam: {
+    character: 'hisoka',
+    type: {
+      it: 'Alleato nella sfida sportiva',
+      en: 'Ally in the sports challenge',
+    },
+    summary: {
+      it: 'Gon ritrova Hisoka a Greed Island e accetta il suo aiuto per affrontare la squadra dei pirati.',
+      en: 'Gon finds Hisoka in Greed Island and accepts his help against the pirates’ team.',
+    },
+  },
+  killuaHisokaTeam: {
+    character: 'hisoka',
+    type: { it: 'Alleato di cui diffida', en: 'Ally he distrusts' },
+    summary: {
+      it: 'Killua accetta l’aiuto di Hisoka nella sfida sportiva, ma sospetta che nasconda il vero motivo della sua presenza nel gioco.',
+      en: 'Killua accepts Hisoka’s help in the sports challenge but suspects he is hiding his real reason for being in the game.',
+    },
+  },
+  hisokaChrolloExorcist: {
+    character: 'chrollo',
+    type: {
+      it: 'Rivale per cui cerca un esorcista',
+      en: 'Rival for whom he seeks an Exorcist',
+    },
+    summary: {
+      it: 'Hisoka usa il nome di Chrollo a Greed Island per attirare la Brigata nella ricerca di un esorcista. Vuole che Chrollo recuperi il Nen per poterlo affrontare.',
+      en: 'Hisoka uses Chrollo’s name in Greed Island to draw the Troupe into searching for an Exorcist. He wants Chrollo to regain his Nen so they can fight.',
+    },
+  },
+  hisokaGonTeam: {
+    character: 'gon-freecss',
+    type: {
+      it: 'Alleato nella sfida sportiva',
+      en: 'Ally in the sports challenge',
+    },
+    summary: {
+      it: 'Hisoka ritrova Gon a Greed Island, nota i suoi progressi e accetta di aiutare il suo gruppo nella sfida sportiva.',
+      en: 'Hisoka meets Gon again in Greed Island, notices his progress and agrees to help his group in the sports challenge.',
+    },
+  },
+  hisokaKilluaTeam: {
+    character: 'killua',
+    type: {
+      it: 'Alleato nella sfida sportiva',
+      en: 'Ally in the sports challenge',
+    },
+    summary: {
+      it: 'Hisoka ritrova Killua insieme a Gon e accetta di aiutarli nella sfida sportiva, nascondendo parte delle sue intenzioni.',
+      en: 'Hisoka finds Killua with Gon and agrees to help them in the sports challenge while concealing part of his intentions.',
+    },
+  },
+  hisokaBiscuitTeam: {
+    character: 'biscuit-krueger',
+    type: { it: 'Giocatrice che lo recluta', en: 'Player who recruits him' },
+    summary: {
+      it: 'Biscuit chiede a Hisoka di aiutare il gruppo nella sfida sportiva e lui accetta.',
+      en: 'Biscuit asks Hisoka to help the group in the sports challenge and he agrees.',
+    },
+  },
+  killuaBiscuit: {
+    character: 'biscuit-krueger',
+    type: { it: 'Maestra di Nen', en: 'Nen teacher' },
+    summary: {
+      it: 'Biscuit offre di allenarlo dopo aver osservato le sue difficoltà contro i mostri di Greed Island.',
+      en: 'Biscuit offers to train him after watching him struggle against Greed Island’s monsters.',
+    },
+  },
+
+  gonBiscuit: {
+    character: 'biscuit-krueger',
+    type: { it: 'Maestra di Nen', en: 'Nen teacher' },
+    summary: {
+      it: 'Biscuit offre di allenarlo dopo aver osservato le sue difficoltà contro i mostri di Greed Island.',
+      en: 'Biscuit offers to train him after watching him struggle against Greed Island’s monsters.',
+    },
+  },
+
   // Gon Freecss
   gonMito: {
     character: 'mito-freecss',
@@ -2008,7 +2086,30 @@ export const hunterExamRelationships = {
         links.gonChrollo,
       ],
     },
-    // Anime-only, delayed to Kite's record (episode 76): Kite joins and
+    {
+      episode: 62,
+      chapter: 137,
+      value: [
+        links.gonKilluaTogether,
+        links.gonGing,
+        links.gonKurapikaRescue,
+        links.gonLeorioFriend,
+        links.gonBiscuit,
+      ],
+    },
+    {
+      episode: 68,
+      chapter: 158,
+      value: [
+        links.gonKilluaTogether,
+        links.gonBiscuit,
+        links.gonHisokaTeam,
+        links.gonGing,
+        links.gonKurapikaRescue,
+      ],
+    },
+
+    // Anime-only, delayed to Kite’s record (episode 76): Kite joins and
     // Chrollo makes room.
     {
       episode: 76,
@@ -2532,6 +2633,28 @@ export const hunterExamRelationships = {
         links.hisokaGonReturned,
       ],
     },
+    {
+      episode: 66,
+      chapter: 149,
+      value: [
+        links.hisokaChrolloExorcist,
+        links.hisokaKurapikaExchange,
+        links.hisokaIllumiHelp,
+        links.hisokaPakunoda,
+        links.hisokaGonReturned,
+      ],
+    },
+    {
+      episode: 68,
+      chapter: 158,
+      value: [
+        links.hisokaChrolloExorcist,
+        links.hisokaGonTeam,
+        links.hisokaKilluaTeam,
+        links.hisokaBiscuitTeam,
+        links.hisokaKurapikaExchange,
+      ],
+    },
   ],
   'todo': [
     {
@@ -2811,6 +2934,28 @@ export const hunterExamRelationships = {
         links.killuaIllumiVoice,
         links.killuaSilva,
         links.killuaNobunagaHotel,
+      ],
+    },
+    {
+      episode: 62,
+      chapter: 137,
+      value: [
+        links.killuaGonTogether,
+        links.killuaKurapikaRescue,
+        links.killuaIllumiVoice,
+        links.killuaSilva,
+        links.killuaBiscuit,
+      ],
+    },
+    {
+      episode: 68,
+      chapter: 158,
+      value: [
+        links.killuaGonTogether,
+        links.killuaBiscuit,
+        links.killuaHisokaTeam,
+        links.killuaKurapikaRescue,
+        links.killuaIllumiVoice,
       ],
     },
   ],

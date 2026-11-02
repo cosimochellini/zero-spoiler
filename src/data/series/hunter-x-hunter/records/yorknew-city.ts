@@ -1,5 +1,6 @@
 import type { PlaceDossier } from '~/data/types'
 
+import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga, HunterVocabulary } from './saga'
 import { yorknewCityChronicles } from './yorknew-city.chronicle'
 import { yorknewCityRelationships } from './yorknew-city.relationships'
@@ -589,7 +590,10 @@ export const yorknewCity: HunterSaga = {
   dossiers: {
     'ging-freecss': {
       relationships: yorknewCityRelationships['ging-freecss'],
-      chronicle: yorknewCityChronicles['ging-freecss'],
+      chronicle: [
+        ...yorknewCityChronicles['ging-freecss'],
+        ...greedIslandReturningChronicles['ging-freecss'],
+      ],
       role: { it: 'Hunter, padre di Gon', en: 'Hunter, Gon’s father' },
       log: {
         it: 'Da ragazzo è partito dall’Isola Balena. Dieci anni dopo è tornato con Gon in braccio e ha chiesto alla nonna di occuparsene, dicendo che lui e la madre si erano lasciati. A Gon ha lasciato una scatola con dentro un anello, una scheda di memoria e una cassetta: sul nastro chiede a Gon se vuole incontrarlo.',
@@ -711,8 +715,25 @@ export const yorknewCity: HunterSaga = {
     },
     'neon-nostrade': {
       relationships: yorknewCityRelationships['neon-nostrade'],
-      chronicle: yorknewCityChronicles['neon-nostrade'],
-      role: { it: 'Indovina', en: 'Fortune-teller' },
+      chronicle: [
+        ...yorknewCityChronicles['neon-nostrade'],
+        ...greedIslandReturningChronicles['neon-nostrade'],
+      ],
+      role: [
+        {
+          episode: 41,
+          chapter: 71,
+          value: { it: 'Indovina', en: 'Fortune-teller' },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Indovina che non riesce più a usare il suo potere',
+            en: 'Fortune-teller unable to use her ability',
+          },
+        },
+      ],
       log: {
         it: 'Arriva a York Shin City con le sue guardie del corpo. Con il suo potere scrive le profezie per gli amici di suo padre.',
         en: 'She arrives in Yorknew City with her bodyguards. With her power she writes fortunes for her father’s friends.',
@@ -772,7 +793,10 @@ export const yorknewCity: HunterSaga = {
     },
     'machi': {
       relationships: yorknewCityRelationships.machi,
-      chronicle: yorknewCityChronicles.machi,
+      chronicle: [
+        ...yorknewCityChronicles.machi,
+        ...greedIslandReturningChronicles.machi,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'I membri della Brigata si riuniscono tutti a York Shin City per la prima volta da più di tre anni, e lei ci va a piedi con altri tre.',
@@ -806,29 +830,67 @@ export const yorknewCity: HunterSaga = {
     },
     'feitan': {
       relationships: yorknewCityRelationships.feitan,
-      chronicle: yorknewCityChronicles.feitan,
+      chronicle: [
+        ...yorknewCityChronicles.feitan,
+        ...greedIslandReturningChronicles.feitan,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Sale sul palco dell’asta sotterranea con un altro membro della Brigata e dà il benvenuto agli ospiti; subito dopo vengono uccisi quasi tutti i presenti.',
         en: 'He walks onto the stage of the Underground Auction with another Troupe member and welcomes the guests; straight after, nearly everyone in the hall is killed.',
       },
       status: [{ episode: 43, chapter: 74, value: 'alive' }],
-      affiliation: [{ episode: 43, chapter: 74, value: TROUPE }],
+      affiliation: [
+        { episode: 43, chapter: 74, value: TROUPE },
+        {
+          episode: 59,
+          chapter: 123,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          source: 'episode',
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
+      ],
     },
     'franklin': {
       relationships: yorknewCityRelationships.franklin,
-      chronicle: yorknewCityChronicles.franklin,
+      chronicle: [
+        ...yorknewCityChronicles.franklin,
+        ...greedIslandReturningChronicles.franklin,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'All’asta sotterranea, sul palco con Feitan, uccide quasi tutti gli ospiti con proiettili fatti di aura. Poi gioca a carte con gli altri membri mentre Uborghin affronta da solo le Bestie dell’Ombra.',
         en: 'At the Underground Auction, on the stage with Feitan, he kills nearly all the guests with bullets made of aura. Later he and the other members play cards while Uvogin takes on the Shadow Beasts alone.',
       },
       status: [{ episode: 44, chapter: 76, value: 'alive' }],
-      affiliation: [{ episode: 44, chapter: 76, value: TROUPE }],
+      affiliation: [
+        { episode: 44, chapter: 76, value: TROUPE },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
+      ],
     },
     'nobunaga': {
       relationships: yorknewCityRelationships.nobunaga,
-      chronicle: yorknewCityChronicles.nobunaga,
+      chronicle: [
+        ...yorknewCityChronicles.nobunaga,
+        ...greedIslandReturningChronicles.nobunaga,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Con altri membri della Brigata insegue l’auto che porta via Uborghin. Civetta atterra sulla loro auto e la avvolge in un telo: gli altri riescono a uscire, lui, per il posto in cui è seduto, resta intrappolato.',
@@ -845,29 +907,74 @@ export const yorknewCity: HunterSaga = {
     },
     'phinks': {
       relationships: yorknewCityRelationships.phinks,
-      chronicle: yorknewCityChronicles.phinks,
+      chronicle: [
+        ...yorknewCityChronicles.phinks,
+        ...greedIslandReturningChronicles.phinks,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Con altri membri della Brigata, travestiti da mafiosi, raggiunge il posto dove le guardie del corpo tengono Uborghin. Uccidono Dalzorne e liberano il compagno.',
         en: 'With other Troupe members, disguised as Mafia men, he reaches the place where the bodyguards hold Uvogin. They kill Dalzollene and free his comrade.',
       },
       status: [{ episode: 45, chapter: 78, value: 'alive' }],
-      affiliation: [{ episode: 45, chapter: 78, value: TROUPE }],
+      affiliation: [
+        { episode: 45, chapter: 78, value: TROUPE },
+        {
+          episode: 59,
+          chapter: 123,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
+      ],
     },
     'shalnark': {
       relationships: yorknewCityRelationships.shalnark,
-      chronicle: yorknewCityChronicles.shalnark,
+      chronicle: [
+        ...yorknewCityChronicles.shalnark,
+        ...greedIslandReturningChronicles.shalnark,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Mentre Uborghin beve birra, cerca la famiglia Nostrad sul sito degli Hunter, così che Uborghin possa scovare l’utilizzatore di catene.',
         en: 'While Uvogin drinks beer, he searches the Hunter website for the Nostrade family, so that Uvogin can track down the chain user.',
       },
       status: [{ episode: 46, chapter: 79, value: 'alive' }],
-      affiliation: [{ episode: 46, chapter: 79, value: TROUPE }],
+      affiliation: [
+        { episode: 46, chapter: 79, value: TROUPE },
+        {
+          episode: 62,
+          chapter: 134,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
+      ],
     },
     'light-nostrade': {
       relationships: yorknewCityRelationships['light-nostrade'],
-      chronicle: yorknewCityChronicles['light-nostrade'],
+      chronicle: [
+        ...yorknewCityChronicles['light-nostrade'],
+        ...greedIslandReturningChronicles['light-nostrade'],
+      ],
       role: { it: 'Padre di Neon', en: 'Neon’s father' },
       log: {
         it: 'Le guardie del corpo scoprono da Squala che è lui ad averle assunte. Al telefono Kurapika gli dice che Dalzorne è probabilmente morto, e lui lo mette a capo delle guardie.',
@@ -971,7 +1078,10 @@ export const yorknewCity: HunterSaga = {
     },
     'zepile': {
       relationships: yorknewCityRelationships.zepile,
-      chronicle: yorknewCityChronicles.zepile,
+      chronicle: [
+        ...yorknewCityChronicles.zepile,
+        ...greedIslandReturningChronicles.zepile,
+      ],
       role: { it: 'Offerente rivale', en: 'Rival bidder' },
       log: {
         it: 'A un mercato di York Shin City il suo nome è sulle offerte che superano quelle di Gon e Killua, quattro volte più alte. Si aggiudica il vaso che volevano.',
@@ -986,6 +1096,14 @@ export const yorknewCity: HunterSaga = {
           value: {
             it: 'Vende gli oggetti di Gon e Killua',
             en: 'Selling Gon and Killua’s items',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
           },
         },
       ],
@@ -1023,14 +1141,36 @@ export const yorknewCity: HunterSaga = {
     },
     'kortopi': {
       relationships: yorknewCityRelationships.kortopi,
-      chronicle: yorknewCityChronicles.kortopi,
+      chronicle: [
+        ...yorknewCityChronicles.kortopi,
+        ...greedIslandReturningChronicles.kortopi,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'All’asta sotterranea, che la Brigata manda avanti di nascosto, copia gli oggetti e sono le copie a essere vendute.',
         en: 'At the Underground Auction, which the Troupe runs from backstage, he copies the items, and the copies are what gets sold.',
       },
       status: [{ episode: 53, chapter: 100, value: 'alive' }],
-      affiliation: [{ episode: 53, chapter: 100, value: TROUPE }],
+      affiliation: [
+        { episode: 53, chapter: 100, value: TROUPE },
+        {
+          episode: 62,
+          chapter: 134,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          source: 'episode',
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
+      ],
     },
     'bonolenov': {
       chronicle: yorknewCityChronicles.bonolenov,
@@ -1091,14 +1231,35 @@ export const yorknewCity: HunterSaga = {
     },
     'shizuku': {
       relationships: yorknewCityRelationships.shizuku,
-      chronicle: yorknewCityChronicles.shizuku,
+      chronicle: [
+        ...yorknewCityChronicles.shizuku,
+        ...greedIslandReturningChronicles.shizuku,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Sfida Gon a braccio di ferro per il premio, un diamante, e perde dopo averlo costretto a impegnarsi davvero per vincere.',
         en: 'She challenges Gon at arm wrestling for the prize, a diamond, and loses after making him try for real to win.',
       },
       status: [{ episode: 42, chapter: 72, value: 'alive' }],
-      affiliation: [{ episode: 42, chapter: 72, value: TROUPE }],
+      affiliation: [
+        { episode: 42, chapter: 72, value: TROUPE },
+        {
+          episode: 62,
+          chapter: 134,
+          value: {
+            it: 'Brigata Fantasma; giocatore di Greed Island',
+            en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
+      ],
     },
   },
 }

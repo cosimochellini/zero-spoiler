@@ -44,6 +44,7 @@ const STORIES = characters.flatMap((character) => {
     return {
       id: character.id,
       episode: story.episode,
+      medium: story.source,
       title: story.value.title.en,
     }
   })
@@ -197,12 +198,18 @@ describe('the chronicle verification log', () => {
   })
 
   it('keeps the sources beside the script in step with the document', () => {
-    for (const row of ROWS) {
-      const source = SOURCES[row.id]?.[row.episode]
+    const expected = STORIES.map((story) => {
+      const source =
+        SOURCES[story.id]?.[`${story.episode}:${story.medium}`]
+        ?? SOURCES[story.id]?.[story.episode]
 
-      expect(source?.source, asLine(row)).toBe(row.source)
-      expect(source?.note, asLine(row)).toBe(row.note)
-    }
+      return JSON.stringify([asLine(story), source?.source, source?.note])
+    }).toSorted(byString())
+    const actual = ROWS.map((row) =>
+      JSON.stringify([asLine(row), row.source, row.note]),
+    ).toSorted(byString())
+
+    expect(actual).toStrictEqual(expected)
   })
 
   it('quotes a source only as far as a name or a threshold needs', () => {

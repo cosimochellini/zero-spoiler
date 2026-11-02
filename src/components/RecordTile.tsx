@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 import { ChartArt } from '~/components/ChartArt'
+import { styles as bandStyles } from '~/components/SpecimenBands.styles'
 import { SpoilerVeil } from '~/components/SpoilerVeil'
 import { useKindLabel } from '~/components/useKindLabel'
 import { useT } from '~/i18n/LocaleContext'
@@ -11,8 +12,6 @@ import { useDrawing } from '~/lib/view/drawings'
 import type { RecordView, Slot } from '~/lib/view/records'
 import {
   color,
-  dur,
-  ease,
   font,
   leading,
   radius,
@@ -35,7 +34,7 @@ export interface RecordTileProps {
  * the slug is in the served HTML, and the episode stays.
  *
  * Used wherever a page points at the records filed beside the one it is
- * about: the two neighbours on a character page, the crew a port files.
+ * about: the crew a port files.
  */
 export function RecordTile({ slot, peek }: RecordTileProps): ReactElement {
   const t = useT()
@@ -45,9 +44,9 @@ export function RecordTile({ slot, peek }: RecordTileProps): ReactElement {
 
   return (
     <span {...stylex.props(styles.tile)}>
-      <span {...stylex.props(styles.meta)}>
+      <span {...stylex.props(bandStyles.meta)}>
         <span {...stylex.props(styles.kind)}>{kindLabel(filed.kind)}</span>
-        <span {...stylex.props(styles.episode)}>
+        <span {...stylex.props(bandStyles.episode)}>
           {threshold('chart.opensAt', filed)}
         </span>
       </span>
@@ -114,7 +113,7 @@ function Name({ entry }: { entry: RecordView }): ReactElement {
       <Link
         params={{ series, locale, id: entry.id }}
         to="/$series/$locale/characters/$id"
-        {...stylex.props(styles.name, styles.link)}
+        {...stylex.props(styles.name, bandStyles.link)}
       >
         {label}
       </Link>
@@ -126,7 +125,7 @@ function Name({ entry }: { entry: RecordView }): ReactElement {
       <Link
         params={{ series, locale, id: entry.id }}
         to="/$series/$locale/places/$id"
-        {...stylex.props(styles.name, styles.link)}
+        {...stylex.props(styles.name, bandStyles.link)}
       >
         {label}
       </Link>
@@ -138,7 +137,7 @@ function Name({ entry }: { entry: RecordView }): ReactElement {
       <Link
         params={{ series, locale, id: entry.id }}
         to="/$series/$locale/fruits/$id"
-        {...stylex.props(styles.name, styles.link)}
+        {...stylex.props(styles.name, bandStyles.link)}
       >
         {label}
       </Link>
@@ -161,24 +160,7 @@ const styles = stylex.create({
     display: 'grid',
     minWidth: 0,
   },
-  meta: {
-    alignItems: 'baseline',
-    color: color.muted,
-    columnGap: space.sm,
-    display: 'flex',
-    flexWrap: 'wrap',
-    fontSize: text.xs,
-    letterSpacing: '0.08em',
-    lineHeight: leading.body,
-    textTransform: 'uppercase',
-  },
   kind: { fontFamily: font.body, fontWeight: 600 },
-  episode: {
-    color: color.ink2,
-    fontFamily: font.mono,
-    fontVariantNumeric: 'tabular-nums',
-    fontWeight: 600,
-  },
   card: {
     alignItems: 'center',
     columnGap: space.sm,
@@ -204,23 +186,5 @@ const styles = stylex.create({
     lineHeight: leading.heading,
     overflowWrap: 'anywhere',
     minWidth: 0,
-  },
-  link: {
-    color: {
-      'default': color.ink,
-      ':hover': color.accent,
-      ':active': color.ink2,
-    },
-    outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
-    outlineOffset: space.xs3,
-    outlineStyle: 'solid',
-    outlineWidth: rule.fine,
-    textDecorationColor: { 'default': 'transparent', ':hover': color.accent },
-    textDecorationLine: 'underline',
-    textDecorationThickness: rule.fine,
-    textUnderlineOffset: '4px',
-    transitionDuration: dur.micro,
-    transitionProperty: 'color, text-decoration-color',
-    transitionTimingFunction: ease.out,
   },
 })

@@ -3,11 +3,10 @@ import type { ReactElement } from 'react'
 import { describe, expect, it } from 'vitest'
 
 import type { PlaceDetail, PlacesView, StopView } from '~/lib/view/places'
-import type { PlaceWordsView, RecordView } from '~/lib/view/records'
+import type { PlaceWordsView } from '~/lib/view/records'
 import {
   at,
   coveredRecord,
-  coveredSlot,
   dossier,
   openSlot,
   peekPending,
@@ -133,8 +132,6 @@ describe('a series’ own place words', () => {
       drawings: [],
       index: 0,
       natives: [],
-      next: coveredSlot<RecordView>({ kind: 'place', ...at(4) }),
-      previous: null,
       slot: openSlot(
         port({
           id: 'trick-tower',

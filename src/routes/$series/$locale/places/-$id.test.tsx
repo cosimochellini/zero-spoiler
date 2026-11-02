@@ -25,7 +25,7 @@ import {
   settle,
 } from '~/test/providers'
 
-import { DrawingsBand, MapBand, TurnBand } from './-$id.bands'
+import { DrawingsBand, MapBand } from './-$id.bands'
 import { EntryDiptych, PlaceEntry, ShipBody } from './-$id.entry'
 
 const sanji = openSlot(record({ id: 'sanji', name: 'Sanji', ...at(20) }))
@@ -47,8 +47,22 @@ const map: PlaceChartView = {
   fogged: 2,
   here: 1,
   route: [
-    { at: { x: 290, y: 60 }, sea: 'east-blue', saga: 1, ship: 0 },
-    { at: { x: 190, y: 130 }, sea: 'east-blue', saga: 1, ship: 0 },
+    {
+      at: { x: 290, y: 60 },
+      id: 'orange-town',
+      name: 'Orange Town',
+      sea: 'east-blue',
+      saga: 1,
+      ship: 0,
+    },
+    {
+      at: { x: 190, y: 130 },
+      id: 'baratie',
+      name: 'Baratie',
+      sea: 'east-blue',
+      saga: 1,
+      ship: 0,
+    },
   ],
 }
 
@@ -58,10 +72,6 @@ function detailOf(over: Partial<PlaceDetail> = {}): PlaceDetail {
     drawings: [],
     index: 4,
     natives: [],
-    next: coveredSlot<RecordView>({ kind: 'place', ...at(64) }),
-    previous: openSlot(
-      record({ id: 'syrup-village', kind: 'place', name: 'Syrup Village' }),
-    ),
     slot: openSlot(baratie),
     total: 39,
     visits: [],
@@ -268,6 +278,20 @@ describe('a place on the map', () => {
     expect(screen.getByText('The crew comes back.')).toBeVisible()
   })
 
+  it('names the stops it has reached, this one apart, and no fog dot', () => {
+    const { container } = renderWithProviders(<MapBand detail={detailOf()} />, {
+      bookmark: ep(20),
+    })
+    const names = container.querySelectorAll('[data-chart-name]')
+
+    // The page's own stop claims its room first.
+    expect([...names].map((name) => name.textContent)).toStrictEqual([
+      'Baratie',
+      'Orange Town',
+    ])
+    expect(names[0]?.className).not.toBe(names[1]?.className)
+  })
+
   it('has no visits heading while none is reached', () => {
     renderWithProviders(<MapBand detail={detailOf()} />, { bookmark: ep(20) })
 
@@ -354,38 +378,5 @@ describe('how a place’s drawing changes', () => {
     )
 
     expect(container).toBeEmptyDOMElement()
-  })
-})
-
-describe('the stops either side', () => {
-  it('links an open stop to its page and fogs one the reader has not reached', () => {
-    renderWithProviders(
-      <TurnBand
-        detail={detailOf()}
-        peek={peekPending()}
-      />,
-      { bookmark: ep(20) },
-    )
-
-    expect(screen.getByRole('link', { name: 'Syrup Village' })).toHaveAttribute(
-      'href',
-      '/one-piece/en/places/syrup-village',
-    )
-    expect(screen.getByText('Episode 64')).toBeVisible()
-  })
-
-  it('says so at either end of the route', () => {
-    renderWithProviders(
-      <TurnBand
-        detail={detailOf({ next: null, previous: null })}
-        peek={peekPending()}
-      />,
-      { bookmark: ep(20) },
-    )
-
-    expect(screen.getByText('Nothing. This is the first stop.')).toBeVisible()
-    expect(
-      screen.getByText('Nothing yet. This is the last stop in story order.'),
-    ).toBeVisible()
   })
 })

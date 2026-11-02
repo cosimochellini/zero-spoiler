@@ -86,9 +86,7 @@ describe('EpisodeMark', () => {
   beforeEach(() => {
     // The component writes the bookmark to `document.cookie`, and jsdom keeps
     // one document for the whole file, so a value left behind would let a
-    // later assertion pass on the previous test's cookie. jsdom ships no
-    // `CookieStore`, which is the only writer the rule accepts.
-    // eslint-disable-next-line unicorn/no-document-cookie -- jsdom has no CookieStore, and this is the only way to clear what the component wrote.
+    // later assertion pass on the previous test's cookie.
     document.cookie = 'zs_one-piece=; Max-Age=0; Path=/'
   })
 

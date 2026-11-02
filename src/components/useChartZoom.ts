@@ -26,7 +26,7 @@ import { type ChartHands, toChart, useHands } from '~/components/useChartHands'
  * its widest; upright, on a common phone.
  */
 const ASSUMED_WIDTH = 1200
-const ASSUMED_PHONE = 375
+export const ASSUMED_PHONE = 375
 /** One press of + or −. */
 const STEP = 1.6
 /** How hard the wheel zooms, per pixel it turns. */
@@ -157,7 +157,7 @@ function movesOf({
 }
 
 /** The frame's width, measured where the browser can, assumed elsewhere. */
-function useFrameWidth(
+export function useFrameWidth(
   element: HTMLDivElement | null,
   assumed: number,
 ): number {

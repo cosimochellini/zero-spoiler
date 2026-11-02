@@ -117,29 +117,24 @@ describe('a place’s own page', () => {
         const chart = pageOf(port.id, bookmark).detail.chart
 
         expect(chart?.route.map((stop) => stop.at)).toStrictEqual(expected)
+        // The map names its stops: only the open ones, so no name past the
+        // bookmark is sent.
+        expect(chart?.route.map((stop) => stop.name)).toStrictEqual(
+          open.map((stop) => stop.name),
+        )
         expect(chart?.fogged).toBe(covered.length)
       }
     },
   )
 
-  it('sits between the stops either side of it in the reader’s order', () => {
-    const { detail } = pageOf('water-seven', ep(650))
-
-    expect(detail.index).toBe(13)
-    expect(detail.previous).toMatchObject({ record: { id: 'angel-island' } })
-    expect(detail.next).toMatchObject({ record: { id: 'puffing-tom' } })
+  it('counts its stop in the reader’s order', () => {
+    expect(pageOf('water-seven', ep(650)).detail.index).toBe(13)
   })
 
-  it('fogs the next stop the reader has not reached', () => {
+  it('ends the route at the reader’s last stop', () => {
     const { detail } = pageOf('alubarna', ep(100))
 
-    expect(detail.next?.open).toBe(false)
     expect(detail.chart?.here).toBe((detail.chart?.route.length ?? 0) - 1)
-  })
-
-  it('has nothing before the first stop and nothing after the last', () => {
-    expect(pageOf('shells-town', ep(1200)).detail.previous).toBeNull()
-    expect(pageOf('sun-world', ep(1200)).detail.next).toBeNull()
   })
 
   it('draws each stage of its drawing from its own gate, in either unit', () => {

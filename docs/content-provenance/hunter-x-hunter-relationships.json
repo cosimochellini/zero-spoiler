@@ -34,7 +34,12 @@
       "hxh-en-Chapter_107-416179.json",
       "hxh-en-Chapter_108-322195.json",
       "hxh-en-Chapter_111-416182.json",
-      "hxh-en-Chapter_119-322184.json"
+      "hxh-en-Chapter_119-322184.json",
+      "hxh-en-Biscuit_Krueger-424978.json",
+      "hxh-en-Chapter_137-329195.json",
+      "hxh-en-Episode_62_(2011)-417943.json",
+      "hxh-en-Chapter_158-382703.json",
+      "hxh-en-Episode_68_(2011)-425286.json"
     ],
     "killua": [
       "hxh-en-Killua_Zoldyck-425628.json",
@@ -71,7 +76,12 @@
       "hxh-en-Chapter_108-322195.json",
       "hxh-en-Chapter_119-322184.json",
       "hxh-en-Chapter_113-416184.json",
-      "hxh-en-Episode_57_(2011)-416426.json"
+      "hxh-en-Episode_57_(2011)-416426.json",
+      "hxh-en-Biscuit_Krueger-424978.json",
+      "hxh-en-Chapter_137-329195.json",
+      "hxh-en-Episode_62_(2011)-417943.json",
+      "hxh-en-Chapter_158-382703.json",
+      "hxh-en-Episode_68_(2011)-425286.json"
     ],
     "ging-freecss": [
       "hxh-en-Ging_Freecss-425761.json",
@@ -178,7 +188,11 @@
       "hxh-en-Chapter_115-329189.json",
       "hxh-en-Chapter_118-416188.json",
       "hxh-en-Chapter_119-322184.json",
-      "hxh-en-Chapter_103-416177.json"
+      "hxh-en-Chapter_103-416177.json",
+      "hxh-en-Chapter_149-329197.json",
+      "hxh-en-Chapter_158-382703.json",
+      "hxh-en-Episode_66_(2011)-410832.json",
+      "hxh-en-Episode_68_(2011)-425286.json"
     ],
     "tonpa": ["hxh-en-Tonpa-423953.json"],
     "todo": ["hxh-en-Todo-423960.json"],
@@ -544,7 +558,9 @@
       "hxh-en-Chapter_91-416169.json",
       "hxh-en-Chapter_92-416170.json",
       "hxh-en-Chapter_104-329181.json",
-      "hxh-en-Chapter_93-416171.json"
+      "hxh-en-Chapter_93-416171.json",
+      "hxh-en-Chapter_149-329197.json",
+      "hxh-en-Episode_66_(2011)-410832.json"
     ],
     "uvogin": [
       "hxh-en-Uvogin-423930.json",
@@ -596,7 +612,8 @@
       "hxh-en-Chapter_84-416165.json",
       "hxh-en-Chapter_91-416169.json",
       "hxh-en-Chapter_92-416170.json",
-      "hxh-en-Chapter_118-416188.json"
+      "hxh-en-Chapter_118-416188.json",
+      "hxh-en-Episode_66_(2011)-410832.json"
     ],
     "franklin": [
       "hxh-en-Franklin_Bordeau-424823.json",
@@ -615,7 +632,9 @@
       "hxh-en-Chapter_91-416169.json",
       "hxh-en-Chapter_92-416170.json",
       "hxh-en-Chapter_93-416171.json",
-      "hxh-en-Chapter_118-416188.json"
+      "hxh-en-Chapter_118-416188.json",
+      "hxh-en-Chapter_149-329197.json",
+      "hxh-en-Episode_66_(2011)-410832.json"
     ],
     "nobunaga": [
       "hxh-en-Nobunaga_Hazama-424237.json",
@@ -665,7 +684,9 @@
       "hxh-en-Chapter_90-400729.json",
       "hxh-en-Chapter_91-416169.json",
       "hxh-en-Chapter_117-416187.json",
-      "hxh-en-Chapter_118-416188.json"
+      "hxh-en-Chapter_118-416188.json",
+      "hxh-en-Chapter_149-329197.json",
+      "hxh-en-Episode_66_(2011)-410832.json"
     ],
     "shalnark": [
       "hxh-en-Shalnark-425812.json",
@@ -677,7 +698,9 @@
       "hxh-en-Episode_53_(2011)-416422.json",
       "hxh-en-Chapter_79-400722.json",
       "hxh-en-Chapter_84-416165.json",
-      "hxh-en-Chapter_100-416175.json"
+      "hxh-en-Chapter_100-416175.json",
+      "hxh-en-Chapter_149-329197.json",
+      "hxh-en-Episode_66_(2011)-410832.json"
     ],
     "light-nostrade": [
       "hxh-en-Light_Nostrade-424441.json",
@@ -807,7 +830,8 @@
       "hxh-en-Chapter_109-416180.json",
       "hxh-en-Chapter_110-418015.json",
       "hxh-en-Chapter_111-416182.json",
-      "hxh-en-Chapter_112-416183.json"
+      "hxh-en-Chapter_112-416183.json",
+      "hxh-en-Episode_66_(2011)-410832.json"
     ],
     "chrollo": [
       "hxh-en-Chrollo_Lucilfer-425288.json",
@@ -848,13 +872,58 @@
     ],
     "battera": ["hxh-en-Battera-425014.json"],
     "tsezguerra": ["hxh-en-Tsezguerra-423950.json"],
-    "puhat": ["hxh-en-Puhat-424148.json"]
+    "puhat": ["hxh-en-Puhat-424148.json"],
+    "biscuit-krueger": [
+      "hxh-en-Biscuit_Krueger-424978.json",
+      "hxh-en-Chapter_137-329195.json",
+      "hxh-en-Chapter_138-329196.json",
+      "hxh-en-Chapter_139-322153.json",
+      "hxh-en-Episode_62_(2011)-417943.json",
+      "hxh-en-Episode_63_(2011)-416430.json",
+      "hxh-en-Hisoka_Morow-425756.json",
+      "hxh-en-Chapter_158-382703.json",
+      "hxh-en-Episode_68_(2011)-425286.json"
+    ],
+    "binolt": [
+      "hxh-en-Binolt-424980.json",
+      "hxh-en-Chapter_137-329195.json",
+      "hxh-en-Chapter_138-329196.json",
+      "hxh-en-Chapter_139-322153.json",
+      "hxh-en-Episode_62_(2011)-417943.json",
+      "hxh-en-Episode_63_(2011)-416430.json"
+    ],
+    "genthru": [
+      "hxh-en-Genthru-425770.json",
+      "hxh-en-Jispa-424648.json",
+      "hxh-en-Puhat-424148.json",
+      "hxh-en-Chapter_143-417940.json",
+      "hxh-en-Chapter_144-417941.json"
+    ],
+    "jispa": [
+      "hxh-en-Jispa-424648.json",
+      "hxh-en-Genthru-425770.json",
+      "hxh-en-Chapter_142-417939.json",
+      "hxh-en-Chapter_144-417941.json"
+    ],
+    "razor": [
+      "hxh-en-Razor-424137.json",
+      "hxh-en-Phinks_Magcub-424170.json",
+      "hxh-en-Chapter_145-421581.json",
+      "hxh-en-Episode_67_(2011)-416432.json"
+    ],
+    "dwun": ["hxh-en-Dwun-424835.json", "hxh-en-Chapter_184-329212.json"],
+    "elena": ["hxh-en-Elena-424833.json", "hxh-en-Chapter_184-329212.json"],
+    "eta": ["hxh-en-Eta-424828.json", "hxh-en-Chapter_184-329212.json"],
+    "list": ["hxh-en-List-424433.json", "hxh-en-Chapter_184-329212.json"]
   },
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",
     "linssen": "Through episode 58 / chapter 119 he is only ever part of the bodyguards as a group: the escort, his post at the back entrance, the regrouping at the hotel. His remarks on Uvogin's Nen and on the car tailing them (chapters 76-78) are on the chapter pages only, and episode 46 only has him with the others; he has no individual exchange with an archived character in both media. Judged from hxh-en-Linssen-424437.json and the episode 41-49 and chapter 71-89 pages.",
     "bonolenov": "Through episode 58 / chapter 119 he is only ever part of the Troupe as a group: the gathering, the hideout, the fortunes and the group Chrollo puts him in with Franklin and Hisoka (chapter 108, episode 55). His question to Phinks about the fortunes (chapter 104) and his lines to Franklin about the chain user and the child at the window (chapters 115-116) are on the chapter pages only; he has no individual exchange with an archived character in both media. Judged from hxh-en-Bonolenov_Ndongo-425603.json and the episode 41-58 and chapter 71-119 pages.",
-    "eliza": "Through episode 58 / chapter 119 her only exchange is Squala's phone call, which is on the episode 39 and 56 pages only. Chapter 109 has him only think of her; her going to check the restroom when Neon slips away (chapter 94) is on the chapter page only; and Pakunoda reading her name in his memories (chapter 112, episode 56) is no exchange with her. She has no individual exchange with an archived character in both media. Judged from hxh-en-Eliza-424831.json and the episode 39, 43, 51, 56 and chapter 67-112 pages."
+    "eliza": "Through episode 58 / chapter 119 her only exchange is Squala's phone call, which is on the episode 39 and 56 pages only. Chapter 109 has him only think of her; her going to check the restroom when Neon slips away (chapter 94) is on the chapter page only; and Pakunoda reading her name in his memories (chapter 112, episode 56) is no exchange with her. She has no individual exchange with an archived character in both media. Judged from hxh-en-Eliza-424831.json and the episode 39, 43, 51, 56 and chapter 67-112 pages.",
+    "kosofftro": "Chapter 132 shows only his introduction to a group of unnamed recruits and directions for reaching him with a spell. No individual bond with an archived named character is established. Judged from hxh-en-Kosofftro-424571.json and hxh-en-Chapter_132-417938.json.",
+    "jeitsari": "Only named and pictured in the chapter 121 auction introduction through this phase; no personal interaction with an archived character is shown.",
+    "jitonoda": "Only named in the chapter 129 manga news report as the mayor of Yorknew City; no directed interaction with an archived character is established. Judged from the chapter 129 page."
   },
   "pending": {}
 }
