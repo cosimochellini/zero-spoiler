@@ -127,7 +127,7 @@ const PLACE: Stroke[] = [
   { d: 'M24 150 H136', role: 'ambient', dashed: true },
   { d: 'M56 150 V78 H104 V150' },
   {
-    d: 'M56 78 V68 H64 V78 M72 78 V68 H80 V78 M88 78 V68 H96 V78 M104 78 V68 H96',
+    d: 'M56 78 V68 H62 V78 M70 78 V68 H76 V78 M84 78 V68 H90 V78 M98 78 V68 H104 V78',
     role: 'soft',
   },
   { d: 'M72 150 V126 Q80 114 88 126 V150', role: 'accent' },

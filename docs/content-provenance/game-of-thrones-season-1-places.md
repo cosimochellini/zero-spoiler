@@ -96,6 +96,10 @@ copied from them. Each place's pages are under its key in
 
 ### `the-wall`
 
+- commonWord is set for want of a chapter-side nameSaidAt: texts gated before
+  the book gate (Castle Black at site 20) name the Wall, and nameSaidAt is
+  episode-only. It takes "the Wall" / "la Barriera" out of the name scan for
+  good.
 - Show gate: the cold open of episode 1 shows the rangers leaving through the
   tunnel under the Wall (Fandom: they "depart from the Wall"); no transcript
   checked.
