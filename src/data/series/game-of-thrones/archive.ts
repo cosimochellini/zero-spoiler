@@ -5,12 +5,13 @@ import { GAME_OF_THRONES_SERIES as SERIES } from '~/lib/progress/series'
 import type { Gated } from '~/lib/progress/spoiler'
 
 import { DRAWINGS, REDRAWINGS } from './art'
+import { SEASON_1_PLACES } from './records/season-1'
 import { sagas as seasons } from './sagas'
 
 /**
- * Game of Thrones' archive: its seasons, and the first season's main cast
- * (#852). A season with no record has nothing to head, shelve or sweep, so
- * the engine reads only the seasons that file one.
+ * Game of Thrones' archive: its seasons, the first season's main cast
+ * (#852) and its places (#853). A season with no record has nothing to
+ * head, shelve or sweep, so the engine reads only the seasons that file one.
  */
 const sagas = seasons.filter((season) => season.entries.length > 0)
 
@@ -25,7 +26,7 @@ const LEADS = [
 
 const { core, filed: FILED } = sagaArchive({
   featured: LEADS,
-  placeDossiers: {},
+  placeDossiers: SEASON_1_PLACES,
   redrawings: REDRAWINGS,
   sagas,
   series: SERIES,

@@ -825,8 +825,17 @@ describe.each(LOADED_SERIES)('the places of $slug', ({ archive }) => {
 
   it('files each place under an arc that opens no later than the place, in both units', () => {
     // The places page prints the arc's name beside an open place, so an arc
-    // that opened later would be named while still under fog.
-    for (const place of places) {
+    // that opened later would be named while still under fog. A series that
+    // files no arc record (Game of Thrones, headed by its seasons) names
+    // none, and prints no arc row.
+    const arcless = entities.every((entity) => entity.kind !== 'arc')
+    const named = places.filter(
+      (place) => archive.placeDossierOf(place)?.arc !== undefined,
+    )
+
+    expect(named).toStrictEqual(arcless ? [] : places)
+
+    for (const place of named) {
       const arc = archive.getEntity(archive.placeDossierOf(place)?.arc ?? '')
 
       expect(arc?.kind, place.id).toBe('arc')

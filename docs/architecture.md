@@ -116,9 +116,13 @@ dated step pinned to both an episode and an absolute chapter; Ros, whom only the
 show has, is `source: 'episode'`. It opened before its drawings (#854): Eddard,
 Jon, Daenerys and Tyrion have their own, Eddard's with a death stage, and every
 other record maps to a shared placeholder in `art/index.ts`, `PERSON` or the
-direwolves' `WOLF`, so the drawing tests hold it like any series. It files no
-places yet (#853): the places page shows its empty state, and the demo leaves
-out an empty places shelf and an empty tail.
+direwolves' `WOLF`, so the drawing tests hold it like any series, and every
+place to `PLACE`. Its 23 places (#853) are the ones a scene of the season or the
+book is set in, each filed in one of the realms, beyond the Wall or Essos, with
+no arc: `PlaceDossier.arc` is optional, and an arcless series prints no arc row.
+Darry is the book's alone and the Kingswood the show's. The demo shows the
+places the first ten episodes reach, and covers in its tail the four the show
+first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -213,11 +217,11 @@ checks this block.
 
 | Thing             | Count                                              |
 | ----------------- | -------------------------------------------------- |
-| Records           | 63                                                 |
+| Records           | 86                                                 |
 | Characters        | 63                                                 |
-| Places            | 0                                                  |
+| Places            | 23                                                 |
 | Saga modules      | 1                                                  |
-| Line drawings     | 63, one per record, plus 1 redrawings of 1 records |
+| Line drawings     | 86, one per record, plus 1 redrawings of 1 records |
 | Chronicle stories | 0, for 0 characters                                |
 
 <!-- End of the generated counts. -->

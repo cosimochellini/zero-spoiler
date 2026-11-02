@@ -10,6 +10,7 @@ import { LOADED_SERIES } from '~/test/series'
 import { homePage } from './home.server'
 import { onboardingPage } from './onboarding.server'
 import { characterPage } from './pages.server'
+import { placePage } from './placePage.server'
 import { drawingOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
@@ -19,12 +20,12 @@ if (series === undefined) {
 }
 const { archive } = series
 
-/** Each record's gate in each medium, as filed (#852); `source` for one medium. */
+/** Each record's gate in each medium, as filed (#852, #853); `source` for one medium. */
 const RECORDS: {
   chapter: number
   episode: number
   id: string
-  source?: 'episode'
+  source?: 'chapter' | 'episode'
 }[] = [
   { id: 'eddard-stark', episode: 1, chapter: 2 },
   { id: 'catelyn-stark', episode: 1, chapter: 3 },
@@ -89,6 +90,30 @@ const RECORDS: {
   { id: 'doreah', episode: 2, chapter: 12 },
   { id: 'rakharo', episode: 3, chapter: 24 },
   { id: 'mirri-maz-duur', episode: 8, chapter: 62 },
+  // Places (#853): the first scene set there in each medium.
+  { id: 'haunted-forest', episode: 1, chapter: 1 },
+  { id: 'winterfell', episode: 1, chapter: 2 },
+  { id: 'pentos', episode: 1, chapter: 4 },
+  { id: 'kings-landing', episode: 1, chapter: 19 },
+  { id: 'the-wall', episode: 1, chapter: 22 },
+  { id: 'winter-town', episode: 1, chapter: 38 },
+  { id: 'inn-at-the-crossroads', episode: 2, chapter: 16 },
+  { id: 'darry', episode: 2, chapter: 17, source: 'chapter' },
+  { id: 'castle-black', episode: 2, chapter: 20 },
+  { id: 'dothraki-sea', episode: 2, chapter: 24 },
+  { id: 'red-keep', episode: 3, chapter: 21 },
+  { id: 'vaes-dothrak', episode: 4, chapter: 37 },
+  { id: 'the-eyrie', episode: 5, chapter: 35 },
+  { id: 'wolfswood', episode: 6, chapter: 38 },
+  { id: 'kingswood', episode: 6, chapter: 44, source: 'episode' },
+  { id: 'lannister-camp', episode: 7, chapter: 63 },
+  { id: 'lhazar', episode: 8, chapter: 62 },
+  { id: 'the-twins', episode: 9, chapter: 60 },
+  { id: 'great-sept-of-baelor', episode: 9, chapter: 66 },
+  { id: 'riverrun', episode: 23, chapter: 72 },
+  { id: 'moles-town', episode: 33, chapter: 71 },
+  { id: 'bloody-gate', episode: 35, chapter: 35 },
+  { id: 'moat-cailin', episode: 38, chapter: 56 },
 ]
 
 /** Every status change within season 1 / *A Game of Thrones*, pinned in both media. */
@@ -314,7 +339,7 @@ const GATES = RECORDS.flatMap((record) =>
 const byText = (a: string, b: string): number => a.localeCompare(b)
 
 function opened(id: string, view: Reader): boolean {
-  const page = characterPage(id, view)
+  const page = characterPage(id, view) ?? placePage(id, view)
   return page !== undefined && 'detail' in page && page.detail.slot.open
 }
 
@@ -349,9 +374,12 @@ describe('the first season’s cast', () => {
   )
 
   it.each(RECORDS.filter(({ source }) => source !== undefined))(
-    'never opens the show-only $id to a reader of the books',
-    ({ id }) => {
-      const last = reader('chapter', archive.series.chapterCeiling)
+    'never opens the one-medium $id to a reader of the other',
+    ({ id, source }) => {
+      const last =
+        source === 'episode' ?
+          reader('chapter', archive.series.chapterCeiling)
+        : reader('episode', archive.series.episodeCeiling)
 
       expect(opened(id, last)).toBe(false)
     },
@@ -437,13 +465,41 @@ const CAST = [
 ]
 
 describe('the first season’s demo', () => {
-  it('gives a new visitor the season and its five leads, with no places and no tail', () => {
+  it('gives a new visitor the season, its five leads and its places, and covers the rest', () => {
     const demo = onboardingPage(null, readerFor(archive, null, 'en'))
 
     expect(demo.arcs.map(({ id }) => id)).toStrictEqual(['season-1'])
     expect(demo.cast.map(({ id }) => id)).toStrictEqual(CAST)
-    expect(demo.places).toStrictEqual([])
-    expect(demo.tail).toStrictEqual([])
+    // The places the first ten episodes and their chapters both reach; Darry
+    // and the Kingswood are one medium's, so the two-unit demo skips them.
+    expect(demo.places.map(({ id }) => id)).toStrictEqual([
+      'haunted-forest',
+      'winterfell',
+      'pentos',
+      'kings-landing',
+      'the-wall',
+      'winter-town',
+      'inn-at-the-crossroads',
+      'castle-black',
+      'dothraki-sea',
+      'red-keep',
+      'vaes-dothrak',
+      'the-eyrie',
+      'wolfswood',
+      'lannister-camp',
+      'lhazar',
+      'the-twins',
+      'great-sept-of-baelor',
+    ])
+    // Past the demo, only the four places later seasons first show, covered.
+    expect(
+      demo.tail.map(({ kind, revealedAtEpisode }) => [kind, revealedAtEpisode]),
+    ).toStrictEqual([
+      ['place', 23],
+      ['place', 33],
+      ['place', 35],
+      ['place', 38],
+    ])
     // Ros is the show's alone, so the two-unit demo cannot carry her.
     expect(JSON.stringify(demo)).not.toContain('"ros"')
   })

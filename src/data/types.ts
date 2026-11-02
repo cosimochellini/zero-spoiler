@@ -357,8 +357,11 @@ export interface PlaceDossier<V extends Vocabulary = Vocabulary> {
   form: V['form']
   /** Where it lies, in the series' own words (One Piece: its sea). */
   region: V['region']
-  /** The arc the place belongs to: an `arc` record's id. */
-  arc: string
+  /**
+   * The arc the place belongs to: an `arc` record's id. Left out by a series
+   * that files no arcs (Game of Thrones), whose place page prints no arc row.
+   */
+  arc?: string
   /** The one thing the drawing shows and the eye would look for. */
   landmark: LocalizedText
   /** The log entry proper: two or three sentences, safe at the threshold. */

@@ -858,5 +858,304 @@
       "Show: whether her name is said aloud in episode 8 (the synopsis names her; the line is not checked).",
       "Italian Wikipedia’s book list spells her “Mirri Maz Durr”; its TV cast list gives “Mirri Maz Duur”, used here."
     ]
+  },
+  "haunted-forest": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Haunted_Forest",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Foresta_Stregata",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "The weirwood grove where Jon swears his vows (show ep 7, Jon VI site 49) is folded into this record; AWOIAF files it as its own place, \"weirwood grove\".",
+      "Italian \"ranger\" for the Watch's rangers is assumed from the dub, not confirmed."
+    ]
+  },
+  "winterfell": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Winterfell",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Grande_Inverno",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Cersei and Jaime are first seen in the show in King's Landing (ep 1, at Jon Arryn's body) but are named at Winterfell, where both records open; filed here.",
+      "Lady opens in the books at Sansa I, the inn (site 16); filed here after the show (ep 1).",
+      "Sandor Clegane opens in the show at ep 4 (tourney, King's Landing) but is on screen at Winterfell from ep 1 and opens at Winterfell in the books (site 5); filed here.",
+      "Italian \"parco degli dèi\" for godswood and \"albero del cuore\" for heart tree are the Mondadori forms; not checked against the dub.",
+      "Region and form labels (#853): Il Nord, Terre dei Fiumi, La Valle, Terre della Corona, Borgo, Pianura, Tempio, Accampamento, Locanda are assumed Italian forms, not checked against the dub.",
+      "Book gate set at Bran I (site 2), not Catelyn I (site 3): the characters who open there are named as of Winterfell, and the chapter rides out from it; the first scene inside the walls is Catelyn I."
+    ]
+  },
+  "pentos": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Pentos",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pentos"
+    ],
+    "unverified": [
+      "The wedding (show ep 1, Daenerys II site 12) is held outside the walls; it is folded into this record."
+    ]
+  },
+  "kings-landing": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/King%27s_Landing",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Approdo_del_Re",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Book gate: Catelyn IV opens aboard the Storm Dancer in Blackwater Bay and lands at King's Landing in the same chapter.",
+      "Gendry (the forge, ep 4 / site 28), Gregor and Loras (the Hand's tourney, ep 4-5 / site 30) are filed at the city rather than at a sub-place."
+    ]
+  },
+  "the-wall": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/Wall",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Barriera",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Show gate: the cold open of episode 1 shows the rangers leaving through the tunnel under the Wall (Fandom: they \"depart from the Wall\"); no transcript checked.",
+      "Book gate set at Tyrion III (site 22), the first scene on top of the Wall, the later of 20 and 22 (owner rule: lean later)."
+    ]
+  },
+  "winter-town": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
+      "https://gameofthrones.fandom.com/wiki/Winter_town",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+    ],
+    "unverified": [
+      "Italian name \"Città d'Inverno\" not found on it.wikipedia; dub form unconfirmed.",
+      "The show only names it in season 7 (\"The Spoils of War\"), so no nameSaidAt.",
+      "Ros is filed here: she is first seen at the brothel in episode 1, though her record opens at episode 4."
+    ]
+  },
+  "inn-at-the-crossroads": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_15",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_56",
+      "https://gameofthrones.fandom.com/wiki/Inn_at_the_Crossroads",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Italian name \"Locanda all'Incrocio\" not found on it.wikipedia (the season 1 page says only \"una locanda\"); dub form unconfirmed.",
+      "AWOIAF files Sansa I at the inn at the crossroads; the Fandom notes say the books stage the quarrel near Castle Darry. The book gate stays 16.",
+      "Uses the proposed new form \"inn\"."
+    ]
+  },
+  "darry": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+      "https://awoiaf.westeros.org/index.php/Darry",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
+    ],
+    "unverified": [
+      "Italian: book-only, so the Mondadori form applies; \"Darry\" assumed unchanged, not checked against the edition."
+    ]
+  },
+  "castle-black": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://gameofthrones.fandom.com/wiki/Castle_Black",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Barriera",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Show gate: the arrival at the end of episode 2 is taken to be at Castle Black (Fandom first names it there); the first scene the synopsis sets \"At Castle Black\" is episode 3."
+    ]
+  },
+  "dothraki-sea": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+      "https://gameofthrones.fandom.com/wiki/Dothraki_Sea",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mare_Dothraki",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Irri and Doreah open in the books at the wedding outside Pentos (Daenerys II, site 12); filed here after the show (ep 2, in the tent).",
+      "Drogo's pyre (show ep 10, Daenerys X site 73) is also set on the Dothraki Sea.",
+      "Uses the proposed new form \"plain\"."
+    ]
+  },
+  "red-keep": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_20",
+      "https://gameofthrones.fandom.com/wiki/Red_Keep",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Fortezza_Rossa",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Show gate: the episode 1 scene at Jon Arryn's body may already be inside the Red Keep; not confirmed, so the gate is episode 3.",
+      "Renly and Barristan open in the books at the inn (Sansa I, site 16); Petyr and Varys at Littlefinger's place in the city (Catelyn IV, site 19). All four are filed here after the show (ep 3, Red Keep)."
+    ]
+  },
+  "vaes-dothrak": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+      "https://gameofthrones.fandom.com/wiki/Vaes_Dothrak",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Vaes_Dothrak"
+    ],
+    "unverified": [
+      "The Womb of the World (Daenerys V, site 47) is folded into this record."
+    ]
+  },
+  "the-eyrie": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
+      "https://gameofthrones.fandom.com/wiki/Eyrie",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Nido_dell%27Aquila",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "nameSaidAt 1: Fandom first names it in \"Winter Is Coming\" (Ned was fostered there; Lysa's letter comes from there).",
+      "commonWord left off: \"eyrie\" is a rare English word, though \"nido dell'aquila\" is ordinary Italian. Owner to judge."
+    ]
+  },
+  "wolfswood": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
+      "https://gameofthrones.fandom.com/wiki/Wolfswood",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book gate: Tyrion II (site 14) already has the party meet Yoren in the wolfswood, in a line of narration. Leaned later to Bran V (38). Owner may lower it to 14.",
+      "Italian \"Foresta del Lupo\" is from it.wikipedia's places page; whether the dub uses it is unconfirmed."
+    ]
+  },
+  "kingswood": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/Kingswood",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_16",
+      "https://gameofthrones.fandom.com/wiki/Kingswood",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "source \"episode\": AWOIAF cites ASOS 16 (Sansa II) and AFFC 28 for visits to the kingswood's edge, but both chapters are set in King's Landing by their infobox. If the owner counts ASOS Sansa II, drop source and set the chapter to 160.",
+      "nameSaidAt 5: Renly complains of the coming hunt in the Kingswood (\"The Wolf and the Lion\"). The \"Kingswood Brotherhood\" story in ep 3 may say it earlier."
+    ]
+  },
+  "lannister-camp": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62"
+    ],
+    "unverified": [
+      "Owner exception to the no-battlefields rule (#853): the camp is filed so Shae has a place; the battle itself is not.",
+      "The show’s camp in episode 7 and the books’ camp in Tyrion VIII are taken as one record; the books’ army first camps around the inn in Tyrion VII (site 57), not counted as the camp’s gate.",
+      "Region the-riverlands: neither medium names where the episode 7 camp stands.",
+      "Italian \"Accampamento Lannister\" is not a dub name; the camp has no proper name in either medium.",
+      "Tywin opens in the books at the inn (Tyrion VII, site 57); filed here after the show (owner: the show’s place wins)."
+    ]
+  },
+  "lhazar": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+      "https://gameofthrones.fandom.com/wiki/Lhazar",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "The record is the land; the place both media set is one unnamed village (books: a town of the Lamb Men). Owner to confirm the id and the form \"town\"."
+    ]
+  },
+  "the-twins": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_59",
+      "https://gameofthrones.fandom.com/wiki/Twins",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Le_Torri_Gemelle",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Italian \"Forca Verde\" for the Green Fork is assumed, not confirmed."
+    ]
+  },
+  "great-sept-of-baelor": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+      "https://gameofthrones.fandom.com/wiki/Great_Sept_of_Baelor",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Il_Grande_Tempio_di_Baelor",
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+    ],
+    "unverified": [
+      "Italian: it.wikipedia's places page heads it \"Il Grande Tempio di Baelor\"; the season 1 page says \"Tempio di Baelor\". \"Alto Septon\" assumed.",
+      "Uses the proposed new form \"sept\"."
+    ]
+  },
+  "riverrun": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
+      "https://gameofthrones.fandom.com/wiki/Riverrun",
+      "https://gameofthrones.fandom.com/wiki/Walk_of_Punishment_(episode)",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Delta_delle_Acque"
+    ],
+    "unverified": [
+      "Season 1 never sets a scene inside Riverrun: the siege and Whispering Wood are battlefields.",
+      "The water gate is a book detail; whether the show shows it is unchecked."
+    ]
+  },
+  "moles-town": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+      "https://gameofthrones.fandom.com/wiki/Mole%27s_Town",
+      "https://gameofthrones.fandom.com/wiki/Breaker_of_Chains",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Città_della_Talpa"
+    ],
+    "unverified": [
+      "Show gate: the \"Breaker of Chains\" synopsis calls it \"a vassal town\"; the Fandom place page ties the scene to Mole's Town.",
+      "nameSaidAt 4: Sam mentions the brothel in \"Cripples, Bastards, and Broken Things\" (Fandom ref GOT104).",
+      "Uses the proposed new form \"town\"."
+    ]
+  },
+  "bloody-gate": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
+      "https://gameofthrones.fandom.com/wiki/Bloody_Gate",
+      "https://gameofthrones.fandom.com/wiki/First_of_His_Name",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Nido_dell%27Aquila"
+    ],
+    "unverified": [
+      "Italian: it.wikipedia spells it \"Porta Insaguinata\" (a typo); \"Porta Insanguinata\" assumed. Dub form unconfirmed.",
+      "Season 1 skips the gate: Catelyn's party meets Ser Vardis Egen's patrol instead (Fandom, High Road)."
+    ]
+  },
+  "moat-cailin": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_55",
+      "https://gameofthrones.fandom.com/wiki/Moat_Cailin",
+      "https://gameofthrones.fandom.com/wiki/The_Mountain_and_the_Viper",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Moat_Cailin"
+    ],
+    "unverified": [
+      "Season 1 sets the matching scene (ep 8, Catelyn meets Robb's army) \"in the Neck\" without naming Moat Cailin, so the show gate is season 4.",
+      "nameSaidAt 15: first named in \"The Ghost of Harrenhal\" (season 2 episode 5, Fandom ref GOT205)."
+    ]
   }
 }

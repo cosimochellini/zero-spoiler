@@ -152,7 +152,7 @@ export function reachedShips(r: Reader): Entity[] {
 export function portOf(entity: Entity, r: Reader): PortView {
   const dossier = r.archive.placeDossierOf(entity)
   const arc =
-    dossier === undefined ? undefined : r.archive.getEntity(dossier.arc)
+    dossier?.arc === undefined ? undefined : r.archive.getEntity(dossier.arc)
   const { locale } = r
 
   return {

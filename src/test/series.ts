@@ -119,13 +119,15 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // Counted 2026-11-01, after the first season's main cast (#852): 63
-  // characters and the season's heading, no places yet (#853).
+  // Counted 2026-11-02, after the first season's places (#853): 63
+  // characters, 23 places and the season's heading.
   'game-of-thrones': {
     kinds: [
       'affiliation',
       'allRegions',
       'copy',
+      'form',
+      'landmark',
       'log',
       'region',
       'role',
@@ -137,12 +139,12 @@ const EXPECTED: Record<string, Expected> = {
       characters: 63,
       chronicles: 0,
       linkedOrigins: 0,
-      places: 0,
+      places: 23,
       statuses: 76,
       timelines: 146,
       visits: 0,
     },
-    namesSaidEarly: false,
+    namesSaidEarly: true,
   },
 }
 
