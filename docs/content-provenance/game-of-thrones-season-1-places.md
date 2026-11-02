@@ -146,12 +146,17 @@ copied from them. Each place's pages are under its key in
 
 ### `vaes-dothrak`
 
+- nameSaidAt 3: the khalasar's destination is named in the show by "Lord Snow"
+  (ep 3), which Rakharo's log needs. The book is assumed to name it before
+  Rakharo's chapter (site 24), from Daenerys II and III; not checked, and the
+  leak scan reads only the episode side of the fact.
 - The Womb of the World (Daenerys V, site 47) is folded into this record.
 
 ### `the-eyrie`
 
-- nameSaidAt 1: Fandom first names it in "Winter Is Coming" (Ned was fostered
-  there; Lysa's letter comes from there).
+- Name first said in episode 1, no nameSaidAt filed (no text needs it): Fandom
+  first names it in "Winter Is Coming" (Ned was fostered there; Lysa's letter
+  comes from there).
 - commonWord left off: "eyrie" is a rare English word, though "nido dell'aquila"
   is ordinary Italian. Owner to judge.
 
@@ -169,8 +174,9 @@ copied from them. Each place's pages are under its key in
   the kingswood's edge, but both chapters are set in King's Landing by their
   infobox. If the owner counts ASOS Sansa II, drop source and set the chapter
   to 160.
-- nameSaidAt 5: Renly complains of the coming hunt in the Kingswood ("The Wolf
-  and the Lion"). The "Kingswood Brotherhood" story in ep 3 may say it earlier.
+- Name first said in episode 5, no nameSaidAt filed (no text needs it): Renly
+  complains of the coming hunt in the Kingswood ("The Wolf and the Lion"). The
+  "Kingswood Brotherhood" story in ep 3 may say it earlier.
 
 ### `lannister-camp`
 
@@ -210,8 +216,9 @@ copied from them. Each place's pages are under its key in
 
 - Show gate: the "Breaker of Chains" synopsis calls it "a vassal town"; the
   Fandom place page ties the scene to Mole's Town.
-- nameSaidAt 4: Sam mentions the brothel in "Cripples, Bastards, and Broken
-  Things" (Fandom ref GOT104).
+- Name first said in episode 4, no nameSaidAt filed (no text needs it): Sam
+  mentions the brothel in "Cripples, Bastards, and Broken Things" (Fandom ref
+  GOT104).
 - Uses the proposed new form "town".
 
 ### `bloody-gate`
@@ -225,5 +232,5 @@ copied from them. Each place's pages are under its key in
 
 - Season 1 sets the matching scene (ep 8, Catelyn meets Robb's army) "in the
   Neck" without naming Moat Cailin, so the show gate is season 4.
-- nameSaidAt 15: first named in "The Ghost of Harrenhal" (season 2 episode 5,
-  Fandom ref GOT205).
+- Name first said in episode 15, no nameSaidAt filed (no text needs it): first
+  named in "The Ghost of Harrenhal" (season 2 episode 5, Fandom ref GOT205).

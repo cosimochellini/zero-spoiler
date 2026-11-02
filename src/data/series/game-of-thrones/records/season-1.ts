@@ -2750,8 +2750,8 @@ export const SEASON_1_PLACES: Record<
       en: 'The pale heart tree with a carved face in the godswood',
     },
     log: {
-      it: 'Gli Stark governano il Nord da questo castello. Dentro le mura c’è il parco degli dèi, un antico bosco dove il lord pulisce la spada dopo un’esecuzione e prega gli antichi dèi. Un corvo porta qui la notizia che il Primo Cavaliere del Re è morto.',
-      en: 'The Starks rule the North from this castle. Inside its walls lies the godswood, an old grove where the lord cleans his sword after an execution and prays to the old gods. A raven brings word here that the Hand of the King is dead.',
+      it: 'Gli Stark governano il Nord da questo castello. Dentro le mura c’è il parco degli dèi, un antico bosco sacro agli antichi dèi, con un albero del cuore al centro.',
+      en: 'The Starks rule the North from this castle. Inside its walls lies the godswood, an old grove sacred to the old gods, with a heart tree at its centre.',
     },
     filedHere: [
       'eddard-stark',
