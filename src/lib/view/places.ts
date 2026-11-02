@@ -67,6 +67,9 @@ export interface PlacesView {
 /** One stop the reader has reached, as a place's map draws it. */
 export interface RouteStopView {
   at: ChartPoint
+  id: string
+  /** Its name, written beside it: every stop on the route is open. */
+  name: string
   /** Its sea, which opens a region of the chart; `null` with no dossier. */
   sea: null | string
   /** The saga it is filed under, by its place in route order, from 1. */
@@ -124,10 +127,6 @@ export interface PlaceDetail {
    * Empty under fog, and nobody past the bookmark is sent, not even counted.
    */
   natives: RecordView[]
-  /** The stop after this one in the reader's order; `null` for the last. */
-  next: null | Slot<RecordView>
-  /** The stop before this one in the reader's order; `null` for the first. */
-  previous: null | Slot<RecordView>
   slot: Slot<PortView>
   total: number
   /**
@@ -138,9 +137,8 @@ export interface PlaceDetail {
 }
 
 /**
- * A ship's own page: her entry and her drawings. No map and no neighbours:
- * a ship is not a stop, and the ship after her, under fog, would tell a
- * reader at the start that she does not last.
+ * A ship's own page: her entry and her drawings. No map: a ship is not a
+ * stop.
  */
 export interface ShipDetail {
   /** As a place's: every drawing reached, oldest first; empty under fog. */

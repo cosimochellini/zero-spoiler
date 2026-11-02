@@ -35,7 +35,7 @@ export interface RecordTileProps {
  * the slug is in the served HTML, and the episode stays.
  *
  * Used wherever a page points at the records filed beside the one it is
- * about: the two neighbours on a character page, the crew a port files.
+ * about: the crew a port files.
  */
 export function RecordTile({ slot, peek }: RecordTileProps): ReactElement {
   const t = useT()

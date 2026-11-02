@@ -12,11 +12,9 @@ import { useT } from '~/i18n/LocaleContext'
  *   (shared)
  * · structure: the plate | entry diptych (records found here, characters
  *   from here) · map words and later visits |
- *   the stretch of the chart · the drawings in order · the stops before
- *   and after
+ *   the stretch of the chart, its stops named · the drawings in order
  * · a ship (#676): the same diptych (facts, log, places she reaches) and the
- *   drawings in order; no map and no neighbours, because a ship is not a
- *   stop
+ *   drawings in order; no map, because a ship is not a stop
  * · idea: "one stop of the chart, opened flat" */
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink } from '~/routes/$series/$locale/-back'
@@ -30,14 +28,14 @@ import { recordStyles } from '~/routes/$series/$locale/-record.styles'
 import { liftPort, liftRecord, liftShip, loadPlace } from '~/server/api'
 import { settleStyles } from '~/styles/settle'
 
-import { DrawingsBand, MapBand, TurnBand } from './-$id.bands'
+import { DrawingsBand, MapBand } from './-$id.bands'
 import { EntryDiptych, PlaceEntry, ShipBody } from './-$id.entry'
 
 // The bands under the first in DOM order. The back link and the first band
 // are the page's header, there from the first frame. Named rather than
 // counted at the call, so a band inserted in the middle is one edit here and
 // not three down the page.
-const BAND = { map: 0, drawings: 1, turn: 2 } as const
+const BAND = { map: 0, drawings: 1 } as const
 
 export const Route = createFileRoute('/$series/$locale/places/$id')({
   beforeLoad: ({ context }) => {
@@ -57,20 +55,19 @@ export const Route = createFileRoute('/$series/$locale/places/$id')({
  * A place's page (Hallmark macrostructure 15, Split Studio, as a
  * character's), and a ship's, which is served from the same address.
  *
- * Four bands down a place's page. The first is the plate beside the entry:
+ * Three bands down a place's page. The first is the plate beside the entry:
  * kind and episode in mono, the name as the only display line, the
  * sentence, the facts, the log entry, the records found there and the
  * characters who come from it. The
  * second is the place on the map: its stop number and the later visits the
  * reader has reached, beside the stretch of the sea chart around it. The
  * third is every drawing the place has had up to the bookmark, when there
- * is more than one. The fourth is the stops before and after it.
+ * is more than one.
  *
  * A ship's page has the first and the third: her plate beside her entry
  * (who designed her, where the crew receives her, her fate and the places
- * she reaches, each as far as the bookmark), then her drawings. No map and
- * no neighbours: a ship is not a stop, and the ship after her, under fog,
- * would tell a reader at the start that she does not last.
+ * she reaches, each as far as the bookmark), then her drawings. No map: a
+ * ship is not a stop.
  *
  * Under fog the plate and the entry are covered together, the title is
  * generic, and nothing places or draws it: the stop number and the episode
@@ -119,15 +116,6 @@ function PlacePage(): ReactElement {
       <Band at={BAND.drawings}>
         <DrawingsBand detail={'ship' in page ? page.ship : page.detail} />
       </Band>
-
-      {place === null ? null : (
-        <Band at={BAND.turn}>
-          <TurnBand
-            detail={place}
-            peek={peekRecord}
-          />
-        </Band>
-      )}
     </main>
   )
 }
