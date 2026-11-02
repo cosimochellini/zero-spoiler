@@ -406,3 +406,67 @@ describe.each(LOCALES)('Binolt’s source-specific status in %s', (locale) => {
     expect(people(manga)).toStrictEqual(['gon-freecss', 'killua', 'wing'])
   })
 })
+
+type Pin = [episode: number, chapter: number, source?: 'chapter']
+const FINALE_STEPS: Record<string, Pin[]> = {
+  'tsezguerra': [
+    [69, 160],
+    [72, 170],
+    [73, 174],
+  ],
+  'battera': [
+    [72, 173],
+    [73, 174],
+    [74, 182],
+  ],
+  'biscuit-krueger': [
+    [69, 160],
+    [72, 170],
+    [73, 177],
+    [75, 185],
+  ],
+  'razor': [
+    [69, 161],
+    [71, 169],
+  ],
+  'genthru': [[74, 181, 'chapter']],
+  'elena': [[76, 185, 'chapter']],
+  'gon-freecss': [
+    [69, 161],
+    [74, 181, 'chapter'],
+    [75, 184],
+  ],
+  'killua': [
+    [69, 161],
+    [75, 184],
+  ],
+  'hisoka': [[69, 161]],
+}
+const STEP_CASES = Object.entries(FINALE_STEPS).flatMap(([id, pins]) =>
+  pins.flatMap(([episode, chapter, source]) =>
+    CASES.filter((row) => source === undefined || source === row.unit).map(
+      (row) => ({
+        ...row,
+        id,
+        pin: row.unit === 'chapter' ? chapter : episode,
+      }),
+    ),
+  ),
+)
+
+describe.each(STEP_CASES)(
+  '$id’s dated step at $pin in $locale by $unit',
+  ({ id, locale, pin, unit }) => {
+    it('changes the affiliation only once the step is reached', () => {
+      const entity = character(id)
+      const before = factsOf(
+        entity,
+        readerFor(archive, at(unit, pin - 1), locale),
+      )
+      const reached = factsOf(entity, readerFor(archive, at(unit, pin), locale))
+
+      expect(reached.affiliation).toBeDefined()
+      expect(before.affiliation).not.toBe(reached.affiliation)
+    })
+  },
+)
