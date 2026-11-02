@@ -88,7 +88,7 @@ const EXPECTED: Record<string, Expected> = {
   // What it files on 2026-11-02: the arcs, the Hunter Exam’s road to the
   // exam through the visit to Killua's home, chapter-one characters (#760),
   // the Heavens Arena characters and place (#896), Silva (#834), Yorknew
-  // City (#900) and Greed Island recruitment/arrival/training (#1016, #1017).
+  // City (#900) and Greed Island recruitment, training and alliances (#1016–#1018).
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -107,14 +107,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 151,
+      affiliations: 191,
       arcs: 7,
-      characters: 100,
+      characters: 103,
       chronicles: 247,
       linkedOrigins: 7,
-      places: 19,
-      statuses: 140,
-      timelines: 430,
+      places: 22,
+      statuses: 143,
+      timelines: 441,
       visits: 0,
     },
     namesSaidEarly: true,

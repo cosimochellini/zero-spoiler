@@ -41,6 +41,8 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'genthru': 'Personaggi di Hunter × Hunter#Gensul',
+    'razor': 'Personaggi di Hunter × Hunter#Razer',
     'biscuit-krueger': 'Associazione Hunter#Biscuit Krueger',
     'binolt': 'Personaggi di Hunter × Hunter#Binolt',
     'battera': 'Personaggi di Hunter × Hunter#Battera',
@@ -201,6 +203,8 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
+  // No Jispa entry in either Italian character/Hunter list; dub unviewed (#1018).
+  'jispa': 'Jispa',
   // No Kosofftro entry in the Italian character or Hunter lists (#1017).
   'kosofftro': 'Kosofftro',
   'jeitsari': 'Jeitsari',

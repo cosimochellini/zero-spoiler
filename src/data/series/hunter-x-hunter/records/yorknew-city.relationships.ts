@@ -8,6 +8,17 @@ import type { Relationship, Timeline } from '~/data/types'
  * first such pair after the episode that names him (#974).
  */
 const links = {
+  troupeChrolloExorcist: {
+    character: 'chrollo',
+    type: {
+      it: 'Capo per cui cerca un esorcista',
+      en: 'Leader for whom they seek an Exorcist',
+    },
+    summary: {
+      it: 'La Brigata cerca a Greed Island un esorcista che possa liberare Chrollo dal Nen di Kurapika.',
+      en: 'The Troupe searches Greed Island for an Exorcist who can free Chrollo from Kurapika’s Nen.',
+    },
+  },
   // Ging Freecss
   gingGon: {
     character: 'gon-freecss',
@@ -2238,6 +2249,17 @@ export const yorknewCityRelationships = {
         links.shizukuFeitan,
       ],
     },
+    {
+      episode: 66,
+      chapter: 149,
+      value: [
+        links.troupeChrolloExorcist,
+        links.shizukuGon,
+        links.shizukuKillua,
+        links.shizukuNobunaga,
+        links.shizukuFeitan,
+      ],
+    },
   ],
   // The Shadow Beasts fight Uvogin in chapters 75-76, and the chain takes
   // him in chapter 77, all in episode 44.
@@ -2333,6 +2355,18 @@ export const yorknewCityRelationships = {
         links.feitanOwl,
       ],
     },
+    {
+      episode: 66,
+      chapter: 149,
+      source: 'episode',
+      value: [
+        links.troupeChrolloExorcist,
+        links.feitanPakunoda,
+        links.feitanMachi,
+        links.feitanGon,
+        links.feitanNobunaga,
+      ],
+    },
   ],
   'franklin': [
     {
@@ -2361,6 +2395,17 @@ export const yorknewCityRelationships = {
         links.franklinGon,
         links.franklinNobunaga,
         links.franklinFeitan,
+      ],
+    },
+    {
+      episode: 66,
+      chapter: 149,
+      value: [
+        links.troupeChrolloExorcist,
+        links.franklinPhinks,
+        links.franklinPakunodaLeave,
+        links.franklinGon,
+        links.franklinNobunaga,
       ],
     },
   ],
@@ -2454,6 +2499,17 @@ export const yorknewCityRelationships = {
         links.phinksKillua,
       ],
     },
+    {
+      episode: 66,
+      chapter: 149,
+      value: [
+        links.troupeChrolloExorcist,
+        links.phinksPakunodaLeave,
+        links.phinksGon,
+        links.phinksKurapika,
+        links.phinksFranklin,
+      ],
+    },
   ],
   'shalnark': [
     { episode: 46, chapter: 79, value: [links.shalnarkUvogin] },
@@ -2463,6 +2519,16 @@ export const yorknewCityRelationships = {
       episode: 53,
       chapter: 100,
       value: [
+        links.shalnarkUvoginBlame,
+        links.shalnarkKortopi,
+        links.shalnarkPakunoda,
+      ],
+    },
+    {
+      episode: 66,
+      chapter: 149,
+      value: [
+        links.troupeChrolloExorcist,
         links.shalnarkUvoginBlame,
         links.shalnarkKortopi,
         links.shalnarkPakunoda,
@@ -2650,6 +2716,18 @@ export const yorknewCityRelationships = {
       chapter: 112,
       value: [
         links.kortopiChrollo,
+        links.kortopiPakunodaBomb,
+        links.kortopiNobunaga,
+        links.kortopiMachi,
+        links.kortopiShalnark,
+      ],
+    },
+    {
+      episode: 66,
+      chapter: 149,
+      source: 'episode',
+      value: [
+        links.troupeChrolloExorcist,
         links.kortopiPakunodaBomb,
         links.kortopiNobunaga,
         links.kortopiMachi,

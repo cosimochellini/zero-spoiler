@@ -365,6 +365,15 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [
         { ...ON_ROSTER, value: APPLICANT },
         { episode: 18, chapter: 32, source: 'chapter', value: FAILED },
+        {
+          episode: 66,
+          chapter: 148,
+          source: 'chapter',
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
+          },
+        },
       ],
     },
     shishito: {
@@ -393,6 +402,15 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [
         { ...ON_ROSTER, value: APPLICANT },
         { episode: 18, chapter: 32, source: 'chapter', value: FAILED },
+        {
+          episode: 66,
+          chapter: 148,
+          source: 'chapter',
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
+          },
+        },
       ],
     },
     sommy: {
@@ -407,6 +425,15 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [
         { ...ON_ROSTER, value: APPLICANT },
         { episode: 18, chapter: 32, source: 'chapter', value: FAILED },
+        {
+          episode: 66,
+          chapter: 148,
+          source: 'chapter',
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
+          },
+        },
       ],
     },
     gittarackur: {
@@ -470,6 +497,14 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter Exam, failed the Fourth Phase',
           },
         },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
+          },
+        },
       ],
       status: [{ episode: 3, chapter: 29, value: 'alive' }],
     },
@@ -496,6 +531,14 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Esame Hunter, escluso nella quarta prova',
             en: 'Hunter Exam, failed the Fourth Phase',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
           },
         },
       ],
@@ -526,6 +569,14 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter Exam, failed the Fourth Phase',
           },
         },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
+          },
+        },
       ],
       status: [{ episode: 3, chapter: 29, value: 'alive' }],
     },
@@ -552,6 +603,14 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Esame Hunter, esclusa nella quarta prova',
             en: 'Hunter Exam, failed the Fourth Phase',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
           },
         },
       ],

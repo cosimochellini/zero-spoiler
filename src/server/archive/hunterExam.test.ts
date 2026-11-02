@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity, LocalizedText } from '~/data/types'
+import { toldIn } from '~/data/reveal'
+import type { Entity, LocalizedText, Opened } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import { thresholdIn } from '~/lib/progress/spoiler'
 import { foldName, matchFolded } from '~/lib/search/fold'
 import type { RecordView, SearchableCharacter, Slot } from '~/lib/view/records'
 import { leaksOf } from '~/test/fog'
@@ -86,6 +88,17 @@ function localized(value: LocalizedText | string, locale: Locale): string {
   return typeof value === 'string' ? value : value[locale]
 }
 
+// One anime episode can supersede several distinct manga steps.
+function lastAtGate(
+  entry: Opened<unknown>,
+  later: Opened<unknown>[],
+  mode: Unit,
+): boolean {
+  return later.every(
+    (next) => thresholdIn(next.gate, mode) !== thresholdIn(entry.gate, mode),
+  )
+}
+
 // A record one source alone names is read in that unit only (#833).
 const CASES = RECORDS.flatMap((record) =>
   UNITS.filter((mode) => !('unit' in record) || record.unit === mode).flatMap(
@@ -97,6 +110,18 @@ const FACTS = CHARACTERS.flatMap((row) =>
   (['affiliation', 'epithet', 'origin', 'status'] as const).flatMap((field) =>
     archive
       .datedOf(entityOf(row.id), field)
+      .filter((entry) => toldIn(entry.gate, row.mode))
+      .filter((entry, index, entries) =>
+        lastAtGate(entry, entries.slice(index + 1), row.mode),
+      )
+      .filter((entry, index, entries) => {
+        const previous = entries[index - 1]
+        return (
+          previous === undefined
+          || localized(previous.value, row.locale)
+            !== localized(entry.value, row.locale)
+        )
+      })
       .map((entry) => ({ ...row, field, entry })),
   ),
 )

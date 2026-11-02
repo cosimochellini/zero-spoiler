@@ -413,9 +413,69 @@ const earlyExam: HunterSaga = {
         {
           episode: 64,
           chapter: 141,
+          source: 'chapter',
           value: {
             it: 'Associazione Hunter, Hunter; al servizio di Battera per Greed Island; allievo di Biscuit, si allena con i mostri e impara Ken',
             en: 'Hunter Association, Hunter; playing Greed Island for Battera; Biscuit’s pupil, training against monsters and learning Ken',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 142,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; al servizio di Battera per Greed Island; allievo di Biscuit, impara a distribuire l’aura durante il combattimento',
+            en: 'Hunter Association, Hunter; playing Greed Island for Battera; Biscuit’s pupil, learning to redistribute aura during combat',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 144,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; al servizio di Battera per Greed Island; allievo di Biscuit, inizia gli esercizi per categoria di Nen',
+            en: 'Hunter Association, Hunter; playing Greed Island for Battera; Biscuit’s pupil, beginning aura-category exercises',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 145,
+          source: 'episode',
+          value: {
+            it: 'Associazione Hunter, Hunter; al servizio di Battera per Greed Island; allievo di Biscuit, impara Ken, la distribuzione dell’aura durante il combattimento e gli esercizi per categoria di Nen',
+            en: 'Hunter Association, Hunter; playing Greed Island for Battera; Biscuit’s pupil, learning Ken, aura distribution during combat and aura-category exercises',
+          },
+        },
+        {
+          episode: 65,
+          chapter: 145,
+          value: {
+            it: 'Associazione Hunter, Hunter; allievo di Biscuit, sviluppa una tecnica basata sulla morra cinese',
+            en: 'Hunter Association, Hunter; Biscuit’s pupil, developing a rock-paper-scissors technique',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 150,
+          value: {
+            it: 'Associazione Hunter, Hunter; raccoglie carte di Greed Island con Killua e Biscuit',
+            en: 'Hunter Association, Hunter; collecting Greed Island cards with Killua and Biscuit',
+          },
+        },
+        {
+          episode: 67,
+          chapter: 154,
+          value: {
+            it: 'Associazione Hunter, Hunter; in un’alleanza di giocatori per impedire a Boomer di completare Greed Island',
+            en: 'Hunter Association, Hunter; in a player alliance to stop the Bomber from clearing Greed Island',
+          },
+        },
+        {
+          episode: 68,
+          chapter: 158,
+          value: {
+            it: 'Associazione Hunter, Hunter; cerca nuovi compagni per la sfida sportiva di Greed Island e accetta l’aiuto di Hisoka',
+            en: 'Hunter Association, Hunter; recruiting for Greed Island’s sports challenge and accepting Hisoka’s help',
           },
         },
       ],
@@ -610,6 +670,14 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Exam, failed the Fourth Phase',
           },
         },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
+          },
+        },
       ],
     },
     'hisoka': {
@@ -666,6 +734,22 @@ const earlyExam: HunterSaga = {
             it: 'Associazione Hunter, Hunter',
           },
         },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Associazione Hunter, Hunter; cerca un esorcista di Nen per poter affrontare Chrollo',
+            en: 'Hunter Association, Hunter; searching for a Nen Exorcist so he can fight Chrollo',
+          },
+        },
+        {
+          episode: 68,
+          chapter: 158,
+          value: {
+            it: 'Associazione Hunter, Hunter; aiuta Gon e Killua nella sfida sportiva di Greed Island mentre cerca un esorcista per Chrollo',
+            en: 'Hunter Association, Hunter; helping Gon and Killua with Greed Island’s sports challenge while seeking an Exorcist for Chrollo',
+          },
+        },
       ],
     },
     'todo': {
@@ -685,6 +769,14 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Esame Hunter, escluso nella seconda prova',
             en: 'Hunter Exam, failed the Second Phase',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
           },
         },
       ],
@@ -787,7 +879,14 @@ const earlyExam: HunterSaga = {
     'killua': {
       relationships: hunterExamRelationships.killua,
       chronicle: hunterExamChronicles.killua,
-      role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
+      role: [
+        {
+          episode: 4,
+          chapter: 6,
+          value: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
+        },
+        { episode: 66, chapter: 148, value: { it: 'Hunter', en: 'Hunter' } },
+      ],
       log: {
         it: 'Segue l’esaminatore sullo skateboard. Gon lo raggiunge e scopre che hanno quasi la stessa età. Killua prende la tavola in mano e continua a corrergli accanto.',
         en: 'He follows the examiner on his skateboard. Gon catches up with him and learns that they are nearly the same age. Killua picks up his board and keeps running beside him.',
@@ -870,9 +969,88 @@ const earlyExam: HunterSaga = {
         {
           episode: 64,
           chapter: 141,
+          source: 'chapter',
           value: {
             it: 'Al servizio di Battera per Greed Island; allievo di Biscuit, si allena con i mostri e impara Ken',
             en: 'Playing Greed Island for Battera; Biscuit’s pupil, training against monsters and learning Ken',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 142,
+          source: 'chapter',
+          value: {
+            it: 'al servizio di Battera per Greed Island; allievo di Biscuit, impara a distribuire l’aura durante il combattimento',
+            en: 'playing Greed Island for Battera; Biscuit’s pupil, learning to redistribute aura during combat',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 144,
+          source: 'chapter',
+          value: {
+            it: 'al servizio di Battera per Greed Island; allievo di Biscuit, inizia gli esercizi per categoria di Nen',
+            en: 'playing Greed Island for Battera; Biscuit’s pupil, beginning aura-category exercises',
+          },
+        },
+        {
+          episode: 64,
+          chapter: 145,
+          source: 'episode',
+          value: {
+            it: 'al servizio di Battera per Greed Island; allievo di Biscuit, impara Ken, la distribuzione dell’aura durante il combattimento e gli esercizi per categoria di Nen',
+            en: 'playing Greed Island for Battera; Biscuit’s pupil, learning Ken, aura distribution during combat and aura-category exercises',
+          },
+        },
+        {
+          episode: 65,
+          chapter: 146,
+          value: {
+            it: 'Allievo di Biscuit; lascia Greed Island per ripetere l’Esame Hunter',
+            en: 'Biscuit’s pupil; leaving Greed Island to retake the Hunter Exam',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 148,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; unico promosso del 288º Esame Hunter',
+            en: 'Hunter Association, Hunter; sole successful applicant of the 288th Hunter Exam',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 150,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; raccoglie carte di Greed Island con Gon e Biscuit',
+            en: 'Hunter Association, Hunter; collecting Greed Island cards with Gon and Biscuit',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 150,
+          source: 'episode',
+          value: {
+            it: 'Associazione Hunter, Hunter; raccoglie carte di Greed Island con Gon e Biscuit',
+            en: 'Hunter Association, Hunter; collecting Greed Island cards with Gon and Biscuit',
+          },
+        },
+        {
+          episode: 67,
+          chapter: 154,
+          value: {
+            it: 'Associazione Hunter, Hunter; in un’alleanza di giocatori per impedire a Boomer di completare Greed Island',
+            en: 'Hunter Association, Hunter; in a player alliance to stop the Bomber from clearing Greed Island',
+          },
+        },
+        {
+          episode: 68,
+          chapter: 158,
+          value: {
+            it: 'Associazione Hunter, Hunter; cerca nuovi compagni per la sfida sportiva di Greed Island e accetta l’aiuto di Hisoka',
+            en: 'Hunter Association, Hunter; recruiting for Greed Island’s sports challenge and accepting Hisoka’s help',
           },
         },
       ],
