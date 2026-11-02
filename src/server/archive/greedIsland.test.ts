@@ -211,6 +211,25 @@ const ARRIVAL = [
     place: true,
     source: 'chapter',
   },
+  {
+    id: 'caveau-de-riquewihr',
+    episode: 61,
+    chapter: 129,
+    place: true,
+    source: 'chapter',
+  },
+  {
+    id: 'jitonoda',
+    episode: 61,
+    chapter: 129,
+    place: false,
+    source: 'chapter',
+  },
+  { id: 'limeiro', episode: 75, chapter: 183, place: true, source: undefined },
+  { id: 'dwun', episode: 75, chapter: 184, place: false, source: undefined },
+  { id: 'list', episode: 75, chapter: 184, place: false, source: 'chapter' },
+  { id: 'eta', episode: 75, chapter: 184, place: false, source: 'chapter' },
+  { id: 'elena', episode: 75, chapter: 184, place: false, source: 'chapter' },
 ]
 
 function pageFor(

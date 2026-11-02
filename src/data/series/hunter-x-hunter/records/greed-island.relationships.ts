@@ -1,6 +1,5 @@
 import type { Relationship, Timeline } from '~/data/types'
 
-/** Recruitment scenes in the pinned chapters 121/125/126 and episodes 59/60. */
 const dwunGon = {
   character: 'gon-freecss',
   type: { it: 'Vincitore che premia', en: 'Winner he rewards' },
@@ -26,6 +25,7 @@ const dwunList = {
   },
 }
 
+/** Recruitment scenes in the pinned chapters 121/125/126 and episodes 59/60. */
 const links = {
   genthruGonDefeat: {
     character: 'gon-freecss',

@@ -28,29 +28,18 @@ const PUHAT_JACKET: Stroke[] = [
 ]
 
 export const GREED_ISLAND_DRAWINGS = {
-  // Jitonoda is named by the chapter 129 newspaper report. A folded
-  // newspaper with blank column rules; no portrait, lettering or copied page.
+  // Jitonoda is named in chapter 129's TV news report. A plain set with a
+  // blank screen and rabbit ears; no portrait, lettering or copied page.
   'jitonoda': [
-    { d: 'M36 49 L117 66 L127 160 L44 141 Z' },
-    {
-      d: 'M36 49 L25 58 L34 151 L44 141 M34 151 L116 171 L127 160',
-      role: 'soft',
-    },
-    { d: 'M48 65 L105 77 L108 96 L51 84 Z', role: 'accent' },
-    {
-      d: 'M50 96 L75 101 M82 103 L108 109 M51 105 L76 110 M83 112 L109 118',
-      role: 'soft',
-    },
-    {
-      d: 'M53 115 L78 120 M85 122 L111 128 M54 125 L79 130 M86 132 L112 138',
-      role: 'soft',
-    },
-    { d: 'M63 100 L66 132 M96 107 L99 140', role: 'soft' },
-    {
-      d: 'M33 71 L39 133 M32 83 l5 -3 M33 99 l5 -3 M35 115 l5 -3',
-      role: 'ambient',
-    },
-    shadow(78, 185, 51),
+    { d: 'M30 62 H128 L132 142 H34 Z' },
+    { d: 'M30 62 L24 69 L28 149 L34 142 M28 149 H126 L132 142', role: 'soft' },
+    { d: 'M42 73 H117 L120 130 H45 Z', role: 'accent' },
+    { d: 'M49 82 Q66 78 78 84 M55 118 Q76 112 108 120', role: 'soft' },
+    { d: 'M52 62 L36 34 M106 62 L122 34', role: 'soft' },
+    { d: 'M60 142 V152 M100 142 V152', role: 'soft' },
+    { d: 'M126 96 l4 0 M126 106 l4 0', role: 'ambient' },
+    { d: 'M20 84 l5 -3 M18 100 l5 -3 M20 116 l5 -3', role: 'ambient' },
+    shadow(80, 166, 48),
   ],
   // Dwun's cigarette, from his chapter 184 appearance description, viewed
   // obliquely. Plain paper and an ash tip; no face, logo or invented ashtray.
