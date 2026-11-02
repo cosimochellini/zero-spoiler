@@ -391,6 +391,13 @@ async function main() {
   return failed ? 1 : 0
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+// Sets the exit code from inside a function: unicorn's no-top-level-side-effects
+// rejects a module-level write to `process` in a file that exports, and
+// `process.exit()` could cut off output still queued for a pipe.
+const run = async () => {
   process.exitCode = await main()
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  await run()
 }

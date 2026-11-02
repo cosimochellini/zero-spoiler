@@ -56,13 +56,13 @@ export function BookmarkDialog({ onClose }: BookmarkDialogProps): ReactElement {
   )
 }
 
-type FormStatus = 'failed' | 'loading' | 'ready'
-
 /**
  * The form, or its skeleton while its code is on the way, or a way to ask
  * again when the fetch failed.
  */
 export function FormSlot({ onDone }: { onDone: () => void }): ReactElement {
+  type FormStatus = 'failed' | 'loading' | 'ready'
+
   const t = useT()
   const [status, setStatus] = useState<FormStatus>(() =>
     formHasLanded() ? 'ready' : 'loading',

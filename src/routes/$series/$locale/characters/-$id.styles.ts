@@ -54,24 +54,7 @@ export const styles = stylex.create({
   },
   dossier: { gap: space.md, display: 'grid', minWidth: 0 },
   words: { gap: space.sm, display: 'grid', minWidth: 0 },
-  meta: {
-    alignItems: 'baseline',
-    color: color.muted,
-    columnGap: space.sm,
-    display: 'flex',
-    flexWrap: 'wrap',
-    fontSize: text.xs,
-    letterSpacing: '0.08em',
-    lineHeight: leading.body,
-    textTransform: 'uppercase',
-  },
   kind: { fontFamily: font.body, fontWeight: 600 },
-  episode: {
-    color: color.ink2,
-    fontFamily: font.mono,
-    fontVariantNumeric: 'tabular-nums',
-    fontWeight: 600,
-  },
   // The one display line on the page. Names run 4 to 22 characters, so the
   // full display size holds two lines at most in the 7fr column.
   name: {

@@ -11,6 +11,7 @@ import type { ReactElement } from 'react'
 
 import { CharacterCrest } from '~/components/CharacterCrest'
 import { CharacterFacts } from '~/components/CharacterFacts'
+import { styles as bandStyles } from '~/components/SpecimenBands.styles'
 import { SpoilerVeil } from '~/components/SpoilerVeil'
 import { useKindLabel } from '~/components/useKindLabel'
 import { useT } from '~/i18n/LocaleContext'
@@ -112,9 +113,9 @@ function DossierColumn({
 
   return (
     <div {...stylex.props(styles.dossier)}>
-      <p {...stylex.props(styles.meta)}>
+      <p {...stylex.props(bandStyles.meta)}>
         <span {...stylex.props(styles.kind)}>{kindLabel(filed.kind)}</span>
-        <span {...stylex.props(styles.episode)}>
+        <span {...stylex.props(bandStyles.episode)}>
           {threshold('character.opensAt', filed)}
         </span>
       </p>
