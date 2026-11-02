@@ -6,7 +6,7 @@ import type { HunterSaga, HunterVocabulary } from './saga'
 /**
  * Greed Island: episodes 59–75 of the 2011 anime and chapters 120–185, as the
  * English Hunter x Hunter Wiki's arc page gives them.
- * Recruitment cast (#1016); the remaining cast and places stay in #904.
+ * Verified Greed Island cast and visited places through the finale (#1019).
  * Battera is interviewed by name in chapter 120; he calls Tsezguerra in
  * chapter 121. Puhat introduces himself in chapter 125. The 2011 anime
  * puts the first two in episode 59 and Puhat in episode 60.
@@ -245,8 +245,222 @@ export const greedIsland: HunterSaga = {
       },
       visual: { art: 'aiai', tint: 'pink' },
     },
+
+    // The wiki explicitly identifies the French name on the entrance sign
+    // in chapter129. A matching anime naming scene has not been established.
+    {
+      id: 'caveau-de-riquewihr',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 61,
+      revealedAtChapter: 129,
+      name: { it: 'Caveau de Riquewihr', en: 'Caveau de Riquewihr' },
+      summary: {
+        it: 'Un ristorante che offre una carta a chi supera una prova con gli spaghetti.',
+        en: 'A restaurant that offers a card for completing a spaghetti-eating challenge.',
+      },
+      visual: { art: 'caveau-de-riquewihr', tint: 'orange' },
+    },
+    // Named in the original manga's news report; Viz omits the name and
+    // neither anime adaptation includes the report. Japanese/translated
+    // edition difference is recorded in provenance, not inferred away.
+    {
+      id: 'jitonoda',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 61,
+      revealedAtChapter: 129,
+      name: { it: 'Jitonoda', en: 'Jitonoda' },
+      summary: {
+        it: 'Il sindaco di York Shin City, che cerca di rassicurare i visitatori dopo gli attentati all’asta.',
+        en: 'The mayor of Yorknew City, who tries to reassure visitors after the attacks on the auction.',
+      },
+      visual: { art: 'jitonoda', tint: 'blue' },
+    },
+    {
+      id: 'dwun',
+      kind: 'character',
+      revealedAtEpisode: 75,
+      revealedAtChapter: 184,
+      name: { it: 'Dwun', en: 'Dwun' },
+      summary: {
+        it: 'Un creatore di Greed Island che consegna a Gon l’ultima carta e gli spiega come portarne tre fuori dal gioco.',
+        en: 'A creator of Greed Island who gives Gon the final card and explains how to take three cards out of the game.',
+      },
+      visual: { art: 'dwun', tint: 'ocher' },
+    },
+    // The chapter names all four game masters. Episode 75's synopsis only
+    // positively establishes Dwun's personal name, so these stay manga-only.
+    {
+      id: 'list',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 75,
+      revealedAtChapter: 184,
+      name: { it: 'List', en: 'List' },
+      summary: {
+        it: 'Un creatore di Greed Island che accoglie Gon nel castello e gli presenta Dwun.',
+        en: 'A creator of Greed Island who welcomes Gon to the castle and introduces him to Dwun.',
+      },
+      visual: { art: 'list', tint: 'violet' },
+    },
+    {
+      id: 'eta',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 75,
+      revealedAtChapter: 184,
+      name: { it: 'Eeta', en: 'Eta' },
+      summary: {
+        it: 'Una creatrice di Greed Island che spiega le regole ai nuovi giocatori e conduce il quiz finale.',
+        en: 'A creator of Greed Island who explains the rules to new players and runs the final quiz.',
+      },
+      visual: { art: 'eta', tint: 'azure' },
+    },
+    {
+      id: 'elena',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 75,
+      revealedAtChapter: 184,
+      name: { it: 'Elena', en: 'Elena' },
+      summary: {
+        it: 'Una creatrice di Greed Island che si occupa dei giocatori in uscita dal gioco.',
+        en: 'A creator of Greed Island who handles players leaving the game.',
+      },
+      visual: { art: 'elena', tint: 'pink' },
+    },
+    {
+      id: 'limeiro',
+      kind: 'place',
+      revealedAtEpisode: 75,
+      revealedAtChapter: 183,
+      name: { it: 'Limeiro', en: 'Limeiro' },
+      summary: {
+        it: 'La capitale di Greed Island, dove Gon viene invitato a ritirare l’ultima carta del gioco.',
+        en: 'The capital of Greed Island, where Gon is invited to receive the game’s final card.',
+      },
+      visual: { art: 'limeiro', tint: 'orange' },
+    },
   ],
   dossiers: {
+    'jitonoda': {
+      role: { it: 'Sindaco di York Shin City', en: 'Mayor of Yorknew City' },
+      log: {
+        it: 'Una notizia riferisce che cerca di rassicurare i partecipanti all’asta sulla sicurezza della città. Nonostante le sue dichiarazioni, l’affluenza cala rispetto agli anni precedenti. La mafia finanzia gran parte della sua campagna elettorale.',
+        en: 'A news report describes his attempts to reassure auction visitors about the city’s safety. Despite his statements, attendance falls compared with previous years. The Mafia funds much of his election campaign.',
+      },
+      status: [
+        { episode: 61, chapter: 129, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 61,
+          chapter: 129,
+          source: 'chapter',
+          value: {
+            it: 'Amministrazione di York Shin City',
+            en: 'Yorknew City administration',
+          },
+        },
+      ],
+      // Relationships omitted: the manga news report names the mayor but
+      // establishes no directed interaction with an archived character.
+    },
+    'dwun': {
+      relationships: greedIslandRelationships.dwun,
+      role: { it: 'Creatore di Greed Island', en: 'Greed Island creator' },
+      log: {
+        it: 'Vive nel castello in una stanza piena di giochi e rifiuti. Consegna a Gon l’ultima carta e la custodia per portare tre carte fuori dal gioco. Conosce Ging, che gli ha fatto cambiare il nome per inserirne l’iniziale nel titolo di Greed Island.',
+        en: 'He lives in the castle in a room crowded with games and rubbish. He gives Gon the final card and a case for taking three cards out of the game. He knows Ging, who had his name changed so that its initial would fit the title of Greed Island.',
+      },
+      status: [{ episode: 75, chapter: 184, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 75,
+          chapter: 184,
+          value: {
+            it: 'Greed Island, creatore del gioco',
+            en: 'Greed Island game creator',
+          },
+        },
+      ],
+    },
+    'list': {
+      relationships: greedIslandRelationships.list,
+      role: { it: 'Creatore di Greed Island', en: 'Greed Island creator' },
+      log: {
+        it: 'Accoglie Gon nel castello e lo accompagna nella stanza di Dwun. Si presenta come amico di Ging e spiega che il nome del gioco deriva dalle iniziali dei suoi undici creatori. Organizza la conclusione del gioco per Gon.',
+        en: 'He welcomes Gon to the castle and takes him to Dwun’s room. He introduces himself as Ging’s friend and explains that the game’s name comes from the initials of its eleven creators. He arranges the end of the game for Gon.',
+      },
+      status: [
+        { episode: 75, chapter: 184, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 75,
+          chapter: 184,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island, creatore del gioco',
+            en: 'Greed Island game creator',
+          },
+        },
+      ],
+    },
+    'eta': {
+      relationships: greedIslandRelationships.eta,
+      role: { it: 'Creatrice di Greed Island', en: 'Greed Island creator' },
+      log: {
+        it: 'Accoglie chi entra nel gioco e spiega come usare le carte. Quando Gon raccoglie novantanove carte, conduce il quiz che assegna l’ultima. List rivela che lei ed Elena sono gemelle e che le loro iniziali fanno parte del nome Greed Island.',
+        en: 'She welcomes people entering the game and explains how to use the cards. When Gon collects ninety-nine cards, she runs the quiz for the final one. List reveals that she and Elena are twins whose initials form part of the name Greed Island.',
+      },
+      status: [
+        { episode: 75, chapter: 184, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 75,
+          chapter: 184,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island, accoglienza dei giocatori',
+            en: 'Greed Island player reception',
+          },
+        },
+      ],
+    },
+    'elena': {
+      relationships: greedIslandRelationships.elena,
+      role: { it: 'Creatrice di Greed Island', en: 'Greed Island creator' },
+      log: {
+        it: 'Si occupa dei giocatori che lasciano il gioco. Accompagna l’uscita di Killua quando parte per l’esame Hunter. List rivela che lei ed Eeta sono gemelle e che hanno partecipato alla creazione di Greed Island.',
+        en: 'She handles players leaving the game. She sends Killua out when he leaves for the Hunter Exam. List reveals that she and Eta are twins who helped create Greed Island.',
+      },
+      status: [
+        { episode: 75, chapter: 184, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 75,
+          chapter: 184,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island, uscita dei giocatori',
+            en: 'Greed Island player departures',
+          },
+        },
+        {
+          episode: 76,
+          chapter: 185,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island; indirizza i viaggi di Gon secondo le istruzioni di Ging',
+            en: 'Greed Island; directs Gon’s travels according to Ging’s instructions',
+          },
+        },
+      ],
+    },
     'genthru': {
       relationships: greedIslandRelationships.genthru,
       role: { it: 'Capo del Boomer', en: 'Bomber leader' },
@@ -256,6 +470,7 @@ export const greedIsland: HunterSaga = {
       },
       status: [
         { episode: 65, chapter: 144, source: 'chapter', value: 'alive' },
+        { episode: 74, chapter: 181, source: 'chapter', value: 'captured' },
       ],
       affiliation: [
         {
@@ -265,6 +480,15 @@ export const greedIsland: HunterSaga = {
           value: {
             it: 'Greed Island, gruppo del Boomer',
             en: 'Greed Island, Bomber group',
+          },
+        },
+        {
+          episode: 74,
+          chapter: 181,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island; sconfitto e catturato da Gon',
+            en: 'Greed Island; defeated and captured by Gon',
           },
         },
       ],
@@ -306,6 +530,22 @@ export const greedIsland: HunterSaga = {
           value: {
             it: 'Greed Island, creatori del gioco',
             en: 'Greed Island game creators',
+          },
+        },
+        {
+          episode: 69,
+          chapter: 161,
+          value: {
+            it: 'Greed Island; affronta la squadra di Gon in una partita di dodgeball',
+            en: 'Greed Island; faces Gon’s team in a dodgeball match',
+          },
+        },
+        {
+          episode: 71,
+          chapter: 169,
+          value: {
+            it: 'Greed Island; creatore scelto da Ging dopo la sua condanna',
+            en: 'Greed Island; game creator recruited by Ging after his conviction',
           },
         },
       ],
@@ -389,6 +629,38 @@ export const greedIsland: HunterSaga = {
             en: 'Hunter Association; collects cards with Gon and Killua after their training',
           },
         },
+        {
+          episode: 69,
+          chapter: 160,
+          value: {
+            it: 'Associazione Hunter; partecipa con Gon e Killua alla sfida contro i pirati',
+            en: 'Hunter Association; joins Gon and Killua in challenging the pirates',
+          },
+        },
+        {
+          episode: 72,
+          chapter: 170,
+          value: {
+            it: 'Associazione Hunter; prepara Gon e Killua ad affrontare il Boomer',
+            en: 'Hunter Association; prepares Gon and Killua to fight the Bomber',
+          },
+        },
+        {
+          episode: 73,
+          chapter: 177,
+          value: {
+            it: 'Associazione Hunter; sconfigge uno dei complici del Boomer',
+            en: 'Hunter Association; defeats one of the Bomber’s accomplices',
+          },
+        },
+        {
+          episode: 75,
+          chapter: 185,
+          value: {
+            it: 'Associazione Hunter; saluta Gon e Killua dopo aver completato Greed Island con loro',
+            en: 'Hunter Association; says goodbye to Gon and Killua after completing Greed Island with them',
+          },
+        },
       ],
     },
     'binolt': {
@@ -455,11 +727,60 @@ export const greedIsland: HunterSaga = {
             en: 'Greed Island collector',
           },
         },
+        {
+          episode: 72,
+          chapter: 173,
+          value: {
+            it: 'Interrompe il finanziamento dei giocatori di Greed Island',
+            en: 'Withdraws his support for the Greed Island players',
+          },
+        },
+        {
+          episode: 73,
+          chapter: 174,
+          value: {
+            it: 'Abbandona Greed Island dopo la morte della donna che voleva curare',
+            en: 'Abandons Greed Island after the death of the woman he wanted to heal',
+          },
+        },
+        {
+          episode: 74,
+          chapter: 182,
+          value: {
+            it: 'Risarcisce i giocatori per il contratto interrotto',
+            en: 'Compensates the players for ending their contract',
+          },
+        },
       ],
     },
     'tsezguerra': {
       relationships: greedIslandRelationships.tsezguerra,
-      role: { it: 'Esaminatore per Greed Island', en: 'Greed Island examiner' },
+      role: [
+        {
+          episode: 59,
+          chapter: 121,
+          value: {
+            it: 'Esaminatore per Greed Island',
+            en: 'Greed Island examiner',
+          },
+        },
+        {
+          episode: 69,
+          chapter: 160,
+          value: {
+            it: 'Caposquadra a Greed Island',
+            en: 'Greed Island team leader',
+          },
+        },
+        {
+          episode: 73,
+          chapter: 174,
+          value: {
+            it: 'Hunter ritirato da Greed Island',
+            en: 'Hunter who has left Greed Island',
+          },
+        },
+      ],
       log: {
         it: 'Accompagna Battera all’asta. Quando Gon e Killua si offrono di completare Greed Island, Battera lo chiama per valutarli. Gli basta osservare il loro Ren per rifiutarli: ritiene che nel gioco morirebbero.',
         en: 'He accompanies Battera to the auction. When Gon and Killua offer to clear Greed Island, Battera calls him to assess them. Watching their Ren is enough for him to reject them: he thinks they would die in the game.',
@@ -470,6 +791,30 @@ export const greedIsland: HunterSaga = {
           episode: 59,
           chapter: 121,
           value: { it: 'Al servizio di Battera', en: 'Working for Battera' },
+        },
+        {
+          episode: 69,
+          chapter: 160,
+          value: {
+            it: 'Al servizio di Battera; si allea con Gon per affrontare i pirati',
+            en: 'Working for Battera; joins Gon’s alliance against the pirates',
+          },
+        },
+        {
+          episode: 72,
+          chapter: 170,
+          value: {
+            it: 'Al servizio di Battera; tiene occupato il Boomer per permettere a Gon di prepararsi',
+            en: 'Working for Battera; keeps the Bomber occupied so Gon can prepare',
+          },
+        },
+        {
+          episode: 73,
+          chapter: 174,
+          value: {
+            it: 'Lascia Greed Island con la propria squadra e Battera',
+            en: 'Leaves Greed Island with his team and Battera',
+          },
         },
       ],
     },
@@ -534,6 +879,34 @@ export const GREED_ISLAND_PLACES: Record<
   string,
   PlaceDossier<HunterVocabulary>
 > = {
+  'caveau-de-riquewihr': {
+    form: 'building',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'Il ristorante della prova con gli spaghetti',
+      en: 'The restaurant with the spaghetti challenge',
+    },
+    log: {
+      it: 'Gon e Killua mangiano un grande piatto di spaghetti entro il tempo richiesto e ricevono una carta. Non hanno denaro del gioco per pagare le bibite e lavano i piatti.',
+      en: 'Gon and Killua finish a large plate of spaghetti within the time limit and receive a card. They have no game currency to pay for their drinks, so they wash dishes.',
+    },
+    filedHere: [],
+  },
+  'limeiro': {
+    form: 'city',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'Il castello sopra la città',
+      en: 'The castle above the city',
+    },
+    log: {
+      it: 'Gon riceve un invito per ritirare l’ultima carta nel castello. Killua raggiunge la città con una carta di viaggio, poi torna dagli altri per condurli lì insieme.',
+      en: 'Gon receives an invitation to collect the final card at the castle. Killua reaches the city with a Drift card, then returns to bring the others there together.',
+    },
+    filedHere: ['dwun', 'list'],
+  },
   'dorias': {
     form: 'city',
     region: 'islands',

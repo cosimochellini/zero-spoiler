@@ -910,7 +910,11 @@
       "hxh-en-Phinks_Magcub-424170.json",
       "hxh-en-Chapter_145-421581.json",
       "hxh-en-Episode_67_(2011)-416432.json"
-    ]
+    ],
+    "dwun": ["hxh-en-Dwun-424835.json", "hxh-en-Chapter_184-329212.json"],
+    "elena": ["hxh-en-Elena-424833.json", "hxh-en-Chapter_184-329212.json"],
+    "eta": ["hxh-en-Eta-424828.json", "hxh-en-Chapter_184-329212.json"],
+    "list": ["hxh-en-List-424433.json", "hxh-en-Chapter_184-329212.json"]
   },
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",
@@ -918,7 +922,8 @@
     "bonolenov": "Through episode 58 / chapter 119 he is only ever part of the Troupe as a group: the gathering, the hideout, the fortunes and the group Chrollo puts him in with Franklin and Hisoka (chapter 108, episode 55). His question to Phinks about the fortunes (chapter 104) and his lines to Franklin about the chain user and the child at the window (chapters 115-116) are on the chapter pages only; he has no individual exchange with an archived character in both media. Judged from hxh-en-Bonolenov_Ndongo-425603.json and the episode 41-58 and chapter 71-119 pages.",
     "eliza": "Through episode 58 / chapter 119 her only exchange is Squala's phone call, which is on the episode 39 and 56 pages only. Chapter 109 has him only think of her; her going to check the restroom when Neon slips away (chapter 94) is on the chapter page only; and Pakunoda reading her name in his memories (chapter 112, episode 56) is no exchange with her. She has no individual exchange with an archived character in both media. Judged from hxh-en-Eliza-424831.json and the episode 39, 43, 51, 56 and chapter 67-112 pages.",
     "kosofftro": "Chapter 132 shows only his introduction to a group of unnamed recruits and directions for reaching him with a spell. No individual bond with an archived named character is established. Judged from hxh-en-Kosofftro-424571.json and hxh-en-Chapter_132-417938.json.",
-    "jeitsari": "Only named and pictured in the chapter 121 auction introduction through this phase; no personal interaction with an archived character is shown."
+    "jeitsari": "Only named and pictured in the chapter 121 auction introduction through this phase; no personal interaction with an archived character is shown.",
+    "jitonoda": "Only named in the chapter 129 manga news report as the mayor of Yorknew City; no directed interaction with an archived character is established. Judged from the chapter 129 page."
   },
   "pending": {}
 }

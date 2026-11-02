@@ -28,6 +28,133 @@ const PUHAT_JACKET: Stroke[] = [
 ]
 
 export const GREED_ISLAND_DRAWINGS = {
+  // Jitonoda is named by the chapter 129 newspaper report. A folded
+  // newspaper with blank column rules; no portrait, lettering or copied page.
+  'jitonoda': [
+    { d: 'M36 49 L117 66 L127 160 L44 141 Z' },
+    {
+      d: 'M36 49 L25 58 L34 151 L44 141 M34 151 L116 171 L127 160',
+      role: 'soft',
+    },
+    { d: 'M48 65 L105 77 L108 96 L51 84 Z', role: 'accent' },
+    {
+      d: 'M50 96 L75 101 M82 103 L108 109 M51 105 L76 110 M83 112 L109 118',
+      role: 'soft',
+    },
+    {
+      d: 'M53 115 L78 120 M85 122 L111 128 M54 125 L79 130 M86 132 L112 138',
+      role: 'soft',
+    },
+    { d: 'M63 100 L66 132 M96 107 L99 140', role: 'soft' },
+    {
+      d: 'M33 71 L39 133 M32 83 l5 -3 M33 99 l5 -3 M35 115 l5 -3',
+      role: 'ambient',
+    },
+    shadow(78, 185, 51),
+  ],
+  // Dwun's cigarette, from his chapter 184 appearance description, viewed
+  // obliquely. Plain paper and an ash tip; no face, logo or invented ashtray.
+  'dwun': [
+    { d: 'M31 131 L114 61 M39 143 L124 74' },
+    { d: 'M31 131 C25 137 34 148 39 143 M114 61 C120 57 130 68 124 74' },
+    { d: 'M111 64 Q120 63 121 76', role: 'accent' },
+    { d: 'M106 69 L115 80 M101 73 L111 84', role: 'soft' },
+    { d: 'M38 133 L103 78 M42 137 L105 83', role: 'soft' },
+    { d: 'M115 65 l5 7 M118 63 l6 7', role: 'ambient' },
+    { d: 'M46 125 l4 4 M59 114 l4 4 M72 103 l4 4', role: 'ambient' },
+    shadow(78, 166, 45),
+  ],
+  // List's small tie and overall straps, chapter 184's named introduction.
+  // The bow-free knot and the two buckles carry the object's volume.
+  'list': [
+    { d: 'M65 45 L91 45 L97 57 L83 72 L67 60 Z', role: 'accent' },
+    { d: 'M91 45 L99 49 L104 60 L90 74 L83 72', role: 'soft' },
+    { d: 'M72 64 L56 130 L77 154 L101 132 L86 68', role: 'accent' },
+    {
+      d: 'M86 68 L94 71 L108 130 L101 132 M77 154 L85 157 L108 130',
+      role: 'soft',
+    },
+    { d: 'M78 75 L69 124 M67 133 L77 143', role: 'soft' },
+    { d: 'M31 44 L37 138 H50 L44 44 M114 42 L120 136 H133 L127 42' },
+    { d: 'M33 111 H51 V132 H34 Z M116 109 H134 V130 H117 Z', role: 'soft' },
+    { d: 'M38 117 H46 V126 H39 Z M121 115 H129 V124 H122 Z', role: 'soft' },
+    { d: 'M97 102 l4 -3 M99 114 l5 -3 M101 126 l4 -3', role: 'ambient' },
+    shadow(81, 181, 51),
+  ],
+  // Eeta's sleeveless robe, chapter 184 identifies the entrance attendant
+  // seen in 127. The eye motifs are omitted, as are helmet and face.
+  'eta': [
+    {
+      d: 'M58 39 L68 39 Q80 52 92 39 H102 L106 77 L96 90 L115 159 Q80 171 43 159 L62 90 L53 77 Z',
+    },
+    { d: 'M58 39 Q56 63 62 76 M102 39 Q104 63 98 76', role: 'soft' },
+    { d: 'M68 39 Q80 52 92 39 M70 45 Q80 54 90 45', role: 'accent' },
+    { d: 'M43 159 L47 168 Q82 181 121 166 L115 159', role: 'soft' },
+    { d: 'M64 94 L56 154 M96 94 L107 156 M80 105 V163', role: 'soft' },
+    {
+      d: 'M108 130 l5 -3 M111 141 l5 -3 M114 152 l5 -3 M111 168 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M59 116 l4 -4 M56 133 l4 -4', role: 'ambient' },
+    shadow(81, 187, 49),
+  ],
+  // Elena's square-necked robe and thin choker from her appearance
+  // description, named in chapter 184. No helmet motifs or face.
+  'elena': [
+    {
+      d: 'M58 58 H69 V78 H94 V58 H105 L111 98 L98 108 L117 166 H43 L61 108 L51 98 Z',
+    },
+    { d: 'M105 58 L111 62 L117 100 L105 113 L124 171 L117 166', role: 'soft' },
+    { d: 'M43 166 L48 172 H124 V171', role: 'soft' },
+    { d: ellipse(81, 40, 23, 5), role: 'accent' },
+    { d: 'M58 40 V45 C60 52 102 52 104 45 V40', role: 'soft' },
+    {
+      d: 'M70 79 H93 V84 H70 Z M64 110 L56 158 M97 111 L108 158',
+      role: 'soft',
+    },
+    { d: 'M80 100 V164 M61 145 Q71 139 78 146', role: 'soft' },
+    { d: 'M112 130 l5 -3 M116 143 l5 -3 M119 156 l5 -3', role: 'ambient' },
+    shadow(82, 187, 49),
+  ],
+  // The envelope delivered by the owl in chapter 183 / episode 75,
+  // inviting Gon to Limeiro's castle. No seal, text or copied architecture.
+  'limeiro': [
+    { d: 'M24 78 L113 60 L137 125 L46 146 Z' },
+    { d: 'M24 78 L78 104 L113 60', role: 'accent' },
+    { d: 'M46 146 L67 101 M137 125 L91 96', role: 'soft' },
+    { d: 'M46 146 V153 L138 132 L137 125 M24 78 V85 L46 153', role: 'soft' },
+    { d: 'M31 81 L77 103 L107 67', role: 'soft' },
+    {
+      d: 'M54 146 l6 -3 M71 142 l6 -3 M88 138 l6 -3 M105 134 l6 -3 M122 130 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M8 150 H35 M140 150 H154', role: 'ambient' },
+    shadow(81, 158, 55),
+  ],
+  // The restaurant's spaghetti challenge, chapter 129; its name comes
+  // from the entrance sign described by the wiki, which is not reproduced.
+  'caveau-de-riquewihr': [
+    { d: ellipse(79, 129, 65, 19) },
+    { d: 'M14 129 V135 C23 160 136 160 144 135 V129', role: 'soft' },
+    { d: ellipse(79, 126, 53, 12), role: 'soft' },
+    {
+      d: 'M32 125 C32 105 51 95 76 97 C103 92 122 106 127 124',
+      role: 'accent',
+    },
+    { d: 'M42 119 C37 108 62 104 73 115 S102 124 114 110', role: 'soft' },
+    {
+      d: 'M42 128 C47 112 79 124 79 108 M61 99 C47 116 93 107 103 122',
+      role: 'soft',
+    },
+    { d: 'M49 126 C56 132 68 118 81 126 S110 131 118 122', role: 'soft' },
+    {
+      d: 'M28 136 l6 -3 M44 141 l6 -3 M62 143 l6 -3 M104 141 l6 -3 M121 137 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M8 150 H150', role: 'ambient' },
+    shadow(79, 158, 62),
+  ],
+
   // Genthru's angular spectacles, folded in three-quarter view. Chapter
   // 144 names him; the appearance description cites the glasses at 130.
   'genthru': [
