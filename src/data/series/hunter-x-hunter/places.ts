@@ -1,5 +1,6 @@
 import type { PlaceDossier } from '~/data/types'
 
+import { GREED_ISLAND_PLACES } from './records/greed-island'
 import { HEAVENS_ARENA_PLACES } from './records/heavens-arena'
 import type { HunterVocabulary } from './records/saga'
 import { TRICK_TOWER_PLACES } from './records/trick-tower'
@@ -15,6 +16,7 @@ export const PLACE_DOSSIERS: Record<string, PlaceDossier<HunterVocabulary>> = {
   ...ZOLDYCK_PLACES,
   ...HEAVENS_ARENA_PLACES,
   ...YORKNEW_CITY_PLACES,
+  ...GREED_ISLAND_PLACES,
   'zevil-island': {
     form: 'island',
     region: 'islands',

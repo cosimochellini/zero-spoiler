@@ -2,6 +2,79 @@ import type { Relationship, Timeline } from '~/data/types'
 
 /** Recruitment scenes in the pinned chapters 121/125/126 and episodes 59/60. */
 const links = {
+  biscuitGon: {
+    character: 'gon-freecss',
+    type: { it: 'Allievo a cui offre aiuto', en: 'Boy she offers to teach' },
+    summary: {
+      it: 'Biscuit osserva le difficoltà di Gon contro i mostri e gli offre di insegnare il Nen.',
+      en: 'Biscuit watches Gon struggle against the monsters and offers to teach him Nen.',
+    },
+  },
+  biscuitKillua: {
+    character: 'killua',
+    type: { it: 'Allievo a cui offre aiuto', en: 'Boy she offers to teach' },
+    summary: {
+      it: 'Biscuit corregge il modo in cui Killua usa Gyo e gli offre di allenarlo.',
+      en: 'Biscuit corrects Killua’s use of Gyo and offers to train him.',
+    },
+  },
+  biscuitWing: {
+    character: 'wing',
+    type: { it: 'Ex allievo', en: 'Former pupil' },
+    summary: {
+      it: 'Quando Gon nomina Wing, Biscuit spiega che era un suo allievo.',
+      en: 'When Gon mentions Wing, Biscuit explains that he was her pupil.',
+    },
+  },
+  binoltBiscuit: {
+    character: 'biscuit-krueger',
+    type: { it: 'Hunter che lo sconfigge', en: 'Hunter who defeats him' },
+    summary: {
+      it: 'Biscuit sconfigge Binolt senza Nen e gli impone di affrontare Gon e Killua.',
+      en: 'Biscuit defeats Binolt without Nen and makes him face Gon and Killua.',
+    },
+  },
+  binoltGon: {
+    character: 'gon-freecss',
+    type: { it: 'Avversario nell’allenamento', en: 'Training opponent' },
+    summary: {
+      it: 'Biscuit obbliga Binolt a difendersi dagli attacchi di Gon in una conca di roccia.',
+      en: 'Biscuit makes Binolt defend against Gon’s attacks in a rocky hollow.',
+    },
+  },
+  binoltKillua: {
+    character: 'killua',
+    type: { it: 'Avversario nell’allenamento', en: 'Training opponent' },
+    summary: {
+      it: 'Biscuit obbliga Binolt ad affrontare Killua; le forbici gli permettono di tenere il ragazzo a distanza.',
+      en: 'Biscuit makes Binolt fight Killua; his scissors let him keep the boy at a distance.',
+    },
+  },
+  binoltGonFree: {
+    character: 'gon-freecss',
+    type: { it: 'Avversario che lo risparmia', en: 'Opponent who spares him' },
+    summary: {
+      it: 'Gon ferma il colpo decisivo e ringrazia Binolt per averli aiutati a migliorare.',
+      en: 'Gon stops his finishing blow and thanks Binolt for helping them improve.',
+    },
+  },
+  binoltKilluaFree: {
+    character: 'killua',
+    type: { it: 'Avversario che lo supera', en: 'Opponent who surpasses him' },
+    summary: {
+      it: 'Killua si allena combattendo contro Binolt fino a riuscire ad affrontarlo da solo.',
+      en: 'Killua trains by fighting Binolt until he can face him alone.',
+    },
+  },
+  binoltBiscuitFree: {
+    character: 'biscuit-krueger',
+    type: { it: 'Hunter che lo lascia andare', en: 'Hunter who releases him' },
+    summary: {
+      it: 'Biscuit permette a Binolt di andarsene dopo che promette di costituirsi.',
+      en: 'Biscuit lets Binolt leave after he promises to turn himself in.',
+    },
+  },
+
   batteraTsezguerra: {
     character: 'tsezguerra',
     type: { it: 'Esaminatore al suo servizio', en: 'Examiner in his service' },
@@ -69,8 +142,59 @@ const links = {
 } satisfies Record<string, Relationship>
 
 export const greedIslandRelationships = {
-  battera: [{ episode: 59, chapter: 121, value: [links.batteraTsezguerra] }],
-  tsezguerra: [
+  'biscuit-krueger': [
+    // Episode 62's naming scene precedes the discussion of Wing in episode 63.
+    {
+      episode: 62,
+      chapter: 137,
+      source: 'episode',
+      value: [links.biscuitGon, links.biscuitKillua],
+    },
+    {
+      episode: 63,
+      chapter: 137,
+      source: 'chapter',
+      value: [links.biscuitGon, links.biscuitKillua, links.biscuitWing],
+    },
+    {
+      episode: 63,
+      chapter: 137,
+      source: 'episode',
+      value: [links.biscuitGon, links.biscuitKillua, links.biscuitWing],
+    },
+  ],
+  'binolt': [
+    // Anime readers finish the entire training encounter in his opening episode.
+    {
+      episode: 63,
+      chapter: 138,
+      source: 'chapter',
+      value: [links.binoltBiscuit, links.binoltGon, links.binoltKillua],
+    },
+    {
+      episode: 63,
+      chapter: 139,
+      source: 'episode',
+      value: [
+        links.binoltBiscuitFree,
+        links.binoltGonFree,
+        links.binoltKilluaFree,
+      ],
+    },
+    {
+      episode: 64,
+      chapter: 139,
+      source: 'chapter',
+      value: [
+        links.binoltBiscuitFree,
+        links.binoltGonFree,
+        links.binoltKilluaFree,
+      ],
+    },
+  ],
+
+  'battera': [{ episode: 59, chapter: 121, value: [links.batteraTsezguerra] }],
+  'tsezguerra': [
     {
       episode: 59,
       chapter: 121,
@@ -90,7 +214,7 @@ export const greedIslandRelationships = {
       ],
     },
   ],
-  puhat: [
+  'puhat': [
     { episode: 60, chapter: 125, value: [links.puhatGon, links.puhatKillua] },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>

@@ -28,6 +28,7 @@ export const TITLES = {
     'water-seven-arc': 'Water 7 Arc',
   },
   'hunter-x-hunter': {
+    'shiso-tree': 'Greed Island Starting Point',
     'gittarackur': 'Illumi Zoldyck',
     'illumi': 'Illumi Zoldyck',
     'killua': 'Killua Zoldyck',

@@ -94,16 +94,17 @@ Exam coverage through episode 26 / chapter 43, including the manga's chapter-one
 characters introduced later by the anime, the Heavens Arena characters and place
 up to episode 34 / chapter 59 (#896), and Yorknew City through episode 58 /
 chapter 119 (#900): the Nostrade household and bodyguards, the twelve Phantom
-Troupe members, five Shadow Beasts, Zepile, Zenji and five places. Silva,
-Killua's father, is named in episode 24 but in chapter 95 in the manga, so his
-record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but
-named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named
-only in credits and supplements, and Hishita only in chapter 329 (#912). Every
-Hunter Exam character has a chronicle (#762); the Heavens Arena characters get
-theirs in #898. Records are not added from unnamed appearances or supplemental
-names. Greed Island’s recruitment cast (#1016) adds Battera, Tsezguerra and
-Puhat, plus Gon and Killua’s recruitment steps. The rest of that arc remains in
-#904.
+Troupe members, five Shadow Beasts, Zepile, Zenji and five places. Greed Island
+recruitment (#1016) and arrival/training through chapter 141 (#1017) add
+verified named characters and visited places, with source-only records where the
+naming evidence reaches only one medium. Later Greed Island phases remain in
+#904. Silva, Killua's father, is named in episode 24 but in chapter 95 in the
+manga, so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown from
+chapter 71 but named in the episodes only from 53 and filed at 54 / 71 (#900);
+Kikyo is named only in credits and supplements, and Hishita only in chapter 329
+(#912). Every Hunter Exam character has a chronicle (#762); the Heavens Arena
+characters get theirs in #898. Records are not added from unnamed appearances or
+supplemental names.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -202,11 +203,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 119                                                   |
-| Characters        | 96                                                    |
-| Arcs, places      | 7 · 16                                                |
+| Records           | 126                                                   |
+| Characters        | 100                                                   |
+| Arcs, places      | 7 · 19                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 119, one per record, plus 21 redrawings of 21 records |
+| Line drawings     | 126, one per record, plus 21 redrawings of 21 records |
 | Chronicle stories | 247, for 93 characters                                |
 
 ### `game-of-thrones`
