@@ -68,7 +68,8 @@ or documented deliberate omissions; Hunter x Hunter characters filed later wait
 under `pending` with the issue that will author them
 (`docs/content-provenance/hunter-x-hunter-relationships.json`). No relationships
 are inferred. Character archive-order navigation and nearby recommendations have
-been retired; independent place and fruit navigation remains.
+been retired, and so has the place page's previous and next stop; a place's map
+names the reached stops around it instead. The fruit rails remain.
 
 The authoring contract and provenance requirements are in
 [Contributing](../CONTRIBUTING.md#authoring-relationship-selections). Selection
