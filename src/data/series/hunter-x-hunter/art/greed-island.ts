@@ -120,29 +120,6 @@ export const GREED_ISLAND_DRAWINGS = {
     { d: 'M8 150 H35 M140 150 H154', role: 'ambient' },
     shadow(81, 158, 55),
   ],
-  // The restaurant's spaghetti challenge, chapter 129; its name comes
-  // from the entrance sign described by the wiki, which is not reproduced.
-  'caveau-de-riquewihr': [
-    { d: ellipse(79, 129, 65, 19) },
-    { d: 'M14 129 V135 C23 160 136 160 144 135 V129', role: 'soft' },
-    { d: ellipse(79, 126, 53, 12), role: 'soft' },
-    {
-      d: 'M32 125 C32 105 51 95 76 97 C103 92 122 106 127 124',
-      role: 'accent',
-    },
-    { d: 'M42 119 C37 108 62 104 73 115 S102 124 114 110', role: 'soft' },
-    {
-      d: 'M42 128 C47 112 79 124 79 108 M61 99 C47 116 93 107 103 122',
-      role: 'soft',
-    },
-    { d: 'M49 126 C56 132 68 118 81 126 S110 131 118 122', role: 'soft' },
-    {
-      d: 'M28 136 l6 -3 M44 141 l6 -3 M62 143 l6 -3 M104 141 l6 -3 M121 137 l6 -3',
-      role: 'ambient',
-    },
-    { d: 'M8 150 H150', role: 'ambient' },
-    shadow(79, 158, 62),
-  ],
 
   // Genthru's angular spectacles, folded in three-quarter view. Chapter
   // 144 names him; the appearance description cites the glasses at 130.

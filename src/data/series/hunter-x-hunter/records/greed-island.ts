@@ -246,21 +246,6 @@ export const greedIsland: HunterSaga = {
       visual: { art: 'aiai', tint: 'pink' },
     },
 
-    // The wiki explicitly identifies the French name on the entrance sign
-    // in chapter129. A matching anime naming scene has not been established.
-    {
-      id: 'caveau-de-riquewihr',
-      kind: 'place',
-      source: 'chapter',
-      revealedAtEpisode: 61,
-      revealedAtChapter: 129,
-      name: { it: 'Caveau de Riquewihr', en: 'Caveau de Riquewihr' },
-      summary: {
-        it: 'Un ristorante che offre una carta a chi supera una prova con gli spaghetti.',
-        en: 'A restaurant that offers a card for completing a spaghetti-eating challenge.',
-      },
-      visual: { art: 'caveau-de-riquewihr', tint: 'orange' },
-    },
     // Named in the original manga's news report; Viz omits the name and
     // neither anime adaptation includes the report. Japanese/translated
     // edition difference is recorded in provenance, not inferred away.
@@ -536,7 +521,7 @@ export const greedIsland: HunterSaga = {
           episode: 69,
           chapter: 161,
           value: {
-            it: 'Greed Island; affronta la squadra di Gon in una partita di dodgeball',
+            it: 'Greed Island; affronta la squadra di Gon in una partita di palla avvelenata',
             en: 'Greed Island; faces Gon’s team in a dodgeball match',
           },
         },
@@ -879,20 +864,6 @@ export const GREED_ISLAND_PLACES: Record<
   string,
   PlaceDossier<HunterVocabulary>
 > = {
-  'caveau-de-riquewihr': {
-    form: 'building',
-    region: 'islands',
-    arc: 'greed-island-arc',
-    landmark: {
-      it: 'Il ristorante della prova con gli spaghetti',
-      en: 'The restaurant with the spaghetti challenge',
-    },
-    log: {
-      it: 'Gon e Killua mangiano un grande piatto di spaghetti entro il tempo richiesto e ricevono una carta. Non hanno denaro del gioco per pagare le bibite e lavano i piatti.',
-      en: 'Gon and Killua finish a large plate of spaghetti within the time limit and receive a card. They have no game currency to pay for their drinks, so they wash dishes.',
-    },
-    filedHere: [],
-  },
   'limeiro': {
     form: 'city',
     region: 'islands',

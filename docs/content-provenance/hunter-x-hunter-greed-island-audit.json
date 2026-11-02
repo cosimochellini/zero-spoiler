@@ -44,9 +44,9 @@
   "dispositionCounts": {
     "excluded-unnamed": 26,
     "excluded-unresolved-naming": 31,
-    "existing-record": 68,
+    "existing-record": 67,
     "excluded-databook-mapping": 24,
-    "excluded-unverified-place": 9,
+    "excluded-unverified-place": 10,
     "excluded-nonindividual": 3,
     "excluded-external-identity": 1,
     "excluded-noncanonical": 1,
@@ -928,8 +928,8 @@
     {
       "title": "Caveau de Riquewihr",
       "id": "caveau-de-riquewihr",
-      "disposition": "existing-record",
-      "reason": "Existing place record caveau-de-riquewihr; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof. The restaurant page explicitly locates the printed sign name in chapter129; no positive anime naming scene established.",
+      "disposition": "excluded-unverified-place",
+      "reason": "Not filed: the restaurant is named only by background sign lettering that the English wiki normalises to Caveau de Riquewihr, while its manga image and the French wiki title spell it Caveau de Bique Wihb. No scene in chapter 129 or the 2011 anime says or prints the name, so the spelling is unverified.",
       "issueCandidate": false,
       "placeCandidate": true,
       "appearancePages": [],

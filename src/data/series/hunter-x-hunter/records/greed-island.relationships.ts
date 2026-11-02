@@ -45,7 +45,7 @@ const links = {
   },
   razorGonMatch: {
     character: 'gon-freecss',
-    type: { it: 'Sfidante nel dodgeball', en: 'Dodgeball challenger' },
+    type: { it: 'Sfidante nella palla avvelenata', en: 'Dodgeball challenger' },
     summary: {
       it: 'Razer riconosce Gon come figlio di Ging e gli comunica che il padre gli ha chiesto di non trattenersi.',
       en: 'Razor recognizes Gon as Ging’s son and tells him that his father asked him not to hold back.',

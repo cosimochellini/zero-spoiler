@@ -212,13 +212,6 @@ const ARRIVAL = [
     source: 'chapter',
   },
   {
-    id: 'caveau-de-riquewihr',
-    episode: 61,
-    chapter: 129,
-    place: true,
-    source: 'chapter',
-  },
-  {
     id: 'jitonoda',
     episode: 61,
     chapter: 129,
