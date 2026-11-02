@@ -45,4 +45,28 @@ describe('reached chart label placement', () => {
       layoutLabels([], { orientation: 'across', scale: 0.4 }),
     ).toStrictEqual([])
   })
+
+  it('keeps every name inside the bounds it is given', () => {
+    const bounds = { x: 400, y: 200, width: 300, height: 150 }
+    const spots: NameSpot[] = Array.from({ length: 6 }, (_, index) => ({
+      at: { x: 690 - index * 10, y: 210 + index * 20 },
+      length: 18,
+      side: 'right',
+    }))
+    const scale = 2
+    const labels = layoutLabels(spots, { bounds, orientation: 'across', scale })
+
+    for (const label of labels) {
+      expect(label.x - label.width / 2).toBeGreaterThanOrEqual(bounds.x * scale)
+      expect(label.x + label.width / 2).toBeLessThanOrEqual(
+        (bounds.x + bounds.width) * scale,
+      )
+      expect(label.y - label.height / 2).toBeGreaterThanOrEqual(
+        bounds.y * scale,
+      )
+      expect(label.y + label.height / 2).toBeLessThanOrEqual(
+        (bounds.y + bounds.height) * scale,
+      )
+    }
+  })
 })

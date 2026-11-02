@@ -25,7 +25,7 @@ import type { TintId } from '~/lib/view/records'
  * Where an open stop is drawn. Every place has a point; the origin stands in
  * for the `null` a record that is not a place would carry.
  */
-export function pointOf(port: StopView): ChartPoint {
+export function pointOf(port: Pick<StopView, 'chart'>): ChartPoint {
   return port.chart ?? ORIGIN
 }
 
@@ -62,9 +62,12 @@ export function sagaTintOf(saga: number): TintId {
 /** Pixels per unit of the chart as drawn a name shows from, each way up. */
 export type ShowsFrom = Record<Orientation, number>
 
+/** What a stop's name is set from: its point, its id and the name. */
+export type NamedStop = Pick<StopView, 'chart' | 'id' | 'name'>
+
 /** An open stop's name on the chart, and its preferred side. */
 export interface StopName {
-  port: StopView
+  port: NamedStop
   side: Record<Orientation, Side>
 }
 
@@ -98,7 +101,7 @@ const OVER = 34
  * apart. Upright, the chart is narrow: towards its wider side, as the
  * reader's own label does, so no name runs off its edge.
  */
-function nameSideOf(point: Point, orientation: Orientation): Side {
+export function nameSideOf(point: Point, orientation: Orientation): Side {
   const side = sideOf(point, orientation)
 
   return orientation === 'across' ? across(side) : side

@@ -156,6 +156,8 @@ export const styles = stylex.create({
     textAlign: 'center',
     whiteSpace: 'normal',
   },
+  // The page's own stop on a place's map: in gold, as its dot's ring.
+  stopNameHere: { color: color.accent, fontWeight: 700 },
   nameBox: (left: string, top: string, width: string) => ({
     transform: CENTRED,
     left,

@@ -278,6 +278,19 @@ describe('a place on the map', () => {
     expect(screen.getByText('The crew comes back.')).toBeVisible()
   })
 
+  it('names the stops it has reached, this one apart, and no fog dot', () => {
+    const { container } = renderWithProviders(<MapBand detail={detailOf()} />, {
+      bookmark: ep(20),
+    })
+    const names = container.querySelectorAll('[data-chart-name]')
+
+    expect([...names].map((name) => name.textContent)).toStrictEqual([
+      'Orange Town',
+      'Baratie',
+    ])
+    expect(names[1]?.className).not.toBe(names[0]?.className)
+  })
+
   it('has no visits heading while none is reached', () => {
     renderWithProviders(<MapBand detail={detailOf()} />, { bookmark: ep(20) })
 

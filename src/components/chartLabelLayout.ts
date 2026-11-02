@@ -1,4 +1,10 @@
-import { boxOf, type Orientation, project } from '~/components/chartGeometry'
+import {
+  boxOf,
+  type Orientation,
+  project,
+  projectRect,
+  type Rect,
+} from '~/components/chartGeometry'
 import {
   type LabelBox,
   labelBoxOf,
@@ -7,6 +13,11 @@ import {
 
 /** Label boxes are in rendered pixels, while their source points stay in world units. */
 export interface LabelFrame {
+  /**
+   * The part of the chart the names stay inside, in its own units: a place
+   * page's stretch. The whole chart when absent.
+   */
+  bounds?: Rect | undefined
   orientation: Orientation
   scale: number
 }
@@ -27,30 +38,46 @@ export function labelsOverlap(a: LabelBox, b: LabelBox): boolean {
 }
 
 /** Clamp a box centre while leaving a reading margin at both edges. */
-function clamp(at: number, size: number, limit: number): number {
+function clamp(
+  at: number,
+  size: number,
+  [from, length]: [number, number],
+): number {
   return Math.max(
-    size / HALVES + MARGIN,
-    Math.min(at, limit - size / HALVES - MARGIN),
+    from + size / HALVES + MARGIN,
+    Math.min(at, from + length - size / HALVES - MARGIN),
   )
 }
 
-/** Keep the complete label inside the world, including names at its edges. */
-function inside(label: LabelBox, room: { x: number; y: number }): LabelBox {
+/** Keep the complete label inside the room, including names at its edges. */
+function inside(label: LabelBox, room: Rect): LabelBox {
   return {
     ...label,
-    x: clamp(label.x, label.width, room.x),
-    y: clamp(label.y, label.height, room.y),
+    x: clamp(label.x, label.width, [room.x, room.width]),
+    y: clamp(label.y, label.height, [room.y, room.height]),
+  }
+}
+
+/** The room the names have, in rendered pixels: the bounds, or the world. */
+function roomOf({ bounds, orientation, scale }: LabelFrame): Rect {
+  const world = boxOf(orientation)
+  const area =
+    bounds === undefined ?
+      { x: 0, y: 0, width: world.x, height: world.y }
+    : projectRect(bounds, orientation)
+
+  return {
+    x: area.x * scale,
+    y: area.y * scale,
+    width: area.width * scale,
+    height: area.height * scale,
   }
 }
 
 /** A name may wrap, but never disappears because another name is nearby. */
-function preferredBox(spot: NameSpot, frame: LabelFrame): LabelBox {
+function preferredBox(spot: NameSpot, frame: LabelFrame, room: Rect): LabelBox {
   const raw = labelBoxOf(spot, frame.orientation, frame.scale)
-  const width = Math.min(
-    raw.width,
-    WIDTH,
-    boxOf(frame.orientation).x * frame.scale - MARGIN * HALVES,
-  )
+  const width = Math.min(raw.width, WIDTH, room.width - MARGIN * HALVES)
 
   return { ...raw, width, height: Math.ceil(raw.width / width) * raw.height }
 }
@@ -59,12 +86,9 @@ function preferredBox(spot: NameSpot, frame: LabelFrame): LabelBox {
 function scanRows(
   wanted: LabelBox,
   shifts: number[],
-  {
-    obstacles,
-    room,
-  }: { obstacles: LabelBox[]; room: { x: number; y: number } },
+  { obstacles, room }: { obstacles: LabelBox[]; room: Rect },
 ): LabelBox | undefined {
-  const rows = Math.ceil(room.y / STEP) * HALVES
+  const rows = Math.ceil(room.height / STEP) * HALVES
   for (let step = 0; step <= rows; step += 1) {
     const offset =
       Math.ceil(step / HALVES) * STEP * (step % HALVES === 0 ? 1 : -1)
@@ -86,9 +110,9 @@ function scanRows(
 function freeBox(
   wanted: LabelBox,
   obstacles: LabelBox[],
-  room: { x: number; y: number },
+  room: Rect,
 ): LabelBox {
-  const columns = Math.ceil(room.x / STEP) * HALVES
+  const columns = Math.ceil(room.width / STEP) * HALVES
   const wide = Array.from(
     { length: columns + 1 },
     (_, step) =>
@@ -127,8 +151,7 @@ export function layoutLabels(
   frame: LabelFrame,
   here: NameSpot | null = null,
 ): LabelBox[] {
-  const world = boxOf(frame.orientation)
-  const room = { x: world.x * frame.scale, y: world.y * frame.scale }
+  const room = roomOf(frame)
   const obstacles = spots.map(({ at }) => {
     const point = project(at, frame.orientation)
     return {
@@ -143,7 +166,7 @@ export function layoutLabels(
   }
   const labels: LabelBox[] = []
   for (const spot of spots) {
-    const label = freeBox(preferredBox(spot, frame), obstacles, room)
+    const label = freeBox(preferredBox(spot, frame, room), obstacles, room)
     labels.push(label)
     obstacles.push(label)
   }

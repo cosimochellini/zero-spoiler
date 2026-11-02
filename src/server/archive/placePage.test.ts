@@ -117,6 +117,11 @@ describe('a place’s own page', () => {
         const chart = pageOf(port.id, bookmark).detail.chart
 
         expect(chart?.route.map((stop) => stop.at)).toStrictEqual(expected)
+        // The map names its stops: only the open ones, so no name past the
+        // bookmark is sent.
+        expect(chart?.route.map((stop) => stop.name)).toStrictEqual(
+          open.map((stop) => stop.name),
+        )
         expect(chart?.fogged).toBe(covered.length)
       }
     },
