@@ -166,10 +166,15 @@ function Names({
   )
 }
 
-/** The reached stops inside the stretch, each named on its side. */
-function namesIn({ route }: PlaceChartView, crop: Rect): StopName[] {
+/**
+ * The reached stops inside the stretch, each named on its side: this one
+ * first, so its name is the one set right beside its dot.
+ */
+function namesIn({ here, route }: PlaceChartView, crop: Rect): StopName[] {
   const names: StopName[] = []
-  for (const { at, id, name } of route) {
+  const own = route[here]
+  const order = own === undefined ? route : [own, ...route.toSpliced(here, 1)]
+  for (const { at, id, name } of order) {
     if (
       at.x >= crop.x
       && at.x <= crop.x + crop.width

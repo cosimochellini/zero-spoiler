@@ -284,11 +284,12 @@ describe('a place on the map', () => {
     })
     const names = container.querySelectorAll('[data-chart-name]')
 
+    // The page's own stop claims its room first.
     expect([...names].map((name) => name.textContent)).toStrictEqual([
-      'Orange Town',
       'Baratie',
+      'Orange Town',
     ])
-    expect(names[1]?.className).not.toBe(names[0]?.className)
+    expect(names[0]?.className).not.toBe(names[1]?.className)
   })
 
   it('has no visits heading while none is reached', () => {
