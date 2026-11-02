@@ -28,6 +28,99 @@ const PUHAT_JACKET: Stroke[] = [
 ]
 
 export const GREED_ISLAND_DRAWINGS = {
+  // Jitonoda is named in chapter 129's TV news report. A plain set with a
+  // blank screen and rabbit ears; no portrait, lettering or copied page.
+  'jitonoda': [
+    { d: 'M30 62 H128 L132 142 H34 Z' },
+    { d: 'M30 62 L24 69 L28 149 L34 142 M28 149 H126 L132 142', role: 'soft' },
+    { d: 'M42 73 H117 L120 130 H45 Z', role: 'accent' },
+    { d: 'M49 82 Q66 78 78 84 M55 118 Q76 112 108 120', role: 'soft' },
+    { d: 'M52 62 L36 34 M106 62 L122 34', role: 'soft' },
+    { d: 'M60 142 V152 M100 142 V152', role: 'soft' },
+    { d: 'M126 96 l4 0 M126 106 l4 0', role: 'ambient' },
+    { d: 'M20 84 l5 -3 M18 100 l5 -3 M20 116 l5 -3', role: 'ambient' },
+    shadow(80, 166, 48),
+  ],
+  // Dwun's cigarette, from his chapter 184 appearance description, viewed
+  // obliquely. Plain paper and an ash tip; no face, logo or invented ashtray.
+  'dwun': [
+    { d: 'M31 131 L114 61 M39 143 L124 74' },
+    { d: 'M31 131 C25 137 34 148 39 143 M114 61 C120 57 130 68 124 74' },
+    { d: 'M111 64 Q120 63 121 76', role: 'accent' },
+    { d: 'M106 69 L115 80 M101 73 L111 84', role: 'soft' },
+    { d: 'M38 133 L103 78 M42 137 L105 83', role: 'soft' },
+    { d: 'M115 65 l5 7 M118 63 l6 7', role: 'ambient' },
+    { d: 'M46 125 l4 4 M59 114 l4 4 M72 103 l4 4', role: 'ambient' },
+    shadow(78, 166, 45),
+  ],
+  // List's small tie and overall straps, chapter 184's named introduction.
+  // The bow-free knot and the two buckles carry the object's volume.
+  'list': [
+    { d: 'M65 45 L91 45 L97 57 L83 72 L67 60 Z', role: 'accent' },
+    { d: 'M91 45 L99 49 L104 60 L90 74 L83 72', role: 'soft' },
+    { d: 'M72 64 L56 130 L77 154 L101 132 L86 68', role: 'accent' },
+    {
+      d: 'M86 68 L94 71 L108 130 L101 132 M77 154 L85 157 L108 130',
+      role: 'soft',
+    },
+    { d: 'M78 75 L69 124 M67 133 L77 143', role: 'soft' },
+    { d: 'M31 44 L37 138 H50 L44 44 M114 42 L120 136 H133 L127 42' },
+    { d: 'M33 111 H51 V132 H34 Z M116 109 H134 V130 H117 Z', role: 'soft' },
+    { d: 'M38 117 H46 V126 H39 Z M121 115 H129 V124 H122 Z', role: 'soft' },
+    { d: 'M97 102 l4 -3 M99 114 l5 -3 M101 126 l4 -3', role: 'ambient' },
+    shadow(81, 181, 51),
+  ],
+  // Eeta's sleeveless robe, chapter 184 identifies the entrance attendant
+  // seen in 127. The eye motifs are omitted, as are helmet and face.
+  'eta': [
+    {
+      d: 'M58 39 L68 39 Q80 52 92 39 H102 L106 77 L96 90 L115 159 Q80 171 43 159 L62 90 L53 77 Z',
+    },
+    { d: 'M58 39 Q56 63 62 76 M102 39 Q104 63 98 76', role: 'soft' },
+    { d: 'M68 39 Q80 52 92 39 M70 45 Q80 54 90 45', role: 'accent' },
+    { d: 'M43 159 L47 168 Q82 181 121 166 L115 159', role: 'soft' },
+    { d: 'M64 94 L56 154 M96 94 L107 156 M80 105 V163', role: 'soft' },
+    {
+      d: 'M108 130 l5 -3 M111 141 l5 -3 M114 152 l5 -3 M111 168 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M59 116 l4 -4 M56 133 l4 -4', role: 'ambient' },
+    shadow(81, 187, 49),
+  ],
+  // Elena's square-necked robe and thin choker from her appearance
+  // description, named in chapter 184. No helmet motifs or face.
+  'elena': [
+    {
+      d: 'M58 58 H69 V78 H94 V58 H105 L111 98 L98 108 L117 166 H43 L61 108 L51 98 Z',
+    },
+    { d: 'M105 58 L111 62 L117 100 L105 113 L124 171 L117 166', role: 'soft' },
+    { d: 'M43 166 L48 172 H124 V171', role: 'soft' },
+    { d: ellipse(81, 40, 23, 5), role: 'accent' },
+    { d: 'M58 40 V45 C60 52 102 52 104 45 V40', role: 'soft' },
+    {
+      d: 'M70 79 H93 V84 H70 Z M64 110 L56 158 M97 111 L108 158',
+      role: 'soft',
+    },
+    { d: 'M80 100 V164 M61 145 Q71 139 78 146', role: 'soft' },
+    { d: 'M112 130 l5 -3 M116 143 l5 -3 M119 156 l5 -3', role: 'ambient' },
+    shadow(82, 187, 49),
+  ],
+  // The envelope delivered by the owl in chapter 183 / episode 75,
+  // inviting Gon to Limeiro's castle. No seal, text or copied architecture.
+  'limeiro': [
+    { d: 'M24 78 L113 60 L137 125 L46 146 Z' },
+    { d: 'M24 78 L78 104 L113 60', role: 'accent' },
+    { d: 'M46 146 L67 101 M137 125 L91 96', role: 'soft' },
+    { d: 'M46 146 V153 L138 132 L137 125 M24 78 V85 L46 153', role: 'soft' },
+    { d: 'M31 81 L77 103 L107 67', role: 'soft' },
+    {
+      d: 'M54 146 l6 -3 M71 142 l6 -3 M88 138 l6 -3 M105 134 l6 -3 M122 130 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M8 150 H35 M140 150 H154', role: 'ambient' },
+    shadow(81, 158, 55),
+  ],
+
   // Genthru's angular spectacles, folded in three-quarter view. Chapter
   // 144 names him; the appearance description cites the glasses at 130.
   'genthru': [

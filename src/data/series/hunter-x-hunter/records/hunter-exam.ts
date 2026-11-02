@@ -478,6 +478,31 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; recruiting for Greed Island’s sports challenge and accepting Hisoka’s help',
           },
         },
+        {
+          episode: 69,
+          chapter: 161,
+          value: {
+            it: 'Associazione Hunter, Hunter; affronta la squadra di Razer in una partita di palla avvelenata',
+            en: 'Hunter Association, Hunter; facing Razor’s team in a dodgeball match',
+          },
+        },
+        {
+          episode: 74,
+          chapter: 181,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; ha sconfitto e catturato Gensul',
+            en: 'Hunter Association, Hunter; has defeated and captured Genthru',
+          },
+        },
+        {
+          episode: 75,
+          chapter: 184,
+          value: {
+            it: 'Associazione Hunter, Hunter; ha completato Greed Island',
+            en: 'Hunter Association, Hunter; has cleared Greed Island',
+          },
+        },
       ],
       origin: [
         { episode: 1, chapter: 1, place: 'whale-island', value: WHALE_ISLAND },
@@ -748,6 +773,14 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Associazione Hunter, Hunter; aiuta Gon e Killua nella sfida sportiva di Greed Island mentre cerca un esorcista per Chrollo',
             en: 'Hunter Association, Hunter; helping Gon and Killua with Greed Island’s sports challenge while seeking an Exorcist for Chrollo',
+          },
+        },
+        {
+          episode: 69,
+          chapter: 161,
+          value: {
+            it: 'Associazione Hunter, Hunter; affronta la squadra di Razer in una partita di palla avvelenata mentre cerca un esorcista per Chrollo',
+            en: 'Hunter Association, Hunter; facing Razor’s team in a dodgeball match while seeking an Exorcist for Chrollo',
           },
         },
       ],
@@ -1051,6 +1084,22 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Associazione Hunter, Hunter; cerca nuovi compagni per la sfida sportiva di Greed Island e accetta l’aiuto di Hisoka',
             en: 'Hunter Association, Hunter; recruiting for Greed Island’s sports challenge and accepting Hisoka’s help',
+          },
+        },
+        {
+          episode: 69,
+          chapter: 161,
+          value: {
+            it: 'Associazione Hunter, Hunter; affronta la squadra di Razer in una partita di palla avvelenata',
+            en: 'Hunter Association, Hunter; facing Razor’s team in a dodgeball match',
+          },
+        },
+        {
+          episode: 75,
+          chapter: 184,
+          value: {
+            it: 'Associazione Hunter, Hunter; ha completato Greed Island',
+            en: 'Hunter Association, Hunter; has cleared Greed Island',
           },
         },
       ],

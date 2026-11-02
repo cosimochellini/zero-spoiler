@@ -1,7 +1,213 @@
 import type { Relationship, Timeline } from '~/data/types'
 
+const dwunGon = {
+  character: 'gon-freecss',
+  type: { it: 'Vincitore che premia', en: 'Winner he rewards' },
+  summary: {
+    it: 'Dwun consegna a Gon l’ultima carta e gli spiega come portare tre carte fuori dal gioco.',
+    en: 'Dwun gives Gon the final card and explains how to take three cards out of the game.',
+  },
+}
+const dwunGing = {
+  character: 'ging-freecss',
+  type: { it: 'Amico e creatore del gioco', en: 'Friend and fellow creator' },
+  summary: {
+    it: 'Dwun ha creato Greed Island con Ging. Gli rimprovera di avergli cambiato il nome per inserirne l’iniziale nel titolo.',
+    en: 'Dwun created Greed Island with Ging. He resents Ging changing his name to fit its initial into the title.',
+  },
+}
+const dwunList = {
+  character: 'list',
+  type: { it: 'Collega nel castello', en: 'Colleague at the castle' },
+  summary: {
+    it: 'List accompagna Gon da Dwun e lo richiama quando scherza con il vincitore.',
+    en: 'List takes Gon to Dwun and intervenes when Dwun teases the winner.',
+  },
+}
+
 /** Recruitment scenes in the pinned chapters 121/125/126 and episodes 59/60. */
 const links = {
+  genthruGonDefeat: {
+    character: 'gon-freecss',
+    type: { it: 'Avversario che lo cattura', en: 'Opponent who captures him' },
+    summary: {
+      it: 'Gon sconfigge Gensul con una trappola e lo cattura. Gensul accetta di restituire le carte rubate.',
+      en: 'Gon defeats Genthru with a trap and captures him. Genthru agrees to return the stolen cards.',
+    },
+  },
+  genthruGonHealing: {
+    character: 'gon-freecss',
+    type: { it: 'Avversario che lo cura', en: 'Opponent who heals him' },
+    summary: {
+      it: 'Dopo averlo sconfitto, Gon usa una carta per curare Gensul nonostante i suoi omicidi.',
+      en: 'After defeating him, Gon uses a card to heal Genthru despite the people he has killed.',
+    },
+  },
+  razorGonMatch: {
+    character: 'gon-freecss',
+    type: { it: 'Sfidante nella palla avvelenata', en: 'Dodgeball challenger' },
+    summary: {
+      it: 'Razer riconosce Gon come figlio di Ging e gli comunica che il padre gli ha chiesto di non trattenersi.',
+      en: 'Razor recognizes Gon as Ging’s son and tells him that his father asked him not to hold back.',
+    },
+  },
+  razorGonVictory: {
+    character: 'gon-freecss',
+    type: { it: 'Sfidante che lo sconfigge', en: 'Challenger who defeats him' },
+    summary: {
+      it: 'Dopo la vittoria della sua squadra, Razer racconta a Gon come ha conosciuto Ging e gli augura di trovarlo.',
+      en: 'After Gon’s team wins, Razor tells him how he met Ging and hopes that he finds him.',
+    },
+  },
+  razorGing: {
+    character: 'ging-freecss',
+    type: { it: 'Amico che gli dà fiducia', en: 'Friend who trusts him' },
+    summary: {
+      it: 'Ging cattura Razer e in seguito lo assume per creare Greed Island. Gli affida il compito di affrontare Gon senza trattenersi.',
+      en: 'Ging captures Razor and later hires him to create Greed Island. He trusts him to challenge Gon without holding back.',
+    },
+  },
+  biscuitGonVictory: {
+    character: 'gon-freecss',
+    type: {
+      it: 'Allievo nella squadra vincente',
+      en: 'Pupil on the winning team',
+    },
+    summary: {
+      it: 'Biscuit partecipa alla sfida contro Razer con Gon e lo aiuta a prepararsi per affrontare il Boomer.',
+      en: 'Biscuit challenges Razor alongside Gon and helps him prepare to fight the Bomber.',
+    },
+  },
+  biscuitKilluaVictory: {
+    character: 'killua',
+    type: {
+      it: 'Allievo nella squadra vincente',
+      en: 'Pupil on the winning team',
+    },
+    summary: {
+      it: 'Biscuit partecipa alla sfida contro Razer con Killua e si occupa delle sue mani ferite dopo la partita.',
+      en: 'Biscuit challenges Razor alongside Killua and tends his injured hands after the match.',
+    },
+  },
+  biscuitGonFarewell: {
+    character: 'gon-freecss',
+    type: { it: 'Allievo che saluta', en: 'Pupil she says goodbye to' },
+    summary: {
+      it: 'Dopo la vittoria a Greed Island, Gon consegna a Biscuit la gemma che desiderava e la ringrazia per il suo aiuto.',
+      en: 'After completing Greed Island, Gon gives Biscuit the jewel she wanted and thanks her for her help.',
+    },
+  },
+  biscuitKilluaFarewell: {
+    character: 'killua',
+    type: { it: 'Allievo che saluta', en: 'Pupil she says goodbye to' },
+    summary: {
+      it: 'Biscuit saluta Killua quando parte con Gon alla ricerca di Ging. Rifiuta di accompagnarli e si commuove per la loro amicizia.',
+      en: 'Biscuit says goodbye when Killua leaves with Gon to look for Ging. She declines to join them and is moved by their friendship.',
+    },
+  },
+  batteraTsezguerraCancelled: {
+    character: 'tsezguerra',
+    type: {
+      it: 'Giocatore a cui interrompe il contratto',
+      en: 'Player whose contract he ends',
+    },
+    summary: {
+      it: 'Battera interrompe il contratto mentre Tsezugera e la sua squadra sono vicini a completare il gioco.',
+      en: 'Battera ends the contract while Tsezguerra and his team are close to completing the game.',
+    },
+  },
+  batteraTsezguerraReason: {
+    character: 'tsezguerra',
+    type: {
+      it: 'Hunter a cui spiega la rinuncia',
+      en: 'Hunter he explains his withdrawal to',
+    },
+    summary: {
+      it: 'Battera racconta a Tsezugera che cercava una carta per curare la donna amata, morta prima che il gioco fosse completato.',
+      en: 'Battera tells Tsezguerra that he wanted a card to heal the woman he loved, who died before the game was completed.',
+    },
+  },
+  tsezguerraGonAlly: {
+    character: 'gon-freecss',
+    type: { it: 'Alleato contro i pirati', en: 'Ally against the pirates' },
+    summary: {
+      it: 'Tsezugera accetta di unire la sua squadra a quella di Gon per affrontare i pirati e ottenere una carta rara.',
+      en: 'Tsezguerra agrees to join his team with Gon’s to challenge the pirates and obtain a rare card.',
+    },
+  },
+  tsezguerraKilluaAlly: {
+    character: 'killua',
+    type: { it: 'Alleato contro i pirati', en: 'Ally against the pirates' },
+    summary: {
+      it: 'Tsezugera collabora con Killua durante la sfida contro Razer.',
+      en: 'Tsezguerra works with Killua during the challenge against Razor.',
+    },
+  },
+  tsezguerraGonDelay: {
+    character: 'gon-freecss',
+    type: {
+      it: 'Alleato a cui concede tempo',
+      en: 'Ally he gives time to prepare',
+    },
+    summary: {
+      it: 'Tsezugera si impegna a tenere occupato il Boomer per tre settimane mentre Gon si prepara ad affrontarlo.',
+      en: 'Tsezguerra agrees to keep the Bomber occupied for three weeks while Gon prepares to fight him.',
+    },
+  },
+  tsezguerraKilluaDelay: {
+    character: 'killua',
+    type: { it: 'Alleato nella preparazione', en: 'Ally preparing for battle' },
+    summary: {
+      it: 'Tsezugera tiene occupato il Boomer mentre Killua e i suoi compagni preparano il combattimento.',
+      en: 'Tsezguerra keeps the Bomber occupied while Killua and his companions prepare for battle.',
+    },
+  },
+  tsezguerraBatteraReason: {
+    character: 'battera',
+    type: {
+      it: 'Committente che lascia il gioco',
+      en: 'Employer who abandons the game',
+    },
+    summary: {
+      it: 'Tsezugera lascia il gioco con la squadra e Battera, che gli racconta della morte della donna che voleva curare.',
+      en: 'Tsezguerra leaves the game with his team and Battera, who tells him about the death of the woman he wanted to heal.',
+    },
+  },
+  elenaEta: {
+    character: 'eta',
+    type: { it: 'Sorella gemella', en: 'Twin sister' },
+    summary: {
+      it: 'Elena ed Eeta sono gemelle e hanno partecipato alla creazione di Greed Island.',
+      en: 'Elena and Eta are twins who helped create Greed Island.',
+    },
+  },
+  elenaKillua: {
+    character: 'killua',
+    type: { it: 'Giocatore che fa uscire', en: 'Player she sends out' },
+    summary: {
+      it: 'Elena avverte Killua che perderà le carte lasciando il gioco, poi lo trasporta fuori per l’esame Hunter.',
+      en: 'Elena warns Killua that leaving the game will erase his cards, then sends him out for the Hunter Exam.',
+    },
+  },
+  elenaGon: {
+    character: 'gon-freecss',
+    type: { it: 'Vincitore che fa uscire', en: 'Winner she sends out' },
+    summary: {
+      it: 'Elena invita Gon a scegliere le tre carte da portare fuori dal gioco.',
+      en: 'Elena asks Gon to choose the three cards he will take out of the game.',
+    },
+  },
+  elenaGing: {
+    character: 'ging-freecss',
+    type: {
+      it: 'Creatore che decide la destinazione',
+      en: 'Creator who chooses the destination',
+    },
+    summary: {
+      it: 'Ging ordina a Elena di mandare Gon da lui se usa Forza Magnetica e da Kaito se usa Accompagnamento.',
+      en: 'Ging tells Elena to send Gon to him if he uses Magnetic Force and to Kite if he uses Accompany.',
+    },
+  },
   biscuitGon: {
     character: 'gon-freecss',
     type: { it: 'Allievo a cui offre aiuto', en: 'Boy she offers to teach' },
@@ -185,12 +391,126 @@ const links = {
 } satisfies Record<string, Relationship>
 
 export const greedIslandRelationships = {
+  'dwun': [
+    {
+      episode: 75,
+      chapter: 184,
+      source: 'episode',
+      value: [dwunGon, dwunGing],
+    },
+    {
+      episode: 75,
+      chapter: 184,
+      source: 'chapter',
+      value: [dwunGon, dwunGing, dwunList],
+    },
+  ],
+  'list': [
+    {
+      episode: 75,
+      chapter: 184,
+      source: 'chapter',
+      value: [
+        {
+          character: 'gon-freecss',
+          type: { it: 'Vincitore che accoglie', en: 'Winner he welcomes' },
+          summary: {
+            it: 'List accoglie Gon nel castello, lo accompagna da Dwun e gli spiega come si conclude il gioco.',
+            en: 'List welcomes Gon to the castle, takes him to Dwun and explains how the game ends.',
+          },
+        },
+        {
+          character: 'dwun',
+          type: { it: 'Collega nel castello', en: 'Colleague at the castle' },
+          summary: {
+            it: 'List lavora con Dwun e lo richiama quando scherza con Gon invece di proseguire con le spiegazioni.',
+            en: 'List works with Dwun and intervenes when he teases Gon instead of continuing the explanation.',
+          },
+        },
+        {
+          character: 'ging-freecss',
+          type: {
+            it: 'Amico e creatore del gioco',
+            en: 'Friend and fellow creator',
+          },
+          summary: {
+            it: 'List si presenta a Gon come amico di Ging e spiega che hanno creato Greed Island insieme ad altri nove compagni.',
+            en: 'List introduces himself to Gon as Ging’s friend and explains that they created Greed Island with nine other people.',
+          },
+        },
+      ],
+    },
+  ],
+  'eta': [
+    {
+      episode: 75,
+      chapter: 184,
+      source: 'chapter',
+      value: [
+        {
+          character: 'elena',
+          type: { it: 'Sorella gemella', en: 'Twin sister' },
+          summary: {
+            it: 'Eeta ed Elena sono gemelle e hanno creato Greed Island con gli altri Game Master.',
+            en: 'Eta and Elena are twins who created Greed Island with the other Game Masters.',
+          },
+        },
+        {
+          character: 'gon-freecss',
+          type: { it: 'Giocatore che accoglie', en: 'Player she welcomes' },
+          summary: {
+            it: 'Eeta spiega a Gon le regole quando entra nel gioco. Conduce il quiz finale e lo proclama vincitore.',
+            en: 'Eta explains the rules when Gon enters the game. She runs the final quiz and announces him as its winner.',
+          },
+        },
+        {
+          character: 'killua',
+          type: { it: 'Giocatore che riaccoglie', en: 'Returning player' },
+          summary: {
+            it: 'Quando Killua rientra dopo l’esame Hunter, Eeta gli offre di spiegargli di nuovo le regole.',
+            en: 'When Killua returns after the Hunter Exam, Eta offers to explain the rules again.',
+          },
+        },
+      ],
+    },
+  ],
+  'elena': [
+    {
+      episode: 75,
+      chapter: 184,
+      source: 'chapter',
+      value: [links.elenaEta, links.elenaKillua, links.elenaGon],
+    },
+    {
+      episode: 76,
+      chapter: 185,
+      source: 'chapter',
+      value: [
+        links.elenaEta,
+        links.elenaKillua,
+        links.elenaGon,
+        links.elenaGing,
+      ],
+    },
+  ],
   'genthru': [
     {
       episode: 65,
       chapter: 144,
       source: 'chapter',
       value: [links.genthruPuhat, links.genthruJispa],
+    },
+    {
+      episode: 74,
+      chapter: 181,
+      source: 'chapter',
+      value: [links.genthruGonDefeat, links.genthruPuhat, links.genthruJispa],
+    },
+    {
+      episode: 74,
+      chapter: 182,
+      source: 'chapter',
+      value: [links.genthruGonHealing, links.genthruPuhat, links.genthruJispa],
     },
   ],
   'jispa': [
@@ -201,7 +521,19 @@ export const greedIslandRelationships = {
       value: [links.jispaGenthru],
     },
   ],
-  'razor': [{ episode: 67, chapter: 145, value: [links.razorPhinks] }],
+  'razor': [
+    { episode: 67, chapter: 145, value: [links.razorPhinks] },
+    {
+      episode: 69,
+      chapter: 161,
+      value: [links.razorGonMatch, links.razorPhinks],
+    },
+    {
+      episode: 71,
+      chapter: 169,
+      value: [links.razorGonVictory, links.razorGing, links.razorPhinks],
+    },
+  ],
   'biscuit-krueger': [
     // Episode 62's naming scene precedes the discussion of Wing in episode 63.
     {
@@ -228,6 +560,26 @@ export const greedIslandRelationships = {
       value: [
         links.biscuitGon,
         links.biscuitKillua,
+        links.biscuitWing,
+        links.biscuitHisoka,
+      ],
+    },
+    {
+      episode: 72,
+      chapter: 170,
+      value: [
+        links.biscuitGonVictory,
+        links.biscuitKilluaVictory,
+        links.biscuitWing,
+        links.biscuitHisoka,
+      ],
+    },
+    {
+      episode: 75,
+      chapter: 185,
+      value: [
+        links.biscuitGonFarewell,
+        links.biscuitKilluaFarewell,
         links.biscuitWing,
         links.biscuitHisoka,
       ],
@@ -263,7 +615,11 @@ export const greedIslandRelationships = {
     },
   ],
 
-  'battera': [{ episode: 59, chapter: 121, value: [links.batteraTsezguerra] }],
+  'battera': [
+    { episode: 59, chapter: 121, value: [links.batteraTsezguerra] },
+    { episode: 72, chapter: 173, value: [links.batteraTsezguerraCancelled] },
+    { episode: 73, chapter: 174, value: [links.batteraTsezguerraReason] },
+  ],
   'tsezguerra': [
     {
       episode: 59,
@@ -281,6 +637,33 @@ export const greedIslandRelationships = {
         links.tsezguerraBattera,
         links.tsezguerraGonPasses,
         links.tsezguerraKilluaPasses,
+      ],
+    },
+    {
+      episode: 69,
+      chapter: 160,
+      value: [
+        links.tsezguerraBattera,
+        links.tsezguerraGonAlly,
+        links.tsezguerraKilluaAlly,
+      ],
+    },
+    {
+      episode: 72,
+      chapter: 170,
+      value: [
+        links.tsezguerraBattera,
+        links.tsezguerraGonDelay,
+        links.tsezguerraKilluaDelay,
+      ],
+    },
+    {
+      episode: 73,
+      chapter: 174,
+      value: [
+        links.tsezguerraBatteraReason,
+        links.tsezguerraGonDelay,
+        links.tsezguerraKilluaDelay,
       ],
     },
   ],

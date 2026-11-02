@@ -100,7 +100,8 @@ recruitment (#1016) and arrival/training through chapter 141 (#1017) add
 verified named characters and visited places, with source-only records where the
 naming evidence reaches only one medium. Alliances and the Bomber revelations
 through chapter 159 (#1018) add source-verified names and visited places; the
-finale and full candidate audit remain in #1019 under #904. Silva, Killua's
+finale and the full candidate audit (#1019) close the arc, apart from 31
+candidates still unnamed (#1032) and the chronicles (#906). Silva, Killua's
 father, is named in episode 24 but in chapter 95 in the manga, so his record is
 unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but named in
 the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named only in
@@ -205,11 +206,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 132                                                   |
-| Characters        | 103                                                   |
-| Arcs, places      | 7 · 22                                                |
+| Records           | 138                                                   |
+| Characters        | 108                                                   |
+| Arcs, places      | 7 · 23                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 132, one per record, plus 21 redrawings of 21 records |
+| Line drawings     | 138, one per record, plus 21 redrawings of 21 records |
 | Chronicle stories | 247, for 93 characters                                |
 
 ### `game-of-thrones`
