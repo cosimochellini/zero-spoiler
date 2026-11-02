@@ -12,7 +12,6 @@ const FAILED = {
   en: 'Hunter Exam, failed the Fourth Phase',
 }
 
-/** Where the chapter-23 roster opens the manga's own applicants. */
 const FAILED_288_PHASE_1 = {
   episode: 66,
   chapter: 148,
@@ -44,6 +43,7 @@ const DRAWS_TARGET_LOG = {
   en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
 } as const
 
+/** Where the chapter-23 roster opens the manga's own applicants. */
 const ON_ROSTER = { episode: 14, chapter: 23, source: 'chapter' } as const
 
 /**

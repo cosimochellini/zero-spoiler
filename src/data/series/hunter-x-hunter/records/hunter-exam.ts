@@ -980,7 +980,7 @@ const earlyExam: HunterSaga = {
           chapter: 142,
           source: 'chapter',
           value: {
-            it: 'al servizio di Battera per Greed Island; allievo di Biscuit, impara a distribuire l’aura durante il combattimento',
+            it: 'Al servizio di Battera per Greed Island; allievo di Biscuit, impara a distribuire l’aura durante il combattimento',
             en: 'playing Greed Island for Battera; Biscuit’s pupil, learning to redistribute aura during combat',
           },
         },
@@ -989,7 +989,7 @@ const earlyExam: HunterSaga = {
           chapter: 144,
           source: 'chapter',
           value: {
-            it: 'al servizio di Battera per Greed Island; allievo di Biscuit, inizia gli esercizi per categoria di Nen',
+            it: 'Al servizio di Battera per Greed Island; allievo di Biscuit, inizia gli esercizi per categoria di Nen',
             en: 'playing Greed Island for Battera; Biscuit’s pupil, beginning aura-category exercises',
           },
         },
@@ -998,7 +998,7 @@ const earlyExam: HunterSaga = {
           chapter: 145,
           source: 'episode',
           value: {
-            it: 'al servizio di Battera per Greed Island; allievo di Biscuit, impara Ken, la distribuzione dell’aura durante il combattimento e gli esercizi per categoria di Nen',
+            it: 'Al servizio di Battera per Greed Island; allievo di Biscuit, impara Ken, la distribuzione dell’aura durante il combattimento e gli esercizi per categoria di Nen',
             en: 'playing Greed Island for Battera; Biscuit’s pupil, learning Ken, aura distribution during combat and aura-category exercises',
           },
         },
