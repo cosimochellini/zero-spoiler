@@ -24,6 +24,31 @@ const SALDEATH_TRIDENT =
 /** Mirrors a stroke across the middle of the box. */
 const MIRROR = 'translate(160 0) scale(-1 1)'
 
+/**
+ * Salome's head under the cracked horned skull, turned away: hers, and
+ * Hancock's smaller.
+ */
+const SALOME_HEAD: Stroke[] = [
+  {
+    d: 'M62.8 61.2 C61.2 46.8 75.6 35.6 93.2 37.2 C109.2 38.8 118.8 51.6 115.6 64.4 C114 70.8 110.8 75.6 106 78.8',
+  },
+  {
+    d: 'M62.8 61.2 C67.6 66 75.6 68.4 83.6 69.2 L86.8 73.2 C93.2 75.6 99.6 77.2 106 78.8',
+  },
+  { d: 'M94.8 37.2 l-2.4 6.4 l4 4 l-2.4 5.6 M95.6 46 l6.4 -3.2', role: 'soft' },
+  {
+    d: 'M113.2 51.6 C125.2 43.6 139.6 48.4 142 61.2 C143.6 67.6 141.2 74 137.2 78.8 C136.4 70.8 133.2 64.4 127.6 62 C122.8 59.6 118.8 60.4 115.6 63.6',
+  },
+  { d: 'M75.6 38.8 C69.2 29.2 58 25.2 45.2 26.8 C54.8 30 62.8 36.4 67.6 45.2' },
+  {
+    d: 'M122 48.4 l-1.6 8.8 M130.8 49.2 l-4 8.8 M138 54.8 l-6.4 6.4 M66 31.6 l-3.2 5.6',
+    role: 'soft',
+  },
+  {
+    d: 'M64.4 64.4 C56.4 64.4 48.4 66 46.8 70.8 C46.8 75.6 53.2 77.2 59.6 77.2 C67.6 78.8 74 82 78 86',
+  },
+]
+
 /** One of the rocky peaks either side of Marine Headquarters. */
 const MARINEFORD_PEAK = 'M2 132 C8 108 12 84 20 64 C26 80 30 104 34 132'
 
@@ -273,42 +298,34 @@ export const summitWarArt = {
     },
   ],
 
-  // Salome coiled on the ground, her neck rising out of the coils and her
-  // head turned away, wearing the empress's white cape: the collar standing
-  // up round her neck and the epaulettes in Hancock's colour, the far side
-  // hatched. Hancock comes on deck in that cape in episode 410, and Salome is
-  // never far from her.
+  // Salome leaning out from her coils, her head turned away under the
+  // horned skull, with the empress's white cape sliding off her to the
+  // right, the collar standing round her neck and the far side hatched; above
+  // her, flying off, the heart Hancock makes with her hands. She comes on deck
+  // in that cape in episode 410 and turns Momonga's Marines to stone with the
+  // heart, and Salome is never far from her.
   'boa-hancock': [
+    ...moved(SALOME_HEAD, 'translate(-4 18) scale(0.78)'),
     {
-      d: 'M20 168 C20 186 140 186 140 168 C140 160 130 155 118 153 M42 153 C30 155 20 160 20 168 M140 168 C152 170 158 160 150 152',
+      d: 'M58 92 C64 86 80 86 86 94 L90 84 C82 78 66 78 54 84 Z M58 92 C46 90 36 94 34 100 C44 102 54 100 58 92 M86 94 C98 94 108 98 110 104 C100 106 90 102 86 94',
     },
     {
-      d: 'M32 150 C32 166 128 166 128 150 M32 150 C32 142 46 138 58 137 M112 137 C120 138 128 142 128 150',
+      d: 'M34 100 C28 116 30 128 26 142 C24 150 26 156 28 158 C40 166 54 160 66 163 C80 167 92 160 106 164 C120 168 132 166 142 168 C150 160 155 148 157 136 C146 128 130 118 110 104',
     },
     {
-      d: 'M34 178 l3 -7 M54 182 l2 -8 M106 182 l-2 -8 M126 178 l-3 -7',
+      d: 'M52 102 C48 122 50 142 56 162 M76 96 C82 118 90 140 102 164 M98 104 C112 120 128 134 146 152',
       role: 'soft',
     },
+    { d: 'M120 126 l6 -4 M128 138 l6 -4 M138 148 l6 -4', role: 'ambient' },
     {
-      d: 'M86 78 C86 66 92 58 96 50 C100 42 98 34 92 30 M106 74 C110 64 112 54 112 44 C112 32 108 26 102 24',
+      d: 'M28 158 C16 166 20 180 46 184 C76 188 110 188 134 182 C154 176 158 162 154 150 C160 142 160 132 154 128 C150 126 147 130 150 134',
     },
     {
-      d: 'M92 30 C86 36 72 36 62 32 C54 28 52 22 58 18 C66 12 84 12 96 18 C100 20 102 22 102 24',
-    },
-    { d: 'M62 24 C72 20 86 20 96 24 M98 44 l10 2 M98 56 l10 3', role: 'soft' },
-    {
-      d: 'M86 84 L68 92 C66 108 62 126 58 144 Q84 152 112 144 C110 126 112 106 114 90 L104 80',
-    },
-    {
-      d: 'M78 96 C76 112 74 128 72 146 M104 94 C104 110 104 126 104 146',
-      role: 'soft',
-    },
-    { d: 'M106 104 l5 -3 M106 118 l5 -3 M106 132 l5 -3', role: 'ambient' },
-    {
-      d: `M86 84 C82 76 84 68 90 64 M104 80 C108 72 106 64 100 60 M86 84 C92 86 98 84 104 80 ${ellipse(68, 92, 8, 3.5)} ${ellipse(114, 88, 8, 3.5)}`,
+      d: 'M118 46 C111 40 102 34 102 24 C102 18 106 14 111 14 C114 14 117 16 118 19 C119 16 122 14 125 14 C130 14 134 18 134 24 C134 34 125 40 118 46 Z',
       role: 'accent',
     },
-    shadow(80, 192, 62),
+    { d: 'M140 18 l8 -4 M142 30 h10 M140 42 l8 4', role: 'ambient' },
+    shadow(86, 194, 64),
   ],
 
   // A stretch of the Level 6 cell wall, its square iron plate and a heavy
@@ -2159,29 +2176,7 @@ export const summitWarArt = {
   // Salome reared out of her coil and turned away, the cracked horned
   // skull pulled over her head. At the empress's side in episode 484.
   'salome': [
-    {
-      d: 'M62.8 61.2 C61.2 46.8 75.6 35.6 93.2 37.2 C109.2 38.8 118.8 51.6 115.6 64.4 C114 70.8 110.8 75.6 106 78.8',
-    },
-    {
-      d: 'M62.8 61.2 C67.6 66 75.6 68.4 83.6 69.2 L86.8 73.2 C93.2 75.6 99.6 77.2 106 78.8',
-    },
-    {
-      d: 'M94.8 37.2 l-2.4 6.4 l4 4 l-2.4 5.6 M95.6 46 l6.4 -3.2',
-      role: 'soft',
-    },
-    {
-      d: 'M113.2 51.6 C125.2 43.6 139.6 48.4 142 61.2 C143.6 67.6 141.2 74 137.2 78.8 C136.4 70.8 133.2 64.4 127.6 62 C122.8 59.6 118.8 60.4 115.6 63.6',
-    },
-    {
-      d: 'M75.6 38.8 C69.2 29.2 58 25.2 45.2 26.8 C54.8 30 62.8 36.4 67.6 45.2',
-    },
-    {
-      d: 'M122 48.4 l-1.6 8.8 M130.8 49.2 l-4 8.8 M138 54.8 l-6.4 6.4 M66 31.6 l-3.2 5.6',
-      role: 'soft',
-    },
-    {
-      d: 'M64.4 64.4 C56.4 64.4 48.4 66 46.8 70.8 C46.8 75.6 53.2 77.2 59.6 77.2 C67.6 78.8 74 82 78 86',
-    },
+    ...SALOME_HEAD,
     {
       d: 'M106 77.2 C117.2 77.2 126.8 82 133.2 91.6 C126.8 88.4 120.4 88.4 115.6 88.4 C123.6 94.8 126.8 102.8 125.2 112.4 C120.4 104.4 114 99.6 107.6 98 C109.2 102.8 109.2 107.6 106 112.4 C104.4 104.4 102.8 98 101.2 91.6',
       role: 'accent',
