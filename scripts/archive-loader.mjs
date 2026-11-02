@@ -12,7 +12,6 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
 
 /** The repository root, one level above this script. */
-// fallow-ignore-next-line security-sink -- a constant: this script's own folder
 export const ROOT = path.resolve(import.meta.dirname, '..')
 
 /**

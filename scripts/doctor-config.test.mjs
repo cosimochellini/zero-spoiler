@@ -7,6 +7,8 @@ import path from 'node:path'
 import process from 'node:process'
 import { describe, expect, it } from 'vitest'
 
+import config from '../doctor.config.ts'
+
 const repositoryRoot = path.resolve(import.meta.dirname, '..')
 const cli = path.join(
   repositoryRoot,
@@ -59,5 +61,14 @@ describe('the react-doctor configuration', () => {
       .map((rule) => rule.id)
 
     expect(new Set(notAtError)).toStrictEqual(OFF_ON_PURPOSE)
+  })
+
+  // scripts/react-doctor-gate.mjs passes its own flags for both, and says the
+  // config must agree so a bare `npx react-doctor` fails on the same findings.
+  it('lets no inline comment hide a finding and blocks on every warning', () => {
+    expect(config).toMatchObject({
+      respectInlineDisables: false,
+      blocking: 'warning',
+    })
   })
 })

@@ -99,7 +99,7 @@ show a plain placeholder until theirs are drawn. There is no official artwork.
 
 ## Run it
 
-Node 24.21 and npm 12.2, as set in `.nvmrc` and `packageManager`.
+Node 24.22 and npm 12.2, as set in `.nvmrc` and `packageManager`.
 
 ```sh
 nvm use

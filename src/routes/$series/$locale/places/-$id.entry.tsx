@@ -13,6 +13,7 @@ import type { ComponentType, ReactElement, ReactNode } from 'react'
 import { FiledHere } from '~/components/FiledHere'
 import { PortFacts, ShipFacts } from '~/components/PortFacts'
 import { OpenPortPlate, PortPlate } from '~/components/PortPlate'
+import { styles as bandStyles } from '~/components/SpecimenBands.styles'
 import { SpoilerVeil } from '~/components/SpoilerVeil'
 import {
   onlyUnder,
@@ -147,9 +148,9 @@ function EntryColumn<T extends Entry>({
 
   return (
     <div {...stylex.props(styles.dossier)}>
-      <p {...stylex.props(styles.meta)}>
+      <p {...stylex.props(bandStyles.meta)}>
         <span {...stylex.props(styles.kind)}>{words.kind}</span>
-        <span {...stylex.props(styles.episode)}>{words.opens}</span>
+        <span {...stylex.props(bandStyles.episode)}>{words.opens}</span>
       </p>
 
       <SpoilerVeil

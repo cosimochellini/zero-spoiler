@@ -42,7 +42,6 @@ const command = existsSync(local) ? local : 'fallow'
 
 // The path .fallowrc.jsonc names as `health.coverage`. Without it fallow
 // quietly estimates every CRAP score, so its absence is a gate failure.
-// fallow-ignore-next-line security-sink -- every segment is a literal under the repository root
 const coveragePath = path.join(
   repositoryRoot,
   'coverage',

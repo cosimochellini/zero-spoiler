@@ -126,7 +126,6 @@ describe('the bookmark form for a series', () => {
     // Stored as the absolute chapter: book 2 opens at chapter 21.
     expect(document.cookie).toContain('zs_test-series=c23')
 
-    // eslint-disable-next-line unicorn/no-document-cookie -- jsdom has no CookieStore, and this is the only way to clear what the component wrote.
     document.cookie = 'zs_test-series=; Max-Age=0; Path=/'
   })
 })
