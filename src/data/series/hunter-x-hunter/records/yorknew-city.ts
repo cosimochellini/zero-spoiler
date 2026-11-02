@@ -712,7 +712,21 @@ export const yorknewCity: HunterSaga = {
     'neon-nostrade': {
       relationships: yorknewCityRelationships['neon-nostrade'],
       chronicle: yorknewCityChronicles['neon-nostrade'],
-      role: { it: 'Indovina', en: 'Fortune-teller' },
+      role: [
+        {
+          episode: 41,
+          chapter: 71,
+          value: { it: 'Indovina', en: 'Fortune-teller' },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Indovina che non riesce più a usare il suo potere',
+            en: 'Fortune-teller unable to use her ability',
+          },
+        },
+      ],
       log: {
         it: 'Arriva a York Shin City con le sue guardie del corpo. Con il suo potere scrive le profezie per gli amici di suo padre.',
         en: 'She arrives in Yorknew City with her bodyguards. With her power she writes fortunes for her father’s friends.',
@@ -823,6 +837,15 @@ export const yorknewCity: HunterSaga = {
             en: 'Phantom Troupe; Greed Island player',
           },
         },
+        {
+          episode: 66,
+          chapter: 149,
+          source: 'episode',
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
       ],
     },
     'franklin': {
@@ -834,7 +857,17 @@ export const yorknewCity: HunterSaga = {
         en: 'At the Underground Auction, on the stage with Feitan, he kills nearly all the guests with bullets made of aura. Later he and the other members play cards while Uvogin takes on the Shadow Beasts alone.',
       },
       status: [{ episode: 44, chapter: 76, value: 'alive' }],
-      affiliation: [{ episode: 44, chapter: 76, value: TROUPE }],
+      affiliation: [
+        { episode: 44, chapter: 76, value: TROUPE },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
+      ],
     },
     'nobunaga': {
       relationships: yorknewCityRelationships.nobunaga,
@@ -872,6 +905,14 @@ export const yorknewCity: HunterSaga = {
             en: 'Phantom Troupe; Greed Island player',
           },
         },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
+          },
+        },
       ],
     },
     'shalnark': {
@@ -891,6 +932,14 @@ export const yorknewCity: HunterSaga = {
           value: {
             it: 'Brigata Fantasma; giocatore di Greed Island',
             en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
           },
         },
       ],
@@ -1018,6 +1067,14 @@ export const yorknewCity: HunterSaga = {
             en: 'Selling Gon and Killua’s items',
           },
         },
+        {
+          episode: 66,
+          chapter: 148,
+          value: {
+            it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+            en: 'Hunter Exam, failed the First Phase of the 288th exam',
+          },
+        },
       ],
     },
     'pakunoda': {
@@ -1068,6 +1125,15 @@ export const yorknewCity: HunterSaga = {
           value: {
             it: 'Brigata Fantasma; giocatore di Greed Island',
             en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          source: 'episode',
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
           },
         },
       ],
@@ -1146,6 +1212,14 @@ export const yorknewCity: HunterSaga = {
           value: {
             it: 'Brigata Fantasma; giocatore di Greed Island',
             en: 'Phantom Troupe; Greed Island player',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 149,
+          value: {
+            it: 'Brigata Fantasma; cerca un esorcista di Nen per Chrollo',
+            en: 'Phantom Troupe; searching for a Nen Exorcist for Chrollo',
           },
         },
       ],

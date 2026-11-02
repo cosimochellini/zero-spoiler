@@ -12,6 +12,37 @@ const FAILED = {
   en: 'Hunter Exam, failed the Fourth Phase',
 }
 
+const FAILED_288_PHASE_1 = {
+  episode: 66,
+  chapter: 148,
+  value: {
+    it: 'Esame Hunter, escluso nella prima prova del 288º esame',
+    en: 'Hunter Exam, failed the First Phase of the 288th exam',
+  },
+} as const
+
+const BROTHER_AFFILIATION = [
+  {
+    episode: 3,
+    chapter: 29,
+    value: { it: 'Esame Hunter, aspirante', en: 'Hunter Exam, applicant' },
+  },
+  {
+    episode: 18,
+    chapter: 32,
+    value: {
+      it: 'Esame Hunter, escluso nella quarta prova',
+      en: 'Hunter Exam, failed the Fourth Phase',
+    },
+  },
+  FAILED_288_PHASE_1,
+] as const
+
+const DRAWS_TARGET_LOG = {
+  it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
+  en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
+} as const
+
 /** Where the chapter-23 roster opens the manga's own applicants. */
 const ON_ROSTER = { episode: 14, chapter: 23, source: 'chapter' } as const
 
@@ -301,10 +332,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       relationships: zevilRelationships.goz,
       chronicle: zevilChronicles.goz,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
-      log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
-        en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
-      },
+      log: DRAWS_TARGET_LOG,
       status: [
         { episode: 14, chapter: 23, source: 'chapter', value: 'alive' },
         { episode: 15, chapter: 26, source: 'chapter', value: 'deceased' },
@@ -315,10 +343,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       relationships: zevilRelationships.agon,
       chronicle: zevilChronicles.agon,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
-      log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
-        en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
-      },
+      log: DRAWS_TARGET_LOG,
       status: [
         { episode: 14, chapter: 23, source: 'chapter', value: 'alive' },
         { episode: 16, chapter: 28, source: 'chapter', value: 'deceased' },
@@ -343,10 +368,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       relationships: zevilRelationships.ryu,
       chronicle: zevilChronicles.ryu,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
-      log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
-        en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
-      },
+      log: DRAWS_TARGET_LOG,
       status: [{ episode: 14, chapter: 23, source: 'chapter', value: 'alive' }],
       affiliation: [
         { ...ON_ROSTER, value: APPLICANT },
@@ -357,14 +379,12 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       relationships: zevilRelationships.kyu,
       chronicle: zevilChronicles.kyu,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
-      log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
-        en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
-      },
+      log: DRAWS_TARGET_LOG,
       status: [{ episode: 14, chapter: 23, source: 'chapter', value: 'alive' }],
       affiliation: [
         { ...ON_ROSTER, value: APPLICANT },
         { episode: 18, chapter: 32, source: 'chapter', value: FAILED },
+        { ...FAILED_288_PHASE_1, source: 'chapter' },
       ],
     },
     shishito: {
@@ -385,28 +405,24 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       relationships: zevilRelationships.kenmi,
       chronicle: zevilChronicles.kenmi,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
-      log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
-        en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
-      },
+      log: DRAWS_TARGET_LOG,
       status: [{ episode: 14, chapter: 23, source: 'chapter', value: 'alive' }],
       affiliation: [
         { ...ON_ROSTER, value: APPLICANT },
         { episode: 18, chapter: 32, source: 'chapter', value: FAILED },
+        { ...FAILED_288_PHASE_1, source: 'chapter' },
       ],
     },
     sommy: {
       relationships: zevilRelationships.sommy,
       chronicle: zevilChronicles.sommy,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
-      log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
-        en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
-      },
+      log: DRAWS_TARGET_LOG,
       status: [{ episode: 14, chapter: 23, source: 'chapter', value: 'alive' }],
       affiliation: [
         { ...ON_ROSTER, value: APPLICANT },
         { episode: 18, chapter: 32, source: 'chapter', value: FAILED },
+        { ...FAILED_288_PHASE_1, source: 'chapter' },
       ],
     },
     gittarackur: {
@@ -453,24 +469,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Tonpa indica a Gon i tre fratelli tra gli aspiranti abituali.',
         en: 'Tonpa points out the three brothers to Gon among the regular applicants.',
       },
-      affiliation: [
-        {
-          episode: 3,
-          chapter: 29,
-          value: {
-            it: 'Esame Hunter, aspirante',
-            en: 'Hunter Exam, applicant',
-          },
-        },
-        {
-          episode: 18,
-          chapter: 32,
-          value: {
-            it: 'Esame Hunter, escluso nella quarta prova',
-            en: 'Hunter Exam, failed the Fourth Phase',
-          },
-        },
-      ],
+      affiliation: [...BROTHER_AFFILIATION],
       status: [{ episode: 3, chapter: 29, value: 'alive' }],
     },
     umori: {
@@ -481,24 +480,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Si presenta all’esame con i due fratelli. Tonpa li indica a Gon tra gli aspiranti abituali.',
         en: 'He comes to the exam with his two brothers. Tonpa points them out to Gon among the regular applicants.',
       },
-      affiliation: [
-        {
-          episode: 3,
-          chapter: 29,
-          value: {
-            it: 'Esame Hunter, aspirante',
-            en: 'Hunter Exam, applicant',
-          },
-        },
-        {
-          episode: 18,
-          chapter: 32,
-          value: {
-            it: 'Esame Hunter, escluso nella quarta prova',
-            en: 'Hunter Exam, failed the Fourth Phase',
-          },
-        },
-      ],
+      affiliation: [...BROTHER_AFFILIATION],
       status: [{ episode: 3, chapter: 29, value: 'alive' }],
     },
     imori: {
@@ -509,24 +491,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Insieme ai due fratelli è tra gli aspiranti abituali che Tonpa indica a Gon.',
         en: 'With his two brothers he is among the regular applicants Tonpa points out to Gon.',
       },
-      affiliation: [
-        {
-          episode: 3,
-          chapter: 29,
-          value: {
-            it: 'Esame Hunter, aspirante',
-            en: 'Hunter Exam, applicant',
-          },
-        },
-        {
-          episode: 18,
-          chapter: 32,
-          value: {
-            it: 'Esame Hunter, escluso nella quarta prova',
-            en: 'Hunter Exam, failed the Fourth Phase',
-          },
-        },
-      ],
+      affiliation: [...BROTHER_AFFILIATION],
       status: [{ episode: 3, chapter: 29, value: 'alive' }],
     },
     ponzu: {
@@ -554,6 +519,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter Exam, failed the Fourth Phase',
           },
         },
+        FAILED_288_PHASE_1,
       ],
       status: [{ episode: 17, chapter: 30, value: 'alive' }],
     },

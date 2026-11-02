@@ -172,6 +172,9 @@ describe('Greed Island leads', () => {
       'battera',
       'tsezguerra',
       'puhat',
+      'genthru',
+      'jispa',
+      'razor',
     ])
   })
 })

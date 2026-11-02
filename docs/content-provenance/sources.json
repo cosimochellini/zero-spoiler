@@ -26131,6 +26131,276 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=282107",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=282107",
       "contentSha256": "11e8746aa8ad095bd4257c9f3c6313bb6c5207f3e698162399e104ae4f2176fe"
+    },
+    "hxh-en-Razor-424137.json": {
+      "locale": "en",
+      "title": "Razor",
+      "revision": 424137,
+      "revisionDate": "2026-08-10T20:26:33Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Razor",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424137",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424137",
+      "contentSha256": "96c2d545fce2566c35ba93807dd0cdf53f0e9b70675a85279f561e339215ceba"
+    },
+    "hxh-en-Chapter_142-417939.json": {
+      "locale": "en",
+      "title": "Chapter 142",
+      "revision": 417939,
+      "revisionDate": "2025-12-02T01:49:20Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_142",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=417939",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=417939",
+      "contentSha256": "22282d85c3386c7ca2f39e9c0e5f42b98aad62b1cdada0c40bbb3c39cc21985d"
+    },
+    "hxh-en-Chapter_144-417941.json": {
+      "locale": "en",
+      "title": "Chapter 144",
+      "revision": 417941,
+      "revisionDate": "2025-12-02T01:49:42Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_144",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=417941",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=417941",
+      "contentSha256": "9c91a2c3ca99ef4dc3d5213cff946bd71d2665035f3b534d5d30c41487aa179c"
+    },
+    "hxh-en-Chapter_145-421581.json": {
+      "locale": "en",
+      "title": "Chapter 145",
+      "revision": 421581,
+      "revisionDate": "2026-07-06T16:54:09Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_145",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421581",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421581",
+      "contentSha256": "6b619440f6fc0a30a722e5d3be0370e745f0066cf4572c5780b6bc5281d5e9bd"
+    },
+    "hxh-en-Chapter_150-369273.json": {
+      "locale": "en",
+      "title": "Chapter 150",
+      "revision": 369273,
+      "revisionDate": "2023-07-16T01:16:21Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_150",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=369273",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=369273",
+      "contentSha256": "bf31c3300073fa12c33e73b2b01a44431d8541a544149d2dfa17a123597c2eca"
+    },
+    "hxh-en-Chapter_153-416194.json": {
+      "locale": "en",
+      "title": "Chapter 153",
+      "revision": 416194,
+      "revisionDate": "2025-09-01T04:14:47Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_153",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416194",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416194",
+      "contentSha256": "76323a088c033c69b304f358ef66e97d2e7b1bbb560ca986be9fb0e385ad7a91"
+    },
+    "hxh-en-Chapter_158-382703.json": {
+      "locale": "en",
+      "title": "Chapter 158",
+      "revision": 382703,
+      "revisionDate": "2024-01-28T18:21:34Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_158",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=382703",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=382703",
+      "contentSha256": "8ae7b8bfd5f1e63053ee64f91ace0fdf5ee9f1879dfb42f835b2095c5e6b5d9c"
+    },
+    "hxh-en-Episode_66_(2011)-410832.json": {
+      "locale": "en",
+      "title": "Episode 66 (2011)",
+      "revision": 410832,
+      "revisionDate": "2025-02-06T02:29:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_66_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=410832",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=410832",
+      "contentSha256": "3bf084668f3feaebe76ba8b16c30c93519ccbac9d53bf58cea58fd6c7dd2ddc5"
+    },
+    "hxh-en-Episode_67_(2011)-416432.json": {
+      "locale": "en",
+      "title": "Episode 67 (2011)",
+      "revision": 416432,
+      "revisionDate": "2025-09-01T22:05:15Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_67_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416432",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416432",
+      "contentSha256": "62ebe1291dccedfad42293c58f02c3ef595751cb27eeb4469444997c624fe8f4"
+    },
+    "hxh-en-Episode_68_(2011)-425286.json": {
+      "locale": "en",
+      "title": "Episode 68 (2011)",
+      "revision": 425286,
+      "revisionDate": "2026-08-28T22:16:49Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_68_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425286",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425286",
+      "contentSha256": "ecabc1be3a64aa2c829e24207f8da1820498fc5f6fcbcf4640373ae7af63bd1d"
+    },
+    "hxh-en-Chapter_146-420618.json": {
+      "locale": "en",
+      "title": "Chapter 146",
+      "revision": 420618,
+      "revisionDate": "2026-06-22T21:57:26Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_146",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=420618",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=420618",
+      "contentSha256": "d6814b36943fc11fd770d631c8ad8c85082346a4f83e2e50008de11fa7b36ed5"
+    },
+    "hxh-en-Chapter_148-422184.json": {
+      "locale": "en",
+      "title": "Chapter 148",
+      "revision": 422184,
+      "revisionDate": "2026-07-15T14:56:39Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_148",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=422184",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=422184",
+      "contentSha256": "15c0ecbc2ae743cdf369b26fb0db7d5d8685bd5aec72fbb93f5778d46d782dcf"
+    },
+    "hxh-en-Chapter_149-329197.json": {
+      "locale": "en",
+      "title": "Chapter 149",
+      "revision": 329197,
+      "revisionDate": "2022-12-04T21:36:26Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_149",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=329197",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=329197",
+      "contentSha256": "b408a539b0d3b64ec82c6d1838fee2c3a42cc5ec86c21ff7c7f5b77e434a3bd2"
+    },
+    "hxh-en-Chapter_154-329199.json": {
+      "locale": "en",
+      "title": "Chapter 154",
+      "revision": 329199,
+      "revisionDate": "2022-12-04T21:36:41Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_154",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=329199",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=329199",
+      "contentSha256": "d6c10889c02523284e6f3c86d3677760be14b04c3fc633bee6979b7d1bc885bb"
+    },
+    "hxh-en-Chapter_159-416196.json": {
+      "locale": "en",
+      "title": "Chapter 159",
+      "revision": 416196,
+      "revisionDate": "2025-09-01T04:14:58Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_159",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416196",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416196",
+      "contentSha256": "eb740e5ff4d5d186ff99eb52248c0d1753e97763e222c48b8f29a8d827d3c393"
+    },
+    "hxh-en-Montreux-424287.json": {
+      "locale": "en",
+      "title": "Montreux",
+      "revision": 424287,
+      "revisionDate": "2026-08-11T10:59:01Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Montreux",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424287",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424287",
+      "contentSha256": "9249d9edb157aa15388eb6838f15048bfafe5828e571f8182e5b6dd824dc37eb"
+    },
+    "hxh-en-Bopobo-424950.json": {
+      "locale": "en",
+      "title": "Bopobo",
+      "revision": 424950,
+      "revisionDate": "2026-08-23T15:10:41Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Bopobo",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424950",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424950",
+      "contentSha256": "0d8c4c183abc40e80cf79550a47aba1b5f97ead963027701152a009f5e73c17d"
+    },
+    "hxh-en-Chapter_147-382613.json": {
+      "locale": "en",
+      "title": "Chapter 147",
+      "revision": 382613,
+      "revisionDate": "2024-01-27T21:19:36Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_147",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=382613",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=382613",
+      "contentSha256": "3fc3274543bd413d3151da6d7004b02e119753122b062bf5c6c9211d0958a0d2"
+    },
+    "hxh-en-Chapter_151-328170.json": {
+      "locale": "en",
+      "title": "Chapter 151",
+      "revision": 328170,
+      "revisionDate": "2022-11-25T21:43:14Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_151",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=328170",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=328170",
+      "contentSha256": "484b81698f826a4b17121517bd1208c1304aabdfdf9351acef157ac627eff0e6"
+    },
+    "hxh-en-Chapter_152-416193.json": {
+      "locale": "en",
+      "title": "Chapter 152",
+      "revision": 416193,
+      "revisionDate": "2025-09-01T04:14:42Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_152",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416193",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416193",
+      "contentSha256": "7df5c1a5eba4a2f89549803a8f1d9fb8b32fcb8904f38501806ae8c1f7581c36"
+    },
+    "hxh-en-Chapter_155-416195.json": {
+      "locale": "en",
+      "title": "Chapter 155",
+      "revision": 416195,
+      "revisionDate": "2025-09-01T04:14:53Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_155",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416195",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416195",
+      "contentSha256": "074258de3e871ec7a99756b065bc964514a05d4ec5b6d89c593793ce7678cadd"
+    },
+    "hxh-en-Chapter_156-328175.json": {
+      "locale": "en",
+      "title": "Chapter 156",
+      "revision": 328175,
+      "revisionDate": "2022-11-25T21:43:32Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_156",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=328175",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=328175",
+      "contentSha256": "6c3621b4a5e5dfeb63222403738783e221befdd2192afee49c26fefe19131d77"
+    },
+    "hxh-en-Chapter_157-328176.json": {
+      "locale": "en",
+      "title": "Chapter 157",
+      "revision": 328176,
+      "revisionDate": "2022-11-25T21:43:36Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_157",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=328176",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=328176",
+      "contentSha256": "78fb01c3d8be519ff6887bcee0998520289072e53e028e965e120a07e019efca"
+    },
+    "hxh-en-Episode_69_(2011)-416434.json": {
+      "locale": "en",
+      "title": "Episode 69 (2011)",
+      "revision": 416434,
+      "revisionDate": "2025-09-01T22:05:32Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_69_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416434",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416434",
+      "contentSha256": "4d47dee6a138c87085ad398a1d33465bdb23cebaf8152a089e5e2a5df936bf3c"
+    },
+    "hxh-en-Dorias-421710.json": {
+      "locale": "en",
+      "title": "Dorias",
+      "revision": 421710,
+      "revisionDate": "2026-07-07T12:49:16Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Dorias",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421710",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421710",
+      "contentSha256": "5983e210e13b8191c28ff86237c8b40738f5fcd3a320cf4598cc95e91fb91468"
+    },
+    "hxh-en-Soufrabi-421706.json": {
+      "locale": "en",
+      "title": "Soufrabi",
+      "revision": 421706,
+      "revisionDate": "2026-07-07T12:43:39Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Soufrabi",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421706",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421706",
+      "contentSha256": "915bbd186835422fa68db7772c1de52b6e22a5928ad6eab27d78b7e7f2267d06"
+    },
+    "hxh-en-Aiai-421707.json": {
+      "locale": "en",
+      "title": "Aiai",
+      "revision": 421707,
+      "revisionDate": "2026-07-07T12:44:49Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Aiai",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421707",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421707",
+      "contentSha256": "8d0742df22b094e1a062657cdd9b89a247c8a6ecd2b37b9e0ab05fb437cc8429"
     }
   }
 }

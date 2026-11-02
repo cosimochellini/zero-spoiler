@@ -28,6 +28,111 @@ const PUHAT_JACKET: Stroke[] = [
 ]
 
 export const GREED_ISLAND_DRAWINGS = {
+  // Genthru's angular spectacles, folded in three-quarter view. Chapter
+  // 144 names him; the appearance description cites the glasses at 130.
+  'genthru': [
+    { d: 'M22 100 L63 91 L69 119 L28 130 Z' },
+    { d: 'M82 87 L123 78 L130 106 L89 116 Z' },
+    { d: 'M63 96 Q72 88 83 92', role: 'accent' },
+    { d: 'M25 104 L60 96 L65 115 L31 124 Z', role: 'soft' },
+    { d: 'M86 91 L120 84 L125 102 L92 111 Z', role: 'soft' },
+    { d: 'M22 100 L40 65 L49 62 M123 78 L139 52 L146 54', role: 'soft' },
+    {
+      d: 'M28 130 L31 134 L72 123 L69 119 M89 116 L92 120 L133 109 L130 106',
+      role: 'soft',
+    },
+    { d: 'M40 65 L45 68 L27 103 M139 52 L143 56 L127 82', role: 'soft' },
+    { d: 'M36 115 L48 104 M96 101 L107 91', role: 'ambient' },
+    { d: 'M52 124 l6 -2 M107 111 l6 -2', role: 'ambient' },
+    shadow(82, 159, 57),
+  ],
+  // Jispa's plain tank top, chapter 131 appearance, folded after the death
+  // reported by name in chapter 144. He is already dead when filed.
+  'jispa': [
+    { d: 'M29 108 L104 97 L135 123 L61 137 Z' },
+    { d: 'M29 108 V121 L61 151 L135 136 V123 M61 137 V151' },
+    { d: 'M49 105 L57 116 Q72 125 88 111 L96 99', role: 'accent' },
+    { d: 'M55 105 L62 114 Q72 119 81 111 L87 101', role: 'soft' },
+    { d: 'M36 110 L53 126 L44 130 M110 101 L116 115 L128 120', role: 'soft' },
+    { d: 'M61 143 L129 130 M36 118 L60 143', role: 'soft' },
+    { d: 'M68 130 L107 122 M75 134 L115 126', role: 'soft' },
+    {
+      d: 'M69 145 l6 -3 M85 142 l6 -3 M101 139 l6 -3 M117 136 l6 -3',
+      role: 'ambient',
+    },
+    shadow(82, 173, 55),
+  ],
+  // Razor's red shorts from his first encounter with the Troupe, chapter
+  // 145; no ball, numbered uniform or later Nen construct is shown.
+  'razor': [
+    { d: 'M39 62 Q80 74 121 62 L132 153 L94 159 L79 114 L66 159 L28 153 Z' },
+    { d: 'M39 62 Q80 51 121 62 L120 72 Q80 83 38 72 Z', role: 'accent' },
+    { d: 'M44 78 L37 148 M116 78 L124 148', role: 'soft' },
+    { d: 'M28 153 L29 161 L68 166 L66 159 M94 159 L96 166 L133 160 L132 153' },
+    { d: 'M79 114 L81 82 M75 86 L72 109 M87 86 L93 111', role: 'soft' },
+    { d: 'M42 88 Q49 107 43 123 M117 87 Q109 108 119 125', role: 'soft' },
+    { d: 'M78 75 L74 94 M83 75 L89 94', role: 'soft' },
+    { d: 'M111 129 l7 -4 M113 140 l8 -4 M116 151 l8 -4', role: 'ambient' },
+    { d: 'M39 142 L57 145 M103 146 L121 142', role: 'soft' },
+    shadow(81, 183, 51),
+  ],
+  // Dorias's casino slot machine, chapter 151: blank reels and a lever.
+  // The cabinet is an original construction, with no letters or logo.
+  'dorias': [
+    { d: 'M33 150 V55 H109 V150 Z M109 55 L128 45 V140 L109 150' },
+    { d: 'M33 55 L52 45 H128', role: 'soft' },
+    { d: 'M43 69 H99 V105 H43 Z', role: 'accent' },
+    { d: 'M61 70 V104 M81 70 V104', role: 'soft' },
+    { d: 'M47 78 H57 M65 86 H77 M85 78 H95', role: 'soft' },
+    { d: 'M42 116 H99 L105 129 H38 Z M38 129 V136 H105 V129' },
+    { d: 'M48 140 H93 V149 M120 108 L144 83 V67', role: 'soft' },
+    { d: circle(144, 62, 5), role: 'soft' },
+    {
+      d: 'M115 65 l7 -4 M115 80 l7 -4 M115 95 l7 -4 M115 125 l7 -4',
+      role: 'ambient',
+    },
+    { d: 'M8 150 H150', role: 'ambient' },
+    shadow(80, 158, 60),
+  ],
+  // Soufrabi's lighthouse on the coastal headland described in its page
+  // at chapter 155 / episode 67. Plain original geometry, no copied facade.
+  'soufrabi': [
+    { d: 'M7 150 L21 135 L40 130 L49 113 L103 115 L121 130 L153 141' },
+    { d: 'M51 115 L59 47 H91 L99 115 Z' },
+    { d: 'M91 47 L102 43 L110 111 L99 115 M59 47 L69 43 H102', role: 'soft' },
+    { d: 'M55 47 V34 H96 V47 Z', role: 'accent' },
+    { d: 'M55 34 L75 21 L96 34 M96 34 L107 30 L87 18 L75 21', role: 'soft' },
+    { d: 'M96 34 L107 30 V43 L96 47 M65 35 V46 M84 35 V46', role: 'soft' },
+    { d: 'M70 113 V92 H82 V114 M70 63 H81 V76 H70 Z', role: 'soft' },
+    { d: 'M97 63 l6 -3 M99 78 l6 -3 M101 93 l6 -3', role: 'ambient' },
+    {
+      d: 'M45 127 L60 132 L53 143 M109 127 L115 145 M76 136 L81 147',
+      role: 'soft',
+    },
+    { d: 'M5 163 Q32 155 59 163 M89 172 Q119 164 153 172', role: 'ambient' },
+  ],
+  // Aiai's floating heart, the city's symbol at episode 68, in an
+  // original three-quarter outline above the street. No NPC or lettering.
+  'aiai': [
+    {
+      d: 'M78 123 C62 105 30 87 30 63 C30 39 61 31 78 53 C95 28 127 34 128 59 C130 83 96 108 78 123 Z',
+      role: 'accent',
+    },
+    {
+      d: 'M78 123 L88 127 C107 111 142 86 140 61 C139 44 128 35 116 35',
+      role: 'soft',
+    },
+    { d: 'M78 53 L88 56 M39 62 C39 49 54 44 65 53', role: 'soft' },
+    { d: 'M125 75 l7 -5 M117 89 l8 -6 M107 103 l8 -6', role: 'ambient' },
+    {
+      d: 'M12 150 H150 M22 150 V137 H42 V150 M119 150 V134 H141 V150',
+      role: 'ambient',
+    },
+    { d: 'M29 137 L33 131 L42 137 M119 134 L130 126 L141 134', role: 'soft' },
+    { d: 'M49 166 L70 153 M112 167 L94 153', role: 'ambient' },
+    shadow(82, 155, 25),
+  ],
+
   // Battera's bow tie and the rose pinned to his suit, chapter 120 /
   // episode 59. Two bent ribbon wings give the tie a far face.
   'battera': [

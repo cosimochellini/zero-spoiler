@@ -107,8 +107,8 @@ describe('the place words of a series that labels its own', () => {
   const FIRST = { mode: 'episode' as const, episode: 1 }
 
   it.each([
-    ['its id', { forms: { port: 'x' } }, ['dolle-harbor']],
-    ['its label', { forms: { x: 'Port town' } }, ['dolle-harbor']],
+    ['its id', { forms: { port: 'x' } }, ['dolle-harbor', 'soufrabi']],
+    ['its label', { forms: { x: 'Port town' } }, ['dolle-harbor', 'soufrabi']],
     ['its country label', { forms: { x: 'Country' } }, ['republic-of-padokea']],
     ['its tower label', { forms: { x: 'Tower' } }, ['heavens-arena']],
     ['its Italian tower label', { forms: { x: 'Torre' } }, ['heavens-arena']],

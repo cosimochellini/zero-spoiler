@@ -139,9 +139,69 @@ const links = {
       en: 'Puhat explains to Killua why joining the line immediately does not guarantee a place. Killua accepts his reasoning and decides to take the test.',
     },
   },
+  genthruPuhat: {
+    character: 'puhat',
+    type: {
+      it: 'Vittima durante le trattative',
+      en: 'Victim during negotiations',
+    },
+    summary: {
+      it: 'Gensul uccide Puhat quando cerca di negoziare per l’alleanza.',
+      en: 'Genthru kills Puhat when he tries to negotiate for the alliance.',
+    },
+  },
+  genthruJispa: {
+    character: 'jispa',
+    type: { it: 'Avversario che ferisce', en: 'Opponent he injures' },
+    summary: {
+      it: 'Gensul ferisce il volto di Jispa con un’esplosione quando cerca di attaccarlo alle spalle. In seguito viene informato della sua morte.',
+      en: 'Genthru injures Jispa’s face with an explosion when he tries to attack from behind. He is later told of his death.',
+    },
+  },
+  jispaGenthru: {
+    character: 'genthru',
+    type: { it: 'Avversario che lo ferisce', en: 'Opponent who injures him' },
+    summary: {
+      it: 'Jispa cerca di fermare Gensul dopo che si rivela come il Boomer. Gensul gli ferisce il volto con un’esplosione.',
+      en: 'Jispa tries to stop Genthru after he reveals himself as the Bomber. Genthru injures his face with an explosion.',
+    },
+  },
+  razorPhinks: {
+    character: 'phinks',
+    type: { it: 'Intruso che allontana', en: 'Intruder he removes' },
+    summary: {
+      it: 'Razer spiega a Phinks che la Brigata deve entrare nel gioco attraverso una console, poi allontana il gruppo con una carta.',
+      en: 'Razor explains to Phinks that the Troupe must enter the game through a console, then removes the group with a card.',
+    },
+  },
+  biscuitHisoka: {
+    character: 'hisoka',
+    type: { it: 'Alleato che recluta', en: 'Ally she recruits' },
+    summary: {
+      it: 'Biscuit chiede a Hisoka di aiutarli a ottenere una carta. Lo tiene nel gruppo pur avvertendo Gon e Killua che nasconde qualcosa.',
+      en: 'Biscuit asks Hisoka to help them obtain a card. She keeps him in the group while warning Gon and Killua that he is hiding something.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const greedIslandRelationships = {
+  'genthru': [
+    {
+      episode: 65,
+      chapter: 144,
+      source: 'chapter',
+      value: [links.genthruPuhat, links.genthruJispa],
+    },
+  ],
+  'jispa': [
+    {
+      episode: 65,
+      chapter: 144,
+      source: 'chapter',
+      value: [links.jispaGenthru],
+    },
+  ],
+  'razor': [{ episode: 67, chapter: 145, value: [links.razorPhinks] }],
   'biscuit-krueger': [
     // Episode 62's naming scene precedes the discussion of Wing in episode 63.
     {
@@ -161,6 +221,16 @@ export const greedIslandRelationships = {
       chapter: 137,
       source: 'episode',
       value: [links.biscuitGon, links.biscuitKillua, links.biscuitWing],
+    },
+    {
+      episode: 68,
+      chapter: 158,
+      value: [
+        links.biscuitGon,
+        links.biscuitKillua,
+        links.biscuitWing,
+        links.biscuitHisoka,
+      ],
     },
   ],
   'binolt': [

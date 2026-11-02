@@ -102,6 +102,48 @@ export const greedIsland: HunterSaga = {
       },
       visual: { art: 'kosofftro', tint: 'ocher' },
     },
+    // Chapter 144 names the Bomber's leader and reports Jispa's death.
+    // No personal-name disclosure in the anime has been established for either.
+    {
+      id: 'genthru',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 65,
+      revealedAtChapter: 144,
+      name: { it: 'Gensul', en: 'Genthru' },
+      summary: {
+        it: 'Il capo del gruppo del Boomer, che ricatta un’alleanza di giocatori con bombe Nen.',
+        en: 'The leader of the Bomber group, who blackmails a player alliance with Nen bombs.',
+      },
+      visual: { art: 'genthru', tint: 'ocher' },
+    },
+    {
+      id: 'jispa',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 65,
+      revealedAtChapter: 144,
+      name: { it: 'Jispa', en: 'Jispa' },
+      summary: {
+        it: 'Un membro dell’alleanza di giocatori morto dopo aver cercato di fermare il Boomer.',
+        en: 'A member of the player alliance who dies after trying to stop the Bomber.',
+      },
+      visual: { art: 'jispa', tint: 'sand' },
+    },
+    // He introduces himself in chapter 145. The anime gate waits for the
+    // NPC's explicit naming in episode 67; episode 65's introduction is unverified.
+    {
+      id: 'razor',
+      kind: 'character',
+      revealedAtEpisode: 67,
+      revealedAtChapter: 145,
+      name: { it: 'Razer', en: 'Razor' },
+      summary: {
+        it: 'Uno dei creatori di Greed Island, incaricato di allontanare chi arriva sull’isola senza giocare.',
+        en: 'One of Greed Island’s creators, who removes people arriving on the island without playing.',
+      },
+      visual: { art: 'razor', tint: 'orange' },
+    },
     // Named on the episode's tournament schedule and, later than the
     // manga visit, on the chapter 134 map alongside Shiso Tree.
     {
@@ -158,8 +200,116 @@ export const greedIsland: HunterSaga = {
       },
       visual: { art: 'jeitsari', tint: 'azure' },
     },
+
+    // The trader names Dorias and sets a rendezvous there in chapter 151.
+    // Episode 66's synopsis confirms the visit, but not a naming scene.
+    {
+      id: 'dorias',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 66,
+      revealedAtChapter: 151,
+      name: { it: 'Dorias', en: 'Dorias' },
+      summary: {
+        it: 'La città dei casinò di Greed Island, dove Killua usa i Dadi del Rischio per vincere carte.',
+        en: 'Greed Island’s casino town, where Killua uses Risky Dice to win cards.',
+      },
+      visual: { art: 'dorias', tint: 'yellow' },
+    },
+    // Guidepost supplies the destination at chapter 154; the next chapter
+    // shows the visited coast and lighthouse used by the drawing.
+    {
+      id: 'soufrabi',
+      kind: 'place',
+      revealedAtEpisode: 67,
+      revealedAtChapter: 155,
+      name: { it: 'Soufrabi', en: 'Soufrabi' },
+      summary: {
+        it: 'Una città portuale di Greed Island occupata da una banda di pirati.',
+        en: 'A Greed Island port town occupied by a band of pirates.',
+      },
+      visual: { art: 'soufrabi', tint: 'azure' },
+    },
+    // Hisoka proposes the City of Love by name in episode 68. Chapter
+    // 159's title alone is not treated as an in-story naming scene.
+    {
+      id: 'aiai',
+      kind: 'place',
+      source: 'episode',
+      revealedAtEpisode: 68,
+      revealedAtChapter: 159,
+      name: { it: 'Aiai', en: 'Aiai' },
+      summary: {
+        it: 'La città dell’amore di Greed Island, dove gli abitanti inscenano incontri romantici.',
+        en: 'Greed Island’s City of Love, where the inhabitants act out romantic encounters.',
+      },
+      visual: { art: 'aiai', tint: 'pink' },
+    },
   ],
   dossiers: {
+    'genthru': {
+      relationships: greedIslandRelationships.genthru,
+      role: { it: 'Capo del Boomer', en: 'Bomber leader' },
+      log: {
+        it: 'Si infiltra nell’alleanza e piazza bombe Nen sui suoi membri. Pretende le loro carte in cambio della rimozione delle bombe. Uccide Puhat durante le trattative e, ottenute le carte, provoca l’esplosione delle bombe insieme ai suoi due complici.',
+        en: 'He infiltrates the alliance and plants Nen bombs on its members. He demands their cards in exchange for removing the bombs. He kills Puhat during the negotiations and, after receiving the cards, detonates the bombs with his two accomplices.',
+      },
+      status: [
+        { episode: 65, chapter: 144, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 65,
+          chapter: 144,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island, gruppo del Boomer',
+            en: 'Greed Island, Bomber group',
+          },
+        },
+      ],
+    },
+    'jispa': {
+      relationships: greedIslandRelationships.jispa,
+      role: { it: 'Giocatore di Greed Island', en: 'Greed Island player' },
+      log: {
+        it: 'Accompagna le nuove reclute al nascondiglio dell’alleanza e spiega il sistema delle carte. Quando Gensul si rivela come il Boomer, cerca di attaccarlo alle spalle. Un’esplosione gli ferisce il volto; la sua morte viene annunciata prima della consegna delle carte.',
+        en: 'He takes new recruits to the alliance hideout and explains the card system. When Genthru reveals himself as the Bomber, he tries to attack him from behind. An explosion injures his face; his death is reported before the cards are handed over.',
+      },
+      status: [
+        { episode: 65, chapter: 144, source: 'chapter', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 65,
+          chapter: 144,
+          source: 'chapter',
+          value: {
+            it: 'Greed Island, alleanza di giocatori',
+            en: 'Greed Island player alliance',
+          },
+        },
+      ],
+    },
+    'razor': {
+      relationships: greedIslandRelationships.razor,
+      role: { it: 'Creatore di Greed Island', en: 'Greed Island creator' },
+      log: {
+        it: 'Intercetta i membri della Brigata Fantasma arrivati sull’isola in barca. Spiega di occuparsi dei sistemi a Emissione del gioco e usa una carta riservata ai creatori per allontanare gli intrusi. Poi distrugge la loro barca con una palla d’aura.',
+        en: 'He intercepts the Phantom Troupe members who reach the island by boat. He explains that he handles the game’s Emissive systems and uses a card reserved for its creators to remove the intruders. He then destroys their boat with a ball of aura.',
+      },
+      status: [{ episode: 67, chapter: 145, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 67,
+          chapter: 145,
+          value: {
+            it: 'Greed Island, creatori del gioco',
+            en: 'Greed Island game creators',
+          },
+        },
+      ],
+    },
     'jeitsari': {
       role: { it: 'Hunter', en: 'Hunter' },
       log: {
@@ -209,6 +359,34 @@ export const greedIsland: HunterSaga = {
           value: {
             it: 'Associazione Hunter; insegna a Gon e Killua a studiare i mostri e a difendersi con Ken',
             en: 'Hunter Association; teaches Gon and Killua to study monsters and defend with Ken',
+          },
+        },
+        {
+          // Episode 64 already opens the earlier training stage. Keep the
+          // manga pin and delay this later anime stage by one episode.
+          episode: 65,
+          chapter: 142,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter; insegna a Gon e Killua a distribuire l’aura durante il combattimento',
+            en: 'Hunter Association; teaches Gon and Killua to distribute aura during combat',
+          },
+        },
+        {
+          episode: 65,
+          chapter: 142,
+          source: 'episode',
+          value: {
+            it: 'Associazione Hunter; insegna a Gon e Killua a distribuire l’aura durante il combattimento',
+            en: 'Hunter Association; teaches Gon and Killua to distribute aura during combat',
+          },
+        },
+        {
+          episode: 66,
+          chapter: 150,
+          value: {
+            it: 'Associazione Hunter; raccoglie carte con Gon e Killua dopo l’allenamento',
+            en: 'Hunter Association; collects cards with Gon and Killua after their training',
           },
         },
       ],
@@ -356,6 +534,48 @@ export const GREED_ISLAND_PLACES: Record<
   string,
   PlaceDossier<HunterVocabulary>
 > = {
+  'dorias': {
+    form: 'city',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'I casinò e le loro slot machine',
+      en: 'The casinos and their slot machines',
+    },
+    log: {
+      it: 'Gon, Killua e Biscuit scambiano carte nei pressi della città, poi entrano in un casinò. Killua usa i Dadi del Rischio per vincere alle slot machine e a poker; Biscuit lo ferma prima che rischi ancora.',
+      en: 'Gon, Killua and Biscuit trade cards near the town, then enter a casino. Killua uses Risky Dice to win at the slots and at poker; Biscuit stops him before he takes another risk.',
+    },
+    filedHere: [],
+  },
+  'soufrabi': {
+    form: 'port',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'Il faro sul promontorio',
+      en: 'The lighthouse on the headland',
+    },
+    log: {
+      it: 'Un gruppo di quindici giocatori arriva insieme per cercare una carta rara. Gli abitanti chiedono aiuto contro i pirati che occupano la città e indicano il loro nascondiglio.',
+      en: 'Fifteen players arrive together to search for a rare card. The inhabitants ask for help against the pirates occupying the town and point out their hideout.',
+    },
+    filedHere: [],
+  },
+  'aiai': {
+    form: 'city',
+    region: 'islands',
+    arc: 'greed-island-arc',
+    landmark: {
+      it: 'Il cuore sospeso sopra la città',
+      en: 'The heart floating above the city',
+    },
+    log: {
+      it: 'Hisoka accompagna qui il gruppo. Gli abitanti propongono incontri da gioco romantico, ma Killua e Biscuit preferiscono riprendere la ricerca di compagni per affrontare i pirati.',
+      en: 'Hisoka brings the group here. The inhabitants offer dating-game encounters, but Killua and Biscuit prefer to resume the search for teammates to face the pirates.',
+    },
+    filedHere: [],
+  },
   'antokiba': {
     form: 'city',
     region: 'islands',
