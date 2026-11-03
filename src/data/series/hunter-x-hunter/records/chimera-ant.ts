@@ -1,4 +1,8 @@
+import { CHIMERA_ANT_HUNTERS } from './chimera-ant-hunters'
+import { CHIMERA_ANT_NGL } from './chimera-ant-ngl'
 import { NGL_RECORD } from './chimera-ant-places'
+import { CHIMERA_ANT_ROYALS } from './chimera-ant-royals'
+import { CHIMERA_ANT_SQUADS } from './chimera-ant-squads'
 import type { HunterSaga } from './saga'
 
 const surveyDossier: HunterSaga['dossiers'][string] = {
@@ -43,99 +47,10 @@ const surveyDossier: HunterSaga['dossiers'][string] = {
 export const chimeraAnt: HunterSaga = {
   name: { it: 'Formichimere', en: 'Chimera Ant' },
   dossiers: {
-    'meruem': {
-      relationships: [
-        {
-          episode: 92,
-          chapter: 215,
-          value: [
-            {
-              character: 'neferpitou',
-              type: { it: 'Guardia reale', en: 'Royal Guard' },
-              summary: {
-                it: 'Lo accompagna fuori dal nido.',
-                en: 'Accompanies him away from the nest.',
-              },
-            },
-          ],
-        },
-      ],
-      role: { it: 'Re delle formichimere', en: 'Chimera Ant King' },
-      log: {
-        it: 'La regina chiede che gli venga riferito il nome che ha scelto per lui.',
-        en: 'The Queen asks that he be told the name she chose for him.',
-      },
-      status: [{ episode: 92, chapter: 215, value: 'alive' }],
-      affiliation: [
-        {
-          episode: 92,
-          chapter: 215,
-          value: { it: 'Formichimere', en: 'Chimera Ants' },
-        },
-      ],
-    },
-    'shaiapouf': {
-      relationships: [
-        {
-          episode: 86,
-          chapter: 202,
-          value: [
-            {
-              character: 'neferpitou',
-              type: { it: 'Alleato', en: 'Ally' },
-              summary: {
-                it: 'Si presenta a lui come guardia reale.',
-                en: 'Introduces himself as a fellow Royal Guard.',
-              },
-            },
-          ],
-        },
-      ],
-      role: { it: 'Guardia reale', en: 'Royal Guard' },
-      log: {
-        it: 'Si presenta come guardia reale.',
-        en: 'Introduces himself as a Royal Guard.',
-      },
-      status: [{ episode: 86, chapter: 202, value: 'alive' }],
-      affiliation: [
-        {
-          episode: 86,
-          chapter: 202,
-          value: { it: 'Guardia della regina', en: 'Queen’s guard' },
-        },
-      ],
-    },
-    'palm-siberia': {
-      relationships: [
-        {
-          episode: 86,
-          chapter: 200,
-          value: [
-            {
-              character: 'gon-freecss',
-              type: { it: 'Alleato', en: 'Ally' },
-              summary: {
-                it: 'Gli spiega come entrare nella squadra.',
-                en: 'Explains how he can join the team.',
-              },
-            },
-          ],
-        },
-      ],
-      role: { it: 'Allieva di un Hunter', en: 'Hunter’s student' },
-      log: {
-        it: 'Si presenta a Gon e Killua.',
-        en: 'Introduces herself to Gon and Killua.',
-      },
-      status: [{ episode: 86, chapter: 200, value: 'alive' }],
-      affiliation: [
-        {
-          episode: 86,
-          chapter: 200,
-          value: { it: 'Allieva di un Hunter', en: 'Hunter’s student' },
-        },
-      ],
-    },
+    ...CHIMERA_ANT_HUNTERS.dossiers,
+    ...CHIMERA_ANT_NGL.dossiers,
+    ...CHIMERA_ANT_ROYALS.dossiers,
+    ...CHIMERA_ANT_SQUADS.dossiers,
     'stick-dinner': surveyDossier,
     'monta-yuras': surveyDossier,
     'banana-kavaro': surveyDossier,
@@ -173,42 +88,10 @@ export const chimeraAnt: HunterSaga = {
     },
   },
   entries: [
-    {
-      id: 'meruem',
-      kind: 'character',
-      revealedAtEpisode: 92,
-      revealedAtChapter: 215,
-      name: { it: 'Meruem', en: 'Meruem' },
-      summary: {
-        it: 'La regina chiede che gli venga riferito il nome che ha scelto per lui.',
-        en: 'The Queen asks that he be told the name she chose for him.',
-      },
-      visual: { art: 'meruem', tint: 'vermilion' },
-    },
-    {
-      id: 'shaiapouf',
-      kind: 'character',
-      revealedAtEpisode: 86,
-      revealedAtChapter: 202,
-      name: { it: 'Shaiapouf', en: 'Shaiapouf' },
-      summary: {
-        it: 'Si presenta come guardia reale.',
-        en: 'Introduces himself as a Royal Guard.',
-      },
-      visual: { art: 'shaiapouf', tint: 'vermilion' },
-    },
-    {
-      id: 'palm-siberia',
-      kind: 'character',
-      revealedAtEpisode: 86,
-      revealedAtChapter: 200,
-      name: { it: 'Palm', en: 'Palm' },
-      summary: {
-        it: 'Si presenta a Gon e Killua.',
-        en: 'Introduces herself to Gon and Killua.',
-      },
-      visual: { art: 'palm-siberia', tint: 'vermilion' },
-    },
+    ...CHIMERA_ANT_HUNTERS.entries,
+    ...CHIMERA_ANT_NGL.entries,
+    ...CHIMERA_ANT_ROYALS.entries,
+    ...CHIMERA_ANT_SQUADS.entries,
     {
       id: 'chimera-ant-arc',
       kind: 'arc',

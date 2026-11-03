@@ -12,7 +12,27 @@ import {
 import type { Stroke } from '~/lib/view/records'
 
 import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
+import {
+  CHIMERA_ANT_HUNTERS_DRAWINGS,
+  chimeraAntHuntersRedrawn,
+} from './chimera-ant-hunters'
+import {
+  CHIMERA_ANT_NGL_DRAWINGS,
+  chimeraAntNglRedrawn,
+} from './chimera-ant-ngl'
 import { CHIMERA_ANT_PLACE_DRAWINGS } from './chimera-ant-places'
+import {
+  CHIMERA_ANT_RETURNING_DRAWINGS,
+  chimeraAntReturningRedrawn,
+} from './chimera-ant-returning'
+import {
+  CHIMERA_ANT_ROYALS_DRAWINGS,
+  chimeraAntRoyalsRedrawn,
+} from './chimera-ant-royals'
+import {
+  CHIMERA_ANT_SQUADS_DRAWINGS,
+  chimeraAntSquadsRedrawn,
+} from './chimera-ant-squads'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
@@ -104,6 +124,11 @@ export const DRAWINGS = {
   ...ZOLDYCK_DRAWINGS,
   ...CHAPTER_ONE_DRAWINGS,
   ...CHIMERA_ANT_PLACE_DRAWINGS,
+  ...CHIMERA_ANT_HUNTERS_DRAWINGS,
+  ...CHIMERA_ANT_NGL_DRAWINGS,
+  ...CHIMERA_ANT_ROYALS_DRAWINGS,
+  ...CHIMERA_ANT_SQUADS_DRAWINGS,
+  ...CHIMERA_ANT_RETURNING_DRAWINGS,
   ...TRICK_TOWER_DRAWINGS,
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
@@ -250,31 +275,6 @@ export const DRAWINGS = {
     { d: 'M62 87 Q68 74 97 77 Q91 92 62 87 Z', role: 'accent' },
     { d: 'M63 87 Q77 81 92 79' },
     shadow(80, 177, 38),
-  ],
-  'palm-siberia': [
-    { d: 'M45 89 Q49 130 58 143 Q79 155 102 143 Q111 124 115 89' },
-    { d: ellipse(80, 89, 35, 11), role: 'accent' },
-    { d: 'M114 101 Q144 91 138 116 Q133 132 108 132' },
-    { d: 'M66 66 Q58 54 67 44 M87 66 Q79 55 89 43', role: 'ambient' },
-    shadow(80, 169, 42),
-  ],
-  'shaiapouf': [
-    {
-      d: 'M79 102 C46 49 23 50 26 84 Q30 107 65 117 C36 115 36 151 61 143 Q73 139 80 122',
-    },
-    {
-      d: 'M81 102 C114 49 137 50 134 84 Q130 107 95 117 C124 115 124 151 99 143 Q87 139 80 122',
-    },
-    { d: 'M80 94 V134 M80 97 L72 83 M80 97 L88 83', role: 'accent' },
-    shadow(80, 169, 42),
-  ],
-  'meruem': [
-    {
-      d: 'M43 111 Q43 63 80 60 Q117 63 117 111 L102 103 L93 122 H67 L58 103 Z',
-    },
-    { d: 'M52 95 Q80 77 108 95', role: 'accent' },
-    { d: 'M67 122 Q72 145 80 148 Q88 145 93 122 M73 129 H87' },
-    shadow(80, 169, 39),
   ],
   'chimera-ant-arc': [
     { d: ellipse(114, 104, 26, 18), role: 'accent' },
@@ -1053,4 +1053,9 @@ export const REDRAWINGS: Redrawings = {
   ...heavensArenaRedrawn,
   ...yorknewCityRedrawn,
   ...greedIslandRedrawn,
+  ...chimeraAntHuntersRedrawn,
+  ...chimeraAntNglRedrawn,
+  ...chimeraAntRoyalsRedrawn,
+  ...chimeraAntSquadsRedrawn,
+  ...chimeraAntReturningRedrawn,
 }
