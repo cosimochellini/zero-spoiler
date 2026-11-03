@@ -71,6 +71,16 @@ function waitsForGing(
   )
 }
 
+function expectedChapter(
+  field: Parameters<typeof waitsForGing>[0],
+  entry: Parameters<typeof waitsForGing>[1] & { episode: number },
+): number {
+  if (field === 'affiliation' && entry.episode === 77) {
+    return 186
+  }
+  return waitsForGing(field, entry) ? 66 : 1
+}
+
 describe('chapter-one pins', () => {
   it.each(IDS)(
     'pins every %s fact and excludes the reordered conversion anchor',
@@ -87,7 +97,7 @@ describe('chapter-one pins', () => {
 
       for (const { field, timeline } of timelines) {
         for (const entry of timeline) {
-          expect(entry.chapter).toBe(waitsForGing(field, entry) ? 66 : 1)
+          expect(entry.chapter).toBe(expectedChapter(field, entry))
         }
       }
     },

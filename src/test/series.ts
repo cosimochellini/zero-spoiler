@@ -90,7 +90,8 @@ const EXPECTED: Record<string, Expected> = {
   // the Heavens Arena characters and place (#896), Silva (#834), Yorknew
   // City (#900), Greed Island through the finale (#1016–#1019) and Michael
   // (#1032), and chronicles for the characters filed through #1019 and the
-  // returning cast (#906).
+  // returning cast (#906). Chimera Ant phase 1 (#1020) adds five characters
+  // and one place.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -109,14 +110,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 217,
+      affiliations: 223,
       arcs: 7,
-      characters: 109,
+      characters: 114,
       chronicles: 345,
       linkedOrigins: 7,
-      places: 23,
-      statuses: 150,
-      timelines: 473,
+      places: 24,
+      statuses: 155,
+      timelines: 484,
       visits: 0,
     },
     namesSaidEarly: true,

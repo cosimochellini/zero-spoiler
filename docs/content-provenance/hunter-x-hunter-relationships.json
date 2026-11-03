@@ -914,7 +914,27 @@
     "dwun": ["hxh-en-Dwun-424835.json", "hxh-en-Chapter_184-329212.json"],
     "elena": ["hxh-en-Elena-424833.json", "hxh-en-Chapter_184-329212.json"],
     "eta": ["hxh-en-Eta-424828.json", "hxh-en-Chapter_184-329212.json"],
-    "list": ["hxh-en-List-424433.json", "hxh-en-Chapter_184-329212.json"]
+    "list": ["hxh-en-List-424433.json", "hxh-en-Chapter_184-329212.json"],
+    "spinner-clow": [
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "banana-kavaro": [
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "monta-yuras": [
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "stick-dinner": [
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "neferpitou": [
+      "hxh-en-Chapter_198-416866.json",
+      "hxh-en-Episode_85_(2011)-419187.json"
+    ]
   },
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",
