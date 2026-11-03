@@ -322,6 +322,21 @@ describe('Chimera Ant dated facts', () => {
     },
   )
 
+  it.each(LOCALES)(
+    'changes Pike’s status and art at chapter 228 in %s',
+    (locale) => {
+      const pike = characterById('pike')
+      const before = readerFor(archive, at('chapter', 227), locale)
+      const reached = readerFor(archive, at('chapter', 228), locale)
+
+      expect(archive.latestOf(before, pike, 'status')).toBe('alive')
+      expect(archive.latestOf(reached, pike, 'status')).toBe('deceased')
+      expect(drawingsFor(['pike'], reached)['pike']).not.toStrictEqual(
+        drawingsFor(['pike'], before)['pike'],
+      )
+    },
+  )
+
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([
       'kite',
