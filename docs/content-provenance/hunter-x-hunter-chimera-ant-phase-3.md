@@ -42,3 +42,8 @@ before this draft is complete.
   The earlier puppet depiction and the later cage scene remain separate research
   items. The manga reveal of Netero’s orders falls in phase 4. The anime
   commander’s identity as Gyro is unverified.
+
+Hagya keeps one dossier. The manga role gives the name Leol from chapter 240.
+Episode 99 uses the name in synopsis narration. Episode 106 reports an explicit
+introduction to Morel. Anime visibility requires a source-specific display name
+before the dossier can open safely.

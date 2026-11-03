@@ -146,7 +146,23 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: SQUADRON_LEADER,
+      role: [
+        {
+          episode: 81,
+          chapter: 192,
+          source: 'chapter',
+          value: SQUADRON_LEADER,
+        },
+        {
+          episode: 101,
+          chapter: 240,
+          source: 'chapter',
+          value: {
+            it: 'Comandante di divisione, ora Leol',
+            en: 'Squadron Leader, now Leol',
+          },
+        },
+      ],
       log: {
         it: 'Ammette con un altro comandante di divisione che la sua divisione caccia gli umani per divertimento e ne lascia i corpi. Promette di tenere per la regina gli umani rari, poi dice ai suoi compagni che li mangeranno loro.',
         en: 'He admits to another Squadron Leader that his squad hunts humans for fun and leaves the bodies. He promises to save any rare humans for the Queen, then tells his comrades they will eat them themselves.',
