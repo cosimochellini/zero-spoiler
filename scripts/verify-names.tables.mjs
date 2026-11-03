@@ -207,6 +207,8 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
+  // No Michael entry in the Italian character/Hunter lists; dub unviewed (#1032).
+  'michael': 'Michael',
   // No Jitonoda entry in the Italian character/Hunter lists; dub unviewed (#1019).
   'jitonoda': 'Jitonoda',
   // No Jispa entry in either Italian character/Hunter list; dub unviewed (#1018).

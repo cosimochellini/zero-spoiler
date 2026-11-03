@@ -201,6 +201,21 @@ export const greedIsland: HunterSaga = {
       },
       visual: { art: 'jeitsari', tint: 'azure' },
     },
+    // Killua asks the intercom "Does Michael live here?" in chapter 148 and
+    // meets him in 603. Episode 66's synopsis shows only "a man" (#1032).
+    {
+      id: 'michael',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 66,
+      revealedAtChapter: 148,
+      name: { it: 'Michael', en: 'Michael' },
+      summary: {
+        it: 'L’uomo che consegna a Killua una carta per raggiungere la sede dell’esame Hunter.',
+        en: 'The man who gives Killua a card for reaching the Hunter Exam site.',
+      },
+      visual: { art: 'michael', tint: 'blue' },
+    },
 
     // The trader names Dorias and sets a rendezvous there in chapter 151.
     // Episode 66's synopsis confirms the visit, but not a naming scene.
@@ -558,6 +573,28 @@ export const greedIsland: HunterSaga = {
           chapter: 121,
           source: 'chapter',
           value: { it: 'Associazione Hunter', en: 'Hunter Association' },
+        },
+      ],
+    },
+    // No chronicle yet: stories go through the chronicle verification log.
+    'michael': {
+      role: {
+        it: 'Guida per la sede dell’esame',
+        en: 'Guide to the exam site',
+      },
+      log: {
+        it: 'Killua lo trova chiedendo di lui al citofono di un condominio. Gli consegna una carta da mostrare in un negozio vicino alla stazione, da cui si scende alla sede dell’esame Hunter.',
+        en: 'Killua finds him by asking for him at the intercom of an apartment block. He gives Killua a card to show at a shop by the station, from which a lift goes down to the Hunter Exam site.',
+      },
+      status: [
+        { episode: 66, chapter: 148, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 66,
+          chapter: 148,
+          source: 'chapter',
+          value: { it: 'Esame Hunter', en: 'Hunter Exam' },
         },
       ],
     },

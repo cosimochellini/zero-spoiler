@@ -211,6 +211,7 @@ const ARRIVAL = [
     place: true,
     source: 'chapter',
   },
+  { id: 'michael', episode: 66, chapter: 148, place: false, source: 'chapter' },
   {
     id: 'jitonoda',
     episode: 61,

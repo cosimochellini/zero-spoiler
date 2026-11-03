@@ -297,6 +297,25 @@ export const GREED_ISLAND_DRAWINGS = {
     },
     shadow(80, 191, 53),
   ],
+  // The card Michael hands Killua in chapter 148, held out from the plain
+  // sweater of his appearance. A blank card: no stripe, chip or lettering.
+  'michael': [
+    { d: 'M50.7 85 L62 38 L130 56 L118 106 L64.2 91.8', role: 'accent' },
+    { d: 'M130 56 L133 60 L121 110 L118 106 M121 110 L80 99.1', role: 'soft' },
+    { d: 'M4 184 L28 136 M52 144 L26 196' },
+    { d: 'M27 124 L56 138 L50 152 L21 138 Z' },
+    {
+      d: 'M33 128 L27 141 M40 131.4 L34 144.4 M47 134.8 L41 147.8',
+      role: 'soft',
+    },
+    { d: 'M38 99 L65 72 C70 67 79 73 74 82 L47 109' },
+    {
+      d: 'M29 125 Q30 112 39 102 M70 93.3 Q80 96 79 103 Q78 108 70 108 Q79 112 76 119 Q72 125 62 121 Q63 130 56 138',
+    },
+    { d: 'M70 108 Q66 107 64 104 M62 121 Q58 119 57 116', role: 'soft' },
+    { d: 'M12 168 l6 3 M18 156 l6 3 M24 144 l4 2', role: 'ambient' },
+    { d: 'M36 160 Q30 170 34 182', role: 'soft' },
+  ],
   // Biscuit's sleeveless dress at her introduction, chapter 137 / episode
   // 62. The skirt turns away on the right; no later form or Nen is shown.
   'biscuit-krueger': [
