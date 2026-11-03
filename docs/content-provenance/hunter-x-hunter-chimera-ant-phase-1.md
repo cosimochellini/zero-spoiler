@@ -21,3 +21,7 @@ candidates and do not establish when a name is spoken.
 | Pending     | Kakin Empire, Balsa Islands, NGL Border Stop, Chimera Ant Nest, D² Manufacturing Plant                                                                              | Verify positive in-story place names and visits independently. Descriptive wiki location titles are insufficient.                               |
 | Omitted     | Bira                                                                                                                                                                | The characters infer a connection to the country. This is not a visit.                                                                          |
 | Omitted     | Chimera Ant Queen, Crab, Alligator, Mantis, Frog, Octopus, Small Bear, Turtle, NGL Interpreter, Koala, Gun-toting Ant, Rover, Spot, Centipede, Mosquito, Rhino, Pig | Roles, species, descriptors or labels without a verified personal naming scene in the phase. Revisit any later positive name evidence.          |
+
+The Pending rows above are resolved in the phase 2 inventory
+(`hunter-x-hunter-chimera-ant-phase-2.md`, #1047), which filed the names said in
+chapters 186–198 together with phase 2's; Balda followed from #1046.

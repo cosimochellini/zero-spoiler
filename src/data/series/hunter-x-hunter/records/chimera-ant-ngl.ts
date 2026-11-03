@@ -278,6 +278,43 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
+    // From #1046: Pokkle tells him and Ponzu to run, chapter 190 and episode
+    // 80, the scene he dies in, so he opens deceased. The ant that kills him
+    // is filed for the manga alone, so no text names it.
+    'balda': {
+      relationships: [
+        {
+          episode: 80,
+          chapter: 190,
+          value: [
+            {
+              character: 'pokkle',
+              type: { it: 'Capo della spedizione', en: 'Expedition leader' },
+              summary: {
+                it: 'Balda segue Pockul in NGL. Quando le formiche attaccano, Pockul dice a lui e a Ponzu di scappare.',
+                en: 'Balda follows Pokkle in NGL. When the ants attack, Pokkle tells him and Ponzu to run.',
+              },
+            },
+          ],
+        },
+      ],
+      role: {
+        it: 'Membro della spedizione di Pockul',
+        en: 'Member of Pokkle’s expedition',
+      },
+      log: {
+        it: 'Esplora NGL con Pockul e Ponzu. Una formica lo cattura nella sua ragnatela e lo uccide.',
+        en: 'He searches NGL with Pokkle and Ponzu. An ant catches him in its web and kills him.',
+      },
+      status: [{ episode: 80, chapter: 190, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 80,
+          chapter: 190,
+          value: { it: 'Spedizione di Pockul', en: 'Pokkle’s expedition' },
+        },
+      ],
+    },
   },
   entries: [
     {
@@ -375,6 +412,18 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'A member of Pokkle’s party searching NGL for giant insects.',
       },
       visual: { art: 'pekuba', tint: 'magenta' },
+    },
+    {
+      id: 'balda',
+      kind: 'character',
+      revealedAtEpisode: 80,
+      revealedAtChapter: 190,
+      name: { it: 'Balda', en: 'Balda' },
+      summary: {
+        it: 'Un membro della squadra di Pockul in NGL.',
+        en: 'A member of Pokkle’s team in NGL.',
+      },
+      visual: { art: 'balda', tint: 'ice' },
     },
   ],
 }

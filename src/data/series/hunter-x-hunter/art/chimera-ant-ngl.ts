@@ -1,5 +1,5 @@
 import type { Drawings, Redrawings } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
 /** The people of NGL and the survey team, Chimera Ant phase 2 (#1021). */
 export const CHIMERA_ANT_NGL_DRAWINGS = {
@@ -145,6 +145,29 @@ export const CHIMERA_ANT_NGL_DRAWINGS = {
     { d: 'M72 112 L70 140 M98 114 L106 132', role: 'soft' },
     { d: 'M56 94 L48 108 L62 106 M104 94 L112 108 L98 106' },
     shadow(84, 162, 36),
+  ],
+  // Balda's white shirt over long light sleeves, the sleeves in tint: one
+  // of Pokkle's companions, named as Pokkle tells him to run in chapter 190
+  // and episode 80, the scene he dies in (#1046). No figure.
+  'balda': [
+    {
+      d: 'M58 52 L40 60 L34 100 L46 102 L50 82 V150 H110 V82 L114 102 L126 100 L120 60 L102 52 Q80 64 58 52 Z',
+    },
+    {
+      d: 'M34 100 L26 142 L38 144 L46 102 M126 100 L134 142 L122 144 L114 102',
+      role: 'accent',
+    },
+    { d: 'M58 52 L70 70 L80 62 L90 70 L102 52', role: 'soft' },
+    { d: 'M80 64 V150', role: 'soft' },
+    {
+      d: dots([
+        [85, 84],
+        [85, 104],
+        [85, 124],
+      ]),
+    },
+    { d: 'M100 112 l6 -4 M100 126 l6 -4 M100 140 l6 -4', role: 'ambient' },
+    shadow(80, 160, 54),
   ],
 } satisfies Drawings
 

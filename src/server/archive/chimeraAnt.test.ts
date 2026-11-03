@@ -54,6 +54,7 @@ const PHASE_TWO: Row[] = [
   { id: 'gyro', episode: 78, chapter: 203, place: false },
   { id: 'pekuba', episode: 79, chapter: 189, place: false, source: 'episode' },
   { id: 'reina', episode: 80, chapter: 189, place: false },
+  { id: 'balda', episode: 80, chapter: 190, place: false },
   { id: 'peggy', episode: 79, chapter: 189, place: false, source: 'chapter' },
   { id: 'zazan', episode: 84, chapter: 189, place: false },
   { id: 'pike', episode: 80, chapter: 190, place: false, source: 'chapter' },
