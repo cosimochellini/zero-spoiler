@@ -8,6 +8,8 @@ import { characterPage, drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
 import { type Reader, readerFor } from './reader.server'
 
+import { relationshipsOf } from './relationships.server'
+
 const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
 if (series === undefined) {
   throw new Error('Chimera Ant tests require Hunter x Hunter')
@@ -49,5 +51,56 @@ describe.each(CASES)('$id in $locale by $unit', (row) => {
 
     expect(opened(row.id, row.place, reached)).toBe(true)
     expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
+  })
+})
+
+describe('Chimera Ant dated facts', () => {
+  it.each(CASES.filter(({ place }) => !place))(
+    'opens the relationship with Kite for $id in $locale by $unit',
+    ({ id, locale, unit, episode, chapter }) => {
+      const character = archive.getCharacter(id)
+      if (character === undefined) throw new Error('Missing character')
+      const gate =
+        unit === 'chapter' ? chapter
+        : id === 'neferpitou' ? 85
+        : episode
+      const related = (count: number) =>
+        relationshipsOf(
+          character,
+          readerFor(archive, at(unit, count), locale),
+        ).some(({ person }) => person.id === 'kite')
+      expect(related(gate - 1)).toBe(false)
+      expect(related(gate)).toBe(true)
+    },
+  )
+
+  it.each(
+    LOCALES.flatMap((locale) => [
+      { locale, unit: 'episode', gate: 77 },
+      { locale, unit: 'chapter', gate: 186 },
+    ]),
+  )(
+    'dates Kite’s survey affiliation in $locale by $unit',
+    ({ locale, unit, gate }) => {
+      const kite = archive.getCharacter('kite')
+      if (kite === undefined) throw new Error('Missing Kite')
+      const affiliation = (count: number) =>
+        archive.latestOf(
+          readerFor(archive, at(unit, count), locale),
+          kite,
+          'affiliation',
+        )
+      expect(affiliation(gate - 1)?.[locale]).not.toMatch(/ricerca|survey/)
+      expect(affiliation(gate)?.[locale]).toMatch(/ricerca|survey/)
+    },
+  )
+
+  it('lists the Chimera Ant arc leads', () => {
+    expect(archive.leads['chimera-ant-arc']).toStrictEqual([
+      'kite',
+      'gon-freecss',
+      'killua',
+      'neferpitou',
+    ])
   })
 })
