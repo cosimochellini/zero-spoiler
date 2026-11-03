@@ -121,7 +121,7 @@ const PHASE_THREE: Row[] = [
     place: false,
     source: 'chapter',
   },
-  { id: 'meteor-city', episode: 24, chapter: 102, place: true },
+  { id: 'meteor-city', episode: 96, chapter: 224, place: true },
   { id: 'peijin', episode: 102, chapter: 243, place: true, source: 'chapter' },
   { id: 'mandai-city', episode: 102, chapter: 243, place: true },
   { id: 'bihorn', episode: 97, chapter: 227, place: false, source: 'chapter' },

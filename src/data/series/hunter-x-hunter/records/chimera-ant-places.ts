@@ -26,11 +26,13 @@ const NGL_RECORD: HunterEntity = {
  */
 export const CHIMERA_ANT_PLACE_RECORDS: HunterEntity[] = [
   NGL_RECORD,
+  // Named in chapter 102 / episode 24 but first visited in chapter 224 /
+  // episode 96, when the Phantom Troupe returns to it.
   {
     id: 'meteor-city',
     kind: 'place',
-    revealedAtEpisode: 24,
-    revealedAtChapter: 102,
+    revealedAtEpisode: 96,
+    revealedAtChapter: 224,
     name: { it: 'Meteor City', en: 'Meteor City' },
     summary: {
       it: 'Una città ai margini dei registri ufficiali.',
@@ -324,7 +326,7 @@ export const CHIMERA_ANT_PLACES: Record<
   'meteor-city': {
     form: 'city',
     region: 'mainland',
-    arc: 'hunter-exam-arc',
+    arc: 'chimera-ant-arc',
     landmark: { it: 'La città', en: 'The city' },
     log: {
       it: 'Una città ai margini dei registri ufficiali.',
