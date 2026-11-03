@@ -32,7 +32,12 @@ const RECORDS = [
   { id: 'ngl', episode: 79, chapter: 189, place: true },
   { id: 'neferpitou', episode: 84, chapter: 198, place: false },
 ]
-const CASES = RECORDS.flatMap((record) =>
+const PHASE_TWO = [
+  { id: 'palm-siberia', episode: 86, chapter: 200, place: false },
+  { id: 'shaiapouf', episode: 86, chapter: 202, place: false },
+  { id: 'meruem', episode: 92, chapter: 215, place: false },
+]
+const CASES = [...RECORDS, ...PHASE_TWO].flatMap((record) =>
   LOCALES.flatMap((locale) =>
     ['episode', 'chapter'].map((unit) => ({ ...record, locale, unit })),
   ),
@@ -64,7 +69,12 @@ describe.each(CASES)('$id in $locale by $unit', (row) => {
 })
 
 describe('Chimera Ant dated facts', () => {
-  it.each(CASES.filter(({ place }) => !place))(
+  it.each(
+    CASES.filter(
+      ({ id, place }) =>
+        !place && PHASE_TWO.every((record) => record.id !== id),
+    ),
+  )(
     'opens the relationship with Kite for $id in $locale by $unit',
     ({ id, locale, unit, episode, chapter }) => {
       const character = characterById(id)
@@ -108,6 +118,9 @@ describe('Chimera Ant dated facts', () => {
       'gon-freecss',
       'killua',
       'neferpitou',
+      'palm-siberia',
+      'shaiapouf',
+      'meruem',
     ])
   })
 })
