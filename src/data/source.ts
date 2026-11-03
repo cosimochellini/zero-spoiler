@@ -62,10 +62,21 @@ export function archiveIn(
 /** Builds one copy; `archiveIn` keeps it. */
 function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
   const has = (gated: Gated): boolean => toldIn(gated, source)
-  const kept = (entities: Entity[]): Entity[] =>
-    entities.filter((entity) => has(entity))
+  const named = (entity: Entity): Entity =>
+    source === 'episode' && entity.episodeName !== undefined ?
+      { ...entity, name: entity.episodeName }
+    : entity
+  const kept = (entities: Entity[]): Entity[] => {
+    const result: Entity[] = []
+    for (const entity of entities) {
+      if (has(entity)) {
+        result.push(named(entity))
+      }
+    }
+    return result
+  }
   const found = (entity: Entity | undefined): Entity | undefined =>
-    entity !== undefined && has(entity) ? entity : undefined
+    entity !== undefined && has(entity) ? named(entity) : undefined
 
   return {
     ...archive,

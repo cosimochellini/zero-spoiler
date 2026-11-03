@@ -129,7 +129,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     hagya: {
       relationships: [
         {
-          episode: 92,
+          episode: 106,
           chapter: 214,
           source: 'chapter',
           value: [
@@ -149,13 +149,19 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
       role: [
         {
-          episode: 81,
+          episode: 106,
+          chapter: 192,
+          source: 'episode',
+          value: SQUADRON_LEADER,
+        },
+        {
+          episode: 106,
           chapter: 192,
           source: 'chapter',
           value: SQUADRON_LEADER,
         },
         {
-          episode: 101,
+          episode: 106,
           chapter: 240,
           source: 'chapter',
           value: {
@@ -165,19 +171,21 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
       log: {
-        it: 'Ammette con un altro comandante di divisione che la sua divisione caccia gli umani per divertimento e ne lascia i corpi. Promette di tenere per la regina gli umani rari, poi dice ai suoi compagni che li mangeranno loro.',
-        en: 'He admits to another Squadron Leader that his squad hunts humans for fun and leaves the bodies. He promises to save any rare humans for the Queen, then tells his comrades they will eat them themselves.',
+        it: 'Guida una divisione delle formichimere.',
+        en: 'Leads a squad of Chimera Ants.',
       },
       status: [
-        { episode: 81, chapter: 192, source: 'chapter', value: 'alive' },
-        { episode: 107, chapter: 254, source: 'chapter', value: 'deceased' },
+        { episode: 106, chapter: 192, source: 'chapter', value: 'alive' },
+        { episode: 106, chapter: 192, source: 'episode', value: 'alive' },
+        { episode: 107, chapter: 254, value: 'deceased' },
       ],
       affiliation: [
-        { episode: 81, chapter: 192, source: 'chapter', value: CHIMERA_ANTS },
+        { episode: 106, chapter: 192, source: 'episode', value: CHIMERA_ANTS },
+        { episode: 106, chapter: 192, source: 'chapter', value: CHIMERA_ANTS },
         // With the Queen unable to lay eggs, he proposes that each of them
         // try to become a king, chapter 214; he sets off, chapter 216.
         {
-          episode: 91,
+          episode: 106,
           chapter: 214,
           source: 'chapter',
           value: {
@@ -186,7 +194,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         },
         {
-          episode: 92,
+          episode: 106,
           chapter: 216,
           source: 'chapter',
           value: {
@@ -458,13 +466,13 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       },
       visual: { art: 'pike', tint: 'ice' },
     },
-    // Named in speech at the nest in chapter 192; the anime names him only
-    // in narration, so episode 81 only orders him.
+    // Hagya is named at the nest in chapter 192. Leol introduces himself
+    // to Morel in episode 106.
     {
       id: 'hagya',
       kind: 'character',
-      source: 'chapter',
-      revealedAtEpisode: 81,
+      episodeName: { it: 'Leol', en: 'Leol' },
+      revealedAtEpisode: 106,
       revealedAtChapter: 192,
       name: { it: 'Hagya', en: 'Hagya' },
       summary: {

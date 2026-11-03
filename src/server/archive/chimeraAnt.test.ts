@@ -60,7 +60,7 @@ const PHASE_TWO: Row[] = [
   { id: 'pike', episode: 80, chapter: 190, place: false, source: 'chapter' },
   { id: 'cheetu', episode: 79, chapter: 192, place: false },
   { id: 'rammot', episode: 79, chapter: 192, place: false },
-  { id: 'hagya', episode: 81, chapter: 192, place: false, source: 'chapter' },
+  { id: 'hagya', episode: 106, chapter: 192, place: false },
   { id: 'yunju', episode: 79, chapter: 193, place: false },
   { id: 'baro', episode: 83, chapter: 195, place: false, source: 'chapter' },
   { id: 'morel-mackernasey', episode: 86, chapter: 199, place: false },
@@ -362,6 +362,17 @@ describe('Chimera Ant dated facts', () => {
     expect(drawingsFor(['hagya'], reached)['hagya']).not.toStrictEqual(
       drawingsFor(['hagya'], before)['hagya'],
     )
+  })
+
+  it.each(LOCALES)('uses the name told by each medium in %s', (locale) => {
+    const anime = readerFor(archive, at('episode', 106), locale)
+    const manga = readerFor(archive, at('chapter', 192), locale)
+
+    expect(anime.archive.getCharacter('hagya')?.name[locale]).toBe('Leol')
+    expect(
+      anime.archive.characters.find(({ id }) => id === 'hagya')?.name[locale],
+    ).toBe('Leol')
+    expect(manga.archive.getCharacter('hagya')?.name[locale]).toBe('Hagya')
   })
 
   it('lists the Chimera Ant arc leads', () => {

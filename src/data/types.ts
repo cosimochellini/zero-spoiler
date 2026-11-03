@@ -57,6 +57,7 @@ export interface Visual {
  * (`~/data/reveal`).
  */
 export interface Entity {
+  episodeName?: LocalizedText
   id: string
   kind: EntityKind
   name: LocalizedText

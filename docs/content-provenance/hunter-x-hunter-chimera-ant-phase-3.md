@@ -51,8 +51,7 @@ Hagya keeps one dossier. The manga status and drawing change when he sinks
 during the fight with Morel in chapter 254. Episode 107 depicts the same
 outcome. The manga role gives the name Leol from chapter 240. Episode 99 uses
 the name in synopsis narration. Episode 106 reports an explicit introduction to
-Morel. Anime visibility requires a source-specific display name before the
-dossier can open safely.
+Morel. The anime archive opens the same dossier as Leol at episode 106.
 
 Flutter is unconscious after Knov’s attack in chapter 248 and defeated in
 episode 104. These scenes establish defeat. A death stage waits for a source
