@@ -113,7 +113,14 @@ const PHASE_TWO: Row[] = [
   },
 ]
 const UNITS = ['episode', 'chapter'] as const
-const CASES = [...RECORDS, ...PHASE_TWO].flatMap((record) =>
+const PHASE_THREE: Row[] = [
+  { id: 'luonton-city', episode: 100, chapter: 235, place: true },
+  { id: 'komugi', episode: 103, chapter: 257, place: false },
+  { id: 'remora', episode: 101, chapter: 238, place: false },
+  { id: 'tsukuma', episode: 96, chapter: 224, place: false, source: 'chapter' },
+]
+
+const CASES = [...RECORDS, ...PHASE_TWO, ...PHASE_THREE].flatMap((record) =>
   LOCALES.flatMap((locale) =>
     UNITS.filter(
       (unit) => record.source === undefined || record.source === unit,
@@ -121,7 +128,7 @@ const CASES = [...RECORDS, ...PHASE_TWO].flatMap((record) =>
   ),
 )
 /** The records one medium alone names, asked in the other medium. */
-const UNNAMED = PHASE_TWO.flatMap((record) =>
+const UNNAMED = [...PHASE_TWO, ...PHASE_THREE].flatMap((record) =>
   record.source === undefined ?
     []
   : LOCALES.map((locale) => ({
@@ -212,8 +219,7 @@ describe.each(DEATHS)(
 describe('Chimera Ant dated facts', () => {
   it.each(
     CASES.filter(
-      ({ id, place }) =>
-        !place && PHASE_TWO.every((record) => record.id !== id),
+      ({ id, place }) => !place && RECORDS.some((record) => record.id === id),
     ),
   )(
     'opens the relationship with Kite for $id in $locale by $unit',
@@ -255,6 +261,24 @@ describe('Chimera Ant dated facts', () => {
     },
   )
 
+  it.each(
+    LOCALES.flatMap((locale) => [
+      { locale, unit: 'episode', gate: 97 },
+      { locale, unit: 'chapter', gate: 229 },
+    ]),
+  )('dates Zazan’s death in $locale by $unit', ({ locale, unit, gate }) => {
+    const zazan = characterById('zazan')
+    const status = (count: number): string | undefined =>
+      archive.latestOf(
+        readerFor(archive, at(unit, count), locale),
+        zazan,
+        'status',
+      )
+
+    expect(status(gate - 1)).toBe('alive')
+    expect(status(gate)).toBe('deceased')
+  })
+
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([
       'kite',
@@ -269,6 +293,7 @@ describe('Chimera Ant dated facts', () => {
       'shoot-mcmahon',
       'colt',
       'meruem',
+      'komugi',
       'shaiapouf',
       'menthuthuyoupi',
     ])

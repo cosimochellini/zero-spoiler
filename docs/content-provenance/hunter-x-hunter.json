@@ -4665,7 +4665,9 @@
       "https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)?oldid=416445",
       "https://hunterxhunter.fandom.com/wiki/Episode_84_(2011)?oldid=416447",
       "https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)?oldid=416454",
-      "https://hunterxhunter.fandom.com/wiki/Zazan?oldid=423889"
+      "https://hunterxhunter.fandom.com/wiki/Zazan?oldid=423889",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_229?oldid=416226",
+      "https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)?oldid=418091"
     ],
     "unverified": [
       "Manga panels, licensed episode timestamps and Italian dub audio unviewed."
@@ -4755,6 +4757,43 @@
       "Manga panels, licensed episode timestamps and the 2011 Italian dub were not viewed (#1020).",
       "Gate rule (#1020): the first scene whose pinned chapter or episode page reports the name in speech, thought or writing; an episode adapting a manga naming scene names it there unless an earlier one already does.",
       "Pokkle tells him to run in chapter 190, the chapter he dies in; episode 79’s page already has Pokkle call him by name (spelled “Bara” there), but the gate waits for episode 80, which adapts chapter 190 and kills him. No Italian Wikipedia entry; name kept."
+    ]
+  },
+  "komugi": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_257?oldid=324511",
+      "https://hunterxhunter.fandom.com/wiki/Episode_103_(2011)?oldid=416463"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamps and 2011 Italian dub audio unviewed."
+    ]
+  },
+  "remora": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_238?oldid=411708",
+      "https://hunterxhunter.fandom.com/wiki/Episode_101_(2011)?oldid=411710"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamps and 2011 Italian dub audio unviewed."
+    ]
+  },
+  "tsukuma": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_224?oldid=383536",
+      "https://hunterxhunter.fandom.com/wiki/Tsukuma?oldid=423945"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamps and 2011 Italian dub audio unviewed."
+    ]
+  },
+  "luonton-city": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_235?oldid=416232",
+      "https://hunterxhunter.fandom.com/wiki/Episode_100_(2011)?oldid=410878",
+      "https://hunterxhunter.fandom.com/wiki/Luonton_City?oldid=421699"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamps, street design and 2011 Italian dub form unviewed."
     ]
   }
 }

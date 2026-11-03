@@ -62,7 +62,10 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Guida una delle divisioni della colonia. Alcuni dei suoi soldati vengono uccisi da umani.',
         en: 'She leads one of the colony’s squads. Some of its soldiers are killed by humans.',
       },
-      status: [{ episode: 84, chapter: 189, value: 'alive' }],
+      status: [
+        { episode: 84, chapter: 189, value: 'alive' },
+        { episode: 97, chapter: 229, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 84, chapter: 189, value: CHIMERA_ANTS },
         // The Squadron Leaders set off on their own, chapter 216.

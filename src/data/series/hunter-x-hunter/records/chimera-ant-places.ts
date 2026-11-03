@@ -26,6 +26,18 @@ const NGL_RECORD: HunterEntity = {
  */
 export const CHIMERA_ANT_PLACE_RECORDS: HunterEntity[] = [
   NGL_RECORD,
+  {
+    id: 'luonton-city',
+    kind: 'place',
+    revealedAtEpisode: 100,
+    revealedAtChapter: 235,
+    name: { it: 'Luonton', en: 'Luonton City' },
+    summary: {
+      it: 'Una città del Golt Orientale dove Killua cerca di avvertire gli abitanti.',
+      en: 'A city in East Gorteau where Killua tries to warn the residents.',
+    },
+    visual: { art: 'luonton-city', tint: 'ocher' },
+  },
   // The caption of chapter 188 and the narrator of episode 78 tell how the
   // worker ants build it; the cave of chapter 187 / episode 77 is not yet it.
   {
@@ -272,7 +284,18 @@ export const CHIMERA_ANT_PLACES: Record<
   PlaceDossier<HunterVocabulary>
 > = {
   ...CHIMERA_ANT_NEW_PLACES,
-  ngl: {
+  'luonton-city': {
+    form: 'city',
+    region: 'islands',
+    arc: 'chimera-ant-arc',
+    landmark: { it: 'Le strade della città', en: 'The city streets' },
+    log: {
+      it: 'Killua cerca di avvertire gli abitanti del pericolo. Gli abitanti gli tirano degli oggetti.',
+      en: 'Killua tries to warn the residents of danger. They throw things at him.',
+    },
+    filedHere: [],
+  },
+  'ngl': {
     form: 'country',
     region: 'islands',
     arc: 'chimera-ant-arc',

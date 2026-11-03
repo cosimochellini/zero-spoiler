@@ -28431,6 +28431,76 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=422994",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=422994",
       "contentSha256": "aeff7bab246ff124b153c8dffaf006c033d0eee354e364a9aaf18d4c223c65e6"
+    },
+    "hxh-en-Chapter_257-324511.json": {
+      "locale": "en",
+      "title": "Chapter 257",
+      "revision": 324511,
+      "revisionDate": "2022-11-11T14:16:28Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_257",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=324511",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=324511",
+      "contentSha256": "1de987faee13f84a70310845c0d713b7f2de85b9ae674cea7daa28d48b54b385"
+    },
+    "hxh-en-Episode_101_(2011)-411710.json": {
+      "locale": "en",
+      "title": "Episode 101 (2011)",
+      "revision": 411710,
+      "revisionDate": "2025-03-22T01:41:42Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_101_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=411710",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=411710",
+      "contentSha256": "da171f5652de69f9d1e807d8e7232f09a418347671883e4f65e9cea16de70e51"
+    },
+    "hxh-en-Episode_103_(2011)-416463.json": {
+      "locale": "en",
+      "title": "Episode 103 (2011)",
+      "revision": 416463,
+      "revisionDate": "2025-09-01T23:46:22Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_103_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416463",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416463",
+      "contentSha256": "d387dab9a9766225d06c9c9316e90f6d5d6dd75758ec5b047ecf845a93025c2e"
+    },
+    "hxh-en-Tsukuma-423945.json": {
+      "locale": "en",
+      "title": "Tsukuma",
+      "revision": 423945,
+      "revisionDate": "2026-08-09T22:34:46Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Tsukuma",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423945",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423945",
+      "contentSha256": "8b53bc90df1762e6a3d3fa7e680c01783078a7938ef04ceda6fa8a3cf2b8b2f4"
+    },
+    "hxh-en-Remora-424128.json": {
+      "locale": "en",
+      "title": "Remora",
+      "revision": 424128,
+      "revisionDate": "2026-08-10T20:17:14Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Remora",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424128",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424128",
+      "contentSha256": "84787c0f348a6abfe0f3b8789b4dae60cbcc98cd9c2e318fafbedd81db8c2f5d"
+    },
+    "hxh-en-Komugi-424583.json": {
+      "locale": "en",
+      "title": "Komugi",
+      "revision": 424583,
+      "revisionDate": "2026-08-16T11:54:25Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Komugi",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424583",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424583",
+      "contentSha256": "2c35dc7e548ee211ab4ab0ff9ed6ec54c6542beb0985646a9faa70f25a4dddf9"
+    },
+    "hxh-en-Luonton_City-421699.json": {
+      "locale": "en",
+      "title": "Luonton City",
+      "revision": 421699,
+      "revisionDate": "2026-07-07T12:29:43Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Luonton_City",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421699",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421699",
+      "contentSha256": "ce6dcc37c4566a5b89f82fedf8e59e78f32a39e09b8e852124efec3ed3715286"
     }
   }
 }
