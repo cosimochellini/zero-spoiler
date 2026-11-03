@@ -7,7 +7,6 @@ import { LOADED_SERIES } from '~/test/series'
 import { characterPage, drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
 import { type Reader, readerFor } from './reader.server'
-
 import { relationshipsOf } from './relationships.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
@@ -15,6 +14,16 @@ if (series === undefined) {
   throw new Error('Chimera Ant tests require Hunter x Hunter')
 }
 const { archive } = series
+
+function characterById(
+  id: string,
+): NonNullable<ReturnType<typeof archive.getCharacter>> {
+  const character = archive.getCharacter(id)
+  if (character === undefined) {
+    throw new Error(`Missing character ${id}`)
+  }
+  return character
+}
 const RECORDS = [
   { id: 'spinner-clow', episode: 77, chapter: 186, place: false },
   { id: 'banana-kavaro', episode: 77, chapter: 186, place: false },
@@ -58,17 +67,15 @@ describe('Chimera Ant dated facts', () => {
   it.each(CASES.filter(({ place }) => !place))(
     'opens the relationship with Kite for $id in $locale by $unit',
     ({ id, locale, unit, episode, chapter }) => {
-      const character = archive.getCharacter(id)
-      if (character === undefined) throw new Error('Missing character')
-      const gate =
-        unit === 'chapter' ? chapter
-        : id === 'neferpitou' ? 85
-        : episode
-      const related = (count: number) =>
+      const character = characterById(id)
+      const episodeGate = id === 'neferpitou' ? 85 : episode
+      const gate = unit === 'chapter' ? chapter : episodeGate
+      const related = (count: number): boolean =>
         relationshipsOf(
           character,
           readerFor(archive, at(unit, count), locale),
         ).some(({ person }) => person.id === 'kite')
+
       expect(related(gate - 1)).toBe(false)
       expect(related(gate)).toBe(true)
     },
@@ -82,16 +89,16 @@ describe('Chimera Ant dated facts', () => {
   )(
     'dates Kite’s survey affiliation in $locale by $unit',
     ({ locale, unit, gate }) => {
-      const kite = archive.getCharacter('kite')
-      if (kite === undefined) throw new Error('Missing Kite')
-      const affiliation = (count: number) =>
+      const kite = characterById('kite')
+      const affiliation = (count: number): string | undefined =>
         archive.latestOf(
           readerFor(archive, at(unit, count), locale),
           kite,
           'affiliation',
-        )
-      expect(affiliation(gate - 1)?.[locale]).not.toMatch(/ricerca|survey/)
-      expect(affiliation(gate)?.[locale]).toMatch(/ricerca|survey/)
+        )?.[locale]
+
+      expect(affiliation(gate - 1)).not.toMatch(/ricerca|survey/u)
+      expect(affiliation(gate)).toMatch(/ricerca|survey/u)
     },
   )
 

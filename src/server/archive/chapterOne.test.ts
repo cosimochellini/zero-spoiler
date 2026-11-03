@@ -75,7 +75,9 @@ function expectedChapter(
   field: Parameters<typeof waitsForGing>[0],
   entry: Parameters<typeof waitsForGing>[1] & { episode: number },
 ): number {
-  if (field === 'affiliation' && entry.episode === 77) return 186
+  if (field === 'affiliation' && entry.episode === 77) {
+    return 186
+  }
   return waitsForGing(field, entry) ? 66 : 1
 }
 
