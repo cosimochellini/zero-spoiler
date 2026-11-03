@@ -698,6 +698,14 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; lost his duel with Knuckle and cannot use Nen for 30 days',
           },
         },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Squadra incaricata di distrarre le guardie reali',
+            en: 'Team assigned to distract the Royal Guards',
+          },
+        },
       ],
       origin: [
         { episode: 1, chapter: 1, place: 'whale-island', value: WHALE_ISLAND },
@@ -1404,6 +1412,14 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Associazione Hunter, Hunter; protegge Gon per i 30 giorni senza Nen, poi lo lascerà; si è tolto l’ago di Illumi',
             en: 'Hunter Association, Hunter; protects Gon for his 30 days without Nen, then means to leave him; has pulled out Illumi’s needle',
+          },
+        },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Squadra incaricata di distrarre le guardie reali',
+            en: 'Team assigned to distract the Royal Guards',
           },
         },
       ],

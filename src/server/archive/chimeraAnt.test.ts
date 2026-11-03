@@ -392,6 +392,29 @@ describe('Chimera Ant dated facts', () => {
     expect(manga.archive.getCharacter('hagya')?.name[locale]).toBe('Hagya')
   })
 
+  it.each(['gon-freecss', 'killua'])(
+    'dates the operation assignment for %s',
+    (id) => {
+      const character = characterById(id)
+      for (const locale of LOCALES) {
+        for (const [unit, gate] of [
+          ['episode', 95],
+          ['chapter', 223],
+        ] as const) {
+          const read = (count: number): string | undefined =>
+            archive.latestOf(
+              readerFor(archive, at(unit, count), locale),
+              character,
+              'affiliation',
+            )?.[locale]
+
+          expect(read(gate - 1)).not.toMatch(/distrarre|distract/u)
+          expect(read(gate)).toMatch(/distrarre|distract/u)
+        }
+      }
+    },
+  )
+
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([
       'kite',

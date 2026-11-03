@@ -37,8 +37,10 @@ Zazan’s death is filed at chapter 229 and episode 97. Knov withdraws at chapte
 The following returning dossiers still need a decision on material dated changes
 before this draft is complete.
 
-- Gon, Killua, Morel, Knuckle and Shoot.
-- Meruem, Neferpitou, Shaiapouf, Menthuthuyoupi, Colt, Peggy, Leol and Cheetu.
+- Gon and Killua join the team assigned to distract the Royal Guards at chapter
+  223 and episode 95. Gon’s Nen recovery and the remaining operation facts for
+  Morel, Knuckle and Shoot still need review.
+- Meruem, Neferpitou, Shaiapouf, Menthuthuyoupi, Colt, Peggy and Cheetu.
 - Shizuku, Phinks, Bonolenov, Kalluto, Feitan and Shalnark.
 - Alluka, Milluki, Kikyo, Illumi, Chrollo, Nobunaga, Zeno, Genthru, Kurapika and
   Leorio.
@@ -47,11 +49,11 @@ before this draft is complete.
   items. The manga reveal of Netero’s orders falls in phase 4. The anime
   commander’s identity as Gyro is unverified.
 
-Hagya keeps one dossier. The manga status and drawing change when he sinks
-during the fight with Morel in chapter 254. Episode 107 depicts the same
-outcome. The manga role gives the name Leol from chapter 240. Episode 99 uses
-the name in synopsis narration. Episode 106 reports an explicit introduction to
-Morel. The anime archive opens the same dossier as Leol at episode 106.
+Hagya keeps one dossier. His status and drawing change when he sinks during the
+fight with Morel in chapter 254 and episode 107. The manga role gives the name
+Leol from chapter 240. Episode 99 uses the name in synopsis narration. Episode
+106 reports an explicit introduction to Morel. The anime archive opens the same
+dossier as Leol at episode 106.
 
 Flutter is unconscious after Knov’s attack in chapter 248 and defeated in
 episode 104. These scenes establish defeat. A death stage waits for a source
