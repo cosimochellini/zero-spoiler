@@ -106,10 +106,15 @@ the audit left unnamed, #1032 files Michael, named at the intercom in chapter
 for the other 30. Greed Island chronicles cover every character filed through
 #1019 and returning characters’ events through episode 75 / chapter 185 (#906),
 preserving the records’ source restrictions. Chimera Ant phase 1 (#1020) adds
-the opening survey team records, a Royal Guard and NGL. Silva, Killua's father,
-is named in episode 24 but in chapter 95 in the manga, so his record is
-unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but named in
-the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named only in
+the opening survey team records, a Royal Guard and NGL. Phase 2 (#1021), through
+episode 95 / chapter 222, adds the extermination team and its students, the rest
+of the survey team, the NGL villagers, the King, the other Royal Guards and the
+Squadron Leaders named so far, and eight visited places, each at the first
+chapter and episode whose synopsis names it, with source-only records where only
+one medium does. Gyro is unanchored at 78 / 203. Silva, Killua's father, is
+named in episode 24 but in chapter 95 in the manga, so his record is unanchored
+at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but named in the
+episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named only in
 credits and supplements, and Hishita only in chapter 329 (#912). Every Hunter
 Exam character has a chronicle (#762); the Heavens Arena characters get theirs
 in #898. Records are not added from unnamed appearances or supplemental names.
@@ -215,11 +220,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 148                                                   |
-| Characters        | 117                                                   |
-| Arcs, places      | 7 · 24                                                |
+| Records           | 180                                                   |
+| Characters        | 141                                                   |
+| Arcs, places      | 7 · 32                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 148, one per record, plus 21 redrawings of 21 records |
+| Line drawings     | 180, one per record, plus 30 redrawings of 30 records |
 | Chronicle stories | 345, for 108 characters                               |
 
 ### `game-of-thrones`

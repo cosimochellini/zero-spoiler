@@ -184,6 +184,9 @@ const EPISODE_KEPT = {
   // Episode 1's opening narration names him over his execution (chapter 1,
   // page 1); the wiki dates his first flashback, episode 48.
   'gold-roger': 1,
+  // Pouf names him in episode 86 (chapter 202), before he hatches; the wiki
+  // dates his first sight, episode 88 (#1021).
+  'menthuthuyoupi': 86,
 }
 
 /**
@@ -193,7 +196,12 @@ const EPISODE_KEPT = {
  * to the rule.
  * @type {Record<string, number>}
  */
-const CHAPTER_KEPT = {}
+const CHAPTER_KEPT = {
+  // Named in the anime alone (`source: 'episode'`, episode 77); chapter 187,
+  // the Queen's raid on her village, only orders the record. The wiki dates
+  // her unnamed sight in chapter 215 (#1021).
+  haruna: 187,
+}
 
 /** A naming verb: the chapter summary says who ate the fruit or what it is. */
 const NAMING =

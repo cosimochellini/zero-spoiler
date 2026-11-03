@@ -75,8 +75,13 @@ function expectedChapter(
   field: Parameters<typeof waitsForGing>[0],
   entry: Parameters<typeof waitsForGing>[1] & { episode: number },
 ): number {
+  // Chimera Ant: the survey at 77/186, and Kite's death and the Neferpitou
+  // row at 85/199 (#1020, #1021).
   if (field === 'affiliation' && entry.episode === 77) {
     return 186
+  }
+  if (entry.episode === 85) {
+    return 199
   }
   return waitsForGing(field, entry) ? 66 : 1
 }
