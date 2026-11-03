@@ -2,6 +2,8 @@ import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
+import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
+
 /**
  * Ice, Eddard Stark's greatsword: the round pommel, the long two-hand grip
  * with its wrap, the crossguard with its under face, and the blade in 3/4,
@@ -85,9 +87,9 @@ const BATH: Stroke[] = [
 ]
 
 /**
- * What every other person shows until #854 draws them: a bust with a blank
- * head and no face, the collar in the record's tint. It stands for nobody,
- * so it tells a reader nothing.
+ * What every other person shows until their issue draws them (#1051,
+ * #1052, #1054 to #1057): a bust with a blank head and no face, the collar
+ * in the record's tint. It stands for nobody, so it tells a reader nothing.
  */
 const PERSON: Stroke[] = [
   { d: circle(80, 58, 19) },
@@ -100,25 +102,7 @@ const PERSON: Stroke[] = [
 ]
 
 /**
- * What the six direwolves show until #854 draws them: one wolf's head in
- * profile, ears up, with no eye or mouth, the ruff in the record's tint.
- */
-const WOLF: Stroke[] = [
-  {
-    d: 'M34 98 L54 88 Q64 72 78 66 L84 42 L96 60 L104 44 L110 66 Q124 78 124 102',
-  },
-  { d: 'M34 98 Q36 106 50 108 Q68 112 84 120' },
-  { d: 'M88 50 L92 62 M104 52 L104 64', role: 'soft' },
-  {
-    d: 'M124 102 Q134 116 124 126 Q130 140 116 148 Q106 140 96 150 Q88 138 78 144 Q82 130 84 120',
-    role: 'accent',
-  },
-  { d: 'M96 84 Q104 96 100 110 M110 92 Q116 104 112 118', role: 'soft' },
-  { d: 'M30 154 H130', role: 'ambient' },
-]
-
-/**
- * What every place shows until #854 draws it: a plain square keep on a
+ * What every place shows until #1053 draws it: a plain square keep on a
  * horizon, its battlements and an arched door, with no banner or mark. It
  * stands for no place in particular, so it tells a reader nothing; the
  * accent is the door.
@@ -141,34 +125,18 @@ const PLACE: Stroke[] = [
 
 /**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
- * for. Four leads have their own; every other record shows `PERSON`, `WOLF`
- * or `PLACE` until #854 draws it (owner, #856; places, #853). `satisfies`
- * rather than an annotation, so `ArtId` below stays the literal keys.
+ * for. The Winterfell household's are in `winterfell.ts` (#854), with the
+ * four leads drawn for the launch here (owner, #856); every other record
+ * shows `PERSON` or `PLACE` until its own issue draws it. Arya Stark keeps
+ * `PERSON` until #1058 rules on her first drawing, and has Needle as a stage
+ * from episode 2. `satisfies` rather than an annotation, so `ArtId` below
+ * stays the literal keys.
  */
 export const DRAWINGS = {
+  ...WINTERFELL_DRAWINGS,
   'eddard-stark': ICE_STANDING,
-  'catelyn-stark': PERSON,
-  'robb-stark': PERSON,
-  'sansa-stark': PERSON,
   'arya-stark': PERSON,
-  'bran-stark': PERSON,
-  'rickon-stark': PERSON,
   'jon-snow': RUNT,
-  'benjen-stark': PERSON,
-  'grey-wind': WOLF,
-  'lady-direwolf': WOLF,
-  'nymeria': WOLF,
-  'summer-direwolf': WOLF,
-  'shaggydog': WOLF,
-  'ghost-direwolf': WOLF,
-  'theon-greyjoy': PERSON,
-  'luwin': PERSON,
-  'rodrik-cassel': PERSON,
-  'old-nan': PERSON,
-  'hodor': PERSON,
-  'osha': PERSON,
-  'mordane': PERSON,
-  'jory-cassel': PERSON,
   'jeor-mormont': PERSON,
   'aemon': PERSON,
   'samwell-tarly': PERSON,
@@ -298,11 +266,13 @@ export const DRAWINGS = {
 export type ArtId = keyof typeof DRAWINGS
 
 /**
- * The records drawn again later in the story. Eddard Stark is beheaded with
- * Ice in "Baelor" (episode 9) and in Arya V (chapter 66): from there the
- * blade lies flat on the ground, with nobody to hold it.
+ * The records drawn again later in the story, the Winterfell household's
+ * from `winterfell.ts`. Eddard Stark is beheaded with Ice in "Baelor"
+ * (episode 9) and in Arya V (chapter 66): from there the blade lies flat on
+ * the ground, with nobody to hold it.
  */
 export const REDRAWINGS: Redrawings = {
+  ...winterfellRedrawn,
   'eddard-stark': [
     {
       episode: 9,

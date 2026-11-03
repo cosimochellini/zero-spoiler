@@ -49,7 +49,7 @@ export const season1: ThronesSaga = {
         it: 'La moglie di Eddard Stark e la signora di Grande Inverno.',
         en: 'Eddard Stark’s wife and the lady of Winterfell.',
       },
-      visual: { art: 'catelyn-stark', tint: 'wine' },
+      visual: { art: 'catelyn-stark', tint: 'blue' },
     },
     // Show: "Winter Is Coming", at the archery practice and the execution.
     // Books: Bran I (site chapter 2), he rides to the execution and finds the pups.
