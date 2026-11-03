@@ -49,7 +49,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           it: 'Un ex comandante di divisione.',
           en: 'A former Squadron Leader.',
         },
-        visual: { art: 'meleoron', tint: 'green' },
+        visual: { art: 'meleoron', tint: 'teal' },
       },
       {
         id: 'bihorn',
@@ -81,7 +81,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           it: 'Una formichimera che Shalnark uccide a Meteor City.',
           en: 'A Chimera Ant whom Shalnark kills in Meteor City.',
         },
-        visual: { art: 'pell', tint: 'ocher' },
+        visual: { art: 'pell', tint: 'azure' },
       },
       {
         id: 'komugi',
@@ -140,7 +140,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           it: 'Una formichimera dall’aspetto di lupo al servizio del re.',
           en: 'A wolf-like Chimera Ant in the King’s service.',
         },
-        visual: { art: 'welfin', tint: 'teal' },
+        visual: { art: 'welfin', tint: 'ice' },
       },
       {
         id: 'bloster',
@@ -152,7 +152,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           it: 'Una formichimera dall’aspetto di aragosta al servizio del re.',
           en: 'A lobster-like Chimera Ant in the King’s service.',
         },
-        visual: { art: 'bloster', tint: 'vermilion' },
+        visual: { art: 'bloster', tint: 'blue' },
       },
       // A caption names the director in chapter 250. Episode 105 gives his
       // name only in narration, so it only orders him.

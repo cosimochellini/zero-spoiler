@@ -176,7 +176,7 @@ describe.each(CASES)('$id in $locale by $unit', (row) => {
     expect(drawingsFor([row.id], before)).toStrictEqual({})
 
     expect(opened(row.id, row.place, reached)).toBe(true)
-    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(0)
+    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
   })
 })
 
