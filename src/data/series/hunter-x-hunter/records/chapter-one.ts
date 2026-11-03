@@ -1,12 +1,31 @@
+import type { Relationship } from '~/data/types'
+
 import { chapterOneChronicles } from './chapter-one.chronicle'
 import { chapterOneRelationships } from './chapter-one.relationships'
 import type { HunterSaga } from './saga'
+
+/** Kite's last selection in each medium before Neferpitou kills him. */
+function kiteBefore(source: 'chapter' | 'episode'): Relationship[] {
+  return (
+    chapterOneRelationships.kite.findLast((entry) => entry.source === source)
+      ?.value ?? []
+  )
+}
+
+const KITE_PITOU: Relationship = {
+  character: 'neferpitou',
+  type: { it: 'Guardia reale che lo uccide', en: 'Royal Guard who kills him' },
+  summary: {
+    it: 'Neferpito attacca Kaito per mettere alla prova la propria forza e lo uccide.',
+    en: 'Neferpitou attacks Kite to test their strength and kills him.',
+  },
+}
 
 /**
  * Chapter 1's two characters the 2011 anime introduces much later (#760).
  * Both are unanchored with an explicit chapter pin on every fact, so the
  * reordered pair never moves chapter-one readers into the later anime. No
- * later abilities, deaths or looks are filed.
+ * later abilities or looks are filed; Kite's death is (#1021).
  */
 export const chapterOne: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   entries: [
@@ -42,14 +61,33 @@ export const chapterOne: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   ],
   dossiers: {
     kite: {
-      relationships: chapterOneRelationships.kite,
+      relationships: [
+        ...chapterOneRelationships.kite,
+        // Each medium keeps its own rows and adds Neferpitou.
+        {
+          episode: 85,
+          chapter: 199,
+          source: 'chapter',
+          value: [...kiteBefore('chapter'), KITE_PITOU],
+        },
+        {
+          episode: 85,
+          chapter: 199,
+          source: 'episode',
+          value: [...kiteBefore('episode'), KITE_PITOU],
+        },
+      ],
       chronicle: chapterOneChronicles.kite,
       role: { it: 'Hunter', en: 'Hunter' },
       log: {
         it: 'Arriva sull’Isola Balena in cerca di indizi su Ging, il suo maestro, che gli ha assegnato come ultima prova il compito di trovarlo. Salva Gon da un orso-volpe e lo rimprovera per essersi avvicinato al suo territorio.',
         en: 'He comes to Whale Island looking for clues about Ging, his teacher, whose final test is to find him. He saves Gon from a foxbear and rebukes him for entering its territory.',
       },
-      status: [{ episode: 76, chapter: 1, value: 'alive' }],
+      status: [
+        { episode: 76, chapter: 1, value: 'alive' },
+        // Neferpitou holds his head, chapter 199 and episode 85.
+        { episode: 85, chapter: 199, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 76,

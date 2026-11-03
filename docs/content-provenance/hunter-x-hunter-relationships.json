@@ -39,7 +39,13 @@
       "hxh-en-Chapter_137-329195.json",
       "hxh-en-Episode_62_(2011)-417943.json",
       "hxh-en-Chapter_158-382703.json",
-      "hxh-en-Episode_68_(2011)-425286.json"
+      "hxh-en-Episode_68_(2011)-425286.json",
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json",
+      "hxh-en-Chapter_201-416213.json",
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Chapter_214-416220.json",
+      "hxh-en-Episode_91_(2011)-416453.json"
     ],
     "killua": [
       "hxh-en-Killua_Zoldyck-425628.json",
@@ -81,13 +87,24 @@
       "hxh-en-Chapter_137-329195.json",
       "hxh-en-Episode_62_(2011)-417943.json",
       "hxh-en-Chapter_158-382703.json",
-      "hxh-en-Episode_68_(2011)-425286.json"
+      "hxh-en-Episode_68_(2011)-425286.json",
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json",
+      "hxh-en-Chapter_210-416217.json",
+      "hxh-en-Episode_89_(2011)-416452.json",
+      "hxh-en-Chapter_219-408455.json",
+      "hxh-en-Episode_94_(2011)-410870.json"
     ],
     "ging-freecss": [
       "hxh-en-Ging_Freecss-425761.json",
       "hxh-en-Kite-425278.json"
     ],
-    "kite": ["hxh-en-Kite-425278.json", "hxh-en-Episode_1_(2011)-417858.json"],
+    "kite": [
+      "hxh-en-Kite-425278.json",
+      "hxh-en-Episode_1_(2011)-417858.json",
+      "hxh-en-Chapter_199-416211.json",
+      "hxh-en-Episode_85_(2011)-419187.json"
+    ],
     "kon": ["hxh-en-Kon-424580.json"],
     "mito-freecss": [
       "hxh-en-Mito_Freecss-424311.json",
@@ -203,7 +220,11 @@
     "satotz": ["hxh-en-Satotz-424054.json"],
     "menchi": ["hxh-en-Menchi-424332.json"],
     "buhara": ["hxh-en-Buhara-424954.json"],
-    "netero": ["hxh-en-Isaac_Netero-424748.json"],
+    "netero": [
+      "hxh-en-Isaac_Netero-424748.json",
+      "hxh-en-Chapter_199-416211.json",
+      "hxh-en-Episode_85_(2011)-419187.json"
+    ],
     "masta": ["hxh-en-Masta-424338.json"],
     "lippo": [
       "hxh-en-Lippo-424436.json",
@@ -269,9 +290,20 @@
     "amori": ["hxh-en-Amori-425056.json"],
     "umori": ["hxh-en-Umori-423935.json"],
     "imori": ["hxh-en-Imori-424678.json"],
-    "ponzu": ["hxh-en-Ponzu-424158.json"],
+    "ponzu": [
+      "hxh-en-Ponzu-424158.json",
+      "hxh-en-Chapter_189-383210.json",
+      "hxh-en-Episode_79_(2011)-419186.json"
+    ],
     "bourbon": ["hxh-en-Bourbon-424958.json", "hxh-en-Ponzu-424158.json"],
-    "pokkle": ["hxh-en-Pokkle-424162.json", "hxh-en-Kyu-424561.json"],
+    "pokkle": [
+      "hxh-en-Pokkle-424162.json",
+      "hxh-en-Kyu-424561.json",
+      "hxh-en-Chapter_189-383210.json",
+      "hxh-en-Episode_79_(2011)-419186.json",
+      "hxh-en-Chapter_198-416866.json",
+      "hxh-en-Episode_84_(2011)-416447.json"
+    ],
     "bodoro": ["hxh-en-Bodoro-424967.json", "hxh-en-Ryu-424098.json"],
     "gittarackur": [
       "hxh-en-Illumi_Zoldyck-424681.json",
@@ -882,7 +914,9 @@
       "hxh-en-Episode_63_(2011)-416430.json",
       "hxh-en-Hisoka_Morow-425756.json",
       "hxh-en-Chapter_158-382703.json",
-      "hxh-en-Episode_68_(2011)-425286.json"
+      "hxh-en-Episode_68_(2011)-425286.json",
+      "hxh-en-Chapter_201-416213.json",
+      "hxh-en-Episode_86_(2011)-416449.json"
     ],
     "binolt": [
       "hxh-en-Binolt-424980.json",
@@ -933,22 +967,154 @@
     ],
     "neferpitou": [
       "hxh-en-Chapter_198-416866.json",
-      "hxh-en-Episode_85_(2011)-419187.json"
+      "hxh-en-Episode_84_(2011)-416447.json",
+      "hxh-en-Chapter_199-416211.json",
+      "hxh-en-Episode_85_(2011)-419187.json",
+      "hxh-en-Chapter_202-418675.json",
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Chapter_214-416220.json",
+      "hxh-en-Episode_91_(2011)-416453.json",
+      "hxh-en-Chapter_215-418691.json",
+      "hxh-en-Episode_92_(2011)-416454.json"
     ],
     "palm-siberia": [
       "hxh-en-Chapter_200-416212.json",
-      "hxh-en-Episode_86_(2011)-416449.json"
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Chapter_218-416109.json",
+      "hxh-en-Episode_93_(2011)-416455.json",
+      "hxh-en-Palm_Siberia-424185.json"
     ],
     "shaiapouf": [
       "hxh-en-Chapter_202-418675.json",
-      "hxh-en-Episode_86_(2011)-416449.json"
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Chapter_206-406651.json",
+      "hxh-en-Chapter_213-416219.json",
+      "hxh-en-Episode_88_(2011)-416451.json",
+      "hxh-en-Episode_91_(2011)-416453.json"
     ],
     "meruem": [
       "hxh-en-Chapter_214-416220.json",
       "hxh-en-Episode_91_(2011)-416453.json",
       "hxh-en-Chapter_215-418691.json",
+      "hxh-en-Episode_92_(2011)-416454.json",
+      "hxh-en-Chapter_213-416219.json"
+    ],
+    "knov": [
+      "hxh-en-Chapter_199-416211.json",
+      "hxh-en-Chapter_200-416212.json",
+      "hxh-en-Episode_85_(2011)-419187.json",
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Knov-425296.json"
+    ],
+    "morel-mackernasey": [
+      "hxh-en-Chapter_199-416211.json",
+      "hxh-en-Chapter_200-416212.json",
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Chapter_215-418691.json",
+      "hxh-en-Episode_92_(2011)-416454.json",
+      "hxh-en-Morel_Mackernasey-425708.json"
+    ],
+    "knuckle-bine": [
+      "hxh-en-Chapter_200-416212.json",
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Chapter_214-416220.json",
+      "hxh-en-Episode_91_(2011)-416453.json",
+      "hxh-en-Knuckle_Bine-425295.json"
+    ],
+    "shoot-mcmahon": [
+      "hxh-en-Chapter_200-416212.json",
+      "hxh-en-Episode_86_(2011)-416449.json",
+      "hxh-en-Chapter_214-416220.json",
+      "hxh-en-Episode_91_(2011)-416453.json",
+      "hxh-en-Chapter_222-416223.json",
+      "hxh-en-Episode_95_(2011)-416456.json",
+      "hxh-en-Shoot_McMahon-424053.json"
+    ],
+    "dr-lee": ["hxh-en-Chapter_215-418691.json", "hxh-en-Dr._Lee-424446.json"],
+    "lin-koshi": [
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json",
+      "hxh-en-Lin_Koshi-424423.json"
+    ],
+    "podungo-lapoy": [
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Chapter_187-383204.json",
+      "hxh-en-Episode_77_(2011)-416442.json",
+      "hxh-en-Podungo_Lapoy-424163.json"
+    ],
+    "wong": ["hxh-en-Episode_77_(2011)-416442.json", "hxh-en-Wong-423910.json"],
+    "kurt": [
+      "hxh-en-Episode_77_(2011)-416442.json",
+      "hxh-en-Episode_80_(2011)-416445.json",
+      "hxh-en-Kurt-425004.json"
+    ],
+    "reina": [
+      "hxh-en-Episode_77_(2011)-416442.json",
+      "hxh-en-Episode_80_(2011)-416445.json",
+      "hxh-en-Reina-424130.json"
+    ],
+    "haruna": [
+      "hxh-en-Episode_77_(2011)-416442.json",
+      "hxh-en-Episode_80_(2011)-416445.json",
+      "hxh-en-Haruna-425773.json"
+    ],
+    "pekuba": [
+      "hxh-en-Episode_78_(2011)-416443.json",
+      "hxh-en-Episode_79_(2011)-419186.json",
+      "hxh-en-Pekuba-424177.json"
+    ],
+    "menthuthuyoupi": [
+      "hxh-en-Chapter_206-406651.json",
+      "hxh-en-Chapter_213-416219.json",
+      "hxh-en-Episode_88_(2011)-416451.json",
+      "hxh-en-Episode_91_(2011)-416453.json"
+    ],
+    "colt": [
+      "hxh-en-Chapter_189-383210.json",
+      "hxh-en-Chapter_204-416215.json",
+      "hxh-en-Chapter_205-416216.json",
+      "hxh-en-Chapter_213-416219.json",
+      "hxh-en-Chapter_214-416220.json",
+      "hxh-en-Chapter_215-418691.json",
+      "hxh-en-Episode_91_(2011)-416453.json",
       "hxh-en-Episode_92_(2011)-416454.json"
-    ]
+    ],
+    "peggy": [
+      "hxh-en-Chapter_189-383210.json",
+      "hxh-en-Chapter_192-329216.json",
+      "hxh-en-Chapter_204-416215.json",
+      "hxh-en-Chapter_205-416216.json"
+    ],
+    "cheetu": [
+      "hxh-en-Chapter_220-383521.json",
+      "hxh-en-Chapter_221-369283.json",
+      "hxh-en-Episode_94_(2011)-410870.json",
+      "hxh-en-Episode_95_(2011)-416456.json"
+    ],
+    "zazan": [
+      "hxh-en-Chapter_190-329215.json",
+      "hxh-en-Episode_80_(2011)-416445.json"
+    ],
+    "pike": ["hxh-en-Chapter_190-329215.json", "hxh-en-Pike-424166.json"],
+    "hagya": [
+      "hxh-en-Chapter_192-329216.json",
+      "hxh-en-Chapter_214-416220.json"
+    ],
+    "rammot": [
+      "hxh-en-Chapter_191-328186.json",
+      "hxh-en-Chapter_192-329216.json",
+      "hxh-en-Episode_81_(2011)-410846.json",
+      "hxh-en-Chapter_198-416866.json",
+      "hxh-en-Episode_84_(2011)-416447.json",
+      "hxh-en-Chapter_219-408455.json",
+      "hxh-en-Episode_94_(2011)-410870.json"
+    ],
+    "yunju": [
+      "hxh-en-Chapter_193-425825.json",
+      "hxh-en-Episode_82_(2011)-416462.json"
+    ],
+    "baro": ["hxh-en-Chapter_195-416208.json"],
+    "baital": ["hxh-en-Chapter_205-416216.json"]
   },
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",
@@ -960,5 +1126,5 @@
     "jitonoda": "Only named in the chapter 129 manga news report as the mayor of Yorknew City; no directed interaction with an archived character is established. Judged from the chapter 129 page.",
     "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032)."
   },
-  "pending": {}
+  "pending": { "gyro": "#1022" }
 }

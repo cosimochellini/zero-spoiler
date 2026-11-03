@@ -1,9 +1,50 @@
+import type { Relationship } from '~/data/types'
+
 import { CHIMERA_ANT_HUNTERS } from './chimera-ant-hunters'
 import { CHIMERA_ANT_NGL } from './chimera-ant-ngl'
-import { NGL_RECORD } from './chimera-ant-places'
+import { CHIMERA_ANT_PLACE_RECORDS } from './chimera-ant-places'
 import { CHIMERA_ANT_ROYALS } from './chimera-ant-royals'
 import { CHIMERA_ANT_SQUADS } from './chimera-ant-squads'
 import type { HunterSaga } from './saga'
+
+const PITOU_POKKLE: Relationship = {
+  character: 'pokkle',
+  type: {
+    it: 'Hunter di cui sonda il cervello',
+    en: 'Hunter whose brain they probe',
+  },
+  summary: {
+    it: 'Neferpito trova Pockul nascosto tra le ossa e gli sonda il cervello per imparare il Nen.',
+    en: 'Neferpitou finds Pokkle hiding among the bones and probes his brain to learn about Nen.',
+  },
+}
+
+const PITOU_KITE: Relationship = {
+  character: 'kite',
+  type: { it: 'Hunter che uccide', en: 'Hunter they kill' },
+  summary: {
+    it: 'Neferpito attacca Kaito per mettere alla prova la propria forza e lo uccide.',
+    en: 'Neferpitou attacks Kite to test their strength and kills him.',
+  },
+}
+
+const PITOU_SHAIAPOUF: Relationship = {
+  character: 'shaiapouf',
+  type: { it: 'Altra guardia reale', en: 'Fellow Royal Guard' },
+  summary: {
+    it: 'Shawapf si presenta a Neferpito come un’altra guardia reale della regina.',
+    en: 'Shaiapouf introduces himself to Neferpitou as another of the Queen’s Royal Guards.',
+  },
+}
+
+const PITOU_MERUEM: Relationship = {
+  character: 'meruem',
+  type: { it: 'Re che serve', en: 'King they serve' },
+  summary: {
+    it: 'Neferpito serve il re appena nato, che lo colpisce con la coda per ucciderlo e poi ne loda la forza.',
+    en: 'Neferpitou serves the newborn King, who strikes them with his tail meaning to kill, then praises their strength.',
+  },
+}
 
 const surveyDossier: HunterSaga['dossiers'][string] = {
   relationships: [
@@ -57,19 +98,17 @@ export const chimeraAnt: HunterSaga = {
     'spinner-clow': surveyDossier,
     'neferpitou': {
       relationships: [
+        { episode: 84, chapter: 198, value: [PITOU_POKKLE] },
+        { episode: 85, chapter: 199, value: [PITOU_KITE, PITOU_POKKLE] },
         {
-          episode: 85,
-          chapter: 198,
-          value: [
-            {
-              character: 'kite',
-              type: { it: 'Hunter che affronta', en: 'Hunter they fight' },
-              summary: {
-                it: 'Affronta Kaito per mettere alla prova la propria forza.',
-                en: 'Fights Kite to test their strength.',
-              },
-            },
-          ],
+          episode: 86,
+          chapter: 202,
+          value: [PITOU_KITE, PITOU_SHAIAPOUF, PITOU_POKKLE],
+        },
+        {
+          episode: 92,
+          chapter: 215,
+          value: [PITOU_MERUEM, PITOU_SHAIAPOUF, PITOU_KITE, PITOU_POKKLE],
         },
       ],
       role: { it: 'Guardia reale', en: 'Royal Guard' },
@@ -83,6 +122,12 @@ export const chimeraAnt: HunterSaga = {
           episode: 84,
           chapter: 198,
           value: { it: 'Guardia della regina', en: 'Queen’s guard' },
+        },
+        // The newborn King's guards kneel to him, chapter 213 and episode 91.
+        {
+          episode: 91,
+          chapter: 213,
+          value: { it: 'Guardia del re', en: 'King’s guard' },
         },
       ],
     },
@@ -109,7 +154,7 @@ export const chimeraAnt: HunterSaga = {
       kind: 'character',
       revealedAtEpisode: 84,
       revealedAtChapter: 198,
-      name: { it: 'Neferpitou', en: 'Neferpitou' },
+      name: { it: 'Neferpito', en: 'Neferpitou' },
       summary: {
         it: 'Una guardia reale delle formichimere.',
         en: 'A Royal Guard of the Chimera Ants.',
@@ -164,6 +209,6 @@ export const chimeraAnt: HunterSaga = {
       },
       visual: { art: 'stick-dinner', tint: 'ocher' },
     },
-    NGL_RECORD,
+    ...CHIMERA_ANT_PLACE_RECORDS,
   ],
 }

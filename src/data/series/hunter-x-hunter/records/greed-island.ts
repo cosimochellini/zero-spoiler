@@ -1,8 +1,42 @@
-import type { PlaceDossier } from '~/data/types'
+import type { PlaceDossier, Relationship } from '~/data/types'
 
 import { greedIslandChronicles } from './greed-island.chronicle'
 import { greedIslandRelationships } from './greed-island.relationships'
 import type { HunterSaga, HunterVocabulary } from './saga'
+
+/** Biscuit's last selection, from which Wing and Hisoka carry on (#1021). */
+const BISCUIT_ROWS = greedIslandRelationships['biscuit-krueger']
+const BISCUIT_LAST = BISCUIT_ROWS.at(-1)?.value ?? []
+
+const BISCUIT_AGAIN: Relationship[] = [
+  {
+    character: 'gon-freecss',
+    type: { it: 'Allievo che allena di nuovo', en: 'Pupil she trains again' },
+    summary: {
+      it: 'Biscuit ritrova Gon e lo allena con Killua per lo scontro con Nackul e Schult.',
+      en: 'Biscuit finds Gon again and trains him with Killua for their fight with Knuckle and Shoot.',
+    },
+  },
+  {
+    character: 'killua',
+    type: { it: 'Allievo che allena di nuovo', en: 'Pupil she trains again' },
+    summary: {
+      it: 'Biscuit allena di nuovo Killua con Gon e gli fa mantenere il Ren per ore.',
+      en: 'Biscuit trains Killua again with Gon and has him hold Ren for hours.',
+    },
+  },
+  {
+    character: 'palm-siberia',
+    type: {
+      it: 'Allieva di un Hunter che la chiama',
+      en: 'Hunter’s student who calls her in',
+    },
+    summary: {
+      it: 'Pahm chiama Biscuit perché alleni Gon e Killua.',
+      en: 'Palm calls Biscuit in to train Gon and Killua.',
+    },
+  },
+]
 
 /**
  * Greed Island: episodes 59–75 of the 2011 anime and chapters 120–185, as the
@@ -601,7 +635,19 @@ export const greedIsland: HunterSaga = {
 
     'biscuit-krueger': {
       chronicle: greedIslandChronicles['biscuit-krueger'],
-      relationships: greedIslandRelationships['biscuit-krueger'],
+      relationships: [
+        ...BISCUIT_ROWS,
+        {
+          episode: 86,
+          chapter: 201,
+          value: [
+            ...BISCUIT_AGAIN,
+            ...BISCUIT_LAST.filter(
+              ({ character }) => character === 'wing' || character === 'hisoka',
+            ),
+          ],
+        },
+      ],
       role: { it: 'Maestra di Nen', en: 'Nen teacher' },
       log: {
         it: 'Segue Gon e Killua nel gioco e osserva le loro difficoltà contro i mostri. Interviene per mostrare come usare Gyo e offre di allenarli. Studia il Nen da quarant’anni.',
@@ -692,6 +738,14 @@ export const greedIsland: HunterSaga = {
           value: {
             it: 'Associazione Hunter; saluta Gon e Killua dopo aver completato Greed Island con loro',
             en: 'Hunter Association; says goodbye to Gon and Killua after completing Greed Island with them',
+          },
+        },
+        {
+          episode: 86,
+          chapter: 201,
+          value: {
+            it: 'Associazione Hunter; allena di nuovo Gon e Killua per lo scontro con Nackul e Schult',
+            en: 'Hunter Association; trains Gon and Killua again for their fight with Knuckle and Shoot',
           },
         },
       ],

@@ -91,7 +91,7 @@ const EXPECTED: Record<string, Expected> = {
   // City (#900), Greed Island through the finale (#1016–#1019) and Michael
   // (#1032), and chronicles for the characters filed through #1019 and the
   // returning cast (#906). Chimera Ant phase 1 (#1020) adds five characters
-  // and one place.
+  // and one place, and phase 2 (#1021) 27 characters and eight places.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -110,14 +110,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 223,
+      affiliations: 278,
       arcs: 7,
-      characters: 114,
+      characters: 141,
       chronicles: 345,
-      linkedOrigins: 7,
-      places: 24,
-      statuses: 155,
-      timelines: 484,
+      linkedOrigins: 8,
+      places: 32,
+      statuses: 190,
+      timelines: 579,
       visits: 0,
     },
     namesSaidEarly: true,

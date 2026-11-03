@@ -41,6 +41,25 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'palm-siberia': 'Associazione Hunter#Pahm Sibelia',
+    'knov': 'Associazione Hunter#Nobu',
+    'morel-mackernasey': 'Associazione Hunter#Morau McCarnathy',
+    'knuckle-bine': 'Associazione Hunter#Nackul Bain',
+    'shoot-mcmahon': 'Associazione Hunter#Schult MacMahone',
+    'gyro': 'Formichimere#Giairo',
+    'republic-of-rokario': 'Geografia di Hunter × Hunter#Federazione di Mitene',
+    'republic-of-east-gorteau':
+      'Geografia di Hunter × Hunter#Repubblica del Golt Orientale',
+    'neferpitou': 'Formichimere#Neferpito',
+    'meruem': 'Formichimere#Meruem',
+    'shaiapouf': 'Formichimere#Shawapf',
+    'menthuthuyoupi': 'Formichimere#Montowtoyupih',
+    'colt': 'Formichimere#Coluto',
+    'peggy': 'Formichimere#Pegyi',
+    'cheetu': 'Formichimere#Jeedo',
+    'zazan': 'Formichimere#Zazan',
+    'pike': 'Formichimere#Pike',
+    'rammot': 'Formichimere#Rammot',
     'dwun': 'Personaggi di Hunter × Hunter#Dwun',
     'list': 'Personaggi di Hunter × Hunter#List',
     'eta': 'Personaggi di Hunter × Hunter#Eeta',
@@ -207,6 +226,36 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
+  // Italian Wikipedia has no section for her, and the anime never names her (manga-only record). (#1021).
+  'dr-lee': 'Dr. Lee',
+  // Italian Wikipedia has no section for the amateur Hunters. (#1021).
+  'lin-koshi': 'Lin Koshi',
+  // Italian Wikipedia has no section for the amateur Hunters. (#1021).
+  'podungo-lapoy': 'Podungo Lapoy',
+  // Italian Wikipedia does not mention him. (#1021).
+  'wong': 'Wong',
+  // no section of his own; Formichimere#Coluto spells his human name "Kurt". (#1021).
+  'kurt': 'Kurt',
+  // no section of her own; Formichimere#Sidre spells her human name "Reina". (#1021).
+  'reina': 'Reina',
+  // Italian Wikipedia does not name the mother. (#1021).
+  'haruna': 'Haruna',
+  // Italian Wikipedia does not mention him. (#1021).
+  'pekuba': 'Pekuba',
+  // no Italian Wikipedia entry; the record takes the wiki page title, though the manga translation prints "Doli". (#1021).
+  'doli-city': 'Doli City',
+  // no Italian Wikipedia entry. (#1021).
+  'pata-city': 'Pata City',
+  // no Italian Wikipedia entry. (#1021).
+  'tri-orb-hotel': 'Tri-Orb Hotel',
+  // Italian Wikipedia has no section for him (Formichimere checked). (#1021).
+  'yunju': 'Yunju',
+  // Italian Wikipedia has no section for him (Formichimere checked). (#1021).
+  'baro': 'Baro',
+  // Italian Wikipedia has no section for him (Formichimere checked). (#1021).
+  'baital': 'Baital',
+  // kept in both locales by owner ruling; Italian Wikipedia gives Hagya as his name before the Queen dies, inside the section headed by his later name (Formichimere#Leol). (#1021).
+  'hagya': 'Hagya',
   // No Michael entry in the Italian character/Hunter lists; dub unviewed (#1032).
   'michael': 'Michael',
   // No Jitonoda entry in the Italian character/Hunter lists; dub unviewed (#1019).
