@@ -195,6 +195,23 @@ export const CHIMERA_ANT_SQUADS_DRAWINGS = {
 
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntSquadsRedrawn: Redrawings = {
+  zazan: [
+    {
+      episode: 97,
+      chapter: 229,
+      value: [
+        ...moved(
+          CHIMERA_ANT_SQUADS_DRAWINGS.zazan.slice(0, 7),
+          'translate(83 111) rotate(-66) scale(0.75) translate(-80 -90)',
+        ),
+        {
+          d: 'M36 128 Q26 106 44 90 Q35 106 51 119 M103 126 Q116 112 110 95 Q131 112 119 132',
+          role: 'accent',
+        },
+        shadow(82, 157, 58),
+      ],
+    },
+  ],
   yunju: [
     // The same foreleg laid on its side on the ground, hoof to the right:
     // Kite kills him in the drug factory, episode 82. Chapter 193 shows the

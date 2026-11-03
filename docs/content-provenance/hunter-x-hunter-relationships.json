@@ -1133,5 +1133,12 @@
     "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032).",
     "tsukuma": "His televised interview establishes no relationship with a filed character."
   },
-  "pending": { "gyro": "#1022", "komugi": "#908", "remora": "#908" }
+  "pending": {
+    "gyro": "#1022",
+    "komugi": "#908",
+    "remora": "#908",
+    "pell": "#908",
+    "flutter": "#908",
+    "bihorn": "#908"
+  }
 }

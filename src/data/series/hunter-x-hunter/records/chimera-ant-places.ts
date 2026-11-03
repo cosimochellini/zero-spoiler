@@ -27,6 +27,43 @@ const NGL_RECORD: HunterEntity = {
 export const CHIMERA_ANT_PLACE_RECORDS: HunterEntity[] = [
   NGL_RECORD,
   {
+    id: 'meteor-city',
+    kind: 'place',
+    revealedAtEpisode: 24,
+    revealedAtChapter: 102,
+    name: { it: 'Meteor City', en: 'Meteor City' },
+    summary: {
+      it: 'Una città ai margini dei registri ufficiali.',
+      en: 'A city outside official records.',
+    },
+    visual: { art: 'meteor-city', tint: 'ocher' },
+  },
+  {
+    id: 'peijin',
+    kind: 'place',
+    revealedAtEpisode: 102,
+    revealedAtChapter: 243,
+    source: 'chapter',
+    name: { it: 'Peijin', en: 'Peijin' },
+    summary: {
+      it: 'La capitale del Golt Orientale.',
+      en: 'The capital of East Gorteau.',
+    },
+    visual: { art: 'peijin', tint: 'ocher' },
+  },
+  {
+    id: 'mandai-city',
+    kind: 'place',
+    revealedAtEpisode: 102,
+    revealedAtChapter: 243,
+    name: { it: 'Mandai City', en: 'Mandai City' },
+    summary: {
+      it: 'Una città scelta come punto di ritrovo.',
+      en: 'A city chosen as a rendezvous.',
+    },
+    visual: { art: 'mandai-city', tint: 'ocher' },
+  },
+  {
     id: 'luonton-city',
     kind: 'place',
     revealedAtEpisode: 100,
@@ -284,6 +321,39 @@ export const CHIMERA_ANT_PLACES: Record<
   PlaceDossier<HunterVocabulary>
 > = {
   ...CHIMERA_ANT_NEW_PLACES,
+  'meteor-city': {
+    form: 'city',
+    region: 'mainland',
+    arc: 'chimera-ant-arc',
+    landmark: { it: 'La città', en: 'The city' },
+    log: {
+      it: 'Una città ai margini dei registri ufficiali.',
+      en: 'A city outside official records.',
+    },
+    filedHere: [],
+  },
+  'peijin': {
+    form: 'city',
+    region: 'islands',
+    arc: 'chimera-ant-arc',
+    landmark: { it: 'La città', en: 'The city' },
+    log: {
+      it: 'La capitale del Golt Orientale.',
+      en: 'The capital of East Gorteau.',
+    },
+    filedHere: [],
+  },
+  'mandai-city': {
+    form: 'city',
+    region: 'islands',
+    arc: 'chimera-ant-arc',
+    landmark: { it: 'La città', en: 'The city' },
+    log: {
+      it: 'Una città scelta come punto di ritrovo.',
+      en: 'A city chosen as a rendezvous.',
+    },
+    filedHere: [],
+  },
   'luonton-city': {
     form: 'city',
     region: 'islands',

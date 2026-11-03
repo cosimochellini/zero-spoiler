@@ -177,6 +177,7 @@ describe('the place words of a series that labels its own', () => {
         'trick-tower',
         'republic-of-padokea',
         'kukuroo-mountain',
+        'meteor-city',
         'heavens-arena',
         'yorknew-city',
         'lingon-airport',

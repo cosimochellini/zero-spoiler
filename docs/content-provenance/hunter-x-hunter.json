@@ -4795,5 +4795,64 @@
     "unverified": [
       "Manga panels, licensed episode timestamps, street design and 2011 Italian dub form unviewed."
     ]
+  },
+  "pell": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)?oldid=418152"
+    ],
+    "unverified": [
+      "Manga panels, episode timestamps and Italian dub audio unviewed."
+    ]
+  },
+  "flutter": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_235?oldid=416232",
+      "https://hunterxhunter.fandom.com/wiki/Episode_100_(2011)?oldid=410878"
+    ],
+    "unverified": [
+      "Manga panels, episode timestamps and Italian dub audio unviewed."
+    ]
+  },
+  "bihorn": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_227?oldid=418151"
+    ],
+    "unverified": [
+      "Manga panels, episode timestamps and Italian dub audio unviewed."
+    ]
+  },
+  "mandai-city": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_243?oldid=416235",
+      "https://hunterxhunter.fandom.com/wiki/Episode_102_(2011)?oldid=416461",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_256?oldid=416242",
+      "https://hunterxhunter.fandom.com/wiki/Episode_108_(2011)?oldid=416466",
+      "https://hunterxhunter.fandom.com/wiki/Mandai_City?oldid=421700"
+    ],
+    "unverified": [
+      "Direct panels, licensed episode timestamps and Italian dub audio unviewed."
+    ]
+  },
+  "peijin": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_243?oldid=416235",
+      "https://hunterxhunter.fandom.com/wiki/Episode_102_(2011)?oldid=416461",
+      "https://hunterxhunter.fandom.com/wiki/Peijin?oldid=421698"
+    ],
+    "unverified": [
+      "Direct panels, licensed episode timestamps and Italian dub audio unviewed."
+    ]
+  },
+  "meteor-city": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_102?oldid=416176",
+      "https://hunterxhunter.fandom.com/wiki/Episode_24_(2011)?oldid=416398",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_224?oldid=383536",
+      "https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)?oldid=418152",
+      "https://hunterxhunter.fandom.com/wiki/Meteor_City?oldid=422644"
+    ],
+    "unverified": [
+      "Direct panels, licensed episode timestamps and Italian dub audio unviewed."
+    ]
   }
 }

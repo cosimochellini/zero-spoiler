@@ -49,4 +49,60 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M41 112 H108 M41 120 H89 M53 56 L44 39 M53 56 L73 34', role: 'soft' },
     shadow(82, 164, 56),
   ],
+  'pell': [
+    {
+      d: 'M33 102 Q48 69 80 70 Q112 69 127 102 Q120 130 80 147 Q40 130 33 102 Z',
+      role: 'accent',
+    },
+    { d: 'M80 71 V145', role: 'soft' },
+    { d: 'M39 103 L20 90', role: 'ambient' },
+    { d: 'M121 103 L140 90', role: 'ambient' },
+    shadow(80, 164, 43),
+  ],
+  'flutter': [
+    {
+      d: 'M80 107 Q38 37 16 57 Q16 92 80 107 Q144 92 144 57 Q122 37 80 107',
+      role: 'accent',
+    },
+    {
+      d: 'M80 107 Q40 100 37 127 Q56 145 80 107 Q104 145 123 127 Q120 100 80 107',
+      role: 'soft',
+    },
+    { d: 'M80 95 V146', role: 'ambient' },
+    shadow(80, 164, 43),
+  ],
+  'bihorn': [
+    { d: 'M59 122 Q30 101 23 60 Q48 94 71 101', role: 'accent' },
+    { d: 'M101 122 Q130 101 137 60 Q112 94 89 101', role: 'soft' },
+    { d: 'M59 122 Q80 138 101 122', role: 'ambient' },
+    shadow(80, 164, 43),
+  ],
+  'mandai-city': [
+    { d: 'M18 145 V93 H48 V145', role: 'accent' },
+    { d: 'M53 145 V69 H83 V145', role: 'soft' },
+    { d: 'M89 145 V104 H139 V145', role: 'ambient' },
+    { d: 'M62 82 H74', role: 'ambient' },
+    { d: 'M62 96 H74', role: 'ambient' },
+    { d: 'M100 119 H128', role: 'ambient' },
+    shadow(80, 160, 54),
+  ],
+  'peijin': [
+    { d: 'M12 145 H148', role: 'accent' },
+    { d: 'M22 145 V112 H53 V145', role: 'soft' },
+    { d: 'M57 145 V90 H108 V145', role: 'ambient' },
+    { d: 'M57 90 L82 66 L108 90', role: 'ambient' },
+    { d: 'M115 145 V108 H140 V145', role: 'ambient' },
+    shadow(80, 160, 54),
+  ],
+  'meteor-city': [
+    {
+      d: 'M12 146 L32 117 L49 120 L65 91 L92 113 L113 84 L149 146 Z',
+      role: 'accent',
+    },
+    { d: 'M24 140 H44', role: 'soft' },
+    { d: 'M55 135 L74 112', role: 'ambient' },
+    { d: 'M90 136 L112 107', role: 'ambient' },
+    { d: 'M115 140 H138', role: 'ambient' },
+    shadow(80, 160, 54),
+  ],
 } satisfies Drawings

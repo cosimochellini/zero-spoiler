@@ -4,6 +4,35 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
   {
     entries: [
       {
+        id: 'bihorn',
+        kind: 'character',
+        revealedAtEpisode: 97,
+        revealedAtChapter: 227,
+        source: 'chapter',
+        name: { it: 'Bihorn', en: 'Bihorn' },
+        summary: { it: 'Formichimera.', en: 'Chimera Ant.' },
+        visual: { art: 'bihorn', tint: 'ocher' },
+      },
+      {
+        id: 'flutter',
+        kind: 'character',
+        revealedAtEpisode: 100,
+        revealedAtChapter: 235,
+        name: { it: 'Flutter', en: 'Flutter' },
+        summary: { it: 'Formichimera.', en: 'Chimera Ant.' },
+        visual: { art: 'flutter', tint: 'ocher' },
+      },
+      {
+        id: 'pell',
+        kind: 'character',
+        revealedAtEpisode: 96,
+        revealedAtChapter: 226,
+        source: 'episode',
+        name: { it: 'Pell', en: 'Pell' },
+        summary: { it: 'Formichimera.', en: 'Chimera Ant.' },
+        visual: { art: 'pell', tint: 'ocher' },
+      },
+      {
         id: 'komugi',
         kind: 'character',
         revealedAtEpisode: 103,
@@ -33,6 +62,48 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
       },
     ],
     dossiers: {
+      bihorn: {
+        role: { it: 'Formichimera', en: 'Chimera Ant' },
+        log: {
+          it: 'Pike lo cita durante uno scontro.',
+          en: 'Pike mentions him during a fight.',
+        },
+        affiliation: [
+          {
+            episode: 97,
+            chapter: 227,
+            value: { it: 'Formichimere', en: 'Chimera Ants' },
+          },
+        ],
+        status: [{ episode: 97, chapter: 227, value: 'alive' }],
+      },
+      flutter: {
+        role: { it: 'Formichimera', en: 'Chimera Ant' },
+        log: {
+          it: 'Avverte un compagno del pericolo.',
+          en: 'Warns an ally of danger.',
+        },
+        affiliation: [
+          {
+            episode: 100,
+            chapter: 235,
+            value: { it: 'Formichimere', en: 'Chimera Ants' },
+          },
+        ],
+        status: [{ episode: 100, chapter: 235, value: 'alive' }],
+      },
+      pell: {
+        role: { it: 'Formichimera', en: 'Chimera Ant' },
+        log: { it: 'Combatte contro Shalnark.', en: 'Fights Shalnark.' },
+        affiliation: [
+          {
+            episode: 96,
+            chapter: 226,
+            value: { it: 'Formichimere', en: 'Chimera Ants' },
+          },
+        ],
+        status: [{ episode: 96, chapter: 226, value: 'alive' }],
+      },
       komugi: {
         role: { it: 'Campionessa di gungi', en: 'Gungi champion' },
         log: {
