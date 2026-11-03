@@ -3,7 +3,14 @@
   "followUp": {
     "issue": 1032,
     "ownerDecision": "Exclude all 31 candidates whose first personal-name mapping could not be verified. Each followUp1032 entry supplements the original reason. Secondary-source leads are retained for future licensed scene checks.",
-    "licensedScenesViewed": false
+    "licensedScenesViewed": false,
+    "officialEvidence": {
+      "characterRoster": "https://www.ntv.co.jp/hunterhunter/character/other_05.html",
+      "abenganeChapterTitle": "https://shonenjumpplus.com/episode/13932016480028734348",
+      "goreinuEpisodeSynopsis": "https://www.ntv.co.jp/hunterhunter/story/069.html",
+      "baraAndSubEpisodeSynopsis": "https://www.ntv.co.jp/hunterhunter/story/073.html",
+      "scope": "The roster pairs names with portraits. The chapter title prints Abengane at chapter 146, and the episode synopses identify Goreinu by episode 69 and Bara and Sub by episode 73. These references do not establish the earliest in-story naming scene."
+    }
   },
   "inventory": {
     "chapters": [
