@@ -154,8 +154,13 @@ export function* dumpLines({ archive, payloads, bookmarks, locales }) {
   )
   for (const { keys, name, run } of payloads) {
     const all = keys?.() ?? ['']
+    // Bookmarked home needs a current arc. Onboarding works without one.
+    const eligible = asks.filter(
+      ({ bookmark }) =>
+        bookmark === null || name !== 'loadHome' || archive.arcs.length > 0,
+    )
     for (const key of all) {
-      for (const { bookmark, locale } of asks) {
+      for (const { bookmark, locale } of eligible) {
         const payload = run(bookmark, locale, key)
         yield `${JSON.stringify({ name, key, bookmark, locale, payload })}\n`
       }

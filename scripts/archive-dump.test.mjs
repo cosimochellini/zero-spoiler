@@ -69,6 +69,7 @@ describe('the dump lines', () => {
     const lines = dumpLines({
       archive: {
         series: { episodeCeiling: 2 },
+        arcs: [{}],
         chapterAtEpisode: (episode) => episode * 3,
       },
       payloads: [
@@ -98,6 +99,54 @@ describe('the dump lines', () => {
         locale: 'it',
         payload: null,
       },
+    ])
+  })
+
+  it('skips only booked home rows when the archive files no arcs', () => {
+    const bookmark = { mode: 'episode', episode: 1 }
+    const lines = dumpLines({
+      archive: {
+        series: { episodeCeiling: 1 },
+        arcs: [],
+        chapterAtEpisode: () => 1,
+      },
+      payloads: [
+        {
+          name: 'loadHome',
+          run: (entry) => {
+            if (entry !== null) {
+              throw new Error('The archive files no arc')
+            }
+            return 'onboarding'
+          },
+        },
+        { name: 'loadCharacters', run: () => [] },
+      ],
+      bookmarks: [null, bookmark],
+      locales: ['en', 'it'],
+    })
+
+    expect([...lines].map((line) => JSON.parse(line))).toStrictEqual([
+      { table: 1, chapter: 1 },
+      ...['en', 'it'].map((locale) => ({
+        name: 'loadHome',
+        key: '',
+        bookmark: null,
+        locale,
+        payload: 'onboarding',
+      })),
+      ...[
+        [null, 'en'],
+        [null, 'it'],
+        [bookmark, 'en'],
+        [bookmark, 'it'],
+      ].map(([entry, locale]) => ({
+        name: 'loadCharacters',
+        key: '',
+        bookmark: entry,
+        locale,
+        payload: [],
+      })),
     ])
   })
 })
