@@ -11,15 +11,30 @@ export interface ThronesEntity extends Entity {
 
 /**
  * Game of Thrones' words, labelled in `../placeWords`: what kind of place a
- * place is, and whether it lies in the Seven Kingdoms, beyond the Wall or
- * across the sea in Essos. Coarse on purpose: the first season's places
- * (#853) add what they need. It has no groups: a house is prose for now,
- * and houses come later as a kind of their own (#844).
+ * place is, and the realm it lies in, beyond the Wall or across the sea in
+ * Essos. Only the words a filed place uses (#853): a realm with no place yet
+ * comes with its first. It has no groups: a house is prose for now, and
+ * houses come later as a kind of their own (#844).
  */
 export interface ThronesVocabulary extends Vocabulary {
-  form: 'castle' | 'city' | 'forest' | 'fortress'
+  form:
+    | 'camp'
+    | 'castle'
+    | 'city'
+    | 'forest'
+    | 'fortress'
+    | 'inn'
+    | 'plain'
+    | 'sept'
+    | 'town'
   group: never
-  region: 'beyond-the-wall' | 'essos' | 'seven-kingdoms'
+  region:
+    | 'beyond-the-wall'
+    | 'essos'
+    | 'the-crownlands'
+    | 'the-north'
+    | 'the-riverlands'
+    | 'the-vale'
 }
 
 /**

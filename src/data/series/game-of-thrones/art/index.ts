@@ -118,10 +118,32 @@ const WOLF: Stroke[] = [
 ]
 
 /**
+ * What every place shows until #854 draws it: a plain square keep on a
+ * horizon, its battlements and an arched door, with no banner or mark. It
+ * stands for no place in particular, so it tells a reader nothing; the
+ * accent is the door.
+ */
+const PLACE: Stroke[] = [
+  { d: 'M24 150 H136', role: 'ambient', dashed: true },
+  { d: 'M56 150 V78 H104 V150' },
+  {
+    d: 'M56 78 V68 H62 V78 M70 78 V68 H76 V78 M84 78 V68 H90 V78 M98 78 V68 H104 V78',
+    role: 'soft',
+  },
+  { d: 'M72 150 V126 Q80 114 88 126 V150', role: 'accent' },
+  { d: 'M68 96 V104 M92 96 V104', role: 'soft' },
+  {
+    d: 'M98 84 l4 -3 M98 96 l4 -3 M98 108 l4 -3 M98 120 l4 -3',
+    role: 'ambient',
+  },
+  shadow(80, 154, 40),
+]
+
+/**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
- * for. Four leads have their own; every other record shows `PERSON` or
- * `WOLF` until #854 draws it (owner, #856). `satisfies` rather than an
- * annotation, so `ArtId` below stays the literal keys.
+ * for. Four leads have their own; every other record shows `PERSON`, `WOLF`
+ * or `PLACE` until #854 draws it (owner, #856; places, #853). `satisfies`
+ * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   'eddard-stark': ICE_STANDING,
@@ -187,6 +209,29 @@ export const DRAWINGS = {
   'doreah': PERSON,
   'rakharo': PERSON,
   'mirri-maz-duur': PERSON,
+  'haunted-forest': PLACE,
+  'winterfell': PLACE,
+  'pentos': PLACE,
+  'kings-landing': PLACE,
+  'the-wall': PLACE,
+  'winter-town': PLACE,
+  'inn-at-the-crossroads': PLACE,
+  'darry': PLACE,
+  'castle-black': PLACE,
+  'dothraki-sea': PLACE,
+  'red-keep': PLACE,
+  'vaes-dothrak': PLACE,
+  'the-eyrie': PLACE,
+  'wolfswood': PLACE,
+  'kingswood': PLACE,
+  'lannister-camp': PLACE,
+  'lhazar': PLACE,
+  'the-twins': PLACE,
+  'great-sept-of-baelor': PLACE,
+  'riverrun': PLACE,
+  'moles-town': PLACE,
+  'bloody-gate': PLACE,
+  'moat-cailin': PLACE,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

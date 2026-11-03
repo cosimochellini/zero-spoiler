@@ -12,6 +12,7 @@ import type { SeriesArchive } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { SagaTableContext } from '~/lib/progress/sagaLabel'
+import type { Source } from '~/lib/progress/spoiler'
 import { landingPage } from '~/server/archive/home.server'
 import {
   characterPage,
@@ -101,6 +102,16 @@ function pagesOf(
   return bookmarksOf(archive).flatMap((bookmark) =>
     ids.map((id) => ({ bookmark, id })),
   )
+}
+
+/**
+ * A record of one source only has no page for a reader of the other or with
+ * no bookmark; in its own unit, and for every other record, the page must
+ * still draw.
+ */
+function readsIn(source: Source | undefined, bookmark: Bookmark): boolean {
+  const unit = bookmark?.mode === 'chapter' ? 'chapter' : 'episode'
+  return source === undefined || (bookmark !== null && source === unit)
 }
 
 function CharacterBands({
@@ -259,14 +270,9 @@ describe.each(LOADED)('every record page of $series.slug', (archive) => {
 
   it.each(LOCALES)('draws each character’s page in %s', async (locale) => {
     const ids = sample(archive.characters.map((entity) => entity.id))
-    // A record of one source only has no page for a reader of the other or
-    // with no bookmark; in its own unit, and for every other record, the
-    // page must still draw.
-    const pages = pagesOf(archive, ids).filter(({ bookmark, id }) => {
-      const source = archive.getCharacter(id)?.source
-      const unit = bookmark?.mode === 'chapter' ? 'chapter' : 'episode'
-      return source === undefined || (bookmark !== null && source === unit)
-    })
+    const pages = pagesOf(archive, ids).filter(({ bookmark, id }) =>
+      readsIn(archive.getCharacter(id)?.source, bookmark),
+    )
     for (const { bookmark, id } of pages) {
       const { unmount } = renderWithProviders(
         <CharacterBands
@@ -287,11 +293,9 @@ describe.each(LOADED)('every record page of $series.slug', (archive) => {
 
   it.each(LOCALES)('draws each place’s page in %s', async (locale) => {
     const ids = sample(archive.places.map((entity) => entity.id))
-    const pages = pagesOf(archive, ids).filter(({ bookmark, id }) => {
-      const source = archive.getPlace(id)?.source
-      const unit = bookmark?.mode === 'chapter' ? 'chapter' : 'episode'
-      return source === undefined || (bookmark !== null && source === unit)
-    })
+    const pages = pagesOf(archive, ids).filter(({ bookmark, id }) =>
+      readsIn(archive.getPlace(id)?.source, bookmark),
+    )
     for (const { bookmark, id } of pages) {
       const { unmount } = renderWithProviders(
         <PlaceBands

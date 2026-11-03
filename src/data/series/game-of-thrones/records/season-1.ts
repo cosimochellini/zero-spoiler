@@ -1,8 +1,10 @@
-import type { ThronesSaga } from './saga'
+import type { PlaceDossier } from '~/data/types'
+
+import type { ThronesSaga, ThronesVocabulary } from './saga'
 
 /**
- * Season 1 of the show and *A Game of Thrones*: the main cast (#852), each
- * filed where they appear and are named, in each medium. Chapters are the
+ * Season 1 of the show and *A Game of Thrones*: the main cast (#852) and the
+ * places its scenes are set in (#853), each filed where they appear and are named, in each medium. Chapters are the
  * site's absolute ones: the book's prologue is chapter 1, so its chapter N
  * is N + 1. Every dated step pins its chapter, because the two media gate
  * the same fact at unrelated numbers. Gates and steps are taken from the
@@ -949,6 +951,350 @@ export const season1: ThronesSaga = {
         en: 'A Lhazareen godswife and healer, taken captive when Drogo’s khalasar attacks her town.',
       },
       visual: { art: 'mirri-maz-duur', tint: 'wine' },
+    },
+    // The season’s places (#853): every place a scene is set in, in either
+    // medium, gated at its first scene there. Each shows `PLACE` until #854.
+    // Show: "Winter Is Coming", the cold open, the rangers find the dead
+    // wildlings. Books: Prologue (Will), site chapter 1.
+    {
+      id: 'haunted-forest',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 1,
+      name: { it: 'Foresta Stregata', en: 'the Haunted Forest' },
+      summary: {
+        it: 'Una foresta sterminata oltre il confine settentrionale del regno, dove i Guardiani della Notte mandano i loro ranger.',
+        en: 'A vast forest beyond the northern border of the realm, where the Night’s Watch sends its rangers.',
+      },
+      visual: { art: 'haunted-forest', tint: 'teal' },
+    },
+    // Show: "Winter Is Coming", Bran's archery practice in the yard. Books:
+    // Bran I (site chapter 2), the ride out from the castle to the execution,
+    // where the Starks are first named as of Winterfell; Catelyn I (site 3),
+    // in the godswood, is the first scene inside its walls.
+    {
+      id: 'winterfell',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 2,
+      name: { it: 'Grande Inverno', en: 'Winterfell' },
+      summary: {
+        it: 'La sede della Casa Stark, un castello grigio del Nord con un antico parco degli dèi al centro.',
+        en: 'The seat of House Stark, a grey castle in the North with an old godswood at its heart.',
+      },
+      visual: { art: 'winterfell', tint: 'ice' },
+    },
+    // Show: "Winter Is Coming", Viserys presents Daenerys at Illyrio's manse.
+    // Books: Daenerys I (site chapter 4), the same, in Illyrio's manse.
+    {
+      id: 'pentos',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 4,
+      name: { it: 'Pentos', en: 'Pentos' },
+      summary: {
+        it: 'Una Città Libera al di là del Mare Stretto, dove un ricco magistro ospita due esuli.',
+        en: 'A Free City across the Narrow Sea, where a rich magister keeps two exiles under his roof.',
+      },
+      visual: { art: 'pentos', tint: 'sand' },
+    },
+    // Show: "Winter Is Coming", the bells ring for Jon Arryn and Cersei and
+    // Jaime talk over his body. Books: Catelyn IV (site chapter 19), Catelyn
+    // lands from the Storm Dancer.
+    {
+      id: 'kings-landing',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 19,
+      name: { it: 'Approdo del Re', en: 'King’s Landing' },
+      summary: {
+        it: 'La capitale dei Sette Regni, una città affollata sulla costa dove il re tiene corte.',
+        en: 'The capital of the Seven Kingdoms, a crowded city on the coast where the king holds court.',
+      },
+      visual: { art: 'kings-landing', tint: 'red' },
+    },
+    // Show: "Winter Is Coming", the cold open, the rangers ride out through the
+    // gate tunnel. Books: Tyrion III (site chapter 22), the first scene on top
+    // of the Wall.
+    {
+      id: 'the-wall',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 22,
+      commonWord: true,
+      name: { it: 'la Barriera', en: 'the Wall' },
+      summary: {
+        it: 'Un muro di ghiaccio alto più di duecento metri lungo il confine settentrionale del regno, presidiato dai Guardiani della Notte.',
+        en: 'A wall of ice seven hundred feet high along the northern border of the realm, held by the Night’s Watch.',
+      },
+      visual: { art: 'the-wall', tint: 'ice' },
+    },
+    // Show: "Winter Is Coming", Tyrion at the brothel in the town outside
+    // Winterfell (Fandom, Winter town). Books: Bran V (site chapter 38), Bran
+    // rides through the winter town.
+    {
+      id: 'winter-town',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 38,
+      name: { it: 'Città d’Inverno', en: 'Winter town' },
+      summary: {
+        it: 'Il borgo sotto le mura di Grande Inverno, mezzo vuoto finché non arriva il freddo.',
+        en: 'The town below the walls of Winterfell, half empty until the cold comes.',
+      },
+      visual: { art: 'winter-town', tint: 'ice' },
+    },
+    // Show: "The Kingsroad", the royal party stops at the inn and the quarrel
+    // on the riverbank. Books: Sansa I (site chapter 16), breakfast at the inn
+    // and the quarrel on the banks of the Trident.
+    {
+      id: 'inn-at-the-crossroads',
+      kind: 'place',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 16,
+      name: { it: 'Locanda all’Incrocio', en: 'the Inn at the Crossroads' },
+      summary: {
+        it: 'Una locanda dove si incontrano le grandi strade del regno, vicino alle rive del Tridente.',
+        en: 'An inn where the great roads of the realm meet, near the banks of the Trident.',
+      },
+      visual: { art: 'inn-at-the-crossroads', tint: 'azure' },
+    },
+    // Show: never visited (the show moves these events to the Inn at the
+    // Crossroads, ep 2, which is the ordering estimate). Books: Eddard III
+    // (site chapter 17), the judgment in Castle Darry's audience chamber.
+    {
+      id: 'darry',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 17,
+      name: { it: 'Darry', en: 'Darry' },
+      summary: {
+        it: 'Un piccolo castello vicino al Tridente, il cui signore è rimasto fedele ai Targaryen.',
+        en: 'A small castle near the Trident whose lord stayed loyal to the Targaryens.',
+      },
+      visual: { art: 'darry', tint: 'azure' },
+    },
+    // Show: "The Kingsroad", the party reaches the Wall and Benjen welcomes
+    // them. Books: Jon III (site chapter 20), Jon trains in the yard.
+    {
+      id: 'castle-black',
+      kind: 'place',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 20,
+      name: { it: 'Castello Nero', en: 'Castle Black' },
+      summary: {
+        it: 'Il castello principale dei Guardiani della Notte, ai piedi della Barriera.',
+        en: 'The chief castle of the Night’s Watch, at the foot of the Wall.',
+      },
+      visual: { art: 'castle-black', tint: 'ice' },
+    },
+    // Show: "The Kingsroad", the khalasar rides into the Dothraki Sea. Books:
+    // Daenerys III (site chapter 24), on the Dothraki sea.
+    {
+      id: 'dothraki-sea',
+      kind: 'place',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 24,
+      name: { it: 'Mare Dothraki', en: 'the Dothraki Sea' },
+      summary: {
+        it: 'Le sterminate pianure d’erba a est delle Città Libere, dove cavalcano i Dothraki.',
+        en: 'The endless grass plains east of the Free Cities, where the Dothraki ride.',
+      },
+      visual: { art: 'dothraki-sea', tint: 'sand' },
+    },
+    // Show: "Lord Snow", Ned meets Jaime in the throne room and sits his first
+    // small council. Books: Eddard IV (site chapter 21), the same council.
+    {
+      id: 'red-keep',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 21,
+      name: { it: 'Fortezza Rossa', en: 'the Red Keep' },
+      summary: {
+        it: 'Il castello del re ad Approdo del Re, dove si trova il Trono di Spade.',
+        en: 'The king’s castle in King’s Landing, where the Iron Throne stands.',
+      },
+      visual: { art: 'red-keep', tint: 'red' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", the khalasar arrives under
+    // the horse gate. Books: Daenerys IV (site chapter 37), the khalasar
+    // reaches the city.
+    {
+      id: 'vaes-dothrak',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 37,
+      nameSaidAt: 3,
+      name: { it: 'Vaes Dothrak', en: 'Vaes Dothrak' },
+      summary: {
+        it: 'La città sacra dei Dothraki, in mezzo alle pianure d’erba.',
+        en: 'The sacred city of the Dothraki, far out on the grass plains.',
+      },
+      visual: { art: 'vaes-dothrak', tint: 'sand' },
+    },
+    // Show: "The Wolf and the Lion", Lysa holds court in the High Hall. Books:
+    // Catelyn VI (site chapter 35), Catelyn climbs from the Bloody Gate to the
+    // Eyrie.
+    {
+      id: 'the-eyrie',
+      kind: 'place',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 35,
+      name: { it: 'Nido dell’Aquila', en: 'the Eyrie' },
+      summary: {
+        it: 'Il castello della Casa Arryn, costruito in cima a una montagna e ritenuto inespugnabile.',
+        en: 'The castle of House Arryn, built high on a mountain peak and held to be impregnable.',
+      },
+      visual: { art: 'the-eyrie', tint: 'blue' },
+    },
+    // Show: "A Golden Crown", wildlings waylay Bran (Fandom, Wolfswood). Books:
+    // Bran V (site chapter 38), the same ambush.
+    {
+      id: 'wolfswood',
+      kind: 'place',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 38,
+      name: { it: 'Foresta del Lupo', en: 'the wolfswood' },
+      summary: {
+        it: 'La grande foresta a ovest di Grande Inverno.',
+        en: 'The great forest west of Winterfell.',
+      },
+      visual: { art: 'wolfswood', tint: 'ice' },
+    },
+    // Show: "A Golden Crown", Robert hunts with Renly, Barristan and Lancel.
+    // Books: no chapter is set there (the hunt is off the page in AGOT); 44 is
+    // an ordering estimate, between Robert leaving to hunt and his return
+    // (sites 40-48).
+    {
+      id: 'kingswood',
+      kind: 'place',
+      source: 'episode',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 44,
+      name: { it: 'Bosco del Re', en: 'the Kingswood' },
+      summary: {
+        it: 'Una grande foresta reale a sud di Approdo del Re, dove il re va a caccia.',
+        en: 'A wide royal forest south of King’s Landing, where the king goes to hunt.',
+      },
+      visual: { art: 'kingswood', tint: 'red' },
+    },
+    // Show: "You Win or You Die", Tywin skins a stag in his tent and talks with
+    // Jaime. Books: Tyrion VIII (site chapter 63), the camp on the eve of the
+    // battle, where Bronn brings Shae.
+    {
+      id: 'lannister-camp',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 63,
+      name: { it: 'Accampamento Lannister', en: 'Lannister camp' },
+      summary: {
+        it: 'L’accampamento dell’esercito di lord Tywin Lannister in campagna.',
+        en: 'The camp of Lord Tywin Lannister’s army in the field.',
+      },
+      visual: { art: 'lannister-camp', tint: 'azure' },
+    },
+    // Show: "The Pointy End", the raid on a Lhazareen village. Books: Daenerys
+    // VII (site chapter 62), the sack of the town of the Lamb Men.
+    {
+      id: 'lhazar',
+      kind: 'place',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 62,
+      name: { it: 'Lhazar', en: 'Lhazar' },
+      summary: {
+        it: 'Una terra di villaggi di pastori a sud-est di Vaes Dothrak.',
+        en: 'A land of shepherd villages south-east of Vaes Dothrak.',
+      },
+      visual: { art: 'lhazar', tint: 'sand' },
+    },
+    // Show: "Baelor", Catelyn goes in to bargain with Walder Frey. Books:
+    // Catelyn IX (site chapter 60), the same.
+    {
+      id: 'the-twins',
+      kind: 'place',
+      revealedAtEpisode: 9,
+      revealedAtChapter: 60,
+      name: { it: 'Torri Gemelle', en: 'the Twins' },
+      summary: {
+        it: 'Due castelli uno di fronte all’altro sulle rive della Forca Verde, uniti da un ponte: la sede della Casa Frey.',
+        en: 'Two castles facing each other across the Green Fork, joined by a bridge: the seat of House Frey.',
+      },
+      visual: { art: 'the-twins', tint: 'azure' },
+    },
+    // Show: "Baelor", Ned's confession on the steps. Books: Arya V (site
+    // chapter 66), the same.
+    {
+      id: 'great-sept-of-baelor',
+      kind: 'place',
+      revealedAtEpisode: 9,
+      revealedAtChapter: 66,
+      name: { it: 'Grande Tempio di Baelor', en: 'the Great Sept of Baelor' },
+      summary: {
+        it: 'Il tempio più grande di Approdo del Re, dove officia l’Alto Septon.',
+        en: 'The largest sept in King’s Landing, where the High Septon presides.',
+      },
+      visual: { art: 'great-sept-of-baelor', tint: 'red' },
+    },
+    // Show: "Walk of Punishment" (season 3 episode 3, absolute 23), Hoster
+    // Tully's funeral. Books: Catelyn XI (site chapter 72), Catelyn returns by
+    // boat.
+    {
+      id: 'riverrun',
+      kind: 'place',
+      revealedAtEpisode: 23,
+      revealedAtChapter: 72,
+      name: { it: 'Delta delle Acque', en: 'Riverrun' },
+      summary: {
+        it: 'La sede della Casa Tully, un castello alla confluenza di due fiumi.',
+        en: 'The seat of House Tully, a castle where two rivers meet.',
+      },
+      visual: { art: 'riverrun', tint: 'azure' },
+    },
+    // Show: "Breaker of Chains" (season 4 episode 3, absolute 33), Sam brings
+    // Gilly to the village. Books: Jon IX (site chapter 71), Jon rides south
+    // through it.
+    {
+      id: 'moles-town',
+      kind: 'place',
+      revealedAtEpisode: 33,
+      revealedAtChapter: 71,
+      name: { it: 'Città della Talpa', en: 'Mole’s Town' },
+      summary: {
+        it: 'Il villaggio più vicino al Castello Nero, poco più a sud lungo la strada.',
+        en: 'The nearest village to Castle Black, a short ride south along the road.',
+      },
+      visual: { art: 'moles-town', tint: 'ice' },
+    },
+    // Show: "First of His Name" (season 4 episode 5, absolute 35), Littlefinger
+    // and Sansa arrive at the gate. Books: Catelyn VI (site chapter 35),
+    // Catelyn's party reaches the gate.
+    {
+      id: 'bloody-gate',
+      kind: 'place',
+      revealedAtEpisode: 35,
+      revealedAtChapter: 35,
+      name: { it: 'Porta Insanguinata', en: 'the Bloody Gate' },
+      summary: {
+        it: 'La porta fortificata che sbarra l’accesso alla Valle.',
+        en: 'The fortified gate that bars the way into the Vale.',
+      },
+      visual: { art: 'bloody-gate', tint: 'blue' },
+    },
+    // Show: "The Mountain and the Viper" (season 4 episode 8, absolute 38),
+    // Ramsay sends Reek to the ironborn garrison. Books: Catelyn VIII (site
+    // chapter 56), Catelyn joins Robb's host at Moat Cailin.
+    {
+      id: 'moat-cailin',
+      kind: 'place',
+      revealedAtEpisode: 38,
+      revealedAtChapter: 56,
+      name: { it: 'Moat Cailin', en: 'Moat Cailin' },
+      summary: {
+        it: 'Un’antica roccaforte in rovina tra le paludi, a guardia della strada tra il Nord e il sud.',
+        en: 'An ancient ruined stronghold in the marshes, guarding the road between the North and the south.',
+      },
+      visual: { art: 'moat-cailin', tint: 'ice' },
     },
   ],
   dossiers: {
@@ -2370,5 +2716,361 @@ export const season1: ThronesSaga = {
         },
       ],
     },
+  },
+}
+
+/**
+ * The log entry of every season-1 place, by the place's id, in its own words
+ * (`../placeWords`). `filedHere` names the characters first met there; where
+ * the two media meet one at different places, the show's place has them
+ * (owner, #853). Yoren, met on the Kingsroad, has none: roads are not filed.
+ */
+export const SEASON_1_PLACES: Record<
+  string,
+  PlaceDossier<ThronesVocabulary>
+> = {
+  'haunted-forest': {
+    form: 'forest',
+    region: 'beyond-the-wall',
+    landmark: {
+      it: 'Alti alberi sentinella sulla neve fresca',
+      en: 'Tall sentinel trees over fresh snow',
+    },
+    log: {
+      it: 'Tre ranger dei Guardiani della Notte seguono le tracce di un gruppo di bruti tra gli alberi. I bruti che trovano giacciono morti nella neve, e quando i ranger tornano a guardare i corpi sono spariti.',
+      en: 'Three rangers of the Night’s Watch track a band of wildlings through the trees. The wildlings they find lie dead in the snow, and when the rangers come back to look, the bodies are gone.',
+    },
+    filedHere: [],
+  },
+  'winterfell': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'L’albero del cuore, pallido e con un volto scolpito, nel parco degli dèi',
+      en: 'The pale heart tree with a carved face in the godswood',
+    },
+    log: {
+      it: 'Gli Stark governano il Nord da questo castello. Dentro le mura c’è il parco degli dèi, un antico bosco sacro agli antichi dèi, con un albero del cuore al centro.',
+      en: 'The Starks rule the North from this castle. Inside its walls lies the godswood, an old grove sacred to the old gods, with a heart tree at its centre.',
+    },
+    filedHere: [
+      'eddard-stark',
+      'catelyn-stark',
+      'robb-stark',
+      'sansa-stark',
+      'arya-stark',
+      'bran-stark',
+      'rickon-stark',
+      'jon-snow',
+      'benjen-stark',
+      'grey-wind',
+      'lady-direwolf',
+      'nymeria',
+      'summer-direwolf',
+      'shaggydog',
+      'ghost-direwolf',
+      'theon-greyjoy',
+      'luwin',
+      'rodrik-cassel',
+      'old-nan',
+      'hodor',
+      'mordane',
+      'jory-cassel',
+      'cersei-lannister',
+      'jaime-lannister',
+      'tyrion-lannister',
+      'joffrey-baratheon',
+      'myrcella-baratheon',
+      'tommen-baratheon',
+      'robert-baratheon',
+      'sandor-clegane',
+    ],
+  },
+  'pentos': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'La villa del magistro sopra il mare',
+      en: 'The magister’s manse above the sea',
+    },
+    log: {
+      it: 'Due esuli di Westeros vivono qui, ospiti di un ricco magistro. Il magistro ha combinato le nozze della sorella con un signore della guerra dothraki, che in cambio darà un esercito al fratello.',
+      en: 'Two exiles from Westeros live here as guests of a rich magister. He has arranged for the sister to marry a Dothraki warlord, whose horde is to win the brother an army.',
+    },
+    filedHere: [
+      'daenerys-targaryen',
+      'viserys-targaryen',
+      'drogo',
+      'jorah-mormont',
+      'illyrio-mopatis',
+    ],
+  },
+  'kings-landing': {
+    form: 'city',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'La città sulle sue colline sopra la baia',
+      en: 'The city on its hills above the bay',
+    },
+    log: {
+      it: 'Le campane della città suonano per la morte del Primo Cavaliere del Re. Qui risiede la corte, e da qui si governa il regno.',
+      en: 'The bells of the city ring for the death of the Hand of the King. The king’s court sits here, and the realm is governed from here.',
+    },
+    filedHere: ['gendry', 'gregor-clegane', 'loras-tyrell'],
+  },
+  'the-wall': {
+    form: 'fortress',
+    region: 'the-north',
+    landmark: {
+      it: 'Una parete di ghiaccio bianco e azzurro che riempie metà del cielo',
+      en: 'A cliff of blue-white ice filling half the sky',
+    },
+    log: {
+      it: 'I Guardiani della Notte sorvegliano questo muro di ghiaccio contro ciò che sta a nord, e i loro ranger escono a cavallo oltre la Barriera. Chi prende il nero giura di servire sulla Barriera per il resto della vita.',
+      en: 'The Night’s Watch guards this wall of ice against what lies to the north, and its rangers ride out beyond it. A man who takes the black swears to serve on the Wall for the rest of his life.',
+    },
+    filedHere: [],
+  },
+  'winter-town': {
+    form: 'town',
+    region: 'the-north',
+    landmark: {
+      it: 'Case di legno lungo la strada sotto il castello',
+      en: 'Timber houses along the road below the castle',
+    },
+    log: {
+      it: 'Gran parte delle sue case resta vuota d’estate e si riempie quando la gente delle campagne arriva per l’inverno. Chi preferisce non dormire al castello trova qui un letto.',
+      en: 'Most of its houses stand empty in summer and fill when the smallfolk come in from the countryside for the winter. Visitors who would rather not sleep in the castle find a bed here.',
+    },
+    filedHere: ['ros'],
+  },
+  'inn-at-the-crossroads': {
+    form: 'inn',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Una grande locanda di pietra a lato della strada',
+      en: 'A large stone inn beside the road',
+    },
+    log: {
+      it: 'Il corteo del re si ferma qui nel viaggio verso sud. Sulla riva del fiume, una lite tra il principe Joffrey e Arya Stark finisce con il metalupo di lei che gli morde il braccio.',
+      en: 'The king’s party stops here on its way south. On the riverbank nearby, a quarrel between Prince Joffrey and Arya Stark ends with her direwolf biting his arm.',
+    },
+    filedHere: ['ilyn-payne', 'bronn'],
+  },
+  'darry': {
+    form: 'castle',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un piccolo mastio sopra i campi lungo il fiume',
+      en: 'A modest keep above the river fields',
+    },
+    log: {
+      it: 'Il corteo del re si ferma qui mentre si cerca Arya Stark. Nella sala delle udienze il re ascolta la lite tra suo figlio e la ragazza, e pronuncia il suo giudizio.',
+      en: 'The king’s party stays here while the search for Arya Stark goes on. In the audience chamber the king hears the quarrel between his son and her, and gives his judgment.',
+    },
+    filedHere: [],
+  },
+  'castle-black': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Edifici di legno e pietra raccolti sotto il ghiaccio',
+      en: 'Timber and stone buildings huddled under the ice',
+    },
+    log: {
+      it: 'Da qui si comandano i Guardiani della Notte, e qui arrivano da tutto il regno le reclute da addestrare. Molti sono ladri e condannati che hanno scelto il nero invece della pena.',
+      en: 'The Night’s Watch is commanded from here, and recruits from all over the realm are brought here to be trained. Many of them are thieves and convicts who chose the black over their punishment.',
+    },
+    filedHere: ['jeor-mormont', 'aemon', 'samwell-tarly', 'alliser-thorne'],
+  },
+  'dothraki-sea': {
+    form: 'plain',
+    region: 'essos',
+    landmark: {
+      it: 'Erba alta fino all’orizzonte sotto un cielo aperto',
+      en: 'Tall grass to the horizon under a wide sky',
+    },
+    log: {
+      it: 'Il khalasar attraversa queste pianure diretto a est e la notte si accampa nelle tende. L’erba cresce tanto alta da nascondere un uomo a cavallo.',
+      en: 'The khalasar crosses these plains on its way east and camps in tents at night. The grass grows tall enough to hide a rider.',
+    },
+    filedHere: ['irri', 'doreah', 'rakharo'],
+  },
+  'red-keep': {
+    form: 'castle',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Il Trono di Spade in fondo alla sala del trono',
+      en: 'The Iron Throne at the end of the throne room',
+    },
+    log: {
+      it: 'Il nuovo Primo Cavaliere del Re viene convocato al concilio ristretto appena arrivato. Lì scopre quanto la Corona sia indebitata.',
+      en: 'The new Hand of the King is called to the small council as soon as he arrives. There he learns how deep in debt the crown is.',
+    },
+    filedHere: [
+      'renly-baratheon',
+      'barristan-selmy',
+      'syrio-forel',
+      'petyr-baelish',
+      'varys',
+      'pycelle',
+      'janos-slynt',
+    ],
+  },
+  'vaes-dothrak': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'La porta formata da due enormi cavalli impennati',
+      en: 'The gate of two giant rearing horses',
+    },
+    log: {
+      it: 'La città non ha mura. Il khalasar entra da una porta formata da due enormi cavalli impennati e si accampa tra i suoi palazzi.',
+      en: 'The city has no walls. The khalasar rides in under a gate made of two giant rearing horses and camps among its halls.',
+    },
+    filedHere: [],
+  },
+  'the-eyrie': {
+    form: 'castle',
+    region: 'the-vale',
+    landmark: {
+      it: 'Torri bianche su una vetta sopra le nuvole',
+      en: 'White towers on a mountain peak above the clouds',
+    },
+    log: {
+      it: 'Nessun esercito l’ha mai presa. Da qui la signora del castello governa la Valle in nome del figlio ancora bambino.',
+      en: 'No army has ever taken it. The lady of the castle rules the Vale from here in the name of her young son.',
+    },
+    filedHere: ['lysa-arryn', 'robin-arryn'],
+  },
+  'wolfswood': {
+    form: 'forest',
+    region: 'the-north',
+    landmark: {
+      it: 'Pini scuri al margine della foresta',
+      en: 'Dark pines at the edge of the forest',
+    },
+    log: {
+      it: 'Bran Stark viene a cavalcare qui per la prima volta dopo la caduta, su una sella fatta apposta per lui. Tra gli alberi lo fermano dei fuorilegge che cercano di prendergli il cavallo.',
+      en: 'Bran Stark rides out here for the first time since his fall, in a saddle made for him. Outlaws hiding among the trees stop him and try to take his horse.',
+    },
+    filedHere: ['osha'],
+  },
+  'kingswood': {
+    form: 'forest',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Un fitto bosco reale al di là del fiume rispetto alla città',
+      en: 'Dense royal woods across the river from the city',
+    },
+    log: {
+      it: 'Il re viene qui a caccia con il fratello e il Lord Comandante della Guardia Reale, e continua a bere mentre cavalcano.',
+      en: 'The king rides here to hunt with his brother and the Lord Commander of the Kingsguard, and keeps drinking as they ride.',
+    },
+    filedHere: [],
+  },
+  'lannister-camp': {
+    form: 'camp',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Una grande tenda con il leone dei Lannister al centro dell’accampamento',
+      en: 'A great tent with the Lannister lion at the heart of the camp',
+    },
+    log: {
+      it: 'L’esercito di lord Tywin pianta le tende nelle terre dei fiumi, con la sua al centro dell’accampamento. Mercenari e gente al seguito dell’esercito vanno dietro alle truppe.',
+      en: 'Lord Tywin’s army pitches its tents in the riverlands, with his own at the heart of the camp. Sellswords and camp followers trail behind the host.',
+    },
+    filedHere: ['tywin-lannister', 'shae'],
+  },
+  'lhazar': {
+    form: 'town',
+    region: 'essos',
+    landmark: {
+      it: 'Basse case di fango attorno al tempio del villaggio',
+      en: 'Low mud houses around a village temple',
+    },
+    log: {
+      it: 'Il khalasar saccheggia un villaggio della zona per prendere schiavi da vendere. Daenerys ordina ai guerrieri di smettere di violentare le prigioniere e le prende sotto la sua protezione.',
+      en: 'The khalasar raids a village here for slaves to sell. Daenerys orders the warriors to stop raping the captive women and claims the women as her own.',
+    },
+    filedHere: ['mirri-maz-duur'],
+  },
+  'the-twins': {
+    form: 'castle',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Due torri identiche unite da un ponte sul fiume',
+      en: 'Two identical towers joined by a bridge over the river',
+    },
+    log: {
+      it: 'Il ponte è l’unico passaggio sul fiume per molte leghe, e il suo signore fa pagare chiunque lo voglia usare. Un esercito diretto a sud deve trattare con lui per passare.',
+      en: 'The bridge is the only crossing of the river for many leagues, and its lord makes everyone pay to use it. An army marching south must bargain with him to get across.',
+    },
+    filedHere: ['walder-frey'],
+  },
+  'great-sept-of-baelor': {
+    form: 'sept',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'La scalinata di marmo e la statua di Baelor davanti al tempio',
+      en: 'The marble steps and the statue of Baelor before the sept',
+    },
+    log: {
+      it: 'La folla riempie la piazza davanti al tempio quando un prigioniero viene portato a confessare sulla scalinata. Nella piazza si trova la statua di re Baelor.',
+      en: 'A crowd fills the plaza before the sept when a prisoner is brought out to confess on its steps. A statue of King Baelor stands in the plaza.',
+    },
+    filedHere: [],
+  },
+  'riverrun': {
+    form: 'castle',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un castello che sorge dall’acqua alla confluenza di due fiumi',
+      en: 'A castle rising from the water where two rivers meet',
+    },
+    log: {
+      it: 'Quando i fiumi sono in piena, il castello si trova su un’isola. Le barche entrano da una porta d’acqua sotto le mura.',
+      en: 'When the rivers run high, the castle stands on an island. Boats come in through a water gate under the walls.',
+    },
+    filedHere: [],
+  },
+  'moles-town': {
+    form: 'town',
+    region: 'the-north',
+    landmark: {
+      it: 'Un gruppo di capanne lungo la strada, nella neve',
+      en: 'A cluster of huts by the road in the snow',
+    },
+    log: {
+      it: 'Il villaggio ha un bordello che gli uomini dei Guardiani della Notte frequentano nonostante i voti. La strada che scende a sud dal Castello Nero lo attraversa.',
+      en: 'The village keeps a brothel that men of the Night’s Watch visit despite their vows. The road south from Castle Black runs through it.',
+    },
+    filedHere: [],
+  },
+  'bloody-gate': {
+    form: 'fortress',
+    region: 'the-vale',
+    landmark: {
+      it: 'Due torri unite da un ponte sopra uno stretto passo',
+      en: 'Two towers bridged across a narrow pass',
+    },
+    log: {
+      it: 'La strada per la Valle ci passa sotto, in una gola così stretta che pochi uomini bastano a difenderla. Il cavaliere che la custodisce interroga ogni viaggiatore prima di lasciarlo passare.',
+      en: 'The road into the Vale passes beneath it, through a pass so narrow that a few men can hold it. The knight who keeps it questions every traveller before letting them through.',
+    },
+    filedHere: [],
+  },
+  'moat-cailin': {
+    form: 'fortress',
+    region: 'the-north',
+    landmark: {
+      it: 'Tre torri storte che emergono dalla palude',
+      en: 'Three crooked towers rising from the swamp',
+    },
+    log: {
+      it: 'Delle antiche fortificazioni restano in piedi solo poche torri, ma chi le tiene controlla la strada rialzata attraverso le paludi. Un esercito che sale da sud non può passare finché sono tenute contro di lui.',
+      en: 'Only a few towers of the old fortress still stand, but whoever holds them commands the causeway through the swamps. An army coming up from the south cannot pass while they are held against it.',
+    },
+    filedHere: [],
   },
 }
