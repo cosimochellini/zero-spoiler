@@ -155,6 +155,14 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  // Phase 3 names without standalone sections in the Italian character list.
+  // The list uses Komugi and Pell in prose. Dub audio is unviewed.
+  'komugi': 'Komugi',
+  'pell': 'Pell',
+  'remora': 'Remora',
+  'tsukuma': 'Tsukuma',
+  'flutter': 'Flutter',
+  'bihorn': 'Bihorn',
   // Kite's survey team: no section in the Italian Hunter or Formichimere
   // lists; dub unviewed (#1020).
   'spinner-clow': 'Spinner Clow',
