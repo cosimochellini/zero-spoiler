@@ -4,7 +4,10 @@ import type { SeriesArchive } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { RelationshipView } from '~/lib/view/relationships'
-import { opRelationshipsPage as relationshipsPage } from '~/test/archive'
+import {
+  opRelationshipsPage as relationshipsPage,
+  withoutDrawings,
+} from '~/test/archive'
 import { relationshipArchive } from '~/test/relationships'
 import { LOADED_SERIES } from '~/test/series'
 
@@ -77,8 +80,16 @@ describe('relationship facts independent of endpoint visibility', () => {
 
 /** The pilot's relations at a bookmark. */
 function pilotAt(bookmark: Bookmark, locale: Locale): RelationshipView[] {
-  return relationshipsPage('mansherry', bookmark, locale)
+  return withoutDrawings(relationshipsPage('mansherry', bookmark, locale))
 }
+
+describe('the person on a card', () => {
+  it('arrives with their drawing, so the card can show an avatar', () => {
+    const [first] = relationshipsPage('koby', ep(1150), 'en')
+
+    expect(first?.person.visual.strokes.length).toBeGreaterThan(0)
+  })
+})
 
 describe('the pilot at independently verified relationship thresholds', () => {
   it.each(LOCALES)(
@@ -181,7 +192,7 @@ describe.each(LOCALES)(
   'Koby’s cross-saga editorial selections in %s',
   (locale) => {
     function at(bookmark: Bookmark): RelationshipView[] {
-      return relationshipsPage('koby', bookmark, locale)
+      return withoutDrawings(relationshipsPage('koby', bookmark, locale))
     }
 
     it.each([

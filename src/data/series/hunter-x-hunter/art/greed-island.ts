@@ -1,4 +1,9 @@
-import type { Drawings, Redrawings, Stroke } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  type Stroke,
+} from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 
 /**
@@ -24,7 +29,6 @@ const PUHAT_JACKET: Stroke[] = [
     d: 'M36 102 l5 -3 M34 114 l5 -3 M130 102 l5 -3 M132 114 l5 -3',
     role: 'ambient',
   },
-  shadow(82, 186, 51),
 ]
 
 export const GREED_ISLAND_DRAWINGS = {
@@ -293,6 +297,25 @@ export const GREED_ISLAND_DRAWINGS = {
     },
     shadow(80, 191, 53),
   ],
+  // The card Michael hands Killua in chapter 148, held out from the plain
+  // sweater of his appearance. A blank card: no stripe, chip or lettering.
+  'michael': [
+    { d: 'M50.7 85 L62 38 L130 56 L118 106 L64.2 91.8', role: 'accent' },
+    { d: 'M130 56 L133 60 L121 110 L118 106 M121 110 L80 99.1', role: 'soft' },
+    { d: 'M4 184 L28 136 M52 144 L26 196' },
+    { d: 'M27 124 L56 138 L50 152 L21 138 Z' },
+    {
+      d: 'M33 128 L27 141 M40 131.4 L34 144.4 M47 134.8 L41 147.8',
+      role: 'soft',
+    },
+    { d: 'M38 99 L65 72 C70 67 79 73 74 82 L47 109' },
+    {
+      d: 'M29 125 Q30 112 39 102 M70 93.3 Q80 96 79 103 Q78 108 70 108 Q79 112 76 119 Q72 125 62 121 Q63 130 56 138',
+    },
+    { d: 'M70 108 Q66 107 64 104 M62 121 Q58 119 57 116', role: 'soft' },
+    { d: 'M12 168 l6 3 M18 156 l6 3 M24 144 l4 2', role: 'ambient' },
+    { d: 'M36 160 Q30 170 34 182', role: 'soft' },
+  ],
   // Biscuit's sleeveless dress at her introduction, chapter 137 / episode
   // 62. The skirt turns away on the right; no later form or Nen is shown.
   'biscuit-krueger': [
@@ -420,7 +443,7 @@ export const GREED_ISLAND_DRAWINGS = {
     { d: 'M49 145 H112 M26 150 H134', role: 'ambient' },
     shadow(80, 159, 49),
   ],
-  'puhat': PUHAT_JACKET,
+  'puhat': [...PUHAT_JACKET, shadow(82, 186, 51)],
 } satisfies Drawings
 
 export const greedIslandRedrawn: Redrawings = {
@@ -428,21 +451,14 @@ export const greedIslandRedrawn: Redrawings = {
     {
       episode: 64,
       chapter: 143,
-      // The same jacket folded flat after his death; no invented grave or
-      // injury on the object. The wiki's episode 64 synopsis shows the death.
+      // The same open jacket laid on its side for the death reported in
+      // episode 64 and chapter 143. The empty collar and pockets remain.
       value: [
-        { d: 'M32 114 L111 102 L134 126 L55 141 Z' },
-        { d: 'M55 141 V153 L134 138 V126 M32 114 V126 L55 153' },
-        { d: 'M50 111 L66 124 L79 120 L88 134', role: 'soft' },
-        { d: 'M98 105 L89 120 L80 119', role: 'soft' },
-        { d: 'M34 124 L54 143 L132 129', role: 'soft' },
-        { d: 'M65 137 L77 135 M100 130 L114 127', role: 'accent' },
-        {
-          d: 'M58 146 l5 -3 M74 143 l5 -3 M90 140 l5 -3 M106 137 l5 -3 M122 134 l5 -3',
-          role: 'ambient',
-        },
-        { d: 'M38 120 l4 -2 M44 126 l4 -2 M49 132 l4 -2', role: 'ambient' },
-        shadow(83, 173, 55),
+        ...moved(
+          PUHAT_JACKET,
+          'translate(80 125) rotate(-70) scale(0.85 0.65) translate(-82 -105)',
+        ),
+        shadow(80, 185, 52),
       ],
     },
   ],

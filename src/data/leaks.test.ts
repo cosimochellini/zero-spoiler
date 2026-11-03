@@ -21,7 +21,7 @@ import { FIRST_CHAPTER, FIRST_EPISODE } from '~/lib/progress/episode'
 import type { Source } from '~/lib/progress/spoiler'
 import { tokenize } from '~/lib/prose/markers'
 import { COPIES } from '~/server/copy.server'
-import { expectedOf, LOADED_SERIES } from '~/test/series'
+import { expectedOf, LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
 /**
  * The one scan for a name said too early, over every text an archive
@@ -780,4 +780,44 @@ describe('source-specific prose with reordered introductions', () => {
       ).toBe(expected)
     },
   )
+})
+
+/**
+ * The first episode that names Whitebeard's home island, Sphinx: Beckman says
+ * it in an anime-only line of episode 1087. No chapter names it, only a Vivre
+ * Card, so a text a chapter reader can reach never may (#1013). It is filed
+ * as no record, so the scan above cannot see it.
+ */
+const SPHINX_NAMED_AT = 1087
+
+/** The labels of a text that say Sphinx, one per locale it says it in. */
+function sphinxIn({ label, text }: Text): string[] {
+  return LOCALES.filter((locale) =>
+    asWords(text[locale]).includes(' Sphinx '),
+  ).map((locale) => `${label} (${locale})`)
+}
+
+/**
+ * Whether a reader can reach a text before Sphinx is named: in a chapter, or
+ * in an episode before 1087. Saldeath's cards mean Impel Down's guard beast,
+ * a different Sphinx, so they are left out.
+ */
+function beforeSphinx({ episode, owner, source }: Text): boolean {
+  return (
+    owner.id !== 'saldeath'
+    && (source !== 'episode' || episode < SPHINX_NAMED_AT)
+  )
+}
+
+describe('Whitebeard’s home island', () => {
+  it('is called Sphinx by no text before the story says it', () => {
+    const { archive, placeWords } = ONE_PIECE_LOADED
+    const { texts } = scanOf(withFeatures(archive), placeWords)
+
+    const early = texts
+      .filter((text) => beforeSphinx(text))
+      .flatMap((text) => sphinxIn(text))
+
+    expect(early).toStrictEqual([])
+  })
 })

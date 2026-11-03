@@ -1370,8 +1370,8 @@ const links = {
     character: 'edward-weevil',
     type: { en: 'Pirate he captures', it: 'Pirata che cattura' },
     summary: {
-      en: 'Ryokugyu captures Weevil after Weevil defends Sphinx from the Marines.',
-      it: 'Ryokugyu cattura Weevil dopo che lui difende Sphinx dalla Marina.',
+      en: 'Ryokugyu captures Weevil after Weevil defends Whitebeard’s home island from the Marines.',
+      it: 'Ryokugyu cattura Weevil dopo che lui difende l’isola natale di Barbabianca dalla Marina.',
     },
   },
   'ryoIsshoConflict': {

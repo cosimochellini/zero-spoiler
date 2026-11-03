@@ -116,6 +116,22 @@ export function opRelationshipsPage(
   return core_relationshipsPage(id, coreReader(OP_ARCHIVE, b, l))
 }
 
+/**
+ * Relations with each person's drawing dropped. The drawing follows the
+ * bookmark on its own, so suites that pin the relations compare without it.
+ */
+export function withoutDrawings(
+  relations: ReturnType<typeof core_relationshipsPage>,
+): ReturnType<typeof core_relationshipsPage> {
+  return relations.map((relation) => ({
+    ...relation,
+    person: {
+      ...relation.person,
+      visual: { strokes: [], tint: relation.person.visual.tint },
+    },
+  }))
+}
+
 /** One Piece-bound fixture for fruitSheet. */
 export function opFruitSheet(
   b: Bookmark,

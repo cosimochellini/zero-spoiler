@@ -12,6 +12,27 @@ import {
 import type { Stroke } from '~/lib/view/records'
 
 import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
+import {
+  CHIMERA_ANT_HUNTERS_DRAWINGS,
+  chimeraAntHuntersRedrawn,
+} from './chimera-ant-hunters'
+import {
+  CHIMERA_ANT_NGL_DRAWINGS,
+  chimeraAntNglRedrawn,
+} from './chimera-ant-ngl'
+import { CHIMERA_ANT_PLACE_DRAWINGS } from './chimera-ant-places'
+import {
+  CHIMERA_ANT_RETURNING_DRAWINGS,
+  chimeraAntReturningRedrawn,
+} from './chimera-ant-returning'
+import {
+  CHIMERA_ANT_ROYALS_DRAWINGS,
+  chimeraAntRoyalsRedrawn,
+} from './chimera-ant-royals'
+import {
+  CHIMERA_ANT_SQUADS_DRAWINGS,
+  chimeraAntSquadsRedrawn,
+} from './chimera-ant-squads'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
@@ -102,6 +123,12 @@ const CHERRY_SHOE: Stroke[] = [
 export const DRAWINGS = {
   ...ZOLDYCK_DRAWINGS,
   ...CHAPTER_ONE_DRAWINGS,
+  ...CHIMERA_ANT_PLACE_DRAWINGS,
+  ...CHIMERA_ANT_HUNTERS_DRAWINGS,
+  ...CHIMERA_ANT_NGL_DRAWINGS,
+  ...CHIMERA_ANT_ROYALS_DRAWINGS,
+  ...CHIMERA_ANT_SQUADS_DRAWINGS,
+  ...CHIMERA_ANT_RETURNING_DRAWINGS,
   ...TRICK_TOWER_DRAWINGS,
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
@@ -199,6 +226,56 @@ export const DRAWINGS = {
   // feelers and six jointed legs: the aggressive insect under quarantine
   // that Gon and Killua first see in episode 76, and the queen of chapter
   // 186. No eyes and no jaws.
+  // A flame for the Camp Tiger discussed during the survey (ep. 77 / ch. 186).
+  'spinner-clow': [
+    {
+      d: 'M80 152 C40 152 41 110 66 91 Q61 113 76 112 Q94 92 80 57 Q117 85 116 116 Q115 149 80 152 Z',
+      role: 'accent',
+    },
+    { d: 'M65 140 Q58 124 78 115' },
+    { d: 'M84 141 Q103 128 97 109' },
+    { d: 'M49 89 Q43 104 45 113', role: 'ambient' },
+    shadow(80, 166, 37),
+  ],
+  // A symbolic track of the Camp Tiger (ep. 77 / ch. 186).
+  'banana-kavaro': [
+    {
+      d: 'M54 129 Q54 117 67 112 Q80 98 93 112 Q107 117 106 129 Q103 144 80 137 Q57 144 54 129 Z',
+      role: 'accent',
+    },
+    { d: ellipse(51, 99, 8, 11) },
+    { d: ellipse(69, 86, 8, 12) },
+    { d: ellipse(91, 86, 8, 12) },
+    { d: ellipse(109, 99, 8, 11) },
+  ],
+  // The Camp Tiger’s striped flank (ep. 77 / ch. 186).
+  'monta-yuras': [
+    { d: 'M34 94 Q78 60 124 91 M38 131 Q77 151 124 119' },
+    { d: 'M56 82 Q53 100 72 116 Q62 96 65 78', role: 'accent' },
+    { d: 'M81 77 Q75 94 92 104 Q87 87 91 78' },
+    { d: 'M109 84 Q101 102 116 108 Q112 95 117 87' },
+    { d: 'M67 140 Q83 129 84 116 Q91 126 81 141' },
+  ],
+  // The Camp Tiger’s cooking fire, drawn as embers (ep. 77 / ch. 186).
+  'stick-dinner': [
+    { d: 'M45 140 Q80 153 117 137' },
+    {
+      d: 'M54 132 Q61 120 69 134 Q81 115 92 132 Q101 122 110 131',
+      role: 'accent',
+    },
+    { d: 'M67 112 Q58 101 69 91' },
+    { d: 'M90 110 Q100 97 89 85 Q81 74 87 65', role: 'ambient' },
+    shadow(80, 157, 41),
+  ],
+  // The glass and leaf of the water test, episode 84 and chapter 198.
+  'neferpitou': [
+    { d: 'M45 82 Q47 119 56 151 Q80 165 104 151 Q113 118 115 82' },
+    { d: 'M45 82 C45 64 115 64 115 82 C115 100 45 100 45 82 Z' },
+    { d: 'M51 107 Q79 122 109 107', role: 'ambient' },
+    { d: 'M62 87 Q68 74 97 77 Q91 92 62 87 Z', role: 'accent' },
+    { d: 'M63 87 Q77 81 92 79' },
+    shadow(80, 177, 38),
+  ],
   'chimera-ant-arc': [
     { d: ellipse(114, 104, 26, 18), role: 'accent' },
     {
@@ -976,4 +1053,9 @@ export const REDRAWINGS: Redrawings = {
   ...heavensArenaRedrawn,
   ...yorknewCityRedrawn,
   ...greedIslandRedrawn,
+  ...chimeraAntHuntersRedrawn,
+  ...chimeraAntNglRedrawn,
+  ...chimeraAntRoyalsRedrawn,
+  ...chimeraAntSquadsRedrawn,
+  ...chimeraAntReturningRedrawn,
 }

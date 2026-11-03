@@ -46,6 +46,25 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'palm-siberia': 'Associazione Hunter#Pahm Sibelia',
+    'knov': 'Associazione Hunter#Nobu',
+    'morel-mackernasey': 'Associazione Hunter#Morau McCarnathy',
+    'knuckle-bine': 'Associazione Hunter#Nackul Bain',
+    'shoot-mcmahon': 'Associazione Hunter#Schult MacMahone',
+    'gyro': 'Formichimere#Giairo',
+    'republic-of-rokario': 'Geografia di Hunter × Hunter#Federazione di Mitene',
+    'republic-of-east-gorteau':
+      'Geografia di Hunter × Hunter#Repubblica del Golt Orientale',
+    'neferpitou': 'Formichimere#Neferpito',
+    'meruem': 'Formichimere#Meruem',
+    'shaiapouf': 'Formichimere#Shawapf',
+    'menthuthuyoupi': 'Formichimere#Montowtoyupih',
+    'colt': 'Formichimere#Coluto',
+    'peggy': 'Formichimere#Pegyi',
+    'cheetu': 'Formichimere#Jeedo',
+    'zazan': 'Formichimere#Zazan',
+    'pike': 'Formichimere#Pike',
+    'rammot': 'Formichimere#Rammot',
     'dwun': 'Personaggi di Hunter × Hunter#Dwun',
     'list': 'Personaggi di Hunter × Hunter#List',
     'eta': 'Personaggi di Hunter × Hunter#Eeta',
@@ -136,6 +155,33 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  // Kite's survey team: no section in the Italian Hunter or Formichimere
+  // lists; dub unviewed (#1020).
+  'spinner-clow': 'Spinner Clow',
+  'banana-kavaro': 'Banana Kavaro',
+  'monta-yuras': 'Monta Yuras',
+  'stick-dinner': 'Stick Dinner',
+  // Chimera Ant phase 2 (#1021): no section of their own in the Italian
+  // Hunter, Formichimere or geography pages; dub unviewed. Kurt and Reina
+  // are spelled so inside other sections, Hagya inside the one headed by the
+  // name he takes later.
+  'dr-lee': 'Dr. Lee',
+  'lin-koshi': 'Lin Koshi',
+  'podungo-lapoy': 'Podungo Lapoy',
+  'wong': 'Wong',
+  'kurt': 'Kurt',
+  'reina': 'Reina',
+  'haruna': 'Haruna',
+  'pekuba': 'Pekuba',
+  'yunju': 'Yunju',
+  'baro': 'Baro',
+  'baital': 'Baital',
+  'hagya': 'Hagya',
+  'doli-city': 'Doli City',
+  'pata-city': 'Pata City',
+  'tri-orb-hotel': 'Tri-Orb Hotel',
+  // No Michael entry in the Italian character/Hunter lists; dub unviewed (#1032).
+  'michael': 'Michael',
   // No Jitonoda entry in the Italian character/Hunter lists; dub unviewed (#1019).
   'jitonoda': 'Jitonoda',
   // No Jispa entry in either Italian character/Hunter list; dub unviewed (#1018).

@@ -109,9 +109,20 @@ describe('the place words of a series that labels its own', () => {
   it.each([
     ['its id', { forms: { port: 'x' } }, ['dolle-harbor', 'soufrabi']],
     ['its label', { forms: { x: 'Port town' } }, ['dolle-harbor', 'soufrabi']],
-    ['its country label', { forms: { x: 'Country' } }, ['republic-of-padokea']],
+    [
+      'its country label',
+      { forms: { x: 'Country' } },
+      [
+        'republic-of-padokea',
+        'ngl',
+        'republic-of-east-gorteau',
+        'republic-of-rokario',
+      ],
+    ],
     ['its tower label', { forms: { x: 'Tower' } }, ['heavens-arena']],
     ['its Italian tower label', { forms: { x: 'Torre' } }, ['heavens-arena']],
+    ['its nest label', { forms: { x: 'Nest' } }, ['chimera-ant-nest']],
+    ['its Italian nest label', { forms: { x: 'Nido' } }, ['chimera-ant-nest']],
     ['its airport label', { forms: { x: 'Airport' } }, ['lingon-airport']],
     [
       'its Italian airport label',
@@ -126,6 +137,9 @@ describe('the place words of a series that labels its own', () => {
         'southernpiece-auction-house',
         'hotel-beitacle',
         'shiso-tree',
+        'd2-manufacturing-plant',
+        'royal-palace-of-east-gorteau',
+        'tri-orb-hotel',
       ],
     ],
     [
@@ -136,12 +150,20 @@ describe('the place words of a series that labels its own', () => {
         'southernpiece-auction-house',
         'hotel-beitacle',
         'shiso-tree',
+        'd2-manufacturing-plant',
+        'royal-palace-of-east-gorteau',
+        'tri-orb-hotel',
       ],
     ],
     [
       'its Italian country label',
       { forms: { x: 'Paese' } },
-      ['republic-of-padokea'],
+      [
+        'republic-of-padokea',
+        'ngl',
+        'republic-of-east-gorteau',
+        'republic-of-rokario',
+      ],
     ],
     [
       'its Italian label',

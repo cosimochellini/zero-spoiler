@@ -31,6 +31,7 @@ export interface HunterVocabulary extends Vocabulary {
     | 'forest'
     | 'island'
     | 'mountain'
+    | 'nest'
     | 'port'
     | 'prison'
     | 'tower'

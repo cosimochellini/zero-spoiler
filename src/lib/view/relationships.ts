@@ -1,3 +1,5 @@
+import type { Drawing } from '~/lib/view/records'
+
 /** One reached change; dates say when this stage becomes available in the wiki. */
 export interface RelationshipStageView {
   /** Original reached snapshot pair/source, independent of a later endpoint gate. */
@@ -11,7 +13,7 @@ export interface RelationshipStageView {
 /** A reached connection to another person; no covered relation is sent. */
 export interface RelationshipView {
   history: RelationshipStageView[]
-  person: { id: string; name: string }
+  person: { id: string; name: string; visual: Drawing }
   summary: string
   type: string
 }
