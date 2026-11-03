@@ -871,8 +871,8 @@ const retained = {
       it: 'Alleato che chiede il suo aiuto',
     },
     summary: {
-      en: 'Nekomamushi visits Marco on Sphinx to ask for his help in Wano.',
-      it: 'Nekomamushi raggiunge Marco a Sphinx per chiedergli aiuto a Wano.',
+      en: 'Nekomamushi visits Marco on Whitebeard’s home island to ask for his help in Wano.',
+      it: 'Nekomamushi raggiunge Marco sull’isola natale di Barbabianca per chiedergli aiuto a Wano.',
     },
   },
   marcoLuffyWano: {
@@ -914,16 +914,16 @@ const retained = {
       it: 'Capitano che lo accompagna',
     },
     summary: {
-      en: 'Marco travels back toward Sphinx aboard Shanks’s ship and again declines to join his crew.',
-      it: 'Marco torna verso Sphinx a bordo della nave di Shanks e rifiuta ancora di unirsi alla sua ciurma.',
+      en: 'Marco travels back toward Whitebeard’s home island aboard Shanks’s ship and again declines to join his crew.',
+      it: 'Marco torna verso l’isola natale di Barbabianca a bordo della nave di Shanks e rifiuta ancora di unirsi alla sua ciurma.',
     },
   },
   marcoWeevil: {
     character: 'edward-weevil',
-    type: { en: 'Defender of Sphinx', it: 'Difensore di Sphinx' },
+    type: { en: 'Defender of the island', it: 'Difensore dell’isola' },
     summary: {
-      en: 'Marco learns that Weevil defended Sphinx from the Marines before being captured.',
-      it: 'Marco scopre che Weevil ha difeso Sphinx dalla Marina prima di essere catturato.',
+      en: 'Marco learns that Weevil defended Whitebeard’s home island from the Marines before being captured.',
+      it: 'Marco scopre che Weevil ha difeso l’isola natale di Barbabianca dalla Marina prima di essere catturato.',
     },
   },
   marcoBakkin: {
