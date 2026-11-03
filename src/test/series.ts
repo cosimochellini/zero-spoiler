@@ -85,13 +85,14 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // What it files on 2026-11-03: the arcs, the Hunter Exam’s road to the
+  // What it files on 2026-11-04: the arcs, the Hunter Exam’s road to the
   // exam through the visit to Killua's home, chapter-one characters (#760),
   // the Heavens Arena characters and place (#896), Silva (#834), Yorknew
   // City (#900), Greed Island through the finale (#1016–#1019) and Michael
   // (#1032), and chronicles for the characters filed through #1019 and the
   // returning cast (#906). Chimera Ant phase 1 (#1020) adds five characters
-  // and one place, and phase 2 (#1021) 27 characters and eight places.
+  // and one place, phase 2 (#1021) 27 characters and eight places, and
+  // phase 3 (#1022) 11 characters and four places.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -110,14 +111,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 278,
+      affiliations: 297,
       arcs: 7,
-      characters: 141,
+      characters: 153,
       chronicles: 345,
       linkedOrigins: 8,
-      places: 32,
-      statuses: 190,
-      timelines: 579,
+      places: 36,
+      statuses: 205,
+      timelines: 621,
       visits: 0,
     },
     namesSaidEarly: true,

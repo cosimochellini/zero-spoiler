@@ -489,6 +489,7 @@ describe('Chimera Ant dated facts', () => {
       'colt',
       'meruem',
       'komugi',
+      'ikalgo',
       'shaiapouf',
       'menthuthuyoupi',
     ])
