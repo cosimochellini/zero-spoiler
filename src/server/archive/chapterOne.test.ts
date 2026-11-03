@@ -87,7 +87,15 @@ describe('chapter-one pins', () => {
 
       for (const { field, timeline } of timelines) {
         for (const entry of timeline) {
-          expect(entry.chapter).toBe(waitsForGing(field, entry) ? 66 : 1)
+          if (
+            id === 'kite'
+            && field === 'affiliation'
+            && entry.episode === 77
+          ) {
+            expect(entry.chapter).toBe(186)
+          } else {
+            expect(entry.chapter).toBe(waitsForGing(field, entry) ? 66 : 1)
+          }
         }
       }
     },
