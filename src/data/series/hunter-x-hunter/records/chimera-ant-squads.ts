@@ -148,18 +148,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
       role: [
-        {
-          episode: 106,
-          chapter: 192,
-          source: 'episode',
-          value: SQUADRON_LEADER,
-        },
-        {
-          episode: 106,
-          chapter: 192,
-          source: 'chapter',
-          value: SQUADRON_LEADER,
-        },
+        { episode: 106, chapter: 192, value: SQUADRON_LEADER },
         {
           episode: 106,
           chapter: 240,
