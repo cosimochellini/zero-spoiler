@@ -1,3 +1,5 @@
+import type { Relationship, Timeline } from '~/data/types'
+
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { hunterExamChronicles } from './hunter-exam.chronicle'
 import { hunterExamRelationships } from './hunter-exam.relationships'
@@ -34,6 +36,120 @@ const APPLICANT = {
 }
 
 const WHALE_ISLAND = { it: 'Isola Balena', en: 'Whale Island' }
+
+/**
+ * One row of a character's last selection that both media share, carried
+ * into the Chimera Ant arc's selections (#1021).
+ */
+function sharedRow(
+  timeline: Timeline<Relationship[]>,
+  character: string,
+): Relationship {
+  const row = timeline
+    .findLast((entry) => entry.source === undefined)
+    ?.value.find((relation) => relation.character === character)
+  if (row === undefined) {
+    throw new Error(`No shared row for ${character}`)
+  }
+  return row
+}
+
+const GON_ROWS = hunterExamRelationships['gon-freecss']
+const KILLUA_ROWS = hunterExamRelationships.killua
+const NETERO_ROWS = hunterExamRelationships.netero
+
+const GON_KITE: Relationship = {
+  character: 'kite',
+  type: {
+    it: 'Hunter alla cui ricerca si unisce',
+    en: 'Hunter whose survey he joins',
+  },
+  summary: {
+    it: 'Kaito ha salvato Gon da un orso-volpe sull’Isola Balena. Gon e Killua si uniscono alla sua ricerca di nuove specie.',
+    en: 'Kite saved Gon from a foxbear on Whale Island. Gon and Killua join his survey of new species.',
+  },
+}
+
+const GON_BISCUIT: Relationship = {
+  character: 'biscuit-krueger',
+  type: {
+    it: 'Maestra di Nen che lo allena di nuovo',
+    en: 'Nen teacher who trains him again',
+  },
+  summary: {
+    it: 'Biscuit ritrova Gon e allena di nuovo lui e Killua per lo scontro con Nackul e Schult.',
+    en: 'Biscuit finds Gon again and trains him and Killua for their fight with Knuckle and Shoot.',
+  },
+}
+
+const GON_KNUCKLE: Relationship = {
+  character: 'knuckle-bine',
+  type: { it: 'Hunter che lo sconfigge', en: 'Hunter who beats him' },
+  summary: {
+    it: 'Nackul vince il duello, e la sua abilità impedisce a Gon di usare il Nen per 30 giorni.',
+    en: 'Knuckle wins their duel, and his ability leaves Gon unable to use Nen for 30 days.',
+  },
+}
+
+const KILLUA_KITE: Relationship = {
+  character: 'kite',
+  type: {
+    it: 'Hunter alla cui ricerca si unisce',
+    en: 'Hunter whose survey he joins',
+  },
+  summary: {
+    it: 'Killua si unisce con Gon alla ricerca di nuove specie di Kaito.',
+    en: 'Killua joins Kite’s survey of new species with Gon.',
+  },
+}
+
+const KILLUA_BISCUIT: Relationship = {
+  character: 'biscuit-krueger',
+  type: {
+    it: 'Maestra che gli pone un ultimatum',
+    en: 'Teacher who sets him an ultimatum',
+  },
+  summary: {
+    it: 'Biscuit allena di nuovo Killua e gli dice che, se non batte Schult, dovrà lasciare Gon.',
+    en: 'Biscuit trains Killua again and tells him that if he cannot beat Shoot, he must leave Gon.',
+  },
+}
+
+const KILLUA_ILLUMI: Relationship = {
+  character: 'illumi',
+  type: {
+    it: 'Fratello di cui si toglie l’ago',
+    en: 'Brother whose needle he pulls out',
+  },
+  summary: {
+    it: 'Killua si toglie dalla fronte un ago che Illumi gli aveva lasciato e che lo spingeva a fuggire.',
+    en: 'Killua pulls from his forehead a needle Illumi had left in him, which kept telling him to run.',
+  },
+}
+
+const NETERO_GON: Relationship = {
+  character: 'gon-freecss',
+  type: {
+    it: 'Giovane Hunter a cui pone una prova',
+    en: 'Young Hunter he sets a test',
+  },
+  summary: {
+    it: 'Mentre Gon dorme, Netero dice a Killua che i due devono battere gli avversari che ha mandato nella città vicina prima di potersi unire a lui.',
+    en: 'While Gon sleeps, Netero tells Killua that the two of them must beat the opponents he has sent to the nearest city before they may join him.',
+  },
+}
+
+const NETERO_KILLUA: Relationship = {
+  character: 'killua',
+  type: {
+    it: 'Giovane Hunter a cui pone una prova',
+    en: 'Young Hunter he sets a test',
+  },
+  summary: {
+    it: 'Netero chiede a Killua quanto è forte il nemico, poi gli dice che lui e Gon devono battere due avversari prima di potersi unire a lui.',
+    en: 'Netero asks Killua how strong the enemy is, then tells him that he and Gon must beat two opponents before they may join him.',
+  },
+}
 
 const earlyExam: HunterSaga = {
   name: { it: 'Esame Hunter', en: 'Hunter Exam' },
@@ -348,7 +464,42 @@ const earlyExam: HunterSaga = {
   dossiers: {
     ...zevil.dossiers,
     'gon-freecss': {
-      relationships: hunterExamRelationships['gon-freecss'],
+      relationships: [
+        ...GON_ROWS,
+        {
+          episode: 77,
+          chapter: 186,
+          value: [
+            sharedRow(GON_ROWS, 'killua'),
+            GON_KITE,
+            sharedRow(GON_ROWS, 'biscuit-krueger'),
+            sharedRow(GON_ROWS, 'ging-freecss'),
+            sharedRow(GON_ROWS, 'kurapika'),
+          ],
+        },
+        {
+          episode: 86,
+          chapter: 201,
+          value: [
+            sharedRow(GON_ROWS, 'killua'),
+            GON_KITE,
+            GON_BISCUIT,
+            sharedRow(GON_ROWS, 'ging-freecss'),
+            sharedRow(GON_ROWS, 'kurapika'),
+          ],
+        },
+        {
+          episode: 91,
+          chapter: 214,
+          value: [
+            sharedRow(GON_ROWS, 'killua'),
+            GON_KITE,
+            GON_BISCUIT,
+            GON_KNUCKLE,
+            sharedRow(GON_ROWS, 'ging-freecss'),
+          ],
+        },
+      ],
       chronicle: [
         ...hunterExamChronicles['gon-freecss'],
         ...greedIslandReturningChronicles['gon-freecss'],
@@ -505,6 +656,46 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Associazione Hunter, Hunter; ha completato Greed Island',
             en: 'Hunter Association, Hunter; has cleared Greed Island',
+          },
+        },
+        {
+          episode: 77,
+          chapter: 186,
+          value: {
+            it: 'Associazione Hunter, Hunter; si unisce alla ricerca di nuove specie di Kaito',
+            en: 'Hunter Association, Hunter; joins Kite’s survey of new species',
+          },
+        },
+        {
+          episode: 79,
+          chapter: 189,
+          value: {
+            it: 'Associazione Hunter, Hunter; in NGL con la squadra di ricerca di Kaito',
+            en: 'Hunter Association, Hunter; in NGL with Kite’s survey team',
+          },
+        },
+        {
+          episode: 85,
+          chapter: 199,
+          value: {
+            it: 'Associazione Hunter, Hunter; deve battere due avversari mandati da Netero prima di unirsi alla lotta contro le formichimere',
+            en: 'Hunter Association, Hunter; must beat two opponents Netero has sent before joining the fight against the Chimera Ants',
+          },
+        },
+        {
+          episode: 86,
+          chapter: 201,
+          value: {
+            it: 'Associazione Hunter, Hunter; di nuovo allievo di Biscuit, si allena per battere Nackul e Schult',
+            en: 'Hunter Association, Hunter; Biscuit’s pupil again, training to beat Knuckle and Shoot',
+          },
+        },
+        {
+          episode: 91,
+          chapter: 214,
+          value: {
+            it: 'Associazione Hunter, Hunter; ha perso il duello con Nackul e non può usare il Nen per 30 giorni',
+            en: 'Hunter Association, Hunter; lost his duel with Knuckle and cannot use Nen for 30 days',
           },
         },
       ],
@@ -929,7 +1120,42 @@ const earlyExam: HunterSaga = {
       ],
     },
     'killua': {
-      relationships: hunterExamRelationships.killua,
+      relationships: [
+        ...KILLUA_ROWS,
+        {
+          episode: 77,
+          chapter: 186,
+          value: [
+            sharedRow(KILLUA_ROWS, 'gon-freecss'),
+            KILLUA_KITE,
+            sharedRow(KILLUA_ROWS, 'biscuit-krueger'),
+            sharedRow(KILLUA_ROWS, 'kurapika'),
+            sharedRow(KILLUA_ROWS, 'illumi'),
+          ],
+        },
+        {
+          episode: 89,
+          chapter: 210,
+          value: [
+            sharedRow(KILLUA_ROWS, 'gon-freecss'),
+            KILLUA_KITE,
+            KILLUA_BISCUIT,
+            sharedRow(KILLUA_ROWS, 'kurapika'),
+            sharedRow(KILLUA_ROWS, 'illumi'),
+          ],
+        },
+        {
+          episode: 94,
+          chapter: 219,
+          value: [
+            sharedRow(KILLUA_ROWS, 'gon-freecss'),
+            KILLUA_KITE,
+            KILLUA_BISCUIT,
+            KILLUA_ILLUMI,
+            sharedRow(KILLUA_ROWS, 'kurapika'),
+          ],
+        },
+      ],
       chronicle: [
         ...hunterExamChronicles.killua,
         ...greedIslandReturningChronicles.killua,
@@ -1124,6 +1350,62 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; has cleared Greed Island',
           },
         },
+        {
+          episode: 77,
+          chapter: 186,
+          value: {
+            it: 'Associazione Hunter, Hunter; si unisce con Gon alla ricerca di nuove specie di Kaito',
+            en: 'Hunter Association, Hunter; joins Kite’s survey of new species with Gon',
+          },
+        },
+        {
+          episode: 79,
+          chapter: 189,
+          value: {
+            it: 'Associazione Hunter, Hunter; in NGL con Gon e la squadra di ricerca di Kaito',
+            en: 'Hunter Association, Hunter; in NGL with Gon and Kite’s survey team',
+          },
+        },
+        {
+          episode: 85,
+          chapter: 199,
+          value: {
+            it: 'Associazione Hunter, Hunter; deve battere con Gon due avversari mandati da Netero prima di unirsi alla lotta contro le formichimere',
+            en: 'Hunter Association, Hunter; must beat, with Gon, two opponents Netero has sent before joining the fight against the Chimera Ants',
+          },
+        },
+        {
+          episode: 86,
+          chapter: 201,
+          value: {
+            it: 'Associazione Hunter, Hunter; di nuovo allievo di Biscuit, si allena per battere Nackul e Schult',
+            en: 'Hunter Association, Hunter; Biscuit’s pupil again, training to beat Knuckle and Shoot',
+          },
+        },
+        {
+          episode: 89,
+          chapter: 210,
+          value: {
+            it: 'Associazione Hunter, Hunter; allievo di Biscuit, dovrà lasciare Gon se non batte Schult',
+            en: 'Hunter Association, Hunter; Biscuit’s pupil, must leave Gon if he cannot beat Shoot',
+          },
+        },
+        {
+          episode: 91,
+          chapter: 214,
+          value: {
+            it: 'Associazione Hunter, Hunter; protegge Gon per i 30 giorni senza Nen, poi lo lascerà',
+            en: 'Hunter Association, Hunter; protects Gon for his 30 days without Nen, then means to leave him',
+          },
+        },
+        {
+          episode: 94,
+          chapter: 219,
+          value: {
+            it: 'Associazione Hunter, Hunter; protegge Gon per i 30 giorni senza Nen, poi lo lascerà; si è tolto l’ago di Illumi',
+            en: 'Hunter Association, Hunter; protects Gon for his 30 days without Nen, then means to leave him; has pulled out Illumi’s needle',
+          },
+        },
       ],
       origin: [
         {
@@ -1178,7 +1460,20 @@ const earlyExam: HunterSaga = {
       ],
     },
     'netero': {
-      relationships: hunterExamRelationships.netero,
+      relationships: [
+        ...NETERO_ROWS,
+        {
+          episode: 85,
+          chapter: 199,
+          value: [
+            NETERO_KILLUA,
+            NETERO_GON,
+            sharedRow(NETERO_ROWS, 'kurapika'),
+            sharedRow(NETERO_ROWS, 'leorio-paradinight'),
+            sharedRow(NETERO_ROWS, 'menchi'),
+          ],
+        },
+      ],
       chronicle: [
         ...hunterExamChronicles.netero,
         ...greedIslandReturningChronicles.netero,
@@ -1197,6 +1492,24 @@ const earlyExam: HunterSaga = {
           episode: 6,
           chapter: 12,
           value: { it: 'Associazione Hunter', en: 'Hunter Association' },
+        },
+        // The team's name is first said in chapter 194 and no episode
+        // synopsis gives it, so the words describe it instead.
+        {
+          episode: 85,
+          chapter: 199,
+          value: {
+            it: 'Associazione Hunter; guida la squadra inviata a sterminare le formichimere',
+            en: 'Hunter Association; leads the team sent to exterminate the Chimera Ants',
+          },
+        },
+        {
+          episode: 92,
+          chapter: 215,
+          value: {
+            it: 'Associazione Hunter; guida la squadra inviata a sterminare le formichimere; è andato a trovare una vecchia conoscenza',
+            en: 'Hunter Association; leads the team sent to exterminate the Chimera Ants; has gone to see an old acquaintance',
+          },
         },
       ],
     },

@@ -41,6 +41,25 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'palm-siberia': 'Associazione Hunter#Pahm Sibelia',
+    'knov': 'Associazione Hunter#Nobu',
+    'morel-mackernasey': 'Associazione Hunter#Morau McCarnathy',
+    'knuckle-bine': 'Associazione Hunter#Nackul Bain',
+    'shoot-mcmahon': 'Associazione Hunter#Schult MacMahone',
+    'gyro': 'Formichimere#Giairo',
+    'republic-of-rokario': 'Geografia di Hunter × Hunter#Federazione di Mitene',
+    'republic-of-east-gorteau':
+      'Geografia di Hunter × Hunter#Repubblica del Golt Orientale',
+    'neferpitou': 'Formichimere#Neferpito',
+    'meruem': 'Formichimere#Meruem',
+    'shaiapouf': 'Formichimere#Shawapf',
+    'menthuthuyoupi': 'Formichimere#Montowtoyupih',
+    'colt': 'Formichimere#Coluto',
+    'peggy': 'Formichimere#Pegyi',
+    'cheetu': 'Formichimere#Jeedo',
+    'zazan': 'Formichimere#Zazan',
+    'pike': 'Formichimere#Pike',
+    'rammot': 'Formichimere#Rammot',
     'dwun': 'Personaggi di Hunter × Hunter#Dwun',
     'list': 'Personaggi di Hunter × Hunter#List',
     'eta': 'Personaggi di Hunter × Hunter#Eeta',
@@ -118,12 +137,6 @@ export const ITALIAN_TITLES = {
     'kortopi': 'Brigata Fantasma#Kortopi',
     'bonolenov': 'Brigata Fantasma#Bonolenov Ndongo',
     'chrollo': 'Brigata Fantasma#Quoll Lucifer',
-    'neferpitou': 'Formichimere#Neferpito',
-    'peggy': 'Formichimere#Pegyi',
-    'zazan': 'Formichimere#Zazan',
-    'cheetu': 'Formichimere#Jeedo',
-    'pike': 'Formichimere#Pike',
-    'rammot': 'Formichimere#Rammot',
   },
   // On Italian Wikipedia, which A Wiki of Ice and Fire does not link: every
   // Game of Thrones character's page is named here.
@@ -213,13 +226,17 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
-  // No entry in the Italian Formichimere, character or Hunter lists; dub
-  // unviewed (#1020). Kurt and Reina appear only inside the entries of the
-  // ants they later become, which are not headings of their own.
+  // Kite's survey team: no section in the Italian Hunter or Formichimere
+  // lists; dub unviewed (#1020).
   'spinner-clow': 'Spinner Clow',
   'banana-kavaro': 'Banana Kavaro',
   'monta-yuras': 'Monta Yuras',
   'stick-dinner': 'Stick Dinner',
+  // Chimera Ant phase 2 (#1021): no section of their own in the Italian
+  // Hunter, Formichimere or geography pages; dub unviewed. Kurt and Reina
+  // are spelled so inside other sections, Hagya inside the one headed by the
+  // name he takes later.
+  'dr-lee': 'Dr. Lee',
   'lin-koshi': 'Lin Koshi',
   'podungo-lapoy': 'Podungo Lapoy',
   'wong': 'Wong',
@@ -230,6 +247,11 @@ export const NAMES_KEPT = {
   'balda': 'Balda',
   'yunju': 'Yunju',
   'baro': 'Baro',
+  'baital': 'Baital',
+  'hagya': 'Hagya',
+  'doli-city': 'Doli City',
+  'pata-city': 'Pata City',
+  'tri-orb-hotel': 'Tri-Orb Hotel',
   // No Michael entry in the Italian character/Hunter lists; dub unviewed (#1032).
   'michael': 'Michael',
   // No Jitonoda entry in the Italian character/Hunter lists; dub unviewed (#1019).

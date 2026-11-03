@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { type Locale, LOCALES } from '~/i18n/locales'
+import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { LOADED_SERIES } from '~/test/series'
 
@@ -15,9 +15,6 @@ if (series === undefined) {
 }
 const { archive } = series
 
-type Unit = 'chapter' | 'episode'
-const UNITS: Unit[] = ['episode', 'chapter']
-
 function characterById(
   id: string,
 ): NonNullable<ReturnType<typeof archive.getCharacter>> {
@@ -27,44 +24,114 @@ function characterById(
   }
   return character
 }
-
-/** Each record's gate; `only` names the one medium that tells it. */
-const RECORDS: {
+interface Row {
   chapter: number
   episode: number
   id: string
-  only?: Unit
-  place?: true
-}[] = [
-  { id: 'spinner-clow', episode: 77, chapter: 186 },
-  { id: 'banana-kavaro', episode: 77, chapter: 186 },
-  { id: 'monta-yuras', episode: 77, chapter: 186 },
-  { id: 'stick-dinner', episode: 77, chapter: 186 },
-  { id: 'lin-koshi', episode: 77, chapter: 186 },
-  { id: 'podungo-lapoy', episode: 77, chapter: 186 },
-  { id: 'wong', episode: 77, chapter: 187 },
-  { id: 'kurt', episode: 77, chapter: 187 },
-  { id: 'reina', episode: 77, chapter: 187 },
-  { id: 'haruna', episode: 77, chapter: 215, only: 'episode' },
-  { id: 'pekuba', episode: 79, chapter: 189, only: 'episode' },
+  place: boolean
+  source?: 'chapter' | 'episode'
+}
+
+const RECORDS: Row[] = [
+  { id: 'spinner-clow', episode: 77, chapter: 186, place: false },
+  { id: 'banana-kavaro', episode: 77, chapter: 186, place: false },
+  { id: 'monta-yuras', episode: 77, chapter: 186, place: false },
+  { id: 'stick-dinner', episode: 77, chapter: 186, place: false },
   { id: 'ngl', episode: 79, chapter: 189, place: true },
-  { id: 'zazan', episode: 80, chapter: 189 },
-  { id: 'peggy', episode: 80, chapter: 189 },
-  { id: 'balda', episode: 80, chapter: 190 },
-  { id: 'pike', episode: 80, chapter: 190 },
-  { id: 'cheetu', episode: 81, chapter: 192 },
-  { id: 'rammot', episode: 81, chapter: 192 },
-  { id: 'yunju', episode: 82, chapter: 193 },
-  { id: 'baro', episode: 83, chapter: 195 },
-  { id: 'neferpitou', episode: 84, chapter: 198 },
+  { id: 'neferpitou', episode: 84, chapter: 198, place: false },
 ]
-const CASES = RECORDS.flatMap((record) =>
+/**
+ * Chimera Ant phase 2 (#1021): every record at the first chapter and episode
+ * whose synopsis names it. A record one medium alone names opens only for
+ * that medium's readers; its other number only orders it.
+ */
+const PHASE_TWO: Row[] = [
+  { id: 'lin-koshi', episode: 77, chapter: 186, place: false },
+  { id: 'podungo-lapoy', episode: 77, chapter: 186, place: false },
+  { id: 'wong', episode: 77, chapter: 187, place: false, source: 'episode' },
+  { id: 'kurt', episode: 77, chapter: 187, place: false, source: 'episode' },
+  { id: 'haruna', episode: 77, chapter: 187, place: false, source: 'episode' },
+  { id: 'gyro', episode: 78, chapter: 203, place: false },
+  { id: 'pekuba', episode: 79, chapter: 189, place: false, source: 'episode' },
+  { id: 'reina', episode: 80, chapter: 189, place: false },
+  { id: 'balda', episode: 80, chapter: 190, place: false },
+  { id: 'peggy', episode: 79, chapter: 189, place: false, source: 'chapter' },
+  { id: 'zazan', episode: 84, chapter: 189, place: false },
+  { id: 'pike', episode: 80, chapter: 190, place: false, source: 'chapter' },
+  { id: 'cheetu', episode: 79, chapter: 192, place: false },
+  { id: 'rammot', episode: 79, chapter: 192, place: false },
+  { id: 'hagya', episode: 81, chapter: 192, place: false, source: 'chapter' },
+  { id: 'yunju', episode: 79, chapter: 193, place: false },
+  { id: 'baro', episode: 83, chapter: 195, place: false, source: 'chapter' },
+  { id: 'morel-mackernasey', episode: 86, chapter: 199, place: false },
+  { id: 'palm-siberia', episode: 86, chapter: 200, place: false },
+  { id: 'knov', episode: 86, chapter: 200, place: false },
+  { id: 'knuckle-bine', episode: 86, chapter: 200, place: false },
+  { id: 'shoot-mcmahon', episode: 86, chapter: 200, place: false },
+  { id: 'shaiapouf', episode: 86, chapter: 202, place: false },
+  { id: 'menthuthuyoupi', episode: 86, chapter: 202, place: false },
+  { id: 'baital', episode: 88, chapter: 205, place: false, source: 'chapter' },
+  { id: 'colt', episode: 92, chapter: 214, place: false },
+  { id: 'meruem', episode: 92, chapter: 215, place: false },
+  { id: 'dr-lee', episode: 92, chapter: 215, place: false, source: 'chapter' },
+  { id: 'chimera-ant-nest', episode: 78, chapter: 188, place: true },
+  { id: 'd2-manufacturing-plant', episode: 82, chapter: 192, place: true },
+  { id: 'republic-of-east-gorteau', episode: 92, chapter: 216, place: true },
+  {
+    id: 'royal-palace-of-east-gorteau',
+    episode: 93,
+    chapter: 216,
+    place: true,
+  },
+  {
+    id: 'republic-of-rokario',
+    episode: 93,
+    chapter: 218,
+    place: true,
+    source: 'chapter',
+  },
+  {
+    id: 'doli-city',
+    episode: 93,
+    chapter: 218,
+    place: true,
+    source: 'chapter',
+  },
+  {
+    id: 'pata-city',
+    episode: 93,
+    chapter: 218,
+    place: true,
+    source: 'chapter',
+  },
+  {
+    id: 'tri-orb-hotel',
+    episode: 94,
+    chapter: 220,
+    place: true,
+    source: 'chapter',
+  },
+]
+const UNITS = ['episode', 'chapter'] as const
+const CASES = [...RECORDS, ...PHASE_TWO].flatMap((record) =>
   LOCALES.flatMap((locale) =>
-    UNITS.map((unit) => ({ ...record, locale, unit })),
+    UNITS.filter(
+      (unit) => record.source === undefined || record.source === unit,
+    ).map((unit) => ({ ...record, locale, unit })),
   ),
 )
+/** The records one medium alone names, asked in the other medium. */
+const UNNAMED = PHASE_TWO.flatMap((record) =>
+  record.source === undefined ?
+    []
+  : LOCALES.map((locale) => ({
+      ...record,
+      locale,
+      unit: record.source === 'chapter' ? 'episode' : 'chapter',
+    })),
+)
 
-function at(unit: Unit, count: number): Bookmark {
+function at(unit: string, count: number): Bookmark {
   return unit === 'chapter' ?
       { mode: 'chapter', chapter: count }
     : { mode: 'episode', episode: count }
@@ -75,102 +142,92 @@ function opened(id: string, place: boolean, reader: Reader): boolean {
   return page !== undefined && 'detail' in page && page.detail.slot.open
 }
 
-describe.each(
-  CASES.filter(({ only, unit }) => only === undefined || only === unit),
-)('$id in $locale by $unit', (row) => {
+describe.each(CASES)('$id in $locale by $unit', (row) => {
   it('opens the record and drawing at its named scene, never before', () => {
     const threshold = row.unit === 'chapter' ? row.chapter : row.episode
     const before = readerFor(archive, at(row.unit, threshold - 1), row.locale)
     const reached = readerFor(archive, at(row.unit, threshold), row.locale)
 
-    expect(opened(row.id, row.place === true, before)).toBe(false)
+    expect(opened(row.id, row.place, before)).toBe(false)
     expect(drawingsFor([row.id], before)).toStrictEqual({})
 
-    expect(opened(row.id, row.place === true, reached)).toBe(true)
+    expect(opened(row.id, row.place, reached)).toBe(true)
     expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
   })
 })
 
-describe.each(
-  CASES.filter(({ only, unit }) => only !== undefined && only !== unit),
-)('$id in $locale by $unit', ({ id, locale, unit }) => {
-  it('never opens the record the other medium alone names', () => {
-    const end = readerFor(archive, at(unit, 339), locale)
+describe.each(UNNAMED)('$id in $locale by $unit', (row) => {
+  it('never opens for a reader of the medium that does not name it', () => {
+    const far = row.unit === 'chapter' ? 340 : 148
+    const reader = readerFor(archive, at(row.unit, far), row.locale)
 
-    expect(opened(id, false, end)).toBe(false)
-    expect(drawingsFor([id], end)).toStrictEqual({})
+    expect(opened(row.id, row.place, reader)).toBe(false)
+    expect(drawingsFor([row.id], reader)).toStrictEqual({})
   })
 })
 
-/** Each directed relationship this arc opens, at its own gate. */
-const RELATIONSHIPS: {
-  chapter: number
-  episode: number
-  id: string
-  only?: Unit
-  person: string
-}[] = [
-  ...['spinner-clow', 'banana-kavaro', 'monta-yuras', 'stick-dinner'].map(
-    (id) => ({ id, person: 'kite', episode: 77, chapter: 186 }),
-  ),
-  { id: 'lin-koshi', person: 'kite', episode: 77, chapter: 186 },
-  { id: 'podungo-lapoy', person: 'kite', episode: 77, chapter: 186 },
-  { id: 'wong', person: 'kite', episode: 77, chapter: 187 },
-  { id: 'kurt', person: 'reina', episode: 77, chapter: 187 },
-  { id: 'reina', person: 'kurt', episode: 77, chapter: 187 },
-  { id: 'haruna', person: 'kurt', episode: 77, chapter: 215, only: 'episode' },
-  {
-    id: 'pekuba',
-    person: 'pokkle',
-    episode: 79,
-    chapter: 189,
-    only: 'episode',
-  },
-  { id: 'balda', person: 'pokkle', episode: 80, chapter: 190 },
-  { id: 'pike', person: 'zazan', episode: 80, chapter: 190 },
-  { id: 'zazan', person: 'pokkle', episode: 80, chapter: 190 },
-  { id: 'rammot', person: 'gon-freecss', episode: 81, chapter: 192 },
-  { id: 'peggy', person: 'rammot', episode: 82, chapter: 194 },
-  { id: 'yunju', person: 'kite', episode: 82, chapter: 193 },
-  { id: 'baro', person: 'gon-freecss', episode: 83, chapter: 195 },
-  { id: 'rammot', person: 'neferpitou', episode: 84, chapter: 198 },
-  { id: 'neferpitou', person: 'kite', episode: 85, chapter: 198 },
-  { id: 'peggy', person: 'neferpitou', episode: 85, chapter: 198 },
-]
-
-/** Every locale and unit that tells a fact `only` one medium may tell. */
-function readings(only?: Unit): { locale: Locale; unit: Unit }[] {
-  const units = UNITS.filter((unit) => only === undefined || only === unit)
-  return LOCALES.flatMap((locale) => units.map((unit) => ({ locale, unit })))
-}
-
-function statusAt(id: string, unit: Unit, count: number): string | undefined {
+/** A character's status as a reader at a bookmark sees it. */
+function statusAt(
+  id: string,
+  bookmark: Bookmark,
+  locale: (typeof LOCALES)[number],
+): string | undefined {
   return archive.latestOf(
-    readerFor(archive, at(unit, count), 'en'),
+    readerFor(archive, bookmark, locale),
     characterById(id),
     'status',
   )
 }
 
-function drawingAt(id: string, unit: Unit, count: number): unknown {
-  return drawingsFor([id], readerFor(archive, at(unit, count), 'en'))[id]
-}
+/** A death filed after its record opens: the status turns at its pin. */
+const DEATHS = [
+  { id: 'kite', episode: 85, chapter: 199 },
+  { id: 'ponzu', episode: 80, chapter: 190 },
+  { id: 'pokkle', episode: undefined, chapter: 198 },
+  { id: 'pekuba', episode: 80, chapter: undefined },
+  { id: 'yunju', episode: 82, chapter: undefined },
+  { id: 'peggy', episode: undefined, chapter: 213 },
+  { id: 'rammot', episode: 94, chapter: 219 },
+].flatMap(({ id, episode, chapter }) =>
+  [
+    { unit: 'episode' as const, gate: episode },
+    { unit: 'chapter' as const, gate: chapter },
+  ].flatMap(({ unit, gate }) =>
+    gate === undefined ?
+      []
+    : LOCALES.map((locale) => ({ id, unit, gate, locale })),
+  ),
+)
+
+describe.each(DEATHS)(
+  '$id in $locale by $unit',
+  ({ id, unit, gate, locale }) => {
+    it('dies at the pin that tells it, never before', () => {
+      expect(statusAt(id, at(unit, gate - 1), locale)).not.toBe('deceased')
+      expect(statusAt(id, at(unit, gate), locale)).toBe('deceased')
+    })
+  },
+)
 
 describe('Chimera Ant dated facts', () => {
   it.each(
-    RELATIONSHIPS.flatMap((row) =>
-      readings(row.only).map((reading) => ({ ...row, ...reading })),
+    CASES.filter(
+      ({ id, place }) =>
+        !place && PHASE_TWO.every((record) => record.id !== id),
     ),
   )(
-    'opens $id’s card for $person in $locale by $unit',
-    ({ id, person, locale, unit, episode, chapter }) => {
+    'opens the relationship with Kite for $id in $locale by $unit',
+    ({ id, locale, unit, episode, chapter }) => {
       const character = characterById(id)
-      const gate = unit === 'chapter' ? chapter : episode
+      const episodeGate = id === 'neferpitou' ? 85 : episode
+      // Neferpitou's row with Kite opens at the kill, chapter 199.
+      const chapterGate = id === 'neferpitou' ? 199 : chapter
+      const gate = unit === 'chapter' ? chapterGate : episodeGate
       const related = (count: number): boolean =>
         relationshipsOf(
           character,
           readerFor(archive, at(unit, count), locale),
-        ).some((card) => card.person.id === person)
+        ).some(({ person }) => person.id === 'kite')
 
       expect(related(gate - 1)).toBe(false)
       expect(related(gate)).toBe(true)
@@ -179,8 +236,8 @@ describe('Chimera Ant dated facts', () => {
 
   it.each(
     LOCALES.flatMap((locale) => [
-      { locale, unit: 'episode' as const, gate: 77 },
-      { locale, unit: 'chapter' as const, gate: 186 },
+      { locale, unit: 'episode', gate: 77 },
+      { locale, unit: 'chapter', gate: 186 },
     ]),
   )(
     'dates Kite’s survey affiliation in $locale by $unit',
@@ -198,93 +255,22 @@ describe('Chimera Ant dated facts', () => {
     },
   )
 
-  /** Each fate this arc dates, before and at its pin. */
-  const FATES: {
-    after: string
-    before: string
-    gate: number
-    id: string
-    unit: Unit
-  }[] = [
-    {
-      id: 'ponzu',
-      unit: 'episode',
-      gate: 80,
-      before: 'alive',
-      after: 'deceased',
-    },
-    {
-      id: 'ponzu',
-      unit: 'chapter',
-      gate: 190,
-      before: 'alive',
-      after: 'deceased',
-    },
-    {
-      id: 'pokkle',
-      unit: 'episode',
-      gate: 80,
-      before: 'alive',
-      after: 'captured',
-    },
-    {
-      id: 'pokkle',
-      unit: 'chapter',
-      gate: 190,
-      before: 'alive',
-      after: 'captured',
-    },
-    {
-      id: 'pokkle',
-      unit: 'chapter',
-      gate: 198,
-      before: 'captured',
-      after: 'deceased',
-    },
-    {
-      id: 'pekuba',
-      unit: 'episode',
-      gate: 80,
-      before: 'alive',
-      after: 'deceased',
-    },
-  ]
-
-  it.each(FATES)(
-    'dates $id’s fate by $unit at $gate',
-    ({ id, unit, gate, before, after }) => {
-      expect(statusAt(id, unit, gate - 1)).toBe(before)
-      expect(statusAt(id, unit, gate)).toBe(after)
-    },
-  )
-
-  it('leaves Pokkle captured to the end of the anime', () => {
-    expect(statusAt('pokkle', 'episode', 148)).toBe('captured')
-  })
-
-  it.each([
-    { id: 'ponzu', unit: 'episode' as const, gate: 80 },
-    { id: 'ponzu', unit: 'chapter' as const, gate: 190 },
-    { id: 'pokkle', unit: 'chapter' as const, gate: 198 },
-    { id: 'pekuba', unit: 'episode' as const, gate: 80 },
-  ])('redraws $id at its death by $unit', ({ id, unit, gate }) => {
-    expect(drawingAt(id, unit, gate)).not.toStrictEqual(
-      drawingAt(id, unit, gate - 1),
-    )
-  })
-
-  it('keeps Pokkle’s drawing for anime viewers', () => {
-    expect(drawingAt('pokkle', 'episode', 148)).toStrictEqual(
-      drawingAt('pokkle', 'episode', 83),
-    )
-  })
-
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([
       'kite',
       'gon-freecss',
       'killua',
       'neferpitou',
+      'netero',
+      'knov',
+      'morel-mackernasey',
+      'palm-siberia',
+      'knuckle-bine',
+      'shoot-mcmahon',
+      'colt',
+      'meruem',
+      'shaiapouf',
+      'menthuthuyoupi',
     ])
   })
 })

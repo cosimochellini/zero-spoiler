@@ -12,8 +12,27 @@ import {
 import type { Stroke } from '~/lib/view/records'
 
 import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
-import { CHIMERA_ANT_DRAWINGS, chimeraAntRedrawn } from './chimera-ant'
+import {
+  CHIMERA_ANT_HUNTERS_DRAWINGS,
+  chimeraAntHuntersRedrawn,
+} from './chimera-ant-hunters'
+import {
+  CHIMERA_ANT_NGL_DRAWINGS,
+  chimeraAntNglRedrawn,
+} from './chimera-ant-ngl'
 import { CHIMERA_ANT_PLACE_DRAWINGS } from './chimera-ant-places'
+import {
+  CHIMERA_ANT_RETURNING_DRAWINGS,
+  chimeraAntReturningRedrawn,
+} from './chimera-ant-returning'
+import {
+  CHIMERA_ANT_ROYALS_DRAWINGS,
+  chimeraAntRoyalsRedrawn,
+} from './chimera-ant-royals'
+import {
+  CHIMERA_ANT_SQUADS_DRAWINGS,
+  chimeraAntSquadsRedrawn,
+} from './chimera-ant-squads'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
@@ -105,7 +124,11 @@ export const DRAWINGS = {
   ...ZOLDYCK_DRAWINGS,
   ...CHAPTER_ONE_DRAWINGS,
   ...CHIMERA_ANT_PLACE_DRAWINGS,
-  ...CHIMERA_ANT_DRAWINGS,
+  ...CHIMERA_ANT_HUNTERS_DRAWINGS,
+  ...CHIMERA_ANT_NGL_DRAWINGS,
+  ...CHIMERA_ANT_ROYALS_DRAWINGS,
+  ...CHIMERA_ANT_SQUADS_DRAWINGS,
+  ...CHIMERA_ANT_RETURNING_DRAWINGS,
   ...TRICK_TOWER_DRAWINGS,
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
@@ -1030,5 +1053,9 @@ export const REDRAWINGS: Redrawings = {
   ...heavensArenaRedrawn,
   ...yorknewCityRedrawn,
   ...greedIslandRedrawn,
-  ...chimeraAntRedrawn,
+  ...chimeraAntHuntersRedrawn,
+  ...chimeraAntNglRedrawn,
+  ...chimeraAntRoyalsRedrawn,
+  ...chimeraAntSquadsRedrawn,
+  ...chimeraAntReturningRedrawn,
 }

@@ -1,3 +1,5 @@
+import type { Relationship } from '~/data/types'
+
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { type HunterSaga, passedExam } from './saga'
 import { zevilChronicles } from './zevil.chronicle'
@@ -43,6 +45,44 @@ const DRAWS_TARGET_LOG = {
   it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
   en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
 } as const
+
+/**
+ * Pokkle's Final Phase rows that both media tell, as the anime's last
+ * selection holds them, carried into the Chimera Ant arc (#1021).
+ */
+const POKKLE_EXAM_ROWS: Relationship[] =
+  zevilRelationships.pokkle.findLast((entry) => entry.source === 'episode')
+    ?.value ?? []
+
+const POKKLE_PONZU: Relationship = {
+  character: 'ponzu',
+  type: { it: 'Compagna in NGL', en: 'Companion in NGL' },
+  summary: {
+    it: 'Ponzu entra in NGL con il gruppo di Pockul.',
+    en: 'Ponzu goes into NGL with Pokkle’s party.',
+  },
+}
+
+const POKKLE_PITOU: Relationship = {
+  character: 'neferpitou',
+  type: {
+    it: 'Guardia reale che gli sonda il cervello',
+    en: 'Royal Guard who probes his brain',
+  },
+  summary: {
+    it: 'Neferpito trova Pockul nascosto tra le ossa e gli sonda il cervello per imparare il Nen.',
+    en: 'Neferpitou finds Pokkle hiding among the bones and probes his brain to learn about Nen.',
+  },
+}
+
+const PONZU_POKKLE: Relationship = {
+  character: 'pokkle',
+  type: { it: 'Compagno in NGL', en: 'Companion in NGL' },
+  summary: {
+    it: 'Ponzu entra in NGL con il gruppo di Pockul.',
+    en: 'Ponzu goes into NGL with Pokkle’s party.',
+  },
+}
 
 /** Where the chapter-23 roster opens the manga's own applicants. */
 const ON_ROSTER = { episode: 14, chapter: 23, source: 'chapter' } as const
@@ -505,7 +545,17 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       status: [{ episode: 3, chapter: 29, value: 'alive' }],
     },
     ponzu: {
-      relationships: zevilRelationships.ponzu,
+      relationships: [
+        ...zevilRelationships.ponzu,
+        {
+          episode: 79,
+          chapter: 189,
+          value: [
+            PONZU_POKKLE,
+            ...(zevilRelationships.ponzu.at(-1)?.value ?? []),
+          ],
+        },
+      ],
       chronicle: zevilChronicles.ponzu,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
@@ -530,10 +580,18 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         },
         FAILED_288_PHASE_1,
+        {
+          episode: 79,
+          chapter: 189,
+          value: {
+            it: 'Nel gruppo di Pockul in NGL',
+            en: 'In Pokkle’s party in NGL',
+          },
+        },
       ],
       status: [
         { episode: 17, chapter: 30, value: 'alive' },
-        // A chimera ant shoots her as she runs for the NGL border (#1020).
+        // An Ant shoots her as she flees, chapter 190 and episode 80.
         { episode: 80, chapter: 190, value: 'deceased' },
       ],
     },
@@ -561,7 +619,19 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     pokkle: {
-      relationships: zevilRelationships.pokkle,
+      relationships: [
+        ...zevilRelationships.pokkle,
+        {
+          episode: 79,
+          chapter: 189,
+          value: [POKKLE_PONZU, ...POKKLE_EXAM_ROWS],
+        },
+        {
+          episode: 84,
+          chapter: 198,
+          value: [POKKLE_PONZU, POKKLE_PITOU, ...POKKLE_EXAM_ROWS],
+        },
+      ],
       chronicle: zevilChronicles.pokkle,
       role: passedExam(18, 23),
       log: {
@@ -585,15 +655,22 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             it: 'Associazione Hunter, Hunter',
           },
         },
+        {
+          episode: 79,
+          chapter: 189,
+          value: {
+            en: 'Hunter Association, Hunter; leads a party into NGL',
+            it: 'Associazione Hunter, Hunter; guida un gruppo in NGL',
+          },
+        },
       ],
       status: [
         { episode: 18, chapter: 23, value: 'alive' },
-        // Zazan's stinger paralyses him and her squad takes him to the
-        // nest (#1020).
+        // Zazan's sting takes him for the Queen, chapter 190 and episode 80.
         { episode: 80, chapter: 190, value: 'captured' },
-        // The manga has the butcher kill him once Neferpitou has learned
-        // what he knows about Nen; the anime leaves that scene out. Episode
-        // 84 adapts the chapter and only orders it.
+        // The Ants butcher him in chapter 198. The 2011 anime leaves the
+        // scene out, so episode readers keep him captured; episode 84, his
+        // last, only orders the entry.
         { episode: 84, chapter: 198, source: 'chapter', value: 'deceased' },
       ],
     },
