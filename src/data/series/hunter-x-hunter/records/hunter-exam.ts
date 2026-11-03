@@ -702,8 +702,8 @@ const earlyExam: HunterSaga = {
           episode: 95,
           chapter: 223,
           value: {
-            it: 'Squadra incaricata di distrarre le guardie reali',
-            en: 'Team assigned to distract the Royal Guards',
+            it: 'Associazione Hunter, Hunter; ritrovato il Nen, deve tenere Neferpito lontano dal re con Killua',
+            en: 'Hunter Association, Hunter; his Nen back, he is to keep Neferpitou away from the King with Killua',
           },
         },
       ],
@@ -1418,8 +1418,8 @@ const earlyExam: HunterSaga = {
           episode: 95,
           chapter: 223,
           value: {
-            it: 'Squadra incaricata di distrarre le guardie reali',
-            en: 'Team assigned to distract the Royal Guards',
+            it: 'Associazione Hunter, Hunter; deve tenere Neferpito lontano dal re con Gon',
+            en: 'Hunter Association, Hunter; is to keep Neferpitou away from the King with Gon',
           },
         },
       ],

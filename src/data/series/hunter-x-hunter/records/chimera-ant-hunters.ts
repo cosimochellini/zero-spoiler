@@ -235,6 +235,27 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             },
           ],
         },
+        // He drowns the Squadron Leader in carbon dioxide in a flooded
+        // chapel, chapter 254 / episode 107. Five people at most, so Colt
+        // gives way to the fight of the phase.
+        {
+          episode: 107,
+          chapter: 254,
+          value: [
+            rows.morelNetero,
+            rows.morelKnov,
+            rows.morelKnuckle,
+            rows.morelShoot,
+            {
+              character: 'hagya',
+              type: { it: 'Nemico che uccide', en: 'Enemy he kills' },
+              summary: {
+                it: 'Lo affronta in una cappella sotterranea allagata e lo uccide riempiendola di anidride carbonica.',
+                en: 'Fights him in a flooded underground chapel and kills him by filling it with carbon dioxide.',
+              },
+            },
+          ],
+        },
       ],
       role: { it: 'Hunter', en: 'Hunter' },
       log: {
@@ -242,7 +263,18 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'He arrives with Netero and mocks Gon and Killua for being children. Then he tells Killua that a Nen fight is not decided by who has more aura, since no one knows the other’s ability.',
       },
       status: [{ episode: 86, chapter: 199, value: 'alive' }],
-      affiliation: [{ episode: 86, chapter: 199, value: NETERO_TEAM }],
+      affiliation: [
+        { episode: 86, chapter: 199, value: NETERO_TEAM },
+        // The matchups against the Royal Guards, chapter 223 / episode 95.
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Nobu',
+            en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Knov',
+          },
+        },
+      ],
     },
     'knuckle-bine': {
       relationships: [
@@ -279,6 +311,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [
         { episode: 86, chapter: 200, value: MOREL_STUDENT },
         { episode: 91, chapter: 214, value: IN_NGL },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Squadra di Netero; deve tenere Montowtoyupih lontano dal re con Schult',
+            en: 'Netero’s team; is to keep Menthuthuyoupi away from the King with Shoot',
+          },
+        },
       ],
     },
     'shoot-mcmahon': {
@@ -323,6 +363,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [
         { episode: 86, chapter: 200, value: MOREL_STUDENT },
         { episode: 91, chapter: 214, value: IN_NGL },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Squadra di Netero; deve tenere Montowtoyupih lontano dal re con Nackul',
+            en: 'Netero’s team; is to keep Menthuthuyoupi away from the King with Knuckle',
+          },
+        },
       ],
     },
     // The gunmen name him as their king in episode 78, which the anime

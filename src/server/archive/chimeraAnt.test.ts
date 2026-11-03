@@ -129,8 +129,12 @@ const PHASE_THREE: Row[] = [
   { id: 'pell', episode: 96, chapter: 226, place: false, source: 'episode' },
   { id: 'luonton-city', episode: 100, chapter: 235, place: true },
   { id: 'komugi', episode: 103, chapter: 257, place: false },
-  { id: 'remora', episode: 101, chapter: 238, place: false },
+  { id: 'remora', episode: 101, chapter: 238, place: false, source: 'chapter' },
   { id: 'tsukuma', episode: 96, chapter: 224, place: false, source: 'chapter' },
+  { id: 'ikalgo', episode: 101, chapter: 238, place: false },
+  { id: 'welfin', episode: 104, chapter: 246, place: false },
+  { id: 'bloster', episode: 104, chapter: 246, place: false },
+  { id: 'bizeff', episode: 105, chapter: 250, place: false, source: 'chapter' },
 ]
 
 const CASES = [...RECORDS, ...PHASE_TWO, ...PHASE_THREE].flatMap((record) =>
@@ -420,12 +424,55 @@ describe('Chimera Ant dated facts', () => {
               'affiliation',
             )?.[locale]
 
-          expect(read(gate - 1)).not.toMatch(/distrarre|distract/u)
-          expect(read(gate)).toMatch(/distrarre|distract/u)
+          expect(read(gate - 1)).not.toMatch(/Neferpit/u)
+          expect(read(gate)).toMatch(/Neferpit/u)
         }
       }
     },
   )
+
+  it.each([
+    {
+      id: 'morel-mackernasey',
+      field: 'affiliation',
+      episode: 95,
+      chapter: 223,
+    },
+    { id: 'knuckle-bine', field: 'affiliation', episode: 95, chapter: 223 },
+    { id: 'shoot-mcmahon', field: 'affiliation', episode: 95, chapter: 223 },
+    { id: 'cheetu', field: 'affiliation', episode: 100, chapter: 235 },
+    { id: 'cheetu', field: 'role', episode: 100, chapter: 235 },
+    { id: 'ikalgo', field: 'affiliation', episode: 107, chapter: 255 },
+    { id: 'ikalgo', field: 'role', episode: 107, chapter: 255 },
+  ] as const)(
+    'dates the $field step of $id at its scene',
+    ({ id, field, episode, chapter }) => {
+      const character = characterById(id)
+      for (const locale of LOCALES) {
+        for (const [unit, gate] of [
+          ['episode', episode],
+          ['chapter', chapter],
+        ] as const) {
+          const read = (count: number): string | undefined =>
+            archive.latestOf(
+              readerFor(archive, at(unit, count), locale),
+              character,
+              field,
+            )?.[locale]
+
+          expect(read(gate), `${unit} ${String(gate)}`).not.toBe(read(gate - 1))
+        }
+      }
+    },
+  )
+
+  it.each(LOCALES)('opens Pell already dead in %s', (locale) => {
+    const reader = readerFor(archive, at('episode', 96), locale)
+
+    expect(archive.latestOf(reader, characterById('pell'), 'status')).toBe(
+      'deceased',
+    )
+  })
 
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([

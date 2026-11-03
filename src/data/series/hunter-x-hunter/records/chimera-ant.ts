@@ -112,6 +112,25 @@ export const chimeraAnt: HunterSaga = {
           chapter: 215,
           value: [PITOU_MERUEM, PITOU_SHAIAPOUF, PITOU_KITE, PITOU_POKKLE],
         },
+        // The King orders them to guard Komugi, chapter 260 / episode 109.
+        {
+          episode: 109,
+          chapter: 260,
+          value: [
+            PITOU_MERUEM,
+            PITOU_SHAIAPOUF,
+            PITOU_KITE,
+            PITOU_POKKLE,
+            {
+              character: 'komugi',
+              type: { it: 'Da proteggere', en: 'Charge' },
+              summary: {
+                it: 'Il re ordina a Neferpito di sorvegliarla e di togliere di mezzo ogni minaccia.',
+                en: 'The King orders Neferpitou to watch over her and deal with any threat.',
+              },
+            },
+          ],
+        },
       ],
       role: { it: 'Guardia reale', en: 'Royal Guard' },
       log: {

@@ -65,6 +65,11 @@ export const ITALIAN_TITLES = {
     'zazan': 'Formichimere#Zazan',
     'pike': 'Formichimere#Pike',
     'rammot': 'Formichimere#Rammot',
+    'meleoron': 'Formichimere#Meleolon',
+    'flutter': 'Formichimere#Flatta',
+    'ikalgo': 'Formichimere#Calamaro',
+    'welfin': 'Formichimere#Welfang',
+    'bloster': 'Formichimere#Bloburda',
     'dwun': 'Personaggi di Hunter × Hunter#Dwun',
     'list': 'Personaggi di Hunter × Hunter#List',
     'eta': 'Personaggi di Hunter × Hunter#Eeta',
@@ -155,15 +160,15 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
-  // Phase 3 names without standalone sections in the Italian character list.
-  // The list uses Komugi and Pell in prose. Dub audio is unviewed.
+  // Chimera Ant phase 3 (#1022): no section of their own in the Italian
+  // Hunter, Formichimere or character pages; dub unviewed. Komugi is an
+  // entry of a list inside a section, Bizeff is "Bizef" in passing.
   'komugi': 'Komugi',
-  'meleoron': 'Meleoron',
   'pell': 'Pell',
   'remora': 'Remora',
   'tsukuma': 'Tsukuma',
-  'flutter': 'Flutter',
   'bihorn': 'Bihorn',
+  'bizeff': 'Bizeff',
   // Kite's survey team: no section in the Italian Hunter or Formichimere
   // lists; dub unviewed (#1020).
   'spinner-clow': 'Spinner Clow',

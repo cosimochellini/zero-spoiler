@@ -975,7 +975,9 @@
       "hxh-en-Chapter_214-416220.json",
       "hxh-en-Episode_91_(2011)-416453.json",
       "hxh-en-Chapter_215-418691.json",
-      "hxh-en-Episode_92_(2011)-416454.json"
+      "hxh-en-Episode_92_(2011)-416454.json",
+      "hxh-en-Chapter_260-383905.json",
+      "hxh-en-Episode_109_(2011)-410890.json"
     ],
     "palm-siberia": [
       "hxh-en-Chapter_200-416212.json",
@@ -997,7 +999,12 @@
       "hxh-en-Episode_91_(2011)-416453.json",
       "hxh-en-Chapter_215-418691.json",
       "hxh-en-Episode_92_(2011)-416454.json",
-      "hxh-en-Chapter_213-416219.json"
+      "hxh-en-Chapter_213-416219.json",
+      "hxh-en-Chapter_244-416236.json",
+      "hxh-en-Chapter_257-324511.json",
+      "hxh-en-Chapter_258-383898.json",
+      "hxh-en-Episode_103_(2011)-416463.json",
+      "hxh-en-Episode_108_(2011)-416466.json"
     ],
     "knov": [
       "hxh-en-Chapter_199-416211.json",
@@ -1012,7 +1019,11 @@
       "hxh-en-Episode_86_(2011)-416449.json",
       "hxh-en-Chapter_215-418691.json",
       "hxh-en-Episode_92_(2011)-416454.json",
-      "hxh-en-Morel_Mackernasey-425708.json"
+      "hxh-en-Morel_Mackernasey-425708.json",
+      "hxh-en-Chapter_253-416241.json",
+      "hxh-en-Chapter_254-383885.json",
+      "hxh-en-Episode_106_(2011)-416465.json",
+      "hxh-en-Episode_107_(2011)-410888.json"
     ],
     "knuckle-bine": [
       "hxh-en-Chapter_200-416212.json",
@@ -1120,6 +1131,71 @@
       "hxh-en-Chapter_190-329215.json",
       "hxh-en-Episode_79_(2011)-419186.json",
       "hxh-en-Episode_80_(2011)-416445.json"
+    ],
+    "ikalgo": [
+      "hxh-en-Ikalgo-424685.json",
+      "hxh-en-Chapter_236-416233.json",
+      "hxh-en-Chapter_237-321753.json",
+      "hxh-en-Chapter_238-411708.json",
+      "hxh-en-Chapter_241-400691.json",
+      "hxh-en-Chapter_255-418706.json",
+      "hxh-en-Episode_100_(2011)-410878.json",
+      "hxh-en-Episode_101_(2011)-411710.json",
+      "hxh-en-Episode_107_(2011)-410888.json"
+    ],
+    "welfin": [
+      "hxh-en-Welfin-423920.json",
+      "hxh-en-Bloster-425572.json",
+      "hxh-en-Chapter_245-416237.json",
+      "hxh-en-Chapter_246-321743.json",
+      "hxh-en-Episode_103_(2011)-416463.json",
+      "hxh-en-Episode_104_(2011)-295088.json"
+    ],
+    "bloster": [
+      "hxh-en-Bloster-425572.json",
+      "hxh-en-Welfin-423920.json",
+      "hxh-en-Chapter_245-416237.json",
+      "hxh-en-Chapter_246-321743.json",
+      "hxh-en-Episode_103_(2011)-416463.json",
+      "hxh-en-Episode_104_(2011)-295088.json"
+    ],
+    "bizeff": [
+      "hxh-en-Bizeff-424975.json",
+      "hxh-en-Chapter_250-416238.json",
+      "hxh-en-Chapter_252-416240.json",
+      "hxh-en-Episode_105_(2011)-419045.json"
+    ],
+    "komugi": [
+      "hxh-en-Komugi-424583.json",
+      "hxh-en-Chapter_257-324511.json",
+      "hxh-en-Episode_103_(2011)-416463.json"
+    ],
+    "remora": [
+      "hxh-en-Remora-424128.json",
+      "hxh-en-Chapter_238-411708.json",
+      "hxh-en-Episode_101_(2011)-411710.json"
+    ],
+    "pell": [
+      "hxh-en-Pell-425805.json",
+      "hxh-en-Chapter_226-418150.json",
+      "hxh-en-Chapter_227-418151.json",
+      "hxh-en-Episode_96_(2011)-418152.json"
+    ],
+    "flutter": [
+      "hxh-en-Flutter-424825.json",
+      "hxh-en-Chapter_235-416232.json",
+      "hxh-en-Chapter_236-416233.json",
+      "hxh-en-Chapter_237-321753.json",
+      "hxh-en-Chapter_238-411708.json",
+      "hxh-en-Episode_100_(2011)-410878.json",
+      "hxh-en-Episode_101_(2011)-411710.json",
+      "hxh-en-Episode_106_(2011)-416465.json"
+    ],
+    "meleoron": [
+      "hxh-en-Meleoron-424334.json",
+      "hxh-en-Chapter_241-400691.json",
+      "hxh-en-Chapter_242-400692.json",
+      "hxh-en-Episode_102_(2011)-416461.json"
     ]
   },
   "omitted": {
@@ -1131,15 +1207,8 @@
     "jeitsari": "Only named and pictured in the chapter 121 auction introduction through this phase; no personal interaction with an archived character is shown.",
     "jitonoda": "Only named in the chapter 129 manga news report as the mayor of Yorknew City; no directed interaction with an archived character is established. Judged from the chapter 129 page.",
     "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032).",
-    "tsukuma": "His televised interview establishes no relationship with a filed character."
+    "tsukuma": "His televised interview establishes no relationship with a filed character.",
+    "bihorn": "Named only in Pike's boast in chapter 227 (he could not cut Pike's threads either); no exchange with an archived character in the window. Judged from hxh-en-Bihorn and the chapter 227 page."
   },
-  "pending": {
-    "gyro": "#1022",
-    "komugi": "#908",
-    "remora": "#908",
-    "pell": "#908",
-    "flutter": "#908",
-    "bihorn": "#908",
-    "meleoron": "#908"
-  }
+  "pending": { "gyro": "#1024" }
 }

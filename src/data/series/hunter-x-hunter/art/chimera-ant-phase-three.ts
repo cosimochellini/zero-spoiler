@@ -115,4 +115,32 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: ellipse(114, 107, 4, 4), role: 'soft' },
     shadow(82, 167, 46),
   ],
+  // PLACEHOLDER ikalgo
+  'ikalgo': [
+    { d: 'M40 140 L80 60 L120 140 Z' },
+    { d: 'M60 120 H100', role: 'accent' },
+    { d: 'M70 100 H90', role: 'soft' },
+    shadow(80, 164, 40),
+  ],
+  // PLACEHOLDER welfin
+  'welfin': [
+    { d: 'M40 140 L80 60 L120 140 Z' },
+    { d: 'M60 120 H100', role: 'accent' },
+    { d: 'M70 100 H90', role: 'soft' },
+    shadow(80, 164, 41),
+  ],
+  // PLACEHOLDER bloster
+  'bloster': [
+    { d: 'M40 140 L80 60 L120 140 Z' },
+    { d: 'M60 120 H100', role: 'accent' },
+    { d: 'M70 100 H90', role: 'soft' },
+    shadow(80, 164, 42),
+  ],
+  // PLACEHOLDER bizeff
+  'bizeff': [
+    { d: 'M40 140 L80 60 L120 140 Z' },
+    { d: 'M60 120 H100', role: 'accent' },
+    { d: 'M70 100 H90', role: 'soft' },
+    shadow(80, 164, 43),
+  ],
 } satisfies Drawings
