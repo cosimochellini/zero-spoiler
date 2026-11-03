@@ -324,7 +324,7 @@ export const CHIMERA_ANT_PLACES: Record<
   'meteor-city': {
     form: 'city',
     region: 'mainland',
-    arc: 'chimera-ant-arc',
+    arc: 'hunter-exam-arc',
     landmark: { it: 'La città', en: 'The city' },
     log: {
       it: 'Una città ai margini dei registri ufficiali.',

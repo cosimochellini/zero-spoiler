@@ -80,6 +80,9 @@ function expectedChapter(
   if (field === 'affiliation' && entry.episode === 77) {
     return 186
   }
+  if (field === 'role' && entry.episode === 93) {
+    return 217
+  }
   if (entry.episode === 85) {
     return 199
   }
