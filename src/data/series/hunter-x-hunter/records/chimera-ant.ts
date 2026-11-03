@@ -1,6 +1,38 @@
 import { NGL_RECORD } from './chimera-ant-places'
 import type { HunterSaga } from './saga'
 
+const surveyDossier: HunterSaga['dossiers'][string] = {
+  relationships: [
+    {
+      episode: 77,
+      chapter: 186,
+      value: [
+        {
+          character: 'kite',
+          type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
+          summary: {
+            it: 'Lavora con Kaito alla ricerca di nuove specie.',
+            en: 'Works with Kite to find new species.',
+          },
+        },
+      ],
+    },
+  ],
+  role: { it: 'Ricerca sul campo', en: 'Field surveyor' },
+  log: {
+    it: 'Si presenta a Gon e Killua quando si uniscono alla squadra di ricerca.',
+    en: 'Introduces themself to Gon and Killua when they join the survey team.',
+  },
+  status: [{ episode: 77, chapter: 186, value: 'alive' }],
+  affiliation: [
+    {
+      episode: 77,
+      chapter: 186,
+      value: { it: 'Squadra di ricerca', en: 'Survey team' },
+    },
+  ],
+}
+
 /**
  * Chimera Ant: episodes 76–136 of the 2011 anime and chapters 186–318, as the
  * English Hunter x Hunter Wiki's arc page gives them. Italian Wikipedia calls
@@ -11,130 +43,10 @@ import type { HunterSaga } from './saga'
 export const chimeraAnt: HunterSaga = {
   name: { it: 'Formichimere', en: 'Chimera Ant' },
   dossiers: {
-    'stick-dinner': {
-      relationships: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: [
-            {
-              character: 'kite',
-              type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
-              summary: {
-                it: 'Lavora con Kaito alla ricerca di nuove specie.',
-                en: 'Works with Kite to find new species.',
-              },
-            },
-          ],
-        },
-      ],
-      role: { it: 'Ricerca sul campo', en: 'Field surveyor' },
-      log: {
-        it: 'Si presenta a Gon e Killua quando si uniscono alla squadra di ricerca.',
-        en: 'Introduces themself to Gon and Killua when they join the survey team.',
-      },
-      status: [{ episode: 77, chapter: 186, value: 'alive' }],
-      affiliation: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: { it: 'Squadra di ricerca', en: 'Survey team' },
-        },
-      ],
-    },
-    'monta-yuras': {
-      relationships: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: [
-            {
-              character: 'kite',
-              type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
-              summary: {
-                it: 'Lavora con Kaito alla ricerca di nuove specie.',
-                en: 'Works with Kite to find new species.',
-              },
-            },
-          ],
-        },
-      ],
-      role: { it: 'Ricerca sul campo', en: 'Field surveyor' },
-      log: {
-        it: 'Si presenta a Gon e Killua quando si uniscono alla squadra di ricerca.',
-        en: 'Introduces themself to Gon and Killua when they join the survey team.',
-      },
-      status: [{ episode: 77, chapter: 186, value: 'alive' }],
-      affiliation: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: { it: 'Squadra di ricerca', en: 'Survey team' },
-        },
-      ],
-    },
-    'banana-kavaro': {
-      relationships: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: [
-            {
-              character: 'kite',
-              type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
-              summary: {
-                it: 'Lavora con Kaito alla ricerca di nuove specie.',
-                en: 'Works with Kite to find new species.',
-              },
-            },
-          ],
-        },
-      ],
-      role: { it: 'Ricerca sul campo', en: 'Field surveyor' },
-      log: {
-        it: 'Si presenta a Gon e Killua quando si uniscono alla squadra di ricerca.',
-        en: 'Introduces themself to Gon and Killua when they join the survey team.',
-      },
-      status: [{ episode: 77, chapter: 186, value: 'alive' }],
-      affiliation: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: { it: 'Squadra di ricerca', en: 'Survey team' },
-        },
-      ],
-    },
-    'spinner-clow': {
-      relationships: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: [
-            {
-              character: 'kite',
-              type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
-              summary: {
-                it: 'Lavora con Kaito alla ricerca di nuove specie.',
-                en: 'Works with Kite to find new species.',
-              },
-            },
-          ],
-        },
-      ],
-      role: { it: 'Ricerca sul campo', en: 'Field surveyor' },
-      log: {
-        it: 'Si presenta a Gon e Killua quando si uniscono alla squadra di ricerca.',
-        en: 'Introduces themself to Gon and Killua when they join the survey team.',
-      },
-      status: [{ episode: 77, chapter: 186, value: 'alive' }],
-      affiliation: [
-        {
-          episode: 77,
-          chapter: 186,
-          value: { it: 'Squadra di ricerca', en: 'Survey team' },
-        },
-      ],
-    },
+    'stick-dinner': surveyDossier,
+    'monta-yuras': surveyDossier,
+    'banana-kavaro': surveyDossier,
+    'spinner-clow': surveyDossier,
     'neferpitou': {
       relationships: [
         {

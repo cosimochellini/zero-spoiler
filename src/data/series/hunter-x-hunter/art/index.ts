@@ -201,37 +201,46 @@ export const DRAWINGS = {
   // feelers and six jointed legs: the aggressive insect under quarantine
   // that Gon and Killua first see in episode 76, and the queen of chapter
   // 186. No eyes and no jaws.
-  // Field notebook representing Spinner Clow’s survey work, episode 77 and chapter 186.
+  // A flame for the Camp Tiger discussed during the survey (ep. 77 / ch. 186).
   'spinner-clow': [
-    { d: 'M46 48 H109 V151 H46 Z' },
-    { d: 'M54 48 V151' },
-    { d: 'M65 75 H98 M65 88 H93 M65 102 H96' },
-    { d: 'M78 151 V164 L85 159 L92 164 V151', role: 'accent' },
-    shadow(80, 178, 36),
+    {
+      d: 'M80 152 C40 152 41 110 66 91 Q61 113 76 112 Q94 92 80 57 Q117 85 116 116 Q115 149 80 152 Z',
+      role: 'accent',
+    },
+    { d: 'M65 140 Q58 124 78 115' },
+    { d: 'M84 141 Q103 128 97 109' },
+    { d: 'M49 89 Q43 104 45 113', role: 'ambient' },
+    shadow(80, 166, 37),
   ],
-  // Leash representing Banana Kavaro’s survey work, episode 77 and chapter 186.
+  // A symbolic track of the Camp Tiger (ep. 77 / ch. 186).
   'banana-kavaro': [
-    { d: 'M52 63 C18 76 43 119 66 97 C88 76 67 52 52 63 Z' },
-    { d: 'M66 97 C84 132 120 98 111 136' },
-    { d: 'M111 136 L105 149 L115 156 L123 143 Z' },
-    { d: 'M107 142 L119 149', role: 'accent' },
-    shadow(80, 178, 36),
+    {
+      d: 'M54 129 Q54 117 67 112 Q80 98 93 112 Q107 117 106 129 Q103 144 80 137 Q57 144 54 129 Z',
+      role: 'accent',
+    },
+    { d: ellipse(51, 99, 8, 11) },
+    { d: ellipse(69, 86, 8, 12) },
+    { d: ellipse(91, 86, 8, 12) },
+    { d: ellipse(109, 99, 8, 11) },
   ],
-  // Sample case representing Monta Yuras’s survey work, episode 77 and chapter 186.
+  // The Camp Tiger’s striped flank (ep. 77 / ch. 186).
   'monta-yuras': [
-    { d: 'M38 79 H122 V144 H38 Z' },
-    { d: 'M38 103 H122' },
-    { d: 'M62 79 V65 H98 V79' },
-    { d: 'M71 99 H89 V114 H71 Z', role: 'accent' },
-    shadow(80, 178, 36),
+    { d: 'M34 94 Q78 60 124 91 M38 131 Q77 151 124 119' },
+    { d: 'M56 82 Q53 100 72 116 Q62 96 65 78', role: 'accent' },
+    { d: 'M81 77 Q75 94 92 104 Q87 87 91 78' },
+    { d: 'M109 84 Q101 102 116 108 Q112 95 117 87' },
+    { d: 'M67 140 Q83 129 84 116 Q91 126 81 141' },
   ],
-  // Field satchel representing Stick Dinner’s survey work, episode 77 and chapter 186.
+  // The Camp Tiger’s cooking fire, drawn as embers (ep. 77 / ch. 186).
   'stick-dinner': [
-    { d: 'M41 85 Q80 71 119 85 L113 147 H47 Z' },
-    { d: 'M41 85 Q49 111 80 117 Q111 111 119 85' },
-    { d: 'M64 79 Q49 40 78 39 Q108 38 96 79' },
-    { d: 'M73 108 H87 V123 H73 Z', role: 'accent' },
-    shadow(80, 178, 36),
+    { d: 'M45 140 Q80 153 117 137' },
+    {
+      d: 'M54 132 Q61 120 69 134 Q81 115 92 132 Q101 122 110 131',
+      role: 'accent',
+    },
+    { d: 'M67 112 Q58 101 69 91' },
+    { d: 'M90 110 Q100 97 89 85 Q81 74 87 65', role: 'ambient' },
+    shadow(80, 157, 41),
   ],
   // The glass and leaf of the water test, episode 84 and chapter 198.
   'neferpitou': [
