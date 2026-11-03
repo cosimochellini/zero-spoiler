@@ -37,8 +37,7 @@ The following returning dossiers still need a decision on material dated changes
 before this draft is complete.
 
 - Gon, Killua, Morel, Knuckle and Shoot.
-- Meruem, Neferpitou, Shaiapouf, Menthuthuyoupi, Colt, Pike, Peggy, Leol and
-  Cheetu.
+- Meruem, Neferpitou, Shaiapouf, Menthuthuyoupi, Colt, Peggy, Leol and Cheetu.
 - Shizuku, Phinks, Bonolenov, Kalluto, Feitan and Shalnark.
 - Alluka, Milluki, Kikyo, Illumi, Chrollo, Nobunaga, Zeno, Genthru, Kurapika and
   Leorio.
@@ -51,3 +50,11 @@ Hagya keeps one dossier. The manga role gives the name Leol from chapter 240.
 Episode 99 uses the name in synopsis narration. Episode 106 reports an explicit
 introduction to Morel. Anime visibility requires a source-specific display name
 before the dossier can open safely.
+
+Flutter is unconscious after Knov’s attack in chapter 248 and defeated in
+episode 104. These scenes establish defeat. A death stage waits for a source
+that confirms his death.
+
+Pike’s death is filed at chapter 228. The episode 97 death is also confirmed,
+but the existing record is manga only and the anime scene does not establish a
+naming gate.

@@ -195,6 +195,20 @@ export const CHIMERA_ANT_SQUADS_DRAWINGS = {
 
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntSquadsRedrawn: Redrawings = {
+  pike: [
+    {
+      episode: 97,
+      chapter: 228,
+      source: 'chapter',
+      value: [
+        ...moved(
+          CHIMERA_ANT_SQUADS_DRAWINGS.pike,
+          'translate(80 125) rotate(-85) scale(0.68) translate(-80 -95)',
+        ),
+        shadow(80, 173, 52),
+      ],
+    },
+  ],
   zazan: [
     {
       episode: 97,
