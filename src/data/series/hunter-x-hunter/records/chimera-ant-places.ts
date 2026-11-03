@@ -2,7 +2,7 @@ import type { PlaceDossier } from '~/data/types'
 
 import type { HunterEntity, HunterVocabulary } from './saga'
 
-export const NGL_RECORD: HunterEntity = {
+const NGL_RECORD: HunterEntity = {
   id: 'ngl',
   kind: 'place',
   revealedAtEpisode: 79,
@@ -152,10 +152,7 @@ export const CHIMERA_ANT_PLACE_RECORDS: HunterEntity[] = [
 ]
 
 /** The dossiers of the places after NGL, each at its record's gate. */
-export const CHIMERA_ANT_NEW_PLACES: Record<
-  string,
-  PlaceDossier<HunterVocabulary>
-> = {
+const CHIMERA_ANT_NEW_PLACES: Record<string, PlaceDossier<HunterVocabulary>> = {
   'chimera-ant-nest': {
     form: 'nest',
     region: 'islands',
