@@ -3,6 +3,11 @@
 // check found no Italian page. Kept apart so the script stays readable as
 // each arc adds its records here.
 
+import {
+  THRONES_ITALIAN_TITLES,
+  THRONES_NAMES_KEPT,
+} from './verify-names.thrones.mjs'
+
 /**
  * Records whose Italian page the English page does not link, or links
  * wrongly, by series. A list names the pages of a paired record.
@@ -120,85 +125,8 @@ export const ITALIAN_TITLES = {
     'chrollo': 'Brigata Fantasma#Quoll Lucifer',
   },
   // On Italian Wikipedia, which A Wiki of Ice and Fire does not link: every
-  // Game of Thrones character's page is named here.
-  'game-of-thrones': {
-    'eddard-stark': 'Eddard Stark',
-    'catelyn-stark': 'Catelyn Stark',
-    'robb-stark': 'Casa Stark#Robb Stark',
-    'sansa-stark': 'Sansa Stark',
-    'arya-stark': 'Arya Stark',
-    'bran-stark': 'Bran Stark',
-    'rickon-stark': 'Casa Stark#Rickon Stark',
-    'jon-snow': 'Jon Snow',
-    'benjen-stark': 'Casa Stark#Benjen Stark',
-    'grey-wind': 'Casa Stark#Robb Stark',
-    'lady-direwolf': 'Sansa Stark',
-    'nymeria': 'Arya Stark',
-    'summer-direwolf': 'Bran Stark',
-    'shaggydog': 'Casa Stark#Rickon Stark',
-    'ghost-direwolf': 'Jon Snow',
-    'theon-greyjoy':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Theon Greyjoy',
-    'luwin': 'Personaggi delle Cronache del ghiaccio e del fuoco#Luwin',
-    'rodrik-cassel':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Rodrik Cassel',
-    'old-nan': 'Personaggi delle Cronache del ghiaccio e del fuoco#Vecchia Nan',
-    'hodor': 'Personaggi delle Cronache del ghiaccio e del fuoco#Hodor',
-    'osha': 'Personaggi delle Cronache del ghiaccio e del fuoco#Osha',
-    'mordane':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Septa Mordane',
-    'jory-cassel':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Jory Cassel',
-    'jeor-mormont': 'Guardiani della notte#Jeor Mormont',
-    'aemon': 'Guardiani della notte#Maestro Aemon',
-    'samwell-tarly': 'Guardiani della notte#Samwell Tarly',
-    'alliser-thorne': 'Guardiani della notte#Alliser Thorne',
-    'yoren': 'Guardiani della notte#Yoren',
-    'cersei-lannister': 'Cersei Lannister',
-    'jaime-lannister': 'Jaime Lannister',
-    'tyrion-lannister': 'Tyrion Lannister',
-    'tywin-lannister': 'Casa Lannister#Tywin Lannister',
-    'joffrey-baratheon': 'Casa Baratheon#Re Joffrey I Baratheon',
-    'myrcella-baratheon': 'Casa Baratheon#Myrcella Baratheon',
-    'tommen-baratheon': 'Casa Baratheon#Re Tommen I Baratheon',
-    'robert-baratheon': 'Casa Baratheon#Re Robert I Baratheon',
-    'renly-baratheon': 'Casa Baratheon#Renly Baratheon',
-    'lysa-arryn': 'Casa Arryn#Lysa Tully',
-    'robin-arryn': 'Casa Arryn#Robin Arryn',
-    'bronn': 'Personaggi delle Cronache del ghiaccio e del fuoco#Bronn',
-    'shae': 'Personaggi delle Cronache del ghiaccio e del fuoco#Shae',
-    'walder-frey':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Walder Frey',
-    'ros': 'Personaggi delle Cronache del ghiaccio e del fuoco#Ros',
-    'ilyn-payne':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Ilyn Payne',
-    'barristan-selmy':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Barristan Selmy',
-    'syrio-forel':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Syrio Forel',
-    'petyr-baelish': 'Petyr Baelish',
-    'varys': 'Varys',
-    'pycelle': 'Personaggi delle Cronache del ghiaccio e del fuoco#Pycelle',
-    'sandor-clegane': 'Sandor Clegane',
-    'janos-slynt':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Janos Slynt',
-    'gendry': 'Casa Baratheon#Gendry',
-    'gregor-clegane':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Gregor Clegane',
-    'loras-tyrell': 'Casa Tyrell#Loras Tyrell',
-    'daenerys-targaryen': 'Daenerys Targaryen',
-    'viserys-targaryen':
-      'Casa Targaryen#Re Viserys III Targaryen "Il Re Mendicante"',
-    'drogo': 'Dothraki#Drogo',
-    'jorah-mormont': 'Jorah Mormont',
-    'illyrio-mopatis':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Illyrio Mopatis',
-    'irri': 'Dothraki#Irri',
-    'doreah': 'Personaggi delle Cronache del ghiaccio e del fuoco#Doreah',
-    'rakharo': 'Dothraki#Rakharo',
-    'mirri-maz-duur':
-      'Personaggi delle Cronache del ghiaccio e del fuoco#Mirri Maz Durr',
-  },
+  // Game of Thrones character's page is named in `./verify-names.thrones.mjs`.
+  'game-of-thrones': THRONES_ITALIAN_TITLES,
 }
 
 /**
@@ -207,6 +135,7 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
+  ...THRONES_NAMES_KEPT,
   // No Jitonoda entry in the Italian character/Hunter lists; dub unviewed (#1019).
   'jitonoda': 'Jitonoda',
   // No Jispa entry in either Italian character/Hunter list; dub unviewed (#1018).
@@ -216,21 +145,6 @@ export const NAMES_KEPT = {
   'jeitsari': 'Jeitsari',
   // No entry in the Italian character/Hunter lists; dub check pending (#1016).
   'puhat': 'Puhat',
-  // Game of Thrones. Italian Wikipedia names each direwolf only in its
-  // owner's entry (the page listed in `ITALIAN_TITLES`), in prose.
-  'grey-wind': 'Vento Grigio',
-  'lady-direwolf': 'Lady',
-  'nymeria': 'Nymeria',
-  'summer-direwolf': 'Estate',
-  'shaggydog': 'Cagnaccio',
-  'ghost-direwolf': 'Spettro',
-  // Its entries are headed by maiden names (Catelyn Tully, Lysa Tully); the
-  // show calls both by their married names.
-  'catelyn-stark': 'Catelyn Stark',
-  'lysa-arryn': 'Lysa Arryn',
-  // The books' list writes "Mirri Maz Durr"; the show's cast list on
-  // Italian Wikipedia writes "Mirri Maz Duur".
-  'mirri-maz-duur': 'Mirri Maz Duur',
   // The page of the people they lead or belong to writes them so: Shandia,
   // Vegapunk (Satelliti), Serafini, Kurozumi Kanjuro.
   'atlas': 'Atlas',

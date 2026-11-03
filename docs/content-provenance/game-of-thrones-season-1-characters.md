@@ -807,3 +807,631 @@ Site chapter = AGOT chapter + 1. Daenerys chapters in AGOT: 3, 11, 23, 36, 46,
   "sacerdotessa". Unverified: name said aloud in episode 8.
 
 No commonWord records in this group.
+
+## Winterfell, King’s Landing, the Vale and the Riverlands (#1006)
+
+Split from #852: the remaining named characters of these storylines, the
+recurring and plot-relevant ones (owner, 2026-11-03: bit parts with one line in
+one scene are not filed; Hullen is, as the issue names him). Researched by two
+agents and re-checked by two independent verifiers against the same sources.
+Show gates follow #852: the first episode whose synopsis names the character on
+screen; a name only in the credits does not count. Italian names follow Italian
+Wikipedia, then the Italian Game of Thrones Wiki on Fandom where Italian
+Wikipedia has no entry (owner, 2026-11-03).
+
+### Hullen (`hullen`)
+
+- Episode 1: Ordering only: never in the aired show (Fandom: only in an
+  unreleased pilot script). Bran I matches Winter Is Coming (direwolf pups
+  found).
+- Chapter 2: Bran I (AGOT ch 1): in Lord Eddard's party that finds the direwolf
+  pups; on the Appearing list, and his AWOIAF page puts him in that scene.
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Hullen (it.wikipedia `Casa_Stark#Servitori di Casa Stark`).
+- Status: deceased (8, 51, chapter only). Arya IV (AGOT ch 50, Appearing): Arya
+  finds him dying in the Red Keep stables during the purge of Eddard's
+  household; show equivalent is the purge in The Pointy End (ep 8).
+
+### Jeyne Poole (`jeyne-poole`)
+
+- Episode 1: Winter Is Coming: Fandom's Jeyne page puts her at the needlework
+  lesson and the feast beside Sansa; no synopsis names her, she is unidentified
+  in the script and played by an uncredited extra (named only in the DVD
+  commentary).
+- Chapter 8: Arya I (AGOT ch 7): at needlework with Sansa under Septa Mordane;
+  Appearing list and synopsis name her.
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Jeyne Poole (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Jeyne Poole`).
+
+### Mikken (`mikken`)
+
+- Episode 2: The Kingsroad: synopsis names Mikken as the smith who forges Arya's
+  sword for Jon; Eddard later recognises his mark. In ep 1 he is only in the
+  background (character page).
+- Chapter 54: Bran VI (AGOT ch 53): first on an Appearing list (Shaggydog bit
+  his thigh, synopsis). Before that only mentioned (Bran II, Jon II, Arya II; in
+  Bran III only in a dream).
+- Italian: Mikken (it.wikipedia `Casa_Stark#Servitori di Casa Stark`).
+
+### Hallis Mollen (`hallis-mollen`)
+
+- Episode 2: Ordering only: not in the show (Fandom page has no seasons or
+  actor). Catelyn III follows the attack on Bran's room, which the show tells in
+  The Kingsroad (ep 2).
+- Chapter 15: Catelyn III (AGOT ch 14): comes to Catelyn after the knife attack
+  with Robb, Theon and Ser Rodrik; synopsis names him as the new captain of the
+  guard.
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Hallis Mollen (it.wikipedia `Casa_Stark#Servitori di Casa Stark`).
+
+### Mycah (`mycah`)
+
+- Episode 2: The Kingsroad: synopsis names Mycah, the butcher's son, sparring
+  with Arya by the river when Joffrey interferes.
+- Chapter 16: Sansa I (AGOT ch 15): Arya rides off with Mycah; Appearing list
+  and synopsis.
+- Italian: Mycah (Italian Fandom `Mycah`).
+- Status: deceased (2, 17). Show: killed by Sandor Clegane (The Kingsroad;
+  Fandom DeathEp). Book: Eddard III (AGOT ch 16), the Hound brings back his
+  body.
+
+### Stiv (`stiv`)
+
+- Episode 6: A Golden Crown: Stiv, Osha and Wallen accost Bran in the wolfswood
+  (named in the synopsis image caption and on his character page).
+- Chapter 38: Bran V (AGOT ch 37): the big outlaw who grabs Dancer's reins;
+  synopsis names him.
+- Italian: Stiv (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Stiv`).
+- Status: deceased (6, 38). Shot by Theon in both (show: Fandom DeathEp; book:
+  Bran V).
+
+### Wallen (`wallen`)
+
+- Episode 6: A Golden Crown: Fandom's Wallen page names him among the deserters
+  who waylay Bran.
+- Chapter 38: Bran V (AGOT ch 37): the gaunt man named Wallen; synopsis names
+  him.
+- Italian: Wellen (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Wellen`).
+- Status: deceased (6, 38). Show: killed by Robb (Fandom). Book: killed by Grey
+  Wind (Bran V).
+
+### Greatjon Umber (`greatjon-umber`)
+
+- Episode 8: The Pointy End: synopsis names the Greatjon at Robb's feast,
+  demanding the vanguard.
+- Chapter 54: Bran VI (AGOT ch 53): on the Appearing list; synopsis tells how he
+  drew on Robb and Grey Wind bit off two fingers.
+- Italian: Greatjon Umber (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri personaggi`).
+- Affiliation: Sworn to Robb Stark, King in the North (10, 72). He is the first
+  to proclaim Robb King in the North: Fire and Blood (ep 10 synopsis) and
+  Catelyn XI (AGOT ch 71).
+
+### Smalljon Umber (`smalljon-umber`)
+
+- Episode 53: Oathbreaker (S6E3 = 53): first appearance (Fandom); he goes to
+  Winterfell to treat with Ramsay.
+- Chapter 64: Catelyn X (AGOT ch 63): "Jon Umber (son of Jon)" on the Appearing
+  list; his AWOIAF page puts him in Robb's personal guard at the Whispering
+  Wood.
+- Italian: Smalljon Umber (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri personaggi`).
+
+### Rickard Karstark (`rickard-karstark`)
+
+- Episode 17: A Man Without Honor (S2E7 = 17): Fandom says he is first named on
+  screen ("Lord Karstark") here; in Fire and Blood (ep 10) a different actor
+  plays him unnamed.
+- Chapter 54: Bran VI (AGOT ch 53): the Karstarks arrive last at Winterfell,
+  Lord Rickard with his sons (synopsis).
+- Italian: Rickard Karstark (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri personaggi`).
+- Affiliation: Sworn to Robb Stark, King in the North (17, 72, chapter only).
+  Book: Catelyn XI (AGOT ch 71), second to proclaim Robb. The show tells it in
+  ep 10 before he is named, so the show number is his gate, 17.
+
+### Roose Bolton (`roose-bolton`)
+
+- Episode 14: Garden of Bones (S2E4 = 14): first appearance (Fandom); he reports
+  to Robb after the battle at Oxcross.
+- Chapter 54: Bran VI (AGOT ch 53): Lord of the Dreadfort among Robb's bannermen
+  at Winterfell; synopsis names him.
+- Italian: Roose Bolton (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Roose Bolton`).
+- Role: Commands the northern foot (14, 56, chapter only). Book: Catelyn VIII
+  (AGOT ch 55), Robb gives him command of the main force; it marches south from
+  the Twins in Catelyn IX. Not in the show; show number = his gate.
+
+### Galbart Glover (`galbart-glover`)
+
+- Episode 8: The Pointy End: Fandom's Galbart page puts him at Robb's feast (the
+  synopsis only says the Greatjon would not march behind "a Glover").
+- Chapter 56: Catelyn VIII (AGOT ch 55): first on an Appearing list, at Robb's
+  war council at Moat Cailin (his AWOIAF page confirms). Not on the Bran VI
+  list.
+- Italian: Galbart Glover (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Galbart Glover`).
+- Affiliation: Sworn to Robb Stark, King in the North (10, 72). Present at the
+  proclamation: Fire and Blood (Fandom appearances) and Catelyn XI (AGOT ch 71).
+
+### Robett Glover (`robett-glover`)
+
+- Episode 57: The Broken Man (S6E7 = 57): first appearance (Fandom); Jon, Sansa
+  and Davos ask him for support.
+- Chapter 54: Bran VI (AGOT ch 53): on the Appearing list; his AWOIAF page has
+  him asking Robb for a command at Winterfell.
+- Italian: Robett Glover (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri personaggi`).
+
+### Maege Mormont (`maege-mormont`)
+
+- Episode 8: The Pointy End: Fandom's Maege page puts her at the feast for the
+  northern lords at Winterfell (also ep 9 and 10).
+- Chapter 54: Bran VI (AGOT ch 53): on the Appearing list; her AWOIAF page has
+  her leading her forces to Winterfell.
+- Italian: Maege Mormont (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Maege Mormont`).
+- Affiliation: Sworn to Robb Stark, King in the North (10, 72). Present when
+  Robb is proclaimed: Fire and Blood (Fandom) and Catelyn XI (AGOT ch 71).
+
+### Dacey Mormont (`dacey-mormont`)
+
+- Episode 9: Ordering only: no Fandom page, not in the show. Catelyn X
+  (Whispering Wood) matches Baelor (ep 9), where Robb captures Jaime.
+- Chapter 64: Catelyn X (AGOT ch 63): on the Appearing list; her AWOIAF page
+  puts her in Robb's guard at the Whispering Wood.
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Dacey Mormont (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Dacey Mormont`).
+
+### Wendel Manderly (`wendel-manderly`)
+
+- Episode 29: The Rains of Castamere (S3E9 = 29): his only appearance (Fandom),
+  at the wedding feast at the Twins.
+- Chapter 56: Catelyn VIII (AGOT ch 55): rides with Catelyn and his brother
+  Wylis to Moat Cailin; synopsis names him.
+- Italian: Wendel Manderly (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Wyman Manderly`).
+
+### Marillion (`marillion`)
+
+- Episode 4: Cripples, Bastards, and Broken Things: synopsis names the
+  troubadour Marillion fawning on Catelyn at the Crossroads Inn.
+- Chapter 29: Catelyn V (AGOT ch 28): the singer who accosts Catelyn at the inn;
+  synopsis names him.
+- Italian: Marillion (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Marillion`).
+
+### Willis Wode (`willis-wode`)
+
+- Episode 4: Cripples, Bastards, and Broken Things: Fandom's Willis page has him
+  at the inn, drawing his sword on Tyrion when Catelyn calls for help (no
+  synopsis names him).
+- Chapter 29: Catelyn V (AGOT ch 28): on the Appearing list; his AWOIAF page has
+  him first to stand with Catelyn. The synopsis first names him in Catelyn VI.
+- Italian: Willis Wode (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Willis Wode`).
+- Status: deceased (5, 35, episode only). Show only: dies defending Catelyn in
+  the hill tribes' attack (The Wolf and the Lion, Fandom DeathEp). In the book
+  he survives that attack, which is in Catelyn VI (AGOT ch 34) = site 35.
+
+### Donnel Waynwood (`donnel-waynwood`)
+
+- Episode 35: First of His Name (S4E5 = 35): first appearance (Fandom); he lets
+  Littlefinger and "Alayne" through the Bloody Gate.
+- Chapter 35: Catelyn VI (AGOT ch 34): the knight who meets Catelyn's party on
+  the way to the Bloody Gate; synopsis names him.
+- Italian: Donnel Waynwood (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Donnel Waynwood`).
+
+### Nestor Royce (`nestor-royce`)
+
+- Episode 5: Ordering only: no Fandom page, not in the show. Catelyn VI (arrival
+  at the Eyrie) matches The Wolf and the Lion (ep 5).
+- Chapter 35: Catelyn VI (AGOT ch 34): receives Catelyn at the Gates of the
+  Moon; synopsis names him.
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Nestor Royce (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Nestor Royce`).
+
+### Mya Stone (`mya-stone`)
+
+- Episode 5: Ordering only: no Fandom page, not in the show. Catelyn VI matches
+  The Wolf and the Lion (ep 5).
+- Chapter 35: Catelyn VI (AGOT ch 34): the guide who takes Catelyn up the
+  mountain to the Eyrie by night; synopsis names her.
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Mya Stone (it.wikipedia `Casa_Baratheon#Mya Stone`).
+
+### Vardis Egen (`vardis-egen`)
+
+- Episode 6: A Golden Crown: synopsis names Ser Vardis Egen as Lysa's champion
+  in the trial by combat. In ep 5 he leads the knights who meet Catelyn, but no
+  synopsis names him there.
+- Chapter 35: Catelyn VI (AGOT ch 34): on the Appearing list; synopsis names Ser
+  Vardis Egen leaving Lysa's chamber with Maester Colemon.
+- Italian: Vardis Egen (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Vardis Egen`).
+- Status: deceased (6, 41). Killed by Bronn in the trial by combat: A Golden
+  Crown (Fandom DeathEp) and Catelyn VII (AGOT ch 40).
+
+### Mord (`mord`)
+
+- Episode 6: A Golden Crown: the synopsis names Mord (caption and text) as the
+  gaoler Tyrion bargains with in the sky cells. First seen in ep 5 (Fandom),
+  where no synopsis names him.
+- Chapter 39: Tyrion V (AGOT ch 38): the brutish gaoler of the sky cells;
+  Appearing list and synopsis.
+- Italian: Mord (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mord`).
+
+### Lyn Corbray (`lyn-corbray`)
+
+- Episode 6: Ordering only: no Fandom page, not in the show. Tyrion V (the
+  hearing where Tyrion demands a trial by combat) matches A Golden Crown (ep 6).
+- Chapter 39: Tyrion V (AGOT ch 38): on the Appearing list; his AWOIAF page has
+  him at the hearing, offering to be Lysa's champion.
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Lyn Corbray (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lyn Corbray`).
+
+### Anya Waynwood (`anya-waynwood`)
+
+- Episode 38: The Mountain and the Viper (S4E8 = 38): her only appearance
+  (Fandom), on the inquiry into Lysa's death.
+- Chapter 39: Tyrion V (AGOT ch 38): on the Appearing list; her AWOIAF page has
+  her in the High Hall with her sons when Tyrion demands a trial.
+- Italian: Anya Waynwood (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Anya Waynwood`).
+
+### Shagga (`shagga`)
+
+- Episode 8: The Pointy End: synopsis names Shagga leading the hill tribesmen
+  who surround Tyrion and Bronn.
+- Chapter 43: Tyrion VI (AGOT ch 42): Shagga son of Dolf, whose clansmen
+  surround Tyrion and Bronn; Appearing list and synopsis.
+- Italian: Shagga (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri personaggi`).
+
+### Timett (`timett`)
+
+- Episode 8: The Pointy End: Fandom's Timett page names him agreeing to Tyrion's
+  alliance and going with him to Tywin's camp (the synopsis does not name him).
+- Chapter 57: Tyrion VII (AGOT ch 56): Timett son of Timett of the Burned Men,
+  at Lord Tywin's inn; Appearing list and synopsis.
+- Italian: Timmet (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barbari delle montagne`).
+
+### Chella (`chella`)
+
+- Episode 8: The Pointy End: Fandom's Chella page names her going with Tyrion,
+  Shagga and Timett to Tywin's camp (the synopsis does not name her).
+- Chapter 57: Tyrion VII (AGOT ch 56): Chella daughter of Cheyk of the Black
+  Ears, who finds Lord Tywin's army; Appearing list and synopsis.
+- Italian: Chella (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barbari delle montagne`).
+
+### Meryn Trant (`meryn-trant`)
+
+- Episode 8: The Pointy End: leads the Lannister guards who break up Arya's
+  lesson with Syrio; the episode synopsis names him (Fandom 'Firsts').
+- Chapter 30: Sansa II: rides in the Hand's tourney and beats Harwin (on the
+  Appearing list; Meryn Trant page cites AGOT 29).
+- Italian: Meryn Trant (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Meryn Trant`).
+
+### Boros Blount (`boros-blount`)
+
+- Episode 19: Blackwater (S2E9): Joffrey leaves the wall and orders Ser Mandon
+  and Ser Boros to stay with Tyrion; Fandom's Boros page names him in this
+  scene.
+- Chapter 34: Eddard VIII: at the small council in his white cloak (Appearing
+  list; Boros page cites AGOT 33).
+- Italian: Boros Blount (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Boros Blount`).
+
+### Mandon Moore (`mandon-moore`)
+
+- Episode 19: Blackwater (S2E9): reports the fleeing groom and maids to Cersei,
+  then is sent with Ser Boros to fight beside Tyrion; Fandom names him there.
+- Chapter 52: Sansa IV: guards the council chamber doors and walks Sansa back
+  (Appearing list; Mandon page cites AGOT 51).
+- Italian: Mandon Moore (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mandon Moore`).
+
+### Arys Oakheart (`arys-oakheart`)
+
+- Episode 8: Never named in the show: Fandom tags his very name as conjecture
+  ({{Con|ASOIAF}}); an unidentified Kingsguard extra. Ordering point = The
+  Pointy End (8), Barristan's dismissal, the scene of his book gate.
+- Chapter 58: Sansa V: in the throne room when Barristan is dismissed, laughing
+  at him (Appearing list; Arys page cites AGOT 57).
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Arys Oakheart (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Arys Oakheart`).
+
+### Lancel Lannister (`lancel-lannister`)
+
+- Episode 3: Lord Snow: pours Robert's wine; Robert mocks his alliterative name
+  (Fandom Lancel page, GOT103).
+- Chapter 31: Eddard VII: one of the squires Robert rages at in his pavilion
+  (Appearing list; synopsis and page name him).
+- Italian: Lancel Lannister (it.wikipedia `Casa_Lannister#Lancel Lannister`).
+
+### Dontos Hollard (`dontos-hollard`)
+
+- Episode 11: The North Remembers (S2E1): his bout is called at Joffrey's
+  nameday tourney, he turns up drunk, Sansa saves him (Fandom Dontos page).
+- Chapter 58: Sansa V: drunk at court; Sansa saves him and Joffrey makes him a
+  fool (Appearing list; page cites AGOT 57).
+- Italian: Dontos Hollard (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Dontos Hollard`).
+
+### Hugh of the Vale (`hugh-of-the-vale`)
+
+- Episode 4: Cripples, Bastards, and Broken Things: refuses to speak to Jory,
+  then is killed by Gregor in the joust; synopsis names him.
+- Chapter 30: Sansa II: killed by Gregor Clegane in the Hand's tourney
+  (Appearing list; synopsis names him).
+- Italian: Hugh della Valle (Italian Fandom `Hugh`).
+- Status: deceased (4, 30). Killed in the joust by Gregor Clegane in both media
+  (episode 4; Sansa II).
+
+### Tobho Mott (`tobho-mott`)
+
+- Episode 4: Cripples, Bastards, and Broken Things: Eddard visits his smithy and
+  meets Gendry; synopsis names him.
+- Chapter 28: Eddard VI: Eddard visits his shop on the Street of Steel
+  (Appearing list; page cites AGOT 27).
+- Italian: Tobho Mott (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Tobho Mott`).
+
+### Mhaegen (`mhaegen`)
+
+- Episode 5: The Wolf and the Lion: at Littlefinger's brothel she shows Eddard
+  her baby by Robert; synopsis names her.
+- Chapter 36: Ordering only: the book's counterpart, Barra's unnamed mother,
+  meets Eddard in Eddard IX (site 36).
+- `source: 'episode'`: the other number only orders the record.
+- Italian: Mhaegen (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri personaggi`).
+
+### Vayon Poole (`vayon-poole`)
+
+- Episode 8: The Pointy End: killed while packing in the Lannister purge of
+  Eddard's household; Fandom's Vayon page names him in that scene (only
+  on-screen appearance).
+- Chapter 17: Eddard III: brings Eddard word that Arya has been found (Appearing
+  list; synopsis names him).
+- Italian: Vayon Poole (it.wikipedia `Casa_Stark#Servitori di Casa Stark`).
+- Status: deceased (8, 51, episode only). Show: killed in ep 8. Book: his death
+  is only told in A Clash of Kings (Bran III), outside the stage. Ordering
+  chapter = Arya IV (51), where the book shows the purge of Eddard's household.
+
+### Tomard (`tomard`)
+
+- Episode 7: You Win or You Die: Eddard hands him the letter for Stannis;
+  synopsis links the courier to Tomard and his Fandom page names him.
+- Chapter 23: Arya II: one of Eddard's guards, called Fat Tom, who nicknamed
+  Arya 'Arya Underfoot' (Appearing list; page cites AGOT 22).
+- Italian: Tomard (it.wikipedia `Casa_Stark#Servitori di Casa Stark`).
+- Status: deceased (7, 50, chapter only). Book only: cut down by the City Watch
+  in the throne room (Eddard XIV, AGOT 49). In the show he is sent away with the
+  letter and survives. Ordering episode = 7, the throne-room betrayal.
+
+### Harwin (`harwin`)
+
+- Episode 1: Never in the show: Fandom has no Harwin page (search returns only
+  House of the Dragon's Harwin Strong). Ordering = Winter Is Coming (1), the
+  equivalent of Bran I.
+- Chapter 2: Bran I: rides with Eddard's party and says the direwolf pups can't
+  be kept (Appearing list; Harwin page cites AGOT 1).
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Harwin (it.wikipedia `Casa_Stark#Servitori di Casa Stark`).
+- Affiliation: House Stark household; Beric Dondarrion's company (6, 45, chapter
+  only). Book: Eddard sends him with Beric against Gregor Clegane; he rides out
+  in Sansa III (on its Appearing list). Ordering episode 6, when the show sends
+  Beric.
+
+### Alyn (`alyn`)
+
+- Episode 1: Never in the show (Fandom 'Alyn' is a House of the Dragon
+  character). Ordering = Winter Is Coming (1), the equivalent of Eddard II at
+  Winterfell.
+- Chapter 13: Eddard II: wakes Eddard for Robert's ride on the kingsroad
+  (Appearing list; Alyn page cites AGOT 12).
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Alyn (it.wikipedia `Casa_Stark#Servitori di Casa Stark`).
+- Role: Captain of the Hand's guard (6, 46, chapter only). Book: with Jory dead,
+  Alyn takes command of the household guard (Alyn page cites AGOT 45 = Eddard
+  XII, site 46). Ordering episode 6, when the show's Eddard wakes after Jory's
+  death.
+- Affiliation: House Stark household; Beric Dondarrion's company (6, 44, chapter
+  only). Book: sent with Beric against Gregor Clegane (Eddard XI, cited AGOT
+  43). Ordering episode 6.
+
+### Beric Dondarrion (`beric-dondarrion`)
+
+- Episode 6: A Golden Crown: Eddard sends Lord Beric with a hundred men to bring
+  Gregor Clegane to justice; synopsis names him.
+- Chapter 28: Eddard VI: in the city for the Hand's tourney (Appearing list;
+  page cites AGOT 27).
+- Italian: Beric Dondarrion (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Beric Dondarrion`).
+- Role: Leader of the Hand's riders sent against Gregor Clegane (6, 44, chapter
+  only). Both media: Eddard sends him (show ep 6, at his gate; book Eddard XI).
+  Book only on the site: the show sends him in his first episode, which already
+  opens him.
+
+### Thoros of Myr (`thoros-of-myr`)
+
+- Episode 22: Dark Wings, Dark Words (S3E2): with the Brotherhood, meets Arya,
+  Gendry and Hot Pie (Fandom First; Thoros page).
+- Chapter 30: Sansa II: the red priest with the flaming sword at the tourney
+  (Appearing list; page cites AGOT 29).
+- Italian: Thoros di Myr (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Thoros di Myr`).
+- Affiliation: Beric Dondarrion's company (22, 44, chapter only). Book: rides
+  out with Beric against Gregor (Eddard XI). Show: not on screen until 22, so
+  the step can't open before the record's show gate.
+
+### Balon Swann (`balon-swann`)
+
+- Episode 4: Never named in the show: Fandom attributes an unnamed new
+  Kingsguard (from S3E7, 27) to him by inference; no scene names him. Ordering =
+  Cripples, Bastards, and Broken Things (4), the Hand's tourney.
+- Chapter 30: Sansa II: jousts in the Hand's tourney (Appearing list; page cites
+  AGOT 29).
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Balon Swann (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Balon Swann`).
+
+### Robar Royce (`robar-royce`)
+
+- Episode 4: Never in the show (Fandom's Robar Royce is a legendary figure).
+  Ordering = episode 4, the Hand's tourney.
+- Chapter 30: Sansa II: jousts at the Hand's tourney (Appearing list; page cites
+  AGOT 29).
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Robar Royce (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Robar Royce`).
+
+### Yohn Royce (`yohn-royce`)
+
+- Episode 38: The Mountain and the Viper (S4E8): on the Vale lords' tribunal
+  questioning Littlefinger (Fandom First).
+- Chapter 30: Sansa II: 'Bronze Yohn' at the Hand's tourney (Appearing list;
+  page cites AGOT 29).
+- Italian: Yohn Royce (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Yohn Royce`).
+
+### Jason Mallister (`jason-mallister`)
+
+- Episode 4: Never on screen in the show (only mentioned). Ordering = episode 4,
+  the crossroads inn, equivalent of Catelyn V.
+- Chapter 29: Catelyn V: rides past the inn at the crossroads with his men
+  (Appearing list; page cites AGOT 28).
+- `source: 'chapter'`: the other number only orders the record.
+- Italian: Jason Mallister (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Jason Mallister`).
+
+### Masha Heddle (`masha-heddle`)
+
+- Episode 4: Cripples, Bastards, and Broken Things: tells Tyrion the inn has no
+  rooms; Fandom's Masha page names her in the scene.
+- Chapter 29: Catelyn V: the innkeeper at the crossroads who gives Catelyn rooms
+  (Appearing list; page cites AGOT 28).
+- Italian: Masha Heddle (Italian Fandom `Masha Heddle`).
+- Status: deceased (8, 57, chapter only). Book only: Tywin has her hanged in the
+  inn yard; Tyrion sees her body (Tyrion VII, AGOT 56). The show never shows or
+  tells her death. Ordering episode 8, when Tyrion reaches Tywin's camp.
+
+### Kevan Lannister (`kevan-lannister`)
+
+- Episode 8: The Pointy End: with Tywin at the Lannister camp when Tyrion and
+  the clansmen arrive; synopsis names him.
+- Chapter 57: Tyrion VII: with Tywin at the inn at the crossroads (Appearing
+  list; page cites AGOT 56).
+- Italian: Kevan Lannister (it.wikipedia `Casa_Lannister#Kevan Lannister`).
+
+### Addam Marbrand (`addam-marbrand`)
+
+- Episode 10: Fire and Blood: at Tywin's council after the Whispering Wood,
+  argues against a truce; Fandom's Addam page names him there.
+- Chapter 63: Tyrion VIII: commands Tywin's outriders (Appearing list; page
+  cites AGOT 62).
+- Italian: Addam Marbrand (it.wikipedia `Casa_Lannister#Casate fedeli`).
+
+### Podrick Payne (`podrick-payne`)
+
+- Episode 12: The Night Lands (S2E2): Tyrion's squire, spills wine on Janos
+  Slynt (Fandom First).
+- Chapter 63: Tyrion VIII: the squire Kevan gives Tyrion before the battle
+  (Appearing list; page cites AGOT 62).
+- Italian: Podrick Payne (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Podrick Payne`).
+
+### Stevron Frey (`stevron-frey`)
+
+- Episode 9: Baelor: at the Twins chides his father for his manners; Walder
+  reminds him he is not lord yet (Fandom Stevron page).
+- Chapter 60: Catelyn IX: Walder's heir at the Twins (Appearing list; page cites
+  AGOT 59).
+- Italian: Stevron Frey (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Stevron Frey`).
+
+### Edmure Tully (`edmure-tully`)
+
+- Episode 23: Walk of Punishment (S3E3): leads his father's funeral at Riverrun
+  (Fandom First).
+- Chapter 72: Catelyn XI: at Riverrun in Robb's council (Appearing list; page
+  cites AGOT 71).
+- Italian: Edmure Tully (it.wikipedia `Casa_Tully#Edmure Tully`).
+
+### Hoster Tully (`hoster-tully`)
+
+- Episode 23: Walk of Punishment (S3E3): his body at his funeral (owner rule: a
+  named corpse counts).
+- Chapter 72: Catelyn XI: Catelyn visits her bedridden father (Appearing list;
+  page cites AGOT 71).
+- Italian: Hoster Tully (it.wikipedia `Casa_Tully#Hoster Tully`).
+
+### Brynden Tully (`brynden-tully`)
+
+- Episode 23: Walk of Punishment (S3E3): at Hoster's funeral, takes the bow
+  after Edmure misses (Fandom First).
+- Chapter 35: Catelyn VI: meets Catelyn at the Bloody Gate (Appearing list; page
+  cites AGOT 34).
+- Italian: Brynden Tully (it.wikipedia `Casa_Tully#Brynden Tully`).
+- Affiliation: House Tully; Robb Stark's host (23, 56, chapter only). Book:
+  leaves the Vale and joins Robb at Moat Cailin (Catelyn VIII, AGOT 55). Show:
+  not on screen before 23.
+
+### Hot Pie (`hot-pie`)
+
+- Episode 10: Fire and Blood: one of Yoren's recruits who bully 'Arry'; synopsis
+  names him.
+- Chapter 75: A Clash of Kings, Arya I: tries to take Needle and Arya beats him
+  (Appearing list; synopsis names him).
+- Italian: Frittella (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Tabella 2A: stagioni 1-3`).
+
+### Lommy Greenhands (`lommy`)
+
+- Episode 10: Fire and Blood: one of Yoren's recruits who bully 'Arry'; synopsis
+  names him ('Lommy Greenhands').
+- Chapter 75: A Clash of Kings, Arya I: names Arya 'Lumpyhead' and eggs Hot Pie
+  on (Appearing list; synopsis names him).
+- Italian: Lommy Maniverdi (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri personaggi`).
+
+### Jaqen H'ghar (`jaqen-hghar`)
+
+- Episode 12: The Night Lands (S2E2): asks 'Arry' for water and introduces
+  himself, from Lorath (Fandom Jaqen page). In ep 10 he is only an unnamed
+  prisoner in the cage.
+- Chapter 79: A Clash of Kings, Arya II: at the ivy-covered inn introduces
+  himself as Jaqen H'ghar of Lorath (Appearing list; synopsis names him).
+- Italian: Jaqen H'ghar (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Jaqen H'ghar`).
+
+### Rorge (`rorge`)
+
+- Episode 12: The Night Lands (S2E2): demands beer and threatens 'Arry' from the
+  cage; Fandom's Rorge page names him in this scene.
+- Chapter 79: A Clash of Kings, Arya II: Jaqen introduces the noseless man as
+  Rorge (Appearing list; synopsis names him).
+- Italian: Rorge (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Rorge`).
+
+### Biter (`biter`)
+
+- Episode 12: The Night Lands (S2E2): hisses behind Rorge in the cage; Fandom's
+  Biter page names him in this scene.
+- Chapter 79: A Clash of Kings, Arya II: Jaqen explains he calls the mute man
+  Biter for his filed teeth (Appearing list; synopsis names him).
+- Italian: Mordente (it.wikipedia
+  `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mordente`).

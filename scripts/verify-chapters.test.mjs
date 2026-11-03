@@ -372,6 +372,11 @@ describe('Game of Thrones', () => {
         '| First = "[[Walk of Punishment (episode)|Walk of Punishment]]"',
       ),
     ).toBe(23)
+    expect(
+      firstEpisodeOf(
+        '| Appearances = "[[The Kingsroad]]"\n| First       = \n| Last = ',
+      ),
+    ).toBe(2)
     expect(firstEpisodeOf('| Last = "[[Baelor]]"')).toBeUndefined()
   })
 

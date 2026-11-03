@@ -113,15 +113,19 @@ export function episodeNumberOf(title) {
 
 /**
  * The first episode a Game of Thrones Wiki page gives: the link of its
- * infobox's `| First = "[[Lord Snow]]"`.
+ * infobox's `| First = "[[Lord Snow]]"`, or, on the page of a character
+ * seen in one episode, whose `First` is empty, of its `| Appearances =`.
  * @param {string} wikitext The page.
  * @returns {number | undefined} The episode, or nothing when the page has none.
  */
 export function firstEpisodeOf(wikitext) {
-  const line = wikitext
-    .split('\n')
-    .find((entry) => /^\s*\|\s*First\s*=/u.test(entry))
-  const link = /\[\[(?<title>[^\]|]+)/u.exec(line ?? '')?.groups?.['title']
+  const lines = wikitext.split('\n')
+  const linkOf = (/** @type {RegExp} */ field) =>
+    /\[\[(?<title>[^\]|]+)/u.exec(
+      lines.find((entry) => field.test(entry)) ?? '',
+    )?.groups?.['title']
+  const link =
+    linkOf(/^\s*\|\s*First\s*=/u) ?? linkOf(/^\s*\|\s*Appearances\s*=/u)
 
   return link === undefined ? undefined : episodeNumberOf(link)
 }

@@ -90,6 +90,66 @@ const RECORDS: {
   { id: 'doreah', episode: 2, chapter: 12 },
   { id: 'rakharo', episode: 3, chapter: 24 },
   { id: 'mirri-maz-duur', episode: 8, chapter: 62 },
+  { id: 'hullen', episode: 1, chapter: 2, source: 'chapter' },
+  { id: 'jeyne-poole', episode: 1, chapter: 8, source: 'chapter' },
+  { id: 'mikken', episode: 2, chapter: 54 },
+  { id: 'hallis-mollen', episode: 2, chapter: 15, source: 'chapter' },
+  { id: 'mycah', episode: 2, chapter: 16 },
+  { id: 'stiv', episode: 6, chapter: 38 },
+  { id: 'wallen', episode: 6, chapter: 38 },
+  { id: 'greatjon-umber', episode: 8, chapter: 54 },
+  { id: 'smalljon-umber', episode: 53, chapter: 64 },
+  { id: 'rickard-karstark', episode: 17, chapter: 54 },
+  { id: 'roose-bolton', episode: 14, chapter: 54 },
+  { id: 'galbart-glover', episode: 8, chapter: 56 },
+  { id: 'robett-glover', episode: 57, chapter: 54 },
+  { id: 'maege-mormont', episode: 8, chapter: 54 },
+  { id: 'dacey-mormont', episode: 9, chapter: 64, source: 'chapter' },
+  { id: 'wendel-manderly', episode: 29, chapter: 56 },
+  { id: 'marillion', episode: 4, chapter: 29 },
+  { id: 'willis-wode', episode: 4, chapter: 29 },
+  { id: 'donnel-waynwood', episode: 35, chapter: 35 },
+  { id: 'nestor-royce', episode: 5, chapter: 35, source: 'chapter' },
+  { id: 'mya-stone', episode: 5, chapter: 35, source: 'chapter' },
+  { id: 'vardis-egen', episode: 6, chapter: 35 },
+  { id: 'mord', episode: 6, chapter: 39 },
+  { id: 'lyn-corbray', episode: 6, chapter: 39, source: 'chapter' },
+  { id: 'anya-waynwood', episode: 38, chapter: 39 },
+  { id: 'shagga', episode: 8, chapter: 43 },
+  { id: 'timett', episode: 8, chapter: 57 },
+  { id: 'chella', episode: 8, chapter: 57 },
+  { id: 'meryn-trant', episode: 8, chapter: 30 },
+  { id: 'boros-blount', episode: 19, chapter: 34 },
+  { id: 'mandon-moore', episode: 19, chapter: 52 },
+  { id: 'arys-oakheart', episode: 8, chapter: 58, source: 'chapter' },
+  { id: 'lancel-lannister', episode: 3, chapter: 31 },
+  { id: 'dontos-hollard', episode: 11, chapter: 58 },
+  { id: 'hugh-of-the-vale', episode: 4, chapter: 30 },
+  { id: 'tobho-mott', episode: 4, chapter: 28 },
+  { id: 'mhaegen', episode: 5, chapter: 36, source: 'episode' },
+  { id: 'vayon-poole', episode: 8, chapter: 17 },
+  { id: 'tomard', episode: 7, chapter: 23 },
+  { id: 'harwin', episode: 1, chapter: 2, source: 'chapter' },
+  { id: 'alyn', episode: 1, chapter: 13, source: 'chapter' },
+  { id: 'beric-dondarrion', episode: 6, chapter: 28 },
+  { id: 'thoros-of-myr', episode: 22, chapter: 30 },
+  { id: 'balon-swann', episode: 4, chapter: 30, source: 'chapter' },
+  { id: 'robar-royce', episode: 4, chapter: 30, source: 'chapter' },
+  { id: 'yohn-royce', episode: 38, chapter: 30 },
+  { id: 'jason-mallister', episode: 4, chapter: 29, source: 'chapter' },
+  { id: 'masha-heddle', episode: 4, chapter: 29 },
+  { id: 'kevan-lannister', episode: 8, chapter: 57 },
+  { id: 'addam-marbrand', episode: 10, chapter: 63 },
+  { id: 'podrick-payne', episode: 12, chapter: 63 },
+  { id: 'stevron-frey', episode: 9, chapter: 60 },
+  { id: 'edmure-tully', episode: 23, chapter: 72 },
+  { id: 'hoster-tully', episode: 23, chapter: 72 },
+  { id: 'brynden-tully', episode: 23, chapter: 35 },
+  { id: 'hot-pie', episode: 10, chapter: 75 },
+  { id: 'lommy', episode: 10, chapter: 75 },
+  { id: 'jaqen-hghar', episode: 12, chapter: 79 },
+  { id: 'rorge', episode: 12, chapter: 79 },
+  { id: 'biter', episode: 12, chapter: 79 },
   // Places (#853): the first scene set there in each medium.
   { id: 'haunted-forest', episode: 1, chapter: 1 },
   { id: 'winterfell', episode: 1, chapter: 2 },
@@ -116,11 +176,15 @@ const RECORDS: {
   { id: 'moat-cailin', episode: 38, chapter: 56 },
 ]
 
-/** Every status change within season 1 / *A Game of Thrones*, pinned in both media. */
+/**
+ * Every status change within season 1 / *A Game of Thrones*, pinned in both
+ * media; `source` for a change one medium alone tells.
+ */
 const CHANGES: {
   chapter: number
   episode: number
   id: string
+  source?: 'chapter' | 'episode'
   value: CharacterStatus
 }[] = [
   { id: 'eddard-stark', episode: 7, chapter: 50, value: 'captured' },
@@ -136,6 +200,46 @@ const CHANGES: {
   { id: 'viserys-targaryen', episode: 6, chapter: 47, value: 'deceased' },
   { id: 'drogo', episode: 10, chapter: 69, value: 'deceased' },
   { id: 'mirri-maz-duur', episode: 10, chapter: 73, value: 'deceased' },
+  {
+    id: 'hullen',
+    episode: 8,
+    chapter: 51,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
+  { id: 'stiv', episode: 6, chapter: 38, value: 'deceased' },
+  { id: 'wallen', episode: 6, chapter: 38, value: 'deceased' },
+  {
+    id: 'willis-wode',
+    episode: 5,
+    chapter: 35,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'vardis-egen', episode: 6, chapter: 41, value: 'deceased' },
+  { id: 'hugh-of-the-vale', episode: 4, chapter: 30, value: 'deceased' },
+  {
+    id: 'vayon-poole',
+    episode: 8,
+    chapter: 51,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'tomard',
+    episode: 7,
+    chapter: 50,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'masha-heddle',
+    episode: 8,
+    chapter: 57,
+    value: 'deceased',
+    source: 'chapter',
+  },
 ]
 
 /**
@@ -308,6 +412,80 @@ const STEPS: {
     source: 'chapter',
   },
   { chapter: 73, en: 'Daenerys’s khalasar', episode: 10, id: 'rakharo' },
+  {
+    chapter: 72,
+    en: 'House Umber, sworn to Robb Stark, King in the North',
+    episode: 10,
+    id: 'greatjon-umber',
+  },
+  {
+    chapter: 72,
+    en: 'House Karstark, sworn to Robb Stark, King in the North',
+    episode: 17,
+    id: 'rickard-karstark',
+    source: 'chapter',
+  },
+  {
+    chapter: 56,
+    en: 'Commander of the northern foot',
+    episode: 14,
+    id: 'roose-bolton',
+    source: 'chapter',
+  },
+  {
+    chapter: 72,
+    en: 'House Glover, sworn to Robb Stark, King in the North',
+    episode: 10,
+    id: 'galbart-glover',
+  },
+  {
+    chapter: 72,
+    en: 'House Mormont, sworn to Robb Stark, King in the North',
+    episode: 10,
+    id: 'maege-mormont',
+  },
+  {
+    chapter: 45,
+    en: 'House Stark, Beric Dondarrion’s company',
+    episode: 6,
+    id: 'harwin',
+    source: 'chapter',
+  },
+  {
+    chapter: 46,
+    en: 'Captain of the Hand’s guard',
+    episode: 6,
+    id: 'alyn',
+    source: 'chapter',
+  },
+  {
+    chapter: 44,
+    en: 'House Stark, Beric Dondarrion’s company',
+    episode: 6,
+    id: 'alyn',
+    source: 'chapter',
+  },
+  {
+    chapter: 44,
+    en: 'Leader of the riders sent against Gregor Clegane',
+    episode: 6,
+    id: 'beric-dondarrion',
+    source: 'chapter',
+  },
+  {
+    chapter: 44,
+    en: 'Beric Dondarrion’s company',
+    episode: 22,
+    id: 'thoros-of-myr',
+    source: 'chapter',
+  },
+  {
+    chapter: 56,
+    en: 'House Tully, Robb Stark’s host',
+    episode: 23,
+    id: 'brynden-tully',
+    source: 'chapter',
+  },
 ]
 
 type Unit = 'chapter' | 'episode'
@@ -387,7 +565,12 @@ describe('the first season’s cast', () => {
 })
 
 describe.each(
-  CHANGES.flatMap((change) => UNITS.map((unit) => ({ ...change, unit }))),
+  CHANGES.flatMap((change) =>
+    UNITS.filter((unit) => (change.source ?? unit) === unit).map((unit) => ({
+      ...change,
+      unit,
+    })),
+  ),
 )('$id becomes $value by $unit', ({ id, episode, chapter, value, unit }) => {
   it('at its pin, not one before', () => {
     const pin = unit === 'chapter' ? chapter : episode
@@ -398,6 +581,20 @@ describe.each(
     expect(archive.latestOf(before, owner, 'status')).not.toBe(value)
     expect(archive.latestOf(reached, owner, 'status')).toBe(value)
   })
+})
+
+describe('the status changes one medium alone tells', () => {
+  it.each(CHANGES.filter(({ source }) => source !== undefined))(
+    'never makes $id $value for a reader of the other medium',
+    ({ id, source, value }) => {
+      const last =
+        source === 'episode' ?
+          reader('chapter', archive.series.chapterCeiling)
+        : reader('episode', archive.series.episodeCeiling)
+
+      expect(archive.latestOf(last, character(id), 'status')).not.toBe(value)
+    },
+  )
 })
 
 describe.each(

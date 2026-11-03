@@ -10,7 +10,7 @@ import { sagas as seasons } from './sagas'
 
 /**
  * Game of Thrones' archive: its seasons, the first season's main cast
- * (#852) and its places (#853). A season with no record has nothing to
+ * (#852), its other recurring characters (#1006, …) and its places (#853). A season with no record has nothing to
  * head, shelve or sweep, so the engine reads only the seasons that file one.
  */
 const sagas = seasons.filter((season) => season.entries.length > 0)
