@@ -226,36 +226,31 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
-  // Italian Wikipedia has no section for her, and the anime never names her (manga-only record). (#1021).
+  // Kite's survey team: no section in the Italian Hunter or Formichimere
+  // lists; dub unviewed (#1020).
+  'spinner-clow': 'Spinner Clow',
+  'banana-kavaro': 'Banana Kavaro',
+  'monta-yuras': 'Monta Yuras',
+  'stick-dinner': 'Stick Dinner',
+  // Chimera Ant phase 2 (#1021): no section of their own in the Italian
+  // Hunter, Formichimere or geography pages; dub unviewed. Kurt and Reina
+  // are spelled so inside other sections, Hagya inside the one headed by the
+  // name he takes later.
   'dr-lee': 'Dr. Lee',
-  // Italian Wikipedia has no section for the amateur Hunters. (#1021).
   'lin-koshi': 'Lin Koshi',
-  // Italian Wikipedia has no section for the amateur Hunters. (#1021).
   'podungo-lapoy': 'Podungo Lapoy',
-  // Italian Wikipedia does not mention him. (#1021).
   'wong': 'Wong',
-  // no section of his own; Formichimere#Coluto spells his human name "Kurt". (#1021).
   'kurt': 'Kurt',
-  // no section of her own; Formichimere#Sidre spells her human name "Reina". (#1021).
   'reina': 'Reina',
-  // Italian Wikipedia does not name the mother. (#1021).
   'haruna': 'Haruna',
-  // Italian Wikipedia does not mention him. (#1021).
   'pekuba': 'Pekuba',
-  // no Italian Wikipedia entry; the record takes the wiki page title, though the manga translation prints "Doli". (#1021).
-  'doli-city': 'Doli City',
-  // no Italian Wikipedia entry. (#1021).
-  'pata-city': 'Pata City',
-  // no Italian Wikipedia entry. (#1021).
-  'tri-orb-hotel': 'Tri-Orb Hotel',
-  // Italian Wikipedia has no section for him (Formichimere checked). (#1021).
   'yunju': 'Yunju',
-  // Italian Wikipedia has no section for him (Formichimere checked). (#1021).
   'baro': 'Baro',
-  // Italian Wikipedia has no section for him (Formichimere checked). (#1021).
   'baital': 'Baital',
-  // kept in both locales by owner ruling; Italian Wikipedia gives Hagya as his name before the Queen dies, inside the section headed by his later name (Formichimere#Leol). (#1021).
   'hagya': 'Hagya',
+  'doli-city': 'Doli City',
+  'pata-city': 'Pata City',
+  'tri-orb-hotel': 'Tri-Orb Hotel',
   // No Michael entry in the Italian character/Hunter lists; dub unviewed (#1032).
   'michael': 'Michael',
   // No Jitonoda entry in the Italian character/Hunter lists; dub unviewed (#1019).
