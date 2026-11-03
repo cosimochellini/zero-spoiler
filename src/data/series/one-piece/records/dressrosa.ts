@@ -2587,6 +2587,15 @@ export const dressrosa: OnePieceSaga = {
             en: 'Beasts Pirates, governor-general; Emperor',
           },
         },
+        {
+          episode: 1080,
+          chapter: 1053,
+          factions: ['beasts-pirates'],
+          value: {
+            it: 'Pirati delle Cento Bestie, governatore generale; caduto a Wano',
+            en: 'Beasts Pirates, governor-general; fell at Wano',
+          },
+        },
       ],
       epithet: [
         {
