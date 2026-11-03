@@ -1,5 +1,10 @@
 {
   "issue": 1019,
+  "followUp": {
+    "issue": 1032,
+    "ownerDecision": "Exclude all 31 candidates whose first personal-name mapping could not be verified. Each followUp1032 entry supplements the original reason. Secondary-source leads are retained for future licensed scene checks.",
+    "licensedScenesViewed": false
+  },
   "inventory": {
     "chapters": [
       120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134,
@@ -76,6 +81,7 @@
       "id": "abengane",
       "disposition": "excluded-unresolved-naming",
       "reason": "The character page locates his name in the chapter158 binder. Exorcism in chapter147 and meetings in chapters170/183 establish deeds but not personal naming; binder text alone does not map a face. No first naming scene has been proven.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -154,6 +160,7 @@
       "id": "amana",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -320,6 +327,7 @@
       "id": "asta",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -386,6 +394,7 @@
       "id": "bara",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter144 calls him an accomplice; chapter154 describes membership with Sub and chapter158 lists the binder name. Later chapter177 fight is editorially identified. The first personal-name-to-character disclosure remains unproven.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -453,6 +462,7 @@
       "id": "barry",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter153 debut, chapter160 sports and chapter174 employment history establish activity. No introduction or explicit first personal-name disclosure was positively identified by the cached evidence.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -828,6 +838,7 @@
       "id": "bopobo",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter155 introduces the large pirate anonymously; chapter160 death and chapter161 crimes speech and chapter169 Razor recollection are additional naming leads. Editorial identification in these synopses does not establish when his proper name is spoken. No eligible gate has been proven; this is not a finding he is never named.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -1362,6 +1373,7 @@
       "id": "gashta-bellam",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapters152/158 mention the Bellam brothers; chapter158 discussion and chapter183 confrontation are leads. Those descriptions do not prove a first individual name-to-character mapping, and the brothers must not receive a shared inferred gate.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -1775,6 +1787,7 @@
       "id": "goreinu",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter127/episode60 appearance and chapter154–182 alliance, sports and friendship scenes identify him editorially. Neither those summaries nor the cached character naming scan positively establishes an introduction, spoken address or printed personal-name mapping. His prominent role is not a naming gate.",
+      "followUp1032": "The Black Goreinu lead in chapter 164 was also checked against public chapter metadata, which cannot establish when the player himself is first named.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -1934,6 +1947,7 @@
       "id": "hagakushi",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapters152/153 name a rival player/team to watch; his personal appearance at the Election is later. No positive in-scope personal-name mapping was established.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": ["Chapter 152", "Chapter 153"],
@@ -1952,6 +1966,7 @@
       "id": "hanse",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -2191,6 +2206,7 @@
       "id": "izunavi",
       "disposition": "excluded-unresolved-naming",
       "reason": "The audited scenes recall Kurapika’s teacher; the page also uses Mizuken for the 2011 adaptation. No positive Greed Island personal naming scene was established. Later bodyguard recruitment is outside this audit; no later naming number is invented.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": false,
       "placeCandidate": false,
       "appearancePages": ["Chapter 123", "Episode 59 (2011)"],
@@ -2209,6 +2225,7 @@
       "id": "jeet",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Chapter 129 links a death to an earlier appearance, but the available synopsis does not establish that the scene names Jeet.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -2353,6 +2370,7 @@
       "id": "kazsule",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "The public character index points to chapter 154 as the reveal, but the licensed scene was unavailable to verify the name-to-person mapping.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -2426,6 +2444,7 @@
       "id": "kess",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter152 debut and chapter153’s one teammate alias establish presence. Radar and Dopple pseudonym in chapter172 are leads, not a demonstrated first name-to-face mapping. Election scenes lie outside the audit.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -2847,6 +2866,7 @@
       "id": "latarza",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Chapter 128 identifies the confrontation editorially, but the available descriptions do not confirm that the player is named in the scene.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -3044,6 +3064,7 @@
       "id": "manheim",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Chapters 154 and 155 attribute remarks to him editorially. The available summaries do not verify a spoken or printed name.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -3176,6 +3197,7 @@
       "id": "michael",
       "disposition": "excluded-unresolved-naming",
       "reason": "The available character-page naming scan and chapter/episode summaries provide editorial identity or appearance metadata, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": false,
       "placeCandidate": false,
       "appearancePages": ["Chapter 148", "Episode 66 (2011)"],
@@ -3276,6 +3298,7 @@
       "id": "montreux",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "Chapters 154–156 offer alliance-scene leads, but the available descriptions do not verify when the name is first attached to the speaker.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -3313,6 +3336,7 @@
       "id": "motaricke",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "The dice scene in chapters 152–153 identifies a captive editorially, with no verified personal naming in the scene.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -3397,6 +3421,7 @@
       "id": "nick-cue",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "The team appearance in chapter 151 and dialogue in chapter 155 do not establish when the story names him.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -3436,6 +3461,7 @@
       "id": "nickes",
       "disposition": "excluded-unresolved-naming",
       "reason": "The character page locates the name in the chapter158 binder. Recruitment and chapter144 death establish activity, not a demonstrated first personal-name-to-character disclosure.",
+      "followUp1032": "The public character index attributes the reveal to Genthru in chapter 143, but neither the licensed chapter scene nor the corresponding episode dialogue was verified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -3965,6 +3991,7 @@
       "id": "rodriot",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter152 debut, chapter160 sports and chapter174 employment history establish activity. No introduction or explicit first personal-name disclosure was positively identified by the cached evidence.",
+      "followUp1032": "Secondary sources point to a winner announcement in chapter 160. The licensed panel and its mapping to the contestant were not verified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -4046,6 +4073,7 @@
       "id": "sabazushi",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter173 says Tsezguerra beckons him, while episode72 describes a man named Sabazushi editorially. These are insufficient to prove the personal name is spoken or printed in that scene. Death does not itself disclose a name.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": ["Chapter 173", "Episode 72 (2011)"],
@@ -4064,6 +4092,7 @@
       "id": "sakisuke-njiji",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter158 has Goreinu discuss Sakisuke’s combat skill and greed while viewing names. This is a naming lead, but no positively established first mapping to the pictured individual; no binder-only gate is authored.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": ["Chapter 126", "Chapter 158", "Episode 60 (2011)"],
@@ -4314,6 +4343,7 @@
       "id": "souheil",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "The alliance gathering in chapter 154 and the later binder do not establish a verified individual name mapping.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -4401,6 +4431,7 @@
       "id": "sub",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapter152 describes Genthru asking Sub about dice, chapter154 describes team membership, and chapter158 lists the binder name. These are naming leads, but the summaries do not establish the first personal-name-to-character disclosure; no gate is inferred from editorial address.",
+      "followUp1032": "Genthru’s exchange about Risky Dice in chapter 152 is the strongest lead, but the licensed dialogue was unavailable to verify the direct address.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -4505,6 +4536,7 @@
       "id": "tokharone",
       "disposition": "excluded-unresolved-naming",
       "reason": "Chapters152/153 name a rival player/team to watch. The summaries do not independently prove the pictured individual bears that name rather than merely supplying editorial identification.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": ["Chapter 152", "Chapter 153"],
@@ -4821,6 +4853,7 @@
       "id": "wong-li",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "The alliance scene in chapter 154 and binder in chapter 158 do not establish a verified mapping to the individual.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -4856,6 +4889,7 @@
       "id": "yabibi",
       "disposition": "excluded-unresolved-naming",
       "reason": "Character-page naming scan mentions the chapter158 binder, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "The alliance scenes in chapters 154–155 and later binder do not establish a verified mapping to the individual.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -4891,6 +4925,7 @@
       "id": "zeho",
       "disposition": "excluded-unresolved-naming",
       "reason": "The available character-page naming scan and chapter/episode summaries provide editorial identity or appearance metadata, but no positive first personal-name-to-character disclosure was established. Excluded from this release for insufficient naming evidence; this does not claim the character is never named.",
+      "followUp1032": "The chapter 154 appearance and later binder do not establish a verified mapping to the individual.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
@@ -4977,6 +5012,7 @@
       "id": "zetsk-bellam",
       "disposition": "excluded-unresolved-naming",
       "reason": "The collective Bellam brothers mention and chapter158 discussion do not alone map the individual brother. Chapter183 confrontation remains an individual naming lead; no first gate has been proven.",
+      "followUp1032": "Owner approved exclusion after the naming lead above remained unverified.",
       "issueCandidate": true,
       "placeCandidate": false,
       "appearancePages": [
