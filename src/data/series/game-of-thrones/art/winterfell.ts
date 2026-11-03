@@ -267,15 +267,15 @@ const STABLE: Stroke[] = [
 
 /**
  * Osha: her spear planted upright, a long shaft with a binding below the
- * head, its far side hatched. The accent is the pitting on the rusted head
- * the book gives it in Bran V (chapter 38); the show has her yield her
- * spear to Robb in episode 6.
+ * head, its far side hatched. She yields it to Robb in episode 6 and in
+ * Bran V (chapter 38); the accent is its steel head. The rust the book
+ * gives the head is the book's alone, so it is not drawn.
  */
 const SPEAR: Stroke[] = [
   { d: 'M78 150 L84 52 M84 150 L90 52' },
-  { d: 'M84 52 Q80 40 87 18 Q94 40 90 52 Z' },
+  { d: 'M84 52 Q80 40 87 18 Q94 40 90 52 Z', role: 'accent' },
   { d: 'M87 22 V50', role: 'soft' },
-  { d: 'M84 46 l3 -2 M88 34 l2 -2 M89 44 l2 -1', role: 'accent' },
+  { d: 'M89 30 l2 -1 M90 40 l2 -1', role: 'ambient' },
   { d: 'M84 56 L91 60 M84 62 L91 66 M83 68 L90 72', role: 'soft' },
   {
     d: 'M88 84 l4 -2 M87 100 l4 -2 M86 116 l4 -2 M85 132 l4 -2',
@@ -394,8 +394,9 @@ const LADY: Stroke[] = [
 ]
 
 /**
- * Nymeria: standing alert, head up and tail down, the wolf Arya finds
- * waiting for her in episode 2 and in Arya I (chapter 8).
+ * Nymeria: standing alert, head up and tail down, the wolf that waits on
+ * Arya. Her threshold is episode 2 and Arya I (chapter 8), where the book
+ * has her waiting for Arya after her lesson.
  */
 const NYMERIA: Stroke[] = [
   {
@@ -558,9 +559,9 @@ export const winterfellRedrawn: Redrawings = {
   ],
   'lady-direwolf': [
     // Lying on her side, still, her head flat on the ground: Eddard Stark
-    // kills her himself at the Crossroads in "The Kingsroad" (episode 2)
-    // and in Eddard III (chapter 17). The weapon differs between the two,
-    // so none is drawn.
+    // kills her himself, at the Inn at the Crossroads in "The Kingsroad"
+    // (episode 2) and at Castle Darry in Eddard III (chapter 17). The
+    // weapon differs between the two, so none is drawn.
     {
       episode: 2,
       chapter: 17,
@@ -586,7 +587,7 @@ export const winterfellRedrawn: Redrawings = {
       episode: 5,
       chapter: 36,
       value: [
-        ...moved(HELM, 'rotate(-80 80 100) translate(-28 -10)'),
+        ...moved(HELM, 'rotate(-80 80 100) translate(-14 -10)'),
         { d: 'M24 150 H136', role: 'ambient', dashed: true },
         {
           d: 'M30 156 h12 M54 158 h14 M84 156 h12 M110 158 h14',

@@ -131,15 +131,16 @@ show has, is `source: 'episode'`. #1006 adds the 60 recurring characters of
 Winterfell, King's Landing, the Vale and the Riverlands, bit parts left out:
 those only one medium names in the stage are `source`-only, and those the other
 medium meets in a later season or book keep that later gate. It opened before
-its drawings (#854): Eddard, Jon, Daenerys and Tyrion have their own, Eddard's
-with a death stage, and every other record maps to a shared placeholder in
-`art/index.ts`, `PERSON` or the direwolves' `WOLF`, so the drawing tests hold it
-like any series, and every place to `PLACE`. Its 23 places (#853) are the ones a
-scene of the season or the book is set in, each filed in one of the realms,
-beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is optional, and an
-arcless series prints no arc row. Darry is the book's alone and the Kingswood
-the show's. The demo shows the places the first ten episodes reach, and covers
-in its tail the four the show first visits in later seasons.
+its drawings: Eddard, Jon, Daenerys and Tyrion have their own, Eddard's with a
+death stage, and the Winterfell household's are in `art/winterfell.ts` (#854),
+with five stages. Every other record maps to a shared placeholder in
+`art/index.ts`, `PERSON` for a character and `PLACE` for a place, until its own
+issue draws it, so the drawing tests hold it like any series. Its 23 places
+(#853) are the ones a scene of the season or the book is set in, each filed in
+one of the realms, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
+optional, and an arcless series prints no arc row. Darry is the book's alone and
+the Kingswood the show's. The demo shows the places the first ten episodes
+reach, and covers in its tail the four the show first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
