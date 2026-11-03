@@ -133,6 +133,20 @@ function inOrder(groups: FruitFactionView[], locale: 'en' | 'it'): boolean {
 }
 
 describe('the faction view', () => {
+  it.each([
+    [ep(1079), ep(1080)],
+    [ch(1052), ch(1053)],
+  ])(
+    'moves Kaido’s fruit out of the Emperors group at %j → %j',
+    (before, at) => {
+      const fruit = 'fish-fish-fruit-mythical-model-azure-dragon'
+
+      expect(groupOf(before, 'emperors')).toContain(fruit)
+      expect(groupOf(at, 'emperors')).not.toContain(fruit)
+      expect(groupOf(at, 'beasts-pirates')).toContain(fruit)
+    },
+  )
+
   it('is empty without a bookmark', () => {
     expect(fruitAlbum(null, 'en').factions).toStrictEqual([])
   })

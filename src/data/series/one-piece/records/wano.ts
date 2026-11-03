@@ -759,7 +759,8 @@ export const wano: OnePieceSaga = {
           },
         },
         {
-          episode: 1085,
+          episode: 1083,
+          chapter: 1056,
           factions: ['kozuki-alliance'],
           value: {
             it: 'Servitori dei Kozuki, allieva',
@@ -936,7 +937,8 @@ export const wano: OnePieceSaga = {
           value: { it: 'Shogun del Paese di Wano', en: 'Shogun of Wano' },
         },
         {
-          episode: 1085,
+          episode: 1078,
+          chapter: 1051,
           factions: ['independent'],
           value: { it: 'Deposto', en: 'Deposed' },
         },
