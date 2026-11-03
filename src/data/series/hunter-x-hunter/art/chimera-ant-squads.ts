@@ -195,6 +195,21 @@ export const CHIMERA_ANT_SQUADS_DRAWINGS = {
 
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntSquadsRedrawn: Redrawings = {
+  hagya: [
+    {
+      episode: 107,
+      chapter: 254,
+      source: 'chapter',
+      value: [
+        ...moved(
+          CHIMERA_ANT_SQUADS_DRAWINGS.hagya,
+          'translate(80 116) rotate(-55) scale(0.66) translate(-80 -94)',
+        ),
+        { d: 'M12 69 Q30 62 48 69 T84 69 T120 69 T156 69', role: 'soft' },
+        { d: ellipse(111, 93, 4, 6), role: 'accent' },
+      ],
+    },
+  ],
   pike: [
     {
       episode: 97,

@@ -170,6 +170,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       },
       status: [
         { episode: 81, chapter: 192, source: 'chapter', value: 'alive' },
+        { episode: 107, chapter: 254, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         { episode: 81, chapter: 192, source: 'chapter', value: CHIMERA_ANTS },
