@@ -390,6 +390,18 @@ describe('Chimera Ant dated facts', () => {
         .find(({ id }) => id === 'hagya')?.name[locale],
     ).toBe('Leol')
     expect(manga.archive.getCharacter('hagya')?.name[locale]).toBe('Hagya')
+    expect(
+      readerFor(archive, at('chapter', 254), locale).archive.getCharacter(
+        'hagya',
+      )?.name[locale],
+    ).toBe('Hagya')
+    // Neither copy carries the other medium's name.
+    expect(manga.archive.getCharacter('hagya')).not.toHaveProperty(
+      'episodeName',
+    )
+    expect(anime.archive.getCharacter('hagya')).not.toHaveProperty(
+      'episodeName',
+    )
   })
 
   it.each(['gon-freecss', 'killua'])(

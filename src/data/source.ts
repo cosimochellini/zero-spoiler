@@ -62,10 +62,17 @@ export function archiveIn(
 /** Builds one copy; `archiveIn` keeps it. */
 function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
   const has = (gated: Gated): boolean => toldIn(gated, source)
-  const named = (entity: Entity): Entity =>
-    source === 'episode' && entity.episodeName !== undefined ?
-      { ...entity, name: entity.episodeName }
-    : entity
+  // A record the anime names otherwise goes by that name in an episode
+  // reader's copy, and by its own in any other; no copy carries the other
+  // name, so a chapter reader's payload never holds the anime's.
+  const named = (entity: Entity): Entity => {
+    const { episodeName, ...own } = entity
+    if (episodeName === undefined) {
+      return entity
+    }
+
+    return source === 'episode' ? { ...own, name: episodeName } : own
+  }
   const kept = (entities: Entity[]): Entity[] => {
     const result: Entity[] = []
     for (const entity of entities) {

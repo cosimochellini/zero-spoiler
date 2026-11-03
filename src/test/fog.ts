@@ -114,14 +114,25 @@ function fogOf(
   }
   for (const locale of LOCALES) {
     const taken = reachedNames(at, locale, entities)
-    for (const entity of covered) {
-      if (!taken.has(entity.name[locale])) {
-        cover(entity.name[locale], entity)
+    const said = covered.flatMap((entity) =>
+      namesOf(entity, locale).map((name) => ({ entity, name })),
+    )
+    for (const { entity, name } of said) {
+      if (!taken.has(name)) {
+        cover(name, entity)
       }
     }
   }
 
   return fog
+}
+
+/** The names a record goes by in one locale: its own, and the anime's. */
+function namesOf(entity: Entity, locale: Locale): string[] {
+  const anime = entity.episodeName?.[locale]
+  return anime === undefined ?
+      [entity.name[locale]]
+    : [entity.name[locale], anime]
 }
 
 /**
@@ -152,7 +163,13 @@ function foldedFogOf(
 
 /** A record's names in every locale, folded the way a search folds them. */
 function fold(entity: Entity): string[] {
-  return [...new Set(LOCALES.map((locale) => foldName(entity.name[locale])))]
+  return [
+    ...new Set(
+      LOCALES.flatMap((locale) =>
+        namesOf(entity, locale).map((name) => foldName(name)),
+      ),
+    ),
+  ]
 }
 
 /** The names the records a reader has reached go by in one locale. */
@@ -164,7 +181,9 @@ function reachedNames(
   const names = new Set<string>()
   for (const entity of entities) {
     if (at.sees(entity)) {
-      names.add(entity.name[locale])
+      for (const name of namesOf(entity, locale)) {
+        names.add(name)
+      }
     }
   }
 

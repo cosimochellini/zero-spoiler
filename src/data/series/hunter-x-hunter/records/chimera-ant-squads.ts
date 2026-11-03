@@ -160,17 +160,20 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
       log: {
-        it: 'Guida una divisione delle formichimere.',
-        en: 'Leads a squad of Chimera Ants.',
+        it: 'Ammette con un altro comandante di divisione che la sua divisione caccia gli umani per divertimento e ne lascia i corpi. Promette di tenere per la regina gli umani rari, poi dice ai suoi compagni che li mangeranno loro.',
+        en: 'He admits to another Squadron Leader that his squad hunts humans for fun and leaves the bodies. He promises to save any rare humans for the Queen, then tells his comrades they will eat them themselves.',
       },
+      // Morel suffocates him with carbon dioxide in the flooded chapel,
+      // chapter 254 / episode 107.
       status: [
-        { episode: 106, chapter: 192, source: 'chapter', value: 'alive' },
-        { episode: 106, chapter: 192, source: 'episode', value: 'alive' },
+        { episode: 106, chapter: 192, value: 'alive' },
         { episode: 107, chapter: 254, value: 'deceased' },
       ],
+      // The anime's nest scenes (episodes 91 and 92) come before it opens
+      // him, and a timeline takes one entry per episode, so the two later
+      // steps stay the manga's.
       affiliation: [
-        { episode: 106, chapter: 192, source: 'episode', value: CHIMERA_ANTS },
-        { episode: 106, chapter: 192, source: 'chapter', value: CHIMERA_ANTS },
+        { episode: 106, chapter: 192, value: CHIMERA_ANTS },
         // With the Queen unable to lay eggs, he proposes that each of them
         // try to become a king, chapter 214; he sets off, chapter 216.
         {

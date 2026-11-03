@@ -57,6 +57,15 @@ export interface Visual {
  * (`~/data/reveal`).
  */
 export interface Entity {
+  /**
+   * The name the anime gives a record whose manga name it never says: Hunter
+   * x Hunter's Hagya is introduced in the episodes as Leol, the name he takes
+   * later in the manga. An episode reader receives the record under it
+   * (`~/data/source`); a chapter reader keeps `name`, and learns this one from
+   * the record's own dated text that first says it (Hagya's role at chapter
+   * 240), before which no text may say it (the leak scan in
+   * `~/data/leaks.test`). A covered record is fogged under both names.
+   */
   episodeName?: LocalizedText
   id: string
   kind: EntityKind
