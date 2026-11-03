@@ -15,7 +15,11 @@ import { RelationshipBand } from './-$id.relationships'
 
 const relationships: RelationshipView[] = [
   {
-    person: { id: 'test-person', name: 'A person' },
+    person: {
+      id: 'test-person',
+      name: 'A person',
+      visual: { strokes: [], tint: 'red' },
+    },
     type: 'Ally',
     summary: 'Helps them return home.',
     history: [
@@ -55,7 +59,11 @@ function SelectionDemo(): ReactElement {
   }
   const added: RelationshipView = {
     ...retained,
-    person: { id: 'later-person', name: 'Later person' },
+    person: {
+      id: 'later-person',
+      name: 'Later person',
+      visual: { strokes: [], tint: 'red' },
+    },
     type: 'Rival',
     summary: 'They compete.',
   }
@@ -182,7 +190,11 @@ describe('the character relationship band', () => {
         relationships={[
           ...relationships,
           {
-            person: { id: 'another-person', name: 'Another person' },
+            person: {
+              id: 'another-person',
+              name: 'Another person',
+              visual: { strokes: [], tint: 'red' },
+            },
             type: 'Friend',
             summary: 'A stable friendship.',
             history: [

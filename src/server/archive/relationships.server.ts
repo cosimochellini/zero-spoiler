@@ -6,6 +6,7 @@ import type {
   RelationshipView,
 } from '~/lib/view/relationships'
 
+import { drawingOf } from './project.server'
 import type { Reader } from './reader.server'
 
 /** Reached snapshots in the unit the reader uses for their history. */
@@ -67,7 +68,11 @@ export function relationshipsOf(entity: Entity, r: Reader): RelationshipView[] {
           []
         : {
             history: historyOf(person, snapshots, r),
-            person: { id: person.id, name: person.name[r.locale] },
+            person: {
+              id: person.id,
+              name: person.name[r.locale],
+              visual: drawingOf(person, r),
+            },
             summary: summary[r.locale],
             type: type[r.locale],
           }

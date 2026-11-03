@@ -2,6 +2,7 @@ import * as stylex from '@stylexjs/stylex'
 import { Link } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
+import { CharacterCrest } from '~/components/CharacterCrest'
 import { useT } from '~/i18n/LocaleContext'
 import { useSeriesParams, useThreshold } from '~/lib/progress/BookmarkContext'
 import type { RelationshipView } from '~/lib/view/relationships'
@@ -75,14 +76,25 @@ function RelationshipCard({
   return (
     <li {...stylex.props(relations.card)}>
       <Link
+        aria-hidden="true"
         params={{ series, locale, id: person.id }}
+        tabIndex={-1}
         to="/$series/$locale/characters/$id"
-        {...stylex.props(relations.name)}
+        {...stylex.props(relations.avatar)}
       >
-        {person.name}
+        <CharacterCrest visual={person.visual} />
       </Link>
-      <p {...stylex.props(relations.type)}>{type}</p>
-      <p {...stylex.props(styles.lede)}>{summary}</p>
+      <div {...stylex.props(relations.body)}>
+        <Link
+          params={{ series, locale, id: person.id }}
+          to="/$series/$locale/characters/$id"
+          {...stylex.props(relations.name)}
+        >
+          {person.name}
+        </Link>
+        <p {...stylex.props(relations.type)}>{type}</p>
+        <p {...stylex.props(styles.lede)}>{summary}</p>
+      </div>
       <details {...stylex.props(relations.history)}>
         <summary
           aria-label={t('character.relationshipHistoryFor', {
@@ -131,11 +143,26 @@ const relations = stylex.create({
     borderRadius: radius.card,
     borderStyle: 'solid',
     borderWidth: rule.hair,
-    gap: space.xs,
+    backgroundColor: color.paper2,
+    columnGap: space.md,
     display: 'grid',
+    gridTemplateColumns: '4.5rem minmax(0, 1fr)',
+    rowGap: space.xs,
     minWidth: 0,
   },
-  history: { minWidth: 0 },
+  avatar: {
+    padding: space.xs,
+    borderColor: color.rule,
+    borderRadius: radius.pill,
+    borderStyle: 'solid',
+    borderWidth: rule.hair,
+    overflow: 'hidden',
+    aspectRatio: '1',
+    backgroundColor: color.paper,
+    display: 'block',
+  },
+  body: { gap: space.xs, display: 'grid', minWidth: 0 },
+  history: { gridColumnEnd: '-1', gridColumnStart: '1', minWidth: 0 },
   toggle: {
     'paddingBlock': space.sm,
     'color': { 'default': color.ink2, ':hover': color.accent },
@@ -183,9 +210,17 @@ const relations = stylex.create({
     lineHeight: leading.heading,
   },
   type: {
+    margin: 0,
+    borderColor: color.accent,
+    borderRadius: radius.pill,
+    borderStyle: 'solid',
+    borderWidth: rule.hair,
+    paddingBlock: space.xs3,
+    paddingInline: space.sm,
     color: color.accent,
     fontSize: text.xs,
     fontWeight: 600,
+    justifySelf: 'start',
     lineHeight: leading.body,
   },
 })

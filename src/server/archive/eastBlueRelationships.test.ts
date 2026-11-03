@@ -10,6 +10,7 @@ import type { RelationshipView } from '~/lib/view/relationships'
 import {
   OP_ARCHIVE,
   opRelationshipsPage as relationshipsPage,
+  withoutDrawings,
 } from '~/test/archive'
 
 const owners = eastBlue.entries.filter(({ kind }) => kind === 'character')
@@ -52,7 +53,7 @@ function projected(
   bookmark: Bookmark,
   locale: Locale,
 ): RelationshipView[] {
-  return relationshipsPage(id, bookmark, locale)
+  return withoutDrawings(relationshipsPage(id, bookmark, locale))
 }
 
 /** Compare only the current cards; separate assertions cover history gates. */
