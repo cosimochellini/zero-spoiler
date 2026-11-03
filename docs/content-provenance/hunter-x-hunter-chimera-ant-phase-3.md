@@ -38,5 +38,7 @@ before this draft is complete.
 - Shizuku, Phinks, Bonolenov, Kalluto, Feitan and Shalnark.
 - Alluka, Milluki, Kikyo, Illumi, Chrollo, Nobunaga, Zeno, Genthru, Kurapika and
   Leorio.
-- Kite’s recovery and puppet state remain pending. The manga reveal of Netero’s
-  orders falls in phase 4. The anime commander’s identity as Gyro is unverified.
+- Kite’s recovery under enemy control is filed at chapter 217 and episode 93.
+  The earlier puppet depiction and the later cage scene remain separate research
+  items. The manga reveal of Netero’s orders falls in phase 4. The anime
+  commander’s identity as Gyro is unverified.
