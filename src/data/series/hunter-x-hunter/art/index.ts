@@ -12,6 +12,7 @@ import {
 import type { Stroke } from '~/lib/view/records'
 
 import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
+import { CHIMERA_ANT_PLACE_DRAWINGS } from './chimera-ant-places'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
@@ -102,6 +103,7 @@ const CHERRY_SHOE: Stroke[] = [
 export const DRAWINGS = {
   ...ZOLDYCK_DRAWINGS,
   ...CHAPTER_ONE_DRAWINGS,
+  ...CHIMERA_ANT_PLACE_DRAWINGS,
   ...TRICK_TOWER_DRAWINGS,
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
@@ -199,6 +201,47 @@ export const DRAWINGS = {
   // feelers and six jointed legs: the aggressive insect under quarantine
   // that Gon and Killua first see in episode 76, and the queen of chapter
   // 186. No eyes and no jaws.
+  // Field notebook representing Spinner Clow’s survey work, episode 77 and chapter 186.
+  'spinner-clow': [
+    { d: 'M46 48 H109 V151 H46 Z' },
+    { d: 'M54 48 V151' },
+    { d: 'M65 75 H98 M65 88 H93 M65 102 H96' },
+    { d: 'M78 151 V164 L85 159 L92 164 V151', role: 'accent' },
+    shadow(80, 178, 36),
+  ],
+  // Leash representing Banana Kavaro’s survey work, episode 77 and chapter 186.
+  'banana-kavaro': [
+    { d: 'M52 63 C18 76 43 119 66 97 C88 76 67 52 52 63 Z' },
+    { d: 'M66 97 C84 132 120 98 111 136' },
+    { d: 'M111 136 L105 149 L115 156 L123 143 Z' },
+    { d: 'M107 142 L119 149', role: 'accent' },
+    shadow(80, 178, 36),
+  ],
+  // Sample case representing Monta Yuras’s survey work, episode 77 and chapter 186.
+  'monta-yuras': [
+    { d: 'M38 79 H122 V144 H38 Z' },
+    { d: 'M38 103 H122' },
+    { d: 'M62 79 V65 H98 V79' },
+    { d: 'M71 99 H89 V114 H71 Z', role: 'accent' },
+    shadow(80, 178, 36),
+  ],
+  // Field satchel representing Stick Dinner’s survey work, episode 77 and chapter 186.
+  'stick-dinner': [
+    { d: 'M41 85 Q80 71 119 85 L113 147 H47 Z' },
+    { d: 'M41 85 Q49 111 80 117 Q111 111 119 85' },
+    { d: 'M64 79 Q49 40 78 39 Q108 38 96 79' },
+    { d: 'M73 108 H87 V123 H73 Z', role: 'accent' },
+    shadow(80, 178, 36),
+  ],
+  // The glass and leaf of the water test, episode 84 and chapter 198.
+  'neferpitou': [
+    { d: 'M45 82 Q47 119 56 151 Q80 165 104 151 Q113 118 115 82' },
+    { d: 'M45 82 C45 64 115 64 115 82 C115 100 45 100 45 82 Z' },
+    { d: 'M51 107 Q79 122 109 107', role: 'ambient' },
+    { d: 'M62 87 Q68 74 97 77 Q91 92 62 87 Z', role: 'accent' },
+    { d: 'M63 87 Q77 81 92 79' },
+    shadow(80, 177, 38),
+  ],
   'chimera-ant-arc': [
     { d: ellipse(114, 104, 26, 18), role: 'accent' },
     {

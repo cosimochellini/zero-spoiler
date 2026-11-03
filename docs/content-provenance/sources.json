@@ -27081,6 +27081,96 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423899",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423899",
       "contentSha256": "a800452d9ba73fba025ad2a97920ddda857ebcba0018293f0bcaac12c13fd13f"
+    },
+    "hxh-en-Chapter_186-416206.json": {
+      "locale": "en",
+      "title": "Chapter 186",
+      "revision": 416206,
+      "revisionDate": "2025-09-01T04:58:40Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_186",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416206",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416206",
+      "contentSha256": "7d49a80902f468cf9db43a87c6408db6b2571d07404e0b48e16278ac97821b00"
+    },
+    "hxh-en-Chapter_198-416866.json": {
+      "locale": "en",
+      "title": "Chapter 198",
+      "revision": 416866,
+      "revisionDate": "2025-09-18T08:01:52Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_198",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416866",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416866",
+      "contentSha256": "8805d754ef5123e7bb25d87b79bebbf9a06fa5f842ea0961ec3547097b1253f9"
+    },
+    "hxh-en-Episode_77_(2011)-416442.json": {
+      "locale": "en",
+      "title": "Episode 77 (2011)",
+      "revision": 416442,
+      "revisionDate": "2025-09-01T23:43:30Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_77_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416442",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416442",
+      "contentSha256": "5583174c0ceb0439d4502a094149b02eb9102794772c071ac62d872ddcfc094a"
+    },
+    "hxh-en-Episode_84_(2011)-416447.json": {
+      "locale": "en",
+      "title": "Episode 84 (2011)",
+      "revision": 416447,
+      "revisionDate": "2025-09-01T23:44:11Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_84_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416447",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416447",
+      "contentSha256": "42af8a597e2eabe498f9017ae9c5f5a97ca2686db797f293505fca7cb84ed6a1"
+    },
+    "hxh-en-Episode_85_(2011)-419187.json": {
+      "locale": "en",
+      "title": "Episode 85 (2011)",
+      "revision": 419187,
+      "revisionDate": "2026-03-29T13:11:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_85_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=419187",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=419187",
+      "contentSha256": "87b0cadc9978faaafc7f5ce84128d2cdb9ae846ba247db55addf76db7bebd757"
+    },
+    "hxh-en-Chapter_188-416207.json": {
+      "locale": "en",
+      "title": "Chapter 188",
+      "revision": 416207,
+      "revisionDate": "2025-09-01T04:58:48Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_188",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416207",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416207",
+      "contentSha256": "8a400df67abd53c425f22df86a6a49e6b3c898191c41c4e686dc749a0771fad6"
+    },
+    "hxh-en-Chapter_189-383210.json": {
+      "locale": "en",
+      "title": "Chapter 189",
+      "revision": 383210,
+      "revisionDate": "2024-02-03T02:42:18Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_189",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=383210",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=383210",
+      "contentSha256": "6cfad742c22d7d94c67b24ec535bc75c35465fe1d6bbb6f717672b9f67ecad22"
+    },
+    "hxh-en-Episode_78_(2011)-416443.json": {
+      "locale": "en",
+      "title": "Episode 78 (2011)",
+      "revision": 416443,
+      "revisionDate": "2025-09-01T23:43:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_78_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416443",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416443",
+      "contentSha256": "41de4571dcefa2461bf39cfe90807f9df28c391afe2a161545fc74fc21313083"
+    },
+    "hxh-en-Episode_79_(2011)-419186.json": {
+      "locale": "en",
+      "title": "Episode 79 (2011)",
+      "revision": 419186,
+      "revisionDate": "2026-03-29T01:36:41Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Episode_79_%282011%29",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=419186",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=419186",
+      "contentSha256": "e284211b6f59cfc94b9305103e8f75912c99194bced07482406fc696de5c3720"
     }
   }
 }

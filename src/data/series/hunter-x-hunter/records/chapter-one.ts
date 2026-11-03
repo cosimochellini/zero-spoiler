@@ -59,6 +59,14 @@ export const chapterOne: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Ging Freecss’s student',
           },
         },
+        {
+          episode: 77,
+          chapter: 186,
+          value: {
+            it: 'Squadra di ricerca di nuove specie',
+            en: 'New species survey team',
+          },
+        },
       ],
     },
     kon: {

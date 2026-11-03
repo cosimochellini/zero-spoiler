@@ -89,7 +89,8 @@ const EXPECTED: Record<string, Expected> = {
   // exam through the visit to Killua's home, chapter-one characters (#760),
   // the Heavens Arena characters and place (#896), Silva (#834), Yorknew
   // City (#900), Greed Island through the finale (#1016–#1019), and its
-  // chronicles for every filed character and the returning cast (#906).
+  // chronicles for every Greed Island character and the returning cast (#906).
+  // Chimera Ant phase 1 (#1020) adds five characters and one place.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -108,14 +109,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 216,
+      affiliations: 222,
       arcs: 7,
-      characters: 108,
+      characters: 113,
       chronicles: 345,
       linkedOrigins: 7,
-      places: 23,
-      statuses: 149,
-      timelines: 471,
+      places: 24,
+      statuses: 154,
+      timelines: 482,
       visits: 0,
     },
     namesSaidEarly: true,

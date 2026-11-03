@@ -109,7 +109,11 @@ describe('the place words of a series that labels its own', () => {
   it.each([
     ['its id', { forms: { port: 'x' } }, ['dolle-harbor', 'soufrabi']],
     ['its label', { forms: { x: 'Port town' } }, ['dolle-harbor', 'soufrabi']],
-    ['its country label', { forms: { x: 'Country' } }, ['republic-of-padokea']],
+    [
+      'its country label',
+      { forms: { x: 'Country' } },
+      ['republic-of-padokea', 'ngl'],
+    ],
     ['its tower label', { forms: { x: 'Tower' } }, ['heavens-arena']],
     ['its Italian tower label', { forms: { x: 'Torre' } }, ['heavens-arena']],
     ['its airport label', { forms: { x: 'Airport' } }, ['lingon-airport']],
@@ -141,7 +145,7 @@ describe('the place words of a series that labels its own', () => {
     [
       'its Italian country label',
       { forms: { x: 'Paese' } },
-      ['republic-of-padokea'],
+      ['republic-of-padokea', 'ngl'],
     ],
     [
       'its Italian label',

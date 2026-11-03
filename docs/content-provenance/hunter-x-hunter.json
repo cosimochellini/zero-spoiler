@@ -4097,5 +4097,61 @@
       "#1019 final inventory disposition: excluded-unverified-place. Venue/reference metadata does not establish an actually visited and properly named story place."
     ],
     "pending": true
+  },
+  "neferpitou": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_198?oldid=416866",
+      "https://hunterxhunter.fandom.com/wiki/Episode_84_(2011)?oldid=416447"
+    ],
+    "unverified": [
+      "Manga panels, licensed anime frames and timestamps, and the Italian dub form were not viewed."
+    ]
+  },
+  "spinner-clow": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_186?oldid=416206",
+      "https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)?oldid=416442"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamp and Italian dub spelling unviewed. The drawing uses an original survey-work motif."
+    ]
+  },
+  "banana-kavaro": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_186?oldid=416206",
+      "https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)?oldid=416442"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamp and Italian dub spelling unviewed. The drawing uses an original survey-work motif."
+    ]
+  },
+  "monta-yuras": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_186?oldid=416206",
+      "https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)?oldid=416442"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamp and Italian dub spelling unviewed. The drawing uses an original survey-work motif."
+    ]
+  },
+  "stick-dinner": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_186?oldid=416206",
+      "https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)?oldid=416442"
+    ],
+    "unverified": [
+      "Manga panels, licensed episode timestamp and Italian dub spelling unviewed. The drawing uses an original survey-work motif."
+    ]
+  },
+  "ngl": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chapter_188?oldid=416207",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_189?oldid=383210",
+      "https://hunterxhunter.fandom.com/wiki/Episode_78_(2011)?oldid=416443",
+      "https://hunterxhunter.fandom.com/wiki/Episode_79_(2011)?oldid=419186"
+    ],
+    "unverified": [
+      "Owner manga pages, licensed episode timestamps and 2011 Italian dub unviewed."
+    ]
   }
 }
