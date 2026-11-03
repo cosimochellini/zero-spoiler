@@ -1355,6 +1355,11 @@ export const dressrosa: OnePieceSaga = {
             en: 'Riku royal family, princess',
           },
         },
+        {
+          episode: 742,
+          chapter: 797,
+          value: { it: 'Famiglia reale Riku', en: 'Riku royal family' },
+        },
       ],
       origin: [
         { episode: 651, chapter: 721, place: 'dressrosa', value: DRESSROSA },
@@ -1932,6 +1937,14 @@ export const dressrosa: OnePieceSaga = {
             en: 'Princess of Dressrosa',
           },
         },
+        {
+          episode: 742,
+          chapter: 797,
+          value: {
+            it: 'Principessa ereditaria di Dressrosa',
+            en: 'Crown princess of Dressrosa',
+          },
+        },
       ],
       log: {
         it: 'Balla per la famiglia che comanda l’isola e riferisce tutto quello che i suoi occhi trovano. Con lo sguardo entra anche nei pensieri di chi ha davanti e ne legge le intenzioni. Obbedisce senza discutere, ma c’è qualcosa nel modo in cui parla del re che non somiglia alla fedeltà.',
@@ -1955,6 +1968,15 @@ export const dressrosa: OnePieceSaga = {
           value: {
             it: 'Famiglia reale Riku, principessa',
             en: 'Riku royal family, princess',
+          },
+        },
+        {
+          episode: 742,
+          chapter: 797,
+          factions: ['independent'],
+          value: {
+            it: 'Famiglia reale Riku, principessa ereditaria',
+            en: 'Riku royal family, crown princess',
           },
         },
       ],

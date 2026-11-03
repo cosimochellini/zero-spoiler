@@ -164,6 +164,14 @@ const MOVED: Moved[] = [
     'Colosseum gladiator of Dressrosa',
     'Riku royal family, princess',
   ],
+  ['rebecca', 742, 797, 'Riku royal family, princess', 'Riku royal family'],
+  [
+    'viola',
+    742,
+    797,
+    'Riku royal family, princess',
+    'Riku royal family, crown princess',
+  ],
   [
     'viola',
     660,
