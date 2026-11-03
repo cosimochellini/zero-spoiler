@@ -285,6 +285,43 @@ describe('Chimera Ant dated facts', () => {
     expect(status(gate)).toBe('deceased')
   })
 
+  it.each([
+    {
+      id: 'knov',
+      episode: 106,
+      chapter: 251,
+      role: {
+        it: 'Hunter ritirato dall’assalto',
+        en: 'Hunter withdrawn from the assault',
+      },
+    },
+    {
+      id: 'palm-siberia',
+      episode: 107,
+      chapter: 254,
+      role: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
+    },
+  ])(
+    'reveals the changed role for $id at its scene',
+    ({ id, episode, chapter, role }) => {
+      const character = characterById(id)
+      for (const locale of LOCALES) {
+        for (const unit of ['episode', 'chapter'] as const) {
+          const gate = unit === 'episode' ? episode : chapter
+          const read = (count: number): string | undefined =>
+            archive.latestOf(
+              readerFor(archive, at(unit, count), locale),
+              character,
+              'role',
+            )?.[locale]
+
+          expect(read(gate - 1)).not.toBe(role[locale])
+          expect(read(gate)).toBe(role[locale])
+        }
+      }
+    },
+  )
+
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([
       'kite',

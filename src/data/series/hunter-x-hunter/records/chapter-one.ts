@@ -78,7 +78,17 @@ export const chapterOne: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
       chronicle: chapterOneChronicles.kite,
-      role: { it: 'Hunter', en: 'Hunter' },
+      role: [
+        { episode: 76, chapter: 1, value: { it: 'Hunter', en: 'Hunter' } },
+        {
+          episode: 93,
+          chapter: 217,
+          value: {
+            it: 'Hunter ritrovato sotto il controllo nemico',
+            en: 'Hunter found under enemy control',
+          },
+        },
+      ],
       log: {
         it: 'Arriva sull’Isola Balena in cerca di indizi su Ging, il suo maestro, che gli ha assegnato come ultima prova il compito di trovarlo. Salva Gon da un orso-volpe e lo rimprovera per essersi avvicinato al suo territorio.',
         en: 'He comes to Whale Island looking for clues about Ging, his teacher, whose final test is to find him. He saves Gon from a foxbear and rebukes him for entering its territory.',

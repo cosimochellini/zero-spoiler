@@ -27,11 +27,12 @@ episode timestamps and Italian dub audio remain unviewed.
 | Zazan’s Palace, Underground Lake, Underground Clinic                                                                                            | Visited. Pending positive names. The current labels are descriptions.                                                                                                                                                     |
 | Mandai City                                                                                                                                     | Filed at chapter 243 and episode 102, where Knuckle names the rendezvous. The planning scene visits the city at chapter 256 and episode 108.                                                                              |
 
-Zazan’s death is filed at chapter 229 and episode 97. The following returning
-dossiers still need a decision on material dated changes before this draft is
-complete.
+Zazan’s death is filed at chapter 229 and episode 97. Knov withdraws at chapter
+251 and episode 106. Palm infiltrates the palace at chapter 254 and episode 107.
+The following returning dossiers still need a decision on material dated changes
+before this draft is complete.
 
-- Gon, Killua, Morel, Knov, Knuckle, Shoot and Palm.
+- Gon, Killua, Morel, Knuckle and Shoot.
 - Meruem, Neferpitou, Shaiapouf, Menthuthuyoupi, Colt, Pike, Peggy, Leol and
   Cheetu.
 - Shizuku, Phinks, Bonolenov, Kalluto, Feitan and Shalnark.

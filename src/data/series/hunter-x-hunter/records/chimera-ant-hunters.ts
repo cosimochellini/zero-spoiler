@@ -141,7 +141,18 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+      role: [
+        {
+          episode: 86,
+          chapter: 200,
+          value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+        },
+        {
+          episode: 107,
+          chapter: 254,
+          value: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
+        },
+      ],
       log: {
         it: 'Si presenta a Gon e Killua e, seduta al tavolo con loro, parla a lungo del suo maestro. Quando nomina Nackul e Schult, il suo Nen fa traboccare la tazza che ha in mano.',
         en: 'She introduces herself to Gon and Killua and, sitting at a table with them, talks at length about her teacher. When she names Knuckle and Shoot, her Nen makes the cup in her hand overflow.',
@@ -174,7 +185,17 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: { it: 'Hunter', en: 'Hunter' },
+      role: [
+        { episode: 86, chapter: 200, value: { it: 'Hunter', en: 'Hunter' } },
+        {
+          episode: 106,
+          chapter: 251,
+          value: {
+            it: 'Hunter ritirato dall’assalto',
+            en: 'Hunter withdrawn from the assault',
+          },
+        },
+      ],
       log: {
         it: 'Arriva con Netero e Morau per sterminare le formichimere, in giacca e cravatta. La sua allieva Pahm vuole unirsi a loro, anche se lui non voleva.',
         en: 'He arrives with Netero and Morel, in a suit and tie, to exterminate the Chimera Ants. His student Palm wants to join them, although he did not want her to.',
