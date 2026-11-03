@@ -5,6 +5,7 @@ import type { Entity, Opened, Relationship } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { RelationshipView } from '~/lib/view/relationships'
+import { withoutDrawings } from '~/test/archive'
 import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES } from '~/test/series'
 
@@ -55,7 +56,9 @@ function projected(
   bookmark: Bookmark,
   locale: Locale,
 ): RelationshipView[] {
-  return relationshipsPage(id, readerFor(archive, bookmark, locale))
+  return withoutDrawings(
+    relationshipsPage(id, readerFor(archive, bookmark, locale)),
+  )
 }
 
 /** Where an entry opens in one unit: the later of the entry and its owner. */
@@ -193,7 +196,9 @@ describe.each(LOCALES)('Hunter x Hunter payload boundaries in %s', (locale) => {
         const sent = projected(owner, bookmark, locale)
         const payload = characterPayload?.run(bookmark, locale, owner)
 
-        expect(payload).toStrictEqual(sent)
+        expect(payload).toStrictEqual(
+          relationshipsPage(owner, readerFor(archive, bookmark, locale)),
+        )
         expect(leaksIn(payload, bookmark)).toStrictEqual([])
         expect(
           sent.map(({ person, type, summary }) => ({
