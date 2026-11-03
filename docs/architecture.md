@@ -100,16 +100,18 @@ recruitment (#1016) and arrival/training through chapter 141 (#1017) add
 verified named characters and visited places, with source-only records where the
 naming evidence reaches only one medium. Alliances and the Bomber revelations
 through chapter 159 (#1018) add source-verified names and visited places; the
-finale and the full candidate audit (#1019) close the arc, apart from 31
-candidates still unnamed (#1032). Greed Island chronicles cover every filed
-character and returning characters’ events through episode 75 / chapter 185
-(#906), preserving the records’ source restrictions. Silva, Killua's father, is
-named in episode 24 but in chapter 95 in the manga, so his record is unanchored
-at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but named in the
-episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named only in
-credits and supplements, and Hishita only in chapter 329 (#912). Every Hunter
-Exam character has a chronicle (#762); the Heavens Arena characters get theirs
-in #898. Records are not added from unnamed appearances or supplemental names.
+finale and the full candidate audit (#1019) close the arc. Of the 31 candidates
+the audit left unnamed, #1032 files Michael, named at the intercom in chapter
+148 (manga-only), and records an owner-ruled exclusion with the missing evidence
+for the other 30. Greed Island chronicles cover every character filed through
+#1019 and returning characters’ events through episode 75 / chapter 185 (#906),
+preserving the records’ source restrictions. Silva, Killua's father, is named in
+episode 24 but in chapter 95 in the manga, so his record is unanchored at 24 /
+95 (#834), as is Chrollo, shown from chapter 71 but named in the episodes only
+from 53 and filed at 54 / 71 (#900); Kikyo is named only in credits and
+supplements, and Hishita only in chapter 329 (#912). Every Hunter Exam character
+has a chronicle (#762); the Heavens Arena characters get theirs in #898. Records
+are not added from unnamed appearances or supplemental names.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -212,11 +214,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 138                                                   |
-| Characters        | 108                                                   |
+| Records           | 139                                                   |
+| Characters        | 109                                                   |
 | Arcs, places      | 7 · 23                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 138, one per record, plus 21 redrawings of 21 records |
+| Line drawings     | 139, one per record, plus 21 redrawings of 21 records |
 | Chronicle stories | 345, for 108 characters                               |
 
 ### `game-of-thrones`
