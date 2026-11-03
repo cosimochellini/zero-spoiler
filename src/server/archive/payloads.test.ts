@@ -228,6 +228,9 @@ describe.each(SERIES)('every payload of $slug', (series) => {
         }
       }
     },
+    // Every bookmark of the sweep, which grows with each series' records:
+    // Hunter x Hunter's shelves passed five seconds on CI with #1047.
+    15_000,
   )
 
   // The sampling above asks for a key at a few bookmarks only, so every key

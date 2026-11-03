@@ -244,6 +244,7 @@ export const NAMES_KEPT = {
   'reina': 'Reina',
   'haruna': 'Haruna',
   'pekuba': 'Pekuba',
+  'balda': 'Balda',
   'yunju': 'Yunju',
   'baro': 'Baro',
   'baital': 'Baital',
