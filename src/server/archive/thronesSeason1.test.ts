@@ -207,6 +207,21 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
+  // Hoster opens at one pin with a status per medium: alive in the book, a corpse on screen.
+  {
+    id: 'hoster-tully',
+    episode: 23,
+    chapter: 72,
+    value: 'alive',
+    source: 'chapter',
+  },
+  {
+    id: 'hoster-tully',
+    episode: 23,
+    chapter: 72,
+    value: 'deceased',
+    source: 'episode',
+  },
   { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
   { id: 'stiv', episode: 6, chapter: 38, value: 'deceased' },
   { id: 'wallen', episode: 6, chapter: 38, value: 'deceased' },

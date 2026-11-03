@@ -1441,7 +1441,7 @@ export const season1: ThronesSaga = {
       name: { it: 'Tobho Mott', en: 'Tobho Mott' },
       summary: {
         it: 'Un mastro armaiolo di Approdo del Re, che ha Gendry come apprendista.',
-        en: 'A master armourer in King’s Landing, who has Gendry as his apprentice.',
+        en: 'A master armorer in King’s Landing, who has Gendry as his apprentice.',
       },
       visual: { art: 'tobho-mott', tint: 'orange' },
     },
@@ -4254,7 +4254,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'tobho-mott': {
-      role: { it: 'Mastro armaiolo', en: 'Master armourer' },
+      role: { it: 'Mastro armaiolo', en: 'Master armorer' },
       log: {
         it: 'Ha la sua bottega in una via di fabbri di Approdo del Re. Eddard Stark va da lui per vedere il ragazzo che Jon Arryn era venuto a cercare, il suo apprendista Gendry.',
         en: 'He keeps his shop on a street of smiths in King’s Landing. Eddard Stark comes to see the boy Jon Arryn had come looking for, his apprentice Gendry.',
