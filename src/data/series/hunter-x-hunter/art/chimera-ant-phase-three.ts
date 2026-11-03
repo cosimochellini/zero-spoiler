@@ -105,4 +105,14 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M115 140 H138', role: 'ambient' },
     shadow(80, 160, 54),
   ],
+  'meleoron': [
+    { d: 'M27 120 Q49 85 84 87 Q115 86 130 112 L111 126 Q69 140 38 128' },
+    {
+      d: 'M38 128 Q18 136 20 152 Q24 169 43 157 Q51 148 42 143',
+      role: 'accent',
+    },
+    { d: 'M56 126 L52 146 L69 148 M91 130 L96 146 L111 144', role: 'soft' },
+    { d: ellipse(114, 107, 4, 4), role: 'soft' },
+    shadow(82, 167, 46),
+  ],
 } satisfies Drawings

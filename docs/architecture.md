@@ -223,11 +223,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 191                                                   |
-| Characters        | 148                                                   |
+| Records           | 192                                                   |
+| Characters        | 149                                                   |
 | Arcs, places      | 7 · 36                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 191, one per record, plus 32 redrawings of 32 records |
+| Line drawings     | 192, one per record, plus 32 redrawings of 32 records |
 | Chronicle stories | 345, for 108 characters                               |
 
 ### `game-of-thrones`

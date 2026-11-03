@@ -4,6 +4,19 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
   {
     entries: [
       {
+        id: 'meleoron',
+        kind: 'character',
+        revealedAtEpisode: 101,
+        revealedAtChapter: 241,
+        source: 'chapter',
+        name: { it: 'Meleoron', en: 'Meleoron' },
+        summary: {
+          it: 'Un ex comandante di divisione.',
+          en: 'A former Squadron Leader.',
+        },
+        visual: { art: 'meleoron', tint: 'green' },
+      },
+      {
         id: 'bihorn',
         kind: 'character',
         revealedAtEpisode: 97,
@@ -62,6 +75,24 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
       },
     ],
     dossiers: {
+      meleoron: {
+        role: {
+          it: 'Ex comandante di divisione',
+          en: 'Former Squadron Leader',
+        },
+        log: {
+          it: 'Segue Gon e gli chiede di collaborare.',
+          en: 'Follows Gon and asks to work with him.',
+        },
+        affiliation: [
+          {
+            episode: 101,
+            chapter: 241,
+            value: { it: 'Formichimere', en: 'Chimera Ants' },
+          },
+        ],
+        status: [{ episode: 101, chapter: 241, value: 'alive' }],
+      },
       bihorn: {
         role: { it: 'Formichimera', en: 'Chimera Ant' },
         log: {

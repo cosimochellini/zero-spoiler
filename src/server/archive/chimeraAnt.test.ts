@@ -114,6 +114,13 @@ const PHASE_TWO: Row[] = [
 ]
 const UNITS = ['episode', 'chapter'] as const
 const PHASE_THREE: Row[] = [
+  {
+    id: 'meleoron',
+    episode: 101,
+    chapter: 241,
+    place: false,
+    source: 'chapter',
+  },
   { id: 'meteor-city', episode: 24, chapter: 102, place: true },
   { id: 'peijin', episode: 102, chapter: 243, place: true, source: 'chapter' },
   { id: 'mandai-city', episode: 102, chapter: 243, place: true },
