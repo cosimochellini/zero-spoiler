@@ -158,6 +158,7 @@ export const NAMES_KEPT = {
   // Phase 3 names without standalone sections in the Italian character list.
   // The list uses Komugi and Pell in prose. Dub audio is unviewed.
   'komugi': 'Komugi',
+  'meleoron': 'Meleoron',
   'pell': 'Pell',
   'remora': 'Remora',
   'tsukuma': 'Tsukuma',

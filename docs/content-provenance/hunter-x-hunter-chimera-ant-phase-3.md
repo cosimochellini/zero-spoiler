@@ -59,3 +59,13 @@ that confirms his death.
 Pike’s death is filed at chapter 228. The episode 97 death is also confirmed,
 but the existing record is manga only and the anime scene does not establish a
 naming gate.
+
+At the clinic, Killua offers to introduce Ikalgo to the other Hunters. The scene
+establishes their friendship, and the synopses do not report a spoken name
+there. See chapter 255 (revision 418706) and episode 107 (revision 410888).
+
+Flutter’s biography (revision 424825) dates the killing to chapter 246 and
+identifies the body in chapter 248. The chapter 248 synopsis calls him
+unconscious, and episode 104 calls him defeated. Carry the death disclosure into
+phase 4 for verification against the Living Dead Dolls scene in chapter 262 and
+its anime counterpart.
