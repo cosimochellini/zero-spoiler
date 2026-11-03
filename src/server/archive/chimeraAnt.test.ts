@@ -364,6 +364,18 @@ describe('Chimera Ant dated facts', () => {
     )
   })
 
+  it.each(LOCALES)('dates Leol’s death in the anime in %s', (locale) => {
+    const before = readerFor(archive, at('episode', 106), locale)
+    const reached = readerFor(archive, at('episode', 107), locale)
+    const leol = characterById('hagya')
+
+    expect(archive.latestOf(before, leol, 'status')).toBe('alive')
+    expect(archive.latestOf(reached, leol, 'status')).toBe('deceased')
+    expect(drawingsFor(['hagya'], reached)['hagya']).not.toStrictEqual(
+      drawingsFor(['hagya'], before)['hagya'],
+    )
+  })
+
   it.each(LOCALES)('uses the name told by each medium in %s', (locale) => {
     const anime = readerFor(archive, at('episode', 106), locale)
     const manga = readerFor(archive, at('chapter', 192), locale)

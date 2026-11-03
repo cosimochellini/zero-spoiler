@@ -199,7 +199,6 @@ export const chimeraAntSquadsRedrawn: Redrawings = {
     {
       episode: 107,
       chapter: 254,
-      source: 'chapter',
       value: [
         ...moved(
           CHIMERA_ANT_SQUADS_DRAWINGS.hagya,
