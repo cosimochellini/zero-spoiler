@@ -3,8 +3,9 @@ import type { PlaceDossier } from '~/data/types'
 import type { ThronesSaga, ThronesVocabulary } from './saga'
 
 /**
- * Season 1 of the show and *A Game of Thrones*: the main cast (#852) and the
- * places its scenes are set in (#853), each filed where they appear and are named, in each medium. Chapters are the
+ * Season 1 of the show and *A Game of Thrones*: the main cast (#852), the
+ * recurring characters of Winterfell, King’s Landing, the Vale and the
+ * Riverlands (#1006) and the places its scenes are set in (#853), each filed where they appear and are named, in each medium. Chapters are the
  * site's absolute ones: the book's prologue is chapter 1, so its chapter N
  * is N + 1. Every dated step pins its chapter, because the two media gate
  * the same fact at unrelated numbers. Gates and steps are taken from the
@@ -951,6 +952,861 @@ export const season1: ThronesSaga = {
         en: 'A Lhazareen godswife and healer, taken captive when Drogo’s khalasar attacks her town.',
       },
       visual: { art: 'mirri-maz-duur', tint: 'wine' },
+    },
+    // Book only. Bran I (site chapter 2), he rides in Lord Eddard’s party that finds the direwolf pups. The show never casts him; episode 1, where the pups are found, orders him.
+    {
+      id: 'hullen',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 2,
+      name: { it: 'Hullen', en: 'Hullen' },
+      summary: {
+        it: 'Il mastro dei cavalli di Grande Inverno, al servizio degli Stark.',
+        en: 'The master of horse at Winterfell, in the Starks’ service.',
+      },
+      visual: { art: 'hullen', tint: 'sand' },
+    },
+    // Book only. Arya I (site chapter 8), at Septa Mordane’s needlework lesson with Sansa. In the show she is an extra no episode names on screen; episode 1 orders her.
+    {
+      id: 'jeyne-poole',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 8,
+      name: { it: 'Jeyne Poole', en: 'Jeyne Poole' },
+      summary: {
+        it: 'La figlia dell’intendente di Grande Inverno e la migliore amica di Sansa Stark.',
+        en: 'The daughter of Winterfell’s steward and Sansa Stark’s closest friend.',
+      },
+      visual: { art: 'jeyne-poole', tint: 'pink' },
+    },
+    // Show: “The Kingsroad” (episode 2), named as the smith who forged Arya’s sword for Jon; seen unnamed in episode 1. Books: Bran VI (site chapter 54), the first chapter he appears in, after mentions from Bran II on.
+    {
+      id: 'mikken',
+      kind: 'character',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 54,
+      name: { it: 'Mikken', en: 'Mikken' },
+      summary: {
+        it: 'Il fabbro di Grande Inverno, che forgia le armi per la casa degli Stark.',
+        en: 'The blacksmith of Winterfell, who forges arms for the Stark household.',
+      },
+      visual: { art: 'mikken', tint: 'ocher' },
+    },
+    // Book only. Catelyn III (site chapter 15), he reports to Catelyn as the new captain of the guard after the attack on Bran. The show has no such character; episode 2, which tells the same attack, orders him.
+    {
+      id: 'hallis-mollen',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 15,
+      name: { it: 'Hallis Mollen', en: 'Hallis Mollen' },
+      summary: {
+        it: 'Il capitano della guardia di Grande Inverno dopo la partenza di lord Stark verso sud.',
+        en: 'The captain of the guard at Winterfell after Lord Stark leaves for the south.',
+      },
+      visual: { art: 'hallis-mollen', tint: 'ice' },
+    },
+    // Show: “The Kingsroad” (episode 2), sparring with Arya by the river when Joffrey interferes. Books: Sansa I (site chapter 16), Arya rides off with him and the same quarrel follows.
+    {
+      id: 'mycah',
+      kind: 'character',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 16,
+      name: { it: 'Mycah', en: 'Mycah' },
+      summary: {
+        it: 'Il figlio di un macellaio che viaggia verso sud al seguito del re e si allena con la spada insieme ad Arya Stark.',
+        en: 'A butcher’s boy who travels south with the king’s party and practises swordplay with Arya Stark.',
+      },
+      visual: { art: 'mycah', tint: 'wine' },
+    },
+    // Show: “A Golden Crown” (episode 6), one of the deserters who waylay Bran in the wolfswood. Books: Bran V (site chapter 38), the same ambush. He dies in the scene that opens him, so the log tells it.
+    {
+      id: 'stiv',
+      kind: 'character',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 38,
+      name: { it: 'Stiv', en: 'Stiv' },
+      summary: {
+        it: 'Un disertore dei Guardiani della notte che con Osha tende un agguato a Bran Stark nella Foresta del Lupo.',
+        en: 'A deserter of the Night’s Watch who waylays Bran Stark in the wolfswood with Osha.',
+      },
+      visual: { art: 'stiv', tint: 'acid' },
+    },
+    // Show: “A Golden Crown” (episode 6), one of the deserters who waylay Bran in the wolfswood. Books: Bran V (site chapter 38), the gaunt man of the same ambush. He dies in the scene that opens him: Robb kills him in the show, Grey Wind in the book, so the log says neither.
+    {
+      id: 'wallen',
+      kind: 'character',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 38,
+      name: { it: 'Wellen', en: 'Wallen' },
+      summary: {
+        it: 'Un disertore dei Guardiani della notte che con Stiv e Osha tende un agguato a Bran Stark nella Foresta del Lupo.',
+        en: 'A deserter of the Night’s Watch who waylays Bran Stark in the wolfswood with Stiv and Osha.',
+      },
+      visual: { art: 'wallen', tint: 'teal' },
+    },
+    // Show: “The Pointy End” (episode 8), at Robb’s war council, demanding the vanguard. Books: Bran VI (site chapter 54), the same quarrel, where Grey Wind bites off two of his fingers.
+    {
+      id: 'greatjon-umber',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 54,
+      name: { it: 'Greatjon Umber', en: 'Greatjon Umber' },
+      summary: {
+        it: 'Un enorme lord del Nord, a capo di Casa Umber, che risponde alla chiamata alle armi di Robb Stark.',
+        en: 'A huge northern lord, the head of House Umber, who answers Robb Stark’s call to arms.',
+      },
+      visual: { art: 'greatjon-umber', tint: 'orange' },
+    },
+    // Show: “Oathbreaker” (episode 53), his first appearance, when he comes to Winterfell to treat with Ramsay. Books: Catelyn X (site chapter 64), in Robb’s guard at the Whispering Wood. The two media share little at either gate, so the text keeps to who he is.
+    {
+      id: 'smalljon-umber',
+      kind: 'character',
+      revealedAtEpisode: 53,
+      revealedAtChapter: 64,
+      name: { it: 'Smalljon Umber', en: 'Smalljon Umber' },
+      summary: {
+        it: 'Il figlio di Greatjon Umber, della casata che tiene l’Ultimo Focolare.',
+        en: 'Greatjon Umber’s son, of the house that holds Last Hearth.',
+      },
+      visual: { art: 'smalljon-umber', tint: 'red' },
+    },
+    // Show: “A Man Without Honor” (episode 17), the first episode that names him; an unnamed figure stands for him in episode 10. Books: Bran VI (site chapter 54), he arrives at Winterfell with his sons, the last of Robb’s bannermen.
+    {
+      id: 'rickard-karstark',
+      kind: 'character',
+      revealedAtEpisode: 17,
+      revealedAtChapter: 54,
+      name: { it: 'Rickard Karstark', en: 'Rickard Karstark' },
+      summary: {
+        it: 'Il lord di Karhold, uno dei signori del Nord che combattono nell’esercito di Robb Stark.',
+        en: 'The lord of Karhold, one of the northern lords who fight in Robb Stark’s host.',
+      },
+      visual: { art: 'rickard-karstark', tint: 'cyan' },
+    },
+    // Show: “Garden of Bones” (episode 14), his first appearance, reporting to Robb after the battle at Oxcross. Books: Bran VI (site chapter 54), among Robb’s bannermen at Winterfell.
+    {
+      id: 'roose-bolton',
+      kind: 'character',
+      revealedAtEpisode: 14,
+      revealedAtChapter: 54,
+      name: { it: 'Roose Bolton', en: 'Roose Bolton' },
+      summary: {
+        it: 'Il lord di Forte Terrore, un signore del Nord silenzioso che combatte nell’esercito di Robb Stark.',
+        en: 'The lord of the Dreadfort, a quiet northern lord who fights in Robb Stark’s host.',
+      },
+      visual: { art: 'roose-bolton', tint: 'lavender' },
+    },
+    // Show: “The Pointy End” (episode 8), among the lords at Robb’s war council. Books: Catelyn VIII (site chapter 56), at Robb’s war council at Moat Cailin, the first chapter he appears in.
+    {
+      id: 'galbart-glover',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 56,
+      name: { it: 'Galbart Glover', en: 'Galbart Glover' },
+      summary: {
+        it: 'Il lord di Deepwood Motte, uno dei signori del Nord nell’esercito di Robb Stark.',
+        en: 'The lord of Deepwood Motte, one of the northern lords in Robb Stark’s host.',
+      },
+      visual: { art: 'galbart-glover', tint: 'green' },
+    },
+    // Show: “The Broken Man” (episode 57), his first appearance, when Jon, Sansa and Davos ask him for men. Books: Bran VI (site chapter 54), at Winterfell, asking Robb for a command. The two media share little at either gate, so the text keeps to who he is.
+    {
+      id: 'robett-glover',
+      kind: 'character',
+      revealedAtEpisode: 57,
+      revealedAtChapter: 54,
+      name: { it: 'Robett Glover', en: 'Robett Glover' },
+      summary: {
+        it: 'Un membro di Casa Glover, la casata del Nord che ha sede a Deepwood Motte.',
+        en: 'A member of House Glover, the northern house whose seat is Deepwood Motte.',
+      },
+      visual: { art: 'robett-glover', tint: 'blue' },
+    },
+    // Show: “The Pointy End” (episode 8), among the lords at Robb’s war council. Books: Bran VI (site chapter 54), she leads her people to Winterfell.
+    {
+      id: 'maege-mormont',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 54,
+      name: { it: 'Maege Mormont', en: 'Maege Mormont' },
+      summary: {
+        it: 'La lady dell’Isola dell’Orso, a capo di Casa Mormont, che porta i suoi combattenti nell’esercito di Robb Stark.',
+        en: 'The lady of Bear Island, the head of House Mormont, who brings her fighters to Robb Stark’s host.',
+      },
+      visual: { art: 'maege-mormont', tint: 'azure' },
+    },
+    // Book only. Catelyn X (site chapter 64), in Robb’s guard at the Whispering Wood. The show has no such character; episode 9, where Robb takes Jaime, orders her.
+    {
+      id: 'dacey-mormont',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 9,
+      revealedAtChapter: 64,
+      name: { it: 'Dacey Mormont', en: 'Dacey Mormont' },
+      summary: {
+        it: 'La figlia maggiore di lady Maege Mormont, che combatte nella guardia di Robb Stark.',
+        en: 'Lady Maege Mormont’s eldest daughter, who fights in Robb Stark’s guard.',
+      },
+      visual: { art: 'dacey-mormont', tint: 'magenta' },
+    },
+    // Show: “The Rains of Castamere” (episode 29), his only appearance, at the wedding feast at the Twins. Books: Catelyn VIII (site chapter 56), he rides with Catelyn to Moat Cailin.
+    {
+      id: 'wendel-manderly',
+      kind: 'character',
+      revealedAtEpisode: 29,
+      revealedAtChapter: 56,
+      name: { it: 'Wendel Manderly', en: 'Wendel Manderly' },
+      summary: {
+        it: 'Un cavaliere di Casa Manderly, figlio del lord di Porto Bianco.',
+        en: 'A knight of House Manderly, a son of the lord of White Harbor.',
+      },
+      visual: { art: 'wendel-manderly', tint: 'teal' },
+    },
+    // Show: “Cripples, Bastards, and Broken Things” (episode 4), fawning on Catelyn at the inn at the crossroads. Books: Catelyn V (site chapter 29), the same scene at the inn.
+    {
+      id: 'marillion',
+      kind: 'character',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Marillion', en: 'Marillion' },
+      summary: {
+        it: 'Un giovane cantastorie che si trova alla Locanda all’Incrocio quando Catelyn Stark fa prigioniero Tyrion Lannister.',
+        en: 'A young singer who is at the Inn at the Crossroads when Catelyn Stark takes Tyrion Lannister prisoner.',
+      },
+      visual: { art: 'marillion', tint: 'lavender' },
+    },
+    // Show: “Cripples, Bastards, and Broken Things” (episode 4), he draws his sword on Tyrion for Catelyn at the inn. Books: Catelyn V (site chapter 29), the first knight to stand with her.
+    {
+      id: 'willis-wode',
+      kind: 'character',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Willis Wode', en: 'Willis Wode' },
+      summary: {
+        it: 'Un cavaliere al servizio di Casa Whent di Harrenhal che si schiera con Catelyn Stark alla Locanda all’Incrocio.',
+        en: 'A knight sworn to House Whent of Harrenhal who backs Catelyn Stark at the Inn at the Crossroads.',
+      },
+      visual: { art: 'willis-wode', tint: 'sand' },
+    },
+    // Show: “First of His Name” (episode 35), his first appearance, letting Littlefinger and his companion through the Bloody Gate. Books: Catelyn VI (site chapter 35), he meets Catelyn’s party on the road to the Bloody Gate.
+    {
+      id: 'donnel-waynwood',
+      kind: 'character',
+      revealedAtEpisode: 35,
+      revealedAtChapter: 35,
+      name: { it: 'Donnel Waynwood', en: 'Donnel Waynwood' },
+      summary: {
+        it: 'Un cavaliere di Casa Waynwood che custodisce la Porta Insanguinata, l’accesso alla Valle.',
+        en: 'A knight of House Waynwood who keeps the Bloody Gate, the way into the Vale.',
+      },
+      visual: { art: 'donnel-waynwood', tint: 'ocher' },
+    },
+    // Book only. Catelyn VI (site chapter 35), he receives Catelyn at the Gates of the Moon. The show has no such character; episode 5, where Catelyn reaches the Eyrie, orders him.
+    {
+      id: 'nestor-royce',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 35,
+      name: { it: 'Nestor Royce', en: 'Nestor Royce' },
+      summary: {
+        it: 'L’alto attendente della Valle, che custodisce le Porte della Luna ai piedi del monte del Nido dell’Aquila.',
+        en: 'The High Steward of the Vale, who keeps the Gates of the Moon at the foot of the Eyrie’s mountain.',
+      },
+      visual: { art: 'nestor-royce', tint: 'azure' },
+    },
+    // Book only. Catelyn VI (site chapter 35), she guides Catelyn up the mountain to the Eyrie by night. The show has no such character; episode 5, where Catelyn reaches the Eyrie, orders her.
+    {
+      id: 'mya-stone',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 35,
+      name: { it: 'Mya Stone', en: 'Mya Stone' },
+      summary: {
+        it: 'Una giovane che guida i viaggiatori lungo il sentiero di montagna fino al Nido dell’Aquila.',
+        en: 'A young woman who guides travellers up the mountain path to the Eyrie.',
+      },
+      visual: { art: 'mya-stone', tint: 'cyan' },
+    },
+    // Show: “A Golden Crown” (episode 6), named as Lysa’s champion; seen unnamed in episode 5. Books: Catelyn VI (site chapter 35), leaving Lysa’s chamber with her maester.
+    {
+      id: 'vardis-egen',
+      kind: 'character',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 35,
+      name: { it: 'Vardis Egen', en: 'Vardis Egen' },
+      summary: {
+        it: 'Il capitano della guardia di Casa Arryn al Nido dell’Aquila.',
+        en: 'The captain of House Arryn’s guard at the Eyrie.',
+      },
+      visual: { art: 'vardis-egen', tint: 'blue' },
+    },
+    // Show: “A Golden Crown” (episode 6), named as the gaoler Tyrion bargains with; seen unnamed in episode 5. Books: Tyrion V (site chapter 39), the gaoler of the sky cells.
+    {
+      id: 'mord',
+      kind: 'character',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 39,
+      name: { it: 'Mord', en: 'Mord' },
+      summary: {
+        it: 'Il rozzo carceriere delle celle del cielo del Nido dell’Aquila.',
+        en: 'The brutish gaoler of the Eyrie’s sky cells.',
+      },
+      visual: { art: 'mord', tint: 'wine' },
+    },
+    // Book only. Tyrion V (site chapter 39), at the hearing where Tyrion demands a trial by combat. The show has no such character; episode 6, which tells the same hearing, orders him.
+    {
+      id: 'lyn-corbray',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 39,
+      name: { it: 'Lyn Corbray', en: 'Lyn Corbray' },
+      summary: {
+        it: 'Un cavaliere della Valle alla corte di lady Lysa, pronto a battersi per lei.',
+        en: 'A knight of the Vale at Lady Lysa’s court, eager to fight for her.',
+      },
+      visual: { art: 'lyn-corbray', tint: 'red' },
+    },
+    // Show: “The Mountain and the Viper” (episode 38), her only appearance, at the inquiry at the Eyrie. Books: Tyrion V (site chapter 39), in the hall with her sons when Tyrion demands a trial.
+    {
+      id: 'anya-waynwood',
+      kind: 'character',
+      revealedAtEpisode: 38,
+      revealedAtChapter: 39,
+      name: { it: 'Anya Waynwood', en: 'Anya Waynwood' },
+      summary: {
+        it: 'La lady di Ironoaks e capo di Casa Waynwood, una delle grandi casate della Valle.',
+        en: 'The lady of Ironoaks and the head of House Waynwood, one of the great houses of the Vale.',
+      },
+      visual: { art: 'anya-waynwood', tint: 'ice' },
+    },
+    // Show: “The Pointy End” (episode 8), leading the hill tribesmen who surround Tyrion and Bronn. Books: Tyrion VI (site chapter 43), Shagga son of Dolf, whose clansmen do the same.
+    {
+      id: 'shagga',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 43,
+      name: { it: 'Shagga', en: 'Shagga' },
+      summary: {
+        it: 'Un enorme guerriero dei Corvi di Pietra, uno dei clan delle montagne della Valle.',
+        en: 'A huge warrior of the Stone Crows, one of the clans of the mountains of the Vale.',
+      },
+      visual: { art: 'shagga', tint: 'pink' },
+    },
+    // Show: “The Pointy End” (episode 8), he agrees to Tyrion’s alliance and goes with him to Tywin’s camp. Books: Tyrion VII (site chapter 57), Timett son of Timett of the Burned Men, at Lord Tywin’s inn.
+    {
+      id: 'timett',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 57,
+      name: { it: 'Timmet', en: 'Timett' },
+      summary: {
+        it: 'Il capo orbo degli Uomini Bruciati, uno dei clan delle montagne della Valle.',
+        en: 'The one-eyed leader of the Burned Men, one of the clans of the mountains of the Vale.',
+      },
+      visual: { art: 'timett', tint: 'orange' },
+    },
+    // Show: “The Pointy End” (episode 8), she goes with Tyrion, Shagga and Timett to Tywin’s camp. Books: Tyrion VII (site chapter 57), Chella daughter of Cheyk of the Black Ears.
+    {
+      id: 'chella',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 57,
+      name: { it: 'Chella', en: 'Chella' },
+      summary: {
+        it: 'La guerriera a capo delle Orecchie Nere, uno dei clan delle montagne della Valle.',
+        en: 'The leader of the Black Ears, one of the clans of the mountains of the Vale.',
+      },
+      visual: { art: 'chella', tint: 'acid' },
+    },
+    // Show: "The Pointy End", he leads the Lannister guards who break up Arya's
+    // lesson with Syrio. Books: Sansa II (site chapter 30), he rides in the
+    // Hand's tourney.
+    {
+      id: 'meryn-trant',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 30,
+      name: { it: 'Meryn Trant', en: 'Meryn Trant' },
+      summary: {
+        it: 'Un cavaliere della Guardia reale, al servizio del re ad Approdo del Re.',
+        en: 'A knight of the Kingsguard, in the king’s service in King’s Landing.',
+      },
+      visual: { art: 'meryn-trant', tint: 'ice' },
+    },
+    // Show: "Blackwater" (episode 19), Joffrey leaves him and Ser Mandon to fight
+    // beside Tyrion. Books: Eddard VIII (site chapter 34), at the small council in
+    // his white cloak.
+    {
+      id: 'boros-blount',
+      kind: 'character',
+      revealedAtEpisode: 19,
+      revealedAtChapter: 34,
+      name: { it: 'Boros Blount', en: 'Boros Blount' },
+      summary: {
+        it: 'Un cavaliere della Guardia reale, uno dei sette giurati a difendere il re.',
+        en: 'A knight of the Kingsguard, one of the seven sworn to guard the king.',
+      },
+      visual: { art: 'boros-blount', tint: 'sand' },
+    },
+    // Show: "Blackwater" (episode 19), he reports to Cersei and is sent to fight
+    // beside Tyrion. Books: Sansa IV (site chapter 52), he guards the council
+    // chamber doors and walks Sansa back.
+    {
+      id: 'mandon-moore',
+      kind: 'character',
+      revealedAtEpisode: 19,
+      revealedAtChapter: 52,
+      name: { it: 'Mandon Moore', en: 'Mandon Moore' },
+      summary: {
+        it: 'Un cavaliere della Guardia reale di guardia alla famiglia reale ad Approdo del Re.',
+        en: 'A knight of the Kingsguard who guards the royal family in King’s Landing.',
+      },
+      visual: { art: 'mandon-moore', tint: 'lavender' },
+    },
+    // Book only. The show never names him; the episode orders him at "The Pointy
+    // End", where Barristan is dismissed. Books: Sansa V (site chapter 58), in the
+    // throne room when Barristan is dismissed.
+    {
+      id: 'arys-oakheart',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 58,
+      name: { it: 'Arys Oakheart', en: 'Arys Oakheart' },
+      summary: {
+        it: 'Un cavaliere della Guardia reale alla corte di Approdo del Re.',
+        en: 'A knight of the Kingsguard at the court in King’s Landing.',
+      },
+      visual: { art: 'arys-oakheart', tint: 'azure' },
+    },
+    // Show: "Lord Snow", he pours Robert's wine and the king mocks his name.
+    // Books: Eddard VII (site chapter 31), one of the squires Robert rages at in
+    // his pavilion.
+    {
+      id: 'lancel-lannister',
+      kind: 'character',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 31,
+      name: { it: 'Lancel Lannister', en: 'Lancel Lannister' },
+      summary: {
+        it: 'Un giovane della casata Lannister, scudiero di re Robert.',
+        en: 'A young Lannister who serves King Robert as a squire.',
+      },
+      visual: { art: 'lancel-lannister', tint: 'red' },
+    },
+    // Show: "The North Remembers" (episode 11), he turns up drunk at Joffrey's
+    // nameday tourney and Sansa saves him. Books: Sansa V (site chapter 58), drunk
+    // at court; Sansa saves him and Joffrey makes him a fool.
+    {
+      id: 'dontos-hollard',
+      kind: 'character',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 58,
+      name: { it: 'Dontos Hollard', en: 'Dontos Hollard' },
+      summary: {
+        it: 'Un cavaliere ubriacone che Sansa Stark salva dall’ira di re Joffrey.',
+        en: 'A drunken knight whom Sansa Stark saves from King Joffrey’s anger.',
+      },
+      visual: { art: 'dontos-hollard', tint: 'wine' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", he refuses to talk to Jory and
+    // is killed by Gregor in the joust. Books: Sansa II (site chapter 30), killed
+    // by Gregor Clegane in the Hand's tourney.
+    {
+      id: 'hugh-of-the-vale',
+      kind: 'character',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 30,
+      name: { it: 'Hugh della Valle', en: 'Hugh of the Vale' },
+      summary: {
+        it: 'Un giovane cavaliere, un tempo scudiero di Jon Arryn, il defunto Primo Cavaliere del Re.',
+        en: 'A young knight, once squire to Jon Arryn, the late Hand of the King.',
+      },
+      visual: { art: 'hugh-of-the-vale', tint: 'pink' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Eddard visits his smithy and
+    // meets Gendry. Books: Eddard VI (site chapter 28), Eddard visits his shop on
+    // the Street of Steel.
+    {
+      id: 'tobho-mott',
+      kind: 'character',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 28,
+      name: { it: 'Tobho Mott', en: 'Tobho Mott' },
+      summary: {
+        it: 'Un mastro armaiolo di Approdo del Re, che ha Gendry come apprendista.',
+        en: 'A master armorer in King’s Landing, who has Gendry as his apprentice.',
+      },
+      visual: { art: 'tobho-mott', tint: 'orange' },
+    },
+    // Show only. Show: "The Wolf and the Lion", she shows Eddard her baby by Robert
+    // in Littlefinger's brothel. The books never name the mother; the chapter
+    // orders her at Eddard IX (site chapter 36), where Eddard meets her.
+    {
+      id: 'mhaegen',
+      kind: 'character',
+      source: 'episode',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 36,
+      name: { it: 'Mhaegen', en: 'Mhaegen' },
+      summary: {
+        it: 'Una donna di un bordello di Ditocorto, madre di una figlia di re Robert.',
+        en: 'A woman in one of Littlefinger’s brothels, the mother of a daughter by King Robert.',
+      },
+      visual: { art: 'mhaegen', tint: 'magenta' },
+    },
+    // Show: "The Pointy End", killed while packing in the purge of Eddard's
+    // household. Books: Eddard III (site chapter 17), he brings Eddard word that
+    // Arya has been found.
+    {
+      id: 'vayon-poole',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 17,
+      name: { it: 'Vayon Poole', en: 'Vayon Poole' },
+      summary: {
+        it: 'L’intendente di Grande Inverno, che segue Eddard Stark a sud.',
+        en: 'The steward of Winterfell, who goes south with Eddard Stark.',
+      },
+      visual: { art: 'vayon-poole', tint: 'teal' },
+    },
+    // Show: "You Win or You Die", Eddard hands him the letter for Stannis.
+    // Books: Arya II (site chapter 23), one of Eddard's guards, called Fat Tom.
+    {
+      id: 'tomard',
+      kind: 'character',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 23,
+      name: { it: 'Tomard', en: 'Tomard' },
+      summary: {
+        it: 'Una delle guardie di Eddard Stark, che lo segue a sud.',
+        en: 'One of Eddard Stark’s household guards, who goes south with him.',
+      },
+      visual: { art: 'tomard', tint: 'cyan' },
+    },
+    // Book only. Never in the show; the episode orders him at "Winter Is Coming".
+    // Books: Bran I (site chapter 2), he rides with Eddard's party and says the
+    // direwolf pups cannot be kept.
+    {
+      id: 'harwin',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 2,
+      name: { it: 'Harwin', en: 'Harwin' },
+      summary: {
+        it: 'Una delle guardie di Eddard Stark, figlio di Hullen, il mastro dei cavalli.',
+        en: 'One of Eddard Stark’s guards, the son of Hullen, the master of horse.',
+      },
+      visual: { art: 'harwin', tint: 'green' },
+    },
+    // Book only. Never in the show; the episode orders him at "Winter Is Coming".
+    // Books: Eddard II (site chapter 13), he wakes Eddard for the king's ride on
+    // the kingsroad.
+    {
+      id: 'alyn',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 13,
+      name: { it: 'Alyn', en: 'Alyn' },
+      summary: {
+        it: 'Una delle guardie di Eddard Stark, che lo segue nel viaggio verso sud.',
+        en: 'One of Eddard Stark’s guards, who rides south with him.',
+      },
+      visual: { art: 'alyn', tint: 'acid' },
+    },
+    // Show: "A Golden Crown", Eddard sends Lord Beric with a hundred men to bring
+    // Gregor Clegane to justice. Books: Eddard VI (site chapter 28), in the city
+    // for the Hand's tourney.
+    {
+      id: 'beric-dondarrion',
+      kind: 'character',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 28,
+      name: { it: 'Beric Dondarrion', en: 'Beric Dondarrion' },
+      summary: {
+        it: 'Il giovane lord di Blackhaven, nelle Terre della Tempesta.',
+        en: 'The young lord of Blackhaven, in the stormlands.',
+      },
+      visual: { art: 'beric-dondarrion', tint: 'orange' },
+    },
+    // Show: "Dark Wings, Dark Words" (episode 22), with the outlaws who meet Arya,
+    // Gendry and Hot Pie. Books: Sansa II (site chapter 30), the red priest with
+    // the flaming sword at the Hand's tourney.
+    {
+      id: 'thoros-of-myr',
+      kind: 'character',
+      revealedAtEpisode: 22,
+      revealedAtChapter: 30,
+      name: { it: 'Thoros di Myr', en: 'Thoros of Myr' },
+      summary: {
+        it: 'Un prete rosso venuto dalla città libera di Myr.',
+        en: 'A red priest from the free city of Myr.',
+      },
+      visual: { art: 'thoros-of-myr', tint: 'red' },
+    },
+    // Book only. The show never names him; the episode orders him at "Cripples,
+    // Bastards, and Broken Things", the Hand's tourney. Books: Sansa II (site
+    // chapter 30), he jousts in the tourney.
+    {
+      id: 'balon-swann',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 30,
+      name: { it: 'Balon Swann', en: 'Balon Swann' },
+      summary: {
+        it: 'Un cavaliere delle Terre della Tempesta che giostra nel torneo del Primo Cavaliere.',
+        en: 'A knight from the stormlands who rides in the Hand’s tourney.',
+      },
+      visual: { art: 'balon-swann', tint: 'blue' },
+    },
+    // Book only. Never in the show; the episode orders him at "Cripples, Bastards,
+    // and Broken Things", the Hand's tourney. Books: Sansa II (site chapter 30),
+    // he jousts in the tourney.
+    {
+      id: 'robar-royce',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 30,
+      name: { it: 'Robar Royce', en: 'Robar Royce' },
+      summary: {
+        it: 'Un cavaliere della Valle, figlio del lord di Runestone.',
+        en: 'A knight of the Vale, a son of the lord of Runestone.',
+      },
+      visual: { art: 'robar-royce', tint: 'ocher' },
+    },
+    // Show: "The Mountain and the Viper" (episode 38), on the Vale lords' tribunal
+    // that questions Littlefinger. Books: Sansa II (site chapter 30), Bronze Yohn
+    // at the Hand's tourney.
+    {
+      id: 'yohn-royce',
+      kind: 'character',
+      revealedAtEpisode: 38,
+      revealedAtChapter: 30,
+      name: { it: 'Yohn Royce', en: 'Yohn Royce' },
+      summary: {
+        it: 'Il lord di Runestone, uno dei lord più potenti della Valle.',
+        en: 'The lord of Runestone, one of the most powerful lords of the Vale.',
+      },
+      visual: { art: 'yohn-royce', tint: 'sand' },
+    },
+    // Book only. Never on screen in the show; the episode orders him at "Cripples,
+    // Bastards, and Broken Things", the crossroads inn. Books: Catelyn V (site
+    // chapter 29), he rides past the inn with his men.
+    {
+      id: 'jason-mallister',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Jason Mallister', en: 'Jason Mallister' },
+      summary: {
+        it: 'Il lord di Seagard, un vassallo di Casa Tully nelle Terre dei Fiumi.',
+        en: 'The lord of Seagard, a riverlands lord sworn to House Tully.',
+      },
+      visual: { art: 'jason-mallister', tint: 'lavender' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", she tells Tyrion the inn has no
+    // rooms. Books: Catelyn V (site chapter 29), she gives Catelyn rooms at the
+    // crossroads.
+    {
+      id: 'masha-heddle',
+      kind: 'character',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Masha Heddle', en: 'Masha Heddle' },
+      summary: {
+        it: 'La locandiera della locanda all’incrocio.',
+        en: 'The innkeeper of the inn at the crossroads.',
+      },
+      visual: { art: 'masha-heddle', tint: 'pink' },
+    },
+    // Show: "The Pointy End", with Tywin when Tyrion and the clansmen arrive.
+    // Books: Tyrion VII (site chapter 57), with Tywin at the inn at the crossroads.
+    {
+      id: 'kevan-lannister',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 57,
+      name: { it: 'Kevan Lannister', en: 'Kevan Lannister' },
+      summary: {
+        it: 'Il fratello minore di lord Tywin Lannister, al suo fianco in guerra.',
+        en: 'Lord Tywin Lannister’s younger brother, at his side in the war.',
+      },
+      visual: { art: 'kevan-lannister', tint: 'wine' },
+    },
+    // Show: "Fire and Blood", at Tywin's council after the Whispering Wood, he
+    // argues against a truce. Books: Tyrion VIII (site chapter 63), he commands
+    // Tywin's outriders.
+    {
+      id: 'addam-marbrand',
+      kind: 'character',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 63,
+      name: { it: 'Addam Marbrand', en: 'Addam Marbrand' },
+      summary: {
+        it: 'Un cavaliere delle Terre dell’Ovest nell’esercito di lord Tywin Lannister.',
+        en: 'A westerlands knight in Lord Tywin Lannister’s army.',
+      },
+      visual: { art: 'addam-marbrand', tint: 'ocher' },
+    },
+    // Show: "The Night Lands" (episode 12), Tyrion's squire, he spills wine on
+    // Janos Slynt. Books: Tyrion VIII (site chapter 63), the squire Kevan gives
+    // Tyrion before the battle.
+    {
+      id: 'podrick-payne',
+      kind: 'character',
+      revealedAtEpisode: 12,
+      revealedAtChapter: 63,
+      name: { it: 'Podrick Payne', en: 'Podrick Payne' },
+      summary: {
+        it: 'Un giovane scudiero timido al servizio di Tyrion Lannister.',
+        en: 'A shy young squire in Tyrion Lannister’s service.',
+      },
+      visual: { art: 'podrick-payne', tint: 'cyan' },
+    },
+    // Show: "Baelor", at the Twins he chides his father, who reminds him he is not
+    // lord yet. Books: Catelyn IX (site chapter 60), Walder's heir at the Twins.
+    {
+      id: 'stevron-frey',
+      kind: 'character',
+      revealedAtEpisode: 9,
+      revealedAtChapter: 60,
+      name: { it: 'Stevron Frey', en: 'Stevron Frey' },
+      summary: {
+        it: 'Il figlio maggiore di lord Walder Frey ed erede delle Torri Gemelle.',
+        en: 'Lord Walder Frey’s eldest son and the heir to the Twins.',
+      },
+      visual: { art: 'stevron-frey', tint: 'teal' },
+    },
+    // Show: "Walk of Punishment" (episode 23), he leads his father's funeral at
+    // Riverrun. Books: Catelyn XI (site chapter 72), at Riverrun in Robb's
+    // council.
+    {
+      id: 'edmure-tully',
+      kind: 'character',
+      revealedAtEpisode: 23,
+      revealedAtChapter: 72,
+      name: { it: 'Edmure Tully', en: 'Edmure Tully' },
+      summary: {
+        it: 'Il fratello minore di Catelyn Stark, figlio di lord Hoster Tully.',
+        en: 'Catelyn Stark’s younger brother, the son of Lord Hoster Tully.',
+      },
+      visual: { art: 'edmure-tully', tint: 'azure' },
+    },
+    // Show: "Walk of Punishment" (episode 23), his body at his funeral. Books:
+    // Catelyn XI (site chapter 72), Catelyn visits him on his sickbed at
+    // Riverrun.
+    {
+      id: 'hoster-tully',
+      kind: 'character',
+      revealedAtEpisode: 23,
+      revealedAtChapter: 72,
+      name: { it: 'Hoster Tully', en: 'Hoster Tully' },
+      summary: {
+        it: 'Il lord di Delta delle Acque e padre di Catelyn Stark.',
+        en: 'The lord of Riverrun and Catelyn Stark’s father.',
+      },
+      visual: { art: 'hoster-tully', tint: 'blue' },
+    },
+    // Show: "Walk of Punishment" (episode 23), at Hoster's funeral he takes the
+    // bow after Edmure misses. Books: Catelyn VI (site chapter 35), he meets
+    // Catelyn at the Bloody Gate.
+    {
+      id: 'brynden-tully',
+      kind: 'character',
+      revealedAtEpisode: 23,
+      revealedAtChapter: 35,
+      name: { it: 'Brynden Tully', en: 'Brynden Tully' },
+      summary: {
+        it: 'Lo zio di Catelyn Stark, chiamato il Pesce Nero.',
+        en: 'Catelyn Stark’s uncle, known as the Blackfish.',
+      },
+      visual: { art: 'brynden-tully', tint: 'ice' },
+    },
+    // Show: "Fire and Blood", one of Yoren's recruits who bully Arry. Books: A Clash
+    // of Kings, Arya I (site chapter 75), he tries to take Needle and Arya beats
+    // him.
+    {
+      id: 'hot-pie',
+      kind: 'character',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 75,
+      name: { it: 'Frittella', en: 'Hot Pie' },
+      summary: {
+        it: 'Un garzone di fornaio di Approdo del Re, in viaggio verso nord con le reclute di Yoren.',
+        en: 'A baker’s boy from King’s Landing, going north with Yoren’s recruits.',
+      },
+      visual: { art: 'hot-pie', tint: 'sand' },
+    },
+    // Show: "Fire and Blood", one of Yoren's recruits who bully Arry. Books: A Clash
+    // of Kings, Arya I (site chapter 75), he calls Arya Lumpyhead and eggs Hot Pie
+    // on.
+    {
+      id: 'lommy',
+      kind: 'character',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 75,
+      name: { it: 'Lommy Maniverdi', en: 'Lommy Greenhands' },
+      summary: {
+        it: 'Un apprendista tintore dalle mani macchiate di verde, in viaggio verso nord con Yoren.',
+        en: 'A dyer’s apprentice with green-stained hands, going north with Yoren.',
+      },
+      visual: { art: 'lommy', tint: 'green' },
+    },
+    // Show: "The Night Lands" (episode 12), he asks Arry for water and introduces
+    // himself. Books: A Clash of Kings, Arya II (site chapter 79), he introduces
+    // himself at the inn.
+    {
+      id: 'jaqen-hghar',
+      kind: 'character',
+      revealedAtEpisode: 12,
+      revealedAtChapter: 79,
+      name: { it: "Jaqen H'ghar", en: "Jaqen H'ghar" },
+      summary: {
+        it: 'Un prigioniero di Lorath, in catene nella gabbia sul carro di Yoren.',
+        en: 'A prisoner from Lorath, chained in the cage on Yoren’s wagon.',
+      },
+      visual: { art: 'jaqen-hghar', tint: 'magenta' },
+    },
+    // Show: "The Night Lands" (episode 12), he demands beer and threatens Arry
+    // from the cage. Books: A Clash of Kings, Arya II (site chapter 79), Jaqen
+    // introduces the noseless man.
+    {
+      id: 'rorge',
+      kind: 'character',
+      revealedAtEpisode: 12,
+      revealedAtChapter: 79,
+      name: { it: 'Rorge', en: 'Rorge' },
+      summary: {
+        it: 'Un criminale senza naso, in catene nella gabbia sul carro di Yoren.',
+        en: 'A noseless criminal chained in the cage on Yoren’s wagon.',
+      },
+      visual: { art: 'rorge', tint: 'acid' },
+    },
+    // Show: "The Night Lands" (episode 12), he hisses behind Rorge in the cage.
+    // Books: A Clash of Kings, Arya II (site chapter 79), Jaqen explains the name
+    // by his filed teeth.
+    {
+      id: 'biter',
+      kind: 'character',
+      revealedAtEpisode: 12,
+      revealedAtChapter: 79,
+      name: { it: 'Mordente', en: 'Biter' },
+      summary: {
+        it: 'Un criminale muto e massiccio dai denti limati, in catene nella gabbia di Yoren.',
+        en: 'A mute, hulking criminal with filed teeth, chained in Yoren’s cage.',
+      },
+      visual: { art: 'biter', tint: 'orange' },
     },
     // The season’s places (#853): every place a scene is set in, in either
     // medium, gated at its first scene there. Each shows `PLACE` until #854.
@@ -2713,6 +3569,1176 @@ export const season1: ThronesSaga = {
           episode: 8,
           chapter: 62,
           value: { it: 'Lhazareen', en: 'Lhazareen' },
+        },
+      ],
+    },
+    'hullen': {
+      role: {
+        it: 'Mastro dei cavalli di Grande Inverno',
+        en: 'Master of horse at Winterfell',
+      },
+      log: {
+        it: 'Si occupa dei cavalli di Grande Inverno. Cavalca con lord Stark all’esecuzione di un disertore ed è con il gruppo che al ritorno trova i cuccioli di meta-lupo.',
+        en: 'He looks after the horses of Winterfell. He rides with Lord Stark to the execution of a deserter and is with the party that finds the direwolf pups on the way back.',
+      },
+      status: [
+        { episode: 1, chapter: 2, value: 'alive' },
+        { episode: 8, chapter: 51, source: 'chapter', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 1,
+          chapter: 2,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+      ],
+    },
+    'jeyne-poole': {
+      role: {
+        it: 'Figlia dell’intendente di Grande Inverno',
+        en: 'Daughter of the steward of Winterfell',
+      },
+      log: {
+        it: 'Cuce accanto a Sansa alla lezione di ricamo della septa Mordane e chiacchiera con lei mentre lavorano. È la sua amica più cara.',
+        en: 'She sews beside Sansa at Septa Mordane’s needlework lesson and talks with her while they work. She is Sansa’s closest friend.',
+      },
+      status: [{ episode: 1, chapter: 8, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 1,
+          chapter: 8,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+      ],
+    },
+    'mikken': {
+      role: { it: 'Fabbro di Grande Inverno', en: 'Blacksmith of Winterfell' },
+      log: {
+        it: 'Lavora alla forgia di Grande Inverno. Prima di partire per la Barriera, Jon gli fa forgiare per Arya una spada sottile e leggera.',
+        en: 'He works the forge at Winterfell. Before Jon leaves for the Wall, he has Mikken make a slender, light sword for Arya.',
+      },
+      status: [{ episode: 2, chapter: 54, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 2,
+          chapter: 54,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+      ],
+    },
+    'hallis-mollen': {
+      role: {
+        it: 'Capitano della guardia di Grande Inverno',
+        en: 'Captain of the guard at Winterfell',
+      },
+      log: {
+        it: 'Comanda la guardia di Grande Inverno ora che Jory è partito verso sud con lord Stark. Dopo che un uomo tenta di uccidere Bran nel suo letto, si presenta da Catelyn con Robb, Theon e ser Rodrik per riferire sulle ricerche.',
+        en: 'He commands the guard at Winterfell now that Jory has gone south with Lord Stark. After a man tries to kill Bran in his bed, he comes to Catelyn with Robb, Theon and Ser Rodrik to report on the search.',
+      },
+      status: [{ episode: 2, chapter: 15, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 2,
+          chapter: 15,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+      ],
+    },
+    'mycah': {
+      role: {
+        it: 'Garzone di macellaio al seguito del re',
+        en: 'Butcher’s boy in the king’s party',
+      },
+      log: {
+        it: 'Viaggia verso sud con il seguito del re. Vicino al fiume si allena con Arya usando dei bastoni come spade, finché il principe Joffrey non sguaina la spada contro di lui. Arya colpisce il principe per difenderlo, e lui scappa.',
+        en: 'He travels south with the king’s party. Near the river he practises swordplay with Arya, with sticks for swords, until Prince Joffrey draws his sword on him. Arya strikes the prince to defend him, and he runs off.',
+      },
+      status: [
+        { episode: 2, chapter: 16, source: 'chapter', value: 'alive' },
+        { episode: 2, chapter: 17, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 2,
+          chapter: 16,
+          value: { it: 'Nessuna casata', en: 'No house' },
+        },
+      ],
+    },
+    'stiv': {
+      role: {
+        it: 'Disertore dei Guardiani della notte',
+        en: 'Deserter of the Night’s Watch',
+      },
+      log: {
+        it: 'È tra i fuorilegge che circondano Bran nella Foresta del Lupo e cercano di prendergli il cavallo. Robb accorre in aiuto del fratello, e Theon uccide Stiv con una freccia.',
+        en: 'He is among the outlaws who surround Bran in the wolfswood and try to take his horse. Robb comes to his brother’s aid, and Theon kills Stiv with an arrow.',
+      },
+      status: [{ episode: 6, chapter: 38, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 6,
+          chapter: 38,
+          value: {
+            it: 'Disertori dei Guardiani della notte',
+            en: 'Deserters of the Night’s Watch',
+          },
+        },
+      ],
+    },
+    'wallen': {
+      role: {
+        it: 'Disertore dei Guardiani della notte',
+        en: 'Deserter of the Night’s Watch',
+      },
+      log: {
+        it: 'È tra i fuorilegge che circondano Bran nella Foresta del Lupo e cercano di prendergli il cavallo. Muore nello scontro quando Robb accorre in aiuto del fratello.',
+        en: 'He is among the outlaws who surround Bran in the wolfswood and try to take his horse. He dies in the fight when Robb comes to his brother’s aid.',
+      },
+      status: [{ episode: 6, chapter: 38, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 6,
+          chapter: 38,
+          value: {
+            it: 'Disertori dei Guardiani della notte',
+            en: 'Deserters of the Night’s Watch',
+          },
+        },
+      ],
+    },
+    'greatjon-umber': {
+      role: { it: 'Lord dell’Ultimo Focolare', en: 'Lord of Last Hearth' },
+      log: {
+        it: 'Porta i suoi uomini nell’esercito di Robb e pretende di guidare l’avanguardia, minacciando di tornarsene a casa. Quando sguaina la spada a tavola, Vento Grigio gli stacca due dita con un morso, e lui ci ride sopra.',
+        en: 'He brings his men to Robb’s host and demands to lead the vanguard, threatening to go home if he does not. When he draws his sword at the table, Grey Wind bites off two of his fingers, and he laughs it off.',
+      },
+      status: [{ episode: 8, chapter: 54, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 54,
+          value: {
+            it: 'Casa Umber, vassalla di Casa Stark',
+            en: 'House Umber, sworn to House Stark',
+          },
+        },
+        {
+          episode: 10,
+          chapter: 72,
+          value: {
+            it: 'Casa Umber, vassalla di Robb Stark, Re del Nord',
+            en: 'House Umber, sworn to Robb Stark, King in the North',
+          },
+        },
+      ],
+    },
+    'smalljon-umber': {
+      role: { it: 'Figlio di Greatjon Umber', en: 'Son of Greatjon Umber' },
+      log: {
+        it: 'È il figlio di Greatjon Umber e un guerriero di Casa Umber. La sua casata tiene l’Ultimo Focolare, nell’estremo nord del Nord.',
+        en: 'He is Greatjon Umber’s son and a fighter of House Umber. His house holds Last Hearth, in the far north of the North.',
+      },
+      status: [{ episode: 53, chapter: 64, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 53,
+          chapter: 64,
+          value: { it: 'Casa Umber', en: 'House Umber' },
+        },
+      ],
+    },
+    'rickard-karstark': {
+      role: { it: 'Lord di Karhold', en: 'Lord of Karhold' },
+      log: {
+        it: 'È a capo di Casa Karstark, che ha sede a Karhold. Marcia nell’esercito di Robb con i suoi uomini.',
+        en: 'He is the head of House Karstark, whose seat is Karhold. He marches in Robb’s host with his men.',
+      },
+      status: [{ episode: 17, chapter: 54, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 17,
+          chapter: 54,
+          value: {
+            it: 'Casa Karstark, vassalla di Casa Stark',
+            en: 'House Karstark, sworn to House Stark',
+          },
+        },
+        {
+          episode: 17,
+          chapter: 72,
+          source: 'chapter',
+          value: {
+            it: 'Casa Karstark, vassalla di Robb Stark, Re del Nord',
+            en: 'House Karstark, sworn to Robb Stark, King in the North',
+          },
+        },
+      ],
+    },
+    'roose-bolton': {
+      role: [
+        {
+          episode: 14,
+          chapter: 54,
+          value: { it: 'Lord di Forte Terrore', en: 'Lord of the Dreadfort' },
+        },
+        {
+          episode: 14,
+          chapter: 56,
+          source: 'chapter',
+          value: {
+            it: 'Comandante della fanteria del Nord',
+            en: 'Commander of the northern foot',
+          },
+        },
+      ],
+      log: {
+        it: 'È a capo di Casa Bolton, che ha sede a Forte Terrore. Parla poco e a voce bassa, e ha portato i suoi uomini nell’esercito di Robb.',
+        en: 'He is the head of House Bolton, whose seat is the Dreadfort. He speaks little and softly, and he has brought his men to Robb’s host.',
+      },
+      status: [{ episode: 14, chapter: 54, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 14,
+          chapter: 54,
+          value: {
+            it: 'Casa Bolton, vassalla di Casa Stark',
+            en: 'House Bolton, sworn to House Stark',
+          },
+        },
+      ],
+    },
+    'galbart-glover': {
+      role: { it: 'Lord di Deepwood Motte', en: 'Lord of Deepwood Motte' },
+      log: {
+        it: 'È a capo di Casa Glover, che ha sede a Deepwood Motte. Risponde alla chiamata alle armi di Robb insieme agli altri signori del Nord e siede al suo consiglio di guerra.',
+        en: 'He is the head of House Glover, whose seat is Deepwood Motte. He answers Robb’s call to arms with the other northern lords and sits at his war council.',
+      },
+      status: [{ episode: 8, chapter: 56, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 56,
+          value: {
+            it: 'Casa Glover, vassalla di Casa Stark',
+            en: 'House Glover, sworn to House Stark',
+          },
+        },
+        {
+          episode: 10,
+          chapter: 72,
+          value: {
+            it: 'Casa Glover, vassalla di Robb Stark, Re del Nord',
+            en: 'House Glover, sworn to Robb Stark, King in the North',
+          },
+        },
+      ],
+    },
+    'robett-glover': {
+      role: { it: 'Membro di Casa Glover', en: 'Member of House Glover' },
+      log: {
+        it: 'Appartiene a Casa Glover, una casata del Nord. La sua sede è Deepwood Motte.',
+        en: 'He belongs to House Glover, a house of the North. Its seat is Deepwood Motte.',
+      },
+      status: [{ episode: 57, chapter: 54, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 57,
+          chapter: 54,
+          value: { it: 'Casa Glover', en: 'House Glover' },
+        },
+      ],
+    },
+    'maege-mormont': {
+      role: { it: 'Lady dell’Isola dell’Orso', en: 'Lady of Bear Island' },
+      log: {
+        it: 'Governa Casa Mormont dall’Isola dell’Orso. Risponde alla chiamata alle armi di Robb e si unisce al suo esercito con la sua gente.',
+        en: 'She rules House Mormont from Bear Island. She answers Robb’s call to arms and joins his host with her people.',
+      },
+      status: [{ episode: 8, chapter: 54, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 54,
+          value: {
+            it: 'Casa Mormont, vassalla di Casa Stark',
+            en: 'House Mormont, sworn to House Stark',
+          },
+        },
+        {
+          episode: 10,
+          chapter: 72,
+          value: {
+            it: 'Casa Mormont, vassalla di Robb Stark, Re del Nord',
+            en: 'House Mormont, sworn to Robb Stark, King in the North',
+          },
+        },
+      ],
+    },
+    'dacey-mormont': {
+      role: {
+        it: 'Erede dell’Isola dell’Orso, nella guardia di Robb Stark',
+        en: 'Heir to Bear Island, in Robb Stark’s guard',
+      },
+      log: {
+        it: 'È la figlia maggiore di lady Maege ed erede dell’Isola dell’Orso. Cavalca nella guardia personale di Robb durante la battaglia nel Bosco dei Sussurri.',
+        en: 'She is Lady Maege’s eldest daughter and the heir to Bear Island. She rides in Robb’s personal guard in the battle in the Whispering Wood.',
+      },
+      status: [{ episode: 9, chapter: 64, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 9,
+          chapter: 64,
+          value: { it: 'Casa Mormont', en: 'House Mormont' },
+        },
+      ],
+    },
+    'wendel-manderly': {
+      role: { it: 'Cavaliere di Porto Bianco', en: 'Knight of White Harbor' },
+      log: {
+        it: 'È figlio del lord di Porto Bianco ed è cavaliere. Combatte per Robb insieme agli uomini di Casa Manderly.',
+        en: 'He is a son of the lord of White Harbor and a knight. He fights for Robb with the men of House Manderly.',
+      },
+      status: [{ episode: 29, chapter: 56, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 29,
+          chapter: 56,
+          value: {
+            it: 'Casa Manderly, nell’esercito di Robb Stark',
+            en: 'House Manderly, in Robb Stark’s host',
+          },
+        },
+      ],
+    },
+    'marillion': {
+      role: { it: 'Cantastorie', en: 'Singer' },
+      log: {
+        it: 'Canta alla locanda e cerca di ingraziarsi Catelyn. Quando lei fa prigioniero Tyrion, segue il suo gruppo sperando di ricavarne una canzone.',
+        en: 'He sings at the inn and tries to win Catelyn’s favour. When she takes Tyrion prisoner, he follows her party in the hope of making a song of it.',
+      },
+      status: [{ episode: 4, chapter: 29, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 29,
+          value: { it: 'Nessuna casata', en: 'No house' },
+        },
+      ],
+    },
+    'willis-wode': {
+      role: {
+        it: 'Cavaliere al servizio di Casa Whent',
+        en: 'Knight sworn to House Whent',
+      },
+      log: {
+        it: 'Si trova alla locanda quando Catelyn chiede agli uomini presenti di aiutarla a catturare Tyrion. Sguaina la spada per lei e parte con il suo gruppo.',
+        en: 'He is at the inn when Catelyn calls on the men there to help her seize Tyrion. He draws his sword for her and rides with her party.',
+      },
+      status: [
+        { episode: 4, chapter: 29, value: 'alive' },
+        { episode: 5, chapter: 35, source: 'episode', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 29,
+          value: { it: 'Casa Whent', en: 'House Whent' },
+        },
+      ],
+    },
+    'donnel-waynwood': {
+      role: {
+        it: 'Custode della Porta Insanguinata',
+        en: 'Keeper of the Bloody Gate',
+      },
+      log: {
+        it: 'Comanda la Porta Insanguinata, dove la strada entra nella Valle. Interroga i viaggiatori prima di lasciarli salire verso il Nido dell’Aquila.',
+        en: 'He commands the Bloody Gate, where the road enters the Vale. He questions travellers before he lets them ride on toward the Eyrie.',
+      },
+      status: [{ episode: 35, chapter: 35, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 35,
+          chapter: 35,
+          value: { it: 'Casa Waynwood', en: 'House Waynwood' },
+        },
+      ],
+    },
+    'nestor-royce': {
+      role: {
+        it: 'Alto attendente della Valle',
+        en: 'High Steward of the Vale',
+      },
+      log: {
+        it: 'Tiene per lady Lysa le Porte della Luna, il castello ai piedi della montagna. È lui ad accogliere Catelyn quando arriva con il suo prigioniero.',
+        en: 'He holds the Gates of the Moon, the castle at the foot of the mountain, for Lady Lysa. He receives Catelyn there when she arrives with her prisoner.',
+      },
+      status: [{ episode: 5, chapter: 35, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 5,
+          chapter: 35,
+          value: { it: 'Casa Royce', en: 'House Royce' },
+        },
+      ],
+    },
+    'mya-stone': {
+      role: {
+        it: 'Guida sul sentiero per il Nido dell’Aquila',
+        en: 'Guide on the path to the Eyrie',
+      },
+      log: {
+        it: 'Porta le provviste al Nido dell’Aquila con i suoi muli e conosce ogni passo del sentiero. Guida Catelyn su per la montagna di notte.',
+        en: 'She takes supplies up to the Eyrie with her mules and knows every step of the path. She leads Catelyn up the mountain by night.',
+      },
+      status: [{ episode: 5, chapter: 35, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 5,
+          chapter: 35,
+          value: {
+            it: 'Servitù del Nido dell’Aquila',
+            en: 'Household of the Eyrie',
+          },
+        },
+      ],
+    },
+    'vardis-egen': {
+      role: {
+        it: 'Capitano della guardia del Nido dell’Aquila',
+        en: 'Captain of the guard at the Eyrie',
+      },
+      log: {
+        it: 'Comanda la guardia di Casa Arryn al Nido dell’Aquila ed è al servizio di lady Lysa.',
+        en: 'He commands House Arryn’s guard at the Eyrie and serves Lady Lysa.',
+      },
+      status: [
+        { episode: 6, chapter: 35, source: 'chapter', value: 'alive' },
+        { episode: 6, chapter: 41, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 6,
+          chapter: 35,
+          value: { it: 'Casa Arryn', en: 'House Arryn' },
+        },
+      ],
+    },
+    'mord': {
+      role: {
+        it: 'Carceriere delle celle del cielo',
+        en: 'Gaoler of the sky cells',
+      },
+      log: {
+        it: 'Sorveglia Tyrion in una cella aperta sul vuoto e lo tratta con brutalità. Tyrion gli promette dell’oro se porterà un messaggio a lady Lysa: è pronto a confessare.',
+        en: 'He guards Tyrion in a cell open to the drop and treats him roughly. Tyrion promises him gold to carry a message to Lady Lysa: he is ready to confess.',
+      },
+      status: [{ episode: 6, chapter: 39, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 6,
+          chapter: 39,
+          value: { it: 'Casa Arryn', en: 'House Arryn' },
+        },
+      ],
+    },
+    'lyn-corbray': {
+      role: { it: 'Cavaliere della Valle', en: 'Knight of the Vale' },
+      log: {
+        it: 'Assiste all’udienza in cui Tyrion chiede un processo per combattimento. È tra i cavalieri che si offrono di battersi come campioni di lady Lysa.',
+        en: 'He attends the hearing at which Tyrion demands a trial by combat. He is among the knights who offer to fight as Lady Lysa’s champion.',
+      },
+      status: [{ episode: 6, chapter: 39, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 6,
+          chapter: 39,
+          value: { it: 'Casa Corbray', en: 'House Corbray' },
+        },
+      ],
+    },
+    'anya-waynwood': {
+      role: { it: 'Lady di Ironoaks', en: 'Lady of Ironoaks' },
+      log: {
+        it: 'Guida Casa Waynwood da Ironoaks. Siede tra i signori della Valle al Nido dell’Aquila.',
+        en: 'She heads House Waynwood from Ironoaks. She sits among the lords of the Vale at the Eyrie.',
+      },
+      status: [{ episode: 38, chapter: 39, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 38,
+          chapter: 39,
+          value: { it: 'Casa Waynwood', en: 'House Waynwood' },
+        },
+      ],
+    },
+    'shagga': {
+      role: {
+        it: 'Guerriero dei Corvi di Pietra',
+        en: 'Warrior of the Stone Crows',
+      },
+      log: {
+        it: 'Il suo clan circonda Tyrion e Bronn sulla strada tra le montagne. Tyrion lo convince a risparmiarli promettendo armi e ricchezze, e il clan accetta di seguirlo.',
+        en: 'His clan surrounds Tyrion and Bronn on the road through the mountains. Tyrion talks him out of killing them with promises of weapons and wealth, and the clan agrees to follow him.',
+      },
+      status: [{ episode: 8, chapter: 43, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 43,
+          value: { it: 'Corvi di Pietra', en: 'Stone Crows' },
+        },
+      ],
+    },
+    'timett': {
+      role: {
+        it: 'Capo degli Uomini Bruciati',
+        en: 'Leader of the Burned Men',
+      },
+      log: {
+        it: 'Guida gli Uomini Bruciati, che insieme ai Corvi di Pietra di Shagga seguono Tyrion. Accompagna Tyrion all’esercito di suo padre, lord Tywin.',
+        en: 'He leads the Burned Men, who follow Tyrion along with Shagga’s Stone Crows. He goes with Tyrion to the army of his father, Lord Tywin.',
+      },
+      status: [{ episode: 8, chapter: 57, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 57,
+          value: {
+            it: 'Uomini Bruciati, alleati di Tyrion',
+            en: 'Burned Men, allied to Tyrion',
+          },
+        },
+      ],
+    },
+    'chella': {
+      role: { it: 'Capo delle Orecchie Nere', en: 'Leader of the Black Ears' },
+      log: {
+        it: 'Guida le Orecchie Nere, che con gli altri clan delle montagne seguono Tyrion. Lo accompagna all’esercito di suo padre, lord Tywin.',
+        en: 'She leads the Black Ears, who follow Tyrion with the other mountain clans. She goes with him to the army of his father, Lord Tywin.',
+      },
+      status: [{ episode: 8, chapter: 57, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 57,
+          value: {
+            it: 'Orecchie Nere, alleate di Tyrion',
+            en: 'Black Ears, allied to Tyrion',
+          },
+        },
+      ],
+    },
+    'meryn-trant': {
+      role: {
+        it: 'Cavaliere della Guardia reale',
+        en: 'Knight of the Kingsguard',
+      },
+      log: {
+        it: 'Porta il mantello bianco della Guardia reale, i cavalieri giurati a proteggere il re. Presta servizio alla corte di Approdo del Re.',
+        en: 'He wears the white cloak of the Kingsguard, the knights sworn to protect the king. He serves at the court in King’s Landing.',
+      },
+      status: [{ episode: 8, chapter: 30, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 30,
+          value: { it: 'Guardia reale', en: 'Kingsguard' },
+        },
+      ],
+    },
+    'boros-blount': {
+      role: {
+        it: 'Cavaliere della Guardia reale',
+        en: 'Knight of the Kingsguard',
+      },
+      log: {
+        it: 'Fa parte della Guardia reale e veste il mantello bianco dei suoi confratelli. Presta servizio nella Fortezza Rossa, accanto al re.',
+        en: 'He belongs to the Kingsguard and wears the white cloak of his sworn brothers. He serves in the Red Keep, at the king’s side.',
+      },
+      status: [{ episode: 19, chapter: 34, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 19,
+          chapter: 34,
+          value: { it: 'Guardia reale', en: 'Kingsguard' },
+        },
+      ],
+    },
+    'mandon-moore': {
+      role: {
+        it: 'Cavaliere della Guardia reale',
+        en: 'Knight of the Kingsguard',
+      },
+      log: {
+        it: 'Veste il mantello bianco della Guardia reale. Sorveglia la famiglia reale nella Fortezza Rossa.',
+        en: 'He wears the white cloak of the Kingsguard. He stands guard over the royal family in the Red Keep.',
+      },
+      status: [{ episode: 19, chapter: 52, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 19,
+          chapter: 52,
+          value: { it: 'Guardia reale', en: 'Kingsguard' },
+        },
+      ],
+    },
+    'arys-oakheart': {
+      role: {
+        it: 'Cavaliere della Guardia reale',
+        en: 'Knight of the Kingsguard',
+      },
+      log: {
+        it: 'È uno dei cavalieri della Guardia reale. È presente nella sala del trono quando Barristan Selmy viene congedato dalla Guardia reale.',
+        en: 'He is one of the knights of the Kingsguard. He is in the throne room when Barristan Selmy is dismissed from the Kingsguard.',
+      },
+      status: [{ episode: 8, chapter: 58, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 58,
+          value: { it: 'Guardia reale', en: 'Kingsguard' },
+        },
+      ],
+    },
+    'lancel-lannister': {
+      role: { it: 'Scudiero di re Robert', en: 'Squire to King Robert' },
+      log: {
+        it: 'È uno degli scudieri di re Robert Baratheon e lo serve da vicino. Il re lo tratta con poca pazienza.',
+        en: 'He is one of King Robert Baratheon’s squires and waits on him closely. The king has little patience with him.',
+      },
+      status: [{ episode: 3, chapter: 31, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 3,
+          chapter: 31,
+          value: { it: 'Casa Lannister', en: 'House Lannister' },
+        },
+      ],
+    },
+    'dontos-hollard': {
+      role: {
+        it: 'Cavaliere e giullare di corte',
+        en: 'Knight and court fool',
+      },
+      log: {
+        it: 'Si presenta ubriaco davanti a re Joffrey, che vuole farlo uccidere. Sansa convince il re a risparmiarlo, e Joffrey ne fa il suo giullare.',
+        en: 'He comes before King Joffrey drunk, and the king wants him killed. Sansa talks the king into sparing him, and Joffrey makes him his fool.',
+      },
+      status: [{ episode: 11, chapter: 58, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 11,
+          chapter: 58,
+          value: { it: 'Corte reale', en: 'Royal court' },
+        },
+      ],
+    },
+    'hugh-of-the-vale': {
+      role: {
+        it: 'Cavaliere, ex scudiero di Jon Arryn',
+        en: 'Knight, Jon Arryn’s former squire',
+      },
+      log: {
+        it: 'Era lo scudiero di Jon Arryn, e ora è cavaliere. Nel torneo del Primo Cavaliere affronta Gregor Clegane, che lo uccide con la lancia.',
+        en: 'He was Jon Arryn’s squire and is now a knight. In the Hand’s tourney he rides against Gregor Clegane, who kills him with his lance.',
+      },
+      status: [{ episode: 4, chapter: 30, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 30,
+          value: { it: 'Corte reale', en: 'Royal court' },
+        },
+      ],
+    },
+    'tobho-mott': {
+      role: { it: 'Mastro armaiolo', en: 'Master armorer' },
+      log: {
+        it: 'Ha la sua bottega in una via di fabbri di Approdo del Re. Eddard Stark va da lui per vedere il ragazzo che Jon Arryn era venuto a cercare, il suo apprendista Gendry.',
+        en: 'He keeps his shop on a street of smiths in King’s Landing. Eddard Stark comes to see the boy Jon Arryn had come looking for, his apprentice Gendry.',
+      },
+      status: [{ episode: 4, chapter: 28, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 28,
+          value: {
+            it: 'Popolo di Approdo del Re',
+            en: 'Smallfolk of King’s Landing',
+          },
+        },
+      ],
+    },
+    'mhaegen': {
+      role: { it: 'Prostituta', en: 'Prostitute' },
+      log: {
+        it: 'Lavora in uno dei bordelli di Ditocorto. Mostra a Eddard Stark la sua bambina, figlia di re Robert.',
+        en: 'She works in one of Littlefinger’s brothels. She shows Eddard Stark her baby daughter, King Robert’s child.',
+      },
+      status: [{ episode: 5, chapter: 36, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 5,
+          chapter: 36,
+          value: { it: 'Bordello di Ditocorto', en: 'Littlefinger’s brothel' },
+        },
+      ],
+    },
+    'vayon-poole': {
+      role: { it: 'Intendente di Casa Stark', en: 'Steward of House Stark' },
+      log: {
+        it: 'Gestisce la casa di Eddard Stark. Lo segue a sud quando diventa Primo Cavaliere del Re.',
+        en: 'He runs Eddard Stark’s household. He follows him south when he becomes Hand of the King.',
+      },
+      status: [
+        { episode: 8, chapter: 17, source: 'chapter', value: 'alive' },
+        { episode: 8, chapter: 51, source: 'episode', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 17,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+      ],
+    },
+    'tomard': {
+      role: { it: 'Guardia di Casa Stark', en: 'Guard of House Stark' },
+      log: {
+        it: 'È uno degli uomini della guardia di Eddard Stark ad Approdo del Re.',
+        en: 'He is one of the men of Eddard Stark’s guard in King’s Landing.',
+      },
+      status: [
+        { episode: 7, chapter: 23, value: 'alive' },
+        { episode: 7, chapter: 50, source: 'chapter', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 7,
+          chapter: 23,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+      ],
+    },
+    'harwin': {
+      role: { it: 'Guardia di Casa Stark', en: 'Guard of House Stark' },
+      log: {
+        it: 'Cavalca con il seguito di Eddard Stark all’esecuzione del disertore. Quando i ragazzi trovano i cuccioli di meta-lupo, dice che non si possono tenere.',
+        en: 'He rides with Eddard Stark’s party to the deserter’s execution. When the boys find the direwolf pups, he says they cannot be kept.',
+      },
+      status: [{ episode: 1, chapter: 2, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 1,
+          chapter: 2,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+        {
+          episode: 6,
+          chapter: 45,
+          source: 'chapter',
+          value: {
+            it: 'Casa Stark, uomini di Beric Dondarrion',
+            en: 'House Stark, Beric Dondarrion’s company',
+          },
+        },
+      ],
+    },
+    'alyn': {
+      role: [
+        {
+          episode: 1,
+          chapter: 13,
+          value: { it: 'Guardia di Casa Stark', en: 'Guard of House Stark' },
+        },
+        {
+          episode: 6,
+          chapter: 46,
+          source: 'chapter',
+          value: {
+            it: 'Capitano della guardia del Primo Cavaliere',
+            en: 'Captain of the Hand’s guard',
+          },
+        },
+      ],
+      log: {
+        it: 'È una delle guardie di Eddard Stark sulla strada del Re. Una mattina lo sveglia perché il re vuole cavalcare con lui.',
+        en: 'He is one of Eddard Stark’s guards on the kingsroad. One morning he wakes him because the king wants to ride with him.',
+      },
+      status: [{ episode: 1, chapter: 13, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 1,
+          chapter: 13,
+          value: { it: 'Casa Stark', en: 'House Stark' },
+        },
+        {
+          episode: 6,
+          chapter: 44,
+          source: 'chapter',
+          value: {
+            it: 'Casa Stark, uomini di Beric Dondarrion',
+            en: 'House Stark, Beric Dondarrion’s company',
+          },
+        },
+      ],
+    },
+    'beric-dondarrion': {
+      role: [
+        {
+          episode: 6,
+          chapter: 28,
+          value: { it: 'Lord di Blackhaven', en: 'Lord of Blackhaven' },
+        },
+        {
+          episode: 6,
+          chapter: 44,
+          source: 'chapter',
+          value: {
+            it: 'A capo degli uomini mandati contro Gregor Clegane',
+            en: 'Leader of the riders sent against Gregor Clegane',
+          },
+        },
+      ],
+      log: {
+        it: 'È un lord delle Terre della Tempesta. Si trova ad Approdo del Re, alla corte del re.',
+        en: 'He is a lord of the stormlands. He is in King’s Landing, at the king’s court.',
+      },
+      status: [{ episode: 6, chapter: 28, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 6,
+          chapter: 28,
+          value: { it: 'Casa Dondarrion', en: 'House Dondarrion' },
+        },
+      ],
+    },
+    'thoros-of-myr': {
+      role: { it: 'Prete rosso', en: 'Red priest' },
+      log: {
+        it: 'È un prete rosso, arrivato nei Sette Regni da Myr, una delle città libere.',
+        en: 'He is a red priest, come to the Seven Kingdoms from Myr, one of the free cities.',
+      },
+      status: [{ episode: 22, chapter: 30, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 22,
+          chapter: 30,
+          value: { it: 'Preti rossi', en: 'Red priests' },
+        },
+        {
+          episode: 22,
+          chapter: 44,
+          source: 'chapter',
+          value: {
+            it: 'Uomini di Beric Dondarrion',
+            en: 'Beric Dondarrion’s company',
+          },
+        },
+      ],
+    },
+    'balon-swann': {
+      role: { it: 'Cavaliere', en: 'Knight' },
+      log: {
+        it: 'È un cavaliere di Casa Swann, nelle Terre della Tempesta. Partecipa alla giostra nel torneo del Primo Cavaliere ad Approdo del Re.',
+        en: 'He is a knight of House Swann, in the stormlands. He rides in the joust at the Hand’s tourney in King’s Landing.',
+      },
+      status: [{ episode: 4, chapter: 30, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 30,
+          value: { it: 'Casa Swann', en: 'House Swann' },
+        },
+      ],
+    },
+    'robar-royce': {
+      role: { it: 'Cavaliere', en: 'Knight' },
+      log: {
+        it: 'È uno dei figli del lord di Runestone, nella Valle di Arryn. Giostra nel torneo del Primo Cavaliere ad Approdo del Re.',
+        en: 'He is one of the sons of the lord of Runestone, in the Vale of Arryn. He rides in the Hand’s tourney in King’s Landing.',
+      },
+      status: [{ episode: 4, chapter: 30, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 30,
+          value: { it: 'Casa Royce', en: 'House Royce' },
+        },
+      ],
+    },
+    'yohn-royce': {
+      role: { it: 'Lord di Runestone', en: 'Lord of Runestone' },
+      log: {
+        it: 'È il capo di Casa Royce. È uno dei grandi lord della Valle di Arryn, vassalli di Casa Arryn.',
+        en: 'He heads House Royce. He is one of the great lords of the Vale, sworn to House Arryn.',
+      },
+      status: [{ episode: 38, chapter: 30, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 38,
+          chapter: 30,
+          value: { it: 'Casa Royce', en: 'House Royce' },
+        },
+      ],
+    },
+    'jason-mallister': {
+      role: { it: 'Lord di Seagard', en: 'Lord of Seagard' },
+      log: {
+        it: 'Passa con i suoi uomini davanti alla locanda all’incrocio, diretto al torneo del Primo Cavaliere. Catelyn Stark lo vede passare.',
+        en: 'He rides past the inn at the crossroads with his men, on his way to the Hand’s tourney. Catelyn Stark sees him go by.',
+      },
+      status: [{ episode: 4, chapter: 29, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 29,
+          value: { it: 'Casa Mallister', en: 'House Mallister' },
+        },
+      ],
+    },
+    'masha-heddle': {
+      role: { it: 'Locandiera', en: 'Innkeeper' },
+      log: {
+        it: 'Gestisce la locanda all’incrocio, sulla strada del Re. Sotto il suo tetto Catelyn Stark fa arrestare Tyrion Lannister.',
+        en: 'She runs the inn at the crossroads, on the kingsroad. Under her roof Catelyn Stark has Tyrion Lannister seized.',
+      },
+      status: [
+        { episode: 4, chapter: 29, value: 'alive' },
+        { episode: 8, chapter: 57, source: 'chapter', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 29,
+          value: {
+            it: 'Popolo delle Terre dei Fiumi',
+            en: 'Smallfolk of the riverlands',
+          },
+        },
+      ],
+    },
+    'kevan-lannister': {
+      role: {
+        it: 'Fratello e capitano di lord Tywin',
+        en: 'Lord Tywin’s brother and captain',
+      },
+      log: {
+        it: 'Combatte al fianco del fratello Tywin nell’esercito Lannister. È con lui quando Tyrion raggiunge l’esercito con i clan delle Montagne della Luna.',
+        en: 'He fights beside his brother Tywin in the Lannister army. He is with him when Tyrion reaches the army with the clans of the Mountains of the Moon.',
+      },
+      status: [{ episode: 8, chapter: 57, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 57,
+          value: { it: 'Casa Lannister', en: 'House Lannister' },
+        },
+      ],
+    },
+    'addam-marbrand': {
+      role: {
+        it: 'Cavaliere, comandante degli esploratori',
+        en: 'Knight, commander of outriders',
+      },
+      log: {
+        it: 'Serve nell’esercito di Tywin Lannister, dove guida gli esploratori a cavallo. È tra i comandanti che lord Tywin ascolta in consiglio.',
+        en: 'He serves in Tywin Lannister’s army, where he leads the outriders. He is among the captains Lord Tywin hears in council.',
+      },
+      status: [{ episode: 10, chapter: 63, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 10,
+          chapter: 63,
+          value: { it: 'Casa Marbrand', en: 'House Marbrand' },
+        },
+      ],
+    },
+    'podrick-payne': {
+      role: {
+        it: 'Scudiero di Tyrion Lannister',
+        en: 'Squire to Tyrion Lannister',
+      },
+      log: {
+        it: 'È un ragazzo timido e di poche parole, assegnato a Tyrion Lannister come scudiero.',
+        en: 'He is a shy boy of few words, given to Tyrion Lannister as his squire.',
+      },
+      status: [{ episode: 12, chapter: 63, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 12,
+          chapter: 63,
+          value: {
+            it: 'Casa Payne, al servizio di Casa Lannister',
+            en: 'House Payne, in House Lannister’s service',
+          },
+        },
+      ],
+    },
+    'stevron-frey': {
+      role: { it: 'Erede delle Torri Gemelle', en: 'Heir to the Twins' },
+      log: {
+        it: 'È accanto al padre alle Torri Gemelle quando Catelyn Stark viene a trattare il passaggio del fiume per l’esercito di Robb.',
+        en: 'He is at his father’s side at the Twins when Catelyn Stark comes to bargain for Robb’s army to cross the river.',
+      },
+      status: [{ episode: 9, chapter: 60, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 9,
+          chapter: 60,
+          value: { it: 'Casa Frey', en: 'House Frey' },
+        },
+      ],
+    },
+    'edmure-tully': {
+      role: {
+        it: 'Figlio di lord Hoster Tully',
+        en: 'Son of Lord Hoster Tully',
+      },
+      log: {
+        it: 'È il figlio di Hoster Tully e il fratello di Catelyn Stark e Lysa Arryn. Si trova a Delta delle Acque, il seggio della sua famiglia, insieme a Robb Stark e ai suoi alleati.',
+        en: 'He is Hoster Tully’s son and the brother of Catelyn Stark and Lysa Arryn. He is at Riverrun, his family’s seat, together with Robb Stark and his allies.',
+      },
+      status: [{ episode: 23, chapter: 72, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 23,
+          chapter: 72,
+          value: { it: 'Casa Tully', en: 'House Tully' },
+        },
+      ],
+    },
+    'hoster-tully': {
+      role: { it: 'Lord di Delta delle Acque', en: 'Lord of Riverrun' },
+      log: {
+        it: 'È il padre di Catelyn Stark, Lysa Arryn ed Edmure Tully. La sua casata, i Tully, governa le Terre dei Fiumi da Delta delle Acque.',
+        en: 'He is the father of Catelyn Stark, Lysa Arryn and Edmure Tully. His house, the Tullys, rules the riverlands from Riverrun.',
+      },
+      status: [
+        { episode: 23, chapter: 72, source: 'chapter', value: 'alive' },
+        { episode: 23, chapter: 72, source: 'episode', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 23,
+          chapter: 72,
+          value: { it: 'Casa Tully', en: 'House Tully' },
+        },
+      ],
+    },
+    'brynden-tully': {
+      role: { it: 'Cavaliere di Casa Tully', en: 'Knight of House Tully' },
+      log: {
+        it: 'È il fratello del padre di Catelyn Stark e un cavaliere di Casa Tully. Lo chiamano il Pesce Nero.',
+        en: 'He is the brother of Catelyn Stark’s father and a knight of House Tully. He is known as the Blackfish.',
+      },
+      status: [{ episode: 23, chapter: 35, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 23,
+          chapter: 35,
+          value: { it: 'Casa Tully', en: 'House Tully' },
+        },
+        {
+          episode: 23,
+          chapter: 56,
+          source: 'chapter',
+          value: {
+            it: 'Casa Tully, esercito di Robb Stark',
+            en: 'House Tully, Robb Stark’s host',
+          },
+        },
+      ],
+    },
+    'hot-pie': {
+      role: {
+        it: 'Garzone di fornaio, recluta dei Guardiani della notte',
+        en: 'Baker’s boy, Night’s Watch recruit',
+      },
+      log: {
+        it: 'Viaggia verso la Barriera con le reclute che Yoren porta ai Guardiani della notte. Lui e Lommy prendono di mira Arya, che viaggia travestita da ragazzo.',
+        en: 'He travels to the Wall with the recruits Yoren is taking to the Night’s Watch. He and Lommy pick on Arya, who is travelling disguised as a boy.',
+      },
+      status: [{ episode: 10, chapter: 75, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 10,
+          chapter: 75,
+          value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+      ],
+    },
+    'lommy': {
+      role: {
+        it: 'Apprendista tintore, recluta dei Guardiani della notte',
+        en: 'Dyer’s apprentice, Night’s Watch recruit',
+      },
+      log: {
+        it: 'Viaggia verso la Barriera con le reclute di Yoren. Lui e Frittella prendono in giro Arya, che si fa passare per un ragazzo.',
+        en: 'He travels to the Wall with Yoren’s recruits. He and Hot Pie mock Arya, who is passing as a boy.',
+      },
+      status: [{ episode: 10, chapter: 75, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 10,
+          chapter: 75,
+          value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+      ],
+    },
+    'jaqen-hghar': {
+      role: {
+        it: 'Prigioniero, recluta dei Guardiani della notte',
+        en: 'Prisoner, Night’s Watch recruit',
+      },
+      log: {
+        it: 'Viaggia verso nord in catene con altri due prigionieri, destinati ai Guardiani della notte. Parla di sé come di “un uomo”.',
+        en: 'He travels north in chains with two other prisoners, bound for the Night’s Watch. He speaks of himself as “a man”.',
+      },
+      status: [{ episode: 12, chapter: 79, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 12,
+          chapter: 79,
+          value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+      ],
+    },
+    'rorge': {
+      role: {
+        it: 'Prigioniero, recluta dei Guardiani della notte',
+        en: 'Prisoner, Night’s Watch recruit',
+      },
+      log: {
+        it: 'Viaggia verso nord in catene con altri due prigionieri, destinati ai Guardiani della notte. Minaccia Arya dalla gabbia.',
+        en: 'He travels north in chains with two other prisoners, bound for the Night’s Watch. He threatens Arya from the cage.',
+      },
+      status: [{ episode: 12, chapter: 79, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 12,
+          chapter: 79,
+          value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+      ],
+    },
+    'biter': {
+      role: {
+        it: 'Prigioniero, recluta dei Guardiani della notte',
+        en: 'Prisoner, Night’s Watch recruit',
+      },
+      log: {
+        it: 'Viaggia verso nord in catene con altri due prigionieri, destinati ai Guardiani della notte. Non parla, e sibila contro chi si avvicina alla gabbia.',
+        en: 'He travels north in chains with two other prisoners, bound for the Night’s Watch. He does not speak, and hisses at anyone who comes near the cage.',
+      },
+      status: [{ episode: 12, chapter: 79, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 12,
+          chapter: 79,
+          value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
         },
       ],
     },

@@ -122,8 +122,9 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // Counted 2026-11-02, after the first season's places (#853): 63
-  // characters, 23 places and the season's heading.
+  // Counted 2026-11-03, after Winterfell's, King's Landing's, the Vale's and
+  // the Riverlands' characters (#1006): 123 characters, 23 places and the
+  // season's heading.
   'game-of-thrones': {
     kinds: [
       'affiliation',
@@ -137,14 +138,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 74,
+      affiliations: 142,
       arcs: 1,
-      characters: 63,
+      characters: 123,
       chronicles: 0,
       linkedOrigins: 0,
       places: 23,
-      statuses: 76,
-      timelines: 146,
+      statuses: 144,
+      timelines: 270,
       visits: 0,
     },
     namesSaidEarly: true,

@@ -87,7 +87,7 @@ first episode to the latest arc. Hunter x Hunter currently covers the Hunter
 Exam, the Heavens Arena, Yorknew City and Greed Island, from recruitment to the
 finale, and Chimera Ant through the birth of the King, with 140+ characters and
 about thirty places. Game of Thrones currently covers the first season and the
-first book, with 60+ characters and 20+ places. All three series are available
+first book, with 120+ characters and 20+ places. All three series are available
 in Italian and English. Every One Piece and Hunter x Hunter entry has its own
 line drawing made for this project, and some are redrawn from the episode the
 story changes them. Most Game of Thrones entries show a plain placeholder until
