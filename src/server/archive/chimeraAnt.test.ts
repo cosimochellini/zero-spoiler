@@ -344,6 +344,26 @@ describe('Chimera Ant dated facts', () => {
     },
   )
 
+  it.each(LOCALES)('dates Leol’s name and death in %s', (locale) => {
+    const hagya = characterById('hagya')
+    const read = (chapter: number): Reader =>
+      readerFor(archive, at('chapter', chapter), locale)
+    const before = read(253)
+    const reached = read(254)
+
+    expect(archive.latestOf(read(239), hagya, 'role')?.[locale]).not.toContain(
+      'Leol',
+    )
+    expect(archive.latestOf(read(240), hagya, 'role')?.[locale]).toContain(
+      'Leol',
+    )
+    expect(archive.latestOf(before, hagya, 'status')).toBe('alive')
+    expect(archive.latestOf(reached, hagya, 'status')).toBe('deceased')
+    expect(drawingsFor(['hagya'], reached)['hagya']).not.toStrictEqual(
+      drawingsFor(['hagya'], before)['hagya'],
+    )
+  })
+
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([
       'kite',
