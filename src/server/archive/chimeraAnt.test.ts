@@ -372,6 +372,11 @@ describe('Chimera Ant dated facts', () => {
     expect(
       anime.archive.characters.find(({ id }) => id === 'hagya')?.name[locale],
     ).toBe('Leol')
+    expect(
+      anime.archive.bookSections
+        .flatMap(({ characters }) => characters)
+        .find(({ id }) => id === 'hagya')?.name[locale],
+    ).toBe('Leol')
     expect(manga.archive.getCharacter('hagya')?.name[locale]).toBe('Hagya')
   })
 

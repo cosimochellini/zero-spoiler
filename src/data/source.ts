@@ -91,8 +91,11 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
     // Reordered introductions can belong to a different arc in the manga.
     bookSections:
       source === 'chapter' ?
-        chapterShelves(shelvedIn(archive.bookSections, has), kept(archive.arcs))
-      : shelvedIn(archive.bookSections, has),
+        chapterShelves(
+          shelvedIn(archive.bookSections, has, kept),
+          kept(archive.arcs),
+        )
+      : shelvedIn(archive.bookSections, has, kept),
     sagas: archive.sagas.map((saga) => ({
       ...saga,
       entries: kept(saga.entries),
@@ -119,10 +122,11 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
 function shelvedIn(
   sections: BookSection[],
   has: (entity: Entity) => boolean,
+  project: (entities: Entity[]) => Entity[],
 ): BookSection[] {
   const shelves: BookSection[] = []
   for (const { arc, characters } of sections) {
-    const kept = characters.filter((character) => has(character))
+    const kept = project(characters)
     const last = shelves.at(-1)
     if (has(arc)) {
       shelves.push({ arc, characters: kept })
