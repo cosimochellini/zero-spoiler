@@ -156,7 +156,6 @@ const relations = stylex.create({
     borderRadius: radius.pill,
     borderStyle: 'solid',
     borderWidth: rule.hair,
-    gridRow: 'span 1',
     overflow: 'hidden',
     aspectRatio: '1',
     backgroundColor: color.paper,
