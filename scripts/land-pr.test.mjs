@@ -18,8 +18,9 @@ import { describe, expect, it } from 'vitest'
 
 const script = path.resolve(import.meta.dirname, 'land-pr.sh')
 const head = 'a'.repeat(40)
+const headRepositoryName = 'owner/zero-spoiler'
 
-// Check runs come one fixture line per `gh api` call, the last one repeated.
+// Workflow runs come one fixture line per `gh api` call, the last one repeated.
 // `gh pr merge` refuses when refused.json exists, which is the PR after that.
 const fakeGh = `#!/bin/bash
 d=$(dirname "$0")
@@ -33,7 +34,7 @@ case "$1 $2" in
     echo "$n" >"$d/n"
     line=$(sed -n "$n p" "$d/runs.jsonl")
     [ -n "$line" ] || line=$(tail -n 1 "$d/runs.jsonl")
-    echo "$line" | jq -r "$q" ;;
+    echo "$line" ;;
   "pr view")
     # A second PR file, when there is one, answers every read after the first
     # mergeable one: main moving into a conflict while CI runs.
@@ -53,13 +54,18 @@ esac
 `
 
 /**
- * A check run as the GitHub API lists it.
+ * A workflow run as the GitHub API lists it.
  * @param {number} id - The run id: a newer run has a higher one.
  * @param {string} status - queued, in_progress or completed.
  * @param {string | null} conclusion - The conclusion once completed.
  * @returns {object} The run.
  */
-const run = (id, status, conclusion) => ({ id, status, conclusion })
+const run = (id, status, conclusion) => ({
+  id,
+  status,
+  conclusion,
+  head_repository: { full_name: headRepositoryName },
+})
 
 /**
  * The PR as `gh pr view --json` sees it.
@@ -70,6 +76,8 @@ const run = (id, status, conclusion) => ({ id, status, conclusion })
 const pr = (state, mergeable = 'MERGEABLE') => ({
   state,
   baseRefName: 'main',
+  headRefName: 'topic',
+  headRepository: { nameWithOwner: headRepositoryName },
   mergeable,
   headRefOid: head,
   mergeCommit: state === 'MERGED' ? { oid: 'b'.repeat(40) } : null,
@@ -79,7 +87,7 @@ const pr = (state, mergeable = 'MERGEABLE') => ({
 /**
  * Writes the fakes and the fixtures into the bin directory.
  * @param {string} bin - The directory put first on the PATH.
- * @param {object[][]} runs - The check runs each `gh api` call returns.
+ * @param {object[][]} runs - The workflow runs each `gh api` call returns.
  * @param {string} [refusedThen] - When set, `gh pr merge` is refused and the PR state reads this after.
  * @param {string} [mergeable] - What GitHub reports about merging the PR.
  * @param {string} [later] - What GitHub reports on every later read.
@@ -111,7 +119,7 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
   fake('sleep', '#!/bin/sh\nexit 0\n')
   writeFileSync(
     path.join(bin, 'runs.jsonl'),
-    runs.map((list) => JSON.stringify({ check_runs: list })).join('\n'),
+    runs.map((list) => JSON.stringify({ workflow_runs: list })).join('\n'),
   )
   writeFileSync(
     path.join(bin, 'pr.json'),
@@ -134,7 +142,7 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
 
 /**
  * Runs land-pr.sh once in a fresh directory of fakes, removed afterwards.
- * @param {object[][]} runs - The check runs each `gh api` call returns.
+ * @param {object[][]} runs - The workflow runs each `gh api` call returns.
  * @param {string} [refusedThen] - When set, `gh pr merge` is refused and the PR state reads this after.
  * @param {string} [mergeable] - What GitHub reports about merging the PR.
  * @param {string} [later] - What GitHub reports on every later read.
@@ -207,7 +215,7 @@ describe('land-pr.sh', () => {
 
     expect(stdout).toContain('merge main into the branch')
     expect(stdout).toContain('src/a.ts')
-    expect(calls).not.toContain('check-runs')
+    expect(calls).not.toContain('actions/workflows/ci.yml/runs')
     expect(calls).not.toContain('pr merge')
     expect(status).toBe(2)
   })
@@ -254,16 +262,28 @@ describe('land-pr.sh', () => {
       'CONFLICTING',
     )
 
-    expect(calls).toContain('check-runs')
+    expect(calls).toContain('actions/workflows/ci.yml/runs')
     expect(stdout).toContain('src/a.ts')
     expect(calls).not.toContain('pr merge')
     expect(status).toBe(2)
   })
 
-  it('still exits 3 on a failed run', () => {
-    const { status, stdout, calls } = land([[run(1, 'completed', 'failure')]])
+  it('rejects a failed workflow even if a newer run from another fork passed', () => {
+    const { status, stdout, calls } = land([
+      [
+        run(1, 'completed', 'failure'),
+        {
+          ...run(2, 'completed', 'success'),
+          head_repository: { full_name: 'other/zero-spoiler' },
+        },
+      ],
+    ])
 
-    expect(stdout).toContain(`check on ${head}: failure`)
+    expect(calls).toContain(
+      `event=pull_request -f head_sha=${head} -f branch=topic`,
+    )
+
+    expect(stdout).toContain(`CI on ${head}: failure`)
     expect(calls).not.toContain('pr merge')
     expect(status).toBe(3)
   })

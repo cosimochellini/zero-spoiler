@@ -1,5 +1,5 @@
 #!/bin/bash
-# Lands a reviewed pull request: waits for CI `check` on the reviewed head and
+# Lands a reviewed pull request: waits for the CI workflow on the reviewed head and
 # squash-merges it on green. Main moving on is fine: the merge goes ahead
 # whenever GitHub reports no conflict, and the branch is synced with main only
 # when it conflicts, by hand (landing-prs skill).
@@ -10,7 +10,7 @@
 #      2 conflict with main (the files are printed): merge main into the
 #        branch by hand. Checked before waiting for CI, as GitHub starts no
 #        run on a conflicting PR, and again after it, as main may have moved
-#      3 CI `check` did not pass. A cancelled run is waited out, as a newer
+#      3 the CI workflow did not pass. A cancelled run is waited out, as a newer
 #        run on the same head cancels it; one never followed times out
 #      4 the head is no longer the one expected
 #      5 bad arguments, a PR not open against main, gh or git failed, or the
@@ -21,13 +21,18 @@ cd "$(dirname "$0")/.." || exit 5
 PR=$1
 H=$2
 
-# Prints the conclusion of the newest `check` run on commit $1, once it has
-# finished. `gh pr ready`, a PR body edit or a re-run cancel the run in flight
-# and start a newer one, so a cancelled run is not final.
+# Prints the conclusion of the newest CI workflow run on commit $1, once it has
+# finished. A superseding run can cancel an earlier one, so keep waiting
+# when the latest run is cancelled.
 wait_check() {
+  local runs r
   for _ in $(seq 80); do
-    r=$(gh api "repos/{owner}/{repo}/commits/$1/check-runs?check_name=check" \
-      -q '.check_runs | max_by(.id) | "\(.status) \(.conclusion)"') || return 1
+    runs=$(gh api 'repos/{owner}/{repo}/actions/workflows/ci.yml/runs' --method GET \
+      -f event=pull_request -f "head_sha=$1" -f "branch=$HEAD_BRANCH") || return 1
+    r=$(jq -r --arg repo "$HEAD_REPO" '
+      [.workflow_runs[] | select(.head_repository.full_name == $repo)]
+      | max_by(.id) | "\(.status) \(.conclusion)"
+    ' <<< "$runs") || return 1
     case $r in
       "completed cancelled") ;;
       "completed "*) echo "${r#completed }"; return ;;
@@ -60,14 +65,17 @@ mergeable() {
   echo "$m"
 }
 
-pr=$(gh pr view "$PR" --json state,baseRefName -q '"\(.state) \(.baseRefName)"') || exit 5
-[ "$pr" = "OPEN main" ] || { echo "PR $PR is not open against main: $pr"; exit 5; }
+pr=$(gh pr view "$PR" --json state,baseRefName,headRefName,headRepository \
+  -q '[.state, .baseRefName, .headRefName, .headRepository.nameWithOwner] | @tsv') || exit 5
+IFS=$'\t' read -r state base HEAD_BRANCH HEAD_REPO <<< "$pr"
+[ "$state $base" = "OPEN main" ] || { echo "PR $PR is not open against main: $state $base"; exit 5; }
+[ -n "$HEAD_BRANCH" ] && [ -n "$HEAD_REPO" ] || { echo "PR $PR has no head branch or repository"; exit 5; }
 
 # Exits 2 naming the files $H conflicts on with origin/main. GitHub's answer
 # decides when to look: MERGEABLE goes on, CONFLICTING and an UNKNOWN that
 # outlasted mergeable() are settled by git. A conflict GitHub reports but git
 # does not find exits 5. GitHub starts no CI run on a conflicting head, so
-# waiting for `check` there would only run out the clock.
+# waiting for CI there would only run out the clock.
 stop_on_conflict() {
   m=$(mergeable) || exit 5
   [ "$m" = MERGEABLE ] && return 0
@@ -92,7 +100,7 @@ stop_on_conflict
 result=$(wait_check "$H") || exit 5
 cur=$(pr_head) || exit 5
 [ "$cur" = "$H" ] || { echo "head is no longer $H"; exit 4; }
-[ "$result" = success ] || { echo "check on $H: $result"; exit 3; }
+[ "$result" = success ] || { echo "CI on $H: $result"; exit 3; }
 stop_on_conflict
 gh pr ready "$PR" 2>/dev/null
 

@@ -37,8 +37,7 @@ env:
   LEFTHOOK: '0'
 
 jobs:
-  check:
-    name: check
+  validation:
     # Pull requests only: the gate already ran there, and repeating it on main
     # just to bump the version cost the whole run for nothing.
     if: github.event_name == 'pull_request'
@@ -74,9 +73,6 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
-
-      - name: Lint
-        run: npm run lint
 
       - name: Format
         run: npm run format:check
@@ -143,8 +139,34 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+  lint:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Pin npm
+        run: |
+          corepack enable npm
+          npm --version
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
   # Cuts the release for every push to main, which in practice means every
-  # squashed pull request. It does not wait for `check`, which only runs on
+  # squashed pull request. It does not wait for validation, which only runs on
   # pull requests; a merge of two green PRs that break each other still tags.
   #
   # This job is also why `main` carries no branch protection. A ruleset that
