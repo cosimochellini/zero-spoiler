@@ -12,6 +12,7 @@ import {
 import type { Stroke } from '~/lib/view/records'
 
 import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
+import { CHIMERA_ANT_DRAWINGS, chimeraAntRedrawn } from './chimera-ant'
 import { CHIMERA_ANT_PLACE_DRAWINGS } from './chimera-ant-places'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
@@ -104,6 +105,7 @@ export const DRAWINGS = {
   ...ZOLDYCK_DRAWINGS,
   ...CHAPTER_ONE_DRAWINGS,
   ...CHIMERA_ANT_PLACE_DRAWINGS,
+  ...CHIMERA_ANT_DRAWINGS,
   ...TRICK_TOWER_DRAWINGS,
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
@@ -1028,4 +1030,5 @@ export const REDRAWINGS: Redrawings = {
   ...heavensArenaRedrawn,
   ...yorknewCityRedrawn,
   ...greedIslandRedrawn,
+  ...chimeraAntRedrawn,
 }

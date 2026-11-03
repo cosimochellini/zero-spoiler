@@ -934,6 +934,85 @@
     "neferpitou": [
       "hxh-en-Chapter_198-416866.json",
       "hxh-en-Episode_85_(2011)-419187.json"
+    ],
+    "lin-koshi": [
+      "hxh-en-Lin_Koshi-424423.json",
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "podungo-lapoy": [
+      "hxh-en-Podungo_Lapoy-424163.json",
+      "hxh-en-Chapter_186-416206.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "wong": [
+      "hxh-en-Wong-423910.json",
+      "hxh-en-Chapter_187-383204.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "kurt": [
+      "hxh-en-Kurt-425004.json",
+      "hxh-en-Chapter_187-383204.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "reina": [
+      "hxh-en-Reina-424130.json",
+      "hxh-en-Chapter_187-383204.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "haruna": [
+      "hxh-en-Haruna-425773.json",
+      "hxh-en-Episode_77_(2011)-416442.json"
+    ],
+    "pekuba": [
+      "hxh-en-Pekuba-424177.json",
+      "hxh-en-Episode_78_(2011)-416443.json",
+      "hxh-en-Episode_79_(2011)-419186.json"
+    ],
+    "balda": [
+      "hxh-en-Balda-425028.json",
+      "hxh-en-Chapter_190-329215.json",
+      "hxh-en-Episode_79_(2011)-419186.json",
+      "hxh-en-Episode_80_(2011)-416445.json"
+    ],
+    "pike": [
+      "hxh-en-Pike-424166.json",
+      "hxh-en-Chapter_190-329215.json",
+      "hxh-en-Episode_80_(2011)-416445.json"
+    ],
+    "zazan": [
+      "hxh-en-Zazan-423889.json",
+      "hxh-en-Chapter_189-383210.json",
+      "hxh-en-Chapter_190-329215.json",
+      "hxh-en-Episode_80_(2011)-416445.json"
+    ],
+    "peggy": [
+      "hxh-en-Peggy-424180.json",
+      "hxh-en-Chapter_194-329217.json",
+      "hxh-en-Chapter_198-416866.json",
+      "hxh-en-Episode_82_(2011)-416462.json",
+      "hxh-en-Episode_84_(2011)-416447.json",
+      "hxh-en-Episode_85_(2011)-419187.json"
+    ],
+    "rammot": [
+      "hxh-en-Rammot-424144.json",
+      "hxh-en-Chapter_191-328186.json",
+      "hxh-en-Chapter_192-329216.json",
+      "hxh-en-Chapter_197-416210.json",
+      "hxh-en-Chapter_198-416866.json",
+      "hxh-en-Episode_81_(2011)-410846.json",
+      "hxh-en-Episode_84_(2011)-416447.json"
+    ],
+    "yunju": [
+      "hxh-en-Yunju-423895.json",
+      "hxh-en-Chapter_192-329216.json",
+      "hxh-en-Chapter_193-425825.json",
+      "hxh-en-Episode_82_(2011)-416462.json"
+    ],
+    "baro": [
+      "hxh-en-Baro-425022.json",
+      "hxh-en-Chapter_195-416208.json",
+      "hxh-en-Episode_83_(2011)-416446.json"
     ]
   },
   "omitted": {
@@ -944,7 +1023,8 @@
     "kosofftro": "Chapter 132 shows only his introduction to a group of unnamed recruits and directions for reaching him with a spell. No individual bond with an archived named character is established. Judged from hxh-en-Kosofftro-424571.json and hxh-en-Chapter_132-417938.json.",
     "jeitsari": "Only named and pictured in the chapter 121 auction introduction through this phase; no personal interaction with an archived character is shown.",
     "jitonoda": "Only named in the chapter 129 manga news report as the mayor of Yorknew City; no directed interaction with an archived character is established. Judged from the chapter 129 page.",
-    "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032)."
+    "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032).",
+    "cheetu": "Through chapter 198 / episode 85 his exchanges are with Colt and Hagya, whose names phase 1 leaves under fog, and with Peggy over the quota, a scene episode 81’s page does not show Peggy in. Judged from hxh-en-Cheetu-425269.json, hxh-en-Chapter_192-329216.json and hxh-en-Episode_81_(2011)-410846.json (#1020)."
   },
   "pending": {}
 }

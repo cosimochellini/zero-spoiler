@@ -118,6 +118,12 @@ export const ITALIAN_TITLES = {
     'kortopi': 'Brigata Fantasma#Kortopi',
     'bonolenov': 'Brigata Fantasma#Bonolenov Ndongo',
     'chrollo': 'Brigata Fantasma#Quoll Lucifer',
+    'neferpitou': 'Formichimere#Neferpito',
+    'peggy': 'Formichimere#Pegyi',
+    'zazan': 'Formichimere#Zazan',
+    'cheetu': 'Formichimere#Jeedo',
+    'pike': 'Formichimere#Pike',
+    'rammot': 'Formichimere#Rammot',
   },
   // On Italian Wikipedia, which A Wiki of Ice and Fire does not link: every
   // Game of Thrones character's page is named here.
@@ -207,6 +213,23 @@ export const ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const NAMES_KEPT = {
+  // No entry in the Italian Formichimere, character or Hunter lists; dub
+  // unviewed (#1020). Kurt and Reina appear only inside the entries of the
+  // ants they later become, which are not headings of their own.
+  'spinner-clow': 'Spinner Clow',
+  'banana-kavaro': 'Banana Kavaro',
+  'monta-yuras': 'Monta Yuras',
+  'stick-dinner': 'Stick Dinner',
+  'lin-koshi': 'Lin Koshi',
+  'podungo-lapoy': 'Podungo Lapoy',
+  'wong': 'Wong',
+  'kurt': 'Kurt',
+  'reina': 'Reina',
+  'haruna': 'Haruna',
+  'pekuba': 'Pekuba',
+  'balda': 'Balda',
+  'yunju': 'Yunju',
+  'baro': 'Baro',
   // No Michael entry in the Italian character/Hunter lists; dub unviewed (#1032).
   'michael': 'Michael',
   // No Jitonoda entry in the Italian character/Hunter lists; dub unviewed (#1019).

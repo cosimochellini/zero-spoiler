@@ -531,7 +531,11 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
         FAILED_288_PHASE_1,
       ],
-      status: [{ episode: 17, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 17, chapter: 30, value: 'alive' },
+        // A chimera ant shoots her as she runs for the NGL border (#1020).
+        { episode: 80, chapter: 190, value: 'deceased' },
+      ],
     },
     bourbon: {
       relationships: zevilRelationships.bourbon,
@@ -582,7 +586,16 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         },
       ],
-      status: [{ episode: 18, chapter: 23, value: 'alive' }],
+      status: [
+        { episode: 18, chapter: 23, value: 'alive' },
+        // Zazan's stinger paralyses him and her squad takes him to the
+        // nest (#1020).
+        { episode: 80, chapter: 190, value: 'captured' },
+        // The manga has the butcher kill him once Neferpitou has learned
+        // what he knows about Nen; the anime leaves that scene out. Episode
+        // 84 adapts the chapter and only orders it.
+        { episode: 84, chapter: 198, source: 'chapter', value: 'deceased' },
+      ],
     },
     bodoro: {
       relationships: zevilRelationships.bodoro,

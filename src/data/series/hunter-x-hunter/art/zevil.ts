@@ -134,6 +134,50 @@ const KENMI_BRACE: Stroke[] = [
   { d: 'M68 88 l6 -3 M70 102 l6 -3 M71 116 l6 -3', role: 'ambient' },
 ]
 
+/**
+ * Ponzu's wide hat with its closed side flaps and the band in tint. Both her
+ * drawings show this same hat, so the only thing her death changes is how it
+ * lies.
+ */
+const PONZU_HAT: Stroke[] = [
+  { d: ellipse(80, 131, 68, 18) },
+  { d: 'M12 131 V136 C24 163 136 163 148 136 V131', role: 'soft' },
+  { d: 'M43 129 C42 104 49 64 79 60 C108 56 119 93 117 129' },
+  {
+    d: 'M44 115 C61 124 98 124 116 115 L117 129 C100 140 62 140 43 129 Z',
+    role: 'accent',
+  },
+  { d: 'M55 75 C59 66 68 63 77 64', role: 'soft' },
+  { d: 'M108 87 l5 -3 M112 100 l4 -3', role: 'ambient' },
+  { d: 'M29 130 L26 150 L43 164 L48 142 M112 142 L118 163 L135 150 L132 130' },
+  { d: 'M29 143 L38 155 M122 155 L131 145', role: 'soft' },
+  { d: 'M51 145 Q80 152 108 145', role: 'soft' },
+]
+
+/**
+ * Pokkle's bow with its grip in tint, and the quiver of ordinary arrows
+ * beside it. Both his drawings show the same bow, so his death changes only
+ * how it lies.
+ */
+const POKKLE_BOW: Stroke[] = [
+  { d: 'M40 32 C88 62 88 128 40 168' },
+  { d: 'M44 30 C95 66 95 132 44 170', role: 'soft' },
+  { d: 'M40 32 L56 100 L40 168', role: 'soft' },
+  { d: 'M73 93 L70 115 L75 116 L78 95 Z', role: 'accent' },
+  { d: 'M72 101 l4 1 M72 106 l4 1 M71 111 l4 1', role: 'soft' },
+]
+const POKKLE_QUIVER: Stroke[] = [
+  { d: 'M100 99 L127 109 L106 176 Q94 184 83 166 Z' },
+  { d: ellipse(113, 104, 14, 6) },
+  { d: 'M103 100 L109 53 M113 101 L124 44 M121 104 L139 65' },
+  {
+    d: 'M106 68 L102 59 L109 53 L113 63 Z M120 60 L117 49 L124 44 L128 55 Z M133 80 L132 70 L139 65 L142 76 Z',
+    role: 'soft',
+  },
+  { d: 'M108 121 L99 161', role: 'soft' },
+  { d: 'M119 127 l-6 -3 M115 141 l-6 -3 M111 155 l-6 -3', role: 'ambient' },
+]
+
 /** Original objects from the Fourth Phase; references and viewing limits are in the provenance note. */
 export const zevilArt = {
   // Khara's headset, its earpiece in tint and the microphone folded forward:
@@ -229,46 +273,14 @@ export const zevilArt = {
   ],
   // Ponzu's wide hat and its closed side flaps: episode 17 / chapter 30.
   // The bees stay out until their later revelation.
-  'ponzu': [
-    { d: ellipse(80, 131, 68, 18) },
-    { d: 'M12 131 V136 C24 163 136 163 148 136 V131', role: 'soft' },
-    { d: 'M43 129 C42 104 49 64 79 60 C108 56 119 93 117 129' },
-    {
-      d: 'M44 115 C61 124 98 124 116 115 L117 129 C100 140 62 140 43 129 Z',
-      role: 'accent',
-    },
-    { d: 'M55 75 C59 66 68 63 77 64', role: 'soft' },
-    { d: 'M108 87 l5 -3 M112 100 l4 -3', role: 'ambient' },
-    {
-      d: 'M29 130 L26 150 L43 164 L48 142 M112 142 L118 163 L135 150 L132 130',
-    },
-    { d: 'M29 143 L38 155 M122 155 L131 145', role: 'soft' },
-    { d: 'M51 145 Q80 152 108 145', role: 'soft' },
-    shadow(80, 184, 63),
-  ],
+  'ponzu': [...PONZU_HAT, shadow(80, 184, 63)],
   // Bourbon's turban, standing: Tonpa points him out as a snake charmer in
   // episode 3 and chapter 5. No snake and no cave: those come with his death.
   'bourbon': [...BOURBON_TURBAN, shadow(80, 188, 60)],
   // Pokkle's bow and quiver of ordinary arrows: the roll call names him at
   // the end of the Fourth Phase in episode 18, the roster of chapter 23
   // prints his name. No poisoned arrow and no later Nen arrows.
-  'pokkle': [
-    { d: 'M40 32 C88 62 88 128 40 168' },
-    { d: 'M44 30 C95 66 95 132 44 170', role: 'soft' },
-    { d: 'M40 32 L56 100 L40 168', role: 'soft' },
-    { d: 'M73 93 L70 115 L75 116 L78 95 Z', role: 'accent' },
-    { d: 'M72 101 l4 1 M72 106 l4 1 M71 111 l4 1', role: 'soft' },
-    { d: 'M100 99 L127 109 L106 176 Q94 184 83 166 Z' },
-    { d: ellipse(113, 104, 14, 6) },
-    { d: 'M103 100 L109 53 M113 101 L124 44 M121 104 L139 65' },
-    {
-      d: 'M106 68 L102 59 L109 53 L113 63 Z M120 60 L117 49 L124 44 L128 55 Z M133 80 L132 70 L139 65 L142 76 Z',
-      role: 'soft',
-    },
-    { d: 'M108 121 L99 161', role: 'soft' },
-    { d: 'M119 127 l-6 -3 M115 141 l-6 -3 M111 155 l-6 -3', role: 'ambient' },
-    shadow(80, 188, 56),
-  ],
+  'pokkle': [...POKKLE_BOW, ...POKKLE_QUIVER, shadow(80, 188, 56)],
   // Bodoro's martial-artist gi standing in 3/4 as he wears it, the sleeves
   // open at the cuffs, the collar crossed in tint, the belt knotted at the
   // front and the side turning away hatched: Tonpa names the kung-fu master
@@ -479,6 +491,36 @@ export const zevilArt = {
  * the object of each applicant who dies on Zevil Island is laid down.
  */
 export const zevilRedrawn: Redrawings = {
+  ponzu: [
+    // The same hat knocked over and tilted on the ground: a chimera ant
+    // shoots Ponzu as she runs for the NGL border and only her torn clothes
+    // are left, episode 80 / chapter 190.
+    {
+      episode: 80,
+      chapter: 190,
+      value: [
+        ...moved(PONZU_HAT, 'rotate(-16 80 150)'),
+        { d: 'M4 168 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  pokkle: [
+    // The same bow laid down on the floor with one loose arrow beside it and
+    // no quiver: the butcher kills Pokkle once Neferpitou has made him tell
+    // what he knows about Nen, chapter 198. The anime leaves the killing
+    // out, so only the manga redraws him.
+    {
+      episode: 84,
+      chapter: 198,
+      source: 'chapter',
+      value: [
+        ...moved(POKKLE_BOW, 'translate(16 26) rotate(-90 64 100)'),
+        { d: 'M30 152 L112 146 M104 142 L114 146 L105 151', role: 'soft' },
+        { d: 'M118 120 l6 -4 M124 128 l6 -4', role: 'ambient' },
+        { d: 'M4 154 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
   gittarackur: [
     // The same pins, three still fanned as they bristle from the disguise
     // and the one in tint drawn up and out of them: he takes a needle from
