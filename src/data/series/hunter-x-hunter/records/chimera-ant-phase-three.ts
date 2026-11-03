@@ -39,7 +39,13 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           it: 'Si presenta al re durante una partita.',
           en: 'Introduces herself to the King during a game.',
         },
-        affiliation: [],
+        affiliation: [
+          {
+            episode: 103,
+            chapter: 257,
+            value: { it: 'Giocatrici di gungi', en: 'Gungi players' },
+          },
+        ],
         status: [{ episode: 103, chapter: 257, value: 'alive' }],
       },
       remora: {
@@ -48,7 +54,13 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           it: 'Aiuta due formichimere a prendere di mira Killua.',
           en: 'Helps two Chimera Ants target Killua.',
         },
-        affiliation: [],
+        affiliation: [
+          {
+            episode: 101,
+            chapter: 238,
+            value: { it: 'Formichimere', en: 'Chimera Ants' },
+          },
+        ],
         status: [{ episode: 101, chapter: 238, value: 'alive' }],
       },
       tsukuma: {
@@ -57,7 +69,9 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           it: 'Parla in un servizio televisivo.',
           en: 'Speaks in a television report.',
         },
-        affiliation: [],
+        affiliation: [
+          { episode: 96, chapter: 224, value: { it: 'Polizia', en: 'Police' } },
+        ],
         status: [{ episode: 96, chapter: 224, value: 'alive' }],
       },
     },
