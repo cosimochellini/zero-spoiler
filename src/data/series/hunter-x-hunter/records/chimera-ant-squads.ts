@@ -194,6 +194,17 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Left the nest to become a king',
           },
         },
+        // He reports back to the Royal Guards with Flutter and Hina and takes
+        // Neferpitou's job, chapter 234.
+        {
+          episode: 106,
+          chapter: 234,
+          source: 'chapter',
+          value: {
+            it: 'Formichimere, al servizio del re',
+            en: 'Chimera Ants, in the King’s service',
+          },
+        },
       ],
     },
     rammot: {
