@@ -35,7 +35,7 @@ export const CHIMERA_ANT_PLACE_RECORDS: HunterEntity[] = [
     revealedAtChapter: 224,
     name: { it: 'Meteor City', en: 'Meteor City' },
     summary: {
-      it: 'Una città ai margini dei registri ufficiali.',
+      it: 'Una città che non compare nei registri ufficiali.',
       en: 'A city outside official records.',
     },
     visual: { art: 'meteor-city', tint: 'ocher' },
@@ -329,7 +329,7 @@ export const CHIMERA_ANT_PLACES: Record<
     arc: 'chimera-ant-arc',
     landmark: { it: 'La città', en: 'The city' },
     log: {
-      it: 'Una città ai margini dei registri ufficiali.',
+      it: 'Una città che non compare nei registri ufficiali.',
       en: 'A city outside official records.',
     },
     filedHere: [],
