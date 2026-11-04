@@ -35,6 +35,7 @@ export interface HunterVocabulary extends Vocabulary {
     | 'port'
     | 'prison'
     | 'tower'
+    | 'tree'
     | 'wetland'
   group: never
   region: 'islands' | 'mainland'

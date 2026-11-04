@@ -123,11 +123,17 @@ describe('the place words of a series that labels its own', () => {
     ['its Italian tower label', { forms: { x: 'Torre' } }, ['heavens-arena']],
     ['its nest label', { forms: { x: 'Nest' } }, ['chimera-ant-nest']],
     ['its Italian nest label', { forms: { x: 'Nido' } }, ['chimera-ant-nest']],
-    ['its airport label', { forms: { x: 'Airport' } }, ['lingon-airport']],
+    ['its tree label', { forms: { x: 'Tree' } }, ['world-tree']],
+    ['its Italian tree label', { forms: { x: 'Albero' } }, ['world-tree']],
+    [
+      'its airport label',
+      { forms: { x: 'Airport' } },
+      ['lingon-airport', 'parasta-airport'],
+    ],
     [
       'its Italian airport label',
       { forms: { x: 'Aeroporto' } },
-      ['lingon-airport'],
+      ['lingon-airport', 'parasta-airport'],
     ],
     [
       'its building label',
@@ -184,6 +190,9 @@ describe('the place words of a series that labels its own', () => {
         'southernpiece-auction-house',
         'hotel-beitacle',
         'meteor-city',
+        'parasta-airport',
+        'swardani-city',
+        'world-tree',
       ],
     ],
   ])(

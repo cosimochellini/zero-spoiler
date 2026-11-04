@@ -250,6 +250,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter evacuating the wounded',
           },
         },
+        {
+          episode: 140,
+          chapter: 325,
+          value: {
+            it: 'Hunter incaricato di preparare una stanza per Gon',
+            en: 'Hunter preparing a room for Gon',
+          },
+        },
       ],
       log: {
         it: 'Arriva con Netero e Morau per sterminare le formichimere, in giacca e cravatta. La sua allieva Pahm vuole unirsi a loro, anche se lui non voleva.',
@@ -264,6 +272,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Morau',
             en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Morel',
+          },
+        },
+        {
+          episode: 140,
+          chapter: 325,
+          value: {
+            it: 'Associazione Hunter; organizza le cure per Gon',
+            en: 'Hunter Association; arranges care for Gon',
           },
         },
       ],
@@ -350,7 +366,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: { it: 'Hunter', en: 'Hunter' },
+      role: [
+        { episode: 86, chapter: 199, value: { it: 'Hunter', en: 'Hunter' } },
+        {
+          episode: 141,
+          chapter: 326,
+          value: { it: 'Hunter a una stella', en: 'Single-Star Hunter' },
+        },
+      ],
       log: {
         it: 'Arriva con Netero e prende in giro Gon e Killua perché sono bambini. Poi spiega a Killua che uno scontro di Nen non si decide da chi ha più aura, perché nessuno conosce l’abilità dell’altro.',
         en: 'He arrives with Netero and mocks Gon and Killua for being children. Then he tells Killua that a Nen fight is not decided by who has more aura, since no one knows the other’s ability.',
@@ -365,6 +388,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Nobu',
             en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Knov',
+          },
+        },
+        {
+          episode: 140,
+          chapter: 325,
+          value: {
+            it: 'Associazione Hunter; organizza le cure per Gon',
+            en: 'Hunter Association; arranges care for Gon',
           },
         },
       ],

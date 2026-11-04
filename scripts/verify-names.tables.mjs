@@ -46,6 +46,24 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'alluka-zoldyck': 'Famiglia Zoldick#Alluka',
+    'amane': 'Famiglia Zoldick#Amane',
+    'botobai-gigante': 'Associazione Hunter#Botobai Gigante',
+    'bushidora-ambitious': 'Associazione Hunter#Bushidora Ambitious',
+    'cheadle-yorkshire': 'Associazione Hunter#Cheadle Yorkshire',
+    'cluck': 'Associazione Hunter#Clook',
+    'gel': 'Associazione Hunter#Gell',
+    'ginta': 'Associazione Hunter#Ginta',
+    'kanzai': 'Associazione Hunter#Kanzai',
+    'kasuga': 'Famiglia Zoldick#Kasuga',
+    'loupe-highland': 'Associazione Hunter#Lupe Highland',
+    'mizaistom-nana': 'Associazione Hunter#Mizaistom Nana',
+    'pariston-hill': 'Associazione Hunter#Pariston Hill',
+    'pyon': 'Associazione Hunter#Piyon',
+    'saccho-kobayakawa': 'Associazione Hunter#Saccho Kobayakawa',
+    'saiyu': 'Associazione Hunter#Saiyu',
+    'teradein-neutral': 'Associazione Hunter#Teradain Neutral',
+    'tsubone': 'Famiglia Zoldick#Tsubone',
     'ming-jol-ik': 'Personaggi di Hunter × Hunter#Digo Masadoru',
     'palm-siberia': 'Associazione Hunter#Pahm Sibelia',
     'knov': 'Associazione Hunter#Nobu',
@@ -161,6 +179,17 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  // Election names retained after checking Italian Wikipedia; dub not viewed.
+  'beans': 'Beans',
+  'cutie-beauty': 'Cutie Beauty',
+  'hishita': 'Hishita',
+  'ickshonpe-katocha': 'Ickshonpai Kattouger',
+  'linne-horsdoeuvre': 'Rinne Hors D’Oeuvre',
+  'mitsuba': 'Mitsuba',
+  'muna': 'Muna',
+  'nanika': 'Cosa',
+  'yasuha': 'Yasuha',
+  'sanbica-norton': 'Sanbika Norton',
   // No Italian Wikipedia entry; the 2011 dub is unviewed (#1023).
   'taragetter': 'Taragetter',
   // Chimera Ant phase 3 (#1022): no section of their own in the Italian

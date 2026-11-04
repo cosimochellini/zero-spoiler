@@ -30,5 +30,6 @@ export const HUNTER_X_HUNTER_PLACE_WORDS: PlaceWords<HunterVocabulary> = {
     airport: { en: 'Airport', it: 'Aeroporto' },
     building: { en: 'Building', it: 'Edificio' },
     nest: { en: 'Nest', it: 'Nido' },
+    tree: { en: 'Tree', it: 'Albero' },
   },
 }

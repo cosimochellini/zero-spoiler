@@ -121,7 +121,9 @@ the anime, which never says his manga name, opens it as Leol at episode 106
 Phase 4 (#1023) covers the palace assault through chapter 298, adds Taragetter
 in the manga, and opens Peijin in the anime at episode 116. Phase 5 (#1024)
 files the finale through chapter 318 and episode 136, with the full cast
-reconciliation in the phase 5 inventory. Gyro is unanchored at 78 / 203. Silva,
+reconciliation in the phase 5 inventory. Election (#912) files named characters
+and visited places through chapter 339 and episode 148, with placeholder art
+pending #913 and chronicles pending #914. Gyro is unanchored at 78 / 203. Silva,
 Killua's father, is named in episode 24 but in chapter 95 in the manga, so his
 record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but
 named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named
@@ -235,11 +237,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 198                                                   |
-| Characters        | 155                                                   |
-| Arcs, places      | 7 · 36                                                |
+| Records           | 229                                                   |
+| Characters        | 183                                                   |
+| Arcs, places      | 7 · 39                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 198, one per record, plus 41 redrawings of 39 records |
+| Line drawings     | 229, one per record, plus 41 redrawings of 39 records |
 | Chronicle stories | 345, for 108 characters                               |
 
 ### `game-of-thrones`
