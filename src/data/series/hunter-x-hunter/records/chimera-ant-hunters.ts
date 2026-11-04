@@ -147,9 +147,11 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 200,
           value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
         },
+        // She rides into the palace in Bizeff's trucks, chapter 252 /
+        // episode 106.
         {
-          episode: 107,
-          chapter: 254,
+          episode: 106,
+          chapter: 252,
           value: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
         },
       ],
@@ -163,6 +165,17 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           episode: 86,
           chapter: 200,
           value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+        },
+        // Only the manga's matchups add her to Knov and Morel's,
+        // chapter 223; episode 95 leaves her out.
+        {
+          episode: 95,
+          chapter: 223,
+          source: 'chapter',
+          value: {
+            it: 'Allieva di Nobu; deve tenere Shawapf lontano dal re con Nobu e Morau',
+            en: 'Knov’s student; is to keep Shaiapouf away from the King with Knov and Morel',
+          },
         },
       ],
     },
@@ -201,7 +214,17 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'He arrives with Netero and Morel, in a suit and tie, to exterminate the Chimera Ants. His student Palm wants to join them, although he did not want her to.',
       },
       status: [{ episode: 86, chapter: 200, value: 'alive' }],
-      affiliation: [{ episode: 86, chapter: 200, value: NETERO_TEAM }],
+      affiliation: [
+        { episode: 86, chapter: 200, value: NETERO_TEAM },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Morau',
+            en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Morel',
+          },
+        },
+      ],
     },
     'morel-mackernasey': {
       relationships: [

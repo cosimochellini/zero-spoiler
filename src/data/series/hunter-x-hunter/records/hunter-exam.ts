@@ -1527,6 +1527,16 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association; leads the team sent to exterminate the Chimera Ants; has gone to see an old acquaintance',
           },
         },
+        // He calls the team from East Gorteau and sets the matchups: the
+        // King is his, chapter 223 / episode 95.
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter; guida la squadra inviata a sterminare le formichimere; affronterà il re di persona',
+            en: 'Hunter Association; leads the team sent to exterminate the Chimera Ants; will face the King himself',
+          },
+        },
       ],
     },
   },

@@ -44,29 +44,30 @@ drawing change at chapter 254 / episode 107.
 
 ## Returning dossiers
 
-| Character                                    | Change in the window                                                                                                                                          |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Gon                                          | Nen back after the 30 days and matched with Killua against Neferpitou, ch 223 / ep 95.                                                                        |
-| Killua                                       | Matched with Gon against Neferpitou, ch 223 / ep 95.                                                                                                          |
-| Morel                                        | Matched with Knov against Shaiapouf, ch 223 / ep 95 (the manga adds Palm). Kills Hagya, ch 254 / ep 107 (relationship).                                       |
-| Knuckle, Shoot                               | Matched together against Menthuthuyoupi, ch 223 / ep 95.                                                                                                      |
-| Knov                                         | Withdraws from the assault, ch 251 / ep 106 (role).                                                                                                           |
-| Palm                                         | Infiltrates the palace, ch 254 / ep 107 (role).                                                                                                               |
-| Zazan                                        | Killed by Feitan, ch 229 / ep 97.                                                                                                                             |
-| Pike                                         | Killed by Shizuku, ch 228 (manga-only record), with a death drawing.                                                                                          |
-| Cheetu                                       | Swears loyalty to the King for a new ability, ch 235 / ep 100 (role and affiliation). Alive through the window.                                               |
-| Meruem                                       | Komugi as the opponent he cannot beat, ch 257 / ep 103; he sets out to kill her, saves her and calls her an important guest, ch 258 / ep 108 (relationships). |
-| Neferpitou                                   | Ordered to guard Komugi, ch 260 / ep 109 (relationship).                                                                                                      |
-| Kite                                         | Recovered under enemy control, ch 217 / ep 93 (role, filed in phase 2's window).                                                                              |
-| Shaiapouf, Menthuthuyoupi                    | No material change: they hand out abilities, watch the games and guard.                                                                                       |
-| Colt                                         | No material change: still under Morel's protection, which is filed; his report on the Squadron Leaders (ch 234 / ep 99) is information, not a change of side. |
-| Peggy                                        | No change to the manga record. See the owner decisions on his anime name.                                                                                     |
-| Shizuku, Phinks, Bonolenov, Feitan, Shalnark | No material change: they fight at Meteor City, and the kills are filed on the victims (Zazan, Pike, Pell).                                                    |
-| Kalluto                                      | No new dated fact. Chapter 229 gives his reason for joining the Troupe, which episode 97 does not, and the brother is unnamed there.                          |
-| Alluka, Milluki, Kikyo, Illumi               | Family photograph at ch 229 / ep 97, mention only. Alluka is the unnamed sibling there.                                                                       |
-| Chrollo, Nobunaga, Genthru, Zeno             | Mentioned only (ch 229–230 / ep 97–98). Netero recruits Zeno at ch 262–263, phase 4.                                                                          |
-| Kurapika, Leorio                             | Chapter 255 cover only.                                                                                                                                       |
-| Welfin, Bloster                              | Filed above. Their affiliation, the King's service, holds from their gate.                                                                                    |
+| Character                                    | Change in the window                                                                                                                                                          |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Gon                                          | Nen back after the 30 days and matched with Killua against Neferpitou, ch 223 / ep 95.                                                                                        |
+| Killua                                       | Matched with Gon against Neferpitou, ch 223 / ep 95.                                                                                                                          |
+| Morel                                        | Matched with Knov against Shaiapouf, ch 223 / ep 95 (the manga adds Palm). Kills Hagya, ch 254 / ep 107 (relationship).                                                       |
+| Knuckle, Shoot                               | Matched together against Menthuthuyoupi, ch 223 / ep 95.                                                                                                                      |
+| Netero                                       | Sets the matchups and keeps the King for himself, ch 223 / ep 95 (affiliation).                                                                                               |
+| Knov                                         | Matched with Morel against Shaiapouf, ch 223 / ep 95 (affiliation). Withdraws from the assault, ch 251 / ep 106 (role).                                                       |
+| Palm                                         | Matched with Knov and Morel against Shaiapouf, ch 223, manga only: episode 95 leaves her out (affiliation). Rides into the palace in Bizeff's trucks, ch 252 / ep 106 (role). |
+| Zazan                                        | Killed by Feitan, ch 229 / ep 97.                                                                                                                                             |
+| Pike                                         | Killed by Shizuku, ch 228 (manga-only record), with a death drawing.                                                                                                          |
+| Cheetu                                       | Swears loyalty to the King for a new ability, ch 235 / ep 100 (role and affiliation). Alive through the window.                                                               |
+| Meruem                                       | Komugi as the opponent he cannot beat, ch 257 / ep 103; he sets out to kill her, saves her and calls her an important guest, ch 258 / ep 108 (relationships).                 |
+| Neferpitou                                   | Ordered by the King to guard Komugi, ch 259 / ep 109 (relationship).                                                                                                          |
+| Kite                                         | Recovered under enemy control, ch 217 / ep 93 (role, filed in phase 2's window).                                                                                              |
+| Shaiapouf, Menthuthuyoupi                    | No material change: they hand out abilities, watch the games and guard.                                                                                                       |
+| Colt                                         | No material change: still under Morel's protection, which is filed; his report on the Squadron Leaders (ch 234 / ep 99) is information, not a change of side.                 |
+| Peggy                                        | No change to the manga record. See the owner decisions on his anime name.                                                                                                     |
+| Shizuku, Phinks, Bonolenov, Feitan, Shalnark | No material change: they fight at Meteor City, and the kills are filed on the victims (Zazan, Pike, Pell).                                                                    |
+| Kalluto                                      | No new dated fact. Chapter 229 gives his reason for joining the Troupe, which episode 97 does not, and the brother is unnamed there.                                          |
+| Alluka, Milluki, Kikyo, Illumi               | Family photograph at ch 229 / ep 97, mention only. Alluka is the unnamed sibling there.                                                                                       |
+| Chrollo, Nobunaga, Genthru, Zeno             | Mentioned only (ch 229–230 / ep 97–98). Netero recruits Zeno at ch 262–263, phase 4.                                                                                          |
+| Kurapika, Leorio                             | Chapter 255 cover only.                                                                                                                                                       |
+| Welfin, Bloster                              | Filed above. Their affiliation, the King's service, holds from their gate.                                                                                                    |
 
 ## Pending: named after the window
 

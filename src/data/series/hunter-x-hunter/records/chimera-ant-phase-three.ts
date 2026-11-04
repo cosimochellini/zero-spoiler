@@ -111,7 +111,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         revealedAtChapter: 224,
         source: 'chapter',
         name: { it: 'Tsukuma', en: 'Tsukuma' },
-        summary: { it: 'Ufficiale.', en: 'Officer.' },
+        summary: { it: 'Agente di polizia.', en: 'Police officer.' },
         visual: { art: 'tsukuma', tint: 'ocher' },
       },
       // Killua puzzles over the squid word in his name, chapter 238; the
@@ -506,7 +506,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         ],
       },
       tsukuma: {
-        role: { it: 'Ufficiale', en: 'Officer' },
+        role: { it: 'Agente di polizia', en: 'Police officer' },
         log: {
           it: 'Parla in un servizio televisivo.',
           en: 'Speaks in a television report.',

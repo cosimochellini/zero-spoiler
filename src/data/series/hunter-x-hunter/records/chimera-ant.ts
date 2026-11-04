@@ -112,10 +112,10 @@ export const chimeraAnt: HunterSaga = {
           chapter: 215,
           value: [PITOU_MERUEM, PITOU_SHAIAPOUF, PITOU_KITE, PITOU_POKKLE],
         },
-        // The King orders them to guard Komugi, chapter 260 / episode 109.
+        // The King orders them to guard Komugi, chapter 259 / episode 109.
         {
           episode: 109,
-          chapter: 260,
+          chapter: 259,
           value: [
             PITOU_MERUEM,
             PITOU_SHAIAPOUF,

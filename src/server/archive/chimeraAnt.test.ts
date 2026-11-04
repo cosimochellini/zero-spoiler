@@ -295,6 +295,13 @@ describe('Chimera Ant dated facts', () => {
 
     expect(status(gate - 1)).toBe('alive')
     expect(status(gate)).toBe('deceased')
+
+    const drawn = (count: number): unknown => {
+      const reader = readerFor(archive, at(unit, count), locale)
+      return drawingsFor(['zazan'], reader)
+    }
+
+    expect(drawn(gate)).not.toStrictEqual(drawn(gate - 1))
   })
 
   it.each([
@@ -309,8 +316,8 @@ describe('Chimera Ant dated facts', () => {
     },
     {
       id: 'palm-siberia',
-      episode: 107,
-      chapter: 254,
+      episode: 106,
+      chapter: 252,
       role: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
     },
   ])(
@@ -456,28 +463,85 @@ describe('Chimera Ant dated facts', () => {
     { id: 'knuckle-bine', field: 'affiliation', episode: 95, chapter: 223 },
     { id: 'shoot-mcmahon', field: 'affiliation', episode: 95, chapter: 223 },
     { id: 'cheetu', field: 'affiliation', episode: 100, chapter: 235 },
+    {
+      id: 'palm-siberia',
+      field: 'affiliation',
+      episode: 95,
+      chapter: 223,
+      source: 'chapter',
+    },
     { id: 'cheetu', field: 'role', episode: 100, chapter: 235 },
     { id: 'ikalgo', field: 'affiliation', episode: 107, chapter: 255 },
     { id: 'ikalgo', field: 'role', episode: 107, chapter: 255 },
-  ] as const)(
-    'dates the $field step of $id at its scene',
-    ({ id, field, episode, chapter }) => {
+    { id: 'kite', field: 'role', episode: 93, chapter: 217 },
+    { id: 'netero', field: 'affiliation', episode: 95, chapter: 223 },
+    { id: 'knov', field: 'affiliation', episode: 95, chapter: 223 },
+  ] as const)('dates the $field step of $id at its scene', (row) => {
+    const character = characterById(row.id)
+    // A one-source step is asked in its own unit only.
+    const gates = (
+      [
+        ['episode', row.episode],
+        ['chapter', row.chapter],
+      ] as const
+    ).filter(([unit]) => !('source' in row) || row.source === unit)
+    for (const locale of LOCALES) {
+      for (const [unit, gate] of gates) {
+        const read = (count: number): string | undefined =>
+          archive.latestOf(
+            readerFor(archive, at(unit, count), locale),
+            character,
+            row.field,
+          )?.[locale]
+
+        expect(read(gate), `${unit} ${String(gate)}`).not.toBe(read(gate - 1))
+      }
+    }
+  })
+
+  it.each([
+    { id: 'morel-mackernasey', episode: 107, chapter: 254 },
+    { id: 'meruem', episode: 103, chapter: 257 },
+    { id: 'meruem', episode: 108, chapter: 258 },
+    { id: 'neferpitou', episode: 109, chapter: 259 },
+    { id: 'flutter', episode: 106, chapter: 238 },
+    { id: 'ikalgo', episode: 107, chapter: 255 },
+  ])(
+    'changes the relationships of $id at $episode / $chapter',
+    ({ id, episode, chapter }) => {
       const character = characterById(id)
       for (const locale of LOCALES) {
         for (const [unit, gate] of [
           ['episode', episode],
           ['chapter', chapter],
         ] as const) {
-          const read = (count: number): string | undefined =>
-            archive.latestOf(
-              readerFor(archive, at(unit, count), locale),
-              character,
-              field,
-            )?.[locale]
+          const read = (count: number): string => {
+            const reader = readerFor(archive, at(unit, count), locale)
+            const value = archive.latestOf(reader, character, 'relationships')
+            return JSON.stringify(value ?? [])
+          }
 
           expect(read(gate), `${unit} ${String(gate)}`).not.toBe(read(gate - 1))
         }
       }
+    },
+  )
+
+  it.each(LOCALES)(
+    'adds Peggy to Meleoron’s relationships at chapter 242 in %s',
+    (locale) => {
+      const meleoron = characterById('meleoron')
+      const read = (chapter: number): string[] =>
+        (
+          archive.latestOf(
+            readerFor(archive, at('chapter', chapter), locale),
+            meleoron,
+            'relationships',
+          ) ?? []
+        ).map(({ character }) => character)
+
+      expect(read(241)).not.toContain('peggy')
+      expect(read(242)).toContain('peggy')
     },
   )
 
