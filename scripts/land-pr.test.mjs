@@ -147,13 +147,14 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
  * @param {string} [mergeable] - What GitHub reports about merging the PR.
  * @param {string} [later] - What GitHub reports on every later read.
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
+ * @param {string} [expectedHead] - The full or abbreviated SHA passed by the caller.
  * @returns {{ status: number | null, stdout: string, calls: string }} The exit status, output and the `gh` calls made.
  */
-function land(runs, refusedThen, mergeable, later, clean) {
+function land(runs, refusedThen, mergeable, later, clean, expectedHead = head) {
   const bin = mkdtempSync(path.join(tmpdir(), 'land-pr-'))
   try {
     prepare(bin, runs, refusedThen, mergeable, later, clean)
-    const child = spawnSync('bash', [script, '42', head], {
+    const child = spawnSync('bash', [script, '42', expectedHead], {
       encoding: 'utf8',
       env: {
         ...process.env,
@@ -168,6 +169,39 @@ function land(runs, refusedThen, mergeable, later, clean) {
 }
 
 describe('land-pr.sh', () => {
+  it('pins a short SHA to the full head for CI and merge', () => {
+    const { status, calls } = land(
+      [[run(1, 'completed', 'success')]],
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      head.slice(0, 9),
+    )
+
+    expect(calls).toContain(`head_sha=${head} -f branch=topic`)
+    expect(calls).toContain(
+      `pr merge 42 --squash --match-head-commit ${head}\n`,
+    )
+    expect(status).toBe(0)
+  })
+
+  it('refuses an unknown SHA before querying CI or merging', () => {
+    const { status, stdout, calls } = land(
+      [],
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      'b'.repeat(9),
+    )
+
+    expect(stdout).toContain('does not match the head of PR 42')
+    expect(calls).not.toContain('actions/workflows/ci.yml/runs')
+    expect(calls).not.toContain('pr merge')
+    expect(status).toBe(5)
+  })
+
   it('waits out a cancelled run and merges on the newer green one', () => {
     const cancelled = run(1, 'completed', 'cancelled')
     const { status, stdout, calls } = land([
