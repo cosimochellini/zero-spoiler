@@ -27,9 +27,9 @@
 // the earliest chapter its page cites (`{{Ref|AGOT|22}}`). The Game of
 // Thrones Wiki's infobox names the first episode by title (`| First =
 // "[[Lord Snow]]"`), counted through `EPISODES`. A record one medium alone
-// tells (`source`) is listed as such and not read on the other's wiki. A
-// chapter kept below its floor after a hand check goes in `CHAPTER_KEPT`. The
-// reading is `./verify-chapters.thrones.mjs`'s.
+// tells (`source`) is listed as such and not read on the other's wiki.
+// Hunter x Hunter also checks only the declared medium for a scoped record.
+// The two-wiki reading lives in `./verify-chapters.thrones.mjs`.
 //
 // Run it with `npm run verify:chapters`, or `npm run verify:chapters --
 // --series <slug>` for a series of `src/data/series/index.ts` other than One
@@ -187,20 +187,6 @@ const EPISODE_KEPT = {
   // Pouf names him in episode 86 (chapter 202), before he hatches; the wiki
   // dates his first sight, episode 88 (#1021).
   'menthuthuyoupi': 86,
-}
-
-/**
- * Records kept below the wiki's chapter floor after a hand check found the
- * wiki early: a chapter page links a character the chapter does not name
- * yet. The value is the chapter checked, so a record moved since falls back
- * to the rule.
- * @type {Record<string, number>}
- */
-const CHAPTER_KEPT = {
-  // Named in the anime alone (`source: 'episode'`, episode 77); chapter 187,
-  // the Queen's raid on her village, only orders the record. The wiki dates
-  // her unnamed sight in chapter 215 (#1021).
-  haruna: 187,
 }
 
 /** A naming verb: the chapter summary says who ate the fruit or what it is. */
@@ -374,6 +360,9 @@ function numberAfter(pattern, text) {
   return match?.groups === undefined ? undefined : Number(match.groups['n'])
 }
 
+const EPISODE_ONLY = 'episode only'
+const CHAPTER_ONLY = 'chapter only'
+
 /** @typedef {{ page?: string, wiki?: number, wikiEpisode?: number, only?: 'chapter' | 'episode' }} Source */
 
 /**
@@ -393,7 +382,9 @@ async function sourceOf(record, { chapters, wiki, books = [] }) {
 
   const pages = await pagesOf(record, wiki)
 
-  return pages === undefined ? {} : readingOf(record, pages, chapters)
+  const source = wiki.slug === 'hunter-x-hunter' ? record.source : undefined
+
+  return readingOf({ ...record, source }, pages, chapters)
 }
 
 /**
@@ -417,31 +408,53 @@ export async function pagesOf(record, wiki) {
 /**
  * What the pages found for a record say, with a fruit's floor raised to the
  * first chapter whose summary names it, or the hand-checked one.
- * @param {{ id: string, kind: string }} record The record.
- * @param {Page[]} pages The pages read.
+ * @param {{ id: string, kind: string, source?: 'chapter' | 'episode' }} record The record.
+ * @param {Page[] | undefined} pages The pages read.
  * @param {Map<number, string>} chapters Every chapter's wikitext.
  * @returns {Source} The page(s) and the chapter, or neither.
  */
 export function readingOf(record, pages, chapters) {
-  const { kind } = record
-  const floors = pages.map((page) => chapterOf(page, kind))
-  const episodes = pages.map((page) => episodeOf(page, kind))
+  const { kind, source } = record
+  const scope = source === undefined ? {} : { only: source }
+  if (pages === undefined) {
+    return scope
+  }
+
   const page = pages.map((page) => page.title).join(' + ')
+  const episodes =
+    source === 'chapter' ? [] : pages.map((page) => episodeOf(page, kind))
+  const episode = episodes.length > 0
+    && !episodes.includes(undefined) && { wikiEpisode: Math.max(...episodes) }
+  if (source === 'episode') {
+    return { ...scope, page, ...episode }
+  }
+
+  const chapter = chapterReadingOf(record, pages, chapters, page)
+
+  return { ...scope, ...chapter, ...(chapter.wiki !== undefined && episode) }
+}
+
+/**
+ * @param {{ id: string, kind: string }} record The record.
+ * @param {Page[]} pages The pages read.
+ * @param {Map<number, string>} chapters Every chapter's wikitext.
+ * @param {string} page The joined page titles.
+ * @returns {Pick<Source, 'page' | 'wiki'>} The pages and their chapter floor.
+ */
+function chapterReadingOf(record, pages, chapters, page) {
+  const floors = pages.map((entry) => chapterOf(entry, record.kind))
   if (floors.includes(undefined)) {
     return { page }
   }
 
   const named =
-    kind === 'fruit' ?
+    record.kind === 'fruit' ?
       (NAMED_AT[record.id] ?? namingChapterOf(chapters, pages[0].title))
     : undefined
 
   return {
     page: named === undefined ? page : `${page} (named ch ${String(named)})`,
     wiki: Math.max(...floors, named ?? 0),
-    ...(!episodes.includes(undefined) && {
-      wikiEpisode: Math.max(...episodes),
-    }),
   }
 }
 
@@ -449,12 +462,11 @@ export function readingOf(record, pages, chapters) {
  * Which way a record disagrees with its source, if it does.
  * @param {number} filed The record's chapter.
  * @param {Source} source What the wiki says.
- * @param {string} [id] The record's id, for `CHAPTER_KEPT`.
  * @returns {'episode only' | 'equal' | 'kept' | 'too low' | 'unresolved'} The verdict.
  */
-export function verdictOf(filed, source, id = '') {
+export function verdictOf(filed, source) {
   if (source.only === 'episode') {
-    return 'episode only'
+    return EPISODE_ONLY
   }
 
   if (source.wiki === undefined) {
@@ -462,7 +474,7 @@ export function verdictOf(filed, source, id = '') {
   }
 
   if (filed < source.wiki) {
-    return CHAPTER_KEPT[id] === filed ? 'kept' : 'too low'
+    return 'too low'
   }
 
   return filed === source.wiki ? 'equal' : 'kept'
@@ -480,10 +492,12 @@ export function verdictOf(filed, source, id = '') {
  */
 export function episodeStandOf(record, source, apart) {
   if (source.only === 'chapter') {
-    return 'chapter only'
+    return CHAPTER_ONLY
   }
 
-  return apart && source.wikiEpisode === undefined ?
+  return (
+      (apart || source.only === 'episode') && source.wikiEpisode === undefined
+    ) ?
       'unresolved'
     : episodeVerdictOf(record.id, record.revealedAtEpisode, source.wikiEpisode)
 }
@@ -514,7 +528,7 @@ async function verify() {
       filed: record.revealedAtChapter,
       episode: record.revealedAtEpisode,
       ...source,
-      verdict: verdictOf(record.revealedAtChapter, source, record.id),
+      verdict: verdictOf(record.revealedAtChapter, source),
       episodeVerdict: episodeStandOf(
         record,
         source,
@@ -549,18 +563,23 @@ function table(title, rows, cells) {
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   const { rows, thrones } = await verify()
-  const wrong = rows.filter((row) => {
-    return (
-      row.verdict === 'too low'
-      || row.verdict === 'unresolved'
-      || row.episodeVerdict === 'too low'
-      || row.episodeVerdict === 'unresolved'
-    )
-  })
-  // Only Game of Thrones reads its media apart, so only it has these.
-  const apart = thrones ? ['episode only'] : []
-  const episodesApart = thrones ? ['unresolved', 'chapter only'] : []
-  const verdicts = ['too low', 'unresolved', 'equal', 'kept', ...apart]
+  const failures = ['too low', 'unresolved']
+  const wrong = rows.some((row) =>
+    failures.some(
+      (failure) => row.verdict === failure || row.episodeVerdict === failure,
+    ),
+  )
+  const verdicts = [...failures, 'equal', 'kept']
+  const episodeVerdicts = ['too low', 'kept']
+  if (thrones || rows.some((row) => row.verdict === EPISODE_ONLY)) {
+    verdicts.push(EPISODE_ONLY)
+  }
+  if (thrones || rows.some((row) => row.episodeVerdict === 'unresolved')) {
+    episodeVerdicts.push('unresolved')
+  }
+  if (thrones || rows.some((row) => row.episodeVerdict === CHAPTER_ONLY)) {
+    episodeVerdicts.push(CHAPTER_ONLY)
+  }
   const tables = verdicts.map((verdict) => {
     return table(
       verdict,
@@ -568,7 +587,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
       (row) => [row.filed, row.wiki, row.page],
     )
   })
-  const episodes = ['too low', 'kept', ...episodesApart].map((verdict) => {
+  const episodes = episodeVerdicts.map((verdict) => {
     return table(
       `episode ${verdict}`,
       rows.filter((row) => row.episodeVerdict === verdict),
@@ -577,5 +596,5 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   })
 
   console.log([...tables, ...episodes].join('\n\n'))
-  process.exitCode = wrong.length === 0 ? 0 : 1
+  process.exitCode = wrong ? 1 : 0
 }

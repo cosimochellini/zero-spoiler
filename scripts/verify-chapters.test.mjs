@@ -300,6 +300,56 @@ describe('what the pages say about a record', () => {
     ).toStrictEqual({ page: 'X + Y' })
   })
 
+  it.each(['[[Chapter 215]]; ', ''])(
+    'checks an episode-only record even without a chapter debut (%s)',
+    (chapter) => {
+      const record = {
+        id: 'haruna',
+        kind: 'character',
+        source: 'episode',
+        revealedAtEpisode: 77,
+      }
+      const source = readingOf(
+        record,
+        [boxed('Haruna', `${chapter}[[Episode 78]]`)],
+        new Map(),
+      )
+
+      expect(verdictOf(187, source)).toBe('episode only')
+      expect(episodeStandOf(record, source, false)).toBe('too low')
+    },
+  )
+
+  it('flags missing evidence for an episode-only record', () => {
+    const record = {
+      id: 'haruna',
+      kind: 'character',
+      source: 'episode',
+      revealedAtEpisode: 77,
+    }
+    const source = readingOf(record, undefined, new Map())
+
+    expect(verdictOf(187, source)).toBe('episode only')
+    expect(episodeStandOf(record, source, false)).toBe('unresolved')
+  })
+
+  it('checks the chapter of a chapter-only record', () => {
+    const record = {
+      id: 'x',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 1,
+    }
+    const source = readingOf(
+      record,
+      [boxed('X', '[[Chapter 5]]; [[Episode 2]]')],
+      new Map(),
+    )
+
+    expect(verdictOf(4, source)).toBe('too low')
+    expect(episodeStandOf(record, source, false)).toBe('chapter only')
+  })
+
   it('raises a fruit to the chapter that names it, by hand or by summary', () => {
     expect(
       readingOf(
