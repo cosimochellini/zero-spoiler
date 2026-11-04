@@ -469,6 +469,14 @@ describe('Chimera Ant dated facts', () => {
     { id: 'ikalgo', field: 'role', episode: 107, chapter: 255 },
     { id: 'kite', field: 'role', episode: 93, chapter: 217 },
     { id: 'meleoron', field: 'role', episode: 100, chapter: 241 },
+    { id: 'ikalgo', field: 'affiliation', episode: 101, chapter: 241 },
+    ...[214, 216, 234].map((chapter) => ({
+      id: 'hagya',
+      field: 'affiliation' as const,
+      episode: 106,
+      chapter,
+      source: 'chapter' as const,
+    })),
     { id: 'netero', field: 'affiliation', episode: 95, chapter: 223 },
     { id: 'knov', field: 'affiliation', episode: 95, chapter: 223 },
   ] as const)('dates the $field step of $id at its scene', (row) => {
@@ -499,17 +507,26 @@ describe('Chimera Ant dated facts', () => {
     { id: 'meruem', episode: 103, chapter: 257 },
     { id: 'meruem', episode: 108, chapter: 258 },
     { id: 'neferpitou', episode: 109, chapter: 259 },
-    { id: 'flutter', episode: 106, chapter: 238 },
+    { id: 'flutter', episode: 100, chapter: 235, source: 'chapter' },
+    { id: 'flutter', episode: 101, chapter: 238 },
+    { id: 'flutter', episode: 106, chapter: 252, source: 'episode' },
+    { id: 'ikalgo', episode: 101, chapter: 241 },
     { id: 'ikalgo', episode: 107, chapter: 255 },
-  ])(
+    { id: 'meleoron', episode: 100, chapter: 241, source: 'episode' },
+    { id: 'meleoron', episode: 102, chapter: 242 },
+  ] as const)(
     'changes the relationships of $id at $episode / $chapter',
-    ({ id, episode, chapter }) => {
-      const character = characterById(id)
+    (row) => {
+      const character = characterById(row.id)
+      // A one-source step is asked in its own unit only.
+      const gates = (
+        [
+          ['episode', row.episode],
+          ['chapter', row.chapter],
+        ] as const
+      ).filter(([unit]) => !('source' in row) || row.source === unit)
       for (const locale of LOCALES) {
-        for (const [unit, gate] of [
-          ['episode', episode],
-          ['chapter', chapter],
-        ] as const) {
+        for (const [unit, gate] of gates) {
           const read = (count: number): string => {
             const reader = readerFor(archive, at(unit, count), locale)
             const value = archive.latestOf(reader, character, 'relationships')

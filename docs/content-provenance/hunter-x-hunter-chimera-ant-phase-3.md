@@ -43,32 +43,44 @@ Morel kills him with carbon dioxide in a flooded chapel: Leol's page and chapter
 254 call it his death, and episode 107 shows the same scene. His status and
 drawing change at chapter 254 / episode 107.
 
+Episode 101 tells both Ikalgo's fight in the cave (chapter 238) and his turn
+(chapter 241). A timeline takes one entry per episode, so his chapter 238
+affiliation and relationships are the manga's alone, and the anime opens on the
+turn: he leaves the Chimera Ants to save Killua at 241 / 101, and joins Killua's
+friends at the clinic, 255 / 107. Meleoron calls Gon a partner when he shows
+himself (241 / 100); the plan against the King and Gon's agreement open at 242 /
+102, with Peggy in the manga's snapshot only. Flutter's ties to Hagya and
+Ikalgo, and the King's to Komugi, are kept per medium (Flutter: ch 235 and 238,
+ep 101 and 106; the King: ep 103, ch 257), so no entry vouches for a false pair
+in the chapter table.
+
 ## Returning dossiers
 
-| Character                                    | Change in the window                                                                                                                                                          |
-| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Gon                                          | Nen back after the 30 days and matched with Killua against Neferpitou, ch 223 / ep 95.                                                                                        |
-| Killua                                       | Matched with Gon against Neferpitou, ch 223 / ep 95.                                                                                                                          |
-| Morel                                        | Matched with Knov against Shaiapouf, ch 223 / ep 95 (the manga adds Palm). Kills Hagya, ch 254 / ep 107 (relationship).                                                       |
-| Knuckle, Shoot                               | Matched together against Menthuthuyoupi, ch 223 / ep 95.                                                                                                                      |
-| Netero                                       | Sets the matchups and keeps the King for himself, ch 223 / ep 95 (affiliation).                                                                                               |
-| Knov                                         | Matched with Morel against Shaiapouf, ch 223 / ep 95 (affiliation). Withdraws from the assault, ch 251 / ep 106 (role).                                                       |
-| Palm                                         | Matched with Knov and Morel against Shaiapouf, ch 223, manga only: episode 95 leaves her out (affiliation). Rides into the palace in Bizeff's trucks, ch 252 / ep 106 (role). |
-| Zazan                                        | Killed by Feitan, ch 229 / ep 97.                                                                                                                                             |
-| Pike                                         | Killed by Shizuku, ch 228 (manga-only record), with a death drawing.                                                                                                          |
-| Cheetu                                       | Swears loyalty to the King for a new ability, ch 235 / ep 100 (role and affiliation). Alive through the window.                                                               |
-| Meruem                                       | Komugi as the opponent he cannot beat, ch 257 / ep 103; he sets out to kill her, saves her and calls her an important guest, ch 258 / ep 108 (relationships).                 |
-| Neferpitou                                   | Ordered by the King to guard Komugi, ch 259 / ep 109 (relationship).                                                                                                          |
-| Kite                                         | Recovered under enemy control, ch 217 / ep 93 (role, filed in phase 2's window).                                                                                              |
-| Shaiapouf, Menthuthuyoupi                    | No material change: they hand out abilities, watch the games and guard.                                                                                                       |
-| Colt                                         | No material change: still under Morel's protection, which is filed; his report on the Squadron Leaders (ch 234 / ep 99) is information, not a change of side.                 |
-| Peggy                                        | No change to the manga record. See the owner decisions on his anime name.                                                                                                     |
-| Shizuku, Phinks, Bonolenov, Feitan, Shalnark | No material change: they fight at Meteor City, and the kills are filed on the victims (Zazan, Pike, Pell).                                                                    |
-| Kalluto                                      | No new dated fact. Chapter 229 gives his reason for joining the Troupe, which episode 97 does not, and the brother is unnamed there.                                          |
-| Alluka, Milluki, Kikyo, Illumi               | Family photograph at ch 229 / ep 97, mention only. Alluka is the unnamed sibling there.                                                                                       |
-| Chrollo, Nobunaga, Genthru, Zeno             | Mentioned only (ch 229–230 / ep 97–98). Netero recruits Zeno at ch 262–263, phase 4.                                                                                          |
-| Kurapika, Leorio                             | Chapter 255 cover only.                                                                                                                                                       |
-| Welfin, Bloster                              | Filed above. Their affiliation, the King's service, holds from their gate.                                                                                                    |
+| Character                                    | Change in the window                                                                                                                                                                                                      |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Gon                                          | Nen back after the 30 days and matched with Killua against Neferpitou, ch 223 / ep 95.                                                                                                                                    |
+| Killua                                       | Matched with Gon against Neferpitou, ch 223 / ep 95.                                                                                                                                                                      |
+| Morel                                        | Matched with Knov against Shaiapouf, ch 223 / ep 95 (the manga adds Palm). Kills Hagya, ch 254 / ep 107 (relationship).                                                                                                   |
+| Knuckle, Shoot                               | Matched together against Menthuthuyoupi, ch 223 / ep 95.                                                                                                                                                                  |
+| Netero                                       | Sets the matchups and keeps the King for himself, ch 223 / ep 95 (affiliation).                                                                                                                                           |
+| Knov                                         | Matched with Morel against Shaiapouf, ch 223 / ep 95 (affiliation). Withdraws from the assault, ch 251 / ep 106 (role).                                                                                                   |
+| Palm                                         | Matched with Knov and Morel against Shaiapouf, ch 223, manga only: episode 95 leaves her out (affiliation). Rides into the palace in Bizeff's trucks, ch 252 / ep 106 (role).                                             |
+| Zazan                                        | Killed by Feitan, ch 229 / ep 97.                                                                                                                                                                                         |
+| Pike                                         | Killed by Shizuku, ch 228 (manga-only record), with a death drawing.                                                                                                                                                      |
+| Cheetu                                       | Swears loyalty to the King for a new ability, ch 235 / ep 100 (role and affiliation). Alive through the window.                                                                                                           |
+| Hagya                                        | Back with the Royal Guards with Flutter and Hina, he takes Neferpitou's job, ch 234, manga only (affiliation "in the King's service", worded as Cheetu's step at 235 / 100). The anime opens him at 106, after the scene. |
+| Meruem                                       | Komugi as the opponent he cannot beat, ch 257 / ep 103; he sets out to kill her, saves her and calls her an important guest, ch 258 / ep 108 (relationships).                                                             |
+| Neferpitou                                   | Ordered by the King to guard Komugi, ch 259 / ep 109 (relationship).                                                                                                                                                      |
+| Kite                                         | Recovered under enemy control, ch 217 / ep 93 (role, filed in phase 2's window).                                                                                                                                          |
+| Shaiapouf, Menthuthuyoupi                    | No material change: they hand out abilities, watch the games and guard.                                                                                                                                                   |
+| Colt                                         | No material change: still under Morel's protection, which is filed; his report on the Squadron Leaders (ch 234 / ep 99) is information, not a change of side.                                                             |
+| Peggy                                        | No change to the manga record. See the owner decisions on his anime name.                                                                                                                                                 |
+| Shizuku, Phinks, Bonolenov, Feitan, Shalnark | No material change: they fight at Meteor City, and the kills are filed on the victims (Zazan, Pike, Pell).                                                                                                                |
+| Kalluto                                      | No new dated fact. Chapter 229 gives his reason for joining the Troupe, which episode 97 does not, and the brother is unnamed there.                                                                                      |
+| Alluka, Milluki, Kikyo, Illumi               | Family photograph at ch 229 / ep 97, mention only. Alluka is the unnamed sibling there.                                                                                                                                   |
+| Chrollo, Nobunaga, Genthru, Zeno             | Mentioned only (ch 229–230 / ep 97–98). Netero recruits Zeno at ch 262–263, phase 4.                                                                                                                                      |
+| Kurapika, Leorio                             | Chapter 255 cover only.                                                                                                                                                                                                   |
+| Welfin, Bloster                              | Filed above. Their affiliation, the King's service, holds from their gate.                                                                                                                                                |
 
 ## Pending: named after the window
 

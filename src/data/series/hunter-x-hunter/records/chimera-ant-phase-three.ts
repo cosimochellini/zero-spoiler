@@ -22,8 +22,37 @@ const rows = {
     character: 'gon-freecss',
     type: { it: 'Partner', en: 'Partner' },
     summary: {
-      it: 'Lo segue senza farsi vedere, poi gli si presenta e gli chiede di fare squadra contro il re.',
-      en: 'Follows him unseen, then introduces himself and asks him to team up against the King.',
+      it: 'Lo segue senza farsi vedere, poi gli si presenta e lo chiama partner.',
+      en: 'Follows him unseen, then introduces himself and calls him a partner.',
+    },
+  },
+  // He sets out his plan and Gon agrees, chapter 242 / episode 102.
+  meleoronGonPlan: {
+    character: 'gon-freecss',
+    type: { it: 'Partner', en: 'Partner' },
+    summary: {
+      it: 'Gli chiede di fare squadra contro il re e gli spiega il suo piano. Gon accetta.',
+      en: 'Asks him to team up against the King and explains his plan. Gon agrees.',
+    },
+  },
+}
+
+/** Flutter's relationship rows, which each medium's snapshots share. */
+const flutterRows = {
+  hagya: {
+    character: 'hagya',
+    type: { it: 'Comandante di divisione', en: 'Squadron Leader' },
+    summary: {
+      it: 'Serve nella sua divisione: sorveglia la zona con le sue libellule e gli riferisce ciò che vede.',
+      en: 'Serves in his squad, watching the area through his dragonflies and reporting what he sees.',
+    },
+  },
+  ikalgo: {
+    character: 'ikalgo',
+    type: { it: 'Compagno', en: 'Comrade' },
+    summary: {
+      it: 'Gli passa le coordinate di Killua perché possa colpirlo da lontano.',
+      en: 'Gives him Killua’s coordinates so he can hit him from afar.',
     },
   },
 }
@@ -181,12 +210,20 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         relationships: [
           // He shows himself to Gon, chapter 241 / episode 100.
           { episode: 100, chapter: 241, value: [rows.meleoronGon] },
+          // Peggy's record is the manga's alone, so the anime has its own
+          // snapshot of the same scene without him.
+          {
+            episode: 102,
+            chapter: 242,
+            source: 'episode',
+            value: [rows.meleoronGonPlan],
+          },
           {
             episode: 102,
             chapter: 242,
             source: 'chapter',
             value: [
-              rows.meleoronGon,
+              rows.meleoronGonPlan,
               {
                 character: 'peggy',
                 type: { it: 'Padre adottivo', en: 'Foster father' },
@@ -232,31 +269,34 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         status: [{ episode: 97, chapter: 227, value: 'alive' }],
       },
       flutter: {
-        // He spies for Hagya's squad from chapter 235 and guides Ikalgo's
-        // shots in chapter 238; one entry from the later of the two, since
-        // the anime opens Hagya only at 106.
+        // He spies for Hagya's squad from chapter 235 / episode 100 and
+        // guides Ikalgo's shots in chapter 238 / episode 101, but the anime
+        // opens Hagya only at 106 (chapter 252's scene): each medium keeps
+        // its own snapshots, so no entry vouches for a false pair.
         relationships: [
           {
-            episode: 106,
+            episode: 100,
+            chapter: 235,
+            source: 'chapter',
+            value: [flutterRows.hagya],
+          },
+          {
+            episode: 101,
             chapter: 238,
-            value: [
-              {
-                character: 'hagya',
-                type: { it: 'Comandante di divisione', en: 'Squadron Leader' },
-                summary: {
-                  it: 'Serve nella sua divisione: sorveglia la zona con le sue libellule e gli riferisce ciò che vede.',
-                  en: 'Serves in his squad, watching the area through his dragonflies and reporting what he sees.',
-                },
-              },
-              {
-                character: 'ikalgo',
-                type: { it: 'Compagno', en: 'Comrade' },
-                summary: {
-                  it: 'Gli passa le coordinate di Killua perché possa colpirlo da lontano.',
-                  en: 'Gives him Killua’s coordinates so he can hit him from afar.',
-                },
-              },
-            ],
+            source: 'chapter',
+            value: [flutterRows.hagya, flutterRows.ikalgo],
+          },
+          {
+            episode: 101,
+            chapter: 238,
+            source: 'episode',
+            value: [flutterRows.ikalgo],
+          },
+          {
+            episode: 106,
+            chapter: 252,
+            source: 'episode',
+            value: [flutterRows.hagya, flutterRows.ikalgo],
           },
         ],
         role: { it: 'Formichimera', en: 'Chimera Ant' },
@@ -353,10 +393,14 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         status: [{ episode: 101, chapter: 238, value: 'alive' }],
       },
       ikalgo: {
+        // Episode 101 tells both the cave (chapter 238) and his turn
+        // (chapter 241), and a timeline takes one entry per episode, so the
+        // cave is the manga's alone and the anime opens on the turn.
         relationships: [
           {
             episode: 101,
             chapter: 238,
+            source: 'chapter',
             value: [
               {
                 character: 'killua',
@@ -372,6 +416,26 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
               rows.ikalgoFlutter,
             ],
           },
+          // He betrays his comrades and carries Killua off to a doctor,
+          // chapter 241 / episode 101.
+          {
+            episode: 101,
+            chapter: 241,
+            value: [
+              {
+                character: 'killua',
+                type: { it: 'Nemico che salva', en: 'Enemy he saves' },
+                summary: {
+                  it: 'Dopo lo scontro nel lago, Killua lo risparmia e gli dice che lo trova forte. Ikalgo tradisce i suoi compagni per salvarlo e lo porta via da un medico.',
+                  en: 'After their fight in the lake, Killua spares him and tells him he finds him cool. He betrays his comrades to save him and carries him off to a doctor.',
+                },
+              },
+              {
+                ...rows.ikalgoFlutter,
+                type: { it: 'Ex compagno', en: 'Former comrade' },
+              },
+            ],
+          },
           // At the clinic, chapter 255 / episode 107.
           {
             episode: 107,
@@ -381,8 +445,8 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
                 character: 'killua',
                 type: { it: 'Amico', en: 'Friend' },
                 summary: {
-                  it: 'Tradisce i suoi compagni per salvargli la vita e lo porta in una clinica segreta. Killua lo invita a conoscere gli altri Hunter.',
-                  en: 'Betrays his comrades to save his life and takes him to a secret clinic. Killua invites him to meet the other Hunters.',
+                  it: 'Gli ha salvato la vita e lo veglia in una clinica segreta. Killua lo invita a conoscere gli altri Hunter.',
+                  en: 'Saved his life and watches over him in a secret clinic. Killua invites him to meet the other Hunters.',
                 },
               },
               {
@@ -413,13 +477,28 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         },
         status: [{ episode: 101, chapter: 238, value: 'alive' }],
         affiliation: [
-          { episode: 101, chapter: 238, value: CHIMERA_ANTS },
+          {
+            episode: 101,
+            chapter: 238,
+            source: 'chapter',
+            value: CHIMERA_ANTS,
+          },
+          // He turns on his comrades to save Killua, chapter 241 / episode
+          // 101: the anime's first entry, as above.
+          {
+            episode: 101,
+            chapter: 241,
+            value: {
+              it: 'Ha lasciato le formichimere per salvare Killua',
+              en: 'Has left the Chimera Ants to save Killua',
+            },
+          },
           {
             episode: 107,
             chapter: 255,
             value: {
-              it: 'Ha lasciato le formichimere per seguire Killua',
-              en: 'Has left the Chimera Ants to follow Killua',
+              it: 'Ha lasciato le formichimere; segue Killua dagli Hunter',
+              en: 'Has left the Chimera Ants; follows Killua to the Hunters',
             },
           },
         ],
