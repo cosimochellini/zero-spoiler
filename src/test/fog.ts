@@ -147,12 +147,17 @@ export function laterNameOf(entity: Entity): Entity | undefined {
     return undefined
   }
 
-  return {
+  const alias: Entity = {
     ...entity,
     id: `${entity.id}:episodeName`,
     name: later.name,
     revealedAtChapter: Math.max(entity.revealedAtChapter, later.chapter),
   }
+  // The name facts describe the record's own name, not this one.
+  delete alias.commonWord
+  delete alias.nameSaidAt
+
+  return alias
 }
 
 /** Each name a record goes by, as a record gated where a reader reaches it. */

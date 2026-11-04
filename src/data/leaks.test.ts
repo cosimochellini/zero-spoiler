@@ -641,6 +641,35 @@ describe.each(LOADED_SERIES)(
       },
     )
 
+    it.skipIf(entities.every(({ episodeName }) => episodeName === undefined))(
+      'let no name fact of the record exempt the anime’s name',
+      () => {
+        // Every record that has an anime name, given both facts.
+        const faked = reader.entities.map((entity) =>
+          entity.episodeName === undefined ?
+            entity
+          : { ...entity, commonWord: true as const, nameSaidAt: 1 },
+        )
+        const fakedScan = scanOf({ ...reader, entities: faked }, placeWords)
+
+        for (const entity of faked) {
+          const later = laterNameOf(entity)
+          if (later === undefined) {
+            continue
+          }
+          const probe = probeOf(
+            'chapter',
+            [1, later.revealedAtChapter - 1],
+            later.name,
+          )
+
+          expect(
+            fakedScan.leaked(probe, 'en', true).map(({ id }) => id),
+          ).toContain(later.id)
+        }
+      },
+    )
+
     it('say a name early only before its own record opens', () => {
       // A `nameSaidAt` at or after the threshold would change nothing, and is
       // a sign the threshold was moved without it.
