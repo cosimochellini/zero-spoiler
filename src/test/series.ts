@@ -92,7 +92,8 @@ const EXPECTED: Record<string, Expected> = {
   // (#1032), and chronicles for the characters filed through #1019 and the
   // returning cast (#906). Chimera Ant phase 1 (#1020) adds five characters
   // and one place, phase 2 (#1021) 27 characters and eight places, and
-  // phase 3 (#1022) 11 characters and four places.
+  // phase 3 (#1022) 11 characters and four places. Phase 4 (#1023) adds
+  // one character and opens an existing place in the anime.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -111,14 +112,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 297,
+      affiliations: 298,
       arcs: 7,
-      characters: 153,
+      characters: 154,
       chronicles: 345,
       linkedOrigins: 8,
       places: 36,
-      statuses: 205,
-      timelines: 621,
+      statuses: 208,
+      timelines: 626,
       visits: 0,
     },
     namesSaidEarly: true,

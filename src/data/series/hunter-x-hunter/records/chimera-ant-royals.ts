@@ -207,6 +207,14 @@ const links = {
  * hatches in chapter 206 / episode 88. Colt's past as a human boy opens with
  * the scene that shows it, chapter 215 / episode 92, and never names him.
  */
+const KING_KOMUGI_GUEST: Relationship = {
+  ...links.kingKomugi,
+  summary: {
+    it: 'La campionessa cieca di gungi che non riesce a battere. Va per ucciderla, invece la salva da un’aquila e la chiama ospite importante.',
+    en: 'The blind gungi champion he cannot beat. He sets out to kill her, saves her from an eagle instead and calls her an important guest.',
+  },
+}
+
 export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
     cheetu: {
@@ -256,7 +264,10 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Guida una delle squadre che cacciano umani per la regina, e la caccia gli piace per se stessa. Quando gli ricordano che sono al servizio della regina, risponde che la sua squadra fa la sua parte.',
         en: 'He leads one of the squads that hunt humans for the Queen, and he enjoys the hunt for its own sake. When he is reminded that they serve the Queen, he answers that his squad does its share.',
       },
-      status: [{ episode: 79, chapter: 192, value: 'alive' }],
+      status: [
+        { episode: 79, chapter: 192, value: 'alive' },
+        { episode: 117, chapter: 278, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 79, chapter: 192, value: SERVING_THE_QUEEN },
         {
@@ -337,6 +348,26 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           episode: 92,
           chapter: 215,
           value: [links.youpiPitou, links.youpiPouf, links.youpiKing],
+        },
+        {
+          episode: 121,
+          chapter: 289,
+          value: [
+            links.youpiPitou,
+            links.youpiPouf,
+            links.youpiKing,
+            {
+              character: 'knuckle-bine',
+              type: {
+                it: 'Avversario che risparmia',
+                en: 'Opponent he spares',
+              },
+              summary: {
+                it: 'Nackul annulla il suo potere per salvare Morau. Montowtoyupih li lascia vivere e se ne va.',
+                en: 'Knuckle lifts his ability to save Morel. Menthuthuyoupi lets them live and leaves.',
+              },
+            },
+          ],
         },
       ],
       role: ROYAL_GUARD,
@@ -452,11 +483,23 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             links.kingPitou,
             links.kingPouf,
             links.kingYoupi,
+            KING_KOMUGI_GUEST,
+          ],
+        },
+        {
+          episode: 126,
+          chapter: 298,
+          value: [
+            links.kingPitou,
+            links.kingPouf,
+            links.kingYoupi,
+            KING_KOMUGI_GUEST,
             {
-              ...links.kingKomugi,
+              character: 'netero',
+              type: { it: 'Avversario', en: 'Opponent' },
               summary: {
-                it: 'La campionessa cieca di gungi che non riesce a battere. Va per ucciderla, invece la salva da un’aquila e la chiama ospite importante.',
-                en: 'The blind gungi champion he cannot beat. He sets out to kill her, saves her from an eagle instead and calls her an important guest.',
+                it: 'Combatte contro Netero, che gli rivela il nome scelto per lui dalla regina prima di far esplodere una bomba.',
+                en: 'He fights Netero, who tells him the name the Queen chose for him before detonating a bomb.',
               },
             },
           ],

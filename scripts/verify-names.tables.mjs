@@ -160,6 +160,8 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  // No Italian Wikipedia entry; the 2011 dub is unviewed (#1023).
+  'taragetter': 'Taragetter',
   // Chimera Ant phase 3 (#1022): no section of their own in the Italian
   // Hunter, Formichimere or character pages; dub unviewed. Komugi is an
   // entry of a list inside a section, Bizeff is "Bizef" in passing.
