@@ -738,3 +738,60 @@ describe.each([
     )
   })
 })
+
+/**
+ * The Winterfell household's stages (#854), each pinned in the units that
+ * tell it: three deaths, Arya's Needle and Bran's climb, which the book
+ * alone shows after his threshold.
+ */
+const STAGES: {
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  source?: 'chapter' | 'episode'
+}[] = [
+  { id: 'lady-direwolf', episode: 2, chapter: 17 },
+  { id: 'jory-cassel', episode: 5, chapter: 36 },
+  { id: 'mordane', episode: 10, chapter: 68 },
+  { id: 'arya-stark', episode: 2, chapter: 11 },
+  { id: 'bran-stark', episode: 2, chapter: 9, source: 'chapter' },
+]
+
+describe.each(
+  STAGES.flatMap((stage) =>
+    UNITS.filter((unit) => (stage.source ?? unit) === unit).map((unit) => ({
+      ...stage,
+      unit,
+    })),
+  ),
+)('$id is redrawn by $unit', ({ id, episode, chapter, unit }) => {
+  const pin = unit === 'chapter' ? chapter : episode
+  const [stage] = REDRAWINGS[id] ?? []
+
+  it('at its pin, not one before', () => {
+    const owner = character(id)
+
+    expect(stage?.episode).toBe(episode)
+    expect(stage?.chapter).toBe(chapter)
+    expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
+      DRAWINGS[id],
+    )
+    expect(drawingOf(owner, reader(unit, pin)).strokes).toStrictEqual(
+      stage?.value,
+    )
+  })
+})
+
+describe('the stages one medium alone tells', () => {
+  it.each(STAGES.filter(({ source }) => source !== undefined))(
+    'never redraws $id for a reader of the other medium',
+    ({ id, source }) => {
+      const last =
+        source === 'chapter' ?
+          reader('episode', archive.series.episodeCeiling)
+        : reader('chapter', archive.series.chapterCeiling)
+
+      expect(drawingOf(character(id), last).strokes).toStrictEqual(DRAWINGS[id])
+    },
+  )
+})
