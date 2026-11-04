@@ -4,7 +4,7 @@
 # whenever GitHub reports no conflict, and the branch is synced with main only
 # when it conflicts, by hand (landing-prs skill).
 #
-# usage: scripts/land-pr.sh <pr> <expected-head-sha>
+# usage: scripts/land-pr.sh <pr> <expected-head-sha> (full SHA or prefix)
 #
 # exit 0 merged, also when GitHub had merged it first
 #      2 conflict with main (the files are printed): merge main into the
@@ -12,14 +12,15 @@
 #        run on a conflicting PR, and again after it, as main may have moved
 #      3 the CI workflow did not pass. A cancelled run is waited out, as a newer
 #        run on the same head cancels it; one never followed times out
-#      4 the head is no longer the one expected
-#      5 bad arguments, a PR not open against main, gh or git failed, or the
-#        merge was refused for another reason
+#      4 the head moved after it was pinned
+#      5 bad arguments, a SHA that does not match the initial head, a PR not
+#        open against main, gh or git failed, or the merge was refused
 set -u
 [ $# = 2 ] || { echo "usage: scripts/land-pr.sh <pr> <expected-head-sha>"; exit 5; }
 cd "$(dirname "$0")/.." || exit 5
 PR=$1
 H=$2
+[[ "$H" =~ ^[0-9a-f]{4,40}$ ]] || { echo "invalid head SHA: $H"; exit 5; }
 
 # Prints the conclusion of the newest CI workflow run on commit $1, once it has
 # finished. A superseding run can cancel an earlier one, so keep waiting
@@ -70,6 +71,14 @@ pr=$(gh pr view "$PR" --json state,baseRefName,headRefName,headRepository \
 IFS=$'\t' read -r state base HEAD_BRANCH HEAD_REPO <<< "$pr"
 [ "$state $base" = "OPEN main" ] || { echo "PR $PR is not open against main: $state $base"; exit 5; }
 [ -n "$HEAD_BRANCH" ] && [ -n "$HEAD_REPO" ] || { echo "PR $PR has no head branch or repository"; exit 5; }
+
+# Pin the full SHA once so every later check and the merge use the same head.
+cur=$(pr_head) || exit 5
+[[ "$cur" =~ ^[0-9a-f]{40}$ && "$cur" = "$H"* ]] || {
+  echo "SHA $H does not match the head of PR $PR: $cur"
+  exit 5
+}
+H=$cur
 
 # Exits 2 naming the files $H conflicts on with origin/main. GitHub's answer
 # decides when to look: MERGEABLE goes on, CONFLICTING and an UNKNOWN that
