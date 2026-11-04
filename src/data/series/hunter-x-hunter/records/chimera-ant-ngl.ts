@@ -210,12 +210,39 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: [links.reinaKurt, links.reinaHaruna],
         },
       ],
-      role: { it: 'Sorella minore', en: 'Younger sister' },
+      role: [
+        {
+          episode: 80,
+          chapter: 189,
+          value: { it: 'Sorella minore', en: 'Younger sister' },
+        },
+        {
+          episode: 136,
+          chapter: 315,
+          source: 'chapter',
+          value: {
+            it: 'Rinata come formichimera, chiamata Shidore',
+            en: 'Reborn as a Chimera Ant called Shidore',
+          },
+        },
+        {
+          episode: 136,
+          chapter: 315,
+          source: 'episode',
+          value: {
+            it: 'Rinata come formichimera',
+            en: 'Reborn as a Chimera Ant',
+          },
+        },
+      ],
       log: {
         it: 'Torna a casa dal fiume con il fratello maggiore quando li trova una formica soldato. Lui prova a trattenerla perché lei possa scappare, ma la formica li porta entrambi alla regina.',
         en: 'She is coming home from the river with her older brother when an ant soldier finds them. He tries to hold it off so she can run, but it takes them both to the Queen.',
       },
-      status: [{ episode: 80, chapter: 189, value: 'deceased' }],
+      status: [
+        { episode: 80, chapter: 189, value: 'deceased' },
+        { episode: 136, chapter: 315, value: 'alive' },
+      ],
       affiliation: [{ episode: 80, chapter: 189, value: HER_FAMILY }],
     },
     // Anime-only record: the manga never gives the mother's name.

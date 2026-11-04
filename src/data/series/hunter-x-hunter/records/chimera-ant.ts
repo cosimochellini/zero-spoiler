@@ -2,6 +2,7 @@ import type { Relationship } from '~/data/types'
 
 import { CHIMERA_ANT_HUNTERS } from './chimera-ant-hunters'
 import { CHIMERA_ANT_NGL } from './chimera-ant-ngl'
+import { CHIMERA_ANT_PHASE_FIVE } from './chimera-ant-phase-five'
 import { CHIMERA_ANT_PHASE_FOUR } from './chimera-ant-phase-four'
 import { CHIMERA_ANT_PHASE_THREE } from './chimera-ant-phase-three'
 import { CHIMERA_ANT_PLACE_RECORDS } from './chimera-ant-places'
@@ -90,6 +91,7 @@ const surveyDossier: HunterSaga['dossiers'][string] = {
 export const chimeraAnt: HunterSaga = {
   name: { it: 'Formichimere', en: 'Chimera Ant' },
   dossiers: {
+    ...CHIMERA_ANT_PHASE_FIVE.dossiers,
     ...CHIMERA_ANT_PHASE_FOUR.dossiers,
     ...CHIMERA_ANT_PHASE_THREE.dossiers,
     ...CHIMERA_ANT_HUNTERS.dossiers,
@@ -139,7 +141,10 @@ export const chimeraAnt: HunterSaga = {
         it: 'Si presenta con il nome che gli ha dato la regina. Nella prova dell’acqua, la foglia reagisce al suo Nen.',
         en: 'Introduces themself by the name the Queen gave them. In the water test, the leaf reacts to their Nen.',
       },
-      status: [{ episode: 84, chapter: 198, value: 'alive' }],
+      status: [
+        { episode: 84, chapter: 198, value: 'alive' },
+        { episode: 131, chapter: 307, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 84,
@@ -156,6 +161,7 @@ export const chimeraAnt: HunterSaga = {
     },
   },
   entries: [
+    ...CHIMERA_ANT_PHASE_FIVE.entries,
     ...CHIMERA_ANT_PHASE_FOUR.entries,
     ...CHIMERA_ANT_PHASE_THREE.entries,
     ...CHIMERA_ANT_HUNTERS.entries,

@@ -426,7 +426,11 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Deve tenersi il suo gettone di legno per un mese contro due avversari di cui non sa il nome. Decide di cercarli e di batterli per primo.',
         en: 'He must keep his wooden token for a month against two opponents whose names he does not know. He decides to find them and beat them first.',
       },
-      status: [{ episode: 86, chapter: 200, value: 'alive' }],
+      status: [
+        { episode: 86, chapter: 200, value: 'alive' },
+        { episode: 132, chapter: 308, value: 'captured' },
+        { episode: 136, chapter: 316, value: 'alive' },
+      ],
       affiliation: [
         { episode: 86, chapter: 200, value: MOREL_STUDENT },
         { episode: 91, chapter: 214, value: IN_NGL },
@@ -496,6 +500,25 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // invents; the manga's caption names him as NGL's kingpin in chapter 203.
     // The frozen texts keep to what both tell.
     'gyro': {
+      relationships: [
+        {
+          episode: 123,
+          chapter: 296,
+          value: [
+            {
+              character: 'welfin',
+              type: {
+                it: 'Amico della vita precedente',
+                en: 'Friend from his previous life',
+              },
+              summary: {
+                it: 'Welfang ricorda Gyro quando racconta a Calamaro della propria vita da umano.',
+                en: 'Welfin remembers Gyro when he tells Ikalgo about his life as a human.',
+              },
+            },
+          ],
+        },
+      ],
       role: { it: 'Capo nascosto di NGL', en: 'Hidden ruler of NGL' },
       log: {
         it: 'Gli uomini armati di NGL prendevano ordini da lui.',
