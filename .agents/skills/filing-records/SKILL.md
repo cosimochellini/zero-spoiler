@@ -21,14 +21,35 @@ Done when every new character has an entry and a dossier, every place an entry a
 
 ## 2. Gates
 
-- The gate is the scene where the name is said or printed, in each medium, not the first unnamed appearance. Cite the chapter and the episode for each.
+These are the owner's rulings, so Claude and Codex file the same record at the same gate.
+
+A phase issue gives a work window of chapters and an inventory of candidates. Every candidate ends in the phase's **inventory**, `docs/content-provenance/<series>-<arc>-phase-N.md` (`hunter-x-hunter-chimera-ant-phase-3.md` is the model), as filed with its gates, pending with its naming scene, or omitted with its reason.
+
+A record's gate in each medium is the first chapter or episode whose English-wiki synopsis gives an **explicit naming signal**: an introduction, "named", the name in someone's quoted or reported speech or printed thought, or a caption. An episode title card counts as a caption. Narration alone never counts; that medium waits for its next explicit naming signal. Cite the chapter and the episode. The PR lists the lower narration-only points as owner checks.
+
+### Candidates
+
+- Wiki first appearances and cast lists only name candidates. An unnamed appearance is a floor, never a gate.
+- A candidate from an earlier phase whose name is first said inside the window is filed in this phase.
+- Characters only mentioned and never seen are omitted, with the reason in the inventory. So are wiki descriptors, collectives and species labels.
+- A place is filed only when the story visits it; regions and countries only mentioned are omitted. Its gate is the first explicit naming signal in the window, even before the visit (Mandai City, named as the rendezvous at chapter 243 / episode 102, visited at 256 / 108). A place named in an earlier arc opens at its first visit (Meteor City, named at 102 / 24, opens at 224 / 96).
+- Pending means the name is first said after the window, and the inventory cites that scene. A candidate left unchecked is not pending. (This is not the relationship registry's `pending` of §6.)
+
+### Names in two media
+
 - A name only one medium gives makes a source-only record: `source: 'chapter'` or `'episode'` (`Source` in `src/lib/progress/spoiler.ts`). Its other number only orders it.
+- A character renamed after the window is filed under the name and id they have inside it. The id is in the URL, so it never carries the later name.
+- A record the anime introduces under another name, never saying the manga's, stays one record filed under the manga's name: `episodeName: { name, chapter }`, with the chapter where the manga says the anime's name too (Hagya, introduced in the episodes as Leol, a name the manga gives him at chapter 240). `Entity` in `src/data/types.ts` documents it.
+- A record whose two gates are too far out of step to say how far a chapter reaches into the anime gets `unanchored: true`. That is a pair whose episode adapts a chapter far from the record's own: Komugi, episode 103 / chapter 257, where episode 103 adapts chapter 244; Hagya, 106 / 192, where episode 106 adapts chapters 251–252. A timeline takes one entry per episode, so when one episode tells what the manga splits across chapters (episode 101 tells Ikalgo's chapters 238 and 241), each medium gets its own dated entry in the dossier, with its `source`. Neither a `source` entry nor an `unanchored` record vouches for a pair in the chapter table (`vouches` in `src/data/chapterTable.ts`).
 - A record whose name is an ordinary word gets `commonWord: true`; one whose name is said before its record opens gets `nameSaidAt`. Records that share a name, such as a place named like its arc, share both facts. A fact no text needs fails too. Both rules are tests in `src/data/leaks.test.ts`: `give records that share a name the same name facts` and `need every name fact for some text to pass`.
-- Write the summary, role, log and first facts for the gate: what a reader knows there. Anything later is a dated step.
+
+### Facts
+
+- Write the summary, role, log and first facts for the gate: what a reader knows there. Anything later is a dated step. Facts whose manga chapter is past the window wait for the next phase.
 - A status timeline opens at the record's gate. Every later change is its own entry with its `chapter:` pinned (`pins every change of status to the chapter that tells it` in `src/data/archive.test.ts`).
 - A role the story changes (an applicant who becomes a Hunter) is filed as dated steps instead of one text: `role: [{ episode, chapter, value }, …]`, the first step at the record's gate, every later one with its `chapter:` pinned (`opens a dated role on its record and pins every change to a chapter`). `passedExam` in `<hxh>/records/saga.ts` builds an exam passer's two steps.
 
-Done when every gate has its naming chapter and episode, and `src/data/leaks.test.ts` and `src/data/archive.test.ts` pass.
+Done when every gate cites its explicit naming signal in each medium, every candidate is in the inventory, and `src/data/leaks.test.ts` and `src/data/archive.test.ts` pass.
 
 ## 3. Hidden tests
 
@@ -95,3 +116,14 @@ curl -sL -c jar.txt -b jar.txt "http://localhost:$PORT/hunter-x-hunter/en/charac
 ```
 
 Done when each new record is closed at gate−1 and open at the gate, in both units, and the PR's Evidence lists the pages probed.
+
+## 10. Review
+
+A reviewer of a record set checks:
+
+- every new gate cites an explicit naming signal in each medium, and the PR lists each lower narration-only point as an owner check;
+- `source`, `episodeName` and `unanchored` follow §2;
+- every inventory candidate is filed, pending with its naming scene, or omitted with its reason;
+- the "Done when" of §1–§9 holds.
+
+Done when every finding names the rule it breaks.
