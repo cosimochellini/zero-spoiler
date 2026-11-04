@@ -42,6 +42,7 @@ import {
   CHIMERA_ANT_SQUADS_DRAWINGS,
   chimeraAntSquadsRedrawn,
 } from './chimera-ant-squads'
+import { ELECTION_DRAWINGS } from './election'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
@@ -144,6 +145,7 @@ export const DRAWINGS = {
   ...TRICK_TOWER_DRAWINGS,
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
+  ...ELECTION_DRAWINGS,
   ...HEAVENS_ARENA_DRAWINGS,
   ...YORKNEW_CITY_DRAWINGS,
   ...GREED_ISLAND_DRAWINGS,

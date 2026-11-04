@@ -94,7 +94,8 @@ const EXPECTED: Record<string, Expected> = {
   // and one place, phase 2 (#1021) 27 characters and eight places, and
   // phase 3 (#1022) 11 characters and four places. Phase 4 (#1023) adds
   // one character and opens an existing place in the anime. Phase 5 (#1024)
-  // adds one character and files the finale.
+  // adds one character and files the finale. Election (#912) covers episode
+  // 137–148 and chapter 319–339.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -113,14 +114,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 306,
+      affiliations: 341,
       arcs: 7,
-      characters: 155,
+      characters: 183,
       chronicles: 345,
       linkedOrigins: 8,
-      places: 36,
-      statuses: 221,
-      timelines: 636,
+      places: 39,
+      statuses: 254,
+      timelines: 742,
       visits: 0,
     },
     namesSaidEarly: true,

@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import { CHIMERA_ANT_PLACES } from './records/chimera-ant-places'
+import { ELECTION_PLACES } from './records/election-places'
 import { GREED_ISLAND_PLACES } from './records/greed-island'
 import { HEAVENS_ARENA_PLACES } from './records/heavens-arena'
 import type { HunterVocabulary } from './records/saga'
@@ -19,6 +20,7 @@ export const PLACE_DOSSIERS: Record<string, PlaceDossier<HunterVocabulary>> = {
   ...YORKNEW_CITY_PLACES,
   ...GREED_ISLAND_PLACES,
   ...CHIMERA_ANT_PLACES,
+  ...ELECTION_PLACES,
   'zevil-island': {
     form: 'island',
     region: 'islands',
