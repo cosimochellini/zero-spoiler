@@ -1,5 +1,41 @@
 import type { HunterSaga } from './saga'
 
+const SHORTLIST_AFFILIATION = [
+  {
+    episode: 141,
+    chapter: 326,
+    value: { it: 'Associazione Hunter', en: 'Hunter Association' },
+  },
+]
+const SHORTLIST_STATUS = { episode: 141, chapter: 326, value: 'alive' as const }
+const SHORTLIST_WITHDRAWAL = [
+  {
+    episode: 141,
+    chapter: 326,
+    value: { it: 'Candidata alla presidenza', en: 'Candidate for chairman' },
+  },
+  { episode: 143, chapter: 329, value: { it: 'Hunter', en: 'Hunter' } },
+]
+const INTRODUCED_BY_BEANS = [
+  {
+    episode: 141,
+    chapter: 326,
+    value: [
+      {
+        character: 'beans',
+        type: {
+          it: 'Presenta la sua candidatura',
+          en: 'Introduces her candidacy',
+        },
+        summary: {
+          it: 'Il segretario la presenta tra i sedici Hunter rimasti in corsa.',
+          en: 'The secretary introduces her as one of the sixteen Hunters still in the running.',
+        },
+      },
+    ],
+  },
+]
+
 export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   entries: [
     {
@@ -784,15 +820,9 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Al primo scrutinio ottiene otto voti.',
         en: 'He receives eight votes in the first count.',
       },
-      affiliation: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
-        },
-      ],
+      affiliation: SHORTLIST_AFFILIATION,
       status: [
-        { episode: 141, chapter: 326, value: 'alive' },
+        SHORTLIST_STATUS,
         { episode: 143, chapter: 329, value: 'deceased' },
       ],
       relationships: [
@@ -813,29 +843,13 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'cutie-beauty': {
-      role: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: {
-            it: 'Candidata alla presidenza',
-            en: 'Candidate for chairman',
-          },
-        },
-        { episode: 143, chapter: 329, value: { it: 'Hunter', en: 'Hunter' } },
-      ],
+      role: SHORTLIST_WITHDRAWAL,
       log: {
         it: 'Al primo scrutinio ottiene dieci voti e condivide l’undicesimo posto.',
         en: 'She receives ten votes and ties for eleventh in the first count.',
       },
-      affiliation: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
-        },
-      ],
-      status: [{ episode: 141, chapter: 326, value: 'alive' }],
+      affiliation: SHORTLIST_AFFILIATION,
+      status: [SHORTLIST_STATUS],
       relationships: [
         {
           episode: 143,
@@ -869,14 +883,8 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Al primo scrutinio arriva terzo con ventisei voti.',
         en: 'He places third with twenty-six votes in the first count.',
       },
-      affiliation: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
-        },
-      ],
-      status: [{ episode: 141, chapter: 326, value: 'alive' }],
+      affiliation: SHORTLIST_AFFILIATION,
+      status: [SHORTLIST_STATUS],
       relationships: [
         {
           episode: 144,
@@ -898,48 +906,14 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'linne-horsdoeuvre': {
-      role: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: {
-            it: 'Candidata alla presidenza',
-            en: 'Candidate for chairman',
-          },
-        },
-        { episode: 143, chapter: 329, value: { it: 'Hunter', en: 'Hunter' } },
-      ],
+      role: SHORTLIST_WITHDRAWAL,
       log: {
         it: 'Al primo scrutinio ottiene sei voti.',
         en: 'She receives six votes in the first count.',
       },
-      affiliation: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
-        },
-      ],
-      status: [{ episode: 141, chapter: 326, value: 'alive' }],
-      relationships: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: [
-            {
-              character: 'beans',
-              type: {
-                it: 'Presenta la sua candidatura',
-                en: 'Introduces her candidacy',
-              },
-              summary: {
-                it: 'Il segretario la presenta tra i sedici Hunter rimasti in corsa.',
-                en: 'The secretary introduces her as one of the sixteen Hunters still in the running.',
-              },
-            },
-          ],
-        },
-      ],
+      affiliation: SHORTLIST_AFFILIATION,
+      status: [SHORTLIST_STATUS],
+      relationships: INTRODUCED_BY_BEANS,
     },
     'loupe-highland': {
       role: [
@@ -957,14 +931,8 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Al primo scrutinio ottiene cinque voti e condivide il diciannovesimo posto.',
         en: 'He receives five votes and ties for nineteenth in the first count.',
       },
-      affiliation: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
-        },
-      ],
-      status: [{ episode: 141, chapter: 326, value: 'alive' }],
+      affiliation: SHORTLIST_AFFILIATION,
+      status: [SHORTLIST_STATUS],
       relationships: [
         {
           episode: 142,
@@ -983,48 +951,14 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'sanbica-norton': {
-      role: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: {
-            it: 'Candidata alla presidenza',
-            en: 'Candidate for chairman',
-          },
-        },
-        { episode: 143, chapter: 329, value: { it: 'Hunter', en: 'Hunter' } },
-      ],
+      role: SHORTLIST_WITHDRAWAL,
       log: {
         it: 'Al primo scrutinio ottiene dieci voti e condivide l’undicesimo posto.',
         en: 'She receives ten votes and ties for eleventh in the first count.',
       },
-      affiliation: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
-        },
-      ],
-      status: [{ episode: 141, chapter: 326, value: 'alive' }],
-      relationships: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: [
-            {
-              character: 'beans',
-              type: {
-                it: 'Presenta la sua candidatura',
-                en: 'Introduces her candidacy',
-              },
-              summary: {
-                it: 'Il segretario la presenta tra i sedici Hunter rimasti in corsa.',
-                en: 'The secretary introduces her as one of the sixteen Hunters still in the running.',
-              },
-            },
-          ],
-        },
-      ],
+      affiliation: SHORTLIST_AFFILIATION,
+      status: [SHORTLIST_STATUS],
+      relationships: INTRODUCED_BY_BEANS,
     },
     'teradein-neutral': {
       role: { it: 'Candidato alla presidenza', en: 'Candidate for chairman' },
@@ -1032,15 +966,9 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Al primo scrutinio ottiene nove voti e si piazza tredicesimo.',
         en: 'He places thirteenth with nine votes in the first count.',
       },
-      affiliation: [
-        {
-          episode: 141,
-          chapter: 326,
-          value: { it: 'Associazione Hunter', en: 'Hunter Association' },
-        },
-      ],
+      affiliation: SHORTLIST_AFFILIATION,
       status: [
-        { episode: 141, chapter: 326, value: 'alive' },
+        SHORTLIST_STATUS,
         { episode: 143, chapter: 330, value: 'deceased' },
       ],
       relationships: [
