@@ -32,15 +32,15 @@ A record's gate in each medium is the first chapter or episode whose English-wik
 - Wiki first appearances and cast lists only name candidates. An unnamed appearance is a floor, never a gate.
 - A candidate from an earlier phase whose name is first said inside the window is filed in this phase.
 - Characters only mentioned and never seen are omitted, with the reason in the inventory. So are wiki descriptors, collectives and species labels.
-- A place is filed at the first visit where the story names it; regions and countries only mentioned are omitted. A place named before its visit opens at the visit (Meteor City, chapter 224 / episode 96).
-- Pending means the name is first said after the window, and the inventory cites that scene. A candidate left unchecked is not pending.
+- A place is filed only when the story visits it; regions and countries only mentioned are omitted. Its gate is the first explicit naming signal in the window, even before the visit (Mandai City, named as the rendezvous at chapter 243 / episode 102, visited at 256 / 108). A place named in an earlier arc opens at its first visit (Meteor City, named at 102 / 24, opens at 224 / 96).
+- Pending means the name is first said after the window, and the inventory cites that scene. A candidate left unchecked is not pending. (This is not the relationship registry's `pending` of §6.)
 
 ### Names in two media
 
 - A name only one medium gives makes a source-only record: `source: 'chapter'` or `'episode'` (`Source` in `src/lib/progress/spoiler.ts`). Its other number only orders it.
 - A character renamed after the window is filed under the name and id they have inside it. The id is in the URL, so it never carries the later name.
-- A name the anime gives and the manga says only later stays on the one record, filed under the manga's name: `episodeName: { name, chapter }`, with the chapter where the manga says it (Hagya, introduced in the episodes as Leol, a name the manga gives him at chapter 240). `Entity` in `src/data/types.ts` documents it.
-- A record whose episode adapts another chapter's scene gets `unanchored: true` (Komugi, episode 103 / chapter 257). A scene one medium splits gets one entry per medium, each with its `source`. Neither then vouches for a false pair in the chapter table (`vouches` in `src/data/chapterTable.ts`).
+- A record the anime introduces under another name, never saying the manga's, stays one record filed under the manga's name: `episodeName: { name, chapter }`, with the chapter where the manga says the anime's name too (Hagya, introduced in the episodes as Leol, a name the manga gives him at chapter 240). `Entity` in `src/data/types.ts` documents it.
+- A record whose two gates are too far out of step to say how far a chapter reaches into the anime gets `unanchored: true`. This applies to a pair whose episode adapts a chapter far from the record's own (Komugi, episode 103 / chapter 257, where episode 103 adapts chapter 244) and to a pair in reversed order (Hagya, 106 / 192). A scene one medium tells in two places gets one dated entry per medium in the dossier, each with its `source`. Neither a `source` entry nor an `unanchored` record vouches for a pair in the chapter table (`vouches` in `src/data/chapterTable.ts`).
 - A record whose name is an ordinary word gets `commonWord: true`; one whose name is said before its record opens gets `nameSaidAt`. Records that share a name, such as a place named like its arc, share both facts. A fact no text needs fails too. Both rules are tests in `src/data/leaks.test.ts`: `give records that share a name the same name facts` and `need every name fact for some text to pass`.
 
 ### Facts
