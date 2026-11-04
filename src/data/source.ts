@@ -1,6 +1,6 @@
 import type { Gated, Source } from '~/lib/progress/spoiler'
 
-import { type ReaderArchive, withFeatures } from './features'
+import { type Eater, type ReaderArchive, withFeatures } from './features'
 import { toldIn } from './reveal'
 import { shelvesOf } from './shelves'
 import type { BookSection, Entity, SeriesArchive } from './types'
@@ -71,7 +71,7 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
       return entity
     }
 
-    return source === 'episode' ? { ...own, name: episodeName } : own
+    return source === 'episode' ? { ...own, name: episodeName.name } : own
   }
   const kept = (entities: Entity[]): Entity[] => {
     const result: Entity[] = []
@@ -113,7 +113,15 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
     getPlace: (id) => found(archive.getPlace(id)),
     getShip: (id) => found(archive.getShip(id)),
     fruitsOfForm: (form) => kept(archive.fruitsOfForm(form)),
-    eatersOf: (id) => archive.eatersOf(id).filter((eater) => has(eater.gate)),
+    eatersOf: (id) => {
+      const eaters: Eater[] = []
+      for (const eater of archive.eatersOf(id)) {
+        if (has(eater.gate)) {
+          eaters.push({ ...eater, entity: named(eater.entity) })
+        }
+      }
+      return eaters
+    },
   }
 }
 

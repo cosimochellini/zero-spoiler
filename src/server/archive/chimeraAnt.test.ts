@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -378,6 +379,20 @@ describe('Chimera Ant dated facts', () => {
     expect(drawingsFor(['hagya'], reached)['hagya']).not.toStrictEqual(
       drawingsFor(['hagya'], before)['hagya'],
     )
+  })
+
+  it('stores the chapter the manga names Leol, 240', () => {
+    expect(characterById('hagya').episodeName?.chapter).toBe(240)
+  })
+
+  it('holds Leol as fog in a payload until each reader reaches it', () => {
+    const leaks = leaksOf(series)
+    const payload = { name: 'Leol' }
+
+    expect(leaks(payload, at('chapter', 239))).toContain('hagya')
+    expect(leaks(payload, at('chapter', 240))).toStrictEqual([])
+    expect(leaks(payload, at('episode', 105))).toContain('hagya')
+    expect(leaks(payload, at('episode', 106))).toStrictEqual([])
   })
 
   it.each(LOCALES)('uses the name told by each medium in %s', (locale) => {

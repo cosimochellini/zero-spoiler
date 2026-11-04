@@ -103,19 +103,22 @@ function fogOf(
   { entities, series }: SeriesArchive,
 ): Map<string, Entity[]> {
   const at = reveal(bookmark, series)
-  const covered = entities.filter((entity) => !at.sees(entity))
   const fog = new Map<string, Entity[]>()
   const cover = (said: string, entity: Entity): void => {
     fog.set(said, [...(fog.get(said) ?? []), entity])
   }
 
-  for (const entity of covered) {
-    cover(entity.id, entity)
+  for (const entity of entities) {
+    if (!at.sees(entity)) {
+      cover(entity.id, entity)
+    }
   }
   for (const locale of LOCALES) {
     const taken = reachedNames(at, locale, entities)
-    const said = covered.flatMap((entity) =>
-      namesOf(entity, locale).map((name) => ({ entity, name })),
+    const said = entities.flatMap((entity) =>
+      namingsOf(entity)
+        .filter((naming) => !at.sees(naming))
+        .map((naming) => ({ entity, name: naming.name[locale] })),
     )
     for (const { entity, name } of said) {
       if (!taken.has(name)) {
@@ -127,12 +130,29 @@ function fogOf(
   return fog
 }
 
-/** The names a record goes by in one locale: its own, and the anime's. */
-function namesOf(entity: Entity, locale: Locale): string[] {
-  const anime = entity.episodeName?.[locale]
-  return anime === undefined ?
-      [entity.name[locale]]
-    : [entity.name[locale], anime]
+/**
+ * A record's anime name as a record of its own (`Entity.episodeName`): an
+ * episode reader reaches it with the record, a chapter reader at the chapter
+ * the manga says it, never before the record's own. Its id tells it apart.
+ */
+export function laterNameOf(entity: Entity): Entity | undefined {
+  const later = entity.episodeName
+  if (later === undefined) {
+    return undefined
+  }
+
+  return {
+    ...entity,
+    id: `${entity.id}:episodeName`,
+    name: later.name,
+    revealedAtChapter: Math.max(entity.revealedAtChapter, later.chapter),
+  }
+}
+
+/** Each name a record goes by, as a record gated where a reader reaches it. */
+function namingsOf(entity: Entity): Entity[] {
+  const later = laterNameOf(entity)
+  return later === undefined ? [entity] : [entity, later]
 }
 
 /**
@@ -145,15 +165,21 @@ function foldedFogOf(
   { entities, series }: SeriesArchive,
 ): Map<string, Entity[]> {
   const at = reveal(bookmark, series)
+  const folded = (naming: Entity): string[] =>
+    LOCALES.map((locale) => foldName(naming.name[locale]))
+  const namings = entities.flatMap((entity) =>
+    namingsOf(entity).map((naming) => ({ entity, naming })),
+  )
   const taken = new Set(
-    entities.flatMap((entity) => (at.sees(entity) ? fold(entity) : [])),
+    namings.flatMap(({ naming }) => (at.sees(naming) ? folded(naming) : [])),
   )
   const fog = new Map<string, Entity[]>()
 
-  for (const entity of entities) {
+  for (const { entity, naming } of namings) {
     const said =
-      at.sees(entity) ? [] : fold(entity).filter((name) => !taken.has(name))
-    for (const name of said) {
+      at.sees(naming) ? [] : folded(naming).filter((name) => !taken.has(name))
+    const names = new Set(said)
+    for (const name of names) {
       fog.set(name, [...(fog.get(name) ?? []), entity])
     }
   }
@@ -165,8 +191,8 @@ function foldedFogOf(
 function fold(entity: Entity): string[] {
   return [
     ...new Set(
-      LOCALES.flatMap((locale) =>
-        namesOf(entity, locale).map((name) => foldName(name)),
+      namingsOf(entity).flatMap((naming) =>
+        LOCALES.map((locale) => foldName(naming.name[locale])),
       ),
     ),
   ]
@@ -178,16 +204,13 @@ function reachedNames(
   locale: Locale,
   entities: Entity[],
 ): Set<string> {
-  const names = new Set<string>()
-  for (const entity of entities) {
-    if (at.sees(entity)) {
-      for (const name of namesOf(entity, locale)) {
-        names.add(name)
-      }
-    }
-  }
-
-  return names
+  return new Set(
+    entities.flatMap((entity) =>
+      namingsOf(entity)
+        .filter((naming) => at.sees(naming))
+        .map((naming) => naming.name[locale]),
+    ),
+  )
 }
 
 /** A drawing as one string: each stroke's path and transform, in order. */

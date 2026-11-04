@@ -463,7 +463,8 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     {
       id: 'hagya',
       kind: 'character',
-      episodeName: { it: 'Leol', en: 'Leol' },
+      // The manga gives the name Leol in chapter 240.
+      episodeName: { name: { it: 'Leol', en: 'Leol' }, chapter: 240 },
       revealedAtEpisode: 106,
       revealedAtChapter: 192,
       name: { it: 'Hagya', en: 'Hagya' },

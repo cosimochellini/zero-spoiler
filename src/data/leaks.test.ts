@@ -21,6 +21,7 @@ import { FIRST_CHAPTER, FIRST_EPISODE } from '~/lib/progress/episode'
 import type { Source } from '~/lib/progress/spoiler'
 import { tokenize } from '~/lib/prose/markers'
 import { COPIES } from '~/server/copy.server'
+import { laterNameOf } from '~/test/fog'
 import { expectedOf, LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
 /**
@@ -392,49 +393,6 @@ interface Scan {
   texts: Text[]
 }
 
-/**
- * The chapter at which a chapter reader learns a record's anime name
- * (`Entity.episodeName`): the first text of the record's own such a reader
- * reaches that says it, or never when none does.
- */
-function animeNameChapter(
-  entity: Entity,
-  anime: LocalizedText,
-  texts: Text[],
-): number {
-  const telling = texts.filter(
-    ({ owner, source, text }) =>
-      owner.id === entity.id
-      && source !== 'episode'
-      && LOCALES.every((locale) =>
-        asWords(text[locale]).includes(asWords(anime[locale])),
-      ),
-  )
-
-  return Math.min(...telling.map(({ chapter }) => chapter))
-}
-
-/**
- * The anime's name of each record that has one, as a record of its own for
- * the scan: an episode reader meets it with the record, a chapter reader at
- * `animeNameChapter`. Its id tells it apart from the record's, so the
- * record's own earlier texts are held to it too.
- */
-function animeNamesOf(entities: Entity[], texts: Text[]): Entity[] {
-  return entities
-    .filter((entity) => entity.episodeName !== undefined)
-    .map((entity) => {
-      const anime = entity.episodeName ?? entity.name
-
-      return {
-        ...entity,
-        id: `${entity.id}:episodeName`,
-        name: anime,
-        revealedAtChapter: animeNameChapter(entity, anime, texts),
-      }
-    })
-}
-
 /** A probe text in one source at one episode and chapter, saying a name. */
 function probeOf(
   source: Source,
@@ -454,9 +412,10 @@ function probeOf(
 /** One archive's scan, its name indexes built once for every text. */
 function scanOf(archive: ReaderArchive, placeWords: PlaceWords): Scan {
   const texts = textsOf(archive, placeWords)
+  // A record's anime name is scanned as a record of its own.
   const entities = [
     ...archive.entities,
-    ...animeNamesOf(archive.entities, texts),
+    ...archive.entities.flatMap((entity) => laterNameOf(entity) ?? []),
   ]
   const nameWords = new Map<string, string>()
 
@@ -601,6 +560,8 @@ describe.each(LOADED_SERIES)(
     const { entities } = reader
     const scan = scanOf(reader, placeWords)
     const expected = expectedOf(slug)
+    const ids = (text: Text): string[] =>
+      scan.leaked(text, 'en', true).map((other) => other.id)
 
     it('cover every kind of text the archive prints', () => {
       const kinds = new Set(
@@ -653,23 +614,29 @@ describe.each(LOADED_SERIES)(
     )
 
     it.skipIf(entities.every(({ episodeName }) => episodeName === undefined))(
-      'hold the anime’s name to the texts that first tell it in each source',
+      'hold the anime’s name to the episode and the chapter that say it',
       () => {
         for (const entity of entities) {
-          const anime = entity.episodeName
-          if (anime === undefined) {
+          const later = laterNameOf(entity)
+          if (later === undefined) {
             continue
           }
-          const id = `${entity.id}:episodeName`
-          const ids = (text: Text): string[] =>
-            scan.leaked(text, 'en', true).map((other) => other.id)
-          const opens = entity.revealedAtEpisode
-          const chapter = animeNameChapter(entity, anime, scan.texts)
+          const episode = later.revealedAtEpisode
+          const chapter = later.revealedAtChapter
 
-          expect(ids(probeOf('episode', [opens - 1, 1], anime))).toContain(id)
-          expect(ids(probeOf('episode', [opens, 1], anime))).not.toContain(id)
-          expect(ids(probeOf('chapter', [1, chapter - 1], anime))).toContain(id)
-          expect(ids(probeOf('chapter', [1, chapter], anime))).not.toContain(id)
+          expect(Number.isSafeInteger(chapter), entity.id).toBe(true)
+          expect(
+            ids(probeOf('episode', [episode - 1, 1], later.name)),
+          ).toContain(later.id)
+          expect(
+            ids(probeOf('episode', [episode, 1], later.name)),
+          ).not.toContain(later.id)
+          expect(
+            ids(probeOf('chapter', [1, chapter - 1], later.name)),
+          ).toContain(later.id)
+          expect(
+            ids(probeOf('chapter', [1, chapter], later.name)),
+          ).not.toContain(later.id)
         }
       },
     )
