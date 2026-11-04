@@ -451,17 +451,29 @@ describe.each(LOADED_SERIES)(
       }
     })
 
-    it('brings nobody back from a confirmed death', () => {
-      // What `presumed-dead` is for: a character the story drops and picks up
-      // again is filed under the doubt, never under the certainty.
-      // Read as each reader reads it: a record the two media kill at
-      // different points dies once in each.
-      for (const { label, timeline } of STATUSES) {
+    it('allows only confirmed reincarnations after death', () => {
+      // Reina and Kite return as Chimera Ants. Each retains the earlier death
+      // and starts a new life only when the story identifies the reincarnation.
+      const rebirths = new Map([
+        ['reina', 315],
+        ['kite', 316],
+      ])
+
+      for (const { character, label, timeline } of STATUSES) {
+        const chapter =
+          slug === 'hunter-x-hunter' ? rebirths.get(character.id) : undefined
+        const expected =
+          chapter === undefined ?
+            []
+          : [{ chapter, episode: 136, value: 'alive' }]
+
         for (const source of ['episode', 'chapter'] as const) {
           const read = timeline.filter((entry) => toldIn(entry, source))
-          const died = read.findIndex((entry) => entry.value === 'deceased')
+          const returns = read.flatMap((entry, index) =>
+            entry.value === 'deceased' ? read.slice(index + 1, index + 2) : [],
+          )
 
-          expect(died === -1 || died === read.length - 1, label).toBe(true)
+          expect(returns, label).toStrictEqual(expected)
         }
       }
     })

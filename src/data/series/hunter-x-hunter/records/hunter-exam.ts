@@ -504,7 +504,25 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles['gon-freecss'],
         ...greedIslandReturningChronicles['gon-freecss'],
       ],
-      role: passedExam(1, 1),
+      role: [
+        ...passedExam(1, 1),
+        {
+          episode: 131,
+          chapter: 306,
+          value: {
+            it: 'Hunter trasformato dal Nen',
+            en: 'Hunter transformed by Nen',
+          },
+        },
+        {
+          episode: 136,
+          chapter: 316,
+          value: {
+            it: 'Hunter ricoverato in ospedale',
+            en: 'Hospitalized Hunter',
+          },
+        },
+      ],
       log: {
         it: 'È cresciuto sull’Isola Balena con Myto, che lo cresce da quando era in fasce. Suo padre, Ging Freecss, è un Hunter che non ha mai conosciuto. Myto gli lascia sostenere l’esame solo se pesca il pesce più grosso della palude, sicura che non ci riuscirà; lui ce la fa con la sua canna. Parte con la nave per diventare Hunter e per sapere di più su suo padre.',
         en: 'He has grown up on Whale Island with Mito, who has raised him since he was a baby. His father, Ging Freecss, is a Hunter he has never met. Mito will let him take the exam only if he catches the biggest fish in the swamp, sure that he cannot; he does it with his rod. He sails to become a Hunter and to learn about his father.',
@@ -1512,10 +1530,24 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles.netero,
         ...greedIslandReturningChronicles.netero,
       ],
-      role: {
-        it: 'Presidente dell’Associazione Hunter',
-        en: 'Chairman of the Hunter Association',
-      },
+      role: [
+        {
+          episode: 6,
+          chapter: 12,
+          value: {
+            it: 'Presidente dell’Associazione Hunter',
+            en: 'Chairman of the Hunter Association',
+          },
+        },
+        {
+          episode: 135,
+          chapter: 318,
+          value: {
+            it: 'Ex presidente dell’Associazione Hunter',
+            en: 'Former Chairman of the Hunter Association',
+          },
+        },
+      ],
       log: {
         it: 'Arriva in dirigibile dopo che Menci ha bocciato tutti gli aspiranti. Le fa riconoscere di aver perso la calma e le propone di ripetere la prova, mostrando di persona come affrontarla.',
         en: 'He arrives by airship after Menchi has failed every applicant. He gets her to acknowledge that she lost her temper and proposes that she repeat the test, demonstrating how to attempt it herself.',

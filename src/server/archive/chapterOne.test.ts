@@ -86,6 +86,9 @@ function expectedChapter(
   if (entry.episode === 85) {
     return 199
   }
+  if (entry.episode === 136) {
+    return 316
+  }
   return waitsForGing(field, entry) ? 66 : 1
 }
 

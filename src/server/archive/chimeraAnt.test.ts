@@ -129,7 +129,7 @@ const PHASE_THREE: Row[] = [
   { id: 'ikalgo', episode: 101, chapter: 238, place: false },
   { id: 'welfin', episode: 104, chapter: 246, place: false },
   { id: 'bloster', episode: 104, chapter: 246, place: false },
-  { id: 'bizeff', episode: 105, chapter: 250, place: false, source: 'chapter' },
+  { id: 'bizeff', episode: 135, chapter: 250, place: false },
 ]
 
 const PHASE_FOUR: Row[] = [
@@ -142,24 +142,37 @@ const PHASE_FOUR: Row[] = [
   },
 ]
 
-const CASES = [...RECORDS, ...PHASE_TWO, ...PHASE_THREE, ...PHASE_FOUR].flatMap(
-  (record) =>
-    LOCALES.flatMap((locale) =>
-      UNITS.filter(
-        (unit) => record.source === undefined || record.source === unit,
-      ).map((unit) => ({ ...record, locale, unit })),
-    ),
+const PHASE_FIVE: Row[] = [
+  { id: 'ming-jol-ik', episode: 135, chapter: 315, place: false },
+]
+
+const CASES = [
+  ...RECORDS,
+  ...PHASE_TWO,
+  ...PHASE_THREE,
+  ...PHASE_FOUR,
+  ...PHASE_FIVE,
+].flatMap((record) =>
+  LOCALES.flatMap((locale) =>
+    UNITS.filter(
+      (unit) => record.source === undefined || record.source === unit,
+    ).map((unit) => ({ ...record, locale, unit })),
+  ),
 )
 /** The records one medium alone names, asked in the other medium. */
-const UNNAMED = [...PHASE_TWO, ...PHASE_THREE, ...PHASE_FOUR].flatMap(
-  (record) =>
-    record.source === undefined ?
-      []
-    : LOCALES.map((locale) => ({
-        ...record,
-        locale,
-        unit: record.source === 'chapter' ? 'episode' : 'chapter',
-      })),
+const UNNAMED = [
+  ...PHASE_TWO,
+  ...PHASE_THREE,
+  ...PHASE_FOUR,
+  ...PHASE_FIVE,
+].flatMap((record) =>
+  record.source === undefined ?
+    []
+  : LOCALES.map((locale) => ({
+      ...record,
+      locale,
+      unit: record.source === 'chapter' ? 'episode' : 'chapter',
+    })),
 )
 
 function at(unit: string, count: number): Bookmark {
@@ -220,6 +233,10 @@ const DEATHS = [
   { id: 'peggy', episode: undefined, chapter: 213 },
   { id: 'rammot', episode: 94, chapter: 219 },
   { id: 'cheetu', episode: 117, chapter: 278 },
+  { id: 'neferpitou', episode: 131, chapter: 307 },
+  { id: 'menthuthuyoupi', episode: 133, chapter: 310 },
+  { id: 'shaiapouf', episode: 135, chapter: 314 },
+  { id: 'meruem', episode: 135, chapter: 318 },
   { id: 'netero', episode: 126, chapter: 298 },
 ].flatMap(({ id, episode, chapter }) =>
   [
@@ -243,6 +260,9 @@ describe.each(DEATHS)(
 )
 
 describe.each([
+  { id: 'neferpitou', episode: 131, chapter: 307 },
+  { id: 'menthuthuyoupi', episode: 133, chapter: 310 },
+  { id: 'meruem', episode: 135, chapter: 318 },
   { id: 'cheetu', episode: 117, chapter: 278 },
   { id: 'netero', episode: 126, chapter: 298 },
 ])('$id’s death drawing', ({ id, episode, chapter }) => {
@@ -254,6 +274,38 @@ describe.each([
 
       expect(read(gate)[id]).toBeDefined()
       expect(read(gate)).not.toStrictEqual(read(gate - 1))
+    }
+  })
+})
+
+describe('Chimera Ant captives', () => {
+  it.each(['knuckle-bine', 'meleoron'])('gates the captivity of %s', (id) => {
+    for (const locale of LOCALES) {
+      for (const [unit, capture, free] of [
+        ['chapter', 308, 316],
+        ['episode', 132, 136],
+      ] as const) {
+        expect(statusAt(id, at(unit, capture - 1), locale)).toBe('alive')
+        expect(statusAt(id, at(unit, capture), locale)).toBe('captured')
+        expect(statusAt(id, at(unit, free - 1), locale)).toBe('captured')
+        expect(statusAt(id, at(unit, free), locale)).toBe('alive')
+      }
+    }
+  })
+})
+
+describe('Chimera Ant reincarnations', () => {
+  it.each([
+    { id: 'kite', chapter: 316 },
+    { id: 'reina', chapter: 315 },
+  ])('opens the new life of $id only at the reveal', ({ id, chapter }) => {
+    for (const locale of LOCALES) {
+      for (const unit of UNITS) {
+        const gate = unit === 'chapter' ? chapter : 136
+
+        expect(statusAt(id, at(unit, gate - 1), locale)).toBe('deceased')
+        expect(statusAt(id, at(unit, gate), locale)).toBe('alive')
+      }
     }
   })
 })
@@ -379,6 +431,39 @@ describe('Chimera Ant dated facts', () => {
       role: {
         it: 'Hunter addetto all’evacuazione',
         en: 'Hunter evacuating the wounded',
+      },
+    },
+    {
+      id: 'gon-freecss',
+      episode: 136,
+      chapter: 316,
+      role: { it: 'Hunter ricoverato in ospedale', en: 'Hospitalized Hunter' },
+    },
+    {
+      id: 'netero',
+      episode: 135,
+      chapter: 318,
+      role: {
+        it: 'Ex presidente dell’Associazione Hunter',
+        en: 'Former Chairman of the Hunter Association',
+      },
+    },
+    {
+      id: 'kite',
+      episode: 136,
+      chapter: 316,
+      role: {
+        it: 'Hunter rinato come formichimera',
+        en: 'Hunter reborn as a Chimera Ant',
+      },
+    },
+    {
+      id: 'gon-freecss',
+      episode: 131,
+      chapter: 306,
+      role: {
+        it: 'Hunter trasformato dal Nen',
+        en: 'Hunter transformed by Nen',
       },
     },
   ])(
@@ -589,6 +674,10 @@ describe('Chimera Ant dated facts', () => {
     { id: 'palm-siberia', episode: 124, chapter: 294 },
     { id: 'netero', episode: 126, chapter: 298 },
     { id: 'meruem', episode: 126, chapter: 298 },
+    { id: 'gyro', episode: 123, chapter: 296 },
+    { id: 'meruem', episode: 128, chapter: 299 },
+    { id: 'meruem', episode: 135, chapter: 318 },
+    { id: 'komugi', episode: 135, chapter: 318 },
   ] as const)(
     'changes the relationships of $id at $episode / $chapter',
     (row) => {
@@ -656,6 +745,7 @@ describe('Chimera Ant dated facts', () => {
       'meruem',
       'komugi',
       'ikalgo',
+      'welfin',
       'shaiapouf',
       'menthuthuyoupi',
     ])

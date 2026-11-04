@@ -1015,7 +1015,11 @@
       "hxh-en-Episode_103_(2011)-416463.json",
       "hxh-en-Episode_108_(2011)-416466.json",
       "hxh-en-Chapter_298-362267.json",
-      "hxh-en-Episode_126_(2011)-416474.json"
+      "hxh-en-Episode_126_(2011)-416474.json",
+      "hxh-en-Chapter_299-425817.json",
+      "hxh-en-Chapter_318-385339.json",
+      "hxh-en-Episode_128_(2011)-410909.json",
+      "hxh-en-Episode_135_(2011)-416478.json"
     ],
     "knov": [
       "hxh-en-Chapter_199-416211.json",
@@ -1189,7 +1193,10 @@
     "komugi": [
       "hxh-en-Komugi-424583.json",
       "hxh-en-Chapter_257-324511.json",
-      "hxh-en-Episode_103_(2011)-416463.json"
+      "hxh-en-Episode_103_(2011)-416463.json",
+      "hxh-en-Chapter_317-385338.json",
+      "hxh-en-Chapter_318-385339.json",
+      "hxh-en-Episode_135_(2011)-416478.json"
     ],
     "remora": [
       "hxh-en-Remora-424128.json",
@@ -1220,6 +1227,10 @@
       "hxh-en-Episode_102_(2011)-416461.json",
       "hxh-en-Episode_98_(2011)-416459.json",
       "hxh-en-Episode_100_(2011)-410878.json"
+    ],
+    "gyro": [
+      "hxh-en-Chapter_296-416260.json",
+      "hxh-en-Episode_123_(2011)-416472.json"
     ]
   },
   "omitted": {
@@ -1232,7 +1243,8 @@
     "jitonoda": "Only named in the chapter 129 manga news report as the mayor of Yorknew City; no directed interaction with an archived character is established. Judged from the chapter 129 page.",
     "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032).",
     "tsukuma": "His televised interview establishes no relationship with a filed character.",
-    "bihorn": "Named only in Pike's boast in chapter 227 that not even Bihorn's strength could cut his threads; he has no exchange with an archived character in the window. Judged from hxh-en-Bihorn and the chapter 227 page."
+    "bihorn": "Named only in Pike's boast in chapter 227 that not even Bihorn's strength could cut his threads; he has no exchange with an archived character in the window. Judged from hxh-en-Bihorn and the chapter 227 page.",
+    "ming-jol-ik": "The real former leader appears alone on a farm. The unnamed double is not a filed character."
   },
-  "pending": { "gyro": "#1024" }
+  "pending": {}
 }

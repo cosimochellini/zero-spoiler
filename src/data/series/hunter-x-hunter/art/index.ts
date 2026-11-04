@@ -21,6 +21,10 @@ import {
   chimeraAntNglRedrawn,
 } from './chimera-ant-ngl'
 import {
+  CHIMERA_ANT_PHASE_FIVE_DRAWINGS,
+  chimeraAntPhaseFiveRedrawn,
+} from './chimera-ant-phase-five'
+import {
   CHIMERA_ANT_PHASE_FOUR_DRAWINGS,
   chimeraAntPhaseFourRedrawn,
 } from './chimera-ant-phase-four'
@@ -130,6 +134,7 @@ export const DRAWINGS = {
   ...CHAPTER_ONE_DRAWINGS,
   ...CHIMERA_ANT_PLACE_DRAWINGS,
   ...CHIMERA_ANT_PHASE_FOUR_DRAWINGS,
+  ...CHIMERA_ANT_PHASE_FIVE_DRAWINGS,
   ...CHIMERA_ANT_PHASE_THREE_DRAWINGS,
   ...CHIMERA_ANT_HUNTERS_DRAWINGS,
   ...CHIMERA_ANT_NGL_DRAWINGS,
@@ -1066,4 +1071,5 @@ export const REDRAWINGS: Redrawings = {
   ...chimeraAntSquadsRedrawn,
   ...chimeraAntReturningRedrawn,
   ...chimeraAntPhaseFourRedrawn,
+  ...chimeraAntPhaseFiveRedrawn,
 }

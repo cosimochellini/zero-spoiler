@@ -119,14 +119,16 @@ Tsukuma, and four visited places, Meteor City at the Troupe's visit in chapter
 the anime, which never says his manga name, opens it as Leol at episode 106
 (`Entity.episodeName`), and the manga gives the name in his role at chapter 240.
 Phase 4 (#1023) covers the palace assault through chapter 298, adds Taragetter
-in the manga, and opens Peijin in the anime at episode 116. Gyro is unanchored
-at 78 / 203. Silva, Killua's father, is named in episode 24 but in chapter 95 in
-the manga, so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown
-from chapter 71 but named in the episodes only from 53 and filed at 54 / 71
-(#900); Kikyo is named only in credits and supplements, and Hishita only in
-chapter 329 (#912). Every Hunter Exam character has a chronicle (#762); the
-Heavens Arena characters get theirs in #898. Records are not added from unnamed
-appearances or supplemental names.
+in the manga, and opens Peijin in the anime at episode 116. Phase 5 (#1024)
+files the finale through chapter 318 and episode 136, with the full cast
+reconciliation in the phase 5 inventory. Gyro is unanchored at 78 / 203. Silva,
+Killua's father, is named in episode 24 but in chapter 95 in the manga, so his
+record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but
+named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named
+only in credits and supplements, and Hishita only in chapter 329 (#912). Every
+Hunter Exam character has a chronicle (#762); the Heavens Arena characters get
+theirs in #898. Records are not added from unnamed appearances or supplemental
+names.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -233,11 +235,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 197                                                   |
-| Characters        | 154                                                   |
+| Records           | 198                                                   |
+| Characters        | 155                                                   |
 | Arcs, places      | 7 · 36                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 197, one per record, plus 35 redrawings of 35 records |
+| Line drawings     | 198, one per record, plus 41 redrawings of 39 records |
 | Chronicle stories | 345, for 108 characters                               |
 
 ### `game-of-thrones`

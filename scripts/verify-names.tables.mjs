@@ -46,6 +46,7 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    'ming-jol-ik': 'Personaggi di Hunter × Hunter#Digo Masadoru',
     'palm-siberia': 'Associazione Hunter#Pahm Sibelia',
     'knov': 'Associazione Hunter#Nobu',
     'morel-mackernasey': 'Associazione Hunter#Morau McCarnathy',
