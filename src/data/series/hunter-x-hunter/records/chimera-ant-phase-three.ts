@@ -41,13 +41,16 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
       {
         id: 'meleoron',
         kind: 'character',
-        revealedAtEpisode: 101,
+        // Episode 98's summary names him as he watches Gon from hiding;
+        // the manga names him only when he shows himself, chapter 241
+        // (episode 100). Too far out of step to anchor the chapter table.
+        revealedAtEpisode: 98,
         revealedAtChapter: 241,
-        source: 'chapter',
+        unanchored: true,
         name: { it: 'Meleolon', en: 'Meleoron' },
         summary: {
-          it: 'Un ex comandante di divisione.',
-          en: 'A former Squadron Leader.',
+          it: 'Una formichimera dall’aspetto di camaleonte, capace di nascondere la propria presenza.',
+          en: 'A chameleon-like Chimera Ant who can hide his presence.',
         },
         visual: { art: 'meleoron', tint: 'teal' },
       },
@@ -86,6 +89,9 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
       {
         id: 'komugi',
         kind: 'character',
+        // Episode 103 is chapter 244's scene; the manga names her only at
+        // 257. Too far out of step to anchor the chapter table.
+        unanchored: true,
         revealedAtEpisode: 103,
         revealedAtChapter: 257,
         name: { it: 'Komugi', en: 'Komugi' },
@@ -173,12 +179,8 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
     dossiers: {
       meleoron: {
         relationships: [
-          {
-            episode: 101,
-            chapter: 241,
-            source: 'chapter',
-            value: [rows.meleoronGon],
-          },
+          // He shows himself to Gon, chapter 241 / episode 100.
+          { episode: 100, chapter: 241, value: [rows.meleoronGon] },
           {
             episode: 102,
             chapter: 242,
@@ -196,16 +198,29 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
             ],
           },
         ],
-        role: {
-          it: 'Ex comandante di divisione',
-          en: 'Former Squadron Leader',
-        },
+        role: [
+          {
+            episode: 98,
+            chapter: 241,
+            value: { it: 'Formichimera', en: 'Chimera Ant' },
+          },
+          // He tells Gon he led a squad under the Queen, chapter 241 /
+          // episode 100.
+          {
+            episode: 100,
+            chapter: 241,
+            value: {
+              it: 'Ex comandante di divisione',
+              en: 'Former Squadron Leader',
+            },
+          },
+        ],
         log: {
-          it: 'Segue Gon e gli chiede di collaborare.',
-          en: 'Follows Gon and asks to work with him.',
+          it: 'Osserva Gon di nascosto, senza farsi notare, mentre altre formichimere lo attaccano.',
+          en: 'Watches Gon from hiding, unnoticed, while other Chimera Ants attack him.',
         },
-        affiliation: [{ episode: 101, chapter: 241, value: CHIMERA_ANTS }],
-        status: [{ episode: 101, chapter: 241, value: 'alive' }],
+        affiliation: [{ episode: 98, chapter: 241, value: CHIMERA_ANTS }],
+        status: [{ episode: 98, chapter: 241, value: 'alive' }],
       },
       bihorn: {
         role: { it: 'Formichimera', en: 'Chimera Ant' },

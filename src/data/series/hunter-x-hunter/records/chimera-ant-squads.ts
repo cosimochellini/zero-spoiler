@@ -463,6 +463,9 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     {
       id: 'hagya',
       kind: 'character',
+      // 106 / 192 is a reordered pair: too far out of step to anchor the
+      // chapter table.
+      unanchored: true,
       // The manga gives the name Leol in chapter 240.
       episodeName: { name: { it: 'Leol', en: 'Leol' }, chapter: 240 },
       revealedAtEpisode: 106,

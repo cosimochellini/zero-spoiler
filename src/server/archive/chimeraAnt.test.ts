@@ -115,13 +115,7 @@ const PHASE_TWO: Row[] = [
 ]
 const UNITS = ['episode', 'chapter'] as const
 const PHASE_THREE: Row[] = [
-  {
-    id: 'meleoron',
-    episode: 101,
-    chapter: 241,
-    place: false,
-    source: 'chapter',
-  },
+  { id: 'meleoron', episode: 98, chapter: 241, place: false },
   { id: 'meteor-city', episode: 96, chapter: 224, place: true },
   { id: 'peijin', episode: 102, chapter: 243, place: true, source: 'chapter' },
   { id: 'mandai-city', episode: 102, chapter: 243, place: true },
@@ -474,6 +468,7 @@ describe('Chimera Ant dated facts', () => {
     { id: 'ikalgo', field: 'affiliation', episode: 107, chapter: 255 },
     { id: 'ikalgo', field: 'role', episode: 107, chapter: 255 },
     { id: 'kite', field: 'role', episode: 93, chapter: 217 },
+    { id: 'meleoron', field: 'role', episode: 100, chapter: 241 },
     { id: 'netero', field: 'affiliation', episode: 95, chapter: 223 },
     { id: 'knov', field: 'affiliation', episode: 95, chapter: 223 },
   ] as const)('dates the $field step of $id at its scene', (row) => {

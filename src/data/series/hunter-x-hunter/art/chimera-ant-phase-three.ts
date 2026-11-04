@@ -282,10 +282,9 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     shadow(80, 156, 66),
   ],
   // Meleoron's chameleon tail hanging from a branch, wound once round
-  // it and curled at the tip, in tint, with a cigarette left smoking on the
-  // branch and the underside of the branch hatched: the Ant who vanishes
-  // in a forest by holding his breath, chapter 242, after he follows Gon
-  // into the desert, chapter 241. Nothing else of him is drawn.
+  // it and curled at the tip, in tint, with the underside of the branch
+  // hatched: the hidden Ant who watches Gon in the forest, episode 98, and
+  // follows him into the desert, chapter 241. Nothing else of him is drawn.
   'meleoron': [
     { d: 'M2 86 C40 82 92 74 156 56 M2 98 C42 94 94 86 156 68' },
     {
@@ -299,11 +298,6 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M86 108 Q92 110 99 106 M90 120 Q96 121 103 117', role: 'soft' },
     {
       d: 'M20 98 l6 -5 M40 96 l6 -5 M110 86 l6 -5 M126 82 l6 -5 M142 76 l6 -5',
-      role: 'ambient',
-    },
-    { d: 'M108 70 L126 64 M108 73 L126 67 M126 64 l0 3', role: 'soft' },
-    {
-      d: 'M128 63 C122 54 132 46 126 36 C122 28 128 22 132 18',
       role: 'ambient',
     },
     shadow(84, 176, 30),
