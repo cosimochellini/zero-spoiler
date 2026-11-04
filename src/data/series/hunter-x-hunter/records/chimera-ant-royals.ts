@@ -418,9 +418,24 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 215,
           value: [links.kingPitou, links.kingPouf, links.kingYoupi],
         },
+        // The anime introduces Komugi at chapter 244's scene, episode 103;
+        // the manga names her at chapter 257, told in episode 108. Each
+        // medium keeps its own snapshot, so neither vouches for a false pair.
         {
           episode: 103,
+          chapter: 244,
+          source: 'episode',
+          value: [
+            links.kingPitou,
+            links.kingPouf,
+            links.kingYoupi,
+            links.kingKomugi,
+          ],
+        },
+        {
+          episode: 108,
           chapter: 257,
+          source: 'chapter',
           value: [
             links.kingPitou,
             links.kingPouf,
