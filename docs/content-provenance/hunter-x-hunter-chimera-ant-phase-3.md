@@ -15,32 +15,33 @@ record.
 
 ## Filed
 
-| Candidate    | Gate               | Disposition                                                                                                                                                                                                                                             |
-| ------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tsukuma      | ch 224, manga only | The news interview identifies the officer. No relationship (omitted with reason).                                                                                                                                                                       |
-| Pell         | ep 96, anime only  | Episode 96 reveals his name; chapter 226 uses it only editorially. Shalnark kills him in the same episode, so the record opens deceased and keeps its first drawing (the death exception).                                                              |
-| Bihorn       | ch 227, manga only | Pike names him in a boast during his fight. Seen at the nest earlier, unnamed. No exchange with a filed character in the window: relationships omitted.                                                                                                 |
-| Flutter      | ch 235 / ep 100    | His warning identifies him. Italian name Flatta (Formichimere#Flatta).                                                                                                                                                                                  |
-| Ikalgo       | ch 238 / ep 101    | Chapter 238: Killua puzzles over the squid word in his name. Episode 101: its title card, "Ikalgo × And × Lightning"; no synopsis of episodes 100–109 reports the name in speech. Italian name Calamaro. **Owner decision**: a title card as a caption. |
-| Remora       | ch 238, manga only | Chapter 238 names "a small fish-like Ant named Remora". Episode 101 only narrates that the siblings plan to share meat with him, so the anime evidence does not hold: the record is now the manga's alone.                                              |
-| Meleoron     | ch 241, manga only | He gives Gon a false name, then introduces himself. Episodes 100–102 show him with Gon, but no synopsis reports his name said. Italian name Meleolon (Formichimere#Meleolon).                                                                           |
-| Welfin       | ch 246 / ep 104    | Named in Leol's thought: he plans to have Welfin and Bloster chase off the Hunters' foot soldiers. Neferpitou repeats "Welfin reported" in chapter 256. Italian name Welfang.                                                                           |
-| Bloster      | ch 246 / ep 104    | Named in the same thought. Seen unnamed at the nest (ch 188 / ep 78) and in news footage (ch 224). Italian name Bloburda.                                                                                                                               |
-| Bizeff       | ch 250, manga only | "A director named Bizeff", read as a caption. Episode 105 gives the name only in its narrator's list of the palace's humans, as episode 81 did for Hagya, so the anime waits. Italian Wikipedia has "Bizef" in passing only: English name kept.         |
-| Komugi       | ch 257 / ep 103    | She introduces herself in both.                                                                                                                                                                                                                         |
-| Meteor City  | ch 224 / ep 96     | Named in chapter 102 / episode 24, first visited when the Troupe returns. The gate is the visit; no text names it earlier, so it needs no `nameSaidAt`.                                                                                                 |
-| Luonton City | ch 235 / ep 100    | Pitou reports the location, and Killua tries to warn the residents.                                                                                                                                                                                     |
-| Peijin       | ch 243, manga only | Episode 102 calls it the capital.                                                                                                                                                                                                                       |
-| Mandai City  | ch 243 / ep 102    | Knuckle names the rendezvous. The planning scene visits it at chapter 256 / episode 108.                                                                                                                                                                |
+| Candidate    | Gate               | Disposition                                                                                                                                                                                                                                               |
+| ------------ | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tsukuma      | ch 224, manga only | The news interview identifies the officer. No relationship (omitted with reason).                                                                                                                                                                         |
+| Pell         | ep 96, anime only  | Episode 96 reveals his name; chapter 226 uses it only editorially. Shalnark kills him in the same episode, so the record opens deceased and keeps its first drawing (the death exception).                                                                |
+| Bihorn       | ch 227, manga only | Pike names him in a boast during his fight. Seen at the nest earlier, unnamed. No exchange with a filed character in the window: relationships omitted.                                                                                                   |
+| Flutter      | ch 235 / ep 100    | His warning identifies him. Italian name Flatta (Formichimere#Flatta).                                                                                                                                                                                    |
+| Ikalgo       | ch 238 / ep 101    | Chapter 238: Killua puzzles over the squid word in his name. Episode 101: its title card, "Ikalgo × And × Lightning"; no synopsis of episodes 100–109 reports the name in speech. Italian name Calamaro. A title card counts as a caption (owner ruling). |
+| Remora       | ch 238, manga only | Chapter 238 names "a small fish-like Ant named Remora". Episode 101 only narrates that the siblings plan to share meat with him, so the anime evidence does not hold: the record is now the manga's alone.                                                |
+| Meleoron     | ch 241, manga only | He gives Gon a false name, then introduces himself. Episodes 100–102 show him with Gon, but no synopsis reports his name said. Italian name Meleolon (Formichimere#Meleolon).                                                                             |
+| Welfin       | ch 246 / ep 104    | Named in Leol's thought: he plans to have Welfin and Bloster chase off the Hunters' foot soldiers. Neferpitou repeats "Welfin reported" in chapter 256. Italian name Welfang.                                                                             |
+| Bloster      | ch 246 / ep 104    | Named in the same thought. Seen unnamed at the nest (ch 188 / ep 78) and in news footage (ch 224). Italian name Bloburda.                                                                                                                                 |
+| Bizeff       | ch 250, manga only | "A director named Bizeff", read as a caption. Episode 105 gives the name only in its narrator's list of the palace's humans, as episode 81 did for Hagya, so the anime waits. Italian Wikipedia has "Bizef" in passing only: English name kept.           |
+| Komugi       | ch 257 / ep 103    | She introduces herself in both.                                                                                                                                                                                                                           |
+| Meteor City  | ch 224 / ep 96     | Named in chapter 102 / episode 24, first visited when the Troupe returns. The gate is the visit; no text names it earlier, so it needs no `nameSaidAt`.                                                                                                   |
+| Luonton City | ch 235 / ep 100    | Pitou reports the location, and Killua tries to warn the residents.                                                                                                                                                                                       |
+| Peijin       | ch 243, manga only | Episode 102 calls it the capital.                                                                                                                                                                                                                         |
+| Mandai City  | ch 243 / ep 102    | Knuckle names the rendezvous. The planning scene visits it at chapter 256 / episode 108.                                                                                                                                                                  |
 
 Hagya keeps one record. The anime never says his manga name (episode 81 only
 narrates it) and introduces him to Morel as Leol in episode 106, so the anime
 opens the record at 106 under `episodeName` "Leol". The manga gives the name
-Leol in his role at chapter 240. No chapter text says "Leol" before 240, and the
-leak scan holds every text to that (`animeNamesOf` in `src/data/leaks.test.ts`).
-Morel kills him with carbon dioxide in a flooded chapel: Leol's page and chapter
-254 call it his death, and episode 107 shows the same scene. His status and
-drawing change at chapter 254 / episode 107.
+Leol in his role at chapter 240, stored as `episodeName.chapter`. The leak scan
+and the payload sweep hold every text and payload to episode 106 and chapter 240
+(`laterNameOf` in `src/test/fog.ts`). Morel kills him with carbon dioxide in a
+flooded chapel: Leol's page and chapter 254 call it his death, and episode 107
+shows the same scene. His status and drawing change at chapter 254 /
+episode 107.
 
 ## Returning dossiers
 
@@ -93,15 +94,13 @@ drawing change at chapter 254 / episode 107.
 
 ## Owner decisions
 
-- **Ikalgo's anime gate** is the title card of episode 101, read as a caption.
-  If a title card does not count, the record becomes the manga's alone
-  (`source: 'chapter'`) until a later phase finds the scene.
-- **Peggy's anime name.** Meleoron names him to Gon in episode 102. Under the
-  gate rule that makes Peggy a record of both media from episode 102, but the
-  anime kills him in episode 91, so the record would open dead there, his
-  relationships and death drawing (pinned at 91) would move to 102, and his
-  first drawing would show a dead character. The record stays the manga's alone
-  pending a ruling.
+- **Ikalgo's anime gate** is the title card of episode 101: a title card counts
+  as a caption (owner ruling).
+- **Peggy's anime name.** Meleoron names him to Gon in episode 102, but the
+  anime kills him in episode 91. The record stays the manga's alone (owner
+  ruling).
+- **Tints** follow the wiki's colours: Bloster blue, Pell azure, Welfin ice, and
+  Meleoron teal until a frame shows him green (owner ruling).
 - **An in-show narrator** does not open a name in the anime (Bizeff at episode
   105), following Hagya at episode 81.
 - **Morel's relationship snapshot** holds five people at most; at chapter 254
