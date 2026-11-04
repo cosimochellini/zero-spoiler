@@ -103,25 +103,67 @@ function fogOf(
   { entities, series }: SeriesArchive,
 ): Map<string, Entity[]> {
   const at = reveal(bookmark, series)
-  const covered = entities.filter((entity) => !at.sees(entity))
+  const said = [
+    ...entities
+      .filter((entity) => !at.sees(entity))
+      .map((entity) => ({ entity, name: entity.id })),
+    ...LOCALES.flatMap((locale) => unreachedNames(at, locale, entities)),
+  ]
   const fog = new Map<string, Entity[]>()
-  const cover = (said: string, entity: Entity): void => {
-    fog.set(said, [...(fog.get(said) ?? []), entity])
-  }
-
-  for (const entity of covered) {
-    cover(entity.id, entity)
-  }
-  for (const locale of LOCALES) {
-    const taken = reachedNames(at, locale, entities)
-    for (const entity of covered) {
-      if (!taken.has(entity.name[locale])) {
-        cover(entity.name[locale], entity)
-      }
-    }
+  for (const { entity, name } of said) {
+    fog.set(name, [...(fog.get(name) ?? []), entity])
   }
 
   return fog
+}
+
+/**
+ * The names in one locale that a reader has not reached, each with its
+ * record, less any a reached record goes by.
+ */
+function unreachedNames(
+  at: Reveal,
+  locale: Locale,
+  entities: Entity[],
+): { entity: Entity; name: string }[] {
+  const taken = reachedNames(at, locale, entities)
+
+  return entities.flatMap((entity) =>
+    namingsOf(entity)
+      .filter((naming) => !at.sees(naming))
+      .map((naming) => ({ entity, name: naming.name[locale] }))
+      .filter(({ name }) => !taken.has(name)),
+  )
+}
+
+/**
+ * A record's anime name as a record of its own (`Entity.episodeName`): an
+ * episode reader reaches it with the record, a chapter reader at the chapter
+ * the manga says it, never before the record's own. Its id tells it apart.
+ */
+export function laterNameOf(entity: Entity): Entity | undefined {
+  const later = entity.episodeName
+  if (later === undefined) {
+    return undefined
+  }
+
+  const alias: Entity = {
+    ...entity,
+    id: `${entity.id}:episodeName`,
+    name: later.name,
+    revealedAtChapter: Math.max(entity.revealedAtChapter, later.chapter),
+  }
+  // The name facts describe the record's own name, not this one.
+  delete alias.commonWord
+  delete alias.nameSaidAt
+
+  return alias
+}
+
+/** Each name a record goes by, as a record gated where a reader reaches it. */
+function namingsOf(entity: Entity): Entity[] {
+  const later = laterNameOf(entity)
+  return later === undefined ? [entity] : [entity, later]
 }
 
 /**
@@ -134,15 +176,21 @@ function foldedFogOf(
   { entities, series }: SeriesArchive,
 ): Map<string, Entity[]> {
   const at = reveal(bookmark, series)
+  const folded = (naming: Entity): string[] =>
+    LOCALES.map((locale) => foldName(naming.name[locale]))
+  const namings = entities.flatMap((entity) =>
+    namingsOf(entity).map((naming) => ({ entity, naming })),
+  )
   const taken = new Set(
-    entities.flatMap((entity) => (at.sees(entity) ? fold(entity) : [])),
+    namings.flatMap(({ naming }) => (at.sees(naming) ? folded(naming) : [])),
   )
   const fog = new Map<string, Entity[]>()
 
-  for (const entity of entities) {
+  for (const { entity, naming } of namings) {
     const said =
-      at.sees(entity) ? [] : fold(entity).filter((name) => !taken.has(name))
-    for (const name of said) {
+      at.sees(naming) ? [] : folded(naming).filter((name) => !taken.has(name))
+    const names = new Set(said)
+    for (const name of names) {
       fog.set(name, [...(fog.get(name) ?? []), entity])
     }
   }
@@ -152,7 +200,13 @@ function foldedFogOf(
 
 /** A record's names in every locale, folded the way a search folds them. */
 function fold(entity: Entity): string[] {
-  return [...new Set(LOCALES.map((locale) => foldName(entity.name[locale])))]
+  return [
+    ...new Set(
+      namingsOf(entity).flatMap((naming) =>
+        LOCALES.map((locale) => foldName(naming.name[locale])),
+      ),
+    ),
+  ]
 }
 
 /** The names the records a reader has reached go by in one locale. */
@@ -161,14 +215,13 @@ function reachedNames(
   locale: Locale,
   entities: Entity[],
 ): Set<string> {
-  const names = new Set<string>()
-  for (const entity of entities) {
-    if (at.sees(entity)) {
-      names.add(entity.name[locale])
-    }
-  }
-
-  return names
+  return new Set(
+    entities.flatMap((entity) =>
+      namingsOf(entity)
+        .filter((naming) => at.sees(naming))
+        .map((naming) => naming.name[locale]),
+    ),
+  )
 }
 
 /** A drawing as one string: each stroke's path and transform, in order. */

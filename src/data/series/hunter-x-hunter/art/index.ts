@@ -20,6 +20,7 @@ import {
   CHIMERA_ANT_NGL_DRAWINGS,
   chimeraAntNglRedrawn,
 } from './chimera-ant-ngl'
+import { CHIMERA_ANT_PHASE_THREE_DRAWINGS } from './chimera-ant-phase-three'
 import { CHIMERA_ANT_PLACE_DRAWINGS } from './chimera-ant-places'
 import {
   CHIMERA_ANT_RETURNING_DRAWINGS,
@@ -124,6 +125,7 @@ export const DRAWINGS = {
   ...ZOLDYCK_DRAWINGS,
   ...CHAPTER_ONE_DRAWINGS,
   ...CHIMERA_ANT_PLACE_DRAWINGS,
+  ...CHIMERA_ANT_PHASE_THREE_DRAWINGS,
   ...CHIMERA_ANT_HUNTERS_DRAWINGS,
   ...CHIMERA_ANT_NGL_DRAWINGS,
   ...CHIMERA_ANT_ROYALS_DRAWINGS,

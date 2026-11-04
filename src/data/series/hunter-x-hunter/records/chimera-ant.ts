@@ -2,6 +2,7 @@ import type { Relationship } from '~/data/types'
 
 import { CHIMERA_ANT_HUNTERS } from './chimera-ant-hunters'
 import { CHIMERA_ANT_NGL } from './chimera-ant-ngl'
+import { CHIMERA_ANT_PHASE_THREE } from './chimera-ant-phase-three'
 import { CHIMERA_ANT_PLACE_RECORDS } from './chimera-ant-places'
 import { CHIMERA_ANT_ROYALS } from './chimera-ant-royals'
 import { CHIMERA_ANT_SQUADS } from './chimera-ant-squads'
@@ -88,6 +89,7 @@ const surveyDossier: HunterSaga['dossiers'][string] = {
 export const chimeraAnt: HunterSaga = {
   name: { it: 'Formichimere', en: 'Chimera Ant' },
   dossiers: {
+    ...CHIMERA_ANT_PHASE_THREE.dossiers,
     ...CHIMERA_ANT_HUNTERS.dossiers,
     ...CHIMERA_ANT_NGL.dossiers,
     ...CHIMERA_ANT_ROYALS.dossiers,
@@ -109,6 +111,25 @@ export const chimeraAnt: HunterSaga = {
           episode: 92,
           chapter: 215,
           value: [PITOU_MERUEM, PITOU_SHAIAPOUF, PITOU_KITE, PITOU_POKKLE],
+        },
+        // The King orders them to guard Komugi, chapter 259 / episode 109.
+        {
+          episode: 109,
+          chapter: 259,
+          value: [
+            PITOU_MERUEM,
+            PITOU_SHAIAPOUF,
+            PITOU_KITE,
+            PITOU_POKKLE,
+            {
+              character: 'komugi',
+              type: { it: 'Da proteggere', en: 'Charge' },
+              summary: {
+                it: 'Il re ordina a Neferpito di sorvegliarla e di togliere di mezzo ogni minaccia.',
+                en: 'The King orders Neferpitou to watch over her and deal with any threat.',
+              },
+            },
+          ],
         },
       ],
       role: { it: 'Guardia reale', en: 'Royal Guard' },
@@ -133,6 +154,7 @@ export const chimeraAnt: HunterSaga = {
     },
   },
   entries: [
+    ...CHIMERA_ANT_PHASE_THREE.entries,
     ...CHIMERA_ANT_HUNTERS.entries,
     ...CHIMERA_ANT_NGL.entries,
     ...CHIMERA_ANT_ROYALS.entries,

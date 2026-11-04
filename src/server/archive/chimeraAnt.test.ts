@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -60,7 +61,7 @@ const PHASE_TWO: Row[] = [
   { id: 'pike', episode: 80, chapter: 190, place: false, source: 'chapter' },
   { id: 'cheetu', episode: 79, chapter: 192, place: false },
   { id: 'rammot', episode: 79, chapter: 192, place: false },
-  { id: 'hagya', episode: 81, chapter: 192, place: false, source: 'chapter' },
+  { id: 'hagya', episode: 106, chapter: 192, place: false },
   { id: 'yunju', episode: 79, chapter: 193, place: false },
   { id: 'baro', episode: 83, chapter: 195, place: false, source: 'chapter' },
   { id: 'morel-mackernasey', episode: 86, chapter: 199, place: false },
@@ -113,7 +114,25 @@ const PHASE_TWO: Row[] = [
   },
 ]
 const UNITS = ['episode', 'chapter'] as const
-const CASES = [...RECORDS, ...PHASE_TWO].flatMap((record) =>
+const PHASE_THREE: Row[] = [
+  { id: 'meleoron', episode: 98, chapter: 241, place: false },
+  { id: 'meteor-city', episode: 96, chapter: 224, place: true },
+  { id: 'peijin', episode: 102, chapter: 243, place: true, source: 'chapter' },
+  { id: 'mandai-city', episode: 102, chapter: 243, place: true },
+  { id: 'bihorn', episode: 97, chapter: 227, place: false, source: 'chapter' },
+  { id: 'flutter', episode: 100, chapter: 235, place: false },
+  { id: 'pell', episode: 96, chapter: 226, place: false, source: 'episode' },
+  { id: 'luonton-city', episode: 100, chapter: 235, place: true },
+  { id: 'komugi', episode: 103, chapter: 257, place: false },
+  { id: 'remora', episode: 101, chapter: 238, place: false, source: 'chapter' },
+  { id: 'tsukuma', episode: 96, chapter: 224, place: false, source: 'chapter' },
+  { id: 'ikalgo', episode: 101, chapter: 238, place: false },
+  { id: 'welfin', episode: 104, chapter: 246, place: false },
+  { id: 'bloster', episode: 104, chapter: 246, place: false },
+  { id: 'bizeff', episode: 105, chapter: 250, place: false, source: 'chapter' },
+]
+
+const CASES = [...RECORDS, ...PHASE_TWO, ...PHASE_THREE].flatMap((record) =>
   LOCALES.flatMap((locale) =>
     UNITS.filter(
       (unit) => record.source === undefined || record.source === unit,
@@ -121,7 +140,7 @@ const CASES = [...RECORDS, ...PHASE_TWO].flatMap((record) =>
   ),
 )
 /** The records one medium alone names, asked in the other medium. */
-const UNNAMED = PHASE_TWO.flatMap((record) =>
+const UNNAMED = [...PHASE_TWO, ...PHASE_THREE].flatMap((record) =>
   record.source === undefined ?
     []
   : LOCALES.map((locale) => ({
@@ -212,8 +231,7 @@ describe.each(DEATHS)(
 describe('Chimera Ant dated facts', () => {
   it.each(
     CASES.filter(
-      ({ id, place }) =>
-        !place && PHASE_TWO.every((record) => record.id !== id),
+      ({ id, place }) => !place && RECORDS.some((record) => record.id === id),
     ),
   )(
     'opens the relationship with Kite for $id in $locale by $unit',
@@ -255,6 +273,298 @@ describe('Chimera Ant dated facts', () => {
     },
   )
 
+  it.each(
+    LOCALES.flatMap((locale) => [
+      { locale, unit: 'episode', gate: 97 },
+      { locale, unit: 'chapter', gate: 229 },
+    ]),
+  )('dates Zazan’s death in $locale by $unit', ({ locale, unit, gate }) => {
+    const zazan = characterById('zazan')
+    const status = (count: number): string | undefined =>
+      archive.latestOf(
+        readerFor(archive, at(unit, count), locale),
+        zazan,
+        'status',
+      )
+
+    expect(status(gate - 1)).toBe('alive')
+    expect(status(gate)).toBe('deceased')
+
+    const drawn = (count: number): unknown => {
+      const reader = readerFor(archive, at(unit, count), locale)
+      return drawingsFor(['zazan'], reader)
+    }
+
+    expect(drawn(gate)).not.toStrictEqual(drawn(gate - 1))
+  })
+
+  it.each([
+    {
+      id: 'knov',
+      episode: 106,
+      chapter: 251,
+      role: {
+        it: 'Hunter ritirato dall’assalto',
+        en: 'Hunter withdrawn from the assault',
+      },
+    },
+    {
+      id: 'palm-siberia',
+      episode: 106,
+      chapter: 252,
+      role: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
+    },
+  ])(
+    'reveals the changed role for $id at its scene',
+    ({ id, episode, chapter, role }) => {
+      const character = characterById(id)
+      for (const locale of LOCALES) {
+        for (const unit of ['episode', 'chapter'] as const) {
+          const gate = unit === 'episode' ? episode : chapter
+          const read = (count: number): string | undefined =>
+            archive.latestOf(
+              readerFor(archive, at(unit, count), locale),
+              character,
+              'role',
+            )?.[locale]
+
+          expect(read(gate - 1)).not.toBe(role[locale])
+          expect(read(gate)).toBe(role[locale])
+        }
+      }
+    },
+  )
+
+  it.each(LOCALES)(
+    'changes Pike’s status and art at chapter 228 in %s',
+    (locale) => {
+      const pike = characterById('pike')
+      const before = readerFor(archive, at('chapter', 227), locale)
+      const reached = readerFor(archive, at('chapter', 228), locale)
+
+      expect(archive.latestOf(before, pike, 'status')).toBe('alive')
+      expect(archive.latestOf(reached, pike, 'status')).toBe('deceased')
+      expect(drawingsFor(['pike'], reached)['pike']).not.toStrictEqual(
+        drawingsFor(['pike'], before)['pike'],
+      )
+    },
+  )
+
+  it.each(LOCALES)('dates Leol’s name and death in %s', (locale) => {
+    const hagya = characterById('hagya')
+    const read = (chapter: number): Reader =>
+      readerFor(archive, at('chapter', chapter), locale)
+    const before = read(253)
+    const reached = read(254)
+
+    expect(archive.latestOf(read(239), hagya, 'role')?.[locale]).not.toContain(
+      'Leol',
+    )
+    expect(archive.latestOf(read(240), hagya, 'role')?.[locale]).toContain(
+      'Leol',
+    )
+    expect(archive.latestOf(before, hagya, 'status')).toBe('alive')
+    expect(archive.latestOf(reached, hagya, 'status')).toBe('deceased')
+    expect(drawingsFor(['hagya'], reached)['hagya']).not.toStrictEqual(
+      drawingsFor(['hagya'], before)['hagya'],
+    )
+  })
+
+  it.each(LOCALES)('dates Leol’s death in the anime in %s', (locale) => {
+    const before = readerFor(archive, at('episode', 106), locale)
+    const reached = readerFor(archive, at('episode', 107), locale)
+    const leol = characterById('hagya')
+
+    expect(archive.latestOf(before, leol, 'status')).toBe('alive')
+    expect(archive.latestOf(reached, leol, 'status')).toBe('deceased')
+    expect(drawingsFor(['hagya'], reached)['hagya']).not.toStrictEqual(
+      drawingsFor(['hagya'], before)['hagya'],
+    )
+  })
+
+  it('stores the chapter the manga names Leol, 240', () => {
+    expect(characterById('hagya').episodeName?.chapter).toBe(240)
+  })
+
+  it('holds Leol as fog in a payload until each reader reaches it', () => {
+    const leaks = leaksOf(series)
+    const payload = { name: 'Leol' }
+
+    expect(leaks(payload, at('chapter', 239))).toContain('hagya')
+    expect(leaks(payload, at('chapter', 240))).toStrictEqual([])
+    expect(leaks(payload, at('episode', 105))).toContain('hagya')
+    expect(leaks(payload, at('episode', 106))).toStrictEqual([])
+  })
+
+  it.each(LOCALES)('uses the name told by each medium in %s', (locale) => {
+    const anime = readerFor(archive, at('episode', 106), locale)
+    const manga = readerFor(archive, at('chapter', 192), locale)
+
+    expect(anime.archive.getCharacter('hagya')?.name[locale]).toBe('Leol')
+    expect(
+      anime.archive.characters.find(({ id }) => id === 'hagya')?.name[locale],
+    ).toBe('Leol')
+    expect(
+      anime.archive.bookSections
+        .flatMap(({ characters }) => characters)
+        .find(({ id }) => id === 'hagya')?.name[locale],
+    ).toBe('Leol')
+    expect(manga.archive.getCharacter('hagya')?.name[locale]).toBe('Hagya')
+    expect(
+      readerFor(archive, at('chapter', 254), locale).archive.getCharacter(
+        'hagya',
+      )?.name[locale],
+    ).toBe('Hagya')
+    // Neither copy carries the other medium's name.
+    expect(manga.archive.getCharacter('hagya')).not.toHaveProperty(
+      'episodeName',
+    )
+    expect(anime.archive.getCharacter('hagya')).not.toHaveProperty(
+      'episodeName',
+    )
+  })
+
+  it.each(['gon-freecss', 'killua'])(
+    'dates the operation assignment for %s',
+    (id) => {
+      const character = characterById(id)
+      for (const locale of LOCALES) {
+        for (const [unit, gate] of [
+          ['episode', 95],
+          ['chapter', 223],
+        ] as const) {
+          const read = (count: number): string | undefined =>
+            archive.latestOf(
+              readerFor(archive, at(unit, count), locale),
+              character,
+              'affiliation',
+            )?.[locale]
+
+          expect(read(gate - 1)).not.toMatch(/Neferpit/u)
+          expect(read(gate)).toMatch(/Neferpit/u)
+        }
+      }
+    },
+  )
+
+  it.each([
+    {
+      id: 'morel-mackernasey',
+      field: 'affiliation',
+      episode: 95,
+      chapter: 223,
+    },
+    { id: 'knuckle-bine', field: 'affiliation', episode: 95, chapter: 223 },
+    { id: 'shoot-mcmahon', field: 'affiliation', episode: 95, chapter: 223 },
+    { id: 'cheetu', field: 'affiliation', episode: 100, chapter: 235 },
+    {
+      id: 'palm-siberia',
+      field: 'affiliation',
+      episode: 95,
+      chapter: 223,
+      source: 'chapter',
+    },
+    { id: 'cheetu', field: 'role', episode: 100, chapter: 235 },
+    { id: 'ikalgo', field: 'affiliation', episode: 107, chapter: 255 },
+    { id: 'ikalgo', field: 'role', episode: 107, chapter: 255 },
+    { id: 'kite', field: 'role', episode: 93, chapter: 217 },
+    { id: 'meleoron', field: 'role', episode: 100, chapter: 241 },
+    { id: 'ikalgo', field: 'affiliation', episode: 101, chapter: 241 },
+    ...[214, 216, 234].map((chapter) => ({
+      id: 'hagya',
+      field: 'affiliation' as const,
+      episode: 106,
+      chapter,
+      source: 'chapter' as const,
+    })),
+    { id: 'netero', field: 'affiliation', episode: 95, chapter: 223 },
+    { id: 'knov', field: 'affiliation', episode: 95, chapter: 223 },
+  ] as const)('dates the $field step of $id at its scene', (row) => {
+    const character = characterById(row.id)
+    // A one-source step is asked in its own unit only.
+    const gates = (
+      [
+        ['episode', row.episode],
+        ['chapter', row.chapter],
+      ] as const
+    ).filter(([unit]) => !('source' in row) || row.source === unit)
+    for (const locale of LOCALES) {
+      for (const [unit, gate] of gates) {
+        const read = (count: number): string | undefined =>
+          archive.latestOf(
+            readerFor(archive, at(unit, count), locale),
+            character,
+            row.field,
+          )?.[locale]
+
+        expect(read(gate), `${unit} ${String(gate)}`).not.toBe(read(gate - 1))
+      }
+    }
+  })
+
+  it.each([
+    { id: 'morel-mackernasey', episode: 107, chapter: 254 },
+    { id: 'meruem', episode: 103, chapter: 257 },
+    { id: 'meruem', episode: 108, chapter: 258 },
+    { id: 'neferpitou', episode: 109, chapter: 259 },
+    { id: 'flutter', episode: 100, chapter: 235, source: 'chapter' },
+    { id: 'flutter', episode: 101, chapter: 238 },
+    { id: 'flutter', episode: 106, chapter: 252, source: 'episode' },
+    { id: 'ikalgo', episode: 101, chapter: 241 },
+    { id: 'ikalgo', episode: 107, chapter: 255 },
+    { id: 'meleoron', episode: 100, chapter: 241, source: 'episode' },
+    { id: 'meleoron', episode: 102, chapter: 242 },
+  ] as const)(
+    'changes the relationships of $id at $episode / $chapter',
+    (row) => {
+      const character = characterById(row.id)
+      // A one-source step is asked in its own unit only.
+      const gates = (
+        [
+          ['episode', row.episode],
+          ['chapter', row.chapter],
+        ] as const
+      ).filter(([unit]) => !('source' in row) || row.source === unit)
+      for (const locale of LOCALES) {
+        for (const [unit, gate] of gates) {
+          const read = (count: number): string => {
+            const reader = readerFor(archive, at(unit, count), locale)
+            const value = archive.latestOf(reader, character, 'relationships')
+            return JSON.stringify(value ?? [])
+          }
+
+          expect(read(gate), `${unit} ${String(gate)}`).not.toBe(read(gate - 1))
+        }
+      }
+    },
+  )
+
+  it.each(LOCALES)(
+    'adds Peggy to Meleoron’s relationships at chapter 242 in %s',
+    (locale) => {
+      const meleoron = characterById('meleoron')
+      const read = (chapter: number): string[] =>
+        (
+          archive.latestOf(
+            readerFor(archive, at('chapter', chapter), locale),
+            meleoron,
+            'relationships',
+          ) ?? []
+        ).map(({ character }) => character)
+
+      expect(read(241)).not.toContain('peggy')
+      expect(read(242)).toContain('peggy')
+    },
+  )
+
+  it.each(LOCALES)('opens Pell already dead in %s', (locale) => {
+    const reader = readerFor(archive, at('episode', 96), locale)
+
+    expect(archive.latestOf(reader, characterById('pell'), 'status')).toBe(
+      'deceased',
+    )
+  })
+
   it('lists the Chimera Ant arc leads', () => {
     expect(archive.leads['chimera-ant-arc']).toStrictEqual([
       'kite',
@@ -269,6 +579,8 @@ describe('Chimera Ant dated facts', () => {
       'shoot-mcmahon',
       'colt',
       'meruem',
+      'komugi',
+      'ikalgo',
       'shaiapouf',
       'menthuthuyoupi',
     ])

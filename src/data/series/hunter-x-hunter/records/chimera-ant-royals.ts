@@ -125,6 +125,14 @@ const links = {
       en: 'An ant explains that Colt still remembers his human life. Holding the baby, Colt thinks back to his mother and sister.',
     },
   },
+  kingKomugi: {
+    character: 'komugi',
+    type: { it: 'Avversaria', en: 'Opponent' },
+    summary: {
+      it: 'La campionessa cieca di gungi contro cui gioca una partita dopo l’altra senza riuscire a batterla.',
+      en: 'The blind gungi champion he plays game after game and cannot beat.',
+    },
+  },
   peggyCheetu: {
     character: 'cheetu',
     type: { it: 'Altro comandante di divisione', en: 'Fellow Squadron Leader' },
@@ -233,6 +241,16 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 218,
           value: { it: 'Assassino in fuga', en: 'Killer on the run' },
         },
+        // He agrees to swear loyalty to the King for a new ability,
+        // chapter 235 and episode 100.
+        {
+          episode: 100,
+          chapter: 235,
+          value: {
+            it: 'Ex comandante di divisione, al servizio del re',
+            en: 'Former Squadron Leader, in the King’s service',
+          },
+        },
       ],
       log: {
         it: 'Guida una delle squadre che cacciano umani per la regina, e la caccia gli piace per se stessa. Quando gli ricordano che sono al servizio della regina, risponde che la sua squadra fa la sua parte.',
@@ -247,6 +265,14 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Nessuna: ha lasciato il formicaio',
             en: 'None: he has left the nest',
+          },
+        },
+        {
+          episode: 100,
+          chapter: 235,
+          value: {
+            it: 'Formichimere, al servizio del re',
+            en: 'Chimera Ants, in the King’s service',
           },
         },
       ],
@@ -391,6 +417,49 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           episode: 92,
           chapter: 215,
           value: [links.kingPitou, links.kingPouf, links.kingYoupi],
+        },
+        // The anime introduces Komugi at chapter 244's scene, episode 103;
+        // the manga names her at chapter 257, told in episode 108. Each
+        // medium keeps its own snapshot, so neither vouches for a false pair.
+        {
+          episode: 103,
+          chapter: 244,
+          source: 'episode',
+          value: [
+            links.kingPitou,
+            links.kingPouf,
+            links.kingYoupi,
+            links.kingKomugi,
+          ],
+        },
+        {
+          episode: 108,
+          chapter: 257,
+          source: 'chapter',
+          value: [
+            links.kingPitou,
+            links.kingPouf,
+            links.kingYoupi,
+            links.kingKomugi,
+          ],
+        },
+        // He comes to kill her, saves her from an eagle instead and calls
+        // her an important guest, chapter 258 / episode 108.
+        {
+          episode: 108,
+          chapter: 258,
+          value: [
+            links.kingPitou,
+            links.kingPouf,
+            links.kingYoupi,
+            {
+              ...links.kingKomugi,
+              summary: {
+                it: 'La campionessa cieca di gungi che non riesce a battere. Va per ucciderla, invece la salva da un’aquila e la chiama ospite importante.',
+                en: 'The blind gungi champion he cannot beat. He sets out to kill her, saves her from an eagle instead and calls her an important guest.',
+              },
+            },
+          ],
         },
       ],
       role: { it: 'Re delle formichimere', en: 'King of the Chimera Ants' },

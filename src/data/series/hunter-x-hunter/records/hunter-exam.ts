@@ -698,6 +698,14 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; lost his duel with Knuckle and cannot use Nen for 30 days',
           },
         },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter, Hunter; ritrovato il Nen, deve tenere Neferpito lontano dal re con Killua',
+            en: 'Hunter Association, Hunter; his Nen back, he is to keep Neferpitou away from the King with Killua',
+          },
+        },
       ],
       origin: [
         { episode: 1, chapter: 1, place: 'whale-island', value: WHALE_ISLAND },
@@ -1406,6 +1414,14 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; protects Gon for his 30 days without Nen, then means to leave him; has pulled out Illumi’s needle',
           },
         },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter, Hunter; deve tenere Neferpito lontano dal re con Gon',
+            en: 'Hunter Association, Hunter; is to keep Neferpitou away from the King with Gon',
+          },
+        },
       ],
       origin: [
         {
@@ -1509,6 +1525,16 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Associazione Hunter; guida la squadra inviata a sterminare le formichimere; è andato a trovare una vecchia conoscenza',
             en: 'Hunter Association; leads the team sent to exterminate the Chimera Ants; has gone to see an old acquaintance',
+          },
+        },
+        // He calls the team from East Gorteau and sets the matchups: the
+        // King is his, chapter 223 / episode 95.
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter; guida la squadra inviata a sterminare le formichimere; affronterà il re di persona',
+            en: 'Hunter Association; leads the team sent to exterminate the Chimera Ants; will face the King himself',
           },
         },
       ],

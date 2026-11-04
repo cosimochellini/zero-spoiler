@@ -183,6 +183,7 @@ describe('the place words of a series that labels its own', () => {
         'cemetery-building',
         'southernpiece-auction-house',
         'hotel-beitacle',
+        'meteor-city',
       ],
     ],
   ])(

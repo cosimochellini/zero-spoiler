@@ -62,7 +62,10 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Guida una delle divisioni della colonia. Alcuni dei suoi soldati vengono uccisi da umani.',
         en: 'She leads one of the colony’s squads. Some of its soldiers are killed by humans.',
       },
-      status: [{ episode: 84, chapter: 189, value: 'alive' }],
+      status: [
+        { episode: 84, chapter: 189, value: 'alive' },
+        { episode: 97, chapter: 229, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 84, chapter: 189, value: CHIMERA_ANTS },
         // The Squadron Leaders set off on their own, chapter 216.
@@ -109,6 +112,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       },
       status: [
         { episode: 80, chapter: 190, source: 'chapter', value: 'alive' },
+        { episode: 97, chapter: 228, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -125,7 +129,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     hagya: {
       relationships: [
         {
-          episode: 92,
+          episode: 106,
           chapter: 214,
           source: 'chapter',
           value: [
@@ -143,20 +147,37 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: SQUADRON_LEADER,
+      role: [
+        { episode: 106, chapter: 192, value: SQUADRON_LEADER },
+        {
+          episode: 106,
+          chapter: 240,
+          source: 'chapter',
+          value: {
+            it: 'Comandante di divisione, ora Leol',
+            en: 'Squadron Leader, now Leol',
+          },
+        },
+      ],
       log: {
         it: 'Ammette con un altro comandante di divisione che la sua divisione caccia gli umani per divertimento e ne lascia i corpi. Promette di tenere per la regina gli umani rari, poi dice ai suoi compagni che li mangeranno loro.',
         en: 'He admits to another Squadron Leader that his squad hunts humans for fun and leaves the bodies. He promises to save any rare humans for the Queen, then tells his comrades they will eat them themselves.',
       },
+      // Morel suffocates him with carbon dioxide in the flooded chapel,
+      // chapter 254 / episode 107.
       status: [
-        { episode: 81, chapter: 192, source: 'chapter', value: 'alive' },
+        { episode: 106, chapter: 192, value: 'alive' },
+        { episode: 107, chapter: 254, value: 'deceased' },
       ],
+      // The anime's nest scenes (episodes 91 and 92) come before it opens
+      // him, and a timeline takes one entry per episode, so the two later
+      // steps stay the manga's.
       affiliation: [
-        { episode: 81, chapter: 192, source: 'chapter', value: CHIMERA_ANTS },
+        { episode: 106, chapter: 192, value: CHIMERA_ANTS },
         // With the Queen unable to lay eggs, he proposes that each of them
         // try to become a king, chapter 214; he sets off, chapter 216.
         {
-          episode: 91,
+          episode: 106,
           chapter: 214,
           source: 'chapter',
           value: {
@@ -165,12 +186,23 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         },
         {
-          episode: 92,
+          episode: 106,
           chapter: 216,
           source: 'chapter',
           value: {
             it: 'Ha lasciato il nido per diventare re',
             en: 'Left the nest to become a king',
+          },
+        },
+        // He reports back to the Royal Guards with Flutter and Hina and takes
+        // Neferpitou's job, chapter 234.
+        {
+          episode: 106,
+          chapter: 234,
+          source: 'chapter',
+          value: {
+            it: 'Formichimere, al servizio del re',
+            en: 'Chimera Ants, in the King’s service',
           },
         },
       ],
@@ -437,13 +469,17 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       },
       visual: { art: 'pike', tint: 'ice' },
     },
-    // Named in speech at the nest in chapter 192; the anime names him only
-    // in narration, so episode 81 only orders him.
+    // Hagya is named at the nest in chapter 192. Leol introduces himself
+    // to Morel in episode 106.
     {
       id: 'hagya',
       kind: 'character',
-      source: 'chapter',
-      revealedAtEpisode: 81,
+      // 106 / 192 is a reordered pair: too far out of step to anchor the
+      // chapter table.
+      unanchored: true,
+      // The manga gives the name Leol in chapter 240.
+      episodeName: { name: { it: 'Leol', en: 'Leol' }, chapter: 240 },
+      revealedAtEpisode: 106,
       revealedAtChapter: 192,
       name: { it: 'Hagya', en: 'Hagya' },
       summary: {

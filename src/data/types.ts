@@ -57,6 +57,18 @@ export interface Visual {
  * (`~/data/reveal`).
  */
 export interface Entity {
+  /**
+   * The name the anime gives a record whose manga name it never says, and
+   * the chapter from which the manga says it too: Hunter x Hunter's Hagya is
+   * introduced in the episodes as Leol, the name the manga gives him at
+   * chapter 240. An episode reader receives the record under it from the
+   * record's own episode (`~/data/source`); a chapter reader keeps `name`
+   * and reaches this one at `chapter`. No text may say it before then (the
+   * leak scan in `~/data/leaks.test`), and the payload sweep holds it as fog
+   * until each reader reaches it (`~/test/fog`). A manga that never says it
+   * takes a chapter past its last.
+   */
+  episodeName?: { chapter: number; name: LocalizedText }
   id: string
   kind: EntityKind
   name: LocalizedText

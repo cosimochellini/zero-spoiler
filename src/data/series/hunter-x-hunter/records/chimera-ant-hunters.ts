@@ -141,7 +141,20 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+      role: [
+        {
+          episode: 86,
+          chapter: 200,
+          value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+        },
+        // She rides into the palace in Bizeff's trucks, chapter 252 /
+        // episode 106.
+        {
+          episode: 106,
+          chapter: 252,
+          value: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
+        },
+      ],
       log: {
         it: 'Si presenta a Gon e Killua e, seduta al tavolo con loro, parla a lungo del suo maestro. Quando nomina Nackul e Schult, il suo Nen fa traboccare la tazza che ha in mano.',
         en: 'She introduces herself to Gon and Killua and, sitting at a table with them, talks at length about her teacher. When she names Knuckle and Shoot, her Nen makes the cup in her hand overflow.',
@@ -152,6 +165,17 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           episode: 86,
           chapter: 200,
           value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+        },
+        // Only the manga's matchups add her to Knov and Morel's,
+        // chapter 223; episode 95 leaves her out.
+        {
+          episode: 95,
+          chapter: 223,
+          source: 'chapter',
+          value: {
+            it: 'Allieva di Nobu; deve tenere Shawapf lontano dal re con Nobu e Morau',
+            en: 'Knov’s student; is to keep Shaiapouf away from the King with Knov and Morel',
+          },
         },
       ],
     },
@@ -174,13 +198,33 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: { it: 'Hunter', en: 'Hunter' },
+      role: [
+        { episode: 86, chapter: 200, value: { it: 'Hunter', en: 'Hunter' } },
+        {
+          episode: 106,
+          chapter: 251,
+          value: {
+            it: 'Hunter ritirato dall’assalto',
+            en: 'Hunter withdrawn from the assault',
+          },
+        },
+      ],
       log: {
         it: 'Arriva con Netero e Morau per sterminare le formichimere, in giacca e cravatta. La sua allieva Pahm vuole unirsi a loro, anche se lui non voleva.',
         en: 'He arrives with Netero and Morel, in a suit and tie, to exterminate the Chimera Ants. His student Palm wants to join them, although he did not want her to.',
       },
       status: [{ episode: 86, chapter: 200, value: 'alive' }],
-      affiliation: [{ episode: 86, chapter: 200, value: NETERO_TEAM }],
+      affiliation: [
+        { episode: 86, chapter: 200, value: NETERO_TEAM },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Morau',
+            en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Morel',
+          },
+        },
+      ],
     },
     'morel-mackernasey': {
       relationships: [
@@ -214,6 +258,27 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             },
           ],
         },
+        // He drowns the Squadron Leader in carbon dioxide in a flooded
+        // chapel, chapter 254 / episode 107. Five people at most, so Colt
+        // gives way to the fight of the phase.
+        {
+          episode: 107,
+          chapter: 254,
+          value: [
+            rows.morelNetero,
+            rows.morelKnov,
+            rows.morelKnuckle,
+            rows.morelShoot,
+            {
+              character: 'hagya',
+              type: { it: 'Nemico che uccide', en: 'Enemy he kills' },
+              summary: {
+                it: 'Lo affronta in una cappella sotterranea allagata e lo uccide riempiendola di anidride carbonica.',
+                en: 'Fights him in a flooded underground chapel and kills him by filling it with carbon dioxide.',
+              },
+            },
+          ],
+        },
       ],
       role: { it: 'Hunter', en: 'Hunter' },
       log: {
@@ -221,7 +286,18 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'He arrives with Netero and mocks Gon and Killua for being children. Then he tells Killua that a Nen fight is not decided by who has more aura, since no one knows the other’s ability.',
       },
       status: [{ episode: 86, chapter: 199, value: 'alive' }],
-      affiliation: [{ episode: 86, chapter: 199, value: NETERO_TEAM }],
+      affiliation: [
+        { episode: 86, chapter: 199, value: NETERO_TEAM },
+        // The matchups against the Royal Guards, chapter 223 / episode 95.
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Nobu',
+            en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Knov',
+          },
+        },
+      ],
     },
     'knuckle-bine': {
       relationships: [
@@ -258,6 +334,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [
         { episode: 86, chapter: 200, value: MOREL_STUDENT },
         { episode: 91, chapter: 214, value: IN_NGL },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Squadra di Netero; deve tenere Montowtoyupih lontano dal re con Schult',
+            en: 'Netero’s team; is to keep Menthuthuyoupi away from the King with Shoot',
+          },
+        },
       ],
     },
     'shoot-mcmahon': {
@@ -302,6 +386,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [
         { episode: 86, chapter: 200, value: MOREL_STUDENT },
         { episode: 91, chapter: 214, value: IN_NGL },
+        {
+          episode: 95,
+          chapter: 223,
+          value: {
+            it: 'Squadra di Netero; deve tenere Montowtoyupih lontano dal re con Nackul',
+            en: 'Netero’s team; is to keep Menthuthuyoupi away from the King with Knuckle',
+          },
+        },
       ],
     },
     // The gunmen name him as their king in episode 78, which the anime

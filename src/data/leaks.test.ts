@@ -21,6 +21,7 @@ import { FIRST_CHAPTER, FIRST_EPISODE } from '~/lib/progress/episode'
 import type { Source } from '~/lib/progress/spoiler'
 import { tokenize } from '~/lib/prose/markers'
 import { COPIES } from '~/server/copy.server'
+import { laterNameOf } from '~/test/fog'
 import { expectedOf, LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
 /**
@@ -392,10 +393,30 @@ interface Scan {
   texts: Text[]
 }
 
+/** A probe text in one source at one episode and chapter, saying a name. */
+function probeOf(
+  source: Source,
+  [episode, chapter]: [number, number],
+  name: LocalizedText,
+): Text {
+  return {
+    chapter,
+    episode,
+    label: 'probe',
+    owner: { id: 'probe' },
+    source,
+    text: { en: `On to ${name.en}.`, it: `Verso ${name.it}.` },
+  }
+}
+
 /** One archive's scan, its name indexes built once for every text. */
 function scanOf(archive: ReaderArchive, placeWords: PlaceWords): Scan {
-  const { entities } = archive
   const texts = textsOf(archive, placeWords)
+  // A record's anime name is scanned as a record of its own.
+  const entities = [
+    ...archive.entities,
+    ...archive.entities.flatMap((entity) => laterNameOf(entity) ?? []),
+  ]
   const nameWords = new Map<string, string>()
 
   const wordsOf = (entity: Entity, locale: Locale): string => {
@@ -539,6 +560,8 @@ describe.each(LOADED_SERIES)(
     const { entities } = reader
     const scan = scanOf(reader, placeWords)
     const expected = expectedOf(slug)
+    const ids = (text: Text): string[] =>
+      scan.leaked(text, 'en', true).map((other) => other.id)
 
     it('cover every kind of text the archive prints', () => {
       const kinds = new Set(
@@ -586,6 +609,63 @@ describe.each(LOADED_SERIES)(
 
         for (const locale of LOCALES) {
           expect(scan.leaked(probe, locale, true), locale).toContain(last)
+        }
+      },
+    )
+
+    it.skipIf(entities.every(({ episodeName }) => episodeName === undefined))(
+      'hold the anime’s name to the episode and the chapter that say it',
+      () => {
+        for (const entity of entities) {
+          const later = laterNameOf(entity)
+          if (later === undefined) {
+            continue
+          }
+          const episode = later.revealedAtEpisode
+          const chapter = later.revealedAtChapter
+
+          expect(Number.isSafeInteger(chapter), entity.id).toBe(true)
+          expect(
+            ids(probeOf('episode', [episode - 1, 1], later.name)),
+          ).toContain(later.id)
+          expect(
+            ids(probeOf('episode', [episode, 1], later.name)),
+          ).not.toContain(later.id)
+          expect(
+            ids(probeOf('chapter', [1, chapter - 1], later.name)),
+          ).toContain(later.id)
+          expect(
+            ids(probeOf('chapter', [1, chapter], later.name)),
+          ).not.toContain(later.id)
+        }
+      },
+    )
+
+    it.skipIf(entities.every(({ episodeName }) => episodeName === undefined))(
+      'let no name fact of the record exempt the anime’s name',
+      () => {
+        // Every record that has an anime name, given both facts.
+        const faked = reader.entities.map((entity) =>
+          entity.episodeName === undefined ?
+            entity
+          : { ...entity, commonWord: true as const, nameSaidAt: 1 },
+        )
+        const fakedScan = scanOf({ ...reader, entities: faked }, placeWords)
+
+        for (const entity of faked) {
+          const later = laterNameOf(entity)
+          if (later === undefined) {
+            continue
+          }
+          const probe = probeOf(
+            'chapter',
+            [1, later.revealedAtChapter - 1],
+            later.name,
+          )
+
+          expect(
+            fakedScan.leaked(probe, 'en', true).map(({ id }) => id),
+          ).toContain(later.id)
         }
       },
     )

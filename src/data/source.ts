@@ -1,6 +1,6 @@
 import type { Gated, Source } from '~/lib/progress/spoiler'
 
-import { type ReaderArchive, withFeatures } from './features'
+import { type Eater, type ReaderArchive, withFeatures } from './features'
 import { toldIn } from './reveal'
 import { shelvesOf } from './shelves'
 import type { BookSection, Entity, SeriesArchive } from './types'
@@ -62,10 +62,28 @@ export function archiveIn(
 /** Builds one copy; `archiveIn` keeps it. */
 function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
   const has = (gated: Gated): boolean => toldIn(gated, source)
-  const kept = (entities: Entity[]): Entity[] =>
-    entities.filter((entity) => has(entity))
+  // A record the anime names otherwise goes by that name in an episode
+  // reader's copy, and by its own in any other; no copy carries the other
+  // name, so a chapter reader's payload never holds the anime's.
+  const named = (entity: Entity): Entity => {
+    const { episodeName, ...own } = entity
+    if (episodeName === undefined) {
+      return entity
+    }
+
+    return source === 'episode' ? { ...own, name: episodeName.name } : own
+  }
+  const kept = (entities: Entity[]): Entity[] => {
+    const result: Entity[] = []
+    for (const entity of entities) {
+      if (has(entity)) {
+        result.push(named(entity))
+      }
+    }
+    return result
+  }
   const found = (entity: Entity | undefined): Entity | undefined =>
-    entity !== undefined && has(entity) ? entity : undefined
+    entity !== undefined && has(entity) ? named(entity) : undefined
 
   return {
     ...archive,
@@ -80,8 +98,11 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
     // Reordered introductions can belong to a different arc in the manga.
     bookSections:
       source === 'chapter' ?
-        chapterShelves(shelvedIn(archive.bookSections, has), kept(archive.arcs))
-      : shelvedIn(archive.bookSections, has),
+        chapterShelves(
+          shelvedIn(archive.bookSections, has, kept),
+          kept(archive.arcs),
+        )
+      : shelvedIn(archive.bookSections, has, kept),
     sagas: archive.sagas.map((saga) => ({
       ...saga,
       entries: kept(saga.entries),
@@ -92,7 +113,15 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
     getPlace: (id) => found(archive.getPlace(id)),
     getShip: (id) => found(archive.getShip(id)),
     fruitsOfForm: (form) => kept(archive.fruitsOfForm(form)),
-    eatersOf: (id) => archive.eatersOf(id).filter((eater) => has(eater.gate)),
+    eatersOf: (id) => {
+      const eaters: Eater[] = []
+      for (const eater of archive.eatersOf(id)) {
+        if (has(eater.gate)) {
+          eaters.push({ ...eater, entity: named(eater.entity) })
+        }
+      }
+      return eaters
+    },
   }
 }
 
@@ -108,10 +137,11 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
 function shelvedIn(
   sections: BookSection[],
   has: (entity: Entity) => boolean,
+  project: (entities: Entity[]) => Entity[],
 ): BookSection[] {
   const shelves: BookSection[] = []
   for (const { arc, characters } of sections) {
-    const kept = characters.filter((character) => has(character))
+    const kept = project(characters)
     const last = shelves.at(-1)
     if (has(arc)) {
       shelves.push({ arc, characters: kept })
