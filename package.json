@@ -13,7 +13,7 @@
     "art:sheet": "node scripts/art-sheet.mjs",
     "art:shots": "node scripts/art-shots.mjs",
     "build": "vite build",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run gate:docs && npm run test && npm run build && npm run gate:react-doctor && npm run gate:fallow && npm run gate:archive",
+    "check": "node scripts/dependencies-fresh.mjs && npm run typecheck && npm run lint && npm run format:check && npm run gate:docs && npm run test && npm run build && npm run gate:react-doctor && npm run gate:fallow && npm run gate:archive",
     "deploy": "npm run build && wrangler deploy",
     "dev": "vite dev",
     "docs:chronicle": "node scripts/chronicle-verification.mjs",
