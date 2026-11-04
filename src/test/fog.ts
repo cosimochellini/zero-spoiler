@@ -103,31 +103,37 @@ function fogOf(
   { entities, series }: SeriesArchive,
 ): Map<string, Entity[]> {
   const at = reveal(bookmark, series)
+  const said = [
+    ...entities
+      .filter((entity) => !at.sees(entity))
+      .map((entity) => ({ entity, name: entity.id })),
+    ...LOCALES.flatMap((locale) => unreachedNames(at, locale, entities)),
+  ]
   const fog = new Map<string, Entity[]>()
-  const cover = (said: string, entity: Entity): void => {
-    fog.set(said, [...(fog.get(said) ?? []), entity])
-  }
-
-  for (const entity of entities) {
-    if (!at.sees(entity)) {
-      cover(entity.id, entity)
-    }
-  }
-  for (const locale of LOCALES) {
-    const taken = reachedNames(at, locale, entities)
-    const said = entities.flatMap((entity) =>
-      namingsOf(entity)
-        .filter((naming) => !at.sees(naming))
-        .map((naming) => ({ entity, name: naming.name[locale] })),
-    )
-    for (const { entity, name } of said) {
-      if (!taken.has(name)) {
-        cover(name, entity)
-      }
-    }
+  for (const { entity, name } of said) {
+    fog.set(name, [...(fog.get(name) ?? []), entity])
   }
 
   return fog
+}
+
+/**
+ * The names in one locale that a reader has not reached, each with its
+ * record, less any a reached record goes by.
+ */
+function unreachedNames(
+  at: Reveal,
+  locale: Locale,
+  entities: Entity[],
+): { entity: Entity; name: string }[] {
+  const taken = reachedNames(at, locale, entities)
+
+  return entities.flatMap((entity) =>
+    namingsOf(entity)
+      .filter((naming) => !at.sees(naming))
+      .map((naming) => ({ entity, name: naming.name[locale] }))
+      .filter(({ name }) => !taken.has(name)),
+  )
 }
 
 /**
