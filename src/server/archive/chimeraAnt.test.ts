@@ -117,7 +117,7 @@ const UNITS = ['episode', 'chapter'] as const
 const PHASE_THREE: Row[] = [
   { id: 'meleoron', episode: 98, chapter: 241, place: false },
   { id: 'meteor-city', episode: 96, chapter: 224, place: true },
-  { id: 'peijin', episode: 102, chapter: 243, place: true, source: 'chapter' },
+  { id: 'peijin', episode: 116, chapter: 243, place: true },
   { id: 'mandai-city', episode: 102, chapter: 243, place: true },
   { id: 'bihorn', episode: 97, chapter: 227, place: false, source: 'chapter' },
   { id: 'flutter', episode: 100, chapter: 235, place: false },
@@ -132,22 +132,34 @@ const PHASE_THREE: Row[] = [
   { id: 'bizeff', episode: 105, chapter: 250, place: false, source: 'chapter' },
 ]
 
-const CASES = [...RECORDS, ...PHASE_TWO, ...PHASE_THREE].flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    UNITS.filter(
-      (unit) => record.source === undefined || record.source === unit,
-    ).map((unit) => ({ ...record, locale, unit })),
-  ),
+const PHASE_FOUR: Row[] = [
+  {
+    id: 'taragetter',
+    episode: 110,
+    chapter: 261,
+    place: false,
+    source: 'chapter',
+  },
+]
+
+const CASES = [...RECORDS, ...PHASE_TWO, ...PHASE_THREE, ...PHASE_FOUR].flatMap(
+  (record) =>
+    LOCALES.flatMap((locale) =>
+      UNITS.filter(
+        (unit) => record.source === undefined || record.source === unit,
+      ).map((unit) => ({ ...record, locale, unit })),
+    ),
 )
 /** The records one medium alone names, asked in the other medium. */
-const UNNAMED = [...PHASE_TWO, ...PHASE_THREE].flatMap((record) =>
-  record.source === undefined ?
-    []
-  : LOCALES.map((locale) => ({
-      ...record,
-      locale,
-      unit: record.source === 'chapter' ? 'episode' : 'chapter',
-    })),
+const UNNAMED = [...PHASE_TWO, ...PHASE_THREE, ...PHASE_FOUR].flatMap(
+  (record) =>
+    record.source === undefined ?
+      []
+    : LOCALES.map((locale) => ({
+        ...record,
+        locale,
+        unit: record.source === 'chapter' ? 'episode' : 'chapter',
+      })),
 )
 
 function at(unit: string, count: number): Bookmark {
@@ -207,6 +219,8 @@ const DEATHS = [
   { id: 'yunju', episode: 82, chapter: undefined },
   { id: 'peggy', episode: undefined, chapter: 213 },
   { id: 'rammot', episode: 94, chapter: 219 },
+  { id: 'cheetu', episode: 117, chapter: 278 },
+  { id: 'netero', episode: 126, chapter: 298 },
 ].flatMap(({ id, episode, chapter }) =>
   [
     { unit: 'episode' as const, gate: episode },
@@ -227,6 +241,41 @@ describe.each(DEATHS)(
     })
   },
 )
+
+describe.each([
+  { id: 'cheetu', episode: 117, chapter: 278 },
+  { id: 'netero', episode: 126, chapter: 298 },
+])('$id’s death drawing', ({ id, episode, chapter }) => {
+  it.each(LOCALES)('changes at the death in %s', (locale) => {
+    for (const unit of UNITS) {
+      const gate = unit === 'episode' ? episode : chapter
+      const read = (count: number): ReturnType<typeof drawingsFor> =>
+        drawingsFor([id], readerFor(archive, at(unit, count), locale))
+
+      expect(read(gate)[id]).toBeDefined()
+      expect(read(gate)).not.toStrictEqual(read(gate - 1))
+    }
+  })
+})
+
+describe('Chimera Ant phase four boundary', () => {
+  it.each(LOCALES)(
+    'keeps the phase five rescue out at the mixed episode in %s',
+    (locale) => {
+      const king = characterById('meruem')
+      const read = (count: number): string => {
+        const reader = readerFor(archive, at('episode', count), locale)
+        return JSON.stringify({
+          status: archive.latestOf(reader, king, 'status'),
+          relationships: archive.latestOf(reader, king, 'relationships'),
+          art: drawingsFor(['meruem'], reader),
+        })
+      }
+
+      expect(read(127)).toStrictEqual(read(126))
+    },
+  )
+})
 
 describe('Chimera Ant dated facts', () => {
   it.each(
@@ -313,6 +362,24 @@ describe('Chimera Ant dated facts', () => {
       episode: 106,
       chapter: 252,
       role: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
+    },
+    {
+      id: 'palm-siberia',
+      episode: 123,
+      chapter: 293,
+      role: {
+        it: 'Hunter trasformata in formichimera',
+        en: 'Hunter transformed into a Chimera Ant',
+      },
+    },
+    {
+      id: 'knov',
+      episode: 120,
+      chapter: 286,
+      role: {
+        it: 'Hunter addetto all’evacuazione',
+        en: 'Hunter evacuating the wounded',
+      },
     },
   ])(
     'reveals the changed role for $id at its scene',
@@ -514,6 +581,14 @@ describe('Chimera Ant dated facts', () => {
     { id: 'ikalgo', episode: 107, chapter: 255 },
     { id: 'meleoron', episode: 100, chapter: 241, source: 'episode' },
     { id: 'meleoron', episode: 102, chapter: 242 },
+    { id: 'morel-mackernasey', episode: 121, chapter: 289 },
+    { id: 'knuckle-bine', episode: 121, chapter: 289 },
+    { id: 'menthuthuyoupi', episode: 121, chapter: 289 },
+    { id: 'ikalgo', episode: 119, chapter: 283 },
+    { id: 'ikalgo', episode: 123, chapter: 296 },
+    { id: 'palm-siberia', episode: 124, chapter: 294 },
+    { id: 'netero', episode: 126, chapter: 298 },
+    { id: 'meruem', episode: 126, chapter: 298 },
   ] as const)(
     'changes the relationships of $id at $episode / $chapter',
     (row) => {

@@ -1,5 +1,10 @@
 {
   "authored": {
+    "taragetter": [
+      "hxh-en-Chapter_251-416239.json",
+      "hxh-en-Chapter_261-416243.json",
+      "hxh-en-Taragetter-423972.json"
+    ],
     "gon-freecss": [
       "hxh-en-Gon_Freecss-425671.json",
       "hxh-en-Kite-425278.json",
@@ -223,7 +228,9 @@
     "netero": [
       "hxh-en-Isaac_Netero-424748.json",
       "hxh-en-Chapter_199-416211.json",
-      "hxh-en-Episode_85_(2011)-419187.json"
+      "hxh-en-Episode_85_(2011)-419187.json",
+      "hxh-en-Chapter_298-362267.json",
+      "hxh-en-Episode_126_(2011)-416474.json"
     ],
     "masta": ["hxh-en-Masta-424338.json"],
     "lippo": [
@@ -984,7 +991,9 @@
       "hxh-en-Episode_86_(2011)-416449.json",
       "hxh-en-Chapter_218-416109.json",
       "hxh-en-Episode_93_(2011)-416455.json",
-      "hxh-en-Palm_Siberia-424185.json"
+      "hxh-en-Palm_Siberia-424185.json",
+      "hxh-en-Chapter_294-416259.json",
+      "hxh-en-Episode_124_(2011)-416473.json"
     ],
     "shaiapouf": [
       "hxh-en-Chapter_202-418675.json",
@@ -1004,7 +1013,9 @@
       "hxh-en-Chapter_257-324511.json",
       "hxh-en-Chapter_258-383898.json",
       "hxh-en-Episode_103_(2011)-416463.json",
-      "hxh-en-Episode_108_(2011)-416466.json"
+      "hxh-en-Episode_108_(2011)-416466.json",
+      "hxh-en-Chapter_298-362267.json",
+      "hxh-en-Episode_126_(2011)-416474.json"
     ],
     "knov": [
       "hxh-en-Chapter_199-416211.json",
@@ -1023,14 +1034,18 @@
       "hxh-en-Chapter_253-416241.json",
       "hxh-en-Chapter_254-383885.json",
       "hxh-en-Episode_106_(2011)-416465.json",
-      "hxh-en-Episode_107_(2011)-410888.json"
+      "hxh-en-Episode_107_(2011)-410888.json",
+      "hxh-en-Chapter_289-384617.json",
+      "hxh-en-Episode_121_(2011)-410902.json"
     ],
     "knuckle-bine": [
       "hxh-en-Chapter_200-416212.json",
       "hxh-en-Episode_86_(2011)-416449.json",
       "hxh-en-Chapter_214-416220.json",
       "hxh-en-Episode_91_(2011)-416453.json",
-      "hxh-en-Knuckle_Bine-425295.json"
+      "hxh-en-Knuckle_Bine-425295.json",
+      "hxh-en-Chapter_289-384617.json",
+      "hxh-en-Episode_121_(2011)-410902.json"
     ],
     "shoot-mcmahon": [
       "hxh-en-Chapter_200-416212.json",
@@ -1078,7 +1093,9 @@
       "hxh-en-Chapter_206-406651.json",
       "hxh-en-Chapter_213-416219.json",
       "hxh-en-Episode_88_(2011)-416451.json",
-      "hxh-en-Episode_91_(2011)-416453.json"
+      "hxh-en-Episode_91_(2011)-416453.json",
+      "hxh-en-Chapter_289-384617.json",
+      "hxh-en-Episode_121_(2011)-410902.json"
     ],
     "colt": [
       "hxh-en-Chapter_189-383210.json",
@@ -1141,7 +1158,11 @@
       "hxh-en-Chapter_255-418706.json",
       "hxh-en-Episode_100_(2011)-410878.json",
       "hxh-en-Episode_101_(2011)-411710.json",
-      "hxh-en-Episode_107_(2011)-410888.json"
+      "hxh-en-Episode_107_(2011)-410888.json",
+      "hxh-en-Chapter_283-410931.json",
+      "hxh-en-Episode_119_(2011)-419173.json",
+      "hxh-en-Chapter_296-416260.json",
+      "hxh-en-Episode_123_(2011)-416472.json"
     ],
     "welfin": [
       "hxh-en-Welfin-423920.json",

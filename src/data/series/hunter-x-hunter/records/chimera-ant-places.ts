@@ -43,9 +43,10 @@ export const CHIMERA_ANT_PLACE_RECORDS: HunterEntity[] = [
   {
     id: 'peijin',
     kind: 'place',
-    revealedAtEpisode: 102,
+    // Gon names the capital in episode 116, which adapts a later chapter.
+    revealedAtEpisode: 116,
     revealedAtChapter: 243,
-    source: 'chapter',
+    unanchored: true,
     name: { it: 'Peijin', en: 'Peijin' },
     summary: {
       it: 'La capitale del Golt Orientale.',

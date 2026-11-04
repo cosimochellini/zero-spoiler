@@ -1,3 +1,5 @@
+import type { Relationship } from '~/data/types'
+
 import type { HunterSaga } from './saga'
 
 const CHIMERA_ANTS = { it: 'Formichimere', en: 'Chimera Ants' }
@@ -54,6 +56,24 @@ const flutterRows = {
       it: 'Gli passa le coordinate di Killua perché possa colpirlo da lontano.',
       en: 'Gives him Killua’s coordinates so he can hit him from afar.',
     },
+  },
+}
+
+const IKALGO_KILLUA_FRIEND: Relationship = {
+  character: 'killua',
+  type: { it: 'Amico', en: 'Friend' },
+  summary: {
+    it: 'Gli ha salvato la vita e lo veglia in una clinica segreta. Killua lo invita a conoscere gli altri Hunter.',
+    en: 'Saved his life and watches over him in a secret clinic. Killua invites him to meet the other Hunters.',
+  },
+}
+
+const IKALGO_BLOSTER: Relationship = {
+  character: 'bloster',
+  type: { it: 'Avversario che risparmia', en: 'Opponent he spares' },
+  summary: {
+    it: 'Lo affronta nel sotterraneo e decide di non sparargli quando il gas lo fa addormentare.',
+    en: 'Fights him in the basement and decides against shooting him after the gas puts him to sleep.',
   },
 }
 
@@ -441,17 +461,34 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
             episode: 107,
             chapter: 255,
             value: [
-              {
-                character: 'killua',
-                type: { it: 'Amico', en: 'Friend' },
-                summary: {
-                  it: 'Gli ha salvato la vita e lo veglia in una clinica segreta. Killua lo invita a conoscere gli altri Hunter.',
-                  en: 'Saved his life and watches over him in a secret clinic. Killua invites him to meet the other Hunters.',
-                },
-              },
+              IKALGO_KILLUA_FRIEND,
               {
                 ...rows.ikalgoFlutter,
                 type: { it: 'Ex compagno', en: 'Former comrade' },
+              },
+            ],
+          },
+          {
+            episode: 119,
+            chapter: 283,
+            value: [IKALGO_KILLUA_FRIEND, IKALGO_BLOSTER],
+          },
+          {
+            episode: 123,
+            chapter: 296,
+            value: [
+              IKALGO_KILLUA_FRIEND,
+              IKALGO_BLOSTER,
+              {
+                character: 'welfin',
+                type: {
+                  it: 'Gli indica il bozzolo',
+                  en: 'Tells him where the cocoon is',
+                },
+                summary: {
+                  it: 'Lo affronta nel sotterraneo. Dopo la resa, Welfang gli dice dove trovare il bozzolo della prigioniera.',
+                  en: 'Fights him in the basement. After surrendering, Welfin tells him where to find the captive woman’s cocoon.',
+                },
               },
             ],
           },

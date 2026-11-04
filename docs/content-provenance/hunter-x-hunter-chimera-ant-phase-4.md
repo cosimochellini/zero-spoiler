@@ -1,0 +1,48 @@
+# Chimera Ant phase 4 inventory
+
+Chapters 261–298 and the corresponding scenes in episodes 110–127 (#1023). The
+English MediaWiki revisions are pinned in `sources.json`. Chapter lists and the
+anime cast lists from episodes 76–136 supply candidates, not naming evidence.
+Direct panels, episode timestamps and 2011 Italian dub audio were not viewed.
+Italian Wikipedia has no Taragetter entry.
+
+## Records and returning dossiers
+
+| Candidate                                                                      | Disposition                                                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Taragetter                                                                     | Filed at ch 261, manga only. Welfin wonders why the intruder came to kill Taragetter, who was killed while unnamed in ch 251. Episode 110 identifies whose blood Welfin recognizes but does not establish that he speaks or thinks the name. |
+| Peijin                                                                         | Existing record. The anime opens it at ep 116, where Gon tells Neferpitou to come to Peijin. The manga gate stays at ch 243. Episode 102 only calls it the capital. The pair is unanchored.                                                  |
+| Royal Palace of East Gorteau                                                   | Existing record at ch 216 / ep 93. The assault revisits the palace and its underground rooms.                                                                                                                                                |
+| Isaac Netero, Meruem                                                           | Each records the confrontation from his own perspective at ch 298 / ep 126. Netero's status becomes deceased there.                                                                                                                          |
+| Cheetu                                                                         | Deceased at ch 278 / ep 117 when Silva crushes him.                                                                                                                                                                                          |
+| Palm Siberia                                                                   | Emerges from the cocoon at ch 293 / ep 123. Her relationship with Killua changes at ch 294 / ep 124 when she regains her memories and thanks him.                                                                                            |
+| Gon Freecss, Killua Zoldyck, Neferpitou, Komugi                                | Existing records. Pitou treats Komugi, and Gon waits on a promise that Pitou will come with him. Killua speaks to Palm during her recovery.                                                                                                  |
+| Zeno Zoldyck, Silva Zoldyck                                                    | Existing records. Zeno takes Netero and the King away from the palace and withdraws. Silva kills Cheetu and leaves with Zeno (ch 278 / ep 117).                                                                                              |
+| Morel Mackernasey, Knov, Knuckle Bine, Shoot McMahon, Meleoron, Menthuthuyoupi | Existing records. The staircase fight changes the team's matchups and injures Shoot and Morel. Knov’s role changes when Shoot receives care in his Nen space (ch 286 / ep 120). Knuckle releases his ability to save Morel.                  |
+| Ikalgo, Bloster, Welfin                                                        | Existing records. Ikalgo spares Bloster after the elevator fight (ch 283), then forces Welfin to tell him where the cocoon is (ch 296).                                                                                                      |
+| Shaiapouf, Bizeff                                                              | Existing records. Pouf leaves Morel and uses his doubles. Bizeff remains manga-only: ep 110 and ep 120 use his name editorially.                                                                                                             |
+| Leol, Chimera Ant Queen, Flutter, Kite, Bihorn, Gyro                           | Existing records. The chapter lists include references, a disguise, and prior scenes. Leol continues to resolve to the existing Hagya record.                                                                                                |
+| Illumi Zoldyck                                                                 | Existing record, recalled by Killua in this window.                                                                                                                                                                                          |
+
+## Deferred and unresolved names
+
+| Candidate                                                                               | Disposition                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Shidore                                                                                 | Pending. Ch 261 narrates her presence and ep 110's caption is a wiki image caption. Ch 296 inserts the names in an editorial aside. Welfin asks about her in ch 315, when the story also identifies her as Reina. Keep the identity link in phase 5. Episode 136 has the corresponding reunion, but the synopsis does not establish the exact use of “Shidore” in dialogue.                     |
+| Maenole, Inzagi                                                                         | Unresolved. Ch 261 lists the two soldiers Welfin enlists. Chs 269–270 and ep 113 show their deaths. Ch 271's synopsis identifies them by name in reporting Welfin's reasoning, but Inzagi's character page describes Welfin's reference as indirect. Episode cast lists and the later corpse appearances do not establish a spoken name. Confirm ch 271's wording before opening either record. |
+| Hina / Hirin                                                                            | Unresolved. Ch 245's cast list gives Hirin and ch 261's synopsis gives Hina editorially. The latter describes her speaking to Shidore, without establishing Hina's own name in speech or a printed caption. Ch 296's names are in the synopsis's editorial aside. The alternate form stays out of archive text.                                                                                 |
+| Ming Jol-ik's Double, Octopus, Alligator, Small Bear, Mosquito, Centipede, Turtle, Frog | Omitted. Descriptive cast labels.                                                                                                                                                                                                                                                                                                                                                               |
+| V6                                                                                      | Omitted. The synopsis identifies the group behind the call in ch 288. It is a collective.                                                                                                                                                                                                                                                                                                       |
+| Maha Zoldyck, Marcos                                                                    | Omitted from this phase. The chapter lists provide references without a verified on-page naming scene for a new record.                                                                                                                                                                                                                                                                         |
+
+Additional episode-list entries: Colt, Dr. Lee, Yunju, Biscuit Krueger and Peggy
+already have records. Their entries in this window are earlier scenes, thoughts
+or references. Ming Jol-ik appears in a recollection in episode 113. That cast
+listing does not open a new record. Pariston Hill's naming and Gyro's later ties
+stay deferred to their respective later scenes.
+
+## Phase boundary
+
+Chapter 298 ends with the guards searching the blast site. Episode 127 also
+shows the guards recovering the injured King, which chapter 299 reveals. The
+injury, recovery and the guards' ensuing changes belong to phase 5.

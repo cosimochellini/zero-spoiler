@@ -140,6 +140,32 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             },
           ],
         },
+        {
+          episode: 124,
+          chapter: 294,
+          value: [
+            rows.palmKnov,
+            {
+              character: 'gon-freecss',
+              type: { it: 'Compagno di missione', en: 'Teammate' },
+              summary: {
+                it: 'Dopo essere uscita dal bozzolo, cerca Gon e dice a Killua che Gon ha bisogno di lui.',
+                en: 'After leaving the cocoon, she looks for Gon and tells Killua that Gon needs him.',
+              },
+            },
+            {
+              character: 'killua',
+              type: {
+                it: 'Le fa tornare la memoria',
+                en: 'Helps her regain her memories',
+              },
+              summary: {
+                it: 'Mentre combattono, Killua le parla di Gon. Palm recupera i ricordi e lo ringrazia.',
+                en: 'During their fight, Killua talks to her about Gon. Palm regains her memories and thanks him.',
+              },
+            },
+          ],
+        },
       ],
       role: [
         {
@@ -153,6 +179,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           episode: 106,
           chapter: 252,
           value: { it: 'Infiltrata nel palazzo', en: 'Palace infiltrator' },
+        },
+        {
+          episode: 123,
+          chapter: 293,
+          value: {
+            it: 'Hunter trasformata in formichimera',
+            en: 'Hunter transformed into a Chimera Ant',
+          },
         },
       ],
       log: {
@@ -206,6 +240,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Hunter ritirato dall’assalto',
             en: 'Hunter withdrawn from the assault',
+          },
+        },
+        {
+          episode: 120,
+          chapter: 286,
+          value: {
+            it: 'Hunter addetto all’evacuazione',
+            en: 'Hunter evacuating the wounded',
           },
         },
       ],
@@ -279,6 +321,34 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             },
           ],
         },
+        {
+          episode: 121,
+          chapter: 289,
+          value: [
+            rows.morelNetero,
+            rows.morelKnov,
+            rows.morelShoot,
+            {
+              character: 'knuckle-bine',
+              type: { it: 'Allievo che lo salva', en: 'Student who saves him' },
+              summary: {
+                it: 'Ferito da Montowtoyupih, gli chiede di non cedere. Nackul annulla il suo potere per salvargli la vita.',
+                en: 'Wounded by Menthuthuyoupi, he asks Knuckle to hold out. Knuckle lifts his ability to save his life.',
+              },
+            },
+            {
+              character: 'menthuthuyoupi',
+              type: {
+                it: 'Avversario che lo risparmia',
+                en: 'Opponent who spares him',
+              },
+              summary: {
+                it: 'Lo ferisce. Quando Nackul annulla il suo potere, lo lascia vivere.',
+                en: 'Wounds him. When Knuckle lifts his ability, he lets Morel live.',
+              },
+            },
+          ],
+        },
       ],
       role: { it: 'Hunter', en: 'Hunter' },
       log: {
@@ -320,6 +390,32 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
               summary: {
                 it: 'Lo affronta più volte per il gettone e alla fine gli blocca il Nen per 30 giorni. Al confine di NGL gli promette di riportare indietro Kaito.',
                 en: 'Fights him again and again for the token and in the end seals his Nen for 30 days. At the NGL border he promises him to bring Kite back.',
+              },
+            },
+          ],
+        },
+        {
+          episode: 121,
+          chapter: 289,
+          value: [
+            {
+              character: 'morel-mackernasey',
+              type: { it: 'Maestro che salva', en: 'Teacher he saves' },
+              summary: {
+                it: 'Quando Montowtoyupih ferisce Morau, Nackul annulla il suo potere perché lo lasci vivere.',
+                en: 'When Menthuthuyoupi wounds Morel, Knuckle lifts his ability so the guard will let him live.',
+              },
+            },
+            rows.knuckleShoot,
+            {
+              character: 'menthuthuyoupi',
+              type: {
+                it: 'Avversario con cui tratta',
+                en: 'Opponent he bargains with',
+              },
+              summary: {
+                it: 'Gli toglie il vincolo del suo Nen in cambio della vita di Morau. La guardia li lascia entrambi vivi.',
+                en: 'He lifts his Nen ability in exchange for Morel’s life. The guard lets both of them live.',
               },
             },
           ],

@@ -1489,6 +1489,24 @@ const earlyExam: HunterSaga = {
             sharedRow(NETERO_ROWS, 'menchi'),
           ],
         },
+        {
+          episode: 126,
+          chapter: 298,
+          value: [
+            {
+              character: 'meruem',
+              type: { it: 'Avversario', en: 'Opponent' },
+              summary: {
+                it: 'Affronta il re da solo. Alla fine gli rivela il nome che gli ha dato la regina e fa esplodere la bomba che porta con sé.',
+                en: 'He fights the King alone. At the end he tells him the name the Queen gave him and detonates the bomb he carries.',
+              },
+            },
+            NETERO_KILLUA,
+            NETERO_GON,
+            sharedRow(NETERO_ROWS, 'kurapika'),
+            sharedRow(NETERO_ROWS, 'leorio-paradinight'),
+          ],
+        },
       ],
       chronicle: [
         ...hunterExamChronicles.netero,
@@ -1502,7 +1520,10 @@ const earlyExam: HunterSaga = {
         it: 'Arriva in dirigibile dopo che Menci ha bocciato tutti gli aspiranti. Le fa riconoscere di aver perso la calma e le propone di ripetere la prova, mostrando di persona come affrontarla.',
         en: 'He arrives by airship after Menchi has failed every applicant. He gets her to acknowledge that she lost her temper and proposes that she repeat the test, demonstrating how to attempt it herself.',
       },
-      status: [{ episode: 6, chapter: 12, value: 'alive' }],
+      status: [
+        { episode: 6, chapter: 12, value: 'alive' },
+        { episode: 126, chapter: 298, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 6,
