@@ -68,7 +68,8 @@ own drawing keeps it when its eater dies.
 ## Its own stage rulings
 
 - **A Zoan form is a permanent stage** with no exit entry (King, Ulti,
-  Queen), drawn as a part of the animal's body (a shell, a foreleg).
+  Queen), drawn as a part of the animal's body (a shell, a foreleg). Its
+  awakening is one more stage (Lucci, Kaku; owner, 2026-11-05).
 - **A zombie's purification is a stage** (owner, 2026-10-12, #554): the
   episode it loses its borrowed shadow, to salt or to the shadow going home,
   and goes still (Kumashi at 360, the Shadow's Asgard at 373). Only the first

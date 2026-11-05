@@ -46,14 +46,17 @@ one nobody recognises (owner, 2026-11-05, #1097).
   - a death or a fate (a grave, a broken object, a ruin);
   - a hidden identity (what a disguise hides, who a character really is);
   - a power not yet shown (a devil fruit's technique, a Nen ability, a Zoan
-    form, a transformation);
+    form or its awakening, a transformation); a skill that is not a power (a
+    fighting style, hypnosis, a jaw that digs) is no reveal (owner,
+    2026-11-05);
   - a secret affiliation (the crew or agency a character secretly serves).
 - **Every reveal is a stage.** From the episode and chapter that show it, the
   drawing changes to show it: the death, the true identity, the power, the
   affiliation's symbol. These stages are required, like the ones in
   [Redrawings](#redrawings).
 - **Nothing invented.** The object and every detail on it are ones the story
-  shows. Check the object against the wiki's Appearance section, not memory or
+  shows, and the object is never a pun on the record's name (an oden pot for
+  Oden, a cicada for Semimaru; owner, 2026-11-05). Check the object against the wiki's Appearance section, not memory or
   an issue's wording (Chopper's cap and Brook's guitar were both described
   wrong in their issues; the early Egghead drawings had a volcano and a
   bulb-headed Vegapunk the show never has, #180).
@@ -86,7 +89,9 @@ the rest are left to review, so check them yourself.
 - **No face and no lettering.** No eyes, no mouth, no "BF-37", no ship's name.
   A silhouette lion has a mane, not a muzzle.
 - **Symbols are welcome** wherever they help the reader recognise the record:
-  a Jolly Roger, an emblem, a house sigil, a flag (owner, 2026-11-05). A Jolly
+  a Jolly Roger, an emblem, a house sigil, a flag (owner, 2026-11-05). When
+  the story gives a character no object of their own, the emblem of their
+  title may stand in (the Five Elders until their beast forms). A Jolly
   Roger's skull is a symbol, drawn as the flag draws it.
 - **Shade is hatched, never filled**, and only where the object is really dark
   or turns away from the viewer: Teach's brim, Shusui's black scabbard, the far
@@ -168,7 +173,8 @@ spreads its sagas' timelines into it; see its file).
   (Kanjuro, Orochi, Sabo).
 - **A destroyed or badly damaged place or ship**, even for a while (the Going
   Merry burning, Enies Lobby after the Buster Call), and its rebuilding is a
-  new drawing again.
+  new drawing again. An arc whose drawing is that place changes with it
+  (owner, 2026-11-05).
 
 A stage is never skipped because it is hard to draw: find a composition that
 reads at 56 px. The one exception is a change in the episode the record opens
