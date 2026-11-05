@@ -580,10 +580,10 @@ keeps the same name in Italian (it.wikipedia, pages listed below).
   "dancing master".
 - Italian: "Syrio Forel",
   `Personaggi delle Cronache del ghiaccio e del fuoco#Syrio Forel`.
-- No death filed. In episode 8 and in Arya IV (site 51) he holds off the
+- Presumed dead from episode 8 and Arya IV (site 51), where he holds off the
   Lannister guards and Meryn Trant while Arya runs, and neither medium shows how
-  it ends. Status stays alive from the gate. Unverified: that the books, like
-  the show, call the lessons "dancing lessons" to the household.
+  it ends (owner, #1051). Unverified: that the books, like the show, call the
+  lessons "dancing lessons" to the household.
 
 ### Petyr Baelish
 
