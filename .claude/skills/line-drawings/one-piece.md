@@ -62,7 +62,8 @@ body**, as the owner picked in #462:
   second ink, so an ivory accent is pale by design.
 
 The eater's character drawing follows the general rule: the first time the
-story shows the power, the character's drawing gains it as a stage.
+story shows the power, the character's drawing gains it as a stage. A fruit's
+own drawing keeps it when its eater dies.
 
 ## Its own stage rulings
 
@@ -95,6 +96,9 @@ story shows the power, the character's drawing gains it as a stage.
 - On the One Piece Wiki, `{{Qref|chap=N|ep=M|…}}` gives the episode and
   chapter of a fact; the `Episode_N` page confirms it, and N − 1 should still
   show the old look.
+- **Chapter readers.** A stage reaches them through its `chapter:`; check
+  `chapterAtEpisode(episode)` against the manga debut, so no chapter reaches
+  the stage before the manga shows it.
 - `npm run wiki:pairs -- 129 157` (ranges work too: `1050-1056`) reads the
   rendered chapter infobox, caches it in `.gate/wiki/`, and gives each
   chapter's episode and page range; use them to locate the scene.

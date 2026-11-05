@@ -21,7 +21,7 @@ import { color, dur, ease, rule } from '~/styles/tokens.stylex'
  * main stroke, every other line in the second ink, and a muted dashed line for
  * ground, water and other things that are merely there. Characters are an
  * object that stands for them — a straw hat, three sheathed swords, a violin —
- * never a face, never a logo. Places are the place.
+ * never a face and never lettering. Places are the place.
  *
  * Each drawing is a list of strokes rather than JSX so the rules live in this
  * one renderer and a new drawing is data, not markup. The strokes are decorative:

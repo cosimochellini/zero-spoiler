@@ -22,6 +22,6 @@ the compiler, ESLint, Prettier, tests and quality gates (`npm run check`).
   and its file for the series. A C grade (unrecognisable, invented, a face or
   lettering, a reveal before its stage), a wrong episode/chapter pair, a missing
   required stage, a regression and an untested house-style break are defects. A
-  B the PR declares is P3 at most.
+  true, recognisable B is P3 at most, and the PR says it is a B.
 - **Archive text, research or artwork:** follow
   [Sources and rights](CONTRIBUTING.md#sources-and-rights).

@@ -95,8 +95,8 @@ const HUNTER_X_HUNTER: ListedSeries = {
  * the rest under a placeholder until their issues draw them. Its book
  * thresholds are checked on A Wiki of Ice and Fire, its episodes on the Game
  * of Thrones Wiki, and its Italian names, which follow the Italian dub, on
- * Italian Wikipedia (owner, 2026-10-26). The show ran past the books, so no chapter
- * is its last adapted one.
+ * Italian Wikipedia (owner, 2026-10-26). The show ran past the books, so no
+ * chapter is its last adapted one.
  */
 const GAME_OF_THRONES: ListedSeries = {
   description: GAME_OF_THRONES_SERIES,

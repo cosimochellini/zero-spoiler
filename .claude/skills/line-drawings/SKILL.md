@@ -22,11 +22,13 @@ beside this one; read it before you draw, review or audit that series:
 - Game of Thrones (palette, the show as the reference, one-medium stages):
   [`game-of-thrones.md`](game-of-thrones.md).
 
-The worked example is One Piece's Franky, both stages, in
-`src/data/series/one-piece/art/water-seven.ts`: the forearm of the first
-years (ep 235) and the forearm of the two years (ep 517, PR #192), drawn over
-the same wrench and bolt. Render them with `npm run art:sheet -- franky` and
-keep the sheet open while you draw.
+The worked example for the pen, the volume and the shared geometry is One
+Piece's Franky, both stages, in `src/data/series/one-piece/art/water-seven.ts`:
+the forearm of the first years (ep 235) and the forearm of the two years
+(ep 517, PR #192), drawn over the same wrench and bolt. Render them with
+`npm run art:sheet -- franky` and keep the sheet open while you draw. The
+first forearm predates [Recognisable first](#recognisable-first): under it, the
+weapon his arc shows belongs in that first drawing.
 
 ## Recognisable first
 
@@ -105,7 +107,7 @@ Grade every drawing you make or review. A is the target. A true, recognisable
 B may ship when the pull request says it is a B, and review rates it P3 at most
 (owner rulings, #457, #593, #761). A C never ships.
 
-- **A, the standard.** Franky's two forearms are the model:
+- **A, the standard.** Franky's two forearms are the model of the craft:
   - **One hero object, with volume.** A 3/4 view, a second face, a cuff seen
     from below: something that says the object is solid. A flat outline is B.
   - **The accent on the identity mark only.**
@@ -170,7 +172,10 @@ spreads its sagas' timelines into it; see its file).
 
 A stage is never skipped because it is hard to draw: find a composition that
 reads at 56 px. The one exception is a change in the episode the record opens
-in, which belongs in the first drawing.
+in, which belongs in the first drawing. A stage a series' own rules cap or
+defer (a chapter the anime has not reached, a second manga-only stage, a
+medium's last point) waits as an issue or an owner ruling, as that series'
+file says; it is not a missing stage.
 
 **What keeps the drawing as it is:**
 
@@ -212,8 +217,9 @@ in, which belongs in the first drawing.
    a book, or a licensed stream. Note each reference as chapter and page, or
    episode and timestamp, for the pull request's Sources and rights section;
    when you cannot view it, write what the wiki establishes, marked "not
-   viewed", for the human author to check. Reference images stay on your
-   machine: commit, upload and paste none. Draw by eye; a trace is not a
+   viewed", for the human author to check. The wiki's gallery and image search
+   results are leads, not permission. Reference images stay on your machine:
+   commit, upload and paste none. Draw by eye; a trace is not a
    drawing.
 2. **Render the before.** `npm run art:sheet -- <id>` writes every stage of
    the record to `.gate/art/<id>.png` (`--out` to move it; `--series <slug>`
