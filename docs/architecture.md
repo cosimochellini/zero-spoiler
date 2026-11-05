@@ -159,7 +159,7 @@ those only one medium names in the stage are `source`-only, and those the other
 medium meets in a later season or book keep that later gate. It opened before
 its drawings: Eddard, Jon, Daenerys and Tyrion have their own, Eddard's with a
 death stage, the Winterfell household's are in `art/winterfell.ts` (#854), with
-five stages, and the southern cast's are in `art/south.ts` (#1051), with three.
+four stages, and the southern cast's are in `art/south.ts` (#1051), with three.
 Every other record maps to a shared placeholder in `art/index.ts`, `PERSON` for
 a character and `PLACE` for a place, until its own issue draws it, so the
 drawing tests hold it like any series. Its 23 places (#853) are the ones a scene
@@ -286,7 +286,7 @@ checks this block.
 | Characters        | 123                                                 |
 | Places            | 23                                                  |
 | Saga modules      | 1                                                   |
-| Line drawings     | 146, one per record, plus 9 redrawings of 9 records |
+| Line drawings     | 146, one per record, plus 8 redrawings of 8 records |
 | Chronicle stories | 0, for 0 characters                                 |
 
 <!-- End of the generated counts. -->
