@@ -82,7 +82,7 @@ function pageOf(size, palette, body, style) {
  * @param {Palette} palette The series' colours.
  * @returns {string} The page.
  */
-export function squareHtml(strokes, tint, palette) {
+function squareHtml(strokes, tint, palette) {
   return pageOf(
     SQUARE,
     palette,
