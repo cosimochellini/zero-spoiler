@@ -449,7 +449,7 @@ export const season1: ThronesSaga = {
         it: 'La regina dei Sette Regni, moglie di re Robert, che arriva a Grande Inverno con la corte.',
         en: 'The queen of the Seven Kingdoms, King Robert’s wife, who comes to Winterfell with the court.',
       },
-      visual: { art: 'cersei-lannister', tint: 'red' },
+      visual: { art: 'cersei-lannister', tint: 'ocher' },
     },
     // Show: rides into Winterfell in the white cloak of the king’s guard and is
     // named in "Winter Is Coming". Books: Eddard I, Ned picks out Ser Jaime
@@ -493,7 +493,7 @@ export const season1: ThronesSaga = {
         it: 'Il signore di Castel Granito, padre della regina e dei suoi fratelli, alla testa dell’esercito dei Lannister.',
         en: 'The lord of Casterly Rock, father of the queen and her brothers, at the head of the Lannister army.',
       },
-      visual: { art: 'tywin-lannister', tint: 'vermilion' },
+      visual: { art: 'tywin-lannister', tint: 'ocher' },
     },
     // Show: named as the prince at the arrival in "Winter Is Coming". Books:
     // Eddard I, Ned recognises Prince Joffrey among the riders.
@@ -804,7 +804,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere di statura enorme, detto la Montagna, fratello maggiore di Sandor Clegane.',
         en: 'A knight of enormous size, called the Mountain, Sandor Clegane’s elder brother.',
       },
-      visual: { art: 'gregor-clegane', tint: 'wine' },
+      visual: { art: 'gregor-clegane', tint: 'sand' },
     },
     // Show: called to the lists and gives Sansa a rose, "The Wolf and the Lion"
     // (episode 5); named in episode 3 without appearing. Books: Sansa II, rides
@@ -3155,7 +3155,10 @@ export const season1: ThronesSaga = {
         it: 'Eddard Stark lo assume perché insegni a sua figlia Arya a usare la spada. Le insegna il modo di combattere di Braavos, partendo da una spada di legno. Per tutti gli altri, le loro sono lezioni di danza.',
         en: 'Eddard Stark hires him to teach his daughter Arya to use a sword. He teaches her the Braavosi way of fighting, starting with a wooden sword. To everyone else, these are dancing lessons.',
       },
-      status: [{ episode: 3, chapter: 23, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 23, value: 'alive' },
+        { episode: 8, chapter: 51, value: 'presumed-dead' },
+      ],
       affiliation: [
         {
           episode: 3,
