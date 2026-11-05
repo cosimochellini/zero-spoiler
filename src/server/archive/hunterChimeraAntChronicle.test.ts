@@ -5,6 +5,7 @@ import { HUNTER_X_HUNTER_ARCHIVE as archive } from '~/data/series/hunter-x-hunte
 import { chimeraAnt } from '~/data/series/hunter-x-hunter/records/chimera-ant'
 import { chimeraAntPhase1Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-2.chronicle'
+import { chimeraAntPhase3Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-3.chronicle'
 import type { Entity, Story, Timeline } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 
@@ -15,13 +16,14 @@ import { type Reader, readerFor } from './reader.server'
 const PHASES: Record<string, Timeline<Story>>[] = [
   chimeraAntPhase1Chronicles,
   chimeraAntPhase2Chronicles,
+  chimeraAntPhase3Chronicles,
 ]
 const AUTHORED = PHASES.flatMap((phase) => Object.entries(phase))
 const STORIES = new Set(
   AUTHORED.flatMap(([, stories]) => stories.map((row) => row.value)),
 )
 const CAST = chimeraAnt.entries.filter(
-  (entry) => entry.kind === 'character' && entry.revealedAtChapter <= 222,
+  (entry) => entry.kind === 'character' && entry.revealedAtChapter <= 260,
 )
 
 const GYRO_REBIRTH = chimeraAntPhase2Chronicles.gyro.find(
@@ -29,6 +31,13 @@ const GYRO_REBIRTH = chimeraAntPhase2Chronicles.gyro.find(
 )
 if (GYRO_REBIRTH === undefined) {
   throw new Error('Missing manga-only Gyro rebirth')
+}
+
+const KOMUGI_WAGER = chimeraAntPhase3Chronicles.komugi.find(
+  (story) => story.episode === 105,
+)
+if (KOMUGI_WAGER === undefined) {
+  throw new Error('Missing Komugi wager recap')
 }
 
 function characterFor(id: string): Entity {
@@ -81,6 +90,17 @@ function titlesAt(row: Boundary, date: number, locale: Locale): string[] {
 }
 
 describe('the Chimera Ant chronicles (#910)', () => {
+  it.each(AUTHORED)('uses the Italian dub names in %s', (id, stories) => {
+    for (const { value } of stories) {
+      expect(value.title.it, id).not.toMatch(
+        /\b(?:Morel|Knov|Youpi|Yupi|Ikalgo|Welfin|Kalluto|Flutter)\b/u,
+      )
+      expect(value.body.it, id).not.toMatch(
+        /\b(?:Morel|Knov|Youpi|Yupi|Ikalgo|Welfin|Kalluto|Flutter)\b/u,
+      )
+    }
+  })
+
   it.each(AUTHORED)('attaches every authored story to %s', (id, stories) => {
     expect(archive.dossierOf(characterFor(id))?.chronicle).toStrictEqual(
       expect.arrayContaining(stories),
@@ -99,6 +119,22 @@ describe('the Chimera Ant chronicles (#910)', () => {
 })
 
 describe.each(LOCALES)('the Chimera Ant stories in %s', (locale) => {
+  it('retells Komugi’s wager once the manga names her', () => {
+    const row: Boundary = {
+      character: characterFor('komugi'),
+      date: 257,
+      mode: 'chapter',
+      story: KOMUGI_WAGER.value,
+    }
+
+    expect(titlesAt(row, 256, locale)).not.toContain(
+      KOMUGI_WAGER.value.title[locale],
+    )
+    expect(titlesAt(row, 257, locale)).toContain(
+      KOMUGI_WAGER.value.title[locale],
+    )
+  })
+
   it('keeps Gyro’s rebirth in the manga', () => {
     const rebirth = GYRO_REBIRTH
     const row: Boundary = {

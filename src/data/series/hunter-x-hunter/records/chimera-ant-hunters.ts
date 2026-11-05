@@ -1,6 +1,7 @@
 import type { LocalizedText, Relationship } from '~/data/types'
 
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
+import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import type { HunterSaga } from './saga'
 
 /** Where Netero's Hunters stand, as their dossiers say it. */
@@ -122,7 +123,10 @@ const rows = {
 export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
     'palm-siberia': {
-      chronicle: chimeraAntPhase2Chronicles['palm-siberia'],
+      chronicle: [
+        ...chimeraAntPhase2Chronicles['palm-siberia'],
+        ...chimeraAntPhase3Chronicles['palm-siberia'],
+      ],
       relationships: [
         { episode: 86, chapter: 200, value: [rows.palmKnov, rows.palmGon] },
         // The date: Gon keeps his promise the day after she asks, chapter
@@ -216,7 +220,10 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'knov': {
-      chronicle: chimeraAntPhase2Chronicles.knov,
+      chronicle: [
+        ...chimeraAntPhase2Chronicles.knov,
+        ...chimeraAntPhase3Chronicles.knov,
+      ],
       relationships: [
         {
           episode: 86,
@@ -288,7 +295,10 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'morel-mackernasey': {
-      chronicle: chimeraAntPhase2Chronicles['morel-mackernasey'],
+      chronicle: [
+        ...chimeraAntPhase2Chronicles['morel-mackernasey'],
+        ...chimeraAntPhase3Chronicles['morel-mackernasey'],
+      ],
       relationships: [
         {
           episode: 86,

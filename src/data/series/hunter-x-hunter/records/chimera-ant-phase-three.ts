@@ -1,5 +1,6 @@
 import type { Relationship } from '~/data/types'
 
+import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import type { HunterSaga } from './saga'
 
 const CHIMERA_ANTS = { it: 'Formichimere', en: 'Chimera Ants' }
@@ -227,6 +228,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
     ],
     dossiers: {
       meleoron: {
+        chronicle: chimeraAntPhase3Chronicles.meleoron,
         relationships: [
           // He shows himself to Gon, chapter 241 / episode 100.
           { episode: 100, chapter: 241, value: [rows.meleoronGon] },
@@ -284,6 +286,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         ],
       },
       bihorn: {
+        chronicle: chimeraAntPhase3Chronicles.bihorn,
         role: { it: 'Formichimera', en: 'Chimera Ant' },
         log: {
           it: 'Pike lo cita durante uno scontro.',
@@ -293,6 +296,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         status: [{ episode: 97, chapter: 227, value: 'alive' }],
       },
       flutter: {
+        chronicle: chimeraAntPhase3Chronicles.flutter,
         // He spies for Hagya's squad from chapter 235 / episode 100 and
         // guides Ikalgo's shots in chapter 238 / episode 101, but the anime
         // opens Hagya only at 106 (chapter 252's scene): each medium keeps
@@ -332,6 +336,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         status: [{ episode: 100, chapter: 235, value: 'alive' }],
       },
       pell: {
+        chronicle: chimeraAntPhase3Chronicles.pell,
         relationships: [
           {
             episode: 96,
@@ -360,6 +365,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         status: [{ episode: 96, chapter: 226, value: 'deceased' }],
       },
       komugi: {
+        chronicle: chimeraAntPhase3Chronicles.komugi,
         relationships: [
           {
             episode: 103,
@@ -405,6 +411,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         status: [{ episode: 103, chapter: 257, value: 'alive' }],
       },
       remora: {
+        chronicle: chimeraAntPhase3Chronicles.remora,
         relationships: [
           {
             episode: 101,
@@ -431,6 +438,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         status: [{ episode: 101, chapter: 238, value: 'alive' }],
       },
       ikalgo: {
+        chronicle: chimeraAntPhase3Chronicles.ikalgo,
         // Episode 101 tells both the cave (chapter 238) and his turn
         // (chapter 241), and a timeline takes one entry per episode, so the
         // cave is the manga's alone and the anime opens on the turn.
@@ -559,6 +567,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         ],
       },
       welfin: {
+        chronicle: chimeraAntPhase3Chronicles.welfin,
         relationships: [
           {
             episode: 104,
@@ -594,6 +603,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         ],
       },
       bloster: {
+        chronicle: chimeraAntPhase3Chronicles.bloster,
         relationships: [
           {
             episode: 104,
@@ -626,6 +636,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         ],
       },
       bizeff: {
+        chronicle: chimeraAntPhase3Chronicles.bizeff,
         relationships: [
           {
             episode: 135,
@@ -674,6 +685,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         ],
       },
       tsukuma: {
+        chronicle: chimeraAntPhase3Chronicles.tsukuma,
         role: { it: 'Agente di polizia', en: 'Police officer' },
         log: {
           it: 'Parla in un servizio televisivo.',

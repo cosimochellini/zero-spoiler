@@ -23,32 +23,32 @@ import { DOC_PATH } from './chronicle-verification.mjs'
 
 const hunter = await filedArchiveOf('hunter-x-hunter')
 
-/** Every character of the log, One Piece's then Hunter x Hunter's. */
-const characters = [...onePieceCharacters, ...hunter.characters]
-
-/** What the log holds for each id, both series' sources side by side. */
-const SOURCES = { ...CHRONICLE_SOURCES, ...HUNTER_X_HUNTER_SOURCES }
-
-/**
- * A character's dossier, from whichever series files it.
- * @param {object} character The character record.
- * @returns {object | undefined} Its dossier.
- */
-function dossierOf(character) {
-  return onePieceDossierOf(character) ?? hunter.dossierOf(character)
+/** The log keeps each series' characters, dossiers and evidence together. */
+const ARCHIVES = {
+  'one-piece': {
+    characters: onePieceCharacters,
+    dossierOf: onePieceDossierOf,
+    sources: CHRONICLE_SOURCES,
+  },
+  'hunter-x-hunter': {
+    characters: hunter.characters,
+    dossierOf: hunter.dossierOf,
+    sources: HUNTER_X_HUNTER_SOURCES,
+  },
 }
 
-/** Every story the archive holds, flattened, with its character beside it. */
-const STORIES = characters.flatMap((character) => {
-  return (dossierOf(character)?.chronicle ?? []).map((story) => {
-    return {
+/** Every story with its series-qualified character id. */
+const STORIES = Object.entries(ARCHIVES).flatMap(([series, archive]) =>
+  archive.characters.flatMap((character) =>
+    (archive.dossierOf(character)?.chronicle ?? []).map((story) => ({
+      series,
       id: character.id,
       episode: story.episode,
       medium: story.source,
       title: story.value.title.en,
-    }
-  })
-})
+    })),
+  ),
+)
 
 const DOCUMENT = readFileSync(DOC_PATH, 'utf8')
 
@@ -97,11 +97,11 @@ const HEADING =
  * One table line read as a story row, or `null` when the line is the header,
  * the alignment rule, or not a table line at all.
  * @param {string} line The document line.
- * @param {object} section The heading groups the line sits under.
+ * @param {object | undefined} section The heading groups the line sits under.
  * @returns {null | object} The row.
  */
 function rowIn(line, section) {
-  if (!line.startsWith('|')) {
+  if (section === undefined || !line.startsWith('|')) {
     return null
   }
 
@@ -116,6 +116,7 @@ function rowIn(line, section) {
   }
 
   return {
+    series: section.series,
     id: section.id,
     name: section.name,
     threshold: Number(section.threshold),
@@ -133,18 +134,23 @@ function rowIn(line, section) {
 function rowsInDocument() {
   const rows = []
   let section
+  let series = 'one-piece'
 
   for (const line of DOCUMENT.split('\n')) {
+    if (line === '# Hunter x Hunter') {
+      series = 'hunter-x-hunter'
+      section = undefined
+      continue
+    }
     const heading = HEADING.exec(line)
 
     if (heading !== null) {
-      section = heading.groups
-    } else if (section !== undefined) {
-      const row = rowIn(line, section)
-
-      if (row !== null) {
-        rows.push(row)
-      }
+      section = { ...heading.groups, series }
+      continue
+    }
+    const row = rowIn(line, section)
+    if (row !== null) {
+      rows.push(row)
     }
   }
 
@@ -159,16 +165,17 @@ const ROWS = rowsInDocument()
  * @returns {string} The line.
  */
 function asLine(entry) {
-  return `${entry.id} @${entry.episode} — ${entry.title}`
+  return `${entry.series}/${entry.id} @${entry.episode} — ${entry.title}`
 }
 
 /**
  * The character the archive files under an id, if it files one.
  * @param {string} id The record's id.
+ * @param {string} series The series containing that id.
  * @returns {object | undefined} The character record.
  */
-function filed(id) {
-  return characters.find((character) => character.id === id)
+function filed(id, series) {
+  return ARCHIVES[series]?.characters.find((character) => character.id === id)
 }
 
 describe('the chronicle verification log', () => {
@@ -183,8 +190,10 @@ describe('the chronicle verification log', () => {
 
   it('heads every section with the character the archive files', () => {
     for (const row of ROWS) {
-      expect(row.name, row.id).toBe(filed(row.id)?.name.en)
-      expect(row.threshold, row.id).toBe(filed(row.id)?.revealedAtEpisode)
+      expect(row.name, row.id).toBe(filed(row.id, row.series)?.name.en)
+      expect(row.threshold, row.id).toBe(
+        filed(row.id, row.series)?.revealedAtEpisode,
+      )
     }
   })
 
@@ -200,8 +209,9 @@ describe('the chronicle verification log', () => {
   it('keeps the sources beside the script in step with the document', () => {
     const expected = STORIES.map((story) => {
       const source =
-        SOURCES[story.id]?.[`${story.episode}:${story.medium}`]
-        ?? SOURCES[story.id]?.[story.episode]
+        ARCHIVES[story.series]?.sources[story.id]?.[
+          `${story.episode}:${story.medium}`
+        ] ?? ARCHIVES[story.series]?.sources[story.id]?.[story.episode]
 
       return JSON.stringify([asLine(story), source?.source, source?.note])
     }).toSorted(byString())
