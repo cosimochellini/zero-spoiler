@@ -146,22 +146,18 @@ export const CHIMERA_ANT_PLACE_DRAWINGS = {
     { d: 'M8 150 H24 M136 150 H152', role: 'ambient' },
     shadow(80, 156, 58),
   ],
-  // The town's chalkboard hung between two posts, the slate in tint, the
-  // challenge rubbed out to smears, chalk and duster on the ledge: Killua
-  // reads the assassins' message on it in episode 85 / chapter 199, and
-  // finds it erased when Palm meets them there.
+  // The town's message board hung between two posts, its face in tint
+  // with two blank notices pinned to it and a rail beneath: Killua reads
+  // the assassins' message on it in chapter 199 / episode 85, and Gon and
+  // Killua agree to meet at it in chapter 217. No lettering is drawn.
   'doli-city': [
     { d: 'M24 150 V40 H32 V150 M120 146 V48 H126 V146' },
     { d: 'M24 40 L28 36 H36 L32 40 M36 36 V146 L32 150', role: 'soft' },
     { d: 'M32 54 L120 62 V118 L32 126 Z' },
     { d: 'M38 61 L114 68 V112 L38 119 Z', role: 'accent' },
-    {
-      d: 'M46 82 l10 -8 M52 86 l14 -12 M62 88 l14 -12 M74 86 l12 -10 M50 104 l10 -8 M60 106 l12 -10',
-      role: 'ambient',
-    },
-    { d: 'M88 80 Q96 76 104 82 M84 100 Q92 96 98 100', role: 'soft' },
+    { d: 'M46 72 L70 74 V96 L46 94 Z M58 75 V77', role: 'soft' },
+    { d: 'M82 76 L104 78 V94 L100 98 L82 96 Z M100 98 V94 H104 M93 79 V81' },
     { d: 'M32 126 L120 118 V122 L32 130' },
-    { d: 'M56 125 l8 -1 M92 118 V114 L104 113 V117', role: 'soft' },
     {
       d: 'M33 60 l2 -2 M33 84 l2 -2 M33 108 l2 -2 M33 134 l2 -2',
       role: 'ambient',

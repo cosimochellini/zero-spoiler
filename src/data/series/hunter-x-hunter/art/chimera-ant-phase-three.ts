@@ -481,27 +481,17 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
 /** The phase's drawings that change with the story: Komugi's death. */
 export const chimeraAntPhaseThreeRedrawn: Redrawings = {
   komugi: [
-    // The same board with the game left as it was, the stack gone down to
-    // one piece, and two pieces lying on the floor beside it, one in tint:
-    // chapter 339 shows her dead beside the King with two gungi pieces by
-    // them, and episode 148 adapts it. No body and no hands are drawn.
+    // The same board with the game left as it was, and two pieces lying
+    // on the floor beside it: chapter 339 shows her dead beside the King
+    // with two gungi pieces by them, and episode 148 adapts it. No body
+    // and no hands are drawn.
     {
       episode: 148,
       chapter: 339,
       value: [
-        ...KOMUGI_BOARD,
-        {
-          d: 'M32 108 L79.4 130.9 M52 102 L70.4 110.9 M106.1 128.1 L110 130 M72 96 L78.1 98.9 M97.1 108.1 L104.9 111.9 M122 120.2 L130 124 M26.5 121 L70.5 107.8 M93.5 100.9 L106.5 97 M41 128 L75.4 117.7 M97 111.2 L105 108.8 M55.5 135 L79.5 127.8 M102.5 120.9 L109.9 118.7 M131.5 112.2 L135.5 111',
-          role: 'soft',
-        },
-        {
-          d: 'M95.8 103.8 L88.7 100.6 L78.8 100.6 L71.7 103.8 L71.7 108.2 L78.8 111.4 L88.7 111.4 L95.8 108.2 Z M71.7 108.2 V114.2 L78.8 117.4 H88.7 L95.8 114.2 V108.2 M78.8 111.4 V117.4 M88.7 111.4 V117.4',
-          role: 'soft',
-        },
-        ...KOMUGI_PIECES,
+        ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.komugi.slice(0, -1),
         {
           d: 'M46 157.8 L39 154.6 L29 154.6 L22 157.8 L22 162.2 L29 165.4 L39 165.4 L46 162.2 Z M22 162.2 V168.2 L29 171.4 H39 L46 168.2 V162.2 M29 165.4 V171.4 M39 165.4 V171.4',
-          role: 'accent',
         },
         {
           d: 'M140 158.8 L133 155.6 L123 155.6 L116 158.8 L116 163.2 L123 166.4 L133 166.4 L140 163.2 Z M116 163.2 V169.2 L123 172.4 H133 L140 169.2 V163.2 M123 166.4 V172.4 M133 166.4 V172.4',

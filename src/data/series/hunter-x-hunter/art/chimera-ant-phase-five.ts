@@ -130,6 +130,8 @@ export const chimeraAntPhaseFiveRedrawn: Redrawings = {
     {
       episode: 136,
       chapter: 316,
+      // Chapter 316 names the toy sword; the episode 136 synopsis does not.
+      source: 'chapter',
       value: [
         {
           d: 'M50 120 L106 50 Q112 44 120 42 Q120 50 114 58 L60 128',
