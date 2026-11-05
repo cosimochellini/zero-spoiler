@@ -77,9 +77,9 @@ const HOOP: Stroke[] = [
  * Arya Stark: Needle, the slim sword Jon has made for her, stood on its
  * point: a small pommel, the wrapped grip, a thin crossguard and a blade
  * hardly wider than the line, which is the accent. He gives it to her in
- * episode 2 and in Jon II (chapter 11), after her own threshold in both
- * media, so it is a stage; until then she shows the placeholder (owner,
- * #854).
+ * episode 2 and in Jon II (chapter 11), within her first season and her
+ * first book, so it is her first drawing: the object every reader knows her
+ * by (owner, 2026-11-05, #1058).
  */
 const NEEDLE: Stroke[] = [
   { d: circle(84, 34, 4) },
@@ -519,16 +519,12 @@ export const WINTERFELL_DRAWINGS = {
   'hodor': STABLE,
   'osha': SPEAR,
   'mordane': NEEDLEWORK,
+  'arya-stark': NEEDLE,
   'jory-cassel': [...HELM, shadow(80, 132, 44)],
 } satisfies Drawings
 
 /** Their later stages, each with its true pin in each medium. */
 export const winterfellRedrawn: Redrawings = {
-  'arya-stark': [
-    // Needle, from the episode and the chapter Jon gives it to her: "The
-    // Kingsroad" (episode 2) and Jon II (chapter 11).
-    { episode: 2, chapter: 11, value: NEEDLE },
-  ],
   'bran-stark': [
     // The broken tower he climbs, its corner seen in 3/4 with the stone
     // courses, the handholds and the high window in the accent: the book

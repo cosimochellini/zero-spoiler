@@ -129,16 +129,13 @@ const PLACE: Stroke[] = [
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), with the four leads drawn for the
  * launch here (owner, #856); every other record
- * shows `PERSON` or `PLACE` until its own issue draws it. Arya Stark keeps
- * `PERSON` until #1058 rules on her first drawing, and has Needle as a stage
- * from episode 2. `satisfies` rather than an annotation, so `ArtId` below
- * stays the literal keys.
+ * shows `PERSON` or `PLACE` until its own issue draws it. `satisfies`
+ * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
   ...SOUTH_DRAWINGS,
   'eddard-stark': ICE_STANDING,
-  'arya-stark': PERSON,
   'jon-snow': RUNT,
   'jeor-mormont': PERSON,
   'aemon': PERSON,
