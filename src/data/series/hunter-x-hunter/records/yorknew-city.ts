@@ -1,5 +1,6 @@
 import type { PlaceDossier } from '~/data/types'
 
+import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga, HunterVocabulary } from './saga'
 import { yorknewCityChronicles } from './yorknew-city.chronicle'
@@ -855,6 +856,8 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.feitan,
         ...greedIslandReturningChronicles.feitan,
+
+        ...chimeraAntPhase3Chronicles.feitan,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -912,6 +915,8 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.nobunaga,
         ...greedIslandReturningChronicles.nobunaga,
+
+        ...chimeraAntPhase3Chronicles.nobunaga,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -932,6 +937,8 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.phinks,
         ...greedIslandReturningChronicles.phinks,
+
+        ...chimeraAntPhase3Chronicles.phinks,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -964,6 +971,8 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.shalnark,
         ...greedIslandReturningChronicles.shalnark,
+
+        ...chimeraAntPhase3Chronicles.shalnark,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -1195,7 +1204,10 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'bonolenov': {
-      chronicle: yorknewCityChronicles.bonolenov,
+      chronicle: [
+        ...yorknewCityChronicles.bonolenov,
+        ...chimeraAntPhase3Chronicles.bonolenov,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Quando Quoll divide la Brigata in gruppi, lui finisce con Franklin e Hisoka.',
@@ -1256,6 +1268,8 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.shizuku,
         ...greedIslandReturningChronicles.shizuku,
+
+        ...chimeraAntPhase3Chronicles.shizuku,
       ],
       role: TROUPE_MEMBER,
       log: {

@@ -135,6 +135,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 93 (2011), Episode 94 (2011), Chapter 217, Chapter 218.',
     },
+    95: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_95_(2011)',
+      note: 'Checked Chapter 222, Chapter 223, Episode 95 (2011).',
+    },
+    98: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_98_(2011)',
+      note: 'Checked Chapter 230, Episode 98 (2011).',
+    },
+    99: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_99_(2011)',
+      note: 'Checked Chapter 231, Chapter 232, Chapter 233, Episode 99 (2011). Independent verifier correction: Corrected finishing tactic: fallen tree and gust disable flying opponent, rather than one enemy used against the other.',
+    },
+    102: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_102_(2011)',
+      note: 'Checked Chapter 241, Chapter 242, Episode 102 (2011).',
+    },
   },
   'mito-freecss': {
     1: {
@@ -501,6 +517,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 219.',
     },
+    98: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_98_(2011)',
+      note: 'Checked Chapter 230, Episode 98 (2011).',
+    },
+    101: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_101_(2011)',
+      note: 'Checked Chapter 238, Chapter 239, Chapter 240, Chapter 241, Episode 101 (2011).',
+    },
+    107: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_107_(2011)',
+      note: 'Checked Chapter 255, Episode 107 (2011).',
+    },
   },
   'menchi': {
     6: {
@@ -812,6 +840,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     72: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
       note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72 establish membership and finding exorcist, not later motives.',
+    },
+    97: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)',
+      note: 'Authoring correction: checked Chapter 225, Chapter 226, Chapter 227, Chapter 228, Episode 97 (2011). Anime/chapter order differs here.',
     },
   },
   'gotoh': {
@@ -1233,6 +1265,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
     },
+    97: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)',
+      note: 'Checked Chapter 227, Chapter 228, Episode 97 (2011).',
+    },
   },
   'feitan': {
     43: {
@@ -1254,6 +1290,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     65: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
       note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
+    },
+    97: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)',
+      note: 'Checked Chapter 228, Chapter 229, Episode 97 (2011).',
     },
   },
   'uvogin': {
@@ -1357,6 +1397,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
       note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72: newcomer and negotiation; no mechanism invented.',
     },
+    97: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)',
+      note: 'Final returning-cast coverage audit: Chapter 229 and Episode 97 show Nobunaga calling Shalnark for help with an undisclosed job after the Meteor City fighting. Phinks first hopes Chrollo is calling. No job details or outcome are inferred. Chapter endpoint: https://hunterxhunter.fandom.com/wiki/Chapter_229. Independent correction: Phinks complains about waiting, without anger attributed to the caller’s identity.',
+    },
   },
   'owl': {
     45: {
@@ -1392,6 +1436,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     66: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
+    },
+    96: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)',
+      note: 'Checked Chapter 224, Chapter 226, Episode 96 (2011).',
+    },
+    97: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)',
+      note: 'Checked Chapter 229, Episode 97 (2011).',
     },
   },
   'light-nostrade': {
@@ -1436,6 +1488,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     66: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
+    },
+    96: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)',
+      note: 'Authoring correction: checked Chapter 225, Chapter 226, Chapter 227, Episode 96 (2011). Anime/chapter order differs here.',
     },
   },
   'zepile': {
@@ -1532,6 +1588,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     55: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'Chapter 108 and episode 55. His bandages and the members who stay at the hideout are on the chapter pages only. Checked on the episode page and the chapter pages.',
+    },
+    96: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)',
+      note: 'Checked Chapter 225, Chapter 227, Episode 96 (2011). Independent verifier correction: Removed unverified attribution of tribal exposition to direct speech; describe visible music-producing movements.',
     },
   },
   'eliza': {
@@ -1767,6 +1827,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 93 (2011), Chapter 216, Chapter 217.',
     },
+    109: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_109_(2011)',
+      note: 'Checked Chapter 259, Episode 109 (2011). Independent verifier correction: Corrected to explicit En monitoring and response to danger, without inferring same care as King or repositioning.',
+    },
   },
   'baro': {
     '83:chapter': {
@@ -1819,11 +1883,27 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_214',
       note: 'Read Chapter214. Episode107 is ordering only: the anime equivalent91 precedes the anime naming gate106; the manga opening already uses ordering number106.',
     },
+    '106:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_106_(2011)',
+      note: 'Anime-only opening at the verified episode 106 naming gate; the earlier manga opening belongs to phase 1. The church confrontation begins by episode 106; no borrowed surfing ability or outcome is revealed here.',
+    },
+    '107:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_107_(2011)',
+      note: 'Checked Chapter 253, Chapter 254, Episode 107 (2011). Independent verification: split by medium to retain the earlier manga departure at ordering episode 107/chapter 214; anime battle 107/chapter 254, manga battle ordering 108/chapter 254.',
+    },
+    '108:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_107_(2011)',
+      note: 'Checked Chapter 253, Chapter 254, Episode 107 (2011). Independent verification: split by medium to retain the earlier manga departure at ordering episode 107/chapter 214; anime battle 107/chapter 254, manga battle ordering 108/chapter 254.',
+    },
   },
   'pike': {
     '80:chapter': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_190',
       note: 'Read the MediaWiki API synopses: Chapter 190. Integration correction: no Zazan marker because her episode gate is 84, after this entry’s ordering coordinate. The commander remains unnamed in the prose.',
+    },
+    '97:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_228',
+      note: 'Manga-only subject: the name Pike is not established in the anime.',
     },
   },
   'zazan': {
@@ -1839,6 +1919,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_91_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 91 (2011), Chapter 214.',
     },
+    '96': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)',
+      note: 'Checked Chapter 224, Episode 96 (2011).',
+    },
+    '97': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)',
+      note: 'Checked Chapter 228, Chapter 229, Episode 97 (2011).',
+    },
   },
   'cheetu': {
     79: {
@@ -1852,6 +1940,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     95: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 94 (2011), Episode 95 (2011), Chapter 220, Chapter 221.',
+    },
+    104: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_104_(2011)',
+      note: 'Checked Chapter 244, Chapter 245, Chapter 246, Chapter 247, Chapter 248, Episode 104 (2011).',
     },
   },
   'peggy': {
@@ -1983,6 +2075,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 93 (2011), Chapter 216, Chapter 217.',
     },
+    103: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_103_(2011)',
+      note: 'Checked Chapter 243, Chapter 244, Chapter 245, Episode 103 (2011).',
+    },
+    105: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_105_(2011)',
+      note: 'Checked Chapter 249, Episode 105 (2011).',
+    },
+    108: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_108_(2011)',
+      note: 'Checked Chapter 257, Chapter 258, Episode 108 (2011). Independent verifier correction: Corrected to important guest; protection promise is not asserted before Chapter 259/Episode 109.',
+    },
   },
   'dr-lee': {
     '92:chapter': {
@@ -2036,6 +2140,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     93: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 93 (2011), Chapter 216, Chapter 217. Independent verifier correction: shared explanation uses king as a title, omitting inheritance and personal connections not explicit in the episode synopsis.',
+    },
+    108: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_108_(2011)',
+      note: 'Checked Chapter 255, Chapter 256, Chapter 257, Chapter 258, Episode 108 (2011).',
+    },
+    109: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_109_(2011)',
+      note: 'Checked Chapter 259, Chapter 260, Episode 109 (2011).',
     },
   },
   'shoot-mcmahon': {
@@ -2091,6 +2203,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 218, Chapter 220.',
     },
+    106: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_106_(2011)',
+      note: 'Checked Chapter 250, Chapter 251, Chapter 252, Episode 106 (2011).',
+    },
+    107: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_107_(2011)',
+      note: 'Checked Chapter 254, Episode 107 (2011).',
+    },
   },
   'knov': {
     86: {
@@ -2105,6 +2225,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 220.',
     },
+    106: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_106_(2011)',
+      note: 'Checked Chapter 250, Chapter 251, Chapter 252, Episode 106 (2011).',
+    },
   },
   'morel-mackernasey': {
     86: {
@@ -2118,6 +2242,116 @@ export const HUNTER_X_HUNTER_SOURCES = {
     92: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 92 (2011), Chapter 215. Independent verifier correction: shared promise narrowed to non-human-eating condition and protection of Colt; lifetime and both-beneficiary scope omitted because episode synopsis compresses them.',
+    },
+    95: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_95_(2011)',
+      note: 'Checked Chapter 223, Episode 95 (2011).',
+    },
+    104: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_104_(2011)',
+      note: 'Checked Chapter 244, Chapter 245, Chapter 246, Chapter 247, Chapter 248, Episode 104 (2011).',
+    },
+    107: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_107_(2011)',
+      note: 'Checked Chapter 253, Chapter 254, Episode 107 (2011).',
+    },
+  },
+  'bizeff': {
+    '135:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_250',
+      note: 'Checked Chapter 250.',
+    },
+  },
+  'bloster': {
+    104: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_104_(2011)',
+      note: 'Checked Chapter 246, Episode 104 (2011).',
+    },
+  },
+  'welfin': {
+    104: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_104_(2011)',
+      note: 'Checked Chapter 246, Episode 104 (2011).',
+    },
+  },
+  'komugi': {
+    103: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_103_(2011)',
+      note: 'Checked Chapter 244, Chapter 245, Chapter 257, Episode 103 (2011).',
+    },
+    108: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_108_(2011)',
+      note: 'Chapter 257 has Nen and the exchange of names; chapter 258 adds the bird rescue. All occur by episode 108. Corrected the combined story’s chapter to 258.',
+    },
+    105: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_105_(2011)',
+      note: 'Episode 105 and Chapter 249 show the wager, the King’s apology and Komugi refusing to play until he receives treatment. The manga recap opens at Chapter 257, behind her personal naming gate; the anime opens at Episode 105. Komugi’s unanchored record prevents this delayed recap from becoming a conversion anchor.',
+    },
+  },
+  'ikalgo': {
+    '107': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_107_(2011)',
+      note: 'Checked Chapter 255, Episode 107 (2011).',
+    },
+    '102:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_241',
+      note: 'Checked Chapter 241.',
+    },
+    '101:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_101_(2011)',
+      note: 'Episode 101 ends with the rescue; Chapter 241 has Ikalgo carrying Killua. Separate medium entries avoid combining the anime rescue with the earlier shared opening at episode 101.',
+    },
+    '101:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_238',
+      note: 'Manga opening at chapter 238; anime combines this rescue from the water and the later rescue of Killua in episode 101.',
+    },
+  },
+  'remora': {
+    '101:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_238',
+      note: 'Checked Chapter 238.',
+    },
+  },
+  'flutter': {
+    100: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_100_(2011)',
+      note: 'Checked Chapter 235, Chapter 236, Episode 100 (2011).',
+    },
+    104: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_104_(2011)',
+      note: 'Checked Chapter 246, Chapter 248, Episode 104 (2011).',
+    },
+  },
+  'meleoron': {
+    98: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_98_(2011)',
+      note: 'Checked Chapter 231, Chapter 232, Chapter 233, Chapter 241, Episode 98 (2011). Independent verifier correction: Opening motive narrowed to observable concealed watching.',
+    },
+    102: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_102_(2011)',
+      note: 'Checked Chapter 241, Chapter 242, Episode 102 (2011). Independent verifier correction: Shared text keeps foster father unnamed because Peggy is a manga-only record.',
+    },
+    108: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_108_(2011)',
+      note: 'Checked Chapter 256, Episode 108 (2011).',
+    },
+  },
+  'bihorn': {
+    '97:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_227',
+      note: 'Checked Chapter 227.',
+    },
+  },
+  'pell': {
+    '96:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)',
+      note: 'Authoring correction: episode 96 includes the capture and autopilot deaths. Combined into one anime opening; manga Pell remains unnamed and has no chronicle.',
+    },
+  },
+  'tsukuma': {
+    '96:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_224',
+      note: 'Checked Chapter 224.',
     },
   },
 }

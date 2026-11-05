@@ -1,5 +1,6 @@
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
+import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import type { HunterSaga } from './saga'
 
 const SQUADRON_LEADER = { it: 'Comandante di divisione', en: 'Squadron Leader' }
@@ -18,6 +19,8 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase1Chronicles.zazan,
         ...chimeraAntPhase2Chronicles.zazan,
+
+        ...chimeraAntPhase3Chronicles.zazan,
       ],
       relationships: [
         // Pike is the manga's alone, so the anime keeps only Pokkle.
@@ -86,7 +89,10 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     pike: {
-      chronicle: chimeraAntPhase1Chronicles.pike,
+      chronicle: [
+        ...chimeraAntPhase1Chronicles.pike,
+        ...chimeraAntPhase3Chronicles.pike,
+      ],
       relationships: [
         {
           episode: 84,
@@ -137,6 +143,8 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase1Chronicles.hagya,
         ...chimeraAntPhase2Chronicles.hagya,
+
+        ...chimeraAntPhase3Chronicles.hagya,
       ],
       relationships: [
         {

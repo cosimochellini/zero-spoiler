@@ -1,3 +1,4 @@
+import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga } from './saga'
 import { zoldyckChronicles } from './zoldyck.chronicle'
@@ -394,6 +395,8 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...zoldyckChronicles.kalluto,
         ...greedIslandReturningChronicles.kalluto,
+
+        ...chimeraAntPhase3Chronicles.kalluto,
       ],
       role: { it: 'Fratello di Killua', en: 'Killua’s brother' },
       log: {
