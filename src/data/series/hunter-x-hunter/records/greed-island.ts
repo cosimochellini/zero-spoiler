@@ -648,7 +648,21 @@ export const greedIsland: HunterSaga = {
           ],
         },
       ],
-      role: { it: 'Maestra di Nen', en: 'Nen teacher' },
+      role: [
+        {
+          episode: 62,
+          chapter: 137,
+          value: { it: 'Maestra di Nen', en: 'Nen teacher' },
+        },
+        {
+          episode: 141,
+          chapter: 326,
+          value: {
+            it: 'Hunter a due stelle, maestra di Nen',
+            en: 'Double-Star Hunter, Nen teacher',
+          },
+        },
+      ],
       log: {
         it: 'Segue Gon e Killua nel gioco e osserva le loro difficoltà contro i mostri. Interviene per mostrare come usare Gyo e offre di allenarli. Studia il Nen da quarant’anni.',
         en: 'She follows Gon and Killua through the game and watches them struggle against its monsters. She intervenes to demonstrate Gyo and offers to train them. She has studied Nen for forty years.',

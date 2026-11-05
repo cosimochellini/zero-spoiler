@@ -1,6 +1,6 @@
 {
   "name": "zero-spoiler",
-  "version": "1.85.0",
+  "version": "1.88.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "labels:sync": "node scripts/labels-sync.mjs",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix",
+    "og:images": "node scripts/og-images.mjs",
     "prepare": "lefthook install",
     "provenance:pin": "node scripts/provenance-pin.mjs",
     "start": "vite preview",

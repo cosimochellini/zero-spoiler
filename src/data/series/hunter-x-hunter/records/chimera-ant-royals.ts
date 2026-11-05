@@ -329,7 +329,10 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Compare accanto a Neferpito in cima al formicaio mentre si avvicinano i conigli di fumo mandati da Morau, e consiglia di aspettare e osservare. Risponde a ciò che Neferpito sta pensando prima che lo dica, si presenta come guardia reale e annuncia che Montowtoyupih si sveglierà presto.',
         en: 'He appears beside Neferpitou at the top of the nest as Morel’s smoke rabbits draw near, and advises waiting to see what they do. He answers what Neferpitou is thinking before it is said, introduces himself as a fellow Royal Guard and says that Menthuthuyoupi will soon awaken.',
       },
-      status: [{ episode: 86, chapter: 202, value: 'alive' }],
+      status: [
+        { episode: 86, chapter: 202, value: 'alive' },
+        { episode: 135, chapter: 314, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 86, chapter: 202, value: QUEENS_GUARD },
         // The King is born and the Guards kneel to him, chapter 213 and
@@ -375,7 +378,10 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Non è ancora uscito dal bozzolo, che pende nel formicaio. Shawapf dice a Neferpito che si sveglierà presto.',
         en: 'He has not hatched yet: his cocoon still hangs in the nest. Shaiapouf tells Neferpitou that he will soon awaken.',
       },
-      status: [{ episode: 86, chapter: 202, value: 'alive' }],
+      status: [
+        { episode: 86, chapter: 202, value: 'alive' },
+        { episode: 133, chapter: 310, value: 'deceased' },
+      ],
       affiliation: [
         { episode: 86, chapter: 202, value: QUEENS_GUARD },
         { episode: 91, chapter: 213, value: KINGS_GUARD },
@@ -504,13 +510,59 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             },
           ],
         },
+        {
+          episode: 128,
+          chapter: 299,
+          value: [
+            links.kingPitou,
+            {
+              character: 'shaiapouf',
+              type: {
+                it: 'Guardia che lo soccorre',
+                en: 'Guard who saves him',
+              },
+              summary: {
+                it: 'Gli offre parte del proprio corpo dopo l’esplosione.',
+                en: 'Offers part of his body after the blast.',
+              },
+            },
+            {
+              character: 'menthuthuyoupi',
+              type: {
+                it: 'Guardia che lo soccorre',
+                en: 'Guard who saves him',
+              },
+              summary: {
+                it: 'Lo trova dopo l’esplosione e gli offre parte del proprio corpo.',
+                en: 'Finds him after the blast and offers part of his body.',
+              },
+            },
+          ],
+        },
+        {
+          episode: 135,
+          chapter: 318,
+          value: [
+            {
+              character: 'komugi',
+              type: { it: 'Compagna di gungi', en: 'Gungi partner' },
+              summary: {
+                it: 'Le dice che il veleno è contagioso. Komugi resta e gli tiene la mano fino alla fine.',
+                en: 'He tells her the poison is contagious. Komugi stays and holds his hand to the end.',
+              },
+            },
+          ],
+        },
       ],
       role: { it: 'Re delle formichimere', en: 'King of the Chimera Ants' },
       log: {
         it: 'Nato prima del tempo, si apre la strada squarciando il ventre della regina e la lascia in fin di vita. Uccide un comandante di divisione che corre da lei invece di obbedirgli, fa pulire a Coluto il sangue dalla coda e lascia il formicaio con le tre guardie reali, in cerca di umani rari da mangiare. Prima di morire, la regina rivela il nome che ha scelto per lui e chiede che gli venga detto.',
         en: 'Born early, he tears his way out of the Queen’s womb and leaves her dying. He kills a Squadron Leader who runs to her instead of obeying him, makes Colt wipe the blood off his tail and leaves the nest with the three Royal Guards, in search of rare humans to eat. Before she dies, the Queen gives the name she chose for him and asks that he be told it.',
       },
-      status: [{ episode: 92, chapter: 215, value: 'alive' }],
+      status: [
+        { episode: 92, chapter: 215, value: 'alive' },
+        { episode: 135, chapter: 318, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 92,

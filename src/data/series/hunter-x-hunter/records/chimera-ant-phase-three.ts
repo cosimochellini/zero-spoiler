@@ -209,14 +209,14 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         },
         visual: { art: 'bloster', tint: 'blue' },
       },
-      // A caption names the director in chapter 250. Episode 105 gives his
-      // name only in narration, so it only orders him.
+      // A caption names the director in chapter 250. The anime names him
+      // in the news report at episode 135. Episode 105 is narration.
       {
         id: 'bizeff',
         kind: 'character',
-        revealedAtEpisode: 105,
+        revealedAtEpisode: 135,
         revealedAtChapter: 250,
-        source: 'chapter',
+        unanchored: true,
         name: { it: 'Bizeff', en: 'Bizeff' },
         summary: {
           it: 'Il direttore che governa il Golt Orientale per conto del re, uno dei pochi umani rimasti nel palazzo.',
@@ -277,7 +277,11 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           en: 'Watches Gon from hiding, unnoticed, while other Chimera Ants attack him.',
         },
         affiliation: [{ episode: 98, chapter: 241, value: CHIMERA_ANTS }],
-        status: [{ episode: 98, chapter: 241, value: 'alive' }],
+        status: [
+          { episode: 98, chapter: 241, value: 'alive' },
+          { episode: 132, chapter: 308, value: 'captured' },
+          { episode: 136, chapter: 316, value: 'alive' },
+        ],
       },
       bihorn: {
         role: { it: 'Formichimera', en: 'Chimera Ant' },
@@ -367,6 +371,20 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
                 summary: {
                   it: 'Gioca a gungi contro il re una partita dopo l’altra, e lui non riesce a batterla.',
                   en: 'Plays gungi against the King game after game, and he cannot beat her.',
+                },
+              },
+            ],
+          },
+          {
+            episode: 135,
+            chapter: 318,
+            value: [
+              {
+                character: 'meruem',
+                type: { it: 'Compagno di gungi', en: 'Gungi partner' },
+                summary: {
+                  it: 'Continua a giocare con lui dopo che le parla del veleno. Gli tiene la mano fino alla fine.',
+                  en: 'Keeps playing after he tells her about the poison. She holds his hand to the end.',
                 },
               },
             ],
@@ -563,7 +581,17 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           en: 'He says the King is so taken with gungi that he skips meals, and that the Royal Guards are on another level. He stops Bloster when he suggests stealing the King’s food.',
         },
         status: [{ episode: 104, chapter: 246, value: 'alive' }],
-        affiliation: [{ episode: 104, chapter: 246, value: KINGS_SERVICE }],
+        affiliation: [
+          { episode: 104, chapter: 246, value: KINGS_SERVICE },
+          {
+            episode: 136,
+            chapter: 315,
+            value: {
+              it: 'In viaggio per cercare Gyro',
+              en: 'Travelling to find Gyro',
+            },
+          },
+        ],
       },
       bloster: {
         relationships: [
@@ -588,12 +616,19 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           en: 'He worries about the food going to waste while the King skips meals, and suggests taking it. Then he agrees that the Royal Guards are on another level.',
         },
         status: [{ episode: 104, chapter: 246, value: 'alive' }],
-        affiliation: [{ episode: 104, chapter: 246, value: KINGS_SERVICE }],
+        affiliation: [
+          { episode: 104, chapter: 246, value: KINGS_SERVICE },
+          {
+            episode: 136,
+            chapter: 315,
+            value: { it: 'Abitante di NGL', en: 'Resident of NGL' },
+          },
+        ],
       },
       bizeff: {
         relationships: [
           {
-            episode: 105,
+            episode: 135,
             chapter: 250,
             source: 'chapter',
             value: [
@@ -622,11 +657,13 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           en: 'From the palace he deals with other countries and with East Gorteau’s organisations. Worn out by the work, he picks five women to be sent to him.',
         },
         status: [
-          { episode: 105, chapter: 250, source: 'chapter', value: 'alive' },
+          { episode: 135, chapter: 250, source: 'chapter', value: 'alive' },
+          { episode: 135, chapter: 315, source: 'episode', value: 'missing' },
+          { episode: 136, chapter: 315, source: 'episode', value: 'alive' },
         ],
         affiliation: [
           {
-            episode: 105,
+            episode: 135,
             chapter: 250,
             source: 'chapter',
             value: {

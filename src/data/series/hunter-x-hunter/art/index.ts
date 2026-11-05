@@ -21,6 +21,10 @@ import {
   chimeraAntNglRedrawn,
 } from './chimera-ant-ngl'
 import {
+  CHIMERA_ANT_PHASE_FIVE_DRAWINGS,
+  chimeraAntPhaseFiveRedrawn,
+} from './chimera-ant-phase-five'
+import {
   CHIMERA_ANT_PHASE_FOUR_DRAWINGS,
   chimeraAntPhaseFourRedrawn,
 } from './chimera-ant-phase-four'
@@ -38,6 +42,7 @@ import {
   CHIMERA_ANT_SQUADS_DRAWINGS,
   chimeraAntSquadsRedrawn,
 } from './chimera-ant-squads'
+import { ELECTION_DRAWINGS } from './election'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
@@ -130,6 +135,7 @@ export const DRAWINGS = {
   ...CHAPTER_ONE_DRAWINGS,
   ...CHIMERA_ANT_PLACE_DRAWINGS,
   ...CHIMERA_ANT_PHASE_FOUR_DRAWINGS,
+  ...CHIMERA_ANT_PHASE_FIVE_DRAWINGS,
   ...CHIMERA_ANT_PHASE_THREE_DRAWINGS,
   ...CHIMERA_ANT_HUNTERS_DRAWINGS,
   ...CHIMERA_ANT_NGL_DRAWINGS,
@@ -139,6 +145,7 @@ export const DRAWINGS = {
   ...TRICK_TOWER_DRAWINGS,
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
+  ...ELECTION_DRAWINGS,
   ...HEAVENS_ARENA_DRAWINGS,
   ...YORKNEW_CITY_DRAWINGS,
   ...GREED_ISLAND_DRAWINGS,
@@ -1066,4 +1073,5 @@ export const REDRAWINGS: Redrawings = {
   ...chimeraAntSquadsRedrawn,
   ...chimeraAntReturningRedrawn,
   ...chimeraAntPhaseFourRedrawn,
+  ...chimeraAntPhaseFiveRedrawn,
 }

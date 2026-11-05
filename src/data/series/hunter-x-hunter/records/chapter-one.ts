@@ -88,6 +88,14 @@ export const chapterOne: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter found under enemy control',
           },
         },
+        {
+          episode: 136,
+          chapter: 316,
+          value: {
+            it: 'Hunter rinato come formichimera',
+            en: 'Hunter reborn as a Chimera Ant',
+          },
+        },
       ],
       log: {
         it: 'Arriva sull’Isola Balena in cerca di indizi su Ging, il suo maestro, che gli ha assegnato come ultima prova il compito di trovarlo. Salva Gon da un orso-volpe e lo rimprovera per essersi avvicinato al suo territorio.',
@@ -97,6 +105,7 @@ export const chapterOne: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         { episode: 76, chapter: 1, value: 'alive' },
         // Neferpitou holds his head, chapter 199 and episode 85.
         { episode: 85, chapter: 199, value: 'deceased' },
+        { episode: 136, chapter: 316, value: 'alive' },
       ],
       affiliation: [
         {

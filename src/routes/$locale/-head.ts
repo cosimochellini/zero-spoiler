@@ -24,7 +24,10 @@ import { absoluteUrl } from '~/lib/seo/site'
 import { describeSocial, type MetaTag } from '~/lib/seo/tags'
 import type { DocumentHead } from '~/lib/view/records'
 
-/** The social card, drawn once for the whole site by `scripts/make-icons.mjs`. */
+/**
+ * The social card, drawn once for the whole site by `scripts/make-icons.mjs`.
+ * An open record's page has its own (`scripts/og-images.mjs`).
+ */
 const SOCIAL_IMAGE = '/og-card.png'
 
 /** What a route knows about itself when the head is written. */
@@ -50,6 +53,7 @@ function describePage(page: PageDescription): HeadTags {
   const url = absoluteUrl(path)
   const dictionary = getDictionary(page.locale)
   const siteName = translate(dictionary, 'site.name')
+  const { image } = page.head
 
   return {
     links: [
@@ -67,8 +71,8 @@ function describePage(page: PageDescription): HeadTags {
       { name: 'description', content: page.head.description },
       ...describeSocial({
         description: page.head.description,
-        imageAlt: translate(dictionary, 'seo.imageAlt'),
-        imageUrl: absoluteUrl(SOCIAL_IMAGE),
+        imageAlt: image?.alt ?? translate(dictionary, 'seo.imageAlt'),
+        imageUrl: absoluteUrl(image?.card ?? SOCIAL_IMAGE),
         locale: page.locale,
         siteName,
         title: page.head.title,
@@ -81,6 +85,7 @@ function describePage(page: PageDescription): HeadTags {
         type: 'application/ld+json',
         children: pageJsonLd({
           description: page.head.description,
+          ...(image !== undefined && { image: absoluteUrl(image.square) }),
           kind: page.kind,
           locale: page.locale,
           siteName,

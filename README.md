@@ -84,9 +84,8 @@ design is in [docs/architecture.md](docs/architecture.md).
 
 One Piece has 500+ characters, 120+ devil fruits and about 40 places, from the
 first episode to the latest arc. Hunter x Hunter currently covers the Hunter
-Exam, the Heavens Arena, Yorknew City and Greed Island, from recruitment to the
-finale, and Chimera Ant through Netero’s fight at the palace assault, with 150+
-characters and about thirty-five places. Game of Thrones currently covers the
+Exam, Heavens Arena, Yorknew City, Greed Island, Chimera Ant and Election, with
+175+ characters and about forty places. Game of Thrones currently covers the
 first season and the first book, with 120+ characters and 20+ places. All three
 series are available in Italian and English. Every One Piece and Hunter x Hunter
 entry has its own line drawing made for this project, and some are redrawn from

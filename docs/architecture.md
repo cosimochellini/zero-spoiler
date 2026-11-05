@@ -46,6 +46,13 @@ gates.
   Trial cookies are restricted to that demo and yield to a saved bookmark.
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
+- A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
+  are the one exception: static files at addresses built from its slug, so
+  anyone who asks for one gets it. The sitemap lists the square of every record
+  both sources tell; a record of one source only is not listed. They hold the
+  first drawing and the words at the record's own threshold, and no page under
+  fog names them. The fog is an editorial promise kept by the pages, not access
+  control (`src/lib/crawler.ts`).
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
@@ -119,14 +126,18 @@ Tsukuma, and four visited places, Meteor City at the Troupe's visit in chapter
 the anime, which never says his manga name, opens it as Leol at episode 106
 (`Entity.episodeName`), and the manga gives the name in his role at chapter 240.
 Phase 4 (#1023) covers the palace assault through chapter 298, adds Taragetter
-in the manga, and opens Peijin in the anime at episode 116. Gyro is unanchored
-at 78 / 203. Silva, Killua's father, is named in episode 24 but in chapter 95 in
-the manga, so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown
-from chapter 71 but named in the episodes only from 53 and filed at 54 / 71
-(#900); Kikyo is named only in credits and supplements, and Hishita only in
-chapter 329 (#912). Every Hunter Exam character has a chronicle (#762); the
-Heavens Arena characters get theirs in #898. Records are not added from unnamed
-appearances or supplemental names.
+in the manga, and opens Peijin in the anime at episode 116. Phase 5 (#1024)
+files the finale through chapter 318 and episode 136, with the full cast
+reconciliation in the phase 5 inventory. Election (#912) files named characters
+and visited places through chapter 339 and episode 148, with placeholder art
+pending #913 and chronicles pending #914. Gyro is unanchored at 78 / 203. Silva,
+Killua's father, is named in episode 24 but in chapter 95 in the manga, so his
+record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but
+named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named
+only in credits and supplements, and Hishita only in chapter 329 (#912). Every
+Hunter Exam character has a chronicle (#762); the Heavens Arena characters get
+theirs in #898. Records are not added from unnamed appearances or supplemental
+names.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -171,6 +182,24 @@ content routes redirect under `/one-piece` before bookmark parameters are read.
 a content URL such as `/one-piece/en?ep=650` to set progress. `src/server.ts` is
 the Worker entry: it adds a `Link` header for the stylesheet and the fonts the
 root route preloads, which Cloudflare replays as a `103 Early Hints`.
+
+## Social pictures
+
+An open record page's head points `og:image` at a wide card
+(`/og/<series>/<locale>/<id>.png`, 1200×630: drawing, name, one line, site
+name). Its JSON-LD and its sitemap entry point at a square icon
+(`/og/<series>/<id>.png`, 600×600). A covered page and every other page keep
+`/og-card.png`. `npm run og:images` draws both pictures in Chrome, on the
+developer's machine. They are committed under `public/og/` and served as static
+assets, so the Worker never draws one. Each picture uses the record's first
+drawing, never a redrawing, and prints only what a reader standing at the
+record's own threshold reads in every source it is told in: a character's
+epithet, else its role; a fruit's type; a place's form and region; a ship's
+kind. The name is the one the episode reader is given, which is what a crawler's
+page title prints: a link preview is fetched as a crawler. Re-run the script
+after changing a record, a first drawing or the card layout. It draws only what
+changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
+orphaned.
 
 ## Localization
 
@@ -234,11 +263,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 197                                                   |
-| Characters        | 154                                                   |
-| Arcs, places      | 7 · 36                                                |
+| Records           | 229                                                   |
+| Characters        | 183                                                   |
+| Arcs, places      | 7 · 39                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 197, one per record, plus 35 redrawings of 35 records |
+| Line drawings     | 229, one per record, plus 41 redrawings of 39 records |
 | Chronicle stories | 345, for 108 characters                               |
 
 ### `game-of-thrones`

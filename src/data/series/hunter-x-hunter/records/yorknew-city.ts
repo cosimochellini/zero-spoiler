@@ -594,7 +594,21 @@ export const yorknewCity: HunterSaga = {
         ...yorknewCityChronicles['ging-freecss'],
         ...greedIslandReturningChronicles['ging-freecss'],
       ],
-      role: { it: 'Hunter, padre di Gon', en: 'Hunter, Gon’s father' },
+      role: [
+        {
+          episode: 37,
+          chapter: 66,
+          value: { it: 'Hunter, padre di Gon', en: 'Hunter, Gon’s father' },
+        },
+        {
+          episode: 137,
+          chapter: 319,
+          value: {
+            it: 'Hunter, membro dello Zodiaco',
+            en: 'Hunter, member of the Zodiacs',
+          },
+        },
+      ],
       log: {
         it: 'Da ragazzo è partito dall’Isola Balena. Dieci anni dopo è tornato con Gon in braccio e ha chiesto alla nonna di occuparsene, dicendo che lui e la madre si erano lasciati. A Gon ha lasciato una scatola con dentro un anello, una scheda di memoria e una cassetta: sul nastro chiede a Gon se vuole incontrarlo.',
         en: 'He left Whale Island as a boy. Ten years later he came back carrying Gon and asked his grandmother to look after him, saying that he and the mother had separated. He left Gon a box holding a ring, a memory card and a cassette: on the tape he asks Gon whether he wants to see him.',
@@ -604,6 +618,14 @@ export const yorknewCity: HunterSaga = {
         {
           episode: 37,
           value: { it: 'Associazione Hunter', en: 'Hunter Association' },
+        },
+        {
+          episode: 137,
+          chapter: 319,
+          value: {
+            it: 'Associazione Hunter, Zodiaco del Cinghiale',
+            en: 'Hunter Association, Boar of the Zodiacs',
+          },
         },
       ],
       // Chapter 65 tells it; pinned at the record's chapter (#459).

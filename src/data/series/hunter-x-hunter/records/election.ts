@@ -1,3 +1,6 @@
+import { ELECTION_PLACE_ENTRIES } from './election-places'
+import { ELECTION_POLITICS } from './election-politics'
+import { ELECTION_RESCUE } from './election-rescue'
 import type { HunterSaga } from './saga'
 
 /**
@@ -12,7 +15,7 @@ import type { HunterSaga } from './saga'
  */
 export const election: HunterSaga = {
   name: { it: 'Elezione', en: 'Election' },
-  dossiers: {},
+  dossiers: { ...ELECTION_POLITICS.dossiers, ...ELECTION_RESCUE.dossiers },
   entries: [
     {
       id: 'election-arc',
@@ -26,5 +29,8 @@ export const election: HunterSaga = {
       },
       visual: { art: 'election-arc', tint: 'lavender' },
     },
+    ...ELECTION_POLITICS.entries,
+    ...ELECTION_RESCUE.entries,
+    ...ELECTION_PLACE_ENTRIES,
   ],
 }

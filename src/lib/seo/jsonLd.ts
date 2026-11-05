@@ -22,6 +22,8 @@ export interface Crumb {
 /** Everything the graph is written from. */
 export interface JsonLdPage {
   description: string
+  /** An open record's square picture, which a search result may show. */
+  image?: string
   kind: PageKind
   locale: Locale
   siteName: string
@@ -94,6 +96,10 @@ function graphOf(page: JsonLdPage): string {
         'url': page.url,
         'inLanguage': page.locale,
         'isPartOf': { '@id': `${page.siteUrl}#website` },
+        ...(page.image !== undefined && {
+          image: page.image,
+          primaryImageOfPage: { '@type': 'ImageObject', 'url': page.image },
+        }),
       },
       ...breadcrumbs(page.trail, { name: page.title, url: '' }),
     ],

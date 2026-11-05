@@ -504,7 +504,30 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles['gon-freecss'],
         ...greedIslandReturningChronicles['gon-freecss'],
       ],
-      role: passedExam(1, 1),
+      role: [
+        ...passedExam(1, 1),
+        {
+          episode: 131,
+          chapter: 306,
+          value: {
+            it: 'Hunter trasformato dal Nen',
+            en: 'Hunter transformed by Nen',
+          },
+        },
+        {
+          episode: 136,
+          chapter: 316,
+          value: {
+            it: 'Hunter ricoverato in ospedale',
+            en: 'Hospitalized Hunter',
+          },
+        },
+        {
+          episode: 145,
+          chapter: 334,
+          value: { it: 'Hunter guarito', en: 'Recovered Hunter' },
+        },
+      ],
       log: {
         it: 'È cresciuto sull’Isola Balena con Myto, che lo cresce da quando era in fasce. Suo padre, Ging Freecss, è un Hunter che non ha mai conosciuto. Myto gli lascia sostenere l’esame solo se pesca il pesce più grosso della palude, sicura che non ci riuscirà; lui ce la fa con la sua canna. Parte con la nave per diventare Hunter e per sapere di più su suo padre.',
         en: 'He has grown up on Whale Island with Mito, who has raised him since he was a baby. His father, Ging Freecss, is a Hunter he has never met. Mito will let him take the exam only if he catches the biggest fish in the swamp, sure that he cannot; he does it with his rod. He sails to become a Hunter and to learn about his father.',
@@ -706,6 +729,14 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; his Nen back, he is to keep Neferpitou away from the King with Killua',
           },
         },
+        {
+          episode: 145,
+          chapter: 334,
+          value: {
+            it: 'Associazione Hunter, Hunter',
+            en: 'Hunter Association, Hunter',
+          },
+        },
       ],
       origin: [
         { episode: 1, chapter: 1, place: 'whale-island', value: WHALE_ISLAND },
@@ -739,7 +770,34 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles['leorio-paradinight'],
         ...greedIslandReturningChronicles['leorio-paradinight'],
       ],
-      role: passedExam(1, 2),
+      role: [
+        ...passedExam(1, 2),
+        {
+          episode: 141,
+          chapter: 326,
+          value: {
+            it: 'Hunter, candidato alla presidenza',
+            en: 'Hunter, candidate for chairman',
+          },
+        },
+        {
+          episode: 146,
+          chapter: 335,
+          value: {
+            it: 'Hunter, secondo alle elezioni',
+            en: 'Hunter, election runner-up',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 339,
+          source: 'episode',
+          value: {
+            it: 'Hunter, studente di medicina',
+            en: 'Hunter, medical student',
+          },
+        },
+      ],
       log: {
         it: 'Non vuole dire al capitano perché sostiene l’esame, poi ammette che è per i soldi e per quello che si possono comprare. I modi di Kurapika lo irritano, e quando insulta il suo clan i due salgono in coperta nella tempesta per battersi. Il duello finisce quando Katzo viene sbalzato fuori bordo e Gon si tuffa ad afferrarlo: Leorio e Kurapika prendono Gon per le gambe, e dopo fanno pace.',
         en: 'He will not tell the captain why he is taking the exam, then admits it is for money and what money buys. Kurapika’s manner gets under his skin, and when he insults Kurapika’s clan the two go up on deck in the storm to fight. The duel ends when Katzo is thrown overboard and Gon dives to catch him: Leorio and Kurapika grab Gon by the legs, and afterwards the two make up.',
@@ -847,7 +905,21 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles.kiriko,
         ...greedIslandReturningChronicles.kiriko,
       ],
-      role: { it: 'Navigatori', en: 'Navigators' },
+      role: [
+        {
+          episode: 2,
+          chapter: 4,
+          value: { it: 'Navigatori', en: 'Navigators' },
+        },
+        {
+          episode: 148,
+          chapter: 339,
+          value: {
+            it: 'Navigatori; il figlio prende il posto di Goto',
+            en: 'Navigators; the son takes Gotoh’s place',
+          },
+        },
+      ],
       log: {
         it: 'Padre, madre, un figlio e una figlia. I navigatori sanno dove si tiene l’esame di ogni anno e ci portano solo chi li convince: inscenano un’aggressione in casa loro, uno ferito a terra e un’altra portata via da una bestia, e guardano come reagisce ognuno. Gon li distingue dal viso e dalla voce, Kurapika riconosce i tatuaggi sul braccio della figlia, Leorio cura il ferito. Di notte portano in volo i tre fino all’esame.',
         en: 'Father, mother, a son and a daughter. The navigators know where each year’s exam is held and take there only those who impress them: they stage an attack in their own house, one of them wounded on the floor and another carried off by a beast, and watch how each applicant acts. Gon tells them apart by their faces and voices, Kurapika knows the tattoos on the daughter’s arm, Leorio tends the wounded man. At night they fly the three to the exam.',
@@ -999,6 +1071,14 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Associazione Hunter, Hunter; affronta la squadra di Razer in una partita di palla avvelenata mentre cerca un esorcista per Chrollo',
             en: 'Hunter Association, Hunter; facing Razor’s team in a dodgeball match while seeking an Exorcist for Chrollo',
+          },
+        },
+        {
+          episode: 142,
+          chapter: 327,
+          value: {
+            it: 'Associazione Hunter, Hunter; aiuta Illumi',
+            en: 'Hunter Association, Hunter; helps Illumi',
           },
         },
       ],
@@ -1422,6 +1502,14 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; is to keep Neferpitou away from the King with Gon',
           },
         },
+        {
+          episode: 147,
+          chapter: 338,
+          value: {
+            it: 'Associazione Hunter, Hunter; parte con sua sorella',
+            en: 'Hunter Association, Hunter; leaves with his sister',
+          },
+        },
       ],
       origin: [
         {
@@ -1512,10 +1600,24 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles.netero,
         ...greedIslandReturningChronicles.netero,
       ],
-      role: {
-        it: 'Presidente dell’Associazione Hunter',
-        en: 'Chairman of the Hunter Association',
-      },
+      role: [
+        {
+          episode: 6,
+          chapter: 12,
+          value: {
+            it: 'Presidente dell’Associazione Hunter',
+            en: 'Chairman of the Hunter Association',
+          },
+        },
+        {
+          episode: 135,
+          chapter: 318,
+          value: {
+            it: 'Ex presidente dell’Associazione Hunter',
+            en: 'Former Chairman of the Hunter Association',
+          },
+        },
+      ],
       log: {
         it: 'Arriva in dirigibile dopo che Menci ha bocciato tutti gli aspiranti. Le fa riconoscere di aver perso la calma e le propone di ripetere la prova, mostrando di persona come affrontarla.',
         en: 'He arrives by airship after Menchi has failed every applicant. He gets her to acknowledge that she lost her temper and proposes that she repeat the test, demonstrating how to attempt it herself.',

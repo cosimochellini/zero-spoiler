@@ -250,6 +250,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter evacuating the wounded',
           },
         },
+        {
+          episode: 140,
+          chapter: 325,
+          value: {
+            it: 'Hunter incaricato di preparare una stanza per Gon',
+            en: 'Hunter preparing a room for Gon',
+          },
+        },
       ],
       log: {
         it: 'Arriva con Netero e Morau per sterminare le formichimere, in giacca e cravatta. La sua allieva Pahm vuole unirsi a loro, anche se lui non voleva.',
@@ -264,6 +272,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Morau',
             en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Morel',
+          },
+        },
+        {
+          episode: 140,
+          chapter: 325,
+          value: {
+            it: 'Associazione Hunter; organizza le cure per Gon',
+            en: 'Hunter Association; arranges care for Gon',
           },
         },
       ],
@@ -350,7 +366,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: { it: 'Hunter', en: 'Hunter' },
+      role: [
+        { episode: 86, chapter: 199, value: { it: 'Hunter', en: 'Hunter' } },
+        {
+          episode: 141,
+          chapter: 326,
+          value: { it: 'Hunter a una stella', en: 'Single-Star Hunter' },
+        },
+      ],
       log: {
         it: 'Arriva con Netero e prende in giro Gon e Killua perché sono bambini. Poi spiega a Killua che uno scontro di Nen non si decide da chi ha più aura, perché nessuno conosce l’abilità dell’altro.',
         en: 'He arrives with Netero and mocks Gon and Killua for being children. Then he tells Killua that a Nen fight is not decided by who has more aura, since no one knows the other’s ability.',
@@ -365,6 +388,14 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Associazione Hunter, squadra di Netero; deve tenere Shawapf lontano dal re con Nobu',
             en: 'Hunter Association, Netero’s team; is to keep Shaiapouf away from the King with Knov',
+          },
+        },
+        {
+          episode: 140,
+          chapter: 325,
+          value: {
+            it: 'Associazione Hunter; organizza le cure per Gon',
+            en: 'Hunter Association; arranges care for Gon',
           },
         },
       ],
@@ -426,7 +457,11 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Deve tenersi il suo gettone di legno per un mese contro due avversari di cui non sa il nome. Decide di cercarli e di batterli per primo.',
         en: 'He must keep his wooden token for a month against two opponents whose names he does not know. He decides to find them and beat them first.',
       },
-      status: [{ episode: 86, chapter: 200, value: 'alive' }],
+      status: [
+        { episode: 86, chapter: 200, value: 'alive' },
+        { episode: 132, chapter: 308, value: 'captured' },
+        { episode: 136, chapter: 316, value: 'alive' },
+      ],
       affiliation: [
         { episode: 86, chapter: 200, value: MOREL_STUDENT },
         { episode: 91, chapter: 214, value: IN_NGL },
@@ -496,6 +531,25 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // invents; the manga's caption names him as NGL's kingpin in chapter 203.
     // The frozen texts keep to what both tell.
     'gyro': {
+      relationships: [
+        {
+          episode: 123,
+          chapter: 296,
+          value: [
+            {
+              character: 'welfin',
+              type: {
+                it: 'Amico della vita precedente',
+                en: 'Friend from his previous life',
+              },
+              summary: {
+                it: 'Welfang ricorda Gyro quando racconta a Calamaro della propria vita da umano.',
+                en: 'Welfin remembers Gyro when he tells Ikalgo about his life as a human.',
+              },
+            },
+          ],
+        },
+      ],
       role: { it: 'Capo nascosto di NGL', en: 'Hidden ruler of NGL' },
       log: {
         it: 'Gli uomini armati di NGL prendevano ordini da lui.',

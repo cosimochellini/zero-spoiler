@@ -272,6 +272,14 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Zoldyck family, apprentice butler',
           },
         },
+        {
+          episode: 140,
+          chapter: 324,
+          value: {
+            it: 'Famiglia Zoldick, apprendista maggiordoma; accompagna Killua e sua sorella',
+            en: 'Zoldyck family, apprentice butler; escorts Killua and his sister',
+          },
+        },
       ],
     },
     'gotoh': {
@@ -282,7 +290,10 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         it: 'Accoglie i tre amici negli alloggi dei maggiordomi in attesa di Killua. Chiede loro di indovinare in quale mano tiene una moneta e aumenta la velocità fino a renderla difficile da seguire. Gon supera la prova. Quando Killua arriva, gli chiede di non seguirlo.',
         en: 'He welcomes the three friends to the butlers’ quarters while they wait for Killua. He asks them to guess which hand holds a coin and moves faster until it becomes difficult to follow. Gon passes the test. When Killua arrives, he tells Gotoh not to follow him.',
       },
-      status: [{ episode: 25, chapter: 43, value: 'alive' }],
+      status: [
+        { episode: 25, chapter: 43, value: 'alive' },
+        { episode: 142, chapter: 327, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 25,
