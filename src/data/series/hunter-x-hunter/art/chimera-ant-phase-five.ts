@@ -68,9 +68,9 @@ export const chimeraAntPhaseFiveRedrawn: Redrawings = {
   ],
   menthuthuyoupi: [
     ...(chimeraAntRoyalsRedrawn['menthuthuyoupi'] ?? []),
-    // The same split cocoon fallen from the ceiling and lying on its side,
-    // its stalk torn: Shaiapouf finds Menthuthuyoupi dead by the truck,
-    // episode 133 / chapter 310. No body.
+    // His own object at rest, not a scene from the show: the same split
+    // cocoon laid on its side below its empty stalk. Shaiapouf finds
+    // Menthuthuyoupi dead, episode 133 / chapter 310. No body.
     {
       episode: 133,
       chapter: 310,

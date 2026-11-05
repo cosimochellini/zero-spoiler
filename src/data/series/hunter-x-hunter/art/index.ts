@@ -288,9 +288,7 @@ export const DRAWINGS = {
   ],
   // Mon's rucksack standing on its base, the top flap in tint over two
   // buckled straps, a pocket low on the front and the far side hatched: the
-  // heavy luggage he carries back to the camp, chapter 186 / episode 77. No
-  // claw: the anime has him show Kite one, the manga keeps it for chapter
-  // 187.
+  // heavy luggage he carries, chapter 186 / episode 77.
   'monta-yuras': [
     { d: 'M44 66 Q44 56 54 56 H100 Q110 56 110 66 V148 H44 Z' },
     { d: 'M110 66 L124 58 V142 L110 148 M54 56 L66 48 H112 Q124 48 124 58' },

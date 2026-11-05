@@ -71,10 +71,11 @@ export const chimeraAntPhaseFourRedrawn: Redrawings = {
       ],
     },
   ],
-  // One single-tooth geta, his object since the Hunter Exam, lying upside
-  // down at the bottom of a crater, its tooth in the air and the thong
-  // torn loose in tint: the Poor Man's Rose goes off when his heart stops,
-  // episode 126 / chapter 298. No cloud, no bomb and no body.
+  // His own object at rest, not a scene from the show: one single-tooth
+  // geta, his object since the Hunter Exam, upturned on broken ground, its
+  // tooth in the air and the thong loose in tint. The Poor Man's Rose goes
+  // off when his heart stops, episode 126 / chapter 298. No cloud, no bomb
+  // and no body.
   netero: [
     {
       episode: 126,
