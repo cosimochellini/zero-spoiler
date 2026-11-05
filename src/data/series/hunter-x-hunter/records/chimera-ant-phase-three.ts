@@ -2,6 +2,7 @@ import type { Relationship } from '~/data/types'
 
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
+import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
 import type { HunterSaga } from './saga'
 
 const CHIMERA_ANTS = { it: 'Formichimere', en: 'Chimera Ants' }
@@ -232,6 +233,8 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         chronicle: [
           ...chimeraAntPhase3Chronicles.meleoron,
           ...chimeraAntPhase4Chronicles.meleoron,
+
+          ...chimeraAntPhase5Chronicles.meleoron,
         ],
         relationships: [
           // He shows himself to Gon, chapter 241 / episode 100.
@@ -372,6 +375,8 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         chronicle: [
           ...chimeraAntPhase3Chronicles.komugi,
           ...chimeraAntPhase4Chronicles.komugi,
+
+          ...chimeraAntPhase5Chronicles.komugi,
         ],
         relationships: [
           {
@@ -454,6 +459,8 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         chronicle: [
           ...chimeraAntPhase3Chronicles.ikalgo,
           ...chimeraAntPhase4Chronicles.ikalgo,
+
+          ...chimeraAntPhase5Chronicles.ikalgo,
         ],
         // Episode 101 tells both the cave (chapter 238) and his turn
         // (chapter 241), and a timeline takes one entry per episode, so the
@@ -586,6 +593,8 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         chronicle: [
           ...chimeraAntPhase3Chronicles.welfin,
           ...chimeraAntPhase4Chronicles.welfin,
+
+          ...chimeraAntPhase5Chronicles.welfin,
         ],
         relationships: [
           {
@@ -625,6 +634,8 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         chronicle: [
           ...chimeraAntPhase3Chronicles.bloster,
           ...chimeraAntPhase4Chronicles.bloster,
+
+          ...chimeraAntPhase5Chronicles.bloster,
         ],
         relationships: [
           {
@@ -658,7 +669,10 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         ],
       },
       bizeff: {
-        chronicle: chimeraAntPhase3Chronicles.bizeff,
+        chronicle: [
+          ...chimeraAntPhase3Chronicles.bizeff,
+          ...chimeraAntPhase5Chronicles.bizeff,
+        ],
         relationships: [
           {
             episode: 135,

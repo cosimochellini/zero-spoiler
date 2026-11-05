@@ -6,6 +6,7 @@ import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
+import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
 import { CHIMERA_ANT_PHASE_FIVE } from './chimera-ant-phase-five'
 import { CHIMERA_ANT_PHASE_FOUR } from './chimera-ant-phase-four'
 import { CHIMERA_ANT_PHASE_THREE } from './chimera-ant-phase-three'
@@ -129,6 +130,8 @@ export const chimeraAnt: HunterSaga = {
         ...chimeraAntPhase3Chronicles.neferpitou,
 
         ...chimeraAntPhase4Chronicles.neferpitou,
+
+        ...chimeraAntPhase5Chronicles.neferpitou,
       ],
       relationships: [
         { episode: 84, chapter: 198, value: [PITOU_POKKLE] },

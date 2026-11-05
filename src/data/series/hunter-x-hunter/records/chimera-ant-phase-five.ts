@@ -1,3 +1,4 @@
+import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
 import type { HunterSaga } from './saga'
 
 export const CHIMERA_ANT_PHASE_FIVE: Pick<HunterSaga, 'dossiers' | 'entries'> =
@@ -18,6 +19,7 @@ export const CHIMERA_ANT_PHASE_FIVE: Pick<HunterSaga, 'dossiers' | 'entries'> =
     ],
     dossiers: {
       'ming-jol-ik': {
+        chronicle: chimeraAntPhase5Chronicles['ming-jol-ik'],
         role: {
           it: 'Ex capo del Golt Orientale',
           en: 'Former leader of East Gorteau',

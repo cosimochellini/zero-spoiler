@@ -155,6 +155,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_116_(2011)',
       note: 'Checked Chapter 273, Chapter 274, Chapter 275, Episode 116 (2011).',
     },
+    127: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_127_(2011)',
+      note: 'Chapter 300 and Episode 127: healing ends, Gon refuses Hakoware, takes Pitou to Peijin and leaves Komugi as hostage.',
+    },
+    131: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_131_(2011)',
+      note: 'Chapters 304–307 and Episode 131: full transformation, skull destruction, postmortem attack and final Jajanken. Episode 130 covers admission but not outcome.',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter 316 and Episode 136: doctor reports life support, Knov arranges specialists, Killua leaves to save Gon; no recovery included.',
+    },
   },
   'mito-freecss': {
     1: {
@@ -549,6 +561,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_124_(2011)',
       note: 'Checked Chapter 293, Chapter 294, Episode 124 (2011).',
     },
+    129: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_129_(2011)',
+      note: 'Chapters 302–303 and Episode 129: Godspeed escape, Komugi struggles, electrical damage to Pouf clone.',
+    },
+    131: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_131_(2011)',
+      note: 'Chapters 305–307 and Episode 131: clone destroyed, rush to Gon, postmortem attack and Killua’s warning.',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter 316 and Episode 136: Killua’s reflections, refusal of Knov’s invitation and departure. No later rescue method named.',
+    },
   },
   'menchi': {
     6: {
@@ -606,6 +630,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     126: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_126_(2011)',
       note: 'Checked Chapter 291, Chapter 292, Chapter 296, Chapter 297, Chapter 298, Episode 126 (2011).',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter318 and Episode136 complete election rules; message begins in Chapter315/Episode135. No named unfiled Zodiacs.',
     },
   },
   'lippo': {
@@ -952,6 +980,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     95: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_95_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 95 (2011), Chapter 222.',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter316 and Episode136: child’s explicit Kite name reveal; no Election-arc explanation imported.',
     },
   },
   'kon': {
@@ -1891,6 +1923,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_116_(2011)',
       note: 'Checked Chapter 273, Chapter 274, Chapter 275, Episode 116 (2011).',
     },
+    130: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_130_(2011)',
+      note: 'Chapter 304 and Episode 130: false Komugi rescue call; Pitou admits Kite is dead and cannot be revived.',
+    },
+    131: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_131_(2011)',
+      note: 'Chapters 305–307 and Episode 131: Pitou dies before Terpsichora’s stronger postmortem attack.',
+    },
   },
   'baro': {
     '83:chapter': {
@@ -2041,6 +2081,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 77 (2011), Episode 80 (2011), Chapter 187, Chapter 189. Reina’s opening is a recap delayed to her naming gate. The unnamed commander is not linked before Colt’s gate.',
     },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter315 and Episode136 establish human identity of Shidore at reunion. No earlier ant identity disclosure; mother not named across media.',
+    },
   },
   'haruna': {
     '77:episode': {
@@ -2050,6 +2094,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '78:episode': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_78_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 78 (2011).',
+    },
+    '136:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Episode136 reunion. Haruna’s record is anime-only; Chapter315 orders adapted scene but does not authorize manga visibility.',
     },
   },
   'kurt': {
@@ -2129,6 +2177,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_215',
       note: 'Read the MediaWiki API synopses: Chapter 215. Chapter215 continuation. Episode93 is ordering only, not an anime date: the anime92 source-specific opening contains this entire scene. The separate manga opening preserves the earlier naming gate214.',
     },
+    '136': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter316 and Episode136: Colt calls Morel about child saying name is Kite. No later explanation of rebirth mechanics.',
+    },
   },
   'meruem': {
     92: {
@@ -2162,6 +2214,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
     126: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_126_(2011)',
       note: 'Checked Chapter 296, Chapter 297, Chapter 298, Episode 126 (2011).',
+    },
+    128: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_128_(2011)',
+      note: 'Chapter 299 and Episode 128 complete feeding and Meruem giving guards his name; rescue begins Episode 127.',
+    },
+    132: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_132_(2011)',
+      note: 'Chapters 301–308 and Episode 132: amnesia, inherited abilities, return and capture of Knuckle/Meleoron.',
+    },
+    134: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_134_(2011)',
+      note: 'Chapters 312–313 and Episode 134: Welfin names Komugi, memories return, Meruem frees him.',
+    },
+    135: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
+      note: 'Chapters 314,317–318 and Episode 135: Palm agreement, reunion, contagious poison warning, final games and death.',
     },
   },
   'dr-lee': {
@@ -2215,6 +2283,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_121_(2011)',
       note: 'Checked Chapter 287, Chapter 288, Chapter 289, Episode 121 (2011).',
     },
+    128: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_128_(2011)',
+      note: 'Chapter 299 and Episode 128 finish offering cells; rescue begins Episode 127.',
+    },
+    133: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_133_(2011)',
+      note: 'Chapters308–310 and Episode133: agreement to hide Komugi, messenger, nosebleed and corpse. Corrected during authoring: removed poison cause because Chapter311/Episode134 explain it later.',
+    },
   },
   'shaiapouf': {
     86: {
@@ -2245,6 +2321,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_120_(2011)',
       note: 'Checked Chapter 283, Chapter 284, Episode 120 (2011). Independent verifier/root source correction: Shared Chapter 284/Episode 120 story omits the cocoon-core explanation revealed at Chapter 286.',
     },
+    128: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_128_(2011)',
+      note: 'Chapters 299,301 and Episode 128: cell sacrifice, amnesia discovery and plan to kill Komugi.',
+    },
+    130: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_130_(2011)',
+      note: 'Chapters 303–304 and Episode 130: electrical injury, removal of Gungi objects, false call using transformed voice.',
+    },
+    135: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
+      note: 'Chapters 311–314 and Episode 135: poison symptoms, failed concealment, corpse shown. Episode 134 has revelation but not corpse.',
+    },
   },
   'shoot-mcmahon': {
     86: {
@@ -2266,6 +2354,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     114: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_114_(2011)',
       note: 'Checked Chapter 266, Chapter 269, Chapter 272, Episode 114 (2011).',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter316 and Episode136 show injured Shoot hospitalized with Meleoron attending. No claimed recovery.',
     },
   },
   'knuckle-bine': {
@@ -2305,6 +2397,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_121_(2011)',
       note: 'Checked Chapter 288, Chapter 289, Episode 121 (2011).',
     },
+    128: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_128_(2011)',
+      note: 'Chapters300–301 and Episode128: decision to stay, refused Hakoware and invisible punch on Pouf clone.',
+    },
+    132: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_132_(2011)',
+      note: 'Chapter308 and Episode132: withdrawal considered, En detection, both captured alive.',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter316 and Episode136: hospital conversation and doctor’s warning, no recovery.',
+    },
   },
   'palm-siberia': {
     86: {
@@ -2331,6 +2435,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_124_(2011)',
       note: 'Checked Chapter 293, Chapter 294, Episode 124 (2011).',
     },
+    130: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_130_(2011)',
+      note: 'Chapters 301–304 and Episode130: tracking Pouf’s core, warning of King’s survival and three-target explanation.',
+    },
+    133: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_133_(2011)',
+      note: 'Chapters305,308–311 and Episode133: Komugi custody, underground refuge, crate and Palm’s forecast. Does not reveal poison mechanism early.',
+    },
+    135: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
+      note: 'Chapter314 and Episode135: Palm’s resistance, Meruem bowing, permission conditional on observation.',
+    },
   },
   'knov': {
     86: {
@@ -2352,6 +2468,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     121: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_121_(2011)',
       note: 'Checked Chapter 286, Chapter 289, Episode 121 (2011). Independent verifier/root source correction: Knov return, extraction and Palm question are Chapter 290, not 289; anime Episode 121 includes them.',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter316 and Episode136: no patient transfer, specialists brought in, Knov’s offer and Killua departure.',
     },
   },
   'morel-mackernasey': {
@@ -2391,11 +2511,23 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_121_(2011)',
       note: 'Checked Chapter 288, Chapter 289, Episode 121 (2011). Independent verifier/root source correction: Knov extraction completes in Chapter 290, not 289; anime Episode 121 includes it.',
     },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter316 and Episode136 complete Colt call. Report-confidence exchange is Episode135. No Beans name used before filing.',
+    },
   },
   'bizeff': {
     '135:chapter': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_250',
       note: 'Checked Chapter 250.',
+    },
+    '136': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter315 and Episode136: Bizeff survives, drives caravan toward Meteor City, change in outlook.',
+    },
+    '135:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
+      note: 'Anime-only opening at verified naming Episode135; Chapter250 is record’s ordering coordinate, not evidence for news. Episode135 reports Bizeff missing after palace destruction.',
     },
   },
   'bloster': {
@@ -2406,6 +2538,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     119: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_119_(2011)',
       note: 'Checked Chapter 279, Chapter 282, Chapter 283, Episode 119 (2011).',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter315 and Episode136: reunion reveals Shidore is Reina, Bloster credits Ikalgo and receives invitation. Mother unnamed here because Haruna anime-only.',
     },
   },
   'welfin': {
@@ -2425,6 +2561,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_123_(2011)',
       note: 'Checked Chapter 295, Chapter 296, Episode 123 (2011).',
     },
+    133: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_133_(2011)',
+      note: 'Chapters309–310 and Episode133: messenger agreement, release of women, Youpi confrontation. No claim Welfin killed Youpi.',
+    },
+    134: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_134_(2011)',
+      note: 'Chapters312–313 and Episode134: fear-induced change, Komugi trigger, release and declaration for Gyro.',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter315 and Episode136: departure for Meteor City and hope of Gyro there, not confirmed destination of Gyro.',
+    },
   },
   'komugi': {
     103: {
@@ -2442,6 +2590,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     112: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_112_(2011)',
       note: 'Checked Chapter 267, Chapter 268, Episode 112 (2011).',
+    },
+    127: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_127_(2011)',
+      note: 'Chapter300 and Episode127: awakening and hostage arrangement after surgery.',
+    },
+    135: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
+      note: 'Chapters314,317–318 and Episode135: reunion, name exchange, poison warning, decision to stay and last moments.',
     },
   },
   'ikalgo': {
@@ -2472,6 +2628,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '123': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_123_(2011)',
       note: 'Checked Chapter 295, Chapter 296, Episode 123 (2011).',
+    },
+    '133': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_133_(2011)',
+      note: 'Chapter309 and Episode133: underground plan, messenger and recognition of human-life comrade.',
+    },
+    '135': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
+      note: 'Chapter316 and Episode135: Palm tells Ikalgo it is over after observing final meeting; episode chronology differs.',
     },
   },
   'remora': {
@@ -2511,6 +2675,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_118_(2011)',
       note: 'Checked Chapter 280, Episode 118 (2011).',
     },
+    132: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_132_(2011)',
+      note: 'Chapters301,308 and Episode132: invisible attack precedes capture, no God’s Accomplice escape succeeds.',
+    },
+    136: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
+      note: 'Chapter316 and Episode136 show Meleoron beside Shoot; paragraph does not invent dialogue or recovery.',
+    },
   },
   'bihorn': {
     '97:chapter': {
@@ -2534,6 +2706,12 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '110:chapter': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_261',
       note: 'Checked Chapter 251, Chapter 261.',
+    },
+  },
+  'ming-jol-ik': {
+    135: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
+      note: 'Chapter315 and Episode135: news corpse is double; real leader’s thirty-year rural retirement, reading shown. No quotation from book.',
     },
   },
 }

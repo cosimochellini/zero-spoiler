@@ -4,6 +4,7 @@ import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
+import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { hunterExamChronicles } from './hunter-exam.chronicle'
 import { hunterExamRelationships } from './hunter-exam.relationships'
@@ -514,6 +515,8 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase3Chronicles['gon-freecss'],
 
         ...chimeraAntPhase4Chronicles['gon-freecss'],
+
+        ...chimeraAntPhase5Chronicles['gon-freecss'],
       ],
       role: [
         ...passedExam(1, 1),
@@ -1265,6 +1268,8 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase3Chronicles.killua,
 
         ...chimeraAntPhase4Chronicles.killua,
+
+        ...chimeraAntPhase5Chronicles.killua,
       ],
       role: [
         {
@@ -1621,6 +1626,8 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase2Chronicles.netero,
 
         ...chimeraAntPhase4Chronicles.netero,
+
+        ...chimeraAntPhase5Chronicles.netero,
       ],
       role: [
         {
