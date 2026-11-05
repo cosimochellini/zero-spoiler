@@ -43,8 +43,8 @@ const SQUARE = { width: 300, height: 300 }
 const CARD_ART = { x: 0, y: 0, width: 228, height: 285 }
 const SQUARE_ART = { x: 0, y: 0, width: 208, height: 260 }
 
-/** How far a long name may shrink to fit its lines (`fitName`). */
-export const FIT = { size: 46, floor: 24, lines: 2, leading: 1.04 }
+/** How far a long name may shrink to fit its lines (`FIT_NAME`). */
+const FIT = { size: 46, floor: 24, lines: 2, leading: 1.04 }
 
 // fallow-ignore-next-line security-sink -- a constant path under the repository
 const STYLESHEET = path.join(ROOT, 'src', 'styles', 'global.css')
@@ -57,6 +57,23 @@ const STYLESHEET = path.join(ROOT, 'src', 'styles', 'global.css')
 export const FONT_RULES = (
   readFileSync(STYLESHEET, 'utf8').match(/@font-face\s*\{[^}]*\}/gu) ?? []
 ).join('\n')
+
+/**
+ * Shrinks the name until it fits its lines, run in the page once the fonts
+ * have loaded so it measures the type that is drawn. Kept as text rather
+ * than a function: it is digested with the page (`hashOf`), and a function's
+ * own source is not the same under Vitest's transform as under Node.
+ */
+export const FIT_NAME = `(() => {
+  const name = document.querySelector('.name')
+  if (name === null) return
+  const fits = (size) =>
+    name.scrollWidth <= name.clientWidth &&
+    name.getBoundingClientRect().height <= size * ${FIT.leading} * ${FIT.lines} + 1
+  for (let size = ${FIT.size}; size > ${FIT.floor} && !fits(size); size -= 1) {
+    name.style.fontSize = (size - 1) + 'px'
+  }
+})()`
 
 const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }
 
@@ -137,7 +154,7 @@ export function cardHtml({ strokes, tint, name, line, brand }, palette) {
 
 /**
  * A short digest of what a picture is drawn from: its page, its fonts, the
- * scale it is captured at and the bounds its name is fitted to.
+ * scale it is captured at, and how its name is fitted.
  * @param {string} html The page.
  * @returns {string} Sixteen hex digits.
  */
@@ -145,7 +162,8 @@ export function hashOf(html) {
   return createHash('sha256')
     .update(html)
     .update(FONT_RULES)
-    .update(JSON.stringify({ SCALE, FIT }))
+    .update(FIT_NAME)
+    .update(String(SCALE))
     .digest('hex')
     .slice(0, 16)
 }
