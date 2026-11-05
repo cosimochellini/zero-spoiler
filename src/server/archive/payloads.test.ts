@@ -177,6 +177,12 @@ describe('every payload the server sends', () => {
   })
 })
 
+// A sweep runs one payload at every bookmark the series lists, in both
+// locales: Hunter x Hunter's `loadCharacter` takes about a second alone and
+// ran past the 5s default on a loaded CI runner (main at b955fa9d, #1078), as
+// the art sheet's archive import did (#279).
+const SWEEP_TIMEOUT = 30_000
+
 describe.each(SERIES)('every payload of $slug', (series) => {
   const { byDesign, payloads } = SWEEPS[series.slug] ?? {
     byDesign: {},
@@ -210,6 +216,7 @@ describe.each(SERIES)('every payload of $slug', (series) => {
 
       expect(leaks).toStrictEqual([])
     },
+    SWEEP_TIMEOUT,
   )
 
   // Sent as plain JSON (`~/lib/plain`): what `JSON.stringify` writes has to
