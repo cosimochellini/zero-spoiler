@@ -83,8 +83,8 @@ import { CHARACTER_DOSSIERS, sagas } from './sagas'
  *
  * Images: no photographs and no official artwork appear anywhere. Every record
  * has a line drawing of an object or a place that stands for it, drawn in
- * `~/data/series/one-piece/art`, and one colour for its main stroke. No faces, no logos: a
- * straw hat for the captain, three sheathed swords for the swordsman.
+ * `~/data/series/one-piece/art`, and one colour for its main stroke. No faces and no
+ * lettering: a straw hat for the captain, three sheathed swords for the swordsman.
  *
  * Places are filed at the episode that first shows them, and the ship's log
  * (`./places.ts`) adds the rest of what is known about each one at that

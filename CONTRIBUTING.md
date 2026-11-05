@@ -59,9 +59,9 @@ Check facts on lawful sources, write independently and record wiki URLs or
 chapter/page or episode/timestamp. Commit no series scans, frames, dialogue,
 subtitles or reference images; use no unofficial manga/anime links. Research
 quotations: at most two, each at most 12 words and 80 characters. Draw original
-paths by eye, never trace; mark unviewed references for human verification.
-Distinctive designs need an owner ruling before merge. Send rights
-claims/deadlines to the owner through the legal page's contact process.
+paths by eye, never trace; mark unviewed references for human verification. What
+a drawing may show follows the line-drawings skill. Send rights claims/deadlines
+to the owner through the legal page's contact process.
 
 ## Delivery and agents
 

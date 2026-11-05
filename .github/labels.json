@@ -32,12 +32,12 @@
   {
     "name": "area:art",
     "color": "c5def5",
-    "description": "Line drawings in src/data/series/one-piece/art"
+    "description": "Line drawings in src/data/series/<series>/art"
   },
   {
     "name": "area:records",
     "color": "c5def5",
-    "description": "Dossiers, statuses, fruits and places in src/data/series/one-piece/records"
+    "description": "Dossiers, statuses, fruits and places in src/data/series/<series>/records"
   },
   {
     "name": "area:chronicle",
