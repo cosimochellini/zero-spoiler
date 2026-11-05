@@ -3,6 +3,7 @@ import type { Relationship } from '~/data/types'
 import { CHIMERA_ANT_HUNTERS } from './chimera-ant-hunters'
 import { CHIMERA_ANT_NGL } from './chimera-ant-ngl'
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
+import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { CHIMERA_ANT_PHASE_FIVE } from './chimera-ant-phase-five'
 import { CHIMERA_ANT_PHASE_FOUR } from './chimera-ant-phase-four'
 import { CHIMERA_ANT_PHASE_THREE } from './chimera-ant-phase-three'
@@ -113,10 +114,16 @@ export const chimeraAnt: HunterSaga = {
     },
     'spinner-clow': {
       ...surveyDossier,
-      chronicle: chimeraAntPhase1Chronicles['spinner-clow'],
+      chronicle: [
+        ...chimeraAntPhase1Chronicles['spinner-clow'],
+        ...chimeraAntPhase2Chronicles['spinner-clow'],
+      ],
     },
     'neferpitou': {
-      chronicle: chimeraAntPhase1Chronicles.neferpitou,
+      chronicle: [
+        ...chimeraAntPhase1Chronicles.neferpitou,
+        ...chimeraAntPhase2Chronicles.neferpitou,
+      ],
       relationships: [
         { episode: 84, chapter: 198, value: [PITOU_POKKLE] },
         { episode: 85, chapter: 199, value: [PITOU_KITE, PITOU_POKKLE] },

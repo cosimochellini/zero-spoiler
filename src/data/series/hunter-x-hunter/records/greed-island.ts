@@ -1,5 +1,6 @@
 import type { PlaceDossier, Relationship } from '~/data/types'
 
+import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { greedIslandChronicles } from './greed-island.chronicle'
 import { greedIslandRelationships } from './greed-island.relationships'
 import type { HunterSaga, HunterVocabulary } from './saga'
@@ -634,7 +635,10 @@ export const greedIsland: HunterSaga = {
     },
 
     'biscuit-krueger': {
-      chronicle: greedIslandChronicles['biscuit-krueger'],
+      chronicle: [
+        ...greedIslandChronicles['biscuit-krueger'],
+        ...chimeraAntPhase2Chronicles['biscuit-krueger'],
+      ],
       relationships: [
         ...BISCUIT_ROWS,
         {

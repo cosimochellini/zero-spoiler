@@ -78,6 +78,7 @@ const CHRONICLE_CHAPTERS: Record<number, number> = {
   82: 194,
   83: 196,
   85: 199,
+  95: 222,
   136: 316,
 }
 

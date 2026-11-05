@@ -4,6 +4,7 @@ import { toldIn } from '~/data/reveal'
 import { HUNTER_X_HUNTER_ARCHIVE as archive } from '~/data/series/hunter-x-hunter/archive'
 import { chimeraAnt } from '~/data/series/hunter-x-hunter/records/chimera-ant'
 import { chimeraAntPhase1Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-1.chronicle'
+import { chimeraAntPhase2Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-2.chronicle'
 import type { Entity, Story, Timeline } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 
@@ -11,14 +12,24 @@ import { chronicleOf, chronicleRestOf } from './chronicle.server'
 import { homePage } from './home.server'
 import { type Reader, readerFor } from './reader.server'
 
-const PHASES: Record<string, Timeline<Story>>[] = [chimeraAntPhase1Chronicles]
+const PHASES: Record<string, Timeline<Story>>[] = [
+  chimeraAntPhase1Chronicles,
+  chimeraAntPhase2Chronicles,
+]
 const AUTHORED = PHASES.flatMap((phase) => Object.entries(phase))
 const STORIES = new Set(
   AUTHORED.flatMap(([, stories]) => stories.map((row) => row.value)),
 )
 const CAST = chimeraAnt.entries.filter(
-  (entry) => entry.kind === 'character' && entry.revealedAtChapter <= 198,
+  (entry) => entry.kind === 'character' && entry.revealedAtChapter <= 222,
 )
+
+const GYRO_REBIRTH = chimeraAntPhase2Chronicles.gyro.find(
+  (story) => story.source === 'chapter',
+)
+if (GYRO_REBIRTH === undefined) {
+  throw new Error('Missing manga-only Gyro rebirth')
+}
 
 function characterFor(id: string): Entity {
   const character = archive.getCharacter(id)
@@ -88,6 +99,21 @@ describe('the Chimera Ant chronicles (#910)', () => {
 })
 
 describe.each(LOCALES)('the Chimera Ant stories in %s', (locale) => {
+  it('keeps Gyro’s rebirth in the manga', () => {
+    const rebirth = GYRO_REBIRTH
+    const row: Boundary = {
+      character: characterFor('gyro'),
+      date: 203,
+      mode: 'chapter',
+      story: rebirth.value,
+    }
+
+    expect(titlesAt(row, 203, locale)).toContain(rebirth.value.title[locale])
+    expect(titlesAt({ ...row, mode: 'episode' }, 136, locale)).not.toContain(
+      rebirth.value.title[locale],
+    )
+  })
+
   it.each(BOUNDARIES)('opens $character.id at $mode $date', (row) => {
     const title = row.story.title[locale]
 

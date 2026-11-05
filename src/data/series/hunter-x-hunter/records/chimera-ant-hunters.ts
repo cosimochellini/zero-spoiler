@@ -1,5 +1,6 @@
 import type { LocalizedText, Relationship } from '~/data/types'
 
+import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import type { HunterSaga } from './saga'
 
 /** Where Netero's Hunters stand, as their dossiers say it. */
@@ -121,6 +122,7 @@ const rows = {
 export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
     'palm-siberia': {
+      chronicle: chimeraAntPhase2Chronicles['palm-siberia'],
       relationships: [
         { episode: 86, chapter: 200, value: [rows.palmKnov, rows.palmGon] },
         // The date: Gon keeps his promise the day after she asks, chapter
@@ -214,6 +216,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'knov': {
+      chronicle: chimeraAntPhase2Chronicles.knov,
       relationships: [
         {
           episode: 86,
@@ -285,6 +288,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'morel-mackernasey': {
+      chronicle: chimeraAntPhase2Chronicles['morel-mackernasey'],
       relationships: [
         {
           episode: 86,
@@ -401,6 +405,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'knuckle-bine': {
+      chronicle: chimeraAntPhase2Chronicles['knuckle-bine'],
       relationships: [
         {
           episode: 86,
@@ -476,6 +481,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'shoot-mcmahon': {
+      chronicle: chimeraAntPhase2Chronicles['shoot-mcmahon'],
       relationships: [
         {
           episode: 86,
@@ -531,6 +537,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // invents; the manga's caption names him as NGL's kingpin in chapter 203.
     // The frozen texts keep to what both tell.
     'gyro': {
+      chronicle: chimeraAntPhase2Chronicles.gyro,
       relationships: [
         {
           episode: 123,
@@ -580,6 +587,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'dr-lee': {
+      chronicle: chimeraAntPhase2Chronicles['dr-lee'],
       relationships: [
         {
           episode: 92,
