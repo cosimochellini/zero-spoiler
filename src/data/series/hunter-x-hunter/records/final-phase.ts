@@ -1,3 +1,4 @@
+import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { finalPhaseChronicles } from './final-phase.chronicle'
 import { finalPhaseRelationships } from './final-phase.relationships'
 import type { HunterSaga } from './saga'
@@ -62,7 +63,10 @@ export const finalPhase: HunterSaga = {
     },
     illumi: {
       relationships: finalPhaseRelationships.illumi,
-      chronicle: finalPhaseChronicles.illumi,
+      chronicle: [
+        ...finalPhaseChronicles.illumi,
+        ...chimeraAntPhase2Chronicles.illumi,
+      ],
       role: { en: 'Killua’s older brother', it: 'Fratello maggiore di Killua' },
       log: {
         en: 'He faces Killua in the Final Phase. Removing a needle from his ear changes the appearance he used as Gittarackur. Killua recognizes him and calls him Illumi.',

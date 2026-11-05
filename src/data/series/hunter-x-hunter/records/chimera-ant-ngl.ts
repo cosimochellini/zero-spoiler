@@ -1,4 +1,5 @@
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
+import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import type { HunterSaga } from './saga'
 
 type Dossier = HunterSaga['dossiers'][string]
@@ -179,7 +180,10 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // Anime-only record. His sister's record opens at episode 80, so the
     // texts frozen at 77 leave her unnamed.
     'kurt': {
-      chronicle: chimeraAntPhase1Chronicles.kurt,
+      chronicle: [
+        ...chimeraAntPhase1Chronicles.kurt,
+        ...chimeraAntPhase2Chronicles.kurt,
+      ],
       relationships: [
         {
           episode: 77,

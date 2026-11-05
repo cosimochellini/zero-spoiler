@@ -1,6 +1,7 @@
 import type { Relationship } from '~/data/types'
 
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
+import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import type { HunterSaga } from './saga'
 
 /** A Royal Guard's side, before and after the King is born. */
@@ -219,7 +220,10 @@ const KING_KOMUGI_GUEST: Relationship = {
 export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
     cheetu: {
-      chronicle: chimeraAntPhase1Chronicles.cheetu,
+      chronicle: [
+        ...chimeraAntPhase1Chronicles.cheetu,
+        ...chimeraAntPhase2Chronicles.cheetu,
+      ],
       relationships: [
         {
           episode: 94,
@@ -291,7 +295,10 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     peggy: {
-      chronicle: chimeraAntPhase1Chronicles.peggy,
+      chronicle: [
+        ...chimeraAntPhase1Chronicles.peggy,
+        ...chimeraAntPhase2Chronicles.peggy,
+      ],
       relationships: [
         { episode: 79, chapter: 192, value: [links.peggyCheetu] },
         {
@@ -314,6 +321,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [{ episode: 79, chapter: 189, value: SERVING_THE_QUEEN }],
     },
     shaiapouf: {
+      chronicle: chimeraAntPhase2Chronicles.shaiapouf,
       relationships: [
         { episode: 86, chapter: 202, value: [links.poufPitou] },
         {
@@ -344,6 +352,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     menthuthuyoupi: {
+      chronicle: chimeraAntPhase2Chronicles.menthuthuyoupi,
       relationships: [
         {
           episode: 88,
@@ -391,6 +400,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     colt: {
+      chronicle: chimeraAntPhase2Chronicles.colt,
       relationships: [
         {
           episode: 92,
@@ -452,6 +462,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     meruem: {
+      chronicle: chimeraAntPhase2Chronicles.meruem,
       relationships: [
         {
           episode: 92,

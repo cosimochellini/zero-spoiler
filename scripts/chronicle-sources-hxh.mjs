@@ -111,6 +111,30 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_83_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 83 (2011), Chapter 195.',
     },
+    85: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 85 (2011), Chapter 198, Chapter 199.',
+    },
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 201.',
+    },
+    87: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_87_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 87 (2011), Chapter 203.',
+    },
+    89: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_89_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 89 (2011), Chapter 207, Chapter 208, Chapter 209.',
+    },
+    91: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_90_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 90 (2011), Episode 91 (2011), Chapter 210, Chapter 211, Chapter 214.',
+    },
+    94: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 93 (2011), Episode 94 (2011), Chapter 217, Chapter 218.',
+    },
   },
   'mito-freecss': {
     1: {
@@ -457,6 +481,26 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_83_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 83 (2011), Chapter 196.',
     },
+    85: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 85 (2011), Chapter 198, Chapter 199.',
+    },
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 201.',
+    },
+    89: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_89_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 89 (2011), Chapter 209, Chapter 210.',
+    },
+    91: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_90_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 90 (2011), Episode 91 (2011), Chapter 212, Chapter 214.',
+    },
+    94: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 219.',
+    },
   },
   'menchi': {
     6: {
@@ -486,6 +530,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
     66: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66: examiner’s phone call and decision.',
+    },
+    85: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 85 (2011), Chapter 199.',
+    },
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 201, Chapter 202.',
+    },
+    88: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_88_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 88 (2011), Chapter 205.',
+    },
+    92: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 92 (2011), Chapter 215.',
     },
   },
   'lippo': {
@@ -779,6 +839,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Chapter 100 and episode 53. Maha is manga-only; the leader is not named before episode 54. Checked on the episode page and the chapter pages.',
     },
+    94: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 219.',
+    },
   },
   'kite': {
     76: {
@@ -800,6 +864,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     83: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_83_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 83 (2011), Chapter 196.',
+    },
+    85: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 85 (2011), Chapter 198, Chapter 199.',
+    },
+    95: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_95_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 95 (2011), Chapter 222.',
     },
   },
   'kon': {
@@ -1567,6 +1639,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
       note: 'Chapter 184 selects Blue Planet; chapter 185 and episode 75 show using it outside the game and the farewell before Gon and Killua travel. No identity at their destination is disclosed.',
     },
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 201.',
+    },
+    89: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_89_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 89 (2011), Chapter 209, Chapter 210.',
+    },
   },
   'binolt': {
     '63:chapter': {
@@ -1671,6 +1751,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_84_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 84 (2011), Chapter 198. Opening stops before Pokkle’s disposal and Kite’s encounter, which the anime has not shown at episode84.',
     },
+    85: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 85 (2011), Chapter 198, Chapter 199.',
+    },
+    88: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Episode 88 (2011), Chapter 204, Chapter 206.',
+    },
+    91: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_91_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 91 (2011), Chapter 213, Chapter 214.',
+    },
+    93: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 93 (2011), Chapter 216, Chapter 217.',
+    },
   },
   'baro': {
     '83:chapter': {
@@ -1709,11 +1805,19 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_81_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 81 (2011).',
     },
+    '94': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 219.',
+    },
   },
   'hagya': {
     '106:chapter': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_192',
       note: 'Read the MediaWiki API synopses: Chapter 192.',
+    },
+    '107:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_214',
+      note: 'Read Chapter214. Episode107 is ordering only: the anime equivalent91 precedes the anime naming gate106; the manga opening already uses ordering number106.',
     },
   },
   'pike': {
@@ -1731,17 +1835,33 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 80 (2011), Episode 84 (2011). Recap delayed until Zazan’s anime naming gate; the manga has its own earlier opening.',
     },
+    '91': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_91_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 91 (2011), Chapter 214.',
+    },
   },
   'cheetu': {
     79: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_79_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 79 (2011), Chapter 192.',
     },
+    93: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 92 (2011), Episode 93 (2011), Chapter 216, Chapter 217, Chapter 218.',
+    },
+    95: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 94 (2011), Episode 95 (2011), Chapter 220, Chapter 221.',
+    },
   },
   'peggy': {
     '79:chapter': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_189',
       note: 'Read the MediaWiki API synopses: Chapter 189.',
+    },
+    '91:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_213',
+      note: 'Read the MediaWiki API synopses: Chapter 213.',
     },
   },
   'balda': {
@@ -1780,6 +1900,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '77:episode': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 77 (2011).',
+    },
+    '92:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 92 (2011).',
     },
   },
   'wong': {
@@ -1830,6 +1954,170 @@ export const HUNTER_X_HUNTER_SOURCES = {
     77: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+    92: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 92 (2011), Chapter 216.',
+    },
+  },
+  'colt': {
+    '92:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_213',
+      note: 'Read the MediaWiki API synopses: Chapter 213, Chapter 214.',
+    },
+    '92:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 92 (2011).',
+    },
+    '93:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_215',
+      note: 'Read the MediaWiki API synopses: Chapter 215. Chapter215 continuation. Episode93 is ordering only, not an anime date: the anime92 source-specific opening contains this entire scene. The separate manga opening preserves the earlier naming gate214.',
+    },
+  },
+  'meruem': {
+    92: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_91_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 91 (2011), Episode 92 (2011), Chapter 213, Chapter 215.',
+    },
+    93: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 93 (2011), Chapter 216, Chapter 217.',
+    },
+  },
+  'dr-lee': {
+    '92:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_215',
+      note: 'Read the MediaWiki API synopses: Chapter 215.',
+    },
+  },
+  'baital': {
+    '88:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_205',
+      note: 'Read the MediaWiki API synopses: Chapter 205.',
+    },
+  },
+  'gyro': {
+    '80': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Chapter 204.',
+    },
+    '78:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_78_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 78 (2011).',
+    },
+    '78:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_203',
+      note: 'Read the MediaWiki API synopses: Chapter 203. Gyro is unanchored78/203. The manga-only rebirth is not disclosed in the anime opening.',
+    },
+  },
+  'menthuthuyoupi': {
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 202.',
+    },
+    88: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_88_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 88 (2011), Chapter 206.',
+    },
+    91: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_91_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 91 (2011), Chapter 213.',
+    },
+  },
+  'shaiapouf': {
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 202.',
+    },
+    91: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_91_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 91 (2011), Chapter 213.',
+    },
+    93: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 93 (2011), Chapter 216, Chapter 217. Independent verifier correction: shared explanation uses king as a title, omitting inheritance and personal connections not explicit in the episode synopsis.',
+    },
+  },
+  'shoot-mcmahon': {
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 200.',
+    },
+    88: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_88_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 88 (2011), Chapter 205.',
+    },
+    91: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_90_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 90 (2011), Episode 91 (2011), Chapter 212, Chapter 214.',
+    },
+    95: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_95_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 95 (2011), Chapter 222.',
+    },
+  },
+  'knuckle-bine': {
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 200.',
+    },
+    87: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_87_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 87 (2011), Chapter 203. Independent verifier correction: final sentence narrowed to the repeated challenges supported by both endpoint summaries; anti-extermination explanation not asserted in the shared story.',
+    },
+    89: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_89_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 89 (2011), Chapter 207, Chapter 208, Chapter 209.',
+    },
+    91: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_90_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 90 (2011), Episode 91 (2011), Chapter 210, Chapter 211, Chapter 214.',
+    },
+    95: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 94 (2011), Episode 95 (2011), Chapter 220, Chapter 221.',
+    },
+  },
+  'palm-siberia': {
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 200.',
+    },
+    88: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_88_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 88 (2011), Chapter 205.',
+    },
+    94: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 218, Chapter 220.',
+    },
+  },
+  'knov': {
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 85 (2011), Episode 86 (2011), Chapter 199, Chapter 200.',
+    },
+    88: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_88_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 88 (2011), Chapter 205.',
+    },
+    94: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 220.',
+    },
+  },
+  'morel-mackernasey': {
+    86: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 85 (2011), Episode 86 (2011), Chapter 199. Recap delayed to Morel’s anime naming gate86; Knov remains unnamed before his manga gate200.',
+    },
+    88: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_88_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 88 (2011), Chapter 205.',
+    },
+    92: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 92 (2011), Chapter 215. Independent verifier correction: shared promise narrowed to non-human-eating condition and protection of Colt; lifetime and both-beneficiary scope omitted because episode synopsis compresses them.',
     },
   },
 }
