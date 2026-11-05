@@ -3,6 +3,7 @@ import type { Relationship } from '~/data/types'
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
+import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
 import type { HunterSaga } from './saga'
 
 /** A Royal Guard's side, before and after the King is born. */
@@ -226,6 +227,8 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         ...chimeraAntPhase2Chronicles.cheetu,
 
         ...chimeraAntPhase3Chronicles.cheetu,
+
+        ...chimeraAntPhase4Chronicles.cheetu,
       ],
       relationships: [
         {
@@ -327,6 +330,8 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase2Chronicles.shaiapouf,
         ...chimeraAntPhase3Chronicles.shaiapouf,
+
+        ...chimeraAntPhase4Chronicles.shaiapouf,
       ],
       relationships: [
         { episode: 86, chapter: 202, value: [links.poufPitou] },
@@ -358,7 +363,10 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     menthuthuyoupi: {
-      chronicle: chimeraAntPhase2Chronicles.menthuthuyoupi,
+      chronicle: [
+        ...chimeraAntPhase2Chronicles.menthuthuyoupi,
+        ...chimeraAntPhase4Chronicles.menthuthuyoupi,
+      ],
       relationships: [
         {
           episode: 88,
@@ -471,6 +479,8 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase2Chronicles.meruem,
         ...chimeraAntPhase3Chronicles.meruem,
+
+        ...chimeraAntPhase4Chronicles.meruem,
       ],
       relationships: [
         {

@@ -1,4 +1,5 @@
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
+import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga } from './saga'
 import { zoldyckChronicles } from './zoldyck.chronicle'
@@ -328,7 +329,10 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     'zeno': {
       relationships: zoldyckRelationships.zeno,
-      chronicle: zoldyckChronicles.zeno,
+      chronicle: [
+        ...zoldyckChronicles.zeno,
+        ...chimeraAntPhase4Chronicles.zeno,
+      ],
       role: { it: 'Nonno di Killua', en: 'Killua’s grandfather' },
       log: {
         it: 'Entra nella stanza dove Killua è incatenato e ordina che la punizione finisca. Dice a Killua che suo padre vuole parlargli. Quando il fratello del ragazzo protesta, riconosce il talento di Killua pur ammettendo che si comporta in modo imprevedibile.',
@@ -360,7 +364,10 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     'silva': {
       relationships: zoldyckRelationships.silva,
-      chronicle: zoldyckChronicles.silva,
+      chronicle: [
+        ...zoldyckChronicles.silva,
+        ...chimeraAntPhase4Chronicles.silva,
+      ],
       role: { it: 'Padre di Killua', en: 'Killua’s father' },
       log: {
         it: 'Chiede a Killua dei suoi amici e gli dice di aver capito, il giorno della sua fuga, quanto siano diversi. Lo lascia andare dopo avergli fatto promettere che non tradirà mai i suoi amici. Alla madre di Killua, che protesta, risponde che il ragazzo tornerà.',

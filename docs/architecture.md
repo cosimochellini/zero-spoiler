@@ -115,32 +115,35 @@ the audit left unnamed, #1032 files Michael, named at the intercom in chapter
 148 (manga-only), and records an owner-ruled exclusion with the missing evidence
 for the other 30. Greed Island chronicles cover every character filed through
 #1019 and returning characters’ events through episode 75 / chapter 185 (#906),
-preserving the records’ source restrictions. Chimera Ant phase 1 (#1020) adds
-the opening survey team records, a Royal Guard and NGL. Phase 2 (#1021), through
-episode 95 / chapter 222, adds the extermination team and its students, the rest
-of the survey team, the NGL villagers, the King, the other Royal Guards and the
-Squadron Leaders named so far, and eight visited places, each at the first
-chapter and episode whose synopsis names it, with source-only records where only
-one medium does. Phase 3 (#1022), through episode 109 / chapter 260, adds the
-Squadron Leaders, captains and soldiers named on the road to the palace (Ikalgo,
-Meleoron, Welfin, Bloster, Flutter, Remora, Pell, Bihorn), Komugi, Bizeff and
-Tsukuma, and four visited places, Meteor City at the Troupe's visit in chapter
-224 / episode 96 rather than at its earlier mentions. Hagya keeps one record:
-the anime, which never says his manga name, opens it as Leol at episode 106
-(`Entity.episodeName`), and the manga gives the name in his role at chapter 240.
-Phase 4 (#1023) covers the palace assault through chapter 298, adds Taragetter
-in the manga, and opens Peijin in the anime at episode 116. Phase 5 (#1024)
-files the finale through chapter 318 and episode 136, with the full cast
-reconciliation in the phase 5 inventory. Election (#912) files named characters
-and visited places through chapter 339 and episode 148, with placeholder art
-pending #913 and chronicles pending #914. Gyro is unanchored at 78 / 203. Silva,
-Killua's father, is named in episode 24 but in chapter 95 in the manga, so his
-record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but
-named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named
-only in credits and supplements, and Hishita only in chapter 329 (#912). Every
-Hunter Exam character has a chronicle (#762); the Heavens Arena characters get
-theirs in #898. Records are not added from unnamed appearances or supplemental
-names.
+preserving the records’ source restrictions. Chimera Ant chronicles cover the
+filed cast and returning characters’ major events through chapter 298 (#910,
+phases 1–4), with independently checked episode gates, delayed naming recaps and
+source-only restrictions. The finale through chapter 318 remains in #1077.
+Chimera Ant phase 1 (#1020) adds the opening survey team records, a Royal Guard
+and NGL. Phase 2 (#1021), through episode 95 / chapter 222, adds the
+extermination team and its students, the rest of the survey team, the NGL
+villagers, the King, the other Royal Guards and the Squadron Leaders named so
+far, and eight visited places, each at the first chapter and episode whose
+synopsis names it, with source-only records where only one medium does. Phase 3
+(#1022), through episode 109 / chapter 260, adds the Squadron Leaders, captains
+and soldiers named on the road to the palace (Ikalgo, Meleoron, Welfin, Bloster,
+Flutter, Remora, Pell, Bihorn), Komugi, Bizeff and Tsukuma, and four visited
+places, Meteor City at the Troupe's visit in chapter 224 / episode 96 rather
+than at its earlier mentions. Hagya keeps one record: the anime, which never
+says his manga name, opens it as Leol at episode 106 (`Entity.episodeName`), and
+the manga gives the name in his role at chapter 240. Phase 4 (#1023) covers the
+palace assault through chapter 298, adds Taragetter in the manga, and opens
+Peijin in the anime at episode 116. Phase 5 (#1024) files the finale through
+chapter 318 and episode 136, with the full cast reconciliation in the phase 5
+inventory. Election (#912) files named characters and visited places through
+chapter 339 and episode 148, with placeholder art pending #913 and chronicles
+pending #914. Gyro is unanchored at 78 / 203. Silva, Killua's father, is named
+in episode 24 but in chapter 95 in the manga, so his record is unanchored at 24
+/ 95 (#834), as is Chrollo, shown from chapter 71 but named in the episodes only
+from 53 and filed at 54 / 71 (#900); Kikyo is named only in credits and
+supplements, and Hishita only in chapter 329 (#912). Every Hunter Exam character
+has a chronicle (#762); the Heavens Arena characters get theirs in #898. Records
+are not added from unnamed appearances or supplemental names.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -273,7 +276,7 @@ checks this block.
 | Arcs, places      | 7 · 39                                                |
 | Saga modules      | 7                                                     |
 | Line drawings     | 229, one per record, plus 43 redrawings of 41 records |
-| Chronicle stories | 511, for 152 characters                               |
+| Chronicle stories | 556, for 153 characters                               |
 
 ### `game-of-thrones`
 
