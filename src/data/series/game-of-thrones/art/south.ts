@@ -55,9 +55,10 @@ const WHITE_CLOAK: Stroke[] = [
 ]
 
 /**
- * Tywin Lannister: a pewter tankard of ale on a plank table, as he shares
- * ale with his brother at the inn in Tyrion VII (chapter 57). The far side
- * is hatched; the accent is the ale.
+ * Tywin Lannister: a pewter tankard of ale on a plank table, the owner's
+ * pick (#1051). The book has him drink ale with Kevan in Tyrion VII (chapter
+ * 57); the show is not confirmed. The far side is hatched; the accent is the
+ * ale.
  */
 const TANKARD: Stroke[] = [
   { d: ellipse(76, 66, 28, 8) },
@@ -268,7 +269,7 @@ const DOLL: Stroke[] = [
   { d: 'M64 112 Q48 124 40 142 Q38 150 48 150 Q58 146 62 136 L72 122' },
   { d: 'M96 112 Q112 124 120 142 Q122 150 112 150 Q102 146 98 136 L88 122' },
   { d: 'M66 70 L96 104 M60 90 L92 66', role: 'accent' },
-  { d: 'M76 64 V60 M84 64 V60 M72 112 V118 M88 112 V118', role: 'soft' },
+  { d: 'M72 112 V118 M88 112 V118', role: 'soft' },
   shadow(80, 154, 46),
 ]
 
@@ -471,7 +472,6 @@ const DOG_HELM: Stroke[] = [
   { d: 'M60 72 L28 84 Q22 92 28 98 L60 106', role: 'accent' },
   { d: 'M66 128 Q92 136 118 124 L124 148 Q92 158 60 148 Z' },
   { d: 'M78 48 Q90 56 104 54', role: 'soft' },
-  { d: 'M34 91 H58', role: 'soft' },
   { d: 'M66 136 Q92 146 120 134', role: 'soft' },
   {
     d: 'M112 70 l6 -3 M114 84 l6 -3 M114 98 l6 -3 M112 112 l6 -3',
@@ -519,7 +519,6 @@ const BULL_HELM: Stroke[] = [
   },
   { d: 'M50 112 Q80 122 112 112', role: 'soft' },
   { d: 'M84 72 Q98 84 120 98', role: 'soft' },
-  { d: 'M60 118 V126 M80 120 V130 M100 118 V126', role: 'soft' },
   { d: 'M64 92 l8 -4 M58 100 l8 -4 M54 108 l8 -4', role: 'ambient' },
   { d: 'M60 136 L54 148 H118 L110 134' },
   shadow(84, 153, 42),
@@ -617,7 +616,7 @@ export const southRedrawn: Redrawings = {
   ],
   'barristan-selmy': [
     // The rack gone and the sword on the floor where he threw it, dismissed
-    // from the Kingsguard: "The Pointy End" (episode 8), Sansa IV (chapter 58).
+    // from the Kingsguard: "The Pointy End" (episode 8), Sansa V (chapter 58).
     {
       episode: 8,
       chapter: 58,

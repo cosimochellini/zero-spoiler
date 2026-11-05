@@ -741,9 +741,10 @@ describe.each([
 })
 
 /**
- * The Winterfell household's stages (#854), each pinned in the units that
- * tell it: three deaths, Arya's Needle and Bran's climb, which the book
- * alone shows after his threshold.
+ * The Winterfell household's stages (#854) and the southern cast's (#1051),
+ * each pinned in the units that tell it: Arya's Needle, Bran's climb, which
+ * the book alone shows after his threshold, the deaths, Barristan's thrown
+ * sword and Syrio's snapped blade.
  */
 const STAGES: {
   chapter: number
