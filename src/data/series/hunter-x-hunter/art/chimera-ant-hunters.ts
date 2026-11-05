@@ -8,8 +8,9 @@ import { dots, ellipse, shadow } from '~/lib/svg/primitives'
 
 /**
  * Morel's pince-nez sunglasses lying on a table, seen from above: the two
- * dark lenses hatched, their rims, the sprung bridge and the nose pads.
- * `rims` is the role of the rims, the accent until the pipe takes it.
+ * dark lenses hatched inside their rims, the rims' thickness, the sprung
+ * bridge with its coil and the two nose pads. `rims` is the role of the
+ * rims, the accent until the pipe takes it.
  */
 const morelPinceNez = (rims?: 'accent'): Stroke[] => [
   {
@@ -17,13 +18,18 @@ const morelPinceNez = (rims?: 'accent'): Stroke[] => [
     ...(rims !== undefined && { role: rims }),
   },
   { d: 'M16 122 Q50 142 84 122 M92 112 Q118 128 144 112', role: 'soft' },
-  { d: 'M83 114 C84 94 92 92 93 106' },
-  { d: 'M80 127 q4 -2 4 -8 M96 117 q-4 -2 -4 -8', role: 'soft' },
   {
-    d: 'M26 128 L44 110 M36 133 L56 112 M50 135 L70 114 M62 134 L78 118 M100 116 L112 104 M108 120 L124 104 M120 121 L134 107',
+    d: `${ellipse(50, 119, 28, 12)} ${ellipse(118, 109, 21, 9)}`,
+    role: 'soft',
+  },
+  { d: 'M83 114 C84 94 92 92 93 106' },
+  { d: 'M84 104 q4 -3 8 0 M85 99 q3 -3 6 0', role: 'soft' },
+  { d: `${ellipse(80, 124, 3, 5)} ${ellipse(97, 113, 3, 5)}`, role: 'soft' },
+  {
+    d: 'M30 128 L44 112 M38 132 L56 113 M50 133 L68 115 M62 131 L74 119 M104 114 L114 104 M110 118 L124 104 M122 118 L132 108',
     role: 'ambient',
   },
-  { d: 'M24 114 Q32 108 42 107 M100 105 Q106 101 114 100', role: 'soft' },
+  { d: 'M30 114 Q36 110 42 110 M106 104 Q110 102 114 102', role: 'soft' },
   shadow(80, 148, 66),
 ]
 

@@ -166,7 +166,7 @@ export const CHIMERA_ANT_SQUADS_DRAWINGS = {
   // hatched: the lion-like Squadron Leader who tells another that his squad
   // kills humans for fun, chapter 192. No face.
   hagya: [
-    { d: 'M54 108 L58 20 M108 106 L104 20' },
+    { d: 'M54 108 C50 80 52 46 60 20 M108 106 C112 80 110 46 102 20' },
     { d: 'M40 148 C34 126 42 110 56 106 L108 106 C122 110 128 128 120 148' },
     {
       d: 'M40 148 Q49 158 59 148 Q69 158 79 148 Q89 158 99 148 Q110 158 120 148',
@@ -196,47 +196,75 @@ export const CHIMERA_ANT_SQUADS_DRAWINGS = {
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntSquadsRedrawn: Redrawings = {
   hagya: [
+    // The same forepaw laid on its side on the stone floor, the claws
+    // slack: Morel's smoke fills Leol's lungs and he sinks and drowns,
+    // episode 107 / chapter 254. The wave he rides is his borrowed Nen, so
+    // it is not drawn.
     {
       episode: 107,
       chapter: 254,
       value: [
         ...moved(
-          CHIMERA_ANT_SQUADS_DRAWINGS.hagya,
-          'translate(80 116) rotate(-55) scale(0.66) translate(-80 -94)',
+          CHIMERA_ANT_SQUADS_DRAWINGS.hagya.slice(0, 8),
+          'translate(80 136) rotate(-90) scale(0.72) translate(-80 -96)',
         ),
-        { d: 'M12 69 Q30 62 48 69 T84 69 T120 69 T156 69', role: 'soft' },
-        { d: ellipse(111, 93, 4, 6), role: 'accent' },
+        { d: 'M4 158 H156', role: 'ambient', dashed: true },
+        shadow(80, 168, 62),
       ],
     },
   ],
   pike: [
+    // The spider fallen on his back, the abdomen shrivelled and the legs
+    // folded up, his strand slack on the ground in tint: Shizuku's vacuum
+    // drains his blood through twenty-nine wounds, chapter 228 / episode
+    // 97.
     {
       episode: 97,
       chapter: 228,
       source: 'chapter',
       value: [
-        ...moved(
-          CHIMERA_ANT_SQUADS_DRAWINGS.pike,
-          'translate(80 125) rotate(-85) scale(0.68) translate(-80 -95)',
-        ),
-        shadow(80, 173, 52),
+        {
+          d: 'M36 130 C24 128 16 138 14 146 C12 152 6 152 2 148',
+          role: 'accent',
+        },
+        { d: ellipse(66, 128, 30, 18) },
+        { d: ellipse(110, 134, 14, 11) },
+        { d: 'M42 121 Q66 113 90 121 M40 135 Q66 143 92 135', role: 'soft' },
+        {
+          d: 'M100 126.3 L80 104 L92 86 M105 123.7 L96 96 L110 82 M112 123.1 L116 96 L130 86 M119 125.6 L136 104 L148 98',
+        },
+        {
+          d: 'M108 123.3 L106 102 L118 92 M116 124 L128 104 L140 96',
+          role: 'soft',
+        },
+        {
+          d: 'M52 143 l5 -4 M66 145 l5 -4 M80 143 l5 -4 M114 144 l4 -3',
+          role: 'ambient',
+        },
+        { d: 'M4 150 H156', role: 'ambient', dashed: true },
+        shadow(80, 160, 56),
       ],
     },
   ],
   zazan: [
+    // The same tail laid flat along the ground, the stinger resting at its
+    // end and the shell hatched where it is burnt: Feitan's Rising Sun
+    // burns her to death, episode 97 / chapter 229. The sun is his Nen, so
+    // it is not drawn.
     {
       episode: 97,
       chapter: 229,
       value: [
         ...moved(
           CHIMERA_ANT_SQUADS_DRAWINGS.zazan.slice(0, 7),
-          'translate(83 111) rotate(-66) scale(0.75) translate(-80 -90)',
+          'translate(84 150) scale(1 0.42) translate(-80 -150)',
         ),
         {
-          d: 'M36 128 Q26 106 44 90 Q35 106 51 119 M103 126 Q116 112 110 95 Q131 112 119 132',
-          role: 'accent',
+          d: 'M30 146 l4 -4 M44 140 l4 -4 M62 132 l4 -4 M84 128 l4 -4 M104 130 l4 -4',
+          role: 'ambient',
         },
-        shadow(82, 157, 58),
+        { d: 'M4 156 H156', role: 'ambient', dashed: true },
+        shadow(84, 166, 62),
       ],
     },
   ],

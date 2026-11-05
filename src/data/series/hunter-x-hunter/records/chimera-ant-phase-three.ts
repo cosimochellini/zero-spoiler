@@ -408,7 +408,13 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
             value: { it: 'Giocatrici di gungi', en: 'Gungi players' },
           },
         ],
-        status: [{ episode: 103, chapter: 257, value: 'alive' }],
+        // Chapter 318 leaves her alive beside the dying King, sure she will
+        // follow him. Chapter 339 shows the two of them dead in the palace,
+        // hands still joined, and episode 148 adapts it.
+        status: [
+          { episode: 103, chapter: 257, value: 'alive' },
+          { episode: 148, chapter: 339, value: 'deceased' },
+        ],
       },
       remora: {
         chronicle: chimeraAntPhase3Chronicles.remora,

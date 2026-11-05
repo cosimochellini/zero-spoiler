@@ -1,8 +1,33 @@
-import type { Drawings } from '~/data/art/stroke'
+import type { Drawings, Redrawings, Stroke } from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 
 /** Flips a stroke about the box's centre line, for a pair. */
 const MIRROR = 'matrix(-1 0 0 1 160 0)'
+
+/**
+ * Komugi's gungi board in 3/4: its top, its thickness and the hatched
+ * near-right edge. Both her drawings keep it.
+ */
+const KOMUGI_BOARD: Stroke[] = [
+  { d: 'M12 114 L92 90 L150 118 L70 142 Z' },
+  { d: 'M12 114 V124 L70 152 L150 128 V118 M70 142 V152' },
+  {
+    d: 'M80 148 l5 -6 M96 143.5 l5 -6 M112 139 l5 -6 M128 134.5 l5 -6 M142 130.5 l4 -5',
+    role: 'ambient',
+  },
+]
+
+/** The two single pieces on Komugi's board, which both drawings keep. */
+const KOMUGI_PIECES: Stroke[] = [
+  {
+    d: 'M104.8 123.8 L97.7 120.6 L87.8 120.6 L80.7 123.8 L80.7 128.2 L87.8 131.4 L97.7 131.4 L104.8 128.2 Z M80.7 128.2 V134.2 L87.8 137.4 H97.7 L104.8 134.2 V128.2 M87.8 131.4 V137.4 M97.7 131.4 V137.4',
+    role: 'soft',
+  },
+  {
+    d: 'M130.3 104.8 L123.2 101.6 L113.3 101.6 L106.2 104.8 L106.2 109.2 L113.3 112.4 L123.2 112.4 L130.3 109.2 Z M106.2 109.2 V115.2 L113.3 118.4 H123.2 L130.3 115.2 V109.2 M113.3 112.4 V118.4 M123.2 112.4 V118.4',
+    role: 'soft',
+  },
+]
 
 export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
   // An apartment block in 3/4 on its street, its windows soft, one
@@ -29,52 +54,55 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M2 150 H156', role: 'ambient' },
     shadow(80, 156, 56),
   ],
-  // A gungi board in 3/4 with two pieces stacked on one square, the top
-  // one in tint, a third piece lying on the board, and the board's edge
-  // hatched: the game Komugi plays against the King, episode 103, before
-  // she tells him her name in chapter 257. No lettering on the pieces.
+  // A gungi board in 3/4 with three pieces stacked on one square, the
+  // top one in tint, two single pieces on the board, the grid soft and
+  // the board's edge hatched: the game Komugi plays against the King,
+  // episode 103, before she tells him her name in chapter 257. No
+  // lettering on the pieces.
   'komugi': [
-    { d: 'M12 116 L98 92 L148 118 L62 146 Z' },
-    { d: 'M12 116 V126 L62 156 L148 128 V118 M62 146 V156' },
+    ...KOMUGI_BOARD,
     {
-      d: 'M33 110 L83 136 M55 104 L105 129 M77 98 L127 123 M24 122 L110 98 M38 130 L124 105 M50 138 L136 112',
+      d: 'M32 108 L79.4 130.9 M52 102 L70.4 110.9 M106.1 128.1 L110 130 M97.1 108.1 L104.9 111.9 M122 120.2 L130 124 M26.5 121 L70.5 107.8 M97.1 99.8 L106.5 97 M41 128 L73.8 118.2 M97 111.2 L105 108.8 M55.5 135 L79.5 127.8 M102.5 120.9 L109.9 118.7 M131.5 112.2 L135.5 111',
       role: 'soft',
     },
     {
-      d: 'M70 152 l6 -5 M88 146 l6 -5 M106 140 l6 -5 M124 134 l6 -5 M140 129 l5 -4',
-      role: 'ambient',
+      d: 'M71.7 108.2 V114.2 L78.8 117.4 H88.7 L95.8 114.2 V108.2 M78.8 111.4 V117.4 M88.7 111.4 V117.4 M71.7 102.2 V108.2 L78.8 111.4 H88.7 L95.8 108.2 V102.2 M78.8 105.4 V111.4 M88.7 105.4 V111.4',
     },
     {
-      d: 'M84 98 L106 106 L100 120 L70 120 L62 106 Z M62 106 V112 L70 126 H100 L106 112 V106 M70 120 V126 M100 120 V126',
-    },
-    {
-      d: 'M84 84 L106 92 L100 106 L70 106 L62 92 Z M62 92 V98 L70 112 H100 L106 98 V92 M70 106 V112 M100 106 V112',
+      d: 'M95.8 91.8 L88.7 88.6 L78.8 88.6 L71.7 91.8 L71.7 96.2 L78.8 99.4 L88.7 99.4 L95.8 96.2 Z M71.7 96.2 V102.2 L78.8 105.4 H88.7 L95.8 102.2 V96.2 M78.8 99.4 V105.4 M88.7 99.4 V105.4',
       role: 'accent',
     },
-    {
-      d: 'M36 124 L50 119 L54 126 L42 131 Z M36 124 V128 L42 135 L54 130 V126',
-      role: 'soft',
-    },
-    shadow(80, 166, 58),
+    ...KOMUGI_PIECES,
+    shadow(80, 166, 62),
   ],
-  // The "Bar Double Bull" badge seen from the back, its rim and
-  // thickness, the pin across the back in tint and the far edge hatched:
-  // the badge Remora fixes to Killua's back in chapter 238. No lettering.
+  // Remora's tail, a lizard's ending in a fish's forked fin, the fin in
+  // tint with its rays soft and the underside hatched, and beside it on
+  // the ground the badge he pins to Killua's back in chapter 238 and
+  // episode 101. No lettering on the badge.
   'remora': [
-    { d: ellipse(80, 90, 46, 28) },
-    { d: 'M34 90 V98 C34 114 54 126 80 126 C106 126 126 114 126 98 V90' },
-    { d: 'M40 104 Q60 120 92 120', role: 'soft' },
     {
-      d: 'M98 120 l6 -6 M108 116 l6 -6 M116 110 l5 -5 M50 114 l5 -4',
+      d: 'M8 132 C36 124 66 116 92 100 C104 92 112 82 116 72 M10 144 C40 140 72 130 98 114 C108 106 116 96 120 86',
+    },
+    {
+      d: 'M116 72 C120 56 128 40 142 28 C138 46 134 62 130 76 C138 84 148 92 154 104 C142 102 130 96 120 86',
+      role: 'accent',
+    },
+    { d: 'M120 76 L136 38 M123 80 L146 98 M122 78 L140 62', role: 'soft' },
+    {
+      d: 'M36 126 Q40 133 40 141 M62 118 Q66 126 66 134 M86 104 Q92 112 92 120',
+      role: 'soft',
+    },
+    {
+      d: 'M26 140 l5 -4 M50 134 l5 -4 M76 124 l5 -4 M100 108 l5 -4',
       role: 'ambient',
     },
     {
-      d: `${circle(50, 96, 4)} M54 96 L112 84 M50 92 L110 80 Q118 78 116 86 L110 88`,
-      role: 'accent',
+      d: `${ellipse(118, 152, 16, 6)} M102 152 V155 C102 160 134 160 134 155 V152`,
+      role: 'soft',
     },
-    { d: 'M44 100 L52 100 M104 88 L114 90', role: 'soft' },
-    { d: 'M60 72 Q80 66 104 74', role: 'soft' },
-    shadow(80, 140, 46),
+    { d: `M106 151 L128 150 ${circle(104, 151, 2)}`, role: 'soft' },
+    { d: 'M4 162 H156', role: 'ambient', dashed: true },
+    shadow(80, 172, 60),
   ],
   // A television in 3/4 on its legs, the screen showing a reporter's
   // microphone held out for the interview, the microphone in tint and the
@@ -226,27 +254,37 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M2 150 H156', role: 'ambient' },
     shadow(80, 156, 64),
   ],
-  // The capital's towers on their ground, the tallest in the middle with
-  // its spire in tint, the near sides hatched: Peijin, where the country's
-  // people are gathered, chapter 243.
+  // The capital's towers in 3/4 on their ground, the tallest in the
+  // middle in tint with its mast, the side faces hatched: Peijin, where
+  // the country's people are gathered, chapter 243, and where Gon asks
+  // Pitou to come with him, episode 116.
   'peijin': [
-    { d: 'M62 150 V40 H86 V150 M86 40 L94 44 V150 M74 40 V18', role: 'accent' },
-    { d: 'M14 150 V98 H32 V150 M36 150 V76 H54 V150' },
-    { d: 'M100 150 V68 H118 V150 M122 150 V96 H146 V150' },
     {
-      d: 'M32 98 l4 2 M54 76 l4 2 V150 M118 68 l4 2 V96 M146 96 l4 2 V150',
+      d: 'M64 150 V36 H90 V150 M90 36 L100 31 V146 L90 150 M64 36 L74 31 H100 M82 33 V10',
+      role: 'accent',
+    },
+    { d: 'M30 150 V70 H56 V150 M56 70 L62 67 M30 70 L38 66 H62 V146' },
+    {
+      d: 'M108 150 V60 H130 V150 M130 60 L138 56 V146 L130 150 M108 60 L116 56 H138',
+    },
+    {
+      d: 'M4 150 V106 H24 V150 M24 106 L30 103 M4 106 L10 103 H30 M140 150 V100 H156',
       role: 'soft',
     },
     {
-      d: 'M68 52 V140 M80 52 V140 M42 86 V140 M48 86 V140 M106 80 V140 M112 80 V140 M20 108 V140 M26 108 V140',
+      d: 'M71 46 V140 M77 46 V140 M83 46 V140 M37 80 V140 M43 80 V140 M49 80 V140 M115 70 V140 M123 70 V140',
       role: 'soft',
     },
     {
-      d: 'M88 58 l4 -2 M88 78 l4 -2 M88 98 l4 -2 M88 118 l4 -2 M88 138 l4 -2',
+      d: 'M92 50 l6 -3 M92 66 l6 -3 M92 82 l6 -3 M92 98 l6 -3 M92 114 l6 -3 M92 130 l6 -3',
+      role: 'ambient',
+    },
+    {
+      d: 'M132 72 l4 -2 M132 88 l4 -2 M132 104 l4 -2 M132 120 l4 -2 M132 136 l4 -2',
       role: 'ambient',
     },
     { d: 'M2 150 H156', role: 'ambient' },
-    shadow(80, 156, 66),
+    shadow(80, 158, 66),
   ],
   // A heap of things left behind, with an upright tyre in tint, a box,
   // a pipe and a broken chair in it, its far side hatched, and a steeple
@@ -281,26 +319,37 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M2 150 H156', role: 'ambient' },
     shadow(80, 156, 66),
   ],
-  // Meleoron's chameleon tail hanging from a branch, wound once round
-  // it and curled at the tip, in tint, with the underside of the branch
-  // hatched: the hidden Ant who watches Gon in the forest, episode 98, and
-  // follows him into the desert, chapter 241. Nothing else of him is drawn.
+  // Meleoron's chameleon tail hanging in front of a branch and curled at
+  // the tip, in tint, its rings soft, a leafy twig at the branch's end and
+  // the underside hatched: the hidden Ant who watches Gon from the trees,
+  // episode 98, and follows him into the desert, chapter 241. Nothing
+  // else of him is drawn.
   'meleoron': [
-    { d: 'M2 86 C40 82 92 74 156 56 M2 98 C42 94 94 86 156 68' },
     {
-      d: 'M128 64 L148 40 M140 52 Q152 50 158 60 M30 95 Q22 110 28 124',
+      d: 'M2 92 Q34 88 63 81 M78 77.6 Q118 70 158 62 M2 104 Q36 100 68 91.5 M85 88 Q122 82 158 74',
+    },
+    {
+      d: 'M126 70 C134 58 144 50 154 44 M144 50 C146 40 156 38 156 44 C154 50 148 52 144 50 Z M136 58 C134 48 140 42 146 44 C146 52 140 56 136 58 Z',
       role: 'soft',
     },
     {
-      d: 'M58 6 C60 34 62 56 64 79 M72 6 C74 34 76 54 78 77 M64 79 C66 89 72 97 82 99 M78 77 C80 83 84 89 92 91 M82 99 C86 108 90 116 90 124 M92 91 C102 104 108 120 106 136 C104 154 86 160 76 150 C66 140 72 124 86 124 C96 124 100 134 94 140 C90 144 84 140 86 136',
+      d: 'M60 4 C60 30 62 56 64 82 C66 90 68 94 70 97 C72 108 78 118 82 128 M74 4 C74 30 76 54 78 80 C80 88 82 92 84 95 C92 110 98 124 96 140 C94 156 76 162 66 152 C56 142 62 126 76 126 C86 126 90 136 84 142 C80 146 74 142 76 138',
       role: 'accent',
     },
-    { d: 'M86 108 Q92 110 99 106 M90 120 Q96 121 103 117', role: 'soft' },
     {
-      d: 'M20 98 l6 -5 M40 96 l6 -5 M110 86 l6 -5 M126 82 l6 -5 M142 76 l6 -5',
+      d: 'M61 30 Q67 33 74 30 M62 56 Q69 59 76 56 M65 86 Q72 88 79 84 M73 108 Q80 110 87 105 M78 118 Q86 120 93 115',
+      role: 'soft',
+    },
+    {
+      d: 'M20 101 l5 -4 M40 99 l5 -4 M96 89 l5 -4 M114 86 l5 -4 M144 78 l5 -4',
       role: 'ambient',
     },
-    shadow(84, 176, 30),
+    {
+      d: 'M92 128 l4 -4 M90 142 l4 -4 M68 20 l5 -3 M69 44 l5 -3',
+      role: 'ambient',
+    },
+    { d: 'M26 96 Q32 98 38 96 M104 82 Q110 83 116 80', role: 'soft' },
+    shadow(84, 180, 32),
   ],
   // Ikalgo's air rifle, the Fleadom, aimed up and to the right, with an
   // octopus tentacle wound twice round the stock, suckers on its underside
@@ -343,37 +392,36 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M4 166 H156', role: 'ambient', dashed: true },
     shadow(72, 176, 54),
   ],
-  // Welfin's hind leg standing, side on and facing left: the wolf's
-  // digitigrade pawfoot on its toes, the heel raised behind, fur along the
-  // back of the leg, the claws in tint and the back hatched. He walks the
-  // palace grounds with Bloster in chapter 246 and episode 104. No hair,
-  // shirt or face.
+  // Welfin's hind pawfoot planted on its toes, side on and facing left,
+  // the heel raised behind, fur along the back of the leg, the claws in
+  // tint and the back hatched. He walks the palace grounds with Bloster
+  // in chapter 246 and episode 104. No hair, shirt or face.
   'welfin': [
     {
-      d: 'M58 12 C48 34 46 54 52 68 C58 80 74 92 80 106 L62 142 M106 12 C112 38 108 62 106 76 C104 90 110 100 112 108 C112 118 96 130 84 144',
+      d: 'M70 4 C68 40 62 72 56 104 M110 4 C112 30 116 60 112 84 C110 98 108 108 108 118',
     },
     {
-      d: 'M62 142 C50 142 40 148 40 156 C40 160 44 162 48 160 C50 164 56 164 58 160 C60 164 68 164 70 160 C72 164 80 164 82 160 C88 162 94 158 92 152 C92 148 88 144 84 144',
+      d: 'M56 104 C40 106 24 118 22 132 C20 140 26 144 34 142 C36 148 46 148 48 142 C52 148 62 148 64 142 C68 148 78 148 82 142 C90 146 104 142 110 132 C114 126 112 120 108 118',
     },
     {
-      d: 'M50 158 Q50 152 54 148 M62 160 Q62 153 66 149 M74 160 Q74 154 78 150',
+      d: 'M34 142 Q34 132 42 126 M48 142 Q50 132 56 126 M64 142 Q66 132 72 126',
       role: 'soft',
     },
     {
-      d: 'M42 154 Q34 154 30 162 M50 160 Q43 161 40 168 M60 161 Q53 162 50 169 M72 161 Q65 162 62 169',
+      d: 'M24 134 Q14 136 12 146 M36 143 Q28 146 28 154 M50 144 Q42 147 42 155 M66 144 Q58 147 58 155',
       role: 'accent',
     },
     {
-      d: 'M112 104 l9 3 l-6 3 l9 4 l-7 3 l6 4 M108 36 l8 2 l-6 4 l8 2 l-6 4 M107 62 l7 2 l-5 4 l6 3',
+      d: 'M112 20 l8 3 l-6 4 l8 3 M116 50 l8 3 l-6 4 l8 3 M113 88 l8 2 l-6 4 l7 3',
       role: 'soft',
     },
-    { d: 'M50 40 l-6 4 l6 2 M50 58 l-5 4 l6 1', role: 'soft' },
+    { d: 'M64 30 l-6 4 l6 2 M60 64 l-6 4 l6 2', role: 'soft' },
     {
-      d: 'M94 28 l7 -4 M96 46 l7 -4 M94 84 l7 -4 M98 98 l7 -4 M92 122 l6 -4 M84 134 l6 -4',
+      d: 'M100 24 l7 -4 M100 44 l7 -4 M100 64 l7 -4 M98 84 l7 -4 M96 104 l7 -4 M98 130 l6 -4',
       role: 'ambient',
     },
-    { d: 'M4 166 H156', role: 'ambient', dashed: true },
-    shadow(66, 176, 44),
+    { d: 'M4 158 H156', role: 'ambient', dashed: true },
+    shadow(66, 168, 52),
   ],
   // Bloster's lobster claw raised open on its forearm, the two fingers
   // in tint with their teeth soft, bumps on the shell and its underside
@@ -429,3 +477,37 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     shadow(80, 162, 56),
   ],
 } satisfies Drawings
+
+/** The phase's drawings that change with the story: Komugi's death. */
+export const chimeraAntPhaseThreeRedrawn: Redrawings = {
+  komugi: [
+    // The same board with the game left as it was, the stack gone down to
+    // one piece, and two pieces lying on the floor beside it, one in tint:
+    // chapter 339 shows her dead beside the King with two gungi pieces by
+    // them, and episode 148 adapts it. No body and no hands are drawn.
+    {
+      episode: 148,
+      chapter: 339,
+      value: [
+        ...KOMUGI_BOARD,
+        {
+          d: 'M32 108 L79.4 130.9 M52 102 L70.4 110.9 M106.1 128.1 L110 130 M72 96 L78.1 98.9 M97.1 108.1 L104.9 111.9 M122 120.2 L130 124 M26.5 121 L70.5 107.8 M93.5 100.9 L106.5 97 M41 128 L75.4 117.7 M97 111.2 L105 108.8 M55.5 135 L79.5 127.8 M102.5 120.9 L109.9 118.7 M131.5 112.2 L135.5 111',
+          role: 'soft',
+        },
+        {
+          d: 'M95.8 103.8 L88.7 100.6 L78.8 100.6 L71.7 103.8 L71.7 108.2 L78.8 111.4 L88.7 111.4 L95.8 108.2 Z M71.7 108.2 V114.2 L78.8 117.4 H88.7 L95.8 114.2 V108.2 M78.8 111.4 V117.4 M88.7 111.4 V117.4',
+          role: 'soft',
+        },
+        ...KOMUGI_PIECES,
+        {
+          d: 'M46 157.8 L39 154.6 L29 154.6 L22 157.8 L22 162.2 L29 165.4 L39 165.4 L46 162.2 Z M22 162.2 V168.2 L29 171.4 H39 L46 168.2 V162.2 M29 165.4 V171.4 M39 165.4 V171.4',
+          role: 'accent',
+        },
+        {
+          d: 'M140 158.8 L133 155.6 L123 155.6 L116 158.8 L116 163.2 L123 166.4 L133 166.4 L140 163.2 Z M116 163.2 V169.2 L123 172.4 H133 L140 169.2 V163.2 M123 166.4 V172.4 M133 166.4 V172.4',
+        },
+        shadow(80, 180, 66),
+      ],
+    },
+  ],
+}
