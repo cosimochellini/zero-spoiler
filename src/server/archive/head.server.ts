@@ -4,6 +4,7 @@ import {
   describeThreshold,
   type ThresholdSentence,
 } from '~/lib/progress/threshold'
+import { recordImages } from '~/lib/seo/socialImage'
 import type { DocumentHead } from '~/lib/view/records'
 import { translatorOf } from '~/server/copy.server'
 
@@ -26,7 +27,10 @@ export interface HeadKeys {
   pageTitle: TranslationKey<SeriesSlug>
 }
 
-/** Under fog both lines are generic; open, they are the record's own. */
+/**
+ * Under fog both lines are generic and the page keeps the site's card; open,
+ * they are the record's own, and so are its pictures.
+ */
 export function headFor(
   entity: Entity,
   keys: HeadKeys,
@@ -47,8 +51,14 @@ export function headFor(
     }
   }
 
+  const name = entity.name[r.locale]
+
   return {
-    title: t(keys.pageTitle, { name: entity.name[r.locale] }),
+    title: t(keys.pageTitle, { name }),
     description: entity.summary[r.locale],
+    image: {
+      ...recordImages(r.archive.series.slug, r.locale, entity.id),
+      alt: name,
+    },
   }
 }

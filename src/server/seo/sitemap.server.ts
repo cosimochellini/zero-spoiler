@@ -6,6 +6,7 @@ import { LOCALES } from '~/i18n/locales'
 import { hasPage } from '~/lib/progress/series'
 import { localeAlternates } from '~/lib/seo/paths'
 import { absoluteUrl } from '~/lib/seo/site'
+import { recordImages } from '~/lib/seo/socialImage'
 
 /** XML entries are shared by requests, but never by different series' archives. */
 const pages = new WeakMap<ReaderArchive, string[]>()
@@ -23,28 +24,56 @@ function escapeXml(value: string): string {
   return value.replaceAll(/["&'<>]/gu, (char) => ESCAPES[char] ?? char)
 }
 
-/** An index and the record addresses published under it. */
-function pathsFor(section: string, entries: Entity[]): string[] {
-  return [section, ...entries.map((entity) => `${section}/${entity.id}`)]
+/** A page's address under its series and locale, and a record's square picture. */
+interface Suffix {
+  image?: string
+  path: string
 }
 
-/** Only the pages the series declares get addresses. */
-function suffixes(archive: ReaderArchive): string[] {
-  const { characters, fruits, places, ships, series } = archive
+/** An index and the record addresses published under it. */
+function pathsFor(
+  section: string,
+  entries: Entity[],
+  series: string,
+): Suffix[] {
   return [
-    '',
-    ...(hasPage(series, 'characters') ?
-      pathsFor('/characters', characters)
-    : []),
-    ...(hasPage(series, 'fruits') ? pathsFor('/fruits', fruits) : []),
-    ...(hasPage(series, 'places') ?
-      pathsFor('/places', [...places, ...ships])
-    : []),
-    ...(hasPage(series, 'filler') ? ['/filler'] : []),
+    { path: section },
+    ...entries.map((entity) => ({
+      path: `${section}/${entity.id}`,
+      image: recordImages(series, 'en', entity.id).square,
+    })),
   ]
 }
 
-function entryFor(path: string): string {
+/** Only the pages the series declares get addresses. */
+function suffixes(archive: ReaderArchive): Suffix[] {
+  const { characters, fruits, places, ships, series } = archive
+  const { slug } = series
+  return [
+    { path: '' },
+    ...(hasPage(series, 'characters') ?
+      pathsFor('/characters', characters, slug)
+    : []),
+    ...(hasPage(series, 'fruits') ? pathsFor('/fruits', fruits, slug) : []),
+    ...(hasPage(series, 'places') ?
+      pathsFor('/places', [...places, ...ships], slug)
+    : []),
+    ...(hasPage(series, 'filler') ? [{ path: '/filler' }] : []),
+  ]
+}
+
+/** A record's square picture, which is the same in every locale. */
+function imageFor(image: string | undefined): string[] {
+  return image === undefined ?
+      []
+    : [
+        '    <image:image>',
+        `      <image:loc>${escapeXml(absoluteUrl(image))}</image:loc>`,
+        '    </image:image>',
+      ]
+}
+
+function entryFor(path: string, image?: string): string {
   const alternates = localeAlternates(path).map(
     (alternate) =>
       `    <xhtml:link rel="alternate" hreflang="${alternate.hrefLang}" href="${escapeXml(absoluteUrl(alternate.href))}" />`,
@@ -53,6 +82,7 @@ function entryFor(path: string): string {
     '  <url>',
     `    <loc>${escapeXml(absoluteUrl(path))}</loc>`,
     ...alternates,
+    ...imageFor(image),
     '  </url>',
   ].join('\n')
 }
@@ -62,9 +92,9 @@ function seriesEntries(archive: ReaderArchive): string[] {
   if (cached !== undefined) {
     return cached
   }
-  const entries = suffixes(archive).flatMap((suffix) =>
+  const entries = suffixes(archive).flatMap(({ path, image }) =>
     LOCALES.map((locale) =>
-      entryFor(`/${archive.series.slug}/${locale}${suffix}`),
+      entryFor(`/${archive.series.slug}/${locale}${path}`, image),
     ),
   )
   pages.set(archive, entries)
@@ -77,7 +107,7 @@ async function buildSitemap(): Promise<string> {
   )
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ...LOCALES.flatMap((locale) => [
       entryFor(`/${locale}`),
       entryFor(`/${locale}/legal`),

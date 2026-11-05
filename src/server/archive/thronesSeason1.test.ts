@@ -194,6 +194,7 @@ const CHANGES: {
   { id: 'mordane', episode: 10, chapter: 68, value: 'deceased' },
   { id: 'jory-cassel', episode: 5, chapter: 36, value: 'deceased' },
   { id: 'robert-baratheon', episode: 7, chapter: 50, value: 'deceased' },
+  { id: 'syrio-forel', episode: 8, chapter: 51, value: 'presumed-dead' },
   { id: 'tyrion-lannister', episode: 4, chapter: 29, value: 'captured' },
   { id: 'tyrion-lannister', episode: 6, chapter: 41, value: 'alive' },
   { id: 'jaime-lannister', episode: 9, chapter: 64, value: 'captured' },
@@ -740,9 +741,10 @@ describe.each([
 })
 
 /**
- * The Winterfell household's stages (#854), each pinned in the units that
- * tell it: three deaths, Arya's Needle and Bran's climb, which the book
- * alone shows after his threshold.
+ * The Winterfell household's stages (#854) and the southern cast's (#1051),
+ * each pinned in the units that tell it: Arya's Needle, Bran's climb, which
+ * the book alone shows after his threshold, the deaths, Barristan's thrown
+ * sword and Syrio's snapped blade.
  */
 const STAGES: {
   chapter: number
@@ -755,6 +757,9 @@ const STAGES: {
   { id: 'mordane', episode: 10, chapter: 68 },
   { id: 'arya-stark', episode: 2, chapter: 11 },
   { id: 'bran-stark', episode: 2, chapter: 9, source: 'chapter' },
+  { id: 'robert-baratheon', episode: 7, chapter: 50 },
+  { id: 'barristan-selmy', episode: 8, chapter: 58 },
+  { id: 'syrio-forel', episode: 8, chapter: 51 },
 ]
 
 describe.each(

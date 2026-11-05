@@ -46,6 +46,16 @@ gates.
   Trial cookies are restricted to that demo and yield to a saved bookmark.
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
+- A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
+  are the one exception: static files at addresses built from its slug, so
+  anyone who asks for one gets it. The sitemap lists the square of every record
+  both sources tell; a record of one source only is not listed. They hold the
+  first drawing and the line every source's reader has at the record's own
+  threshold. The name is the one its first source's reader is given (the anime's
+  for a record both tell, which is what a crawler's title prints), so a chapter
+  reader may meet an anime name early: Hagya's card says Leol. No page under fog
+  names them. The fog is an editorial promise kept by the pages, not access
+  control (`src/lib/crawler.ts`).
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
@@ -145,15 +155,16 @@ Winterfell, King's Landing, the Vale and the Riverlands, bit parts left out:
 those only one medium names in the stage are `source`-only, and those the other
 medium meets in a later season or book keep that later gate. It opened before
 its drawings: Eddard, Jon, Daenerys and Tyrion have their own, Eddard's with a
-death stage, and the Winterfell household's are in `art/winterfell.ts` (#854),
-with five stages. Every other record maps to a shared placeholder in
-`art/index.ts`, `PERSON` for a character and `PLACE` for a place, until its own
-issue draws it, so the drawing tests hold it like any series. Its 23 places
-(#853) are the ones a scene of the season or the book is set in, each filed in
-one of the realms, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
-optional, and an arcless series prints no arc row. Darry is the book's alone and
-the Kingswood the show's. The demo shows the places the first ten episodes
-reach, and covers in its tail the four the show first visits in later seasons.
+death stage, the Winterfell household's are in `art/winterfell.ts` (#854), with
+five stages, and the southern cast's are in `art/south.ts` (#1051), with three.
+Every other record maps to a shared placeholder in `art/index.ts`, `PERSON` for
+a character and `PLACE` for a place, until its own issue draws it, so the
+drawing tests hold it like any series. Its 23 places (#853) are the ones a scene
+of the season or the book is set in, each filed in one of the realms, beyond the
+Wall or Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless
+series prints no arc row. Darry is the book's alone and the Kingswood the
+show's. The demo shows the places the first ten episodes reach, and covers in
+its tail the four the show first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -174,6 +185,26 @@ content routes redirect under `/one-piece` before bookmark parameters are read.
 a content URL such as `/one-piece/en?ep=650` to set progress. `src/server.ts` is
 the Worker entry: it adds a `Link` header for the stylesheet and the fonts the
 root route preloads, which Cloudflare replays as a `103 Early Hints`.
+
+## Social pictures
+
+An open record page's head points `og:image` at a wide card
+(`/og/<series>/<locale>/<id>.png`, 1200×630: drawing, name, one line, site
+name). Its JSON-LD and its sitemap entry point at a square icon
+(`/og/<series>/<id>.png`, 600×600). A covered page and every other page keep
+`/og-card.png`. `npm run og:images` draws both pictures in Chrome, on the
+developer's machine. They are committed under `public/og/` and served as static
+assets, so the Worker never draws one. Each picture uses the record's first
+drawing, never a redrawing, and prints only what a reader standing at the
+record's own threshold reads in every source it is told in: a character's
+epithet, else its role; a fruit's type; a place's form and region; a ship's
+kind. The name is the one its first source's reader is given: the episode
+reader's for a record both sources tell, which is what a crawler's page title
+prints (a link preview is fetched as a crawler), and the chapter reader's for a
+record only the manga tells. Re-run the script after changing a record, a first
+drawing or the card layout. It draws only what changed.
+`scripts/og-images.test.mjs` fails while a picture is missing, stale or
+orphaned.
 
 ## Localization
 
@@ -252,7 +283,7 @@ checks this block.
 | Characters        | 123                                                 |
 | Places            | 23                                                  |
 | Saga modules      | 1                                                   |
-| Line drawings     | 146, one per record, plus 6 redrawings of 6 records |
+| Line drawings     | 146, one per record, plus 9 redrawings of 9 records |
 | Chronicle stories | 0, for 0 characters                                 |
 
 <!-- End of the generated counts. -->

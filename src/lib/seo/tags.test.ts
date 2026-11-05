@@ -38,6 +38,12 @@ describe('the social cards', () => {
     expect(valueOf('twitter:card')).toBe('summary_large_image')
   })
 
+  it('give the card’s size and type, so a preview is laid out before it loads', () => {
+    expect(valueOf('og:image:type')).toBe('image/png')
+    expect(valueOf('og:image:width')).toBe('1200')
+    expect(valueOf('og:image:height')).toBe('630')
+  })
+
   it('give Open Graph the territory it asks for, and name the other language', () => {
     expect(valueOf('og:locale')).toBe('en_US')
     expect(valueOf('og:locale:alternate')).toBe('it_IT')

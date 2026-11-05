@@ -41,6 +41,17 @@ describe('the structured data of a page', () => {
     )
   })
 
+  it('names an open record’s picture as the page’s own, and no other page’s', () => {
+    const image = 'https://example.test/og/one-piece/nico-robin.png'
+    const graph = pageJsonLd({ ...PAGE, image })
+
+    expect(graph).toContain(`"image":"${image}"`)
+    expect(graph).toContain(
+      `"primaryImageOfPage":{"@type":"ImageObject","url":"${image}"}`,
+    )
+    expect(pageJsonLd(PAGE)).not.toContain('image')
+  })
+
   it('ends the trail on the page itself, and does not link it', () => {
     const steps: unknown = JSON.parse(pageJsonLd(PAGE))
 

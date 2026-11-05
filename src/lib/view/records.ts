@@ -17,6 +17,7 @@
  */
 
 import type { Bookmark } from '~/lib/progress/episode'
+import type { RecordImages } from '~/lib/seo/socialImage'
 import type { ChartPoint } from '~/lib/view/chart'
 import type { FillerAhead } from '~/lib/view/filler'
 
@@ -668,9 +669,14 @@ export type LandingView = { home: HomeView } | { onboarding: OnboardingView }
  * A title is set before any component runs, so this is the one place a
  * covered name could leak into a page that is otherwise clean. The route's
  * `head` spells these out and derives nothing.
+ *
+ * `image` is a record's own pictures, set only on an open record's page: a
+ * page under fog unfurls with the site's card, since a drawing names its
+ * record as surely as its title does.
  */
 export interface DocumentHead {
   description: string
+  image?: RecordImages & { alt: string }
   title: string
 }
 
