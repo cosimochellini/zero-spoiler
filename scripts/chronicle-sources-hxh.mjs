@@ -95,6 +95,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
       note: 'Episode 75 and Chapter 185: Chapters 183–185 complete quiz, castle and exit. Destination identity not disclosed.',
     },
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+    81: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_81_(2011)',
+      note: 'Read Episode 81 (2011) and Chapter 191. Author correction: leave Rammot unnamed because his manga naming gate is Chapter192. Independent verifier correction: the title leaves the rabbit-like ant unnamed before the Chapter 192 naming gate.',
+    },
+    82: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_82_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 82 (2011), Chapter 193. Independent verifier correction: prepares another attack; Chapter 193 has Kite shoot before the planned bite.',
+    },
+    83: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_83_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 83 (2011), Chapter 195.',
+    },
   },
   'mito-freecss': {
     1: {
@@ -425,6 +441,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
       note: 'Episode 75 and Chapter 185: Chapters 183–185: travel preparation, selected cards and departure; arrival identity omitted.',
     },
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+    81: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_81_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 81 (2011), Chapter 191.',
+    },
+    82: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_82_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 82 (2011), Chapter 193. Independent verifier correction: one arm is cut off, as Chapter 193 states; no claim of multiple severed limbs.',
+    },
+    83: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_83_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 83 (2011), Chapter 196.',
+    },
   },
   'menchi': {
     6: {
@@ -567,6 +599,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_18_(2011)',
       note: "Checked: she explains the bee fight, waits for the tracker rescue, trades sleeping gas for Bourbon's badge, Gon holds his breath, returns it and keeps hers. Corrected after review: chapter 32 to 31, since the cave scene is complete in chapter 31 and chapter 32 is the airship.",
     },
+    80: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Chapter 190.',
+    },
   },
   'bourbon': {
     3: {
@@ -589,17 +625,29 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'pokkle': {
-    18: {
+    '18': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_14_(2011)',
       note: 'Checked: Pokkle stalks an applicant in tall grass with Gon watching, the arrow only cuts him, the tranquilizer drops him, the water remark and the badge taken (episode 14, chapter 24); Gon resolves to stalk Hisoka the same way. Dated 18 / 24: his name is first said in the episode 18 roll call.',
     },
-    19: {
+    '19': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_19_(2011)',
       note: 'Checked: the nine finalists, three days of rest, the hotel as the Final Phase venue, the one-on-one bracket where one win passes, winners leave and only one fails (chapter 33). Corrected after review (#833): the arrow scene moved to the 18 / 24 story.',
     },
-    20: {
+    '20': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_20_(2011)',
       note: "Checked: Satotz's account has Hanzo beat him with the same tactic and Killua forfeit the fifth match. Corrected after review: removed 'becomes a Hunter', since the dossier files that at episode 21.",
+    },
+    '80': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Chapter 190.',
+    },
+    '84:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_197',
+      note: 'Read the MediaWiki API synopses: Chapter 197, Chapter 198.',
+    },
+    '84:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_84_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 84 (2011). The episode synopsis does not establish his death, so the anime story stops at the interrogation.',
     },
   },
   'bodoro': {
@@ -736,6 +784,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
     76: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_76_(2011)',
       note: "Ep 76 flashback and the Kite page (ch. 1): Whale Island, foxbear mother killed, scolding, Gon stopping the cub's killing, Kite asking if Ging is his father. Corrected after review: removed the claim that he tells Gon his father is a living Hunter, which the wiki dates later.",
+    },
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+    80: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Chapter 190.',
+    },
+    82: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_82_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 82 (2011), Chapter 192, Chapter 193, Chapter 194.',
+    },
+    83: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_83_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 83 (2011), Chapter 196.',
     },
   },
   'kon': {
@@ -1600,6 +1664,172 @@ export const HUNTER_X_HUNTER_SOURCES = {
     75: {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_184',
       note: 'Chapters 146,184 and Elena’s character page establish the exit attendant, Killua’s earlier departure, twin/co-creator identification and Gon choosing three cards. The retrospective waits for chapter 184 and remains chapter-only.',
+    },
+  },
+  'neferpitou': {
+    84: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_84_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 84 (2011), Chapter 198. Opening stops before Pokkle’s disposal and Kite’s encounter, which the anime has not shown at episode84.',
+    },
+  },
+  'baro': {
+    '83:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_195',
+      note: 'Read the MediaWiki API synopses: Chapter 195.',
+    },
+  },
+  'yunju': {
+    '79:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_79_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 79 (2011).',
+    },
+    '79:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_192',
+      note: 'Read the MediaWiki API synopses: Chapter 192, Chapter 193.',
+    },
+    '82:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_82_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 82 (2011).',
+    },
+  },
+  'rammot': {
+    '84': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_82_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 82 (2011), Episode 83 (2011), Episode 84 (2011), Chapter 194, Chapter 197, Chapter 198.',
+    },
+    '79:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_79_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 79 (2011).',
+    },
+    '79:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_191',
+      note: 'Read the MediaWiki API synopses: Chapter 191, Chapter 192. Separate opening from the earlier anime raid; chapter 192 is his manga naming gate.',
+    },
+    '81:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_81_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 81 (2011).',
+    },
+  },
+  'hagya': {
+    '106:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_192',
+      note: 'Read the MediaWiki API synopses: Chapter 192.',
+    },
+  },
+  'pike': {
+    '80:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_190',
+      note: 'Read the MediaWiki API synopses: Chapter 190. Integration correction: no Zazan marker because her episode gate is 84, after this entry’s ordering coordinate. The commander remains unnamed in the prose.',
+    },
+  },
+  'zazan': {
+    '84:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_189',
+      note: 'Read the MediaWiki API synopses: Chapter 189.',
+    },
+    '84:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Episode 84 (2011). Recap delayed until Zazan’s anime naming gate; the manga has its own earlier opening.',
+    },
+  },
+  'cheetu': {
+    79: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_79_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 79 (2011), Chapter 192.',
+    },
+  },
+  'peggy': {
+    '79:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_189',
+      note: 'Read the MediaWiki API synopses: Chapter 189.',
+    },
+  },
+  'balda': {
+    80: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Chapter 190. Opening death story; Pike and Zazan remain unnamed because their episode gates are later or source-restricted.',
+    },
+  },
+  'pekuba': {
+    '79:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_79_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 79 (2011).',
+    },
+    '80:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011).',
+    },
+  },
+  'reina': {
+    80: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Episode 80 (2011), Chapter 187, Chapter 189. Reina’s opening is a recap delayed to her naming gate. The unnamed commander is not linked before Colt’s gate.',
+    },
+  },
+  'haruna': {
+    '77:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011).',
+    },
+    '78:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_78_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 78 (2011).',
+    },
+  },
+  'kurt': {
+    '77:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011).',
+    },
+  },
+  'wong': {
+    '77:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011).',
+    },
+  },
+  'podungo-lapoy': {
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. The anime identifies Podungo among the absent surveyors; no physical self-introduction is claimed there. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+    80: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Chapter 190.',
+    },
+  },
+  'lin-koshi': {
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. The anime names Lin among the two absent surveyors; this paragraph does not claim he personally introduces himself in the anime. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+  },
+  'stick-dinner': {
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+    80: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_80_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 80 (2011), Chapter 190.',
+    },
+  },
+  'monta-yuras': {
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+  },
+  'banana-kavaro': {
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
+    },
+  },
+  'spinner-clow': {
+    77: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
+      note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
     },
   },
 }

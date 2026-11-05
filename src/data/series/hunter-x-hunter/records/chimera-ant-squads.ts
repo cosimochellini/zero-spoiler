@@ -1,3 +1,4 @@
+import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import type { HunterSaga } from './saga'
 
 const SQUADRON_LEADER = { it: 'Comandante di divisione', en: 'Squadron Leader' }
@@ -13,6 +14,7 @@ const CHIMERA_ANTS = { it: 'Formichimere', en: 'Chimera Ants' }
 export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
     zazan: {
+      chronicle: chimeraAntPhase1Chronicles.zazan,
       relationships: [
         // Pike is the manga's alone, so the anime keeps only Pokkle.
         {
@@ -80,6 +82,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     pike: {
+      chronicle: chimeraAntPhase1Chronicles.pike,
       relationships: [
         {
           episode: 84,
@@ -127,6 +130,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     hagya: {
+      chronicle: chimeraAntPhase1Chronicles.hagya,
       relationships: [
         {
           episode: 106,
@@ -208,6 +212,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     rammot: {
+      chronicle: chimeraAntPhase1Chronicles.rammot,
       relationships: [
         // Gon and Killua beat him in chapter 191 / episode 81; his record
         // opens for chapter readers at 192.
@@ -333,6 +338,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [{ episode: 79, chapter: 192, value: CHIMERA_ANTS }],
     },
     yunju: {
+      chronicle: chimeraAntPhase1Chronicles.yunju,
       relationships: [
         {
           episode: 82,
@@ -363,6 +369,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       affiliation: [{ episode: 79, chapter: 193, value: CHIMERA_ANTS }],
     },
     baro: {
+      chronicle: chimeraAntPhase1Chronicles.baro,
       relationships: [
         {
           episode: 83,

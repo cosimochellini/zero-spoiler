@@ -71,6 +71,16 @@ function waitsForGing(
   )
 }
 
+const CHRONICLE_CHAPTERS: Record<number, number> = {
+  76: 1,
+  77: 186,
+  80: 190,
+  82: 194,
+  83: 196,
+  85: 199,
+  136: 316,
+}
+
 function expectedChapter(
   field: Parameters<typeof waitsForGing>[0],
   entry: Parameters<typeof waitsForGing>[1] & { episode: number },
@@ -108,7 +118,11 @@ describe('chapter-one pins', () => {
 
       for (const { field, timeline } of timelines) {
         for (const entry of timeline) {
-          expect(entry.chapter).toBe(expectedChapter(field, entry))
+          expect(entry.chapter).toBe(
+            field === 'chronicle' ?
+              CHRONICLE_CHAPTERS[entry.episode]
+            : expectedChapter(field, entry),
+          )
         }
       }
     },

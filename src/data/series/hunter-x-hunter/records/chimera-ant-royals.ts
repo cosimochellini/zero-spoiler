@@ -1,5 +1,6 @@
 import type { Relationship } from '~/data/types'
 
+import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import type { HunterSaga } from './saga'
 
 /** A Royal Guard's side, before and after the King is born. */
@@ -218,6 +219,7 @@ const KING_KOMUGI_GUEST: Relationship = {
 export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
     cheetu: {
+      chronicle: chimeraAntPhase1Chronicles.cheetu,
       relationships: [
         {
           episode: 94,
@@ -289,6 +291,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     peggy: {
+      chronicle: chimeraAntPhase1Chronicles.peggy,
       relationships: [
         { episode: 79, chapter: 192, value: [links.peggyCheetu] },
         {
