@@ -1,3 +1,4 @@
+import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
 import type { HunterSaga } from './saga'
 
 export const CHIMERA_ANT_PHASE_FOUR: Pick<HunterSaga, 'dossiers' | 'entries'> =
@@ -19,6 +20,7 @@ export const CHIMERA_ANT_PHASE_FOUR: Pick<HunterSaga, 'dossiers' | 'entries'> =
     ],
     dossiers: {
       taragetter: {
+        chronicle: chimeraAntPhase4Chronicles.taragetter,
         role: { it: 'Soldato di guardia', en: 'Palace guard' },
         log: {
           it: 'Welfang trova del sangue e un paio di scarpe. Si chiede perché un intruso sia entrato nel palazzo per uccidere Taragetter.',

@@ -2,6 +2,7 @@ import type { LocalizedText, Relationship } from '~/data/types'
 
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
+import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
 import type { HunterSaga } from './saga'
 
 /** Where Netero's Hunters stand, as their dossiers say it. */
@@ -126,6 +127,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase2Chronicles['palm-siberia'],
         ...chimeraAntPhase3Chronicles['palm-siberia'],
+
+        ...chimeraAntPhase4Chronicles['palm-siberia'],
       ],
       relationships: [
         { episode: 86, chapter: 200, value: [rows.palmKnov, rows.palmGon] },
@@ -223,6 +226,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase2Chronicles.knov,
         ...chimeraAntPhase3Chronicles.knov,
+
+        ...chimeraAntPhase4Chronicles.knov,
       ],
       relationships: [
         {
@@ -298,6 +303,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase2Chronicles['morel-mackernasey'],
         ...chimeraAntPhase3Chronicles['morel-mackernasey'],
+
+        ...chimeraAntPhase4Chronicles['morel-mackernasey'],
       ],
       relationships: [
         {
@@ -415,7 +422,10 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'knuckle-bine': {
-      chronicle: chimeraAntPhase2Chronicles['knuckle-bine'],
+      chronicle: [
+        ...chimeraAntPhase2Chronicles['knuckle-bine'],
+        ...chimeraAntPhase4Chronicles['knuckle-bine'],
+      ],
       relationships: [
         {
           episode: 86,
@@ -491,7 +501,10 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'shoot-mcmahon': {
-      chronicle: chimeraAntPhase2Chronicles['shoot-mcmahon'],
+      chronicle: [
+        ...chimeraAntPhase2Chronicles['shoot-mcmahon'],
+        ...chimeraAntPhase4Chronicles['shoot-mcmahon'],
+      ],
       relationships: [
         {
           episode: 86,

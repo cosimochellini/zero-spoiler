@@ -3,6 +3,7 @@ import type { Relationship, Timeline } from '~/data/types'
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
+import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { hunterExamChronicles } from './hunter-exam.chronicle'
 import { hunterExamRelationships } from './hunter-exam.relationships'
@@ -511,6 +512,8 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase2Chronicles['gon-freecss'],
 
         ...chimeraAntPhase3Chronicles['gon-freecss'],
+
+        ...chimeraAntPhase4Chronicles['gon-freecss'],
       ],
       role: [
         ...passedExam(1, 1),
@@ -1260,6 +1263,8 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase2Chronicles.killua,
 
         ...chimeraAntPhase3Chronicles.killua,
+
+        ...chimeraAntPhase4Chronicles.killua,
       ],
       role: [
         {
@@ -1614,6 +1619,8 @@ const earlyExam: HunterSaga = {
         ...greedIslandReturningChronicles.netero,
 
         ...chimeraAntPhase2Chronicles.netero,
+
+        ...chimeraAntPhase4Chronicles.netero,
       ],
       role: [
         {
