@@ -12,7 +12,8 @@
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
-# A record's social pictures (scripts/og-images.mjs) keep their names when a
-# drawing is redrawn, so they are cached for a day rather than forever.
+# A record's social pictures (scripts/og-images.mjs) keep their names when they
+# are drawn again (a record, its first drawing or the layout changed), so they
+# are cached for a day rather than forever.
 /og/*
   Cache-Control: public, max-age=86400

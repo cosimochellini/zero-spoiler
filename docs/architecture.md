@@ -50,8 +50,11 @@ gates.
   are the one exception: static files at addresses built from its slug, so
   anyone who asks for one gets it. The sitemap lists the square of every record
   both sources tell; a record of one source only is not listed. They hold the
-  first drawing and the words at the record's own threshold, and no page under
-  fog names them. The fog is an editorial promise kept by the pages, not access
+  first drawing and the line every source's reader has at the record's own
+  threshold. The name is the one its first source's reader is given (the anime's
+  for a record both tell, which is what a crawler's title prints), so a chapter
+  reader may meet an anime name early: Hagya's card says Leol. No page under fog
+  names them. The fog is an editorial promise kept by the pages, not access
   control (`src/lib/crawler.ts`).
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
@@ -194,10 +197,12 @@ assets, so the Worker never draws one. Each picture uses the record's first
 drawing, never a redrawing, and prints only what a reader standing at the
 record's own threshold reads in every source it is told in: a character's
 epithet, else its role; a fruit's type; a place's form and region; a ship's
-kind. The name is the one the episode reader is given, which is what a crawler's
-page title prints: a link preview is fetched as a crawler. Re-run the script
-after changing a record, a first drawing or the card layout. It draws only what
-changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
+kind. The name is the one its first source's reader is given: the episode
+reader's for a record both sources tell, which is what a crawler's page title
+prints (a link preview is fetched as a crawler), and the chapter reader's for a
+record only the manga tells. Re-run the script after changing a record, a first
+drawing or the card layout. It draws only what changed.
+`scripts/og-images.test.mjs` fails while a picture is missing, stale or
 orphaned.
 
 ## Localization
