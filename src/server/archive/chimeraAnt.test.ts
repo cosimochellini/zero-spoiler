@@ -238,6 +238,7 @@ const DEATHS = [
   { id: 'shaiapouf', episode: 135, chapter: 314 },
   { id: 'meruem', episode: 135, chapter: 318 },
   { id: 'netero', episode: 126, chapter: 298 },
+  { id: 'komugi', episode: 148, chapter: 339 },
 ].flatMap(({ id, episode, chapter }) =>
   [
     { unit: 'episode' as const, gate: episode },
@@ -265,10 +266,28 @@ describe.each([
   { id: 'meruem', episode: 135, chapter: 318 },
   { id: 'cheetu', episode: 117, chapter: 278 },
   { id: 'netero', episode: 126, chapter: 298 },
+  { id: 'komugi', episode: 148, chapter: 339 },
 ])('$id’s death drawing', ({ id, episode, chapter }) => {
   it.each(LOCALES)('changes at the death in %s', (locale) => {
     for (const unit of UNITS) {
       const gate = unit === 'episode' ? episode : chapter
+      const read = (count: number): ReturnType<typeof drawingsFor> =>
+        drawingsFor([id], readerFor(archive, at(unit, count), locale))
+
+      expect(read(gate)[id]).toBeDefined()
+      expect(read(gate)).not.toStrictEqual(read(gate - 1))
+    }
+  })
+})
+
+describe('the palace’s damage drawing', () => {
+  // Youpi's blast takes out the foot of the central tower: ch 278, ep 117.
+  it.each(LOCALES)('changes at the blast in %s', (locale) => {
+    const id = 'royal-palace-of-east-gorteau'
+    for (const [unit, gate] of [
+      ['episode', 117],
+      ['chapter', 278],
+    ] as const) {
       const read = (count: number): ReturnType<typeof drawingsFor> =>
         drawingsFor([id], readerFor(archive, at(unit, count), locale))
 

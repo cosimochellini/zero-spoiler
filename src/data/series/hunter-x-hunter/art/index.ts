@@ -7,6 +7,7 @@ import {
   house,
   SEA,
   shadow,
+  star,
   wave,
 } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
@@ -28,8 +29,14 @@ import {
   CHIMERA_ANT_PHASE_FOUR_DRAWINGS,
   chimeraAntPhaseFourRedrawn,
 } from './chimera-ant-phase-four'
-import { CHIMERA_ANT_PHASE_THREE_DRAWINGS } from './chimera-ant-phase-three'
-import { CHIMERA_ANT_PLACE_DRAWINGS } from './chimera-ant-places'
+import {
+  CHIMERA_ANT_PHASE_THREE_DRAWINGS,
+  chimeraAntPhaseThreeRedrawn,
+} from './chimera-ant-phase-three'
+import {
+  CHIMERA_ANT_PLACE_DRAWINGS,
+  chimeraAntPlacesRedrawn,
+} from './chimera-ant-places'
 import {
   CHIMERA_ANT_RETURNING_DRAWINGS,
   chimeraAntReturningRedrawn,
@@ -236,60 +243,109 @@ export const DRAWINGS = {
     shadow(80, 150, 56),
   ],
 
+  // Spin's camera, a compact box seen from above and to one side, the lens
+  // ring in tint, its strap trailing on the table and the far side hatched:
+  // the camera she is always seen carrying, chapter 186 / episode 77, on a
+  // survey that photographs every new species it finds. No beret.
+  'spinner-clow': [
+    { d: 'M36 100 H108 V146 H36 Z' },
+    { d: 'M36 100 L48 90 H120 L108 100 M108 146 L120 136 V90' },
+    { d: circle(70, 123, 19), role: 'accent' },
+    { d: circle(70, 123, 12), role: 'soft' },
+    { d: 'M62 118 Q65 113 71 112', role: 'soft' },
+    { d: 'M88 106 H102 V116 H88 Z', role: 'soft' },
+    { d: ellipse(98, 95, 6, 2) },
+    {
+      d: 'M110 140 l8 -7 M110 128 l8 -7 M110 116 l8 -7 M110 104 l8 -7',
+      role: 'ambient',
+    },
+    {
+      d: 'M36 106 Q20 112 18 138 Q20 150 34 154 M120 98 Q138 104 140 130 Q140 144 128 150',
+      role: 'soft',
+    },
+    shadow(78, 158, 50),
+  ],
+  // Banana's fanny pack, the pouch in tint on its belt, the zip across the
+  // top and the buckle on the strap, its underside hatched: she wears it
+  // round her waist over her baggy overalls, chapter 186 / episode 77. Her
+  // dog comes out of her backpack only in chapter 187.
+  'banana-kavaro': [
+    {
+      d: 'M38 104 Q36 84 60 82 H102 Q126 84 124 104 Q122 130 100 134 H62 Q40 130 38 104 Z',
+      role: 'accent',
+    },
+    { d: 'M8 94 Q22 90 38 94 M8 106 Q22 102 38 106' },
+    { d: 'M124 94 Q140 90 152 94 M124 106 Q140 102 152 106' },
+    { d: 'M136 88 H146 V110 H136 Z M141 92 V106', role: 'soft' },
+    { d: 'M46 96 Q80 88 116 96', role: 'soft' },
+    { d: `M110 96 l3 10 ${dot(113, 108)}`, role: 'soft' },
+    { d: 'M50 114 Q80 122 112 114', role: 'soft' },
+    {
+      d: 'M56 128 l6 -5 M70 132 l6 -5 M86 133 l6 -5 M100 130 l6 -5',
+      role: 'ambient',
+    },
+    shadow(80, 150, 50),
+  ],
+  // Mon's rucksack standing on its base, the top flap in tint over two
+  // buckled straps, a pocket low on the front and the far side hatched: the
+  // heavy luggage he carries, chapter 186 / episode 77.
+  'monta-yuras': [
+    { d: 'M44 66 Q44 56 54 56 H100 Q110 56 110 66 V148 H44 Z' },
+    { d: 'M110 66 L124 58 V142 L110 148 M54 56 L66 48 H112 Q124 48 124 58' },
+    { d: 'M42 64 Q76 52 112 64 L110 98 Q77 106 44 98 Z', role: 'accent' },
+    { d: 'M62 102 V122 M92 102 V122', role: 'soft' },
+    { d: 'M57 122 H67 V130 H57 Z M87 122 H97 V130 H87 Z', role: 'soft' },
+    { d: 'M52 134 Q77 130 102 134 V148 M52 134 V148', role: 'soft' },
+    { d: 'M72 52 Q78 40 86 52' },
+    {
+      d: 'M112 78 l10 -6 M112 94 l10 -6 M112 110 l10 -6 M112 126 l10 -6',
+      role: 'ambient',
+    },
+    shadow(84, 156, 50),
+  ],
+  // Stick's trousers from the front, the waistband seen open from above,
+  // the stars down the side in tint and the far leg hatched: the red pants
+  // with a row of stars down the sides he wears at the camp, chapter 186 /
+  // episode 77.
+  'stick-dinner': [
+    { d: ellipse(80, 50, 30, 6) },
+    { d: 'M50 50 V58 Q80 64 110 58 V50' },
+    { d: 'M50 58 L38 154 M110 58 L122 154 M66 154 L80 96 L94 154' },
+    { d: `${ellipse(52, 154, 14, 4)} ${ellipse(108, 154, 14, 4)}` },
+    { d: `M80 64 V92 ${dot(80, 61)}`, role: 'soft' },
+    {
+      d: `${star(48, 74, 5, 2.2)} ${star(46, 94, 5, 2.2)} ${star(44, 114, 5, 2.2)} ${star(42, 134, 5, 2.2)}`,
+      role: 'accent',
+    },
+    { d: 'M56 66 Q62 72 64 82 M104 66 Q98 72 96 82', role: 'soft' },
+    { d: 'M58 118 Q62 130 58 142 M100 112 Q96 124 100 136', role: 'soft' },
+    {
+      d: 'M106 92 l6 -5 M108 108 l6 -5 M110 124 l6 -5 M112 140 l6 -5',
+      role: 'ambient',
+    },
+    shadow(80, 168, 48),
+  ],
+  // The cup of water with a leaf floating on it, the leaf in tint, the
+  // water's surface inside the rim and the far side hatched: the Water
+  // Divination Pitou tries after Rammot, episode 84 / chapter 198. The leaf
+  // is drawn whole, before it reacts: it breaks apart in the manga and
+  // wilts in the anime.
+  'neferpitou': [
+    { d: ellipse(80, 76, 34, 10) },
+    { d: 'M46 76 L54 146 Q80 156 106 146 L114 76' },
+    { d: 'M55 138 Q80 146 105 138', role: 'soft' },
+    { d: ellipse(80, 90, 32, 8), role: 'soft' },
+    { d: 'M54 92 Q66 72 106 84 Q92 102 54 92 Z', role: 'accent' },
+    { d: 'M56 92 Q80 90 104 84 M54 92 l-5 2', role: 'soft' },
+    { d: 'M70 91 l4 -7 M84 89 l4 -7', role: 'soft' },
+    { d: 'M52 102 L57 130', role: 'soft' },
+    { d: 'M100 108 l8 -6 M101 120 l8 -6 M102 132 l7 -5', role: 'ambient' },
+    shadow(80, 164, 40),
+  ],
   // A chimera ant side on, the abdomen in vermilion, with its elbowed
   // feelers and six jointed legs: the aggressive insect under quarantine
   // that Gon and Killua first see in episode 76, and the queen of chapter
   // 186. No eyes and no jaws.
-  // A flame for the Camp Tiger discussed during the survey (ep. 77 / ch. 186).
-  'spinner-clow': [
-    {
-      d: 'M80 152 C40 152 41 110 66 91 Q61 113 76 112 Q94 92 80 57 Q117 85 116 116 Q115 149 80 152 Z',
-      role: 'accent',
-    },
-    { d: 'M65 140 Q58 124 78 115' },
-    { d: 'M84 141 Q103 128 97 109' },
-    { d: 'M49 89 Q43 104 45 113', role: 'ambient' },
-    shadow(80, 166, 37),
-  ],
-  // A symbolic track of the Camp Tiger (ep. 77 / ch. 186).
-  'banana-kavaro': [
-    {
-      d: 'M54 129 Q54 117 67 112 Q80 98 93 112 Q107 117 106 129 Q103 144 80 137 Q57 144 54 129 Z',
-      role: 'accent',
-    },
-    { d: ellipse(51, 99, 8, 11) },
-    { d: ellipse(69, 86, 8, 12) },
-    { d: ellipse(91, 86, 8, 12) },
-    { d: ellipse(109, 99, 8, 11) },
-  ],
-  // The Camp Tiger’s striped flank (ep. 77 / ch. 186).
-  'monta-yuras': [
-    { d: 'M34 94 Q78 60 124 91 M38 131 Q77 151 124 119' },
-    { d: 'M56 82 Q53 100 72 116 Q62 96 65 78', role: 'accent' },
-    { d: 'M81 77 Q75 94 92 104 Q87 87 91 78' },
-    { d: 'M109 84 Q101 102 116 108 Q112 95 117 87' },
-    { d: 'M67 140 Q83 129 84 116 Q91 126 81 141' },
-  ],
-  // The Camp Tiger’s cooking fire, drawn as embers (ep. 77 / ch. 186).
-  'stick-dinner': [
-    { d: 'M45 140 Q80 153 117 137' },
-    {
-      d: 'M54 132 Q61 120 69 134 Q81 115 92 132 Q101 122 110 131',
-      role: 'accent',
-    },
-    { d: 'M67 112 Q58 101 69 91' },
-    { d: 'M90 110 Q100 97 89 85 Q81 74 87 65', role: 'ambient' },
-    shadow(80, 157, 41),
-  ],
-  // The glass and leaf of the water test, episode 84 and chapter 198.
-  'neferpitou': [
-    { d: 'M45 82 Q47 119 56 151 Q80 165 104 151 Q113 118 115 82' },
-    { d: 'M45 82 C45 64 115 64 115 82 C115 100 45 100 45 82 Z' },
-    { d: 'M51 107 Q79 122 109 107', role: 'ambient' },
-    { d: 'M62 87 Q68 74 97 77 Q91 92 62 87 Z', role: 'accent' },
-    { d: 'M63 87 Q77 81 92 79' },
-    shadow(80, 177, 38),
-  ],
   'chimera-ant-arc': [
     { d: ellipse(114, 104, 26, 18), role: 'accent' },
     {
@@ -1074,4 +1130,6 @@ export const REDRAWINGS: Redrawings = {
   ...chimeraAntReturningRedrawn,
   ...chimeraAntPhaseFourRedrawn,
   ...chimeraAntPhaseFiveRedrawn,
+  ...chimeraAntPhaseThreeRedrawn,
+  ...chimeraAntPlacesRedrawn,
 }

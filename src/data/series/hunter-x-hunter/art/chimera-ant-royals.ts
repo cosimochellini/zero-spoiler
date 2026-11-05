@@ -7,19 +7,40 @@ import {
 import { shadow } from '~/lib/svg/primitives'
 
 /**
- * The cocoon Menthuthuyoupi waits in: the rock of the chamber's ceiling, the
- * stalk it hangs from, and its shell in tint. It still hangs there, empty,
- * once he has hatched.
+ * The rock of the nest's ceiling and the cocoon Menthuthuyoupi waits in: its
+ * stalk, its shell in tint and the far side hatched. The rock and the shell
+ * stay in all three of his drawings.
  */
-const YOUPI_COCOON: Stroke[] = [
-  {
-    d: 'M4 20 Q40 12 80 18 T156 16 M18 16 l4 -8 M44 14 l3 -7 M110 15 l4 -8 M136 14 l3 -7',
-    role: 'ambient',
-  },
-  { d: 'M76 18 Q74 30 77 42 M84 18 Q86 30 83 42', role: 'soft' },
+export const YOUPI_ROCK: Stroke = {
+  d: 'M4 20 Q40 12 80 18 T156 16 M18 16 l4 -8 M44 14 l3 -7 M110 15 l4 -8 M136 14 l3 -7',
+  role: 'ambient',
+}
+const YOUPI_STALK: Stroke = {
+  d: 'M76 18 Q74 30 77 42 M84 18 Q86 30 83 42',
+  role: 'soft',
+}
+export const YOUPI_SHELL: Stroke[] = [
   {
     d: 'M80 42 C106 42 118 76 117 108 C116 140 100 162 80 162 C60 162 44 140 43 108 C42 76 54 42 80 42 Z',
     role: 'accent',
+  },
+  {
+    d: 'M106 62 l6 -4 M110 80 l6 -4 M112 98 l6 -4 M112 116 l6 -4 M110 134 l6 -4 M104 150 l6 -4',
+    role: 'ambient',
+  },
+]
+
+/**
+ * The split down the front of the cocoon once he has hatched, its torn rim
+ * and the empty inside hatched. His death keeps it.
+ */
+export const YOUPI_SPLIT: Stroke[] = [
+  {
+    d: 'M74 50 L72 62 L67 70 L66 84 L60 96 L62 112 L58 124 L66 138 L70 152 L80 160 L88 150 L94 140 L98 128 L104 116 L100 102 L104 88 L96 76 L94 64 L88 56 Z',
+  },
+  {
+    d: 'M70 74 l14 -12 M66 92 l26 -22 M64 110 l34 -28 M64 126 l36 -30 M70 138 l28 -24 M76 150 l16 -14',
+    role: 'ambient',
   },
 ]
 
@@ -51,11 +72,17 @@ const PEGGY_COAT: Stroke[] = [
 /** The King, the Royal Guards and the Squadron Leaders closest to the Queen (#1021). */
 export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // Cheetu's cut-off shorts in mid-stride, one leg thrown forward and one
-  // back, the frayed hems in tint and the inside of the legs hatched: the
+  // back, seen a little from above into the waist, the frayed hems in tint
+  // and the inside of the waist and the legs hatched: the
   // only thing the cheetah-like Squadron Leader wears, named in episode 79 /
   // chapter 192.
   cheetu: [
     { d: 'M48 58 Q80 50 112 58 V70 Q80 62 48 70 Z' },
+    { d: 'M48 58 Q80 66 112 58', role: 'soft' },
+    {
+      d: 'M60 60 l6 -4 M70 61 l8 -6 M84 61 l8 -6 M98 60 l5 -3',
+      role: 'ambient',
+    },
     { d: 'M48 70 L22 120 M112 70 L136 128 M58 134 L80 96 L100 138' },
     {
       d: 'M22 120 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 M100 138 l4 4 l4 -6 l4 5 l4 -6 l4 5 l4 -6 l4 4 l4 -5 l4 1',
@@ -68,7 +95,7 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
       role: 'ambient',
     },
     { d: 'M106 82 l6 -4 M110 96 l6 -4 M114 110 l6 -4', role: 'ambient' },
-    { d: 'M62 62 V70 M98 62 V70', role: 'soft' },
+    { d: 'M62 63 V70 M98 63 V70', role: 'soft' },
     shadow(80, 176, 50),
   ],
   // Peggy's coat over the turtleneck, standing empty: the analyst named in
@@ -112,19 +139,19 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
     shadow(80, 192, 40),
   ],
   // The cocoon Menthuthuyoupi has not yet left, hanging from the ceiling of
-  // the nest, its veins soft and its far side hatched: Shaiapouf says he will
-  // soon awaken, episode 86 / chapter 202. Nothing of him is drawn.
+  // the nest by its stalk, its silk soft and its far side hatched: Shaiapouf
+  // says he will soon awaken, episode 86 / chapter 202. Nothing of him is
+  // drawn.
   menthuthuyoupi: [
-    ...YOUPI_COCOON,
+    YOUPI_ROCK,
+    YOUPI_STALK,
+    ...YOUPI_SHELL,
+    { d: 'M47 76 Q60 90 80 92 M43 116 Q52 132 66 140', role: 'soft' },
     {
-      d: 'M66 46 Q54 96 62 156 M96 46 Q108 100 98 156 M80 42 V58',
+      d: 'M68 46 Q54 96 66 156 M92 46 Q104 90 98 128 M80 42 Q74 100 80 162',
       role: 'soft',
     },
-    { d: 'M60 92 Q68 104 66 118 M102 80 Q92 90 92 104', role: 'soft' },
-    {
-      d: 'M106 62 l6 -4 M110 80 l6 -4 M112 98 l6 -4 M112 116 l6 -4 M110 134 l6 -4 M104 150 l6 -4',
-      role: 'ambient',
-    },
+    { d: 'M73 46 Q80 51 87 46 M71 52 Q80 58 89 52', role: 'soft' },
     shadow(80, 184, 34),
   ],
   // A white flag on a stick planted in the ground, the cloth in tint with
@@ -181,21 +208,17 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntRoyalsRedrawn: Redrawings = {
   menthuthuyoupi: [
-    // The same cocoon split open and empty, the inside hatched and bits of
-    // shell on the floor: he hatches, episode 88 / chapter 206.
+    // The same cocoon split open down its front, empty, with bits of shell
+    // on the floor: he hatches, episode 88 / chapter 206.
     {
       episode: 88,
       chapter: 206,
       value: [
-        ...YOUPI_COCOON,
-        {
-          d: 'M62 70 L72 80 L76 64 L86 78 L94 64 L98 84 L106 96 L96 104 L104 122 L92 126 L96 146 L82 136 L74 150 L68 132 L56 140 L60 118 L50 110 L60 98 L54 84 Z',
-        },
-        { d: 'M64 76 L72 86 L76 72 L86 84 L92 72 L96 88', role: 'soft' },
-        {
-          d: 'M66 92 l10 -8 M62 108 l22 -18 M64 122 l28 -24 M72 132 l24 -20 M80 136 l12 -10',
-          role: 'ambient',
-        },
+        YOUPI_ROCK,
+        YOUPI_STALK,
+        ...YOUPI_SHELL,
+        ...YOUPI_SPLIT,
+        { d: 'M47 76 Q54 86 64 90 M104 90 Q110 86 115 80', role: 'soft' },
         {
           d: 'M34 182 l10 -6 l4 7 Z M112 184 l12 -2 l-4 -7 Z M60 186 l6 -3 l1 4 Z',
           role: 'soft',

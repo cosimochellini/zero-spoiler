@@ -1,34 +1,56 @@
-import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  type Stroke,
+} from '~/data/art/stroke'
 import { shadow } from '~/lib/svg/primitives'
 
 import { CHIMERA_ANT_ROYALS_DRAWINGS } from './chimera-ant-royals'
 
+/**
+ * One of Taragetter's dark forewings, the right one, from behind: its
+ * outline, the long veins and the cross veins between them, and the dark
+ * hatched toward the tip. The left wing is the same one mirrored.
+ */
+const TARAGETTER_WING_EDGE =
+  'M84 46 C96 50 112 72 124 106 C136 140 136 166 126 174 C114 180 100 160 94 130 C88 100 84 72 84 46 Z'
+const TARAGETTER_VEINS: Stroke[] = [
+  {
+    d: 'M87 54 C102 80 118 116 127 166 M90 72 C96 102 100 136 110 170',
+    role: 'soft',
+  },
+  {
+    d: 'M97 82 L107 78 M102 108 L117 104 M106 136 L125 134 M112 160 L129 154',
+    role: 'soft',
+  },
+  {
+    d: 'M98 150 l6 -5 M100 162 l8 -6 M110 170 l8 -6 M116 120 l6 -4 M120 138 l6 -4',
+    role: 'ambient',
+  },
+]
+
 export const CHIMERA_ANT_PHASE_FOUR_DRAWINGS = {
-  // The dark forewings described on Taragetter's Appearance page.
+  // Taragetter's two dark forewings folded down his back from the shoulders,
+  // the right one's edge in tint, veined and hatched: the soldier Knov kills
+  // in chapter 251, named in chapter 261 when Welfin finds his blood. No
+  // head, face or blood.
   taragetter: [
-    {
-      d: 'M76 39 C59 33 41 42 32 62 C23 83 24 119 30 146 C51 138 67 122 74 98 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M84 39 C101 33 119 42 128 62 C137 83 136 119 130 146 C109 138 93 122 86 98 Z',
-      role: 'accent',
-    },
-    { d: 'M70 47 C54 59 43 85 35 134 M90 47 C106 59 117 85 125 134' },
-    {
-      d: 'M62 62 L42 72 M54 79 L35 91 M47 99 L32 110 M98 62 L118 72 M106 79 L125 91 M113 99 L128 110',
-      role: 'soft',
-    },
-    {
-      d: 'M51 111 L43 120 M55 103 L50 116 M109 111 L117 120 M105 103 L110 116',
-      role: 'ambient',
-    },
-    shadow(80, 153, 49),
+    { d: TARAGETTER_WING_EDGE, role: 'accent' },
+    ...TARAGETTER_VEINS,
+    ...moved(
+      [{ d: TARAGETTER_WING_EDGE }, ...TARAGETTER_VEINS],
+      'matrix(-1 0 0 1 160 0)',
+    ),
+    { d: 'M76 46 Q80 38 84 46', role: 'soft' },
+    shadow(80, 188, 44),
   ],
 } satisfies Drawings
 
 export const chimeraAntPhaseFourRedrawn: Redrawings = {
-  // Cheetu's shorts lie amid the rubble after Silva's strike, ch 278 / ep 117.
+  // The same shorts thrown down among the rubble, one leg folded under: Silva
+  // crushes Cheetu with one blow from above, episode 117 / chapter 278. No
+  // body is drawn.
   cheetu: [
     {
       episode: 117,
@@ -49,30 +71,29 @@ export const chimeraAntPhaseFourRedrawn: Redrawings = {
       ],
     },
   ],
-  // The Rose rises above the tomb when Netero detonates it, ch 298 / ep 126.
+  // His own object at rest, not a scene from the show: one single-tooth
+  // geta, his object since the Hunter Exam, upturned on broken ground, its
+  // tooth in the air and the thong loose in tint. The Poor Man's Rose goes
+  // off when his heart stops, episode 126 / chapter 298. No cloud, no bomb
+  // and no body.
   netero: [
     {
       episode: 126,
       chapter: 298,
       value: [
+        { d: 'M26 124 L108 96 L136 116 L54 146 Z' },
+        { d: 'M26 124 V130 L54 152 L136 122 V116 M54 146 V152' },
+        { d: 'M67 110 V84 L95 105 V131' },
+        { d: 'M67 84 L75 81 L103 102 L95 105 M103 102 V125', role: 'soft' },
+        { d: 'M71 96 l8 6 M71 106 l14 10 M80 104 l11 8', role: 'ambient' },
         {
-          d: 'M62 141 C75 124 71 104 65 91 C52 94 42 88 40 79 C26 77 25 62 34 54 C30 41 42 30 54 32 C62 17 79 19 86 28 C100 20 115 29 115 40 C129 41 136 54 130 65 C141 77 130 89 115 89 C108 96 101 96 95 91 C89 108 87 124 98 141',
+          d: 'M58 150 Q64 168 82 166 L88 160 M90 166 Q106 168 112 158 Q104 150 94 142',
           role: 'accent',
         },
-        {
-          d: 'M47 61 C58 47 72 56 76 65 C78 49 95 41 108 53 M54 77 C62 72 71 76 76 83 C82 73 93 74 100 79',
-          role: 'soft',
-        },
-        {
-          d: 'M80 103 C77 117 80 132 86 144 M71 145 C74 139 78 137 80 136',
-          role: 'ambient',
-        },
-        {
-          d: 'M10 156 L34 148 L52 154 L64 149 M96 149 L110 153 L129 146 L150 156',
-          role: 'soft',
-        },
-        { d: 'M16 163 H52 M110 162 H144', role: 'ambient' },
-        shadow(80, 165, 52),
+        { d: 'M34 132 l6 4 M118 124 l7 -3', role: 'ambient' },
+        { d: 'M4 164 Q20 150 30 162 M130 162 Q140 150 156 164', role: 'soft' },
+        { d: 'M4 176 H52 M108 176 H156', role: 'ambient' },
+        shadow(82, 172, 52),
       ],
     },
   ],

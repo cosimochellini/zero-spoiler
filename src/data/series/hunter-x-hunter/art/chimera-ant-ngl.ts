@@ -110,9 +110,10 @@ export const CHIMERA_ANT_NGL_DRAWINGS = {
     { d: 'M112 84 l6 6 M118 96 l6 6 M114 110 l5 4', role: 'ambient' },
     shadow(82, 164, 34),
   ],
-  // The bowl Haruna serves at dinner with her two children, episode 77,
-  // the broth in tint and its steam rising, a spoon resting in it. The
-  // side turning away is hatched.
+  // Haruna's bowl of broth, the broth in tint and its steam rising, the
+  // foot ring below and the side turning away hatched: the family has
+  // dinner at home in episode 77, and in episode 78 she sets the same broth
+  // out in bowls on their table. No spoon.
   'haruna': [
     { d: ellipse(80, 104, 46, 14) },
     { d: ellipse(80, 106, 40, 10), role: 'accent' },
@@ -120,9 +121,8 @@ export const CHIMERA_ANT_NGL_DRAWINGS = {
     { d: 'M62 146 L64 154 H96 L98 146' },
     { d: 'M64 154 Q80 158 96 154', role: 'soft' },
     { d: 'M106 132 l8 -10 M96 140 l12 -14 M114 122 l6 -7', role: 'ambient' },
-    { d: 'M98 110 L130 78', role: 'soft' },
-    { d: 'M130 78 Q136 70 142 74 Q144 80 134 82 Z' },
     { d: 'M44 124 Q60 134 80 136', role: 'soft' },
+    { d: 'M60 110 Q80 116 100 110', role: 'soft' },
     { d: 'M64 88 Q58 76 66 66 Q72 58 66 48', role: 'ambient' },
     { d: 'M88 86 Q82 74 92 64 Q98 56 92 46', role: 'ambient' },
     shadow(80, 164, 40),
@@ -146,28 +146,34 @@ export const CHIMERA_ANT_NGL_DRAWINGS = {
     { d: 'M56 94 L48 108 L62 106 M104 94 L112 108 L98 106' },
     shadow(84, 162, 36),
   ],
-  // Balda's white shirt over long light sleeves, the sleeves in tint: one
-  // of Pokkle's companions, named as Pokkle tells him to run in chapter 190
-  // and episode 80, the scene he dies in (#1046). No figure.
+  // Balda's white short-sleeved shirt, the sleeves seen open at the elbow
+  // and the light blue long sleeves underneath in tint, down to the cuffs,
+  // the far side hatched: one of Pokkle's companions, named as Pokkle tells
+  // him to run in chapter 190 and episode 80, the scene he dies in (#1046).
+  // No figure and no web.
   'balda': [
     {
-      d: 'M58 52 L40 60 L34 100 L46 102 L50 82 V150 H110 V82 L114 102 L126 100 L120 60 L102 52 Q80 64 58 52 Z',
+      d: 'M58 50 L38 58 L28 96 M48 102 L50 82 L50 150 H110 L110 82 L112 102 M132 96 L122 58 L102 50',
     },
+    { d: 'M28 96 A10.4 4 15 1 0 48 102 A10.4 4 15 1 0 28 96' },
+    { d: 'M132 96 A10.4 4 -15 1 1 112 102 A10.4 4 -15 1 1 132 96' },
     {
-      d: 'M34 100 L26 142 L38 144 L46 102 M126 100 L134 142 L122 144 L114 102',
+      d: 'M31 100 L24 144 H38 L45 102 M129 100 L136 144 H122 L115 102',
       role: 'accent',
     },
-    { d: 'M58 52 L70 70 L80 62 L90 70 L102 52', role: 'soft' },
-    { d: 'M80 64 V150', role: 'soft' },
+    { d: 'M25 138 H38 M122 138 H135', role: 'soft' },
+    { d: 'M58 50 L68 68 L80 58 L92 68 L102 50 Q80 60 58 50' },
+    { d: 'M80 60 V150', role: 'soft' },
     {
       d: dots([
-        [85, 84],
-        [85, 104],
-        [85, 124],
+        [85, 82],
+        [85, 102],
+        [85, 122],
       ]),
     },
-    { d: 'M100 112 l6 -4 M100 126 l6 -4 M100 140 l6 -4', role: 'ambient' },
-    shadow(80, 160, 54),
+    { d: 'M60 112 Q63 130 59 146', role: 'soft' },
+    { d: 'M98 110 l7 -5 M98 124 l7 -5 M98 138 l7 -5', role: 'ambient' },
+    shadow(80, 166, 56),
   ],
 } satisfies Drawings
 
