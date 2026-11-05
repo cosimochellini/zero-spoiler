@@ -2,6 +2,7 @@ import type { Relationship } from '~/data/types'
 
 import { CHIMERA_ANT_HUNTERS } from './chimera-ant-hunters'
 import { CHIMERA_ANT_NGL } from './chimera-ant-ngl'
+import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { CHIMERA_ANT_PHASE_FIVE } from './chimera-ant-phase-five'
 import { CHIMERA_ANT_PHASE_FOUR } from './chimera-ant-phase-four'
 import { CHIMERA_ANT_PHASE_THREE } from './chimera-ant-phase-three'
@@ -98,11 +99,24 @@ export const chimeraAnt: HunterSaga = {
     ...CHIMERA_ANT_NGL.dossiers,
     ...CHIMERA_ANT_ROYALS.dossiers,
     ...CHIMERA_ANT_SQUADS.dossiers,
-    'stick-dinner': surveyDossier,
-    'monta-yuras': surveyDossier,
-    'banana-kavaro': surveyDossier,
-    'spinner-clow': surveyDossier,
+    'stick-dinner': {
+      ...surveyDossier,
+      chronicle: chimeraAntPhase1Chronicles['stick-dinner'],
+    },
+    'monta-yuras': {
+      ...surveyDossier,
+      chronicle: chimeraAntPhase1Chronicles['monta-yuras'],
+    },
+    'banana-kavaro': {
+      ...surveyDossier,
+      chronicle: chimeraAntPhase1Chronicles['banana-kavaro'],
+    },
+    'spinner-clow': {
+      ...surveyDossier,
+      chronicle: chimeraAntPhase1Chronicles['spinner-clow'],
+    },
     'neferpitou': {
+      chronicle: chimeraAntPhase1Chronicles.neferpitou,
       relationships: [
         { episode: 84, chapter: 198, value: [PITOU_POKKLE] },
         { episode: 85, chapter: 199, value: [PITOU_KITE, PITOU_POKKLE] },

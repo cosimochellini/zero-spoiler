@@ -38,11 +38,17 @@ const { entities, gateOf } = core
  * 530 owners would multiply it, and its per-cohort boundary tests
  * (`*Relationships.test.ts`) already ask every entry at gate−1 and gate.
  */
-const RELATIONSHIP_GATES = entities.flatMap((owner) =>
+const SWEEP_GATES = entities.flatMap((owner) =>
   (FILED.timelineOf(owner, 'relationships') ?? []).map((entry) =>
     gateOf(entry, owner),
   ),
 )
+
+for (const { episode, gate } of core.stories) {
+  if (episode >= 76 && episode <= 136) {
+    SWEEP_GATES.push(gate)
+  }
+}
 
 /** The named scenes the sweep asks at, listed by hand in each unit. */
 const NAMED_SCENES = {
@@ -81,11 +87,11 @@ const NAMED_SCENES = {
 /** One dynamically loaded archive; its public description contains no records. */
 export const HUNTER_X_HUNTER_ARCHIVE: SeriesArchive = {
   series: SERIES,
-  // Both sides of every relationship gate and the named scenes listed by
+  // Both sides of every relationship and Chimera Ant story gate, and scenes listed by
   // hand, followed by the first two season boundaries (the demo end and a
   // boundary inside an arc).
   bookmarks: sweepOf(sagas, SERIES, [
-    ...aroundGates(RELATIONSHIP_GATES, NAMED_SCENES, SERIES),
+    ...aroundGates(SWEEP_GATES, NAMED_SCENES, SERIES),
     { mode: 'season', season: 1, episode: 26 },
     { mode: 'season', season: 2, episode: 1 },
     { mode: 'season', season: 2, episode: 12 },

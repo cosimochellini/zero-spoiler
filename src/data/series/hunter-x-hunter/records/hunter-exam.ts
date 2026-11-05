@@ -1,5 +1,6 @@
 import type { Relationship, Timeline } from '~/data/types'
 
+import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { hunterExamChronicles } from './hunter-exam.chronicle'
 import { hunterExamRelationships } from './hunter-exam.relationships'
@@ -503,6 +504,7 @@ const earlyExam: HunterSaga = {
       chronicle: [
         ...hunterExamChronicles['gon-freecss'],
         ...greedIslandReturningChronicles['gon-freecss'],
+        ...chimeraAntPhase1Chronicles['gon-freecss'],
       ],
       role: [
         ...passedExam(1, 1),
@@ -1247,6 +1249,7 @@ const earlyExam: HunterSaga = {
       chronicle: [
         ...hunterExamChronicles.killua,
         ...greedIslandReturningChronicles.killua,
+        ...chimeraAntPhase1Chronicles.killua,
       ],
       role: [
         {

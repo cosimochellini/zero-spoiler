@@ -1,5 +1,6 @@
 import type { Relationship } from '~/data/types'
 
+import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { type HunterSaga, passedExam } from './saga'
 import { zevilChronicles } from './zevil.chronicle'
@@ -556,7 +557,10 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      chronicle: zevilChronicles.ponzu,
+      chronicle: [
+        ...zevilChronicles.ponzu,
+        ...chimeraAntPhase1Chronicles.ponzu,
+      ],
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
         it: 'È l’obiettivo di Leorio nella quarta prova. Gon ne segue l’odore fino a una grotta, dove lei è rimasta intrappolata: i serpenti attaccano chi cerca di uscire.',
@@ -632,7 +636,10 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: [POKKLE_PONZU, POKKLE_PITOU, ...POKKLE_EXAM_ROWS],
         },
       ],
-      chronicle: zevilChronicles.pokkle,
+      chronicle: [
+        ...zevilChronicles.pokkle,
+        ...chimeraAntPhase1Chronicles.pokkle,
+      ],
       role: passedExam(18, 23),
       log: {
         it: 'È tra gli aspiranti che superano la Torre di Lotta e affrontano la quarta prova sull’Isola di Zevil, armato di arco e frecce.',

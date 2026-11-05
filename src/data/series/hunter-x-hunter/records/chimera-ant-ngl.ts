@@ -1,3 +1,4 @@
+import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import type { HunterSaga } from './saga'
 
 type Dossier = HunterSaga['dossiers'][string]
@@ -102,11 +103,15 @@ const links = {
  */
 export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
-    'lin-koshi': surveyor({
-      it: 'Cerca nuove specie sul campo con Kaito e altri cinque Hunter dilettanti.',
-      en: 'He surveys new species in the field with Kite and five other amateur Hunters.',
-    }),
+    'lin-koshi': {
+      ...surveyor({
+        it: 'Cerca nuove specie sul campo con Kaito e altri cinque Hunter dilettanti.',
+        en: 'He surveys new species in the field with Kite and five other amateur Hunters.',
+      }),
+      chronicle: chimeraAntPhase1Chronicles['lin-koshi'],
+    },
     'podungo-lapoy': {
+      chronicle: chimeraAntPhase1Chronicles['podungo-lapoy'],
       ...surveyor({
         it: 'È una dei sei Hunter dilettanti che cercano nuove specie con Kaito.',
         en: 'She is one of the six amateur Hunters who survey new species with Kite.',
@@ -136,6 +141,7 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     // Anime-only record: every dated entry repeats its source.
     'wong': {
+      chronicle: chimeraAntPhase1Chronicles.wong,
       relationships: [
         {
           episode: 77,
@@ -173,6 +179,7 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // Anime-only record. His sister's record opens at episode 80, so the
     // texts frozen at 77 leave her unnamed.
     'kurt': {
+      chronicle: chimeraAntPhase1Chronicles.kurt,
       relationships: [
         {
           episode: 77,
@@ -202,6 +209,7 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // Both media, but her brother and mother are named in the anime alone,
     // so her own texts name neither and both rows are anime-only.
     'reina': {
+      chronicle: chimeraAntPhase1Chronicles.reina,
       relationships: [
         {
           episode: 80,
@@ -247,6 +255,7 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     // Anime-only record: the manga never gives the mother's name.
     'haruna': {
+      chronicle: chimeraAntPhase1Chronicles.haruna,
       relationships: [
         {
           episode: 77,
@@ -276,6 +285,7 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // Anime-only record: the manga never names him. The ant that kills him
     // in chapter 190 is the same scene as episode 80.
     'pekuba': {
+      chronicle: chimeraAntPhase1Chronicles.pekuba,
       relationships: [
         {
           episode: 79,
@@ -309,6 +319,7 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // 80, the scene he dies in, so he opens deceased. The ant that kills him
     // is filed for the manga alone, so no text names it.
     'balda': {
+      chronicle: chimeraAntPhase1Chronicles.balda,
       relationships: [
         {
           episode: 80,
