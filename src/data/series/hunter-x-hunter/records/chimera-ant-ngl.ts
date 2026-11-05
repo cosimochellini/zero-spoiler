@@ -1,5 +1,6 @@
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
+import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
 import type { HunterSaga } from './saga'
 
 type Dossier = HunterSaga['dossiers'][string]
@@ -213,7 +214,10 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     // Both media, but her brother and mother are named in the anime alone,
     // so her own texts name neither and both rows are anime-only.
     'reina': {
-      chronicle: chimeraAntPhase1Chronicles.reina,
+      chronicle: [
+        ...chimeraAntPhase1Chronicles.reina,
+        ...chimeraAntPhase5Chronicles.reina,
+      ],
       relationships: [
         {
           episode: 80,
@@ -259,7 +263,10 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     // Anime-only record: the manga never gives the mother's name.
     'haruna': {
-      chronicle: chimeraAntPhase1Chronicles.haruna,
+      chronicle: [
+        ...chimeraAntPhase1Chronicles.haruna,
+        ...chimeraAntPhase5Chronicles.haruna,
+      ],
       relationships: [
         {
           episode: 77,

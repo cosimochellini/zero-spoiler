@@ -3,6 +3,7 @@ import type { LocalizedText, Relationship } from '~/data/types'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
+import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
 import type { HunterSaga } from './saga'
 
 /** Where Netero's Hunters stand, as their dossiers say it. */
@@ -129,6 +130,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         ...chimeraAntPhase3Chronicles['palm-siberia'],
 
         ...chimeraAntPhase4Chronicles['palm-siberia'],
+
+        ...chimeraAntPhase5Chronicles['palm-siberia'],
       ],
       relationships: [
         { episode: 86, chapter: 200, value: [rows.palmKnov, rows.palmGon] },
@@ -228,6 +231,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         ...chimeraAntPhase3Chronicles.knov,
 
         ...chimeraAntPhase4Chronicles.knov,
+
+        ...chimeraAntPhase5Chronicles.knov,
       ],
       relationships: [
         {
@@ -305,6 +310,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         ...chimeraAntPhase3Chronicles['morel-mackernasey'],
 
         ...chimeraAntPhase4Chronicles['morel-mackernasey'],
+
+        ...chimeraAntPhase5Chronicles['morel-mackernasey'],
       ],
       relationships: [
         {
@@ -425,6 +432,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase2Chronicles['knuckle-bine'],
         ...chimeraAntPhase4Chronicles['knuckle-bine'],
+
+        ...chimeraAntPhase5Chronicles['knuckle-bine'],
       ],
       relationships: [
         {
@@ -504,6 +513,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...chimeraAntPhase2Chronicles['shoot-mcmahon'],
         ...chimeraAntPhase4Chronicles['shoot-mcmahon'],
+
+        ...chimeraAntPhase5Chronicles['shoot-mcmahon'],
       ],
       relationships: [
         {

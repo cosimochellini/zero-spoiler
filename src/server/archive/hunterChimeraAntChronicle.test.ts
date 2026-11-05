@@ -7,6 +7,7 @@ import { chimeraAntPhase1Chronicles } from '~/data/series/hunter-x-hunter/record
 import { chimeraAntPhase2Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-4.chronicle'
+import { chimeraAntPhase5Chronicles } from '~/data/series/hunter-x-hunter/records/chimera-ant-phase-5.chronicle'
 import type { Entity, Story, Timeline } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 
@@ -19,13 +20,14 @@ const PHASES: Record<string, Timeline<Story>>[] = [
   chimeraAntPhase2Chronicles,
   chimeraAntPhase3Chronicles,
   chimeraAntPhase4Chronicles,
+  chimeraAntPhase5Chronicles,
 ]
 const AUTHORED = PHASES.flatMap((phase) => Object.entries(phase))
 const STORIES = new Set(
   AUTHORED.flatMap(([, stories]) => stories.map((row) => row.value)),
 )
 const CAST = chimeraAnt.entries.filter(
-  (entry) => entry.kind === 'character' && entry.revealedAtChapter <= 298,
+  (entry) => entry.kind === 'character' && entry.revealedAtChapter <= 318,
 )
 
 const GYRO_REBIRTH = chimeraAntPhase2Chronicles.gyro.find(
