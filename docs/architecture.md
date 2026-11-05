@@ -175,6 +175,22 @@ a content URL such as `/one-piece/en?ep=650` to set progress. `src/server.ts` is
 the Worker entry: it adds a `Link` header for the stylesheet and the fonts the
 root route preloads, which Cloudflare replays as a `103 Early Hints`.
 
+## Social pictures
+
+An open record page's head points `og:image` at a wide card
+(`/og/<series>/<locale>/<id>.png`, 1200×630: drawing, name, one line, site
+name). Its JSON-LD and its sitemap entry point at a square icon
+(`/og/<series>/<id>.png`, 600×600). A covered page and every other page keep
+`/og-card.png`. `npm run og:images` draws both pictures in Chrome, on the
+developer's machine. They are committed under `public/og/` and served as static
+assets, so the Worker never draws one. Each picture uses the record's first
+drawing, never a redrawing, and prints only what a reader standing at the
+record's own threshold reads in every source it is told in: a character's
+epithet, else its role; a fruit's type; a place's form and region; a ship's
+kind. Re-run the script after changing a record, a first drawing or the card
+layout. It draws only what changed. `scripts/og-images.test.mjs` fails while a
+picture is missing, stale or orphaned.
+
 ## Localization
 
 Use `useT()` for shared dictionary keys and `useSeriesT()` for common series

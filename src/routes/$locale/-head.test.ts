@@ -6,6 +6,7 @@ import {
   type Series,
 } from '~/lib/progress/series'
 import { absoluteUrl } from '~/lib/seo/site'
+import type { DocumentHead } from '~/lib/view/records'
 import { Route as CharactersRoute } from '~/routes/$series/$locale/characters'
 import { Route as FruitsRoute } from '~/routes/$series/$locale/fruits'
 import { Route as LandingRoute } from '~/routes/$series/$locale/index'
@@ -161,6 +162,23 @@ function presentHead(head: HeadTags | undefined): HeadTags {
   return head
 }
 
+/** A One Piece record's head, as the route writes it from a loader's answer. */
+function recordAt(head: DocumentHead): HeadTags {
+  return presentHead(
+    recordHead(
+      {
+        loaderData: { head },
+        match: {
+          context: { copy: copyOf(ONE_PIECE_SERIES, 'en') },
+          pathname: '/one-piece/en/characters/nico-robin',
+        },
+        params: { locale: 'en' },
+      },
+      'characters',
+    ),
+  )
+}
+
 describe('series-specific structured data and social addresses', () => {
   it('keeps a record, its index, and its website inside the same series', () => {
     const pathname = '/hunter-x-hunter/en/characters/gon'
@@ -204,6 +222,39 @@ describe('series-specific structured data and social addresses', () => {
     )
     expect(structured).toContain(absoluteUrl('/hunter-x-hunter/en/characters'))
     expect(structured).not.toContain(absoluteUrl('/en/characters'))
+  })
+
+  it('unfurls an open record with its own card and a covered one with the site’s', () => {
+    const open = recordAt({
+      title: 'Nico Robin',
+      description: 'A scholar.',
+      image: {
+        alt: 'Nico Robin',
+        card: '/og/one-piece/en/nico-robin.png',
+        square: '/og/one-piece/nico-robin.png',
+      },
+    })
+    const covered = recordAt({
+      title: 'A character under fog',
+      description: 'A covered record.',
+    })
+
+    expect(open.meta).toContainEqual({
+      property: 'og:image',
+      content: absoluteUrl('/og/one-piece/en/nico-robin.png'),
+    })
+    expect(open.meta).toContainEqual({
+      name: 'twitter:image:alt',
+      content: 'Nico Robin',
+    })
+    expect(open.scripts[0]?.children).toContain(
+      absoluteUrl('/og/one-piece/nico-robin.png'),
+    )
+    expect(covered.meta).toContainEqual({
+      property: 'og:image',
+      content: absoluteUrl('/og-card.png'),
+    })
+    expect(JSON.stringify(covered)).not.toContain('/og/')
   })
 
   it('keeps the legal page attached to the series-free hub', () => {

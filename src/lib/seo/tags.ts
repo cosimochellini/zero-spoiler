@@ -1,5 +1,7 @@
 import { type Locale, LOCALES } from '~/i18n/locales'
 
+import { CARD_SIZE } from './socialImage'
+
 /**
  * The social cards.
  *
@@ -49,6 +51,11 @@ export function describeSocial(page: SocialPage): MetaTag[] {
     { property: 'og:description', content: page.description },
     { property: 'og:url', content: page.url },
     { property: 'og:image', content: page.imageUrl },
+    // Every card is a PNG of one size, the site's and each record's, so a
+    // platform can lay the preview out before it has fetched the picture.
+    { property: 'og:image:type', content: 'image/png' },
+    { property: 'og:image:width', content: String(CARD_SIZE.width) },
+    { property: 'og:image:height', content: String(CARD_SIZE.height) },
     { property: 'og:image:alt', content: page.imageAlt },
     { property: 'og:locale', content: OG_LOCALE[page.locale] },
     ...otherLocales(page.locale).map((locale) => alternateLocale(locale)),

@@ -81,6 +81,20 @@ describe('the character page a bookmark sees', () => {
     )
   })
 
+  it('gives an open page the record’s own pictures, and a covered one none', () => {
+    expect(
+      characterPage('nico-robin', ep(130), 'it')?.head.image,
+    ).toStrictEqual({
+      alt: 'Nico Robin',
+      card: '/og/one-piece/it/nico-robin.png',
+      square: '/og/one-piece/nico-robin.png',
+    })
+    expect(
+      characterPage('nico-robin', ep(129), 'it')?.head.image,
+    ).toBeUndefined()
+    expect(robinHead(null)).not.toContain('/og/')
+  })
+
   it('opens the record exactly at its threshold and not before', () => {
     expect(characterPage('nico-robin', null, 'en')?.detail.slot.open).toBe(
       false,

@@ -2,7 +2,8 @@
 // scripts/og-card.svg into the social card the Open Graph tags point at.
 // Run by hand after editing either SVG: `node scripts/make-icons.mjs`. Needs
 // `rsvg-convert` (librsvg) on PATH; the outputs are committed, so the build
-// never depends on it.
+// never depends on it. A record's own card and square icon are drawn by
+// scripts/og-images.mjs instead.
 import { Buffer } from 'node:buffer'
 import { execFileSync } from 'node:child_process'
 import { writeFileSync } from 'node:fs'

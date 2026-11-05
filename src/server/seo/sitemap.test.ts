@@ -75,6 +75,22 @@ describe('the sitemap', () => {
       'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
     )
     expect(document).toContain('xmlns:xhtml="http://www.w3.org/1999/xhtml"')
+    expect(document).toContain(
+      'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',
+    )
+  })
+
+  it('gives each record page its square picture, and an index none', () => {
+    const entries = document.split('<url>')
+    const entryOf = (path: string): string =>
+      entries.find((entry) =>
+        entry.includes(`<loc>${SITE_ORIGIN}${path}</loc>`),
+      ) ?? ''
+
+    expect(entryOf('/one-piece/it/places/going-merry')).toContain(
+      `<image:loc>${SITE_ORIGIN}/og/one-piece/going-merry.png</image:loc>`,
+    )
+    expect(entryOf('/one-piece/en/characters')).not.toContain('<image:')
   })
 
   it.skipIf(CLOSED.length === 0)(
