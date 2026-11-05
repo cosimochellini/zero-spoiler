@@ -3,11 +3,20 @@
 // `describe` / `it` / `expect` are imported rather than taken from
 // `test.globals`: this file is linted as plain JavaScript, where ESLint's
 // `no-undef` has no TypeScript program to learn the Vitest globals from.
+import { createHash } from 'node:crypto'
 import { beforeAll, describe, expect, it } from 'vitest'
 
 import { importArchive } from './archive-loader.mjs'
 import { publishedPictures, readManifest } from './og-images.mjs'
-import { cardHtml, hashOf, picturesOf, workOf } from './og-pictures.mjs'
+import {
+  cardHtml,
+  FIT_NAME,
+  FONT_RULES,
+  hashOf,
+  picturesOf,
+  SCALE,
+  workOf,
+} from './og-pictures.mjs'
 import { agreed } from './og-words.mjs'
 
 const PALETTE = { paper: '#000', ink: '#fff', muted: '#888', accent: '#ff0' }
@@ -150,6 +159,23 @@ describe('a card page', () => {
     expect(hashOf(cardHtml(card, PALETTE))).not.toBe(
       hashOf(cardHtml({ ...card, line: 'B' }, PALETTE)),
     )
+  })
+
+  it('digests its fonts, how its name is fitted and its scale too', () => {
+    const html = cardHtml(
+      { strokes: [], tint: 'ivory', name: 'A', brand: 'Z' },
+      PALETTE,
+    )
+    const digest = createHash('sha256')
+      .update(html)
+      .update(FONT_RULES)
+      .update(FIT_NAME)
+      .update(String(SCALE))
+      .digest('hex')
+
+    expect(FONT_RULES).toContain('@font-face')
+    expect(FIT_NAME).toContain('.name')
+    expect(hashOf(html)).toBe(digest.slice(0, 16))
   })
 })
 
