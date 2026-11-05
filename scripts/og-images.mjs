@@ -24,7 +24,7 @@ import { pathToFileURL } from 'node:url'
 
 import { ROOT } from './archive-loader.mjs'
 import { chromePath } from './art-shots.mjs'
-import { FIT, picturesOf, SCALE, workOf } from './og-pictures.mjs'
+import { FIT, FONT_RULES, picturesOf, SCALE, workOf } from './og-pictures.mjs'
 
 /** @typedef {import('./og-pictures.mjs').Picture} Picture */
 
@@ -32,8 +32,6 @@ import { FIT, picturesOf, SCALE, workOf } from './og-pictures.mjs'
 const PUBLIC = path.join(ROOT, 'public')
 // fallow-ignore-next-line security-sink -- a constant path under the repository
 const MANIFEST = path.join(ROOT, 'scripts', 'og-images.manifest.json')
-// fallow-ignore-next-line security-sink -- a constant path under the repository
-const STYLESHEET = path.join(ROOT, 'src', 'styles', 'global.css')
 
 /**
  * Every PNG under public/og/, as the paths the site serves them at.
@@ -59,23 +57,21 @@ export function readManifest() {
 }
 
 /**
- * The site's own `@font-face` rules, each font inlined: a page set from a
- * string has no origin to load `/fonts/` from.
- * @returns {string} The rules.
+ * The site's own fonts, inlined: a page set from a string has no origin to
+ * load `/fonts/` from.
+ * @returns {string} The `@font-face` rules.
  */
 function fontFaces() {
-  const css = readFileSync(STYLESHEET, 'utf8')
-  return (css.match(/@font-face\s*\{[^}]*\}/gu) ?? [])
-    .map((rule) =>
-      rule.replaceAll(/url\('\/fonts\/(?<file>[^']+)'\)/gu, (...match) => {
-        const { file } = match.at(-1)
-        // fallow-ignore-next-line security-sink -- a font file the repository's own stylesheet names
-        const font = readFileSync(path.join(PUBLIC, 'fonts', file))
-        // eslint-disable-next-line unicorn/prefer-uint8array-base64 -- Node 24 has no Uint8Array#toBase64
-        return `url(data:font/woff2;base64,${font.toString('base64')})`
-      }),
-    )
-    .join('\n')
+  return FONT_RULES.replaceAll(
+    /url\('\/fonts\/(?<file>[^']+)'\)/gu,
+    (...match) => {
+      const { file } = match.at(-1)
+      // fallow-ignore-next-line security-sink -- a font file the repository's own stylesheet names
+      const font = readFileSync(path.join(PUBLIC, 'fonts', file))
+      // eslint-disable-next-line unicorn/prefer-uint8array-base64 -- Node 24 has no Uint8Array#toBase64
+      return `url(data:font/woff2;base64,${font.toString('base64')})`
+    },
+  )
 }
 
 /**

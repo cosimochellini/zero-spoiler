@@ -3,8 +3,10 @@
 // the square icon a search engine shows. Pure, so the test can hold the
 // committed files to it without a browser; `og-images.mjs` draws them.
 import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 
-import { importArchive } from './archive-loader.mjs'
+import { importArchive, ROOT } from './archive-loader.mjs'
 import { drawingSvg, seriesPalette } from './art-sheet.mjs'
 import { pagedRecords, readersAt, wordsOf } from './og-words.mjs'
 
@@ -43,6 +45,18 @@ const SQUARE_ART = { x: 0, y: 0, width: 208, height: 260 }
 
 /** How far a long name may shrink to fit its lines (`fitName`). */
 export const FIT = { size: 46, floor: 24, lines: 2, leading: 1.04 }
+
+// fallow-ignore-next-line security-sink -- a constant path under the repository
+const STYLESHEET = path.join(ROOT, 'src', 'styles', 'global.css')
+
+/**
+ * The site's own `@font-face` rules, as `src/styles/global.css` writes them.
+ * A font is renamed when it changes, so the rules name every font a picture
+ * is set in, and a picture is drawn again when they change.
+ */
+export const FONT_RULES = (
+  readFileSync(STYLESHEET, 'utf8').match(/@font-face\s*\{[^}]*\}/gu) ?? []
+).join('\n')
 
 const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }
 
@@ -122,14 +136,15 @@ export function cardHtml({ strokes, tint, name, line, brand }, palette) {
 }
 
 /**
- * A short digest of what a picture is drawn from: its page, the scale it is
- * captured at and the bounds its name is fitted to.
+ * A short digest of what a picture is drawn from: its page, its fonts, the
+ * scale it is captured at and the bounds its name is fitted to.
  * @param {string} html The page.
  * @returns {string} Sixteen hex digits.
  */
 export function hashOf(html) {
   return createHash('sha256')
     .update(html)
+    .update(FONT_RULES)
     .update(JSON.stringify({ SCALE, FIT }))
     .digest('hex')
     .slice(0, 16)
@@ -165,7 +180,12 @@ async function seriesPictures(slug) {
     LOCALES.map((locale) => [locale, readersIn(archive, locale)]),
   )
   return records.flatMap((entity) => {
-    const strokes = archive.drawings[entity.visual.art] ?? []
+    const strokes = archive.drawings[entity.visual.art]
+    if (strokes === undefined || strokes.length === 0) {
+      throw new Error(
+        `${entity.id} has no first drawing to put on its pictures`,
+      )
+    }
     const { tint } = entity.visual
     const cards = LOCALES.map((locale) => {
       const words = wordsOf(entity, readersAt(entity, readers.get(locale)))

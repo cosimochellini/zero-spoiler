@@ -51,6 +51,17 @@ export function readersAt(entity, readerAt) {
   ]
 }
 
+/**
+ * A record's name as the reader's own copy of the archive gives it: a record
+ * the anime names differently carries that name only in the episode copy.
+ * @param {Entity} entity The record.
+ * @param {Reader} r The reader.
+ * @returns {string} The name.
+ */
+function nameOf(entity, r) {
+  return (r.archive.getEntity(entity.id) ?? entity).name[r.locale]
+}
+
 /** @type {Reading} */
 function character(entity, r) {
   const page = characterPage(entity.id, r)
@@ -69,7 +80,7 @@ function fruit(entity, r) {
   const form = r.archive.fruitFormOf(entity)
   const t = translatorOf(r.archive.series, r.locale)
   return {
-    name: entity.name[r.locale],
+    name: nameOf(entity, r),
     ...(form !== undefined && { line: t(`fruitForm.${form}`) }),
   }
 }
@@ -78,7 +89,7 @@ function fruit(entity, r) {
 function place(entity, r) {
   const { dossier } = portOf(entity, r)
   if (dossier === null) {
-    return { name: entity.name[r.locale] }
+    return { name: nameOf(entity, r) }
   }
   const t = translatorOf(r.archive.series, r.locale)
   const words =
@@ -86,7 +97,7 @@ function place(entity, r) {
       [t(`form.${dossier.form}`), dossier.seaName]
     : [dossier.words.forms[dossier.form], dossier.words.regions[dossier.sea]]
   return {
-    name: entity.name[r.locale],
+    name: nameOf(entity, r),
     line: words.filter((word) => word !== undefined).join(' · '),
   }
 }
@@ -94,7 +105,7 @@ function place(entity, r) {
 /** @type {Reading} */
 function ship(entity, r) {
   return {
-    name: entity.name[r.locale],
+    name: nameOf(entity, r),
     line: translatorOf(r.archive.series, r.locale)('form.ship'),
   }
 }

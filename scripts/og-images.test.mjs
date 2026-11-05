@@ -55,10 +55,30 @@ describe('the committed pictures', () => {
     ).toStrictEqual({ stale: 0, orphans: 0, first: [] })
   })
 
-  it('cover every record page in both locales, and a square for each', () => {
-    const squares = loaded.pictures.filter((picture) => picture.width === 300)
+  it('are there for every record page the sitemap publishes, in its locale', async () => {
+    const { sitemapXml } = await importArchive('server/seo/sitemap.server.ts')
+    const xml = await sitemapXml()
+    const files = new Set(loaded.pictures.map((picture) => picture.file))
+    const records = xml
+      .matchAll(
+        /<loc>[^<]*\/(?<series>[^/]+)\/(?<locale>[a-z]{2})\/(?:characters|fruits|places)\/(?<id>[^<]+)<\/loc>/gu,
+      )
+      .map((match) => match.groups)
+      .toArray()
+    const squares = xml
+      .matchAll(/<image:loc>[^<]*(?<file>\/og\/[^<]+)<\/image:loc>/gu)
+      .map((match) => match.groups.file)
+      .toArray()
+    const missing = [
+      ...records.map(
+        ({ series, locale, id }) => `/og/${series}/${locale}/${id}.png`,
+      ),
+      ...squares,
+    ].filter((file) => !files.has(file))
 
-    expect(loaded.pictures).toHaveLength(squares.length * 3)
+    expect(records.length).toBeGreaterThan(1000)
+    expect(squares).toHaveLength(records.length)
+    expect(missing).toStrictEqual([])
   })
 })
 

@@ -46,6 +46,12 @@ gates.
   Trial cookies are restricted to that demo and yield to a saved bookmark.
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
+- A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
+  are the one exception: static files at addresses built from its slug, which
+  the sitemap already publishes, so anyone who asks for one gets it. They hold
+  the first drawing and the words at the record's own threshold, and no page
+  under fog names them. The fog is an editorial promise kept by the pages, not
+  access control (`src/lib/crawler.ts`).
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
@@ -187,9 +193,11 @@ assets, so the Worker never draws one. Each picture uses the record's first
 drawing, never a redrawing, and prints only what a reader standing at the
 record's own threshold reads in every source it is told in: a character's
 epithet, else its role; a fruit's type; a place's form and region; a ship's
-kind. Re-run the script after changing a record, a first drawing or the card
-layout. It draws only what changed. `scripts/og-images.test.mjs` fails while a
-picture is missing, stale or orphaned.
+kind. The name is the one the episode reader is given, which is what a crawler's
+page title prints: a link preview is fetched as a crawler. Re-run the script
+after changing a record, a first drawing or the card layout. It draws only what
+changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
+orphaned.
 
 ## Localization
 
