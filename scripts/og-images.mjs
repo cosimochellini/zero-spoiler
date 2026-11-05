@@ -24,7 +24,13 @@ import { pathToFileURL } from 'node:url'
 
 import { ROOT } from './archive-loader.mjs'
 import { chromePath } from './art-shots.mjs'
-import { FIT, FONT_RULES, picturesOf, SCALE, workOf } from './og-pictures.mjs'
+import {
+  FIT_NAME,
+  FONT_RULES,
+  picturesOf,
+  SCALE,
+  workOf,
+} from './og-pictures.mjs'
 
 /** @typedef {import('./og-pictures.mjs').Picture} Picture */
 
@@ -75,25 +81,6 @@ function fontFaces() {
 }
 
 /**
- * Shrinks the name until it fits its lines. Runs in the page, once the fonts
- * have loaded, so it measures the type that is drawn.
- * @param {{ size: number, floor: number, lines: number, leading: number }} fit The bounds.
- * @returns {void}
- */
-function fitName({ size, floor, lines, leading }) {
-  const name = globalThis.document.querySelector('.name')
-  if (name === null) {
-    return
-  }
-  const fits = (current) =>
-    name.scrollWidth <= name.clientWidth
-    && name.getBoundingClientRect().height <= current * leading * lines + 1
-  for (let current = size; current > floor && !fits(current); current -= 1) {
-    name.style.fontSize = `${current - 1}px`
-  }
-}
-
-/**
  * Draws the pictures with one Chrome tab.
  * @param {Picture[]} pictures What to draw.
  * @returns {Promise<void>} Once every file is written.
@@ -115,7 +102,7 @@ async function draw(pictures) {
     await page.evaluate(async () => {
       await globalThis.document.fonts.ready
     })
-    await page.evaluate(fitName, FIT)
+    await page.evaluate(FIT_NAME)
     // fallow-ignore-next-line security-sink -- a path built from the repository's own record ids
     const file = path.join(PUBLIC, picture.file)
     mkdirSync(path.dirname(file), { recursive: true })
