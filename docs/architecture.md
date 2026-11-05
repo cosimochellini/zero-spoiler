@@ -47,11 +47,12 @@ gates.
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
-  are the one exception: static files at addresses built from its slug, which
-  the sitemap already publishes, so anyone who asks for one gets it. They hold
-  the first drawing and the words at the record's own threshold, and no page
-  under fog names them. The fog is an editorial promise kept by the pages, not
-  access control (`src/lib/crawler.ts`).
+  are the one exception: static files at addresses built from its slug, so
+  anyone who asks for one gets it. The sitemap lists the square of every record
+  both sources tell; a record of one source only is not listed. They hold the
+  first drawing and the words at the record's own threshold, and no page under
+  fog names them. The fog is an editorial promise kept by the pages, not access
+  control (`src/lib/crawler.ts`).
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
