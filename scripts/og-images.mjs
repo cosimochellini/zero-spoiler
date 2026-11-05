@@ -28,14 +28,19 @@ import { FIT, picturesOf, SCALE, workOf } from './og-pictures.mjs'
 
 /** @typedef {import('./og-pictures.mjs').Picture} Picture */
 
+// fallow-ignore-next-line security-sink -- a constant path under the repository
 const PUBLIC = path.join(ROOT, 'public')
+// fallow-ignore-next-line security-sink -- a constant path under the repository
 const MANIFEST = path.join(ROOT, 'scripts', 'og-images.manifest.json')
+// fallow-ignore-next-line security-sink -- a constant path under the repository
+const STYLESHEET = path.join(ROOT, 'src', 'styles', 'global.css')
 
 /**
  * Every PNG under public/og/, as the paths the site serves them at.
  * @returns {string[]} The paths, e.g. `/og/one-piece/franky.png`.
  */
 export function publishedPictures() {
+  // fallow-ignore-next-line security-sink -- a constant path under the repository
   const folder = path.join(PUBLIC, 'og')
   if (!existsSync(folder)) {
     return []
@@ -59,10 +64,7 @@ export function readManifest() {
  * @returns {string} The rules.
  */
 function fontFaces() {
-  const css = readFileSync(
-    path.join(ROOT, 'src', 'styles', 'global.css'),
-    'utf8',
-  )
+  const css = readFileSync(STYLESHEET, 'utf8')
   return (css.match(/@font-face\s*\{[^}]*\}/gu) ?? [])
     .map((rule) =>
       rule.replaceAll(/url\('\/fonts\/(?<file>[^']+)'\)/gu, (...match) => {
