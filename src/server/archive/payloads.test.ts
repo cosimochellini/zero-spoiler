@@ -210,6 +210,8 @@ describe.each(SERIES)('every payload of $slug', (series) => {
 
       expect(leaks).toStrictEqual([])
     },
+    // Complete bookmark sweeps grow with the cast and chronicle gates.
+    15_000,
   )
 
   // Sent as plain JSON (`~/lib/plain`): what `JSON.stringify` writes has to
