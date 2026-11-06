@@ -1,5 +1,72 @@
 import type { HunterSaga } from './saga'
 
+type Dossier = HunterSaga['dossiers'][string]
+type Name = Record<'en' | 'it', string>
+
+interface Pair {
+  log: Name
+  role: Name
+  staff: Name
+  together: Name
+}
+
+// The class at chapter 370: every attendee's facts open at their introduction.
+const CLASS = { episode: 148, chapter: 370, source: 'chapter' } as const
+
+const ELEVENTH_MAIDS: Pair = {
+  role: {
+    it: 'Domestica dell’undicesimo principe',
+    en: 'Eleventh Prince’s maid',
+  },
+  log: {
+    it: 'Viene mandata al corso di Nen al posto delle guardie. Si presenta insieme agli altri partecipanti.',
+    en: 'She is sent to the Nen class instead of the guards. She introduces herself with the other participants.',
+  },
+  staff: {
+    it: 'Personale dell’undicesimo principe',
+    en: 'Eleventh Prince’s staff',
+  },
+  together: {
+    it: 'Vengono mandate insieme al corso di Nen al posto delle guardie.',
+    en: 'They are sent to the Nen class together instead of the guards.',
+  },
+}
+
+const NINTH_GUARDS: Pair = {
+  role: { it: 'Guardia del nono principe', en: 'Ninth Prince’s guard' },
+  log: {
+    it: 'Partecipa al corso per conoscere le bestie di Nen. Porta sulla mano un segno a forma di piuma.',
+    en: 'He attends the class to learn about Nen beasts. He has a feather-shaped mark on his hand.',
+  },
+  staff: { it: 'Personale del nono principe', en: 'Ninth Prince’s staff' },
+  together: {
+    it: 'Partecipa con lui al corso per conoscere le bestie di Nen.',
+    en: 'He attends the class with him to learn about Nen beasts.',
+  },
+}
+
+/** One of two attendees sent to the class together, each the other's colleague. */
+function classmate(pair: Pair, partner: string): Dossier {
+  return {
+    role: pair.role,
+    log: pair.log,
+    affiliation: [{ ...CLASS, value: pair.staff }],
+    status: [{ ...CLASS, value: 'alive' }],
+    relationships: [
+      {
+        ...CLASS,
+        value: [
+          {
+            character: partner,
+            type: { it: 'Collega', en: 'Colleague' },
+            summary: pair.together,
+          },
+        ],
+      },
+    ],
+  }
+}
+
 /** Manga-only records whose naming scenes fall in chapters 358–370. */
 export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   entries: [
@@ -484,88 +551,8 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    illardia: {
-      role: {
-        it: 'Domestica dell’undicesimo principe',
-        en: 'Eleventh Prince’s maid',
-      },
-      log: {
-        it: 'Viene mandata al corso di Nen al posto delle guardie. Si presenta insieme agli altri partecipanti.',
-        en: 'She is sent to the Nen class instead of the guards. She introduces herself with the other participants.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: {
-            it: 'Personale dell’undicesimo principe',
-            en: 'Eleventh Prince’s staff',
-          },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 370, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: [
-            {
-              character: 'ladiolus',
-              type: { it: 'Collega', en: 'Colleague' },
-              summary: {
-                it: 'Vengono mandate insieme al corso di Nen al posto delle guardie.',
-                en: 'They are sent to the Nen class together instead of the guards.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    ladiolus: {
-      role: {
-        it: 'Domestica dell’undicesimo principe',
-        en: 'Eleventh Prince’s maid',
-      },
-      log: {
-        it: 'Viene mandata al corso di Nen al posto delle guardie. Si presenta insieme agli altri partecipanti.',
-        en: 'She is sent to the Nen class instead of the guards. She introduces herself with the other participants.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: {
-            it: 'Personale dell’undicesimo principe',
-            en: 'Eleventh Prince’s staff',
-          },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 370, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: [
-            {
-              character: 'illardia',
-              type: { it: 'Collega', en: 'Colleague' },
-              summary: {
-                it: 'Vengono mandate insieme al corso di Nen al posto delle guardie.',
-                en: 'They are sent to the Nen class together instead of the guards.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    illardia: classmate(ELEVENTH_MAIDS, 'ladiolus'),
+    ladiolus: classmate(ELEVENTH_MAIDS, 'illardia'),
     loberry: {
       role: { it: 'Domestica del decimo principe', en: 'Tenth Prince’s maid' },
       log: {
@@ -800,44 +787,7 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    shedule: {
-      role: { it: 'Guardia del nono principe', en: 'Ninth Prince’s guard' },
-      log: {
-        it: 'Partecipa al corso per conoscere le bestie di Nen. Porta sulla mano un segno a forma di piuma.',
-        en: 'He attends the class to learn about Nen beasts. He has a feather-shaped mark on his hand.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: {
-            it: 'Personale del nono principe',
-            en: 'Ninth Prince’s staff',
-          },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 370, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: [
-            {
-              character: 'yuhirai',
-              type: { it: 'Collega', en: 'Colleague' },
-              summary: {
-                it: 'Partecipa con lui al corso per conoscere le bestie di Nen.',
-                en: 'He attends the class with him to learn about Nen beasts.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    shedule: classmate(NINTH_GUARDS, 'yuhirai'),
     tenftory: {
       role: { it: 'Guardia del terzo principe', en: 'Third Prince’s guard' },
       log: {
@@ -876,44 +826,7 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    yuhirai: {
-      role: { it: 'Guardia del nono principe', en: 'Ninth Prince’s guard' },
-      log: {
-        it: 'Partecipa al corso per conoscere le bestie di Nen. Porta sulla mano un segno a forma di piuma.',
-        en: 'He attends the class to learn about Nen beasts. He has a feather-shaped mark on his hand.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: {
-            it: 'Personale del nono principe',
-            en: 'Ninth Prince’s staff',
-          },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 370, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 370,
-          source: 'chapter',
-          value: [
-            {
-              character: 'shedule',
-              type: { it: 'Collega', en: 'Colleague' },
-              summary: {
-                it: 'Partecipa con lui al corso per conoscere le bestie di Nen.',
-                en: 'He attends the class with him to learn about Nen beasts.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    yuhirai: classmate(NINTH_GUARDS, 'shedule'),
     yuri: {
       role: { it: 'Domestica del decimo principe', en: 'Tenth Prince’s maid' },
       log: {
