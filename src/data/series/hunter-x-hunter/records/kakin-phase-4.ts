@@ -1,4 +1,5 @@
 import type { PlaceDossier } from '~/data/types'
+import type { CharacterStatus } from '~/lib/view/records'
 
 import type { HunterSaga, HunterVocabulary } from './saga'
 
@@ -15,10 +16,15 @@ const TYSON_EMPLOYER: Link = {
   },
 }
 
-/** A record whose facts all open at its naming chapter: one affiliation, alive, one selection. */
+/** A record whose facts all open at its naming chapter: one affiliation, one status (alive unless the page says otherwise), one selection. */
 function introduced(
   chapter: number,
-  { role, log, affiliation }: { affiliation: Name; log: Name; role: Name },
+  {
+    role,
+    log,
+    affiliation,
+    status = 'alive',
+  }: { affiliation: Name; log: Name; role: Name; status?: CharacterStatus },
   links: Link[],
 ): Dossier {
   const gate = { episode: 148, chapter, source: 'chapter' } as const
@@ -26,7 +32,7 @@ function introduced(
     role,
     log,
     affiliation: [{ ...gate, value: affiliation }],
-    status: [{ ...gate, value: 'alive' }],
+    status: [{ ...gate, value: status }],
     relationships: [{ ...gate, value: links }],
   }
 }
@@ -159,8 +165,8 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 392,
       name: { it: 'Misha Hao', en: 'Misha Hao' },
       summary: {
-        it: 'Una becchina degli Xi-Yu morta prima del viaggio. Il suo Nen continua a far sparire le vittime della famiglia.',
-        en: 'A Xi-Yu undertaker who died before the voyage. Her Nen continues to dispose of the family’s victims.',
+        it: 'Una becchina degli Xi-Yu, già morta quando la famiglia ne parla. Il suo Nen continua a far sparire le vittime della famiglia.',
+        en: 'A Xi-Yu undertaker, already dead when the family speaks of her. Her Nen continues to dispose of the family’s victims.',
       },
       visual: { art: 'misha-hao', tint: 'violet' },
     },
@@ -742,8 +748,8 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     'misha-hao': {
       role: { it: 'Becchina degli Xi-Yu', en: 'Xi-Yu undertaker' },
       log: {
-        it: 'Una becchina degli Xi-Yu morta prima del viaggio. Il suo Nen continua a far sparire le vittime della famiglia.',
-        en: 'A Xi-Yu undertaker who died before the voyage. Her Nen continues to dispose of the family’s victims.',
+        it: 'Una becchina degli Xi-Yu, già morta quando la famiglia ne parla. Il suo Nen continua a far sparire le vittime della famiglia.',
+        en: 'A Xi-Yu undertaker, already dead when the family speaks of her. Her Nen continues to dispose of the family’s victims.',
       },
       affiliation: [
         {
@@ -764,7 +770,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: [
             {
               character: 'padaille',
-              type: { it: 'Corpo che rimuove', en: 'Body she removes' },
+              type: { it: 'Corpo da lei rimosso', en: 'Body she removes' },
               summary: {
                 it: 'Il suo Nen muove il corpo di Padaille per allontanarlo dalla folla.',
                 en: 'Her Nen moves Padaille’s body away from the crowd.',
@@ -789,7 +795,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
       status: [
-        { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
+        { episode: 148, chapter: 393, source: 'chapter', value: 'unknown' },
       ],
     },
     'daemon': introduced(
@@ -1166,6 +1172,8 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     'lisores': introduced(
       395,
       {
+        // Status Unknown on the pinned character page.
+        status: 'unknown',
         role: { it: 'Sacerdote', en: 'Priest' },
         log: {
           it: 'Un sacerdote accoglie i bambini della Meteor City nella chiesa e li avverte dei rapimenti.',
@@ -1179,7 +1187,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       [
         {
           character: 'chrollo',
-          type: { it: 'Bambino che accoglie', en: 'Child he welcomes' },
+          type: { it: 'Bambino accolto', en: 'Child he welcomes' },
           summary: {
             it: 'Permette a Quoll di usare la sala video della chiesa.',
             en: 'He lets Chrollo use the church’s video room.',
@@ -1265,7 +1273,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
       status: [
-        { episode: 148, chapter: 395, source: 'chapter', value: 'alive' },
+        { episode: 148, chapter: 395, source: 'chapter', value: 'unknown' },
       ],
       origin: [
         {
@@ -1297,6 +1305,8 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     'renko': introduced(
       397,
       {
+        // Status Unknown on the pinned character page.
+        status: 'unknown',
         role: { it: 'Imbalsamatrice', en: 'Embalmer' },
         log: {
           it: 'Un’imbalsamatrice usa il Nen per ricomporre il corpo di una bambina.',
@@ -1331,7 +1341,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       [
         {
           character: 'nobunaga',
-          type: { it: 'Intruso che espelle', en: 'Intruder he expels' },
+          type: { it: 'Intruso espulso', en: 'Intruder he expels' },
           summary: {
             it: 'Le sue guardie di Nen trascinano Nobunaga fuori dal rifugio.',
             en: 'His Nen guards drag Nobunaga out of the hideout.',
