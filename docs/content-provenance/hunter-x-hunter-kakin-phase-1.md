@@ -17,41 +17,44 @@ authored relationship selection. Origins and epithets are absent where no
 supported new fact requires them. Gates below are independent of
 first-appearance floors.
 
-| Candidate                 | ID                          | Chapter | Explicit naming evidence                                                                                                                                                 |
-| ------------------------- | --------------------------- | ------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Beyond Netero             | `beyond-netero`             |     340 | The king introduces Netero’s son by name in the broadcast (340).                                                                                                         |
-| Golem                     | `golem`                     |     347 | Ging asks the name; Golem explicitly states how the comrades address him (347).                                                                                          |
-| Benjamin Hui Guo Rou      | `benjamin-hui-guo-rou`      |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Camilla Hui Guo Rou       | `camilla-hui-guo-rou`       |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Zhang Lei Hui Guo Rou     | `zhang-lei-hui-guo-rou`     |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Tserriednich Hui Guo Rou  | `tserriednich-hui-guo-rou`  |     343 | Mizaistom identifies the pictured Scarlet Eyes owner to Kurapika (343; character revision 425583). The owner reports page 19; the agent did not view that licensed page. |
-| Tubeppa Hui Guo Rou       | `tubeppa-hui-guo-rou`       |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Tyson Hui Guo Rou         | `tyson-hui-guo-rou`         |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Luzurus Hui Guo Rou       | `luzurus-hui-guo-rou`       |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Salé-salé Hui Guo Rou     | `sale-sale-hui-guo-rou`     |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Halkenburg Hui Guo Rou    | `halkenburg-hui-guo-rou`    |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Kacho Hui Guo Rou         | `kacho-hui-guo-rou`         |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Fugetsu Hui Guo Rou       | `fugetsu-hui-guo-rou`       |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Momoze Hui Guo Rou        | `momoze-hui-guo-rou`        |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Marayam Hui Guo Rou       | `marayam-hui-guo-rou`       |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Woble Hui Guo Rou         | `woble-hui-guo-rou`         |     349 | The chapter-349 synopsis presents the complete named list of fourteen princes; character pages describe the formal introduction. Earlier cast links alone are not gates. |
-| Izunavi                   | `izunavi`                   |     350 | Character revision 424672 explicitly says that he remained unnamed until chapter 350. The chapter-83 appearance is a floor.                                              |
-| Unma Hui Guo Rou          | `unma-hui-guo-rou`          |     349 | Character revision 423967 expressly identifies the named mother in the princes’ introduction; the queens are visually shown as silhouettes (349).                        |
-| Duazul Hui Guo Rou        | `duazul-hui-guo-rou`        |     349 | Character revision 424837 expressly identifies the named mother in the princes’ introduction and the silhouette (349).                                                   |
-| Tang Zhao Li Hui Guo Rou  | `tang-zhao-li-hui-guo-rou`  |     349 | Character revision 423973 expressly identifies the named mother in the princes’ introduction and the silhouette (349).                                                   |
-| Katrono Hui Guo Rou       | `katrono-hui-guo-rou`       |     349 | Character revision 425774 explicitly says her name is revealed when Tyson is introduced, and establishes her silhouette (349).                                           |
-| Swinko-swinko Hui Guo Rou | `swinko-swinko-hui-guo-rou` |     349 | Character revision 424010 expressly introduces her as the eighth prince’s mother in the princes’ revelation, with a silhouette (349).                                    |
-| Seiko Hui Guo Rou         | `seiko-hui-guo-rou`         |     349 | Character revision 424055 expressly introduces her as the twins’ mother in the princes’ revelation, with a silhouette (349).                                             |
-| Zigg Zoldyck              | `zigg-zoldyck`              |     344 | Character revision 423878 explicitly records the name’s printed revelation in the chapter-344 flashback. Use the wiki spelling; exact licensed page unviewed.            |
-| Curly                     | `curly`                     |     346 | Pekotero’s character revision 424182 reports his compliment to Ging for beating Curly, a Varvard professor, in chapter 346. Narrative use at 344 is not the gate.        |
-| Mark                      | `mark`                      |     345 | The chapter-345 synopsis explicitly describes the phone contact as someone named Mark. Character revision 424362 confirms his visible nightclub scene that chapter.      |
+| Candidate                 | ID                          | Chapter | Explicit naming evidence                                                                                                                                                      |
+| ------------------------- | --------------------------- | ------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Beyond Netero             | `beyond-netero`             |     340 | The king introduces Netero’s son by name in the broadcast (340).                                                                                                              |
+| Golem                     | `golem`                     |     347 | Ging asks the name; Golem explicitly states how the comrades address him (347).                                                                                               |
+| Benjamin Hui Guo Rou      | `benjamin-hui-guo-rou`      |     349 | Character revision 425469 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Camilla Hui Guo Rou       | `camilla-hui-guo-rou`       |     349 | Character revision 425696 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Zhang Lei Hui Guo Rou     | `zhang-lei-hui-guo-rou`     |     349 | Character revision 424481 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Tserriednich Hui Guo Rou  | `tserriednich-hui-guo-rou`  |     343 | Mizaistom identifies the pictured Scarlet Eyes owner to Kurapika (343; character revision 425583). The owner reports page 19; the agent did not view that licensed page.      |
+| Tubeppa Hui Guo Rou       | `tubeppa-hui-guo-rou`       |     349 | Character revision 423943 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Tyson Hui Guo Rou         | `tyson-hui-guo-rou`         |     349 | Character revision 423939 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Luzurus Hui Guo Rou       | `luzurus-hui-guo-rou`       |     349 | Character revision 424426 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Salé-salé Hui Guo Rou     | `sale-sale-hui-guo-rou`     |     349 | Character revision 424083 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Halkenburg Hui Guo Rou    | `halkenburg-hui-guo-rou`    |     349 | Character revision 424724 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Kacho Hui Guo Rou         | `kacho-hui-guo-rou`         |     349 | Character revision 424755 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Fugetsu Hui Guo Rou       | `fugetsu-hui-guo-rou`       |     349 | Character revision 425822 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Momoze Hui Guo Rou        | `momoze-hui-guo-rou`        |     349 | Character revision 425702 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Marayam Hui Guo Rou       | `marayam-hui-guo-rou`       |     349 | Character revision 424357 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Woble Hui Guo Rou         | `woble-hui-guo-rou`         |     349 | Character revision 423914 cites chapter 349 for the fourteen princes’ introduction, each with title and mother. The 349 synopsis (418815) shows the list without naming them. |
+| Izunavi                   | `izunavi`                   |     350 | Character revision 424672 explicitly says that he remained unnamed until chapter 350. The chapter-83 appearance is a floor.                                                   |
+| Unma Hui Guo Rou          | `unma-hui-guo-rou`          |     349 | Character revision 423967 expressly identifies the named mother in the princes’ introduction; the queens are visually shown as silhouettes (349).                             |
+| Duazul Hui Guo Rou        | `duazul-hui-guo-rou`        |     349 | Character revision 424837 expressly identifies the named mother in the princes’ introduction and the silhouette (349).                                                        |
+| Tang Zhao Li Hui Guo Rou  | `tang-zhao-li-hui-guo-rou`  |     349 | Character revision 423973 expressly identifies the named mother in the princes’ introduction and the silhouette (349).                                                        |
+| Katrono Hui Guo Rou       | `katrono-hui-guo-rou`       |     349 | Character revision 425774 explicitly says her name is revealed when Tyson is introduced, and establishes her silhouette (349).                                                |
+| Swinko-swinko Hui Guo Rou | `swinko-swinko-hui-guo-rou` |     349 | Character revision 424010 expressly introduces her as the eighth prince’s mother in the princes’ revelation, with a silhouette (349).                                         |
+| Seiko Hui Guo Rou         | `seiko-hui-guo-rou`         |     349 | Character revision 424055 expressly introduces her as the twins’ mother in the princes’ revelation, with a silhouette (349).                                                  |
+| Zigg Zoldyck              | `zigg-zoldyck`              |     344 | Character revision 423878 explicitly records the name’s printed revelation in the chapter-344 flashback. Use the wiki spelling; exact licensed page unviewed.                 |
+| Curly                     | `curly`                     |     346 | Pekotero’s character revision 424182 reports his compliment to Ging for beating Curly, a Varvard professor, in chapter 346. Narrative use at 344 is not the gate.             |
+| Mark                      | `mark`                      |     345 | The chapter-345 synopsis explicitly describes the phone contact as someone named Mark. Character revision 424362 confirms his visible nightclub scene that chapter.           |
 
-The shared public motherhood at 349 is preserved, including Duazul and
-Halkenburg. Later disclosures do not belong in the initial dossier. The
-chapter-350 appointments add Izunavi–Tyson, Basho–Luzurus, Melody–Kacho,
-Hanzo–Momoze, Biscuit–Marayam and Kurapika–Woble relationships. Each later
-selection retains its earlier selected family members. Beyond is alive at 340,
-captured when he surrenders at 341, and held in a cell at 342.
+Benjamin, Tyson and Luzurus are already named in Tserriednich’s talk with Theta
+in the 348 synopsis; their records wait for the 349 introduction that gives the
+title and mother their dossiers show. The shared public motherhood at 349 is
+preserved, including Duazul and Halkenburg. Later disclosures do not belong in
+the initial dossier. The chapter-350 appointments add Izunavi–Tyson,
+Basho–Luzurus, Melody–Kacho, Hanzo–Momoze, Biscuit–Marayam and Kurapika–Woble
+relationships. Each later selection retains its earlier selected family members.
+Beyond is alive at 340, captured when he surrenders at 341, and held in a cell
+at 342.
 
 ## Returning characters
 
@@ -71,6 +74,9 @@ These characters retain their original dossier. New facts are chapter-only:
 | Shalnark, Kortopi | 357           | Hisoka kills them.                                                                                                                                                              |
 
 The chapter synopses establish these facts; no new chronicle stories are added.
+The Zodiac gates follow the pinned synopsis notes: chapter 343 (416289) says
+“Leorio accepts her offer” and “Kurapika joins the Zodiacs”, and chapter 346
+(416292) gives Kurapika the codename “Rat” and Leorio “Boar”.
 
 ## Verified later naming scenes
 
