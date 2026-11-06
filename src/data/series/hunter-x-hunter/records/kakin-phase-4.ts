@@ -2,6 +2,35 @@ import type { PlaceDossier } from '~/data/types'
 
 import type { HunterSaga, HunterVocabulary } from './saga'
 
+type Dossier = HunterSaga['dossiers'][string]
+type Name = Record<'en' | 'it', string>
+type Link = NonNullable<Dossier['relationships']>[number]['value'][number]
+
+const TYSON_EMPLOYER: Link = {
+  character: 'tyson-hui-guo-rou',
+  type: { it: 'Datore di lavoro', en: 'Employer' },
+  summary: {
+    it: 'Tyson gli assegna un ruolo da interpretare davanti ai colleghi.',
+    en: 'Tyson gives him a role to perform in front of his colleagues.',
+  },
+}
+
+/** A record whose facts all open at its naming chapter: one affiliation, alive, one selection. */
+function introduced(
+  chapter: number,
+  { role, log, affiliation }: { affiliation: Name; log: Name; role: Name },
+  links: Link[],
+): Dossier {
+  const gate = { episode: 148, chapter, source: 'chapter' } as const
+  return {
+    role,
+    log,
+    affiliation: [{ ...gate, value: affiliation }],
+    status: [{ ...gate, value: 'alive' }],
+    relationships: [{ ...gate, value: links }],
+  }
+}
+
 /** Chapters 384–400: only explicit naming scenes in the phase inventory. */
 export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   entries: [
@@ -501,294 +530,184 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
   ],
   dossiers: {
-    'tajao': {
-      role: { it: 'Vicecapo dei Cha-R', en: 'Cha-R underboss' },
-      log: {
-        it: 'Il vicecapo dei Cha-R valuta una collaborazione con la Brigata Fantasma.',
-        en: 'The Cha-R underboss considers working with the Phantom Troupe.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 384,
-          source: 'chapter',
-          value: { it: 'Famiglia Cha-R', en: 'Cha-R Family' },
+    'tajao': introduced(
+      384,
+      {
+        role: { it: 'Vicecapo dei Cha-R', en: 'Cha-R underboss' },
+        log: {
+          it: 'Il vicecapo dei Cha-R valuta una collaborazione con la Brigata Fantasma.',
+          en: 'The Cha-R underboss considers working with the Phantom Troupe.',
         },
-      ],
-      status: [
-        { episode: 148, chapter: 384, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 384,
-          source: 'chapter',
-          value: [
-            {
-              character: 'phinks',
-              type: { it: 'Interlocutore', en: 'Negotiating partner' },
-              summary: {
-                it: 'Phinks offre di eliminare il sicario in cambio dell’accesso al quarto livello.',
-                en: 'Phinks offers to eliminate the hitman in exchange for access to Tier 4.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'famule': {
-      role: { it: 'Guardia reale', en: 'Royal bodyguard' },
-      log: {
-        it: 'Una guardia nella stanza del settimo principe. Viene interrogata sul colpo di pistola nel corridoio.',
-        en: 'A guard in the Seventh Prince’s quarters who is questioned about the gunshot in the corridor.',
+        affiliation: { it: 'Famiglia Cha-R', en: 'Cha-R Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 389,
-          source: 'chapter',
-          value: {
-            it: 'Guardie della regina Duazul',
-            en: 'Queen Duazul’s guards',
+          character: 'phinks',
+          type: { it: 'Interlocutore', en: 'Negotiating partner' },
+          summary: {
+            it: 'Phinks offre di eliminare il sicario in cambio dell’accesso al quarto livello.',
+            en: 'Phinks offers to eliminate the hitman in exchange for access to Tier 4.',
           },
         },
       ],
-      status: [
-        { episode: 148, chapter: 389, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 389,
-          source: 'chapter',
-          value: [
-            {
-              character: 'basho',
-              type: { it: 'Collega nella scorta', en: 'Fellow guard' },
-              summary: {
-                it: 'Basho è presente nella stessa stanza durante l’incidente nel corridoio.',
-                en: 'Basho is in the same quarters during the incident in the corridor.',
-              },
-            },
-          ],
+    ),
+    'famule': introduced(
+      389,
+      {
+        role: { it: 'Guardia reale', en: 'Royal bodyguard' },
+        log: {
+          it: 'Una guardia nella stanza del settimo principe. Viene interrogata sul colpo di pistola nel corridoio.',
+          en: 'A guard in the Seventh Prince’s quarters who is questioned about the gunshot in the corridor.',
         },
-      ],
-    },
-    'fukataki': {
-      role: { it: 'Maggiordoma di Camilla', en: 'Camilla’s majordomo' },
-      log: {
-        it: 'La maggiordoma valuta il tempo necessario per colpire i principi con una maledizione.',
-        en: 'The majordomo assesses how long a curse would take to affect the princes.',
+        affiliation: {
+          it: 'Guardie della regina Duazul',
+          en: 'Queen Duazul’s guards',
+        },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 389,
-          source: 'chapter',
-          value: { it: 'Personale di Camilla', en: 'Camilla’s staff' },
+          character: 'basho',
+          type: { it: 'Collega nella scorta', en: 'Fellow guard' },
+          summary: {
+            it: 'Basho è presente nella stessa stanza durante l’incidente nel corridoio.',
+            en: 'Basho is in the same quarters during the incident in the corridor.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 389, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 389,
-          source: 'chapter',
-          value: [
-            {
-              character: 'camilla-hui-guo-rou',
-              type: { it: 'Datore di lavoro', en: 'Employer' },
-              summary: {
-                it: 'Dirige il personale di Camilla e valuta come usare le maledizioni per lei.',
-                en: 'She oversees Camilla’s staff and assesses how to use curses for her.',
-              },
-            },
-          ],
+    ),
+    'fukataki': introduced(
+      389,
+      {
+        role: { it: 'Maggiordoma di Camilla', en: 'Camilla’s majordomo' },
+        log: {
+          it: 'La maggiordoma valuta il tempo necessario per colpire i principi con una maledizione.',
+          en: 'The majordomo assesses how long a curse would take to affect the princes.',
         },
-      ],
-    },
-    'taler': {
-      role: { it: 'Guardia di Camilla', en: 'Camilla’s guard' },
-      log: {
-        it: 'Una guardia incaricata di maledire il tredicesimo principe.',
-        en: 'A guard assigned to curse the Thirteenth Prince.',
+        affiliation: { it: 'Personale di Camilla', en: 'Camilla’s staff' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 389,
-          source: 'chapter',
-          value: { it: 'Guardie di Camilla', en: 'Camilla’s guards' },
+          character: 'camilla-hui-guo-rou',
+          type: { it: 'Datore di lavoro', en: 'Employer' },
+          summary: {
+            it: 'Dirige il personale di Camilla e valuta come usare le maledizioni per lei.',
+            en: 'She oversees Camilla’s staff and assesses how to use curses for her.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 389, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 389,
-          source: 'chapter',
-          value: [
-            {
-              character: 'fukataki',
-              type: {
-                it: 'Consulente sulle maledizioni',
-                en: 'Adviser on curses',
-              },
-              summary: {
-                it: 'Fukataki avverte che le bestie dei principi rendono difficile la maledizione.',
-                en: 'Fukataki warns that the princes’ beasts make cursing them difficult.',
-              },
-            },
-          ],
+    ),
+    'taler': introduced(
+      389,
+      {
+        role: { it: 'Guardia di Camilla', en: 'Camilla’s guard' },
+        log: {
+          it: 'Una guardia incaricata di maledire il tredicesimo principe.',
+          en: 'A guard assigned to curse the Thirteenth Prince.',
         },
-      ],
-    },
-    'zakuro-custard': {
-      role: { it: 'Membro degli Xi-Yu', en: 'Xi-Yu member' },
-      log: {
-        it: 'Un membro degli Xi-Yu incaricato di cercare Hisoka. Muove il proprio sangue con il Nen.',
-        en: 'A Xi-Yu member sent to find Hisoka. He moves his own blood with Nen.',
+        affiliation: { it: 'Guardie di Camilla', en: 'Camilla’s guards' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 390,
-          source: 'chapter',
-          value: { it: 'Famiglia Xi-Yu', en: 'Xi-Yu Family' },
+          character: 'fukataki',
+          type: { it: 'Consulente sulle maledizioni', en: 'Adviser on curses' },
+          summary: {
+            it: 'Fukataki avverte che le bestie dei principi rendono difficile la maledizione.',
+            en: 'Fukataki warns that the princes’ beasts make cursing them difficult.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 390, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
+    ),
+    'zakuro-custard': introduced(
+      390,
+      {
+        role: { it: 'Membro degli Xi-Yu', en: 'Xi-Yu member' },
+        log: {
+          it: 'Un membro degli Xi-Yu incaricato di cercare Hisoka. Muove il proprio sangue con il Nen.',
+          en: 'A Xi-Yu member sent to find Hisoka. He moves his own blood with Nen.',
+        },
+        affiliation: { it: 'Famiglia Xi-Yu', en: 'Xi-Yu Family' },
+      },
+      [
         {
-          episode: 148,
-          chapter: 390,
-          source: 'chapter',
-          value: [
-            {
-              character: 'lynch-fullbokko',
-              type: { it: 'Compagna nella ricerca', en: 'Search partner' },
-              summary: {
-                it: 'Cerca Hisoka insieme a Lynch dopo aver ricevuto gli ordini del vicecapo.',
-                en: 'He searches for Hisoka with Lynch after receiving the underboss’s orders.',
-              },
-            },
-          ],
+          character: 'lynch-fullbokko',
+          type: { it: 'Compagna nella ricerca', en: 'Search partner' },
+          summary: {
+            it: 'Cerca Hisoka insieme a Lynch dopo aver ricevuto gli ordini del vicecapo.',
+            en: 'He searches for Hisoka with Lynch after receiving the underboss’s orders.',
+          },
         },
       ],
-    },
+    ),
     'lynch-fullbokko': {
-      role: { it: 'Membro degli Xi-Yu', en: 'Xi-Yu member' },
-      log: {
-        it: 'Una membro degli Xi-Yu che cerca Hisoka. I suoi pugni fanno rispondere la voce interiore delle persone.',
-        en: 'A Xi-Yu member searching for Hisoka. Her punches make people’s inner voices answer.',
-      },
-      affiliation: [
+      ...introduced(
+        390,
         {
-          episode: 148,
-          chapter: 390,
-          source: 'chapter',
-          value: { it: 'Famiglia Xi-Yu', en: 'Xi-Yu Family' },
+          role: { it: 'Membro degli Xi-Yu', en: 'Xi-Yu member' },
+          log: {
+            it: 'Una membro degli Xi-Yu che cerca Hisoka. I suoi pugni fanno rispondere la voce interiore delle persone.',
+            en: 'A Xi-Yu member searching for Hisoka. Her punches make people’s inner voices answer.',
+          },
+          affiliation: { it: 'Famiglia Xi-Yu', en: 'Xi-Yu Family' },
         },
-      ],
+        [
+          {
+            character: 'zakuro-custard',
+            type: { it: 'Compagno nella ricerca', en: 'Search partner' },
+            summary: {
+              it: 'Lavora con Zakuro per trovare Hisoka tra i passeggeri.',
+              en: 'She works with Zakuro to find Hisoka among the passengers.',
+            },
+          },
+        ],
+      ),
+      // Bonolenov's thoughts tell that he killed her (405, #1138).
       status: [
         { episode: 148, chapter: 390, source: 'chapter', value: 'alive' },
-        // Bonolenov's thoughts tell that he killed her (405, #1138).
         { episode: 148, chapter: 405, source: 'chapter', value: 'deceased' },
       ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 390,
-          source: 'chapter',
-          value: [
-            {
-              character: 'zakuro-custard',
-              type: { it: 'Compagno nella ricerca', en: 'Search partner' },
-              summary: {
-                it: 'Lavora con Zakuro per trovare Hisoka tra i passeggeri.',
-                en: 'She works with Zakuro to find Hisoka among the passengers.',
-              },
-            },
-          ],
-        },
-      ],
     },
-    'tevelares': {
-      role: { it: 'Ingegnere civile', en: 'Civil engineer' },
-      log: {
-        it: 'Un ingegnere civile degli Heil-Ly che cerca di colpire il vicecapo rivale.',
-        en: 'A Heil-Ly civil engineer who tries to attack the rival underboss.',
+    'tevelares': introduced(
+      391,
+      {
+        role: { it: 'Ingegnere civile', en: 'Civil engineer' },
+        log: {
+          it: 'Un ingegnere civile degli Heil-Ly che cerca di colpire il vicecapo rivale.',
+          en: 'A Heil-Ly civil engineer who tries to attack the rival underboss.',
+        },
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 391,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'quorolle',
+          type: { it: 'Complice', en: 'Accomplice' },
+          summary: {
+            it: 'Attacca insieme a Quorolle, ma i due si ritirano davanti ai piccioni di Nen.',
+            en: 'He attacks with Quorolle, but they retreat from the Nen pigeons.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 391, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 391,
-          source: 'chapter',
-          value: [
-            {
-              character: 'quorolle',
-              type: { it: 'Complice', en: 'Accomplice' },
-              summary: {
-                it: 'Attacca insieme a Quorolle, ma i due si ritirano davanti ai piccioni di Nen.',
-                en: 'He attacks with Quorolle, but they retreat from the Nen pigeons.',
-              },
-            },
-          ],
+    ),
+    'quorolle': introduced(
+      391,
+      {
+        role: { it: 'Riparatore', en: 'Repairman' },
+        log: {
+          it: 'Un riparatore degli Heil-Ly che partecipa a un agguato nei corridoi della nave.',
+          en: 'A Heil-Ly repairman who takes part in an ambush in the ship’s corridors.',
         },
-      ],
-    },
-    'quorolle': {
-      role: { it: 'Riparatore', en: 'Repairman' },
-      log: {
-        it: 'Un riparatore degli Heil-Ly che partecipa a un agguato nei corridoi della nave.',
-        en: 'A Heil-Ly repairman who takes part in an ambush in the ship’s corridors.',
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 391,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'tevelares',
+          type: { it: 'Complice', en: 'Accomplice' },
+          summary: {
+            it: 'Spara insieme a Tevelares contro i piccioni di Nen, poi si ritira con lui.',
+            en: 'He fires at the Nen pigeons with Tevelares, then retreats with him.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 391, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 391,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tevelares',
-              type: { it: 'Complice', en: 'Accomplice' },
-              summary: {
-                it: 'Spara insieme a Tevelares contro i piccioni di Nen, poi si ritira con lui.',
-                en: 'He fires at the Nen pigeons with Tevelares, then retreats with him.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    ),
     'padaille': {
       role: { it: 'Addetto alle demolizioni', en: 'Demolition worker' },
       log: {
@@ -880,234 +799,135 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
       ],
     },
-    'daemon': {
-      role: { it: 'Muratore', en: 'Construction worker' },
-      log: {
-        it: 'Un membro degli Heil-Ly che discute come continuare la caccia dopo la perdita di un compagno.',
-        en: 'A Heil-Ly member discussing how to continue hunting after losing a fellow member.',
+    'daemon': introduced(
+      393,
+      {
+        role: { it: 'Muratore', en: 'Construction worker' },
+        log: {
+          it: 'Un membro degli Heil-Ly che discute come continuare la caccia dopo la perdita di un compagno.',
+          en: 'A Heil-Ly member discussing how to continue hunting after losing a fellow member.',
+        },
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'gelato',
+          type: { it: 'Compagna nella famiglia', en: 'Fellow family member' },
+          summary: {
+            it: 'Discute con Gelato dei pericoli di uscire dal rifugio.',
+            en: 'He discusses the dangers of leaving the hideout with Gelato.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: [
-            {
-              character: 'gelato',
-              type: {
-                it: 'Compagna nella famiglia',
-                en: 'Fellow family member',
-              },
-              summary: {
-                it: 'Discute con Gelato dei pericoli di uscire dal rifugio.',
-                en: 'He discusses the dangers of leaving the hideout with Gelato.',
-              },
-            },
-          ],
+    ),
+    'gelato': introduced(
+      393,
+      {
+        role: { it: 'Giocatrice professionista', en: 'Professional gamer' },
+        log: {
+          it: 'Una giocatrice professionista degli Heil-Ly. Avverte i compagni che i soldati sono in allerta.',
+          en: 'A Heil-Ly professional gamer who warns the others that the soldiers are on alert.',
         },
-      ],
-    },
-    'gelato': {
-      role: { it: 'Giocatrice professionista', en: 'Professional gamer' },
-      log: {
-        it: 'Una giocatrice professionista degli Heil-Ly. Avverte i compagni che i soldati sono in allerta.',
-        en: 'A Heil-Ly professional gamer who warns the others that the soldiers are on alert.',
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'matvere',
+          type: { it: 'Compagno nella famiglia', en: 'Fellow family member' },
+          summary: {
+            it: 'Gli ricorda che non può scegliere liberamente la propria categoria di Nen.',
+            en: 'She reminds him that he cannot freely choose his Nen category.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: [
-            {
-              character: 'matvere',
-              type: {
-                it: 'Compagno nella famiglia',
-                en: 'Fellow family member',
-              },
-              summary: {
-                it: 'Gli ricorda che non può scegliere liberamente la propria categoria di Nen.',
-                en: 'She reminds him that he cannot freely choose his Nen category.',
-              },
-            },
-          ],
+    ),
+    'perigord': introduced(
+      393,
+      {
+        role: {
+          it: 'Assistente investigatore',
+          en: 'Investigator’s assistant',
         },
-      ],
-    },
-    'perigord': {
-      role: { it: 'Assistente investigatore', en: 'Investigator’s assistant' },
-      log: {
-        it: 'Un membro degli Heil-Ly che propone di ricreare il potere di un compagno perduto.',
-        en: 'A Heil-Ly member who proposes recreating a lost member’s ability.',
+        log: {
+          it: 'Un membro degli Heil-Ly che propone di ricreare il potere di un compagno perduto.',
+          en: 'A Heil-Ly member who proposes recreating a lost member’s ability.',
+        },
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'voconte',
+          type: { it: 'Compagno nella famiglia', en: 'Fellow family member' },
+          summary: {
+            it: 'Ascolta la proposta di Voconte di usare una porta per catturare le vittime.',
+            en: 'He hears Voconte propose using a door to catch victims.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: [
-            {
-              character: 'voconte',
-              type: {
-                it: 'Compagno nella famiglia',
-                en: 'Fellow family member',
-              },
-              summary: {
-                it: 'Ascolta la proposta di Voconte di usare una porta per catturare le vittime.',
-                en: 'He hears Voconte propose using a door to catch victims.',
-              },
-            },
-          ],
+    ),
+    'bille': introduced(
+      393,
+      {
+        role: { it: 'Addetto a una sala giochi', en: 'Arcade employee' },
+        log: {
+          it: 'Un addetto a una sala giochi degli Heil-Ly che ha già deciso quale potere sviluppare.',
+          en: 'A Heil-Ly arcade employee who has already decided what ability to develop.',
         },
-      ],
-    },
-    'bille': {
-      role: { it: 'Addetto a una sala giochi', en: 'Arcade employee' },
-      log: {
-        it: 'Un addetto a una sala giochi degli Heil-Ly che ha già deciso quale potere sviluppare.',
-        en: 'A Heil-Ly arcade employee who has already decided what ability to develop.',
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'matvere',
+          type: { it: 'Compagno nella famiglia', en: 'Fellow family member' },
+          summary: {
+            it: 'Discute con Matvere e gli altri membri delle capacità da sviluppare.',
+            en: 'He discusses abilities to develop with Matvere and the other members.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: [
-            {
-              character: 'matvere',
-              type: {
-                it: 'Compagno nella famiglia',
-                en: 'Fellow family member',
-              },
-              summary: {
-                it: 'Discute con Matvere e gli altri membri delle capacità da sviluppare.',
-                en: 'He discusses abilities to develop with Matvere and the other members.',
-              },
-            },
-          ],
+    ),
+    'voconte': introduced(
+      393,
+      {
+        role: { it: 'Trafficante di persone', en: 'Human trafficker' },
+        log: {
+          it: 'Un membro degli Heil-Ly che propone di attirare vittime attraverso una porta.',
+          en: 'A Heil-Ly member who proposes luring victims through a door.',
         },
-      ],
-    },
-    'voconte': {
-      role: { it: 'Trafficante di persone', en: 'Human trafficker' },
-      log: {
-        it: 'Un membro degli Heil-Ly che propone di attirare vittime attraverso una porta.',
-        en: 'A Heil-Ly member who proposes luring victims through a door.',
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'perigord',
+          type: { it: 'Compagno nella famiglia', en: 'Fellow family member' },
+          summary: {
+            it: 'Risponde alla proposta di Perigord offrendo il proprio potere della porta.',
+            en: 'He answers Perigord’s proposal by offering his own door ability.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: [
-            {
-              character: 'perigord',
-              type: {
-                it: 'Compagno nella famiglia',
-                en: 'Fellow family member',
-              },
-              summary: {
-                it: 'Risponde alla proposta di Perigord offrendo il proprio potere della porta.',
-                en: 'He answers Perigord’s proposal by offering his own door ability.',
-              },
-            },
-          ],
+    ),
+    'matvere': introduced(
+      393,
+      {
+        role: { it: 'Studente universitario', en: 'College student' },
+        log: {
+          it: 'Uno studente degli Heil-Ly che vuole creare un’arma da fuoco con il Nen.',
+          en: 'A Heil-Ly college student who wants to create a firearm with Nen.',
         },
-      ],
-    },
-    'matvere': {
-      role: { it: 'Studente universitario', en: 'College student' },
-      log: {
-        it: 'Uno studente degli Heil-Ly che vuole creare un’arma da fuoco con il Nen.',
-        en: 'A Heil-Ly college student who wants to create a firearm with Nen.',
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'gelato',
+          type: { it: 'Compagna nella famiglia', en: 'Fellow family member' },
+          summary: {
+            it: 'Gelato gli ricorda che la categoria di Nen non si sceglie.',
+            en: 'Gelato reminds him that Nen category is not a choice.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: [
-            {
-              character: 'gelato',
-              type: {
-                it: 'Compagna nella famiglia',
-                en: 'Fellow family member',
-              },
-              summary: {
-                it: 'Gelato gli ricorda che la categoria di Nen non si sceglie.',
-                en: 'Gelato reminds him that Nen category is not a choice.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    ),
     'tassi': {
       role: { it: 'Membro degli Xi-Yu', en: 'Xi-Yu member' },
       log: {
@@ -1143,173 +963,134 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    'terebellum': {
-      role: { it: 'Contrabbandiere e sicario', en: 'Smuggler and hitman' },
-      log: {
-        it: 'Un membro degli Heil-Ly che trasporta i corpi nell’area di smaltimento.',
-        en: 'A Heil-Ly member who carries bodies to the disposal area.',
+    'terebellum': introduced(
+      394,
+      {
+        role: { it: 'Contrabbandiere e sicario', en: 'Smuggler and hitman' },
+        log: {
+          it: 'Un membro degli Heil-Ly che trasporta i corpi nell’area di smaltimento.',
+          en: 'A Heil-Ly member who carries bodies to the disposal area.',
+        },
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'chiffon-toto',
+          type: {
+            it: 'Compagna nello smaltimento',
+            en: 'Fellow disposal worker',
+          },
+          summary: {
+            it: 'Consegna il corpo di Tassi alle due donne incaricate di smaltirlo.',
+            en: 'He delivers Tassi’s body to the two women responsible for disposing of it.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'chiffon-toto',
-              type: {
-                it: 'Compagna nello smaltimento',
-                en: 'Fellow disposal worker',
-              },
-              summary: {
-                it: 'Consegna il corpo di Tassi alle due donne incaricate di smaltirlo.',
-                en: 'He delivers Tassi’s body to the two women responsible for disposing of it.',
-              },
-            },
-          ],
+    ),
+    'chiffon-toto': introduced(
+      394,
+      {
+        role: { it: 'Sarta', en: 'Seamstress' },
+        log: {
+          it: 'Una sarta degli Heil-Ly che si occupa dei corpi insieme a un’altra membro della famiglia.',
+          en: 'A Heil-Ly seamstress who handles bodies with another member of the family.',
         },
-      ],
-    },
-    'chiffon-toto': {
-      role: { it: 'Sarta', en: 'Seamstress' },
-      log: {
-        it: 'Una sarta degli Heil-Ly che si occupa dei corpi insieme a un’altra membro della famiglia.',
-        en: 'A Heil-Ly seamstress who handles bodies with another member of the family.',
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'montblanc-toto',
+          type: {
+            it: 'Compagna nello smaltimento',
+            en: 'Fellow disposal worker',
+          },
+          summary: {
+            it: 'Le due si occupano del corpo portato da Terebellum.',
+            en: 'The two handle the body brought by Terebellum.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'montblanc-toto',
-              type: {
-                it: 'Compagna nello smaltimento',
-                en: 'Fellow disposal worker',
-              },
-              summary: {
-                it: 'Le due si occupano del corpo portato da Terebellum.',
-                en: 'The two handle the body brought by Terebellum.',
-              },
-            },
-          ],
+    ),
+    'montblanc-toto': introduced(
+      394,
+      {
+        role: {
+          it: 'Operaia in una fabbrica di mangimi',
+          en: 'Animal feed factory worker',
         },
-      ],
-    },
-    'montblanc-toto': {
-      role: {
-        it: 'Operaia in una fabbrica di mangimi',
-        en: 'Animal feed factory worker',
+        log: {
+          it: 'Una membro degli Heil-Ly incaricata di smaltire i corpi nel rifugio.',
+          en: 'A Heil-Ly member responsible for disposing of bodies in the hideout.',
+        },
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      log: {
-        it: 'Una membro degli Heil-Ly incaricata di smaltire i corpi nel rifugio.',
-        en: 'A Heil-Ly member responsible for disposing of bodies in the hideout.',
+      [
+        {
+          character: 'chiffon-toto',
+          type: {
+            it: 'Compagna nello smaltimento',
+            en: 'Fellow disposal worker',
+          },
+          summary: {
+            it: 'Lavora con Chiffon sul corpo portato nel rifugio.',
+            en: 'She works with Chiffon on the body brought into the hideout.',
+          },
+        },
+      ],
+    ),
+    'sodom': introduced(
+      394,
+      {
+        role: {
+          it: 'Medico clandestino e sicario',
+          en: 'Back-alley doctor and hitman',
+        },
+        log: {
+          it: 'Un membro degli Heil-Ly si offre per catturare una guardia del quarto principe.',
+          en: 'A Heil-Ly member volunteers to capture one of the Fourth Prince’s guards.',
+        },
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+          character: 'matvere',
+          type: { it: 'Compagno nella famiglia', en: 'Fellow family member' },
+          summary: {
+            it: 'Si offre per la missione dopo che Matvere preferisce un altro compito.',
+            en: 'He volunteers for the mission after Matvere prefers another task.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'chiffon-toto',
-              type: {
-                it: 'Compagna nello smaltimento',
-                en: 'Fellow disposal worker',
-              },
-              summary: {
-                it: 'Lavora con Chiffon sul corpo portato nel rifugio.',
-                en: 'She works with Chiffon on the body brought into the hideout.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'sodom': {
-      role: {
-        it: 'Medico clandestino e sicario',
-        en: 'Back-alley doctor and hitman',
-      },
-      log: {
-        it: 'Un membro degli Heil-Ly si offre per catturare una guardia del quarto principe.',
-        en: 'A Heil-Ly member volunteers to capture one of the Fourth Prince’s guards.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'matvere',
-              type: {
-                it: 'Compagno nella famiglia',
-                en: 'Fellow family member',
-              },
-              summary: {
-                it: 'Si offre per la missione dopo che Matvere preferisce un altro compito.',
-                en: 'He volunteers for the mission after Matvere prefers another task.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    ),
     'borksen': {
-      role: {
-        it: 'Soldatessa del quarto principe',
-        en: 'Fourth Prince’s soldier',
-      },
-      log: {
-        it: 'Una soldatessa viene trasferita ai livelli inferiori dopo aver condiviso notizie sul Nen.',
-        en: 'A soldier is transferred to the lower tiers after sharing information about Nen.',
-      },
+      ...introduced(
+        394,
+        {
+          role: {
+            it: 'Soldatessa del quarto principe',
+            en: 'Fourth Prince’s soldier',
+          },
+          log: {
+            it: 'Una soldatessa viene trasferita ai livelli inferiori dopo aver condiviso notizie sul Nen.',
+            en: 'A soldier is transferred to the lower tiers after sharing information about Nen.',
+          },
+          affiliation: {
+            it: 'Guardie del quarto principe',
+            en: 'Fourth Prince’s guards',
+          },
+        },
+        [
+          {
+            character: 'otocin',
+            type: { it: 'Amico e collega', en: 'Friend and fellow soldier' },
+            summary: {
+              it: 'Gli rimprovera di averla fatta trasferire parlando con il caporale.',
+              en: 'She rebukes him for getting her transferred by speaking to the corporal.',
+            },
+          },
+        ],
+      ),
+      // Morena’s game binds her to the Heil-Ly (410, #1138).
       affiliation: [
         {
           episode: 148,
@@ -1320,7 +1101,6 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Fourth Prince’s guards',
           },
         },
-        // Morena’s game binds her to the Heil-Ly (410, #1138).
         {
           episode: 148,
           chapter: 410,
@@ -1331,188 +1111,118 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         },
       ],
+      // Taken to the Heil-Ly hideout (407) and let go once she joins (410).
       status: [
         { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-        // Taken to the Heil-Ly hideout (407) and let go once she joins (410).
         { episode: 148, chapter: 407, source: 'chapter', value: 'captured' },
         { episode: 148, chapter: 410, source: 'chapter', value: 'alive' },
       ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'otocin',
-              type: { it: 'Amico e collega', en: 'Friend and fellow soldier' },
-              summary: {
-                it: 'Gli rimprovera di averla fatta trasferire parlando con il caporale.',
-                en: 'She rebukes him for getting her transferred by speaking to the corporal.',
-              },
-            },
-          ],
-        },
-      ],
     },
-    'otocin': {
-      role: {
-        it: 'Soldato del quarto principe',
-        en: 'Fourth Prince’s soldier',
+    'otocin': introduced(
+      394,
+      {
+        role: {
+          it: 'Soldato del quarto principe',
+          en: 'Fourth Prince’s soldier',
+        },
+        log: {
+          it: 'Un soldato cerca informazioni sul Nen mentre la sua unità cerca la mafia.',
+          en: 'A soldier seeks information about Nen while his unit searches for the mafia.',
+        },
+        affiliation: {
+          it: 'Guardie del quarto principe',
+          en: 'Fourth Prince’s guards',
+        },
       },
-      log: {
-        it: 'Un soldato cerca informazioni sul Nen mentre la sua unità cerca la mafia.',
-        en: 'A soldier seeks information about Nen while his unit searches for the mafia.',
-      },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: {
-            it: 'Guardie del quarto principe',
-            en: 'Fourth Prince’s guards',
+          character: 'borksen',
+          type: { it: 'Amica e collega', en: 'Friend and fellow soldier' },
+          summary: {
+            it: 'Condivide con il caporale le informazioni che ha ricevuto da Borksen.',
+            en: 'He shares the information he received from Borksen with the corporal.',
           },
         },
       ],
-      status: [
-        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'borksen',
-              type: { it: 'Amica e collega', en: 'Friend and fellow soldier' },
-              summary: {
-                it: 'Condivide con il caporale le informazioni che ha ricevuto da Borksen.',
-                en: 'He shares the information he received from Borksen with the corporal.',
-              },
-            },
-          ],
+    ),
+    'gipper': introduced(
+      394,
+      {
+        role: {
+          it: 'Caporale del quarto principe',
+          en: 'Fourth Prince’s corporal',
         },
-      ],
-    },
-    'gipper': {
-      role: {
-        it: 'Caporale del quarto principe',
-        en: 'Fourth Prince’s corporal',
+        log: {
+          it: 'Un caporale guida la ricerca della mafia nei livelli inferiori della nave.',
+          en: 'A corporal leads the search for the mafia in the ship’s lower tiers.',
+        },
+        affiliation: {
+          it: 'Guardie del quarto principe',
+          en: 'Fourth Prince’s guards',
+        },
       },
-      log: {
-        it: 'Un caporale guida la ricerca della mafia nei livelli inferiori della nave.',
-        en: 'A corporal leads the search for the mafia in the ship’s lower tiers.',
-      },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: {
-            it: 'Guardie del quarto principe',
-            en: 'Fourth Prince’s guards',
+          character: 'otocin',
+          type: { it: 'Soldato subordinato', en: 'Subordinate soldier' },
+          summary: {
+            it: 'Rimprovera Otocin e gli chiede da dove vengano le informazioni sul Nen.',
+            en: 'He reprimands Otocin and asks where his information about Nen came from.',
           },
         },
       ],
-      status: [
-        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'otocin',
-              type: { it: 'Soldato subordinato', en: 'Subordinate soldier' },
-              summary: {
-                it: 'Rimprovera Otocin e gli chiede da dove vengano le informazioni sul Nen.',
-                en: 'He reprimands Otocin and asks where his information about Nen came from.',
-              },
-            },
-          ],
+    ),
+    'momolly': introduced(
+      394,
+      {
+        role: {
+          it: 'Soldatessa del quarto principe',
+          en: 'Fourth Prince’s soldier',
         },
-      ],
-    },
-    'momolly': {
-      role: {
-        it: 'Soldatessa del quarto principe',
-        en: 'Fourth Prince’s soldier',
+        log: {
+          it: 'Una soldatessa discute con i compagni di come sopravvivere alla ricerca della mafia.',
+          en: 'A soldier discusses with her comrades how to survive the search for the mafia.',
+        },
+        affiliation: {
+          it: 'Guardie del quarto principe',
+          en: 'Fourth Prince’s guards',
+        },
       },
-      log: {
-        it: 'Una soldatessa discute con i compagni di come sopravvivere alla ricerca della mafia.',
-        en: 'A soldier discusses with her comrades how to survive the search for the mafia.',
-      },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: {
-            it: 'Guardie del quarto principe',
-            en: 'Fourth Prince’s guards',
+          character: 'borksen',
+          type: { it: 'Amica e collega', en: 'Friend and fellow soldier' },
+          summary: {
+            it: 'Chiede a Borksen di preparare un piano nel caso uno di loro venga catturato.',
+            en: 'She asks Borksen to prepare a plan in case one of them is captured.',
           },
         },
       ],
-      status: [
-        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 394,
-          source: 'chapter',
-          value: [
-            {
-              character: 'borksen',
-              type: { it: 'Amica e collega', en: 'Friend and fellow soldier' },
-              summary: {
-                it: 'Chiede a Borksen di preparare un piano nel caso uno di loro venga catturato.',
-                en: 'She asks Borksen to prepare a plan in case one of them is captured.',
-              },
-            },
-          ],
+    ),
+    'lisores': introduced(
+      395,
+      {
+        role: { it: 'Sacerdote', en: 'Priest' },
+        log: {
+          it: 'Un sacerdote accoglie i bambini della Meteor City nella chiesa e li avverte dei rapimenti.',
+          en: 'A priest welcomes Meteor City’s children into the church and warns them about kidnappings.',
         },
-      ],
-    },
-    'lisores': {
-      role: { it: 'Sacerdote', en: 'Priest' },
-      log: {
-        it: 'Un sacerdote accoglie i bambini della Meteor City nella chiesa e li avverte dei rapimenti.',
-        en: 'A priest welcomes Meteor City’s children into the church and warns them about kidnappings.',
+        affiliation: {
+          it: 'Chiesa della Meteor City',
+          en: 'Meteor City’s church',
+        },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 395,
-          source: 'chapter',
-          value: { it: 'Chiesa della Meteor City', en: 'Meteor City’s church' },
+          character: 'chrollo',
+          type: { it: 'Bambino che accoglie', en: 'Child he welcomes' },
+          summary: {
+            it: 'Permette a Quoll di usare la sala video della chiesa.',
+            en: 'He lets Chrollo use the church’s video room.',
+          },
         },
       ],
-      status: [
-        { episode: 148, chapter: 395, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 395,
-          source: 'chapter',
-          value: [
-            {
-              character: 'chrollo',
-              type: { it: 'Bambino che accoglie', en: 'Child he welcomes' },
-              summary: {
-                it: 'Permette a Quoll di usare la sala video della chiesa.',
-                en: 'He lets Chrollo use the church’s video room.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    ),
     'sarasa': {
       role: {
         it: 'Doppiatrice nel gruppo di bambini',
@@ -1620,260 +1330,126 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    'renko': {
-      role: { it: 'Imbalsamatrice', en: 'Embalmer' },
-      log: {
-        it: 'Un’imbalsamatrice usa il Nen per ricomporre il corpo di una bambina.',
-        en: 'An embalmer uses Nen to restore a child’s body.',
+    'renko': introduced(
+      397,
+      {
+        role: { it: 'Imbalsamatrice', en: 'Embalmer' },
+        log: {
+          it: 'Un’imbalsamatrice usa il Nen per ricomporre il corpo di una bambina.',
+          en: 'An embalmer uses Nen to restore a child’s body.',
+        },
+        affiliation: { it: 'Imbalsamatrice', en: 'Embalmer' },
       },
-      affiliation: [
+      [
         {
-          episode: 148,
-          chapter: 397,
-          source: 'chapter',
-          value: { it: 'Imbalsamatrice', en: 'Embalmer' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 397, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 397,
-          source: 'chapter',
-          value: [
-            {
-              character: 'machi',
-              type: {
-                it: 'Bambina che vuole imparare',
-                en: 'Child who wants to learn',
-              },
-              summary: {
-                it: 'Machi le chiede di imparare il suo lavoro. Renko la invita a farle visita.',
-                en: 'Machi asks to learn her craft. Renko invites her to visit.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'yokotani': {
-      role: { it: 'Avvocato degli Heil-Ly', en: 'Heil-Ly lawyer' },
-      log: {
-        it: 'L’avvocato degli Heil-Ly affronta due intrusi nel rifugio della famiglia.',
-        en: 'The Heil-Ly lawyer confronts two intruders in the family’s hideout.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 399,
-          source: 'chapter',
-          value: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 399, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 399,
-          source: 'chapter',
-          value: [
-            {
-              character: 'nobunaga',
-              type: { it: 'Intruso che espelle', en: 'Intruder he expels' },
-              summary: {
-                it: 'Le sue guardie di Nen trascinano Nobunaga fuori dal rifugio.',
-                en: 'His Nen guards drag Nobunaga out of the hideout.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'madwig': {
-      role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
-      log: {
-        it: 'Un dipendente di Tyson interpreta un sicario che ha perso la memoria.',
-        en: 'A Tyson employee plays a hitman who has lost his memory.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 400, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tyson-hui-guo-rou',
-              type: { it: 'Datore di lavoro', en: 'Employer' },
-              summary: {
-                it: 'Tyson gli assegna un ruolo da interpretare davanti ai colleghi.',
-                en: 'Tyson gives him a role to perform in front of his colleagues.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'himonce': {
-      role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
-      log: {
-        it: 'Un dipendente di Tyson si presenta come la più grande star del mondo.',
-        en: 'A Tyson employee presents himself as the world’s biggest star.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 400, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tyson-hui-guo-rou',
-              type: { it: 'Datore di lavoro', en: 'Employer' },
-              summary: {
-                it: 'Tyson gli assegna un ruolo da interpretare davanti ai colleghi.',
-                en: 'Tyson gives him a role to perform in front of his colleagues.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'anzel': {
-      role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
-      log: {
-        it: 'Un dipendente di Tyson interpreta il ruolo del fratello minore del principe.',
-        en: 'A Tyson employee plays the prince’s younger brother.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 400, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tyson-hui-guo-rou',
-              type: { it: 'Datore di lavoro', en: 'Employer' },
-              summary: {
-                it: 'Tyson gli assegna un ruolo da interpretare davanti ai colleghi.',
-                en: 'Tyson gives him a role to perform in front of his colleagues.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'hyuga': {
-      role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
-      log: {
-        it: 'Un dipendente di Tyson si presenta come un insegnante leggendario.',
-        en: 'A Tyson employee presents himself as a legendary tutor.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 400, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tyson-hui-guo-rou',
-              type: { it: 'Datore di lavoro', en: 'Employer' },
-              summary: {
-                it: 'Tyson gli assegna un ruolo da interpretare davanti ai colleghi.',
-                en: 'Tyson gives him a role to perform in front of his colleagues.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'kaiser': {
-      role: {
-        it: 'Funzionario dell’Ufficio di Giustizia',
-        en: 'Justice Bureau official',
-      },
-      log: {
-        it: 'Un funzionario protegge due giovani principi e prepara un piano con Melody.',
-        en: 'An official protects two young princes and prepares a plan with Melody.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: {
-            it: 'Ufficio di Giustizia di Cakin',
-            en: 'Kakin Justice Bureau',
+          character: 'machi',
+          type: {
+            it: 'Bambina che vuole imparare',
+            en: 'Child who wants to learn',
+          },
+          summary: {
+            it: 'Machi le chiede di imparare il suo lavoro. Renko la invita a farle visita.',
+            en: 'Machi asks to learn her craft. Renko invites her to visit.',
           },
         },
       ],
-      status: [
-        { episode: 148, chapter: 400, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
+    ),
+    'yokotani': introduced(
+      399,
+      {
+        role: { it: 'Avvocato degli Heil-Ly', en: 'Heil-Ly lawyer' },
+        log: {
+          it: 'L’avvocato degli Heil-Ly affronta due intrusi nel rifugio della famiglia.',
+          en: 'The Heil-Ly lawyer confronts two intruders in the family’s hideout.',
+        },
+        affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
+      },
+      [
         {
-          episode: 148,
-          chapter: 400,
-          source: 'chapter',
-          value: [
-            {
-              character: 'melody',
-              type: { it: 'Alleata nel piano', en: 'Ally in the plan' },
-              summary: {
-                it: 'Propone a Melody un piano per proteggere Fugetsu eliminando i principi maggiori.',
-                en: 'He proposes a plan to Melody to protect Fugetsu by eliminating the higher princes.',
-              },
-            },
-          ],
+          character: 'nobunaga',
+          type: { it: 'Intruso che espelle', en: 'Intruder he expels' },
+          summary: {
+            it: 'Le sue guardie di Nen trascinano Nobunaga fuori dal rifugio.',
+            en: 'His Nen guards drag Nobunaga out of the hideout.',
+          },
         },
       ],
-    },
+    ),
+    'madwig': introduced(
+      400,
+      {
+        role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
+        log: {
+          it: 'Un dipendente di Tyson interpreta un sicario che ha perso la memoria.',
+          en: 'A Tyson employee plays a hitman who has lost his memory.',
+        },
+        affiliation: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
+      },
+      [TYSON_EMPLOYER],
+    ),
+    'himonce': introduced(
+      400,
+      {
+        role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
+        log: {
+          it: 'Un dipendente di Tyson si presenta come la più grande star del mondo.',
+          en: 'A Tyson employee presents himself as the world’s biggest star.',
+        },
+        affiliation: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
+      },
+      [TYSON_EMPLOYER],
+    ),
+    'anzel': introduced(
+      400,
+      {
+        role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
+        log: {
+          it: 'Un dipendente di Tyson interpreta il ruolo del fratello minore del principe.',
+          en: 'A Tyson employee plays the prince’s younger brother.',
+        },
+        affiliation: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
+      },
+      [TYSON_EMPLOYER],
+    ),
+    'hyuga': introduced(
+      400,
+      {
+        role: { it: 'Dipendente di Tyson', en: 'Tyson’s employee' },
+        log: {
+          it: 'Un dipendente di Tyson si presenta come un insegnante leggendario.',
+          en: 'A Tyson employee presents himself as a legendary tutor.',
+        },
+        affiliation: { it: 'Personale di Tyson', en: 'Tyson’s staff' },
+      },
+      [TYSON_EMPLOYER],
+    ),
+    'kaiser': introduced(
+      400,
+      {
+        role: {
+          it: 'Funzionario dell’Ufficio di Giustizia',
+          en: 'Justice Bureau official',
+        },
+        log: {
+          it: 'Un funzionario protegge due giovani principi e prepara un piano con Melody.',
+          en: 'An official protects two young princes and prepares a plan with Melody.',
+        },
+        affiliation: {
+          it: 'Ufficio di Giustizia di Cakin',
+          en: 'Kakin Justice Bureau',
+        },
+      },
+      [
+        {
+          character: 'melody',
+          type: { it: 'Alleata nel piano', en: 'Ally in the plan' },
+          summary: {
+            it: 'Propone a Melody un piano per proteggere Fugetsu eliminando i principi maggiori.',
+            en: 'He proposes a plan to Melody to protect Fugetsu by eliminating the higher princes.',
+          },
+        },
+      ],
+    ),
   },
 }
 
