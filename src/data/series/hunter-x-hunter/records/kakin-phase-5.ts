@@ -124,7 +124,7 @@ const FILINGS: Filing[] = [
     chapter: 402,
     name: { it: 'Hashito', en: 'Hashito' },
     summary: {
-      it: 'Una guardia che Chowrai ha prestato alla stanza 1014. Woble chiede che resti con Sakata per tutto il viaggio.',
+      it: 'Una guardia che Chowrai ha prestato alla stanza 1014. Woble chiede che resti con Sakata a tempo indeterminato.',
       en: 'A guard Zhang Lei lent to Room 1014. Woble’s side asks for him and Sakata to stay on for good.',
     },
     role: LENT_GUARD,
@@ -283,8 +283,8 @@ const FILINGS: Filing[] = [
         'shikaku',
         { it: 'Corpo che ha occupato', en: 'Body he took over' },
         {
-          it: 'Dopo la prova si sveglia nel proprio corpo e dà il numero di matricola di Shikaku.',
-          en: 'After the test he wakes in his own body and gives Shikaku’s service number.',
+          it: 'Dopo la prova si sveglia e dà il numero di matricola di Shikaku.',
+          en: 'After the test he wakes and gives Shikaku’s service number.',
         },
       ),
     ],
@@ -348,8 +348,8 @@ const FILINGS: Filing[] = [
         'borksen',
         { it: 'Prigioniera da reclutare', en: 'Captive she recruits' },
         {
-          it: 'Fa portare Borksen nel rifugio e le propone un gioco di carte per decidere se unirsi agli Heil-Ly.',
-          en: 'She has Borksen brought to the hideout and offers her a card game to decide whether she joins the Heil-Ly.',
+          it: 'Quando Borksen si sveglia nel rifugio, le propone un gioco di carte per decidere se unirsi agli Heil-Ly.',
+          en: 'When Borksen wakes in the hideout, she offers her a card game to decide whether she joins the Heil-Ly.',
         },
       ),
     ],
@@ -528,8 +528,8 @@ const FILINGS: Filing[] = [
     affiliation: BENJAMIN_ARMY,
     links: [
       link('zhang-lei-hui-guo-rou', GUARDED, {
-        it: 'La bestia di Chowrai lo ha manipolato attraverso la moneta che tiene con sé.',
-        en: 'Zhang Lei’s beast manipulated him through the coin he keeps.',
+        it: 'La bestia di Chowrai lo ha manipolato.',
+        en: 'Zhang Lei’s beast manipulated him.',
       }),
     ],
   },
