@@ -200,17 +200,22 @@ here. No flashback in this window establishes a newly visited named place.
 
 ## Returning facts for original dossiers
 
-- Momoze’s assassination at chapter 368 precedes this window; her body is placed
-  in a capsule at chapter 371.
-- Musse dies at chapter 373 when Camilla’s ability resurrects her.
-- Tuffdy’s death is confirmed by Kurapika at chapter 374, after the
-  confrontation at chapter 372.
-- Myuhan’s death is revealed at chapter 376.
-- Illumi introduces himself as the Troupe’s newest member at chapter 377.
-- Salé-salé’s assassination succeeds at chapter 382.
-- Kacho and Keeney die at chapter 383. The figure accompanying Fugetsu
-  afterwards is Kacho’s Nen beast, not evidence that Kacho survives.
-- Neon’s death is not filed from the inference that Chrollo’s stolen ability
+Filed as dated, chapter-only steps on the existing dossiers:
+
+- Myuhan is found dead at chapter 376 (deceased).
+- Illumi introduces himself as the Troupe's newest member at chapter 377
+  (affiliation).
+- Salé-salé is killed at chapter 382 (deceased).
+- Kacho dies at chapter 383 (deceased). The figure beside Fugetsu afterwards is
+  Kacho's Nen beast, not evidence that Kacho survives.
+
+Not filed:
+
+- Momoze's body is placed in a capsule at chapter 371. Her death is already
+  filed at 368.
+- Musse dies at chapter 373 and Tuffdy's death is confirmed at chapter 374.
+  Neither has a record, because both naming checks are deferred (#1143).
+- Neon's death is not filed from the inference that Chrollo's stolen ability
   disappeared.
 
 ## Sources read

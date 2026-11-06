@@ -497,22 +497,36 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
       bodyguard('basho', { it: 'Basho', en: 'Basho' }),
     ),
-    'sale-sale-hui-guo-rou': prince(
-      { it: 'Ottavo principe di Cakin', en: 'Eighth Prince of Kakin' },
-      mother('swinko-swinko-hui-guo-rou', {
-        it: 'Swinko-swinko',
-        en: 'Swinko-swinko',
-      }),
-    ),
+    'sale-sale-hui-guo-rou': {
+      ...prince(
+        { it: 'Ottavo principe di Cakin', en: 'Eighth Prince of Kakin' },
+        mother('swinko-swinko-hui-guo-rou', {
+          it: 'Swinko-swinko',
+          en: 'Swinko-swinko',
+        }),
+      ),
+      // Killed by Yushohi’s ability (382, #1136).
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 382, value: 'deceased' },
+      ],
+    },
     'halkenburg-hui-guo-rou': prince(
       { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
       mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
     ),
-    'kacho-hui-guo-rou': prince(
-      { it: 'Decimo principe di Cakin', en: 'Tenth Prince of Kakin' },
-      mother('seiko-hui-guo-rou', { it: 'Seiko', en: 'Seiko' }),
-      bodyguard('melody', { it: 'Melody', en: 'Melody' }),
-    ),
+    'kacho-hui-guo-rou': {
+      ...prince(
+        { it: 'Decimo principe di Cakin', en: 'Tenth Prince of Kakin' },
+        mother('seiko-hui-guo-rou', { it: 'Seiko', en: 'Seiko' }),
+        bodyguard('melody', { it: 'Melody', en: 'Melody' }),
+      ),
+      // Dies escaping with Fugetsu (383, #1136); the figure beside Fugetsu afterwards is her Nen beast.
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 383, value: 'deceased' },
+      ],
+    },
     'fugetsu-hui-guo-rou': prince(
       { it: 'Undicesimo principe di Cakin', en: 'Eleventh Prince of Kakin' },
       mother('seiko-hui-guo-rou', { it: 'Seiko', en: 'Seiko' }),
