@@ -19,12 +19,6 @@ const GROUND: Stroke = { d: 'M4 150 H156', role: 'ambient', dashed: true }
 /** The second of a pair: the first, mirrored about x 80. */
 const MIRRORED = 'matrix(-1 0 0 1 160 0)'
 
-/** A small heart, point down, for Gel's snake. */
-const heart = (x: number, y: number, s: number): string => {
-  const n = (value: number): number => Math.round(value * 10) / 10
-  return `M${n(x)} ${n(y + s)} C${n(x - 1.6 * s)} ${n(y)} ${n(x - s)} ${n(y - s)} ${n(x)} ${n(y - 0.3 * s)} C${n(x + s)} ${n(y - s)} ${n(x + 1.6 * s)} ${n(y)} ${n(x)} ${n(y + s)} Z`
-}
-
 /**
  * Bushidora's police cap in 3/4: the flat top, the band, the peak and its
  * underside hatched, the flames on the crown in tint. His death lays this
@@ -92,7 +86,7 @@ const KATANA: Stroke[] = [
   },
 ]
 
-/** One ram's horn curling out from the side of Ginta's band. */
+/** One curled horn of Ginta's headpiece, out from the side of its band. */
 const RAM_HORN: Stroke[] = [
   {
     d: 'M54 112 C40 98 16 104 14 126 C12 146 34 158 48 146 C58 138 52 122 40 126 C32 130 34 142 42 142',
@@ -252,7 +246,7 @@ export const ELECTION_DRAWINGS = {
     },
     { d: 'M64 132 l6 3 M76 122 l6 4 M90 114 l5 5 M100 100 l6 3', role: 'soft' },
     {
-      d: `${heart(97, 40, 4)} ${heart(88, 41, 2.5)} ${heart(106, 41, 2.5)} ${heart(97, 32, 2.5)}`,
+      d: `M97 44 C90.6 40 93 36 97 38.8 C101 36 103.4 40 97 44 Z M88 43.5 C84 41 85.5 38.5 88 40.2 C90.5 38.5 92 41 88 43.5 Z M106 43.5 C102 41 103.5 38.5 106 40.2 C108.5 38.5 110 41 106 43.5 Z M97 34.5 C93 32 94.5 29.5 97 31.2 C99.5 29.5 101 32 97 34.5 Z`,
       role: 'soft',
     },
     {
@@ -262,7 +256,7 @@ export const ELECTION_DRAWINGS = {
     { d: 'M108 86 l6 -2 M110 98 l6 -1', role: 'ambient' },
   ],
 
-  // Ginta's headpiece standing on its band, a ram's horn curling out of
+  // Ginta's headpiece standing on its band, a curled horn coming out of
   // each side in tint: the Sheep of the Zodiacs wears it at the meeting,
   // episode 137 / chapter 320.
   'ginta': [
@@ -567,7 +561,10 @@ export const ELECTION_DRAWINGS = {
       role: 'soft',
     },
     { d: 'M60 50 H100 V138 H60 Z', role: 'soft' },
-    { d: heart(80, 94, 12), role: 'accent' },
+    {
+      d: 'M80 106 C60.8 94 68 82 80 90.4 C92 82 99.2 94 80 106 Z',
+      role: 'accent',
+    },
     { d: 'M74 150 H86', role: 'soft' },
     {
       d: 'M110 70 l4 -3 M110 94 l4 -3 M110 118 l4 -3 M110 142 l4 -3',
