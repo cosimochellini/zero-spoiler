@@ -1139,9 +1139,9 @@ const hunterExamRedrawn: Redrawings = {
 /** Returning records whose drawing changes in the Election (#913). */
 const electionReturningRedrawn: Redrawings = {
   'leorio-paradinight': [
-    // The same briefcase, with open rings on the floor before it: his
-    // punch splits the podium, goes through the floor and comes up under
-    // Ging, the first Nen he shows, episode 140 / chapter 325.
+    // The same briefcase, with open rings and cracks on the floor before
+    // it: the effect of his punch, which goes through the floor and comes
+    // up under Ging, the first ability he shows, episode 140 / chapter 325.
     {
       episode: 140,
       chapter: 325,
@@ -1149,7 +1149,7 @@ const electionReturningRedrawn: Redrawings = {
         ...LEORIO_CASE,
         LEORIO_SHADOW,
         {
-          d: 'M34 186 Q78 198 122 186 M50 183 Q78 191 106 183 M66 181 Q78 185 90 181',
+          d: `${ellipse(78, 190, 34, 6)} ${ellipse(78, 190, 18, 3)} M36 192 l-10 3 M120 192 l10 3 M60 198 l-4 4 M96 198 l4 4`,
           role: 'ambient',
         },
       ],

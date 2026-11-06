@@ -50,8 +50,8 @@ const TERADEIN_TIE: Stroke[] = [
 ]
 
 /**
- * Tsubone's monocle in 3/4, the rim in tint, its edge and the glint, the
- * chain falling from it. Kikyo watches the escort through it (ch 324).
+ * Tsubone's monocle in 3/4, the rim in tint, its edge, the glint and the
+ * far side of the rim hatched.
  */
 const MONOCLE: Stroke[] = [
   { d: ellipse(74, 84, 28, 32), role: 'accent' },
@@ -59,8 +59,6 @@ const MONOCLE: Stroke[] = [
   { d: 'M102 84 C102 104 92 118 78 118', role: 'soft' },
   { d: 'M60 66 Q66 60 76 60 M58 76 Q60 72 64 70', role: 'soft' },
   { d: 'M90 108 l5 -4 M96 98 l5 -4 M98 86 l4 -3', role: 'ambient' },
-  { d: 'M98 112 C112 128 110 146 96 156 C84 164 78 172 84 182', dashed: true },
-  { d: ellipse(86, 185, 4, 2.5) },
 ]
 
 /**
@@ -505,15 +503,15 @@ export const ELECTION_DRAWINGS = {
     shadow(80, 186, 40),
   ],
 
-  // Nanika's small hand, in tint, laid on a large bandaged one: it heals
-  // only what it touches, and asks to hold Gon's hand to restore him,
-  // episode 145 / chapter 333. No face.
+  // Nanika's small hand, in tint, laid on a larger one: it heals only what
+  // it touches, as with the injured bird in episode 139 and Tsubone's
+  // fingers in chapter 330. No face.
   'nanika': [
     {
       d: 'M6 118 H58 C74 118 86 112 102 112 C112 112 114 122 104 124 L88 128 C98 130 100 140 90 142 H58 C40 142 24 144 6 144',
     },
     {
-      d: 'M20 118 L28 144 M34 118 L42 142 M48 118 L56 142 M62 118 L70 142',
+      d: 'M60 120 C63 127 63 135 60 141 M90 114 C92 118 92 122 90 125',
       role: 'soft',
     },
     {
@@ -549,28 +547,32 @@ export const ELECTION_DRAWINGS = {
     { d: 'M4 162 H156', role: 'ambient', dashed: true },
   ],
 
-  // A mobile phone standing, a heart on its blank screen in tint: Kasuga
-  // loves someone she met online, which the household's rules forbid,
-  // episode 138 / chapter 322.
+  // A butler's black jacket seen from behind, her long black hair falling
+  // straight down its back, the hair in tint and hatched: Kasuga in the
+  // Zoldyck butlers' uniform, episode 138 / chapter 322. No face.
   'kasuga': [
+    { d: 'M62 44 L40 54 L32 168 H128 L120 54 L98 44' },
     {
-      d: 'M58 38 H102 Q108 38 108 44 V156 Q108 162 102 162 H58 Q52 162 52 156 V44 Q52 38 58 38 Z',
-    },
-    {
-      d: 'M108 44 L116 50 V158 Q116 166 108 166 H62 Q56 166 56 162',
+      d: 'M62 44 Q80 52 98 44 M80 140 V168 M40 54 L28 140 M120 54 L132 140',
       role: 'soft',
     },
-    { d: 'M60 50 H100 V138 H60 Z', role: 'soft' },
     {
-      d: 'M80 106 C60.8 94 68 82 80 90.4 C92 82 99.2 94 80 106 Z',
+      d: 'M58 46 C56 24 66 14 80 14 C94 14 104 24 102 46 C106 76 104 108 98 136 L88 130 L80 140 L72 130 L62 136 C56 108 54 76 58 46 Z',
       role: 'accent',
     },
-    { d: 'M74 150 H86', role: 'soft' },
     {
-      d: 'M110 70 l4 -3 M110 94 l4 -3 M110 118 l4 -3 M110 142 l4 -3',
+      d: 'M70 22 C66 60 66 100 70 128 M90 22 C94 60 94 100 90 128',
+      role: 'soft',
+    },
+    {
+      d: 'M66 60 l6 -5 M66 80 l6 -5 M66 100 l6 -5 M66 120 l6 -5 M88 60 l6 -5 M88 80 l6 -5 M88 100 l6 -5 M88 120 l6 -5',
       role: 'ambient',
     },
-    shadow(84, 180, 40),
+    {
+      d: 'M106 80 l8 -6 M108 104 l8 -6 M108 128 l8 -6 M106 152 l8 -6',
+      role: 'ambient',
+    },
+    shadow(80, 184, 50),
   ],
 
   // Muna's camera in 3/4, the lens in tint, the strap and the far side
@@ -590,9 +592,10 @@ export const ELECTION_DRAWINGS = {
     shadow(78, 162, 54),
   ],
 
-  // Tsubone's monocle and its chain: she wears it on her right eye and
-  // Kikyo watches the escort through it, episode 140 / chapter 324.
-  'tsubone': [...MONOCLE],
+  // Tsubone's monocle: she wears it on her right eye when Silva gives her
+  // to Killua's escort, episode 140 / chapter 324. No chain, which the
+  // sources do not give.
+  'tsubone': [...MONOCLE, shadow(76, 150, 30)],
 
   // A butler's black jacket from the front, the far half hatched, the tie
   // in tint: Amane wears the Zoldyck butlers' suit and tie when Silva
@@ -648,27 +651,30 @@ export const ELECTION_DRAWINGS = {
     { ...BANKNOTE, transform: 'translate(92 166) rotate(-10)' },
   ],
 
-  // An airship moored at its mast over the terminal, a second one leaving,
-  // the docked envelope in tint: Killua slips away from the butlers in one
-  // of the airships here, episode 142.
+  // An airship over the airport's terminal, its envelope in tint: Amane
+  // and Canary book the airships here, and Killua leaves in one with his
+  // sister, episode 142.
   'parasta-airport': [
-    { d: ellipse(70, 70, 46, 15), role: 'accent' },
-    { d: AIRSHIP_FIN, transform: 'translate(-6 70)' },
-    { d: 'M58 85 H82 L78 93 H62 Z', role: 'soft' },
-    { d: 'M116 70 H124 V150 M118 150 L120 70 M126 150 L122 72' },
-    { d: 'M118 92 H126 M118 114 H126 M118 134 H126', role: 'soft' },
-    { d: `${ellipse(118, 30, 20, 7)} M98 30 l-8 -5 v10 z`, role: 'soft' },
+    { d: ellipse(80, 66, 50, 16), role: 'accent' },
+    { d: AIRSHIP_FIN, transform: 'translate(0 66)' },
+    { d: 'M30 66 Q80 58 130 66', role: 'soft' },
+    { d: 'M66 82 H94 L90 90 H70 Z', role: 'soft' },
     {
-      d: 'M14 150 V124 H90 V150 M24 134 H36 M46 134 H58 M68 134 H80',
+      d: 'M20 150 V120 H140 V150 M32 130 H48 M58 130 H74 M86 130 H102 M112 130 H128 M72 150 V136 H88 V150',
       role: 'soft',
     },
-    { d: 'M40 80 l6 -4 M56 82 l6 -4 M80 82 l6 -4', role: 'ambient' },
+    { d: 'M16 120 L24 112 H136 L144 120', role: 'soft' },
+    {
+      d: 'M50 78 l6 -4 M64 80 l6 -4 M96 80 l6 -4 M110 78 l6 -4',
+      role: 'ambient',
+    },
     { d: 'M4 150 H156', role: 'ambient', dashed: true },
   ],
 
   // The city hospital with the cross on its front in tint, towers behind
-  // it, and the room built for Gon in its car park: Gon lies here while his
-  // friends look for help, episode 142.
+  // it, and the room built for Gon in its car park (chapter 325): the
+  // place's own landmark, the hospital and its car park, where Gon lies
+  // while his friends look for help, episode 142.
   'swardani-city': [
     { d: 'M40 150 V66 H120 V150' },
     {
