@@ -644,27 +644,34 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     ),
-    'lynch-fullbokko': introduced(
-      390,
-      {
-        role: { it: 'Membro degli Xi-Yu', en: 'Xi-Yu member' },
-        log: {
-          it: 'Una membro degli Xi-Yu che cerca Hisoka. I suoi pugni fanno rispondere la voce interiore delle persone.',
-          en: 'A Xi-Yu member searching for Hisoka. Her punches make people’s inner voices answer.',
-        },
-        affiliation: { it: 'Famiglia Xi-Yu', en: 'Xi-Yu Family' },
-      },
-      [
+    'lynch-fullbokko': {
+      ...introduced(
+        390,
         {
-          character: 'zakuro-custard',
-          type: { it: 'Compagno nella ricerca', en: 'Search partner' },
-          summary: {
-            it: 'Lavora con Zakuro per trovare Hisoka tra i passeggeri.',
-            en: 'She works with Zakuro to find Hisoka among the passengers.',
+          role: { it: 'Membro degli Xi-Yu', en: 'Xi-Yu member' },
+          log: {
+            it: 'Una membro degli Xi-Yu che cerca Hisoka. I suoi pugni fanno rispondere la voce interiore delle persone.',
+            en: 'A Xi-Yu member searching for Hisoka. Her punches make people’s inner voices answer.',
           },
+          affiliation: { it: 'Famiglia Xi-Yu', en: 'Xi-Yu Family' },
         },
+        [
+          {
+            character: 'zakuro-custard',
+            type: { it: 'Compagno nella ricerca', en: 'Search partner' },
+            summary: {
+              it: 'Lavora con Zakuro per trovare Hisoka tra i passeggeri.',
+              en: 'She works with Zakuro to find Hisoka among the passengers.',
+            },
+          },
+        ],
+      ),
+      // Bonolenov kills her at 405, but only the 406 synopsis names the body (#1138).
+      status: [
+        { episode: 148, chapter: 390, source: 'chapter', value: 'alive' },
+        { episode: 148, chapter: 406, source: 'chapter', value: 'deceased' },
       ],
-    ),
+    },
     'tevelares': introduced(
       391,
       {
@@ -1061,33 +1068,62 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     ),
-    'borksen': introduced(
-      394,
-      {
-        role: {
-          it: 'Soldatessa del quarto principe',
-          en: 'Fourth Prince’s soldier',
-        },
-        log: {
-          it: 'Una soldatessa viene trasferita ai livelli inferiori dopo aver condiviso notizie sul Nen.',
-          en: 'A soldier is transferred to the lower tiers after sharing information about Nen.',
-        },
-        affiliation: {
-          it: 'Guardie del quarto principe',
-          en: 'Fourth Prince’s guards',
-        },
-      },
-      [
+    'borksen': {
+      ...introduced(
+        394,
         {
-          character: 'otocin',
-          type: { it: 'Amico e collega', en: 'Friend and fellow soldier' },
-          summary: {
-            it: 'Gli rimprovera di averla fatta trasferire parlando con il caporale.',
-            en: 'She rebukes him for getting her transferred by speaking to the corporal.',
+          role: {
+            it: 'Soldatessa del quarto principe',
+            en: 'Fourth Prince’s soldier',
+          },
+          log: {
+            it: 'Una soldatessa viene trasferita ai livelli inferiori dopo aver condiviso notizie sul Nen.',
+            en: 'A soldier is transferred to the lower tiers after sharing information about Nen.',
+          },
+          affiliation: {
+            it: 'Guardie del quarto principe',
+            en: 'Fourth Prince’s guards',
+          },
+        },
+        [
+          {
+            character: 'otocin',
+            type: { it: 'Amico e collega', en: 'Friend and fellow soldier' },
+            summary: {
+              it: 'Gli rimprovera di averla fatta trasferire parlando con il caporale.',
+              en: 'She rebukes him for getting her transferred by speaking to the corporal.',
+            },
+          },
+        ],
+      ),
+      // Morena’s game binds her to the Heil-Ly (410, #1138).
+      affiliation: [
+        {
+          episode: 148,
+          chapter: 394,
+          source: 'chapter',
+          value: {
+            it: 'Guardie del quarto principe',
+            en: 'Fourth Prince’s guards',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 410,
+          source: 'chapter',
+          value: {
+            it: 'Guardie del quarto principe; costretta a unirsi agli Heil-Ly',
+            en: 'Fourth Prince’s guards; forced into the Heil-Ly Family',
           },
         },
       ],
-    ),
+      // Taken to the Heil-Ly hideout (407) and let go once she joins (410).
+      status: [
+        { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
+        { episode: 148, chapter: 407, source: 'chapter', value: 'captured' },
+        { episode: 148, chapter: 410, source: 'chapter', value: 'alive' },
+      ],
+    },
     'otocin': introduced(
       394,
       {

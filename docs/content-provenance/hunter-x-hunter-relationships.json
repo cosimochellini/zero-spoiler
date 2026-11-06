@@ -1608,7 +1608,61 @@
     "himonce": ["hxh-en-Himoncé-424708.json", "hxh-en-Chapter_400-423578.json"],
     "anzel": ["hxh-en-Anzel-425052.json", "hxh-en-Chapter_400-423578.json"],
     "hyuga": ["hxh-en-Hyuga-424691.json", "hxh-en-Chapter_400-423578.json"],
-    "kaiser": ["hxh-en-Kaiser-425509.json", "hxh-en-Chapter_400-423578.json"]
+    "kaiser": ["hxh-en-Kaiser-425509.json", "hxh-en-Chapter_400-423578.json"],
+    "oito-hui-guo-rou": [
+      "hxh-en-Oito_Hui_Guo_Rou-424207.json",
+      "hxh-en-Chapter_401-421610.json"
+    ],
+    "makaha": ["hxh-en-Makaha-424366.json", "hxh-en-Chapter_401-421610.json"],
+    "hashito": ["hxh-en-Hashito-424714.json", "hxh-en-Chapter_402-421875.json"],
+    "sakata": ["hxh-en-Sakata-425480.json", "hxh-en-Chapter_402-421875.json"],
+    "musse": ["hxh-en-Musse-424261.json", "hxh-en-Chapter_402-421875.json"],
+    "balsamilco": [
+      "hxh-en-Balsamilco_Might-425029.json",
+      "hxh-en-Chapter_403-421879.json"
+    ],
+    "worio-bay": [
+      "hxh-en-Worio_Bay-423902.json",
+      "hxh-en-Chapter_403-421879.json"
+    ],
+    "vict": ["hxh-en-Vict-423924.json", "hxh-en-Chapter_404-423579.json"],
+    "shikaku": ["hxh-en-Shikaku-424037.json", "hxh-en-Chapter_404-423579.json"],
+    "sumidori": [
+      "hxh-en-Sumidori-424012.json",
+      "hxh-en-Chapter_404-423579.json"
+    ],
+    "cleapatro": [
+      "hxh-en-Cleapatro-424930.json",
+      "hxh-en-Chapter_404-423579.json"
+    ],
+    "hinrigh": [
+      "hxh-en-Hinrigh_Biganduffno-425762.json",
+      "hxh-en-Chapter_406-422647.json"
+    ],
+    "morena": [
+      "hxh-en-Morena_Prudo-425494.json",
+      "hxh-en-Chapter_407-420841.json"
+    ],
+    "onior": [
+      "hxh-en-Onior_Longbao-425472.json",
+      "hxh-en-Chapter_410-425585.json"
+    ],
+    "kako": ["hxh-en-Kako-424632.json", "hxh-en-Chapter_411-425586.json"],
+    "bill": ["hxh-en-Bill-424987.json", "hxh-en-Chapter_412-425591.json"],
+    "shimanu": ["hxh-en-Shimanu-424036.json", "hxh-en-Chapter_412-425591.json"],
+    "rihan": ["hxh-en-Rihan-424111.json", "hxh-en-Chapter_413-425609.json"],
+    "saquelle": [
+      "hxh-en-Saquelle-424070.json",
+      "hxh-en-Chapter_413-425609.json"
+    ],
+    "kanjidol": [
+      "hxh-en-Kanjidol-424628.json",
+      "hxh-en-Chapter_415-425636.json"
+    ],
+    "coventoba": [
+      "hxh-en-Coventoba-424913.json",
+      "hxh-en-Chapter_417-425665.json"
+    ]
   },
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",
@@ -1622,7 +1676,8 @@
     "tsukuma": "His televised interview establishes no relationship with a filed character.",
     "bihorn": "Named only in Pike's boast in chapter 227 that not even Bihorn's strength could cut his threads; he has no exchange with an archived character in the window. Judged from hxh-en-Bihorn and the chapter 227 page.",
     "ming-jol-ik": "The real former leader appears alone on a farm. The unnamed double is not a filed character.",
-    "maizan": "His only exchange in his opening scene (393) is with Hinrigh, whose naming check is deferred (#1143)."
+    "maizan": "His only exchange in his opening scene (393) is with Hinrigh, whose naming check is deferred (#1143).",
+    "risnorth": "Dead ten years before the voyage; in the window he is only named and shown in a photograph on a newscast (405), with no exchange with a filed character. Judged from hxh-en-Risnorth and the chapter 405 page."
   },
   "pending": {}
 }

@@ -57,6 +57,7 @@ import { KAKIN_PHASE_ONE_DRAWINGS } from './kakin-phase-1'
 import { KAKIN_PHASE_TWO_DRAWINGS } from './kakin-phase-2'
 import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
 import { KAKIN_PHASE_4_DRAWINGS } from './kakin-phase-4'
+import { KAKIN_PHASE_5_DRAWINGS } from './kakin-phase-5'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
 import { YORKNEW_CITY_DRAWINGS, yorknewCityRedrawn } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
@@ -161,6 +162,7 @@ export const DRAWINGS = {
   ...KAKIN_PHASE_TWO_DRAWINGS,
   ...KAKIN_PHASE_THREE_DRAWINGS,
   ...KAKIN_PHASE_4_DRAWINGS,
+  ...KAKIN_PHASE_5_DRAWINGS,
   // Neutral place placeholder; finished artwork belongs to #917.
   'dark-continent': ELECTION_DRAWINGS['world-tree'],
   ...HEAVENS_ARENA_DRAWINGS,

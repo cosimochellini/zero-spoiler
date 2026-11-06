@@ -511,10 +511,17 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         { ...ROSTER, chapter: 382, value: 'deceased' },
       ],
     },
-    'halkenburg-hui-guo-rou': prince(
-      { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
-      mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
-    ),
+    'halkenburg-hui-guo-rou': {
+      ...prince(
+        { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
+        mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
+      ),
+      // His body dies in the Tier 3 hospital and the ship is told (404, #1138).
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 404, value: 'deceased' },
+      ],
+    },
     'kacho-hui-guo-rou': {
       ...prince(
         { it: 'Decimo principe di Cakin', en: 'Tenth Prince of Kakin' },
@@ -548,14 +555,22 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       undefined,
       bodyguard('biscuit-krueger', { it: 'Biscuit', en: 'Biscuit' }),
     ),
-    'woble-hui-guo-rou': prince(
-      {
-        it: 'Quattordicesimo principe di Cakin',
-        en: 'Fourteenth Prince of Kakin',
-      },
-      undefined,
-      bodyguard('kurapika', { it: 'Kurapika', en: 'Kurapika' }),
-    ),
+    'woble-hui-guo-rou': {
+      ...prince(
+        {
+          it: 'Quattordicesimo principe di Cakin',
+          en: 'Fourteenth Prince of Kakin',
+        },
+        undefined,
+        bodyguard('kurapika', { it: 'Kurapika', en: 'Kurapika' }),
+      ),
+      // The baby in Room 1014 is Oito’s nephew; she does not know where her
+      // daughter is (412, #1138).
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 412, value: 'missing' },
+      ],
+    },
     'beyond-netero': {
       role: { it: 'Capo della spedizione', en: 'Expedition leader' },
       log: {
