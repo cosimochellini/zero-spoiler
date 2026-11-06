@@ -1100,10 +1100,7 @@ const earlyExam: HunterSaga = {
           episode: 148,
           chapter: 351,
           source: 'chapter',
-          value: {
-            it: 'Hunter, Maestro del Piano',
-            en: 'Hunter, Floor Master',
-          },
+          value: { it: 'Hunter, Maestro di piano', en: 'Hunter, Floor Master' },
         },
       ],
       log: {
