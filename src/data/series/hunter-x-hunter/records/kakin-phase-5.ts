@@ -294,8 +294,8 @@ const FILINGS: Filing[] = [
     chapter: 404,
     name: { it: 'Cleapatro', en: 'Cleapatro' },
     summary: {
-      it: 'La giudice della Corte suprema della nave. Benjamin le fa sapere che tutte le accuse vengono ritirate.',
-      en: 'The ship’s Supreme Magistrate. Benjamin has her told that all the charges are dropped.',
+      it: 'Presiede la Corte suprema della nave. Benjamin fa sapere alla Corte che tutte le accuse vengono ritirate.',
+      en: 'The ship’s Supreme Magistrate. Benjamin has the court told that all the charges are dropped.',
     },
     role: { it: 'Giudice della Corte suprema', en: 'Supreme Magistrate' },
     affiliation: { it: 'Corte suprema di Cakin', en: 'Kakin Supreme Court' },
@@ -304,8 +304,8 @@ const FILINGS: Filing[] = [
         'benjamin-hui-guo-rou',
         { it: 'Parte in causa', en: 'Party to the case' },
         {
-          it: 'Benjamin le fa sapere che le accuse sono ritirate, così le guardie di Harkenburg possono raggiungerlo.',
-          en: 'Benjamin has her told that the charges are dropped, so Halkenburg’s guards can join him.',
+          it: 'Benjamin fa sapere alla Corte che le accuse sono ritirate, così le guardie di Harkenburg possono raggiungerlo.',
+          en: 'Benjamin has the court told that the charges are dropped, so Halkenburg’s guards can join him.',
         },
       ),
     ],
@@ -383,7 +383,10 @@ const FILINGS: Filing[] = [
     links: [
       link(
         'zhang-lei-hui-guo-rou',
-        { it: 'Principe che lo attraversa', en: 'Prince who passes through' },
+        {
+          it: 'Principe passato per la sua residenza',
+          en: 'Prince who crossed through his residence',
+        },
         {
           it: 'Un soldato riferisce che Chowrai è passato al secondo livello dall’interno della sua residenza.',
           en: 'A soldier reports that Zhang Lei crossed to Tier 2 from inside his residence.',
@@ -521,8 +524,8 @@ const FILINGS: Filing[] = [
     chapter: 417,
     name: { it: 'Coventoba', en: 'Coventoba' },
     summary: {
-      it: 'Un soldato di Benjamin assegnato a Chowrai. Riferisce che la bestia del principe lo ha manipolato e chiede di essere trattenuto.',
-      en: 'One of Benjamin’s soldiers, posted with Zhang Lei. He reports that the prince’s beast manipulated him and asks to be held.',
+      it: 'Un soldato di Benjamin assegnato a Chowrai. Un altro soldato riferisce che la bestia del principe lo ha manipolato e che ha chiesto di essere trattenuto.',
+      en: 'One of Benjamin’s soldiers, posted with Zhang Lei. Another soldier reports that the prince’s beast manipulated him and that he asked to be held.',
     },
     role: BENJAMIN_SOLDIER,
     affiliation: BENJAMIN_ARMY,

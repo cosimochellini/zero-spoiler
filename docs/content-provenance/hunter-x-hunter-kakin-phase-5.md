@@ -23,8 +23,9 @@ infoboxes give as a name chapter (Rihan 374, Musse 366, Shikaku 376, Sumidori
 386, Balsamilco 363) were audited by phases 2–4 without an explicit signal; the
 records open at the later, verified scene. Late is safe.
 
-A record whose surname is not said in the window is filed under the name that
-is: Balsamilco, Hinrigh, Morena and Onior. `TITLES` in
+A record is filed under the name its gate scene says: Balsamilco, Hinrigh,
+Morena and Onior. Borksen calls Morena "Morena Prudo" at 407, after her 405
+gate, so the record keeps "Morena". `TITLES` in
 `scripts/verify-chapters.tables.mjs` points each at its wiki page. Oito is filed
 as Oito Hui Guo Rou like the other queens: Hui Guo Rou is the royal family's
 name, said with the roster at 349.
@@ -60,14 +61,14 @@ No place is filed. No named place is visited in the window (see Places).
 
 ## Dated changes within the phase
 
-| Record                   | Pin | Change                                                                                                                                                |
-| ------------------------ | --: | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `halkenburg-hui-guo-rou` | 404 | Deceased: the doctors fail to resuscitate him and the ship is told he died. His mind persists in Balsamilco's body, which his status does not change. |
-| `lynch-fullbokko`        | 405 | Deceased: Bonolenov's thoughts tell that he killed the woman whose punch forces out a person's inner voice. Hinrigh confirms it at 406.               |
-| `borksen`                | 407 | Captured: her friends find her missing, and she wakes in the Heil-Ly hideout with her weapon taken.                                                   |
-| `borksen`                | 410 | Alive, and her affiliation adds the Heil-Ly: Morena's game makes her join, and she is let go.                                                         |
-| `woble-hui-guo-rou`      | 412 | Missing: the baby in Room 1014 is Oito's nephew, and Oito does not know where her daughter is.                                                        |
-| `onior`                  | 417 | Captured: soldiers secure the Xi-Yu and Cha-R bosses and take them to the Ministry of Justice.                                                        |
+| Record                   | Pin | Change                                                                                                                                                                                               |
+| ------------------------ | --: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `halkenburg-hui-guo-rou` | 404 | Deceased: the doctors fail to resuscitate him and the ship is told he died. His mind persists in Balsamilco's body, which his status does not change.                                                |
+| `lynch-fullbokko`        | 406 | Deceased: Bonolenov's thoughts at 405 tell that he killed the woman whose punch forces out a person's inner voice; the 406 synopsis is the first to name her body, so the step is rounded up to 406. |
+| `borksen`                | 407 | Captured: her friends find her missing, and she wakes in the Heil-Ly hideout with her weapon taken.                                                                                                  |
+| `borksen`                | 410 | Alive, and her affiliation adds the Heil-Ly: Morena's game makes her join, and she is let go.                                                                                                        |
+| `woble-hui-guo-rou`      | 412 | Missing: the baby in Room 1014 is Oito's nephew, and Oito does not know where her daughter is.                                                                                                       |
+| `onior`                  | 417 | Captured: soldiers secure the Xi-Yu and Cha-R bosses and take them to the Ministry of Justice.                                                                                                       |
 
 Musse, Shikaku and Risnorth are already dead at their opening chapter, and
 Kanjidol is tied up at his (415). No earlier live stage is invented. Every fact

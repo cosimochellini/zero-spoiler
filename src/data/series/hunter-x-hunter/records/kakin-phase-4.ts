@@ -666,10 +666,10 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         ],
       ),
-      // Bonolenov's thoughts tell that he killed her (405, #1138).
+      // Bonolenov kills her at 405, but only the 406 synopsis names the body (#1138).
       status: [
         { episode: 148, chapter: 390, source: 'chapter', value: 'alive' },
-        { episode: 148, chapter: 405, source: 'chapter', value: 'deceased' },
+        { episode: 148, chapter: 406, source: 'chapter', value: 'deceased' },
       ],
     },
     'tevelares': introduced(
