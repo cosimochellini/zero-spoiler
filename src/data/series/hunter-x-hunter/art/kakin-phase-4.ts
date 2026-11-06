@@ -1,7 +1,7 @@
 import type { Drawings, Stroke } from '~/data/art/stroke'
 
 // shortcut: neutral records placeholders, replace with finished artwork in #917.
-const PERSON: Stroke[] = [
+export const PERSON: Stroke[] = [
   {
     d: 'M80 34 C64 34 58 46 58 61 C58 77 67 88 80 88 C93 88 102 77 102 61 C102 46 96 34 80 34 Z',
   },

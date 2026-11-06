@@ -100,6 +100,7 @@ const EXPECTED: Record<string, Expected> = {
   // Phase 2 (#1135) adds 19 characters and the Black Whale, chapter 358–370.
   // Phase 3 (#1136) adds four characters, chapter 371–383.
   // Phase 4 (#1137) adds 36 characters and two places, chapter 384–400.
+  // Phase 5 (#1138) adds 22 characters, chapter 401–420 (counted 2026-11-06).
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -118,14 +119,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 436,
+      affiliations: 459,
       arcs: 7,
-      characters: 268,
+      characters: 290,
       chronicles: 691,
       linkedOrigins: 10,
       places: 43,
-      statuses: 349,
-      timelines: 1077,
+      statuses: 376,
+      timelines: 1142,
       visits: 0,
     },
     namesSaidEarly: true,

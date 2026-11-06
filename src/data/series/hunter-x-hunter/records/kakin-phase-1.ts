@@ -511,10 +511,17 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         { ...ROSTER, chapter: 382, value: 'deceased' },
       ],
     },
-    'halkenburg-hui-guo-rou': prince(
-      { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
-      mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
-    ),
+    'halkenburg-hui-guo-rou': {
+      ...prince(
+        { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
+        mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
+      ),
+      // His body dies in the Tier 3 hospital and the ship is told (404, #1138).
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 404, value: 'deceased' },
+      ],
+    },
     'kacho-hui-guo-rou': {
       ...prince(
         { it: 'Decimo principe di Cakin', en: 'Tenth Prince of Kakin' },

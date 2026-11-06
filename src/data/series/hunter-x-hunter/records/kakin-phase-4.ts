@@ -698,6 +698,8 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
       status: [
         { episode: 148, chapter: 390, source: 'chapter', value: 'alive' },
+        // Bonolenov's thoughts tell that he killed her (405, #1138).
+        { episode: 148, chapter: 405, source: 'chapter', value: 'deceased' },
       ],
       relationships: [
         {
@@ -1318,9 +1320,22 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Fourth Prince’s guards',
           },
         },
+        // Morena’s game binds her to the Heil-Ly (410, #1138).
+        {
+          episode: 148,
+          chapter: 410,
+          source: 'chapter',
+          value: {
+            it: 'Guardie del quarto principe; costretta a unirsi agli Heil-Ly',
+            en: 'Fourth Prince’s guards; forced into the Heil-Ly Family',
+          },
+        },
       ],
       status: [
         { episode: 148, chapter: 394, source: 'chapter', value: 'alive' },
+        // Taken to the Heil-Ly hideout (407) and let go once she joins (410).
+        { episode: 148, chapter: 407, source: 'chapter', value: 'captured' },
+        { episode: 148, chapter: 410, source: 'chapter', value: 'alive' },
       ],
       relationships: [
         {
