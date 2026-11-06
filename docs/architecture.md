@@ -265,7 +265,7 @@ checks this block.
 | Devil fruits        | 128                                                     |
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
-| Line drawings       | 737, one per record, plus 308 redrawings of 172 records |
+| Line drawings       | 737, one per record, plus 317 redrawings of 174 records |
 | Chronicle stories   | 757, for 186 characters                                 |
 
 ### `hunter-x-hunter`

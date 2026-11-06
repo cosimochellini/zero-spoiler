@@ -790,8 +790,8 @@ describe('a record drawn again later in the story', () => {
     ['tony-tony-chopper', 8, 0],
     ['tony-tony-chopper', 10, 0],
     // Three swords again at Loguetown, and one sword missing twice.
-    ['roronoa-zoro', 2, 0],
-    ['roronoa-zoro', 5, 3],
+    ['roronoa-zoro', 1, 'first'],
+    ['roronoa-zoro', 4, 2],
     // The box back after the raid.
     ['franky', 2, 0],
     // The elephant again.
@@ -822,13 +822,19 @@ describe('a record drawn again later in the story', () => {
     ['eustass-kid', 2, 0],
     ['eustass-kid', 3, 1],
     ['eustass-kid', 4, 0],
-    // The jitte mended, and broken the same way twice.
-    ['smoker', 2, 0],
+    // The jitte mended under the smoke, and broken the same way twice.
     ['smoker', 3, 1],
-    // The first Sorcery model, and the staff with and without Zeus.
-    ['nami', 2, 0],
-    ['nami', 5, 3],
-    ['nami', 6, 4],
+    ['smoker', 4, 2],
+    // The chart once Arlong's mark is gone, the first Sorcery model, and the
+    // staff with and without Zeus.
+    ['nami', 1, 'first'],
+    ['nami', 4, 2],
+    ['nami', 7, 5],
+    ['nami', 8, 6],
+    // The Merry out of her Flying Model.
+    ['going-merry', 5, 'first'],
+    // Loguetown's platform rebuilt.
+    ['loguetown', 1, 'first'],
   ] as const)(
     'redraws %s at stage %i as its drawing %s itself, not a copy',
     (id, stage, again) => {
