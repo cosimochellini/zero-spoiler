@@ -790,8 +790,8 @@ describe('a record drawn again later in the story', () => {
     ['tony-tony-chopper', 8, 0],
     ['tony-tony-chopper', 10, 0],
     // Three swords again at Loguetown, and one sword missing twice.
-    ['roronoa-zoro', 2, 0],
-    ['roronoa-zoro', 5, 3],
+    ['roronoa-zoro', 1, 'first'],
+    ['roronoa-zoro', 4, 2],
     // The box back after the raid.
     ['franky', 2, 0],
     // The elephant again.
