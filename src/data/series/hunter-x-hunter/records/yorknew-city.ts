@@ -1296,7 +1296,7 @@ export const yorknewCity: HunterSaga = {
           chapter: 351,
           source: 'chapter',
           value: {
-            it: 'Capo della Brigata Fantasma, Maestro del Piano',
+            it: 'Capo della Brigata Fantasma, Maestro di piano',
             en: 'Phantom Troupe leader, Floor Master',
           },
         },

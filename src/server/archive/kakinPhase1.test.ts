@@ -48,7 +48,6 @@ const GATES: [string, number][] = [
 ]
 const PINS: [string, Field, number][] = [
   ['beyond-netero', 'status', 341],
-  ['beyond-netero', 'status', 342],
   ['gon-freecss', 'role', 344],
   ['gon-freecss', 'role', 345],
   ['leorio-paradinight', 'role', 343],
@@ -76,6 +75,15 @@ const PINS: [string, Field, number][] = [
   ['benjamin-hui-guo-rou', 'relationships', 349],
   ['unma-hui-guo-rou', 'relationships', 349],
   ['tyson-hui-guo-rou', 'relationships', 350],
+  ['beyond-netero', 'relationships', 340],
+  ['izunavi', 'relationships', 350],
+  ['momoze-hui-guo-rou', 'relationships', 350],
+  ['marayam-hui-guo-rou', 'relationships', 350],
+  ['woble-hui-guo-rou', 'relationships', 350],
+  ['golem', 'relationships', 347],
+  ['zigg-zoldyck', 'relationships', 344],
+  ['curly', 'relationships', 346],
+  ['mark', 'relationships', 345],
 ]
 
 const ANIME_HIDDEN = [...GATES.map(([id]) => id), 'dark-continent']

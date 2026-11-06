@@ -13,7 +13,7 @@ const ROYAL_FAMILY = { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' }
 
 const SIBLING: Link = {
   character: 'tserriednich-hui-guo-rou',
-  type: { it: 'Stessa famiglia', en: 'Sibling' },
+  type: { it: 'Fratello o sorella', en: 'Sibling' },
   summary: {
     it: 'È un altro dei quattordici figli del re.',
     en: 'Is another of the king’s fourteen children.',
@@ -45,10 +45,10 @@ function bodyguard(character: string, name: Name): Link {
 function child(character: string, name: Name): Link {
   return {
     character,
-    type: { it: 'Figlio del re', en: 'Child of the king' },
+    type: { it: 'Figlio o figlia', en: 'Child' },
     summary: {
-      it: `${name.it} è uno dei suoi figli.`,
-      en: `${name.en} is one of her children.`,
+      it: `Ha avuto ${name.it} dal re.`,
+      en: `${name.en} is her child with the king.`,
     },
   }
 }
@@ -473,7 +473,7 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             },
             {
               character: 'woble-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
+              type: { it: 'Fratello o sorella', en: 'Sibling' },
               summary: {
                 it: 'È un altro dei quattordici figli del re.',
                 en: 'Is another of the king’s fourteen children.',
@@ -552,7 +552,6 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       status: [
         { episode: 148, chapter: 340, source: 'chapter', value: 'alive' },
         { episode: 148, chapter: 341, source: 'chapter', value: 'captured' },
-        { episode: 148, chapter: 342, source: 'chapter', value: 'imprisoned' },
       ],
       relationships: [
         {
@@ -615,10 +614,10 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'golem': {
-      role: { it: 'Mercenario', en: 'Mercenary' },
+      role: { it: 'Mercenario della spedizione', en: 'Expedition mercenary' },
       log: {
-        it: 'Dice a Ging che i compagni lo chiamano Golem e rifiuta altre domande sulla sua identità. Le sue armi vengono usate insieme ai proiettili prodotti da un altro utilizzatore di Nen.',
-        en: 'He tells Ging that his comrades call him Golem and refuses further questions about his identity. His weapons are used with bullets produced by another Nen user.',
+        it: 'Dice a Ging che i compagni usano il nome Golem e rifiuta altre domande su chi ci sia dentro. Le sue armi sparano i proiettili prodotti da un altro utilizzatore di Nen.',
+        en: 'Tells Ging that the comrades use the name Golem and refuses further questions about who is inside. Its weapons fire bullets produced by another Nen user.',
       },
       affiliation: [
         {
@@ -645,7 +644,7 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
               type: { it: 'Capo della spedizione', en: 'Expedition leader' },
               summary: {
                 it: 'Fa parte della squadra riunita per il viaggio di Beyond.',
-                en: 'He belongs to the team assembled for Beyond’s voyage.',
+                en: 'Belongs to the team assembled for Beyond’s voyage.',
               },
             },
             {
@@ -653,7 +652,7 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
               type: { it: 'Nuovo numero due', en: 'New number two' },
               summary: {
                 it: 'Ging esamina il funzionamento delle sue armi e accetta che gli ordini sul campo restino ai soldati.',
-                en: 'Ging examines how his weapons work and accepts that battlefield orders remain with the soldiers.',
+                en: 'Ging examines how its weapons work and accepts that battlefield orders remain with the soldiers.',
               },
             },
           ],
