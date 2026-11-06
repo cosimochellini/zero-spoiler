@@ -52,6 +52,7 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   'himonce': PERSON,
   'anzel': PERSON,
   'hyuga': PERSON,
+  'kaiser': PERSON,
   'all-faiths-church': PLACE,
   'uga-forest': PLACE,
 } satisfies Drawings

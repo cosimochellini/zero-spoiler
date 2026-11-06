@@ -50,6 +50,7 @@ const RECORDS = [
   { id: 'himonce', chapter: 400, place: false },
   { id: 'anzel', chapter: 400, place: false },
   { id: 'hyuga', chapter: 400, place: false },
+  { id: 'kaiser', chapter: 400, place: false },
   { id: 'all-faiths-church', chapter: 395, place: true },
   { id: 'uga-forest', chapter: 396, place: true },
 ]
@@ -89,6 +90,7 @@ const RELATIONSHIPS = [
   { id: 'himonce', chapter: 400, target: 'tyson-hui-guo-rou' },
   { id: 'anzel', chapter: 400, target: 'tyson-hui-guo-rou' },
   { id: 'hyuga', chapter: 400, target: 'tyson-hui-guo-rou' },
+  { id: 'kaiser', chapter: 400, target: 'melody' },
 ]
 
 function character(id: string): Entity {

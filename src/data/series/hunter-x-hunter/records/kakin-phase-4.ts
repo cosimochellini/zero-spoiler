@@ -461,6 +461,19 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       visual: { art: 'hyuga', tint: 'violet' },
     },
     {
+      id: 'kaiser',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 148,
+      revealedAtChapter: 400,
+      name: { it: 'Kaiser', en: 'Kaiser' },
+      summary: {
+        it: 'Un funzionario protegge due giovani principi e prepara un piano con Melody.',
+        en: 'An official protects two young princes and prepares a plan with Melody.',
+      },
+      visual: { art: 'kaiser', tint: 'violet' },
+    },
+    {
       id: 'all-faiths-church',
       kind: 'place',
       source: 'chapter',
@@ -1819,6 +1832,47 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
               summary: {
                 it: 'Tyson gli assegna un ruolo da interpretare davanti ai colleghi.',
                 en: 'Tyson gives him a role to perform in front of his colleagues.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+    'kaiser': {
+      role: {
+        it: 'Funzionario dell’Ufficio di Giustizia',
+        en: 'Justice Bureau official',
+      },
+      log: {
+        it: 'Un funzionario protegge due giovani principi e prepara un piano con Melody.',
+        en: 'An official protects two young princes and prepares a plan with Melody.',
+      },
+      affiliation: [
+        {
+          episode: 148,
+          chapter: 400,
+          source: 'chapter',
+          value: {
+            it: 'Ufficio di Giustizia di Cakin',
+            en: 'Kakin Justice Bureau',
+          },
+        },
+      ],
+      status: [
+        { episode: 148, chapter: 400, source: 'chapter', value: 'alive' },
+      ],
+      relationships: [
+        {
+          episode: 148,
+          chapter: 400,
+          source: 'chapter',
+          value: [
+            {
+              character: 'melody',
+              type: { it: 'Alleata nel piano', en: 'Ally in the plan' },
+              summary: {
+                it: 'Propone a Melody un piano per proteggere Fugetsu eliminando i principi maggiori.',
+                en: 'He proposes a plan to Melody to protect Fugetsu by eliminating the higher princes.',
               },
             },
           ],
