@@ -52,6 +52,8 @@ export const TITLES = {
     'hinrigh': 'Hinrigh Biganduffno',
     'morena': 'Morena Prudo',
     'onior': 'Onior Longbao',
+    // No page of its own: the Meteor City page describes the church (#1137).
+    'all-faiths-church': 'Meteor City',
     // The wiki's arc titles say more than an arc's name may, since the name
     // is shown at every bookmark (#758): the archive's names are neutral.
     'election-arc': '13th Hunter Chairman Election arc',

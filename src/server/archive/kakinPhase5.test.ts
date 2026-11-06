@@ -79,6 +79,7 @@ const STATUSES = [
   { id: 'lynch-fullbokko', chapter: 405, before: 'alive', after: 'deceased' },
   { id: 'borksen', chapter: 407, before: 'alive', after: 'captured' },
   { id: 'borksen', chapter: 410, before: 'captured', after: 'alive' },
+  { id: 'woble-hui-guo-rou', chapter: 412, before: 'alive', after: 'missing' },
   { id: 'onior', chapter: 417, before: 'alive', after: 'captured' },
 ]
 
@@ -197,7 +198,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
   })
 
   it.each(['episode', 'season'] as const)(
-    'keeps the window’s deaths out of the %s archive',
+    'keeps the window’s fates out of the %s archive',
     (mode) => {
       const reader = readerFor(
         archive,
@@ -207,9 +208,13 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
         locale,
       )
 
-      for (const id of ['halkenburg-hui-guo-rou', 'lynch-fullbokko']) {
-        expect(archive.latestOf(reader, character(id), 'status')).not.toBe(
-          'deceased',
+      for (const id of [
+        'halkenburg-hui-guo-rou',
+        'lynch-fullbokko',
+        'woble-hui-guo-rou',
+      ]) {
+        expect(['deceased', 'missing']).not.toContain(
+          archive.latestOf(reader, character(id), 'status'),
         )
       }
     },

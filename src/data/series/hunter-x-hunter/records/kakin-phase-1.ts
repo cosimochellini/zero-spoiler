@@ -555,14 +555,22 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       undefined,
       bodyguard('biscuit-krueger', { it: 'Biscuit', en: 'Biscuit' }),
     ),
-    'woble-hui-guo-rou': prince(
-      {
-        it: 'Quattordicesimo principe di Cakin',
-        en: 'Fourteenth Prince of Kakin',
-      },
-      undefined,
-      bodyguard('kurapika', { it: 'Kurapika', en: 'Kurapika' }),
-    ),
+    'woble-hui-guo-rou': {
+      ...prince(
+        {
+          it: 'Quattordicesimo principe di Cakin',
+          en: 'Fourteenth Prince of Kakin',
+        },
+        undefined,
+        bodyguard('kurapika', { it: 'Kurapika', en: 'Kurapika' }),
+      ),
+      // The baby in Room 1014 is Oito’s nephew; she does not know where her
+      // daughter is (412, #1138).
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 412, value: 'missing' },
+      ],
+    },
     'beyond-netero': {
       role: { it: 'Capo della spedizione', en: 'Expedition leader' },
       log: {
