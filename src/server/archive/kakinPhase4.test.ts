@@ -65,7 +65,6 @@ const RELATIONSHIPS = [
   { id: 'quorolle', chapter: 391, target: 'tevelares' },
   { id: 'padaille', chapter: 391, target: 'tevelares' },
   { id: 'misha-hao', chapter: 392, target: 'padaille' },
-  { id: 'maizan', chapter: 393, target: 'hinrigh-biganduffno' },
   { id: 'daemon', chapter: 393, target: 'gelato' },
   { id: 'gelato', chapter: 393, target: 'matvere' },
   { id: 'perigord', chapter: 393, target: 'voconte' },

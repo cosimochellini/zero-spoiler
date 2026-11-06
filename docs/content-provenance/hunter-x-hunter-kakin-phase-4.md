@@ -84,12 +84,18 @@ Tyson’s book in 400; Melody cooperates with Kacho and Kaiser in 400. These
 relationship/fact changes belong in the original dossiers, not duplicate phase-4
 dossiers.
 
-Earlier-phase records seen or mentioned here include Ken’i, Hinrigh, Luini,
-Morena, the royal family, Theta, Salkov, Kanjidol, Balsamilco, Babimyna,
-Furykov, Sakata, Satobi, Maor, Longhi, Tenftory, Bill, Sumidori, Shikaku, the
-Halkenburg guards, Steiner, Peuckert, Giuliano, Sarahell, Moswana, Nukuocon,
-Umanma, Bucket, Hignori, Vict, Musse and the earlier Nen students. An appearance
-or mention here does not alter an established gate.
+Characters seen or mentioned here were already filed in an earlier phase or
+deferred there. Filed: Ken’i, the royal family, Furykov, Satobi, Maor, Longhi,
+Tenftory and the earlier Nen students. Deferred, with no record: Hinrigh, Luini,
+Morena, Theta, Salkov, Kanjidol, Balsamilco, Babimyna, Sakata, Bill, Sumidori,
+Shikaku, the Halkenburg guards, Peuckert, Giuliano, Sarahell, Moswana, Nukuocon,
+Umanma, Bucket, Hignori, Vict and Musse. An appearance or mention here does not
+alter an established gate or deferral. Because Hinrigh has no record, Maizan's
+only 393 exchange (with Hinrigh) is not filed as a relationship.
+
+Steiner (phase 1's lead for chapter 384) is not named in the pinned 384
+synopsis. The 389 synopsis names him only in narration ("including Steiner and
+Peuckert"), and 400 likewise. He stays deferred (#1144).
 
 ## Unfiled candidates and exact limits
 

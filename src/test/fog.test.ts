@@ -159,6 +159,7 @@ describe('the place words of a series that labels its own', () => {
         'd2-manufacturing-plant',
         'royal-palace-of-east-gorteau',
         'tri-orb-hotel',
+        'all-faiths-church',
       ],
     ],
     [
@@ -172,6 +173,7 @@ describe('the place words of a series that labels its own', () => {
         'd2-manufacturing-plant',
         'royal-palace-of-east-gorteau',
         'tri-orb-hotel',
+        'all-faiths-church',
       ],
     ],
     [
@@ -208,6 +210,8 @@ describe('the place words of a series that labels its own', () => {
         'world-tree',
         'dark-continent',
         'black-whale',
+        'all-faiths-church',
+        'uga-forest',
       ],
     ],
   ])(

@@ -1569,7 +1569,6 @@
       "hxh-en-Misha_Hao-424379.json",
       "hxh-en-Chapter_392-416318.json"
     ],
-    "maizan": ["hxh-en-Maizan-424369.json", "hxh-en-Chapter_393-416319.json"],
     "daemon": ["hxh-en-Daemon-425243.json", "hxh-en-Chapter_393-416319.json"],
     "gelato": ["hxh-en-Gelato-424795.json", "hxh-en-Chapter_393-416319.json"],
     "perigord": [
@@ -1622,7 +1621,8 @@
     "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032).",
     "tsukuma": "His televised interview establishes no relationship with a filed character.",
     "bihorn": "Named only in Pike's boast in chapter 227 that not even Bihorn's strength could cut his threads; he has no exchange with an archived character in the window. Judged from hxh-en-Bihorn and the chapter 227 page.",
-    "ming-jol-ik": "The real former leader appears alone on a farm. The unnamed double is not a filed character."
+    "ming-jol-ik": "The real former leader appears alone on a farm. The unnamed double is not a filed character.",
+    "maizan": "His only exchange in his opening scene (393) is with Hinrigh, whose naming check is deferred (#1143)."
   },
   "pending": {}
 }

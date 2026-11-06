@@ -877,26 +877,6 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       status: [
         { episode: 148, chapter: 393, source: 'chapter', value: 'alive' },
       ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 393,
-          source: 'chapter',
-          value: [
-            {
-              character: 'hinrigh-biganduffno',
-              type: {
-                it: 'Acquirente delle informazioni',
-                en: 'Buyer of his information',
-              },
-              summary: {
-                it: 'Guida Hinrigh alla stanza nascosta in cambio di denaro.',
-                en: 'He leads Hinrigh to the hidden room in exchange for money.',
-              },
-            },
-          ],
-        },
-      ],
     },
     'daemon': {
       role: { it: 'Muratore', en: 'Construction worker' },
