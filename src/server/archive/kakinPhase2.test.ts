@@ -6,6 +6,7 @@ import type { Bookmark } from '~/lib/progress/episode'
 import { LOADED_SERIES } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
+import { placePage } from './placePage.server'
 import { type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
@@ -40,6 +41,10 @@ const CHARACTERS = [
 const CASES = CHARACTERS.map(([id, chapter]) => ({ id, chapter }))
 
 function opened(page: ReturnType<typeof characterPage>): boolean {
+  return page !== undefined && 'detail' in page && page.detail.slot.open
+}
+
+function placeOpened(page: ReturnType<typeof placePage>): boolean {
   return page !== undefined && 'detail' in page && page.detail.slot.open
 }
 
@@ -91,6 +96,34 @@ describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
       expect(characterPage(id, reader)).toBeUndefined()
       expect(drawingsFor([id], reader)).toStrictEqual({})
     })
+  })
+
+  it('opens the Black Whale at its chapter 342 naming, for manga readers only', () => {
+    const closed = placePage(
+      'black-whale',
+      read({ mode: 'chapter', chapter: 341 }),
+    )
+    const open = placePage(
+      'black-whale',
+      read({ mode: 'chapter', chapter: 342 }),
+    )
+    const anime = placePage(
+      'black-whale',
+      read({ mode: 'episode', episode: 148 }),
+    )
+
+    expect(placeOpened(closed)).toBe(false)
+    expect(placeOpened(open)).toBe(true)
+    expect(anime).toBeUndefined()
+  })
+
+  it('pins Momoze’s death at chapter 368', () => {
+    const owner = character('momoze-hui-guo-rou')
+    const alive = read({ mode: 'chapter', chapter: 367 })
+    const dead = read({ mode: 'chapter', chapter: 368 })
+
+    expect(archive.latestOf(alive, owner, 'status')).toBe('alive')
+    expect(archive.latestOf(dead, owner, 'status')).toBe('deceased')
   })
 
   it('pins Vincent’s death at chapter 364', () => {
