@@ -465,7 +465,10 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: [
             {
               character: 'kurapika',
-              type: { it: 'Insegnante che osserva', en: 'Teacher he observes' },
+              type: {
+                it: 'Insegnante che tiene d’occhio',
+                en: 'Teacher he observes',
+              },
               summary: {
                 it: 'Dichiara di conoscere il Nen durante il corso di Kurapika.',
                 en: 'He declares his knowledge of Nen during Kurapika’s class.',
@@ -541,7 +544,10 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: [
             {
               character: 'kurapika',
-              type: { it: 'Insegnante che studia', en: 'Teacher he studies' },
+              type: {
+                it: 'Insegnante che sta studiando',
+                en: 'Teacher he studies',
+              },
               summary: {
                 it: 'Osserva la sua aura e i suoi gesti per dedurne le capacità.',
                 en: 'He observes his aura and movements to deduce his abilities.',
@@ -816,7 +822,10 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: [
             {
               character: 'kurapika',
-              type: { it: 'Insegnante che osserva', en: 'Teacher he observes' },
+              type: {
+                it: 'Insegnante che tiene d’occhio',
+                en: 'Teacher he observes',
+              },
               summary: {
                 it: 'Deve osservare chi gli si avvicina durante il corso di Nen.',
                 en: 'He must watch who approaches him during the Nen class.',
