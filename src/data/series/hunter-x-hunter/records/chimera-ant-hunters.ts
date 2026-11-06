@@ -4,6 +4,7 @@ import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
 import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
+import { electionChronicles } from './election.chronicle'
 import type { HunterSaga } from './saga'
 
 /** Where Netero's Hunters stand, as their dossiers say it. */
@@ -233,6 +234,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         ...chimeraAntPhase4Chronicles.knov,
 
         ...chimeraAntPhase5Chronicles.knov,
+        ...electionChronicles.knov,
       ],
       relationships: [
         {
@@ -312,6 +314,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         ...chimeraAntPhase4Chronicles['morel-mackernasey'],
 
         ...chimeraAntPhase5Chronicles['morel-mackernasey'],
+        ...electionChronicles['morel-mackernasey'],
       ],
       relationships: [
         {

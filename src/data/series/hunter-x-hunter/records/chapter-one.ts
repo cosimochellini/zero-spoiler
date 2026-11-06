@@ -5,6 +5,7 @@ import { chapterOneRelationships } from './chapter-one.relationships'
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
+import { electionChronicles } from './election.chronicle'
 import type { HunterSaga } from './saga'
 
 /** Kite's last selection in each medium before Neferpitou kills him. */
@@ -87,6 +88,7 @@ export const chapterOne: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         ...chimeraAntPhase2Chronicles.kite,
 
         ...chimeraAntPhase5Chronicles.kite,
+        ...electionChronicles.kite,
       ],
       role: [
         { episode: 76, chapter: 1, value: { it: 'Hunter', en: 'Hunter' } },

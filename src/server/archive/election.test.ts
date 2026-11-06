@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest'
 
+import { electionChronicles } from '~/data/series/hunter-x-hunter/records/election.chronicle'
 import type { Entity, Field } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
 import { LOADED_SERIES } from '~/test/series'
 
+import { chronicleOf, chronicleRestOf } from './chronicle.server'
 import { homePage } from './home.server'
 import { characterPage, drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
@@ -79,6 +81,23 @@ type FactPin = [
 ]
 
 const FACT_PINS: FactPin[] = [
+  ['gon-freecss', 'chronicle', 145, 334],
+  ['gon-freecss', 'chronicle', 146, 335],
+  ['gon-freecss', 'chronicle', 147, 338],
+  ['gon-freecss', 'chronicle', 148, 339],
+  ['ging-freecss', 'chronicle', 148, 339],
+  ['gotoh', 'chronicle', 142, 327],
+  ['killua', 'chronicle', 143, 330],
+  ['killua', 'chronicle', 145, 333],
+  ['killua', 'chronicle', 146, 336],
+  ['nanika', 'chronicle', 145, 333],
+  ['alluka-zoldyck', 'chronicle', 146, 336],
+  ['pariston-hill', 'chronicle', 146, 335],
+  ['cheadle-yorkshire', 'chronicle', 146, 335],
+  ['kite', 'chronicle', 147, 337],
+  ['kiriko', 'chronicle', 148, 339],
+  ['ickshonpe-katocha', 'chronicle', 144, 331, 'chapter'],
+  ['leorio-paradinight', 'chronicle', 148, 339, 'episode'],
   ['gon-freecss', 'role', 145, 334],
   ['gon-freecss', 'affiliation', 145, 334],
   ['leorio-paradinight', 'role', 141, 326],
@@ -236,3 +255,70 @@ describe('the Election home', () => {
     expect(homePage(reader).saga.id).toBe('election-arc')
   })
 })
+
+describe.each(LOCALES)('Election chronicles in %s', (locale) => {
+  it.each(
+    CHARACTERS.map(([id, episode, chapter, source]) => ({
+      id,
+      episode,
+      chapter,
+      source,
+    })),
+  )(
+    'opens a chronicle with the new record $id',
+    ({ id, episode, chapter, source }) => {
+      const owner = character(id)
+      const first = archive.dossierOf(owner)?.chronicle?.[0]
+
+      expect(first?.episode).toBe(episode)
+      expect(first?.chapter).toBe(chapter)
+      expect(first?.source).toBe(source)
+    },
+  )
+
+  describe.each(UNITS)('by %s', (unit) => {
+    it.each(Object.entries(electionChronicles))(
+      `assembles %s behind each ${unit} gate`,
+      (id, stories) => {
+        const owner = character(id)
+        for (const story of stories) {
+          const threshold = unit === 'episode' ? story.episode : story.chapter
+          const before = readerFor(archive, at(unit, threshold - 1), locale)
+          const reached = readerFor(archive, at(unit, threshold), locale)
+          const title = story.value.title[locale]
+
+          expect(chronicleTitles(owner, before)).not.toContain(title)
+
+          const told = !('source' in story) || story.source === unit
+
+          expect(chronicleTitles(owner, reached).includes(title)).toBe(told)
+        }
+      },
+    )
+
+    it(`shows this arc’s stories at home by ${unit}`, () => {
+      const reader = readerFor(
+        archive,
+        at(unit, unit === 'episode' ? 140 : 325),
+        locale,
+      )
+      const home = homePage(reader)
+
+      expect(home.before).toBe(false)
+      expect(home.stories).toContainEqual(
+        expect.objectContaining({
+          title:
+            electionChronicles['leorio-paradinight'][0]?.value.title[locale],
+        }),
+      )
+    })
+  })
+})
+
+/** Includes the lazy continuation when an older story has left the first page. */
+function chronicleTitles(owner: Entity, reader: Reader): string[] {
+  return [
+    ...chronicleOf(owner, reader).entries,
+    ...chronicleRestOf(owner.id, reader),
+  ].map((entry) => entry.title)
+}

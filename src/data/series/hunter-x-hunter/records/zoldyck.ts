@@ -1,5 +1,6 @@
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
+import { electionChronicles } from './election.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga } from './saga'
 import { zoldyckChronicles } from './zoldyck.chronicle'
@@ -258,7 +259,7 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     'canary': {
       relationships: zoldyckRelationships.canary,
-      chronicle: zoldyckChronicles.canary,
+      chronicle: [...zoldyckChronicles.canary, ...electionChronicles.canary],
       role: { it: 'Apprendista maggiordoma', en: 'Apprentice butler' },
       log: {
         it: 'Si presenta a Killua come apprendista maggiordoma e rifiuta la sua proposta di diventare amici perché è una sua servitrice. Quando Gon arriva alla tenuta, lo respinge con il bastone ogni volta che attraversa la linea davanti a lei. Alla fine gli chiede di aiutare Killua.',
@@ -286,7 +287,7 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     'gotoh': {
       relationships: zoldyckRelationships.gotoh,
-      chronicle: zoldyckChronicles.gotoh,
+      chronicle: [...zoldyckChronicles.gotoh, ...electionChronicles.gotoh],
       role: { it: 'Maggiordomo', en: 'Butler' },
       log: {
         it: 'Accoglie i tre amici negli alloggi dei maggiordomi in attesa di Killua. Chiede loro di indovinare in quale mano tiene una moneta e aumenta la velocità fino a renderla difficile da seguire. Gon supera la prova. Quando Killua arriva, gli chiede di non seguirlo.',
@@ -312,6 +313,7 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...zoldyckChronicles.milluki,
         ...greedIslandReturningChronicles.milluki,
+        ...electionChronicles.milluki,
       ],
       role: { it: 'Fratello di Killua', en: 'Killua’s brother' },
       log: {
@@ -367,6 +369,7 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: [
         ...zoldyckChronicles.silva,
         ...chimeraAntPhase4Chronicles.silva,
+        ...electionChronicles.silva,
       ],
       role: { it: 'Padre di Killua', en: 'Killua’s father' },
       log: {

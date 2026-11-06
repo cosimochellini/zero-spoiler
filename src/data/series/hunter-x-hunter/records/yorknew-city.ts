@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
+import { electionChronicles } from './election.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import type { HunterSaga, HunterVocabulary } from './saga'
 import { yorknewCityChronicles } from './yorknew-city.chronicle'
@@ -594,6 +595,7 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles['ging-freecss'],
         ...greedIslandReturningChronicles['ging-freecss'],
+        ...electionChronicles['ging-freecss'],
       ],
       role: [
         {

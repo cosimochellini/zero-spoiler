@@ -80,6 +80,7 @@ const CHRONICLE_CHAPTERS: Record<number, number> = {
   85: 199,
   95: 222,
   136: 316,
+  147: 337,
 }
 
 function expectedChapter(

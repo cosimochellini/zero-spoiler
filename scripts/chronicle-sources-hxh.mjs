@@ -167,6 +167,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
       note: 'Chapter 316 and Episode 136: doctor reports life support, Knov arranges specialists, Killua leaves to save Gon; no recovery included.',
     },
+    145: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_145_(2011)',
+      note: 'Chapter 334; Episode 145 (2011). Chapters 333–334 and episode 145; apology to Ging is next episode.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146.',
+    },
+    147: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_147_(2011)',
+      note: 'Chapter 338; Episode 147 (2011). Chapters 337–338 and episode 147; climb is left to episode 148.',
+    },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapters 338–339 and episode 148; combines climb and completed conversation at chapter 339.',
+    },
   },
   'mito-freecss': {
     1: {
@@ -183,45 +199,65 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'leorio-paradinight': {
-    1: {
+    '1': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)',
       note: "The captain's question, Leorio's money answer, the clan insult, the duel on deck and the rescue of Katzo are all in this episode; they make up the next day.",
     },
-    4: {
+    '4': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_4_(2011)',
       note: "Corrected after review: 'faster than anyone' became running past Gon and Killua, as the page says. The jacket, friend's death from a treatable illness and the wish to treat poor children for free are all here.",
     },
-    5: {
+    '5': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_5_(2011)',
       note: 'Leorio and Kurapika watch Hisoka wipe out the applicants, split up, Leorio returns, is knocked out by an uppercut and carried off by Hisoka.',
     },
-    10: {
+    '10': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_10_(2011)',
       note: "The page has Leroute's bets, the heartbeat check, dragging Majtani to the edge, his eye movements read from medical study, the 40 hours lost and the 2-1 lead.",
     },
-    20: {
+    '20': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_20_(2011)',
       note: "Satotz's account on the page covers Illumi's lecture, Leorio's shout at Killua, Leorio, Kurapika and Hanzo blocking the door, Killua's surrender and the killing of Bodoro.",
     },
-    42: {
+    '42': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_42_(2011)',
       note: 'Corrected after review: “use all his strength” became “try for real to win”, as chapter 72 says only that Gon is forced to actually try. Episode 42 and chapters 71-72: meeting Gon and Killua at the phone stall, talk of Nen and the game, his idea, the arm-wrestling contest for a 3-million diamond and the one challenger who makes Gon try for real. The haggling and the entry fee are chapter-only. Also read: Chapter 71, Chapter 72.',
     },
-    49: {
+    '49': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
       note: 'Corrected after review: the “so” is dropped: not being able to use Zetsu is not given as the reason for the split. The tip is chapter 88 and episode 48; the watch from a distance is chapter 89 and the split chapter 90, both in episode 49. Who pays the informants differs between the media and is left out. Checked on the episode page and the chapter pages.',
     },
-    53: {
+    '53': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Chapter 101 and episode 53. Who drinks at what age differs between the media and is left out. Checked on the episode page and the chapter pages.',
     },
-    57: {
+    '57': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
       note: 'Corrected after review: the order follows both media: he drives Kurapika after the Troupe until traffic stops him, and the boys are caught. The traffic is chapter 111 and episode 56; the lobby is chapter 112 and episode 57. The time on the radio is chapter-only. Checked on the episode page and the chapter pages.',
     },
-    60: {
+    '60': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
       note: 'Episode 60 and Chapters 124–126: departure, money to reclaim the license and farewell meal. Corrected during authoring: the money handover differs between media, so no handover person is claimed.',
+    },
+    '140': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
+      note: 'Chapter 325; Episode 140 (2011). Chapter 325 and episode 140; election placement is left to the next episode.',
+    },
+    '144': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_144_(2011)',
+      note: 'Chapter 332; Episode 144 (2011). Chapters 331–332 and episode 144.',
+    },
+    '145': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_145_(2011)',
+      note: 'Chapter 334; Episode 145 (2011). Chapters 333–334 and episode 145; no premature final election result.',
+    },
+    '146': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146; formal presidency changes after 339 excluded.',
+    },
+    '148:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Episode 148 shows medical study; chapter 339 is ordering only.',
     },
   },
   'kurapika': {
@@ -281,6 +317,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 include phone call and Nostrade household.',
     },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapter 339 and episode 148; no number or later collection progress inferred.',
+    },
   },
   'katzo': {
     1: {
@@ -296,6 +336,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     66: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 148: Kiriko encounter begins episode 65/chapter 147 and ends at directions in episode 66/chapter 148.',
+    },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapter 339 and episode 148; identity and concealment follow #912’s filed role.',
     },
   },
   'tonpa': {
@@ -384,6 +428,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     72: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
       note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72: surveillance, replacement and negotiation. Exorcist unnamed because excluded record.',
+    },
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 320; Episode 137 (2011). Chapter 320 and episode 137; no premature name for Alluka.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 327; Episode 142 (2011). Chapter 327 and episode 142.',
     },
   },
   'hanzo': {
@@ -572,6 +624,34 @@ export const HUNTER_X_HUNTER_SOURCES = {
     136: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
       note: 'Chapter 316 and Episode 136: Killua’s reflections, refusal of Knov’s invitation and departure. No later rescue method named.',
+    },
+    138: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_138_(2011)',
+      note: 'Chapter 322; Episode 138 (2011). Chapters 321–322 and episode 138.',
+    },
+    139: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_139_(2011)',
+      note: 'Chapter 324; Episode 139 (2011). Chapter 324 and episode 139; avoids Nanika’s name before chapter 332.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 328; Episode 142 (2011). Chapter 328 and episode 142.',
+    },
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 330; Episode 143 (2011). Chapter 330 and episode 143; Nanika unnamed before chapter 332.',
+    },
+    145: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_145_(2011)',
+      note: 'Chapter 333; Episode 145 (2011). Chapters 332–333 and episode 145.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 336; Episode 146 (2011). Chapter 336 and episode 146.',
+    },
+    147: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_147_(2011)',
+      note: 'Chapter 338; Episode 147 (2011). Chapter 338 and episode 147.',
     },
   },
   'menchi': {
@@ -845,6 +925,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_24_(2011)',
       note: 'Ep 23 wiki page covers the line, the blows, the punched block and her tears; the apple and friendship flashback is on ep 24. Corrected after review: dropped the claim that she refused friendship because she served him.',
     },
+    140: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
+      note: 'Chapter 324; Episode 140 (2011). Chapter 324 and episode 140.',
+    },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapter 339 and episode 148.',
+    },
   },
   'milluki': {
     23: {
@@ -862,6 +950,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     60: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
       note: 'Episode 60 and Chapter 124: Chapter 124 concludes auction and Milluki’s meal; episode 60 completes the sequence.',
+    },
+    139: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_139_(2011)',
+      note: 'Chapter 324; Episode 139 (2011). Chapters 322–324 and episode 139.',
     },
   },
   'zeno': {
@@ -907,6 +999,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_117_(2011)',
       note: 'Checked Chapter 278, Episode 117 (2011).',
     },
+    138: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_138_(2011)',
+      note: 'Chapter 322; Episode 138 (2011). Chapters 321–322 and episode 138.',
+    },
   },
   'kalluto': {
     24: {
@@ -926,6 +1022,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     25: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_25_(2011)',
       note: "The coin guessing game, the rules and threat, Gon's final round and the butlers' apology.",
+    },
+    141: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 327; Episode 141 (2011). Chapter 327 opening and episode 141; outcome belongs to episode 142.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 327; Episode 142 (2011). Chapter 327 and episode 142; episode 141 stops before the outcome.',
     },
   },
   'masta': {
@@ -950,6 +1054,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
     94: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 94 (2011), Chapter 219.',
+    },
+    139: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_139_(2011)',
+      note: 'Chapter 323; Episode 139 (2011). Chapter 323 and episode 139; frames danger as Illumi’s belief, not an absolute power rule.',
+    },
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 330; Episode 143 (2011). Chapter 330 and episode 143.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 336; Episode 146 (2011). Chapter 336 and episode 146.',
     },
   },
   'kite': {
@@ -985,6 +1101,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
       note: 'Chapter316 and Episode136: child’s explicit Kite name reveal; no Election-arc explanation imported.',
     },
+    147: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_147_(2011)',
+      note: 'Chapter 337; Episode 147 (2011). Chapter 337 and episode 147; no claim that the girl’s original soul is established.',
+    },
   },
   'kon': {
     76: {
@@ -1004,6 +1124,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
     75: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
       note: 'Episode 75 and Chapter 184: castle friends explain creators’ initials and Ging changing a companion’s name to make the title fit. Added after independent verification to cover Ging’s later creation flashback separately from his recorded message.',
+    },
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 320; Episode 137 (2011). Chapter 320 and episode 137 complete the rules and advance arrangement.',
+    },
+    140: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
+      note: 'Chapter 325; Episode 140 (2011). Chapter 325 and episode 140; does not disclose later interpretations of Ging’s intent.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146; survival mechanism remains Ging’s explanation, not certainty.',
+    },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapters 338–339 and episode 148; later Dark Continent events excluded.',
     },
   },
   'todo': {
@@ -2473,6 +2609,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
       note: 'Chapter316 and Episode136: no patient transfer, specialists brought in, Knov’s offer and Killua departure.',
     },
+    140: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
+      note: 'Chapter 325; Episode 140 (2011). Chapter 325 and episode 140.',
+    },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapter 339 and episode 148.',
+    },
   },
   'morel-mackernasey': {
     86: {
@@ -2514,6 +2658,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     136: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
       note: 'Chapter316 and Episode136 complete Colt call. Report-confidence exchange is Episode135. No Beans name used before filing.',
+    },
+    140: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
+      note: 'Chapter 325; Episode 140 (2011). Chapter 325 and episode 140.',
+    },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapter 339 and episode 148.',
     },
   },
   'bizeff': {
@@ -2712,6 +2864,274 @@ export const HUNTER_X_HUNTER_SOURCES = {
     135: {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_135_(2011)',
       note: 'Chapter315 and Episode135: news corpse is double; real leader’s thirty-year rural retirement, reading shown. No quotation from book.',
+    },
+  },
+  'hishita': {
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 329; Episode 143 (2011). Chapter 329 and episode 143; same gate as his named appearance.',
+    },
+  },
+  'amane': {
+    140: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
+      note: 'Chapter 324; Episode 140 (2011). Chapter 324 and episode 140; escort only, no later confrontation.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 328; Episode 142 (2011). Chapter 328 and episode 142.',
+    },
+    148: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
+      note: 'Chapter 339; Episode 148 (2011). Chapter 339 and episode 148.',
+    },
+  },
+  'tsubone': {
+    140: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
+      note: 'Chapter 324; Episode 140 (2011). Chapter 324 and episode 140 escort and nail; Amane opens at the same gate.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 328; Episode 142 (2011). Chapter 328 and episode 142; vehicle ability only when shown.',
+    },
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 330; Episode 143 (2011). Chapters 329–330 and episode 143; no Nanika name before her manga gate.',
+    },
+  },
+  'muna': {
+    139: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_139_(2011)',
+      note: 'Chapter 323; Episode 139 (2011). Chapter 323 / episode 139 flashback; no unsupported claim about an on-panel death.',
+    },
+  },
+  'yasuha': {
+    139: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_139_(2011)',
+      note: 'Chapter 323; Episode 139 (2011). Chapter 322 / episode 138 event, held to Yasuha’s chapter 323 / episode 139 naming gates; wealth amount omitted because media differ.',
+    },
+  },
+  'kasuga': {
+    138: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_138_(2011)',
+      note: 'Chapter 322; Episode 138 (2011). Chapter 322 and episode 138; avoids chapter 323’s wider death investigation.',
+    },
+  },
+  'mitsuba': {
+    138: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_138_(2011)',
+      note: 'Chapter 322; Episode 138 (2011). Chapter 322 and episode 138; no name for the unfiled mother or second victim.',
+    },
+  },
+  'nanika': {
+    139: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_139_(2011)',
+      note: 'Chapter 332; Episode 139 (2011). Episode 139 explains the distinction and touch rule; manga held to Nanika’s chapter 332 positive naming.',
+    },
+    145: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_145_(2011)',
+      note: 'Chapter 333; Episode 145 (2011). Chapter 333 and episode 145; treatment scene rather than later election arrival.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 336; Episode 146 (2011). Chapter 336 and episode 146.',
+    },
+  },
+  'alluka-zoldyck': {
+    138: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_138_(2011)',
+      note: 'Chapter 321; Episode 138 (2011). Chapter 321 / episode 138; keeps reunion and later rules out of the opening.',
+    },
+    139: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_139_(2011)',
+      note: 'Chapter 324; Episode 139 (2011). Chapters 323–324 and episode 139; Nanika unnamed because her manga record opens later.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 336; Episode 146 (2011). Chapter 336 and episode 146.',
+    },
+    147: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_147_(2011)',
+      note: 'Chapter 338; Episode 147 (2011). Chapter 338 and episode 147.',
+    },
+  },
+  'teradein-neutral': {
+    141: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 326; Episode 141 (2011). Chapter 326 / episode 141 candidate broadcast; earlier vote totals from chapter 320 / episode 137. Naming floor retained.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 328; Episode 142 (2011). Chapter 328 and episode 142.',
+    },
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 330; Episode 143 (2011). Chapters 329–330 and episode 143; confirms Teradein’s killer only.',
+    },
+  },
+  'sanbica-norton': {
+    141: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 326; Episode 141 (2011). Chapter 326 / episode 141 candidate broadcast; earlier vote totals from chapter 320 / episode 137. Naming floor retained.',
+    },
+  },
+  'loupe-highland': {
+    141: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 326; Episode 141 (2011). Chapter 326 / episode 141 candidate broadcast; earlier vote totals from chapter 320 / episode 137. Naming floor retained.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 328; Episode 142 (2011). Chapter 328 and episode 142.',
+    },
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 329; Episode 143 (2011). Chapter 329 and episode 143; Loupe survives and is eliminated from the election.',
+    },
+  },
+  'linne-horsdoeuvre': {
+    141: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 326; Episode 141 (2011). Chapter 326 / episode 141 candidate broadcast; earlier vote totals from chapter 320 / episode 137. Naming floor retained.',
+    },
+  },
+  'ickshonpe-katocha': {
+    '141': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 326; Episode 141 (2011). Chapter 326 / episode 141 candidate broadcast; earlier vote totals from chapter 320 / episode 137. Naming floor retained.',
+    },
+    '144:chapter': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_331',
+      note: 'Independent verification correction: the trade is cited by Ickshonpe’s biography to Chapter 331; Episode 144 instead shows a cue-card speech. Manga-only; episode orders the entry.',
+    },
+  },
+  'cutie-beauty': {
+    141: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 326; Episode 141 (2011). Chapter 326 / episode 141 candidate broadcast; earlier vote totals from chapter 320 / episode 137. Naming floor retained.',
+    },
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 329; Episode 143 (2011). Chapter 329 / episode 143 and Cutie Beauty’s election biography; only her stated endorsement.',
+    },
+  },
+  'bushidora-ambitious': {
+    141: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_141_(2011)',
+      note: 'Chapter 326; Episode 141 (2011). Chapter 326 / episode 141 candidate broadcast; earlier vote totals from chapter 320 / episode 137. Naming floor retained.',
+    },
+    142: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
+      note: 'Chapter 328; Episode 142 (2011). Chapter 328 and episode 142; no later outcome.',
+    },
+    143: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_143_(2011)',
+      note: 'Chapter 329; Episode 143 (2011). Chapter 329 and episode 143; death reported, killer not inferred.',
+    },
+  },
+  'saiyu': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 321; Episode 137 (2011). Chapter 319 / episode 137 scene, held to chapter 321 naming.',
+    },
+  },
+  'saccho-kobayakawa': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 326; Episode 137 (2011). Chapter 319 / episode 137 scene, held to chapter 326 naming; no premature candidate names.',
+    },
+  },
+  'pyon': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 320; Episode 137 (2011). Chapter 320 and episode 137.',
+    },
+    144: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_144_(2011)',
+      note: 'Chapter 332; Episode 144 (2011). Chapters 331–332 and episode 144.',
+    },
+  },
+  'pariston-hill': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 321; Episode 137 (2011). Chapters 319–320 / episode 137; held to chapter 321 positive naming.',
+    },
+    138: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_138_(2011)',
+      note: 'Chapter 321; Episode 138 (2011). Chapter 321 and episode 138; no claim that confiscated Hunters lose voting rights.',
+    },
+    145: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_145_(2011)',
+      note: 'Chapter 334; Episode 145 (2011). Chapter 334 and episode 145; his explanation is attributed, not presented as omniscient fact.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146.',
+    },
+  },
+  'mizaistom-nana': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 326; Episode 137 (2011). Chapter 319 / episode 137 scene, held to his chapter 326 naming gate.',
+    },
+    144: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_144_(2011)',
+      note: 'Chapter 332; Episode 144 (2011). Chapter 332 and episode 144.',
+    },
+  },
+  'kanzai': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 320; Episode 137 (2011). Chapter 320 and episode 137.',
+    },
+  },
+  'ginta': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 320; Episode 137 (2011). Chapters 319–320 and episode 137.',
+    },
+  },
+  'gel': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 321; Episode 137 (2011). The scene is chapter 319 / episode 137; chapter 321 is her existing positive naming gate.',
+    },
+  },
+  'cluck': {
+    '137:episode': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 320; Episode 137 (2011). Episode-only record. Episode 137 shows the objection and distribution; chapter is ordering only.',
+    },
+  },
+  'cheadle-yorkshire': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 319; Episode 137 (2011). Chapter 319 and episode 137; only the proposal, not the full rules read in chapter 320.',
+    },
+    144: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_144_(2011)',
+      note: 'Chapter 332; Episode 144 (2011). Chapters 331–332 and episode 144.',
+    },
+    146: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
+      note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146; does not claim the chapter 340 formal presidency.',
+    },
+  },
+  'botobai-gigante': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 319; Episode 137 (2011). Chapter 319 and episode 137; avoids naming the vice chairman before his manga gate.',
+    },
+    144: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_144_(2011)',
+      note: 'Chapter 331; Episode 144 (2011). Chapter 331 and episode 144.',
+    },
+  },
+  'beans': {
+    137: {
+      source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
+      note: 'Chapter 319 and Episode 137 (2011): the draw and first rule. Remaining rules and rigging belong to chapter 320 and are told in Ging’s story.',
     },
   },
 }

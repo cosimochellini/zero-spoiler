@@ -45,7 +45,7 @@ const SWEEP_GATES = entities.flatMap((owner) =>
 )
 
 for (const { episode, gate } of core.stories) {
-  if (episode >= 76 && episode <= 136) {
+  if (episode >= 76 && episode <= 148) {
     SWEEP_GATES.push(gate)
   }
 }
@@ -87,7 +87,7 @@ const NAMED_SCENES = {
 /** One dynamically loaded archive; its public description contains no records. */
 export const HUNTER_X_HUNTER_ARCHIVE: SeriesArchive = {
   series: SERIES,
-  // Both sides of every relationship and Chimera Ant story gate, and scenes listed by
+  // Both sides of every relationship and Chimera Ant/Election story gate, and scenes listed by
   // hand, followed by the first two season boundaries (the demo end and a
   // boundary inside an arc).
   bookmarks: sweepOf(sagas, SERIES, [
