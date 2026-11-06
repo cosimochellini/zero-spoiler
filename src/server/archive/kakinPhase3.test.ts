@@ -22,6 +22,14 @@ const CHARACTERS = [
   ['keeney', 383],
 ] as const
 
+// Deaths dated in this window, new and returning records alike.
+const DEATHS = [
+  ['keeney', 383],
+  ['myuhan', 376],
+  ['sale-sale-hui-guo-rou', 382],
+  ['kacho-hui-guo-rou', 383],
+] as const
+
 const CASES = CHARACTERS.map(([id, chapter]) => ({ id, chapter }))
 
 function opened(page: ReturnType<typeof characterPage>): boolean {
@@ -96,5 +104,40 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
       'biscuit-krueger',
       'kurapika',
     ])
+  })
+
+  it.each(DEATHS)(
+    'files %s as deceased only from chapter %i',
+    (id, chapter) => {
+      const owner = character(id)
+      const before = read({ mode: 'chapter', chapter: chapter - 1 })
+      const reached = read({ mode: 'chapter', chapter })
+
+      expect(archive.latestOf(before, owner, 'status')).not.toBe('deceased')
+      expect(archive.latestOf(reached, owner, 'status')).toBe('deceased')
+    },
+  )
+
+  it('adds Illumi’s Troupe membership only at chapter 377', () => {
+    const owner = character('illumi')
+    const before = archive.latestOf(
+      read({ mode: 'chapter', chapter: 376 }),
+      owner,
+      'affiliation',
+    )
+    const reached = archive.latestOf(
+      read({ mode: 'chapter', chapter: 377 }),
+      owner,
+      'affiliation',
+    )
+    const anime = archive.latestOf(
+      read({ mode: 'episode', episode: 148 }),
+      owner,
+      'affiliation',
+    )
+
+    expect(before?.en).not.toContain('Phantom Troupe')
+    expect(reached?.en).toContain('Phantom Troupe')
+    expect(anime?.en).not.toContain('Phantom Troupe')
   })
 })
