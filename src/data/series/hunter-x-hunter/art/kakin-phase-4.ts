@@ -1,8 +1,8 @@
 import type { Drawings } from '~/data/art/stroke'
 
-import { PERSON, PLACE } from './election'
+import { PERSON, PLACE } from './placeholders'
 
-// shortcut: Election's neutral placeholders; finished artwork in #917.
+// shortcut: neutral placeholders; finished artwork in #917.
 export const KAKIN_PHASE_4_DRAWINGS = {
   'tajao': PERSON,
   'famule': PERSON,
