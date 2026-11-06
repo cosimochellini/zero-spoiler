@@ -80,7 +80,8 @@ const NAMED_SCENES = {
     249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 277, 278,
     292, 293, 294, 297, 298, 299, 305, 306, 307, 308, 309, 310, 313, 314, 315,
     316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330,
-    331, 332, 333, 334, 335, 336, 337, 338, 339,
+    331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345,
+    346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357,
   ],
 }
 
@@ -100,6 +101,13 @@ export const HUNTER_X_HUNTER_ARCHIVE: SeriesArchive = {
   drawings: DRAWINGS,
   ...core,
   leads: {
+    'kakin-arc': [
+      'beyond-netero',
+      'kurapika',
+      'ging-freecss',
+      'leorio-paradinight',
+      'tserriednich-hui-guo-rou',
+    ],
     'election-arc': [
       'gon-freecss',
       'killua',

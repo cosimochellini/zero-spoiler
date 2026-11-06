@@ -611,6 +611,24 @@ export const yorknewCity: HunterSaga = {
             en: 'Hunter, member of the Zodiacs',
           },
         },
+        {
+          episode: 148,
+          chapter: 340,
+          source: 'chapter',
+          value: {
+            it: 'Hunter, ex membro dello Zodiaco',
+            en: 'Hunter, former member of the Zodiacs',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 347,
+          source: 'chapter',
+          value: {
+            it: 'Hunter, secondo della squadra di spedizione',
+            en: 'Hunter, expedition team’s number two',
+          },
+        },
       ],
       log: {
         it: 'Da ragazzo è partito dall’Isola Balena. Dieci anni dopo è tornato con Gon in braccio e ha chiesto alla nonna di occuparsene, dicendo che lui e la madre si erano lasciati. A Gon ha lasciato una scatola con dentro un anello, una scheda di memoria e una cassetta: sul nastro chiede a Gon se vuole incontrarlo.',
@@ -628,6 +646,24 @@ export const yorknewCity: HunterSaga = {
           value: {
             it: 'Associazione Hunter, Zodiaco del Cinghiale',
             en: 'Hunter Association, Boar of the Zodiacs',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 340,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter; lascia lo Zodiaco',
+            en: 'Hunter Association; leaves the Zodiacs',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 347,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter; squadra di spedizione di Beyond Netero',
+            en: 'Hunter Association; Beyond Netero’s expedition team',
           },
         },
       ],
@@ -981,7 +1017,10 @@ export const yorknewCity: HunterSaga = {
         it: 'Mentre Uborghin beve birra, cerca la famiglia Nostrad sul sito degli Hunter, così che Uborghin possa scovare l’utilizzatore di catene.',
         en: 'While Uvogin drinks beer, he searches the Hunter website for the Nostrade family, so that Uvogin can track down the chain user.',
       },
-      status: [{ episode: 46, chapter: 79, value: 'alive' }],
+      status: [
+        { episode: 46, chapter: 79, value: 'alive' },
+        { episode: 148, chapter: 357, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         { episode: 46, chapter: 79, value: TROUPE },
         {
@@ -1183,7 +1222,10 @@ export const yorknewCity: HunterSaga = {
         it: 'All’asta sotterranea, che la Brigata manda avanti di nascosto, copia gli oggetti e sono le copie a essere vendute.',
         en: 'At the Underground Auction, which the Troupe runs from backstage, he copies the items, and the copies are what gets sold.',
       },
-      status: [{ episode: 53, chapter: 100, value: 'alive' }],
+      status: [
+        { episode: 53, chapter: 100, value: 'alive' },
+        { episode: 148, chapter: 357, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         { episode: 53, chapter: 100, value: TROUPE },
         {
@@ -1240,10 +1282,25 @@ export const yorknewCity: HunterSaga = {
     'chrollo': {
       relationships: yorknewCityRelationships.chrollo,
       chronicle: yorknewCityChronicles.chrollo,
-      role: {
-        it: 'Capo della Brigata Fantasma',
-        en: 'Leader of the Phantom Troupe',
-      },
+      role: [
+        {
+          episode: 54,
+          chapter: 71,
+          value: {
+            it: 'Capo della Brigata Fantasma',
+            en: 'Leader of the Phantom Troupe',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 351,
+          source: 'chapter',
+          value: {
+            it: 'Capo della Brigata Fantasma, Maestro di piano',
+            en: 'Phantom Troupe leader, Floor Master',
+          },
+        },
+      ],
       log: {
         it: 'Riunisce i membri della Brigata a York Shin City e ordina di rubare tutto all’asta sotterranea, dando il permesso di uccidere chiunque si metta in mezzo.',
         en: 'He gathers the Troupe’s members in Yorknew City and orders them to steal everything at the Underground Auction, giving them leave to kill anyone in the way.',

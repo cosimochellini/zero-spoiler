@@ -46,6 +46,34 @@ export const ITALIAN_TITLES = {
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
+    // Kakin phase 1: Italian Wikipedia's named entries, read 2026-11-06.
+    'beyond-netero': 'Personaggi di Hunter × Hunter#Beyond Netero',
+    'benjamin-hui-guo-rou': 'Personaggi di Hunter × Hunter#Benjamin Hoicoro',
+    'camilla-hui-guo-rou': 'Personaggi di Hunter × Hunter#Camilla Hoicoro',
+    'zhang-lei-hui-guo-rou': 'Personaggi di Hunter × Hunter#Chowrai Hoicoro',
+    'tserriednich-hui-guo-rou':
+      'Personaggi di Hunter × Hunter# Tserriednich Hoicoro',
+    'tubeppa-hui-guo-rou': 'Personaggi di Hunter × Hunter# Tsubeppa Hoicoro',
+    'tyson-hui-guo-rou': 'Personaggi di Hunter × Hunter#Tyson Hoicoro',
+    'luzurus-hui-guo-rou': 'Personaggi di Hunter × Hunter#Loozlus Hoicoro',
+    'sale-sale-hui-guo-rou': 'Personaggi di Hunter × Hunter#Saresare Hoicoro',
+    'halkenburg-hui-guo-rou':
+      'Personaggi di Hunter × Hunter#Harkenburg Hoicoro',
+    'kacho-hui-guo-rou': 'Personaggi di Hunter × Hunter#Kachow Hoicoro',
+    'fugetsu-hui-guo-rou': 'Personaggi di Hunter × Hunter#Fugetsu Hoicoro',
+    'momoze-hui-guo-rou': 'Personaggi di Hunter × Hunter#Momoze Hoicoro',
+    'marayam-hui-guo-rou': 'Personaggi di Hunter × Hunter#Marayam Hoicoro',
+    'woble-hui-guo-rou': 'Personaggi di Hunter × Hunter#Woble Hoicoro',
+    'izunavi': 'Personaggi di Hunter × Hunter#Izunabi',
+    'unma-hui-guo-rou': 'Personaggi di Hunter × Hunter#Unma Hoicoro',
+    'duazul-hui-guo-rou': 'Personaggi di Hunter × Hunter#Duazul Hoicoro',
+    'tang-zhao-li-hui-guo-rou':
+      'Personaggi di Hunter × Hunter#Towchowrai Hoicoro',
+    'katrono-hui-guo-rou': 'Personaggi di Hunter × Hunter#Katrono Hoicoro',
+    'swinko-swinko-hui-guo-rou':
+      'Personaggi di Hunter × Hunter#Swinko-swinko Hoicoro',
+    'seiko-hui-guo-rou': 'Personaggi di Hunter × Hunter#Seiko Hoicoro',
+    'zigg-zoldyck': 'Famiglia Zoldick#Zigg',
     'alluka-zoldyck': 'Famiglia Zoldick#Alluka',
     'amane': 'Famiglia Zoldick#Amane',
     'botobai-gigante': 'Associazione Hunter#Botobai Gigante',
@@ -179,6 +207,11 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  // Kakin phase 1: absent from the Italian character, Hunter, Zoldick and
+  // geography lists, and no specific Italian Wikipedia articles (2026-11-06).
+  'curly': 'Curly',
+  'golem': 'Golem',
+  'mark': 'Mark',
   // Election names retained after checking Italian Wikipedia; dub not viewed.
   'beans': 'Beans',
   'cutie-beauty': 'Cutie Beauty',

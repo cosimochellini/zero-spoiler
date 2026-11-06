@@ -20,6 +20,7 @@ export const HUNTER_X_HUNTER_PLACE_WORDS: PlaceWords<HunterVocabulary> = {
   forms: {
     prison: { en: 'Prison', it: 'Prigione' },
     city: { en: 'City', it: 'Città' },
+    continent: { en: 'Continent', it: 'Continente' },
     country: { en: 'Country', it: 'Paese' },
     forest: { en: 'Forest preserve', it: 'Riserva forestale' },
     mountain: { en: 'Mountain', it: 'Montagna' },

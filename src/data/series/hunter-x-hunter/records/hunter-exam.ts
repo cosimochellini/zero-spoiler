@@ -543,6 +543,21 @@ const earlyExam: HunterSaga = {
           chapter: 334,
           value: { it: 'Hunter guarito', en: 'Recovered Hunter' },
         },
+        {
+          episode: 148,
+          chapter: 344,
+          source: 'chapter',
+          value: {
+            it: 'Hunter che non riesce più a usare il Nen',
+            en: 'Hunter unable to use Nen',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 345,
+          source: 'chapter',
+          value: { it: 'Hunter tornato a casa', en: 'Hunter returned home' },
+        },
       ],
       log: {
         it: 'È cresciuto sull’Isola Balena con Myto, che lo cresce da quando era in fasce. Suo padre, Ging Freecss, è un Hunter che non ha mai conosciuto. Myto gli lascia sostenere l’esame solo se pesca il pesce più grosso della palude, sicura che non ci riuscirà; lui ce la fa con la sua canna. Parte con la nave per diventare Hunter e per sapere di più su suo padre.',
@@ -814,6 +829,15 @@ const earlyExam: HunterSaga = {
             en: 'Hunter, medical student',
           },
         },
+        {
+          episode: 148,
+          chapter: 343,
+          source: 'chapter',
+          value: {
+            it: 'Hunter, membro dello Zodiaco',
+            en: 'Hunter, member of the Zodiacs',
+          },
+        },
       ],
       log: {
         it: 'Non vuole dire al capitano perché sostiene l’esame, poi ammette che è per i soldi e per quello che si possono comprare. I modi di Kurapika lo irritano, e quando insulta il suo clan i due salgono in coperta nella tempesta per battersi. Il duello finisce quando Katzo viene sbalzato fuori bordo e Gon si tuffa ad afferrarlo: Leorio e Kurapika prendono Gon per le gambe, e dopo fanno pace.',
@@ -829,6 +853,23 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter',
             it: 'Associazione Hunter, Hunter',
           },
+        },
+        {
+          episode: 148,
+          chapter: 343,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Zodiaco',
+            en: 'Hunter Association, Zodiacs',
+          },
+        },
+      ],
+      epithet: [
+        {
+          episode: 148,
+          chapter: 346,
+          source: 'chapter',
+          value: { it: 'Cinghiale', en: 'Boar' },
         },
       ],
     },
@@ -856,6 +897,24 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Hunter, capo delle guardie del corpo',
             en: 'Hunter, head of the bodyguards',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 343,
+          source: 'chapter',
+          value: {
+            it: 'Hunter, membro dello Zodiaco',
+            en: 'Hunter, member of the Zodiacs',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 350,
+          source: 'chapter',
+          value: {
+            it: 'Hunter, guardia del corpo del quattordicesimo principe',
+            en: 'Hunter, bodyguard of the Fourteenth Prince',
           },
         },
       ],
@@ -892,12 +951,29 @@ const earlyExam: HunterSaga = {
             it: 'Associazione Hunter, Hunter; famiglia Nostrad, capo delle guardie del corpo di Neon',
           },
         },
+        {
+          episode: 148,
+          chapter: 343,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Zodiaco; famiglia Nostrad',
+            en: 'Hunter Association, Zodiacs; Nostrade family',
+          },
+        },
       ],
       origin: [
         {
           episode: 1,
           chapter: 2,
           value: { it: 'Clan dei Kurata', en: 'Kurta clan' },
+        },
+      ],
+      epithet: [
+        {
+          episode: 148,
+          chapter: 346,
+          source: 'chapter',
+          value: { it: 'Topo', en: 'Rat' },
         },
       ],
     },
@@ -1018,7 +1094,15 @@ const earlyExam: HunterSaga = {
         ...greedIslandReturningChronicles.hisoka,
         ...electionChronicles.hisoka,
       ],
-      role: passedExam(3, 5),
+      role: [
+        ...passedExam(3, 5),
+        {
+          episode: 148,
+          chapter: 351,
+          source: 'chapter',
+          value: { it: 'Hunter, Maestro di piano', en: 'Hunter, Floor Master' },
+        },
+      ],
       log: {
         it: 'Tonpa lo indica a Gon come un aspirante da evitare: l’anno prima è stato squalificato per aver attaccato un esaminatore. Si presenta di nuovo all’esame e punisce un uomo che gli va addosso senza chiedere scusa.',
         en: 'Tonpa points him out to Gon as an applicant to avoid: the previous year he was disqualified for attacking an examiner. He returns to the exam and punishes a man who bumps into him without apologizing.',
@@ -1099,6 +1183,24 @@ const earlyExam: HunterSaga = {
           value: {
             it: 'Associazione Hunter, Hunter; aiuta Illumi',
             en: 'Hunter Association, Hunter; helps Illumi',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 351,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; sfidante di Quoll all’Arena Celeste',
+            en: 'Hunter Association, Hunter; Chrollo’s opponent at Heavens Arena',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 357,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; dà la caccia alla Brigata Fantasma',
+            en: 'Hunter Association, Hunter; hunting the Phantom Troupe',
           },
         },
       ],

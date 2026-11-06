@@ -364,6 +364,15 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter Association vice chairman',
           },
         },
+        {
+          episode: 148,
+          chapter: 340,
+          source: 'chapter',
+          value: {
+            it: 'Presidente dell’Associazione Hunter',
+            en: 'Hunter Association chairman',
+          },
+        },
       ],
       log: {
         it: 'Fa scrivere una proposta a ciascuno. Chiede che a estrarla sia qualcuno che non fa parte dello Zodiaco.',
@@ -671,6 +680,15 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             en: 'Hunter Association, Zodiacs',
           },
         },
+        {
+          episode: 148,
+          chapter: 340,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter; squadra di spedizione di Beyond Netero',
+            en: 'Hunter Association; Beyond Netero’s expedition team',
+          },
+        },
       ],
       status: [{ episode: 137, chapter: 321, value: 'alive' }],
       epithet: [
@@ -803,6 +821,15 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: {
             it: 'Associazione Hunter, Zodiaco',
             en: 'Hunter Association, Zodiacs',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 348,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Zodiaco; infiltrato dalla parte di Beyond',
+            en: 'Hunter Association, Zodiacs; infiltrator on Beyond’s side',
           },
         },
       ],
