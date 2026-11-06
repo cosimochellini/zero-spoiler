@@ -47,6 +47,11 @@ export const TITLES = {
     'phinks': 'Phinks Magcub',
     'bonolenov': 'Bonolenov Ndongo',
     'chrollo': 'Chrollo Lucilfer',
+    // Kakin phase 5 (#1138): filed under the name said in chapters 401–420.
+    'balsamilco': 'Balsamilco Might',
+    'hinrigh': 'Hinrigh Biganduffno',
+    'morena': 'Morena Prudo',
+    'onior': 'Onior Longbao',
     // The wiki's arc titles say more than an arc's name may, since the name
     // is shown at every bookmark (#758): the archive's names are neutral.
     'election-arc': '13th Hunter Chairman Election arc',

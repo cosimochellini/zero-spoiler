@@ -74,6 +74,10 @@ export const ITALIAN_TITLES = {
     'swinko-swinko-hui-guo-rou':
       'Personaggi di Hunter × Hunter#Swinko-swinko Hoicoro',
     'seiko-hui-guo-rou': 'Personaggi di Hunter × Hunter#Seiko Hoicoro',
+    // Kakin phase 5: the same list, read 2026-11-06.
+    'oito-hui-guo-rou': 'Personaggi di Hunter × Hunter#Oito Hoicoro',
+    'morena': 'Personaggi di Hunter × Hunter#Morena Prudo',
+    'onior': 'Personaggi di Hunter × Hunter#Onior Longbao',
     'zigg-zoldyck': 'Famiglia Zoldick#Zigg',
     'alluka-zoldyck': 'Famiglia Zoldick#Alluka',
     'amane': 'Famiglia Zoldick#Amane',

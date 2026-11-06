@@ -7,6 +7,26 @@
  * @type {Record<string, string>}
  */
 export const KAKIN_NAMES_KEPT = {
+  // Kakin phase 5: absent from the same Italian lists (2026-11-06).
+  'makaha': 'Makaha',
+  'hashito': 'Hashito',
+  'sakata': 'Sakata',
+  'musse': 'Musse',
+  'balsamilco': 'Balsamilco',
+  'worio-bay': 'Worio Bay',
+  'vict': 'Vict',
+  'shikaku': 'Shikaku',
+  'sumidori': 'Sumidori',
+  'cleapatro': 'Cleapatro',
+  'hinrigh': 'Hinrigh',
+  'risnorth': 'Risnorth',
+  'kako': 'Kako',
+  'bill': 'Bill',
+  'shimanu': 'Shimanu',
+  'rihan': 'Rihan',
+  'saquelle': 'Saquelle',
+  'kanjidol': 'Kanjidol',
+  'coventoba': 'Coventoba',
   // Kakin phase 4: absent from the same Italian lists (2026-11-06).
   'tajao': 'Tajao',
   'famule': 'Famule',
