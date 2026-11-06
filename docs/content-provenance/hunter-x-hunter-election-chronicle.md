@@ -51,6 +51,11 @@ this verification.
 5. Clarified that Knov and Morel discuss how to use the parking lot by phone,
    rather than suggesting that their conversation takes place there.
 
+6. Fresh PR review found English forms in Italian marker labels and plain text.
+   Replaced Morel, Milluki, Canary and Gotoh with the filed dub forms Morau,
+   Milki, Canaria and Goto throughout the new Italian titles and bodies. Added a
+   regression assertion against those English forms in the new Italian copy.
+
 All remaining markers resolve to existing characters and respect episode,
 chapter and source restrictions. Gon and Ging’s completed treetop conversation
 waits for chapter 339, which contains the license return and remaining advice.

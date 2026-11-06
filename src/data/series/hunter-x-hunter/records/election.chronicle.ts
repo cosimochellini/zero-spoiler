@@ -295,7 +295,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'La ricerca dell’Hunter', en: 'Searching for the Hunter' },
         body: {
-          it: '[[morel-mackernasey|Morel]] avverte Bushidora del pericolo rappresentato da [[illumi|Illumi]] e dalle persone che controlla con gli aghi. Bushidora si accorda con [[teradein-neutral|Teradain]] e [[loupe-highland|Lupe]] per cercarlo e recuperare le vittime. I tre affidano agli Hunter il controllo dei dirigibili e sostengono che l’esame debba impedire l’ingresso di persone come Illumi.',
+          it: '[[morel-mackernasey|Morau]] avverte Bushidora del pericolo rappresentato da [[illumi|Illumi]] e dalle persone che controlla con gli aghi. Bushidora si accorda con [[teradein-neutral|Teradain]] e [[loupe-highland|Lupe]] per cercarlo e recuperare le vittime. I tre affidano agli Hunter il controllo dei dirigibili e sostengono che l’esame debba impedire l’ingresso di persone come Illumi.',
           en: '[[morel-mackernasey|Morel]] warns Bushidora about [[illumi|Illumi]] and the people controlled by his needles. Bushidora works with [[teradein-neutral|Teradein]] and [[loupe-highland|Loupe]] to find him and recover his victims. They assign Hunters to watch the airships and argue that the exam should prevent people like Illumi from joining the Association.',
         },
       },
@@ -407,7 +407,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Organizzare la ricerca', en: 'Organizing the search' },
         body: {
-          it: 'Lupe si unisce a [[teradein-neutral|Teradain]] e [[bushidora-ambitious|Bushidora]] dopo l’avvertimento di [[morel-mackernasey|Morel]]. Devono cercare [[illumi|Illumi]] e recuperare le persone controllate dai suoi aghi. Il gruppo manda altri Hunter presso i dirigibili e discute la necessità di rendere più severo l’esame, per evitare che simili aggressori ottengano la licenza.',
+          it: 'Lupe si unisce a [[teradein-neutral|Teradain]] e [[bushidora-ambitious|Bushidora]] dopo l’avvertimento di [[morel-mackernasey|Morau]]. Devono cercare [[illumi|Illumi]] e recuperare le persone controllate dai suoi aghi. Il gruppo manda altri Hunter presso i dirigibili e discute la necessità di rendere più severo l’esame, per evitare che simili aggressori ottengano la licenza.',
           en: 'Loupe joins [[teradein-neutral|Teradein]] and [[bushidora-ambitious|Bushidora]] after [[morel-mackernasey|Morel]]’s warning. They must find [[illumi|Illumi]] and recover the people controlled by his needles. The group sends other Hunters to the airships and discusses making the exam stricter to prevent attackers like him from obtaining a license.',
         },
       },
@@ -464,7 +464,7 @@ export const electionChronicles = {
           en: 'Stopping the needle user',
         },
         body: {
-          it: 'Teradain riceve da [[morel-mackernasey|Morel]] le informazioni su [[illumi|Illumi]] e sulle persone controllate dagli aghi. Con [[bushidora-ambitious|Bushidora]] e [[loupe-highland|Lupe]] organizza la ricerca, dando priorità al recupero delle vittime. Il gruppo manda altri Hunter a controllare i dirigibili e collega il caso alla propria richiesta di cambiare l’esame dell’Associazione.',
+          it: 'Teradain riceve da [[morel-mackernasey|Morau]] le informazioni su [[illumi|Illumi]] e sulle persone controllate dagli aghi. Con [[bushidora-ambitious|Bushidora]] e [[loupe-highland|Lupe]] organizza la ricerca, dando priorità al recupero delle vittime. Il gruppo manda altri Hunter a controllare i dirigibili e collega il caso alla propria richiesta di cambiare l’esame dell’Associazione.',
           en: 'Teradein receives [[morel-mackernasey|Morel]]’s information about [[illumi|Illumi]] and the people controlled by needles. With [[bushidora-ambitious|Bushidora]] and [[loupe-highland|Loupe]], he organizes a search that prioritizes recovering the victims. The group sends Hunters to watch the airships and links the case to its demand for changes to the Association’s exam.',
         },
       },
@@ -611,7 +611,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'La visita alla tenuta', en: 'A visit to the estate' },
         body: {
-          it: 'Muna visita la tenuta degli Zoldick e fotografa il paesaggio. [[milluki|Milluki]] lo accompagna insieme a [[alluka-zoldyck|Alluka]]. Quando la bambina gli rivolge delle richieste, Milluki gli dice di rispondere sempre di no. La visita fa parte degli esperimenti con cui la famiglia cerca di capire il funzionamento del suo potere.',
+          it: 'Muna visita la tenuta degli Zoldick e fotografa il paesaggio. [[milluki|Milki]] lo accompagna insieme a [[alluka-zoldyck|Alluka]]. Quando la bambina gli rivolge delle richieste, Milki gli dice di rispondere sempre di no. La visita fa parte degli esperimenti con cui la famiglia cerca di capire il funzionamento del suo potere.',
           en: 'Muna visits the Zoldyck estate and takes photographs of the scenery. [[milluki|Milluki]] accompanies him with [[alluka-zoldyck|Alluka]]. When the girl makes requests, Milluki tells him to keep saying no. The visit is part of the family’s experiments to understand how her power works and what happens when requests are refused.',
         },
       },
@@ -638,7 +638,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Raggiungere Killua', en: 'Catching up with Killua' },
         body: {
-          it: 'Tsubone segue [[killua|Killua]] e [[alluka-zoldyck|Alluka]] mentre fuggono dalla scorta. Quando la velocità del ragazzo diventa troppo alta, chiama [[amane|Amane]] e [[canary|Canary]] e si trasforma in una motocicletta alimentata dalla loro aura. Lo raggiungono sulla strada, ma Killua torna nel bosco e le costringe a prevedere la sua destinazione.',
+          it: 'Tsubone segue [[killua|Killua]] e [[alluka-zoldyck|Alluka]] mentre fuggono dalla scorta. Quando la velocità del ragazzo diventa troppo alta, chiama [[amane|Amane]] e [[canary|Canaria]] e si trasforma in una motocicletta alimentata dalla loro aura. Lo raggiungono sulla strada, ma Killua torna nel bosco e le costringe a prevedere la sua destinazione.',
           en: 'Tsubone follows [[killua|Killua]] and [[alluka-zoldyck|Alluka]] as they escape the escort. When the boy becomes too fast, she calls [[amane|Amane]] and [[canary|Canary]] and transforms into a motorcycle powered by their aura. They catch up on the road, but Killua returns to the forest, forcing them to predict his destination.',
         },
       },
@@ -662,7 +662,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'L’incarico di scorta', en: 'The escort assignment' },
         body: {
-          it: 'Amane si presenta a [[canary|Canary]] prima della partenza. [[silva|Silva]] incarica lei e [[tsubone|Tsubone]] di accompagnare [[killua|Killua]] e [[alluka-zoldyck|Alluka]]. La scorta deve rispettare le restrizioni imposte dalla famiglia e riportare Killua a casa se le viola. Anche [[gotoh|Gotoh]] e Canary partecipano al viaggio verso l’ospedale.',
+          it: 'Amane si presenta a [[canary|Canaria]] prima della partenza. [[silva|Silva]] incarica lei e [[tsubone|Tsubone]] di accompagnare [[killua|Killua]] e [[alluka-zoldyck|Alluka]]. La scorta deve rispettare le restrizioni imposte dalla famiglia e riportare Killua a casa se le viola. Anche [[gotoh|Goto]] e Canaria partecipano al viaggio verso l’ospedale.',
           en: 'Amane introduces herself to [[canary|Canary]] before they leave. [[silva|Silva]] assigns her and [[tsubone|Tsubone]] to accompany [[killua|Killua]] and [[alluka-zoldyck|Alluka]]. The escort must enforce the family’s restrictions and take Killua home if he breaks them. [[gotoh|Gotoh]] and Canary also join the journey toward the hospital where his friend is being treated.',
         },
       },
@@ -676,7 +676,7 @@ export const electionChronicles = {
           en: 'The pursuit to the airport',
         },
         body: {
-          it: 'Con [[canary|Canary]], Amane usa la propria aura per alimentare [[tsubone|Tsubone]], trasformata in motocicletta. Raggiungono [[killua|Killua]], ma lui si sottrae ancora alla scorta. Lo aspettano all’aeroporto e ricevono l’ordine di preparare più dirigibili. Killua parte con [[alluka-zoldyck|Alluka]] mentre loro si occupano delle prenotazioni, provocando la rabbia di Amane.',
+          it: 'Con [[canary|Canaria]], Amane usa la propria aura per alimentare [[tsubone|Tsubone]], trasformata in motocicletta. Raggiungono [[killua|Killua]], ma lui si sottrae ancora alla scorta. Lo aspettano all’aeroporto e ricevono l’ordine di preparare più dirigibili. Killua parte con [[alluka-zoldyck|Alluka]] mentre loro si occupano delle prenotazioni, provocando la rabbia di Amane.',
           en: 'With [[canary|Canary]], Amane uses her aura to power [[tsubone|Tsubone]]’s motorcycle form. They catch up with [[killua|Killua]], but he escapes the escort again. They wait at the airport and receive orders to prepare several airships. Killua leaves with [[alluka-zoldyck|Alluka]] while they handle the bookings, angering Amane.',
         },
       },
@@ -687,7 +687,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Davanti alla tomba', en: 'At the graveside' },
         body: {
-          it: 'Amane si trova con [[canary|Canary]] alla tomba di [[gotoh|Gotoh]]. Vede poi il maggiordomo comparire vivo davanti a loro e non capisce come sia possibile. L’uomo rivela di essere il figlio dei [[kiriko|Kiriko]], che ne ha assunto l’aspetto. La morte di Gotoh può così restare nascosta a [[killua|Killua]] e [[alluka-zoldyck|Alluka]].',
+          it: 'Amane si trova con [[canary|Canaria]] alla tomba di [[gotoh|Goto]]. Vede poi il maggiordomo comparire vivo davanti a loro e non capisce come sia possibile. L’uomo rivela di essere il figlio dei [[kiriko|Kiriko]], che ne ha assunto l’aspetto. La morte di Goto può così restare nascosta a [[killua|Killua]] e [[alluka-zoldyck|Alluka]].',
           en: 'Amane stands with [[canary|Canary]] at [[gotoh|Gotoh]]’s grave. She then sees the butler appear alive before them and cannot understand how this is possible. The man reveals that he is the [[kiriko|Kiriko]] son, wearing Gotoh’s appearance. The death can therefore remain hidden from [[killua|Killua]] and [[alluka-zoldyck|Alluka]].',
         },
       },
@@ -700,7 +700,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'L’autista controllato', en: 'The controlled driver' },
         body: {
-          it: '[[killua|Killua]] chiede a [[canary|Canary]] di far preparare delle auto a Hishita. Quando arriva con [[alluka-zoldyck|Alluka]], lo trova in attesa per condurli in ospedale. Il veicolo viene circondato dalle persone controllate con gli aghi. Hishita rifiuta di ripartire senza l’ordine di [[illumi|Illumi]], rivelando di essere caduto sotto il suo controllo.',
+          it: '[[killua|Killua]] chiede a [[canary|Canaria]] di far preparare delle auto a Hishita. Quando arriva con [[alluka-zoldyck|Alluka]], lo trova in attesa per condurli in ospedale. Il veicolo viene circondato dalle persone controllate con gli aghi. Hishita rifiuta di ripartire senza l’ordine di [[illumi|Illumi]], rivelando di essere caduto sotto il suo controllo.',
           en: '[[killua|Killua]] asks [[canary|Canary]] to have Hishita prepare cars. When he arrives with [[alluka-zoldyck|Alluka]], Hishita is waiting to drive them to the hospital. People controlled by needles surround the vehicle. Hishita refuses to move without [[illumi|Illumi]]’s permission, revealing that he too has fallen under Illumi’s control.',
         },
       },
@@ -793,7 +793,7 @@ export const electionChronicles = {
           en: 'Hunters against the needles',
         },
         body: {
-          it: 'Killua raggiunge l’aeroporto e chiede più dirigibili per confondere [[illumi|Illumi]]. Parte con [[alluka-zoldyck|Alluka]] e telefona a [[morel-mackernasey|Morel]]. Prevede che Illumi userà persone controllate dagli aghi e propone di coinvolgere gli Hunter che vogliono cambiare le regole dell’Associazione. Morel accetta di contattarli e organizzare la ricerca.',
+          it: 'Killua raggiunge l’aeroporto e chiede più dirigibili per confondere [[illumi|Illumi]]. Parte con [[alluka-zoldyck|Alluka]] e telefona a [[morel-mackernasey|Morau]]. Prevede che Illumi userà persone controllate dagli aghi e propone di coinvolgere gli Hunter che vogliono cambiare le regole dell’Associazione. Morau accetta di contattarli e organizzare la ricerca.',
           en: 'Killua reaches the airport and requests several airships to confuse [[illumi|Illumi]]. He leaves with [[alluka-zoldyck|Alluka]] and calls [[morel-mackernasey|Morel]]. He predicts that Illumi will use people controlled by needles and suggests involving Hunters who want to change the Association’s rules. Morel agrees to contact them and arrange a search.',
         },
       },
@@ -875,7 +875,7 @@ export const electionChronicles = {
           en: 'The computer and the rules',
         },
         body: {
-          it: 'Milluki osserva [[killua|Killua]] e [[alluka-zoldyck|Alluka]] attraverso le telecamere. Ha usato il potere della sorella per ottenere un computer e ripete a [[silva|Silva]] le regole che conosce. Quando Killua formula un desiderio con due esiti, Milluki ammette di non sapere che fosse possibile e vede il padre lasciarli partire.',
+          it: 'Milki osserva [[killua|Killua]] e [[alluka-zoldyck|Alluka]] attraverso le telecamere. Ha usato il potere della sorella per ottenere un computer e ripete a [[silva|Silva]] le regole che conosce. Quando Killua formula un desiderio con due esiti, Milki ammette di non sapere che fosse possibile e vede il padre lasciarli partire.',
           en: 'Milluki watches [[killua|Killua]] and [[alluka-zoldyck|Alluka]] through the cameras. He has used his sister’s power to obtain a computer and repeats the rules he knows to [[silva|Silva]]. When Killua states a wish with two possible outcomes, Milluki admits that he did not know this was possible and sees his father let them leave.',
         },
       },
@@ -935,9 +935,9 @@ export const electionChronicles = {
       episode: 142,
       chapter: 327,
       value: {
-        title: { it: 'L’agguato a Gotoh', en: 'The ambush on Gotoh' },
+        title: { it: 'L’agguato a Goto', en: 'The ambush on Gotoh' },
         body: {
-          it: 'Hisoka attacca [[gotoh|Gotoh]] e le altre persone della scorta nel bosco. Gotoh manda avanti le compagne e lo affronta con monete lanciate come proiettili. Hisoka sfrutta la propria aura elastica per sottrarsi ai colpi e restituire le monete da più direzioni. Durante quella distrazione, raggiunge Gotoh e gli taglia la gola.',
+          it: 'Hisoka attacca [[gotoh|Goto]] e le altre persone della scorta nel bosco. Goto manda avanti le compagne e lo affronta con monete lanciate come proiettili. Hisoka sfrutta la propria aura elastica per sottrarsi ai colpi e restituire le monete da più direzioni. Durante quella distrazione, raggiunge Goto e gli taglia la gola.',
           en: 'Hisoka attacks [[gotoh|Gotoh]] and the other escorts in the forest. Gotoh sends his companions ahead and fights with coins fired like bullets. Hisoka uses his elastic aura to evade the attacks and return the coins from several directions. During that distraction, he reaches Gotoh and cuts his throat.',
         },
       },
@@ -950,7 +950,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Il pugno contro Ging', en: 'Punching Ging' },
         body: {
-          it: 'Leorio cerca notizie di [[gon-freecss|Gon]] e parla con [[gotoh|Gotoh]] delle condizioni per le cure. Poi raggiunge la riunione degli Hunter e chiede a [[ging-freecss|Ging]] perché non abbia visitato suo figlio. Le risposte lo fanno arrabbiare: colpisce il podio e il pugno attraversa la distanza fino al volto di Ging. I presenti applaudono.',
+          it: 'Leorio cerca notizie di [[gon-freecss|Gon]] e parla con [[gotoh|Goto]] delle condizioni per le cure. Poi raggiunge la riunione degli Hunter e chiede a [[ging-freecss|Ging]] perché non abbia visitato suo figlio. Le risposte lo fanno arrabbiare: colpisce il podio e il pugno attraversa la distanza fino al volto di Ging. I presenti applaudono.',
           en: 'Leorio seeks news of [[gon-freecss|Gon]] and speaks with [[gotoh|Gotoh]] about the conditions for his treatment. He then goes to the Hunters’ meeting and asks [[ging-freecss|Ging]] why he has not visited his son. Angered by the answers, he strikes the podium, sending a punch across the room into Ging’s face. The audience applauds.',
         },
       },
@@ -972,7 +972,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Il ritorno di Gon', en: 'Gon returns' },
         body: {
-          it: 'Leorio resta in corsa contro [[pariston-hill|Pariston]] e ribadisce che vuole salvare [[gon-freecss|Gon]]. [[morel-mackernasey|Morel]] entra nella sala e Gon appare guarito insieme agli amici. Leorio corre ad abbracciarlo. La ragione che lo aveva spinto a candidarsi viene meno, mentre gli Hunter applaudono il ragazzo e festeggiano il suo ritorno.',
+          it: 'Leorio resta in corsa contro [[pariston-hill|Pariston]] e ribadisce che vuole salvare [[gon-freecss|Gon]]. [[morel-mackernasey|Morau]] entra nella sala e Gon appare guarito insieme agli amici. Leorio corre ad abbracciarlo. La ragione che lo aveva spinto a candidarsi viene meno, mentre gli Hunter applaudono il ragazzo e festeggiano il suo ritorno.',
           en: 'Leorio remains in the race against [[pariston-hill|Pariston]] and repeats that he wants to save [[gon-freecss|Gon]]. [[morel-mackernasey|Morel]] enters the hall, and a healed Gon appears with his friends. Leorio runs to embrace him. The reason that drove him to stand for chairman falls away as the Hunters applaud Gon’s return.',
         },
       },
@@ -1011,7 +1011,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Una stanza per le cure', en: 'A room for treatment' },
         body: {
-          it: '[[gotoh|Gotoh]] chiede di svuotare l’ospedale per mantenere segreto il potere di [[alluka-zoldyck|Alluka]]. Morel interviene nella telefonata e propone una stanza separata nel parcheggio per [[gon-freecss|Gon]]. Chiama [[knov|Nobu]] per organizzare lo spazio. I due non conoscono ancora il funzionamento del potere, ma decidono di fidarsi di [[killua|Killua]].',
+          it: '[[gotoh|Goto]] chiede di svuotare l’ospedale per mantenere segreto il potere di [[alluka-zoldyck|Alluka]]. Morau interviene nella telefonata e propone una stanza separata nel parcheggio per [[gon-freecss|Gon]]. Chiama [[knov|Nobu]] per organizzare lo spazio. I due non conoscono ancora il funzionamento del potere, ma decidono di fidarsi di [[killua|Killua]].',
           en: '[[gotoh|Gotoh]] asks for the hospital to be evacuated to keep [[alluka-zoldyck|Alluka]]’s power secret. Morel takes over the call and proposes a separate room in the parking lot for [[gon-freecss|Gon]]. He calls [[knov|Knov]] to arrange the space. They do not yet understand the power but decide to trust [[killua|Killua]].',
         },
       },
@@ -1022,7 +1022,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Il brindisi per Netero', en: 'A toast to Netero' },
         body: {
-          it: 'Dopo la guarigione di [[gon-freecss|Gon]], Morel ritrova [[knov|Nobu]] nella sede dell’Associazione. Riprendono la questione della scommessa fatta prima dell’ingresso nell’NGL e usano il denaro per comprare una bottiglia di champagne. Insieme brindano davanti all’immagine di [[netero|Netero]], ricordando il presidente che hanno accompagnato nella missione contro le formichimere.',
+          it: 'Dopo la guarigione di [[gon-freecss|Gon]], Morau ritrova [[knov|Nobu]] nella sede dell’Associazione. Riprendono la questione della scommessa fatta prima dell’ingresso nell’NGL e usano il denaro per comprare una bottiglia di champagne. Insieme brindano davanti all’immagine di [[netero|Netero]], ricordando il presidente che hanno accompagnato nella missione contro le formichimere.',
           en: 'After [[gon-freecss|Gon]]’s recovery, Morel meets [[knov|Knov]] at the Association’s headquarters. They return to the bet made before entering NGL and use the money to buy a bottle of champagne. Together they raise a toast before [[netero|Netero]]’s image, remembering the chairman they accompanied on the mission against the Chimera Ants.',
         },
       },
@@ -1038,7 +1038,7 @@ export const electionChronicles = {
           en: 'Preparing space for Gon',
         },
         body: {
-          it: '[[morel-mackernasey|Morel]] chiama Nobu per organizzare una stanza separata in cui curare [[gon-freecss|Gon]]. La scorta di [[killua|Killua]] vuole mantenere segreto il potere di [[alluka-zoldyck|Alluka]], ma svuotare l’intero ospedale non è praticabile. I due Hunter discutono come usare il parcheggio e scelgono di fidarsi del tentativo di Killua.',
+          it: '[[morel-mackernasey|Morau]] chiama Nobu per organizzare una stanza separata in cui curare [[gon-freecss|Gon]]. La scorta di [[killua|Killua]] vuole mantenere segreto il potere di [[alluka-zoldyck|Alluka]], ma svuotare l’intero ospedale non è praticabile. I due Hunter discutono come usare il parcheggio e scelgono di fidarsi del tentativo di Killua.',
           en: '[[morel-mackernasey|Morel]] calls Knov to arrange a separate room for [[gon-freecss|Gon]]’s treatment. [[killua|Killua]]’s escort wants to keep [[alluka-zoldyck|Alluka]]’s power secret, but evacuating the entire hospital is impractical. The two Hunters discuss using the parking lot and choose to trust Killua’s attempt to save his friend.',
         },
       },
@@ -1052,7 +1052,7 @@ export const electionChronicles = {
           en: 'A bottle for the chairman',
         },
         body: {
-          it: 'Nobu incontra [[morel-mackernasey|Morel]] alla sede dell’Associazione dopo la guarigione di [[gon-freecss|Gon]]. Il denaro della scommessa fatta prima della missione viene usato per comprare una costosa bottiglia di champagne. I due la aprono davanti all’immagine di [[netero|Netero]] e brindano al presidente morto durante lo scontro con le formichimere.',
+          it: 'Nobu incontra [[morel-mackernasey|Morau]] alla sede dell’Associazione dopo la guarigione di [[gon-freecss|Gon]]. Il denaro della scommessa fatta prima della missione viene usato per comprare una costosa bottiglia di champagne. I due la aprono davanti all’immagine di [[netero|Netero]] e brindano al presidente morto durante lo scontro con le formichimere.',
           en: 'Knov meets [[morel-mackernasey|Morel]] at the Association’s headquarters after [[gon-freecss|Gon]] recovers. The money from the bet made before the mission is used to buy an expensive bottle of champagne. They open it before [[netero|Netero]]’s image and raise a toast to the chairman who died during the battle against the Chimera Ants.',
         },
       },
@@ -1068,7 +1068,7 @@ export const electionChronicles = {
           en: 'Accompanying the siblings',
         },
         body: {
-          it: '[[killua|Killua]] chiede che Canary accompagni lui e [[alluka-zoldyck|Alluka]] perché vuole affidare la sorella alle sue cure. [[gotoh|Gotoh]] accetta la sua presenza nella scorta. Si uniscono anche [[tsubone|Tsubone]] e [[amane|Amane]], incaricate da [[silva|Silva]] di sorvegliare il viaggio e riportare Killua a casa se viola le restrizioni della famiglia.',
+          it: '[[killua|Killua]] chiede che Canaria accompagni lui e [[alluka-zoldyck|Alluka]] perché vuole affidare la sorella alle sue cure. [[gotoh|Goto]] accetta la sua presenza nella scorta. Si uniscono anche [[tsubone|Tsubone]] e [[amane|Amane]], incaricate da [[silva|Silva]] di sorvegliare il viaggio e riportare Killua a casa se viola le restrizioni della famiglia.',
           en: '[[killua|Killua]] asks Canary to accompany him and [[alluka-zoldyck|Alluka]] because he wants her to look after his sister. [[gotoh|Gotoh]] accepts her place in the escort. [[tsubone|Tsubone]] and [[amane|Amane]] also join them under [[silva|Silva]]’s orders to supervise the journey and take Killua home if he breaks the family’s restrictions.',
         },
       },
@@ -1077,9 +1077,9 @@ export const electionChronicles = {
       episode: 148,
       chapter: 339,
       value: {
-        title: { it: 'La tomba di Gotoh', en: 'Gotoh’s grave' },
+        title: { it: 'La tomba di Goto', en: 'Gotoh’s grave' },
         body: {
-          it: 'Canary e [[amane|Amane]] si recano alla tomba di [[gotoh|Gotoh]] nella tenuta degli Zoldick. Quando un uomo con il suo aspetto compare davanti a loro, Amane rimane sorpresa. Si tratta del figlio dei [[kiriko|Kiriko]], capace di cambiare forma. La sostituzione permette di non rivelare la morte del maggiordomo a [[killua|Killua]] e [[alluka-zoldyck|Alluka]].',
+          it: 'Canaria e [[amane|Amane]] si recano alla tomba di [[gotoh|Goto]] nella tenuta degli Zoldick. Quando un uomo con il suo aspetto compare davanti a loro, Amane rimane sorpresa. Si tratta del figlio dei [[kiriko|Kiriko]], capace di cambiare forma. La sostituzione permette di non rivelare la morte del maggiordomo a [[killua|Killua]] e [[alluka-zoldyck|Alluka]].',
           en: 'Canary and [[amane|Amane]] visit [[gotoh|Gotoh]]’s grave at the Zoldyck estate. When a man with his appearance stands before them, Amane is surprised. He is the shapeshifting [[kiriko|Kiriko]] son. The replacement allows the butler’s death to remain concealed from [[killua|Killua]] and [[alluka-zoldyck|Alluka]] after they have left the estate.',
         },
       },
@@ -1095,7 +1095,7 @@ export const electionChronicles = {
           en: 'Sending the escort ahead',
         },
         body: {
-          it: 'Durante il viaggio, [[killua|Killua]] si allontana con [[alluka-zoldyck|Alluka]] per sfuggire al controllo della scorta. [[hisoka|Hisoka]] raggiunge Gotoh, [[canary|Canary]] e [[amane|Amane]] e attacca con le carte. Gotoh le respinge lanciando monete. Ordina alle due donne di seguire Killua, assumendosi il compito di affrontare da solo l’avversario.',
+          it: 'Durante il viaggio, [[killua|Killua]] si allontana con [[alluka-zoldyck|Alluka]] per sfuggire al controllo della scorta. [[hisoka|Hisoka]] raggiunge Goto, [[canary|Canaria]] e [[amane|Amane]] e attacca con le carte. Goto le respinge lanciando monete. Ordina alle due donne di seguire Killua, assumendosi il compito di affrontare da solo l’avversario.',
           en: 'During the journey, [[killua|Killua]] escapes the escort with [[alluka-zoldyck|Alluka]]. [[hisoka|Hisoka]] reaches Gotoh, [[canary|Canary]], and [[amane|Amane]] and attacks with his cards. Gotoh knocks them aside with coins. He orders the two women to follow Killua, taking responsibility for fighting the attacker alone while they continue their mission.',
         },
       },
@@ -1106,7 +1106,7 @@ export const electionChronicles = {
       value: {
         title: { it: 'Lo scontro nel bosco', en: 'The fight in the forest' },
         body: {
-          it: 'Gotoh affronta [[hisoka|Hisoka]] con le monete, aggiungendo rotazione ai colpi per torcergli le braccia. L’avversario usa la propria aura elastica per liberarsi e spostarsi tra gli alberi. Rimanda indietro le monete da più direzioni. Mentre Gotoh le respinge, Hisoka gli appare sopra la testa e lo uccide tagliandogli la gola.',
+          it: 'Goto affronta [[hisoka|Hisoka]] con le monete, aggiungendo rotazione ai colpi per torcergli le braccia. L’avversario usa la propria aura elastica per liberarsi e spostarsi tra gli alberi. Rimanda indietro le monete da più direzioni. Mentre Goto le respinge, Hisoka gli appare sopra la testa e lo uccide tagliandogli la gola.',
           en: 'Gotoh fights [[hisoka|Hisoka]] with coins, adding spin to twist his opponent’s arms. Hisoka uses his elastic aura to break free and move between the trees. He sends the coins back from several directions. While Gotoh knocks them away, Hisoka appears above him and kills him by cutting his throat.',
         },
       },
@@ -1182,9 +1182,9 @@ export const electionChronicles = {
       episode: 148,
       chapter: 339,
       value: {
-        title: { it: 'L’aspetto di Gotoh', en: 'Taking Gotoh’s appearance' },
+        title: { it: 'L’aspetto di Goto', en: 'Taking Gotoh’s appearance' },
         body: {
-          it: 'Alla tenuta degli Zoldick, [[canary|Canary]] e [[amane|Amane]] si trovano davanti alla tomba di [[gotoh|Gotoh]]. Amane resta sorpresa quando lo vede comparire vivo. È invece il figlio dei Kiriko, che ne assume l’aspetto. La sua presenza permette di mantenere nascosta la morte del maggiordomo a [[killua|Killua]] e [[alluka-zoldyck|Alluka]].',
+          it: 'Alla tenuta degli Zoldick, [[canary|Canaria]] e [[amane|Amane]] si trovano davanti alla tomba di [[gotoh|Goto]]. Amane resta sorpresa quando lo vede comparire vivo. È invece il figlio dei Kiriko, che ne assume l’aspetto. La sua presenza permette di mantenere nascosta la morte del maggiordomo a [[killua|Killua]] e [[alluka-zoldyck|Alluka]].',
           en: 'At the Zoldyck estate, [[canary|Canary]] and [[amane|Amane]] stand at [[gotoh|Gotoh]]’s grave. Amane is startled when he appears alive. He is actually the Kiriko son, taking the butler’s appearance. His presence allows Gotoh’s death to remain hidden from [[killua|Killua]] and [[alluka-zoldyck|Alluka]] after their departure from the estate.',
         },
       },

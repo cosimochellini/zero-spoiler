@@ -322,3 +322,15 @@ function chronicleTitles(owner: Entity, reader: Reader): string[] {
     ...chronicleRestOf(owner.id, reader),
   ].map((entry) => entry.title)
 }
+
+describe('Election copy', () => {
+  it('keeps the established Italian dub names in titles and prose', () => {
+    for (const stories of Object.values(electionChronicles)) {
+      for (const { value } of stories) {
+        expect(`${value.title.it} ${value.body.it}`).not.toMatch(
+          /\b(?:Morel|Milluki|Canary|Gotoh)\b/u,
+        )
+      }
+    }
+  })
+})
