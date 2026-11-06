@@ -98,6 +98,7 @@ const EXPECTED: Record<string, Expected> = {
   // 137–148 and chapter 319–339; #914 adds 91 chronicles for its new and returning cast.
   // Kakin phase 1 (#1134) adds 26 manga-only characters and one place, chapter 340–357.
   // Phase 2 (#1135) adds 19 characters and the Black Whale, chapter 358–370.
+  // Phase 3 (#1136) adds four characters, chapter 371–383.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -116,14 +117,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 394,
+      affiliations: 399,
       arcs: 7,
-      characters: 228,
+      characters: 232,
       chronicles: 691,
       linkedOrigins: 8,
       places: 41,
-      statuses: 305,
-      timelines: 956,
+      statuses: 312,
+      timelines: 968,
       visits: 0,
     },
     namesSaidEarly: true,

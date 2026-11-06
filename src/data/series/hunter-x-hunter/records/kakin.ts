@@ -1,5 +1,6 @@
 import { KAKIN_PHASE_ONE } from './kakin-phase-1'
 import { KAKIN_PHASE_TWO } from './kakin-phase-2'
+import { KAKIN_PHASE_THREE } from './kakin-phase-3'
 import { KAKIN_PLACE_ENTRIES } from './kakin-places'
 import type { HunterSaga } from './saga'
 
@@ -14,7 +15,11 @@ import type { HunterSaga } from './saga'
  */
 export const kakin: HunterSaga = {
   name: { it: 'Cakin', en: 'Kakin' },
-  dossiers: { ...KAKIN_PHASE_ONE.dossiers, ...KAKIN_PHASE_TWO.dossiers },
+  dossiers: {
+    ...KAKIN_PHASE_ONE.dossiers,
+    ...KAKIN_PHASE_TWO.dossiers,
+    ...KAKIN_PHASE_THREE.dossiers,
+  },
   entries: [
     {
       id: 'kakin-arc',
@@ -31,6 +36,7 @@ export const kakin: HunterSaga = {
     },
     ...KAKIN_PHASE_ONE.entries,
     ...KAKIN_PHASE_TWO.entries,
+    ...KAKIN_PHASE_THREE.entries,
     ...KAKIN_PLACE_ENTRIES,
   ],
 }

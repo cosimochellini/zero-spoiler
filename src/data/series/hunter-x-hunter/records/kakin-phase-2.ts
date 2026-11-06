@@ -712,6 +712,7 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     myuhan: {
+      // Found killed by Silent Majority the morning after the class (376, #1136).
       role: { it: 'Guardia del quarto principe', en: 'Fourth Prince’s guard' },
       log: {
         it: 'Dà il proprio nome quando l’insegnante glielo chiede. Supera apposta il limite segnato sul pavimento per provocarlo.',
@@ -730,6 +731,7 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
       status: [
         { episode: 148, chapter: 370, source: 'chapter', value: 'alive' },
+        { episode: 148, chapter: 376, source: 'chapter', value: 'deceased' },
       ],
       relationships: [
         {

@@ -112,6 +112,16 @@ export const finalPhase: HunterSaga = {
             it: 'Associazione Hunter, Hunter; ingaggiato da Quoll',
           },
         },
+        // Chrollo has the Troupe's newest member introduce himself (377, #1136).
+        {
+          episode: 148,
+          chapter: 377,
+          source: 'chapter',
+          value: {
+            en: 'Hunter Association, Hunter; Phantom Troupe',
+            it: 'Associazione Hunter, Hunter; Brigata Fantasma',
+          },
+        },
       ],
     },
   },

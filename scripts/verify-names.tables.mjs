@@ -207,6 +207,11 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  // Kakin phase 3: absent from the same Italian lists (2026-11-06).
+  'vergei': 'Vergei',
+  'ken-i-wang': "Ken'i Wang",
+  'cashew': 'Cashew',
+  'keeney': 'Keeney',
   // Kakin phase 2: absent from the Italian character, Hunter, Zoldick and
   // Phantom Troupe lists (2026-11-06); the verified English name is kept.
   'tokarine': 'Tokarine',
