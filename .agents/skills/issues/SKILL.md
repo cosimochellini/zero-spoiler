@@ -17,7 +17,7 @@ Agents take their work from the issue list by label, so every issue is a queue e
 | `priority:` | `p0`, `p1`, `p2`, `p3`                                                     | `p0`: a spoiler is live on the site, or the site or CI is down. `p1`: wrong content or a broken feature, no spoiler. `p2`: normal work. `p3`: nice to have.     |
 | `size:`     | `s`, `m`, `l`                                                              | `s`: one file or one rule. `m`: one pull request with tests. `l`: more than one pull request, so split it into an epic. An epic carries no `size:`.             |
 
-`good first issue`, `help wanted` and `accessibility` can go on top of the five. Semantic-release adds `released`.
+`good first issue`, `help wanted` and `accessibility` can go on top of the five, and so can one `scope:` label naming the series (`scope:one-piece`, `scope:hunter-x-hunter`, `scope:game-of-thrones`) or `scope:infrastructure` for cross-series work. Semantic-release adds `released`.
 
 ## Writing an issue
 

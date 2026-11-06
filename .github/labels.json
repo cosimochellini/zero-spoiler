@@ -137,6 +137,26 @@
     "description": "Extra attention is needed"
   },
   {
+    "name": "scope:one-piece",
+    "color": "F1C40F",
+    "description": "Issue work primarily for One Piece"
+  },
+  {
+    "name": "scope:hunter-x-hunter",
+    "color": "1F6FEB",
+    "description": "Issue work primarily for Hunter x Hunter"
+  },
+  {
+    "name": "scope:game-of-thrones",
+    "color": "B42318",
+    "description": "Issue work primarily for Game of Thrones"
+  },
+  {
+    "name": "scope:infrastructure",
+    "color": "6E7781",
+    "description": "Cross-series infrastructure, hosting, or repository operations"
+  },
+  {
     "name": "released",
     "color": "ededed",
     "description": "Shipped in a release (semantic-release adds it)"
