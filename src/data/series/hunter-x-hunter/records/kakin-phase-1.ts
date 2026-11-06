@@ -1,4 +1,89 @@
+import type { Relationship } from '~/data/types'
+
 import type { HunterSaga } from './saga'
+
+type Dossier = HunterSaga['dossiers'][string]
+type Link = Relationship
+type Name = Record<'en' | 'it', string>
+
+// One gate for the chapter 349 roster, one for the chapter 350 bodyguard hires.
+const ROSTER = { episode: 148, chapter: 349, source: 'chapter' } as const
+const HIRES = { episode: 148, chapter: 350, source: 'chapter' } as const
+const ROYAL_FAMILY = { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' }
+
+const SIBLING: Link = {
+  character: 'tserriednich-hui-guo-rou',
+  type: { it: 'Stessa famiglia', en: 'Sibling' },
+  summary: {
+    it: 'È un altro dei quattordici figli del re.',
+    en: 'Is another of the king’s fourteen children.',
+  },
+}
+
+function mother(character: string, name: Name): Link {
+  return {
+    character,
+    type: { it: 'Madre', en: 'Mother' },
+    summary: {
+      it: `${name.it} è sua madre.`,
+      en: `${name.en} is their mother.`,
+    },
+  }
+}
+
+function bodyguard(character: string, name: Name): Link {
+  return {
+    character,
+    type: { it: 'Guardia del corpo', en: 'Bodyguard' },
+    summary: {
+      it: `${name.it} accetta il lavoro di scorta per il viaggio.`,
+      en: `${name.en} takes the bodyguard job for the voyage.`,
+    },
+  }
+}
+
+function child(character: string, name: Name): Link {
+  return {
+    character,
+    type: { it: 'Figlio del re', en: 'Child of the king' },
+    summary: {
+      it: `${name.it} è uno dei suoi figli.`,
+      en: `${name.en} is one of her children.`,
+    },
+  }
+}
+
+/** A prince named in the chapter 349 roster, and their chapter 350 bodyguard. */
+function prince(role: Name, mom: Link | undefined, guard?: Link): Dossier {
+  const family = mom === undefined ? [SIBLING] : [mom, SIBLING]
+  return {
+    role,
+    log: {
+      it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
+      en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
+    },
+    affiliation: [{ ...ROSTER, value: ROYAL_FAMILY }],
+    status: [{ ...ROSTER, value: 'alive' }],
+    relationships: [
+      { ...ROSTER, value: family },
+      ...(guard === undefined ? [] : [{ ...HIRES, value: [...family, guard] }]),
+    ],
+  }
+}
+
+/** One of the king's legal wives, named with her children at chapter 349. */
+function queen(role: Name, children: Link[]): Dossier {
+  return {
+    role,
+    log: {
+      it: 'È una delle otto mogli legittime del re. I suoi figli possono partecipare alla successione.',
+      en: 'She is one of the king’s eight legal wives. Her children may take part in the succession contest.',
+    },
+    affiliation: [{ ...ROSTER, value: ROYAL_FAMILY }],
+    status: [{ ...ROSTER, value: 'alive' }],
+    relationships: [{ ...ROSTER, value: children }],
+  }
+}
 
 /** Manga-only introductions; chapter 349 prints the fourteen-prince roster. */
 export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
@@ -343,132 +428,21 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
   ],
   dossiers: {
-    'benjamin-hui-guo-rou': {
-      role: { it: 'Primo principe di Cakin', en: 'First Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'unma-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: { it: 'Unma è sua madre.', en: 'Unma is their mother.' },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'camilla-hui-guo-rou': {
-      role: { it: 'Secondo principe di Cakin', en: 'Second Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'duazul-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Duazul è sua madre.',
-                en: 'Duazul is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'zhang-lei-hui-guo-rou': {
-      role: { it: 'Terzo principe di Cakin', en: 'Third Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tang-zhao-li-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Towchowrai è sua madre.',
-                en: 'Tang Zhao Li is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    'benjamin-hui-guo-rou': prince(
+      { it: 'Primo principe di Cakin', en: 'First Prince of Kakin' },
+      mother('unma-hui-guo-rou', { it: 'Unma', en: 'Unma' }),
+    ),
+    'camilla-hui-guo-rou': prince(
+      { it: 'Secondo principe di Cakin', en: 'Second Prince of Kakin' },
+      mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
+    ),
+    'zhang-lei-hui-guo-rou': prince(
+      { it: 'Terzo principe di Cakin', en: 'Third Prince of Kakin' },
+      mother('tang-zhao-li-hui-guo-rou', {
+        it: 'Towchowrai',
+        en: 'Tang Zhao Li',
+      }),
+    ),
     'tserriednich-hui-guo-rou': {
       role: { it: 'Quarto principe di Cakin', en: 'Fourth Prince of Kakin' },
       log: {
@@ -509,586 +483,58 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    'tubeppa-hui-guo-rou': {
-      role: { it: 'Quinto principe di Cakin', en: 'Fifth Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'duazul-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Duazul è sua madre.',
-                en: 'Duazul is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'tyson-hui-guo-rou': {
-      role: { it: 'Sesto principe di Cakin', en: 'Sixth Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'katrono-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Katrono è sua madre.',
-                en: 'Katrono is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-        {
-          episode: 148,
-          chapter: 350,
-          source: 'chapter',
-          value: [
-            {
-              character: 'katrono-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Katrono è sua madre.',
-                en: 'Katrono is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-            {
-              character: 'izunavi',
-              type: { it: 'Guardia del corpo', en: 'Bodyguard' },
-              summary: {
-                it: 'Izunabi accetta il lavoro di scorta per il viaggio.',
-                en: 'Izunavi takes the bodyguard job for the voyage.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'luzurus-hui-guo-rou': {
-      role: { it: 'Settimo principe di Cakin', en: 'Seventh Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'duazul-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Duazul è sua madre.',
-                en: 'Duazul is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-        {
-          episode: 148,
-          chapter: 350,
-          source: 'chapter',
-          value: [
-            {
-              character: 'duazul-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Duazul è sua madre.',
-                en: 'Duazul is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-            {
-              character: 'basho',
-              type: { it: 'Guardia del corpo', en: 'Bodyguard' },
-              summary: {
-                it: 'Basho accetta il lavoro di scorta per il viaggio.',
-                en: 'Basho takes the bodyguard job for the voyage.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'sale-sale-hui-guo-rou': {
-      role: { it: 'Ottavo principe di Cakin', en: 'Eighth Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'swinko-swinko-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Swinko-swinko è sua madre.',
-                en: 'Swinko-swinko is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'halkenburg-hui-guo-rou': {
-      role: { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'duazul-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Duazul è sua madre.',
-                en: 'Duazul is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'kacho-hui-guo-rou': {
-      role: { it: 'Decimo principe di Cakin', en: 'Tenth Prince of Kakin' },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'seiko-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Seiko è sua madre.',
-                en: 'Seiko is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-        {
-          episode: 148,
-          chapter: 350,
-          source: 'chapter',
-          value: [
-            {
-              character: 'seiko-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Seiko è sua madre.',
-                en: 'Seiko is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-            {
-              character: 'melody',
-              type: { it: 'Guardia del corpo', en: 'Bodyguard' },
-              summary: {
-                it: 'Melody accetta il lavoro di scorta per il viaggio.',
-                en: 'Melody takes the bodyguard job for the voyage.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'fugetsu-hui-guo-rou': {
-      role: {
-        it: 'Undicesimo principe di Cakin',
-        en: 'Eleventh Prince of Kakin',
-      },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'seiko-hui-guo-rou',
-              type: { it: 'Madre', en: 'Mother' },
-              summary: {
-                it: 'Seiko è sua madre.',
-                en: 'Seiko is their mother.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'momoze-hui-guo-rou': {
-      role: {
-        it: 'Dodicesimo principe di Cakin',
-        en: 'Twelfth Prince of Kakin',
-      },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-        {
-          episode: 148,
-          chapter: 350,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-            {
-              character: 'hanzo',
-              type: { it: 'Guardia del corpo', en: 'Bodyguard' },
-              summary: {
-                it: 'Hanzo accetta il lavoro di scorta per il viaggio.',
-                en: 'Hanzo takes the bodyguard job for the voyage.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'marayam-hui-guo-rou': {
-      role: {
-        it: 'Tredicesimo principe di Cakin',
-        en: 'Thirteenth Prince of Kakin',
-      },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-        {
-          episode: 148,
-          chapter: 350,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-            {
-              character: 'biscuit-krueger',
-              type: { it: 'Guardia del corpo', en: 'Bodyguard' },
-              summary: {
-                it: 'Biscuit accetta il lavoro di scorta per il viaggio.',
-                en: 'Biscuit takes the bodyguard job for the voyage.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'woble-hui-guo-rou': {
-      role: {
+    'tubeppa-hui-guo-rou': prince(
+      { it: 'Quinto principe di Cakin', en: 'Fifth Prince of Kakin' },
+      mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
+    ),
+    'tyson-hui-guo-rou': prince(
+      { it: 'Sesto principe di Cakin', en: 'Sixth Prince of Kakin' },
+      mother('katrono-hui-guo-rou', { it: 'Katrono', en: 'Katrono' }),
+      bodyguard('izunavi', { it: 'Izunabi', en: 'Izunavi' }),
+    ),
+    'luzurus-hui-guo-rou': prince(
+      { it: 'Settimo principe di Cakin', en: 'Seventh Prince of Kakin' },
+      mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
+      bodyguard('basho', { it: 'Basho', en: 'Basho' }),
+    ),
+    'sale-sale-hui-guo-rou': prince(
+      { it: 'Ottavo principe di Cakin', en: 'Eighth Prince of Kakin' },
+      mother('swinko-swinko-hui-guo-rou', {
+        it: 'Swinko-swinko',
+        en: 'Swinko-swinko',
+      }),
+    ),
+    'halkenburg-hui-guo-rou': prince(
+      { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
+      mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
+    ),
+    'kacho-hui-guo-rou': prince(
+      { it: 'Decimo principe di Cakin', en: 'Tenth Prince of Kakin' },
+      mother('seiko-hui-guo-rou', { it: 'Seiko', en: 'Seiko' }),
+      bodyguard('melody', { it: 'Melody', en: 'Melody' }),
+    ),
+    'fugetsu-hui-guo-rou': prince(
+      { it: 'Undicesimo principe di Cakin', en: 'Eleventh Prince of Kakin' },
+      mother('seiko-hui-guo-rou', { it: 'Seiko', en: 'Seiko' }),
+    ),
+    'momoze-hui-guo-rou': prince(
+      { it: 'Dodicesimo principe di Cakin', en: 'Twelfth Prince of Kakin' },
+      undefined,
+      bodyguard('hanzo', { it: 'Hanzo', en: 'Hanzo' }),
+    ),
+    'marayam-hui-guo-rou': prince(
+      { it: 'Tredicesimo principe di Cakin', en: 'Thirteenth Prince of Kakin' },
+      undefined,
+      bodyguard('biscuit-krueger', { it: 'Biscuit', en: 'Biscuit' }),
+    ),
+    'woble-hui-guo-rou': prince(
+      {
         it: 'Quattordicesimo principe di Cakin',
         en: 'Fourteenth Prince of Kakin',
       },
-      log: {
-        it: 'I figli delle mogli legittime del re possono partecipare alla successione. Devono salire sulla nave e prendere parte alla cerimonia di partenza.',
-        en: 'The children of the king’s legal wives may compete for the succession. They must board the ship and attend the departure ceremony.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-          ],
-        },
-        {
-          episode: 148,
-          chapter: 350,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Stessa famiglia', en: 'Sibling' },
-              summary: {
-                it: 'È un altro dei quattordici figli del re.',
-                en: 'Is another of the king’s fourteen children.',
-              },
-            },
-            {
-              character: 'kurapika',
-              type: { it: 'Guardia del corpo', en: 'Bodyguard' },
-              summary: {
-                it: 'Kurapika accetta il lavoro di scorta per il viaggio.',
-                en: 'Kurapika takes the bodyguard job for the voyage.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+      undefined,
+      bodyguard('kurapika', { it: 'Kurapika', en: 'Kurapika' }),
+    ),
     'beyond-netero': {
       role: { it: 'Capo della spedizione', en: 'Expedition leader' },
       log: {
@@ -1260,256 +706,44 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    'unma-hui-guo-rou': {
-      role: { it: 'Prima regina di Cakin', en: 'First Queen of Kakin' },
-      log: {
-        it: 'È una delle otto mogli legittime del re. I suoi figli possono partecipare alla successione.',
-        en: 'She is one of the king’s eight legal wives. Her children may take part in the succession contest.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
+    'unma-hui-guo-rou': queen(
+      { it: 'Prima regina di Cakin', en: 'First Queen of Kakin' },
+      [
+        child('benjamin-hui-guo-rou', { it: 'Benjamin', en: 'Benjamin' }),
+        child('tserriednich-hui-guo-rou', {
+          it: 'Tserriednich',
+          en: 'Tserriednich',
+        }),
       ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
+    ),
+    'duazul-hui-guo-rou': queen(
+      { it: 'Seconda regina di Cakin', en: 'Second Queen of Kakin' },
+      [
+        child('camilla-hui-guo-rou', { it: 'Camilla', en: 'Camilla' }),
+        child('tubeppa-hui-guo-rou', { it: 'Tsubeppa', en: 'Tubeppa' }),
+        child('luzurus-hui-guo-rou', { it: 'Loozlus', en: 'Luzurus' }),
+        child('halkenburg-hui-guo-rou', { it: 'Harkenburg', en: 'Halkenburg' }),
       ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'benjamin-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Benjamin è uno dei suoi figli.',
-                en: 'Benjamin is one of her children.',
-              },
-            },
-            {
-              character: 'tserriednich-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Tserriednich è uno dei suoi figli.',
-                en: 'Tserriednich is one of her children.',
-              },
-            },
-          ],
-        },
+    ),
+    'tang-zhao-li-hui-guo-rou': queen(
+      { it: 'Terza regina di Cakin', en: 'Third Queen of Kakin' },
+      [child('zhang-lei-hui-guo-rou', { it: 'Chowrai', en: 'Zhang Lei' })],
+    ),
+    'katrono-hui-guo-rou': queen(
+      { it: 'Quarta regina di Cakin', en: 'Fourth Queen of Kakin' },
+      [child('tyson-hui-guo-rou', { it: 'Tyson', en: 'Tyson' })],
+    ),
+    'swinko-swinko-hui-guo-rou': queen(
+      { it: 'Quinta regina di Cakin', en: 'Fifth Queen of Kakin' },
+      [child('sale-sale-hui-guo-rou', { it: 'Saresare', en: 'Salé-salé' })],
+    ),
+    'seiko-hui-guo-rou': queen(
+      { it: 'Sesta regina di Cakin', en: 'Sixth Queen of Kakin' },
+      [
+        child('kacho-hui-guo-rou', { it: 'Kachow', en: 'Kacho' }),
+        child('fugetsu-hui-guo-rou', { it: 'Fugetsu', en: 'Fugetsu' }),
       ],
-    },
-    'duazul-hui-guo-rou': {
-      role: { it: 'Seconda regina di Cakin', en: 'Second Queen of Kakin' },
-      log: {
-        it: 'È una delle otto mogli legittime del re. I suoi figli possono partecipare alla successione.',
-        en: 'She is one of the king’s eight legal wives. Her children may take part in the succession contest.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'camilla-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Camilla è uno dei suoi figli.',
-                en: 'Camilla is one of her children.',
-              },
-            },
-            {
-              character: 'tubeppa-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Tsubeppa è uno dei suoi figli.',
-                en: 'Tubeppa is one of her children.',
-              },
-            },
-            {
-              character: 'luzurus-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Loozlus è uno dei suoi figli.',
-                en: 'Luzurus is one of her children.',
-              },
-            },
-            {
-              character: 'halkenburg-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Harkenburg è uno dei suoi figli.',
-                en: 'Halkenburg is one of her children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'tang-zhao-li-hui-guo-rou': {
-      role: { it: 'Terza regina di Cakin', en: 'Third Queen of Kakin' },
-      log: {
-        it: 'È una delle otto mogli legittime del re. I suoi figli possono partecipare alla successione.',
-        en: 'She is one of the king’s eight legal wives. Her children may take part in the succession contest.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'zhang-lei-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Chowrai è uno dei suoi figli.',
-                en: 'Zhang Lei is one of her children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'katrono-hui-guo-rou': {
-      role: { it: 'Quarta regina di Cakin', en: 'Fourth Queen of Kakin' },
-      log: {
-        it: 'È una delle otto mogli legittime del re. I suoi figli possono partecipare alla successione.',
-        en: 'She is one of the king’s eight legal wives. Her children may take part in the succession contest.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'tyson-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Tyson è uno dei suoi figli.',
-                en: 'Tyson is one of her children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'swinko-swinko-hui-guo-rou': {
-      role: { it: 'Quinta regina di Cakin', en: 'Fifth Queen of Kakin' },
-      log: {
-        it: 'È una delle otto mogli legittime del re. I suoi figli possono partecipare alla successione.',
-        en: 'She is one of the king’s eight legal wives. Her children may take part in the succession contest.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'sale-sale-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Saresare è uno dei suoi figli.',
-                en: 'Salé-salé is one of her children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
-    'seiko-hui-guo-rou': {
-      role: { it: 'Sesta regina di Cakin', en: 'Sixth Queen of Kakin' },
-      log: {
-        it: 'È una delle otto mogli legittime del re. I suoi figli possono partecipare alla successione.',
-        en: 'She is one of the king’s eight legal wives. Her children may take part in the succession contest.',
-      },
-      affiliation: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: { it: 'Famiglia reale di Cakin', en: 'Kakin royal family' },
-        },
-      ],
-      status: [
-        { episode: 148, chapter: 349, source: 'chapter', value: 'alive' },
-      ],
-      relationships: [
-        {
-          episode: 148,
-          chapter: 349,
-          source: 'chapter',
-          value: [
-            {
-              character: 'kacho-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Kachow è uno dei suoi figli.',
-                en: 'Kacho is one of her children.',
-              },
-            },
-            {
-              character: 'fugetsu-hui-guo-rou',
-              type: { it: 'Figlio del re', en: 'Child of the king' },
-              summary: {
-                it: 'Fugetsu è uno dei suoi figli.',
-                en: 'Fugetsu is one of her children.',
-              },
-            },
-          ],
-        },
-      ],
-    },
+    ),
     'zigg-zoldyck': {
       role: {
         it: 'Compagno di spedizione di Netero',
