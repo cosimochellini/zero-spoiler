@@ -169,22 +169,31 @@ confirmed.
 
 ## Places
 
-The ship is visited throughout the window. Its existing phase-1 record must
-supply the verified ship-name gate. Tiers, numbered quarters, clinics, banquet
-hall and conference room are descriptive subdivisions, not independently
-verified proper place names. The New Continent and Dark Continent are
-destinations discussed, not visited in this window. No new place record is
-inferred from a linked wiki heading.
+| Place       | Gate | Evidence                                                                                                                                                          |
+| ----------- | ---: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Black Whale |  342 | Chapter 342 (416039) presents the Black Whale transport ship by name on television; chapter 358 (425428) is the first visit on board, inside this phase's window. |
+
+The record is filed in this phase because the story first goes on board here;
+its gate is the naming, as for the Dark Continent in phase 1. It is named Black
+Whale, the name the 342 presentation gives; "Black Whale 1" is the ship's class
+number, not checked at 342. Its form is `vessel` (Transport ship / Nave da
+trasporto), not the shared `ship` form, whose labels every page already sends.
+Tiers, numbered quarters, clinics, banquet hall and conference room are
+descriptive subdivisions, not independently verified proper place names. The New
+Continent and Dark Continent are destinations discussed, not visited in this
+window. No new place record is inferred from a linked wiki heading.
 
 ## Returning cast and scope
 
-Kurapika offers Nen training in chapter 367 and begins the class at chapter 370.
-Leorio assists Cheadle at the central clinic in chapter 359. Mizaistom and
-Botobai help manage ship security in chapter 358. These dated updates belong in
-their existing dossiers. Hanzo reacts to Momoze’s death in chapter 368; her
-endpoint must be filed before a named relationship is exposed. The phase’s new
-relationships use verified class partnerships, the teacher or the transport
-meeting, with both endpoints reached.
+Filed as dated facts: Momoze's death at chapter 368, on her phase 1 dossier.
+Hanzo grieves her in the same chapter; their bodyguard link is already filed
+at 350.
+
+Not filed as dated facts: Leorio working beside Cheadle at the central clinic
+(359), and Mizaistom and Botobai helping run the ship's security (358). These
+are temporary assignments, not role changes. Kurapika's Nen class (offered at
+367, held at 370) is carried by the attendees' relationships with him as their
+teacher.
 
 ## Sources read
 

@@ -200,6 +200,7 @@ describe('the place words of a series that labels its own', () => {
         'swardani-city',
         'world-tree',
         'dark-continent',
+        'black-whale',
       ],
     ],
   ])(
