@@ -5,7 +5,7 @@ The appearance lists supply candidates. Explicit naming scenes establish gates.
 
 The exact manga pages, licensed anime timestamps and Italian dub audio remain
 owner checks. Italian Wikipedia supplies the available dub forms. The records
-use neutral placeholders until #913. Chronicles are tracked in #914.
+are drawn in #913. Chronicles are tracked in #914.
 
 ## Sources read
 

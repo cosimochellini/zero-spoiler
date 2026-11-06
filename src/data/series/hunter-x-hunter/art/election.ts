@@ -672,7 +672,7 @@ export const ELECTION_DRAWINGS = {
   ],
 
   // The city hospital with the cross on its front in tint, towers behind
-  // it, and the room built for Gon in its car park (chapter 325): the
+  // it, and the private room planned for Gon in its car park (chapter 325): the
   // place's own landmark, the hospital and its car park, where Gon lies
   // while his friends look for help, episode 142.
   'swardani-city': [
@@ -770,7 +770,7 @@ export const electionRedrawn: Redrawings = {
   ],
   'teradein-neutral': [
     // The same tie lying loose on the floor, its knot undone: Hisoka kills
-    // him in his room, episode 143 / chapter 330.
+    // him in his office, episode 143 / chapter 330.
     {
       episode: 143,
       chapter: 330,
