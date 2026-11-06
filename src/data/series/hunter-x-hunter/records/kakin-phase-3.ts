@@ -50,7 +50,7 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 383,
       name: { it: 'Keeney', en: 'Keeney' },
       summary: {
-        it: 'Suona il pianoforte al banchetto. Aiuta due principesse a fuggire con una scialuppa e si toglie la vita per non compromettere la missione degli Hunter.',
+        it: 'Suona il pianoforte al banchetto. Aiuta due principi a fuggire con una scialuppa e si toglie la vita per non compromettere la missione degli Hunter.',
         en: 'He plays the piano at the banquet. He helps two princes escape in a lifeboat and takes his own life to avoid compromising the Hunters’ mission.',
       },
       visual: { art: 'keeney', tint: 'violet' },
@@ -151,8 +151,8 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
               character: 'nobunaga',
               type: { it: 'Interlocutore', en: 'Person he negotiates with' },
               summary: {
-                it: 'Chiede al suo gruppo se abbia attaccato i custodi del magazzino, poi propone di collaborare.',
-                en: 'He asks his group whether they attacked the warehouse keepers, then proposes cooperation.',
+                it: 'Chiede ai tre membri della Brigata se abbiano attaccato i custodi del suo magazzino, poi propone di collaborare.',
+                en: 'He asks the three Troupe members whether they attacked his warehouse keepers, then proposes cooperation.',
               },
             },
           ],
@@ -206,7 +206,7 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'Hunter and Tenth Prince’s guard',
       },
       log: {
-        it: 'Suona il pianoforte al banchetto. Aiuta due principesse a fuggire con una scialuppa e si toglie la vita per non compromettere la missione degli Hunter.',
+        it: 'Suona il pianoforte al banchetto. Aiuta due principi a fuggire con una scialuppa e si toglie la vita per non compromettere la missione degli Hunter.',
         en: 'He plays the piano at the banquet. He helps two princes escape in a lifeboat and takes his own life to avoid compromising the Hunters’ mission.',
       },
       affiliation: [
@@ -236,7 +236,7 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
                 en: 'Accomplice in the escape plan',
               },
               summary: {
-                it: 'Mentre lei suona per distrarre i presenti, accompagna le principesse alla scialuppa.',
+                it: 'Mentre lei suona per distrarre i presenti, accompagna i principi alla scialuppa.',
                 en: 'While she plays to distract the audience, he escorts the princes to the lifeboat.',
               },
             },
