@@ -53,6 +53,7 @@ import { ELECTION_DRAWINGS } from './election'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
+import { KAKIN_PHASE_ONE_DRAWINGS } from './kakin-phase-1'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
 import { YORKNEW_CITY_DRAWINGS, yorknewCityRedrawn } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
@@ -153,6 +154,9 @@ export const DRAWINGS = {
   ...zevilArt,
   ...FINAL_PHASE_DRAWINGS,
   ...ELECTION_DRAWINGS,
+  ...KAKIN_PHASE_ONE_DRAWINGS,
+  // Neutral place placeholder; finished artwork belongs to #917.
+  'dark-continent': ELECTION_DRAWINGS['world-tree'],
   ...HEAVENS_ARENA_DRAWINGS,
   ...YORKNEW_CITY_DRAWINGS,
   ...GREED_ISLAND_DRAWINGS,

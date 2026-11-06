@@ -27,6 +27,7 @@ export interface HunterVocabulary extends Vocabulary {
     | 'airport'
     | 'building'
     | 'city'
+    | 'continent'
     | 'country'
     | 'forest'
     | 'island'

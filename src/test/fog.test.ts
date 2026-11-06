@@ -119,6 +119,12 @@ describe('the place words of a series that labels its own', () => {
         'republic-of-rokario',
       ],
     ],
+    ['its continent label', { forms: { x: 'Continent' } }, ['dark-continent']],
+    [
+      'its Italian continent label',
+      { forms: { x: 'Continente' } },
+      ['dark-continent'],
+    ],
     ['its tower label', { forms: { x: 'Tower' } }, ['heavens-arena']],
     ['its Italian tower label', { forms: { x: 'Torre' } }, ['heavens-arena']],
     ['its nest label', { forms: { x: 'Nest' } }, ['chimera-ant-nest']],
@@ -193,6 +199,7 @@ describe('the place words of a series that labels its own', () => {
         'parasta-airport',
         'swardani-city',
         'world-tree',
+        'dark-continent',
       ],
     ],
   ])(
