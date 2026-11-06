@@ -5,6 +5,7 @@ import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { chimeraAntPhase4Chronicles } from './chimera-ant-phase-4.chronicle'
 import { chimeraAntPhase5Chronicles } from './chimera-ant-phase-5.chronicle'
+import { electionChronicles } from './election.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { hunterExamChronicles } from './hunter-exam.chronicle'
 import { hunterExamRelationships } from './hunter-exam.relationships'
@@ -517,6 +518,7 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase4Chronicles['gon-freecss'],
 
         ...chimeraAntPhase5Chronicles['gon-freecss'],
+        ...electionChronicles['gon-freecss'],
       ],
       role: [
         ...passedExam(1, 1),
@@ -783,6 +785,7 @@ const earlyExam: HunterSaga = {
       chronicle: [
         ...hunterExamChronicles['leorio-paradinight'],
         ...greedIslandReturningChronicles['leorio-paradinight'],
+        ...electionChronicles['leorio-paradinight'],
       ],
       role: [
         ...passedExam(1, 2),
@@ -834,6 +837,7 @@ const earlyExam: HunterSaga = {
       chronicle: [
         ...hunterExamChronicles.kurapika,
         ...greedIslandReturningChronicles.kurapika,
+        ...electionChronicles.kurapika,
       ],
       role: [
         ...passedExam(1, 2),
@@ -918,6 +922,7 @@ const earlyExam: HunterSaga = {
       chronicle: [
         ...hunterExamChronicles.kiriko,
         ...greedIslandReturningChronicles.kiriko,
+        ...electionChronicles.kiriko,
       ],
       role: [
         {
@@ -1011,6 +1016,7 @@ const earlyExam: HunterSaga = {
       chronicle: [
         ...hunterExamChronicles.hisoka,
         ...greedIslandReturningChronicles.hisoka,
+        ...electionChronicles.hisoka,
       ],
       role: passedExam(3, 5),
       log: {
@@ -1270,6 +1276,7 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase4Chronicles.killua,
 
         ...chimeraAntPhase5Chronicles.killua,
+        ...electionChronicles.killua,
       ],
       role: [
         {

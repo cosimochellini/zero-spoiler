@@ -85,7 +85,7 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // What it files on 2026-11-04: the arcs, the Hunter Exam’s road to the
+  // What it files on 2026-11-06: the arcs, the Hunter Exam’s road to the
   // exam through the visit to Killua's home, chapter-one characters (#760),
   // the Heavens Arena characters and place (#896), Silva (#834), Yorknew
   // City (#900), Greed Island through the finale (#1016–#1019) and Michael
@@ -95,7 +95,7 @@ const EXPECTED: Record<string, Expected> = {
   // phase 3 (#1022) 11 characters and four places. Phase 4 (#1023) adds
   // one character and opens an existing place in the anime. Phase 5 (#1024)
   // adds one character and files the finale. Election (#912) covers episode
-  // 137–148 and chapter 319–339.
+  // 137–148 and chapter 319–339; #914 adds 91 chronicles for its new and returning cast.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -117,7 +117,7 @@ const EXPECTED: Record<string, Expected> = {
       affiliations: 341,
       arcs: 7,
       characters: 183,
-      chronicles: 600,
+      chronicles: 691,
       linkedOrigins: 8,
       places: 39,
       statuses: 254,

@@ -1,3 +1,4 @@
+import { electionChronicles } from './election.chronicle'
 import type { HunterSaga } from './saga'
 
 const links = {
@@ -189,6 +190,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   ],
   dossiers: {
     'yasuha': {
+      chronicle: electionChronicles.yasuha,
       role: { it: 'Al servizio di Alluka', en: 'Alluka’s attendant' },
       log: {
         it: 'Dopo aver portato Alluka sulle spalle, le chiede di diventare ricca. In seguito si scusa per aver espresso quel desiderio.',
@@ -226,6 +228,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'alluka-zoldyck': {
+      chronicle: electionChronicles['alluka-zoldyck'],
       role: { it: 'Sorella di Killua', en: 'Killua’s sister' },
       log: {
         it: 'Killua chiede al padre di poter vedere sua sorella. Crede che lei possa aiutare il suo amico. Silva accetta di accompagnarlo nella sua stanza.',
@@ -293,6 +296,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'nanika': {
+      chronicle: electionChronicles.nanika,
       role: { it: 'Esaudisce desideri', en: 'Grants wishes' },
       log: {
         it: 'Killua la distingue da Alluka dal modo in cui si rivolge a lui.',
@@ -349,6 +353,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'mitsuba': {
+      chronicle: electionChronicles.mitsuba,
       role: { it: 'Al servizio di Alluka', en: 'Alluka’s attendant' },
       log: {
         it: 'Prende Alluka in braccio e la porta di sopra. Allarmata da un cambiamento nel volto della bambina, si rivolge a Killua.',
@@ -397,6 +402,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'kasuga': {
+      chronicle: electionChronicles.kasuga,
       role: { it: 'Al servizio di Alluka', en: 'Alluka’s attendant' },
       log: {
         it: 'Illumi le ordina di accogliere le richieste di Alluka. In cambio si offre di sorvolare su una relazione vietata dalle regole della tenuta.',
@@ -445,6 +451,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'muna': {
+      chronicle: electionChronicles.muna,
       role: { it: 'Turista', en: 'Tourist' },
       log: {
         it: 'Milki gli mostra la tenuta. Alluka e il fratello minore li accompagnano.',
@@ -493,6 +500,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'tsubone': {
+      chronicle: electionChronicles.tsubone,
       role: { it: 'Al servizio degli Zoldick', en: 'Zoldyck servant' },
       log: {
         it: 'Ha l’ordine di riportare Killua a casa se infrange le regole della scorta.',
@@ -551,6 +559,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'amane': {
+      chronicle: electionChronicles.amane,
       role: { it: 'Al servizio degli Zoldick', en: 'Zoldyck servant' },
       log: {
         it: 'Si unisce alla scorta prima che Killua lasci la tenuta e viaggia con gli altri domestici.',
@@ -595,6 +604,7 @@ export const ELECTION_RESCUE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'hishita': {
+      chronicle: electionChronicles.hishita,
       role: { it: 'Al servizio degli Zoldick', en: 'Zoldyck servant' },
       log: {
         it: 'Aspetta con un’auto nel luogo in cui atterra Killua. Quando la strada viene bloccata, dice che ripartirà solo per ordine di Illumi.',

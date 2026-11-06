@@ -1,4 +1,5 @@
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
+import { electionChronicles } from './election.chronicle'
 import { finalPhaseChronicles } from './final-phase.chronicle'
 import { finalPhaseRelationships } from './final-phase.relationships'
 import type { HunterSaga } from './saga'
@@ -66,6 +67,7 @@ export const finalPhase: HunterSaga = {
       chronicle: [
         ...finalPhaseChronicles.illumi,
         ...chimeraAntPhase2Chronicles.illumi,
+        ...electionChronicles.illumi,
       ],
       role: { en: 'Killua’s older brother', it: 'Fratello maggiore di Killua' },
       log: {

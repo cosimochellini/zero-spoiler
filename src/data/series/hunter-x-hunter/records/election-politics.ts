@@ -1,3 +1,4 @@
+import { electionChronicles } from './election.chronicle'
 import type { HunterSaga } from './saga'
 
 const SHORTLIST_AFFILIATION = [
@@ -275,6 +276,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   ],
   dossiers: {
     'beans': {
+      chronicle: electionChronicles.beans,
       role: {
         it: 'Segretario dell’Associazione Hunter',
         en: 'Hunter Association secretary',
@@ -309,6 +311,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'botobai-gigante': {
+      chronicle: electionChronicles['botobai-gigante'],
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Rinuncia a condurre la riunione. Partecipa al sorteggio per scegliere le regole del voto.',
@@ -346,6 +349,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'cheadle-yorkshire': {
+      chronicle: electionChronicles['cheadle-yorkshire'],
       role: [
         {
           episode: 137,
@@ -434,6 +438,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'cluck': {
+      chronicle: electionChronicles.cluck,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Contesta l’obbligo di firmare la scheda. Poi usa i suoi uccelli per consegnare le schede.',
@@ -475,6 +480,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'gel': {
+      chronicle: electionChronicles.gel,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Fa parte del comitato elettorale. Dice al vicepresidente che non voterà per lui.',
@@ -515,6 +521,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'ginta': {
+      chronicle: electionChronicles.ginta,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Sorveglia le urne con due colleghi. Si accorge che un Hunter osserva chi viene a votare.',
@@ -555,6 +562,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'kanzai': {
+      chronicle: electionChronicles.kanzai,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Sorveglia il primo turno. Chiede a un Hunter con la scheda in bianco perché si trattiene al seggio.',
@@ -592,6 +600,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'mizaistom-nana': {
+      chronicle: electionChronicles['mizaistom-nana'],
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Alla riunione solleva il caso degli Hunter scomparsi. Siede nel comitato che organizza il voto.',
@@ -630,6 +639,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'pariston-hill': {
+      chronicle: electionChronicles['pariston-hill'],
       role: [
         {
           episode: 137,
@@ -701,6 +711,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'pyon': {
+      chronicle: electionChronicles.pyon,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'È tra i membri del comitato presenti al primo turno. Il voto è valido solo se al seggio siedono almeno tre di loro.',
@@ -738,6 +749,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'saccho-kobayakawa': {
+      chronicle: electionChronicles['saccho-kobayakawa'],
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Partecipa al sorteggio e riceve voti già al primo scrutinio.',
@@ -778,6 +790,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'saiyu': {
+      chronicle: electionChronicles.saiyu,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Alla riunione accetta che sia il vicepresidente a presiedere. Lo Zodiaco sceglie poi le regole per il voto.',
@@ -815,6 +828,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'bushidora-ambitious': {
+      chronicle: electionChronicles['bushidora-ambitious'],
       role: { it: 'Candidato alla presidenza', en: 'Candidate for chairman' },
       log: {
         it: 'Al primo scrutinio ottiene otto voti.',
@@ -843,6 +857,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'cutie-beauty': {
+      chronicle: electionChronicles['cutie-beauty'],
       role: SHORTLIST_WITHDRAWAL,
       log: {
         it: 'Al primo scrutinio ottiene dieci voti e condivide l’undicesimo posto.',
@@ -868,6 +883,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'ickshonpe-katocha': {
+      chronicle: electionChronicles['ickshonpe-katocha'],
       role: [
         {
           episode: 141,
@@ -906,6 +922,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'linne-horsdoeuvre': {
+      chronicle: electionChronicles['linne-horsdoeuvre'],
       role: SHORTLIST_WITHDRAWAL,
       log: {
         it: 'Al primo scrutinio ottiene sei voti.',
@@ -916,6 +933,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       relationships: INTRODUCED_BY_BEANS,
     },
     'loupe-highland': {
+      chronicle: electionChronicles['loupe-highland'],
       role: [
         {
           episode: 141,
@@ -951,6 +969,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'sanbica-norton': {
+      chronicle: electionChronicles['sanbica-norton'],
       role: SHORTLIST_WITHDRAWAL,
       log: {
         it: 'Al primo scrutinio ottiene dieci voti e condivide l’undicesimo posto.',
@@ -961,6 +980,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       relationships: INTRODUCED_BY_BEANS,
     },
     'teradein-neutral': {
+      chronicle: electionChronicles['teradein-neutral'],
       role: { it: 'Candidato alla presidenza', en: 'Candidate for chairman' },
       log: {
         it: 'Al primo scrutinio ottiene nove voti e si piazza tredicesimo.',
