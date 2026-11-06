@@ -334,3 +334,22 @@ describe('Election copy', () => {
     }
   })
 })
+
+describe.each([
+  { id: 'gotoh', episode: 142, chapter: 327, change: 'death' },
+  { id: 'bushidora-ambitious', episode: 143, chapter: 329, change: 'death' },
+  { id: 'teradein-neutral', episode: 143, chapter: 330, change: 'death' },
+  { id: 'tsubone', episode: 142, chapter: 328, change: 'Rider’s High' },
+  { id: 'leorio-paradinight', episode: 140, chapter: 325, change: 'Nen punch' },
+])('$id’s $change drawing', ({ id, episode, chapter }) => {
+  it.each(LOCALES)('changes at its pin, never before, in %s', (locale) => {
+    for (const unit of UNITS) {
+      const gate = unit === 'episode' ? episode : chapter
+      const read = (count: number): ReturnType<typeof drawingsFor> =>
+        drawingsFor([id], readerFor(archive, at(unit, count), locale))
+
+      expect(read(gate)[id]).toBeDefined()
+      expect(read(gate)).not.toStrictEqual(read(gate - 1))
+    }
+  })
+})

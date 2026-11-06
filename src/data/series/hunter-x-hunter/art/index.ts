@@ -49,7 +49,7 @@ import {
   CHIMERA_ANT_SQUADS_DRAWINGS,
   chimeraAntSquadsRedrawn,
 } from './chimera-ant-squads'
-import { ELECTION_DRAWINGS } from './election'
+import { ELECTION_DRAWINGS, electionRedrawn } from './election'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
@@ -58,6 +58,7 @@ import { KAKIN_PHASE_TWO_DRAWINGS } from './kakin-phase-2'
 import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
 import { KAKIN_PHASE_4_DRAWINGS } from './kakin-phase-4'
 import { KAKIN_PHASE_5_DRAWINGS } from './kakin-phase-5'
+import { PLACE } from './placeholders'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
 import { YORKNEW_CITY_DRAWINGS, yorknewCityRedrawn } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
@@ -134,6 +135,29 @@ const CHERRY_SHOE: Stroke[] = [
 ]
 
 /**
+ * Leorio's briefcase, without its shadow: his first drawing and the stage
+ * of his Nen punch share it.
+ */
+const LEORIO_CASE: Stroke[] = [
+  { d: 'M20 106 H120 V162 H20 Z' },
+  { d: 'M20 106 L32 99 H132 L120 106' },
+  { d: 'M120 162 L132 155 V99' },
+  {
+    d: 'M123 118 l6 -3.5 M123 130 l6 -3.5 M123 142 l6 -3.5 M123 154 l6 -3.5',
+    role: 'ambient',
+  },
+  {
+    d: 'M64 103 C62 84 94 84 92 101 M68 103 C67 90 89 90 88 101',
+    role: 'accent',
+  },
+  { d: 'M60 104 h10 M86 102 h10', role: 'soft' },
+  { d: 'M20 116 H120 L132 109', role: 'soft' },
+  { d: 'M34 111 h8 v10 h-8 Z M98 111 h8 v10 h-8 Z' },
+  { d: 'M20 156 H120', role: 'soft' },
+]
+const LEORIO_SHADOW = shadow(78, 174, 58)
+
+/**
  * Every Hunter x Hunter line drawing, one per record, keyed by the record's
  * id, in the house style of One Piece's (`~/data/series/one-piece/art`): the
  * same box, pen and rules. The arcs, and the characters and places of the
@@ -164,7 +188,7 @@ export const DRAWINGS = {
   ...KAKIN_PHASE_4_DRAWINGS,
   ...KAKIN_PHASE_5_DRAWINGS,
   // Neutral place placeholder; finished artwork belongs to #917.
-  'dark-continent': ELECTION_DRAWINGS['world-tree'],
+  'dark-continent': PLACE,
   ...HEAVENS_ARENA_DRAWINGS,
   ...YORKNEW_CITY_DRAWINGS,
   ...GREED_ISLAND_DRAWINGS,
@@ -482,24 +506,7 @@ export const DRAWINGS = {
   // three-quarter view: the front with the lid's seam and two clasps, the
   // narrow top, the far end hatched, and the handle in the record's tint.
   // He carries it aboard the ship in episode 1 and chapter 2.
-  'leorio-paradinight': [
-    { d: 'M20 106 H120 V162 H20 Z' },
-    { d: 'M20 106 L32 99 H132 L120 106' },
-    { d: 'M120 162 L132 155 V99' },
-    {
-      d: 'M123 118 l6 -3.5 M123 130 l6 -3.5 M123 142 l6 -3.5 M123 154 l6 -3.5',
-      role: 'ambient',
-    },
-    {
-      d: 'M64 103 C62 84 94 84 92 101 M68 103 C67 90 89 90 88 101',
-      role: 'accent',
-    },
-    { d: 'M60 104 h10 M86 102 h10', role: 'soft' },
-    { d: 'M20 116 H120 L132 109', role: 'soft' },
-    { d: 'M34 111 h8 v10 h-8 Z M98 111 h8 v10 h-8 Z' },
-    { d: 'M20 156 H120', role: 'soft' },
-    shadow(78, 174, 58),
-  ],
+  'leorio-paradinight': [...LEORIO_CASE, LEORIO_SHADOW],
 
   // Kurapika's two wooden swords crossed, their grips in the record's tint:
   // he draws them for the duel with Leorio on the deck in episode 1 and
@@ -1129,6 +1136,27 @@ const hunterExamRedrawn: Redrawings = {
   ],
 }
 
+/** Returning records whose drawing changes in the Election (#913). */
+const electionReturningRedrawn: Redrawings = {
+  'leorio-paradinight': [
+    // The same briefcase, with open rings and cracks on the floor before
+    // it: the effect of his punch, which goes through the floor and comes
+    // up under Ging, the first ability he shows, episode 140 / chapter 325.
+    {
+      episode: 140,
+      chapter: 325,
+      value: [
+        ...LEORIO_CASE,
+        LEORIO_SHADOW,
+        {
+          d: `${ellipse(78, 190, 34, 6)} ${ellipse(78, 190, 18, 3)} M36 192 l-10 3 M120 192 l10 3 M60 198 l-4 4 M96 198 l4 4`,
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+}
+
 export const REDRAWINGS: Redrawings = {
   ...hunterExamRedrawn,
   ...zevilRedrawn,
@@ -1144,4 +1172,6 @@ export const REDRAWINGS: Redrawings = {
   ...chimeraAntPhaseFiveRedrawn,
   ...chimeraAntPhaseThreeRedrawn,
   ...chimeraAntPlacesRedrawn,
+  ...electionRedrawn,
+  ...electionReturningRedrawn,
 }
