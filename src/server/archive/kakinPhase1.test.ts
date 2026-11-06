@@ -71,7 +71,14 @@ const PINS: [string, Field, number][] = [
   ['cheadle-yorkshire', 'role', 340],
   ['pariston-hill', 'affiliation', 340],
   ['saiyu', 'affiliation', 348],
+  // Relationship steps: Beyond's 341 selection, the 349 roster, a 350 hire.
+  ['beyond-netero', 'relationships', 341],
+  ['benjamin-hui-guo-rou', 'relationships', 349],
+  ['unma-hui-guo-rou', 'relationships', 349],
+  ['tyson-hui-guo-rou', 'relationships', 350],
 ]
+
+const ANIME_HIDDEN = [...GATES.map(([id]) => id), 'dark-continent']
 
 describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
   const read = (chapter: number): ReturnType<typeof readerFor> =>
@@ -142,7 +149,7 @@ describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
         const payload = JSON.stringify(
           run({ mode: 'episode', episode: 148 }, locale, key),
         )
-        for (const [id] of GATES) {
+        for (const id of ANIME_HIDDEN) {
           expect(payload).not.toContain(JSON.stringify(id))
         }
       }
