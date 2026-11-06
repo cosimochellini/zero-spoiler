@@ -127,6 +127,13 @@ describe('the place words of a series that labels its own', () => {
     ],
     ['its tower label', { forms: { x: 'Tower' } }, ['heavens-arena']],
     ['its Italian tower label', { forms: { x: 'Torre' } }, ['heavens-arena']],
+    ['its vessel id', { forms: { vessel: 'x' } }, ['black-whale']],
+    ['its vessel label', { forms: { x: 'Transport ship' } }, ['black-whale']],
+    [
+      'its Italian vessel label',
+      { forms: { x: 'Nave da trasporto' } },
+      ['black-whale'],
+    ],
     ['its nest label', { forms: { x: 'Nest' } }, ['chimera-ant-nest']],
     ['its Italian nest label', { forms: { x: 'Nido' } }, ['chimera-ant-nest']],
     ['its tree label', { forms: { x: 'Tree' } }, ['world-tree']],
@@ -200,6 +207,7 @@ describe('the place words of a series that labels its own', () => {
         'swardani-city',
         'world-tree',
         'dark-continent',
+        'black-whale',
       ],
     ],
   ])(

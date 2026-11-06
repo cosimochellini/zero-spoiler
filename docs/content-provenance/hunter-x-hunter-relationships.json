@@ -1489,7 +1489,44 @@
       "hxh-en-Chapter_344-416290.json"
     ],
     "curly": ["hxh-en-Curly-424912.json", "hxh-en-Chapter_346-416292.json"],
-    "mark": ["hxh-en-Mark-424362.json", "hxh-en-Chapter_345-416291.json"]
+    "mark": ["hxh-en-Mark-424362.json", "hxh-en-Chapter_345-416291.json"],
+    "tokarine": [
+      "hxh-en-Tokarine-423958.json",
+      "hxh-en-Chapter_359-421594.json"
+    ],
+    "vincent": ["hxh-en-Vincent-425293.json", "hxh-en-Chapter_363-425429.json"],
+    "barrigen": [
+      "hxh-en-Barrigen-425021.json",
+      "hxh-en-Chapter_370-421604.json"
+    ],
+    "belerainte": [
+      "hxh-en-Belerainte-425006.json",
+      "hxh-en-Chapter_370-421604.json"
+    ],
+    "danjin": ["hxh-en-Danjin-425477.json", "hxh-en-Chapter_370-421604.json"],
+    "furykov": ["hxh-en-Furykov-425705.json", "hxh-en-Chapter_370-421604.json"],
+    "illardia": [
+      "hxh-en-Illardia-424684.json",
+      "hxh-en-Chapter_370-421604.json"
+    ],
+    "ladiolus": [
+      "hxh-en-Ladiolus-424424.json",
+      "hxh-en-Chapter_370-421604.json"
+    ],
+    "loberry": ["hxh-en-Loberry-424431.json", "hxh-en-Chapter_370-421604.json"],
+    "longhi": ["hxh-en-Longhi-424430.json", "hxh-en-Chapter_370-421604.json"],
+    "maor": ["hxh-en-Maor-424358.json", "hxh-en-Chapter_370-421604.json"],
+    "mushaho": ["hxh-en-Mushaho-424263.json", "hxh-en-Chapter_370-421604.json"],
+    "myuhan": ["hxh-en-Myuhan-424259.json", "hxh-en-Chapter_370-421604.json"],
+    "satobi": ["hxh-en-Satobi-424062.json", "hxh-en-Chapter_370-421604.json"],
+    "shedule": ["hxh-en-Shedule-424041.json", "hxh-en-Chapter_370-421604.json"],
+    "tenftory": [
+      "hxh-en-Tenftory-424464.json",
+      "hxh-en-Chapter_370-421604.json"
+    ],
+    "yuhirai": ["hxh-en-Yuhirai-423896.json", "hxh-en-Chapter_370-421604.json"],
+    "yuri": ["hxh-en-Yuri-423894.json", "hxh-en-Chapter_370-421604.json"],
+    "slakka": ["hxh-en-Slakka-424028.json", "hxh-en-Chapter_366-421600.json"]
   },
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",

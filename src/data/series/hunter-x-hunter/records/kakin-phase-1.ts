@@ -517,11 +517,18 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       { it: 'Undicesimo principe di Cakin', en: 'Eleventh Prince of Kakin' },
       mother('seiko-hui-guo-rou', { it: 'Seiko', en: 'Seiko' }),
     ),
-    'momoze-hui-guo-rou': prince(
-      { it: 'Dodicesimo principe di Cakin', en: 'Twelfth Prince of Kakin' },
-      undefined,
-      bodyguard('hanzo', { it: 'Hanzo', en: 'Hanzo' }),
-    ),
+    'momoze-hui-guo-rou': {
+      ...prince(
+        { it: 'Dodicesimo principe di Cakin', en: 'Twelfth Prince of Kakin' },
+        undefined,
+        bodyguard('hanzo', { it: 'Hanzo', en: 'Hanzo' }),
+      ),
+      // Suffocated in her room in chapter 368 (phase 2, #1135).
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 368, value: 'deceased' },
+      ],
+    },
     'marayam-hui-guo-rou': prince(
       { it: 'Tredicesimo principe di Cakin', en: 'Thirteenth Prince of Kakin' },
       undefined,

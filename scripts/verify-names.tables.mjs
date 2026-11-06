@@ -207,6 +207,27 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
+  // Kakin phase 2: absent from the Italian character, Hunter, Zoldick and
+  // Phantom Troupe lists (2026-11-06); the verified English name is kept.
+  'tokarine': 'Tokarine',
+  'vincent': 'Vincent',
+  'barrigen': 'Barrigen',
+  'belerainte': 'Belerainte',
+  'danjin': 'Danjin',
+  'furykov': 'Furykov',
+  'illardia': 'Illardia',
+  'ladiolus': 'Ladiolus',
+  'loberry': 'Loberry',
+  'longhi': 'Longhi',
+  'maor': 'Maor',
+  'mushaho': 'Mushaho',
+  'myuhan': 'Myuhan',
+  'satobi': 'Satobi',
+  'shedule': 'Shedule',
+  'tenftory': 'Tenftory',
+  'yuhirai': 'Yuhirai',
+  'yuri': 'Yuri',
+  'slakka': 'Slakka',
   // Kakin phase 1: absent from the Italian character, Hunter, Zoldick and
   // geography lists, and no specific Italian Wikipedia articles (2026-11-06).
   'curly': 'Curly',

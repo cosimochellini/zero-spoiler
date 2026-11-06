@@ -30,6 +30,8 @@ export const HUNTER_X_HUNTER_PLACE_WORDS: PlaceWords<HunterVocabulary> = {
     tower: { en: 'Tower', it: 'Torre' },
     airport: { en: 'Airport', it: 'Aeroporto' },
     building: { en: 'Building', it: 'Edificio' },
+    // Not the shared `ship` form and its Ship / Nave, which every page sends.
+    vessel: { en: 'Transport ship', it: 'Nave da trasporto' },
     nest: { en: 'Nest', it: 'Nido' },
     tree: { en: 'Tree', it: 'Albero' },
   },

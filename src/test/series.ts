@@ -97,6 +97,7 @@ const EXPECTED: Record<string, Expected> = {
   // adds one character and files the finale. Election (#912) covers episode
   // 137–148 and chapter 319–339; #914 adds 91 chronicles for its new and returning cast.
   // Kakin phase 1 (#1134) adds 26 manga-only characters and one place, chapter 340–357.
+  // Phase 2 (#1135) adds 19 characters and the Black Whale, chapter 358–370.
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -115,14 +116,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 375,
+      affiliations: 394,
       arcs: 7,
-      characters: 209,
+      characters: 228,
       chronicles: 691,
       linkedOrigins: 8,
-      places: 40,
-      statuses: 284,
-      timelines: 899,
+      places: 41,
+      statuses: 305,
+      timelines: 956,
       visits: 0,
     },
     namesSaidEarly: true,
