@@ -1,7 +1,8 @@
 import type { Drawings, Stroke } from '~/data/art/stroke'
 
 // Neutral placeholders for the records PR. Finished drawings belong to #913.
-const PERSON: Stroke[] = [
+// Kakin phase 4 reuses both until #917.
+export const PERSON: Stroke[] = [
   {
     d: 'M80 34 C64 34 58 46 58 61 C58 77 67 88 80 88 C93 88 102 77 102 61 C102 46 96 34 80 34 Z',
   },
@@ -10,7 +11,7 @@ const PERSON: Stroke[] = [
   { d: 'M69 96 Q80 105 91 96', role: 'accent' },
 ]
 
-const PLACE: Stroke[] = [
+export const PLACE: Stroke[] = [
   { d: 'M34 47 L63 38 L98 48 L126 39 V111 L98 122 L63 111 L34 121 Z' },
   { d: 'M63 38 V111 M98 48 V122', role: 'soft' },
   { d: 'M46 100 L59 86 L75 90 L91 71 L112 74', role: 'accent' },

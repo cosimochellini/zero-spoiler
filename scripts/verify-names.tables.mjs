@@ -3,6 +3,7 @@
 // check found no Italian page. Kept apart so the script stays readable as
 // each arc adds its records here.
 
+import { KAKIN_NAMES_KEPT } from './verify-names.kakin.mjs'
 import {
   THRONES_ITALIAN_TITLES,
   THRONES_NAMES_KEPT,
@@ -207,37 +208,7 @@ export const ITALIAN_TITLES = {
  */
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
-  // Kakin phase 3: absent from the same Italian lists (2026-11-06).
-  'vergei': 'Vergei',
-  'ken-i-wang': "Ken'i Wang",
-  'cashew': 'Cashew',
-  'keeney': 'Keeney',
-  // Kakin phase 2: absent from the Italian character, Hunter, Zoldick and
-  // Phantom Troupe lists (2026-11-06); the verified English name is kept.
-  'tokarine': 'Tokarine',
-  'vincent': 'Vincent',
-  'barrigen': 'Barrigen',
-  'belerainte': 'Belerainte',
-  'danjin': 'Danjin',
-  'furykov': 'Furykov',
-  'illardia': 'Illardia',
-  'ladiolus': 'Ladiolus',
-  'loberry': 'Loberry',
-  'longhi': 'Longhi',
-  'maor': 'Maor',
-  'mushaho': 'Mushaho',
-  'myuhan': 'Myuhan',
-  'satobi': 'Satobi',
-  'shedule': 'Shedule',
-  'tenftory': 'Tenftory',
-  'yuhirai': 'Yuhirai',
-  'yuri': 'Yuri',
-  'slakka': 'Slakka',
-  // Kakin phase 1: absent from the Italian character, Hunter, Zoldick and
-  // geography lists, and no specific Italian Wikipedia articles (2026-11-06).
-  'curly': 'Curly',
-  'golem': 'Golem',
-  'mark': 'Mark',
+  ...KAKIN_NAMES_KEPT,
   // Election names retained after checking Italian Wikipedia; dub not viewed.
   'beans': 'Beans',
   'cutie-beauty': 'Cutie Beauty',

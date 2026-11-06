@@ -1537,7 +1537,78 @@
       "hxh-en-Chapter_379-416311.json"
     ],
     "cashew": ["hxh-en-Cashew-424945.json", "hxh-en-Chapter_379-416311.json"],
-    "keeney": ["hxh-en-Keeney-424612.json", "hxh-en-Chapter_383-409101.json"]
+    "keeney": ["hxh-en-Keeney-424612.json", "hxh-en-Chapter_383-409101.json"],
+    "tajao": ["hxh-en-Tajao-423979.json", "hxh-en-Chapter_384-416314.json"],
+    "famule": ["hxh-en-Famule-424827.json", "hxh-en-Chapter_389-423577.json"],
+    "fukataki": [
+      "hxh-en-Fukataki-424815.json",
+      "hxh-en-Chapter_389-423577.json"
+    ],
+    "taler": ["hxh-en-Taler-423978.json", "hxh-en-Chapter_389-423577.json"],
+    "zakuro-custard": [
+      "hxh-en-Zakuro_Custard-425242.json",
+      "hxh-en-Chapter_390-405611.json"
+    ],
+    "lynch-fullbokko": [
+      "hxh-en-Lynch_Fullbokko-424425.json",
+      "hxh-en-Chapter_390-405611.json"
+    ],
+    "tevelares": [
+      "hxh-en-Tevelares-423963.json",
+      "hxh-en-Chapter_391-416317.json"
+    ],
+    "quorolle": [
+      "hxh-en-Quorolle-424146.json",
+      "hxh-en-Chapter_391-416317.json"
+    ],
+    "padaille": [
+      "hxh-en-Padaille-425289.json",
+      "hxh-en-Chapter_391-416317.json"
+    ],
+    "misha-hao": [
+      "hxh-en-Misha_Hao-424379.json",
+      "hxh-en-Chapter_392-416318.json"
+    ],
+    "daemon": ["hxh-en-Daemon-425243.json", "hxh-en-Chapter_393-416319.json"],
+    "gelato": ["hxh-en-Gelato-424795.json", "hxh-en-Chapter_393-416319.json"],
+    "perigord": [
+      "hxh-en-Perigord-424173.json",
+      "hxh-en-Chapter_393-416319.json"
+    ],
+    "bille": ["hxh-en-Bille-424986.json", "hxh-en-Chapter_393-416319.json"],
+    "voconte": ["hxh-en-Voconte-423921.json", "hxh-en-Chapter_393-416319.json"],
+    "matvere": ["hxh-en-Matvere-424337.json", "hxh-en-Chapter_393-416319.json"],
+    "tassi": ["hxh-en-Tassi-423974.json", "hxh-en-Chapter_394-416320.json"],
+    "terebellum": [
+      "hxh-en-Terebellum-423964.json",
+      "hxh-en-Chapter_394-416320.json"
+    ],
+    "chiffon-toto": [
+      "hxh-en-Chiffon_Toto-425620.json",
+      "hxh-en-Chapter_394-416320.json"
+    ],
+    "montblanc-toto": [
+      "hxh-en-Montblanc_Toto-424289.json",
+      "hxh-en-Chapter_394-416320.json"
+    ],
+    "sodom": ["hxh-en-Sodom-424027.json", "hxh-en-Chapter_394-416320.json"],
+    "borksen": ["hxh-en-Borksen-425495.json", "hxh-en-Chapter_394-416320.json"],
+    "otocin": ["hxh-en-Otocin-425497.json", "hxh-en-Chapter_394-416320.json"],
+    "gipper": ["hxh-en-Gipper-424780.json", "hxh-en-Chapter_394-416320.json"],
+    "momolly": ["hxh-en-Momolly-425496.json", "hxh-en-Chapter_394-416320.json"],
+    "lisores": ["hxh-en-Lisores-424434.json", "hxh-en-Chapter_395-416544.json"],
+    "sarasa": ["hxh-en-Sarasa-424063.json", "hxh-en-Chapter_395-416544.json"],
+    "sheila": ["hxh-en-Sheila-424040.json", "hxh-en-Chapter_395-416544.json"],
+    "renko": ["hxh-en-Renko-424127.json", "hxh-en-Chapter_397-416322.json"],
+    "yokotani": [
+      "hxh-en-Yokotani-425291.json",
+      "hxh-en-Chapter_399-401962.json"
+    ],
+    "madwig": ["hxh-en-Madwig-424373.json", "hxh-en-Chapter_400-423578.json"],
+    "himonce": ["hxh-en-Himoncé-424708.json", "hxh-en-Chapter_400-423578.json"],
+    "anzel": ["hxh-en-Anzel-425052.json", "hxh-en-Chapter_400-423578.json"],
+    "hyuga": ["hxh-en-Hyuga-424691.json", "hxh-en-Chapter_400-423578.json"],
+    "kaiser": ["hxh-en-Kaiser-425509.json", "hxh-en-Chapter_400-423578.json"]
   },
   "omitted": {
     "khara": "Through episode 26 / chapter 43 she addresses the twenty-four applicants as a group on the boat to Zevil Island, sends them ashore in order and announces the end of the Fourth Phase; she has no individual exchange with an archived character. The anime's frightened look at Gittarackur (episode 14) comes before his 19/33 gate. Judged from hxh-en-Khara-424601.json.",
@@ -1550,7 +1621,8 @@
     "michael": "A one-scene errand in chapter 148: he hands Killua the card that leads to the exam site, and the story gives the two no exchange beyond that delivery. Judged from the Michael and chapter 148 pages (#1032).",
     "tsukuma": "His televised interview establishes no relationship with a filed character.",
     "bihorn": "Named only in Pike's boast in chapter 227 that not even Bihorn's strength could cut his threads; he has no exchange with an archived character in the window. Judged from hxh-en-Bihorn and the chapter 227 page.",
-    "ming-jol-ik": "The real former leader appears alone on a farm. The unnamed double is not a filed character."
+    "ming-jol-ik": "The real former leader appears alone on a farm. The unnamed double is not a filed character.",
+    "maizan": "His only exchange in his opening scene (393) is with Hinrigh, whose naming check is deferred (#1143)."
   },
   "pending": {}
 }
