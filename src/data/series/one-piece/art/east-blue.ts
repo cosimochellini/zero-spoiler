@@ -569,6 +569,16 @@ const MERRY_COWL: Stroke = {
   transform: 'translate(0 4)',
 }
 
+/** The Flying Model's feathered wing along her side, until it breaks off. */
+const MERRY_WING: Stroke = {
+  d: 'M92 126 C112 114 136 110 156 116 q-2 9 -12 9 q0 9 -16 9 q-2 9 -18 7 q-6 7 -16 1 Q96 140 92 126',
+}
+
+/** The Flying Model's rooster tail, two feathers rising at the stern. */
+const MERRY_TAIL: Stroke = {
+  d: 'M142 104 C152 100 158 92 156 80 c-1 -5 -6 -4 -5 0 M143 107 C154 106 160 98 159 88',
+}
+
 /**
  * The Arlong Pirates' Jolly Roger, drawn about the origin and placed with a
  * `transform`: a saw-nosed shark turned to the left, its tail curling in under
@@ -2695,18 +2705,27 @@ export const eastBlueRedrawn: Redrawings = {
         ...MERRY_MAIN_RIG,
         MERRY_COWL,
         MERRY_BRACE,
-        {
-          d: 'M92 126 C112 114 136 110 156 116 q-2 9 -12 9 q0 9 -16 9 q-2 9 -18 7 q-6 7 -16 1 Q96 140 92 126',
-        },
-        {
-          d: 'M142 104 C152 100 158 92 156 80 c-1 -5 -6 -4 -5 0 M143 107 C154 106 160 98 159 88',
-        },
+        MERRY_WING,
+        MERRY_TAIL,
+      ],
+    },
+    // The wings gone, the tail, cowl and brace still on: they break off as
+    // she lands on the White Sea, in 153 (ch. 237).
+    {
+      episode: 153,
+      chapter: 237,
+      value: [
+        ...MERRY_DAMAGED,
+        ...MERRY_MAIN_RIG,
+        MERRY_COWL,
+        MERRY_BRACE,
+        MERRY_TAIL,
       ],
     },
     // The main mast a burning stump with smoke over it, the sail and its
-    // Jolly Roger gone, so the comb and eggshell take the accent; the wings
-    // broke off on landing in the White Sea. Shura sets the mast alight and
-    // Chopper breaks it off in 162 (ch. 248).
+    // Jolly Roger gone, so the comb and eggshell take the accent; the tail
+    // stays. Shura sets the mast alight and Chopper breaks it off in 162
+    // (ch. 248).
     {
       episode: 162,
       chapter: 248,
@@ -2714,6 +2733,7 @@ export const eastBlueRedrawn: Redrawings = {
         ...MERRY_DAMAGED,
         { ...MERRY_COWL, role: 'accent' },
         MERRY_BRACE,
+        MERRY_TAIL,
         { d: 'M72 119 V90 l-2 -6 l3 3 l1 -7 l2 6 l2 -4 l-1 8' },
         { d: 'M68 84 q-6 -10 2 -18 q0 8 6 8 q2 -8 6 -12 q6 12 -2 22' },
         { d: 'M74 60 q-10 -10 0 -20 q8 -8 0 -18', role: 'ambient' },

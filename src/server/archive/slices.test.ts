@@ -832,7 +832,7 @@ describe('a record drawn again later in the story', () => {
     ['nami', 7, 5],
     ['nami', 8, 6],
     // The Merry out of her Flying Model.
-    ['going-merry', 4, 'first'],
+    ['going-merry', 5, 'first'],
     // Loguetown's platform rebuilt.
     ['loguetown', 1, 'first'],
   ] as const)(

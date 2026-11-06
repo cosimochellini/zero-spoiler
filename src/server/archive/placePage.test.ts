@@ -42,8 +42,8 @@ function shipPageOf(id: string, bookmark: Bookmark): ShipPage {
 
 /** The Merry's drawings before she burns: her first, then each repair. */
 const MERRY_REPAIRS = {
-  episodes: [18, 62, 150, 152, 162, 167],
-  chapters: [41, 103, 231, 235, 248, 254],
+  episodes: [18, 62, 150, 152, 153, 162, 167],
+  chapters: [41, 103, 231, 235, 237, 248, 254],
 }
 
 /** A ship's fate and drawings at a bookmark: `null` under fog. */
