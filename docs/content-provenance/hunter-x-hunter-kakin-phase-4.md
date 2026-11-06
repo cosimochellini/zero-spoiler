@@ -93,6 +93,11 @@ Umanma, Bucket, Hignori, Vict and Musse. An appearance or mention here does not
 alter an established gate or deferral. Because Hinrigh has no record, Maizan's
 only 393 exchange (with Hinrigh) is not filed as a relationship.
 
+Odessa, Gadeau and Macne are named only in the 389 synopsis's narration and cast
+list, and Tsudonke (deferred in phase 3 at 380) is addressed by Ken’i in
+reported speech at 392. All four are deferred to #1144 for an owner naming
+check, rather than filed from this window.
+
 Steiner (phase 1's lead for chapter 384) is not named in the pinned 384
 synopsis. The 389 synopsis names him only in narration ("including Steiner and
 Peuckert"), and 400 likewise. He stays deferred (#1144).
