@@ -40,6 +40,12 @@ function shipPageOf(id: string, bookmark: Bookmark): ShipPage {
   return page
 }
 
+/** The Merry's drawings before she burns: her first, then each repair. */
+const MERRY_REPAIRS = {
+  episodes: [18, 62, 150, 152, 162, 167],
+  chapters: [41, 103, 231, 235, 248, 254],
+}
+
 /** A ship's fate and drawings at a bookmark: `null` under fog. */
 function shipAt(
   id: string,
@@ -232,14 +238,26 @@ describe('a ship’s own page', () => {
     })
   })
 
-  it('burns the Merry at episode 312 and chapter 430, and not before', () => {
-    for (const before of [ep(311), ch(429)]) {
-      expect(shipAt('going-merry', before)?.drawings).toStrictEqual([])
-      expect(shipAt('going-merry', before)?.fate).toMatch(/keel/u)
-    }
+  it('draws the Merry patched, split, refitted and restored before 312', () => {
+    expect(shipAt('going-merry', ep(311))?.drawings).toStrictEqual(
+      MERRY_REPAIRS.episodes,
+    )
+    expect(shipAt('going-merry', ch(429))?.drawings).toStrictEqual(
+      MERRY_REPAIRS.chapters,
+    )
+    expect(shipAt('going-merry', ep(311))?.fate).toMatch(/keel/u)
+    expect(shipAt('going-merry', ch(429))?.fate).toMatch(/keel/u)
+  })
 
-    expect(shipAt('going-merry', ep(312))?.drawings).toStrictEqual([18, 312])
-    expect(shipAt('going-merry', ch(430))?.drawings).toStrictEqual([41, 430])
+  it('burns the Merry at episode 312 and chapter 430, and not before', () => {
+    expect(shipAt('going-merry', ep(312))?.drawings).toStrictEqual([
+      ...MERRY_REPAIRS.episodes,
+      312,
+    ])
+    expect(shipAt('going-merry', ch(430))?.drawings).toStrictEqual([
+      ...MERRY_REPAIRS.chapters,
+      430,
+    ])
     expect(shipAt('going-merry', ep(312))?.fate).toMatch(/burn/u)
     expect(shipAt('going-merry', ch(430))?.fate).toMatch(/burn/u)
   })

@@ -428,35 +428,240 @@ const HATCHAN_SWORDS: Stroke[] = [
 /** His six hilts alone: the grips, their wrapping and the round guards. */
 const HATCHAN_HILTS = HATCHAN_SWORDS.slice(2, 5)
 
+/**
+ * The Buggy Pirates' Jolly Roger as the flag draws it, centred on the
+ * origin: the comic skull with its crossbones' ends showing behind it, black
+ * crosses over the sockets, and the big round nose in his colour.
+ */
+const BUGGY_JOLLY_ROGER: Stroke[] = [
+  {
+    d: `M-8 9 C-15 6 -17 -1 -17 -6 C-17 -17 -9 -22 0 -22 C9 -22 17 -17 17 -6 C17 -1 15 6 8 9 L8 14 Q0 17 -8 14 Z M-16 -11.6 L-19.8 -14.8 ${circle(-19.3, -17.3, 2.4)} ${circle(-22.1, -13.9, 2.4)} M16 -11.6 L19.8 -14.8 ${circle(22.1, -13.9, 2.4)} ${circle(19.3, -17.3, 2.4)} M-8.7 9.4 L-19.8 18.8 ${circle(-22.1, 17.9, 2.4)} ${circle(-19.3, 21.3, 2.4)} M8.7 9.4 L19.8 18.8 ${circle(19.3, 21.3, 2.4)} ${circle(22.1, 17.9, 2.4)}`,
+  },
+  {
+    d: 'M-10.5 -10.5 l7 7 M-3.5 -10.5 l-7 7 M3.5 -10.5 l7 7 M10.5 -10.5 l-7 7',
+    role: 'soft',
+  },
+  { d: circle(0, 2, 4.6), role: 'accent' },
+]
+
+/** The two houses either side of the pub, and the street they stand on. */
+const ORANGE_TOWN_STREET: Stroke[] = [
+  { d: house(6, 22, 118, 104) },
+  { d: house(126, 26, 114, 98) },
+  { d: 'M0 150 H160', role: 'ambient' },
+]
+
+// The hull side on, bow to the left: the keel line rising to the raised
+// stern, the near gunwale, the far one seen over it, and the cabin aft.
+const MERRY_HULL: Stroke[] = [
+  { d: 'M28 114 C30 138 50 154 82 156 C112 156 134 148 140 124 L142 102' },
+  { d: 'M28 114 Q70 122 112 120 V104 H142' },
+  { d: 'M32 110 Q70 116 112 114 M118 119 v-9 h7 v9', role: 'soft' },
+  {
+    d: 'M50 146 l6 -6 M66 152 l6 -6 M84 154 l6 -6 M102 152 l6 -6 M120 146 l6 -6',
+    role: 'ambient',
+  },
+]
+const MERRY_PLANKS: Stroke = {
+  d: 'M34 128 Q80 138 138 128 M44 142 Q84 150 130 142',
+  role: 'soft',
+}
+// The sheep's head on its neck at the prow, and its curled horn.
+const MERRY_HEAD: Stroke[] = [
+  {
+    d: 'M28 114 C24 106 20 102 14 99 C6 97 2 90 6 84 C10 76 18 72 26 72 C36 72 40 82 38 92 C37 100 36 106 38 111',
+  },
+  { d: 'M20 76 C32 70 40 82 34 90 C30 95 22 92 23 86 C24 81 30 81 30 86' },
+]
+const MERRY_MAIN_MAST: Stroke = {
+  d: 'M72 119 V98 M72 42 V22 M64 28 H80 L78 36 H66 Z M72 22 l14 4 l-14 4',
+}
+const MERRY_MAIN_SAIL: Stroke = {
+  d: 'M46 42 H98 M50 42 C46 62 46 80 50 98 H94 C98 80 98 62 94 42',
+}
+// The Straw Hat Jolly Roger as the flag draws it: the hat on the skull, the
+// sockets, the bones crossed under it.
+const MERRY_JOLLY_ROGER: Stroke[] = [
+  {
+    d: `M60 64 H84 M64 64 C64 54 80 54 80 64 M64.4 60.5 H79.6 M65 64 C62 74 66 80 72 80 C78 80 82 74 79 64 ${circle(68.5, 70, 2)} ${circle(75.5, 70, 2)} M60 78 L84 92 M84 78 L60 92`,
+    role: 'accent',
+  },
+]
+// The mizzen on the cabin roof, its triangular sail striped, its pennant.
+const MERRY_STERN_RIG: Stroke[] = [
+  { d: 'M124 104 V32 l10 3 l-10 3 M124 40 L150 96 H124' },
+  { d: 'M131 56 V96 M137 70 V96 M143 83 V96', role: 'soft' },
+]
+
+// The main mast with its sail and flag, the one rig her refits keep.
+const MERRY_MAIN_RIG: Stroke[] = [
+  MERRY_MAIN_MAST,
+  MERRY_MAIN_SAIL,
+  ...MERRY_JOLLY_ROGER,
+]
+/**
+ * The caravel side on, bow to the left: the round hull with its deck seen
+ * over the near gunwale and the underside hatched, the cabin aft, the sheep's
+ * head with its curled horn at the prow, the main mast with its crow's
+ * nest and square sail, the striped triangular sail on the mizzen, a pennant
+ * on each. The Straw Hat Jolly Roger on the main sail is the accent. Luffy's
+ * crew sails from Syrup Village in her in 18 (ch. 42); she is this again
+ * from 167 (ch. 254), when the Flying Model is taken off.
+ */
+const GOING_MERRY: Stroke[] = [
+  ...MERRY_HULL,
+  MERRY_PLANKS,
+  ...MERRY_HEAD,
+  ...MERRY_MAIN_RIG,
+  ...MERRY_STERN_RIG,
+  ...SEA.slice(1),
+]
+
+// Tin plates nailed round the foot of the mast and the figurehead's neck.
+const MERRY_PLATES: Stroke = {
+  d: `M68 102 h8 v12 h-8 Z M23 100 h12 v9 h-12 Z ${dots([
+    [70, 104],
+    [74, 104],
+    [70, 112],
+    [74, 112],
+    [25, 102],
+    [33, 102],
+    [25, 107],
+    [33, 107],
+  ])}`,
+  role: 'soft',
+}
+// The hull side stove in amidships, the planks broken round the hole.
+const MERRY_SPLIT: Stroke[] = [
+  {
+    d: 'M84 121 l-3 6 l4 5 l-4 6 l3 6 l-2 6 L90 152 l2 -6 l-3 -6 l4 -6 l-3 -6 l4 -5 l-2 -6 Z',
+  },
+  {
+    d: 'M34 128 Q56 133 80 133 M96 133 Q118 133 138 128 M44 142 Q62 146 80 146 M96 146 Q112 146 130 142 M80 126 l-4 -2 M96 138 l4 -2 M80 140 l-4 1',
+    role: 'soft',
+  },
+]
+const MERRY_DAMAGED: Stroke[] = [
+  ...MERRY_HULL,
+  ...MERRY_SPLIT,
+  ...MERRY_HEAD,
+  MERRY_PLATES,
+  ...MERRY_STERN_RIG,
+  ...SEA.slice(1),
+]
+// The split braced with two boards nailed across it.
+const MERRY_BRACE: Stroke = {
+  d: `M78 124 h20 v6 h-20 Z M78 138 h20 v6 h-20 Z ${dots([
+    [80, 126],
+    [96, 126],
+    [80, 128],
+    [96, 128],
+    [80, 140],
+    [96, 140],
+    [80, 142],
+    [96, 142],
+  ])}`,
+}
+// The Flying Model's cracked eggshell and rooster's comb on the sheep's head.
+const MERRY_COWL: Stroke = {
+  d: 'M10 70 C8 56 22 48 30 52 C36 55 39 62 38 68 l-4 -3 l-3 5 l-5 -5 l-4 4 l-5 -5 l-3 5 L10 70 M17 54 q-5 -10 3 -12 q1 -8 9 -5 q6 -3 8 4 q2 5 -3 9',
+  role: 'soft',
+  transform: 'translate(0 4)',
+}
+
+/**
+ * The Arlong Pirates' Jolly Roger, drawn about the origin and placed with a
+ * `transform`: a saw-nosed shark turned to the left, its tail curling in under
+ * it, the half oval round it with three curls off its rim, and the ends of the
+ * crossed bones behind. It is painted at the top of Arlong Park's tower and
+ * inked on Nami's shoulder.
+ */
+const ARLONG_JOLLY_ROGER =
+  'M-10 -4 C-2 -13 14 -12 18 -2 C21 6 16 13 8 14 L1 19 L3 11 C-2 9 -6 5 -10 2 M1 -10.5 L5 -20 L9 -10 M-10 -4 L-29 -2 V0 L-10 2 M-14 -3.6 l-1 -2.6 M-19 -3.1 l-1 -2.6 M-24 -2.6 l-1 -2.6 M-14 1.6 l-1 2.6 M-19 1.1 l-1 2.6 M-24 0.6 l-1 2.6'
+const ARLONG_JOLLY_ROGER_RIM =
+  'M-24 -8 C-22 -21 -8 -27 4 -26 C22 -25 31 -9 25 14 M-23 6 Q-24 10 -21 15 M-14 -23 c-3 -3 -3 -8 1 -10 M4 -26 c1 -4 5 -7 9 -6 M21 -19 c4 -2 9 0 9 5'
+const ARLONG_JOLLY_ROGER_BONES = `M-18 15 L-26 21.5 M21 15 L29 21.5 ${circle(-28.4, 20.4, 2)} ${circle(-25.4, 23.8, 2)} ${circle(31.4, 20.4, 2)} ${circle(28.4, 23.8, 2)}`
+
+/** The Jolly Roger as three strokes in the record's colour, set by `by`. */
+const arlongJollyRoger = (by: string): Stroke[] =>
+  moved(
+    [
+      { d: ARLONG_JOLLY_ROGER, role: 'accent' },
+      { d: ARLONG_JOLLY_ROGER_RIM, role: 'accent' },
+      { d: ARLONG_JOLLY_ROGER_BONES, role: 'accent' },
+    ],
+    by,
+  )
+
+/**
+ * The top two floors of Arlong Park's tower in 3/4: the front and the far
+ * face, the pointed roof, the far face hatched, the floor below, and the Jolly
+ * Roger painted at the top. Whole on the tower, or toppled off it.
+ */
+const ARLONG_TOWER_TOP: Stroke[] = [
+  { d: 'M54 76 V40 H100 V76 M100 40 L116 34 V70' },
+  { d: 'M50 40 H102 L118 34 M50 40 L86 10 L118 34 M86 10 L102 40' },
+  { d: 'M103 50 l10 -4 M103 62 l10 -4', role: 'ambient' },
+  { d: 'M54 76 H100 L116 70', role: 'soft' },
+  ...arlongJollyRoger('translate(77 59) scale(0.6)'),
+]
+
+/** The sea gate in the shore wall, the shore and the sea. */
+const ARLONG_PARK_SHORE: Stroke[] = [
+  { d: 'M68 150 V134 a12 12 0 0 1 24 0 V150' },
+  { d: 'M0 150 H160', role: 'ambient' },
+  ...SEA.slice(1),
+]
+
 export const eastBlueArt = {
-  // One island of the weakest sea seen from the water: the ridge and its
-  // peak, the cliff's jagged rim, the strata down its face and its far side
-  // hatched; in front, a dinghy setting out under one sail. Luffy rows away in
-  // a dinghy in chapter 1 and leaves with Koby in one in episode 1.
+  // Luffy's dinghy setting out, seen in 3/4 from off the bow: the near and far
+  // gunwales with the inside of the far side and a thwart, a plank along the
+  // near side and the hull hatched where it turns under, the mast and boom, and
+  // the one sail. A low island sits on the horizon behind. He sails away alone
+  // in it in chapter 1 and leaves in a dinghy again in episode 1.
   'east-blue': [
+    { d: 'M30 124 Q78 140 134 112 M34 118 Q86 108 134 112 M30 124 L34 118' },
+    { d: 'M30 124 L36 144 Q84 156 122 132 L134 112' },
+    { d: 'M38 122 Q86 114 128 115 M88 136 L92 113', role: 'soft' },
+    { d: 'M33 134 Q82 148 128 122', role: 'soft' },
+    { d: 'M40 142 l6 -10 M50 145 l6 -11 M60 147 l6 -11', role: 'ambient' },
+    { d: 'M76 128 V36 M76 108 L118 104' },
+    { d: 'M78 38 Q110 64 116 102 L78 106 Z', role: 'accent' },
+    { d: 'M80 60 Q96 72 100 104', role: 'soft' },
     {
-      d: 'M44 118 C52 104 60 100 68 102 L80 84 C86 78 92 80 98 88 L108 96 C116 94 124 100 134 114',
-    },
-    { d: 'M44 118 L56 124 L76 120 L94 126 L114 120 L134 114' },
-    { d: 'M44 118 L42 150 M134 114 L138 150 M42 150 H138' },
-    { d: 'M56 124 L55 150 M76 120 L77 150 M94 126 L94 150', role: 'soft' },
-    {
-      d: 'M116 130 l18 -12 M116 140 l20 -13 M118 149 l19 -12.6',
+      d: 'M2 112 C14 110 22 96 34 97 C46 98 50 108 62 112 M2 112 H62 M120 112 H158',
       role: 'ambient',
     },
-    { d: 'M80 84 L84 98 M98 88 L94 100', role: 'soft' },
-    { d: 'M2 152 H48 L42 164 Q26 168 8 164 Z' },
-    { d: 'M24 152 V108' },
-    { d: 'M26 110 Q44 126 44 148 H26 Z', role: 'accent' },
+    { d: 'M12 150 Q22 144 32 148 M122 140 Q134 134 148 140', role: 'ambient' },
     ...SEA.slice(1),
   ],
 
-  // A barrel adrift, its lid shut, two hoops round the staves.
+  // The barrel Luffy floats in, adrift and tipped in a swell: the lid seen round
+  // with its rim, the bulging staves, two hoops and the far side hatched, the
+  // water closing round it where it sits low. Episode 1, chapter 2.
   'romance-dawn': [
-    { d: 'M54 84 Q46 118 54 150 H106 Q114 118 106 84 Z' },
-    { d: ellipse(80, 84, 26, 6) },
-    { d: 'M50 104 Q80 110 110 104 M50 132 Q80 138 110 132', role: 'accent' },
-    { d: 'M68 90 V148 M92 90 V148', role: 'soft' },
+    ...moved(
+      [
+        { d: ellipse(80, 66, 28, 10) },
+        { d: ellipse(80, 66, 23, 7.5), role: 'soft' },
+        { d: 'M52 66 Q42 98 50.5 123.8' },
+        { d: 'M108 66 Q118 100 109.4 137.8' },
+        {
+          d: 'M48.5 84 Q80 98 111.5 84 M48 116 Q80 130 112 116',
+          role: 'accent',
+        },
+        {
+          d: 'M66 77 Q62 104 64.5 127.3 M94 77 Q98 106 96 134.3 M80 78 V130.8',
+          role: 'soft',
+        },
+        { d: 'M102 94 l8 -6 M102 106 l10 -7 M103 126 l8 -6', role: 'ambient' },
+      ],
+      'translate(0 10) rotate(-14 80 104)',
+    ),
+    {
+      d: 'M10 144 Q32 132 56 140 Q86 148 117 140 Q134 132 152 142',
+      role: 'ambient',
+    },
     ...SEA,
   ],
 
@@ -854,42 +1059,31 @@ export const eastBlueArt = {
     { d: 'M70 158 l3 -6 l4 2 l-2 4 z M80 150 l6 -1 l-2 4 z', role: 'soft' },
     { d: 'M-4 172 H52 M112 172 H164', role: 'ambient', dashed: true },
   ],
-  // The pirates' cannon on its wheeled carriage, aimed high: the barrel's
-  // muzzle seen round, its bands, its underside hatched, and the smoke of the
-  // shot in orange. They fire it at the bird carrying Luffy over the town in
-  // episode 4 and chapter 8.
+  // The Drinker Pub on Orange Town's main street, the Buggy Pirates' hangout,
+  // with their flag flying over it: the front, the side wall turning away,
+  // the flat roof they sit on, and a lower house either side. Chapter 9,
+  // episode 5. Blown apart at 7, in `eastBlueRedrawn`.
   'orange-town-arc': [
+    ...ORANGE_TOWN_STREET,
+    { d: 'M36 150 V84 H98 V150' },
+    { d: 'M98 84 L116 76 V142 L98 150' },
     {
-      d: 'M39.7 99.8 L115.8 57.2 M52.3 120.2 L124.2 70.8 M39.7 99.8 C30 104 34 124 52.3 120.2',
-    },
-    {
-      d: 'M116.7 54.8 A9.5 3.6 58.2 1 0 126.7 71 A9.5 3.6 58.2 1 0 116.7 54.8',
-    },
-    { d: `M37.6 113.6 L33.6 116 ${circle(30.6, 118.4, 3.6)}` },
-    { d: 'M57.1 90 L68.9 108.8 M83.4 75.4 L93.6 91.8', role: 'soft' },
-    {
-      d: 'M62 116 l4 -6 M74 108 l4 -6 M86 100 l4 -6 M98 92 l4 -6 M110 84 l3.6 -5.6',
+      d: 'M102 96 l10 -4 M102 108 l10 -4 M102 120 l10 -4 M102 132 l10 -4',
       role: 'ambient',
     },
-    { d: 'M34 126 L56 116 L82 104 L96 112 L94 140 L36 142 Z' },
-    { d: circle(52, 140, 15) },
+    { d: 'M36 84 L54 76 H116' },
     {
-      d: 'M52 125 V155 M37 140 H67 M41.4 129.4 L62.6 150.6 M41.4 150.6 L62.6 129.4',
+      d: 'M58 150 V124 H76 V150 M44 96 h12 v12 h-12z M78 96 h12 v12 h-12z',
       role: 'soft',
     },
-    { d: dot(52, 140) },
-    {
-      d: 'M126 52 C122 42 132 36 138 42 C142 32 156 34 154 44 C160 48 156 58 148 56 C144 64 132 62 130 56 C124 58 122 52 126 52 Z',
-      role: 'accent',
-    },
-    shadow(70, 162, 50),
+    { d: 'M80 80 V16' },
+    { d: 'M80 18 Q96 14 112 18 T140 18 V52 Q124 48 110 52 T80 52' },
+    ...moved(BUGGY_JOLLY_ROGER, 'translate(110 35) scale(0.6)'),
   ],
-  // His huge cannon front on, the bore dark and hatched, with one plain
-  // cannonball set down at its mouth, the only mark in his colour. His crew
-  // puts a cannon to one of their own in chapter 9 and fires it over Orange
-  // Town in episode 5. The ball is drawn without the Jolly Roger it carries
-  // from chapter 10, and no fuse is lit. Crowned from 1080, in
-  // `eastBlueRedrawn`.
+  // His huge cannon front on, the bore dark and hatched, with a Buggy Ball
+  // set down at its mouth carrying the crew's Jolly Roger, its red nose the
+  // only mark in his colour. The balls carry it from chapter 10 and episode 5.
+  // Crowned from 1080, in `eastBlueRedrawn`.
   'buggy': [
     ...BUGGY_CANNON,
     { d: 'M116 62 A36 36 0 0 1 98.5 92.9 M57.1 89.8 A36 36 0 1 1 116 62' },
@@ -897,8 +1091,8 @@ export const eastBlueArt = {
       d: 'M91.3 28.3 L113.9 50.9 M75.7 26.7 L115.3 66.3 M64.9 29.9 L112.2 77.2 M56.4 35.4 L106.5 85.4 M50.1 43.1 L99 92 M45.7 52.7 L77.3 84.3 M44.6 65.6 L64.9 85.9',
       role: 'ambient',
     },
-    { d: circle(76, 118, 34), role: 'accent' },
-    { d: 'M50.4 113.5 A26 26 0 0 1 67.1 93.6', role: 'soft' },
+    { d: circle(76, 118, 34) },
+    ...moved(BUGGY_JOLLY_ROGER, 'translate(75 116) scale(0.9)'),
   ],
 
   // The sea chart she ran off with, half unrolled towards the reader, its
@@ -927,36 +1121,37 @@ export const eastBlueArt = {
     ...SEA.slice(2),
   ],
 
-  // One of his fur boots, shaped like an animal's foot: the fur roll round the
-  // top and the dark opening, the toes with their three claws, the sole, tufts
-  // of fur and the heel in shade. He wears them in episode 6 (chapter 12).
+  // Mohji's hair in Orange Town, from behind so no face shows: a round mop
+  // shaped like a teddy bear's head with the two round ears on top, its fur
+  // edge, strands falling from the crown, the far side hatched, and his nape and
+  // shoulders below. Episode 6 (chapter 12).
   'mohji': [
-    { d: ellipse(98, 52, 19, 6) },
-    { d: 'M86 52 C92 49 106 49 112 51.5', role: 'ambient' },
     {
-      d: 'M79 52 C72 54 72 60 75 63 C71 67 73 73 79 74 C82 79 88 79 91 76 C95 80 101 80 104 76 C108 80 114 79 116 74 C122 73 124 67 120 63 C123 59 122 54 117 52',
+      d: 'M111.2 75.9 A8.9 8.9 0 0 1 119 88.5 A8.9 8.9 0 0 1 122 103 A8.9 8.9 0 0 1 119.7 117.6 A8.9 8.9 0 0 1 112.5 130.6 A8.9 8.9 0 0 1 101.3 140.2 A8.9 8.9 0 0 1 87.4 145.3 A8.9 8.9 0 0 1 72.6 145.3 A8.9 8.9 0 0 1 58.7 140.2 A8.9 8.9 0 0 1 47.5 130.6 A8.9 8.9 0 0 1 40.3 117.6 A8.9 8.9 0 0 1 38 103 A8.9 8.9 0 0 1 41 88.5 A8.9 8.9 0 0 1 48.8 75.9',
     },
     {
-      d: 'M81 76 C81 90 76 99 64 103 C46 108 30 114 27 127 C25 136 30 146 40 148 H130 C140 147 143 134 139 118 C136 106 125 98 118 77',
+      d: 'M65.6 64.5 A5.9 5.9 0 0 1 75.1 62.3 A5.9 5.9 0 0 1 84.9 62.3 A5.9 5.9 0 0 1 94.4 64.5',
     },
-    { d: 'M38 144 C70 146 106 146 140 139', role: 'soft' },
     {
-      d: 'M29 134 C21 138 17 145 18 153 C22 148 27 146 33 145 M46 142 C39 145 35 151 36 157 C40 153 45 151 51 150 M62 145 C56 148 53 153 54 158 C58 155 63 153 68 152',
+      d: 'M48.8 75.9 A14 14 0 1 1 65.6 64.5 M94.4 64.5 A14 14 0 1 1 111.2 75.9',
       role: 'accent',
     },
     {
-      d: 'M44 112 C47 120 47 128 44 136 M58 107 C62 117 62 129 59 140',
+      d: 'M48.8 75.9 A42 42 0 0 1 65.6 64.5 M94.4 64.5 A42 42 0 0 1 111.2 75.9',
       role: 'soft',
     },
+    { d: 'M74 70 Q60 86 57 108', role: 'soft' },
+    { d: 'M66 84 Q52 100 52 122', role: 'soft' },
+    { d: 'M84 74 Q74 100 78 134', role: 'soft' },
+    { d: 'M95 82 Q92 100 96 120', role: 'soft' },
     {
-      d: 'M92 98 q2 -4 4 0 M104 114 q2 -4 4 0 M80 120 q2 -4 4 0 M112 130 q2 -4 4 0 M94 132 q2 -4 4 0',
-      role: 'soft',
-    },
-    {
-      d: 'M126 94 l8 -6 M129 106 l8 -6 M131 118 l7 -5 M132 130 l6 -5',
+      d: 'M108 92 l7 -5 M110 106 l8 -6 M108 120 l8 -7 M100 134 l8 -7',
       role: 'ambient',
     },
-    shadow(82, 168, 60),
+    {
+      d: 'M68 144 V154 M92 144 V154 M38 168 Q48 154 68 154 M92 154 Q112 154 122 168',
+      role: 'soft',
+    },
   ],
 
   // The pet-food shop he guards, shut and still standing: the long plank sign
@@ -1290,22 +1485,15 @@ export const eastBlueArt = {
     },
     shadow(84, 188, 44),
   ],
-  // The ship: hull, deck, one mast, one sail, and the RAM's head at the prow.
-  // She breaks apart and burns from 312, in `eastBlueRedrawn`.
-  'going-merry': [
-    { d: 'M22 122 L32 154 Q80 172 128 154 L138 122' },
-    { d: 'M22 122 H138' },
-    { d: 'M36 140 Q80 154 124 140', role: 'ambient' },
-    { d: 'M80 122 V40' },
-    { d: 'M52 52 H108' },
-    { d: 'M80 40 l16 6 l-16 6' },
-    { d: 'M54 54 Q80 46 106 54 L110 104 Q80 114 50 104 Z', role: 'accent' },
-    {
-      d: 'M22 122 C10 120 6 108 10 98 C14 90 24 92 26 100 C28 106 22 110 20 106',
-    },
-    { d: 'M10 98 q-8 -4 -4 -12' },
-    ...SEA.slice(1),
-  ],
+  // The caravel side on, bow to the left: the round hull with its deck seen
+  // over the near gunwale and the underside hatched, the cabin aft, the sheep's
+  // head with its curled horn at the prow, the main mast with its crow's
+  // nest and square sail, the striped triangular sail on the mizzen, a pennant
+  // on each. The Straw Hat Jolly Roger on the main sail is the accent. Luffy's
+  // crew sails from Syrup Village in her in 18 (ch. 42); she is this again
+  // from 167 (ch. 254), when the Flying Model is taken off. Patched, split,
+  // refitted and burned in `eastBlueRedrawn`.
+  'going-merry': GOING_MERRY,
 
   // The treasure chest he has been stuck in for twenty years, closed, in
   // 3/4: the curved lid and the iron bands over it, the planks, the far side
@@ -1721,19 +1909,22 @@ export const eastBlueArt = {
     shadow(84, 184, 54),
   ],
 
-  // A walled compound on the shore, a gate in the wall and a tower rising
-  // behind it.
+  // The tower of Arlong Park in 3/4 behind its shore wall: several floors, the
+  // far face hatched, the pointed roof, and the crew's Jolly Roger at the top.
+  // Seen from the sea, as Nami's home is in episode 31 (ch. 69). Smashed
+  // at 43, in `eastBlueRedrawn`.
   'arlong-park': [
-    { d: 'M14 150 V108 H146 V150' },
+    ...ARLONG_TOWER_TOP,
+    { d: 'M54 76 V112 M100 76 V112 M116 70 V106' },
+    { d: 'M103 74 l10 -4 M103 86 l10 -4 M103 98 l10 -4', role: 'ambient' },
     {
-      d: 'M14 108 v-8 h10 v8 M36 108 v-8 h10 v8 M114 108 v-8 h10 v8 M136 108 v-8 h10 v8',
+      d: 'M54 94 H100 L116 88 M62 82 v6 M70 82 v6 M84 82 v6 M92 82 v6 M62 100 v6 M92 100 v6',
+      role: 'soft',
     },
-    { d: 'M62 108 V44 H98 V108' },
-    { d: 'M56 44 H104 L80 20 Z', role: 'accent' },
-    { d: 'M74 64 h12 v14 h-12z', role: 'soft' },
-    { d: 'M68 150 V132 a12 12 0 0 1 24 0 V150' },
-    { d: 'M4 150 H156', role: 'ambient' },
-    ...SEA.slice(1),
+    {
+      d: 'M10 150 V112 H150 V150 M10 112 v-7 h9 v7 M30 112 v-7 h9 v7 M121 112 v-7 h9 v7 M141 112 v-7 h9 v7',
+    },
+    ...ARLONG_PARK_SHORE,
   ],
 
   // His ushanka in 3/4 with the Kiribachi laid in front of it: the long
@@ -2251,6 +2442,47 @@ const SMOKER_JITTE_BROKEN: Stroke[] = [
   shadow(80, 195, 64),
 ]
 
+// Smoker's two cigars without their thin curls: the smoke takes their place.
+const SMOKER_CIGAR_PAIR: Stroke[] = SMOKER_CIGARS.slice(0, -2)
+
+/**
+ * The cigars' smoke thickened into a fist: a bank of cloud rising off both
+ * ash ends and closing into a hand, knuckles up, the thumb across.
+ */
+const SMOKER_SMOKE: Stroke[] = [
+  {
+    d: 'M60 74 C55 64 55 50 60 42 C62 34 70 32 74 38 C76 30 86 30 88 37 C90 31 99 31 101 38 C104 34 111 36 110 44 C112 54 108 66 102 74',
+  },
+  {
+    d: 'M74 38 Q72 45 74 50 M88 37 Q86 44 88 49 M101 38 Q99 45 100 50 M58 58 C68 52 84 52 94 56 C96 61 91 64 86 62',
+    role: 'soft',
+  },
+  {
+    d: 'M60 74 q-6 6 -14 3 q-4 8 -12 5 q-6 6 -8 10 M102 74 q6 6 14 3 q4 8 12 5 q6 6 6 8',
+  },
+  {
+    d: 'M38 98 C48 88 64 86 72 80 M88 80 C96 86 112 88 122 96 M42 84 q2 -6 8 -4 q4 2 2 6 M118 84 q-2 -6 -8 -4 q-4 2 -2 6',
+    role: 'soft',
+  },
+]
+
+/** Loguetown's houses, arcade, quay and sea, under the scaffold or its wreck. */
+const LOGUETOWN_TOWN: Stroke[] = eastBlueArt.loguetown.slice(4)
+
+/** The cigars and the smoke grown into a fist, over the whole jitte. */
+const SMOKER_SMOKE_JITTE: Stroke[] = [
+  ...SMOKER_CIGAR_PAIR,
+  ...SMOKER_SMOKE,
+  ...SMOKER_JITTE.slice(SMOKER_CIGARS.length),
+]
+
+/** The cigars and the fist of smoke, over the jitte broken in two. */
+const SMOKER_SMOKE_BROKEN: Stroke[] = [
+  ...SMOKER_CIGAR_PAIR,
+  ...SMOKER_SMOKE,
+  ...SMOKER_JITTE_BROKEN.slice(SMOKER_CIGARS.length),
+]
+
 /** The drops of blood he coughs up on the Baratie's deck, and where they land. */
 const GIN_BLOOD: Stroke[] = [
   {
@@ -2440,12 +2672,61 @@ export const LUCY_HELMET: Stroke[] = [
 
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const eastBlueRedrawn: Redrawings = {
-  // The bow half alone, snapped off amidships and tipped up as it sinks: the
-  // figurehead is the accent now that the sail has burned, the mast is a
-  // charred stub, fire runs along the deck and smoke rises. She breaks apart
-  // after carrying the crew out of Enies Lobby and Luffy sets her alight, in
-  // 312 (ch. 430).
   'going-merry': [
+    // Tin plates riveted round the foot of the mast Luffy tore off and over the
+    // figurehead's broken neck, after Laboon, in 62 (ch. 103).
+    { episode: 62, chapter: 103, value: [...GOING_MERRY, MERRY_PLATES] },
+    // The hull side split open amidships, its planks broken round the hole,
+    // when Bellamy's crew wrecks her in Mock Town in 150 (ch. 231).
+    {
+      episode: 150,
+      chapter: 231,
+      value: [...MERRY_DAMAGED, ...MERRY_MAIN_RIG],
+    },
+    // The Flying Model: the split braced with boards, a feathered wing on her
+    // side, a rooster's tail at the stern, and the cracked eggshell and comb
+    // over the sheep's head; the Jolly Roger stays the accent. Jaya's monkeys
+    // refit her for the Knock Up Stream in 152 (ch. 235).
+    {
+      episode: 152,
+      chapter: 235,
+      value: [
+        ...MERRY_DAMAGED,
+        ...MERRY_MAIN_RIG,
+        MERRY_COWL,
+        MERRY_BRACE,
+        {
+          d: 'M92 126 C112 114 136 110 156 116 q-2 9 -12 9 q0 9 -16 9 q-2 9 -18 7 q-6 7 -16 1 Q96 140 92 126',
+        },
+        {
+          d: 'M142 104 C152 100 158 92 156 80 c-1 -5 -6 -4 -5 0 M143 107 C154 106 160 98 159 88',
+        },
+      ],
+    },
+    // The main mast a burning stump with smoke over it, the sail and its
+    // Jolly Roger gone, so the comb and eggshell take the accent; the wings
+    // broke off on landing in the White Sea. Shura sets the mast alight and
+    // Chopper breaks it off in 162 (ch. 248).
+    {
+      episode: 162,
+      chapter: 248,
+      value: [
+        ...MERRY_DAMAGED,
+        { ...MERRY_COWL, role: 'accent' },
+        MERRY_BRACE,
+        { d: 'M72 119 V90 l-2 -6 l3 3 l1 -7 l2 6 l2 -4 l-1 8' },
+        { d: 'M68 84 q-6 -10 2 -18 q0 8 6 8 q2 -8 6 -12 q6 12 -2 22' },
+        { d: 'M74 60 q-10 -10 0 -20 q8 -8 0 -18', role: 'ambient' },
+      ],
+    },
+    // The first drawing again: repaired overnight and restored to her
+    // non-flying mode before the crew leaves Skypiea, in 167 (ch. 254).
+    { episode: 167, chapter: 254, value: GOING_MERRY },
+    // The bow half alone, snapped off amidships and tipped up as it sinks: the
+    // sheep's head is the accent now that the sail has burned, the mast is a
+    // charred stub, fire runs along the deck and smoke rises. She breaks apart
+    // after carrying the crew out of Enies Lobby and Luffy sets her alight, in
+    // 312 (ch. 430).
     {
       episode: 312,
       chapter: 430,
@@ -2453,17 +2734,20 @@ export const eastBlueRedrawn: Redrawings = {
         ...moved(
           [
             {
-              d: 'M22 122 L32 154 Q54 162 72 163 L67 152 L76 142 L69 132 L75 122',
+              d: 'M28 114 C30 138 50 154 76 156 L71 146 L79 136 L72 126 L78 120',
             },
-            { d: 'M22 122 H75' },
-            { d: 'M36 140 Q52 146 66 147', role: 'ambient' },
-            { d: 'M62 122 V70 l3 -6 l2 5' },
-            { d: 'M48 80 H74', role: 'soft' },
-            ...eastBlueArt['going-merry']
-              .slice(7, 9)
-              .map((stroke): Stroke => ({ ...stroke, role: 'accent' })),
+            { d: 'M28 114 Q50 119 78 120' },
+            {
+              d: 'M32 110 Q52 114 74 115 M34 128 Q54 133 74 134',
+              role: 'soft',
+            },
+            { d: 'M62 119 V72 l3 -6 l2 5' },
+            ...MERRY_HEAD.map((stroke): Stroke => ({
+              ...stroke,
+              role: 'accent',
+            })),
           ],
-          'translate(24 4) rotate(-12 72 163)',
+          'translate(22 10) rotate(-12 76 156)',
         ),
         {
           d: 'M54 112 q-8 -14 0 -26 q2 10 8 10 q-4 -16 8 -30 q2 16 10 18 q4 -8 0 -16 q14 14 6 40',
@@ -2474,6 +2758,88 @@ export const eastBlueRedrawn: Redrawings = {
         ...SEA,
       ],
     },
+  ],
+  'orange-town-arc': [
+    // The pub after Luffy sends a Buggy Ball back into it: the roof gone, the
+    // walls broken off, rubble and smoke, and the flag torn down and lying in
+    // front of the rubble. Chapter 15, episode 7.
+    {
+      episode: 7,
+      chapter: 15,
+      value: [
+        ...ORANGE_TOWN_STREET,
+        { d: 'M36 150 V98 L41 93 L45 101 L50 96 L54 108' },
+        {
+          d: 'M98 150 V108 L95 103 L100 98 L104 102 L109 94 L116 99 V142 L98 150',
+        },
+        {
+          d: 'M102 116 l10 -4 M102 128 l10 -4 M102 140 l10 -4',
+          role: 'ambient',
+        },
+        {
+          d: 'M36 124 L44 116 L52 118 L58 110 L66 114 L74 108 L82 113 L90 109 L98 114 M84 113 L90 117 L96 115',
+          role: 'soft',
+        },
+        {
+          d: 'M62 96 C54 96 52 86 60 84 C58 76 68 72 74 78 C78 70 90 72 90 80 C98 80 98 92 90 94 C86 100 70 100 62 96 Z M68 70 C58 68 58 54 70 54 C70 42 88 40 92 50 C102 44 114 54 106 62 C112 70 102 78 94 72 C88 78 74 76 68 70 Z',
+          role: 'ambient',
+        },
+        { d: 'M38 128 L94 122 L88 129 L95 135 L89 142 L94 150 H41 Z' },
+        ...moved(BUGGY_JOLLY_ROGER, 'translate(65 136) rotate(-4) scale(0.5)'),
+      ],
+    },
+  ],
+  'arlong-park': [
+    // Luffy brings Arlong down through all five floors in episode 43
+    // (ch. 93): the tower snapped, its top with the Jolly Roger toppled onto the
+    // stump, the wall broken and its stones on the shore.
+    {
+      episode: 43,
+      chapter: 93,
+      value: [
+        ...moved(ARLONG_TOWER_TOP, 'translate(0 16) rotate(24 100 76)'),
+        {
+          d: 'M54 112 V92 l6 -6 l6 8 l8 -10 l6 7 l8 -6 l6 9 l6 -4 V112 M100 94 l6 -8 l5 6 L116 86 V106',
+        },
+        { d: 'M103 104 l10 -4', role: 'ambient' },
+        {
+          d: 'M10 150 V112 H98 l-3 8 l5 6 l-4 9 l3 8 L100 150 M150 150 V112 H130 l2 9 l-5 5 l4 10 L126 150 M10 112 v-7 h9 v7 M30 112 v-7 h9 v7 M141 112 v-7 h9 v7',
+        },
+        {
+          d: 'M102 150 l3 -7 l8 1 l2 6 M114 150 l2 -5 l7 0 l2 5 M106 142 l4 -5 l6 2 l-1 5',
+          role: 'soft',
+        },
+        ...ARLONG_PARK_SHORE,
+      ],
+    },
+  ],
+  'loguetown': [
+    // The scaffold struck by lightning and thrown down in episode 52 (ch. 99):
+    // its legs snapped, the platform and a beam fallen, the town below standing.
+    {
+      episode: 52,
+      chapter: 99,
+      value: [
+        {
+          d: 'M65 128 L69 80 l3 6 l2 -8 l1 7 M95 128 L91.5 88 l-3 5 l-1 -7 M103 124 L101 100 l-3 5',
+          role: 'accent',
+        },
+        {
+          d: 'M65 128 L92.7 100 M95 128 L67.3 100 M67.3 100 H92.7',
+          role: 'soft',
+        },
+        ...moved(
+          eastBlueArt.loguetown.slice(1, 2),
+          'translate(-36 84) rotate(-22 85 44)',
+        ),
+        { d: 'M24 130 L56 104', role: 'accent' },
+        { d: 'M92 4 L76 40 H88 L72 76 L102 34 H90 L104 4 Z' },
+        ...LOGUETOWN_TOWN,
+      ],
+    },
+    // The first drawing again: the platform rebuilt over the two years, as
+    // it stands when the town is next seen, in 777 (ch. 823 p. 6).
+    { episode: 777, chapter: 823, value: eastBlueArt.loguetown },
   ],
   // The mop gone, the bucket still there: a patterned bandanna knotted into a
   // ring, its tails hanging from the knot, and the round glasses pushed up on
@@ -2608,6 +2974,24 @@ export const eastBlueRedrawn: Redrawings = {
     },
   ],
   'nami': [
+    // Her chart, its coastline now plain, under the Arlong Pirates' Jolly Roger
+    // she wears on her shoulder: from episode 31 (ch. 69) the reader knows she
+    // is one of Arlong's crew.
+    {
+      episode: 31,
+      chapter: 69,
+      value: [
+        ...NAMI_CHART_BODY,
+        ...NAMI_CHART_DETAIL,
+        { d: NAMI_COAST, role: 'soft' },
+        shadow(80, 176, 62),
+        ...arlongJollyRoger('translate(80 46) scale(1.1)'),
+      ],
+    },
+    // The chart alone again, her first drawing: Arlong's mark is gone, and
+    // she has her own tattoo over the scar, from the party after Arlong
+    // Park falls, in 44 (ch. 95).
+    { episode: 44, chapter: 95, value: eastBlueArt.nami },
     // The first Clima-Tact, leant across the box on the line the later staff
     // keeps: three hollow poles of blue steel pushed end to end, the two
     // sleeves where they join in her colour, and the chart at its foot. Usopp
@@ -3290,15 +3674,18 @@ export const eastBlueRedrawn: Redrawings = {
     // dark. He carries it from his first scene at the Loguetown base, in 52
     // (ch. 98).
     { episode: 52, chapter: 98, value: SMOKER_JITTE },
+    // The cigars over the jitte, their smoke grown into a fist: he first shows
+    // the Smoke-Smoke Fruit catching Luffy in episode 53 (ch. 100).
+    { episode: 53, chapter: 100, value: SMOKER_SMOKE_JITTE },
     // The jitte snapped in two at a jagged break, the tip half lying apart,
-    // crumbs where it gave. Hancock's kick breaks it at Marineford in 469
-    // (ch. 560).
-    { episode: 469, chapter: 560, value: SMOKER_JITTE_BROKEN },
+    // crumbs where it gave, under the same smoke. Hancock's kick breaks it at
+    // Marineford in 469 (ch. 560).
+    { episode: 469, chapter: 560, value: SMOKER_SMOKE_BROKEN },
     // Whole again after the two years, as it is when he is next seen in 572
     // (ch. 652).
-    { episode: 572, chapter: 652, value: SMOKER_JITTE },
+    { episode: 572, chapter: 652, value: SMOKER_SMOKE_JITTE },
     // Broken a second time, against Vergo on Punk Hazard in 616 (ch. 690).
-    { episode: 616, chapter: 690, value: SMOKER_JITTE_BROKEN },
+    { episode: 616, chapter: 690, value: SMOKER_SMOKE_BROKEN },
   ],
   'genzo': [
     // The cap without its pinwheel, and the pinwheel standing on its stick
