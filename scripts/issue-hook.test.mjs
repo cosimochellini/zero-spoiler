@@ -36,6 +36,10 @@ describe('the gh issue create hook', () => {
     expect(problems(FULL, '')).toStrictEqual([])
   })
 
+  it('accepts a scope label on top of the five groups', () => {
+    expect(problems([...FULL, 'scope:one-piece'], '')).toStrictEqual([])
+  })
+
   it('names missing, doubled and unknown labels', () => {
     expect(
       problems(['type:bug', 'type:docs', 'area:nowhere', 'size:s'], ''),
