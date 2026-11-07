@@ -2722,7 +2722,7 @@ export const CHRONICLE_SOURCES = {
   'pedro': {
     757: {
       source: 'https://onepiece.fandom.com/wiki/Episode_757',
-      note: 'Threshold entry; the record opens at 757. Episode_754 Long Summary: the Guardians secretly surround Luffy in the Whale Forest while Roddy and Blackback fight him; Wanda and Carrot arrive, Wanda apologises to Pedro on a treetop and asks him to call the Guardians back, they disperse, Luffy had not known they were there, and Wanda tells him to be glad it is not a moonlit night. Pedro page: debut Qref chap=805 ep=754. Nothing in the story is later than 757. Second pass: Wanda says to be glad it was not a moonlit night; the scene is by day, so the line is past tense.',
+      note: 'Threshold entry; the record opens at 757. Episode_754 Long Summary: the Guardians secretly surround Luffy in the Whale Forest while Roddy and Blackback fight him; Wanda and Carrot arrive, Wanda apologises to Pedro on a treetop and asks him to call the Guardians back, they disperse, Luffy had not known they were there, and Wanda tells him to be glad it is not a moonlit night. Pedro page: debut Qref chap=805 ep=754. Nothing in the story is later than 757. Second pass: Wanda says to be glad this was not a moonlit night (Episode_754); the scene is by day, so the line is past tense, and it says moonlit, not full moon.',
     },
     772: {
       source: 'https://onepiece.fandom.com/wiki/Episode_772',
@@ -2740,7 +2740,7 @@ export const CHRONICLE_SOURCES = {
     },
     759: {
       source: 'https://onepiece.fandom.com/wiki/Episode_759',
-      note: 'Episode_759 Long Summary: seventeen days earlier Inuarashi confronts Jack, drops his sword and offers a peaceful search of the island, holds back Jack’s trunk, hears Jack will stop only when Raizo is found and that he likes destruction, orders the Musketeers to attack and drives an Electro-imbued sword into Jack’s head; at 6 PM he withdraws, keeping the shift system, and the Guardians race into the city. Raizo (filed 768) is the samurai; Nekomamushi is not named. Chapter_809 Short Summary: Inuarashi holds back Jack’s attack and retreats at sunset. Chapter (#169): 809. Second pass: the Electro blade to Jack’s head is an anime extension (Episode_759 Anime Notes), absent from Chapter 809, so the story no longer names it.',
+      note: 'Episode_759 Long Summary: seventeen days earlier Inuarashi confronts Jack, drops his sword and offers a peaceful search of the island, holds back Jack’s trunk, hears Jack will stop only when Raizo is found and that he likes destruction, orders the Musketeers to attack and drives an Electro-imbued sword into Jack’s head; at 6 PM he withdraws, keeping the shift system, and the Guardians race into the city. Raizo (filed 768) is the samurai; Nekomamushi is not named. Chapter_809 Short Summary: Inuarashi holds back Jack’s attack and retreats at sunset. Chapter (#169): 809. Second pass: the Electro blade to Jack’s head is an anime extension (Episode_759 Anime Notes), absent from Chapter 809, so the story no longer names it. Round-2 review: Chapter_809 has Shishilian, not Wanda, recalling the raid and the Musketeers attacking with Inuarashi, so the story drops the attribution and the one-on-one framing.',
     },
     760: {
       source: 'https://onepiece.fandom.com/wiki/Episode_760',
