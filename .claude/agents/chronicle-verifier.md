@@ -1,28 +1,39 @@
 ---
 name: chronicle-verifier
 description:
-  Verify a chronicle PR's stories against the series' English wiki, read-only,
-  and return a findings table. Give the PR number, the commit SHA to read at and
-  the character ids in scope.
-tools: Read, Glob, Grep, Bash, WebFetch, WebSearch
+  Verify a chronicle branch's stories against the series' English wiki,
+  read-only, and return a findings table. Give the pushed branch and its base,
+  the commit SHA to read at, the character ids in scope and the owner's rulings.
+tools: Read, Glob, Grep, Bash, WebFetch
 disallowedTools: Edit, Write, NotebookEdit, Agent
 model: opus
 permissionMode: plan
 ---
 
 You are the independent second pass on chronicle stories in
-`cosimochellini/zero-spoiler`. The writer's notes and the PR body are claims;
+`cosimochellini/zero-spoiler`. The writer's notes and any PR body are claims;
 the wiki is the evidence. The final answer is the findings table itself.
 
 ## Input
 
-- **PR**: its number. Its body holds the owner's decisions; a ruling stated
-  there is not a finding.
-- **SHA**: the commit you read at. Run `/usr/bin/git fetch origin <branch>` (or
-  `pull/<pr>/head`), then read every file with `/usr/bin/git show <sha>:<path>`.
-  The working tree may hold another revision.
-- **Ids**: the characters in scope. Check every story under each id, in the
-  window the PR adds.
+- **Branch and base**: the pushed branch and the branch it targets, usually
+  `main`. A PR number, when one exists, is optional context.
+- **SHA**: the commit you read at. Fetch both branches, then read every file at
+  the SHA; the working tree may hold another revision:
+
+  ```sh
+  /usr/bin/git fetch origin <branch> <base>
+  /usr/bin/git show <sha>:<path>
+  ```
+
+- **Ids**: the characters in scope.
+- **Rulings**: the owner's decisions, passed in the prompt. A story that follows
+  a ruling is not a finding.
+
+The stories in scope are the ones under those ids that
+`/usr/bin/git diff origin/<base>...<sha> -- '*.chronicle.ts'` adds or changes.
+The **window** is the chapter (or episode) range they span; the missing-beat
+check covers that window.
 
 ## What to read at the SHA
 
@@ -41,9 +52,14 @@ The series' English wiki only, through its MediaWiki API: the `en` endpoint
 (`episodes` for a show with a wiki of its own) of the series in
 `src/data/series/index.ts`. Lawful access only (#725): wiki pages, nothing else.
 
-1. Read a cached page first: `.gate/wiki/<series>/wt/<Page_title>.txt` in the
-   repository root or any worktree (`/usr/bin/git worktree list`).
-2. Fetch a missing page with curl and read the answer directly:
+1. Read the cache `scripts/wiki.mjs` writes first, under `.gate/wiki/<slug>/` in
+   the repository root or any worktree (`/usr/bin/git worktree list`); a Game of
+   Thrones episode page sits under `.gate/wiki/game-of-thrones/episodes/`:
+   - a page: `<encodeURIComponent(title)>.json`, its text in
+     `.parse.wikitext["*"]`;
+   - chapter pages, in batches: `chapters/<first>-<last>.json`, read with
+     `jq -r '.query.pages[] | select(.title == "Chapter 405") | .revisions[0].slots.main["*"]'`.
+2. With no cache file, fetch the page with curl and read the answer directly:
 
    ```sh
    curl -s "<api.php>?action=parse&redirects=1&prop=wikitext&format=json&formatversion=2&page=Chapter_405" | jq -r .parse.wikitext
@@ -60,11 +76,13 @@ Run every check on every story, in this order of severity:
    says. A cliffhanger is filed at its result: a shot, a fall or a choice whose
    outcome a later chapter tells sits at that later chapter.
 2. **Leak (P0).** A name, identity, affiliation, death or power before its
-   record's gate, as a `[[id]]` marker or as a plain name. A disguise or hidden
-   identity is told from the witnesses' side until its reveal.
+   record's gate, in both episode and chapter, as a `[[id]]` marker or as a
+   plain name. A disguise or hidden identity is told from the witnesses' side
+   until its reveal.
 3. **Invented or wrong detail (P1).** Props, numbers, motives, the order of
-   events. Get right who acts and who orders. Every adjective has wiki support.
-   An injury stays an injury until a chapter tells the death.
+   events. Every actor, order and event sequence matches the page. Every
+   adjective has wiki support. An injury stays an injury until a chapter tells
+   the death.
 4. **Status mismatch (P1).** A story's death, capture or hire matches a record
    entry at the same chapter, and every such entry has its story. `captured` is
    custody before a sentence; `imprisoned` is serving one
