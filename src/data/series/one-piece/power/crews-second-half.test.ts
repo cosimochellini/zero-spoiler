@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest'
 
 import type { Holding, PowerBody } from '~/data/features'
-import { LOCALES } from '~/i18n/locales'
+import {
+  chapterAtEpisode,
+  episodeAtChapter,
+} from '~/data/series/one-piece/chapter-table'
+import { CHARACTER_DOSSIERS } from '~/data/series/one-piece/sagas'
+import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
 import { powerPage } from '~/server/archive/power.server'
@@ -431,33 +436,74 @@ describe('the crews of the second half', () => {
   })
 })
 
-/** A character's affiliation at a bookmark, as an English reader sees it. */
-function affiliationAt(id: string, bookmark: Bookmark): unknown {
+/** A character's affiliation at a bookmark, as a reader of `locale` sees it. */
+function affiliationAt(
+  id: string,
+  bookmark: Bookmark,
+  locale: Locale,
+): unknown {
   const character = ONE_PIECE_LOADED.archive.getCharacter(id)
   if (character === undefined) {
     throw new Error(`${id} is not filed`)
   }
 
-  return factsOf(character, opReaderFor(bookmark, 'en')).affiliation
+  return factsOf(character, opReaderFor(bookmark, locale)).affiliation
 }
 
-describe('the crews’ character pages', () => {
-  it('make Drake a Tobiroppo at chapter 929 and episode 923', () => {
-    const before = 'Beasts Pirates, headliner'
-    const after = 'Beasts Pirates, Tobiroppo'
+/** The affiliations moved to match the seats, in both locales. */
+const TEXTS = {
+  en: {
+    beasts: 'Beasts Pirates',
+    headliner: 'Beasts Pirates, headliner',
+    tobiroppo: 'Beasts Pirates, Tobiroppo',
+    allStar: 'Beasts Pirates, All-Star',
+  },
+  it: {
+    beasts: 'Pirati delle Cento Bestie',
+    headliner: 'Pirati delle Cento Bestie, headliner',
+    tobiroppo: 'Pirati delle Cento Bestie, Tobiroppo',
+    allStar: 'Pirati delle Cento Bestie, All-Star',
+  },
+}
 
-    expect(affiliationAt('x-drake', chapter(928))).toBe(before)
-    expect(affiliationAt('x-drake', chapter(929))).toBe(after)
-    expect(affiliationAt('x-drake', episode(922))).toBe(before)
-    expect(affiliationAt('x-drake', episode(923))).toBe(after)
+describe.each(LOCALES)('the crews’ character pages in %s', (locale) => {
+  const text = TEXTS[locale]
+  const at = (id: string, bookmark: Bookmark): unknown =>
+    affiliationAt(id, bookmark, locale)
+
+  it('make Drake a Tobiroppo at chapter 929 and episode 923', () => {
+    expect(at('x-drake', chapter(928))).toBe(text.headliner)
+    expect(at('x-drake', chapter(929))).toBe(text.tobiroppo)
+    expect(at('x-drake', episode(922))).toBe(text.headliner)
+    expect(at('x-drake', episode(923))).toBe(text.tobiroppo)
   })
 
   it('make King an All-Star from his record in the manga, at 985 in the anime', () => {
-    const allStar = 'Beasts Pirates, All-Star'
+    // Before his record opens there is no affiliation to read, and no rank.
+    expect(at('king', chapter(934))).toBeUndefined()
+    expect(at('king', chapter(935))).toBe(text.allStar)
+    expect(at('king', chapter(978))).toBe(text.allStar)
+    expect(at('king', episode(984))).toBe(text.beasts)
+    expect(at('king', episode(985))).toBe(text.allStar)
+  })
+})
 
-    expect(affiliationAt('king', chapter(935))).toBe(allStar)
-    expect(affiliationAt('king', chapter(978))).toBe(allStar)
-    expect(affiliationAt('king', episode(984))).toBe('Beasts Pirates')
-    expect(affiliationAt('king', episode(985))).toBe(allStar)
+describe('King’s manga-only All-Star step', () => {
+  const steps = [CHARACTER_DOSSIERS['king']?.affiliation ?? []].flat()
+
+  it('sits beside the sourceless step both media read at episode 985', () => {
+    expect(
+      steps
+        .filter(({ episode: at }) => at === 985)
+        .map(({ chapter: told, source }) => [told, source]),
+    ).toStrictEqual([
+      [935, 'chapter'],
+      [979, undefined],
+    ])
+  })
+
+  it('anchors nothing: the table still reads episode 985 past chapter 935', () => {
+    expect(chapterAtEpisode(985)).toBeGreaterThan(935)
+    expect(episodeAtChapter(935)).toBeLessThan(985)
   })
 })
