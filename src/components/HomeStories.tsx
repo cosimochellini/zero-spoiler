@@ -32,9 +32,13 @@ export interface HomeMoreStoriesProps {
   stories: HomeStory[]
 }
 
-/** A story's key in the ledger: its subject and the episode it concludes at. */
+/**
+ * A story's key in the ledger: its subject and the episode and chapter it
+ * concludes at. A manga-only arc past the anime's last episode files every
+ * story at that episode, so the chapter tells them apart.
+ */
 function keyOf(story: HomeStory): string {
-  return `${story.subject.id}:${String(story.revealedAtEpisode)}`
+  return `${story.subject.id}:${String(story.revealedAtEpisode)}:${String(story.revealedAtChapter)}`
 }
 
 /**
