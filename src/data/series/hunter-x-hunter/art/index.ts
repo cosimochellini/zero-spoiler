@@ -53,12 +53,15 @@ import { ELECTION_DRAWINGS, electionRedrawn } from './election'
 import { FINAL_PHASE_DRAWINGS } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
-import { KAKIN_PHASE_ONE_DRAWINGS } from './kakin-phase-1'
-import { KAKIN_PHASE_TWO_DRAWINGS } from './kakin-phase-2'
+import {
+  KAKIN_PHASE_ONE_DRAWINGS,
+  kakinPhaseOneBeasts,
+  kakinPhaseOneRedrawn,
+} from './kakin-phase-1'
+import { KAKIN_PHASE_TWO_DRAWINGS, kakinPhaseTwoRedrawn } from './kakin-phase-2'
 import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
 import { KAKIN_PHASE_4_DRAWINGS } from './kakin-phase-4'
 import { KAKIN_PHASE_5_DRAWINGS } from './kakin-phase-5'
-import { PLACE } from './placeholders'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
 import { YORKNEW_CITY_DRAWINGS, yorknewCityRedrawn } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
@@ -187,8 +190,6 @@ export const DRAWINGS = {
   ...KAKIN_PHASE_THREE_DRAWINGS,
   ...KAKIN_PHASE_4_DRAWINGS,
   ...KAKIN_PHASE_5_DRAWINGS,
-  // Neutral place placeholder; finished artwork belongs to #917.
-  'dark-continent': PLACE,
   ...HEAVENS_ARENA_DRAWINGS,
   ...YORKNEW_CITY_DRAWINGS,
   ...GREED_ISLAND_DRAWINGS,
@@ -1157,6 +1158,196 @@ const electionReturningRedrawn: Redrawings = {
   ],
 }
 
+/** A manga-only stage of a returning record, told in Kakin's chapters. */
+const KAKIN = { episode: 148, source: 'chapter' } as const
+
+/** Kortopi's vase, the first stroke of his drawing. */
+const KORTOPI_VASE = YORKNEW_CITY_DRAWINGS.kortopi.slice(0, 1)
+
+/**
+ * Hisoka's right hand with the four fingers and their nails in the muted
+ * ink (strokes 2 and 3) and without the creases of the fingers (stroke 7):
+ * the stage of his return mirrors it into the left hand he rebuilds.
+ */
+const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka.flatMap((stroke, index) => {
+  if (index === 7) {
+    return []
+  }
+
+  return [index === 2 || index === 3 ? { ...stroke, role: 'ambient' } : stroke]
+})
+
+/** Returning records whose drawing changes in Kakin, chapters 340–370 (#1154). */
+const kakinReturningRedrawn: Redrawings = {
+  'mizaistom-nana': [
+    // The same hat, made small, and before it the warning card he shows
+    // three men before their movements are restrained: the first ability
+    // he shows, Cross Game, chapter 343. Nothing is written on the card.
+    {
+      ...KAKIN,
+      chapter: 343,
+      value: [
+        ...moved(
+          ELECTION_DRAWINGS['mizaistom-nana'],
+          'translate(48 150) scale(0.62) translate(-80 -150)',
+        ),
+        { d: 'M86 52 L136 44 L148 120 L98 128 Z' },
+        { d: 'M98 128 L100 132 L150 124 L148 120', role: 'soft' },
+        { d: 'M94 62 L132 56 L142 114 L104 120 Z', role: 'soft' },
+        {
+          d: 'M76 40 Q70 34 74 26 M70 60 Q60 58 56 50 M156 52 Q160 44 156 36 M158 132 Q164 126 162 118',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'pariston-hill': [
+    // The same suit, made small, in front of a row of nine plain figures:
+    // Beyond makes his speech with ten important followers, Pariston among
+    // them, so he and nine others, chapter 340. Beyond's side has no emblem to draw, so his
+    // allegiance shows in the company he stands in. No faces.
+    {
+      ...KAKIN,
+      chapter: 340,
+      value: [
+        ...moved(
+          ELECTION_DRAWINGS['pariston-hill'],
+          'translate(80 196) scale(0.6) translate(-80 -196)',
+        ),
+        {
+          d: `${circle(16, 58, 5)} ${circle(32, 58, 5)} ${circle(48, 58, 5)} ${circle(64, 58, 5)} ${circle(80, 58, 5)} ${circle(96, 58, 5)} ${circle(112, 58, 5)} ${circle(128, 58, 5)} ${circle(144, 58, 5)}`,
+          role: 'soft',
+        },
+        {
+          d: 'M8 84 Q8 66 16 66 Q24 66 24 84 M24 84 Q24 66 32 66 Q40 66 40 84 M40 84 Q40 66 48 66 Q56 66 56 84 M56 84 Q56 66 64 66 Q72 66 72 84 M72 84 Q72 66 80 66 Q88 66 88 84 M88 84 Q88 66 96 66 Q104 66 104 84 M104 84 Q104 66 112 66 Q120 66 120 84 M120 84 Q120 66 128 66 Q136 66 136 84 M136 84 Q136 66 144 66 Q152 66 152 84',
+          role: 'soft',
+        },
+        { d: 'M2 88 H158', role: 'ambient' },
+      ],
+    },
+  ],
+  'saiyu': [
+    // The same headband and tail, seen on a monitor: Kurapika, watching the
+    // Zodiacs through a hidden camera, finds that Saiyu is Beyond's
+    // informant, chapter 348. Beyond's side has no emblem to draw.
+    {
+      ...KAKIN,
+      chapter: 348,
+      value: [
+        { d: 'M18 28 H142 V132 H18 Z' },
+        { d: 'M26 36 H134 V124 H26 Z', role: 'soft' },
+        { d: 'M70 132 L62 152 H98 L90 132' },
+        ...moved(
+          ELECTION_DRAWINGS.saiyu.slice(0, -1),
+          'translate(80 82) scale(0.62) translate(-80 -116)',
+        ),
+        {
+          d: 'M30 48 l8 -6 M30 66 l12 -9 M122 100 l8 -6 M114 118 l14 -10',
+          role: 'ambient',
+        },
+        shadow(80, 160, 48),
+      ],
+    },
+  ],
+  'ging-freecss': [
+    // The same cassette, and the open rings of his aura passing through a
+    // wall above it like ultrasound: he copies Leorio's remote punch and
+    // finds the men behind the wall, the first ability he shows, chapter
+    // 347. No glow.
+    {
+      ...KAKIN,
+      chapter: 347,
+      value: [
+        ...DRAWINGS['ging-freecss'],
+        { d: 'M10 58 H150', role: 'soft' },
+        {
+          d: 'M52 96 Q80 82 108 96 M40 84 Q80 62 120 84 M30 70 Q80 42 130 70 M22 54 Q80 22 138 54',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'hisoka': [
+    // His left hand, mirrored from the right: back from the dead, he makes
+    // rubber prostheses with Texture Surprise for the four fingers the
+    // blast took (chapters 355, 357). The rebuilt fingers and their nails
+    // are drawn in the muted ink, an imitation over the real palm, and the
+    // thumb keeps its nail in tint; the wiki does not say which digit was
+    // spared, so that is a frame check. He dies and returns in the same
+    // chapter, so the return is the only stage.
+    { ...KAKIN, chapter: 357, value: moved(HISOKA_REBUILT, MIRRORED) },
+  ],
+  'shalnark': [
+    // The same laptop, shut, on the ground under an empty swing: Hisoka
+    // kills him and leaves him tied to a swing, chapter 357. No body is
+    // drawn.
+    {
+      ...KAKIN,
+      chapter: 357,
+      value: [
+        { d: 'M30 160 L44 136 L138 136 L124 160 Z' },
+        { d: 'M30 160 V166 H124 L138 142 V136', role: 'soft' },
+        { d: 'M32 156 L45 133 L136 133 L123 156', role: 'accent' },
+        { d: 'M20 18 H140 M28 18 L16 150 M132 18 L144 150' },
+        { d: 'M50 18 V92 M110 18 V92', role: 'soft' },
+        { d: 'M44 92 H116 V100 H44 Z' },
+        { d: 'M4 172 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'kortopi': [
+    // The same two vases knocked over and lying on the floor end to end,
+    // the copy in tint: Hisoka kills him, chapter 357.
+    {
+      ...KAKIN,
+      chapter: 357,
+      value: [
+        ...moved(
+          KORTOPI_VASE,
+          'translate(-36.8 21.5) scale(0.85) rotate(90 48 150)',
+        ),
+        ...moved(
+          KORTOPI_VASE.map((stroke) => ({
+            ...stroke,
+            role: 'accent' as const,
+          })),
+          'translate(114.6 21.5) scale(0.85) rotate(-90 48 150)',
+        ),
+        { d: 'M4 166 H156', role: 'ambient', dashed: true },
+        { d: 'M24 172 l6 -4 M80 172 l6 -4 M130 172 l6 -4', role: 'ambient' },
+      ],
+    },
+  ],
+  'chrollo': [
+    // Another person's clothes in place of his coat: a plain jacket with
+    // no fur at the collar or cuffs, its collar in tint. He disguises
+    // himself in the Heavens Arena crowd, chapter 353; the wiki does not
+    // describe the clothes, so nothing on them is drawn.
+    {
+      ...KAKIN,
+      chapter: 353,
+      value: [
+        {
+          d: 'M60 42 L36 54 L28 134 H42 L48 86 L48 176 H112 L112 86 L118 134 H132 L124 54 L100 42',
+        },
+        { d: 'M60 42 L80 96 L100 42 M70 44 L80 70 L90 44', role: 'accent' },
+        {
+          d: 'M80 96 V176 M86 112 h0.01 M86 132 h0.01 M86 152 h0.01',
+          role: 'soft',
+        },
+        { d: 'M38 76 l5 10 M122 76 l-5 10', role: 'soft' },
+        { d: 'M96 112 l8 -6 M98 136 l8 -6 M98 160 l8 -6', role: 'ambient' },
+        shadow(80, 188, 52),
+      ],
+    },
+    // The exit, by the house convention for a temporary costume: his first
+    // drawing again from chapter 357, the next time he is shown, away from
+    // the arena on the phone to Shalnark. What he wears there is not in the
+    // wiki, so it is a frame check.
+    { ...KAKIN, chapter: 357, value: YORKNEW_CITY_DRAWINGS.chrollo },
+  ],
+}
+
 export const REDRAWINGS: Redrawings = {
   ...hunterExamRedrawn,
   ...zevilRedrawn,
@@ -1174,4 +1365,8 @@ export const REDRAWINGS: Redrawings = {
   ...chimeraAntPlacesRedrawn,
   ...electionRedrawn,
   ...electionReturningRedrawn,
+  ...kakinPhaseOneRedrawn,
+  ...kakinPhaseOneBeasts,
+  ...kakinPhaseTwoRedrawn,
+  ...kakinReturningRedrawn,
 }

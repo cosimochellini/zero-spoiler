@@ -142,9 +142,12 @@ anime-only records and scenes, and a manga-only item trade. Kakin (#916) is
 manga-only and files in five phases; phase 1 (#1134) covers chapters 340–357 and
 phase 2 (#1135) chapters 358–370 and phase 3 (#1136) chapters 371–383, phase 4
 (#1137) chapters 384–400 and phase 5 (#1138) chapters 401–420, the last
-published, with placeholder art pending #917. Kakin chronicles for chapters
-340–370 (#1155) add 99 manga-only stories for the 45 characters filed there and
-20 returning characters; all sit at episode 148, so the home ledger and the
+published. Phases 1 and 2 are drawn in #1154, with 22 manga-only stages through
+chapter 370 (eleven princes' Guardian Spirit Beasts, four deaths, four returning
+records' reveals, Hisoka's return, and Chrollo's disguise and its end); phases
+3–5 keep placeholder art pending #917. Kakin chronicles for chapters 340–370
+(#1155) add 99 manga-only stories for the 45 characters filed there and 20
+returning characters; all sit at episode 148, so the home ledger and the
 uniqueness test key a story by its chapter as well. Chapters 371–400 (#1157) add
 120 more for the 40 characters filed there and 44 returning ones. Candidates
 whose naming stays unverified are deferred to #1141–#1145. Gyro is unanchored at
@@ -277,7 +280,7 @@ checks this block.
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
 | Line drawings       | 737, one per record, plus 325 redrawings of 179 records |
-| Chronicle stories   | 757, for 186 characters                                 |
+| Chronicle stories   | 769, for 189 characters                                 |
 
 ### `hunter-x-hunter`
 
@@ -287,7 +290,7 @@ checks this block.
 | Characters        | 290                                                   |
 | Arcs, places      | 7 · 43                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 340, one per record, plus 48 redrawings of 46 records |
+| Line drawings     | 340, one per record, plus 70 redrawings of 66 records |
 | Chronicle stories | 910, for 267 characters                               |
 
 ### `game-of-thrones`

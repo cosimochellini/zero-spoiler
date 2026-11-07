@@ -1,0 +1,83 @@
+name: Health badge
+
+# The README health badge. It used to be rescored after every release, which
+# paid for a whole `npm test` on each merge; once a week is enough for a badge.
+# Run it by hand from the Actions tab to refresh it sooner.
+on:
+  schedule:
+    - cron: '23 5 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: badge
+  cancel-in-progress: true
+
+permissions:
+  contents: write # force-push the `badges` branch
+
+env:
+  CI: 'true'
+  FALLOW_UPDATE_CHECK: 'off'
+  NPM_CONFIG_FUND: 'false'
+  NPM_CONFIG_AUDIT: 'false'
+  COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
+  LEFTHOOK: '0'
+
+jobs:
+  badge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          # fallow's health pass reads the git log for churn hotspots.
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Pin npm
+        run: |
+          corepack enable npm
+          npm --version
+
+      - name: Install
+        run: npm ci
+
+      # `npm test` writes the coverage fallow reads for the CRAP score, so the
+      # grade matches the one the pull request gate sees. A failing test still
+      # leaves coverage behind, so the badge is published anyway.
+      - name: Test
+        continue-on-error: true
+        run: npm test
+
+      # fallow exits 1 when a health gate trips but still writes the badge, so
+      # only a missing or empty file counts as a failure, and that fails the
+      # run, which GitHub emails to the owner. The SVG goes to an orphan
+      # `badges` branch holding a single commit, force-pushed each time, so the
+      # history never grows. The push uses GITHUB_TOKEN, which starts no
+      # workflow.
+      - name: Publish health badge
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          status=0
+          ./node_modules/.bin/fallow health --format badge > "$RUNNER_TEMP/badge.svg" || status=$?
+          if [ "$status" -gt 1 ] || [ ! -s "$RUNNER_TEMP/badge.svg" ]; then
+            echo "fallow health produced no badge (exit $status)" >&2
+            exit 1
+          fi
+          git worktree add --orphan -b badges "$RUNNER_TEMP/badges"
+          cp "$RUNNER_TEMP/badge.svg" "$RUNNER_TEMP/badges/badge.svg"
+          cd "$RUNNER_TEMP/badges"
+          git add badge.svg
+          git commit -m 'chore: update health badge'
+          git push --force origin badges

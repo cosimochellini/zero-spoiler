@@ -976,6 +976,7 @@ export const wholeCake: OnePieceSaga = {
     },
     'inuarashi': {
       relationships: wholeCakeRelationships.inuarashi,
+      chronicle: wholeCakeChronicles.inuarashi,
       role: [
         {
           episode: 758,
@@ -1024,6 +1025,7 @@ export const wholeCake: OnePieceSaga = {
     },
     'pedro': {
       relationships: wholeCakeRelationships.pedro,
+      chronicle: wholeCakeChronicles.pedro,
       role: { it: 'Capitano dei Guardiani', en: 'Captain of the Guardians' },
       log: {
         it: 'I suoi Guardiani, che hanno il compito di cacciare gli intrusi dalla foresta, circondano Rufy. Quando arriva Wanda e garantisce per Rufy, lui dà l’ordine di ritirarsi e la squadra sparisce tra gli alberi. Rufy non si era accorto di nessuno di loro.',
@@ -1050,6 +1052,7 @@ export const wholeCake: OnePieceSaga = {
     },
     'nekomamushi': {
       relationships: wholeCakeRelationships.nekomamushi,
+      chronicle: wholeCakeChronicles.nekomamushi,
       role: [
         {
           episode: 761,
