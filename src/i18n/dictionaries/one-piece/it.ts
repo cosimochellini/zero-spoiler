@@ -149,6 +149,8 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'fruits.pageDescription':
     'I frutti del diavolo di One Piece, ognuno nascosto fino all’episodio in cui viene nominato per la prima volta.',
   'power.title': 'Il potere nel mondo',
+  'power.lede':
+    'Ogni gruppo che hai raggiunto, con i suoi seggi e chi li occupa al punto del tuo segnalibro.',
   'power.pageTitle': 'Il potere nel mondo | {series} | Zero Spoiler',
   'power.pageDescription':
     'Chi occupa i seggi del potere nel mondo di One Piece, ognuno nascosto fino al capitolo o all’episodio che lo nomina.',

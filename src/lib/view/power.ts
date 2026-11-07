@@ -11,10 +11,11 @@ export type BodyKind = 'chain' | 'council' | 'crew'
  * A seat the reader has met. Its holder is the latest one they have reached:
  * a character, `vacant` once a chapter empties it, or `unknown` while the
  * story has said the seat exists and not yet who sits in it. An unknown seat
- * carries its title alone, nothing that names who comes.
+ * carries its title alone, nothing that names who comes: no drawing, no tint.
+ * A held seat carries its holder's drawing as it stands at the bookmark.
  */
 export type SeatView = (
-  | { holder: Pick<RecordView, 'id' | 'name'>; state: 'held' }
+  | { holder: Pick<RecordView, 'id' | 'name' | 'visual'>; state: 'held' }
   | { state: 'unknown' | 'vacant' }
 ) & { title: string }
 

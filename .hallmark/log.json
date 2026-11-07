@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-07",
+    "macrostructure": "Marquee Hero (power page: the hero title over a hall of thrones, one row per body)",
+    "theme": "custom (bespoke): Sea Chart - locked, not rotated",
+    "theme_axes": "dark / geometric-sans / chromatic-amber (88 degrees)",
+    "enrichment": "Tier B hand-built SVG: a throne frame (arched back, two arms, two-step dais; src/components/chrome/throne.ts) beside the crest, the plate and the fruit frame; the holder drawing sits in the arch; a radial glow in the holder tint under a lit throne",
+    "nav": "N9 edge-aligned (shared)",
+    "footer": "Ft4 dense colophon (shared)",
+    "sections": "hero title (text.hero, semi-condensed) and lede, then one section per body: accent numeral, display name, a dissolved badge once ended, a centred hall of thrones (a chain or crew first seat alone and larger above the rest); held = tinted throne + drawing + glow fading up in seat order, vacant = solid empty throne in ambient ink, fogged = dashed unlit throne, title only",
+    "brief": "#1086: the power page look, dark and bold with one central idea. Mocked three candidates (thrones lit one by one, a tiered monument, a ladder of ranks); picked the thrones because the three seat states of the gate map one to one onto lit, empty and unlit thrones. Autonomous run: audience / use / tone inferred from the locked design system and disclosed."
+  },
+  {
     "date": "2026-10-19",
     "macrostructure": "Map / Diagram (the world map) over a Catalogue index",
     "theme": "custom (bespoke): Sea Chart — locked, not rotated",

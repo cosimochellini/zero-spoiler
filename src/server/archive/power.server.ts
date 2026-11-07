@@ -4,6 +4,7 @@ import type { Gated } from '~/lib/progress/spoiler'
 import type { BodyView, PowerPageView, SeatView } from '~/lib/view/power'
 
 import { printedFaction } from './printed.server'
+import { drawingOf } from './project.server'
 import type { Reader } from './reader.server'
 
 /**
@@ -13,7 +14,8 @@ import type { Reader } from './reader.server'
  * one they have: the count of seats is a fact the story tells too. A holder
  * opens at the later of their entry, the seat, the body and the character
  * themselves, so a seat met before its holder is named sends its title and
- * nothing else. Only the latest holder reached is sent, never the next.
+ * nothing else. Only the latest holder reached is sent, never the next, and
+ * only a holder reached sends a drawing: the one at the reader's bookmark.
  */
 export function powerPage(r: Reader): PowerPageView {
   const bodies: BodyView[] = []
@@ -63,7 +65,11 @@ function seatOf(seat: Seat, body: PowerBody, r: Reader): SeatView {
   return {
     title,
     state: 'held',
-    holder: { id: character.id, name: character.name[r.locale] },
+    holder: {
+      id: character.id,
+      name: character.name[r.locale],
+      visual: drawingOf(character, r),
+    },
   }
 }
 

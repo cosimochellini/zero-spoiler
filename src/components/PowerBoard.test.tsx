@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
 import type { PowerPageView } from '~/lib/view/power'
@@ -17,7 +17,11 @@ const page: PowerPageView = {
         {
           title: 'Fixture Throne',
           state: 'held',
-          holder: { id: 'dracule-mihawk', name: 'Dracule Mihawk' },
+          holder: {
+            id: 'dracule-mihawk',
+            name: 'Dracule Mihawk',
+            visual: { strokes: [{ d: 'M0 0 L10 10' }], tint: 'violet' },
+          },
         },
         { title: 'Fixture Crown', state: 'vacant' },
         { title: 'Fixture Sceptre', state: 'unknown' },
@@ -60,5 +64,18 @@ describe('PowerBoard', () => {
     expect(screen.getByText('Vacant')).toBeVisible()
     expect(screen.getByText('Under fog')).toBeVisible()
     expect(screen.queryByText(/Nothing on this page/u)).not.toBeInTheDocument()
+  })
+
+  it('draws each holder in their throne and leaves the others empty', () => {
+    renderWithProviders(<PowerBoard page={page} />, { bookmark: ep(600) })
+
+    const seats = within(
+      screen.getByRole('region', { name: 'Seven Warlords of the Sea' }),
+    ).getAllByRole('listitem')
+    // The throne's back and dais, then the holder's drawing.
+    const paths = seats.map((seat) => seat.querySelectorAll('path').length)
+
+    expect(paths).toStrictEqual([3, 2, 2])
+    expect(seats[0]?.querySelector('path[d="M0 0 L10 10"]')).not.toBeNull()
   })
 })
