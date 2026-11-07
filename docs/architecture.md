@@ -149,7 +149,8 @@ records' reveals, Hisoka's return, and Chrollo's disguise and its end); phases
 (#1155) add 99 manga-only stories for the 45 characters filed there and 20
 returning characters; all sit at episode 148, so the home ledger and the
 uniqueness test key a story by its chapter as well. Chapters 371–400 (#1157) add
-120 more for the 40 characters filed there and 44 returning ones. Candidates
+120 more for the 40 characters filed there and 44 returning ones, and chapters
+401–420 (#1159) 79 for the 22 filed there and 37 returning ones. Candidates
 whose naming stays unverified are deferred to #1141–#1145. Gyro is unanchored at
 78 / 203. Silva, Killua's father, is named in episode 24 but in chapter 95 in
 the manga, so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown
@@ -291,7 +292,7 @@ checks this block.
 | Arcs, places      | 7 · 43                                                |
 | Saga modules      | 7                                                     |
 | Line drawings     | 340, one per record, plus 70 redrawings of 66 records |
-| Chronicle stories | 910, for 267 characters                               |
+| Chronicle stories | 989, for 289 characters                               |
 
 ### `game-of-thrones`
 

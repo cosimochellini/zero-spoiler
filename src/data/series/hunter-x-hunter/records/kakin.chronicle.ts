@@ -12,7 +12,11 @@ function told(
   return { episode: 148, chapter, source: 'chapter', value: { title, body } }
 }
 
-/** Kakin stories, chapters 340–370 (#1155) and 371–400 (#1157): the Zodiacs, Heavens Arena, the Black Whale, its Mafia and Meteor City. */
+/**
+ * Kakin stories, chapters 340–370 (#1155), 371–400 (#1157) and 401–420 (#1159):
+ * the Zodiacs, Heavens Arena, the Black Whale, its Mafia, Meteor City and
+ * special martial law.
+ */
 export const kakinChronicles = {
   // New in phase 1 (chapters 340–357).
   'beyond-netero': [
@@ -46,6 +50,14 @@ export const kakinChronicles = {
       {
         it: 'Su ordine del direttore dell’agenzia che rilascia i permessi di viaggio, [[cheadle-yorkshire|Cheadle]] porta a Beyond un contratto: se infrangerà le regole anche una sola volta, passerà il resto della vita in prigione. Beyond lo legge, accetta e firma. Poi conficca la penna nel contratto, che resta attaccata al foglio e al ripiano, e dice che restano soltanto tre cose: la capacità, i mezzi e il contratto.',
         en: 'On orders from the director of the agency that issues travel permits, [[cheadle-yorkshire|Cheadle]] brings Beyond a contract: if he breaks the rules even once, he will spend the rest of his life in prison. Beyond reads it, agrees and signs. Then he drives the pen into the contract so that it sticks to the paper and the pad, and says that only three things are left: capacity, means and contract.',
+      },
+    ),
+    told(
+      412,
+      { it: 'Mille cause respinte', en: 'A thousand lawsuits thrown out' },
+      {
+        it: 'Nella sua cella al primo livello, Beyond chiede a [[kanzai|Kanzai]] un nuovo libro, poi carta e penna, che Kanzai gli nega per motivi di sicurezza; Beyond scherza sul tagliargli la testa con il libro, e gli chiede di organizzare un incontro con qualcuno con cui vuole parlare. Due giorni dopo [[cleapatro|Cleapatro]] arriva con scatoloni di documenti: tutte le 1.047 cause che ha intentato sono state respinte. Mentre Kanzai e [[saiyu|Saiyu]] controllano che tra le carte non ci sia niente di sospetto, Beyond e Cleapatro litigano sulla visione dei diritti umani di Cakin.',
+        en: 'In his cell on Tier 1, Beyond asks [[kanzai|Kanzai]] for a new book, then for pen and paper, which Kanzai refuses for security reasons; Beyond jokes about taking his head off with the book, and asks him to arrange a meeting with someone he wants to talk to. Two days later [[cleapatro|Cleapatro]] arrives with boxes of documents: all 1,047 of the lawsuits he filed have been thrown out. While Kanzai and [[saiyu|Saiyu]] check the papers for anything suspicious, Beyond and Cleapatro argue over Kakin’s view of human rights.',
       },
     ),
   ],
@@ -117,6 +129,38 @@ export const kakinChronicles = {
       {
         it: 'Durante l’allenamento dello Zetsu, la guardia del corpo di Tserriednich vede formarsi alle sue spalle una seconda bestia, nata dall’istinto. Mentre suona la musica del banchetto gli spara, ma il corpo che vede svanisce e il principe le compare alle spalle, illeso. Con gli occhi chiusi nello Zetsu vede dieci secondi nel futuro e può agire diversamente da ciò che vedono gli altri: così si è scansato. La sua bestia la avverte di non ingannarlo più. Tserriednich invita [[melody|Melody]], di cui ha sentito la musica, e decide di padroneggiare l’abilità per dominare la successione e il mondo.',
         en: 'During Zetsu training, Tserriednich’s bodyguard sees a second beast take shape behind him, born of instinct. As the banquet’s music plays she shoots him, but the body she sees vanishes and the prince appears behind her, unharmed. With his eyes closed in Zetsu he sees ten seconds into the future and can act differently from what others see: so he stepped aside. His beast warns her not to deceive him again. Tserriednich invites [[melody|Melody]], whose music he heard, and resolves to master the ability to dominate the contest and the world.',
+      },
+    ),
+    told(
+      404,
+      { it: 'Lo Zetsu in pochi secondi', en: 'Zetsu in seconds' },
+      {
+        it: 'Tserriednich si allena nello Zetsu con un’altra guardia del corpo, correndo sul tapis roulant e giocando al telefono. Dopo tre giorni scende sotto i dieci secondi e poi sotto i tre e mezzo: impara in un giorno ciò che al suo istruttore richiede sei mesi. L’istruttore, che usa lo Zetsu dalla nascita, sospetta che il principe attivi un’abilità mentre è in Zetsu. Tserriednich giura di scendere sotto il secondo anche a costo di metterci due settimane, e tra le sue mani si forma una grande sfera d’aura. Ordina anche a uno dei suoi uomini di continuare a incontrare [[melody|Melody]] per conquistarla prima di [[benjamin-hui-guo-rou|Benjamin]].',
+        en: 'Tserriednich trains in Zetsu with another of his bodyguards, jogging on a treadmill and playing on his phone. After three days he gets under ten seconds, then under three and a half: he learns in a day what takes his trainer six months. The trainer, who has used Zetsu since birth, suspects that the prince activates an ability while in it. Tserriednich vows to get under one second even if it takes two weeks, and a large ball of aura forms between his hands. He also orders one of his men to keep meeting [[melody|Melody]] and win her over before [[benjamin-hui-guo-rou|Benjamin]] does.',
+      },
+    ),
+    told(
+      418,
+      { it: 'Una morte messa in scena', en: 'A staged death' },
+      {
+        it: 'L’abilità di Tserriednich si attiva quando è in Zetsu con gli occhi chiusi: vede i dieci secondi successivi, e se apre gli occhi questi si svolgono davvero, mentre lui può muoversi senza essere visto finché resta in Zetsu. Prima che arrivi [[benjamin-hui-guo-rou|Benjamin]], ordina ai suoi uomini di non resistere e dice a una guardia che sta per morire. Benjamin gli spara, gli schiaccia la testa e lo lascia per morto; guardando da un lato, Tserriednich trova il tutto troppo sbrigativo. Gli altri continuano a vedere il suo cadavere. Scrive un testamento che vieta di vedere la salma, riempie la bara di pistole e se ne va, armato, con meno di quattro ore di abilità rimaste.',
+        en: 'Tserriednich’s ability works when he is in Zetsu with his eyes shut: he sees the next ten seconds, and if he opens his eyes they play out, while he can move unseen as long as he stays in Zetsu. Before [[benjamin-hui-guo-rou|Benjamin]] arrives, he tells his men not to resist and tells a guard that he is going to die. Benjamin shoots him, crushes his head and leaves him for dead; watching from the side, Tserriednich finds it all too hasty. The others still see his corpse. He writes a last will forbidding any viewing, fills his coffin with guns and sets off, armed, with just under four hours of his ability left.',
+      },
+    ),
+    told(
+      419,
+      { it: 'Fuori dal raggio', en: 'Out of range' },
+      {
+        it: 'Ancora invisibile, Tserriednich esce travestito dalla stanza 1004 e stima che la sua abilità abbia un raggio di circa trentasei metri. Oltre quel limite si spezza, in un corridoio pieno di soldati: ne uccide alcuni, ne prende uno in ostaggio e vede di nuovo i dieci secondi successivi, poi corre mentre alcuni soldati crollano credendo di essere stati colpiti. Provando le regole, scopre che chi entra nel raggio dopo l’attivazione non ne è toccato. Quando i soldati girano il suo “cadavere”, questo svanisce. Si dirige verso il secondo livello attraverso l’area dei divertimenti VVIP e arriva al casinò.',
+        en: 'Still unseen, Tserriednich walks out of Room 1004 in disguise and estimates his ability’s range at about thirty-six metres. Past that edge it breaks, in a corridor full of soldiers: he kills several, takes one hostage and sees the next ten seconds again, then runs as some soldiers collapse believing they have been shot. Testing the rules, he learns that people who enter the sphere after it starts are not affected. When the soldiers flip his “corpse”, it vanishes. He heads for Tier 2 through the VVIP entertainment area and reaches the casino.',
+      },
+    ),
+    told(
+      420,
+      { it: 'L’uomo alla slot', en: 'The man at the slot machine' },
+      {
+        it: 'Nel casinò deserto Tserriednich trova soldati morti con la gola tagliata e un uomo, [[hisoka|Hisoka]], che gioca a pachinko nonostante la legge marziale. Avvicinandosi in Zetsu lo perde di vista, poi lo sente alle sue spalle. Chiude gli occhi e vede i dieci secondi successivi: spara, Hisoka gli taglia la gola, lo smaschera ed è deluso che non sia un Ragno. Mentre la scena si svolge, Hisoka nota il punto in cui dovrebbe esserci la bestia del principe, guarda dritto verso il vero Tserriednich e se ne va. Esaltato, Tserriednich giura di superare quel livello di Nen e raggiunge il ponte esterno, dove i collegamenti con i livelli inferiori sono stati ritirati.',
+        en: 'In the empty casino Tserriednich finds soldiers dead with their throats slit, and a man, [[hisoka|Hisoka]], playing pachinko despite martial law. Creeping closer in Zetsu, he loses sight of him, then senses him behind him. He shuts his eyes and sees the next ten seconds: he fires, Hisoka slits his throat, unmasks him and is disappointed that he is not a Spider. As the scene plays out, Hisoka notices where the prince’s beast should be, looks straight at the real Tserriednich and walks away. Thrilled, Tserriednich vows to surpass that level of Nen, and reaches the deck outside, where the bridges to the lower tiers are gone.',
       },
     ),
   ],
@@ -194,6 +238,41 @@ export const kakinChronicles = {
         en: 'After one of his soldiers has shot himself outside [[luzurus-hui-guo-rou|Luzurus]]’s quarters, Benjamin feels a new rumbling of aura, and another soldier, sent to [[halkenburg-hui-guo-rou|Halkenburg]], screams over the radio, and Benjamin switches the receiver off. He realises he underestimated his brother. On the advice of his guard captain he has Halkenburg arrested for premeditated murder, cutting him off from the men his ability needs. A special task force takes the prince into custody, and Benjamin plans to strike at the trial.',
       },
     ),
+    told(
+      403,
+      { it: 'Un attacco al suo capitano', en: 'An attack on his captain' },
+      {
+        it: 'Benjamin viene a sapere che il processo tra [[balsamilco|Balsamilco]] e [[halkenburg-hui-guo-rou|Harkenburg]] non è cominciato: Balsamilco ha avuto problemi con l’attrezzatura e il principe si è sentito male. Capisce che l’abilità di Harkenburg ha colpito il suo capitano e sospetta che ora sia manipolato, ma gli lascia decidere come agire e vuole solo risultati. Se Balsamilco lascerà l’Ufficio di Giustizia senza avvertire, dichiarerà la legge marziale, e mette in allerta i suoi uomini. Più tardi Balsamilco gli comunica che la missione è compiuta. Benjamin liquida come voci la lettera di [[kacho-hui-guo-rou|Kachow]] che gli porta [[fugetsu-hui-guo-rou|Fugetsu]].',
+        en: 'Benjamin learns that [[balsamilco|Balsamilco]]’s trial against [[halkenburg-hui-guo-rou|Halkenburg]] has not started: Balsamilco had equipment trouble and the prince fell ill. He works out that Halkenburg’s ability struck his captain and suspects he is now manipulated, but lets him make the call and wants only results. If Balsamilco leaves the Justice Bureau without warning, he will declare martial law, and he puts his men on red alert. Later Balsamilco reports that the mission is complete. Benjamin dismisses as rumours the letter from [[kacho-hui-guo-rou|Kacho]] that [[fugetsu-hui-guo-rou|Fugetsu]] brings him.',
+      },
+    ),
+    told(
+      410,
+      {
+        it: 'Il comando all’Ufficio di Giustizia',
+        en: 'Command at the Justice Bureau',
+      },
+      {
+        it: 'Dopo la dichiarazione della legge marziale speciale, Benjamin viene a sapere che sembra trovato il covo degli Heil-Ly al terzo livello e ordina di cercare [[zhang-lei-hui-guo-rou|Chowrai]] e [[luzurus-hui-guo-rou|Loozlus]]. Calcola di avere circa nove ore e mezza prima di entrare in coma, e vuole eliminare i principi rimasti ed essere nominato ufficialmente successore prima di allora. All’Ufficio di Giustizia annuncia a [[mizaistom-nana|Mizaistom]], [[botobai-gigante|Botobai]] e [[kaiser|Kaiser]] che unirà i tre poteri dello Stato sotto l’esercito, accusando [[tserriednich-hui-guo-rou|Tserriednich]] e [[halkenburg-hui-guo-rou|Harkenburg]] di un attentato con un’arma biologica.',
+        en: 'After special martial law is declared, Benjamin hears that the Heil-Ly hideout seems to have been found on Tier 3 and orders a search for [[zhang-lei-hui-guo-rou|Zhang Lei]] and [[luzurus-hui-guo-rou|Luzurus]]. He reckons he has about nine and a half hours before falling into a coma, and wants to eliminate the remaining princes and be officially named successor before then. At the Justice Bureau he tells [[mizaistom-nana|Mizaistom]], [[botobai-gigante|Botobai]] and [[kaiser|Kaiser]] that he will unite the three branches of government under the military, blaming [[tserriednich-hui-guo-rou|Tserriednich]] and [[halkenburg-hui-guo-rou|Halkenburg]] for a bioweapon plot.',
+      },
+    ),
+    told(
+      413,
+      { it: 'Tradito dalla madre', en: 'Betrayed by his mother' },
+      {
+        it: 'Sentendo un forte tremore, Benjamin capisce che è morto solo il corpo di [[halkenburg-hui-guo-rou|Harkenburg]] e ordina di trattenere [[balsamilco|Balsamilco]] e i seguaci del fratello. Poi vomita e riconosce i sintomi dell’arma biologica. Dalla sua cassaforte manca solo la fiala presa da Balsamilco, e conclude che sua madre [[unma-hui-guo-rou|Unma]] lo ha tradito attraverso [[furykov|Furykov]]. Furykov lo ammette, e Benjamin, convinto dalle sue ragioni, gli ordina di continuare a servirlo. Fissa la legge marziale speciale per le 14:15: le guardie degli altri principi vanno uccise a vista, gli Hunter lasciati stare e i principi riuniti nella stanza 1001. Infila una fiala in una scarpa.',
+        en: 'Feeling a strong rumbling, Benjamin realises that only [[halkenburg-hui-guo-rou|Halkenburg]]’s body has died, and orders his soldiers to detain [[balsamilco|Balsamilco]] and his brother’s followers. Then he vomits and recognises the bioweapon’s symptoms. Only the vial Balsamilco took is missing from his safe, so he concludes that his mother [[unma-hui-guo-rou|Unma]] has betrayed him through [[furykov|Furykov]]. Furykov admits it, and Benjamin, convinced by his reasons, orders him to keep serving him. He sets special martial law for 2:15 p.m.: the other princes’ guards are to be shot on sight, the Hunters left alone, and the princes gathered in Room 1001. He slips a vial into his shoe.',
+      },
+    ),
+    told(
+      417,
+      { it: 'Contro sua madre', en: 'Against his mother' },
+      {
+        it: 'Benjamin lascia [[tserriednich-hui-guo-rou|Tserriednich]] per morto, offre la grazia a chi testimonierà contro di lui e carica una seconda dose dell’arma biologica nello stivale. Nella stanza 1001 contagia [[tubeppa-hui-guo-rou|Tsubeppa]] e [[tyson-hui-guo-rou|Tyson]], poi parte per l’Ufficio di Giustizia con [[balsamilco|Balsamilco]] e [[coventoba|Coventoba]]. Si scopre l’abilità della sua bestia: dopo la sua morte si fonderà con la sua abilità e diventerà la bestia di un suo consanguineo. Furioso perché sua madre [[unma-hui-guo-rou|Unma]] ha sfruttato la lealtà di [[furykov|Furykov]] per provocare la legge marziale, decide di affrontarla.',
+        en: 'Benjamin leaves [[tserriednich-hui-guo-rou|Tserriednich]] for dead, offers pardons to anyone who will testify against him, and loads a second dose of the bioweapon into his boot. In Room 1001 he infects [[tubeppa-hui-guo-rou|Tubeppa]] and [[tyson-hui-guo-rou|Tyson]], then heads for the Justice Bureau with [[balsamilco|Balsamilco]] and [[coventoba|Coventoba]]. His beast’s ability is revealed: after his death it will fuse with his own ability and become the beast of a blood relative. Furious that his mother [[unma-hui-guo-rou|Unma]] used [[furykov|Furykov]]’s loyalty to provoke martial law, he decides to confront her.',
+      },
+    ),
   ],
   'unma-hui-guo-rou': [
     told(
@@ -202,6 +281,14 @@ export const kakinChronicles = {
       {
         it: 'Unma è la prima regina di Cakin, una delle otto mogli legittime del re. I suoi figli [[benjamin-hui-guo-rou|Benjamin]] e [[tserriednich-hui-guo-rou|Tserriednich]] sono il primo e il quarto principe. Solo i figli delle mogli legittime possono contendersi il trono, a patto di salire sulla Black Whale e di assistere alla cerimonia di partenza. Fino a quel giorno l’identità dei partecipanti resta segreta.',
         en: 'Unma is the First Queen of Kakin, one of the king’s eight legal wives. Her sons [[benjamin-hui-guo-rou|Benjamin]] and [[tserriednich-hui-guo-rou|Tserriednich]] are the First and Fourth Princes. Only the children of the legal wives may compete for the throne, provided they board the Black Whale and attend the departure ceremony. Until that day, who takes part stays secret.',
+      },
+    ),
+    told(
+      403,
+      { it: 'La vera madre', en: 'His real mother' },
+      {
+        it: 'Unma risponde a una telefonata e dice a suo figlio [[halkenburg-hui-guo-rou|Harkenburg]] che approva la sua scelta, che le è dispiaciuto non vederlo al banchetto e che è fiera di lui. In una lettera firmata da [[kacho-hui-guo-rou|Kachow]] e consegnata a [[benjamin-hui-guo-rou|Benjamin]] c’è scritto ciò che tutti tacciono: Unma è la vera madre di Harkenburg. Secondo una teoria diffusa online, lei lo avrebbe affidato a [[duazul-hui-guo-rou|Duazul]] per cambiarne il posto nella linea di successione e proteggerlo dai fratelli maggiori. Benjamin la liquida come una voce trovata su internet.',
+        en: 'Unma takes a phone call and tells her son [[halkenburg-hui-guo-rou|Halkenburg]] that she supports his choice, that she was sorry not to see him at the banquet, and that she is proud of him. A letter signed by [[kacho-hui-guo-rou|Kacho]] and delivered to [[benjamin-hui-guo-rou|Benjamin]] says what everyone keeps quiet: Unma is Halkenburg’s real mother. According to a theory online, she gave him to [[duazul-hui-guo-rou|Duazul]] to change his place in the line of succession and protect him from his older siblings. Benjamin dismisses it as a rumour found online.',
       },
     ),
   ],
@@ -258,6 +345,14 @@ export const kakinChronicles = {
       {
         it: 'Prima della partenza [[kurapika|Kurapika]] avverte dell’aura salire dalla culla di Woble. A bordo cinque guardie vengono trovate morte nei suoi alloggi, prosciugate del sangue. Saputo che Woble ha partecipato al rito dell’urna poco più di un mese prima, Kurapika sospetta che la sua bestia guardiana abbia attaccato per difesa, percependo l’ansia della madre come un pericolo. Non esclude però che un altro principe stia colpendo Woble perché è la più giovane e la più debole.',
         en: 'Before departure, [[kurapika|Kurapika]] senses aura rising from Woble’s cradle. On board, five guards are found dead in her quarters, drained of blood. Learning that Woble took part in the urn ritual a little over a month earlier, Kurapika suspects that her guardian beast attacked in self-defence, sensing her mother’s anxiety as danger. He cannot rule out, though, that another prince is targeting Woble because she is the youngest and weakest.',
+      },
+    ),
+    told(
+      412,
+      { it: 'Il bambino della stanza 1014', en: 'The baby in Room 1014' },
+      {
+        it: 'Il neonato che [[kurapika|Kurapika]] protegge nella stanza 1014 non è Woble. Interrogata con la catena di Kurapika dopo che [[bill|Bill]] l’ha sentita alternare la pronuncia maschile e quella femminile del nome, [[oito-hui-guo-rou|Oito]] ammette che il bambino è il figlio di sua sorella minore. Woble, sua figlia, ha partecipato alla cerimonia dell’urna ma è con la sorella, e Oito non sa dove; alla cerimonia di partenza c’era invece il nipote. Così nessuno dei due può partecipare alla successione. Oito ha finto che Woble partecipasse per paura di essere uccisa.',
+        en: 'The baby [[kurapika|Kurapika]] has been guarding in Room 1014 is not Woble. Questioned with Kurapika’s chain after [[bill|Bill]] noticed her switching between the masculine and feminine pronunciations of the name, [[oito-hui-guo-rou|Oito]] admits that the boy is her younger sister’s son. Woble, her daughter, took part in the urn ceremony but is with the sister, and Oito does not know where; the nephew attended the departure ceremony instead. So neither child is eligible for the contest. Oito pretended that Woble was taking part for fear of being killed.',
       },
     ),
   ],
@@ -324,6 +419,14 @@ export const kakinChronicles = {
       {
         it: 'Cheadle e [[leorio-paradinight|Leorio]] accolgono [[kurapika|Kurapika]] e [[mizaistom-nana|Mizaistom]] alla riunione dello Zodiaco. Cheadle annuncia che Cakin si è unita alle cinque nazioni guida, ora V6, e che il pericolo delle cinque minacce del Continente Oscuro è stato classificato sopra quello delle formichimere. L’obiettivo è catturarne almeno una, sopravvivere al ritorno e occuparsi di [[beyond-netero|Beyond]] lungo la strada. Ogni membro dichiara poi il proprio ruolo nel viaggio.',
         en: 'Cheadle and [[leorio-paradinight|Leorio]] greet [[kurapika|Kurapika]] and [[mizaistom-nana|Mizaistom]] at the Zodiacs’ meeting. Cheadle announces that Kakin has joined the five leading nations, now the V6, and that the danger rank of the Dark Continent’s Five Threats has been raised above the Chimera Ants. Their objective is to capture at least one of them, survive the trip back and deal with [[beyond-netero|Beyond]] along the way. Each member then states their role in the voyage.',
+      },
+    ),
+    told(
+      404,
+      { it: 'Allontanata dal paziente', en: 'Sent away from the patient' },
+      {
+        it: 'Con cinque assistenti, tra cui [[leorio-paradinight|Leorio]], Cheadle accompagna in barella [[halkenburg-hui-guo-rou|Harkenburg]] e pensa che possa aver battuto la testa cadendo. Ordina esami del sangue e una TAC, fa chiedere alle guardie del principe come è stato nell’ultima settimana e manda il vomito a [[gel|Gell]] della scientifica. Quando arrivano le équipe mediche reali e militari, lei e il suo staff devono lasciare il paziente.',
+        en: 'With five assistants, [[leorio-paradinight|Leorio]] among them, Cheadle accompanies [[halkenburg-hui-guo-rou|Halkenburg]] on a stretcher and guesses that he may have hit his head when he fell. She orders a blood panel and a CT scan, has his guards asked about his condition over the past week, and sends his vomit to [[gel|Gel]] in forensics. When the royal and military medical teams arrive, she and her staff have to leave the patient.',
       },
     ),
   ],
@@ -412,6 +515,14 @@ export const kakinChronicles = {
       {
         it: 'Mizaistom interroga [[fugetsu-hui-guo-rou|Fugetsu]], che vuole solo vedere [[kacho-hui-guo-rou|Kachow]], e la riaccompagna al primo livello. Uno dei suoi uomini telefona poi a [[melody|Melody]]: le gemelle potrebbero tentare la fuga, e [[keeney|Keeney]] guiderà il tentativo di fermarle, con il suo aiuto. Il messaggio comincia con l’ora, e questo è il codice degli Hunter: un numero detto per primo indica quale parola leggere in ogni frase. Letto così, il messaggio dice di aiutare i principi a fuggire.',
         en: 'Mizaistom questions [[fugetsu-hui-guo-rou|Fugetsu]], who only wants to see [[kacho-hui-guo-rou|Kacho]], and escorts her back to Tier 1. One of his men then calls [[melody|Melody]]: the twins may try to escape, and [[keeney|Keeney]] will lead the effort to stop them, with her support. The message begins with the time, and that is the Hunters’ code: a number stated first tells a Hunter which word to read in each sentence. Read that way, it says to help the princes escape.',
+      },
+    ),
+    told(
+      410,
+      { it: 'Su quali basi', en: 'On what grounds' },
+      {
+        it: 'Sotto la legge marziale speciale, Mizaistom aspetta all’Ufficio di Giustizia con [[botobai-gigante|Botobai]] e [[kaiser|Kaiser]], con le mani alzate, mentre [[benjamin-hui-guo-rou|Benjamin]] arriva per farne il suo centro di comando. Mizaistom chiede su quali basi abbia dichiarato la legge marziale e dov’è la lettera di autorizzazione del re. Benjamin parla di un attentato con un’arma biologica e dice che la lettera è in preparazione. Mizaistom capisce che vuole usare i principi come ostaggi e che quasi tutto ciò che dice sono mezze verità distorte. Botobai si avvicina, lo guarda negli occhi e gli chiede se sta bene, perché è pallido; Benjamin risponde che non c’è alcun problema.',
+        en: 'Under special martial law, Mizaistom waits at the Justice Bureau with [[botobai-gigante|Botobai]] and [[kaiser|Kaiser]], hands raised, as [[benjamin-hui-guo-rou|Benjamin]] arrives to make it his command centre. Mizaistom asks for the grounds for martial law and the king’s letter of authorisation. Benjamin cites a bioweapon plot and says the letter is being written. Mizaistom judges that he means to use the princes as hostages, and that most of what he says is twisted half-truths. Botobai steps up, looks him in the eye and asks whether he is all right, since he looks pale; Benjamin says there is no problem.',
       },
     ),
   ],
@@ -530,6 +641,33 @@ export const kakinChronicles = {
         en: 'In the room where the tests are held, [[longhi|Longhi]] tells Kurapika that she does not need water divination, because she can already use Nen, and asks whether he will agree to her contract once he has heard her out. With a fellow Hunter of the escort beside him, Kurapika agrees and says he will work with [[tubeppa-hui-guo-rou|Tubeppa]]. Meanwhile [[melody|Melody]], held at the Justice Bureau, asks an official to go to Kurapika and tell him everything, because he is the only one she trusts.',
       },
     ),
+    told(
+      404,
+      { it: 'Nessuna scelta sicura', en: 'No safe choice' },
+      {
+        it: 'Dopo aver studiato le monete di [[zhang-lei-hui-guo-rou|Chowrai]], Kurapika sospetta che un soldato di [[benjamin-hui-guo-rou|Benjamin]] abbia nascosto la moneta del primo giorno per non dare informazioni al principe. Valuta i rischi dell’alleanza: Chowrai protegge una famiglia mafiosa con più di duecento uomini ai livelli inferiori, e se l’equilibrio tra lui, [[tserriednich-hui-guo-rou|Tserriednich]] e [[luzurus-hui-guo-rou|Loozlus]] si rompe, una guerra aperta permetterebbe a Benjamin di dichiarare la legge marziale speciale e confinare tutti i principi. Che restino nella stanza 1014 o con Chowrai, conclude che nessuna scelta è sicura.',
+        en: 'After studying [[zhang-lei-hui-guo-rou|Zhang Lei]]’s coins, Kurapika suspects that one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers has hidden the coin of the first day to keep information from the prince. He weighs the risks of the alliance: Zhang Lei backs a Mafia family with over two hundred men on the lower tiers, and if the balance between him, [[tserriednich-hui-guo-rou|Tserriednich]] and [[luzurus-hui-guo-rou|Luzurus]] breaks, an all-out war would let Benjamin declare special martial law and put every prince under house arrest. Whether they stay in Room 1014 or with Zhang Lei, he concludes that neither choice is safe.',
+      },
+    ),
+    told(
+      412,
+      {
+        it: 'Woble fuori dalla successione',
+        en: 'Woble is out of the contest',
+      },
+      {
+        it: 'Alla seconda lezione di Nen, Kurapika spiega che la successione è la seconda di quattro fasi di un rituale di Cakin, legate da un voto: se nessun erede unico sopravvive al viaggio, gli Hoicoro perderanno il potere. Poi dichiara che [[woble-hui-guo-rou|Woble]] non partecipa. Due giorni prima, dopo che [[bill|Bill]] gli aveva sussurrato qualcosa, aveva interrogato [[oito-hui-guo-rou|Oito]] con la sua catena: il neonato è il figlio di sua sorella, e la figlia, Woble, è con la sorella, non sa dove. Oito aveva finto la partecipazione per paura. Dopo la pausa solo [[slakka|Slakka]] non torna, e Kurapika pensa di parlare con [[beyond-netero|Beyond]].',
+        en: 'At the second Nen class, Kurapika explains that the contest is the second of four stages of a Kakin ritual, bound by a vow: if no single heir survives the voyage, the Hui Guo Rou will fall from power. Then he declares that [[woble-hui-guo-rou|Woble]] is not taking part. Two days earlier, after [[bill|Bill]] whispered something to him, he had questioned [[oito-hui-guo-rou|Oito]] with his chain: the baby is her sister’s son, and her daughter, Woble, is with the sister, she does not know where. Oito had faked the prince’s participation out of fear. After the break only [[slakka|Slakka]] does not return, and Kurapika thinks of talking to [[beyond-netero|Beyond]].',
+      },
+    ),
+    told(
+      414,
+      { it: 'Amici di cui fidarsi', en: 'Friends he trusts' },
+      {
+        it: 'Con [[oito-hui-guo-rou|Oito]], [[bill|Bill]] e [[shimanu|Shimanu]], Kurapika affronta due problemi. Non sanno se la maledizione di [[beyond-netero|Beyond]] colpisca [[woble-hui-guo-rou|Woble]], e lui una volta ha sentito un’ondata di Nen vicino al bambino: chiederlo a Beyond sembra l’unico modo per saperlo. Inoltre i militari daranno per scontato che la vera Woble sia a bordo. Propone di risalire alla fonte della maledizione, cosa che serve anche al contratto di [[longhi|Longhi]], e chiede a Oito chi potrebbe contattare. Promettendo che i suoi amici proteggerebbero il principe, pensa a [[gon-freecss|Gon]] e [[killua|Killua]]. Oito parla di un parente che lavora in un ufficio postale a Yamato.',
+        en: 'With [[oito-hui-guo-rou|Oito]], [[bill|Bill]] and [[shimanu|Shimanu]], Kurapika weighs two problems. They do not know whether [[beyond-netero|Beyond]]’s curse targets [[woble-hui-guo-rou|Woble]], and he once felt a surge of Nen near the baby: asking Beyond seems the only way to know. And the military will assume that the real Woble is somewhere aboard. He proposes tracing the curse to its source, which also serves [[longhi|Longhi]]’s contract, and asks Oito whom she could contact. Promising that his friends would protect the prince, he thinks of [[gon-freecss|Gon]] and [[killua|Killua]]. Oito names a relative who works at a post office in Yamato.',
+      },
+    ),
   ],
   'biscuit-krueger': [
     told(
@@ -548,6 +686,14 @@ export const kakinChronicles = {
         en: 'In the hidden copy of [[marayam-hui-guo-rou|Marayam]]’s quarters, Biscuit returns [[hanzo|Hanzo]] to his body, angry after a sleepless night. To convince the sceptical [[vergei|Vergei]], she returns to her true, muscular form and promises to double the staff’s physical strength within a month. Vergei asks her to teach him. When [[belerainte|Belerainte]] steps out and cannot get back in, Biscuit explains that they are inside a one-way Nen space, most likely created by Marayam’s beast, and starts training the staff.',
       },
     ),
+    told(
+      415,
+      { it: 'Restare nascosti', en: 'Holing up' },
+      {
+        it: 'Nella stanza 1013 Biscuit intuisce dall’aura di [[saquelle|Saquelle]] che la legge marziale sta per essere dichiarata. Può obbedire e aspettare che venga revocata, oppure neutralizzare Saquelle e barricarsi, aspettandosi un’accusa di tradimento. Uscire dal loro spazio di Nen vorrebbe dire lasciare [[marayam-hui-guo-rou|Marayam]] alle sole guardie senza poteri di sua madre, e lo spazio probabilmente non si può creare due volte: la bestia del principe potrebbe azzerarsi, addormentarsi o sparire. Decide di restare dove sono e chiama [[vergei|Vergei]].',
+        en: 'In Room 1013, Biscuit reads in [[saquelle|Saquelle]]’s aura that martial law is about to be declared. She can obey and wait for it to be lifted, or neutralise Saquelle and hole up, expecting to be charged with treason. Leaving their Nen space would mean leaving [[marayam-hui-guo-rou|Marayam]] with only his mother’s powerless guards, and the space probably cannot be made twice: the prince’s beast could reset, go dormant or vanish. She decides to stay put and calls [[vergei|Vergei]] over.',
+      },
+    ),
   ],
   'basho': [
     told(
@@ -564,6 +710,14 @@ export const kakinChronicles = {
       {
         it: 'Negli alloggi di [[luzurus-hui-guo-rou|Loozlus]] Basho sente un nuovo tremito d’aura dalla stanza di [[halkenburg-hui-guo-rou|Harkenburg]], poco prima che un soldato di [[benjamin-hui-guo-rou|Benjamin]] si spari davanti alla porta. Quando un altro soldato di Benjamin gli chiede aiuto, Basho indica gli uomini della regina [[duazul-hui-guo-rou|Duazul]]. In realtà crede che dietro ci siano gli uomini di Benjamin: un’abilità che agisce attraverso la morte del soldato, inscenata davanti alla porta di Loozlus come falsa pista.',
         en: 'In [[luzurus-hui-guo-rou|Luzurus]]’s quarters Basho feels a new rumbling of aura from [[halkenburg-hui-guo-rou|Halkenburg]]’s room, just before one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers shoots himself at the door. When another of Benjamin’s soldiers asks for his help, Basho points at Queen [[duazul-hui-guo-rou|Duazul]]’s men. In truth he believes Benjamin’s men are behind it: an ability that works through the soldier’s death, staged at Luzurus’s door as a false lead.',
+      },
+    ),
+    told(
+      402,
+      { it: 'Un portafortuna per Fugetsu', en: 'A charm for Fugetsu' },
+      {
+        it: 'Quando [[kaiser|Kaiser]] e [[fugetsu-hui-guo-rou|Fugetsu]] escono dagli alloggi di [[luzurus-hui-guo-rou|Loozlus]], Basho li raggiunge e si presenta come un collega di [[melody|Melody]]. Pur dicendo che non sono affari suoi, dice a Fugetsu che sembra stanca e le regala un portafortuna con un haiku. Finché lo terrà con sé, gli spiriti maligni minori non le si avvicineranno per un po’, e per curarla conta su Melody. Kaiser si inchina alle sue spalle per ringraziarlo.',
+        en: 'When [[kaiser|Kaiser]] and [[fugetsu-hui-guo-rou|Fugetsu]] leave [[luzurus-hui-guo-rou|Luzurus]]’s quarters, Basho catches up with them and introduces himself as a colleague of [[melody|Melody]]. Saying that it is none of his business, he tells Fugetsu she looks tired and gives her a good-luck charm with a haiku on it. While she keeps it, low-level evil spirits will not come near her for a while, and he counts on Melody to treat her. Kaiser bows to his back in thanks.',
       },
     ),
   ],
@@ -638,6 +792,22 @@ export const kakinChronicles = {
         en: 'After the explosion, Hisoka is reported dead. While [[machi|Machi]] tends his body, his Nen restarts his heart and lungs, as he asked it to before dying. He patches himself up with Bungee Gum and Texture Surprise, binds Machi and tells her to warn the Troupe that he will fight them until he has killed them all. Then he kills [[kortopi|Kortopi]] and [[shalnark|Shalnark]], and says that ten remain.',
       },
     ),
+    told(
+      405,
+      { it: 'Il vero Hisoka', en: 'The real Hisoka' },
+      {
+        it: 'Nel casinò VIP del primo livello, Hisoka vince una mano di una variante del poker con cinque tre e due assi, poi fa tre sette alla slot machine e se ne va senza ritirare il premio. Pensa che il grande tremore che ha sentito più volte, un’abilità di gruppo sostenuta da una bestia nata da una cerimonia, lo abbia lasciato freddo: lui vuole stare a tu per tu con una persona, per amarsi fino alla morte. Travestito da lui, [[bonolenov|Bonolenov]] lo vede e si allontana.',
+        en: 'In the VIP casino on Tier 1, Hisoka wins a hand of a poker variant with five threes and two aces, then rolls triple sevens at a slot machine and walks off without claiming the prize. He thinks that the great rumbling he felt several times, a group ability backed by a beast born of a ceremony, left him cold: what he wants is to be one on one with someone, loving each other to death. Disguised as him, [[bonolenov|Bonolenov]] spots him and slips away.',
+      },
+    ),
+    told(
+      420,
+      { it: 'Un incontro al casinò', en: 'An encounter in the casino' },
+      {
+        it: 'Sotto la legge marziale speciale, Hisoka uccide tutti i soldati mandati a presidiare il casinò del primo livello e le scale che portano fuori, tagliando loro la gola prima che possano sparare, poi si siede a giocare a pachinko. Sentendo qualcuno in Zetsu, gli si porta alle spalle e lo attacca; ma [[tserriednich-hui-guo-rou|Tserriednich]] aveva visto la scena nei dieci secondi successivi, e ciò che Hisoka smaschera è un’illusione. Hisoka è deluso che non sia un Ragno. Poi nota qualcosa, guarda dritto verso il vero principe e se ne va.',
+        en: 'Under special martial law, Hisoka kills every soldier sent to secure the Tier 1 casino and the stairs out of it, slitting their throats before any of them can fire, then sits down to play pachinko. Sensing someone in Zetsu, he gets behind him and attacks; but [[tserriednich-hui-guo-rou|Tserriednich]] had seen it in the next ten seconds, and what Hisoka unmasks is an illusion. Hisoka is disappointed that it is not a Spider. Then he notices something, looks straight at the real prince and walks off.',
+      },
+    ),
   ],
   'chrollo': [
     told(
@@ -702,6 +872,14 @@ export const kakinChronicles = {
       {
         it: 'Quando [[sarasa|Sarasa]] scompare, Quoll annulla lo spettacolo e si dà la colpa. Con [[uvogin|Uborghin]] trova il suo corpo in un sacco appeso a un albero a Uga Forest, con un biglietto che rifiuta di leggere ad alta voce. Dopo il funerale chiede a Uborghin di aspettare tre anni: la rivoluzione delle comunicazioni permetterà di creare a Meteor City un luogo che attiri criminali come gli assassini di Sarasa. Giura di vivere da cattivo e di far tremare il mondo. Uborghin e gli altri lo nominano loro capo, e anni dopo nasce il Ragno.',
         en: 'When [[sarasa|Sarasa]] goes missing, Chrollo cancels the show and blames himself. With [[uvogin|Uvogin]] he finds her body in a bag hanging from a tree in Uga Forest, with a note he refuses to read aloud. After the funeral he asks Uvogin to wait three years: the coming communication revolution will let them build a place in Meteor City that draws in criminals like Sarasa’s killers. He vows to live as a villain who makes the world shudder. Uvogin and the others name him their head, and years later the Spider is born.',
+      },
+    ),
+    told(
+      406,
+      { it: 'I tre tesori sacri', en: 'The three sacred treasures' },
+      {
+        it: 'Tra la folla del funerale di [[halkenburg-hui-guo-rou|Harkenburg]], Quoll usa un telefono evocato dal suo libro per cercare qualcuno, ma la persona non è in zona. Ha messo gli occhi sui tre tesori sacri di Cakin: l’urna della cerimonia, una mummia sacra che veglia sulla successione e la spada che passa al prossimo re. Crede che siano il sistema che alimenta la successione e Cakin stessa, e che siano custoditi al primo livello. Rubare un oggetto paragonabile a un tesoro nazionale farebbe evolvere Skill Hunter e gli darebbe l’abilità per sconfiggere [[hisoka|Hisoka]] una volta per tutte. Se dovesse morire, il Ragno andrà avanti. Al secondo tentativo il telefono trova la persona fuori dalla portata del segnale, e Quoll conclude che è più in alto.',
+        en: 'Among the crowd for [[halkenburg-hui-guo-rou|Halkenburg]]’s funeral, Chrollo uses a conjured phone from his book to search for someone, but the person is not in the area. He has set his sights on Kakin’s three sacred treasures: the ceremony’s urn, a sacred mummy that oversees the contest, and the sword passed on to the next king. He believes they are the system that powers the contest and Kakin itself, and that they are kept on Tier 1. Stealing something comparable to a national treasure would let Skill Hunter evolve and give him the ability to defeat [[hisoka|Hisoka]] once and for all. If he dies, the Spider will go on. On a second try the phone finds the person beyond the signal’s range, and Chrollo concludes they are up above.',
       },
     ),
   ],
@@ -799,6 +977,14 @@ export const kakinChronicles = {
         en: 'Kacho’s beast, which took her form when she died, stays with [[fugetsu-hui-guo-rou|Fugetsu]] at the Justice Bureau. It believes it came back as a guardian spirit and fears that Fugetsu’s aura is keeping it visible. It tells [[melody|Melody]] it has no regrets: they will make Fugetsu king and keep her death secret from her sister. When Fugetsu, pale and weak, says it is now her turn to protect her, Kacho begs her to rest and turns to Melody for help.',
       },
     ),
+    told(
+      403,
+      { it: 'Il piano delle lettere', en: 'The letter plan' },
+      {
+        it: 'La bestia di Kachow, che ne ha ancora l’aspetto, sospetta che dietro la debolezza di [[fugetsu-hui-guo-rou|Fugetsu]] ci sia [[luzurus-hui-guo-rou|Loozlus]], che vende droga, e vuole fermarlo subito. Con [[melody|Melody]] e [[kaiser|Kaiser]] progetta di far aprire a Fugetsu una porta nella camera del principe, dove però lei deve prima essere stata. Così Fugetsu consegna a ogni principe una lettera che Kachow avrebbe scritto prima di morire, piena di segreti che Kaiser ha passato alla bestia. Consegnate le lettere, la bestia annuncia che agiranno la notte seguente.',
+        en: 'Kacho’s beast, which still has her form, suspects that [[luzurus-hui-guo-rou|Luzurus]], who sells drugs, is behind [[fugetsu-hui-guo-rou|Fugetsu]]’s weakness, and wants to stop him at once. With [[melody|Melody]] and [[kaiser|Kaiser]] it plans to have Fugetsu open a door into his bedroom, but she must first have been there. So Fugetsu delivers to each prince a letter that Kacho supposedly wrote before dying, filled with secrets Kaiser leaked to the beast. Once the letters are delivered, the beast announces that they will act the following night.',
+      },
+    ),
   ],
   'fugetsu-hui-guo-rou': [
     told(
@@ -839,6 +1025,14 @@ export const kakinChronicles = {
       {
         it: 'All’Ufficio di Giustizia Fugetsu esce dalla sua porta tutta eccitata: ora può usare la sua abilità più volte al giorno, e la porta di ritorno compare anche quando è sola. Pallida e in lacrime, dice a [[kacho-hui-guo-rou|Kachow]] che ora tocca a lei proteggerla, poi perde i sensi. Quando [[melody|Melody]] la incrocia in un corridoio, trova la sua aura debole come lo Zetsu, il battito instabile e degli spiriti maligni attirati da lei.',
         en: 'At the Justice Bureau, Fugetsu comes out of her door full of excitement: she can now use her ability several times a day, and the return door appears even when she is alone. Pale and in tears, she tells [[kacho-hui-guo-rou|Kacho]] that it is now her turn to protect her, then passes out. When [[melody|Melody]] passes her in a corridor, she finds her aura as weak as Zetsu, her heartbeat unstable, and evil spirits drawn to her.',
+      },
+    ),
+    told(
+      402,
+      { it: 'Lettere per i principi', en: 'Letters for the princes' },
+      {
+        it: 'Debole e circondata da spiriti maligni, Fugetsu gira il primo livello con [[kaiser|Kaiser]] per consegnare a ogni principe una lettera che Kaiser presenta come l’ultimo messaggio di sua sorella [[kacho-hui-guo-rou|Kachow]]. [[benjamin-hui-guo-rou|Benjamin]] vede gli spiriti intorno a lei e pensa che non durerà altri dieci giorni, finché il verso della sua bestia non li scaccia. [[luzurus-hui-guo-rou|Loozlus]] prende la lettera senza alzarsi e le fa le condoglianze per Kachow. Mentre lei esce dai suoi alloggi, [[basho|Basho]] le regala un portafortuna con un haiku, che per un po’ terrà lontani gli spiriti.',
+        en: 'Weak and surrounded by evil spirits, Fugetsu goes around Tier 1 with [[kaiser|Kaiser]] to hand each prince a letter that Kaiser presents as the last message of her sister [[kacho-hui-guo-rou|Kacho]]. [[benjamin-hui-guo-rou|Benjamin]] sees the spirits around her and thinks she will not last ten more days, until his beast’s screech drives them away. [[luzurus-hui-guo-rou|Luzurus]] takes his letter without getting up and apologises to her about Kacho. As she leaves his quarters, [[basho|Basho]] gives her a good-luck charm with a haiku, which will keep the spirits away for a while.',
       },
     ),
   ],
@@ -886,6 +1080,14 @@ export const kakinChronicles = {
         en: 'Held at the Justice Bureau, Melody blames herself for [[kacho-hui-guo-rou|Kacho]]’s death, but the prince’s beast, which has taken her form, orders her to pull herself together: they will make [[fugetsu-hui-guo-rou|Fugetsu]] king. [[kaiser|Kaiser]] proposes poisoning the higher princes during her next performance, and she agrees while suspecting him. Passing Fugetsu in a corridor, she finds her aura as weak as Zetsu and evil spirits drawn to her. [[zhang-lei-hui-guo-rou|Zhang Lei]] gives her a coin, and Melody asks Kaiser to tell [[kurapika|Kurapika]] everything.',
       },
     ),
+    told(
+      402,
+      { it: 'Il segno sulla schiena', en: 'The mark on her back' },
+      {
+        it: 'All’Ufficio di Giustizia, la bestia di [[kacho-hui-guo-rou|Kachow]] mostra a Melody la foto di un segno sulla schiena di [[fugetsu-hui-guo-rou|Fugetsu]]. Melody pensa a un segno del Nen: Fugetsu è caduta in una trappola, e ora, quando usa la sua abilità, compare anche una porta del nemico. Il suo bisogno di usarla sembra una dipendenza, e se continua si indebolirà fino a non arrivare al fine settimana. Con [[kaiser|Kaiser]] progettano di fermare il sospettato, [[luzurus-hui-guo-rou|Loozlus]], passando dalla porta di Fugetsu. Mentre Kaiser dice di essere pronto a rischiare tutto, Melody ascolta il suo battito senza notare cambiamenti, e per proteggere Fugetsu decide di tenerselo vicino.',
+        en: 'At the Justice Bureau, [[kacho-hui-guo-rou|Kacho]]’s beast shows Melody a photo of a mark on [[fugetsu-hui-guo-rou|Fugetsu]]’s back. Melody guesses that it is a Nen mark: Fugetsu has fallen into a trap, and now an enemy’s door appears whenever she uses her ability. Her urge to use it looks like addiction, and if she goes on she will weaken until she does not last the week. With [[kaiser|Kaiser]] they plan to stop the suspect, [[luzurus-hui-guo-rou|Luzurus]], through Fugetsu’s door. As Kaiser says he will risk everything, Melody listens to his heartbeat and finds no change, and to protect Fugetsu she decides to keep him close.',
+      },
+    ),
   ],
   'halkenburg-hui-guo-rou': [
     told(
@@ -928,6 +1130,30 @@ export const kakinChronicles = {
         en: 'Halkenburg’s ability makes the aura rumble a fourth time, and a soldier [[benjamin-hui-guo-rou|Benjamin]] had sent to him cries over the radio that it does not work and that Halkenburg and his bow are invincible. Benjamin, convinced that each arrow costs one of Halkenburg’s men, has him arrested on suspicion of premeditated murder to cut him off from his guards. Five members of a special task force take him into custody, and until the trial he cannot contact his men.',
       },
     ),
+    told(
+      403,
+      { it: 'Nel corpo di Balsamilco', en: 'In Balsamilco’s body' },
+      {
+        it: 'La mattina del processo, Harkenburg è con dodici sostenitori civili mentre un soldato di [[benjamin-hui-guo-rou|Benjamin]] distrae [[balsamilco|Balsamilco]] in un corridoio. Un uomo al portatile gli indica la distanza, e Harkenburg scocca una freccia d’aura attraverso il muro. Poi crolla, e il processo viene rinviato mentre lui riposa in infermeria. La sua anima però ora possiede il corpo di Balsamilco, e con la sua voce annuncia a Benjamin che la missione è compiuta.',
+        en: 'On the morning of his trial, Halkenburg stands with twelve civilian supporters while one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers distracts [[balsamilco|Balsamilco]] in a corridor. A man at a laptop signals the distance, and Halkenburg fires an arrow of aura through the wall. Then he collapses, and the trial is postponed while he rests in the sick bay. His soul, however, now possesses Balsamilco’s body, and in Balsamilco’s voice he tells Benjamin that the mission is complete.',
+      },
+    ),
+    told(
+      404,
+      { it: 'La morte del nono principe', en: 'The Ninth Prince’s death' },
+      {
+        it: 'Nel corpo di [[balsamilco|Balsamilco]], Harkenburg guarda [[cheadle-yorkshire|Cheadle]] portare via in barella il suo vero corpo, e dice a [[benjamin-hui-guo-rou|Benjamin]] che la missione sarà compiuta in circa dodici ore. La sua abilità scambia la mente di chi è colpito dalla freccia con quella di uno degli uomini che la alimentano, scelto a caso. Prima che il suo corpo muoia prenderà un sonnifero, che dovrebbe dargli circa dieci ore nel corpo di Balsamilco. Quella notte i medici non riescono a rianimare Harkenburg, e la sua morte viene annunciata. Nei panni di Balsamilco organizza con Benjamin un corteo funebre, e Benjamin fa ritirare tutte le accuse perché le sue guardie possano raggiungerlo.',
+        en: 'In [[balsamilco|Balsamilco]]’s body, Halkenburg watches [[cheadle-yorkshire|Cheadle]] wheel his own body past, and tells [[benjamin-hui-guo-rou|Benjamin]] that the mission will be complete in about twelve hours. His ability swaps the mind of whoever the arrow strikes with that of one of the men who power it, chosen at random. Before his body dies he will take a sleeping pill, which should give him about ten more hours in Balsamilco’s body. That night the doctors fail to revive Halkenburg, and his death is announced. As Balsamilco, he arranges a funeral procession with Benjamin, who has all charges dropped so that the prince’s guards can join him.',
+      },
+    ),
+    told(
+      413,
+      { it: 'Ancora in gara', en: 'Still fighting' },
+      {
+        it: 'La bara di Harkenburg viene portata negli alloggi del re e deposta nella camera funeraria tra [[sale-sale-hui-guo-rou|Saresare]] e [[kacho-hui-guo-rou|Kachow]]. A differenza dei loro, il suo fuoco della vita non si è acceso: il re dice che il suo diritto alla successione non è perduto finché la sua anima risiede in un corpo, e che sta ancora combattendo. Legato a una sedia nella stanza 1009 nel corpo di [[balsamilco|Balsamilco]], Harkenburg ha smesso di fingersi lui e, con gli stessi seguaci, ha scoccato una freccia contro [[benjamin-hui-guo-rou|Benjamin]] per verificare una nuova ipotesi.',
+        en: 'Halkenburg’s casket is carried into the king’s quarters and laid in the burial chamber between [[sale-sale-hui-guo-rou|Salé-salé]] and [[kacho-hui-guo-rou|Kacho]]. Unlike theirs, his flame of life has not been lit: the king says that his right of succession is not lost while his soul resides in a body, and that he is still fighting. Bound to a chair in Room 1009 in [[balsamilco|Balsamilco]]’s body, Halkenburg has stopped impersonating him and, powered by the same followers, has fired an arrow at [[benjamin-hui-guo-rou|Benjamin]] to test a new hypothesis.',
+      },
+    ),
   ],
   'momoze-hui-guo-rou': [
     told(
@@ -967,6 +1193,22 @@ export const kakinChronicles = {
         en: '[[maor|Maor]] and [[longhi|Longhi]] report to Tubeppa that [[woble-hui-guo-rou|Woble]]’s camp is most closely allied with [[zhang-lei-hui-guo-rou|Zhang Lei]] and that [[kurapika|Kurapika]]’s training works. She tells them to keep negotiating the alliance and to send more guards to the classes. Since [[sale-sale-hui-guo-rou|Salé-salé]] missed the banquet, she concludes that he has been killed, and that she is the next target of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers. She sets out to learn how he died, and thinks she needs an experienced partner like Kurapika.',
       },
     ),
+    told(
+      402,
+      { it: 'Un’alleanza con Woble', en: 'An alliance with Woble' },
+      {
+        it: '[[maor|Maor]] e [[longhi|Longhi]] riferiscono a Tsubeppa che [[kurapika|Kurapika]] è entrato nella tregua e ha accettato l’alleanza, a condizione che [[woble-hui-guo-rou|Woble]] e sua madre [[oito-hui-guo-rou|Oito]] vengano con lui nella stanza 1005. Tsubeppa non avrebbe nulla in contrario a vivere con loro. Poiché i soldati di [[benjamin-hui-guo-rou|Benjamin]] la prendono di mira, spera che la notizia dell’accordo sposti l’attenzione di Benjamin su [[zhang-lei-hui-guo-rou|Chowrai]], e chiede ai due di mostrare la loro intesa con Chowrai alla prossima lezione. Poi la sua bestia compare alle sue spalle davanti al soldato di Benjamin, che la ritiene di tipo condizionale.',
+        en: '[[maor|Maor]] and [[longhi|Longhi]] tell Tubeppa that [[kurapika|Kurapika]] has joined the truce and accepted the alliance, on condition that [[woble-hui-guo-rou|Woble]] and her mother [[oito-hui-guo-rou|Oito]] come with him to Room 1005. Tubeppa would not even mind living with them. Since [[benjamin-hui-guo-rou|Benjamin]]’s soldiers are targeting her, she hopes that news of the deal will turn his attention to [[zhang-lei-hui-guo-rou|Zhang Lei]], and tells the two to show their closeness to Zhang Lei at the next class. Then her beast appears behind her, facing Benjamin’s soldier, who guesses that it is a conditional type.',
+      },
+    ),
+    told(
+      417,
+      { it: 'Nella stanza 1001', en: 'In Room 1001' },
+      {
+        it: 'Sotto la legge marziale speciale, Tsubeppa va nella stanza 1001 solo con guardie dell’esercito reale, lasciando ai suoi scienziati dei test da fare. Lì lei e [[tyson-hui-guo-rou|Tyson]] sentono [[benjamin-hui-guo-rou|Benjamin]] incolpare un soldato che ha rubato un’arma, e citare l’ipotesi di [[kurapika|Kurapika]] secondo cui la monarchia potrebbe cadere senza che nessuno di loro muoia. Intanto lui libera di nascosto l’arma biologica nell’aria. Quando sente che non potranno lasciare i propri alloggi, Tsubeppa sospetta che Benjamin colpirà durante le ispezioni e che nasconda qualcos’altro, e non si fiderà delle sue parole finché lui e [[camilla-hui-guo-rou|Camilla]] saranno vivi.',
+        en: 'Under special martial law, Tubeppa goes to Room 1001 with Royal Army guards only, leaving her scientists to run tests. There she and [[tyson-hui-guo-rou|Tyson]] hear [[benjamin-hui-guo-rou|Benjamin]] blame a soldier who stole a weapon, and raise [[kurapika|Kurapika]]’s hypothesis that the monarchy could fall while all of them survive. Meanwhile he secretly releases the bioweapon into the air. Told that they may not leave their quarters, Tubeppa suspects that he will strike during the inspections and is hiding something else, and will not trust his words while he and [[camilla-hui-guo-rou|Camilla]] are alive.',
+      },
+    ),
   ],
   'camilla-hui-guo-rou': [
     told(
@@ -1001,6 +1243,14 @@ export const kakinChronicles = {
         en: '[[benjamin-hui-guo-rou|Benjamin]] and Camilla stand trial before the Supreme Magistrate. Camilla’s representative claims that she was attacked by one of Benjamin’s soldiers and shot Benjamin in self-defence; Benjamin’s says that she attacked him. Both sides demand that the other prince’s room be searched, and the trial is postponed. Until it resumes, both princes are kept under surveillance. Benjamin is unconcerned: through the dead soldier’s ability he can keep watching her.',
       },
     ),
+    told(
+      416,
+      { it: 'La maledizione su Benjamin', en: 'The curse on Benjamin' },
+      {
+        it: 'Quando [[benjamin-hui-guo-rou|Benjamin]] irrompe nella sua stanza durante un massaggio, Camilla gli spara; i proiettili rimbalzano sulla sua aura, e lui uccide le sue due domestiche, tra cui [[fukataki|Fukataki]]. Sapendo che la sua abilità colpisce chi la uccide, non le spara. Una sua guardia entra barcollando con un coltello nella gola, lo estrae e muore, e la sua morte libera una maledizione che annerisce il corpo di Benjamin. Camilla dice che la maledizione è compiuta dopo dieci anni di piani, e pensa di rallentare il metabolismo per sopravvivergli. Prima di andarsene, Benjamin le chiede cosa succederebbe se prendesse una malattia incurabile, e la contagia in silenzio.',
+        en: 'When [[benjamin-hui-guo-rou|Benjamin]] storms into her room during a massage, Camilla shoots at him; the bullets bounce off his aura, and he kills her two servants, [[fukataki|Fukataki]] among them. Knowing that her ability strikes back if she is killed, he does not shoot her. One of her guards staggers in with a knife in her throat, pulls it out and dies, and her death releases a curse that darkens Benjamin’s body. Camilla says the curse is complete after ten years of planning, and means to slow her metabolism to outlast him. Before leaving, Benjamin asks what would happen if she caught an incurable disease, and silently infects her.',
+      },
+    ),
   ],
   'zhang-lei-hui-guo-rou': [
     told(
@@ -1033,6 +1283,22 @@ export const kakinChronicles = {
       {
         it: 'Chowrai premia [[tenftory|Tenftory]], che ora vede le bestie, con la prima moneta che consegna, e sogna di distribuirne al popolo una volta re. Poi va a trovare il capo degli Xi-Yu, un fratellastro illegittimo del re, che resta indifferente alla morte di tre principi. Il capo non sa nulla del Nen né delle bestie, ma promette di chiedere ai membri più giovani della famiglia che lo conoscono. Intanto il soldato di [[benjamin-hui-guo-rou|Benjamin]] nota che la moneta che ha tenuto per sé ora porta il numero 10.',
         en: 'Zhang Lei rewards [[tenftory|Tenftory]], who can now see the beasts, with the first coin he hands out, and dreams of giving them to the people once he is king. He then visits the Xi-Yu boss, an illegitimate half-brother of the king, who is unmoved that three princes have died. The boss knows nothing of Nen or the beasts, but promises to ask the younger members of his family who do. Meanwhile [[benjamin-hui-guo-rou|Benjamin]]’s soldier notices that the coin he kept now shows the number 10.',
+      },
+    ),
+    told(
+      404,
+      { it: 'Il valore delle monete', en: 'What the coins are worth' },
+      {
+        it: 'Una delle monete di Chowrai è passata da 1 a 10, e le ipotesi delle sue guardie non lo convincono, così manda a chiamare [[kurapika|Kurapika]]. Kurapika nota che la moneta di [[tenftory|Tenftory]] ha un rovescio diverso, e quando Chowrai gli porge una moneta da 10, questa prende il numero e il disegno di quella di Tenftory. Kurapika ipotizza un’abilità cumulativa: le monete tenute a lungo accumulano Nen, e in circa sei mesi potrebbero aprire i nodi di chi le possiede. Lusingato, Chowrai gli regala la moneta del giorno. Kurapika tiene per sé il sospetto che le monete creino anche fedeltà.',
+        en: 'One of Zhang Lei’s coins has changed from 1 to 10, and his guards’ ideas do not satisfy him, so he sends for [[kurapika|Kurapika]]. Kurapika notes that [[tenftory|Tenftory]]’s coin has a different back, and when Zhang Lei hands him a 10 coin, it takes on the number and design of Tenftory’s. Kurapika suggests a cumulative ability: coins held long enough store Nen, and in about six months they could open the holder’s nodes. Pleased with the praise, Zhang Lei gives him that day’s coin. Kurapika keeps to himself the suspicion that the coins also breed loyalty.',
+      },
+    ),
+    told(
+      410,
+      { it: 'Fuga al secondo livello', en: 'Down to Tier 2' },
+      {
+        it: 'Poco prima che venga dichiarata la legge marziale speciale, Chowrai scende al secondo livello attraverso un ponte che parte dall’interno della residenza di [[onior|Onior]], il capo degli Xi-Yu. [[benjamin-hui-guo-rou|Benjamin]], che non trova né lui né [[luzurus-hui-guo-rou|Loozlus]], pensa che si sia rifugiato all’Ufficio di Giustizia o che sia sceso ancora più in basso per unirsi alla mafia, e gli mette alle calcagna una squadra di ricognizione.',
+        en: 'Just before special martial law is declared, Zhang Lei goes down to Tier 2 over a bridge from inside the residence of [[onior|Onior]], the Xi-Yu boss. [[benjamin-hui-guo-rou|Benjamin]], who cannot account for him or [[luzurus-hui-guo-rou|Luzurus]], guesses that he has sought refuge at the Justice Bureau or gone farther down to join the Mafia, and puts a reconnaissance team on his trail.',
       },
     ),
   ],
@@ -1079,6 +1345,14 @@ export const kakinChronicles = {
         en: 'Tyson has her employees introduce themselves to a bodyguard, each in one of her favourite roles: [[madwig|Madwig]] the amnesiac hitman, [[himonce|Himoncé]] the star, [[anzel|Anzel]] the secret brother and [[hyuga|Hyuga]] the tutor. She says they have been reborn, and that he will be too. She tells [[izunavi|Izunavi]] that her mother, [[katrono-hui-guo-rou|Katrono]], wants revenge on the queens who pitied her, while Tyson fights only with love, and promises to ask her to have the king read her book.',
       },
     ),
+    told(
+      417,
+      { it: 'Contagiata senza saperlo', en: 'Infected unawares' },
+      {
+        it: 'Alla dichiarazione della legge marziale speciale, Tyson saltella allegra lungo i corridoi verso la stanza 1001, scortata dalle sue guardie. Lì [[benjamin-hui-guo-rou|Benjamin]] ringrazia lei e [[tubeppa-hui-guo-rou|Tsubeppa]] per la collaborazione e spiega che un traditore ha rubato un’arma portata a bordo contro le creature del Nuovo Continente. Mentre parla, libera di nascosto l’arma biologica nell’aria. Dice loro che non potranno lasciare i propri alloggi finché la legge marziale non sarà revocata. Secondo i suoi calcoli, entrambe moriranno più o meno insieme a [[camilla-hui-guo-rou|Camilla]].',
+        en: 'When special martial law is declared, Tyson skips merrily along the corridors to Room 1001, escorted by her guards. There [[benjamin-hui-guo-rou|Benjamin]] thanks her and [[tubeppa-hui-guo-rou|Tubeppa]] for their cooperation and explains that a traitor has stolen a weapon brought aboard against the creatures of the New Continent. As he speaks, he secretly releases the bioweapon into the air. He tells them that they may not leave their quarters until martial law is lifted. By his reckoning, both princes will die around the same time as [[camilla-hui-guo-rou|Camilla]].',
+      },
+    ),
   ],
   'luzurus-hui-guo-rou': [
     told(
@@ -1087,6 +1361,22 @@ export const kakinChronicles = {
       {
         it: 'Loozlus, il settimo principe, assume [[basho|Basho]] come guardia del corpo. Tutte le sue guardie erano state bocciate all’Esame Hunter. A bordo scopre il Nen e le bestie guardiane. Fuma una droga salutare che Basho ha creato per lui e parla di distribuirla come terapia per i tossicodipendenti, se diventerà re.',
         en: 'Luzurus, the Seventh Prince, hires [[basho|Basho]] as a bodyguard. All of his guards had failed the Hunter Exam. On board he becomes aware of Nen and of the guardian beasts. He smokes a healthy drug that Basho created for him and talks about distributing it as a therapy for addicts if he becomes king.',
+      },
+    ),
+    told(
+      402,
+      { it: 'Una lettera sconvolgente', en: 'A mind-blowing letter' },
+      {
+        it: 'Loozlus lascia entrare [[kaiser|Kaiser]] e [[fugetsu-hui-guo-rou|Fugetsu]] nella stanza 1007 in cambio della garanzia dell’Ufficio di Giustizia che i suoi alloggi sono puliti. Legge la lettera di [[kacho-hui-guo-rou|Kachow]], che tra l’altro dice di non volere [[tserriednich-hui-guo-rou|Tserriednich]] sul trono, e la trova sconvolgente. Sospetta che ogni principe abbia ricevuto una lettera diversa, forse per metterlo contro Tserriednich, e decide che agire con leggerezza sarebbe pericoloso. Dice che non gli importa sapere se sia vero e lascia la lettera a Kaiser.',
+        en: 'Luzurus lets [[kaiser|Kaiser]] and [[fugetsu-hui-guo-rou|Fugetsu]] into Room 1007 in exchange for the Justice Bureau vouching that his quarters are clean. He reads [[kacho-hui-guo-rou|Kacho]]’s letter, which says among other things that she would not want [[tserriednich-hui-guo-rou|Tserriednich]] on the throne, and calls it mind-blowing. He suspects that each prince received a different letter, perhaps to set him against Tserriednich, and decides that acting carelessly would be dangerous. He says he does not care whether any of it is true and tells Kaiser to keep the letter.',
+      },
+    ),
+    told(
+      417,
+      { it: 'Loozlus sparisce', en: 'Luzurus slips away' },
+      {
+        it: 'Quando le sue guardie gli riferiscono di due uomini di [[benjamin-hui-guo-rou|Benjamin]] fuori dalla stanza 1009, Loozlus prevede che la legge marziale speciale sta per cominciare. Ordina alle guardie di non opporre resistenza e di riunire le armi, fa bruciare la droga nella sua camera e manda una guardia Hunter a tenere occupato il soldato di Benjamin, [[kanjidol|Kanjidol]]. Alla dichiarazione della legge marziale Loozlus non è più nei suoi alloggi, e Benjamin viene a sapere che un Hunter ha aggredito Kanjidol prima di aiutarlo a fuggire.',
+        en: 'When his guards report two of [[benjamin-hui-guo-rou|Benjamin]]’s men outside Room 1009, Luzurus predicts that special martial law is about to begin. He orders his guards to put up no resistance and to gather their weapons in one place, has the drugs in his bedroom burned, and sends a Hunter guard to keep Benjamin’s soldier, [[kanjidol|Kanjidol]], busy. When martial law is declared, Luzurus is missing from his quarters, and Benjamin learns that a Hunter assaulted Kanjidol before helping Luzurus escape.',
       },
     ),
   ],
@@ -1147,6 +1437,14 @@ export const kakinChronicles = {
         en: 'Slakka, one of [[zhang-lei-hui-guo-rou|Zhang Lei]]’s guards, works with [[unma-hui-guo-rou|Unma]]’s soldiers because their interests match. He goes to [[woble-hui-guo-rou|Woble]]’s quarters with the two guards Zhang Lei sends to help [[kurapika|Kurapika]], and agrees with one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers to keep an eye on Zhang Lei’s men. When Kurapika says the guards could learn the basics of Nen in two weeks, Slakka asks whether he will coach everyone.',
       },
     ),
+    told(
+      412,
+      { it: 'Il solo a non tornare', en: 'The only one who does not return' },
+      {
+        it: 'Alla seconda lezione di Nen, Slakka si presenta come legato a [[duazul-hui-guo-rou|Duazul]], dice di essere stato assegnato a [[zhang-lei-hui-guo-rou|Chowrai]] ma di preferire imparare il Nen che restare ad aspettare, e chiede di entrare nel corso introduttivo. Sorride della rabbia di [[sakata|Sakata]], sperando di strappare informazioni sul Nen. Quando [[kurapika|Kurapika]] dichiara che [[woble-hui-guo-rou|Woble]] non partecipa alla successione, Slakka ride e lo accusa di mentire e di sommergerli di informazioni. Tra tutti i partecipanti a cui viene dato tempo per riflettere, è l’unico a non tornare.',
+        en: 'At the second Nen class, Slakka introduces himself as affiliated with [[duazul-hui-guo-rou|Duazul]], says he was assigned to [[zhang-lei-hui-guo-rou|Zhang Lei]] but would rather learn Nen than wait around, and asks to join the introductory class. He grins at [[sakata|Sakata]]’s anger, hoping to force out information on Nen. When [[kurapika|Kurapika]] declares that [[woble-hui-guo-rou|Woble]] is not taking part in the contest, Slakka laughs and accuses him of lying and of drowning them in information. Of all the participants given time to think it over, he is the only one who does not come back.',
+      },
+    ),
   ],
   // The Nen class of chapter 370: every attendee is named there.
   'barrigen': [
@@ -1194,6 +1492,14 @@ export const kakinChronicles = {
         en: 'Danjin reports [[myuhan|Myuhan]]’s death to [[tserriednich-hui-guo-rou|Tserriednich]]. He believes [[kurapika|Kurapika]] is telling the truth and wants to keep attending the class, since the Hunters are aboard to protect the princes. The prince suspects that the class may be the condition of a manipulation ability, and orders Danjin to bring him a “present” on the last day to prove that he is not being manipulated. Danjin reluctantly agrees.',
       },
     ),
+    told(
+      416,
+      { it: 'Portato via per l’interrogatorio', en: 'Taken for questioning' },
+      {
+        it: 'Sotto la legge marziale speciale, Danjin è inginocchiato contro il muro con gli altri uomini di [[tserriednich-hui-guo-rou|Tserriednich]] quando [[benjamin-hui-guo-rou|Benjamin]] sfonda la porta della stanza 1004. Benjamin nota la sua aura e gli chiede se segue la lezione della stanza 1014. Quando Danjin conferma, Benjamin lo fa portare all’Ufficio di Giustizia centrale per interrogarlo, e pensa di arruolare [[kurapika|Kurapika]] come istruttore per il suo esercito.',
+        en: 'Under special martial law, Danjin kneels facing the wall with the rest of [[tserriednich-hui-guo-rou|Tserriednich]]’s men when [[benjamin-hui-guo-rou|Benjamin]] kicks in the door of Room 1004. Benjamin notices his aura and asks whether he attends the class in Room 1014. When Danjin says he does, Benjamin has him taken to the central Justice Bureau for questioning, and considers recruiting [[kurapika|Kurapika]] as an instructor for his army.',
+      },
+    ),
   ],
   'furykov': [
     told(
@@ -1210,6 +1516,22 @@ export const kakinChronicles = {
       {
         it: '[[camilla-hui-guo-rou|Camilla]] arriva agli alloggi di [[benjamin-hui-guo-rou|Benjamin]] dicendo di cercare il soldato che le ha sparato. Benjamin ordina alle guardie di lasciarla passare, e lei spara a Furykov e a un’altra guardia; il Nen di Furykov lo salva. Dopo che Camilla spara a Benjamin, Furykov la arresta. Quando lei minaccia di torturare e uccidere la sua famiglia, lui risponde che la sua unica famiglia è Benjamin. Sorveglia Camilla in isolamento finché non gli viene permesso di andare.',
         en: '[[camilla-hui-guo-rou|Camilla]] comes to [[benjamin-hui-guo-rou|Benjamin]]’s quarters, claiming to be looking for the soldier who shot her. Benjamin orders his guards to let her pass, and she shoots Furykov and another guard; Furykov’s Nen saves him. After Camilla fires at Benjamin, Furykov arrests her. When she threatens to torture and kill his family, he answers that Benjamin is his only family. He guards Camilla in solitary confinement until he is allowed to leave.',
+      },
+    ),
+    told(
+      413,
+      { it: 'Il figlio di Beyond', en: 'Beyond’s son' },
+      {
+        it: 'Furykov ammette con [[benjamin-hui-guo-rou|Benjamin]] di averlo contagiato con l’arma biologica. Rivela di essere figlio di [[beyond-netero|Beyond]]: sotto la lingua ha un segno, una maledizione che si libererà alla sua morte, e [[unma-hui-guo-rou|Unma]] ha minacciato di farla attivare se non avesse contagiato Benjamin entro quarantotto ore. Temeva che la sua maledizione potesse distruggere l’abilità della bestia di Benjamin; fingendo di cedere a Unma la protegge, perché se Benjamin muore la maledizione ricadrà su Furykov, e lui non potrebbe chiedere destino migliore. Convinto, Benjamin gli dà dello sciocco per non essersi fidato di lui e gli chiede di continuare ad aiutarlo. Furykov si inginocchia.',
+        en: 'Furykov admits to [[benjamin-hui-guo-rou|Benjamin]] that he infected him with the bioweapon. He reveals that he is [[beyond-netero|Beyond]]’s son: under his tongue is a mark, a curse to be released at his death, and [[unma-hui-guo-rou|Unma]] threatened to have it activated unless he infected Benjamin within forty-eight hours. He feared that his curse might destroy the ability of Benjamin’s beast; by pretending to yield to Unma he protects it, since if Benjamin dies the curse will be reflected back onto Furykov, and he could ask for no better fate. Convinced, Benjamin calls him a fool for not trusting him and asks him to keep helping him. Furykov kneels.',
+      },
+    ),
+    told(
+      415,
+      { it: 'La telefonata con Beyond', en: 'The call with Beyond' },
+      {
+        it: 'Due mesi prima della partenza, il portatile evocato dall’abilità di Furykov lo avverte di una maledizione su di lui. Capisce che a innescarla è stata la cerimonia dell’urna di quel giorno, e che solo [[beyond-netero|Beyond]] poteva nascondere chi altri la condivide. Al telefono Beyond lo ammette: la maledizione, attaccata a lui subito dopo la nascita, colpirà un principe quando Furykov morirà, e darà anche la sua abilità a [[benjamin-hui-guo-rou|Benjamin]]. Il portatile calcola 365 giorni per decifrarla e circa 700 per un antidoto. Beyond gli consiglia, da padre, che solo una successione con un unico superstite porta la benedizione della bestia al successore.',
+        en: 'Two months before departure, the laptop Furykov’s ability conjures warns him of a curse on him. He works out that the urn ceremony that day was the trigger, and that only [[beyond-netero|Beyond]] could have hidden who else shares it. On the phone Beyond admits it: the curse, attached right after his birth, will strike a prince when Furykov dies, and would also give his ability to [[benjamin-hui-guo-rou|Benjamin]]. The laptop reckons 365 days to decipher it and about 700 more for an antidote. Beyond advises him, as his father, that only a contest with one survivor brings the beast’s blessing to the successor.',
       },
     ),
   ],
@@ -1292,6 +1614,14 @@ export const kakinChronicles = {
       {
         it: 'Longhi e [[maor|Maor]] riferiscono a [[tubeppa-hui-guo-rou|Tsubeppa]] che l’addestramento di [[kurapika|Kurapika]] funziona, e lei permette ad altre guardie di partecipare. Quando arriva il suo turno per l’esame, Longhi dice a Kurapika che non le serve, perché sa già usare il Nen, e gli chiede se accetterà il suo contratto dopo averla ascoltata. Kurapika accetta e dice che collaborerà con Tsubeppa.',
         en: 'Longhi and [[maor|Maor]] report to [[tubeppa-hui-guo-rou|Tubeppa]] that [[kurapika|Kurapika]]’s training works, and she lets more guards take part. When her turn for the test comes, Longhi tells Kurapika that she does not need it, because she can already use Nen, and asks whether he will agree to her contract once he has heard her out. Kurapika agrees and says he will work with Tubeppa.',
+      },
+    ),
+    told(
+      401,
+      { it: 'Figlia di Beyond', en: 'Beyond’s daughter' },
+      {
+        it: 'A porte chiuse Longhi mostra a [[kurapika|Kurapika]] il suo Nen: penna e carta d’aura per contratti con cui presta la sua abilità e limita chi firma, validi solo se la firma è volontaria. Il potere dei serpenti non è suo. È figlia di [[beyond-netero|Beyond]], uno dei figli che lui ha fatto crescere da ufficiali di Cakin, e un sigillo sotto la lingua la segna come vittima sacrificale di una maledizione forte, che si libererà alla sua morte. Convinta che anche uno dei principi sia figlio di Beyond, propone una tregua con [[tubeppa-hui-guo-rou|Tsubeppa]] e una ricompensa se Kurapika troverà quel figlio. Se lo troverà lei, lo ucciderà con le sue mani. La catena di Kurapika non rileva bugie.',
+        en: 'Behind closed doors, Longhi shows [[kurapika|Kurapika]] her Nen: a pen and paper of aura for contracts that lend her ability and restrict the signer, valid only if signed freely. The snake ability is not hers. She is [[beyond-netero|Beyond]]’s daughter, one of the children he had raised by Kakin officers, and a seal under her tongue marks her as a strong curse sacrifice, whose curse is released when she dies. Believing that one of the princes is Beyond’s child too, she offers a truce with [[tubeppa-hui-guo-rou|Tubeppa]], and a reward if Kurapika finds that child. If she finds the child, she will kill them herself. Kurapika’s chain detects no lie.',
       },
     ),
   ],
@@ -1412,6 +1742,14 @@ export const kakinChronicles = {
         en: 'Tenftory reports to [[zhang-lei-hui-guo-rou|Zhang Lei]] that the training worked: he can now see the prince’s beast. Zhang Lei rewards him with one of the coins his beast produces, saying he is the first to receive one. At [[kurapika|Kurapika]]’s class, Tenftory was to take the test last. One of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers standing by knows that he was in fact the first to get a coin, and sees the number on his own change from 1 to 10.',
       },
     ),
+    told(
+      402,
+      { it: 'Una resa per iscritto', en: 'A surrender in writing' },
+      {
+        it: 'Tenftory riferisce a [[zhang-lei-hui-guo-rou|Chowrai]] che, se lui, [[tubeppa-hui-guo-rou|Tsubeppa]] e [[woble-hui-guo-rou|Woble]] saranno gli ultimi tre principi rimasti, gli altri due rinunceranno al trono in suo favore, e che hanno accettato di metterlo per iscritto. In cambio la parte di Woble chiede che [[sakata|Sakata]] e [[hashito|Hashito]] continuino a sostenerla a tempo indeterminato. Chowrai premia Tenftory con una seconda moneta e gli dice di portare sempre con sé le monete, perché gli porteranno fortuna.',
+        en: 'Tenftory tells [[zhang-lei-hui-guo-rou|Zhang Lei]] that if he, [[tubeppa-hui-guo-rou|Tubeppa]] and [[woble-hui-guo-rou|Woble]] are the last three princes left, the other two will give up the throne in his favour, and that they have agreed to put it in writing. In return, Woble’s side asks for [[sakata|Sakata]] and [[hashito|Hashito]] to keep supporting them indefinitely. Zhang Lei rewards Tenftory with a second coin and tells him to carry his coins at all times, since they will bring him fortune.',
+      },
+    ),
   ],
   // New in phases 3 and 4 (chapters 371–400).
   'vergei': [
@@ -1459,6 +1797,14 @@ export const kakinChronicles = {
         en: 'Ken’i Wang wants [[hisoka|Hisoka]] found first, to use him against both the Heil-Ly and the Troupe and keep the balance. On Tier 3 he finds Corporal [[maizan|Maizan]] waiting for the Xi-Yu underboss and matches his offer of fifty million for the Heil-Ly hideout. He tells him that the two families are working together with [[tserriednich-hui-guo-rou|Tserriednich]]’s approval, and promises money for every Heil-Ly member reported. When the corporal asks whether everyone he smiles at dies, Ken’i calls it a rude rumour: everyone dies eventually.',
       },
     ),
+    told(
+      405,
+      { it: 'Il jolly', en: 'The joker' },
+      {
+        it: 'Quando [[nobunaga|Nobunaga]] si chiede se gli Heil-Ly siano davvero gli Heil-Ly, Ken’i domanda se intenda che il vecchio capo è stato manipolato con il Nen e ucciso, e dice di conoscere appena la nuova capa, [[morena|Morena]]. Dopo che [[tajao|Tajao]] promette alla Brigata il pieno appoggio dei Cha-R e degli Xi-Yu, Ken’i resta in silenzio e accetta di mandare qualcuno a chiamare gli altri Ragni. Nei suoi pensieri si rivolge a Morena per nome: hanno un problema, i Ragni potrebbero trovarla molto prima del previsto, i tempi si accorciano e forse dovranno usare il loro “jolly”.',
+        en: 'When [[nobunaga|Nobunaga]] wonders whether the Heil-Ly are really the Heil-Ly, Ken’i asks whether he means that the old boss was manipulated with Nen and killed, and says he barely knows the new boss, [[morena|Morena]]. After [[tajao|Tajao]] promises the Troupe the full support of the Cha-R and Xi-Yu, Ken’i stays silent and agrees to send someone for the other Spiders. In his thoughts he addresses Morena by name: they have a problem, the Spiders may find her much sooner than expected, the schedule speeds up, and they may have to use their “joker”.',
+      },
+    ),
   ],
   'keeney': [
     told(
@@ -1479,6 +1825,14 @@ export const kakinChronicles = {
         en: 'Tajao, the Cha-R vice boss and military adviser to [[luzurus-hui-guo-rou|Luzurus]]’s army, meets [[phinks|Phinks]], [[nobunaga|Nobunaga]] and [[feitan|Feitan]] through [[ken-i-wang|Ken’i Wang]]. Over three hundred workers have gone missing. Phinks offers to kill the Heil-Ly hitman if Tajao gets them into Tier 4. Tajao explains the rule for a hit on another family: the bosses must settle it within a day, and only if the boss was away from home turf, in the two upper tiers. If the new Heil-Ly boss was below, there will be war. Nobunaga offers to kill her himself.',
       },
     ),
+    told(
+      406,
+      { it: 'Un cittadino modello', en: 'A model citizen' },
+      {
+        it: 'Tajao trova folle l’idea della Brigata che gli Heil-Ly uccidano per ottenere potere, poi ammette che sono qualcosa di diverso dalla mafia di Cakin, per cui i civili sono clienti. Apre il passaggio dei Cha-R verso l’alto e chiede ai Ragni di schiacciare gli Heil-Ly con il sostegno di entrambe le famiglie. Guidando [[phinks|Phinks]], [[nobunaga|Nobunaga]] e [[feitan|Feitan]] tra le tubature verso il secondo livello, avverte Nobunaga che i giovani soldati potrebbero sparargli per la sua spada. Quando Nobunaga ipotizza che gli Heil-Ly si spaccino per appaltatori dei rifiuti, Tajao ci arriva, e dice che accanto a loro tre si sente un cittadino modello.',
+        en: 'Tajao calls the Troupe’s idea that the Heil-Ly kill to gain power crazy, then admits that they are something other than the Kakin Mafia, for whom civilians are customers. He opens the Cha-R route upstairs and asks the Spiders to crush the Heil-Ly with the support of both families. Leading [[phinks|Phinks]], [[nobunaga|Nobunaga]] and [[feitan|Feitan]] through the pipes toward Tier 2, he warns Nobunaga that young soldiers might shoot him over his sword. When Nobunaga suggests that the Heil-Ly may pose as waste contractors, Tajao sees it, and says that being around the three makes him feel like a model citizen.',
+      },
+    ),
   ],
   'famule': [
     told(
@@ -1497,6 +1851,14 @@ export const kakinChronicles = {
       {
         it: 'Fukataki è la maggiordoma del personale di [[camilla-hui-guo-rou|Camilla]]. L’esercito privato del principe comprende assassini maledicenti presi dalla casta più bassa di Cakin, uno per ogni principe rivale, che si tolgono la vita per rafforzare la maledizione. Quando la soldatessa che li guida le chiede quale principe colpire, Fukataki spiega quanto tempo servirebbe a ciascuna maledizione. Per [[kacho-hui-guo-rou|Kachow]] e [[fugetsu-hui-guo-rou|Fugetsu]], che risultano in custodia, servirebbero sei mesi. Avverte che le bestie proteggono i principi: l’unica possibilità è uccidersi davanti a uno di loro, guardandolo negli occhi.',
         en: 'Fukataki is the majordomo of [[camilla-hui-guo-rou|Camilla]]’s staff. The prince’s private army includes curse assassins drawn from Kakin’s lowest caste, one for each rival prince, who take their own lives to strengthen the curse. When the soldier who leads them asks which prince to target, Fukataki explains how long each curse would take. For [[kacho-hui-guo-rou|Kacho]] and [[fugetsu-hui-guo-rou|Fugetsu]], reported to be in custody, it would take six months. She warns that the beasts protect the princes: the only chance is suicide in front of one, looking into the prince’s eyes.',
+      },
+    ),
+    told(
+      416,
+      { it: 'Uccisa da Benjamin', en: 'Shot by Benjamin' },
+      {
+        it: '[[camilla-hui-guo-rou|Camilla]] manda la capitana delle guardie alla lezione di [[kurapika|Kurapika]] travestita da cameriera, per maledire [[woble-hui-guo-rou|Woble]], e Fukataki, la sua maggiordoma, le chiede se il piano regge ancora dopo la morte di [[halkenburg-hui-guo-rou|Harkenburg]]. Quando viene dichiarata la legge marziale speciale, Fukataki sta massaggiando Camilla con un’altra domestica. [[benjamin-hui-guo-rou|Benjamin]] irrompe e ordina a Camilla di non muoversi; lei si alza e gli spara. I proiettili rimbalzano sulla sua aura, e Benjamin spara un colpo a ciascuna delle due domestiche, uccidendole sul colpo.',
+        en: 'Fukataki, [[camilla-hui-guo-rou|Camilla]]’s majordomo, asks the captain of the guards, disguised as a maid to curse [[woble-hui-guo-rou|Woble]] at [[kurapika|Kurapika]]’s class, whether the plan still holds after [[halkenburg-hui-guo-rou|Halkenburg]]’s death. When special martial law is declared, Fukataki is giving Camilla a massage with another servant. [[benjamin-hui-guo-rou|Benjamin]] storms in and orders Camilla not to move; she sits up and shoots at him. The bullets bounce off his aura, and Benjamin fires one shot into each of the two servants, killing them instantly.',
       },
     ),
   ],
@@ -1527,6 +1889,14 @@ export const kakinChronicles = {
         en: 'Zakuro’s drops of blood pick out a tall man in a crowd on Tier 3, his hair down and without make-up. When [[lynch-fullbokko|Lynch]] punches him, she is the one who collapses, and the man says it was a reflex. His aura convinces a trembling Zakuro that he is [[hisoka|Hisoka]], and Zakuro tells him that the Mafia is looking for him. Later he wakes up beside a pile of rubbish: the man had invited him to the cinema and asked which film he wanted to see, and Zakuro passed out the moment he looked away. They report to their underboss, and Zakuro sets off with Lynch to find the Troupe’s leader.',
       },
     ),
+    told(
+      406,
+      { it: 'La Lynch che lo ha svegliato', en: 'The Lynch who woke him' },
+      {
+        it: 'Zakuro e [[hinrigh|Hinrigh]] vedono il corpo di [[lynch-fullbokko|Lynch]], con il collo torto e spezzato. Zakuro obietta prima che [[hisoka|Hisoka]] avrebbe ucciso anche lui, poi ricorda che la Lynch che lo ha svegliato era stranamente calma e si preoccupava per lui, cosa che non era da lei. Dubita che qualcuno possa cambiare altezza per sembrare lei e pensa a una manipolazione, ma ricorda che lei insisteva che fosse sicuramente Hisoka. Hinrigh conclude che il colpevole voleva farglielo credere. Con l’aura che gli cresce intorno, Zakuro dice che, se l’assassino è un Ragno, dovranno scontrarsi con i Cha-R, e chiede a Hinrigh se la vendicheranno. Hinrigh risponde che lo faranno di sicuro.',
+        en: 'Zakuro and [[hinrigh|Hinrigh]] are shown [[lynch-fullbokko|Lynch]]’s body, her neck twisted and broken. Zakuro first argues that [[hisoka|Hisoka]] would have killed him too, then remembers that the Lynch who woke him was strangely calm and worried about him, unlike herself. He doubts that anyone could change height to pass as her and thinks of manipulation, but recalls her insisting that it was definitely Hisoka. Hinrigh concludes that the killer wanted them to believe it. Aura swelling around him, Zakuro says that if the killer is a Spider they will have to fight the Cha-R, and asks Hinrigh whether they will avenge her. Hinrigh says they absolutely will.',
+      },
+    ),
   ],
   'lynch-fullbokko': [
     told(
@@ -1543,6 +1913,17 @@ export const kakinChronicles = {
       {
         it: 'Sul terzo livello le gocce di sangue di [[zakuro-custard|Zakuro]] indicano uomini alti, e Lynch colpisce ciascuno perché la sua voce interiore dica se è [[hisoka|Hisoka]]. Uno di loro è un uomo alto con i capelli sciolti. Quando Lynch lo colpisce è lei a crollare, e l’uomo dice che il suo contrattacco è stato un riflesso. Al risveglio l’uomo non c’è più, e anche Zakuro ha perso i sensi. Sicura che fosse lui, Lynch propone di riferire tutto al sottocapo, perché sono chiaramente in svantaggio.',
         en: 'On Tier 3, [[zakuro-custard|Zakuro]]’s drops of blood pick out tall men, and Lynch punches each one so that his inner voice says whether he is [[hisoka|Hisoka]]. One of them is a tall man with his hair down. When Lynch punches him, she is the one who collapses, and the man says his counter was a reflex. When she wakes, the man is gone, and Zakuro has passed out too. Sure that it was him, Lynch suggests reporting to their underboss, since they are clearly outmatched.',
+      },
+    ),
+    told(
+      405,
+      {
+        it: 'Il pugno che ha scoperto il falso',
+        en: 'The punch that exposed a fake',
+      },
+      {
+        it: 'L’uomo alto che Lynch ha colpito al terzo livello era [[bonolenov|Bonolenov]] della Brigata, travestito da [[hisoka|Hisoka]]. Il suo pugno ha fatto ammettere alla voce interiore di lui che stava solo fingendo, prima che un suo riflesso la stordisse. Al risveglio Bonolenov, con l’aspetto di [[zakuro-custard|Zakuro]], le ha fatto dire che sapeva che quell’Hisoka era falso. Furiosa, lei ha giurato di farlo mettere da [[hinrigh|Hinrigh]] in cima alla lista dei bersagli. Bonolenov l’ha uccisa e ne ha preso l’aspetto: la Lynch che ha svegliato Zakuro dicendogli che era sicuramente Hisoka era lui.',
+        en: 'The tall man Lynch punched on Tier 3 was [[bonolenov|Bonolenov]] of the Troupe, disguised as [[hisoka|Hisoka]]. Her punch made his inner voice admit that he was only pretending, before his reflex knocked her out. When she woke, Bonolenov, in [[zakuro-custard|Zakuro]]’s form, got her to say that she knew this Hisoka was a fake. Angry, she swore to have [[hinrigh|Hinrigh]] put him at the top of the hit list. Bonolenov killed her and took her form: the Lynch who woke Zakuro and told him it was definitely Hisoka was him.',
       },
     ),
   ],
@@ -1723,6 +2104,22 @@ export const kakinChronicles = {
         en: 'Borksen, a private first class in the royal army and a provisional Hunter on the security detail of the royal living quarters, told [[otocin|Otocin]] about Nen, a dangerous power spreading on Tier 1. Because of this, Corporal [[gipper|Gipper]] has her transferred to Tier 3 as an adviser. There, warning that anyone who leaks it will be demoted, she tells her old comrades that the prince is learning Nen from his bodyguard. She does not know what Nen is, but from the bodyguards’ reactions it seems like a top-secret weapon. She suggests seeking support from the Xi-Yu or the Cha-R.',
       },
     ),
+    told(
+      407,
+      { it: 'Una partita a carte', en: 'A card game' },
+      {
+        it: 'Borksen si sveglia nel covo degli Heil-Ly, slegata e disarmata, con sei nemici intorno e nessun ricordo di come ci sia arrivata; sospetta un’abilità del Nen. [[morena|Morena]], che lei riconosce come Morena Prudo, la vuole come alleata e le propone di decidere con una partita di negoziazione. Se rifiuta di giocare, potrà solo dire sì o no. Borksen tiene cinque carte coperte: Sì, No, R, che recupera una carta scartata, un jolly e X, che le permetterebbe di andarsene senza rispondere. Morena ha sette carte di domande. Borksen vede delle trappole nel sistema e chiede di scegliere lei quale carta coperta scoprire; Morena accetta, e la partita comincia.',
+        en: 'Borksen wakes in the Heil-Ly hideout, unbound and disarmed, with six enemies around her and no memory of getting there; she suspects a Nen ability. [[morena|Morena]], whom she identifies as Morena Prudo, wants her as an ally and offers to settle it with a negotiation game. If she refuses to play, she will be left only the freedom to say yes or no. Borksen holds five face-down cards: Yes, No, R, which returns a discarded card, a Joker, and X, which would let her leave without answering. Morena has seven question cards. Borksen sees traps in the system, and asks to choose which face-down card she reveals; Morena agrees, and the game begins.',
+      },
+    ),
+    told(
+      410,
+      { it: 'Costretta a dire sì', en: 'Forced to say yes' },
+      {
+        it: 'Quando viene dichiarata la legge marziale speciale, Borksen continua a giocare per andarsene con la X. Usa la carta dell’accordo per riprenderla, al prezzo di un bacio di [[morena|Morena]], una delle tre condizioni per entrare negli Heil-Ly, ma la X viene scartata di nuovo. Con le sue domande scopre che il covo è tra il secondo e il terzo livello, ha cinque porte e ventuno membri. Le resta la R, ma poi sceglie il Sì. Morena rivela che Borksen ha barato segnando la R, e che la sua abilità, attivata dall’imbroglio, l’ha costretta a scegliere. Borksen entra negli Heil-Ly al livello 0, viene liberata e torna dai suoi, non prima di chiedere a Morena di mostrarle il covo.',
+        en: 'When special martial law is declared, Borksen keeps playing to leave with the X card. She uses the Deal card to take it back, at the price of a kiss from [[morena|Morena]], one of three conditions for joining the Heil-Ly, but X is discarded again. With her questions she learns that the hideout lies between Tiers 2 and 3 and has five doors and twenty-one members. She is left with R, but then picks Yes. Morena reveals that Borksen cheated by marking the R card, and that her ability, triggered by cheating, forced her to choose. Borksen joins the Heil-Ly at level 0, is released and goes back to her people, first asking Morena to show her around.',
+      },
+    ),
   ],
   'otocin': [
     told(
@@ -1751,6 +2148,14 @@ export const kakinChronicles = {
       {
         it: 'Momolly è una soldatessa di [[tserriednich-hui-guo-rou|Tserriednich]] che ha frequentato l’accademia militare con lui. Durante le ricerche sul terzo livello sostiene che il principe rimanderebbe la vendetta contro una traditrice solo se avesse trovato un nuovo giocattolo. Propone di aspettare [[borksen|Borksen]] per confermare i fatti e le chiede un piano per il caso in cui uno di loro venga catturato. Tra sé pensa che, se Tserriednich fosse suo amico, dovrebbe stargli accanto e tenergli testa.',
         en: 'Momolly is a soldier of [[tserriednich-hui-guo-rou|Tserriednich]] who attended the military academy with him. While searching Tier 3, she argues that the prince would delay revenge on a traitor only if he had found a new toy. She suggests waiting for [[borksen|Borksen]] to confirm the facts, and asks her for a plan in case one of them is caught. To herself she thinks that, if Tserriednich were her friend, she should be at his side and getting on his case.',
+      },
+    ),
+    told(
+      407,
+      { it: 'Borksen scomparsa', en: 'Borksen is missing' },
+      {
+        it: 'Alle 13 al terzo livello, Momolly e altri quattro soldati amici di [[tserriednich-hui-guo-rou|Tserriednich]] si accorgono che [[borksen|Borksen]] è sparita da una trentina di minuti, da quando il corteo funebre le è passato davanti. Momolly dice che devono pensare al peggio, un rapimento, e che una squadra potrebbe averla drogata e nascosta tra la folla. [[otocin|Otocin]] pensa al Nen, e al fatto che gli Heil-Ly potrebbero usarla contro il principe. Ricordano che Borksen si chiedeva se fosse davvero giusto non trattare e non tentare un salvataggio se uno di loro fosse catturato, e decidono di pensarci ognuno per conto suo.',
+        en: 'At 1 p.m. on Tier 3, Momolly and four other soldier friends of [[tserriednich-hui-guo-rou|Tserriednich]] realise that [[borksen|Borksen]] has been missing for about thirty minutes, since the funeral procession passed her. Momolly says they must assume the worst, an abduction, and that a team could have drugged her and hidden her in the crowd. [[otocin|Otocin]] suggests Nen, and that the Heil-Ly may want to use her against the prince. They remember Borksen asking whether they should really refuse to negotiate or attempt a rescue if one of them was captured, and decide to think it over on their own.',
       },
     ),
   ],
@@ -1869,6 +2274,14 @@ export const kakinChronicles = {
         en: 'Kaiser, a Justice Bureau official, has watched [[seiko-hui-guo-rou|Seiko]] for three days and questioned [[melody|Melody]] after the twins’ failed escape. Now he tells her that five princes want her to perform for them and are using the threat of an accomplice charge as leverage. He proposes wiping out the higher princes by pouring a slow-acting poison into their mouths while her music leaves them unconscious, and confesses that he is in love with her. His heartbeat is as steady as an atomic clock: Melody suspects he is being manipulated, but agrees.',
       },
     ),
+    told(
+      402,
+      { it: 'Una domanda per Benjamin', en: 'A question for Benjamin' },
+      {
+        it: 'Kaiser si offre di aiutare [[melody|Melody]] e la bestia di [[kacho-hui-guo-rou|Kachow]] contro [[luzurus-hui-guo-rou|Loozlus]]: dice di volere [[fugetsu-hui-guo-rou|Fugetsu]] sul trono perché cambi il sistema, e di lavorare alla Giustizia per avvicinare il mondo al suo ideale. Accompagna Fugetsu a consegnare le lettere di Kachow. Quando [[benjamin-hui-guo-rou|Benjamin]] gli chiede delle ricerche di [[musse|Musse]], Kaiser lo porta a dire che la situazione non basta per la legge marziale, e ne deduce che Benjamin aspetta il momento giusto per dichiararla. Negli alloggi di Loozlus legge ad alta voce la lettera e ne liquida il contenuto come semplici voci.',
+        en: 'Kaiser volunteers to help [[melody|Melody]] and [[kacho-hui-guo-rou|Kacho]]’s beast against [[luzurus-hui-guo-rou|Luzurus]]: he says he wants [[fugetsu-hui-guo-rou|Fugetsu]] on the throne to change the system, and that he serves justice to bring the world closer to his ideal. He escorts Fugetsu to deliver Kacho’s letters. When [[benjamin-hui-guo-rou|Benjamin]] asks about the search for [[musse|Musse]], Kaiser leads him to say that the situation does not call for martial law, and concludes that Benjamin is waiting for the right moment to declare it. In Luzurus’s quarters he reads the letter aloud and dismisses its contents as mere rumours.',
+      },
+    ),
   ],
   // Returning characters, chapters 371–400.
   'phinks': [
@@ -1894,6 +2307,14 @@ export const kakinChronicles = {
       {
         it: 'Nelle cabine di prima classe del terzo livello Phinks, [[nobunaga|Nobunaga]] e [[feitan|Feitan]] usano un ostaggio per studiare la trappola degli Heil-Ly. Passare dal bagno è sicuro, ma l’uomo sparisce quando rientra dalla porta principale. Per Nobunaga è una trappola a mina, e su proposta di Phinks un secondo ostaggio dimostra che si attiva ogni volta. Mentre Feitan si offre di entrare per primo, arriva [[ken-i-wang|Ken’i Wang]] con il sottocapo degli Xi-Yu, che trasforma un trasmettitore in un’ostrica, la inghiotte e si lascia prendere dalla trappola. Phinks tiene il ricevitore.',
         en: 'In the first-class cabins on Tier 3, Phinks, [[nobunaga|Nobunaga]] and [[feitan|Feitan]] use a hostage to study the Heil-Ly’s trap. Going through the bathroom is safe, but the man vanishes when he walks back in through the front door. Nobunaga reads it as a land-mine trap, and at Phinks’s suggestion a second hostage shows that it triggers every time. As Feitan volunteers to go in first, [[ken-i-wang|Ken’i Wang]] arrives with the Xi-Yu underboss, who turns a transmitter into an oyster, swallows it and lets the trap take him. Phinks keeps the receiver.',
+      },
+    ),
+    told(
+      406,
+      { it: 'La strada per il secondo livello', en: 'The way to Tier 2' },
+      {
+        it: '[[tajao|Tajao]] guida Phinks, [[nobunaga|Nobunaga]] e [[feitan|Feitan]] per passaggi stretti e su una scala traballante tra le tubature della nave, verso il secondo livello; l’odore ricorda a Phinks i pozzi neri di casa. Quando Tajao spiega che i Cha-R e gli Xi-Yu controllano il trattamento dei rifiuti tra il quarto e il quinto livello, Nobunaga ipotizza che gli Heil-Ly si spaccino per ditte appaltatrici, e Phinks osserva che lì potrebbero uccidere quanto vogliono. Nobunaga torna indietro e avverte Phinks e Feitan che la guardia del covo ha un’abilità di contrattacco che espelle chi la attacca.',
+        en: '[[tajao|Tajao]] leads Phinks, [[nobunaga|Nobunaga]] and [[feitan|Feitan]] through cramped passages and up a rickety staircase among the ship’s pipes toward Tier 2; the smell reminds Phinks of the cesspools back home. When Tajao explains that the Cha-R and Xi-Yu control the waste processing between Tiers 4 and 5, Nobunaga guesses that the Heil-Ly may pose as subcontractors there, and Phinks remarks that they could kill as much as they like. Nobunaga turns back, and warns Phinks and Feitan that the hideout’s guard has a counter ability that expels attackers.',
       },
     ),
   ],
@@ -1928,6 +2349,14 @@ export const kakinChronicles = {
       {
         it: 'Nobunaga segue il sottocapo degli Xi-Yu attraverso la trappola fino al covo degli Heil-Ly. Non riesce a tagliarne i muri e ne deduce che chi lo ha creato è dentro. Nella sala principale nove membri li ignorano. I suoi attacchi vengono deviati, e quando l’avvocato [[yokotani|Yokotani]] attiva la sua abilità, delle guardie evocate e invulnerabili afferrano Nobunaga, gli prendono la spada e lo espellono nella stanza 3101. Lì capisce che la trappola funziona anche da passaggio segreto, e il sottocapo torna dopo aver nascosto il trasmettitore.',
         en: 'Nobunaga follows the Xi-Yu underboss through the trap to the Heil-Ly hideout. He cannot cut its walls and concludes that whoever made it is inside. In the main room, nine members ignore them. His attacks are deflected, and when the lawyer [[yokotani|Yokotani]] activates his ability, invulnerable conjured guards seize Nobunaga, take his sword and expel him to Room 3101. There he works out that the trap is also a secret passage, and the underboss returns having hidden the transmitter.',
+      },
+    ),
+    told(
+      405,
+      { it: 'Non i veri Heil-Ly', en: 'Not the real Heil-Ly' },
+      {
+        it: 'Nel covo dei Cha-R al quinto livello, Nobunaga chiede a [[ken-i-wang|Ken’i]] e [[tajao|Tajao]] se gli Heil-Ly sulla nave siano davvero gli Heil-Ly. Ken’i spiega che la nuova capa, la giovane [[morena|Morena]], è una discendente reale senza diritti di successione. Nobunaga osserva che gli Heil-Ly lasciano ai membri la scelta della tattica dentro un’unica strategia, come fa la Brigata, e che uccidono civili, non mafiosi: crede che vogliano uccidere tutti a bordo, famiglia reale compresa, e distruggere Cakin. [[phinks|Phinks]] e [[feitan|Feitan]] aggiungono che uccidere potrebbe essere un limite per ottenere un Nen potente. Tajao chiede ai tre di schiacciare gli Heil-Ly con il pieno sostegno dei Cha-R e degli Xi-Yu.',
+        en: 'In the Cha-R hideout on Tier 5, Nobunaga asks [[ken-i-wang|Ken’i]] and [[tajao|Tajao]] whether the Heil-Ly on the ship are really the Heil-Ly. Ken’i says that their young new boss, [[morena|Morena]], is a royal descendant without succession rights. Nobunaga notes that the Heil-Ly let members choose their own tactics under one strategy, as the Troupe does, and that they kill civilians, not Mafia: he believes they want to kill everyone aboard, the royal family included, and destroy Kakin. [[phinks|Phinks]] and [[feitan|Feitan]] add that killing could be a limitation to gain powerful Nen. Tajao asks the three to crush the Heil-Ly with the full support of the Cha-R and Xi-Yu.',
       },
     ),
   ],
@@ -1968,6 +2397,14 @@ export const kakinChronicles = {
       {
         it: 'Bonolenov e [[shizuku|Shizuku]] fanno squadra con [[chrollo|Quoll]] per trovare [[hisoka|Hisoka]], contro cui entrambi sono impotenti. Bonolenov rivela una nuova abilità che gli permette di trasformarsi in varie cose, ma non sa ancora usarla e chiede aiuto al capo. Quoll accetta e in cambio vuole che facciano qualcosa per lui. Quando Shizuku fantastica sul libro di Quoll, Bonolenov le consiglia di tenere certi pensieri per sé.',
         en: 'Bonolenov and [[shizuku|Shizuku]] team up with [[chrollo|Chrollo]] to find [[hisoka|Hisoka]], against whom both are powerless. Bonolenov reveals a new ability that lets him transform into various things, but he does not yet know how to use it and asks the boss for help. Chrollo agrees and in return wants them to do something for him. When Shizuku muses about Chrollo’s book, Bonolenov advises her to keep such thoughts to herself.',
+      },
+    ),
+    told(
+      405,
+      { it: 'Il falso Hisoka', en: 'The fake Hisoka' },
+      {
+        it: 'Per ordine di [[chrollo|Quoll]], Bonolenov si è finto [[hisoka|Hisoka]], perché la mafia lo nascondesse ai livelli superiori e lasciasse quello vero alla Brigata. Quando un pugno di [[lynch-fullbokko|Lynch]] ha fatto confessare il travestimento alla sua voce interiore, lui l’ha stordita d’istinto, poi ha stordito [[zakuro-custard|Zakuro]] e ne ha preso l’aspetto per scoprire cosa sapesse lei. L’ha uccisa, ha preso il suo aspetto per ingannare Zakuro e ha condotto gli Xi-Yu al cinema, dove [[hinrigh|Hinrigh]] gli ha dato un pass VVIP. Ora, nel casinò del primo livello, vede il vero Hisoka e si trasforma in [[owl|Civetta]]: la sua abilità copia le persone con cui ha parlato, per tanto tempo quanto ne ha passato con loro.',
+        en: 'On [[chrollo|Chrollo]]’s orders, Bonolenov has posed as [[hisoka|Hisoka]], so that the Mafia would hide him on the upper tiers and leave the real one to the Troupe. When [[lynch-fullbokko|Lynch]]’s punch made his inner voice admit the disguise, he knocked her out by reflex, then knocked out [[zakuro-custard|Zakuro]] and took his form to learn what she knew. He killed her, took her form to fool Zakuro, and led the Xi-Yu to the cinema, where [[hinrigh|Hinrigh]] gave him a VVIP pass. Now, in the Tier 1 casino, he spots the real Hisoka and turns into [[owl|Owl]]: his ability copies people he has talked to, for as long as he spent with them.',
       },
     ),
   ],
@@ -2016,6 +2453,262 @@ export const kakinChronicles = {
       {
         it: 'Sulla Black Whale [[shizuku|Shizuku]] chiede a [[chrollo|Quoll]] di leggere di nuovo il futuro dei Ragni, come faceva con l’abilità di predizione rubata a Neon a Yorknew. Quoll risponde che quell’abilità è sparita dal suo libro. Shizuku ne intuisce il motivo e paragona il libro a un “Death Note”, e Quoll non la smentisce. L’abilità scomparsa lascia intendere che Neon sia morta.',
         en: 'Aboard the Black Whale, [[shizuku|Shizuku]] asks [[chrollo|Chrollo]] to read the Spiders’ fortunes again, as he did with the fortune-telling ability he stole from Neon in Yorknew. Chrollo answers that the ability has vanished from his book. Shizuku guesses why and compares the book to a “Death Note”, and Chrollo does not deny it. The vanished ability implies that Neon is dead.',
+      },
+    ),
+  ],
+  // New in phase 5 (chapters 401–420).
+  'makaha': [
+    told(
+      401,
+      { it: 'La sorellastra di Longhi', en: 'Longhi’s half-sister' },
+      {
+        it: 'Makaha è una soldatessa di Cakin e la sorellastra di [[longhi|Longhi]]: come lei è figlia di [[beyond-netero|Beyond]], cresciuta da una coppia di ufficiali. Doveva servire [[camilla-hui-guo-rou|Camilla]], ma ha perso l’occasione quando Camilla ha preso degli emarginati come soldati personali. I suoi genitori, che le avevano sempre parlato con entusiasmo di unificare il mondo con Beyond, sono rimasti indifferenti alla sua delusione, e questo l’ha insospettita. Al servizio di [[duazul-hui-guo-rou|Duazul]] ha scoperto Longhi, e dopo la cerimonia dell’urna le due hanno notato un sigillo che hanno in comune con i loro fratelli. Un famoso esperto di Nen ha spiegato loro che è una maledizione, destinata a liberarsi alla loro morte.',
+        en: 'Makaha is a Kakin soldier and [[longhi|Longhi]]’s half-sister: like her, she is a child of [[beyond-netero|Beyond]], raised by a couple of officers. She was meant to serve [[camilla-hui-guo-rou|Camilla]], but lost her chance when Camilla made outcasts her personal soldiers. Her parents, who had always talked eagerly of unifying the world with Beyond, were indifferent to her disappointment, and that made her suspicious. Serving under [[duazul-hui-guo-rou|Duazul]], she found Longhi, and after the urn ceremony the two noticed a seal they share with their siblings. A renowned Nen user told them that it is a curse, to be released when they die.',
+      },
+    ),
+  ],
+  'oito-hui-guo-rou': [
+    told(
+      401,
+      {
+        it: 'Solo i figli delle mogli legittime',
+        en: 'Only the legal wives’ children',
+      },
+      {
+        it: 'Oito è l’ottava regina di Cakin e la madre di [[woble-hui-guo-rou|Woble]]. Nella stanza 1014, dove [[kurapika|Kurapika]] la protegge, è presente quando [[longhi|Longhi]] rivela di essere figlia di [[beyond-netero|Beyond]] e sospetta che anche uno dei principi sia suo figlio. Quando Kurapika glielo chiede, Oito conferma con nervosismo che alla successione partecipano soltanto i figli delle mogli legittime del re. Vede la scappatoia, ma non riesce a crederci.',
+        en: 'Oito is the Eighth Queen of Kakin and the mother of [[woble-hui-guo-rou|Woble]]. In Room 1014, where [[kurapika|Kurapika]] guards her, she is present when [[longhi|Longhi]] reveals that she is [[beyond-netero|Beyond]]’s daughter and suspects that one of the princes is his child too. When Kurapika asks her, Oito nervously confirms that only the children of the king’s legal wives may take part in the contest. She sees the loophole, but cannot believe it.',
+      },
+    ),
+    told(
+      415,
+      { it: 'Una cartolina per la sorella', en: 'A postcard for her sister' },
+      {
+        it: 'Oito spiega a [[kurapika|Kurapika]] che un suo parente lavora in un ufficio postale a Yamato, da cui si può spedire una lettera in codice senza mittente. Con un servizio di consegne scrive in codice una cartolina alla sorella, e Kurapika le consiglia di non nominare persone né luoghi. Un soldato di [[benjamin-hui-guo-rou|Benjamin]] consegna le cartoline al fattorino senza controllarle. Venti minuti dopo la dichiarazione della legge marziale speciale, lo stesso soldato le comunica che Benjamin ha graziato il principe sostituto, ma che lei è in stato di fermo, con l’incriminazione rinviata finché non si troverà la vera [[woble-hui-guo-rou|Woble]]: non deve lasciare la camera.',
+        en: 'Oito tells [[kurapika|Kurapika]] that a relative of hers works at a post office in Yamato, from where a coded letter can be sent without a return address. Through a delivery service she writes her sister a coded postcard, and Kurapika advises her to name no people or places. One of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers hands the postcards to the deliveryman without inspecting them. Twenty minutes after special martial law is declared, the same soldier tells her that Benjamin has pardoned the stand-in prince, but that she is under detention, her indictment deferred until the real [[woble-hui-guo-rou|Woble]] is found: she must not leave the bedroom.',
+      },
+    ),
+  ],
+  'hashito': [
+    told(
+      404,
+      { it: 'Le ipotesi di Hashito', en: 'Hashito’s guesses' },
+      {
+        it: 'Hashito è una delle guardie che [[zhang-lei-hui-guo-rou|Chowrai]] ha prestato alla stanza 1014, e la parte di [[woble-hui-guo-rou|Woble]] ha chiesto che lui e [[sakata|Sakata]] restino a tempo indeterminato. [[kurapika|Kurapika]] annuncia a loro e a un soldato di [[benjamin-hui-guo-rou|Benjamin]] che il secondo ciclo di lezioni di Nen comincia la mattina dopo, e che vi parteciperà anche una guardia di [[camilla-hui-guo-rou|Camilla]]. Sakata pensa che Camilla abbia voluto verificare le sue affermazioni, e Hashito elenca i possibili motivi: raccogliere informazioni, un assassinio o un’alleanza.',
+        en: 'Hashito is one of the guards [[zhang-lei-hui-guo-rou|Zhang Lei]] lent to Room 1014, and [[woble-hui-guo-rou|Woble]]’s side has asked for him and [[sakata|Sakata]] to stay on indefinitely. [[kurapika|Kurapika]] tells them and one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers that the second round of Nen classes starts the next morning, and that one of [[camilla-hui-guo-rou|Camilla]]’s guards will join it. Sakata guesses that Camilla was checking his claims, and Hashito lists the possible reasons: gathering information, an assassination or an alliance.',
+      },
+    ),
+  ],
+  'sakata': [
+    told(
+      412,
+      { it: 'La mossa di Slakka', en: 'Slakka’s move' },
+      {
+        it: 'Alla seconda lezione di Nen nella stanza 1014, Sakata osserva i partecipanti con [[kurapika|Kurapika]] e [[hashito|Hashito]]. Quando [[slakka|Slakka]] rivela di essere stato assegnato a [[zhang-lei-hui-guo-rou|Chowrai]] e chiede di unirsi al corso, Sakata fatica a nascondere la rabbia, temendo che divulghi informazioni e rovini il rapporto con Kurapika. Vedendo il sorriso di Slakka, capisce che la mossa era calcolata. Quando Kurapika si offre di condividere informazioni importanti sul Nen, Sakata lo interrompe. Due giorni prima era stato invitato, con un soldato di [[benjamin-hui-guo-rou|Benjamin]], ad assistere alle risposte di [[oito-hui-guo-rou|Oito]] alla catena di Kurapika.',
+        en: 'At the second Nen class in Room 1014, Sakata watches the participants with [[kurapika|Kurapika]] and [[hashito|Hashito]]. When [[slakka|Slakka]] reveals that he was assigned to [[zhang-lei-hui-guo-rou|Zhang Lei]] and asks to join the class, Sakata struggles to hide his anger, fearing that he will hand out information and ruin their relationship with Kurapika. Seeing Slakka grin, he realises that the move was calculated. When Kurapika offers to share important information on Nen, Sakata cuts him off. Two days earlier, he had been invited with one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers to witness [[oito-hui-guo-rou|Oito]] answering Kurapika’s chain.',
+      },
+    ),
+  ],
+  'musse': [
+    told(
+      413,
+      { it: 'La finestra segreta', en: 'The Secret Window' },
+      {
+        it: 'Musse era un soldato di [[benjamin-hui-guo-rou|Benjamin]], ucciso dall’abilità di [[camilla-hui-guo-rou|Camilla]]. Quando Benjamin chiede a [[kaiser|Kaiser]] se lo hanno trovato, Kaiser risponde che le ricerche al primo livello non hanno dato risultati. Ora Benjamin usa l’abilità di Musse, Secret Window, per osservare Camilla. Potenziata dal lungo uso, gli mostra anche ciò che Musse ha visto prima di morire, e così Benjamin sa che Camilla usa un Nen di contrattacco.',
+        en: 'Musse was one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, killed by [[camilla-hui-guo-rou|Camilla]]’s ability. When Benjamin asks [[kaiser|Kaiser]] whether he has been found, Kaiser answers that the search on Tier 1 has failed. Now Benjamin uses Musse’s ability, Secret Window, to watch Camilla. Levelled up by long use, it also shows him what Musse saw before he died, so Benjamin knows that Camilla is a counteractive-type Nen user.',
+      },
+    ),
+  ],
+  'balsamilco': [
+    told(
+      403,
+      { it: 'La freccia nel corridoio', en: 'The arrow in the corridor' },
+      {
+        it: 'Balsamilco, capitano delle guardie di [[benjamin-hui-guo-rou|Benjamin]], nasconde in una scarpa una fiala di un’arma biologica militare mai riuscita, che uccide in mezza giornata senza lasciare tracce: vuole contagiare [[halkenburg-hui-guo-rou|Harkenburg]] mentre lo interroga al processo. In un corridoio dell’Ufficio di Giustizia, un soldato di Benjamin assegnato al principe gli comunica a gesti di aver scoperto il segreto della sua abilità. Poi una freccia d’aura attraversa il muro. Al telefono Balsamilco dice a Benjamin che la freccia lo ha mancato, e più tardi che la missione è compiuta, ma nel suo corpo ora c’è l’anima di Harkenburg.',
+        en: 'Balsamilco, captain of [[benjamin-hui-guo-rou|Benjamin]]’s guards, hides in his shoe a vial of a failed military bioweapon that kills in half a day and leaves no trace, meaning to infect [[halkenburg-hui-guo-rou|Halkenburg]] while he cross-examines him at their trial. In a corridor of the Justice Bureau, one of Benjamin’s soldiers posted with the prince signs to him that he has found the secret of the prince’s ability. Then an arrow of aura flies through the wall. On the phone Balsamilco tells Benjamin that the arrow missed, and later that the mission is complete, but Halkenburg’s soul now possesses his body.',
+      },
+    ),
+    told(
+      417,
+      { it: 'Di nuovo se stesso', en: 'Himself again' },
+      {
+        it: 'Balsamilco viene trovato privo di sensi nella stanza 1009, viene messo in sicurezza e si risveglia come se stesso; la sua identità viene verificata. [[benjamin-hui-guo-rou|Benjamin]] conclude che [[halkenburg-hui-guo-rou|Harkenburg]] è riuscito in qualche modo a lasciare il suo corpo. Balsamilco chiede di restare sotto sorveglianza, incerto sugli effetti dell’attacco. Con il Gyo vede le condizioni di Benjamin: maledetto dagli emarginati di [[camilla-hui-guo-rou|Camilla]], contagiato con mezza giornata da vivere, e forse bersaglio della maledizione di [[beyond-netero|Beyond]] su [[furykov|Furykov]]. Ricordato che serve nella prima unità dell’esercito reale, riprende le armi e si offre di cercare i seguaci di Harkenburg dalle piume sul dorso delle mani.',
+        en: 'Balsamilco is found unconscious in Room 1009, secured, and wakes up as himself; his identity is verified. [[benjamin-hui-guo-rou|Benjamin]] concludes that [[halkenburg-hui-guo-rou|Halkenburg]] has somehow left his body. Balsamilco asks to be kept under guard, unsure of the attack’s effects. With Gyo he sees Benjamin’s condition: cursed by [[camilla-hui-guo-rou|Camilla]]’s outcasts, infected with half a day to live, and perhaps the target of [[beyond-netero|Beyond]]’s curse on [[furykov|Furykov]]. Reminded that he serves in the Royal Army’s first unit, he takes up arms, and offers to find Halkenburg’s followers by the feathers on the backs of their hands.',
+      },
+    ),
+  ],
+  'worio-bay': [
+    told(
+      403,
+      { it: 'Il messaggio di Harkenburg', en: 'Halkenburg’s message' },
+      {
+        it: 'Worio Bay, un impiegato dell’Ufficio di Giustizia, è svenuto durante le visite a [[halkenburg-hui-guo-rou|Harkenburg]], in un momento e in un luogo diversi dai sostenitori del principe. [[kaiser|Kaiser]] lo interroga nel suo alloggio, spiegandogli che i principi usano poteri sovrannaturali e che lui sostiene Harkenburg finché [[fugetsu-hui-guo-rou|Fugetsu]] è al sicuro. Worio gli mostra un segno a forma di piuma sul dorso della mano sinistra: Harkenburg gli ha detto di raccontare tutto a Kaiser se fosse stato lui a parlare del Nen, perché si aspettava la sua visita. Poi gli dice che Harkenburg morirà presto.',
+        en: 'Worio Bay, a Justice Bureau staff member, passed out during the visits to [[halkenburg-hui-guo-rou|Halkenburg]], at a different time and place from the prince’s supporters. [[kaiser|Kaiser]] questions him in his quarters, explaining that the princes use supernatural abilities and that he supports Halkenburg as long as [[fugetsu-hui-guo-rou|Fugetsu]] is safe. Worio shows him a feather-shaped mark on the back of his left hand: Halkenburg told him to tell Kaiser everything if Kaiser raised Nen himself, since he expected him to come. Then Worio tells Kaiser that Halkenburg is going to die soon.',
+      },
+    ),
+  ],
+  'vict': [
+    told(
+      404,
+      { it: 'Il primo esperimento', en: 'The earlier test' },
+      {
+        it: 'Vict è un soldato di [[benjamin-hui-guo-rou|Benjamin]] assegnato a [[halkenburg-hui-guo-rou|Harkenburg]]. In un corridoio dell’Ufficio di Giustizia compare alle spalle di [[balsamilco|Balsamilco]] e gli comunica con il linguaggio dei segni militare di aver scoperto il segreto dell’abilità del principe, poco prima che la freccia di Harkenburg venga scoccata. Più tardi Harkenburg rivela che i suoi avevano già fatto un esperimento su Vict, e che per questo era pronto anche all’ipotesi di finire lui stesso nel corpo di Balsamilco.',
+        en: 'Vict is one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, posted with [[halkenburg-hui-guo-rou|Halkenburg]]. In a corridor of the Justice Bureau he appears behind [[balsamilco|Balsamilco]] and tells him in military sign language that he has found the secret of the prince’s ability, just before Halkenburg’s arrow is fired. Halkenburg later reveals that his side had already experimented on Vict, which is why he was ready even for the chance of ending up in Balsamilco’s body himself.',
+      },
+    ),
+  ],
+  'shikaku': [
+    told(
+      404,
+      { it: 'La prova con Sumidori', en: 'The test with Sumidori' },
+      {
+        it: 'Shikaku era il soldato che [[benjamin-hui-guo-rou|Benjamin]] aveva assegnato a [[halkenburg-hui-guo-rou|Harkenburg]] con l’ordine di ucciderlo. La freccia del principe lo ha colpito, e da allora il suo corpo è stato mosso dalla mente di [[sumidori|Sumidori]], uno degli uomini di Harkenburg, finché si è sparato davanti agli alloggi di [[luzurus-hui-guo-rou|Loozlus]]. Ora Harkenburg spiega cosa ha dimostrato quella prova: Sumidori si è svegliato e ha dato il numero di matricola di Shikaku, quindi solo una delle due menti scambiate può essere sveglia alla volta, e di solito ha la precedenza quella dei suoi.',
+        en: 'Shikaku was the soldier [[benjamin-hui-guo-rou|Benjamin]] posted with [[halkenburg-hui-guo-rou|Halkenburg]] and ordered to kill him. The prince’s arrow struck him, and from then on his body was moved by the mind of [[sumidori|Sumidori]], one of Halkenburg’s men, until it shot itself outside [[luzurus-hui-guo-rou|Luzurus]]’s quarters. Now Halkenburg explains what that test proved: Sumidori woke up and gave Shikaku’s service number, so only one of two swapped minds can be awake at a time, and his own side’s generally comes first.',
+      },
+    ),
+  ],
+  'sumidori': [
+    told(
+      404,
+      { it: 'Nel corpo di Shikaku', en: 'In Shikaku’s body' },
+      {
+        it: 'Sumidori è uno degli uomini di [[halkenburg-hui-guo-rou|Harkenburg]]. Quando la freccia del principe ha colpito [[shikaku|Shikaku]], è stata la mente di Sumidori a prendere il controllo del corpo del soldato, mentre il suo sembrava addormentato. Ora Harkenburg dice che l’esperimento con Shikaku e Sumidori ha confermato la sua ipotesi: dopo lo sparo Sumidori si è svegliato e ha dato il numero di matricola di Shikaku. Solo una delle due menti scambiate può essere sveglia alla volta: finché la mente di Sumidori è cosciente, quella di Shikaku non può svegliarsi.',
+        en: 'Sumidori is one of [[halkenburg-hui-guo-rou|Halkenburg]]’s men. When the prince’s arrow struck [[shikaku|Shikaku]], it was Sumidori’s mind that took over the soldier’s body, while his own seemed to sleep. Now Halkenburg says that the experiment with Shikaku and Sumidori proved his hypothesis: after the shot, Sumidori woke up and gave Shikaku’s service number. Only one of two swapped minds can be awake at a time: while Sumidori’s mind is conscious, Shikaku’s cannot wake.',
+      },
+    ),
+  ],
+  'cleapatro': [
+    told(
+      412,
+      { it: 'Le cause di Beyond', en: 'Beyond’s lawsuits' },
+      {
+        it: 'Cleapatro presiede la Corte suprema della nave. Dopo la morte di [[halkenburg-hui-guo-rou|Harkenburg]], [[benjamin-hui-guo-rou|Benjamin]] ordina di farle sapere che tutte le accuse contro il principe vengono ritirate. Più tardi lei visita la cella di [[beyond-netero|Beyond]] al primo livello con alcuni funzionari dell’Ufficio di Giustizia e una pila di scatoloni, e gli comunica che tutte le 1.047 cause che ha intentato sono state respinte. [[kanzai|Kanzai]] e [[saiyu|Saiyu]] non li lasciano soli. Lei e Beyond discutono della visione dei diritti umani di Cakin, e lei si lamenta che le fa perdere tempo.',
+        en: 'Cleapatro is the ship’s Supreme Magistrate. After [[halkenburg-hui-guo-rou|Halkenburg]]’s death, [[benjamin-hui-guo-rou|Benjamin]] orders that she be told that all charges against the prince are dropped. Later she visits [[beyond-netero|Beyond]]’s cell on Tier 1 with Justice Bureau officials and a stack of boxes, and tells him that all 1,047 of his lawsuits have been thrown out. [[kanzai|Kanzai]] and [[saiyu|Saiyu]] refuse to leave them alone. She and Beyond argue over Kakin’s view of human rights, and she complains that he is wasting her time.',
+      },
+    ),
+  ],
+  'hinrigh': [
+    told(
+      406,
+      { it: 'Vendicare Lynch', en: 'Avenging Lynch' },
+      {
+        it: 'Hinrigh, il vicecapo degli Xi-Yu, guida la ricerca di [[hisoka|Hisoka]] per la sua famiglia. Tra la folla del funerale di [[halkenburg-hui-guo-rou|Harkenburg]], dei soldati mostrano a lui e a [[zakuro-custard|Zakuro]] il corpo di [[lynch-fullbokko|Lynch]], con il collo spezzato da un professionista. Hinrigh dà del denaro al soldato e porta via il corpo. Interrogando Zakuro capisce che la vera Lynch era già morta e che la Lynch che lo ha svegliato era qualcun altro: lei aveva scoperto che quell’Hisoka era falso, e Zakuro è stato risparmiato perché riferisse che Hisoka era lì. Giurano di vendicarla, chiunque sia il colpevole. Intanto il trasmettitore che Hinrigh ha nascosto come ostrica nel covo degli Heil-Ly torna a essere un trasmettitore.',
+        en: 'Hinrigh, the Xi-Yu underboss, leads his family’s search for [[hisoka|Hisoka]]. Among the crowd for [[halkenburg-hui-guo-rou|Halkenburg]]’s funeral, soldiers show him and [[zakuro-custard|Zakuro]] the body of [[lynch-fullbokko|Lynch]], her neck broken by a professional. Hinrigh tips the soldier and takes the body. Questioning Zakuro, he works out that the real Lynch was already dead and that the Lynch who woke Zakuro was someone else: she had found out that this Hisoka was a fake, and Zakuro was spared to report that Hisoka was there. They vow to avenge her, whoever the killer is. Meanwhile the transmitter Hinrigh hid as an oyster in the Heil-Ly hideout turns back into a transmitter.',
+      },
+    ),
+  ],
+  'morena': [
+    told(
+      405,
+      { it: 'L’inizio della fine', en: 'The beginning of the end' },
+      {
+        it: 'Morena è la giovane capa degli Heil-Ly; i Cha-R la descrivono come una discendente reale senza diritti di successione. In un covo segreto al secondo livello viene a sapere che il corteo funebre di [[halkenburg-hui-guo-rou|Harkenburg]] attirerà la folla: un’occasione perfetta. Un membro degli Heil-Ly che ora fiuta i tipi di Nen cercherà tra la gente le persone che vogliono, con [[sodom|Sodom]] al suo fianco per rapirle. Se le troverà, dice lei, avranno via libera, e sarà l’inizio della fine. Intanto [[tevelares|Tevelares]], [[daemon|Daemon]] e [[quorolle|Quorolle]] salgono di livello nella zona di trattamento, tra mucchi di cadaveri, prima di dare la caccia ai mafiosi.',
+        en: 'Morena is the young head of the Heil-Ly; the Cha-R describe her as a royal descendant without succession rights. In a secret hideout on Tier 2 she hears that [[halkenburg-hui-guo-rou|Halkenburg]]’s funeral procession will draw a crowd, a perfect opportunity. A Heil-Ly member who can now sniff out Nen types will look in the crowd for the people they want, with [[sodom|Sodom]] at his side to kidnap them. If he finds them, she says, they have a green light, and it is the beginning of the end. Meanwhile [[tevelares|Tevelares]], [[daemon|Daemon]] and [[quorolle|Quorolle]] level up in the processing area, among piles of corpses, before hunting Mafia members.',
+      },
+    ),
+    told(
+      408,
+      { it: 'Un’orfana del carnevale', en: 'A carnival orphan' },
+      {
+        it: 'Con la carta dello scopo, [[borksen|Borksen]] sente l’obiettivo di Morena: distruggere l’impero di Cakin, e poi l’umanità intera. Morena non è la vera Morena Prudo, sepolta in una tomba con il suo nome, ma un’orfana del carnevale: sua madre fu costretta a “intrattenere” i reali durante una festa segreta e morì quando Morena aveva due anni. Cresciuta in un istituto della tratta gestita dagli Heil-Ly, è stata classificata come “carne” e ha vissuto così per una ventina d’anni, finché è diventata capa. La sua abilità dà il Nen a un massimo di ventidue seguaci che condividono il suo obiettivo; lei è una Specializzatrice, come Borksen, e un membro che fiuta i tipi di Nen ne cerca altri a bordo.',
+        en: 'With the Aim card, [[borksen|Borksen]] hears Morena’s goal: to destroy the Kakin Empire, then all of humanity. Morena is not the real Morena Prudo, who lies in a grave under her name, but a carnival orphan: her mother was forced to “entertain” royals during a secret feast and died when Morena was two. Raised in an institution of a trafficking ring run by the Heil-Ly, she was sorted as “flesh” and lived that way for about twenty years, until she became boss. Her ability gives Nen to up to twenty-two followers who share her goal; she is a Specialist, as Borksen is, and a member who sniffs out Nen types is looking for others aboard.',
+      },
+    ),
+  ],
+  'risnorth': [
+    told(
+      405,
+      { it: 'Dieci anni dall’omicidio', en: 'Ten years since the murder' },
+      {
+        it: 'Risnorth era il presidente di Mom’s Help, una fondazione benefica per l’infanzia. Su un grande schermo della Black Whale, un programma ricorda i dieci anni dal suo omicidio: nessun sospettato è mai stato arrestato, e il conduttore parla di una crescente protesta pubblica perché l’assassino venga identificato e arrestato. Mentre intorno qualcuno mette in dubbio il servizio, [[chrollo|Quoll]] si allontana dallo schermo, dandogli le spalle.',
+        en: 'Risnorth was the chairman of Mom’s Help, a charity foundation for children. On a large screen aboard the Black Whale, a programme marks ten years since his murder: no suspect has ever been caught, and the presenter speaks of a growing public outcry for the killer to be identified and arrested. As people around question the report, [[chrollo|Chrollo]] walks away from the screen with his back to it.',
+      },
+    ),
+  ],
+  'onior': [
+    told(
+      417,
+      { it: 'Il capo degli Xi-Yu', en: 'The Xi-Yu boss' },
+      {
+        it: 'Onior è il capo degli Xi-Yu, un fratellastro illegittimo del re. Quando [[zhang-lei-hui-guo-rou|Chowrai]] lo aveva visitato, non sapeva nulla del Nen né delle bestie, e aveva promesso di chiedere ai membri più giovani della famiglia. Poco prima della legge marziale speciale Chowrai scende al secondo livello attraverso un ponte che parte dall’interno della sua residenza. Sotto la legge marziale, i soldati prendono in custodia i capi degli Xi-Yu e dei Cha-R e li portano all’Ufficio di Giustizia.',
+        en: 'Onior is the boss of the Xi-Yu, an illegitimate half-brother of the king. When [[zhang-lei-hui-guo-rou|Zhang Lei]] visited him, he knew nothing of Nen or the beasts, and promised to ask the younger members of his family. Just before special martial law, Zhang Lei goes down to Tier 2 over a bridge from inside his residence. Under martial law, soldiers secure the bosses of the Xi-Yu and the Cha-R and take them to the Justice Bureau.',
+      },
+    ),
+  ],
+  'kako': [
+    told(
+      411,
+      { it: 'Al posto della capitana', en: 'Taking over for the captain' },
+      {
+        it: 'Kako è una delle guardie di [[camilla-hui-guo-rou|Camilla]]. Nella stanza di Camilla nell’area VVIP, la capitana delle guardie si trucca e indossa parrucca e divisa da cameriera per seguire inosservata la lezione di Nen di [[kurapika|Kurapika]]. Dice a [[fukataki|Fukataki]] che deve scoprire se c’è un esorcista, e che con un po’ di fortuna potrebbe uccidere [[woble-hui-guo-rou|Woble]] sul posto, o in una settimana se non riesce a vederla. Prima di uscire chiede a Fukataki di far prendere a Kako il suo posto.',
+        en: 'Kako is one of [[camilla-hui-guo-rou|Camilla]]’s guards. In Camilla’s room in the VVIP area, the captain of the guards puts on make-up, a wig and a maid’s outfit to attend [[kurapika|Kurapika]]’s Nen class unnoticed. She tells [[fukataki|Fukataki]] that she must find out whether there is an exorcist, and that with luck she could kill [[woble-hui-guo-rou|Woble]] on the spot, or within a week if she cannot see her. Before leaving, she asks Fukataki to have Kako take over for her.',
+      },
+    ),
+  ],
+  'bill': [
+    told(
+      412,
+      { it: 'Due pronunce', en: 'Two pronunciations' },
+      {
+        it: 'Bill è un Hunter che protegge la stanza 1014 con [[kurapika|Kurapika]]. Era presente quando [[longhi|Longhi]] ha rivelato la maledizione, e ha ipotizzato che [[beyond-netero|Beyond]] ne controlli l’attivazione o la lasci scattare da sola come limite. Quando [[shimanu|Shimanu]] corregge Kurapika sulla pronuncia del suo nome, Bill gli spiega la differenza tra nomi maschili e femminili in lingua di Cakin. Poi gli sussurra ciò che ha notato: da quando sono salpati, proprio quando Kurapika ha usato per la prima volta la catena, [[oito-hui-guo-rou|Oito]] pronuncia il nome di [[woble-hui-guo-rou|Woble]] in entrambi i modi.',
+        en: 'Bill is a Hunter who guards Room 1014 with [[kurapika|Kurapika]]. He was present when [[longhi|Longhi]] revealed the curse, and suggested that [[beyond-netero|Beyond]] either controls its activation or lets it trigger on its own as a limitation. When [[shimanu|Shimanu]] corrects Kurapika’s pronunciation of her name, Bill explains the Kakin language’s masculine and feminine names to him. Then he whispers what he has noticed: since they set sail, right when Kurapika first used his chain, [[oito-hui-guo-rou|Oito]] has been saying [[woble-hui-guo-rou|Woble]]’s name both ways.',
+      },
+    ),
+    told(
+      414,
+      { it: 'Una trappola per Beyond', en: 'A trap for Beyond' },
+      {
+        it: 'Bill concorda che trattare con [[beyond-netero|Beyond]] sia il modo più realistico per capire come funziona la sua maledizione, e propone di intrappolarlo con un contratto grazie all’abilità di [[longhi|Longhi]], in cambio di una grazia dell’Associazione Hunter. Quando [[kurapika|Kurapika]] gli chiede perché, visto che dovrebbe stare dalla parte di Beyond, Bill risponde che dopo aver sentito dei suoi piani non gli è più fedele: ora vuole proteggere la regina e il principe, e pensa di fermare la successione, con tutta l’Associazione unita contro la maledizione.',
+        en: 'Bill agrees that negotiating with [[beyond-netero|Beyond]] is the most realistic way to learn how his curse works, and proposes trapping him in a contract through [[longhi|Longhi]]’s ability, in exchange for a pardon from the Hunter Association. When [[kurapika|Kurapika]] asks why, since he was meant to be on Beyond’s side, Bill answers that after hearing about his plans he is no longer loyal to him: he now wants to protect the queen and the prince, and has been thinking of stopping the contest, with the whole Association united against the curse.',
+      },
+    ),
+  ],
+  'shimanu': [
+    told(
+      414,
+      { it: 'Il primo cambio di pannolino', en: 'The first nappy change' },
+      {
+        it: 'Shimanu è la domestica della regina [[oito-hui-guo-rou|Oito]]. Due giorni prima della legge marziale corregge [[kurapika|Kurapika]], che continua a chiamarla Shimano, un nome maschile. Nella camera della stanza 1014 rivela di aver scoperto che il bambino era un maschio la prima volta che gli ha cambiato il pannolino, quando Oito e Kurapika erano svenuti insieme; confusa, ha deciso comunque di continuare a prendersi cura di madre e figlio, e ora chiede cosa ne sarà del bambino. Kurapika le aveva già chiesto di restare con Oito e il piccolo prima che con le faccende.',
+        en: 'Shimanu is Queen [[oito-hui-guo-rou|Oito]]’s maid. Two days before martial law she corrects [[kurapika|Kurapika]], who keeps calling her Shimano, a masculine name. In the bedroom of Room 1014 she reveals that she found out the baby was a boy the first time she changed his nappy, when Oito and Kurapika had fainted together; flustered, she still chose to keep looking after mother and child, and now asks what will become of the baby. Kurapika had already asked her to stay with Oito and the baby before housekeeping.',
+      },
+    ),
+  ],
+  'rihan': [
+    told(
+      415,
+      { it: 'Ordini nella stanza 1005', en: 'Orders in Room 1005' },
+      {
+        it: 'Rihan è un soldato di [[benjamin-hui-guo-rou|Benjamin]] assegnato a [[tubeppa-hui-guo-rou|Tsubeppa]]; il decimo giorno ha visto la bestia del principe comparire subito dopo l’alleanza con la parte di [[woble-hui-guo-rou|Woble]] e l’ha ritenuta di tipo condizionale. Quando viene dichiarata la legge marziale speciale, ordina al personale della stanza 1005 di restare in attesa, punta la pistola alla testa di uno scienziato che scherza e dice a Tsubeppa di andare nella stanza 1001 solo con guardie dell’esercito reale. Annuncia una tregua temporanea e nota che la bestia non si è mossa, forse perché [[kurapika|Kurapika]] non le è accanto.',
+        en: 'Rihan is one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, posted with [[tubeppa-hui-guo-rou|Tubeppa]]; on the tenth day he saw her beast appear right after her alliance with [[woble-hui-guo-rou|Woble]]’s side and guessed it was a conditional type. When special martial law is declared, he orders the staff of Room 1005 to stand by, presses his gun to the head of a scientist who jokes, and tells Tubeppa to go to Room 1001 with Royal Army guards only. He announces a temporary ceasefire, and notes that her beast has not moved, perhaps because [[kurapika|Kurapika]] is not beside her.',
+      },
+    ),
+  ],
+  'saquelle': [
+    told(
+      415,
+      { it: 'L’aura che cambia', en: 'A change in his aura' },
+      {
+        it: 'Saquelle è un soldato di [[benjamin-hui-guo-rou|Benjamin]] assegnato a [[marayam-hui-guo-rou|Marayam]]: Benjamin non sa dove sia il principe e lascia la questione a lui. Un quarto d’ora prima della legge marziale speciale, nella stanza 1013, Saquelle riceve degli ordini alla radio. [[biscuit-krueger|Biscuit]] nota il cambiamento nella sua aura e intuisce che la legge marziale sta per essere dichiarata.',
+        en: 'Saquelle is one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, posted with [[marayam-hui-guo-rou|Marayam]]: Benjamin does not know where the prince is and leaves the matter to him. Fifteen minutes before special martial law, in Room 1013, Saquelle acknowledges orders over his radio. [[biscuit-krueger|Biscuit]] notices the change in his aura and guesses that martial law is about to be declared.',
+      },
+    ),
+  ],
+  'kanjidol': [
+    told(
+      415,
+      { it: 'Prima della legge marziale', en: 'Before martial law' },
+      {
+        it: 'Kanjidol è un soldato di [[benjamin-hui-guo-rou|Benjamin]] assegnato a [[luzurus-hui-guo-rou|Loozlus]]. Un quarto d’ora prima della legge marziale speciale estrae un coltello e uccide due guardie del principe che dormono negli alloggi della servitù, eccitato all’idea di uccidere senza dover pensare. Quando una guardia Hunter di Loozlus lo trova chino su un corpo, Kanjidol dice di essersi difeso, e i due si lanciano l’uno contro l’altro. Alla dichiarazione della legge marziale Kanjidol è seduto, legato e pieno di lividi, e sorride: i dettagli si possono aggiustare a suo favore.',
+        en: 'Kanjidol is one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, posted with [[luzurus-hui-guo-rou|Luzurus]]. Fifteen minutes before special martial law he pulls out a knife and kills two of the prince’s guards asleep in the servants’ quarters, excited at the thought of killing without having to think. When a Hunter guarding Luzurus finds him over a body, Kanjidol claims self-defence, and the two leap at each other. When martial law is declared, Kanjidol sits bound and bruised, smirking: the details can be twisted in his favour.',
+      },
+    ),
+  ],
+  'coventoba': [
+    told(
+      417,
+      { it: 'Una moneta da 10', en: 'A coin worth 10' },
+      {
+        it: 'Coventoba è un soldato di [[benjamin-hui-guo-rou|Benjamin]] assegnato a [[zhang-lei-hui-guo-rou|Chowrai]]; [[kurapika|Kurapika]] sospettava che avesse nascosto la moneta del primo giorno. Alla dichiarazione della legge marziale speciale va nel panico nella stanza 1003, chiedendosi se sia colpa della moneta del principe. Un soldato riferisce a Benjamin che la bestia di Chowrai lo ha manipolato e che ha chiesto di essere trattenuto, ma Benjamin rifiuta. Con il Gyo, Coventoba vede le condizioni di Benjamin e riprende le armi con lui, gli spiega cosa possono fare le monete arrivate a 10, e gli viene detto di tenere la sua.',
+        en: 'Coventoba is one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, posted with [[zhang-lei-hui-guo-rou|Zhang Lei]]; [[kurapika|Kurapika]] suspected him of hiding the coin of the first day. When special martial law is declared he panics in Room 1003, wondering whether holding the prince’s coin has caused his situation. A soldier reports to Benjamin that Zhang Lei’s beast manipulated him and that he asked to be detained, but Benjamin refuses. With Gyo, Coventoba sees Benjamin’s condition and takes up arms with him, tells him what the coins can do at 10, and is told to keep his.',
       },
     ),
   ],

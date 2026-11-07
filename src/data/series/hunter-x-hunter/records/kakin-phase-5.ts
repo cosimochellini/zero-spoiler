@@ -89,6 +89,13 @@ const FILINGS: Filing[] = [
         },
       ),
     ],
+    // Detained under martial law until the real Woble is found (#1159).
+    later: {
+      status: [
+        { ...at(401), value: 'alive' },
+        { ...at(415), value: 'captured' },
+      ],
+    },
   },
   {
     id: 'makaha',

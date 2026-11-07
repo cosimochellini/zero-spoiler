@@ -109,6 +109,25 @@ const FIRST_STORIES: [id: string, chapter: number][] = [
   ...['anzel', 'himonce', 'hyuga', 'kaiser', 'madwig'].map(
     (id): [string, number] => [id, 400],
   ),
+  // Chapters 401–420 (#1159).
+  ['makaha', 401],
+  ['oito-hui-guo-rou', 401],
+  ['musse', 413],
+  ['hashito', 404],
+  ['sakata', 412],
+  ['balsamilco', 403],
+  ['worio-bay', 403],
+  ...['vict', 'shikaku', 'sumidori'].map((id): [string, number] => [id, 404]),
+  ['cleapatro', 412],
+  ['hinrigh', 406],
+  ['morena', 405],
+  ['risnorth', 405],
+  ['onior', 417],
+  ['kako', 411],
+  ['bill', 412],
+  ['shimanu', 414],
+  ...['rihan', 'saquelle', 'kanjidol'].map((id): [string, number] => [id, 415]),
+  ['coventoba', 417],
 ]
 
 const STORIES = Object.entries(kakinChronicles).flatMap(([id, stories]) =>
@@ -131,7 +150,7 @@ function chronicleTitles(owner: Entity, reader: Reader): string[] {
   ].map((entry) => entry.title)
 }
 
-describe('the Kakin chronicles, chapters 340–400', () => {
+describe('the Kakin chronicles, chapters 340–420', () => {
   it.each(FIRST_STORIES)(
     'opens a chronicle for the new record %s at chapter %i',
     (id, chapter) => {
@@ -146,7 +165,7 @@ describe('the Kakin chronicles, chapters 340–400', () => {
       expect(story.source, id).toBe('chapter')
       expect(story.episode, id).toBe(LAST_EPISODE)
       expect(story.chapter, id).toBeGreaterThanOrEqual(340)
-      expect(story.chapter, id).toBeLessThanOrEqual(400)
+      expect(story.chapter, id).toBeLessThanOrEqual(420)
     }
   })
 
@@ -170,8 +189,8 @@ describe('the Kakin chronicles, chapters 340–400', () => {
   })
 })
 
-// The dated entries the 371–400 stories imply, each with its status before
-// and at its pin (#1157): custody pending trial is `captured`.
+// The dated entries the 371–420 stories imply, each with its status before
+// and at its pin (#1157, #1159): custody pending trial is `captured`.
 const PINS = [
   { id: 'loberry', chapter: 371, before: 'alive', after: 'captured' },
   {
@@ -192,13 +211,19 @@ const PINS = [
     before: 'alive',
     after: 'captured',
   },
+  // Chapters 401–420 (#1159): Lynch's death is told at 405, before her body
+  // is found at 406.
+  { id: 'lynch-fullbokko', chapter: 405, before: 'alive', after: 'deceased' },
+  { id: 'oito-hui-guo-rou', chapter: 415, before: 'alive', after: 'captured' },
+  { id: 'fukataki', chapter: 416, before: 'alive', after: 'deceased' },
+  { id: 'danjin', chapter: 416, before: 'alive', after: 'captured' },
 ] as const
 
 function at(chapter: number): Reader {
   return readerFor(archive, { mode: 'chapter', chapter }, 'en')
 }
 
-describe('the dated entries of chapters 371–400', () => {
+describe('the dated entries of chapters 371–420', () => {
   it.each(PINS)(
     'pins $id’s change to $after at chapter $chapter',
     ({ id, chapter, before, after }) => {
@@ -263,10 +288,12 @@ describe.each(LOCALES)('Kakin chronicles in %s', (locale) => {
     const anime = homePage(read({ mode: 'episode', episode: LAST_EPISODE }))
 
     const later = homePage(read({ mode: 'chapter', chapter: 400 }))
+    const latest = homePage(read({ mode: 'chapter', chapter: 420 }))
 
     expect(manga.saga.id).toBe('kakin-arc')
     expect(manga.stories.some(({ title }) => titles.has(title))).toBe(true)
     expect(later.stories.some(({ title }) => titles.has(title))).toBe(true)
+    expect(latest.stories.some(({ title }) => titles.has(title))).toBe(true)
     expect(anime.stories.some(({ title }) => titles.has(title))).toBe(false)
   })
 })

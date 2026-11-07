@@ -581,27 +581,34 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     ),
-    'fukataki': introduced(
-      389,
-      {
-        role: { it: 'Maggiordoma di Camilla', en: 'Camilla’s majordomo' },
-        log: {
-          it: 'La maggiordoma valuta il tempo necessario per colpire i principi con una maledizione.',
-          en: 'The majordomo assesses how long a curse would take to affect the princes.',
-        },
-        affiliation: { it: 'Personale di Camilla', en: 'Camilla’s staff' },
-      },
-      [
+    'fukataki': {
+      ...introduced(
+        389,
         {
-          character: 'camilla-hui-guo-rou',
-          type: { it: 'Datore di lavoro', en: 'Employer' },
-          summary: {
-            it: 'Dirige il personale di Camilla e valuta come usare le maledizioni per lei.',
-            en: 'She oversees Camilla’s staff and assesses how to use curses for her.',
+          role: { it: 'Maggiordoma di Camilla', en: 'Camilla’s majordomo' },
+          log: {
+            it: 'La maggiordoma valuta il tempo necessario per colpire i principi con una maledizione.',
+            en: 'The majordomo assesses how long a curse would take to affect the princes.',
           },
+          affiliation: { it: 'Personale di Camilla', en: 'Camilla’s staff' },
         },
+        [
+          {
+            character: 'camilla-hui-guo-rou',
+            type: { it: 'Datore di lavoro', en: 'Employer' },
+            summary: {
+              it: 'Dirige il personale di Camilla e valuta come usare le maledizioni per lei.',
+              en: 'She oversees Camilla’s staff and assesses how to use curses for her.',
+            },
+          },
+        ],
+      ),
+      // Benjamin shoots her during Camilla's massage (#1159).
+      status: [
+        { episode: 148, chapter: 389, source: 'chapter', value: 'alive' },
+        { episode: 148, chapter: 416, source: 'chapter', value: 'deceased' },
       ],
-    ),
+    },
     'taler': introduced(
       389,
       {
@@ -666,10 +673,10 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         ],
       ),
-      // Bonolenov kills her at 405, but only the 406 synopsis names the body (#1138).
+      // Bonolenov's 405 flashback names her and tells her killing; her body is found at 406 (#1159).
       status: [
         { episode: 148, chapter: 390, source: 'chapter', value: 'alive' },
-        { episode: 148, chapter: 406, source: 'chapter', value: 'deceased' },
+        { episode: 148, chapter: 405, source: 'chapter', value: 'deceased' },
       ],
     },
     'tevelares': introduced(

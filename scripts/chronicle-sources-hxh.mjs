@@ -387,6 +387,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapter 400: Melody’s request to Kaiser, Longhi’s statement and the contract, and Kurapika agreeing to work with Tubeppa. The contract’s terms are chapter 401 and are left out.',
     },
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapter 404: the hidden first-day coin (Coventoba, filed at 417), the Mafia family of over 200 members, the balance of the three benefactors, special martial law and house arrest, and Room 1014 against Room 1003.',
+    },
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapters 411–412: the four stages of the ritual, the vow and the fall from power if no victor is found during the voyage, and the declaration about Woble (411); the flashback to 48 hours earlier with Bill’s whisper, the chain, the nephew and the daughter with Oito’s sister, the fear, Slakka not returning, and the thought of speaking with Beyond (412).',
+    },
+    '148:414': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_414',
+      note: 'Chapter 414: the meeting in the master bedroom, the activation of Beyond’s curse and the surge of Nen near the baby, asking Beyond, the military assuming Woble aboard, addressing the source of the curse in line with Longhi’s contract, the contact question, the trusted friends pictured as Gon and Killua, and the relative at a Yamato post office.',
+    },
   },
   'katzo': {
     1: {
@@ -514,6 +526,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:357': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
       note: 'Chapter 357: reported among the casualties, Machi with the body, the Nen order to restart heart and lungs, Bungee Gum and Texture Surprise, Machi bound, the threat to the Troupe, Kortopi and Shalnark killed, ten left.',
+    },
+    '148:405': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
+      note: 'Chapter 405 and its notes (“the first appearance of Hisoka in the story since Chapter 357”): the Square-3 hand with five 3s and two aces, the triple sevens left unclaimed, the rumbling turning him off as a group ability backed by a ceremony’s beast, the one-on-one line, and Bonolenov spotting the real one.',
+    },
+    '148:420': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_420',
+      note: 'Chapter 420, with Hisoka’s character page (chap420): the soldiers killed in the casino and on the staircase before firing a shot, the swamp ball pachinko, the ambush on the Zetsu user, the unmasked illusion, the “spider” disappointment, the glance at the real Tserriednich, and walking off.',
     },
   },
   'hanzo': {
@@ -1471,6 +1491,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapter 400: Kacho’s beast and the resolve to make Fugetsu king, Kaiser’s plan and Melody’s suspicion, Fugetsu’s aura and the evil spirits, Zhang Lei’s coin, Vantine’s visit, and the request to tell Kurapika.',
     },
+    '148:402': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
+      note: 'Chapter 402: the photo of the mark, Melody’s Nen-mark guess and the trap door that should appear with Fugetsu’s, the signs of addiction and “will not last until next weekend”, the plan against Luzurus through the door, and the unchanged heartbeat with her decision to keep the relationship.',
+    },
   },
   'basho': {
     '40': {
@@ -1488,6 +1512,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:389': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_389',
       note: 'Chapters 386 and 389: the rumbling and the suicide at the door (386); Kanjidol’s request, Basho’s feigned suspicion of Duazul’s men and his real belief about Benjamin’s men and Nen after death (389).',
+    },
+    '148:402': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
+      note: 'Chapter 402: Basho catching up as Melody’s colleague, the tired look, the haiku charm, the spirits kept away for a while, counting on Melody, and Kaiser’s bow.',
     },
   },
   'baise': {
@@ -1807,6 +1835,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_399',
       note: 'Chapters 398–399: Nobunaga joining Hinrigh and the walls he cannot cut (398); the nine members, Terebellum’s ability, Yokotani’s guards, the confiscated katana and the expulsion, the passage and Hinrigh’s return (399).',
     },
+    '148:405': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
+      note: 'Chapter 405: Nobunaga’s question, Ken’i on Morena, the leader-sets-strategy style shared with the Troupe, the killing of civilians, the theory of destroying Kakin, Phinks’s sacrifices and Feitan’s limitation, and Tajao’s request with both families’ support.',
+    },
   },
   'owl': {
     45: {
@@ -1862,6 +1894,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:398': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_398',
       note: 'Chapter 398: the hostage, the bathroom and the front door, the land-mine type and the continuous activation, Feitan volunteering, Ken’i and Hinrigh, the oyster transmitter and the receiver handed to Phinks. Corrected after independent verification: the land-mine reading is Nobunaga’s; Phinks proposes the test of continuous activation.',
+    },
+    '148:406': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_406',
+      note: 'Chapter 406: the winding corridor and the staircase among the pipes, the cesspools, the processing plant between Tiers 4 and 5, the subcontractor guess, killing as much as they want, Nobunaga turning back, and his warning about the counteractive guard and the Nen dolls.',
     },
   },
   'light-nostrade': {
@@ -2049,6 +2085,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_397',
       note: 'Chapter 397: the cancelled show, the search, the bag in Uga Forest and the note, the three years, the communication revolution and the hideout for criminals, the vow to be a villain, the nomination and the Spider’s birth.',
     },
+    '148:406': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_406',
+      note: 'Chapter 406: the conjured phone (Love Dial 6700) and the first failed call, the Seed Urn, the Lotus Anchorite and the Sword of Good Omens, the treasures as the system behind the contest and Kakin, Tier 1, the national-treasure condition for evolving Skill Hunter against Hisoka, the Spider going on, and the second call.',
+    },
   },
   'bonolenov': {
     '55': {
@@ -2062,6 +2102,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:377': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_377',
       note: 'Chapter 377: the team with Chrollo, the new transformation ability, the request for help and Chrollo’s condition, and Bonolenov’s advice to Shizuku.',
+    },
+    '148:405': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
+      note: 'Chapters 393 and 405, with Lynch’s and Bonolenov’s character pages: Hinrigh’s offer of a VVIP room and the pass in auditorium #8 (393); Chrollo’s instructions in the flashback, Lynch’s punch and the reflex knock-out, Zakuro knocked out and impersonated, the killing, Lynch’s form and the lead to the movie theater, the real Hisoka in the Tier 1 casino, the change into Owl and the narration on Metamorphosen (405).',
     },
   },
   'eliza': {
@@ -2184,6 +2228,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:375': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_375',
       note: 'Chapter 375: waking Hanzo, the all-nighter, the true form, the one-month promise, Vergei as her trainee, the three Nen boundaries, the one-way space and Marayam’s beast.',
+    },
+    '148:415': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
+      note: 'Chapter 415: the change in Saquelle’s aura, the two options and the treason charge, the Nen space, Sevanti’s powerless guards (Sevanti has no record), the one-time ability and the risks to Marayam’s beast, and the decision to hole up and call Vergei.',
     },
   },
   'binolt': {
@@ -3369,6 +3417,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_383',
       note: 'Chapters 381 and 383: the interrogation, the escort and the call to Melody (381); the Hunter code revealed and the hidden message, “Assist Princes escape fully” in the Viz translation (383).',
     },
+    '148:410': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_410',
+      note: 'Chapter 410: the three waiting with hands up, the command centre, Mizaistom’s two requests, the bioweapon basis and the letter being written, the hostages and the half-truths, and Botobai’s question about Benjamin looking pale.',
+    },
   },
   'kanzai': {
     137: {
@@ -3415,6 +3467,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_346',
       note: 'Chapter 346: Cheadle and Leorio greet Kurapika and Mizaistom; V5 now V6 with Kakin; the Five Threats ranked above the Chimera Ants; the objective; each member’s role.',
     },
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapter 404: the five assistants including Leorio, the possible head injury, the CHEM-7 panel and the CT scan, the question to his guards, the vomitus to Gel in forensics, and the royal and military teams forcing them out.',
+    },
   },
   'botobai-gigante': {
     137: {
@@ -3453,6 +3509,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_345',
       note: 'Chapter 345: the IPA Director’s order, the life-imprisonment clause, the signature, the pen through the pad and the three things left. The agency is described, not named, in the story.',
     },
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapters 401 and 412: the book, the pen and paper refused, the threat with the book and the request for a meeting (401, day ten); Cleapatro’s visit, the 1,047 dismissed cases, the check of the documents and the argument (412, day twelve).',
+    },
   },
   'zigg-zoldyck': {
     '148:344': {
@@ -3488,6 +3548,22 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:387': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_387',
       note: 'Chapters 384–387: the Specialist alter-ego beast (384); the shot during Melody’s music, the vanished body, the beast’s warning and the invitation to Melody (385); the ten-second vision, the dodge and his resolve (387).',
+    },
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapters 402 and 404: 9.67 seconds on the treadmill, a day’s learning against six months, Salkov’s guess about an ability during Zetsu, Vantine’s report and the order to win Melody over (402); under 3.5 seconds in three days, the vow for the last second and the ball of aura (404). Salkov and Vantine have no record and are described.',
+    },
+    '148:418': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_418',
+      note: 'Chapters 416–418: Benjamin’s shot (416) and the stomping with Salkov’s doubts (417) are a cliffhanger and a doubt; 418 settles them: the rules of the ability, the instructions not to resist and “he is going to die”, watching Benjamin from the side and the annoyance, the corpse seen by everyone, the last will, the guns in the coffin, and just under four hours left.',
+    },
+    '148:419': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_419',
+      note: 'Chapter 419: walking out unseen, the 36-metre radius, the ability breaking in the shared VVIP corridor, the shots and the hostage, Laplace’s Devil again, the three soldiers collapsing who are later found alive, the test on soldiers entering afterwards, the vanishing “corpse”, the route through the entertainment area, and the casino.',
+    },
+    '148:420': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_420',
+      note: 'Chapter 420, with Hisoka’s character page (chap420): the soldiers with slit throats, the pachinko player identified as Hisoka, the vanishing and the man behind him, the vision with the shot, the slit throat and the “spider” disappointment, the glance at the beast and at the real Tserriednich, the vow, and the main deck with the bridges gone.',
     },
   },
   'mark': {
@@ -3529,11 +3605,31 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_389',
       note: 'Chapters 386 and 389: Shikaku’s suicide at Room 1007 (386); the fourth rumbling, Vict’s broken radio message, the stars on his hand, Balsamilco’s plan, the task force and the trial (389).',
     },
+    '148:403': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
+      note: 'Chapter 403: the postponed trial and both requests, the attack on Balsamilco and the suspicion of manipulation, “make the call himself”, red alert and martial law if Balsamilco leaves without notice, the completed-mission report, and the letter dismissed as rumours.',
+    },
+    '148:410': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_410',
+      note: 'Chapter 410: the report on Room 3101 and the hidden room, the orders on Zhang Lei and Luzurus, the coma in 10 hours and death 2 hours after with about 9.5 hours left, the succession by inheritance, and the consolidation of the three branches with the bioterrorism charge against Tserriednich and Halkenburg.',
+    },
+    '148:413': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
+      note: 'Chapter 413: the rumbling and the soul still around, the order to detain Balsamilco and the followers, the nausea and TSK-17 symptoms, the safe with only Balsamilco’s vial gone, Unma and Furykov, the confrontation and forgiveness, 2:15 p.m., guards executed on sight, Hunters left alone, Room 1001, and the vial in the shoe.',
+    },
+    '148:417': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
+      note: 'Chapter 417: the stomping and the pardons, the second dose in his boot, the covert release in Room 1001, Balsamilco and Coventoba joining, Gypsy Life: Bohemian Rhapsody fusing with Benjamin Baton and passing to a blood relative, and his anger at Unma and the decision to confront her.',
+    },
   },
   'unma-hui-guo-rou': {
     '148:349': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
       note: 'Chapter 349 synopsis and notes: eight legal wives, fourteen princes, the boarding and ceremony conditions and the participants kept confidential until then; the roster gives Unma as mother of the First and Fourth Princes.',
+    },
+    '148:403': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
+      note: 'Chapter 403: Unma’s call, her support, the missed banquet and “proud of him”, the letter’s claim that she is Halkenburg’s real mother, the theory on international websites about Duazul and the order of succession, and Benjamin’s dismissal.',
     },
   },
   'tang-zhao-li-hui-guo-rou': {
@@ -3566,6 +3662,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:360': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_360',
       note: 'Chapters 358–360: the aura from the cradle (358), Woody and four more guards drained (359), and Kurapika’s two hypotheses after learning of the ceremony a little over a month earlier (360).',
+    },
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapter 412: the two pronunciations noticed by Bill, the questioning with the chain, the younger sister’s son, Woble with the sister at an unknown place, the Seed Urn and departure ceremonies split between the two, neither eligible, and the fear of being killed. Woble’s `missing` status at 412 is already filed.',
     },
   },
   'izunavi': {
@@ -3601,6 +3701,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapter 400: Kacho’s beast in her form, the guardian spirit and Fugetsu’s aura, no regrets, making Fugetsu king, keeping the death secret, Fugetsu’s breakthrough and collapse, and the request to Melody.',
     },
+    '148:403': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
+      note: 'Chapters 402–403: the suspicion of Luzurus and his drugs, the plan through the door and the need to visit the bedroom first, the letters written with Kaiser’s leaked information (402); the delivery and “Kacho” declaring that they act the night of the next day (403).',
+    },
   },
   'fugetsu-hui-guo-rou': {
     '148:359': {
@@ -3622,6 +3726,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:400': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapter 400: the breakthrough, the return door when alone, the tears and her collapse, and Melody’s observation in the hallway.',
+    },
+    '148:402': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
+      note: 'Chapter 402: the low-level evil spirits, the tour of Tier 1 with Kaiser, the letters presented as Kacho’s last message, Benjamin’s beast dispelling the spirits and his ten-day estimate, Luzurus’s apology, and Basho’s haiku charm.',
     },
   },
   'halkenburg-hui-guo-rou': {
@@ -3645,6 +3753,18 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_389',
       note: 'Chapter 389: the fourth rumbling, Vict’s message about the bow, the cost of each attack, the charge of premeditated murder, Steiner and Peuckert’s task force, and no contact until the trial.',
     },
+    '148:403': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
+      note: 'Chapter 403: the twelve civilian followers, the man at the laptop signalling the distance, the arrow through the wall, the collapse and postponement, the sick bay, and the possession of Balsamilco’s body reporting to Benjamin.',
+    },
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapter 404: the stretcher and Cheadle, the twelve-hour report, the forced mind swap with a random member, the sleeping pill and the ten hours, the failed resuscitation and the announcement, the procession, and the charges dropped so that his guards can join.',
+    },
+    '148:413': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
+      note: 'Chapter 413: the priests and the burial chamber between Salé-salé and Kacho, the flame of life not ignited unlike the Eighth, Tenth and Twelfth Princes, Nasubi’s words on the soul in a body (the king has no record), and Halkenburg bound in Room 1009 with his followers and the arrow at Benjamin.',
+    },
   },
   'momoze-hui-guo-rou': {
     '148:361': {
@@ -3665,6 +3785,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_388',
       note: 'Chapter 388: the report, the alliance and more guards, Salé-salé’s absence, Benjamin’s swapped soldiers, the investigation, Heisen’s flash drive, and the need for a partner like Kurapika.',
     },
+    '148:402': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
+      note: 'Chapter 402: Maor and Longhi’s report and the condition about Woble and Oito, living together, the hope that Benjamin turns to Zhang Lei, the order for the next class, and the beast appearing to Benjamin’s soldier (Rihan, filed at 413), who deduces a conditional type.',
+    },
+    '148:417': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
+      note: 'Chapters 415 and 417: leaving for Room 1001 with Royal Army guards only and the tests for Heisen and Komiya (415); the stolen-weapon explanation, Kurapika’s hypothesis, the covert TSK-17 release, the confinement and inspections, and her distrust until Benjamin and Camilla are gone (417).',
+    },
   },
   'camilla-hui-guo-rou': {
     '148:363': {
@@ -3683,6 +3811,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_376',
       note: 'Chapter 376: the court, Nukuocon’s self-defence claim, Balsamilco’s account, the demands to search Rooms 1001 and 1002, the postponement, the surveillance and Secret Window.',
     },
+    '148:416': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_416',
+      note: 'Chapter 416: the massage by Fukataki and another servant, Camilla’s shots off Benjamin’s Ken, the two servants killed, the counteractive ability he knows of, Moswana (no record) pulling the knife from her throat and dying, Dust in the Wind: Hell Fruit darkening Benjamin, the ten-year plan, the slowed metabolism, the hypothetical disease and the silent TSK-17 infection.',
+    },
   },
   'zhang-lei-hui-guo-rou': {
     '148:363': {
@@ -3700,6 +3832,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:390': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_390',
       note: 'Chapters 378, 389 and 390: Onior as the king’s half-brother (378); the coin for Tenftory and Coventoba’s “10” (389); the distribution dream, the visit, the three deaths and the promise about Nen (390).',
+    },
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapters 403–404: the coin from 1 to 10 and the guards’ mediocre ideas, the call to Room 1014 (403); the different back of Tenftory’s coin, the 10 coin changing in Kurapika’s hand, the cumulative ability and the six months, the day’s coin, and the unspoken Manipulation guess (404).',
+    },
+    '148:410': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_410',
+      note: 'Chapter 410: the cross-bridge from Onior’s residence to Tier 2 right before the declaration, Zhang Lei and Luzurus unaccounted for, Benjamin’s two guesses, and Squad 2’s reconnaissance team.',
     },
   },
   'vincent': {
@@ -3725,11 +3865,23 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapter 400: the five employees and their roles, rebirth, her mother’s disappointment and revenge, love as her only weapon, and the promise to negotiate with her mother.',
     },
+    '148:417': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
+      note: 'Chapters 415 and 417: skipping along the hallways with her guards (415); Benjamin’s thanks, the stolen weapon for the New Continent’s creatures, the covert release, the confinement, and his estimate that Tubeppa and Tyson die around the same time as Camilla (417).',
+    },
   },
   'luzurus-hui-guo-rou': {
     '148:366': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
       note: 'Chapters 348, 350, 362 and 366: all his guards failed the exam (348), Basho hired (350), aware of Nen (362), the healthy drug and the therapy idea (366).',
+    },
+    '148:402': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
+      note: 'Chapter 402: the exchange for vouching that the quarters are clean, “mind-blowing”, the line about Tserriednich, his conclusion that the letters differ and the risk of being pitted against his fellow “snake”, and leaving the letter to Kaiser.',
+    },
+    '148:417': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
+      note: 'Chapters 414, 415 and 417: Rice’s report on Room 1009, the prediction, no resistance and weapons in one place, the drugs burned, Ridge sent to stall Benjamin’s soldier (414); Luzurus missing and Kanjidol named (415); the Hunter Association member who assaulted Kanjidol and aided the escape (417).',
     },
   },
   'sale-sale-hui-guo-rou': {
@@ -3765,6 +3917,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_367',
       note: 'Chapters 366–367: the collusion with Unma’s soldiers, the arrival with Zhang Lei’s two guards and the pact with Benjamin’s soldier (366), and his question about coaching everyone (367).',
     },
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapters 411–412: Slakka’s introduction and request, the grin at Sakata (411); the accusation of lying and drowning them in information, and being the only one not to return (412).',
+    },
   },
   'barrigen': {
     '148:370': {
@@ -3791,6 +3947,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_376',
       note: 'Chapter 376: the report, Danjin’s trust in Kurapika and the two weeks, the Association’s role, the manipulation hypothesis and the “present”.',
     },
+    '148:416': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_416',
+      note: 'Chapter 416: the door kicked in, the kneeling men, Danjin’s aura, the question about Room 1014, Butch (no record) taking him for questioning at the central Ministry of Justice, and the thought of recruiting Kurapika. Chapter 417 confirms he is to be detained there. His `captured` status is pinned at 416.',
+    },
   },
   'furykov': {
     '148:370': {
@@ -3800,6 +3960,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:373': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_373',
       note: 'Chapter 373: the confrontation outside Benjamin’s quarters, the shots and Furykov’s Nen, the arrest, the threat and his answer, the confinement and permission to leave. Corrected after independent verification: she claims to be looking for her assailant.',
+    },
+    '148:413': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
+      note: 'Chapter 413: the admission, Beyond as his father, the eye-mark under the tongue and the curse at his death, Unma’s 48-hour threat, the fear for the beast’s ability, the curse reflected back if Benjamin dies, “could not have asked for a better fate”, the fool for not trusting him, and the kneeling.',
+    },
+    '148:415': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
+      note: 'Chapter 415: the flashback two months before departure, Combo Master’s laptop and the warning, the Seed Urn Ceremony as trigger, the hidden fellow cursee and Beyond, the call, the curse attached after birth with Post-Mortem Nen, the two birds with one stone, 365 and about 700 days, and the advice as father and son.',
     },
   },
   'illardia': {
@@ -3846,6 +4014,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:400': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapters 388 and 400 (with Longhi’s character page): the report to Tubeppa (388); “she can already use Nen”, the contract, and Kurapika’s agreement (400). The terms are chapter 401 and are left out.',
+    },
+    '148:401': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_401',
+      note: 'Chapter 401: the aura pen and paper, the loan and restriction and the voluntary signature, the snakes not hers, Beyond’s daughter raised by officers, the seal under the tongue and the “strong curse sacrifice”, her belief that a prince is Beyond’s child, the truce with Woble and Oito, the reward, her plan to kill the child, and the motionless chain.',
     },
   },
   'maor': {
@@ -3913,6 +4085,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_389',
       note: 'Chapters 388–389: Tenftory going last (388); his report, the coin and Coventoba’s “10” (389).',
     },
+    '148:402': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
+      note: 'Chapter 402: the conditional renunciation in Zhang Lei’s favour, put in writing, the request for Sakata and Hashito, the second coin and the advice to carry the coins.',
+    },
   },
   'vergei': {
     '148:374': {
@@ -3939,6 +4115,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_393',
       note: 'Chapters 392–393: Hisoka as the first priority, to crush the Heil-Ly and the Troupe and keep the balance (392); the corporal, the matched fifty million, the Fourth Prince’s approval, the five-million rewards, the smile and the rumour (393).',
     },
+    '148:405': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
+      note: 'Chapter 405: Ken’i’s question about the previous boss, “not so close to her”, his silence after Tajao’s offer, sending a grunt for the others, and his inner words to Morena about the problem, the schedule and the “joker”.',
+    },
   },
   'keeney': {
     '148:383': {
@@ -3951,6 +4131,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_384',
       note: 'Chapter 384: Tajao’s titles, the missing workers, Phinks’s offer for Tier 4, the 24-hour rule and the turf condition, the risk of war and Nobunaga’s offer to kill the Heil-Ly boss.',
     },
+    '148:406': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_406',
+      note: 'Chapters 405–406: “crazy”, the Mafia’s balance and civilians as customers, the door upstairs and the support of both families (405); the sword and the young soldiers, the pipes, the processing area, the Heil-Ly as subcontractors and the model citizen (406).',
+    },
   },
   'famule': {
     '148:389': {
@@ -3962,6 +4146,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:389': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_389',
       note: 'Chapter 389: Camilla’s army of the lowest caste as curse assassins, Fukataki summoned and her timeline, the six months for the twins in custody, the beasts’ protection and suicide in front of a prince.',
+    },
+    '148:416': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_416',
+      note: 'Chapters 411 and 416, with Fukataki’s character page (status Deceased): her question to Sarahell after Halkenburg’s death (411); the massage, Benjamin’s order, Camilla’s shots off his Ken, and one shot into each servant, killing them instantly (416). Her `deceased` status is pinned at 416.',
     },
   },
   'taler': {
@@ -3979,6 +4167,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_393',
       note: 'Chapters 392–393: the blood drops finding a tall man, Lynch’s failed punch, Zakuro sure from his aura that it is Hisoka and telling him about the Mafia (392); waking by the rubbish, the cinema invitation, the report to the underboss and the plan to look for the Troupe’s leader (393). Corrected after independent verification: chapter 405 reveals the man was Bonolenov in disguise, so the story is told from Zakuro’s side and never asserts who he was.',
     },
+    '148:406': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_406',
+      note: 'Chapter 406: the body, Zakuro’s first argument, the unnaturally calm Lynch, the height objection and the manipulation idea, “That was definitely Hisoka”, Hinrigh’s conclusion, the aura, the Cha-R and the vow.',
+    },
   },
   'lynch-fullbokko': {
     '148:390': {
@@ -3988,6 +4180,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:393': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_393',
       note: 'Chapters 392–393: the tall man who is not Hisoka, the encounter and Lynch’s collapse (392); waking, Hisoka gone, Zakuro knocked out as well, and the report to Hinrigh (393). Corrected after independent verification: the man is not asserted to be Hisoka (chapter 405 reveals Bonolenov in disguise); Lynch is sure it was him.',
+    },
+    '148:405': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
+      note: 'Chapter 405, with Lynch’s character page (“taking Lynch’s form after killing her”, cited to 405): the punch and the inner voice, the reflex knock-out, the Zakuro disguise, her anger and the hit list, the killing and her form used on Zakuro. Her status moves from 406 to 405, where the reader learns of her death; her body is found in 406.',
     },
   },
   'tevelares': {
@@ -4095,6 +4291,14 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_394',
       note: 'Chapter 394: Otocin’s source, Borksen’s rank and post, the transfer as adviser, the secret about Theta, the demotion warning, the bodyguards’ reactions and the proposal to contact the Xi-Yu or Cha-R. Corrected after independent verification: she is in the royal army, on the royal living quarters’ security detail, not Tserriednich’s quarters (Borksen’s character page).',
     },
+    '148:407': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_407',
+      note: 'Chapter 407: waking unrestrained with six enemies and her weapon confiscated, no memory and the Nen guess, “Morena Prudo”, the ally request, the game and the yes-or-no penalty, the five child cards and the R, Joker and X rules, the seven parent cards, the traps, and her one condition.',
+    },
+    '148:410': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_410',
+      note: 'Chapters 408–410: the declaration of special martial law (408); the Deal card and the kiss, the three conditions, the X revealed again, Question A on the hideout between Tiers 2 and 3, five doors and 21 members, the R kept and the Yes picked (409); the marked R card, the manipulation triggered by cheating, joining at level 0, the release, and the tour before going back (410). The capture (407) and release (410) are already filed.',
+    },
   },
   'otocin': {
     '148:394': {
@@ -4112,6 +4316,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:394': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_394',
       note: 'Chapter 394 (with Momolly’s character page on the academy): the new-toy remark, waiting for Borksen, the contingency plan and her closing thought.',
+    },
+    '148:407': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_407',
+      note: 'Chapter 407: the five soldiers at 1:00 p.m., the last contact thirty minutes earlier, Momolly’s worst case and the drug-and-crowd method, Otocin’s hypnosis-like Nen and the Heil-Ly using her against Tserriednich, Borksen’s dilemma, and the decision to think it over alone.',
     },
   },
   'lisores': {
@@ -4180,6 +4388,158 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:400': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapters 372, 381, 386 and 400, with Kaiser’s character page (appearance 372, name 400): the 72-hour watch on Seiko (372), the questioning after the escape (386); the five requests and the leverage, the poison plan, the confession, the heartbeat and Melody’s suspicion and agreement (400).',
+    },
+    '148:402': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
+      note: 'Chapter 402: Kaiser volunteering, Fugetsu as the ruler who changes the system and his “gentle, ideal world”, the escort, the Musse question, the leading question on martial law and his conclusion, and reading Luzurus’s letter as rumours.',
+    },
+  },
+  'makaha': {
+    '148:401': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_401',
+      note: 'Chapter 401: Longhi’s account of Makaha, her lost post under Camilla after the Have-Nots were promoted, her parents’ indifference and the flashback, finding Longhi under Duazul, the shared seal after the Seed Urn Ceremony and the examination by a renowned Nen user. Beyond’s fake marriages with officers are the same chapter.',
+    },
+  },
+  'oito-hui-guo-rou': {
+    '148:401': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_401',
+      note: 'Chapter 401: Oito in the master bedroom during Longhi’s account, named in the contract’s terms, and her nervous answer that only the “children of legal wives” compete, unable to believe the loophole.',
+    },
+    '148:415': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
+      note: 'Chapters 414–415: the relative on her mother’s side at a Yamato post office and the coded letter without a return address (414); the general store dealer, the coded postcard and Kurapika’s advice, Babimyna (no record) handing the postcards over without inspection, and twenty minutes into martial law the clemency for the stand-in, her detention, the deferred indictment and the order not to leave the master bedroom (415). Her `captured` status is pinned at 415.',
+    },
+  },
+  'hashito': {
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapters 402 and 404: the request for Sakata and Hashito to stay (402); Kurapika’s briefing, Camilla’s guard joining, Sakata’s guess and Hashito’s list of reasons (404).',
+    },
+  },
+  'sakata': {
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapters 411–412: Sakata with Kurapika and Hashito, Slakka’s request, the contained anger and the grin, cutting Kurapika off (411); Sakata and Babimyna (no record) invited in during the 48-hours-earlier questioning (412).',
+    },
+  },
+  'musse': {
+    '148:413': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
+      note: 'Chapters 402 and 413, with Musse’s record: the question to Kaiser and the failed search on Tier 1 (402); Secret Window used on Camilla’s massage, levelled up to show what Musse saw before his death, and Camilla as a counteractive type (413).',
+    },
+  },
+  'balsamilco': {
+    '148:403': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
+      note: 'Chapters 402–403: the cartridge and the vial in the shoe, the failed weapon that kills in half a day and erases its trace (402); the plan to infect Halkenburg in cross-examination, the soldier’s military sign language, the arrow through the wall, the “missed” report and the possession revealed at the chapter’s end (403). The signing soldier is Vict, filed at 404.',
+    },
+    '148:417': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
+      note: 'Chapter 417: found unconscious in Room 1009, secured, conscious and verified, Benjamin’s conclusion, the request to be detained, Gyo and Benjamin’s three afflictions, the first unit of the Kakin Royal Army, and the search for “feathers” on the backs of hands.',
+    },
+  },
+  'worio-bay': {
+    '148:403': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
+      note: 'Chapter 403: the staff member who fainted at a different time and place, Room E-6, Kaiser’s explanation and support conditional on Fugetsu’s safety, the pinion mark, Halkenburg’s instruction and expectation, and “Halkenburg is going to die soon”.',
+    },
+  },
+  'vict': {
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapters 403–404: Vict behind Balsamilco and the military sign language (403); Halkenburg’s low but expected probability of swapping with Balsamilco and the experiment on Vict in advance (404).',
+    },
+  },
+  'shikaku': {
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapters 382, 386 and 404, with Shikaku’s character page: the order to kill Halkenburg and the arrow (382), Sumidori in Shikaku’s body and the shot outside Room 1007 (386), and Halkenburg’s explanation of the experiment, the service number and the priority (404).',
+    },
+  },
+  'sumidori': {
+    '148:404': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
+      note: 'Chapters 382, 386 and 404, with Sumidori’s character page: the collapse as Shikaku is hit (382), his body sleeping while his mind is in Shikaku’s (386), and the 404 explanation of the experiment and the priority. No death is filed: the window does not show one.',
+    },
+  },
+  'cleapatro': {
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapters 404 and 412: Benjamin’s instruction to let Cleapatro know that all charges are dropped (404); the visit with officials and boxes, the Zodiacs refusing to leave, the 1,047 dismissed cases, human rights and her complaint about her time (412).',
+    },
+  },
+  'hinrigh': {
+    '148:406': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_406',
+      note: 'Chapters 404 and 406: Nobunaga on the transmitter Hinrigh hid (404); the transmitter reverting from a raw oyster, the crowd, Lynch’s body and the professional’s work, the cash, the deduction about the fake Lynch and the spared Zakuro, and the vow (406).',
+    },
+  },
+  'morena': {
+    '148:405': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
+      note: 'Chapter 405: Ken’i’s description, the Tier 2 hideout, the funeral as an opportunity, Dogman (no record) at level 62 sniffing Nen types, Sodom’s kidnapping ability for non-Nen users, the green light and “the beginning of the end”, and the three levelling up among the bodies before the Mafia hunt.',
+    },
+    '148:408': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_408',
+      note: 'Chapter 408: the Aim card and the goal, the real Morena Prudo in a grave, Carne Levare and the carnival orphans, the mother’s death at two, the Heil-Ly trafficking institution, “flesh” for about 20 years, the ability for up to 22 “children” with the same goal, both Specialists, and the Enhancer still searching.',
+    },
+  },
+  'risnorth': {
+    '148:405': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
+      note: 'Chapter 405: the programme on the tenth anniversary of the murder of the chairman of Mom’s Help, no suspects apprehended, the public outcry, people questioning the report, and Chrollo walking away with his back to the screen. The story draws no link between the two.',
+    },
+  },
+  'onior': {
+    '148:417': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
+      note: 'Chapters 390, 410 and 417: the Xi-Yu boss as the king’s illegitimate half-brother, his ignorance of Nen and the promise (390, told in Zhang Lei’s story); the cross-bridge from Onior’s residence (410); the bosses secured and escorted to the Ministry of Justice (417). His `captured` status at 417 is already filed.',
+    },
+  },
+  'kako': {
+    '148:411': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_411',
+      note: 'Chapter 411: Sarahell (no record, described) disguising herself as a maid in Room 302, the exorcist, the week or the spot for Woble, and the request to have Kako take over. Kako is only mentioned.',
+    },
+  },
+  'bill': {
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapters 401 and 412: Bill in the room and his two hypotheses on the activation (401); the Shimanu correction, the masculine and feminine names, the whisper, and Oito’s two tones since setting sail (412).',
+    },
+    '148:414': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_414',
+      note: 'Chapter 414: negotiation as the realistic option, the pardon, the trap through Moonlight Act, Kurapika’s question, Bill no longer loyal to Beyond, protecting the Queen and Prince, stopping the contest and uniting the Association.',
+    },
+  },
+  'shimanu': {
+    '148:414': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_414',
+      note: 'Chapters 404, 412 and 414: Kurapika’s instruction to prioritise Oito and the baby over housekeeping (404); the Shimano correction 48 hours before martial law (412); the diaper discovery when Oito and Kurapika fainted together, her duty, and her question on the baby’s treatment (414).',
+    },
+  },
+  'rihan': {
+    '148:415': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
+      note: 'Chapters 402 and 415: the beast appearing after the treaty and the conditional-type deduction (402, day ten); the orders in Room 1005, the gun at Heisen’s head (no record), Room 1001 with Royal Army guards only, the ceasefire, and the hypothesis about Kurapika (415).',
+    },
+  },
+  'saquelle': {
+    '148:415': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
+      note: 'Chapters 413 and 415: Marayam’s unknown location left to Saquelle (413); the orders over the radio set fifteen minutes before, and Biscuit noticing the change in his aura (415).',
+    },
+  },
+  'kanjidol': {
+    '148:415': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
+      note: 'Chapters 413–415: the knife fifteen minutes before (413); the two sleeping guards, the excitement, Ridge (no record) finding him and the self-defence claim, the leap (414); Ridge’s report that Kanjidol had killed the guards, and Kanjidol bound and bruised and smirking (415). His `captured` status at 415 is already filed. Ridge is a Hunter Association member per chapters 414 and 417.',
+    },
+  },
+  'coventoba': {
+    '148:417': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
+      note: 'Chapters 404, 415 and 417: Kurapika on the person hiding the first coin (404); the panic in Room 1003 over the coin (415); the report on the manipulation and the request to be detained, the refusal, Gyo, taking up arms, the coins’ capabilities at “10”, and the order to keep holding his (417).',
     },
   },
 }
