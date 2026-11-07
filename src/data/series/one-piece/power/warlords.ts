@@ -16,8 +16,8 @@ function seat(holders: Seat['holders']): Seat {
 
 /**
  * The Seven Warlords (#1088), in the order the story names them. Jinbe,
- * Crocodile, Moria and Hancock are named Warlords before their records
- * open; their seats wait, fogged, for the records. The story never says
+ * Crocodile and Moria are named Warlords before their records open; their
+ * seats wait, fogged, for the records. The story never says
  * whose seat Law, Buggy or Weevil takes: they follow the wiki's lineup.
  * The system is abolished at ch. 956, and the seats stay as they stood.
  */
@@ -71,8 +71,8 @@ export const WARLORDS: PowerBody<OnePieceVocabulary> = {
       // from here, fogged until his record opens.
       { episode: 629, chapter: 700, value: 'edward-weevil' },
     ]),
-    // Ch. 516 p.12–13: Hancock is met as a Warlord.
-    seat([{ episode: 409, chapter: 516, value: 'boa-hancock' }]),
+    // Ch. 516 p.12–13 / ep 410: Hancock is met as a Warlord.
+    seat([{ episode: 410, chapter: 516, value: 'boa-hancock' }]),
   ],
   // Ch. 956 p.16–17: the Levely abolishes the Warlord system.
   ended: { revealedAtEpisode: 957, revealedAtChapter: 956 },
