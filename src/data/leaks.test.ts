@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 
 import {
   type FillerEntry,
+  type PowerBody,
   type ReaderArchive,
   withFeatures,
 } from '~/data/features'
@@ -332,6 +333,22 @@ function copyTexts(slug: string): Text[] {
   }))
 }
 
+/**
+ * A body's seat titles, each at the later of the body's gate and the seat's
+ * `told`: the power page prints a title from there, whoever holds the seat
+ * (#1087).
+ */
+function seatTexts(body: PowerBody): Text[] {
+  return body.seats.map(({ told: seat, title }, place) => ({
+    chapter: Math.max(body.revealedAtChapter, seat.revealedAtChapter),
+    episode: Math.max(body.revealedAtEpisode, seat.revealedAtEpisode),
+    label: `${body.id}.seat@${String(place)}`,
+    owner: { id: `power:${body.id}` },
+    source: seat.source ?? body.source,
+    text: title,
+  }))
+}
+
 /** Every text an archive prints. */
 function textsOf(archive: ReaderArchive, placeWords: PlaceWords): Text[] {
   const { entities } = archive
@@ -352,6 +369,7 @@ function textsOf(archive: ReaderArchive, placeWords: PlaceWords): Text[] {
     ...archive.places.flatMap((place) => wordTexts(archive, placeWords, place)),
     ...headerTexts(placeWords),
     ...archive.filler.flatMap((entry) => fillerTexts(entry)),
+    ...archive.bodies.flatMap((body) => seatTexts(body)),
     ...copyTexts(archive.series.slug),
   ]
 }

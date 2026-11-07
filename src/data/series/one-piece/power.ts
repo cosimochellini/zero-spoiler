@@ -1,10 +1,10 @@
 import type { PowerBody } from '~/data/features'
 
+import { EMPERORS } from './power/emperors'
 import type { OnePieceVocabulary } from './records/saga'
 
 /**
- * The bodies of power the power page lists, in its order (epic #1084). Each
- * is filed by its own issue (#1087 to #1094); until then the page shows
- * its empty state.
+ * The bodies of power the power page lists, in its order (epic #1084), one
+ * module each under `power/`.
  */
-export const BODIES: PowerBody<OnePieceVocabulary>[] = []
+export const BODIES: PowerBody<OnePieceVocabulary>[] = [EMPERORS]

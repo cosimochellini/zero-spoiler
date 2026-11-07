@@ -34,6 +34,7 @@ import {
   slugsFrom,
   sourceCanaries,
 } from './archive-gate.mjs'
+import { powerCanaries } from './archive-gate.power.mjs'
 import { importArchive } from './archive-loader.mjs'
 import { judgeServer } from './archive-server-gate.mjs'
 
@@ -209,6 +210,7 @@ describe('the prose the gate looks for', { timeout: 30_000 }, () => {
     expect(canaries.filter(({ phrase }) => phrase === null)).toStrictEqual([])
     expect(files).toContain('src/data/series/one-piece/records/egghead.ts')
     expect(files).toContain('src/data/series/one-piece/fruit-forms.ts')
+    expect(files).toContain('src/data/series/one-piece/power/emperors.ts')
   })
 
   it('is unusable, not a leak, when the series list does not load', async () => {
@@ -300,6 +302,44 @@ describe('the prose the gate looks for', { timeout: 30_000 }, () => {
       const source = readFileSync(path.join(repositoryRoot, extra), 'utf8')
 
       expect(canaryFrom(source), extra).not.toBeNull()
+    }
+  })
+})
+
+describe('the bodies of power the gate looks for', () => {
+  it('reads the longest holder id of every body One Piece files', () => {
+    const canaries = powerCanaries(repositoryRoot, 'one-piece')
+
+    expect(canaries.filter(({ phrase }) => phrase === null)).toStrictEqual([])
+    expect(canaries).toContainEqual({
+      file: 'src/data/series/one-piece/power/emperors.ts',
+      phrase: 'marshall-d-teach',
+    })
+  })
+
+  it('refuses a body seating no id it can trust, and skips a series with none', () => {
+    // Seat titles are a word or two: a body whose holders are all short ids
+    // or words has nothing the gate could tell from the client's own code.
+    const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
+    const dir = path.join(root, 'src/data/series/short/power')
+    mkdirSync(dir, { recursive: true })
+    writeFileSync(
+      path.join(dir, 'crew.ts'),
+      "export const CREW = [{ value: 'kaido' }, { value: 'charlotteling' }]\n",
+    )
+
+    try {
+      expect(powerCanaries(root, 'short')).toStrictEqual([
+        { file: 'src/data/series/short/power/crew.ts', phrase: null },
+      ])
+      expect(powerCanaries(root, 'no-such-series')).toStrictEqual([])
+
+      // A `power` that is not a folder is a fault, not a series with none.
+      mkdirSync(path.join(root, 'src/data/series/odd'))
+      writeFileSync(path.join(root, 'src/data/series/odd/power'), '')
+      expect(() => powerCanaries(root, 'odd')).toThrow(/ENOTDIR/u)
+    } finally {
+      rmSync(root, { recursive: true })
     }
   })
 })

@@ -19,7 +19,9 @@
  *      record id, and a record's id is its name slug. A hyphenated id long
  *      enough not to occur by accident — `monkey-d-luffy`, `edward-newgate` —
  *      is looked for in the chunks too, because a leak there ships names as
- *      literal identifiers rather than as sentences.
+ *      literal identifiers rather than as sentences. A body of power is
+ *      seats titled in a word or two, never a sentence, so it is looked for
+ *      by its holders' ids instead (`./archive-gate.power.mjs`).
  *   3. Source URL canaries for the server-only provenance inventory (#721).
  *   4. Place word canaries. A series that labels its place words itself
  *      (`placeWords` in the series list) sends a page the labels of the
@@ -55,6 +57,7 @@ import path from 'node:path'
 import process from 'node:process'
 import { byNumber, byValue } from 'sort-es'
 
+import { powerCanaries } from './archive-gate.power.mjs'
 import { importArchive } from './archive-loader.mjs'
 import { checkServer } from './archive-server-gate.mjs'
 
@@ -165,13 +168,13 @@ export function clientChunks(clientDir) {
 
   return readdirSync(assets)
     .filter((name) => name.endsWith('.js'))
-    .map((name) => {
-      return {
-        name,
-        bytes: statSync(path.join(assets, name)).size,
-        text: readFileSync(path.join(assets, name), 'utf8'),
-      }
-    })
+    .map((name) => ({
+      name,
+      // fallow-ignore-next-line security-sink -- name is a file the build wrote to its own assets folder, listed by readdirSync.
+      bytes: statSync(path.join(assets, name)).size,
+      // fallow-ignore-next-line security-sink -- As above.
+      text: readFileSync(path.join(assets, name), 'utf8'),
+    }))
 }
 
 /**
@@ -487,6 +490,7 @@ export async function canariesOf(repositoryRoot) {
     ...SERIES.flatMap(({ folder }) => [
       ...proseCanaries(repositoryRoot, folder),
       ...slugCanaries(repositoryRoot, folder),
+      ...powerCanaries(repositoryRoot, folder),
     ]),
     ...sourceCanaries(repositoryRoot),
     ...(await officialCanaries(SERIES)),
