@@ -1211,6 +1211,31 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 763,
+      chapter: 813,
+      value: {
+        title: {
+          it: 'Un invito al Tea Party',
+          en: 'An invitation to the Tea Party',
+        },
+        body: {
+          it: 'Due giorni fa, nel racconto di [[brook|Brook]], [[pekoms|Pekoms]] ringrazia Sanji per aver salvato la sua gente e si offre di far fallire la propria missione, e [[capone-bege|Capone Bege]] gli spara alla schiena. Bege porta Sanji, Brook, [[nami|Nami]], [[tony-tony-chopper|Chopper]] e [[caesar-clown|Caesar]] dentro il suo corpo, una fortezza che comanda dall’interno, e consegna a Sanji un invito al Tea Party di Big Mom: Sanji, terzo figlio della famiglia Vinsmoke, sposerà una delle sue figlie. Se si sposa, spiega Caesar, la ciurma finirà sotto Big Mom. Sanji rifiuta. A Big Mom non si dice di no, risponde Bege, e minaccia i suoi compagni. Poi uno degli uomini di Bege sussurra qualcosa all’orecchio di Sanji, e Sanji chiede come facciano a saperlo.',
+          en: 'Two days ago, in [[brook|Brook]]’s account, [[pekoms|Pekoms]] thanks Sanji for saving his people and offers to fail his own mission, and [[capone-bege|Capone Bege]] shoots him in the back. Bege takes Sanji, Brook, [[nami|Nami]], [[tony-tony-chopper|Chopper]] and [[caesar-clown|Caesar]] inside his body, a fortress he commands from within, and hands Sanji an invitation to Big Mom’s Tea Party: Sanji, third son of the Vinsmoke family, is to marry one of her daughters. If he marries, Caesar explains, the crew will end up under Big Mom. Sanji refuses. Nobody refuses Big Mom, Bege answers, threatening his crewmates. Then one of Bege’s men whispers something in Sanji’s ear, and Sanji asks how they know it.',
+        },
+      },
+    },
+    {
+      episode: 764,
+      chapter: 813,
+      value: {
+        title: { it: 'Va a incontrare una donna', en: 'Off to meet a woman' },
+        body: {
+          it: 'Sanji chiede a Bege carta e penna, scrive un biglietto e lo dà a [[nami|Nami]]: deve sistemare da solo una questione di famiglia. Poi getta i compagni incatenati fuori dal corpo di [[capone-bege|Bege]] e punta una pistola alla testa di [[caesar-clown|Caesar]]. Ha capito tutto: chi ha reso la sua taglia valida solo da vivo è chi organizza il matrimonio, quindi gli uomini di Bege non possono toccarlo. Andrà, se la sua ciurma viene risparmiata. Alle spalle di Bege compare [[nekomamushi|Gatto-vipera]], e Bege fugge con Sanji dentro di sé. Sanji promette di tornare. Il biglietto dice che va a incontrare una donna, e che tornerà.',
+          en: 'Sanji asks Bege for pen and paper, writes a note and gives it to [[nami|Nami]]: he must settle a matter of his family alone. Then he throws his chained crewmates out of [[capone-bege|Bege]]’s body and holds a gun to [[caesar-clown|Caesar]]’s head. He has worked it out: whoever made his bounty valid only alive is the one arranging the wedding, so Bege’s men cannot touch him. He will go, if his crew is spared. [[nekomamushi|Nekomamushi]] appears behind Bege, and Bege runs, with Sanji inside him. Sanji promises to come back. His note says he is going to meet a woman, and will be back.',
+        },
+      },
+    },
+    {
       episode: 794,
       chapter: 837,
       value: {
