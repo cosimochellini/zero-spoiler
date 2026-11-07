@@ -36,8 +36,8 @@ export const kakinChronicles = {
       342,
       { it: 'Una dichiarazione di guerra', en: 'A declaration of war' },
       {
-        it: 'Beyond è chiuso in una cella e [[cheadle-yorkshire|Cheadle]] lo interroga mentre gli altri membri dello Zodiaco assistono. Lui prevede che finiranno per liberarlo e per andare con lui nel Continente Oscuro, e Cheadle la chiama un’illusione. [[saccho-kobayakawa|Saccho]] riassume il suo accordo con il re di Cakin: un posto nella storia in cambio di un biglietto per il Continente Oscuro. Beyond dichiara guerra allo Zodiaco e Cheadle accetta. Saccho si offre di sorvegliarlo durante il viaggio.',
-        en: 'Beyond is held in a cell, and [[cheadle-yorkshire|Cheadle]] questions him while the other Zodiacs watch. He predicts that they will end up releasing him and going to the Dark Continent with him, and Cheadle calls it a delusion. [[saccho-kobayakawa|Saccho]] sums up his deal with the King of Kakin: a place in history in exchange for a ticket to the Dark Continent. Beyond declares war on the Zodiacs, and Cheadle accepts. Saccho offers to watch over him during the voyage.',
+        it: 'Beyond è chiuso in una cella e [[cheadle-yorkshire|Cheadle]] lo interroga mentre gli altri membri dello Zodiaco assistono. Lui prevede che finiranno per liberarlo e per andare con lui nel Continente Oscuro, e Cheadle la chiama un’illusione. [[saccho-kobayakawa|Saccho]] riassume il suo accordo con il re di Cakin: un posto nella storia in cambio di un biglietto per il Continente Oscuro. Beyond dichiara guerra allo Zodiaco e Cheadle accetta. Saccho si offre di sorvegliarlo.',
+        en: 'Beyond is held in a cell, and [[cheadle-yorkshire|Cheadle]] questions him while the other Zodiacs watch. He predicts that they will end up releasing him and going to the Dark Continent with him, and Cheadle calls it a delusion. [[saccho-kobayakawa|Saccho]] sums up his deal with the King of Kakin: a place in history in exchange for a ticket to the Dark Continent. Beyond declares war on the Zodiacs, and Cheadle accepts. Saccho offers to watch over him.',
       },
     ),
     told(
@@ -258,8 +258,8 @@ export const kakinChronicles = {
       341,
       { it: 'La caccia a Beyond', en: 'Hunting Beyond' },
       {
-        it: 'Cheadle annuncia allo Zodiaco che [[ging-freecss|Ging]] e [[pariston-hill|Pariston]] si sono dimessi e che i V5 hanno affidato loro un incarico speciale: dare la caccia a [[beyond-netero|Beyond]]. Nel secondo video lasciato da [[netero|Netero]], il presidente chiede all’Associazione di raggiungere il Continente Oscuro prima del figlio. Cheadle accetta la missione, ma stabilisce che nessun altro Hunter debba unirsi a loro. Poi Beyond si presenta di persona e chiede di comunicare la sua cattura.',
-        en: 'Cheadle tells the Zodiacs that [[ging-freecss|Ging]] and [[pariston-hill|Pariston]] have resigned and that the V5 have given them a special assignment: to hunt down [[beyond-netero|Beyond]]. In the second video left by [[netero|Netero]], the chairman asks the Association to reach the Dark Continent before his son. Cheadle accepts the mission but rules that no other Hunters should join them. Then Beyond appears in person and asks them to report his capture.',
+        it: 'Cheadle annuncia allo Zodiaco che [[ging-freecss|Ging]] e [[pariston-hill|Pariston]] si sono dimessi e che i V5 hanno affidato allo Zodiaco un incarico speciale: dare la caccia a [[beyond-netero|Beyond]]. Nel secondo video lasciato da [[netero|Netero]], il presidente chiede all’Associazione di raggiungere il Continente Oscuro prima del figlio. Cheadle accetta la missione, ma stabilisce che nessun altro Hunter debba unirsi a loro. Poi Beyond si presenta di persona e chiede di comunicare la sua cattura.',
+        en: 'Cheadle tells the Zodiacs that [[ging-freecss|Ging]] and [[pariston-hill|Pariston]] have resigned and that the V5 have given the Zodiacs a special assignment: to hunt down [[beyond-netero|Beyond]]. In the second video left by [[netero|Netero]], the chairman asks the Association to reach the Dark Continent before his son. Cheadle accepts the mission but rules that no other Hunters should join them. Then Beyond appears in person and asks them to report his capture.',
       },
     ),
     told(
@@ -490,8 +490,8 @@ export const kakinChronicles = {
       356,
       { it: 'Circondato dalle bombe', en: 'Surrounded by bombs' },
       {
-        it: 'Hisoka si apre la strada tra le marionette di [[chrollo|Quoll]] usando come armi delle teste mozzate, ma perde quattro dita quando la testa che stringe esplode. Quoll gli scaglia contro centinaia di marionette esplosive e di spettatori. Un’altra esplosione gli porta via parte di una gamba, e quando la folla lo circonda Hisoka viene travolto da un’enorme deflagrazione.',
-        en: 'Hisoka fights his way through [[chrollo|Chrollo]]’s puppets using severed heads as weapons, but loses four fingers when the head he is holding explodes. Chrollo throws hundreds of exploding puppets and bystanders at him. Another blast takes off part of a leg, and when the crowd closes around him, Hisoka is caught in an enormous explosion.',
+        it: 'Hisoka si apre la strada tra le marionette di [[chrollo|Quoll]] usando come armi delle teste mozzate, ma perde quattro dita quando la testa che stringe esplode. Centinaia di marionette segnate gli corrono contro, e Quoll gli scaglia addosso degli spettatori. Un’altra esplosione gli porta via parte di una gamba, e quando la folla lo circonda Hisoka viene travolto da un’enorme deflagrazione.',
+        en: 'Hisoka fights his way through [[chrollo|Chrollo]]’s puppets using severed heads as weapons, but loses four fingers when the head he is holding explodes. Hundreds of marked puppets rush at him, and Chrollo throws bystanders at him. Another blast takes off part of a leg, and when the crowd closes around him, Hisoka is caught in an enormous explosion.',
       },
     ),
     told(
@@ -516,8 +516,8 @@ export const kakinChronicles = {
       356,
       { it: 'La vittoria all’Arena', en: 'Victory at the arena' },
       {
-        it: 'Quoll riempie l’arena di copie degli spettatori, le segna come bombe e ordina loro di distruggere [[hisoka|Hisoka]]. Con il telefono di [[shalnark|Shalnark]] fa innescare a uno spettatore la testa che Hisoka tiene in mano, e trasforma in una potente bomba il corpo a cui apparteneva. Manda le marionette a farsi esplodere accanto a Hisoka e gli lancia contro i presenti per bloccarlo, finché un’enorme esplosione non lo avvolge.',
-        en: 'Chrollo fills the arena with copies of the audience, marks them as bombs and orders them to break [[hisoka|Hisoka]]. With [[shalnark|Shalnark]]’s phone he has a bystander set off the head Hisoka is holding, and turns the body it came from into a powerful bomb. He sends puppets to blow themselves up next to Hisoka and throws bystanders at him to pin him down, until an enormous explosion engulfs him.',
+        it: 'Quoll riempie l’arena di copie degli spettatori, le segna come bombe e ordina loro di distruggere [[hisoka|Hisoka]]. Trasforma in una potente bomba il corpo di una marionetta decapitata da Hisoka e, con il telefono di [[shalnark|Shalnark]], la fa innescare da uno spettatore, così esplode anche la testa che Hisoka tiene in mano. Manda le marionette a farsi esplodere accanto a Hisoka e gli lancia contro i presenti per bloccarlo, finché un’enorme esplosione non lo avvolge.',
+        en: 'Chrollo fills the arena with copies of the audience, marks them as bombs and orders them to break [[hisoka|Hisoka]]. He turns the body of a puppet Hisoka beheaded into a powerful bomb and, through [[shalnark|Shalnark]]’s phone, has a bystander set it off, so the head Hisoka is holding explodes too. He sends puppets to blow themselves up next to Hisoka and throws bystanders at him to pin him down, until an enormous explosion engulfs him.',
       },
     ),
     told(
@@ -762,8 +762,8 @@ export const kakinChronicles = {
       367,
       { it: 'Il drago alle sue spalle', en: 'The dragon behind him' },
       {
-        it: 'Marayam, il tredicesimo principe, assume [[biscuit-krueger|Biscuit]] come guardia del corpo. Quando le bestie guardiane invadono la nave, Biscuit riferisce che Marayam sta bene e non si accorge di nulla. Lei e [[hanzo|Hanzo]] notano che la sua bestia sta crescendo. Più tardi un insetto controllato con il Nen entra nella sua stanza e lo vede con la madre, una guardia e la sua bestia: una grande creatura simile a un drago, alle sue spalle.',
-        en: 'Marayam, the Thirteenth Prince, hires [[biscuit-krueger|Biscuit]] as a bodyguard. When guardian beasts swarm the ship, Biscuit reports that Marayam is fine and unaware of them. She and [[hanzo|Hanzo]] notice that his beast is growing. Later an insect controlled through Nen enters his room and sees him with his mother, one guard and his beast: a large dragon-like creature standing behind him.',
+        it: 'Marayam, il tredicesimo principe, assume [[biscuit-krueger|Biscuit]] come guardia del corpo. Quando le bestie guardiane compaiono nei suoi alloggi, Biscuit riferisce che Marayam sta bene e non si accorge di nulla. Lei e [[hanzo|Hanzo]] notano che la sua bestia sta crescendo. Più tardi un insetto controllato con il Nen entra nella sua stanza e lo vede con la madre, una guardia e la sua bestia: una grande creatura simile a un drago, alle sue spalle.',
+        en: 'Marayam, the Thirteenth Prince, hires [[biscuit-krueger|Biscuit]] as a bodyguard. When guardian beasts appear in his quarters, Biscuit reports that Marayam is fine and unaware of them. She and [[hanzo|Hanzo]] notice that his beast is growing. Later an insect controlled through Nen enters his room and sees him with his mother, one guard and his beast: a large dragon-like creature standing behind him.',
       },
     ),
   ],

@@ -55,6 +55,10 @@ assembly and tests. An independent verifier pass follows on the pull request.
    chapter notes only Fugetsu; the stories say the sister.
 5. Hisoka, chapter 356: the synopsis and the notes disagree on which leg he
    loses, so the story names none.
+6. Beyond, chapter 342 ("during the voyage"), Cheadle, chapter 341 (whose
+   assignment), Chrollo and Hisoka, chapter 356 (how the bomb went off) and
+   Marayam, chapter 367 (the beasts in his quarters, not the whole ship) were
+   tightened to the synopsis on a second read.
 
 ## Coverage
 
