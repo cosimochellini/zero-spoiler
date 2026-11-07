@@ -290,8 +290,8 @@ const FILINGS: Filing[] = [
         'shikaku',
         { it: 'Corpo che ha occupato', en: 'Body he took over' },
         {
-          it: 'Dopo la prova si sveglia e dà il numero di matricola di Shikaku.',
-          en: 'After the test he wakes and gives Shikaku’s service number.',
+          it: 'Dopo che il corpo di Shikaku si spara, il corpo di Sumidori si sveglia e recita il numero di matricola di Shikaku.',
+          en: 'After Shikaku’s body shoots itself, Sumidori’s body wakes and recites Shikaku’s service number.',
         },
       ),
     ],
