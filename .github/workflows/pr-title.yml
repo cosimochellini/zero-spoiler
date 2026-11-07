@@ -5,13 +5,13 @@ name: PR title
 # and semantic-release reads it to pick patch / minor / major. Kept apart from
 # CI so a title edit re-runs only this check, not the whole gate. This job runs
 # without `npm ci` because the validator has no dependencies.
+#
+# No `synchronize`: a push never changes the title. Drafts and body-only edits
+# skip the job, so the title is checked when the pull request is marked ready
+# and on every title edit after that, before the squash merge reads it.
 on:
   pull_request:
-    types: [opened, synchronize, reopened, edited]
-
-concurrency:
-  group: pr-title-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+    types: [opened, reopened, edited, ready_for_review]
 
 permissions:
   contents: read
@@ -19,6 +19,14 @@ permissions:
 jobs:
   pr-title:
     name: pr-title
+    if:
+      ${{ !github.event.pull_request.draft && (github.event.action != 'edited'
+      || github.event.changes.title) }}
+    # On the job, not the workflow: a skipped run, such as a body edit, must
+    # not cancel a title check in flight.
+    concurrency:
+      group: pr-title-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     timeout-minutes: 5
 

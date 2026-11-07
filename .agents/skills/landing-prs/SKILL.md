@@ -13,6 +13,7 @@ A pull request lands in two parts: review rounds until no P0–P2 is left, then 
 - The prompt names the PR, lists the owner's decisions so the reviewer does not re-flag them, and asks for the full P0–P3 report as the reviewer's **final message**.
 - A P0, P1 or P2 finding is fixed without asking the owner. Push the fix, then start a new fresh round.
 - A finding marked `Structural: yes` gets one extra review with `pr-reviewer-structural` before the merge.
+- CI does not run on a draft, so run `npm run check` locally before each round; the reviewer sees no CI result.
 - When a round reports **no P0–P2**, the rounds are over. Fixing its P3 findings is your call; a P3 fix, whatever it touches, goes straight to the merge with no further round.
 
 Done when the last round reported no P0–P2 and every fix after it is pushed.
@@ -21,8 +22,8 @@ Done when the last round reported no P0–P2 and every fix after it is pushed.
 
 Merge only when the owner, or the orchestrator running your loop, told you to land this pull request. Otherwise an issue PR stays a draft and you stop after the last round (`CONTRIBUTING.md`, "Delivery and agents").
 
-1. Put `Closes #N` and any `client-budget:` line in the body before the last push: CI reads the body from the push's event.
-2. `gh pr ready <pr>`, then `scripts/land-pr.sh <pr> <head-sha>`. It waits for the PR’s CI workflow run on that head and squash-merges it.
+1. Put `Closes #N` and any `client-budget:` line in the body before you run the script: CI reads the body from the event that starts its run, marking the PR ready or a later push.
+2. `scripts/land-pr.sh <pr> <head-sha>`. It marks the PR ready, which starts its first CI run, waits for the CI workflow run on that head and squash-merges it.
 3. **Main moving on is fine.** The script merges whenever GitHub reports no conflict, however far main has moved. Sync with main only on a conflict (exit 2, the conflicting files printed):
    - `git merge origin/main` in the branch, resolve the files, `npm run check`;
    - push, and run the script again with the new head: it waits for CI itself.

@@ -215,6 +215,22 @@ describe('land-pr.sh', () => {
     expect(status).toBe(0)
   })
 
+  it('marks a draft ready, waits out its skipped run and merges on green', () => {
+    const skipped = run(1, 'completed', 'skipped')
+    const { status, stdout, calls } = land([
+      [skipped],
+      [skipped, run(2, 'in_progress', null)],
+      [skipped, run(2, 'completed', 'success')],
+    ])
+
+    expect(calls.indexOf('pr ready 42')).toBeGreaterThan(-1)
+    expect(calls.indexOf('pr ready 42')).toBeLessThan(
+      calls.indexOf('actions/workflows/ci.yml/runs'),
+    )
+    expect(stdout).toContain(`merged ${head}`)
+    expect(status).toBe(0)
+  })
+
   it('exits 0 when GitHub had already merged the reviewed head', () => {
     const { status, stdout } = land(
       [[run(1, 'completed', 'success')]],

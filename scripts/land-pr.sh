@@ -1,6 +1,7 @@
 #!/bin/bash
-# Lands a reviewed pull request: waits for the CI workflow on the reviewed head and
-# squash-merges it on green. Main moving on is fine: the merge goes ahead
+# Lands a reviewed pull request: marks it ready, waits for the CI workflow on the
+# reviewed head and squash-merges it on green. CI skips draft pull requests, so
+# marking it ready is what starts the run. Main moving on is fine: the merge goes ahead
 # whenever GitHub reports no conflict, and the branch is synced with main only
 # when it conflicts, by hand (landing-prs skill).
 #
@@ -11,7 +12,8 @@
 #        branch by hand. Checked before waiting for CI, as GitHub starts no
 #        run on a conflicting PR, and again after it, as main may have moved
 #      3 the CI workflow did not pass. A cancelled run is waited out, as a newer
-#        run on the same head cancels it; one never followed times out
+#        run on the same head cancels it, and so is a skipped one, the run of
+#        the head while it was a draft; one never followed times out
 #      4 the head moved after it was pinned
 #      5 bad arguments, a SHA that does not match the initial head, a PR not
 #        open against main, gh or git failed, or the merge was refused
@@ -24,7 +26,8 @@ H=$2
 
 # Prints the conclusion of the newest CI workflow run on commit $1, once it has
 # finished. A superseding run can cancel an earlier one, so keep waiting
-# when the latest run is cancelled.
+# when the latest run is cancelled. A skipped run is the head's draft run, from
+# before `gh pr ready` started the real one, so keep waiting past it too.
 wait_check() {
   local runs r
   for _ in $(seq 80); do
@@ -35,7 +38,7 @@ wait_check() {
       | max_by(.id) | "\(.status) \(.conclusion)"
     ' <<< "$runs") || return 1
     case $r in
-      "completed cancelled") ;;
+      "completed cancelled" | "completed skipped") ;;
       "completed "*) echo "${r#completed }"; return ;;
     esac
     sleep 30
@@ -106,12 +109,12 @@ stop_on_conflict() {
 }
 
 stop_on_conflict
+gh pr ready "$PR" 2>/dev/null
 result=$(wait_check "$H") || exit 5
 cur=$(pr_head) || exit 5
 [ "$cur" = "$H" ] || { echo "head is no longer $H"; exit 4; }
 [ "$result" = success ] || { echo "CI on $H: $result"; exit 3; }
 stop_on_conflict
-gh pr ready "$PR" 2>/dev/null
 
 # No --delete-branch: GitHub deletes the remote branch on merge, and the flag
 # would also delete local branches, worktrees of parallel sessions included.
