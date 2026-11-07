@@ -87,13 +87,13 @@ export type CharacterStatus =
 /**
  * Who a character stands with, as a group the pages can sort by: the closed
  * vocabulary behind the prose of an affiliation entry, which says the same
- * thing in its own words. The labels live on the server
- * (`~/i18n/dictionaries/one-piece/factions`) and reach a page with the fruit
- * album's groups only.
+ * thing in its own words, and the id of a body of power (`PowerBody`). The
+ * labels live on the server (`~/i18n/dictionaries/one-piece/factions`) and
+ * reach a page with the fruit album's groups and the power page's bodies only.
  *
- * A group has an id when at least two fruit eaters stand in it; a crew or a
- * kingdom of one, a former member, a prisoner and a vague line are
- * `independent`, which never sits next to another id. A tag is never more
+ * A group has an id when at least two fruit eaters stand in it or when it is
+ * a body of power; a crew or a kingdom of one, a former member, a prisoner
+ * and a vague line are `independent`, which never sits next to another id. A tag is never more
  * specific than the prose of its entry: Teach's "Former Warlord" is
  * `independent`, even though the reader knows his crew.
  */
@@ -109,6 +109,7 @@ export type Faction =
   | 'cross-guild'
   | 'donquixote-pirates'
   | 'emperors'
+  | 'five-elders'
   | 'galley-la'
   | 'independent'
   | 'knights-of-god'
