@@ -11,7 +11,7 @@ import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
  * drawn by: the neck, the shoulders of the black suit or the robe, its
  * collar, and the shade across the back hatched.
  */
-export const FROM_BEHIND: Stroke[] = [
+export const FROM_BEHIND_BODY: Stroke[] = [
   { d: 'M66 106 V122 M94 106 V122' },
   { d: 'M24 176 C28 140 46 126 66 122 M136 176 C132 140 114 126 94 122' },
   { d: 'M66 122 Q80 130 94 122', role: 'soft' },
@@ -19,8 +19,25 @@ export const FROM_BEHIND: Stroke[] = [
     d: 'M34 162 l8 -6 M40 172 l10 -7 M126 162 l-8 -6 M120 172 l-10 -7',
     role: 'ambient',
   },
-  shadow(80, 184, 54),
 ]
+
+/** The same back standing, with the shadow it throws. */
+export const FROM_BEHIND: Stroke[] = [...FROM_BEHIND_BODY, shadow(80, 184, 54)]
+
+/**
+ * A head and shoulders from behind tipped onto the floor, head to the
+ * left: how a guard or servant drawn from behind lies once killed.
+ */
+export const FALLEN =
+  'translate(80 136) rotate(-90) scale(0.7) translate(-80 -116)'
+
+/**
+ * A record's object made small and set at the foot of the box, so what
+ * the story shows beside it (a Guardian Spirit Beast, an ability) fits
+ * above it.
+ */
+export const BESIDE_THE_BEAST =
+  'translate(80 196) scale(0.56) translate(-80 -196)'
 
 /** The back of a head, down to the nape, under its hair. */
 export const SKULL = 'M58 106 C54 74 64 56 80 56 C96 56 106 74 102 106'
@@ -29,7 +46,7 @@ export const SKULL = 'M58 106 C54 74 64 56 80 56 C96 56 106 74 102 106'
  * A left hand from the back, fingers together, the pinion marked on it in
  * tint: the mark Halkenburg's guards find on the back of their left hands.
  */
-const PINION_HAND: Stroke[] = [
+export const PINION_HAND: Stroke[] = [
   {
     d: 'M56 168 L58 112 C58 104 62 100 66 100 V60 Q66 54 71 54 Q76 54 76 60 V96 M76 92 V50 Q76 44 81 44 Q86 44 86 50 V94 M86 94 V54 Q86 48 91 48 Q96 48 96 54 V98 M96 100 V66 Q96 60 101 60 Q106 60 106 66 V116 C106 132 100 144 98 168',
   },
@@ -42,6 +59,41 @@ const PINION_HAND: Stroke[] = [
   },
   { d: 'M66 64 h10 M76 54 h10 M86 58 h10 M96 70 h10', role: 'soft' },
   { d: 'M100 120 l5 -4 M100 134 l5 -4 M98 148 l5 -4', role: 'ambient' },
+]
+
+/**
+ * Longhi's long fair ponytail down the back of her black suit, the tie that
+ * holds it in tint.
+ */
+const LONGHI: Stroke[] = [
+  { d: SKULL },
+  { d: 'M64 66 C70 60 90 60 96 66', role: 'soft' },
+  {
+    d: 'M74 82 C70 112 72 146 78 172 M86 82 C90 112 88 146 82 172 M78 172 L80 178 L82 172',
+  },
+  { d: 'M74 80 Q80 84 86 80 M74 86 Q80 90 86 86', role: 'accent' },
+  { d: 'M80 92 V166', role: 'soft' },
+  ...FROM_BEHIND,
+]
+
+/**
+ * A combat boot of Benjamin's private army side on, the laces in tint and
+ * the heavy sole hatched.
+ */
+const FURYKOV_BOOT: Stroke[] = [
+  { d: 'M58 40 H94 V112 C110 116 128 122 134 134 V146 H40 V40' },
+  { d: 'M40 146 V156 H136 V146' },
+  {
+    d: 'M46 154 l6 -6 M58 154 l8 -8 M74 154 l8 -8 M90 154 l8 -8 M106 154 l8 -8 M122 154 l8 -8',
+    role: 'ambient',
+  },
+  {
+    d: 'M64 50 L88 58 M88 50 L64 58 M64 66 L88 74 M88 66 L64 74 M64 82 L88 90 M88 82 L64 90 M64 98 L88 106 M88 98 L64 106',
+    role: 'accent',
+  },
+  { d: 'M58 40 V112 M94 112 C90 120 82 126 70 128', role: 'soft' },
+  { d: 'M40 52 H46 M40 64 H46', role: 'soft' },
+  shadow(88, 170, 52),
 ]
 
 /** Vincent's knife, its grip in tint. */
@@ -182,21 +234,7 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
 
   // A combat boot of Benjamin's private army side on, the laces in tint and
   // the heavy sole hatched: Furykov is one of his soldiers, chapter 363.
-  'furykov': [
-    { d: 'M58 40 H94 V112 C110 116 128 122 134 134 V146 H40 V40' },
-    { d: 'M40 146 V156 H136 V146' },
-    {
-      d: 'M46 154 l6 -6 M58 154 l8 -8 M74 154 l8 -8 M90 154 l8 -8 M106 154 l8 -8 M122 154 l8 -8',
-      role: 'ambient',
-    },
-    {
-      d: 'M64 50 L88 58 M88 50 L64 58 M64 66 L88 74 M88 66 L64 74 M64 82 L88 90 M88 82 L64 90 M64 98 L88 106 M88 98 L64 106',
-      role: 'accent',
-    },
-    { d: 'M58 40 V112 M94 112 C90 120 82 126 70 128', role: 'soft' },
-    { d: 'M40 52 H46 M40 64 H46', role: 'soft' },
-    shadow(88, 170, 52),
-  ],
+  'furykov': FURYKOV_BOOT,
 
   // Illardia's ear-length fair hair from behind, parted in the middle, over
   // the collar of a servant's robe in tint: Fugetsu's maid at the class,
@@ -248,16 +286,7 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
 
   // Longhi's long fair ponytail down the back of her black suit, the tie
   // that holds it in tint: Tubeppa's guard at the class, chapter 370.
-  'longhi': [
-    { d: SKULL },
-    { d: 'M64 66 C70 60 90 60 96 66', role: 'soft' },
-    {
-      d: 'M74 82 C70 112 72 146 78 172 M86 82 C90 112 88 146 82 172 M78 172 L80 178 L82 172',
-    },
-    { d: 'M74 80 Q80 84 86 80 M74 86 Q80 90 86 86', role: 'accent' },
-    { d: 'M80 92 V166', role: 'soft' },
-    ...FROM_BEHIND,
-  ],
+  'longhi': LONGHI,
 
   // A sealed letter in 3/4, its flap and seal, the seal in tint: Maor
   // agrees with Longhi that a letter is the way to deal with the teacher in
@@ -387,8 +416,54 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/** The Kakin records of phase 2 whose drawing changes in chapters 340–400 (#1154, #1156). */
+/** The Kakin records of phase 2 whose drawing changes in chapters 340–420 (#1154, #1156, #1158). */
 export const kakinPhaseTwoRedrawn: Redrawings = {
+  longhi: [
+    // A sheet and a pen made of aura over the same ponytail made small, a
+    // line left for the signature and open lines of aura round them: Moonlight
+    // Act, the contract ability she shows Kurapika behind closed doors,
+    // chapter 401. Nothing is written on the sheet.
+    {
+      episode: 148,
+      chapter: 401,
+      source: 'chapter',
+      value: [
+        ...moved(LONGHI, BESIDE_THE_BEAST),
+        { d: 'M26 30 L108 16 L124 88 L42 102 Z' },
+        { d: 'M42 102 L44 108 L126 94 L124 88', role: 'soft' },
+        { d: 'M56 84 L112 74', role: 'soft' },
+        { d: 'M120 30 L146 92 L142 98 L138 88 L114 34 Z M138 88 L142 98' },
+        {
+          d: 'M16 24 q-6 8 0 16 M134 14 q8 4 8 14 M150 62 q6 8 2 16 M30 112 q8 6 16 4',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  furykov: [
+    // An open laptop seen from behind, the great tree on the back of its
+    // screen in tint, over the same boot made small: Combo Master, which he
+    // conjures in the flashback of chapter 415. The tree is the Kakin tree
+    // the wiki names; its drawing is a frame check.
+    {
+      episode: 148,
+      chapter: 415,
+      source: 'chapter',
+      value: [
+        ...moved(
+          FURYKOV_BOOT,
+          'translate(80 196) scale(0.5) translate(-80 -196)',
+        ),
+        { d: 'M34 20 L126 20 L122 92 L38 92 Z' },
+        { d: 'M30 96 H130 L126 102 H34 Z', role: 'soft' },
+        {
+          d: 'M80 82 V62 M80 70 l-8 -6 M80 66 l8 -6 M80 82 l-8 6 M80 82 l8 6 M80 64 C64 64 56 54 60 46 C58 36 70 30 80 32 C90 30 102 36 100 46 C104 54 96 64 80 64',
+          role: 'accent',
+        },
+        { d: 'M110 30 l8 -6 M112 50 l8 -6 M112 70 l8 -6', role: 'ambient' },
+      ],
+    },
+  ],
   vincent: [
     // The dropped knife and vial, the vial tipped on its side: caught by
     // Kurapika and Bill, he swallows the poison pill hidden in his molar,

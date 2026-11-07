@@ -13,8 +13,8 @@ if (series === undefined) {
 }
 const { archive } = series
 
-// Every stage of chapters 340–400 (#1154, #1156), at the chapter the wiki
-// gives it.
+// Every stage of chapters 340–420 (#1154, #1156, #1158), at the chapter the
+// wiki gives it.
 const STAGES = [
   { id: 'pariston-hill', chapter: 340, change: 'allegiance to Beyond' },
   { id: 'mizaistom-nana', chapter: 343, change: 'Cross Game' },
@@ -51,6 +51,15 @@ const STAGES = [
   { id: 'tserriednich-hui-guo-rou', chapter: 385, change: 'Laplace Devil' },
   { id: 'sarasa', chapter: 397, change: 'death' },
   { id: 'terebellum', chapter: 399, change: 'Sweet Home' },
+  { id: 'longhi', chapter: 401, change: 'Moonlight Act' },
+  { id: 'halkenburg-hui-guo-rou', chapter: 404, change: 'death' },
+  { id: 'bonolenov', chapter: 405, change: 'Metamorphosen' },
+  { id: 'lynch-fullbokko', chapter: 405, change: 'death' },
+  { id: 'morena', chapter: 408, change: 'Carnival Orphan' },
+  { id: 'borksen', chapter: 410, change: 'Heil-Ly' },
+  { id: 'woble-hui-guo-rou', chapter: 412, change: 'missing' },
+  { id: 'furykov', chapter: 415, change: 'Combo Master' },
+  { id: 'fukataki', chapter: 416, change: 'death' },
 ]
 
 /** Neon's status as a reader at a bookmark sees it. */

@@ -6,14 +6,20 @@ import {
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
-import { FROM_BEHIND, SKULL } from './kakin-phase-2'
+import {
+  BESIDE_THE_BEAST,
+  FALLEN,
+  FROM_BEHIND,
+  FROM_BEHIND_BODY,
+  SKULL,
+} from './kakin-phase-2'
 
 /**
  * A front of clothes with no one in it, below the collar: the shoulders,
  * the sleeves down to the hem, the far side hatched. Each record draws its
  * own collar and fastening over it.
  */
-const TOP: Stroke[] = [
+export const TOP: Stroke[] = [
   {
     d: 'M42 62 Q56 52 66 50 M94 50 Q104 52 118 62 C130 76 134 104 134 150 H120 L116 100 M42 62 C30 76 26 104 26 150 H40 L44 100',
   },
@@ -44,6 +50,58 @@ const TRACKSUIT: Stroke[] = [
   { d: 'M80 52 V168 M80 60 H84 V68 H80', role: 'accent' },
   { d: 'M26 142 H40 M120 142 H134 M42 158 H118', role: 'soft' },
   { d: 'M56 112 H72 M88 112 H104', role: 'soft' },
+]
+
+/**
+ * Fukataki's hair pulled back into a bun at the back of her head, held in
+ * a hairnet with the pin through it in tint.
+ */
+const FUKATAKI_HEAD: Stroke[] = [
+  { d: SKULL },
+  { d: 'M66 64 C72 70 74 76 74 80 M94 64 C88 70 86 76 86 80', role: 'soft' },
+  { d: circle(80, 90, 15) },
+  {
+    d: 'M68 82 L92 98 M66 92 L84 104 M74 78 L94 90 M92 82 L68 98 M94 92 L76 104 M86 78 L66 90',
+    role: 'soft',
+  },
+  { d: `M58 80 L102 100 ${circle(56, 79, 3)}`, role: 'accent' },
+]
+
+/**
+ * Lynch's fair hair from behind, gathered into a tube that spirals down
+ * the back of her head, in tint, the locks from her forehead falling to
+ * her shoulders.
+ */
+const LYNCH_HAIR: Stroke[] = [
+  { d: SKULL },
+  {
+    d: 'M70 66 C70 58 90 58 90 66 V106 C90 116 70 116 70 106 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M70 76 Q80 82 90 74 M70 86 Q80 92 90 84 M70 96 Q80 102 90 94',
+    role: 'soft',
+  },
+  { d: 'M58 94 C56 106 58 116 52 128 M102 94 C104 106 102 116 108 128' },
+]
+
+/**
+ * Borksen's light hair from behind, falling past her ears and curling up at
+ * the ends, in tint, over a soldier's collar.
+ */
+const BORKSEN: Stroke[] = [
+  {
+    d: 'M56 98 C50 66 62 52 80 52 C98 52 110 66 104 98 C106 104 112 104 114 98 M56 98 C54 104 48 104 46 98',
+    role: 'accent',
+  },
+  { d: 'M68 58 C64 74 62 86 62 98 M92 58 C96 74 98 86 98 98', role: 'soft' },
+  ...FROM_BEHIND,
+]
+
+/** The floor a fallen guard or servant lies on, and the shadow on it. */
+const FLOOR: Stroke[] = [
+  { d: 'M4 180 H156', role: 'ambient', dashed: true },
+  shadow(80, 186, 50),
 ]
 
 export const KAKIN_PHASE_4_DRAWINGS = {
@@ -78,17 +136,7 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   // Fukataki's hair pulled back into a bun at the back of her head, the bun
   // held in a hairnet and the pin through it in tint, over the black
   // dress of her maid's uniform: Camilla's majordomo, chapter 389.
-  'fukataki': [
-    { d: SKULL },
-    { d: 'M66 64 C72 70 74 76 74 80 M94 64 C88 70 86 76 86 80', role: 'soft' },
-    { d: circle(80, 90, 15) },
-    {
-      d: 'M68 82 L92 98 M66 92 L84 104 M74 78 L94 90 M92 82 L68 98 M94 92 L76 104 M86 78 L66 90',
-      role: 'soft',
-    },
-    { d: `M58 80 L102 100 ${circle(56, 79, 3)}`, role: 'accent' },
-    ...FROM_BEHIND,
-  ],
+  'fukataki': [...FUKATAKI_HEAD, ...FROM_BEHIND],
 
   // The curse a Have-Not like Taler carries out: an object connected to the
   // target, drawn as a photograph face down, its back's border in tint,
@@ -132,19 +180,7 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   // Lynch's fair hair from behind, gathered into a tube that spirals down
   // the back of her head, in tint, the locks from her forehead falling to
   // her shoulders: a Xi-Yu member, chapter 390.
-  'lynch-fullbokko': [
-    { d: SKULL },
-    {
-      d: 'M70 66 C70 58 90 58 90 66 V106 C90 116 70 116 70 106 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M70 76 Q80 82 90 74 M70 86 Q80 92 90 84 M70 96 Q80 102 90 94',
-      role: 'soft',
-    },
-    { d: 'M58 94 C56 106 58 116 52 128 M102 94 C104 106 102 116 108 128' },
-    ...FROM_BEHIND,
-  ],
+  'lynch-fullbokko': [...LYNCH_HAIR, ...FROM_BEHIND],
 
   // Tevelares's hair from behind, slicked back in long strands that fall
   // past his ears, the ends in tint, over his jacket: a Heil-Ly member,
@@ -397,14 +433,7 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   // Borksen's light hair from behind, falling past her ears and curling up
   // at the ends, in tint, over a soldier's collar: a provisional Hunter in
   // Tserriednich's army, chapter 394.
-  'borksen': [
-    {
-      d: 'M56 98 C50 66 62 52 80 52 C98 52 110 66 104 98 C106 104 112 104 114 98 M56 98 C54 104 48 104 46 98',
-      role: 'accent',
-    },
-    { d: 'M68 58 C64 74 62 86 62 98 M92 58 C96 74 98 86 98 98', role: 'soft' },
-    ...FROM_BEHIND,
-  ],
+  'borksen': BORKSEN,
 
   // Otocin's light hair from behind, parted on his left, in tint, over a
   // soldier's collar: one of Tserriednich's soldiers, chapter 394.
@@ -633,9 +662,57 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/** The Kakin records of phase 4 whose drawing changes in chapters 371–400 (#1156). */
+/** The Kakin records of phase 4 whose drawing changes in chapters 371–420 (#1156, #1158). */
 export const kakinPhaseFourRedrawn: Redrawings = {
-  sarasa: [
+  'lynch-fullbokko': [
+    // The same head and shoulders from behind, fallen to the floor:
+    // Bonolenov, whom her punch unmasked as a fake Hisoka, recalls killing
+    // her, chapter 405.
+    {
+      episode: 148,
+      chapter: 405,
+      source: 'chapter',
+      value: [...moved([...LYNCH_HAIR, ...FROM_BEHIND_BODY], FALLEN), ...FLOOR],
+    },
+  ],
+  'borksen': [
+    // The cards of Morena's game over the same hair made small, the one she
+    // keeps face up, its border in tint: she cheats, the game forces her
+    // last answer, and she joins the Heil-Ly before going back to her own
+    // side, chapter 410. Nothing is written on the cards.
+    {
+      episode: 148,
+      chapter: 410,
+      source: 'chapter',
+      value: [
+        ...moved(BORKSEN, BESIDE_THE_BEAST),
+        { d: 'M14 64 L48 56 L56 96 L22 104 Z' },
+        { d: 'M20 68 L44 62 L50 92 L26 98 Z', role: 'accent' },
+        {
+          d: 'M62 52 L96 44 L104 84 L70 92 Z M110 40 L144 32 L152 72 L118 80 Z',
+        },
+        {
+          d: 'M70 58 l18 -14 M72 72 l26 -20 M76 86 l26 -20 M118 46 l18 -14 M120 60 l26 -20 M124 74 l26 -20',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'fukataki': [
+    // The same head and shoulders from behind, fallen to the floor:
+    // Benjamin shoots Camilla's two servants when she fires at him,
+    // chapter 416.
+    {
+      episode: 148,
+      chapter: 416,
+      source: 'chapter',
+      value: [
+        ...moved([...FUKATAKI_HEAD, ...FROM_BEHIND_BODY], FALLEN),
+        ...FLOOR,
+      ],
+    },
+  ],
+  'sarasa': [
     // Her purse laid in her open coffin, seen from above, among the flowers
     // the others put in with her: she is abducted and killed, chapter 397. No body is drawn.
     {
@@ -660,7 +737,7 @@ export const kakinPhaseFourRedrawn: Redrawings = {
       ],
     },
   ],
-  terebellum: [
+  'terebellum': [
     // A drink can with the tip of a thrown knife inside it, and the knife's
     // crushed handle with no blade, over the same tracksuit made small: he
     // moves the damage his right hand takes into what his left hand holds,
