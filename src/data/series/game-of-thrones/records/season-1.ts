@@ -1920,8 +1920,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 20,
       name: { it: 'Todder', en: 'Todder' },
       summary: {
-        it: 'Uno del gruppo di reclute di Jon Snow a Castello Nero.',
-        en: 'One of Jon Snow’s group of recruits at Castle Black.',
+        it: 'Un membro dei Guardiani della notte a Castello Nero.',
+        en: 'A member of the Night’s Watch at Castle Black.',
       },
       visual: { art: 'todder', tint: 'green' },
     },
@@ -5179,8 +5179,8 @@ export const season1: ThronesSaga = {
           episode: 30,
           chapter: 20,
           value: {
-            it: 'Recluta dei Guardiani della notte',
-            en: 'Recruit of the Night’s Watch',
+            it: 'Membro dei Guardiani della notte',
+            en: 'Member of the Night’s Watch',
           },
         },
         {
@@ -5193,8 +5193,8 @@ export const season1: ThronesSaga = {
         },
       ],
       log: {
-        it: 'Fa parte dello stesso gruppo di reclute di Jon Snow a Castello Nero.',
-        en: 'He is in the same group of recruits as Jon Snow at Castle Black.',
+        it: 'È a Castello Nero con Jon Snow.',
+        en: 'He is at Castle Black with Jon Snow.',
       },
       status: [{ episode: 30, chapter: 20, value: 'alive' }],
       affiliation: [
