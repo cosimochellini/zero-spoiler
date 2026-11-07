@@ -107,11 +107,11 @@ Done when the test passes, and moving one gate or pin down by one makes it fail.
 
 **Loaded machine**: when other sessions keep the load average above the core count and the full check times out on unrelated tests, a pure content PR may use the content check instead.
 
-- **Pure content PR**: it changes only records, art and chronicle files under `src/data/series/<series>/`, their tests (§3's `src/test` and `scripts/archive-gate.test.mjs` included), and the generated docs and OG images. A change in `src/components`, `src/routes`, `src/server` outside the archive tests, or any other `scripts/` file makes the PR not pure.
+- **Pure content PR**: every PR this skill describes, unless it changes code in `src/components`, `src/routes`, `src/lib`, `src/server` (outside the archive tests) or `scripts/` (beyond the `verify-*.tables.mjs` tables).
 - **Run** `npm run check:content`, then push with `LEFTHOOK_EXCLUDE=test git push`. That skips only the pre-push Vitest job; the other hooks still run.
 - **Skipped**: the build, coverage, `gate:archive`, react-doctor, fallow and the route and component tests outside the selection. The ready PR's CI `validation` run is the full gate.
 
-Done when `npm run check` passes, or on a loaded machine for a pure content PR, when `npm run check:content` passes. Either way, the ready PR's CI `validation` run is green before merge.
+Done when `npm run check` passes, or `npm run check:content` passes for a pure content PR on a loaded machine; the PR body says which.
 
 ## 9. Probe a built page
 
