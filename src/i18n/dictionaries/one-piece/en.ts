@@ -59,6 +59,7 @@ export const onePieceEn = {
   'form.train': 'Sea train',
 
   'nav.fruits': 'Fruits',
+  'nav.power': 'Power',
 
   'home.filler.title': 'Watch out for filler',
   'home.filler.link': 'See all filler',
@@ -149,6 +150,16 @@ export const onePieceEn = {
   'fruits.pageTitle': 'Devil fruits | {series} | Zero Spoiler',
   'fruits.pageDescription':
     'One Piece devil fruits, each hidden until the episode where it is first named.',
+  'power.title': 'Power in the world',
+  'power.pageTitle': 'Power in the world | {series} | Zero Spoiler',
+  'power.pageDescription':
+    'Who holds the seats of power in the One Piece world, each holder hidden until the chapter or episode that names them.',
+  'power.noBookmark':
+    'You have not set a bookmark yet, so every group and every seat is under fog.',
+  'power.none': 'Nothing on this page is open at your bookmark.',
+  'power.vacant': 'Vacant',
+  'power.unknown': 'Under fog',
+  'power.ended': 'This group has been dissolved.',
   'fruits.searchLabel': 'Search devil fruits',
   'fruits.searchClear': 'Clear search',
   'fruits.searchPlaceholder': 'Gum-Gum, Luffy',

@@ -11,7 +11,7 @@ import { sitemapXml } from './sitemap.server'
 /** The series filed but not open: none once every series has opened. */
 const CLOSED = SERIES.filter(({ open }) => !open)
 
-const SECTION_COUNT = 5
+const SECTION_COUNT = 6
 const LOCALE_COUNT = 2
 
 const document = await sitemapXml()
@@ -39,7 +39,7 @@ describe('the sitemap', () => {
           `${SITE_ORIGIN}/hunter-x-hunter/${locale}${path}`,
         )
       }
-      for (const path of ['fruits', 'filler']) {
+      for (const path of ['fruits', 'filler', 'power']) {
         expect(locations()).not.toContain(
           `${SITE_ORIGIN}/hunter-x-hunter/${locale}/${path}`,
         )
@@ -59,7 +59,7 @@ describe('the sitemap', () => {
           `${SITE_ORIGIN}/game-of-thrones/${locale}${path}`,
         )
       }
-      for (const path of ['characters/ros', 'fruits', 'filler']) {
+      for (const path of ['characters/ros', 'fruits', 'filler', 'power']) {
         expect(locations()).not.toContain(
           `${SITE_ORIGIN}/game-of-thrones/${locale}/${path}`,
         )
@@ -171,6 +171,7 @@ describe('the sitemap', () => {
       expect(locations()).toContain(`${SITE_ORIGIN}/${locale}`)
       expect(locations()).toContain(`${SITE_ORIGIN}/${locale}/legal`)
       expect(locations()).toContain(`${SITE_ORIGIN}/one-piece/${locale}`)
+      expect(locations()).toContain(`${SITE_ORIGIN}/one-piece/${locale}/power`)
       expect(locations()).not.toContain(`${SITE_ORIGIN}/${locale}/privacy`)
       expect(locations()).not.toContain(`${SITE_ORIGIN}/${locale}/characters`)
       expect(locations()).not.toContain(`${SITE_ORIGIN}/${locale}/filler`)

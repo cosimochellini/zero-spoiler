@@ -35,6 +35,7 @@ import {
 } from './archive/peek.server'
 import { placePage } from './archive/placePage.server'
 import { placesPage } from './archive/places.server'
+import { powerPage } from './archive/power.server'
 import { type Reader, readerFor } from './archive/reader.server'
 import { sagaLabels } from './archive/sagaLabels.server'
 import { copyOf } from './copy.server'
@@ -244,6 +245,10 @@ export const loadPlace = createServerFn()
 export const loadFiller = createServerFn()
   .validator(located)
   .handler(async ({ data }) => fillerPage(await readerIn(data)))
+
+export const loadPower = createServerFn()
+  .validator(located)
+  .handler(async ({ data }) => powerPage(await readerIn(data)))
 
 export const loadCredits = createServerFn()
   .validator(located)

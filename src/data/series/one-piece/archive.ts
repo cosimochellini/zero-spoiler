@@ -14,6 +14,7 @@ import * as Filler from './filler'
 import * as Fruits from './fruits'
 import * as Leads from './leads'
 import * as Places from './places'
+import * as Power from './power'
 import * as Sagas from './sagas'
 
 /** One dynamically loaded archive; its public description contains no records. */
@@ -71,5 +72,6 @@ export const ONE_PIECE_ARCHIVE: SeriesArchive = {
       lastAired: Filler.LAST_AIRED,
     },
     factions: { factionsOf: DatedArchive.factionsOf },
+    power: { bodies: Power.BODIES },
   },
 }
