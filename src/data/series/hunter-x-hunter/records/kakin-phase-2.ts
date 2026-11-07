@@ -495,10 +495,10 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         },
       ],
-      // Benjamin has him taken for questioning under martial law (#1159).
+      // Taken for questioning at 416; chapter 417 says he is to be detained (#1159).
       status: [
         { episode: 148, chapter: 370, source: 'chapter', value: 'alive' },
-        { episode: 148, chapter: 416, source: 'chapter', value: 'captured' },
+        { episode: 148, chapter: 417, source: 'chapter', value: 'captured' },
       ],
       relationships: [
         {
