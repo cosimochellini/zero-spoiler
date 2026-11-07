@@ -1680,6 +1680,17 @@ const links = {
       it: 'Doflamingo prende il controllo del corpo di Atomos e rivolge le sue spade contro i suoi uomini.',
     },
   },
+  atmosDonquixoteDoflamingo2: {
+    character: 'donquixote-doflamingo',
+    type: {
+      en: 'Warlord who once controlled him',
+      it: 'Membro della Flotta dei Sette che lo ha controllato',
+    },
+    summary: {
+      en: 'Doflamingo took control of Atmos’s body in the bay and turned his swords on his own men.',
+      it: 'Nella baia Doflamingo ha preso il controllo del corpo di Atomos e ha rivolto le sue spade contro i suoi uomini.',
+    },
+  },
   atmosEdwardNewgate2: {
     character: 'edward-newgate',
     type: { en: 'Former captain', it: 'Ex capitano' },
@@ -2825,7 +2836,7 @@ export const supportingRelationships = {
     {
       episode: 485,
       chapter: 576,
-      value: [links.atmosEdwardNewgate2, links.atmosDonquixoteDoflamingo],
+      value: [links.atmosEdwardNewgate2, links.atmosDonquixoteDoflamingo2],
     },
   ],
   'salome': [{ episode: 484, chapter: 575, value: [links.salomeBoaHancock] }],

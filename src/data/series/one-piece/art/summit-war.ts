@@ -2154,9 +2154,9 @@ export const summitWarArt = {
     shadow(90, 186, 62),
   ],
 
-  // His helmet, the dome with its ridge, the flared neck guard in plates,
-  // the far side hatched, and the two buffalo horns in his colour. He wears
-  // it when he goes at Doflamingo in episode 465.
+  // His horned helmet, the dome with its ridge and the far side hatched, the
+  // two buffalo horns in his colour, over the shoulders of his sleeveless
+  // armour. He wears both when he goes at Doflamingo in episode 465.
   'atmos': [
     { d: 'M46 108 C44 70 116 70 114 108' },
     { d: 'M40 108 C60 116 100 116 120 108' },
@@ -2166,17 +2166,14 @@ export const summitWarArt = {
     { d: ATMOS_RIDGES, role: 'soft', transform: MIRROR },
     { d: 'M80 72 C78 84 78 98 80 113', role: 'soft' },
     {
-      d: 'M46 112 C40 126 30 138 22 144 C60 154 100 154 138 144 C130 138 120 126 114 112',
+      d: 'M28 152 C30 136 44 126 62 124 C70 130 90 130 98 124 C116 126 130 136 132 152',
     },
+    { d: 'M62 124 C66 140 94 140 98 124 M80 136 V152', role: 'soft' },
     {
-      d: 'M34 132 C64 140 96 140 126 132 M41 122 C66 128 94 128 119 122',
-      role: 'soft',
-    },
-    {
-      d: 'M94 88 l8 -5 M98 98 l9 -5 M100 107 l9 -5 M118 140 l8 -4 M114 130 l7 -4',
+      d: 'M94 86 l8 -5 M98 96 l9 -5 M100 105 l9 -5 M112 140 l8 -5 M120 146 l7 -4',
       role: 'ambient',
     },
-    shadow(80, 170, 56),
+    shadow(80, 168, 56),
   ],
 
   // His huge sword, a long curved blade, lying on the frozen bay, the cup

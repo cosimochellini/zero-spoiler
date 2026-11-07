@@ -183,15 +183,14 @@ export const dressrosa: OnePieceSaga = {
       },
       visual: { art: 'baby-5', tint: 'wine' },
     },
-    // His name is an ordinary word: Atmos's epithet, Water Buffalo, says it
-    // at episode 465.
+    // Atmos's epithet, Water Buffalo, says his name at episode 465.
     {
       id: 'buffalo',
       kind: 'character',
       revealedAtEpisode: 618,
       revealedAtChapter: 692,
       name: { it: 'Buffalo', en: 'Buffalo' },
-      commonWord: true,
+      nameSaidAt: 465,
       summary: {
         it: 'Un uomo tondo come una palla che si mette a girare su sé stesso come un’elica e decolla portandosi dietro la compagna di viaggio.',
         en: 'A man as round as a ball who spins himself like a propeller and takes off, carrying his travelling companion along with him.',
