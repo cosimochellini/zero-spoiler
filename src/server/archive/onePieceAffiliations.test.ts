@@ -366,6 +366,86 @@ const MOVED: Moved[] = [
     'Straw Hat Grand Fleet; Barto Club',
   ],
   ['wicca', 745, 800, 'Tontatta tribe, scouting unit', 'Straw Hat Grand Fleet'],
+  // #1091: the steps the crews' seats on the power page stand on.
+  [
+    'monkey-d-luffy',
+    3,
+    6,
+    'Captain of a crew that does not exist yet',
+    'Straw Hat Pirates',
+  ],
+  [
+    'roronoa-zoro',
+    3,
+    6,
+    'Pirate hunter on his own account',
+    'Straw Hat Pirates',
+  ],
+  ['sanji', 30, 68, 'Baratie, sous-chef', 'Straw Hat Pirates'],
+  ['nami', 44, 95, 'Thief on her own account', 'Straw Hat Pirates'],
+  [
+    'tony-tony-chopper',
+    91,
+    154,
+    'Doctor Kureha’s assistant',
+    'Straw Hat Pirates',
+  ],
+  ['usopp', 235, 331, 'Straw Hat Pirates', 'Left the Straw Hat Pirates'],
+  ['nico-robin', 240, 340, 'Straw Hat Pirates', 'Left the Straw Hat Pirates'],
+  ['nico-robin', 278, 398, 'Left the Straw Hat Pirates', 'Straw Hat Pirates'],
+  ['usopp', 323, 438, 'Left the Straw Hat Pirates', 'Straw Hat Pirates'],
+  ['brook', 381, 489, 'Rumbar Pirates, once', 'Straw Hat Pirates'],
+  [
+    'portgas-d-ace',
+    95,
+    159,
+    undefined,
+    'Whitebeard Pirates, second division commander',
+    true,
+  ],
+  [
+    'marco',
+    316,
+    434,
+    undefined,
+    'Whitebeard Pirates, first division commander',
+    true,
+  ],
+  [
+    'jesus-burgess',
+    634,
+    704,
+    'Blackbeard Pirates, helmsman and champion',
+    'Blackbeard Pirates, first ship captain',
+  ],
+  [
+    'shiryu',
+    752,
+    803,
+    'Blackbeard Pirates',
+    'Blackbeard Pirates, second ship captain',
+  ],
+  [
+    'laffitte',
+    752,
+    803,
+    'Blackbeard Pirates; former West Blue sheriff',
+    'Blackbeard Pirates, fifth ship captain',
+  ],
+  [
+    'catarina-devon',
+    917,
+    925,
+    'Blackbeard Pirates; former prisoner of Impel Down level 6',
+    'Blackbeard Pirates, sixth ship captain',
+  ],
+  [
+    'avalo-pizarro',
+    917,
+    925,
+    'Blackbeard Pirates; former prisoner of Impel Down level 6',
+    'Blackbeard Pirates, ship captain',
+  ],
 ]
 
 const CASES = MOVED.flatMap(([id, episode, chapter, from, to, onRecord]) =>
@@ -399,6 +479,8 @@ const FACTIONS: [
   ['baby-5', 'donquixote-pirates', false, 710, 771],
   ['viola', 'donquixote-pirates', false, 660, 728],
   ['leo', 'straw-hat-grand-fleet', true, 745, 800],
+  ['nico-robin', 'straw-hat-pirates', false, 240, 340],
+  ['nico-robin', 'straw-hat-pirates', true, 278, 398],
 ]
 
 const FACTION_CASES = FACTIONS.flatMap(

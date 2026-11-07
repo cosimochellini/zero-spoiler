@@ -1661,6 +1661,33 @@ const links = {
       it: 'Barbabianca muore combattendo a Marineford dopo aver ordinato ai suoi uomini di fuggire.',
     },
   },
+  atmosEdwardNewgate: {
+    character: 'edward-newgate',
+    type: { en: 'Captain', it: 'Capitano' },
+    summary: {
+      en: 'Atmos fights at Marineford as the commander of Whitebeard’s thirteenth division.',
+      it: 'Atomos combatte a Marineford come comandante della tredicesima divisione di Barbabianca.',
+    },
+  },
+  atmosDonquixoteDoflamingo: {
+    character: 'donquixote-doflamingo',
+    type: {
+      en: 'Warlord who controls him',
+      it: 'Membro della Flotta dei Sette che lo controlla',
+    },
+    summary: {
+      en: 'Doflamingo takes control of Atmos’s body and turns his swords on his own men.',
+      it: 'Doflamingo prende il controllo del corpo di Atomos e rivolge le sue spade contro i suoi uomini.',
+    },
+  },
+  atmosEdwardNewgate2: {
+    character: 'edward-newgate',
+    type: { en: 'Former captain', it: 'Ex capitano' },
+    summary: {
+      en: 'Whitebeard dies fighting at Marineford after ordering his people to escape.',
+      it: 'Barbabianca muore combattendo a Marineford dopo aver ordinato ai suoi uomini di fuggire.',
+    },
+  },
   salomeBoaHancock: {
     character: 'boa-hancock',
     type: { en: 'Companion', it: 'Compagna' },
@@ -2787,6 +2814,18 @@ export const supportingRelationships = {
       episode: 485,
       chapter: 576,
       value: [links.blenheimEdwardNewgate2, links.blenheimJozu],
+    },
+  ],
+  'atmos': [
+    {
+      episode: 465,
+      chapter: 556,
+      value: [links.atmosEdwardNewgate, links.atmosDonquixoteDoflamingo],
+    },
+    {
+      episode: 485,
+      chapter: 576,
+      value: [links.atmosEdwardNewgate2, links.atmosDonquixoteDoflamingo],
     },
   ],
   'salome': [{ episode: 484, chapter: 575, value: [links.salomeBoaHancock] }],

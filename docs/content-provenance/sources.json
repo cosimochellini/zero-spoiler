@@ -32671,6 +32671,16 @@
       "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2097336",
       "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2097336",
       "contentSha256": "fe2225decf031b12874ea02f1302ab601dc68ce3814070ac241c092c09b2809f"
+    },
+    "en-Atmos.json": {
+      "locale": "en",
+      "title": "Atmos",
+      "revision": 2123746,
+      "revisionDate": "2026-07-02T15:21:38Z",
+      "url": "https://onepiece.fandom.com/wiki/Atmos",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2123746",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2123746",
+      "contentSha256": "903c0053117fcf12c72655459a37682dc0d6e5d4615a5fb662d72be5359913f3"
     }
   }
 }

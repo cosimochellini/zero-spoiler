@@ -1149,8 +1149,11 @@ export const skypiea: OnePieceSaga = {
       },
       status: [{ episode: 316, value: 'alive' }],
       affiliation: [
+        // Shanks calls him Marco of the first division in chapter 434,
+        // episode 316.
         {
           episode: 316,
+          chapter: 434,
           factions: ['whitebeard-pirates'],
           value: {
             it: 'Pirati di Barbabianca, comandante della prima divisione',

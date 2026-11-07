@@ -1315,7 +1315,13 @@ export const alabasta: OnePieceSaga = {
             en: 'Doctor Kureha’s assistant',
           },
         },
-        { episode: 91, factions: ['straw-hat-pirates'], value: STRAW_HATS },
+        // He sails from Drum Island with them in chapter 154, episode 91.
+        {
+          episode: 91,
+          chapter: 154,
+          factions: ['straw-hat-pirates'],
+          value: STRAW_HATS,
+        },
       ],
       origin: [
         {
@@ -1704,8 +1710,10 @@ export const alabasta: OnePieceSaga = {
         { episode: 483, chapter: 574, value: 'deceased' },
       ],
       affiliation: [
+        // He tells Luffy his crew and his division in chapter 159, episode 95.
         {
           episode: 95,
+          chapter: 159,
           factions: ['whitebeard-pirates'],
           value: {
             it: 'Pirati di Barbabianca, comandante della seconda divisione',
@@ -2016,6 +2024,23 @@ export const alabasta: OnePieceSaga = {
       status: [{ episode: 130, value: 'alive' }],
       affiliation: [
         { episode: 130, factions: ['straw-hat-pirates'], value: STRAW_HATS },
+        // Ch 340 / ep 240: she tells Sanji and Chopper goodbye and walks away.
+        {
+          episode: 240,
+          chapter: 340,
+          factions: ['independent'],
+          value: {
+            it: 'Ha lasciato i Pirati di Cappello di Paglia',
+            en: 'Left the Straw Hat Pirates',
+          },
+        },
+        // Ch 398 p. 18 / ep 278: she tells Luffy she wants to live.
+        {
+          episode: 278,
+          chapter: 398,
+          factions: ['straw-hat-pirates'],
+          value: STRAW_HATS,
+        },
       ],
       origin: [
         { episode: 130, value: { it: 'West Blue', en: 'West Blue' } },

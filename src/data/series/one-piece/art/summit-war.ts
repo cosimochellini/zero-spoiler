@@ -24,6 +24,13 @@ const SALDEATH_TRIDENT =
 /** Mirrors a stroke across the middle of the box. */
 const MIRROR = 'translate(160 0) scale(-1 1)'
 
+/** One of Atmos's buffalo horns, sweeping out and up from the helmet's side. */
+const ATMOS_HORN =
+  'M50 92 C30 92 14 80 10 54 C9 48 14 46 15 52 C21 70 34 78 52 80'
+
+/** The ridges across one of his horns. */
+const ATMOS_RIDGES = 'M22 74 l5 -5 M30 80 l4 -6 M39 84 l3 -6'
+
 /**
  * Salome's head under the cracked horned skull, turned away: hers, and
  * Hancock's smaller.
@@ -2145,6 +2152,31 @@ export const summitWarArt = {
       role: 'soft',
     },
     shadow(90, 186, 62),
+  ],
+
+  // His helmet, the dome with its ridge, the flared neck guard in plates,
+  // the far side hatched, and the two buffalo horns in his colour. He wears
+  // it when he goes at Doflamingo in episode 465.
+  'atmos': [
+    { d: 'M46 108 C44 70 116 70 114 108' },
+    { d: 'M40 108 C60 116 100 116 120 108' },
+    { d: ATMOS_HORN, role: 'accent' },
+    { d: ATMOS_HORN, role: 'accent', transform: MIRROR },
+    { d: ATMOS_RIDGES, role: 'soft' },
+    { d: ATMOS_RIDGES, role: 'soft', transform: MIRROR },
+    { d: 'M80 72 C78 84 78 98 80 113', role: 'soft' },
+    {
+      d: 'M46 112 C40 126 30 138 22 144 C60 154 100 154 138 144 C130 138 120 126 114 112',
+    },
+    {
+      d: 'M34 132 C64 140 96 140 126 132 M41 122 C66 128 94 128 119 122',
+      role: 'soft',
+    },
+    {
+      d: 'M94 88 l8 -5 M98 98 l9 -5 M100 107 l9 -5 M118 140 l8 -4 M114 130 l7 -4',
+      role: 'ambient',
+    },
+    shadow(80, 170, 56),
   ],
 
   // His huge sword, a long curved blade, lying on the frozen bay, the cup

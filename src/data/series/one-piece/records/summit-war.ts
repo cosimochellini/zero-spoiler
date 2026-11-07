@@ -945,6 +945,20 @@ export const summitWar: OnePieceSaga = {
       },
       visual: { art: 'whitey-bay', tint: 'cyan' },
     },
+    // Among the commanders who come ashore at episode 461 and chapter 553,
+    // unnamed; his caption names him in chapter 556, adapted by episode 465.
+    {
+      id: 'atmos',
+      kind: 'character',
+      revealedAtEpisode: 465,
+      revealedAtChapter: 556,
+      name: { it: 'Atomos', en: 'Atmos' },
+      summary: {
+        it: 'Il comandante della tredicesima divisione di Barbabianca, un uomo enorme in armatura con un elmo dalle corna di bufalo, che a Marineford affronta un membro della Flotta dei Sette.',
+        en: 'Whitebeard’s thirteenth division commander, a huge armoured man in a helmet with buffalo horns, who takes on one of the Seven Warlords at Marineford.',
+      },
+      visual: { art: 'atmos', tint: 'ocher' },
+    },
     {
       id: 'blenheim',
       kind: 'character',
@@ -2106,6 +2120,16 @@ export const summitWar: OnePieceSaga = {
           factions: ['blackbeard-pirates'],
           value: BLACKBEARD_CREW,
         },
+        // Ch 803 p. 8–9 / ep 752: the captain of the second ship.
+        {
+          episode: 752,
+          chapter: 803,
+          factions: ['blackbeard-pirates'],
+          value: {
+            it: 'Pirati di Barbanera, capitano della seconda nave',
+            en: 'Blackbeard Pirates, second ship captain',
+          },
+        },
       ],
       epithet: [
         {
@@ -2133,6 +2157,16 @@ export const summitWar: OnePieceSaga = {
           value: {
             it: 'Pirati di Barbanera, timoniere e campione',
             en: 'Blackbeard Pirates, helmsman and champion',
+          },
+        },
+        // Ch 704 p. 17–19 / ep 634: the captain of Blackbeard's first ship.
+        {
+          episode: 634,
+          chapter: 704,
+          factions: ['blackbeard-pirates'],
+          value: {
+            it: 'Pirati di Barbanera, capitano della prima nave',
+            en: 'Blackbeard Pirates, first ship captain',
           },
         },
       ],
@@ -2214,6 +2248,15 @@ export const summitWar: OnePieceSaga = {
             en: 'Blackbeard Pirates; former West Blue sheriff',
           },
         },
+        // Ch 803 p. 8–9 / ep 752: the captain of the fifth ship.
+        {
+          episode: 752,
+          chapter: 803,
+          value: {
+            it: 'Pirati di Barbanera, capitano della quinta nave',
+            en: 'Blackbeard Pirates, fifth ship captain',
+          },
+        },
       ],
       origin: [{ episode: 151, value: { it: 'West Blue', en: 'West Blue' } }],
       // Named among the Titanic Captains in chapter 803, episode 752.
@@ -2240,6 +2283,16 @@ export const summitWar: OnePieceSaga = {
           value: {
             it: 'Pirati di Barbanera; ex prigioniera del sesto livello di Impel Down',
             en: 'Blackbeard Pirates; former prisoner of Impel Down level 6',
+          },
+        },
+        // Ch 925 / ep 917: the captain of the sixth ship.
+        {
+          episode: 917,
+          chapter: 925,
+          factions: ['blackbeard-pirates'],
+          value: {
+            it: 'Pirati di Barbanera, capitana della sesta nave',
+            en: 'Blackbeard Pirates, sixth ship captain',
           },
         },
       ],
@@ -2321,6 +2374,17 @@ export const summitWar: OnePieceSaga = {
           episode: 484,
           factions: ['blackbeard-pirates'],
           value: LEVEL_SIX_ESCAPEE,
+        },
+        // Ch 925 / ep 917: the captain of one of the ships. The chapter
+        // numbers it second, which is Shiryu's, so no number is given here.
+        {
+          episode: 917,
+          chapter: 925,
+          factions: ['blackbeard-pirates'],
+          value: {
+            it: 'Pirati di Barbanera, capitano di una nave',
+            en: 'Blackbeard Pirates, ship captain',
+          },
         },
       ],
       epithet: [
@@ -2977,6 +3041,30 @@ export const summitWar: OnePieceSaga = {
       ],
       epithet: [
         { episode: 465, value: { it: 'Strega del Ghiaccio', en: 'Ice Witch' } },
+      ],
+    },
+    'atmos': {
+      relationships: summitWarRelationships.atmos,
+      role: {
+        it: 'Comandante della tredicesima divisione',
+        en: 'Thirteenth division commander',
+      },
+      log: {
+        it: 'Comanda la tredicesima divisione e porta un elmo con un paio di corna da bufalo e due grandi spade. Nella baia va dritto contro Doflamingo con i suoi uomini, ma prima che possa colpirlo il suo corpo smette di obbedirgli: le spade si alzano contro i compagni, e lui riesce solo a gridargli di stare lontani.',
+        en: 'He commands the thirteenth division and wears a helmet with a pair of buffalo horns, and two great swords. In the bay he goes straight at Doflamingo with his men, but before he can strike his body stops obeying him: his swords turn on his crewmates, and all he can do is shout at them to keep away.',
+      },
+      status: [{ episode: 465, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 465,
+          value: {
+            it: 'Pirati di Barbabianca, comandante della tredicesima divisione',
+            en: 'Whitebeard Pirates, thirteenth division commander',
+          },
+        },
+      ],
+      epithet: [
+        { episode: 465, value: { it: 'Bufalo d’acqua', en: 'Water Buffalo' } },
       ],
     },
     'blenheim': {
