@@ -1062,8 +1062,10 @@ export const summitWar: OnePieceSaga = {
             en: 'Seven Warlords; Heart Pirates, captain',
           },
         },
+        // Fujitora revokes his title at Green Bit: 643 (chapter 713).
         {
-          episode: 700,
+          episode: 643,
+          chapter: 713,
           factions: ['independent'],
           value: {
             it: 'Ex membro della Flotta dei Sette; Pirati Heart',

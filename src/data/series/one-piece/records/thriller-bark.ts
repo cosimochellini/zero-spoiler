@@ -445,11 +445,11 @@ export const thrillerBark: OnePieceSaga = {
             en: 'Thriller Bark Pirates, captain; Seven Warlords of the Sea',
           },
         },
-        // The Warlord system is abolished at 957 (chapter 956), and the
-        // episode says he was expelled after the war.
+        // Doflamingo tells him the government has dropped him from the
+        // Warlords, too weak to keep the title: 490 (chapter 581 p.17).
         {
-          episode: 957,
-          chapter: 956,
+          episode: 490,
+          chapter: 581,
           factions: ['independent'],
           value: {
             it: 'Ex membro della Flotta dei Sette',
