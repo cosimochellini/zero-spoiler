@@ -273,7 +273,7 @@ checks this block.
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
 | Line drawings       | 737, one per record, plus 325 redrawings of 179 records |
-| Chronicle stories   | 757, for 186 characters                                 |
+| Chronicle stories   | 769, for 189 characters                                 |
 
 ### `hunter-x-hunter`
 
