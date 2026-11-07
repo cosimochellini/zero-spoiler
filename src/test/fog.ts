@@ -75,17 +75,21 @@ function named(
 const MATCHED_BY = 'aliases'
 
 /** Every alias a payload lists for a search, however deeply nested. */
-function aliasesIn(payload: unknown): string[] {
+function aliasesIn(payload: unknown, found = new Set<string>()): Set<string> {
   if (payload === null || typeof payload !== 'object') {
-    return []
+    return found
   }
 
-  return Object.entries(payload).flatMap(([key, value]) => {
-    const listed =
-      key === MATCHED_BY && Array.isArray(value) ? value.map(String) : []
+  for (const [key, value] of Object.entries(payload)) {
+    if (key === MATCHED_BY && Array.isArray(value)) {
+      for (const alias of value) {
+        found.add(String(alias))
+      }
+    }
+    aliasesIn(value, found)
+  }
 
-    return [...listed, ...aliasesIn(value)]
-  })
+  return found
 }
 
 /**
@@ -499,23 +503,29 @@ export function leaksOf(
 ) => string[] {
   // Both kept for this series and list alone, so a test's own series never
   // reads another's. One fog per bookmark: a sweep asks for the same one many
-  // times over. The foreign words do not depend on the bookmark.
-  const fogs = new Map<string, Fog>()
+  // times over, and so one place-word fog: rebuilt for every payload, it was
+  // most of Hunter x Hunter's sweep (#1177). The foreign words do not depend
+  // on the bookmark.
+  const fogs = new Map<string, { fog: Fog; wordFog: Map<string, Entity[]> }>()
   let foreign: Foreign | undefined
 
   return (payload, bookmark, excused = () => false) => {
     const key = JSON.stringify(bookmark)
-    const fog = fogs.get(key) ?? {
-      drawn: drawnFogOf(bookmark, series.archive),
-      folded: foldedFogOf(bookmark, series.archive),
-      plain: fogOf(bookmark, series.archive),
+    const fogged = fogs.get(key) ?? {
+      fog: {
+        drawn: drawnFogOf(bookmark, series.archive),
+        folded: foldedFogOf(bookmark, series.archive),
+        plain: fogOf(bookmark, series.archive),
+      },
+      wordFog: wordFogOf(bookmark, series, series.placeWords),
     }
-    fogs.set(key, fog)
+    fogs.set(key, fogged)
+    const { fog, wordFog } = fogged
     foreign ??= foreignTo(series, list)
 
     const words = {
       drawn: drawnIn(payload),
-      folded: new Set(aliasesIn(payload)),
+      folded: aliasesIn(payload),
       plain: named(payload, isNaming),
     }
     // A record of the source the reader does not count in is never said on
@@ -526,7 +536,6 @@ export function leaksOf(
     const found = new Set<string>()
     // A place word names the places filed under it, excused as they are: a
     // place lifted from the fog brings its own words.
-    const wordFog = wordFogOf(bookmark, series, series.placeWords)
     const said = wordFog.size === 0 ? new Set<string>() : named(payload, anyKey)
     for (const { id } of leakedIn(said, wordFog, excusable)) {
       found.add(id)
