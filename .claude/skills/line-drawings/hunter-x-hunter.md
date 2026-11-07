@@ -65,10 +65,12 @@ anime viewer who has finished never sees it.
   `source: 'chapter'` at episode 148; anything the manga alone tells declares
   its chapter wherever it is filed; at episode 148 only an anime-only fact
   goes without one.
-- **Review checks by hand:** at most one such stage per record, since its
-  episodes must stay distinct; a record filed at episode 148 is not redrawn;
-  anything the 2011 anime omits at or below `lastAdaptedChapter` also takes
-  `source: 'chapter'`. A manga-only fact on an anime-only record, and anything
+- **The test walks manga-only stages in chapters** (#1154): they need
+  distinct, ascending chapters above the record's own, as every other
+  manga-only entry does. So a record may have several, and a record filed at
+  episode 148 (all of Kakin) is redrawn like any other.
+- **Review checks by hand:** anything the 2011 anime omits at or below
+  `lastAdaptedChapter` also takes `source: 'chapter'`. A manga-only fact on an anime-only record, and anything
   else outside these rules, waits for an owner ruling.
 
 ## Research and verification
