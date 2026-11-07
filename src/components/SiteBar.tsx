@@ -137,10 +137,11 @@ function SeriesNavigation(): ReactElement {
 
 // The site's breakpoint: below it the bar is the phone bar.
 const WIDE = '@media (min-width: 40rem)'
-// A series bar needs more room for one row: the wordmark, the name, three
-// pages, the bookmark and the language fit from about 52rem with the longest
-// name (Hunter x Hunter, in Italian). Below it the name and the pages fold
-// under, as on a phone.
+// A series bar needs more room for one row: the wordmark, the name, its
+// pages, the bookmark and the language fit from `BAR.seriesWide` with the
+// longest name (Hunter x Hunter, in Italian) and with the most pages (One
+// Piece's four, in Italian). Below it the name and the pages fold under, as
+// on a phone, where the name gives way first.
 const ROOMY = BAR.seriesWide
 
 const styles = stylex.create({
