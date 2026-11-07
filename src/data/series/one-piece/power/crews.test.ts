@@ -113,7 +113,7 @@ const SH_EPISODES: Steps = [
 const WB_MET = ['edward-newgate', 'marco', 'portgas-d-ace']
 
 /** Whitebeard's seats once Blenheim is named, with or without Vista's. */
-function whitebeard(vista: string[]): string[][] {
+function whitebeard(vista: string[]): [string[], string[], string[], string[]] {
   const all = [...WB_MET, 'jozu', V, ...vista, 'atmos', 'blenheim']
   const noAce = ['edward-newgate', 'marco', V, ...all.slice(3)]
   const noCaptain = [V, ...noAce.slice(1)]
