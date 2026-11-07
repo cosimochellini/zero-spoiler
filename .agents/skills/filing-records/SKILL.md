@@ -1,11 +1,11 @@
 ---
 name: filing-records
-description: Checklist for filing a record set, an arc's new characters and places, with the hidden tests, scripts and docs each addition touches. Load it before you file records, add dated steps to returning characters, or review such a pull request.
+description: Checklist for filing a record set, an arc's new characters and places, with the hidden tests, scripts and docs each addition touches. Load it before you file records, add dated steps to returning characters, write chronicle stories, or review such a pull request.
 ---
 
 # Filing records
 
-A record set is one arc's new characters and places, plus the dated steps it adds to characters filed earlier. Its models are PRs #829, #839, #926 and #943. The paths are Hunter x Hunter's; `<hxh>` is `src/data/series/hunter-x-hunter`. Drawings follow the `line-drawings` skill and prose the `tone-of-voice` skill. Chronicles and relationships are authored in issues of their own, but every new character still enters the relationship registry here (step 6).
+A record set is one arc's new characters and places, plus the dated steps it adds to characters filed earlier. Its models are PRs #829, #839, #926 and #943. The paths are Hunter x Hunter's; `<hxh>` is `src/data/series/hunter-x-hunter`. Drawings follow the `line-drawings` skill and prose the `tone-of-voice` skill. Chronicles and relationships are authored in issues of their own, a chronicle PR through the pipeline in [Chronicles](#chronicles), but every new character still enters the relationship registry here (step 6).
 
 Every record has a **gate**: the episode and chapter at which it opens.
 
@@ -127,3 +127,16 @@ A reviewer of a record set checks:
 - the "Done when" of §1–§9 holds.
 
 Done when every finding names the rule it breaks.
+
+## Chronicles
+
+A chronicle PR runs this pipeline, in order:
+
+1. **Write** the stories in `src/data/series/<series>/records/<arc>.chronicle.ts`, in the `tone-of-voice` voice, each with its note in `scripts/chronicle-sources*.mjs` (`chronicle-sources.mjs` for One Piece, `chronicle-sources-hxh.mjs` for Hunter x Hunter), and **assemble** them: wiring, tests, `npm run docs:chronicle`.
+2. **Verify**: one or more `chronicle-verifier` subagents (`.claude/agents/chronicle-verifier.md`), split by cast, each given the pushed branch and its base, the commit SHA, its character ids and the owner's rulings. Its checks and severities live in that file.
+3. **Correct**: apply every finding, or state the reason it stands, and draft an "Independent verifier corrections" section listing each one.
+4. **Open the PR** with that section added to the body (the template lacks it), then run the review rounds of `landing-prs`.
+
+The PR opens only once the corrections are in, because an open PR reads as finished and can merge before them.
+
+Done when the opened PR's body lists every verifier finding with its fix or reason.

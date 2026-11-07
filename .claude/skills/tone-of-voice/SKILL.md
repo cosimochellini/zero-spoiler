@@ -169,6 +169,8 @@ These live in `src/data/series/<series>/records` and are written in the same voi
 - The spoiler rules still apply, and the tests enforce them: a text may only
   name characters and facts the reader has reached at its threshold. This skill
   covers wording only.
+- A chronicle PR follows the pipeline in `filing-records`, section
+  "Chronicles": write, verify, correct, then open the PR.
 - The existing records predate this skill and have not been migrated; some
   still use em dashes. Apply the rules to any text you write or edit, and
   leave untouched stories alone unless the task is to rewrite them.
