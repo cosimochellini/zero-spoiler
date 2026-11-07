@@ -432,10 +432,19 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       { it: 'Primo principe di Cakin', en: 'First Prince of Kakin' },
       mother('unma-hui-guo-rou', { it: 'Unma', en: 'Unma' }),
     ),
-    'camilla-hui-guo-rou': prince(
-      { it: 'Secondo principe di Cakin', en: 'Second Prince of Kakin' },
-      mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
-    ),
+    'camilla-hui-guo-rou': {
+      ...prince(
+        { it: 'Secondo principe di Cakin', en: 'Second Prince of Kakin' },
+        mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
+      ),
+      // Arrested and put in solitary confinement (373); after the trial she is
+      // back in her quarters, only watched (376, #1157).
+      status: [
+        { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 373, value: 'imprisoned' },
+        { ...ROSTER, chapter: 376, value: 'alive' },
+      ],
+    },
     'zhang-lei-hui-guo-rou': prince(
       { it: 'Terzo principe di Cakin', en: 'Third Prince of Kakin' },
       mother('tang-zhao-li-hui-guo-rou', {
@@ -516,9 +525,11 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         { it: 'Nono principe di Cakin', en: 'Ninth Prince of Kakin' },
         mother('duazul-hui-guo-rou', { it: 'Duazul', en: 'Duazul' }),
       ),
-      // His body dies in the Tier 3 hospital and the ship is told (404, #1138).
+      // Taken into custody by a special task force (389, #1157); his body dies
+      // in the Tier 3 hospital and the ship is told (404, #1138).
       status: [
         { ...ROSTER, value: 'alive' },
+        { ...ROSTER, chapter: 389, value: 'imprisoned' },
         { ...ROSTER, chapter: 404, value: 'deceased' },
       ],
     },

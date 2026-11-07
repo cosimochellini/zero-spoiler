@@ -576,8 +576,10 @@ export const KAKIN_PHASE_TWO: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           },
         },
       ],
+      // Taken into custody by the royal army for Barrigen's murder (372, #1157).
       status: [
         { episode: 148, chapter: 370, source: 'chapter', value: 'alive' },
+        { episode: 148, chapter: 372, source: 'chapter', value: 'imprisoned' },
       ],
       relationships: [
         {

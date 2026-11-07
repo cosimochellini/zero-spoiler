@@ -68,6 +68,47 @@ const FIRST_STORIES: [id: string, chapter: number][] = [
     'yuhirai',
     'yuri',
   ].map((id): [string, number] => [id, 370]),
+  // Chapters 371–400 (#1157).
+  ['vergei', 374],
+  ['cashew', 379],
+  ['ken-i-wang', 379],
+  ['keeney', 383],
+  ['tajao', 384],
+  ['famule', 389],
+  ['fukataki', 389],
+  ['taler', 389],
+  ['lynch-fullbokko', 390],
+  ['zakuro-custard', 390],
+  ['padaille', 391],
+  ['tevelares', 391],
+  ['misha-hao', 392],
+  ['daemon', 393],
+  ['gelato', 393],
+  ['maizan', 393],
+  ['perigord', 393],
+  ['quorolle', 393],
+  ...[
+    'bille',
+    'borksen',
+    'chiffon-toto',
+    'gipper',
+    'matvere',
+    'momolly',
+    'montblanc-toto',
+    'otocin',
+    'sodom',
+    'tassi',
+    'voconte',
+  ].map((id): [string, number] => [id, 394]),
+  ['lisores', 395],
+  ['sheila', 395],
+  ['sarasa', 396],
+  ['renko', 397],
+  ['terebellum', 399],
+  ['yokotani', 399],
+  ...['anzel', 'himonce', 'hyuga', 'kaiser', 'madwig'].map(
+    (id): [string, number] => [id, 400],
+  ),
 ]
 
 const STORIES = Object.entries(kakinChronicles).flatMap(([id, stories]) =>
@@ -90,7 +131,7 @@ function chronicleTitles(owner: Entity, reader: Reader): string[] {
   ].map((entry) => entry.title)
 }
 
-describe('the Kakin chronicles, chapters 340–370', () => {
+describe('the Kakin chronicles, chapters 340–400', () => {
   it.each(FIRST_STORIES)(
     'opens a chronicle for the new record %s at chapter %i',
     (id, chapter) => {
@@ -105,7 +146,7 @@ describe('the Kakin chronicles, chapters 340–370', () => {
       expect(story.source, id).toBe('chapter')
       expect(story.episode, id).toBe(LAST_EPISODE)
       expect(story.chapter, id).toBeGreaterThanOrEqual(340)
-      expect(story.chapter, id).toBeLessThanOrEqual(370)
+      expect(story.chapter, id).toBeLessThanOrEqual(400)
     }
   })
 
@@ -119,7 +160,10 @@ describe('the Kakin chronicles, chapters 340–370', () => {
 
   it('keeps the Italian names in titles and prose', () => {
     for (const { id, story } of STORIES) {
-      expect(`${story.value.title.it} ${story.value.body.it}`, id).not.toMatch(
+      const italian = `${story.value.title.it} ${story.value.body.it}`
+
+      expect(italian, id).not.toMatch(/\b(?:Uvogin|Kalluto|Neon Nostrade)\b/u)
+      expect(italian, id).not.toMatch(
         /\b(?:Chrollo|Morel|Knov|Gel|Mito|Linne|Zoldyck|Izunavi|Tubeppa|Zhang Lei|Luzurus|Salé-salé|Halkenburg|Kacho|Tang Zhao Li|Hui Guo Rou|Heavens Arena|Whale Island|Kakin|Dark Continent)\b/u,
       )
     }
@@ -167,8 +211,11 @@ describe.each(LOCALES)('Kakin chronicles in %s', (locale) => {
     const manga = homePage(read({ mode: 'chapter', chapter: 370 }))
     const anime = homePage(read({ mode: 'episode', episode: LAST_EPISODE }))
 
+    const later = homePage(read({ mode: 'chapter', chapter: 400 }))
+
     expect(manga.saga.id).toBe('kakin-arc')
     expect(manga.stories.some(({ title }) => titles.has(title))).toBe(true)
+    expect(later.stories.some(({ title }) => titles.has(title))).toBe(true)
     expect(anime.stories.some(({ title }) => titles.has(title))).toBe(false)
   })
 })
