@@ -324,7 +324,13 @@ export const thrillerBark: OnePieceSaga = {
             en: 'Rumbar Pirates, once',
           },
         },
-        { episode: 381, factions: ['straw-hat-pirates'], value: STRAW_HATS },
+        // Luffy takes him on in chapter 489, episode 381.
+        {
+          episode: 381,
+          chapter: 489,
+          factions: ['straw-hat-pirates'],
+          value: STRAW_HATS,
+        },
       ],
       origin: [{ episode: 339, value: { it: 'West Blue', en: 'West Blue' } }],
       epithet: [{ episode: 517, value: { it: 'Soul King', en: 'Soul King' } }],

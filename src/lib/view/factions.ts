@@ -29,6 +29,7 @@ export const FACTIONS = new Set<string>(
     'marines': true,
     'nine-red-scabbards': true,
     'punk-hazard': true,
+    'red-hair-pirates': true,
     'revolutionary-army': true,
     'straw-hat-grand-fleet': true,
     'straw-hat-pirates': true,

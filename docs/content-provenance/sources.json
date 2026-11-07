@@ -32671,6 +32671,126 @@
       "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2097336",
       "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2097336",
       "contentSha256": "fe2225decf031b12874ea02f1302ab601dc68ce3814070ac241c092c09b2809f"
+    },
+    "en-Atmos.json": {
+      "locale": "en",
+      "title": "Atmos",
+      "revision": 2123746,
+      "revisionDate": "2026-07-02T15:21:38Z",
+      "url": "https://onepiece.fandom.com/wiki/Atmos",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2123746",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2123746",
+      "contentSha256": "903c0053117fcf12c72655459a37682dc0d6e5d4615a5fb662d72be5359913f3"
+    },
+    "en-Red_Hair_Pirates.json": {
+      "locale": "en",
+      "title": "Red Hair Pirates",
+      "revision": 2124135,
+      "revisionDate": "2026-07-02T15:34:49Z",
+      "url": "https://onepiece.fandom.com/wiki/Red_Hair_Pirates",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2124135",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2124135",
+      "contentSha256": "13830e6e18aff0e4122601e24a31e10e3603b56e240a2f201398049fe03655de"
+    },
+    "en-Straw_Hat_Pirates.json": {
+      "locale": "en",
+      "title": "Straw Hat Pirates",
+      "revision": 2136877,
+      "revisionDate": "2026-11-01T17:00:14Z",
+      "url": "https://onepiece.fandom.com/wiki/Straw_Hat_Pirates",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2136877",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2136877",
+      "contentSha256": "5e66db54d47a070feb36249d68dd7297ca6e8c0ba43c1a357082c4ffd7dd584c"
+    },
+    "en-Straw_Hat_Pirates/Recruitment.json": {
+      "locale": "en",
+      "title": "Straw Hat Pirates/Recruitment",
+      "revision": 2131989,
+      "revisionDate": "2026-09-07T04:17:38Z",
+      "url": "https://onepiece.fandom.com/wiki/Straw_Hat_Pirates/Recruitment",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2131989",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2131989",
+      "contentSha256": "bce3b4273ae3c93b46efbe84b145d0dc01d627d8e1e06e5c51cf180cd605ff64"
+    },
+    "en-Whitebeard_Pirates.json": {
+      "locale": "en",
+      "title": "Whitebeard Pirates",
+      "revision": 2124196,
+      "revisionDate": "2026-07-02T15:37:11Z",
+      "url": "https://onepiece.fandom.com/wiki/Whitebeard_Pirates",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2124196",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2124196",
+      "contentSha256": "87b6108162cbdb0e4a7ab65f4a38be6974ff7c958a45a20afced2a05022acfec"
+    },
+    "en-Blackbeard_Pirates.json": {
+      "locale": "en",
+      "title": "Blackbeard Pirates",
+      "revision": 2133226,
+      "revisionDate": "2026-09-21T20:44:17Z",
+      "url": "https://onepiece.fandom.com/wiki/Blackbeard_Pirates",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2133226",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2133226",
+      "contentSha256": "f82cf977f51e0e26b426c2014a2b0d48105c635db3f969bcb52428645fd1ee31"
+    },
+    "en-Usopp/History.json": {
+      "locale": "en",
+      "title": "Usopp/History",
+      "revision": 2122349,
+      "revisionDate": "2026-06-20T13:54:31Z",
+      "url": "https://onepiece.fandom.com/wiki/Usopp/History",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2122349",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2122349",
+      "contentSha256": "5d4dbb72b4840f44fda31bed45c07c5f7600ee1f599b1d79996e3ebe4554b9f8"
+    },
+    "en-Benn_Beckman.json": {
+      "locale": "en",
+      "title": "Benn Beckman",
+      "revision": 2125947,
+      "revisionDate": "2026-07-16T05:12:26Z",
+      "url": "https://onepiece.fandom.com/wiki/Benn_Beckman",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2125947",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2125947",
+      "contentSha256": "91c5a96237671904852becad6632fd956f36b3b47fda9eb839fbd3fb440e2159"
+    },
+    "en-Chapter_157.json": {
+      "locale": "en",
+      "title": "Chapter 157",
+      "revision": 2068008,
+      "revisionDate": "2025-06-17T02:56:46Z",
+      "url": "https://onepiece.fandom.com/wiki/Chapter_157",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2068008",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2068008",
+      "contentSha256": "08aa5dd4145318bb413d09fc44e9d8ed42dd59c4618de5216bbcdc39ba6b7fe9"
+    },
+    "en-Chapter_340.json": {
+      "locale": "en",
+      "title": "Chapter 340",
+      "revision": 2112529,
+      "revisionDate": "2026-04-16T21:22:25Z",
+      "url": "https://onepiece.fandom.com/wiki/Chapter_340",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2112529",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2112529",
+      "contentSha256": "fce1b967e587497d4fdcba4f493d0a58fb484fb53ba058a3bd93cc13fe550b18"
+    },
+    "en-Episode_94.json": {
+      "locale": "en",
+      "title": "Episode 94",
+      "revision": 1990789,
+      "revisionDate": "2024-02-29T16:08:07Z",
+      "url": "https://onepiece.fandom.com/wiki/Episode_94",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=1990789",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=1990789",
+      "contentSha256": "adb70123b0eee9288492ac76b63507e1f05ac28541049015c555609f0384c203"
+    },
+    "en-Episode_240.json": {
+      "locale": "en",
+      "title": "Episode 240",
+      "revision": 2053328,
+      "revisionDate": "2025-03-02T04:41:37Z",
+      "url": "https://onepiece.fandom.com/wiki/Episode_240",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2053328",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2053328",
+      "contentSha256": "5908805ed066ea6687f5490ec72ed442a5da016e11849b095ff625a6f788dc2a"
     }
   }
 }
