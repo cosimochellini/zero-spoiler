@@ -18,6 +18,15 @@ function characters(section) {
 /** House Stark's servants, named in the section's prose. */
 const STARK_SERVANTS = 'Casa Stark#Servitori di Casa Stark'
 
+/**
+ * A section of the Night's Watch's page.
+ * @param {string} section The section's heading.
+ * @returns {string} The page and the section, as `Page#Section`.
+ */
+function watch(section) {
+  return `Guardiani della notte#${section}`
+}
+
 /** The list's TV cast table, which names its rows only in the table. */
 const OTHERS = characters('Altri personaggi')
 
@@ -148,6 +157,20 @@ export const THRONES_ITALIAN_TITLES = {
     "Personaggi delle Cronache del ghiaccio e del fuoco#Jaqen H'ghar",
   'rorge': characters('Rorge'),
   'biter': characters('Mordente'),
+  'will': watch('Will'),
+  'gared': watch('Gared'),
+  'waymar-royce': watch('Waymar Royce'),
+  'grenn': watch('Grenn'),
+  'pypar': watch('Pyp'),
+  'rast': watch('Rast'),
+  'dareon': watch('Dareon'),
+  'halder': watch('Halder'),
+  'todder': watch('Todder'),
+  'othell-yarwyck': watch('Othell Yarwyck'),
+  'bowen-marsh': watch('Bowen Marsh'),
+  'jaremy-rykker': watch('Jaremy Rykker'),
+  'donal-noye': watch('Donal Noye'),
+  'chett': watch('Chett'),
 }
 
 /**
@@ -198,4 +221,8 @@ export const THRONES_NAMES_KEPT = {
   // The books' list writes "Mirri Maz Durr"; the show's cast list on
   // Italian Wikipedia writes "Mirri Maz Duur".
   'mirri-maz-duur': 'Mirri Maz Duur',
+  // #1007. Italian Wikipedia has no entry for these two: Jafer Flowers's name
+  // is the Italian Game of Thrones Wiki's, and Othor's stays as it is.
+  'othor': 'Othor',
+  'jafer-flowers': 'Jafer Flowers',
 }

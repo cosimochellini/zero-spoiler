@@ -20,7 +20,7 @@ if (series === undefined) {
 }
 const { archive } = series
 
-/** Each record's gate in each medium, as filed (#852, #853); `source` for one medium. */
+/** Each record's gate in each medium, as filed (#852, #853, #1006, #1007); `source` for one medium. */
 const RECORDS: {
   chapter: number
   episode: number
@@ -150,6 +150,23 @@ const RECORDS: {
   { id: 'jaqen-hghar', episode: 12, chapter: 79 },
   { id: 'rorge', episode: 12, chapter: 79 },
   { id: 'biter', episode: 12, chapter: 79 },
+  // The Night's Watch (#1007).
+  { id: 'will', episode: 1, chapter: 1 },
+  { id: 'gared', episode: 1, chapter: 1 },
+  { id: 'waymar-royce', episode: 1, chapter: 1 },
+  { id: 'grenn', episode: 3, chapter: 20 },
+  { id: 'pypar', episode: 3, chapter: 20 },
+  { id: 'rast', episode: 3, chapter: 27 },
+  { id: 'dareon', episode: 7, chapter: 20 },
+  { id: 'halder', episode: 7, chapter: 20 },
+  { id: 'todder', episode: 30, chapter: 20 },
+  { id: 'othell-yarwyck', episode: 7, chapter: 49 },
+  { id: 'bowen-marsh', episode: 41, chapter: 22 },
+  { id: 'jaremy-rykker', episode: 7, chapter: 22 },
+  { id: 'othor', episode: 8, chapter: 20 },
+  { id: 'jafer-flowers', episode: 8, chapter: 53 },
+  { id: 'donal-noye', episode: 3, chapter: 20, source: 'chapter' },
+  { id: 'chett', episode: 5, chapter: 42, source: 'chapter' },
   // Places (#853): the first scene set there in each medium.
   { id: 'haunted-forest', episode: 1, chapter: 1 },
   { id: 'winterfell', episode: 1, chapter: 2 },
@@ -256,6 +273,18 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
+  { id: 'will', episode: 1, chapter: 1, value: 'deceased' },
+  { id: 'gared', episode: 1, chapter: 2, value: 'deceased' },
+  { id: 'waymar-royce', episode: 1, chapter: 1, value: 'deceased' },
+  {
+    id: 'jaremy-rykker',
+    episode: 8,
+    chapter: 61,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  { id: 'othor', episode: 8, chapter: 53, value: 'deceased' },
+  { id: 'jafer-flowers', episode: 8, chapter: 53, value: 'deceased' },
 ]
 
 /**
@@ -500,6 +529,50 @@ const STEPS: {
     en: 'House Tully, Robb Stark’s host',
     episode: 23,
     id: 'brynden-tully',
+    source: 'chapter',
+  },
+  {
+    chapter: 49,
+    en: 'Sworn brother of the Night’s Watch, ranger',
+    episode: 7,
+    id: 'grenn',
+  },
+  {
+    chapter: 49,
+    en: 'Sworn brother of the Night’s Watch',
+    episode: 7,
+    id: 'pypar',
+  },
+  {
+    chapter: 49,
+    en: 'Sworn brother of the Night’s Watch, steward',
+    episode: 8,
+    id: 'dareon',
+  },
+  {
+    chapter: 49,
+    en: 'Sworn brother of the Night’s Watch, builder',
+    episode: 8,
+    id: 'halder',
+  },
+  {
+    chapter: 49,
+    en: 'Sworn brother of the Night’s Watch',
+    episode: 31,
+    id: 'todder',
+  },
+  {
+    chapter: 49,
+    en: 'Sworn brother of the Night’s Watch, ranger',
+    episode: 7,
+    id: 'rast',
+    source: 'episode',
+  },
+  {
+    chapter: 49,
+    en: 'Kennel hand at Castle Black',
+    episode: 7,
+    id: 'chett',
     source: 'chapter',
   },
 ]

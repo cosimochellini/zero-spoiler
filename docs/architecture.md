@@ -163,18 +163,19 @@ dated step pinned to both an episode and an absolute chapter; Ros, whom only the
 show has, is `source: 'episode'`. #1006 adds the 60 recurring characters of
 Winterfell, King's Landing, the Vale and the Riverlands, bit parts left out:
 those only one medium names in the stage are `source`-only, and those the other
-medium meets in a later season or book keep that later gate. It opened before
-its drawings: Eddard, Jon, Daenerys and Tyrion have their own, Eddard's with a
-death stage, the Winterfell household's are in `art/winterfell.ts` (#854), with
-four stages, and the southern cast's are in `art/south.ts` (#1051), with three.
-Every other record maps to a shared placeholder in `art/index.ts`, `PERSON` for
-a character and `PLACE` for a place, until its own issue draws it, so the
-drawing tests hold it like any series. Its 23 places (#853) are the ones a scene
-of the season or the book is set in, each filed in one of the realms, beyond the
-Wall or Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless
-series prints no arc row. Darry is the book's alone and the Kingswood the
-show's. The demo shows the places the first ten episodes reach, and covers in
-its tail the four the show first visits in later seasons.
+medium meets in a later season or book keep that later gate. #1007 adds 16 of
+the Night's Watch by the same rules. The series opened before its drawings:
+Eddard, Jon, Daenerys and Tyrion have their own, Eddard's with a death stage,
+the Winterfell household's are in `art/winterfell.ts` (#854), with four stages,
+and the southern cast's are in `art/south.ts` (#1051), with three. Every other
+record maps to a shared placeholder in `art/index.ts`, `PERSON` for a character
+and `PLACE` for a place, until its own issue draws it, so the drawing tests hold
+it like any series. Its 23 places (#853) are the ones a scene of the season or
+the book is set in, each filed in one of the realms, beyond the Wall or Essos,
+with no arc: `PlaceDossier.arc` is optional, and an arcless series prints no arc
+row. Darry is the book's alone and the Kingswood the show's. The demo shows the
+places the first ten episodes reach, and covers in its tail the four the show
+first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -289,11 +290,11 @@ checks this block.
 
 | Thing             | Count                                               |
 | ----------------- | --------------------------------------------------- |
-| Records           | 146                                                 |
-| Characters        | 123                                                 |
+| Records           | 162                                                 |
+| Characters        | 139                                                 |
 | Places            | 23                                                  |
 | Saga modules      | 1                                                   |
-| Line drawings     | 146, one per record, plus 8 redrawings of 8 records |
+| Line drawings     | 162, one per record, plus 8 redrawings of 8 records |
 | Chronicle stories | 0, for 0 characters                                 |
 
 <!-- End of the generated counts. -->
