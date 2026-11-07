@@ -5097,8 +5097,8 @@ export const season1: ThronesSaga = {
         },
       ],
       log: {
-        it: 'Si addestra a Castello Nero, dove combatte contro Jon Snow nel cortile. Tra le reclute è quello che resta ostile a Jon.',
-        en: 'He trains at Castle Black, where he fights Jon Snow in the yard. Among the recruits he is the one who stays hostile to Jon.',
+        it: 'Si addestra a Castello Nero, dove combatte contro Jon Snow nel cortile.',
+        en: 'He trains at Castle Black, where he fights Jon Snow in the yard.',
       },
       status: [{ episode: 3, chapter: 27, value: 'alive' }],
       affiliation: [
