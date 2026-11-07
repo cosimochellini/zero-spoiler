@@ -13,7 +13,6 @@ import {
   SEA,
   shadow,
   star,
-  wave,
 } from '~/lib/svg/primitives'
 
 /**
@@ -68,6 +67,115 @@ const MOCHA_CANDY: Stroke[] = [
   shadow(78, 174, 34),
 ]
 
+/** Punk Hazard's burning half: the fence with its hazard stripes and its door, a melted building behind. */
+const PUNK_HAZARD_SHORE: Stroke[] = [
+  {
+    d: 'M12 96 V70 L18 64 L22 70 L28 62 L34 68 L40 60 L46 66 L52 62 L58 70 V96',
+  },
+  {
+    d: 'M18 64 C14 56 18 48 22 44 C22 50 26 52 28 50 C28 42 32 36 36 32 C36 42 40 48 38 54 C40 52 42 50 42 46 C46 52 44 58 40 60',
+  },
+  { d: 'M6 150 V96 H96' },
+  { d: 'M6 108 H64 M24 150 V108 M44 150 V108', role: 'soft' },
+  { d: 'M14 96 l10 12 M30 96 l10 12 M46 96 l10 12', role: 'accent' },
+  { d: 'M64 150 V96 M96 150 V96 M64 134 L96 120' },
+]
+
+/** Punk Hazard's frozen half: ice peaks behind the laboratory, their far faces hatched. */
+const PUNK_HAZARD_ICE: Stroke[] = [
+  { d: 'M98 92 L106 70 L114 78 L128 30 L138 52 L148 38 L164 84' },
+  {
+    d: 'M128 30 L124 58 L130 76 M148 38 L144 62 M106 70 L108 86',
+    role: 'soft',
+  },
+  {
+    d: 'M131 42 l-5 4 M134 49 l-5 4 M151 46 l-5 4 M155 56 l-5 4 M159 66 l-5 4',
+    role: 'ambient',
+  },
+]
+
+/** Caesar's laboratory below the cut: walls, side, the shuttered entrance, the balcony. */
+const PUNK_HAZARD_LAB_BASE: Stroke[] = [
+  { d: 'M104 150 V124 M152 150 V124 M98 120 V146 L104 150' },
+  {
+    d: 'M120 150 V134 H136 V150 M120 140 H136 M120 145 H136 M98 120 L104 124 H152 M104 128 H152',
+    role: 'soft',
+  },
+  { d: 'M99 128 l4 3 M99 136 l4 3', role: 'ambient' },
+]
+
+/** Caesar's laboratory above the cut: walls, roof and chimneys, windows. */
+const PUNK_HAZARD_LAB_TOP: Stroke[] = [
+  {
+    d: 'M104 124 V96 H152 V124 M98 120 V92 L104 96 M112 96 V84 h6 V96 M136 96 V80 h6 V96',
+  },
+  { d: 'M110 108 h6 M125 108 h6 M140 108 h6', role: 'soft' },
+  { d: 'M99 102 l4 3 M99 110 l4 3', role: 'ambient' },
+]
+
+/** Punk Hazard's shore line under the fence and the laboratory, and the sea. */
+const PUNK_HAZARD_GROUND: Stroke[] = [
+  { d: 'M-4 150 H164', role: 'ambient' },
+  ...SEA.slice(1),
+]
+
+/**
+ * The old King's Plateau behind the colosseum, without its palace: a
+ * crown-shaped rock with a flat top between its points, the band below
+ * them, a few cracks and its far side hatched.
+ */
+const DRESSROSA_CROWN: Stroke[] = [
+  {
+    d: 'M36 102.4 L34 92 L37 80 L33 66 L30 50 L36 58 L42 38 L48 56 L54 44 L58 52 H78 L82 44 L88 56 L94 38 L100 58 L106 48 L103 64 L100 78 L103 90 L98 102.8',
+  },
+  { d: 'M33 60 C52 68 84 68 104 58', role: 'soft' },
+  { d: 'M46 76 L50 84 L48 94 M66 72 L64 84 M82 76 L86 90', role: 'soft' },
+  { d: 'M92 72 l6 -3 M92 82 l6 -3 M92 92 l6 -3', role: 'ambient' },
+]
+
+/**
+ * The new King's Plateau Pica raises beside the old one at 680: four steps,
+ * the palace on the top one with its towers and door, and its windows.
+ */
+const DRESSROSA_NEW_PLATEAU: Stroke[] = [
+  {
+    d: 'M114 132 V124 H117 V116 H120 V108 H123 V100 H149 V108 H152 V116 H155 V124 H158 V132 M126 100 V86 H131 V76 H141 V86 H146 V100 M133 100 V94 a3 3 0 0 1 6 0 V100',
+  },
+  { d: 'M129 90 v4 M143 90 v4 M134 80 v3 M138 80 v3', role: 'soft' },
+]
+
+/**
+ * The Corrida Colosseum in 3/4: the rim, the round wall, the seating bowl
+ * inside the rim, the two tier lines, two rows of arches and the far side
+ * hatched.
+ */
+const DRESSROSA_COLOSSEUM: Stroke[] = [
+  { d: ellipse(66, 110, 46, 10), role: 'accent' },
+  { d: 'M20 110 V140 A46 10 0 0 0 112 140 V110', role: 'accent' },
+  { d: ellipse(66, 111, 34, 6), role: 'soft' },
+  { d: 'M20 120 A46 10 0 0 0 112 120 M20 130 A46 10 0 0 0 112 130' },
+  {
+    d: 'M39.5 128.5 V123 a2.5 2.5 0 0 1 5 0 V128.5 M51.5 129.7 V124.2 a2.5 2.5 0 0 1 5 0 V129.7 M63.5 130 V124.5 a2.5 2.5 0 0 1 5 0 V130 M75.5 129.7 V124.2 a2.5 2.5 0 0 1 5 0 V129.7 M87.5 128.5 V123 a2.5 2.5 0 0 1 5 0 V128.5 M39.5 148.5 V143 a2.5 2.5 0 0 1 5 0 V148.5 M51.5 149.7 V144.2 a2.5 2.5 0 0 1 5 0 V149.7 M63.5 150 V144.5 a2.5 2.5 0 0 1 5 0 V150 M75.5 149.7 V144.2 a2.5 2.5 0 0 1 5 0 V149.7 M87.5 148.5 V143 a2.5 2.5 0 0 1 5 0 V148.5',
+    role: 'soft',
+  },
+  {
+    d: 'M104 116 l5 -3 M104 126 l5 -3 M104 136 l5 -3 M104 146 l5 -3',
+    role: 'ambient',
+  },
+]
+
+/** The low houses of Acacia either side of the colosseum, diced at 734. */
+const DRESSROSA_TOWN: Stroke = {
+  d: `${house(2, 10, 138, 131)} M120 150 V140 h12 V150 M116 140 L126 134 L136 140 M124 150 V144 h4 V150 M142 150 V140 h12 V150 M138 140 L148 134 L158 140 M146 150 V144 h4 V150`,
+  role: 'soft',
+}
+
+/** The shore under the colosseum and the sea, kept by both of its stages. */
+const DRESSROSA_ARC_SHORE: Stroke[] = [
+  { d: 'M-4 150 H164', role: 'ambient' },
+  ...SEA,
+]
+
 /** The drawings of the records filed in the dressrosa stretch of the route. */
 export const dressrosaArt = {
   // A strip torn from a pair of overalls, bunched on the deck of the Sun
@@ -100,29 +208,42 @@ export const dressrosaArt = {
     },
   ],
 
-  // The New World as the crew comes up into it at 579: the sea in front
-  // burning, flames standing on the water, and behind it the island low on
-  // the horizon, its far slope hatched. Its volcano erupts a chapter later
-  // (ch 655), and the frozen half is only clouds over the far side.
+  // The fire-and-ice island from the sea, as the arc shows it: the burning
+  // half on the left, a low hill with flames standing on its crown and lava
+  // running down its face (the sea of fire, ch. 655, ep 579); the frozen
+  // half on the right, ice peaks with their far faces hatched (ch. 657,
+  // ep 581). In front the sea burns on the fire side and icebergs drift on
+  // the ice side (ch. 659, ep 584). The laboratory is not in it.
   'punk-hazard-arc': [
-    { d: 'M-4 110 H16 M144 110 H164', role: 'ambient', dashed: true },
     {
-      d: 'M16 110 C24 100 32 92 42 88 L52 78 C62 71 76 69 88 71 C98 73 104 78 112 83 C124 92 136 102 144 110',
+      d: 'M2 150 C4 130 14 114 28 108 C40 102 54 102 66 108 C72 111 76 114 80 116 L86 102 L94 80 L102 90 L116 46 L126 68 L136 54 L150 92 C154 110 157 130 160 150',
     },
     {
-      d: 'M100 76 l7 -3 M110 83 l7 -3 M120 91 l7 -3 M130 99 l6 -3',
+      d: 'M12 116 c-3.3 -4.9 -1.6 -9.9 1.7 -13.2 c0 4.1 1.7 5.8 3.3 5.8 c-0.8 -6.6 0.8 -11.5 4.9 -16.5 c0.8 6.6 4.1 9.9 4.9 14.9 c1.7 -1.6 2.5 -4.1 2.5 -6.6 c4.1 4.9 4.1 11.6 -0.8 15.7 M30 106 c-4.4 -6.6 -2.2 -13.2 2.2 -17.6 c0 5.5 2.2 7.7 4.4 7.7 c-1.1 -8.8 1.1 -15.4 6.6 -22 c1.1 8.8 5.5 13.2 6.6 19.8 c2.2 -2.2 3.3 -5.5 3.3 -8.8 c5.5 6.6 5.5 15.4 -1.1 20.9 M54 108 c-3.3 -4.9 -1.6 -9.9 1.7 -13.2 c0 4.1 1.7 5.8 3.3 5.8 c-0.8 -6.6 0.8 -11.5 4.9 -16.5 c0.8 6.6 4.1 9.9 4.9 14.9 c1.7 -1.6 2.5 -4.1 2.5 -6.6 c4.1 4.9 4.1 11.6 -0.8 15.7',
+      role: 'accent',
+    },
+    {
+      d: 'M24 120 c-2 8 2 14 -2 22 M44 112 c2 8 -2 16 2 26 M66 116 c-2 6 2 12 0 18',
+      role: 'soft',
+    },
+    {
+      d: 'M116 46 L112 74 L118 96 M94 80 L96 98 M136 54 L132 80',
+      role: 'soft',
+    },
+    {
+      d: 'M120 58 l-5 4 M123 65 l-5 4 M140 66 l-5 4 M144 76 l-5 4 M148 86 l-5 4 M153 104 l-5 4 M156 116 l-5 4',
       role: 'ambient',
     },
-    { d: wave(128), role: 'ambient', dashed: true },
+    { d: 'M2 150 H160', role: 'ambient' },
     {
-      d: 'M34 128 c-2.8 -4.2 -1.4 -8.4 1.4 -11.2 c0 3.5 1.4 4.9 2.8 4.9 c-0.7 -5.6 0.7 -9.8 4.2 -14 c0.7 5.6 3.5 8.4 4.2 12.6 c1.4 -1.4 2.1 -3.5 2.1 -5.6 c3.5 4.2 3.5 9.8 -0.7 13.3 M108 128 c-2.4 -3.6 -1.2 -7.2 1.2 -9.6 c0 3 1.2 4.2 2.4 4.2 c-0.6 -4.8 0.6 -8.4 3.6 -12 c0.6 4.8 3 7.2 3.6 10.8 c1.2 -1.2 1.8 -3 1.8 -4.8 c3 3.6 3 8.4 -0.6 11.4',
+      d: 'M4 168 c-3.1 -4.6 -1.5 -9.2 1.5 -12.3 c0 3.9 1.5 5.4 3.1 5.4 c-0.8 -6.2 0.8 -10.8 4.6 -15.4 c0.8 6.2 3.9 9.2 4.6 13.9 c1.5 -1.5 2.3 -3.8 2.3 -6.2 c3.9 4.6 3.9 10.8 -0.8 14.6 M30 170 c-2.6 -4 -1.3 -7.9 1.3 -10.6 c0 3.3 1.3 4.6 2.6 4.6 c-0.7 -5.3 0.7 -9.2 4 -13.2 c0.7 5.3 3.3 7.9 4 11.9 c1.3 -1.3 2 -3.3 2 -5.3 c3.3 4 3.3 9.2 -0.7 12.5 M56 168 c-2.9 -4.3 -1.4 -8.6 1.4 -11.4 c0 3.6 1.4 5 2.9 5 c-0.7 -5.7 0.7 -10 4.3 -14.3 c0.7 5.7 3.6 8.6 4.3 12.9 c1.4 -1.4 2.1 -3.6 2.1 -5.7 c3.6 4.3 3.6 10 -0.7 13.6',
       role: 'accent',
     },
-    { d: wave(150), role: 'ambient' },
+    { d: 'M84 158 q10 -6 20 0 t20 0 t20 0 t20 0', role: 'ambient' },
     {
-      d: 'M6 150 c-4.4 -6.6 -2.2 -13.2 2.2 -17.6 c0 5.5 2.2 7.7 4.4 7.7 c-1.1 -8.8 1.1 -15.4 6.6 -22 c1.1 8.8 5.5 13.2 6.6 19.8 c2.2 -2.2 3.3 -5.5 3.3 -8.8 c5.5 6.6 5.5 15.4 -1.1 20.9 M62 150 c-5.2 -7.8 -2.6 -15.6 2.6 -20.8 c0 6.5 2.6 9.1 5.2 9.1 c-1.3 -10.4 1.3 -18.2 7.8 -26 c1.3 10.4 6.5 15.6 7.8 23.4 c2.6 -2.6 3.9 -6.5 3.9 -10.4 c6.5 7.8 6.5 18.2 -1.3 24.7 M124 150 c-4 -6 -2 -12 2 -16 c0 5 2 7 4 7 c-1 -8 1 -14 6 -20 c1 8 5 12 6 18 c2 -2 3 -5 3 -8 c5 6 5 14 -1 19',
-      role: 'accent',
+      d: 'M90 162 L97 146 L104 150 L111 138 L120 162 M130 162 L136 150 L144 152 L152 162',
     },
+    { d: 'M111 138 L109 162 M136 150 L138 162', role: 'soft' },
     ...SEA.slice(1),
   ],
 
@@ -154,40 +275,18 @@ export const dressrosaArt = {
     shadow(78, 186, 64),
   ],
 
-  // The island from the sea at 579: the World Government's fence along the
-  // shore with its hazard stripes, the door Zoro cuts through to get in,
-  // and behind it the melted buildings, their roofs torn ragged and the
-  // fire rising behind them, the far sides hatched. No sign and no emblem.
+  // The island from the sea at 579: on the burning side the World
+  // Government's fence along the shore with its hazard stripes and the door
+  // cut in it, a melted building burning behind; on the frozen side ice
+  // peaks, and at their foot, by the line where the halves meet, Caesar's
+  // laboratory built into the mountain, its chimneys on the roof. Law cuts
+  // it in half at 616, in `dressrosaRedrawn`.
   'punk-hazard': [
-    {
-      d: 'M12 96 V70 L18 64 L22 70 L28 62 L34 68 L40 60 L46 66 L52 62 L58 70 V96 M84 96 V56 L90 50 L96 56 L102 46 L108 54 L114 48 L120 56 L126 50 L132 58 L138 54 L144 62 V96',
-    },
-    {
-      d: 'M16 70 c1 6 -1 9 0 14 M34 68 c1 7 -1 11 0 16 M52 64 c1 5 -1 8 0 12 M90 52 c1 8 -1 12 0 18 M114 50 c1 9 -1 14 0 20 M138 56 c1 6 -1 9 0 14',
-      role: 'soft',
-    },
-    { d: 'M130 66 l7 -4 M130 78 l8 -5 M130 90 l8 -5', role: 'ambient' },
-    {
-      d: 'M18 64 C14 56 18 48 22 44 C22 50 26 52 28 50 C28 42 32 36 36 32 C36 42 40 48 38 54 C40 52 42 50 42 46 C46 52 44 58 40 60',
-      role: 'accent',
-    },
-    {
-      d: 'M90 50 C86 42 90 34 96 30 C96 36 99 38 101 37 C100 28 104 20 110 14 C111 22 116 28 116 34 C118 32 120 30 120 26 C125 32 124 42 114 48 M126 50 C124 44 127 39 130 37 C131 41 133 42 135 41 C138 45 139 50 138 54',
-      role: 'accent',
-    },
-    { d: 'M6 150 V96 H154 V150' },
-    { d: 'M6 108 H64 M96 108 H154', role: 'soft' },
-    {
-      d: 'M14 96 l10 12 M30 96 l10 12 M46 96 l10 12 M104 96 l10 12 M120 96 l10 12 M136 96 l10 12',
-      role: 'soft',
-    },
-    {
-      d: 'M24 150 V108 M44 150 V108 M116 150 V108 M136 150 V108',
-      role: 'soft',
-    },
-    { d: 'M64 150 V96 M96 150 V96 M64 134 L96 120' },
-    { d: 'M-4 150 H164', role: 'ambient' },
-    ...SEA,
+    ...PUNK_HAZARD_ICE,
+    ...PUNK_HAZARD_SHORE,
+    ...PUNK_HAZARD_LAB_BASE,
+    ...PUNK_HAZARD_LAB_TOP,
+    ...PUNK_HAZARD_GROUND,
   ],
 
   // His tricorne set down on the snow, the brims turned up and their
@@ -418,38 +517,17 @@ export const dressrosaArt = {
     },
   ],
 
-  // The island's edge seen from the sea as the crew comes in at 629: a wall
-  // of huge rocks with mist at their foot, the ship small on the water.
+  // The Corrida Colosseum on the shore of Acacia, a round amphitheatre in
+  // tiers with arches round its wall, and the crown-shaped King's Plateau
+  // rising behind it and dwarfing it, the Royal Palace small on its top,
+  // houses either side. The colosseum first appears in episode 631
+  // (ch. 702).
   'dressrosa-arc': [
-    {
-      d: 'M-4 124 L2 92 L14 78 L24 82 L36 66 L52 62 L60 74 L70 58 L88 50 L102 58 L108 74 L118 66 L134 68 L142 80 L156 78 L164 96',
-    },
-    {
-      d: 'M24 82 L22 112 M36 66 L32 114 M70 58 L64 108 M88 50 L82 110 M118 66 L114 112 M142 80 L138 112',
-      role: 'soft',
-    },
-    {
-      d: 'M40 76 l8 8 M38 90 l10 10 M74 70 l8 8 M72 84 l10 10 M92 64 l10 10 M90 80 l12 12 M122 78 l8 8 M120 92 l10 10 M146 92 l8 8',
-      role: 'ambient',
-    },
-    {
-      d: 'M-4 122 C20 116 40 126 60 118 S100 124 120 116 S150 126 164 118',
-      role: 'ambient',
-      dashed: true,
-    },
-    {
-      d: 'M-4 136 C24 130 48 140 76 134 S124 140 164 132',
-      role: 'ambient',
-      dashed: true,
-    },
-    { d: 'M-4 150 H94 M134 150 H164', role: 'ambient' },
-    { d: 'M96 158 H132 L126 167 H102 Z' },
-    { d: 'M114 158 V120' },
-    {
-      d: 'M98 126 C108 130 120 130 130 126 V150 C120 154 108 154 98 150 Z',
-      role: 'accent',
-    },
-    ...SEA.slice(1),
+    ...DRESSROSA_CROWN,
+    { d: 'M60 52 V42 H64 V34 H72 V42 H76 V52 M66 52 V48 a2 2 0 0 1 4 0 V52' },
+    ...DRESSROSA_COLOSSEUM,
+    DRESSROSA_TOWN,
+    ...DRESSROSA_ARC_SHORE,
   ],
 
   // Her ridge helmet in 3/4, the ridge running front to back, the brow band
@@ -2809,6 +2887,23 @@ export const dressrosaRedrawn: Redrawings = {
       ],
     },
   ],
+  // The same island after Law cuts the whole laboratory in half
+  // horizontally (616, ch. 690): the cut face on the ground floor and the
+  // top half sliding off it to the right.
+  'punk-hazard': [
+    {
+      episode: 616,
+      chapter: 690,
+      value: [
+        ...PUNK_HAZARD_ICE,
+        ...PUNK_HAZARD_SHORE,
+        ...PUNK_HAZARD_LAB_BASE,
+        { d: 'M98 120 L104 124 H152 L146 120 Z' },
+        ...moved(PUNK_HAZARD_LAB_TOP, 'translate(8 -4) rotate(8 152 124)'),
+        ...PUNK_HAZARD_GROUND,
+      ],
+    },
+  ],
   // The helmet and the braid without the shield, moved over to the middle.
   // She throws the shield down on her way into the D Block and fights with
   // the sword alone (651, ch. 721).
@@ -2918,6 +3013,45 @@ export const dressrosaRedrawn: Redrawings = {
           d: 'M52 141.4 L61.7 143.8 L60 150.6 L50.3 148.2 Z M52 141.4 L55.6 139.2 L65.3 141.6 L63.6 148.4 L60 150.6 M61.7 143.8 L65.3 141.6 M91.3 140.6 L103.1 138.5 L104.7 147.4 L92.9 149.5 Z M91.3 140.6 L93.7 137.1 L105.6 135.1 L107.1 143.9 L104.7 147.4 M103.1 138.5 L105.6 135.1 M104.7 132.3 L109.8 135.3 L107.3 139.7 L102.2 136.7 Z M104.7 132.3 L108.8 131.2 L113.9 134.2 L111.4 138.6 L107.3 139.7 M109.8 135.3 L113.9 134.2',
           role: 'soft',
         },
+      ],
+    },
+  ],
+  // The same coast at 680 (ch. 745), when Pica raises the ground under the
+  // hill beside the old plateau into a new stepped King's Plateau and sets
+  // the palace on its top, so the old crown stands bare, and the Birdcage
+  // closes over all of it, its strings running down from its top. At 734
+  // (ch. 791) the cage is gone and the town either side of the colosseum is
+  // diced into tumbled blocks; the palace still stands on the new plateau,
+  // and the colosseum stands too: only the ring inside it broke.
+  'dressrosa-arc': [
+    {
+      episode: 680,
+      chapter: 745,
+      value: [
+        ...DRESSROSA_CROWN,
+        ...DRESSROSA_NEW_PLATEAU,
+        ...DRESSROSA_COLOSSEUM,
+        DRESSROSA_TOWN,
+        ...DRESSROSA_ARC_SHORE,
+        { d: 'M0 150 A80 134 0 0 1 160 150' },
+        {
+          d: 'M20 150 A60 134 0 0 1 140 150 M40 150 A40 134 0 0 1 120 150 M60 150 A20 134 0 0 1 100 150 M80 16 V150',
+          role: 'ambient',
+        },
+      ],
+    },
+    {
+      episode: 734,
+      chapter: 791,
+      value: [
+        ...DRESSROSA_CROWN,
+        ...DRESSROSA_NEW_PLATEAU,
+        ...DRESSROSA_COLOSSEUM,
+        {
+          d: 'M3 136 L14.8 133.9 L16.9 145.7 L5.1 147.8 Z M3 136 L6.5 132.5 L18.3 130.4 L20.4 142.2 L16.9 145.7 M14.8 133.9 L18.3 130.4 M10 124 L16.6 126.4 L14.2 133 L7.6 130.6 Z M10 124 L13.5 120.5 L20.1 122.9 L17.7 129.5 L14.2 133 M16.6 126.4 L20.1 122.9 M116 140 L124.8 141.9 L122.9 150.7 L114.1 148.8 Z M116 140 L119.5 136.5 L128.3 138.4 L126.4 147.2 L122.9 150.7 M124.8 141.9 L128.3 138.4 M131 139 L140.9 137.6 L142.3 147.5 L132.4 148.9 Z M131 139 L134.5 135.5 L144.4 134.1 L145.8 144 L142.3 147.5 M140.9 137.6 L144.4 134.1 M147 140 L155.6 142.8 L152.8 151.3 L144.2 148.6 Z M147 140 L150.5 136.5 L159.1 139.3 L156.3 147.8 L152.8 151.3 M155.6 142.8 L159.1 139.3',
+          role: 'soft',
+        },
+        ...DRESSROSA_ARC_SHORE,
       ],
     },
   ],
