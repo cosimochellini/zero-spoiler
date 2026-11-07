@@ -500,11 +500,13 @@ describe('a faction label', () => {
     expect(met.map(({ at }) => first.get(at))).toStrictEqual(
       met.map(({ label }) => label),
     )
-    // The sweep's bookmarks fall outside the short stretch these groups
-    // hold an open eater, in both units: their eaters' next entries tag
-    // them otherwise. A faction added to this list needs a reason.
+    // The sweep's bookmarks fall outside the short stretch the first two
+    // groups hold an open eater, in both units: their eaters' next entries
+    // tag them otherwise. The Five Elders are a body of power no eater stands
+    // in, so the fruit album never groups them. A faction added to this list
+    // needs a reason.
     expect(new Set(missed.map(({ faction }) => faction))).toStrictEqual(
-      new Set(['galley-la', 'punk-hazard']),
+      new Set(['five-elders', 'galley-la', 'punk-hazard']),
     )
   })
 })
