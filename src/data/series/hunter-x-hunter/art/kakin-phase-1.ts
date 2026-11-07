@@ -4,7 +4,7 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, ellipse, SEA, shadow, star } from '~/lib/svg/primitives'
 
 /** The second of a pair: the first, mirrored about x 80. */
 const MIRRORED = 'matrix(-1 0 0 1 160 0)'
@@ -176,6 +176,9 @@ const SALE_SALE_EAR: Stroke[] = [
   { d: 'M58 34 C66 30 76 30 84 34 M54 46 C62 40 72 40 80 44', role: 'soft' },
   { d: 'M60 60 l-6 6 M60 80 l-6 6 M62 100 l-6 6', role: 'ambient' },
 ]
+
+/** Salé-salé's first drawing: the ear and its shadow. */
+const SALE_SALE: Stroke[] = [...SALE_SALE_EAR, shadow(88, 172, 36)]
 
 /**
  * Momoze's knitting in her rocking chair: the seat and back, the curved
@@ -350,7 +353,7 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
 
   // Salé-salé's right ear and its circular piercings, from the roster of
   // chapter 349.
-  'sale-sale-hui-guo-rou': [...SALE_SALE_EAR, shadow(88, 172, 36)],
+  'sale-sale-hui-guo-rou': SALE_SALE,
 
   // A pistol in 3/4, the trigger guard in tint and the grip hatched: the
   // gun Halkenburg holds on friendly soldiers to stop his siblings dying,
@@ -563,7 +566,42 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/** The Kakin records of phase 1 whose drawing changes in chapters 340–370 (#1154). */
+/**
+ * Zhang Lei's Guardian Spirit Beast: the dharmachakra, its rim, hub and
+ * eight spokes, the dark flame round it, the crosses about it and the one in
+ * a circle at its top.
+ */
+const DHARMACHAKRA: Stroke[] = [
+  { d: `${circle(80, 56, 32)} ${circle(80, 56, 25)}` },
+  { d: circle(80, 56, 7) },
+  {
+    d: 'M80 49 V31 M80 63 V81 M73 56 H55 M87 56 H105 M75 51 L62.3 38.3 M85 61 L97.7 73.7 M85 51 L97.7 38.3 M75 61 L62.3 73.7',
+    role: 'soft',
+  },
+  {
+    d: 'M52 38 C46 34 46 28 50 24 M48 60 C42 60 38 56 38 50 M58 84 C52 88 46 88 42 84 M102 84 C108 88 114 88 118 84 M112 60 C118 60 122 56 122 50 M108 38 C114 34 114 28 110 24',
+    role: 'ambient',
+  },
+  { d: `${circle(80, 16, 6)} M80 12 V20 M76 16 H84` },
+  {
+    d: 'M44 48 h6 M47 45 v6 M110 48 h6 M113 45 v6 M44 68 h6 M47 65 v6 M110 68 h6 M113 65 v6 M58 92 h6 M61 89 v6 M96 92 h6 M99 89 v6 M58 20 h6 M61 17 v6 M96 20 h6 M99 17 v6',
+    role: 'soft',
+  },
+]
+
+/** A manga-only stage of a Kakin record. */
+const KAKIN = { episode: 148, source: 'chapter' } as const
+
+/** Kacho's headphones, her first drawing without its shadow. */
+const KACHO_HEADPHONES = KAKIN_PHASE_ONE_DRAWINGS['kacho-hui-guo-rou'].slice(
+  0,
+  -1,
+)
+
+/** Fugetsu's glass harp, her first drawing. */
+const FUGETSU_HARP = KAKIN_PHASE_ONE_DRAWINGS['fugetsu-hui-guo-rou']
+
+/** The Kakin records of phase 1 whose drawing changes in chapters 340–400 (#1154, #1156). */
 export const kakinPhaseOneRedrawn: Redrawings = {
   'momoze-hui-guo-rou': [
     // Her Guardian Spirit Beast sits behind her as she knits, chapter 361:
@@ -571,9 +609,8 @@ export const kakinPhaseOneRedrawn: Redrawings = {
     // with three clawed toes, large ears, a mouse-like tail and a heart on
     // its belly. Its face is not drawn.
     {
-      episode: 148,
+      ...KAKIN,
       chapter: 361,
-      source: 'chapter',
       value: [
         ...moved(MOMOZE_KNITTING, BESIDE_THE_BEAST),
         {
@@ -601,9 +638,8 @@ export const kakinPhaseOneRedrawn: Redrawings = {
     // The same chair, the knitting dropped on the floor before it and the
     // needles apart: she is suffocated in her room, chapter 368.
     {
-      episode: 148,
+      ...KAKIN,
       chapter: 368,
-      source: 'chapter',
       value: [
         ...MOMOZE_CHAIR,
         { d: 'M98 160 L138 150 M106 170 L144 164', role: 'accent' },
@@ -615,10 +651,52 @@ export const kakinPhaseOneRedrawn: Redrawings = {
       ],
     },
   ],
+  'kacho-hui-guo-rou': [
+    // Her headphones lying in the lifeboat as it drifts out to sea, and the
+    // same headphones above it in the muted ink, a likeness: she dies in the
+    // escape, and her Guardian Spirit Beast takes her form to stay by
+    // Fugetsu, chapter 383, the chapter both are shown.
+    {
+      ...KAKIN,
+      chapter: 383,
+      value: [
+        ...moved(
+          KACHO_HEADPHONES,
+          'translate(80 144) scale(0.4) translate(-80 -142)',
+        ),
+        ...moved(
+          KACHO_HEADPHONES.map((stroke) => ({
+            ...stroke,
+            role: 'ambient' as const,
+          })),
+          'translate(80 92) scale(0.7) translate(-80 -142)',
+        ),
+        { d: 'M22 138 H138 L124 156 H36 Z' },
+        { d: 'M28 144 H132', role: 'soft' },
+        ...SEA,
+      ],
+    },
+  ],
+  'fugetsu-hui-guo-rou': [
+    // The small rounded door of the playground tunnel the twins played in
+    // as children, set in the wall above the same glass harp made small:
+    // her Guardian Spirit Beast's door first appears to her, chapter 374.
+    // The handle side is drawn by convention, a frame check: the wiki's
+    // note on it is about the outgoing door.
+    {
+      ...KAKIN,
+      chapter: 374,
+      value: [
+        ...moved(FUGETSU_HARP, BESIDE_THE_BEAST),
+        { d: 'M48 108 V52 C48 26 112 26 112 52 V108' },
+        { d: 'M56 108 V56 C56 36 104 36 104 56 V108', role: 'soft' },
+        { d: circle(64, 80, 3) },
+        { d: 'M6 108 H154', role: 'ambient' },
+        { d: 'M104 62 l6 -4 M104 78 l6 -4 M104 94 l6 -4', role: 'ambient' },
+      ],
+    },
+  ],
 }
-
-/** A Guardian Spirit Beast stage, shown in chapter 361 or 362. */
-const BEAST = { episode: 148, source: 'chapter' } as const
 
 /** One of the teardrop tentacles of Camilla's Guardian Spirit Beast. */
 const TENTACLE = 'M80 40 C72 30 72 18 77 12 Q80 16 83 12 C88 18 88 30 80 40'
@@ -634,7 +712,7 @@ export const kakinPhaseOneBeasts: Redrawings = {
     // triangular spikes for ears, beetle wings closed down its back, two
     // clawed arms and huge clawed legs, chapter 362.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
       value: [
         ...moved(BENJAMIN_JACKET, BESIDE_THE_BEAST),
@@ -654,12 +732,40 @@ export const kakinPhaseOneBeasts: Redrawings = {
         { d: 'M100 54 l5 -3 M102 66 l5 -3 M100 78 l5 -3', role: 'ambient' },
       ],
     },
+    // His right palm over the same jacket made small, three stars in tint
+    // below its fingers, open lines round the two that hold an inherited
+    // ability: Benjamin Baton, by which he inherits the abilities of his
+    // sworn soldiers when they die, first shown in chapter 373 with Vincent's
+    // and Musse's abilities and a third star without aura. Which fingers the
+    // stars sit under is a frame check.
+    {
+      ...KAKIN,
+      chapter: 373,
+      value: [
+        ...moved(BENJAMIN_JACKET, BESIDE_THE_BEAST),
+        {
+          d: 'M56 112 L52 50 Q52 44 57 44 Q62 44 62 50 V72 M62 72 V34 Q62 28 67 28 Q72 28 72 34 V70 M72 70 V26 Q72 20 77 20 Q82 20 82 26 V70 M82 70 V32 Q82 26 87 26 Q92 26 92 32 V80 C100 72 110 70 114 76 Q116 82 110 86 C102 94 100 102 98 112',
+        },
+        {
+          d: `${star(61, 86, 4.5, 2)} ${star(77, 84, 4.5, 2)} ${star(93, 88, 4.5, 2)}`,
+          role: 'accent',
+        },
+        {
+          d: 'M77 76 v-3 M71 80 l-3 -2 M83 80 l3 -2 M93 80 v-3 M87 84 l-3 -2 M99 84 l3 -2',
+          role: 'ambient',
+        },
+        {
+          d: 'M60 96 Q76 104 96 92 M62 60 h10 M72 52 h10 M82 56 h10',
+          role: 'soft',
+        },
+      ],
+    },
   ],
   'camilla-hui-guo-rou': [
     // A large sea anemone: teardrop tentacles, a scaled trunk and roots that
     // spread like a flowing skirt, chapter 362.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
       value: [
         ...moved(CAMILLA_UPDO, BESIDE_THE_BEAST),
@@ -684,31 +790,58 @@ export const kakinPhaseOneBeasts: Redrawings = {
         },
       ],
     },
+    // A huge cat above the same updo made small, the tip of its tail turned
+    // white (the wiki's ability box) and a drop falling from it: the cat
+    // drips the life it took from her killer into her mouth, and Cat's Name
+    // brings her back after Musse shoots her, chapter 373. It appears
+    // behind her killer; its pose here is a frame check. No face.
+    {
+      ...KAKIN,
+      chapter: 373,
+      value: [
+        ...moved(CAMILLA_UPDO, BESIDE_THE_BEAST),
+        {
+          d: 'M42 108 C34 78 42 52 58 44 L56 18 L72 34 Q80 32 88 34 L104 18 L102 44 C118 52 126 78 118 108',
+        },
+        { d: 'M60 30 L64 38 M100 30 L96 38', role: 'soft' },
+        { d: 'M118 100 C142 94 150 66 136 50' },
+        {
+          d: 'M136 50 C130 44 132 36 138 38 C144 40 144 48 136 50',
+          role: 'soft',
+        },
+        { d: 'M136 60 C133 64 133 68 136 68 C139 68 139 64 136 60 Z' },
+        {
+          d: 'M50 70 l-6 4 M48 84 l-6 4 M112 70 l6 4 M114 84 l6 4',
+          role: 'ambient',
+        },
+      ],
+    },
   ],
   'zhang-lei-hui-guo-rou': [
     // A great dharmachakra, the wheel of eight spokes, a dark flame running
     // round its rim, eight crosses about it and one in a circle at its top,
     // chapter 362.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
+      value: [...moved(ZHANG_LEI, BESIDE_THE_BEAST), ...DHARMACHAKRA],
+    },
+    // The same wheel, and a coin falling from it, its floral design in tint:
+    // a coin drops out of the beast's mouth onto the floor behind him while
+    // he eats, chapter 374. The number on the coin is lettering, so it is not
+    // drawn; the flower is drawn by convention, a frame check. No glow.
+    {
+      ...KAKIN,
+      chapter: 374,
       value: [
         ...moved(ZHANG_LEI, BESIDE_THE_BEAST),
-        { d: `${circle(80, 56, 32)} ${circle(80, 56, 25)}` },
-        { d: circle(80, 56, 7) },
+        ...DHARMACHAKRA,
+        { d: `${circle(128, 112, 12)} ${circle(128, 112, 9)}` },
         {
-          d: 'M80 49 V31 M80 63 V81 M73 56 H55 M87 56 H105 M75 51 L62.3 38.3 M85 61 L97.7 73.7 M85 51 L97.7 38.3 M75 61 L62.3 73.7',
-          role: 'soft',
+          d: `${circle(128, 107, 2.5)} ${circle(132.8, 110.5, 2.5)} ${circle(131, 116, 2.5)} ${circle(125, 116, 2.5)} ${circle(123.2, 110.5, 2.5)}`,
+          role: 'accent',
         },
-        {
-          d: 'M52 38 C46 34 46 28 50 24 M48 60 C42 60 38 56 38 50 M58 84 C52 88 46 88 42 84 M102 84 C108 88 114 88 118 84 M112 60 C118 60 122 56 122 50 M108 38 C114 34 114 28 110 24',
-          role: 'ambient',
-        },
-        { d: `${circle(80, 16, 6)} M80 12 V20 M76 16 H84` },
-        {
-          d: 'M44 48 h6 M47 45 v6 M110 48 h6 M113 45 v6 M44 68 h6 M47 65 v6 M110 68 h6 M113 65 v6 M58 92 h6 M61 89 v6 M96 92 h6 M99 89 v6 M58 20 h6 M61 17 v6 M96 20 h6 M99 17 v6',
-          role: 'soft',
-        },
+        { d: 'M112 90 l4 6 M120 88 l3 6 M140 92 l-3 6', role: 'ambient' },
       ],
     },
   ],
@@ -717,7 +850,7 @@ export const kakinPhaseOneBeasts: Redrawings = {
     // heels for hooves and a tail of many whips. It confronts Theta with
     // him, chapter 362. Its faces are not drawn.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
       value: [
         ...moved([...SCARLET_EYES_JAR, shadow(80, 166, 40)], BESIDE_THE_BEAST),
@@ -740,12 +873,33 @@ export const kakinPhaseOneBeasts: Redrawings = {
         { d: 'M98 64 l5 -3 M104 74 l5 -3 M96 78 l5 -3', role: 'ambient' },
       ],
     },
+    // The same jar, and behind it its likeness in the muted ink where it
+    // will be ten seconds later: with his eyes shut in Zetsu he sees ten
+    // seconds ahead, and Theta sees him dead where he no longer is, chapter
+    // 385 (explained in 387). No glow.
+    {
+      ...KAKIN,
+      chapter: 385,
+      value: [
+        ...moved(
+          SCARLET_EYES_JAR.map((stroke) => ({
+            ...stroke,
+            role: 'ambient' as const,
+          })),
+          'translate(22 -22)',
+        ),
+        ...moved(
+          [...SCARLET_EYES_JAR, shadow(80, 166, 40)],
+          'translate(-12 10)',
+        ),
+      ],
+    },
   ],
   'tubeppa-hui-guo-rou': [
     // A horned amphibian on spiked axle wheels for legs, a row of pole-like
     // horns standing on its back, chapter 362.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
       value: [
         ...moved(TUBEPPA_GLASSES, BESIDE_THE_BEAST),
@@ -770,7 +924,7 @@ export const kakinPhaseOneBeasts: Redrawings = {
     // A heart-shaped creature hovering above her on four small wings,
     // chapter 362. Its one eye is not drawn.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
       value: [
         ...moved(TYSON_BOOKS, BESIDE_THE_BEAST),
@@ -791,7 +945,7 @@ export const kakinPhaseOneBeasts: Redrawings = {
     // extensions behind its head and many legs, chapter 362. Its face is not
     // drawn, nor the pincer at its tail, first shown in chapter 375.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
       value: [
         ...moved([...LUZURUS_HAIR, shadow(80, 176, 50)], BESIDE_THE_BEAST),
@@ -811,10 +965,10 @@ export const kakinPhaseOneBeasts: Redrawings = {
     // A spherical mass with no clear anatomy hovering over him, covered in
     // mouths of many sizes drawn as plain slits, chapter 362.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 362,
       value: [
-        ...moved([...SALE_SALE_EAR, shadow(88, 172, 36)], BESIDE_THE_BEAST),
+        ...moved(SALE_SALE, BESIDE_THE_BEAST),
         {
           d: 'M80 18 C96 16 112 26 116 42 C122 58 114 78 100 86 C88 94 68 94 56 86 C42 76 38 56 44 40 C50 26 64 18 80 18 Z',
         },
@@ -825,12 +979,32 @@ export const kakinPhaseOneBeasts: Redrawings = {
         { d: 'M104 34 l5 -3 M110 48 l5 -3 M108 64 l5 -3', role: 'ambient' },
       ],
     },
+    // Rihan's Predator eats the beast whole, chapter 381: his first drawing
+    // again.
+    { ...KAKIN, chapter: 381, value: SALE_SALE },
+    // The same ear lying on its side on a pillow: he is found in bed, not
+    // breathing, killed by Benjamin's soldier, chapter 382.
+    {
+      ...KAKIN,
+      chapter: 382,
+      value: [
+        {
+          d: 'M14 150 C10 130 20 124 40 124 H120 C140 124 150 130 146 150 C150 168 140 174 120 174 H40 C20 174 10 168 14 150 Z',
+        },
+        { d: 'M30 134 Q80 142 130 134', role: 'soft' },
+        ...moved(
+          SALE_SALE_EAR,
+          'translate(84 142) rotate(-90) scale(0.62) translate(-88 -96)',
+        ),
+        { d: 'M4 180 H156', role: 'ambient', dashed: true },
+      ],
+    },
   ],
   'halkenburg-hui-guo-rou': [
     // A shaggy gargoyle with two horns over its head and three clawed
     // fingers and toes, chapter 361. Its one eye and scowl are not drawn.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 361,
       value: [
         ...moved(HALKENBURG_PISTOL, BESIDE_THE_BEAST),
@@ -851,12 +1025,33 @@ export const kakinPhaseOneBeasts: Redrawings = {
         { d: 'M64 52 Q80 46 96 52', role: 'soft' },
       ],
     },
+    // A bow drawn with an arrow on its string, over the same pistol made
+    // small: the bow his aura forms and the arrow made of his guards' aura,
+    // which nothing can stop once drawn, first shot in chapter 382.
+    {
+      ...KAKIN,
+      chapter: 382,
+      value: [
+        ...moved(HALKENBURG_PISTOL, BESIDE_THE_BEAST),
+        { d: 'M60 12 C34 34 34 88 60 110' },
+        { d: 'M60 12 L106 61 L60 110', role: 'soft' },
+        { d: 'M110 61 H14 M14 61 l10 -6 M14 61 l10 6' },
+        {
+          d: 'M110 61 l8 -6 M110 61 l8 6 M102 61 l8 -6 M102 61 l8 6',
+          role: 'soft',
+        },
+        {
+          d: 'M40 30 l-6 -4 M36 92 l-6 4 M126 48 l6 -4 M126 74 l6 4',
+          role: 'ambient',
+        },
+      ],
+    },
   ],
   'marayam-hui-guo-rou': [
     // A long Chinese dragon coiling over the cage: three horns at its head,
     // fins beneath its body and a pointed fin for a tail, chapter 366.
     {
-      ...BEAST,
+      ...KAKIN,
       chapter: 366,
       value: [
         ...moved(MARAYAM_CAGE, BESIDE_THE_BEAST),

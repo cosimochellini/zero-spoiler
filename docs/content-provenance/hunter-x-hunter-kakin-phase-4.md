@@ -7,8 +7,7 @@ API. Cast lists and first-appearance fields identify candidates only.
 
 Manga pages, exact page numbers and licensed Italian manga spellings were not
 viewed. English character names are retained in Italian pending verified forms.
-Original neutral placeholders follow Election; finished drawings and redrawings
-remain #917. Chronicles remain #918.
+The records are drawn in #1156 (part of #917). Chronicles remain #918.
 
 ## Filed characters
 

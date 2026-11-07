@@ -11,7 +11,7 @@ import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
  * drawn by: the neck, the shoulders of the black suit or the robe, its
  * collar, and the shade across the back hatched.
  */
-const FROM_BEHIND: Stroke[] = [
+export const FROM_BEHIND: Stroke[] = [
   { d: 'M66 106 V122 M94 106 V122' },
   { d: 'M24 176 C28 140 46 126 66 122 M136 176 C132 140 114 126 94 122' },
   { d: 'M66 122 Q80 130 94 122', role: 'soft' },
@@ -23,7 +23,7 @@ const FROM_BEHIND: Stroke[] = [
 ]
 
 /** The back of a head, down to the nape, under its hair. */
-const SKULL = 'M58 106 C54 74 64 56 80 56 C96 56 106 74 102 106'
+export const SKULL = 'M58 106 C54 74 64 56 80 56 C96 56 106 74 102 106'
 
 /**
  * A left hand from the back, fingers together, the pinion marked on it in
@@ -59,6 +59,31 @@ const VINCENT_VIAL: Stroke[] = [
   { d: 'M113 60 V88 Q119 96 125 88 V60' },
   { d: 'M113 74 Q119 77 125 74', role: 'soft' },
   { d: 'M121 78 l3 -2 M121 86 l3 -2', role: 'ambient' },
+]
+
+/** Kurapika's tape line across the floor of the Nen class. */
+const MYUHAN_TAPE: Stroke = {
+  d: 'M4 140 L156 128 M4 148 L156 136',
+  role: 'soft',
+}
+
+/** Myuhan's black shoe side on, its toe in tint and its side hatched. */
+const MYUHAN_SHOE: Stroke[] = [
+  {
+    d: 'M54 150 C52 132 60 122 76 120 L104 118 C122 118 134 126 134 140 H58 Z',
+  },
+  { d: 'M100 118 C110 118 124 124 128 132', role: 'accent' },
+  { d: 'M54 150 H136 V144', role: 'soft' },
+  {
+    d: 'M62 132 l10 -8 M66 140 l14 -12 M78 140 l14 -12 M90 140 l12 -10',
+    role: 'ambient',
+  },
+]
+
+/** The roll of tape, lying on the floor. */
+const MYUHAN_ROLL: Stroke[] = [
+  { d: `${ellipse(30, 164, 14, 6)} ${ellipse(30, 164, 6, 3)}` },
+  { d: 'M16 164 V170 C16 176 44 176 44 170 V164', role: 'soft' },
 ]
 
 export const KAKIN_PHASE_TWO_DRAWINGS = {
@@ -267,19 +292,10 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
   // stepping over it, the shoe's toe in tint, the roll of tape beside it:
   // he crosses it on purpose to provoke the teacher, chapter 370.
   'myuhan': [
-    { d: 'M4 140 L156 128 M4 148 L156 136', role: 'soft' },
-    {
-      d: 'M54 150 C52 132 60 122 76 120 L104 118 C122 118 134 126 134 140 H58 Z',
-    },
-    { d: 'M100 118 C110 118 124 124 128 132', role: 'accent' },
-    { d: 'M54 150 H136 V144', role: 'soft' },
-    {
-      d: 'M62 132 l10 -8 M66 140 l14 -12 M78 140 l14 -12 M90 140 l12 -10',
-      role: 'ambient',
-    },
+    MYUHAN_TAPE,
+    ...MYUHAN_SHOE,
     { d: 'M60 120 V96 H80 V118', role: 'soft' },
-    { d: `${ellipse(30, 164, 14, 6)} ${ellipse(30, 164, 6, 3)}` },
-    { d: 'M16 164 V170 C16 176 44 176 44 170 V164', role: 'soft' },
+    ...MYUHAN_ROLL,
     shadow(96, 160, 48),
   ],
 
@@ -371,7 +387,7 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/** The Kakin records of phase 2 whose drawing changes in chapters 340–370 (#1154). */
+/** The Kakin records of phase 2 whose drawing changes in chapters 340–400 (#1154, #1156). */
 export const kakinPhaseTwoRedrawn: Redrawings = {
   vincent: [
     // The dropped knife and vial, the vial tipped on its side: caught by
@@ -385,6 +401,21 @@ export const kakinPhaseTwoRedrawn: Redrawings = {
         ...moved(VINCENT_KNIFE, 'translate(0 20)'),
         ...moved(VINCENT_VIAL, 'rotate(-90 119 74) translate(-80 -20)'),
         { d: 'M4 162 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  myuhan: [
+    // The same shoe knocked over, sole up, at the tape line, the roll of
+    // tape beside it, and no one in it: the Silent Majority user kills him
+    // during the Nen class, chapter 376.
+    {
+      episode: 148,
+      chapter: 376,
+      source: 'chapter',
+      value: [
+        MYUHAN_TAPE,
+        ...moved(MYUHAN_SHOE, 'translate(6 24) matrix(1 0 0 -1 0 270)'),
+        ...MYUHAN_ROLL,
       ],
     },
   ],

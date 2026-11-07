@@ -222,6 +222,27 @@ const KORTOPI_VASE: Stroke[] = [
  * The Yorknew City records (#900), each at its named scene: first-pass
  * drawings, graded and redrawn in #901.
  */
+/** Neon's stack of blank sheets in 3/4, its edge hatched. */
+export const NEON_SHEETS: Stroke[] = [
+  { d: 'M22 130 L98 110 L140 138 L64 160 Z' },
+  { d: 'M22 130 V138 L64 168 L140 146 V138' },
+  { d: 'M22 134 L64 164 L140 142', role: 'soft' },
+  { d: 'M30 126 L96 108 M100 112 L134 134', role: 'soft' },
+  {
+    d: 'M78 164 l3 -5 M96 159 l3 -5 M114 153 l3 -5 M130 148 l3 -5',
+    role: 'ambient',
+  },
+]
+
+/** The pen her power guides, the nib in tint. */
+export const NEON_PEN: Stroke[] = [
+  { d: 'M44 48 L52 42 L114 112 L106 118 Z' },
+  { d: 'M44 48 C40 44 46 38 52 42', role: 'soft' },
+  { d: 'M58 62 L66 56 M62 66 L96 104', role: 'soft' },
+  { d: 'M106 118 L118 132 L114 112', role: 'accent' },
+  { d: 'M70 76 l4 -4 M80 88 l4 -4 M90 100 l4 -4', role: 'ambient' },
+]
+
 export const YORKNEW_CITY_DRAWINGS = {
   // Melody's brimmed hat in 3/4, the band in tint and the crown's far side
   // hatched: she wears a hat in public, and is one of the six applicants
@@ -287,22 +308,7 @@ export const YORKNEW_CITY_DRAWINGS = {
   // A pen over a stack of blank sheets, the nib in tint and the stack's
   // edge hatched: Neon writes her fortunes with a hand her power guides,
   // episode 41 / chapter 71. No words on the sheets.
-  'neon-nostrade': [
-    { d: 'M22 130 L98 110 L140 138 L64 160 Z' },
-    { d: 'M22 130 V138 L64 168 L140 146 V138' },
-    { d: 'M22 134 L64 164 L140 142', role: 'soft' },
-    { d: 'M30 126 L96 108 M100 112 L134 134', role: 'soft' },
-    {
-      d: 'M78 164 l3 -5 M96 159 l3 -5 M114 153 l3 -5 M130 148 l3 -5',
-      role: 'ambient',
-    },
-    { d: 'M44 48 L52 42 L114 112 L106 118 Z' },
-    { d: 'M44 48 C40 44 46 38 52 42', role: 'soft' },
-    { d: 'M58 62 L66 56 M62 66 L96 104', role: 'soft' },
-    { d: 'M106 118 L118 132 L114 112', role: 'accent' },
-    { d: 'M70 76 l4 -4 M80 88 l4 -4 M90 100 l4 -4', role: 'ambient' },
-    shadow(84, 184, 58),
-  ],
+  'neon-nostrade': [...NEON_SHEETS, ...NEON_PEN, shadow(84, 184, 58)],
   // Ivlenkov's black suit jacket from the front, buttoned over a round
   // front, its far half hatched and the tie in tint: the plump bodyguard
   // Dalzollene sends to bid at the Underground Auction, episode 42 /
