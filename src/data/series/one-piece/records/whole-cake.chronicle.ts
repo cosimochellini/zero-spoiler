@@ -251,6 +251,118 @@ export const wholeCakeChronicles = {
       },
     },
   ],
+  'pedro': [
+    {
+      episode: 757,
+      value: {
+        title: { it: 'I Guardiani si ritirano', en: 'The Guardians fall back' },
+        body: {
+          it: 'Nella Foresta della Balena [[monkey-d-luffy|Rufy]] si scontra con due mink che gli sbarrano la strada, e non sa che decine di altri lo hanno già circondato tra gli alberi. Sono i Guardiani, che hanno il compito di tenere gli intrusi fuori dalla foresta, e dalla cima di un albero li comanda Pedro, un mink giaguaro. Arrivano [[wanda|Wanda]] e [[carrot|Carrot]] a fermare lo scontro. Wanda si scusa con Pedro per l’intrusione e gli chiede di richiamare i suoi uomini. Pedro dà l’ordine, e i Guardiani spariscono tutti insieme. Rufy non si era accorto di nessuno di loro, e Wanda gli dice di ringraziare che non fosse una notte di luna.',
+          en: 'In the Whale Forest [[monkey-d-luffy|Luffy]] clashes with two minks who block his way, without knowing that dozens more have already surrounded him in the trees. They are the Guardians, whose job is to keep intruders out of the forest, and from a treetop Pedro, a jaguar mink, commands them. [[wanda|Wanda]] and [[carrot|Carrot]] ride in to stop the fight. Wanda apologises to Pedro for the intrusion and asks him to call his men back. Pedro gives the order, and the Guardians vanish all at once. Luffy had not sensed a single one of them, and Wanda tells him to be glad it was not a moonlit night.',
+        },
+      },
+    },
+    {
+      episode: 772,
+      chapter: 819,
+      value: {
+        title: { it: 'Quando erano amici', en: 'When they were friends' },
+        body: {
+          it: 'In città i mink festeggiano la tregua tra [[inuarashi|Cane-tempesta]] e [[nekomamushi|Gatto-vipera]]. Le loro giornate non dovranno più essere divise con tanta rigidità tra i due sovrani, e cominciano a preparare un banchetto. Pedro, con [[wanda|Wanda]] e [[carrot|Carrot]], ricorda il tempo in cui i due duchi erano amici. La loro rivalità, racconta, è cominciata dopo che i due sono tornati quasi morti dal loro viaggio per mare. Intanto i duchi sono ancora sull’Albero Balena con i loro ospiti, e giù in città tutto il ducato si prepara alla festa.',
+          en: 'In the city the minks celebrate the truce between [[inuarashi|Inuarashi]] and [[nekomamushi|Nekomamushi]]. Their days need no longer be split so strictly between the two rulers, and they start preparing a banquet. Pedro, with [[wanda|Wanda]] and [[carrot|Carrot]], remembers a time when the two dukes were friends. Their feud, he says, began after the two of them came back from their voyage at sea barely alive. Up on the Whale Tree, meanwhile, the dukes are still with their guests, and down in the city the whole dukedom gets ready for the party.',
+        },
+      },
+    },
+    {
+      episode: 776,
+      chapter: 822,
+      value: {
+        title: { it: 'Un solo mink nella squadra', en: 'One mink on the team' },
+        body: {
+          it: 'Pedro va da [[nekomamushi|Gatto-vipera]]: sarebbe un disonore se nessun mink, a parte [[pekoms|Pekoms]], partisse per riportare indietro [[sanji|Sanji]]. Quando il duca gli chiede se vuole andare lui, risponde di sì, e dopo che mezzo ducato si è offerto a sua volta la scelta cade su di lui, perché è l’unico capace di tenere a bada Pekoms. Al portone Pekoms gli chiede che cosa ci faccia lì, e Pedro risponde che viene come uno che conosce le sue abitudini. Gli altri salutano la squadra. Poi [[monkey-d-luffy|Rufy]] afferra tutti i suoi compagni e salta giù dall’elefante, tra lo sgomento di chi resta.',
+          en: 'Pedro goes to [[nekomamushi|Nekomamushi]]: it would be a dishonour if no mink but [[pekoms|Pekoms]] went to bring [[sanji|Sanji]] back. When the duke asks whether he wants to go himself, he says yes, and after half the dukedom has volunteered too, the choice falls on him, because he is the only one who can keep Pekoms in line. At the gate Pekoms asks what he is doing there, and Pedro answers that he comes as someone who knows Pekoms’ habits. The others say goodbye to the team. Then [[monkey-d-luffy|Luffy]] grabs all his companions and leaps off the elephant, to the shock of everyone left behind.',
+        },
+      },
+    },
+  ],
+  'inuarashi': [
+    {
+      episode: 758,
+      chapter: 809,
+      value: {
+        title: { it: 'Il duca del giorno', en: 'The duke of the day' },
+        body: {
+          it: 'Nel suo sanatorio, fasciato dopo l’assalto, Cane-tempesta ringrazia la ciurma di Cappello di paglia per aver salvato il suo paese. [[wanda|Wanda]] lo chiama il guerriero più forte che abbiano, e lui risponde che chi è stato sconfitto non ha diritto a quella parola. Nota il cappello di [[monkey-d-luffy|Rufy]]: tanto tempo fa lui e il sovrano della notte sono andati per mare e hanno incontrato [[shanks|Shanks]]. Prima che Rufy possa rispondere, il duca si addormenta. Sono le sei di sera. I due sovrani si odiano tanto che si batterebbero appena si vedono, spiega Wanda, e così lui regna dalle sei del mattino alle sei di sera, l’altro nelle dodici ore restanti.',
+          en: 'In his sanatorium, bandaged after the raid, Inuarashi thanks the Straw Hats for saving his country. [[wanda|Wanda]] calls him the strongest warrior they have, and he answers that a man who was beaten has no right to the word. He notices [[monkey-d-luffy|Luffy]]’s hat: long ago he and the ruler of the night went to sea and met [[shanks|Shanks]]. Before Luffy can reply, the duke falls asleep. It is six in the evening. The two rulers hate each other so much that they would fight on sight, Wanda explains, so he rules from six in the morning to six in the evening, and the other one for the remaining twelve hours.',
+        },
+      },
+    },
+    {
+      episode: 759,
+      chapter: 809,
+      value: {
+        title: { it: 'La spada a terra', en: 'The sword on the ground' },
+        body: {
+          it: 'Diciassette giorni fa Cane-tempesta arriva in sella sul campo di battaglia e chiede a [[jack|Jack]] di fermarsi. Gli va incontro da solo, sguaina la spada e la lascia cadere: Jack può perquisire tutta l’isola in pace. Jack risponde con un colpo di proboscide, e il duca la trattiene. Jack si fermerà soltanto quando avrà trovato il samurai, e comunque distruggere gli piace. Allora Cane-tempesta ordina ai suoi Moschettieri di attaccare e si lancia con loro contro Jack. Alle sei di sera il turno vale anche in guerra: il duca e i suoi uomini si ritirano, e i Guardiani della foresta si riversano in città.',
+          en: 'Seventeen days ago Inuarashi rides into the battle and asks [[jack|Jack]] to stop. He walks up to him alone, draws his sword and lets it fall: Jack may search the whole island in peace. Jack answers with a blow of his trunk, and the duke holds it back. Jack will stop only when the samurai is found, and he likes destruction anyway. So Inuarashi orders his Musketeers to attack and charges Jack with them. At six in the evening the shift holds even in war: the duke and his men withdraw, and the forest’s Guardians pour into the city.',
+        },
+      },
+    },
+    {
+      episode: 760,
+      chapter: 810,
+      value: {
+        title: { it: 'Un giorno in croce', en: 'A day on the cross' },
+        body: {
+          it: 'La battaglia dura cinque giorni, i Moschettieri di giorno e i Guardiani di notte, e nessuna delle due parti abbatte il capo dell’altra. Poi [[jack|Jack]] perde la pazienza e libera un gas velenoso, una delle armi di [[caesar-clown|Caesar]]. I mink crollano dove si trovano, e i Pirati delle Cento Bestie li massacrano chiedendo a ciascuno del samurai. Cane-tempesta e il sovrano della notte vengono legati a una croce e torturati per un giorno intero, e continuano a dire di non sapere niente. Poi Jack se ne va. Svegliatosi un momento, Cane-tempesta spiega ai Cappello di paglia il perché: Jack è partito per salvare [[donquixote-doflamingo|Do Flamingo]], che la loro ciurma aveva sconfitto, e così hanno salvato Zou senza saperlo.',
+          en: 'The battle lasts five days, the Musketeers by day and the Guardians by night, and neither side can bring down the other’s leader. Then [[jack|Jack]] loses patience and releases a poison gas, one of [[caesar-clown|Caesar]]’s weapons. The minks fall where they stand, and the Beasts Pirates slaughter them, asking each one about the samurai. Inuarashi and the ruler of the night are chained to crosses and tortured for a whole day, and both go on saying they know nothing. Then Jack leaves. Waking for a moment, Inuarashi tells the Straw Hats why: Jack went to rescue [[donquixote-doflamingo|Doflamingo]], whom their crew had beaten, so they saved Zou without knowing it.',
+        },
+      },
+    },
+    {
+      episode: 767,
+      chapter: 816,
+      value: {
+        title: { it: 'Cane contro gatto', en: 'Dog against cat' },
+        body: {
+          it: 'Una campana suona su Zou: due samurai sono saliti sull’elefante. Cane-tempesta e [[nekomamushi|Gatto-vipera]] corrono in città con i loro uomini. Dall’alto di un tetto [[pedro|Pedro]] vede il pericolo e cerca di avvertire il suo sovrano, ma [[shishilian|Sicilian]] sussulta e i due duchi si voltano e si vedono. Si scherniscono a vicenda per le ferite; [[jack|Jack]] ha tagliato una gamba a Cane-tempesta perché non parlava. Ciascuno dice che la morte dell’altro gli sarebbe andata benissimo, e si affrontano per battersi fino alla morte. Allora [[kinemon|Kin’emon]] si fa avanti, un samurai di Wano in cerca di un compagno. Tutti i mink si inginocchiano, e i due duchi, in lacrime, gli dicono che il suo compagno è salvo.',
+          en: 'A bell rings out over Zou: two samurai have climbed the elephant. Inuarashi and [[nekomamushi|Nekomamushi]] both race to the city with their men. From a rooftop [[pedro|Pedro]] sees the danger and tries to warn his ruler, but [[shishilian|Shishilian]] gasps and the two dukes turn and see each other. They mock each other’s wounds; [[jack|Jack]] cut off Inuarashi’s leg because he would not talk. Each says the other’s death would have suited him fine, and they square up for a fight to the death. Then [[kinemon|Kin’emon]] steps out, a samurai of Wano looking for a comrade. Every mink kneels, and the two dukes, in tears, tell him his comrade is safe.',
+        },
+      },
+    },
+  ],
+  'nekomamushi': [
+    {
+      episode: 761,
+      value: {
+        title: { it: 'Il sovrano della notte', en: 'The ruler of the night' },
+        body: {
+          it: 'Alle sei di sera, mentre [[jack|Jack]] combatte contro i Moschettieri, un grido sale dalla foresta e i Guardiani si precipitano in città dietro il loro sovrano, Gatto-vipera. L’enorme mink gatto afferra Jack per la proboscide, lo ribalta sulla schiena e si lecca le zampe. Si batte con Jack fino all’alba, poi lascia il campo a [[inuarashi|Cane-tempesta]] e dice a Jack di non farsi uccidere da lui prima della notte dopo. Dopo il gas viene crocifisso insieme al duca cane e non dice niente. Dieci giorni fa il gruppo di [[sanji|Sanji]] dissolve il gas e cura i mink, e lui viene tirato giù dalla croce privo di sensi.',
+          en: 'At six in the evening, while [[jack|Jack]] is fighting the Musketeers, a cry rises from the forest and the Guardians race into the city behind their ruler, Nekomamushi. The huge cat mink grabs Jack by the trunk, flips him onto his back and licks his paws. He fights Jack until dawn, then leaves the field to [[inuarashi|Inuarashi]], telling Jack not to let the dog kill him before the next night. After the gas he is crucified with the dog duke and says nothing. Ten days ago [[sanji|Sanji]]’s group clears the gas and cures the minks, and he is taken down from the cross unconscious.',
+        },
+      },
+    },
+    {
+      episode: 768,
+      value: {
+        title: { it: 'Mai consegnato', en: 'Never handed over' },
+        body: {
+          it: '[[kinemon|Kin’emon]] mostra lo stemma sulla schiena, e quando i due duchi ricominciano a litigare [[momonosuke|Momonosuke]] grida di smetterla: suo padre ne sarebbe triste. Gatto-vipera e [[inuarashi|Cane-tempesta]] si inchinano al bambino, che non è il figlio di Kin’emon ma il figlio ed erede di un daimyo di Wano, e per lui si stringono la mano in una tregua. Poi guidano tutti su per l’Albero Balena fino a una porta nascosta sul retro. Dentro, incatenato a una grande pietra rossa, c’è [[raizo|Raizo]], il ninja che i Pirati delle Cento Bestie cercavano. Raizo, in lacrime, chiede perché i mink che gli portano da mangiare siano tutti feriti.',
+          en: '[[kinemon|Kin’emon]] bares the crest on his back, and when the two dukes start quarrelling again, [[momonosuke|Momonosuke]] shouts at them to stop: it would make his father sad. Nekomamushi and [[inuarashi|Inuarashi]] bow to the boy, who is not Kin’emon’s son but the son and heir of a daimyo of Wano, and for his sake they clasp hands in a truce. Then they lead everyone up the Whale Tree to a door hidden at its back. Inside, chained to a great red stone, is [[raizo|Raizo]], the ninja the Beasts Pirates came for. Raizo, in tears, asks why the minks who bring him food are all hurt.',
+        },
+      },
+    },
+    {
+      episode: 772,
+      value: {
+        title: { it: 'In mare con Roger', en: 'At sea with Roger' },
+        body: {
+          it: 'I mink, i samurai e le due ciurme di pirati sono ormai alleati contro [[kaido|Kaido]], e [[monkey-d-luffy|Rufy]] ha una sola condizione: prima andrà a riprendersi [[sanji|Sanji]] da Big Mom. [[inuarashi|Cane-tempesta]], in coma quando Sanji è partito, non l’ha mai conosciuto, e Gatto-vipera gli racconta chi è. Scendendo dall’Albero Balena i due duchi, ora in pace, raccontano ai Cappello di paglia di aver navigato come servitori del padre di [[momonosuke|Momonosuke]], prima con [[edward-newgate|Barbabianca]] e poi con [[gold-roger|Roger]], e al ricordo si mettono a ballare insieme. Gatto-vipera ha i suoi alleati da cercare per la guerra: [[marco|Marco]] e quel che resta della ciurma di Barbabianca.',
+          en: 'The minks, the samurai and the two pirate crews are now allies against [[kaido|Kaido]], and [[monkey-d-luffy|Luffy]] has one condition: first he will go and bring [[sanji|Sanji]] back from Big Mom. [[inuarashi|Inuarashi]], in a coma when Sanji left, has never met him, so Nekomamushi tells him who he is. On the way down the Whale Tree the two dukes, at peace now, tell the Straw Hats that they once sailed as attendants of [[momonosuke|Momonosuke]]’s father, first with [[edward-newgate|Whitebeard]] and then with [[gold-roger|Roger]], and they start dancing together at the memory. Nekomamushi has allies of his own to find for the war: [[marco|Marco]] and what is left of Whitebeard’s crew.',
+        },
+      },
+    },
+  ],
   'gotti': [
     {
       episode: 783,
