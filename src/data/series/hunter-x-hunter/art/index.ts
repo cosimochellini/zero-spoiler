@@ -1202,9 +1202,9 @@ const kakinReturningRedrawn: Redrawings = {
     },
   ],
   'pariston-hill': [
-    // The same suit, made small, in front of a row of ten plain figures:
-    // Beyond makes his speech with ten important followers, and Pariston is
-    // among them, chapter 340. Beyond's side has no emblem to draw, so his
+    // The same suit, made small, in front of a row of nine plain figures:
+    // Beyond makes his speech with ten important followers, Pariston among
+    // them, so he and nine others, chapter 340. Beyond's side has no emblem to draw, so his
     // allegiance shows in the company he stands in. No faces.
     {
       ...KAKIN,
@@ -1215,11 +1215,11 @@ const kakinReturningRedrawn: Redrawings = {
           'translate(80 196) scale(0.6) translate(-80 -196)',
         ),
         {
-          d: `${circle(14, 58, 5)} ${circle(28.7, 58, 5)} ${circle(43.3, 58, 5)} ${circle(58, 58, 5)} ${circle(72.7, 58, 5)} ${circle(87.3, 58, 5)} ${circle(102, 58, 5)} ${circle(116.7, 58, 5)} ${circle(131.3, 58, 5)} ${circle(146, 58, 5)}`,
+          d: `${circle(16, 58, 5)} ${circle(32, 58, 5)} ${circle(48, 58, 5)} ${circle(64, 58, 5)} ${circle(80, 58, 5)} ${circle(96, 58, 5)} ${circle(112, 58, 5)} ${circle(128, 58, 5)} ${circle(144, 58, 5)}`,
           role: 'soft',
         },
         {
-          d: 'M6 84 Q6 66 14 66 Q22 66 22 84 M20.7 84 Q20.7 66 28.7 66 Q36.7 66 36.7 84 M35.3 84 Q35.3 66 43.3 66 Q51.3 66 51.3 84 M50 84 Q50 66 58 66 Q66 66 66 84 M64.7 84 Q64.7 66 72.7 66 Q80.7 66 80.7 84 M79.3 84 Q79.3 66 87.3 66 Q95.3 66 95.3 84 M94 84 Q94 66 102 66 Q110 66 110 84 M108.7 84 Q108.7 66 116.7 66 Q124.7 66 124.7 84 M123.3 84 Q123.3 66 131.3 66 Q139.3 66 139.3 84 M138 84 Q138 66 146 66 Q154 66 154 84',
+          d: 'M8 84 Q8 66 16 66 Q24 66 24 84 M24 84 Q24 66 32 66 Q40 66 40 84 M40 84 Q40 66 48 66 Q56 66 56 84 M56 84 Q56 66 64 66 Q72 66 72 84 M72 84 Q72 66 80 66 Q88 66 88 84 M88 84 Q88 66 96 66 Q104 66 104 84 M104 84 Q104 66 112 66 Q120 66 120 84 M120 84 Q120 66 128 66 Q136 66 136 84 M136 84 Q136 66 144 66 Q152 66 152 84',
           role: 'soft',
         },
         { d: 'M2 88 H158', role: 'ambient' },

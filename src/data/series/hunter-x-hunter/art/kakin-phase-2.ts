@@ -374,9 +374,9 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
 /** The Kakin records of phase 2 whose drawing changes in chapters 340–370 (#1154). */
 export const kakinPhaseTwoRedrawn: Redrawings = {
   vincent: [
-    // The same knife and vial dropped on the floor, the vial tipped over and
-    // empty: caught by Kurapika and Bill, he swallows the poison hidden in
-    // his tooth, chapter 364.
+    // The dropped knife and vial, the vial tipped on its side: caught by
+    // Kurapika and Bill, he swallows the poison pill hidden in his molar,
+    // chapter 364. The vial is not what kills him.
     {
       episode: 148,
       chapter: 364,

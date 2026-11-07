@@ -178,10 +178,13 @@ spreads its sagas' timelines into it; see its file).
 
 A stage is never skipped because it is hard to draw: find a composition that
 reads at 56 px. The one exception is a change in the episode the record opens
-in, which belongs in the first drawing. A stage a series' own rules cap or
-defer (a chapter the anime has not reached, a second manga-only stage, a
-medium's last point) waits as an issue or an owner ruling, as that series'
-file says; it is not a missing stage.
+in, which belongs in the first drawing. A stage a series' own rules defer (a
+chapter an ongoing anime has not reached yet, or two changes the media tell
+in an order no matching pair of points can keep) waits as an issue or an
+owner ruling, as that series' file says; it is not a missing stage. A stage
+one medium alone tells, where that medium has ended or the other never
+follows, is not deferred: it is filed with its `source` and held in that
+medium's units (below), as many per record as the story has.
 
 **What keeps the drawing as it is:**
 
