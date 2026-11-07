@@ -4,9 +4,11 @@
  * A body's seat titles are a word or two ("Emperor"), never a sentence the
  * prose canary could read, and a body names its holders by record id, which
  * the client never holds. So a body module is looked for by the longest
- * hyphenated id among its holders, as a drawing module is by its keys. A
- * body seating no such id is an unreadable canary: the gate refuses to vouch
- * for it rather than passing it unchecked.
+ * hyphenated id among its holders, as a drawing module is by its keys. Every
+ * `.ts` module in `power/` but a `.test.ts` is a body, and must seat at least
+ * one hyphenated holder id of twelve characters or more: a body seating none
+ * is an unreadable canary, and the gate refuses to vouch for it rather than
+ * passing it unchecked.
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
@@ -27,8 +29,12 @@ export function powerCanaries(repositoryRoot, folder) {
   try {
     // fallow-ignore-next-line security-sink -- The root is the gate's directory or a test fixture; dir is a series folder named in the repository's own series list.
     names = readdirSync(path.join(repositoryRoot, dir))
-  } catch {
-    return []
+  } catch (error) {
+    // No `power/` folder: the series files no body. Anything else is a fault.
+    if (error?.code === 'ENOENT') {
+      return []
+    }
+    throw error
   }
 
   return names

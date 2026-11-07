@@ -333,6 +333,11 @@ describe('the bodies of power the gate looks for', () => {
         { file: 'src/data/series/short/power/crew.ts', phrase: null },
       ])
       expect(powerCanaries(root, 'no-such-series')).toStrictEqual([])
+
+      // A `power` that is not a folder is a fault, not a series with none.
+      mkdirSync(path.join(root, 'src/data/series/odd'))
+      writeFileSync(path.join(root, 'src/data/series/odd/power'), '')
+      expect(() => powerCanaries(root, 'odd')).toThrow(/ENOTDIR/u)
     } finally {
       rmSync(root, { recursive: true })
     }
