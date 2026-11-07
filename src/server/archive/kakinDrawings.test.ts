@@ -62,21 +62,14 @@ const STAGES = [
   { id: 'fukataki', chapter: 416, change: 'death' },
 ]
 
-/** Deaths this file draws, with the status pinned at the stage's chapter. */
-const DEATHS = [
-  { id: 'lynch-fullbokko', chapter: 405 },
-  { id: 'fukataki', chapter: 416 },
-]
-
-/** A character's status as a reader at a bookmark sees it. */
-function statusAt(
-  id: string,
+/** Neon's status as a reader at a bookmark sees it. */
+function neonStatusAt(
   bookmark: Bookmark,
   locale: (typeof LOCALES)[number],
 ): string | undefined {
-  const character = archive.getCharacter(id)
+  const character = archive.getCharacter('neon-nostrade')
   if (character === undefined) {
-    throw new Error(`Missing character ${id}`)
+    throw new Error('Missing character neon-nostrade')
   }
   return archive.latestOf(
     readerFor(archive, bookmark, locale),
@@ -126,18 +119,9 @@ describe('Salé-salé’s beast', () => {
 
 describe('Neon’s presumed death', () => {
   it.each(LOCALES)('is filed at its stage’s chapter, in %s', (locale) => {
-    expect(statusAt('neon-nostrade', inChapter(376), locale)).toBe('alive')
-    expect(statusAt('neon-nostrade', inChapter(377), locale)).toBe(
-      'presumed-dead',
-    )
-    expect(statusAt('neon-nostrade', inEpisode(148), locale)).toBe('alive')
-  })
-})
-
-describe.each(DEATHS)('$id’s death', ({ id, chapter }) => {
-  it.each(LOCALES)('is filed at its stage’s chapter, in %s', (locale) => {
-    expect(statusAt(id, inChapter(chapter - 1), locale)).toBe('alive')
-    expect(statusAt(id, inChapter(chapter), locale)).toBe('deceased')
+    expect(neonStatusAt(inChapter(376), locale)).toBe('alive')
+    expect(neonStatusAt(inChapter(377), locale)).toBe('presumed-dead')
+    expect(neonStatusAt(inEpisode(148), locale)).toBe('alive')
   })
 })
 

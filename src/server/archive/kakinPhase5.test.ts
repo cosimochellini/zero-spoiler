@@ -77,10 +77,11 @@ const STATUSES = [
     before: 'captured',
     after: 'deceased',
   },
-  { id: 'lynch-fullbokko', chapter: 406, before: 'alive', after: 'deceased' },
+  { id: 'lynch-fullbokko', chapter: 405, before: 'alive', after: 'deceased' },
   { id: 'borksen', chapter: 407, before: 'alive', after: 'captured' },
   { id: 'borksen', chapter: 410, before: 'captured', after: 'alive' },
   { id: 'woble-hui-guo-rou', chapter: 412, before: 'alive', after: 'missing' },
+  { id: 'fukataki', chapter: 416, before: 'alive', after: 'deceased' },
   { id: 'onior', chapter: 417, before: 'alive', after: 'captured' },
 ]
 
