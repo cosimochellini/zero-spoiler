@@ -446,6 +446,14 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_655',
       note: "Both halves are inside 655: Sanji pinned by the strings with Overheat winding up, and Law's log-Shambles swap from the shore. Second pass: none of Sanji's kicks connect — the admission is about a blocked one — and the log takes Law's own place, not Sanji's; both corrected.",
     },
+    763: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_763',
+      note: 'Episode_763 Long Summary (read through the MediaWiki API, #725): two days earlier, in Brook’s account, Bege shoots Pekoms after Pekoms offers to fail the mission out of gratitude, takes Sanji, Brook, Nami, Chopper and Caesar into his body fortress, and hands Sanji the Tea Party invitation: as third son of the Vinsmoke family he is to marry Big Mom’s daughter; Caesar explains the crew would fall under Big Mom; Sanji refuses, Bege turns the fortress on the crew and says the invitation cannot be refused, and Vito whispers something that makes Sanji ask how they know. Vito (filed 785) and Pudding (filed 786) stay unnamed. Moved from the issue’s ~759–760: Brook only starts this account in 762, and the invitation lands in 763. Chapter (#169): 813, the last event, the whisper (Chapter_813 Short Summary; the invitation itself starts at the end of 812).',
+    },
+    764: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_764',
+      note: 'Episode_764 Long Summary: Sanji asks for pen and paper, writes the note, says he must sort out this part of his heritage alone, throws Nami, Chopper and Brook out of Bege’s body, holds Caesar at gunpoint, works out that whoever made his bounty Only Alive is arranging the wedding, agrees to go if his crew is spared; Nekomamushi appears behind Bege, who flees with Sanji inside; Sanji promises to come back, and the note says he is going to meet a woman and will be back. Nekomamushi Qref chap=813 ep=764. Chapter (#169): 813 (Chapter_813 Short Summary has the note, Caesar at gunpoint, Nekomamushi and the escape).',
+    },
     794: {
       source: 'https://onepiece.fandom.com/wiki/Episode_794',
       note: 'Judge defeats Sanji in their duel and Reiju treats his wounds within this same episode; 793 only covers the challenge/buildup. Ichiji and Niji are not named since their own threshold (795) is one episode later. The brother whose face Sanji smashed is Yonji: 793 shows his face being fixed (Chapter 833, pages 3-4), and Yonji opens at 784. Chapter (#169): 833. Both passes put the story at 840 only for the line where Sanji remembers the dark cell; the manga first tells the iron mask and the dungeon in chapter 840 (Sanji/History Qref chap=840 ep=803), and episode 794 adds the memory early. The line was cut in both locales, and the rest (duel, kicks only, Judge striking through his own soldier, Reiju tending him) is chapter 833 (Qref chap=833 ep=794). Raised from 833 to 837: the story names Judge, whose record opens at chapter 837.',
@@ -2709,6 +2717,52 @@ export const CHRONICLE_SOURCES = {
     1032: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1032',
       note: "1032.srt 09:35-10:58: Shishilian, with Bariete, asks Nekomamushi's help and reports that Pedro died in Big Mom's territory, his sacrifice bringing Luffy and the others here; Nekomamushi honours Pedro and asks whether the enemy is on the island, Bariete asks for his help there too, word follows that Wanda and Carrot seem to be struggling, Nekomamushi was ready from the start, and the cat flies. English transcript (t=108031) caption: Shishilian as captain of the Dogstorm Musketeers and Bariete of the Mink recon squad. Shishilian page: Qref chap=1012 ep=1032. Perospero, the enemy, is not named in the scene and the story leaves him unnamed; Pedro is deceased from 850 in his dossier. Chapter (#169): 1012, the last event: Shishilian and Bariete tell Nekomamushi Pedro died in Big Mom's territory and the enemy is on the island (Shishilian page: he and Bariete break the news of Pedro's death to Nekomamushi and say the killer, Charlotte Perospero, is on the island (chap=1012, ep=1032)).",
+    },
+  },
+  'pedro': {
+    757: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_757',
+      note: 'Threshold entry; the record opens at 757. Episode_754 Long Summary: the Guardians secretly surround Luffy in the Whale Forest while Roddy and Blackback fight him; Wanda and Carrot arrive, Wanda apologises to Pedro on a treetop and asks him to call the Guardians back, they disperse, Luffy had not known they were there, and Wanda tells him to be glad it is not a moonlit night. Pedro page: debut Qref chap=805 ep=754. Nothing in the story is later than 757.',
+    },
+    772: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_772',
+      note: 'Pedro page: Qref chap=819 ep=772, the minks discuss when the feud began and Pedro says it started after the two rulers came back barely alive from their voyage (with Oden, filed 960, left unnamed); Chapter_819 Long Summary: the minks prepare a party for the truce and Wanda, Pedro and Carrot remember when the two were friends. Episode_772 Long Summary: the minks in Kurau City rejoice at the truce, look forward to less strict schedules and plan a banquet. Chapter (#169): 819.',
+    },
+    776: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_776',
+      note: 'Episode_776 Short Summary: Pedro insists he should be the only mink with Luffy’s group as only he can keep Pekoms in check, and the group descends for the Sunny. Chapter_822 Long Summary: Pedro tells Nekomamushi it is dishonourable that no mink save Pekoms goes, says he wants to go, several minks volunteer, Nekomamushi picks Pedro for keeping Pekoms in line; at the gate Pekoms asks why Pedro is there and he answers as someone who knows his tendencies; Luffy grabs his companions and leaps off the elephant, shocking everyone. Pedro page Qref name=Team. Chapter (#169): 822.',
+    },
+  },
+  'inuarashi': {
+    758: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_758',
+      note: 'Threshold entry, confirms the issue’s 758. Episode_758 Long Summary: in the sanatorium Inuarashi thanks the Straw Hats, Wanda calls him the strongest warrior and he answers that he was defeated, he notices the straw hat and says he and Nekomamushi once went to sea and met Shanks, then falls asleep; Wanda explains the two rulers hate each other so much they would fight on sight, so Inuarashi rules 6 AM to 6 PM and Nekomamushi the other twelve hours. Nekomamushi (filed 761) is called the ruler of the night. Inuarashi page: Qref chap=809 ep=758. Chapter (#169): 809.',
+    },
+    759: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_759',
+      note: 'Episode_759 Long Summary: seventeen days earlier Inuarashi confronts Jack, drops his sword and offers a peaceful search of the island, holds back Jack’s trunk, hears Jack will stop only when Raizo is found and that he likes destruction, orders the Musketeers to attack and drives an Electro-imbued sword into Jack’s head; at 6 PM he withdraws, keeping the shift system, and the Guardians race into the city. Raizo (filed 768) is the samurai; Nekomamushi is not named. Chapter_809 Short Summary: Inuarashi holds back Jack’s attack and retreats at sunset. Chapter (#169): 809.',
+    },
+    760: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_760',
+      note: 'Episode_760 Long Summary: the battle lasts five days with the Musketeers and the Guardians rotating, neither side able to take down the other’s leader; Jack ends it with a poison gas weapon that Chopper says is Caesar’s; the Beasts Pirates slaughter the minks asking about the samurai, crucify and torture Inuarashi and Nekomamushi for a day as both deny knowing him; Jack leaves; Inuarashi, awake, says Jack went to rescue Doflamingo, so the Straw Hats spared them. Inuarashi page: Qref chap=810 ep=760. Chapter (#169): 810.',
+    },
+    767: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_767',
+      note: 'Episode_767 Long Summary: Bariete rings the bell for the samurai, Inuarashi rides to Kurau City and Nekomamushi runs there with the Guardians; Pedro on a rooftop tries to warn Nekomamushi, Shishilian gasps and the rulers see each other; they insult each other’s missing limbs, Inuarashi remembers Jack severing his leg while he denied knowing Raizo, both say they would have been fine with the other’s death and fight to the death; Kin’emon steps out, introduces himself and asks after his comrade, all the minks sit down and the rulers, in tears, say Raizo is safe. Raizo (filed 768) stays the comrade. Inuarashi page: Qref chap=816 ep=767. Chapter (#169): 816.',
+    },
+  },
+  'nekomamushi': {
+    761: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_761',
+      note: 'Threshold entry; the record opens at 761, where Chopper and Wanda set off to see him (Nekomamushi page: Qref chap=811 ep=761). Episode_759: at 6 PM the Guardians led by Nekomamushi race in, he flips Jack by the trunk and licks his paws. Episode_760: he fights Jack until 6 AM and tells him not to let Inuarashi kill him before the next night; after the gas he is crucified and tortured with Inuarashi. Episode_761: ten days earlier the Curly Hat Pirates clear the gas, cure the minks and take the unconscious rulers down from the crucifixes. No chapter pin: the gate is the record’s chapter 813, later than the events (809–811).',
+    },
+    768: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_768',
+      note: 'Episode_768 Long Summary: Kin’emon shows the crest on his back; the rulers quarrel again and Momonosuke shouts that it would make his father sad; they bow to him; Kin’emon reveals Momonosuke is the son and heir of a daimyo (Oden, filed 960, left unnamed); the rulers clasp hands in a truce; they lead everyone up the Whale Tree to a hidden entrance, where Raizo, chained to a red poneglyph, tearfully asks why the minks bringing him food were injured. Nekomamushi page: Qref chap=817 ep=768. No chapter pin: Raizo’s record opens at chapter 824, so the story waits for it.',
+    },
+    772: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_772',
+      note: 'Episode_772 Long Summary: Luffy asks to rescue Sanji first; Nekomamushi explains who Sanji was to Inuarashi, who was in a coma; the rulers tell how they sailed as Oden’s attendants with the Whitebeard Pirates and the Roger Pirates and dance at the memory; Nekomamushi will recruit Marco and the remaining Whitebeard Pirates. Episode_771 Short Summary: the alliance against Kaido is formed. Nekomamushi page: Qref chap=819 ep=771,772 and chap=820 ep=772,773. Chapter (#169): 820.',
     },
   },
   'gotti': {
