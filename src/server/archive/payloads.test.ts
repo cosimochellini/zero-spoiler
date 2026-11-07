@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
+import { isDeepStrictEqual } from 'node:util'
 import { describe, expect, it } from 'vitest'
 
 import { sourceOf } from '~/data/reveal'
@@ -179,6 +180,29 @@ describe('every payload the server sends', () => {
   })
 })
 
+/**
+ * Whether what `JSON.stringify` writes reads back as the very payload. Node's
+ * strict deep equality fails on every loss `toStrictEqual` fails on (an
+ * `undefined`, a `Map`, a `Date`, `NaN`, `-0`, a class, a hole) at a fifth of
+ * its cost, which was most of the plain sweeps' time (#1177). The matcher
+ * runs only on a miss, to print the field lost with the ask.
+ */
+function readsBack(payload: unknown, ask: string): boolean {
+  const sent = JSON.stringify(payload)
+  const back: unknown = JSON.parse(sent)
+  if (isDeepStrictEqual(back, payload)) {
+    return true
+  }
+
+  expect(back, ask).toStrictEqual(payload)
+
+  return false
+}
+
+/** An ask as a failure names it. */
+const askOf = (bookmark: Bookmark, locale: Locale, key: string): string =>
+  `'${key}' @ ${JSON.stringify(bookmark)} ${locale}`
+
 // A sweep runs one payload at every bookmark the series lists, in both
 // locales: Hunter x Hunter's `loadCharacter` takes about a second alone and
 // ran past the 5s default on a loaded CI runner (main at b955fa9d, #1078), as
@@ -230,10 +254,9 @@ describe.each(SERIES)('every payload of $slug', (series) => {
       const all = keys?.()
       for (const [at, { bookmark, locale }] of asks.entries()) {
         for (const key of sampled(all, at)) {
-          const payload = run(bookmark, locale, key)
-          const sent = JSON.stringify(payload)
+          const ask = askOf(bookmark, locale, key)
 
-          expect(JSON.parse(sent)).toStrictEqual(payload)
+          expect(readsBack(run(bookmark, locale, key), ask), ask).toBe(true)
         }
       }
     },
@@ -258,10 +281,9 @@ describe.each(SERIES)('every payload of $slug', (series) => {
       for (const bookmark of ceilings) {
         for (const locale of LOCALES) {
           for (const key of all) {
-            const payload = run(bookmark, locale, key)
-            const sent = JSON.stringify(payload)
+            const ask = askOf(bookmark, locale, key)
 
-            expect(JSON.parse(sent)).toStrictEqual(payload)
+            expect(readsBack(run(bookmark, locale, key), ask), ask).toBe(true)
           }
         }
       }
