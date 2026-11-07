@@ -156,6 +156,39 @@ describe('the power page', () => {
     }
   })
 
+  it('never opens a holder the reader’s archive does not have', () => {
+    const archive = {
+      ...POWER_ARCHIVE,
+      features: {
+        ...POWER_ARCHIVE.features,
+        power: {
+          bodies: [
+            {
+              ...FIXTURE_BODY,
+              seats: [
+                {
+                  ...THRONE,
+                  holders: [
+                    {
+                      episode: EARLY.revealedAtEpisode,
+                      chapter: EARLY.revealedAtChapter,
+                      value: 'nobody',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      },
+    }
+    const page = powerPage(readerFor(archive, chapter(1000), 'en'))
+
+    expect(page.bodies[0]?.seats).toStrictEqual([
+      { title: 'Fixture Throne', state: 'unknown' },
+    ])
+  })
+
   it.each(LOADED_SERIES.filter(({ slug }) => slug !== 'one-piece'))(
     'is empty for $slug, which has none',
     ({ archive }) => {

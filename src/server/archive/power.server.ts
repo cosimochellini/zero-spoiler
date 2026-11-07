@@ -69,12 +69,20 @@ function seatOf(seat: Seat, body: PowerBody, r: Reader): SeatView {
 
 /**
  * Whether the reader has reached a holding: past its own gate, the body's,
- * the seat's and the character's.
+ * the seat's and the character's. A holder the reader's source does not
+ * tell is not in their archive at all, so that holding never opens for them.
  */
 function opens(entry: Holding, owners: Gated[], r: Reader): boolean {
-  const character =
-    entry.value === null ? undefined : r.archive.getCharacter(entry.value)
-  const all = character === undefined ? owners : [...owners, character]
+  if (entry.value === null) {
+    return owners.every((owner) => r.sees(r.archive.gateOf(entry, owner)))
+  }
 
-  return all.every((owner) => r.sees(r.archive.gateOf(entry, owner)))
+  const character = r.archive.getCharacter(entry.value)
+
+  return (
+    character !== undefined
+    && [...owners, character].every((owner) =>
+      r.sees(r.archive.gateOf(entry, owner)),
+    )
+  )
 }
