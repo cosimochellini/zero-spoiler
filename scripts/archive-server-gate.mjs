@@ -11,7 +11,7 @@ const EXIT_UNUSABLE = 2
 const SERIES_DIR = 'src/data/series'
 
 /** The emitted SSR dependency graph, not a guess from source imports. */
-const SERVER_MANIFEST = 'dist/server/.vite/manifest.json'
+export const SERVER_MANIFEST = 'dist/server/.vite/manifest.json'
 
 /**
  * Every statically loaded dependency of runtime entry points.

@@ -8,6 +8,7 @@ import { launch } from 'puppeteer-core'
 import { preview } from 'vite'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
+import { SERVER_MANIFEST } from './archive-server-gate.mjs'
 
 /** @typedef {{ value: string, open: boolean }} Bookmark */
 /** @typedef {{ id: string, label: string, bookmarks: Bookmark[] }} Row */
@@ -113,6 +114,12 @@ async function navigate(page, url) {
  * @returns {Promise<string>} A PNG data URL.
  */
 async function drawingShot(page, selector) {
+  // Shelf tiles mount only within a screen of the viewport (#972).
+  try {
+    await page.waitForFunction(scrollUntilMounted, { polling: 100 }, selector)
+  } catch (error) {
+    throw new Error(`Drawing never mounted: ${selector}`, { cause: error })
+  }
   const drawing = await page.waitForSelector(selector, { visible: true })
   if (drawing === null) {
     throw new Error(`Missing drawing: ${selector}`)
@@ -125,6 +132,19 @@ async function drawingShot(page, selector) {
     selector,
   )
   return `data:image/png;base64,${await drawing.screenshot({ encoding: 'base64' })}`
+}
+
+/**
+ * Runs in the page: true once the drawing is in the DOM, else scroll one screen.
+ * @param {string} target The drawing's selector.
+ * @returns {boolean} Whether the drawing is mounted.
+ */
+export function scrollUntilMounted(target) {
+  if (globalThis.document.querySelector(target) !== null) {
+    return true
+  }
+  globalThis.scrollBy(0, globalThis.innerHeight)
+  return false
 }
 
 /**
@@ -259,8 +279,9 @@ async function captureRows(browser, origin, rows, file) {
  */
 export async function artShots(args) {
   const rows = await shotRows(args)
-  // fallow-ignore-next-line security-sink -- ROOT is this script's repository; every remaining path component is a literal
-  if (!existsSync(path.join(ROOT, 'dist', 'server', 'server.js'))) {
+  // gate:archive reads this file after every build, so it cannot go stale.
+  // fallow-ignore-next-line security-sink -- ROOT is this script's repository; SERVER_MANIFEST is a literal
+  if (!existsSync(path.join(ROOT, SERVER_MANIFEST))) {
     throw new Error('Built site missing. Run npm run build before art:shots.')
   }
   const executablePath = chromePath()

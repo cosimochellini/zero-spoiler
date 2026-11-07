@@ -3,199 +3,209 @@
  * what the verification passes found there (#762). Keyed by character id and
  * then by episode, like `CHRONICLE_SOURCES`; the title and the episode come
  * from the chronicle data. Mutually exclusive stories in the same episode
- * use `episode:source` keys so each medium cites its own evidence.
+ * use `episode:source` keys so each medium cites its own evidence, and the
+ * manga-only Kakin stories, all at the anime's last episode, use
+ * `episode:chapter` keys.
  */
 export const HUNTER_X_HUNTER_SOURCES = {
   'gon-freecss': {
-    1: {
+    '1': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)',
       note: "Checked on the episode page: the swamp fish, Mito's night-before talk, the storm warning by smell and birds, and the dive for Katzo with the two holding his legs all fall in this episode.",
     },
-    4: {
+    '4': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_4_(2011)',
       note: 'The episode page has Gon waiting for Leorio, the shared reasons, and the race to the exit where Satotz rules a tie.',
     },
-    16: {
+    '16': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_16_(2011)',
       note: "The page covers the badge hooked from Hisoka, the dart paralysis, Hisoka killing the thief and handing back both badges, and the punch with the condition. Gon's two days of rod practice come from episode 15, so the story is not early.",
     },
-    19: {
+    '19': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_19_(2011)',
       note: 'The match runs from the arm break through the leg and death threats to Hanzo conceding, then knocking Gon out; Gon is the first to pass.',
     },
-    21: {
+    '21': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_21_(2011)',
       note: "Gon breaks Illumi's arm in front of the examinees, then outside gets the answer that Killua is at Kukuroo Mountain; he leaves with Kurapika and Leorio the same day.",
     },
-    29: {
+    '29': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_29_(2011)',
       note: 'Arrival, the one-push first match and the rooms at the 100th floor are in episode 27 and chapters 44 and 46; the barrier is in episode 28 and chapter 47; the opened nodes, Ten, the walk through the barrier and Hisoka’s one-win condition close episode 29 and chapter 48.',
     },
-    30: {
+    '30': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_30_(2011)',
       note: 'Corrected after review: the ban is not until he heals: it outlasts his healing in Chapter 52 and Episode 31. The next-day booking and Wing’s advice to wait are in episode 29 and chapter 49; the tops hitting anything in their path, Tornado Top, Zetsu without knowing it, the broken arm, and the ban on Nen with the thread on his finger are in episode 30 and chapters 50 and 51. Chapter 51 sets the ban at two months, so the story gives it no length.',
     },
-    36: {
+    '36': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_36_(2011)',
       note: 'Corrected after review: the rock tied to Hisoka’s aura and the blow to the head are Chapter 63 only, reworded. Water Divination and the July 10 booking are in episode 35 and chapter 60; the unmoving dodges and the punch behind the shattered tile in chapter 61; the returned badge, Gyo and Bungee Gum in chapter 62; the rock, the loss and the promise of a fight to the death in chapter 63, all through episode 36.',
     },
-    37: {
+    '37': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_37_(2011)',
       note: 'Corrected after review: in Italian, “alla sua età” became “alla stessa età di Gon”. Episode 37 and chapters 64-65: the talk by the fire, Mito showing the box and telling what she knows, the grandmother on whose parents died, Gon calling his father Ging, the Nen and license boxes, the ring, memory card and cassette, and the tape’s question. Also read: Chapter 64, Chapter 65.',
     },
-    38: {
+    '38': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_38_(2011)',
       note: 'Episode 38 adapts chapter 66 and chapter 69, pages 1-16: the tape, the stop at his mother, the Nen that records over it, the console, the game’s price in billions, and Killua trading a copy of the card to Milluki for leads, among them copies at a Yorknew auction. Leaving the island is not in chapter 69 and is left out. Also read: Chapter 66, Chapter 69.',
     },
-    42: {
+    '42': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_42_(2011)',
       note: 'Corrected after review: “use all his strength” became “try for real to win”, as chapter 72 says only that Gon is forced to actually try. The Hunter website (seven copies, 8.9 billion) and the failed reselling are episode 41 and chapter 70; the phone, Leorio, the diamond worth 3 million and Shizuku forcing him to try for real are episode 42 and chapters 71-72. Also read: Episode 41 (2011), Chapter 70, Chapter 71, Chapter 72.',
     },
-    48: {
+    '48': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_48_(2011)',
       note: 'Corrected after review: “pawns his Hunter license” became “uses his Hunter license to raise money”: episode 48 does not adapt the pawn shop of chapter 84. The Southernpiece place log now says the same. The pawned license is chapter 84; the knife, the bids, the vault and the lunch are chapters 85-88, all by the end of episode 48. The second man who challenges Zepile at the dealer’s is anime-only. Checked on the episode page and the chapter pages.',
     },
-    50: {
+    '50': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: Gon refuses to tell them anything, as both media have him, without ordering the refusal and the question. “kick through” is one medium’s; they break out through the walls, as in Nobunaga’s story. Chapters 91-94 and episode 50. Checked on the episode page and the chapter pages.',
     },
-    55: {
+    '55': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'Chapters 107-108 and episode 55. Why Gon asks for the chain differs between the media and is left out. Checked on the episode page and the chapter pages.',
     },
-    59: {
+    '59': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
       note: 'Episode 59 and Chapters 121–124 (opening pages): rejection, Wing’s advice and fist training. Corrected during authoring: chapter 124 completes the concentration; anime-only knockback omitted.',
     },
-    60: {
+    '60': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
       note: 'Episode 60 and Chapter 127: Entry and recorded message are chapter 127; the unnamed receptionist remains unnamed.',
     },
-    61: {
+    '61': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_61_(2011)',
       note: 'Episode 61 and Chapter 131: Chapters 128–131 cover first spells, restaurant and refusal; unnamed alliance members not named.',
     },
-    63: {
+    '63': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_63_(2011)',
       note: 'Episode 63 and Chapter 140: Chapter 140 completes digging/Shu; Binolt training chapters 138–139.',
     },
-    65: {
+    '65': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
       note: 'Episode 65 and Chapters 145–146: Rock, failed Paper and proposed Scissors. Independent verifier corrected chapter 145 to 146 because Scissors is explained in chapter 146.',
     },
-    71: {
+    '71': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
       note: 'Episode 71 and Chapter 169: Chapters 160–169: dodgeball concludes in chapter 169; no earlier gate covers victory.',
     },
-    74: {
+    '74': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_74_(2011)',
       note: 'Episode 74 and Chapter 182: Chapters 179–182 complete trap and healing; earlier chapter 181 alone lacks healing. Personal name of the Bomber is omitted because his record is manga-only.',
     },
-    75: {
+    '75': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
       note: 'Episode 75 and Chapter 185: Chapters 183–185 complete quiz, castle and exit. Destination identity not disclosed.',
     },
-    77: {
+    '77': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 77 (2011), Chapter 186. Independent verifier correction: narrowed to introductions and biological research supported by both Chapter 186 and Episode 77; omitted the manga-only night survey and observations of animal skills.',
     },
-    81: {
+    '81': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_81_(2011)',
       note: 'Read Episode 81 (2011) and Chapter 191. Author correction: leave Rammot unnamed because his manga naming gate is Chapter192. Independent verifier correction: the title leaves the rabbit-like ant unnamed before the Chapter 192 naming gate.',
     },
-    82: {
+    '82': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_82_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 82 (2011), Chapter 193. Independent verifier correction: prepares another attack; Chapter 193 has Kite shoot before the planned bite.',
     },
-    83: {
+    '83': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_83_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 83 (2011), Chapter 195.',
     },
-    85: {
+    '85': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 85 (2011), Chapter 198, Chapter 199.',
     },
-    86: {
+    '86': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 201.',
     },
-    87: {
+    '87': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_87_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 87 (2011), Chapter 203.',
     },
-    89: {
+    '89': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_89_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 89 (2011), Chapter 207, Chapter 208, Chapter 209.',
     },
-    91: {
+    '91': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_90_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 90 (2011), Episode 91 (2011), Chapter 210, Chapter 211, Chapter 214.',
     },
-    94: {
+    '94': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_93_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 93 (2011), Episode 94 (2011), Chapter 217, Chapter 218.',
     },
-    95: {
+    '95': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_95_(2011)',
       note: 'Checked Chapter 222, Chapter 223, Episode 95 (2011).',
     },
-    98: {
+    '98': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_98_(2011)',
       note: 'Checked Chapter 230, Episode 98 (2011).',
     },
-    99: {
+    '99': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_99_(2011)',
       note: 'Checked Chapter 231, Chapter 232, Chapter 233, Episode 99 (2011). Independent verifier correction: Corrected finishing tactic: fallen tree and gust disable flying opponent, rather than one enemy used against the other.',
     },
-    102: {
+    '102': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_102_(2011)',
       note: 'Checked Chapter 241, Chapter 242, Episode 102 (2011).',
     },
-    116: {
+    '116': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_116_(2011)',
       note: 'Checked Chapter 273, Chapter 274, Chapter 275, Episode 116 (2011).',
     },
-    127: {
+    '127': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_127_(2011)',
       note: 'Chapter 300 and Episode 127: healing ends, Gon refuses Hakoware, takes Pitou to Peijin and leaves Komugi as hostage.',
     },
-    131: {
+    '131': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_131_(2011)',
       note: 'Chapters 304–307 and Episode 131: full transformation, skull destruction, postmortem attack and final Jajanken. Episode 130 covers admission but not outcome.',
     },
-    136: {
+    '136': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
       note: 'Chapter 316 and Episode 136: doctor reports life support, Knov arranges specialists, Killua leaves to save Gon; no recovery included.',
     },
-    145: {
+    '145': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_145_(2011)',
       note: 'Chapter 334; Episode 145 (2011). Chapters 333–334 and episode 145; apology to Ging is next episode.',
     },
-    146: {
+    '146': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
       note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146.',
     },
-    147: {
+    '147': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_147_(2011)',
       note: 'Chapter 338; Episode 147 (2011). Chapters 337–338 and episode 147; climb is left to episode 148.',
     },
-    148: {
+    '148': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
       note: 'Chapter 339; Episode 148 (2011). Chapters 338–339 and episode 148; combines climb and completed conversation at chapter 339.',
     },
+    '148:345': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_345',
+      note: 'Chapters 344–345: no Nen (344), Ging’s call, the return to Whale Island, helping Mito and the dinner talk (345).',
+    },
   },
   'mito-freecss': {
-    1: {
+    '1': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)',
       note: "Corrected after review: 'speechless' was invented, the page says she is dismayed; also linked Gon. Fish condition, night talk and the morning farewell with her grandmother are all in this episode.",
     },
-    26: {
+    '26': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_26_(2011)',
       note: 'Corrected after review: linked Gon. The recap letter (passed, unhappy about the final match, Kukuroo Mountain trip, one more piece of business, the framed photo) is all in this episode; kept at chapter 43 as an anime-only recap.',
     },
-    37: {
+    '37': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_37_(2011)',
       note: 'Episode 37 and chapters 64-65: the bath, the meal with her grandmother, Mito behind the boys with food while Gon calls her his mother, the month at home, the box, Ging leaving at Gon’s age and the accident that killed her parents. Her crying is anime-only; the condition on the box is not on the episode page. Also read: Chapter 64, Chapter 65.',
+    },
+    '148:345': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_345',
+      note: 'Chapter 345: housework, the dinner questions, Gon without Nen in Ging’s way, the joke she rejects, being stuck with her and the piles of papers.',
     },
   },
   'leorio-paradinight': {
@@ -259,67 +269,103 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
       note: 'Chapter 339; Episode 148 (2011). Episode 148 shows medical study; chapter 339 is ordering only.',
     },
+    '148:343': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_343',
+      note: 'Chapter 343 synopsis and notes: Cheadle’s call, the medical study with her as head professor, Leorio accepting and asking for a seat for someone else; Mizaistom then invites Kurapika at his request.',
+    },
   },
   'kurapika': {
-    1: {
+    '1': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)',
       note: "On the page Kurapika states his Phantom Troupe motive and the license's access, then the duel and Katzo rescue.",
     },
-    4: {
+    '4': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_4_(2011)',
       note: 'The Scarlet Eyes, the seven most beautiful colors, the black-market plan and the pride exchange with Leorio are all in this episode.',
     },
-    9: {
+    '9': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_9_(2011)',
       note: 'The deathmatch with Majtani, the heart tattoos, the spider on his back, the scarlet eyes, the single punch and the three points are all here; he then sits alone.',
     },
-    21: {
+    '21': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_21_(2011)',
       note: "Corrected after review: he no longer 'asks the committee to review', the page only has him defending Killua as manipulated by Illumi. Pokkle's doubt about the Hisoka win, his refusal to answer and the departure for Kukuroo Mountain are here; the Hisoka forfeit and door block are recounted in episode 20.",
     },
-    39: {
+    '39': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_39_(2011)',
       note: 'Only the beats chapter 67 shares with episode 39: back at the agency after learning Nen, three employers tied to the auction, the collector of human body parts, the butler, the man on the screen, the month and the item, the locked door and the armed figures in black. The teacher and Water Divination are chapter 83 and wait for episode 47; Melody at the agency is anime-only. Also read: Chapter 67.',
     },
-    40: {
+    '40': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_40_(2011)',
       note: 'Corrected after review: “reveals the plan” is episode 40 only; chapter 68 has him reveal how he used his Nen, so he only talks, as Squala’s record log says. Episode 40 and chapter 68: the chandelier, the dagger and the count to three, Tocino’s test and the four who can leave, the Dowsing Chain reacting at Squala, Melody, Basho’s haiku and Baise’s kiss. Italian: Catena della Pressione (Italian Wikipedia, Kurapika). Also read: Chapter 68.',
     },
-    44: {
+    '44': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_44_(2011)',
       note: 'Corrected after review: he moves only after the fight, as both media show. Chapter 77 (pages 1-11) and episode 44. Italian: Catena della Prigionia (Italian Wikipedia, Kurapika Kurata). Checked on the episode page and the chapter pages.',
     },
-    46: {
+    '46': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_46_(2011)',
       note: 'Corrected after review: “the Nostrade family’s rooms” became where they are staying. Hisoka is chapters 78-79, the call to Light and the Hunter website chapter 79, Uvogin at the door chapter 80, all by the end of episode 46. Checked on the episode page and the chapter pages.',
     },
-    47: {
+    '47': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_47_(2011)',
       note: 'Corrected after review: “before the auction” dropped from the teacher’s lesson. “truthfully” dropped; episode 47 says only that the rule is to answer his questions. The teacher and Water Divination are chapter 83 and episodes 39 and 47; the fight is chapters 81-84 and episode 47. Italian: Materializzazione, Specializzazione, Test dell’Acqua (Italian Wikipedia). Checked on the episode page and the chapter pages.',
     },
-    53: {
+    '53': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Corrected after review: the leader’s death and the bodies are what Kurapika hears and the Mafia reports, not facts: both media have shown the leader alive by then (chapter 100, episode 53). “he no longer needs their help” is chapter-only; he calls Gon to tell him the members are dead. Chapters 100-101 and episode 53. Whether Kurapika sees the leader’s body himself differs between the pages and is left out. Checked on the episode page and the chapter pages.',
     },
-    55: {
+    '55': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'The reunion, the message from Hisoka and Melody’s call are chapters 102-105 and episode 54; the plan and the chains are chapters 107-108 and episode 55. Meteor City is left unnamed. Checked on the episode page and the chapter pages.',
     },
-    58: {
+    '58': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
       note: 'Corrected after review: “unharmed” dropped (episode 58 only), as in Pakunoda’s story; Melody confirms that Killua is not being controlled. Chapters 117-119 and episode 58. His words on the airship after the exchange are chapter-only. Checked on the episode page and the chapter pages.',
     },
-    59: {
+    '59': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)',
       note: 'Episode 59 and Chapter 123: Chapter 123 contains the advice; no later departure details.',
     },
-    66: {
+    '66': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 include phone call and Nostrade household.',
     },
-    148: {
+    '148': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
       note: 'Chapter 339; Episode 148 (2011). Chapter 339 and episode 148; no number or later collection progress inferred.',
+    },
+    '148:343': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_343',
+      note: 'Chapter 343 synopsis and notes: Mizaistom’s invitation at Leorio’s request, the refusal, the Scarlet Eyes offer, Tserriednich’s picture; the notes say Kurapika joins the Zodiacs.',
+    },
+    '148:348': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_348',
+      note: 'Chapter 348: the final test of the 289th Hunter Exam, the check of the applicants, Kurapika explaining his abilities, volunteering to find the spy and identifying Saiyu on the monitor.',
+    },
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: the five Hunters recruited, the Halkenburg profile (the prince who accepts only Tserriednich), the queen as employer, the succession war and the conditions.',
+    },
+    '148:360': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_360',
+      note: 'Chapters 359–360: Woody and four more guards drained (359), the interrogation at gunpoint with the Dowsing Chain drawn, the informants of the other queens, the beasts, the emergency call and Biscuit’s answer (360). Corrected after independent verification: the English now says the chain is drawn, not used to hold them.',
+    },
+    '148:361': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_361',
+      note: 'Chapter 361: Sayird’s attack is chapter 360; the restraint, the flashback to Izunavi, Steal Chain, Emperor Time, Stealth Dolphin naming Little Eye, and two guards and two servants left two hours after departure are 361.',
+    },
+    '148:367': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_367',
+      note: 'Chapter 367: the explanation to the guards of Zhang Lei, Tubeppa and Benjamin, the queen secretly using Little Eye on the cockroach while the others credit a Hunter, the spying, and the two-week Nen class offer on condition that every prince is told.',
+    },
+    '148:369': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_369',
+      note: 'Chapters 368–369: Kurapika faints (368); nine hours out, the queen sharing the blackout, the cockroach lost to Tserriednich’s beast in the vent, her Nen already awakened, Woble reaching out (369). Corrected after independent verification: the queen sends the insect at Kurapika’s request.',
+    },
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: the gathering at 9 a.m. of the second day (369), the tape line, Myuhan, the two-week promise, sixteen introductions, Barrigen’s death and Kurapika looking for the hidden assassin (370).',
     },
   },
   'katzo': {
@@ -361,91 +407,111 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'hisoka': {
-    3: {
+    '3': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_3_(2011)',
       note: "Tonpa's warning about the examiner Hisoka nearly killed, and the applicant whose arms disappear after bumping into him, are on the page.",
     },
-    5: {
+    '5': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_5_(2011)',
       note: "Hisoka plays examiner and sweeps the applicants, then Gon's rod hit, the neck hold, 'worthy of continuing' and carrying Leorio off.",
     },
-    10: {
+    '10': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_10_(2011)',
       note: 'Togari waiting with a grudge, the curved knives, Hisoka catching two blades and decapitating him, and being first through in six hours seventeen minutes.',
     },
-    16: {
+    '16': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_16_(2011)',
       note: "Gon's hook on the badge, Hisoka's smile, killing the thief, returning both badges, the punch and the condition are all in this episode.",
     },
-    21: {
+    '21': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_21_(2011)',
       note: 'Corrected after review: linked Killua. Hisoka appears behind Illumi, says the Zoldyck home is common knowledge and warns him off Gon, all in this episode.',
     },
-    29: {
+    '29': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_29_(2011)',
       note: 'The aura that stops them and the warning that they are not ready are in episode 28 and chapter 47; the walk through his aura with Ten, the welcome, the guess about Gon’s training, the shapes of aura between his fingers and the one-win condition are in episode 29 and chapter 48.',
     },
-    32: {
+    '32': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_32_(2011)',
       note: 'Corrected after review: he peels the tattoo off while drying himself after the shower; the meeting reminder was cut for length. Kastro’s hits, the severed right arm and the double are in episode 31 and chapters 52 and 53; the card trick, the reattached right arm, the flying arm and Kastro’s death in episode 32 and chapter 54; the woman’s stitches, Bungee Gum, Texture Surprise, the August 30 meeting and the fake spider tattoo in episode 32 and chapter 55.',
     },
-    36: {
+    '36': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_36_(2011)',
       note: 'Corrected after review: the rock tied to his aura and the blow to the head are Chapter 63 only, reworded. The punch from behind the tile is in episode 35 and chapter 61; the badge, the Enhancer guess and the personality talk in episode 36 and chapter 62; the Bungee Gum quiz, his thrill, the rock and the farewell about a fight to the death in episode 36 and chapter 63.',
     },
-    41: {
+    '41': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_41_(2011)',
       note: 'Corrected after review: “the newest member” and the title “The new member” are episode 41 only; chapter 71 says only that members No. 4 and 8 have changed, so the four talk about him and the members who have changed, as in Machi’s story. The fake tattoo and Machi’s call for noon on August 30 are episode 32 and chapter 55; the four members talking about him on the road and the leader’s order are episode 41 and chapter 71. Also read: Episode 32 (2011), Chapter 55, Chapter 71.',
     },
-    46: {
+    '46': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_46_(2011)',
       note: 'The leave to go is chapter 76 and episode 45; the meeting is chapter 78 and episode 45, the call and the Scarlet Eyes chapter 79 and episode 46. The leader is not named before episode 54. Checked on the episode page and the chapter pages.',
     },
-    50: {
+    '50': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: Feitan grabs only Gon; Killua steps forward on his own. Chapters 91-92 and episode 50. Gon’s surprise at seeing him is chapter-only. Checked on the episode page and the chapter pages.',
     },
-    55: {
+    '55': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'Corrected after review: staying in Yorknew only might give him his chance. His fortune is chapter 105 and episode 54; the fake and what he has told Kurapika are chapter 106 and episode 55. His real fortune is told only at chapter 119 and episode 58. Italian: Tela Fantasma (Italian Wikipedia, as in #973). Checked on the episode page and the chapter pages.',
     },
-    58: {
+    '58': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
       note: 'Corrected after review: the text to Illumi says he no longer needs his help, since the stand-in it ends is left out. he does not reach Kurapika’s airship: he turns up at the airport as Pakunoda and the boys board. In Italian, “mentre il capo è in ostaggio”. The call to Illumi is chapter 115 and episode 57; the airship, the challenge and the text are chapters 118-119 and episode 58. The stand-in at the hideout and the removed tattoo are on the chapter pages only. Checked on the episode page and the chapter pages.',
     },
-    66: {
+    '66': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 149: Chapter 149 reveals alias and motive; participants left unspecified to avoid adaptation differences.',
     },
-    68: {
+    '68': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_68_(2011)',
       note: 'Episode 68 and Chapter 159: Chapters 157–159 cover encounter, deceptive account and altered binder.',
     },
-    71: {
+    '71': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
       note: 'Episode 71 and Chapter 169: Chapters 164–169; final rebound and victory in chapter 169.',
     },
-    72: {
+    '72': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
       note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72: surveillance, replacement and negotiation. Exorcist unnamed because excluded record.',
     },
-    137: {
+    '137': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
       note: 'Chapter 320; Episode 137 (2011). Chapter 320 and episode 137; no premature name for Alluka.',
     },
-    142: {
+    '142': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_142_(2011)',
       note: 'Chapter 327; Episode 142 (2011). Chapter 327 and episode 142.',
     },
+    '148:351': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_351',
+      note: 'Chapter 351: the match to the death between Floor Masters, Black Voice on the referee, Bungee Gum, the slashed throat and the blast that sends Hisoka to the ceiling; The Sun and Moon explained in the same chapter. Corrected after independent verification: the Italian names the referee’s body as the source of the blast. Corrected in review: the referee is only wounded here; chapter 352 calls him dead.',
+    },
+    '148:356': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_356',
+      note: 'Chapters 353–356: the severed heads as weapons (353–354), the head exploding with four fingers lost (355), the lost part of a leg and the final explosion (356). The notes and the synopsis disagree on which leg, so the story names none.',
+    },
+    '148:357': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
+      note: 'Chapter 357: reported among the casualties, Machi with the body, the Nen order to restart heart and lungs, Bungee Gum and Texture Surprise, Machi bound, the threat to the Troupe, Kortopi and Shalnark killed, ten left.',
+    },
   },
   'hanzo': {
-    3: {
+    '3': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_3_(2011)',
       note: 'The juice scene: Gon and Leorio sense something wrong, Kurapika pours it out, Tonpa apologizes, leaves and remembers the applicants who did not take his bait, Hanzo and Nicholas. Corrected after the PR review: the ninja and scroll details, which the episode page does not show, were cut.',
     },
-    19: {
+    '19': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_19_(2011)',
       note: "Hanzo's requests to give up, the broken arm, the leg and death threats, Gon's answer about his father, his concession and the knockout punch.",
+    },
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: recruitment, his remark that Tserriednich is a veteran with a likely private army, and Momoze hiring him.',
+    },
+    '148:368': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_368',
+      note: 'Chapter 368: Hanzo’s self-reproach, Biscuit’s comfort, the clone deduction, the arrests that would only clear the guards, the off-duty guard and his vow.',
     },
   },
   'nicholas': {
@@ -667,53 +733,57 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'netero': {
-    6: {
+    '6': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_6_(2011)',
       note: "Corrected after review: 'alone' was invented and removed, and Netero now tells Menchi to design a new task rather than simply agreeing. Airship, crater landing and her admission are here.",
     },
-    7: {
+    '7': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_7_(2011)',
       note: 'Corrected after review: he appears from the opposite direction in the corridor, not behind them. The introduction, the ball challenge, and Gon forcing the other arm are here.',
     },
-    21: {
+    '21': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_21_(2011)',
       note: 'Both defences of Killua, Netero calling them guesses, his agreeing Killua would pass again and declaring the seven Hunters are all in this episode.',
     },
-    66: {
+    '66': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 148: Chapter 148 and episode 66: examiner’s phone call and decision.',
     },
-    85: {
+    '85': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_85_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 85 (2011), Chapter 199.',
     },
-    86: {
+    '86': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 201, Chapter 202.',
     },
-    88: {
+    '88': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_88_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 88 (2011), Chapter 205.',
     },
-    92: {
+    '92': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 92 (2011), Chapter 215.',
     },
-    111: {
+    '111': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_111_(2011)',
       note: 'Checked Chapter 265, Episode 111 (2011).',
     },
-    122: {
+    '122': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_122_(2011)',
       note: 'Checked Chapter 287, Chapter 290, Episode 122 (2011).',
     },
-    126: {
+    '126': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_126_(2011)',
       note: 'Checked Chapter 291, Chapter 292, Chapter 296, Chapter 297, Chapter 298, Episode 126 (2011).',
     },
-    136: {
+    '136': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)',
       note: 'Chapter318 and Episode136 complete election rules; message begins in Chapter315/Episode135. No named unfiled Zodiacs.',
+    },
+    '148:341': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_341',
+      note: 'Chapter 341 synopsis and notes: the second DVD, Beyond’s earlier trip and its threats, the ban until his death, and the request rather than order to go before his son.',
     },
   },
   'lippo': {
@@ -1113,33 +1183,45 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'ging-freecss': {
-    37: {
+    '37': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_37_(2011)',
       note: "Checked against the episode page and chapters 64-65: the only children on the island, the village searching for Mito and Ging finding her, leaving at Gon's age, the return ten years later carrying Gon, the grandmother and the separation, the Nen and license boxes, the ring, memory card and cassette, and the tape's question. Corrected after review: 'cousin', 'baby', 'only' and the box's hand-over condition are not on the episode page; 'breaks' became neutral 'comes off'. Manga-only lines left out: Mito taking the boy, the steel sticks, the ring warning. Also read: Chapter 64, Chapter 65, Chapter 66.",
     },
-    60: {
+    '60': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_60_(2011)',
       note: 'Episode 60 and Chapter 127: Chapter 127 contains the recorded message; no later game-master identities named.',
     },
-    75: {
+    '75': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
       note: 'Episode 75 and Chapter 184: castle friends explain creators’ initials and Ging changing a companion’s name to make the title fit. Added after independent verification to cover Ging’s later creation flashback separately from his recorded message.',
     },
-    137: {
+    '137': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
       note: 'Chapter 320; Episode 137 (2011). Chapter 320 and episode 137 complete the rules and advance arrangement.',
     },
-    140: {
+    '140': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_140_(2011)',
       note: 'Chapter 325; Episode 140 (2011). Chapter 325 and episode 140; does not disclose later interpretations of Ging’s intent.',
     },
-    146: {
+    '146': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
       note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146; survival mechanism remains Ging’s explanation, not certainty.',
     },
-    148: {
+    '148': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)',
       note: 'Chapter 339; Episode 148 (2011). Chapters 338–339 and episode 148; later Dark Continent events excluded.',
+    },
+    '148:343': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_343',
+      note: 'Chapters 340, 342 and 343: resignation (340), the visit to Beyond’s team and Pariston (342), the analysis of Pariston’s motives, Pariston’s admission, Usamen lifted, and Ging declaring himself number two (343).',
+    },
+    '148:344': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_344',
+      note: 'Chapter 344: the doubled pay, the Five Threats stronger than the Chimera Ants, the trip of Netero, Linne and Zigg, and the book written three hundred years ago and still being written. The author’s name is left out because his record is not filed. Corrected after independent verification: “secret” dropped; the synopsis does not say it.',
+    },
+    '148:347': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_347',
+      note: 'Chapter 347: the remote punch copied after being hit by it, the staged attack exposed, the mercenary’s anger about the money, the donation to the Norwell Fund and the mercenary’s battlefield orders.',
     },
   },
   'todo': {
@@ -1321,31 +1403,43 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'melody': {
-    40: {
+    '40': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_40_(2011)',
       note: 'Episode 40 and chapter 68: the chain at Squala, his heart speeding up, the rhythm of a liar, his distrust of Kurapika and Melody, Basho’s haiku and the confession. Also read: Chapter 68.',
     },
-    42: {
+    '42': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_42_(2011)',
       note: 'Episode 42 adapts chapter 73, pages 1-9: the front entrance, the rage in Kurapika’s heart, his people’s eyes, the devil’s sonata, the arm, the friend who played it on the flute and died, her hearing, and her wish to destroy it. Also read: Chapter 73.',
     },
-    44: {
+    '44': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_44_(2011)',
       note: 'Chapter 77 (pages 1-11) and episode 44. Her finding Machi’s needle is chapter-only. Checked on the episode page and the chapter pages.',
     },
-    56: {
+    '56': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
       note: 'Chapters 109-111 and episode 56. What she says to calm Kurapika differs between the pages. Checked on the episode page and the chapter pages.',
     },
+    '148:360': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_360',
+      note: 'Chapters 359 and 360: Kacho’s demands and Melody’s doubt (359), and her clear section during the emergency call (360). The hire moved to its own chapter-350 story after independent verification.',
+    },
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: recruited with four other Hunters, Basho on the naive princes using money as a reward, Melody arguing it will make things easier, and Kacho hiring her. Split out after independent verification.',
+    },
   },
   'basho': {
-    40: {
+    '40': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_40_(2011)',
       note: 'Corrected after review: the Italian second haiku reworded. Episode 40 and chapter 68: the punch that tells him the figures are aura, the haiku that sets a chair alight at his touch, the second haiku against liars and Squala’s confession. Also read: Chapter 68.',
     },
-    51: {
+    '51': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_51_(2011)',
       note: 'Neon’s escape is chapter 94 and episode 51; the call and the chain are chapter 95 and episode 51. Checked on the episode page and the chapter pages.',
+    },
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: recruitment, Hanzo’s private-army remark, Basho on the naive princes using money as a reward, Luzurus hiring him.',
     },
   },
   'baise': {
@@ -1415,25 +1509,29 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'machi': {
-    41: {
+    '41': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_41_(2011)',
       note: 'Corrected after review: “a new member” became the members who have changed, as chapter 71 says. The Nen threads on Hisoka’s arms and the call for noon on August 30 are episode 32 and chapter 55; the four on the road, the first gathering in over three years, the talk of Hisoka and the order are episode 41 and chapter 71. Also read: Episode 32 (2011), Chapter 55, Chapter 71.',
     },
-    45: {
+    '45': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_45_(2011)',
       note: 'Corrected after review: episode 45 names no single killer, so the members kill Dalzollene together with Phinks; Owl is no longer said to survive, and no killers named: chapter 78 only reports the Shadow Beasts all dead, from a caller, and the Troupe is first named as the killer in chapter 79, page 1. The story says only that other Shadow Beasts arrive. The needle and the cloth are chapter 77 (pages 12-19), the rescue chapter 78, both in episode 45. Owl’s torture is left out.',
     },
-    49: {
+    '49': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_49_(2011)',
       note: 'Chapters 89-91 and episode 49. Checked on the episode page and the chapter pages.',
     },
-    57: {
+    '57': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
       note: 'Chapters 113-114 and episode 57. Her broken ribs are chapter-only. Checked on the episode page and the chapter pages.',
     },
-    72: {
+    '72': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
       note: 'Episode 72 and Chapter 170: Chapter 170 and episode 72 show surveillance and warning; original wording, no quoted dialogue.',
+    },
+    '148:357': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
+      note: 'Chapter 357: paid in advance, thanks for the exorcism, the stitching interrupted by his revival, his refusal, Bungee Gum, the message to the Troupe and her threat.',
     },
   },
   'ivlenkov': {
@@ -1681,33 +1779,37 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'shalnark': {
-    46: {
+    '46': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_46_(2011)',
       note: 'Chapter 79 and episode 46. Franklin bringing the beer is anime-only. Checked on the episode page and the chapter pages.',
     },
-    50: {
+    '50': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_50_(2011)',
       note: 'Corrected after review: in Italian, it is the chain user who works for the Nostrade family. Chapter 92 and episode 50. Checked on the episode page and the chapter pages.',
     },
-    53: {
+    '53': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Corrected after review: in Italian, the ability’s name comes before “la sua abilità Nen”. Chapter 100 and episode 53. Italian: Voce Nera, il Cellulare del Destino (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
     },
-    62: {
+    '62': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
       note: 'Episode 62 and Chapter 134: Chapter 134 explains deduction from copies, vacuum and disappearing bodies.',
     },
-    65: {
+    '65': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
       note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
     },
-    66: {
+    '66': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and Chapter 149: Chapter 149 and episode 66 share these four Troupe participants. Feitan and Kortopi omitted from this scene because their presence is anime-only.',
     },
-    96: {
+    '96': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)',
       note: 'Authoring correction: checked Chapter 225, Chapter 226, Chapter 227, Episode 96 (2011). Anime/chapter order differs here.',
+    },
+    '148:357': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
+      note: 'Chapter 357: with Kortopi and Machi over Hisoka’s body, the suffocation explained, the call with Chrollo, Kortopi’s head and his death.',
     },
   },
   'zepile': {
@@ -1761,43 +1863,63 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'kortopi': {
-    53: {
+    '53': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_53_(2011)',
       note: 'Chapter 100 and episode 53. The copies of the members’ bodies are told in episode 53 but explained in the chapters only later, so they are left out. Italian: La Mano Sinistra di Dio e la Mano Destra del Diavolo (Italian Wikipedia, Brigata Fantasma). Checked on the episode page and the chapter pages.',
     },
-    55: {
+    '55': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'Chapter 108 and episode 55. Checked on the episode page and the chapter pages.',
     },
-    62: {
+    '62': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
       note: 'Episode 62 and Chapter 134: Chapter 134: failed copied Rock card and shared deduction.',
     },
-    65: {
+    '65': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)',
       note: 'Episode 65 and Chapter 145: Chapter 145 and episode 65: six Troupe members expelled by game master. His name is deliberately omitted because his anime record opens only at episode 67.',
     },
+    '148:357': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
+      note: 'Chapters 352 and 357: Gallery Fake used by Chrollo (352); with Shalnark and Machi over the body, his question to Machi and her refusal of money, and his death and severed head (357).',
+    },
   },
   'chrollo': {
-    54: {
+    '54': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_54_(2011)',
       note: 'Corrected after review: in Italian, “ingaggiato da lui”; the fortune is what it says, not a fact. His record opens at episode 54 (unanchored), so his chronicle opens here and looks back over episodes 41-53: the order (chapter 71), Neon and the requiem (chapters 95-97), the Zoldycks and Illumi (chapters 98-100), the fake bodies (chapter 104). The fortunes are chapters 102-104 and episode 54. His book, the Indoor Fish and the copies he ordered are told differently by the two media and are left out. Checked on the episode page and the chapter pages.',
     },
-    55: {
+    '55': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_55_(2011)',
       note: 'Corrected after review: the order follows both media, as in Hisoka’s 55/106 story: Nobunaga draws his sword, Hisoka says only that the first verse is true, and when Nobunaga attacks, Chrollo moves him away. The fake fortune is chapter 106, the groups and the copies chapter 108, all in episode 55. Checked on the episode page and the chapter pages.',
     },
-    56: {
+    '56': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_56_(2011)',
       note: 'Corrected after review: “where they are” became “where his copies are”, so it cannot be read as the original eyes. Chapters 109-111 and episode 56. The hotel is not named before episode 57; Chrollo’s words to Gon differ between the pages, so the story says only that he gives no clear answer. Checked on the episode page and the chapter pages.',
     },
-    57: {
+    '57': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_57_(2011)',
       note: 'Corrected after review: the lights go out just as Pakunoda reads the boys’ memories; the chains are on the chapter pages only, as episode 57 says only that he is gone, so the story says only that Kurapika has taken him. Chapters 112-114 and episode 57. His words in the car and as a hostage are chapter-only. Checked on the episode page and the chapter pages.',
     },
-    58: {
+    '58': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_58_(2011)',
       note: 'Chapters 117-119 and episode 58. Looking east for the last part of his fortune is chapter-only. Checked on the episode page and the chapter pages.',
+    },
+    '148:352': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_352',
+      note: 'Chapters 351–352: Black Voice, The Sun and Moon and Double Face (351); Gallery Fake, Order Stamp, Convert Hands and the ability kept after its owner’s death (352).',
+    },
+    '148:356': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_356',
+      note: 'Chapters 353–356: the copied crowd stamped to break Hisoka (353), the marked copies (354–355), the head set off through Black Voice (355), the body bomb and the self-destructing puppets (356). Corrected after independent verification: retitled from a victory, as chapter 356 ends on the explosion and the casualty report is chapter 357; the body states no result.',
+    },
+    '148:357': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
+      note: 'Chapter 357: the call to Shalnark about the royal family’s passengers and the treasure, and the phone to be returned on board. Corrected after independent verification: Kortopi is already dead in the bathroom during the call, and Hisoka kills Shalnark right after it.',
+    },
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapter 366: on Tier 5 a passenger says Chrollo looks as if he is going to kill someone and suggests he forget his worldly ties; Chrollo answers that ties are severed, not forgotten. Tiers 3–5 hold the general passengers (chapter 358). Added after independent verification.',
     },
   },
   'bonolenov': {
@@ -1879,49 +2001,53 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'biscuit-krueger': {
-    62: {
+    '62': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_62_(2011)',
       note: 'Episode 62 ends with the Gyo demonstration, introduction and forty years of Nen; chapter 137 contains this introduction. The opening avoids later acceptance, Wing or Blue Planet disclosures.',
     },
-    63: {
+    '63': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_63_(2011)',
       note: 'Episode 63 and chapters 138-140 include Binolt’s defeat, the training agreement, shovel purchase and Shu exercise. Corrected from chapter 139 to 140 because the digging and Shu lesson occur later.',
     },
-    64: {
+    '64': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_64_(2011)',
       note: 'Episode 64 and chapters 141-142 cover studying monster weaknesses, Ken against Ko and then Ryu. Chapter 142 is required for the full aura-distribution lesson.',
     },
-    66: {
+    '66': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_66_(2011)',
       note: 'Episode 66 and chapters 149-151 show Killua’s return, collecting and the beginning of trading. Corrected from chapter 150 to 151 because trading begins there.',
     },
-    69: {
+    '69': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_69_(2011)',
       note: 'Recruitment and sports victories occur in chapters 157-160; chapter 161 and episode 69 introduce the eight-player dodgeball challenge. The whole story waits for chapter 161.',
     },
-    71: {
+    '71': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_71_(2011)',
       note: 'Chapters 164-169 and episodes 70-71 show her dress elimination, exposure of Killua’s injured hands during the timeout, and tending them after the team wins.',
     },
-    72: {
+    '72': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_72_(2011)',
       note: 'Episode 72 and chapter 171 show Killua asking for her ability and Biscuit materializing her Nen beautician and explaining massage and recovery. The beautician remains unnamed because she has no filed record.',
     },
-    73: {
+    '73': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_73_(2011)',
       note: 'Episode 73 and chapter 177 show separating an accomplice, letting him strike her, revealing her muscular form and winning with one punch. The accomplice is anonymous in both languages (#1032).',
     },
-    75: {
+    '75': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_75_(2011)',
       note: 'Chapter 184 selects Blue Planet; chapter 185 and episode 75 show using it outside the game and the farewell before Gon and Killua travel. No identity at their destination is disclosed.',
     },
-    86: {
+    '86': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_86_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 86 (2011), Chapter 201.',
     },
-    89: {
+    '89': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_89_(2011)',
       note: 'Read the MediaWiki API synopses: Episode 89 (2011), Chapter 209, Chapter 210.',
+    },
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: recruited, the suspicious elimination of threats, her anger at Kurapika, Killua’s advice used to flatter her, and Marayam hiring her.',
     },
   },
   'binolt': {
@@ -3031,9 +3157,13 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'saiyu': {
-    137: {
+    '137': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
       note: 'Chapter 321; Episode 137 (2011). Chapter 319 / episode 137 scene, held to chapter 321 naming.',
+    },
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapters 348–349: the hidden camera and the traitor found (348), Saiyu’s relief about his ability, the escape attempts expected and the secret watch with arrest before landing (349).',
     },
   },
   'saccho-kobayakawa': {
@@ -3053,31 +3183,47 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'pariston-hill': {
-    137: {
+    '137': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
       note: 'Chapter 321; Episode 137 (2011). Chapters 319–320 / episode 137; held to chapter 321 positive naming.',
     },
-    138: {
+    '138': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_138_(2011)',
       note: 'Chapter 321; Episode 138 (2011). Chapter 321 and episode 138; no claim that confiscated Hunters lose voting rights.',
     },
-    145: {
+    '145': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_145_(2011)',
       note: 'Chapter 334; Episode 145 (2011). Chapter 334 and episode 145; his explanation is attributed, not presented as omniscient fact.',
     },
-    146: {
+    '146': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
       note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146.',
     },
+    '148:345': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_345',
+      note: 'Chapters 340–345: among Beyond’s followers (340), Ging’s analysis and Pariston’s admission (343), his calling himself number two and Ging taking it (343), and the first time he hates anyone (345).',
+    },
+    '148:347': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_347',
+      note: 'Chapter 347: the escape, Ging’s imitation of Leorio’s technique, the staging exposed, the challenge to come himself, the congratulations and Pariston declining to lead.',
+    },
   },
   'mizaistom-nana': {
-    137: {
+    '137': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
       note: 'Chapter 326; Episode 137 (2011). Chapter 319 / episode 137 scene, held to his chapter 326 naming gate.',
     },
-    144: {
+    '144': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_144_(2011)',
       note: 'Chapter 332; Episode 144 (2011). Chapter 332 and episode 144.',
+    },
+    '148:343': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_343',
+      note: 'Chapter 343: the search, the three men stopped by the card (named Cross Game in the notes, not in the story), Kurapika’s refusal, the Scarlet Eyes offer and the picture.',
+    },
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapter 349: the recording with Beyond, Kurapika confirming he told the truth, Pariston behind Saiyu, the secret watch and arrest before arrival, the expected criticism, and the six princes hiring bodyguards.',
     },
   },
   'kanzai': {
@@ -3105,17 +3251,25 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'cheadle-yorkshire': {
-    137: {
+    '137': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
       note: 'Chapter 319; Episode 137 (2011). Chapter 319 and episode 137; only the proposal, not the full rules read in chapter 320.',
     },
-    144: {
+    '144': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_144_(2011)',
       note: 'Chapter 332; Episode 144 (2011). Chapters 331–332 and episode 144.',
     },
-    146: {
+    '146': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_146_(2011)',
       note: 'Chapter 335; Episode 146 (2011). Chapter 335 and episode 146; does not claim the chapter 340 formal presidency.',
+    },
+    '148:341': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_341',
+      note: 'Chapters 340–341: the resignations and the V5 assignment to hunt Beyond (340), the second DVD, Cheadle accepting with no other Hunters, and Beyond’s appearance (341). Her later change of plan at 342 is left out.',
+    },
+    '148:346': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_346',
+      note: 'Chapter 346: Cheadle and Leorio greet Kurapika and Mizaistom; V5 now V6 with Kakin; the Five Threats ranked above the Chimera Ants; the objective; each member’s role.',
     },
   },
   'botobai-gigante': {
@@ -3129,9 +3283,343 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'beans': {
-    137: {
+    '137': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
       note: 'Chapter 319 and Episode 137 (2011): the draw and first rule. Remaining rules and rigging belong to chapter 320 and are told in Ging’s story.',
+    },
+    '148:341': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_341',
+      note: 'Chapters 340–341: the video and the two DVDs (340), the second DVD shown and Beyond’s call to Beans (341).',
+    },
+  },
+  'beyond-netero': {
+    '148:340': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_340',
+      note: 'Chapter 340: the king’s video, Beyond named as Netero’s hired son, his promise of equal chances and the invitation to Kakin, the Zodiacs’ surprise, and his speech to ten followers with Pariston. Manga only.',
+    },
+    '148:341': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_341',
+      note: 'Chapter 341: the second DVD (Beyond’s earlier trip and the new threats, the request to go first), Beans’s call and Beyond’s surrender. The prison cell is left to chapter 342.',
+    },
+    '148:342': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_342',
+      note: 'Chapter 342: the cell interview, his prediction, Cheadle calling it a delusion, Saccho’s summary of the deal, the declaration of war and Saccho’s offer to watch him.',
+    },
+    '148:345': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_345',
+      note: 'Chapter 345: the IPA Director’s order, the life-imprisonment clause, the signature, the pen through the pad and the three things left. The agency is described, not named, in the story.',
+    },
+  },
+  'zigg-zoldyck': {
+    '148:344': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_344',
+      note: 'Chapter 344 synopsis and notes: Ging’s account of the trip by Netero, Linne and Zigg, the gigantic continent and the ban Netero and the V5 placed to stop Beyond. The large creatures are the chapter’s flashback image, as the record’s log says. Corrected after independent verification: “secret” dropped; the synopsis does not say it.',
+    },
+  },
+  'tserriednich-hui-guo-rou': {
+    '148:343': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_343',
+      note: 'Chapters 342–343: the fourteen princes on the maiden voyage (342), Mizaistom’s offer and the picture of the Fourth Prince as owner of the Scarlet Eyes (343). Corrected during authoring: Mizaistom’s warning about the prince’s darker side is chapter 344 and was cut.',
+    },
+    '148:345': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_345',
+      note: 'Chapter 345: the dance club invitation, the hotel, the call to Mark from the bath and the blood-covered bathroom; the synopsis says they were most likely not his first victims.',
+    },
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapter 349: the butler’s rules (legal wives’ children, boarding and the ceremony), the urn, the drop of blood, the creature feeding him an egg and the Guardian Spirit Beast explanation.',
+    },
+    '148:362': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_362',
+      note: 'Chapter 362: the alliance with Tubeppa, the bodyguard’s talk with a colleague about hiding Nen, and the confrontation in which she admits she knows and uses it. The bodyguard is unnamed because her record is not filed.',
+    },
+    '148:368': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_368',
+      note: 'Chapters 366 and 368: the Nen training that shows him a genius (366), then the threat after Zhang Lei’s two-week message, her answer, the beast closing in and the blood (368). No death is claimed.',
+    },
+  },
+  'mark': {
+    '148:345': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_345',
+      note: 'Chapter 345: the two women invited to the prince’s hotel, the phone call from the bath to someone named Mark, the complaint about fashion, the order for two more and the bloody bathroom. Who invited the women is left passive, as on the page.',
+    },
+  },
+  'curly': {
+    '148:346': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_346',
+      note: 'Chapters 343, 344 and 346: the shunned question (343), the question about Ging’s sources (344) and, a month later, the Kappe vocabulary contest won by Ging, after which Curly accepts him and his money (346).',
+    },
+  },
+  'golem': {
+    '148:347': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_347',
+      note: 'Chapter 347: the Stone Wall squad, the symbiotic weapon worked by an Emitter, the firearms given to the henchmen, Ging’s question and the distorted answer about the name.',
+    },
+  },
+  'benjamin-hui-guo-rou': {
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapters 348–349: the call to Tserriednich about whoever survives becoming king is in 348, where Benjamin is not yet filed; the roster that gives his title and mother is 349, so the story waits for it.',
+    },
+    '148:363': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_363',
+      note: 'Chapter 363: the quarrel with Camilla before the king, the oath about the diseased branches, his beast behind him, the question about not seeing the beasts, the fourteen soldiers sent as royal guards with leave to kill in self-defence.',
+    },
+  },
+  'unma-hui-guo-rou': {
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapter 349 synopsis and notes: eight legal wives, fourteen princes, the boarding and ceremony conditions and the participants kept confidential until then; the roster gives Unma as mother of the First and Fourth Princes.',
+    },
+  },
+  'tang-zhao-li-hui-guo-rou': {
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapter 349: the roster gives Tang Zhao Li as mother of Zhang Lei, the Third Prince; princes are numbered by birth and called princes regardless of gender.',
+    },
+  },
+  'katrono-hui-guo-rou': {
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapters 348–349: the succession rules and the roster with Katrono as Tyson’s mother (349); the sole-survivor rule is first said in Benjamin’s call at 348.',
+    },
+  },
+  'seiko-hui-guo-rou': {
+    '148:349': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_349',
+      note: 'Chapter 349: the roster gives Seiko as mother of Kacho and Fugetsu, the Tenth and Eleventh Princes. Corrected during authoring: “twin daughters” was cut, as the synopsis calls them twins only at chapter 359.',
+    },
+  },
+  'woble-hui-guo-rou': {
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: the posting Kurapika takes for Halkenburg’s, the queen as employer, the succession war, deserters killed, ten times the pay to leave the ship, Kurapika’s conditions and the baby in his arms.',
+    },
+    '148:360': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_360',
+      note: 'Chapters 358–360: the aura from the cradle (358), Woody and four more guards drained (359), and Kurapika’s two hypotheses after learning of the ceremony a little over a month earlier (360).',
+    },
+  },
+  'izunavi': {
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: Kurapika recruits Biscuit, Basho, Izunavi, Hanzo and Melody; Izunavi’s remark about six simultaneous postings; Tyson hires him. “Nen teacher” is left to the chapter-361 story, where the flashback shows it.',
+    },
+    '148:361': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_361',
+      note: 'Chapter 361: the flashback to Izunavi’s advice: one chain left empty, the value of combination, an ability to make up for the lack of help, and the truth shown by fighting beside someone.',
+    },
+  },
+  'tokarine': {
+    '148:359': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_359',
+      note: 'Chapter 359 synopsis and notes: the First-Class Cabin meeting, New Continent versus Dark Continent, Morel’s ship, Knov’s staging base, Tokarine’s transport, her ability’s limits and her request to Gel.',
+    },
+  },
+  'kacho-hui-guo-rou': {
+    '148:359': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_359',
+      note: 'Chapter 359 synopsis and notes: the twins leaving one at a time, Kacho’s plan to kill the others together and keep Fugetsu alive, the cameras, her demands on her guards and Melody’s thought. Whether both or only Fugetsu would be spared differs between synopsis and notes; the story says the sister. Corrected after independent verification: Italian agreement “se stessa”.',
+    },
+  },
+  'fugetsu-hui-guo-rou': {
+    '148:359': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_359',
+      note: 'Chapter 359: the twins getting along, Fugetsu’s question, Kacho’s plan, sparing Fugetsu, and the guards working together.',
+    },
+  },
+  'halkenburg-hui-guo-rou': {
+    '148:361': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_361',
+      note: 'Chapter 361: the banquet, the cyclops-like beast on his shoulders, the withdrawal for respect and against a bloody throne, the king’s smile.',
+    },
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 362 and 366: the eleven unconscious guards (362); waking in his bed, the guards awake and unpacking, the question whether it was a dream and the pinion-shaped mark on the back of his left hand (366, Halkenburg’s character page citing chapter 366). Corrected after independent verification: the dream is a question, not a conclusion, and the mark is added.',
+    },
+  },
+  'momoze-hui-guo-rou': {
+    '148:361': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_361',
+      note: 'Chapter 361: Hanzo among her guards (350), her mother keeping six guards for her because Marayam needs more, Momoze knitting, and her beast, the one that first spoke to Sayird. The mother is unnamed because her record is not filed.',
+    },
+    '148:368': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_368',
+      note: 'Chapters 366 and 368: the guards’ plans (366); the early retirement, the suffocation while the guards were outside, the warning too late, the mother’s demand, Kurapika’s aura explanation, Hanzo’s grief (368).',
+    },
+  },
+  'tubeppa-hui-guo-rou': {
+    '148:365': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_365',
+      note: 'Chapters 362, 363 and 365: the alliance (362), her reading of the emergency call and request for information (363), the truce offered through a guard and the one-hour delay (365). The guard is unnamed until chapter 370.',
+    },
+  },
+  'camilla-hui-guo-rou': {
+    '148:363': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_363',
+      note: 'Chapter 363: biological death, the king’s answer, Benjamin’s remark, her wish that all siblings obey and kill themselves, the insults and her exit.',
+    },
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 363 and 366: the warning about Benjamin’s men in her living room (363), the order to her mother about Halkenburg and Benjamin, and the guard who records the evidence (366).',
+    },
+  },
+  'zhang-lei-hui-guo-rou': {
+    '148:363': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_363',
+      note: 'Chapter 363: the deaths in Woble’s quarters, the queens choosing her guards, his guard on Nen beasts, Benjamin’s soldier and his reading of the plan.',
+    },
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 365–366: the call before Benjamin, the reason, the invitation, the explanation of Nen and the beasts (365) and the two royal guards sent to Kurapika (366).',
+    },
+  },
+  'vincent': {
+    '148:363': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_363',
+      note: 'Chapter 363: the intercom introduction on Benjamin’s orders, the servant with the knife, the self-defence claim, the vial and Kurapika’s conclusion. The servant is unnamed because her record is not filed.',
+    },
+    '148:364': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_364',
+      note: 'Chapter 364: Kurapika avoids a fight, the ability transferred to the queen read by Vincent as an attack, the Hunter closing in, the stolen aura and the poison behind his teeth. His death is the record’s status at 364.',
+    },
+  },
+  'tyson-hui-guo-rou': {
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 348, 350, 362 and 366: her guards and Benjamin’s skipping the exam (348), Izunavi hired (350), aware of Nen and the beasts (362), her book and Izunavi’s praise (366).',
+    },
+  },
+  'luzurus-hui-guo-rou': {
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 348, 350, 362 and 366: all his guards failed the exam (348), Basho hired (350), aware of Nen (362), the healthy drug and the therapy idea (366).',
+    },
+  },
+  'sale-sale-hui-guo-rou': {
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 349 and 366: the roster with his mother (349) and his frivolity, her anxiety and the promise about the next banquet (366).',
+    },
+  },
+  'swinko-swinko-hui-guo-rou': {
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 349 and 366: the roster (349) and her son’s frivolity, her anxiety and his promise (366).',
+    },
+  },
+  'duazul-hui-guo-rou': {
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapters 349 and 366: her four children in the roster (349), Camilla’s order about Halkenburg and Benjamin, and the overheard evidence (366). Corrected after independent verification: “four children competing for the throne” became “among the princes”, as Halkenburg asked to withdraw at 361.',
+    },
+  },
+  'marayam-hui-guo-rou': {
+    '148:367': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_367',
+      note: 'Chapters 350, 360, 366 and 367: Biscuit hired (350), Marayam fine and unaware (360), the beast growing (366), and the cockroach seeing him, his mother, one guard and the dragon-like beast (367).',
+    },
+  },
+  'slakka': {
+    '148:367': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_367',
+      note: 'Chapters 366–367: the collusion with Unma’s soldiers, the arrival with Zhang Lei’s two guards and the pact with Benjamin’s soldier (366), and his question about coaching everyone (367).',
+    },
+  },
+  'barrigen': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: sent by the Thirteenth Prince’s mother and glad to be chosen (369); the introductions, Loberry’s woman, the snakes wrapped around his neck and arms, the shot and his death (370). Corrected after independent verification: “four snakes coil around him” became the synopsis wording.',
+    },
+  },
+  'belerainte': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: told to report incorrect teaching (369); the raised hands, the judging role, and his claim that the shooter killed Barrigen, with the reply (370).',
+    },
+  },
+  'danjin': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: Tserriednich’s order and Danjin’s warning (369); Myuhan made to answer, held back and apologised for (370).',
+    },
+  },
+  'furykov': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: already a Nen user, the eyes in profile and four pretenders (369); the Conjurer reading of Kurapika and the questions to Benjamin’s other soldier (370).',
+    },
+  },
+  'illardia': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: Fugetsu’s two servants wonder why they are there (369); the tape line, introductions, Loberry and Barrigen’s death (370).',
+    },
+  },
+  'ladiolus': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: the two servants of Fugetsu (369); the introductions, Kurapika’s question about Nen, Loberry pointing and Barrigen’s death (370).',
+    },
+  },
+  'loberry': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: Kacho’s servants glad to be away (369); the sixteen introductions finish, Kurapika asks who uses Nen, then she sees the woman Yuri cannot see, shouts, Barrigen dies and the woman is gone (370). Corrected after independent verification: she sees the woman after the introductions.',
+    },
+  },
+  'yuri': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: Kacho’s servants glad to be away (369); Loberry’s question, the shout, Barrigen’s death and Yuri asking afterwards (370).',
+    },
+  },
+  'longhi': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: sent by Tubeppa to recruit Kurapika and Woble’s camp, and the letter (369); introductions and Barrigen’s death (370).',
+    },
+  },
+  'maor': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 365, 367 and 369–370: the truce offer (365), the explanation he hears (367), the recruitment mission and letter (369), Barrigen’s death (370). His name is first given at 370, so the story waits.',
+    },
+  },
+  'mushaho': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: the importance of the mission (369); the tape line, the two-week promise, introductions and Barrigen’s death (370).',
+    },
+  },
+  'myuhan': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: the order and his excitement (369); the tape, the warning, his promise, the lunge, Danjin and the compliment (370).',
+    },
+  },
+  'satobi': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: talking with other guards and the fear of manipulation (369); the promise, introductions and Barrigen’s death (370).',
+    },
+  },
+  'shedule': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: Halkenburg’s order and the feather marks (369); stunned by Barrigen’s death and wondering whether it was meant to stop them learning Nen (370).',
+    },
+  },
+  'yuhirai': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: the order and the feather marks (369); after Barrigen’s death, the idea of a beast from a prince who sent no one (370).',
+    },
+  },
+  'tenftory': {
+    '148:370': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
+      note: 'Chapters 369–370: Zhang Lei’s order and the wariness of the First, Fourth and Fifth Princes (369); introductions and Barrigen’s death (370). Corrected after independent verification: the Italian now says he is wary of the princes, not their guards.',
     },
   },
 }
