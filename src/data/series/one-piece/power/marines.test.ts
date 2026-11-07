@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
+import type { Holding } from '~/data/features'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import type { Gated } from '~/lib/progress/spoiler'
 import { powerPage } from '~/server/archive/power.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { leaksOf } from '~/test/fog'
@@ -394,34 +396,41 @@ function edges(
 const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
 const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
 
-/** Every chapter and episode a gate of the body, a seat or a holder falls on. */
-function gates(): Bookmark[] {
-  const chapters = new Set<number>()
-  const episodes = new Set<number>()
-  const add = (inEpisode: number, inChapter: number): void => {
-    episodes.add(inEpisode - 1).add(inEpisode)
-    chapters.add(inChapter - 1).add(inChapter)
+/** A holding's own gate, and its holder's when it names one. */
+function holdingGates(holding: Holding): Gated[] {
+  const own = {
+    revealedAtEpisode: holding.episode,
+    revealedAtChapter: holding.chapter,
   }
-  add(MARINES.revealedAtEpisode, MARINES.revealedAtChapter)
-  for (const { holders, told } of MARINES.seats) {
-    add(told.revealedAtEpisode, told.revealedAtChapter)
-    for (const holding of holders) {
-      add(holding.episode, holding.chapter)
-      const holder =
-        holding.value === null ?
-          undefined
-        : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
-      if (holder !== undefined) {
-        add(holder.revealedAtEpisode, holder.revealedAtChapter)
-      }
-    }
-  }
+  const holder =
+    holding.value === null ?
+      undefined
+    : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
 
-  return [
-    ...[...chapters].map((at) => chapter(at)),
-    ...[...episodes].map((at) => episode(at)),
-  ]
+  return holder === undefined ? [own] : [own, holder]
 }
+
+/** Every gate of the body: its own, its seats', holdings' and holders'. */
+const GATES: Gated[] = [
+  MARINES,
+  ...MARINES.seats.flatMap(({ holders, told }) => [
+    told,
+    ...holders.flatMap((holding) => holdingGates(holding)),
+  ]),
+]
+
+/** A point and the one just before it. */
+const sides = (at: number): number[] => [at - 1, at]
+
+/** Each gate and the point just before it, in both media. */
+const BOOKMARKS: Bookmark[] = [
+  ...[...new Set(GATES.flatMap((g) => sides(g.revealedAtChapter)))].map((at) =>
+    chapter(at),
+  ),
+  ...[...new Set(GATES.flatMap((g) => sides(g.revealedAtEpisode)))].map((at) =>
+    episode(at),
+  ),
+]
 
 describe('the Marines’ chain of command', () => {
   it.each(edges(CHAPTERS))(
@@ -459,7 +468,7 @@ describe('the Marines’ chain of command', () => {
   it('leaks nothing on either side of any of its gates', () => {
     const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
 
-    for (const bookmark of gates()) {
+    for (const bookmark of BOOKMARKS) {
       for (const locale of LOCALES) {
         const page = powerPage(
           readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
