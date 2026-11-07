@@ -3,7 +3,9 @@ import { describe, expect, it } from 'vitest'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { BodyView } from '~/lib/view/power'
 import { powerPage } from '~/server/archive/power.server'
+import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
+import { opReaderFor } from '~/test/archive'
 import { ONE_PIECE_LOADED } from '~/test/series'
 
 /** The Warlords at a bookmark, if the reader has met them. */
@@ -279,4 +281,72 @@ describe('the Seven Warlords', () => {
     expect(body?.name).toBe('Flotta dei Sette')
     expect(body?.seats[0]?.title).toBe('Membro della Flotta dei Sette')
   })
+})
+
+/** A character's affiliation at a bookmark, as an English reader sees it. */
+function affiliationAt(id: string, bookmark: Bookmark): unknown {
+  const character = ONE_PIECE_LOADED.archive.getCharacter(id)
+  if (character === undefined) {
+    throw new Error(`${id} is not filed`)
+  }
+
+  return factsOf(character, opReaderFor(bookmark, 'en')).affiliation
+}
+
+/**
+ * The character pages' affiliations moved to match the seats: each step,
+ * as chapter and episode, with the text just before and from there on.
+ */
+const MOVES = [
+  {
+    id: 'crocodile',
+    chapter: 211,
+    episode: 127,
+    before: 'Seven Warlords; Baroque Works, head',
+    after: 'Former Warlord, under arrest',
+  },
+  {
+    id: 'marshall-d-teach',
+    chapter: 474,
+    episode: 369,
+    before: 'Blackbeard Pirates, captain; formerly of the Whitebeard Pirates',
+    after: 'Blackbeard Pirates, captain; Seven Warlords',
+  },
+  {
+    id: 'gecko-moria',
+    chapter: 581,
+    episode: 490,
+    before: 'Thriller Bark Pirates, captain; Seven Warlords of the Sea',
+    after: 'Former Warlord',
+  },
+  {
+    id: 'trafalgar-law',
+    chapter: 713,
+    episode: 643,
+    before: 'Seven Warlords; Heart Pirates, captain',
+    after: 'Former Warlord; Heart Pirates',
+  },
+  {
+    id: 'donquixote-doflamingo',
+    chapter: 801,
+    episode: 746,
+    before: 'Donquixote Pirates, captain; Seven Warlords; king of Dressrosa',
+    after: 'Former Warlord, under arrest',
+  },
+]
+
+describe('the Warlords’ character pages', () => {
+  it.each(MOVES)(
+    'move $id’s affiliation at chapter $chapter and episode $episode',
+    ({ after, before, chapter, episode, id }) => {
+      expect(affiliationAt(id, { mode: 'chapter', chapter: chapter - 1 })).toBe(
+        before,
+      )
+      expect(affiliationAt(id, { mode: 'chapter', chapter })).toBe(after)
+      expect(affiliationAt(id, { mode: 'episode', episode: episode - 1 })).toBe(
+        before,
+      )
+      expect(affiliationAt(id, { mode: 'episode', episode })).toBe(after)
+    },
+  )
 })

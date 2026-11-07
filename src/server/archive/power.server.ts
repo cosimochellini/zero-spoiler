@@ -48,8 +48,16 @@ function bodyOf(body: PowerBody, r: Reader): BodyView {
 
 function seatOf(seat: Seat, body: PowerBody, r: Reader): SeatView {
   const title = seat.title[r.locale]
-  const holding = seat.holders.findLast((entry) =>
-    [body, seat.told].every((owner) => r.sees(r.archive.gateOf(entry, owner))),
+  // A holder the reader's source does not tell is not in their archive at
+  // all, so that change never happened for them and the source's own last
+  // holder stays. A mistyped id is caught by `bodyFaults`, not here.
+  const holding = seat.holders.findLast(
+    (entry) =>
+      (entry.value === null
+        || r.archive.getCharacter(entry.value) !== undefined)
+      && [body, seat.told].every((owner) =>
+        r.sees(r.archive.gateOf(entry, owner)),
+      ),
   )
   if (holding === undefined) {
     return { title, state: 'unknown' }
@@ -58,8 +66,8 @@ function seatOf(seat: Seat, body: PowerBody, r: Reader): SeatView {
     return { title, state: 'vacant' }
   }
 
-  // A holder the reader's source does not tell is not in their archive at
-  // all, so that holding never opens for them; nor does one not met yet.
+  // A change told before its holder is met names no one yet: the seat is
+  // fogged, neither the old holder nor the new.
   const character = r.archive.getCharacter(holding.value)
   if (
     character === undefined

@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
+import type { Entity, SeriesArchive } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import type { Source } from '~/lib/progress/spoiler'
 import type { PowerPageView, SeatView } from '~/lib/view/power'
 import { leaksOf } from '~/test/fog'
 import {
@@ -34,43 +36,55 @@ function seatsAt(bookmark: Bookmark): string[] | undefined {
 const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
 const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
 
-/**
- * A seat `EARLY` holds until `MIDWAY` tells it passed to `LATE`, who is met
- * only later: in between it must be fogged, naming neither.
- */
-const PASSED_ARCHIVE = {
-  ...POWER_ARCHIVE,
-  features: {
-    ...POWER_ARCHIVE.features,
-    power: {
-      bodies: [
-        {
-          ...FIXTURE_BODY,
-          seats: [
-            {
-              ...THRONE,
-              holders: [
-                {
-                  episode: EARLY.revealedAtEpisode,
-                  chapter: EARLY.revealedAtChapter,
-                  value: EARLY.id,
-                },
-                { ...MIDWAY, value: LATE.id },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  },
+/** `LATE` as a record one source alone tells, under an id of its own. */
+function toldOnlyIn(source: Source): Entity {
+  return { ...LATE, id: `late-${source}-only`, source }
 }
+
+/**
+ * A seat `EARLY` holds until `MIDWAY` tells it passed to `next`: in between
+ * a reader who has not met `next` must see it fogged, naming neither.
+ */
+function passedTo(next: Entity): SeriesArchive {
+  return {
+    ...POWER_ARCHIVE,
+    getCharacter: (id) =>
+      id === next.id ? next : POWER_ARCHIVE.getCharacter(id),
+    features: {
+      ...POWER_ARCHIVE.features,
+      power: {
+        bodies: [
+          {
+            ...FIXTURE_BODY,
+            seats: [
+              {
+                ...THRONE,
+                holders: [
+                  {
+                    episode: EARLY.revealedAtEpisode,
+                    chapter: EARLY.revealedAtChapter,
+                    value: EARLY.id,
+                  },
+                  { ...MIDWAY, value: next.id },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    },
+  }
+}
+
+const PASSED_ARCHIVE = passedTo(LATE)
 
 /** That seat: its holder's id when held, else the whole seat as sent. */
 function passedAt(
   bookmark: Bookmark,
   locale: Locale = 'en',
+  archive: SeriesArchive = PASSED_ARCHIVE,
 ): SeatView | string | undefined {
-  const seat = powerPage(readerFor(PASSED_ARCHIVE, bookmark, locale)).bodies[0]
+  const seat = powerPage(readerFor(archive, bookmark, locale)).bodies[0]
     ?.seats[0]
 
   return seat?.state === 'held' ? seat.holder.id : seat
@@ -267,6 +281,34 @@ describe('the power page', () => {
           state: 'unknown',
         })
       }
+    },
+  )
+
+  it.each([
+    {
+      only: 'episode' as const,
+      kept: [MIDWAY.chapter, LATE.revealedAtChapter, 1000].map((at) =>
+        chapter(at),
+      ),
+      seen: episode(LATE.revealedAtEpisode),
+    },
+    {
+      only: 'chapter' as const,
+      kept: [MIDWAY.episode, LATE.revealedAtEpisode, 1000].map((at) =>
+        episode(at),
+      ),
+      seen: chapter(LATE.revealedAtChapter),
+    },
+  ])(
+    'keeps the old holder when the change is to one only the $only tells',
+    ({ kept, only, seen }) => {
+      const archive = passedTo(toldOnlyIn(only))
+
+      for (const bookmark of kept) {
+        expect(passedAt(bookmark, 'en', archive)).toBe(EARLY.id)
+      }
+
+      expect(passedAt(seen, 'en', archive)).toBe(`late-${only}-only`)
     },
   )
 

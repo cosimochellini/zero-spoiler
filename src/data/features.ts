@@ -154,9 +154,11 @@ export interface Holding extends Dated<null | string> {
 /** One seat of a body: its title and who has held it. */
 export interface Seat {
   /**
-   * Holders in timeline order, each opening at the later of its own gate,
-   * the seat's, the body's and the character's: the first entry is no
-   * earlier than the seat (a data test holds it).
+   * Holders in timeline order; the first entry is no earlier than the seat
+   * (a data test holds it). The latest holding reached by its own gate, the
+   * seat's and the body's decides the seat; the character's gate only
+   * decides whether the holder is named, else the seat is fogged. So every
+   * holding is dated where the story tells the change.
    */
   holders: Holding[]
   title: LocalizedText
