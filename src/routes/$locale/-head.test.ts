@@ -11,6 +11,7 @@ import { Route as CharactersRoute } from '~/routes/$series/$locale/characters'
 import { Route as FruitsRoute } from '~/routes/$series/$locale/fruits'
 import { Route as LandingRoute } from '~/routes/$series/$locale/index'
 import { Route as PlacesRoute } from '~/routes/$series/$locale/places'
+import { Route as PowerRoute } from '~/routes/$series/$locale/power'
 import { copyOf } from '~/server/copy.server'
 
 import { describeNamedPage, type HeadTags, recordHead } from './-head'
@@ -73,6 +74,11 @@ const PAGES = [
     route: PlacesRoute,
     matched: '/one-piece/en/places/',
     canonical: '/one-piece/en/places',
+  },
+  {
+    route: PowerRoute,
+    matched: '/one-piece/en/power',
+    canonical: '/one-piece/en/power',
   },
 ] as const
 
@@ -151,6 +157,9 @@ describe('every page that is not a record’s own', () => {
         '/hunter-x-hunter/en/fruits/',
         HUNTER_X_HUNTER_SERIES,
       ),
+    ).toStrictEqual({})
+    expect(
+      headOf(PowerRoute, '/hunter-x-hunter/en/power', HUNTER_X_HUNTER_SERIES),
     ).toStrictEqual({})
   })
 })

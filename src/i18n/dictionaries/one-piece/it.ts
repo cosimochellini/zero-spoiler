@@ -57,6 +57,7 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'form.train': 'Treno del mare',
 
   'nav.fruits': 'Frutti',
+  'nav.power': 'Potere',
 
   'home.filler.title': 'Occhio ai filler',
   'home.filler.link': 'Vedi tutti i filler',
@@ -147,6 +148,17 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'fruits.pageTitle': 'Frutti del diavolo | {series} | Zero Spoiler',
   'fruits.pageDescription':
     'I frutti del diavolo di One Piece, ognuno nascosto fino all’episodio in cui viene nominato per la prima volta.',
+  'power.title': 'Il potere nel mondo',
+  'power.pageTitle': 'Il potere nel mondo | {series} | Zero Spoiler',
+  'power.pageDescription':
+    'Chi occupa i seggi del potere nel mondo di One Piece, ognuno nascosto fino al capitolo o all’episodio che lo nomina.',
+  'power.noBookmark':
+    'Non hai ancora impostato un segnalibro, quindi ogni gruppo e ogni seggio sono nella nebbia.',
+  'power.none':
+    'Niente di questa pagina è visibile al punto del tuo segnalibro.',
+  'power.vacant': 'Vacante',
+  'power.unknown': 'Nella nebbia',
+  'power.ended': 'Questo gruppo è stato sciolto.',
   'fruits.searchLabel': 'Cerca un frutto',
   'fruits.searchClear': 'Cancella la ricerca',
   'fruits.searchPlaceholder': 'Gom Gom, Rufy',

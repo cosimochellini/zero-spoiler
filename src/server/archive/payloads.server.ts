@@ -35,6 +35,7 @@ import {
 } from './peek.server'
 import { placePage } from './placePage.server'
 import { placesPage } from './places.server'
+import { powerPage } from './power.server'
 import { readerFor } from './reader.server'
 import { sagaLabels } from './sagaLabels.server'
 
@@ -74,6 +75,7 @@ function listPayloads(archive: SeriesArchive): Payload[] {
     },
     { name: 'loadPlaces', run: (b, l) => placesPage(readerFor(archive, b, l)) },
     { name: 'loadFiller', run: (b, l) => fillerPage(readerFor(archive, b, l)) },
+    { name: 'loadPower', run: (b, l) => powerPage(readerFor(archive, b, l)) },
     { name: 'loadSeriesCopy', run: (_, l) => copyOf(archive.series, l) },
     { name: 'loadSeriesLegal', run: (_, l) => legalOf(archive.series, l) },
     {
@@ -213,6 +215,7 @@ export function payloadsFor(archive: SeriesArchive): Payload[] {
     'loadSeriesCopy',
     'loadSeriesLegal',
     'loadDemoDrawings',
+    'loadPower',
   ]
   return order.flatMap((name) => all.filter((payload) => payload.name === name))
 }

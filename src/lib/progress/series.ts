@@ -53,6 +53,8 @@ export interface Series extends BookmarkSeries {
     factions: boolean
     filler: boolean
     fruits: boolean
+    /** Whether it has the page of who holds the world's seats of power. */
+    power: boolean
     /**
      * Whether its places pages draw One Piece's world map. Without it the
      * index, grouped by region, is the places page, and a place's page has
@@ -124,6 +126,7 @@ export const ONE_PIECE_SERIES: Series = {
     factions: true,
     filler: true,
     fruits: true,
+    power: true,
     worldMap: true,
   },
 }
@@ -177,6 +180,7 @@ export const HUNTER_X_HUNTER_SERIES: Series = {
     factions: false,
     filler: false,
     fruits: false,
+    power: false,
     worldMap: false,
   },
 }
@@ -229,12 +233,13 @@ export const GAME_OF_THRONES_SERIES: Series = {
     factions: false,
     filler: false,
     fruits: false,
+    power: false,
     worldMap: false,
   },
 }
 
 /** A page under `/{series}/{locale}/` that only some series have. */
-export type SeriesPage = 'characters' | 'filler' | 'fruits' | 'places'
+export type SeriesPage = 'characters' | 'filler' | 'fruits' | 'places' | 'power'
 
 /** What decides each of those pages: a kind the series files, or a feature. */
 const PAGES: Record<SeriesPage, (series: Series) => boolean> = {
@@ -243,6 +248,7 @@ const PAGES: Record<SeriesPage, (series: Series) => boolean> = {
     series.kinds.includes('place') || series.kinds.includes('ship'),
   fruits: (series) => series.features.fruits,
   filler: (series) => series.features.filler,
+  power: (series) => series.features.power,
 }
 
 /**
@@ -257,7 +263,10 @@ function isSeriesPage(page: string): page is SeriesPage {
   return Object.hasOwn(PAGES, page)
 }
 
-/** Only an archive index, record or filler page carries a bookmark. */
+/**
+ * Only an archive index, a record, the filler guide or the power page
+ * carries a bookmark.
+ */
 function isContentPage(page: string | undefined, rest: string[]): boolean {
   if (page === undefined) {
     return true
@@ -265,7 +274,7 @@ function isContentPage(page: string | undefined, rest: string[]): boolean {
   if (!isSeriesPage(page)) {
     return false
   }
-  if (page === 'filler') {
+  if (page === 'filler' || page === 'power') {
     return rest.length === 0
   }
   return rest.length <= 1 && rest[0] !== ''

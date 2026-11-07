@@ -59,6 +59,7 @@ function suffixes(archive: ReaderArchive): Suffix[] {
       pathsFor('/places', [...places, ...ships], slug)
     : []),
     ...(hasPage(series, 'filler') ? [{ path: '/filler' }] : []),
+    ...(hasPage(series, 'power') ? [{ path: '/power' }] : []),
   ]
 }
 

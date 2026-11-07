@@ -544,8 +544,8 @@ describe.each(LOADED_SERIES)(
     })
 
     it('has a feature slice exactly where its description declares one', () => {
-      // `fruit` and `ship`, the bounty, the factions and the filler guide
-      // are One Piece's (owner, 2026-10-23). A series' archive carries a
+      // `fruit` and `ship`, the bounty, the factions, the filler guide and
+      // the power page are One Piece's (owner, 2026-10-23). A series' archive carries a
       // slice for each it has (`~/data/features`), and its description says
       // so: the two are one fact, held together here.
       const { features, kinds } = archive.series
@@ -566,6 +566,7 @@ describe.each(LOADED_SERIES)(
       expect(slices.ships !== undefined).toBe(kinds.includes('ship'))
       expect(slices.filler !== undefined).toBe(features.filler)
       expect(slices.factions !== undefined).toBe(features.factions)
+      expect(slices.power !== undefined).toBe(features.power)
       expect(bounties.length > 0).toBe(features.bounty)
       expect(eaters.length > 0).toBe(features.fruits)
     })
