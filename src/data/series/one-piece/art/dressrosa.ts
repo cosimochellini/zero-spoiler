@@ -94,7 +94,7 @@ const PUNK_HAZARD_ICE: Stroke[] = [
   },
 ]
 
-/** Caesar's laboratory below the cut: walls, side, the shuttered entrance, the balcony. */
+/** Caesar's laboratory below the cut: walls, side, the shuttered entrance, the band between floors. */
 const PUNK_HAZARD_LAB_BASE: Stroke[] = [
   { d: 'M104 150 V124 M152 150 V124 M98 120 V146 L104 150' },
   {
@@ -104,11 +104,9 @@ const PUNK_HAZARD_LAB_BASE: Stroke[] = [
   { d: 'M99 128 l4 3 M99 136 l4 3', role: 'ambient' },
 ]
 
-/** Caesar's laboratory above the cut: walls, roof and chimneys, windows. */
+/** Caesar's laboratory above the cut: walls, flat roof, windows. */
 const PUNK_HAZARD_LAB_TOP: Stroke[] = [
-  {
-    d: 'M104 124 V96 H152 V124 M98 120 V92 L104 96 M112 96 V84 h6 V96 M136 96 V80 h6 V96',
-  },
+  { d: 'M104 124 V96 H152 V124 M98 120 V92 L104 96' },
   { d: 'M110 108 h6 M125 108 h6 M140 108 h6', role: 'soft' },
   { d: 'M99 102 l4 3 M99 110 l4 3', role: 'ambient' },
 ]
@@ -398,8 +396,8 @@ export const dressrosaArt = {
   // Government's fence along the shore with its hazard stripes and the door
   // cut in it, a melted building burning behind; on the frozen side ice
   // peaks, and at their foot, by the line where the halves meet, Caesar's
-  // laboratory built into the mountain, its chimneys on the roof. Law cuts
-  // it in half at 616, in `dressrosaRedrawn`.
+  // laboratory built into the mountain, its entrance shuttered. Law cuts it
+  // in half at 616, in `dressrosaRedrawn`.
   'punk-hazard': [
     ...PUNK_HAZARD_ICE,
     ...PUNK_HAZARD_SHORE,
@@ -3095,7 +3093,7 @@ export const dressrosaRedrawn: Redrawings = {
         ...PUNK_HAZARD_SHORE,
         ...PUNK_HAZARD_LAB_BASE,
         { d: 'M98 120 L104 124 H152 L146 120 Z' },
-        ...moved(PUNK_HAZARD_LAB_TOP, 'translate(8 -4) rotate(8 152 124)'),
+        ...moved(PUNK_HAZARD_LAB_TOP, 'translate(2 -4) rotate(8 152 124)'),
         ...PUNK_HAZARD_GROUND,
       ],
     },
