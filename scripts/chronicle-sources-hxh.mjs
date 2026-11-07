@@ -4149,7 +4149,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:416': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_416',
-      note: 'Chapters 411 and 416, with Fukataki’s character page (status Deceased): her question to Sarahell after Halkenburg’s death (411); the massage, Benjamin’s order, Camilla’s shots off his Ken, and one shot into each servant, killing them instantly (416). Her `deceased` status is pinned at 416.',
+      note: 'Chapters 411 and 416, with Fukataki’s character page (status Deceased): her question to Sarahell after Halkenburg’s death (411); the massage, Benjamin’s order, Camilla’s shots off his Ken, and one shot into each servant, killing them instantly (416). Her `deceased` status at 416 is left to #1158 with her drawing stage.',
     },
   },
   'taler': {
@@ -4183,7 +4183,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:405': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
-      note: 'Chapter 405, with Lynch’s character page (“taking Lynch’s form after killing her”, cited to 405): the punch and the inner voice, the reflex knock-out, the Zakuro disguise, her anger and the hit list, the killing and her form used on Zakuro. Her status moves from 406 to 405, where the reader learns of her death; her body is found in 406.',
+      note: 'Chapter 405, with Lynch’s character page (“taking Lynch’s form after killing her”, cited to 405): the punch and the inner voice, the reflex knock-out, the Zakuro disguise, her anger and the hit list, the killing and her form used on Zakuro. The reader learns of her death here and her body is found in 406; moving her `deceased` pin to 405 is left to #1158 with her drawing stage.',
     },
   },
   'tevelares': {

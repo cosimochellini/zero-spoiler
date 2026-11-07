@@ -53,16 +53,17 @@ its corrections are listed below.
   stories tell the scene from the witnesses' side and stay true. The real
   Hisoka's first appearance since chapter 357 is 405 (chapter notes); he gets
   stories at 405 and 420.
-- A story that implies a status change carries it, manga-only: Lynch's
-  `deceased` moves from 406 to 405, where Bonolenov's thoughts and flashback
-  tell her killing (her character page cites 405; the body is found at 406);
-  Oito is `captured` at 415 (detention, indictment deferred, not a sentence);
-  Fukataki is `deceased` at 416 (shot by Benjamin); Danjin is `captured` at 416
-  (taken for questioning, to be detained at the Justice Bureau). Not added:
-  Tserriednich's staged death, Benjamin's, Camilla's, Tubeppa's and Tyson's
-  infections (all alive at 420), Halkenburg bound in Balsamilco's body (already
-  deceased at 404), and the princes confined to their quarters under martial
-  law.
+- A story that implies a status change carries it, manga-only: Oito is
+  `captured` at 415 (detention, indictment deferred, not a sentence) and Danjin
+  at 416 (taken for questioning, to be detained at the Justice Bureau). Two
+  deaths the stories tell move to #1158, because a death status and its drawing
+  stage are filed together and both records have real drawings since #1168:
+  Lynch's `deceased` pin (406 → 405, where Bonolenov's thoughts and flashback
+  tell her killing; her character page cites 405 and the body is found at 406)
+  and Fukataki's `deceased` at 416 (shot by Benjamin). Not added: Tserriednich's
+  staged death, Benjamin's, Camilla's, Tubeppa's and Tyson's infections (all
+  alive at 420), Halkenburg bound in Balsamilco's body (already deceased at
+  404), and the princes confined to their quarters under martial law.
 
 ## Stories per character
 

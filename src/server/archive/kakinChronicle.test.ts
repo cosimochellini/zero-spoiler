@@ -211,11 +211,8 @@ const PINS = [
     before: 'alive',
     after: 'captured',
   },
-  // Chapters 401–420 (#1159): Lynch's death is told at 405, before her body
-  // is found at 406.
-  { id: 'lynch-fullbokko', chapter: 405, before: 'alive', after: 'deceased' },
+  // Chapters 401–420 (#1159).
   { id: 'oito-hui-guo-rou', chapter: 415, before: 'alive', after: 'captured' },
-  { id: 'fukataki', chapter: 416, before: 'alive', after: 'deceased' },
   { id: 'danjin', chapter: 416, before: 'alive', after: 'captured' },
 ] as const
 
