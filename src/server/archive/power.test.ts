@@ -16,6 +16,7 @@ import {
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
 import { powerPage } from './power.server'
+import { drawingOf } from './project.server'
 import { readerFor } from './reader.server'
 
 /** The fixture's page at one bookmark. */
@@ -122,6 +123,45 @@ describe('the power page', () => {
     ])
     expect(pageAt(episode(500)).bodies[0]?.ended).toBe(true)
     expect(seatsAt(episode(1000))).toStrictEqual(['vacant', LATE.id, 'unknown'])
+  })
+
+  it('sends a held holder’s drawing as it stands, and none for the rest', () => {
+    const at = chapter(LATE.revealedAtChapter)
+    const reader = readerFor(POWER_ARCHIVE, at, 'en')
+    const seats = powerPage(reader).bodies[0]?.seats ?? []
+
+    expect(seats.map((seat) => seat.state)).toStrictEqual([
+      'vacant',
+      'held',
+      'unknown',
+    ])
+
+    const held = seats[1]
+
+    expect(held?.state === 'held' && held.holder.visual).toStrictEqual(
+      drawingOf(LATE, reader),
+    )
+    expect(drawingOf(LATE, reader).strokes.length).toBeGreaterThan(0)
+    // A vacant or fogged seat names no one: no drawing, no tint.
+    expect(seats[0]).toStrictEqual({ title: 'Fixture Throne', state: 'vacant' })
+    expect(seats[2]).toStrictEqual({
+      title: 'Fixture Sceptre',
+      state: 'unknown',
+    })
+  })
+
+  it('would catch a fogged holder’s drawing in the payload', () => {
+    const at = chapter(FIXTURE_BODY.revealedAtChapter)
+    const page = pageAt(at)
+    const [body] = page.bodies
+    const lateDrawing = drawingOf(LATE, readerFor(POWER_ARCHIVE, null, 'en'))
+    const leaked = {
+      bodies: [{ ...body, seats: [...(body?.seats ?? []), lateDrawing] }],
+    }
+    const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
+
+    expect(leaks(page, at)).toStrictEqual([])
+    expect(leaks(leaked, at)).toContain(LATE.id)
   })
 
   it('leaks nothing at any point around its gates', () => {

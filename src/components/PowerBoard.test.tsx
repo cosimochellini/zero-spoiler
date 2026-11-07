@@ -17,7 +17,11 @@ const page: PowerPageView = {
         {
           title: 'Fixture Throne',
           state: 'held',
-          holder: { id: 'dracule-mihawk', name: 'Dracule Mihawk' },
+          holder: {
+            id: 'dracule-mihawk',
+            name: 'Dracule Mihawk',
+            visual: { strokes: [{ d: 'M0 0 L10 10' }], tint: 'violet' },
+          },
         },
         { title: 'Fixture Crown', state: 'vacant' },
         { title: 'Fixture Sceptre', state: 'unknown' },
