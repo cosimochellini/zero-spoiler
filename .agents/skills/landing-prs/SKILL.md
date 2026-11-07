@@ -14,7 +14,7 @@ A pull request lands in two parts: review rounds until no P0–P2 is left, then 
 - A P0, P1 or P2 finding is fixed without asking the owner. Push the fix, then start a new fresh round.
 - A finding marked `Structural: yes` gets one extra review with `pr-reviewer-structural` before the merge.
 - CI does not run on a draft, so run `npm run check` locally before each round; the reviewer sees no CI result.
-- **Pure content PRs** (records, drawings, chronicle stories, no shared code) may run `npm run check:content` for these rounds when other sessions keep the load average above the core count and the full check times out on unrelated tests. It skips the build, coverage, the archive, react-doctor and fallow gates and the route and component tests outside its selection, so the ready PR's CI `validation` run is the full gate, and only a green full `npm run check` stands in for CI below.
+- **Pure content PRs** on a loaded machine (both defined in `filing-records` §8) may run `npm run check:content` and push with `LEFTHOOK_EXCLUDE=test git push` for these rounds. It skips the build, coverage, `gate:archive`, react-doctor, fallow and the tests outside its selection, so the ready PR's CI `validation` run is the full gate, and only a green full `npm run check` stands in for CI below.
 - When a round reports **no P0–P2**, the rounds are over. Fixing its P3 findings is your call; a P3 fix, whatever it touches, goes straight to the merge with no further round.
 
 Done when the last round reported no P0–P2 and every fix after it is pushed.
