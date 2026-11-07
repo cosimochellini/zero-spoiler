@@ -8,8 +8,8 @@ listed below. Cast lists and first-appearance fields identify candidates only.
 
 Manga pages, exact page numbers and licensed Italian manga spellings were not
 viewed. Italian names come from Italian Wikipedia, read through its API on
-2026-11-06. Original neutral placeholders reuse phase 4's person drawing;
-finished drawings remain #917 and chronicles #918.
+2026-11-06. The records are drawn in #1158 (part of #917). Chronicles remain
+#918.
 
 ## How a gate was read
 

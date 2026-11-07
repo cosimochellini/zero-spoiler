@@ -13,8 +13,8 @@ if (series === undefined) {
 }
 const { archive } = series
 
-// Every stage of chapters 340–400 (#1154, #1156), at the chapter the wiki
-// gives it.
+// Every stage of chapters 340–420 (#1154, #1156, #1158), at the chapter the
+// wiki gives it.
 const STAGES = [
   { id: 'pariston-hill', chapter: 340, change: 'allegiance to Beyond' },
   { id: 'mizaistom-nana', chapter: 343, change: 'Cross Game' },
@@ -51,16 +51,32 @@ const STAGES = [
   { id: 'tserriednich-hui-guo-rou', chapter: 385, change: 'Laplace Devil' },
   { id: 'sarasa', chapter: 397, change: 'death' },
   { id: 'terebellum', chapter: 399, change: 'Sweet Home' },
+  { id: 'longhi', chapter: 401, change: 'Moonlight Act' },
+  { id: 'halkenburg-hui-guo-rou', chapter: 404, change: 'death' },
+  { id: 'bonolenov', chapter: 405, change: 'Metamorphosen' },
+  { id: 'lynch-fullbokko', chapter: 405, change: 'death' },
+  { id: 'morena', chapter: 408, change: 'Carnival Orphan' },
+  { id: 'borksen', chapter: 410, change: 'Heil-Ly' },
+  { id: 'woble-hui-guo-rou', chapter: 412, change: 'missing' },
+  { id: 'furykov', chapter: 415, change: 'Combo Master' },
+  { id: 'fukataki', chapter: 416, change: 'death' },
 ]
 
-/** Neon's status as a reader at a bookmark sees it. */
-function neonStatusAt(
+/** Deaths this file draws, with the status pinned at the stage's chapter. */
+const DEATHS = [
+  { id: 'lynch-fullbokko', chapter: 405 },
+  { id: 'fukataki', chapter: 416 },
+]
+
+/** A character's status as a reader at a bookmark sees it. */
+function statusAt(
+  id: string,
   bookmark: Bookmark,
   locale: (typeof LOCALES)[number],
 ): string | undefined {
-  const character = archive.getCharacter('neon-nostrade')
+  const character = archive.getCharacter(id)
   if (character === undefined) {
-    throw new Error('Missing character neon-nostrade')
+    throw new Error(`Missing character ${id}`)
   }
   return archive.latestOf(
     readerFor(archive, bookmark, locale),
@@ -110,9 +126,18 @@ describe('Salé-salé’s beast', () => {
 
 describe('Neon’s presumed death', () => {
   it.each(LOCALES)('is filed at its stage’s chapter, in %s', (locale) => {
-    expect(neonStatusAt(inChapter(376), locale)).toBe('alive')
-    expect(neonStatusAt(inChapter(377), locale)).toBe('presumed-dead')
-    expect(neonStatusAt(inEpisode(148), locale)).toBe('alive')
+    expect(statusAt('neon-nostrade', inChapter(376), locale)).toBe('alive')
+    expect(statusAt('neon-nostrade', inChapter(377), locale)).toBe(
+      'presumed-dead',
+    )
+    expect(statusAt('neon-nostrade', inEpisode(148), locale)).toBe('alive')
+  })
+})
+
+describe.each(DEATHS)('$id’s death', ({ id, chapter }) => {
+  it.each(LOCALES)('is filed at its stage’s chapter, in %s', (locale) => {
+    expect(statusAt(id, inChapter(chapter - 1), locale)).toBe('alive')
+    expect(statusAt(id, inChapter(chapter), locale)).toBe('deceased')
   })
 })
 
