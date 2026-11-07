@@ -1,6 +1,7 @@
 import type { Reveal } from '~/data/reveal'
 import type { Gated } from '~/lib/progress/spoiler'
 import type { FillerKind } from '~/lib/view/filler'
+import type { BodyKind } from '~/lib/view/power'
 import type { FruitForm, FruitLook, Stroke } from '~/lib/view/records'
 
 import type {
@@ -14,9 +15,10 @@ import type {
 
 /**
  * The features only some series have, as optional slices of their archive
- * (`SeriesArchive.features`): One Piece's devil fruits, ships, filler guide
- * and factions. A series' description says which it has (`Series.features`,
- * and the `fruit` and `ship` kinds), and a data test holds the two together.
+ * (`SeriesArchive.features`): One Piece's devil fruits, ships, filler guide,
+ * factions and bodies of power. A series' description says which it has
+ * (`Series.features`, and the `fruit` and `ship` kinds), and a data test
+ * holds the two together.
  *
  * The server is one for every series, so it reads an archive through
  * `withFeatures`, which fills a slice a series does not have with empty lists
@@ -140,11 +142,57 @@ export interface FactionFeature<V extends Vocabulary = Vocabulary> {
   factionsOf: (at: Reveal, owner: Entity) => undefined | V['group'][]
 }
 
+/**
+ * A change of a seat's holder: the character who sits in it from then on, or
+ * `null` once it is vacant. Always at a true chapter as well as an episode,
+ * because a seat changing hands is the fact a chapter reader is waiting on.
+ */
+export interface Holding extends Dated<null | string> {
+  chapter: number
+}
+
+/** One seat of a body: its title and who has held it. */
+export interface Seat {
+  /**
+   * Holders in timeline order, each opening at the later of its own gate,
+   * the seat's, the body's and the character's: the first entry is no
+   * earlier than the seat (a data test holds it).
+   */
+  holders: Holding[]
+  title: LocalizedText
+  /**
+   * When the story says the seat exists. A body's count is a fact too, so a
+   * seat is counted from here; before its first holder opens it is a seat
+   * with no one named in it.
+   */
+  told: Gated
+}
+
+/**
+ * A group that holds power, gated at the chapter that first names it. Its id
+ * is one of the series' groups (One Piece's `Faction`), so a body and an
+ * affiliation tag never name the same group twice, and the label printed is
+ * the group's own.
+ */
+export interface PowerBody<V extends Vocabulary = Vocabulary> extends Gated {
+  /** When the story ends the body; its seats then stay as they stood. */
+  ended?: Gated
+  id: V['group']
+  kind: BodyKind
+  seats: Seat[]
+}
+
+/** The bodies of power, in the order the page lists them. */
+export interface PowerFeature<V extends Vocabulary = Vocabulary> {
+  bodies: PowerBody<V>[]
+}
+
 /** The feature slices a series has; the rest are left out. */
 export interface Features<V extends Vocabulary = Vocabulary> {
   factions?: FactionFeature<V>
   filler?: FillerFeature
   fruits?: FruitFeature
+  power?: PowerFeature<V>
   ships?: ShipFeature
 }
 
@@ -153,6 +201,7 @@ export type ReaderArchive<V extends Vocabulary = Vocabulary> = FactionFeature<V>
   & FillerFeature
   & FruitFeature
   & Omit<SeriesArchive<V>, 'features'>
+  & PowerFeature<V>
   & ShipFeature
 
 const none = (): undefined => undefined
@@ -160,7 +209,8 @@ const empty = (): never[] => []
 
 /**
  * An archive with every feature slice it lacks filled with nothing: no fruits,
- * no ships, no filler guide (aired to the series' last episode), no factions.
+ * no ships, no filler guide (aired to the series' last episode), no factions,
+ * no bodies of power.
  */
 export function withFeatures<V extends Vocabulary>(
   archive: SeriesArchive<V>,
@@ -184,5 +234,6 @@ export function withFeatures<V extends Vocabulary>(
       lastAired: core.series.episodeCeiling,
     }),
     ...(features.factions ?? { factionsOf: none }),
+    ...(features.power ?? { bodies: [] }),
   }
 }

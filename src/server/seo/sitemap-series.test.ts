@@ -20,6 +20,7 @@ vi.mock(import('~/data/series'), async (original) => {
         factions: false,
         filler: false,
         fruits: false,
+        power: false,
         worldMap: false,
       },
     },
@@ -78,6 +79,7 @@ describe('a sitemap with more than one series', () => {
     expect(xml).not.toContain('/characters/anime-only')
     expect(xml).not.toContain(`${SITE_ORIGIN}/test-series/en/fruits`)
     expect(xml).not.toContain(`${SITE_ORIGIN}/test-series/en/filler`)
+    expect(xml).not.toContain(`${SITE_ORIGIN}/test-series/en/power`)
     expect(xml).not.toContain(`${SITE_ORIGIN}/test-series/en/places`)
 
     await expect(sitemapXml()).resolves.toBe(xml)

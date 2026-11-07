@@ -20,6 +20,7 @@ import { Route as LocalePrivacyRouteImport } from './routes/$locale/privacy'
 import { Route as SeriesLocaleRouteImport } from './routes/$series/$locale'
 import { Route as SeriesLocaleIndexRouteImport } from './routes/$series/$locale/index'
 import { Route as SeriesLocaleFillerRouteImport } from './routes/$series/$locale/filler'
+import { Route as SeriesLocalePowerRouteImport } from './routes/$series/$locale/power'
 import { Route as SeriesLocaleCharactersIndexRouteImport } from './routes/$series/$locale/characters/index'
 import { Route as SeriesLocaleCharactersIdRouteImport } from './routes/$series/$locale/characters/$id'
 import { Route as SeriesLocaleFruitsIndexRouteImport } from './routes/$series/$locale/fruits/index'
@@ -82,6 +83,11 @@ const SeriesLocaleFillerRoute = SeriesLocaleFillerRouteImport.update({
   path: '/filler',
   getParentRoute: () => SeriesLocaleRoute,
 } as any)
+const SeriesLocalePowerRoute = SeriesLocalePowerRouteImport.update({
+  id: '/power',
+  path: '/power',
+  getParentRoute: () => SeriesLocaleRoute,
+} as any)
 const SeriesLocaleCharactersIndexRoute =
   SeriesLocaleCharactersIndexRouteImport.update({
     id: '/characters/',
@@ -126,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/$series/$locale': typeof SeriesLocaleRouteWithChildren
   '/$locale/': typeof LocaleIndexRoute
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
+  '/$series/$locale/power': typeof SeriesLocalePowerRoute
   '/$series/$locale/': typeof SeriesLocaleIndexRoute
   '/$series/$locale/characters/$id': typeof SeriesLocaleCharactersIdRoute
   '/$series/$locale/fruits/$id': typeof SeriesLocaleFruitsIdRoute
@@ -143,6 +150,7 @@ export interface FileRoutesByTo {
   '/$locale/privacy': typeof LocalePrivacyRoute
   '/$locale': typeof LocaleIndexRoute
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
+  '/$series/$locale/power': typeof SeriesLocalePowerRoute
   '/$series/$locale': typeof SeriesLocaleIndexRoute
   '/$series/$locale/characters/$id': typeof SeriesLocaleCharactersIdRoute
   '/$series/$locale/fruits/$id': typeof SeriesLocaleFruitsIdRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   '/$series/$locale': typeof SeriesLocaleRouteWithChildren
   '/$locale/': typeof LocaleIndexRoute
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
+  '/$series/$locale/power': typeof SeriesLocalePowerRoute
   '/$series/$locale/': typeof SeriesLocaleIndexRoute
   '/$series/$locale/characters/$id': typeof SeriesLocaleCharactersIdRoute
   '/$series/$locale/fruits/$id': typeof SeriesLocaleFruitsIdRoute
@@ -184,6 +193,7 @@ export interface FileRouteTypes {
     | '/$series/$locale'
     | '/$locale/'
     | '/$series/$locale/filler'
+    | '/$series/$locale/power'
     | '/$series/$locale/'
     | '/$series/$locale/characters/$id'
     | '/$series/$locale/fruits/$id'
@@ -201,6 +211,7 @@ export interface FileRouteTypes {
     | '/$locale/privacy'
     | '/$locale'
     | '/$series/$locale/filler'
+    | '/$series/$locale/power'
     | '/$series/$locale'
     | '/$series/$locale/characters/$id'
     | '/$series/$locale/fruits/$id'
@@ -220,6 +231,7 @@ export interface FileRouteTypes {
     | '/$series/$locale'
     | '/$locale/'
     | '/$series/$locale/filler'
+    | '/$series/$locale/power'
     | '/$series/$locale/'
     | '/$series/$locale/characters/$id'
     | '/$series/$locale/fruits/$id'
@@ -316,6 +328,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SeriesLocaleFillerRouteImport
       parentRoute: typeof SeriesLocaleRoute
     }
+    '/$series/$locale/power': {
+      id: '/$series/$locale/power'
+      path: '/power'
+      fullPath: '/$series/$locale/power'
+      preLoaderRoute: typeof SeriesLocalePowerRouteImport
+      parentRoute: typeof SeriesLocaleRoute
+    }
     '/$series/$locale/characters/': {
       id: '/$series/$locale/characters/'
       path: '/characters'
@@ -378,6 +397,7 @@ const LocaleRouteWithChildren =
 
 interface SeriesLocaleRouteChildren {
   SeriesLocaleFillerRoute: typeof SeriesLocaleFillerRoute
+  SeriesLocalePowerRoute: typeof SeriesLocalePowerRoute
   SeriesLocaleIndexRoute: typeof SeriesLocaleIndexRoute
   SeriesLocaleCharactersIdRoute: typeof SeriesLocaleCharactersIdRoute
   SeriesLocaleFruitsIdRoute: typeof SeriesLocaleFruitsIdRoute
@@ -389,6 +409,7 @@ interface SeriesLocaleRouteChildren {
 
 const SeriesLocaleRouteChildren: SeriesLocaleRouteChildren = {
   SeriesLocaleFillerRoute: SeriesLocaleFillerRoute,
+  SeriesLocalePowerRoute: SeriesLocalePowerRoute,
   SeriesLocaleIndexRoute: SeriesLocaleIndexRoute,
   SeriesLocaleCharactersIdRoute: SeriesLocaleCharactersIdRoute,
   SeriesLocaleFruitsIdRoute: SeriesLocaleFruitsIdRoute,

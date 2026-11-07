@@ -2,8 +2,8 @@
 
 Window: chapters 371–383. All thirteen chapter synopses were read through the
 lawful English Wiki MediaWiki API. Manga panels, page numbers and Italian manga
-forms were not viewed. Every new record is manga-only at episode 148. Finished
-art belongs to #917 and chronicles to #918.
+forms were not viewed. Every new record is manga-only at episode 148. The
+records are drawn in #1156 (part of #917); chronicles belong to #918.
 
 ## Verified naming gates
 

@@ -60,10 +60,15 @@ import {
 } from './kakin-phase-1'
 import { KAKIN_PHASE_TWO_DRAWINGS, kakinPhaseTwoRedrawn } from './kakin-phase-2'
 import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
-import { KAKIN_PHASE_4_DRAWINGS } from './kakin-phase-4'
+import { KAKIN_PHASE_4_DRAWINGS, kakinPhaseFourRedrawn } from './kakin-phase-4'
 import { KAKIN_PHASE_5_DRAWINGS } from './kakin-phase-5'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
-import { YORKNEW_CITY_DRAWINGS, yorknewCityRedrawn } from './yorknew-city'
+import {
+  NEON_PEN,
+  NEON_SHEETS,
+  YORKNEW_CITY_DRAWINGS,
+  yorknewCityRedrawn,
+} from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
 import { ZOLDYCK_DRAWINGS } from './zoldyck'
 
@@ -169,6 +174,25 @@ const LEORIO_SHADOW = shadow(78, 174, 58)
  * `satisfies` rather than an annotation, so `ArtId` below stays the literal
  * ids and a record cannot name a drawing that is not here.
  */
+/** Hanzo's bandana knotted into a loop, his first drawing without its shadow. */
+const HANZO_BANDANA: Stroke[] = [
+  { d: 'M40.4 83.8 A42 22 -8 1 0 123.6 72.2 A42 22 -8 1 0 40.4 83.8' },
+  { d: 'M40.4 83.8 V92 A42 22 -8 0 0 123.6 80.4 V72.2' },
+  {
+    d: 'M52.3 78.2 A30 13 -8 1 1 111.7 69.8 A30 13 -8 1 1 52.3 78.2',
+    role: 'soft',
+  },
+  { d: 'M60 67 l2 6 M72 63 l2 6 M86 62 l2 6 M100 63 l1 6', role: 'ambient' },
+  { d: 'M48 92 q4 -4 2 -10 M112 90 q-3 -4 0 -10', role: 'soft' },
+  { d: 'M74 98 L92 94 L98 106 L86 115 L74 109 Z', role: 'accent' },
+  {
+    d: 'M76 109 C66 124 52 138 34 152 C52 150 68 138 84 115 M92 108 C104 124 116 140 134 156 C118 152 102 138 90 113',
+    role: 'accent',
+  },
+  { d: 'M72 124 L52 144 M98 126 L118 148', role: 'soft' },
+  { d: 'M80 101 l8 8', role: 'soft' },
+]
+
 export const DRAWINGS = {
   ...ZOLDYCK_DRAWINGS,
   ...CHAPTER_ONE_DRAWINGS,
@@ -822,24 +846,7 @@ export const DRAWINGS = {
   // tails in the record's tint. His exam clothes in episode 3 and
   // chapter 6. His hidden blade is first shown in episode 19 and chapter
   // 34, after his threshold, so it is not drawn.
-  'hanzo': [
-    { d: 'M40.4 83.8 A42 22 -8 1 0 123.6 72.2 A42 22 -8 1 0 40.4 83.8' },
-    { d: 'M40.4 83.8 V92 A42 22 -8 0 0 123.6 80.4 V72.2' },
-    {
-      d: 'M52.3 78.2 A30 13 -8 1 1 111.7 69.8 A30 13 -8 1 1 52.3 78.2',
-      role: 'soft',
-    },
-    { d: 'M60 67 l2 6 M72 63 l2 6 M86 62 l2 6 M100 63 l1 6', role: 'ambient' },
-    { d: 'M48 92 q4 -4 2 -10 M112 90 q-3 -4 0 -10', role: 'soft' },
-    { d: 'M74 98 L92 94 L98 106 L86 115 L74 109 Z', role: 'accent' },
-    {
-      d: 'M76 109 C66 124 52 138 34 152 C52 150 68 138 84 115 M92 108 C104 124 116 140 134 156 C118 152 102 138 90 113',
-      role: 'accent',
-    },
-    { d: 'M72 124 L52 144 M98 126 L118 148', role: 'soft' },
-    { d: 'M80 101 l8 8', role: 'soft' },
-    shadow(82, 178, 56),
-  ],
+  'hanzo': [...HANZO_BANDANA, shadow(82, 178, 56)],
 
   // Nicholas's notebook computer, open on its hinge, the empty screen in
   // the record's tint: he looks up Tonpa in episode 3 and chapter 6.
@@ -1177,7 +1184,7 @@ const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka.flatMap((stroke, index) => {
   return [index === 2 || index === 3 ? { ...stroke, role: 'ambient' } : stroke]
 })
 
-/** Returning records whose drawing changes in Kakin, chapters 340–370 (#1154). */
+/** Returning records whose drawing changes in Kakin, chapters 340–400 (#1154, #1156). */
 const kakinReturningRedrawn: Redrawings = {
   'mizaistom-nana': [
     // The same hat, made small, and before it the warning card he shows
@@ -1346,6 +1353,38 @@ const kakinReturningRedrawn: Redrawings = {
     // wiki, so it is a frame check.
     { ...KAKIN, chapter: 357, value: YORKNEW_CITY_DRAWINGS.chrollo },
   ],
+  'hanzo': [
+    // The same bandana twice, the second in the muted ink above the first:
+    // Hanzo Skill 4, the double of himself he sends out while his body
+    // sleeps, the first ability he shows, chapter 372.
+    {
+      ...KAKIN,
+      chapter: 372,
+      value: [
+        ...moved(
+          HANZO_BANDANA.map((stroke) => ({
+            ...stroke,
+            role: 'ambient' as const,
+          })),
+          'translate(16 -34)',
+        ),
+        ...moved(DRAWINGS.hanzo, 'translate(-12 14)'),
+      ],
+    },
+  ],
+  'neon-nostrade': [
+    // The same pen laid down flat on the blank sheets: her ability vanishes
+    // from Chrollo's book, and she is presumed dead, chapter 377.
+    {
+      ...KAKIN,
+      chapter: 377,
+      value: [
+        ...NEON_SHEETS,
+        ...moved(NEON_PEN, 'translate(0 40) rotate(-66 80 88)'),
+        shadow(84, 184, 58),
+      ],
+    },
+  ],
 }
 
 export const REDRAWINGS: Redrawings = {
@@ -1369,4 +1408,5 @@ export const REDRAWINGS: Redrawings = {
   ...kakinPhaseOneBeasts,
   ...kakinPhaseTwoRedrawn,
   ...kakinReturningRedrawn,
+  ...kakinPhaseFourRedrawn,
 }
