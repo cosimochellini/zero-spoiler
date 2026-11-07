@@ -3,7 +3,8 @@
 Written on 7 November 2026, part of #918. Covers chapters 340–370, the two first
 Kakin record phases (#1134, #1135): 99 bilingual stories for all 45 characters
 filed in that window and 20 returning characters. The series now has 790 stories
-for 227 characters. Chapters 371 on are #1157 and #1159.
+for 227 characters. Chapters 371–400 are #1157
+([its record](hunter-x-hunter-kakin-chronicle-371-400.md)), 401 on #1159.
 
 ## Sources and method
 

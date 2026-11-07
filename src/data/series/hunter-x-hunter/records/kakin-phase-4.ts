@@ -49,7 +49,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       name: { it: 'Tajao', en: 'Tajao' },
       summary: {
         it: 'Il vicecapo dei Cha-R valuta una collaborazione con la Brigata Fantasma.',
-        en: 'The Cha-R underboss considers working with the Phantom Troupe.',
+        en: 'The Cha-R vice boss considers working with the Phantom Troupe.',
       },
       visual: { art: 'tajao', tint: 'violet' },
     },
@@ -539,10 +539,10 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     'tajao': introduced(
       384,
       {
-        role: { it: 'Vicecapo dei Cha-R', en: 'Cha-R underboss' },
+        role: { it: 'Vicecapo dei Cha-R', en: 'Cha-R vice boss' },
         log: {
           it: 'Il vicecapo dei Cha-R valuta una collaborazione con la Brigata Fantasma.',
-          en: 'The Cha-R underboss considers working with the Phantom Troupe.',
+          en: 'The Cha-R vice boss considers working with the Phantom Troupe.',
         },
         affiliation: { it: 'Famiglia Cha-R', en: 'Cha-R Family' },
       },
@@ -1073,16 +1073,16 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         394,
         {
           role: {
-            it: 'Soldatessa del quarto principe',
-            en: 'Fourth Prince’s soldier',
+            it: 'Soldatessa dell’esercito reale',
+            en: 'Royal Army soldier',
           },
           log: {
             it: 'Una soldatessa viene trasferita ai livelli inferiori dopo aver condiviso notizie sul Nen.',
             en: 'A soldier is transferred to the lower tiers after sharing information about Nen.',
           },
           affiliation: {
-            it: 'Guardie del quarto principe',
-            en: 'Fourth Prince’s guards',
+            it: 'Esercito reale di Cakin; scorta degli alloggi reali',
+            en: 'Kakin Royal Army; royal quarters security detail',
           },
         },
         [
@@ -1103,8 +1103,8 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 394,
           source: 'chapter',
           value: {
-            it: 'Guardie del quarto principe',
-            en: 'Fourth Prince’s guards',
+            it: 'Esercito reale di Cakin; scorta degli alloggi reali',
+            en: 'Kakin Royal Army; royal quarters security detail',
           },
         },
         {
@@ -1112,8 +1112,8 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 410,
           source: 'chapter',
           value: {
-            it: 'Guardie del quarto principe; costretta a unirsi agli Heil-Ly',
-            en: 'Fourth Prince’s guards; forced into the Heil-Ly Family',
+            it: 'Esercito reale di Cakin; costretta a unirsi agli Heil-Ly',
+            en: 'Kakin Royal Army; forced into the Heil-Ly Family',
           },
         },
       ],

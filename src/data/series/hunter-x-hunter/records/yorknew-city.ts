@@ -797,6 +797,7 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles['neon-nostrade'],
         ...greedIslandReturningChronicles['neon-nostrade'],
+        ...kakinChronicles['neon-nostrade'],
       ],
       role: [
         {
@@ -896,7 +897,7 @@ export const yorknewCity: HunterSaga = {
     },
     'uvogin': {
       relationships: yorknewCityRelationships.uvogin,
-      chronicle: yorknewCityChronicles.uvogin,
+      chronicle: [...yorknewCityChronicles.uvogin, ...kakinChronicles.uvogin],
       role: TROUPE_MEMBER,
       log: {
         it: 'Fugge dall’asta in mongolfiera con altri membri della Brigata. Dice al capo che il caveau era già vuoto e che tra loro potrebbe esserci un traditore; il capo lo convince che non c’è. Il capo vuole che attirino le Bestie dell’Ombra.',
@@ -924,6 +925,7 @@ export const yorknewCity: HunterSaga = {
         ...greedIslandReturningChronicles.feitan,
 
         ...chimeraAntPhase3Chronicles.feitan,
+        ...kakinChronicles.feitan,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -957,6 +959,7 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.franklin,
         ...greedIslandReturningChronicles.franklin,
+        ...kakinChronicles.franklin,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -983,6 +986,7 @@ export const yorknewCity: HunterSaga = {
         ...greedIslandReturningChronicles.nobunaga,
 
         ...chimeraAntPhase3Chronicles.nobunaga,
+        ...kakinChronicles.nobunaga,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -1005,6 +1009,7 @@ export const yorknewCity: HunterSaga = {
         ...greedIslandReturningChronicles.phinks,
 
         ...chimeraAntPhase3Chronicles.phinks,
+        ...kakinChronicles.phinks,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -1211,7 +1216,10 @@ export const yorknewCity: HunterSaga = {
     },
     'pakunoda': {
       relationships: yorknewCityRelationships.pakunoda,
-      chronicle: yorknewCityChronicles.pakunoda,
+      chronicle: [
+        ...yorknewCityChronicles.pakunoda,
+        ...kakinChronicles.pakunoda,
+      ],
       role: TROUPE_MEMBER,
       log: {
         it: 'Con Phinks mette alle strette Gon e Killua, che stavano pedinando Machi e Nobunaga. Quando i ragazzi cercano di scappare, lei sbarra la strada a Gon.',
@@ -1281,6 +1289,7 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.bonolenov,
         ...chimeraAntPhase3Chronicles.bonolenov,
+        ...kakinChronicles.bonolenov,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -1359,6 +1368,7 @@ export const yorknewCity: HunterSaga = {
         ...greedIslandReturningChronicles.shizuku,
 
         ...chimeraAntPhase3Chronicles.shizuku,
+        ...kakinChronicles.shizuku,
       ],
       role: TROUPE_MEMBER,
       log: {
