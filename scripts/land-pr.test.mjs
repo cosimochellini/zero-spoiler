@@ -71,10 +71,12 @@ const run = (id, status, conclusion) => ({
  * The PR as `gh pr view --json` sees it.
  * @param {string} state - OPEN or MERGED.
  * @param {string} [mergeable] - MERGEABLE or CONFLICTING.
+ * @param {string} [title] - The PR title, the squash subject.
  * @returns {object} The PR fields the script reads.
  */
-const pr = (state, mergeable = 'MERGEABLE') => ({
+const pr = (state, mergeable = 'MERGEABLE', title = 'ci: land it') => ({
   state,
+  title,
   baseRefName: 'main',
   headRefName: 'topic',
   headRepository: { nameWithOwner: headRepositoryName },
@@ -92,8 +94,9 @@ const pr = (state, mergeable = 'MERGEABLE') => ({
  * @param {string} [mergeable] - What GitHub reports about merging the PR.
  * @param {string} [later] - What GitHub reports on every later read.
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
+ * @param {string} [title] - The PR title.
  */
-function prepare(bin, runs, refusedThen, mergeable, later, clean) {
+function prepare(bin, runs, refusedThen, mergeable, later, clean, title) {
   /**
    * Writes an executable fake into the bin directory.
    * @param {string} name - The command it stands in for.
@@ -123,7 +126,7 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
   )
   writeFileSync(
     path.join(bin, 'pr.json'),
-    JSON.stringify(pr('OPEN', mergeable)),
+    JSON.stringify(pr('OPEN', mergeable, title)),
   )
   if (later) {
     writeFileSync(
@@ -148,12 +151,21 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
  * @param {string} [later] - What GitHub reports on every later read.
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
  * @param {string} [expectedHead] - The full or abbreviated SHA passed by the caller.
+ * @param {string} [title] - The PR title.
  * @returns {{ status: number | null, stdout: string, calls: string }} The exit status, output and the `gh` calls made.
  */
-function land(runs, refusedThen, mergeable, later, clean, expectedHead = head) {
+function land(
+  runs,
+  refusedThen,
+  mergeable,
+  later,
+  clean,
+  expectedHead = head,
+  title,
+) {
   const bin = mkdtempSync(path.join(tmpdir(), 'land-pr-'))
   try {
-    prepare(bin, runs, refusedThen, mergeable, later, clean)
+    prepare(bin, runs, refusedThen, mergeable, later, clean, title)
     const child = spawnSync('bash', [script, '42', expectedHead], {
       encoding: 'utf8',
       env: {
@@ -229,6 +241,22 @@ describe('land-pr.sh', () => {
     )
     expect(stdout).toContain(`merged ${head}`)
     expect(status).toBe(0)
+  })
+
+  it('refuses a title the version bump cannot read before marking ready', () => {
+    const { status, calls } = land(
+      [[run(1, 'completed', 'success')]],
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      head,
+      'Land it',
+    )
+
+    expect(calls).not.toContain('pr ready')
+    expect(calls).not.toContain('pr merge')
+    expect(status).toBe(5)
   })
 
   it('exits 0 when GitHub had already merged the reviewed head', () => {
