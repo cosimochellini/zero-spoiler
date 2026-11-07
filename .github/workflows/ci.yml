@@ -6,9 +6,14 @@ on:
   # No `edited`: a title or body edit would cancel the run in flight and pay
   # for the whole gate again. The title is checked by pr-title.yml instead.
   # A re-run reuses the old payload, so a body edit that adds a
-  # `client-budget:` line takes effect on the next push or a close and reopen.
+  # `client-budget:` line takes effect on the next push, on marking the pull
+  # request ready, or on a close and reopen.
+  #
+  # Draft pull requests run nothing: the review loop pushes to a draft many
+  # times, and each run cost the whole gate. `ready_for_review` runs it once
+  # the draft is done, and every later push runs it again.
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, ready_for_review]
 
 concurrency:
   # On push the group collapses to a single constant, so releases on main are
@@ -39,8 +44,9 @@ env:
 jobs:
   validation:
     # Pull requests only: the gate already ran there, and repeating it on main
-    # just to bump the version cost the whole run for nothing.
-    if: github.event_name == 'pull_request'
+    # just to bump the version cost the whole run for nothing. Drafts skip it,
+    # so a draft's run concludes `skipped` (scripts/land-pr.sh waits past it).
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
@@ -73,6 +79,11 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      # In this job rather than its own: a second job paid for another
+      # checkout and `npm ci`, and a minute rounded up, on every run.
+      - name: Lint
+        run: npm run lint
 
       - name: Format
         run: npm run format:check
@@ -138,32 +149,6 @@ jobs:
           path: .gate/
           if-no-files-found: ignore
           retention-days: 7
-
-  lint:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Set up Node
-        uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-
-      - name: Pin npm
-        run: |
-          corepack enable npm
-          npm --version
-
-      - name: Install
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
 
   # Cuts the release for every push to main, which in practice means every
   # squashed pull request. It does not wait for validation, which only runs on
@@ -235,43 +220,3 @@ jobs:
             -p @semantic-release/git@11.0.1 \
             -p conventional-changelog-conventionalcommits@9.3.1 \
             semantic-release
-
-      # The README health badge. It runs after the release so it scores the
-      # commit that carries the version bump, and it never fails the job: the
-      # tag is already out, and a red run here would only be noise. A failure
-      # leaves the previous badge in place, so check the job log if it looks stale.
-      # `npm test` writes the coverage fallow reads for the CRAP score, so the
-      # grade matches the one the pull request gate sees.
-      - name: Install for badge
-        continue-on-error: true
-        run: npm ci
-
-      - name: Test for badge
-        continue-on-error: true
-        run: npm test
-
-      # fallow exits 1 when a health gate trips but still writes the badge, so
-      # only a missing or empty file counts as a failure. The SVG goes to an
-      # orphan `badges` branch holding a single commit, force-pushed each time,
-      # so the history never grows. The push uses GITHUB_TOKEN, which starts no
-      # workflow.
-      - name: Publish health badge
-        continue-on-error: true
-        env:
-          GIT_AUTHOR_NAME: github-actions[bot]
-          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
-          GIT_COMMITTER_NAME: github-actions[bot]
-          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
-        run: |
-          status=0
-          ./node_modules/.bin/fallow health --format badge > "$RUNNER_TEMP/badge.svg" || status=$?
-          if [ "$status" -gt 1 ] || [ ! -s "$RUNNER_TEMP/badge.svg" ]; then
-            echo "fallow health produced no badge (exit $status)" >&2
-            exit 1
-          fi
-          git worktree add --orphan -b badges "$RUNNER_TEMP/badges"
-          cp "$RUNNER_TEMP/badge.svg" "$RUNNER_TEMP/badges/badge.svg"
-          cd "$RUNNER_TEMP/badges"
-          git add badge.svg
-          git commit -m 'chore: update health badge'
-          git push --force origin badges
