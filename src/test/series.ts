@@ -135,7 +135,7 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // Counted 2026-11-07, after the Night's Watch's characters (#1007): 139
+  // Counted 2026-11-07, after Daenerys's storyline in Essos (#1008): 148
   // characters, 23 places and the season's heading.
   'game-of-thrones': {
     kinds: [
@@ -150,14 +150,14 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 158,
+      affiliations: 170,
       arcs: 1,
-      characters: 139,
+      characters: 148,
       chronicles: 0,
       linkedOrigins: 0,
       places: 23,
-      statuses: 164,
-      timelines: 315,
+      statuses: 178,
+      timelines: 337,
       visits: 0,
     },
     namesSaidEarly: true,

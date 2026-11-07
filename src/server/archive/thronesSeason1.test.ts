@@ -20,7 +20,7 @@ if (series === undefined) {
 }
 const { archive } = series
 
-/** Each record's gate in each medium, as filed (#852, #853, #1006, #1007); `source` for one medium. */
+/** Each record's gate in each medium, as filed (#852, #853, #1006, #1007, #1008); `source` for one medium. */
 const RECORDS: {
   chapter: number
   episode: number
@@ -167,6 +167,16 @@ const RECORDS: {
   { id: 'jafer-flowers', episode: 8, chapter: 53 },
   { id: 'donal-noye', episode: 3, chapter: 20, source: 'chapter' },
   { id: 'chett', episode: 5, chapter: 42, source: 'chapter' },
+  // Daenerys's storyline in Essos (#1008).
+  { id: 'qotho', episode: 6, chapter: 62 },
+  { id: 'cohollo', episode: 4, chapter: 37, source: 'chapter' },
+  { id: 'haggo', episode: 8, chapter: 62, source: 'chapter' },
+  { id: 'jhiqui', episode: 2, chapter: 12 },
+  { id: 'aggo', episode: 11, chapter: 62 },
+  { id: 'jhogo', episode: 3, chapter: 24, source: 'chapter' },
+  { id: 'quaro', episode: 8, chapter: 62, source: 'chapter' },
+  { id: 'mago', episode: 8, chapter: 62 },
+  { id: 'eroeh', episode: 10, chapter: 69, source: 'chapter' },
   // Places (#853): the first scene set there in each medium.
   { id: 'haunted-forest', episode: 1, chapter: 1 },
   { id: 'winterfell', episode: 1, chapter: 2 },
@@ -285,6 +295,36 @@ const CHANGES: {
   },
   { id: 'othor', episode: 8, chapter: 53, value: 'deceased' },
   { id: 'jafer-flowers', episode: 8, chapter: 53, value: 'deceased' },
+  { id: 'qotho', episode: 9, chapter: 65, value: 'deceased' },
+  {
+    id: 'cohollo',
+    episode: 9,
+    chapter: 65,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'haggo',
+    episode: 9,
+    chapter: 65,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'quaro',
+    episode: 9,
+    chapter: 65,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  { id: 'mago', episode: 8, chapter: 63, value: 'deceased', source: 'episode' },
+  {
+    id: 'eroeh',
+    episode: 10,
+    chapter: 69,
+    value: 'deceased',
+    source: 'chapter',
+  },
 ]
 
 /**
@@ -573,6 +613,27 @@ const STEPS: {
     en: 'Kennel hand at Castle Black',
     episode: 7,
     id: 'chett',
+    source: 'chapter',
+  },
+  {
+    chapter: 73,
+    en: 'Daenerys’s bloodrider',
+    episode: 12,
+    id: 'aggo',
+    source: 'chapter',
+  },
+  {
+    chapter: 73,
+    en: 'Daenerys’s bloodrider',
+    episode: 10,
+    id: 'jhogo',
+    source: 'chapter',
+  },
+  {
+    chapter: 69,
+    en: 'Jhaqo’s bloodrider',
+    episode: 10,
+    id: 'mago',
     source: 'chapter',
   },
 ]
