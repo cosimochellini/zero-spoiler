@@ -254,19 +254,35 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     ...FROM_BEHIND,
   ],
 
-  // Perigord's open hand put out to meet a knife thrown at him, the cuff in
-  // tint: he means to try his ability on the wound, chapter 399. No glow.
+  // A burger in its paper wrapper on a tray, the wrapper in tint: Perigord
+  // is eating at a burger joint on Tier 3 when he spots the Xi-Yu, and goes
+  // on eating after he kicks Lynch, chapter 390 (named in 393). What he
+  // eats is not stated, so the burger is the joint's food by convention,
+  // a frame check.
   'perigord': [
+    { d: 'M14 128 L110 112 L148 136 L52 154 Z' },
+    { d: 'M14 128 V134 L52 160 L148 142 V136', role: 'soft' },
+    { d: 'M48 104 C46 78 62 66 82 64 C102 64 118 76 118 98' },
     {
-      d: 'M70 168 L72 112 C64 104 62 94 66 88 L68 58 Q68 52 73 52 Q78 52 78 58 V86 M78 84 V46 Q78 40 83 40 Q88 40 88 46 V84 M88 84 V50 Q88 44 93 44 Q98 44 98 50 V88 M98 90 V62 Q98 56 103 56 Q108 56 108 62 V112 C108 128 104 140 102 168',
+      d: 'M46 106 Q82 96 120 100 Q120 108 116 110 Q82 106 50 116 Q46 112 46 106 Z',
+    },
+    { d: 'M50 116 Q84 110 116 110 L114 120 Q84 124 54 128 Z', role: 'soft' },
+    {
+      d: 'M40 112 L52 92 M124 104 L112 86 M40 112 Q46 132 58 134 L110 126 Q122 122 124 104',
+      role: 'accent',
     },
     {
-      d: 'M70 112 C60 108 52 100 48 90 Q46 84 52 84 Q56 84 58 90 C60 96 64 100 70 102',
+      d: dots([
+        [66, 76],
+        [80, 72],
+        [94, 74],
+        [72, 84],
+        [88, 82],
+      ]),
+      role: 'soft',
     },
-    { d: 'M68 168 H104 V180 H68 Z', role: 'accent' },
-    { d: 'M68 64 h10 M78 52 h10 M88 56 h10 M98 68 h10', role: 'soft' },
-    { d: 'M4 22 L10 16 L24 28 L18 34 Z M18 34 L24 28 L50 56 Z' },
-    { d: 'M8 36 l10 0 M12 44 l10 0 M28 10 l0 10', role: 'ambient' },
+    { d: 'M126 132 l8 -4 M110 140 l8 -4', role: 'ambient' },
+    shadow(80, 172, 64),
   ],
 
   // Bille's bushy hair from behind, its outline in tint, the shaved sides
@@ -559,19 +575,22 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     shadow(78, 140, 54),
   ],
 
-  // The small device with one button, the button in tint, that Kaiser
-  // hands Steiner to press if the First Prince's men or the army come:
-  // chapter 400. Its shape is a frame check.
+  // The small device with one button, a box in 3/4 with the button domed
+  // on its top in tint, that Kaiser hands Steiner to press if the First
+  // Prince's men or the army come: chapter 400. Its shape is a frame check.
   'kaiser': [
-    { d: 'M48 70 L100 60 L112 130 L60 140 Z' },
+    { d: 'M30 104 L96 88 L132 108 L66 126 Z' },
+    { d: 'M30 104 V122 L66 146 V126 M66 146 L132 128 V108' },
     {
-      d: 'M100 60 L108 64 L120 134 L112 130 M60 140 L68 144 L120 134',
-      role: 'soft',
+      d: `M66 104 C66 86 98 82 98 98 ${ellipse(82, 101, 16, 5)}`,
+      role: 'accent',
     },
-    { d: `${circle(80, 92, 12)} ${circle(80, 92, 7)}`, role: 'accent' },
-    { d: 'M66 114 H94 M68 124 H96', role: 'soft' },
-    { d: 'M110 80 l4 -3 M112 96 l4 -3 M114 112 l4 -3', role: 'ambient' },
-    shadow(84, 158, 44),
+    { d: 'M76 96 Q82 92 88 94', role: 'soft' },
+    {
+      d: 'M76 134 l8 -4 M92 130 l8 -4 M108 126 l8 -4 M120 122 l8 -4',
+      role: 'ambient',
+    },
+    shadow(82, 162, 56),
   ],
 
   // The church in Meteor City from the front, its arched door in tint:
@@ -615,28 +634,27 @@ export const KAKIN_PHASE_4_DRAWINGS = {
 /** The Kakin records of phase 4 whose drawing changes in chapters 371–400 (#1156). */
 export const kakinPhaseFourRedrawn: Redrawings = {
   sarasa: [
-    // Her purse laid in her casket among the flowers the others put in with
-    // her: she is abducted and killed, chapter 397. No body is drawn.
+    // Her purse laid in her open coffin, seen from above, among the flowers
+    // the others put in with her: she is abducted and killed, chapter 397. No body is drawn.
     {
       episode: 148,
       chapter: 397,
       source: 'chapter',
       value: [
-        { d: 'M14 120 L40 58 H120 L146 120 Z' },
-        { d: 'M14 120 V132 H146 V120', role: 'soft' },
+        { d: 'M56 14 H104 L124 52 L110 186 H50 L36 52 Z' },
+        { d: 'M60 22 H100 L116 54 L104 178 H56 L44 54 Z', role: 'soft' },
         ...moved(
           SARASA_PURSE,
-          'translate(80 90) scale(0.42) translate(-80 -110)',
+          'translate(80 104) scale(0.5) translate(-80 -110)',
         ),
         {
-          d: `${circle(44, 96, 6)} ${circle(116, 96, 6)} ${circle(56, 72, 5)} ${circle(104, 72, 5)}`,
+          d: `${circle(60, 50, 6)} ${circle(100, 50, 6)} ${circle(64, 150, 6)} ${circle(96, 150, 6)} ${circle(80, 166, 5)}`,
         },
         {
-          d: `${circle(44, 96, 2)} ${circle(116, 96, 2)} ${circle(56, 72, 2)} ${circle(104, 72, 2)}`,
+          d: `${circle(60, 50, 2)} ${circle(100, 50, 2)} ${circle(64, 150, 2)} ${circle(96, 150, 2)} ${circle(80, 166, 2)}`,
           role: 'soft',
         },
-        { d: 'M128 104 l6 -4 M132 116 l6 -4', role: 'ambient' },
-        shadow(80, 150, 66),
+        { d: 'M112 80 l6 -4 M110 110 l6 -4 M108 140 l6 -4', role: 'ambient' },
       ],
     },
   ],

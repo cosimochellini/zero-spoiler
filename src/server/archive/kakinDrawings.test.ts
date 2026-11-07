@@ -41,6 +41,7 @@ const STAGES = [
   { id: 'benjamin-hui-guo-rou', chapter: 373, change: 'Benjamin Baton' },
   { id: 'camilla-hui-guo-rou', chapter: 373, change: 'Cat’s Name' },
   { id: 'fugetsu-hui-guo-rou', chapter: 374, change: 'door' },
+  { id: 'zhang-lei-hui-guo-rou', chapter: 374, change: 'coin' },
   { id: 'myuhan', chapter: 376, change: 'death' },
   { id: 'neon-nostrade', chapter: 377, change: 'presumed death' },
   { id: 'sale-sale-hui-guo-rou', chapter: 381, change: 'beast eaten' },

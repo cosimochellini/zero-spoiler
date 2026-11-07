@@ -566,6 +566,29 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
   ],
 } satisfies Drawings
 
+/**
+ * Zhang Lei's Guardian Spirit Beast: the dharmachakra, its rim, hub and
+ * eight spokes, the dark flame round it, the crosses about it and the one in
+ * a circle at its top.
+ */
+const DHARMACHAKRA: Stroke[] = [
+  { d: `${circle(80, 56, 32)} ${circle(80, 56, 25)}` },
+  { d: circle(80, 56, 7) },
+  {
+    d: 'M80 49 V31 M80 63 V81 M73 56 H55 M87 56 H105 M75 51 L62.3 38.3 M85 61 L97.7 73.7 M85 51 L97.7 38.3 M75 61 L62.3 73.7',
+    role: 'soft',
+  },
+  {
+    d: 'M52 38 C46 34 46 28 50 24 M48 60 C42 60 38 56 38 50 M58 84 C52 88 46 88 42 84 M102 84 C108 88 114 88 118 84 M112 60 C118 60 122 56 122 50 M108 38 C114 34 114 28 110 24',
+    role: 'ambient',
+  },
+  { d: `${circle(80, 16, 6)} M80 12 V20 M76 16 H84` },
+  {
+    d: 'M44 48 h6 M47 45 v6 M110 48 h6 M113 45 v6 M44 68 h6 M47 65 v6 M110 68 h6 M113 65 v6 M58 92 h6 M61 89 v6 M96 92 h6 M99 89 v6 M58 20 h6 M61 17 v6 M96 20 h6 M99 17 v6',
+    role: 'soft',
+  },
+]
+
 /** A manga-only stage of a Kakin record. */
 const KAKIN = { episode: 148, source: 'chapter' } as const
 
@@ -708,11 +731,12 @@ export const kakinPhaseOneBeasts: Redrawings = {
         { d: 'M100 54 l5 -3 M102 66 l5 -3 M100 78 l5 -3', role: 'ambient' },
       ],
     },
-    // His right palm over the same jacket made small, a star in tint under
-    // each of its four fingers: Benjamin Baton, by which he inherits the
-    // abilities of his sworn soldiers when they die, first shown in chapter
-    // 373. The wiki gives the four stars (cited to 389) and, at 373, a
-    // third star without aura; how many show at 373 is a frame check.
+    // His right palm over the same jacket made small, three stars in tint
+    // below its fingers, open lines round the two that hold an inherited
+    // ability: Benjamin Baton, by which he inherits the abilities of his
+    // sworn soldiers when they die, first shown in chapter 373 with Vincent's
+    // and Musse's abilities and a third star without aura. Which fingers the
+    // stars sit under is a frame check.
     {
       ...KAKIN,
       chapter: 373,
@@ -722,8 +746,12 @@ export const kakinPhaseOneBeasts: Redrawings = {
           d: 'M56 112 L52 50 Q52 44 57 44 Q62 44 62 50 V72 M62 72 V34 Q62 28 67 28 Q72 28 72 34 V70 M72 70 V26 Q72 20 77 20 Q82 20 82 26 V70 M82 70 V32 Q82 26 87 26 Q92 26 92 32 V80 C100 72 110 70 114 76 Q116 82 110 86 C102 94 100 102 98 112',
         },
         {
-          d: `${star(57, 80, 5, 2.2)} ${star(67, 76, 5, 2.2)} ${star(77, 76, 5, 2.2)} ${star(87, 80, 5, 2.2)}`,
+          d: `${star(67, 78, 6, 2.6)} ${star(78, 76, 6, 2.6)} ${star(89, 80, 6, 2.6)}`,
           role: 'accent',
+        },
+        {
+          d: 'M74 70 l-2 -3 M82 70 l2 -3 M85 74 l-2 -3 M93 76 l3 -2 M95 84 l3 1 M83 82 l-2 3',
+          role: 'ambient',
         },
         {
           d: 'M60 96 Q76 104 96 92 M62 60 h10 M72 52 h10 M82 56 h10',
@@ -794,23 +822,24 @@ export const kakinPhaseOneBeasts: Redrawings = {
     {
       ...KAKIN,
       chapter: 362,
+      value: [...moved(ZHANG_LEI, BESIDE_THE_BEAST), ...DHARMACHAKRA],
+    },
+    // The same wheel, and a coin falling from it, its floral design in tint:
+    // a coin drops out of the beast's mouth onto the floor behind him while
+    // he eats, chapter 374. The number on the coin is lettering, so it is not
+    // drawn; the flower is drawn by convention, a frame check. No glow.
+    {
+      ...KAKIN,
+      chapter: 374,
       value: [
         ...moved(ZHANG_LEI, BESIDE_THE_BEAST),
-        { d: `${circle(80, 56, 32)} ${circle(80, 56, 25)}` },
-        { d: circle(80, 56, 7) },
+        ...DHARMACHAKRA,
+        { d: `${circle(128, 112, 12)} ${circle(128, 112, 9)}` },
         {
-          d: 'M80 49 V31 M80 63 V81 M73 56 H55 M87 56 H105 M75 51 L62.3 38.3 M85 61 L97.7 73.7 M85 51 L97.7 38.3 M75 61 L62.3 73.7',
-          role: 'soft',
+          d: `${circle(128, 107, 2.5)} ${circle(132.8, 110.5, 2.5)} ${circle(131, 116, 2.5)} ${circle(125, 116, 2.5)} ${circle(123.2, 110.5, 2.5)}`,
+          role: 'accent',
         },
-        {
-          d: 'M52 38 C46 34 46 28 50 24 M48 60 C42 60 38 56 38 50 M58 84 C52 88 46 88 42 84 M102 84 C108 88 114 88 118 84 M112 60 C118 60 122 56 122 50 M108 38 C114 34 114 28 110 24',
-          role: 'ambient',
-        },
-        { d: `${circle(80, 16, 6)} M80 12 V20 M76 16 H84` },
-        {
-          d: 'M44 48 h6 M47 45 v6 M110 48 h6 M113 45 v6 M44 68 h6 M47 65 v6 M110 68 h6 M113 65 v6 M58 92 h6 M61 89 v6 M96 92 h6 M99 89 v6 M58 20 h6 M61 17 v6 M96 20 h6 M99 17 v6',
-          role: 'soft',
-        },
+        { d: 'M112 90 l4 6 M120 88 l3 6 M140 92 l-3 6', role: 'ambient' },
       ],
     },
   ],
