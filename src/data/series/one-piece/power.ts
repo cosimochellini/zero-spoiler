@@ -1,7 +1,10 @@
 import type { PowerBody } from '~/data/features'
 
+import { BEASTS_PIRATES } from './power/beasts-pirates'
+import { BIG_MOM_PIRATES } from './power/big-mom-pirates'
 import { BLACKBEARD_PIRATES } from './power/blackbeard-pirates'
 import { CP9 } from './power/cp9'
+import { CROSS_GUILD } from './power/cross-guild'
 import { EMPERORS } from './power/emperors'
 import { FIVE_ELDERS } from './power/five-elders'
 import { MARINES } from './power/marines'
@@ -30,4 +33,7 @@ export const BODIES: PowerBody<OnePieceVocabulary>[] = [
   STRAW_HAT_PIRATES,
   WHITEBEARD_PIRATES,
   BLACKBEARD_PIRATES,
+  BIG_MOM_PIRATES,
+  BEASTS_PIRATES,
+  CROSS_GUILD,
 ]

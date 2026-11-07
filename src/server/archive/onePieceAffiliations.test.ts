@@ -134,7 +134,7 @@ const MOVED: Moved[] = [
     'Sun Pirates, doctor',
     'Sun Pirates, vice captain, under Big Mom',
   ],
-  ['x-drake', 957, 956, 'Beasts Pirates, headliner', 'Marines, SWORD captain'],
+  ['x-drake', 957, 956, 'Beasts Pirates, Tobiroppo', 'Marines, SWORD captain'],
   ['t-bone', 1116, 1082, 'Marines, captain', 'Marines, vice admiral'],
   [
     'vergo',

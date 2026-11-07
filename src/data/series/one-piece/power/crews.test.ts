@@ -233,6 +233,9 @@ describe('the Emperors’ crews, first half', () => {
       'straw-hat-pirates',
       'whitebeard-pirates',
       'blackbeard-pirates',
+      'big-mom-pirates',
+      'beasts-pirates',
+      'cross-guild',
     ])
   })
 
