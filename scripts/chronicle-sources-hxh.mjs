@@ -515,10 +515,6 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
       note: 'Chapter 357: reported among the casualties, Machi with the body, the Nen order to restart heart and lungs, Bungee Gum and Texture Surprise, Machi bound, the threat to the Troupe, Kortopi and Shalnark killed, ten left.',
     },
-    '148:393': {
-      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_393',
-      note: 'Chapters 392–393: Lynch’s punch and Zakuro’s fear (392); Zakuro’s account, the cinema, Hinrigh’s VVIP offer and warning, the chaos remark, the condition and the deal (393).',
-    },
   },
   'hanzo': {
     '3': {
@@ -1859,9 +1855,13 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_371',
       note: 'Chapter 371: the kickback men on Tier 5, the four Spiders, the three families and their princes, the Xi-Yu as the strongest, and the man over 190 cm.',
     },
+    '148:380': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_380',
+      note: 'Chapters 379–380: Ken’i’s apology after the radio update (379); the Cha-R base, the footage, the adjacent door in exchange for hunting the killer, and Tsudonke’s squad (380). Added after independent verification.',
+    },
     '148:398': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_398',
-      note: 'Chapter 398: the hostage, the bathroom and the front door, the land-mine type and the continuous activation, Feitan volunteering, Ken’i and Hinrigh, the oyster transmitter and the receiver handed to Phinks.',
+      note: 'Chapter 398: the hostage, the bathroom and the front door, the land-mine type and the continuous activation, Feitan volunteering, Ken’i and Hinrigh, the oyster transmitter and the receiver handed to Phinks. Corrected after independent verification: the land-mine reading is Nobunaga’s; Phinks proposes the test of continuous activation.',
     },
   },
   'light-nostrade': {
@@ -1961,7 +1961,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:396': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_396',
-      note: 'Chapters 395–396: the video room, the Pink Cleaner, Sheila and Sarasa, “little brother” (395); the praise for his voices, the flowers for the graves, and the name “troupe” (396).',
+      note: 'Chapters 395–396: the video room, the Pink Cleaner, Sheila and Sarasa, “little brother” (395); the praise for his voices, the flowers for the graves, and the name “troupe” (396). Corrected after independent verification: order of events, the flowers before the screening and the praise backstage.',
     },
   },
   'zenji': {
@@ -2035,7 +2035,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:377': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_377',
-      note: 'Chapter 377: the gathering, Illumi’s introduction, the Cha-R offer and the Tier 1 question, the order for Hisoka’s head, Shizuku and Bonolenov teaming up on his condition, and the vanished fortune ability.',
+      note: 'Chapter 377: the gathering, Illumi’s introduction, the Cha-R offer and the Tier 1 question, the order for Hisoka’s head, Shizuku and Bonolenov teaming up on his condition, and the vanished fortune ability. Corrected after independent verification: the offer comes from a Cha-R group.',
     },
     '148:395': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_395',
@@ -2043,7 +2043,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:396': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_396',
-      note: 'Chapter 396: the screening, the tangled sound tape, Chrollo’s live voices, Uvogin’s handshake and his choice of the monster, the roles, the name “troupe” and Uvogin’s goal.',
+      note: 'Chapter 396: the screening, the tangled sound tape, Chrollo’s live voices, Uvogin’s handshake and his choice of the monster, the roles, the name “troupe” and Uvogin’s goal. Corrected after independent verification: the three girls voice the film live with him.',
     },
     '148:397': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_397',
@@ -3519,7 +3519,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:373': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_373',
-      note: 'Chapter 373: the order to let her pass, the shots blocked with aura, the arrest, Benjamin Baton, Air Blow and Secret Window.',
+      note: 'Chapter 373: the order to let her pass, the shots blocked with aura, the arrest, Benjamin Baton, Air Blow and Secret Window. Corrected after independent verification: he calls for her arrest before she empties her magazine (Camilla’s character page).',
+    },
+    '148:382': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_382',
+      note: 'Chapter 382: Yushohi’s report on Salé-salé, Halkenburg’s return, Benjamin’s order to Shikaku to kill him and take his ability, and the arrow. Added after independent verification.',
     },
     '148:389': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_389',
@@ -3551,7 +3555,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:400': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
-      note: 'Chapters 372 and 400: the silence before the investigator (372); the cordon, the demand to see Fugetsu, hiding Kacho’s death, her feelings about Kacho and Fugetsu, and the Justice Bureau (400).',
+      note: 'Chapters 372 and 400: the silence before the investigator (372); the cordon, the demand to see Fugetsu, hiding Kacho’s death, her feelings about Kacho and Fugetsu, and the Justice Bureau (400). Corrected after independent verification: the Italian now says that Seiko controls Fugetsu.',
     },
   },
   'woble-hui-guo-rou': {
@@ -3611,6 +3615,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_381',
       note: 'Chapters 380–381: found without ID (380); the police station, the escort to Tier 1, Seiko’s welcome, the 72-hour watch instead of confinement, and her promise (381).',
     },
+    '148:383': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_383',
+      note: 'Chapter 383: the escape during Melody’s performance, Keeney and the lifeboat, the hands, the door back, Fugetsu alone in the tunnel, the twins in bed and Kacho dead on the boat. Added after independent verification.',
+    },
     '148:400': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_400',
       note: 'Chapter 400: the breakthrough, the return door when alone, the tears and her collapse, and Melody’s observation in the hallway.',
@@ -3627,7 +3635,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:382': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_382',
-      note: 'Chapters 376 and 382: the daily letters (376); the four days, the guns, the frozen bullet, the ritual, the shot at himself stopped by his beast, the trolley problem and the king’s words, Benjamin’s order, the bow and arrow, and Shikaku rising for orders (382).',
+      note: 'Chapters 376 and 382: the daily letters (376); the four days, the guns, the frozen bullet, the ritual, the shot at himself stopped by his beast, the trolley problem and the king’s words, Benjamin’s order, the bow and arrow, and Shikaku rising for orders (382). Corrected after independent verification: the soldier was already posted in his quarters and then ordered to kill him.',
     },
     '148:386': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_386',
@@ -3791,7 +3799,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:373': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_373',
-      note: 'Chapter 373: the confrontation outside Benjamin’s quarters, the shots and Furykov’s Nen, the arrest, the threat and his answer, the confinement and permission to leave.',
+      note: 'Chapter 373: the confrontation outside Benjamin’s quarters, the shots and Furykov’s Nen, the arrest, the threat and his answer, the confinement and permission to leave. Corrected after independent verification: she claims to be looking for her assailant.',
     },
   },
   'illardia': {
@@ -3817,7 +3825,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:372': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_372',
-      note: 'Chapters 371–372 (with Loberry’s character page): the accusation and detention by Sakata and Hashito, Cleapatro’s refusal and the investigator (371); the royal army’s custody and the Silent Majority initiation (372).',
+      note: 'Chapters 371–372 (with Loberry’s character page): the accusation and detention by Sakata and Hashito, Cleapatro’s refusal and the investigator (371); the royal army’s custody and the Silent Majority initiation (372). Corrected after independent verification: she was the unknowing host of the hidden assassin’s ability, not someone who saw its user.',
     },
   },
   'yuri': {
@@ -3969,7 +3977,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:393': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_393',
-      note: 'Chapters 392–393: the blood drops finding Hisoka, Lynch’s failed punch, Zakuro telling him about the Mafia (392); waking by the rubbish, the cinema invitation, the report to the underboss and the plan to look for the Troupe’s leader (393).',
+      note: 'Chapters 392–393: the blood drops finding a tall man, Lynch’s failed punch, Zakuro sure from his aura that it is Hisoka and telling him about the Mafia (392); waking by the rubbish, the cinema invitation, the report to the underboss and the plan to look for the Troupe’s leader (393). Corrected after independent verification: chapter 405 reveals the man was Bonolenov in disguise, so the story is told from Zakuro’s side and never asserts who he was.',
     },
   },
   'lynch-fullbokko': {
@@ -3979,7 +3987,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:393': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_393',
-      note: 'Chapters 392–393: the tall man who is not Hisoka, the encounter and Lynch’s collapse (392); waking, Hisoka gone, Zakuro knocked out as well, and the report to Hinrigh (393).',
+      note: 'Chapters 392–393: the tall man who is not Hisoka, the encounter and Lynch’s collapse (392); waking, Hisoka gone, Zakuro knocked out as well, and the report to Hinrigh (393). Corrected after independent verification: the man is not asserted to be Hisoka (chapter 405 reveals Bonolenov in disguise); Lynch is sure it was him.',
     },
   },
   'tevelares': {
@@ -3991,7 +3999,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'quorolle': {
     '148:393': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_393',
-      note: 'Chapters 391 and 393: Quorolle’s details and the escape (391); the question about projectiles and the pigeons, the report to Morena, her advice on restricting the enemy, and the game master (393).',
+      note: 'Chapters 391 and 393: Quorolle’s details and the escape (391); the question about projectiles and the pigeons, the report to Morena, her advice on restricting the enemy, and the game master (393). Corrected after independent verification: handcuffs turned into pigeons, not the reverse.',
     },
   },
   'padaille': {
@@ -4037,7 +4045,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'bille': {
     '148:394': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_394',
-      note: 'Chapters 393–394: Bille’s details and his chosen ability (393); Tassi’s arrival, the stab, level 21, Matvere’s cup and the Conjurer result (394).',
+      note: 'Chapters 393–394: Bille’s details and his chosen ability (393); Tassi’s arrival, the stab, level 21, Matvere’s cup and the Conjurer result (394). Corrected after independent verification: he says he has decided on his ability, not which one.',
     },
   },
   'voconte': {
@@ -4049,7 +4057,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'matvere': {
     '148:394': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_394',
-      note: 'Chapters 393–394: Matvere’s details, the firearm wish, Gelato’s reply and Quorolle’s question (393); the Transmuter result, the cup for Bille, and his preference to be the “organ” at level 21 (394).',
+      note: 'Chapters 393–394: Matvere’s details, the firearm wish, Gelato’s reply and Quorolle’s question (393); the Transmuter result, the cup for Bille, and his preference to be the “organ” at level 21 (394). Corrected after independent verification: handcuffs turned into pigeons, not the reverse.',
     },
   },
   'tassi': {
@@ -4085,13 +4093,13 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'borksen': {
     '148:394': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_394',
-      note: 'Chapter 394: Otocin’s source, Borksen’s rank and post, the transfer as adviser, the secret about Theta, the demotion warning, the bodyguards’ reactions and the proposal to contact the Xi-Yu or Cha-R.',
+      note: 'Chapter 394: Otocin’s source, Borksen’s rank and post, the transfer as adviser, the secret about Theta, the demotion warning, the bodyguards’ reactions and the proposal to contact the Xi-Yu or Cha-R. Corrected after independent verification: she is in the royal army, on the royal living quarters’ security detail, not Tserriednich’s quarters (Borksen’s character page).',
     },
   },
   'otocin': {
     '148:394': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_394',
-      note: 'Chapter 394 (with Momolly’s character page on the academy friendship): the question about Nen, Borksen as the source and the transfer, the nickname and Gipper’s threats, the criticism of the temper and Otocin’s closing thought.',
+      note: 'Chapter 394 (with Momolly’s character page on the academy friendship): the question about Nen, Borksen as the source and the transfer, the nickname and Gipper’s threats, the criticism of the temper and Otocin’s closing thought. Corrected after independent verification: Italian conditional “preferirebbe”.',
     },
   },
   'gipper': {
@@ -4109,13 +4117,13 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'lisores': {
     '148:395': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_395',
-      note: 'Chapter 395: the church, the videos, the small graves and the abductions, the warning, Father Lisores’s lectures, the video room, and the conversation with an elder in the basement.',
+      note: 'Chapter 395: the church, the videos, the small graves and the abductions, the warning, Father Lisores’s lectures, the video room, and the conversation with an elder in the basement. Corrected after independent verification: he speaks to “an older individual” about the elders, not to one of them.',
     },
   },
   'sarasa': {
     '148:396': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_396',
-      note: 'Chapters 395–396: Sarasa agreeing and choosing Orange (395); the snack bowl for Phinks, the promise about Uvogin, the dub of Uvogin after the show, and her solo trip to the dump near Uga Forest (396).',
+      note: 'Chapters 395–396: Sarasa agreeing and choosing Orange (395); the snack bowl for Phinks, the promise about Uvogin, the dub of Uvogin after the show, and her solo trip to the dump near Uga Forest (396). Corrected after independent verification: Italian title uses the character name Orange.',
     },
     '148:397': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_397',

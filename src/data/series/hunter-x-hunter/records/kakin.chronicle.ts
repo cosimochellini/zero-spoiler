@@ -174,8 +174,16 @@ export const kakinChronicles = {
       373,
       { it: 'L’eredità dei soldati', en: 'His soldiers’ legacy' },
       {
-        it: 'Benjamin ordina alle sue guardie di lasciar passare [[camilla-hui-guo-rou|Camilla]] quando arriva ai suoi alloggi armata, dopo la morte di uno dei suoi soldati. Lei gli spara; lui para i colpi con l’aura e non reagisce, poi la fa arrestare. Il suo Nen gli permette di ereditare a certe condizioni le abilità dei soldati fedeli: ora ha quella di [[vincent|Vincent]] e quella del soldato ucciso da Camilla, che gli mostra tutto ciò che lei fa.',
-        en: 'Benjamin orders his guards to let [[camilla-hui-guo-rou|Camilla]] through when she arrives at his quarters armed, after the death of one of his soldiers. She fires at him; he blocks the shots with his aura and does not strike back, then has her arrested. His Nen lets him inherit, under certain conditions, the abilities of loyal soldiers: he now holds [[vincent|Vincent]]’s and that of the soldier Camilla killed, which shows him everything she does.',
+        it: 'Benjamin ordina alle sue guardie di lasciar passare [[camilla-hui-guo-rou|Camilla]] quando arriva ai suoi alloggi armata, dopo la morte di uno dei suoi soldati. Benjamin ordina di arrestarla; lei gli scarica addosso la pistola, e lui para i colpi con l’aura e non reagisce. Il suo Nen gli permette di ereditare a certe condizioni le abilità dei soldati fedeli: ora ha quella di [[vincent|Vincent]] e quella del soldato ucciso da Camilla, che gli mostra tutto ciò che lei fa.',
+        en: 'Benjamin orders his guards to let [[camilla-hui-guo-rou|Camilla]] through when she arrives at his quarters armed, after the death of one of his soldiers. Benjamin calls for her arrest; she empties her gun at him, and he blocks the shots with his aura and does not strike back. His Nen lets him inherit, under certain conditions, the abilities of loyal soldiers: he now holds [[vincent|Vincent]]’s and that of the soldier Camilla killed, which shows him everything she does.',
+      },
+    ),
+    told(
+      382,
+      { it: 'L’ordine contro Harkenburg', en: 'The order against Halkenburg' },
+      {
+        it: 'Un soldato di Benjamin gli comunica via radio che l’omicidio di [[sale-sale-hui-guo-rou|Saresare]] è riuscito. Quando [[halkenburg-hui-guo-rou|Harkenburg]] torna dal re con una nuova determinazione, Benjamin ordina al soldato che lo sorveglia di ucciderlo e prenderne l’abilità, ma la freccia del principe ha la meglio sul soldato.',
+        en: 'A soldier of Benjamin’s radios him that the assassination of [[sale-sale-hui-guo-rou|Salé-salé]] has succeeded. When [[halkenburg-hui-guo-rou|Halkenburg]] returns from the king with new resolve, Benjamin orders the soldier posted with him to kill him and take his ability, but the prince’s arrow overpowers the soldier.',
       },
     ),
     told(
@@ -230,7 +238,7 @@ export const kakinChronicles = {
       400,
       { it: 'Nascondere la morte', en: 'Hiding the death' },
       {
-        it: 'Interrogata da [[kaiser|Kaiser]], investigatore dell’Ufficio di Giustizia, dopo la morte di [[barrigen|Barrigen]], Seiko si avvale del diritto di non rispondere. Dopo la fuga fallita, dei soldati vengono a isolare la sua stanza, e lei rifiuta finché non potrà vedere [[fugetsu-hui-guo-rou|Fugetsu]]. Dentro di sé vuole che tutti credano che [[kacho-hui-guo-rou|Kachow]] sia ancora viva. Perderla così presto è un duro colpo, ma Seiko odiava il modo in cui la figlia la guardava. Fugetsu può controllarla, anche se è troppo debole per affrontare da sola la successione, e spera che l’Ufficio di Giustizia continui a proteggerla.',
+        it: 'Interrogata da [[kaiser|Kaiser]], investigatore dell’Ufficio di Giustizia, dopo la morte di [[barrigen|Barrigen]], Seiko si avvale del diritto di non rispondere. Dopo la fuga fallita, dei soldati vengono a isolare la sua stanza, e lei rifiuta finché non potrà vedere [[fugetsu-hui-guo-rou|Fugetsu]]. Dentro di sé vuole che tutti credano che [[kacho-hui-guo-rou|Kachow]] sia ancora viva. Perderla così presto è un duro colpo, ma Seiko odiava il modo in cui la figlia la guardava. Fugetsu invece può controllarla lei, anche se è troppo debole per affrontare da sola la successione, e spera che l’Ufficio di Giustizia continui a proteggerla.',
         en: 'Questioned by [[kaiser|Kaiser]], a Justice Bureau investigator, after [[barrigen|Barrigen]]’s death, Seiko invokes her right to remain silent. After the failed escape, soldiers come to seal off her room, and she refuses until she can see [[fugetsu-hui-guo-rou|Fugetsu]]. Privately she wants everyone to believe that [[kacho-hui-guo-rou|Kacho]] is still alive. Losing her so early is a heavy blow, but Seiko hated the way her daughter looked at her. Fugetsu she can control, though she is too weak to face the contest alone, and Seiko hopes the Justice Bureau keeps protecting her.',
       },
     ),
@@ -630,14 +638,6 @@ export const kakinChronicles = {
         en: 'After the explosion, Hisoka is reported dead. While [[machi|Machi]] tends his body, his Nen restarts his heart and lungs, as he asked it to before dying. He patches himself up with Bungee Gum and Texture Surprise, binds Machi and tells her to warn the Troupe that he will fight them until he has killed them all. Then he kills [[kortopi|Kortopi]] and [[shalnark|Shalnark]], and says that ten remain.',
       },
     ),
-    told(
-      393,
-      { it: 'Il lasciapassare VVIP', en: 'The VVIP pass' },
-      {
-        it: 'Sul terzo livello, con i capelli sciolti e senza trucco, Hisoka viene avvicinato da due membri degli Xi-Yu. Mette fuori combattimento [[lynch-fullbokko|Lynch]] con un contrattacco istintivo e fa perdere i sensi a [[zakuro-custard|Zakuro]] dopo averlo invitato al cinema. Al cinema il sottocapo degli Xi-Yu gli offre una stanza VVIP sul primo livello finché il conflitto tra le famiglie non sarà risolto, e gli chiede di non affrontare la Brigata nel frattempo. Hisoka dice che il caos gli piace. Prima di prendere il lasciapassare pone una condizione: se la Brigata lo attacca, non si tirerà indietro, e il sottocapo accetta.',
-        en: 'On Tier 3, his hair down and without make-up, Hisoka is approached by two Xi-Yu members. He knocks out [[lynch-fullbokko|Lynch]] with a reflex counter and leaves [[zakuro-custard|Zakuro]] unconscious after inviting him to the cinema. At the cinema the Xi-Yu underboss offers him a VVIP room on Tier 1 until the conflict between the families is settled, and asks him not to fight the Troupe meanwhile. Hisoka says he likes chaos. Before taking the pass he sets one condition: if the Troupe attacks him, he will not refuse the fight, and the underboss agrees.',
-      },
-    ),
   ],
   'chrollo': [
     told(
@@ -676,8 +676,8 @@ export const kakinChronicles = {
       377,
       { it: 'La testa di Hisoka', en: 'Hisoka’s head' },
       {
-        it: 'Nella sala da pranzo del quinto livello la Brigata si riunisce, e Quoll fa presentare il suo nuovo membro, [[illumi|Illumi]]. Rifiuta di entrare nella famiglia Cha-R e chiede come raggiungere il primo livello, irritando il loro capo. Poi lascia ai Ragni piena libertà, purché gli portino la testa di [[hisoka|Hisoka]]. [[shizuku|Shizuku]] e [[bonolenov|Bonolenov]] chiedono di fare squadra con lui, e Quoll accetta a condizione di essere lui a uccidere Hisoka. A Shizuku dice che non può più leggere il loro futuro: quell’abilità è sparita dal suo libro.',
-        en: 'In the Tier 5 dining hall the Troupe gathers, and Chrollo has its newest member, [[illumi|Illumi]], introduce himself. He turns down a place in the Cha-R family and asks how to reach Tier 1, angering their leader. He then gives the Spiders a free hand, as long as they bring him [[hisoka|Hisoka]]’s head. [[shizuku|Shizuku]] and [[bonolenov|Bonolenov]] ask to team up with him, and Chrollo agrees on condition that he is the one who kills Hisoka. He tells Shizuku he can no longer read their fortunes: that ability has vanished from his book.',
+        it: 'Nella sala da pranzo del quinto livello la Brigata si riunisce, e Quoll fa presentare il suo nuovo membro, [[illumi|Illumi]]. Quando un gruppo dei Cha-R gli offre di entrare nella famiglia, Quoll rifiuta e chiede come raggiungere il primo livello, irritando il loro capo. Poi lascia ai Ragni piena libertà, purché gli portino la testa di [[hisoka|Hisoka]]. [[shizuku|Shizuku]] e [[bonolenov|Bonolenov]] chiedono di fare squadra con lui, e Quoll accetta a condizione di essere lui a uccidere Hisoka. A Shizuku dice che non può più leggere il loro futuro: quell’abilità è sparita dal suo libro.',
+        en: 'In the Tier 5 dining hall the Troupe gathers, and Chrollo has its newest member, [[illumi|Illumi]], introduce himself. When a Cha-R group offers him a place in the family, Chrollo declines and asks how to reach Tier 1, angering their leader. He then gives the Spiders a free hand, as long as they bring him [[hisoka|Hisoka]]’s head. [[shizuku|Shizuku]] and [[bonolenov|Bonolenov]] ask to team up with him, and Chrollo agrees on condition that he is the one who kills Hisoka. He tells Shizuku he can no longer read their fortunes: that ability has vanished from his book.',
       },
     ),
     told(
@@ -692,8 +692,8 @@ export const kakinChronicles = {
       396,
       { it: 'Tutte le voci', en: 'Every voice' },
       {
-        it: 'Alla proiezione in chiesa i bambini esultano sentendo i Power Cleaners parlare la loro lingua. Quando il nastro dell’audio si aggroviglia, Quoll prende il microfono e recita dal vivo tutti i personaggi, eroi e mostri, lasciando colpito perfino [[uvogin|Uborghin]]. Uborghin chiede di interpretare il mostro, e anche gli altri scelgono un ruolo. I ragazzi cominciano a provare insieme come un gruppo che decidono di chiamare compagnia. Uborghin dice che vuole girare il mondo con Quoll e diventare il più grande cattivo del mondo.',
-        en: 'At the church screening the children cheer when they hear the Power Cleaners speak their own language. When the sound tape tangles, Chrollo takes the microphone and voices every character live, heroes and monsters alike, leaving even [[uvogin|Uvogin]] impressed. Uvogin asks to play the monster, and the others pick roles too. The children start rehearsing together as a group they decide to call a troupe. Uvogin says he wants to tour the world with Chrollo and become the world’s greatest villain.',
+        it: 'Alla proiezione in chiesa i bambini esultano sentendo i Power Cleaners parlare la loro lingua. Quando il nastro dell’audio si aggroviglia, Quoll prende il microfono e, con le tre ragazze, recita dal vivo eroi e mostri, lasciando colpito perfino [[uvogin|Uborghin]]. Uborghin chiede di interpretare il mostro, e anche gli altri scelgono un ruolo. I ragazzi cominciano a provare insieme come un gruppo che decidono di chiamare compagnia. Uborghin dice che vuole girare il mondo con Quoll e diventare il più grande cattivo del mondo.',
+        en: 'At the church screening the children cheer when they hear the Power Cleaners speak their own language. When the sound tape tangles, Chrollo takes the microphone and, with the three girls, voices the heroes and monsters live, leaving even [[uvogin|Uvogin]] impressed. Uvogin asks to play the monster, and the others pick roles too. The children start rehearsing together as a group they decide to call a troupe. Uvogin says he wants to tour the world with Chrollo and become the world’s greatest villain.',
       },
     ),
     told(
@@ -826,6 +826,14 @@ export const kakinChronicles = {
       },
     ),
     told(
+      383,
+      { it: 'La porta verso la nave', en: 'The door back to the ship' },
+      {
+        it: 'Al banchetto Fugetsu e [[kacho-hui-guo-rou|Kachow]] escono durante l’esibizione di [[melody|Melody]], e [[keeney|Keeney]] le guida fino a una scialuppa. Vicino al mare aperto delle mani si stringono intorno a loro, e Kachow le dice di aprire una porta verso la nave. La porta si chiude lasciando Fugetsu sola nel tunnel, finché non arriva Kachow. Le gemelle sono a letto una accanto all’altra, sorridenti, ma Kachow giace morta sulla scialuppa: la sua bestia ne ha preso l’aspetto.',
+        en: 'At the banquet Fugetsu and [[kacho-hui-guo-rou|Kacho]] slip out during [[melody|Melody]]’s performance, and [[keeney|Keeney]] leads them to a lifeboat. Near open water, hands close in around them, and Kacho tells her to open a door back to the ship. The door shuts with Fugetsu alone in the tunnel, until Kacho comes through. The twins lie side by side in bed, smiling, but Kacho lies dead on the lifeboat: her beast has taken her form.',
+      },
+    ),
+    told(
       400,
       { it: 'Più forte a ogni uso', en: 'Stronger with every use' },
       {
@@ -900,8 +908,8 @@ export const kakinChronicles = {
       382,
       { it: 'Davanti al re', en: 'Before the king' },
       {
-        it: 'Per quattro giorni Harkenburg porta lettere alla porta del re, finché i soldati abbassano la guardia. Poi lui e cinque guardie estraggono le armi e raggiungono il padre. Spara, e il proiettile si ferma a mezz’aria: il re gli dice che ormai fa parte del rito e non può morire finché non sarà finito. Quando Harkenburg punta l’arma contro se stesso, la sua bestia ferma anche quel proiettile. Il re gli dice che solo un re può cambiare il paese. Harkenburg torna con una nuova determinazione, e una freccia fatta dell’aura dei suoi seguaci trafigge il soldato che [[benjamin-hui-guo-rou|Benjamin]] ha mandato a ucciderlo, che si rialza ai suoi ordini.',
-        en: 'For four days Halkenburg brings letters to the king’s door until the soldiers lower their guard. Then he and five guards draw their guns and reach their father. He fires, and the bullet stops in midair: the king tells him he is now part of the ritual and cannot die until it ends. When Halkenburg turns the gun on himself, his beast stops that bullet too. The king tells him only a king can change the country. Halkenburg returns with new resolve, and an arrow of his followers’ aura pierces the soldier [[benjamin-hui-guo-rou|Benjamin]] sent to kill him, who rises to take his orders.',
+        it: 'Per quattro giorni Harkenburg porta lettere alla porta del re, finché i soldati abbassano la guardia. Poi lui e cinque guardie estraggono le armi e raggiungono il padre. Spara, e il proiettile si ferma a mezz’aria: il re gli dice che ormai fa parte del rito e non può morire finché non sarà finito. Quando Harkenburg punta l’arma contro se stesso, la sua bestia ferma anche quel proiettile. Il re gli dice che solo un re può cambiare il paese. Harkenburg torna con una nuova determinazione, e una freccia fatta dell’aura dei suoi seguaci trafigge il soldato che [[benjamin-hui-guo-rou|Benjamin]] aveva messo tra le sue guardie e a cui aveva ordinato di ucciderlo, che si rialza ai suoi ordini.',
+        en: 'For four days Halkenburg brings letters to the king’s door until the soldiers lower their guard. Then he and five guards draw their guns and reach their father. He fires, and the bullet stops in midair: the king tells him he is now part of the ritual and cannot die until it ends. When Halkenburg turns the gun on himself, his beast stops that bullet too. The king tells him only a king can change the country. Halkenburg returns with new resolve, and an arrow of his followers’ aura pierces the soldier [[benjamin-hui-guo-rou|Benjamin]] had posted among his guards and ordered to kill him, who rises to take his orders.',
       },
     ),
     told(
@@ -1200,8 +1208,8 @@ export const kakinChronicles = {
       373,
       { it: 'La sua unica famiglia', en: 'His only family' },
       {
-        it: '[[camilla-hui-guo-rou|Camilla]] arriva agli alloggi di [[benjamin-hui-guo-rou|Benjamin]] cercando il soldato che le ha sparato. Benjamin ordina alle guardie di lasciarla passare, e lei spara a Furykov e a un’altra guardia; il Nen di Furykov lo salva. Dopo che Camilla spara a Benjamin, Furykov la arresta. Quando lei minaccia di torturare e uccidere la sua famiglia, lui risponde che la sua unica famiglia è Benjamin. Sorveglia Camilla in isolamento finché non gli viene permesso di andare.',
-        en: '[[camilla-hui-guo-rou|Camilla]] comes to [[benjamin-hui-guo-rou|Benjamin]]’s quarters looking for the soldier who shot her. Benjamin orders his guards to let her pass, and she shoots Furykov and another guard; Furykov’s Nen saves him. After Camilla fires at Benjamin, Furykov arrests her. When she threatens to torture and kill his family, he answers that Benjamin is his only family. He guards Camilla in solitary confinement until he is allowed to leave.',
+        it: '[[camilla-hui-guo-rou|Camilla]] arriva agli alloggi di [[benjamin-hui-guo-rou|Benjamin]] dicendo di cercare il soldato che le ha sparato. Benjamin ordina alle guardie di lasciarla passare, e lei spara a Furykov e a un’altra guardia; il Nen di Furykov lo salva. Dopo che Camilla spara a Benjamin, Furykov la arresta. Quando lei minaccia di torturare e uccidere la sua famiglia, lui risponde che la sua unica famiglia è Benjamin. Sorveglia Camilla in isolamento finché non gli viene permesso di andare.',
+        en: '[[camilla-hui-guo-rou|Camilla]] comes to [[benjamin-hui-guo-rou|Benjamin]]’s quarters, claiming to be looking for the soldier who shot her. Benjamin orders his guards to let her pass, and she shoots Furykov and another guard; Furykov’s Nen saves him. After Camilla fires at Benjamin, Furykov arrests her. When she threatens to torture and kill his family, he answers that Benjamin is his only family. He guards Camilla in solitary confinement until he is allowed to leave.',
       },
     ),
   ],
@@ -1246,8 +1254,8 @@ export const kakinChronicles = {
       372,
       { it: 'In custodia', en: 'Taken into custody' },
       {
-        it: 'Dopo la morte di [[barrigen|Barrigen]], due guardie di [[zhang-lei-hui-guo-rou|Chowrai]] accusano Loberry dell’omicidio e la bloccano. Chiedono alla Corte Suprema di accusare anche la regina [[seiko-hui-guo-rou|Seiko]] di aver tramato contro [[woble-hui-guo-rou|Woble]], ma il giudice rifiuta e manda solo un investigatore a sorvegliare la regina per 72 ore. Loberry viene presa in custodia dall’esercito. Usa il Nen senza saperlo: un risveglio provocato dall’utilizzatore nascosto che aveva visto al corso.',
-        en: 'After [[barrigen|Barrigen]]’s death, two of [[zhang-lei-hui-guo-rou|Zhang Lei]]’s guards accuse Loberry of the murder and restrain her. They ask the Supreme Court to charge Queen [[seiko-hui-guo-rou|Seiko]] as well for plotting against [[woble-hui-guo-rou|Woble]], but the judge refuses and only sends an investigator to watch the queen for 72 hours. Loberry is taken into custody by the royal army. She uses Nen without knowing it: an awakening caused by the hidden user she saw at the class.',
+        it: 'Dopo la morte di [[barrigen|Barrigen]], due guardie di [[zhang-lei-hui-guo-rou|Chowrai]] accusano Loberry dell’omicidio e la bloccano. Chiedono alla Corte Suprema di accusare anche la regina [[seiko-hui-guo-rou|Seiko]] di aver tramato contro [[woble-hui-guo-rou|Woble]], ma il giudice rifiuta e manda solo un investigatore a sorvegliare la regina per 72 ore. Loberry viene presa in custodia dall’esercito. Usa il Nen senza saperlo: un risveglio provocato dall’abilità dell’assassino nascosto, che l’aveva usata come ospite a sua insaputa.',
+        en: 'After [[barrigen|Barrigen]]’s death, two of [[zhang-lei-hui-guo-rou|Zhang Lei]]’s guards accuse Loberry of the murder and restrain her. They ask the Supreme Court to charge Queen [[seiko-hui-guo-rou|Seiko]] as well for plotting against [[woble-hui-guo-rou|Woble]], but the judge refuses and only sends an investigator to watch the queen for 72 hours. Loberry is taken into custody by the royal army. She uses Nen without knowing it: an awakening caused by the hidden assassin’s ability, which had used her as its host without her knowing.',
       },
     ),
   ],
@@ -1515,8 +1523,8 @@ export const kakinChronicles = {
       393,
       { it: 'Un invito al cinema', en: 'An invitation to the cinema' },
       {
-        it: 'Le gocce di sangue di Zakuro trovano [[hisoka|Hisoka]] tra la folla del terzo livello, con i capelli sciolti e senza trucco. Quando [[lynch-fullbokko|Lynch]] lo colpisce, è lei a crollare, e Hisoka dice che il suo è stato un riflesso. Tremando, Zakuro gli dice che la mafia lo sta cercando. Più tardi si risveglia accanto a un mucchio di rifiuti: Hisoka lo aveva invitato al cinema e gli aveva chiesto quale film volesse vedere, e Zakuro ha perso i sensi appena ha distolto lo sguardo. Riferiscono tutto al sottocapo, e Zakuro riparte con Lynch per cercare il capo della Brigata.',
-        en: 'Zakuro’s drops of blood find [[hisoka|Hisoka]] in a crowd on Tier 3, his hair down and without make-up. When [[lynch-fullbokko|Lynch]] punches him, she is the one who collapses, and Hisoka says it was a reflex. Trembling, Zakuro tells him that the Mafia is looking for him. Later he wakes up beside a pile of rubbish: Hisoka had invited him to the cinema and asked which film he wanted to see, and Zakuro passed out the moment he looked away. They report to their underboss, and Zakuro sets off with Lynch to find the Troupe’s leader.',
+        it: 'Le gocce di sangue di Zakuro individuano tra la folla del terzo livello un uomo alto, con i capelli sciolti e senza trucco. Quando [[lynch-fullbokko|Lynch]] lo colpisce, è lei a crollare, e l’uomo dice che il suo è stato un riflesso. Dalla sua aura un tremante Zakuro si convince che sia [[hisoka|Hisoka]] e gli dice che la mafia lo sta cercando. Più tardi si risveglia accanto a un mucchio di rifiuti: l’uomo lo aveva invitato al cinema e gli aveva chiesto quale film volesse vedere, e Zakuro ha perso i sensi appena ha distolto lo sguardo. Riferiscono tutto al sottocapo, e Zakuro riparte con Lynch per cercare il capo della Brigata.',
+        en: 'Zakuro’s drops of blood pick out a tall man in a crowd on Tier 3, his hair down and without make-up. When [[lynch-fullbokko|Lynch]] punches him, she is the one who collapses, and the man says it was a reflex. His aura convinces a trembling Zakuro that he is [[hisoka|Hisoka]], and Zakuro tells him that the Mafia is looking for him. Later he wakes up beside a pile of rubbish: the man had invited him to the cinema and asked which film he wanted to see, and Zakuro passed out the moment he looked away. They report to their underboss, and Zakuro sets off with Lynch to find the Troupe’s leader.',
       },
     ),
   ],
@@ -1533,8 +1541,8 @@ export const kakinChronicles = {
       393,
       { it: 'Il pugno che non funziona', en: 'A punch that fails' },
       {
-        it: 'Sul terzo livello le gocce di sangue di [[zakuro-custard|Zakuro]] indicano uomini alti, e Lynch colpisce ciascuno perché la sua voce interiore dica se è [[hisoka|Hisoka]]. Uno di loro è davvero lui, con i capelli sciolti. Quando Lynch lo colpisce è lei a crollare, e Hisoka dice che il suo contrattacco è stato un riflesso. Al risveglio Hisoka non c’è più, e anche Zakuro ha perso i sensi. Sicura che fosse lui, Lynch propone di riferire tutto al sottocapo, perché sono chiaramente in svantaggio.',
-        en: 'On Tier 3, [[zakuro-custard|Zakuro]]’s drops of blood pick out tall men, and Lynch punches each one so that his inner voice says whether he is [[hisoka|Hisoka]]. One of them really is him, with his hair down. When Lynch punches him, she is the one who collapses, and Hisoka says his counter was a reflex. When she wakes, Hisoka is gone, and Zakuro has passed out too. Sure that it was him, Lynch suggests reporting to their underboss, since they are clearly outmatched.',
+        it: 'Sul terzo livello le gocce di sangue di [[zakuro-custard|Zakuro]] indicano uomini alti, e Lynch colpisce ciascuno perché la sua voce interiore dica se è [[hisoka|Hisoka]]. Uno di loro è un uomo alto con i capelli sciolti. Quando Lynch lo colpisce è lei a crollare, e l’uomo dice che il suo contrattacco è stato un riflesso. Al risveglio l’uomo non c’è più, e anche Zakuro ha perso i sensi. Sicura che fosse lui, Lynch propone di riferire tutto al sottocapo, perché sono chiaramente in svantaggio.',
+        en: 'On Tier 3, [[zakuro-custard|Zakuro]]’s drops of blood pick out tall men, and Lynch punches each one so that his inner voice says whether he is [[hisoka|Hisoka]]. One of them is a tall man with his hair down. When Lynch punches him, she is the one who collapses, and the man says his counter was a reflex. When she wakes, the man is gone, and Zakuro has passed out too. Sure that it was him, Lynch suggests reporting to their underboss, since they are clearly outmatched.',
       },
     ),
   ],
@@ -1553,8 +1561,8 @@ export const kakinChronicles = {
       393,
       { it: 'Il consiglio della capa', en: 'The boss’s advice' },
       {
-        it: 'Quorolle, riparatore ed Emettitore al livello 22, sfugge al sottocapo degli Xi-Yu con [[tevelares|Tevelares]] dopo la morte di [[padaille|Padaille]]. Nel covo degli Heil-Ly chiede se qualcuno sappia lanciare proiettili capaci di fermare dei piccioni trasformati in manette. Con Tevelares e [[gelato|Gelato]] fa rapporto alla loro capa. Lei li invita a studiare gli avversari e a usare la creatività: non serve un Emettitore se si riesce a limitare il nemico o la sua abilità. Quorolle capisce perché sia lei a condurre il gioco.',
-        en: 'Quorolle, a repairman and Emitter at level 22, escapes the Xi-Yu underboss with [[tevelares|Tevelares]] after [[padaille|Padaille]]’s death. Back in the Heil-Ly hideout he asks whether anyone can fire projectiles able to stop pigeons turned into handcuffs. With Tevelares and [[gelato|Gelato]] he reports to their boss. She tells them to study their opponents and be creative: they do not need an Emitter if they can restrict the enemy or the enemy’s ability. Quorolle understands why she is the game master.',
+        it: 'Quorolle, riparatore ed Emettitore al livello 22, sfugge al sottocapo degli Xi-Yu con [[tevelares|Tevelares]] dopo la morte di [[padaille|Padaille]]. Nel covo degli Heil-Ly chiede se qualcuno sappia lanciare proiettili capaci di fermare delle manette trasformate in piccioni. Con Tevelares e [[gelato|Gelato]] fa rapporto alla loro capa. Lei li invita a studiare gli avversari e a usare la creatività: non serve un Emettitore se si riesce a limitare il nemico o la sua abilità. Quorolle capisce perché sia lei a condurre il gioco.',
+        en: 'Quorolle, a repairman and Emitter at level 22, escapes the Xi-Yu underboss with [[tevelares|Tevelares]] after [[padaille|Padaille]]’s death. Back in the Heil-Ly hideout he asks whether anyone can fire projectiles able to stop handcuffs turned into pigeons. With Tevelares and [[gelato|Gelato]] he reports to their boss. She tells them to study their opponents and be creative: they do not need an Emitter if they can restrict the enemy or the enemy’s ability. Quorolle understands why she is the game master.',
       },
     ),
   ],
@@ -1631,8 +1639,8 @@ export const kakinChronicles = {
       394,
       { it: 'Il livello 21', en: 'Level 21' },
       {
-        it: 'Bille, impiegato in una sala giochi, al livello 20 aveva già detto agli altri Heil-Ly quale abilità voleva sviluppare. Quando [[tassi|Tassi]] degli Xi-Yu entra in una stanza trappola per recuperare un coltello, si ritrova davanti a una porta chiusa, e Bille lo pugnala al collo alle spalle. Raggiunto il livello 21, festeggia. [[matvere|Matvere]] gli porge un bicchiere per l’esame dell’acqua. Bille sperava di essere un Emettitore, ma risulta un Materializzatore.',
-        en: 'Bille, an arcade employee, had already told the other Heil-Ly members at level 20 which ability he wanted. When [[tassi|Tassi]] of the Xi-Yu walks into a trapped room to fetch a knife, he finds himself in front of a closed door, and Bille stabs him in the neck from behind. Reaching level 21, he celebrates. [[matvere|Matvere]] hands him a glass for the water test. Bille hoped to be an Emitter, but he turns out to be a Conjurer.',
+        it: 'Bille, impiegato in una sala giochi, al livello 20 aveva detto agli altri Heil-Ly di aver già scelto la sua abilità. Quando [[tassi|Tassi]] degli Xi-Yu entra in una stanza trappola per recuperare un coltello, si ritrova davanti a una porta chiusa, e Bille lo pugnala al collo alle spalle. Raggiunto il livello 21, festeggia. [[matvere|Matvere]] gli porge un bicchiere per l’esame dell’acqua. Bille sperava di essere un Emettitore, ma risulta un Materializzatore.',
+        en: 'Bille, an arcade employee, had already told the other Heil-Ly members at level 20 that he had chosen his ability. When [[tassi|Tassi]] of the Xi-Yu walks into a trapped room to fetch a knife, he finds himself in front of a closed door, and Bille stabs him in the neck from behind. Reaching level 21, he celebrates. [[matvere|Matvere]] hands him a glass for the water test. Bille hoped to be an Emitter, but he turns out to be a Conjurer.',
       },
     ),
   ],
@@ -1651,8 +1659,8 @@ export const kakinChronicles = {
       394,
       { it: 'Un’arma di Nen', en: 'A Nen firearm' },
       {
-        it: 'Matvere, studente universitario al livello 18, dice tutto contento agli altri Heil-Ly che vuole essere un Emettitore e creare un’arma da fuoco con il Nen, e [[gelato|Gelato]] gli ricorda che non può scegliere. Quando [[quorolle|Quorolle]] gli chiede se saprebbe fermare dei piccioni trasformati in manette, risponde che dovrebbe provare. Lui risulta un Trasformatore, e porge a [[bille|Bille]] il bicchiere per l’esame dell’acqua. Più tardi, al livello 21, dice alla capa che preferirebbe essere l’“organo”.',
-        en: 'Matvere, a college student at level 18, happily tells the other Heil-Ly members that he wants to be an Emitter and create a firearm with Nen, and [[gelato|Gelato]] reminds him that he does not get to choose. When [[quorolle|Quorolle]] asks whether he could stop pigeons turned into handcuffs, he says he would have to try. He turns out to be a Transmuter, and hands [[bille|Bille]] the glass for the water test. Later, at level 21, he tells their boss that he would rather be the “organ”.',
+        it: 'Matvere, studente universitario al livello 18, dice tutto contento agli altri Heil-Ly che vuole essere un Emettitore e creare un’arma da fuoco con il Nen, e [[gelato|Gelato]] gli ricorda che non può scegliere. Quando [[quorolle|Quorolle]] gli chiede se saprebbe fermare delle manette trasformate in piccioni, risponde che dovrebbe provare. Lui risulta un Trasformatore, e porge a [[bille|Bille]] il bicchiere per l’esame dell’acqua. Più tardi, al livello 21, dice alla capa che preferirebbe essere l’“organo”.',
+        en: 'Matvere, a college student at level 18, happily tells the other Heil-Ly members that he wants to be an Emitter and create a firearm with Nen, and [[gelato|Gelato]] reminds him that he does not get to choose. When [[quorolle|Quorolle]] asks whether he could stop handcuffs turned into pigeons, he says he would have to try. He turns out to be a Transmuter, and hands [[bille|Bille]] the glass for the water test. Later, at level 21, he tells their boss that he would rather be the “organ”.',
       },
     ),
   ],
@@ -1711,8 +1719,8 @@ export const kakinChronicles = {
       394,
       { it: 'Trasferita al terzo livello', en: 'Transferred to Tier 3' },
       {
-        it: 'Borksen, soldatessa scelta e Hunter provvisoria di guardia agli alloggi di [[tserriednich-hui-guo-rou|Tserriednich]], ha parlato del Nen a [[otocin|Otocin]]: un potere pericoloso che si sta diffondendo sul primo livello. Per questo il caporale [[gipper|Gipper]] la fa trasferire sul terzo livello come consulente. Lì rivela ai vecchi compagni, avvertendoli che chi ne parla sarà degradato, che il principe sta imparando il Nen dalla sua guardia del corpo. Non sa cosa sia il Nen, ma dalle reazioni delle guardie sembra un’arma segretissima. Propone di cercare l’appoggio degli Xi-Yu o dei Cha-R.',
-        en: 'Borksen, a private first class and provisional Hunter guarding [[tserriednich-hui-guo-rou|Tserriednich]]’s living quarters, told [[otocin|Otocin]] about Nen, a dangerous power spreading on Tier 1. Because of this, Corporal [[gipper|Gipper]] has her transferred to Tier 3 as an adviser. There, warning that anyone who leaks it will be demoted, she tells her old comrades that the prince is learning Nen from his bodyguard. She does not know what Nen is, but from the bodyguards’ reactions it seems like a top-secret weapon. She suggests seeking support from the Xi-Yu or the Cha-R.',
+        it: 'Borksen, soldatessa scelta dell’esercito reale e Hunter provvisoria di guardia agli alloggi reali, ha parlato del Nen a [[otocin|Otocin]]: un potere pericoloso che si sta diffondendo sul primo livello. Per questo il caporale [[gipper|Gipper]] la fa trasferire sul terzo livello come consulente. Lì rivela ai vecchi compagni, avvertendoli che chi ne parla sarà degradato, che il principe sta imparando il Nen dalla sua guardia del corpo. Non sa cosa sia il Nen, ma dalle reazioni delle guardie sembra un’arma segretissima. Propone di cercare l’appoggio degli Xi-Yu o dei Cha-R.',
+        en: 'Borksen, a private first class in the royal army and a provisional Hunter on the security detail of the royal living quarters, told [[otocin|Otocin]] about Nen, a dangerous power spreading on Tier 1. Because of this, Corporal [[gipper|Gipper]] has her transferred to Tier 3 as an adviser. There, warning that anyone who leaks it will be demoted, she tells her old comrades that the prince is learning Nen from his bodyguard. She does not know what Nen is, but from the bodyguards’ reactions it seems like a top-secret weapon. She suggests seeking support from the Xi-Yu or the Cha-R.',
       },
     ),
   ],
@@ -1721,7 +1729,7 @@ export const kakinChronicles = {
       394,
       { it: 'Il soprannome del principe', en: 'The prince’s nickname' },
       {
-        it: 'Otocin è uno dei soldati di [[tserriednich-hui-guo-rou|Tserriednich]], suo compagno all’accademia militare, e cerca la capa degli Heil-Ly sul terzo livello. Chiede al caporale [[gipper|Gipper]] come difendersi dal Nen, rivela di averne sentito parlare da [[borksen|Borksen]] e ottiene così il suo trasferimento. Gipper lo minaccia per aver abbreviato il nome del principe. Otocin critica il carattere irascibile di Tserriednich, e pensa che preferisce restare in basso e chiedergli a voce alta se è davvero questo che vuole.',
+        it: 'Otocin è uno dei soldati di [[tserriednich-hui-guo-rou|Tserriednich]], suo compagno all’accademia militare, e cerca la capa degli Heil-Ly sul terzo livello. Chiede al caporale [[gipper|Gipper]] come difendersi dal Nen, rivela di averne sentito parlare da [[borksen|Borksen]] e ottiene così il suo trasferimento. Gipper lo minaccia per aver abbreviato il nome del principe. Otocin critica il carattere irascibile di Tserriednich, e pensa che preferirebbe restare in basso e chiedergli a voce alta se è davvero questo che vuole.',
         en: 'Otocin is one of [[tserriednich-hui-guo-rou|Tserriednich]]’s soldiers, his schoolmate at the military academy, and is searching Tier 3 for the Heil-Ly boss. He asks Corporal [[gipper|Gipper]] how to defend against Nen, reveals that he heard about it from [[borksen|Borksen]], and so gets her transferred. Gipper threatens him for shortening the prince’s name. Otocin criticises Tserriednich’s short temper, and thinks that he would rather stay at the bottom and ask him out loud whether this is really what he wants.',
       },
     ),
@@ -1751,15 +1759,15 @@ export const kakinChronicles = {
       395,
       { it: 'Il prete della chiesa', en: 'The church’s priest' },
       {
-        it: 'Anni prima, a Meteor City, padre Lisores accoglie il giovane [[chrollo|Quoll]] di ritorno in chiesa, dove il ragazzo studia videocassette in lingue straniere, e lo avverte di non andare da solo in periferia: i bambini vengono rapiti, e fuori ci sono sempre più tombe piccole. I ragazzi evitano le sue prediche, ma lui lascia a Quoll la sala video. Nel seminterrato dice a uno degli anziani della città che il ragazzo promette molto e si chiede se le sue idee possano aiutarli.',
-        en: 'Years earlier in Meteor City, Father Lisores welcomes young [[chrollo|Chrollo]] back to the church, where the boy studies videotapes in foreign languages, and warns him not to visit the outskirts alone: children are being abducted, and there are more and more small graves outside. The children avoid his lectures, but he lets Chrollo use the video room. In the basement he tells one of the city’s elders that the boy has great promise and wonders whether his ideas could help them.',
+        it: 'Anni prima, a Meteor City, padre Lisores accoglie il giovane [[chrollo|Quoll]] di ritorno in chiesa, dove il ragazzo studia videocassette in lingue straniere, e lo avverte di non andare da solo in periferia: i bambini vengono rapiti, e fuori ci sono sempre più tombe piccole. I ragazzi evitano le sue prediche, ma lui lascia a Quoll la sala video. Nel seminterrato dice a una persona anziana che il ragazzo promette molto e si chiede se le sue idee possano essere utili agli anziani della città.',
+        en: 'Years earlier in Meteor City, Father Lisores welcomes young [[chrollo|Chrollo]] back to the church, where the boy studies videotapes in foreign languages, and warns him not to visit the outskirts alone: children are being abducted, and there are more and more small graves outside. The children avoid his lectures, but he lets Chrollo use the video room. In the basement he tells an older figure that the boy has great promise and wonders whether his ideas could be of use to the city’s elders.',
       },
     ),
   ],
   'sarasa': [
     told(
       396,
-      { it: 'La voce di Arancione', en: 'Orange’s voice' },
+      { it: 'La voce di Orange', en: 'Orange’s voice' },
       {
         it: 'Sarasa, la più piccola dei ragazzi intorno a [[chrollo|Quoll]] a Meteor City, accetta subito di dare la voce all’Orange Cleaner nel cartone che lui vuole doppiare. Alla proiezione costringe [[phinks|Phinks]] a distribuire gli snack e promette di occuparsi di [[uvogin|Uborghin]]. Dopo lo spettacolo finge di parlare con la voce di Uborghin per lodare la recitazione di Quoll. Più tardi si incammina da sola tra i rifiuti, decisa a sorprendere gli altri con nuove cassette prese in una discarica vicino a Uga Forest.',
         en: 'Sarasa, the youngest of the children around [[chrollo|Chrollo]] in Meteor City, agrees at once to voice the Orange Cleaner in the cartoon he wants to dub. At the screening she makes [[phinks|Phinks]] hand out snacks and promises to deal with [[uvogin|Uvogin]]. After the show she pretends to speak in Uvogin’s voice to praise Chrollo’s performance. Later she sets off alone through the rubbish, determined to surprise the others with new tapes from a dump near Uga Forest.',
@@ -1873,11 +1881,19 @@ export const kakinChronicles = {
       },
     ),
     told(
+      380,
+      { it: 'Al servizio dei Cha-R', en: 'Working for the Cha-R' },
+      {
+        it: 'Il sottocapo dei Cha-R [[ken-i-wang|Ken’i Wang]] si scusa con Phinks, [[nobunaga|Nobunaga]] e [[feitan|Feitan]] per averli sospettati e li porta nell’ufficio dei Cha-R al quinto livello. Mostra loro le riprese dell’uomo entrato nel magazzino. In cambio della caccia all’uomo che ha ucciso i custodi del magazzino, li fa passare dalla porta interna dell’ufficio e li affianca a una squadra dei Cha-R.',
+        en: 'The Cha-R underboss [[ken-i-wang|Ken’i Wang]] apologises to Phinks, [[nobunaga|Nobunaga]] and [[feitan|Feitan]] for suspecting them and takes them to the Cha-R office on Tier 5. He shows them footage of the man who entered the warehouse. In exchange for hunting down the man who killed the warehouse guards, he lets them through the office’s inner door and pairs them with a Cha-R squad.',
+      },
+    ),
+    told(
       398,
       { it: 'La trappola della stanza', en: 'The room’s trap' },
       {
-        it: 'Nelle cabine di prima classe del terzo livello Phinks, [[nobunaga|Nobunaga]] e [[feitan|Feitan]] usano un ostaggio per studiare la trappola degli Heil-Ly. Passare dal bagno è sicuro, ma l’uomo sparisce quando rientra dalla porta principale: per Phinks è una trappola a mina che si attiva ogni volta. Mentre Feitan si offre di entrare per primo, arriva [[ken-i-wang|Ken’i Wang]] con il sottocapo degli Xi-Yu, che trasforma un trasmettitore in un’ostrica, la inghiotte e si lascia prendere dalla trappola. Phinks tiene il ricevitore.',
-        en: 'In the first-class cabins on Tier 3, Phinks, [[nobunaga|Nobunaga]] and [[feitan|Feitan]] use a hostage to study the Heil-Ly’s trap. Going through the bathroom is safe, but the man vanishes when he walks back in through the front door: to Phinks it is a land-mine trap that triggers every time. As Feitan volunteers to go in first, [[ken-i-wang|Ken’i Wang]] arrives with the Xi-Yu underboss, who turns a transmitter into an oyster, swallows it and lets the trap take him. Phinks keeps the receiver.',
+        it: 'Nelle cabine di prima classe del terzo livello Phinks, [[nobunaga|Nobunaga]] e [[feitan|Feitan]] usano un ostaggio per studiare la trappola degli Heil-Ly. Passare dal bagno è sicuro, ma l’uomo sparisce quando rientra dalla porta principale. Per Nobunaga è una trappola a mina, e su proposta di Phinks un secondo ostaggio dimostra che si attiva ogni volta. Mentre Feitan si offre di entrare per primo, arriva [[ken-i-wang|Ken’i Wang]] con il sottocapo degli Xi-Yu, che trasforma un trasmettitore in un’ostrica, la inghiotte e si lascia prendere dalla trappola. Phinks tiene il ricevitore.',
+        en: 'In the first-class cabins on Tier 3, Phinks, [[nobunaga|Nobunaga]] and [[feitan|Feitan]] use a hostage to study the Heil-Ly’s trap. Going through the bathroom is safe, but the man vanishes when he walks back in through the front door. Nobunaga reads it as a land-mine trap, and at Phinks’s suggestion a second hostage shows that it triggers every time. As Feitan volunteers to go in first, [[ken-i-wang|Ken’i Wang]] arrives with the Xi-Yu underboss, who turns a transmitter into an oyster, swallows it and lets the trap take him. Phinks keeps the receiver.',
       },
     ),
   ],
@@ -1988,8 +2004,8 @@ export const kakinChronicles = {
       396,
       { it: 'Il fratellino', en: 'Her little brother' },
       {
-        it: 'Anni prima, a Meteor City, Pakunoda trova [[chrollo|Quoll]] a studiare videocassette in chiesa e lo aiuta a doppiare un cartone: presta la voce alla Pink Cleaner e coinvolge [[sheila|Sheila]] e [[sarasa|Sarasa]]. Lo chiama il suo fratellino, anche se lui insiste di essere più grande. Dopo la proiezione loda il modo in cui ha dato la voce a tutti i personaggi maschili, e gli dice che le piace così com’è, un ragazzo che ogni giorno porta fiori alle tombe. Propone di chiamare il loro gruppo compagnia.',
-        en: 'Years earlier in Meteor City, Pakunoda finds [[chrollo|Chrollo]] studying videotapes at the church and helps him dub a cartoon: she voices the Pink Cleaner and brings in [[sheila|Sheila]] and [[sarasa|Sarasa]]. She calls him her little brother, though he insists he is older. After the screening she praises how he voiced every male character, and tells him she likes him just as he is, a boy who brings flowers to the graves every day. She suggests calling their group a troupe.',
+        it: 'Anni prima, a Meteor City, Pakunoda trova [[chrollo|Quoll]] a studiare videocassette in chiesa e lo aiuta a doppiare un cartone: presta la voce alla Pink Cleaner e coinvolge [[sheila|Sheila]] e [[sarasa|Sarasa]]. Lo chiama il suo fratellino, anche se lui insiste di essere più grande. Prima della proiezione gli dice che le piace così com’è, un ragazzo che ogni giorno porta fiori alle tombe, e dietro le quinte loda il modo in cui ha dato la voce a tutti i personaggi maschili. Propone di chiamare il loro gruppo compagnia.',
+        en: 'Years earlier in Meteor City, Pakunoda finds [[chrollo|Chrollo]] studying videotapes at the church and helps him dub a cartoon: she voices the Pink Cleaner and brings in [[sheila|Sheila]] and [[sarasa|Sarasa]]. She calls him her little brother, though he insists he is older. Before the screening she tells him she likes him just as he is, a boy who brings flowers to the graves every day, and backstage she praises how he voiced every male character. She suggests calling their group a troupe.',
       },
     ),
   ],

@@ -1,9 +1,9 @@
 # Kakin chronicle, chapters 371–400 (#1157)
 
 Written on 7 November 2026, part of #918. Covers chapters 371–400, the third and
-fourth Kakin record phases (#1136, #1137): 118 bilingual stories, at least one
-for each of the 40 characters filed in that window and major new beats for 45
-returning characters. The series now has 908 stories for 267 characters.
+fourth Kakin record phases (#1136, #1137): 120 bilingual stories, at least one
+for each of the 40 characters filed in that window and major new beats for 44
+returning characters. The series now has 910 stories for 267 characters.
 Chapters 401 on are #1159.
 
 ## Sources and method
@@ -74,7 +74,38 @@ its corrections are listed below.
 
 ## Corrections from independent verification
 
-Pending.
+Three independent verifiers re-read every story against the chapter pages. They
+found no story filed too early and no name before its gate.
+
+1. Chapter 405 reveals that the "Hisoka" of chapters 392–393 is Bonolenov in
+   disguise. Hisoka's chapter-393 story (the VVIP pass) is removed: every beat
+   in it is Bonolenov's, at 405. Zakuro's and Lynch's 393 stories now tell the
+   scene from their side, a tall man with his hair down whom they take for
+   Hisoka, and never assert who he is.
+2. Phinks, 398: the land-mine reading is Nobunaga's; at Phinks's suggestion a
+   second hostage shows the trap triggers every time.
+3. Pakunoda, 396: the flowers remark comes before the screening, the praise for
+   his voices backstage.
+4. Chrollo, 396: the three girls voice the film live with him. Chrollo, 377: a
+   Cha-R group makes the offer.
+5. Seiko, 400 (Italian): she controls Fugetsu, not the reverse.
+6. Loberry, 372: she was the unknowing host of the hidden assassin's ability,
+   not someone who saw its user.
+7. Benjamin, 373: he calls for her arrest before she empties her gun. Furykov,
+   373: Camilla claims to be looking for her assailant.
+8. Halkenburg, 382: Benjamin's soldier was already posted among his guards.
+9. Borksen, 394: she is a royal army private on the royal living quarters'
+   security detail; her record's role and affiliation now say so.
+10. Lisores, 395: he speaks to an older individual about the city's elders.
+11. Bille, 394: he has chosen his ability, without saying which.
+12. Quorolle, 393, and Matvere, 394: handcuffs turned into pigeons.
+13. Otocin, 394 (Italian): "preferirebbe". Sarasa, 396 (Italian title): "La voce
+    di Orange".
+14. New stories for missing beats: Phinks 380 (the Cha-R office and squad),
+    Fugetsu 383 (the escape and the door back) and Benjamin 382 (Salé-salé's
+    assassination and the order against Halkenburg).
+15. Tajao's record says "vice boss" in English, as chapter 384 does; Ken'i is
+    the underboss.
 
 ## Coverage
 
@@ -130,7 +161,7 @@ Returning characters:
 | `kurapika`                 | 371, 376, 386, 388, 400 |
 | `machi`                    | 371, 397                |
 | `chrollo`                  | 377, 395, 396, 397      |
-| `phinks`                   | 371, 398                |
+| `phinks`                   | 371, 380, 398           |
 | `nobunaga`                 | 378, 393, 395, 399      |
 | `feitan`                   | 400                     |
 | `franklin`                 | 379                     |
@@ -141,16 +172,15 @@ Returning characters:
 | `shalnark`                 | 397                     |
 | `pakunoda`                 | 396                     |
 | `neon-nostrade`            | 377                     |
-| `hisoka`                   | 393                     |
 | `mizaistom-nana`           | 380, 383                |
 | `melody`                   | 377, 383, 400           |
 | `kacho-hui-guo-rou`        | 383, 400                |
-| `fugetsu-hui-guo-rou`      | 376, 381, 400           |
+| `fugetsu-hui-guo-rou`      | 376, 381, 383, 400      |
 | `seiko-hui-guo-rou`        | 400                     |
 | `hanzo`                    | 372                     |
 | `biscuit-krueger`          | 375                     |
 | `camilla-hui-guo-rou`      | 373, 376                |
-| `benjamin-hui-guo-rou`     | 373, 389                |
+| `benjamin-hui-guo-rou`     | 373, 382, 389           |
 | `halkenburg-hui-guo-rou`   | 382, 386, 389           |
 | `tserriednich-hui-guo-rou` | 376, 387                |
 | `zhang-lei-hui-guo-rou`    | 376, 390                |
