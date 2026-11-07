@@ -13,7 +13,8 @@ if (series === undefined) {
 }
 const { archive } = series
 
-// Every stage of chapters 340–370 (#1154), at the chapter the wiki gives it.
+// Every stage of chapters 340–400 (#1154, #1156), at the chapter the wiki
+// gives it.
 const STAGES = [
   { id: 'pariston-hill', chapter: 340, change: 'allegiance to Beyond' },
   { id: 'mizaistom-nana', chapter: 343, change: 'Cross Game' },
@@ -36,7 +37,36 @@ const STAGES = [
   { id: 'vincent', chapter: 364, change: 'death' },
   { id: 'marayam-hui-guo-rou', chapter: 366, change: 'beast' },
   { id: 'momoze-hui-guo-rou', chapter: 368, change: 'death' },
+  { id: 'hanzo', chapter: 372, change: 'Hanzo Skill 4' },
+  { id: 'benjamin-hui-guo-rou', chapter: 373, change: 'Benjamin Baton' },
+  { id: 'camilla-hui-guo-rou', chapter: 373, change: 'Cat’s Name' },
+  { id: 'fugetsu-hui-guo-rou', chapter: 374, change: 'door' },
+  { id: 'myuhan', chapter: 376, change: 'death' },
+  { id: 'neon-nostrade', chapter: 377, change: 'presumed death' },
+  { id: 'sale-sale-hui-guo-rou', chapter: 381, change: 'beast eaten' },
+  { id: 'sale-sale-hui-guo-rou', chapter: 382, change: 'death' },
+  { id: 'halkenburg-hui-guo-rou', chapter: 382, change: 'bow' },
+  { id: 'kacho-hui-guo-rou', chapter: 383, change: 'death and beast' },
+  { id: 'tserriednich-hui-guo-rou', chapter: 385, change: 'Laplace Devil' },
+  { id: 'sarasa', chapter: 397, change: 'death' },
+  { id: 'terebellum', chapter: 399, change: 'Sweet Home' },
 ]
+
+/** Neon's status as a reader at a bookmark sees it. */
+function neonStatusAt(
+  bookmark: Bookmark,
+  locale: (typeof LOCALES)[number],
+): string | undefined {
+  const character = archive.getCharacter('neon-nostrade')
+  if (character === undefined) {
+    throw new Error('Missing character neon-nostrade')
+  }
+  return archive.latestOf(
+    readerFor(archive, bookmark, locale),
+    character,
+    'status',
+  )
+}
 
 function inChapter(chapter: number): Bookmark {
   return { mode: 'chapter', chapter }
@@ -63,6 +93,25 @@ describe('Chrollo’s disguise', () => {
 
     expect(drawingAt('chrollo', inChapter(357), locale)).toStrictEqual(coat)
     expect(drawingAt('chrollo', inChapter(356), locale)).not.toStrictEqual(coat)
+  })
+})
+
+describe('Salé-salé’s beast', () => {
+  it.each(LOCALES)('is gone when Predator eats it, in %s', (locale) => {
+    // Chapter 381 is his first drawing again; the beast showed from 362.
+    const first = drawingAt('sale-sale-hui-guo-rou', inChapter(361), locale)
+
+    expect(
+      drawingAt('sale-sale-hui-guo-rou', inChapter(381), locale),
+    ).toStrictEqual(first)
+  })
+})
+
+describe('Neon’s presumed death', () => {
+  it.each(LOCALES)('is filed at its stage’s chapter, in %s', (locale) => {
+    expect(neonStatusAt(inChapter(376), locale)).toBe('alive')
+    expect(neonStatusAt(inChapter(377), locale)).toBe('presumed-dead')
+    expect(neonStatusAt(inEpisode(148), locale)).toBe('alive')
   })
 })
 

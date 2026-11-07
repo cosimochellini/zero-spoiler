@@ -60,7 +60,7 @@ import {
 } from './kakin-phase-1'
 import { KAKIN_PHASE_TWO_DRAWINGS, kakinPhaseTwoRedrawn } from './kakin-phase-2'
 import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
-import { KAKIN_PHASE_4_DRAWINGS } from './kakin-phase-4'
+import { KAKIN_PHASE_4_DRAWINGS, kakinPhaseFourRedrawn } from './kakin-phase-4'
 import { KAKIN_PHASE_5_DRAWINGS } from './kakin-phase-5'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
 import { YORKNEW_CITY_DRAWINGS, yorknewCityRedrawn } from './yorknew-city'
@@ -1177,7 +1177,11 @@ const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka.flatMap((stroke, index) => {
   return [index === 2 || index === 3 ? { ...stroke, role: 'ambient' } : stroke]
 })
 
-/** Returning records whose drawing changes in Kakin, chapters 340–370 (#1154). */
+/** The blank sheets of Neon's drawing (strokes 0–4) and her pen (5–9). */
+const NEON_SHEETS = YORKNEW_CITY_DRAWINGS['neon-nostrade'].slice(0, 5)
+const NEON_PEN = YORKNEW_CITY_DRAWINGS['neon-nostrade'].slice(5, 10)
+
+/** Returning records whose drawing changes in Kakin, chapters 340–400 (#1154, #1156). */
 const kakinReturningRedrawn: Redrawings = {
   'mizaistom-nana': [
     // The same hat, made small, and before it the warning card he shows
@@ -1346,6 +1350,37 @@ const kakinReturningRedrawn: Redrawings = {
     // wiki, so it is a frame check.
     { ...KAKIN, chapter: 357, value: YORKNEW_CITY_DRAWINGS.chrollo },
   ],
+  'hanzo': [
+    // The same bandana twice, the second in the muted ink above the first:
+    // Hanzo Skill 4, the double of himself he sends out while his body
+    // sleeps, the first ability he shows, chapter 372.
+    {
+      ...KAKIN,
+      chapter: 372,
+      value: [
+        ...moved(
+          DRAWINGS.hanzo
+            .slice(0, -1)
+            .map((stroke) => ({ ...stroke, role: 'ambient' as const })),
+          'translate(16 -34)',
+        ),
+        ...moved(DRAWINGS.hanzo, 'translate(-12 14)'),
+      ],
+    },
+  ],
+  'neon-nostrade': [
+    // The same pen laid down flat on the blank sheets: her ability vanishes
+    // from Chrollo's book, and she is presumed dead, chapter 377.
+    {
+      ...KAKIN,
+      chapter: 377,
+      value: [
+        ...NEON_SHEETS,
+        ...moved(NEON_PEN, 'translate(0 40) rotate(-66 80 88)'),
+        shadow(84, 184, 58),
+      ],
+    },
+  ],
 }
 
 export const REDRAWINGS: Redrawings = {
@@ -1369,4 +1404,5 @@ export const REDRAWINGS: Redrawings = {
   ...kakinPhaseOneBeasts,
   ...kakinPhaseTwoRedrawn,
   ...kakinReturningRedrawn,
+  ...kakinPhaseFourRedrawn,
 }
