@@ -3623,7 +3623,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:416': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_416',
-      note: 'Chapter 416: Room 302 with Furykov and Butch (no record), the shots off his Ken and the two servants killed, the counteractive ability, Moswana’s curse (no record), the silent TSK-17 infection and the question on whom her ability could kill to resurrect her, and Danjin taken for questioning. Added after independent verification (missing beat); the curse and infection are chapter 416, not 417.',
+      note: 'Chapter 416: Room 302 with Furykov and Butch (no record), the shots off his Ken and the two servants killed, the counteractive ability, Moswana’s curse as she dies (no record), the silent TSK-17 infection and the question on whom her ability could kill to resurrect her, and Danjin taken for questioning. Added after independent verification (missing beat); the curse and infection are chapter 416, not 417.',
     },
     '148:417': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
@@ -3641,7 +3641,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:413': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
-      note: 'Chapter 413: Benjamin’s realisation that his mother chose Halkenburg and leaked to Furykov, Furykov’s account of Unma’s 48-hour demand under threat of Beyond activating his curse, and Benjamin keeping his beast’s ability from Unma’s faction. Added after independent verification (missing beat).',
+      note: 'Chapter 413: the safe with only the vial Balsamilco took gone, Benjamin’s realisation that his mother chose Halkenburg and leaked to Furykov, Furykov’s account of Unma’s 48-hour demand under threat of Beyond activating the curse under Furykov’s tongue, and Benjamin keeping his beast’s ability from Unma’s faction. Added after independent verification (missing beat).',
     },
   },
   'tang-zhao-li-hui-guo-rou': {
