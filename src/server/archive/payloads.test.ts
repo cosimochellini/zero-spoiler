@@ -184,12 +184,19 @@ describe('every payload the server sends', () => {
  * Whether what `JSON.stringify` writes reads back as the very payload. Node's
  * strict deep equality fails on every loss `toStrictEqual` fails on (an
  * `undefined`, a `Map`, a `Date`, `NaN`, `-0`, a class, a hole) at a fifth of
- * its cost, which was most of the plain sweeps' time (#1177).
+ * its cost, which was most of the plain sweeps' time (#1177). The matcher
+ * runs only on a miss, to print the field lost with the ask.
  */
-function readsBack(payload: unknown): boolean {
+function readsBack(payload: unknown, ask: string): boolean {
   const sent = JSON.stringify(payload)
+  const back: unknown = JSON.parse(sent)
+  if (isDeepStrictEqual(back, payload)) {
+    return true
+  }
 
-  return isDeepStrictEqual(JSON.parse(sent), payload)
+  expect(back, ask).toStrictEqual(payload)
+
+  return false
 }
 
 /** An ask as a failure names it. */
@@ -247,10 +254,9 @@ describe.each(SERIES)('every payload of $slug', (series) => {
       const all = keys?.()
       for (const [at, { bookmark, locale }] of asks.entries()) {
         for (const key of sampled(all, at)) {
-          expect(
-            readsBack(run(bookmark, locale, key)),
-            askOf(bookmark, locale, key),
-          ).toBe(true)
+          const ask = askOf(bookmark, locale, key)
+
+          expect(readsBack(run(bookmark, locale, key), ask), ask).toBe(true)
         }
       }
     },
@@ -275,10 +281,9 @@ describe.each(SERIES)('every payload of $slug', (series) => {
       for (const bookmark of ceilings) {
         for (const locale of LOCALES) {
           for (const key of all) {
-            expect(
-              readsBack(run(bookmark, locale, key)),
-              askOf(bookmark, locale, key),
-            ).toBe(true)
+            const ask = askOf(bookmark, locale, key)
+
+            expect(readsBack(run(bookmark, locale, key), ask), ask).toBe(true)
           }
         }
       }
