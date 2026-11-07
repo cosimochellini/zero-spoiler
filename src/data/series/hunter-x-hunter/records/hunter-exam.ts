@@ -1307,6 +1307,16 @@ const earlyExam: HunterSaga = {
             en: 'Hunter Association, Hunter; Momoze’s bodyguards',
           },
         },
+        // Sent to guard Marayam with most of Momoze's guards (361, #1157).
+        {
+          episode: 148,
+          chapter: 361,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; scorta di Marayam',
+            en: 'Hunter Association, Hunter; Marayam’s bodyguards',
+          },
+        },
       ],
     },
     'nicholas': {
