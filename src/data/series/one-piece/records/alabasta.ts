@@ -1487,8 +1487,11 @@ export const alabasta: OnePieceSaga = {
             en: 'Seven Warlords; Baroque Works, head',
           },
         },
+        // Tashigi tells him his title is revoked as he is arrested: 127
+        // (chapter 211 p.13).
         {
-          episode: 130,
+          episode: 127,
+          chapter: 211,
           factions: ['independent'],
           value: {
             it: 'Ex membro della Flotta dei Sette, in arresto',

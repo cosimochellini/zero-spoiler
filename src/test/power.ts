@@ -40,8 +40,8 @@ export const THRONE: Seat = {
 }
 
 /**
- * A test body, filed nowhere (#1085), over the One Piece archive: the
- * Warlords' id, because a body's id is a group's. Its first seat is held by
+ * A test body (#1085) that stands in for the filed ones over the One Piece
+ * archive: the Warlords' id, because a body's id is a group's. Its first seat is held by
  * `EARLY` from the body's gate and vacated `MIDWAY`; its second is told
  * with the body, left unnamed until `LATE` takes it (an entry dated before
  * `LATE` is met, so it waits for them), then taken by `EARLY` in the manga

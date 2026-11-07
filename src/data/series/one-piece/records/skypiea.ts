@@ -776,8 +776,11 @@ export const skypiea: OnePieceSaga = {
             en: 'Blackbeard Pirates, captain; formerly of the Whitebeard Pirates',
           },
         },
+        // Kuma tells Moria the government has made him a Warlord: 369
+        // (chapter 474 p.10–15).
         {
-          episode: 430,
+          episode: 369,
+          chapter: 474,
           factions: ['blackbeard-pirates', 'warlords'],
           value: {
             it: 'Pirati di Barbanera, capitano; Flotta dei Sette',
@@ -1061,8 +1064,12 @@ export const skypiea: OnePieceSaga = {
             en: 'Donquixote Pirates, captain; Seven Warlords; king of Dressrosa',
           },
         },
+        // Stripped of the title and chained in a Marine cell: 746 (chapter
+        // 801 p.6). The false news of his resignation (chapter 699, shown a
+        // lie at 711) is on the power page only.
         {
           episode: 746,
+          chapter: 801,
           factions: ['independent'],
           value: {
             it: 'Ex membro della Flotta dei Sette, in arresto',
