@@ -6,14 +6,10 @@ import {
 } from '~/data/art/stroke'
 import { circle, ellipse, SEA, shadow, star } from '~/lib/svg/primitives'
 
+import { BESIDE_THE_BEAST } from './kakin-phase-2'
+
 /** The second of a pair: the first, mirrored about x 80. */
 const MIRRORED = 'matrix(-1 0 0 1 160 0)'
-
-/**
- * A prince's object made small and set at the foot of the box, so the
- * Guardian Spirit Beast the story shows beside the prince fits above it.
- */
-const BESIDE_THE_BEAST = 'translate(80 196) scale(0.56) translate(-80 -196)'
 
 /**
  * Benjamin's military puffer jacket from the front, the quilted channels
@@ -226,7 +222,7 @@ const MARAYAM_CAGE: Stroke[] = [
  * A pistol in 3/4, the trigger guard in tint and the grip hatched: the gun
  * Halkenburg holds on friendly soldiers to stop his siblings dying.
  */
-const HALKENBURG_PISTOL: Stroke[] = [
+const HALKENBURG_GUN: Stroke[] = [
   { d: 'M28 92 H126 L132 98 V112 H28 Z' },
   { d: 'M28 104 H122 M34 92 V112', role: 'soft' },
   { d: 'M92 112 L88 160 H116 L118 112' },
@@ -234,7 +230,30 @@ const HALKENBURG_PISTOL: Stroke[] = [
   { d: 'M78 112 V122', role: 'soft' },
   { d: 'M94 124 l18 -8 M93 136 l20 -9 M92 148 l22 -10', role: 'ambient' },
   { d: 'M108 86 V92 M118 88 V92', role: 'soft' },
-  shadow(84, 172, 44),
+]
+const HALKENBURG_PISTOL: Stroke[] = [...HALKENBURG_GUN, shadow(84, 172, 44)]
+
+/** Woble's cradle, its canopy over the head end hatched. */
+const WOBLE_CRADLE: Stroke[] = [
+  { d: 'M34 96 H126 C126 128 112 140 80 140 C48 140 34 128 34 96 Z' },
+  { d: 'M34 96 C34 62 60 50 84 52 C70 60 66 78 68 96' },
+  { d: 'M42 66 l10 -8 M38 80 l16 -12 M40 94 l18 -14', role: 'ambient' },
+]
+
+/** The blanket in Woble's cradle, in tint. */
+const WOBLE_BLANKET: Stroke[] = [
+  {
+    d: 'M70 104 C86 98 106 100 120 106 C112 116 90 118 70 112 Z',
+    role: 'accent',
+  },
+  { d: 'M78 108 Q96 104 112 109', role: 'soft' },
+]
+
+/** The cradle's two rockers and the floor under them. */
+const WOBLE_ROCKERS: Stroke[] = [
+  { d: 'M52 140 L46 156 M108 140 L114 156' },
+  { d: 'M26 154 Q80 168 134 154', role: 'soft' },
+  shadow(80, 170, 54),
 ]
 
 /**
@@ -404,19 +423,7 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
   // Woble's cradle, the canopy over its head end hatched and its blanket in
   // tint, on two rockers: Kurapika senses aura rising from it in chapter
   // 358. No baby is drawn.
-  'woble-hui-guo-rou': [
-    { d: 'M34 96 H126 C126 128 112 140 80 140 C48 140 34 128 34 96 Z' },
-    { d: 'M34 96 C34 62 60 50 84 52 C70 60 66 78 68 96' },
-    { d: 'M42 66 l10 -8 M38 80 l16 -12 M40 94 l18 -14', role: 'ambient' },
-    {
-      d: 'M70 104 C86 98 106 100 120 106 C112 116 90 118 70 112 Z',
-      role: 'accent',
-    },
-    { d: 'M78 108 Q96 104 112 109', role: 'soft' },
-    { d: 'M52 140 L46 156 M108 140 L114 156' },
-    { d: 'M26 154 Q80 168 134 154', role: 'soft' },
-    shadow(80, 170, 54),
-  ],
+  'woble-hui-guo-rou': [...WOBLE_CRADLE, ...WOBLE_BLANKET, ...WOBLE_ROCKERS],
 
   // Izunavi's keikogi from the front, the crossed lapels and the black rope
   // knotted at the waist in tint: Kurapika's Nen teacher, whom he hires for
@@ -603,6 +610,24 @@ const FUGETSU_HARP = KAKIN_PHASE_ONE_DRAWINGS['fugetsu-hui-guo-rou']
 
 /** The Kakin records of phase 1 whose drawing changes in chapters 340–400 (#1154, #1156). */
 export const kakinPhaseOneRedrawn: Redrawings = {
+  'woble-hui-guo-rou': [
+    // The same cradle, empty, its blanket in tint thrown over the side:
+    // Oito admits that the baby in Room 1014 is her sister's son and that
+    // she does not know where her daughter is, chapter 412.
+    {
+      ...KAKIN,
+      chapter: 412,
+      value: [
+        ...WOBLE_CRADLE,
+        ...WOBLE_ROCKERS,
+        {
+          d: 'M100 96 C104 104 106 114 104 124 L118 126 C122 116 122 104 118 96',
+          role: 'accent',
+        },
+        { d: 'M104 106 l12 2', role: 'soft' },
+      ],
+    },
+  ],
   'momoze-hui-guo-rou': [
     // Her Guardian Spirit Beast sits behind her as she knits, chapter 361:
     // a plump, hairy, hamster-like creature with stubby arms, round feet
@@ -1044,6 +1069,19 @@ export const kakinPhaseOneBeasts: Redrawings = {
           d: 'M40 30 l-6 -4 M36 92 l-6 4 M126 48 l6 -4 M126 74 l6 4',
           role: 'ambient',
         },
+      ],
+    },
+    // The same pistol dropped and lying upside down on the floor, and no
+    // bow: his body dies in the Tier 3 hospital and the ship is told,
+    // chapter 404. His mind lives on in Balsamilco's body, which is that
+    // record's state, not drawn here.
+    {
+      ...KAKIN,
+      chapter: 404,
+      value: [
+        ...moved(HALKENBURG_GUN, 'translate(0 4) rotate(180 80 120)'),
+        { d: 'M8 152 H152', role: 'ambient', dashed: true },
+        shadow(80, 160, 56),
       ],
     },
   ],

@@ -61,7 +61,7 @@ import {
 import { KAKIN_PHASE_TWO_DRAWINGS, kakinPhaseTwoRedrawn } from './kakin-phase-2'
 import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
 import { KAKIN_PHASE_4_DRAWINGS, kakinPhaseFourRedrawn } from './kakin-phase-4'
-import { KAKIN_PHASE_5_DRAWINGS } from './kakin-phase-5'
+import { KAKIN_PHASE_5_DRAWINGS, kakinPhaseFiveRedrawn } from './kakin-phase-5'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
 import {
   NEON_PEN,
@@ -1184,8 +1184,28 @@ const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka.flatMap((stroke, index) => {
   return [index === 2 || index === 3 ? { ...stroke, role: 'ambient' } : stroke]
 })
 
-/** Returning records whose drawing changes in Kakin, chapters 340–400 (#1154, #1156). */
+/** Returning records whose drawing changes in Kakin, chapters 340–420 (#1154, #1156, #1158). */
 const kakinReturningRedrawn: Redrawings = {
+  'bonolenov': [
+    // The same roll of bandage made small, and above it Hisoka's hand in
+    // the muted ink, a likeness: the "Hisoka" the Mafia met was Bonolenov
+    // transformed with Metamorphosen, and he takes another form again,
+    // chapter 405.
+    {
+      ...KAKIN,
+      chapter: 405,
+      value: [
+        ...moved(DRAWINGS.bonolenov, 'translate(-3 76) scale(0.6)'),
+        ...moved(
+          DRAWINGS.hisoka.map((stroke) => ({
+            ...stroke,
+            role: 'ambient' as const,
+          })),
+          'translate(70 -4) scale(0.62)',
+        ),
+      ],
+    },
+  ],
   'mizaistom-nana': [
     // The same hat, made small, and before it the warning card he shows
     // three men before their movements are restrained: the first ability
@@ -1409,4 +1429,5 @@ export const REDRAWINGS: Redrawings = {
   ...kakinPhaseTwoRedrawn,
   ...kakinReturningRedrawn,
   ...kakinPhaseFourRedrawn,
+  ...kakinPhaseFiveRedrawn,
 }
