@@ -1010,19 +1010,19 @@ describe('a record drawn again later in the story', () => {
 
   it('gives Momonosuke the whole grown dragon only from episode 1047', () => {
     const momonosuke = filed('momonosuke')
-    const tail = DRAWINGS.momonosuke
-    const grown = REDRAWINGS['momonosuke']?.[0]
+    const [crest, grown] = REDRAWINGS['momonosuke']!
     const drawnAt = (bookmark: Bookmark | null): Stroke[] =>
       characterOf(momonosuke, readerFor(bookmark, 'en')).visual.strokes
 
-    expect(grown?.episode).toBe(1047)
+    expect(crest!.episode).toBe(768)
+    expect(grown!.episode).toBe(1047)
 
-    expect(drawnAt(ep(1046))).toBe(tail)
-    expect(drawnAt(ep(1047))).toBe(grown?.value)
-    expect(drawnAt(null)).toBe(tail)
+    expect(drawnAt(ep(1046))).toBe(crest!.value)
+    expect(drawnAt(ep(1047))).toBe(grown!.value)
+    expect(drawnAt(null)).toBe(DRAWINGS.momonosuke)
     // The manga shows Shinobu's grown dragon in chapter 1023, no earlier.
-    expect(drawnAt({ mode: 'chapter', chapter: 1022 })).toBe(tail)
-    expect(drawnAt({ mode: 'chapter', chapter: 1023 })).toBe(grown?.value)
+    expect(drawnAt({ mode: 'chapter', chapter: 1022 })).toBe(crest!.value)
+    expect(drawnAt({ mode: 'chapter', chapter: 1023 })).toBe(grown!.value)
   })
 
   it('braids Sakazuki’s cap only from episode 570', () => {
