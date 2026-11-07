@@ -20,6 +20,7 @@ vi.mock(import('~/data/series'), async (original) => {
         factions: false,
         filler: false,
         fruits: false,
+        power: false,
         worldMap: false,
       },
     },

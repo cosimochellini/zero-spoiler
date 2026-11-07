@@ -28,6 +28,8 @@ import {
 import { entityForHandle } from './handle.server'
 import { hubPageFor } from './hub.server'
 import { type Payload, payloadsFor } from './payloads.server'
+import { powerPage } from './power.server'
+import { readerFor } from './reader.server'
 
 const PAYLOADS = payloadsFor(ONE_PIECE_LOADED.archive)
 
@@ -408,16 +410,22 @@ function earlyLabels(
     )
 }
 
-/** Every One Piece ask, with the faction groups its fruit album sends. */
+/**
+ * Every One Piece ask, with the faction groups its fruit album sends and the
+ * bodies its power page names: a body's label comes with the body, at the
+ * body's own gate, as a group's comes with the album's group.
+ */
 const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
   const { factions } = fruitAlbum(bookmark, locale)
-
-  return {
-    bookmark,
-    factions,
-    groups: new Set<null | string>(factions.map(({ faction }) => faction)),
-    locale,
+  const groups = new Set<null | string>(factions.map(({ faction }) => faction))
+  const { bodies } = powerPage(
+    readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
+  )
+  for (const { id } of bodies) {
+    groups.add(id)
   }
+
+  return { bookmark, factions, groups, locale }
 })
 
 /** Every label a page sends early at the asks it is sampled at. */
