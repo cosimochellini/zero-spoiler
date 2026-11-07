@@ -148,6 +148,15 @@ describe('the World Government on the power page', () => {
   })
 
   it.each([
+    [chapter(1082), ['vacant', 'jabra', 'kumadori', 'fukurou']],
+    [episode(1116), ['vacant', 'jabra', 'kumadori', 'fukurou']],
+    [chapter(1083), ['vacant', 'vacant', 'vacant', 'vacant']],
+    [episode(1117), ['vacant', 'vacant', 'vacant', 'vacant']],
+  ])('empties the Enies Lobby three’s seats at %j', (at, last) => {
+    expect(seatsOf('cp9', at)?.slice(5)).toStrictEqual(last)
+  })
+
+  it.each([
     [chapter(800), ['spandam', 'rob-lucci', 'kaku']],
     [chapter(801), ['vacant', 'vacant', 'kaku']],
     [episode(746), ['vacant', 'vacant', 'kaku']],
