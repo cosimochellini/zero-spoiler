@@ -2,16 +2,19 @@
 
 import { JSDOM } from 'jsdom'
 import { existsSync } from 'node:fs'
+import path from 'node:path'
 import process from 'node:process'
 import { launch } from 'puppeteer-core'
 import { preview } from 'vite'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { importArchive } from './archive-loader.mjs'
+import { importArchive, ROOT } from './archive-loader.mjs'
+import { SERVER_MANIFEST } from './archive-server-gate.mjs'
 import {
   artShots,
   captureBookmark,
   gridHtml,
+  scrollUntilMounted,
   shotRows,
   writeGrid,
 } from './art-shots.mjs'
@@ -26,6 +29,8 @@ vi.mock('vite', () => ({ preview: vi.fn() }))
 
 const origin = 'http://127.0.0.1:4321'
 const row = { id: 'karoo', label: 'karoo stage', bookmarks: [] }
+// The file gate:archive reads after every build: checking it keeps art:shots off a stale path.
+const built = path.join(ROOT, SERVER_MANIFEST)
 
 /**
  * Browser primitives with observable navigation, capture readiness and cleanup.
@@ -160,11 +165,19 @@ describe('bookmark capture', () => {
       'a[href$="/characters/karoo"] > span > svg[viewBox="0 0 160 200"]',
     ])
     expect(drawing.scrollIntoView).toHaveBeenCalledTimes(2)
-    expect(page.waitForFunction).toHaveBeenCalledTimes(2)
-    expect(drawing.scrollIntoView.mock.invocationCallOrder[0]).toBeLessThan(
-      page.waitForFunction.mock.invocationCallOrder[0],
-    )
+    expect(page.waitForFunction).toHaveBeenCalledTimes(4)
+    expect(page.waitForFunction.mock.calls[0]).toEqual([
+      scrollUntilMounted,
+      { polling: 100 },
+      'main svg[viewBox="0 0 160 200"]',
+    ])
     expect(page.waitForFunction.mock.invocationCallOrder[0]).toBeLessThan(
+      page.waitForSelector.mock.invocationCallOrder[0],
+    )
+    expect(drawing.scrollIntoView.mock.invocationCallOrder[0]).toBeLessThan(
+      page.waitForFunction.mock.invocationCallOrder[1],
+    )
+    expect(page.waitForFunction.mock.invocationCallOrder[1]).toBeLessThan(
       drawing.screenshot.mock.invocationCallOrder[0],
     )
     expect(cells).toEqual([
@@ -226,6 +239,31 @@ describe('bookmark capture', () => {
     },
   )
 
+  it('scrolls a screen at a time until a deferred tile mounts', () => {
+    const scrollBy = vi.fn()
+    const querySelector = vi.fn().mockReturnValueOnce(null).mockReturnValue({})
+    vi.stubGlobal('document', { querySelector })
+    vi.stubGlobal('innerHeight', 1000)
+    vi.stubGlobal('scrollBy', scrollBy)
+
+    expect(scrollUntilMounted('a > span > svg')).toBe(false)
+    expect(scrollBy).toHaveBeenCalledWith(0, 1000)
+    expect(scrollUntilMounted('a > span > svg')).toBe(true)
+    expect(scrollBy).toHaveBeenCalledOnce()
+    expect(querySelector).toHaveBeenCalledWith('a > span > svg')
+  })
+
+  it('names the drawing that never mounted', async () => {
+    const { browser, context, page } = captureFixture()
+    page.waitForFunction.mockRejectedValue(new Error('30000ms exceeded'))
+
+    await expect(
+      captureBookmark(browser, origin, row, { value: '92', open: true }),
+    ).rejects.toThrow('Drawing never mounted: main svg[viewBox="0 0 160 200"]')
+    expect(page.waitForSelector).not.toHaveBeenCalled()
+    expect(context.close).toHaveBeenCalledOnce()
+  })
+
   it('fails rather than replacing a timed-out open drawing with a placeholder', async () => {
     const { browser, context, page } = captureFixture()
     page.waitForSelector.mockRejectedValue(new Error('drawing timed out'))
@@ -256,9 +294,7 @@ describe('command resource ownership', () => {
   it('requires a production build before starting preview or Chrome', async () => {
     const fs = await vi.importActual('node:fs')
     vi.mocked(existsSync).mockImplementation((file) =>
-      String(file).endsWith('/dist/server/server.js') ?
-        false
-      : fs.existsSync(file),
+      file === built ? false : fs.existsSync(file),
     )
 
     await expect(artShots(['karoo'])).rejects.toThrow('Run npm run build')
@@ -270,8 +306,7 @@ describe('command resource ownership', () => {
     const fs = await vi.importActual('node:fs')
     vi.stubEnv('CHROME_PATH', '/missing/chrome')
     vi.mocked(existsSync).mockImplementation(
-      (file) =>
-        String(file).endsWith('/dist/server/server.js') || fs.existsSync(file),
+      (file) => file === built || fs.existsSync(file),
     )
 
     await expect(artShots(['karoo'])).rejects.toThrow(
