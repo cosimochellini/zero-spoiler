@@ -791,6 +791,38 @@ const links = {
       it: 'Kujaku rassicura Hibari quando si risveglia dopo il congelamento e si preoccupa per Kobi.',
     },
   },
+  'ahiruBetty': {
+    character: 'belo-betty',
+    type: { en: 'Army commander', it: 'Comandante dell’armata' },
+    summary: {
+      en: 'Ahiru is the deputy commander of the East Army, which Belo Betty commands.',
+      it: 'Ahiru è vicecomandante dell’armata dell’Est, guidata da Belo Betty.',
+    },
+  },
+  'ushianoMorley': {
+    character: 'morley',
+    type: { en: 'Army commander', it: 'Comandante dell’armata' },
+    summary: {
+      en: 'Ushiano is the deputy commander of the West Army, which Morley commands.',
+      it: 'Ushiano è vicecomandante dell’armata dell’Ovest, guidata da Morley.',
+    },
+  },
+  'jironKarasu': {
+    character: 'karasu',
+    type: { en: 'Army commander', it: 'Comandante dell’armata' },
+    summary: {
+      en: 'Jiron is the deputy commander of the North Army, which Karasu commands.',
+      it: 'Jiron è vicecomandante dell’armata del Nord, guidata da Karasu.',
+    },
+  },
+  'gamboLindbergh': {
+    character: 'lindbergh',
+    type: { en: 'Army commander', it: 'Comandante dell’armata' },
+    summary: {
+      en: 'Gambo is the deputy commander of the South Army, which Lindbergh commands.',
+      it: 'Gambo è vicecomandante dell’armata del Sud, guidata da Lindbergh.',
+    },
+  },
   'liliCobra': {
     character: 'nefertari-cobra',
     type: {
@@ -1854,6 +1886,10 @@ export const eggheadRelationships = {
       value: [links.kujakuTsuru, links.kujakuGarp, links.kujakuHibari],
     },
   ],
+  'ahiru': [{ episode: 1116, chapter: 1082, value: [links.ahiruBetty] }],
+  'ushiano': [{ episode: 1116, chapter: 1082, value: [links.ushianoMorley] }],
+  'jiron': [{ episode: 1116, chapter: 1082, value: [links.jironKarasu] }],
+  'gambo': [{ episode: 1116, chapter: 1082, value: [links.gamboLindbergh] }],
   'nefertari-lili': [
     { episode: 1118, chapter: 1084, value: [links.liliCobra] },
     { episode: 1119, chapter: 1085, value: [links.liliCobra, links.liliIm] },

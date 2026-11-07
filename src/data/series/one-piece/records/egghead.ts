@@ -282,6 +282,58 @@ export const egghead: OnePieceSaga = {
       },
       visual: { art: 'kujaku', tint: 'flamingo' },
     },
+    // The four deputy commanders of the Revolutionary Army, each captioned
+    // with name and army as they watch Sabo's ship come in to Momoiro:
+    // chapter 1082 (p. 12), episode 1116. Three of them stand unnamed beside
+    // Belo Betty at chapter 905, episode 883.
+    {
+      id: 'ahiru',
+      kind: 'character',
+      revealedAtEpisode: 1116,
+      revealedAtChapter: 1082,
+      name: { it: 'Ahiru', en: 'Ahiru' },
+      summary: {
+        it: 'Vicecomandante dell’armata dell’Est dei rivoluzionari, sotto Belo Betty, con un braccio sinistro meccanico e un paio di occhialoni sulla testa. Sulla costa di Momoiro punta il braccio su una nave in arrivo, pronta a sparare.',
+        en: 'Deputy commander of the Revolutionary Army’s East Army, under Belo Betty, with a mechanical left arm and a pair of goggles on her head. On the coast of Momoiro she aims the arm at an incoming ship, ready to shoot.',
+      },
+      visual: { art: 'ahiru', tint: 'pink' },
+    },
+    {
+      id: 'ushiano',
+      kind: 'character',
+      revealedAtEpisode: 1116,
+      revealedAtChapter: 1082,
+      name: { it: 'Ushiano', en: 'Ushiano' },
+      summary: {
+        it: 'Vicecomandante dell’armata dell’Ovest dei rivoluzionari, sotto Morley: un visone bovino dal collo lunghissimo, con il manto pezzato e un casco da aviatore tra le corna.',
+        en: 'Deputy commander of the Revolutionary Army’s West Army, under Morley: a cattle mink with a very long neck, a spotted coat and an aviator helmet between his horns.',
+      },
+      visual: { art: 'ushiano', tint: 'sand' },
+    },
+    {
+      id: 'jiron',
+      kind: 'character',
+      revealedAtEpisode: 1116,
+      revealedAtChapter: 1082,
+      name: { it: 'Jiron', en: 'Jiron' },
+      summary: {
+        it: 'Vicecomandante dell’armata del Nord dei rivoluzionari, sotto Karasu, con una maschera a forma di occhialoni, le cuffie e un mantello di pelliccia. Scommette che sulla nave in arrivo c’è Sabo, e vince.',
+        en: 'Deputy commander of the Revolutionary Army’s North Army, under Karasu, with a goggle-shaped mask, headphones and a fur cape. He bets that the incoming ship carries Sabo, and wins.',
+      },
+      visual: { art: 'jiron', tint: 'acid' },
+    },
+    {
+      id: 'gambo',
+      kind: 'character',
+      revealedAtEpisode: 1116,
+      revealedAtChapter: 1082,
+      name: { it: 'Gambo', en: 'Gambo' },
+      summary: {
+        it: 'Vicecomandante dell’armata del Sud dei rivoluzionari, sotto Lindbergh: un uomo tondo come un uovo, con i baffi a mezzaluna e un cappello a forma di puntina. Propone una scommessa su chi arriva a Momoiro, e la perde.',
+        en: 'Deputy commander of the Revolutionary Army’s South Army, under Lindbergh: a man as round as an egg, with a crescent moustache and a hat shaped like a thumbtack. He proposes a bet on who is coming to Momoiro, and loses it.',
+      },
+      visual: { art: 'gambo', tint: 'ocher' },
+    },
     {
       id: 'nefertari-lili',
       kind: 'character',
@@ -1222,6 +1274,94 @@ export const egghead: OnePieceSaga = {
         },
       ],
       devilFruit: [{ episode: 1113, value: ['whip-whip-fruit'] }],
+    },
+    'ahiru': {
+      relationships: eggheadRelationships.ahiru,
+      role: {
+        it: 'Vicecomandante dell’armata dell’Est',
+        en: 'East Army deputy commander',
+      },
+      log: {
+        it: 'È la vicecomandante dell’armata dell’Est dell’Armata Rivoluzionaria, agli ordini di Belo Betty. Il braccio sinistro è una protesi meccanica, e sulla testa porta un paio di occhialoni. Sulla costa di Momoiro, con gli altri tre vicecomandanti, vede una nave avvicinarsi e punta il braccio verso di lei, pronta a sparare se è un nemico. Quando a bordo compare Sabo, è sollevata.',
+        en: 'She is the deputy commander of the Revolutionary Army’s East Army, under Belo Betty. Her left arm is a mechanical prosthesis, and she wears a pair of goggles on her head. On the coast of Momoiro, with the other three deputy commanders, she sees a ship approaching and aims the arm at it, ready to shoot if it is an enemy. When Sabo appears on board, she is relieved.',
+      },
+      status: [{ episode: 1116, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 1116,
+          factions: ['revolutionary-army'],
+          value: {
+            it: 'Armata Rivoluzionaria, vicecomandante dell’armata dell’Est',
+            en: 'Revolutionary Army, East Army deputy commander',
+          },
+        },
+      ],
+    },
+    'ushiano': {
+      relationships: eggheadRelationships.ushiano,
+      role: {
+        it: 'Vicecomandante dell’armata dell’Ovest',
+        en: 'West Army deputy commander',
+      },
+      log: {
+        it: 'È il vicecomandante dell’armata dell’Ovest dell’Armata Rivoluzionaria, agli ordini di Morley. È un visone bovino con il collo lunghissimo, il manto pezzato e un casco da aviatore. Parla a frasi spezzate. Sulla costa di Momoiro, con gli altri tre vicecomandanti, guarda arrivare una nave e si chiede se sia un nemico o Sabo. Quando vede che è Sabo, esulta.',
+        en: 'He is the deputy commander of the Revolutionary Army’s West Army, under Morley. He is a cattle mink with a very long neck, a spotted coat and an aviator helmet. He speaks in broken sentences. On the coast of Momoiro, with the other three deputy commanders, he watches a ship come in and wonders whether it is an enemy or Sabo. When he sees it is Sabo, he cheers.',
+      },
+      status: [{ episode: 1116, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 1116,
+          factions: ['revolutionary-army'],
+          value: {
+            it: 'Armata Rivoluzionaria, vicecomandante dell’armata dell’Ovest',
+            en: 'Revolutionary Army, West Army deputy commander',
+          },
+        },
+      ],
+    },
+    'jiron': {
+      relationships: eggheadRelationships.jiron,
+      role: {
+        it: 'Vicecomandante dell’armata del Nord',
+        en: 'North Army deputy commander',
+      },
+      log: {
+        it: 'È il vicecomandante dell’armata del Nord dell’Armata Rivoluzionaria, agli ordini di Karasu. Ha i capelli rasati a strisce, una maschera a forma di occhialoni sugli occhi, le cuffie e un mantello di pelliccia sulle spalle. Sulla costa di Momoiro, con gli altri tre vicecomandanti, accetta la scommessa di Gambo sulla nave in arrivo e punta su Sabo. Vince, Gambo lo accusa di aver barato con un cannocchiale, e Jiron si mangia il cannocchiale.',
+        en: 'He is the deputy commander of the Revolutionary Army’s North Army, under Karasu. He has shaved, striped hair, a goggle-shaped mask over his eyes, headphones and a fur cape over his shoulders. On the coast of Momoiro, with the other three deputy commanders, he takes Gambo’s bet on the incoming ship and bets on Sabo. He wins, Gambo accuses him of cheating with a telescope, and Jiron eats the telescope.',
+      },
+      status: [{ episode: 1116, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 1116,
+          factions: ['revolutionary-army'],
+          value: {
+            it: 'Armata Rivoluzionaria, vicecomandante dell’armata del Nord',
+            en: 'Revolutionary Army, North Army deputy commander',
+          },
+        },
+      ],
+    },
+    'gambo': {
+      relationships: eggheadRelationships.gambo,
+      role: {
+        it: 'Vicecomandante dell’armata del Sud',
+        en: 'South Army deputy commander',
+      },
+      log: {
+        it: 'È il vicecomandante dell’armata del Sud dell’Armata Rivoluzionaria, agli ordini di Lindbergh. È tondo come un uovo, con grandi baffi a mezzaluna, una salopette a quadri, il papillon e un cappello a forma di puntina. Sulla costa di Momoiro, con gli altri tre vicecomandanti, propone una scommessa sulla nave in arrivo: un nemico o Sabo. Jiron punta su Sabo e vince, ma Gambo non vuole pagare e lo accusa di aver barato con un cannocchiale.',
+        en: 'He is the deputy commander of the Revolutionary Army’s South Army, under Lindbergh. He is as round as an egg, with a large crescent moustache, checked overalls, a bow tie and a hat shaped like a thumbtack. On the coast of Momoiro, with the other three deputy commanders, he proposes a bet on the incoming ship: an enemy or Sabo. Jiron bets on Sabo and wins, but Gambo refuses to pay and accuses him of cheating with a telescope.',
+      },
+      status: [{ episode: 1116, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 1116,
+          factions: ['revolutionary-army'],
+          value: {
+            it: 'Armata Rivoluzionaria, vicecomandante dell’armata del Sud',
+            en: 'Revolutionary Army, South Army deputy commander',
+          },
+        },
+      ],
     },
     // Filed as the bare "Nefertari Lili": at 1118 (chapter 1084) she is
     // "Queen Lili of the Nefertari family", and the "D." in her name is

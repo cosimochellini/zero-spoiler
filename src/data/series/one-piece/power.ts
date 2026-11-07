@@ -7,6 +7,7 @@ import { CROSS_GUILD } from './power/cross-guild'
 import { EMPERORS } from './power/emperors'
 import { FIVE_ELDERS } from './power/five-elders'
 import { MARINES } from './power/marines'
+import { REVOLUTIONARY_ARMY } from './power/revolutionary-army'
 import { WARLORDS } from './power/warlords'
 import { WORLD_GOVERNMENT } from './power/world-government'
 import type { OnePieceVocabulary } from './records/saga'
@@ -28,4 +29,5 @@ export const BODIES: PowerBody<OnePieceVocabulary>[] = [
   BIG_MOM_PIRATES,
   BEASTS_PIRATES,
   CROSS_GUILD,
+  REVOLUTIONARY_ARMY,
 ]

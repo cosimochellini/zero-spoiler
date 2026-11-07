@@ -959,6 +959,7 @@ export const dressrosa: OnePieceSaga = {
           // 731). The officer rank is only in a magazine.
           episode: 663,
           chapter: 731,
+          factions: ['revolutionary-army'],
           value: {
             it: 'Armata Rivoluzionaria, assistente maestra di karate degli uomini-pesce',
             en: 'Revolutionary Army, assistant Fish-Man Karate instructor',
