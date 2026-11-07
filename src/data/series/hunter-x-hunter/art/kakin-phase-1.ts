@@ -679,9 +679,10 @@ export const kakinPhaseOneRedrawn: Redrawings = {
   ],
   'fugetsu-hui-guo-rou': [
     // The small rounded door of the playground tunnel the twins played in
-    // as children, its handle on the left, set in the wall above the same
-    // glass harp made small: her Guardian Spirit Beast's door first
-    // appears to her, chapter 374.
+    // as children, set in the wall above the same glass harp made small:
+    // her Guardian Spirit Beast's door first appears to her, chapter 374.
+    // The handle side is drawn by convention, a frame check: the wiki's
+    // note on it is about the outgoing door.
     {
       ...KAKIN,
       chapter: 374,
@@ -746,11 +747,11 @@ export const kakinPhaseOneBeasts: Redrawings = {
           d: 'M56 112 L52 50 Q52 44 57 44 Q62 44 62 50 V72 M62 72 V34 Q62 28 67 28 Q72 28 72 34 V70 M72 70 V26 Q72 20 77 20 Q82 20 82 26 V70 M82 70 V32 Q82 26 87 26 Q92 26 92 32 V80 C100 72 110 70 114 76 Q116 82 110 86 C102 94 100 102 98 112',
         },
         {
-          d: `${star(67, 78, 6, 2.6)} ${star(78, 76, 6, 2.6)} ${star(89, 80, 6, 2.6)}`,
+          d: `${star(61, 86, 4.5, 2)} ${star(77, 84, 4.5, 2)} ${star(93, 88, 4.5, 2)}`,
           role: 'accent',
         },
         {
-          d: 'M74 70 l-2 -3 M82 70 l2 -3 M85 74 l-2 -3 M93 76 l3 -2 M95 84 l3 1 M83 82 l-2 3',
+          d: 'M77 76 v-3 M71 80 l-3 -2 M83 80 l3 -2 M93 80 v-3 M87 84 l-3 -2 M99 84 l3 -2',
           role: 'ambient',
         },
         {
@@ -790,9 +791,10 @@ export const kakinPhaseOneBeasts: Redrawings = {
       ],
     },
     // A huge cat above the same updo made small, the tip of its tail turned
-    // white with the life it pours into her mouth: Cat's Name brings her
-    // back after Musse shoots her, chapter 373. It appears behind her
-    // killer; its pose here is a frame check. No face.
+    // white (the wiki's ability box) and a drop falling from it: the cat
+    // drips the life it took from her killer into her mouth, and Cat's Name
+    // brings her back after Musse shoots her, chapter 373. It appears
+    // behind her killer; its pose here is a frame check. No face.
     {
       ...KAKIN,
       chapter: 373,
@@ -807,7 +809,7 @@ export const kakinPhaseOneBeasts: Redrawings = {
           d: 'M136 50 C130 44 132 36 138 38 C144 40 144 48 136 50',
           role: 'soft',
         },
-        { d: 'M134 58 l2 6 M140 56 l3 5', role: 'ambient' },
+        { d: 'M136 60 C133 64 133 68 136 68 C139 68 139 64 136 60 Z' },
         {
           d: 'M50 70 l-6 4 M48 84 l-6 4 M112 70 l6 4 M114 84 l6 4',
           role: 'ambient',

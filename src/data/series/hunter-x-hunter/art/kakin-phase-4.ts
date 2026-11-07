@@ -255,10 +255,8 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   ],
 
   // A burger in its paper wrapper on a tray, the wrapper in tint: Perigord
-  // is eating at a burger joint on Tier 3 when he spots the Xi-Yu, and goes
-  // on eating after he kicks Lynch, chapter 390 (named in 393). What he
-  // eats is not stated, so the burger is the joint's food by convention,
-  // a frame check.
+  // is eating in a burger joint on Tier 3 when he spots the Xi-Yu, and goes
+  // on eating after he kicks Lynch, chapter 390 (named in 393).
   'perigord': [
     { d: 'M14 128 L110 112 L148 136 L52 154 Z' },
     { d: 'M14 128 V134 L52 160 L148 142 V136', role: 'soft' },
@@ -523,18 +521,22 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     shadow(80, 170, 60),
   ],
 
-  // A handgun side on, the slide, the grip hatched and the trigger guard in
-  // tint: Madwig plays a hitman who remembers nothing but how to use one,
-  // chapter 400.
+  // A hand making a finger gun, out of the black sleeve of his suit, the
+  // shirt cuff in tint: Madwig plays a hitman with amnesia who remembers
+  // only how to handle a gun, and holds up a finger gun, chapter 400.
   'madwig': [
-    { d: 'M20 82 H128 V102 H20 Z' },
-    { d: 'M128 86 H138 V98 H128', role: 'soft' },
-    { d: 'M30 90 H118 M36 82 V102', role: 'soft' },
-    { d: 'M88 102 L80 156 H110 L114 102' },
-    { d: 'M62 102 Q60 124 78 124 H84', role: 'accent' },
-    { d: 'M70 102 V114', role: 'soft' },
-    { d: 'M88 116 l20 -8 M86 130 l22 -9 M84 144 l24 -10', role: 'ambient' },
-    shadow(76, 172, 52),
+    { d: 'M6 118 L50 104 L58 130 L14 144 Z' },
+    { d: 'M50 104 L60 101 L68 127 L58 130 Z', role: 'accent' },
+    {
+      d: 'M64 104 L84 98 L84 70 Q84 62 90 62 Q96 62 96 70 L98 96 L136 92 Q144 92 144 99 Q144 105 136 105 L100 108 M100 108 C106 110 108 116 102 120 M102 120 C106 124 104 130 98 130 L72 130 L66 127',
+    },
+    {
+      d: 'M100 108 C94 110 90 114 92 120 M92 120 Q96 124 102 120',
+      role: 'soft',
+    },
+    { d: 'M84 88 Q90 92 96 88 M116 94 V104', role: 'soft' },
+    { d: 'M20 138 l8 -6 M32 134 l8 -6 M44 130 l8 -6', role: 'ambient' },
+    shadow(80, 168, 58),
   ],
 
   // Himoncé's light hair from behind, falling past his ears, in tint, over

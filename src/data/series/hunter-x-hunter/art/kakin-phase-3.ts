@@ -36,8 +36,11 @@ export const KAKIN_PHASE_THREE_DRAWINGS = {
   ],
 
   // Ken'i Wang's striped single-breasted suit over a white shirt, and the
-  // dark tie with polka dots, the dots in tint: how he is dressed when he
-  // first appears, chapters 378 and 379. No face.
+  // dark tie with polka dots, the dots in tint: his outfit when he first
+  // appears, chapter 378. From 379, where he is named, he wears a dark suit
+  // and a matching tie. His rectangular glasses are not drawn: there is no
+  // head to wear them, and rectangular glasses are already Hyuga's object.
+  // No face.
   'ken-i-wang': [
     { d: 'M40 62 L66 52 L80 96 L94 52 L120 62 L128 170 H32 Z' },
     {
