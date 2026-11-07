@@ -286,12 +286,12 @@ checks this block.
 
 | Thing               | Count                                                   |
 | ------------------- | ------------------------------------------------------- |
-| Records             | 737                                                     |
-| Characters          | 534                                                     |
+| Records             | 738                                                     |
+| Characters          | 535                                                     |
 | Devil fruits        | 128                                                     |
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
-| Line drawings       | 737, one per record, plus 326 redrawings of 180 records |
+| Line drawings       | 738, one per record, plus 326 redrawings of 180 records |
 | Chronicle stories   | 769, for 189 characters                                 |
 
 ### `hunter-x-hunter`
