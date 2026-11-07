@@ -227,7 +227,9 @@ describe('the Emperors’ crews, first half', () => {
     )
     const ids = page.bodies.map(({ id }) => id)
 
-    expect(ids.slice(ids.indexOf('emperors'))).toStrictEqual([
+    expect(
+      ids.slice(ids.indexOf('emperors'), ids.indexOf('cross-guild') + 1),
+    ).toStrictEqual([
       'emperors',
       'red-hair-pirates',
       'straw-hat-pirates',

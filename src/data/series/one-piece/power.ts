@@ -10,6 +10,7 @@ import { FIVE_ELDERS } from './power/five-elders'
 import { MARINES } from './power/marines'
 import { RED_HAIR_PIRATES } from './power/red-hair-pirates'
 import { STRAW_HAT_PIRATES } from './power/straw-hat-pirates'
+import { SUPERNOVAE } from './power/supernovae'
 import { WARLORDS } from './power/warlords'
 import { WHITEBEARD_PIRATES } from './power/whitebeard-pirates'
 import { WORLD_GOVERNMENT } from './power/world-government'
@@ -36,4 +37,5 @@ export const BODIES: PowerBody<OnePieceVocabulary>[] = [
   BIG_MOM_PIRATES,
   BEASTS_PIRATES,
   CROSS_GUILD,
+  SUPERNOVAE,
 ]

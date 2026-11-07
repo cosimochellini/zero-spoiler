@@ -525,10 +525,17 @@ describe('a faction label', () => {
     // The sweep's bookmarks fall outside the short stretch the first two
     // groups hold an open eater, in both units: their eaters' next entries
     // tag them otherwise. The Five Elders and the Red Hair Pirates are bodies
-    // of power no eater stands in, so the fruit album never groups them. A
+    // of power no eater stands in, so the fruit album never groups them; the
+    // Supernovas are a body no affiliation tags, being one is no allegiance. A
     // faction added to this list needs a reason.
     expect(new Set(missed.map(({ faction }) => faction))).toStrictEqual(
-      new Set(['five-elders', 'galley-la', 'punk-hazard', 'red-hair-pirates']),
+      new Set([
+        'five-elders',
+        'galley-la',
+        'punk-hazard',
+        'red-hair-pirates',
+        'supernovae',
+      ]),
     )
   })
 })
