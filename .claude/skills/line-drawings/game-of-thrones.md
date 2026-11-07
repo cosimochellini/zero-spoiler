@@ -67,8 +67,9 @@ itself here:
 ## Stages
 
 - Every stage is a whole drawing, `{ episode, chapter, value }`, with the true
-  episode and the true chapter, strictly after `revealedAtEpisode` and at or
-  after `revealedAtChapter`.
+  episode and the true chapter. A stage the show tells is strictly after
+  `revealedAtEpisode`; a books-only one strictly after `revealedAtChapter`
+  and at or after `revealedAtEpisode` (the rules below).
 - **A change only one medium has** carries `source: 'chapter'` (the books
   alone) or `source: 'episode'` (the show alone). Its other number is the
   point where the other medium reaches the same moment in the story: it only
@@ -76,16 +77,22 @@ itself here:
   never opens it (owner, #851). When the other medium never reaches that
   moment, the other number is the next point it does reach, or else its last
   (`chapterCeiling` 344, `episodeCeiling` 73).
-- At most one such stage per record at a medium's last point, since its
-  episodes must stay distinct; anything else waits for an owner ruling under
-  `status:needs-decision`. The same goes for two changes the media tell in a
-  different order when no matching point keeps both in order.
+- A books-only stage is walked in chapters alone (#1154): it needs a chapter
+  of its own above the record's, and its episode, its other number, takes no
+  part in the episode checks, so it may share one with any other stage. Two changes the media tell in a different
+  order, when no matching point keeps both in order, wait for an owner
+  ruling under `status:needs-decision`.
 - The series has no `lastAdaptedChapter` (the show ran past the books), so
   nothing is filed at its last episode the way Hunter x Hunter's manga-only
   stages are.
-- `src/data/series/index.test.ts` holds every stage to a `chapter:`, an
-  episode after the threshold, ascending episodes and non-decreasing
-  chapters, one-medium stages included. `src/server/archive/thronesSeason1.test.ts`
+- `src/data/series/index.test.ts` holds every stage to a `chapter:` and
+  non-decreasing chapters, and reads each stage's medium as the engine does
+  (`chapterTable.gateOf`): the record's `source` when it has one, else the
+  stage's own (`entity.source ?? stage.source`). A stage that medium makes
+  the books' alone (`'chapter'`) needs a distinct chapter above the
+  record's and an episode at or after the record's, and its episode is left
+  out of the episode checks. Every other stage needs a distinct, ascending
+  episode strictly after the record's. `src/server/archive/thronesSeason1.test.ts`
   walks the stages in its `STAGES` table and holds that a one-medium stage
   never reaches the other medium's reader. `REDRAWINGS` in `art/index.ts` is
   already passed to `sagaArchive` in `game-of-thrones/archive.ts`, so a stage

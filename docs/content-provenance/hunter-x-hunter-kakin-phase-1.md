@@ -7,8 +7,8 @@ Manga panels and the Italian licensed manga edition were not viewed. The owner
 supplied research leads, not a claim that every licensed page had been checked.
 
 All new records and dated facts are manga-only. Episode 148 is only an ordering
-value. Neutral, record-keyed placeholders remain until #917; chronicles belong
-to #918. Relationships are authored in this phase. Later chapters stop at 420.
+value. The records are drawn in #1154 (part of #917); chronicles belong to #918.
+Relationships are authored in this phase. Later chapters stop at 420.
 
 ## Filed characters
 

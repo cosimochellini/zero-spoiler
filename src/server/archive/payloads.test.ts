@@ -236,8 +236,10 @@ describe.each(SERIES)('every payload of $slug', (series) => {
       }
     },
     // Every bookmark of the sweep, which grows with each series' records:
-    // Hunter x Hunter's shelves passed five seconds on CI with #1047.
-    15_000,
+    // Hunter x Hunter's shelves passed five seconds on CI with #1047, and
+    // fifteen once Kakin's drawings and stages landed (#1154), so it takes
+    // the sweeps' budget.
+    SWEEP_TIMEOUT,
   )
 
   // The sampling above asks for a key at a few bookmarks only, so every key
@@ -262,6 +264,8 @@ describe.each(SERIES)('every payload of $slug', (series) => {
         }
       }
     },
+    // Every key at the ceilings: as slow as the sweeps on CI (#1154).
+    SWEEP_TIMEOUT,
   )
 })
 
