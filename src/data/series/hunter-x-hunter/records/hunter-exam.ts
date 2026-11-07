@@ -1298,6 +1298,15 @@ const earlyExam: HunterSaga = {
             it: 'Associazione Hunter, Hunter',
           },
         },
+        {
+          episode: 148,
+          chapter: 350,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; scorta di Momoze',
+            en: 'Hunter Association, Hunter; Momoze’s bodyguards',
+          },
+        },
       ],
     },
     'nicholas': {

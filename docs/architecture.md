@@ -143,7 +143,7 @@ manga-only and files in five phases; phase 1 (#1134) covers chapters 340–357 a
 phase 2 (#1135) chapters 358–370 and phase 3 (#1136) chapters 371–383, phase 4
 (#1137) chapters 384–400 and phase 5 (#1138) chapters 401–420, the last
 published, with placeholder art pending #917. Kakin chronicles for chapters
-340–370 (#1155) add 97 manga-only stories for the 45 characters filed there and
+340–370 (#1155) add 99 manga-only stories for the 45 characters filed there and
 20 returning characters; all sit at episode 148, so the home ledger and the
 uniqueness test key a story by its chapter as well. Candidates whose naming
 stays unverified are deferred to #1141–#1145. Gyro is unanchored at 78 / 203.
@@ -287,7 +287,7 @@ checks this block.
 | Arcs, places      | 7 · 43                                                |
 | Saga modules      | 7                                                     |
 | Line drawings     | 340, one per record, plus 48 redrawings of 46 records |
-| Chronicle stories | 788, for 227 characters                               |
+| Chronicle stories | 790, for 227 characters                               |
 
 ### `game-of-thrones`
 

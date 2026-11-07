@@ -688,7 +688,15 @@ export const yorknewCity: HunterSaga = {
         en: 'She applies with Kurapika for a bodyguard job with a collector. When one of the applicants is accused of being a plant, she says she heard his heart speed up: it has the typical rhythm of a liar.',
       },
       status: [{ episode: 40, chapter: 68, value: 'alive' }],
-      affiliation: [NEON_GUARD],
+      affiliation: [
+        NEON_GUARD,
+        {
+          episode: 148,
+          chapter: 350,
+          source: 'chapter',
+          value: { it: 'Scorta di Kachow', en: 'Kacho’s bodyguards' },
+        },
+      ],
     },
     'basho': {
       relationships: yorknewCityRelationships.basho,
@@ -699,7 +707,15 @@ export const yorknewCity: HunterSaga = {
         en: 'He applies for a bodyguard job with Kurapika. He knocks down one of the figures in black bare-handed and realizes they are made of aura. He writes haiku that come true: the first sets a chair on fire, the second says that whoever lies to his question will burn.',
       },
       status: [{ episode: 40, chapter: 68, value: 'alive' }],
-      affiliation: [NEON_GUARD],
+      affiliation: [
+        NEON_GUARD,
+        {
+          episode: 148,
+          chapter: 350,
+          source: 'chapter',
+          value: { it: 'Scorta di Loozlus', en: 'Luzurus’s bodyguards' },
+        },
+      ],
     },
     'baise': {
       relationships: yorknewCityRelationships.baise,

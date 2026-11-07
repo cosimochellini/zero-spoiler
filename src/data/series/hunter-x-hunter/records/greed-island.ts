@@ -768,6 +768,15 @@ export const greedIsland: HunterSaga = {
             en: 'Hunter Association; trains Gon and Killua again for their fight with Knuckle and Shoot',
           },
         },
+        {
+          episode: 148,
+          chapter: 350,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter; scorta di Marayam',
+            en: 'Hunter Association; Marayam’s bodyguards',
+          },
+        },
       ],
     },
     'binolt': {

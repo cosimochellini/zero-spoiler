@@ -54,8 +54,8 @@ export const kakinChronicles = {
       344,
       { it: 'La spedizione di Netero', en: 'Netero’s expedition' },
       {
-        it: '[[ging-freecss|Ging]] racconta a tre membri della squadra di [[beyond-netero|Beyond]] un viaggio segreto nel Continente Oscuro. Vi presero parte [[netero|Netero]], [[linne-horsdoeuvre|Rinne]] e Zigg, e secondo Netero il continente è immenso. Il racconto mostra i tre davanti a creature molto più grandi di loro. Per impedire a Beyond di tornarci, Netero e i V5 hanno poi vietato il viaggio.',
-        en: '[[ging-freecss|Ging]] tells three members of [[beyond-netero|Beyond]]’s team about a secret journey to the Dark Continent. [[netero|Netero]], [[linne-horsdoeuvre|Linne]] and Zigg took part in it, and according to Netero the continent is gigantic. The account shows the three facing creatures much larger than themselves. To keep Beyond from going back there, Netero and the V5 later banned the journey.',
+        it: '[[ging-freecss|Ging]] racconta a tre membri della squadra di [[beyond-netero|Beyond]] un viaggio nel Continente Oscuro. Vi presero parte [[netero|Netero]], [[linne-horsdoeuvre|Rinne]] e Zigg, e secondo Netero il continente è immenso. Il racconto mostra i tre davanti a creature molto più grandi di loro. Per impedire a Beyond di tornarci, Netero e i V5 hanno poi vietato il viaggio.',
+        en: '[[ging-freecss|Ging]] tells three members of [[beyond-netero|Beyond]]’s team about a journey to the Dark Continent. [[netero|Netero]], [[linne-horsdoeuvre|Linne]] and Zigg took part in it, and according to Netero the continent is gigantic. The account shows the three facing creatures much larger than themselves. To keep Beyond from going back there, Netero and the V5 later banned the journey.',
       },
     ),
   ],
@@ -294,8 +294,8 @@ export const kakinChronicles = {
       344,
       { it: 'Le cinque minacce', en: 'The Five Threats' },
       {
-        it: 'Invece di combattere, Ging offre ai membri della squadra il doppio di quanto li paga [[beyond-netero|Beyond]]. Poi racconta a tre di loro le cinque minacce del Continente Oscuro, più forti delle formichimere, e il viaggio segreto di [[netero|Netero]], [[linne-horsdoeuvre|Rinne]] e [[zigg-zoldyck|Zigg]]. Quando gli chiedono da dove vengano le sue informazioni, spiega che una sola persona ha esplorato il continente e ne ha scritto un libro trecento anni fa, e che quel libro è ancora in scrittura.',
-        en: 'Instead of fighting, Ging offers the team members double what [[beyond-netero|Beyond]] pays them. He then tells three of them about the Five Threats of the Dark Continent, stronger than the Chimera Ants, and about the secret journey of [[netero|Netero]], [[linne-horsdoeuvre|Linne]] and [[zigg-zoldyck|Zigg]]. Asked where his information comes from, he explains that only one person explored the continent and wrote a book about it three hundred years ago, and that the book is still being written.',
+        it: 'Invece di combattere, Ging offre ai membri della squadra il doppio di quanto li paga [[beyond-netero|Beyond]]. Poi racconta a tre di loro le cinque minacce del Continente Oscuro, più forti delle formichimere, e il viaggio di [[netero|Netero]], [[linne-horsdoeuvre|Rinne]] e [[zigg-zoldyck|Zigg]]. Quando gli chiedono da dove vengano le sue informazioni, spiega che una sola persona ha esplorato il continente e ne ha scritto un libro trecento anni fa, e che quel libro è ancora in scrittura.',
+        en: 'Instead of fighting, Ging offers the team members double what [[beyond-netero|Beyond]] pays them. He then tells three of them about the Five Threats of the Dark Continent, stronger than the Chimera Ants, and about the journey of [[netero|Netero]], [[linne-horsdoeuvre|Linne]] and [[zigg-zoldyck|Zigg]]. Asked where his information comes from, he explains that only one person explored the continent and wrote a book about it three hundred years ago, and that the book is still being written.',
       },
     ),
     told(
@@ -383,7 +383,7 @@ export const kakinChronicles = {
       { it: 'La verità sul viaggio', en: 'The truth about the voyage' },
       {
         it: 'Negli alloggi di [[woble-hui-guo-rou|Woble]] cinque guardie vengono trovate prosciugate del sangue. Kurapika tiene sotto tiro le altre con la pistola e la Dowsing Chain, rivela che il viaggio è una guerra di successione e scopre due guardie che lo sapevano già: come i colleghi uccisi, riferiscono alle altre regine. Poi bestie guardiane invisibili a chi non conosce il Nen invadono la stanza. Kurapika lancia una chiamata d’emergenza su tutti i canali, e [[biscuit-krueger|Biscuit]] conferma di averle viste anche lei.',
-        en: 'In [[woble-hui-guo-rou|Woble]]’s quarters, five guards are found drained of blood. Kurapika holds the others at gunpoint with his Dowsing Chain, reveals that the voyage is a succession war and finds two who already knew: like their dead colleagues, they report to other queens. Then guardian beasts, invisible to anyone without Nen, flood the room. Kurapika makes an emergency call on every channel, and [[biscuit-krueger|Biscuit]] confirms she has seen them too.',
+        en: 'In [[woble-hui-guo-rou|Woble]]’s quarters, five guards are found drained of blood. Kurapika holds the others at gunpoint, his Dowsing Chain drawn, reveals that the voyage is a succession war and finds two who already knew: like their dead colleagues, they report to other queens. Then guardian beasts, invisible to anyone without Nen, flood the room. Kurapika makes an emergency call on every channel, and [[biscuit-krueger|Biscuit]] confirms she has seen them too.',
       },
     ),
     told(
@@ -406,8 +406,8 @@ export const kakinChronicles = {
       369,
       { it: 'Il prezzo di Emperor Time', en: 'The price of Emperor Time' },
       {
-        it: 'Dopo aver tenuto attivo Emperor Time per ore, Kurapika sviene, e con lui perde i sensi la madre di [[woble-hui-guo-rou|Woble]], che condivide l’abilità. Si risveglia nove ore dopo. Manda l’insetto verso gli alloggi di [[tserriednich-hui-guo-rou|Tserriednich]], ma nel condotto compaiono i volti della bestia del principe e l’insetto viene perso. Quando la regina gli chiede di insegnarle il Nen, Kurapika le rivela che la sua abilità lo ha già risvegliato in lei. Woble gli tende la mano.',
-        en: 'After keeping Emperor Time active for hours, Kurapika faints, and [[woble-hui-guo-rou|Woble]]’s mother, who shares the ability, blacks out with him. He wakes nine hours later. He sends the insect towards [[tserriednich-hui-guo-rou|Tserriednich]]’s quarters, but the faces of the prince’s beast appear in the vent and the insect is lost. When the queen asks him to teach her Nen, Kurapika reveals that his ability has already awakened it in her. Woble reaches out to him.',
+        it: 'Dopo aver tenuto attivo Emperor Time per ore, Kurapika sviene, e con lui perde i sensi la madre di [[woble-hui-guo-rou|Woble]], che condivide l’abilità. Si risveglia nove ore dopo. Fa mandare dalla regina l’insetto verso gli alloggi di [[tserriednich-hui-guo-rou|Tserriednich]], ma nel condotto compaiono i volti della bestia del principe e l’insetto viene perso. Quando la regina gli chiede di insegnarle il Nen, Kurapika le rivela che la sua abilità lo ha già risvegliato in lei. Woble gli tende la mano.',
+        en: 'After keeping Emperor Time active for hours, Kurapika faints, and [[woble-hui-guo-rou|Woble]]’s mother, who shares the ability, blacks out with him. He wakes nine hours later. He has the queen send the insect towards [[tserriednich-hui-guo-rou|Tserriednich]]’s quarters, but the faces of the prince’s beast appear in the vent and the insect is lost. When the queen asks him to teach her Nen, Kurapika reveals that his ability has already awakened it in her. Woble reaches out to him.',
       },
     ),
     told(
@@ -482,7 +482,7 @@ export const kakinChronicles = {
       351,
       { it: 'Uno scontro fino alla morte', en: 'A fight to the death' },
       {
-        it: 'All’Arena Celeste Hisoka e [[chrollo|Quoll]] si affrontano come Maestri di piano in un incontro che entrambi vogliono fino alla morte. Quoll controlla l’arbitro con un’antenna dell’abilità di [[shalnark|Shalnark]] e lo manda contro Hisoka. Hisoka si difende con il Bungee Gum e uccide l’arbitro, ma un’esplosione dal suo corpo lo costringe a rifugiarsi sul soffitto: Quoll ha segnato l’arbitro con un’abilità che trasforma in bombe ciò che tocca.',
+        it: 'All’Arena Celeste Hisoka e [[chrollo|Quoll]] si affrontano come Maestri di piano in un incontro che entrambi vogliono fino alla morte. Quoll controlla l’arbitro con un’antenna dell’abilità di [[shalnark|Shalnark]] e lo manda contro Hisoka. Hisoka si difende con il Bungee Gum e uccide l’arbitro, ma un’esplosione dal corpo dell’arbitro lo costringe a rifugiarsi sul soffitto: Quoll ha segnato l’arbitro con un’abilità che trasforma in bombe ciò che tocca.',
         en: 'At Heavens Arena, Hisoka and [[chrollo|Chrollo]] meet as Floor Masters in a match both want to be to the death. Chrollo controls the referee with an antenna from [[shalnark|Shalnark]]’s ability and sends him at Hisoka. Hisoka fights back with Bungee Gum and kills the referee, but a blast from the referee’s body drives him up to the ceiling: Chrollo has marked the referee with an ability that turns what it touches into bombs.',
       },
     ),
@@ -514,18 +514,26 @@ export const kakinChronicles = {
     ),
     told(
       356,
-      { it: 'La vittoria all’Arena', en: 'Victory at the arena' },
+      { it: 'Bombe tra il pubblico', en: 'Bombs in the crowd' },
       {
-        it: 'Quoll riempie l’arena di copie degli spettatori, le segna come bombe e ordina loro di distruggere [[hisoka|Hisoka]]. Trasforma in una potente bomba il corpo di una marionetta decapitata da Hisoka e, con il telefono di [[shalnark|Shalnark]], la fa innescare da uno spettatore, così esplode anche la testa che Hisoka tiene in mano. Manda le marionette a farsi esplodere accanto a Hisoka e gli lancia contro i presenti per bloccarlo, finché un’enorme esplosione non lo avvolge.',
-        en: 'Chrollo fills the arena with copies of the audience, marks them as bombs and orders them to break [[hisoka|Hisoka]]. He turns the body of a puppet Hisoka beheaded into a powerful bomb and, through [[shalnark|Shalnark]]’s phone, has a bystander set it off, so the head Hisoka is holding explodes too. He sends puppets to blow themselves up next to Hisoka and throws bystanders at him to pin him down, until an enormous explosion engulfs him.',
+        it: 'Quoll riempie l’arena di copie degli spettatori, le segna come bombe e ordina loro di distruggere [[hisoka|Hisoka]]. Trasforma in una potente bomba il corpo di una marionetta decapitata da Hisoka e, con il telefono di [[shalnark|Shalnark]], la fa innescare da uno spettatore, così esplode anche la testa che Hisoka tiene in mano. Manda le marionette a farsi esplodere accanto a Hisoka e gli lancia contro i presenti per bloccarlo. Quando la folla lo circonda, un’enorme esplosione lo avvolge.',
+        en: 'Chrollo fills the arena with copies of the audience, marks them as bombs and orders them to break [[hisoka|Hisoka]]. He turns the body of a puppet Hisoka beheaded into a powerful bomb and, through [[shalnark|Shalnark]]’s phone, has a bystander set it off, so the head Hisoka is holding explodes too. He sends puppets to blow themselves up next to Hisoka and throws bystanders at him to pin him down. As the crowd closes around him, an enormous explosion engulfs him.',
       },
     ),
     told(
       357,
       { it: 'Il tesoro della nave', en: 'The treasure on the ship' },
       {
-        it: 'Dopo l’incontro, Quoll telefona a [[shalnark|Shalnark]]: la famiglia reale di Cakin invita passeggeri comuni sul suo viaggio verso il Nuovo Continente. Progetta che la Brigata rubi il tesoro a bordo e promette di restituire a Shalnark il telefono quando saliranno sulla nave. Shalnark è contento che la Brigata si riunisca al completo. Poco dopo la telefonata, [[hisoka|Hisoka]] uccide Shalnark e [[kortopi|Kortopi]].',
-        en: 'After the match, Chrollo phones [[shalnark|Shalnark]]: the Kakin royal family is inviting ordinary passengers on its voyage to the New Continent. He plans for the Troupe to steal the treasure on board and promises to give Shalnark his phone back once they board. Shalnark is glad the whole Troupe will be together again. Shortly after the call, [[hisoka|Hisoka]] kills Shalnark and [[kortopi|Kortopi]].',
+        it: 'Dopo l’incontro, Quoll telefona a [[shalnark|Shalnark]]: la famiglia reale di Cakin invita passeggeri comuni sul suo viaggio verso il Nuovo Continente. Progetta che la Brigata rubi il tesoro a bordo e promette di restituire a Shalnark il telefono quando saliranno sulla nave. Shalnark è contento che la Brigata si riunisca al completo. Mentre parlano, [[hisoka|Hisoka]] ha già ucciso [[kortopi|Kortopi]], e subito dopo la telefonata uccide anche Shalnark.',
+        en: 'After the match, Chrollo phones [[shalnark|Shalnark]]: the Kakin royal family is inviting ordinary passengers on its voyage to the New Continent. He plans for the Troupe to steal the treasure on board and promises to give Shalnark his phone back once they board. Shalnark is glad the whole Troupe will be together again. While they talk, [[hisoka|Hisoka]] has already killed [[kortopi|Kortopi]], and right after the call he kills Shalnark too.',
+      },
+    ),
+    told(
+      366,
+      { it: 'Legami da recidere', en: 'Ties to sever' },
+      {
+        it: 'Quoll viaggia tra i passeggeri comuni dei livelli inferiori della nave. Sul quinto livello della Black Whale un passeggero nota che Quoll sembra sul punto di uccidere qualcuno e gli consiglia di dimenticare i suoi legami terreni. Quoll risponde che i legami non si dimenticano: si recidono.',
+        en: 'Chrollo travels among the ordinary passengers on the ship’s lower tiers. On Tier 5 of the Black Whale, a passenger remarks that Chrollo looks as if he is about to kill someone and advises him to forget his worldly ties. Chrollo replies that ties are not forgotten: they are severed.',
       },
     ),
   ],
@@ -579,7 +587,7 @@ export const kakinChronicles = {
       359,
       { it: 'Il patto delle gemelle', en: 'The twins’ pact' },
       {
-        it: 'Dopo il banchetto Kachow e la gemella [[fugetsu-hui-guo-rou|Fugetsu]] cercano di uscire insieme, ma devono andarsene una alla volta. Quando Fugetsu le chiede della successione, Kachow le dice di non abituarsi troppo: lavoreranno insieme per uccidere gli altri, e quando saranno rimaste solo loro convincerà il padre a risparmiare la sorella. Le ricorda di sorridere alle telecamere. Con le sue guardie è molto esigente, e [[melody|Melody]] si chiede se il principe stia ingannando se stesso.',
+        it: 'Dopo il banchetto Kachow e la gemella [[fugetsu-hui-guo-rou|Fugetsu]] cercano di uscire insieme, ma devono andarsene una alla volta. Quando Fugetsu le chiede della successione, Kachow le dice di non abituarsi troppo: lavoreranno insieme per uccidere gli altri, e quando saranno rimaste solo loro convincerà il padre a risparmiare la sorella. Le ricorda di sorridere alle telecamere. Con le sue guardie è molto esigente, e [[melody|Melody]] si chiede se il principe stia ingannando se stessa.',
         en: 'After the banquet, Kacho and her twin [[fugetsu-hui-guo-rou|Fugetsu]] try to leave together, but they must go one at a time. When Fugetsu asks about the succession, Kacho tells her not to get too comfortable: they will work together to kill the others, and once only they are left she will persuade their father to spare her sister. She reminds her to smile for the cameras. With her own guards she is very demanding, and [[melody|Melody]] wonders whether the prince is fooling herself.',
       },
     ),
@@ -596,11 +604,19 @@ export const kakinChronicles = {
   ],
   'melody': [
     told(
-      360,
+      350,
       { it: 'Al servizio di Kachow', en: 'Hired by Kacho' },
       {
-        it: 'Melody è tra gli Hunter che [[kurapika|Kurapika]] recluta come guardie del corpo, e viene assunta da [[kacho-hui-guo-rou|Kachow]]. A bordo il principe è molto esigente con le sue guardie, e Melody si chiede se non stia ingannando se stessa. Quando le bestie guardiane invadono gli alloggi di [[woble-hui-guo-rou|Woble]], Kurapika lancia una chiamata d’emergenza e Melody risponde che nella sua zona non c’è nulla.',
-        en: 'Melody is one of the Hunters [[kurapika|Kurapika]] recruits as bodyguards, and she is hired by [[kacho-hui-guo-rou|Kacho]]. On board, the prince is very demanding with her guards, and Melody wonders whether she is fooling herself. When guardian beasts flood [[woble-hui-guo-rou|Woble]]’s quarters, Kurapika makes an emergency call and Melody reports that her section is clear.',
+        it: 'Melody è uno dei cinque Hunter che [[kurapika|Kurapika]] recluta perché si candidino come guardie del corpo dei principi e raccolgano informazioni su [[tserriednich-hui-guo-rou|Tserriednich]]. Quando [[basho|Basho]] osserva che i principi più ingenui offrono denaro come ricompensa, Melody ribatte che in quel caso sarà tutto più facile. Viene assunta da [[kacho-hui-guo-rou|Kachow]].',
+        en: 'Melody is one of the five Hunters [[kurapika|Kurapika]] recruits to apply as bodyguards to the princes and gather information on [[tserriednich-hui-guo-rou|Tserriednich]]. When [[basho|Basho]] remarks that the naive princes offer money as a reward, Melody argues that this will make things easier. She is hired by [[kacho-hui-guo-rou|Kacho]].',
+      },
+    ),
+    told(
+      360,
+      { it: 'Una zona tranquilla', en: 'A clear section' },
+      {
+        it: 'A bordo [[kacho-hui-guo-rou|Kachow]] è molto esigente con le sue guardie, e Melody, che è una di loro, si chiede se il principe non stia ingannando se stessa. Quando le bestie guardiane invadono gli alloggi di [[woble-hui-guo-rou|Woble]], [[kurapika|Kurapika]] lancia una chiamata d’emergenza e Melody risponde che nella sua zona non c’è nulla.',
+        en: 'On board, [[kacho-hui-guo-rou|Kacho]] is very demanding with her guards, and Melody, one of them, wonders whether the prince is fooling herself. When guardian beasts flood [[woble-hui-guo-rou|Woble]]’s quarters, [[kurapika|Kurapika]] makes an emergency call and Melody reports that her section is clear.',
       },
     ),
   ],
@@ -617,8 +633,8 @@ export const kakinChronicles = {
       366,
       { it: 'Undici guardie', en: 'Eleven guards' },
       {
-        it: 'Dopo aver annunciato al padre che vuole ritirarsi, Harkenburg trova tutte e undici le sue guardie del corpo a terra, prive di sensi, e ne resta sconvolto. Quando si sveglia dal sonno le trova invece vive, e pensa di aver soltanto sognato la loro sorte. Intanto la guerra di successione continua intorno a lui.',
-        en: 'After telling his father he wants to withdraw, Halkenburg finds all eleven of his bodyguards lying unconscious and is horrified. When he wakes from his sleep, he finds them alive instead, and concludes that he only dreamed of their fate. Meanwhile the succession war goes on around him.',
+        it: 'Dopo aver annunciato al padre che vuole ritirarsi, Harkenburg trova tutte e undici le sue guardie del corpo a terra, prive di sensi, e ne resta sconvolto. Quando si sveglia nel suo letto le trova invece vive e al lavoro, e si chiede se abbia soltanto sognato. Poi nota sul dorso della mano sinistra un segno a forma di piuma: qualcosa è successo davvero.',
+        en: 'After telling his father he wants to withdraw, Halkenburg finds all eleven of his bodyguards lying unconscious and is horrified. When he wakes in his bed he finds them alive and at work, and wonders whether he only dreamed it. Then he notices a feather-shaped mark on the back of his left hand: something really did happen.',
       },
     ),
   ],
@@ -752,8 +768,8 @@ export const kakinChronicles = {
       366,
       { it: 'L’ordine di Camilla', en: 'Camilla’s order' },
       {
-        it: 'Duazul, la seconda regina, ha quattro figli in gara per il trono: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tsubeppa]], [[luzurus-hui-guo-rou|Loozlus]] e [[halkenburg-hui-guo-rou|Harkenburg]]. A bordo della Black Whale, Camilla le ordina di avvicinarsi ad Harkenburg perché lei possa ucciderlo, e di fare lo stesso con [[benjamin-hui-guo-rou|Benjamin]]. Una guardia di Benjamin ascolta di nascosto e raccoglie prove del complotto con il Nen.',
-        en: 'Duazul, the Second Queen, has four children competing for the throne: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tubeppa]], [[luzurus-hui-guo-rou|Luzurus]] and [[halkenburg-hui-guo-rou|Halkenburg]]. Aboard the Black Whale, Camilla orders her to get close to Halkenburg so that Camilla can kill him, and to do the same with [[benjamin-hui-guo-rou|Benjamin]]. One of Benjamin’s guards overhears and gathers evidence of the plot with his Nen.',
+        it: 'Duazul, la seconda regina, ha quattro figli tra i principi: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tsubeppa]], [[luzurus-hui-guo-rou|Loozlus]] e [[halkenburg-hui-guo-rou|Harkenburg]]. A bordo della Black Whale, Camilla le ordina di avvicinarsi ad Harkenburg perché lei possa ucciderlo, e di fare lo stesso con [[benjamin-hui-guo-rou|Benjamin]]. Una guardia di Benjamin ascolta di nascosto e raccoglie prove del complotto con il Nen.',
+        en: 'Duazul, the Second Queen, has four children among the princes: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tubeppa]], [[luzurus-hui-guo-rou|Luzurus]] and [[halkenburg-hui-guo-rou|Halkenburg]]. Aboard the Black Whale, Camilla orders her to get close to Halkenburg so that Camilla can kill him, and to do the same with [[benjamin-hui-guo-rou|Benjamin]]. One of Benjamin’s guards overhears and gathers evidence of the plot with his Nen.',
       },
     ),
   ],
@@ -783,8 +799,8 @@ export const kakinChronicles = {
       370,
       { it: 'I serpenti', en: 'The snakes' },
       {
-        it: 'La madre di [[marayam-hui-guo-rou|Marayam]] manda Barrigen a imparare il Nen nel tempo stabilito, e lui è contento di essere stato scelto. Al corso di [[kurapika|Kurapika]] si presenta con gli altri. Quando [[loberry|Loberry]] indica una donna che nessuno vede, Barrigen crolla a terra con le mani alla gola. Quattro serpenti gli si avvolgono intorno e gli prosciugano il sangue. Una guardia spara ai serpenti, ma Barrigen è già morto.',
-        en: '[[marayam-hui-guo-rou|Marayam]]’s mother sends Barrigen to learn Nen in the given time, and he is glad to have been chosen. At [[kurapika|Kurapika]]’s class he introduces himself with the others. When [[loberry|Loberry]] points at a woman nobody else can see, Barrigen falls to the floor clutching his neck. Four snakes coil around him and drain his blood. A guard shoots at the snakes, but Barrigen is already dead.',
+        it: 'La madre di [[marayam-hui-guo-rou|Marayam]] manda Barrigen a imparare il Nen nel tempo stabilito, e lui è contento di essere stato scelto. Al corso di [[kurapika|Kurapika]] si presenta con gli altri. Quando [[loberry|Loberry]] indica una donna che nessuno vede, Barrigen crolla a terra con le mani alla gola. Dei serpenti avvolti intorno al collo e alle braccia gli prosciugano il sangue. Una guardia spara ai serpenti, ma Barrigen è già morto.',
+        en: '[[marayam-hui-guo-rou|Marayam]]’s mother sends Barrigen to learn Nen in the given time, and he is glad to have been chosen. At [[kurapika|Kurapika]]’s class he introduces himself with the others. When [[loberry|Loberry]] points at a woman nobody else can see, Barrigen falls to the floor clutching his neck. Snakes wrapped around his neck and arms drain his blood. A guard shoots at the snakes, but Barrigen is already dead.',
       },
     ),
   ],
@@ -843,8 +859,8 @@ export const kakinChronicles = {
       370,
       { it: 'La donna in fondo alla stanza', en: 'The woman at the back' },
       {
-        it: 'Loberry, domestica di [[kacho-hui-guo-rou|Kachow]], è contenta di stare lontana dal suo principe per il corso di Nen di [[kurapika|Kurapika]]. Durante le presentazioni vede una donna in fondo alla stanza che [[yuri|Yuri]] non riesce a vedere, e la indica gridando. Mentre tutti guardano da quella parte, [[barrigen|Barrigen]] crolla, strangolato dai serpenti. Più tardi Loberry si guarda intorno e la donna non c’è più.',
-        en: 'Loberry, a servant of [[kacho-hui-guo-rou|Kacho]], is glad to be away from her prince for [[kurapika|Kurapika]]’s Nen class. During the introductions she sees a woman at the back of the room whom [[yuri|Yuri]] cannot see, and shouts, pointing at her. While everyone looks that way, [[barrigen|Barrigen]] collapses, strangled by snakes. Afterwards Loberry looks around and the woman is no longer there.',
+        it: 'Loberry, domestica di [[kacho-hui-guo-rou|Kachow]], è contenta di stare lontana dal suo principe per il corso di Nen di [[kurapika|Kurapika]]. Dopo le presentazioni, mentre [[kurapika|Kurapika]] chiede chi sappia già usare il Nen, vede in fondo alla stanza una donna che [[yuri|Yuri]] non riesce a vedere, e la indica gridando. Mentre tutti guardano da quella parte, [[barrigen|Barrigen]] crolla, strangolato dai serpenti. Più tardi Loberry si guarda intorno e la donna non c’è più.',
+        en: 'Loberry, a servant of [[kacho-hui-guo-rou|Kacho]], is glad to be away from her prince for [[kurapika|Kurapika]]’s Nen class. After the introductions, as [[kurapika|Kurapika]] asks who already uses Nen, she sees a woman at the back of the room whom [[yuri|Yuri]] cannot see, and shouts, pointing at her. While everyone looks that way, [[barrigen|Barrigen]] collapses, strangled by snakes. Afterwards Loberry looks around and the woman is no longer there.',
       },
     ),
   ],
@@ -933,7 +949,7 @@ export const kakinChronicles = {
       370,
       { it: 'Chi parla con l’insegnante', en: 'Who talks to the teacher' },
       {
-        it: '[[zhang-lei-hui-guo-rou|Chowrai]] ordina a Tenftory di osservare chiunque parli con [[kurapika|Kurapika]], che considera il protagonista della situazione. Al corso di Nen Tenftory decide di tenere d’occhio soprattutto le guardie del primo, del quarto e del quinto principe. Si presenta con gli altri partecipanti e assiste alla morte di [[barrigen|Barrigen]], ucciso dai serpenti durante la lezione.',
+        it: '[[zhang-lei-hui-guo-rou|Chowrai]] ordina a Tenftory di osservare chiunque parli con [[kurapika|Kurapika]], che considera il protagonista della situazione. Al corso di Nen Tenftory decide di diffidare soprattutto del primo, del quarto e del quinto principe. Si presenta con gli altri partecipanti e assiste alla morte di [[barrigen|Barrigen]], ucciso dai serpenti durante la lezione.',
         en: '[[zhang-lei-hui-guo-rou|Zhang Lei]] orders Tenftory to watch anyone who talks with [[kurapika|Kurapika]], whom he considers the key player. At the Nen class, Tenftory decides to be most wary of the First, Fourth and Fifth Princes. He introduces himself with the other attendees and witnesses the death of [[barrigen|Barrigen]], killed by snakes during the lesson.',
       },
     ),

@@ -349,7 +349,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:360': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_360',
-      note: 'Chapters 359–360: Woody and four more guards drained (359), the interrogation with the Dowsing Chain, the informants of the other queens, the beasts, the emergency call and Biscuit’s answer (360).',
+      note: 'Chapters 359–360: Woody and four more guards drained (359), the interrogation at gunpoint with the Dowsing Chain drawn, the informants of the other queens, the beasts, the emergency call and Biscuit’s answer (360). Corrected after independent verification: the English now says the chain is drawn, not used to hold them.',
     },
     '148:361': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_361',
@@ -361,7 +361,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:369': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_369',
-      note: 'Chapters 368–369: Kurapika faints (368); nine hours out, the queen sharing the blackout, the cockroach lost to Tserriednich’s beast in the vent, her Nen already awakened, Woble reaching out (369).',
+      note: 'Chapters 368–369: Kurapika faints (368); nine hours out, the queen sharing the blackout, the cockroach lost to Tserriednich’s beast in the vent, her Nen already awakened, Woble reaching out (369). Corrected after independent verification: the queen sends the insect at Kurapika’s request.',
     },
     '148:370': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
@@ -485,7 +485,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:351': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_351',
-      note: 'Chapter 351: the match to the death between Floor Masters, Black Voice on the referee, Bungee Gum, the cut throat and the blast that sends Hisoka to the ceiling; The Sun and Moon explained in the same chapter.',
+      note: 'Chapter 351: the match to the death between Floor Masters, Black Voice on the referee, Bungee Gum, the cut throat and the blast that sends Hisoka to the ceiling; The Sun and Moon explained in the same chapter. Corrected after independent verification: the Italian names the referee’s body as the source of the blast.',
     },
     '148:356': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_356',
@@ -1217,7 +1217,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:344': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_344',
-      note: 'Chapter 344: the doubled pay, the Five Threats stronger than the Chimera Ants, the trip of Netero, Linne and Zigg, and the book written three hundred years ago and still being written. The author’s name is left out because his record is not filed.',
+      note: 'Chapter 344: the doubled pay, the Five Threats stronger than the Chimera Ants, the trip of Netero, Linne and Zigg, and the book written three hundred years ago and still being written. The author’s name is left out because his record is not filed. Corrected after independent verification: “secret” dropped; the synopsis does not say it.',
     },
     '148:347': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_347',
@@ -1421,7 +1421,11 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:360': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_360',
-      note: 'Chapters 350, 359 and 360: hired by Kacho (350), Kacho’s demands and Melody’s doubt (359), and her clear section during the emergency call (360).',
+      note: 'Chapters 359 and 360: Kacho’s demands and Melody’s doubt (359), and her clear section during the emergency call (360). The hire moved to its own chapter-350 story after independent verification.',
+    },
+    '148:350': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_350',
+      note: 'Chapter 350: recruited with four other Hunters, Basho on the naive princes using money as a reward, Melody arguing it will make things easier, and Kacho hiring her. Split out after independent verification.',
     },
   },
   'basho': {
@@ -1907,11 +1911,15 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:356': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_356',
-      note: 'Chapters 353–356: the copied crowd stamped to break Hisoka (353), the marked copies (354–355), the head set off through Black Voice (355), the body bomb and the self-destructing puppets (356).',
+      note: 'Chapters 353–356: the copied crowd stamped to break Hisoka (353), the marked copies (354–355), the head set off through Black Voice (355), the body bomb and the self-destructing puppets (356). Corrected after independent verification: retitled from a victory, as chapter 356 ends on the explosion and the casualty report is chapter 357; the body states no result.',
     },
     '148:357': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_357',
-      note: 'Chapter 357: the call to Shalnark about the royal family’s passengers and the treasure, the phone to be returned on board, and Hisoka killing Shalnark and Kortopi after the call.',
+      note: 'Chapter 357: the call to Shalnark about the royal family’s passengers and the treasure, and the phone to be returned on board. Corrected after independent verification: Kortopi is already dead in the bathroom during the call, and Hisoka kills Shalnark right after it.',
+    },
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapter 366: on Tier 5 a passenger says Chrollo looks as if he is going to kill someone and suggests he forget his worldly ties; Chrollo answers that ties are severed, not forgotten. Tiers 3–5 hold the general passengers (chapter 358). Added after independent verification.',
     },
   },
   'bonolenov': {
@@ -3305,7 +3313,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'zigg-zoldyck': {
     '148:344': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_344',
-      note: 'Chapter 344 synopsis and notes: Ging’s account of the undocumented trip by Netero, Linne and Zigg, the gigantic continent and the ban Netero and the V5 placed to stop Beyond. The large creatures are the chapter’s flashback image, as the record’s log says.',
+      note: 'Chapter 344 synopsis and notes: Ging’s account of the trip by Netero, Linne and Zigg, the gigantic continent and the ban Netero and the V5 placed to stop Beyond. The large creatures are the chapter’s flashback image, as the record’s log says. Corrected after independent verification: “secret” dropped; the synopsis does not say it.',
     },
   },
   'tserriednich-hui-guo-rou': {
@@ -3411,7 +3419,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'kacho-hui-guo-rou': {
     '148:359': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_359',
-      note: 'Chapter 359 synopsis and notes: the twins leaving one at a time, Kacho’s plan to kill the others together and keep Fugetsu alive, the cameras, her demands on her guards and Melody’s thought. Whether both or only Fugetsu would be spared differs between synopsis and notes; the story says the sister.',
+      note: 'Chapter 359 synopsis and notes: the twins leaving one at a time, Kacho’s plan to kill the others together and keep Fugetsu alive, the cameras, her demands on her guards and Melody’s thought. Whether both or only Fugetsu would be spared differs between synopsis and notes; the story says the sister. Corrected after independent verification: Italian agreement “se stessa”.',
     },
   },
   'fugetsu-hui-guo-rou': {
@@ -3427,7 +3435,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:366': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
-      note: 'Chapters 362 and 366: the eleven unconscious guards (362) and his waking to find them alive, taken for a dream (366).',
+      note: 'Chapters 362 and 366: the eleven unconscious guards (362); waking in his bed, the guards awake and unpacking, the question whether it was a dream and the pinion-shaped mark on the back of his left hand (366, Halkenburg’s character page citing chapter 366). Corrected after independent verification: the dream is a question, not a conclusion, and the mark is added.',
     },
   },
   'momoze-hui-guo-rou': {
@@ -3503,7 +3511,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'duazul-hui-guo-rou': {
     '148:366': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
-      note: 'Chapters 349 and 366: her four children in the roster (349), Camilla’s order about Halkenburg and Benjamin, and the overheard evidence (366).',
+      note: 'Chapters 349 and 366: her four children in the roster (349), Camilla’s order about Halkenburg and Benjamin, and the overheard evidence (366). Corrected after independent verification: “four children competing for the throne” became “among the princes”, as Halkenburg asked to withdraw at 361.',
     },
   },
   'marayam-hui-guo-rou': {
@@ -3521,7 +3529,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'barrigen': {
     '148:370': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
-      note: 'Chapters 369–370: sent by the Thirteenth Prince’s mother and glad to be chosen (369); the introductions, Loberry’s woman, the four snakes, the shot and his death (370).',
+      note: 'Chapters 369–370: sent by the Thirteenth Prince’s mother and glad to be chosen (369); the introductions, Loberry’s woman, the snakes wrapped around his neck and arms, the shot and his death (370). Corrected after independent verification: “four snakes coil around him” became the synopsis wording.',
     },
   },
   'belerainte': {
@@ -3557,7 +3565,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'loberry': {
     '148:370': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
-      note: 'Chapters 369–370: Kacho’s servants glad to be away (369); the woman Yuri cannot see, the shout, Barrigen’s death and the woman gone (370).',
+      note: 'Chapters 369–370: Kacho’s servants glad to be away (369); the sixteen introductions finish, Kurapika asks who uses Nen, then she sees the woman Yuri cannot see, shouts, Barrigen dies and the woman is gone (370). Corrected after independent verification: she sees the woman after the introductions.',
     },
   },
   'yuri': {
@@ -3611,7 +3619,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'tenftory': {
     '148:370': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_370',
-      note: 'Chapters 369–370: Zhang Lei’s order and the wariness of the First, Fourth and Fifth Princes (369); introductions and Barrigen’s death (370).',
+      note: 'Chapters 369–370: Zhang Lei’s order and the wariness of the First, Fourth and Fifth Princes (369); introductions and Barrigen’s death (370). Corrected after independent verification: the Italian now says he is wary of the princes, not their guards.',
     },
   },
 }

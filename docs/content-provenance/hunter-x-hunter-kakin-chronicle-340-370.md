@@ -1,8 +1,8 @@
 # Kakin chronicle, chapters 340–370 (#1155)
 
 Written on 7 November 2026, part of #918. Covers chapters 340–370, the two first
-Kakin record phases (#1134, #1135): 97 bilingual stories for all 45 characters
-filed in that window and 20 returning characters. The series now has 788 stories
+Kakin record phases (#1134, #1135): 99 bilingual stories for all 45 characters
+filed in that window and 20 returning characters. The series now has 790 stories
 for 227 characters. Chapters 371 on are #1157 and #1159.
 
 ## Sources and method
@@ -22,7 +22,8 @@ full report.
 Prose was written for each story in IT and EN, with no dialogue, quotations or
 copied paragraphs. Licensed manga pages were not inspected. This is a fact-check
 record, not a rights finding. AI assistance: Claude Opus 5.5, for writing,
-assembly and tests. An independent verifier pass follows on the pull request.
+assembly and tests. An independent verifier pass follows on the pull request;
+its corrections are listed below.
 
 ## Rules applied
 
@@ -59,6 +60,38 @@ assembly and tests. An independent verifier pass follows on the pull request.
    assignment), Chrollo and Hisoka, chapter 356 (how the bomb went off) and
    Marayam, chapter 367 (the beasts in his quarters, not the whole ship) were
    tightened to the synopsis on a second read.
+
+## Corrections from independent verification
+
+Two independent verifiers re-read every story against the chapter pages.
+
+1. Chrollo, chapter 356 (P0): the title "Victory at the arena" gave away a
+   result the chapter does not show; it ends on the explosion, and the casualty
+   report is chapter 357. Retitled "Bombs in the crowd", and the body ends on
+   the explosion.
+2. Chrollo, chapter 357: Kortopi is already dead in the bathroom during the
+   call, and Hisoka kills Shalnark right after it. The order is fixed.
+3. Kurapika, chapter 369: the queen sends the insect; Kurapika asks her to.
+4. Ging and Zigg, chapter 344: "secret" dropped from the journey.
+5. Basho, Melody, Biscuit and Hanzo gain a manga-only affiliation at chapter 350
+   for the prince who hires them, as Izunavi's record has.
+6. Hisoka, chapter 351 (Italian): the blast comes from the referee's body.
+7. Kurapika, chapter 360 (English): the Dowsing Chain is drawn, not used to hold
+   the guards.
+8. Chrollo gains a chapter-366 story: on Tier 5 he answers that ties are
+   severed, not forgotten.
+9. Melody's hire moves to its own chapter-350 story, with her remark that paying
+   princes make things easier.
+10. Halkenburg, chapter 366: he wonders whether it was a dream, then finds a
+    pinion-shaped mark on the back of his left hand (his character page, citing
+    chapter 366).
+11. Loberry, chapter 370: she sees the woman after the introductions.
+12. Duazul, chapter 366: "four children among the princes", as Halkenburg asked
+    to withdraw at 361.
+13. Kacho, chapter 359 (Italian): "se stessa".
+14. Tenftory, chapter 370 (Italian): wary of the princes, not their guards.
+15. Barrigen, chapter 370: the snakes are "wrapped around his neck and arms", as
+    the synopsis says, not four snakes coiling around him.
 
 ## Coverage
 
@@ -108,14 +141,14 @@ All gates are chapters at episode 148.
 | `gon-freecss`               | 345                                    |
 | `mito-freecss`              | 345                                    |
 | `hisoka`                    | 351, 356, 357                          |
-| `chrollo`                   | 352, 356, 357                          |
+| `chrollo`                   | 352, 356, 357, 366                     |
 | `shalnark`                  | 357                                    |
 | `kortopi`                   | 357                                    |
 | `machi`                     | 357                                    |
 | `biscuit-krueger`           | 350                                    |
 | `basho`                     | 350                                    |
 | `hanzo`                     | 350, 368                               |
-| `melody`                    | 360                                    |
+| `melody`                    | 350, 360                               |
 
 The sixteen attendees are `barrigen`, `belerainte`, `danjin`, `furykov`,
 `illardia`, `ladiolus`, `loberry`, `longhi`, `maor`, `mushaho`, `myuhan`,
