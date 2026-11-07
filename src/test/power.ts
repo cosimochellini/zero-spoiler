@@ -1,4 +1,4 @@
-import type { Body } from '~/data/features'
+import type { Holding, PowerBody, Seat } from '~/data/features'
 import type { Entity, SeriesArchive } from '~/data/types'
 import type { Gated } from '~/lib/progress/spoiler'
 
@@ -25,6 +25,20 @@ const BODY_GATE: Gated = {
   revealedAtChapter: EARLY.revealedAtChapter,
 }
 
+/** The fixture's first seat, held from the body's gate and vacated `MIDWAY`. */
+export const THRONE: Seat = {
+  told: BODY_GATE,
+  title: { en: 'Fixture Throne', it: 'Trono di prova' },
+  holders: [
+    {
+      episode: EARLY.revealedAtEpisode,
+      chapter: EARLY.revealedAtChapter,
+      value: EARLY.id,
+    },
+    { ...MIDWAY, value: null },
+  ],
+}
+
 /**
  * A test body, filed nowhere (#1085), over the One Piece archive: the
  * Warlords' id, because a body's id is a group's. Its first seat is held by
@@ -34,23 +48,12 @@ const BODY_GATE: Gated = {
  * alone; its third is told `MIDWAY` and never filled. The body ends at
  * episode 500, chapter 600.
  */
-export const FIXTURE_BODY: Body = {
+export const FIXTURE_BODY: PowerBody = {
   ...BODY_GATE,
   id: 'warlords',
   kind: 'council',
   seats: [
-    {
-      told: BODY_GATE,
-      title: { en: 'Fixture Throne', it: 'Trono di prova' },
-      holders: [
-        {
-          episode: EARLY.revealedAtEpisode,
-          chapter: EARLY.revealedAtChapter,
-          value: EARLY.id,
-        },
-        { ...MIDWAY, value: null },
-      ],
-    },
+    THRONE,
     {
       told: BODY_GATE,
       title: { en: 'Fixture Crown', it: 'Corona di prova' },
@@ -88,64 +91,78 @@ function noEarlier(later: Gated, earlier: Gated): boolean {
   )
 }
 
+/** What is wrong with one holding of a seat, after the one before it. */
+function holdingFaults(
+  holding: Holding,
+  previous: Holding | undefined,
+  {
+    archive,
+    label,
+    seat,
+  }: { archive: SeriesArchive; label: string; seat: Seat },
+): string[] {
+  const ceiling = {
+    revealedAtEpisode: archive.series.episodeCeiling,
+    revealedAtChapter: archive.series.chapterCeiling,
+  }
+  const gate = {
+    revealedAtEpisode: holding.episode,
+    revealedAtChapter: holding.chapter,
+  }
+  const outOfOrder =
+    previous !== undefined
+    && (holding.episode <= previous.episode
+      || holding.chapter < previous.chapter)
+  const unfiled =
+    holding.value !== null && archive.getCharacter(holding.value) === undefined
+
+  return [
+    ...(noEarlier(gate, seat.told) ?
+      []
+    : [`${label} has a holder before the seat`]),
+    ...(outOfOrder ? [`${label} holders are out of order`] : []),
+    ...(noEarlier(ceiling, gate) ?
+      []
+    : [`${label} has a holder past the ceiling`]),
+    ...(unfiled ?
+      [`${label} seats ${String(holding.value)}, who is not filed`]
+    : []),
+  ]
+}
+
+/** What is wrong with one seat of a body. */
+function seatFaults(
+  seat: Seat,
+  label: string,
+  { archive, body }: { archive: SeriesArchive; body: PowerBody },
+): string[] {
+  return [
+    ...(noEarlier(seat.told, body) ? [] : [`${label} opens before its body`]),
+    ...seat.holders.flatMap((holding, at) =>
+      holdingFaults(holding, seat.holders[at - 1], { archive, label, seat }),
+    ),
+  ]
+}
+
 /**
  * What is wrong with a series' bodies of power, as messages; none for a
  * sound list. A seat opens no earlier than its body, and its holders no
  * earlier than the seat, in timeline order, inside the series' ceilings,
  * each naming a filed character; an end comes no earlier than the body.
  */
-export function bodyFaults(bodies: Body[], archive: SeriesArchive): string[] {
-  const { chapterCeiling, episodeCeiling } = archive.series
-  const faults: string[] = []
-  const ids = new Set<string>()
-
-  for (const body of bodies) {
-    if (ids.has(body.id)) {
-      faults.push(`${body.id} is filed twice`)
-    }
-    ids.add(body.id)
-    if (body.ended !== undefined && !noEarlier(body.ended, body)) {
-      faults.push(`${body.id} ends before it opens`)
-    }
-
-    for (const [at, seat] of body.seats.entries()) {
-      const label = `${body.id} seat ${String(at)}`
-      if (!noEarlier(seat.told, body)) {
-        faults.push(`${label} opens before its body`)
-      }
-
-      let previous: { chapter: number; episode: number } | undefined
-      for (const holding of seat.holders) {
-        const gate = {
-          revealedAtEpisode: holding.episode,
-          revealedAtChapter: holding.chapter,
-        }
-        if (!noEarlier(gate, seat.told)) {
-          faults.push(`${label} has a holder before the seat`)
-        }
-        if (
-          previous !== undefined
-          && (holding.episode <= previous.episode
-            || holding.chapter < previous.chapter)
-        ) {
-          faults.push(`${label} holders are out of order`)
-        }
-        if (
-          holding.episode > episodeCeiling
-          || holding.chapter > chapterCeiling
-        ) {
-          faults.push(`${label} has a holder past the ceiling`)
-        }
-        if (
-          holding.value !== null
-          && archive.getCharacter(holding.value) === undefined
-        ) {
-          faults.push(`${label} seats ${holding.value}, who is not filed`)
-        }
-        previous = holding
-      }
-    }
-  }
-
-  return faults
+export function bodyFaults(
+  bodies: PowerBody[],
+  archive: SeriesArchive,
+): string[] {
+  return bodies.flatMap((body, at) => [
+    ...(bodies.findIndex(({ id }) => id === body.id) === at ?
+      []
+    : [`${body.id} is filed twice`]),
+    ...(body.ended === undefined || noEarlier(body.ended, body) ?
+      []
+    : [`${body.id} ends before it opens`]),
+    ...body.seats.flatMap((seat, place) =>
+      seatFaults(seat, `${body.id} seat ${String(place)}`, { archive, body }),
+    ),
+  ])
 }

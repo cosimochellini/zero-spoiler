@@ -174,7 +174,7 @@ export interface Seat {
  * affiliation tag never name the same group twice, and the label printed is
  * the group's own.
  */
-export interface Body<V extends Vocabulary = Vocabulary> extends Gated {
+export interface PowerBody<V extends Vocabulary = Vocabulary> extends Gated {
   /** When the story ends the body; its seats then stay as they stood. */
   ended?: Gated
   id: V['group']
@@ -184,7 +184,7 @@ export interface Body<V extends Vocabulary = Vocabulary> extends Gated {
 
 /** The bodies of power, in the order the page lists them. */
 export interface PowerFeature<V extends Vocabulary = Vocabulary> {
-  bodies: Body<V>[]
+  bodies: PowerBody<V>[]
 }
 
 /** The feature slices a series has; the rest are left out. */

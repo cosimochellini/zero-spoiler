@@ -239,12 +239,7 @@ export const GAME_OF_THRONES_SERIES: Series = {
 }
 
 /** A page under `/{series}/{locale}/` that only some series have. */
-export type SeriesPage =
-  | 'characters'
-  | 'filler'
-  | 'fruits'
-  | 'places'
-  | 'power'
+export type SeriesPage = 'characters' | 'filler' | 'fruits' | 'places' | 'power'
 
 /** What decides each of those pages: a kind the series files, or a feature. */
 const PAGES: Record<SeriesPage, (series: Series) => boolean> = {

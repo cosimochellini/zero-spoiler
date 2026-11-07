@@ -1,4 +1,4 @@
-import type { Body, Holding, Seat } from '~/data/features'
+import type { Holding, PowerBody, Seat } from '~/data/features'
 import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
 import type { Gated } from '~/lib/progress/spoiler'
 import type { BodyView, PowerPageView, SeatView } from '~/lib/view/power'
@@ -26,7 +26,7 @@ export function powerPage(r: Reader): PowerPageView {
   return { bodies }
 }
 
-function bodyOf(body: Body, r: Reader): BodyView {
+function bodyOf(body: PowerBody, r: Reader): BodyView {
   const seats: SeatView[] = []
   for (const seat of body.seats) {
     if (r.sees(seat.told)) {
@@ -43,7 +43,7 @@ function bodyOf(body: Body, r: Reader): BodyView {
   }
 }
 
-function seatOf(seat: Seat, body: Body, r: Reader): SeatView {
+function seatOf(seat: Seat, body: PowerBody, r: Reader): SeatView {
   const title = seat.title[r.locale]
   const holding = seat.holders.findLast((entry) =>
     opens(entry, [body, seat.told], r),

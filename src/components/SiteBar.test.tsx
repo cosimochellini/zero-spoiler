@@ -68,9 +68,10 @@ describe('SiteBar', () => {
     expect(
       within(banner).getByRole('link', { name: 'Fruits' }),
     ).toHaveAttribute('href', '/one-piece/en/fruits')
-    expect(
-      within(banner).getByRole('link', { name: 'Power' }),
-    ).toHaveAttribute('href', '/one-piece/en/power')
+    expect(within(banner).getByRole('link', { name: 'Power' })).toHaveAttribute(
+      'href',
+      '/one-piece/en/power',
+    )
     expect(
       within(banner).getByRole('combobox', { name: 'Language' }),
     ).toBeInTheDocument()

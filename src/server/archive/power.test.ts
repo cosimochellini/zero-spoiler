@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { SeatView } from '~/lib/view/power'
+import type { PowerPageView, SeatView } from '~/lib/view/power'
 import { leaksOf } from '~/test/fog'
 import {
   bodyFaults,
@@ -11,6 +11,7 @@ import {
   LATE,
   MIDWAY,
   POWER_ARCHIVE,
+  THRONE,
 } from '~/test/power'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
@@ -18,7 +19,7 @@ import { powerPage } from './power.server'
 import { readerFor } from './reader.server'
 
 /** The fixture's page at one bookmark. */
-function pageAt(bookmark: Bookmark, locale: Locale = 'en') {
+function pageAt(bookmark: Bookmark, locale: Locale = 'en'): PowerPageView {
   return powerPage(readerFor(POWER_ARCHIVE, bookmark, locale))
 }
 
@@ -52,6 +53,7 @@ describe('the power page', () => {
         const served = JSON.stringify(pageAt(bookmark, locale))
 
         expect(served).toBe('{"bodies":[]}')
+
         for (const word of FIXTURE_WORDS) {
           expect(served).not.toContain(word)
         }
@@ -157,9 +159,9 @@ describe('the power page', () => {
   it.each(LOADED_SERIES.filter(({ slug }) => slug !== 'one-piece'))(
     'is empty for $slug, which has none',
     ({ archive }) => {
-      expect(powerPage(readerFor(archive, chapter(1000), 'en'))).toStrictEqual({
-        bodies: [],
-      })
+      const page = powerPage(readerFor(archive, chapter(1000), 'en'))
+
+      expect(page).toStrictEqual({ bodies: [] })
     },
   )
 })
@@ -173,17 +175,15 @@ describe('the bodies of power', () => {
 
   it('hold the fixture, and catch a body broken against them', () => {
     expect(bodyFaults([FIXTURE_BODY], POWER_ARCHIVE)).toStrictEqual([])
-    const [seat] = FIXTURE_BODY.seats
-    if (seat === undefined) {
-      throw new Error('The fixture has a seat')
-    }
+
+    const seat = THRONE
     const broken = {
       ...FIXTURE_BODY,
       seats: [
         {
           ...seat,
           told: { revealedAtEpisode: 1, revealedAtChapter: 1 },
-          holders: [...seat.holders].reverse(),
+          holders: seat.holders.toReversed(),
         },
         {
           ...seat,
