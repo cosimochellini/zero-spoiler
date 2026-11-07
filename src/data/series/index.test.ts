@@ -414,21 +414,45 @@ describe.each(LOADED_SERIES)(
       // Read the way every page does (`datedOf`, behind `latestOf`,
       // `reachedOf` and `redrawn`). A series that files `REDRAWINGS` without
       // wiring them is caught by the next test but one.
+      // A stage one medium alone tells (its record's `source`, else its
+      // own, as `chapterTable.gateOf` reads it) is walked in that medium's
+      // units alone, as every other one-medium entry is: in every series, a
+      // manga-only stage is held in chapters, where the anime has ended and a
+      // record filed at its last episode can still change.
       for (const entity of entities) {
-        const stages = archive.datedOf(entity, 'redrawing')
-        const episodes = stages.map((stage) => stage.episode)
+        const stages = archive
+          .datedOf(entity, 'redrawing')
+          .map((stage) => ({ ...stage, told: entity.source ?? stage.source }))
+        const episodes = stages
+          .filter((stage) => stage.told !== 'chapter')
+          .map((stage) => stage.episode)
+        const told = stages
+          .filter((stage) => stage.told === 'chapter')
+          .map((stage) => stage.chapter ?? 0)
         const chapters = stages.map((stage) => stage.chapter ?? 0)
 
         expect(episodes, entity.id).toStrictEqual(
           [...new Set(episodes)].toSorted(byNumber()),
         )
+        expect(told, entity.id).toStrictEqual([...new Set(told)])
         expect(chapters, entity.id).toStrictEqual(chapters.toSorted(byNumber()))
 
         // That the pin is within the record's chapter and the dial is held
         // with every declared chapter in `~/data/archive.test.ts`.
-        for (const { chapter, episode, value } of stages) {
+        // A stage told in the anime comes after the record's episode; a
+        // manga-only one after its chapter, at or after its episode.
+        for (const stage of stages) {
+          const { chapter, episode, value } = stage
+          const mangaOnly = stage.told === 'chapter'
+
           expect(chapter, entity.id).toBeDefined()
-          expect(episode, entity.id).toBeGreaterThan(entity.revealedAtEpisode)
+          expect(
+            mangaOnly ?
+              (chapter ?? 0) > entity.revealedAtChapter
+                && episode >= entity.revealedAtEpisode
+            : episode > entity.revealedAtEpisode,
+            entity.id,
+          ).toBe(true)
 
           isADrawing(entity.id, value)
         }

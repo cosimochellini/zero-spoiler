@@ -76,16 +76,19 @@ itself here:
   never opens it (owner, #851). When the other medium never reaches that
   moment, the other number is the next point it does reach, or else its last
   (`chapterCeiling` 344, `episodeCeiling` 73).
-- At most one such stage per record at a medium's last point, since its
-  episodes must stay distinct; anything else waits for an owner ruling under
-  `status:needs-decision`. The same goes for two changes the media tell in a
-  different order when no matching point keeps both in order.
+- A books-only stage is walked in chapters alone (#1154): it needs a chapter
+  of its own above the record's, and may share its episode, its other number,
+  with another books-only stage. Two changes the media tell in a different
+  order, when no matching point keeps both in order, wait for an owner
+  ruling under `status:needs-decision`.
 - The series has no `lastAdaptedChapter` (the show ran past the books), so
   nothing is filed at its last episode the way Hunter x Hunter's manga-only
   stages are.
-- `src/data/series/index.test.ts` holds every stage to a `chapter:`, an
-  episode after the threshold, ascending episodes and non-decreasing
-  chapters, one-medium stages included. `src/server/archive/thronesSeason1.test.ts`
+- `src/data/series/index.test.ts` holds every stage to a `chapter:` and
+  non-decreasing chapters. A stage the show tells (no source, or
+  `source: 'episode'`) needs a distinct episode after the threshold; a
+  books-only one (`source: 'chapter'` on the stage or on its record) a
+  distinct chapter above the record's, at or after its episode. `src/server/archive/thronesSeason1.test.ts`
   walks the stages in its `STAGES` table and holds that a one-medium stage
   never reaches the other medium's reader. `REDRAWINGS` in `art/index.ts` is
   already passed to `sagaArchive` in `game-of-thrones/archive.ts`, so a stage

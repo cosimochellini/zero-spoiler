@@ -3,7 +3,8 @@
 Window: chapters 358–370. Every chapter synopsis in the window was read through
 the English Wiki MediaWiki API. Sources are pinned by revision; manga panels and
 Italian manga names were not viewed. Every filed record is manga-only at episode
-148 with `source: chapter`. Finished art remains #917; chronicles remain #918.
+148 with `source: chapter`. The records are drawn in #1154 (part of #917);
+chronicles remain #918.
 
 ## Filed naming gates
 
