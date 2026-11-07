@@ -452,7 +452,7 @@ export const CHRONICLE_SOURCES = {
     },
     764: {
       source: 'https://onepiece.fandom.com/wiki/Episode_764',
-      note: 'Episode_764 Long Summary: Sanji asks for pen and paper, writes the note, says he must sort out this part of his heritage alone, throws Nami, Chopper and Brook out of Bege’s body, holds Caesar at gunpoint, works out that whoever made his bounty Only Alive is arranging the wedding, agrees to go if his crew is spared; Nekomamushi appears behind Bege, who flees with Sanji inside; Sanji promises to come back, and the note says he is going to meet a woman and will be back. Nekomamushi Qref chap=813 ep=764. Chapter (#169): 813 (Chapter_813 Short Summary has the note, Caesar at gunpoint, Nekomamushi and the escape).',
+      note: 'Episode_764 Long Summary: Sanji asks for pen and paper, writes the note, says he must sort out this part of his heritage alone, throws Nami, Chopper and Brook out of Bege’s body, holds Caesar at gunpoint, works out that whoever made his bounty Only Alive is arranging the wedding, agrees to go if his crew is spared; Nekomamushi appears behind Bege, who flees with Sanji inside; Sanji promises to come back, and the note says he is going to meet a woman and will be back. Nekomamushi Qref chap=813 ep=764. Chapter (#169): 813 (Chapter_813 Short Summary has the note, Caesar at gunpoint, Nekomamushi and the escape). Second pass: Sanji promises to return before Bege closes his body and runs (Episode_764, Chapter_813), so the promise now comes first.',
     },
     794: {
       source: 'https://onepiece.fandom.com/wiki/Episode_794',
@@ -2722,7 +2722,7 @@ export const CHRONICLE_SOURCES = {
   'pedro': {
     757: {
       source: 'https://onepiece.fandom.com/wiki/Episode_757',
-      note: 'Threshold entry; the record opens at 757. Episode_754 Long Summary: the Guardians secretly surround Luffy in the Whale Forest while Roddy and Blackback fight him; Wanda and Carrot arrive, Wanda apologises to Pedro on a treetop and asks him to call the Guardians back, they disperse, Luffy had not known they were there, and Wanda tells him to be glad it is not a moonlit night. Pedro page: debut Qref chap=805 ep=754. Nothing in the story is later than 757.',
+      note: 'Threshold entry; the record opens at 757. Episode_754 Long Summary: the Guardians secretly surround Luffy in the Whale Forest while Roddy and Blackback fight him; Wanda and Carrot arrive, Wanda apologises to Pedro on a treetop and asks him to call the Guardians back, they disperse, Luffy had not known they were there, and Wanda tells him to be glad it is not a moonlit night. Pedro page: debut Qref chap=805 ep=754. Nothing in the story is later than 757. Second pass: Wanda says to be glad it was not a moonlit night; the scene is by day, so the line is past tense.',
     },
     772: {
       source: 'https://onepiece.fandom.com/wiki/Episode_772',
@@ -2740,7 +2740,7 @@ export const CHRONICLE_SOURCES = {
     },
     759: {
       source: 'https://onepiece.fandom.com/wiki/Episode_759',
-      note: 'Episode_759 Long Summary: seventeen days earlier Inuarashi confronts Jack, drops his sword and offers a peaceful search of the island, holds back Jack’s trunk, hears Jack will stop only when Raizo is found and that he likes destruction, orders the Musketeers to attack and drives an Electro-imbued sword into Jack’s head; at 6 PM he withdraws, keeping the shift system, and the Guardians race into the city. Raizo (filed 768) is the samurai; Nekomamushi is not named. Chapter_809 Short Summary: Inuarashi holds back Jack’s attack and retreats at sunset. Chapter (#169): 809.',
+      note: 'Episode_759 Long Summary: seventeen days earlier Inuarashi confronts Jack, drops his sword and offers a peaceful search of the island, holds back Jack’s trunk, hears Jack will stop only when Raizo is found and that he likes destruction, orders the Musketeers to attack and drives an Electro-imbued sword into Jack’s head; at 6 PM he withdraws, keeping the shift system, and the Guardians race into the city. Raizo (filed 768) is the samurai; Nekomamushi is not named. Chapter_809 Short Summary: Inuarashi holds back Jack’s attack and retreats at sunset. Chapter (#169): 809. Second pass: the Electro blade to Jack’s head is an anime extension (Episode_759 Anime Notes), absent from Chapter 809, so the story no longer names it.',
     },
     760: {
       source: 'https://onepiece.fandom.com/wiki/Episode_760',
@@ -2762,7 +2762,7 @@ export const CHRONICLE_SOURCES = {
     },
     772: {
       source: 'https://onepiece.fandom.com/wiki/Episode_772',
-      note: 'Episode_772 Long Summary: Luffy asks to rescue Sanji first; Nekomamushi explains who Sanji was to Inuarashi, who was in a coma; the rulers tell how they sailed as Oden’s attendants with the Whitebeard Pirates and the Roger Pirates and dance at the memory; Nekomamushi will recruit Marco and the remaining Whitebeard Pirates. Episode_771 Short Summary: the alliance against Kaido is formed. Nekomamushi page: Qref chap=819 ep=771,772 and chap=820 ep=772,773. Chapter (#169): 820.',
+      note: 'Episode_772 Long Summary: Luffy asks to rescue Sanji first; Nekomamushi explains who Sanji was to Inuarashi, who was in a coma; the rulers tell how they sailed as Oden’s attendants with the Whitebeard Pirates and the Roger Pirates and dance at the memory; Nekomamushi will recruit Marco and the remaining Whitebeard Pirates. Episode_771 Short Summary: the alliance against Kaido is formed. Nekomamushi page: Qref chap=819 ep=771,772 and chap=820 ep=772,773. Chapter (#169): the events are chapter 820, but no pin: the 768 story before it is gated at 824 by Raizo, and a pin at 820 would show this one first to chapter readers.',
     },
   },
   'gotti': {
