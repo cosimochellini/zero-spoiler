@@ -2105,7 +2105,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:405': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
-      note: 'Chapters 393 and 405, with Lynch’s and Bonolenov’s character pages: Hinrigh’s offer of a VVIP room and the pass in auditorium #8 (393); Chrollo’s instructions in the flashback, Lynch’s punch and the reflex knock-out, Zakuro knocked out and impersonated, the killing, Lynch’s form and the lead to the movie theater, the real Hisoka in the Tier 1 casino, the change into Owl and the narration on Metamorphosen (405).',
+      note: 'Chapters 393 and 405, with Lynch’s and Bonolenov’s character pages: Hinrigh’s offer of a VVIP room on Tier 1 and the deal struck in auditorium #8 (393); Chrollo’s instructions in the flashback, Lynch’s punch and the reflex knock-out, Zakuro knocked out and impersonated, the killing, Lynch’s form and the lead to the movie theater, the real Hisoka in the Tier 1 casino, the change into Owl and the narration on Metamorphosen (405).',
     },
   },
   'eliza': {
