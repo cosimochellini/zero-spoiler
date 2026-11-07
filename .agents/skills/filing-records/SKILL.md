@@ -107,7 +107,7 @@ Done when the test passes, and moving one gate or pin down by one makes it fail.
 
 Done when `npm run check` passes.
 
-**Loaded machine**: run `npm run check:content` instead; the ready PR's CI `validation` run is the full gate.
+**Loaded machine** (other sessions keep the load average above the core count and the full check times out on unrelated tests): a pure content PR, touching no shared code, may run `npm run check:content` instead. It skips the build, coverage, the archive, react-doctor and fallow gates and the route and component tests outside its selection; the ready PR's CI `validation` run is the full gate.
 
 ## 9. Probe a built page
 
