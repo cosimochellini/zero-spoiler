@@ -43,6 +43,7 @@ const STORIES = Object.entries(ARCHIVES).flatMap(([series, archive]) =>
     (archive.dossierOf(character)?.chronicle ?? []).map((story) => ({
       series,
       id: character.id,
+      chapter: story.chapter,
       episode: story.episode,
       medium: story.source,
       title: story.value.title.en,
@@ -178,6 +179,22 @@ function filed(id, series) {
   return ARCHIVES[series]?.characters.find((character) => character.id === id)
 }
 
+/**
+ * The source a story is vouched for by, looked up the way the script does:
+ * by episode and chapter, then by episode and medium, then by episode.
+ * @param {object} story A story with its series and character id.
+ * @returns {object | undefined} The source and note.
+ */
+function sourceOf(story) {
+  const sources = ARCHIVES[story.series]?.sources[story.id]
+
+  return (
+    sources?.[`${story.episode}:${story.chapter}`]
+    ?? sources?.[`${story.episode}:${story.medium}`]
+    ?? sources?.[story.episode]
+  )
+}
+
 describe('the chronicle verification log', () => {
   it('vouches for every story, and for no story the archive does not hold', () => {
     // The document is the only record of which episode page settles which
@@ -208,10 +225,7 @@ describe('the chronicle verification log', () => {
 
   it('keeps the sources beside the script in step with the document', () => {
     const expected = STORIES.map((story) => {
-      const source =
-        ARCHIVES[story.series]?.sources[story.id]?.[
-          `${story.episode}:${story.medium}`
-        ] ?? ARCHIVES[story.series]?.sources[story.id]?.[story.episode]
+      const source = sourceOf(story)
 
       return JSON.stringify([asLine(story), source?.source, source?.note])
     }).toSorted(byString())

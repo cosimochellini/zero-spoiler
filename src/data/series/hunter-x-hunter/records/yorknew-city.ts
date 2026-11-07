@@ -3,6 +3,7 @@ import type { PlaceDossier } from '~/data/types'
 import { chimeraAntPhase3Chronicles } from './chimera-ant-phase-3.chronicle'
 import { electionChronicles } from './election.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
+import { kakinChronicles } from './kakin.chronicle'
 import type { HunterSaga, HunterVocabulary } from './saga'
 import { yorknewCityChronicles } from './yorknew-city.chronicle'
 import { yorknewCityRelationships } from './yorknew-city.relationships'
@@ -596,6 +597,7 @@ export const yorknewCity: HunterSaga = {
         ...yorknewCityChronicles['ging-freecss'],
         ...greedIslandReturningChronicles['ging-freecss'],
         ...electionChronicles['ging-freecss'],
+        ...kakinChronicles['ging-freecss'],
       ],
       role: [
         {
@@ -679,7 +681,7 @@ export const yorknewCity: HunterSaga = {
     },
     'melody': {
       relationships: yorknewCityRelationships.melody,
-      chronicle: yorknewCityChronicles.melody,
+      chronicle: [...yorknewCityChronicles.melody, ...kakinChronicles.melody],
       role: HIRED,
       log: {
         it: 'Si candida con Kurapika come guardia del corpo per un collezionista. Quando uno dei candidati viene accusato di essere un infiltrato, dice di aver sentito il suo cuore accelerare: ha il ritmo tipico di chi mente.',
@@ -690,7 +692,7 @@ export const yorknewCity: HunterSaga = {
     },
     'basho': {
       relationships: yorknewCityRelationships.basho,
-      chronicle: yorknewCityChronicles.basho,
+      chronicle: [...yorknewCityChronicles.basho, ...kakinChronicles.basho],
       role: HIRED,
       log: {
         it: 'Si candida come guardia del corpo con Kurapika. Abbatte a mani nude una delle figure vestite di nero e capisce che sono fatte di aura. Scrive haiku che si avverano: il primo dà fuoco a una sedia, il secondo dice che chi mente alla sua domanda brucerà.',
@@ -857,6 +859,7 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.machi,
         ...greedIslandReturningChronicles.machi,
+        ...kakinChronicles.machi,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -1011,6 +1014,7 @@ export const yorknewCity: HunterSaga = {
         ...greedIslandReturningChronicles.shalnark,
 
         ...chimeraAntPhase3Chronicles.shalnark,
+        ...kakinChronicles.shalnark,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -1216,6 +1220,7 @@ export const yorknewCity: HunterSaga = {
       chronicle: [
         ...yorknewCityChronicles.kortopi,
         ...greedIslandReturningChronicles.kortopi,
+        ...kakinChronicles.kortopi,
       ],
       role: TROUPE_MEMBER,
       log: {
@@ -1281,7 +1286,7 @@ export const yorknewCity: HunterSaga = {
     },
     'chrollo': {
       relationships: yorknewCityRelationships.chrollo,
-      chronicle: yorknewCityChronicles.chrollo,
+      chronicle: [...yorknewCityChronicles.chrollo, ...kakinChronicles.chrollo],
       role: [
         {
           episode: 54,
