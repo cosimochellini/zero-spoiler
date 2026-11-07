@@ -414,21 +414,42 @@ describe.each(LOADED_SERIES)(
       // Read the way every page does (`datedOf`, behind `latestOf`,
       // `reachedOf` and `redrawn`). A series that files `REDRAWINGS` without
       // wiring them is caught by the next test but one.
+      // A manga-only stage (`source: 'chapter'`) is walked in chapters alone,
+      // as every other manga-only entry is: its episode only orders it, so
+      // the rule holds in chapters, where the anime has ended and a record
+      // filed at its last episode can still change.
       for (const entity of entities) {
         const stages = archive.datedOf(entity, 'redrawing')
-        const episodes = stages.map((stage) => stage.episode)
+        const episodes = stages
+          .filter((stage) => toldIn(stage, 'episode'))
+          .map((stage) => stage.episode)
+        const told = stages
+          .filter((stage) => stage.source === 'chapter')
+          .map((stage) => stage.chapter ?? 0)
         const chapters = stages.map((stage) => stage.chapter ?? 0)
 
         expect(episodes, entity.id).toStrictEqual(
           [...new Set(episodes)].toSorted(byNumber()),
         )
+        expect(told, entity.id).toStrictEqual([...new Set(told)])
         expect(chapters, entity.id).toStrictEqual(chapters.toSorted(byNumber()))
 
         // That the pin is within the record's chapter and the dial is held
         // with every declared chapter in `~/data/archive.test.ts`.
-        for (const { chapter, episode, value } of stages) {
+        // A stage told in the anime comes after the record's episode; a
+        // manga-only one after its chapter, at or after its episode.
+        for (const stage of stages) {
+          const { chapter, episode, source, value } = stage
+          const mangaOnly = source === 'chapter'
+
           expect(chapter, entity.id).toBeDefined()
-          expect(episode, entity.id).toBeGreaterThan(entity.revealedAtEpisode)
+          expect(
+            mangaOnly ?
+              (chapter ?? 0) > entity.revealedAtChapter
+                && episode >= entity.revealedAtEpisode
+            : episode > entity.revealedAtEpisode,
+            entity.id,
+          ).toBe(true)
 
           isADrawing(entity.id, value)
         }
