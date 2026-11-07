@@ -56,8 +56,9 @@ export function CharacterChronicle({
         {[...chronicle.entries, ...older].map((entry) => {
           return (
             <StoryRow
-              // Two stories can share an episode, never an episode and a title.
-              key={`${String(entry.revealedAtEpisode)}-${entry.title}`}
+              // Two stories can share an episode (Kakin files every manga story
+              // at episode 148), never an episode, a chapter and a title.
+              key={`${String(entry.revealedAtEpisode)}-${String(entry.revealedAtChapter)}-${entry.title}`}
               entry={entry}
             />
           )

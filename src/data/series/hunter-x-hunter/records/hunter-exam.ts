@@ -9,6 +9,7 @@ import { electionChronicles } from './election.chronicle'
 import { greedIslandReturningChronicles } from './greed-island-returning.chronicle'
 import { hunterExamChronicles } from './hunter-exam.chronicle'
 import { hunterExamRelationships } from './hunter-exam.relationships'
+import { kakinChronicles } from './kakin.chronicle'
 import { type HunterSaga, passedExam } from './saga'
 import { trickTower } from './trick-tower'
 import { zevil } from './zevil'
@@ -519,6 +520,7 @@ const earlyExam: HunterSaga = {
 
         ...chimeraAntPhase5Chronicles['gon-freecss'],
         ...electionChronicles['gon-freecss'],
+        ...kakinChronicles['gon-freecss'],
       ],
       role: [
         ...passedExam(1, 1),
@@ -775,7 +777,10 @@ const earlyExam: HunterSaga = {
     },
     'mito-freecss': {
       relationships: hunterExamRelationships['mito-freecss'],
-      chronicle: hunterExamChronicles['mito-freecss'],
+      chronicle: [
+        ...hunterExamChronicles['mito-freecss'],
+        ...kakinChronicles['mito-freecss'],
+      ],
       role: { it: 'Zia di Gon', en: 'Gon’s aunt' },
       log: {
         it: 'Ha cresciuto Gon da quando il padre gliel’ha lasciato, e preferirebbe che non ne seguisse le orme. Gli promette di lasciarlo partire per l’Esame Hunter se pescherà il pesce più grosso della palude, convinta che non ci riuscirà. Quando ci riesce, mantiene la parola e lo saluta alla partenza.',
@@ -801,6 +806,7 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles['leorio-paradinight'],
         ...greedIslandReturningChronicles['leorio-paradinight'],
         ...electionChronicles['leorio-paradinight'],
+        ...kakinChronicles['leorio-paradinight'],
       ],
       role: [
         ...passedExam(1, 2),
@@ -879,6 +885,7 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles.kurapika,
         ...greedIslandReturningChronicles.kurapika,
         ...electionChronicles.kurapika,
+        ...kakinChronicles.kurapika,
       ],
       role: [
         ...passedExam(1, 2),
@@ -1093,6 +1100,7 @@ const earlyExam: HunterSaga = {
         ...hunterExamChronicles.hisoka,
         ...greedIslandReturningChronicles.hisoka,
         ...electionChronicles.hisoka,
+        ...kakinChronicles.hisoka,
       ],
       role: [
         ...passedExam(3, 5),
@@ -1266,7 +1274,7 @@ const earlyExam: HunterSaga = {
     },
     'hanzo': {
       relationships: hunterExamRelationships.hanzo,
-      chronicle: hunterExamChronicles.hanzo,
+      chronicle: [...hunterExamChronicles.hanzo, ...kakinChronicles.hanzo],
       role: passedExam(3, 6),
       log: {
         it: 'Parla volentieri con Tonpa e gli racconta della pergamena che cerca. Quando Tonpa gli offre del succo, però, lo rifiuta: un ninja non accetta cibo o bevande da uno sconosciuto.',
@@ -1288,6 +1296,15 @@ const earlyExam: HunterSaga = {
           value: {
             en: 'Hunter Association, Hunter',
             it: 'Associazione Hunter, Hunter',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 350,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter, Hunter; scorta di Momoze',
+            en: 'Hunter Association, Hunter; Momoze’s bodyguards',
           },
         },
       ],
@@ -1737,6 +1754,7 @@ const earlyExam: HunterSaga = {
         ...chimeraAntPhase4Chronicles.netero,
 
         ...chimeraAntPhase5Chronicles.netero,
+        ...kakinChronicles.netero,
       ],
       role: [
         {

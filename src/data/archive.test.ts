@@ -595,12 +595,14 @@ describe.each(LOADED_SERIES)('the chronicles of $slug', ({ archive }) => {
 
     expect(stories).toHaveLength(STORIES.length)
 
-    // The home page filters by source before keying by subject and episode.
+    // The home page filters by source before keying by subject, episode
+    // and chapter: Kakin files every manga story at the anime's last episode.
     for (const source of ['episode', 'chapter'] as const) {
       const applicable = stories.filter(({ gate }) => toldIn(gate, source))
       const keys = new Set(
         applicable.map(
-          (filed) => `${filed.character.id}:${String(filed.episode)}`,
+          (filed) =>
+            `${filed.character.id}:${String(filed.episode)}:${String(filed.gate.revealedAtChapter)}`,
         ),
       )
 

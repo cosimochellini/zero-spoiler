@@ -3,6 +3,7 @@ import type { PlaceDossier, Relationship } from '~/data/types'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
 import { greedIslandChronicles } from './greed-island.chronicle'
 import { greedIslandRelationships } from './greed-island.relationships'
+import { kakinChronicles } from './kakin.chronicle'
 import type { HunterSaga, HunterVocabulary } from './saga'
 
 /** Biscuit's last selection, from which Wing and Hisoka carry on (#1021). */
@@ -638,6 +639,7 @@ export const greedIsland: HunterSaga = {
       chronicle: [
         ...greedIslandChronicles['biscuit-krueger'],
         ...chimeraAntPhase2Chronicles['biscuit-krueger'],
+        ...kakinChronicles['biscuit-krueger'],
       ],
       relationships: [
         ...BISCUIT_ROWS,
@@ -764,6 +766,15 @@ export const greedIsland: HunterSaga = {
           value: {
             it: 'Associazione Hunter; allena di nuovo Gon e Killua per lo scontro con Nackul e Schult',
             en: 'Hunter Association; trains Gon and Killua again for their fight with Knuckle and Shoot',
+          },
+        },
+        {
+          episode: 148,
+          chapter: 350,
+          source: 'chapter',
+          value: {
+            it: 'Associazione Hunter; scorta di Marayam',
+            en: 'Hunter Association; Marayam’s bodyguards',
           },
         },
       ],

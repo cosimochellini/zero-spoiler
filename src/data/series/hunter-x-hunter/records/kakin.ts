@@ -1,10 +1,26 @@
+import type { Story, Timeline } from '~/data/types'
+
 import { KAKIN_PHASE_ONE } from './kakin-phase-1'
 import { KAKIN_PHASE_TWO } from './kakin-phase-2'
 import { KAKIN_PHASE_THREE } from './kakin-phase-3'
 import { KAKIN_PHASE_4 } from './kakin-phase-4'
 import { KAKIN_PHASE_5 } from './kakin-phase-5'
 import { KAKIN_PLACE_ENTRIES } from './kakin-places'
+import { kakinChronicles } from './kakin.chronicle'
 import type { HunterSaga } from './saga'
+
+const STORIES: Partial<Record<string, Timeline<Story>>> = kakinChronicles
+
+/** The arc's own dossiers, each with its chronicle once one is written. */
+function chronicled(dossiers: HunterSaga['dossiers']): HunterSaga['dossiers'] {
+  return Object.fromEntries(
+    Object.entries(dossiers).map(([id, dossier]) => {
+      const chronicle = STORIES[id]
+
+      return [id, chronicle === undefined ? dossier : { ...dossier, chronicle }]
+    }),
+  )
+}
 
 /**
  * Kakin: chapters 340 on, still running. The English Hunter x Hunter Wiki
@@ -17,13 +33,13 @@ import type { HunterSaga } from './saga'
  */
 export const kakin: HunterSaga = {
   name: { it: 'Cakin', en: 'Kakin' },
-  dossiers: {
+  dossiers: chronicled({
     ...KAKIN_PHASE_ONE.dossiers,
     ...KAKIN_PHASE_TWO.dossiers,
     ...KAKIN_PHASE_THREE.dossiers,
     ...KAKIN_PHASE_4.dossiers,
     ...KAKIN_PHASE_5.dossiers,
-  },
+  }),
   entries: [
     {
       id: 'kakin-arc',

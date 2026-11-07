@@ -1,4 +1,5 @@
 import { electionChronicles } from './election.chronicle'
+import { kakinChronicles } from './kakin.chronicle'
 import type { HunterSaga } from './saga'
 
 const SHORTLIST_AFFILIATION = [
@@ -276,7 +277,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   ],
   dossiers: {
     'beans': {
-      chronicle: electionChronicles.beans,
+      chronicle: [...electionChronicles.beans, ...kakinChronicles.beans],
       role: {
         it: 'Segretario dell’Associazione Hunter',
         en: 'Hunter Association secretary',
@@ -349,7 +350,10 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'cheadle-yorkshire': {
-      chronicle: electionChronicles['cheadle-yorkshire'],
+      chronicle: [
+        ...electionChronicles['cheadle-yorkshire'],
+        ...kakinChronicles['cheadle-yorkshire'],
+      ],
       role: [
         {
           episode: 137,
@@ -609,7 +613,10 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'mizaistom-nana': {
-      chronicle: electionChronicles['mizaistom-nana'],
+      chronicle: [
+        ...electionChronicles['mizaistom-nana'],
+        ...kakinChronicles['mizaistom-nana'],
+      ],
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Alla riunione solleva il caso degli Hunter scomparsi. Siede nel comitato che organizza il voto.',
@@ -648,7 +655,10 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'pariston-hill': {
-      chronicle: electionChronicles['pariston-hill'],
+      chronicle: [
+        ...electionChronicles['pariston-hill'],
+        ...kakinChronicles['pariston-hill'],
+      ],
       role: [
         {
           episode: 137,
@@ -808,7 +818,7 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'saiyu': {
-      chronicle: electionChronicles.saiyu,
+      chronicle: [...electionChronicles.saiyu, ...kakinChronicles.saiyu],
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
         it: 'Alla riunione accetta che sia il vicepresidente a presiedere. Lo Zodiaco sceglie poi le regole per il voto.',
