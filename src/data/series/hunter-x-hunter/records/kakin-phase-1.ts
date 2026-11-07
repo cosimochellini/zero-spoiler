@@ -441,7 +441,7 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       // back in her quarters, only watched (376, #1157).
       status: [
         { ...ROSTER, value: 'alive' },
-        { ...ROSTER, chapter: 373, value: 'imprisoned' },
+        { ...ROSTER, chapter: 373, value: 'captured' },
         { ...ROSTER, chapter: 376, value: 'alive' },
       ],
     },
@@ -529,7 +529,7 @@ export const KAKIN_PHASE_ONE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       // in the Tier 3 hospital and the ship is told (404, #1138).
       status: [
         { ...ROSTER, value: 'alive' },
-        { ...ROSTER, chapter: 389, value: 'imprisoned' },
+        { ...ROSTER, chapter: 389, value: 'captured' },
         { ...ROSTER, chapter: 404, value: 'deceased' },
       ],
     },

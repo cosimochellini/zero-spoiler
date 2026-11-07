@@ -74,7 +74,7 @@ const STATUSES = [
     id: 'halkenburg-hui-guo-rou',
     chapter: 404,
     // In custody since chapter 389 (#1157).
-    before: 'imprisoned',
+    before: 'captured',
     after: 'deceased',
   },
   { id: 'lynch-fullbokko', chapter: 406, before: 'alive', after: 'deceased' },

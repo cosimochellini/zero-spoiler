@@ -50,12 +50,15 @@ its corrections are listed below.
   appearance in the window gets no story: Luzurus, Marayam, Woble, Duazul, Unma,
   Tang Zhao Li, Vincent, Kalluto, Killua, Botobai and Ginta. Kalluto, Botobai
   and Ginta are named in Illumi's chapter-380 story.
-- A story that implies a status change carries it: Loberry is taken into custody
+- A story that implies a status change carries it, manga-only and `captured`,
+  since none of them is serving a sentence: Loberry is taken into army custody
   (372), Camilla is confined (373) and back in her quarters under watch after
-  the trial (376), Halkenburg is taken into custody (389), and Neon is presumed
-  dead when her ability vanishes from Chrollo's book (377), all manga-only.
-  Hanzo's record gains the affiliation the chapter-372 story relies on: since
-  chapter 361 he guards Marayam.
+  the trial (376, `alive`), and Halkenburg is taken into custody (389). Hanzo's
+  record gains the affiliation the chapter-372 story relies on: since chapter
+  361 he guards Marayam. Neon's chapter-377 story implies that she is dead, but
+  her `presumed-dead` status moves to #1156, which draws its stage; a status and
+  its death stage are filed together.
+- A test pins each of these entries before and at its chapter.
 
 ## Corrections during authoring
 
@@ -106,6 +109,9 @@ found no story filed too early and no name before its gate.
     assassination and the order against Halkenburg).
 15. Tajao's record says "vice boss" in English, as chapter 384 does; Ken'i is
     the underboss.
+16. Review round 1: the custody entries are `captured`, not `imprisoned` (which
+    means serving a sentence); Neon's `presumed-dead` status moves to #1156 with
+    her drawing stage; the five dated entries gain pin tests.
 
 ## Coverage
 

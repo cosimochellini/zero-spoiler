@@ -170,6 +170,57 @@ describe('the Kakin chronicles, chapters 340–400', () => {
   })
 })
 
+// The dated entries the 371–400 stories imply, each with its status before
+// and at its pin (#1157): custody pending trial is `captured`.
+const PINS = [
+  { id: 'loberry', chapter: 372, before: 'alive', after: 'captured' },
+  {
+    id: 'camilla-hui-guo-rou',
+    chapter: 373,
+    before: 'alive',
+    after: 'captured',
+  },
+  {
+    id: 'camilla-hui-guo-rou',
+    chapter: 376,
+    before: 'captured',
+    after: 'alive',
+  },
+  {
+    id: 'halkenburg-hui-guo-rou',
+    chapter: 389,
+    before: 'alive',
+    after: 'captured',
+  },
+] as const
+
+function at(chapter: number): Reader {
+  return readerFor(archive, { mode: 'chapter', chapter }, 'en')
+}
+
+describe('the dated entries of chapters 371–400', () => {
+  it.each(PINS)(
+    'pins $id’s change to $after at chapter $chapter',
+    ({ id, chapter, before, after }) => {
+      const owner = character(id)
+
+      expect(archive.latestOf(at(chapter - 1), owner, 'status')).toBe(before)
+      expect(archive.latestOf(at(chapter), owner, 'status')).toBe(after)
+    },
+  )
+
+  it('moves Hanzo to Marayam’s guard at chapter 361', () => {
+    const owner = character('hanzo')
+
+    expect(archive.latestOf(at(360), owner, 'affiliation')?.en).toBe(
+      'Hunter Association, Hunter; Momoze’s bodyguards',
+    )
+    expect(archive.latestOf(at(361), owner, 'affiliation')?.en).toBe(
+      'Hunter Association, Hunter; Marayam’s bodyguards',
+    )
+  })
+})
+
 describe.each(LOCALES)('Kakin chronicles in %s', (locale) => {
   const read = (bookmark: Bookmark): Reader =>
     readerFor(archive, bookmark, locale)

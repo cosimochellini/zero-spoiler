@@ -818,16 +818,7 @@ export const yorknewCity: HunterSaga = {
         it: 'Arriva a York Shin City con le sue guardie del corpo. Con il suo potere scrive le profezie per gli amici di suo padre.',
         en: 'She arrives in Yorknew City with her bodyguards. With her power she writes fortunes for her father’s friends.',
       },
-      // Her ability vanishes from Chrollo's book (377, #1157): manga only.
-      status: [
-        { episode: 41, chapter: 71, value: 'alive' },
-        {
-          episode: 148,
-          chapter: 377,
-          source: 'chapter',
-          value: 'presumed-dead',
-        },
-      ],
+      status: [{ episode: 41, chapter: 71, value: 'alive' }],
       affiliation: [
         {
           episode: 41,
