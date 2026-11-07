@@ -103,7 +103,7 @@ const EXPECTED: Record<string, Expected> = {
   // Phase 5 (#1138) adds 22 characters, chapter 401–420 (counted 2026-11-06).
   // #1155 adds 99 manga-only chronicles for chapters 340–370 (2026-11-07).
   // #1157 adds 120 for chapters 371–400, four manga-only statuses and one affiliation; statuses and affiliations are exact (2026-11-07).
-  // #1159 adds 79 for chapters 401–420 and two manga-only statuses (exact, with timelines) (2026-11-07).
+  // #1159 adds 84 for chapters 401–420 and two manga-only statuses; chronicles and statuses are exact, timelines a floor within 90% (2026-11-07).
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -125,7 +125,7 @@ const EXPECTED: Record<string, Expected> = {
       affiliations: 464,
       arcs: 7,
       characters: 290,
-      chronicles: 989,
+      chronicles: 994,
       linkedOrigins: 10,
       places: 43,
       statuses: 383,

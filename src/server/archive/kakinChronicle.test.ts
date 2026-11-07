@@ -213,7 +213,7 @@ const PINS = [
   },
   // Chapters 401–420 (#1159).
   { id: 'oito-hui-guo-rou', chapter: 415, before: 'alive', after: 'captured' },
-  { id: 'danjin', chapter: 416, before: 'alive', after: 'captured' },
+  { id: 'danjin', chapter: 417, before: 'alive', after: 'captured' },
 ] as const
 
 function at(chapter: number): Reader {

@@ -2,9 +2,9 @@
 
 Written on 7 November 2026, part of #918 and its last chronicle piece. Covers
 chapters 401–420, the fifth Kakin record phase (#1138) and the last published
-chapter: 79 bilingual stories, at least one for each of the 22 characters filed
+chapter: 84 bilingual stories, at least one for each of the 22 characters filed
 in that window and major new beats for 37 returning characters. The series now
-has 989 stories for 289 characters.
+has 994 stories for 289 characters.
 
 ## Sources and method
 
@@ -34,9 +34,10 @@ its corrections are listed below.
   only orders it: an anime reader never sees it, in the chronicle or at home.
 - Each story sits at the first chapter by whose end the reader knows all of it.
   Where a story gathers several chapters, the note lists each. Cliffhangers are
-  not filed: Benjamin's shot at Tserriednich (416) and the stomping Salkov
-  doubts (417) are told at 418, where the staged death is explained; Borksen's
-  Yes (409) is told at 410, where the cheat and the forced answer are.
+  not filed: the outcome of Benjamin's shot at Tserriednich (416) and of the
+  stomping Salkov doubts (417) is told at 418, where the staged death is
+  explained, and Benjamin's 417 story tells only the act and the guard's doubt;
+  Borksen's Yes (409) is told at 410, where the cheat and the forced answer are.
 - A story names only characters filed by its chapter, each with a marker.
   Records that open later in the window are described before their gate: the
   soldier signing to Balsamilco (Vict, 404), Benjamin's soldier who sees
@@ -55,80 +56,133 @@ its corrections are listed below.
   stories at 405 and 420.
 - A story that implies a status change carries it, manga-only: Oito is
   `captured` at 415 (detention, indictment deferred, not a sentence) and Danjin
-  at 416 (taken for questioning, to be detained at the Justice Bureau). Two
-  deaths the stories tell move to #1158, because a death status and its drawing
-  stage are filed together and both records have real drawings since #1168:
-  Lynch's `deceased` pin (406 → 405, where Bonolenov's thoughts and flashback
-  tell her killing; her character page cites 405 and the body is found at 406)
-  and Fukataki's `deceased` at 416 (shot by Benjamin). Not added: Tserriednich's
-  staged death, Benjamin's, Camilla's, Tubeppa's and Tyson's infections (all
-  alive at 420), Halkenburg bound in Balsamilco's body (already deceased at
-  404), and the princes confined to their quarters under martial law.
+  at 417 (taken for questioning at 416, his story's chapter; chapter 417 states
+  that he is to be detained at the Central Justice Bureau, so the pin rounds
+  up). Two deaths the stories tell move to #1158, because a death status and its
+  drawing stage are filed together and both records have real drawings since
+  #1168: Lynch's `deceased` pin (406 → 405, where Bonolenov's thoughts and
+  flashback tell her killing; her character page cites 405 and the body is found
+  at 406) and Fukataki's `deceased` at 416 (shot by Benjamin). Not added:
+  Tserriednich's staged death, Benjamin's, Camilla's, Tubeppa's and Tyson's
+  infections (all alive at 420), Halkenburg bound in Balsamilco's body (already
+  deceased at 404), and the princes confined to their quarters under martial
+  law.
+- Body death counts as deceased (wiki infobox): Shikaku and Halkenburg keep
+  their `deceased` at 404, and a surviving mind is told in the stories.
 
 ## Stories per character
 
-| Character                  | Chapters           |
-| -------------------------- | ------------------ |
-| `makaha`                   | 401                |
-| `oito-hui-guo-rou`         | 401, 415           |
-| `hashito`                  | 404                |
-| `sakata`                   | 412                |
-| `musse`                    | 413                |
-| `balsamilco`               | 403, 417           |
-| `worio-bay`                | 403                |
-| `vict`                     | 404                |
-| `shikaku`                  | 404                |
-| `sumidori`                 | 404                |
-| `cleapatro`                | 412                |
-| `hinrigh`                  | 406                |
-| `morena`                   | 405, 408           |
-| `risnorth`                 | 405                |
-| `onior`                    | 417                |
-| `kako`                     | 411                |
-| `bill`                     | 412, 414           |
-| `shimanu`                  | 414                |
-| `rihan`                    | 415                |
-| `saquelle`                 | 415                |
-| `kanjidol`                 | 415                |
-| `coventoba`                | 417                |
-| `longhi`                   | 401                |
-| `tenftory`                 | 402                |
-| `tubeppa-hui-guo-rou`      | 402, 417           |
-| `melody`                   | 402                |
-| `fugetsu-hui-guo-rou`      | 402                |
-| `kaiser`                   | 402                |
-| `luzurus-hui-guo-rou`      | 402, 417           |
-| `basho`                    | 402                |
-| `halkenburg-hui-guo-rou`   | 403, 404, 413      |
-| `unma-hui-guo-rou`         | 403                |
-| `benjamin-hui-guo-rou`     | 403, 410, 413, 417 |
-| `kacho-hui-guo-rou`        | 403                |
-| `zhang-lei-hui-guo-rou`    | 404, 410           |
-| `kurapika`                 | 404, 412, 414      |
-| `cheadle-yorkshire`        | 404                |
-| `tserriednich-hui-guo-rou` | 404, 418, 419, 420 |
-| `hisoka`                   | 405, 420           |
-| `bonolenov`                | 405                |
-| `lynch-fullbokko`          | 405                |
-| `nobunaga`                 | 405                |
-| `ken-i-wang`               | 405                |
-| `zakuro-custard`           | 406                |
-| `chrollo`                  | 406                |
-| `phinks`                   | 406                |
-| `tajao`                    | 406                |
-| `momolly`                  | 407                |
-| `borksen`                  | 407, 410           |
-| `mizaistom-nana`           | 410                |
-| `woble-hui-guo-rou`        | 412                |
-| `slakka`                   | 412                |
-| `beyond-netero`            | 412                |
-| `furykov`                  | 413, 415           |
-| `biscuit-krueger`          | 415                |
-| `camilla-hui-guo-rou`      | 416                |
-| `fukataki`                 | 416                |
-| `danjin`                   | 416                |
-| `tyson-hui-guo-rou`        | 417                |
+| Character                  | Chapters                |
+| -------------------------- | ----------------------- |
+| `makaha`                   | 401                     |
+| `oito-hui-guo-rou`         | 401, 412, 415           |
+| `hashito`                  | 404                     |
+| `sakata`                   | 412                     |
+| `musse`                    | 413                     |
+| `balsamilco`               | 403, 417                |
+| `worio-bay`                | 403                     |
+| `vict`                     | 404                     |
+| `shikaku`                  | 404                     |
+| `sumidori`                 | 404                     |
+| `cleapatro`                | 412                     |
+| `hinrigh`                  | 406                     |
+| `morena`                   | 405, 408, 410           |
+| `risnorth`                 | 405                     |
+| `onior`                    | 417                     |
+| `kako`                     | 411                     |
+| `bill`                     | 412, 414                |
+| `shimanu`                  | 414                     |
+| `rihan`                    | 415                     |
+| `saquelle`                 | 415                     |
+| `kanjidol`                 | 415                     |
+| `coventoba`                | 417                     |
+| `longhi`                   | 401                     |
+| `tenftory`                 | 402                     |
+| `tubeppa-hui-guo-rou`      | 402, 417                |
+| `melody`                   | 402                     |
+| `fugetsu-hui-guo-rou`      | 402                     |
+| `kaiser`                   | 402                     |
+| `luzurus-hui-guo-rou`      | 402, 417                |
+| `basho`                    | 402                     |
+| `halkenburg-hui-guo-rou`   | 403, 404, 413           |
+| `unma-hui-guo-rou`         | 403, 413                |
+| `benjamin-hui-guo-rou`     | 403, 410, 413, 416, 417 |
+| `kacho-hui-guo-rou`        | 403                     |
+| `zhang-lei-hui-guo-rou`    | 404, 410                |
+| `kurapika`                 | 404, 412, 414           |
+| `cheadle-yorkshire`        | 404                     |
+| `tserriednich-hui-guo-rou` | 404, 418, 419, 420      |
+| `hisoka`                   | 405, 420                |
+| `bonolenov`                | 405                     |
+| `lynch-fullbokko`          | 405                     |
+| `nobunaga`                 | 405                     |
+| `ken-i-wang`               | 405                     |
+| `zakuro-custard`           | 406                     |
+| `chrollo`                  | 406                     |
+| `phinks`                   | 406                     |
+| `tajao`                    | 406                     |
+| `momolly`                  | 407                     |
+| `borksen`                  | 407, 410                |
+| `mizaistom-nana`           | 410                     |
+| `woble-hui-guo-rou`        | 412                     |
+| `slakka`                   | 412                     |
+| `beyond-netero`            | 412, 415                |
+| `furykov`                  | 413, 415                |
+| `biscuit-krueger`          | 415                     |
+| `camilla-hui-guo-rou`      | 416                     |
+| `fukataki`                 | 416                     |
+| `danjin`                   | 416                     |
+| `tyson-hui-guo-rou`        | 417                     |
 
 ## Independent verifier corrections
 
-Pending.
+Two independent verifiers re-read the 79 stories of the first draft against
+`Chapter_401`–`Chapter_420`. Nothing was filed too early and no name leaked. The
+PR now has 84 stories: the 5 added after verification were written from the
+verifiers' own evidence and checked against Chapter_410, 412, 413, 415 and 416.
+Their fixes:
+
+1. **shikaku 404, sumidori 404 (P1):** the swap was told backwards. Halkenburg's
+   page (chapter 404) says "Sumidori's body awoke and recited Shikaku's service
+   number": Shikaku's mind was asleep inside it. Both stories and Sumidori's
+   record link now say this. Shikaku's story is in the present tense.
+2. **hashito 404 (P2):** Camilla was checking Kurapika's claims, not Hashito's.
+3. **balsamilco 403 (P3, order):** the arrow hits him first, so both calls
+   ("missed", then "mission completed") are Halkenburg speaking in his body.
+4. **bonolenov 405 (P2, IT):** "ha stretto un accordo con Hinrigh per una stanza
+   VVIP", matching the English "struck a deal".
+5. **lynch-fullbokko 405 (P2):** "The Hisoka Lynch punched", since a different
+   tall man was punched at 392.
+6. **tserriednich 404 (P1):** he is already under ten seconds at 402 (9.67).
+   Getting under 3.5 took "only three days" (404).
+7. **zhang-lei 404 (P1):** "Tenftory quickly realizes that his coin has a
+   different design", at Kurapika's prompting.
+8. **fugetsu 402 (P1):** the beast's screech dispels the spirits first, then
+   Benjamin judges that "she would not last ten more days".
+9. **longhi 401 (P1):** "if, as expected, Beyond's child is one of the Princes,
+   she will kill them herself".
+10. **kaiser 402 (P2):** he "joined" the Ministry of Justice. The English keeps
+    "Justice Bureau", the name used across the window.
+11. **Missing beats, added as new stories:**
+    - **oito 412:** the chain questioning and the swap; the chain does not move.
+    - **morena 410:** the three conditions, the hideout between Tiers 2 and 3
+      and the 21 members (409), and the cheat that forces Yes (410).
+    - **benjamin 416:** Moswana's curse and the silent TSK-17 infection of
+      Camilla are chapter 416, so this is a new 416 story, not an addition to
+      the 417 one. It also covers Fukataki's death and Danjin taken for
+      questioning.
+    - **unma 413:** the 48-hour threat to Furykov and Benjamin's realisation,
+      written to over 40 words with detail from Chapter_413.
+    - **beyond 415:** the call in which he admits the curse to Furykov. I chose
+      415 over 401, where Beyond only appears in Longhi's account.
+12. **kaiser 403 (P3):** skipped under the bare-appearance ruling.
+
+The stories now number 84; every one is 40–140 words in both languages, and
+`FIRST_STORIES` is unchanged.
+
+## Review round 1
+
+No P0–P2. P3 fixes: Danjin's `captured` moves from 416 to 417, where his
+detention is stated; Benjamin's 417 story tells the stomping and the guard's
+doubt without an outcome; the counts above say 84; the `src/test/series.ts`
+comment says timelines is a floor.

@@ -2105,7 +2105,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:405': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
-      note: 'Chapters 393 and 405, with Lynch’s and Bonolenov’s character pages: Hinrigh’s offer of a VVIP room on Tier 1 and the deal struck in auditorium #8 (393); Chrollo’s instructions in the flashback, Lynch’s punch and the reflex knock-out, Zakuro knocked out and impersonated, the killing, Lynch’s form and the lead to the movie theater, the real Hisoka in the Tier 1 casino, the change into Owl and the narration on Metamorphosen (405).',
+      note: 'Chapters 393 and 405, with Lynch’s and Bonolenov’s character pages: Hinrigh’s offer of a VVIP room on Tier 1 and the deal struck in auditorium #8 (393); Chrollo’s instructions in the flashback, Lynch’s punch and the reflex knock-out, Zakuro knocked out and impersonated, the killing, Lynch’s form and the lead to the movie theater, the real Hisoka in the Tier 1 casino, the change into Owl and the narration on Metamorphosen (405). Corrected after independent verification: Italian wording aligned with the English: “struck a deal” with Hinrigh for the room.',
     },
   },
   'eliza': {
@@ -3513,6 +3513,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
       note: 'Chapters 401 and 412: the book, the pen and paper refused, the threat with the book and the request for a meeting (401, day ten); Cleapatro’s visit, the 1,047 dismissed cases, the check of the documents and the argument (412, day twelve).',
     },
+    '148:415': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
+      note: 'Chapter 415: the flashback two months before departure, Furykov’s call, Beyond confirming the curse, attached after birth and drawing his aura for over 20 years, the Post-Mortem Nen on a prince and the gift of his ability to Benjamin, no more information, the luxurious mansion, and the father-and-son advice. Chosen over 401, where Beyond only appears in Longhi’s account. Added after independent verification (missing beat).',
+    },
   },
   'zigg-zoldyck': {
     '148:344': {
@@ -3551,7 +3555,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:404': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
-      note: 'Chapters 402 and 404: 9.67 seconds on the treadmill, a day’s learning against six months, Salkov’s guess about an ability during Zetsu, Vantine’s report and the order to win Melody over (402); under 3.5 seconds in three days, the vow for the last second and the ball of aura (404). Salkov and Vantine have no record and are described.',
+      note: 'Chapters 402 and 404: 9.67 seconds on the treadmill, a day’s learning against six months, Salkov’s guess about an ability during Zetsu, Vantine’s report and the order to win Melody over (402); under 3.5 seconds in three days, the vow for the last second and the ball of aura (404). Salkov and Vantine have no record and are described. Corrected after independent verification: he is under ten seconds at 402 (9.67) and under 3.5 “in only three days” at 404.',
     },
     '148:418': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_418',
@@ -3617,6 +3621,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
       note: 'Chapter 413: the rumbling and the soul still around, the order to detain Balsamilco and the followers, the nausea and TSK-17 symptoms, the safe with only Balsamilco’s vial gone, Unma and Furykov, the confrontation and forgiveness, 2:15 p.m., guards executed on sight, Hunters left alone, Room 1001, and the vial in the shoe.',
     },
+    '148:416': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_416',
+      note: 'Chapter 416: Room 302 with Furykov and Butch (no record), the shots off his Ken and the two servants killed, the counteractive ability, Moswana’s curse (no record), the silent TSK-17 infection and the question on whom her ability could kill to resurrect her, and Danjin taken for questioning. Added after independent verification (missing beat); the curse and infection are chapter 416, not 417.',
+    },
     '148:417': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
       note: 'Chapter 417: the stomping and the pardons, the second dose in his boot, the covert release in Room 1001, Balsamilco and Coventoba joining, Gypsy Life: Bohemian Rhapsody fusing with Benjamin Baton and passing to a blood relative, and his anger at Unma and the decision to confront her.',
@@ -3630,6 +3638,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:403': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
       note: 'Chapter 403: Unma’s call, her support, the missed banquet and “proud of him”, the letter’s claim that she is Halkenburg’s real mother, the theory on international websites about Duazul and the order of succession, and Benjamin’s dismissal.',
+    },
+    '148:413': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
+      note: 'Chapter 413: Benjamin’s realisation that his mother chose Halkenburg and leaked to Furykov, Furykov’s account of Unma’s 48-hour demand under threat of Beyond activating his curse, and Benjamin keeping his beast’s ability from Unma’s faction. Added after independent verification (missing beat).',
     },
   },
   'tang-zhao-li-hui-guo-rou': {
@@ -3729,7 +3741,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:402': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
-      note: 'Chapter 402: the low-level evil spirits, the tour of Tier 1 with Kaiser, the letters presented as Kacho’s last message, Benjamin’s beast dispelling the spirits and his ten-day estimate, Luzurus’s apology, and Basho’s haiku charm.',
+      note: 'Chapter 402: the low-level evil spirits, the tour of Tier 1 with Kaiser, the letters presented as Kacho’s last message, Benjamin’s beast dispelling the spirits and his ten-day estimate, Luzurus’s apology, and Basho’s haiku charm. Corrected after independent verification: the beast’s screech dispels the spirits first, then Benjamin judges “she would not last ten more days”.',
     },
   },
   'halkenburg-hui-guo-rou': {
@@ -3835,7 +3847,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:404': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
-      note: 'Chapters 403–404: the coin from 1 to 10 and the guards’ mediocre ideas, the call to Room 1014 (403); the different back of Tenftory’s coin, the 10 coin changing in Kurapika’s hand, the cumulative ability and the six months, the day’s coin, and the unspoken Manipulation guess (404).',
+      note: 'Chapters 403–404: the coin from 1 to 10 and the guards’ mediocre ideas, the call to Room 1014 (403); the different back of Tenftory’s coin, the 10 coin changing in Kurapika’s hand, the cumulative ability and the six months, the day’s coin, and the unspoken Manipulation guess (404). Corrected after independent verification: Tenftory realises that his coin’s design differs after Kurapika asks about it.',
     },
     '148:410': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_410',
@@ -4017,7 +4029,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:401': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_401',
-      note: 'Chapter 401: the aura pen and paper, the loan and restriction and the voluntary signature, the snakes not hers, Beyond’s daughter raised by officers, the seal under the tongue and the “strong curse sacrifice”, her belief that a prince is Beyond’s child, the truce with Woble and Oito, the reward, her plan to kill the child, and the motionless chain.',
+      note: 'Chapter 401: the aura pen and paper, the loan and restriction and the voluntary signature, the snakes not hers, Beyond’s daughter raised by officers, the seal under the tongue and the “strong curse sacrifice”, her belief that a prince is Beyond’s child, the truce with Woble and Oito, the reward, her plan to kill the child, and the motionless chain. Corrected after independent verification: if Beyond’s child is one of the princes, as she expects, she will kill them herself.',
     },
   },
   'maor': {
@@ -4183,7 +4195,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:405': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_405',
-      note: 'Chapter 405, with Lynch’s character page (“taking Lynch’s form after killing her”, cited to 405): the punch and the inner voice, the reflex knock-out, the Zakuro disguise, her anger and the hit list, the killing and her form used on Zakuro. The reader learns of her death here and her body is found in 406; moving her `deceased` pin to 405 is left to #1158 with her drawing stage.',
+      note: 'Chapter 405, with Lynch’s character page (“taking Lynch’s form after killing her”, cited to 405): the punch and the inner voice, the reflex knock-out, the Zakuro disguise, her anger and the hit list, the killing and her form used on Zakuro. The reader learns of her death here and her body is found in 406; moving her `deceased` pin to 405 is left to #1158 with her drawing stage. Corrected after independent verification: “the Hisoka Lynch punched”, since a different tall man was punched at 392.',
     },
   },
   'tevelares': {
@@ -4391,7 +4403,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:402': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_402',
-      note: 'Chapter 402: Kaiser volunteering, Fugetsu as the ruler who changes the system and his “gentle, ideal world”, the escort, the Musse question, the leading question on martial law and his conclusion, and reading Luzurus’s letter as rumours.',
+      note: 'Chapter 402: Kaiser volunteering, Fugetsu as the ruler who changes the system and his “gentle, ideal world”, the escort, the Musse question, the leading question on martial law and his conclusion, and reading Luzurus’s letter as rumours. Corrected after independent verification: he says he did not join the Ministry of Justice just to uphold the law, so he joined it; the story keeps the Justice Bureau name used across the window.',
     },
   },
   'makaha': {
@@ -4405,6 +4417,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_401',
       note: 'Chapter 401: Oito in the master bedroom during Longhi’s account, named in the contract’s terms, and her nervous answer that only the “children of legal wives” compete, unable to believe the loophole.',
     },
+    '148:412': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_412',
+      note: 'Chapter 412: Bill noticing the masculine and feminine tones, the questioning with the chain, the younger sister’s son, Woble with the sister at an unknown place, neither eligible, the fear of being killed, and the motionless chain. Added after independent verification (missing beat).',
+    },
     '148:415': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
       note: 'Chapters 414–415: the relative on her mother’s side at a Yamato post office and the coded letter without a return address (414); the general store dealer, the coded postcard and Kurapika’s advice, Babimyna (no record) handing the postcards over without inspection, and twenty minutes into martial law the clemency for the stand-in, her detention, the deferred indictment and the order not to leave the master bedroom (415). Her `captured` status is pinned at 415.',
@@ -4413,7 +4429,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'hashito': {
     '148:404': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
-      note: 'Chapters 402 and 404: the request for Sakata and Hashito to stay (402); Kurapika’s briefing, Camilla’s guard joining, Sakata’s guess and Hashito’s list of reasons (404).',
+      note: 'Chapters 402 and 404: the request for Sakata and Hashito to stay (402); Kurapika’s briefing, Camilla’s guard joining, Sakata’s guess and Hashito’s list of reasons (404). Corrected after independent verification: the claims Camilla was checking are Kurapika’s (“she was checking his claims”, said of Kurapika).',
     },
   },
   'sakata': {
@@ -4431,7 +4447,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'balsamilco': {
     '148:403': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_403',
-      note: 'Chapters 402–403: the cartridge and the vial in the shoe, the failed weapon that kills in half a day and erases its trace (402); the plan to infect Halkenburg in cross-examination, the soldier’s military sign language, the arrow through the wall, the “missed” report and the possession revealed at the chapter’s end (403). The signing soldier is Vict, filed at 404.',
+      note: 'Chapters 402–403: the cartridge and the vial in the shoe, the failed weapon that kills in half a day and erases its trace (402); the plan to infect Halkenburg in cross-examination, the soldier’s military sign language, the arrow through the wall, the “missed” report and the possession revealed at the chapter’s end (403). The signing soldier is Vict, filed at 404. Corrected after independent verification: order of events. The arrow hits him first, so both calls, the arrow that missed and the completed mission, are Halkenburg speaking in his body.',
     },
     '148:417': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
@@ -4453,13 +4469,13 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'shikaku': {
     '148:404': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
-      note: 'Chapters 382, 386 and 404, with Shikaku’s character page: the order to kill Halkenburg and the arrow (382), Sumidori in Shikaku’s body and the shot outside Room 1007 (386), and Halkenburg’s explanation of the experiment, the service number and the priority (404).',
+      note: 'Chapters 382, 386 and 404, with Shikaku’s character page: the order to kill Halkenburg and the arrow (382), Sumidori in Shikaku’s body and the shot outside Room 1007 (386), and Halkenburg’s explanation of the experiment, the service number and the priority (404). Corrected after independent verification: the swap was backwards. Halkenburg’s page (chapter 404): “Sumidori’s body awoke and recited Shikaku’s service number”, with Shikaku’s mind asleep inside it until Sumidori’s mind stopped being awake. The story now says that Sumidori’s body woke with Shikaku’s mind inside, in the present tense.',
     },
   },
   'sumidori': {
     '148:404': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
-      note: 'Chapters 382, 386 and 404, with Sumidori’s character page: the collapse as Shikaku is hit (382), his body sleeping while his mind is in Shikaku’s (386), and the 404 explanation of the experiment and the priority. No death is filed: the window does not show one.',
+      note: 'Chapters 382, 386 and 404, with Sumidori’s character page: the collapse as Shikaku is hit (382), his body sleeping while his mind is in Shikaku’s (386), and the 404 explanation of the experiment and the priority. No death is filed: the window does not show one. Corrected after independent verification: Halkenburg’s page (chapter 404): “Sumidori’s body awoke and recited Shikaku’s service number”; Shikaku’s mind was asleep inside it. The record’s link text says the same.',
     },
   },
   'cleapatro': {
@@ -4482,6 +4498,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     '148:408': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_408',
       note: 'Chapter 408: the Aim card and the goal, the real Morena Prudo in a grave, Carne Levare and the carnival orphans, the mother’s death at two, the Heil-Ly trafficking institution, “flesh” for about 20 years, the ability for up to 22 “children” with the same goal, both Specialists, and the Enhancer still searching.',
+    },
+    '148:410': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_410',
+      note: 'Chapters 409–410: the three conditions (a game ending on Yes, infecting her with the ability by a kiss, being present at a murder by a Heil-Ly member), Question A on the hideout between Tiers 2 and 3 and the 21 members (409); the marked Return card, the manipulation triggered by cheating that forces a Yes or No, joining at level 0, and Morena always knowing her level, points, location and status (410). Added after independent verification (missing beat).',
     },
   },
   'risnorth': {
