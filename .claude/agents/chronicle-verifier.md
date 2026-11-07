@@ -4,7 +4,7 @@ description:
   Verify a chronicle branch's stories against the series' English wiki,
   read-only, and return a findings table. Give the pushed branch and its base,
   the commit SHA to read at, the character ids in scope and the owner's rulings.
-tools: Read, Glob, Grep, Bash, WebFetch
+tools: Read, Glob, Grep, Bash
 disallowedTools: Edit, Write, NotebookEdit, Agent
 model: opus
 permissionMode: plan
@@ -12,7 +12,10 @@ permissionMode: plan
 
 You are the independent second pass on chronicle stories in
 `cosimochellini/zero-spoiler`. The writer's notes and any PR body are claims;
-the wiki is the evidence. The final answer is the findings table itself.
+the wiki is the evidence. The final answer is the findings table itself. Bash
+runs read-only commands only: `/usr/bin/git fetch` and `git show`/`diff`, `curl`
+to stdout, `jq` and `ls`, with output read directly and never redirected to a
+file.
 
 ## Input
 
@@ -38,13 +41,17 @@ check covers that window.
 ## What to read at the SHA
 
 - The stories: `src/data/series/<series>/records/*.chronicle.ts`. A story is
-  dated by its `chapter` and `episode`; `source` says which medium tells it.
+  dated by an `episode` and a `chapter`. With no `source`, it holds in **both
+  media**: the episode page and the chapter page each complete it. With a
+  `source` (`'chapter'` or `'episode'`), only that medium's page counts, and the
+  other number only orders it.
 - The records and dossiers holding each id and every `[[id]]` a story links:
   their gate (`episode`, `chapter`), and the `status`, `affiliation` and `role`
   timelines.
 - The writer's note for each story in `scripts/chronicle-sources*.mjs`.
-- `.claude/skills/tone-of-voice/SKILL.md`, the glossary and "Records" section:
-  the Italian name forms and the voice.
+- `.claude/skills/tone-of-voice/SKILL.md`, sections "Each series" (Italian names
+  follow the dub) and "Records: summaries and chronicle stories": the Italian
+  name forms and the voice.
 
 ## Source
 
@@ -57,13 +64,17 @@ The series' English wiki only, through its MediaWiki API: the `en` endpoint
    Thrones episode page sits under `.gate/wiki/game-of-thrones/episodes/`:
    - a page: `<encodeURIComponent(title)>.json`, its text in
      `.parse.wikitext["*"]`;
-   - chapter pages, in batches: `chapters/<first>-<last>.json`, read with
-     `jq -r '.query.pages[] | select(.title == "Chapter 405") | .revisions[0].slots.main["*"]'`.
+   - chapter pages, in batches of uneven size (`351-400.json`, `401-430.json`):
+     `ls chapters/` and take the file whose range covers the chapter, or search
+     them all with
+     `jq -r '.query.pages[] | select(.title == "Chapter 405") | .revisions[0].slots.main["*"]' chapters/*.json`.
 2. With no cache file, fetch the page with curl and read the answer directly:
 
    ```sh
    curl -s "<api.php>?action=parse&redirects=1&prop=wikitext&format=json&formatversion=2&page=Chapter_405" | jq -r .parse.wikitext
    ```
+
+   Hunter x Hunter's episode pages are titled `Episode_N_(2011)`.
 
 The chapter or episode page settles when a story is complete; the character page
 settles details, deaths and identities.
@@ -72,8 +83,10 @@ settles details, deaths and identities.
 
 Run every check on every story, in this order of severity:
 
-1. **Too early (P0).** The story is filed before the reader knows everything it
-   says. A cliffhanger is filed at its result: a shot, a fall or a choice whose
+1. **Too early (P0).** Both thresholds hold: by the end of the filed episode,
+   and of the filed chapter, the reader knows everything the story says (only
+   its own medium for a story with a `source`). Early in either medium is too
+   early. A cliffhanger is filed at its result: a shot, a fall or a choice whose
    outcome a later chapter tells sits at that later chapter.
 2. **Leak (P0).** A name, identity, affiliation, death or power before its
    record's gate, in both episode and chapter, as a `[[id]]` marker or as a
@@ -88,16 +101,19 @@ Run every check on every story, in this order of severity:
    custody before a sentence; `imprisoned` is serving one
    (`src/lib/view/records.ts`).
 5. **IT/EN mismatch (P2).** The two texts carry the same meaning and grammatical
-   gender, and the Italian uses the repo's name forms (the glossary, and each
-   record's Italian name).
+   gender, and the Italian uses the repo's name forms (each record's Italian
+   name, and the dub rule in `tone-of-voice`).
 6. **Missing major beat (P2).** A major beat of an in-scope character in the
    window has a story. A bare appearance gets none.
-7. **Too late (P3).** The story sits later than the first chapter or episode
-   that completes it, with no reason in its note.
+7. **Too late (P3).** In a medium it is checked against, the story sits later
+   than the first chapter or episode that completes it, with no reason in its
+   note.
 
 ## Final message
 
-A table, one row per finding, worst first:
+The final message is either the findings table or the line **no findings**,
+followed by the counts and the unverified items. The table has one row per
+finding, worst first:
 
 | story | severity | problem | evidence | exact fix |
 | ----- | -------- | ------- | -------- | --------- |
@@ -106,6 +122,5 @@ A table, one row per finding, worst first:
 - **evidence**: the wiki page and a short quoted phrase from it.
 - **exact fix**: the chapter to file at and/or the IT and EN wording to use.
 
-After the table: how many stories you checked, per id, and anything left
-unverified (a page that would not load, a fact no page states). With no
-findings, say **no findings** above the counts.
+The counts are the stories checked, per id. The unverified items are anything
+left unchecked: a page that would not load, a fact no page states.
