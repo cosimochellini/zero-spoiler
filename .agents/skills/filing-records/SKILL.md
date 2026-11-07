@@ -107,6 +107,8 @@ Done when the test passes, and moving one gate or pin down by one makes it fail.
 
 Done when `npm run check` passes.
 
+**Loaded machine**: run `npm run check:content` instead; the ready PR's CI `validation` run is the full gate.
+
 ## 9. Probe a built page
 
 Run `npm run build && npm start` and take the port it prints. A `?ep=N` or `?ch=N` link answers 302 and sets the bookmark cookie (`src/lib/progress/linkBookmark.ts`), so follow it with a cookie jar and quote the URL:
