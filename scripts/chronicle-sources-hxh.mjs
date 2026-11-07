@@ -485,7 +485,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:351': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_351',
-      note: 'Chapter 351: the match to the death between Floor Masters, Black Voice on the referee, Bungee Gum, the cut throat and the blast that sends Hisoka to the ceiling; The Sun and Moon explained in the same chapter. Corrected after independent verification: the Italian names the referee’s body as the source of the blast.',
+      note: 'Chapter 351: the match to the death between Floor Masters, Black Voice on the referee, Bungee Gum, the slashed throat and the blast that sends Hisoka to the ceiling; The Sun and Moon explained in the same chapter. Corrected after independent verification: the Italian names the referee’s body as the source of the blast. Corrected in review: the referee is only wounded here; chapter 352 calls him dead.',
     },
     '148:356': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_356',

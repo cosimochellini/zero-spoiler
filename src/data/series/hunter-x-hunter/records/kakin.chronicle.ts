@@ -482,8 +482,8 @@ export const kakinChronicles = {
       351,
       { it: 'Uno scontro fino alla morte', en: 'A fight to the death' },
       {
-        it: 'All’Arena Celeste Hisoka e [[chrollo|Quoll]] si affrontano come Maestri di piano in un incontro che entrambi vogliono fino alla morte. Quoll controlla l’arbitro con un’antenna dell’abilità di [[shalnark|Shalnark]] e lo manda contro Hisoka. Hisoka si difende con il Bungee Gum e uccide l’arbitro, ma un’esplosione dal corpo dell’arbitro lo costringe a rifugiarsi sul soffitto: Quoll ha segnato l’arbitro con un’abilità che trasforma in bombe ciò che tocca.',
-        en: 'At Heavens Arena, Hisoka and [[chrollo|Chrollo]] meet as Floor Masters in a match both want to be to the death. Chrollo controls the referee with an antenna from [[shalnark|Shalnark]]’s ability and sends him at Hisoka. Hisoka fights back with Bungee Gum and kills the referee, but a blast from the referee’s body drives him up to the ceiling: Chrollo has marked the referee with an ability that turns what it touches into bombs.',
+        it: 'All’Arena Celeste Hisoka e [[chrollo|Quoll]] si affrontano come Maestri di piano in un incontro che entrambi vogliono fino alla morte. Quoll controlla l’arbitro con un’antenna dell’abilità di [[shalnark|Shalnark]] e lo manda contro Hisoka. Hisoka si difende con il Bungee Gum e ferisce l’arbitro alla gola, ma un’esplosione dal corpo dell’arbitro lo costringe a rifugiarsi sul soffitto: Quoll ha segnato l’arbitro con un’abilità che trasforma in bombe ciò che tocca.',
+        en: 'At Heavens Arena, Hisoka and [[chrollo|Chrollo]] meet as Floor Masters in a match both want to be to the death. Chrollo controls the referee with an antenna from [[shalnark|Shalnark]]’s ability and sends him at Hisoka. Hisoka fights back with Bungee Gum and slashes the referee’s throat, but a blast from the referee’s body drives him up to the ceiling: Chrollo has marked the referee with an ability that turns what it touches into bombs.',
       },
     ),
     told(
@@ -692,7 +692,7 @@ export const kakinChronicles = {
       363,
       { it: 'Le guardie di Woble', en: 'Woble’s guards' },
       {
-        it: 'Chowrai viene a sapere che quasi tutte le guardie di [[woble-hui-guo-rou|Woble]] sono morte e si stupisce che sia stata colpita per prima la più giovane. Poi ricorda che le sue guardie sono scelte dalle altre regine. Una delle sue guardie solleva la questione delle bestie di Nen. Quando arriva un soldato di [[benjamin-hui-guo-rou|Benjamin]] come guardia reale, Chowrai capisce il piano del fratello e vede l’occasione di saperne di più sulle bestie.',
+        it: 'Chowrai viene a sapere che quasi tutte le guardie di [[woble-hui-guo-rou|Woble]] sono morte e si stupisce che sia stata colpita per prima la più giovane. Poi ricorda che le guardie di Woble sono scelte dalle altre regine. Una delle sue guardie solleva la questione delle bestie di Nen. Quando arriva un soldato di [[benjamin-hui-guo-rou|Benjamin]] come guardia reale, Chowrai capisce il piano del fratello e vede l’occasione di saperne di più sulle bestie.',
         en: 'Zhang Lei learns that nearly all of [[woble-hui-guo-rou|Woble]]’s guards are dead and is surprised that the youngest was targeted first. Then he remembers that her guards are chosen by the other queens. One of his guards raises the matter of Nen beasts. When one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers arrives as a royal guard, Zhang Lei sees through his brother’s plan and his own chance to learn more about the beasts.',
       },
     ),
