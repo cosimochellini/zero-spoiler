@@ -14,6 +14,7 @@ A pull request lands in two parts: review rounds until no P0–P2 is left, then 
 - A P0, P1 or P2 finding is fixed without asking the owner. Push the fix, then start a new fresh round.
 - A finding marked `Structural: yes` gets one extra review with `pr-reviewer-structural` before the merge.
 - CI does not run on a draft, so run `npm run check` locally before each round; the reviewer sees no CI result.
+- **Content PRs** on a loaded machine: `filing-records` §8.
 - When a round reports **no P0–P2**, the rounds are over. Fixing its P3 findings is your call; a P3 fix, whatever it touches, goes straight to the merge with no further round.
 
 Done when the last round reported no P0–P2 and every fix after it is pushed.
@@ -37,6 +38,6 @@ Merge only when the owner, or the orchestrator running your loop, told you to la
    - 5, refused or a bad PR state: read the output before you run anything again.
 5. Check that the issue closed, then remove the worktree.
 
-During a GitHub Actions incident (runs cancelled before any step), a green local `npm run check` on the branch stands in for CI, and the merge is `gh pr ready <pr>`, then `gh pr merge <pr> --squash --match-head-commit <head-sha>`. The same conflict rule applies: `gh pr view <pr> --json mergeable` reads CONFLICTING when the branch needs main merged in.
+During a GitHub Actions incident (runs cancelled before any step), a green full local `npm run check` on the branch stands in for CI, and the merge is `gh pr ready <pr>`, then `gh pr merge <pr> --squash --match-head-commit <head-sha>`. The same conflict rule applies: `gh pr view <pr> --json mergeable` reads CONFLICTING when the branch needs main merged in.
 
 Done when `gh pr view <pr>` reads MERGED and the issue is closed.
