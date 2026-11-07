@@ -1614,6 +1614,17 @@ export const summitWar: OnePieceSaga = {
           },
         },
         { episode: 895, factions: ['beasts-pirates'], value: BEASTS_HEADLINER },
+        // Chapter 929 (pp. 17–18), episode 923: he is one of the two
+        // Tobiroppo sent after the soba seller.
+        {
+          episode: 923,
+          chapter: 929,
+          factions: ['beasts-pirates'],
+          value: {
+            it: 'Pirati delle Cento Bestie, Tobiroppo',
+            en: 'Beasts Pirates, Tobiroppo',
+          },
+        },
         {
           episode: 957,
           chapter: 956,
