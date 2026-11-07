@@ -151,6 +151,8 @@ export const onePieceEn = {
   'fruits.pageDescription':
     'One Piece devil fruits, each hidden until the episode where it is first named.',
   'power.title': 'Power in the world',
+  'power.lede':
+    'Each group you have reached, with its seats and who holds them at your bookmark.',
   'power.pageTitle': 'Power in the world | {series} | Zero Spoiler',
   'power.pageDescription':
     'Who holds the seats of power in the One Piece world, each holder hidden until the chapter or episode that names them.',

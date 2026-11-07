@@ -1,73 +1,199 @@
+/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
+/* Hallmark · route: custom (bespoke) · genre: atmospheric · macrostructure: Marquee Hero
+ *   (a hero title over a hall of thrones; the last build was Map / Diagram)
+ * · idea: "thrones lit one by one" — every seat the reader has met is a throne,
+ *   and a throne lights in its holder's colour only once the bookmark reaches
+ *   who sits in it. A fogged seat is a dashed, unlit throne; a vacant one a
+ *   solid, empty throne. The spoiler contract is the picture: the dark is what
+ *   is not yet known. Mocked against a tiered monument and a ladder of ranks.
+ * · theme: Sea Chart (locked) · display: Bricolage Grotesque 800 at `hero`
+ * · hierarchy: a council's seats stand level; a chain's or a crew's first seat
+ *   (the top rank, the captain) stands alone above the rest, larger
+ * · motion: each lit throne's glow fades up in seat order, opacity only, and
+ *   not at all under reduced motion; the title never animates (#929)
+ * · contrast: names ink, titles muted, states ink2/muted on paper (40-41);
+ *   the glow is decorative and carries no text */
 import * as stylex from '@stylexjs/stylex'
 import { Link } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
-import { ArchivePage } from '~/components/ArchivePage'
+import { ArtStrokes } from '~/components/ChartArt'
+import {
+  THRONE_ART_BOX,
+  THRONE_BACK,
+  THRONE_DAIS,
+  THRONE_VIEWBOX,
+} from '~/components/chrome/throne'
+import { ART_VIEWBOX, tintOf } from '~/components/drawing'
+import { emblemStyles } from '~/components/emblem.styles'
 import { EpisodeMark } from '~/components/EpisodeMark'
+import { styles } from '~/components/PowerBoard.styles'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { useBookmark, useSeriesParams } from '~/lib/progress/BookmarkContext'
 import type { BodyView, PowerPageView, SeatView } from '~/lib/view/power'
-import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
+import { settleStyles } from '~/styles/settle'
 
 /**
- * The power page's frame (#1085): each body the reader has met, its seats in
- * order and who holds each. Plain on purpose; its look is #1086's.
+ * The power page (#1086): a hall of thrones, one row of them for each body
+ * the reader has met. Only a held seat has a drawing and a colour, and the
+ * server sends them only for a holder the reader has reached, so the hall is
+ * as dark as the reader's bookmark leaves it.
  */
 export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const { bookmark } = useBookmark()
 
   return (
-    <ArchivePage title={t('power.title')}>
-      <div {...stylex.props(styles.stack)}>
-        {bookmark === null ?
-          <div {...stylex.props(styles.notice)}>
-            <p {...stylex.props(styles.lede)}>{t('power.noBookmark')}</p>
-            <EpisodeMark placement="fold" />
-          </div>
-        : page.bodies.length === 0 && (
-            <p {...stylex.props(styles.lede)}>{t('power.none')}</p>
-          )
-        }
-        {page.bodies.map((body) => (
-          <Body
-            key={body.id}
-            body={body}
-          />
-        ))}
-      </div>
-    </ArchivePage>
+    <main
+      id="content"
+      {...stylex.props(styles.page)}
+    >
+      <header {...stylex.props(styles.head)}>
+        <h1 {...stylex.props(styles.title)}>{t('power.title')}</h1>
+        <p {...stylex.props(styles.lede)}>{t('power.lede')}</p>
+      </header>
+      {bookmark === null ?
+        <div {...stylex.props(styles.notice)}>
+          <p {...stylex.props(styles.lede)}>{t('power.noBookmark')}</p>
+          <EpisodeMark placement="fold" />
+        </div>
+      : page.bodies.length === 0 && (
+          <p {...stylex.props(styles.lede)}>{t('power.none')}</p>
+        )
+      }
+      {page.bodies.map((body, at) => (
+        <Body
+          key={body.id}
+          at={at}
+          body={body}
+        />
+      ))}
+    </main>
   )
 }
 
-function Body({ body }: { body: BodyView }): ReactElement {
+/** A body's number, `01` on: two digits hold every body the epic lists. */
+const NUMERAL_DIGITS = 2
+
+function Body({ body, at }: { at: number; body: BodyView }): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const heading = `power-${body.id}`
+  // A chain's top rank and a crew's captain stand alone above the rest.
+  const ranked = body.kind !== 'council'
+  let lit = 0
 
   return (
-    <section aria-labelledby={heading}>
-      <h2
-        id={heading}
-        {...stylex.props(styles.name)}
-      >
-        {body.name}
-      </h2>
-      {body.ended && <p {...stylex.props(styles.lede)}>{t('power.ended')}</p>}
-      <dl {...stylex.props(styles.seats)}>
-        {body.seats.map((seat, at) => (
-          <div
+    <section
+      aria-labelledby={heading}
+      {...stylex.props(styles.body, settleStyles.band, settleStyles.at(at))}
+    >
+      <header {...stylex.props(styles.bodyHead)}>
+        <span
+          aria-hidden="true"
+          {...stylex.props(styles.numeral)}
+        >
+          {String(at + 1).padStart(NUMERAL_DIGITS, '0')}
+        </span>
+        <h2
+          id={heading}
+          {...stylex.props(styles.name)}
+        >
+          {body.name}
+        </h2>
+        {body.ended && (
+          <p {...stylex.props(styles.ended)}>{t('power.ended')}</p>
+        )}
+      </header>
+      <ol {...stylex.props(styles.hall)}>
+        {body.seats.map((seat, place) => (
+          <Throne
             // eslint-disable-next-line @eslint-react/no-array-index-key -- a seat has no id, and the list is never reordered
-            key={at}
-            {...stylex.props(styles.seat)}
-          >
-            <dt {...stylex.props(styles.title)}>{seat.title}</dt>
-            <dd {...stylex.props(styles.holder)}>
-              <Holder seat={seat} />
-            </dd>
-          </div>
+            key={place}
+            lead={ranked && place === 0}
+            // Each lit throne waits for the one before it; the dark ones do
+            // not count.
+            lights={seat.state === 'held' && !body.ended ? lit++ : null}
+            seat={seat}
+          />
         ))}
-      </dl>
+      </ol>
     </section>
+  )
+}
+
+interface ThroneProps {
+  lead: boolean
+  /** Its place among the lit thrones, or `null` when it is not lit. */
+  lights: null | number
+  seat: SeatView
+}
+
+function Throne({ seat, lead, lights }: ThroneProps): ReactElement {
+  return (
+    <li {...stylex.props(styles.seat, lead && styles.lead)}>
+      <div
+        aria-hidden="true"
+        {...stylex.props(
+          styles.figure,
+          lead && styles.leadFigure,
+          seat.state === 'held' && styles.hue(tintOf(seat.holder.visual.tint)),
+        )}
+      >
+        {lights !== null && (
+          <div {...stylex.props(styles.glow, styles.lightAt(lights))} />
+        )}
+        <ThroneArt seat={seat} />
+      </div>
+      <p {...stylex.props(styles.seatTitle)}>{seat.title}</p>
+      <p {...stylex.props(styles.holder, seat.state !== 'held' && styles.dark)}>
+        <Holder seat={seat} />
+      </p>
+    </li>
+  )
+}
+
+/**
+ * The throne itself: dashed and unlit while its holder is under fog, solid
+ * and empty once vacated, in the holder's colour with their drawing once
+ * held. Only the held throne has a colour to give.
+ */
+function ThroneArt({ seat }: { seat: SeatView }): ReactElement {
+  return (
+    <svg
+      viewBox={THRONE_VIEWBOX}
+      {...stylex.props(emblemStyles.svg, styles.art)}
+    >
+      <path
+        d={THRONE_BACK}
+        vectorEffect="non-scaling-stroke"
+        {...stylex.props(
+          emblemStyles.line,
+          seat.state === 'held' ?
+            emblemStyles.tinted(tintOf(seat.holder.visual.tint))
+          : emblemStyles.ambient,
+          seat.state === 'unknown' && emblemStyles.dashed,
+        )}
+      />
+      <path
+        d={THRONE_DAIS}
+        vectorEffect="non-scaling-stroke"
+        {...stylex.props(emblemStyles.line, emblemStyles.ambient)}
+      />
+      {seat.state === 'held' && (
+        <svg
+          height={THRONE_ART_BOX.height}
+          viewBox={ART_VIEWBOX}
+          width={THRONE_ART_BOX.width}
+          x={THRONE_ART_BOX.x}
+          y={THRONE_ART_BOX.y}
+        >
+          <ArtStrokes
+            strokes={seat.holder.visual.strokes}
+            tint={seat.holder.visual.tint}
+          />
+        </svg>
+      )}
+    </svg>
   )
 }
 
@@ -89,43 +215,3 @@ function Holder({ seat }: { seat: SeatView }): ReactElement | string {
 
   return t(seat.state === 'vacant' ? 'power.vacant' : 'power.unknown')
 }
-
-const styles = stylex.create({
-  stack: { gap: space.xl, display: 'grid' },
-  notice: { gap: space.md, display: 'grid', justifyItems: 'start' },
-  lede: {
-    margin: 0,
-    color: color.ink2,
-    fontSize: text.base,
-    lineHeight: leading.body,
-    maxWidth: '58ch',
-  },
-  name: {
-    margin: 0,
-    color: color.ink,
-    fontFamily: font.display,
-    fontSize: text.lg,
-    lineHeight: leading.heading,
-  },
-  seats: { margin: 0, display: 'grid', marginBlockStart: space.sm },
-  seat: {
-    paddingBlock: space.xs,
-    borderBlockEndColor: color.rule,
-    borderBlockEndStyle: 'solid',
-    borderBlockEndWidth: rule.hair,
-    columnGap: space.md,
-    display: 'grid',
-    gridTemplateColumns: {
-      'default': 'minmax(0, 1fr)',
-      '@media (min-width: 30rem)': 'minmax(7rem, 12rem) minmax(0, 1fr)',
-    },
-  },
-  title: { color: color.muted, fontSize: text.xs, lineHeight: leading.body },
-  holder: {
-    margin: 0,
-    color: color.ink2,
-    fontSize: text.base,
-    lineHeight: leading.body,
-  },
-  link: { color: color.ink2, textDecorationLine: 'underline' },
-})
