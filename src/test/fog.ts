@@ -75,17 +75,15 @@ function named(
 const MATCHED_BY = 'aliases'
 
 /** Every alias a payload lists for a search, however deeply nested. */
-function aliasesIn(payload: unknown, found = new Set<string>()): Set<string> {
+function aliasesIn(payload: unknown, found: string[] = []): string[] {
   if (payload === null || typeof payload !== 'object') {
     return found
   }
 
   for (const [key, value] of Object.entries(payload)) {
-    if (key === MATCHED_BY && Array.isArray(value)) {
-      for (const alias of value) {
-        found.add(String(alias))
-      }
-    }
+    const listed =
+      key === MATCHED_BY && Array.isArray(value) ? value.map(String) : []
+    found.push(...listed)
     aliasesIn(value, found)
   }
 
@@ -525,7 +523,7 @@ export function leaksOf(
 
     const words = {
       drawn: drawnIn(payload),
-      folded: aliasesIn(payload),
+      folded: new Set(aliasesIn(payload)),
       plain: named(payload, isNaming),
     }
     // A record of the source the reader does not count in is never said on
