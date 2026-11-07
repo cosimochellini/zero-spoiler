@@ -45,8 +45,17 @@ const V = 'vacant'
  */
 type Steps = [count: number, seats: string[]][]
 
+/** One step of one crew, with the seats just before it. */
+interface Edge {
+  before: string[] | undefined
+  count: number
+  id: string
+  seats: string[]
+  unit: Unit
+}
+
 /** Each step with the seats just before it, for `it.each`. */
-function edgesOf(id: string, unit: Unit, steps: Steps) {
+function edgesOf(id: string, unit: Unit, steps: Steps): Edge[] {
   return steps.map(([count, seats], index) => ({
     id,
     unit,
@@ -181,12 +190,16 @@ const EDGES = [
 describe('the Emperors’ crews, first half', () => {
   it.each(EDGES)(
     'seat the $id at $unit $count as told',
-    ({ before, count, id, seats, unit }) => {
-      // Chapter 0 is no bookmark: the first crew opens with the story.
-      if (count > 1) {
-        expect(seatsOf(id, at(unit, count - 1))).toStrictEqual(before)
-      }
+    ({ count, id, seats, unit }) => {
       expect(seatsOf(id, at(unit, count))).toStrictEqual(seats)
+    },
+  )
+
+  // Chapter 0 is no bookmark: the first crew opens with the story.
+  it.each(EDGES.filter(({ count }) => count > 1))(
+    'seat the $id just before $unit $count as before',
+    ({ before, count, id, unit }) => {
+      expect(seatsOf(id, at(unit, count - 1))).toStrictEqual(before)
     },
   )
 
@@ -225,7 +238,7 @@ describe('the Emperors’ crews, first half', () => {
     const page = powerPage(
       readerFor(ONE_PIECE_LOADED.archive, at('chapter', 1126), 'it'),
     )
-    const titles = (id: string) =>
+    const titles = (id: string): string[] | undefined =>
       page.bodies
         .find((each) => each.id === id)
         ?.seats.map(({ title }) => title)

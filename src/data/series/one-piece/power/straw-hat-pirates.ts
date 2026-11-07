@@ -1,6 +1,6 @@
 import type { Holding, PowerBody, Seat } from '~/data/features'
-import type { LocalizedText } from '~/data/types'
 import type { OnePieceVocabulary } from '~/data/series/one-piece/records/saga'
+import type { LocalizedText } from '~/data/types'
 
 /**
  * Zoro tells Luffy he will join him: chapter 6, episode 3. The crew is two
