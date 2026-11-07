@@ -199,8 +199,11 @@ file says; it is not a missing stage.
   shows it, and the chapter that same scene is in, or chapter readers see it
   early. Stages keep this true pair; only the first drawing gets the
   arc-wide latitude.
-- Strictly after `revealedAtEpisode`, in ascending order. A redrawing at the
-  record's threshold fails a test: that is the first drawing.
+- Strictly after the record's threshold, in ascending order: after
+  `revealedAtEpisode` for a stage the anime tells; after `revealedAtChapter`
+  for one only the manga or books tell (`source: 'chapter'` on the stage or
+  its record), whose episode only orders it. A redrawing at the record's
+  threshold fails a test: that is the first drawing.
 - **A stage whose true chapter is below its record's chapter is pinned at the
   record's chapter**, as the status entries are (#459). The pin adds nothing
   to the chapter table.
@@ -208,8 +211,9 @@ file says; it is not a missing stage.
   and what is really on the object. The wiki's prose is a lead: Jack's sails,
   Leo's goggles and Tamago's teacup were all wrong or missing in it.
 - `src/data/series/index.test.ts` holds every series' redrawings to the house
-  style, a `chapter:` pin, an episode after the threshold and ascending order;
-  that the pin is the true chapter is a review check.
+  style, a `chapter:` pin and ascending order, each stage after the threshold
+  in the units of the medium that tells it (#1154); that the pin is the true
+  chapter is a review check.
 
 ## Workflow
 

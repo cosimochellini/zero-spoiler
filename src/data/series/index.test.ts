@@ -414,17 +414,20 @@ describe.each(LOADED_SERIES)(
       // Read the way every page does (`datedOf`, behind `latestOf`,
       // `reachedOf` and `redrawn`). A series that files `REDRAWINGS` without
       // wiring them is caught by the next test but one.
-      // A manga-only stage (`source: 'chapter'`) is walked in chapters alone,
-      // as every other manga-only entry is: its episode only orders it, so
-      // the rule holds in chapters, where the anime has ended and a record
-      // filed at its last episode can still change.
+      // A stage one medium alone tells (its record's `source`, else its
+      // own, as `chapterTable.gateOf` reads it) is walked in that medium's
+      // units alone, as every other one-medium entry is: in every series, a
+      // manga-only stage is held in chapters, where the anime has ended and a
+      // record filed at its last episode can still change.
       for (const entity of entities) {
-        const stages = archive.datedOf(entity, 'redrawing')
+        const stages = archive
+          .datedOf(entity, 'redrawing')
+          .map((stage) => ({ ...stage, told: entity.source ?? stage.source }))
         const episodes = stages
-          .filter((stage) => toldIn(stage, 'episode'))
+          .filter((stage) => stage.told !== 'chapter')
           .map((stage) => stage.episode)
         const told = stages
-          .filter((stage) => stage.source === 'chapter')
+          .filter((stage) => stage.told === 'chapter')
           .map((stage) => stage.chapter ?? 0)
         const chapters = stages.map((stage) => stage.chapter ?? 0)
 
@@ -439,8 +442,8 @@ describe.each(LOADED_SERIES)(
         // A stage told in the anime comes after the record's episode; a
         // manga-only one after its chapter, at or after its episode.
         for (const stage of stages) {
-          const { chapter, episode, source, value } = stage
-          const mangaOnly = source === 'chapter'
+          const { chapter, episode, value } = stage
+          const mangaOnly = stage.told === 'chapter'
 
           expect(chapter, entity.id).toBeDefined()
           expect(

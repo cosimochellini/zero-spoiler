@@ -1161,8 +1161,21 @@ const electionReturningRedrawn: Redrawings = {
 /** A manga-only stage of a returning record, told in Kakin's chapters. */
 const KAKIN = { episode: 148, source: 'chapter' } as const
 
-/** Kortopi's vase, on its side: it lies with its mouth to the right. */
-const KORTOPI_LYING = 'translate(6 14) rotate(90 48 150) translate(-20 -8)'
+/** Kortopi's vase, the first stroke of his drawing. */
+const KORTOPI_VASE = YORKNEW_CITY_DRAWINGS.kortopi.slice(0, 1)
+
+/**
+ * Hisoka's right hand with the four fingers and their nails in the muted
+ * ink (strokes 2 and 3) and without the creases of the fingers (stroke 7):
+ * the stage of his return mirrors it into the left hand he rebuilds.
+ */
+const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka
+  .map((stroke, index) => {
+    return index === 2 || index === 3 ?
+        { ...stroke, role: 'ambient' as const }
+      : stroke
+  })
+  .filter((_, index) => index !== 7)
 
 /** Returning records whose drawing changes in Kakin, chapters 340–370 (#1154). */
 const kakinReturningRedrawn: Redrawings = {
@@ -1230,21 +1243,13 @@ const kakinReturningRedrawn: Redrawings = {
     },
   ],
   'hisoka': [
-    // His left hand, mirrored from the right: back from the dead, he
-    // rebuilds with Texture Surprise the four fingers the blast took, the
-    // seams where they join drawn soft, chapter 357. He dies and returns in
-    // the same chapter, so the return is the only stage.
-    {
-      ...KAKIN,
-      chapter: 357,
-      value: [
-        ...moved(DRAWINGS.hisoka, MIRRORED),
-        {
-          d: 'M101 101 L111 99 M84 97 L97 97 M66 98 L82 96 M48 104 L59 100 M104 97 v7 M108 96 v7 M88 93 v7 M93 93 v7 M70 92 v7 M77 92 v7 M51 98 v7 M56 97 v7',
-          role: 'soft',
-        },
-      ],
-    },
+    // His left hand, mirrored from the right: back from the dead, he makes
+    // rubber prostheses for the four fingers the blast took (chapter 355)
+    // with Texture Surprise, chapter 357. The rebuilt fingers and their
+    // nails are drawn in the muted ink, an imitation over the real palm;
+    // the thumb, which the blast spared, keeps its nail in tint. He dies and
+    // returns in the same chapter, so the return is the only stage.
+    { ...KAKIN, chapter: 357, value: moved(HISOKA_REBUILT, MIRRORED) },
   ],
   'shalnark': [
     // The same laptop, shut, on the ground under an empty swing: Hisoka
@@ -1265,21 +1270,53 @@ const kakinReturningRedrawn: Redrawings = {
     },
   ],
   'kortopi': [
-    // The same two vases, the copy in tint, knocked over on the floor:
-    // Hisoka kills him, chapter 357.
+    // The same two vases knocked over and lying on the floor end to end,
+    // the copy in tint: Hisoka kills him, chapter 357.
     {
       ...KAKIN,
       chapter: 357,
       value: [
-        ...moved(YORKNEW_CITY_DRAWINGS.kortopi.slice(0, 1), KORTOPI_LYING),
         ...moved(
-          YORKNEW_CITY_DRAWINGS.kortopi.slice(1, 2),
-          `translate(4 -94) ${KORTOPI_LYING}`,
+          KORTOPI_VASE,
+          'translate(-36.8 21.5) scale(0.85) rotate(90 48 150)',
+        ),
+        ...moved(
+          KORTOPI_VASE.map((stroke) => ({
+            ...stroke,
+            role: 'accent' as const,
+          })),
+          'translate(114.6 21.5) scale(0.85) rotate(-90 48 150)',
         ),
         { d: 'M4 166 H156', role: 'ambient', dashed: true },
-        { d: 'M40 160 l6 -4 M70 160 l6 -4 M100 160 l6 -4', role: 'ambient' },
+        { d: 'M24 172 l6 -4 M80 172 l6 -4 M130 172 l6 -4', role: 'ambient' },
       ],
     },
+  ],
+  'chrollo': [
+    // Another person's clothes in place of his coat: a plain jacket with
+    // no fur at the collar or cuffs, its collar in tint. He disguises
+    // himself in the Heavens Arena crowd, chapter 353; the wiki does not
+    // describe the clothes, so nothing on them is drawn.
+    {
+      ...KAKIN,
+      chapter: 353,
+      value: [
+        {
+          d: 'M60 42 L36 54 L28 134 H42 L48 86 L48 176 H112 L112 86 L118 134 H132 L124 54 L100 42',
+        },
+        { d: 'M60 42 L80 96 L100 42 M70 44 L80 70 L90 44', role: 'accent' },
+        {
+          d: 'M80 96 V176 M86 112 h0.01 M86 132 h0.01 M86 152 h0.01',
+          role: 'soft',
+        },
+        { d: 'M38 76 l5 10 M122 76 l-5 10', role: 'soft' },
+        { d: 'M96 112 l8 -6 M98 136 l8 -6 M98 160 l8 -6', role: 'ambient' },
+        shadow(80, 188, 52),
+      ],
+    },
+    // The coat again: the fight over, he is next seen on the phone to
+    // Shalnark away from the arena, chapter 357.
+    { ...KAKIN, chapter: 357, value: YORKNEW_CITY_DRAWINGS.chrollo },
   ],
 }
 

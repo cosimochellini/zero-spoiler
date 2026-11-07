@@ -788,8 +788,8 @@ export const kakinPhaseOneBeasts: Redrawings = {
   ],
   'luzurus-hui-guo-rou': [
     // A great centipede curling over him: antennae, small wing-like
-    // extensions behind its head, many legs and a pincer at its tail,
-    // chapter 362. Its face is not drawn.
+    // extensions behind its head and many legs, chapter 362. Its face is not
+    // drawn, nor the pincer at its tail, first shown in chapter 375.
     {
       ...BEAST,
       chapter: 362,
@@ -804,7 +804,6 @@ export const kakinPhaseOneBeasts: Redrawings = {
         },
         { d: 'M32 38 C24 28 20 20 22 10 M36 36 C32 24 34 14 40 8' },
         { d: 'M46 44 C42 32 52 26 58 36', role: 'soft' },
-        { d: 'M126 50 C134 44 138 36 134 28 M126 52 C136 54 144 50 146 42' },
       ],
     },
   ],

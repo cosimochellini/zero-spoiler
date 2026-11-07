@@ -18,6 +18,7 @@ const STAGES = [
   { id: 'mizaistom-nana', chapter: 343, change: 'Cross Game' },
   { id: 'ging-freecss', chapter: 347, change: 'remote punch' },
   { id: 'saiyu', chapter: 348, change: 'spy for Beyond' },
+  { id: 'chrollo', chapter: 353, change: 'disguise' },
   { id: 'hisoka', chapter: 357, change: 'return' },
   { id: 'shalnark', chapter: 357, change: 'death' },
   { id: 'kortopi', chapter: 357, change: 'death' },
@@ -52,6 +53,17 @@ function drawingAt(
 ): ReturnType<typeof drawingsFor>[string] | undefined {
   return drawingsFor([id], readerFor(archive, bookmark, locale))[id]
 }
+
+describe('Chrollo’s disguise', () => {
+  it.each(LOCALES)('ends with the fight, in %s', (locale) => {
+    // A temporary costume: from chapter 357 he is in his coat again, his
+    // first drawing, and never before.
+    const coat = drawingAt('chrollo', inChapter(352), locale)
+
+    expect(drawingAt('chrollo', inChapter(357), locale)).toStrictEqual(coat)
+    expect(drawingAt('chrollo', inChapter(356), locale)).not.toStrictEqual(coat)
+  })
+})
 
 describe.each(STAGES)('$id’s $change drawing', ({ id, chapter }) => {
   it.each(LOCALES)('changes at its chapter, never before, in %s', (locale) => {

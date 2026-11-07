@@ -70,8 +70,9 @@ anime viewer who has finished never sees it.
   manga-only entry does. So a record may have several, and a record filed at
   episode 148 (all of Kakin) is redrawn like any other.
 - **Review checks by hand:** anything the 2011 anime omits at or below
-  `lastAdaptedChapter` also takes `source: 'chapter'`. A manga-only fact on an anime-only record, and anything
-  else outside these rules, waits for an owner ruling.
+  `lastAdaptedChapter` also takes `source: 'chapter'`. A manga-only fact on
+  an anime-only record, and anything else outside these rules, waits for an
+  owner ruling.
 
 ## Research and verification
 
