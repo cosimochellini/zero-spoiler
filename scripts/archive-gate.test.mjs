@@ -326,6 +326,55 @@ describe('the bodies of power the gate looks for', () => {
     })
   })
 
+  it('trusts a holder id from nine characters, else a seat title from twelve', () => {
+    const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
+    const dir = path.join(root, 'src/data/series/edge/power')
+    mkdirSync(dir, { recursive: true })
+    // One character short of each threshold: refused.
+    writeFileSync(
+      path.join(dir, 'a-short.ts'),
+      "export const A = [{ title: { en: 'Elevenchars' }, value: 'rob-lucc' }]\n",
+    )
+    // A nine-character id wins over a title of any length.
+    writeFileSync(
+      path.join(dir, 'b-id.ts'),
+      "export const B = [{ title: { en: 'Twelve chars' }, value: 'rob-lucci' }]\n",
+    )
+    // No id long enough: the twelve-character title stands in.
+    writeFileSync(
+      path.join(dir, 'c-title.ts'),
+      "export const C = [{ title: { en: 'Twelve chars' }, value: 'rob-lucc' }]\n",
+    )
+
+    try {
+      const canaries = powerCanaries(root, 'edge').toSorted((a, b) =>
+        a.file.localeCompare(b.file),
+      )
+
+      expect(canaries).toStrictEqual([
+        { file: 'src/data/series/edge/power/a-short.ts', phrase: null },
+        { file: 'src/data/series/edge/power/b-id.ts', phrase: 'rob-lucci' },
+        {
+          file: 'src/data/series/edge/power/c-title.ts',
+          phrase: 'Twelve chars',
+        },
+      ])
+      // A client chunk holding only the title is caught by it.
+      const titled = canaries.filter(({ file }) => file.endsWith('c-title.ts'))
+      expect(
+        judge([chunk('index.js', 'const t = "Twelve chars"')], titled).found,
+      ).toStrictEqual([
+        {
+          chunk: 'index.js',
+          file: 'src/data/series/edge/power/c-title.ts',
+          phrase: 'Twelve chars',
+        },
+      ])
+    } finally {
+      rmSync(root, { recursive: true })
+    }
+  })
+
   it('refuses a body seating no id it can trust, and skips a series with none', () => {
     // A body whose holders are all short ids or words, and whose seat titles
     // are a word or two, has nothing the gate could tell from the client's

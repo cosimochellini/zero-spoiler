@@ -134,6 +134,21 @@ describe('the World Government on the power page', () => {
     expect(seatsOf('cp9', chapter(360))?.[0]).toBe('spandam')
   })
 
+  it.each([
+    [chapter(369), []],
+    [chapter(370), ['nero']],
+    [chapter(372), ['nero']],
+    [chapter(373), ['vacant']],
+    [episode(258), []],
+    [episode(259), ['nero']],
+    [episode(261), ['nero']],
+    [episode(262), ['vacant']],
+    [episode(263), ['vacant']],
+    [episode(264), ['vacant', 'jabra', 'kumadori', 'fukurou']],
+  ])('seats Nero and the Enies Lobby three at %j', (at, rest) => {
+    expect(seatsOf('cp9', at)?.slice(5)).toStrictEqual(rest)
+  })
+
   it('throws Nero out, and waits for the Enies Lobby three’s names', () => {
     expect(seatsOf('cp9', chapter(372))?.slice(5)).toStrictEqual(['nero'])
     expect(seatsOf('cp9', chapter(375))?.slice(5)).toStrictEqual([
@@ -161,6 +176,9 @@ describe('the World Government on the power page', () => {
 
   it.each([
     [chapter(800), ['spandam', 'rob-lucci', 'kaku']],
+    [episode(745), ['spandam', 'rob-lucci', 'kaku']],
+    [chapter(906), ['vacant', 'vacant', 'kaku']],
+    [episode(885), ['vacant', 'vacant', 'kaku']],
     [chapter(801), ['vacant', 'vacant', 'kaku']],
     [episode(746), ['vacant', 'vacant', 'kaku']],
     [chapter(907), ['vacant', 'vacant', 'vacant']],
