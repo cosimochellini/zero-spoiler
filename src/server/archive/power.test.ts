@@ -246,6 +246,19 @@ describe('the bodies of power', () => {
     ).toStrictEqual([])
   })
 
+  it('tell a chain’s or a crew’s lead seat before the rest', () => {
+    const [, crown, sceptre] = FIXTURE_BODY.seats
+    const chain = { ...FIXTURE_BODY, kind: 'chain' as const }
+
+    expect(bodyFaults([chain], POWER_ARCHIVE)).toStrictEqual([])
+    expect(
+      bodyFaults(
+        [{ ...chain, seats: [sceptre ?? THRONE, crown ?? THRONE] }],
+        POWER_ARCHIVE,
+      ),
+    ).toStrictEqual(['warlords tells a seat before its lead'])
+  })
+
   it('hold the fixture, and catch a body broken against them', () => {
     expect(bodyFaults([FIXTURE_BODY], POWER_ARCHIVE)).toStrictEqual([])
 

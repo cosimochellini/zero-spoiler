@@ -145,6 +145,21 @@ function seatFaults(
 }
 
 /**
+ * Whether a chain's top rank or a crew's captain, its first seat, is told no
+ * later than every other seat: the page stands the first seat it sends above
+ * the rest, so a lower seat told first would stand there instead.
+ */
+function leadsFirst({ kind, seats }: PowerBody): boolean {
+  const [lead] = seats
+
+  return (
+    kind === 'council'
+    || lead === undefined
+    || seats.every((seat) => noEarlier(seat.told, lead.told))
+  )
+}
+
+/**
  * What is wrong with a series' bodies of power, as messages; none for a
  * sound list. A seat opens no earlier than its body, and its holders no
  * earlier than the seat, in timeline order, inside the series' ceilings,
@@ -161,6 +176,7 @@ export function bodyFaults(
     ...(body.ended === undefined || noEarlier(body.ended, body) ?
       []
     : [`${body.id} ends before it opens`]),
+    ...(leadsFirst(body) ? [] : [`${body.id} tells a seat before its lead`]),
     ...body.seats.flatMap((seat, place) =>
       seatFaults(seat, `${body.id} seat ${String(place)}`, { archive, body }),
     ),
