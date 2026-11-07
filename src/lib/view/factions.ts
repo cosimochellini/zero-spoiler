@@ -18,6 +18,7 @@ export const FACTIONS = new Set<string>(
     'cross-guild': true,
     'donquixote-pirates': true,
     'emperors': true,
+    'five-elders': true,
     'galley-la': true,
     'independent': true,
     'knights-of-god': true,

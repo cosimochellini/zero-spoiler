@@ -6,13 +6,14 @@ import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
 
 import { eatersOf } from './dated'
 import { fruits } from './fruits'
+import { BODIES } from './power'
 import { CHARACTER_DOSSIERS } from './sagas'
 
 /**
  * The faction tags on the fruit eaters' affiliations (`Affiliation` in
  * `./types`). The type already holds every tag to the vocabulary; these hold
  * the rest: every eater's every entry is tagged, and the vocabulary is no
- * larger than the tags. Whether a label names a record too early is the leak
+ * larger than the tags and the bodies of power. Whether a label names a record too early is the leak
  * scan's (`~/data/leaks.test.ts`).
  */
 
@@ -62,8 +63,12 @@ describe('the faction tags', () => {
   })
 
   it('use every id the vocabulary labels', () => {
-    // A label nobody is tagged with is a group the archive does not need.
+    // A label no eater is tagged with and no body of power goes by is a group
+    // the archive does not need.
     const used = new Set(ENTRIES.flatMap(({ entry }) => entry.factions ?? []))
+    for (const { id } of BODIES) {
+      used.add(id)
+    }
 
     expect(VOCABULARY.toSorted(byString())).toStrictEqual(
       [...used].toSorted(byString()),

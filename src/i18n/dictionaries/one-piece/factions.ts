@@ -6,8 +6,9 @@ import type { Faction } from '~/lib/view/records'
  * both locales. Server-only, and not part of One Piece's copy: some name a
  * group the reader meets late ("Kozuki family", "Cross Guild"), so the fruit
  * album sends each with its group (`fruitAlbum`), and a group is sent only
- * once an eater the reader has reached stands in it (#988). The gate is the
- * affiliation entry's, and nowhere else.
+ * once an eater the reader has reached stands in it (#988), at the
+ * affiliation entry's gate. The power page sends a body's label at the body's
+ * own gate (`powerPage`).
  */
 export const FACTION_LABELS: Record<Locale, Record<Faction, string>> = {
   en: {
@@ -17,6 +18,7 @@ export const FACTION_LABELS: Record<Locale, Record<Faction, string>> = {
     'warlords': 'Seven Warlords of the Sea',
     'marines': 'Marines',
     'world-government': 'World Government',
+    'five-elders': 'Five Elders',
     'cp9': 'Cipher Pol 9',
     'cp0': 'Cipher Pol 0',
     'knights-of-god': 'Knights of God',
@@ -48,6 +50,7 @@ export const FACTION_LABELS: Record<Locale, Record<Faction, string>> = {
     'warlords': 'Flotta dei Sette',
     'marines': 'Marina',
     'world-government': 'Governo Mondiale',
+    'five-elders': 'Cinque Astri di Saggezza',
     'cp9': 'Cipher Pol 9',
     'cp0': 'Cipher Pol 0',
     'knights-of-god': 'Cavalieri di Dio',
