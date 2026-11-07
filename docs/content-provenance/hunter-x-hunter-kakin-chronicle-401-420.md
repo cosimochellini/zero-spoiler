@@ -34,9 +34,10 @@ its corrections are listed below.
   only orders it: an anime reader never sees it, in the chronicle or at home.
 - Each story sits at the first chapter by whose end the reader knows all of it.
   Where a story gathers several chapters, the note lists each. Cliffhangers are
-  not filed: Benjamin's shot at Tserriednich (416) and the stomping Salkov
-  doubts (417) are told at 418, where the staged death is explained; Borksen's
-  Yes (409) is told at 410, where the cheat and the forced answer are.
+  not filed: the outcome of Benjamin's shot at Tserriednich (416) and of the
+  stomping Salkov doubts (417) is told at 418, where the staged death is
+  explained, and Benjamin's 417 story tells only the act and the guard's doubt;
+  Borksen's Yes (409) is told at 410, where the cheat and the forced answer are.
 - A story names only characters filed by its chapter, each with a marker.
   Records that open later in the window are described before their gate: the
   soldier signing to Balsamilco (Vict, 404), Benjamin's soldier who sees
@@ -55,15 +56,17 @@ its corrections are listed below.
   stories at 405 and 420.
 - A story that implies a status change carries it, manga-only: Oito is
   `captured` at 415 (detention, indictment deferred, not a sentence) and Danjin
-  at 416 (taken for questioning, to be detained at the Justice Bureau). Two
-  deaths the stories tell move to #1158, because a death status and its drawing
-  stage are filed together and both records have real drawings since #1168:
-  Lynch's `deceased` pin (406 → 405, where Bonolenov's thoughts and flashback
-  tell her killing; her character page cites 405 and the body is found at 406)
-  and Fukataki's `deceased` at 416 (shot by Benjamin). Not added: Tserriednich's
-  staged death, Benjamin's, Camilla's, Tubeppa's and Tyson's infections (all
-  alive at 420), Halkenburg bound in Balsamilco's body (already deceased at
-  404), and the princes confined to their quarters under martial law.
+  at 417 (taken for questioning at 416, his story's chapter; chapter 417 states
+  that he is to be detained at the Central Justice Bureau, so the pin rounds
+  up). Two deaths the stories tell move to #1158, because a death status and its
+  drawing stage are filed together and both records have real drawings since
+  #1168: Lynch's `deceased` pin (406 → 405, where Bonolenov's thoughts and
+  flashback tell her killing; her character page cites 405 and the body is found
+  at 406) and Fukataki's `deceased` at 416 (shot by Benjamin). Not added:
+  Tserriednich's staged death, Benjamin's, Camilla's, Tubeppa's and Tyson's
+  infections (all alive at 420), Halkenburg bound in Balsamilco's body (already
+  deceased at 404), and the princes confined to their quarters under martial
+  law.
 - Body death counts as deceased (wiki infobox): Shikaku and Halkenburg keep
   their `deceased` at 404, and a surviving mind is told in the stories.
 
@@ -133,8 +136,10 @@ its corrections are listed below.
 
 ## Independent verifier corrections
 
-Two independent verifiers re-read all 79 stories against
-`Chapter_401`–`Chapter_420`. Nothing was filed too early and no name leaked.
+Two independent verifiers re-read the 79 stories of the first draft against
+`Chapter_401`–`Chapter_420`. Nothing was filed too early and no name leaked. The
+PR now has 84 stories: the 5 added after verification were written from the
+verifiers' own evidence and checked against Chapter_410, 412, 413, 415 and 416.
 Their fixes:
 
 1. **shikaku 404, sumidori 404 (P1):** the swap was told backwards. Halkenburg's
@@ -174,3 +179,10 @@ Their fixes:
 
 The stories now number 84; every one is 40–140 words in both languages, and
 `FIRST_STORIES` is unchanged.
+
+## Review round 1
+
+No P0–P2. P3 fixes: Danjin's `captured` moves from 416 to 417, where his
+detention is stated; Benjamin's 417 story tells the stomping and the guard's
+doubt without an outcome; the counts above say 84; the `src/test/series.ts`
+comment says timelines is a floor.
