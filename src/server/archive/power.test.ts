@@ -1,0 +1,210 @@
+import { describe, expect, it } from 'vitest'
+
+import { type Locale, LOCALES } from '~/i18n/locales'
+import type { Bookmark } from '~/lib/progress/episode'
+import type { SeatView } from '~/lib/view/power'
+import { leaksOf } from '~/test/fog'
+import {
+  bodyFaults,
+  EARLY,
+  FIXTURE_BODY,
+  LATE,
+  MIDWAY,
+  POWER_ARCHIVE,
+} from '~/test/power'
+import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
+
+import { powerPage } from './power.server'
+import { readerFor } from './reader.server'
+
+/** The fixture's page at one bookmark. */
+function pageAt(bookmark: Bookmark, locale: Locale = 'en') {
+  return powerPage(readerFor(POWER_ARCHIVE, bookmark, locale))
+}
+
+/** Each seat as its holder's id, `vacant` or `unknown`. */
+function seatsAt(bookmark: Bookmark): string[] | undefined {
+  return pageAt(bookmark).bodies[0]?.seats.map((seat: SeatView) =>
+    seat.state === 'held' ? seat.holder.id : seat.state,
+  )
+}
+
+const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
+const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
+
+/** Every word the fixture could leak, in both locales. */
+const FIXTURE_WORDS = [
+  FIXTURE_BODY.id,
+  'Seven Warlords',
+  'Flotta dei Sette',
+  ...FIXTURE_BODY.seats.flatMap(({ title }) => [title.en, title.it]),
+  EARLY.id,
+  EARLY.name.en,
+  LATE.id,
+  LATE.name.en,
+]
+
+describe('the power page', () => {
+  it.each([null, chapter(1), episode(1)])(
+    'names nothing of the fixture at %j',
+    (bookmark) => {
+      for (const locale of LOCALES) {
+        const served = JSON.stringify(pageAt(bookmark, locale))
+
+        expect(served).toBe('{"bodies":[]}')
+        for (const word of FIXTURE_WORDS) {
+          expect(served).not.toContain(word)
+        }
+      }
+    },
+  )
+
+  it('opens a body at its gate with the seats told then', () => {
+    const at = chapter(FIXTURE_BODY.revealedAtChapter)
+    const [body] = pageAt(at).bodies
+
+    expect(body).toMatchObject({
+      id: 'warlords',
+      kind: 'council',
+      name: 'Seven Warlords of the Sea',
+      ended: false,
+    })
+    expect(seatsAt(at)).toStrictEqual([EARLY.id, 'unknown'])
+    expect(pageAt(at, 'it').bodies[0]?.seats[0]?.title).toBe('Trono di prova')
+    // A seat met before its holder sends its title and nothing else.
+    expect(pageAt(at).bodies[0]?.seats[1]).toStrictEqual({
+      title: 'Fixture Crown',
+      state: 'unknown',
+    })
+    expect(JSON.stringify(pageAt(at))).not.toContain(LATE.id)
+  })
+
+  it('vacates a seat and counts a new one from the chapter that tells it', () => {
+    const at = chapter(MIDWAY.chapter)
+
+    // The second seat's holder is dated here but not met until later: it
+    // waits for the character's own gate.
+    expect(seatsAt(at)).toStrictEqual(['vacant', 'unknown', 'unknown'])
+    expect(seatsAt(chapter(MIDWAY.chapter - 1))).toStrictEqual([
+      EARLY.id,
+      'unknown',
+    ])
+    expect(seatsAt(chapter(LATE.revealedAtChapter))).toStrictEqual([
+      'vacant',
+      LATE.id,
+      'unknown',
+    ])
+  })
+
+  it('ends the body with its seats as they stood', () => {
+    expect(pageAt(chapter(599)).bodies[0]?.ended).toBe(false)
+    expect(pageAt(chapter(600)).bodies[0]?.ended).toBe(true)
+    // The manga alone seats `EARLY` again at chapter 620.
+    expect(seatsAt(chapter(620))).toStrictEqual(['vacant', EARLY.id, 'unknown'])
+  })
+
+  it('reads the same gates in episodes, without the manga-only entry', () => {
+    expect(seatsAt(episode(FIXTURE_BODY.revealedAtEpisode))).toStrictEqual([
+      EARLY.id,
+      'unknown',
+    ])
+    expect(seatsAt(episode(MIDWAY.episode))).toStrictEqual([
+      'vacant',
+      'unknown',
+      'unknown',
+    ])
+    expect(seatsAt(episode(LATE.revealedAtEpisode))).toStrictEqual([
+      'vacant',
+      LATE.id,
+      'unknown',
+    ])
+    expect(pageAt(episode(500)).bodies[0]?.ended).toBe(true)
+    expect(seatsAt(episode(1000))).toStrictEqual(['vacant', LATE.id, 'unknown'])
+  })
+
+  it('leaks nothing at any point around its gates', () => {
+    const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
+    const points = [
+      null,
+      ...[
+        1,
+        FIXTURE_BODY.revealedAtChapter - 1,
+        FIXTURE_BODY.revealedAtChapter,
+        MIDWAY.chapter - 1,
+        MIDWAY.chapter,
+        LATE.revealedAtChapter - 1,
+        LATE.revealedAtChapter,
+        619,
+        620,
+      ].map((at) => chapter(at)),
+      ...[
+        1,
+        FIXTURE_BODY.revealedAtEpisode - 1,
+        FIXTURE_BODY.revealedAtEpisode,
+        MIDWAY.episode,
+        LATE.revealedAtEpisode - 1,
+        LATE.revealedAtEpisode,
+      ].map((at) => episode(at)),
+    ]
+
+    for (const bookmark of points) {
+      for (const locale of LOCALES) {
+        expect(leaks(pageAt(bookmark, locale), bookmark)).toStrictEqual([])
+      }
+    }
+  })
+
+  it.each(LOADED_SERIES.filter(({ slug }) => slug !== 'one-piece'))(
+    'is empty for $slug, which has none',
+    ({ archive }) => {
+      expect(powerPage(readerFor(archive, chapter(1000), 'en'))).toStrictEqual({
+        bodies: [],
+      })
+    },
+  )
+})
+
+describe('the bodies of power', () => {
+  it.each(LOADED_SERIES)('are sound in $slug', ({ archive }) => {
+    expect(
+      bodyFaults(archive.features.power?.bodies ?? [], archive),
+    ).toStrictEqual([])
+  })
+
+  it('hold the fixture, and catch a body broken against them', () => {
+    expect(bodyFaults([FIXTURE_BODY], POWER_ARCHIVE)).toStrictEqual([])
+    const [seat] = FIXTURE_BODY.seats
+    if (seat === undefined) {
+      throw new Error('The fixture has a seat')
+    }
+    const broken = {
+      ...FIXTURE_BODY,
+      seats: [
+        {
+          ...seat,
+          told: { revealedAtEpisode: 1, revealedAtChapter: 1 },
+          holders: [...seat.holders].reverse(),
+        },
+        {
+          ...seat,
+          holders: [{ episode: 9999, chapter: 9999, value: 'nobody' }],
+        },
+      ],
+      ended: { revealedAtEpisode: 1, revealedAtChapter: 1 },
+    }
+
+    expect(bodyFaults([broken, broken], POWER_ARCHIVE)).toStrictEqual([
+      'warlords ends before it opens',
+      'warlords seat 0 opens before its body',
+      'warlords seat 0 holders are out of order',
+      'warlords seat 1 has a holder past the ceiling',
+      'warlords seat 1 seats nobody, who is not filed',
+      'warlords is filed twice',
+      'warlords ends before it opens',
+      'warlords seat 0 opens before its body',
+      'warlords seat 0 holders are out of order',
+      'warlords seat 1 has a holder past the ceiling',
+      'warlords seat 1 seats nobody, who is not filed',
+    ])
+  })
+})

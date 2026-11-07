@@ -69,6 +69,9 @@ describe('SiteBar', () => {
       within(banner).getByRole('link', { name: 'Fruits' }),
     ).toHaveAttribute('href', '/one-piece/en/fruits')
     expect(
+      within(banner).getByRole('link', { name: 'Power' }),
+    ).toHaveAttribute('href', '/one-piece/en/power')
+    expect(
       within(banner).getByRole('combobox', { name: 'Language' }),
     ).toBeInTheDocument()
     expect(
@@ -79,7 +82,7 @@ describe('SiteBar', () => {
       within(banner).getByRole('button', { name: 'Set episode' }),
     ).toHaveTextContent('EP ?')
     // No link row filling the middle: the space is the design.
-    expect(within(banner).getAllByRole('link')).toHaveLength(5)
+    expect(within(banner).getAllByRole('link')).toHaveLength(6)
     expect(within(banner).getAllByRole('button')).toHaveLength(1)
   })
 
@@ -267,7 +270,10 @@ describe('SiteBar', () => {
   )
 
   it.each([
-    { series: ONE_PIECE_SERIES, pages: ['Characters', 'Places', 'Fruits'] },
+    {
+      series: ONE_PIECE_SERIES,
+      pages: ['Characters', 'Places', 'Fruits', 'Power'],
+    },
     { series: HUNTER_X_HUNTER_SERIES, pages: ['Characters', 'Places'] },
   ])(
     'links only the pages $series.slug declares',
