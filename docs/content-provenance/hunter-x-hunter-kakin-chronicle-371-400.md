@@ -12,7 +12,7 @@ The writer read the English Hunter x Hunter Wiki's chapter pages 371–400 throu
 the MediaWiki API (`action=parse&prop=wikitext`): each synopsis and, where the
 page has them, its chapter notes. A few character pages settled single details:
 Kaiser (appearance 372, name 400), Famule (his part in chapter 386), Loberry
-(custody in 372), Hanzo (guarding Marayam from 361), Camilla and Halkenburg
+(custody in 371–372), Hanzo (guarding Marayam from 361), Camilla and Halkenburg
 (custody), Padaille (his death in 391), Voconte (the Room 3101 trap), Momolly
 (the academy friendship), Longhi (what chapter 400 shows of her contract) and
 Neon Nostrade ("Unknown, presumed deceased"). Names come from the phase 3 and
@@ -51,13 +51,13 @@ its corrections are listed below.
   Tang Zhao Li, Vincent, Kalluto, Killua, Botobai and Ginta. Kalluto, Botobai
   and Ginta are named in Illumi's chapter-380 story.
 - A story that implies a status change carries it, manga-only and `captured`,
-  since none of them is serving a sentence: Loberry is taken into army custody
-  (372), Camilla is confined (373) and back in her quarters under watch after
-  the trial (376, `alive`), and Halkenburg is taken into custody (389). Hanzo's
-  record gains the affiliation the chapter-372 story relies on: since chapter
-  361 he guards Marayam. Neon's chapter-377 story implies that she is dead, but
-  her `presumed-dead` status moves to #1156, which draws its stage; a status and
-  its death stage are filed together.
+  since none of them is serving a sentence: Loberry is detained and arrested by
+  the royal army (371, the story is 372), Camilla is confined (373) and back in
+  her quarters under watch after the trial (376, `alive`), and Halkenburg is
+  taken into custody (389). Hanzo's record gains the affiliation the chapter-372
+  story relies on: since chapter 361 he guards Marayam. Neon's chapter-377 story
+  implies that she is dead, but her `presumed-dead` status moves to #1156, which
+  draws its stage; a status and its death stage are filed together.
 - A test pins each of these entries before and at its chapter.
 
 ## Corrections during authoring
@@ -112,6 +112,9 @@ found no story filed too early and no name before its gate.
 16. Review round 1: the custody entries are `captured`, not `imprisoned` (which
     means serving a sentence); Neon's `presumed-dead` status moves to #1156 with
     her drawing stage; the five dated entries gain pin tests.
+17. Review round 2: Loberry's `captured` status moves to 371, where Sakata and
+    Hashito detain her and the notes say she is arrested by the royal army; her
+    story stays at 372.
 
 ## Coverage
 

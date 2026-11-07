@@ -173,7 +173,7 @@ describe('the Kakin chronicles, chapters 340–400', () => {
 // The dated entries the 371–400 stories imply, each with its status before
 // and at its pin (#1157): custody pending trial is `captured`.
 const PINS = [
-  { id: 'loberry', chapter: 372, before: 'alive', after: 'captured' },
+  { id: 'loberry', chapter: 371, before: 'alive', after: 'captured' },
   {
     id: 'camilla-hui-guo-rou',
     chapter: 373,
