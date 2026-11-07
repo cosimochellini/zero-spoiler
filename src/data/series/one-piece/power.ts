@@ -3,6 +3,7 @@ import type { PowerBody } from '~/data/features'
 import { CP9 } from './power/cp9'
 import { EMPERORS } from './power/emperors'
 import { FIVE_ELDERS } from './power/five-elders'
+import { MARINES } from './power/marines'
 import { WORLD_GOVERNMENT } from './power/world-government'
 import type { OnePieceVocabulary } from './records/saga'
 
@@ -16,6 +17,7 @@ import type { OnePieceVocabulary } from './records/saga'
 export const BODIES: PowerBody<OnePieceVocabulary>[] = [
   WORLD_GOVERNMENT,
   FIVE_ELDERS,
+  MARINES,
   CP9,
   EMPERORS,
 ]
