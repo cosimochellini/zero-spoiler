@@ -1169,13 +1169,13 @@ const KORTOPI_VASE = YORKNEW_CITY_DRAWINGS.kortopi.slice(0, 1)
  * ink (strokes 2 and 3) and without the creases of the fingers (stroke 7):
  * the stage of his return mirrors it into the left hand he rebuilds.
  */
-const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka
-  .map((stroke, index) => {
-    return index === 2 || index === 3 ?
-        { ...stroke, role: 'ambient' as const }
-      : stroke
-  })
-  .filter((_, index) => index !== 7)
+const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka.flatMap((stroke, index) => {
+  if (index === 7) {
+    return []
+  }
+
+  return [index === 2 || index === 3 ? { ...stroke, role: 'ambient' } : stroke]
+})
 
 /** Returning records whose drawing changes in Kakin, chapters 340–370 (#1154). */
 const kakinReturningRedrawn: Redrawings = {
