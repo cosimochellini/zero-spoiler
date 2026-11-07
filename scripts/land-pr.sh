@@ -1,9 +1,9 @@
 #!/bin/bash
-# Lands a reviewed pull request: marks it ready, waits for the CI workflow on the
-# reviewed head and squash-merges it on green. CI skips draft pull requests, so
-# marking it ready is what starts the run. Main moving on is fine: the merge goes ahead
-# whenever GitHub reports no conflict, and the branch is synced with main only
-# when it conflicts, by hand (landing-prs skill).
+# Lands a reviewed pull request: marks it ready, waits for the CI workflow on
+# the reviewed head and squash-merges it on green. CI skips draft pull
+# requests, so marking it ready is what starts the run. Main moving on is fine:
+# the merge goes ahead whenever GitHub reports no conflict, and the branch is
+# synced with main only when it conflicts, by hand (landing-prs skill).
 #
 # usage: scripts/land-pr.sh <pr> <expected-head-sha> (full SHA or prefix)
 #
@@ -16,7 +16,8 @@
 #        the head while it was a draft; one never followed times out
 #      4 the head moved after it was pinned
 #      5 bad arguments, a SHA that does not match the initial head, a PR not
-#        open against main, a title the version bump cannot read, gh or git failed, or the merge was refused
+#        open against main, a title the version bump cannot read, gh or git
+#        failed, or the merge was refused
 set -u
 [ $# = 2 ] || { echo "usage: scripts/land-pr.sh <pr> <expected-head-sha>"; exit 5; }
 cd "$(dirname "$0")/.." || exit 5
