@@ -34,6 +34,48 @@ function seatsAt(bookmark: Bookmark): string[] | undefined {
 const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
 const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
 
+/**
+ * A seat `EARLY` holds until `MIDWAY` tells it passed to `LATE`, who is met
+ * only later: in between it must be fogged, naming neither.
+ */
+const PASSED_ARCHIVE = {
+  ...POWER_ARCHIVE,
+  features: {
+    ...POWER_ARCHIVE.features,
+    power: {
+      bodies: [
+        {
+          ...FIXTURE_BODY,
+          seats: [
+            {
+              ...THRONE,
+              holders: [
+                {
+                  episode: EARLY.revealedAtEpisode,
+                  chapter: EARLY.revealedAtChapter,
+                  value: EARLY.id,
+                },
+                { ...MIDWAY, value: LATE.id },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  },
+}
+
+/** That seat: its holder's id when held, else the whole seat as sent. */
+function passedAt(
+  bookmark: Bookmark,
+  locale: Locale = 'en',
+): SeatView | string | undefined {
+  const seat = powerPage(readerFor(PASSED_ARCHIVE, bookmark, locale)).bodies[0]
+    ?.seats[0]
+
+  return seat?.state === 'held' ? seat.holder.id : seat
+}
+
 /** Every word the fixture could leak, in both locales. */
 const FIXTURE_WORDS = [
   FIXTURE_BODY.id,
@@ -195,6 +237,38 @@ describe('the power page', () => {
       }
     }
   })
+
+  it.each([
+    [
+      chapter(MIDWAY.chapter - 1),
+      chapter(MIDWAY.chapter),
+      chapter(LATE.revealedAtChapter - 1),
+      chapter(LATE.revealedAtChapter),
+    ],
+    [
+      episode(MIDWAY.episode - 1),
+      episode(MIDWAY.episode),
+      episode(LATE.revealedAtEpisode - 1),
+      episode(LATE.revealedAtEpisode),
+    ],
+  ])(
+    'hides the old holder once a change to one not met is told (%j)',
+    (...[before, at, unmet, met]) => {
+      expect(passedAt(before)).toStrictEqual(EARLY.id)
+      expect(passedAt(met)).toStrictEqual(LATE.id)
+
+      for (const bookmark of [at, unmet]) {
+        expect(passedAt(bookmark)).toStrictEqual({
+          title: 'Fixture Throne',
+          state: 'unknown',
+        })
+        expect(passedAt(bookmark, 'it')).toStrictEqual({
+          title: 'Trono di prova',
+          state: 'unknown',
+        })
+      }
+    },
+  )
 
   it('never opens a holder the reader’s archive does not have', () => {
     const archive = {
