@@ -44,13 +44,21 @@ export const BLACKBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
     titanicCaptain([{ episode: 752, chapter: 803, value: 'shiryu' }]),
     titanicCaptain([{ episode: 752, chapter: 803, value: 'laffitte' }]),
     // Ch. 925: the captain of the sixth ship, and Pizarro a ship's captain
-    // (the chapter gives his ship the wrong number).
-    titanicCaptain([{ episode: 917, chapter: 925, value: 'catarina-devon' }]),
+    // (the chapter gives his ship the wrong number). Episode 917 calls him
+    // one of Blackbeard's captains, but no episode summary says she is one,
+    // so her seat is the manga's alone.
+    titanicCaptain([
+      {
+        episode: 917,
+        chapter: 925,
+        source: 'chapter',
+        value: 'catarina-devon',
+      },
+    ]),
     titanicCaptain([{ episode: 917, chapter: 925, value: 'avalo-pizarro' }]),
-    // Ch. 1081 p.14 makes him the tenth ship's captain, a line the anime
-    // drops; the first caption that says it is at episode 1156 (ch. 1126),
-    // where his page says it too.
-    titanicCaptain([{ episode: 1156, chapter: 1126, value: 'kuzan' }]),
+    // Ch. 1081 (its title and p.14): the tenth ship's captain. Episode 1114
+    // says he is one of the Ten Titanic Captains, without the number.
+    titanicCaptain([{ episode: 1114, chapter: 1081, value: 'kuzan' }]),
     titanicCaptain(),
     titanicCaptain(),
     titanicCaptain(),

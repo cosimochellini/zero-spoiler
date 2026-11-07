@@ -2,10 +2,10 @@ import type { PowerBody, Seat } from '~/data/features'
 import type { OnePieceVocabulary } from '~/data/series/one-piece/records/saga'
 
 /**
- * Ace tells Luffy he is the second division commander of Whitebeard's crew:
- * chapter 159, episode 95. His captain is told with him.
+ * Smoker meets Whitebeard's second division commander in Alabasta: chapter
+ * 157 (p. 12–17), episode 94. His captain is told with him.
  */
-const TOLD = { revealedAtEpisode: 95, revealedAtChapter: 159 }
+const TOLD = { revealedAtEpisode: 94, revealedAtChapter: 157 }
 
 /** Shanks boards Whitebeard's ship and calls on Marco and Jozu: ch. 434, ep 316. */
 const AT_THE_MEETING = { episode: 316, chapter: 434 }
@@ -45,9 +45,9 @@ export const WHITEBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
       told: TOLD,
       title: { en: 'Captain', it: 'Capitano' },
       holders: [
-        // Ch. 159: Ace names Whitebeard his captain; the old man's record
+        // Ch. 157: Ace is named Whitebeard's commander; the old man's record
         // opens at chapter 234, and the seat waits for it.
-        { episode: 95, chapter: 159, value: 'edward-newgate' },
+        { episode: 94, chapter: 157, value: 'edward-newgate' },
         // Ch. 576 p.15: he dies standing.
         { episode: 485, chapter: 576, value: null },
       ],
@@ -74,7 +74,8 @@ export const WHITEBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
         it: 'Comandante della seconda divisione',
       },
       holders: [
-        { episode: 95, chapter: 159, value: 'portgas-d-ace' },
+        // Ch. 157: his record opens at chapter 159, and the seat waits for it.
+        { episode: 94, chapter: 157, value: 'portgas-d-ace' },
         // Ch. 574: he dies in Luffy's arms.
         { episode: 483, chapter: 574, value: null },
       ],
@@ -95,12 +96,23 @@ export const WHITEBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
       },
       holders: [{ episode: 325, chapter: 440, value: null }],
     },
-    // Ch. 556: named on the battlefield, as his record is.
-    commander('5th Division Commander', 'Comandante della quinta divisione', {
-      episode: 461,
-      chapter: 556,
-      value: 'vista',
-    }),
+    // Ch. 561: Marco calls him over, captioned the fifth division's
+    // commander. No episode summary says the anime tells his division, so the
+    // seat is the manga's alone.
+    {
+      told: {
+        revealedAtEpisode: 470,
+        revealedAtChapter: 561,
+        source: 'chapter',
+      },
+      title: {
+        en: '5th Division Commander',
+        it: 'Comandante della quinta divisione',
+      },
+      holders: [
+        { episode: 470, chapter: 561, source: 'chapter', value: 'vista' },
+      ],
+    },
     // Ch. 556 p.3: named as he faces Doflamingo.
     commander(
       '13th Division Commander',

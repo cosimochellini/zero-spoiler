@@ -5,7 +5,9 @@ import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
 import { powerPage } from '~/server/archive/power.server'
+import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
+import { opReaderFor } from '~/test/archive'
 import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
@@ -81,7 +83,7 @@ const SH_CHAPTERS: Steps = [
   [41, [...SH_EARLY, 'usopp']],
   [68, SH_SANJI],
   [95, [...SH_SANJI, 'nami']],
-  [154, SH_CHOPPER],
+  [152, SH_CHOPPER],
   [218, SH_ROBIN],
   [331, [...SH_NO_USOPP, 'nico-robin']],
   [340, [...SH_NO_USOPP, V]],
@@ -94,10 +96,10 @@ const SH_CHAPTERS: Steps = [
 
 const SH_EPISODES: Steps = [
   [3, SH_EARLY],
-  [18, [...SH_EARLY, 'usopp']],
+  [17, [...SH_EARLY, 'usopp']],
   [30, SH_SANJI],
   [44, [...SH_SANJI, 'nami']],
-  [91, SH_CHOPPER],
+  [90, SH_CHOPPER],
   [130, SH_ROBIN],
   [235, [...SH_NO_USOPP, 'nico-robin']],
   [240, [...SH_NO_USOPP, V]],
@@ -109,36 +111,49 @@ const SH_EPISODES: Steps = [
 ]
 
 const WB_MET = ['edward-newgate', 'marco', 'portgas-d-ace']
-const WB_BAY = [...WB_MET, 'jozu', V, 'vista', 'atmos']
-const WB_ALL = [...WB_BAY, 'blenheim']
-const WB_NO_ACE = ['edward-newgate', 'marco', V, ...WB_ALL.slice(3)]
-const WB_NO_CAPTAIN = [V, ...WB_NO_ACE.slice(1)]
+
+/** Whitebeard's seats once Blenheim is named, with or without Vista's. */
+function whitebeard(vista: string[]): string[][] {
+  const all = [...WB_MET, 'jozu', V, ...vista, 'atmos', 'blenheim']
+  const noAce = ['edward-newgate', 'marco', V, ...all.slice(3)]
+  const noCaptain = [V, ...noAce.slice(1)]
+
+  return [all, noAce, noCaptain, [V, V, ...noCaptain.slice(2)]]
+}
+
+const [WB_ALL, WB_NO_ACE, WB_NO_CAPTAIN, WB_NO_MARCO] = whitebeard(['vista'])
 
 const WB_CHAPTERS: Steps = [
+  // Ace and his captain are told before either record opens.
+  [157, [U, U]],
   [159, [U, 'portgas-d-ace']],
   [234, ['edward-newgate', 'portgas-d-ace']],
   // Jozu's caption tells his division here; his record opens at 556.
   [434, [...WB_MET, U]],
   [440, [...WB_MET, U, V]],
-  [556, WB_BAY],
+  [556, [...WB_MET, 'jozu', V, 'atmos']],
+  // Vista's division, a caption only the manga has.
+  [561, [...WB_MET, 'jozu', V, 'vista', 'atmos']],
   [573, WB_ALL],
   [574, WB_NO_ACE],
   [576, WB_NO_CAPTAIN],
-  [909, [V, V, ...WB_NO_CAPTAIN.slice(2)]],
+  [909, WB_NO_MARCO],
 ]
 
+const [EP_ALL, EP_NO_ACE, EP_NO_CAPTAIN, EP_NO_MARCO] = whitebeard([])
+
 const WB_EPISODES: Steps = [
+  [94, [U, U]],
   [95, [U, 'portgas-d-ace']],
   [151, ['edward-newgate', 'portgas-d-ace']],
   [316, [...WB_MET, U]],
   [325, [...WB_MET, U, V]],
-  [461, [...WB_MET, U, V, 'vista']],
-  [463, [...WB_MET, 'jozu', V, 'vista']],
-  [465, WB_BAY],
-  [482, WB_ALL],
-  [483, WB_NO_ACE],
-  [485, WB_NO_CAPTAIN],
-  [890, [V, V, ...WB_NO_CAPTAIN.slice(2)]],
+  [463, [...WB_MET, 'jozu', V]],
+  [465, [...WB_MET, 'jozu', V, 'atmos']],
+  [482, EP_ALL],
+  [483, EP_NO_ACE],
+  [485, EP_NO_CAPTAIN],
+  [890, EP_NO_MARCO],
 ]
 
 const TEACH = ['marshall-d-teach']
@@ -159,15 +174,18 @@ const BB_CHAPTERS: Steps = [
   [737, blackbeard(BB_BURGESS)],
   [803, blackbeard(BB_SHIRYU)],
   [925, blackbeard(BB_DEVON)],
-  [1126, blackbeard([...BB_DEVON, 'kuzan'])],
+  [1081, blackbeard([...BB_DEVON, 'kuzan'])],
 ]
+
+/** Devon's seat is the manga's alone: the anime never fills it. */
+const BB_PIZARRO = [...BB_SHIRYU, U, 'avalo-pizarro']
 
 const BB_EPISODES: Steps = [
   [151, TEACH],
   [670, blackbeard(BB_BURGESS)],
   [752, blackbeard(BB_SHIRYU)],
-  [917, blackbeard(BB_DEVON)],
-  [1156, blackbeard([...BB_DEVON, 'kuzan'])],
+  [917, blackbeard(BB_PIZARRO)],
+  [1114, blackbeard([...BB_PIZARRO, 'kuzan'])],
 ]
 
 const EDGES = [
@@ -312,4 +330,44 @@ describe('the Emperors’ crews on either side of their gates', () => {
       }
     }
   })
+})
+
+/** A character's affiliation at a bookmark, as an English reader sees it. */
+function affiliationAt(id: string, bookmark: Bookmark): unknown {
+  const character = ONE_PIECE_LOADED.archive.getCharacter(id)
+  if (character === undefined) {
+    throw new Error(`${id} is not filed`)
+  }
+
+  return factsOf(character, opReaderFor(bookmark, 'en')).affiliation
+}
+
+/**
+ * The steps only the manga tells, as their seats are: the chapter moves the
+ * page, and no episode ever does.
+ */
+const MANGA_ONLY = [
+  {
+    id: 'vista',
+    chapter: 561,
+    before: 'Whitebeard Pirates, division commander',
+    after: 'Whitebeard Pirates, fifth division commander',
+  },
+  {
+    id: 'catarina-devon',
+    chapter: 925,
+    before: 'Blackbeard Pirates; former prisoner of Impel Down level 6',
+    after: 'Blackbeard Pirates, sixth ship captain',
+  },
+]
+
+describe('the crews’ manga-only steps on the character pages', () => {
+  it.each(MANGA_ONLY)(
+    'move $id’s affiliation at chapter $chapter and never in the anime',
+    ({ after, before, chapter, id }) => {
+      expect(affiliationAt(id, at('chapter', chapter - 1))).toBe(before)
+      expect(affiliationAt(id, at('chapter', chapter))).toBe(after)
+      expect(affiliationAt(id, at('episode', 1300))).toBe(before)
+    },
+  )
 })

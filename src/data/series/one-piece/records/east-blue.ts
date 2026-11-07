@@ -1679,7 +1679,8 @@ export const eastBlue: OnePieceSaga = {
             en: 'Usopp Pirates, captain',
           },
         },
-        { episode: 18, value: STRAW_HATS },
+        // Ch 41 / ep 17: the crew takes him aboard the Going Merry.
+        { episode: 17, chapter: 41, value: STRAW_HATS },
         // Ch 331 p. 16–19 / ep 235: he quits the crew over the Going Merry.
         {
           episode: 235,

@@ -1315,10 +1315,11 @@ export const alabasta: OnePieceSaga = {
             en: 'Doctor Kureha’s assistant',
           },
         },
-        // He sails from Drum Island with them in chapter 154, episode 91.
+        // Luffy talks him into joining as their doctor in chapter 152 (p.
+        // 10–19), episode 90.
         {
-          episode: 91,
-          chapter: 154,
+          episode: 90,
+          chapter: 152,
           factions: ['straw-hat-pirates'],
           value: STRAW_HATS,
         },

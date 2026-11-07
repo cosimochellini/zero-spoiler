@@ -2285,10 +2285,12 @@ export const summitWar: OnePieceSaga = {
             en: 'Blackbeard Pirates; former prisoner of Impel Down level 6',
           },
         },
-        // Ch 925 / ep 917: the captain of the sixth ship.
+        // Ch 925: the captain of the sixth ship. No episode summary says the
+        // anime tells it, so the step is the manga's alone.
         {
           episode: 917,
           chapter: 925,
+          source: 'chapter',
           factions: ['blackbeard-pirates'],
           value: {
             it: 'Pirati di Barbanera, capitana della sesta nave',
@@ -2474,18 +2476,45 @@ export const summitWar: OnePieceSaga = {
     },
     'vista': {
       relationships: summitWarRelationships.vista,
-      role: {
-        it: 'Comandante della quinta divisione',
-        en: 'Fifth division commander',
-      },
+      role: [
+        {
+          episode: 461,
+          value: {
+            it: 'Comandante dei Pirati di Barbabianca',
+            en: 'Whitebeard Pirates commander',
+          },
+        },
+        // Ch 561: captioned the fifth division's commander, a caption no
+        // episode summary gives the anime.
+        {
+          episode: 470,
+          chapter: 561,
+          source: 'chapter',
+          value: {
+            it: 'Comandante della quinta divisione',
+            en: 'Fifth division commander',
+          },
+        },
+      ],
       log: {
-        it: 'Comanda la quinta divisione con due spade e i baffi arricciati, e si muove come se fosse a un ballo invece che in battaglia. Nella baia tiene la prima linea davanti alla nave del vecchio, e nessuno la passa. Fra i comandanti è quello che alza meno la voce e che sorride di più.',
-        en: 'He commands the fifth division with two swords and curled moustaches, and moves as though he were at a ball rather than a battle. In the bay he holds the front line before the old man’s ship, and nobody gets past it. Of all the commanders he raises his voice least and smiles most.',
+        it: 'Combatte con due spade e i baffi arricciati, e si muove come se fosse a un ballo invece che in battaglia. Nella baia tiene la prima linea davanti alla nave del vecchio, e nessuno la passa. Fra i comandanti è quello che alza meno la voce e che sorride di più.',
+        en: 'He fights with two swords and curled moustaches, and moves as though he were at a ball rather than a battle. In the bay he holds the front line before the old man’s ship, and nobody gets past it. Of all the commanders he raises his voice least and smiles most.',
       },
       status: [{ episode: 461, value: 'alive' }],
       affiliation: [
         {
           episode: 461,
+          value: {
+            it: 'Pirati di Barbabianca, comandante di divisione',
+            en: 'Whitebeard Pirates, division commander',
+          },
+        },
+        // Ch 561: captioned the fifth division's commander (manga only, as
+        // the role step).
+        {
+          episode: 470,
+          chapter: 561,
+          source: 'chapter',
           value: {
             it: 'Pirati di Barbabianca, comandante della quinta divisione',
             en: 'Whitebeard Pirates, fifth division commander',

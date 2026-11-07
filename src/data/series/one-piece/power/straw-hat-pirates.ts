@@ -42,7 +42,7 @@ export const STRAW_HAT_PIRATES: PowerBody<OnePieceVocabulary> = {
     ]),
     joins({ en: 'Sniper', it: 'Tiratore scelto' }, [
       // Ch. 41: he sails with them on the Going Merry.
-      { episode: 18, chapter: 41, value: 'usopp' },
+      { episode: 17, chapter: 41, value: 'usopp' },
       // Ch. 331 p.16–19: he quits the crew over the Merry.
       { episode: 235, chapter: 331, value: null },
       // Ch. 438 p.15–18: he apologises and Luffy pulls him aboard.
@@ -57,8 +57,8 @@ export const STRAW_HAT_PIRATES: PowerBody<OnePieceVocabulary> = {
       { episode: 44, chapter: 95, value: 'nami' },
     ]),
     joins({ en: 'Doctor', it: 'Medico' }, [
-      // Ch. 154: he sails from Drum Island with them.
-      { episode: 91, chapter: 154, value: 'tony-tony-chopper' },
+      // Ch. 152 p.10–19: Luffy talks him into joining as their doctor.
+      { episode: 90, chapter: 152, value: 'tony-tony-chopper' },
     ]),
     joins({ en: 'Archaeologist', it: 'Archeologa' }, [
       // Ch. 218: she asks to stay aboard.
