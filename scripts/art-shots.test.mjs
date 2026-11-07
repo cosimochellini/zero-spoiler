@@ -253,6 +253,17 @@ describe('bookmark capture', () => {
     expect(querySelector).toHaveBeenCalledWith('a > span > svg')
   })
 
+  it('names the drawing that never mounted', async () => {
+    const { browser, context, page } = captureFixture()
+    page.waitForFunction.mockRejectedValue(new Error('30000ms exceeded'))
+
+    await expect(
+      captureBookmark(browser, origin, row, { value: '92', open: true }),
+    ).rejects.toThrow('Drawing never mounted: main svg[viewBox="0 0 160 200"]')
+    expect(page.waitForSelector).not.toHaveBeenCalled()
+    expect(context.close).toHaveBeenCalledOnce()
+  })
+
   it('fails rather than replacing a timed-out open drawing with a placeholder', async () => {
     const { browser, context, page } = captureFixture()
     page.waitForSelector.mockRejectedValue(new Error('drawing timed out'))

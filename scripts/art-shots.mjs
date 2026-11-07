@@ -115,7 +115,11 @@ async function navigate(page, url) {
  */
 async function drawingShot(page, selector) {
   // Shelf tiles mount only within a screen of the viewport (#972).
-  await page.waitForFunction(scrollUntilMounted, { polling: 100 }, selector)
+  try {
+    await page.waitForFunction(scrollUntilMounted, { polling: 100 }, selector)
+  } catch (error) {
+    throw new Error(`Drawing never mounted: ${selector}`, { cause: error })
+  }
   const drawing = await page.waitForSelector(selector, { visible: true })
   if (drawing === null) {
     throw new Error(`Missing drawing: ${selector}`)
