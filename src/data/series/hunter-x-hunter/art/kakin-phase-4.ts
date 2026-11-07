@@ -574,9 +574,10 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     shadow(84, 158, 44),
   ],
 
-  // The church in Meteor City from the front: the gabled front, its arched
-  // door in tint, the round window above it and the bell tower at its side,
-  // where the children watch videos, chapter 395. Its faith is not named, so
+  // The church in Meteor City from the front, its arched door in tint:
+  // the children watch videos there, chapter 395. The wiki only calls it a
+  // large church, so the gabled front, the round window and the tower are
+  // drawn by convention and are a frame check. Its faith is not named, so
   // no symbol is drawn.
   'all-faiths-church': [
     { d: 'M30 150 V86 L74 50 L118 86 V150' },

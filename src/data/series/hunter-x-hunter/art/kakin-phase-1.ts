@@ -761,9 +761,10 @@ export const kakinPhaseOneBeasts: Redrawings = {
         },
       ],
     },
-    // A huge cat sitting behind the same updo made small, the tip of its
-    // tail turned white with the life it pours into her mouth: Cat's Name
-    // brings her back after Musse shoots her, chapter 373. No face.
+    // A huge cat above the same updo made small, the tip of its tail turned
+    // white with the life it pours into her mouth: Cat's Name brings her
+    // back after Musse shoots her, chapter 373. It appears behind her
+    // killer; its pose here is a frame check. No face.
     {
       ...KAKIN,
       chapter: 373,

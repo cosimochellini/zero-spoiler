@@ -73,10 +73,11 @@ export const KAKIN_PHASE_THREE_DRAWINGS = {
     ...FROM_BEHIND,
   ],
 
-  // A grand piano side on, the lid propped open, the keyboard in tint and
-  // the black case hatched: Keeney plays the piano solo at the banquet just
+  // A piano side on, the lid propped open, the keyboard in tint and the
+  // black case hatched: Keeney plays the piano solo at the banquet just
   // before he helps the twins to the lifeboat, chapter 383, the chapter he
-  // is named and dies in.
+  // is named and dies in. It is drawn as a grand by convention, a frame
+  // check.
   'keeney': [
     {
       d: 'M24 100 H98 C112 100 118 96 126 88 C136 78 148 82 148 98 V112 H24 Z',
