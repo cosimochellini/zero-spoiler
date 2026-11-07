@@ -69,11 +69,14 @@ const GATES: Pair[] = [WORLD_GOVERNMENT, FIVE_ELDERS, CP9].flatMap((body) => [
 ])
 
 describe('the World Government on the power page', () => {
-  it.each([chapter(232), episode(150)])('has no Elders at %j', (at) => {
-    expect(seatsOf('five-elders', at)).toBeUndefined()
-  })
+  it.each([chapter(233), episode(151), chapter(396), episode(276)])(
+    'has no Elders at %j',
+    (at) => {
+      expect(seatsOf('five-elders', at)).toBeUndefined()
+    },
+  )
 
-  it.each([chapter(233), episode(151), chapter(1072), episode(1104)])(
+  it.each([chapter(397), episode(277), chapter(1072), episode(1104)])(
     'counts five unnamed Elders at %j',
     (at) => {
       expect(seatsOf('five-elders', at)).toStrictEqual(UNKNOWN_ELDERS)
