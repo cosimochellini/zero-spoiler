@@ -257,6 +257,20 @@ describe('the bodies of power', () => {
         POWER_ARCHIVE,
       ),
     ).toStrictEqual(['warlords tells a seat before its lead'])
+    expect(
+      bodyFaults(
+        [
+          {
+            ...chain,
+            seats: [
+              { ...THRONE, told: { ...THRONE.told, source: 'episode' } },
+              crown ?? THRONE,
+            ],
+          },
+        ],
+        POWER_ARCHIVE,
+      ),
+    ).toStrictEqual(['warlords tells a seat before its lead'])
   })
 
   it('hold the fixture, and catch a body broken against them', () => {

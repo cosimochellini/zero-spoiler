@@ -147,7 +147,9 @@ function seatFaults(
 /**
  * Whether a chain's top rank or a crew's captain, its first seat, is told no
  * later than every other seat: the page stands the first seat it sends above
- * the rest, so a lower seat told first would stand there instead.
+ * the rest, so a lower seat told first would stand there instead. Told in
+ * both media, too: a lead one medium alone tells is not sent to the other's
+ * readers, and the next seat would stand there for them.
  */
 function leadsFirst({ kind, seats }: PowerBody): boolean {
   const [lead] = seats
@@ -155,7 +157,8 @@ function leadsFirst({ kind, seats }: PowerBody): boolean {
   return (
     kind === 'council'
     || lead === undefined
-    || seats.every((seat) => noEarlier(seat.told, lead.told))
+    || (lead.told.source === undefined
+      && seats.every((seat) => noEarlier(seat.told, lead.told)))
   )
 }
 
