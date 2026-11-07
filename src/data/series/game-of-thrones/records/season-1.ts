@@ -1808,8 +1808,6 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'biter', tint: 'orange' },
     },
-    // The season’s places (#853): every place a scene is set in, in either
-    // medium, gated at its first scene there. Each shows `PLACE` until #854.
     // Show: “Winter Is Coming” (episode 1), the cold open, he scouts for the patrol. Books: the Prologue (site chapter 1), his own point of view. He dies in the part that opens him in each medium, by different hands, so the texts say neither.
     {
       id: 'will',
@@ -2020,6 +2018,8 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'chett', tint: 'sand' },
     },
+    // The season’s places (#853): every place a scene is set in, in either
+    // medium, gated at its first scene there. Each shows `PLACE` until #854.
     // Show: "Winter Is Coming", the cold open, the rangers find the dead
     // wildlings. Books: Prologue (Will), site chapter 1.
     {
@@ -5032,8 +5032,8 @@ export const season1: ThronesSaga = {
         },
       ],
       log: {
-        it: 'Si addestra a Castello Nero, dove Jon Snow lo batte nel cortile. Con altre reclute affronta Jon nell’armeria. In seguito Jon gli insegna a difendersi.',
-        en: 'He trains at Castle Black, where Jon Snow beats him in the yard. He and other recruits confront Jon in the armory. Later Jon teaches him to defend himself.',
+        it: 'Si addestra a Castello Nero, dove Jon Snow lo batte nel cortile. Con altre reclute affronta Jon nell’armeria.',
+        en: 'He trains at Castle Black, where Jon Snow beats him in the yard. He and other recruits confront Jon in the armory.',
       },
       status: [{ episode: 3, chapter: 20, value: 'alive' }],
       affiliation: [
@@ -5064,8 +5064,8 @@ export const season1: ThronesSaga = {
         },
       ],
       log: {
-        it: 'Si addestra a Castello Nero con Jon Snow. Quando Jon comincia ad aiutare le altre reclute con la spada, è tra quelli che imparano da lui.',
-        en: 'He trains at Castle Black with Jon Snow. When Jon starts helping the other recruits with the sword, he is among those who learn from him.',
+        it: 'Si addestra a Castello Nero con Jon Snow.',
+        en: 'He trains at Castle Black with Jon Snow.',
       },
       status: [{ episode: 3, chapter: 20, value: 'alive' }],
       affiliation: [
