@@ -1061,7 +1061,8 @@ export const wano: OnePieceSaga = {
     },
     'king': {
       relationships: wanoRelationships.king,
-      // The anime drops chapter 925's caption: the rank waits for 985 and the epithet for 1046.
+      // The anime drops chapter 925's caption: the rank waits for 985 there
+      // and the epithet for 1046.
       role: {
         it: 'Ufficiale dei Pirati delle Cento Bestie',
         en: 'Beasts Pirates officer',
@@ -1081,6 +1082,19 @@ export const wano: OnePieceSaga = {
           episode: 923,
           factions: ['beasts-pirates'],
           value: { it: 'Pirati delle Cento Bestie', en: 'Beasts Pirates' },
+        },
+        // The manga calls him an All-Star in chapter 925's caption (pp. 16–17),
+        // before his record opens at 935; the anime drops it. This entry is
+        // the manga's alone, and its episode only orders it.
+        {
+          episode: 985,
+          chapter: 935,
+          source: 'chapter',
+          factions: ['beasts-pirates'],
+          value: {
+            it: 'Pirati delle Cento Bestie, All-Star',
+            en: 'Beasts Pirates, All-Star',
+          },
         },
         {
           // He tells Who's-Who and Sasaki they want "our positions as the Lead Performers".
