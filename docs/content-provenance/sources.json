@@ -32591,6 +32591,86 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424913",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424913",
       "contentSha256": "22e54fefbb49f8baa42e8e25231c06293945990dbc2b7cfae567adbeb5ca5ff9"
+    },
+    "en-Five_Elders.json": {
+      "locale": "en",
+      "title": "Five Elders",
+      "revision": 2137168,
+      "revisionDate": "2026-11-06T11:45:38Z",
+      "url": "https://onepiece.fandom.com/wiki/Five_Elders",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2137168",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2137168",
+      "contentSha256": "49f57402f4a7bfa1cfc176fda825eeb18cc80b15c88558593fe01455add8ba68"
+    },
+    "en-World_Government.json": {
+      "locale": "en",
+      "title": "World Government",
+      "revision": 2137107,
+      "revisionDate": "2026-11-05T00:40:52Z",
+      "url": "https://onepiece.fandom.com/wiki/World_Government",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2137107",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2137107",
+      "contentSha256": "3abf4a063bb78b9434707998506e2fa1af7a6e6ea7146e339a38c61075a2bf00"
+    },
+    "en-Cipher_Pol.json": {
+      "locale": "en",
+      "title": "Cipher Pol",
+      "revision": 2127826,
+      "revisionDate": "2026-07-30T08:53:27Z",
+      "url": "https://onepiece.fandom.com/wiki/Cipher_Pol",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2127826",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2127826",
+      "contentSha256": "bfd885fc0b34eba1fb0fb0f1aff68e758f89db12ac59f68d3f1ee8a319541086"
+    },
+    "en-CP9.json": {
+      "locale": "en",
+      "title": "CP9",
+      "revision": 2119123,
+      "revisionDate": "2026-05-30T18:41:44Z",
+      "url": "https://onepiece.fandom.com/wiki/CP9",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2119123",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2119123",
+      "contentSha256": "9d811fd5a5c55156e9c9121ff4e5734055c34310f07879c73c0d3dabe4d5046c"
+    },
+    "en-CP0.json": {
+      "locale": "en",
+      "title": "CP0",
+      "revision": 2133809,
+      "revisionDate": "2026-09-28T14:05:05Z",
+      "url": "https://onepiece.fandom.com/wiki/CP0",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2133809",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2133809",
+      "contentSha256": "4c4797a4ba250498f58610d3783cde8a8ce0d5adf1acf82afc94c18171a2a215"
+    },
+    "en-Ohara_Incident.json": {
+      "locale": "en",
+      "title": "Ohara Incident",
+      "revision": 2116178,
+      "revisionDate": "2026-05-09T06:33:54Z",
+      "url": "https://onepiece.fandom.com/wiki/Ohara_Incident",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2116178",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2116178",
+      "contentSha256": "e38c7f36c26d411ead274bee4690533fea693178e25fcd50310f83edb8f12c9c"
+    },
+    "en-Episode_264.json": {
+      "locale": "en",
+      "title": "Episode 264",
+      "revision": 2101322,
+      "revisionDate": "2026-02-09T04:10:03Z",
+      "url": "https://onepiece.fandom.com/wiki/Episode_264",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2101322",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2101322",
+      "contentSha256": "decd97d3c20905186fda97ca25a03e822337687c200fb931213fcd02443acf83"
+    },
+    "en-Episode_889.json": {
+      "locale": "en",
+      "title": "Episode 889",
+      "revision": 2097336,
+      "revisionDate": "2026-01-15T13:02:08Z",
+      "url": "https://onepiece.fandom.com/wiki/Episode_889",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2097336",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2097336",
+      "contentSha256": "fe2225decf031b12874ea02f1302ab601dc68ce3814070ac241c092c09b2809f"
     }
   }
 }

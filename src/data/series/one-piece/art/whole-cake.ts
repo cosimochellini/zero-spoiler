@@ -15,6 +15,47 @@ import {
 } from '~/lib/svg/primitives'
 
 /**
+ * Im on the Empty Throne: the platform and its steps, cut where the robe
+ * covers them; the throne's back in three quarters, hatched where it turns
+ * away; the crown; the head, with no face; the robe and its folds, hatched
+ * because the figure is all shadow; two of the swords round the throne.
+ */
+const IM_ON_THE_THRONE: Stroke[] = [
+  { d: 'M14 170 H146 V182 H14 Z M14 170 L26 162 H36 M124 162 H134 L146 170' },
+  { d: 'M30 162 V154 H42 M118 154 H130 V162', role: 'soft' },
+  {
+    d: 'M54 104 V60 C54 42 64 28 80 8 C96 28 106 42 106 60 V104',
+    role: 'soft',
+  },
+  { d: 'M106 104 L112 100 V62 C112 46 102 32 88 16', role: 'soft' },
+  { d: 'M106 64 l6 -4 M106 78 l6 -4 M106 92 l6 -4', role: 'ambient' },
+  {
+    d: 'M70 66 L66 38 L75 60 L77 28 L80 58 L83 28 L85 60 L94 38 L90 66 Z',
+    role: 'accent',
+  },
+  { d: ellipse(80, 76, 9, 11) },
+  {
+    d: 'M72 86 C60 90 54 98 52 112 L44 150 C40 158 36 164 32 170 M88 86 C100 90 106 98 108 112 L116 150 C120 158 124 164 128 170',
+  },
+  { d: 'M32 170 C60 175 100 175 128 170' },
+  {
+    d: 'M66 96 C64 120 62 140 60 168 M94 96 C96 120 98 140 100 168',
+    role: 'soft',
+  },
+  {
+    d: 'M58 128 l6 -6 M56 142 l8 -8 M52 158 l10 -10 M96 124 l6 -6 M98 140 l8 -8 M100 158 l10 -10',
+    role: 'ambient',
+  },
+  {
+    d: 'M22 166 L16 134 L20 132 L26 165 M12 136 L24 130 M18 132 C16 126 16 122 14 118',
+  },
+  {
+    d: 'M138 166 L144 134 L140 132 L134 165 M148 136 L136 130 M142 132 C144 126 144 122 146 118',
+  },
+  shadow(80, 192, 70),
+]
+
+/**
  * One tusk of the Mammoth's figurehead, curving out ahead of the bow and
  * back up at the tip. Jack's drawing sets a second one behind it.
  */
@@ -1277,42 +1318,12 @@ export const wholeCakeArt = {
     shadow(80, 168, 56),
   ],
 
-  // The Empty Throne at the top of Pangaea Castle, in three quarters, its tall
-  // back hatched where it turns away, on its stepped platform among the swords
-  // of the founding kings planted round it. No emblem on it. The figure sits
-  // on it and the Five Elders kneel at 889.
-  'im': [
-    { d: 'M14 170 H146 V182 H14 Z M14 170 L26 162 H134 L146 170' },
-    { d: 'M30 162 V154 H130 V162 M30 154 L40 148 H120 L130 154', role: 'soft' },
-    {
-      d: 'M56 124 V60 C56 42 66 30 80 14 C94 30 104 42 104 60 V124',
-      role: 'accent',
-    },
-    { d: 'M104 124 L110 120 V62 C110 46 100 32 86 20', role: 'soft' },
-    {
-      d: 'M104 66 l6 -4 M104 80 l6 -4 M104 94 l6 -4 M104 108 l6 -4',
-      role: 'ambient',
-    },
-    {
-      d: 'M64 118 V64 C64 52 72 42 80 36 C88 42 96 52 96 64 V118',
-      role: 'soft',
-    },
-    { d: 'M48 136 H112 L116 130 H54 Z M48 136 V148 M112 136 V148' },
-    {
-      d: 'M48 136 V116 C48 108 56 108 58 114 M112 136 V116 C112 108 104 108 102 114',
-    },
-    {
-      d: 'M24 166 L18 134 L22 132 L28 165 M14 136 L26 130 M20 132 C18 126 18 122 16 118 M36 162 L46 128 L50 130 L40 163 M42 124 L54 129 M50 126 L54 116',
-    },
-    {
-      d: 'M136 166 L142 134 L138 132 L132 165 M146 136 L134 130 M140 132 C142 126 142 122 144 118 M124 162 L114 128 L110 130 L120 163 M118 124 L106 129 M110 126 L106 116',
-    },
-    {
-      d: 'M20 182 l6 -10 M40 182 l6 -10 M60 182 l6 -10 M80 182 l6 -10 M100 182 l6 -10 M120 182 l6 -10',
-      role: 'ambient',
-    },
-    shadow(80, 192, 70),
-  ],
+  // The figure on the Empty Throne, in silhouette as the Five Elders see it
+  // at 889 (ch. 908): the crown of four tall spikes, no face, the long robe
+  // running down the steps, the throne's tall back behind it and the founding
+  // kings' swords planted round it. The arrow-tipped appendage it pierces
+  // Cobra with is a stage of its own, in `wholeCakeRedrawn`.
+  'im': IM_ON_THE_THRONE,
 
   // A bull's horns on their boss, in three quarters, the near horn ridged at
   // the base and the far one hatched: the emblem of the name he is captioned
@@ -2061,6 +2072,20 @@ const PEDRO_FEDORA: Stroke[] = [
 
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const wholeCakeRedrawn: Redrawings = {
+  // The same figure, with the arrow-tipped appendage it sends out of its body
+  // to pierce Cobra: its power, first shown at 1119 (ch. 1085).
+  'im': [
+    {
+      episode: 1119,
+      chapter: 1085,
+      value: [
+        ...IM_ON_THE_THRONE,
+        {
+          d: 'M112 128 C130 124 140 110 138 92 C136 76 142 64 152 54 M152 54 L141 56 M152 54 L150 65',
+        },
+      ],
+    },
+  ],
   // The same bow broken off and going down, tipped nose first, its planks
   // splintering where it snapped and pieces of it in the air, the tusks
   // sinking under a wave. One swing of Zunesha's trunk wrecks the Mammoth
