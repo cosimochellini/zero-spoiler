@@ -412,29 +412,35 @@ function earlyLabels(
 
 /**
  * Every One Piece ask, with the faction groups its fruit album sends and the
- * bodies its power page names: a body's label comes with the body, at the
- * body's own gate, as a group's comes with the album's group.
+ * bodies its power page names. A body's label comes with the body, at the
+ * body's own gate, so the power page may print it from there; every other
+ * page still waits for the album's group, whatever the power page shows.
  */
 const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
   const { factions } = fruitAlbum(bookmark, locale)
   const groups = new Set<null | string>(factions.map(({ faction }) => faction))
+  const named = new Set(groups)
   const { bodies } = powerPage(
     readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
   )
   for (const { id } of bodies) {
-    groups.add(id)
+    named.add(id)
   }
 
-  return { bookmark, factions, groups, locale }
+  return { bookmark, factions, groups, locale, named }
 })
 
 /** Every label a page sends early at the asks it is sampled at. */
 function earlyLabelsOf({ keys, name, run }: Payload): string[] {
   const all = keys?.()
 
-  return GROUPED.flatMap(({ bookmark, groups, locale }, at) =>
+  return GROUPED.flatMap(({ bookmark, groups, locale, named }, at) =>
     sampled(all, at).flatMap((key) =>
-      earlyLabels(run(bookmark, locale, key), { groups, locale, name }).map(
+      earlyLabels(run(bookmark, locale, key), {
+        groups: name === 'loadPower' ? named : groups,
+        locale,
+        name,
+      }).map(
         (faction) =>
           `${faction} via ${name} '${key}' @ ${JSON.stringify(bookmark)} ${locale}`,
       ),
