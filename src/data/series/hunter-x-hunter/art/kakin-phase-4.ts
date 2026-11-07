@@ -100,8 +100,8 @@ const BORKSEN: Stroke[] = [
 
 /** The floor a fallen guard or servant lies on, and the shadow on it. */
 const FLOOR: Stroke[] = [
-  { d: 'M4 172 H156', role: 'ambient', dashed: true },
-  shadow(80, 178, 50),
+  { d: 'M4 180 H156', role: 'ambient', dashed: true },
+  shadow(80, 186, 50),
 ]
 
 export const KAKIN_PHASE_4_DRAWINGS = {

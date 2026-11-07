@@ -29,7 +29,7 @@ export const FROM_BEHIND: Stroke[] = [...FROM_BEHIND_BODY, shadow(80, 184, 54)]
  * left: how a guard or servant drawn from behind lies once killed.
  */
 export const FALLEN =
-  'translate(80 139) rotate(-90) scale(0.7) translate(-80 -116)'
+  'translate(80 136) rotate(-90) scale(0.7) translate(-80 -116)'
 
 /**
  * A record's object made small and set at the foot of the box, so what

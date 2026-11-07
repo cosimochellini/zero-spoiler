@@ -1080,8 +1080,8 @@ export const kakinPhaseOneBeasts: Redrawings = {
       chapter: 404,
       value: [
         ...moved(HALKENBURG_GUN, 'translate(0 4) rotate(180 80 120)'),
-        { d: 'M8 152 H152', role: 'ambient', dashed: true },
-        shadow(80, 160, 56),
+        { d: 'M8 162 H152', role: 'ambient', dashed: true },
+        shadow(80, 170, 56),
       ],
     },
   ],

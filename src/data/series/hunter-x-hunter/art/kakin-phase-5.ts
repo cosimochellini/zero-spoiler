@@ -439,8 +439,9 @@ export const KAKIN_PHASE_5_DRAWINGS = {
 /** The phase 5 records whose drawing changes in chapters 401–420 (#1158). */
 export const kakinPhaseFiveRedrawn: Redrawings = {
   morena: [
-    // The same crown of thorns, struck through by two parallel scars in
-    // tint: the mark every Carnival Orphan is given at birth. She tells
+    // The same crown of thorns, and above it two parallel scars in tint:
+    // the mark every Carnival Orphan is given at birth, which she bears on
+    // her face (no face drawn; the marks are a frame check). She tells
     // Borksen she is not the real Morena Prudo, who lies in a grave under
     // her name, but a Carnival Orphan sorted as "flesh", chapter 408.
     {
@@ -449,7 +450,7 @@ export const kakinPhaseFiveRedrawn: Redrawings = {
       value: [
         ...MORENA_CROWN,
         {
-          d: 'M44 50 C62 82 76 116 88 160 M60 44 C78 76 92 110 104 154',
+          d: 'M64 24 C70 40 76 54 80 68 M78 20 C84 36 90 50 94 64',
           role: 'accent',
         },
       ],
