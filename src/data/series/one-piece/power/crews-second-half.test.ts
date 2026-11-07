@@ -130,7 +130,6 @@ const BIG_MOM_CHAPTERS: Steps = [
   ],
 ]
 
-// The anime shows Daifuku and Oven before Compote, so their seats come first.
 const BIG_MOM_EPISODES: Steps = [
   [571, [U]],
   [786, [LINLIN]],
@@ -163,34 +162,21 @@ const BIG_MOM_EPISODES: Steps = [
     ],
   ],
   [
-    826,
-    [
-      LINLIN,
-      CRACKER,
-      'charlotte-katakuri',
-      'charlotte-smoothie',
-      PEROSPERO,
-      OPERA,
-      'charlotte-mont-dor',
-      'charlotte-daifuku',
-    ],
-  ],
-  [
-    827,
-    [
-      LINLIN,
-      CRACKER,
-      'charlotte-katakuri',
-      'charlotte-smoothie',
-      PEROSPERO,
-      OPERA,
-      'charlotte-mont-dor',
-      'charlotte-daifuku',
-      'charlotte-oven',
-    ],
-  ],
-  [
     831,
+    [
+      LINLIN,
+      CRACKER,
+      'charlotte-katakuri',
+      'charlotte-smoothie',
+      PEROSPERO,
+      OPERA,
+      'charlotte-mont-dor',
+      'charlotte-compote',
+    ],
+  ],
+  // Daifuku and Oven arrive at 826 and 827; their posts are told at 834.
+  [
+    834,
     [
       LINLIN,
       CRACKER,
@@ -232,8 +218,8 @@ const BEASTS_CHAPTERS: Steps = [
   [925, ['kaido', 'jack', U, U]],
   [929, ['kaido', 'jack', U, U, 'page-one', 'x-drake', U, U, U, U]],
   [935, ['kaido', 'jack', 'queen', 'king', 'page-one', 'x-drake', U, U, U, U]],
-  // The other four are introduced at 978; their records open at 980.
-  [978, ['kaido', 'jack', 'queen', 'king', 'page-one', 'x-drake', U, U, U, U]],
+  // The other four walk in at 977; their records open at 980.
+  [977, ['kaido', 'jack', 'queen', 'king', 'page-one', 'x-drake', U, U, U, U]],
   [
     980,
     [
@@ -276,13 +262,11 @@ const BEASTS_EPISODES: Steps = [
 ]
 
 const CROSS_GUILD_CHAPTERS: Steps = [
-  [1056, ['buggy']],
-  [1058, ['buggy', 'crocodile', 'dracule-mihawk']],
+  [1056, ['buggy', 'crocodile', 'dracule-mihawk']],
 ]
 
 const CROSS_GUILD_EPISODES: Steps = [
-  [1083, ['buggy']],
-  [1086, ['buggy', 'crocodile', 'dracule-mihawk']],
+  [1083, ['buggy', 'crocodile', 'dracule-mihawk']],
 ]
 
 const CREWS = [

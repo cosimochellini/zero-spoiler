@@ -76,15 +76,16 @@ export const BIG_MOM_PIRATES: PowerBody<OnePieceVocabulary> = {
       { en: 'Minister of Fruit', it: 'Ministra della frutta' },
       { episode: 831, chapter: 861, value: 'charlotte-compote' },
     ),
-    // Ch. 864 p.7–10: Daifuku and Oven's posts. The anime shows both
-    // arriving at the chateau earlier, in episodes 826 and 827.
+    // Ch. 864 p.7–10, ep 834: Daifuku's and Oven's posts are told. The
+    // anime shows both arriving at the chateau earlier, in episodes 826 and
+    // 827; their seats wait for the episode that adapts the chapter.
     minister(
       { en: 'Minister of Beans', it: 'Ministro dei fagioli' },
-      { episode: 826, chapter: 864, value: 'charlotte-daifuku' },
+      { episode: 834, chapter: 864, value: 'charlotte-daifuku' },
     ),
     minister(
       { en: 'Minister of Browning', it: 'Ministro della doratura' },
-      { episode: 827, chapter: 864, value: 'charlotte-oven' },
+      { episode: 834, chapter: 864, value: 'charlotte-oven' },
     ),
     // Ch. 877 p.14: Amande's post is told.
     minister(

@@ -14,8 +14,11 @@ const ALL_STARS_TOLD = { revealedAtEpisode: 757, revealedAtChapter: 808 }
 /** Two of Kaido's six strongest Headliners set out: ch. 929 p.17–18, ep 923. */
 const TOBIROPPO_TOLD = { revealedAtEpisode: 923, revealedAtChapter: 929 }
 
-/** The other four come in with the rest: ch. 978 p.15–17, ep 982. */
-const WITH_THE_REST = { episode: 982, chapter: 978 }
+/**
+ * The other four walk in together at ch. 977 p.16–17, and are introduced at
+ * ch. 978 p.15–17; both are episode 982.
+ */
+const WITH_THE_REST = { episode: 982, chapter: 977 }
 
 const ALL_STAR = { en: 'All-Star', it: 'All-Star' }
 const TOBIROPPO = { en: 'Tobiroppo', it: 'Tobiroppo' }
@@ -48,10 +51,11 @@ export const BEASTS_PIRATES: PowerBody<OnePieceVocabulary> = {
     },
     // Ch. 808 p.4: Jack the Drought, one of the three.
     allStar([{ episode: 757, chapter: 808, value: 'jack' }]),
-    // Ch. 925 p.16–17: Queen's and King's captions call them All-Stars. The
-    // anime drops them: Queen's rank waits for his record, at episode 930,
-    // and King's for his own words at episode 985. Both records open at
-    // chapter 935.
+    // Ch. 925 p.16–17: Queen's and King's captions call them All-Stars.
+    // Episode 918 adapts the scene, but the archive files the anime as
+    // dropping the captions (King's record): Queen's rank waits for his
+    // record, at episode 930, and King's for his own words at episode 985.
+    // Both records open at chapter 935.
     allStar([{ episode: 930, chapter: 925, value: 'queen' }]),
     allStar([{ episode: 985, chapter: 925, value: 'king' }]),
     tobiroppo([{ episode: 923, chapter: 929, value: 'page-one' }]),
