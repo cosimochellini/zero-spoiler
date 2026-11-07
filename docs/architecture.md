@@ -145,7 +145,7 @@ phase 2 (#1135) chapters 358–370 and phase 3 (#1136) chapters 371–383, phase
 published. Phases 1 and 2 are drawn in #1154, with 22 manga-only stages through
 chapter 370 (eleven princes' Guardian Spirit Beasts, four deaths, four returning
 records' reveals, Hisoka's return, and Chrollo's disguise and its end); phases 3
-and 4 are drawn in #1156, with 13 more stages through chapter 400 (seven
+and 4 are drawn in #1156, with 14 more stages through chapter 400 (eight
 abilities first shown, five deaths or presumed deaths, Kacho's with her beast
 taking her form, and Salé-salé's lost beast); phase 5 keeps placeholder art
 pending #1158. Kakin chronicles for chapters 340–370 (#1155) add 99 manga-only
@@ -291,7 +291,7 @@ checks this block.
 | Characters        | 290                                                   |
 | Arcs, places      | 7 · 43                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 340, one per record, plus 83 redrawings of 73 records |
+| Line drawings     | 340, one per record, plus 84 redrawings of 73 records |
 | Chronicle stories | 790, for 227 characters                               |
 
 ### `game-of-thrones`
