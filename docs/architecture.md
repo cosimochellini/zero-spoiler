@@ -142,18 +142,17 @@ anime-only records and scenes, and a manga-only item trade. Kakin (#916) is
 manga-only and files in five phases; phase 1 (#1134) covers chapters 340–357 and
 phase 2 (#1135) chapters 358–370 and phase 3 (#1136) chapters 371–383, phase 4
 (#1137) chapters 384–400 and phase 5 (#1138) chapters 401–420, the last
-published. Phases 1 and 2 are drawn in #1154, with 21 manga-only stages through
-chapter 370 (eleven princes' Guardian Spirit Beasts, four deaths, three
-returning records' reveals, Hisoka's return, and Chrollo's disguise and its
-end); phases 3–5 keep placeholder art pending #917. Candidates whose naming
-stays unverified are deferred to #1141–#1145. Gyro is unanchored at 78 / 203.
-Silva, Killua's father, is named in episode 24 but in chapter 95 in the manga,
-so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter
-71 but named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is
-named only in credits and supplements, and Hishita only in chapter 329 (#912).
-Every Hunter Exam character has a chronicle (#762); the Heavens Arena characters
-get theirs in #898. Records are not added from unnamed appearances or
-supplemental names.
+published. Phases 1 and 2 are drawn in #1154, with 22 manga-only stages through
+chapter 370 (eleven princes' Guardian Spirit Beasts, four deaths, four returning
+records' reveals, Hisoka's return, and Chrollo's disguise and its end); phases
+3–5 keep placeholder art pending #917. Candidates whose naming stays unverified
+are deferred to #1141–#1145. Gyro is unanchored at 78 / 203. Silva, Killua's
+father, is named in episode 24 but in chapter 95 in the manga, so his record is
+unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter 71 but named in
+the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is named only in
+credits and supplements, and Hishita only in chapter 329 (#912). Every Hunter
+Exam character has a chronicle (#762); the Heavens Arena characters get theirs
+in #898. Records are not added from unnamed appearances or supplemental names.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -286,7 +285,7 @@ checks this block.
 | Characters        | 290                                                   |
 | Arcs, places      | 7 · 43                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 340, one per record, plus 69 redrawings of 65 records |
+| Line drawings     | 340, one per record, plus 70 redrawings of 66 records |
 | Chronicle stories | 691, for 182 characters                               |
 
 ### `game-of-thrones`

@@ -199,11 +199,13 @@ file says; it is not a missing stage.
   shows it, and the chapter that same scene is in, or chapter readers see it
   early. Stages keep this true pair; only the first drawing gets the
   arc-wide latitude.
-- Strictly after the record's threshold, in ascending order: after
-  `revealedAtEpisode` for a stage the anime tells; after `revealedAtChapter`
-  for one only the manga or books tell (`source: 'chapter'` on the stage or
-  its record), whose episode only orders it. A redrawing at the record's
-  threshold fails a test: that is the first drawing.
+- Strictly after the record's threshold, in ascending chapters. A stage
+  only the manga or books tell (`source: 'chapter'` on its record, else on
+  the stage, as the engine reads it) needs a chapter of its own above
+  `revealedAtChapter` and an episode at or after `revealedAtEpisode`; its
+  episode is left out of every episode check. Every other stage needs a
+  distinct, ascending episode after `revealedAtEpisode`. A redrawing at the
+  record's threshold fails a test: that is the first drawing.
 - **A stage whose true chapter is below its record's chapter is pinned at the
   record's chapter**, as the status entries are (#459). The pin adds nothing
   to the chapter table.

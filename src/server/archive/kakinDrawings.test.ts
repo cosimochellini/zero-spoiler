@@ -15,6 +15,7 @@ const { archive } = series
 
 // Every stage of chapters 340–370 (#1154), at the chapter the wiki gives it.
 const STAGES = [
+  { id: 'pariston-hill', chapter: 340, change: 'allegiance to Beyond' },
   { id: 'mizaistom-nana', chapter: 343, change: 'Cross Game' },
   { id: 'ging-freecss', chapter: 347, change: 'remote punch' },
   { id: 'saiyu', chapter: 348, change: 'spy for Beyond' },

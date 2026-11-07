@@ -1201,6 +1201,31 @@ const kakinReturningRedrawn: Redrawings = {
       ],
     },
   ],
+  'pariston-hill': [
+    // The same suit, made small, in front of a row of ten plain figures:
+    // Beyond makes his speech with ten important followers, and Pariston is
+    // among them, chapter 340. Beyond's side has no emblem to draw, so his
+    // allegiance shows in the company he stands in. No faces.
+    {
+      ...KAKIN,
+      chapter: 340,
+      value: [
+        ...moved(
+          ELECTION_DRAWINGS['pariston-hill'],
+          'translate(80 196) scale(0.6) translate(-80 -196)',
+        ),
+        {
+          d: `${circle(14, 58, 5)} ${circle(28.7, 58, 5)} ${circle(43.3, 58, 5)} ${circle(58, 58, 5)} ${circle(72.7, 58, 5)} ${circle(87.3, 58, 5)} ${circle(102, 58, 5)} ${circle(116.7, 58, 5)} ${circle(131.3, 58, 5)} ${circle(146, 58, 5)}`,
+          role: 'soft',
+        },
+        {
+          d: 'M6 84 Q6 66 14 66 Q22 66 22 84 M20.7 84 Q20.7 66 28.7 66 Q36.7 66 36.7 84 M35.3 84 Q35.3 66 43.3 66 Q51.3 66 51.3 84 M50 84 Q50 66 58 66 Q66 66 66 84 M64.7 84 Q64.7 66 72.7 66 Q80.7 66 80.7 84 M79.3 84 Q79.3 66 87.3 66 Q95.3 66 95.3 84 M94 84 Q94 66 102 66 Q110 66 110 84 M108.7 84 Q108.7 66 116.7 66 Q124.7 66 124.7 84 M123.3 84 Q123.3 66 131.3 66 Q139.3 66 139.3 84 M138 84 Q138 66 146 66 Q154 66 154 84',
+          role: 'soft',
+        },
+        { d: 'M2 88 H158', role: 'ambient' },
+      ],
+    },
+  ],
   'saiyu': [
     // The same headband and tail, seen on a monitor: Kurapika, watching the
     // Zodiacs through a hidden camera, finds that Saiyu is Beyond's
@@ -1244,11 +1269,12 @@ const kakinReturningRedrawn: Redrawings = {
   ],
   'hisoka': [
     // His left hand, mirrored from the right: back from the dead, he makes
-    // rubber prostheses for the four fingers the blast took (chapter 355)
-    // with Texture Surprise, chapter 357. The rebuilt fingers and their
-    // nails are drawn in the muted ink, an imitation over the real palm;
-    // the thumb, which the blast spared, keeps its nail in tint. He dies and
-    // returns in the same chapter, so the return is the only stage.
+    // rubber prostheses with Texture Surprise for the four fingers the
+    // blast took (chapters 355, 357). The rebuilt fingers and their nails
+    // are drawn in the muted ink, an imitation over the real palm, and the
+    // thumb keeps its nail in tint; the wiki does not say which digit was
+    // spared, so that is a frame check. He dies and returns in the same
+    // chapter, so the return is the only stage.
     { ...KAKIN, chapter: 357, value: moved(HISOKA_REBUILT, MIRRORED) },
   ],
   'shalnark': [
@@ -1314,8 +1340,10 @@ const kakinReturningRedrawn: Redrawings = {
         shadow(80, 188, 52),
       ],
     },
-    // The coat again: the fight over, he is next seen on the phone to
-    // Shalnark away from the arena, chapter 357.
+    // The exit, by the house convention for a temporary costume: his first
+    // drawing again from chapter 357, the next time he is shown, away from
+    // the arena on the phone to Shalnark. What he wears there is not in the
+    // wiki, so it is a frame check.
     { ...KAKIN, chapter: 357, value: YORKNEW_CITY_DRAWINGS.chrollo },
   ],
 }
