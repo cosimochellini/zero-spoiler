@@ -83,7 +83,10 @@ export const MARINES: PowerBody<OnePieceVocabulary> = {
       // the World Military Draft; Ryokugyu's record opens at chapter 905.
       { episode: 643, chapter: 713, value: 'ryokugyu' },
     ),
-    // Ch. 431: Vice Admiral Garp's ship is in the harbour.
+    // Ch. 431: Vice Admiral Garp's ship is in the harbour. He steps down from
+    // the front line with Sengoku at ch. 594 but keeps the rank as an
+    // instructor (ch. 1080 p. 15 still calls him Vice Admiral), so the seat
+    // stays his.
     viceAdmiral({ episode: 313, chapter: 431, value: 'monkey-d-garp' }),
     // Ch. 523: Hancock sails on Vice Admiral Momonga's ship.
     viceAdmiral({ episode: 410, chapter: 523, value: 'momonga' }),
@@ -94,9 +97,9 @@ export const MARINES: PowerBody<OnePieceVocabulary> = {
     // Ch. 652: promoted over the timeskip, at the head of G-5.
     viceAdmiral({ episode: 572, chapter: 652, value: 'smoker' }),
     viceAdmiral(
-      // Ch. 673 p. 6: Yarisugi names Vice Admiral Vergo of G-5.
+      // Ch. 673: Vergo's scene names him Vice Admiral of G-5.
       { episode: 599, chapter: 673, value: 'vergo' },
-      // Ch. 698: the G-5 men say he died.
+      // Ch. 698 p. 9: Doflamingo reports his death.
       { episode: 624, chapter: 698, value: null },
     ),
     // Ch. 705: Vice Admiral Maynard, undercover; his record opens at ch. 708.
