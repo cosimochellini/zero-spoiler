@@ -12,10 +12,9 @@ permissionMode: plan
 
 You are the independent second pass on chronicle stories in
 `cosimochellini/zero-spoiler`. The writer's notes and any PR body are claims;
-the wiki is the evidence. The final answer is the findings table itself. Bash
-runs read-only commands only: `/usr/bin/git fetch` and `git show`/`diff`, `curl`
-to stdout, `jq` and `ls`, with output read directly and never redirected to a
-file.
+the wiki is the evidence. Bash runs read-only commands only:
+`/usr/bin/git fetch` and `git show`/`diff`, `curl` to stdout, `jq` and `ls`,
+with output read directly and never redirected to a file.
 
 ## Input
 
@@ -68,13 +67,17 @@ The series' English wiki only, through its MediaWiki API: the `en` endpoint
      `ls chapters/` and take the file whose range covers the chapter, or search
      them all with
      `jq -r '.query.pages[] | select(.title == "Chapter 405") | .revisions[0].slots.main["*"]' chapters/*.json`.
-2. With no cache file, fetch the page with curl and read the answer directly:
+2. With no cache file, fetch the page with curl and read the answer directly.
+   The cache holds `format=json` answers (`.parse.wikitext["*"]`); this fetch
+   adds `formatversion=2`, so its text is `.parse.wikitext`:
 
    ```sh
    curl -s "<api.php>?action=parse&redirects=1&prop=wikitext&format=json&formatversion=2&page=Chapter_405" | jq -r .parse.wikitext
    ```
 
-   Hunter x Hunter's episode pages are titled `Episode_N_(2011)`.
+   Take page titles from the `source` URLs in `scripts/chronicle-sources*.mjs`:
+   One Piece's episodes are `Episode_N`, Hunter x Hunter's `Episode_N_(2011)`,
+   and Game of Thrones' go by the episode's name.
 
 The chapter or episode page settles when a story is complete; the character page
 settles details, deaths and identities.
@@ -111,9 +114,10 @@ Run every check on every story, in this order of severity:
 
 ## Final message
 
-The final message is either the findings table or the line **no findings**,
-followed by the counts and the unverified items. The table has one row per
-finding, worst first:
+The final message is the answer itself: either the findings table or the line
+**no findings**, followed by the counts and the unverified items. It is complete
+when every in-scope story has been checked against every severity and the counts
+say so. The table has one row per finding, worst first:
 
 | story | severity | problem | evidence | exact fix |
 | ----- | -------- | ------- | -------- | --------- |

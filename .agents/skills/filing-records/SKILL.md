@@ -132,7 +132,7 @@ Done when every finding names the rule it breaks.
 
 A chronicle PR runs this pipeline, in order:
 
-1. **Write** the stories in `<hxh>/records/<arc>.chronicle.ts`, in the `tone-of-voice` voice, each with its note in `scripts/chronicle-sources-hxh.mjs`, and **assemble** them: wiring, tests, `npm run docs:chronicle`.
+1. **Write** the stories in `src/data/series/<series>/records/<arc>.chronicle.ts`, in the `tone-of-voice` voice, each with its note in `scripts/chronicle-sources*.mjs` (`chronicle-sources.mjs` for One Piece, `chronicle-sources-hxh.mjs` for Hunter x Hunter), and **assemble** them: wiring, tests, `npm run docs:chronicle`.
 2. **Verify**: one or more `chronicle-verifier` subagents (`.claude/agents/chronicle-verifier.md`), split by cast, each given the pushed branch and its base, the commit SHA, its character ids and the owner's rulings. Its checks and severities live in that file.
 3. **Correct**: apply every finding, or state the reason it stands, and draft an "Independent verifier corrections" section listing each one.
 4. **Open the PR** with that section added to the body (the template lacks it), then run the review rounds of `landing-prs`.
