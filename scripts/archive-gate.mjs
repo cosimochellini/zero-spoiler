@@ -170,7 +170,9 @@ export function clientChunks(clientDir) {
     .filter((name) => name.endsWith('.js'))
     .map((name) => ({
       name,
+      // fallow-ignore-next-line security-sink -- name is a file the build wrote to its own assets folder, listed by readdirSync.
       bytes: statSync(path.join(assets, name)).size,
+      // fallow-ignore-next-line security-sink -- As above.
       text: readFileSync(path.join(assets, name), 'utf8'),
     }))
 }
