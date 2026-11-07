@@ -5,7 +5,7 @@ import type { ThronesSaga, ThronesVocabulary } from './saga'
 /**
  * Season 1 of the show and *A Game of Thrones*: the main cast (#852), the
  * recurring characters of Winterfell, King’s Landing, the Vale and the
- * Riverlands (#1006) and the places its scenes are set in (#853), each filed where they appear and are named, in each medium. Chapters are the
+ * Riverlands (#1006), the Night’s Watch (#1007) and the places its scenes are set in (#853), each filed where they appear and are named, in each medium. Chapters are the
  * site's absolute ones: the book's prologue is chapter 1, so its chapter N
  * is N + 1. Every dated step pins its chapter, because the two media gate
  * the same fact at unrelated numbers. Gates and steps are taken from the
@@ -1810,6 +1810,216 @@ export const season1: ThronesSaga = {
     },
     // The season’s places (#853): every place a scene is set in, in either
     // medium, gated at its first scene there. Each shows `PLACE` until #854.
+    // Show: “Winter Is Coming” (episode 1), the cold open, he scouts for the patrol. Books: the Prologue (site chapter 1), his own point of view. He dies in the part that opens him in each medium, by different hands, so the texts say neither.
+    {
+      id: 'will',
+      kind: 'character',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 1,
+      name: { it: 'Will', en: 'Will' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte, in ricognizione nella Foresta Stregata.',
+        en: 'A ranger of the Night’s Watch, scouting in the Haunted Forest.',
+      },
+      visual: { art: 'will', tint: 'teal' },
+    },
+    // Show: “Winter Is Coming” (episode 1), the cold open, killed in the forest. Books: the Prologue (site chapter 1), he survives it, and he is the deserter beheaded in Bran I (site chapter 2). The show gives that death to Will, so the texts say neither.
+    {
+      id: 'gared',
+      kind: 'character',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 1,
+      name: { it: 'Gared', en: 'Gared' },
+      summary: {
+        it: 'Il più anziano dei tre ranger dei Guardiani della notte di pattuglia nella Foresta Stregata.',
+        en: 'The oldest of three rangers of the Night’s Watch on patrol in the Haunted Forest.',
+      },
+      visual: { art: 'gared', tint: 'sand' },
+    },
+    // Show: “Winter Is Coming” (episode 1), the cold open. Books: the Prologue (site chapter 1). He dies in the scene that opens him in both, so the log tells it.
+    {
+      id: 'waymar-royce',
+      kind: 'character',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 1,
+      name: { it: 'Waymar Royce', en: 'Waymar Royce' },
+      summary: {
+        it: 'Un giovane cavaliere dei Guardiani della notte, al comando di una pattuglia nella Foresta Stregata.',
+        en: 'A young knight of the Night’s Watch, in command of a patrol in the Haunted Forest.',
+      },
+      visual: { art: 'waymar-royce', tint: 'violet' },
+    },
+    // Show: “Lord Snow” (episode 3), the yard at Castle Black (spoken name unverified). Books: Jon III (site chapter 20), the same training.
+    {
+      id: 'grenn',
+      kind: 'character',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 20,
+      name: { it: 'Grenn', en: 'Grenn' },
+      summary: {
+        it: 'Una recluta dei Guardiani della notte, forte ma lenta di comprendonio.',
+        en: 'A recruit of the Night’s Watch, strong and slow-witted.',
+      },
+      visual: { art: 'grenn', tint: 'ocher' },
+    },
+    // Show: “Lord Snow” (episode 3), the yard at Castle Black (spoken name unverified). Books: Jon III (site chapter 20), on the Appearing list. He goes to the rangers in the book and the stewards in the show, so his sworn role says neither.
+    {
+      id: 'pypar',
+      kind: 'character',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 20,
+      name: { it: 'Pyp', en: 'Pypar' },
+      summary: {
+        it: 'Una recluta dei Guardiani della notte che si addestra a Castello Nero.',
+        en: 'A recruit of the Night’s Watch training at Castle Black.',
+      },
+      visual: { art: 'pypar', tint: 'acid' },
+    },
+    // Show: “Lord Snow” (episode 3), the yard at Castle Black (spoken name unverified; he rides north unnamed in episode 2, owner). Books: Jon IV (site chapter 27), sent against Jon in the yard. Only the show swears him in within the stage.
+    {
+      id: 'rast',
+      kind: 'character',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 27,
+      name: { it: 'Rast', en: 'Rast' },
+      summary: {
+        it: 'Una recluta dei Guardiani della notte a Castello Nero.',
+        en: 'A recruit of the Night’s Watch at Castle Black.',
+      },
+      visual: { art: 'rast', tint: 'wine' },
+    },
+    // Show: “You Win or You Die” (episode 7), present when the assignments are read (no credited actor). Books: Jon III (site chapter 20), on the Appearing list. He is sworn at his show gate, so the step goes to the next episode, as Eddard’s Hand does.
+    {
+      id: 'dareon',
+      kind: 'character',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 20,
+      name: { it: 'Dareon', en: 'Dareon' },
+      summary: {
+        it: 'Uno del gruppo di reclute di Jon Snow a Castello Nero.',
+        en: 'One of Jon Snow’s group of recruits at Castle Black.',
+      },
+      visual: { art: 'dareon', tint: 'lavender' },
+    },
+    // Show: “You Win or You Die” (episode 7), present when the assignments are read (no credited actor). Books: Jon III (site chapter 20), on the Appearing list. He is sworn at his show gate, so the step goes to the next episode, as Eddard’s Hand does.
+    {
+      id: 'halder',
+      kind: 'character',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 20,
+      name: { it: 'Halder', en: 'Halder' },
+      summary: {
+        it: 'Uno del gruppo di reclute di Jon Snow a Castello Nero.',
+        en: 'One of Jon Snow’s group of recruits at Castle Black.',
+      },
+      visual: { art: 'halder', tint: 'ice' },
+    },
+    // Show: “Mhysa” (episode 30), his first time on screen; episode 7 only names him (owner). Books: Jon III (site chapter 20), among the recruits who confront Jon. He goes to the rangers in the book and the builders in the show, so his sworn role says neither, and the show already has him sworn at his gate, so the step goes to the next episode.
+    {
+      id: 'todder',
+      kind: 'character',
+      revealedAtEpisode: 30,
+      revealedAtChapter: 20,
+      name: { it: 'Todder', en: 'Todder' },
+      summary: {
+        it: 'Uno del gruppo di reclute di Jon Snow a Castello Nero.',
+        en: 'One of Jon Snow’s group of recruits at Castle Black.',
+      },
+      visual: { art: 'todder', tint: 'green' },
+    },
+    // Show: “You Win or You Die” (episode 7), at the swearing of the new brothers. Books: Jon VI (site chapter 49), on the Appearing list at the same ceremony.
+    {
+      id: 'othell-yarwyck',
+      kind: 'character',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 49,
+      name: { it: 'Othell Yarwyck', en: 'Othell Yarwyck' },
+      summary: {
+        it: 'Il Primo Costruttore dei Guardiani della notte.',
+        en: 'The First Builder of the Night’s Watch.',
+      },
+      visual: { art: 'othell-yarwyck', tint: 'ivory' },
+    },
+    // Show: “The Wars To Come” (episode 41), his first time on screen; episode 7 only names him. Books: Tyrion III (site chapter 22), at the Lord Commander’s table. The book calls him Lord Steward and the show First Steward, so his texts say neither.
+    {
+      id: 'bowen-marsh',
+      kind: 'character',
+      revealedAtEpisode: 41,
+      revealedAtChapter: 22,
+      name: { it: 'Bowen Marsh', en: 'Bowen Marsh' },
+      summary: {
+        it: 'Il capo degli attendenti dei Guardiani della notte.',
+        en: 'The head of the stewards of the Night’s Watch.',
+      },
+      visual: { art: 'bowen-marsh', tint: 'blue' },
+    },
+    // Show: “You Win or You Die” (episode 7), at the assignments. Books: Tyrion III (site chapter 22), at the Lord Commander’s table. Only the book kills him in the stage, told in Jon VIII (site chapter 61).
+    {
+      id: 'jaremy-rykker',
+      kind: 'character',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 22,
+      name: { it: 'Jaremy Rykker', en: 'Jaremy Rykker' },
+      summary: {
+        it: 'Un cavaliere e ufficiale dei ranger dei Guardiani della notte.',
+        en: 'A knight and officer of the rangers of the Night’s Watch.',
+      },
+      visual: { art: 'jaremy-rykker', tint: 'cyan' },
+    },
+    // Show: “The Pointy End” (episode 8), his body is found and identified. Books: Jon III (site chapter 20), he rides out with Benjen Stark’s party, and his body is identified in Jon VII (site chapter 53).
+    {
+      id: 'othor',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 20,
+      name: { it: 'Othor', en: 'Othor' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte, del gruppo di Benjen Stark.',
+        en: 'A ranger of the Night’s Watch, in Benjen Stark’s party.',
+      },
+      visual: { art: 'othor', tint: 'pink' },
+    },
+    // Show: “The Pointy End” (episode 8), his body is found and identified. Books: Jon VII (site chapter 53), the same. He is already dead when he opens, so the log tells it.
+    {
+      id: 'jafer-flowers',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 53,
+      name: { it: 'Jafer Flowers', en: 'Jafer Flowers' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte, del gruppo di Benjen Stark.',
+        en: 'A ranger of the Night’s Watch, in Benjen Stark’s party.',
+      },
+      visual: { art: 'jafer-flowers', tint: 'yellow' },
+    },
+    // Books only: Jon III (site chapter 20), he stops the fight in the armory. The show has no such character.
+    {
+      id: 'donal-noye',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 20,
+      name: { it: 'Donal Noye', en: 'Donal Noye' },
+      summary: {
+        it: 'L’armaiolo di Castello Nero, un fabbro con un braccio solo.',
+        en: 'The armorer of Castle Black, a one-armed smith.',
+      },
+      visual: { art: 'donal-noye', tint: 'ocher' },
+    },
+    // Books only: Jon V (site chapter 42), he answers Maester Aemon’s door. The show has no such character.
+    {
+      id: 'chett',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 42,
+      name: { it: 'Chett', en: 'Chett' },
+      summary: {
+        it: 'Un attendente dei Guardiani della notte al servizio di maestro Aemon.',
+        en: 'A steward of the Night’s Watch who serves Maester Aemon.',
+      },
+      visual: { art: 'chett', tint: 'sand' },
+    },
     // Show: "Winter Is Coming", the cold open, the rangers find the dead
     // wildlings. Books: Prologue (Will), site chapter 1.
     {
@@ -4742,6 +4952,399 @@ export const season1: ThronesSaga = {
           episode: 12,
           chapter: 79,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+      ],
+    },
+    'will': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'Segue le tracce dei bruti con ser Waymar Royce e Gared. Va avanti da solo e riferisce di un accampamento di uomini morti, ma quando i tre ci arrivano i corpi sono spariti.',
+        en: 'He follows the trail of the wildlings with Ser Waymar Royce and Gared. He scouts ahead and reports a camp of dead men, but when the three reach it the bodies are gone.',
+      },
+      status: [{ episode: 1, chapter: 1, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 1,
+          chapter: 1,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'gared': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'Segue le tracce dei bruti con ser Waymar Royce e Will. Consiglia di tornare indietro, ma ser Waymar non lo ascolta.',
+        en: 'He follows the trail of the wildlings with Ser Waymar Royce and Will. He advises turning back, and Ser Waymar overrules him.',
+      },
+      status: [
+        { episode: 1, chapter: 1, source: 'chapter', value: 'alive' },
+        { episode: 1, chapter: 2, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 1,
+          chapter: 1,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'waymar-royce': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'Guida Will e Gared sulle tracce dei bruti. Rifiuta di tornare indietro e muore nella foresta.',
+        en: 'He leads Will and Gared on the trail of the wildlings. He refuses to turn back, and he dies in the forest.',
+      },
+      status: [{ episode: 1, chapter: 1, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 1,
+          chapter: 1,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'grenn': {
+      role: [
+        {
+          episode: 3,
+          chapter: 20,
+          value: {
+            it: 'Recluta dei Guardiani della notte',
+            en: 'Recruit of the Night’s Watch',
+          },
+        },
+        {
+          episode: 7,
+          chapter: 49,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, ranger',
+            en: 'Sworn brother of the Night’s Watch, ranger',
+          },
+        },
+      ],
+      log: {
+        it: 'Si addestra a Castello Nero, dove Jon Snow lo batte nel cortile. Con altre reclute affronta Jon nell’armeria. In seguito Jon gli insegna a difendersi.',
+        en: 'He trains at Castle Black, where Jon Snow beats him in the yard. He and other recruits confront Jon in the armory. Later Jon teaches him to defend himself.',
+      },
+      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 3,
+          chapter: 20,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'pypar': {
+      role: [
+        {
+          episode: 3,
+          chapter: 20,
+          value: {
+            it: 'Recluta dei Guardiani della notte',
+            en: 'Recruit of the Night’s Watch',
+          },
+        },
+        {
+          episode: 7,
+          chapter: 49,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte',
+            en: 'Sworn brother of the Night’s Watch',
+          },
+        },
+      ],
+      log: {
+        it: 'Si addestra a Castello Nero con Jon Snow. Quando Jon comincia ad aiutare le altre reclute con la spada, è tra quelli che imparano da lui.',
+        en: 'He trains at Castle Black with Jon Snow. When Jon starts helping the other recruits with the sword, he is among those who learn from him.',
+      },
+      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 3,
+          chapter: 20,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'rast': {
+      role: [
+        {
+          episode: 3,
+          chapter: 27,
+          value: {
+            it: 'Recluta dei Guardiani della notte',
+            en: 'Recruit of the Night’s Watch',
+          },
+        },
+        {
+          episode: 7,
+          chapter: 49,
+          source: 'episode',
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, ranger',
+            en: 'Sworn brother of the Night’s Watch, ranger',
+          },
+        },
+      ],
+      log: {
+        it: 'Si addestra a Castello Nero, dove combatte contro Jon Snow nel cortile. Tra le reclute è quello che resta ostile a Jon.',
+        en: 'He trains at Castle Black, where he fights Jon Snow in the yard. Among the recruits he is the one who stays hostile to Jon.',
+      },
+      status: [{ episode: 3, chapter: 27, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 3,
+          chapter: 27,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'dareon': {
+      role: [
+        {
+          episode: 7,
+          chapter: 20,
+          value: {
+            it: 'Recluta dei Guardiani della notte',
+            en: 'Recruit of the Night’s Watch',
+          },
+        },
+        {
+          episode: 8,
+          chapter: 49,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, attendente',
+            en: 'Sworn brother of the Night’s Watch, steward',
+          },
+        },
+      ],
+      log: {
+        it: 'Fa parte dello stesso gruppo di reclute di Jon Snow a Castello Nero.',
+        en: 'He is in the same group of recruits as Jon Snow at Castle Black.',
+      },
+      status: [{ episode: 7, chapter: 20, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 7,
+          chapter: 20,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'halder': {
+      role: [
+        {
+          episode: 7,
+          chapter: 20,
+          value: {
+            it: 'Recluta dei Guardiani della notte',
+            en: 'Recruit of the Night’s Watch',
+          },
+        },
+        {
+          episode: 8,
+          chapter: 49,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, costruttore',
+            en: 'Sworn brother of the Night’s Watch, builder',
+          },
+        },
+      ],
+      log: {
+        it: 'Fa parte dello stesso gruppo di reclute di Jon Snow a Castello Nero.',
+        en: 'He is in the same group of recruits as Jon Snow at Castle Black.',
+      },
+      status: [{ episode: 7, chapter: 20, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 7,
+          chapter: 20,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'todder': {
+      role: [
+        {
+          episode: 30,
+          chapter: 20,
+          value: {
+            it: 'Recluta dei Guardiani della notte',
+            en: 'Recruit of the Night’s Watch',
+          },
+        },
+        {
+          episode: 31,
+          chapter: 49,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte',
+            en: 'Sworn brother of the Night’s Watch',
+          },
+        },
+      ],
+      log: {
+        it: 'Fa parte dello stesso gruppo di reclute di Jon Snow a Castello Nero.',
+        en: 'He is in the same group of recruits as Jon Snow at Castle Black.',
+      },
+      status: [{ episode: 30, chapter: 20, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 30,
+          chapter: 20,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'othell-yarwyck': {
+      role: {
+        it: 'Primo Costruttore dei Guardiani della notte',
+        en: 'First Builder of the Night’s Watch',
+      },
+      log: {
+        it: 'Comanda i costruttori, che tengono in piedi la Barriera e i suoi castelli. È presente quando i nuovi confratelli pronunciano il giuramento.',
+        en: 'He commands the builders, who maintain the Wall and its castles. He is present when the new brothers swear their oath.',
+      },
+      status: [{ episode: 7, chapter: 49, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 7,
+          chapter: 49,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'bowen-marsh': {
+      role: {
+        it: 'Capo degli attendenti dei Guardiani della notte',
+        en: 'Head of the stewards of the Night’s Watch',
+      },
+      log: {
+        it: 'Comanda gli attendenti dei Guardiani della notte a Castello Nero.',
+        en: 'He commands the stewards of the Night’s Watch at Castle Black.',
+      },
+      status: [{ episode: 41, chapter: 22, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 41,
+          chapter: 22,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'jaremy-rykker': {
+      role: {
+        it: 'Ufficiale dei ranger dei Guardiani della notte',
+        en: 'Officer of the rangers of the Night’s Watch',
+      },
+      log: {
+        it: 'È un cavaliere e uno degli ufficiali dei ranger a Castello Nero.',
+        en: 'He is a knight and one of the officers of the rangers at Castle Black.',
+      },
+      status: [
+        { episode: 7, chapter: 22, value: 'alive' },
+        { episode: 8, chapter: 61, source: 'chapter', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 7,
+          chapter: 22,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'othor': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'È uno degli uomini che partono con Benjen Stark.',
+        en: 'He is one of the men who ride out with Benjen Stark.',
+      },
+      status: [
+        { episode: 8, chapter: 20, source: 'chapter', value: 'alive' },
+        { episode: 8, chapter: 53, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 20,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'jafer-flowers': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'Il suo corpo viene trovato nella Foresta Stregata insieme a quello di Othor.',
+        en: 'His body is found in the Haunted Forest together with Othor’s.',
+      },
+      status: [{ episode: 8, chapter: 53, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 53,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'donal-noye': {
+      role: { it: 'Armaiolo di Castello Nero', en: 'Armorer of Castle Black' },
+      log: {
+        it: 'Ferma le reclute che vogliono picchiare Jon Snow nell’armeria. Poi spiega a Jon che lui è stato addestrato e loro no.',
+        en: 'He stops the recruits who mean to beat Jon Snow in the armory. Then he tells Jon that he has had training and they have not.',
+      },
+      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 3,
+          chapter: 20,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'chett': {
+      role: [
+        {
+          episode: 5,
+          chapter: 42,
+          value: {
+            it: 'Attendente di maestro Aemon',
+            en: 'Steward to Maester Aemon',
+          },
+        },
+        {
+          episode: 7,
+          chapter: 49,
+          value: {
+            it: 'Addetto ai canili di Castello Nero',
+            en: 'Kennel hand at Castle Black',
+          },
+        },
+      ],
+      log: {
+        it: 'Si occupa di maestro Aemon e dei corvi a Castello Nero. Dice a Jon Snow che il lavoro degli attendenti non è adatto ai vigliacchi.',
+        en: 'He looks after Maester Aemon and the ravens at Castle Black. He tells Jon Snow that a steward’s work is not fit for cowards.',
+      },
+      status: [{ episode: 5, chapter: 42, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 5,
+          chapter: 42,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
         },
       ],
     },

@@ -1435,3 +1435,46 @@ Wikipedia has no entry (owner, 2026-11-03).
   Biter for his filed teeth (Appearing list; synopsis names him).
 - Italian: Mordente (it.wikipedia
   `Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mordente`).
+
+## The Night’s Watch (#1007)
+
+Site chapter = AGOT chapter + 1 (Prologue = 1). Book gates come from each AWOIAF
+chapter page's "Appearing" list, then the synopsis for the naming line. Show
+gates come from the Fandom infobox `First`, the biography's episode citations
+and the episode synopses, and a credits-only name does not count. Neither the
+episodes nor the books were viewed. Every open point is under `unverified` in
+`game-of-thrones.json`.
+
+Filed, gates as episode / site chapter:
+
+- Will 1 / 1, Waymar Royce 1 / 1: both open `deceased`. Will dies by different
+  hands in each medium, so his texts say neither.
+- Gared 1 / 1: killed in episode 1. In the book he survives the Prologue and is
+  the deserter beheaded in Bran I, so his opening `alive` is book-only and
+  `deceased` is pinned at chapter 2. The show gives that execution to Will.
+- Grenn 3 / 20, Pypar 3 / 20: sworn at 7 / 49. Pypar goes to the rangers in the
+  book and the stewards in the show, so his sworn role names neither. His
+  Italian name is Pyp (it.wikipedia).
+- Rast 3 / 27: owner ruling, episode 2 names him only in the credits. Sworn in
+  at episode 7 in the show alone, as the book leaves him in training.
+- Dareon 7 / 20, Halder 7 / 20: named at the assignments. Each role opens as a
+  recruit, and the sworn step sits at 8 / 49: the show swears them at their
+  gate, and a timeline's episodes strictly ascend, as with Eddard's Hand.
+- Todder 30 / 20: owner ruling, episode 7 only mentions him. The rangers in the
+  book and the builders in the show, so his sworn role names neither. His step
+  sits at 31 / 49 for the same reason.
+- Othell Yarwyck 7 / 49: First Builder in both.
+- Bowen Marsh 41 / 22: Lord Steward in the book and First Steward in the show,
+  so his texts say "head of the stewards".
+- Jaremy Rykker 7 / 22: `deceased` at chapter 61, book only, where Jon VIII
+  tells it.
+- Othor 8 / 20: alive in the book until his body is identified at chapter 53.
+- Jafer Flowers 8 / 53: opens `deceased`. The hand found at chapter 49 and in
+  episode 7 is not yet named as his.
+- Donal Noye, chapter 20, and Chett, chapter 42: book only. Chett's role moves
+  to the kennels at chapter 49.
+
+Omitted as bit parts (owner, 2026-11-07): Matthar, Clydas, Albett, Hobb, Jeren,
+Dywen and Cellador. Cotter Pyke and Qhorin Halfhand are only mentioned in the
+stage, so they wait until they appear. Eddison Tollett, Craster and Mance Rayder
+first appear in season 2 or later.
