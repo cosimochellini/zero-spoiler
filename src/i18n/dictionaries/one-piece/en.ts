@@ -164,6 +164,7 @@ export const onePieceEn = {
   'ranks.unknown': 'Under fog',
   'ranks.ended': 'This group has been dissolved.',
   'ranks.fogged': 'Other groups under fog',
+  'ranks.allFogged': 'Every group you have reached is under fog.',
   'fruits.searchLabel': 'Search devil fruits',
   'fruits.searchClear': 'Clear search',
   'fruits.searchPlaceholder': 'Gum-Gum, Luffy',

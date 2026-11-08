@@ -20,7 +20,7 @@ const LIGHT_STEP_MS = 160
 const LIGHT_AFTER_MS = 240
 
 /**
- * The power page's declarations, beside the component rather than inside it
+ * The ranks page's declarations, beside the component rather than inside it
  * for length, as `FillerCatalogue.styles` is.
  */
 export const styles = stylex.create({

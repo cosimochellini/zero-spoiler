@@ -67,6 +67,18 @@ describe('PowerBoard', () => {
     expect(screen.queryByText('Other groups under fog')).not.toBeInTheDocument()
   })
 
+  it('says it in one line when every group reached is under fog', () => {
+    renderWithProviders(<PowerBoard page={{ bodies: [], fogged: true }} />, {
+      bookmark: ep(764),
+    })
+
+    expect(
+      screen.getByText('Every group you have reached is under fog.'),
+    ).toBeVisible()
+    expect(screen.queryByText(/Nothing on this page/u)).not.toBeInTheDocument()
+    expect(screen.queryByText('Other groups under fog')).not.toBeInTheDocument()
+  })
+
   it('ends with one line for the groups under fog, after the rest', () => {
     renderWithProviders(<PowerBoard page={{ ...page, fogged: true }} />, {
       bookmark: ep(600),

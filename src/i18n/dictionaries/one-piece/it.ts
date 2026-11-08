@@ -163,6 +163,7 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'ranks.unknown': 'Nella nebbia',
   'ranks.ended': 'Questo gruppo è stato sciolto.',
   'ranks.fogged': 'Altri gruppi nella nebbia',
+  'ranks.allFogged': 'Ogni gruppo che hai raggiunto è nella nebbia.',
   'fruits.searchLabel': 'Cerca un frutto',
   'fruits.searchClear': 'Cancella la ricerca',
   'fruits.searchPlaceholder': 'Gom Gom, Rufy',

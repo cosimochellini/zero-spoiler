@@ -65,7 +65,10 @@ export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
           <EpisodeMark placement="fold" />
         </div>
       : page.bodies.length === 0 && (
-          <p {...stylex.props(styles.lede)}>{t('ranks.none')}</p>
+          // With every group met under fog, one line says both.
+          <p {...stylex.props(styles.lede)}>
+            {t(page.fogged ? 'ranks.allFogged' : 'ranks.none')}
+          </p>
         )
       }
       {page.bodies.map((body, at) => (
@@ -75,7 +78,7 @@ export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
           body={body}
         />
       ))}
-      {page.fogged && (
+      {page.fogged && page.bodies.length > 0 && (
         <p {...stylex.props(styles.fogged)}>{t('ranks.fogged')}</p>
       )}
     </main>
