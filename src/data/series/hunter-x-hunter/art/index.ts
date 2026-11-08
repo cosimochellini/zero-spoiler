@@ -789,7 +789,7 @@ export const DRAWINGS = {
   ],
 
   // Hisoka's four playing cards fanned, the suits in the record's tint and
-  // the ace of spades in front: the applicant who wounds a man for bumping
+  // the spade card in front: the applicant who wounds a man for bumping
   // into him without apologizing, in episode 3 and chapter 5. His cards are
   // what the Hunter Exam knows him by: he throws them in the Milsy Wetlands
   // (episode 5, chapter 8) and builds a house of them on the airship
@@ -1141,8 +1141,8 @@ const HISOKA_FAN_HELD: Stroke[] = [
 
 /**
  * The early-exam drawings that change with the story: the applicants Tonpa
- * points out who die later in the exam, and Kurapika's wooden swords, which
- * his chain replaces.
+ * points out who die later in the exam, Kurapika's wooden swords, which his
+ * chain replaces, and every later stage of Hisoka's cards, Kakin's included.
  */
 const hunterExamRedrawn: Redrawings = {
   kurapika: [
@@ -1215,8 +1215,8 @@ const hunterExamRedrawn: Redrawings = {
   ],
   hisoka: [
     // The same fan lifted a little, and under it bands of his aura
-    // stretched like pulled gum from the cards to the ground: Bungee Gum,
-    // his first ability, is named after the Kastro match, episode 32 /
+    // stretched like pulled gum from the cards to the ground: Bungee Gum is
+    // named, with Texture Surprise, after the Kastro match, episode 32 /
     // chapter 55, which tells how he held his cards to the floor with it.
     // The bands are open lines in the muted ink, no glow.
     {
@@ -1277,7 +1277,11 @@ const KAKIN = { episode: 148, source: 'chapter' } as const
 /** Kortopi's vase, the first stroke of his drawing. */
 const KORTOPI_VASE = YORKNEW_CITY_DRAWINGS.kortopi.slice(0, 1)
 
-/** Returning records whose drawing changes in Kakin, chapters 340–420 (#1154, #1156, #1158). */
+/**
+ * Returning records whose drawing changes in Kakin, chapters 340–420 (#1154,
+ * #1156, #1158). Hisoka's chapter 357 stage lives with his other stages, in
+ * `hunterExamRedrawn`.
+ */
 const kakinReturningRedrawn: Redrawings = {
   'bonolenov': [
     // The same roll of bandage made small, and above it Hisoka's cards in
