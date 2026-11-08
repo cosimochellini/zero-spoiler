@@ -48,16 +48,16 @@ export const BEASTS_PIRATES: PowerBody<OnePieceVocabulary> = {
       chapter: 795,
       episode: 739,
       value: {
-        en: 'The crew of one of the four Emperors, led by a governor-general. Its captain is known as the strongest creature in the world.',
-        it: 'La ciurma di uno dei quattro Imperatori, guidata da un governatore generale. Il suo capitano è noto come la creatura più forte del mondo.',
+        en: 'The crew of one of the four Emperors. Its captain is known as the strongest creature in the world.',
+        it: 'La ciurma di uno dei quattro Imperatori. Il suo capitano è noto come la creatura più forte del mondo.',
       },
     },
     {
       chapter: 929,
       episode: 923,
       value: {
-        en: 'A crew with a strict order: three All-Stars on top, and below them the Tobiroppo, its strongest fighters.',
-        it: 'Una ciurma con un ordine rigido: tre All-Star in cima e sotto di loro i Tobiroppo, i suoi combattenti più forti.',
+        en: 'A crew with a strict order: three All-Stars on top, and below them the Tobiroppo, its strongest officers.',
+        it: 'Una ciurma con un ordine rigido: tre All-Star in cima e sotto di loro i Tobiroppo, i suoi ufficiali più forti.',
       },
     },
   ],

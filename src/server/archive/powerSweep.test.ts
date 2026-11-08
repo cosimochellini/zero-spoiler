@@ -276,22 +276,28 @@ function descriptionFaults(ask: {
           .map(() => `${body.id} sends a version it has not reached ${at}`),
       ]
     }),
-    ...labelFaults(page, at),
+    ...labelFaults(page, { at, locale }),
   ]
 }
 
-/** The labels of groups a page does not list, printed in its descriptions. */
-function labelFaults(page: PowerPageView, at: string): string[] {
+/**
+ * The labels, in the page's language and in any case, of groups a page does
+ * not list, printed in its descriptions.
+ */
+function labelFaults(
+  page: PowerPageView,
+  { at, locale }: { at: string; locale: Locale },
+): string[] {
   const listed = new Set(page.bodies.map(({ id }) => id))
   const labels = bodies
     .filter(({ id }) => !listed.has(id))
-    .flatMap(({ id }) =>
-      LOCALES.map((language) => FACTION_LABELS[language][printedFaction(id)]),
-    )
+    .map(({ id }) => FACTION_LABELS[locale][printedFaction(id)])
 
-  return page.bodies.flatMap(({ description }) =>
+  return page.bodies.flatMap(({ description = '' }) =>
     labels
-      .filter((label) => description?.includes(label) === true)
+      .filter((label) =>
+        description.toLowerCase().includes(label.toLowerCase()),
+      )
       .map((label) => `"${label}" of a body not listed ${at}`),
   )
 }

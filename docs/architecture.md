@@ -270,6 +270,10 @@ live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
   `scripts/archive-gate.power.mjs` looks for each module by its longest
   hyphenated holder id of 9 or more characters, or, when it seats none, by its
   longest English seat title of 12 or more; a module with neither is refused.
+  `descriptionCanaries` adds a second canary per module, its longest quoted
+  sentence of 60 or more characters, so every body needs a description of that
+  length; `power/` is therefore left out of the prose-module test in
+  `archive-gate.test.mjs`, which asks every other prose module to be an extra.
   `leaks.test.ts` scans each title as kind `seat` at the later of its body's
   gate and its seat's `told`, and each version of a body's `description` (one to
   three, a turning point each, shown under the body's name) as kind `about` at

@@ -22,8 +22,8 @@ export const RED_HAIR_PIRATES: PowerBody<OnePieceVocabulary> = {
       chapter: 1,
       episode: 4,
       value: {
-        en: 'A pirate crew led by a red-haired captain, with a first mate at his side. Its captain left his straw hat with a boy who dreams of being a pirate.',
-        it: 'Una ciurma di pirati guidata da un capitano dai capelli rossi, con un primo ufficiale al suo fianco. Il capitano ha lasciato il suo cappello di paglia a un ragazzino che sogna di fare il pirata.',
+        en: 'A pirate crew led by a red-haired captain. Its captain left his straw hat with a boy who dreams of being a pirate.',
+        it: 'Una ciurma di pirati guidata da un capitano dai capelli rossi. Il capitano ha lasciato il suo cappello di paglia a un ragazzino che sogna di fare il pirata.',
       },
     },
     {

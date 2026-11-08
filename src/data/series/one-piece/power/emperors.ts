@@ -35,8 +35,8 @@ export const EMPERORS: PowerBody<OnePieceVocabulary> = {
       chapter: 1053,
       episode: 1080,
       value: {
-        en: 'Four pirates the world names as its Emperors. The old generation has fallen, and the four named now are a new one. Together they remain one of the three great powers.',
-        it: 'Quattro pirati che il mondo nomina suoi Imperatori. La vecchia generazione è caduta e i quattro di oggi sono una nuova. Insieme restano una delle tre grandi potenze.',
+        en: 'Four pirates the world names as its Emperors. Two of them are newly named, in place of two who fell.',
+        it: 'Quattro pirati che il mondo nomina suoi Imperatori. Due sono nominati da poco, al posto di due che sono caduti.',
       },
     },
   ],

@@ -1,7 +1,7 @@
 import { screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import type { PowerPageView } from '~/lib/view/power'
+import type { BodyView, PowerPageView } from '~/lib/view/power'
 import { ep, renderWithProviders } from '~/test/providers'
 
 import { PowerBoard } from './PowerBoard'
@@ -52,12 +52,33 @@ describe('PowerBoard', () => {
     expect(screen.queryByText(/not set a bookmark/u)).not.toBeInTheDocument()
   })
 
-  it('describes a group under its name, and says nothing without one', () => {
+  it('prints a group’s description under its name', () => {
     renderWithProviders(<PowerBoard page={page} />, { bookmark: ep(600) })
 
     expect(
       screen.getByText('Seven pirates in the service of the government.'),
     ).toBeVisible()
+  })
+
+  it('prints no description line for a group without one', () => {
+    const bare: BodyView = {
+      id: 'warlords',
+      kind: 'council',
+      name: 'Seven Warlords of the Sea',
+      ended: false,
+      seats: [],
+    }
+    renderWithProviders(<PowerBoard page={{ bodies: [bare] }} />, {
+      bookmark: ep(600),
+    })
+
+    expect(
+      screen.queryByText('Seven pirates in the service of the government.'),
+    ).not.toBeInTheDocument()
+
+    const heading = screen.getByRole('heading', { level: 2 })
+
+    expect(heading.nextElementSibling).toBeNull()
   })
 
   it('lists each seat with its holder, a vacancy or the fog', () => {

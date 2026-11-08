@@ -49,8 +49,8 @@ export const BLACKBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
       },
     },
     {
-      chapter: 737,
-      episode: 670,
+      chapter: 803,
+      episode: 752,
       value: {
         en: 'The crew of an Emperor, run as a fleet. Ten Titanic Captains each command a ship, and all of them answer to the captain.',
         it: 'La ciurma di un Imperatore, organizzata come una flotta. Dieci capitani titanici comandano una nave ciascuno e rispondono tutti al capitano.',

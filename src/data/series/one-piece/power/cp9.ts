@@ -51,8 +51,16 @@ export const CP9: PowerBody<OnePieceVocabulary> = {
       chapter: 358,
       episode: 250,
       value: {
-        en: 'A secret unit of Cipher Pol, the government’s agency of spies and assassins. Its agents are licensed to kill anyone who stands against the government, and a chief gives them their orders.',
-        it: 'Un’unità segreta dei Cipher Pol, l’agenzia di spie e assassini del governo. I suoi agenti hanno il permesso di uccidere chiunque si opponga al governo, e un capo dà loro gli ordini.',
+        en: 'A secret unit of Cipher Pol whose agents are licensed to kill for the government. A chief gives them their orders.',
+        it: 'Un’unità segreta dei Cipher Pol i cui agenti hanno il permesso di uccidere per il governo. Un capo dà loro gli ordini.',
+      },
+    },
+    {
+      chapter: 801,
+      episode: 746,
+      value: {
+        en: 'A secret unit of Cipher Pol whose agents were licensed to kill for the government. Its chief and some of its agents are later seen in CP0, the unit that works for the World Nobles.',
+        it: 'Un’unità segreta dei Cipher Pol i cui agenti avevano il permesso di uccidere per il governo. Il suo capo e alcuni agenti si vedono poi nella CP0, l’unità che lavora per i Nobili Mondiali.',
       },
     },
   ],

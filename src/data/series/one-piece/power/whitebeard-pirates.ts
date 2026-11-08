@@ -53,16 +53,16 @@ export const WHITEBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
       chapter: 234,
       episode: 151,
       value: {
-        en: 'The crew of the pirate who once fought the Pirate King as an equal. The government watches it closely and fears what would come of it joining forces with another great crew.',
-        it: 'La ciurma del pirata che un tempo ha combattuto alla pari con il Re dei Pirati. Il governo la tiene d’occhio e teme cosa accadrebbe se si alleasse con un’altra grande ciurma.',
+        en: 'A large crew the government watches closely. It fears what would come of its captain meeting another great captain and joining forces.',
+        it: 'Una grande ciurma che il governo tiene d’occhio. Teme cosa accadrebbe se il suo capitano incontrasse un altro grande capitano e si alleasse con lui.',
       },
     },
     {
       chapter: 576,
       episode: 485,
       value: {
-        en: 'The crew of an Emperor who has died in the war. With its captain gone, it has lost the one who held it together.',
-        it: 'La ciurma di un Imperatore morto nella guerra. Senza il suo capitano ha perso chi la teneva unita.',
+        en: 'The crew of an Emperor who has died in the war. It was split into divisions, each under its own commander.',
+        it: 'La ciurma di un Imperatore morto nella guerra. Era divisa in divisioni, ognuna con il proprio comandante.',
       },
     },
   ],
