@@ -240,11 +240,11 @@ dictionaries stay server-side and reach only the relevant pages; Italian keys
 are typed against English. A series' copy goes to every page at every bookmark,
 so gated names do not belong in it: One Piece's faction labels live in
 `src/i18n/dictionaries/one-piece/factions.ts` and reach a page only with the
-fruit album group an open eater stands in, or, from a body of power's own gate,
-as that body's name on the power page and on the seat links of a character who
-holds one of its seats (`seatsHeldBy`); its seas' names live in
-`src/i18n/dictionaries/one-piece/seas.ts` and reach the places page only for the
-regions its open stops open on the chart (`regionsFor`,
+fruit album group an open eater stands in, or, once a body of power is met and
+one of its seats is held or vacant, as that body's name on the ranks page and on
+the seat links of a character who holds one of its seats (`seatsHeldBy`); its
+seas' names live in `src/i18n/dictionaries/one-piece/seas.ts` and reach the
+places page only for the regions its open stops open on the chart (`regionsFor`,
 `src/lib/view/chart.ts`), and a place's page or peek for its own sea. The shared
 dictionary is one chunk per locale: the locale routes await `loadDictionary` in
 `beforeLoad` and the router awaits it before hydrating, so a page downloads its
@@ -263,7 +263,9 @@ live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
 - Register new prose outside a series' `records/` in its `EXTRA.prose` entry in
   `scripts/archive-gate.mjs` and in `textsOf` in `src/data/leaks.test.ts`, using
   the page's actual gate.
-- The power page's bodies live one per module in
+- The ranks page (`/{series}/{locale}/ranks`, `/power` until #1194, which
+  `movedPageRedirect` in `src/lib/legacyRedirect.ts` answers with a 301 that
+  keeps the query) draws the bodies of power. They live one per module in
   `src/data/series/<folder>/power/`. Seat titles are a word or two, so
   `scripts/archive-gate.power.mjs` looks for each module by its longest
   hyphenated holder id of 9 or more characters, or, when it seats none, by its
@@ -271,10 +273,13 @@ live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
   `leaks.test.ts` scans each title as kind `seat` at the later of its body's
   gate and its seat's `told`. A character's page lists the seats they hold now
   (`seatsHeldBy` in `src/server/archive/power.server.ts`), read through the same
-  `holderOf` as the power page, less a body that has ended; each links to its
-  body's section (`powerAnchor`). `powerSweep.test.ts` runs the leak sweep over
-  both, and holds the two equal, at both sides of every dated change of every
-  body.
+  `holderOf` as the ranks page, less a body that has ended; each links to its
+  body's section (`powerAnchor`, `#ranks-{body}`). The page lists a body only
+  once a seat of it is held or vacant at the bookmark; a body met with every
+  seat under fog sends nothing, and `fogged: true` alone puts one line at the
+  end of the page, with no count and no place in the order. `powerSweep.test.ts`
+  runs the leak sweep over both, and holds the two equal, at both sides of every
+  dated change of every body.
 - New series need a registry entry and coverage floors/text kinds in
   `src/test/series.ts`. Follow an existing series for archive and copy wiring.
 - Client code consumes `src/lib/view` types, never archive modules. ESLint,

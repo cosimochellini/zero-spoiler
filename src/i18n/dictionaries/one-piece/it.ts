@@ -57,14 +57,14 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'form.train': 'Treno del mare',
 
   'nav.fruits': 'Frutti',
-  'nav.power': 'Potere',
+  'nav.ranks': 'Cariche',
 
   'home.filler.title': 'Occhio ai filler',
   'home.filler.link': 'Vedi tutti i filler',
 
   'dialog.filler': 'Filler',
 
-  'character.power': 'Potere',
+  'character.ranks': 'Cariche',
   'character.devilFruit': 'Frutto del diavolo',
   'character.bounty': 'Taglia',
   'character.bountyValue': '{amount} Berry',
@@ -149,19 +149,21 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'fruits.pageTitle': 'Frutti del diavolo | {series} | Zero Spoiler',
   'fruits.pageDescription':
     'I frutti del diavolo di One Piece, ognuno nascosto fino all’episodio in cui viene nominato per la prima volta.',
-  'power.title': 'Il potere nel mondo',
-  'power.lede':
-    'Ogni gruppo che hai raggiunto, con i suoi seggi e chi li occupa al punto del tuo segnalibro.',
-  'power.pageTitle': 'Il potere nel mondo | {series} | Zero Spoiler',
-  'power.pageDescription':
-    'Chi occupa i seggi del potere nel mondo di One Piece, ognuno nascosto fino al capitolo o all’episodio che lo nomina.',
-  'power.noBookmark':
-    'Non hai ancora impostato un segnalibro, quindi ogni gruppo e ogni seggio sono nella nebbia.',
-  'power.none':
+  'ranks.title': 'Le cariche del mondo',
+  'ranks.lede':
+    'Le cariche di ogni gruppo che hai raggiunto e chi le ricopre al punto del tuo segnalibro.',
+  'ranks.pageTitle': 'Le cariche del mondo | {series} | Zero Spoiler',
+  'ranks.pageDescription':
+    'Chi ricopre ogni carica nel mondo di One Piece, ognuno nascosto fino al capitolo o all’episodio che lo nomina.',
+  'ranks.noBookmark':
+    'Non hai ancora impostato un segnalibro, quindi ogni gruppo e ogni carica sono nella nebbia.',
+  'ranks.none':
     'Niente di questa pagina è visibile al punto del tuo segnalibro.',
-  'power.vacant': 'Vacante',
-  'power.unknown': 'Nella nebbia',
-  'power.ended': 'Questo gruppo è stato sciolto.',
+  'ranks.vacant': 'Vacante',
+  'ranks.unknown': 'Nella nebbia',
+  'ranks.ended': 'Questo gruppo è stato sciolto.',
+  'ranks.fogged': 'Altri gruppi nella nebbia',
+  'ranks.allFogged': 'Ogni gruppo che hai raggiunto è nella nebbia.',
   'fruits.searchLabel': 'Cerca un frutto',
   'fruits.searchClear': 'Cancella la ricerca',
   'fruits.searchPlaceholder': 'Gom Gom, Rufy',

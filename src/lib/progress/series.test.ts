@@ -56,7 +56,7 @@ describe('the series candidate in a route', () => {
     '/one-piece/en/fruits/gum-gum',
     '/one-piece/it/places',
     '/one-piece/en/filler',
-    '/one-piece/it/power',
+    '/one-piece/it/ranks',
   ])('reads the slug of %s', (path) => {
     expect(seriesSlugFromPath(path)).toBe('one-piece')
   })
@@ -76,7 +76,9 @@ describe('the series candidate in a route', () => {
     '/one-piece/it/privacy',
     '/one-piece/fr',
     '/one-piece/en/characters/nami/extra',
-    '/one-piece/en/power/anything',
+    '/one-piece/en/ranks/anything',
+    // The ranks page's old address, which only redirects (#1194).
+    '/one-piece/it/power',
     '//en',
   ])('reads no series from %s', (path) => {
     expect(seriesSlugFromPath(path)).toBeNull()
@@ -106,7 +108,7 @@ describe('the series a link parameter sets the bookmark of', () => {
     '/hunter-x-hunter/en/fruits',
     '/hunter-x-hunter/en/fruits/gum-gum',
     '/hunter-x-hunter/it/filler',
-    '/hunter-x-hunter/it/power',
+    '/hunter-x-hunter/it/ranks',
     '/missing/en/characters',
     '/en/legal',
   ])('is none on %s', (path) => {
@@ -116,7 +118,7 @@ describe('the series a link parameter sets the bookmark of', () => {
   it.each([
     '/one-piece/en/fruits',
     '/one-piece/en/filler',
-    '/one-piece/it/power',
+    '/one-piece/it/ranks',
   ])('is One Piece on %s', (path) => {
     expect(linkedSeries(path, filed)).toBe(ONE_PIECE_SERIES)
   })

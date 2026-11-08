@@ -7,8 +7,8 @@ import type { Faction } from '~/lib/view/records'
  * group the reader meets late ("Kozuki family", "Cross Guild"), so the fruit
  * album sends each with its group (`fruitAlbum`), and a group is sent only
  * once an eater the reader has reached stands in it (#988), at the
- * affiliation entry's gate. The power page sends a body's label at the body's
- * own gate (`powerPage`).
+ * affiliation entry's gate. The ranks page sends a body's label once the body
+ * is met and a seat of it is held or vacant (`powerPage`).
  */
 export const FACTION_LABELS: Record<Locale, Record<Faction, string>> = {
   en: {

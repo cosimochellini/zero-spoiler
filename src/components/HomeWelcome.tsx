@@ -35,7 +35,7 @@ const PAGES: PageEntry<TranslationKey>[] = [
 /** One Piece's own pages, in its words. */
 const ONE_PIECE_PAGES: PageEntry<TranslationKey<'one-piece'>>[] = [
   { page: 'fruits', to: '/$series/$locale/fruits', label: 'fruits.title' },
-  { page: 'power', to: '/$series/$locale/power', label: 'power.title' },
+  { page: 'ranks', to: '/$series/$locale/ranks', label: 'ranks.title' },
   { page: 'filler', to: '/$series/$locale/filler', label: 'filler.title' },
 ]
 

@@ -89,7 +89,7 @@ export function SiteBar(): ReactElement {
 
 /**
  * The bar's pages, in its order; the filler guide is reached by its address.
- * Labelled by the page's own copy: the fruits, the power page and the filler
+ * Labelled by the page's own copy: the fruits, the ranks page and the filler
  * guide are One Piece's, and only a series that declares them links them.
  */
 const NAV: PageEntry<TranslationKey>[] = [
@@ -104,7 +104,7 @@ const NAV: PageEntry<TranslationKey>[] = [
 /** One Piece's own pages in the bar, in its words. */
 const ONE_PIECE_NAV: PageEntry<TranslationKey<'one-piece'>>[] = [
   { page: 'fruits', to: '/$series/$locale/fruits', label: 'nav.fruits' },
-  { page: 'power', to: '/$series/$locale/power', label: 'nav.power' },
+  { page: 'ranks', to: '/$series/$locale/ranks', label: 'nav.ranks' },
 ]
 
 /**

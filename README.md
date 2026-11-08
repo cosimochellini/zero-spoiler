@@ -83,9 +83,9 @@ design is in [docs/architecture.md](docs/architecture.md).
 ## What's inside
 
 One Piece has 500+ characters, 120+ devil fruits and about 40 places, from the
-first episode to the latest arc. Its power page shows who holds the seats of
+first episode to the latest arc. Its Ranks page shows who holds the ranks in
 about fifteen groups, such as the Emperors and the Marines, and a character's
-page links to the seats they hold. Hunter x Hunter currently covers the Hunter
+page links to the ranks they hold. Hunter x Hunter currently covers the Hunter
 Exam, Heavens Arena, Yorknew City, Greed Island, Chimera Ant, Election and Kakin
 up to its latest chapter, with 250+ characters and about forty places. Game of
 Thrones currently covers the first season and the first book, with 140+

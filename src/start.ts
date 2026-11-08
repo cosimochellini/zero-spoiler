@@ -6,7 +6,7 @@ import {
 
 import { descriptionOf } from '~/data/series'
 import { SERVER_FN_BASE } from '~/lib/endpoints'
-import { legacyRedirect } from '~/lib/legacyRedirect'
+import { legacyRedirect, movedPageRedirect } from '~/lib/legacyRedirect'
 import { linkRedirect } from '~/lib/progress/linkBookmark'
 import {
   migrateBookmark,
@@ -70,6 +70,7 @@ export const startInstance = createStart(() => {
           const linked =
             legacyRedirect(request)
             ?? rootRedirect(request)
+            ?? movedPageRedirect(request, descriptionOf)
             ?? linkRedirect(request, linkedSeries(url.pathname, descriptionOf))
           if (linked !== undefined) {
             return withMigratedCookies(linked, cookies)

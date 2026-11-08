@@ -76,10 +76,36 @@ describe('the World Government on the power page', () => {
     },
   )
 
+  // Named at 397/277, but every seat under fog until Saturn's record opens:
+  // the page lists them only in its one line for such groups (#1194).
   it.each([chapter(397), episode(277), chapter(1072), episode(1104)])(
-    'counts five unnamed Elders at %j',
+    'keeps the five unnamed Elders in the fog line at %j',
     (at) => {
-      expect(seatsOf('five-elders', at)).toStrictEqual(UNKNOWN_ELDERS)
+      expect(seatsOf('five-elders', at)).toBeUndefined()
+      expect(
+        powerPage(readerFor(ONE_PIECE_LOADED.archive, at, 'en')).fogged,
+      ).toBe(true)
+    },
+  )
+
+  it.each([episode(764), chapter(780)])(
+    'sends nothing of the Elders at %j',
+    (at) => {
+      for (const locale of LOCALES) {
+        const served = JSON.stringify(
+          powerPage(readerFor(ONE_PIECE_LOADED.archive, at, locale)),
+        )
+
+        for (const word of [
+          'five-elders',
+          'Five Elders',
+          'Cinque Astri',
+          '"Elder"',
+          'Astro di Saggezza',
+        ]) {
+          expect(served, `${word} ${locale}`).not.toContain(word)
+        }
+      }
     },
   )
 

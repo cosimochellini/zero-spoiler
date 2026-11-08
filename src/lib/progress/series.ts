@@ -239,7 +239,7 @@ export const GAME_OF_THRONES_SERIES: Series = {
 }
 
 /** A page under `/{series}/{locale}/` that only some series have. */
-export type SeriesPage = 'characters' | 'filler' | 'fruits' | 'places' | 'power'
+export type SeriesPage = 'characters' | 'filler' | 'fruits' | 'places' | 'ranks'
 
 /** What decides each of those pages: a kind the series files, or a feature. */
 const PAGES: Record<SeriesPage, (series: Series) => boolean> = {
@@ -248,7 +248,7 @@ const PAGES: Record<SeriesPage, (series: Series) => boolean> = {
     series.kinds.includes('place') || series.kinds.includes('ship'),
   fruits: (series) => series.features.fruits,
   filler: (series) => series.features.filler,
-  power: (series) => series.features.power,
+  ranks: (series) => series.features.power,
 }
 
 /**
@@ -264,7 +264,7 @@ function isSeriesPage(page: string): page is SeriesPage {
 }
 
 /**
- * Only an archive index, a record, the filler guide or the power page
+ * Only an archive index, a record, the filler guide or the ranks page
  * carries a bookmark.
  */
 function isContentPage(page: string | undefined, rest: string[]): boolean {
@@ -274,7 +274,7 @@ function isContentPage(page: string | undefined, rest: string[]): boolean {
   if (!isSeriesPage(page)) {
     return false
   }
-  if (page === 'filler' || page === 'power') {
+  if (page === 'filler' || page === 'ranks') {
     return rest.length === 0
   }
   return rest.length <= 1 && rest[0] !== ''

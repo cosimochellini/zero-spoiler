@@ -25,7 +25,7 @@ import { Route as FruitRoute } from '~/routes/$series/$locale/fruits/$id'
 import { Route as FruitsRoute } from '~/routes/$series/$locale/fruits/index'
 import { Route as PlaceRoute } from '~/routes/$series/$locale/places/$id'
 import { Route as PlacesRoute } from '~/routes/$series/$locale/places/index'
-import { Route as PowerRoute } from '~/routes/$series/$locale/power'
+import { Route as RanksRoute } from '~/routes/$series/$locale/ranks'
 import { seriesCopy, seriesDescription } from '~/routes/-series'
 import { routeTree } from '~/routeTree.gen'
 import { copyOf } from '~/server/copy.server'
@@ -65,7 +65,7 @@ const PAGE_ROUTES: {
   { page: 'fruits', path: 'fruits', route: FruitsRoute },
   { page: 'fruits', path: 'fruits/$id', route: FruitRoute },
   { page: 'filler', path: 'filler', route: FillerRoute },
-  { page: 'power', path: 'power', route: PowerRoute },
+  { page: 'ranks', path: 'ranks', route: RanksRoute },
 ]
 
 const root = createRootRouteWithContext<{ series: null | Series }>()()
@@ -155,7 +155,7 @@ describe('the pages a series declares', () => {
     },
   )
 
-  it.each(['fruits', 'fruits/any-id', 'filler', 'power'])(
+  it.each(['fruits', 'fruits/any-id', 'filler', 'ranks', 'power'])(
     'answers 404 at /hunter-x-hunter/en/%s with Hunter x Hunter open',
     async (path) => {
       vi.mocked(seriesDescription).mockResolvedValue(HUNTER_X_HUNTER_SERIES)
@@ -169,7 +169,7 @@ describe('the pages a series declares', () => {
     },
   )
 
-  it.each(['characters', 'places', 'fruits', 'filler', 'power'] as const)(
+  it.each(['characters', 'places', 'fruits', 'filler', 'ranks'] as const)(
     'keeps every One Piece page: %s',
     (page) => {
       expect(hasPage(ONE_PIECE_SERIES, page)).toBe(true)

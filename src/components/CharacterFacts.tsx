@@ -93,7 +93,7 @@ function onePieceRows(
   t: SeriesTranslate<'one-piece'>,
 ): [string, ReactNode][] {
   return [
-    [t('character.power'), seatRow(facts.seats)],
+    [t('character.ranks'), seatRow(facts.seats)],
     [t('character.devilFruit'), fruitRow(facts.devilFruit)],
     [t('character.bounty'), formatBounty(facts.bounty, locale, t)],
   ]
@@ -157,8 +157,8 @@ function seatRow(seats: SeatLink[] | undefined): ReactNode {
 }
 
 /**
- * One line per seat, each leading to its body on the power page. The server
- * sends only the seats the power page shows the character in, so a link here
+ * One line per seat, each leading to its body on the ranks page. The server
+ * sends only the seats that page shows the character in, so a link here
  * opens nothing the reader has not reached.
  */
 function SeatLinks({ seats }: { seats: SeatLink[] }): ReactElement {
@@ -175,7 +175,7 @@ function SeatLinks({ seats }: { seats: SeatLink[] }): ReactElement {
             <Link
               hash={powerAnchor(seat.id)}
               params={{ series, locale }}
-              to="/$series/$locale/power"
+              to="/$series/$locale/ranks"
               {...stylex.props(styles.link)}
             >
               {label}
