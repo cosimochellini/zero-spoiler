@@ -95,6 +95,23 @@ function seatsAt(
   return { onPages, onPower: onPower.toSorted(alphabetically), ruled }
 }
 
+/**
+ * The `body|title` pairs the characters' pages list at an ask more often than
+ * the power page holds a seat of that title: one it shows under fog or vacant.
+ */
+function beyondHeldAt({ bookmark, locale }: (typeof ASKS)[number]): string[] {
+  const { onPages, ruled } = seatsAt(bookmark, locale)
+  const listed = new Map<string, number>()
+  for (const seat of onPages) {
+    const key = seat.slice(0, seat.lastIndexOf('|'))
+    listed.set(key, (listed.get(key) ?? 0) + 1)
+  }
+
+  return [...listed]
+    .filter(([key, count]) => count > (ruled.get(key) ?? 0))
+    .map(([key]) => `${key} @ ${JSON.stringify(bookmark)} ${locale}`)
+}
+
 const alphabetically = (a: string, b: string): number => a.localeCompare(b)
 
 // About 400 bookmarks in both locales, each a power page and every holder's
@@ -134,20 +151,7 @@ describe('the power feature at every dated change', () => {
   it(
     'never lists a seat on a character’s page that the power page shows unknown or vacant',
     () => {
-      const extra: string[] = []
-      for (const { bookmark, locale } of ASKS) {
-        const { onPages, ruled } = seatsAt(bookmark, locale)
-        const listed = new Map<string, number>()
-        for (const seat of onPages) {
-          const key = seat.slice(0, seat.lastIndexOf('|'))
-          listed.set(key, (listed.get(key) ?? 0) + 1)
-        }
-        for (const [key, count] of listed) {
-          if (count > (ruled.get(key) ?? 0)) {
-            extra.push(`${key} @ ${JSON.stringify(bookmark)} ${locale}`)
-          }
-        }
-      }
+      const extra = ASKS.flatMap((ask) => beyondHeldAt(ask))
 
       expect(extra).toStrictEqual([])
     },

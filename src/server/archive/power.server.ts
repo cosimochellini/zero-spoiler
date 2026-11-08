@@ -122,21 +122,23 @@ function holderOf(
  * ("Emperor"), so only a chain's or a crew's sends the body's name too.
  */
 export function seatsHeldBy(entity: Entity, r: Reader): SeatLink[] {
+  return r.archive.bodies.flatMap((body) =>
+    stands(body, r) ? heldIn(body, entity, r) : [],
+  )
+}
+
+/** The seats of one body a character holds at the bookmark. */
+function heldIn(body: PowerBody, entity: Entity, r: Reader): SeatLink[] {
   const held: SeatLink[] = []
-  for (const body of r.archive.bodies) {
-    if (!stands(body, r)) {
+  for (const seat of body.seats) {
+    if (!r.sees(seat.told) || holderOf(seat, body, r)?.id !== entity.id) {
       continue
     }
-    for (const seat of body.seats) {
-      if (!r.sees(seat.told) || holderOf(seat, body, r)?.id !== entity.id) {
-        continue
-      }
-      held.push({
-        id: body.id,
-        title: seat.title[r.locale],
-        ...nameIfUntold(body, r),
-      })
-    }
+    held.push({
+      id: body.id,
+      title: seat.title[r.locale],
+      ...nameIfUntold(body, r),
+    })
   }
 
   return held
