@@ -2586,6 +2586,17 @@ export const dressrosa: OnePieceSaga = {
           episode: 739,
           factions: ['beasts-pirates', 'emperors'],
           value: {
+            it: 'Pirati delle Cento Bestie; Imperatore',
+            en: 'Beasts Pirates; Emperor',
+          },
+        },
+        // Ch 922 p.10 / ep 913: the chapter "Governor-General Kaidou of the
+        // Beasts Pirates" tells the rank; the crew's debut (ch 795) does not.
+        {
+          episode: 913,
+          chapter: 922,
+          factions: ['beasts-pirates', 'emperors'],
+          value: {
             it: 'Pirati delle Cento Bestie, governatore generale; Imperatore',
             en: 'Beasts Pirates, governor-general; Emperor',
           },
