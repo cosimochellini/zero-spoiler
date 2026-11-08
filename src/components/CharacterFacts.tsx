@@ -7,6 +7,7 @@ import { useLocale, useSeriesT, useT } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
 import type { SeriesTranslate, Translate } from '~/i18n/types'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
+import { powerAnchor, type SeatLink } from '~/lib/view/power'
 import type {
   CharacterStatus,
   CharacterFacts as Facts,
@@ -85,13 +86,14 @@ export function CharacterFacts({
   )
 }
 
-/** The facts only One Piece files: a devil fruit and a bounty. */
+/** The facts only One Piece files: seats of power, a devil fruit, a bounty. */
 function onePieceRows(
   facts: Facts,
   locale: Locale,
   t: SeriesTranslate<'one-piece'>,
 ): [string, ReactNode][] {
   return [
+    [t('character.power'), seatRow(facts.seats)],
     [t('character.devilFruit'), fruitRow(facts.devilFruit)],
     [t('character.bounty'), formatBounty(facts.bounty, locale, t)],
   ]
@@ -149,6 +151,42 @@ function FruitLinks({ links }: { links: FruitLink[] }): ReactElement {
   )
 }
 
+/** The seats row, or nothing when the character holds none the reader has met. */
+function seatRow(seats: SeatLink[] | undefined): ReactNode {
+  return seats === undefined ? undefined : <SeatLinks seats={seats} />
+}
+
+/**
+ * One line per seat, each leading to its body on the power page. The server
+ * sends only the seats the power page shows the character in, so a link here
+ * opens nothing the reader has not reached.
+ */
+function SeatLinks({ seats }: { seats: SeatLink[] }): ReactElement {
+  const { series, locale } = useSeriesParams()
+
+  return (
+    <ul {...stylex.props(styles.seats)}>
+      {seats.map((seat) => {
+        const label =
+          seat.body === undefined ? seat.title : `${seat.title}, ${seat.body}`
+
+        return (
+          <li key={`${seat.id} ${label}`}>
+            <Link
+              hash={powerAnchor(seat.id)}
+              params={{ series, locale }}
+              to="/$series/$locale/power"
+              {...stylex.props(styles.link)}
+            >
+              {label}
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
 const styles = stylex.create({
   // The same ledger as a port's facts: a label in small caps, the value in
   // body type, a hairline between rows.
@@ -193,6 +231,7 @@ const styles = stylex.create({
     overflowWrap: 'anywhere',
     minWidth: 0,
   },
+  seats: { margin: 0, padding: 0, listStyle: 'none' },
   // The same link voice as a record tile: colour on hover, the rule under it
   // reserved at rest so nothing shifts when the pointer arrives.
   link: {

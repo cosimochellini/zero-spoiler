@@ -30,7 +30,12 @@ import { EpisodeMark } from '~/components/EpisodeMark'
 import { styles } from '~/components/PowerBoard.styles'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { useBookmark, useSeriesParams } from '~/lib/progress/BookmarkContext'
-import type { BodyView, PowerPageView, SeatView } from '~/lib/view/power'
+import {
+  type BodyView,
+  powerAnchor,
+  type PowerPageView,
+  type SeatView,
+} from '~/lib/view/power'
 import { settleStyles } from '~/styles/settle'
 
 /**
@@ -77,7 +82,10 @@ const NUMERAL_DIGITS = 2
 
 function Body({ body, at }: { at: number; body: BodyView }): ReactElement {
   const t = useSeriesOnlyT('one-piece')
-  const heading = `power-${body.id}`
+  // The section is what a seat on a character's page links to; its heading
+  // names it.
+  const anchor = powerAnchor(body.id)
+  const heading = `${anchor}-name`
   // A chain's top rank and a crew's captain stand alone above the rest.
   const ranked = body.kind !== 'council'
   let lit = 0
@@ -85,6 +93,7 @@ function Body({ body, at }: { at: number; body: BodyView }): ReactElement {
   return (
     <section
       aria-labelledby={heading}
+      id={anchor}
       {...stylex.props(styles.body, settleStyles.band, settleStyles.at(at))}
     >
       <header {...stylex.props(styles.bodyHead)}>

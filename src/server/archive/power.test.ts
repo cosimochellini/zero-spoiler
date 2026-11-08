@@ -17,7 +17,7 @@ import {
 } from '~/test/power'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
-import { powerPage } from './power.server'
+import { powerPage, seatsHeldBy } from './power.server'
 import { drawingOf } from './project.server'
 import { readerFor } from './reader.server'
 
@@ -351,6 +351,107 @@ describe('the power page', () => {
       const page = powerPage(readerFor(archive, chapter(1000), 'en'))
 
       expect(page).toStrictEqual({ bodies: [] })
+    },
+  )
+})
+
+/** The seats a character's page lists at a bookmark, as `title` or `title, body`. */
+function heldAt(
+  holder: Entity,
+  bookmark: Bookmark,
+  {
+    archive = POWER_ARCHIVE,
+    locale = 'en',
+  }: { archive?: SeriesArchive; locale?: Locale } = {},
+): string[] {
+  return seatsHeldBy(holder, readerFor(archive, bookmark, locale)).map(
+    ({ body, title }) => (body === undefined ? title : `${title}, ${body}`),
+  )
+}
+
+describe('a character’s seats', () => {
+  it.each([
+    [chapter, 'revealedAtChapter', 'chapter'],
+    [episode, 'revealedAtEpisode', 'episode'],
+  ] as const)(
+    'are the ones the power page shows them in, from then to the change (%#)',
+    (at, gate, unit) => {
+      expect(heldAt(EARLY, at(EARLY[gate] - 1))).toStrictEqual([])
+      expect(heldAt(EARLY, at(EARLY[gate]))).toStrictEqual(['Fixture Throne'])
+      expect(heldAt(EARLY, at(MIDWAY[unit] - 1))).toStrictEqual([
+        'Fixture Throne',
+      ])
+      // Vacated: the power page says so, and the page lists nothing.
+      expect(heldAt(EARLY, at(MIDWAY[unit]))).toStrictEqual([])
+      // Told before `LATE` is met: under fog on the power page, so not here.
+      expect(heldAt(LATE, at(MIDWAY[unit]))).toStrictEqual([])
+      expect(heldAt(LATE, at(LATE[gate] - 1))).toStrictEqual([])
+      expect(heldAt(LATE, at(LATE[gate]))).toStrictEqual(['Fixture Crown'])
+      expect(heldAt(LATE, at(LATE[gate]), { locale: 'it' })).toStrictEqual([
+        'Corona di prova',
+      ])
+    },
+  )
+
+  it.each([chapter(600), episode(500), chapter(1000)])(
+    'are none in a body that has ended (%j), which the power page still shows',
+    (bookmark) => {
+      expect(heldAt(LATE, bookmark)).toStrictEqual([])
+      expect(
+        powerPage(readerFor(POWER_ARCHIVE, bookmark, 'en')).bodies[0]?.ended,
+      ).toBe(true)
+    },
+  )
+
+  it('name the body of a chain or a crew, whose title does not', () => {
+    const archive: SeriesArchive = {
+      ...POWER_ARCHIVE,
+      features: {
+        ...POWER_ARCHIVE.features,
+        power: { bodies: [{ ...FIXTURE_BODY, kind: 'chain' }] },
+      },
+    }
+
+    expect(
+      heldAt(EARLY, chapter(MIDWAY.chapter - 1), { archive }),
+    ).toStrictEqual(['Fixture Throne, Seven Warlords of the Sea'])
+    expect(
+      heldAt(EARLY, chapter(MIDWAY.chapter - 1), { archive, locale: 'it' }),
+    ).toStrictEqual(['Trono di prova, Flotta dei Sette'])
+  })
+
+  it.each([
+    { only: 'episode' as const, theirs: episode, other: chapter },
+    { only: 'chapter' as const, theirs: chapter, other: episode },
+  ])(
+    'follow a change only the $only tells in that medium alone',
+    ({ only, other, theirs }) => {
+      const late = toldOnlyIn(only)
+      const archive = passedTo(late)
+      const met = {
+        chapter: LATE.revealedAtChapter,
+        episode: LATE.revealedAtEpisode,
+      }
+
+      expect(heldAt(late, theirs(met[only]), { archive })).toStrictEqual([
+        'Fixture Throne',
+      ])
+      expect(heldAt(EARLY, theirs(met[only]), { archive })).toStrictEqual([])
+
+      const otherUnit = only === 'chapter' ? 'episode' : 'chapter'
+
+      expect(heldAt(EARLY, other(met[otherUnit]), { archive })).toStrictEqual([
+        'Fixture Throne',
+      ])
+    },
+  )
+
+  it.each(LOADED_SERIES.filter(({ slug }) => slug !== 'one-piece'))(
+    'are none in $slug, which has no bodies',
+    ({ archive }) => {
+      for (const holder of archive.characters.slice(0, 20)) {
+        expect(heldAt(holder, chapter(1000), { archive })).toStrictEqual([])
+      }
     },
   )
 })

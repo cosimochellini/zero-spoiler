@@ -20,6 +20,7 @@ import type { Bookmark } from '~/lib/progress/episode'
 import type { RecordImages } from '~/lib/seo/socialImage'
 import type { ChartPoint } from '~/lib/view/chart'
 import type { FillerAhead } from '~/lib/view/filler'
+import type { SeatLink } from '~/lib/view/power'
 
 /** The ink a stroke takes. Structurally `Role` from `~/data/art/stroke`. */
 export type StrokeRole = 'accent' | 'ambient' | 'soft'
@@ -261,6 +262,8 @@ export interface CharacterFacts {
   epithet?: string
   mode: 'facts'
   origin?: string
+  /** The seats the power page shows them in now (`seatsHeldBy`). */
+  seats?: SeatLink[]
   /** Where the character stands at the last entry the reader has reached. */
   status?: CharacterStatus
   /** In Berry, ungrouped. */

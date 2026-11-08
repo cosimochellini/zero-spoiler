@@ -1,8 +1,9 @@
 import { screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
+import { ONE_PIECE_SERIES } from '~/lib/progress/series'
 import { facts } from '~/test/fixtures'
-import { renderWithProviders } from '~/test/providers'
+import { renderUnderSeries, renderWithProviders } from '~/test/providers'
 
 import { CharacterFacts } from './CharacterFacts'
 
@@ -71,6 +72,45 @@ describe('CharacterFacts', () => {
 
     expect(screen.getByText('Stato')).toBeInTheDocument()
     expect(screen.getByText('Morte presunta')).toBeInTheDocument()
+  })
+
+  it('links each seat of power to its body on the power page', async () => {
+    await renderUnderSeries(
+      <CharacterFacts
+        facts={facts({
+          seats: [
+            {
+              id: 'straw-hat-pirates',
+              title: 'Captain',
+              body: 'Straw Hat Pirates',
+            },
+            { id: 'emperors', title: 'Emperor' },
+          ],
+          bounty: 3_000_000_000,
+        })}
+      />,
+      {
+        path: '/one-piece/en/characters/monkey-d-luffy',
+        series: ONE_PIECE_SERIES,
+      },
+    )
+
+    // A crew's title needs its crew; a council's title names it already.
+    expect(
+      screen
+        .getAllByRole('link')
+        .map((link) => [link.textContent, link.getAttribute('href')]),
+    ).toStrictEqual([
+      [
+        'Captain, Straw Hat Pirates',
+        '/one-piece/en/power#power-straw-hat-pirates',
+      ],
+      ['Emperor', '/one-piece/en/power#power-emperors'],
+    ])
+    // First of One Piece's own rows, after the facts every series has.
+    expect(
+      screen.getAllByRole('term').map((term) => term.textContent),
+    ).toStrictEqual(['Power', 'Bounty'])
   })
 
   it('renders nothing at all when the reader has reached no fact', () => {

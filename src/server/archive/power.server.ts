@@ -1,6 +1,12 @@
 import type { PowerBody, Seat } from '~/data/features'
+import type { Entity } from '~/data/types'
 import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
-import type { BodyView, PowerPageView, SeatView } from '~/lib/view/power'
+import type {
+  BodyView,
+  PowerPageView,
+  SeatLink,
+  SeatView,
+} from '~/lib/view/power'
 
 import { printedFaction } from './printed.server'
 import { drawingOf } from './project.server'
@@ -40,7 +46,7 @@ function bodyOf(body: PowerBody, r: Reader): BodyView {
   return {
     id: body.id,
     kind: body.kind,
-    name: FACTION_LABELS[r.locale][printedFaction(body.id)],
+    name: labelOf(body, r),
     ended: body.ended !== undefined && r.sees(body.ended),
     seats,
   }
@@ -48,6 +54,36 @@ function bodyOf(body: PowerBody, r: Reader): BodyView {
 
 function seatOf(seat: Seat, body: PowerBody, r: Reader): SeatView {
   const title = seat.title[r.locale]
+  const holder = holderOf(seat, body, r)
+  if (holder === undefined) {
+    return { title, state: 'unknown' }
+  }
+  if (holder === null) {
+    return { title, state: 'vacant' }
+  }
+
+  return {
+    title,
+    state: 'held',
+    holder: {
+      id: holder.id,
+      name: holder.name[r.locale],
+      visual: drawingOf(holder, r),
+    },
+  }
+}
+
+/**
+ * Who sits in a seat at the reader's bookmark: a character, `null` once it is
+ * vacant, `undefined` while it is under fog. The power page and a
+ * character's own page (`seatsHeldBy`) both ask here, so the two can never
+ * disagree on who holds what.
+ */
+function holderOf(
+  seat: Seat,
+  body: PowerBody,
+  r: Reader,
+): Entity | null | undefined {
   // A holder the reader's source does not tell is not in their archive at
   // all, so that change never happened for them and the source's own last
   // holder stays. A mistyped id is caught by `bodyFaults`, not here.
@@ -60,29 +96,65 @@ function seatOf(seat: Seat, body: PowerBody, r: Reader): SeatView {
       ),
   )
   if (holding === undefined) {
-    return { title, state: 'unknown' }
+    return undefined
   }
   if (holding.value === null) {
-    return { title, state: 'vacant' }
+    return null
   }
 
   // A change told before its holder is met names no one yet: the seat is
   // fogged, neither the old holder nor the new.
   const character = r.archive.getCharacter(holding.value)
-  if (
-    character === undefined
-    || !r.sees(r.archive.gateOf(holding, character))
-  ) {
-    return { title, state: 'unknown' }
+
+  return (
+      character !== undefined && r.sees(r.archive.gateOf(holding, character))
+    ) ?
+      character
+    : undefined
+}
+
+/**
+ * The seats a character holds at the reader's bookmark, for their own page
+ * (#1095): exactly the seats the power page shows them in, by the same
+ * `holderOf`, less those of a body that has ended, which they hold no more.
+ * Only the current seat: a past one is history, which the power page does
+ * not tell either. A council's seat title names its body already
+ * ("Emperor"), so only a chain's or a crew's sends the body's name too.
+ */
+export function seatsHeldBy(entity: Entity, r: Reader): SeatLink[] {
+  return r.archive.bodies.flatMap((body) =>
+    stands(body, r) ? heldIn(body, entity, r) : [],
+  )
+}
+
+/** The seats of one body a character holds at the bookmark. */
+function heldIn(body: PowerBody, entity: Entity, r: Reader): SeatLink[] {
+  const held: SeatLink[] = []
+  for (const seat of body.seats) {
+    if (!r.sees(seat.told) || holderOf(seat, body, r)?.id !== entity.id) {
+      continue
+    }
+    held.push({
+      id: body.id,
+      title: seat.title[r.locale],
+      ...nameIfUntold(body, r),
+    })
   }
 
-  return {
-    title,
-    state: 'held',
-    holder: {
-      id: character.id,
-      name: character.name[r.locale],
-      visual: drawingOf(character, r),
-    },
-  }
+  return held
+}
+
+/** Whether the reader has met a body and not yet seen it end. */
+function stands(body: PowerBody, r: Reader): boolean {
+  return r.sees(body) && (body.ended === undefined || !r.sees(body.ended))
+}
+
+/** A chain's or a crew's name, which its seat titles do not say. */
+function nameIfUntold(body: PowerBody, r: Reader): { body?: string } {
+  return body.kind === 'council' ? {} : { body: labelOf(body, r) }
+}
+
+/** A body's name as the pages print it. */
+function labelOf(body: PowerBody, r: Reader): string {
+  return FACTION_LABELS[r.locale][printedFaction(body.id)]
 }

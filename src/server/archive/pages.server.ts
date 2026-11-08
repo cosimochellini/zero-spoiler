@@ -13,6 +13,7 @@ import type { RelationshipView } from '~/lib/view/relationships'
 
 import { chronicleOf } from './chronicle.server'
 import { headFor, type HeadKeys } from './head.server'
+import { seatsHeldBy } from './power.server'
 import {
   characterOf,
   deferredOf,
@@ -163,13 +164,14 @@ export function characterPage(
   }
 
   const dossier = r.archive.dossierOf(entity)
+  const seats = seatsHeldBy(entity, r)
 
   return {
     head: headFor(entity, CHARACTER_HEAD, r),
     detail: {
       slot: r.slot(entity, pageRecordOf),
       log: dossier !== undefined && r.sees(entity) ? dossier.log[locale] : null,
-      facts: factsOf(entity, r),
+      facts: { ...factsOf(entity, r), ...(seats.length > 0 && { seats }) },
       chronicle: chronicleOf(entity, r),
     },
   }

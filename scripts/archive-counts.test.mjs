@@ -32,9 +32,10 @@ describe('the table of one series', () => {
       archive: {
         drawings: { a: [], b: [] },
         entities: [owner, { kind: 'fruit' }],
+        features: { power: { bodies: [{ seats: [{}, {}] }, { seats: [{}] }] } },
         sagas: [{}],
         series: {
-          features: { fruits: true },
+          features: { fruits: true, power: true },
           kinds: ['arc', 'character', 'fruit', 'place', 'ship'],
         },
         timelines: [
@@ -52,6 +53,7 @@ describe('the table of one series', () => {
     )
     expect(table).toContain('| Chronicle stories | 1, for 1 characters |')
     expect(table).toContain('| Devil fruits | 1 |')
+    expect(table).toContain('| Bodies of power | 2, with 3 seats |')
     expect(table).toContain('| Arcs, places, ships | 0 · 0 · 0 |')
   })
 
@@ -70,6 +72,7 @@ describe('the table of one series', () => {
     })
 
     expect(table).not.toContain('Devil fruits')
+    expect(table).not.toContain('Bodies of power')
     expect(table).toContain('| Arcs, places | 1 · 0 |')
     expect(table).toContain('| Saga modules | 1 |')
   })

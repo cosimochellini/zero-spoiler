@@ -15,7 +15,7 @@ describe('HomeWelcome', () => {
   it.each([
     {
       series: ONE_PIECE_SERIES,
-      pages: ['characters', 'places', 'fruits', 'filler'],
+      pages: ['characters', 'places', 'fruits', 'power', 'filler'],
     },
     { series: HUNTER_X_HUNTER_SERIES, pages: ['characters', 'places'] },
   ])(

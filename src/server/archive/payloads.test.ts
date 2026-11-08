@@ -12,6 +12,7 @@ import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import { type Bookmark, serialiseBookmark } from '~/lib/progress/episode'
 import { regionsFor } from '~/lib/view/chart'
+import type { SeatLink } from '~/lib/view/power'
 import * as api from '~/server/api'
 import * as shared from '~/server/series'
 import {
@@ -28,6 +29,7 @@ import {
 
 import { entityForHandle } from './handle.server'
 import { hubPageFor } from './hub.server'
+import { characterPage } from './pages.server'
 import { type Payload, payloadsFor } from './payloads.server'
 import { powerPage } from './power.server'
 import { readerFor } from './reader.server'
@@ -433,38 +435,116 @@ function earlyLabels(
 }
 
 /**
- * Every One Piece ask, with the faction groups its fruit album sends and the
- * bodies its power page names. A body's label comes with the body, at the
- * body's own gate, so the power page may print it from there; every other
- * page still waits for the album's group, whatever the power page shows.
+ * Every One Piece ask, with the faction groups its fruit album sends, the
+ * bodies its power page names, and who it seats in a body still standing,
+ * as `body|holder`. A body's label comes with the body, at the body's own
+ * gate, so the power page may print it from there, and so may a character's
+ * seat links, for a body they hold a seat in (`withoutSeats`); every other
+ * page, and the rest of a character's, still waits for the album's group,
+ * whatever the power page shows.
  */
 const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
   const { factions } = fruitAlbum(bookmark, locale)
   const groups = new Set<null | string>(factions.map(({ faction }) => faction))
   const named = new Set(groups)
+  const seated = new Set<string>()
   const { bodies } = powerPage(
     readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
   )
-  for (const { id } of bodies) {
-    named.add(id)
+  for (const body of bodies) {
+    named.add(body.id)
+    // A body that has ended seats no one on a character's page.
+    const standing = body.ended ? [] : body.seats
+    for (const seat of standing) {
+      if (seat.state !== 'held') {
+        continue
+      }
+      seated.add(`${body.id}|${seat.holder.id}`)
+    }
   }
 
-  return { bookmark, factions, groups, locale, named }
+  return { bookmark, factions, groups, locale, named, seated }
 })
 
-/** Every label a page sends early at the asks it is sampled at. */
-function earlyLabelsOf({ keys, name, run }: Payload): string[] {
-  const all = keys?.()
+type Grouped = (typeof GROUPED)[number]
 
-  return GROUPED.flatMap(({ bookmark, groups, locale, named }, at) =>
+/**
+ * A character page as `loadCharacter` sends it, its seats taken out of the
+ * facts, and the bodies those seats name: the one place on the page a body's
+ * label may come before the album's group.
+ */
+function withoutSeats(
+  { bookmark, locale }: Grouped,
+  id: string,
+): { page: unknown; seats: SeatLink[] } {
+  const page = characterPage(
+    id,
+    readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
+  )
+  if (page === undefined) {
+    return { page: null, seats: [] }
+  }
+  const { seats = [], ...facts } = page.detail.facts
+
+  return { page: { ...page, detail: { ...page.detail, facts } }, seats }
+}
+
+/**
+ * The factions one page labels early at one ask: on the power page, a body
+ * the reader has not met; on a character's page, a seat's body they hold no
+ * seat in, or any label elsewhere on the page before the album's group.
+ */
+function earlyAt({ name, run }: Payload, ask: Grouped, key: string): string[] {
+  const { bookmark, groups, locale, named } = ask
+  if (name !== 'loadCharacter') {
+    return earlyLabels(run(bookmark, locale, key), {
+      groups: name === 'loadPower' ? named : groups,
+      locale,
+      name,
+    })
+  }
+
+  const { page, seats } = withoutSeats(ask, key)
+
+  return [
+    ...earlyLabels(page, { groups, locale, name }),
+    ...unseatedLabels(seats, ask, key),
+  ]
+}
+
+/**
+ * The bodies a character's seats name that they hold no seat in at this ask.
+ * A council's seat sends no body's name: its title says it.
+ */
+function unseatedLabels(
+  seats: SeatLink[],
+  { locale, seated }: Grouped,
+  key: string,
+): string[] {
+  const early: string[] = []
+  for (const { body } of seats) {
+    if (body === undefined) {
+      continue
+    }
+    const faction = FACTION_OF[locale].get(body)
+    if (faction !== undefined && seated.has(`${faction}|${key}`)) {
+      continue
+    }
+    early.push(faction ?? body)
+  }
+
+  return early
+}
+
+/** Every label a page sends early at the asks it is sampled at. */
+function earlyLabelsOf(payload: Payload): string[] {
+  const all = payload.keys?.()
+
+  return GROUPED.flatMap((ask, at) =>
     sampled(all, at).flatMap((key) =>
-      earlyLabels(run(bookmark, locale, key), {
-        groups: name === 'loadPower' ? named : groups,
-        locale,
-        name,
-      }).map(
+      earlyAt(payload, ask, key).map(
         (faction) =>
-          `${faction} via ${name} '${key}' @ ${JSON.stringify(bookmark)} ${locale}`,
+          `${faction} via ${payload.name} '${key}' @ ${JSON.stringify(ask.bookmark)} ${ask.locale}`,
       ),
     ),
   )

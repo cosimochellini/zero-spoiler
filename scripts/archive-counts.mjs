@@ -47,13 +47,15 @@ export function withTable(document, table) {
 
 /**
  * One series' table, counted from its archive, with a row for the devil
- * fruits and the ships only where its description has them.
- * @param {{ archive: { drawings: Record<string, unknown>, entities: { kind: string }[], sagas: unknown[], series: { features: { fruits: boolean }, kinds: string[] }, timelines: { field: string, timeline: unknown[] }[] } }} series The series, from the list.
+ * fruits, the ships and the bodies of power only where its description has
+ * them.
+ * @param {{ archive: { drawings: Record<string, unknown>, entities: { kind: string }[], features?: { power?: { bodies: { seats: unknown[] }[] } }, sagas: unknown[], series: { features: { fruits: boolean, power?: boolean }, kinds: string[] }, timelines: { field: string, timeline: unknown[] }[] } }} series The series, from the list.
  * @returns {string} The markdown table, not yet padded.
  */
 export function countTable({ archive }) {
   const { drawings, entities, sagas, series, timelines } = archive
-  const { fruits } = series.features
+  const { fruits, power } = series.features
+  const bodies = archive.features?.power?.bodies ?? []
   const lands = Object.keys(LANDS).filter((kind) => series.kinds.includes(kind))
   const ofKind = (kind) =>
     entities.filter((entity) => entity.kind === kind).length
@@ -69,6 +71,14 @@ export function countTable({ archive }) {
     ['Records', entities.length],
     ['Characters', ofKind('character')],
     ...(fruits ? [['Devil fruits', ofKind('fruit')]] : []),
+    ...(power ?
+      [
+        [
+          'Bodies of power',
+          `${bodies.length}, with ${bodies.flatMap(({ seats }) => seats).length} seats`,
+        ],
+      ]
+    : []),
     [
       // Capitalised as a row label, whichever kind comes first.
       lands
