@@ -21,6 +21,12 @@ const HOLDER_PATTERN = /value: '(?<id>[a-z\d-]{9,})'/gu
 const TITLE_PATTERN = /title: \{ en: '(?<title>[^']{12,})'/gu
 
 /**
+ * A body's description (#1196), a quoted sentence of sixty characters or more:
+ * the only text that long in a body module, whose seat titles are a word or two.
+ */
+const DESCRIPTION_PATTERN = /'(?<text>[^'\\\n]{60,})'/gu
+
+/**
  * The matches of a pattern's one group in a module, longest first.
  * @param {string} source The module's text.
  * @param {RegExp} pattern A global pattern with one named group.
@@ -69,4 +75,22 @@ export function powerCanaries(repositoryRoot, folder) {
 
       return { file, phrase: id ?? title ?? null }
     })
+}
+
+/**
+ * A second canary of each body module of a series: its longest description,
+ * which no holder id or seat title can stand in for. A body that holds none
+ * is an unreadable canary, which the gate refuses to vouch for.
+ * @param {string} repositoryRoot The repository root.
+ * @param {string} folder The series' folder under `src/data/series/`.
+ * @returns {{file: string, phrase: null | string}[]} What to look for.
+ */
+export function descriptionCanaries(repositoryRoot, folder) {
+  return powerCanaries(repositoryRoot, folder).map(({ file }) => {
+    // fallow-ignore-next-line security-sink -- As above: a module of that folder.
+    const source = readFileSync(path.join(repositoryRoot, file), 'utf8')
+    const phrase = longestFirst(source, DESCRIPTION_PATTERN, 'text').at(0)
+
+    return { file, phrase: phrase ?? null }
+  })
 }

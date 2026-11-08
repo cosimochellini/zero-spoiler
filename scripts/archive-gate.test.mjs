@@ -34,7 +34,7 @@ import {
   slugsFrom,
   sourceCanaries,
 } from './archive-gate.mjs'
-import { powerCanaries } from './archive-gate.power.mjs'
+import { descriptionCanaries, powerCanaries } from './archive-gate.power.mjs'
 import { importArchive } from './archive-loader.mjs'
 import { judgeServer } from './archive-server-gate.mjs'
 
@@ -164,7 +164,8 @@ describe('the slugs the gate looks for', () => {
 // later tests load it again.
 describe('the prose the gate looks for', { timeout: 30_000 }, () => {
   it('covers every prose module outside the records and drawings', () => {
-    // Of every series: a series' `records/` and `art/` are read whole, and
+    // Of every series: a series' `records/` and `art/` are read whole, its
+    // `power/` has a description canary of its own (`descriptionCanaries`), and
     // anything else with prose must be among its extras.
     const dataDir = path.join(repositoryRoot, 'src/data')
     const modules = readdirSync(dataDir, { recursive: true })
@@ -173,7 +174,7 @@ describe('the prose the gate looks for', { timeout: 30_000 }, () => {
         (name) =>
           name.endsWith('.ts')
           && !name.endsWith('.test.ts')
-          && !/^series\/[^/]+\/(?:records|art)\//u.test(name),
+          && !/^series\/[^/]+\/(?:records|art|power)\//u.test(name),
       )
 
     const prose = modules.filter((name) => {
@@ -302,6 +303,30 @@ describe('the prose the gate looks for', { timeout: 30_000 }, () => {
       const source = readFileSync(path.join(repositoryRoot, extra), 'utf8')
 
       expect(canaryFrom(source), extra).not.toBeNull()
+    }
+  })
+})
+
+describe('the descriptions the gate looks for', () => {
+  it('reads a description from every body One Piece files', () => {
+    const canaries = descriptionCanaries(repositoryRoot, 'one-piece')
+
+    expect(canaries).toHaveLength(15)
+    expect(canaries.filter(({ phrase }) => phrase === null)).toStrictEqual([])
+  })
+
+  it('refuses a body with no description', () => {
+    const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
+    const dir = path.join(root, 'src/data/series/bare/power')
+    mkdirSync(dir, { recursive: true })
+    writeFileSync(path.join(dir, 'crew.ts'), "export const C = 'rob-lucci'\n")
+
+    try {
+      expect(descriptionCanaries(root, 'bare')).toStrictEqual([
+        { file: 'src/data/series/bare/power/crew.ts', phrase: null },
+      ])
+    } finally {
+      rmSync(root, { recursive: true })
     }
   })
 })
