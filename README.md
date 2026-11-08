@@ -88,7 +88,7 @@ about fifteen groups, such as the Emperors and the Marines, and a character's
 page links to the seats they hold. Hunter x Hunter currently covers the Hunter
 Exam, Heavens Arena, Yorknew City, Greed Island, Chimera Ant, Election and Kakin
 up to its latest chapter, with 250+ characters and about forty places. Game of
-Thrones currently covers the first season and the first book, with 130+
+Thrones currently covers the first season and the first book, with 140+
 characters and 20+ places. All three series are available in Italian and
 English. Every One Piece and Hunter x Hunter entry has its own line drawing made
 for this project (the newest Hunter x Hunter records show a placeholder until

@@ -171,6 +171,15 @@ export const THRONES_ITALIAN_TITLES = {
   'jaremy-rykker': watch('Jaremy Rykker'),
   'donal-noye': watch('Donal Noye'),
   'chett': watch('Chett'),
+  'qotho': 'Dothraki#Qotho',
+  'cohollo': 'Dothraki#Cohollo',
+  'haggo': 'Dothraki#Haggo',
+  'jhiqui': 'Dothraki#Jhiqui',
+  'aggo': 'Dothraki#Aggo',
+  'jhogo': 'Dothraki#Jhogo',
+  'quaro': 'Dothraki#Quaro',
+  'mago': 'Dothraki#Mago',
+  'eroeh': 'Dothraki#Jhaqo',
 }
 
 /**
@@ -225,4 +234,6 @@ export const THRONES_NAMES_KEPT = {
   // is the Italian Game of Thrones Wiki's, and Othor's stays as it is.
   'othor': 'Othor',
   'jafer-flowers': 'Jafer Flowers',
+  // #1008. Italian Wikipedia names her inside Jhaqo’s section, with no heading of her own.
+  'eroeh': 'Eroeh',
 }

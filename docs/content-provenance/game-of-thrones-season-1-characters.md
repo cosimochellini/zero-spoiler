@@ -1478,3 +1478,42 @@ Omitted as bit parts (owner, 2026-11-07): Matthar, Clydas, Albett, Hobb, Jeren,
 Dywen and Cellador. Cotter Pyke and Qhorin Halfhand are only mentioned in the
 stage, so they wait until they appear. Eddison Tollett, Craster and Mance Rayder
 first appear in season 2 or later.
+
+## Daenerys's storyline in Essos (#1008)
+
+Gates are episode / site chapter. Book gates are the first chapter synopsis that
+names the character; the Appearing list is only a floor, and each lower point is
+an owner check in `game-of-thrones.json` (owner, 2026-11-07).
+
+- Qotho 6 / 62: narration alone has him in episode 1 and on the Appearing list
+  from site chapter 4. `deceased` at 9 / 65. The show gives him the breaking of
+  Viserys's arm and the book gives it to Haggo, so the shared texts say neither.
+- Cohollo, chapter 37, and Haggo, chapter 62: book only. The show's riders have
+  these names only by wiki conjecture. `deceased` at chapter 65.
+- Jhiqui 2 / 12: same shape as Irri.
+- Aggo 11 / 62: not in season 1, as Bowen Marsh keeps 41. His bloodrider step
+  sits at 12 / 73, book only, because the show opens him at 11.
+- Jhogo, chapter 24: book only. No book says "Kovarro", so `episodeName` does
+  not fit, and Kovarro is left to the stage of episode 11.
+- Quaro, chapter 62: book only. `deceased` at chapter 65.
+- Mago 8 / 62: `deceased` at episode 8, show only. The book keeps him alive and
+  makes him Jhaqo's bloodrider at chapter 69. Who wounds Drogo differs between
+  the media, so his texts leave it out.
+- Eroeh, chapter 69: book only. Opens `deceased`, as Jafer Flowers does.
+
+Pending, named after the stage: Drogon, Rhaegal and Viserion hatch at 10 / 73.
+The book names them at site chapter 86 (_A Clash of Kings_, chapter 12); the
+show names Drogon in episode 40 and Rhaegal and Viserion in episode 41.
+
+Only mentioned in the stage, so they wait until they appear: Pono, though the
+issue lists him; Jhaqo, first seen in _A Dance with Dragons_; Rhaego, first seen
+at 20 / 122 as a vision. Bharbo is dead before the story and never seen.
+
+Omitted as bit parts (owner, 2026-11-07): Ogo, Fogo, Rhogoro, Jommo and Byan
+Votyris, whom no chapter synopsis names. Moro waits for episode 51, where he has
+a scene of his own.
+
+Omitted as descriptors: the wineseller, the one-eyed crone, the girl bought to
+please the king and the Pentoshi servant, the little bird, Drogo's stallion and
+Daenerys's mare. Illyrio's household and Vaes Dothrak yield no other named
+person in the stage.

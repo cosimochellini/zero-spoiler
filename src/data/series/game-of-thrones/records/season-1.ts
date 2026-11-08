@@ -5,7 +5,7 @@ import type { ThronesSaga, ThronesVocabulary } from './saga'
 /**
  * Season 1 of the show and *A Game of Thrones*: the main cast (#852), the
  * recurring characters of Winterfell, King’s Landing, the Vale and the
- * Riverlands (#1006), the Night’s Watch (#1007) and the places its scenes are set in (#853), each filed where they appear and are named, in each medium. Chapters are the
+ * Riverlands (#1006), the Night’s Watch (#1007), Daenerys’s storyline in Essos (#1008) and the places its scenes are set in (#853), each filed where they appear and are named, in each medium. Chapters are the
  * site's absolute ones: the book's prologue is chapter 1, so its chapter N
  * is N + 1. Every dated step pins its chapter, because the two media gate
  * the same fact at unrelated numbers. Gates and steps are taken from the
@@ -2017,6 +2017,129 @@ export const season1: ThronesSaga = {
         en: 'A steward of the Night’s Watch who serves Maester Aemon.',
       },
       visual: { art: 'chett', tint: 'sand' },
+    },
+    // Daenerys’s storyline in Essos (#1008).
+    // Show: “A Golden Crown” (episode 6), the synopsis names him when he breaks Viserys’s arm; his earlier scenes are narration. Books: Daenerys VII (site chapter 62), the first synopsis to name him. The two media give that arm to different men, so the texts say neither.
+    {
+      id: 'qotho',
+      kind: 'character',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 62,
+      name: { it: 'Qotho', en: 'Qotho' },
+      summary: {
+        it: 'Un cavaliere di sangue di khal Drogo.',
+        en: 'One of Khal Drogo’s bloodriders.',
+      },
+      visual: { art: 'qotho', tint: 'wine' },
+    },
+    // Books only: Daenerys IV (site chapter 37), he meets Daenerys. The show’s rider has the name only by wiki conjecture; episode 4 orders him.
+    {
+      id: 'cohollo',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 37,
+      name: { it: 'Cohollo', en: 'Cohollo' },
+      summary: {
+        it: 'Un cavaliere di sangue di khal Drogo.',
+        en: 'One of Khal Drogo’s bloodriders.',
+      },
+      visual: { art: 'cohollo', tint: 'ocher' },
+    },
+    // Books only: Daenerys VII (site chapter 62), he offers Drogo his help. The show’s rider has the name only by wiki conjecture; episode 8 orders him.
+    {
+      id: 'haggo',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 62,
+      name: { it: 'Haggo', en: 'Haggo' },
+      summary: {
+        it: 'Un cavaliere di sangue di khal Drogo, enorme e silenzioso.',
+        en: 'One of Khal Drogo’s bloodriders, huge and silent.',
+      },
+      visual: { art: 'haggo', tint: 'sand' },
+    },
+    // Show: dismisses Daenerys’s story with Irri, “The Kingsroad” (episode 2). Books: a wedding gift, named in Daenerys II (site chapter 12).
+    {
+      id: 'jhiqui',
+      kind: 'character',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 12,
+      name: { it: 'Jhiqui', en: 'Jhiqui' },
+      summary: {
+        it: 'Un’ancella dothraki al servizio di Daenerys nel khalasar di Drogo.',
+        en: 'A Dothraki handmaiden who serves Daenerys in Drogo’s khalasar.',
+      },
+      visual: { art: 'jhiqui', tint: 'pink' },
+    },
+    // Show: Daenerys sends him out by name, “The North Remembers” (episode 11). Books: Daenerys VII (site chapter 62), the first synopsis to name him.
+    {
+      id: 'aggo',
+      kind: 'character',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 62,
+      name: { it: 'Aggo', en: 'Aggo' },
+      summary: {
+        it: 'Un guerriero dothraki incaricato di proteggere Daenerys.',
+        en: 'A Dothraki warrior charged with guarding Daenerys.',
+      },
+      visual: { art: 'aggo', tint: 'acid' },
+    },
+    // Books only: Daenerys III (site chapter 24), his whip brings Viserys down. The show gives that scene to Rakharo and has no Jhogo; its Kovarro, who opens at episode 11, is not filed yet. Episode 3 orders him.
+    {
+      id: 'jhogo',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 24,
+      name: { it: 'Jhogo', en: 'Jhogo' },
+      summary: {
+        it: 'Un guerriero dothraki incaricato di proteggere Daenerys durante il viaggio del khalasar.',
+        en: 'A Dothraki warrior charged with guarding Daenerys as the khalasar travels.',
+      },
+      visual: { art: 'jhogo', tint: 'teal' },
+    },
+    // Books only: Daenerys VII (site chapter 62), he rides as her bodyguard. The show has no such character; episode 8 orders him.
+    {
+      id: 'quaro',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 62,
+      name: { it: 'Quaro', en: 'Quaro' },
+      summary: {
+        it: 'Un guerriero dothraki incaricato di proteggere Daenerys.',
+        en: 'A Dothraki warrior charged with guarding Daenerys.',
+      },
+      visual: { art: 'quaro', tint: 'orange' },
+    },
+    // Show: “The Pointy End” (episode 8), Drogo kills him; his earlier scene is narration. Books: Daenerys VII (site chapter 62), he complains and lives. The two media part over who wounds Drogo, so the texts leave the wound out.
+    {
+      id: 'mago',
+      kind: 'character',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 62,
+      name: { it: 'Mago', en: 'Mago' },
+      summary: {
+        it: 'Un guerriero del khalasar di Drogo che protesta quando Daenerys reclama i prigionieri.',
+        en: 'A rider of Drogo’s khalasar who objects when Daenerys claims the captives.',
+      },
+      visual: { art: 'mago', tint: 'vermilion' },
+    },
+    // Books only: Daenerys IX (site chapter 69), first named when her death is told, so she opens `deceased`. The show has no such character; episode 10 orders her.
+    {
+      id: 'eroeh',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 69,
+      name: { it: 'Eroeh', en: 'Eroeh' },
+      summary: {
+        it: 'Una ragazza lhazareen presa sotto la protezione di Daenerys.',
+        en: 'A Lhazareen girl taken under Daenerys’s protection.',
+      },
+      visual: { art: 'eroeh', tint: 'violet' },
     },
     // The season’s places (#853): every place a scene is set in, in either
     // medium, gated at its first scene there. Each shows `PLACE` until #854.
@@ -5345,6 +5468,222 @@ export const season1: ThronesSaga = {
           episode: 5,
           chapter: 42,
           value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'qotho': {
+      role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
+      log: {
+        it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco.',
+        en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side.',
+      },
+      status: [
+        { episode: 6, chapter: 62, value: 'alive' },
+        { episode: 9, chapter: 65, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 6,
+          chapter: 62,
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+      ],
+    },
+    'cohollo': {
+      role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
+      log: {
+        it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco.',
+        en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side.',
+      },
+      status: [
+        { episode: 4, chapter: 37, value: 'alive' },
+        { episode: 9, chapter: 65, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 4,
+          chapter: 37,
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+      ],
+    },
+    'haggo': {
+      role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
+      log: {
+        it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco. È lui a spezzare il braccio a Viserys. Offre il suo aiuto a Drogo, che lo rifiuta.',
+        en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. He is the one who breaks Viserys’s arm. He offers Drogo his help, and Drogo refuses it.',
+      },
+      status: [
+        { episode: 8, chapter: 62, value: 'alive' },
+        { episode: 9, chapter: 65, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 62,
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+      ],
+    },
+    'jhiqui': {
+      role: { it: 'Ancella di Daenerys', en: 'Handmaiden to Daenerys' },
+      log: {
+        it: 'È una delle ancelle che servono Daenerys dopo le nozze con Drogo. È dothraki, come il popolo tra cui ora vive la sua khaleesi.',
+        en: 'She is one of the handmaidens who serve Daenerys after her marriage to Drogo. She is Dothraki, like the people her khaleesi now lives among.',
+      },
+      status: [{ episode: 2, chapter: 12, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 2,
+          chapter: 12,
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+      ],
+    },
+    // His opening step and the show’s gate share episode 11, so the bloodrider step takes the next one, as Dareon’s does.
+    'aggo': {
+      role: [
+        {
+          episode: 11,
+          chapter: 62,
+          value: { it: 'Guardia di Daenerys', en: 'Daenerys’s guard' },
+        },
+        {
+          episode: 12,
+          chapter: 73,
+          source: 'chapter',
+          value: {
+            it: 'Cavaliere di sangue di Daenerys',
+            en: 'Daenerys’s bloodrider',
+          },
+        },
+      ],
+      log: {
+        it: 'È uno dei guerrieri dothraki incaricati di proteggere Daenerys.',
+        en: 'He is one of the Dothraki warriors charged with protecting Daenerys.',
+      },
+      status: [{ episode: 11, chapter: 62, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 11,
+          chapter: 62,
+          source: 'chapter',
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+        {
+          episode: 11,
+          chapter: 73,
+          value: { it: 'Khalasar di Daenerys', en: 'Daenerys’s khalasar' },
+        },
+      ],
+    },
+    'jhogo': {
+      role: [
+        {
+          episode: 3,
+          chapter: 24,
+          value: { it: 'Guardia di Daenerys', en: 'Daenerys’s guard' },
+        },
+        {
+          episode: 10,
+          chapter: 73,
+          value: {
+            it: 'Cavaliere di sangue di Daenerys',
+            en: 'Daenerys’s bloodrider',
+          },
+        },
+      ],
+      log: {
+        it: 'È uno dei guerrieri dothraki incaricati di proteggere Daenerys. Quando Viserys la minaccia, gli getta la frusta al collo e lo trascina a terra.',
+        en: 'He is one of the Dothraki warriors charged with protecting Daenerys. When Viserys threatens her, his whip catches Viserys around the neck and pulls him to the ground.',
+      },
+      status: [{ episode: 3, chapter: 24, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 3,
+          chapter: 24,
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+        {
+          episode: 10,
+          chapter: 73,
+          value: { it: 'Khalasar di Daenerys', en: 'Daenerys’s khalasar' },
+        },
+      ],
+    },
+    'quaro': {
+      role: { it: 'Guardia di Daenerys', en: 'Daenerys’s guard' },
+      log: {
+        it: 'È uno dei guerrieri dothraki incaricati di proteggere Daenerys. La accompagna nella città lhazareen messa a sacco dal khalasar.',
+        en: 'He is one of the Dothraki warriors charged with protecting Daenerys. He rides with her through the Lhazareen town the khalasar has sacked.',
+      },
+      status: [
+        { episode: 8, chapter: 62, value: 'alive' },
+        { episode: 9, chapter: 65, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 62,
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+      ],
+    },
+    // The show kills him at his gate and the book keeps him alive, the reverse of Gared. Chapter 63 only orders the death.
+    'mago': {
+      role: [
+        {
+          episode: 8,
+          chapter: 62,
+          value: {
+            it: 'Guerriero del khalasar di Drogo',
+            en: 'Rider of Drogo’s khalasar',
+          },
+        },
+        {
+          episode: 10,
+          chapter: 69,
+          source: 'chapter',
+          value: {
+            it: 'Cavaliere di sangue di Jhaqo',
+            en: 'Jhaqo’s bloodrider',
+          },
+        },
+      ],
+      log: {
+        it: 'Cavalca nel khalasar di Drogo. Protesta quando Daenerys gli toglie una prigioniera lhazareen.',
+        en: 'He rides in Drogo’s khalasar. He objects when Daenerys takes a Lhazareen captive away from him.',
+      },
+      status: [
+        { episode: 8, chapter: 62, source: 'chapter', value: 'alive' },
+        { episode: 8, chapter: 63, source: 'episode', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 8,
+          chapter: 62,
+          value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
+        },
+        {
+          episode: 10,
+          chapter: 69,
+          source: 'chapter',
+          value: { it: 'Khalasar di Jhaqo', en: 'Jhaqo’s khalasar' },
+        },
+      ],
+    },
+    'eroeh': {
+      role: { it: 'Ragazza lhazareen', en: 'Lhazareen girl' },
+      log: {
+        it: 'Daenerys la sottrae a Mago durante l’attacco alla sua città. Quando il khalasar si divide, Mago la violenta e la uccide.',
+        en: 'Daenerys takes her from Mago during the attack on her town. When the khalasar breaks apart, Mago rapes and kills her.',
+      },
+      status: [{ episode: 10, chapter: 69, value: 'deceased' }],
+      affiliation: [
+        {
+          episode: 10,
+          chapter: 69,
+          value: { it: 'Lhazareen', en: 'Lhazareen' },
         },
       ],
     },
