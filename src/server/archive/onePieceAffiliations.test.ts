@@ -208,6 +208,15 @@ const MOVED: Moved[] = [
     'Nine Red Scabbards',
     'Wano, Momonosuke’s retainer',
   ],
+  // #1196: the rank of governor-general is told at ch 922 p.10, ep 913, not
+  // at the crew's debut.
+  [
+    'kaido',
+    913,
+    922,
+    'Beasts Pirates; Emperor',
+    'Beasts Pirates, governor-general; Emperor',
+  ],
   [
     'kaido',
     1080,
@@ -525,6 +534,38 @@ function inFaction(id: string, faction: Faction, at: Bookmark): boolean {
     ?? false
   )
 }
+
+/** Kaido's affiliation line in one language at a bookmark. */
+function kaidoLineAt(at: Bookmark, locale: 'en' | 'it'): string | undefined {
+  return archive.latestOf(
+    readerFor(archive, at, locale),
+    entityOf('kaido'),
+    'affiliation',
+  )?.[locale]
+}
+
+describe('Kaido’s rank', () => {
+  it.each([
+    ['episode', 913],
+    ['chapter', 922],
+  ] as const)(
+    'is told from %s %i, in both languages, not before',
+    (unit, gate) => {
+      expect(kaidoLineAt(bookmark(unit, gate - 1), 'en')).toBe(
+        'Beasts Pirates; Emperor',
+      )
+      expect(kaidoLineAt(bookmark(unit, gate - 1), 'it')).toBe(
+        'Pirati delle Cento Bestie; Imperatore',
+      )
+      expect(kaidoLineAt(bookmark(unit, gate), 'en')).toBe(
+        'Beasts Pirates, governor-general; Emperor',
+      )
+      expect(kaidoLineAt(bookmark(unit, gate), 'it')).toBe(
+        'Pirati delle Cento Bestie, governatore generale; Imperatore',
+      )
+    },
+  )
+})
 
 describe('One Piece affiliations moved to the scene that tells them', () => {
   it.each(CASES)(

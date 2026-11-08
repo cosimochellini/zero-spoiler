@@ -34,8 +34,9 @@ function tobiroppo(holders: Seat['holders']): Seat {
 }
 
 /**
- * The Beasts Pirates (#1092), a crew under its governor-general: the three
- * All-Stars, then the six Tobiroppo. Drake's seat empties when he is found
+ * The Beasts Pirates (#1092), a crew under its leader: the three All-Stars,
+ * then the six Tobiroppo. The rank of governor-general is told only at ch 922
+ * (p.10, ep 913), so the lead seat is titled Leader, as Cross Guild's is. Drake's seat empties when he is found
  * out, and no one takes it. Kaido falls at Wano, but the story never says
  * the crew ends.
  */
@@ -43,10 +44,28 @@ export const BEASTS_PIRATES: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'beasts-pirates',
   kind: 'crew',
+  description: [
+    {
+      chapter: 795,
+      episode: 739,
+      value: {
+        en: 'The crew of one of the four Emperors. Its captain is known as the strongest creature in the world.',
+        it: 'La ciurma di uno dei quattro Imperatori. Il suo capitano è noto come la creatura più forte del mondo.',
+      },
+    },
+    {
+      chapter: 929,
+      episode: 923,
+      value: {
+        en: 'A crew with a strict order: three All-Stars on top, and below them the Tobiroppo, its strongest officers.',
+        it: 'Una ciurma con un ordine rigido: tre All-Star in cima e sotto di loro i Tobiroppo, i suoi ufficiali più forti.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,
-      title: { en: 'Governor-General', it: 'Governatore generale' },
+      title: { en: 'Leader', it: 'Capo' },
       holders: [{ episode: 739, chapter: 795, value: 'kaido' }],
     },
     // Ch. 808 p.4: Jack the Drought, one of the three.

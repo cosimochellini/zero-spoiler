@@ -117,6 +117,9 @@ function Body({ body, at }: { at: number; body: BodyView }): ReactElement {
         >
           {body.name}
         </h2>
+        {body.description !== undefined && (
+          <p {...stylex.props(styles.about)}>{body.description}</p>
+        )}
         {body.ended && (
           <p {...stylex.props(styles.ended)}>{t('ranks.ended')}</p>
         )}

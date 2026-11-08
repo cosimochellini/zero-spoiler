@@ -81,6 +81,14 @@ export const styles = stylex.create({
     overflowWrap: 'anywhere',
     minWidth: 0,
   },
+  // What the group is, one or two sentences under its name.
+  about: {
+    margin: 0,
+    color: color.ink2,
+    fontSize: text.base,
+    lineHeight: leading.body,
+    maxWidth: '58ch',
+  },
   ended: {
     margin: 0,
     borderColor: color.rule2,

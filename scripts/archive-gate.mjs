@@ -57,7 +57,7 @@ import path from 'node:path'
 import process from 'node:process'
 import { byNumber, byValue } from 'sort-es'
 
-import { powerCanaries } from './archive-gate.power.mjs'
+import { descriptionCanaries, powerCanaries } from './archive-gate.power.mjs'
 import { importArchive } from './archive-loader.mjs'
 import { checkServer } from './archive-server-gate.mjs'
 
@@ -491,6 +491,7 @@ export async function canariesOf(repositoryRoot) {
       ...proseCanaries(repositoryRoot, folder),
       ...slugCanaries(repositoryRoot, folder),
       ...powerCanaries(repositoryRoot, folder),
+      ...descriptionCanaries(repositoryRoot, folder),
     ]),
     ...sourceCanaries(repositoryRoot),
     ...(await officialCanaries(SERIES)),

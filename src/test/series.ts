@@ -55,6 +55,7 @@ const EXPECTED: Record<string, Expected> = {
   // What it files on 2026-11-01 (#980 dropped Spandam's unsourced step).
   'one-piece': {
     kinds: [
+      'about',
       'affiliation',
       'builder',
       'chronicle',

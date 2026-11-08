@@ -415,7 +415,7 @@ describe('the crews of the second half', () => {
     expect(titles('beasts-pirates')).toStrictEqual([
       'Pirati delle Cento Bestie',
       [
-        'Governatore generale',
+        'Capo',
         ...Array.from({ length: 3 }, () => 'All-Star'),
         ...Array.from({ length: 6 }, () => 'Tobiroppo'),
       ],

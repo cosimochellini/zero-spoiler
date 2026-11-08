@@ -26,6 +26,24 @@ export const CROSS_GUILD: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'cross-guild',
   kind: 'crew',
+  description: [
+    {
+      chapter: 1056,
+      episode: 1083,
+      value: {
+        en: 'A new organisation announced by a flyer: a leader on top and two former Warlords beneath him.',
+        it: 'Una nuova organizzazione annunciata da un volantino: un capo in cima e due ex membri della Flotta dei Sette sotto di lui.',
+      },
+    },
+    {
+      chapter: 1058,
+      episode: 1086,
+      value: {
+        en: 'A syndicate of three former Warlords. Two of them founded it and kept the third as its figurehead. It puts bounties on Marines.',
+        it: 'Un sindacato di tre ex membri della Flotta dei Sette. Due lo hanno fondato e il terzo è la sua figura di facciata. Mette taglie sui marine.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

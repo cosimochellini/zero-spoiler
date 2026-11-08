@@ -21,6 +21,8 @@ export type SeatView = (
 
 /** A body the reader has met, with the seats they have met, in order. */
 export interface BodyView {
+  /** What the group is, at the latest version the reader has reached. */
+  description?: string
   /** Set once the reader reaches the chapter that ends it. */
   ended: boolean
   id: string

@@ -56,6 +56,24 @@ export const MARINES: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'marines',
   kind: 'chain',
+  description: [
+    {
+      chapter: 234,
+      episode: 151,
+      value: {
+        en: 'The government’s navy. It hunts pirates and enforces the law at sea, ranked from a fleet admiral at its head down to its common soldiers.',
+        it: 'La marina militare del governo. Dà la caccia ai pirati e fa rispettare la legge in mare, con un grand’ammiraglio al vertice e una scala di gradi fino ai semplici soldati.',
+      },
+    },
+    {
+      chapter: 432,
+      episode: 314,
+      value: {
+        en: 'The government’s navy and one of the three great powers that keep the world in balance. A fleet admiral commands it, above the admirals and the vice admirals.',
+        it: 'La marina militare del governo e una delle tre grandi potenze che tengono in equilibrio il mondo. La comanda un grand’ammiraglio, sopra gli ammiragli e i viceammiragli.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

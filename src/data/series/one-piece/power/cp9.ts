@@ -46,6 +46,24 @@ export const CP9: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'cp9',
   kind: 'chain',
+  description: [
+    {
+      chapter: 358,
+      episode: 250,
+      value: {
+        en: 'A secret unit of Cipher Pol whose agents are licensed to kill for the government. A chief gives them their orders.',
+        it: 'Un’unità segreta dei Cipher Pol i cui agenti hanno il permesso di uccidere per il governo. Un capo dà loro gli ordini.',
+      },
+    },
+    {
+      chapter: 801,
+      episode: 746,
+      value: {
+        en: 'A secret unit of Cipher Pol whose agents were licensed to kill for the government. Its chief and some of its agents are later seen in CP0, the unit that works for the World Nobles.',
+        it: 'Un’unità segreta dei Cipher Pol i cui agenti avevano il permesso di uccidere per il governo. Il suo capo e alcuni agenti si vedono poi nella CP0, l’unità che lavora per i Nobili Mondiali.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

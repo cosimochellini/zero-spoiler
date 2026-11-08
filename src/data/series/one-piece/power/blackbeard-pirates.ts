@@ -31,6 +31,32 @@ export const BLACKBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'blackbeard-pirates',
   kind: 'crew',
+  description: [
+    {
+      chapter: 234,
+      episode: 151,
+      value: {
+        en: 'A pirate crew with a captain and a small circle of officers, each known by an epithet. It first makes itself known when the government looks for a new Warlord.',
+        it: 'Una ciurma di pirati con un capitano e una piccola cerchia di ufficiali, ognuno noto per il suo soprannome. Si fa conoscere quando il governo cerca un nuovo membro della Flotta dei Sette.',
+      },
+    },
+    {
+      chapter: 650,
+      episode: 570,
+      value: {
+        en: 'The crew of one of the four Emperors. Its captain took the seat of the Emperor who died in the war, after he had left the Warlords.',
+        it: 'La ciurma di uno dei quattro Imperatori. Il suo capitano ha preso il posto dell’Imperatore morto nella guerra, dopo aver lasciato la Flotta dei Sette.',
+      },
+    },
+    {
+      chapter: 803,
+      episode: 752,
+      value: {
+        en: 'The crew of an Emperor, run as a fleet. Ten Titanic Captains each command a ship, and all of them answer to the captain.',
+        it: 'La ciurma di un Imperatore, organizzata come una flotta. Dieci capitani titanici comandano una nave ciascuno e rispondono tutti al capitano.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Seat } from '~/data/features'
+import type { PowerBody, Seat } from '~/data/features'
 import type { Entity, SeriesArchive } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
@@ -10,10 +10,13 @@ import { leaksOf } from '~/test/fog'
 import {
   bodyFaults,
   EARLY,
+  FIRST_VERSION,
   FIXTURE_BODY,
   LATE,
+  MANGA_VERSION,
   MIDWAY,
   POWER_ARCHIVE,
+  SECOND_VERSION,
   THRONE,
 } from '~/test/power'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
@@ -160,6 +163,19 @@ const FIXTURE_WORDS = [
   LATE.id,
   LATE.name.en,
 ]
+
+/** What each version says, in both languages. */
+const FIRST = FIRST_VERSION.value
+const SECOND = SECOND_VERSION.value
+const MANGA = MANGA_VERSION.value
+
+/** The fixture's description at one bookmark. */
+function describedAt(
+  bookmark: Bookmark,
+  locale: Locale = 'en',
+): string | undefined {
+  return pageAt(bookmark, locale).bodies[0]?.description
+}
 
 describe('the power page', () => {
   it.each([null, chapter(1), episode(1)])(
@@ -437,6 +453,28 @@ describe('the power page', () => {
     },
   )
 
+  it('describes the body with the latest version the reader has reached, in their medium', () => {
+    expect(describedAt(chapter(FIXTURE_BODY.revealedAtChapter))).toBe(FIRST.en)
+    expect(describedAt(chapter(MIDWAY.chapter - 1))).toBe(FIRST.en)
+    expect(describedAt(chapter(MIDWAY.chapter))).toBe(SECOND.en)
+    expect(describedAt(chapter(MIDWAY.chapter), 'it')).toBe(SECOND.it)
+    expect(describedAt(chapter(620))).toBe(MANGA.en)
+    // The manga-only version never reaches an episode reader.
+    expect(describedAt(episode(520))).toBe(SECOND.en)
+    expect(describedAt(episode(MIDWAY.episode - 1))).toBe(FIRST.en)
+  })
+
+  it('sends no description for a body not yet listed, nor a later version early', () => {
+    const before = chapter(FIXTURE_BODY.revealedAtChapter - 1)
+
+    const early = JSON.stringify(pageAt(chapter(MIDWAY.chapter - 1)))
+    const hidden = fixturePage(withSeats(SCEPTRE), chapter(MIDWAY.chapter))
+
+    expect(pageAt(before).bodies).toStrictEqual([])
+    expect(early).not.toContain(SECOND.en)
+    expect(JSON.stringify(hidden)).not.toContain('Fixture group')
+  })
+
   it('lists a body whose one known seat is vacant', () => {
     const page = fixturePage(
       withSeats(CROWN, STOOL),
@@ -586,6 +624,11 @@ describe('a character’s seats', () => {
   )
 })
 
+/** What is wrong with the fixture body given these description versions. */
+function faults(description: PowerBody['description']): string[] {
+  return bodyFaults([{ ...FIXTURE_BODY, description }], POWER_ARCHIVE)
+}
+
 describe('the bodies of power', () => {
   it.each(LOADED_SERIES)('are sound in $slug', ({ archive }) => {
     expect(
@@ -618,6 +661,33 @@ describe('the bodies of power', () => {
         POWER_ARCHIVE,
       ),
     ).toStrictEqual(['warlords tells a seat before its lead'])
+  })
+
+  it('hold every description to its rules', () => {
+    const [first, second, third] = [
+      FIRST_VERSION,
+      SECOND_VERSION,
+      MANGA_VERSION,
+    ]
+    const short = { en: 'Too short.', it: 'Troppo breve.' }
+
+    expect(faults([first, { ...second, value: short }])).toStrictEqual([
+      'warlords description 1 (en) runs 10 characters',
+      'warlords description 1 (it) runs 13 characters',
+    ])
+    expect(faults([first, second, third, third])).toStrictEqual([
+      'warlords has more than 3 descriptions',
+      'warlords description 3 is out of order',
+    ])
+    expect(faults([{ ...second, chapter: 1 }])).toStrictEqual([
+      'warlords description does not open with the body',
+    ])
+    expect(
+      faults([first, { ...second, episode: 9999, chapter: 9999 }]),
+    ).toStrictEqual(['warlords description 1 is past the ceiling'])
+    expect(
+      faults([first, { ...second, episode: first.episode }]),
+    ).toStrictEqual(['warlords description 1 is out of order'])
   })
 
   it('hold the fixture, and catch a body broken against them', () => {

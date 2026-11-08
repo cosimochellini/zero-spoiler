@@ -1,4 +1,4 @@
-import type { Holding, PowerBody, Seat } from '~/data/features'
+import type { Description, Holding, PowerBody, Seat } from '~/data/features'
 import type { Entity, SeriesArchive } from '~/data/types'
 import type { Gated } from '~/lib/progress/spoiler'
 
@@ -39,9 +39,37 @@ export const THRONE: Seat = {
   ],
 }
 
+/** The fixture's description: at the body's gate, `MIDWAY`, and manga alone. */
+export const FIRST_VERSION: Description = {
+  episode: EARLY.revealedAtEpisode,
+  chapter: EARLY.revealedAtChapter,
+  value: {
+    en: 'Fixture group, first version. A fixture text long enough to pass the floor on length.',
+    it: 'Gruppo di prova, prima versione. Un testo di prova abbastanza lungo da superare il minimo.',
+  },
+}
+export const SECOND_VERSION: Description = {
+  ...MIDWAY,
+  value: {
+    en: 'Fixture group, second version. A fixture text long enough to pass the floor on length.',
+    it: 'Gruppo di prova, seconda versione. Un testo di prova abbastanza lungo da superare il minimo.',
+  },
+}
+export const MANGA_VERSION: Description = {
+  episode: 520,
+  chapter: 620,
+  source: 'chapter',
+  value: {
+    en: 'Fixture group, manga only. A fixture text long enough to pass the floor on length.',
+    it: 'Gruppo di prova, solo manga. Un testo di prova abbastanza lungo da superare il minimo.',
+  },
+}
+
 /**
  * A test body (#1085) that stands in for the filed ones over the One Piece
- * archive: the Warlords' id, because a body's id is a group's. Its first seat is held by
+ * archive: the Warlords' id, because a body's id is a group's. Its
+ * description has three versions: at the body's gate, `MIDWAY`, and in the
+ * manga alone. Its first seat is held by
  * `EARLY` from the body's gate and vacated `MIDWAY`; its second is told
  * with the body, left unnamed until `LATE` takes it (an entry dated before
  * `LATE` is met, so it waits for them), then taken by `EARLY` in the manga
@@ -52,6 +80,7 @@ export const FIXTURE_BODY: PowerBody = {
   ...BODY_GATE,
   id: 'warlords',
   kind: 'council',
+  description: [FIRST_VERSION, SECOND_VERSION, MANGA_VERSION],
   seats: [
     THRONE,
     {
@@ -162,6 +191,62 @@ function leadsFirst({ kind, seats }: PowerBody): boolean {
   )
 }
 
+/** The fewest and most characters a description may run to. */
+const DESCRIPTION_LENGTH = { max: 260, min: 80 }
+/** Most versions a description may have: a turning point each, not a log. */
+const MOST_VERSIONS = 3
+
+/** What is wrong with a body's description versions (#1196). */
+function descriptionFaults(body: PowerBody, archive: SeriesArchive): string[] {
+  const [first] = body.description
+  const ceiling = {
+    revealedAtEpisode: archive.series.episodeCeiling,
+    revealedAtChapter: archive.series.chapterCeiling,
+  }
+
+  return [
+    ...(body.description.length <= MOST_VERSIONS ?
+      []
+    : [`${body.id} has more than ${String(MOST_VERSIONS)} descriptions`]),
+    ...((
+      first.episode === body.revealedAtEpisode
+      && first.chapter === body.revealedAtChapter
+    ) ?
+      []
+    : [`${body.id} description does not open with the body`]),
+    ...body.description.flatMap((version, at) => {
+      const previous = body.description[at - 1]
+      const label = `${body.id} description ${String(at)}`
+      const outOfOrder =
+        previous !== undefined
+        && (version.episode <= previous.episode
+          || version.chapter < previous.chapter)
+
+      return [
+        ...(outOfOrder ? [`${label} is out of order`] : []),
+        ...((
+          noEarlier(ceiling, {
+            revealedAtEpisode: version.episode,
+            revealedAtChapter: version.chapter,
+          })
+        ) ?
+          []
+        : [`${label} is past the ceiling`]),
+        ...Object.entries(version.value)
+          .filter(
+            ([, text]) =>
+              text.length < DESCRIPTION_LENGTH.min
+              || text.length > DESCRIPTION_LENGTH.max,
+          )
+          .map(
+            ([locale, text]) =>
+              `${label} (${locale}) runs ${String(text.length)} characters`,
+          ),
+      ]
+    }),
+  ]
+}
+
 /**
  * What is wrong with a series' bodies of power, as messages; none for a
  * sound list. A seat opens no earlier than its body, and its holders no
@@ -179,6 +264,7 @@ export function bodyFaults(
     ...(body.ended === undefined || noEarlier(body.ended, body) ?
       []
     : [`${body.id} ends before it opens`]),
+    ...descriptionFaults(body, archive),
     ...(leadsFirst(body) ? [] : [`${body.id} tells a seat before its lead`]),
     ...body.seats.flatMap((seat, place) =>
       seatFaults(seat, `${body.id} seat ${String(place)}`, { archive, body }),

@@ -43,6 +43,24 @@ export const FIVE_ELDERS: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'five-elders',
   kind: 'council',
+  description: [
+    {
+      chapter: 397,
+      episode: 277,
+      value: {
+        en: 'Five old men at the top of the government. When they judge that an island knows too much, their word is enough to have it destroyed.',
+        it: 'Cinque anziani al vertice del governo. Se ritengono che un’isola sappia troppo, la loro parola basta a farla distruggere.',
+      },
+    },
+    {
+      chapter: 908,
+      episode: 889,
+      value: {
+        en: 'Five elders who sit at the head of the World Government. Out of the world’s sight they kneel before a figure on the Empty Throne and ask what is to be done.',
+        it: 'Cinque anziani al vertice del Governo Mondiale. Lontano dagli occhi del mondo si inchinano a una figura sul Trono Vuoto e chiedono cosa fare.',
+      },
+    },
+  ],
   seats: [
     elder('jaygarcia-saturn', {
       episode: 1155,
