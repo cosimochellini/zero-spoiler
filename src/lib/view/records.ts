@@ -120,6 +120,7 @@ export type Faction =
   | 'marines'
   | 'nine-red-scabbards'
   | 'punk-hazard'
+  | 'red-hair-pirates'
   | 'revolutionary-army'
   | 'straw-hat-grand-fleet'
   | 'straw-hat-pirates'

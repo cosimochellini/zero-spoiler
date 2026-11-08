@@ -924,7 +924,13 @@ export const eastBlue: OnePieceSaga = {
             en: 'Captain of a crew that does not exist yet',
           },
         },
-        { episode: 3, factions: ['straw-hat-pirates'], value: STRAW_HATS },
+        // Zoro joins him in chapter 6, which episode 3 adapts.
+        {
+          episode: 3,
+          chapter: 6,
+          factions: ['straw-hat-pirates'],
+          value: STRAW_HATS,
+        },
         // Named one of the new Four Emperors at 1080 (chapter 1053).
         {
           episode: 1080,
@@ -1138,7 +1144,7 @@ export const eastBlue: OnePieceSaga = {
             en: 'Pirate hunter on his own account',
           },
         },
-        { episode: 3, value: STRAW_HATS },
+        { episode: 3, chapter: 6, value: STRAW_HATS },
       ],
       origin: [{ episode: 2, value: { it: 'East Blue', en: 'East Blue' } }],
       epithet: [
@@ -1520,7 +1526,8 @@ export const eastBlue: OnePieceSaga = {
           episode: 5,
           value: { it: 'Ladra per conto suo', en: 'Thief on her own account' },
         },
-        { episode: 44, value: STRAW_HATS },
+        // She sails from Cocoyasi with them in chapter 95, episode 44.
+        { episode: 44, chapter: 95, value: STRAW_HATS },
       ],
       origin: [
         {
@@ -1672,7 +1679,19 @@ export const eastBlue: OnePieceSaga = {
             en: 'Usopp Pirates, captain',
           },
         },
-        { episode: 18, value: STRAW_HATS },
+        // Ch 41 / ep 17: the crew takes him aboard the Going Merry.
+        { episode: 17, chapter: 41, value: STRAW_HATS },
+        // Ch 331 p. 16–19 / ep 235: he quits the crew over the Going Merry.
+        {
+          episode: 235,
+          chapter: 331,
+          value: {
+            it: 'Ha lasciato i Pirati di Cappello di Paglia',
+            en: 'Left the Straw Hat Pirates',
+          },
+        },
+        // Ch 438 p. 15–18 / ep 323: he apologises and is taken back.
+        { episode: 323, chapter: 438, value: STRAW_HATS },
       ],
       origin: [
         {
@@ -1968,7 +1987,8 @@ export const eastBlue: OnePieceSaga = {
           episode: 20,
           value: { it: 'Baratie, vice-cuoco', en: 'Baratie, sous-chef' },
         },
-        { episode: 30, value: STRAW_HATS },
+        // He leaves the Baratie with them in chapter 68, episode 30.
+        { episode: 30, chapter: 68, value: STRAW_HATS },
       ],
       origin: [
         {

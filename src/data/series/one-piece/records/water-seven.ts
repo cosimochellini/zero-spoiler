@@ -883,6 +883,17 @@ export const waterSeven: OnePieceSaga = {
           factions: ['blackbeard-pirates'],
           value: { it: 'Pirati di Barbanera', en: 'Blackbeard Pirates' },
         },
+        // Ch 1081 (title, p. 14) / ep 1114: one of the Ten Titanic Captains;
+        // the episode leaves out which ship.
+        {
+          episode: 1114,
+          chapter: 1081,
+          factions: ['blackbeard-pirates'],
+          value: {
+            it: 'Pirati di Barbanera, capitano titanico',
+            en: 'Blackbeard Pirates, Titanic Captain',
+          },
+        },
         // The anime drops chapter 1081's "tenth ship": the first to say it is
         // the caption at 1156 (chapter 1126).
         {
