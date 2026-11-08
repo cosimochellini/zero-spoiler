@@ -44,6 +44,24 @@ export const REVOLUTIONARY_ARMY: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'revolutionary-army',
   kind: 'chain',
+  description: [
+    {
+      chapter: 432,
+      episode: 314,
+      value: {
+        en: 'An army that fights to bring down the government. Its supreme commander is the most dangerous criminal in the world.',
+        it: 'Un’armata che combatte per abbattere il governo. Il suo comandante supremo è il criminale più pericoloso del mondo.',
+      },
+    },
+    {
+      chapter: 904,
+      episode: 880,
+      value: {
+        en: 'An army that fights the government, led by a supreme commander. It is split into the East, West, North and South armies, each under a commander.',
+        it: 'Un’armata che combatte il governo, guidata da un comandante supremo. È divisa nelle armate dell’Est, dell’Ovest, del Nord e del Sud, ognuna con un comandante.',
+      },
+    },
+  ],
   seats: [
     seat(
       { en: 'Supreme Commander', it: 'Comandante supremo' },

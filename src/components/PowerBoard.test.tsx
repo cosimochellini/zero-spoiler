@@ -13,6 +13,7 @@ const page: PowerPageView = {
       kind: 'council',
       name: 'Seven Warlords of the Sea',
       ended: true,
+      description: 'Seven pirates in the service of the government.',
       seats: [
         {
           title: 'Fixture Throne',
@@ -49,6 +50,14 @@ describe('PowerBoard', () => {
       screen.getByText('Nothing on this page is open at your bookmark.'),
     ).toBeVisible()
     expect(screen.queryByText(/not set a bookmark/u)).not.toBeInTheDocument()
+  })
+
+  it('describes a group under its name, and says nothing without one', () => {
+    renderWithProviders(<PowerBoard page={page} />, { bookmark: ep(600) })
+
+    expect(
+      screen.getByText('Seven pirates in the service of the government.'),
+    ).toBeVisible()
   })
 
   it('lists each seat with its holder, a vacancy or the fog', () => {

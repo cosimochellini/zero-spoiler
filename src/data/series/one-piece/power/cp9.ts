@@ -46,6 +46,16 @@ export const CP9: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'cp9',
   kind: 'chain',
+  description: [
+    {
+      chapter: 358,
+      episode: 250,
+      value: {
+        en: 'A secret unit of Cipher Pol, the government’s agency of spies and assassins. Its agents are licensed to kill anyone who stands against the government, and a chief gives them their orders.',
+        it: 'Un’unità segreta dei Cipher Pol, l’agenzia di spie e assassini del governo. I suoi agenti hanno il permesso di uccidere chiunque si opponga al governo, e un capo dà loro gli ordini.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

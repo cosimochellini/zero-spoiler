@@ -33,6 +33,32 @@ export const STRAW_HAT_PIRATES: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'straw-hat-pirates',
   kind: 'crew',
+  description: [
+    {
+      chapter: 6,
+      episode: 3,
+      value: {
+        en: 'A new pirate crew whose captain has sworn to become the King of the Pirates, and so to find the treasure the last king left behind.',
+        it: 'Una nuova ciurma di pirati il cui capitano ha giurato di diventare il Re dei Pirati e trovare il tesoro lasciato dall’ultimo re.',
+      },
+    },
+    {
+      chapter: 800,
+      episode: 745,
+      value: {
+        en: 'A pirate crew with a fleet behind it. Other crews have sworn to serve its captain as the Grand Fleet, and the captain’s own crew stays at its centre.',
+        it: 'Una ciurma con una flotta alle spalle. Altre ciurme hanno giurato di servire il suo capitano come Grande Flotta, e la ciurma del capitano ne resta il centro.',
+      },
+    },
+    {
+      chapter: 1053,
+      episode: 1080,
+      value: {
+        en: 'A crew whose captain the world now counts among the four Emperors, still at the head of a fleet of crews sworn to serve him.',
+        it: 'Una ciurma il cui capitano il mondo conta ora tra i quattro Imperatori, ancora alla testa di una flotta di ciurme che hanno giurato di servirlo.',
+      },
+    },
+  ],
   seats: [
     joins({ en: 'Captain', it: 'Capitano' }, [
       { episode: 3, chapter: 6, value: 'monkey-d-luffy' },

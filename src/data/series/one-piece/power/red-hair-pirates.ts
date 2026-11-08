@@ -17,6 +17,24 @@ export const RED_HAIR_PIRATES: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'red-hair-pirates',
   kind: 'crew',
+  description: [
+    {
+      chapter: 1,
+      episode: 4,
+      value: {
+        en: 'A pirate crew led by a red-haired captain, with a first mate at his side. Its captain left his straw hat with a boy who dreams of being a pirate.',
+        it: 'Una ciurma di pirati guidata da un capitano dai capelli rossi, con un primo ufficiale al suo fianco. Il capitano ha lasciato il suo cappello di paglia a un ragazzino che sogna di fare il pirata.',
+      },
+    },
+    {
+      chapter: 432,
+      episode: 314,
+      value: {
+        en: 'The crew of one of the four Emperors. Its captain stands among the pirates the world counts as a great power.',
+        it: 'La ciurma di uno dei quattro Imperatori. Il suo capitano è tra i pirati che il mondo conta come una grande potenza.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

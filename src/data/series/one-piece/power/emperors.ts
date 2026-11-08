@@ -22,6 +22,24 @@ export const EMPERORS: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'emperors',
   kind: 'council',
+  description: [
+    {
+      chapter: 432,
+      episode: 314,
+      value: {
+        en: 'Four pirates so strong that the world counts them as one of its three great powers, which keep it in balance. Each stands at the head of a pirate crew.',
+        it: 'Quattro pirati così forti che il mondo li conta come una delle sue tre grandi potenze, quelle che lo tengono in equilibrio. Ognuno guida una ciurma di pirati.',
+      },
+    },
+    {
+      chapter: 1053,
+      episode: 1080,
+      value: {
+        en: 'Four pirates the world names as its Emperors. The old generation has fallen, and the four named now are a new one. Together they remain one of the three great powers.',
+        it: 'Quattro pirati che il mondo nomina suoi Imperatori. La vecchia generazione è caduta e i quattro di oggi sono una nuova. Insieme restano una delle tre grandi potenze.',
+      },
+    },
+  ],
   seats: [
     // Ch. 432 p.4–7: Garp names Shanks one of the Four Emperors.
     seat([{ episode: 314, chapter: 432, value: 'shanks' }]),

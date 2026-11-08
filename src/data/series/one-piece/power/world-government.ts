@@ -22,6 +22,16 @@ export const WORLD_GOVERNMENT: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'world-government',
   kind: 'chain',
+  description: [
+    {
+      chapter: 908,
+      episode: 889,
+      value: {
+        en: 'The government that rules the world’s nations and commands the Marines and Cipher Pol. Five elders stand at its top and kneel before a figure on the Empty Throne.',
+        it: 'Il governo che regge le nazioni del mondo e comanda la Marina e i Cipher Pol. Cinque anziani stanno al vertice e si inchinano a una figura sul Trono Vuoto.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

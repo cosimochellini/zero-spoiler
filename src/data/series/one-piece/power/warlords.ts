@@ -25,6 +25,32 @@ export const WARLORDS: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'warlords',
   kind: 'council',
+  description: [
+    {
+      chapter: 69,
+      episode: 31,
+      value: {
+        en: 'Seven pirates the government has authorised and taken into its service. Other pirates despise them as the government’s dogs.',
+        it: 'Sette pirati che il governo ha autorizzato e preso al proprio servizio. Gli altri pirati li disprezzano come cani del governo.',
+      },
+    },
+    {
+      chapter: 432,
+      episode: 314,
+      value: {
+        en: 'Seven pirates in the service of the government. They count as one of the three great powers that keep the world in balance, beside the Marines and the Emperors.',
+        it: 'Sette pirati al servizio del governo. Contano come una delle tre grandi potenze che tengono in equilibrio il mondo, insieme alla Marina e agli Imperatori.',
+      },
+    },
+    {
+      chapter: 956,
+      episode: 957,
+      value: {
+        en: 'The system that let seven pirates serve the government has been abolished by the kings of the world. Its former members are wanted criminals again.',
+        it: 'Il sistema che faceva servire il governo a sette pirati è stato abolito dai re del mondo. I suoi ex membri sono di nuovo ricercati.',
+      },
+    },
+  ],
   seats: [
     // Ch. 69 p.5–6: Yosaku names Mihawk a Warlord.
     seat([{ episode: 31, chapter: 69, value: 'dracule-mihawk' }]),

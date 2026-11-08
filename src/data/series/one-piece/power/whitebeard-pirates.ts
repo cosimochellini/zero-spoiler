@@ -40,6 +40,32 @@ export const WHITEBEARD_PIRATES: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'whitebeard-pirates',
   kind: 'crew',
+  description: [
+    {
+      chapter: 157,
+      episode: 94,
+      value: {
+        en: 'A large pirate crew split into divisions, each under its own commander, with one captain above them all.',
+        it: 'Una grande ciurma di pirati divisa in divisioni, ognuna con il proprio comandante e un solo capitano sopra tutti.',
+      },
+    },
+    {
+      chapter: 234,
+      episode: 151,
+      value: {
+        en: 'The crew of the pirate who once fought the Pirate King as an equal. The government watches it closely and fears what would come of it joining forces with another great crew.',
+        it: 'La ciurma del pirata che un tempo ha combattuto alla pari con il Re dei Pirati. Il governo la tiene d’occhio e teme cosa accadrebbe se si alleasse con un’altra grande ciurma.',
+      },
+    },
+    {
+      chapter: 576,
+      episode: 485,
+      value: {
+        en: 'The crew of an Emperor who has died in the war. With its captain gone, it has lost the one who held it together.',
+        it: 'La ciurma di un Imperatore morto nella guerra. Senza il suo capitano ha perso chi la teneva unita.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

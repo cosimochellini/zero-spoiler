@@ -45,6 +45,24 @@ export const BIG_MOM_PIRATES: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'big-mom-pirates',
   kind: 'crew',
+  description: [
+    {
+      chapter: 653,
+      episode: 571,
+      value: {
+        en: 'The crew of one of the four Emperors. Its captain is so fond of sweets that her men go far to fetch them.',
+        it: 'La ciurma di uno dei quattro Imperatori. La sua capitana ama i dolci al punto che i suoi uomini vanno lontano a procurarli.',
+      },
+    },
+    {
+      chapter: 843,
+      episode: 806,
+      value: {
+        en: 'A crew with three Sweet Commanders, and ministers who are each named for a sweet or a food.',
+        it: 'Una ciurma con tre Sweet Commander e dei ministri, ognuno con il nome di un dolce o di un cibo.',
+      },
+    },
+  ],
   seats: [
     {
       told: TOLD,

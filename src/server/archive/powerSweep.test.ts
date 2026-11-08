@@ -7,6 +7,7 @@ import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
+import type { PowerPageView } from '~/lib/view/power'
 import type { CharacterFacts } from '~/lib/view/records'
 import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
@@ -31,6 +32,7 @@ const { bodies } = withFeatures(archive)
 function gatesOf(): Gated[] {
   return bodies.flatMap((body) => [
     body,
+    ...body.description.map((version) => archive.gateOf(version, body)),
     ...(body.ended === undefined ? [] : [body.ended]),
     ...body.seats.flatMap((seat) => [
       seat.told,
@@ -213,6 +215,87 @@ function hiddenFaults({
   return faults
 }
 
+/**
+ * Whether a bookmark has reached a version of a body's description, worked
+ * out from the raw numbers rather than the reader's gate: the later of the
+ * body's and the version's, in the bookmark's own unit, and not a version the
+ * other medium alone tells.
+ */
+function reaches(
+  bookmark: Bookmark,
+  body: PowerBody,
+  version: PowerBody['description'][number],
+): boolean {
+  if (bookmark === null) {
+    return false
+  }
+  if (bookmark.mode === 'chapter') {
+    return (
+      version.source !== 'episode'
+      && bookmark.chapter >= Math.max(body.revealedAtChapter, version.chapter)
+    )
+  }
+
+  return (
+    version.source !== 'chapter'
+    && bookmark.episode >= Math.max(body.revealedAtEpisode, version.episode)
+  )
+}
+
+/**
+ * What is wrong with the descriptions on one ask's page (#1196): a listed
+ * body not described by the latest version the bookmark reaches; the text of
+ * any other version, or of a body not listed, in the payload; and a text that
+ * prints the label of a group the page does not list, in either language.
+ */
+function descriptionFaults(ask: {
+  bookmark: Bookmark
+  locale: Locale
+}): string[] {
+  const { bookmark, locale } = ask
+  const page = powerPage(readerFor(archive, bookmark, locale))
+  const at = `@ ${JSON.stringify(bookmark)} ${locale}`
+  const served = JSON.stringify(page)
+
+  return [
+    ...bodies.flatMap((body) => {
+      const view = page.bodies.find(({ id }) => id === body.id)
+      const reached = body.description.findLast((version) =>
+        reaches(bookmark, body, version),
+      )
+
+      return [
+        ...(view === undefined || view.description === reached?.value[locale] ?
+          []
+        : [`${body.id} is described wrongly ${at}`]),
+        ...body.description
+          .filter((version) => version !== reached || view === undefined)
+          .filter((version) =>
+            served.includes(JSON.stringify(version.value[locale]).slice(1, -1)),
+          )
+          .map(() => `${body.id} sends a version it has not reached ${at}`),
+      ]
+    }),
+    ...labelFaults(page, at),
+  ]
+}
+
+/** The labels of groups a page does not list, printed in its descriptions. */
+function labelFaults(page: PowerPageView, at: string): string[] {
+  const listed = new Set(page.bodies.map(({ id }) => id))
+  const labels = bodies
+    .filter(({ id }) => !listed.has(id))
+    .flatMap(({ id }) =>
+      LOCALES.map((language) => FACTION_LABELS[language][printedFaction(id)]),
+    )
+
+  return page.bodies.flatMap(({ description }) =>
+    labels
+      .filter((label) => description?.includes(label) === true)
+      .map((label) => `"${label}" of a body not listed ${at}`),
+  )
+}
+
 /** A bookmark's count in its own unit, 0 for none. */
 function countOf(point: Bookmark): number {
   if (point === null) {
@@ -265,6 +348,14 @@ describe('the power feature at every dated change', () => {
     'lists only bodies with a seat held or vacant, and names none of the rest',
     () => {
       expect(ASKS.flatMap((ask) => hiddenFaults(ask))).toStrictEqual([])
+    },
+    TIMEOUT,
+  )
+
+  it(
+    'describes each listed body by the latest version reached and names no group the page does not list',
+    () => {
+      expect(ASKS.flatMap((ask) => descriptionFaults(ask))).toStrictEqual([])
     },
     TIMEOUT,
   )

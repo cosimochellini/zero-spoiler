@@ -151,6 +151,14 @@ export interface Holding extends Dated<null | string> {
   chapter: number
 }
 
+/**
+ * One version of what a body is, as the story tells it at that point: a short
+ * text with no name in it, always at a true chapter as well as an episode.
+ */
+export interface Description extends Dated<LocalizedText> {
+  chapter: number
+}
+
 /** One seat of a body: its title and who has held it. */
 export interface Seat {
   /**
@@ -177,6 +185,14 @@ export interface Seat {
  * the group's own.
  */
 export interface PowerBody<V extends Vocabulary = Vocabulary> extends Gated {
+  /**
+   * What the group is, under its name on the ranks page: one to three
+   * versions, a new one only at a turning point that changes what the group
+   * is (never a change of holder, which the seats show). The first opens
+   * with the body; each opens at the later of the body's gate and its own,
+   * and the reader sees the latest one reached, in their medium.
+   */
+  description: [Description, ...Description[]]
   /** When the story ends the body; its seats then stay as they stood. */
   ended?: Gated
   id: V['group']

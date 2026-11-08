@@ -36,6 +36,16 @@ export const SUPERNOVAE: PowerBody<OnePieceVocabulary> = {
   ...TOLD,
   id: 'supernovae',
   kind: 'council',
+  description: [
+    {
+      chapter: 498,
+      episode: 392,
+      value: {
+        en: 'Eleven rookie pirates, each with a bounty above one hundred million berries. One of them, it is said, could inspire a whole new generation of pirates.',
+        it: 'Undici pirati esordienti, ognuno con una taglia sopra i cento milioni di berry. Uno di loro, si dice, potrebbe ispirare un’intera nuova generazione di pirati.',
+      },
+    },
+  ],
   seats: [
     // Ch. 498 pp. 10–11: Shakky counts Luffy and Zoro among the eleven.
     supernova({ ...NAMED, value: 'monkey-d-luffy' }),

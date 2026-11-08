@@ -271,15 +271,19 @@ live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
   hyphenated holder id of 9 or more characters, or, when it seats none, by its
   longest English seat title of 12 or more; a module with neither is refused.
   `leaks.test.ts` scans each title as kind `seat` at the later of its body's
-  gate and its seat's `told`. A character's page lists the seats they hold now
-  (`seatsHeldBy` in `src/server/archive/power.server.ts`), read through the same
-  `holderOf` as the ranks page, less a body that has ended; each links to its
-  body's section (`powerAnchor`, `#ranks-{body}`). The page lists a body only
-  once a seat of it is held or vacant at the bookmark; a body met with every
-  seat under fog sends nothing, and `fogged: true` alone puts one line at the
-  end of the page, with no count and no place in the order. `powerSweep.test.ts`
-  runs the leak sweep over both, and holds the two equal, at both sides of every
-  dated change of every body.
+  gate and its seat's `told`, and each version of a body's `description` (one to
+  three, a turning point each, shown under the body's name) as kind `about` at
+  the later of the body's gate and its own; the page sends the latest one the
+  bookmark reaches, in its medium, and no version names a record at all. A
+  character's page lists the seats they hold now (`seatsHeldBy` in
+  `src/server/archive/power.server.ts`), read through the same `holderOf` as the
+  ranks page, less a body that has ended; each links to its body's section
+  (`powerAnchor`, `#ranks-{body}`). The page lists a body only once a seat of it
+  is held or vacant at the bookmark; a body met with every seat under fog sends
+  nothing, and `fogged: true` alone puts one line at the end of the page, with
+  no count and no place in the order. `powerSweep.test.ts` runs the leak sweep
+  over both, and holds the two equal, at both sides of every dated change of
+  every body.
 - New series need a registry entry and coverage floors/text kinds in
   `src/test/series.ts`. Follow an existing series for archive and copy wiring.
 - Client code consumes `src/lib/view` types, never archive modules. ESLint,

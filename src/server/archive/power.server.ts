@@ -23,6 +23,8 @@ import type { Reader } from './reader.server'
  * once it is told, the holder before it is gone, so a change to someone not
  * met yet sends the title alone too, never the old holder nor the new one.
  * Only a holder reached sends a drawing: the one at the reader's bookmark.
+ * A body's description is the latest version the reader has reached, in
+ * their medium, and only that one: a later version never travels ahead.
  *
  * A body is listed only once the reader sees a seat of it held or vacant
  * (#1194): a name over seats all under fog is one the reader may not
@@ -55,7 +57,12 @@ function bodyOf(body: PowerBody, r: Reader): BodyView {
     }
   }
 
+  const described = body.description.findLast((version) =>
+    r.sees(r.archive.gateOf(version, body)),
+  )
+
   return {
+    ...(described !== undefined && { description: described.value[r.locale] }),
     id: body.id,
     kind: body.kind,
     name: labelOf(body, r),

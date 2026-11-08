@@ -349,6 +349,21 @@ function seatTexts(body: PowerBody): Text[] {
   }))
 }
 
+/**
+ * A body's description versions (#1196), each at the later of the body's gate
+ * and its own: the ranks page prints a version from there, under the name.
+ */
+function aboutTexts(body: PowerBody): Text[] {
+  return body.description.map((version, at) => ({
+    chapter: Math.max(body.revealedAtChapter, version.chapter),
+    episode: Math.max(body.revealedAtEpisode, version.episode),
+    label: `${body.id}.about@${String(at)}`,
+    owner: { id: `power:${body.id}` },
+    source: version.source ?? body.source,
+    text: version.value,
+  }))
+}
+
 /** Every text an archive prints. */
 function textsOf(archive: ReaderArchive, placeWords: PlaceWords): Text[] {
   const { entities } = archive
@@ -369,7 +384,10 @@ function textsOf(archive: ReaderArchive, placeWords: PlaceWords): Text[] {
     ...archive.places.flatMap((place) => wordTexts(archive, placeWords, place)),
     ...headerTexts(placeWords),
     ...archive.filler.flatMap((entry) => fillerTexts(entry)),
-    ...archive.bodies.flatMap((body) => seatTexts(body)),
+    ...archive.bodies.flatMap((body) => [
+      ...aboutTexts(body),
+      ...seatTexts(body),
+    ]),
     ...copyTexts(archive.series.slug),
   ]
 }
@@ -425,6 +443,20 @@ function probeOf(
     source,
     text: { en: `On to ${name.en}.`, it: `Verso ${name.it}.` },
   }
+}
+
+/**
+ * The records a text names in either language when it is read at the very
+ * first chapter and episode, where every record is filed after it.
+ */
+function namedAtTheStart(scan: Scan, text: Text): string[] {
+  const first = { ...text, chapter: 0, episode: 0, source: undefined }
+
+  return LOCALES.flatMap((locale) =>
+    scan
+      .leaked(first, locale, true)
+      .map(({ id }) => `${text.label} (${locale}) names ${id}`),
+  )
 }
 
 /** One archive's scan, its name indexes built once for every text. */
@@ -592,6 +624,17 @@ describe.each(LOADED_SERIES)(
       )
 
       expect([...kinds].toSorted(byString())).toStrictEqual(expected.kinds)
+    })
+
+    // A description holds roles, never a name (#1196): read at the very
+    // first chapter and episode, every record is filed after it, so any name
+    // of any record in it fails, not only one filed later.
+    it('describe a group with no record’s name at all', () => {
+      const named = scan.texts
+        .filter(({ label }) => label.includes('.about@'))
+        .flatMap((text) => namedAtTheStart(scan, text))
+
+      expect(named).toStrictEqual([])
     })
 
     it('name no record the reader has not reached, linked or not', () => {
