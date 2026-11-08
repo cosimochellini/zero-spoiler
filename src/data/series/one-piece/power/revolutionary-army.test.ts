@@ -4,10 +4,11 @@ import type { Holding } from '~/data/features'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
+import { characterPage, drawingsFor } from '~/server/archive/pages.server'
 import { powerPage } from '~/server/archive/power.server'
 import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
-import { opReaderFor } from '~/test/archive'
+import { opReaderFor, opRelationshipsPage } from '~/test/archive'
 import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
@@ -191,6 +192,21 @@ function affiliationAt(id: string, bookmark: Bookmark): unknown {
  * as chapter and episode, with the text just before and from there on.
  */
 const MOVES = [
+  // SWORD lands on Hachinosu in chapter 1080, which episode 1114 adapts.
+  {
+    id: 'hibari',
+    chapter: 1080,
+    episode: 1114,
+    before: 'Marines, commander',
+    after: 'Marines, SWORD commander',
+  },
+  {
+    id: 'prince-grus',
+    chapter: 1080,
+    episode: 1114,
+    before: 'Marines, rear admiral',
+    after: 'Marines, SWORD rear admiral',
+  },
   {
     id: 'sabo',
     chapter: 731,
@@ -229,5 +245,84 @@ describe('the Revolutionary Army’s character pages', () => {
       'Impel Down level 5.5, queen',
     )
     expect(affiliationAt(IVANKOV, episode(441))).toBe(commander)
+  })
+})
+
+/** The titles of Teach's chronicle at a bookmark. */
+function teachStoriesAt(bookmark: Bookmark): string[] {
+  const page = characterPage(
+    'marshall-d-teach',
+    readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'),
+  )
+
+  return page !== undefined && 'detail' in page ?
+      page.detail.chronicle.entries.map(({ title }) => title)
+    : []
+}
+
+describe('Teach’s story at Winner Island', () => {
+  it('opens at chapter 1081 and episode 1115, not before', () => {
+    const title = 'Letting the prize slip'
+
+    expect(teachStoriesAt(chapter(1080))).not.toContain(title)
+    expect(teachStoriesAt(chapter(1081))).toContain(title)
+    expect(teachStoriesAt(episode(1114))).not.toContain(title)
+    expect(teachStoriesAt(episode(1115))).toContain(title)
+  })
+})
+
+/** The four deputy commanders, each with the commander of their army. */
+const DEPUTY_CARDS = [
+  { id: 'ahiru', name: 'Ahiru', commander: 'belo-betty' },
+  { id: 'ushiano', name: 'Ushiano', commander: 'morley' },
+  { id: 'jiron', name: 'Jiron', commander: 'karasu' },
+  { id: 'gambo', name: 'Gambo', commander: 'lindbergh' },
+]
+
+const DEPUTY_CASES = DEPUTY_CARDS.flatMap((deputy) =>
+  LOCALES.flatMap((locale) =>
+    [
+      { unit: 'chapter', gate: 1082 },
+      { unit: 'episode', gate: 1116 },
+    ].map((side) => ({ ...deputy, ...side, locale })),
+  ),
+)
+
+describe.each(DEPUTY_CASES)('$id in $locale by $unit', (row) => {
+  const at = (count: number): Bookmark =>
+    row.unit === 'chapter' ? chapter(count) : episode(count)
+
+  it('opens the record, its drawing and its card at its caption, never before', () => {
+    const before = readerFor(
+      ONE_PIECE_LOADED.archive,
+      at(row.gate - 1),
+      row.locale,
+    )
+    const reached = readerFor(
+      ONE_PIECE_LOADED.archive,
+      at(row.gate),
+      row.locale,
+    )
+    const closed = characterPage(row.id, before)
+    const open = characterPage(row.id, reached)
+
+    expect(
+      closed !== undefined && 'detail' in closed && closed.detail.slot.open,
+    ).toBe(false)
+    expect(JSON.stringify(closed)).not.toContain(row.name)
+    expect(drawingsFor([row.id], before)).toStrictEqual({})
+    expect(
+      opRelationshipsPage(row.id, at(row.gate - 1), row.locale),
+    ).toStrictEqual([])
+
+    expect(
+      open !== undefined && 'detail' in open && open.detail.slot.open,
+    ).toBe(true)
+    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
+    expect(
+      opRelationshipsPage(row.id, at(row.gate), row.locale).map(
+        ({ person }) => person.id,
+      ),
+    ).toStrictEqual([row.commander])
   })
 })
