@@ -33,3 +33,21 @@ export interface BodyView {
 export interface PowerPageView {
   bodies: BodyView[]
 }
+
+/**
+ * The hash of a body's section on the power page, which a character's page
+ * links a seat to.
+ */
+export function powerAnchor(body: string): string {
+  return `power-${body}`
+}
+
+/**
+ * A seat a character holds: its title, its body's id (`powerAnchor`), and the
+ * body's name for a chain or a crew, whose titles ("Captain") do not name it.
+ */
+export interface SeatLink {
+  body?: string
+  id: string
+  title: string
+}

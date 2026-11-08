@@ -435,8 +435,9 @@ function earlyLabels(
 /**
  * Every One Piece ask, with the faction groups its fruit album sends and the
  * bodies its power page names. A body's label comes with the body, at the
- * body's own gate, so the power page may print it from there; every other
- * page still waits for the album's group, whatever the power page shows.
+ * body's own gate, so the power page may print it from there, and so may a
+ * character's page, whose seats lead to it (`SEAT_LINKS`); every other page
+ * still waits for the album's group, whatever the power page shows.
  */
 const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
   const { factions } = fruitAlbum(bookmark, locale)
@@ -452,6 +453,9 @@ const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
   return { bookmark, factions, groups, locale, named }
 })
 
+/** The payloads that send a body's label with the body: the power page and a character's seats. */
+const SEAT_LINKS = new Set(['loadCharacter', 'loadPower'])
+
 /** Every label a page sends early at the asks it is sampled at. */
 function earlyLabelsOf({ keys, name, run }: Payload): string[] {
   const all = keys?.()
@@ -459,7 +463,7 @@ function earlyLabelsOf({ keys, name, run }: Payload): string[] {
   return GROUPED.flatMap(({ bookmark, groups, locale, named }, at) =>
     sampled(all, at).flatMap((key) =>
       earlyLabels(run(bookmark, locale, key), {
-        groups: name === 'loadPower' ? named : groups,
+        groups: SEAT_LINKS.has(name) ? named : groups,
         locale,
         name,
       }).map(

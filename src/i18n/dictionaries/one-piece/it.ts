@@ -64,6 +64,7 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
 
   'dialog.filler': 'Filler',
 
+  'character.power': 'Potere',
   'character.devilFruit': 'Frutto del diavolo',
   'character.bounty': 'Taglia',
   'character.bountyValue': '{amount} Berry',

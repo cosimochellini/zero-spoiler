@@ -6,6 +6,7 @@ import {
   ease,
   font,
   leading,
+  pin,
   radius,
   rule,
   space,
@@ -53,7 +54,8 @@ export const styles = stylex.create({
     maxWidth: '58ch',
   },
   notice: { gap: space.md, display: 'grid', justifyItems: 'start' },
-  body: { gap: space.lg, display: 'grid' },
+  // Linked to from a character's seats: it lands below the sticky bar.
+  body: { gap: space.lg, display: 'grid', scrollMarginBlockStart: pin.bar },
   bodyHead: {
     gap: space.xs,
     borderBlockStartColor: color.rule,

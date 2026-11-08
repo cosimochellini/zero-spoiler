@@ -66,6 +66,7 @@ export const onePieceEn = {
 
   'dialog.filler': 'Filler',
 
+  'character.power': 'Power',
   'character.devilFruit': 'Devil fruit',
   'character.bounty': 'Bounty',
   'character.bountyValue': '{amount} Berry',

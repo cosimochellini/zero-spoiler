@@ -266,7 +266,12 @@ live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
   hyphenated holder id of 9 or more characters, or, when it seats none, by its
   longest English seat title of 12 or more; a module with neither is refused.
   `leaks.test.ts` scans each title as kind `seat` at the later of its body's
-  gate and its seat's `told`.
+  gate and its seat's `told`. A character's page lists the seats they hold now
+  (`seatsHeldBy` in `src/server/archive/power.server.ts`), read through the same
+  `holderOf` as the power page, less a body that has ended; each links to its
+  body's section (`powerAnchor`). `powerSweep.test.ts` runs the leak sweep over
+  both, and holds the two equal, at both sides of every dated change of every
+  body.
 - New series need a registry entry and coverage floors/text kinds in
   `src/test/series.ts`. Follow an existing series for archive and copy wiring.
 - Client code consumes `src/lib/view` types, never archive modules. ESLint,
@@ -289,6 +294,7 @@ checks this block.
 | Records             | 742                                                     |
 | Characters          | 539                                                     |
 | Devil fruits        | 128                                                     |
+| Bodies of power     | 15, with 119 seats                                      |
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
 | Line drawings       | 742, one per record, plus 326 redrawings of 180 records |
