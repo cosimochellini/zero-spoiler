@@ -42,6 +42,7 @@ export const FACTION_LABELS: Record<Locale, Record<Faction, string>> = {
     'kozuki-alliance': 'Kozuki alliance',
     'nine-red-scabbards': 'Nine Red Scabbards',
     'kurozumi-family': 'Kurozumi family',
+    'supernovae': 'Supernovas',
     'independent': 'Independent',
   },
   it: {
@@ -75,6 +76,7 @@ export const FACTION_LABELS: Record<Locale, Record<Faction, string>> = {
     'kozuki-alliance': 'Alleanza Kozuki',
     'nine-red-scabbards': 'Nove Foderi Rossi',
     'kurozumi-family': 'Famiglia Kurozumi',
+    'supernovae': 'Supernove',
     'independent': 'Indipendenti',
   },
 }

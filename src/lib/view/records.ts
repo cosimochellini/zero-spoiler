@@ -124,6 +124,7 @@ export type Faction =
   | 'revolutionary-army'
   | 'straw-hat-grand-fleet'
   | 'straw-hat-pirates'
+  | 'supernovae'
   | 'thriller-bark-pirates'
   | 'tontatta'
   | 'warlords'
