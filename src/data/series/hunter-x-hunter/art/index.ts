@@ -166,6 +166,51 @@ const LEORIO_CASE: Stroke[] = [
 const LEORIO_SHADOW = shadow(78, 174, 58)
 
 /**
+ * The suits of Hisoka's four cards in the record's tint: clubs, diamonds and
+ * hearts in the corner of the three cards behind, and spades in the corner
+ * and large in the middle of the card in front.
+ */
+const HISOKA_SUITS: Stroke = {
+  d: 'M25.9 112.6 C25.2 111.7 25.4 110.4 26.4 109.7 C27.3 109 28.6 109.2 29.3 110.2 C30 111.1 29.8 112.4 28.8 113.1 C27.9 113.8 26.6 113.6 25.9 112.6 Z M25.9 116.9 C25.3 116 25.5 114.7 26.4 114 C27.3 113.3 28.7 113.5 29.3 114.5 C30 115.4 29.8 116.7 28.9 117.4 C27.9 118.1 26.6 117.9 25.9 116.9 Z M30 114 C29.3 113.1 29.5 111.7 30.4 111.1 C31.4 110.4 32.7 110.6 33.4 111.5 C34.1 112.5 33.9 113.8 32.9 114.5 C32 115.1 30.7 114.9 30 114 Z M29.8 114.4 L30.8 118.3 L33.2 116.6 Z M50.6 91.7 L55.1 95.8 L52.6 101.5 L48.1 97.3 Z M78 95.2 C74.3 90.9 73.9 88.2 74.7 86.8 C75.7 84.5 79.2 85 79.6 87.9 C81.1 85.4 84.5 86.4 84.5 88.9 C84.6 90.5 83.1 92.7 78 95.2 Z M109.6 91.7 C103.9 91.9 101.6 93.4 101.3 94.7 C100.5 96.6 103 98.7 105.5 97.4 C105 100.2 107.8 101.9 109.4 100.5 C110.5 99.8 111.2 97.2 109.6 91.7 Z M105.3 97.6 L102.3 98.8 L105.1 100.9 Z M110 116.7 C94 117.3 87.6 121.3 86.7 124.9 C84.6 130.3 91.5 136.2 98.5 132.6 C97.2 140.3 104.9 145.1 109.4 141.4 C112.6 139.4 114.4 132.1 110 116.7 Z M98 133.2 L89.6 136.5 L97.5 142.3 Z',
+  role: 'accent',
+}
+
+/**
+ * Hisoka's four playing cards fanned from one corner, each turned 24° from
+ * the next: only the part of a card the one above leaves bare is drawn. The
+ * card in front has the inner frame of its white border and, along its
+ * right and lower edges, its thickness; each card throws a hatched shade on
+ * the one behind. No pips but the suits, no lettering.
+ */
+const HISOKA_FAN: Stroke[] = [
+  {
+    d: 'M46.7 83.3 L50 80.9 L52.4 80 L54.9 80.4 L56 81.3 M78.3 154.3 L60.7 167.1 L58.2 168 L55.7 167.6 L53.7 166 L14.9 112.6 L14 110.2 L14.4 107.6 L16 105.6 L39 88.9',
+  },
+  {
+    d: 'M80 76.2 L83.9 75.4 L86.5 75.5 L88.7 76.9 L89.3 78.2 M80 153.9 L58.6 158.5 L56 158.3 L53.9 156.9 L52.7 154.6 L39 90 L39.1 87.5 L40.5 85.3 L42.8 84.1 L70.7 78.2',
+  },
+  {
+    d: 'M113.3 83.3 L117.2 84.1 L119.5 85.3 L120.9 87.5 L121 88.9 M81.7 154.3 L60.3 149.7 L58 148.5 L56.6 146.4 L56.4 143.8 L70.2 79.2 L71.3 76.9 L73.5 75.5 L76.1 75.4 L104 81.3',
+  },
+  {
+    d: 'M144 105.6 L145.6 107.6 L146 110.2 L145.1 112.6 L106.3 166 L104.3 167.6 L101.8 168 L99.3 167.1 L65.4 142.4 L63.7 140.4 L63.3 137.9 L64.3 135.4 L103 82 L105.1 80.4 L107.6 80 L110 80.9 Z',
+  },
+  {
+    d: 'M140.4 108 L141.3 109 L141.5 110.3 L141 111.5 L104 162.4 L103 163.3 L101.7 163.5 L100.5 163 L68.9 140.1 L68.1 139.1 L67.9 137.8 L68.4 136.6 L105.4 85.6 L106.4 84.8 L107.7 84.6 L108.9 85.1 Z',
+    role: 'soft',
+  },
+  {
+    d: 'M147.6 112.8 L146.7 115.2 L107.9 168.6 L105.9 170.2 L103.4 170.6 L100.9 169.7 L67 145 L65.3 143 L64.9 140.5',
+    role: 'soft',
+  },
+  HISOKA_SUITS,
+  {
+    d: 'M41.8 113 L37.7 117.9 M43.9 122.7 L39.8 127.7 M46 132.5 L41.9 137.5 M48 142.3 L44 147.3 M63.4 101.3 L57.7 104.2 M61.3 111.1 L55.6 114 M59.3 120.9 L53.5 123.8 M57.2 130.7 L51.5 133.5 M87.9 99.5 L81.5 99.8 M82 107.6 L75.6 107.9 M76.2 115.7 L69.8 116 M70.3 123.7 L63.9 124',
+    role: 'ambient',
+  },
+]
+
+/**
  * Every Hunter x Hunter line drawing, one per record, keyed by the record's
  * id, in the house style of One Piece's (`~/data/series/one-piece/art`): the
  * same box, pen and rules. The arcs, and the characters and places of the
@@ -743,41 +788,14 @@ export const DRAWINGS = {
     shadow(72, 164, 54),
   ],
 
-  // Hisoka's right hand from the back, the fingers a little spread and
-  // the long pointed nails in the record's tint: the applicant who wounds a
-  // man for bumping into him without apologizing, in episode 3 and chapter
-  // 5. No card: his cards first come out in the Milsy Wetlands, in chapter
-  // 8. No suit symbol, no face paint.
-  // Hands, not wrist bands: the wiki gives his long pointed nails and has no
-  // bands (owner: a hand may stand for him).
-  'hisoka': [
-    { d: 'M62 198 C62 178 58 162 54 146 M96 198 C96 180 100 164 106 146' },
-    { d: 'M54 146 C50 132 48 118 50 104 M106 146 C110 130 110 116 106 104' },
-    {
-      d: 'M50 104 L45 62 Q45 56 50.5 56 Q56 56 56.5 62 L62 100 M63 99 L62 50 Q62 44 68 44 Q74 44 74 50 L76 98 M77 98 L82 54 Q83 48 88.5 48.5 Q94 49 93.5 55 L90 99 M91 101 L100 68 Q102 62 107 63.5 Q111.5 65 110 71 L104 106',
-    },
-    {
-      d: 'M45.6 58 L46 38 L55.6 58 M62.4 46 L68 26 L73.6 46 M83 50 L92 32 L93.4 51 M101.6 64.4 L114 50 L110.4 67',
-      role: 'accent',
-    },
-    {
-      d: 'M54 146 C42 140 32 128 26 114 Q24 108 29.5 106.5 Q34 106 36.5 111 C40 120 46 124 51 125',
-    },
-    { d: 'M24.8 110 L18 96 L33.4 107.2', role: 'accent' },
-    { d: 'M52 106 Q78 94 104 106', role: 'soft' },
-    {
-      d: 'M47 80 q5 -2 10 0 M63 74 q5.5 -2 11 0 M82 76 q5.5 -2 11 0 M98 84 q5 -2 9.5 1',
-      role: 'soft',
-    },
-    {
-      d: 'M100 116 l7 -5 M100 128 l8 -5 M100 140 l8 -5 M98 152 l8 -5',
-      role: 'ambient',
-    },
-    {
-      d: 'M64 138 C62 126 60 116 58 108 M84 136 C84 124 86 114 88 106',
-      role: 'soft',
-    },
-  ],
+  // Hisoka's four playing cards fanned, the suits in the record's tint and
+  // the spade card in front: the applicant who wounds a man for bumping
+  // into him without apologizing, in episode 3 and chapter 5. His cards are
+  // what the Hunter Exam knows him by: he throws them in the Milsy Wetlands
+  // (episode 5, chapter 8) and builds a house of them on the airship
+  // (episode 7, chapter 13). Throwing cards is no Nen ability the story has
+  // shown yet. No lettering on the cards, no face paint.
+  'hisoka': [...HISOKA_FAN, shadow(80, 182, 40)],
 
   // Killua's skateboard, deck in the record's tint and the trucks beneath
   // it: he rides it through the exam tunnel in episode 4 and chapter 6.
@@ -1069,9 +1087,62 @@ export const DRAWINGS = {
 export type ArtId = keyof typeof DRAWINGS
 
 /**
+ * Hisoka's right hand from the back, with the long pointed nails: the
+ * wrist, the palm, the four fingers and their nails in the muted ink (the
+ * rubber he rebuilds them with), the thumb and its nail, the knuckles. The
+ * stage of his return mirrors it into his left hand, holding the fan.
+ */
+const HISOKA_REBUILT_HAND: Stroke[] = [
+  { d: 'M62 198 C62 178 58 162 54 146 M96 198 C96 180 100 164 106 146' },
+  { d: 'M54 146 C50 132 48 118 50 104 M106 146 C110 130 110 116 106 104' },
+  {
+    d: 'M50 104 L45 62 Q45 56 50.5 56 Q56 56 56.5 62 L62 100 M63 99 L62 50 Q62 44 68 44 Q74 44 74 50 L76 98 M77 98 L82 54 Q83 48 88.5 48.5 Q94 49 93.5 55 L90 99 M91 101 L100 68 Q102 62 107 63.5 Q111.5 65 110 71 L104 106',
+    role: 'ambient',
+  },
+  {
+    d: 'M45.6 58 L46 38 L55.6 58 M62.4 46 L68 26 L73.6 46 M83 50 L92 32 L93.4 51 M101.6 64.4 L114 50 L110.4 67',
+    role: 'ambient',
+  },
+  {
+    d: 'M54 146 C42 140 32 128 26 114 Q24 108 29.5 106.5 Q34 106 36.5 111 C40 120 46 124 51 125',
+  },
+  { d: 'M24.8 110 L18 96 L33.4 107.2', role: 'soft' },
+  { d: 'M52 106 Q78 94 104 106', role: 'soft' },
+]
+
+/**
+ * Hisoka's fan as his rebuilt left hand holds it: the same cards, suits and
+ * frame, with what the hand in front covers left out. No shade between the
+ * cards.
+ */
+const HISOKA_FAN_HELD: Stroke[] = [
+  {
+    d: 'M46.7 83.3 L50 80.9 L52.4 80 L54.9 80.4 L56 81.3 M68.8 161.2 L64.6 164.2 M55.8 167.7 L55.7 167.6 L53.7 166 L14.9 112.6 L14 110.2 L14.4 107.6 L16 105.6 L39 88.9',
+  },
+  {
+    d: 'M80 76.2 L83.9 75.4 L86.5 75.5 L88.7 76.9 L89.3 78.2 M56.3 158.3 L56 158.3 L53.9 156.9 L52.7 154.6 L39 90 L39.1 87.5 L40.5 85.3 L42.8 84.1 L70.7 78.2',
+  },
+  {
+    d: 'M113.3 83.3 L117.2 84.1 L119.5 85.3 L120.9 87.5 L121 88.9 M64.4 150.6 L61.3 149.9 M57.2 140.2 L70.2 79.2 L71.3 76.9 L73.5 75.5 L76.1 75.4 L104 81.3',
+  },
+  {
+    d: 'M67.6 130.8 L103 82 L105.1 80.4 L107.6 80 L110 80.9 L144 105.6 L145.6 107.6 L146 110.2 L145.1 112.6 L106.3 166 L104.3 167.6 L102.1 168 M97.4 165.7 L88.3 159.1 M73.7 148.4 L70.9 146.5',
+  },
+  {
+    d: 'M78.3 122.9 L105.4 85.6 L106.4 84.8 L107.7 84.6 L108.9 85.1 L140.4 108 L141.3 109 L141.5 110.3 L141 111.5 L105 161 M100.9 163.2 L100.5 163 L88.9 154.5 M82.7 150.1 L80.7 148.6 M73.9 143.6 L70.3 141.1 M69.1 135.6 L76.1 125.9',
+    role: 'soft',
+  },
+  {
+    d: 'M147.6 112.8 L146.7 115.2 L107.9 168.6 L105.9 170.2 L103.4 170.6 L101.3 169.8 M97.1 166.9 L88.2 160.4 M73.6 149.8 L71.1 148',
+    role: 'soft',
+  },
+  HISOKA_SUITS,
+]
+
+/**
  * The early-exam drawings that change with the story: the applicants Tonpa
- * points out who die later in the exam, and Kurapika's wooden swords, which
- * his chain replaces.
+ * points out who die later in the exam, Kurapika's wooden swords, which his
+ * chain replaces, and every later stage of Hisoka's cards, Kakin's included.
  */
 const hunterExamRedrawn: Redrawings = {
   kurapika: [
@@ -1142,6 +1213,41 @@ const hunterExamRedrawn: Redrawings = {
       ],
     },
   ],
+  hisoka: [
+    // The same fan lifted a little, and under it bands of his aura
+    // stretched like pulled gum from the cards to the ground: Bungee Gum is
+    // named, with Texture Surprise, after the Kastro match, episode 32 /
+    // chapter 55, which tells how he held his cards to the floor with it.
+    // The bands are open lines in the muted ink, no glow.
+    {
+      episode: 32,
+      chapter: 55,
+      value: [
+        ...moved(HISOKA_FAN, 'translate(0 -14)'),
+        {
+          d: 'M56.9 151.7 C58.9 163.9 57.5 167.9 57.9 169.9 C57.9 173.9 50.1 180 49.1 184 M64.9 151.7 C62.9 163.9 59.5 167.9 59.1 169.9 C59.1 173.9 62.1 180 63.1 184 M76 141 C78 158.5 79 162.5 79.4 164.5 C79.4 168.5 74 180 73 184 M84 141 C82 158.5 81 162.5 80.6 164.5 C80.6 168.5 86 180 87 184 M95.1 151.7 C97.1 163.9 100.5 167.9 100.9 169.9 C100.9 173.9 97.9 180 96.9 184 M103.1 151.7 C101.1 163.9 102.5 167.9 102.1 169.9 C102.1 173.9 109.9 180 110.9 184',
+          role: 'ambient',
+        },
+        { d: 'M14 184 H146', role: 'ambient', dashed: true },
+      ],
+    },
+    // The same fan in his left hand, seen from the back: back from the
+    // dead, he makes rubber prostheses with Texture Surprise for the four
+    // fingers the blast took (chapters 355, 357). The rebuilt fingers and
+    // their nails are drawn in the muted ink, an imitation over the real
+    // palm; the wiki does not say which digit was spared, so that is a
+    // frame check. He dies and returns in the same chapter, so the return
+    // is the only Kakin stage.
+    {
+      episode: 148,
+      source: 'chapter',
+      chapter: 357,
+      value: [
+        ...HISOKA_FAN_HELD,
+        ...moved(HISOKA_REBUILT_HAND, 'matrix(-0.56 0 0 0.56 115.7 106)'),
+      ],
+    },
+  ],
 }
 
 /** Returning records whose drawing changes in the Election (#913). */
@@ -1172,22 +1278,13 @@ const KAKIN = { episode: 148, source: 'chapter' } as const
 const KORTOPI_VASE = YORKNEW_CITY_DRAWINGS.kortopi.slice(0, 1)
 
 /**
- * Hisoka's right hand with the four fingers and their nails in the muted
- * ink (strokes 2 and 3) and without the creases of the fingers (stroke 7):
- * the stage of his return mirrors it into the left hand he rebuilds.
+ * Returning records whose drawing changes in Kakin, chapters 340–420 (#1154,
+ * #1156, #1158). Hisoka's chapter 357 stage lives with his other stages, in
+ * `hunterExamRedrawn`.
  */
-const HISOKA_REBUILT: Stroke[] = DRAWINGS.hisoka.flatMap((stroke, index) => {
-  if (index === 7) {
-    return []
-  }
-
-  return [index === 2 || index === 3 ? { ...stroke, role: 'ambient' } : stroke]
-})
-
-/** Returning records whose drawing changes in Kakin, chapters 340–420 (#1154, #1156, #1158). */
 const kakinReturningRedrawn: Redrawings = {
   'bonolenov': [
-    // The same roll of bandage made small, and above it Hisoka's hand in
+    // The same roll of bandage made small, and above it Hisoka's cards in
     // the muted ink, a likeness: the "Hisoka" the Mafia met was Bonolenov
     // transformed with Metamorphosen, and he takes another form again,
     // chapter 405.
@@ -1201,7 +1298,7 @@ const kakinReturningRedrawn: Redrawings = {
             ...stroke,
             role: 'ambient' as const,
           })),
-          'translate(70 -4) scale(0.62)',
+          'translate(64 -4) scale(0.62)',
         ),
       ],
     },
@@ -1293,16 +1390,6 @@ const kakinReturningRedrawn: Redrawings = {
         },
       ],
     },
-  ],
-  'hisoka': [
-    // His left hand, mirrored from the right: back from the dead, he makes
-    // rubber prostheses with Texture Surprise for the four fingers the
-    // blast took (chapters 355, 357). The rebuilt fingers and their nails
-    // are drawn in the muted ink, an imitation over the real palm, and the
-    // thumb keeps its nail in tint; the wiki does not say which digit was
-    // spared, so that is a frame check. He dies and returns in the same
-    // chapter, so the return is the only stage.
-    { ...KAKIN, chapter: 357, value: moved(HISOKA_REBUILT, MIRRORED) },
   ],
   'shalnark': [
     // The same laptop, shut, on the ground under an empty swing: Hisoka
