@@ -239,7 +239,9 @@ dictionaries stay server-side and reach only the relevant pages; Italian keys
 are typed against English. A series' copy goes to every page at every bookmark,
 so gated names do not belong in it: One Piece's faction labels live in
 `src/i18n/dictionaries/one-piece/factions.ts` and reach a page only with the
-fruit album group an open eater stands in; its seas' names live in
+fruit album group an open eater stands in, or, from a body of power's own gate,
+as that body's name on the power page and on the seat links of a character who
+holds one of its seats (`seatsHeldBy`); its seas' names live in
 `src/i18n/dictionaries/one-piece/seas.ts` and reach the places page only for the
 regions its open stops open on the chart (`regionsFor`,
 `src/lib/view/chart.ts`), and a place's page or peek for its own sea. The shared

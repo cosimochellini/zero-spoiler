@@ -3,14 +3,16 @@ import { describe, expect, it } from 'vitest'
 import { withFeatures } from '~/data/features'
 import { aroundGates } from '~/data/sweep'
 import type { Entity } from '~/data/types'
-import { LOCALES } from '~/i18n/locales'
+import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
+import type { CharacterFacts } from '~/lib/view/records'
 import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
+import { characterPage } from './pages.server'
 import { powerPage, seatsHeldBy } from './power.server'
-import { readerFor } from './reader.server'
+import { type Reader, readerFor } from './reader.server'
 
 /**
  * The whole power feature on the real archive (#1095), at both sides of every
@@ -67,23 +69,22 @@ const ASKS = POINTS.flatMap((bookmark) =>
   LOCALES.map((locale) => ({ bookmark, locale })),
 )
 
-/** Each seat as `body|title|holder`, as the power page and the characters' pages show it. */
+/**
+ * Each held seat of a body still standing, as `body|title|holder`: from the
+ * power page, and from every holder's own page (`seatsHeldBy`).
+ */
 function seatsAt(
   bookmark: Bookmark,
-  locale: (typeof LOCALES)[number],
-): { onPages: string[]; onPower: string[]; ruled: Map<string, number> } {
+  locale: Locale,
+): { onPages: string[]; onPower: string[] } {
   const r = readerFor(archive, bookmark, locale)
   const onPower: string[] = []
-  // How many seats of each title a body has held on the power page.
-  const ruled = new Map<string, number>()
   for (const body of powerPage(r).bodies) {
     for (const seat of body.seats) {
       if (seat.state !== 'held' || body.ended) {
         continue
       }
-      const key = `${body.id}|${seat.title}`
-      onPower.push(`${key}|${seat.holder.id}`)
-      ruled.set(key, (ruled.get(key) ?? 0) + 1)
+      onPower.push(`${body.id}|${seat.title}|${seat.holder.id}`)
     }
   }
   const onPages = HOLDERS.flatMap((holder) =>
@@ -92,24 +93,56 @@ function seatsAt(
     ),
   )
 
-  return { onPages, onPower: onPower.toSorted(alphabetically), ruled }
+  return {
+    onPages: onPages.toSorted(alphabetically),
+    onPower: onPower.toSorted(alphabetically),
+  }
 }
 
 /**
- * The `body|title` pairs the characters' pages list at an ask more often than
- * the power page holds a seat of that title: one it shows under fog or vacant.
+ * What is wrong with every holder's seats at one ask: any seat at all while
+ * their own record is under fog or not in the reader's medium, and once it is
+ * open, any record the seats name that the reader has not reached.
  */
-function beyondHeldAt({ bookmark, locale }: (typeof ASKS)[number]): string[] {
-  const { onPages, ruled } = seatsAt(bookmark, locale)
-  const listed = new Map<string, number>()
-  for (const seat of onPages) {
-    const key = seat.slice(0, seat.lastIndexOf('|'))
-    listed.set(key, (listed.get(key) ?? 0) + 1)
+function seatFaults(
+  { bookmark, locale }: { bookmark: Bookmark; locale: Locale },
+  leaksIn: ReturnType<typeof leaksOf>,
+): string[] {
+  const r = readerFor(archive, bookmark, locale)
+  const at = `@ ${JSON.stringify(bookmark)} ${locale}`
+
+  return HOLDERS.flatMap((holder) =>
+    holderFaults(holder, { at, bookmark, r }, leaksIn),
+  )
+}
+
+/** What is wrong with one holder's seats at one ask (`seatFaults`). */
+function holderFaults(
+  holder: Entity,
+  { at, bookmark, r }: { at: string; bookmark: Bookmark; r: Reader },
+  leaksIn: ReturnType<typeof leaksOf>,
+): string[] {
+  const seats = seatsHeldBy(holder, r)
+  const open = r.archive.getCharacter(holder.id) !== undefined && r.sees(holder)
+  if (!open) {
+    return seats.length === 0 ? [] : [`${holder.id} seated under fog ${at}`]
   }
 
-  return [...listed]
-    .filter(([key, count]) => count > (ruled.get(key) ?? 0))
-    .map(([key]) => `${key} @ ${JSON.stringify(bookmark)} ${locale}`)
+  return leaksIn(seats, bookmark).map(
+    (id) => `${id} via ${holder.id}'s seats ${at}`,
+  )
+}
+
+/** The records the power page names at one ask that the reader has not reached. */
+function powerLeaks(
+  { bookmark, locale }: { bookmark: Bookmark; locale: Locale },
+  leaksIn: ReturnType<typeof leaksOf>,
+): string[] {
+  const page = powerPage(readerFor(archive, bookmark, locale))
+
+  return leaksIn(page, bookmark).map(
+    (id) => `${id} @ ${JSON.stringify(bookmark)} ${locale}`,
+  )
 }
 
 const alphabetically = (a: string, b: string): number => a.localeCompare(b)
@@ -124,24 +157,15 @@ describe('the power feature at every dated change', () => {
     expect(POINTS.length).toBeGreaterThan(400)
   })
 
+  // The scan that catches a holder named before their record opens: a
+  // `holderOf` that skipped the character's own gate would name them here
+  // (and fail `power.test.ts`'s fixture), while the equality below, which
+  // reads `holderOf` on both sides, would not see it.
   it(
-    'leaks nothing on the power page or in a character’s seats',
+    'names on the power page no record the reader has not reached',
     () => {
       const leaksIn = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
-      const leaks: string[] = []
-      for (const { bookmark, locale } of ASKS) {
-        const r = readerFor(archive, bookmark, locale)
-        const at = `@ ${JSON.stringify(bookmark)} ${locale}`
-        const onPower = leaksIn(powerPage(r), bookmark)
-        for (const id of onPower) {
-          leaks.push(`${id} via loadPower ${at}`)
-        }
-        const seats = HOLDERS.flatMap((holder) => seatsHeldBy(holder, r))
-        const onPages = leaksIn(seats, bookmark)
-        for (const id of onPages) {
-          leaks.push(`${id} via seats ${at}`)
-        }
-      }
+      const leaks = ASKS.flatMap((ask) => powerLeaks(ask, leaksIn))
 
       expect(leaks).toStrictEqual([])
     },
@@ -149,27 +173,61 @@ describe('the power feature at every dated change', () => {
   )
 
   it(
-    'never lists a seat on a character’s page that the power page shows unknown or vacant',
+    'lists no seat on a holder’s page while their record is under fog, and names nothing unreached after',
     () => {
-      const extra = ASKS.flatMap((ask) => beyondHeldAt(ask))
+      const leaksIn = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
 
-      expect(extra).toStrictEqual([])
+      expect(ASKS.flatMap((ask) => seatFaults(ask, leaksIn))).toStrictEqual([])
     },
     TIMEOUT,
   )
 
   it(
-    'lists every held seat of a body still standing on its holder’s page, and only those',
+    'lists on each holder’s page exactly the seats the power page shows them holding, so none it shows unknown or vacant',
     () => {
       for (const { bookmark, locale } of ASKS) {
         const { onPages, onPower } = seatsAt(bookmark, locale)
 
-        expect(
-          onPages.toSorted(alphabetically),
-          JSON.stringify(bookmark),
-        ).toStrictEqual(onPower)
+        expect(onPages, `${JSON.stringify(bookmark)} ${locale}`).toStrictEqual(
+          onPower,
+        )
       }
     },
     TIMEOUT,
   )
+})
+
+/** A character's page, as `loadCharacter` sends it, at a chapter. */
+function factsAt(id: string, at: number): CharacterFacts | undefined {
+  return characterPage(
+    id,
+    readerFor(archive, { mode: 'chapter', chapter: at }, 'en'),
+  )?.detail.facts
+}
+
+describe('the character page', () => {
+  it('sends a holder’s seats from the chapter they are reached', () => {
+    expect(factsAt('sakazuki', 649)?.seats).toStrictEqual([
+      { id: 'marines', title: 'Admiral', body: 'Marines' },
+    ])
+    expect(factsAt('sakazuki', 1143)?.seats).toStrictEqual([
+      { id: 'marines', title: 'Fleet Admiral', body: 'Marines' },
+    ])
+  })
+
+  it('sends no seats before the holder is met, though the seat is told', () => {
+    // The admirals' seats are told at 319; Sakazuki's record opens at 556.
+    for (const at of [1, 319, 555]) {
+      const facts = factsAt('sakazuki', at)
+
+      expect(facts, String(at)).toBeDefined()
+      expect(facts, String(at)).not.toHaveProperty('seats')
+    }
+  })
+
+  it('sends no seats for a character who holds none', () => {
+    expect(factsAt('kaya', 1143)).toBeDefined()
+    expect(factsAt('kaya', 1143)).not.toHaveProperty('seats')
+    expect(HOLDERS.map(({ id }) => id)).not.toContain('kaya')
+  })
 })
