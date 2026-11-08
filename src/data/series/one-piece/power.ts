@@ -11,6 +11,7 @@ import { MARINES } from './power/marines'
 import { RED_HAIR_PIRATES } from './power/red-hair-pirates'
 import { REVOLUTIONARY_ARMY } from './power/revolutionary-army'
 import { STRAW_HAT_PIRATES } from './power/straw-hat-pirates'
+import { SUPERNOVAE } from './power/supernovae'
 import { WARLORDS } from './power/warlords'
 import { WHITEBEARD_PIRATES } from './power/whitebeard-pirates'
 import { WORLD_GOVERNMENT } from './power/world-government'
@@ -38,4 +39,5 @@ export const BODIES: PowerBody<OnePieceVocabulary>[] = [
   BEASTS_PIRATES,
   CROSS_GUILD,
   REVOLUTIONARY_ARMY,
+  SUPERNOVAE,
 ]

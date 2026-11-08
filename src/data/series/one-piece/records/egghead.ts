@@ -1182,8 +1182,11 @@ export const egghead: OnePieceSaga = {
             en: 'Marines, commander',
           },
         },
+        // SWORD lands on Hachinosu in chapter 1080 (p. 13), which episode
+        // 1114 adapts.
         {
           episode: 1114,
+          chapter: 1080,
           value: {
             it: 'Marina, capitano di fregata dello SWORD',
             en: 'Marines, SWORD commander',
@@ -1210,8 +1213,11 @@ export const egghead: OnePieceSaga = {
           episode: 1090,
           value: { it: 'Marina, contrammiraglio', en: 'Marines, rear admiral' },
         },
+        // SWORD lands on Hachinosu in chapter 1080 (p. 13), which episode
+        // 1114 adapts.
         {
           episode: 1114,
+          chapter: 1080,
           value: {
             it: 'Marina, contrammiraglio dello SWORD',
             en: 'Marines, SWORD rear admiral',
