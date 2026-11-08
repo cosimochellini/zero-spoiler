@@ -497,6 +497,21 @@ const STEPS: {
     source: 'chapter',
   },
   { chapter: 73, en: 'Daenerys’s khalasar', episode: 10, id: 'rakharo' },
+  { chapter: 73, en: 'Daenerys’s khalasar', episode: 11, id: 'aggo' },
+  {
+    chapter: 73,
+    en: 'Daenerys’s khalasar',
+    episode: 10,
+    id: 'jhogo',
+    source: 'chapter',
+  },
+  {
+    chapter: 69,
+    en: 'Jhaqo’s khalasar',
+    episode: 10,
+    id: 'mago',
+    source: 'chapter',
+  },
   {
     chapter: 72,
     en: 'House Umber, sworn to Robb Stark, King in the North',
