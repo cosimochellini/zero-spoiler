@@ -2037,8 +2037,12 @@ export const summitWar: OnePieceSaga = {
             en: 'Impel Down level 5.5, queen',
           },
         },
+        // Chapter 539 (p. 13), episode 441: he tells Luffy he is one of the
+        // Revolutionary Army's leaders, the commander's seat on the power
+        // page. Pinned at his record's chapter, 540, the one after.
         {
           episode: 441,
+          chapter: 540,
           factions: ['revolutionary-army'],
           value: {
             it: 'Livello 5.5 di Impel Down, sovrano; Armata Rivoluzionaria, comandante',
@@ -2706,8 +2710,18 @@ export const summitWar: OnePieceSaga = {
             en: 'Dadan Family, sworn brother of Luffy and Ace',
           },
         },
+        // Chapter 731, episode 663: back as Koala's partner in the
+        // Revolutionary Army. His rank waits for chapter 744 (p. 13), episode
+        // 679, where he gives it, as the power page's seat does.
         {
           episode: 663,
+          chapter: 731,
+          factions: ['revolutionary-army'],
+          value: { it: 'Armata Rivoluzionaria', en: 'Revolutionary Army' },
+        },
+        {
+          episode: 679,
+          chapter: 744,
           factions: ['revolutionary-army'],
           value: {
             it: 'Armata Rivoluzionaria, capo di stato maggiore',

@@ -59,8 +59,11 @@ export const skypieaChronicles = {
         },
       },
     },
+    // Kuzan's flashback and Law's defeat at Winner Island are both told in
+    // chapter 1081.
     {
       episode: 1115,
+      chapter: 1081,
       value: {
         title: {
           it: 'La preda lasciata scivolare',

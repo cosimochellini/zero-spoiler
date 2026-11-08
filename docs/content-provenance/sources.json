@@ -32791,6 +32791,76 @@
       "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2053328",
       "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2053328",
       "contentSha256": "5908805ed066ea6687f5490ec72ed442a5da016e11849b095ff625a6f788dc2a"
+    },
+    "en-Ahiru.json": {
+      "locale": "en",
+      "title": "Ahiru",
+      "revision": 2137093,
+      "revisionDate": "2026-11-04T16:07:51Z",
+      "url": "https://onepiece.fandom.com/wiki/Ahiru",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2137093",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2137093",
+      "contentSha256": "4958b32b8e27897e1bf581cd5fcb645bcebfc3d8f946da6098b31f76f8dabc63"
+    },
+    "en-Jiron.json": {
+      "locale": "en",
+      "title": "Jiron",
+      "revision": 2137095,
+      "revisionDate": "2026-11-04T16:09:13Z",
+      "url": "https://onepiece.fandom.com/wiki/Jiron",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2137095",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2137095",
+      "contentSha256": "913a5d647b58ee557670a0541224f979fedf119f4c21404d1623e40250273c0f"
+    },
+    "en-Ushiano.json": {
+      "locale": "en",
+      "title": "Ushiano",
+      "revision": 2137092,
+      "revisionDate": "2026-11-04T16:07:27Z",
+      "url": "https://onepiece.fandom.com/wiki/Ushiano",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2137092",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2137092",
+      "contentSha256": "82cc0360e462aee88a705618632f959b36c40d4b6d3f10d814679e3ac82a4dc3"
+    },
+    "en-Gambo.json": {
+      "locale": "en",
+      "title": "Gambo",
+      "revision": 2137094,
+      "revisionDate": "2026-11-04T16:08:54Z",
+      "url": "https://onepiece.fandom.com/wiki/Gambo",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2137094",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2137094",
+      "contentSha256": "4ae6f8577c471e3a1538405ed4ce04edfdb7061f32ba18beff972d99d50c9afa"
+    },
+    "en-Revolutionary_Army.json": {
+      "locale": "en",
+      "title": "Revolutionary Army",
+      "revision": 2117736,
+      "revisionDate": "2026-05-22T10:46:54Z",
+      "url": "https://onepiece.fandom.com/wiki/Revolutionary_Army",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2117736",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2117736",
+      "contentSha256": "7a5ac647575f585d8cd87702496ca295b640c51c3ea544ab10bcb8f87f2edf2a"
+    },
+    "en-Chapter_904.json": {
+      "locale": "en",
+      "title": "Chapter 904",
+      "revision": 1947731,
+      "revisionDate": "2023-07-30T14:44:13Z",
+      "url": "https://onepiece.fandom.com/wiki/Chapter_904",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=1947731",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=1947731",
+      "contentSha256": "efbee9609e40f33afa5d8a5272dd77bc276100b31bb57fcd714a18c88bb567ec"
+    },
+    "en-Monkey_D._Dragon.json": {
+      "locale": "en",
+      "title": "Monkey D. Dragon",
+      "revision": 2136961,
+      "revisionDate": "2026-11-02T06:50:01Z",
+      "url": "https://onepiece.fandom.com/wiki/Monkey_D._Dragon",
+      "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2136961",
+      "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2136961",
+      "contentSha256": "51b6b60dd265530efdc23be6ef2dcfb8f19bc707a7cf63c3049d327f69bc6df7"
     }
   }
 }

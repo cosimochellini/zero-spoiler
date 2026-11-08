@@ -1907,6 +1907,7 @@ export const wholeCake: OnePieceSaga = {
       affiliation: [
         {
           episode: 880,
+          factions: ['revolutionary-army'],
           value: {
             it: 'Armata Rivoluzionaria, comandante dell’armata del Sud',
             en: 'Revolutionary Army, South Army commander',

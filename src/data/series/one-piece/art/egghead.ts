@@ -25,6 +25,9 @@ const EGGHEAD_EGG: Stroke[] = [
   { d: 'M112 94 l7 -7 M112 106 l8 -8 M110 118 l8 -8', role: 'ambient' },
 ]
 
+/** Ahiru's arm, raised as she aims it at the incoming ship. */
+const AHIRU_AIM = 'rotate(-30 80 110)'
+
 /** The egg moved up over the island and drawn at half size. */
 const EGG_OVER_ISLAND = 'translate(40 -12) scale(0.5)'
 /** The slant S-Hawk's sword lies at. */
@@ -601,6 +604,115 @@ export const eggheadArt = {
     { d: 'M118 146 C132 152 140 162 146 176', role: 'accent' },
     { d: dots([[126, 38]]), role: 'accent' },
     shadow(80, 188, 52),
+  ],
+  // Her mechanical left arm, raised the way she aims it at the ship coming
+  // in to Momoiro, ready to shoot (ch. 1082 pp. 12–13, ep. 1116): the ball
+  // joint at the elbow as the accent, the plated forearm with its rivets and
+  // hatched underside, the wrist ring and the jointed fingers.
+  'ahiru': [
+    { d: 'M-6 98 L22 100 M-6 122 L22 120', transform: AHIRU_AIM },
+    { d: circle(36, 110, 16), role: 'accent', transform: AHIRU_AIM },
+    { d: circle(36, 110, 6), role: 'soft', transform: AHIRU_AIM },
+    { d: 'M52 97 L112 100 L112 120 L52 123', transform: AHIRU_AIM },
+    {
+      d: 'M72 98 C76 104 76 116 72 122 M92 99 C96 104 96 116 92 121',
+      role: 'soft',
+      transform: AHIRU_AIM,
+    },
+    { d: 'M112 98 h8 v24 h-8', transform: AHIRU_AIM },
+    { d: 'M120 100 L138 98 L140 122 L120 120', transform: AHIRU_AIM },
+    {
+      d: 'M138 99 h9 l2 2 h10 M139 105 h11 l2 1 h10 M139 111 h11 l2 1 h9 M139 117 h9 l2 1 h7 M128 121 l4 9 l9 2',
+      transform: AHIRU_AIM,
+    },
+    {
+      d: 'M56 122 l8 -7 M66 122 l8 -7 M78 121 l8 -7 M88 121 l7 -6 M98 120 l8 -7',
+      role: 'ambient',
+      transform: AHIRU_AIM,
+    },
+    {
+      d: dots([
+        [62, 103],
+        [82, 104],
+        [102, 105],
+        [128, 104],
+      ]),
+      role: 'soft',
+      transform: AHIRU_AIM,
+    },
+    shadow(84, 186, 52),
+  ],
+
+  // Seen from behind, as no face is drawn: the aviator helmet with its
+  // seams and ear flaps, the cattle horns standing out on either side as
+  // the accent, and the very long neck with its Holstein spots running
+  // down to his shirt collar (ch. 1082 pp. 12–13, ep. 1116).
+  'ushiano': [
+    {
+      d: 'M56 78 C56 50 104 50 104 78 L106 104 C102 108 98 106 96 100 C88 104 72 104 64 100 C62 106 58 108 54 104 Z',
+    },
+    { d: 'M80 52 V102 M60 72 C72 66 88 66 100 72', role: 'soft' },
+    { d: 'M54 104 l-2 10 M106 104 l2 10', role: 'soft' },
+    {
+      d: 'M57 68 C42 66 32 56 30 40 C38 48 48 52 60 60 M103 68 C118 66 128 56 130 40 C122 48 112 52 100 60',
+      role: 'accent',
+    },
+    { d: 'M70 104 C69 122 68 140 66 156 M90 104 C91 122 92 140 94 156' },
+    {
+      d: 'M72 116 C78 112 84 118 80 124 C76 128 70 124 72 116 Z M82 138 C90 136 92 146 86 150 C80 150 78 142 82 138 Z M68 142 c4 -2 7 2 5 7',
+      role: 'soft',
+    },
+    { d: 'M98 82 l7 -6 M98 92 l8 -6 M98 100 l6 -4', role: 'ambient' },
+    { d: 'M40 172 L66 156 L80 168 L94 156 L120 172', role: 'soft' },
+    shadow(80, 186, 44),
+  ],
+
+  // The telescope Gambo says he cheated the bet with, drawn out to its
+  // three sections, with the bite Jiron takes out of it to get rid of the
+  // evidence as the accent, crumbs falling (ch. 1082 pp. 13–14, ep. 1116).
+  'jiron': [
+    { d: 'M22 120 L60 106 L66 122 L28 136 Z' },
+    {
+      d: ellipse(25, 128, 5, 8.5),
+      role: 'soft',
+      transform: 'rotate(-20 25 128)',
+    },
+    { d: 'M60 104 L102 90 L109 108 L66 124' },
+    { d: 'M102 88 L136 77 L144 99 L109 110' },
+    { d: ellipse(140, 88, 5, 11.5), transform: 'rotate(-20 140 88)' },
+    { d: 'M60 104 L66 124 M102 88 L109 110', role: 'soft' },
+    { d: 'M22 120 l-3 3 l3 3 l-4 3 l3 3 l-3 3 l5 2 L28 136', role: 'accent' },
+    {
+      d: 'M34 131 l6 -5 M46 127 l6 -5 M74 119 l6 -5 M86 115 l6 -5 M116 106 l6 -5 M128 102 l6 -5',
+      role: 'ambient',
+    },
+    {
+      d: dots([
+        [16, 150],
+        [26, 156],
+        [12, 160],
+      ]),
+      role: 'accent',
+    },
+    shadow(84, 176, 58),
+  ],
+
+  // His hat, shaped like a thumbtack: the wide flat head with its rim
+  // turning away hatched, the round grip standing up from it and its point
+  // on top as the accent (ch. 1082 pp. 12–13, ep. 1116).
+  'gambo': [
+    { d: ellipse(80, 118, 58, 18) },
+    { d: 'M22 118 V130 A58 18 0 0 0 138 130 V118' },
+    { d: 'M28 124 A58 18 0 0 0 132 124', role: 'soft' },
+    { d: ellipse(80, 114, 22, 7), role: 'soft' },
+    { d: 'M72 113 V68 C72 62 88 62 88 68 V113' },
+    { d: 'M76 64 L80 36 L84 64', role: 'accent' },
+    { d: 'M76 72 V108', role: 'soft' },
+    {
+      d: 'M30 138 l6 -7 M42 144 l6 -8 M56 147 l6 -8 M98 147 l6 -8 M112 144 l6 -8 M124 138 l6 -7',
+      role: 'ambient',
+    },
+    shadow(80, 182, 56),
   ],
   // A queen's crown in three-quarters, its straight upright points fanning
   // out as in her silhouette at 1118: the band seen from the front with a
