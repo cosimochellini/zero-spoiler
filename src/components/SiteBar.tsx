@@ -104,7 +104,7 @@ const NAV: PageEntry<TranslationKey>[] = [
 /** One Piece's own pages in the bar, in its words. */
 const ONE_PIECE_NAV: PageEntry<TranslationKey<'one-piece'>>[] = [
   { page: 'fruits', to: '/$series/$locale/fruits', label: 'nav.fruits' },
-  { page: 'power', to: '/$series/$locale/power', label: 'nav.power' },
+  { page: 'ranks', to: '/$series/$locale/ranks', label: 'nav.ranks' },
 ]
 
 /**

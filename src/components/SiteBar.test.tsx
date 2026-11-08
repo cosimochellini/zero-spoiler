@@ -68,9 +68,9 @@ describe('SiteBar', () => {
     expect(
       within(banner).getByRole('link', { name: 'Fruits' }),
     ).toHaveAttribute('href', '/one-piece/en/fruits')
-    expect(within(banner).getByRole('link', { name: 'Power' })).toHaveAttribute(
+    expect(within(banner).getByRole('link', { name: 'Ranks' })).toHaveAttribute(
       'href',
-      '/one-piece/en/power',
+      '/one-piece/en/ranks',
     )
     expect(
       within(banner).getByRole('combobox', { name: 'Language' }),
@@ -273,7 +273,7 @@ describe('SiteBar', () => {
   it.each([
     {
       series: ONE_PIECE_SERIES,
-      pages: ['Characters', 'Places', 'Fruits', 'Power'],
+      pages: ['Characters', 'Places', 'Fruits', 'Ranks'],
     },
     { series: HUNTER_X_HUNTER_SERIES, pages: ['Characters', 'Places'] },
   ])(

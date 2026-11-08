@@ -29,17 +29,23 @@ export interface BodyView {
   seats: SeatView[]
 }
 
-/** The power page: the bodies the reader has met, in the archive's order. */
+/**
+ * The power page: the bodies the reader has met and sees a held or vacant
+ * seat of, in the archive's order. `fogged` is set when at least one other
+ * body is met with every seat under fog: the page says so in one line,
+ * with no count and no place in the order.
+ */
 export interface PowerPageView {
   bodies: BodyView[]
+  fogged?: true
 }
 
 /**
- * The hash of a body's section on the power page, which a character's page
- * links a seat to.
+ * The hash of a body's section on the ranks page (the power page's address
+ * since #1194), which a character's page links a seat to.
  */
 export function powerAnchor(body: string): string {
-  return `power-${body}`
+  return `ranks-${body}`
 }
 
 /**

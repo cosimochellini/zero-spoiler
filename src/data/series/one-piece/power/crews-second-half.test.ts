@@ -23,6 +23,13 @@ import { CROSS_GUILD } from './cross-guild'
 const U = 'unknown'
 const V = 'vacant'
 
+/**
+ * The seats the page lists for a step: none while every one is under fog,
+ * since a body is listed only once a seat of it is held or vacant (#1194).
+ */
+const listed = (seats: string[] | undefined): string[] | undefined =>
+  seats?.every((seat) => seat === U) === true ? undefined : seats
+
 const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
 const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
 
@@ -45,11 +52,11 @@ type Steps = [number, string[]][]
 /** Each step with the seats just before it: none before the body opens. */
 function edges(
   steps: Steps,
-): { at: number; before: string[] | undefined; seats: string[] }[] {
+): { at: number; before: string[] | undefined; seats: string[] | undefined }[] {
   return steps.map(([at, seats], place) => ({
     at,
-    before: steps[place - 1]?.[1],
-    seats,
+    before: listed(steps[place - 1]?.[1]),
+    seats: listed(seats),
   }))
 }
 

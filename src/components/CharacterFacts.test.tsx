@@ -74,7 +74,7 @@ describe('CharacterFacts', () => {
     expect(screen.getByText('Morte presunta')).toBeInTheDocument()
   })
 
-  it('links each seat of power to its body on the power page', async () => {
+  it('links each seat to its body on the ranks page', async () => {
     await renderUnderSeries(
       <CharacterFacts
         facts={facts({
@@ -103,14 +103,14 @@ describe('CharacterFacts', () => {
     ).toStrictEqual([
       [
         'Captain, Straw Hat Pirates',
-        '/one-piece/en/power#power-straw-hat-pirates',
+        '/one-piece/en/ranks#ranks-straw-hat-pirates',
       ],
-      ['Emperor', '/one-piece/en/power#power-emperors'],
+      ['Emperor', '/one-piece/en/ranks#ranks-emperors'],
     ])
     // First of One Piece's own rows, after the facts every series has.
     expect(
       screen.getAllByRole('term').map((term) => term.textContent),
-    ).toStrictEqual(['Power', 'Bounty'])
+    ).toStrictEqual(['Ranks', 'Bounty'])
   })
 
   it('renders nothing at all when the reader has reached no fact', () => {

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
+import type { Seat } from '~/data/features'
 import type { Entity, SeriesArchive } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
@@ -42,8 +43,36 @@ function toldOnlyIn(source: Source): Entity {
 }
 
 /**
+ * A seat that stands vacant from the body's gate, so a body with it stays
+ * listed (#1194) while its other seats are under fog.
+ */
+const STOOL: Seat = {
+  told: THRONE.told,
+  title: { en: 'Fixture Stool', it: 'Sgabello di prova' },
+  holders: [
+    {
+      episode: EARLY.revealedAtEpisode,
+      chapter: EARLY.revealedAtChapter,
+      value: null,
+    },
+  ],
+}
+
+/** The fixture archive with one body of these seats, as a council. */
+function withSeats(...seats: Seat[]): SeriesArchive {
+  return {
+    ...POWER_ARCHIVE,
+    features: {
+      ...POWER_ARCHIVE.features,
+      power: { bodies: [{ ...FIXTURE_BODY, seats }] },
+    },
+  }
+}
+
+/**
  * A seat `EARLY` holds until `MIDWAY` tells it passed to `next`: in between
- * a reader who has not met `next` must see it fogged, naming neither.
+ * a reader who has not met `next` must see it fogged, naming neither. A
+ * vacant `STOOL` keeps the body listed.
  */
 function passedTo(next: Entity): SeriesArchive {
   return {
@@ -68,6 +97,7 @@ function passedTo(next: Entity): SeriesArchive {
                   { ...MIDWAY, value: next.id },
                 ],
               },
+              STOOL,
             ],
           },
         ],
@@ -77,6 +107,35 @@ function passedTo(next: Entity): SeriesArchive {
 }
 
 const PASSED_ARCHIVE = passedTo(LATE)
+
+/** The fixture's seats, by name. */
+const [, CROWN = THRONE, SCEPTRE = THRONE] = FIXTURE_BODY.seats
+const PASSED_SEAT = PASSED_ARCHIVE.features.power?.bodies[0]?.seats[0] ?? THRONE
+
+/** A body of the Crown alone: under fog until `LATE` is met. */
+const CROWN_ONLY = withSeats(CROWN)
+
+/** A page of one of these archives at a bookmark. */
+function fixturePage(
+  archive: SeriesArchive,
+  bookmark: Bookmark,
+  locale: Locale = 'en',
+): PowerPageView {
+  return powerPage(readerFor(archive, bookmark, locale))
+}
+
+/** The words of the Crown's body a page sends. */
+function namesIn(page: PowerPageView): string[] {
+  const served = JSON.stringify(page)
+
+  return [
+    FIXTURE_BODY.id,
+    'Seven Warlords',
+    'Flotta dei Sette',
+    CROWN.title.en,
+    CROWN.title.it,
+  ].filter((word) => served.includes(word))
+}
 
 /** That seat: its holder's id when held, else the whole seat as sent. */
 function passedAt(
@@ -340,9 +399,80 @@ describe('the power page', () => {
     }
     const page = powerPage(readerFor(archive, chapter(1000), 'en'))
 
-    expect(page.bodies[0]?.seats).toStrictEqual([
-      { title: 'Fixture Throne', state: 'unknown' },
+    // Its one seat stays under fog, so the body is not listed either.
+    expect(page).toStrictEqual({ bodies: [], fogged: true })
+  })
+
+  it.each([
+    {
+      fogged: [
+        chapter(FIXTURE_BODY.revealedAtChapter),
+        chapter(LATE.revealedAtChapter - 1),
+      ],
+      met: chapter(LATE.revealedAtChapter),
+    },
+    {
+      fogged: [
+        episode(FIXTURE_BODY.revealedAtEpisode),
+        episode(LATE.revealedAtEpisode - 1),
+      ],
+      met: episode(LATE.revealedAtEpisode),
+    },
+  ])(
+    'lists a body only from the first seat of it held or vacant ($met.mode)',
+    ({ fogged, met }) => {
+      for (const bookmark of fogged) {
+        for (const locale of LOCALES) {
+          const page = fixturePage(CROWN_ONLY, bookmark, locale)
+
+          expect(page).toStrictEqual({ bodies: [], fogged: true })
+          expect(namesIn(page)).toStrictEqual([])
+        }
+      }
+
+      const page = fixturePage(CROWN_ONLY, met)
+
+      expect(page.fogged).toBeUndefined()
+      expect(page.bodies.map(({ id }) => id)).toStrictEqual(['warlords'])
+    },
+  )
+
+  it('lists a body whose one known seat is vacant', () => {
+    const page = fixturePage(
+      withSeats(CROWN, STOOL),
+      chapter(FIXTURE_BODY.revealedAtChapter),
+    )
+
+    expect(page.bodies[0]?.seats.map(({ state }) => state)).toStrictEqual([
+      'unknown',
+      'vacant',
     ])
+  })
+
+  it('keeps a body that ends with every seat under fog in the fog line', () => {
+    const archive = withSeats(SCEPTRE)
+
+    for (const bookmark of [chapter(MIDWAY.chapter), chapter(1000)]) {
+      expect(fixturePage(archive, bookmark)).toStrictEqual({
+        bodies: [],
+        fogged: true,
+      })
+    }
+  })
+
+  it('hides a body again while its one known seat is under fog', () => {
+    const archive = withSeats(PASSED_SEAT)
+
+    expect(
+      fixturePage(archive, chapter(MIDWAY.chapter - 1)).bodies,
+    ).toHaveLength(1)
+    expect(fixturePage(archive, chapter(MIDWAY.chapter))).toStrictEqual({
+      bodies: [],
+      fogged: true,
+    })
+    expect(
+      fixturePage(archive, chapter(LATE.revealedAtChapter)).bodies,
+    ).toHaveLength(1)
   })
 
   it.each(LOADED_SERIES.filter(({ slug }) => slug !== 'one-piece'))(

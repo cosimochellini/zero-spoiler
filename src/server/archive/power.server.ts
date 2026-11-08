@@ -23,16 +23,28 @@ import type { Reader } from './reader.server'
  * once it is told, the holder before it is gone, so a change to someone not
  * met yet sends the title alone too, never the old holder nor the new one.
  * Only a holder reached sends a drawing: the one at the reader's bookmark.
+ *
+ * A body is listed only once the reader sees a seat of it held or vacant
+ * (#1194): a name over seats all under fog is one the reader may not
+ * recognise. Such a body sends nothing, not even its place in the order;
+ * `fogged` says only that at least one exists, never how many.
  */
 export function powerPage(r: Reader): PowerPageView {
   const bodies: BodyView[] = []
+  let fogged = false
   for (const body of r.archive.bodies) {
-    if (r.sees(body)) {
-      bodies.push(bodyOf(body, r))
+    if (!r.sees(body)) {
+      continue
+    }
+    const view = bodyOf(body, r)
+    if (view.seats.some((seat) => seat.state !== 'unknown')) {
+      bodies.push(view)
+    } else {
+      fogged = true
     }
   }
 
-  return { bodies }
+  return fogged ? { bodies, fogged } : { bodies }
 }
 
 function bodyOf(body: PowerBody, r: Reader): BodyView {

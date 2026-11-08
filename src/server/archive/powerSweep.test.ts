@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import { withFeatures } from '~/data/features'
+import { type PowerBody, withFeatures } from '~/data/features'
 import { aroundGates } from '~/data/sweep'
 import type { Entity } from '~/data/types'
+import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
@@ -12,6 +13,7 @@ import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
 import { characterPage } from './pages.server'
 import { powerPage, seatsHeldBy } from './power.server'
+import { printedFaction } from './printed.server'
 import { type Reader, readerFor } from './reader.server'
 
 /**
@@ -147,6 +149,108 @@ function powerLeaks(
 
 const alphabetically = (a: string, b: string): number => a.localeCompare(b)
 
+/** Every string a payload holds, keys left out. */
+function stringsIn(payload: unknown): string[] {
+  if (typeof payload === 'string') {
+    return [payload]
+  }
+  if (typeof payload !== 'object' || payload === null) {
+    return []
+  }
+  return Object.values(payload).flatMap((value) => stringsIn(value))
+}
+
+/** Every word that names a body, in either locale: id, label, seat titles. */
+function wordsOf(body: PowerBody): string[] {
+  const label = FACTION_LABELS
+  return [
+    body.id,
+    ...LOCALES.map((locale) => label[locale][printedFaction(body.id)]),
+    ...body.seats.flatMap(({ title }) => [title.en, title.it]),
+  ]
+}
+
+/**
+ * What is wrong with one ask's page under the rule of #1194: a body listed
+ * with every seat under fog; a word naming a body the reader has met that it
+ * does not list (a seat title it shares with a listed body, "Captain", is
+ * that body's word); a key besides `bodies` and `fogged`; and a `fogged`
+ * line missing, or set with no such body.
+ */
+function hiddenFaults({
+  bookmark,
+  locale,
+}: {
+  bookmark: Bookmark
+  locale: Locale
+}): string[] {
+  const r = readerFor(archive, bookmark, locale)
+  const page = powerPage(r)
+  const at = `@ ${JSON.stringify(bookmark)} ${locale}`
+  const listed = new Set(page.bodies.map(({ id }) => id))
+  const hidden = bodies.filter((body) => r.sees(body) && !listed.has(body.id))
+  const shown = new Set(
+    page.bodies.flatMap(({ seats }) => seats.map(({ title }) => title)),
+  )
+  const said = new Set(stringsIn(page))
+  const faults = [
+    ...page.bodies
+      .filter(({ seats }) => seats.every(({ state }) => state === 'unknown'))
+      .map(({ id }) => `${id} listed under fog ${at}`),
+    ...hidden
+      .flatMap((body) => wordsOf(body))
+      .filter((word) => said.has(word) && !shown.has(word))
+      .map((word) => `"${word}" of a hidden body ${at}`),
+  ]
+  const keys = Object.keys(page).filter((key) => key !== 'bodies')
+  if (keys.some((key) => key !== 'fogged')) {
+    faults.push(`unexpected keys ${keys.join(', ')} ${at}`)
+  }
+  if ((page.fogged === true) !== hidden.length > 0) {
+    faults.push(`fogged is ${String(page.fogged)} ${at}`)
+  }
+
+  return faults
+}
+
+/** A bookmark's count in its own unit, 0 for none. */
+function countOf(point: Bookmark): number {
+  if (point === null) {
+    return 0
+  }
+  return point.mode === 'chapter' ? point.chapter : point.episode
+}
+
+/** The bodies listed at each sweep point of one medium, in reading order. */
+function listedIn(
+  mode: 'chapter' | 'episode',
+): { listed: string[]; point: Bookmark }[] {
+  return POINTS.filter((point) => point?.mode === mode)
+    .toSorted((a, b) => countOf(a) - countOf(b))
+    .map((point) => ({
+      point,
+      listed: powerPage(readerFor(archive, point, 'en')).bodies.map(
+        ({ id }) => id,
+      ),
+    }))
+}
+
+/** The bodies one medium lists at a point and no longer at the next. */
+function droppedIn(mode: 'chapter' | 'episode'): string[] {
+  const points = listedIn(mode)
+  const dropped: string[] = []
+  for (const [at, { listed, point }] of points.entries()) {
+    const next = points[at + 1]?.listed ?? listed
+    dropped.push(
+      ...listed
+        .filter((id) => !next.includes(id))
+        .map((id) => `${id} after ${JSON.stringify(point)}`),
+    )
+  }
+
+  return dropped
+}
+
 // About 400 bookmarks in both locales, each a power page and every holder's
 // seats: a few seconds alone, more on a loaded runner.
 const TIMEOUT = 60_000
@@ -156,6 +260,26 @@ describe('the power feature at every dated change', () => {
     expect(HOLDERS.length).toBeGreaterThan(90)
     expect(POINTS.length).toBeGreaterThan(400)
   })
+
+  it(
+    'lists only bodies with a seat held or vacant, and names none of the rest',
+    () => {
+      expect(ASKS.flatMap((ask) => hiddenFaults(ask))).toStrictEqual([])
+    },
+    TIMEOUT,
+  )
+
+  // Hiding a body again would say something changed in it: the archive does
+  // not do it today, and a filing that would has to be looked at (#1194).
+  it(
+    'keeps a body listed once it is, in each medium',
+    () => {
+      expect([...droppedIn('chapter'), ...droppedIn('episode')]).toStrictEqual(
+        [],
+      )
+    },
+    TIMEOUT,
+  )
 
   // The scan that catches a holder named before their record opens: a
   // `holderOf` that skipped the character's own gate would name them here

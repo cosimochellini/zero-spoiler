@@ -35,7 +35,7 @@ describe('PowerBoard', () => {
     renderWithProviders(<PowerBoard page={{ bodies: [] }} />)
 
     expect(
-      screen.getByRole('heading', { level: 1, name: 'Power in the world' }),
+      screen.getByRole('heading', { level: 1, name: 'Ranks of the world' }),
     ).toBeVisible()
     expect(screen.getByText(/not set a bookmark/u)).toBeVisible()
   })
@@ -64,6 +64,18 @@ describe('PowerBoard', () => {
     expect(screen.getByText('Vacant')).toBeVisible()
     expect(screen.getByText('Under fog')).toBeVisible()
     expect(screen.queryByText(/Nothing on this page/u)).not.toBeInTheDocument()
+    expect(screen.queryByText('Other groups under fog')).not.toBeInTheDocument()
+  })
+
+  it('ends with one line for the groups under fog, after the rest', () => {
+    renderWithProviders(<PowerBoard page={{ ...page, fogged: true }} />, {
+      bookmark: ep(600),
+    })
+
+    const line = screen.getByText('Other groups under fog')
+
+    expect(line).toBeVisible()
+    expect(screen.getByRole('main').lastElementChild).toBe(line)
   })
 
   it('draws each holder in their throne and leaves the others empty', () => {

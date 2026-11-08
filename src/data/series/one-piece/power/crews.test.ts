@@ -42,6 +42,13 @@ const U = 'unknown'
 const V = 'vacant'
 
 /**
+ * The seats the page lists for a step: none while every one is under fog,
+ * since a body is listed only once a seat of it is held or vacant (#1194).
+ */
+const listed = (seats: string[] | undefined): string[] | undefined =>
+  seats?.every((seat) => seat === U) === true ? undefined : seats
+
+/**
  * One crew's changes in one medium, in order: the count that tells each and
  * the seats from there on. The seats just before the first are none.
  */
@@ -52,7 +59,7 @@ interface Edge {
   before: string[] | undefined
   count: number
   id: string
-  seats: string[]
+  seats: string[] | undefined
   unit: Unit
 }
 
@@ -62,8 +69,8 @@ function edgesOf(id: string, unit: Unit, steps: Steps): Edge[] {
     id,
     unit,
     count,
-    before: steps[index - 1]?.[1],
-    seats,
+    before: listed(steps[index - 1]?.[1]),
+    seats: listed(seats),
   }))
 }
 

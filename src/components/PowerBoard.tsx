@@ -39,10 +39,12 @@ import {
 import { settleStyles } from '~/styles/settle'
 
 /**
- * The power page (#1086): a hall of thrones, one row of them for each body
- * the reader has met. Only a held seat has a drawing and a colour, and the
- * server sends them only for a holder the reader has reached, so the hall is
- * as dark as the reader's bookmark leaves it.
+ * The ranks page (#1086, the power page until #1194): a hall of thrones,
+ * one row of them for each body the reader has met and sees a held or vacant
+ * seat of. Only a held seat has a drawing and a colour, and the server sends
+ * them only for a holder the reader has reached, so the hall is as dark as
+ * the reader's bookmark leaves it. Bodies met with every seat under fog are
+ * one line at the end, never named, counted or placed.
  */
 export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
   const t = useSeriesOnlyT('one-piece')
@@ -54,16 +56,16 @@ export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
       {...stylex.props(styles.page)}
     >
       <header {...stylex.props(styles.head)}>
-        <h1 {...stylex.props(styles.title)}>{t('power.title')}</h1>
-        <p {...stylex.props(styles.lede)}>{t('power.lede')}</p>
+        <h1 {...stylex.props(styles.title)}>{t('ranks.title')}</h1>
+        <p {...stylex.props(styles.lede)}>{t('ranks.lede')}</p>
       </header>
       {bookmark === null ?
         <div {...stylex.props(styles.notice)}>
-          <p {...stylex.props(styles.lede)}>{t('power.noBookmark')}</p>
+          <p {...stylex.props(styles.lede)}>{t('ranks.noBookmark')}</p>
           <EpisodeMark placement="fold" />
         </div>
       : page.bodies.length === 0 && (
-          <p {...stylex.props(styles.lede)}>{t('power.none')}</p>
+          <p {...stylex.props(styles.lede)}>{t('ranks.none')}</p>
         )
       }
       {page.bodies.map((body, at) => (
@@ -73,6 +75,9 @@ export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
           body={body}
         />
       ))}
+      {page.fogged && (
+        <p {...stylex.props(styles.fogged)}>{t('ranks.fogged')}</p>
+      )}
     </main>
   )
 }
@@ -110,7 +115,7 @@ function Body({ body, at }: { at: number; body: BodyView }): ReactElement {
           {body.name}
         </h2>
         {body.ended && (
-          <p {...stylex.props(styles.ended)}>{t('power.ended')}</p>
+          <p {...stylex.props(styles.ended)}>{t('ranks.ended')}</p>
         )}
       </header>
       <ol {...stylex.props(styles.hall)}>
@@ -222,5 +227,5 @@ function Holder({ seat }: { seat: SeatView }): ReactElement | string {
     )
   }
 
-  return t(seat.state === 'vacant' ? 'power.vacant' : 'power.unknown')
+  return t(seat.state === 'vacant' ? 'ranks.vacant' : 'ranks.unknown')
 }

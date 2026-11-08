@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 
-import { legacyRedirect } from './legacyRedirect'
+import { descriptionOf } from '~/data/series'
+
+import { legacyRedirect, movedPageRedirect } from './legacyRedirect'
 
 const ORIGIN = 'https://example.test'
 
@@ -78,5 +80,49 @@ describe('the permanent hop from a legacy archive address', () => {
 
   it.each(['POST', 'PUT', 'DELETE'])('leaves %s requests alone', (method) => {
     expect(visit('/en/characters/nami?ep=650', method)).toBeUndefined()
+  })
+})
+
+function moved(path: string, method = 'GET'): Response | undefined {
+  return movedPageRedirect(
+    new Request(`${ORIGIN}${path}`, { method }),
+    descriptionOf,
+  )
+}
+
+describe('the permanent hop from the power page to the ranks page (#1194)', () => {
+  it.each([
+    ['/one-piece/it/power?ep=764', '/one-piece/it/ranks?ep=764'],
+    ['/one-piece/en/power?ch=780', '/one-piece/en/ranks?ch=780'],
+    ['/one-piece/en/power/', '/one-piece/en/ranks'],
+    [
+      '/one-piece/it/power?ep=%37%36%34&x=a+b',
+      '/one-piece/it/ranks?ep=%37%36%34&x=a+b',
+    ],
+  ])('sends %s to %s', (path, location) => {
+    for (const method of ['GET', 'HEAD']) {
+      const response = moved(path, method)
+
+      expect(response?.status).toBe(301)
+      expect(response?.headers.get('Location')).toBe(location)
+      expect(response?.headers.get('Cache-Control')).toBe('private, no-store')
+    }
+  })
+
+  it.each([
+    '/hunter-x-hunter/en/power',
+    '/game-of-thrones/it/power?ep=3',
+    '/nobody/en/power',
+    '/one-piece/fr/power',
+    '/one-piece/en/power/anything',
+    '/one-piece/en/ranks',
+    '/en/power',
+    '/one-piece/en',
+  ])('leaves %s to the router', (path) => {
+    expect(moved(path)).toBeUndefined()
+  })
+
+  it('leaves a POST alone', () => {
+    expect(moved('/one-piece/en/power', 'POST')).toBeUndefined()
   })
 })

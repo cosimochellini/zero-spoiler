@@ -59,14 +59,14 @@ export const onePieceEn = {
   'form.train': 'Sea train',
 
   'nav.fruits': 'Fruits',
-  'nav.power': 'Power',
+  'nav.ranks': 'Ranks',
 
   'home.filler.title': 'Watch out for filler',
   'home.filler.link': 'See all filler',
 
   'dialog.filler': 'Filler',
 
-  'character.power': 'Power',
+  'character.ranks': 'Ranks',
   'character.devilFruit': 'Devil fruit',
   'character.bounty': 'Bounty',
   'character.bountyValue': '{amount} Berry',
@@ -151,18 +151,19 @@ export const onePieceEn = {
   'fruits.pageTitle': 'Devil fruits | {series} | Zero Spoiler',
   'fruits.pageDescription':
     'One Piece devil fruits, each hidden until the episode where it is first named.',
-  'power.title': 'Power in the world',
-  'power.lede':
-    'Each group you have reached, with its seats and who holds them at your bookmark.',
-  'power.pageTitle': 'Power in the world | {series} | Zero Spoiler',
-  'power.pageDescription':
-    'Who holds the seats of power in the One Piece world, each holder hidden until the chapter or episode that names them.',
-  'power.noBookmark':
-    'You have not set a bookmark yet, so every group and every seat is under fog.',
-  'power.none': 'Nothing on this page is open at your bookmark.',
-  'power.vacant': 'Vacant',
-  'power.unknown': 'Under fog',
-  'power.ended': 'This group has been dissolved.',
+  'ranks.title': 'Ranks of the world',
+  'ranks.lede':
+    'The ranks of each group you have reached, and who holds them at your bookmark.',
+  'ranks.pageTitle': 'Ranks of the world | {series} | Zero Spoiler',
+  'ranks.pageDescription':
+    'Who holds each rank in the One Piece world, each holder hidden until the chapter or episode that names them.',
+  'ranks.noBookmark':
+    'You have not set a bookmark yet, so every group and every rank is under fog.',
+  'ranks.none': 'Nothing on this page is open at your bookmark.',
+  'ranks.vacant': 'Vacant',
+  'ranks.unknown': 'Under fog',
+  'ranks.ended': 'This group has been dissolved.',
+  'ranks.fogged': 'Other groups under fog',
   'fruits.searchLabel': 'Search devil fruits',
   'fruits.searchClear': 'Clear search',
   'fruits.searchPlaceholder': 'Gum-Gum, Luffy',

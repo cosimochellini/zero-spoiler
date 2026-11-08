@@ -154,6 +154,17 @@ export const styles = stylex.create({
     overflowWrap: 'anywhere',
     minWidth: 0,
   },
+  // The line for the bodies under fog: a dashed rule, as an unlit throne's.
+  fogged: {
+    margin: 0,
+    borderBlockStartColor: color.rule,
+    borderBlockStartStyle: 'dashed',
+    borderBlockStartWidth: rule.hair,
+    color: color.muted,
+    fontSize: text.base,
+    lineHeight: leading.body,
+    paddingBlockStart: space.md,
+  },
   dark: {
     color: color.muted,
     fontFamily: font.body,
