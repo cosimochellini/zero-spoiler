@@ -1269,7 +1269,7 @@ export const eggheadRedrawn: Redrawings = {
   // root for a head. He is first seen in this human-beast form on Egghead at
   // 1128 (ch. 1094), and Joy Boy's Haki forces him out of it at 1153
   // (ch. 1122), where he is the first drawing again. At 1155 (ch. 1125
-  // p. 14) Imu kills him in front of the vice admirals and leaves only his
+  // p. 14) Im kills him in front of the vice admirals and leaves only his
   // bones: his hat knocked over onto its side, the cane lying where it
   // was, a bone beside them and smoke rising. No skull, which would be a
   // face.

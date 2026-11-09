@@ -1584,14 +1584,14 @@ const links = {
       it: 'Rocks rompe l’amicizia con Harald dopo il loro duello sul Governo Mondiale.',
     },
   },
-  rocksImu: {
+  rocksIm: {
     character: 'im',
     type: {
       en: 'Enemy who takes control of him',
       it: 'Nemico che prende il controllo di lui',
     },
     summary: {
-      en: 'Imu turns Rocks into a demon and orders him to kill his own family.',
+      en: 'Im turns Rocks into a demon and orders him to kill his own family.',
       it: 'Im prende il controllo di Rocks trasformandolo in un demone e gli ordina di uccidere la propria famiglia.',
     },
   },
@@ -1613,7 +1613,7 @@ const links = {
       it: 'Avversario a cui chiede di ucciderlo',
     },
     summary: {
-      en: 'Rocks begs Garp and Roger to stop him while Imu controls him.',
+      en: 'Rocks begs Garp and Roger to stop him while Im controls him.',
       it: 'Rocks implora Garp e Roger di fermarlo mentre Im lo controlla.',
     },
   },
@@ -2379,7 +2379,7 @@ export const wanoRelationships = {
       source: 'chapter',
       value: [
         links.rocksTeach,
-        links.rocksImu,
+        links.rocksIm,
         links.rocksRogerPleads,
         links.rocksGarpPleads,
         links.rocksHaraldEstranged,
@@ -2392,7 +2392,7 @@ export const wanoRelationships = {
       value: [
         links.rocksTeach,
         links.rocksGarling,
-        links.rocksImu,
+        links.rocksIm,
         links.rocksRogerPleads,
         links.rocksGarpPleads,
       ],

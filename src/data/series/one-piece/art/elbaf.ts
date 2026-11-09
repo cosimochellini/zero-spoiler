@@ -743,7 +743,7 @@ export const elbafRedrawn: Redrawings = {
     },
   ],
   // The same strip, smaller, between a pair of bat wings, and the devil's
-  // tail curling out under it to a point like her arrows: Imu possesses her
+  // tail curling out under it to a point like her arrows: Im possesses her
   // and flies her body over Elbaph from 1180 (ch. 1150). The trident it
   // carries is left out, and the shadow goes: she is in the air.
   'manmayer-gunko': [

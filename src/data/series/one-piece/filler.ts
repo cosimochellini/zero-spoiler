@@ -2373,7 +2373,7 @@ export const FILLER: FillerEntry[] = [
       it: 'Finalmente inizia! Il Reverie delle cospirazioni!',
     },
     summary: {
-      en: 'The royals open the Reverie under the king of Ballywood, while Sabo and the Revolutionary officers plan their move underground. The Five Elders meet in secret with a mysterious figure, Imu.',
+      en: 'The royals open the Reverie under the king of Ballywood, while Sabo and the Revolutionary officers plan their move underground. The Five Elders meet in secret with a mysterious figure, Im.',
       it: 'I reali aprono il Reverie sotto la guida del re di Ballywood, mentre Sabo e gli ufficiali rivoluzionari preparano il piano sottoterra. I cinque astri di saggezza incontrano in segreto Im.',
     },
   },

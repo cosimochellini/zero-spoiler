@@ -965,7 +965,7 @@ export const egghead: OnePieceSaga = {
       },
       status: [
         { episode: 1105, value: 'alive' },
-        // Episode 1155 adapts chapter 1125: Imu kills him for his failure.
+        // Episode 1155 adapts chapter 1125: Im kills him for his failure.
         { episode: 1155, chapter: 1125, value: 'deceased' },
       ],
       affiliation: [
@@ -1061,8 +1061,8 @@ export const egghead: OnePieceSaga = {
       relationships: eggheadRelationships['marcus-mars'],
       role: ELDER_ROLE,
       log: {
-        it: 'Siede con gli altri quattro nella loro stanza del castello di Pangaea, a Mary Geoise, quando Imu chiama per far provare la Fiamma Madre di Vegapunk sul Regno di Lulusia. È Mars a far notare che il popolo di Lulusia mostra segni di rivolta. Quando Sabo li ha attaccati per Cobra, si è trasformato con gli altri in un’enorme sagoma nel buio.',
-        en: 'He sits with the other four in their room in Pangaea Castle, at Mary Geoise, when Imu calls to have Vegapunk’s Mother Flame tried out on the Kingdom of Lulusia. Mars is the one who points out that the people of Lulusia have been showing signs of revolt. When Sabo attacked them over Cobra, he changed with the others into a huge shape in the dark.',
+        it: 'Siede con gli altri quattro nella loro stanza del castello di Pangaea, a Mary Geoise, quando Im chiama per far provare la Fiamma Madre di Vegapunk sul Regno di Lulusia. È Mars a far notare che il popolo di Lulusia mostra segni di rivolta. Quando Sabo li ha attaccati per Cobra, si è trasformato con gli altri in un’enorme sagoma nel buio.',
+        en: 'He sits with the other four in their room in Pangaea Castle, at Mary Geoise, when Im calls to have Vegapunk’s Mother Flame tried out on the Kingdom of Lulusia. Mars is the one who points out that the people of Lulusia have been showing signs of revolt. When Sabo attacked them over Cobra, he changed with the others into a huge shape in the dark.',
       },
       status: [{ episode: 1120, value: 'alive' }],
       affiliation: [
@@ -1087,8 +1087,8 @@ export const egghead: OnePieceSaga = {
       relationships: eggheadRelationships['topman-warcury'],
       role: ELDER_ROLE,
       log: {
-        it: 'Siede con gli altri quattro nella loro stanza di Mary Geoise quando Imu sceglie il Regno di Lulusia come luogo in cui provare la Fiamma Madre di Vegapunk, abitanti compresi. Il suo unico commento è che servirà da lezione per tutti. Porta il titolo di Dio Guerriero della Giustizia.',
-        en: 'He sits with the other four in their room at Mary Geoise when Imu chooses the Kingdom of Lulusia as the place to test Vegapunk’s Mother Flame, people and all. His only comment is that it will serve as a good lesson for everyone. He holds the title of Warrior God of Justice.',
+        it: 'Siede con gli altri quattro nella loro stanza di Mary Geoise quando Im sceglie il Regno di Lulusia come luogo in cui provare la Fiamma Madre di Vegapunk, abitanti compresi. Il suo unico commento è che servirà da lezione per tutti. Porta il titolo di Dio Guerriero della Giustizia.',
+        en: 'He sits with the other four in their room at Mary Geoise when Im chooses the Kingdom of Lulusia as the place to test Vegapunk’s Mother Flame, people and all. His only comment is that it will serve as a good lesson for everyone. He holds the title of Warrior God of Justice.',
       },
       status: [{ episode: 1120, value: 'alive' }],
       affiliation: [
@@ -1113,8 +1113,8 @@ export const egghead: OnePieceSaga = {
       relationships: eggheadRelationships['ethanbaron-v-nusjuro'],
       role: ELDER_ROLE,
       log: {
-        it: 'È l’unico dei cinque a non portare un completo, e tiene la spada in mano: quando gli altri hanno puntato le pistole su Cobra, lui l’ha sguainata. Quando Imu ordina di provare la Fiamma Madre di Vegapunk sul Regno di Lulusia, lui pensa già al giorno in cui quel potere sarà a loro disposizione.',
-        en: 'He is the only one of the five who wears no suit, and he keeps his sword in his hand: when the others drew pistols on Cobra, he drew it. When Imu orders Vegapunk’s Mother Flame tried out on the Kingdom of Lulusia, he is already thinking of the day that power will be theirs to use.',
+        it: 'È l’unico dei cinque a non portare un completo, e tiene la spada in mano: quando gli altri hanno puntato le pistole su Cobra, lui l’ha sguainata. Quando Im ordina di provare la Fiamma Madre di Vegapunk sul Regno di Lulusia, lui pensa già al giorno in cui quel potere sarà a loro disposizione.',
+        en: 'He is the only one of the five who wears no suit, and he keeps his sword in his hand: when the others drew pistols on Cobra, he drew it. When Im orders Vegapunk’s Mother Flame tried out on the Kingdom of Lulusia, he is already thinking of the day that power will be theirs to use.',
       },
       status: [{ episode: 1120, value: 'alive' }],
       affiliation: [
@@ -1139,8 +1139,8 @@ export const egghead: OnePieceSaga = {
       relationships: eggheadRelationships['shepherd-ju-peter'],
       role: ELDER_ROLE,
       log: {
-        it: 'Siede con gli altri quattro nella loro stanza di Mary Geoise quando Imu sceglie il Regno di Lulusia per provare la Fiamma Madre di Vegapunk. Ha il viso più giovane dei cinque e l’ultima parola: quando quel potere sarà loro, dice, la lunga battaglia finirà.',
-        en: 'He sits with the other four in their room at Mary Geoise when Imu picks the Kingdom of Lulusia to test Vegapunk’s Mother Flame on. He has the youngest face of the five, and the last word: once that power is theirs, he says, the long battle will come to an end.',
+        it: 'Siede con gli altri quattro nella loro stanza di Mary Geoise quando Im sceglie il Regno di Lulusia per provare la Fiamma Madre di Vegapunk. Ha il viso più giovane dei cinque e l’ultima parola: quando quel potere sarà loro, dice, la lunga battaglia finirà.',
+        en: 'He sits with the other four in their room at Mary Geoise when Im picks the Kingdom of Lulusia to test Vegapunk’s Mother Flame on. He has the youngest face of the five, and the last word: once that power is theirs, he says, the long battle will come to an end.',
       },
       status: [{ episode: 1120, value: 'alive' }],
       affiliation: [
