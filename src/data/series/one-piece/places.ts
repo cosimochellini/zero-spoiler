@@ -69,13 +69,10 @@ const PLACE_DOSSIERS: Record<string, OnePiecePlace> = {
     region: 'east-blue',
     form: 'town',
     arc: 'orange-town-arc',
-    landmark: {
-      it: 'La bandiera dei pirati sui tetti',
-      en: 'The pirates’ flag over the roofs',
-    },
+    landmark: { it: 'La fila di case', en: 'The row of houses' },
     log: {
-      it: 'Il capitano ci è caduto dentro dal cielo, lasciato andare da un uccello su cui i pirati avevano aperto il fuoco, nel mezzo di un inseguimento tra una ladra e tre pirati. Le strade sono vuote, e la ciurma che tiene la città si è appena fatta rubare da lei una carta nautica.',
-      en: 'The captain fell into it from the sky, dropped by a bird the pirates had opened fire on, in the middle of a chase between a thief and three pirates. The streets are empty, and the crew that holds the town has just lost a sea chart to her.',
+      it: 'Il capitano ci è caduto dentro dal cielo, lasciato andare da un uccello gigante su cui i pirati avevano aperto il fuoco, proprio dove alcuni della loro ciurma inseguivano una ladra. Lei aveva appena rubato loro una mappa.',
+      en: 'The captain fell into it from the sky, dropped by a giant bird the pirates had opened fire on, right where some of their crew were chasing a thief. She had just stolen a map from them.',
     },
     filedHere: ['nami', 'buggy', 'chouchou', 'richie', 'boodle'],
   },
