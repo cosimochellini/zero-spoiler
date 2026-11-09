@@ -1584,7 +1584,7 @@ const links = {
       it: 'Rocks rompe l’amicizia con Harald dopo il loro duello sul Governo Mondiale.',
     },
   },
-  rocksImu: {
+  rocksIm: {
     character: 'im',
     type: {
       en: 'Enemy who takes control of him',
@@ -2379,7 +2379,7 @@ export const wanoRelationships = {
       source: 'chapter',
       value: [
         links.rocksTeach,
-        links.rocksImu,
+        links.rocksIm,
         links.rocksRogerPleads,
         links.rocksGarpPleads,
         links.rocksHaraldEstranged,
@@ -2392,7 +2392,7 @@ export const wanoRelationships = {
       value: [
         links.rocksTeach,
         links.rocksGarling,
-        links.rocksImu,
+        links.rocksIm,
         links.rocksRogerPleads,
         links.rocksGarpPleads,
       ],
