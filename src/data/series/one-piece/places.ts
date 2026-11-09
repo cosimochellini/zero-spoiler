@@ -69,10 +69,10 @@ const PLACE_DOSSIERS: Record<string, OnePiecePlace> = {
     region: 'east-blue',
     form: 'town',
     arc: 'orange-town-arc',
-    landmark: { it: 'Il tendone dei pirati', en: 'The pirates’ big top' },
+    landmark: { it: 'La fila di case', en: 'The row of houses' },
     log: {
-      it: 'Il capitano ci è caduto dentro dal cielo, lasciato andare da un uccello, nel mezzo di un inseguimento tra una ladra e tre pirati. Le strade sono vuote, le case ancora intere tranne quelle che i cannoni hanno già raggiunto, e la ciurma che occupa la piazza ha una nave, un tendone e una carta nautica che qualcuno le ha appena rubato.',
-      en: 'The captain fell into it from the sky, dropped by a bird, in the middle of a chase between a thief and three pirates. The streets are empty, the houses still whole except where the cannons have already reached, and the crew holding the square has a ship, a big top and a sea chart that somebody has just stolen from it.',
+      it: 'Il capitano ci è caduto dentro dal cielo, lasciato andare da un uccello gigante su cui i pirati avevano aperto il fuoco, proprio dove alcuni della loro ciurma inseguivano una ladra. Lei aveva appena rubato loro una mappa.',
+      en: 'The captain fell into it from the sky, dropped by a giant bird the pirates had opened fire on, right where some of their crew were chasing a thief. She had just stolen a map from them.',
     },
     filedHere: ['nami', 'buggy', 'chouchou', 'richie', 'boodle'],
   },
