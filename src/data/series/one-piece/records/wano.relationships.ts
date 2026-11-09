@@ -1591,7 +1591,7 @@ const links = {
       it: 'Nemico che prende il controllo di lui',
     },
     summary: {
-      en: 'Imu turns Rocks into a demon and orders him to kill his own family.',
+      en: 'Im turns Rocks into a demon and orders him to kill his own family.',
       it: 'Im prende il controllo di Rocks trasformandolo in un demone e gli ordina di uccidere la propria famiglia.',
     },
   },
@@ -1613,7 +1613,7 @@ const links = {
       it: 'Avversario a cui chiede di ucciderlo',
     },
     summary: {
-      en: 'Rocks begs Garp and Roger to stop him while Imu controls him.',
+      en: 'Rocks begs Garp and Roger to stop him while Im controls him.',
       it: 'Rocks implora Garp e Roger di fermarlo mentre Im lo controlla.',
     },
   },
