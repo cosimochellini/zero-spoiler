@@ -1116,18 +1116,27 @@ export const eastBlueArt = {
     shadow(80, 176, 62),
   ],
 
-  // A row of house fronts, one roof already broken by a cannonball, and the
-  // pirates' big top rising behind them.
+  // A row of house fronts by the sea, the middle roof broken open by a Buggy
+  // Ball, the end house turning its side away, and the Buggy Pirates' Jolly
+  // Roger flying from a pole over the roofs. The town is chapter 8, episode 5;
+  // the ball levels a row of houses in chapter 10, the same episode.
   'orange-town': [
-    { d: 'M80 40 L26 118 H134z', role: 'accent' },
-    { d: 'M80 40 V26 l12 4 l-12 4', role: 'accent' },
-    { d: 'M62 66 L50 118 M80 40 V118 M98 66 L110 118', role: 'ambient' },
-    { d: house(18, 28, 112, 96) },
-    { d: 'M58 150 V118 h28 V150 M54 118 L64 108 L70 114 L78 102 L90 118' },
-    { d: house(100, 32, 110, 92) },
-    { d: 'M26 126 h10 v10 h-10z M108 122 h8 v8 h-8z M120 122 h8 v8 h-8z' },
-    { d: circle(76, 145, 5) },
-    { d: 'M4 150 H156', role: 'ambient' },
+    { d: house(10, 34, 104, 82) },
+    {
+      d: 'M54 150 V100 M90 150 V100 M50 100 L58 92 L64 98 L70 86 L76 96 L82 90 L94 100',
+    },
+    { d: 'M58 108 l8 -8 M68 108 l8 -8 M78 106 l8 -8', role: 'ambient' },
+    { d: house(102, 32, 108, 86) },
+    { d: 'M118 86 L130 80 L150 102 L138 108 M134 108 L146 102 V144 L134 150' },
+    { d: 'M138 118 l6 -3 M138 128 l6 -3 M138 138 l6 -3', role: 'ambient' },
+    {
+      d: 'M23 92 h8 v8 h-8z M66 150 V124 h10 V150 M114 96 h8 v8 h-8z',
+      role: 'soft',
+    },
+    { d: 'M118 86 V18' },
+    { d: 'M118 20 Q102 16 90 20 T62 20 V54 Q76 50 90 54 T118 54' },
+    ...moved(BUGGY_JOLLY_ROGER, 'translate(90 37) scale(0.6)'),
+    { d: 'M0 150 H160', role: 'ambient' },
     ...SEA.slice(2),
   ],
 
