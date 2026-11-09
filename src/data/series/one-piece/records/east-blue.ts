@@ -270,8 +270,8 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 8,
       name: { it: 'Orange Town', en: 'Orange Town' },
       summary: {
-        it: 'Una cittadina occupata da una ciurma di pirati. Alcuni dei suoi uomini inseguono per le strade una ladra che ha appena rubato loro una mappa.',
-        en: 'A town held by a pirate crew. Some of its men chase a thief through the streets for a map she has just stolen from them.',
+        it: 'Una cittadina dove alcuni uomini di una ciurma di pirati inseguono una ladra che ha appena rubato loro una mappa.',
+        en: 'A town where some men of a pirate crew chase a thief who has just stolen their map.',
       },
       visual: { art: 'orange-town-arc', tint: 'orange' },
     },
@@ -307,8 +307,8 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 8,
       name: { it: 'Orange Town', en: 'Orange Town' },
       summary: {
-        it: 'Una cittadina dell’East Blue occupata da una ciurma di pirati che apre il fuoco su un uccello gigante.',
-        en: 'An East Blue town occupied by a pirate crew that opens fire on a giant bird.',
+        it: 'Una cittadina dell’East Blue dove una ciurma di pirati apre il fuoco su un uccello gigante.',
+        en: 'An East Blue town where a pirate crew opens fire on a giant bird.',
       },
       visual: { art: 'orange-town', tint: 'orange' },
     },
