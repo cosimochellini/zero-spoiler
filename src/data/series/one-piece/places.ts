@@ -74,8 +74,8 @@ const PLACE_DOSSIERS: Record<string, OnePiecePlace> = {
       en: 'The pirates’ flag over the roofs',
     },
     log: {
-      it: 'Il capitano ci è caduto dentro dal cielo, lasciato andare da un uccello, nel mezzo di un inseguimento tra una ladra e tre pirati. Le strade sono vuote, le case ancora intere tranne quelle che i cannoni hanno già raggiunto, e la ciurma che occupa la piazza ha una nave, un cannone carico e una carta nautica che qualcuno le ha appena rubato.',
-      en: 'The captain fell into it from the sky, dropped by a bird, in the middle of a chase between a thief and three pirates. The streets are empty, the houses still whole except where the cannons have already reached, and the crew holding the square has a ship, a loaded cannon and a sea chart that somebody has just stolen from it.',
+      it: 'Il capitano ci è caduto dentro dal cielo, lasciato andare da un uccello su cui i pirati avevano aperto il fuoco, nel mezzo di un inseguimento tra una ladra e tre pirati. Le strade sono vuote, e la ciurma che tiene la città si è appena fatta rubare da lei una carta nautica.',
+      en: 'The captain fell into it from the sky, dropped by a bird the pirates had opened fire on, in the middle of a chase between a thief and three pirates. The streets are empty, and the crew that holds the town has just lost a sea chart to her.',
     },
     filedHere: ['nami', 'buggy', 'chouchou', 'richie', 'boodle'],
   },

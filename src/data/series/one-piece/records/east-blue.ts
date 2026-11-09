@@ -270,8 +270,8 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 8,
       name: { it: 'Orange Town', en: 'Orange Town' },
       summary: {
-        it: 'Una cittadina di porto svuotata dei suoi abitanti, occupata da una ciurma di pirati che beve nel bar del paese e tiene il cannone carico.',
-        en: 'A harbour town emptied of its people, held by a pirate crew that drinks in the town’s bar and keeps its cannon loaded.',
+        it: 'Una cittadina di porto svuotata dei suoi abitanti, occupata da una ciurma di pirati che insegue per le strade una ladra con la carta nautica che le ha rubato.',
+        en: 'A harbour town emptied of its people, held by a pirate crew that chases a thief through its streets for the sea chart she stole from it.',
       },
       visual: { art: 'orange-town-arc', tint: 'orange' },
     },
@@ -307,8 +307,8 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 8,
       name: { it: 'Orange Town', en: 'Orange Town' },
       summary: {
-        it: 'Una cittadina dell’East Blue svuotata dai suoi abitanti, occupata da una ciurma di pirati che tiene un cannone carico sul tetto di un bar.',
-        en: 'An East Blue town its people have fled, occupied by a pirate crew that keeps a loaded cannon on the roof of a bar.',
+        it: 'Una cittadina dell’East Blue svuotata dai suoi abitanti, occupata da una ciurma di pirati che apre il fuoco su un uccello gigante di passaggio sopra i tetti.',
+        en: 'An East Blue town its people have fled, occupied by a pirate crew that opens fire on a giant bird flying over the roofs.',
       },
       visual: { art: 'orange-town', tint: 'orange' },
     },
