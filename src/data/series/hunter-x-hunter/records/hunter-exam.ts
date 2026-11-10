@@ -1,4 +1,5 @@
 import type { Relationship, Timeline } from '~/data/types'
+import type { NenType } from '~/lib/view/facts'
 
 import { chimeraAntPhase1Chronicles } from './chimera-ant-phase-1.chronicle'
 import { chimeraAntPhase2Chronicles } from './chimera-ant-phase-2.chronicle'
@@ -36,6 +37,18 @@ import { zevil } from './zevil'
  * Silva is filed unanchored in zoldyck.ts (#834); Kikyo is never named in
  * the story, and Hishita waits for #912.
  */
+
+/**
+ * Gon's and Killua's Nen: Wing opens their aura nodes in chapter 48 and
+ * episode 29, and Water Divination tells each type in chapter 60 and
+ * episode 35.
+ */
+function wingsPupil(type: NenType): Timeline<NenType> {
+  return [
+    { episode: 29, chapter: 48, value: 'unknown' },
+    { episode: 35, chapter: 60, value: type },
+  ]
+}
 
 const APPLICANT = {
   it: 'Esame Hunter, aspirante',
@@ -577,6 +590,8 @@ const earlyExam: HunterSaga = {
         { episode: 56, chapter: 111, value: 'captured' },
         { episode: 58, chapter: 118, value: 'alive' },
       ],
+      // The water overflows.
+      nen: wingsPupil('enhancer'),
       affiliation: [
         { episode: 1, value: APPLICANT },
         {
@@ -1116,6 +1131,12 @@ const earlyExam: HunterSaga = {
         en: 'Tonpa points him out to Gon as an applicant to avoid: the previous year he was disqualified for attacking an examiner. He returns to the exam and punishes a man who bumps into him without apologizing.',
       },
       status: [{ episode: 3, chapter: 5, value: 'alive' }],
+      nen: [
+        // His aura bars the 200th-floor hallway, chapter 47 and episode 28.
+        { episode: 28, chapter: 47, value: 'unknown' },
+        // Wing names him a Transmuter in his lesson, chapter 60 and episode 35.
+        { episode: 35, chapter: 60, value: 'transmuter' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -1431,6 +1452,8 @@ const earlyExam: HunterSaga = {
         { episode: 56, chapter: 111, value: 'captured' },
         { episode: 58, chapter: 118, value: 'alive' },
       ],
+      // The water turns sweet.
+      nen: wingsPupil('transmuter'),
       affiliation: [
         {
           episode: 4,

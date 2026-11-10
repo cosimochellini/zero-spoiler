@@ -1,5 +1,6 @@
 import type { Reveal } from '~/data/reveal'
 import type { Gated } from '~/lib/progress/spoiler'
+import type { NenType } from '~/lib/view/facts'
 import type { FillerKind } from '~/lib/view/filler'
 import type { BodyKind } from '~/lib/view/power'
 import type { FruitForm, FruitLook, Stroke } from '~/lib/view/records'
@@ -31,11 +32,15 @@ import type {
  * devil fruits a character ate, by id rather than by name: one entry may carry
  * two, because one episode may say two. The name the page prints is the
  * fruit record's own, so the two can never drift. One Piece narrows the ids
- * to the fruits it files.
+ * to the fruits it files. Hunter x Hunter's Nen type opens only for a
+ * character the story has shown using Nen, as `unknown` until the episode
+ * and chapter that tell the type; a row that opened at the threshold would
+ * say that a Nen user is coming.
  */
 export interface FeatureTimelines {
   bounty?: Timeline<number>
   devilFruit?: Timeline<string[]>
+  nen?: Timeline<NenType>
 }
 
 /**

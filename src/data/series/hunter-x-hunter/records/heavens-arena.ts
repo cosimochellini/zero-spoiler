@@ -145,6 +145,13 @@ export const heavensArena: HunterSaga = {
         en: 'He rides up to the 50th floor with Gon and Killua and introduces himself with a bow. He studies Shingen-ryu kung fu under a teacher. In his match with Killua he is knocked down again and again and gets up every time; his teacher shouts his name from the stands.',
       },
       status: [{ episode: 27, chapter: 45, value: 'alive' }],
+      nen: [
+        // He explains the Four Exercises and trains his Ten, chapter 46 and
+        // episode 27.
+        { episode: 27, chapter: 46, value: 'unknown' },
+        // The leaf moves at Water Divination, chapter 60 and episode 35.
+        { episode: 35, chapter: 60, value: 'manipulator' },
+      ],
       affiliation: [
         {
           episode: 27,
@@ -168,6 +175,14 @@ export const heavensArena: HunterSaga = {
         en: 'He teaches Shingen-ryu kung fu to Zushi and follows him to Heavens Arena. His shirttail hangs out of his trousers, and Zushi points it out. He introduces himself to Gon and Killua, surprised to find other boys there besides Zushi. During the match with Killua he shouts his pupil’s name so loudly that the spectators around him cover their ears.',
       },
       status: [{ episode: 27, chapter: 45, value: 'alive' }],
+      nen: [
+        // He shows Ten and Ren and turns a page into a blade, chapter 46 and
+        // episode 28.
+        { episode: 28, chapter: 46, value: 'unknown' },
+        // His own water overflows at Water Divination, chapter 60 and episode 35
+        // (the episode's frame not viewed: owner-accepted, #922).
+        { episode: 35, chapter: 60, value: 'enhancer' },
+      ],
       affiliation: [
         {
           episode: 27,
@@ -185,6 +200,12 @@ export const heavensArena: HunterSaga = {
         en: 'With two other fighters he comes to Gon and Killua, just arrived on the 200th floor, to ask for a match. He walks with a cane, and along the cane he spins ten tops that bounce in every direction; they spin for hours, and even he cannot tell where they will go. In Gon’s first match on that floor, one strikes him in the back.',
       },
       status: [{ episode: 29, chapter: 49, value: 'alive' }],
+      nen: [
+        // His tops spin covered in aura in his match with Gon, at his gate.
+        { episode: 29, chapter: 49, value: 'unknown' },
+        // Wing names him an Enhancer in his lesson, chapter 60 and episode 35.
+        { episode: 35, chapter: 60, value: 'enhancer' },
+      ],
       affiliation: [{ episode: 29, chapter: 49, value: FLOOR_200 }],
     },
     sadaso: {
@@ -196,6 +217,11 @@ export const heavensArena: HunterSaga = {
         en: 'With Gido and a third fighter he seeks easy wins against anyone new to the 200th floor. To make Killua fight he seizes Zushi in a giant hand made of his own power; Killua promises them wins by default in exchange for the boy. He is known as the newbie hunter. Shortly before his match with Killua he finds Killua behind him with a knife, warning him never to show his face again.',
       },
       status: [{ episode: 33, chapter: 57, value: 'alive' }],
+      nen: [
+        // He seizes Zushi in a hand made of aura, at his gate; the story never
+        // tells his type.
+        { episode: 33, chapter: 57, value: 'unknown' },
+      ],
       affiliation: [{ episode: 33, chapter: 57, value: FLOOR_200 }],
     },
     riehlvelt: {
@@ -207,6 +233,11 @@ export const heavensArena: HunterSaga = {
         en: 'He gets around in a wheelchair and fights with two electric whips. With Sadaso and Gido he aims to become a Floor Master. In the main event against Killua, Killua seizes the whips and holds on when the current runs through them, then throws him out of his chair; he passes out in Killua’s arms. Against Gon he loses again.',
       },
       status: [{ episode: 34, chapter: 59, value: 'alive' }],
+      nen: [
+        // He dodges Killua with his Aura Burst, at his gate; the story never
+        // tells his type.
+        { episode: 34, chapter: 59, value: 'unknown' },
+      ],
       affiliation: [{ episode: 34, chapter: 59, value: FLOOR_200 }],
     },
     kastro: {
@@ -221,6 +252,13 @@ export const heavensArena: HunterSaga = {
         { episode: 31, chapter: 52, value: 'alive' },
         // Hisoka's cards pierce him at the end of the match.
         { episode: 32, chapter: 54, value: 'deceased' },
+      ],
+      nen: [
+        // He reads Killua's aura, at his gate.
+        { episode: 31, chapter: 52, value: 'unknown' },
+        // Wing judges him born an Enhancer in his lesson, chapter 60 and episode
+        // 35.
+        { episode: 35, chapter: 60, value: 'enhancer' },
       ],
       affiliation: [{ episode: 31, chapter: 52, value: FLOOR_200 }],
     },

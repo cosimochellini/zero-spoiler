@@ -127,6 +127,43 @@ describe('the returning characters at Heavens Arena', () => {
   )
 })
 
+/**
+ * Each Nen user's row: absent until the story shows them using Nen, then
+ * "not yet known" until Water Divination, chapter 60 and episode 35 (#922).
+ */
+const NEN = [
+  { id: 'zushi', episode: 27, chapter: 46, type: 'manipulator' },
+  { id: 'wing', episode: 28, chapter: 46, type: 'enhancer' },
+  { id: 'hisoka', episode: 28, chapter: 47, type: 'transmuter' },
+  { id: 'gon-freecss', episode: 29, chapter: 48, type: 'enhancer' },
+  { id: 'killua', episode: 29, chapter: 48, type: 'transmuter' },
+  { id: 'gido', episode: 29, chapter: 49, type: 'enhancer' },
+  { id: 'kastro', episode: 31, chapter: 52, type: 'enhancer' },
+  { id: 'sadaso', episode: 33, chapter: 57, type: 'unknown' },
+  { id: 'riehlvelt', episode: 34, chapter: 59, type: 'unknown' },
+]
+
+describe.each(
+  NEN.flatMap((row) =>
+    ['episode', 'chapter'].map((unit) => ({ ...row, unit })),
+  ),
+)('$id’s Nen type by $unit', ({ id, unit, type, ...pins }) => {
+  const opens = unit === 'chapter' ? pins.chapter : pins.episode
+  const reveal = unit === 'chapter' ? 60 : 35
+  const nenAt = (count: number): string | undefined =>
+    factsOf(character(id), readerFor(archive, at(unit, count), 'en')).nen
+
+  it('has no row until the story shows the character using Nen', () => {
+    expect(nenAt(opens - 1)).toBeUndefined()
+    expect(nenAt(opens)).toBe('unknown')
+  })
+
+  it('tells the type at Water Divination, not an episode or chapter before', () => {
+    expect(nenAt(reveal - 1)).toBe('unknown')
+    expect(nenAt(reveal)).toBe(type)
+  })
+})
+
 describe('the home inside the arc', () => {
   it.each(['episode', 'chapter'])(
     'lists the arc’s own stories from its first one, by %s',

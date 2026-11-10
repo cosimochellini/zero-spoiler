@@ -164,6 +164,15 @@ chapter 329 (#912). Every Hunter Exam character has a chronicle (#762); the
 Heavens Arena characters get theirs in #898. Records are not added from unnamed
 appearances or supplemental names.
 
+A Hunter x Hunter character's Nen type is a dated field of its own (`nen`,
+`Series.features.nen`, #922), shown as a row of the character's facts in the
+series' words. It opens only for a character the story has shown using Nen, as
+"not yet known", and every entry is pinned to its true chapter, the first one
+included, because it does not open at the record's gate. The Heavens Arena cast
+is filed: Water Divination and Wing's lesson tell Gon's, Killua's, Zushi's,
+Wing's, Hisoka's, Gido's and Kastro's types at chapter 60 / episode 35; Sadaso
+and Riehlvelt stay "not yet known". Later arcs' types are filed with their arcs.
+
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
 red theme and its hub crown (#850). It files no arcs: each season module is

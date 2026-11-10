@@ -1,11 +1,11 @@
 import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { foldName } from '~/lib/search/fold'
 import { regionsFor } from '~/lib/view/chart'
+import type { CharacterFacts } from '~/lib/view/facts'
 import type { FruitPlateCount } from '~/lib/view/fruits'
 import type { StopView } from '~/lib/view/places'
 import type {
   CharacterChronicle,
-  CharacterFacts,
   CharacterView,
   ChronicleEntry,
   CoveredRecord,

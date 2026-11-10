@@ -1,12 +1,11 @@
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import { foldName } from '~/lib/search/fold'
+import type { CharacterFacts, FruitLink } from '~/lib/view/facts'
 import type {
-  CharacterFacts,
   CharacterView,
   Drawing,
   FruitForm,
-  FruitLink,
   FruitView,
   RecordView,
   Searchable,
@@ -256,7 +255,7 @@ function wordFactsOf(entity: Entity, r: Reader): ReachedFacts {
 }
 
 /**
- * The facts that are not prose: a state, a fruit, a number.
+ * The facts that are not prose: a state, a fruit, a number, a Nen type.
  *
  * Split from the prose half because one projection spreading six optional
  * facts is one `&&` over the complexity ceiling, and the ceiling is the
@@ -266,10 +265,12 @@ function codedFactsOf(entity: Entity, r: Reader): ReachedFacts {
   const status = r.archive.latestOf(r, entity, 'status')
   const devilFruit = linksFor(r.archive.latestOf(r, entity, 'devilFruit'), r)
   const bounty = r.archive.latestOf(r, entity, 'bounty')
+  const nen = r.archive.latestOf(r, entity, 'nen')
 
   return {
     ...(status !== undefined && { status }),
     ...(devilFruit !== undefined && { devilFruit }),
     ...(bounty !== undefined && { bounty }),
+    ...(nen !== undefined && { nen }),
   }
 }

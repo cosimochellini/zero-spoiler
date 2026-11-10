@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { ONE_PIECE_SERIES } from '~/lib/progress/series'
+import { HUNTER_X_HUNTER_SERIES, ONE_PIECE_SERIES } from '~/lib/progress/series'
 import { facts } from '~/test/fixtures'
 import { renderUnderSeries, renderWithProviders } from '~/test/providers'
 
@@ -111,6 +111,46 @@ describe('CharacterFacts', () => {
     expect(
       screen.getAllByRole('term').map((term) => term.textContent),
     ).toStrictEqual(['Ranks', 'Bounty'])
+  })
+
+  it.each([
+    ['en', 'Nen type', 'Transmuter'],
+    ['it', 'Tipo di Nen', 'Trasformazione'],
+    ['en', 'Nen type', 'Not yet known'],
+  ] as const)(
+    'prints Hunter x Hunter’s Nen type in %s as %s: %s',
+    async (locale, label, value) => {
+      await renderUnderSeries(
+        <CharacterFacts
+          facts={facts({
+            status: 'alive',
+            nen: value === 'Not yet known' ? 'unknown' : 'transmuter',
+          })}
+        />,
+        {
+          locale,
+          path: `/hunter-x-hunter/${locale}/characters/killua`,
+          series: HUNTER_X_HUNTER_SERIES,
+        },
+      )
+
+      expect(
+        screen.getAllByRole('term').map((term) => term.textContent),
+      ).toStrictEqual([locale === 'it' ? 'Stato' : 'Status', label])
+      expect(screen.getByText(value)).toBeInTheDocument()
+    },
+  )
+
+  it('prints no Nen row on a Hunter x Hunter page without a type', async () => {
+    await renderUnderSeries(
+      <CharacterFacts facts={facts({ status: 'alive' })} />,
+      {
+        path: '/hunter-x-hunter/en/characters/mito-freecss',
+        series: HUNTER_X_HUNTER_SERIES,
+      },
+    )
+
+    expect(screen.queryByText('Nen type')).not.toBeInTheDocument()
   })
 
   it('renders nothing at all when the reader has reached no fact', () => {

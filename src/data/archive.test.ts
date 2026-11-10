@@ -47,6 +47,9 @@ function allowedFields(archive: SeriesArchive): Set<Field> {
   if (features.fruits) {
     allowed.add('devilFruit')
   }
+  if (features.nen) {
+    allowed.add('nen')
+  }
   if (archive.features.ships !== undefined) {
     allowed.add('fate')
   }
@@ -284,6 +287,7 @@ describe.each(LOADED_SERIES)(
       'status',
       (c) => archive.dossierOf(c)?.status,
     )
+    const NEN = casesOf(archive, 'nen', (c) => archive.dossierOf(c)?.nen)
     const ROLES = casesOf(archive, 'role', (c) => {
       const role = archive.dossierOf(c)?.role
 
@@ -448,6 +452,31 @@ describe.each(LOADED_SERIES)(
           .map((entry) => entry.episode)
 
         expect(unpinned, label).toStrictEqual([])
+      }
+    })
+
+    it('files a Nen type only where it changes, every entry pinned', () => {
+      // Unlike the status, a Nen row does not open at the threshold: it opens
+      // once the story shows the character using Nen, so the first entry
+      // waits on its true chapter as much as the reveal does. A repeated
+      // value would be a step the reader cannot see.
+      for (const { label, timeline } of NEN) {
+        const unpinned = timeline
+          .filter((entry) => entry.chapter === undefined)
+          .map((entry) => entry.episode)
+
+        expect(unpinned, label).toStrictEqual([])
+
+        for (const source of ['episode', 'chapter'] as const) {
+          const values = timeline
+            .filter((entry) => toldIn(entry, source))
+            .map((entry) => entry.value)
+
+          expect(
+            values.filter((value, at) => value === values[at - 1]),
+            label,
+          ).toStrictEqual([])
+        }
       }
     })
 
