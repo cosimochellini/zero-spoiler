@@ -53,6 +53,8 @@ export interface Series extends BookmarkSeries {
     factions: boolean
     filler: boolean
     fruits: boolean
+    /** Whether its characters file a dated Nen type (Hunter x Hunter's). */
+    nen: boolean
     /** Whether it has the page of who holds the world's seats of power. */
     power: boolean
     /**
@@ -126,6 +128,7 @@ export const ONE_PIECE_SERIES: Series = {
     factions: true,
     filler: true,
     fruits: true,
+    nen: false,
     power: true,
     worldMap: true,
   },
@@ -166,8 +169,8 @@ const HUNTER_X_HUNTER_BOOKMARK: BookmarkSeries = {
 /**
  * Hunter x Hunter's public description. No bounty, no factions, no devil
  * fruits and no filler guide: those are One Piece's (owner, 2026-10-23). The
- * kinds are the ones it launches with; Nen abilities come later, as a field
- * of the character.
+ * kinds are the ones it launches with. Its own feature is the Nen type, a
+ * dated field of the character (#922).
  */
 export const HUNTER_X_HUNTER_SERIES: Series = {
   ...HUNTER_X_HUNTER_BOOKMARK,
@@ -180,6 +183,7 @@ export const HUNTER_X_HUNTER_SERIES: Series = {
     factions: false,
     filler: false,
     fruits: false,
+    nen: true,
     power: false,
     worldMap: false,
   },
@@ -233,6 +237,7 @@ export const GAME_OF_THRONES_SERIES: Series = {
     factions: false,
     filler: false,
     fruits: false,
+    nen: false,
     power: false,
     worldMap: false,
   },

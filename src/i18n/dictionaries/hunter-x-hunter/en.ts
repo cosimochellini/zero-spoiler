@@ -7,6 +7,16 @@ import type { OwnCopy } from '~/i18n/types'
  * are the English Hunter x Hunter Wiki and Italian Wikipedia (#725).
  */
 export const hunterXHunterEn = {
+  // The Nen type row (#922): the six categories of Water Divination, and the
+  // state of a Nen user whose type the story has not told yet.
+  'character.nen': 'Nen type',
+  'nen.conjurer': 'Conjurer',
+  'nen.emitter': 'Emitter',
+  'nen.enhancer': 'Enhancer',
+  'nen.manipulator': 'Manipulator',
+  'nen.specialist': 'Specialist',
+  'nen.transmuter': 'Transmuter',
+  'nen.unknown': 'Not yet known',
   'characters.bookLede':
     'Every character in the wiki, grouped by the arc they first appear in.',
   'dialog.saga': 'Arc · {name}',

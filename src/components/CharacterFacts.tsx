@@ -7,12 +7,9 @@ import { useLocale, useSeriesT, useT } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
 import type { SeriesTranslate, Translate } from '~/i18n/types'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
+import type { CharacterFacts as Facts, FruitLink } from '~/lib/view/facts'
 import { powerAnchor, type SeatLink } from '~/lib/view/power'
-import type {
-  CharacterStatus,
-  CharacterFacts as Facts,
-  FruitLink,
-} from '~/lib/view/records'
+import type { CharacterStatus } from '~/lib/view/records'
 import {
   color,
   dur,
@@ -52,6 +49,8 @@ export function CharacterFacts({
   // The devil fruit and the bounty are One Piece's facts, in its words: on
   // another series' page there is no such row.
   const onePiece = useSeriesT('one-piece')
+  // So is the Nen type Hunter x Hunter's.
+  const hunter = useSeriesT('hunter-x-hunter')
 
   const rows: [string, ReactNode][] = [
     [t('character.status'), statusRow(facts.status, t)],
@@ -59,6 +58,7 @@ export function CharacterFacts({
     [t('character.affiliation'), facts.affiliation],
     [t('character.origin'), facts.origin],
     ...(onePiece === undefined ? [] : onePieceRows(facts, locale, onePiece)),
+    ...(hunter === undefined ? [] : [hunterRow(facts, hunter)]),
   ]
   const shown = rows.filter(([, value]) => value !== undefined)
 
@@ -96,6 +96,20 @@ function onePieceRows(
     [t('character.ranks'), seatRow(facts.seats)],
     [t('character.devilFruit'), fruitRow(facts.devilFruit)],
     [t('character.bounty'), formatBounty(facts.bounty, locale, t)],
+  ]
+}
+
+/**
+ * The Nen type row, Hunter x Hunter's own. The key is built from the value,
+ * like the status's, so a type with no label fails `typecheck`.
+ */
+function hunterRow(
+  facts: Facts,
+  t: SeriesTranslate<'hunter-x-hunter'>,
+): [string, ReactNode] {
+  return [
+    t('character.nen'),
+    facts.nen === undefined ? undefined : t(`nen.${facts.nen}`),
   ]
 }
 

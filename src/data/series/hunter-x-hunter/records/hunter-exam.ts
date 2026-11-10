@@ -577,6 +577,12 @@ const earlyExam: HunterSaga = {
         { episode: 56, chapter: 111, value: 'captured' },
         { episode: 58, chapter: 118, value: 'alive' },
       ],
+      nen: [
+        // Wing opens his aura nodes, chapter 48 and episode 29.
+        { episode: 29, chapter: 48, value: 'unknown' },
+        // The water overflows at Water Divination, chapter 60 and episode 35.
+        { episode: 35, chapter: 60, value: 'enhancer' },
+      ],
       affiliation: [
         { episode: 1, value: APPLICANT },
         {
@@ -1116,6 +1122,12 @@ const earlyExam: HunterSaga = {
         en: 'Tonpa points him out to Gon as an applicant to avoid: the previous year he was disqualified for attacking an examiner. He returns to the exam and punishes a man who bumps into him without apologizing.',
       },
       status: [{ episode: 3, chapter: 5, value: 'alive' }],
+      nen: [
+        // His aura bars the 200th-floor hallway, chapter 47 and episode 28.
+        { episode: 28, chapter: 47, value: 'unknown' },
+        // Wing names him a Transmuter in his lesson, chapter 60 and episode 35.
+        { episode: 35, chapter: 60, value: 'transmuter' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -1430,6 +1442,12 @@ const earlyExam: HunterSaga = {
         // and handed back at the exchange, chapter 118 and episode 58.
         { episode: 56, chapter: 111, value: 'captured' },
         { episode: 58, chapter: 118, value: 'alive' },
+      ],
+      nen: [
+        // Wing opens his aura nodes, chapter 48 and episode 29.
+        { episode: 29, chapter: 48, value: 'unknown' },
+        // The water turns sweet at Water Divination, chapter 60 and episode 35.
+        { episode: 35, chapter: 60, value: 'transmuter' },
       ],
       affiliation: [
         {

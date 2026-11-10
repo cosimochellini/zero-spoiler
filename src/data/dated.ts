@@ -87,6 +87,7 @@ function dossierReaders(
     chronicle: (id) => dossiers[id]?.chronicle,
     devilFruit: (id) => dossiers[id]?.devilFruit,
     epithet: (id) => dossiers[id]?.epithet,
+    nen: (id) => dossiers[id]?.nen,
     origin: (id) => dossiers[id]?.origin,
     relationships: (id) => dossiers[id]?.relationships,
     // A single role is frozen at the threshold, so no timeline at all.

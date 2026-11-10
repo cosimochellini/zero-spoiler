@@ -5,6 +5,16 @@ import type { SeriesWords } from '~/i18n/types'
  * follow the 2011 Italian dub, as Italian Wikipedia gives them.
  */
 export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
+  // The categories as Italian Wikipedia names them, the names the chronicles
+  // already use.
+  'character.nen': 'Tipo di Nen',
+  'nen.conjurer': 'Materializzazione',
+  'nen.emitter': 'Emissione',
+  'nen.enhancer': 'Potenziamento',
+  'nen.manipulator': 'Manipolazione',
+  'nen.specialist': 'Specializzazione',
+  'nen.transmuter': 'Trasformazione',
+  'nen.unknown': 'Non ancora noto',
   'characters.bookLede':
     'Tutti i personaggi della wiki, divisi per la saga in cui compaiono per la prima volta.',
   'dialog.saga': 'Saga · {name}',
