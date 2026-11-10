@@ -47,6 +47,7 @@ A record's gate in each medium is the first chapter or episode whose English-wik
 
 - Write the summary, role, log and first facts for the gate: what a reader knows there. Anything later is a dated step. Facts whose manga chapter is past the window wait for the next phase.
 - A status timeline opens at the record's gate. Every later change is its own entry with its `chapter:` pinned (`pins every change of status to the chapter that tells it` in `src/data/archive.test.ts`).
+- A Hunter x Hunter Nen type (`nen`) opens where the story first shows the character using Nen, as `unknown`, not at the gate, and the type follows at the chapter and episode that tell it. Every entry, the first included, pins `chapter:` (`files a Nen type only where it changes, every entry pinned` in `src/data/archive.test.ts`). A type told only outside the story (a databook, a game) is not filed.
 - A role the story changes (an applicant who becomes a Hunter) is filed as dated steps instead of one text: `role: [{ episode, chapter, value }, …]`, the first step at the record's gate, every later one with its `chapter:` pinned (`opens a dated role on its record and pins every change to a chapter`). `passedExam` in `<hxh>/records/saga.ts` builds an exam passer's two steps.
 
 Done when every gate cites its explicit naming signal in each medium, every candidate is in the inventory, and `src/data/leaks.test.ts` and `src/data/archive.test.ts` pass.
