@@ -205,7 +205,7 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
     },
     { d: 'M58 134 L66 134', role: 'ambient' },
     {
-      d: 'M102 143 L112 107 L122 106 M110 103 A5 6 0 1 1 120 103 M89 97 Q100 88 107 92 M87 86 Q101 76 114 81',
+      d: 'M89 97 Q100 88 107 92 M87 86 Q101 76 114 81 M85 75 Q105 64 122 70',
       role: 'accent',
     },
   ],

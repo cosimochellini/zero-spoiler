@@ -96,7 +96,7 @@ theirs is drawn), and some are redrawn from the episode the story changes them.
 Most Game of Thrones entries show a plain placeholder until theirs are drawn.
 There is no official artwork.
 
-Hunter x Hunter also has 28 Nen abilities from Heavens Arena and Yorknew City.
+Hunter x Hunter also files Nen abilities from Heavens Arena and Yorknew City.
 
 |                                                                                                                                                                                              |                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

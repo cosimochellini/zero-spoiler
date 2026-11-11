@@ -78,7 +78,7 @@ export const SHOW_TITLES = {
   'viserys-targaryen': 'Viserys Targaryen (son of Aerys II)',
 }
 
-// The first demonstrated scenes, checked independently in each medium.
+// The reviewed first-use pins. See the scene evidence in the Nen inventory.
 export const ABILITY_SCENES = {
   'battle-waltz': [29, 49],
   'tornado-top': [30, 50],

@@ -505,7 +505,7 @@ async function verify() {
   for (const record of series.archive.entities) {
     const source =
       record.kind === 'ability' ?
-        await abilityReadingOf(record.id, wiki)
+        await abilityReadingOf(record, wiki)
       : await sourceOf(record, { chapters, wiki, books })
 
     rows.push({
@@ -513,13 +513,13 @@ async function verify() {
       kind: record.kind,
       filed: record.revealedAtChapter,
       episode: record.revealedAtEpisode,
-      ...source,
       verdict: verdictOf(record.revealedAtChapter, source),
       episodeVerdict: episodeStandOf(
         record,
         source,
-        wiki.episodes !== undefined || record.kind === 'ability',
+        wiki.episodes !== undefined,
       ),
+      ...source,
     })
   }
 
@@ -549,14 +549,14 @@ function table(title, rows, cells) {
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   const { rows, thrones } = await verify()
-  const failures = ['too low', 'unresolved']
+  const failures = ['too low', 'unresolved', 'pin mismatch']
   const wrong = rows.some((row) =>
     failures.some(
       (failure) => row.verdict === failure || row.episodeVerdict === failure,
     ),
   )
   const verdicts = [...failures, 'equal', 'kept']
-  const episodeVerdicts = ['too low', 'kept']
+  const episodeVerdicts = ['too low', 'kept', 'pin mismatch']
   if (thrones || rows.some((row) => row.verdict === EPISODE_ONLY)) {
     verdicts.push(EPISODE_ONLY)
   }

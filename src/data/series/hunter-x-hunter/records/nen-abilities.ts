@@ -18,7 +18,7 @@ function ability(
 }
 
 export const NEN_ABILITIES: FiledAbilities = {
-  nen: { 'double-machine-gun': 'emitter', 'emperor-time': 'specialist' },
+  nen: { 'emperor-time': 'specialist' },
   records: [
     ability(['battle-waltz', 'Battle Waltz'], [29, 49, 'violet'], {
       en: 'A cluster of aura-wrapped tops ricochets around the ring. Even the fighter who set them spinning cannot predict where they will strike.',
@@ -73,8 +73,8 @@ export const NEN_ABILITIES: FiledAbilities = {
       it: 'Una catena con un peso oscilla come un pendolo. Dal suo movimento chi la regge può valutare una risposta.',
     }),
     ability(['lovely-ghostwriter', 'Lovely Ghostwriter'], [41, 71, 'ice'], {
-      en: 'A pen moves across the page without its holder guiding it. The verses it leaves describe what awaits the person named on the page.',
-      it: 'La penna scorre sul foglio senza che chi la tiene la guidi. I versi che lascia raccontano il futuro della persona indicata in cima.',
+      en: 'A pen moves across the page without its holder guiding it. It writes out fortunes.',
+      it: 'La penna scorre sul foglio senza che chi la tiene la guidi. Sul foglio compaiono i responsi.',
     }),
     ability(['double-machine-gun', 'Double Machine Gun'], [43, 73, 'ice'], {
       en: 'The user fires a rapid volley of aura from the tips of his fingers.',
@@ -125,12 +125,12 @@ export const NEN_ABILITIES: FiledAbilities = {
       it: 'Il drago d’aura scatta attraverso la stanza all’inseguimento del bersaglio e cambia direzione sotto la guida di chi lo evoca.',
     }),
     ability(['black-voice', 'Black Voice'], [53, 98, 'ice'], {
-      en: 'An antenna fixed to a person lets the user direct that person’s movements from a phone.',
-      it: 'Con un’antenna fissata a una persona, chi usa l’abilità può dirigerne i movimenti dal telefono.',
+      en: 'The user directs another person’s movements from a phone.',
+      it: 'Dal telefono, chi usa l’abilità dirige i movimenti di un’altra persona.',
     }),
     ability(['gallery-fake', 'Gallery Fake'], [53, 100, 'ice'], {
-      en: 'With one hand on an object, the user makes a copy with the other hand.',
-      it: 'Toccando un oggetto con una mano, chi usa l’abilità ne produce una copia con l’altra.',
+      en: 'The user makes an exact copy of a porcelain vase.',
+      it: 'Chi usa l’abilità produce una copia identica di un vaso di porcellana.',
     }),
     ability(['memory-bomb', 'Memory Bomb'], [56, 112, 'ice'], {
       en: 'A bullet fired from a revolver can carry a memory. The person it hits receives that memory.',

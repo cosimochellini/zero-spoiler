@@ -923,7 +923,7 @@ export const yorknewCity: HunterSaga = {
     'uvogin': {
       ability: [{ episode: 44, chapter: 76, value: ['big-bang-impact'] }],
       nen: [
-        { episode: 43, chapter: 74, value: 'unknown' },
+        { episode: 44, chapter: 75, value: 'unknown' },
         { episode: 46, chapter: 79, value: 'enhancer', source: 'chapter' },
       ],
       relationships: yorknewCityRelationships.uvogin,
@@ -986,7 +986,10 @@ export const yorknewCity: HunterSaga = {
     },
     'franklin': {
       ability: [{ episode: 44, chapter: 76, value: ['double-machine-gun'] }],
-      nen: [{ episode: 44, chapter: 76, value: 'emitter' }],
+      nen: [
+        { episode: 44, chapter: 76, value: 'unknown', source: 'episode' },
+        { episode: 44, chapter: 76, value: 'emitter', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.franklin,
       chronicle: [
         ...yorknewCityChronicles.franklin,
@@ -1441,8 +1444,7 @@ export const yorknewCity: HunterSaga = {
     'shizuku': {
       ability: [{ episode: 43, chapter: 73, value: ['blinky'] }],
       nen: [
-        { episode: 43, chapter: 74, value: 'unknown', source: 'chapter' },
-        { episode: 43, chapter: 73, value: 'conjurer', source: 'episode' },
+        { episode: 43, chapter: 73, value: 'unknown' },
         { episode: 45, chapter: 77, value: 'conjurer', source: 'chapter' },
       ],
       relationships: yorknewCityRelationships.shizuku,
