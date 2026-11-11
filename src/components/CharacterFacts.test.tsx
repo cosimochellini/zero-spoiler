@@ -141,6 +141,43 @@ describe('CharacterFacts', () => {
     },
   )
 
+  it.each([
+    ['en', 'Abilities'],
+    ['it', 'Abilità'],
+  ] as const)(
+    'links Hunter x Hunter’s abilities in %s under %s',
+    async (locale, label) => {
+      await renderUnderSeries(
+        <CharacterFacts
+          facts={facts({
+            nen: 'enhancer',
+            abilities: [
+              { id: 'rock-fist', name: 'Rock Fist' },
+              { id: 'paper-blade', name: 'Paper Blade' },
+            ],
+          })}
+        />,
+        {
+          locale,
+          path: `/hunter-x-hunter/${locale}/characters/gon-freecss`,
+          series: HUNTER_X_HUNTER_SERIES,
+        },
+      )
+
+      expect(
+        screen.getAllByRole('term').map((term) => term.textContent),
+      ).toStrictEqual([locale === 'it' ? 'Tipo di Nen' : 'Nen type', label])
+      expect(
+        screen
+          .getAllByRole('link')
+          .map((link) => [link.textContent, link.getAttribute('href')]),
+      ).toStrictEqual([
+        ['Rock Fist', `/hunter-x-hunter/${locale}/abilities/rock-fist`],
+        ['Paper Blade', `/hunter-x-hunter/${locale}/abilities/paper-blade`],
+      ])
+    },
+  )
+
   it('prints no Nen row on a Hunter x Hunter page without a type', async () => {
     await renderUnderSeries(
       <CharacterFacts facts={facts({ status: 'alive' })} />,

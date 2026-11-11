@@ -1,6 +1,6 @@
 ---
 name: line-drawings
-description: How Zero Spoiler's line drawings are made, checked and audited, so every icon on the site reads as one set. Load it before drawing, redrawing, reviewing or auditing any drawing in src/data/series/<series>/art (One Piece's characters, redrawings, devil fruits, places, arcs and ships; Hunter x Hunter's arcs, characters and places; Game of Thrones' characters and places), and before writing an issue that asks for one.
+description: How Zero Spoiler's line drawings are made, checked and audited, so every icon on the site reads as one set. Load it before drawing, redrawing, reviewing or auditing any drawing in src/data/series/<series>/art (One Piece's characters, redrawings, devil fruits, places, arcs and ships; Hunter x Hunter's arcs, characters, places and Nen abilities; Game of Thrones' characters and places), and before writing an issue that asks for one.
 ---
 
 # Zero Spoiler line drawings

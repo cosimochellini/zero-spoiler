@@ -276,6 +276,14 @@ describe('SiteBar', () => {
       pages: ['Characters', 'Places', 'Fruits', 'Ranks'],
     },
     { series: HUNTER_X_HUNTER_SERIES, pages: ['Characters', 'Places'] },
+    // Once it files its Nen abilities (#924).
+    {
+      series: {
+        ...HUNTER_X_HUNTER_SERIES,
+        kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability' as const],
+      },
+      pages: ['Characters', 'Places', 'Abilities'],
+    },
   ])(
     'links only the pages $series.slug declares',
     async ({ series, pages }) => {

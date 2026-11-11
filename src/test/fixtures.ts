@@ -1,5 +1,6 @@
 import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { foldName } from '~/lib/search/fold'
+import type { AbilityView } from '~/lib/view/abilities'
 import { regionsFor } from '~/lib/view/chart'
 import type { CharacterFacts } from '~/lib/view/facts'
 import type { FruitPlateCount } from '~/lib/view/fruits'
@@ -88,6 +89,30 @@ export function searchable(
   const base = character(over)
 
   return { ...base, folded: base.name.toLowerCase(), aliases: [], ...over }
+}
+
+/** An open Nen ability whose type the story had not told by its threshold. */
+export function untypedAbility(over: Partial<AbilityView> = {}): AbilityView {
+  const base = record({
+    kind: 'ability',
+    id: 'test-ability',
+    name: 'Rock Fist',
+    ...over,
+  })
+
+  return {
+    ...base,
+    summary: 'A punch with all of the user’s aura in one fist.',
+    folded: foldName(base.name),
+    aliases: [],
+    users: [{ id: 'test-user', name: 'Test User', visual: drawing() }],
+    ...over,
+  }
+}
+
+/** An open Nen ability, typed, with one user, which most tests want. */
+export function ability(over: Partial<AbilityView> = {}): AbilityView {
+  return { nen: 'enhancer', ...untypedAbility(over) }
 }
 
 export function fruit(over: Partial<FruitView> = {}): FruitView {

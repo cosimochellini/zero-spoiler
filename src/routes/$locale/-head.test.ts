@@ -7,6 +7,7 @@ import {
 } from '~/lib/progress/series'
 import { absoluteUrl } from '~/lib/seo/site'
 import type { DocumentHead } from '~/lib/view/records'
+import { Route as AbilitiesRoute } from '~/routes/$series/$locale/abilities'
 import { Route as CharactersRoute } from '~/routes/$series/$locale/characters'
 import { Route as FruitsRoute } from '~/routes/$series/$locale/fruits'
 import { Route as LandingRoute } from '~/routes/$series/$locale/index'
@@ -161,6 +162,24 @@ describe('every page that is not a record’s own', () => {
     expect(
       headOf(RanksRoute, '/hunter-x-hunter/en/ranks', HUNTER_X_HUNTER_SERIES),
     ).toStrictEqual({})
+    expect(
+      headOf(
+        AbilitiesRoute,
+        '/hunter-x-hunter/en/abilities/',
+        HUNTER_X_HUNTER_SERIES,
+      ),
+    ).toStrictEqual({})
+  })
+
+  it('titles the abilities page once the series files the kind', () => {
+    const head = headOf(AbilitiesRoute, '/hunter-x-hunter/en/abilities/', {
+      ...HUNTER_X_HUNTER_SERIES,
+      kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability'],
+    })
+
+    expect(head.meta?.[0]?.title).toBe(
+      'Nen abilities | Hunter x Hunter | Zero Spoiler',
+    )
   })
 })
 

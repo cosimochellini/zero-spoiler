@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
+import { withFeatures } from '~/data/features'
 import { archiveOf, OPEN_SERIES } from '~/data/series'
 import type { SeriesArchive } from '~/data/types'
 import { SITE_ORIGIN } from '~/lib/seo/site'
@@ -9,12 +10,14 @@ import { sitemapXml } from './sitemap.server'
 vi.mock(import('~/data/series'), async (original) => {
   const registry = await original()
   const base = await registry.archiveOf('one-piece')
+  // Lookups that find nothing: One Piece files no ability.
+  const none = withFeatures(base)
   const other: SeriesArchive = {
     ...base,
     series: {
       ...base.series,
       slug: 'test-series',
-      kinds: ['character'],
+      kinds: ['character', 'ability'],
       features: {
         bounty: false,
         factions: false,
@@ -37,7 +40,21 @@ vi.mock(import('~/data/series'), async (original) => {
         })),
     ],
     places: [],
-    features: {},
+    // One Nen ability, so its index and its page are listed (#923).
+    features: {
+      abilities: {
+        abilities: base.characters
+          .slice(2, 3)
+          .map((entity) => ({
+            ...entity,
+            id: 'test-ability',
+            kind: 'ability' as const,
+          })),
+        abilityNenOf: none.abilityNenOf,
+        getAbility: none.getAbility,
+        usersOf: none.usersOf,
+      },
+    },
   }
   const loadOther = vi
     .fn<() => Promise<SeriesArchive>>()
@@ -85,5 +102,14 @@ describe('a sitemap with more than one series', () => {
 
     await expect(sitemapXml()).resolves.toBe(xml)
     expect(archiveOf).toHaveBeenCalledTimes(OPEN_SERIES.length * 2)
+  })
+
+  it('lists the abilities of a series that files the kind', async () => {
+    const xml = await sitemapXml()
+
+    expect(xml).toContain(`${SITE_ORIGIN}/test-series/en/abilities</loc>`)
+    expect(xml).toContain(
+      `${SITE_ORIGIN}/test-series/en/abilities/test-ability</loc>`,
+    )
   })
 })

@@ -18,6 +18,14 @@ describe('HomeWelcome', () => {
       pages: ['characters', 'places', 'fruits', 'ranks', 'filler'],
     },
     { series: HUNTER_X_HUNTER_SERIES, pages: ['characters', 'places'] },
+    // Once it files its Nen abilities (#924).
+    {
+      series: {
+        ...HUNTER_X_HUNTER_SERIES,
+        kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability' as const],
+      },
+      pages: ['characters', 'places', 'abilities'],
+    },
   ])(
     'points only to the pages $series.slug declares',
     async ({ series, pages }) => {
