@@ -50,8 +50,8 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 381,
       name: { it: 'Keeney', en: 'Keeney' },
       summary: {
-        it: 'Uno degli Hunter di guardia a Kachow. Un messaggio in codice gli affida un incarico.',
-        en: 'One of Kacho’s Hunter guards. A coded message puts him in charge of an assignment.',
+        it: 'Uno degli Hunter di guardia a Kachow. Una telefonata gli affida un incarico.',
+        en: 'One of Kacho’s Hunter guards. A caller puts him in charge of an assignment.',
       },
       visual: { art: 'keeney', tint: 'violet' },
     },
@@ -206,8 +206,8 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'Hunter and Tenth Prince’s guard',
       },
       log: {
-        it: 'Uno degli Hunter di guardia a Kachow. Un messaggio in codice gli affida un incarico.',
-        en: 'One of Kacho’s Hunter guards. A coded message puts him in charge of an assignment.',
+        it: 'Uno degli Hunter di guardia a Kachow. Una telefonata gli affida un incarico.',
+        en: 'One of Kacho’s Hunter guards. A caller puts him in charge of an assignment.',
       },
       affiliation: [
         {

@@ -4139,7 +4139,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
     '148:383': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_383',
-      note: 'Chapters 377 and 383: Keeney’s En and the request to Melody (377); the piano solo, the escort to the lifeboat, the last-resort instruction, the shot, and the flashback with his wife and daughter and the risk to the Association (383).',
+      note: 'Chapter 383: the piano solo, the escort to the lifeboat, the last-resort instruction, the shot, and the flashback with his wife and daughter and the risk to the Association.',
     },
   },
   'tajao': {

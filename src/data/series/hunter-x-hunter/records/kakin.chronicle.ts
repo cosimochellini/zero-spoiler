@@ -1833,7 +1833,7 @@ export const kakinChronicles = {
   'keeney': [
     told(
       381,
-      { it: 'L’incarico in codice', en: 'The coded assignment' },
+      { it: 'La telefonata a Melody', en: 'The call to Melody' },
       {
         it: 'Keeney sorveglia gli alloggi di [[kacho-hui-guo-rou|Kachow]] con l’En. Quando qualcuno compare all’improvviso nel letto del principe, sospetta che sia la gemella. Più tardi uno degli uomini di Mizaistom telefona a [[melody|Melody]]. Le dice che Keeney guiderà il tentativo di impedire ai due principi di fuggire.',
         en: 'Keeney watches [[kacho-hui-guo-rou|Kacho]]’s quarters with En. When someone suddenly appears in the prince’s bed, he suspects it is her twin. Later one of Mizaistom’s men calls [[melody|Melody]]. He says Keeney will lead the effort to stop the twins from escaping.',
@@ -1843,8 +1843,8 @@ export const kakinChronicles = {
       383,
       { it: 'Il posto dove morire', en: 'A place to die' },
       {
-        it: 'Keeney, uno degli Hunter di guardia a [[kacho-hui-guo-rou|Kachow]], ha percepito con l’En qualcuno comparire nel letto del principe, quasi certamente la gemella [[fugetsu-hui-guo-rou|Fugetsu]], e lascia la cosa a [[melody|Melody]]. Al banchetto della domenica suona un assolo di pianoforte. Mentre il flauto di Melody incanta i presenti, guida le gemelle oltre i soldati storditi fino a una scialuppa e dice loro di usare la loro abilità solo come ultima risorsa. Poi si spara. Due anni prima la moglie e la figlia erano morte in un incidente, e da allora cercava un posto dove morire. Così nessun complice potrà ricondurre la fuga all’Associazione Hunter.',
-        en: 'Keeney, one of [[kacho-hui-guo-rou|Kacho]]’s Hunter guards, has sensed with En someone appear in the prince’s bed, most likely her twin [[fugetsu-hui-guo-rou|Fugetsu]], and leaves the matter to [[melody|Melody]]. At the Sunday banquet he plays a piano solo. While Melody’s flute holds the listeners, he leads the twins past the stunned soldiers to a lifeboat and tells them to use their ability only as a last resort. Then he shoots himself. Two years earlier his wife and daughter had died in an accident, and since then he had been looking for a place to die. This way no accomplice can tie the escape to the Hunter Association.',
+        it: 'Al banchetto della domenica suona un assolo di pianoforte. Mentre il flauto di Melody incanta i presenti, guida le gemelle oltre i soldati storditi fino a una scialuppa e dice loro di usare la loro abilità solo come ultima risorsa. Poi si spara. Due anni prima la moglie e la figlia erano morte in un incidente, e da allora cercava un posto dove morire. Così nessun complice potrà ricondurre la fuga all’Associazione Hunter.',
+        en: 'At the Sunday banquet he plays a piano solo. While Melody’s flute holds the listeners, he leads the twins past the stunned soldiers to a lifeboat and tells them to use their ability only as a last resort. Then he shoots himself. Two years earlier his wife and daughter had died in an accident, and since then he had been looking for a place to die. This way no accomplice can tie the escape to the Hunter Association.',
       },
     ),
   ],

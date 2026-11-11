@@ -3855,10 +3855,10 @@ held to: every story below has a row, and every row below has a story.
 
 ## Keeney (`keeney`, threshold ep 148)
 
-| Entry (en title)     | Episode | Fandom page that settles it                       | Note                                                                                                                                                                                                                                      |
-| -------------------- | ------: | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The coded assignment |     148 | https://hunterxhunter.fandom.com/wiki/Chapter_381 | Chapter 381: Chapters 377 and 381: Keeney’s En (377) and the caller who names Keeney in his instructions to Melody (381).                                                                                                                 |
-| A place to die       |     148 | https://hunterxhunter.fandom.com/wiki/Chapter_383 | Chapters 377 and 383: Keeney’s En and the request to Melody (377); the piano solo, the escort to the lifeboat, the last-resort instruction, the shot, and the flashback with his wife and daughter and the risk to the Association (383). |
+| Entry (en title)   | Episode | Fandom page that settles it                       | Note                                                                                                                                                                          |
+| ------------------ | ------: | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The call to Melody |     148 | https://hunterxhunter.fandom.com/wiki/Chapter_381 | Chapter 381: Chapters 377 and 381: Keeney’s En (377) and the caller who names Keeney in his instructions to Melody (381).                                                     |
+| A place to die     |     148 | https://hunterxhunter.fandom.com/wiki/Chapter_383 | Chapter 383: the piano solo, the escort to the lifeboat, the last-resort instruction, the shot, and the flashback with his wife and daughter and the risk to the Association. |
 
 ## Shikaku (`shikaku`, threshold ep 148)
 
