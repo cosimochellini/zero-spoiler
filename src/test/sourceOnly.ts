@@ -30,7 +30,7 @@ export interface Planted {
   /** The redrawing planted on `host`. */
   strokes: Stroke[]
   /** The planted record of each kind. */
-  twin: Record<PlantedKind, Entity>
+  twin: Record<Exclude<EntityKind, 'ability'>, Entity>
 }
 
 /**

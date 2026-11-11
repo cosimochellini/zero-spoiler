@@ -29,9 +29,6 @@ import {
  * drifting fog for every record (`FogTile`).
  */
 
-/** What a tile draws of its record: a name, a drawing, an id to link by. */
-type TileRecord = Pick<RecordView, 'id' | 'name' | 'visual'>
-
 /** The kinds of record an album tile is, and the page each leads to. */
 const TILE_PAGE = {
   ability: '/$series/$locale/abilities/$id',
@@ -46,7 +43,7 @@ export type TileKind = keyof typeof TILE_PAGE
  * and under it only the `lines` already public. Lifted by hand, the fog
  * clears and the record's link draws itself in.
  */
-export function CoveredTile<T extends TileRecord>({
+export function CoveredTile<T extends RecordView>({
   covered,
   kind,
   lines,
@@ -91,7 +88,7 @@ export interface UsedTileProps {
   highlight: [number, number] | null
   kind: TileKind
   morph: boolean
-  record: TileRecord
+  record: RecordView
   /** The count of the users not shown, said in full. */
   said: (count: number) => string
   /** The users the reader has reached, earliest first. */
@@ -150,7 +147,7 @@ function TileLink({
   highlight: [number, number] | null
   kind: TileKind
   morph: boolean
-  record: TileRecord
+  record: RecordView
 }): ReactElement {
   const { series, locale } = useSeriesParams()
   // Only a fruit travels to its page; an ability's page has no morph.

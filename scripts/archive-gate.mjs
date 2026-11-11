@@ -397,7 +397,8 @@ export function placeWordCanaries(series, shipped = []) {
  * One canary per word of every series' own copy that is distinct enough to
  * look for and is not also in the shared copy, which every page ships: "Your
  * bookmark" is a word of One Piece's filler strip and part of a shared
- * sentence. A series left with none is one unreadable canary, so the gate
+ * sentence. A single word is looked for quoted: the route tree's
+ * `SeriesLocaleAbilitiesIdRoute` holds "Abilities" and is no copy (#923). A series left with none is one unreadable canary, so the gate
  * exits as unusable rather than vouching for a copy it cannot look for.
  * @param {Record<string, Record<string, Record<string, string>>>} copies Each series' copy, by slug and locale.
  * @param {Record<string, string>[]} shared The shared dictionaries.
@@ -419,7 +420,7 @@ export function copyCanaries(copies, shared) {
     // None left is a copy the gate cannot look for: unreadable, not clean.
     return kept.length === 0 ?
         { file, phrase: null }
-      : kept.map((phrase) => ({ file, phrase }))
+      : kept.map((phrase) => ({ file, phrase, quoted: !/\s/u.test(phrase) }))
   })
 }
 

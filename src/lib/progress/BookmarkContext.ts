@@ -74,9 +74,6 @@ export type Threshold<S extends SeriesSlug = never> = (
   gated: Gated,
 ) => string
 
-/** A series with threshold sentences of its own features. */
-type FeatureSeries = 'hunter-x-hunter' | 'one-piece'
-
 /**
  * Names a record's threshold in the unit the reader counts in, so a card
  * says "Chapter 218" to a manga reader and "Episode 130" to everyone else.
@@ -85,12 +82,12 @@ type FeatureSeries = 'hunter-x-hunter' | 'one-piece'
  * another series' page, so a caller branches on it.
  */
 export function useThreshold(): Threshold
-export function useThreshold<S extends FeatureSeries>(
+export function useThreshold<S extends SeriesSlug>(
   slug: S,
 ): Threshold<S> | undefined
 export function useThreshold(
-  slug?: FeatureSeries,
-): Threshold | Threshold<FeatureSeries> | undefined {
+  slug?: SeriesSlug,
+): Threshold | Threshold<SeriesSlug> | undefined {
   const shared = useSeriesT()
   const own = useSeriesT(slug ?? 'one-piece')
   const { bookmark } = useBookmark()
@@ -103,8 +100,8 @@ export function useThreshold(
         describeThreshold({ gated, mode, sentence, t: shared, series })
     }
     return own === undefined ? undefined : (
-        (sentence: ThresholdSentence<FeatureSeries>, gated: Gated) =>
-          describeThreshold<FeatureSeries>({
+        (sentence: ThresholdSentence<SeriesSlug>, gated: Gated) =>
+          describeThreshold<SeriesSlug>({
             gated,
             mode,
             sentence,

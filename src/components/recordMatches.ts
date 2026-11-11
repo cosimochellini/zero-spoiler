@@ -35,12 +35,9 @@ export interface EaterMatch {
   highlight: [number, number] | null
 }
 
-/** What a tile's user pick reads: its folded name and its users. */
-type Used = Pick<SpecimenView, 'eaters' | 'folded'>
-
 /** The first of these eaters whose name, as the tile prints it, the query finds. */
 function namedMatch(
-  fruit: Used,
+  fruit: Pick<SpecimenView, 'eaters' | 'folded'>,
   needle: string,
   among: number[],
 ): EaterMatch | undefined {
@@ -67,7 +64,10 @@ function namedMatch(
  * on a name only the other locale uses: the mark would point at letters that
  * are not there.
  */
-export function eaterMatch(fruit: Used, needle: string): EaterMatch {
+export function eaterMatch(
+  fruit: Pick<SpecimenView, 'eaters' | 'folded'>,
+  needle: string,
+): EaterMatch {
   const found =
     needle === '' || fruit.folded.includes(needle) ?
       undefined

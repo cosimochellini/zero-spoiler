@@ -37,14 +37,6 @@ export function factionsOf(at: Reveal, owner: Entity): Faction[] | undefined {
 }
 
 /**
- * A character the dossiers say ate a fruit, and the gate of the entry that
- * says so: the later of that entry and the character, because a character
- * filed long before the story says what they ate must not be named as an
- * eater the moment the reader meets them.
- */
-export type { Eater } from '~/data/features'
-
-/**
  * Every character the dossiers say ate this fruit, earliest first, read in
  * the order the dossiers are filed (`usersBy`). Empty for an id the archive
  * does not file, which is the same answer a fruit nobody has eaten would

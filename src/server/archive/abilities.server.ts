@@ -8,7 +8,7 @@ import type {
 import type { AbilityNen } from '~/lib/view/facts'
 import type { DocumentHead } from '~/lib/view/records'
 
-import { gatedOf } from './fruits.server'
+import { openUsersOf } from './fruits.server'
 import { headFor, type HeadKeys } from './head.server'
 import { abilityOf, deferredOf } from './project.server'
 import type { Reader } from './reader.server'
@@ -42,20 +42,9 @@ const ABILITY_HEAD: HeadKeys = {
   pageTitle: 'ability.pageTitle',
 }
 
-/**
- * The users of an ability the reader has reached, in `usersOf` order. The
- * rest are dropped rather than covered, as a fruit's eaters on its tile: a
- * place kept for them would count them.
- */
-function openUsers(id: string, r: Reader): Entity[] {
-  return r.archive
-    .usersOf(id)
-    .flatMap((user) => (r.sees(gatedOf(user)) ? [user.entity] : []))
-}
-
 /** An open ability, with the users the reader has reached. */
 export function openAbilityOf(entity: Entity, r: Reader): AbilityView {
-  return abilityOf(entity, openUsers(entity.id, r), r)
+  return abilityOf(entity, openUsersOf(r.archive.usersOf(entity.id), r), r)
 }
 
 /**
