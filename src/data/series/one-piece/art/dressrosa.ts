@@ -36,8 +36,54 @@ const VIOLA_SHOE = 'translate(16 -14)'
  */
 const HAJRUDIN_ARM = 'translate(10.6 20) scale(0.88) rotate(-28 88 108)'
 
-/** The Marine's rifle, drawn level and turned a little in the grass. */
-const LEO_RIFLE = 'translate(8 16) scale(0.9) rotate(-14 80 160)'
+/**
+ * Leo's crown hat in three-quarters, squat: the band round its base with its
+ * front and both edges, three points standing on it, the far two seen inside
+ * between them, the right one bent over at a crease and hanging past the
+ * side, the near point's right half hatched.
+ */
+const LEO_CROWN_HAT: Stroke[] = [
+  {
+    d: 'M34 122 C34 136.7 122 136.7 122 122 V138 C122 152.7 34 152.7 34 138 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M34 122 L40 86 L58 131.8 L78 78 L98 131.8 L106 98 C110 86 124 86 128 100 L131 116 Q120 106 114 110 L122 122',
+    role: 'accent',
+  },
+  { d: 'M51 113.3 L58 92 L65 111.5 M91 111.5 L98 92 L105 113.3', role: 'soft' },
+  { d: 'M106 98 L114 110', role: 'soft' },
+  { d: 'M84 116 l6 -6 M86 126 l7 -7', role: 'ambient' },
+]
+
+/**
+ * Leo's big sewing needle pushed through the hat's band like a pin: the eye
+ * end out on the left, the point out on the right, the thread trailing from
+ * the eye down to the grass.
+ */
+const LEO_NEEDLE: Stroke[] = [
+  { d: 'M38.1 132.5 L18.1 132.1 A4 4 0 0 0 17.9 140.1 L37.9 140.5' },
+  { d: ellipse(25, 136.2, 4.5, 1.8), role: 'soft' },
+  { d: 'M116.1 134 L128.1 134.3 L148 138.7 L127.9 142.3 L115.9 142' },
+  {
+    d: 'M24 138 C26 148 18 152 14 157 C10 164 20 166 30 162 C40 158 48 164 58 162',
+    role: 'soft',
+  },
+]
+
+/** One curled fern of Green Bit, small, behind Leo's hat. */
+const LEO_FERN: Stroke[] = moved(
+  [
+    {
+      d: 'M40 150 C34 118 30 90 38 64 C44 44 68 38 76 52 C82 62 74 74 64 70 C56 67 58 56 66 58 M48 150 C42 120 38 92 44 70 C47 60 54 54 62 54',
+    },
+    {
+      d: 'M38 122 C30 120 26 114 28 108 M36 100 C28 98 25 92 27 86',
+      role: 'soft',
+    },
+  ],
+  'translate(-8.5 47) scale(0.5)',
+)
 
 /** Kanjuro's brush, drawn level and turned to lie across the ground. */
 const KANJURO_BRUSH = 'rotate(-14 80 150)'
@@ -117,30 +163,54 @@ const PUNK_HAZARD_GROUND: Stroke[] = [
   ...SEA.slice(1),
 ]
 
+/** The outline of the old King's Plateau, its crown of points on top. */
+const DRESSROSA_CROWN_EDGE =
+  'M36 102.4 L34 92 L37 80 L33 66 L30 50 L36 58 L42 38 L48 56 L54 44 L58 52 H78 L82 44 L88 56 L94 38 L100 58 L106 48 L103 64 L100 78 L103 90 L98 102.8'
+
 /**
  * The old King's Plateau behind the colosseum, without its palace: a
  * crown-shaped rock with a flat top between its points, the band below
  * them, a few cracks and its far side hatched.
  */
 const DRESSROSA_CROWN: Stroke[] = [
-  {
-    d: 'M36 102.4 L34 92 L37 80 L33 66 L30 50 L36 58 L42 38 L48 56 L54 44 L58 52 H78 L82 44 L88 56 L94 38 L100 58 L106 48 L103 64 L100 78 L103 90 L98 102.8',
-  },
+  { d: DRESSROSA_CROWN_EDGE },
   { d: 'M33 60 C52 68 84 68 104 58', role: 'soft' },
   { d: 'M46 76 L50 84 L48 94 M66 72 L64 84 M82 76 L86 90', role: 'soft' },
   { d: 'M92 72 l6 -3 M92 82 l6 -3 M92 92 l6 -3', role: 'ambient' },
 ]
 
 /**
- * The new King's Plateau Pica raises beside the old one at 680: four steps,
- * the palace on the top one with its towers and door, and its windows.
+ * The Royal Palace, drawn on the middle of its foot: the walls and the tower,
+ * the arched door, and its windows.
+ */
+const DRESSROSA_PALACE: Stroke[] = [
+  { d: 'M-10 0 V-14 H-5 V-24 H5 V-14 H10 V0 M-3 0 V-6 a3 3 0 0 1 6 0 V0' },
+  { d: 'M-7 -10 v4 M7 -10 v4 M-2 -20 v3 M2 -20 v3', role: 'soft' },
+]
+
+/** The four steps of the new King's Plateau Pica raises at 680. */
+const DRESSROSA_STEPS: Stroke = {
+  d: 'M114 132 V124 H117 V116 H120 V108 H123 V100 H149 V108 H152 V116 H155 V124 H158 V132',
+}
+
+/**
+ * The new King's Plateau Pica raises beside the old one at 680: the four
+ * steps, and the palace on the top one.
  */
 const DRESSROSA_NEW_PLATEAU: Stroke[] = [
-  {
-    d: 'M114 132 V124 H117 V116 H120 V108 H123 V100 H149 V108 H152 V116 H155 V124 H158 V132 M126 100 V86 H131 V76 H141 V86 H146 V100 M133 100 V94 a3 3 0 0 1 6 0 V100',
-  },
-  { d: 'M129 90 v4 M143 90 v4 M134 80 v3 M138 80 v3', role: 'soft' },
+  DRESSROSA_STEPS,
+  ...moved(DRESSROSA_PALACE, 'translate(136 100)'),
 ]
+
+/** The old crown alone, its feet on the eaves of Acacia. */
+const DRESSROSA_CROWN_ALONE =
+  'translate(80 140) scale(1.3) translate(-67 -102.6)'
+
+/** Acacia, a row of low houses along the shore, their eaves touching. */
+const DRESSROSA_ACACIA: Stroke = {
+  d: 'M4 150 V140 h12 V150 M0 140 L10 134 L20 140 M8 150 V144 h4 V150 M24 150 V140 h12 V150 M20 140 L30 134 L40 140 M28 150 V144 h4 V150 M44 150 V140 h12 V150 M40 140 L50 134 L60 140 M48 150 V144 h4 V150 M64 150 V140 h12 V150 M60 140 L70 134 L80 140 M68 150 V144 h4 V150 M84 150 V140 h12 V150 M80 140 L90 134 L100 140 M88 150 V144 h4 V150 M104 150 V140 h12 V150 M100 140 L110 134 L120 140 M108 150 V144 h4 V150 M124 150 V140 h12 V150 M120 140 L130 134 L140 140 M128 150 V144 h4 V150 M144 150 V140 h12 V150 M140 140 L150 134 L160 140 M148 150 V144 h4 V150',
+  role: 'soft',
+}
 
 /**
  * The Corrida Colosseum in 3/4: the rim, the round wall, the seating bowl
@@ -168,8 +238,8 @@ const DRESSROSA_TOWN: Stroke = {
   role: 'soft',
 }
 
-/** The shore under the colosseum and the sea, kept by both of its stages. */
-const DRESSROSA_ARC_SHORE: Stroke[] = [
+/** The shore line and the sea, under the island and under the colosseum. */
+const DRESSROSA_SHORE: Stroke[] = [
   { d: 'M-4 150 H164', role: 'ambient' },
   ...SEA,
 ]
@@ -614,7 +684,7 @@ export const dressrosaArt = {
     { d: 'M60 52 V42 H64 V34 H72 V42 H76 V52 M66 52 V48 a2 2 0 0 1 4 0 V52' },
     ...DRESSROSA_COLOSSEUM,
     DRESSROSA_TOWN,
-    ...DRESSROSA_ARC_SHORE,
+    ...DRESSROSA_SHORE,
   ],
 
   // Her ridge helmet in 3/4, the ridge running front to back, the brow band
@@ -1497,47 +1567,18 @@ export const dressrosaArt = {
     shadow(132, 182, 26),
   ],
 
-  // A Marine's rifle left lying in the grass of Green Bit: the butt and
-  // stock with their top face, the fore-stock, the barrel, the trigger
-  // guard, the underside hatched. Behind it the forest's giant ferns, one
-  // still curled and one opened out. In episode 640 a voice in that forest
-  // asks a squad of Marines for their weapons and strips them of all they
-  // carry. Nothing of the voice itself: he is not seen until 641.
+  // His green hat shaped like a crown, in three-quarters and squat, one of
+  // its three points bent over, and the big sewing needle he stitches with
+  // pushed through its band, thread trailing from the eye; a small curled
+  // fern of Green Bit behind. He is first seen in the hat in episode 641
+  // (ch. 711), where he pins Robin to the ground with his needle (Nui Nui).
   'leo': [
-    {
-      d: 'M40 150 C34 118 30 90 38 64 C44 44 68 38 76 52 C82 62 74 74 64 70 C56 67 58 56 66 58 M48 150 C42 120 38 92 44 70 C47 60 54 54 62 54',
-    },
-    {
-      d: 'M38 122 C30 120 26 114 28 108 M36 100 C28 98 25 92 27 86',
-      role: 'soft',
-    },
-    {
-      d: 'M30 152 C32 146 34 142 38 140 M54 150 C54 144 56 140 60 138 M108 146 C108 140 110 136 114 134 M130 144 C132 138 134 134 138 132',
-      role: 'ambient',
-    },
-    { d: 'M120 143 C118 118 126 96 148 80' },
-    {
-      d: 'M119 134 q-12 -2 -16 -10 M120 124 q12 -4 16 -14 M121 114 q-11 -2 -14 -9 M124 106 q10 -4 13 -12 M128 98 q-9 -2 -11 -8 M133 91 q8 -3 10 -9 M139 86 q-6 -1 -8 -6',
-      role: 'soft',
-    },
-    {
-      d: 'M14 150 C34 150 54 153 70 156 H122 V163 H74 C62 165 44 172 18 176 Q12 164 14 150 Z',
-      role: 'accent',
-      transform: LEO_RIFLE,
-    },
-    {
-      d: 'M14 150 L19 146 C38 146 56 149 72 152 H122 L122 156',
-      role: 'accent',
-      transform: LEO_RIFLE,
-    },
-    { d: 'M122 157.5 H152 V161.5 H122 M146 157.5 v-3', transform: LEO_RIFLE },
-    { d: 'M78 163 C78 170 86 170 88 163', role: 'soft', transform: LEO_RIFLE },
-    {
-      d: 'M26 172 l6 -8 M38 169 l6 -7 M50 166 l5 -5 M90 163 l3 -4 M102 163 l3 -4',
-      role: 'ambient',
-      transform: LEO_RIFLE,
-    },
-    shadow(84, 184, 66),
+    ...LEO_FERN,
+    ...moved(
+      [...LEO_CROWN_HAT, ...LEO_NEEDLE],
+      'translate(-12 -22.5) scale(1.15)',
+    ),
+    shadow(80, 182, 66),
   ],
 
   // The toy soldier's one roller skate in three-quarters: the black shoe
@@ -1789,28 +1830,21 @@ export const dressrosaArt = {
     shadow(80, 170, 64),
   ],
 
-  // A rocky island seen from the sea, a tall craggy rock rising over the
-  // rooftops along its shore. Shut in the Birdcage from 680 and left in
-  // rubble under a new King's Plateau from 734, in `dressrosaRedrawn`.
+  // The island from the sea: the crown-shaped King's Plateau, its outline
+  // taking the accent, with the Royal Palace on its flat top, and the low
+  // houses of Acacia along the shore at its foot. The Straw Hats sail up to
+  // it in episode 629. Shut in the Birdcage under a new plateau from 680 and
+  // left in rubble from 734, in `dressrosaRedrawn`.
   'dressrosa': [
     {
-      d: 'M30 128 L38 100 L34 88 L46 72 L50 56 L64 48 L76 52 L88 44 L100 50 L110 64 L118 70 L122 90 L130 104 L132 128',
+      d: DRESSROSA_CROWN_EDGE,
       role: 'accent',
+      transform: DRESSROSA_CROWN_ALONE,
     },
-    {
-      d: 'M56 64 L62 80 L58 96 M96 60 L90 78 L98 92 M76 70 L80 88',
-      role: 'soft',
-    },
-    {
-      d: 'M-4 150 C10 140 20 132 30 128 H132 C144 132 152 140 164 150',
-      role: 'accent',
-    },
-    { d: house(16, 12, 138, 130), role: 'soft' },
-    { d: house(40, 14, 134, 124), role: 'soft' },
-    { d: house(106, 14, 134, 124), role: 'soft' },
-    { d: house(132, 12, 138, 130), role: 'soft' },
-    { d: 'M68 150 V138 h10 V150 M84 150 V136 h10 V150', role: 'soft' },
-    ...SEA,
+    ...moved(DRESSROSA_CROWN.slice(1), DRESSROSA_CROWN_ALONE),
+    ...moved(DRESSROSA_PALACE, `${DRESSROSA_CROWN_ALONE} translate(68 52)`),
+    DRESSROSA_ACACIA,
+    ...DRESSROSA_SHORE,
   ],
 
   // One of his studded wristbands, standing on its edge in the folds of his
@@ -2564,11 +2598,132 @@ const SNOWFALL: Stroke = {
   role: 'ambient',
 }
 
-// The island's rock and shore over the sea, kept by both of its later stages.
-const DRESSROSA_COAST: Stroke[] = [
-  ...dressrosaArt.dressrosa.slice(0, 1),
-  ...dressrosaArt.dressrosa.slice(2, 3),
-  ...SEA,
+/**
+ * The Kurozumi crest painted in ink, drawn round the middle of its pentagon:
+ * the pentagon pointing down with a drop of ink running off its point, and a
+ * three-pronged mark standing out from each of its five sides.
+ */
+const KUROZUMI_CREST: Stroke[] = [
+  {
+    d: 'M0 10 L-9.5 3.1 L-5.9 -8.1 L5.9 -8.1 L9.5 3.1 Z V20 q-3 6 0 8 q3 -2 0 -8',
+    role: 'accent',
+  },
+  {
+    d: 'M-2 -8.6 L-2 -13.5 L-5.5 -15 L-7 -21 L-3.8 -17.6 L-1.4 -17.4 L0 -24 L1.4 -17.4 L3.8 -17.6 L7 -21 L5.5 -15 L2 -13.5 L2 -8.6 M7.6 -4.6 L12.2 -6.1 L12.6 -9.9 L17.8 -13.1 L15.6 -9.1 L16.1 -6.7 L22.8 -7.4 L17 -4 L17.9 -1.8 L22.1 0.2 L16 0.6 L13.5 -2.3 L8.8 -0.8 M6.7 5.8 L9.6 9.7 L13.3 8.9 L18 12.9 L13.4 12 L11.4 13.3 L14.1 19.4 L9.1 14.9 L7.3 16.5 L6.7 21.1 L4.4 15.4 L6.3 12.1 L3.4 8.1 M-3.4 8.1 L-6.3 12.1 L-4.4 15.4 L-6.7 21.1 L-7.3 16.5 L-9.1 14.9 L-14.1 19.4 L-11.4 13.3 L-13.4 12 L-18 12.9 L-13.3 8.9 L-9.6 9.7 L-6.7 5.8 M-8.8 -0.8 L-13.5 -2.3 L-16 0.6 L-22.1 0.2 L-17.9 -1.8 L-17 -4 L-22.8 -7.4 L-16.1 -6.7 L-15.6 -9.1 L-17.8 -13.1 L-12.6 -9.9 L-12.2 -6.1 L-7.6 -4.6',
+    role: 'accent',
+  },
+]
+
+/** The crest in plain ink, for the stages whose accent is their own reveal. */
+const KUROZUMI_INK: Stroke[] = withoutAccent(KUROZUMI_CREST)
+
+/**
+ * Leo's pirate hat: the crown, the brim turned up into two wide wings curling
+ * at the tips, two feathers, the far side hatched; on the crown's front the
+ * Tontatta Pirates' Jolly Roger, a skull under a chestnut hat over the ends
+ * of its crossed bones.
+ */
+const LEO_PIRATE_HAT: Stroke[] = [
+  { d: 'M50 102 C46 70 60 52 80 52 C100 52 114 70 110 102' },
+  {
+    d: 'M50 102 C40 96 32 86 28 74 C26 66 18 64 15 71 C12 79 18 87 26 89 C32 110 54 124 80 124 C106 124 128 110 134 89 C142 87 148 79 145 71 C142 64 134 66 132 74 C128 86 120 96 110 102',
+    role: 'accent',
+  },
+  {
+    d: 'M101 64 l4 -3 M104 74 l5 -4 M106 85 l4 -3 M107 96 l4 -3 M126 104 l4 -4 M131 96 l3 -4',
+    role: 'ambient',
+  },
+  {
+    d: 'M104 62 C112 44 126 32 146 26 C140 42 124 56 106 68 M108 72 C120 60 136 54 154 54 C146 64 130 72 109 78',
+  },
+  {
+    d: 'M50 102 Q80 112 110 102 M106 66 C118 52 130 40 146 26 M108 75 C122 66 138 58 154 54',
+    role: 'soft',
+  },
+  {
+    d: 'M70 82 C70 74 86 74 86 82 C86 87 83 88 82 91 H74 C73 88 70 87 70 82 Z',
+  },
+  { d: 'M69 77 C70 68 75 64 78 61 C81 64 86 68 87 77 Q78 73 69 77 Z' },
+  {
+    d: `M66 70 l4 4 M90 70 l-4 4 M66 94 l5 -4 M90 94 l-5 -4 ${dots([
+      [75, 82],
+      [81, 82],
+    ])}`,
+    role: 'soft',
+  },
+]
+
+/** Leo's needle where the hat's band hides it, for when nothing does. */
+const LEO_NEEDLE_SHANK: Stroke = {
+  d: 'M38.1 132.5 L116.1 134 M37.9 140.5 L115.9 142',
+}
+
+/**
+ * Kyros's gladiator sword lying in the grass: a plain broad blade with its
+ * ridge, the cross guard, the grip and a round pommel.
+ */
+const KYROS_SWORD: Stroke[] = [
+  {
+    d: 'M47.3 163.6 L132.8 147.5 L151.6 150.1 L135 159.3 L49.5 175.4',
+    role: 'accent',
+  },
+  { d: 'M49.4 169.3 L145.7 151.2', role: 'soft' },
+  { d: 'M41.1 157.7 L46 156.7 L50.8 182.3 L45.9 183.3 Z' },
+  {
+    d: `M42.9 167.6 L18.5 172.2 M44.1 173.5 L19.6 178.1 ${circle(14.6, 175.8, 4.5)}`,
+  },
+]
+
+/** Pica's spade chair, smaller and to the left, sunk to its seat. */
+const PICA_SUNK = 'translate(-10 46) scale(0.74)'
+
+/**
+ * The Birdcage over the whole island at 680, its strings running down from
+ * its top.
+ */
+const BIRDCAGE: Stroke[] = [
+  { d: 'M0 150 A80 134 0 0 1 160 150' },
+  {
+    d: 'M20 150 A60 134 0 0 1 140 150 M40 150 A40 134 0 0 1 120 150 M60 150 A20 134 0 0 1 100 150 M80 16 V150',
+    role: 'ambient',
+  },
+]
+
+/** The old crown beside the new plateau, from 680. */
+const DRESSROSA_CROWN_BESIDE =
+  'translate(50 140) scale(0.97) translate(-67 -102.6)'
+
+/** The new plateau beside the old crown, from 680. */
+const DRESSROSA_STEPS_BESIDE =
+  'translate(120 134) scale(1.36) translate(-136 -132)'
+
+/**
+ * The island from 680: the old crown bare, and the new stepped plateau
+ * beside it taking the accent, the palace on its top.
+ */
+const DRESSROSA_PLATEAUS: Stroke[] = [
+  ...moved(DRESSROSA_CROWN, DRESSROSA_CROWN_BESIDE),
+  { ...DRESSROSA_STEPS, role: 'accent', transform: DRESSROSA_STEPS_BESIDE },
+  ...moved(DRESSROSA_PALACE, `${DRESSROSA_STEPS_BESIDE} translate(136 100)`),
+]
+
+/**
+ * Acacia diced at 734: tumbled blocks along the shore, the old crown's feet
+ * and the new plateau's resting on four of them.
+ */
+const DRESSROSA_ACACIA_DICED: Stroke[] = [
+  {
+    d: 'M0.3 140.8 L11.2 139.3 L12.7 150.2 L1.8 151.7 Z M0.3 140.8 L2.6 137.2 L13.5 135.7 L15 146.6 L12.7 150.2 M11.2 139.3 L13.5 135.7 M16.3 143.3 L24.3 143.9 L23.7 151.9 L15.7 151.3 Z M16.3 143.3 L18.6 139.7 L26.6 140.3 L26 148.3 L23.7 151.9 M24.3 143.9 L26.6 140.3',
+    role: 'soft',
+  },
+  {
+    d: 'M31 139.2 L43.8 137 L46 149.8 L33.2 152 Z M31 139.2 L33.3 135.6 L46.1 133.4 L48.3 146.2 L46 149.8 M43.8 137 L46.1 133.4 M58.1 140.1 L67.9 142.1 L65.9 151.9 L56.1 149.9 Z M58.1 140.1 L60.4 136.5 L70.2 138.5 L68.2 148.3 L65.9 151.9 M67.9 142.1 L70.2 138.5 M75.7 143.9 L83.7 143.3 L84.3 151.3 L76.3 151.9 Z M75.7 143.9 L78 140.3 L86 139.7 L86.6 147.7 L84.3 151.3 M83.7 143.3 L86 139.7',
+    role: 'soft',
+  },
+  {
+    d: 'M87.4 137.2 L101.4 138 L100.6 152 L86.6 151.2 Z M87.4 137.2 L89.7 133.6 L103.7 134.4 L102.9 148.4 L100.6 152 M101.4 138 L103.7 134.4 M105.9 142.4 L115.6 139.9 L118.1 149.6 L108.4 152.1 Z M105.9 142.4 L108.2 138.8 L117.9 136.3 L120.4 146 L118.1 149.6 M115.6 139.9 L117.9 136.3 M125 139.1 L135.9 141 L134 151.9 L123.1 150 Z M125 139.1 L127.3 135.5 L138.2 137.4 L136.3 148.3 L134 151.9 M135.9 141 L138.2 137.4 M142.6 138 L156.6 137.2 L157.4 151.2 L143.4 152 Z M142.6 138 L144.9 134.4 L158.9 133.6 L159.7 147.6 L157.4 151.2 M156.6 137.2 L158.9 133.6',
+    role: 'soft',
+  },
 ]
 
 /** The records of this stretch drawn again, from the episode the story changes them. */
@@ -2801,15 +2956,28 @@ export const dressrosaRedrawn: Redrawings = {
       ),
     },
   ],
-  // His brush in the snow with no sparrow beside it, the tip of the bristles
-  // taking the accent, and the straw kasa Kin'emon lays over him dropped by
-  // it. Kikunojo cuts him down at the back gate at 994 (ch. 986). At 1024
-  // (ch. 1008) the Oden who walks in is his drawing, and he says he is
-  // deeply wounded: the brush is up off the snow again, ink running off its
-  // tip, and the kasa lies empty. At 1055 (ch. 1030) he paints Kazenbo with
-  // the last of his strength and collapses dead: the brush lies on broken
-  // floorboards and a tongue of flame rises off its bristles.
+  // The brush as first drawn, and where the sparrow stood the Kurozumi
+  // family's crest painted in ink, the accent, a drop running off its point:
+  // he reveals himself as Orochi's spy, a Kurozumi, at 977 (ch. 974). The
+  // crest stays, in plain ink, in every stage after it. His brush in the
+  // snow, the tip of the bristles taking the accent, and the straw kasa
+  // Kin'emon lays over him dropped by it: Kikunojo cuts him down at the back
+  // gate at 994 (ch. 986). At 1024 (ch. 1008) the Oden who walks in is his
+  // drawing, and he says he is deeply wounded: the brush is up off the snow
+  // again, ink running off its tip, and the kasa lies empty. At 1055 (ch.
+  // 1030) he paints Kazenbo with the last of his strength and collapses
+  // dead: the brush lies on broken floorboards and a tongue of flame rises
+  // off its bristles.
   'kanjuro': [
+    {
+      episode: 977,
+      chapter: 974,
+      value: [
+        ...KANJURO_LAID,
+        ...dressrosaArt.kanjuro.slice(9, 10),
+        ...moved(KUROZUMI_CREST, 'translate(64 88) scale(1.5)'),
+      ],
+    },
     {
       episode: 994,
       chapter: 986,
@@ -2824,6 +2992,7 @@ export const dressrosaRedrawn: Redrawings = {
         ...moved(KANJURO_KASA, 'translate(4 14)'),
         SNOWFALL,
         ...dressrosaArt.kanjuro.slice(9, 10),
+        ...moved(KUROZUMI_INK, 'translate(90 108)'),
       ],
     },
     {
@@ -2838,6 +3007,7 @@ export const dressrosaRedrawn: Redrawings = {
         ...moved(KANJURO_KASA, 'translate(60 46)'),
         SNOWFALL,
         ...dressrosaArt.kanjuro.slice(9, 10),
+        ...moved(KUROZUMI_INK, 'translate(72 58)'),
       ],
     },
     {
@@ -2854,6 +3024,7 @@ export const dressrosaRedrawn: Redrawings = {
           d: 'M4 172 H60 L66 166 L70 174 H156 M10 184 H96 L100 178 L106 186 H156',
           role: 'ambient',
         },
+        ...moved(KUROZUMI_INK, 'translate(98 106)'),
       ],
     },
   ],
@@ -2950,65 +3121,64 @@ export const dressrosaRedrawn: Redrawings = {
       ],
     },
   ],
-  // His pirate hat set in the grass behind the rifle: the crown dotted, the
-  // brim turned up into two wide wings curling at the tips, two feathers at
-  // the back, and its far side hatched. No crew mark, and no goggles: they
-  // are his old outfit's, and on the brim they read as eyes. The curled fern
-  // stands beside it. He wears it at the Reverie (884, ch. 906).
+  // The same skate empty, turned over on its collar with its wheels up, and
+  // in front of it the plain broad sword of the gladiator, the accent. Sugar
+  // faints, the toys turn back into people, and he is a man again, cutting
+  // Doflamingo's double down, at 677 (ch. 743).
+  'kyros': [
+    {
+      episode: 677,
+      chapter: 743,
+      value: [
+        ...moved(
+          withoutAccent([
+            ...dressrosaArt.kyros.slice(0, 1),
+            ...dressrosaArt.kyros.slice(2, 6),
+          ]),
+          'translate(4 12.7) scale(0.9) rotate(205 80 118)',
+        ),
+        shadow(80, 141, 46),
+        ...moved(KYROS_SWORD, 'translate(0 4)'),
+      ],
+    },
+  ],
+  // His pirate hat in place of the crown hat: the brim turned up into two
+  // wide wings, two feathers on the wearer's left, and on its front the Jolly Roger
+  // of his crew, the Tontatta Pirates, a skull in a chestnut hat over
+  // crossed bones. The needle lies whole in the grass in front, the fern
+  // behind. He wears it sailing to the Reverie with the Riku family at 879
+  // (ch. 903).
   'leo': [
     {
-      episode: 884,
-      chapter: 906,
+      episode: 879,
+      chapter: 903,
       value: [
-        ...moved(dressrosaArt.leo.slice(0, 2), 'translate(-18 16) scale(0.9)'),
-        ...moved(
-          [
-            { d: 'M50 102 C46 70 60 52 80 52 C100 52 114 70 110 102' },
-            {
-              d: 'M50 102 C40 96 32 86 28 74 C26 66 18 64 15 71 C12 79 18 87 26 89 C32 110 54 124 80 124 C106 124 128 110 134 89 C142 87 148 79 145 71 C142 64 134 66 132 74 C128 86 120 96 110 102',
-              role: 'accent',
-            },
-            { d: 'M50 102 Q80 112 110 102', role: 'soft' },
-            {
-              d: dots([
-                [70, 66],
-                [86, 62],
-                [94, 78],
-                [64, 84],
-                [78, 92],
-                [38, 96],
-                [46, 108],
-                [122, 96],
-                [114, 108],
-                [24, 76],
-                [136, 76],
-                [56, 116],
-                [104, 116],
-              ]),
-              role: 'soft',
-            },
-            {
-              d: 'M101 64 l4 -3 M104 74 l5 -4 M106 85 l4 -3 M107 96 l4 -3 M126 104 l4 -4 M131 96 l3 -4',
-              role: 'ambient',
-            },
-            {
-              d: 'M104 62 C112 44 126 32 146 26 C140 42 124 56 106 68 M108 72 C120 60 136 54 154 54 C146 64 130 72 109 78',
-            },
-            {
-              d: 'M106 66 C118 52 130 40 146 26 M108 75 C122 66 138 58 154 54',
-              role: 'soft',
-            },
-          ],
-          'translate(22 30.6) scale(0.85)',
-        ),
-        ...dressrosaArt.leo.slice(2, 3),
-        // The rifle gives the accent up to the hat.
-        ...dressrosaArt.leo
-          .slice(5, 10)
-          .map((stroke): Stroke =>
-            stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke,
-          ),
-        ...dressrosaArt.leo.slice(10),
+        ...moved(LEO_FERN, 'translate(-2 -6)'),
+        ...moved(LEO_PIRATE_HAT, 'translate(10 52) scale(0.72)'),
+        ...moved([...LEO_NEEDLE, LEO_NEEDLE_SHANK], 'translate(0 18)'),
+        shadow(78, 188, 60),
+      ],
+    },
+  ],
+  // The same crown in plain ink, and one healing tear hanging from its rim
+  // with a glint in it, the accent: Jora strikes her to make her cry and
+  // heal the beaten officers at 714 (ch. 774). The dandelions she makes from
+  // her tears come later, a later technique of the same power.
+  'mansherry': [
+    {
+      episode: 714,
+      chapter: 774,
+      value: [
+        ...withoutAccent([
+          ...dressrosaArt.mansherry.slice(0, 5),
+          ...dressrosaArt.mansherry.slice(6, 8),
+        ]),
+        {
+          d: 'M56 127 C58 134 62 139 62 145 A6 6 0 0 1 50 145 C50 139 54 134 56 127 Z',
+          role: 'accent',
+        },
+        { d: 'M53 144 Q53 147.5 55.5 148.5', role: 'soft' },
+        ...dressrosaArt.mansherry.slice(8),
       ],
     },
   ],
@@ -3081,6 +3251,49 @@ export const dressrosaRedrawn: Redrawings = {
       ],
     },
   ],
+  // The spade chair smaller and to the left, sunk into the broken stone
+  // floor to its seat, and beside it a huge arm of stone rising out of the
+  // floor in a fist, the accent, its far side hatched. He comes out of the
+  // stone wall of the palace and moves it like his own body at 669 (ch. 736).
+  'pica': [
+    {
+      episode: 669,
+      chapter: 736,
+      value: [
+        ...moved(
+          [
+            ...withoutAccent(dressrosaArt.pica.slice(0, 1)),
+            ...dressrosaArt.pica.slice(1, 5),
+            { d: 'M48 130 V138 M136 130 V138' },
+            { d: 'M30 112 V120', role: 'soft' },
+            ...dressrosaArt.pica.slice(7, 8),
+          ],
+          PICA_SUNK,
+        ),
+        {
+          d: 'M106 150 L104 128 L106 106 L98 92 L99 66 L103 57 L110 51 L117 54 L123 50 L130 53 L137 50 L144 55 L149 64 L150 76 L148 94 L140 106 L137 128 L139 150',
+          role: 'accent',
+        },
+        {
+          d: 'M117 54 L116 74 M130 53 L130 74 M143 56 L143 72 M101 74 L108 77 L116 74 L123 77 L130 74 L137 77 L143 73 L149 74 M99 84 L112 82 L126 80 L134 86 L130 92',
+          role: 'soft',
+        },
+        { d: 'M118 150 L122 134 L118 120 M128 112 l4 -8', role: 'soft' },
+        { d: 'M141 140 l6 -6 M140 126 l6 -6 M142 112 l6 -6', role: 'ambient' },
+        {
+          d: 'M2 148 H18 L22 145 L26 148 M92 148 L96 144 L102 148 M142 148 L148 143 L152 148 H158',
+        },
+        {
+          d: 'M24 148 L30 152 L40 150 M60 150 L72 153 L88 149 M98 151 L108 156 L120 152 L134 156 L146 151',
+          role: 'soft',
+        },
+        {
+          d: 'M40 160 L56 166 M100 162 L92 172 M124 160 L130 174 M150 158 L158 164',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
   // The same island after Law cuts the whole laboratory in half
   // horizontally (616, ch. 690): the cut face on the ground floor and the
   // top half sliding off it to the right.
@@ -3108,6 +3321,42 @@ export const dressrosaRedrawn: Redrawings = {
       value: [
         ...moved(dressrosaArt.rebecca.slice(3, 10), 'translate(16 0)'),
         shadow(86, 188, 56),
+      ],
+    },
+  ],
+  // The same pacifier, sunk to its guard in the ground, which ripples round
+  // it like water in three rings, the accent, a splash either side. He
+  // swims up through the ground behind Franky at 664 (ch. 732).
+  'senor-pink': [
+    {
+      episode: 664,
+      chapter: 732,
+      value: [
+        { d: 'M73.9 140 A14 40 0 1 1 98.1 140', role: 'soft' },
+        {
+          d: 'M86 80 C80 82 78 100 78 120 C78 128 78.3 134 78.8 140',
+          role: 'soft',
+        },
+        ...withoutAccent(dressrosaArt['senor-pink'].slice(2, 3)),
+        ...dressrosaArt['senor-pink'].slice(3, 4),
+        {
+          d: 'M64 120 C52 100 24 104 24 128 C24 132.8 25.1 136.8 27 140 M58.6 140 Q61.8 136.6 64 132',
+        },
+        {
+          d: 'M60 122 C52 112 32 114 32 128 C32 133.9 35.2 138 39.4 140 M50.6 140 Q55 138.5 58 134',
+          role: 'soft',
+        },
+        { d: 'M89 98 l5 -3.5 M90 114 l6 -4 M90 130 l6 -4', role: 'ambient' },
+        {
+          d: 'M64 140 A22 6 0 0 0 108 140 M42 140 A44 12 0 0 0 130 140 M18 140 A68 20 0 0 0 154 140',
+          role: 'accent',
+        },
+        {
+          d: 'M18 140 A68 20 0 0 1 21.5 131.5 M154 140 A68 20 0 0 0 150.5 131.5',
+          role: 'accent',
+        },
+        { d: 'M-2 140 H14 M158 140 H164', role: 'ambient', dashed: true },
+        { d: 'M68 134 l-5 -7 M104 134 l5 -7', role: 'soft' },
       ],
     },
   ],
@@ -3191,49 +3440,56 @@ export const dressrosaRedrawn: Redrawings = {
     },
   ],
 
-  // The same island shut in the Birdcage at 680 (ch. 745), a dome of
-  // strings over the whole of it, the strings running down from its top.
-  // At 734 (ch. 791) the cage is gone and the town is diced into tumbled
-  // blocks along the shore, the palace standing on the new stepped King's
-  // Plateau in front of the rock. It is never rebuilt.
+  // The same stiletto, the rose gone soft, and lying by the heel the pink
+  // hairband she wears as Princess Viola at nineteen, the accent: in the
+  // flashback of 660 (ch. 728) Violet is told as Viola, the king's
+  // daughter.
+  'viola': [
+    {
+      episode: 660,
+      chapter: 728,
+      value: [
+        ...dressrosaArt.viola.slice(0, 5),
+        ...withoutAccent(dressrosaArt.viola.slice(5, 7)),
+        ...dressrosaArt.viola.slice(7, 9),
+        {
+          d: 'M137.3 161.7 A26 10 0 1 1 139.6 151.8 A3.3 3.3 0 0 1 133.7 153.3 M132 159.7 A3.3 3.3 0 0 0 137.3 161.7',
+          role: 'accent',
+        },
+        { d: 'M132 159.7 A19.5 6.5 0 1 1 133.7 153.3', role: 'soft' },
+        {
+          d: 'M137.3 165.2 A26 10 0 0 1 90.3 160.9 M137.3 161.7 V165.2 M90.3 157.4 V160.9',
+          role: 'soft',
+        },
+        ...dressrosaArt.viola.slice(9),
+      ],
+    },
+  ],
+
+  // The bare old crown at 680 (ch. 745), when Pica raises the ground beside
+  // it into a new stepped King's Plateau, the accent, and sets the palace on
+  // its top, and the Birdcage closes over the whole island, its strings
+  // running down from its top. At 734 (ch. 791) the cage is gone and the
+  // town is diced into tumbled blocks along the shore, both plateaus
+  // standing on them. It is never rebuilt.
   'dressrosa': [
     {
       episode: 680,
       chapter: 745,
       value: [
-        ...dressrosaArt.dressrosa,
-        { d: 'M2 150 A78 120 0 0 1 158 150' },
-        {
-          d: 'M22 150 A58 120 0 0 1 138 150 M42 150 A38 120 0 0 1 118 150 M62 150 A18 120 0 0 1 98 150 M80 30 V150',
-          role: 'ambient',
-        },
+        ...DRESSROSA_PLATEAUS,
+        DRESSROSA_ACACIA,
+        ...DRESSROSA_SHORE,
+        ...BIRDCAGE,
       ],
     },
     {
       episode: 734,
       chapter: 791,
       value: [
-        ...DRESSROSA_COAST,
-        { d: 'M56 64 L62 80 L58 90 M96 60 L102 72', role: 'soft' },
-        {
-          d: 'M40 128 V118 H48 V108 H56 V98 H64 V88 H96 V98 H104 V108 H112 V118 H120 V128',
-        },
-        {
-          d: 'M66 88 V70 H74 V58 H86 V70 H94 V88 M77 88 V80 a3 3 0 0 1 6 0 V88',
-        },
-        { d: 'M70 76 v6 M90 76 v6 M78 64 v6 M82 64 v6', role: 'soft' },
-        {
-          d: 'M2.9 140.8 L18.6 137.5 L21.1 149.2 L5.4 152.5 Z M2.9 140.8 L5.2 137.2 L20.9 133.9 L23.4 145.6 L21.1 149.2 M18.6 137.5 L20.9 133.9 M13.6 126.3 L21 129.3 L18.4 135.7 L11 132.7 Z M13.6 126.3 L17.5 124.6 L24.9 127.6 L22.3 134.1 L18.4 135.7 M21 129.3 L24.9 127.6 M30.6 143.4 L38.5 144.7 L37.4 150.6 L29.5 149.3 Z M30.6 143.4 L34.1 140.9 L41.9 142.3 L40.9 148.2 L37.4 150.6 M38.5 144.7 L41.9 142.3',
-          role: 'soft',
-        },
-        {
-          d: 'M121.3 145.2 L129 143 L130.7 148.8 L123 151 Z M121.3 145.2 L123.4 141.5 L131.1 139.3 L132.7 145.1 L130.7 148.8 M129 143 L131.1 139.3 M137.2 136.7 L152.9 139.5 L150.8 151.3 L135.1 148.5 Z M137.2 136.7 L140.6 134.3 L156.4 137 L154.3 148.9 L150.8 151.3 M152.9 139.5 L156.4 137 M136.4 128.8 L144.5 124.9 L147.6 131.2 L139.5 135.1 Z M136.4 128.8 L137.8 124.8 L145.9 120.9 L149 127.2 L147.6 131.2 M144.5 124.9 L145.9 120.9',
-          role: 'soft',
-        },
-        {
-          d: 'M52 141.4 L61.7 143.8 L60 150.6 L50.3 148.2 Z M52 141.4 L55.6 139.2 L65.3 141.6 L63.6 148.4 L60 150.6 M61.7 143.8 L65.3 141.6 M91.3 140.6 L103.1 138.5 L104.7 147.4 L92.9 149.5 Z M91.3 140.6 L93.7 137.1 L105.6 135.1 L107.1 143.9 L104.7 147.4 M103.1 138.5 L105.6 135.1 M104.7 132.3 L109.8 135.3 L107.3 139.7 L102.2 136.7 Z M104.7 132.3 L108.8 131.2 L113.9 134.2 L111.4 138.6 L107.3 139.7 M109.8 135.3 L113.9 134.2',
-          role: 'soft',
-        },
+        ...DRESSROSA_PLATEAUS,
+        ...DRESSROSA_ACACIA_DICED,
+        ...DRESSROSA_SHORE,
       ],
     },
   ],
@@ -3253,12 +3509,8 @@ export const dressrosaRedrawn: Redrawings = {
         ...DRESSROSA_NEW_PLATEAU,
         ...DRESSROSA_COLOSSEUM,
         DRESSROSA_TOWN,
-        ...DRESSROSA_ARC_SHORE,
-        { d: 'M0 150 A80 134 0 0 1 160 150' },
-        {
-          d: 'M20 150 A60 134 0 0 1 140 150 M40 150 A40 134 0 0 1 120 150 M60 150 A20 134 0 0 1 100 150 M80 16 V150',
-          role: 'ambient',
-        },
+        ...DRESSROSA_SHORE,
+        ...BIRDCAGE,
       ],
     },
     {
@@ -3272,7 +3524,7 @@ export const dressrosaRedrawn: Redrawings = {
           d: 'M3 136 L14.8 133.9 L16.9 145.7 L5.1 147.8 Z M3 136 L6.5 132.5 L18.3 130.4 L20.4 142.2 L16.9 145.7 M14.8 133.9 L18.3 130.4 M10 124 L16.6 126.4 L14.2 133 L7.6 130.6 Z M10 124 L13.5 120.5 L20.1 122.9 L17.7 129.5 L14.2 133 M16.6 126.4 L20.1 122.9 M116 140 L124.8 141.9 L122.9 150.7 L114.1 148.8 Z M116 140 L119.5 136.5 L128.3 138.4 L126.4 147.2 L122.9 150.7 M124.8 141.9 L128.3 138.4 M131 139 L140.9 137.6 L142.3 147.5 L132.4 148.9 Z M131 139 L134.5 135.5 L144.4 134.1 L145.8 144 L142.3 147.5 M140.9 137.6 L144.4 134.1 M147 140 L155.6 142.8 L152.8 151.3 L144.2 148.6 Z M147 140 L150.5 136.5 L159.1 139.3 L156.3 147.8 L152.8 151.3 M155.6 142.8 L159.1 139.3',
           role: 'soft',
         },
-        ...DRESSROSA_ARC_SHORE,
+        ...DRESSROSA_SHORE,
       ],
     },
   ],
