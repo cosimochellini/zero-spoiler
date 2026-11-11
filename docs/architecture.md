@@ -190,9 +190,9 @@ type of the open abilities, a plate of the open ones with no type told, and one
 fog band for every covered ability, so a band never says a covered ability's
 type; an ability's own page is its stage and its reached users.
 `hasPage(series, 'abilities')` follows `kinds.includes('ability')`, and Hunter x
-Hunter declares the kind only once its abilities are filed (#924): until then
-the routes answer 404, nothing links to them and the sitemap lists none. The
-kind is proven on a test fixture, `src/test/abilities.ts`.
+Hunter declares the kind for its Heavens Arena and Yorknew City abilities
+(#924). The synthetic records in `src/test/abilities.ts` also exercise the
+ability pages and their user gates.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its

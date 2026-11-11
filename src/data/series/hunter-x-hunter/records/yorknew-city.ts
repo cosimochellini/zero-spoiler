@@ -762,8 +762,8 @@ export const yorknewCity: HunterSaga = {
     'shachmono-tocino': {
       ability: [{ episode: 40, chapter: 68, value: ['eleven-black-children'] }],
       nen: [
-        { episode: 40, chapter: 68, value: 'unknown', source: 'episode' },
-        { episode: 40, chapter: 68, value: 'emitter', source: 'chapter' },
+        { episode: 40, chapter: 68, value: 'unknown' },
+        { episode: 43, chapter: 73, value: 'emitter', source: 'chapter' },
       ],
       relationships: yorknewCityRelationships['shachmono-tocino'],
       chronicle: yorknewCityChronicles['shachmono-tocino'],
@@ -1256,7 +1256,7 @@ export const yorknewCity: HunterSaga = {
     'pakunoda': {
       ability: [{ episode: 56, chapter: 112, value: ['memory-bomb'] }],
       nen: [
-        { episode: 49, chapter: 90, value: 'unknown' },
+        { episode: 50, chapter: 92, value: 'unknown' },
         { episode: 55, chapter: 105, value: 'specialist', source: 'chapter' },
       ],
       relationships: yorknewCityRelationships.pakunoda,

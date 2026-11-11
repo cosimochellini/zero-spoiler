@@ -18,11 +18,7 @@ function ability(
 }
 
 export const NEN_ABILITIES: FiledAbilities = {
-  nen: {
-    'double-machine-gun': 'emitter',
-    'emperor-time': 'specialist',
-    'holy-chain': 'enhancer',
-  },
+  nen: { 'double-machine-gun': 'emitter', 'emperor-time': 'specialist' },
   records: [
     ability(['battle-waltz', 'Battle Waltz'], [29, 49, 'violet'], {
       en: 'A cluster of aura-wrapped tops ricochets around the ring. Even the fighter who set them spinning cannot predict where they will strike.',
@@ -49,12 +45,12 @@ export const NEN_ABILITIES: FiledAbilities = {
       it: 'Sottili fili d’aura accostano i lembi di una ferita.',
     }),
     ability(['bungee-gum', 'Bungee Gum'], [32, 54, 'violet'], {
-      en: 'A strip of aura sticks to whatever it touches. It stretches under tension and snaps back when released.',
-      it: 'Una striscia d’aura si attacca a ciò che tocca. Sotto tensione si allunga e quando viene liberata scatta indietro.',
+      en: 'Playing cards scatter across the ring. A moment later, they fly across it again.',
+      it: 'Le carte da gioco si spargono sul ring. Poco dopo lo attraversano di nuovo in volo.',
     }),
     ability(['texture-surprise', 'Texture Surprise'], [32, 54, 'violet'], {
-      en: 'A thin sheet takes on the look of another surface. Placed over an arm, it passes for skin.',
-      it: 'Un foglio sottile assume l’aspetto di un’altra superficie. Appoggiato a un braccio, sembra pelle.',
+      en: 'A handkerchief covers the fighter’s injured arm. Later in the bout, the arm looks whole again.',
+      it: 'Un fazzoletto copre il braccio ferito del lottatore. Più avanti nell’incontro, il braccio sembra di nuovo intatto.',
     }),
     ability(
       ['eleven-black-children', 'Eleven Black Children'],
@@ -113,8 +109,8 @@ export const NEN_ABILITIES: FiledAbilities = {
       it: 'Una catena stringe una lama attorno al cuore del bersaglio. Se il bersaglio infrange la regola imposta, la lama lo trafigge.',
     }),
     ability(['skill-hunter', 'Skill Hunter'], [51, 97, 'ice'], {
-      en: 'An open book holds an ability its reader can use. When he closes the book, the effect ends.',
-      it: 'Un libro aperto custodisce un’abilità che chi legge può usare. Quando lo chiude, l’effetto svanisce.',
+      en: 'The user holds an open book while pale fish swim through the air in a closed room.',
+      it: 'Chi usa l’abilità tiene in mano un libro aperto mentre pesci pallidi nuotano nell’aria di una stanza chiusa.',
     }),
     ability(['indoor-fish', 'Indoor Fish'], [51, 97, 'ice'], {
       en: 'Pale fish swim through the air inside a sealed room. They can feed on someone inside while the room stays closed.',

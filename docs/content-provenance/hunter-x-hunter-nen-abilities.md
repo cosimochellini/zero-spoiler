@@ -41,6 +41,11 @@ Chrollo first uses Fun Fun Cloth at episode 52 / chapter 99 and Lovely
 Ghostwriter at episode 54 / chapter 104. His user links still wait for his
 character gate.
 
+Chapter 54 shows Hisoka’s cards and the apparent repair of his arm. Chapter 55
+explains the two techniques, so the opening records depict only the visible
+effects. In chapter 97, the window opens before the fish vanish and the book
+closes. The book’s own closing rule is explained in chapter 99.
+
 ## Other candidates
 
 - True Tiger Bite Fist is prepared in episode 31 / chapter 53. The coordinated
