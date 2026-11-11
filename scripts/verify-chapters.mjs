@@ -365,9 +365,6 @@ async function sourceOf(record, { chapters, wiki, books = [] }) {
     return thronesSourceOf(record, { chapters, wiki, books, titles })
   }
 
-  if (record.kind === 'ability') {
-    return abilityReadingOf(record.id, wiki)
-  }
   const pages = await pagesOf(record, wiki)
   const source = wiki.slug === 'hunter-x-hunter' ? record.source : undefined
   return readingOf({ ...record, source }, pages, chapters)
@@ -506,7 +503,10 @@ async function verify() {
   /** @type {Row[]} */
   const rows = []
   for (const record of series.archive.entities) {
-    const source = await sourceOf(record, { chapters, wiki, books })
+    const source =
+      record.kind === 'ability' ?
+        await abilityReadingOf(record.id, wiki)
+      : await sourceOf(record, { chapters, wiki, books })
 
     rows.push({
       id: record.id,
