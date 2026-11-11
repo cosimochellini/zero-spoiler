@@ -1570,8 +1570,8 @@ export const dressrosaArt = {
   // His green hat shaped like a crown, in three-quarters and squat, one of
   // its three points bent over, and the big sewing needle he stitches with
   // pushed through its band, thread trailing from the eye; a small curled
-  // fern of Green Bit behind. He is first seen in episode 641, in the hat,
-  // sewing the Marines' clothes together with Nui Nui.
+  // fern of Green Bit behind. He is first seen in the hat in episode 641
+  // (ch. 711), where he pins Robin to the ground with his needle (Nui Nui).
   'leo': [
     ...LEO_FERN,
     ...moved(
@@ -3143,7 +3143,7 @@ export const dressrosaRedrawn: Redrawings = {
     },
   ],
   // His pirate hat in place of the crown hat: the brim turned up into two
-  // wide wings, two feathers on the left, and on its front the Jolly Roger
+  // wide wings, two feathers on the wearer's left, and on its front the Jolly Roger
   // of his crew, the Tontatta Pirates, a skull in a chestnut hat over
   // crossed bones. The needle lies whole in the grass in front, the fern
   // behind. He wears it sailing to the Reverie with the Riku family at 879
