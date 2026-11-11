@@ -5,6 +5,7 @@ import { HUNTER_X_HUNTER_SERIES as SERIES } from '~/lib/progress/series'
 
 import { DRAWINGS, REDRAWINGS } from './art'
 import { PLACE_DOSSIERS } from './places'
+import { NEN_ABILITIES } from './records/nen-abilities'
 import { sagas } from './sagas'
 
 /**
@@ -15,6 +16,7 @@ import { sagas } from './sagas'
  * One Piece's.
  */
 const { core, filed: FILED } = sagaArchive({
+  abilities: NEN_ABILITIES,
   // The main characters of the Hunter Exam, as they are filed: the landing
   // chart and the featured row.
   featured: [
@@ -43,6 +45,15 @@ const SWEEP_GATES = entities.flatMap((owner) =>
     gateOf(entry, owner),
   ),
 )
+
+for (const ability of NEN_ABILITIES.records) {
+  SWEEP_GATES.push(ability)
+}
+for (const { field, owner, timeline } of core.timelines) {
+  if (field === 'ability' || field === 'nen') {
+    SWEEP_GATES.push(...timeline.map((entry) => gateOf(entry, owner)))
+  }
+}
 
 for (const { episode, gate } of core.stories) {
   if (episode >= 76 && episode <= 148) {

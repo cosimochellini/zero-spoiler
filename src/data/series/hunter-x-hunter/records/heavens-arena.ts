@@ -192,6 +192,15 @@ export const heavensArena: HunterSaga = {
       ],
     },
     gido: {
+      ability: [
+        { episode: 29, chapter: 49, value: ['battle-waltz'] },
+        { episode: 30, chapter: 50, value: ['battle-waltz', 'tornado-top'] },
+        {
+          episode: 34,
+          chapter: 58,
+          value: ['battle-waltz', 'tornado-top', 'shotgun-blues'],
+        },
+      ],
       chronicle: heavensArenaChronicles.gido,
       relationships: heavensArenaRelationships.gido,
       role: { it: 'Lottatore', en: 'Fighter' },
@@ -225,6 +234,7 @@ export const heavensArena: HunterSaga = {
       affiliation: [{ episode: 33, chapter: 57, value: FLOOR_200 }],
     },
     riehlvelt: {
+      ability: [{ episode: 34, chapter: 59, value: ['aura-burst'] }],
       chronicle: heavensArenaChronicles.riehlvelt,
       relationships: heavensArenaRelationships.riehlvelt,
       role: { it: 'Lottatore', en: 'Fighter' },
@@ -241,6 +251,7 @@ export const heavensArena: HunterSaga = {
       affiliation: [{ episode: 34, chapter: 59, value: FLOOR_200 }],
     },
     kastro: {
+      ability: [{ episode: 31, chapter: 53, value: ['tiger-bite-fist'] }],
       chronicle: heavensArenaChronicles.kastro,
       relationships: heavensArenaRelationships.kastro,
       role: { it: 'Lottatore', en: 'Fighter' },

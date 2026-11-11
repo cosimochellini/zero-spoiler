@@ -9,8 +9,8 @@ import type { Stroke } from '~/lib/view/records'
 import { LOADED_SERIES, type LoadedSeries } from '~/test/series'
 
 /**
- * Hunter x Hunter with two Nen abilities filed for the tests, which no real
- * record is yet (#924 files them): the kind proven on a series that has it.
+ * Hunter x Hunter with two synthetic abilities for testing typed and untyped
+ * plates and a later user's gate.
  *
  * `TYPED` is shown at episode 44 / chapter 76 and typed (an Enhancer
  * ability); Gon uses it from there, and Killua only from episode 80 /
@@ -69,18 +69,16 @@ const withUses = sagas.map((saga) => ({
   ...saga,
   dossiers: Object.fromEntries(
     Object.entries(saga.dossiers).map(([id, dossier]) => {
+      const fixture = { ...dossier }
+      delete fixture.ability
       const ability = ENTRIES[id]
 
-      return [id, ability === undefined ? dossier : { ...dossier, ability }]
+      return [id, ability === undefined ? fixture : { ...fixture, ability }]
     }),
   ),
 }))
 
-/** Hunter x Hunter's description, with the kind declared. */
-const SERIES = {
-  ...HUNTER_X_HUNTER_SERIES,
-  kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability' as const],
-}
+const SERIES = HUNTER_X_HUNTER_SERIES
 
 const { core } = sagaArchive({
   abilities: { nen: { [TYPED.id]: 'enhancer' }, records: [TYPED, UNTYPED] },

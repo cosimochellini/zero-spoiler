@@ -3,11 +3,7 @@ import type { ReactElement } from 'react'
 import { describe, expect, it } from 'vitest'
 
 import type { Locale } from '~/i18n/locales'
-import {
-  HUNTER_X_HUNTER_SERIES,
-  ONE_PIECE_SERIES,
-  type Series,
-} from '~/lib/progress/series'
+import { HUNTER_X_HUNTER_SERIES, ONE_PIECE_SERIES } from '~/lib/progress/series'
 import type { AbilityView } from '~/lib/view/abilities'
 import type { Slot } from '~/lib/view/records'
 import {
@@ -21,12 +17,6 @@ import { renderUnderSeries } from '~/test/providers'
 
 import { Route } from './$id'
 import { AbilityStage, UsersBand } from './-$id.stage'
-
-/** Hunter x Hunter once it files the kind (#924). */
-const WITH_ABILITIES: Series = {
-  ...HUNTER_X_HUNTER_SERIES,
-  kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability'],
-}
 
 /** The stage and the users band of one slot, under Hunter x Hunter. */
 async function renderPage(
@@ -44,7 +34,7 @@ async function renderPage(
     {
       locale,
       path: `/hunter-x-hunter/${locale}/abilities/test-ability`,
-      series: WITH_ABILITIES,
+      series: HUNTER_X_HUNTER_SERIES,
     },
   )
 }
@@ -114,11 +104,10 @@ describe('an ability address that is not found', () => {
   // kind has; any other series gets the router's plain one.
   it.each([
     {
-      series: WITH_ABILITIES,
+      series: HUNTER_X_HUNTER_SERIES,
       said: 'Ability not found',
       back: ['/hunter-x-hunter/en/abilities'],
     },
-    { series: HUNTER_X_HUNTER_SERIES, said: 'Not Found', back: [] },
     { series: ONE_PIECE_SERIES, said: 'Not Found', back: [] },
   ])('says $said on $series.slug', async ({ series, said, back }) => {
     await renderUnderSeries(<AbilityNotFound />, {

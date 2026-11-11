@@ -159,16 +159,7 @@ describe('the pages a series declares', () => {
     },
   )
 
-  it.each([
-    'fruits',
-    'fruits/any-id',
-    'filler',
-    'ranks',
-    'power',
-    // Its Nen abilities wait for their records (#924).
-    'abilities',
-    'abilities/any-id',
-  ])(
+  it.each(['fruits', 'fruits/any-id', 'filler', 'ranks', 'power'])(
     'answers 404 at /hunter-x-hunter/en/%s with Hunter x Hunter open',
     async (path) => {
       vi.mocked(seriesDescription).mockResolvedValue(HUNTER_X_HUNTER_SERIES)
@@ -195,16 +186,7 @@ describe('the pages a series declares', () => {
   })
 
   it('gives the abilities page to a series that files the kind', () => {
-    expect(hasPage(HUNTER_X_HUNTER_SERIES, 'abilities')).toBe(false)
+    expect(hasPage(HUNTER_X_HUNTER_SERIES, 'abilities')).toBe(true)
     expect(hasPage(ONE_PIECE_SERIES, 'abilities')).toBe(false)
-    expect(
-      hasPage(
-        {
-          ...HUNTER_X_HUNTER_SERIES,
-          kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability'],
-        },
-        'abilities',
-      ),
-    ).toBe(true)
   })
 })
