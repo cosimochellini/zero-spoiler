@@ -49,8 +49,8 @@ export const NEN_ABILITIES: FiledAbilities = {
       it: 'Le carte da gioco si spargono sul ring. Poco dopo lo attraversano di nuovo in volo.',
     }),
     ability(['texture-surprise', 'Texture Surprise'], [32, 54, 'violet'], {
-      en: 'A handkerchief covers the fighter’s injured arm. Later in the bout, the arm looks whole again.',
-      it: 'Un fazzoletto copre il braccio ferito del lottatore. Più avanti nell’incontro, il braccio sembra di nuovo intatto.',
+      en: 'During the bout, the fighter covers his injured arm with a handkerchief.',
+      it: 'Durante l’incontro, il lottatore copre il braccio ferito con un fazzoletto.',
     }),
     ability(
       ['eleven-black-children', 'Eleven Black Children'],
