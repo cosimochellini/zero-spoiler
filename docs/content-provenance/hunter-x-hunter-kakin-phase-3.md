@@ -7,14 +7,14 @@ records are drawn in #1156 (part of #917); chronicles belong to #918.
 
 ## Verified naming gates
 
-| Character  | Chapter | Naming evidence                                                                                                                    |
-| ---------- | ------: | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Vergei     |     373 | The synopsis says he introduces himself to Kurapika by telephone.                                                                  |
-| Ken’i Wang |     379 | The synopsis says Wang introduces himself as the underboss. His character page identifies the same meeting and name.               |
-| Cashew     |     379 | The synopsis explicitly reveals the witness as a Heil-Ly member named Cashew. The earlier appearance at 378 is not used as a gate. |
-| Keeney     |     383 | The synopsis describes the printed concert program listing Keeney’s piano solo. His earlier appearances are not naming evidence.   |
+| Character  | Chapter | Naming evidence                                                                                                                               |
+| ---------- | ------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vergei     |     373 | The synopsis says he introduces himself to Kurapika by telephone.                                                                             |
+| Ken’i Wang |     379 | The synopsis says Wang introduces himself as the underboss. His character page identifies the same meeting and name.                          |
+| Cashew     |     379 | The synopsis explicitly reveals the witness as a Heil-Ly member named Cashew. The earlier appearance at 378 is not used as a gate.            |
+| Keeney     |     381 | A caller tells Melody that Keeney will lead the operation to stop the princes from escaping. Chapter 377 identifies him only in the synopsis. |
 
-Keeney dies during chapter 383, so the record opens with deceased status.
+Keeney opens alive and dies in chapter 383. The revised gate follows #1173.
 Vergei’s change to learning Nen from Biscuit opens at chapter 375. No new origin
 or epithet is invented.
 

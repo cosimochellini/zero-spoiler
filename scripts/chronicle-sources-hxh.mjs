@@ -4133,6 +4133,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'keeney': {
+    '148:381': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_381',
+      note: 'Chapter 381: Chapters 377 and 381: Keeney’s En (377) and the caller who names Keeney in his instructions to Melody (381).',
+    },
     '148:383': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_383',
       note: 'Chapters 377 and 383: Keeney’s En and the request to Melody (377); the piano solo, the escort to the lifeboat, the last-resort instruction, the shot, and the flashback with his wife and daughter and the risk to the Association (383).',
@@ -4367,6 +4371,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'yokotani': {
+    '148:394': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_394',
+      note: 'Chapter 394: The lawyer’s identification caption in the Door C briefing and Morena’s assignment.',
+    },
     '148:399': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_399',
       note: 'Chapter 399: Yokotani’s introduction and the charges, the chained katana and Terebellum’s transfer, his ability’s condition and limits, Nobunaga’s expulsion and the puppets chasing Hinrigh.',
@@ -4439,6 +4447,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'musse': {
+    '148:366': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_366',
+      note: 'Chapter 366: The guard’s identification caption and his plan to collect evidence.',
+    },
     '148:413': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_413',
       note: 'Chapters 402 and 413, with Musse’s record: the question to Kaiser and the failed search on Tier 1 (402); Secret Window used on Camilla’s massage, levelled up to show what Musse saw before his death, and Camilla as a counteractive type (413).',
@@ -4467,12 +4479,20 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'shikaku': {
+    '148:382': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_382',
+      note: 'Chapter 382: The radio call waking Shikaku and Benjamin’s order before Halkenburg fires.',
+    },
     '148:404': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
       note: 'Chapters 382, 386 and 404, with Shikaku’s character page: the order to kill Halkenburg and the arrow (382), Sumidori in Shikaku’s body and the shot outside Room 1007 (386), and Halkenburg’s explanation of the experiment, the service number and the priority (404). Corrected after independent verification: the swap was backwards. Halkenburg’s page (chapter 404): “Sumidori’s body awoke and recited Shikaku’s service number”, with Shikaku’s mind asleep inside it until Sumidori’s mind stopped being awake. The story now says that Sumidori’s body woke with Shikaku’s mind inside, in the present tense.',
     },
   },
   'sumidori': {
+    '148:386': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_386',
+      note: 'Chapter 386: Halkenburg discusses Sumidori and Shikaku during the brainwave test and asks Sumidori for help.',
+    },
     '148:404': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_404',
       note: 'Chapters 382, 386 and 404, with Sumidori’s character page: the collapse as Shikaku is hit (382), his body sleeping while his mind is in Shikaku’s (386), and the 404 explanation of the experiment and the priority. No death is filed: the window does not show one. Corrected after independent verification: Halkenburg’s page (chapter 404): “Sumidori’s body awoke and recited Shikaku’s service number”; Shikaku’s mind was asleep inside it. The record’s link text says the same.',
@@ -4511,6 +4531,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'onior': {
+    '148:378': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_378',
+      note: 'Chapter 378: The identification box during the call between the Xi-Yu and Cha-R bosses and the order to find Hisoka.',
+    },
     '148:417': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_417',
       note: 'Chapters 390, 410 and 417: the Xi-Yu boss as the king’s illegitimate half-brother, his ignorance of Nen and the promise (390, told in Zhang Lei’s story); the cross-bridge from Onior’s residence (410); the bosses secured and escorted to the Ministry of Justice (417). His `captured` status at 417 is already filed.',
@@ -4539,6 +4563,10 @@ export const HUNTER_X_HUNTER_SOURCES = {
     },
   },
   'rihan': {
+    '148:374': {
+      source: 'https://hunterxhunter.fandom.com/wiki/Chapter_374',
+      note: 'Chapter 374: The Predator explanation identifies its user while he studies the beast’s smoke.',
+    },
     '148:415': {
       source: 'https://hunterxhunter.fandom.com/wiki/Chapter_415',
       note: 'Chapters 402 and 415: the beast appearing after the treaty and the conditional-type deduction (402, day ten); the orders in Room 1005, the gun at Heisen’s head (no record), Room 1001 with Royal Army guards only, the ceasefire, and the hypothesis about Kurapika (415).',

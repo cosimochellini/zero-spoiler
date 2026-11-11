@@ -162,21 +162,27 @@ const FILINGS: Filing[] = [
   },
   {
     id: 'musse',
-    chapter: 402,
+    chapter: 366,
+    met: 402,
     name: { it: 'Musse', en: 'Musse' },
     summary: {
-      it: 'Un soldato di Benjamin ucciso dal potere di Camilla. Benjamin chiede a Kaiser se è stato ritrovato.',
-      en: 'One of Benjamin’s soldiers, killed by Camilla’s ability. Benjamin asks Kaiser whether he has been found.',
+      it: 'Ascolta Camilla di nascosto.',
+      en: 'He listens in on Camilla’s conversation.',
     },
     role: BENJAMIN_SOLDIER,
     affiliation: BENJAMIN_ARMY,
-    status: 'deceased',
     links: [
       link('benjamin-hui-guo-rou', COMMANDER, {
         it: 'Benjamin chiede a Kaiser a che punto è la ricerca di Musse.',
         en: 'Benjamin asks Kaiser how the search for Musse is going.',
       }),
     ],
+    later: {
+      status: [
+        { ...at(366), value: 'alive' },
+        { ...at(373), value: 'deceased' },
+      ],
+    },
   },
   {
     id: 'balsamilco',
@@ -259,25 +265,32 @@ const FILINGS: Filing[] = [
   },
   {
     id: 'shikaku',
-    chapter: 404,
+    chapter: 382,
+    met: 404,
     name: { it: 'Shikaku', en: 'Shikaku' },
     summary: {
-      it: 'Un soldato di Benjamin assegnato a Harkenburg. Muore dopo che il potere del principe ha preso il controllo del suo corpo.',
-      en: 'One of Benjamin’s soldiers, posted with Halkenburg. He dies after the prince’s ability takes over his body.',
+      it: 'Un soldato di Benjamin assegnato a Harkenburg. Tenta di fermare la freccia del principe.',
+      en: 'One of Benjamin’s soldiers, posted with Halkenburg. He tries to stop the prince’s arrow.',
     },
     role: BENJAMIN_SOLDIER,
     affiliation: BENJAMIN_ARMY,
-    status: 'deceased',
     links: [
       link('halkenburg-hui-guo-rou', GUARDED, {
         it: 'Harkenburg spiega il suo potere a partire dalla prova fatta con Shikaku e Sumidori.',
         en: 'Halkenburg explains his ability from the test with Shikaku and Sumidori.',
       }),
     ],
+    later: {
+      status: [
+        { ...at(382), value: 'alive' },
+        { ...at(386), value: 'deceased' },
+      ],
+    },
   },
   {
     id: 'sumidori',
-    chapter: 404,
+    chapter: 386,
+    met: 404,
     name: { it: 'Sumidori', en: 'Sumidori' },
     summary: {
       it: 'Uno degli uomini di Harkenburg. La sua mente ha occupato il corpo di Shikaku durante la prova del potere del principe.',
@@ -379,11 +392,12 @@ const FILINGS: Filing[] = [
   },
   {
     id: 'onior',
-    chapter: 410,
+    chapter: 378,
+    met: 410,
     name: { it: 'Onior', en: 'Onior' },
     summary: {
-      it: 'Il capo degli Xi-Yu. Chowrai passa al secondo livello dalla sua residenza poco prima della legge marziale.',
-      en: 'The Xi-Yu boss. Zhang Lei crosses to Tier 2 from his residence just before martial law.',
+      it: 'Il capo degli Xi-Yu cerca Hisoka prima che lo trovi la Brigata Fantasma.',
+      en: 'The Xi-Yu boss wants to find Hisoka before the Phantom Troupe does.',
     },
     role: { it: 'Capo degli Xi-Yu', en: 'Xi-Yu boss' },
     affiliation: { it: 'Famiglia Xi-Yu', en: 'Xi-Yu Family' },
@@ -403,7 +417,7 @@ const FILINGS: Filing[] = [
     // The soldiers take the Xi-Yu and Cha-R bosses to the Ministry of Justice (417).
     later: {
       status: [
-        { ...at(410), value: 'alive' },
+        { ...at(378), value: 'alive' },
         { ...at(417), value: 'captured' },
       ],
     },
@@ -476,11 +490,12 @@ const FILINGS: Filing[] = [
   },
   {
     id: 'rihan',
-    chapter: 413,
+    chapter: 374,
+    met: 413,
     name: { it: 'Rihan', en: 'Rihan' },
     summary: {
-      it: 'Un soldato di Benjamin assegnato a Tsubeppa. Benjamin lo manderà se i principi non arrivano nella stanza 1001.',
-      en: 'One of Benjamin’s soldiers, posted with Tubeppa. Benjamin will send him in if the princes do not come to Room 1001.',
+      it: 'Studia come il fumo della bestia di Saresare agisce sulle guardie.',
+      en: 'He studies how Salé-salé’s beast uses smoke to influence the guards.',
     },
     role: BENJAMIN_SOLDIER,
     affiliation: BENJAMIN_ARMY,

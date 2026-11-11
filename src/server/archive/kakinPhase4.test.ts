@@ -45,7 +45,7 @@ const RECORDS = [
   { id: 'sarasa', chapter: 395, place: false },
   { id: 'sheila', chapter: 395, place: false },
   { id: 'renko', chapter: 397, place: false },
-  { id: 'yokotani', chapter: 399, place: false },
+  { id: 'yokotani', chapter: 394, place: false },
   { id: 'madwig', chapter: 400, place: false },
   { id: 'himonce', chapter: 400, place: false },
   { id: 'anzel', chapter: 400, place: false },

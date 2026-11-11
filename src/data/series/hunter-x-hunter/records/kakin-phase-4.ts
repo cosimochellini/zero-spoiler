@@ -24,7 +24,14 @@ function introduced(
     log,
     affiliation,
     status = 'alive',
-  }: { affiliation: Name; log: Name; role: Name; status?: CharacterStatus },
+    met = chapter,
+  }: {
+    affiliation: Name
+    log: Name
+    met?: number
+    role: Name
+    status?: CharacterStatus
+  },
   links: Link[],
 ): Dossier {
   const gate = { episode: 148, chapter, source: 'chapter' } as const
@@ -33,7 +40,7 @@ function introduced(
     log,
     affiliation: [{ ...gate, value: affiliation }],
     status: [{ ...gate, value: status }],
-    relationships: [{ ...gate, value: links }],
+    relationships: [{ ...gate, chapter: met, value: links }],
   }
 }
 
@@ -435,11 +442,11 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 148,
-      revealedAtChapter: 399,
+      revealedAtChapter: 394,
       name: { it: 'Yokotani', en: 'Yokotani' },
       summary: {
-        it: 'L’avvocato degli Heil-Ly affronta due intrusi nel rifugio della famiglia.',
-        en: 'The Heil-Ly lawyer confronts two intruders in the family’s hideout.',
+        it: 'Un avvocato degli Heil-Ly. La famiglia gli affida la sorveglianza di una porta del rifugio.',
+        en: 'A Heil-Ly lawyer. The family assigns him to guard a door in the hideout.',
       },
       visual: { art: 'yokotani', tint: 'violet' },
     },
@@ -1372,12 +1379,13 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     ),
     'yokotani': introduced(
-      399,
+      394,
       {
+        met: 399,
         role: { it: 'Avvocato degli Heil-Ly', en: 'Heil-Ly lawyer' },
         log: {
-          it: 'L’avvocato degli Heil-Ly affronta due intrusi nel rifugio della famiglia.',
-          en: 'The Heil-Ly lawyer confronts two intruders in the family’s hideout.',
+          it: 'Un avvocato degli Heil-Ly. La famiglia gli affida la sorveglianza di una porta del rifugio.',
+          en: 'A Heil-Ly lawyer. The family assigns him to guard a door in the hideout.',
         },
         affiliation: { it: 'Famiglia Heil-Ly', en: 'Heil-Ly Family' },
       },

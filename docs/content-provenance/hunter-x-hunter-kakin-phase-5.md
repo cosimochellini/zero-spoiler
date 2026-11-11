@@ -21,7 +21,17 @@ thought are not gates. A name the synopsis writes for the person being spoken to
 stands for "you" and is not a gate either. Earlier chapters that later wiki
 infoboxes give as a name chapter (Rihan 374, Musse 366, Shikaku 376, Sumidori
 386, Balsamilco 363) were audited by phases 2–4 without an explicit signal; the
-records open at the later, verified scene. Late is safe.
+phase initially used later naming scenes. Issue #1173 revised these gates after
+checking the earlier scenes. The table below preserves the original phase 5
+evidence for the later appearances.
+
+| Record   |                                                   Revised gate | Naming evidence                                                                                                  |
+| -------- | -------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------- |
+| Musse    | [366](https://hunterxhunter.fandom.com/index.php?oldid=421600) | Identification caption while he listens in on Camilla. He dies at 373.                                           |
+| Rihan    | [374](https://hunterxhunter.fandom.com/index.php?oldid=421905) | The Predator explanation identifies its user.                                                                    |
+| Onior    | [378](https://hunterxhunter.fandom.com/index.php?oldid=416310) | Identification box during his call with the Cha-R boss.                                                          |
+| Shikaku  | [382](https://hunterxhunter.fandom.com/index.php?oldid=409517) | The radio call before Halkenburg shoots the arrow. Chapter 376 lists him only in the cast. His body dies at 386. |
+| Sumidori | [386](https://hunterxhunter.fandom.com/index.php?oldid=421608) | Halkenburg’s discussion and request during the brainwave experiment. His own body’s death remains inferred.      |
 
 A record is filed under the name its gate scene says: Balsamilco, Hinrigh,
 Morena and Onior. Borksen calls Morena "Morena Prudo" at 407, after her 405
@@ -70,9 +80,10 @@ No place is filed. No named place is visited in the window (see Places).
 | `woble-hui-guo-rou`      | 412 | Missing: the baby in Room 1014 is Oito's nephew, and Oito does not know where her daughter is.                                                                                                       |
 | `onior`                  | 417 | Captured: soldiers secure the Xi-Yu and Cha-R bosses and take them to the Ministry of Justice.                                                                                                       |
 
-Musse, Shikaku and Risnorth are already dead at their opening chapter, and
-Kanjidol is tied up at his (415). No earlier live stage is invented. Every fact
-carries `source: 'chapter'`, episode 148 and an explicit chapter.
+Musse and Shikaku were already dead at their original phase 5 gates. Risnorth is
+already dead at his opening chapter, and Kanjidol is tied up at his (415). No
+earlier live stage is invented. Every fact carries `source: 'chapter'`, episode
+148 and an explicit chapter.
 
 Changes not pinned: Tserriednich's death at 417 is staged, and the reader is
 told the plan at 416, so his status stays alive. Camilla, Tubeppa and Tyson are
