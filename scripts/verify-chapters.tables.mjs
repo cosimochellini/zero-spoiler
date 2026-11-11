@@ -77,3 +77,51 @@ export const SHOW_TITLES = {
   'nymeria': 'Nymeria (direwolf)',
   'viserys-targaryen': 'Viserys Targaryen (son of Aerys II)',
 }
+
+// The reviewed first-use pins. See the scene evidence in the Nen inventory.
+export const ABILITY_SCENES = {
+  'battle-waltz': [29, 49],
+  'tornado-top': [30, 50],
+  'shotgun-blues': [34, 58],
+  'tiger-bite-fist': [31, 53],
+  'aura-burst': [34, 59],
+  'nen-stitches': [32, 55],
+  'bungee-gum': [32, 54],
+  'texture-surprise': [32, 54],
+  'eleven-black-children': [39, 67],
+  'instant-lover': [39, 68],
+  'great-hiker': [40, 68],
+  'dowsing-chain': [40, 68],
+  'lovely-ghostwriter': [41, 71],
+  'double-machine-gun': [43, 73],
+  'blinky': [43, 73],
+  'big-bang-impact': [44, 76],
+  'chain-jail': [44, 77],
+  'fun-fun-cloth': [45, 77],
+  'emperor-time': [47, 83],
+  'holy-chain': [47, 84],
+  'judgment-chain': [47, 84],
+  'skill-hunter': [51, 97],
+  'indoor-fish': [51, 97],
+  'dragon-head': [52, 99],
+  'dragon-lance': [52, 99],
+  'black-voice': [53, 98],
+  'gallery-fake': [53, 100],
+  'memory-bomb': [56, 112],
+}
+
+/**
+ * Records kept below the wiki's first episode after a hand check found the
+ * wiki late: it dates a first appearance the archive has an earlier, named
+ * sighting for. The value is the episode checked, so a record moved since
+ * falls back to the rule.
+ * @type {Record<string, number>}
+ */
+export const EPISODE_KEPT = {
+  // Episode 1's opening narration names him over his execution (chapter 1,
+  // page 1); the wiki dates his first flashback, episode 48.
+  'gold-roger': 1,
+  // Pouf names him in episode 86 (chapter 202), before he hatches; the wiki
+  // dates his first sight, episode 88 (#1021).
+  'menthuthuyoupi': 86,
+}

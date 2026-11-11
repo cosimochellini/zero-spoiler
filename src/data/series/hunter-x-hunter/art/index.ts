@@ -12,6 +12,7 @@ import {
 } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
+import { ARENA_ABILITY_DRAWINGS } from './arena-abilities'
 import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
 import {
   CHIMERA_ANT_HUNTERS_DRAWINGS,
@@ -63,6 +64,7 @@ import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
 import { KAKIN_PHASE_4_DRAWINGS, kakinPhaseFourRedrawn } from './kakin-phase-4'
 import { KAKIN_PHASE_5_DRAWINGS, kakinPhaseFiveRedrawn } from './kakin-phase-5'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
+import { YORKNEW_ABILITY_DRAWINGS } from './yorknew-abilities'
 import {
   NEON_PEN,
   NEON_SHEETS,
@@ -260,6 +262,8 @@ export const DRAWINGS = {
   ...KAKIN_PHASE_4_DRAWINGS,
   ...KAKIN_PHASE_5_DRAWINGS,
   ...HEAVENS_ARENA_DRAWINGS,
+  ...ARENA_ABILITY_DRAWINGS,
+  ...YORKNEW_ABILITY_DRAWINGS,
   ...YORKNEW_CITY_DRAWINGS,
   ...GREED_ISLAND_DRAWINGS,
   // A small sailing ship side on in a storm, the bolt of lightning over her

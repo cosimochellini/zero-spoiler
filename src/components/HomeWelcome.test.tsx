@@ -17,13 +17,8 @@ describe('HomeWelcome', () => {
       series: ONE_PIECE_SERIES,
       pages: ['characters', 'places', 'fruits', 'ranks', 'filler'],
     },
-    { series: HUNTER_X_HUNTER_SERIES, pages: ['characters', 'places'] },
-    // Once it files its Nen abilities (#924).
     {
-      series: {
-        ...HUNTER_X_HUNTER_SERIES,
-        kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability' as const],
-      },
+      series: HUNTER_X_HUNTER_SERIES,
       pages: ['characters', 'places', 'abilities'],
     },
   ])(

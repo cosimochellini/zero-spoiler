@@ -275,13 +275,8 @@ describe('SiteBar', () => {
       series: ONE_PIECE_SERIES,
       pages: ['Characters', 'Places', 'Fruits', 'Ranks'],
     },
-    { series: HUNTER_X_HUNTER_SERIES, pages: ['Characters', 'Places'] },
-    // Once it files its Nen abilities (#924).
     {
-      series: {
-        ...HUNTER_X_HUNTER_SERIES,
-        kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability' as const],
-      },
+      series: HUNTER_X_HUNTER_SERIES,
       pages: ['Characters', 'Places', 'Abilities'],
     },
   ])(

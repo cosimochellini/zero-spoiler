@@ -699,6 +699,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'basho': {
+      ability: [{ episode: 40, chapter: 68, value: ['great-hiker'] }],
+      nen: [
+        { episode: 40, chapter: 68, value: 'unknown', source: 'chapter' },
+        { episode: 40, chapter: 68, value: 'conjurer', source: 'episode' },
+      ],
       relationships: yorknewCityRelationships.basho,
       chronicle: [...yorknewCityChronicles.basho, ...kakinChronicles.basho],
       role: HIRED,
@@ -718,6 +723,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'baise': {
+      ability: [{ episode: 40, chapter: 68, value: ['instant-lover'] }],
+      nen: [
+        { episode: 40, chapter: 68, value: 'unknown', source: 'episode' },
+        { episode: 40, chapter: 68, value: 'manipulator', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.baise,
       chronicle: yorknewCityChronicles.baise,
       role: HIRED,
@@ -750,6 +760,11 @@ export const yorknewCity: HunterSaga = {
       affiliation: [NEON_GUARD],
     },
     'shachmono-tocino': {
+      ability: [{ episode: 40, chapter: 68, value: ['eleven-black-children'] }],
+      nen: [
+        { episode: 40, chapter: 68, value: 'unknown' },
+        { episode: 43, chapter: 73, value: 'emitter', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships['shachmono-tocino'],
       chronicle: yorknewCityChronicles['shachmono-tocino'],
       role: PLANT,
@@ -793,6 +808,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'neon-nostrade': {
+      ability: [{ episode: 41, chapter: 71, value: ['lovely-ghostwriter'] }],
+      nen: [
+        { episode: 41, chapter: 71, value: 'unknown' },
+        { episode: 55, chapter: 110, value: 'specialist', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships['neon-nostrade'],
       chronicle: [
         ...yorknewCityChronicles['neon-nostrade'],
@@ -881,6 +901,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'machi': {
+      ability: [{ episode: 41, chapter: 71, value: ['nen-stitches'] }],
+      nen: [
+        { episode: 41, chapter: 71, value: 'unknown' },
+        { episode: 47, chapter: 78, value: 'transmuter', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.machi,
       chronicle: [
         ...yorknewCityChronicles.machi,
@@ -896,6 +921,11 @@ export const yorknewCity: HunterSaga = {
       affiliation: [{ episode: 41, chapter: 71, value: TROUPE }],
     },
     'uvogin': {
+      ability: [{ episode: 44, chapter: 76, value: ['big-bang-impact'] }],
+      nen: [
+        { episode: 44, chapter: 75, value: 'unknown' },
+        { episode: 46, chapter: 79, value: 'enhancer', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.uvogin,
       chronicle: [...yorknewCityChronicles.uvogin, ...kakinChronicles.uvogin],
       role: TROUPE_MEMBER,
@@ -955,6 +985,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'franklin': {
+      ability: [{ episode: 44, chapter: 76, value: ['double-machine-gun'] }],
+      nen: [
+        { episode: 44, chapter: 76, value: 'unknown', source: 'episode' },
+        { episode: 44, chapter: 76, value: 'emitter', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.franklin,
       chronicle: [
         ...yorknewCityChronicles.franklin,
@@ -1038,6 +1073,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'shalnark': {
+      ability: [{ episode: 53, chapter: 98, value: ['black-voice'] }],
+      nen: [
+        { episode: 53, chapter: 98, value: 'unknown' },
+        { episode: 54, chapter: 102, value: 'manipulator', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.shalnark,
       chronicle: [
         ...yorknewCityChronicles.shalnark,
@@ -1096,6 +1136,8 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'owl': {
+      ability: [{ episode: 45, chapter: 77, value: ['fun-fun-cloth'] }],
+      nen: [{ episode: 45, chapter: 77, value: 'unknown' }],
       relationships: yorknewCityRelationships.owl,
       chronicle: yorknewCityChronicles.owl,
       role: SHADOW_BEAST,
@@ -1215,6 +1257,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'pakunoda': {
+      ability: [{ episode: 56, chapter: 112, value: ['memory-bomb'] }],
+      nen: [
+        { episode: 50, chapter: 92, value: 'unknown' },
+        { episode: 55, chapter: 105, value: 'specialist', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.pakunoda,
       chronicle: [
         ...yorknewCityChronicles.pakunoda,
@@ -1249,6 +1296,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'kortopi': {
+      ability: [{ episode: 53, chapter: 100, value: ['gallery-fake'] }],
+      nen: [
+        { episode: 53, chapter: 100, value: 'unknown' },
+        { episode: 54, chapter: 103, value: 'conjurer', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.kortopi,
       chronicle: [
         ...yorknewCityChronicles.kortopi,
@@ -1319,6 +1371,34 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'chrollo': {
+      ability: [
+        {
+          episode: 54,
+          chapter: 97,
+          source: 'chapter',
+          value: ['skill-hunter', 'indoor-fish'],
+        },
+        {
+          episode: 54,
+          chapter: 99,
+          source: 'chapter',
+          value: ['skill-hunter', 'indoor-fish', 'fun-fun-cloth'],
+        },
+        {
+          episode: 54,
+          chapter: 104,
+          value: [
+            'skill-hunter',
+            'indoor-fish',
+            'fun-fun-cloth',
+            'lovely-ghostwriter',
+          ],
+        },
+      ],
+      nen: [
+        { episode: 54, chapter: 97, value: 'unknown' },
+        { episode: 54, chapter: 98, value: 'specialist', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.chrollo,
       chronicle: [...yorknewCityChronicles.chrollo, ...kakinChronicles.chrollo],
       role: [
@@ -1362,6 +1442,11 @@ export const yorknewCity: HunterSaga = {
       ],
     },
     'shizuku': {
+      ability: [{ episode: 43, chapter: 73, value: ['blinky'] }],
+      nen: [
+        { episode: 43, chapter: 73, value: 'unknown' },
+        { episode: 45, chapter: 77, value: 'conjurer', source: 'chapter' },
+      ],
       relationships: yorknewCityRelationships.shizuku,
       chronicle: [
         ...yorknewCityChronicles.shizuku,

@@ -23,8 +23,7 @@ import { type Reader, readerFor } from './reader.server'
 
 /**
  * The Nen abilities (#923), proven on the fixture (`~/test/abilities`): Hunter
- * x Hunter with two abilities filed, which the real archive does not have
- * yet.
+ * x Hunter with two synthetic abilities filed.
  */
 
 type Unit = 'chapter' | 'episode'

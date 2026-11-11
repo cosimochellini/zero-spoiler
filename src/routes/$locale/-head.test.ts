@@ -163,19 +163,16 @@ describe('every page that is not a record’s own', () => {
       headOf(RanksRoute, '/hunter-x-hunter/en/ranks', HUNTER_X_HUNTER_SERIES),
     ).toStrictEqual({})
     expect(
-      headOf(
-        AbilitiesRoute,
-        '/hunter-x-hunter/en/abilities/',
-        HUNTER_X_HUNTER_SERIES,
-      ),
+      headOf(AbilitiesRoute, '/one-piece/en/abilities/', ONE_PIECE_SERIES),
     ).toStrictEqual({})
   })
 
   it('titles the abilities page once the series files the kind', () => {
-    const head = headOf(AbilitiesRoute, '/hunter-x-hunter/en/abilities/', {
-      ...HUNTER_X_HUNTER_SERIES,
-      kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability'],
-    })
+    const head = headOf(
+      AbilitiesRoute,
+      '/hunter-x-hunter/en/abilities/',
+      HUNTER_X_HUNTER_SERIES,
+    )
 
     expect(head.meta?.[0]?.title).toBe(
       'Nen abilities | Hunter x Hunter | Zero Spoiler',

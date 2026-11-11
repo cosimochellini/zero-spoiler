@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+import { abilityReadingOf } from './verify-chapters.abilities.mjs'
 import {
   chapterOf,
   episodeOf,
@@ -598,4 +599,55 @@ describe('what the two Game of Thrones wikis say of a record', () => {
       ),
     ).resolves.toStrictEqual({ only: 'chapter', page: 'Syrio Forel', wiki: 23 })
   })
+})
+
+describe('an ability’s reviewed scene pins', () => {
+  let directory
+
+  beforeEach(() => {
+    directory = mkdtempSync(path.join(tmpdir(), 'nen-scenes-'))
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((url) => {
+        const request = new URL(url)
+        const title = request.searchParams.get('page')
+        const wikitext =
+          title === 'Chapter 54' ? '| Chapter = 54' : '| Episode = 32'
+        return Promise.resolve(
+          Response.json({
+            parse: { title, wikitext: { '*': wikitext }, text: { '*': '' } },
+          }),
+        )
+      }),
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    rmSync(directory, { recursive: true, force: true })
+  })
+
+  it.each([
+    [32, 54, 'ok', 'equal'],
+    [31, 55, 'pin mismatch', 'pin mismatch'],
+    [33, 53, 'pin mismatch', 'pin mismatch'],
+  ])(
+    'checks episode %i and chapter %i exactly',
+    async (revealedAtEpisode, revealedAtChapter, episodeVerdict, verdict) => {
+      const record = { id: 'bungee-gum', revealedAtChapter, revealedAtEpisode }
+      const wiki = {
+        cache: directory,
+        en: 'https://wiki.example/api.php',
+        it: '',
+        slug: 'hunter-x-hunter',
+      }
+
+      await expect(abilityReadingOf(record, wiki)).resolves.toMatchObject({
+        episodeVerdict,
+        verdict,
+        wiki: 54,
+        wikiEpisode: 32,
+      })
+    },
+  )
 })

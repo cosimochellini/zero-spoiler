@@ -895,6 +895,32 @@ const earlyExam: HunterSaga = {
       ],
     },
     'kurapika': {
+      ability: [
+        { episode: 40, chapter: 68, value: ['dowsing-chain'] },
+        { episode: 44, chapter: 77, value: ['dowsing-chain', 'chain-jail'] },
+        {
+          episode: 47,
+          chapter: 83,
+          source: 'chapter',
+          value: ['dowsing-chain', 'chain-jail', 'emperor-time'],
+        },
+        {
+          episode: 47,
+          chapter: 84,
+          value: [
+            'dowsing-chain',
+            'chain-jail',
+            'emperor-time',
+            'holy-chain',
+            'judgment-chain',
+          ],
+        },
+      ],
+      nen: [
+        { episode: 39, chapter: 67, value: 'unknown', source: 'chapter' },
+        { episode: 39, chapter: 67, value: 'conjurer', source: 'episode' },
+        { episode: 47, chapter: 83, value: 'conjurer', source: 'chapter' },
+      ],
       relationships: hunterExamRelationships.kurapika,
       chronicle: [
         ...hunterExamChronicles.kurapika,
@@ -1110,6 +1136,9 @@ const earlyExam: HunterSaga = {
       ],
     },
     'hisoka': {
+      ability: [
+        { episode: 32, chapter: 54, value: ['bungee-gum', 'texture-surprise'] },
+      ],
       relationships: hunterExamRelationships.hisoka,
       chronicle: [
         ...hunterExamChronicles.hisoka,

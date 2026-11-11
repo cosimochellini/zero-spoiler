@@ -7,7 +7,7 @@ import { LOADED_SERIES } from '~/test/series'
 
 /**
  * The rules a Nen ability's users are filed by (#923): every series filed,
- * and the fixture that files abilities before any real series does
+ * and the synthetic abilities fixture
  * (`~/test/abilities`). A user opens at the later of its entry and the
  * character, so an entry before its ability would name it as used before
  * the reader may open its page.

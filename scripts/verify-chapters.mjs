@@ -41,7 +41,8 @@ import process from 'node:process'
 import { pathToFileURL } from 'node:url'
 
 import { seriesOrExit } from './archive-loader.mjs'
-import { TITLES } from './verify-chapters.tables.mjs'
+import { abilityReadingOf } from './verify-chapters.abilities.mjs'
+import { EPISODE_KEPT, TITLES } from './verify-chapters.tables.mjs'
 import { thronesSourceOf } from './verify-chapters.thrones.mjs'
 import { chapterTexts, chapterTitles, fetchPage, wikiOf } from './wiki.mjs'
 
@@ -171,22 +172,6 @@ const NAMED_AT = {
   'gum-gum-fruit': 1,
   'millet-millet-fruit': 911,
   'warp-warp-fruit': 1063,
-}
-
-/**
- * Records kept below the wiki's first episode after a hand check found the
- * wiki late: it dates a first appearance the archive has an earlier, named
- * sighting for. The value is the episode checked, so a record moved since
- * falls back to the rule.
- * @type {Record<string, number>}
- */
-const EPISODE_KEPT = {
-  // Episode 1's opening narration names him over his execution (chapter 1,
-  // page 1); the wiki dates his first flashback, episode 48.
-  'gold-roger': 1,
-  // Pouf names him in episode 86 (chapter 202), before he hatches; the wiki
-  // dates his first sight, episode 88 (#1021).
-  'menthuthuyoupi': 86,
 }
 
 /** A naming verb: the chapter summary says who ate the fruit or what it is. */
@@ -381,9 +366,7 @@ async function sourceOf(record, { chapters, wiki, books = [] }) {
   }
 
   const pages = await pagesOf(record, wiki)
-
   const source = wiki.slug === 'hunter-x-hunter' ? record.source : undefined
-
   return readingOf({ ...record, source }, pages, chapters)
 }
 
@@ -520,20 +503,23 @@ async function verify() {
   /** @type {Row[]} */
   const rows = []
   for (const record of series.archive.entities) {
-    const source = await sourceOf(record, { chapters, wiki, books })
+    const source =
+      record.kind === 'ability' ?
+        await abilityReadingOf(record, wiki)
+      : await sourceOf(record, { chapters, wiki, books })
 
     rows.push({
       id: record.id,
       kind: record.kind,
       filed: record.revealedAtChapter,
       episode: record.revealedAtEpisode,
-      ...source,
       verdict: verdictOf(record.revealedAtChapter, source),
       episodeVerdict: episodeStandOf(
         record,
         source,
         wiki.episodes !== undefined,
       ),
+      ...source,
     })
   }
 
@@ -563,14 +549,14 @@ function table(title, rows, cells) {
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   const { rows, thrones } = await verify()
-  const failures = ['too low', 'unresolved']
+  const failures = ['too low', 'unresolved', 'pin mismatch']
   const wrong = rows.some((row) =>
     failures.some(
       (failure) => row.verdict === failure || row.episodeVerdict === failure,
     ),
   )
   const verdicts = [...failures, 'equal', 'kept']
-  const episodeVerdicts = ['too low', 'kept']
+  const episodeVerdicts = ['too low', 'kept', 'pin mismatch']
   if (thrones || rows.some((row) => row.verdict === EPISODE_ONLY)) {
     verdicts.push(EPISODE_ONLY)
   }

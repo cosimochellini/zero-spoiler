@@ -173,6 +173,9 @@ is filed: Water Divination and Wing's lesson tell Gon's, Killua's, Zushi's,
 Wing's, Hisoka's, Gido's and Kastro's types at chapter 60 / episode 35; Sadaso
 and Riehlvelt stay "not yet known". Later arcs' types are filed with their arcs.
 
+Hunter x Hunter files the named personal Nen abilities shown in Heavens Arena
+and Yorknew City at their own gates (#924).
+
 A Nen ability is a record kind of its own (`ability`, #923), Hunter x Hunter's
 answer to the devil fruits. It opens at its own threshold, where the story first
 shows it, and keeps the Nen type the story has told by then
@@ -187,9 +190,9 @@ type of the open abilities, a plate of the open ones with no type told, and one
 fog band for every covered ability, so a band never says a covered ability's
 type; an ability's own page is its stage and its reached users.
 `hasPage(series, 'abilities')` follows `kinds.includes('ability')`, and Hunter x
-Hunter declares the kind only once its abilities are filed (#924): until then
-the routes answer 404, nothing links to them and the sitemap lists none. The
-kind is proven on a test fixture, `src/test/abilities.ts`.
+Hunter declares the kind for its Heavens Arena and Yorknew City abilities
+(#924). The synthetic records in `src/test/abilities.ts` also exercise the
+ability pages and their user gates.
 
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
@@ -350,11 +353,12 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 340                                                   |
+| Records           | 368                                                   |
 | Characters        | 290                                                   |
+| Nen abilities     | 28                                                    |
 | Arcs, places      | 7 · 43                                                |
 | Saga modules      | 7                                                     |
-| Line drawings     | 340, one per record, plus 94 redrawings of 81 records |
+| Line drawings     | 368, one per record, plus 94 redrawings of 81 records |
 | Chronicle stories | 994, for 289 characters                               |
 
 ### `game-of-thrones`

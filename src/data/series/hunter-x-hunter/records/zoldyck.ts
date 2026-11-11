@@ -330,6 +330,10 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
     },
     'zeno': {
+      ability: [
+        { episode: 52, chapter: 99, value: ['dragon-head', 'dragon-lance'] },
+      ],
+      nen: [{ episode: 52, chapter: 99, value: 'unknown' }],
       relationships: zoldyckRelationships.zeno,
       chronicle: [
         ...zoldyckChronicles.zeno,

@@ -96,6 +96,8 @@ theirs is drawn), and some are redrawn from the episode the story changes them.
 Most Game of Thrones entries show a plain placeholder until theirs are drawn.
 There is no official artwork.
 
+Hunter x Hunter also files Nen abilities from Heavens Arena and Yorknew City.
+
 |                                                                                                                                                                                              |                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <img src="docs/media/home-ep650.png" alt="The landing page at episode 650: the Dressrosa arc with its drawing" width="420"><br>The landing page: the arc you are in, and what just happened. | <img src="docs/media/characters-ep650.png" alt="The characters page with the search field and the main characters' crests" width="420"><br>Characters: each one with its own crest.                    |

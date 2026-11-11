@@ -177,7 +177,7 @@ export const HUNTER_X_HUNTER_SERIES: Series = {
   name: { en: 'Hunter x Hunter', it: 'Hunter x Hunter' },
   theme: 'hunter-x-hunter',
   units: ['episode', 'season', 'chapter'],
-  kinds: ['arc', 'character', 'place'],
+  kinds: ['ability', 'arc', 'character', 'place'],
   features: {
     bounty: false,
     factions: false,
