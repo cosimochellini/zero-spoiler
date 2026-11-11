@@ -6,6 +6,7 @@ import { plain } from '~/lib/plain'
 import { readBookmark, readTrial } from '~/lib/progress/readBookmark'
 import type { Series } from '~/lib/progress/series'
 
+import { abilityPage, abilitySheet } from './archive/abilities.server'
 import { chronicleRestOf } from './archive/chronicle.server'
 import { creditsPage } from './archive/credits.server'
 import { fillerPage, peekFiller } from './archive/filler.server'
@@ -26,6 +27,7 @@ import {
   shelvesPage,
 } from './archive/pages.server'
 import {
+  peekAbility,
   peekCharacter,
   peekDossier,
   peekFruit,
@@ -234,6 +236,16 @@ export const loadFruitSiblings = createServerFn()
   .validator(addressed)
   .handler(async ({ data }) => fruitSiblings(data.id, await readerIn(data)))
 
+export const loadAbilities = createServerFn()
+  .validator(located)
+  .handler(async ({ data }) => abilitySheet(await readerIn(data)))
+
+export const loadAbility = createServerFn()
+  .validator(addressed)
+  .handler(
+    async ({ data }) => abilityPage(data.id, await readerIn(data)) ?? null,
+  )
+
 export const loadPlaces = createServerFn()
   .validator(located)
   .handler(async ({ data }) => placesPage(await readerIn(data)))
@@ -315,4 +327,10 @@ export const liftShip = createServerFn()
   .validator(handled)
   .handler(
     async ({ data }) => peekShip(data.handle, await readerIn(data)) ?? null,
+  )
+
+export const liftAbility = createServerFn()
+  .validator(handled)
+  .handler(
+    async ({ data }) => peekAbility(data.handle, await readerIn(data)) ?? null,
   )

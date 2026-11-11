@@ -75,14 +75,32 @@ function character(entity, r) {
   }
 }
 
+/**
+ * A record's name, and the line its series' copy words under one key.
+ * @param {Entity} entity The record.
+ * @param {Reader} r The reader.
+ * @param {string | undefined} key The line's key, or none for no line.
+ * @returns {{ name: string, line?: string }} The words.
+ */
+function worded(entity, r, key) {
+  return {
+    name: nameOf(entity, r),
+    ...(key !== undefined && {
+      line: translatorOf(r.archive.series, r.locale)(key),
+    }),
+  }
+}
+
 /** @type {Reading} */
 function fruit(entity, r) {
   const form = r.archive.fruitFormOf(entity)
-  const t = translatorOf(r.archive.series, r.locale)
-  return {
-    name: nameOf(entity, r),
-    ...(form !== undefined && { line: t(`fruitForm.${form}`) }),
-  }
+  return worded(entity, r, form === undefined ? undefined : `fruitForm.${form}`)
+}
+
+/** @type {Reading} */
+function ability(entity, r) {
+  const nen = r.archive.abilityNenOf(entity)
+  return worded(entity, r, nen === undefined ? 'kind.ability' : `nen.${nen}`)
 }
 
 /** @type {Reading} */
@@ -104,18 +122,16 @@ function place(entity, r) {
 
 /** @type {Reading} */
 function ship(entity, r) {
-  return {
-    name: nameOf(entity, r),
-    line: translatorOf(r.archive.series, r.locale)('form.ship'),
-  }
+  return worded(entity, r, 'form.ship')
 }
 
 /**
  * How each kind of record is read: a character's epithet, else its role; a
- * fruit's type; a place's form and region; a ship's kind.
+ * fruit's type; an ability's Nen type, else its kind; a place's form and
+ * region; a ship's kind.
  * @type {Record<string, Reading>}
  */
-const READINGS = { character, fruit, place, ship }
+const READINGS = { ability, character, fruit, place, ship }
 
 /**
  * What one record's card prints in one locale: the name the first reader is
@@ -155,5 +171,6 @@ export function pagedRecords(archive, hasPage) {
     ...(hasPage(series, 'characters') ? archive.characters : []),
     ...(hasPage(series, 'fruits') ? archive.fruits : []),
     ...(hasPage(series, 'places') ? [...archive.places, ...archive.ships] : []),
+    ...(hasPage(series, 'abilities') ? archive.abilities : []),
   ]
 }

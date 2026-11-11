@@ -244,10 +244,13 @@ export const GAME_OF_THRONES_SERIES: Series = {
 }
 
 /** A page under `/{series}/{locale}/` that only some series have. */
-export type SeriesPage = 'characters' | 'filler' | 'fruits' | 'places' | 'ranks'
+export type SeriesPage =
+  'abilities' | 'characters' | 'filler' | 'fruits' | 'places' | 'ranks'
 
 /** What decides each of those pages: a kind the series files, or a feature. */
 const PAGES: Record<SeriesPage, (series: Series) => boolean> = {
+  // Hunter x Hunter's Nen abilities, once it files the kind (#924).
+  abilities: (series) => series.kinds.includes('ability'),
   characters: (series) => series.kinds.includes('character'),
   places: (series) =>
     series.kinds.includes('place') || series.kinds.includes('ship'),

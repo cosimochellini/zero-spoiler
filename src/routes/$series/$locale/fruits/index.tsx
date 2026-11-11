@@ -38,12 +38,12 @@ import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { type AlbumView, parseFruitParams } from '~/lib/search/fruitParams'
 import { seriesPageHead } from '~/routes/$locale/-head'
 import { requirePage } from '~/routes/$series/$locale/-found'
+import { useAddressParams } from '~/routes/$series/$locale/-params'
 import { usePeek } from '~/routes/$series/$locale/-peek'
 import {
   primeAlbum,
   useFruitAlbum,
 } from '~/routes/$series/$locale/fruits/-album'
-import { useFruitParams } from '~/routes/$series/$locale/fruits/-params'
 import { liftFruit, loadFruits } from '~/server/api'
 
 export const Route = createFileRoute('/$series/$locale/fruits/')({
@@ -110,7 +110,7 @@ function FruitsPage(): ReactElement {
   const { album, retry } = useFruitAlbum()
 
   const peek = usePeek(liftFruit)
-  const [params, onParams] = useFruitParams()
+  const [params, onParams] = useAddressParams(parseFruitParams)
   const countKey = COUNT_KEY[params.view ?? 'type']
 
   return (

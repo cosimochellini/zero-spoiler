@@ -47,7 +47,7 @@ function pathsFor(
 
 /** Only the pages the series declares get addresses. */
 function suffixes(archive: ReaderArchive): Suffix[] {
-  const { characters, fruits, places, ships, series } = archive
+  const { abilities, characters, fruits, places, ships, series } = archive
   const { slug } = series
   return [
     { path: '' },
@@ -60,6 +60,9 @@ function suffixes(archive: ReaderArchive): Suffix[] {
     : []),
     ...(hasPage(series, 'filler') ? [{ path: '/filler' }] : []),
     ...(hasPage(series, 'ranks') ? [{ path: '/ranks' }] : []),
+    ...(hasPage(series, 'abilities') ?
+      pathsFor('/abilities', abilities, slug)
+    : []),
   ]
 }
 

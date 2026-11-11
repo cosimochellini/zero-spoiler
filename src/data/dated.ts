@@ -1,9 +1,9 @@
-import { byNumber, byValue } from 'sort-es'
+import { byNumber, byValue, byValues } from 'sort-es'
 
 import type { Gated } from '~/lib/progress/spoiler'
 
 import { type ChapterTable, vouches } from './chapterTable'
-import type { FeatureTimelines } from './features'
+import type { Eater, FeatureTimelines } from './features'
 import { type Reveal, toldIn } from './reveal'
 import type {
   CharacterDossier,
@@ -82,6 +82,7 @@ function dossierReaders(
   dossiers: Record<string, Dossier>,
 ): Required<Pick<Readers, DossierField>> {
   return {
+    ability: (id) => dossiers[id]?.ability,
     affiliation: (id) => dossiers[id]?.affiliation,
     bounty: (id) => dossiers[id]?.bounty,
     chronicle: (id) => dossiers[id]?.chronicle,
@@ -343,4 +344,71 @@ function readNatives(
   }
 
   return found
+}
+
+/**
+ * The entries each character's dossier names each record in, in order.
+ *
+ * The relation is read backwards on purpose. It is written once, on the
+ * character, as a record id on a dated dossier entry (a devil fruit eaten, a
+ * Nen ability used); the record derives its users from those entries rather
+ * than keeping a list of its own, so the two sides cannot disagree.
+ */
+type Found = Map<string, Map<Entity, Opened<string[]>[]>>
+
+/** Files one dossier entry under every record it names. */
+function file(found: Found, character: Entity, entry: Opened<string[]>): void {
+  for (const id of entry.value) {
+    const byCharacter = found.get(id) ?? new Map<Entity, Opened<string[]>[]>()
+    byCharacter.set(character, [...(byCharacter.get(character) ?? []), entry])
+    found.set(id, byCharacter)
+  }
+}
+
+/**
+ * One record's users, earliest first, ties broken by the order the
+ * characters were read in, each at the gate its entries give it
+ * (`earliestOf`).
+ */
+function listed(byCharacter: Map<Entity, Opened<string[]>[]>): Eater[] {
+  return [...byCharacter]
+    .flatMap(([entity, entries]) => {
+      const [named] = entries
+
+      return named === undefined ?
+          []
+        : { entity, gate: earliestOf(entries.map(({ gate }) => gate)), named }
+    })
+    .toSorted(
+      byValues([
+        [(eater) => eater.named.episode, byNumber()],
+        [(eater) => eater.entity.revealedAtEpisode, byNumber()],
+      ]),
+    )
+    .map(({ entity, gate }) => ({ entity, gate }))
+}
+
+/**
+ * Every record's users, read once out of one dated field of these
+ * characters' dossiers, in the order the characters are given: One Piece's
+ * fruit eaters and Hunter x Hunter's ability users. A user's gate is the
+ * later of its entry and the character, because a character filed long
+ * before the story says what they use must not be named as a user the
+ * moment the reader meets them. Empty for an id no entry names.
+ */
+export function usersBy(
+  characters: Entity[],
+  entries: (character: Entity) => Opened<string[]>[],
+): (id: string) => Eater[] {
+  const found: Found = new Map()
+  for (const character of characters) {
+    for (const entry of entries(character)) {
+      file(found, character, entry)
+    }
+  }
+  const users = new Map(
+    [...found].map(([id, byCharacter]) => [id, listed(byCharacter)]),
+  )
+
+  return (id) => users.get(id) ?? []
 }

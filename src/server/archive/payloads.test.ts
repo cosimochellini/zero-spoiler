@@ -83,6 +83,7 @@ function byDesignOf({
     liftRecord: lifted,
     liftPort: lifted,
     liftShip: lifted,
+    liftAbility: lifted,
   }
 }
 

@@ -15,6 +15,64 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
   'nen.specialist': 'Specializzazione',
   'nen.transmuter': 'Trasformazione',
   'nen.unknown': 'Non ancora noto',
+  // Le abilità Nen (#923). Nessun nome di abilità: arrivano con i loro record.
+  'nav.abilities': 'Abilità',
+  'kind.ability': 'Abilità',
+  'character.abilities': 'Abilità',
+  'abilities.title': 'Abilità Nen',
+  'abilities.count':
+    '{count} abilità Nen, divise per tipo di Nen e nell’ordine in cui la storia le mostra. Quelle nella nebbia non compaiono nei risultati della ricerca.',
+  'abilities.pageTitle': 'Abilità Nen | {series} | Zero Spoiler',
+  'abilities.pageDescription':
+    'Le abilità Nen di Hunter x Hunter, divise per tipo di Nen, ognuna nascosta fino all’episodio in cui viene mostrata per la prima volta.',
+  'abilities.searchLabel': 'Cerca un’abilità',
+  'abilities.searchClear': 'Cancella la ricerca',
+  'abilities.searchPlaceholder': 'Abilità o personaggio',
+  'abilities.searchOpen': 'Cerca',
+  'abilities.controls': 'Filtri',
+  'abilities.typeLegend': 'Tipo di Nen',
+  'abilities.all': 'Tutte',
+  'abilities.shown': 'Risultati: {count} su {total} abilità visibili',
+  'abilities.noMatch': 'Nessuna abilità visibile corrisponde a “{query}”.',
+  'abilities.noType': 'Tipo non detto',
+  'abilities.noTypeLede':
+    'Abilità che la storia mostra prima di dirne il tipo di Nen.',
+  'abilities.bandCount': '{count} abilità',
+  'abilities.bandCountOne': '1 abilità',
+  'abilities.specimen': 'Abilità {index}',
+  'abilities.foggedTitle': '{count} nella nebbia',
+  'abilities.foggedTitleOne': '1 nella nebbia',
+  'abilities.foggedHint':
+    'I loro nomi e i tipi di Nen sono nascosti, quindi la ricerca non le trova. Sposta avanti il segnalibro per vederle.',
+  'abilities.allOpen': 'Nessuna abilità è nella nebbia.',
+  'abilities.moreUsers': 'e altri {count} personaggi che la usano',
+  'abilities.moreUsersOne': 'e un altro personaggio che la usa',
+  'ability.opensAt.episode':
+    'Mostrata per la prima volta nell’episodio {threshold}',
+  'ability.opensAt.season': 'Mostrata per la prima volta in {threshold}',
+  'ability.opensAt.chapter':
+    'Mostrata per la prima volta nel capitolo {threshold}',
+  'ability.opensAt.book':
+    'Mostrata per la prima volta nel libro {book}, capitolo {chapter}',
+  'ability.foggedName': 'Un’abilità nella nebbia',
+  'ability.foggedTitle': 'Un’abilità nella nebbia | {series} | Zero Spoiler',
+  'ability.foggedDescription.episode':
+    'Un’abilità Nen di Hunter x Hunter mostrata per la prima volta nell’episodio {threshold}. Imposta il segnalibro per leggere la pagina.',
+  'ability.foggedDescription.season':
+    'Un’abilità Nen di Hunter x Hunter mostrata per la prima volta in {threshold}. Imposta il segnalibro per leggere la pagina.',
+  'ability.foggedDescription.chapter':
+    'Un’abilità Nen di Hunter x Hunter mostrata per la prima volta nel capitolo {threshold}. Imposta il segnalibro per leggere la pagina.',
+  'ability.foggedDescription.book':
+    'Un’abilità Nen di Hunter x Hunter mostrata per la prima volta nel libro {book}, capitolo {chapter}. Imposta il segnalibro per leggere la pagina.',
+  'ability.pageTitle': '{name} | {series} | Zero Spoiler',
+  'ability.back': 'Tutte le abilità Nen',
+  'ability.usersTitle': 'Chi la usa',
+  'ability.usersLede':
+    'I personaggi a cui sei arrivato che usano questa abilità.',
+  'ability.usersNone': 'Nessun personaggio a cui sei arrivato la usa.',
+  'ability.notFoundTitle': 'Abilità non trovata',
+  'ability.notFoundBody':
+    'A questo indirizzo non c’è nessuna abilità. Le trovi tutte nella pagina Abilità Nen.',
   'characters.bookLede':
     'Tutti i personaggi della wiki, divisi per la saga in cui compaiono per la prima volta.',
   'dialog.saga': 'Saga · {name}',

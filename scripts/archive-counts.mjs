@@ -71,6 +71,9 @@ export function countTable({ archive }) {
     ['Records', entities.length],
     ['Characters', ofKind('character')],
     ...(fruits ? [['Devil fruits', ofKind('fruit')]] : []),
+    ...(series.kinds.includes('ability') ?
+      [['Nen abilities', ofKind('ability')]]
+    : []),
     ...(power ?
       [
         [

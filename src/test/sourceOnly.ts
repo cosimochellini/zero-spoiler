@@ -30,11 +30,20 @@ export interface Planted {
   /** The redrawing planted on `host`. */
   strokes: Stroke[]
   /** The planted record of each kind. */
-  twin: Record<EntityKind, Entity>
+  twin: Record<PlantedKind, Entity>
 }
 
+/**
+ * The kinds a twin is planted for: One Piece's. Its archive files no Nen
+ * ability, so there is none to copy; the ability slice keeps its own source
+ * filter (`copyIn`, `~/data/source`) and its own test.
+ */
+type PlantedKind = Exclude<EntityKind, 'ability'>
+
+const PLANTED: PlantedKind[] = ['arc', 'character', 'fruit', 'place', 'ship']
+
 /** The real list a kind's records are filed in. */
-const LISTS: Record<EntityKind, (archive: SeriesArchive) => Entity[]> = {
+const LISTS: Record<PlantedKind, (archive: SeriesArchive) => Entity[]> = {
   arc: (archive) => archive.arcs,
   character: (archive) => archive.featuredCharacters,
   fruit: (archive) => withFeatures(archive).fruits,
@@ -43,7 +52,7 @@ const LISTS: Record<EntityKind, (archive: SeriesArchive) => Entity[]> = {
 }
 
 /** The first record of a kind inside the demo that does not open at 1. */
-function originalOf(kind: EntityKind, archive: SeriesArchive): Entity {
+function originalOf(kind: PlantedKind, archive: SeriesArchive): Entity {
   const { demoLastChapter, demoLastEpisode } = archive.series
   const found = LISTS[kind](archive).find(
     (entity) =>
@@ -86,8 +95,8 @@ function factsOf(
 function twinsOf(
   base: SeriesArchive,
   source: Source,
-): Record<EntityKind, Entity> {
-  const twinOf = (kind: EntityKind): Entity => {
+): Record<PlantedKind, Entity> {
+  const twinOf = (kind: PlantedKind): Entity => {
     const id = `${source}-only-${kind}`
     const name = { en: `Planted ${id}`, it: `Piantato ${id}` }
 
@@ -112,14 +121,18 @@ function filed(list: Entity[], ...more: Entity[]): Entity[] {
 export function plant(base: SeriesArchive, source: Source): Planted {
   const all = withFeatures(base)
   const twin = twinsOf(base, source)
-  const twins = Object.values(twin)
+  const planted = PLANTED.map((kind): [PlantedKind, Entity] => [
+    kind,
+    twin[kind],
+  ])
+  const twins = planted.map(([, entity]) => entity)
   const byId = new Map(twins.map((entity) => [entity.id, entity]))
   const copied = new Map(
-    twins.map((entity) => [entity.id, originalOf(entity.kind, base)]),
+    planted.map(([kind, entity]) => [entity.id, originalOf(kind, base)]),
   )
   const real = (entity: Entity): Entity => copied.get(entity.id) ?? entity
   const lookup =
-    (kind: EntityKind, found: (id: string) => Entity | undefined) =>
+    (kind: PlantedKind, found: (id: string) => Entity | undefined) =>
     (id: string): Entity | undefined =>
       id === twin[kind].id ? twin[kind] : found(id)
   const chart = filed(

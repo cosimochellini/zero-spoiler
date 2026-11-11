@@ -1,10 +1,12 @@
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import { foldName } from '~/lib/search/fold'
-import type { CharacterFacts, FruitLink } from '~/lib/view/facts'
+import type { AbilityView } from '~/lib/view/abilities'
+import type { CharacterFacts, RecordLink } from '~/lib/view/facts'
 import type {
   CharacterView,
   Drawing,
+  EaterView,
   FruitForm,
   FruitView,
   RecordView,
@@ -156,60 +158,98 @@ export function fruitOf(entity: Entity, form: FruitForm, r: Reader): FruitView {
 }
 
 /**
+ * The users of a record (a fruit's eaters, an ability's users) the caller
+ * has already gated, each as a crest and a name, and the record's aliases
+ * with their names in both locales joined to them, so "Luffy" finds the
+ * Gum-Gum Fruit and so does "Rufy". Only the users passed in are folded, so
+ * a search can only ever answer with a user the tile shows.
+ */
+function usedBy(
+  record: Searchable,
+  users: Entity[],
+  r: Reader,
+): { aliases: string[]; crests: EaterView[] } {
+  // Each once: most users go by the same name in both locales.
+  const named = foldAll(
+    users.flatMap((user) => LOCALES.map((locale) => user.name[locale])),
+  ).filter(
+    (alias, at, all) =>
+      all.indexOf(alias) === at && !record.aliases.includes(alias),
+  )
+
+  return {
+    aliases: [...record.aliases, ...named],
+    crests: users.map((user) => ({
+      id: user.id,
+      name: user.name[r.locale],
+      visual: drawingOf(user, r),
+    })),
+  }
+}
+
+/**
  * A devil fruit as its tile in the album draws it: the fruit (`fruitOf`), and
- * the eaters the caller has already gated, each as a crest and a name.
- *
- * The eaters' names in both locales join the fruit's aliases, so "Luffy"
- * finds the Gum-Gum Fruit and so does "Rufy". Only the eaters passed in are
- * folded, so a search can only ever answer with an eater the tile shows.
+ * the eaters the caller has already gated (`usedBy`).
  */
 export function specimenOf(
   fruit: FruitView,
   eaters: Entity[],
   r: Reader,
 ): SpecimenView {
-  // Each once: most eaters go by the same name in both locales.
-  const named = foldAll(
-    eaters.flatMap((eater) => LOCALES.map((locale) => eater.name[locale])),
-  ).filter(
-    (alias, at, all) =>
-      all.indexOf(alias) === at && !fruit.aliases.includes(alias),
-  )
+  const { aliases, crests } = usedBy(fruit, eaters, r)
+
+  return { ...fruit, aliases, eaters: crests }
+}
+
+/**
+ * A Nen ability as its tile and its page draw it: the record, its Nen type
+ * when it has one, its sentence, and the users the caller has already gated
+ * (`usedBy`).
+ */
+export function abilityOf(
+  entity: Entity,
+  users: Entity[],
+  r: Reader,
+): AbilityView {
+  const nen = r.archive.abilityNenOf(entity)
+  const named = namedOf(entity, r)
+  const { aliases, crests } = usedBy(named, users, r)
 
   return {
-    ...fruit,
-    aliases: [...fruit.aliases, ...named],
-    eaters: eaters.map((eater) => ({
-      id: eater.id,
-      name: eater.name[r.locale],
-      visual: drawingOf(eater, r),
-    })),
+    ...recordOf(entity, r),
+    ...(nen !== undefined && { nen }),
+    summary: entity.summary[r.locale],
+    ...named,
+    aliases,
+    users: crests,
   }
 }
 
 /**
- * The fruits one dossier entry names, as links to their own pages.
+ * The records one dossier entry names (fruits, abilities), as links to their
+ * own pages, through the lookup of their kind.
  *
- * An id the archive does not file is dropped rather than printed, which fails
- * closed: a row that named a fruit with no page would be a dead link on a
+ * An id the lookup does not find is dropped rather than printed, which fails
+ * closed: a row that named a record with no page would be a dead link on a
  * page the reader has reached. `undefined` for no entry and for an entry that
  * named nothing, because an empty "Devil fruit" row says a fruit is coming,
  * and that is itself a spoiler.
  */
 function linksFor(
   ids: string[] | undefined,
+  lookup: (id: string) => Entity | undefined,
   r: Reader,
-): FruitLink[] | undefined {
+): RecordLink[] | undefined {
   if (ids === undefined) {
     return undefined
   }
 
   const links = ids.flatMap((id) => {
-    const fruit = r.archive.getFruit(id)
+    const record = lookup(id)
 
-    return fruit === undefined ?
+    return record === undefined ?
         []
-      : { id: fruit.id, name: fruit.name[r.locale] }
+      : { id: record.id, name: record.name[r.locale] }
   })
 
   return links.length === 0 ? undefined : links
@@ -263,7 +303,11 @@ function wordFactsOf(entity: Entity, r: Reader): ReachedFacts {
  */
 function codedFactsOf(entity: Entity, r: Reader): ReachedFacts {
   const status = r.archive.latestOf(r, entity, 'status')
-  const devilFruit = linksFor(r.archive.latestOf(r, entity, 'devilFruit'), r)
+  const devilFruit = linksFor(
+    r.archive.latestOf(r, entity, 'devilFruit'),
+    r.archive.getFruit,
+    r,
+  )
   const bounty = r.archive.latestOf(r, entity, 'bounty')
   const nen = r.archive.latestOf(r, entity, 'nen')
 
@@ -272,5 +316,24 @@ function codedFactsOf(entity: Entity, r: Reader): ReachedFacts {
     ...(devilFruit !== undefined && { devilFruit }),
     ...(bounty !== undefined && { bounty }),
     ...(nen !== undefined && { nen }),
+    ...abilityFactsOf(entity, r),
   }
+}
+
+/**
+ * The abilities row: only abilities the reader has reached become links. A
+ * data test holds that no entry opens before the ability it names, so this
+ * drops nothing filed right; it fails closed on anything else.
+ */
+function abilityFactsOf(entity: Entity, r: Reader): ReachedFacts {
+  const abilities = linksFor(
+    r.archive.latestOf(r, entity, 'ability'),
+    (id) => {
+      const ability = r.archive.getAbility(id)
+      return ability !== undefined && r.sees(ability) ? ability : undefined
+    },
+    r,
+  )
+
+  return abilities === undefined ? {} : { abilities }
 }

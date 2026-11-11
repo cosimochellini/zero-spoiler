@@ -107,6 +107,15 @@ const ONE_PIECE_NAV: PageEntry<TranslationKey<'one-piece'>>[] = [
   { page: 'ranks', to: '/$series/$locale/ranks', label: 'nav.ranks' },
 ]
 
+/** Hunter x Hunter's own pages in the bar, in its words. */
+const HUNTER_NAV: PageEntry<TranslationKey<'hunter-x-hunter'>>[] = [
+  {
+    page: 'abilities',
+    to: '/$series/$locale/abilities',
+    label: 'nav.abilities',
+  },
+]
+
 /**
  * Content navigation belongs to the series selected by the route, and lists
  * the pages it declares.
@@ -114,7 +123,7 @@ const ONE_PIECE_NAV: PageEntry<TranslationKey<'one-piece'>>[] = [
 function SeriesNavigation(): ReactElement {
   const t = useT()
   const params = useSeriesParams()
-  const links = usePageLinks(NAV, ONE_PIECE_NAV)
+  const links = usePageLinks(NAV, ONE_PIECE_NAV, HUNTER_NAV)
   return (
     <nav
       aria-label={t('nav.label')}

@@ -62,7 +62,8 @@ export type TintId =
  * The kinds of record the archive files. `kind` exists so a generic list can
  * label a record without a lookup table per page.
  */
-export type EntityKind = 'arc' | 'character' | 'fruit' | 'place' | 'ship'
+export type EntityKind =
+  'ability' | 'arc' | 'character' | 'fruit' | 'place' | 'ship'
 
 /**
  * Where a character stands the last time the story said so.

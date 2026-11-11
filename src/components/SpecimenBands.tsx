@@ -230,9 +230,12 @@ export function Plate({
       {...stylex.props(styles.plate)}
     >
       <PlateHead
-        band={band}
         headingId={headingId}
-        index={index}
+        label={`${t('fruits.plate', {
+          index: String(index + 1).padStart(NUMBER_WIDTH, '0'),
+        })} · ${countOf(t, band.total)}`}
+        lede={t(LEDE_KEY[band.form])}
+        title={t(TITLE_KEY[band.form])}
       />
 
       {matches.length === 0 ? null : (
@@ -292,18 +295,21 @@ function CoveredTiles({
   )
 }
 
-/** A plate's label, its heading and the sentence under it. */
-function PlateHead({
-  band,
+/**
+ * A plate's label, its heading and the sentence under it, if it has one: a
+ * fruit plate's and an ability plate's.
+ */
+export function PlateHead({
   headingId,
-  index,
+  label,
+  lede,
+  title,
 }: {
-  band: FruitBandView
   headingId: string
-  index: number
+  label: string
+  lede?: string | undefined
+  title: string
 }): ReactElement {
-  const t = useSeriesOnlyT('one-piece')
-
   return (
     <>
       <div
@@ -313,21 +319,17 @@ function PlateHead({
           styles.plateHead,
         )}
       >
-        <p {...stylex.props(styles.plateNumber)}>
-          {t('fruits.plate', {
-            index: String(index + 1).padStart(NUMBER_WIDTH, '0'),
-          })}
-          {' · '}
-          {countOf(t, band.total)}
-        </p>
+        <p {...stylex.props(styles.plateNumber)}>{label}</p>
         <h2
           id={headingId}
           {...stylex.props(styles.plateTitle)}
         >
-          {t(TITLE_KEY[band.form])}
+          {title}
         </h2>
       </div>
-      <p {...stylex.props(styles.plateLede)}>{t(LEDE_KEY[band.form])}</p>
+      {lede === undefined ? null : (
+        <p {...stylex.props(styles.plateLede)}>{lede}</p>
+      )}
     </>
   )
 }

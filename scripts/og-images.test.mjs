@@ -70,7 +70,7 @@ describe('the committed pictures', () => {
     const files = new Set(loaded.pictures.map((picture) => picture.file))
     const records = xml
       .matchAll(
-        /<loc>[^<]*\/(?<series>[^/]+)\/(?<locale>[a-z]{2})\/(?:characters|fruits|places)\/(?<id>[^<]+)<\/loc>/gu,
+        /<loc>[^<]*\/(?<series>[^/]+)\/(?<locale>[a-z]{2})\/(?:abilities|characters|fruits|places)\/(?<id>[^<]+)<\/loc>/gu,
       )
       .map((match) => match.groups)
       .toArray()

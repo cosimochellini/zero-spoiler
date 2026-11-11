@@ -13,21 +13,27 @@ export interface PageEntry<K> {
 
 /**
  * The pages the series declares, in order and labelled: the shared ones in
- * the shared words, One Piece's own (its fruits, its filler guide) in its
- * words and on its pages only.
+ * the shared words, One Piece's own (its fruits, its filler guide) and
+ * Hunter x Hunter's (its Nen abilities) in their words and on their pages
+ * only.
  */
 export function usePageLinks(
   shared: PageEntry<TranslationKey>[],
   onePiece: PageEntry<TranslationKey<'one-piece'>>[],
+  hunter: PageEntry<TranslationKey<'hunter-x-hunter'>>[],
 ): PageEntry<string>[] {
   const t = useT()
   const own = useSeriesT('one-piece')
+  const hunters = useSeriesT('hunter-x-hunter')
   const declares = useDeclares()
   const labelled = [
     ...shared.map((entry) => ({ ...entry, label: t(entry.label) })),
     ...(own === undefined ?
       []
     : onePiece.map((entry) => ({ ...entry, label: own(entry.label) }))),
+    ...(hunters === undefined ?
+      []
+    : hunter.map((entry) => ({ ...entry, label: hunters(entry.label) }))),
   ]
 
   return labelled.filter(({ page }) => declares(page))

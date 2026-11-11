@@ -50,6 +50,9 @@ function allowedFields(archive: SeriesArchive): Set<Field> {
   if (features.nen) {
     allowed.add('nen')
   }
+  if (archive.series.kinds.includes('ability')) {
+    allowed.add('ability')
+  }
   if (archive.features.ships !== undefined) {
     allowed.add('fate')
   }
