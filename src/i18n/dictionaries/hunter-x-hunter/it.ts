@@ -22,6 +22,8 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
   'abilities.title': 'Abilità Nen',
   'abilities.count':
     '{count} abilità Nen, divise per tipo di Nen e nell’ordine in cui la storia le mostra. Quelle nella nebbia non compaiono nei risultati della ricerca.',
+  'abilities.countOne':
+    '1 abilità Nen, divisa per tipo di Nen. Quelle nella nebbia non compaiono nei risultati della ricerca.',
   'abilities.pageTitle': 'Abilità Nen | {series} | Zero Spoiler',
   'abilities.pageDescription':
     'Le abilità Nen di Hunter x Hunter, divise per tipo di Nen, ognuna nascosta fino all’episodio in cui viene mostrata per la prima volta.',
@@ -34,7 +36,7 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
   'abilities.all': 'Tutte',
   'abilities.shown': 'Risultati: {count} su {total} abilità visibili',
   'abilities.noMatch': 'Nessuna abilità visibile corrisponde a “{query}”.',
-  'abilities.noType': 'Tipo non detto',
+  'abilities.noType': 'Tipo non rivelato',
   'abilities.noTypeLede':
     'Abilità che la storia mostra prima di dirne il tipo di Nen.',
   'abilities.bandCount': '{count} abilità',

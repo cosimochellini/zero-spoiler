@@ -248,13 +248,13 @@ developer's machine. They are committed under `public/og/` and served as static
 assets, so the Worker never draws one. Each picture uses the record's first
 drawing, never a redrawing, and prints only what a reader standing at the
 record's own threshold reads in every source it is told in: a character's
-epithet, else its role; a fruit's type; a place's form and region; a ship's
-kind. The name is the one its first source's reader is given: the episode
-reader's for a record both sources tell, which is what a crawler's page title
-prints (a link preview is fetched as a crawler), and the chapter reader's for a
-record only the manga tells. Re-run the script after changing a record, a first
-drawing or the card layout. It draws only what changed.
-`scripts/og-images.test.mjs` fails while a picture is missing, stale or
+epithet, else its role; a fruit's type; an ability's Nen type, else its kind; a
+place's form and region; a ship's kind. The name is the one its first source's
+reader is given: the episode reader's for a record both sources tell, which is
+what a crawler's page title prints (a link preview is fetched as a crawler), and
+the chapter reader's for a record only the manga tells. Re-run the script after
+changing a record, a first drawing or the card layout. It draws only what
+changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
 orphaned.
 
 ## Localization

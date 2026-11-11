@@ -157,7 +157,7 @@ describe('AbilityAlbum', () => {
 
     expect(headings()).toStrictEqual([
       'Potenziamento',
-      'Tipo non detto',
+      'Tipo non rivelato',
       '2 nella nebbia',
     ])
   })

@@ -35,8 +35,8 @@ export interface Planted {
 
 /**
  * The kinds a twin is planted for: One Piece's. Its archive files no Nen
- * ability, so there is none to copy; the ability slice keeps its own source
- * filter (`copyIn`, `~/data/source`) and its own test.
+ * ability, so there is none to copy. The ability slice's source filter
+ * (`copyIn`, `~/data/source`) is `toldOf`, the one the fruit eaters use.
  */
 type PlantedKind = Exclude<EntityKind, 'ability'>
 

@@ -49,7 +49,9 @@ function AbilitiesPage(): ReactElement {
 
   return (
     <ArchivePage
-      count={t('abilities.count', { count: sheet.filed })}
+      count={t(sheet.filed === 1 ? 'abilities.countOne' : 'abilities.count', {
+        count: sheet.filed,
+      })}
       title={t('abilities.title')}
     >
       <AbilityAlbum

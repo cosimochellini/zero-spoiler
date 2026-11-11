@@ -25,6 +25,8 @@ export const hunterXHunterEn = {
   'abilities.title': 'Nen abilities',
   'abilities.count':
     '{count} Nen abilities, grouped by Nen type and listed in the order the story shows them. Abilities under fog do not show up in search.',
+  'abilities.countOne':
+    '1 Nen ability, grouped by Nen type. Abilities under fog do not show up in search.',
   'abilities.pageTitle': 'Nen abilities | {series} | Zero Spoiler',
   'abilities.pageDescription':
     'Hunter x Hunter Nen abilities, grouped by Nen type, each hidden until the episode where it is first shown.',
