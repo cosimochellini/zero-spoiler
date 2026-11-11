@@ -1,3 +1,4 @@
+import type { AbilityView } from '~/lib/view/abilities'
 import type {
   CharacterView,
   FruitView,
@@ -6,6 +7,7 @@ import type {
   ShipView,
 } from '~/lib/view/records'
 
+import { openAbilityOf } from './abilities.server'
 import { entityForHandle } from './handle.server'
 import { portOf, shipOf } from './places.server'
 import { characterOf, fruitOf, recordOf } from './project.server'
@@ -92,4 +94,18 @@ export function peekShip(handle: string, r: Reader): ShipView | undefined {
   return entity === undefined || r.archive.shipDossierOf(entity) === undefined ?
       undefined
     : shipOf(entity, r)
+}
+
+/**
+ * A Nen ability, as its tile draws it, with the users the reader has
+ * reached. A handle that stands for any other record answers nothing.
+ */
+export function peekAbility(
+  handle: string,
+  r: Reader,
+): AbilityView | undefined {
+  const entity = entityForHandle(handle, r.archive)
+  return entity === undefined || r.archive.getAbility(entity.id) === undefined ?
+      undefined
+    : openAbilityOf(entity, r)
 }

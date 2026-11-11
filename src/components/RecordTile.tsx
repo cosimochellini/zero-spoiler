@@ -9,7 +9,7 @@ import { useKindLabel } from '~/components/useKindLabel'
 import { useT } from '~/i18n/LocaleContext'
 import { useSeriesParams, useThreshold } from '~/lib/progress/BookmarkContext'
 import { useDrawing } from '~/lib/view/drawings'
-import type { RecordView, Slot } from '~/lib/view/records'
+import type { EntityKind, RecordView, Slot } from '~/lib/view/records'
 import {
   color,
   font,
@@ -91,60 +91,44 @@ function Plate({ record }: { record: RecordView }): ReactElement {
   )
 }
 
+/** The page each kind of record leads to; an arc has none. */
+const RECORD_PAGE = {
+  ability: '/$series/$locale/abilities/$id',
+  character: '/$series/$locale/characters/$id',
+  fruit: '/$series/$locale/fruits/$id',
+  place: '/$series/$locale/places/$id',
+  ship: '/$series/$locale/places/$id',
+} as const satisfies Record<Exclude<EntityKind, 'arc'>, string>
+
 /**
- * The name, and where it leads. A character, a place, a ship and a devil
- * fruit each have a page to point at; an arc does not, so its name is plain
- * text rather than a link that would go nowhere. A ship's page is served
- * from a place's address.
+ * The name, and where it leads. A character, a place, a ship, a devil fruit
+ * and a Nen ability each have a page to point at; an arc does not, so its
+ * name is plain text rather than a link that would go nowhere. A ship's page
+ * is served from a place's address.
  *
- * No tile is handed a fruit today: the two callers are a port's `filedHere`
- * and the two records beside one on the landing chart, and the chart draws no
- * fruit. The branch is here because `filedHere` is a list of record ids and
- * takes a fruit id the day somebody writes one — it is the data that decides,
- * not another edit here, and a tile that met one would otherwise print a name
- * it had a page for and no way to reach it.
+ * No tile is handed a fruit or an ability today: the two callers are a
+ * port's `filedHere` and the two records beside one on the landing chart,
+ * and the chart draws neither. The kinds are here because `filedHere` is a
+ * list of record ids and takes any id the day somebody writes one — it is
+ * the data that decides, not another edit here, and a tile that met one
+ * would otherwise print a name it had a page for and no way to reach it.
  */
 function Name({ entry }: { entry: RecordView }): ReactElement {
   const { series, locale } = useSeriesParams()
-  const label = entry.name
 
-  if (entry.kind === 'character') {
-    return (
-      <Link
-        params={{ series, locale, id: entry.id }}
-        to="/$series/$locale/characters/$id"
-        {...stylex.props(styles.name, bandStyles.link)}
-      >
-        {label}
-      </Link>
-    )
+  if (entry.kind === 'arc') {
+    return <span {...stylex.props(styles.name)}>{entry.name}</span>
   }
 
-  if (entry.kind === 'place' || entry.kind === 'ship') {
-    return (
-      <Link
-        params={{ series, locale, id: entry.id }}
-        to="/$series/$locale/places/$id"
-        {...stylex.props(styles.name, bandStyles.link)}
-      >
-        {label}
-      </Link>
-    )
-  }
-
-  if (entry.kind === 'fruit') {
-    return (
-      <Link
-        params={{ series, locale, id: entry.id }}
-        to="/$series/$locale/fruits/$id"
-        {...stylex.props(styles.name, bandStyles.link)}
-      >
-        {label}
-      </Link>
-    )
-  }
-
-  return <span {...stylex.props(styles.name)}>{label}</span>
+  return (
+    <Link
+      params={{ series, locale, id: entry.id }}
+      to={RECORD_PAGE[entry.kind]}
+      {...stylex.props(styles.name, bandStyles.link)}
+    >
+      {entry.name}
+    </Link>
+  )
 }
 
 const styles = stylex.create({

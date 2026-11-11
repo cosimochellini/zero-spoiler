@@ -55,7 +55,11 @@ const INLINE_FRUITS = 6
  */
 function bandOf(form: FruitForm, plate: number, r: Reader): FruitBandView {
   const band = r.split(r.archive.fruitsOfForm(form), (entity) =>
-    specimenOf(fruitOf(entity, form, r), openEaters(entity.id, r), r),
+    specimenOf(
+      fruitOf(entity, form, r),
+      openUsersOf(r.archive.eatersOf(entity.id), r),
+      r,
+    ),
   )
 
   return {
@@ -82,14 +86,13 @@ export function gatedOf(eater: Eater): Entity {
 }
 
 /**
- * The eaters of a fruit the reader has reached, in `eatersOf` order. The rest
- * are dropped rather than covered: a tile that kept a place for them would
- * count them, and a count is a spoiler too.
+ * The users of a record the reader has reached (a fruit's eaters, an
+ * ability's users), in the order given. The rest are dropped rather than
+ * covered: a tile that kept a place for them would count them, and a count
+ * is a spoiler too.
  */
-function openEaters(id: string, r: Reader): Entity[] {
-  return r.archive
-    .eatersOf(id)
-    .flatMap((eater) => (r.sees(gatedOf(eater)) ? [eater.entity] : []))
+export function openUsersOf(users: Eater[], r: Reader): Entity[] {
+  return users.flatMap((user) => (r.sees(gatedOf(user)) ? [user.entity] : []))
 }
 
 /** Where a bookmark stands in its own unit: the chapter, or the episode. */
@@ -220,7 +223,7 @@ function factionGroupsOf(r: Reader): FruitFactionView[] {
   const open = r.order(r.archive.fruits).filter((fruit) => r.sees(fruit))
 
   for (const fruit of open) {
-    const eaters = openEaters(fruit.id, r)
+    const eaters = openUsersOf(r.archive.eatersOf(fruit.id), r)
     for (const [at, eater] of eaters.entries()) {
       for (const faction of groupsOfEater(eater, r)) {
         fileUnder(groups, faction, { id: fruit.id, at })

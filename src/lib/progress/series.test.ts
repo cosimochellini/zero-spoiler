@@ -109,6 +109,10 @@ describe('the series a link parameter sets the bookmark of', () => {
     '/hunter-x-hunter/en/fruits/gum-gum',
     '/hunter-x-hunter/it/filler',
     '/hunter-x-hunter/it/ranks',
+    // Not declared until its Nen abilities are filed (#924).
+    '/hunter-x-hunter/en/abilities',
+    '/hunter-x-hunter/en/abilities/any-ability',
+    '/one-piece/en/abilities',
     '/missing/en/characters',
     '/en/legal',
   ])('is none on %s', (path) => {

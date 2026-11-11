@@ -19,6 +19,11 @@ import type { CharacterStatus } from '~/lib/view/records'
  * reader's language, not the archive's.
  */
 export interface CharacterFacts {
+  /**
+   * The Nen abilities the reader has been told this character uses, each
+   * with the id of its own page: only abilities the reader has reached.
+   */
+  abilities?: RecordLink[]
   affiliation?: string
   /**
    * The fruits the reader has been told this character ate, each with the
@@ -26,7 +31,7 @@ export interface CharacterFacts {
    * reader has reached, and a fruit opens no later than the entry that
    * names it, so a link here always leads somewhere the reader may go.
    */
-  devilFruit?: FruitLink[]
+  devilFruit?: RecordLink[]
   epithet?: string
   mode: 'facts'
   nen?: NenType
@@ -39,8 +44,8 @@ export interface CharacterFacts {
   bounty?: number
 }
 
-/** A fruit named on another record's page, and the page it leads to. */
-export interface FruitLink {
+/** A record named on another record's page, and the page it leads to. */
+export interface RecordLink {
   id: string
   name: string
 }
@@ -59,3 +64,10 @@ export type NenType =
   | 'specialist'
   | 'transmuter'
   | 'unknown'
+
+/**
+ * The Nen type an ability is filed with: one of the six, told by the
+ * ability's threshold. An ability whose type the story had not told by then
+ * has none, rather than `unknown`.
+ */
+export type AbilityNen = Exclude<NenType, 'unknown'>

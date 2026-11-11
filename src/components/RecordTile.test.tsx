@@ -1,8 +1,9 @@
 import { screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
+import { HUNTER_X_HUNTER_SERIES } from '~/lib/progress/series'
 import { at, coveredSlot, openSlot, peekPending, record } from '~/test/fixtures'
-import { renderWithProviders } from '~/test/providers'
+import { renderUnderSeries, renderWithProviders } from '~/test/providers'
 
 import { RecordTile } from './RecordTile'
 
@@ -36,6 +37,24 @@ describe('RecordTile', () => {
       'href',
       '/one-piece/en/places/baratie',
     )
+  })
+
+  it('links a Nen ability to its own page, and names its kind', async () => {
+    await renderUnderSeries(
+      <RecordTile
+        peek={peekPending()}
+        slot={openSlot(
+          record({ id: 'rock-fist', kind: 'ability', name: 'Rock Fist' }),
+        )}
+      />,
+      { path: '/hunter-x-hunter/en/places', series: HUNTER_X_HUNTER_SERIES },
+    )
+
+    expect(screen.getByRole('link', { name: 'Rock Fist' })).toHaveAttribute(
+      'href',
+      '/hunter-x-hunter/en/abilities/rock-fist',
+    )
+    expect(screen.getByText('Ability')).toBeInTheDocument()
   })
 
   it('links a ship to her own page', () => {

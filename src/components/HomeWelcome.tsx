@@ -39,6 +39,15 @@ const ONE_PIECE_PAGES: PageEntry<TranslationKey<'one-piece'>>[] = [
   { page: 'filler', to: '/$series/$locale/filler', label: 'filler.title' },
 ]
 
+/** Hunter x Hunter's own pages, in its words. */
+const HUNTER_PAGES: PageEntry<TranslationKey<'hunter-x-hunter'>>[] = [
+  {
+    page: 'abilities',
+    to: '/$series/$locale/abilities',
+    label: 'abilities.title',
+  },
+]
+
 /**
  * Shown once, on the first home page after a bookmark is saved from the
  * onboarding: what the reader can open now, every page of it already at
@@ -51,7 +60,7 @@ export function HomeWelcome(): null | ReactElement {
   const { locale } = useLocale()
   const t = useT()
   const { series } = useSeriesParams()
-  const pages = usePageLinks(PAGES, ONE_PIECE_PAGES)
+  const pages = usePageLinks(PAGES, ONE_PIECE_PAGES, HUNTER_PAGES)
   const shown = useSyncExternalStore(subscribeWelcome, welcomeOwed, () => false)
 
   if (!shown) {

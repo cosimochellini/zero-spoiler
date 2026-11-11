@@ -17,6 +17,63 @@ export const hunterXHunterEn = {
   'nen.specialist': 'Specialist',
   'nen.transmuter': 'Transmuter',
   'nen.unknown': 'Not yet known',
+  // Nen abilities (#923): the kind, the page and an ability's own page. No
+  // ability's name is here: they reach a page with their records only.
+  'nav.abilities': 'Abilities',
+  'kind.ability': 'Ability',
+  'character.abilities': 'Abilities',
+  'abilities.title': 'Nen abilities',
+  'abilities.count':
+    '{count} Nen abilities, grouped by Nen type and listed in the order the story shows them. Abilities under fog do not show up in search.',
+  'abilities.countOne':
+    '1 Nen ability, grouped by Nen type. Abilities under fog do not show up in search.',
+  'abilities.pageTitle': 'Nen abilities | {series} | Zero Spoiler',
+  'abilities.pageDescription':
+    'Hunter x Hunter Nen abilities, grouped by Nen type, each hidden until the episode where it is first shown.',
+  'abilities.searchLabel': 'Search abilities',
+  'abilities.searchClear': 'Clear search',
+  'abilities.searchPlaceholder': 'Ability or character',
+  'abilities.searchOpen': 'Search',
+  'abilities.controls': 'Filters',
+  'abilities.typeLegend': 'Nen type',
+  'abilities.all': 'All',
+  'abilities.shown': 'Showing {count} of {total} open abilities',
+  'abilities.noMatch': 'No open ability matches “{query}”.',
+  'abilities.noType': 'Type not told',
+  'abilities.noTypeLede':
+    'Abilities the story shows before it tells their Nen type.',
+  'abilities.bandCount': '{count} abilities',
+  'abilities.bandCountOne': '1 ability',
+  'abilities.specimen': 'Ability {index}',
+  'abilities.foggedTitle': '{count} under fog',
+  'abilities.foggedTitleOne': '1 under fog',
+  'abilities.foggedHint':
+    'Their names and Nen types are hidden, so search does not find them. Move your bookmark forward to see them.',
+  'abilities.allOpen': 'No ability is under fog.',
+  'abilities.moreUsers': 'and {count} more characters who use it',
+  'abilities.moreUsersOne': 'and 1 more character who uses it',
+  'ability.opensAt.episode': 'First shown in episode {threshold}',
+  'ability.opensAt.season': 'First shown in {threshold}',
+  'ability.opensAt.chapter': 'First shown in chapter {threshold}',
+  'ability.opensAt.book': 'First shown in book {book}, chapter {chapter}',
+  'ability.foggedName': 'An ability under fog',
+  'ability.foggedTitle': 'An ability under fog | {series} | Zero Spoiler',
+  'ability.foggedDescription.episode':
+    'A Hunter x Hunter Nen ability first shown in episode {threshold}. Set your bookmark to read this page.',
+  'ability.foggedDescription.season':
+    'A Hunter x Hunter Nen ability first shown in {threshold}. Set your bookmark to read this page.',
+  'ability.foggedDescription.chapter':
+    'A Hunter x Hunter Nen ability first shown in chapter {threshold}. Set your bookmark to read this page.',
+  'ability.foggedDescription.book':
+    'A Hunter x Hunter Nen ability first shown in book {book}, chapter {chapter}. Set your bookmark to read this page.',
+  'ability.pageTitle': '{name} | {series} | Zero Spoiler',
+  'ability.back': 'All Nen abilities',
+  'ability.usersTitle': 'Who uses it',
+  'ability.usersLede': 'The characters you have reached who use this ability.',
+  'ability.usersNone': 'No character you have reached uses it.',
+  'ability.notFoundTitle': 'Ability not found',
+  'ability.notFoundBody':
+    'There is no ability at this address. The Nen abilities page lists all of them.',
   'characters.bookLede':
     'Every character in the wiki, grouped by the arc they first appear in.',
   'dialog.saga': 'Arc · {name}',

@@ -1,6 +1,6 @@
 import type { Reveal } from '~/data/reveal'
 import type { Gated } from '~/lib/progress/spoiler'
-import type { NenType } from '~/lib/view/facts'
+import type { AbilityNen, NenType } from '~/lib/view/facts'
 import type { FillerKind } from '~/lib/view/filler'
 import type { BodyKind } from '~/lib/view/power'
 import type { FruitForm, FruitLook, Stroke } from '~/lib/view/records'
@@ -35,9 +35,13 @@ import type {
  * to the fruits it files. Hunter x Hunter's Nen type opens only for a
  * character the story has shown using Nen, as `unknown` until the episode
  * and chapter that tell the type; a row that opened at the threshold would
- * say that a Nen user is coming.
+ * say that a Nen user is coming. A Hunter x Hunter character's abilities
+ * are ids of ability records, like the fruits: each user opens at the later
+ * of its entry and the character, and a data test holds that no entry opens
+ * before the ability it names.
  */
 export interface FeatureTimelines {
+  ability?: Timeline<string[]>
   bounty?: Timeline<number>
   devilFruit?: Timeline<string[]>
   nen?: Timeline<NenType>
@@ -128,6 +132,17 @@ export interface FruitFeature {
   getFruit: (id: string) => Entity | undefined
 }
 
+/**
+ * Hunter x Hunter's Nen abilities: the records, the Nen type each was given
+ * by its threshold (none when the story had not told it), and their users.
+ */
+export interface AbilityFeature {
+  abilities: Entity[]
+  abilityNenOf: (entity: Entity) => AbilityNen | undefined
+  getAbility: (id: string) => Entity | undefined
+  usersOf: (id: string) => Eater[]
+}
+
 /** The ships: the records and their log entries. */
 export interface ShipFeature {
   getShip: (id: string) => Entity | undefined
@@ -212,6 +227,7 @@ export interface PowerFeature<V extends Vocabulary = Vocabulary> {
 
 /** The feature slices a series has; the rest are left out. */
 export interface Features<V extends Vocabulary = Vocabulary> {
+  abilities?: AbilityFeature
   factions?: FactionFeature<V>
   filler?: FillerFeature
   fruits?: FruitFeature
@@ -220,7 +236,8 @@ export interface Features<V extends Vocabulary = Vocabulary> {
 }
 
 /** An archive as the server reads it: its core, and every slice filled. */
-export type ReaderArchive<V extends Vocabulary = Vocabulary> = FactionFeature<V>
+export type ReaderArchive<V extends Vocabulary = Vocabulary> = AbilityFeature
+  & FactionFeature<V>
   & FillerFeature
   & FruitFeature
   & Omit<SeriesArchive<V>, 'features'>
@@ -233,7 +250,7 @@ const empty = (): never[] => []
 /**
  * An archive with every feature slice it lacks filled with nothing: no fruits,
  * no ships, no filler guide (aired to the series' last episode), no factions,
- * no bodies of power.
+ * no bodies of power, no abilities.
  */
 export function withFeatures<V extends Vocabulary>(
   archive: SeriesArchive<V>,
@@ -258,5 +275,11 @@ export function withFeatures<V extends Vocabulary>(
     }),
     ...(features.factions ?? { factionsOf: none }),
     ...(features.power ?? { bodies: [] }),
+    ...(features.abilities ?? {
+      abilities: [],
+      abilityNenOf: none,
+      getAbility: none,
+      usersOf: empty,
+    }),
   }
 }

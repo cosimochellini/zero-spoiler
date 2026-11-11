@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 
 import { Marked } from '~/components/CharacterCard'
 import { CharacterCrest } from '~/components/CharacterCrest'
-import { useLocale, useSeriesOnlyT } from '~/i18n/LocaleContext'
+import { useLocale } from '~/i18n/LocaleContext'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
 import { useDrawing } from '~/lib/view/drawings'
 import type { EaterView } from '~/lib/view/records'
@@ -21,9 +21,9 @@ import {
 } from '~/styles/tokens.stylex'
 
 /**
- * Who ate the fruit: one eater's crest and name, a link to their page, and
- * "+N" for the other eaters the reader has reached. A screen reader hears the
- * count as a sentence. Covered eaters are never sent, so they add nothing:
+ * Who ate the fruit, or who uses the ability: one user's crest and name, a
+ * link to their page, and "+N" for the others the reader has reached. A
+ * screen reader hears the count as `said`, a sentence. Covered eaters are never sent, so they add nothing:
  * no crest, no number and no height.
  *
  * A crest the list left behind is drawn, seal and all, once its strokes
@@ -35,10 +35,13 @@ export function FruitEater({
   eater,
   highlight,
   more,
+  said,
 }: {
   eater: EaterView
   highlight: [number, number] | null
   more: number
+  /** The count of the others, said in full: "and 2 more characters…". */
+  said: string
 }): ReactElement {
   const { locale } = useLocale()
   const { series } = useSeriesParams()
@@ -67,23 +70,28 @@ export function FruitEater({
           />
         </span>
       </Link>
-      {more < 1 ? null : <MoreEaters more={more} />}
+      {more < 1 ? null : (
+        <MoreEaters
+          more={more}
+          said={said}
+        />
+      )}
     </div>
   )
 }
 
-/** How many more characters ate the fruit: a number, said in full aloud. */
-function MoreEaters({ more }: { more: number }): ReactElement {
-  const t = useSeriesOnlyT('one-piece')
-
+/** How many more characters there are: a number, said in full aloud. */
+function MoreEaters({
+  more,
+  said,
+}: {
+  more: number
+  said: string
+}): ReactElement {
   return (
     <span {...stylex.props(styles.more)}>
       <span aria-hidden="true">{`+${String(more)}`}</span>
-      <span {...stylex.props(styles.hidden)}>
-        {more === 1 ?
-          t('fruits.moreEatersOne')
-        : t('fruits.moreEaters', { count: more })}
-      </span>
+      <span {...stylex.props(styles.hidden)}>{said}</span>
     </span>
   )
 }

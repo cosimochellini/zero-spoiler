@@ -7,7 +7,7 @@ import { useLocale, useSeriesT, useT } from '~/i18n/LocaleContext'
 import type { Locale } from '~/i18n/locales'
 import type { SeriesTranslate, Translate } from '~/i18n/types'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
-import type { CharacterFacts as Facts, FruitLink } from '~/lib/view/facts'
+import type { CharacterFacts as Facts, RecordLink } from '~/lib/view/facts'
 import { powerAnchor, type SeatLink } from '~/lib/view/power'
 import type { CharacterStatus } from '~/lib/view/records'
 import {
@@ -49,7 +49,7 @@ export function CharacterFacts({
   // The devil fruit and the bounty are One Piece's facts, in its words: on
   // another series' page there is no such row.
   const onePiece = useSeriesT('one-piece')
-  // So is the Nen type Hunter x Hunter's.
+  // So are the Nen type and the abilities Hunter x Hunter's.
   const hunter = useSeriesT('hunter-x-hunter')
 
   const rows: [string, ReactNode][] = [
@@ -58,7 +58,7 @@ export function CharacterFacts({
     [t('character.affiliation'), facts.affiliation],
     [t('character.origin'), facts.origin],
     ...(onePiece === undefined ? [] : onePieceRows(facts, locale, onePiece)),
-    ...(hunter === undefined ? [] : [hunterRow(facts, hunter)]),
+    ...(hunter === undefined ? [] : hunterRows(facts, hunter)),
   ]
   const shown = rows.filter(([, value]) => value !== undefined)
 
@@ -94,22 +94,26 @@ function onePieceRows(
 ): [string, ReactNode][] {
   return [
     [t('character.ranks'), seatRow(facts.seats)],
-    [t('character.devilFruit'), fruitRow(facts.devilFruit)],
+    [t('character.devilFruit'), linkRow(facts.devilFruit, FRUIT_PAGE)],
     [t('character.bounty'), formatBounty(facts.bounty, locale, t)],
   ]
 }
 
 /**
- * The Nen type row, Hunter x Hunter's own. The key is built from the value,
- * like the status's, so a type with no label fails `typecheck`.
+ * The Nen type row and the abilities row, Hunter x Hunter's own. The type's
+ * key is built from the value, like the status's, so a type with no label
+ * fails `typecheck`.
  */
-function hunterRow(
+function hunterRows(
   facts: Facts,
   t: SeriesTranslate<'hunter-x-hunter'>,
-): [string, ReactNode] {
+): [string, ReactNode][] {
   return [
-    t('character.nen'),
-    facts.nen === undefined ? undefined : t(`nen.${facts.nen}`),
+    [
+      t('character.nen'),
+      facts.nen === undefined ? undefined : t(`nen.${facts.nen}`),
+    ],
+    [t('character.abilities'), linkRow(facts.abilities, ABILITY_PAGE)],
   ]
 }
 
@@ -129,20 +133,39 @@ function statusRow(
   return status === undefined ? undefined : t(`status.${status}`)
 }
 
+/** The page a row's records lead to: a fruit's, or an ability's. */
+type RecordPage =
+  '/$series/$locale/abilities/$id' | '/$series/$locale/fruits/$id'
+
+const FRUIT_PAGE: RecordPage = '/$series/$locale/fruits/$id'
+const ABILITY_PAGE: RecordPage = '/$series/$locale/abilities/$id'
+
 /**
- * The devil fruit row, or nothing when the reader has not been told of one.
+ * The devil fruit row or the abilities row, or nothing when the reader has
+ * not been told of one.
  *
- * The fruits are links because a fruit is a record with a page of its own
- * now, and the link is always safe to print: the row is only built from a
- * timeline entry the reader has reached, and a fruit opens no later than the
- * entry that names it, which a data test holds.
+ * Each is a link because the record has a page of its own, and the link is
+ * always safe to print: the row is only built from a timeline entry the
+ * reader has reached, and the record opens no later than the entry that
+ * names it, which a data test holds.
  */
-function fruitRow(links: FruitLink[] | undefined): ReactNode {
-  return links === undefined ? undefined : <FruitLinks links={links} />
+function linkRow(links: RecordLink[] | undefined, to: RecordPage): ReactNode {
+  return links === undefined ? undefined : (
+      <RecordLinks
+        links={links}
+        to={to}
+      />
+    )
 }
 
-/** One link per fruit, comma-separated: an entry may name more than one. */
-function FruitLinks({ links }: { links: FruitLink[] }): ReactElement {
+/** One link per record, comma-separated: an entry may name more than one. */
+function RecordLinks({
+  links,
+  to,
+}: {
+  links: RecordLink[]
+  to: RecordPage
+}): ReactElement {
   const { series, locale } = useSeriesParams()
 
   return (
@@ -153,7 +176,7 @@ function FruitLinks({ links }: { links: FruitLink[] }): ReactElement {
             {at === 0 ? null : ', '}
             <Link
               params={{ series, locale, id: link.id }}
-              to="/$series/$locale/fruits/$id"
+              to={to}
               {...stylex.props(styles.link)}
             >
               {link.name}

@@ -173,6 +173,24 @@ is filed: Water Divination and Wing's lesson tell Gon's, Killua's, Zushi's,
 Wing's, Hisoka's, Gido's and Kastro's types at chapter 60 / episode 35; Sadaso
 and Riehlvelt stay "not yet known". Later arcs' types are filed with their arcs.
 
+A Nen ability is a record kind of its own (`ability`, #923), Hunter x Hunter's
+answer to the devil fruits. It opens at its own threshold, where the story first
+shows it, and keeps the Nen type the story has told by then
+(`Features.abilities`, `abilityNenOf`); a type told later is not filed, and an
+ability with none has no type row. Its users are read off the characters' dated
+`ability` entries, like a fruit's eaters: each opens at the later of its entry
+and the character, and a covered user is dropped rather than slotted, so no tile
+or page counts one. Every entry is pinned to a chapter and opens no earlier than
+its ability (`src/data/abilities.test.ts`), and a character's page links only
+the abilities the reader has reached. The abilities page has a plate per Nen
+type of the open abilities, a plate of the open ones with no type told, and one
+fog band for every covered ability, so a band never says a covered ability's
+type; an ability's own page is its stage and its reached users.
+`hasPage(series, 'abilities')` follows `kinds.includes('ability')`, and Hunter x
+Hunter declares the kind only once its abilities are filed (#924): until then
+the routes answer 404, nothing links to them and the sitemap lists none. The
+kind is proven on a test fixture, `src/test/abilities.ts`.
+
 Game of Thrones is open to readers (#856), filed in #849: its description (the
 show's seasons, the five books, the season 1 / first-book demo), its copy, its
 red theme and its hub crown (#850). It files no arcs: each season module is
@@ -230,13 +248,13 @@ developer's machine. They are committed under `public/og/` and served as static
 assets, so the Worker never draws one. Each picture uses the record's first
 drawing, never a redrawing, and prints only what a reader standing at the
 record's own threshold reads in every source it is told in: a character's
-epithet, else its role; a fruit's type; a place's form and region; a ship's
-kind. The name is the one its first source's reader is given: the episode
-reader's for a record both sources tell, which is what a crawler's page title
-prints (a link preview is fetched as a crawler), and the chapter reader's for a
-record only the manga tells. Re-run the script after changing a record, a first
-drawing or the card layout. It draws only what changed.
-`scripts/og-images.test.mjs` fails while a picture is missing, stale or
+epithet, else its role; a fruit's type; an ability's Nen type, else its kind; a
+place's form and region; a ship's kind. The name is the one its first source's
+reader is given: the episode reader's for a record both sources tell, which is
+what a crawler's page title prints (a link preview is fetched as a crawler), and
+the chapter reader's for a record only the manga tells. Re-run the script after
+changing a record, a first drawing or the card layout. It draws only what
+changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
 orphaned.
 
 ## Localization
@@ -268,7 +286,10 @@ live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
 
 - Register new server functions in `PAYLOADS` in
   `src/server/archive/payloads.server.ts`, including ids/handles they accept.
-  For `plain()` responses, extend the JSON round-trip checks there too.
+  For `plain()` responses, extend the JSON round-trip checks there too. New
+  payload names go at the end of its `order`, after the deployed ones, so One
+  Piece's sweep and dump stay byte for byte: `loadAbilities`, `loadAbility` and
+  `liftAbility` (#923) are the last.
 - Register new prose outside a series' `records/` in its `EXTRA.prose` entry in
   `scripts/archive-gate.mjs` and in `textsOf` in `src/data/leaks.test.ts`, using
   the page's actual gate.

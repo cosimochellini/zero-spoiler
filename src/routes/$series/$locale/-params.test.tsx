@@ -2,13 +2,14 @@ import { fireEvent, screen } from '@testing-library/react'
 import type { ReactElement } from 'react'
 import { describe, expect, it } from 'vitest'
 
+import { parseFruitParams } from '~/lib/search/fruitParams'
 import { renderOnRoute } from '~/test/providers'
 
-import { useFruitParams } from './-params'
+import { useAddressParams } from './-params'
 
 /** A field bound to the address the way the album's search field is. */
 function Field(): ReactElement {
-  const [params, onParams] = useFruitParams()
+  const [params, onParams] = useAddressParams(parseFruitParams)
 
   return (
     <input
@@ -21,7 +22,7 @@ function Field(): ReactElement {
   )
 }
 
-describe('useFruitParams', () => {
+describe('useAddressParams', () => {
   it('reads the kind and the query from the address', async () => {
     await renderOnRoute(<Field />, {
       path: '/one-piece/en/fruits?form=zoan&q=dog',

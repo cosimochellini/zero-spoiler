@@ -1,9 +1,6 @@
-import { byNumber, byValues } from 'sort-es'
-
-import { datedArchive, earliestOf } from '~/data/dated'
-import type { Eater } from '~/data/features'
+import { datedArchive, usersBy } from '~/data/dated'
 import type { Reveal } from '~/data/reveal'
-import type { Entity, Opened } from '~/data/types'
+import type { Entity } from '~/data/types'
 import type { Faction } from '~/lib/view/records'
 
 import { FILED, gateOf } from './chapter-table'
@@ -40,86 +37,12 @@ export function factionsOf(at: Reveal, owner: Entity): Faction[] | undefined {
 }
 
 /**
- * A character the dossiers say ate a fruit, and the gate of the entry that
- * says so: the later of that entry and the character, because a character
- * filed long before the story says what they ate must not be named as an
- * eater the moment the reader meets them.
+ * Every character the dossiers say ate this fruit, earliest first, read in
+ * the order the dossiers are filed (`usersBy`). Empty for an id the archive
+ * does not file, which is the same answer a fruit nobody has eaten would
+ * give — and a data test holds that there is no such fruit.
  */
-export type { Eater } from '~/data/features'
-
-/**
- * The entries each character's dossier names each fruit in, in order.
- *
- * The relation is read backwards on purpose. It is written once, on the
- * character, as a fruit id on a dated dossier entry; the fruit derives its
- * eaters from those entries rather than keeping a list of its own, so the two
- * sides of the reference cannot disagree.
- */
-type Found = Map<string, Map<string, Opened<string[]>[]>>
-
-/** Files one dossier entry under every fruit it names. */
-function file(found: Found, character: string, entry: Opened<string[]>): void {
-  for (const fruitId of entry.value) {
-    const byCharacter =
-      found.get(fruitId) ?? new Map<string, Opened<string[]>[]>()
-    byCharacter.set(character, [...(byCharacter.get(character) ?? []), entry])
-    found.set(fruitId, byCharacter)
-  }
-}
-
-/**
- * Every fruit's eaters, read once out of the dossiers, in the order the
- * dossiers are filed: ties in the sort below keep it.
- */
-function readEaters(): Map<string, Eater[]> {
-  const found: Found = new Map()
-
-  for (const id of Object.keys(CHARACTER_DOSSIERS)) {
-    const character = getCharacter(id)
-    if (character === undefined) {
-      continue
-    }
-
-    for (const entry of datedOf(character, 'devilFruit')) {
-      file(found, id, entry)
-    }
-  }
-
-  return new Map(
-    [...found].map(([fruitId, byCharacter]) => [fruitId, listed(byCharacter)]),
-  )
-}
-
-/**
- * One fruit's eaters, earliest first, ties broken by the archive's own order,
- * each at the gate its entries give it (`earliestOf`).
- */
-function listed(byCharacter: Map<string, Opened<string[]>[]>): Eater[] {
-  return [...byCharacter]
-    .flatMap(([character, entries]) => {
-      const entity = getCharacter(character)
-      const [named] = entries
-
-      return entity === undefined || named === undefined ?
-          []
-        : { entity, gate: earliestOf(entries.map(({ gate }) => gate)), named }
-    })
-    .toSorted(
-      byValues([
-        [(eater) => eater.named.episode, byNumber()],
-        [(eater) => eater.entity.revealedAtEpisode, byNumber()],
-      ]),
-    )
-    .map(({ entity, gate }) => ({ entity, gate }))
-}
-
-const EATERS = readEaters()
-
-/**
- * Every character the dossiers say ate this fruit, earliest first. Empty for
- * an id the archive does not file, which is the same answer a fruit nobody
- * has eaten would give — and a data test holds that there is no such fruit.
- */
-export function eatersOf(id: string): Eater[] {
-  return EATERS.get(id) ?? []
-}
+export const eatersOf = usersBy(
+  Object.keys(CHARACTER_DOSSIERS).flatMap((id) => getCharacter(id) ?? []),
+  (character) => datedOf(character, 'devilFruit'),
+)

@@ -21,6 +21,8 @@ import { Route as SeriesLocaleRouteImport } from './routes/$series/$locale'
 import { Route as SeriesLocaleIndexRouteImport } from './routes/$series/$locale/index'
 import { Route as SeriesLocaleFillerRouteImport } from './routes/$series/$locale/filler'
 import { Route as SeriesLocaleRanksRouteImport } from './routes/$series/$locale/ranks'
+import { Route as SeriesLocaleAbilitiesIndexRouteImport } from './routes/$series/$locale/abilities/index'
+import { Route as SeriesLocaleAbilitiesIdRouteImport } from './routes/$series/$locale/abilities/$id'
 import { Route as SeriesLocaleCharactersIndexRouteImport } from './routes/$series/$locale/characters/index'
 import { Route as SeriesLocaleCharactersIdRouteImport } from './routes/$series/$locale/characters/$id'
 import { Route as SeriesLocaleFruitsIndexRouteImport } from './routes/$series/$locale/fruits/index'
@@ -88,6 +90,17 @@ const SeriesLocaleRanksRoute = SeriesLocaleRanksRouteImport.update({
   path: '/ranks',
   getParentRoute: () => SeriesLocaleRoute,
 } as any)
+const SeriesLocaleAbilitiesIndexRoute =
+  SeriesLocaleAbilitiesIndexRouteImport.update({
+    id: '/abilities/',
+    path: '/abilities/',
+    getParentRoute: () => SeriesLocaleRoute,
+  } as any)
+const SeriesLocaleAbilitiesIdRoute = SeriesLocaleAbilitiesIdRouteImport.update({
+  id: '/abilities/$id',
+  path: '/abilities/$id',
+  getParentRoute: () => SeriesLocaleRoute,
+} as any)
 const SeriesLocaleCharactersIndexRoute =
   SeriesLocaleCharactersIndexRouteImport.update({
     id: '/characters/',
@@ -134,9 +147,11 @@ export interface FileRoutesByFullPath {
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
   '/$series/$locale/ranks': typeof SeriesLocaleRanksRoute
   '/$series/$locale/': typeof SeriesLocaleIndexRoute
+  '/$series/$locale/abilities/$id': typeof SeriesLocaleAbilitiesIdRoute
   '/$series/$locale/characters/$id': typeof SeriesLocaleCharactersIdRoute
   '/$series/$locale/fruits/$id': typeof SeriesLocaleFruitsIdRoute
   '/$series/$locale/places/$id': typeof SeriesLocalePlacesIdRoute
+  '/$series/$locale/abilities/': typeof SeriesLocaleAbilitiesIndexRoute
   '/$series/$locale/characters/': typeof SeriesLocaleCharactersIndexRoute
   '/$series/$locale/fruits/': typeof SeriesLocaleFruitsIndexRoute
   '/$series/$locale/places/': typeof SeriesLocalePlacesIndexRoute
@@ -152,9 +167,11 @@ export interface FileRoutesByTo {
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
   '/$series/$locale/ranks': typeof SeriesLocaleRanksRoute
   '/$series/$locale': typeof SeriesLocaleIndexRoute
+  '/$series/$locale/abilities/$id': typeof SeriesLocaleAbilitiesIdRoute
   '/$series/$locale/characters/$id': typeof SeriesLocaleCharactersIdRoute
   '/$series/$locale/fruits/$id': typeof SeriesLocaleFruitsIdRoute
   '/$series/$locale/places/$id': typeof SeriesLocalePlacesIdRoute
+  '/$series/$locale/abilities': typeof SeriesLocaleAbilitiesIndexRoute
   '/$series/$locale/characters': typeof SeriesLocaleCharactersIndexRoute
   '/$series/$locale/fruits': typeof SeriesLocaleFruitsIndexRoute
   '/$series/$locale/places': typeof SeriesLocalePlacesIndexRoute
@@ -173,9 +190,11 @@ export interface FileRoutesById {
   '/$series/$locale/filler': typeof SeriesLocaleFillerRoute
   '/$series/$locale/ranks': typeof SeriesLocaleRanksRoute
   '/$series/$locale/': typeof SeriesLocaleIndexRoute
+  '/$series/$locale/abilities/$id': typeof SeriesLocaleAbilitiesIdRoute
   '/$series/$locale/characters/$id': typeof SeriesLocaleCharactersIdRoute
   '/$series/$locale/fruits/$id': typeof SeriesLocaleFruitsIdRoute
   '/$series/$locale/places/$id': typeof SeriesLocalePlacesIdRoute
+  '/$series/$locale/abilities/': typeof SeriesLocaleAbilitiesIndexRoute
   '/$series/$locale/characters/': typeof SeriesLocaleCharactersIndexRoute
   '/$series/$locale/fruits/': typeof SeriesLocaleFruitsIndexRoute
   '/$series/$locale/places/': typeof SeriesLocalePlacesIndexRoute
@@ -195,9 +214,11 @@ export interface FileRouteTypes {
     | '/$series/$locale/filler'
     | '/$series/$locale/ranks'
     | '/$series/$locale/'
+    | '/$series/$locale/abilities/$id'
     | '/$series/$locale/characters/$id'
     | '/$series/$locale/fruits/$id'
     | '/$series/$locale/places/$id'
+    | '/$series/$locale/abilities/'
     | '/$series/$locale/characters/'
     | '/$series/$locale/fruits/'
     | '/$series/$locale/places/'
@@ -213,9 +234,11 @@ export interface FileRouteTypes {
     | '/$series/$locale/filler'
     | '/$series/$locale/ranks'
     | '/$series/$locale'
+    | '/$series/$locale/abilities/$id'
     | '/$series/$locale/characters/$id'
     | '/$series/$locale/fruits/$id'
     | '/$series/$locale/places/$id'
+    | '/$series/$locale/abilities'
     | '/$series/$locale/characters'
     | '/$series/$locale/fruits'
     | '/$series/$locale/places'
@@ -233,9 +256,11 @@ export interface FileRouteTypes {
     | '/$series/$locale/filler'
     | '/$series/$locale/ranks'
     | '/$series/$locale/'
+    | '/$series/$locale/abilities/$id'
     | '/$series/$locale/characters/$id'
     | '/$series/$locale/fruits/$id'
     | '/$series/$locale/places/$id'
+    | '/$series/$locale/abilities/'
     | '/$series/$locale/characters/'
     | '/$series/$locale/fruits/'
     | '/$series/$locale/places/'
@@ -335,6 +360,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SeriesLocaleRanksRouteImport
       parentRoute: typeof SeriesLocaleRoute
     }
+    '/$series/$locale/abilities/': {
+      id: '/$series/$locale/abilities/'
+      path: '/abilities'
+      fullPath: '/$series/$locale/abilities/'
+      preLoaderRoute: typeof SeriesLocaleAbilitiesIndexRouteImport
+      parentRoute: typeof SeriesLocaleRoute
+    }
+    '/$series/$locale/abilities/$id': {
+      id: '/$series/$locale/abilities/$id'
+      path: '/abilities/$id'
+      fullPath: '/$series/$locale/abilities/$id'
+      preLoaderRoute: typeof SeriesLocaleAbilitiesIdRouteImport
+      parentRoute: typeof SeriesLocaleRoute
+    }
     '/$series/$locale/characters/': {
       id: '/$series/$locale/characters/'
       path: '/characters'
@@ -399,9 +438,11 @@ interface SeriesLocaleRouteChildren {
   SeriesLocaleFillerRoute: typeof SeriesLocaleFillerRoute
   SeriesLocaleRanksRoute: typeof SeriesLocaleRanksRoute
   SeriesLocaleIndexRoute: typeof SeriesLocaleIndexRoute
+  SeriesLocaleAbilitiesIdRoute: typeof SeriesLocaleAbilitiesIdRoute
   SeriesLocaleCharactersIdRoute: typeof SeriesLocaleCharactersIdRoute
   SeriesLocaleFruitsIdRoute: typeof SeriesLocaleFruitsIdRoute
   SeriesLocalePlacesIdRoute: typeof SeriesLocalePlacesIdRoute
+  SeriesLocaleAbilitiesIndexRoute: typeof SeriesLocaleAbilitiesIndexRoute
   SeriesLocaleCharactersIndexRoute: typeof SeriesLocaleCharactersIndexRoute
   SeriesLocaleFruitsIndexRoute: typeof SeriesLocaleFruitsIndexRoute
   SeriesLocalePlacesIndexRoute: typeof SeriesLocalePlacesIndexRoute
@@ -411,9 +452,11 @@ const SeriesLocaleRouteChildren: SeriesLocaleRouteChildren = {
   SeriesLocaleFillerRoute: SeriesLocaleFillerRoute,
   SeriesLocaleRanksRoute: SeriesLocaleRanksRoute,
   SeriesLocaleIndexRoute: SeriesLocaleIndexRoute,
+  SeriesLocaleAbilitiesIdRoute: SeriesLocaleAbilitiesIdRoute,
   SeriesLocaleCharactersIdRoute: SeriesLocaleCharactersIdRoute,
   SeriesLocaleFruitsIdRoute: SeriesLocaleFruitsIdRoute,
   SeriesLocalePlacesIdRoute: SeriesLocalePlacesIdRoute,
+  SeriesLocaleAbilitiesIndexRoute: SeriesLocaleAbilitiesIndexRoute,
   SeriesLocaleCharactersIndexRoute: SeriesLocaleCharactersIndexRoute,
   SeriesLocaleFruitsIndexRoute: SeriesLocaleFruitsIndexRoute,
   SeriesLocalePlacesIndexRoute: SeriesLocalePlacesIndexRoute,

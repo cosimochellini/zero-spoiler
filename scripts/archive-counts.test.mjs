@@ -72,9 +72,27 @@ describe('the table of one series', () => {
     })
 
     expect(table).not.toContain('Devil fruits')
+    expect(table).not.toContain('Nen abilities')
     expect(table).not.toContain('Bodies of power')
     expect(table).toContain('| Arcs, places | 1 · 0 |')
     expect(table).toContain('| Saga modules | 1 |')
+  })
+
+  it('counts the Nen abilities of a series that files the kind', () => {
+    const table = countTable({
+      archive: {
+        drawings: {},
+        entities: [{ kind: 'character' }, { kind: 'ability' }],
+        sagas: [{}],
+        series: {
+          features: { fruits: false },
+          kinds: ['arc', 'character', 'place', 'ability'],
+        },
+        timelines: [],
+      },
+    })
+
+    expect(table).toContain('| Nen abilities | 1 |')
   })
 
   it('capitalises the row of a series that files no arcs', () => {

@@ -1,10 +1,8 @@
 import * as stylex from '@stylexjs/stylex'
-import { createFileRoute, DefaultGlobalNotFound } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
-import { ArchivePage } from '~/components/ArchivePage'
-import { useDeclares } from '~/components/useDeclares'
-import { onlyUnder, useSeriesT } from '~/i18n/LocaleContext'
+import { useSeriesT } from '~/i18n/LocaleContext'
 /* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V4 */
 /* Hallmark · genre: atmospheric · macrostructure: Stage · theme: Sea Chart
  *   (locked) · enrichment: Tier B hand-built SVG (the fruit's own drawing,
@@ -15,7 +13,7 @@ import { onlyUnder, useSeriesT } from '~/i18n/LocaleContext'
  *   kind and of its own saga
  * · idea: "one fruit under the lights, and its story told in order" */
 import { recordHead } from '~/routes/$locale/-head'
-import { RecordBackLink } from '~/routes/$series/$locale/-back'
+import { RecordBackLink, SectionNotFound } from '~/routes/$series/$locale/-back'
 import {
   orNotFound,
   recordArgs,
@@ -126,22 +124,13 @@ function FruitPage(): ReactElement {
 
 /** `/fruits/<not-a-fruit>`: says so, and points at the sheet. */
 function FruitNotFound(): ReactElement {
-  const onePiece = useSeriesT('one-piece')
-  const declares = useDeclares()
-  // A series with no fruits page gets the plain 404, with no link back to it.
-  if (!declares('fruits')) {
-    return <DefaultGlobalNotFound />
-  }
-  const t = onlyUnder(onePiece, 'one-piece')
+  const t = useSeriesT('one-piece')
 
   return (
-    <ArchivePage
-      count={t('fruit.notFoundBody')}
-      title={t('fruit.notFoundTitle')}
-    >
-      <p>
-        <RecordBackLink section="fruits" />
-      </p>
-    </ArchivePage>
+    <SectionNotFound
+      body={t?.('fruit.notFoundBody')}
+      section="fruits"
+      title={t?.('fruit.notFoundTitle')}
+    />
   )
 }

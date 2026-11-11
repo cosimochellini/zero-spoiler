@@ -566,6 +566,7 @@ describe.each(LOADED_SERIES)(
       expect(slices.fruits !== undefined).toBe(features.fruits)
       expect(slices.fruits !== undefined).toBe(kinds.includes('fruit'))
       expect(slices.ships !== undefined).toBe(kinds.includes('ship'))
+      expect(slices.abilities !== undefined).toBe(kinds.includes('ability'))
       expect(slices.filler !== undefined).toBe(features.filler)
       expect(slices.factions !== undefined).toBe(features.factions)
       expect(slices.power !== undefined).toBe(features.power)

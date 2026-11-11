@@ -33,7 +33,7 @@ export interface PlacePicks {
  * leave, for the index and the chart alike.
  *
  * Read from the location for the same reason as the fruits page's
- * (`../fruits/-params`): a field bound to the route's match drops the letters
+ * (`../-params`): a field bound to the route's match drops the letters
  * typed while the router settles.
  */
 export function usePlacePicks(open: StopView[]): PlacePicks {

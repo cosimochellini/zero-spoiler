@@ -506,6 +506,20 @@ describe('series copy canaries', () => {
     ).toStrictEqual(['src/i18n/dictionaries/one-piece/seas'])
     expect(judge([chunk('index.js', 'export {}')], canaries).ok).toBe(true)
   })
+
+  it('looks for a single word as a string of its own', () => {
+    const canaries = copyCanaries(
+      { 'one-word': { en: { 'nav.abilities': 'Abilities' }, it: {} } },
+      [{ 'nav.places': 'Places' }],
+    )
+    const found = (text) =>
+      judge([chunk('index.js', text)], canaries).found.length
+
+    // A route's name in the route tree is no copy.
+    expect(found('const r = SeriesLocaleAbilitiesIdRoute')).toBe(0)
+    expect(found('const l = "Abilities"')).toBe(1)
+    expect(found('const l = `Abilities`')).toBe(1)
+  })
 })
 
 describe('a series copy with nothing to look for', () => {

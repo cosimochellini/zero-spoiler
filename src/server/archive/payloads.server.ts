@@ -5,6 +5,7 @@ import type { Bookmark } from '~/lib/progress/episode'
 import { copyOf } from '~/server/copy.server'
 import { legalOf } from '~/server/sources.server'
 
+import { abilityPage, abilitySheet } from './abilities.server'
 import { chronicleRestOf } from './chronicle.server'
 import { creditsPage } from './credits.server'
 import { fillerPage, peekFiller } from './filler.server'
@@ -26,6 +27,7 @@ import {
   shelvesPage,
 } from './pages.server'
 import {
+  peekAbility,
   peekCharacter,
   peekDossier,
   peekFruit,
@@ -76,6 +78,10 @@ function listPayloads(archive: SeriesArchive): Payload[] {
     { name: 'loadPlaces', run: (b, l) => placesPage(readerFor(archive, b, l)) },
     { name: 'loadFiller', run: (b, l) => fillerPage(readerFor(archive, b, l)) },
     { name: 'loadPower', run: (b, l) => powerPage(readerFor(archive, b, l)) },
+    {
+      name: 'loadAbilities',
+      run: (b, l) => abilitySheet(readerFor(archive, b, l)),
+    },
     { name: 'loadSeriesCopy', run: (_, l) => copyOf(archive.series, l) },
     { name: 'loadSeriesLegal', run: (_, l) => legalOf(archive.series, l) },
     {
@@ -89,6 +95,8 @@ function recordPayloads(archive: SeriesArchive): Payload[] {
   const characterIds = (): string[] => archive.characters.map(({ id }) => id)
   const fruitIds = (): string[] =>
     withFeatures(archive).fruits.map(({ id }) => id)
+  const abilityIds = (): string[] =>
+    withFeatures(archive).abilities.map(({ id }) => id)
   return [
     {
       name: 'loadCharacter',
@@ -130,6 +138,11 @@ function recordPayloads(archive: SeriesArchive): Payload[] {
       keys: () =>
         [...archive.places, ...withFeatures(archive).ships].map(({ id }) => id),
       run: (b, l, id) => placePage(id, readerFor(archive, b, l)) ?? null,
+    },
+    {
+      name: 'loadAbility',
+      keys: abilityIds,
+      run: (b, l, id) => abilityPage(id, readerFor(archive, b, l)) ?? null,
     },
   ]
 }
@@ -176,6 +189,11 @@ function liftedPayloads(archive: SeriesArchive): Payload[] {
       keys,
       run: (b, l, h) => peekShip(h, readerFor(archive, b, l)) ?? null,
     },
+    {
+      name: 'liftAbility',
+      keys,
+      run: (b, l, h) => peekAbility(h, readerFor(archive, b, l)) ?? null,
+    },
   ]
 }
 
@@ -216,6 +234,10 @@ export function payloadsFor(archive: SeriesArchive): Payload[] {
     'loadSeriesLegal',
     'loadDemoDrawings',
     'loadPower',
+    // Hunter x Hunter's Nen abilities (#923), after every earlier page.
+    'loadAbilities',
+    'loadAbility',
+    'liftAbility',
   ]
   return order.flatMap((name) => all.filter((payload) => payload.name === name))
 }

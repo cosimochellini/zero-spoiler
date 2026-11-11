@@ -21,8 +21,8 @@ import type { BookSection, Entity, SeriesArchive } from './types'
  * for the other. Relationship snapshots use the same dated-field gate; their
  * people are resolved through this copy's filtered `getCharacter`, so a
  * snapshot cannot reintroduce a person the reader's source does not have.
- * Except a fruit's eaters, which its page covers one by one: an eater
- * the reader does not have is left out, by the gate of the entry that names
+ * Except a fruit's eaters and an ability's users, which their pages cover
+ * one by one: one the reader does not have is left out, by the gate of the entry that names
  * it, which carries the eater's source as well as its own.
  *
  * A link two entries tell, the first of one source only (`earliestOf`), and a
@@ -113,16 +113,29 @@ function copyIn(archive: ReaderArchive, source: null | Source): ReaderArchive {
     getPlace: (id) => found(archive.getPlace(id)),
     getShip: (id) => found(archive.getShip(id)),
     fruitsOfForm: (form) => kept(archive.fruitsOfForm(form)),
-    eatersOf: (id) => {
-      const eaters: Eater[] = []
-      for (const eater of archive.eatersOf(id)) {
-        if (has(eater.gate)) {
-          eaters.push({ ...eater, entity: named(eater.entity) })
-        }
-      }
-      return eaters
-    },
+    eatersOf: (id) => toldOf(archive.eatersOf(id), has, named),
+    abilities: kept(archive.abilities),
+    getAbility: (id) => found(archive.getAbility(id)),
+    usersOf: (id) => toldOf(archive.usersOf(id), has, named),
   }
+}
+
+/**
+ * A record's users (a fruit's eaters, an ability's users) as a copy tells
+ * them: those its source has, each by the name the copy gives them.
+ */
+function toldOf(
+  users: Eater[],
+  has: (gated: Gated) => boolean,
+  named: (entity: Entity) => Entity,
+): Eater[] {
+  const told: Eater[] = []
+  for (const user of users) {
+    if (has(user.gate)) {
+      told.push({ ...user, entity: named(user.entity) })
+    }
+  }
+  return told
 }
 
 /**
