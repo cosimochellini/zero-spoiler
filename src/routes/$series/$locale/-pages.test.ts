@@ -18,6 +18,8 @@ import {
 } from '~/lib/progress/series'
 import { Route as SeriesRoute } from '~/routes/$series'
 import { Route as SeriesLocaleRoute } from '~/routes/$series/$locale'
+import { Route as AbilityRoute } from '~/routes/$series/$locale/abilities/$id'
+import { Route as AbilitiesRoute } from '~/routes/$series/$locale/abilities/index'
 import { Route as CharacterRoute } from '~/routes/$series/$locale/characters/$id'
 import { Route as CharactersRoute } from '~/routes/$series/$locale/characters/index'
 import { Route as FillerRoute } from '~/routes/$series/$locale/filler'
@@ -66,6 +68,8 @@ const PAGE_ROUTES: {
   { page: 'fruits', path: 'fruits/$id', route: FruitRoute },
   { page: 'filler', path: 'filler', route: FillerRoute },
   { page: 'ranks', path: 'ranks', route: RanksRoute },
+  { page: 'abilities', path: 'abilities', route: AbilitiesRoute },
+  { page: 'abilities', path: 'abilities/$id', route: AbilityRoute },
 ]
 
 const root = createRootRouteWithContext<{ series: null | Series }>()()
@@ -155,7 +159,16 @@ describe('the pages a series declares', () => {
     },
   )
 
-  it.each(['fruits', 'fruits/any-id', 'filler', 'ranks', 'power'])(
+  it.each([
+    'fruits',
+    'fruits/any-id',
+    'filler',
+    'ranks',
+    'power',
+    // Its Nen abilities wait for their records (#924).
+    'abilities',
+    'abilities/any-id',
+  ])(
     'answers 404 at /hunter-x-hunter/en/%s with Hunter x Hunter open',
     async (path) => {
       vi.mocked(seriesDescription).mockResolvedValue(HUNTER_X_HUNTER_SERIES)
@@ -179,5 +192,19 @@ describe('the pages a series declares', () => {
   it('gives Hunter x Hunter its characters and places', () => {
     expect(hasPage(HUNTER_X_HUNTER_SERIES, 'characters')).toBe(true)
     expect(hasPage(HUNTER_X_HUNTER_SERIES, 'places')).toBe(true)
+  })
+
+  it('gives the abilities page to a series that files the kind', () => {
+    expect(hasPage(HUNTER_X_HUNTER_SERIES, 'abilities')).toBe(false)
+    expect(hasPage(ONE_PIECE_SERIES, 'abilities')).toBe(false)
+    expect(
+      hasPage(
+        {
+          ...HUNTER_X_HUNTER_SERIES,
+          kinds: [...HUNTER_X_HUNTER_SERIES.kinds, 'ability'],
+        },
+        'abilities',
+      ),
+    ).toBe(true)
   })
 })
