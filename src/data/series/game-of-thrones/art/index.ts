@@ -131,7 +131,7 @@ const PLACE: Stroke[] = [
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
- * the Essos cast's in `essos.ts` (#1052) and the northern household's in
+ * and the Essos cast's in `essos.ts` (#1052), and the northern household's in
  * `north.ts` (#1054), with the four leads drawn for
  * the launch here (owner, #856); every other record
  * shows `PERSON` or `PLACE` until its own issue draws it. `satisfies`
