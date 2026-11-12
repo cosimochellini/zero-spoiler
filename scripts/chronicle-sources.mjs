@@ -622,6 +622,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_1083',
       note: "Candidate 1083. Robin’s question to Hitetsu/Sukiyaki about Pluton is ep 1080 (Robin History, Qref chap=1053 ep=1080); the sunken old Wano, the Road Poneglyph and Pluton under the walls are ep 1082; Robin reporting to the crew and Luffy choosing not to uncover the weapon are the ep 1083 Long Summary, so the story is filed there. Sukiyaki is linked to the kozuki-sukiyaki record (filed at 960; the Hitetsu reveal is ep 1080). Second pass: placement confirmed (Sukiyaki reveal and Pluton confirmation 1080, sunken Wano and Road Poneglyph 1082, report to the crew and Luffy's refusal 1083); Italian changed from quando to dopo che so the flood follows the walls, as in ep 1082. Chapter (#169): 1056, the last event: Robin tells the crew Pluton is in Wano; Luffy refuses to take it (Chapter_1056 has Robin’s report and Luffy’s refusal (Robin History chap 1056, ep 1083)).",
     },
+    1097: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1097',
+      note: 'Episode 1097 and Chapter 1066 place the recovery and Robin’s identification here. Shaka answers her indirectly in the manga, so the prose follows Robin’s inference. https://onepiece.fandom.com/wiki/Chapter_1066',
+    },
     1148: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1148',
       note: 'Candidate was 1147–1148 (Qref ep=1147,1148). Saturn recognises Robin from Ohara and her crewmates shield her in 1147, but Robin catching them in her Spider Net and Saturn leaving for the power plant are in 1148, so it is filed at the later episode.',

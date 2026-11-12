@@ -529,6 +529,17 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 1097,
+      chapter: 1066,
+      value: {
+        title: { it: 'I libri di Ohara', en: 'The books of Ohara' },
+        body: {
+          it: '[[shaka|Shaka]] racconta a Robin che i giganti recuperano i libri dal lago di Ohara e li portano a Elbaf. Il dottor Vegapunk va a leggerli di persona. Quando sente che a guidare quei giganti è un uomo coperto di bende, Robin pensa a [[jaguar-d-saul|Sauro]], che l’ha aiutata a fuggire da bambina.',
+          en: '[[shaka|Shaka]] tells Robin that giants recover the books from Ohara’s lake and take them to Elbaph. Dr. Vegapunk goes there to read them himself. When she hears that a man covered in bandages leads the giants, Robin thinks of [[jaguar-d-saul|Saul]], who helped her escape as a child.',
+        },
+      },
+    },
+    {
       episode: 1148,
       value: {
         title: { it: 'La bambina di Ohara', en: 'The child of Ohara' },
