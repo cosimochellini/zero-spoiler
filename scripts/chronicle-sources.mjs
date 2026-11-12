@@ -508,6 +508,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_95',
       note: 'Filed late: the flag (87), the shut-up-and-come line (89), the knives (90), the sakura (91). The dossier files the crew at 91.',
     },
+    162: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_162',
+      note: 'Episode 161 ends with the whistle. Episode 162 and Chapter 248 establish the fire, the priest’s demand and Gan Fall’s rescue. The priest stays unnamed because his chapter record opens at 260. Chapter source: https://onepiece.fandom.com/wiki/Chapter_248.',
+    },
     172: {
       source: 'https://onepiece.fandom.com/wiki/Episode_172',
       note: 'Chopper defeats Gedatsu at the Ordeal of Swamp, closing the two-priest vignette that began with him alone guarding the Going Merry against Shura (ep 162, resolved 164). The issue’s candidate of ep 178 is wrong — that episode is Zoro vs. Ohm, with no Chopper content — moved to 172.',
