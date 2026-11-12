@@ -1075,7 +1075,9 @@ export const waterSeven: OnePieceSaga = {
         { episode: 244, chapter: 345, factions: ['cp9'], value: CIPHER_POL_9 },
         { episode: 886, chapter: 907, factions: ['cp0'], value: CIPHER_POL_0 },
       ],
-      devilFruit: [{ episode: 286, value: ['ox-ox-fruit-model-giraffe'] }],
+      devilFruit: [
+        { episode: 286, chapter: 402, value: ['ox-ox-fruit-model-giraffe'] },
+      ],
     },
     'rob-lucci': {
       relationships: waterSevenRelationships['rob-lucci'],
@@ -1126,7 +1128,9 @@ export const waterSeven: OnePieceSaga = {
         },
         { episode: 746, chapter: 801, factions: ['cp0'], value: CIPHER_POL_0 },
       ],
-      devilFruit: [{ episode: 246, value: ['cat-cat-fruit-model-leopard'] }],
+      devilFruit: [
+        { episode: 246, chapter: 349, value: ['cat-cat-fruit-model-leopard'] },
+      ],
     },
     'kalifa': {
       relationships: waterSevenRelationships.kalifa,

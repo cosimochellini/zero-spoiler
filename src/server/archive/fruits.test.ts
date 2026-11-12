@@ -340,6 +340,8 @@ describe('a fruit’s own page', () => {
   })
 
   it.each([
+    { id: 'cat-cat-fruit-model-leopard', episode: 246, chapter: 349 },
+    { id: 'ox-ox-fruit-model-giraffe', episode: 286, chapter: 402 },
     {
       id: 'dragon-dragon-fruit-ancient-model-brachiosaurus',
       episode: 944,
