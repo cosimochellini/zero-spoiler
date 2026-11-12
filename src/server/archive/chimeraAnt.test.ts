@@ -297,11 +297,13 @@ interface Step {
  * Every dated relationship, affiliation, status and role step of the
  * records Chimera Ant phase 2 filed (#1043, #1047), and of Neferpitou (phase 1),
  * each pinned by hand to the episode and chapter that tell it, so moving one
- * by a unit either way fails (#1230). The values are the steps' own, in each
- * locale; `only` holds a one-medium step, or one a later step of the same
- * number hides, to the unit where it shows. Steps another test in this file
- * already pins at both sides (the deaths, the captivity, the dated roles,
- * affiliations and relationships below) are left out.
+ * later by a unit fails (#1230). A step that sits on its record's own gate
+ * cannot show an earlier move, because a record never opens before its gate;
+ * its gate−1 half only repeats that the record is closed. The values are the
+ * steps' own, in each locale; `only` holds a one-medium step, or one a later
+ * step of the same number hides, to the unit where it shows. Steps another
+ * test in this file already pins at both sides (the deaths, the captivity, the
+ * dated roles, affiliations and relationships below) are left out.
  */
 const PHASE_TWO_STEPS: Step[] = [
   {
