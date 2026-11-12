@@ -574,6 +574,17 @@ export const alabastaChronicles = {
         },
       },
     },
+    {
+      episode: 1168,
+      chapter: 1138,
+      value: {
+        title: { it: 'I tre mondi', en: 'The three worlds' },
+        body: {
+          it: 'In biblioteca, [[jaguar-d-saul|Sauro]] mostra a Robin l’Harley, il testo da cui nascono le leggende di Elbaf. Ciascuno lo interpreta a modo suo, spiega Sauro, e si fa un’idea diversa del dio del sole. Sauro racconta che le leggende su Nika si tramandano in tutto il mondo e hanno un tratto in comune: Nika appare ridendo a un ritmo preciso. Robin legge i tre capitoli. Secondo Sauro, il terzo parla del mondo in cui vivono e di ciò che deve ancora accadere.',
+          en: 'In the library, [[jaguar-d-saul|Saul]] shows Robin the Harley, the text behind Elbaph’s legends. Saul explains that people read it differently and imagine the sun god differently too. Saul tells her that tales of Nika are told around the world and share one detail: Nika appears laughing to a particular rhythm. Robin reads the three chapters. According to Saul, the third speaks of the world they live in and of events still to come.',
+        },
+      },
+    },
   ],
   'nefertari-vivi': [
     {

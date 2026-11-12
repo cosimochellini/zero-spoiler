@@ -1096,6 +1096,17 @@ export const eastBlueChronicles = {
         },
       },
     },
+    {
+      episode: 1162,
+      chapter: 1132,
+      value: {
+        title: { it: 'Il villaggio dei giganti', en: 'The giants’ village' },
+        body: {
+          it: 'Quando il gigante che li insegue cade nella trappola, Usop riprende il cammino con [[monkey-d-luffy|Rufy]]. Raggiunge il villaggio dei giganti, la meta che sogna da Little Garden. Lì ritrova il resto della ciurma, che arriva a bordo della nave che [[dorry|Dori]] e [[brogy|Brogi]] fanno salire lungo un arcobaleno.',
+          en: 'When the giant chasing them falls into a trap, Usopp sets off with [[monkey-d-luffy|Luffy]]. He reaches the giants’ village, the place he has dreamed of visiting since Little Garden. There he reunites with the rest of the crew, who arrive aboard the ship that [[dorry|Dorry]] and [[brogy|Brogy]] sail up a rainbow.',
+        },
+      },
+    },
   ],
 
   'sanji': [
