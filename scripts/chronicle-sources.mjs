@@ -106,6 +106,14 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_594',
       note: "593 only carries the offer; 594 has the agreement, Robin's betrayal warning and the first joint objective. The Emperor is deliberately unnamed — he is first named at episode 623. Second pass: the line about the two years is addressed to the crew, over Usopp's objection.",
     },
+    607: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_607',
+      note: 'Episode 607 and https://onepiece.fandom.com/wiki/Chapter_681 show Luffy getting out of range, Monet raising a barrier and Caesar leaving. Monet’s snow is shown here, before the later fight with Luffy.',
+    },
+    618: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_618',
+      note: 'Episode 618 and https://onepiece.fandom.com/wiki/Chapter_692 show the blow and Law’s reaction. Episode 617 ends before the blow lands.',
+    },
     726: {
       source: 'https://onepiece.fandom.com/wiki/Episode_726',
       note: 'Episode title and techDebut both name Gear 4 and Boundman; Kong Gun, Rhino Schneider and Python are all inside 726.',
@@ -364,6 +372,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_677',
       note: 'Sugar faints (ep 676); the island-wide reversal of the toys completes in 677.',
     },
+    697: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_697',
+      note: 'Episode 697 and https://onepiece.fandom.com/wiki/Chapter_758 show Viola’s guidance, Usopp perceiving the three auras, and the drawing frightening Sugar into unconsciousness.',
+    },
     746: {
       source: 'https://onepiece.fandom.com/wiki/Episode_746',
       note: 'Bartolomeo’s ship and the new posters, Sanji’s wanted only alive.',
@@ -602,6 +614,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_569',
       note: "Robin pulls Neptune aside and he explains Joy Boy was a surface-dweller from the Void Century who apologized to that era's mermaid princess.",
     },
+    671: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_671',
+      note: 'Episode 671 and https://onepiece.fandom.com/wiki/Chapter_738 show the fly, Robin’s report, Trebol’s departure and Sugar turning the assault against the dwarves.',
+    },
     713: {
       source: 'https://onepiece.fandom.com/wiki/Episode_713',
       note: 'The rescue is Mil Fleur: Kochoran, a moth of linked hands, not a giant hand — Gigantesco Mano is never used on Diamante, and the giant-hand Hanagasa is episode 716. 713 is where the blade is turned aside. Second pass: she is climbing the levels of the new plateau, not the underground port, which is elsewhere.',
@@ -825,6 +841,14 @@ export const CHRONICLE_SOURCES = {
     706: {
       source: 'https://onepiece.fandom.com/wiki/Episode_706',
       note: 'Corazon’s death and the treasure-chest scene are both explicit in this episode’s long summary — exact match.',
+    },
+    708: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_708',
+      note: 'Episode 708 and https://onepiece.fandom.com/wiki/Chapter_769 show Law losing his right arm, Doflamingo drawing his gun, and Luffy defeating the string double.',
+    },
+    722: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_722',
+      note: 'Episode 722 and https://onepiece.fandom.com/wiki/Chapter_781 show the rooftop switch, Gamma Knife and the explanation of the earlier body double. The episode’s story ends before the attempted finishing blow in 723.',
     },
     1066: {
       source: 'https://onepiece.fandom.com/wiki/Ope_Ope_no_Mi',

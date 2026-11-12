@@ -315,6 +315,31 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 607,
+      chapter: 681,
+      value: {
+        title: { it: 'Il muro di neve', en: 'The wall of snow' },
+        body: {
+          it: 'A Punk Hazard, Rufy mette [[caesar-clown|Caesar Clown]] alle strette nel laboratorio. Quando Caesar sottrae l’aria, Rufy esce dalla sua portata e lo attacca da lontano. Prima che riesca a chiudere lo scontro, [[monet|Monet]] alza un muro di neve fra i due. Caesar fugge mentre lei sbarra la strada a Rufy.',
+          en: 'Luffy corners [[caesar-clown|Caesar Clown]] in the laboratory on Punk Hazard. When Caesar draws the air away, Luffy moves out of reach and attacks from a distance. Before he can finish the fight, [[monet|Monet]] puts a wall of snow between them. Caesar gets away while she blocks Luffy’s path.',
+        },
+      },
+    },
+    {
+      episode: 618,
+      chapter: 692,
+      value: {
+        title: {
+          it: 'Caesar oltre il portone',
+          en: 'Caesar goes through the gate',
+        },
+        body: {
+          it: '[[caesar-clown|Caesar Clown]] chiede pietà e offre a Rufy un posto nella sua organizzazione. Rufy lo colpisce allo stomaco e lo scaglia oltre il portone che dà sul passaggio di fuga. Quando [[trafalgar-law|Law]] gli chiede dov’è Caesar, Rufy indica il corridoio. Law gli ricorda che erano venuti per catturarlo.',
+          en: '[[caesar-clown|Caesar Clown]] begs for mercy and offers Luffy a place in his operation. Luffy strikes him in the stomach and sends him flying through the gate to the escape passage. When [[trafalgar-law|Law]] asks where Caesar is, Luffy points down the corridor. Law reminds him they came to capture Caesar.',
+        },
+      },
+    },
+    {
       episode: 726,
       value: {
         title: { it: 'Gear Fourth', en: 'Gear Fourth' },
@@ -958,6 +983,17 @@ export const eastBlueChronicles = {
         body: {
           it: 'A Dressrosa i nani lo credono l’eroe venuto a salvarli, e lui glielo lascia credere, come sempre. Il piano è far mangiare a [[sugar|Sugar]] un frutto piccantissimo: se sviene, ogni giocattolo è libero, e i giocattoli un tempo erano persone dimenticate da chiunque le amasse. Il piano fallisce, i nani cadono e [[nico-robin|Nico Robin]] diventa un giocattolo. Usop scappa. Poi sente [[trebol|Trebol]] deriderli mentre loro continuano a credere in lui, torna indietro, confessa ogni bugia e attacca. Viene pestato. [[sugar|Sugar]] gli spinge il frutto in bocca, e la smorfia che gli deforma la faccia la spaventa a tal punto che sviene: in tutta l’isola i giocattoli tornano umani.',
           en: 'In Dressrosa the dwarves take him for the hero who has come to save them, and he lets them, as always. The plan is to make [[sugar|Sugar]] eat a searing-hot fruit: if she passes out, every toy is freed, and the toys were once people forgotten by all who loved them. The plan fails, the dwarves fall and [[nico-robin|Nico Robin]] becomes a toy. Usopp runs. Then he hears [[trebol|Trebol]] mock them while they still believe in him, turns back, confesses every lie and attacks. He is beaten flat. [[sugar|Sugar]] shoves the fruit into his mouth, and the grimace that twists his face frightens her so badly she faints: across the island, the toys turn human again.',
+        },
+      },
+    },
+    {
+      episode: 697,
+      chapter: 758,
+      value: {
+        title: { it: 'Un tiro verso il palazzo', en: 'A shot into the palace' },
+        body: {
+          it: 'Con [[viola|Viola]] a guidare la mira, Usop punta contro [[sugar|Sugar]] attraverso una finestra del palazzo. Lei sta per raggiungere [[monkey-d-luffy|Rufy]] e [[trafalgar-law|Law]]. Poco prima di tirare, Usop percepisce dove si trovano tutti e tre. Il suo tiro porta il disegno di [[kanjuro|Kanjuro]] che riproduce la faccia che ha già spaventato Sugar. Lei lo vede e perde di nuovo i sensi.',
+          en: 'With [[viola|Viola]] guiding his aim, Usopp lines up a shot at [[sugar|Sugar]] through a palace window. She is about to reach [[monkey-d-luffy|Luffy]] and [[trafalgar-law|Law]]. Just before he fires, he senses where all three are. His shot carries [[kanjuro|Kanjuro]]’s drawing of the face that frightened Sugar before. She sees it and passes out again.',
         },
       },
     },

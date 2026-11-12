@@ -472,6 +472,17 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 671,
+      chapter: 738,
+      value: {
+        title: { it: 'Un diversivo al porto', en: 'A diversion at the port' },
+        body: {
+          it: 'Robin ferma [[leo|Leo]] quando vede [[trebol|Trebol]] colpire una mosca fra gli occhi. Dice a Trebol che al porto ci sono dei pirati che vogliono parlare con un ufficiale. Lui va a controllare e i nani riescono a entrare nella torre. Quando si lanciano contro [[sugar|Sugar]], lei ne trasforma alcuni in giocattoli e ordina loro di attaccare gli altri.',
+          en: 'Robin stops [[leo|Leo]] when she sees [[trebol|Trebol]] shoot a fly between the eyes. She tells Trebol there are pirates at the port who demand to speak to an officer. He goes to investigate, giving the dwarves a chance to enter the tower. When they charge [[sugar|Sugar]], she turns some of them into toys and orders them to attack the others.',
+        },
+      },
+    },
+    {
       episode: 713,
       value: {
         title: {

@@ -223,6 +223,28 @@ export const summitWarChronicles = {
       },
     },
     {
+      episode: 708,
+      chapter: 769,
+      value: {
+        title: { it: 'Il braccio di Law', en: 'Doflamingo takes Law’s arm' },
+        body: {
+          it: 'Law scaglia un pezzo del palazzo contro [[donquixote-doflamingo|Do Flamingo]], che lo para e gli afferra la mano destra quando tenta un altro attacco. Law dice di aver fatto tutto questo per vendicare [[donquixote-rosinante|Corazon]]. Do Flamingo gli taglia il braccio destro ed estrae la pistola. Prima che possa sparare, [[monkey-d-luffy|Rufy]] fa a pezzi il suo doppio di fili.',
+          en: 'Law throws a piece of the palace at [[donquixote-doflamingo|Doflamingo]], who blocks it and catches his right hand as he tries another attack. Law says he has done all this to avenge [[donquixote-rosinante|Corazon]]. Doflamingo cuts off Law’s right arm and draws his pistol. Before he can shoot, [[monkey-d-luffy|Luffy]] breaks through his string double.',
+        },
+      },
+    },
+    {
+      episode: 722,
+      chapter: 781,
+      value: {
+        title: { it: 'Lo scambio sul tetto', en: 'Law’s switch on the roof' },
+        body: {
+          it: 'Sul tetto del palazzo, Law scambia il proprio posto con quello di [[monkey-d-luffy|Rufy]] e colpisce [[donquixote-doflamingo|Do Flamingo]] con il Gamma Knife. Do Flamingo credeva di averlo ucciso. Law spiega che dopo il primo sparo ha preso il posto di un membro della ciurma di Do Flamingo a terra, lasciando che gli altri colpi raggiungessero quel corpo al posto suo.',
+          en: 'On the palace roof, Law switches places with [[monkey-d-luffy|Luffy]] and strikes [[donquixote-doflamingo|Doflamingo]] with Gamma Knife. Doflamingo thought he had shot Law dead. Law explains that after the first shot he traded places with a fallen member of Doflamingo’s crew, letting the other shots hit the body in his place.',
+        },
+      },
+    },
+    {
       episode: 1066,
       chapter: 1039,
       value: {
