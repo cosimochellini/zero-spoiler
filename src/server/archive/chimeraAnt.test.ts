@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { LOCALES } from '~/i18n/locales'
+import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES } from '~/test/series'
@@ -38,7 +38,7 @@ const RECORDS: Row[] = [
   { id: 'banana-kavaro', episode: 77, chapter: 186, place: false },
   { id: 'monta-yuras', episode: 77, chapter: 186, place: false },
   { id: 'stick-dinner', episode: 77, chapter: 186, place: false },
-  { id: 'ngl', episode: 79, chapter: 189, place: true },
+  { id: 'ngl', episode: 78, chapter: 188, place: true },
   { id: 'neferpitou', episode: 84, chapter: 198, place: false },
 ]
 /**
@@ -256,6 +256,1170 @@ describe.each(DEATHS)(
     it('dies at the pin that tells it, never before', () => {
       expect(statusAt(id, at(unit, gate - 1), locale)).not.toBe('deceased')
       expect(statusAt(id, at(unit, gate), locale)).toBe('deceased')
+    })
+  },
+)
+
+/** A dated step as one string a reader at a bookmark sees, in its locale. */
+function stepAt(
+  {
+    id,
+    field,
+  }: { field: 'affiliation' | 'relationships' | 'role' | 'status'; id: string },
+  bookmark: Bookmark,
+  locale: Locale,
+): string | undefined {
+  const reader = readerFor(archive, bookmark, locale)
+  const character = characterById(id)
+  if (field === 'status') {
+    return archive.latestOf(reader, character, field)
+  }
+  if (field === 'relationships') {
+    return archive
+      .latestOf(reader, character, field)
+      ?.map(({ character: other, type }) => `${other}: ${type[locale]}`)
+      .join(', ')
+  }
+  return archive.latestOf(reader, character, field)?.[locale]
+}
+
+/** One hand-pinned step; `only` names the one unit that tells it. */
+interface Step {
+  chapter: number
+  episode: number
+  field: 'affiliation' | 'relationships' | 'role' | 'status'
+  id: string
+  only?: 'chapter' | 'episode'
+  value: Record<Locale, string> | string
+}
+
+/**
+ * Every dated relationship, affiliation, status and role step of the
+ * records Chimera Ant phase 2 filed (#1043, #1047), and of Neferpitou (phase 1),
+ * each pinned by hand to the episode and chapter that tell it, so moving one
+ * later by a unit fails (#1230). A step that sits on its record's own gate
+ * cannot show an earlier move, because a record never opens before its gate;
+ * its gate−1 half only repeats that the record is closed. The values are the
+ * steps' own, in each locale; `only` holds a one-medium step, or one a later
+ * step of the same number hides, to the unit where it shows. Steps another
+ * test in this file already pins at both sides (the deaths, the captivity, the
+ * dated roles, affiliations and relationships below) are left out.
+ */
+const PHASE_TWO_STEPS: Step[] = [
+  {
+    id: 'palm-siberia',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'relationships',
+    episode: 86,
+    chapter: 200,
+    value: {
+      it: 'knov: Maestro, gon-freecss: Alleato',
+      en: 'knov: Teacher, gon-freecss: Ally',
+    },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'relationships',
+    episode: 93,
+    chapter: 218,
+    value: {
+      it: 'knov: Maestro, gon-freecss: Appuntamento',
+      en: 'knov: Teacher, gon-freecss: Date',
+    },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'role',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'status',
+    episode: 86,
+    chapter: 200,
+    value: 'alive',
+  },
+  {
+    id: 'knov',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 200,
+    value: {
+      it: 'Associazione Hunter, squadra di Netero',
+      en: 'Hunter Association, Netero’s team',
+    },
+  },
+  {
+    id: 'knov',
+    field: 'affiliation',
+    episode: 140,
+    chapter: 325,
+    value: {
+      it: 'Associazione Hunter; organizza le cure per Gon',
+      en: 'Hunter Association; arranges care for Gon',
+    },
+  },
+  {
+    id: 'knov',
+    field: 'relationships',
+    episode: 86,
+    chapter: 200,
+    value: {
+      it: 'palm-siberia: Allieva, netero: Capo della squadra, morel-mackernasey: Compagno di squadra',
+      en: 'palm-siberia: Student, netero: Team leader, morel-mackernasey: Teammate',
+    },
+  },
+  {
+    id: 'knov',
+    field: 'role',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'Hunter', en: 'Hunter' },
+  },
+  {
+    id: 'knov',
+    field: 'role',
+    episode: 140,
+    chapter: 325,
+    value: {
+      it: 'Hunter incaricato di preparare una stanza per Gon',
+      en: 'Hunter preparing a room for Gon',
+    },
+  },
+  { id: 'knov', field: 'status', episode: 86, chapter: 200, value: 'alive' },
+  {
+    id: 'morel-mackernasey',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 199,
+    value: {
+      it: 'Associazione Hunter, squadra di Netero',
+      en: 'Hunter Association, Netero’s team',
+    },
+  },
+  {
+    id: 'morel-mackernasey',
+    field: 'affiliation',
+    episode: 140,
+    chapter: 325,
+    value: {
+      it: 'Associazione Hunter; organizza le cure per Gon',
+      en: 'Hunter Association; arranges care for Gon',
+    },
+  },
+  {
+    id: 'morel-mackernasey',
+    field: 'relationships',
+    episode: 86,
+    chapter: 200,
+    value: {
+      it: 'netero: Capo della squadra, knov: Compagno di squadra, knuckle-bine: Allievo, shoot-mcmahon: Allievo',
+      en: 'netero: Team leader, knov: Teammate, knuckle-bine: Student, shoot-mcmahon: Student',
+    },
+  },
+  {
+    id: 'morel-mackernasey',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'netero: Capo della squadra, knov: Compagno di squadra, knuckle-bine: Allievo, shoot-mcmahon: Allievo, colt: Formichimera protetta',
+      en: 'netero: Team leader, knov: Teammate, knuckle-bine: Student, shoot-mcmahon: Student, colt: Ant he protects',
+    },
+  },
+  {
+    id: 'morel-mackernasey',
+    field: 'role',
+    episode: 86,
+    chapter: 199,
+    value: { it: 'Hunter', en: 'Hunter' },
+  },
+  {
+    id: 'morel-mackernasey',
+    field: 'role',
+    episode: 141,
+    chapter: 326,
+    value: { it: 'Hunter a una stella', en: 'Single-Star Hunter' },
+  },
+  {
+    id: 'morel-mackernasey',
+    field: 'status',
+    episode: 86,
+    chapter: 199,
+    value: 'alive',
+  },
+  {
+    id: 'knuckle-bine',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'Allievo di Morau', en: 'Morel’s student' },
+  },
+  {
+    id: 'knuckle-bine',
+    field: 'affiliation',
+    episode: 91,
+    chapter: 214,
+    value: { it: 'Squadra di Netero in NGL', en: 'Netero’s team in NGL' },
+  },
+  {
+    id: 'knuckle-bine',
+    field: 'relationships',
+    episode: 86,
+    chapter: 200,
+    value: {
+      it: 'morel-mackernasey: Maestro, shoot-mcmahon: Compagno',
+      en: 'morel-mackernasey: Teacher, shoot-mcmahon: Partner',
+    },
+  },
+  {
+    id: 'knuckle-bine',
+    field: 'relationships',
+    episode: 91,
+    chapter: 214,
+    value: {
+      it: 'morel-mackernasey: Maestro, shoot-mcmahon: Compagno, gon-freecss: Rivale',
+      en: 'morel-mackernasey: Teacher, shoot-mcmahon: Partner, gon-freecss: Rival',
+    },
+  },
+  {
+    id: 'knuckle-bine',
+    field: 'status',
+    episode: 86,
+    chapter: 200,
+    value: 'alive',
+  },
+  {
+    id: 'shoot-mcmahon',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'Allievo di Morau', en: 'Morel’s student' },
+  },
+  {
+    id: 'shoot-mcmahon',
+    field: 'affiliation',
+    episode: 91,
+    chapter: 214,
+    value: { it: 'Squadra di Netero in NGL', en: 'Netero’s team in NGL' },
+  },
+  {
+    id: 'shoot-mcmahon',
+    field: 'relationships',
+    episode: 86,
+    chapter: 200,
+    value: {
+      it: 'morel-mackernasey: Maestro, knuckle-bine: Compagno',
+      en: 'morel-mackernasey: Teacher, knuckle-bine: Partner',
+    },
+  },
+  {
+    id: 'shoot-mcmahon',
+    field: 'relationships',
+    episode: 91,
+    chapter: 214,
+    value: {
+      it: 'morel-mackernasey: Maestro, knuckle-bine: Compagno, killua: Avversario',
+      en: 'morel-mackernasey: Teacher, knuckle-bine: Partner, killua: Opponent',
+    },
+  },
+  {
+    id: 'shoot-mcmahon',
+    field: 'relationships',
+    episode: 95,
+    chapter: 222,
+    value: {
+      it: 'morel-mackernasey: Maestro, knuckle-bine: Compagno, killua: Avversario, kite: Prigioniero',
+      en: 'morel-mackernasey: Teacher, knuckle-bine: Partner, killua: Opponent, kite: Captive',
+    },
+  },
+  {
+    id: 'shoot-mcmahon',
+    field: 'status',
+    episode: 86,
+    chapter: 200,
+    value: 'alive',
+  },
+  {
+    id: 'gyro',
+    field: 'affiliation',
+    episode: 78,
+    chapter: 203,
+    only: 'episode',
+    value: { it: 'NGL', en: 'NGL' },
+  },
+  {
+    id: 'gyro',
+    field: 'affiliation',
+    episode: 78,
+    chapter: 203,
+    only: 'chapter',
+    value: {
+      it: 'Formichimera che ha lasciato la regina',
+      en: 'Chimera Ant who left the Queen',
+    },
+  },
+  { id: 'gyro', field: 'status', episode: 78, chapter: 203, value: 'alive' },
+  {
+    id: 'dr-lee',
+    field: 'affiliation',
+    episode: 92,
+    chapter: 215,
+    only: 'chapter',
+    value: { it: 'Medici chiamati da Netero', en: 'Doctors Netero calls in' },
+  },
+  {
+    id: 'dr-lee',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    only: 'chapter',
+    value: {
+      it: 'colt: Donatore respinto, netero: Chi la fa chiamare',
+      en: 'colt: Donor she turns down, netero: Calls her in',
+    },
+  },
+  {
+    id: 'dr-lee',
+    field: 'status',
+    episode: 92,
+    chapter: 215,
+    only: 'chapter',
+    value: 'alive',
+  },
+  {
+    id: 'lin-koshi',
+    field: 'affiliation',
+    episode: 77,
+    chapter: 186,
+    value: { it: 'Squadra di ricerca', en: 'Survey team' },
+  },
+  {
+    id: 'lin-koshi',
+    field: 'relationships',
+    episode: 77,
+    chapter: 186,
+    value: { it: 'kite: Compagno di ricerca', en: 'kite: Survey teammate' },
+  },
+  {
+    id: 'lin-koshi',
+    field: 'status',
+    episode: 77,
+    chapter: 186,
+    value: 'alive',
+  },
+  {
+    id: 'podungo-lapoy',
+    field: 'affiliation',
+    episode: 77,
+    chapter: 186,
+    value: { it: 'Squadra di ricerca', en: 'Survey team' },
+  },
+  {
+    id: 'podungo-lapoy',
+    field: 'relationships',
+    episode: 77,
+    chapter: 186,
+    value: { it: 'kite: Compagno di ricerca', en: 'kite: Survey teammate' },
+  },
+  {
+    id: 'podungo-lapoy',
+    field: 'relationships',
+    episode: 77,
+    chapter: 187,
+    only: 'chapter',
+    value: {
+      it: 'kite: Compagno di ricerca, monta-yuras: Compagno di ricerca',
+      en: 'kite: Survey teammate, monta-yuras: Survey teammate',
+    },
+  },
+  {
+    id: 'podungo-lapoy',
+    field: 'status',
+    episode: 77,
+    chapter: 186,
+    value: 'alive',
+  },
+  {
+    id: 'wong',
+    field: 'affiliation',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'Committente della ricerca', en: 'Survey client' },
+  },
+  {
+    id: 'wong',
+    field: 'relationships',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'kite: Hunter che ingaggia', en: 'kite: Hunter he hires' },
+  },
+  {
+    id: 'wong',
+    field: 'status',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: 'alive',
+  },
+  {
+    id: 'kurt',
+    field: 'affiliation',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'La sua famiglia', en: 'His family' },
+  },
+  {
+    id: 'kurt',
+    field: 'relationships',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'haruna: Madre', en: 'haruna: Mother' },
+  },
+  {
+    id: 'kurt',
+    field: 'relationships',
+    episode: 80,
+    chapter: 189,
+    only: 'episode',
+    value: {
+      it: 'haruna: Madre, reina: Sorella minore',
+      en: 'haruna: Mother, reina: Younger sister',
+    },
+  },
+  {
+    id: 'kurt',
+    field: 'status',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: 'deceased',
+  },
+  {
+    id: 'reina',
+    field: 'affiliation',
+    episode: 80,
+    chapter: 189,
+    value: { it: 'La sua famiglia', en: 'Her family' },
+  },
+  {
+    id: 'reina',
+    field: 'relationships',
+    episode: 80,
+    chapter: 189,
+    only: 'episode',
+    value: {
+      it: 'kurt: Fratello maggiore, haruna: Madre',
+      en: 'kurt: Older brother, haruna: Mother',
+    },
+  },
+  {
+    id: 'reina',
+    field: 'role',
+    episode: 80,
+    chapter: 189,
+    value: { it: 'Sorella minore', en: 'Younger sister' },
+  },
+  {
+    id: 'reina',
+    field: 'role',
+    episode: 136,
+    chapter: 315,
+    only: 'chapter',
+    value: {
+      it: 'Rinata come formichimera, chiamata Shidore',
+      en: 'Reborn as a Chimera Ant called Shidore',
+    },
+  },
+  {
+    id: 'reina',
+    field: 'role',
+    episode: 136,
+    chapter: 315,
+    only: 'episode',
+    value: { it: 'Rinata come formichimera', en: 'Reborn as a Chimera Ant' },
+  },
+  {
+    id: 'reina',
+    field: 'status',
+    episode: 80,
+    chapter: 189,
+    value: 'deceased',
+  },
+  {
+    id: 'haruna',
+    field: 'affiliation',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'La sua famiglia', en: 'Her family' },
+  },
+  {
+    id: 'haruna',
+    field: 'relationships',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'kurt: Figlio', en: 'kurt: Son' },
+  },
+  {
+    id: 'haruna',
+    field: 'relationships',
+    episode: 80,
+    chapter: 189,
+    only: 'episode',
+    value: {
+      it: 'kurt: Figlio, reina: Figlia',
+      en: 'kurt: Son, reina: Daughter',
+    },
+  },
+  {
+    id: 'haruna',
+    field: 'status',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: 'alive',
+  },
+  {
+    id: 'pekuba',
+    field: 'affiliation',
+    episode: 79,
+    chapter: 189,
+    only: 'episode',
+    value: { it: 'Spedizione di Pockul', en: 'Pokkle’s expedition' },
+  },
+  {
+    id: 'pekuba',
+    field: 'relationships',
+    episode: 79,
+    chapter: 189,
+    only: 'episode',
+    value: {
+      it: 'pokkle: Capo della spedizione, ponzu: Compagna di spedizione',
+      en: 'pokkle: Expedition leader, ponzu: Expedition teammate',
+    },
+  },
+  {
+    id: 'pekuba',
+    field: 'status',
+    episode: 79,
+    chapter: 189,
+    only: 'episode',
+    value: 'alive',
+  },
+  {
+    id: 'balda',
+    field: 'affiliation',
+    episode: 80,
+    chapter: 190,
+    value: { it: 'Spedizione di Pockul', en: 'Pokkle’s expedition' },
+  },
+  {
+    id: 'balda',
+    field: 'relationships',
+    episode: 80,
+    chapter: 190,
+    value: {
+      it: 'pokkle: Capo della spedizione',
+      en: 'pokkle: Expedition leader',
+    },
+  },
+  {
+    id: 'balda',
+    field: 'status',
+    episode: 80,
+    chapter: 190,
+    value: 'deceased',
+  },
+  {
+    id: 'cheetu',
+    field: 'affiliation',
+    episode: 79,
+    chapter: 192,
+    value: {
+      it: 'Formichimere, al servizio della regina',
+      en: 'Chimera Ants, serving the Queen',
+    },
+  },
+  {
+    id: 'cheetu',
+    field: 'affiliation',
+    episode: 92,
+    chapter: 216,
+    value: {
+      it: 'Nessuna: ha lasciato il formicaio',
+      en: 'None: he has left the nest',
+    },
+  },
+  {
+    id: 'cheetu',
+    field: 'relationships',
+    episode: 94,
+    chapter: 220,
+    value: {
+      it: 'morel-mackernasey: Hunter che gli tende un agguato, knuckle-bine: Hunter che gli tende un agguato',
+      en: 'morel-mackernasey: Hunter who ambushes him, knuckle-bine: Hunter who ambushes him',
+    },
+  },
+  {
+    id: 'cheetu',
+    field: 'relationships',
+    episode: 95,
+    chapter: 221,
+    value: {
+      it: 'morel-mackernasey: Hunter che gli tende un agguato, knuckle-bine: Hunter che gli lascia addosso il suo Nen',
+      en: 'morel-mackernasey: Hunter who ambushes him, knuckle-bine: Hunter who leaves his Nen on him',
+    },
+  },
+  {
+    id: 'cheetu',
+    field: 'role',
+    episode: 79,
+    chapter: 192,
+    value: { it: 'Comandante di divisione', en: 'Squadron Leader' },
+  },
+  {
+    id: 'cheetu',
+    field: 'role',
+    episode: 92,
+    chapter: 216,
+    value: { it: 'Ex comandante di divisione', en: 'Former Squadron Leader' },
+  },
+  {
+    id: 'cheetu',
+    field: 'role',
+    episode: 93,
+    chapter: 218,
+    value: { it: 'Assassino in fuga', en: 'Killer on the run' },
+  },
+  { id: 'cheetu', field: 'status', episode: 79, chapter: 192, value: 'alive' },
+  {
+    id: 'peggy',
+    field: 'affiliation',
+    episode: 79,
+    chapter: 189,
+    only: 'chapter',
+    value: {
+      it: 'Formichimere, al servizio della regina',
+      en: 'Chimera Ants, serving the Queen',
+    },
+  },
+  {
+    id: 'peggy',
+    field: 'relationships',
+    episode: 79,
+    chapter: 192,
+    only: 'chapter',
+    value: {
+      it: 'cheetu: Altro comandante di divisione',
+      en: 'cheetu: Fellow Squadron Leader',
+    },
+  },
+  {
+    id: 'peggy',
+    field: 'relationships',
+    episode: 92,
+    chapter: 214,
+    only: 'chapter',
+    value: {
+      it: 'cheetu: Altro comandante di divisione, colt: Altro comandante di divisione',
+      en: 'cheetu: Fellow Squadron Leader, colt: Fellow Squadron Leader',
+    },
+  },
+  {
+    id: 'peggy',
+    field: 'status',
+    episode: 79,
+    chapter: 189,
+    only: 'chapter',
+    value: 'alive',
+  },
+  {
+    id: 'shaiapouf',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 202,
+    value: { it: 'Guardia della regina', en: 'Queen’s guard' },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'affiliation',
+    episode: 91,
+    chapter: 213,
+    value: { it: 'Guardia del re', en: 'King’s guard' },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'relationships',
+    episode: 86,
+    chapter: 202,
+    value: {
+      it: 'neferpitou: Altra guardia reale',
+      en: 'neferpitou: Fellow Royal Guard',
+    },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'relationships',
+    episode: 88,
+    chapter: 206,
+    value: {
+      it: 'neferpitou: Altra guardia reale, menthuthuyoupi: Altra guardia reale',
+      en: 'neferpitou: Fellow Royal Guard, menthuthuyoupi: Fellow Royal Guard',
+    },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'neferpitou: Altra guardia reale, menthuthuyoupi: Altra guardia reale, meruem: Re che serve',
+      en: 'neferpitou: Fellow Royal Guard, menthuthuyoupi: Fellow Royal Guard, meruem: King he serves',
+    },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'status',
+    episode: 86,
+    chapter: 202,
+    value: 'alive',
+  },
+  {
+    id: 'menthuthuyoupi',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 202,
+    value: { it: 'Guardia della regina', en: 'Queen’s guard' },
+  },
+  {
+    id: 'menthuthuyoupi',
+    field: 'affiliation',
+    episode: 91,
+    chapter: 213,
+    value: { it: 'Guardia del re', en: 'King’s guard' },
+  },
+  {
+    id: 'menthuthuyoupi',
+    field: 'relationships',
+    episode: 88,
+    chapter: 206,
+    value: {
+      it: 'neferpitou: Altra guardia reale, shaiapouf: Altra guardia reale',
+      en: 'neferpitou: Fellow Royal Guard, shaiapouf: Fellow Royal Guard',
+    },
+  },
+  {
+    id: 'menthuthuyoupi',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'neferpitou: Altra guardia reale, shaiapouf: Altra guardia reale, meruem: Re che serve',
+      en: 'neferpitou: Fellow Royal Guard, shaiapouf: Fellow Royal Guard, meruem: King he serves',
+    },
+  },
+  {
+    id: 'menthuthuyoupi',
+    field: 'status',
+    episode: 86,
+    chapter: 202,
+    value: 'alive',
+  },
+  {
+    id: 'colt',
+    field: 'affiliation',
+    episode: 92,
+    chapter: 214,
+    only: 'chapter',
+    value: {
+      it: 'Formichimere, al servizio della regina',
+      en: 'Chimera Ants, serving the Queen',
+    },
+  },
+  {
+    id: 'colt',
+    field: 'affiliation',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'Sotto la protezione di Morau',
+      en: 'Under Morel’s protection',
+    },
+  },
+  {
+    id: 'colt',
+    field: 'relationships',
+    episode: 92,
+    chapter: 214,
+    only: 'chapter',
+    value: {
+      it: 'peggy: Altro comandante di divisione, morel-mackernasey: Hunter da cui va',
+      en: 'peggy: Fellow Squadron Leader, morel-mackernasey: Hunter he goes to',
+    },
+  },
+  {
+    id: 'colt',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    only: 'chapter',
+    value: {
+      it: 'peggy: Altro comandante di divisione, morel-mackernasey: Hunter che giura di proteggerlo',
+      en: 'peggy: Fellow Squadron Leader, morel-mackernasey: Hunter who swears to protect him',
+    },
+  },
+  {
+    id: 'colt',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    only: 'episode',
+    value: {
+      it: 'morel-mackernasey: Hunter che giura di proteggerlo, kurt: La sua vita da umano',
+      en: 'morel-mackernasey: Hunter who swears to protect him, kurt: His human life',
+    },
+  },
+  { id: 'colt', field: 'status', episode: 92, chapter: 214, value: 'alive' },
+  {
+    id: 'meruem',
+    field: 'affiliation',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'Formichimere, con le sue guardie reali',
+      en: 'Chimera Ants, with his Royal Guards',
+    },
+  },
+  {
+    id: 'meruem',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'neferpitou: Guardia reale, shaiapouf: Guardia reale, menthuthuyoupi: Guardia reale',
+      en: 'neferpitou: Royal Guard, shaiapouf: Royal Guard, menthuthuyoupi: Royal Guard',
+    },
+  },
+  { id: 'meruem', field: 'status', episode: 92, chapter: 215, value: 'alive' },
+  {
+    id: 'zazan',
+    field: 'affiliation',
+    episode: 84,
+    chapter: 189,
+    value: { it: 'Formichimere', en: 'Chimera Ants' },
+  },
+  {
+    id: 'zazan',
+    field: 'affiliation',
+    episode: 92,
+    chapter: 216,
+    value: {
+      it: 'Formichimere, lontano dal nido',
+      en: 'Chimera Ants, away from the nest',
+    },
+  },
+  {
+    id: 'zazan',
+    field: 'relationships',
+    episode: 84,
+    chapter: 190,
+    only: 'chapter',
+    value: {
+      it: 'pokkle: Hunter che cattura, pike: Capitano della sua divisione',
+      en: 'pokkle: Hunter she captures, pike: Officer in her squad',
+    },
+  },
+  {
+    id: 'zazan',
+    field: 'relationships',
+    episode: 84,
+    chapter: 190,
+    only: 'episode',
+    value: {
+      it: 'pokkle: Hunter che cattura',
+      en: 'pokkle: Hunter she captures',
+    },
+  },
+  { id: 'zazan', field: 'status', episode: 84, chapter: 189, value: 'alive' },
+  {
+    id: 'pike',
+    field: 'affiliation',
+    episode: 80,
+    chapter: 190,
+    only: 'chapter',
+    value: {
+      it: 'Formichimere, divisione di Zazan',
+      en: 'Chimera Ants, Zazan’s squad',
+    },
+  },
+  {
+    id: 'pike',
+    field: 'relationships',
+    episode: 84,
+    chapter: 190,
+    only: 'chapter',
+    value: {
+      it: 'zazan: Comandante di divisione, pokkle: Hunter che affronta',
+      en: 'zazan: Squadron Leader, pokkle: Hunter he fights',
+    },
+  },
+  {
+    id: 'pike',
+    field: 'status',
+    episode: 80,
+    chapter: 190,
+    only: 'chapter',
+    value: 'alive',
+  },
+  {
+    id: 'hagya',
+    field: 'affiliation',
+    episode: 106,
+    chapter: 192,
+    value: { it: 'Formichimere', en: 'Chimera Ants' },
+  },
+  {
+    id: 'hagya',
+    field: 'relationships',
+    episode: 106,
+    chapter: 214,
+    only: 'chapter',
+    value: {
+      it: 'colt: Altro comandante di divisione',
+      en: 'colt: Fellow Squadron Leader',
+    },
+  },
+  {
+    id: 'hagya',
+    field: 'role',
+    episode: 106,
+    chapter: 192,
+    value: { it: 'Comandante di divisione', en: 'Squadron Leader' },
+  },
+  { id: 'hagya', field: 'status', episode: 106, chapter: 192, value: 'alive' },
+  {
+    id: 'rammot',
+    field: 'affiliation',
+    episode: 79,
+    chapter: 192,
+    value: { it: 'Formichimere', en: 'Chimera Ants' },
+  },
+  {
+    id: 'rammot',
+    field: 'relationships',
+    episode: 81,
+    chapter: 192,
+    value: {
+      it: 'killua: Ragazzo su cui vuole vendicarsi',
+      en: 'killua: Boy he wants revenge on',
+    },
+  },
+  {
+    id: 'rammot',
+    field: 'relationships',
+    episode: 84,
+    chapter: 198,
+    value: {
+      it: 'killua: Ragazzo su cui vuole vendicarsi, neferpitou: Guardia reale',
+      en: 'killua: Boy he wants revenge on, neferpitou: Royal Guard',
+    },
+  },
+  {
+    id: 'rammot',
+    field: 'relationships',
+    episode: 92,
+    chapter: 214,
+    value: {
+      it: 'killua: Ragazzo su cui vuole vendicarsi, neferpitou: Guardia reale, colt: Comandante di divisione',
+      en: 'killua: Boy he wants revenge on, neferpitou: Royal Guard, colt: Squadron Leader',
+    },
+  },
+  {
+    id: 'rammot',
+    field: 'relationships',
+    episode: 94,
+    chapter: 219,
+    value: {
+      it: 'killua: Avversario che lo uccide, neferpitou: Guardia reale, colt: Comandante di divisione',
+      en: 'killua: Opponent who kills him, neferpitou: Royal Guard, colt: Squadron Leader',
+    },
+  },
+  { id: 'rammot', field: 'status', episode: 79, chapter: 192, value: 'alive' },
+  {
+    id: 'yunju',
+    field: 'affiliation',
+    episode: 79,
+    chapter: 193,
+    value: { it: 'Formichimere', en: 'Chimera Ants' },
+  },
+  {
+    id: 'yunju',
+    field: 'relationships',
+    episode: 82,
+    chapter: 193,
+    value: {
+      it: 'kite: Hunter che lo uccide',
+      en: 'kite: Hunter who kills him',
+    },
+  },
+  {
+    id: 'yunju',
+    field: 'status',
+    episode: 79,
+    chapter: 193,
+    only: 'episode',
+    value: 'alive',
+  },
+  {
+    id: 'yunju',
+    field: 'status',
+    episode: 82,
+    chapter: 193,
+    value: 'deceased',
+  },
+  {
+    id: 'baro',
+    field: 'affiliation',
+    episode: 83,
+    chapter: 195,
+    only: 'chapter',
+    value: {
+      it: 'Formichimere, divisione di Hagya',
+      en: 'Chimera Ants, Hagya’s squad',
+    },
+  },
+  {
+    id: 'baro',
+    field: 'relationships',
+    episode: 83,
+    chapter: 195,
+    only: 'chapter',
+    value: {
+      it: 'gon-freecss: Avversario che lo uccide',
+      en: 'gon-freecss: Opponent who kills him',
+    },
+  },
+  {
+    id: 'baro',
+    field: 'status',
+    episode: 83,
+    chapter: 195,
+    only: 'chapter',
+    value: 'deceased',
+  },
+  {
+    id: 'baital',
+    field: 'affiliation',
+    episode: 88,
+    chapter: 205,
+    only: 'chapter',
+    value: { it: 'Formichimere', en: 'Chimera Ants' },
+  },
+  {
+    id: 'baital',
+    field: 'relationships',
+    episode: 88,
+    chapter: 205,
+    only: 'chapter',
+    value: {
+      it: 'morel-mackernasey: Hunter che lo isola',
+      en: 'morel-mackernasey: Hunter who cuts him off',
+    },
+  },
+  {
+    id: 'baital',
+    field: 'status',
+    episode: 88,
+    chapter: 205,
+    only: 'chapter',
+    value: 'missing',
+  },
+  {
+    id: 'neferpitou',
+    field: 'affiliation',
+    episode: 84,
+    chapter: 198,
+    value: { it: 'Guardia della regina', en: 'Queen’s guard' },
+  },
+  {
+    id: 'neferpitou',
+    field: 'affiliation',
+    episode: 91,
+    chapter: 213,
+    value: { it: 'Guardia del re', en: 'King’s guard' },
+  },
+  {
+    id: 'neferpitou',
+    field: 'relationships',
+    episode: 84,
+    chapter: 198,
+    value: {
+      it: 'pokkle: Hunter di cui sonda il cervello',
+      en: 'pokkle: Hunter whose brain they probe',
+    },
+  },
+  {
+    id: 'neferpitou',
+    field: 'relationships',
+    episode: 86,
+    chapter: 202,
+    value: {
+      it: 'kite: Hunter che uccide, shaiapouf: Altra guardia reale, pokkle: Hunter di cui sonda il cervello',
+      en: 'kite: Hunter they kill, shaiapouf: Fellow Royal Guard, pokkle: Hunter whose brain they probe',
+    },
+  },
+  {
+    id: 'neferpitou',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'meruem: Re che serve, shaiapouf: Altra guardia reale, kite: Hunter che uccide, pokkle: Hunter di cui sonda il cervello',
+      en: 'meruem: King they serve, shaiapouf: Fellow Royal Guard, kite: Hunter they kill, pokkle: Hunter whose brain they probe',
+    },
+  },
+  {
+    id: 'neferpitou',
+    field: 'status',
+    episode: 84,
+    chapter: 198,
+    value: 'alive',
+  },
+]
+
+describe.each(
+  PHASE_TWO_STEPS.flatMap((step) =>
+    LOCALES.flatMap((locale) =>
+      UNITS.filter((unit) => step.only === undefined || step.only === unit).map(
+        (unit) => ({ ...step, locale, unit }),
+      ),
+    ),
+  ),
+)(
+  '$id’s $field at $episode / $chapter in $locale by $unit',
+  ({ id, field, episode, chapter, value, locale, unit }) => {
+    it('shows the step at its pin, never before', () => {
+      const gate = unit === 'chapter' ? chapter : episode
+      const expected = typeof value === 'string' ? value : value[locale]
+
+      expect(stepAt({ id, field }, at(unit, gate - 1), locale)).not.toBe(
+        expected,
+      )
+      expect(stepAt({ id, field }, at(unit, gate), locale)).toBe(expected)
     })
   },
 )
