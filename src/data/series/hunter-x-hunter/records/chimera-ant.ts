@@ -62,7 +62,7 @@ const surveyDossier: HunterSaga['dossiers'][string] = {
       value: [
         {
           character: 'kite',
-          type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
+          type: { it: 'Collega di ricerca', en: 'Survey teammate' },
           summary: {
             it: 'Lavora con Kaito alla ricerca di nuove specie.',
             en: 'Works with Kite to find new species.',
@@ -71,7 +71,7 @@ const surveyDossier: HunterSaga['dossiers'][string] = {
       ],
     },
   ],
-  role: { it: 'Ricerca sul campo', en: 'Field surveyor' },
+  role: { it: 'Naturalista sul campo', en: 'Field surveyor' },
   log: {
     it: 'Si presenta a Gon e Killua quando si uniscono alla squadra di ricerca.',
     en: 'Introduces themself to Gon and Killua when they join the survey team.',
