@@ -16,6 +16,13 @@ const { archive } = series
 // Every stage of chapters 340–420 (#1154, #1156, #1158), at the chapter the
 // wiki gives it.
 const STAGES = [
+  { id: 'musse', chapter: 366, change: 'first' },
+  { id: 'rihan', chapter: 374, change: 'first' },
+  { id: 'onior', chapter: 378, change: 'first' },
+  { id: 'keeney', chapter: 381, change: 'first' },
+  { id: 'shikaku', chapter: 382, change: 'first' },
+  { id: 'sumidori', chapter: 386, change: 'first' },
+  { id: 'yokotani', chapter: 394, change: 'first' },
   { id: 'pariston-hill', chapter: 340, change: 'allegiance to Beyond' },
   { id: 'mizaistom-nana', chapter: 343, change: 'Cross Game' },
   { id: 'ging-freecss', chapter: 347, change: 'remote punch' },

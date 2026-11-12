@@ -226,24 +226,24 @@ export const kakinChronicles = {
       373,
       { it: 'L’eredità dei soldati', en: 'His soldiers’ legacy' },
       {
-        it: 'Benjamin ordina alle sue guardie di lasciar passare [[camilla-hui-guo-rou|Camilla]] quando arriva ai suoi alloggi armata, dopo la morte di uno dei suoi soldati. Benjamin ordina di arrestarla; lei gli scarica addosso la pistola, e lui para i colpi con l’aura e non reagisce. Il suo Nen gli permette di ereditare a certe condizioni le abilità dei soldati fedeli: ora ha quella di [[vincent|Vincent]] e quella del soldato ucciso da Camilla, che gli mostra tutto ciò che lei fa.',
-        en: 'Benjamin orders his guards to let [[camilla-hui-guo-rou|Camilla]] through when she arrives at his quarters armed, after the death of one of his soldiers. Benjamin calls for her arrest; she empties her gun at him, and he blocks the shots with his aura and does not strike back. His Nen lets him inherit, under certain conditions, the abilities of loyal soldiers: he now holds [[vincent|Vincent]]’s and that of the soldier Camilla killed, which shows him everything she does.',
+        it: 'Benjamin ordina alle sue guardie di lasciar passare [[camilla-hui-guo-rou|Camilla]] quando arriva ai suoi alloggi armata, dopo la morte di [[musse|Musse]]. Benjamin ordina di arrestarla; lei gli scarica addosso la pistola, e lui para i colpi con l’aura e non reagisce. Il suo Nen gli permette di ereditare a certe condizioni le abilità dei soldati fedeli: ora ha quella di [[vincent|Vincent]] e quella di Musse, che gli mostra tutto ciò che lei fa.',
+        en: 'Benjamin orders his guards to let [[camilla-hui-guo-rou|Camilla]] through when she arrives at his quarters armed, after [[musse|Musse]]’s death. Benjamin calls for her arrest; she empties her gun at him, and he blocks the shots with his aura and does not strike back. His Nen lets him inherit, under certain conditions, the abilities of loyal soldiers: he now holds [[vincent|Vincent]]’s and Musse’s, which shows him everything she does.',
       },
     ),
     told(
       382,
       { it: 'L’ordine contro Harkenburg', en: 'The order against Halkenburg' },
       {
-        it: 'Un soldato di Benjamin gli comunica via radio che l’omicidio di [[sale-sale-hui-guo-rou|Saresare]] è riuscito. Quando [[halkenburg-hui-guo-rou|Harkenburg]] torna dal re con una nuova determinazione, Benjamin ordina al soldato che lo sorveglia di ucciderlo e prenderne l’abilità, ma la freccia del principe ha la meglio sul soldato.',
-        en: 'A soldier of Benjamin’s radios him that the assassination of [[sale-sale-hui-guo-rou|Salé-salé]] has succeeded. When [[halkenburg-hui-guo-rou|Halkenburg]] returns from the king with new resolve, Benjamin orders the soldier posted with him to kill him and take his ability, but the prince’s arrow overpowers the soldier.',
+        it: 'Un soldato di Benjamin gli comunica via radio che l’omicidio di [[sale-sale-hui-guo-rou|Saresare]] è riuscito. Quando [[halkenburg-hui-guo-rou|Harkenburg]] torna dal re con una nuova determinazione, Benjamin ordina a [[shikaku|Shikaku]], il soldato che lo sorveglia, di ucciderlo e prenderne l’abilità, ma la freccia del principe ha la meglio sul soldato.',
+        en: 'A soldier of Benjamin’s radios him that the assassination of [[sale-sale-hui-guo-rou|Salé-salé]] has succeeded. When [[halkenburg-hui-guo-rou|Halkenburg]] returns from the king with new resolve, Benjamin orders [[shikaku|Shikaku]], the soldier posted with him, to kill him and take his ability, but the prince’s arrow overpowers the soldier.',
       },
     ),
     told(
       389,
       { it: 'Separarlo dai suoi uomini', en: 'Cut off from his men' },
       {
-        it: 'Dopo che uno dei suoi soldati si è sparato davanti agli alloggi di [[luzurus-hui-guo-rou|Loozlus]], Benjamin sente un nuovo tremito d’aura e un altro soldato, mandato da [[halkenburg-hui-guo-rou|Harkenburg]], urla alla radio, e Benjamin spegne il ricevitore. Capisce di aver sottovalutato il fratello. Su consiglio del capitano delle sue guardie fa arrestare Harkenburg per omicidio premeditato, separandolo dagli uomini di cui la sua abilità ha bisogno. Una squadra speciale prende il principe in custodia, e Benjamin decide di colpire al processo.',
-        en: 'After one of his soldiers has shot himself outside [[luzurus-hui-guo-rou|Luzurus]]’s quarters, Benjamin feels a new rumbling of aura, and another soldier, sent to [[halkenburg-hui-guo-rou|Halkenburg]], screams over the radio, and Benjamin switches the receiver off. He realises he underestimated his brother. On the advice of his guard captain he has Halkenburg arrested for premeditated murder, cutting him off from the men his ability needs. A special task force takes the prince into custody, and Benjamin plans to strike at the trial.',
+        it: 'Dopo che [[sumidori|Sumidori]] ha sparato al corpo di [[shikaku|Shikaku]] mentre lo controllava davanti agli alloggi di [[luzurus-hui-guo-rou|Loozlus]], Benjamin sente un nuovo tremito d’aura e un altro soldato, mandato da [[halkenburg-hui-guo-rou|Harkenburg]], urla alla radio, e Benjamin spegne il ricevitore. Capisce di aver sottovalutato il fratello. Su consiglio del capitano delle sue guardie fa arrestare Harkenburg per omicidio premeditato, separandolo dagli uomini di cui la sua abilità ha bisogno. Una squadra speciale prende il principe in custodia, e Benjamin decide di colpire al processo.',
+        en: 'After [[sumidori|Sumidori]] shoots [[shikaku|Shikaku]]’s body while controlling it outside [[luzurus-hui-guo-rou|Luzurus]]’s quarters, Benjamin feels a new rumbling of aura, and another soldier, sent to [[halkenburg-hui-guo-rou|Halkenburg]], screams over the radio, and Benjamin switches the receiver off. He realises he underestimated his brother. On the advice of his guard captain he has Halkenburg arrested for premeditated murder, cutting him off from the men his ability needs. A special task force takes the prince into custody, and Benjamin plans to strike at the trial.',
       },
     ),
     told(
@@ -732,8 +732,8 @@ export const kakinChronicles = {
       389,
       { it: 'Un sospetto di facciata', en: 'A feigned suspicion' },
       {
-        it: 'Negli alloggi di [[luzurus-hui-guo-rou|Loozlus]] Basho sente un nuovo tremito d’aura dalla stanza di [[halkenburg-hui-guo-rou|Harkenburg]], poco prima che un soldato di [[benjamin-hui-guo-rou|Benjamin]] si spari davanti alla porta. Quando un altro soldato di Benjamin gli chiede aiuto, Basho indica gli uomini della regina [[duazul-hui-guo-rou|Duazul]]. In realtà crede che dietro ci siano gli uomini di Benjamin: un’abilità che agisce attraverso la morte del soldato, inscenata davanti alla porta di Loozlus come falsa pista.',
-        en: 'In [[luzurus-hui-guo-rou|Luzurus]]’s quarters Basho feels a new rumbling of aura from [[halkenburg-hui-guo-rou|Halkenburg]]’s room, just before one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers shoots himself at the door. When another of Benjamin’s soldiers asks for his help, Basho points at Queen [[duazul-hui-guo-rou|Duazul]]’s men. In truth he believes Benjamin’s men are behind it: an ability that works through the soldier’s death, staged at Luzurus’s door as a false lead.',
+        it: 'Negli alloggi di [[luzurus-hui-guo-rou|Loozlus]] Basho sente un nuovo tremito d’aura dalla stanza di [[halkenburg-hui-guo-rou|Harkenburg]], poco prima di uno sparo davanti alla porta. È [[sumidori|Sumidori]] a sparare nel corpo di [[shikaku|Shikaku]], un soldato di [[benjamin-hui-guo-rou|Benjamin]]. Quando un altro soldato di Benjamin gli chiede aiuto, Basho indica gli uomini della regina [[duazul-hui-guo-rou|Duazul]]. In realtà crede che dietro ci siano gli uomini di Benjamin: un’abilità che agisce attraverso la morte del soldato, inscenata davanti alla porta di Loozlus come falsa pista.',
+        en: 'In [[luzurus-hui-guo-rou|Luzurus]]’s quarters Basho feels a new rumbling of aura from [[halkenburg-hui-guo-rou|Halkenburg]]’s room, just before a shot at the door. [[sumidori|Sumidori]] fires while controlling the body of [[shikaku|Shikaku]], one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers. When another of Benjamin’s soldiers asks for his help, Basho points at Queen [[duazul-hui-guo-rou|Duazul]]’s men. In truth he believes Benjamin’s men are behind it: an ability that works through the soldier’s death, staged at Luzurus’s door as a false lead.',
       },
     ),
     told(
@@ -1134,16 +1134,16 @@ export const kakinChronicles = {
       382,
       { it: 'Davanti al re', en: 'Before the king' },
       {
-        it: 'Per quattro giorni Harkenburg porta lettere alla porta del re, finché i soldati abbassano la guardia. Poi lui e cinque guardie estraggono le armi e raggiungono il padre. Spara, e il proiettile si ferma a mezz’aria: il re gli dice che ormai fa parte del rito e non può morire finché non sarà finito. Quando Harkenburg punta l’arma contro se stesso, la sua bestia ferma anche quel proiettile. Il re gli dice che solo un re può cambiare il paese. Harkenburg torna con una nuova determinazione, e una freccia fatta dell’aura dei suoi seguaci trafigge il soldato che [[benjamin-hui-guo-rou|Benjamin]] aveva messo tra le sue guardie e a cui aveva ordinato di ucciderlo, che si rialza ai suoi ordini.',
-        en: 'For four days Halkenburg brings letters to the king’s door until the soldiers lower their guard. Then he and five guards draw their guns and reach their father. He fires, and the bullet stops in midair: the king tells him he is now part of the ritual and cannot die until it ends. When Halkenburg turns the gun on himself, his beast stops that bullet too. The king tells him only a king can change the country. Halkenburg returns with new resolve, and an arrow of his followers’ aura pierces the soldier [[benjamin-hui-guo-rou|Benjamin]] had posted among his guards and ordered to kill him, who rises to take his orders.',
+        it: 'Per quattro giorni Harkenburg porta lettere alla porta del re, finché i soldati abbassano la guardia. Poi lui e cinque guardie estraggono le armi e raggiungono il padre. Spara, e il proiettile si ferma a mezz’aria: il re gli dice che ormai fa parte del rito e non può morire finché non sarà finito. Quando Harkenburg punta l’arma contro se stesso, la sua bestia ferma anche quel proiettile. Il re gli dice che solo un re può cambiare il paese. Harkenburg torna con una nuova determinazione, e una freccia fatta dell’aura dei suoi seguaci trafigge [[shikaku|Shikaku]], il soldato che [[benjamin-hui-guo-rou|Benjamin]] aveva messo tra le sue guardie con l’ordine di ucciderlo. Il corpo di Shikaku si rialza e chiede ordini al principe.',
+        en: 'For four days Halkenburg brings letters to the king’s door until the soldiers lower their guard. Then he and five guards draw their guns and reach their father. He fires, and the bullet stops in midair: the king tells him he is now part of the ritual and cannot die until it ends. When Halkenburg turns the gun on himself, his beast stops that bullet too. The king tells him only a king can change the country. Halkenburg returns with new resolve, and an arrow of his followers’ aura pierces [[shikaku|Shikaku]], the soldier [[benjamin-hui-guo-rou|Benjamin]] had posted among his guards with orders to kill him. Shikaku’s body rises and asks the prince for orders.',
       },
     ),
     told(
       386,
       { it: 'Lo scambio delle anime', en: 'Exchanged souls' },
       {
-        it: 'Harkenburg studia la sua nuova abilità. La guardia che ha sacrificato giace priva di sensi, e la sua anima sembra vivere nel corpo del soldato di [[benjamin-hui-guo-rou|Benjamin]]. Harkenburg dice che l’abilità si è risvegliata quando, dopo aver parlato con il padre, ha deciso di vincere la successione. Il soldato posseduto accetta di fare ciò che serve per capire l’abilità: davanti alla porta di [[luzurus-hui-guo-rou|Loozlus]] grida la sua fedeltà a Benjamin e si spara. La guardia si risveglia nel proprio corpo, e Harkenburg verifica che la sua anima sia tornata.',
-        en: 'Halkenburg studies his new ability. The guard he sacrificed lies unconscious, and his soul seems to live in the body of [[benjamin-hui-guo-rou|Benjamin]]’s soldier. Halkenburg says the ability awoke when, after speaking with his father, he resolved to win the contest. The possessed soldier agrees to do what is needed to understand the ability: at [[luzurus-hui-guo-rou|Luzurus]]’s door he shouts his loyalty to Benjamin and shoots himself. The guard wakes up in his own body, and Halkenburg checks that his soul has returned.',
+        it: 'Harkenburg studia la sua nuova abilità. [[sumidori|Sumidori]] giace privo di sensi, e la sua anima sembra vivere nel corpo di [[shikaku|Shikaku]], il soldato di [[benjamin-hui-guo-rou|Benjamin]]. Harkenburg dice che l’abilità si è risvegliata quando, dopo aver parlato con il padre, ha deciso di vincere la successione. Il soldato posseduto accetta di fare ciò che serve per capire l’abilità: davanti alla porta di [[luzurus-hui-guo-rou|Loozlus]] grida la sua fedeltà a Benjamin e si spara. Il corpo di Sumidori si risveglia, e Harkenburg gli chiede il numero di matricola per capire chi ha davanti.',
+        en: 'Halkenburg studies his new ability. [[sumidori|Sumidori]] lies unconscious, and his soul seems to live in the body of [[shikaku|Shikaku]], [[benjamin-hui-guo-rou|Benjamin]]’s soldier. Halkenburg says the ability awoke when, after speaking with his father, he resolved to win the contest. The possessed soldier agrees to do what is needed to understand the ability: at [[luzurus-hui-guo-rou|Luzurus]]’s door he shouts his loyalty to Benjamin and shoots himself. Sumidori’s body wakes, and Halkenburg asks for his service number to find out who he is speaking to.',
       },
     ),
     told(
@@ -1221,8 +1221,8 @@ export const kakinChronicles = {
       402,
       { it: 'Un’alleanza con Woble', en: 'An alliance with Woble' },
       {
-        it: '[[maor|Maor]] e [[longhi|Longhi]] riferiscono a Tsubeppa che [[kurapika|Kurapika]] è entrato nella tregua e ha accettato l’alleanza, a condizione che [[woble-hui-guo-rou|Woble]] e sua madre [[oito-hui-guo-rou|Oito]] vengano con lui nella stanza 1005. Tsubeppa non avrebbe nulla in contrario a vivere con loro. Poiché i soldati di [[benjamin-hui-guo-rou|Benjamin]] la prendono di mira, spera che la notizia dell’accordo sposti l’attenzione di Benjamin su [[zhang-lei-hui-guo-rou|Chowrai]], e chiede ai due di mostrare la loro intesa con Chowrai alla prossima lezione. Poi la sua bestia compare alle sue spalle davanti al soldato di Benjamin, che la ritiene di tipo condizionale.',
-        en: '[[maor|Maor]] and [[longhi|Longhi]] tell Tubeppa that [[kurapika|Kurapika]] has joined the truce and accepted the alliance, on condition that [[woble-hui-guo-rou|Woble]] and her mother [[oito-hui-guo-rou|Oito]] come with him to Room 1005. Tubeppa would not even mind living with them. Since [[benjamin-hui-guo-rou|Benjamin]]’s soldiers are targeting her, she hopes that news of the deal will turn his attention to [[zhang-lei-hui-guo-rou|Zhang Lei]], and tells the two to show their closeness to Zhang Lei at the next class. Then her beast appears behind her, facing Benjamin’s soldier, who guesses that it is a conditional type.',
+        it: '[[maor|Maor]] e [[longhi|Longhi]] riferiscono a Tsubeppa che [[kurapika|Kurapika]] è entrato nella tregua e ha accettato l’alleanza, a condizione che [[woble-hui-guo-rou|Woble]] e sua madre [[oito-hui-guo-rou|Oito]] vengano con lui nella stanza 1005. Tsubeppa non avrebbe nulla in contrario a vivere con loro. Poiché i soldati di [[benjamin-hui-guo-rou|Benjamin]] la prendono di mira, spera che la notizia dell’accordo sposti l’attenzione di Benjamin su [[zhang-lei-hui-guo-rou|Chowrai]], e chiede ai due di mostrare la loro intesa con Chowrai alla prossima lezione. Poi la sua bestia compare alle sue spalle davanti a [[rihan|Rihan]], che la ritiene di tipo condizionale.',
+        en: '[[maor|Maor]] and [[longhi|Longhi]] tell Tubeppa that [[kurapika|Kurapika]] has joined the truce and accepted the alliance, on condition that [[woble-hui-guo-rou|Woble]] and her mother [[oito-hui-guo-rou|Oito]] come with him to Room 1005. Tubeppa would not even mind living with them. Since [[benjamin-hui-guo-rou|Benjamin]]’s soldiers are targeting her, she hopes that news of the deal will turn his attention to [[zhang-lei-hui-guo-rou|Zhang Lei]], and tells the two to show their closeness to Zhang Lei at the next class. Then her beast appears behind her, facing [[rihan|Rihan]], who guesses that it is a conditional type.',
       },
     ),
     told(
@@ -1247,24 +1247,24 @@ export const kakinChronicles = {
       366,
       { it: 'Un piano contro due fratelli', en: 'A plan against two brothers' },
       {
-        it: 'Camilla ha già avvertito le sue guardie che gli uomini di [[benjamin-hui-guo-rou|Benjamin]] moriranno se entreranno nel suo salotto. Ordina poi a sua madre, [[duazul-hui-guo-rou|Duazul]], di avvicinarsi a [[halkenburg-hui-guo-rou|Harkenburg]] perché lei possa ucciderlo, e di fare lo stesso con Benjamin. Una delle guardie di Benjamin ascolta di nascosto la conversazione e usa la sua abilità di Nen per raccogliere prove del complotto.',
-        en: 'Camilla has already warned her guards that [[benjamin-hui-guo-rou|Benjamin]]’s men will die if they enter her living room. She then orders her mother, [[duazul-hui-guo-rou|Duazul]], to get close to [[halkenburg-hui-guo-rou|Halkenburg]] so that she can kill him, and to do the same with Benjamin. One of Benjamin’s guards overhears the conversation and uses his Nen ability to gather physical evidence of the plot.',
+        it: 'Camilla ha già avvertito le sue guardie che gli uomini di [[benjamin-hui-guo-rou|Benjamin]] moriranno se entreranno nel suo salotto. Ordina poi a sua madre, [[duazul-hui-guo-rou|Duazul]], di avvicinarsi a [[halkenburg-hui-guo-rou|Harkenburg]] perché lei possa ucciderlo, e di fare lo stesso con Benjamin. [[musse|Musse]], una delle guardie di Benjamin, ascolta di nascosto la conversazione e usa la sua abilità di Nen per raccogliere prove del complotto.',
+        en: 'Camilla has already warned her guards that [[benjamin-hui-guo-rou|Benjamin]]’s men will die if they enter her living room. She then orders her mother, [[duazul-hui-guo-rou|Duazul]], to get close to [[halkenburg-hui-guo-rou|Halkenburg]] so that she can kill him, and to do the same with Benjamin. [[musse|Musse]], one of Benjamin’s guards, overhears the conversation and uses his Nen ability to gather physical evidence of the plot.',
       },
     ),
     told(
       373,
       { it: 'Il gatto', en: 'The cat' },
       {
-        it: 'Camilla dice a un soldato di [[benjamin-hui-guo-rou|Benjamin]] che ucciderà Benjamin e gli ordina di aiutarla. Lui le spara e la uccide, ma compare un grosso gatto che lo schiaccia e la riporta in vita con una goccia dalla coda. Camilla va agli alloggi di Benjamin e lungo la strada spara a due guardie. Benjamin para i colpi con l’aura e non reagisce. [[furykov|Furykov]] la arresta, e quando lei minaccia la sua famiglia, lui risponde che la sua unica famiglia è Benjamin. Camilla viene messa in isolamento.',
-        en: 'Camilla tells one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers that she will kill Benjamin and orders him to help. He shoots her dead, but a large cat appears, crushes him and brings her back to life with a drop from its tail. Camilla sets out for Benjamin’s quarters, shooting two guards on the way. Benjamin blocks her shots with his aura and does not strike back. [[furykov|Furykov]] arrests her, and when she threatens his family, he answers that Benjamin is his only family. Camilla is placed in solitary confinement.',
+        it: 'Camilla dice a [[musse|Musse]], un soldato di [[benjamin-hui-guo-rou|Benjamin]], che ucciderà Benjamin e gli ordina di aiutarla. Lui le spara e la uccide, ma compare un grosso gatto che lo schiaccia e la riporta in vita con una goccia dalla coda. Camilla va agli alloggi di Benjamin e lungo la strada spara a due guardie. Benjamin para i colpi con l’aura e non reagisce. [[furykov|Furykov]] la arresta, e quando lei minaccia la sua famiglia, lui risponde che la sua unica famiglia è Benjamin. Camilla viene messa in isolamento.',
+        en: 'Camilla tells [[musse|Musse]], one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, that she will kill Benjamin and orders him to help. He shoots her dead, but a large cat appears, crushes him and brings her back to life with a drop from its tail. Camilla sets out for Benjamin’s quarters, shooting two guards on the way. Benjamin blocks her shots with his aura and does not strike back. [[furykov|Furykov]] arrests her, and when she threatens his family, he answers that Benjamin is his only family. Camilla is placed in solitary confinement.',
       },
     ),
     told(
       376,
       { it: 'Il processo', en: 'The trial' },
       {
-        it: '[[benjamin-hui-guo-rou|Benjamin]] e Camilla compaiono davanti al giudice supremo. Il rappresentante di Camilla sostiene che lei è stata aggredita da un soldato di Benjamin e ha sparato a Benjamin per difendersi; quello di Benjamin, che è stata lei ad attaccarlo. Entrambe le parti chiedono che si perquisisca la stanza dell’altro principe, e il processo viene rinviato. Fino alla ripresa entrambi restano sotto sorveglianza. Benjamin non se ne preoccupa: grazie all’abilità del soldato morto può continuare a osservarla.',
-        en: '[[benjamin-hui-guo-rou|Benjamin]] and Camilla stand trial before the Supreme Magistrate. Camilla’s representative claims that she was attacked by one of Benjamin’s soldiers and shot Benjamin in self-defence; Benjamin’s says that she attacked him. Both sides demand that the other prince’s room be searched, and the trial is postponed. Until it resumes, both princes are kept under surveillance. Benjamin is unconcerned: through the dead soldier’s ability he can keep watching her.',
+        it: '[[benjamin-hui-guo-rou|Benjamin]] e Camilla compaiono davanti al giudice supremo. Il rappresentante di Camilla sostiene che lei è stata aggredita da [[musse|Musse]] e ha sparato a Benjamin per difendersi; quello di Benjamin, che è stata lei ad attaccarlo. Entrambe le parti chiedono che si perquisisca la stanza dell’altro principe, e il processo viene rinviato. Fino alla ripresa entrambi restano sotto sorveglianza. Benjamin non se ne preoccupa: grazie all’abilità di Musse può continuare a osservarla.',
+        en: '[[benjamin-hui-guo-rou|Benjamin]] and Camilla stand trial before the Supreme Magistrate. Camilla’s representative claims that she was attacked by [[musse|Musse]] and shot Benjamin in self-defence; Benjamin’s says that she attacked him. Both sides demand that the other prince’s room be searched, and the trial is postponed. Until it resumes, both princes are kept under surveillance. Benjamin is unconcerned: through Musse’s ability he can keep watching her.',
       },
     ),
     told(
@@ -1305,8 +1305,8 @@ export const kakinChronicles = {
       390,
       { it: 'Dal capo degli Xi-Yu', en: 'Visiting the Xi-Yu boss' },
       {
-        it: 'Chowrai premia [[tenftory|Tenftory]], che ora vede le bestie, con la prima moneta che consegna, e sogna di distribuirne al popolo una volta re. Poi va a trovare il capo degli Xi-Yu, un fratellastro illegittimo del re, che resta indifferente alla morte di tre principi. Il capo non sa nulla del Nen né delle bestie, ma promette di chiedere ai membri più giovani della famiglia che lo conoscono. Intanto il soldato di [[benjamin-hui-guo-rou|Benjamin]] nota che la moneta che ha tenuto per sé ora porta il numero 10.',
-        en: 'Zhang Lei rewards [[tenftory|Tenftory]], who can now see the beasts, with the first coin he hands out, and dreams of giving them to the people once he is king. He then visits the Xi-Yu boss, an illegitimate half-brother of the king, who is unmoved that three princes have died. The boss knows nothing of Nen or the beasts, but promises to ask the younger members of his family who do. Meanwhile [[benjamin-hui-guo-rou|Benjamin]]’s soldier notices that the coin he kept now shows the number 10.',
+        it: 'Chowrai premia [[tenftory|Tenftory]], che ora vede le bestie, con la prima moneta che consegna, e sogna di distribuirne al popolo una volta re. Poi va a trovare [[onior|Onior]], il capo degli Xi-Yu e fratellastro illegittimo del re, che resta indifferente alla morte di tre principi. Il capo non sa nulla del Nen né delle bestie, ma promette di chiedere ai membri più giovani della famiglia che lo conoscono. Intanto il soldato di [[benjamin-hui-guo-rou|Benjamin]] nota che la moneta che ha tenuto per sé ora porta il numero 10.',
+        en: 'Zhang Lei rewards [[tenftory|Tenftory]], who can now see the beasts, with the first coin he hands out, and dreams of giving them to the people once he is king. He then visits [[onior|Onior]], the Xi-Yu boss and an illegitimate half-brother of the king, who is unmoved that three princes have died. The boss knows nothing of Nen or the beasts, but promises to ask the younger members of his family who do. Meanwhile [[benjamin-hui-guo-rou|Benjamin]]’s soldier notices that the coin he kept now shows the number 10.',
       },
     ),
     told(
@@ -1437,8 +1437,8 @@ export const kakinChronicles = {
       366,
       { it: 'L’ordine di Camilla', en: 'Camilla’s order' },
       {
-        it: 'Duazul, la seconda regina, ha quattro figli tra i principi: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tsubeppa]], [[luzurus-hui-guo-rou|Loozlus]] e [[halkenburg-hui-guo-rou|Harkenburg]]. A bordo della Black Whale, Camilla le ordina di avvicinarsi ad Harkenburg perché lei possa ucciderlo, e di fare lo stesso con [[benjamin-hui-guo-rou|Benjamin]]. Una guardia di Benjamin ascolta di nascosto e raccoglie prove del complotto con il Nen.',
-        en: 'Duazul, the Second Queen, has four children among the princes: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tubeppa]], [[luzurus-hui-guo-rou|Luzurus]] and [[halkenburg-hui-guo-rou|Halkenburg]]. Aboard the Black Whale, Camilla orders her to get close to Halkenburg so that Camilla can kill him, and to do the same with [[benjamin-hui-guo-rou|Benjamin]]. One of Benjamin’s guards overhears and gathers evidence of the plot with his Nen.',
+        it: 'Duazul, la seconda regina, ha quattro figli tra i principi: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tsubeppa]], [[luzurus-hui-guo-rou|Loozlus]] e [[halkenburg-hui-guo-rou|Harkenburg]]. A bordo della Black Whale, Camilla le ordina di avvicinarsi ad Harkenburg perché lei possa ucciderlo, e di fare lo stesso con [[benjamin-hui-guo-rou|Benjamin]]. [[musse|Musse]], una guardia di Benjamin, ascolta di nascosto e raccoglie prove del complotto con il Nen.',
+        en: 'Duazul, the Second Queen, has four children among the princes: [[camilla-hui-guo-rou|Camilla]], [[tubeppa-hui-guo-rou|Tubeppa]], [[luzurus-hui-guo-rou|Luzurus]] and [[halkenburg-hui-guo-rou|Halkenburg]]. Aboard the Black Whale, Camilla orders her to get close to Halkenburg so that Camilla can kill him, and to do the same with [[benjamin-hui-guo-rou|Benjamin]]. [[musse|Musse]], one of Benjamin’s guards, overhears and gathers evidence of the plot with his Nen.',
       },
     ),
   ],
@@ -1832,11 +1832,19 @@ export const kakinChronicles = {
   ],
   'keeney': [
     told(
+      381,
+      { it: 'La telefonata a Melody', en: 'The call to Melody' },
+      {
+        it: 'Keeney sorveglia gli alloggi di [[kacho-hui-guo-rou|Kachow]] con l’En. Quando qualcuno compare all’improvviso nel letto del principe, sospetta che sia la gemella. Più tardi uno degli uomini di Mizaistom telefona a [[melody|Melody]]. Le dice che Keeney guiderà il tentativo di impedire ai due principi di fuggire.',
+        en: 'Keeney watches [[kacho-hui-guo-rou|Kacho]]’s quarters with En. When someone suddenly appears in the prince’s bed, he suspects it is her twin. Later one of Mizaistom’s men calls [[melody|Melody]]. He says Keeney will lead the effort to stop the twins from escaping.',
+      },
+    ),
+    told(
       383,
       { it: 'Il posto dove morire', en: 'A place to die' },
       {
-        it: 'Keeney, uno degli Hunter di guardia a [[kacho-hui-guo-rou|Kachow]], ha percepito con l’En qualcuno comparire nel letto del principe, quasi certamente la gemella [[fugetsu-hui-guo-rou|Fugetsu]], e lascia la cosa a [[melody|Melody]]. Al banchetto della domenica suona un assolo di pianoforte. Mentre il flauto di Melody incanta i presenti, guida le gemelle oltre i soldati storditi fino a una scialuppa e dice loro di usare la loro abilità solo come ultima risorsa. Poi si spara. Due anni prima la moglie e la figlia erano morte in un incidente, e da allora cercava un posto dove morire. Così nessun complice potrà ricondurre la fuga all’Associazione Hunter.',
-        en: 'Keeney, one of [[kacho-hui-guo-rou|Kacho]]’s Hunter guards, has sensed with En someone appear in the prince’s bed, most likely her twin [[fugetsu-hui-guo-rou|Fugetsu]], and leaves the matter to [[melody|Melody]]. At the Sunday banquet he plays a piano solo. While Melody’s flute holds the listeners, he leads the twins past the stunned soldiers to a lifeboat and tells them to use their ability only as a last resort. Then he shoots himself. Two years earlier his wife and daughter had died in an accident, and since then he had been looking for a place to die. This way no accomplice can tie the escape to the Hunter Association.',
+        it: 'Al banchetto della domenica suona un assolo di pianoforte. Mentre il flauto di Melody incanta i presenti, guida le gemelle oltre i soldati storditi fino a una scialuppa e dice loro di usare la loro abilità solo come ultima risorsa. Poi si spara. Due anni prima la moglie e la figlia erano morte in un incidente, e da allora cercava un posto dove morire. Così nessun complice potrà ricondurre la fuga all’Associazione Hunter.',
+        en: 'At the Sunday banquet he plays a piano solo. While Melody’s flute holds the listeners, he leads the twins past the stunned soldiers to a lifeboat and tells them to use their ability only as a last resort. Then he shoots himself. Two years earlier his wife and daughter had died in an accident, and since then he had been looking for a place to die. This way no accomplice can tie the escape to the Hunter Association.',
       },
     ),
   ],
@@ -1863,8 +1871,8 @@ export const kakinChronicles = {
       389,
       { it: 'Uno sparo nel corridoio', en: 'A shot in the corridor' },
       {
-        it: 'Famule è uno dei soldati della regina [[duazul-hui-guo-rou|Duazul]] assegnati a [[luzurus-hui-guo-rou|Loozlus]]. È nel salotto del principe con [[basho|Basho]] quando un soldato di [[benjamin-hui-guo-rou|Benjamin]] suona alla porta, grida la sua fedeltà a Benjamin e si spara. Pistola in mano, Famule dice a Basho che il colpo è venuto dal corridoio, poi perlustra la zona con le altre guardie. Più tardi un altro soldato di Benjamin, presente nella stanza, lo elenca tra i testimoni e comincia a sospettare delle guardie della regina.',
-        en: 'Famule is one of Queen [[duazul-hui-guo-rou|Duazul]]’s soldiers assigned to [[luzurus-hui-guo-rou|Luzurus]]. He is in the prince’s sitting room with [[basho|Basho]] when one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers rings at the door, shouts his loyalty to Benjamin and shoots himself. Gun in hand, Famule tells Basho that the shot came from the corridor, then searches the area with the other guards. Later another of Benjamin’s soldiers, who was in the room, lists him among those present and begins to suspect the queen’s guards.',
+        it: 'Famule è uno dei soldati della regina [[duazul-hui-guo-rou|Duazul]] assegnati a [[luzurus-hui-guo-rou|Loozlus]]. È nel salotto del principe con [[basho|Basho]] quando alla porta suona quello che sembra [[shikaku|Shikaku]], un soldato di [[benjamin-hui-guo-rou|Benjamin]]. Grida la sua fedeltà a Benjamin e si spara. Pistola in mano, Famule dice a Basho che il colpo è venuto dal corridoio, poi perlustra la zona con le altre guardie. Più tardi un altro soldato di Benjamin, presente nella stanza, lo elenca tra i testimoni e comincia a sospettare delle guardie della regina.',
+        en: 'Famule is one of Queen [[duazul-hui-guo-rou|Duazul]]’s soldiers assigned to [[luzurus-hui-guo-rou|Luzurus]]. He is in the prince’s sitting room with [[basho|Basho]] when the man who looks like [[shikaku|Shikaku]], one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers, rings at the door. He shouts his loyalty to Benjamin and shoots himself. Gun in hand, Famule tells Basho that the shot came from the corridor, then searches the area with the other guards. Later another of Benjamin’s soldiers, who was in the room, lists him among those present and begins to suspect the queen’s guards.',
       },
     ),
   ],
@@ -2241,6 +2249,14 @@ export const kakinChronicles = {
   ],
   'yokotani': [
     told(
+      394,
+      { it: 'Di guardia alla porta', en: 'Guarding the door' },
+      {
+        it: 'La capa degli Heil-Ly ordina a Yokotani e a Orarge di fare la guardia a turno alla porta C. Se vedono i soldati di [[tserriednich-hui-guo-rou|Tserriednich]], devono invitarli nel covo. Yokotani dice che non possono respingere i soldati del primo principe invocando la legge. La famiglia ha bisogno di catturare uno degli uomini di Tserriednich per seguirne gli spostamenti.',
+        en: 'The Heil-Ly boss tells Yokotani and Orarge to take turns guarding Door C. If they see [[tserriednich-hui-guo-rou|Tserriednich]]’s soldiers, they should invite them into the hideout. Yokotani says they cannot turn away the First Prince’s soldiers on legal grounds. The family wants to capture one of Tserriednich’s men so they can track his movements.',
+      },
+    ),
+    told(
       399,
       { it: 'L’avvocato degli Heil-Ly', en: 'The Heil-Ly’s lawyer' },
       {
@@ -2542,6 +2558,14 @@ export const kakinChronicles = {
   ],
   'musse': [
     told(
+      366,
+      { it: 'Una conversazione ascoltata', en: 'Listening in' },
+      {
+        it: 'Musse, soldato di [[benjamin-hui-guo-rou|Benjamin]] assegnato a [[camilla-hui-guo-rou|Camilla]], la sente ordinare a sua madre di avvicinarsi a Harkenburg. La conversazione da sola non gli basta. Vuole raccogliere prove del piano e pensa di usare la propria abilità per continuare ad ascoltare Camilla.',
+        en: 'Musse, one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers assigned to [[camilla-hui-guo-rou|Camilla]], overhears her order her mother to get close to Halkenburg. The conversation alone is insufficient as evidence. He wants proof of the plot and plans to use his Nen ability to keep listening to Camilla.',
+      },
+    ),
+    told(
       413,
       { it: 'La finestra segreta', en: 'The Secret Window' },
       {
@@ -2590,6 +2614,14 @@ export const kakinChronicles = {
   ],
   'shikaku': [
     told(
+      382,
+      { it: 'La freccia del principe', en: 'The prince’s arrow' },
+      {
+        it: '[[benjamin-hui-guo-rou|Benjamin]] ordina a Shikaku di uccidere [[halkenburg-hui-guo-rou|Harkenburg]] e di prendergli l’abilità. Shikaku forma una carta di aura per difendersi, ma la freccia del principe la attraversa e lo colpisce. Shikaku cade a terra. Il suo corpo si rialza e chiede a Harkenburg quali siano i suoi ordini.',
+        en: '[[benjamin-hui-guo-rou|Benjamin]] orders Shikaku to kill [[halkenburg-hui-guo-rou|Halkenburg]] and take his ability. Shikaku forms an aura card to defend himself, but the prince’s arrow pierces it and hits him. Shikaku falls to the floor. His body gets back up and asks Halkenburg what his orders are.',
+      },
+    ),
+    told(
       404,
       { it: 'La prova con Sumidori', en: 'The test with Sumidori' },
       {
@@ -2599,6 +2631,14 @@ export const kakinChronicles = {
     ),
   ],
   'sumidori': [
+    told(
+      386,
+      { it: 'La prova di Harkenburg', en: 'Halkenburg’s test' },
+      {
+        it: 'Il corpo di Sumidori sembra addormentato mentre lui controlla quello di [[shikaku|Shikaku]]. [[halkenburg-hui-guo-rou|Harkenburg]] gli chiede di partecipare a una prova per capire che cosa è accaduto alla mente del soldato. Gli altri controllano le onde cerebrali del corpo addormentato per vedere se cambiano. Sumidori accetta di aiutarli. Per ora il gruppo ha solo ipotesi su dove sia finita la mente di Shikaku.',
+        en: 'Sumidori’s body appears asleep while he controls [[shikaku|Shikaku]]’s. [[halkenburg-hui-guo-rou|Halkenburg]] asks him to help test what happened to the soldier’s mind. The others monitor the sleeping body’s brainwaves to see if they change. Sumidori agrees to help. So far the group has only theories about where Shikaku’s mind went.',
+      },
+    ),
     told(
       404,
       { it: 'Nel corpo di Shikaku', en: 'In Shikaku’s body' },
@@ -2666,6 +2706,14 @@ export const kakinChronicles = {
   ],
   'onior': [
     told(
+      378,
+      { it: 'La ricerca di Hisoka', en: 'The search for Hisoka' },
+      {
+        it: 'Onior, capo degli Xi-Yu e fratellastro del re, parla al telefono con il capo dei Cha-R. Vogliono decidere quando far incontrare gli Heil-Ly e la Brigata Fantasma. Onior ordina al suo vice di trovare [[hisoka|Hisoka]] prima dei Ragni. Anche il capo dei Cha-R dà lo stesso ordine al suo vice.',
+        en: 'Onior, the Xi-Yu boss and the king’s half-brother, talks to the Cha-R boss by phone. They want to control when the Heil-Ly and the Phantom Troupe meet. Onior orders his underboss to find [[hisoka|Hisoka]] before the Spiders do. The Cha-R boss gives his underboss the same order.',
+      },
+    ),
+    told(
       417,
       { it: 'Il capo degli Xi-Yu', en: 'The Xi-Yu boss' },
       {
@@ -2713,6 +2761,14 @@ export const kakinChronicles = {
     ),
   ],
   'rihan': [
+    told(
+      374,
+      { it: 'Lo studio del fumo', en: 'Studying the smoke' },
+      {
+        it: 'Rihan, soldato di [[benjamin-hui-guo-rou|Benjamin]] assegnato a [[sale-sale-hui-guo-rou|Saresare]], studia il fumo della bestia del principe. Vuole misurare quanto tempo impiega a influenzare una guardia prima di usare la propria abilità. Deve studiare il bersaglio da solo: più precisa è la sua analisi, più adatto sarà il predatore che ne ricaverà.',
+        en: 'Rihan, one of [[benjamin-hui-guo-rou|Benjamin]]’s soldiers assigned to [[sale-sale-hui-guo-rou|Salé-salé]], studies the prince’s beast and its smoke. He wants to measure how long it takes to influence a guard before using his own ability. He must study the target without help. The more accurate his analysis, the better the predator he creates will be at countering it.',
+      },
+    ),
     told(
       415,
       { it: 'Ordini nella stanza 1005', en: 'Orders in Room 1005' },

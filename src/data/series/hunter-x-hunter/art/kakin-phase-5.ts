@@ -114,9 +114,8 @@ export const KAKIN_PHASE_5_DRAWINGS = {
   ],
 
   // An owl-shaped bird of Secret Window perched on the shoulder of a Kakin
-  // army zipper jacket, in tint: Musse's ability, which Benjamin inherits.
-  // Musse is already dead when he is named, chapter 402, so the drawing is
-  // what he left. No eyes, no beak.
+  // army zipper jacket, in tint: Musse uses the owl while eavesdropping in
+  // chapter 366. No eyes, no beak.
   'musse': [
     { d: 'M8 186 C12 150 36 132 62 128 H98 C124 132 148 150 152 186' },
     { d: 'M62 128 V114 Q80 108 98 114 V128' },
@@ -198,8 +197,7 @@ export const KAKIN_PHASE_5_DRAWINGS = {
 
   // Culdcept: Shikaku's two hands framing a rectangle with thumb and index
   // finger, and the card of aura between them in tint, darkening, chapter
-  // 382. He is already dead when he is named, chapter 404, and Benjamin
-  // inherits the ability, so the drawing is what he left.
+  // 382.
   'shikaku': [
     {
       d: 'M36 60 Q36 54 41 54 Q46 54 46 60 V126 H108 Q114 126 114 131 Q114 136 108 136 H46 C40 148 30 154 20 150 C12 146 12 134 18 126 C24 120 30 116 36 112 Z',
@@ -222,7 +220,7 @@ export const KAKIN_PHASE_5_DRAWINGS = {
   ],
 
   // Sumidori's short fair hair from behind, its outline in tint, over his
-  // black suit: one of Halkenburg's men, chapter 404.
+  // black suit: one of Halkenburg's men, chapter 386.
   'sumidori': [
     { d: 'M58 102 C54 72 64 56 80 56 C96 56 106 72 102 102', role: 'accent' },
     {
@@ -295,7 +293,7 @@ export const KAKIN_PHASE_5_DRAWINGS = {
   ],
 
   // Onior's corpulent head from behind, the tuft of fair hair on top in
-  // tint, the folds of his neck: the Xi-Yu boss, chapter 410. His scars are
+  // tint, the folds of his neck: the Xi-Yu boss, chapter 378. His scars are
   // on his face, so they are not drawn.
   'onior': [
     { d: 'M52 110 C44 72 60 50 80 50 C100 50 116 72 108 110' },
@@ -362,7 +360,7 @@ export const KAKIN_PHASE_5_DRAWINGS = {
   ],
 
   // Rihan's queue from behind, the braid down the back of his army jacket
-  // and its tie in tint: one of Benjamin's soldiers, chapter 413.
+  // and its tie in tint: one of Benjamin's soldiers, chapter 374.
   'rihan': [
     { d: SKULL },
     { d: 'M66 70 Q80 62 94 70 M62 84 Q80 76 98 84', role: 'soft' },

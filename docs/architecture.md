@@ -359,7 +359,7 @@ checks this block.
 | Arcs, places      | 7 · 43                                                |
 | Saga modules      | 7                                                     |
 | Line drawings     | 368, one per record, plus 94 redrawings of 81 records |
-| Chronicle stories | 994, for 289 characters                               |
+| Chronicle stories | 1001, for 289 characters                              |
 
 ### `game-of-thrones`
 

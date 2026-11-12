@@ -19,7 +19,7 @@ const CHARACTERS = [
   ['vergei', 373],
   ['ken-i-wang', 379],
   ['cashew', 379],
-  ['keeney', 383],
+  ['keeney', 381],
 ] as const
 
 // Deaths dated in this window, new and returning records alike.
@@ -67,7 +67,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
       const owner = character(id)
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
-      for (const field of ['affiliation', 'status', 'relationships'] as const) {
+      for (const field of ['affiliation', 'status'] as const) {
         expect(archive.reachedOf(before, owner, field)).toStrictEqual([])
         expect(archive.reachedOf(reached, owner, field)).toHaveLength(1)
       }
@@ -84,6 +84,25 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
       expect(characterPage(id, reader)).toBeUndefined()
       expect(drawingsFor([id], reader)).toStrictEqual({})
     })
+  })
+
+  it('opens Keeney’s escape-plan relationship at chapter 383', () => {
+    const owner = character('keeney')
+
+    expect(
+      archive.reachedOf(
+        read({ mode: 'chapter', chapter: 382 }),
+        owner,
+        'relationships',
+      ),
+    ).toStrictEqual([])
+    expect(
+      archive.reachedOf(
+        read({ mode: 'chapter', chapter: 383 }),
+        owner,
+        'relationships',
+      ),
+    ).toHaveLength(1)
   })
 
   it('adds Vergei’s Nen teacher only at chapter 375', () => {

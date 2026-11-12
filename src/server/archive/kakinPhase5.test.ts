@@ -18,21 +18,21 @@ const RECORDS = [
   { id: 'makaha', chapter: 401 },
   { id: 'hashito', chapter: 402 },
   { id: 'sakata', chapter: 402 },
-  { id: 'musse', chapter: 402 },
+  { id: 'musse', chapter: 366 },
   { id: 'balsamilco', chapter: 403 },
   { id: 'worio-bay', chapter: 403 },
   { id: 'vict', chapter: 404 },
-  { id: 'shikaku', chapter: 404 },
-  { id: 'sumidori', chapter: 404 },
+  { id: 'shikaku', chapter: 382 },
+  { id: 'sumidori', chapter: 386 },
   { id: 'cleapatro', chapter: 404 },
   { id: 'hinrigh', chapter: 404 },
   { id: 'morena', chapter: 405 },
   { id: 'risnorth', chapter: 405 },
-  { id: 'onior', chapter: 410 },
+  { id: 'onior', chapter: 378 },
   { id: 'kako', chapter: 411 },
   { id: 'bill', chapter: 412 },
   { id: 'shimanu', chapter: 412 },
-  { id: 'rihan', chapter: 413 },
+  { id: 'rihan', chapter: 374 },
   { id: 'saquelle', chapter: 413 },
   { id: 'kanjidol', chapter: 415 },
   { id: 'coventoba', chapter: 417 },
@@ -70,6 +70,9 @@ const RELATIONSHIPS = [
 ]
 // Each change of status in the window, with the status before and at its pin.
 const STATUSES = [
+  { id: 'musse', chapter: 373, before: 'alive', after: 'deceased' },
+  { id: 'shikaku', chapter: 386, before: 'alive', after: 'deceased' },
+
   {
     id: 'halkenburg-hui-guo-rou',
     chapter: 404,
@@ -161,8 +164,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
   })
 
   it.each([
-    { id: 'musse', status: 'deceased' },
-    { id: 'shikaku', status: 'deceased' },
+    { id: 'sumidori', status: 'alive' },
     { id: 'risnorth', status: 'deceased' },
     { id: 'kanjidol', status: 'captured' },
   ])('files $id as $status at the opening', ({ id, status }) => {

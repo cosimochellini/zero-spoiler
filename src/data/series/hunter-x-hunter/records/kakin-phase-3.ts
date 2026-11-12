@@ -47,11 +47,11 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 148,
-      revealedAtChapter: 383,
+      revealedAtChapter: 381,
       name: { it: 'Keeney', en: 'Keeney' },
       summary: {
-        it: 'Suona il pianoforte al banchetto. Aiuta due principi a fuggire con una scialuppa e si toglie la vita per non compromettere la missione degli Hunter.',
-        en: 'He plays the piano at the banquet. He helps two princes escape in a lifeboat and takes his own life to avoid compromising the Hunters’ mission.',
+        it: 'Uno degli Hunter di guardia a Kachow. Una telefonata gli affida un incarico.',
+        en: 'One of Kacho’s Hunter guards. A caller puts him in charge of an assignment.',
       },
       visual: { art: 'keeney', tint: 'violet' },
     },
@@ -206,13 +206,13 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'Hunter and Tenth Prince’s guard',
       },
       log: {
-        it: 'Suona il pianoforte al banchetto. Aiuta due principi a fuggire con una scialuppa e si toglie la vita per non compromettere la missione degli Hunter.',
-        en: 'He plays the piano at the banquet. He helps two princes escape in a lifeboat and takes his own life to avoid compromising the Hunters’ mission.',
+        it: 'Uno degli Hunter di guardia a Kachow. Una telefonata gli affida un incarico.',
+        en: 'One of Kacho’s Hunter guards. A caller puts him in charge of an assignment.',
       },
       affiliation: [
         {
           episode: 148,
-          chapter: 383,
+          chapter: 381,
           source: 'chapter',
           value: {
             it: 'Associazione Hunter; personale del decimo principe',
@@ -221,6 +221,7 @@ export const KAKIN_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
       status: [
+        { episode: 148, chapter: 381, source: 'chapter', value: 'alive' },
         { episode: 148, chapter: 383, source: 'chapter', value: 'deceased' },
       ],
       relationships: [
