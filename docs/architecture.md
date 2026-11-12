@@ -363,13 +363,13 @@ checks this block.
 
 ### `game-of-thrones`
 
-| Thing             | Count                                               |
-| ----------------- | --------------------------------------------------- |
-| Records           | 171                                                 |
-| Characters        | 148                                                 |
-| Places            | 23                                                  |
-| Saga modules      | 1                                                   |
-| Line drawings     | 171, one per record, plus 8 redrawings of 8 records |
-| Chronicle stories | 0, for 0 characters                                 |
+| Thing             | Count                                                 |
+| ----------------- | ----------------------------------------------------- |
+| Records           | 171                                                   |
+| Characters        | 148                                                   |
+| Places            | 23                                                    |
+| Saga modules      | 1                                                     |
+| Line drawings     | 171, one per record, plus 14 redrawings of 13 records |
+| Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->

@@ -2,7 +2,9 @@ import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
+import { ESSOS_DRAWINGS, essosRedrawn } from './essos'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
+import { WALL_DRAWINGS, wallRedrawn } from './wall'
 import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
 
 /**
@@ -88,8 +90,8 @@ const BATH: Stroke[] = [
 ]
 
 /**
- * What every other person shows until their issue draws them (#1052,
- * #1054 to #1057): a bust with a blank head and no face, the collar
+ * What every other person shows until their issue draws them (#1054 to
+ * #1057): a bust with a blank head and no face, the collar
  * in the record's tint. It stands for nobody, so it tells a reader nothing.
  */
 const PERSON: Stroke[] = [
@@ -127,31 +129,21 @@ const PLACE: Stroke[] = [
 /**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
- * southern cast's in `south.ts` (#1051), with the four leads drawn for the
- * launch here (owner, #856); every other record
+ * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
+ * and the Essos cast's in `essos.ts` (#1052), with the four leads drawn for
+ * the launch here (owner, #856); every other record
  * shows `PERSON` or `PLACE` until its own issue draws it. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
   ...SOUTH_DRAWINGS,
+  ...WALL_DRAWINGS,
+  ...ESSOS_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
-  'jeor-mormont': PERSON,
-  'aemon': PERSON,
-  'samwell-tarly': PERSON,
-  'alliser-thorne': PERSON,
-  'yoren': PERSON,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': BATH,
-  'viserys-targaryen': PERSON,
-  'drogo': PERSON,
-  'jorah-mormont': PERSON,
-  'illyrio-mopatis': PERSON,
-  'irri': PERSON,
-  'doreah': PERSON,
-  'rakharo': PERSON,
-  'mirri-maz-duur': PERSON,
   'hullen': PERSON,
   'jeyne-poole': PERSON,
   'mikken': PERSON,
@@ -267,13 +259,16 @@ export type ArtId = keyof typeof DRAWINGS
 
 /**
  * The records drawn again later in the story, the Winterfell household's
- * from `winterfell.ts` and the southern cast's from `south.ts`. Eddard Stark is beheaded with Ice in "Baelor"
+ * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
+ * Watch's from `wall.ts` and the Essos cast's from `essos.ts`. Eddard Stark is beheaded with Ice in "Baelor"
  * (episode 9) and in Arya V (chapter 66): from there the blade lies flat on
  * the ground, with nobody to hold it.
  */
 export const REDRAWINGS: Redrawings = {
   ...winterfellRedrawn,
   ...southRedrawn,
+  ...wallRedrawn,
+  ...essosRedrawn,
   'eddard-stark': [
     {
       episode: 9,

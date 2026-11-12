@@ -890,16 +890,19 @@ describe.each([
 })
 
 /**
- * The Winterfell household's stages (#854) and the southern cast's (#1051),
- * each pinned in the units that tell it: Bran's climb, which the book alone
- * shows after his threshold, the deaths, Barristan's thrown sword and Syrio's
- * snapped blade.
+ * The Winterfell household's stages (#854), the southern cast's (#1051) and
+ * the Night's Watch's and Essos cast's (#1052), each pinned in the units that
+ * tell it: Bran's climb, which the book alone shows after his threshold, the
+ * deaths, Barristan's thrown sword, Syrio's snapped blade, and the reveals of
+ * Jorah's master, Aemon's house and Mirri's blood magic. `stage` counts a
+ * record's stages from 0, for a record redrawn more than once.
  */
 const STAGES: {
   chapter: number
   episode: number
   id: keyof typeof DRAWINGS
   source?: 'chapter' | 'episode'
+  stage?: number
 }[] = [
   { id: 'lady-direwolf', episode: 2, chapter: 17 },
   { id: 'jory-cassel', episode: 5, chapter: 36 },
@@ -908,6 +911,12 @@ const STAGES: {
   { id: 'robert-baratheon', episode: 7, chapter: 50 },
   { id: 'barristan-selmy', episode: 8, chapter: 58 },
   { id: 'syrio-forel', episode: 8, chapter: 51 },
+  { id: 'jorah-mormont', episode: 5, chapter: 13 },
+  { id: 'viserys-targaryen', episode: 6, chapter: 47 },
+  { id: 'aemon', episode: 9, chapter: 61 },
+  { id: 'mirri-maz-duur', episode: 9, chapter: 65 },
+  { id: 'drogo', episode: 10, chapter: 69 },
+  { id: 'mirri-maz-duur', episode: 10, chapter: 73, stage: 1 },
 ]
 
 describe.each(
@@ -917,23 +926,28 @@ describe.each(
       unit,
     })),
   ),
-)('$id is redrawn by $unit', ({ id, episode, chapter, unit }) => {
-  const pin = unit === 'chapter' ? chapter : episode
-  const [stage] = REDRAWINGS[id] ?? []
+)(
+  '$id is redrawn by $unit at $episode/$chapter',
+  ({ id, episode, chapter, unit, stage: index = 0 }) => {
+    const pin = unit === 'chapter' ? chapter : episode
+    const stages = REDRAWINGS[id] ?? []
+    const stage = stages[index]
+    const previous = index === 0 ? DRAWINGS[id] : stages[index - 1]?.value
 
-  it('at its pin, not one before', () => {
-    const owner = character(id)
+    it('at its pin, not one before', () => {
+      const owner = character(id)
 
-    expect(stage?.episode).toBe(episode)
-    expect(stage?.chapter).toBe(chapter)
-    expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
-      DRAWINGS[id],
-    )
-    expect(drawingOf(owner, reader(unit, pin)).strokes).toStrictEqual(
-      stage?.value,
-    )
-  })
-})
+      expect(stage?.episode).toBe(episode)
+      expect(stage?.chapter).toBe(chapter)
+      expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
+        previous,
+      )
+      expect(drawingOf(owner, reader(unit, pin)).strokes).toStrictEqual(
+        stage?.value,
+      )
+    })
+  },
+)
 
 describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(
