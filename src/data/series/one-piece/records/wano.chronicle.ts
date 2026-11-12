@@ -449,6 +449,17 @@ export const wanoChronicles = {
       },
     },
     {
+      episode: 940,
+      chapter: 942,
+      value: {
+        title: { it: 'Risate al patibolo', en: 'Laughter at the execution' },
+        body: {
+          it: 'Quando l’uomo sul patibolo cade, gli abitanti di Ebisu scoppiano a ridere. [[roronoa-zoro|Zoro]] si infuria. Hiyori gli spiega perché ridono anche davanti a quella morte. Per via dei frutti SMILE che [[kaido|Kaido]] ha portato a Wano, gli abitanti di Ebisu non possono più esprimere il loro dolore in altro modo.',
+          en: 'When the man on the execution platform falls, the people of Ebisu Town burst into laughter. [[roronoa-zoro|Zoro]] is furious at the sight. Hiyori tells him why they laugh even as they grieve. The people of Ebisu have lost the ability to express their pain any other way, she explains, because of the SMILE fruits that [[kaido|Kaido]] brought to Wano.',
+        },
+      },
+    },
+    {
       episode: 1071,
       value: {
         title: { it: 'La canzone che Oden amava', en: 'The song Oden loved' },

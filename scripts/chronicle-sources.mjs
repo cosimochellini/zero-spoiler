@@ -154,6 +154,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_956',
       note: 'Candidate 937–956 (Qref ep=937,955,956), filed at the end. Ep 936–937 Hyogoro’s lesson; ep 944–945 Big Mom and the torn-off collars; ep 946 the Rayleigh memory; ep 949 the prison taken; ep 952 and 955 training on rocks and metal; only ep 956 ends with Luffy mastering it by blasting a tree, one day before the raid (History Qref chap=955 ep=956). Ep 955 still has Luffy only training. Luffy has no other story at 956. Chapter (#169): 955, the last event: The day before the raid Luffy masters Ryuo and blasts a tree (Luffy/History/Wano: the day before the Onigashima raid, Luffy tests the advanced form of his Armament Haki against a tree (Qref chap=955 ep=956)).',
     },
+    1051: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1051',
+      note: 'Episode 1050 has Momonosuke bite Kaido, while Episode 1051 and Chapter 1026 both show Luffy’s next clash opening the clouds and the moonlight allowing the minks’ finishing blows. https://onepiece.fandom.com/wiki/Chapter_1026',
+    },
     1071: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1071',
       note: 'The Five Elders name the fruit, Kaido dragged onto the roof, the ground bounces the fireball — all within 1071.',
@@ -1116,9 +1120,17 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_955',
       note: "953 only continues the clash; 955 declares the alliance. Corrected from the issue's claim of days of fighting: the wiki says they fought through the night. Second pass: only one officer looks for a way out of the island, the declared aim at 955 is the world rather than the World Government — that framing waits until 993 — and his reason for striking her chains off is never given.",
     },
+    971: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_971',
+      note: 'Episode 971 and Chapter 970 both show Kaido waiting with his men and admitting the deception before the samurai attack. The story ends at the start of the battle, before the wound and Oden’s defeat in Episode 972. https://onepiece.fandom.com/wiki/Chapter_970',
+    },
     995: {
       source: 'https://onepiece.fandom.com/wiki/Episode_995',
       note: "Moved twice. The issue filed it at 993, but 992 only names the project and 993 adds the Big Mom announcement; the plan's contents and Orochi's beheading are in 994. The second pass moved it again: the retainers' choice between serving him and dying is only shown in 995. The beats were reordered too — on screen the beheading comes before the New Onigashima plan, not after.",
+    },
+    1005: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1005',
+      note: 'Episode 1005 and Chapter 993 both end the rooftop sequence with Kaido back on his feet and Kiku losing an arm to his counterattack. The story makes no claim that Oden’s scar reopens. Independent pass: keep the reference to Oden and the counterattack, since the episode summary does not establish the exact comparison with Oden’s cut. https://onepiece.fandom.com/wiki/Chapter_993',
     },
     1017: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1017',
@@ -3197,6 +3209,10 @@ export const CHRONICLE_SOURCES = {
     935: {
       source: 'https://onepiece.fandom.com/wiki/Episode_935',
       note: "The reveal of Komurasaki as Hiyori. Named earlier by Kin'emon (ep 910: Hiyori-sama is named as Momonosuke-sama's younger sister, left in the castle with him and their mother Kozuki Toki-sama) and by Momonosuke (ep 922: no one said Hiyori died), and seen as a child in the 910 flashback (the threshold). Ep 935 transcript (topic 20x935, title card matches the wiki): Toko brings a toad oil ointment for Zoro, who wants to go after the one with Shusui but is told he cannot go out with so grave a wound; the Grim Reaper was after their lives because they angered the Shogun, and in Wano whoever angers him must die; then she seeks her older brother Kozuki Momonosuke, separated from her years ago, and gives her name as Hiyori, a caption placing them at the northern graveyard in Ringo. Episode_935 Long Summary: the two women bring Zoro to a cottage, where she finally tells him she is Hiyori, the lost sister of Momonosuke. Episode_934 Long Summary: the capital mourns Komurasaki; Kamazo stabs Zoro in the shoulder; Zoro collapses. Episode_928: Kyoshiro slices her at the banquet. Kamazo is not named (he is the killer record, filed long before, and a link would give him away). Chapter 938 p. 12-13 (Qref chap=938 ep=935, where Hiyori is confirmed as Komurasaki). Chapter (#169): 938, the last event: She reveals she is Kozuki Hiyori, Momonosuke’s sister (Chapter_938: trusting Zoro, she reveals she is Kouzuki Hiyori, looking for her older brother Momonosuke (Hiyori Qref c938 ep=935)). Raised from 938 to 943: the story names Gyukimaru, whose record opens at chapter 943.",
+    },
+    940: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_940',
+      note: 'Episode 940 and Chapter 942 both place Hiyori’s first explanation immediately after the execution. It ends before the longer explanation in the following episode. The condemned man is unnamed because his record opens at Chapter 943. https://onepiece.fandom.com/wiki/Chapter_942',
     },
     1071: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1071',
