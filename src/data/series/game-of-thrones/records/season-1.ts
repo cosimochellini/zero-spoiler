@@ -1071,7 +1071,7 @@ export const season1: ThronesSaga = {
         it: 'Il figlio di Greatjon Umber, della casata che tiene l’Ultimo Focolare.',
         en: 'Greatjon Umber’s son, of the house that holds Last Hearth.',
       },
-      visual: { art: 'smalljon-umber', tint: 'red' },
+      visual: { art: 'smalljon-umber', tint: 'ice' },
     },
     // Show: “A Man Without Honor” (episode 17), the first episode that names him; an unnamed figure stands for him in episode 10. Books: Bran VI (site chapter 54), he arrives at Winterfell with his sons, the last of Robb’s bannermen.
     {
@@ -4630,7 +4630,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 8, chapter: 17, source: 'chapter', value: 'alive' },
-        { episode: 8, chapter: 51, source: 'episode', value: 'deceased' },
+        // Killed in the purge of Eddard's household: on screen in "The Pointy
+        // End" (episode 8), his threshold, and told in Sansa IV (chapter 52).
+        { episode: 8, chapter: 52, value: 'deceased' },
       ],
       affiliation: [
         {
