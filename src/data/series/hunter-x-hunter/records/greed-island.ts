@@ -319,7 +319,7 @@ export const greedIsland: HunterSaga = {
       kind: 'character',
       revealedAtEpisode: 75,
       revealedAtChapter: 184,
-      name: { it: 'Dwun', en: 'Dwun' },
+      name: { it: 'Doon', en: 'Dwun' },
       summary: {
         it: 'Un creatore di Greed Island che consegna a Gon l’ultima carta e gli spiega come portarne tre fuori dal gioco.',
         en: 'A creator of Greed Island who gives Gon the final card and explains how to take three cards out of the game.',
@@ -336,7 +336,7 @@ export const greedIsland: HunterSaga = {
       revealedAtChapter: 184,
       name: { it: 'List', en: 'List' },
       summary: {
-        it: 'Un creatore di Greed Island che accoglie Gon nel castello e gli presenta Dwun.',
+        it: 'Un creatore di Greed Island che accoglie Gon nel castello e gli presenta Doon.',
         en: 'A creator of Greed Island who welcomes Gon to the castle and introduces him to Dwun.',
       },
       visual: { art: 'list', tint: 'violet' },
@@ -347,7 +347,7 @@ export const greedIsland: HunterSaga = {
       source: 'chapter',
       revealedAtEpisode: 75,
       revealedAtChapter: 184,
-      name: { it: 'Eeta', en: 'Eta' },
+      name: { it: 'Ether', en: 'Eta' },
       summary: {
         it: 'Una creatrice di Greed Island che spiega le regole ai nuovi giocatori e conduce il quiz finale.',
         en: 'A creator of Greed Island who explains the rules to new players and runs the final quiz.',
@@ -430,7 +430,7 @@ export const greedIsland: HunterSaga = {
       relationships: greedIslandRelationships.list,
       role: { it: 'Creatore di Greed Island', en: 'Greed Island creator' },
       log: {
-        it: 'Accoglie Gon nel castello e lo accompagna nella stanza di Dwun. Si presenta come amico di Ging e spiega che il nome del gioco deriva dalle iniziali dei suoi undici creatori. Organizza la conclusione del gioco per Gon.',
+        it: 'Accoglie Gon nel castello e lo accompagna nella stanza di Doon. Si presenta come amico di Ging e spiega che il nome del gioco deriva dalle iniziali dei suoi undici creatori. Organizza la conclusione del gioco per Gon.',
         en: 'He welcomes Gon to the castle and takes him to Dwun’s room. He introduces himself as Ging’s friend and explains that the game’s name comes from the initials of its eleven creators. He arranges the end of the game for Gon.',
       },
       status: [
@@ -476,7 +476,7 @@ export const greedIsland: HunterSaga = {
       relationships: greedIslandRelationships.elena,
       role: { it: 'Creatrice di Greed Island', en: 'Greed Island creator' },
       log: {
-        it: 'Si occupa dei giocatori che lasciano il gioco. Accompagna l’uscita di Killua quando parte per l’esame Hunter. List rivela che lei ed Eeta sono gemelle e che hanno partecipato alla creazione di Greed Island.',
+        it: 'Si occupa dei giocatori che lasciano il gioco. Accompagna l’uscita di Killua quando parte per l’esame Hunter. List rivela che lei ed Ether sono gemelle e che hanno partecipato alla creazione di Greed Island.',
         en: 'She handles players leaving the game. She sends Killua out when he leaves for the Hunter Exam. List reveals that she and Eta are twins who helped create Greed Island.',
       },
       status: [

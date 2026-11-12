@@ -4,7 +4,7 @@ const dwunGon = {
   character: 'gon-freecss',
   type: { it: 'Vincitore che premia', en: 'Winner he rewards' },
   summary: {
-    it: 'Dwun consegna a Gon l’ultima carta e gli spiega come portare tre carte fuori dal gioco.',
+    it: 'Doon consegna a Gon l’ultima carta e gli spiega come portare tre carte fuori dal gioco.',
     en: 'Dwun gives Gon the final card and explains how to take three cards out of the game.',
   },
 }
@@ -12,7 +12,7 @@ const dwunGing = {
   character: 'ging-freecss',
   type: { it: 'Amico e creatore del gioco', en: 'Friend and fellow creator' },
   summary: {
-    it: 'Dwun ha creato Greed Island con Ging. Gli rimprovera di avergli cambiato il nome per inserirne l’iniziale nel titolo.',
+    it: 'Doon ha creato Greed Island con Ging. Gli rimprovera di avergli cambiato il nome per inserirne l’iniziale nel titolo.',
     en: 'Dwun created Greed Island with Ging. He resents Ging changing his name to fit its initial into the title.',
   },
 }
@@ -20,7 +20,7 @@ const dwunList = {
   character: 'list',
   type: { it: 'Collega nel castello', en: 'Colleague at the castle' },
   summary: {
-    it: 'List accompagna Gon da Dwun e lo richiama quando scherza con il vincitore.',
+    it: 'List accompagna Gon da Doon e lo richiama quando scherza con il vincitore.',
     en: 'List takes Gon to Dwun and intervenes when Dwun teases the winner.',
   },
 }
@@ -177,7 +177,7 @@ const links = {
     character: 'eta',
     type: { it: 'Sorella gemella', en: 'Twin sister' },
     summary: {
-      it: 'Elena ed Eeta sono gemelle e hanno partecipato alla creazione di Greed Island.',
+      it: 'Elena ed Ether sono gemelle e hanno partecipato alla creazione di Greed Island.',
       en: 'Elena and Eta are twins who helped create Greed Island.',
     },
   },
@@ -415,7 +415,7 @@ export const greedIslandRelationships = {
           character: 'gon-freecss',
           type: { it: 'Vincitore che accoglie', en: 'Winner he welcomes' },
           summary: {
-            it: 'List accoglie Gon nel castello, lo accompagna da Dwun e gli spiega come si conclude il gioco.',
+            it: 'List accoglie Gon nel castello, lo accompagna da Doon e gli spiega come si conclude il gioco.',
             en: 'List welcomes Gon to the castle, takes him to Dwun and explains how the game ends.',
           },
         },
@@ -423,7 +423,7 @@ export const greedIslandRelationships = {
           character: 'dwun',
           type: { it: 'Collega nel castello', en: 'Colleague at the castle' },
           summary: {
-            it: 'List lavora con Dwun e lo richiama quando scherza con Gon invece di proseguire con le spiegazioni.',
+            it: 'List lavora con Doon e lo richiama quando scherza con Gon invece di proseguire con le spiegazioni.',
             en: 'List works with Dwun and intervenes when he teases Gon instead of continuing the explanation.',
           },
         },
@@ -451,7 +451,7 @@ export const greedIslandRelationships = {
           character: 'elena',
           type: { it: 'Sorella gemella', en: 'Twin sister' },
           summary: {
-            it: 'Eeta ed Elena sono gemelle e hanno creato Greed Island con gli altri Game Master.',
+            it: 'Ether ed Elena sono gemelle e hanno creato Greed Island con gli altri Game Master.',
             en: 'Eta and Elena are twins who created Greed Island with the other Game Masters.',
           },
         },
@@ -459,7 +459,7 @@ export const greedIslandRelationships = {
           character: 'gon-freecss',
           type: { it: 'Giocatore che accoglie', en: 'Player she welcomes' },
           summary: {
-            it: 'Eeta spiega a Gon le regole quando entra nel gioco. Conduce il quiz finale e lo proclama vincitore.',
+            it: 'Ether spiega a Gon le regole quando entra nel gioco. Conduce il quiz finale e lo proclama vincitore.',
             en: 'Eta explains the rules when Gon enters the game. She runs the final quiz and announces him as its winner.',
           },
         },
@@ -467,7 +467,7 @@ export const greedIslandRelationships = {
           character: 'killua',
           type: { it: 'Giocatore che riaccoglie', en: 'Returning player' },
           summary: {
-            it: 'Quando Killua rientra dopo l’esame Hunter, Eeta gli offre di spiegargli di nuovo le regole.',
+            it: 'Quando Killua rientra dopo l’esame Hunter, Ether gli offre di spiegargli di nuovo le regole.',
             en: 'When Killua returns after the Hunter Exam, Eta offers to explain the rules again.',
           },
         },

@@ -32861,6 +32861,16 @@
       "revisionUrl": "https://onepiece.fandom.com/index.php?oldid=2136961",
       "apiUrl": "https://onepiece.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=2136961",
       "contentSha256": "51b6b60dd265530efdc23be6ef2dcfb8f19bc707a7cf63c3049d327f69bc6df7"
+    },
+    "hxh-it-Personaggi_di_Hunter_×_Hunter-153230591.json": {
+      "locale": "it",
+      "title": "Personaggi di Hunter × Hunter",
+      "revision": 153230591,
+      "revisionDate": "2026-11-06T07:36:34Z",
+      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153230591",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153230591",
+      "contentSha256": "8a3bf490dbdbd9fb131e8358e6616ffe8f18e7a2c64383ab1552f2fa304368d0"
     }
   }
 }
