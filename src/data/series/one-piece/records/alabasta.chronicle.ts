@@ -50,6 +50,20 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 162,
+      chapter: 248,
+      value: {
+        title: {
+          it: 'Il fischietto sulla Going Merry',
+          en: 'The whistle on the Going Merry',
+        },
+        body: {
+          it: 'Chopper è solo sulla Going Merry quando un sacerdote arriva per ucciderlo. Suona il fischietto che gli ha dato [[gan-fall|Gan Foll]]. Il sacerdote incendia la nave con la lancia e dice a Chopper che deve pagare perché gli altri hanno lasciato l’altare. Prima che il sacerdote possa colpire di nuovo, Gan Foll arriva e affronta l’aggressore.',
+          en: 'Chopper is alone on the Going Merry when a priest comes to kill him. He blows the whistle [[gan-fall|Gan Fall]] gave him. The priest sets the ship alight with his lance and tells Chopper he must pay for the others leaving the altar. Before the priest can strike again, Gan Fall arrives and takes on the attacker himself.',
+        },
+      },
+    },
+    {
       episode: 172,
       value: {
         title: {
@@ -472,6 +486,17 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 671,
+      chapter: 738,
+      value: {
+        title: { it: 'Un diversivo al porto', en: 'A diversion at the port' },
+        body: {
+          it: 'Robin ferma [[leo|Leo]] quando vede [[trebol|Trebol]] colpire una mosca fra gli occhi. Dice a Trebol che al porto ci sono dei pirati che vogliono parlare con un ufficiale. Lui va a controllare e i nani riescono a entrare nella torre. Quando si lanciano contro [[sugar|Sugar]], lei ne trasforma alcuni in giocattoli e ordina loro di attaccare gli altri.',
+          en: 'Robin stops [[leo|Leo]] when she sees [[trebol|Trebol]] shoot a fly between the eyes. She tells Trebol there are pirates at the port who demand to speak to an officer. He goes to investigate, giving the dwarves a chance to enter the tower. When they charge [[sugar|Sugar]], she turns some of them into toys and orders them to attack the others.',
+        },
+      },
+    },
+    {
       episode: 713,
       value: {
         title: {
@@ -525,6 +550,17 @@ export const alabastaChronicles = {
         body: {
           it: 'La pietra di Alabasta aveva detto a Robin che Pluton, una delle armi ancestrali, si trova a Wano; finita la guerra lo chiede al vecchio spadaio [[tenguyama-hitetsu|Hitetsu]], che in realtà è l’ex shogun [[kozuki-sukiyaki|Sukiyaki]], e lui glielo conferma. Porta lei e [[trafalgar-law|Law]] giù per un passaggio fino a una finestra su una città in fondo al mare, la vecchia Wano, sommersa otto secoli fa dopo che furono alzate le sue mura, e fino al Poneglifo della Rotta. Pluton giace ancora più in basso, e l’unico modo per raggiungerlo è abbattere le mura che chiudono il paese. Tornata dalla ciurma, Robin racconta tutto; [[monkey-d-luffy|Rufy]] decide di lasciare l’arma dov’è.',
           en: 'A stone in Alabasta told Robin that the ancient weapon Pluton lies in Wano; after the war she asks the old swordsmith [[tenguyama-hitetsu|Hitetsu]], who is really the former shogun [[kozuki-sukiyaki|Sukiyaki]], and he confirms it. He leads her and [[trafalgar-law|Law]] down a passage to a window on a city at the bottom of the sea, the old Wano, flooded eight centuries ago after its walls went up, and on to the Road Poneglyph. Pluton lies deeper still, and the only way to reach it is to tear down the walls that close the country. Back with the crew, Robin tells them everything; [[monkey-d-luffy|Luffy]] decides to leave the weapon where it is.',
+        },
+      },
+    },
+    {
+      episode: 1097,
+      chapter: 1066,
+      value: {
+        title: { it: 'I libri di Ohara', en: 'The books of Ohara' },
+        body: {
+          it: '[[shaka|Shaka]] racconta a Robin che i giganti recuperano i libri dal lago di Ohara e li portano a Elbaf. Il dottor Vegapunk va a leggerli di persona. Quando sente che a guidare quei giganti è un uomo coperto di bende, Robin pensa a [[jaguar-d-saul|Sauro]], che l’ha aiutata a fuggire da bambina.',
+          en: '[[shaka|Shaka]] tells Robin that giants recover the books from Ohara’s lake and take them to Elbaph. Dr. Vegapunk goes there to read them himself. When she hears that a man covered in bandages leads the giants, Robin thinks of [[jaguar-d-saul|Saul]], who helped her escape as a child.',
         },
       },
     },
