@@ -702,6 +702,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_339',
       note: 'Threshold entry, told from the first sighting (eps 337–338). Second pass: no piano on the ghost ship — he sings softly over tea; title and body corrected.',
     },
+    353: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_353',
+      note: 'Episode 353 and Chapter 459 identify the whale and establish the promise. The account stops at the crew recognising Laboon, before Episode 354 continues the story of their earlier meeting. Chapter source: https://onepiece.fandom.com/wiki/Chapter_459.',
+    },
     362: {
       source: 'https://onepiece.fandom.com/wiki/Ryuma_(Zombie)',
       note: 'Ryuma’s own history: Brook challenges him at ep 352 (chap 458) and loses; Zoro steps in at ep 357 (chap 462); the duel’s end, Ryuma bestowing Shusui and Brook’s shadow returning to him are all dated to ep 362 (chap 467). Chapter (#169): 467, the last event: Zoro defeats Ryuma; Brook’s shadow returns as the body burns to ash (Ryuma (Zombie): Brook’s shadow leaves the corpse for its owner as the flames quickly reduce the body to ashes (chap 467, ep 362)).',
