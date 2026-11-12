@@ -9,7 +9,7 @@ const SURVEY_TEAM = { it: 'Squadra di ricerca', en: 'Survey team' }
 
 const kiteTeammate = {
   character: 'kite',
-  type: { it: 'Collega di ricerca', en: 'Survey teammate' },
+  type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
   summary: {
     it: 'Lavora con Kaito alla ricerca di nuove specie.',
     en: 'Works with Kite to find new species.',
@@ -20,7 +20,7 @@ const kiteTeammate = {
 function surveyor(log: Dossier['log']): Dossier {
   return {
     relationships: [{ episode: 77, chapter: 186, value: [kiteTeammate] }],
-    role: { it: 'Naturalista sul campo', en: 'Field surveyor' },
+    role: { it: 'Ricerca sul campo', en: 'Field surveyor' },
     log,
     status: [{ episode: 77, chapter: 186, value: 'alive' }],
     affiliation: [{ episode: 77, chapter: 186, value: SURVEY_TEAM }],
@@ -131,7 +131,7 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             kiteTeammate,
             {
               character: 'monta-yuras',
-              type: { it: 'Collega di ricerca', en: 'Survey teammate' },
+              type: { it: 'Compagno di ricerca', en: 'Survey teammate' },
               summary: {
                 it: 'Monta Yuras resta con lei ad analizzare il campione dell’insetto, e insieme comunicano il risultato a Kaito.',
                 en: 'Monta Yuras stays behind to help her analyse the insect sample, and together they phone Kite with the result.',
