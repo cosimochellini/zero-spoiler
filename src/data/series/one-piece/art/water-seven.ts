@@ -95,6 +95,34 @@ const BLUENO_TRIM: Stroke = {
   role: 'soft',
 }
 
+/** The Sunny's side-on hull and rig, shared with its coated stage. */
+const SUNNY_SHIP: Stroke[] = [
+  {
+    d: 'M34 112 C28 132 40 150 66 154 H124 C142 152 152 138 152 104 H136 V112 Z',
+  },
+  {
+    d: 'M42 128 C80 132 118 130 150 124 M50 142 C84 146 118 144 146 136',
+    role: 'soft',
+  },
+  {
+    d: 'M60 152 l6 -8 M80 154 l6 -8 M100 154 l6 -8 M120 153 l6 -8 M138 148 l6 -7',
+    role: 'ambient',
+  },
+  { d: 'M70 112 V20 M114 104 V12' },
+  {
+    d: 'M52 32 H88 C94 50 94 70 90 88 H50 C46 70 46 50 52 32 Z M52 32 L70 26 L88 32',
+    role: 'soft',
+  },
+  { d: 'M114 18 L146 30 C150 50 150 74 146 94 L114 96' },
+  { d: 'M108 22 h12 v8 h-12 z', role: 'soft' },
+  { d: 'M128 104 v-10 h18 v10', role: 'soft' },
+  { d: ellipse(32, 96, 12, 14), role: 'soft' },
+  {
+    d: 'M51 96 Q60.8 105 48 107.4 Q51.6 120.2 39.9 115.1 Q36.3 127.7 29.3 116.8 Q19.5 125.1 19.6 111.9 Q6.8 113.3 13.8 101.9 Q2 96 13.8 90.1 Q6.8 78.7 19.6 80.1 Q19.5 66.9 29.3 75.2 Q36.3 64.3 39.9 76.9 Q51.6 71.8 48 84.6 Q60.8 87 51 96',
+    role: 'accent',
+  },
+]
+
 /** The drawings of the records filed in the water seven stretch of the route. */
 export const waterSevenArt = {
   // His cowboy hat set down on the raft he is building on the beach of
@@ -543,28 +571,31 @@ export const waterSevenArt = {
     shadow(80, 164, 58),
   ],
 
-  // The forearm of the first years, raised: flesh over the rebuilt arm,
-  // widest at the wrist and tapering to the elbow, the star tattoo whole on
-  // its face and the side turned away hatched; an ordinary fist on top and
-  // the upper arm going down behind his tools, the wrench and the star-headed
-  // bolt. No weapon in the arm and no rivet: the arm is all the first meeting
-  // shows. The forearm of the two years is drawn from 517, in
-  // `waterSevenRedrawn`, over the same tools.
+  // Strong Right in the fight with Luffy (238, ch. 336): the steel fist
+  // leaves the wrist on its chain. The star tattoo and his tools stay.
   'franky': [
     {
-      d: 'M63 56 V28 Q63 22 65 22 Q68 18 73 22 Q78 18 83 22 Q88 18 93 22 Q98 18 103 22 V56',
+      d: 'M109 12 Q113 7 118 11 Q123 6 128 11 Q133 8 138 13 Q143 12 146 17 L143 36 Q138 45 126 47 L107 44 L100 33 Q97 27 103 24 L106 25 Z',
     },
-    { d: 'M73 22 v8 M83 22 v8 M93 22 v8 M63 40 q12 7 24.8 0', role: 'soft' },
     {
-      d: 'M53 54 C44 76 55 104.3 70.4 128 Q83 134 95.6 128 C111 104.3 122 76 113 54',
+      d: 'M118 11 l-2 9 M128 11 l-2 10 M138 13 l-2 9 M103 25 Q112 21 118 29 L126 30 M111 41 q11 4 23 0',
+      role: 'soft',
     },
-    { d: 'M53 54 Q83 64 113 54', role: 'soft' },
-    { d: star(83, 88, 17, 7.5), role: 'accent' },
     {
-      d: 'M106 66 l6 -4 M109 80 l6 -4 M107 94 l6 -4 M102 108 l6 -4',
+      d: 'M115 48 c0 5 -3 9 -7 8 c-5 -1 -3 -8 0 -10 M107 53 c4 2 2 9 -3 12 c-4 2 -7 -4 -3 -8 M101 62 c3 4 -2 9 -7 10 c-5 0 -5 -6 0 -8 M93 70 c0 5 -5 8 -10 7 c-4 -1 -2 -7 3 -7 M85 76 c-2 5 -7 7 -11 4',
+      role: 'soft',
+    },
+    { d: 'M42 81 C33 98 44 127 60 147 Q73 155 87 148 C103 130 109 101 99 81' },
+    { d: ellipse(70.5, 81, 28.5, 9) },
+    {
+      d: 'M47 81 Q71 69 94 81 M60 84 l5 -7 M82 84 l4 -6 M63 151 l-2 5 M85 151 l2 5',
+      role: 'soft',
+    },
+    { d: star(71, 112, 17, 7.5), role: 'accent' },
+    {
+      d: 'M94 94 l7 -4 M95 106 l8 -5 M93 118 l7 -5 M90 128 l6 -4 M131 40 l7 -6',
       role: 'ambient',
     },
-    { d: 'M72 132 V148 M94 132 V148', role: 'soft' },
     ...FRANKY_TOOLS,
   ],
 
@@ -819,33 +850,8 @@ export const waterSevenArt = {
   // on the main, the crow's nest at its top. The lion on the stem is a plain
   // disc inside its mane, the accent, the face left empty (321). No mark on a
   // sail and no number on the hull.
-  'thousand-sunny': [
-    {
-      d: 'M34 112 C28 132 40 150 66 154 H124 C142 152 152 138 152 104 H136 V112 Z',
-    },
-    {
-      d: 'M42 128 C80 132 118 130 150 124 M50 142 C84 146 118 144 146 136',
-      role: 'soft',
-    },
-    {
-      d: 'M60 152 l6 -8 M80 154 l6 -8 M100 154 l6 -8 M120 153 l6 -8 M138 148 l6 -7',
-      role: 'ambient',
-    },
-    { d: 'M70 112 V20 M114 104 V12' },
-    {
-      d: 'M52 32 H88 C94 50 94 70 90 88 H50 C46 70 46 50 52 32 Z M52 32 L70 26 L88 32',
-      role: 'soft',
-    },
-    { d: 'M114 18 L146 30 C150 50 150 74 146 94 L114 96' },
-    { d: 'M108 22 h12 v8 h-12 z', role: 'soft' },
-    { d: 'M128 104 v-10 h18 v10', role: 'soft' },
-    { d: ellipse(32, 96, 12, 14), role: 'soft' },
-    {
-      d: 'M51 96 Q60.8 105 48 107.4 Q51.6 120.2 39.9 115.1 Q36.3 127.7 29.3 116.8 Q19.5 125.1 19.6 111.9 Q6.8 113.3 13.8 101.9 Q2 96 13.8 90.1 Q6.8 78.7 19.6 80.1 Q19.5 66.9 29.3 75.2 Q36.3 64.3 39.9 76.9 Q51.6 71.8 48 84.6 Q60.8 87 51 96',
-      role: 'accent',
-    },
-    ...SEA.slice(1),
-  ],
+  'thousand-sunny': [...SUNNY_SHIP, ...SEA.slice(1)],
+
   // His two bamboo stilts in the grass, their nodes and foot blocks, the far
   // side of each hatched: one runs on out of sight, the other has snapped
   // short at a splintered break, the accent, and its top lies in the grass.
@@ -922,26 +928,23 @@ export const waterSevenArt = {
     { d: 'M132 56 l8 -5 M134 70 l8 -5', role: 'ambient' },
     shadow(80, 186, 64),
   ],
-  // Seen from behind: the back of his head over shoulders far too wide for
-  // it, arms hanging, swim briefs, the mudfish spots on his hide, and the
-  // orange fin rising off his back past the shoulder (210). No face.
+  // One of Big Pan's gigantic pans in the Groggy Ring (212, ch. 312).
+  // His mudfish fin rises behind the rim.
   'big-pan': [
-    { d: 'M64 74 C60 56 66 40 80 40 C94 40 100 56 96 74' },
-    { d: 'M70 50 q10 -6 20 0 M68 62 q12 -6 24 0', role: 'soft' },
+    { d: 'M53 96 Q48 66 24 35 C49 42 71 59 89 92 Z', role: 'accent' },
+    { d: 'M36 46 Q60 68 69 94 M52 54 Q77 73 78 92', role: 'soft' },
+    { d: 'M96 113 L132 72 Q141 64 149 70 Q155 75 150 83 L114 127' },
+    { d: 'M126 87 l12 -14 q6 -4 9 1 M125 92 l-15 18', role: 'soft' },
+    { d: ellipse(65, 120, 49, 28) },
+    { d: 'M16 120 Q17 139 38 150 Q68 165 93 148 Q111 137 114 120' },
     {
-      d: 'M64 74 C34 76 12 88 8 108 C4 130 10 160 14 182 H34 C34 160 34 140 38 124 M96 74 C126 76 148 88 152 108 C156 130 150 160 146 182 H126 C126 160 126 140 122 124',
-    },
-    { d: 'M38 124 C40 140 44 152 48 162 H112 C116 152 120 140 122 124' },
-    { d: 'M48 162 L46 186 H114 L112 162 M80 170 V186', role: 'soft' },
-    { d: 'M80 84 V160', role: 'soft' },
-    { d: 'M78 128 C68 112 56 92 30 60 C52 64 72 80 82 96', role: 'accent' },
-    { d: 'M74 118 L50 74 M80 106 L62 76', role: 'soft' },
-    {
-      d: `${ellipse(118, 98, 6, 4)} ${ellipse(104, 124, 5, 3)} ${ellipse(52, 138, 5, 3)} ${ellipse(24, 150, 5, 3)} ${ellipse(136, 150, 5, 3)}`,
+      d: 'M23 121 C29 100 93 96 107 117 M26 127 C44 143 85 149 103 129',
       role: 'soft',
     },
-    { d: 'M138 120 l8 -5 M140 134 l8 -5 M140 148 l8 -5', role: 'ambient' },
+    { d: 'M84 152 l8 -8 M93 148 l9 -11 M103 140 l7 -11', role: 'ambient' },
+    shadow(68, 173, 56),
   ],
+
   // The frog side on, squatting on the sea-train's rail in a sumo stance,
   // webbed feet planted, back hatched, and the topknot on his head as the
   // accent (229). No face.
@@ -1210,27 +1213,43 @@ export const waterSevenArt = {
     ...SEA,
   ],
 
-  // The Gates of Justice, shut, rising out of the sea above the clouds: the
-  // two leaves under one arch, the accent, their thickness on the right and
-  // the far leaf hatched (264). No mark on them. Open for the Buster Call,
-  // the island burning in front, from 304, in `waterSevenRedrawn`.
+  // The Gates of Justice behind Enies Lobby (264, ch. 376): the two
+  // leaves turn away in perspective, above the island rim and waterfall.
   'enies-lobby': [
     {
-      d: 'M30 154 V44 C30 18 52 6 80 6 C108 6 130 18 130 44 V154',
+      d: 'M28 123 V57 C28 29 48 13 75 15 C101 17 124 36 124 60 V133 M75 15 V132',
       role: 'accent',
     },
-    { d: 'M80 6 V156 M130 44 L138 50 V154 M80 6 C108 8 132 22 138 50' },
     {
-      d: 'M90 30 l-6 8 M104 24 l-14 18 M118 30 l-28 36 M126 44 l-36 46 M130 64 l-40 50 M130 92 l-40 50 M128 124 l-24 30',
-      role: 'ambient',
+      d: 'M28 57 L40 53 V121 M28 57 C33 28 55 8 88 9 C115 11 135 32 136 55 V129 L124 133 M124 60 L136 55',
     },
-    { d: 'M34 60 H76 M34 120 H76', role: 'soft' },
     {
-      d: 'M14 100 q4 -10 16 -6 q8 -10 20 -2 q12 -4 14 8 Z M98 88 q4 -10 16 -6 q8 -10 20 -2 q12 -4 14 8 Z',
+      d: 'M40 63 L72 69 M40 94 L72 100 M83 72 L118 79 M83 103 L118 110',
       role: 'soft',
     },
-    ...SEA,
+    {
+      d: 'M91 33 l-9 9 M106 40 l-24 23 M116 50 l-30 23 M116 64 l-29 24 M116 82 l-29 26 M134 75 l-6 7 M134 90 l-6 7 M134 105 l-6 7',
+      role: 'ambient',
+    },
+    {
+      d: 'M0 134 L24 127 L49 130 L68 122 L82 128 L96 126 L118 135 L160 137 M0 148 L24 141 L49 144 M112 147 L160 151',
+    },
+    {
+      d: 'M49 130 Q78 139 118 135 M49 130 C49 151 53 168 60 185 M68 137 Q69 169 77 189 M88 138 Q84 166 89 183 M105 138 Q102 166 97 187 M118 135 Q112 169 105 185',
+      role: 'soft',
+    },
+    {
+      d: 'M56 157 l4 17 M75 151 l3 18 M99 153 l-2 16 M28 136 l8 2 M132 142 l12 1',
+      role: 'ambient',
+    },
+    {
+      d: 'M-3 163 Q13 154 28 162 T50 162 M114 161 Q129 154 144 161 T165 161',
+      role: 'ambient',
+      dashed: true,
+    },
+    ...SEA.slice(2),
   ],
+
   // Three hats on a bench in 3/4, the bench front hatched: the sombrero's
   // tall crown in its wide brim, And's bicorne in the middle with its plume,
   // the accent, and the square cap tipped on its side (267). Crowns up, so
@@ -1671,6 +1690,60 @@ const OHARA_BOOKS: Stroke[] = waterSevenArt['nico-olvia'].slice(0, 4)
 
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const waterSevenRedrawn: Redrawings = {
+  'jabra': [
+    {
+      // The wolf silhouette at the meeting (266, ch. 379). The chapter
+      // pin is the chapter that opens Jabra's record.
+      episode: 266,
+      chapter: 385,
+      value: [
+        ...waterSevenArt.jabra,
+        {
+          d: 'M123 117 L122 129 L118 133 L124 136 L121 140 L127 143 Q126 149 129 152 Q132 156 136 152 Q140 155 143 150 Q147 152 150 147 Q154 145 151 139 L145 130 L140 118 M130 152 l-2 7 q6 -1 7 -7 M139 152 l1 6 q5 -2 5 -8 M147 150 l3 5 q4 -3 1 -8',
+        },
+        {
+          d: 'M125 125 l7 8 M130 139 l-2 6 M138 138 l-1 8 M145 139 l1 6',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'monkey-d-garp': [
+    {
+      // Galaxy Impact on Hachinosu (1114, ch. 1080): the same fist darkened
+      // to mark his Armament Haki.
+      episode: 1114,
+      chapter: 1080,
+      value: [
+        ...waterSevenArt['monkey-d-garp'],
+        {
+          d: 'M103 69 l-9 15 M111 67 L92 95 M122 67 L94 105 M132 69 L99 115 M141 76 L111 116 M144 87 L122 116 M145 100 L134 116',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'thousand-sunny': [
+    {
+      // Franky inflates the coating before the descent (522, ch. 602).
+      episode: 522,
+      chapter: 602,
+      value: [
+        ...moved(SUNNY_SHIP, 'translate(20 27) scale(0.75)'),
+        { d: ellipse(80, 98, 75, 88) },
+        {
+          d: 'M22 61 Q30 40 48 28 M17 76 l-2 10 M125 159 q12 -13 19 -29',
+          role: 'soft',
+        },
+      ],
+    },
+    {
+      // The outer membrane strips the coating at Fish-Man Island (527, ch. 608).
+      episode: 527,
+      chapter: 608,
+      value: waterSevenArt['thousand-sunny'],
+    },
+  ],
   'foxy': [
     {
       // The Slow-Slow Beam first slows the Donut Race boat (210, ch. 308).
