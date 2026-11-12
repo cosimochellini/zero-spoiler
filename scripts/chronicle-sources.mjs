@@ -220,6 +220,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_521',
       note: "517 has Zoro learning he's the first crewmate back at Sabaody; the Fake Zoro impostor and the Marine fallout it causes (Manjaro, debut ep 518) only conclude at 521, when Zoro and Sanji beat a Pacifista together and the fraud is exposed.",
     },
+    538: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_538',
+      note: 'The blow comes at the preceding cliffhanger. Episode 538 and Chapter 619 show the failed evacuation and capture. Chapter source: Independent pass: the manga and anime differ on who asks for help, so the story describes the shared escape attempt. https://onepiece.fandom.com/wiki/Chapter_619.',
+    },
     566: {
       source: 'https://onepiece.fandom.com/wiki/Episode_566',
       note: 'Zoro calls Hyouzou a frog at the bottom of a well and walks away; when Hyouzou attacks from behind, Zoro turns and cuts him down with a single stroke, Rengoku Onigiri.',

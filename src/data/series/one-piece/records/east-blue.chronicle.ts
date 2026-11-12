@@ -638,6 +638,20 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 538,
+      chapter: 619,
+      value: {
+        title: {
+          it: 'In trappola al Palazzo Ryugu',
+          en: 'Trapped in Ryugu Palace',
+        },
+        body: {
+          it: 'Dopo aver ferito [[hody-jones|Hody Jones]] sott’acqua, Zoro cerca di uscire dal palazzo con l’aiuto di [[neptune|Nettuno]]. Il re apre una via di fuga per le sue guardie. Hody è ancora a terra quando uno dei suoi gli dà una pillola. Si rialza e sbarra la via a Nettuno. Le guardie riescono a uscire, ma Zoro e il re vengono fatti prigionieri.',
+          en: 'After cutting [[hody-jones|Hody Jones]] underwater, Zoro tries to escape the palace with [[neptune|Neptune]]’s help. The king opens an escape route for his guards. Hody is still down when one of his men gives him a pill. He gets back up and cuts off Neptune’s escape. The guards make it out, but Zoro and the king are taken prisoner.',
+        },
+      },
+    },
+    {
       episode: 566,
       value: {
         title: { it: 'Un fendente per Hyozo', en: 'One stroke for Hyouzou' },
