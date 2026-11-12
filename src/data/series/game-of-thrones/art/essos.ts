@@ -26,8 +26,8 @@ export const DRAGON_SIGIL: Stroke[] = [
 /**
  * Viserys Targaryen: the dragon banner of the house he claims the throne
  * for, hung from its pole, in Pentos from episode 1 and Daenerys I
- * (chapter 4). The cloth's far fold is hatched. His first drawing and his
- * death share it.
+ * (chapter 4). The cloth's far fold is hatched. His first drawing, stood on
+ * its shadow, and his death share it.
  */
 const BANNER: Stroke[] = [
   { d: `${circle(36, 20, 4)} M36 24 V150` },
@@ -39,7 +39,6 @@ const BANNER: Stroke[] = [
     d: 'M104 44 l5 -3 M104 58 l5 -3 M104 72 l5 -3 M104 86 l5 -3 M104 100 l5 -3',
     role: 'ambient',
   },
-  shadow(36, 153, 14),
 ]
 
 /**
@@ -209,7 +208,7 @@ const HEALER_BOWL: Stroke[] = [
 
 /** The first season's Essos cast (#1052), keyed by record id. */
 export const ESSOS_DRAWINGS = {
-  'viserys-targaryen': BANNER,
+  'viserys-targaryen': [...BANNER, shadow(36, 153, 14)],
   'drogo': [...BRAID, shadow(87, 160, 18)],
   'jorah-mormont': PLANTED_SWORD,
   'illyrio-mopatis': EGG_CHEST,
@@ -267,10 +266,8 @@ export const essosRedrawn: Redrawings = {
         ...BOWL,
         { d: ellipse(76, 101, 30, 6), role: 'accent' },
         { d: 'M56 106 q-2 8 0 14 M98 106 q2 6 0 10', role: 'accent' },
-        {
-          d: 'M24 152 L64 144 L70 148 L30 156 Z M64 144 L80 140 M70 148 L84 144',
-          role: 'soft',
-        },
+        { d: 'M22 154 L62 144 L64 150 Z M61 141 L66 153', role: 'soft' },
+        { d: 'M64 146 L82 142 L83 146 L65 150', role: 'soft' },
         shadow(76, 146, 40),
       ],
     },

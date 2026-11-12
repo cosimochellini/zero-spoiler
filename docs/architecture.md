@@ -209,12 +209,13 @@ medium meets in a later season or book keep that later gate. #1007 adds 16 of
 the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules. The
 series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
 own, Eddard's with a death stage, the Winterfell household's are in
-`art/winterfell.ts` (#854), with four stages, and the southern cast's are in
-`art/south.ts` (#1051), with three. Every other record maps to a shared
-placeholder in `art/index.ts`, `PERSON` for a character and `PLACE` for a place,
-until its own issue draws it, so the drawing tests hold it like any series. Its
-23 places (#853) are the ones a scene of the season or the book is set in, each
-filed in one of the realms, beyond the Wall or Essos, with no arc:
+`art/winterfell.ts` (#854), with four stages, the southern cast's are in
+`art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
+in `art/wall.ts` and `art/essos.ts` (#1052), with six. Every other record maps
+to a shared placeholder in `art/index.ts`, `PERSON` for a character and `PLACE`
+for a place, until its own issue draws it, so the drawing tests hold it like any
+series. Its 23 places (#853) are the ones a scene of the season or the book is
+set in, each filed in one of the realms, beyond the Wall or Essos, with no arc:
 `PlaceDossier.arc` is optional, and an arcless series prints no arc row. Darry
 is the book's alone and the Kingswood the show's. The demo shows the places the
 first ten episodes reach, and covers in its tail the four the show first visits
