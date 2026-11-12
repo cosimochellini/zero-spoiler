@@ -375,7 +375,7 @@ export const season1: ThronesSaga = {
         it: 'Il lord comandante dei Guardiani della notte, a Castello Nero.',
         en: 'The Lord Commander of the Night’s Watch, at Castle Black.',
       },
-      visual: { art: 'jeor-mormont', tint: 'wine' },
+      visual: { art: 'jeor-mormont', tint: 'azure' },
     },
     // Show: Maester Aemon with the Lord Commander and Tyrion, "Lord Snow"
     // (episode 3; spoken name unverified). Books: Tyrion III, at the officers’
@@ -419,7 +419,7 @@ export const season1: ThronesSaga = {
         it: 'Il maestro d’armi di Castello Nero, che addestra le reclute e deride Jon chiamandolo “Lord Snow”.',
         en: 'The master-at-arms of Castle Black, who trains the recruits and mocks Jon as “Lord Snow”.',
       },
-      visual: { art: 'alliser-thorne', tint: 'red' },
+      visual: { art: 'alliser-thorne', tint: 'sand' },
     },
     // Show: joins the party bound for the Wall with two convicts, "Lord Snow"
     // (episode 3; spoken name unverified). Books: Tyrion II, met at the edge of
@@ -936,7 +936,7 @@ export const season1: ThronesSaga = {
         it: 'Un guerriero dothraki incaricato di proteggere Daenerys durante il viaggio del khalasar.',
         en: 'A Dothraki warrior charged with guarding Daenerys as the khalasar travels.',
       },
-      visual: { art: 'rakharo', tint: 'vermilion' },
+      visual: { art: 'rakharo', tint: 'teal' },
     },
     // Show: offers to treat Drogo's wound after the raid, "The Pointy End"
     // (episode 8). Books: rescued in the city of the Lamb Men, Daenerys VII
@@ -951,7 +951,7 @@ export const season1: ThronesSaga = {
         it: 'Una sacerdotessa e guaritrice lhazareen, fatta prigioniera quando il khalasar di Drogo attacca il suo villaggio.',
         en: 'A Lhazareen godswife and healer, taken captive when Drogo’s khalasar attacks her town.',
       },
-      visual: { art: 'mirri-maz-duur', tint: 'wine' },
+      visual: { art: 'mirri-maz-duur', tint: 'green' },
     },
     // Book only. Bran I (site chapter 2), he rides in Lord Eddard’s party that finds the direwolf pups. The show never casts him; episode 1, where the pups are found, orders him.
     {
