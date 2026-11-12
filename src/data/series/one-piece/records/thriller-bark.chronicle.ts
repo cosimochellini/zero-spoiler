@@ -17,6 +17,17 @@ export const thrillerBarkChronicles = {
       },
     },
     {
+      episode: 353,
+      chapter: 459,
+      value: {
+        title: { it: 'L’amico che aspetta', en: 'The friend who waits' },
+        body: {
+          it: '[[franky|Franky]] chiede a Brook che cosa lo spinga ad andare avanti dopo tanti anni alla deriva. Brook gli parla di [[laboon|Lovon]], una giovane balena che la sua ciurma ha dovuto lasciare all’imbocco della Rotta Maggiore. Le hanno promesso di tornare. Franky ripete la storia a bordo della Sunny, dove alcuni Cappello di Paglia riconoscono la balena che hanno incontrato proprio lì.',
+          en: '[[franky|Franky]] asks Brook what keeps him going after so many years adrift. Brook tells him about [[laboon|Laboon]], a young whale his crew had to leave behind at the entrance to the Grand Line. They promised to come back for him. Franky repeats the story aboard the Sunny, where several of the Straw Hats recognise the whale they met there.',
+        },
+      },
+    },
+    {
       episode: 362,
       chapter: 467,
       value: {

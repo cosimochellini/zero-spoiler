@@ -50,6 +50,20 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 162,
+      chapter: 248,
+      value: {
+        title: {
+          it: 'Il fischietto sulla Going Merry',
+          en: 'The whistle on the Going Merry',
+        },
+        body: {
+          it: 'Chopper è solo sulla Going Merry quando un sacerdote arriva per ucciderlo. Suona il fischietto che gli ha dato [[gan-fall|Gan Foll]]. Il sacerdote incendia la nave con la lancia e dice a Chopper che deve pagare perché gli altri hanno lasciato l’altare. Prima che il sacerdote possa colpire di nuovo, Gan Foll arriva e affronta l’aggressore.',
+          en: 'Chopper is alone on the Going Merry when a priest comes to kill him. He blows the whistle [[gan-fall|Gan Fall]] gave him. The priest sets the ship alight with his lance and tells Chopper he must pay for the others leaving the altar. Before the priest can strike again, Gan Fall arrives and takes on the attacker himself.',
+        },
+      },
+    },
+    {
       episode: 172,
       value: {
         title: {
@@ -472,6 +486,17 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 671,
+      chapter: 738,
+      value: {
+        title: { it: 'Un diversivo al porto', en: 'A diversion at the port' },
+        body: {
+          it: 'Robin ferma [[leo|Leo]] quando vede [[trebol|Trebol]] colpire una mosca fra gli occhi. Dice a Trebol che al porto ci sono dei pirati che vogliono parlare con un ufficiale. Lui va a controllare e i nani riescono a entrare nella torre. Quando si lanciano contro [[sugar|Sugar]], lei ne trasforma alcuni in giocattoli e ordina loro di attaccare gli altri.',
+          en: 'Robin stops [[leo|Leo]] when she sees [[trebol|Trebol]] shoot a fly between the eyes. She tells Trebol there are pirates at the port who demand to speak to an officer. He goes to investigate, giving the dwarves a chance to enter the tower. When they charge [[sugar|Sugar]], she turns some of them into toys and orders them to attack the others.',
+        },
+      },
+    },
+    {
       episode: 713,
       value: {
         title: {
@@ -529,12 +554,34 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 1097,
+      chapter: 1066,
+      value: {
+        title: { it: 'I libri di Ohara', en: 'The books of Ohara' },
+        body: {
+          it: '[[shaka|Shaka]] racconta a Robin che i giganti recuperano i libri dal lago di Ohara e li portano a Elbaf. Il dottor Vegapunk va a leggerli di persona. Quando sente che a guidare quei giganti è un uomo coperto di bende, Robin pensa a [[jaguar-d-saul|Sauro]], che l’ha aiutata a fuggire da bambina.',
+          en: '[[shaka|Shaka]] tells Robin that giants recover the books from Ohara’s lake and take them to Elbaph. Dr. Vegapunk goes there to read them himself. When she hears that a man covered in bandages leads the giants, Robin thinks of [[jaguar-d-saul|Saul]], who helped her escape as a child.',
+        },
+      },
+    },
+    {
       episode: 1148,
       value: {
         title: { it: 'La bambina di Ohara', en: 'The child of Ohara' },
         body: {
           it: 'Sul Labophase, mentre il gruppo di [[nami|Nami]] cerca un modo per lasciare Egghead, [[jaygarcia-saturn|Saturn]] si arrampica fino a loro e riconosce Robin: è la bambina sopravvissuta a Ohara. Davanti a lui Robin rivive l’incidente di Ohara, sconvolta, e quando l’Anziano prova a ucciderla sono i suoi compagni a mettersi in mezzo per proteggerla. Saturn li spazza via; Robin li afferra al volo con una rete di braccia. Poi la trasmissione di [[vegapunk|Vegapunk]] continua a risuonare per il mondo, e Saturn abbandona la lotta per correre alla centrale e zittirla.',
           en: 'On the Labophase, while [[nami|Nami]]’s group looks for a way off Egghead, [[jaygarcia-saturn|Saturn]] climbs up to them and recognises Robin as the child who survived Ohara. Facing him, Robin relives the Ohara Incident, shaken, and when the Elder moves to kill her it is her crewmates who throw themselves in the way to protect her. Saturn sweeps them aside; Robin catches them in a net of arms. Then [[vegapunk|Vegapunk]]’s broadcast keeps ringing out across the world, and Saturn abandons the fight to rush to the power plant and silence it.',
+        },
+      },
+    },
+    {
+      episode: 1168,
+      chapter: 1138,
+      value: {
+        title: { it: 'I tre mondi', en: 'The three worlds' },
+        body: {
+          it: 'In biblioteca, [[jaguar-d-saul|Sauro]] mostra a Robin l’Harley, il testo da cui nascono le leggende di Elbaf. Ciascuno lo interpreta a modo suo, spiega Sauro, e si fa un’idea diversa del dio del sole. Sauro racconta che le leggende su Nika si tramandano in tutto il mondo e hanno un tratto in comune: Nika appare ridendo a un ritmo preciso. Robin legge i tre capitoli. Secondo Sauro, il terzo parla del mondo in cui vivono e di ciò che deve ancora accadere.',
+          en: 'In the library, [[jaguar-d-saul|Saul]] shows Robin the Harley, the text behind Elbaph’s legends. Saul explains that people read it differently and imagine the sun god differently too. Saul tells her that tales of Nika are told around the world and share one detail: Nika appears laughing to a particular rhythm. Robin reads the three chapters. According to Saul, the third speaks of the world they live in and of events still to come.',
         },
       },
     },
