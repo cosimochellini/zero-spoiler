@@ -238,6 +238,28 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 413,
+      chapter: 519,
+      value: {
+        title: { it: 'La statua nell’arena', en: 'The statue in the arena' },
+        body: {
+          it: 'Nell’arena di Amazon Lily, una delle sorelle solleva [[marguerite|Margaret]], trasformata in pietra, e minaccia di farla a pezzi. Rufy le grida di fermarsi. Diversi spettatori perdono i sensi e la statua finisce a terra ancora intatta. Lui non capisce che cosa ha appena fatto.',
+          en: 'In the arena on Amazon Lily, one of the sisters lifts the petrified [[marguerite|Marguerite]] and threatens to smash her. Luffy shouts for her to stop. Several spectators lose consciousness, and the statue comes to rest on the floor intact. He has no idea what he has just done.',
+        },
+      },
+    },
+    {
+      episode: 435,
+      chapter: 534,
+      value: {
+        title: { it: 'Veleno sui pugni', en: 'Poison on his fists' },
+        body: {
+          it: 'A Impel Down, [[magellan|Magellan]] blocca il passaggio a Rufy. [[bon-clay|Mr. Two Bon Kure]] lo avverte che basta toccare il direttore per essere avvelenati. Rufy si rifiuta di tornare indietro finché [[portgas-d-ace|Ace]] è ancora nella prigione. Colpisce Magellan, ma il veleno gli resta sui pugni.',
+          en: '[[magellan|Magellan]] blocks Luffy’s way through Impel Down. [[bon-clay|Bon Clay]] warns him that touching the warden will poison him. Luffy refuses to turn back while [[portgas-d-ace|Ace]] is still in the prison. He lands a blow on Magellan, but the poison sticks to his fists.',
+        },
+      },
+    },
+    {
       episode: 479,
       value: {
         title: {
@@ -260,6 +282,20 @@ export const eastBlueChronicles = {
         body: {
           it: 'Rufy ha attraversato Impel Down e tutta Marineford per questo: le catene sono spezzate, [[portgas-d-ace|Ace]] è libero, e per un momento i due fratelli combattono spalla a spalla. Poi l’ammiraglio [[sakazuki|Akainu]] insulta [[edward-newgate|Barbabianca]], Ace si volta per rispondere e Rufy, sfinito, inciampa. Ace si getta in mezzo, e un pugno di magma gli passa attraverso il petto. Cade tra le braccia di Rufy. Con quel che gli resta di voce ringrazia il fratello, e tutti quelli che gli hanno voluto bene, per averlo amato. [[jinbe|Jinbe]] si pianta davanti a loro per trattenere Akainu. Rufy urla.',
           en: 'Luffy has crossed Impel Down and the whole of Marineford for this: the shackles are broken, [[portgas-d-ace|Ace]] is free, and for a moment the two brothers fight back to back. Then Admiral [[sakazuki|Akainu]] insults [[edward-newgate|Whitebeard]], Ace turns to answer, and Luffy, exhausted, stumbles. Ace throws himself between them, and a fist of magma goes through his chest. He falls into Luffy’s arms. With the last of his voice he thanks his brother, and everyone who cared for him, for loving him. [[jinbe|Jinbe]] plants himself over them to hold Akainu back. Luffy screams.',
+        },
+      },
+    },
+    {
+      episode: 491,
+      chapter: 582,
+      value: {
+        title: {
+          it: 'Il risveglio ad Amazon Lily',
+          en: 'Waking on Amazon Lily',
+        },
+        body: {
+          it: 'Rufy si sveglia ad Amazon Lily e chiama [[portgas-d-ace|Ace]]. Cerca di convincersi che la battaglia fosse un sogno, ma ricorda quello che è successo a Marineford. Devasta la foresta finché [[jinbe|Jinbe]] lo trova e gli dice che la guerra è finita. Rufy scoppia a piangere quando accetta che Ace è morto.',
+          en: 'Luffy wakes on Amazon Lily and calls for [[portgas-d-ace|Ace]]. He tries to believe the battle was a dream, but what happened at Marineford comes back to him. He tears through the forest until [[jinbe|Jinbe]] finds him and tells him the war is over. Luffy breaks down as he accepts that Ace died.',
         },
       },
     },
@@ -1467,6 +1503,20 @@ export const eastBlueChronicles = {
         body: {
           it: 'Rapita e vestita da sposa da [[absalom|Absalom]], l’uomo invisibile che l’ha scelta come futura moglie, Nami si sveglia già davanti all’altare mentre lui recita i voti. Riesce a schivargli il bacio finché non arriva [[lola|Laura]], una sposa zombie convinta che Nami le abbia rubato il fidanzato: la interrompe furiosa, pronta a ucciderla. Absalom, esasperato, la respinge con un colpo di bazooka pur di proteggere la sua sposa, ma è un errore: Nami, ormai libera e furiosa per conto suo, lo abbatte con una scarica del suo bastone del tempo prima che possa finire la cerimonia.',
           en: 'Kidnapped and dressed as a bride by [[absalom|Absalom]], the invisible man who has picked her as his future wife, Nami wakes up already at the altar as he recites his vows. She dodges his kiss until [[lola|Lola]] arrives, a zombie bride convinced Nami stole her groom, and interrupts furiously, ready to kill her. Absalom, exasperated, blasts her away with a bazooka to protect his bride, but it’s a mistake: Nami, free by now and furious on her own account, knocks him out with a strike from her weather staff before he can finish the ceremony.',
+        },
+      },
+    },
+    {
+      episode: 387,
+      chapter: 492,
+      value: {
+        title: {
+          it: 'La promessa alla sirena',
+          en: 'A promise to the mermaid',
+        },
+        body: {
+          it: 'Nami scopre che il prigioniero che la ciurma è venuta a liberare è [[hatchan|Octy]], un ex membro della ciurma di [[arlong|Arlong]]. La sirena che ha chiesto il loro aiuto si tuffa e viene catturata. Nami chiede alla ciurma di salvare entrambi. Hanno dato la loro parola e lei non vede motivo di lasciare Octy in gabbia.',
+          en: 'Nami learns that the captive the crew has come to rescue is [[hatchan|Hatchan]], who once served under [[arlong|Arlong]]. The mermaid who asked for their help jumps overboard and is captured. Nami tells the crew to save both captives. They gave their word, and she sees no reason to leave Hatchan in his cage.',
         },
       },
     },
