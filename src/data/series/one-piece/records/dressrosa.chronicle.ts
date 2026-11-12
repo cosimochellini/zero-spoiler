@@ -46,6 +46,17 @@ export const dressrosaChronicles = {
       },
     },
     {
+      episode: 971,
+      chapter: 970,
+      value: {
+        title: { it: 'In attesa a Udon', en: 'Waiting at Udon' },
+        body: {
+          it: '[[kozuki-oden|Oden]] e i suoi uomini marciano su Udon convinti di cogliere Kaido di sorpresa. Lui li aspetta già in forma di drago, insieme ai suoi pirati. Dice a Oden che le promesse che gli sono state fatte erano menzogne. I samurai attaccano comunque, anche se i pirati sono più numerosi.',
+          en: '[[kozuki-oden|Oden]] and his retainers march on Udon expecting to take Kaido by surprise. Kaido is already waiting for them in dragon form with his men. He tells Oden that the promises made to him were lies. The samurai attack anyway, even though the pirates outnumber them.',
+        },
+      },
+    },
+    {
       episode: 995,
       value: {
         title: {
@@ -55,6 +66,17 @@ export const dressrosaChronicles = {
         body: {
           it: 'Davanti a tutta la ciurma dice cosa vuole fare: prendere le armi ancestrali, spezzare il mondo in una guerra sola e mettere al lavoro per sé il paese che ha preso, capitale compresa. [[kurozumi-orochi|Orochi]] obietta che la capitale è l’orgoglio della sua famiglia. Lui sfodera la spada e gli stacca la testa, poi ordina ai servitori dello shogun morto di servirlo o morire, e quelli si inginocchiano. Poi conclude: lascerà cadere l’isola stessa sulla capitale e chiamerà quello che resta Nuova Onigashima, con [[yamato|Yamato]] messo lì come shogun, che Yamato lo voglia o no.',
           en: 'In front of his whole crew he lays out what he means to do: take the ancient weapons, break the world into one long war, and put the country he has taken to work for him, capital included. [[kurozumi-orochi|Orochi]] objects that the capital is his family’s pride. He draws his sword and takes his head, then tells the dead shogun’s retainers to serve him or die, and they kneel. Then he finishes: he will drop the island itself onto that capital and call what is left New Onigashima, with [[yamato|Yamato]] installed as its shogun, whether Yamato wants it or not.',
+        },
+      },
+    },
+    {
+      episode: 1005,
+      chapter: 993,
+      value: {
+        title: { it: 'Una lama di vento', en: 'A blade of wind' },
+        body: {
+          it: 'Kaido è a terra sul tetto di Onigashima e i samurai si precipitano a finirlo prima che si rialzi. Si rimette in piedi e ripensa a [[kozuki-oden|Oden]], poi scaglia lame di vento contro i samurai. Una di quelle lame colpisce [[kiku|Kiku]] e le trancia un braccio.',
+          en: 'Kaido is down on the roof of Onigashima, and the samurai rush in to finish him before he can rise. He gets back up and thinks of [[kozuki-oden|Oden]], then counters with blades of wind. One of the blades strikes [[kiku|Kiku]] and severs her arm.',
         },
       },
     },

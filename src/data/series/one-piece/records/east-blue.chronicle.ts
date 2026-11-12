@@ -378,6 +378,17 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 1051,
+      chapter: 1026,
+      value: {
+        title: { it: 'Il cielo si apre', en: 'The sky splits' },
+        body: {
+          it: '[[kaido|Kaido]] si rialza sul tetto di Onigashima e Rufy gli va incontro. Il loro scontro squarcia le nubi e la luna piena torna a splendere. Alla luce della luna, [[inuarashi|Cane-tempesta]] e [[nekomamushi|Gatto-vipera]] riprendono la forma Sulong e sferrano i colpi che abbattono i loro avversari.',
+          en: '[[kaido|Kaido]] gets back up on the roof of Onigashima and Luffy meets him head-on. Their clash splits the clouds and the full moon shines through. With the moon visible again, [[inuarashi|Inuarashi]] and [[nekomamushi|Nekomamushi]] regain their Sulong forms and land the blows that bring down their opponents.',
+        },
+      },
+    },
+    {
       episode: 1071,
       value: {
         title: { it: 'Un battito sul tetto', en: 'A heartbeat on the roof' },
