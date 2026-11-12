@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { LOCALES } from '~/i18n/locales'
+import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { leaksOf } from '~/test/fog'
 import { LOADED_SERIES } from '~/test/series'
@@ -256,6 +256,176 @@ describe.each(DEATHS)(
     it('dies at the pin that tells it, never before', () => {
       expect(statusAt(id, at(unit, gate - 1), locale)).not.toBe('deceased')
       expect(statusAt(id, at(unit, gate), locale)).toBe('deceased')
+    })
+  },
+)
+
+/** A dated step as one string a reader at a bookmark sees, in its locale. */
+function stepAt(
+  {
+    id,
+    field,
+  }: { field: 'affiliation' | 'relationships' | 'role' | 'status'; id: string },
+  bookmark: Bookmark,
+  locale: Locale,
+): string | undefined {
+  const reader = readerFor(archive, bookmark, locale)
+  const character = characterById(id)
+  if (field === 'status') {
+    return archive.latestOf(reader, character, field)
+  }
+  if (field === 'relationships') {
+    return archive
+      .latestOf(reader, character, field)
+      ?.map(({ character: other, type }) => `${other}: ${type[locale]}`)
+      .join(', ')
+  }
+  return archive.latestOf(reader, character, field)?.[locale]
+}
+
+/**
+ * The phase-2 steps of Palm, Shaiapouf and Meruem (#1230), each pinned by
+ * hand to the episode and chapter that tell it, so moving one by a unit
+ * either way fails. The values are the steps' own, in each locale.
+ */
+const PHASE_TWO_STEPS = [
+  {
+    id: 'palm-siberia',
+    field: 'relationships',
+    episode: 86,
+    chapter: 200,
+    value: {
+      it: 'knov: Maestro, gon-freecss: Alleato',
+      en: 'knov: Teacher, gon-freecss: Ally',
+    },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'relationships',
+    episode: 93,
+    chapter: 218,
+    value: {
+      it: 'knov: Maestro, gon-freecss: Appuntamento',
+      en: 'knov: Teacher, gon-freecss: Date',
+    },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'status',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'alive', en: 'alive' },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+  },
+  {
+    id: 'palm-siberia',
+    field: 'role',
+    episode: 86,
+    chapter: 200,
+    value: { it: 'Allieva di Nobu', en: 'Knov’s student' },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'relationships',
+    episode: 86,
+    chapter: 202,
+    value: {
+      it: 'neferpitou: Altra guardia reale',
+      en: 'neferpitou: Fellow Royal Guard',
+    },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'relationships',
+    episode: 88,
+    chapter: 206,
+    value: {
+      it: 'neferpitou: Altra guardia reale, menthuthuyoupi: Altra guardia reale',
+      en: 'neferpitou: Fellow Royal Guard, menthuthuyoupi: Fellow Royal Guard',
+    },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'neferpitou: Altra guardia reale, menthuthuyoupi: Altra guardia reale, meruem: Re che serve',
+      en: 'neferpitou: Fellow Royal Guard, menthuthuyoupi: Fellow Royal Guard, meruem: King he serves',
+    },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'status',
+    episode: 86,
+    chapter: 202,
+    value: { it: 'alive', en: 'alive' },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'affiliation',
+    episode: 86,
+    chapter: 202,
+    value: { it: 'Guardia della regina', en: 'Queen’s guard' },
+  },
+  {
+    id: 'shaiapouf',
+    field: 'affiliation',
+    episode: 91,
+    chapter: 213,
+    value: { it: 'Guardia del re', en: 'King’s guard' },
+  },
+  {
+    id: 'meruem',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'neferpitou: Guardia reale, shaiapouf: Guardia reale, menthuthuyoupi: Guardia reale',
+      en: 'neferpitou: Royal Guard, shaiapouf: Royal Guard, menthuthuyoupi: Royal Guard',
+    },
+  },
+  {
+    id: 'meruem',
+    field: 'status',
+    episode: 92,
+    chapter: 215,
+    value: { it: 'alive', en: 'alive' },
+  },
+  {
+    id: 'meruem',
+    field: 'affiliation',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'Formichimere, con le sue guardie reali',
+      en: 'Chimera Ants, with his Royal Guards',
+    },
+  },
+] as const
+
+describe.each(
+  PHASE_TWO_STEPS.flatMap((step) =>
+    LOCALES.flatMap((locale) =>
+      UNITS.map((unit) => ({ ...step, locale, unit })),
+    ),
+  ),
+)(
+  '$id’s $field at $episode / $chapter in $locale by $unit',
+  ({ id, field, episode, chapter, value, locale, unit }) => {
+    it('shows the step at its pin, never before', () => {
+      const gate = unit === 'chapter' ? chapter : episode
+
+      expect(stepAt({ id, field }, at(unit, gate - 1), locale)).not.toBe(
+        value[locale],
+      )
+      expect(stepAt({ id, field }, at(unit, gate), locale)).toBe(value[locale])
     })
   },
 )
