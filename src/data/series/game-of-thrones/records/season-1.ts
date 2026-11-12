@@ -1256,7 +1256,7 @@ export const season1: ThronesSaga = {
         it: 'Il rozzo carceriere delle celle del cielo del Nido dell’Aquila.',
         en: 'The brutish gaoler of the Eyrie’s sky cells.',
       },
-      visual: { art: 'mord', tint: 'wine' },
+      visual: { art: 'mord', tint: 'yellow' },
     },
     // Book only. Tyrion V (site chapter 39), at the hearing where Tyrion demands a trial by combat. The show has no such character; episode 6, which tells the same hearing, orders him.
     {
@@ -1270,7 +1270,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere della Valle alla corte di lady Lysa, pronto a battersi per lei.',
         en: 'A knight of the Vale at Lady Lysa’s court, eager to fight for her.',
       },
-      visual: { art: 'lyn-corbray', tint: 'red' },
+      visual: { art: 'lyn-corbray', tint: 'violet' },
     },
     // Show: “The Mountain and the Viper” (episode 38), her only appearance, at the inquiry at the Eyrie. Books: Tyrion V (site chapter 39), in the hall with her sons when Tyrion demands a trial.
     {

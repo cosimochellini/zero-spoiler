@@ -211,11 +211,12 @@ series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
 own, Eddard's with a death stage, the Winterfell household's are in
 `art/winterfell.ts` (#854), with four stages, the southern cast's are in
 `art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
-in `art/wall.ts` and `art/essos.ts` (#1052), with six. Every other record maps
-to a shared placeholder in `art/index.ts`, `PERSON` for a character and `PLACE`
-for a place, until its own issue draws it, so the drawing tests hold it like any
-series. Its 23 places (#853) are the ones a scene of the season or the book is
-set in, each filed in one of the realms, beyond the Wall or Essos, with no arc:
+in `art/wall.ts` and `art/essos.ts` (#1052), with six, and the Vale cast's are
+in `art/vale.ts` (#1055), with two. Every other record maps to a shared
+placeholder in `art/index.ts`, `PERSON` for a character and `PLACE` for a place,
+until its own issue draws it, so the drawing tests hold it like any series. Its
+23 places (#853) are the ones a scene of the season or the book is set in, each
+filed in one of the realms, beyond the Wall or Essos, with no arc:
 `PlaceDossier.arc` is optional, and an arcless series prints no arc row. Darry
 is the book's alone and the Kingswood the show's. The demo shows the places the
 first ten episodes reach, and covers in its tail the four the show first visits
@@ -370,7 +371,7 @@ checks this block.
 | Characters        | 148                                                   |
 | Places            | 23                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 171, one per record, plus 14 redrawings of 13 records |
+| Line drawings     | 171, one per record, plus 16 redrawings of 15 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
