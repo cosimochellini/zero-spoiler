@@ -26,6 +26,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_52',
       note: 'Cabaji slams a set of stocks down on Luffy, trapping him; Buggy declares the execution. Luffy’s last words are that he’ll become Pirate King, and lightning strikes Buggy and the platform an instant before the blade lands — all within episode 52, confirming the Qref ep=52 candidate. Corrected after review: an earlier pass had Buggy himself lock Luffy in the stocks, contradicting this same PR’s own buggy episode-52 story, which correctly credits Cabaji.',
     },
+    73: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_73',
+      note: 'Episode 73 shows the blow and the wax trap. Chapter 119 ends at the slip; Chapter 120 shows Brogy land the blow and get caught in the wax. https://onepiece.fandom.com/wiki/Chapter_120',
+    },
     111: {
       source: 'https://onepiece.fandom.com/wiki/Episode_111',
       note: 'Candidate was the 110–111 range; 110 ends on the hook impaling Luffy, but Crocodile burying him in the quicksand and leaving happens in 111, so the story is filed there.',
@@ -524,6 +528,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_95',
       note: 'Filed late: the flag (87), the shut-up-and-come line (89), the knives (90), the sakura (91). The dossier files the crew at 91.',
     },
+    162: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_162',
+      note: 'Episode 161 ends with the whistle. Episode 162 and Chapter 248 establish the fire, the priest’s demand and Gan Fall’s rescue. The priest stays unnamed because his chapter record opens at 260. Chapter source: https://onepiece.fandom.com/wiki/Chapter_248.',
+    },
     172: {
       source: 'https://onepiece.fandom.com/wiki/Episode_172',
       note: 'Chopper defeats Gedatsu at the Ordeal of Swamp, closing the two-priest vignette that began with him alone guarding the Going Merry against Shura (ep 162, resolved 164). The issue’s candidate of ep 178 is wrong — that episode is Zoro vs. Ohm, with no Chopper content — moved to 172.',
@@ -717,6 +725,10 @@ export const CHRONICLE_SOURCES = {
     339: {
       source: 'https://onepiece.fandom.com/wiki/Episode_339',
       note: 'Threshold entry, told from the first sighting (eps 337–338). Second pass: no piano on the ghost ship — he sings softly over tea; title and body corrected.',
+    },
+    353: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_353',
+      note: 'Episode 353 and Chapter 459 identify the whale and establish the promise. The account stops at the crew recognising Laboon, before Episode 354 continues the story of their earlier meeting. Chapter source: https://onepiece.fandom.com/wiki/Chapter_459.',
     },
     362: {
       source: 'https://onepiece.fandom.com/wiki/Ryuma_(Zombie)',
