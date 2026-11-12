@@ -1634,7 +1634,9 @@ export const waterSeven: OnePieceSaga = {
       },
       status: [{ episode: 264, value: 'alive' }],
       affiliation: [{ episode: 264, factions: ['cp9'], value: CIPHER_POL_9 }],
-      devilFruit: [{ episode: 286, value: ['dog-dog-fruit-model-wolf'] }],
+      devilFruit: [
+        { episode: 286, chapter: 401, value: ['dog-dog-fruit-model-wolf'] },
+      ],
     },
     'kumadori': {
       relationships: waterSevenRelationships.kumadori,

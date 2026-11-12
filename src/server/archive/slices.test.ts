@@ -833,6 +833,8 @@ describe('a record drawn again later in the story', () => {
     ['nami', 8, 6],
     // The Merry out of her Flying Model.
     ['going-merry', 5, 'first'],
+    // The Sunny's coating stripped at Fish-Man Island.
+    ['thousand-sunny', 1, 'first'],
     // Loguetown's platform rebuilt.
     ['loguetown', 1, 'first'],
   ] as const)(
