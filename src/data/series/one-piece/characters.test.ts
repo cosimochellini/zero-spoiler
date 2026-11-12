@@ -39,14 +39,6 @@ const MAX_UNTOLD = 5
  * story`. Each is to be filled in #1163; none may be added.
  */
 const KNOWN_GAPS = [
-  '68→77',
-  '156→164',
-  '350→359',
-  '381→392',
-  '405→416',
-  '434→441',
-  '446→455',
-  '489→497',
   '602→613',
   '614→621',
   '667→675',
