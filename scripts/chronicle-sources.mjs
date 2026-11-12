@@ -632,7 +632,7 @@ export const CHRONICLE_SOURCES = {
     },
     1168: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1168',
-      note: 'Episode 1168 and Chapter 1138 both contain the reading and Saul’s explanation of the third chapter. https://onepiece.fandom.com/wiki/Chapter_1138',
+      note: 'Episode 1168 and Chapter 1138 both contain the reading, Saul’s explanation of the third chapter, and the shared rhythm in the tales of Nika, added after review. https://onepiece.fandom.com/wiki/Chapter_1138',
     },
   },
   'franky': {
