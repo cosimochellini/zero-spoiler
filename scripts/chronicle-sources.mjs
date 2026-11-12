@@ -376,6 +376,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_1076',
       note: 'Candidate 1073–1076 (Qref ep=1073,1074,1076). Background from 1063: Usopp finds Kin’emon and Kiku, tells them to hold on to life instead of their honour, and Izou holds off the Beasts Pirates while they escape on Hamlet’s back. 1073 debuts Midori Boshi: Sprinkler and has Usopp’s group trapped by the fire (Hamlet’s line about wasting energy and the promise to Izou are the Qref chap=1046 ep=1073); the flood that puts the fire out starts in 1073, and 1074 shows Usopp being hit by it. 1076 has the allies surviving Raizo’s flood (Qref chap=1049 ep=1076: Usopp keeping them from drowning) and, per its anime notes, Nami, Chopper and Tama spotting Usopp, Kin’emon and Kiku. Filed at 1076. Hamlet is not a filed record, so he is named in plain text. Second pass: 1073 puts Usopp’s group in the corridors, not the basement (that is Brook and Robin’s), so the story’s basements became corridors. The manga-cited lines check out on the Hamlet page (Qref chap=1046 ep=1073: the burning sprinkler, Hamlet calling it useless, the promise to Izou) and 1076’s anime notes (Nami, Chopper and Tama spotting them). Chapter (#169): 1049, the last event: The flood swallows the corridors and Usopp fights to keep both samurai afloat (Chapter_1049: the water fills the interior and puts out the fire while everyone clings on (story note cites Qref chap=1049 ep=1076 for Usopp keeping them from drowning; Chapter_1048 already shows it)).',
     },
+    1162: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1162',
+      note: 'Episode 1162 and Chapter 1132 both show Usopp reaching the village and the crew reuniting there after the giants sail up a rainbow. The anime shows him in tears, a detail the shared story omits. https://onepiece.fandom.com/wiki/Chapter_1132',
+    },
   },
   'sanji': {
     20: {
@@ -625,6 +629,10 @@ export const CHRONICLE_SOURCES = {
     1148: {
       source: 'https://onepiece.fandom.com/wiki/Episode_1148',
       note: 'Candidate was 1147–1148 (Qref ep=1147,1148). Saturn recognises Robin from Ohara and her crewmates shield her in 1147, but Robin catching them in her Spider Net and Saturn leaving for the power plant are in 1148, so it is filed at the later episode.',
+    },
+    1168: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_1168',
+      note: 'Episode 1168 and Chapter 1138 both contain the reading and Saul’s explanation of the third chapter. https://onepiece.fandom.com/wiki/Chapter_1138',
     },
   },
   'franky': {

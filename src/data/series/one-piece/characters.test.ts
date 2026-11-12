@@ -60,7 +60,6 @@ const KNOWN_GAPS = [
   '1002→1009',
   '1046→1055',
   '1094→1101',
-  '1156→LAST_AIRED',
 ]
 
 /** The episodes the filler guide numbers; every other aired one is canon. */

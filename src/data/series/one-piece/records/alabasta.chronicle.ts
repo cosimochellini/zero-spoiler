@@ -538,6 +538,17 @@ export const alabastaChronicles = {
         },
       },
     },
+    {
+      episode: 1168,
+      chapter: 1138,
+      value: {
+        title: { it: 'I tre mondi', en: 'The three worlds' },
+        body: {
+          it: 'In biblioteca, [[jaguar-d-saul|Sauro]] mostra a Robin l’Harley, il testo da cui nascono le leggende di Elbaf. Ciascuno lo interpreta a modo suo, spiega Sauro, e si fa un’idea diversa del dio del sole. Robin legge i tre capitoli. Secondo Sauro, il terzo parla del mondo in cui vivono e di ciò che deve ancora accadere.',
+          en: 'In the library, [[jaguar-d-saul|Saul]] shows Robin the Harley, the text behind Elbaph’s legends. Saul explains that people read it differently and imagine the sun god differently too. Robin reads the three chapters. According to Saul, the third speaks of the world they live in and of events still to come.',
+        },
+      },
+    },
   ],
   'nefertari-vivi': [
     {
