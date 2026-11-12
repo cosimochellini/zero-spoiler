@@ -78,6 +78,14 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_405',
       note: "Zoro's disappearance is 404, but this story is Luffy watching the rest of the crew vanish one by one and despairing over failing to save them; that account, ending with his own capture, closes the Sabaody Archipelago Arc at 405. Second pass: the paw-swipe order is Brook, then Usopp, then Sanji, not Usopp before Brook — corrected.",
     },
+    413: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_413',
+      note: 'Episode 413 and https://onepiece.fandom.com/wiki/Chapter_519 place the threat and unconscious spectators in the same scene. The sisters are unnamed because Sandersonia’s chapter gate is 521.',
+    },
+    435: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_435',
+      note: 'Episode 435 and https://onepiece.fandom.com/wiki/Chapter_534 end the exchange with the poisoned blow. The defeat follows in episode 436 and chapter 535.',
+    },
     479: {
       source: 'https://onepiece.fandom.com/wiki/Episode_479',
       note: 'Luffy releases Haki unintentionally just before reaching the execution platform, opening his path; Garp then blocks him — resolves within 479.',
@@ -85,6 +93,10 @@ export const CHRONICLE_SOURCES = {
     483: {
       source: 'https://onepiece.fandom.com/wiki/Episode_483',
       note: 'Ace’s last words and death; Jinbe blocks Akainu. Second pass: the breakdown is episode 484, so the closing clause was dropped and the story ends at the scream.',
+    },
+    491: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_491',
+      note: 'Episode 491 and https://onepiece.fandom.com/wiki/Chapter_582 show the rampage, Jinbe saying the war is over, and Luffy facing the loss of Ace. This ends before Jinbe’s later intervention to make him count who he still has.',
     },
     516: {
       source: 'https://onepiece.fandom.com/wiki/Episode_516',
@@ -273,6 +285,10 @@ export const CHRONICLE_SOURCES = {
     366: {
       source: 'https://onepiece.fandom.com/wiki/Absalom',
       note: 'Absalom’s history dates Lola interrupting the ceremony and Nami knocking him out with Swing Arm to ep 366 (chap 471); the ceremony itself starts at ep 352 and Sanji’s own fight with Absalom ends at 359. Chapter (#169): 471, the last event: Nami wakes at the altar, dodges the kiss, Lola crashes the wedding, Absalom blasts Lola, Nami knocks him out (Chapter_471 has the waking, the kiss avoided, Lola’s crash and the one-blow win (Absalom Qref chap=471 ep=366)).',
+    },
+    387: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_387',
+      note: 'Episode 387 and https://onepiece.fandom.com/wiki/Chapter_492 identify the captive, show the mermaid’s capture and Nami’s decision. The cage is cut in 388. The mermaid is unnamed here because Camie’s chapter gate is 493.',
     },
     517: {
       source: 'https://onepiece.fandom.com/wiki/Episode_517',
@@ -763,6 +779,10 @@ export const CHRONICLE_SOURCES = {
     443: {
       source: 'https://onepiece.fandom.com/wiki/Episode_443',
       note: 'Second pass: moved from 442. Episode 442 ends with Luffy only just meeting Crocodile as a cliffhanger — Jinbe’s plea and release (with Crocodile, via Inazuma’s Devil Fruit unlocking the cuffs, not Luffy) is Episode 443’s own scene, the one its title names.',
+    },
+    450: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_450',
+      note: 'Episode 450 and https://onepiece.fandom.com/wiki/Chapter_547 show the seizure, Jinbe’s attack on the Marines and his instructions to jump.',
     },
     466: {
       source: 'https://onepiece.fandom.com/wiki/Episode_466',
