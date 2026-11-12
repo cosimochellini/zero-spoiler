@@ -26,6 +26,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_52',
       note: 'Cabaji slams a set of stocks down on Luffy, trapping him; Buggy declares the execution. Luffy’s last words are that he’ll become Pirate King, and lightning strikes Buggy and the platform an instant before the blade lands — all within episode 52, confirming the Qref ep=52 candidate. Corrected after review: an earlier pass had Buggy himself lock Luffy in the stocks, contradicting this same PR’s own buggy episode-52 story, which correctly credits Cabaji.',
     },
+    73: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_73',
+      note: 'Episode 73 shows the blow and the wax trap. Chapter 119 ends at the slip; Chapter 120 shows Brogy land the blow and get caught in the wax. https://onepiece.fandom.com/wiki/Chapter_120',
+    },
     111: {
       source: 'https://onepiece.fandom.com/wiki/Episode_111',
       note: 'Candidate was the 110–111 range; 110 ends on the hook impaling Luffy, but Crocodile burying him in the quicksand and leaving happens in 111, so the story is filed there.',
@@ -507,6 +511,10 @@ export const CHRONICLE_SOURCES = {
     95: {
       source: 'https://onepiece.fandom.com/wiki/Episode_95',
       note: 'Filed late: the flag (87), the shut-up-and-come line (89), the knives (90), the sakura (91). The dossier files the crew at 91.',
+    },
+    162: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_162',
+      note: 'Episode 161 ends with the whistle. Episode 162 and Chapter 248 establish the fire, the priest’s demand and Gan Fall’s rescue. The priest stays unnamed because his chapter record opens at 260. Chapter source: https://onepiece.fandom.com/wiki/Chapter_248.',
     },
     172: {
       source: 'https://onepiece.fandom.com/wiki/Episode_172',
