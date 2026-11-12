@@ -1260,6 +1260,20 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 803,
+      chapter: 840,
+      value: {
+        title: {
+          it: 'Il bambino con la maschera di ferro',
+          en: 'The boy in the iron mask',
+        },
+        body: {
+          it: 'Quando i fratelli minacciano [[zeff|Zeff]], Sanji smette di reagire. Ripensa agli allenamenti di quando era bambino, quando non riusciva mai a stare al passo con loro. Un rapporto conferma che non ha nessuno dei loro potenziamenti. Suo padre, [[vinsmoke-judge|Judge]], inscena il suo funerale e ordina ai soldati di rinchiuderlo in una cella con una maschera di ferro sul volto.',
+          en: 'When his brothers threaten [[zeff|Zeff]], Sanji stops fighting back. He remembers the training he went through as a child, when he could never keep up with his brothers. A report confirms that he has none of their enhancements. His father, [[vinsmoke-judge|Judge]], stages a funeral for him and has soldiers lock him in a dungeon with an iron mask over his face.',
+        },
+      },
+    },
+    {
       episode: 825,
       value: {
         title: { it: 'Voglio tornare', en: 'I want to go back' },

@@ -462,6 +462,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_795',
       note: 'Filed late: the challenge and the childhood flashback are episode 793.',
     },
+    803: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_803',
+      note: 'Episode 803 and Chapter 840 show the threat to Zeff, the unchanged body, the funeral and Sanji’s confinement. His escape follows in Episode 804 and Chapter 841. Chapter source: https://onepiece.fandom.com/wiki/Chapter_840.',
+    },
     825: {
       source: 'https://onepiece.fandom.com/wiki/Episode_825',
       note: 'The bento, the punch, Sanji saying he wants to go back, Luffy decides to crash the wedding.',
