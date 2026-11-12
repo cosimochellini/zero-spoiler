@@ -30,6 +30,17 @@ export const summitWarChronicles = {
       },
     },
     {
+      episode: 450,
+      chapter: 547,
+      value: {
+        title: { it: 'Una nave per la fuga', en: 'A warship for the escape' },
+        body: {
+          it: 'Jinbe aiuta [[crocodile|Crocodile]] a impadronirsi di una nave della Marina mentre i detenuti cercano di evadere da Impel Down. Le altre navi si preparano a sparare, ma Jinbe attacca dall’acqua per fermarle. Si mette in contatto con [[monkey-d-luffy|Rufy]] e gli dice di tuffarsi in mare quando arriva a riva.',
+          en: 'Jinbe helps [[crocodile|Crocodile]] seize a Marine warship while the prisoners try to escape from Impel Down. The other ships prepare to fire, but Jinbe attacks from the water to stop them. He makes contact with [[monkey-d-luffy|Luffy]] and tells him to jump into the sea when he reaches the shore.',
+        },
+      },
+    },
+    {
       episode: 466,
       chapter: 557,
       value: {

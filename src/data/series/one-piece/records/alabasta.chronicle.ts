@@ -50,6 +50,20 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 162,
+      chapter: 248,
+      value: {
+        title: {
+          it: 'Il fischietto sulla Going Merry',
+          en: 'The whistle on the Going Merry',
+        },
+        body: {
+          it: 'Chopper è solo sulla Going Merry quando un sacerdote arriva per ucciderlo. Suona il fischietto che gli ha dato [[gan-fall|Gan Foll]]. Il sacerdote incendia la nave con la lancia e dice a Chopper che deve pagare perché gli altri hanno lasciato l’altare. Prima che il sacerdote possa colpire di nuovo, Gan Foll arriva e affronta l’aggressore.',
+          en: 'Chopper is alone on the Going Merry when a priest comes to kill him. He blows the whistle [[gan-fall|Gan Fall]] gave him. The priest sets the ship alight with his lance and tells Chopper he must pay for the others leaving the altar. Before the priest can strike again, Gan Fall arrives and takes on the attacker himself.',
+        },
+      },
+    },
+    {
       episode: 172,
       value: {
         title: {
