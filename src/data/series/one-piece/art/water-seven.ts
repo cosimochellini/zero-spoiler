@@ -83,6 +83,18 @@ const JERRY_GLOVE =
 /** The Dark-Dark Fruit's own drawing, made smaller and set in Thatch's palm. */
 const PALM = 'translate(40 28.2) scale(0.55)'
 
+/** Wind over the ridge, visible until the giraffe neck takes its place. */
+const KAKU_WIND: Stroke = {
+  d: 'M2 40 H42 M14 28 H52 M8 54 H30',
+  role: 'ambient',
+}
+
+/** The counter lip and continuous skirting before a door opens in it. */
+const BLUENO_TRIM: Stroke = {
+  d: 'M8 111 H125 L152 93 M11 155 H121',
+  role: 'soft',
+}
+
 /** The drawings of the records filed in the water seven stretch of the route. */
 export const waterSevenArt = {
   // His cowboy hat set down on the raft he is building on the beach of
@@ -153,7 +165,7 @@ export const waterSevenArt = {
   // the turn of the bow hatched and a wave under it, a mast with its sail
   // behind, and the fox's head at the prow as figurehead, ears up, the line
   // of the brow running down the long snout to its nose, out over the water.
-  // No eye and no flag (207).
+  // The mast flies the original Foxy Pirates flag (Long Ring Long Land).
   'foxy': [
     { d: 'M-4 104 H78 C88 116 92 134 88 152 C62 160 22 160 -4 156' },
     { d: 'M-4 96 H78 M-4 104 V96 M16 96 v8 M36 96 v8 M56 96 v8', role: 'soft' },
@@ -164,25 +176,33 @@ export const waterSevenArt = {
     },
     { d: 'M92 40 l4 10 M110 40 l-2 10 M104 62 Q124 64 140 74', role: 'soft' },
     { d: dot(154, 85) },
-    { d: 'M24 96 V14 M24 18 Q54 30 50 70 Q38 60 24 64', role: 'soft' },
+    { d: 'M24 96 V10 M24 42 Q53 51 50 77 Q36 70 24 75', role: 'soft' },
+    { d: 'M24 12 Q49 7 77 16 V39 Q50 31 24 36' },
+    {
+      d: 'M44 24 l-2 -8 l7 5 q4 -1 8 1 l7 -5 l-2 9 q0 4 -6 4 l-2 4 h-5 l-1 -4 q-5 -1 -4 -6 M49 25 h1 M57 25 h1 M52 28 h2 M37 29 l6 4 M63 32 l6 -3',
+      role: 'soft',
+    },
     { d: 'M70 124 l10 -6 M72 136 l12 -7 M60 146 l14 -8', role: 'ambient' },
     { d: 'M70 156 Q84 150 96 154 Q104 156 112 152', role: 'soft' },
     ...SEA.slice(1),
   ],
 
-  // Her Cutie Baton lying in 3/4: the yellow shaft between its two white
-  // balls, each ball with its seam, a gleam and its lower side hatched (208).
-  // No ribbon: the baton has none.
+  // Porche's Cutie Baton from the Davy Back Fight: the striped shaft
+  // recedes from the nearer ball, with a seam and shading on each ball.
   'porche': [
-    { d: 'M40 146 L118 74 M46 152 L124 80', role: 'accent' },
-    { d: 'M58 132 l6 6 M76 115 l6 6 M94 98 l6 6', role: 'soft' },
-    { d: circle(34, 158, 14) },
-    { d: 'M20 158 q14 8 28 0 M28 150 q4 -4 8 -3', role: 'soft' },
-    { d: 'M26 168 l6 -6 M34 171 l8 -8 M44 168 l4 -4', role: 'ambient' },
-    { d: circle(130, 66, 14) },
-    { d: 'M116 66 q14 8 28 0 M124 58 q4 -4 8 -3', role: 'soft' },
-    { d: 'M124 77 l8 -8 M134 79 l8 -8', role: 'ambient' },
-    shadow(80, 182, 54),
+    { d: 'M49 136 L121 64 M59 146 L130 70', role: 'accent' },
+    {
+      d: 'M67 118 l9 10 M74 111 l9 9 M89 96 l9 8 M96 89 l9 8 M110 75 l9 7',
+      role: 'soft',
+    },
+    { d: circle(37, 155, 24) },
+    { d: 'M16 144 C27 160 46 167 60 158 M23 143 q5 -9 14 -10', role: 'soft' },
+    { d: 'M28 172 l6 -7 M36 176 l8 -9 M46 174 l6 -7', role: 'ambient' },
+    { d: circle(131, 55, 16) },
+    { d: 'M116 50 q14 15 30 12 M122 48 q4 -6 10 -7', role: 'soft' },
+    { d: 'M127 68 l4 -5 M136 68 l4 -4', role: 'ambient' },
+    shadow(45, 184, 33),
+    shadow(121, 83, 18),
   ],
 
   // His leopard-spotted scarf, untied from his neck and left knotted in a
@@ -214,25 +234,38 @@ export const waterSevenArt = {
   // Blackbeard's flag from 736, in `waterSevenRedrawn`.
   'kuzan': [...KUZAN_BICYCLE, ...KUZAN_ICE],
 
-  // Tall houses standing in the water on both sides of a canal, a bridge
-  // across it, and a yagara in front with its saddle on its back and the
-  // reins run back from its snout: the city where boats are hired with an
-  // animal to pull them (229). No eye on the yagara.
+  // Water Seven (229, ch. 323), from the water: the canal narrows to the
+  // bridge between the houses, with a saddled yagara in the foreground.
   'water-seven-arc': [
-    { d: 'M4 130 V58 L20 44 L36 58 V130 M36 130 V40 L50 28 L64 40 V130' },
-    { d: 'M96 130 V36 L110 24 L124 36 V130 M124 130 V54 L140 42 L156 54 V130' },
-    { d: 'M64 96 Q80 80 96 96 M64 104 Q80 88 96 104' },
     {
-      d: 'M14 70 h10 v10 h-10z M44 54 h10 v10 h-10z M44 80 h10 v10 h-10z M104 50 h10 v10 h-10z M104 76 h10 v10 h-10z M134 68 h10 v10 h-10z',
+      d: 'M0 62 L21 37 L45 56 V134 L0 150 M21 37 L68 53 L72 64 L45 56 M45 134 L72 105 V64',
+    },
+    {
+      d: 'M160 63 L137 36 L112 55 V127 M139 143 L160 150 M137 36 L91 53 L87 64 L112 55 M105 126 L87 105 V64',
+    },
+    {
+      d: 'M72 89 Q79 81 87 89 M72 98 Q79 90 87 98 M69 106 L87 106',
       role: 'soft',
     },
-    { d: 'M4 130 H156', role: 'ambient' },
-    { d: 'M74 116 h12 M70 124 h20', role: 'ambient' },
+    {
+      d: 'M10 74 h13 v16 H10 Z M10 105 h13 v16 H10 Z M136 73 h13 v16 h-13 Z M136 104 h13 v16 h-13 Z',
+      role: 'soft',
+    },
+    {
+      d: 'M54 70 l10 3 v11 l-10 1 Z M54 98 l10 -3 v10 l-10 6 Z M96 73 l9 -3 v15 l-9 -1 Z M96 95 l9 3 v13 l-9 -6 Z',
+      role: 'soft',
+    },
+    {
+      d: 'M49 127 l13 -15 M101 121 l8 8 M74 115 h12 M65 122 h19',
+      role: 'ambient',
+    },
     {
       d: 'M84 166 C80 150 86 138 98 132 C108 128 116 130 122 136 L136 142 Q140 148 134 150 L120 148 C114 150 110 156 110 166',
     },
-    { d: 'M98 132 l-2 -10 l8 6', role: 'soft' },
-    { d: 'M36 166 Q60 158 84 166 M110 166 H124', role: 'soft' },
+    {
+      d: 'M98 132 l-2 -10 l8 6 M36 166 Q60 158 84 166 M110 166 H124',
+      role: 'soft',
+    },
     {
       d: 'M48 162 Q50 148 62 148 Q72 148 76 156 L84 154 L82 162 Z M60 148 v-6 h6',
       role: 'accent',
@@ -241,30 +274,27 @@ export const waterSevenArt = {
     ...SEA.slice(1),
   ],
 
-  // His striped jacket worn open, in 3/4: the wide collar turned back, the
-  // far side hatched, and Tyrannosaurus up to his paws in the pocket on the
-  // left breast, side on, one ear and the snout out, his tail hanging over
-  // the pocket's edge (230). No eye.
+  // Iceburg's striped jacket at Dock One (230, ch. 325), cropped at the
+  // breast pocket with Tyrannosaurus leaning out and his tail over the seam.
   'iceburg': [
-    { d: 'M102 34 L124 46 Q132 52 132 64 L130 176 H84 L86 62 L102 34' },
-    { d: 'M62 34 L40 44 Q30 50 28 62 L26 170 H68 L70 62 L62 34' },
-    { d: 'M102 34 Q82 28 62 34 M102 34 L114 72 L86 62 M62 34 L54 70 L70 62' },
+    { d: 'M5 192 L8 46 Q22 25 60 12 Q99 12 133 30 Q152 40 158 61 L158 192' },
     {
-      d: 'M118 136 V174 M104 136 V174 M60 76 V168 M48 72 V168 M120 76 V104 M96 72 V104',
+      d: 'M60 12 L24 70 L47 80 L22 101 L40 192 M60 12 Q92 23 104 39 L62 60 L47 80',
       role: 'soft',
     },
     {
-      d: 'M40 72 l-10 -6 M40 92 l-12 -7 M40 112 l-12 -7 M40 132 l-12 -7 M40 152 l-12 -7',
-      role: 'ambient',
+      d: 'M10 76 V180 M17 111 V186 M51 152 l6 34 M73 152 v36 M97 155 v33 M123 151 v37 M145 70 v112',
+      role: 'soft',
     },
-    { d: 'M128 110 H90 V134 H128' },
+    { d: 'M31 106 l10 47 M34 104 l12 44 M38 101 l8 28', role: 'ambient' },
+    { d: 'M52 111 Q90 116 132 105 L130 140 Q94 158 53 141 Z' },
+    { d: 'M53 119 Q89 124 132 113 M56 136 Q90 151 126 137', role: 'soft' },
+    { d: 'M56 111 L68 106 M119 106 L130 105', role: 'soft' },
     {
-      d: 'M122 110 C124 96 116 88 106 86 C104 82 100 80 96 80 L80 88 L94 94 C94 100 96 106 100 110 M104 110 q-2 -6 -6 -6 M96 110 q-3 -5 -8 -3',
+      d: 'M75 114 C69 108 68 101 68 93 L49 88 Q44 86 49 82 L71 69 C73 58 86 56 89 68 C106 69 119 87 117 110 M80 114 q-3 -7 -9 -6 M100 114 q-2 -8 -9 -7 M117 108 C145 114 145 144 132 157',
       role: 'accent',
     },
-    { d: circle(102, 78, 5), role: 'soft' },
-    { d: 'M126 112 C136 120 138 138 132 150', role: 'accent' },
-    shadow(78, 186, 52),
+    { d: 'M77 67 q3 -7 7 -2 M105 92 q6 7 6 13', role: 'soft' },
   ],
 
   // A coil of his rope in 3/4, the turns laid one inside the other, the lay
@@ -295,24 +325,21 @@ export const waterSevenArt = {
     shadow(76, 186, 64),
   ],
 
-  // Her bottle in 3/4, standing by the chair she sits in at the station:
-  // the long neck, the shoulders, a plain label as the accent, the far side
-  // of the dark glass hatched. The chair's seat in 3/4, its back with a
-  // carved top (229).
+  // Kokoro's dark bottle at the station (ch. 325), with the far glass
+  // hatched and a plain label wrapped around the body.
   'kokoro': [
-    { d: 'M98 52 h10 v26 q14 8 14 26 V170 M98 52 v26 q-14 8 -14 26 V170' },
-    { d: `${ellipse(103, 52, 5, 2)} M84 170 Q103 178 122 170` },
-    { d: 'M84 120 Q103 126 122 120 V146 Q103 152 84 146', role: 'accent' },
     {
-      d: 'M116 94 l5 -4 M116 108 l6 -4 M116 156 l6 -4 M116 166 l6 -4',
+      d: 'M66 32 V66 C65 78 48 80 43 96 Q40 103 40 116 V159 Q40 173 80 177 Q120 173 120 159 V116 Q120 103 117 96 C112 80 95 78 94 66 V32',
+    },
+    { d: ellipse(80, 32, 14, 5) },
+    { d: 'M66 43 Q80 52 94 43 M40 158 Q80 177 120 158', role: 'soft' },
+    { d: 'M42 111 Q80 126 118 111 V145 Q80 161 42 145 Z', role: 'accent' },
+    { d: 'M52 101 Q55 90 66 86 M51 151 v7 M72 54 v15', role: 'soft' },
+    {
+      d: 'M99 84 l6 7 M105 86 l8 13 M107 97 l9 12 M106 153 l10 -6 M106 162 l10 -6 M94 170 l8 -6',
       role: 'ambient',
     },
-    { d: 'M90 102 V114 M90 152 V162', role: 'soft' },
-    { d: 'M10 112 L52 118 L70 106 L30 102 Z' },
-    { d: 'M10 112 V166 M52 118 V174 M70 106 V160 M30 102 V112' },
-    { d: 'M30 102 V44 Q38 34 48 44 Q58 34 70 44 V106' },
-    { d: 'M38 52 V100 M50 52 V102 M62 52 V104', role: 'soft' },
-    shadow(70, 184, 62),
+    shadow(80, 187, 47),
   ],
 
   // Gonbe, the rabbit who lives with her at the station, sitting side on at
@@ -357,7 +384,7 @@ export const waterSevenArt = {
       role: 'accent',
     },
     { d: 'M92 42 v-3 M90 44 Q86 56 88 68', role: 'soft' },
-    { d: 'M2 40 H42 M14 28 H52 M8 54 H30', role: 'ambient' },
+    KAKU_WIND,
     { d: 'M100 50 l6 -4 M104 58 l6 -4', role: 'ambient' },
     shadow(82, 170, 72),
   ],
@@ -384,57 +411,52 @@ export const waterSevenArt = {
     shadow(76, 166, 62),
   ],
 
-  // Her narrow rimless glasses, folded and lying flat on the closed blue
-  // binder she holds when she tells Iceburg about Dock One (230, and in the
-  // manga at 325 and 326). The binder in 3/4 with leather caps on two
-  // corners, the paper between its covers and the spine hatched. The lenses
-  // are the accent, the temples folded flat behind them.
+  // Kalifa's rimless glasses on a half-open binder, the paperwork she
+  // brings Iceburg at Dock One (230, ch. 325).
   'kalifa': [
-    { d: 'M8 126 L96 152 L152 120 L64 94 Z' },
-    { d: 'M8 126 V140 L96 166 L152 134 V120 M96 152 V166' },
-    { d: 'M10 131.5 L96 157 M10 135 L96 160.5', role: 'soft' },
+    { d: 'M17 74 L79 51 L146 78 L143 150 L80 158 L21 174 Z M79 51 L80 158' },
     {
-      d: 'M104 158 l5 -8 M115 152 l5 -8 M126 146 l5 -8 M137 140 l5 -8 M147 134 l4 -6.4',
+      d: 'M17 74 L12 72 L16 174 L21 174 M80 158 L142 156 L143 150',
+      role: 'soft',
+    },
+    {
+      d: 'M24 79 L70 62 L71 147 L28 158 Z M29 85 L65 72 M30 92 L60 81 M34 139 L65 131',
+      role: 'soft',
+    },
+    {
+      d: 'M88 62 L140 82 L137 142 L88 148 Z M94 73 L134 88 M93 82 L130 96 M93 129 L130 124',
+      role: 'soft',
+    },
+    {
+      d: 'M72 75 q-8 -5 -9 1 q1 6 9 4 M74 116 q-8 -5 -9 1 q1 6 9 4 M80 93 l6 -5 M80 103 l6 -5 M80 113 l6 -5',
       role: 'ambient',
     },
     {
-      d: 'M82.6 148 Q96 143.4 108.2 145.1 M138.6 116 Q135.6 121.4 139.8 126.9',
-    },
-    {
-      d: 'M39.8 117 L73.9 123 Q76.8 123.5 74.1 125.6 L68.2 128.8 Q59.1 133.2 44.8 130.7 Q29.2 128 32.6 122.6 Z M125.2 132 L91 126 Q88.2 125.5 85.5 127.6 L82.4 131.4 Q79 136.7 93.3 139.3 Q108.9 142 118 137.6 Z',
+      d: 'M40 62 Q51 57 64 57 L73 60 Q72 67 63 71 L49 73 Q39 71 40 62 Z M84 62 Q94 60 105 63 L119 69 Q116 77 105 78 L94 77 Q83 74 84 62 Z M73 61 q5 -4 11 2',
       role: 'accent',
     },
-    { d: 'M75 124.9 Q84.3 123.1 86.4 126.9' },
-    {
-      d: 'M38.9 117.7 L49.4 113.5 L123.4 126.6 M124.3 132.7 L130.8 123.6 L59.6 111',
-    },
-    shadow(80, 176, 66),
+    { d: 'M42 61 L54 54 L70 56 M119 69 L124 64 L106 57', role: 'soft' },
+    shadow(81, 185, 66),
   ],
 
-  // The counter of his bar in downtown Water Seven (339, 240), seen from its
-  // corner with the far end hatched: the glass he polishes with the cloth
-  // draped over its rim, the bottles on the shelf behind him and one of the
-  // stools along the front. The glass is the accent.
+  // The corner of Blueno's counter in Water Seven (240, ch. 339).
+  // The glass he polishes stands above the front, with cloth over its rim.
   'blueno': [
-    { d: 'M30 40 H134', role: 'ambient' },
+    { d: 'M8 104 H125 L152 86 H35 Z' },
+    { d: 'M8 104 V162 H125 V104 M125 162 L152 143 V86' },
+    BLUENO_TRIM,
+    { d: 'M132 151 V108 M141 145 V102 M147 138 V100', role: 'ambient' },
     {
-      d: 'M38 40 v-14 q0 -5 4 -7 v-8 h4 v8 q4 2 4 7 v14 M56 40 v-18 q0 -5 4 -7 v-8 h4 v8 q4 2 4 7 v18 M114 40 v-12 q0 -5 4 -7 v-8 h4 v8 q4 2 4 7 v12',
-    },
-    { d: 'M20 100 L124 100 L148 86 L44 86 Z' },
-    { d: 'M20 100 V126 M20 138 V148 H124 V100 M124 148 L148 134 V86' },
-    { d: 'M20 106 H124 L148 92 M56 112 V142 M90 112 V142', role: 'soft' },
-    { d: 'M131 141 V104 M140 136 V99', role: 'ambient' },
-    {
-      d: `${ellipse(84, 60, 12, 4)} M72 60 L75 92 q9 3 18 0 L96 60`,
+      d: 'M98 49 C95 37 49 37 46 49 C44 59 96 61 98 49 M46 49 L53 94 Q73 103 91 93 L98 49',
       role: 'accent',
     },
+    { d: 'M54 60 L59 86 M61 92 Q73 96 85 92', role: 'soft' },
     {
-      d: 'M76 58 q7 -9 17 -5 q8 3 10 10 L109 86 l-4 4 l-3 -4 l-4 4 l-3 -4 L96 62 M101 66 L104 84',
+      d: 'M56 51 Q66 34 80 37 Q101 38 105 54 L116 87 L108 92 L105 87 L100 90 L94 65 L89 49 Q79 43 73 52 M103 62 l7 22',
       role: 'soft',
     },
-    { d: 'M73 95 q11 4 22 0', role: 'ambient', dashed: true },
-    { d: `${ellipse(22, 132, 15, 5)} M22 137 V176 M12 178 h20` },
-    shadow(84, 186, 68),
+    { d: 'M49 97 q23 10 46 0', role: 'ambient', dashed: true },
+    shadow(80, 176, 72),
   ],
 
   // Their katanas, lying one above the other in 3/4: one drawn, its curved
@@ -1384,7 +1406,7 @@ export const waterSevenArt = {
 const HAT_ASIDE = 'translate(-8 34) scale(0.72)'
 
 /** The CP0 mask, drawn level and stood on its edge against the hat's brim. */
-const MASK_LEAN = 'translate(128 146) rotate(-10) scale(1.1)'
+const MASK_LEAN = 'translate(130 149) rotate(-10) scale(1)'
 
 /** Franky's fist on the forearm of the two years, from 517. */
 const FRANKY_FIST: Stroke[] = [
@@ -1434,7 +1456,6 @@ const FRANKY_BOX_ARM: Stroke[] = [
 /** Kaku's roof without the cap: the house, its tiles, the wind, the shadow. */
 const KAKU_ROOF: Stroke[] = [
   ...waterSevenArt.kaku.slice(0, 5),
-  ...waterSevenArt.kaku.slice(7, 8),
   ...waterSevenArt.kaku.slice(9),
 ]
 
@@ -1486,6 +1507,71 @@ const KAKU_MASK: Stroke[] = [
     d: 'M-8 21 C-12 29 -4 35 -9 45 C-13 53 -5 57 -6 64 M1 21 C-2 30 6 38 1 48 C-3 56 4 62 2 68 M9 21 C12 28 6 34 9 42',
     role: 'soft',
   },
+]
+
+// Leave room for the next stage's identifying mark to take the tint.
+function plainInk(drawing: Stroke[], omit?: Stroke): Stroke[] {
+  const strokes: Stroke[] = []
+  for (const stroke of drawing) {
+    if (stroke !== omit) {
+      strokes.push(
+        stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke,
+      )
+    }
+  }
+  return strokes
+}
+
+/** The spotted neck, with two ossicones and no face, behind the ridge. */
+const KAKU_GIRAFFE: Stroke[] = [
+  {
+    d: 'M43 73 Q48 52 39 31 Q34 25 36 20 L34 12 Q31 7 36 6 Q40 5 41 11 L44 17 L49 17 L49 9 Q49 4 53 4 Q58 4 56 10 L56 19 Q63 22 59 29 Q65 46 65 68',
+  },
+  {
+    d: 'M42 29 l6 -3 7 5 -3 7 -7 -1 Z M48 44 l7 -4 5 5 -2 7 -8 1 Z M51 59 l6 -3 4 4 -3 6 -8 1 Z',
+    role: 'accent',
+  },
+  { d: 'M54 23 q5 9 8 19 M58 56 v5', role: 'soft' },
+]
+
+/** The cap darkened when Kaku unmasks in Iceburg's room (243, ch. 345). */
+const KAKU_CP9: Stroke[] = [
+  ...waterSevenArt.kaku,
+  {
+    d: 'M75 67 l8 -5.3 M87 66 l8 -5.3 M99 65 l8 -5.3 M75 57 l8 -5.3 M87 57 l8 -5.3 M80 48 l8 -5.3 M92 46 l6 -4 M114 68.5 l3 -5 M120 68.5 l3 -5',
+    role: 'ambient',
+  },
+]
+
+/** The Lucci hat and Hattori moved aside for the mask compositions. */
+const LUCCI_HAT_ASIDE = moved(
+  waterSevenArt['rob-lucci'].slice(0, -1),
+  HAT_ASIDE,
+)
+
+/** Lucci's leopard forepaw, the spotted wrist descending to the hat brim. */
+const LUCCI_PAW: Stroke[] = [
+  {
+    d: 'M49 36 Q50 25 60 21 Q79 17 97 27 Q110 34 109 43 C107 56 97 65 96 81 L97 108 Q102 114 99 121 Q97 126 91 126 Q87 132 81 127 Q76 132 70 127 Q63 130 58 124 Q52 123 51 117 Q51 111 58 107 L61 83 Q62 68 54 59 Q45 48 49 36 Z',
+  },
+  {
+    d: 'M58 123 q-2 7 -7 9 q1 -6 3 -10 M71 127 q-1 7 -6 9 q0 -6 2 -9 M82 128 q2 6 -3 10 q-1 -5 -1 -9 M93 126 q4 4 0 10 q-2 -5 -4 -8',
+    role: 'soft',
+  },
+  {
+    d: 'M56 41 q2 -6 8 -4 q4 5 -2 9 q-5 1 -6 -5 Z M76 29 q7 -2 9 3 q-1 5 -8 5 q-4 -2 -1 -8 Z M89 47 q4 -6 9 -1 q2 5 -4 8 q-6 0 -5 -7 Z M68 58 q3 -5 8 -3 q4 5 -1 9 q-7 2 -7 -6 Z M81 75 q4 -6 8 -1 q2 6 -4 8 q-5 0 -4 -7 Z M67 94 q4 -6 8 -2 q2 6 -3 8 q-5 0 -5 -6 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M92 85 l-4 16 M65 111 q-5 3 -5 9 M77 113 q-4 3 -3 9 M88 112 q-3 4 -2 9',
+    role: 'ambient',
+  },
+]
+
+/** The lower hat and spotted forepaw from Lucci's first transformation. */
+const LUCCI_LEOPARD = [
+  ...LUCCI_HAT_ASIDE.slice(0, 5),
+  ...moved(LUCCI_PAW, 'translate(39 45) scale(0.68)'),
 ]
 
 /** Hattori's top hat, drawn about its brim's centre, perched on his head. */
@@ -1585,6 +1671,109 @@ const OHARA_BOOKS: Stroke[] = waterSevenArt['nico-olvia'].slice(0, 4)
 
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const waterSevenRedrawn: Redrawings = {
+  'foxy': [
+    {
+      // The Slow-Slow Beam first slows the Donut Race boat (210, ch. 308).
+      // The dotted ray holds the bow wave in staggered outlines.
+      episode: 210,
+      chapter: 308,
+      value: [
+        ...plainInk(waterSevenArt.foxy),
+        {
+          d: dots([
+            [137, 96],
+            [142, 105],
+            [146, 115],
+            [148, 126],
+            [149, 138],
+          ]),
+          role: 'accent',
+        },
+        {
+          d: 'M102 150 Q114 146 125 151 Q137 157 151 145 M108 157 Q119 153 131 158 Q143 163 157 152 M115 164 Q126 160 136 164 Q147 170 159 159',
+          role: 'soft',
+        },
+      ],
+    },
+  ],
+  'kokoro': [
+    {
+      // The forked tail as Kokoro dives to save the others (306, ch. 423).
+      episode: 306,
+      chapter: 423,
+      value: [
+        ...moved(
+          waterSevenArt.kokoro.slice(0, -1),
+          'translate(-16 54) scale(0.72)',
+        ),
+        {
+          d: 'M80 159 C88 146 109 150 118 136 Q128 122 117 107 C106 96 103 81 108 64 Q117 72 124 90 Q133 72 152 65 C151 82 139 94 132 105 C147 130 135 151 111 161',
+        },
+        {
+          d: 'M114 79 q4 10 10 17 M144 76 q-8 11 -16 20 M123 117 q9 16 -8 28',
+          role: 'soft',
+        },
+        { d: 'M118 148 l8 -6 M113 153 l9 -5', role: 'ambient' },
+        {
+          d: 'M69 167 Q79 160 91 165 T114 165 T137 165 T160 165 M74 179 Q86 172 97 177 T120 177 T143 177 T166 177',
+          role: 'ambient',
+        },
+        shadow(42, 188, 32),
+      ],
+    },
+  ],
+  'kalifa': [
+    {
+      // The thorn whip she used in the raid, now identified as hers when
+      // the agents unmask (243, ch. 345).
+      episode: 243,
+      chapter: 345,
+      value: [
+        ...plainInk(waterSevenArt.kalifa),
+        {
+          d: 'M25 153 L48 156 M47 155 C53 158 51 172 64 170 C81 166 76 144 95 140 C111 136 138 148 144 133 C149 121 137 112 124 117 C112 121 112 130 121 130 M64 170 l3 6 M77 151 l-5 -3 M92 141 l-1 -6 M109 141 l2 5 M130 143 l2 5 M145 127 l6 -2 M133 115 l2 -6',
+          role: 'accent',
+        },
+      ],
+    },
+    {
+      // Bubbles and a smooth sheen mark what she does to Sanji
+      // (287, ch. 403), before she names the fruit.
+      episode: 287,
+      chapter: 403,
+      value: [
+        ...plainInk(waterSevenArt.kalifa),
+        {
+          d: `${circle(38, 37, 12)} ${circle(78, 22, 16)} ${circle(114, 31, 9)} ${circle(139, 14, 6)}`,
+          role: 'accent',
+        },
+        {
+          d: 'M31 36 q0 -5 6 -6 M69 22 q0 -8 7 -9 M110 30 q0 -3 4 -4 M55 66 l7 -3 M98 74 l8 -3',
+          role: 'soft',
+        },
+      ],
+    },
+  ],
+  'blueno': [
+    {
+      // The door in a solid surface marks the power he explains during
+      // the mansion raid, attributed to him on unmasking (243, ch. 345).
+      episode: 243,
+      chapter: 345,
+      value: [
+        ...plainInk(waterSevenArt.blueno, BLUENO_TRIM),
+        { d: 'M8 111 H125 L152 93 M11 155 H41 M96 155 H121', role: 'soft' },
+        {
+          d: 'M42 157 V130 Q66 109 94 130 V157 Z M42 130 L17 117 V151 L42 157',
+          role: 'accent',
+        },
+        {
+          d: 'M94 131 L89 135 V152 H44 M21 122 V147 L36 151 M24 136 h5',
+          role: 'soft',
+        },
+      ],
+    },
+  ],
   // The forearm of the two years: a great box seen from its corner, the star
   // split by the edge and folded onto the far face, which is hatched; the
   // studded fist on top and the elbow hinge with its bolt below. The wrench
@@ -1664,18 +1853,35 @@ export const waterSevenRedrawn: Redrawings = {
       ],
     },
   ],
-  // The same top hat with the pigeon on its brim, moved aside and made
-  // smaller, and the white half-mask of CP0 stood beside it: the eye band
-  // with its two slits and the markings that curve beneath them. He is first
-  // seen wearing it in 746 (ch. 801), on Dressrosa after Doflamingo's fall.
   'rob-lucci': [
     {
+      // His bull mask from the raid, laid beside the hat once he unmasks
+      // in Iceburg's room (243, ch. 345).
+      episode: 243,
+      chapter: 345,
+      value: [
+        ...plainInk(LUCCI_HAT_ASIDE),
+        {
+          d: 'M111 131 C102 124 98 111 101 102 Q106 113 118 116 Q127 111 137 116 Q149 113 155 102 Q158 123 144 131 L138 151 Q127 162 116 151 Z',
+          role: 'accent',
+        },
+        { d: 'M116 132 L121 144 M139 132 L134 145', role: 'soft' },
+        shadow(80, 166, 70),
+      ],
+    },
+    {
+      // The silhouette of his leopard transformation (245, ch. 348).
+      episode: 245,
+      chapter: 348,
+      value: [...LUCCI_LEOPARD, shadow(80, 166, 70)],
+    },
+    {
+      // His white CP0 half-mask beside the hat and leopard paw, first
+      // worn on Dressrosa after Doflamingo falls (746, ch. 801).
       episode: 746,
       chapter: 801,
       value: [
-        ...waterSevenArt['rob-lucci']
-          .slice(0, -1)
-          .map((stroke) => ({ ...stroke, transform: HAT_ASIDE })),
+        ...plainInk(LUCCI_LEOPARD),
         {
           d: 'M-24 -8 Q0 -17 24 -8 L22 6 Q14 12 6 8 L0 2 L-6 8 Q-14 12 -22 6 Z',
           transform: MASK_LEAN,
@@ -1689,6 +1895,24 @@ export const waterSevenRedrawn: Redrawings = {
           d: 'M-16 4 q4 4 9 1 M16 4 q-4 4 -9 1',
           role: 'accent',
           transform: MASK_LEAN,
+        },
+        shadow(80, 166, 70),
+      ],
+    },
+    {
+      // Dark awakening clouds curl off the leopard arm on Egghead
+      // (1100, ch. 1069).
+      episode: 1100,
+      chapter: 1069,
+      value: [
+        ...plainInk(LUCCI_LEOPARD),
+        {
+          d: 'M78 56 C57 53 52 40 62 34 C68 31 72 38 68 41 C77 43 78 27 89 23 C100 19 112 26 119 31 C128 37 134 31 131 25 C146 28 146 42 136 49 C126 56 117 47 107 48 C102 49 99 54 101 60',
+          role: 'accent',
+        },
+        {
+          d: 'M60 42 q2 7 10 9 M90 29 q7 -2 13 0 M128 43 q5 -1 7 -5',
+          role: 'ambient',
         },
         shadow(80, 166, 70),
       ],
@@ -1717,41 +1941,46 @@ export const waterSevenRedrawn: Redrawings = {
       ],
     },
   ],
-  // The same roof, the cap on its ridge now black, hatched inside its
-  // outline. It is black from the moment he takes off the skull mask and
-  // shows he is CP9 (243, ch. 345).
   'kaku': [
+    { episode: 243, chapter: 345, value: KAKU_CP9 },
     {
-      episode: 243,
-      chapter: 345,
-      value: [
-        ...waterSevenArt.kaku,
-        {
-          d: 'M75 67 l8 -5.3 M87 66 l8 -5.3 M99 65 l8 -5.3 M75 57 l8 -5.3 M87 57 l8 -5.3 M80 48 l8 -5.3 M92 46 l6 -4 M114 68.5 l3 -5 M120 68.5 l3 -5',
-          role: 'ambient',
-        },
-      ],
+      // The giraffe from the fight with Zoro (286, ch. 401).
+      episode: 286,
+      chapter: 401,
+      value: [...KAKU_GIRAFFE, ...plainInk(KAKU_CP9, KAKU_WIND)],
     },
-    // The white top hat of CP0 on the ridge where the cap was: a squat
-    // crown, the brim turned up all round, no band. He wears it at the
-    // Reverie (886, ch. 907).
-    { episode: 886, chapter: 907, value: KAKU_TOP_HAT },
-    // The roof and the hat moved aside and made smaller, and the CP0 mask
-    // leaning against the end of the house, its beard hanging to the
-    // ground. He wears it under the hat on Egghead from 1098 (ch. 1067).
     {
+      // The white CP0 top hat replaces the cap at the Reverie (886, ch. 907).
+      episode: 886,
+      chapter: 907,
+      value: [...KAKU_GIRAFFE, ...plainInk(KAKU_TOP_HAT)],
+    },
+    {
+      // The bearded CP0 mask beside the hat on Egghead (1098, ch. 1067).
       episode: 1098,
       chapter: 1067,
       value: [
         ...moved(
-          // The hat gives the accent up to the mask's slot.
-          KAKU_TOP_HAT.map((stroke) =>
-            stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke,
-          ),
+          plainInk([...KAKU_GIRAFFE, ...KAKU_TOP_HAT]),
           'translate(0 40) scale(0.74)',
         ),
         ...moved(KAKU_MASK, 'translate(136 105.4) rotate(-6) scale(0.85)'),
         shadow(142, 172, 14),
+      ],
+    },
+    {
+      // The awakened neck stretches down from the ossicones, a mane of
+      // dark flames along its back (1104, ch. 1072).
+      episode: 1104,
+      chapter: 1072,
+      value: [
+        ...moved(plainInk(KAKU_GIRAFFE), 'translate(9 0) scale(0.8 1.39)'),
+        {
+          d: 'M54 43 C43 38 38 29 40 24 C30 32 31 41 37 48 C26 46 24 39 24 36 C17 45 23 56 36 61 C28 61 26 58 24 56 C24 66 33 74 45 74 C38 77 32 74 28 72 C30 84 41 88 50 87',
+          role: 'accent',
+        },
+        { d: 'M31 51 l13 7 M31 65 l14 5 M37 79 l11 3', role: 'ambient' },
+        ...moved(plainInk(KAKU_TOP_HAT), 'translate(0 26)'),
       ],
     },
   ],

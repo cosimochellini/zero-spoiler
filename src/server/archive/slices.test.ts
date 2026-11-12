@@ -994,18 +994,21 @@ describe('a record drawn again later in the story', () => {
   it('sets the CP0 mask beside Lucci’s hat only from episode 746', () => {
     const lucci = filed('rob-lucci')
     const hat = DRAWINGS['rob-lucci']
-    const masked = REDRAWINGS['rob-lucci']?.[0]
+    const stages = REDRAWINGS['rob-lucci']!
+    const leopard = stages.find(({ episode }) => episode === 245)!
+    const masked = stages.find(({ episode }) => episode === 746)!
     const drawnAt = (bookmark: Bookmark | null): Stroke[] =>
       characterOf(lucci, readerFor(bookmark, 'en')).visual.strokes
 
-    expect(masked?.episode).toBe(746)
+    expect(leopard.chapter).toBe(348)
+    expect(masked.chapter).toBe(801)
 
-    expect(drawnAt(ep(745))).toBe(hat)
-    expect(drawnAt(ep(746))).toBe(masked?.value)
+    expect(drawnAt(ep(745))).toBe(leopard.value)
+    expect(drawnAt(ep(746))).toBe(masked.value)
     expect(drawnAt(null)).toBe(hat)
     // The manga shows him in the mask of CP0 in chapter 801, no earlier.
-    expect(drawnAt({ mode: 'chapter', chapter: 800 })).toBe(hat)
-    expect(drawnAt({ mode: 'chapter', chapter: 801 })).toBe(masked?.value)
+    expect(drawnAt({ mode: 'chapter', chapter: 800 })).toBe(leopard.value)
+    expect(drawnAt({ mode: 'chapter', chapter: 801 })).toBe(masked.value)
   })
 
   it('gives Momonosuke the whole grown dragon only from episode 1047', () => {
