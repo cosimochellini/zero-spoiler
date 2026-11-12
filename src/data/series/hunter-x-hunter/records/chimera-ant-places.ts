@@ -2,14 +2,15 @@ import type { PlaceDossier } from '~/data/types'
 
 import type { HunterEntity, HunterVocabulary } from './saga'
 
+// Named in chapter 188, the chapter titled after it, and episode 78, as
+// Kite's team works out where the ant came ashore: a place opens at its first
+// explicit naming signal, before the visit (#1230). The party crosses into it
+// in chapter 189 / episode 79.
 const NGL_RECORD: HunterEntity = {
   id: 'ngl',
   kind: 'place',
-  revealedAtEpisode: 79,
-  revealedAtChapter: 189,
-  // Banana and Spinner name it in episode 78, as the team works out where
-  // the ant came ashore.
-  nameSaidAt: 78,
+  revealedAtEpisode: 78,
+  revealedAtChapter: 188,
   name: { it: 'NGL', en: 'NGL' },
   summary: {
     it: 'Nel paese di Neo-Green Life non si entra con macchine o dispositivi elettronici.',
@@ -377,8 +378,8 @@ export const CHIMERA_ANT_PLACES: Record<
       en: 'The two hollow trees at the border',
     },
     log: {
-      it: 'I funzionari controllano chi entra al confine. Oltre il posto di controllo, la squadra prosegue a cavallo.',
-      en: 'Officials screen visitors at the border. Beyond the checkpoint, the party continues on horseback.',
+      it: 'Se ne parla quando il gruppo di Kaito cerca il punto in cui la formica è arrivata a riva. I suoi abitanti hanno scelto di vivere nella natura.',
+      en: 'It comes up when Kite’s group works out where the ant came ashore. Its people have chosen to live in nature.',
     },
     filedHere: [],
   },

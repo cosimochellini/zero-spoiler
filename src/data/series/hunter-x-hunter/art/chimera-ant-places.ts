@@ -34,8 +34,11 @@ const PALACE_TOWER_TOP: Stroke[] = [
 
 export const CHIMERA_ANT_PLACE_DRAWINGS = {
   // The two great hollow trees that hold the border stop, a doorway cut
-  // into each trunk, the far sides hatched, the crowns in tint: where Kite's
-  // group is screened before it enters NGL, episode 79 / chapter 189.
+  // into each trunk, the far sides hatched, the crowns in tint: the driver
+  // points them out at the end of chapter 188, and episode 79 shows them as
+  // Kite's group is screened before it enters NGL. The record opens at
+  // episode 78 / chapter 188, so the anime's readers get the arc's landmark
+  // one episode early, as a first drawing may (#1230).
   'ngl': [
     { d: 'M4 150 Q20 148 24 130 L28 78 M90 150 Q72 148 68 130 L66 78' },
     {

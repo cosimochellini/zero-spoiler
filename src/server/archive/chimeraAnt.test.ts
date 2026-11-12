@@ -38,7 +38,7 @@ const RECORDS: Row[] = [
   { id: 'banana-kavaro', episode: 77, chapter: 186, place: false },
   { id: 'monta-yuras', episode: 77, chapter: 186, place: false },
   { id: 'stick-dinner', episode: 77, chapter: 186, place: false },
-  { id: 'ngl', episode: 79, chapter: 189, place: true },
+  { id: 'ngl', episode: 78, chapter: 188, place: true },
   { id: 'neferpitou', episode: 84, chapter: 198, place: false },
 ]
 /**
