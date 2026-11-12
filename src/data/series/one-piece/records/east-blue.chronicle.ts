@@ -67,6 +67,17 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 73,
+      chapter: 120,
+      value: {
+        title: { it: 'Il duello truccato', en: 'The duel is rigged' },
+        body: {
+          it: 'Rufy cerca di impedire a [[dorry|Dori]], ancora ferito, di tornare a combattere. Il gigante lo blocca sotto una roccia e va lo stesso al duello. [[mr-3|Mr. Three]] fa scivolare Dori e dà a [[brogy|Brogi]] l’occasione di colpirlo. Rufy grida quando Dori cade. Mentre Brogi piange per la vittoria, Mr. Three gli blocca i piedi nella cera.',
+          en: 'Luffy tries to stop [[dorry|Dorry]] from going back to his duel while he is still injured. The giant pins him under a rock and goes to fight anyway. [[mr-3|Mr. 3]] makes Dorry slip, giving [[brogy|Brogy]] an opening to strike. Luffy shouts when Dorry falls. As Brogy weeps over his victory, Mr. 3 traps his feet in wax.',
+        },
+      },
+    },
+    {
       episode: 111,
       value: {
         title: {
@@ -227,6 +238,28 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 413,
+      chapter: 519,
+      value: {
+        title: { it: 'La statua nell’arena', en: 'The statue in the arena' },
+        body: {
+          it: 'Nell’arena di Amazon Lily, una delle sorelle solleva [[marguerite|Margaret]], trasformata in pietra, e minaccia di farla a pezzi. Rufy le grida di fermarsi. Diversi spettatori perdono i sensi e la statua finisce a terra ancora intatta. Lui non capisce che cosa ha appena fatto.',
+          en: 'In the arena on Amazon Lily, one of the sisters lifts the petrified [[marguerite|Marguerite]] and threatens to smash her. Luffy shouts for her to stop. Several spectators lose consciousness, and the statue comes to rest on the floor intact. He has no idea what he has just done.',
+        },
+      },
+    },
+    {
+      episode: 435,
+      chapter: 534,
+      value: {
+        title: { it: 'Veleno sui pugni', en: 'Poison on his fists' },
+        body: {
+          it: 'A Impel Down, [[magellan|Magellan]] blocca il passaggio a Rufy. [[bon-clay|Mr. Two Bon Kure]] lo avverte che basta toccare il direttore per essere avvelenati. Rufy si rifiuta di tornare indietro finché [[portgas-d-ace|Ace]] è ancora nella prigione. Colpisce Magellan, ma il veleno gli resta sui pugni.',
+          en: '[[magellan|Magellan]] blocks Luffy’s way through Impel Down. [[bon-clay|Bon Clay]] warns him that touching the warden will poison him. Luffy refuses to turn back while [[portgas-d-ace|Ace]] is still in the prison. He lands a blow on Magellan, but the poison sticks to his fists.',
+        },
+      },
+    },
+    {
       episode: 479,
       value: {
         title: {
@@ -249,6 +282,20 @@ export const eastBlueChronicles = {
         body: {
           it: 'Rufy ha attraversato Impel Down e tutta Marineford per questo: le catene sono spezzate, [[portgas-d-ace|Ace]] è libero, e per un momento i due fratelli combattono spalla a spalla. Poi l’ammiraglio [[sakazuki|Akainu]] insulta [[edward-newgate|Barbabianca]], Ace si volta per rispondere e Rufy, sfinito, inciampa. Ace si getta in mezzo, e un pugno di magma gli passa attraverso il petto. Cade tra le braccia di Rufy. Con quel che gli resta di voce ringrazia il fratello, e tutti quelli che gli hanno voluto bene, per averlo amato. [[jinbe|Jinbe]] si pianta davanti a loro per trattenere Akainu. Rufy urla.',
           en: 'Luffy has crossed Impel Down and the whole of Marineford for this: the shackles are broken, [[portgas-d-ace|Ace]] is free, and for a moment the two brothers fight back to back. Then Admiral [[sakazuki|Akainu]] insults [[edward-newgate|Whitebeard]], Ace turns to answer, and Luffy, exhausted, stumbles. Ace throws himself between them, and a fist of magma goes through his chest. He falls into Luffy’s arms. With the last of his voice he thanks his brother, and everyone who cared for him, for loving him. [[jinbe|Jinbe]] plants himself over them to hold Akainu back. Luffy screams.',
+        },
+      },
+    },
+    {
+      episode: 491,
+      chapter: 582,
+      value: {
+        title: {
+          it: 'Il risveglio ad Amazon Lily',
+          en: 'Waking on Amazon Lily',
+        },
+        body: {
+          it: 'Rufy si sveglia ad Amazon Lily e chiama [[portgas-d-ace|Ace]]. Cerca di convincersi che la battaglia fosse un sogno, ma ricorda quello che è successo a Marineford. Devasta la foresta finché [[jinbe|Jinbe]] lo trova e gli dice che la guerra è finita. Rufy scoppia a piangere quando accetta che Ace è morto.',
+          en: 'Luffy wakes on Amazon Lily and calls for [[portgas-d-ace|Ace]]. He tries to believe the battle was a dream, but what happened at Marineford comes back to him. He tears through the forest until [[jinbe|Jinbe]] finds him and tells him the war is over. Luffy breaks down as he accepts that Ace died.',
         },
       },
     },
@@ -311,6 +358,31 @@ export const eastBlueChronicles = {
         body: {
           it: '[[trafalgar-law|Law]] dice di aver trovato il modo di abbattere uno dei quattro Imperatori, e che gli serve un socio. Rufy chiede quale Imperatore, sente la risposta e accetta seduta stante. La ciurma protesta; solo [[nico-robin|Robin]] lo appoggia, e lo avverte che le alleanze fra pirati finiscono con un tradimento. Rufy chiede a Law senza giri se li tradirà, si accontenta del no e dice alla ciurma, nonostante le proteste di [[usopp|Usop]], che due anni di allenamento gli hanno dato persone di cui può fidarsi. Il primo lavoro è prendere vivo [[caesar-clown|Caesar Clown]].',
           en: '[[trafalgar-law|Law]] says he has found a way to bring down one of the four Emperors, and that he needs a partner for it. Luffy asks which Emperor, hears the answer and agrees on the spot. The crew object; only [[nico-robin|Robin]] backs him, and warns him that alliances between pirates end in betrayal. Luffy asks Law straight out whether he will betray them, takes no for an answer, and tells his crew, over [[usopp|Usopp]]’s objections, that two years of training bought him people he can rely on. The first job is to take [[caesar-clown|Caesar Clown]] alive.',
+        },
+      },
+    },
+    {
+      episode: 607,
+      chapter: 681,
+      value: {
+        title: { it: 'Il muro di neve', en: 'The wall of snow' },
+        body: {
+          it: 'A Punk Hazard, Rufy mette [[caesar-clown|Caesar Clown]] alle strette nel laboratorio. Quando Caesar sottrae l’aria, Rufy esce dalla sua portata e lo attacca da lontano. Prima che riesca a chiudere lo scontro, [[monet|Monet]] alza un muro di neve fra i due. Caesar fugge mentre lei sbarra la strada a Rufy.',
+          en: 'Luffy corners [[caesar-clown|Caesar Clown]] in the laboratory on Punk Hazard. When Caesar draws the air away, Luffy moves out of reach and attacks from a distance. Before he can finish the fight, [[monet|Monet]] puts a wall of snow between them. Caesar gets away while she blocks Luffy’s path.',
+        },
+      },
+    },
+    {
+      episode: 618,
+      chapter: 692,
+      value: {
+        title: {
+          it: 'Caesar oltre il portone',
+          en: 'Caesar goes through the gate',
+        },
+        body: {
+          it: '[[caesar-clown|Caesar Clown]] chiede pietà e offre a Rufy un posto nella sua organizzazione. Rufy lo colpisce allo stomaco e lo scaglia oltre il portone che dà sul passaggio di fuga. Quando [[trafalgar-law|Law]] gli chiede dov’è Caesar, Rufy indica il corridoio. Law gli ricorda che erano venuti per catturarlo.',
+          en: '[[caesar-clown|Caesar Clown]] begs for mercy and offers Luffy a place in his operation. Luffy strikes him in the stomach and sends him flying through the gate to the escape passage. When [[trafalgar-law|Law]] asks where Caesar is, Luffy points down the corridor. Law reminds him they came to capture Caesar.',
         },
       },
     },
@@ -587,6 +659,20 @@ export const eastBlueChronicles = {
         body: {
           it: 'Zoro è il primo della ciurma a farsi vivo a Sabaody, esattamente due anni dopo la separazione. Mentre aspetta gli altri, un impostore con le sue stesse tre spade gira per l’arcipelago spacciandosi per lui, parte di una banda che ha rubato il nome della ciurma intera per arruolare pirati. Quando la Marina piomba sul raduno con un’arma alta il triplo di un uomo, la truffa crolla e il falso Zoro scappa terrorizzato. Il vero Zoro, ritrovato [[monkey-d-luffy|Rufy]], abbatte insieme a [[sanji|Sanji]] quell’arma prima che i tre tornino dal resto della ciurma.',
           en: 'Zoro is the first of the crew to show up at Sabaody, exactly two years after they scattered. While he waits for the others, an impostor carrying his same three swords works the archipelago pretending to be him, part of a gang that stole the whole crew’s name to recruit pirates. When the Marines descend on the gathering with a weapon three times a man’s height, the fraud collapses and the fake Zoro bolts in terror. The real Zoro, reunited with [[monkey-d-luffy|Luffy]], brings that same weapon down alongside [[sanji|Sanji]] before the three head back to the rest of the crew.',
+        },
+      },
+    },
+    {
+      episode: 538,
+      chapter: 619,
+      value: {
+        title: {
+          it: 'In trappola al Palazzo Ryugu',
+          en: 'Trapped in Ryugu Palace',
+        },
+        body: {
+          it: 'Dopo aver ferito [[hody-jones|Hody Jones]] sott’acqua, Zoro cerca di uscire dal palazzo con l’aiuto di [[neptune|Nettuno]]. Il re apre una via di fuga per le sue guardie. Hody è ancora a terra quando uno dei suoi gli dà una pillola. Si rialza e sbarra la via a Nettuno. Le guardie riescono a uscire, ma Zoro e il re vengono fatti prigionieri.',
+          en: 'After cutting [[hody-jones|Hody Jones]] underwater, Zoro tries to escape the palace with [[neptune|Neptune]]’s help. The king opens an escape route for his guards. Hody is still down when one of his men gives him a pill. He gets back up and cuts off Neptune’s escape. The guards make it out, but Zoro and the king are taken prisoner.',
         },
       },
     },
@@ -958,6 +1044,17 @@ export const eastBlueChronicles = {
         body: {
           it: 'A Dressrosa i nani lo credono l’eroe venuto a salvarli, e lui glielo lascia credere, come sempre. Il piano è far mangiare a [[sugar|Sugar]] un frutto piccantissimo: se sviene, ogni giocattolo è libero, e i giocattoli un tempo erano persone dimenticate da chiunque le amasse. Il piano fallisce, i nani cadono e [[nico-robin|Nico Robin]] diventa un giocattolo. Usop scappa. Poi sente [[trebol|Trebol]] deriderli mentre loro continuano a credere in lui, torna indietro, confessa ogni bugia e attacca. Viene pestato. [[sugar|Sugar]] gli spinge il frutto in bocca, e la smorfia che gli deforma la faccia la spaventa a tal punto che sviene: in tutta l’isola i giocattoli tornano umani.',
           en: 'In Dressrosa the dwarves take him for the hero who has come to save them, and he lets them, as always. The plan is to make [[sugar|Sugar]] eat a searing-hot fruit: if she passes out, every toy is freed, and the toys were once people forgotten by all who loved them. The plan fails, the dwarves fall and [[nico-robin|Nico Robin]] becomes a toy. Usopp runs. Then he hears [[trebol|Trebol]] mock them while they still believe in him, turns back, confesses every lie and attacks. He is beaten flat. [[sugar|Sugar]] shoves the fruit into his mouth, and the grimace that twists his face frightens her so badly she faints: across the island, the toys turn human again.',
+        },
+      },
+    },
+    {
+      episode: 697,
+      chapter: 758,
+      value: {
+        title: { it: 'Un tiro verso il palazzo', en: 'A shot into the palace' },
+        body: {
+          it: 'Con [[viola|Viola]] a guidare la mira, Usop punta contro [[sugar|Sugar]] attraverso una finestra del palazzo. Lei sta per raggiungere [[monkey-d-luffy|Rufy]] e [[trafalgar-law|Law]]. Poco prima di tirare, Usop percepisce dove si trovano tutti e tre. Il suo tiro porta il disegno di [[kanjuro|Kanjuro]] che riproduce la faccia che ha già spaventato Sugar. Lei lo vede e perde di nuovo i sensi.',
+          en: 'With [[viola|Viola]] guiding his aim, Usopp lines up a shot at [[sugar|Sugar]] through a palace window. She is about to reach [[monkey-d-luffy|Luffy]] and [[trafalgar-law|Law]]. Just before he fires, he senses where all three are. His shot carries [[kanjuro|Kanjuro]]’s drawing of the face that frightened Sugar before. She sees it and passes out again.',
         },
       },
     },
@@ -1456,6 +1553,20 @@ export const eastBlueChronicles = {
         body: {
           it: 'Rapita e vestita da sposa da [[absalom|Absalom]], l’uomo invisibile che l’ha scelta come futura moglie, Nami si sveglia già davanti all’altare mentre lui recita i voti. Riesce a schivargli il bacio finché non arriva [[lola|Laura]], una sposa zombie convinta che Nami le abbia rubato il fidanzato: la interrompe furiosa, pronta a ucciderla. Absalom, esasperato, la respinge con un colpo di bazooka pur di proteggere la sua sposa, ma è un errore: Nami, ormai libera e furiosa per conto suo, lo abbatte con una scarica del suo bastone del tempo prima che possa finire la cerimonia.',
           en: 'Kidnapped and dressed as a bride by [[absalom|Absalom]], the invisible man who has picked her as his future wife, Nami wakes up already at the altar as he recites his vows. She dodges his kiss until [[lola|Lola]] arrives, a zombie bride convinced Nami stole her groom, and interrupts furiously, ready to kill her. Absalom, exasperated, blasts her away with a bazooka to protect his bride, but it’s a mistake: Nami, free by now and furious on her own account, knocks him out with a strike from her weather staff before he can finish the ceremony.',
+        },
+      },
+    },
+    {
+      episode: 387,
+      chapter: 492,
+      value: {
+        title: {
+          it: 'La promessa alla sirena',
+          en: 'A promise to the mermaid',
+        },
+        body: {
+          it: 'Nami scopre che il prigioniero che la ciurma è venuta a liberare è [[hatchan|Octy]], un ex membro della ciurma di [[arlong|Arlong]]. La sirena che ha chiesto il loro aiuto si tuffa e viene catturata. Nami chiede alla ciurma di salvare entrambi. Hanno dato la loro parola e lei non vede motivo di lasciare Octy in gabbia.',
+          en: 'Nami learns that the captive the crew has come to rescue is [[hatchan|Hatchan]], who once served under [[arlong|Arlong]]. The mermaid who asked for their help jumps overboard and is captured. Nami tells the crew to save both captives. They gave their word, and she sees no reason to leave Hatchan in his cage.',
         },
       },
     },

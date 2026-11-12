@@ -50,6 +50,20 @@ export const alabastaChronicles = {
       },
     },
     {
+      episode: 162,
+      chapter: 248,
+      value: {
+        title: {
+          it: 'Il fischietto sulla Going Merry',
+          en: 'The whistle on the Going Merry',
+        },
+        body: {
+          it: 'Chopper è solo sulla Going Merry quando un sacerdote arriva per ucciderlo. Suona il fischietto che gli ha dato [[gan-fall|Gan Foll]]. Il sacerdote incendia la nave con la lancia e dice a Chopper che deve pagare perché gli altri hanno lasciato l’altare. Prima che il sacerdote possa colpire di nuovo, Gan Foll arriva e affronta l’aggressore.',
+          en: 'Chopper is alone on the Going Merry when a priest comes to kill him. He blows the whistle [[gan-fall|Gan Fall]] gave him. The priest sets the ship alight with his lance and tells Chopper he must pay for the others leaving the altar. Before the priest can strike again, Gan Fall arrives and takes on the attacker himself.',
+        },
+      },
+    },
+    {
       episode: 172,
       value: {
         title: {
@@ -468,6 +482,17 @@ export const alabastaChronicles = {
         body: {
           it: 'Alla festa per la vittoria su [[hody-jones|Hody Jones]], Robin porta [[neptune|Nettuno]] in disparte e, appena lui smette di pensare che lei lo stia corteggiando, gli chiede chi fosse Joy Boy. Il re, di colpo sobrio, le racconta la leggenda tramandata nella sua famiglia: un uomo della superficie vissuto durante il Secolo Vuoto, che aveva scritto quel messaggio per la principessa sirena di allora, chiedendo scusa per una promessa non mantenuta. In cambio gli uomini pesce avevano giurato di proteggere Noah fino al giorno stabilito, quello in cui il suo vero scopo si sarebbe finalmente rivelato. Robin ascolta e capisce di aver trovato solo il primo pezzo.',
           en: "At the victory banquet after [[hody-jones|Hody Jones]]'s defeat, Robin pulls [[neptune|Neptune]] aside and, once he stops assuming she is coming on to him, asks him plainly who Joy Boy was. The king, suddenly sober, tells her the legend passed down in his family: a man from the surface who lived during the Void Century, who wrote that message to the mermaid princess of that age, apologising for a broken promise. In exchange, the merfolk had sworn to protect Noah until the appointed day, the one on which its true purpose would finally be revealed. Robin listens and realises she has only found the first piece.",
+        },
+      },
+    },
+    {
+      episode: 671,
+      chapter: 738,
+      value: {
+        title: { it: 'Un diversivo al porto', en: 'A diversion at the port' },
+        body: {
+          it: 'Robin ferma [[leo|Leo]] quando vede [[trebol|Trebol]] colpire una mosca fra gli occhi. Dice a Trebol che al porto ci sono dei pirati che vogliono parlare con un ufficiale. Lui va a controllare e i nani riescono a entrare nella torre. Quando si lanciano contro [[sugar|Sugar]], lei ne trasforma alcuni in giocattoli e ordina loro di attaccare gli altri.',
+          en: 'Robin stops [[leo|Leo]] when she sees [[trebol|Trebol]] shoot a fly between the eyes. She tells Trebol there are pirates at the port who demand to speak to an officer. He goes to investigate, giving the dwarves a chance to enter the tower. When they charge [[sugar|Sugar]], she turns some of them into toys and orders them to attack the others.',
         },
       },
     },

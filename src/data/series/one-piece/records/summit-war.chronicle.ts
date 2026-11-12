@@ -30,6 +30,17 @@ export const summitWarChronicles = {
       },
     },
     {
+      episode: 450,
+      chapter: 547,
+      value: {
+        title: { it: 'Una nave per la fuga', en: 'A warship for the escape' },
+        body: {
+          it: 'Jinbe aiuta [[crocodile|Crocodile]] a impadronirsi di una nave della Marina mentre i detenuti cercano di evadere da Impel Down. Le altre navi si preparano a sparare, ma Jinbe attacca dall’acqua per fermarle. Si mette in contatto con [[monkey-d-luffy|Rufy]] e gli dice di tuffarsi in mare quando arriva a riva.',
+          en: 'Jinbe helps [[crocodile|Crocodile]] seize a Marine warship while the prisoners try to escape from Impel Down. The other ships prepare to fire, but Jinbe attacks from the water to stop them. He makes contact with [[monkey-d-luffy|Luffy]] and tells him to jump into the sea when he reaches the shore.',
+        },
+      },
+    },
+    {
       episode: 466,
       chapter: 557,
       value: {
@@ -219,6 +230,28 @@ export const summitWarChronicles = {
         body: {
           it: 'Prima di essere un capitano, il chirurgo dal cappello a macchie era un bambino chiuso dentro un baule, nascosto lì da un uomo che si fingeva muto e goffo: [[donquixote-rosinante|Corazon]]. Fuori, [[donquixote-doflamingo|Doflamingo]] lo stana e gli spara, convinto che il ragazzo sia già al sicuro su una nave della Marina. Corazon muore sorridendo, con quella bugia che per lui vale più del proprio sangue. Il baule viene issato a bordo insieme al resto del bottino, e dentro Law piange in silenzio, senza fiato per gridare.',
           en: 'Before he was a captain, the surgeon in the spotted hat was a boy shut inside a treasure chest, hidden there by a man who pretended to be mute and clumsy: [[donquixote-rosinante|Corazon]]. Outside, [[donquixote-doflamingo|Doflamingo]] corners him and shoots, convinced the boy is already safe aboard a Marine ship. Corazon dies smiling, that lie mattering more to him than his own blood. The chest is hoisted aboard with the rest of the loot, and inside it Law weeps in silence, with no breath left to scream.',
+        },
+      },
+    },
+    {
+      episode: 708,
+      chapter: 769,
+      value: {
+        title: { it: 'Il braccio di Law', en: 'Doflamingo takes Law’s arm' },
+        body: {
+          it: 'Law scaglia un pezzo del palazzo contro [[donquixote-doflamingo|Do Flamingo]], che lo para e gli afferra la mano destra quando tenta un altro attacco. Law dice di aver fatto tutto questo per vendicare [[donquixote-rosinante|Corazon]]. Do Flamingo gli taglia il braccio destro ed estrae la pistola. Prima che possa sparare, [[monkey-d-luffy|Rufy]] fa a pezzi il suo doppio di fili.',
+          en: 'Law throws a piece of the palace at [[donquixote-doflamingo|Doflamingo]], who blocks it and catches his right hand as he tries another attack. Law says he has done all this to avenge [[donquixote-rosinante|Corazon]]. Doflamingo cuts off Law’s right arm and draws his pistol. Before he can shoot, [[monkey-d-luffy|Luffy]] breaks through his string double.',
+        },
+      },
+    },
+    {
+      episode: 722,
+      chapter: 781,
+      value: {
+        title: { it: 'Lo scambio sul tetto', en: 'Law’s switch on the roof' },
+        body: {
+          it: 'Sul tetto del palazzo, Law scambia il proprio posto con quello di [[monkey-d-luffy|Rufy]] e colpisce [[donquixote-doflamingo|Do Flamingo]] con il Gamma Knife. Do Flamingo credeva di averlo ucciso. Law spiega che dopo il primo sparo ha preso il posto di un membro della ciurma di Do Flamingo a terra, lasciando che gli altri colpi raggiungessero quel corpo al posto suo.',
+          en: 'On the palace roof, Law switches places with [[monkey-d-luffy|Luffy]] and strikes [[donquixote-doflamingo|Doflamingo]] with Gamma Knife. Doflamingo thought he had shot Law dead. Law explains that after the first shot he traded places with a fallen member of Doflamingo’s crew, letting the other shots hit the body in his place.',
         },
       },
     },

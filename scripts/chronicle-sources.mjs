@@ -26,6 +26,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_52',
       note: 'Cabaji slams a set of stocks down on Luffy, trapping him; Buggy declares the execution. Luffy’s last words are that he’ll become Pirate King, and lightning strikes Buggy and the platform an instant before the blade lands — all within episode 52, confirming the Qref ep=52 candidate. Corrected after review: an earlier pass had Buggy himself lock Luffy in the stocks, contradicting this same PR’s own buggy episode-52 story, which correctly credits Cabaji.',
     },
+    73: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_73',
+      note: 'Episode 73 shows the blow and the wax trap. Chapter 119 ends at the slip; Chapter 120 shows Brogy land the blow and get caught in the wax. https://onepiece.fandom.com/wiki/Chapter_120',
+    },
     111: {
       source: 'https://onepiece.fandom.com/wiki/Episode_111',
       note: 'Candidate was the 110–111 range; 110 ends on the hook impaling Luffy, but Crocodile burying him in the quicksand and leaving happens in 111, so the story is filed there.',
@@ -78,6 +82,14 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_405',
       note: "Zoro's disappearance is 404, but this story is Luffy watching the rest of the crew vanish one by one and despairing over failing to save them; that account, ending with his own capture, closes the Sabaody Archipelago Arc at 405. Second pass: the paw-swipe order is Brook, then Usopp, then Sanji, not Usopp before Brook — corrected.",
     },
+    413: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_413',
+      note: 'Episode 413 and https://onepiece.fandom.com/wiki/Chapter_519 place the threat and unconscious spectators in the same scene. The sisters are unnamed because Sandersonia’s chapter gate is 521.',
+    },
+    435: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_435',
+      note: 'Episode 435 and https://onepiece.fandom.com/wiki/Chapter_534 end the exchange with the poisoned blow. The defeat follows in episode 436 and chapter 535.',
+    },
     479: {
       source: 'https://onepiece.fandom.com/wiki/Episode_479',
       note: 'Luffy releases Haki unintentionally just before reaching the execution platform, opening his path; Garp then blocks him — resolves within 479.',
@@ -85,6 +97,10 @@ export const CHRONICLE_SOURCES = {
     483: {
       source: 'https://onepiece.fandom.com/wiki/Episode_483',
       note: 'Ace’s last words and death; Jinbe blocks Akainu. Second pass: the breakdown is episode 484, so the closing clause was dropped and the story ends at the scream.',
+    },
+    491: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_491',
+      note: 'Episode 491 and https://onepiece.fandom.com/wiki/Chapter_582 show the rampage, Jinbe saying the war is over, and Luffy facing the loss of Ace. This ends before Jinbe’s later intervention to make him count who he still has.',
     },
     516: {
       source: 'https://onepiece.fandom.com/wiki/Episode_516',
@@ -105,6 +121,14 @@ export const CHRONICLE_SOURCES = {
     594: {
       source: 'https://onepiece.fandom.com/wiki/Episode_594',
       note: "593 only carries the offer; 594 has the agreement, Robin's betrayal warning and the first joint objective. The Emperor is deliberately unnamed — he is first named at episode 623. Second pass: the line about the two years is addressed to the crew, over Usopp's objection.",
+    },
+    607: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_607',
+      note: 'Episode 607 and https://onepiece.fandom.com/wiki/Chapter_681 show Luffy getting out of range, Monet raising a barrier and Caesar leaving. Monet’s snow is shown here, before the later fight with Luffy.',
+    },
+    618: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_618',
+      note: 'Episode 618 and https://onepiece.fandom.com/wiki/Chapter_692 show the blow and Law’s reaction. Episode 617 ends before the blow lands.',
     },
     726: {
       source: 'https://onepiece.fandom.com/wiki/Episode_726',
@@ -204,6 +228,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_521',
       note: "517 has Zoro learning he's the first crewmate back at Sabaody; the Fake Zoro impostor and the Marine fallout it causes (Manjaro, debut ep 518) only conclude at 521, when Zoro and Sanji beat a Pacifista together and the fraud is exposed.",
     },
+    538: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_538',
+      note: 'The blow comes at the preceding cliffhanger. Episode 538 and Chapter 619 show the failed evacuation and capture. Chapter source: Independent pass: the manga and anime differ on who asks for help, so the story describes the shared escape attempt. https://onepiece.fandom.com/wiki/Chapter_619.',
+    },
     566: {
       source: 'https://onepiece.fandom.com/wiki/Episode_566',
       note: 'Zoro calls Hyouzou a frog at the bottom of a well and walks away; when Hyouzou attacks from behind, Zoro turns and cuts him down with a single stroke, Rengoku Onigiri.',
@@ -273,6 +301,10 @@ export const CHRONICLE_SOURCES = {
     366: {
       source: 'https://onepiece.fandom.com/wiki/Absalom',
       note: 'Absalom’s history dates Lola interrupting the ceremony and Nami knocking him out with Swing Arm to ep 366 (chap 471); the ceremony itself starts at ep 352 and Sanji’s own fight with Absalom ends at 359. Chapter (#169): 471, the last event: Nami wakes at the altar, dodges the kiss, Lola crashes the wedding, Absalom blasts Lola, Nami knocks him out (Chapter_471 has the waking, the kiss avoided, Lola’s crash and the one-blow win (Absalom Qref chap=471 ep=366)).',
+    },
+    387: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_387',
+      note: 'Episode 387 and https://onepiece.fandom.com/wiki/Chapter_492 identify the captive, show the mermaid’s capture and Nami’s decision. The cage is cut in 388. The mermaid is unnamed here because Camie’s chapter gate is 493.',
     },
     517: {
       source: 'https://onepiece.fandom.com/wiki/Episode_517',
@@ -363,6 +395,10 @@ export const CHRONICLE_SOURCES = {
     677: {
       source: 'https://onepiece.fandom.com/wiki/Episode_677',
       note: 'Sugar faints (ep 676); the island-wide reversal of the toys completes in 677.',
+    },
+    697: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_697',
+      note: 'Episode 697 and https://onepiece.fandom.com/wiki/Chapter_758 show Viola’s guidance, Usopp perceiving the three auras, and the drawing frightening Sugar into unconsciousness.',
     },
     746: {
       source: 'https://onepiece.fandom.com/wiki/Episode_746',
@@ -508,6 +544,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_95',
       note: 'Filed late: the flag (87), the shut-up-and-come line (89), the knives (90), the sakura (91). The dossier files the crew at 91.',
     },
+    162: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_162',
+      note: 'Episode 161 ends with the whistle. Episode 162 and Chapter 248 establish the fire, the priest’s demand and Gan Fall’s rescue. The priest stays unnamed because his chapter record opens at 260. Chapter source: https://onepiece.fandom.com/wiki/Chapter_248.',
+    },
     172: {
       source: 'https://onepiece.fandom.com/wiki/Episode_172',
       note: 'Chopper defeats Gedatsu at the Ordeal of Swamp, closing the two-priest vignette that began with him alone guarding the Going Merry against Shura (ep 162, resolved 164). The issue’s candidate of ep 178 is wrong — that episode is Zoro vs. Ohm, with no Chopper content — moved to 172.',
@@ -601,6 +641,10 @@ export const CHRONICLE_SOURCES = {
     569: {
       source: 'https://onepiece.fandom.com/wiki/Episode_569',
       note: "Robin pulls Neptune aside and he explains Joy Boy was a surface-dweller from the Void Century who apologized to that era's mermaid princess.",
+    },
+    671: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_671',
+      note: 'Episode 671 and https://onepiece.fandom.com/wiki/Chapter_738 show the fly, Robin’s report, Trebol’s departure and Sugar turning the assault against the dwarves.',
     },
     713: {
       source: 'https://onepiece.fandom.com/wiki/Episode_713',
@@ -706,6 +750,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_339',
       note: 'Threshold entry, told from the first sighting (eps 337–338). Second pass: no piano on the ghost ship — he sings softly over tea; title and body corrected.',
     },
+    353: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_353',
+      note: 'Episode 353 and Chapter 459 identify the whale and establish the promise. The account stops at the crew recognising Laboon, before Episode 354 continues the story of their earlier meeting. Chapter source: https://onepiece.fandom.com/wiki/Chapter_459.',
+    },
     362: {
       source: 'https://onepiece.fandom.com/wiki/Ryuma_(Zombie)',
       note: 'Ryuma’s own history: Brook challenges him at ep 352 (chap 458) and loses; Zoro steps in at ep 357 (chap 462); the duel’s end, Ryuma bestowing Shusui and Brook’s shadow returning to him are all dated to ep 362 (chap 467). Chapter (#169): 467, the last event: Zoro defeats Ryuma; Brook’s shadow returns as the body burns to ash (Ryuma (Zombie): Brook’s shadow leaves the corpse for its owner as the flames quickly reduce the body to ashes (chap 467, ep 362)).',
@@ -768,6 +816,10 @@ export const CHRONICLE_SOURCES = {
       source: 'https://onepiece.fandom.com/wiki/Episode_443',
       note: 'Second pass: moved from 442. Episode 442 ends with Luffy only just meeting Crocodile as a cliffhanger — Jinbe’s plea and release (with Crocodile, via Inazuma’s Devil Fruit unlocking the cuffs, not Luffy) is Episode 443’s own scene, the one its title names.',
     },
+    450: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_450',
+      note: 'Episode 450 and https://onepiece.fandom.com/wiki/Chapter_547 show the seizure, Jinbe’s attack on the Marines and his instructions to jump.',
+    },
     466: {
       source: 'https://onepiece.fandom.com/wiki/Episode_466',
       note: "Corrected from the issue's candidate of 459, which is only Sengoku revealing Ace's parentage: Jinbe's Warlord resignation to Sengoku's face is Qref'd to chapter 557, which other character pages map to episode 466. Chapter (#169): 557, the last event: Jinbe shouts to Sengoku that he resigns from the Seven Warlords (Chapter_557: Sengoku shouts to ask whether this is the Shichibukai’s choice, and Jinbe roars back that he has resigned as a Shichibukai). Review r1 (#169): the closing line, Jinbe throwing himself into the bay to reach Luffy, is in neither chapter 557 nor 558 (in 557 he is already in the water with the escapees, and 558 has him salting the zombies), so it was cut and the story ends on the resignation.",
@@ -829,6 +881,14 @@ export const CHRONICLE_SOURCES = {
     706: {
       source: 'https://onepiece.fandom.com/wiki/Episode_706',
       note: 'Corazon’s death and the treasure-chest scene are both explicit in this episode’s long summary — exact match.',
+    },
+    708: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_708',
+      note: 'Episode 708 and https://onepiece.fandom.com/wiki/Chapter_769 show Law losing his right arm, Doflamingo drawing his gun, and Luffy defeating the string double.',
+    },
+    722: {
+      source: 'https://onepiece.fandom.com/wiki/Episode_722',
+      note: 'Episode 722 and https://onepiece.fandom.com/wiki/Chapter_781 show the rooftop switch, Gamma Knife and the explanation of the earlier body double. The episode’s story ends before the attempted finishing blow in 723.',
     },
     1066: {
       source: 'https://onepiece.fandom.com/wiki/Ope_Ope_no_Mi',
