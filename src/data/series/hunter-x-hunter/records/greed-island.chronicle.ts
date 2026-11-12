@@ -503,7 +503,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'L’ultima carta', en: 'The final card' },
         body: {
-          it: 'Dwun accoglie [[gon-freecss|Gon]] nella sua stanza piena di giochi e rifiuti. Gli consegna l’ultima carta di Greed Island e una custodia per portarne tre fuori dal gioco. È un amico di [[ging-freecss|Ging]], che ha cambiato il suo nome per adattarne l’iniziale al titolo del gioco. Dwun se ne lamenta ancora mentre Gon ascolta i racconti su suo padre.',
+          it: 'Doon accoglie [[gon-freecss|Gon]] nella sua stanza piena di giochi e rifiuti. Gli consegna l’ultima carta di Greed Island e una custodia per portarne tre fuori dal gioco. È un amico di [[ging-freecss|Ging]], che ha cambiato il suo nome per adattarne l’iniziale al titolo del gioco. Doon se ne lamenta ancora mentre Gon ascolta i racconti su suo padre.',
           en: 'Dwun receives [[gon-freecss|Gon]] in his room full of games and rubbish. He gives him the final Greed Island card and a case for taking three cards outside the game. He is a friend of [[ging-freecss|Ging]], who changed his name so that its initial would fit the game’s title. Dwun still complains about it as Gon listens to stories about his father.',
         },
       },
@@ -517,7 +517,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'I nomi dei creatori', en: 'The creators’ names' },
         body: {
-          it: 'List accoglie [[gon-freecss|Gon]] nel castello e lo accompagna da [[dwun|Dwun]] per ricevere l’ultima carta. Si presenta come amico di [[ging-freecss|Ging]] e spiega che undici persone hanno creato Greed Island. Le iniziali dei loro nomi formano il titolo. Dopo la consegna della carta, una festa in città celebra il vincitore del gioco.',
+          it: 'List accoglie [[gon-freecss|Gon]] nel castello e lo accompagna da [[dwun|Doon]] per ricevere l’ultima carta. Si presenta come amico di [[ging-freecss|Ging]] e spiega che undici persone hanno creato Greed Island. Le iniziali dei loro nomi formano il titolo. Dopo la consegna della carta, una festa in città celebra il vincitore del gioco.',
           en: 'List welcomes [[gon-freecss|Gon]] to the castle and takes him to [[dwun|Dwun]] to receive the final card. He introduces himself as a friend of [[ging-freecss|Ging]] and explains that eleven people created Greed Island. Their initials form its title. After the card is handed over, a celebration in town honors the game’s winner.',
         },
       },
@@ -531,7 +531,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'L’ingresso e il quiz', en: 'The entrance and the quiz' },
         body: {
-          it: 'Eeta accoglie [[gon-freecss|Gon]] quando entra a Greed Island e gli spiega come usare il libro e le carte. Alla fine conduce il quiz per assegnare l’ultima carta del gioco. [[list|List]] rivela che lei e [[elena|Elena]] sono gemelle e fanno parte degli undici creatori: anche le loro iniziali compongono il titolo di Greed Island.',
+          it: 'Ether accoglie [[gon-freecss|Gon]] quando entra a Greed Island e gli spiega come usare il libro e le carte. Alla fine conduce il quiz per assegnare l’ultima carta del gioco. [[list|List]] rivela che lei e [[elena|Elena]] sono gemelle e fanno parte degli undici creatori: anche le loro iniziali compongono il titolo di Greed Island.',
           en: 'Eta welcomes [[gon-freecss|Gon]] when he enters Greed Island and explains how to use the book and cards. At the end she runs the quiz that awards the game’s final card. [[list|List]] reveals that she and [[elena|Elena]] are twins and belong to its eleven creators: their initials also form part of the title Greed Island.',
         },
       },
@@ -545,7 +545,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'L’uscita dal gioco', en: 'Leaving the game' },
         body: {
-          it: 'Elena si occupa dei giocatori che lasciano Greed Island. [[killua|Killua]] passa da lei quando esce per sostenere l’esame Hunter. Alla fine del gioco [[list|List]] rivela che Elena ed [[eta|Eeta]] sono gemelle e hanno contribuito a crearlo. Quando arriva il vincitore, Elena si congratula con [[gon-freecss|Gon]] e gli chiede di scegliere le tre carte da portare fuori.',
+          it: 'Elena si occupa dei giocatori che lasciano Greed Island. [[killua|Killua]] passa da lei quando esce per sostenere l’esame Hunter. Alla fine del gioco [[list|List]] rivela che Elena ed [[eta|Ether]] sono gemelle e hanno contribuito a crearlo. Quando arriva il vincitore, Elena si congratula con [[gon-freecss|Gon]] e gli chiede di scegliere le tre carte da portare fuori.',
           en: 'Elena handles players leaving Greed Island. [[killua|Killua]] passes through when he leaves to take the Hunter Exam. At the end of the game [[list|List]] reveals that Elena and [[eta|Eta]] are twins who helped create it. When the winner arrives, Elena congratulates [[gon-freecss|Gon]] and asks him to choose the three cards he will take outside.',
         },
       },
