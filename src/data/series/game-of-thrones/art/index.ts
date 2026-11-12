@@ -3,6 +3,7 @@ import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
 import { ESSOS_DRAWINGS, essosRedrawn } from './essos'
+import { PLACE_DRAWINGS } from './places'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
 import { WALL_DRAWINGS, wallRedrawn } from './wall'
 import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
@@ -105,34 +106,12 @@ const PERSON: Stroke[] = [
 ]
 
 /**
- * What every place shows until #1053 draws it: a plain square keep on a
- * horizon, its battlements and an arched door, with no banner or mark. It
- * stands for no place in particular, so it tells a reader nothing; the
- * accent is the door.
- */
-const PLACE: Stroke[] = [
-  { d: 'M24 150 H136', role: 'ambient', dashed: true },
-  { d: 'M56 150 V78 H104 V150' },
-  {
-    d: 'M56 78 V68 H62 V78 M70 78 V68 H76 V78 M84 78 V68 H90 V78 M98 78 V68 H104 V78',
-    role: 'soft',
-  },
-  { d: 'M72 150 V126 Q80 114 88 126 V150', role: 'accent' },
-  { d: 'M68 96 V104 M92 96 V104', role: 'soft' },
-  {
-    d: 'M98 84 l4 -3 M98 96 l4 -3 M98 108 l4 -3 M98 120 l4 -3',
-    role: 'ambient',
-  },
-  shadow(80, 154, 40),
-]
-
-/**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
- * and the Essos cast's in `essos.ts` (#1052), with the four leads drawn for
- * the launch here (owner, #856); every other record
- * shows `PERSON` or `PLACE` until its own issue draws it. `satisfies`
+ * and the Essos cast's in `essos.ts` (#1052), the places' in `places.ts`
+ * (#1053), with the four leads drawn for the launch here (owner, #856);
+ * every other character shows `PERSON` until its own issue draws it. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -140,6 +119,7 @@ export const DRAWINGS = {
   ...SOUTH_DRAWINGS,
   ...WALL_DRAWINGS,
   ...ESSOS_DRAWINGS,
+  ...PLACE_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
@@ -229,29 +209,6 @@ export const DRAWINGS = {
   'quaro': PERSON,
   'mago': PERSON,
   'eroeh': PERSON,
-  'haunted-forest': PLACE,
-  'winterfell': PLACE,
-  'pentos': PLACE,
-  'kings-landing': PLACE,
-  'the-wall': PLACE,
-  'winter-town': PLACE,
-  'inn-at-the-crossroads': PLACE,
-  'darry': PLACE,
-  'castle-black': PLACE,
-  'dothraki-sea': PLACE,
-  'red-keep': PLACE,
-  'vaes-dothrak': PLACE,
-  'the-eyrie': PLACE,
-  'wolfswood': PLACE,
-  'kingswood': PLACE,
-  'lannister-camp': PLACE,
-  'lhazar': PLACE,
-  'the-twins': PLACE,
-  'great-sept-of-baelor': PLACE,
-  'riverrun': PLACE,
-  'moles-town': PLACE,
-  'bloody-gate': PLACE,
-  'moat-cailin': PLACE,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */
