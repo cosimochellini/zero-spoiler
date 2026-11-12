@@ -67,6 +67,17 @@ export const eastBlueChronicles = {
       },
     },
     {
+      episode: 73,
+      chapter: 120,
+      value: {
+        title: { it: 'Il duello truccato', en: 'The duel is rigged' },
+        body: {
+          it: 'Rufy cerca di impedire a [[dorry|Dori]], ancora ferito, di tornare a combattere. Il gigante lo blocca sotto una roccia e va lo stesso al duello. [[mr-3|Mr. Three]] fa scivolare Dori e dà a [[brogy|Brogi]] l’occasione di colpirlo. Rufy grida quando Dori cade. Mentre Brogi piange per la vittoria, Mr. Three gli blocca i piedi nella cera.',
+          en: 'Luffy tries to stop [[dorry|Dorry]] from going back to his duel while he is still injured. The giant pins him under a rock and goes to fight anyway. [[mr-3|Mr. 3]] makes Dorry slip, giving [[brogy|Brogy]] an opening to strike. Luffy shouts when Dorry falls. As Brogy weeps over his victory, Mr. 3 traps his feet in wax.',
+        },
+      },
+    },
+    {
       episode: 111,
       value: {
         title: {
