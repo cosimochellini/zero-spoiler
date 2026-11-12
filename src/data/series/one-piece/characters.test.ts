@@ -38,7 +38,7 @@ const MAX_UNTOLD = 5
  * The runs over `MAX_UNTOLD` the chronicle still has, as `last story→next
  * story`. Each is to be filled in #1163; none may be added.
  */
-const KNOWN_GAPS = ['798→806', '936→943', '965→976', '1002→1009', '1046→1055']
+const KNOWN_GAPS = ['936→943', '965→976', '1002→1009', '1046→1055']
 
 /** The episodes the filler guide numbers; every other aired one is canon. */
 const NUMBERED = new Set(
