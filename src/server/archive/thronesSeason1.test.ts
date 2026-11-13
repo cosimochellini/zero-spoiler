@@ -891,9 +891,10 @@ describe.each([
 
 /**
  * The Winterfell household's stages (#854), the southern cast's (#1051) and
- * the Night's Watch's and Essos cast's (#1052), each pinned in the units that
- * tell it: Bran's climb, which the book alone shows after his threshold, the
- * deaths, Barristan's thrown sword, Syrio's snapped blade, and the reveals of
+ * the Night's Watch's and Essos cast's (#1052) and the King's Landing cast's
+ * (#1056), each pinned in the units that tell it: Bran's climb, which the
+ * book alone shows after his threshold, the deaths (Mycah's the book's
+ * alone), Barristan's thrown sword, Syrio's snapped blade, and the reveals of
  * Jorah's master, Aemon's house and Mirri's blood magic. `stage` counts a
  * record's stages from 0, for a record redrawn more than once.
  */
@@ -917,6 +918,7 @@ const STAGES: {
   { id: 'mirri-maz-duur', episode: 9, chapter: 65 },
   { id: 'drogo', episode: 10, chapter: 69 },
   { id: 'mirri-maz-duur', episode: 10, chapter: 73, stage: 1 },
+  { id: 'mycah', episode: 2, chapter: 17, source: 'chapter' },
 ]
 
 describe.each(
