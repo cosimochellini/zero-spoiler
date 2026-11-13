@@ -841,8 +841,9 @@ describe('the first season’s demo', () => {
 
     expect(demo.arcs.map(({ id }) => id)).toStrictEqual(['season-1'])
     expect(demo.cast.map(({ id }) => id)).toStrictEqual(CAST)
-    // The places the first ten episodes and their chapters both reach; Darry
-    // and the Kingswood are one medium's, so the two-unit demo skips them.
+    // The places the first ten episodes and their chapters both reach; Darry,
+    // the Kingswood and six of #1252's places are one medium's, so the
+    // two-unit demo skips them.
     expect(demo.places.map(({ id }) => id)).toStrictEqual([
       'haunted-forest',
       'winterfell',
