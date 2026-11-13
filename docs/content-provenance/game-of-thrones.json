@@ -934,10 +934,11 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
       "https://gameofthrones.fandom.com/wiki/Winter_town",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/it/wiki/Citt%C3%A0_dell%27Inverno?oldid=56441"
     ],
     "unverified": [
-      "Italian name \"Città d'Inverno\" not found on it.wikipedia; dub form unconfirmed.",
+      "#1244: Italian name \"Città dell'Inverno\" from the Italian Game of Thrones Wiki; Italian Wikipedia does not name it; dub form unconfirmed.",
       "The show only names it in season 7 (\"The Spoils of War\"), so no nameSaidAt.",
       "Ros is filed here: she is first seen at the brothel in episode 1, though her record opens at episode 4."
     ]
@@ -949,10 +950,11 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_56",
       "https://gameofthrones.fandom.com/wiki/Inn_at_the_Crossroads",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)",
+      "https://it.wikipedia.org/wiki/Arya_Stark?oldid=150798821"
     ],
     "unverified": [
-      "Italian name \"Locanda all'Incrocio\" not found on it.wikipedia (the season 1 page says only \"una locanda\"); dub form unconfirmed.",
+      "#1244: Italian Wikipedia writes \"Locanda all'Incrocio\" once (Arya Stark) and \"Locanda dell'Incrocio\" on other pages; the Italian Game of Thrones Wiki's headword is \"Locanda all'Incrocio\". Dub form unconfirmed.",
       "AWOIAF files Sansa I at the inn at the crossroads; the Fandom notes say the books stage the quarrel near Castle Darry. The book gate stays 16.",
       "Uses the proposed new form \"inn\"."
     ]

@@ -116,7 +116,7 @@ describe('Illumi’s family home', () => {
         chapter: 39,
         place: 'kukuroo-mountain',
         value: {
-          it: 'Monte Kukruu, dimora della famiglia',
+          it: 'Monte Kucruu, dimora della famiglia',
           en: 'Kukuroo Mountain, family home',
         },
       })

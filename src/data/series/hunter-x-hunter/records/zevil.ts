@@ -43,7 +43,7 @@ const BROTHER_AFFILIATION = [
 ] as const
 
 const DRAWS_TARGET_LOG = {
-  it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
+  it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zebir.',
   en: 'He is one of the twenty-four applicants who leave Trick Tower. He draws his target’s number and sails with the others to Zevil Island.',
 } as const
 
@@ -191,7 +191,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 23,
       name: { it: 'Shishito', en: 'Shishito' },
       summary: {
-        it: 'Un aspirante che, sulla barca per l’Isola di Zevil, si chiede chi abbia estratto il suo numero.',
+        it: 'Un aspirante che, sulla barca per l’Isola di Zebir, si chiede chi abbia estratto il suo numero.',
         en: 'An applicant who, on the boat to Zevil Island, wonders who has drawn his number.',
       },
       visual: { art: 'shishito', tint: 'yellow' },
@@ -339,7 +339,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       kind: 'place',
       revealedAtEpisode: 14,
       revealedAtChapter: 23,
-      name: { it: 'Isola di Zevil', en: 'Zevil Island' },
+      name: { it: 'Isola di Zebir', en: 'Zevil Island' },
       summary: {
         it: 'L’isola boscosa dove gli aspiranti Hunter si contendono le targhette nella quarta prova.',
         en: 'The wooded island where Hunter Exam applicants compete for badges in the Fourth Phase.',
@@ -397,7 +397,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: zevilChronicles.siper,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zevil.',
+        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Estrae il numero del suo bersaglio e parte con gli altri per l’Isola di Zebir.',
         en: 'She is one of the twenty-four applicants who leave Trick Tower. She draws her target’s number and sails with the others to Zevil Island.',
       },
       status: [
@@ -434,7 +434,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: zevilChronicles.shishito,
       role: { it: 'Aspirante Hunter', en: 'Hunter Exam applicant' },
       log: {
-        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Durante il viaggio verso l’Isola di Zevil si guarda intorno, chiedendosi chi gli darà la caccia.',
+        it: 'È tra i ventiquattro aspiranti usciti dalla Torre di Lotta. Durante il viaggio verso l’Isola di Zebir si guarda intorno, chiedendosi chi gli darà la caccia.',
         en: 'He is one of the twenty-four applicants who leave Trick Tower. On the voyage to Zevil Island he looks around, wondering who will hunt him.',
       },
       status: [{ episode: 14, chapter: 23, source: 'chapter', value: 'alive' }],
@@ -642,7 +642,7 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
       role: passedExam(18, 23),
       log: {
-        it: 'È tra gli aspiranti che superano la Torre di Lotta e affrontano la quarta prova sull’Isola di Zevil, armato di arco e frecce.',
+        it: 'È tra gli aspiranti che superano la Torre di Lotta e affrontano la quarta prova sull’Isola di Zebir, armato di arco e frecce.',
         en: 'He is among the applicants who clear Trick Tower and face the Fourth Phase on Zevil Island, armed with a bow and arrows.',
       },
       affiliation: [

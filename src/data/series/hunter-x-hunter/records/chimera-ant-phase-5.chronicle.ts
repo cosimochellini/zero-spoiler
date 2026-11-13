@@ -376,7 +376,7 @@ export const chimeraAntPhase5Chronicles = {
       value: {
         title: { it: 'In cerca di Giairo', en: 'Looking for Gyro' },
         body: {
-          it: 'Welfang saluta [[bloster|Bloburda]], che ha deciso di rimanere nell’NGL. Lui vuole invece ritrovare [[gyro|Giairo]] e parte con [[bizeff|Bizeff]] e una compagna. Bizeff guida verso la Città della Meteora, l’unico luogo dove pensa di potersi rifugiare. Welfang spera che Giairo sia andato nella stessa direzione e stia già preparando un nuovo paese.',
+          it: 'Welfang saluta [[bloster|Bloburda]], che ha deciso di rimanere nell’NGL. Lui vuole invece ritrovare [[gyro|Giairo]] e parte con [[bizeff|Bizeff]] e una compagna. Bizeff guida verso la Città delle Stelle Cadenti, l’unico luogo dove pensa di potersi rifugiare. Welfang spera che Giairo sia andato nella stessa direzione e stia già preparando un nuovo paese.',
           en: 'Welfin says goodbye to [[bloster|Bloster]], who has decided to stay in NGL. He wants to find [[gyro|Gyro]] instead and leaves with [[bizeff|Bizeff]] and a companion. Bizeff drives toward Meteor City, the only place where he thinks he can take refuge. Welfin hopes that Gyro went the same way and is already preparing a new country.',
         },
       },
@@ -425,7 +425,7 @@ export const chimeraAntPhase5Chronicles = {
       value: {
         title: { it: 'La fuga dal paese', en: 'Leaving the country' },
         body: {
-          it: 'Bizeff è vivo e guida il veicolo con cui [[welfin|Welfang]] e una compagna lasciano il paese. Non può più tornare al governo e pensa che la Città della Meteora sia l’unico rifugio possibile. Welfang spera di trovarvi [[gyro|Giairo]]. Dopo aver ascoltato il suo compagno di viaggio, Bizeff decide di godersi la vita finché può.',
+          it: 'Bizeff è vivo e guida il veicolo con cui [[welfin|Welfang]] e una compagna lasciano il paese. Non può più tornare al governo e pensa che la Città delle Stelle Cadenti sia l’unico rifugio possibile. Welfang spera di trovarvi [[gyro|Giairo]]. Dopo aver ascoltato il suo compagno di viaggio, Bizeff decide di godersi la vita finché può.',
           en: 'Bizeff is alive and drives the vehicle taking [[welfin|Welfin]] and a companion out of the country. He can no longer return to government and thinks Meteor City is the only possible refuge. Welfin hopes to find [[gyro|Gyro]] there. After listening to his fellow traveler, Bizeff decides to enjoy his life while he can.',
         },
       },

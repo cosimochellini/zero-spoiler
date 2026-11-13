@@ -1741,7 +1741,7 @@ export const waterSeven: OnePieceSaga = {
           episode: 270,
           chapter: 385,
           place: 'elbaf-island',
-          value: { it: 'Elbaf', en: 'Elbaph' },
+          value: { it: 'Erbaf', en: 'Elbaph' },
         },
       ],
     },
@@ -1793,7 +1793,7 @@ export const waterSeven: OnePieceSaga = {
           episode: 1164,
           chapter: 1133,
           value: {
-            it: 'Insegnante di storia a Elbaf',
+            it: 'Insegnante di storia a Erbaf',
             en: 'History teacher on Elbaph',
           },
         },

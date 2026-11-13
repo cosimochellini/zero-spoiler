@@ -208,7 +208,7 @@ const links = {
     type: { en: 'Teacher who informs him', it: 'Insegnante che lo informa' },
     summary: {
       en: 'Ange reports the attacks across Elbaph, and Kiba calls for the culprit to be found.',
-      it: 'Ange riferisce degli attacchi su Elbaf e Kiba chiede di trovare il responsabile.',
+      it: 'Ange riferisce degli attacchi su Erbaf e Kiba chiede di trovare il responsabile.',
     },
   },
   kibaKillingham: {
@@ -281,7 +281,7 @@ const links = {
     },
     summary: {
       en: 'Elbaph accuses Loki of killing his father Harald to obtain the royal family’s devil fruit.',
-      it: 'Elbaf accusa Loki di aver ucciso suo padre Harald per ottenere il frutto del diavolo della famiglia reale.',
+      it: 'Erbaf accusa Loki di aver ucciso suo padre Harald per ottenere il frutto del diavolo della famiglia reale.',
     },
   },
   lokiHaraldDenial: {
@@ -368,7 +368,7 @@ const links = {
     },
     summary: {
       en: 'The people of Elbaph blame Loki for the death of his father Harald.',
-      it: 'Gli abitanti di Elbaf attribuiscono a Loki la morte di suo padre Harald.',
+      it: 'Gli abitanti di Erbaf attribuiscono a Loki la morte di suo padre Harald.',
     },
   },
   haraldHajrudin: {
@@ -392,7 +392,7 @@ const links = {
     type: { en: 'Son he protects', it: 'Figlio che protegge' },
     summary: {
       en: 'Harald defends Hajrudin from villagers who blame his family for Elbaph’s misfortunes.',
-      it: 'Harald difende Hajrudin dagli abitanti che accusano la sua famiglia delle sventure di Elbaf.',
+      it: 'Harald difende Hajrudin dagli abitanti che accusano la sua famiglia delle sventure di Erbaf.',
     },
   },
   haraldJarul: {
@@ -441,7 +441,7 @@ const links = {
     },
     summary: {
       en: 'Before leaving Elbaph, Harald asks Loki to work with Hajrudin for their homeland.',
-      it: 'Prima di lasciare Elbaf, Harald chiede a Loki di collaborare con Hajrudin per la loro patria.',
+      it: 'Prima di lasciare Erbaf, Harald chiede a Loki di collaborare con Hajrudin per la loro patria.',
     },
   },
   haraldHajrudinRequest: {
@@ -452,7 +452,7 @@ const links = {
     },
     summary: {
       en: 'Before leaving Elbaph, Harald asks Hajrudin to work with Loki for their homeland.',
-      it: 'Prima di lasciare Elbaf, Harald chiede a Hajrudin di collaborare con Loki per la loro patria.',
+      it: 'Prima di lasciare Erbaf, Harald chiede a Hajrudin di collaborare con Loki per la loro patria.',
     },
   },
   haraldSaul: {
@@ -460,7 +460,7 @@ const links = {
     type: { en: 'Teacher he recruits', it: 'Insegnante che recluta' },
     summary: {
       en: 'Harald asks Saul to establish a school on Elbaph.',
-      it: 'Harald chiede a Sauro di fondare una scuola su Elbaf.',
+      it: 'Harald chiede a Sauro di fondare una scuola su Erbaf.',
     },
   },
   ripleyLuffy: {
@@ -543,7 +543,7 @@ const links = {
     type: { en: 'Partner', it: 'Compagna' },
     summary: {
       en: 'Gaban lives on Elbaph with Ripley, his partner and Colon’s mother.',
-      it: 'Gabin vive su Elbaf con Ripley, la sua compagna e madre di Collon.',
+      it: 'Gabin vive su Erbaf con Ripley, la sua compagna e madre di Collon.',
     },
   },
   gabanColon: {
@@ -672,7 +672,7 @@ const links = {
     type: { en: 'Possessor', it: 'Entità che la possiede' },
     summary: {
       en: 'Im takes control of Gunko’s body during the attack on Elbaph.',
-      it: 'Im prende il controllo del corpo di Gunko durante l’attacco a Elbaf.',
+      it: 'Im prende il controllo del corpo di Gunko durante l’attacco a Erbaf.',
     },
   },
   shamrockGarling: {
@@ -742,7 +742,7 @@ const links = {
     type: { en: 'Commander', it: 'Comandante' },
     summary: {
       en: 'Shamrock assigns Sommers to the operation against Elbaph’s children.',
-      it: 'Shamrock assegna a Sommers l’operazione contro i bambini di Elbaf.',
+      it: 'Shamrock assegna a Sommers l’operazione contro i bambini di Erbaf.',
     },
   },
   sommersKillingham: {
@@ -758,7 +758,7 @@ const links = {
     type: { en: 'Accomplice', it: 'Complice' },
     summary: {
       en: 'Sommers works with Gunko to take Elbaph’s children hostage.',
-      it: 'Sommers collabora con Gunko per prendere in ostaggio i bambini di Elbaf.',
+      it: 'Sommers collabora con Gunko per prendere in ostaggio i bambini di Erbaf.',
     },
   },
   sommersGaban: {
@@ -801,7 +801,7 @@ const links = {
     type: { en: 'Commander', it: 'Comandante' },
     summary: {
       en: 'Killingham accepts Shamrock’s mission to take Elbaph’s children hostage.',
-      it: 'Killingham accetta la missione di Shamrock di prendere in ostaggio i bambini di Elbaf.',
+      it: 'Killingham accetta la missione di Shamrock di prendere in ostaggio i bambini di Erbaf.',
     },
   },
   killinghamGunko: {

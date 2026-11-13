@@ -171,7 +171,7 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       kind: 'place',
       revealedAtEpisode: 22,
       revealedAtChapter: 39,
-      name: { it: 'Monte Kukruu', en: 'Kukuroo Mountain' },
+      name: { it: 'Monte Kucruu', en: 'Kukuroo Mountain' },
       summary: {
         it: 'Il vulcano spento dove vive la famiglia Zoldick, circondato da una foresta e da un grande muro.',
         en: 'The dormant volcano where the Zoldyck family lives, surrounded by a forest and a large wall.',

@@ -264,7 +264,7 @@ const earlyExam: HunterSaga = {
       kind: 'place',
       revealedAtEpisode: 2,
       revealedAtChapter: 3,
-      name: { it: 'Dolle Harbor', en: 'Dolle Harbor' },
+      name: { it: 'Porto di Doré', en: 'Dolle Harbor' },
       summary: {
         it: 'Una città portuale affollata di aspiranti Hunter, dove la nave lascia Gon e i suoi compagni di viaggio.',
         en: 'A port town crowded with would-be Hunters, where the ship leaves Gon and his fellow passengers.',
@@ -278,7 +278,7 @@ const earlyExam: HunterSaga = {
       revealedAtChapter: 4,
       name: { it: 'Kiriko', en: 'Kiriko' },
       summary: {
-        it: 'Una famiglia di bestie demoniache capaci di cambiare aspetto, che vive sotto un grande albero fuori da Dolle Harbor e porta all’esame solo gli aspiranti che la convincono.',
+        it: 'Una famiglia di bestie demoniache capaci di cambiare aspetto, che vive sotto un grande albero fuori dal Porto di Doré e porta all’esame solo gli aspiranti che la convincono.',
         en: 'A family of magical beasts that can change their shape, living under a great tree outside Dolle Harbor and taking to the exam only the applicants who impress them.',
       },
       visual: { art: 'kiriko', tint: 'violet' },
@@ -1083,7 +1083,7 @@ const earlyExam: HunterSaga = {
           chapter: 4,
           place: 'dolle-harbor',
           value: {
-            it: 'L’albero solitario fuori da Dolle Harbor',
+            it: 'L’albero solitario fuori dal Porto di Doré',
             en: 'The lone tree outside Dolle Harbor',
           },
         },
@@ -1728,7 +1728,7 @@ const earlyExam: HunterSaga = {
           chapter: 39,
           place: 'kukuroo-mountain',
           value: {
-            it: 'Monte Kukruu, dimora della famiglia',
+            it: 'Monte Kucruu, dimora della famiglia',
             en: 'Kukuroo Mountain, family home',
           },
         },

@@ -219,7 +219,7 @@ const links = {
     type: { en: 'Enemy who defeats him', it: 'Nemico che lo sconfigge' },
     summary: {
       en: 'Shanks strikes down Kid before he can fire on the fleet off Elbaf.',
-      it: 'Shanks abbatte Kidd prima che possa sparare contro la flotta al largo di Elbaf.',
+      it: 'Shanks abbatte Kidd prima che possa sparare contro la flotta al largo di Erbaf.',
     },
   },
   hancockSonia: {
@@ -695,7 +695,7 @@ const links = {
     type: { en: 'Partner he shoots', it: 'Compagno a cui spara' },
     summary: {
       en: 'Bege shoots Pekoms for refusing to carry out Big Mom’s orders on Zou.',
-      it: 'Bege spara a Pekoms perché rifiuta di eseguire gli ordini di Big Mom a Zou.',
+      it: 'Bege spara a Pekoms perché rifiuta di eseguire gli ordini di Big Mom a Zo.',
     },
   },
   begeChiffon: {

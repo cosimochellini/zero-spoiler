@@ -103,7 +103,7 @@ export const wano: OnePieceSaga = {
       revealedAtChapter: 929,
       name: { it: 'Page One', en: 'Page One' },
       summary: {
-        it: 'Uno dei Tobiroppo, i sei headliner più forti dei Pirati delle Cento Bestie, che entra nella Capitale dei Fiori insieme a X Drake, mandato a punire in modo esemplare chi ha sfidato la ciurma.',
+        it: 'Uno dei Tobiroppo, i sei headliner più forti dei Pirati delle Cento Bestie, che entra nella Capitale fiorita insieme a X Drake, mandato a punire in modo esemplare chi ha sfidato la ciurma.',
         en: 'One of the Tobiroppo, the six strongest headliners of the Beasts Pirates, who walks into the Flower Capital beside X Drake, sent to make an example of whoever crossed the crew.',
       },
       visual: { art: 'page-one', tint: 'teal' },
@@ -115,7 +115,7 @@ export const wano: OnePieceSaga = {
       revealedAtChapter: 927,
       name: { it: 'Kurozumi Orochi', en: 'Kurozumi Orochi' },
       summary: {
-        it: 'Lo shogun del Paese di Wano, che vive nella Capitale dei Fiori e governa con i pirati dell’Imperatore alle spalle, mentre i villaggi fuori fanno la fame.',
+        it: 'Lo shogun del Paese di Wano, che vive nella Capitale fiorita e governa con i pirati dell’Imperatore alle spalle, mentre i villaggi fuori fanno la fame.',
         en: 'The shogun of Wano Country, who lives in the Flower Capital and rules with the Emperor’s pirates behind him, while the villages outside go hungry.',
       },
       visual: { art: 'kurozumi-orochi', tint: 'violet' },
@@ -179,7 +179,7 @@ export const wano: OnePieceSaga = {
       revealedAtChapter: 933,
       name: { it: 'Komurasaki', en: 'Komurasaki' },
       summary: {
-        it: 'La cortigiana più famosa della Capitale dei Fiori, che sfila tra la folla con gli spilloni d’oro tra i capelli e rifiuta chiunque.',
+        it: 'La cortigiana più famosa della Capitale fiorita, che sfila tra la folla con gli spilloni d’oro tra i capelli e rifiuta chiunque.',
         en: 'The most celebrated courtesan of the Flower Capital, who parades through the crowd in golden hairpins and turns down everyone.',
       },
       visual: { art: 'komurasaki', tint: 'lavender' },
@@ -191,7 +191,7 @@ export const wano: OnePieceSaga = {
       revealedAtChapter: 933,
       name: { it: 'O-Toko', en: 'Toko' },
       summary: {
-        it: 'La bambina che fa da kamuro all’oiran della Capitale dei Fiori, e che continua a sorridere anche quando dei teppisti le fanno cadere a terra la scodella di soba.',
+        it: 'La bambina che fa da kamuro all’oiran della Capitale fiorita, e che continua a sorridere anche quando dei teppisti le fanno cadere a terra la scodella di soba.',
         en: 'The little girl who attends the Flower Capital’s oiran as her kamuro, and who keeps smiling even when thugs knock her bowl of soba to the ground.',
       },
       visual: { art: 'toko', tint: 'yellow' },
@@ -203,7 +203,7 @@ export const wano: OnePieceSaga = {
       revealedAtChapter: 933,
       name: { it: 'Kyoshiro', en: 'Kyoshiro' },
       summary: {
-        it: 'Il boss yakuza che tiene la Capitale dei Fiori e cambia il denaro dello shogun, con una sciabola alla cintura e un sorriso di circostanza.',
+        it: 'Il boss yakuza che tiene la Capitale fiorita e cambia il denaro dello shogun, con una sciabola alla cintura e un sorriso di circostanza.',
         en: 'The yakuza boss who holds the Flower Capital and changes the shogun’s money, a sabre at his belt and a smile kept for business.',
       },
       visual: { art: 'kyoshiro', tint: 'blue' },
@@ -458,7 +458,7 @@ export const wano: OnePieceSaga = {
       revealedAtChapter: 919,
       // Hitetsu names the Flower Capital as the one thriving place in Wano at 894.
       nameSaidAt: 894,
-      name: { it: 'Capitale dei Fiori', en: 'Flower Capital' },
+      name: { it: 'Capitale fiorita', en: 'Flower Capital' },
       summary: {
         it: 'L’unica città di Wano che prospera ancora, dove vive lo shogun, con strade di botteghe e scuole in cui i bambini imparano a lodare il paese chiuso.',
         en: 'The one city in Wano still thriving, where the shogun lives, with streets of shops and schools where the children are taught to praise the closed country.',
@@ -618,7 +618,7 @@ export const wano: OnePieceSaga = {
       revealedAtChapter: 960,
       name: { it: 'Denjiro', en: 'Denjiro' },
       summary: {
-        it: 'Un orfano sveglio della Capitale dei Fiori, con gli occhiali scuri e il codino, che imbroglia un bottegaio su una pentola e avverte un amico di un cinghiale rubato.',
+        it: 'Un orfano sveglio della Capitale fiorita, con gli occhiali scuri e il codino, che imbroglia un bottegaio su una pentola e avverte un amico di un cinghiale rubato.',
         en: 'A sharp orphan of the Flower Capital, in dark glasses and a ponytail, who cheats a shopkeeper over a pot and warns a friend about a stolen boar.',
       },
       visual: { art: 'denjiro', tint: 'cyan' },
@@ -865,7 +865,7 @@ export const wano: OnePieceSaga = {
         },
       ],
       log: {
-        it: 'Ai tempi in cui Kuri era una terra senza legge, dove criminali e ronin cacciati da casa si derubavano e si uccidevano a vicenda, era l’uomo più pericoloso della regione e ne guidava i furfanti. Poi il figlio dello shogun, bandito dalla Capitale dei Fiori per le sue risse, arrivò a Kuri, e i due si scontrarono quasi subito. Ebbe la peggio, e i furfanti che aveva guidato furono messi a lavorare per costruire la regione.',
+        it: 'Ai tempi in cui Kuri era una terra senza legge, dove criminali e ronin cacciati da casa si derubavano e si uccidevano a vicenda, era l’uomo più pericoloso della regione e ne guidava i furfanti. Poi il figlio dello shogun, bandito dalla Capitale fiorita per le sue risse, arrivò a Kuri, e i due si scontrarono quasi subito. Ebbe la peggio, e i furfanti che aveva guidato furono messi a lavorare per costruire la regione.',
         en: 'In the days when Kuri was a lawless land, where criminals and ronin driven from home robbed and killed one another, he was the most dangerous man in the region and led its ruffians. Then the shogun’s son, banished from the Flower Capital for his brawling, walked into Kuri, and the two clashed almost at once. He lost, and the ruffians he had led were put to work building the region instead.',
       },
       status: [
@@ -1131,7 +1131,7 @@ export const wano: OnePieceSaga = {
     'komurasaki': {
       relationships: wanoRelationships.komurasaki,
       role: {
-        it: 'Oiran della Capitale dei Fiori',
+        it: 'Oiran della Capitale fiorita',
         en: 'Oiran of the Flower Capital',
       },
       log: {
@@ -1151,7 +1151,7 @@ export const wano: OnePieceSaga = {
         {
           episode: 921,
           value: {
-            it: 'Capitale dei Fiori, oiran di rango più alto',
+            it: 'Capitale fiorita, oiran di rango più alto',
             en: 'The Flower Capital, top oiran',
           },
         },
@@ -1177,7 +1177,7 @@ export const wano: OnePieceSaga = {
         {
           episode: 921,
           value: {
-            it: 'Capitale dei Fiori, kamuro al servizio di Komurasaki',
+            it: 'Capitale fiorita, kamuro al servizio di Komurasaki',
             en: 'The Flower Capital, kamuro attending Komurasaki',
           },
         },
@@ -1225,7 +1225,7 @@ export const wano: OnePieceSaga = {
       relationships: wanoRelationships['shimotsuki-yasuie'],
       role: { it: 'Ex daimyo di Hakumai', en: 'Former daimyo of Hakumai' },
       log: {
-        it: 'Nel quartiere di Ebisu, la borgata povera alle porte della Capitale dei Fiori, tutti lo chiamano Tonoyasu. Per vivere fa il giullare, e il denaro che ha lo lascia ai malati e a chi ha fame, mentre lui mangia poco. Accompagna Zoro fino a Ebisu e più tardi lascia agli amici di Zoro una casa vuota del quartiere. Quando dichiara di essere un ladro ricercato, viene arrestato e legato a una croce per essere giustiziato nella capitale, e si scopre che Tonoyasu è un nome falso: è Shimotsuki Yasuie, un tempo daimyo di Hakumai.',
+        it: 'Nel quartiere di Ebisu, la borgata povera alle porte della Capitale fiorita, tutti lo chiamano Tonoyasu. Per vivere fa il giullare, e il denaro che ha lo lascia ai malati e a chi ha fame, mentre lui mangia poco. Accompagna Zoro fino a Ebisu e più tardi lascia agli amici di Zoro una casa vuota del quartiere. Quando dichiara di essere un ladro ricercato, viene arrestato e legato a una croce per essere giustiziato nella capitale, e si scopre che Tonoyasu è un nome falso: è Shimotsuki Yasuie, un tempo daimyo di Hakumai.',
         en: 'In Ebisu Town, a poor neighbourhood just outside the Flower Capital, everyone calls him Tonoyasu. He makes his living as a male geisha, and the money he has he leaves to the sick and the hungry, though he eats little himself. He takes Zoro to Ebisu Town and later lets Zoro’s friends stay in an empty house there. When he claims to be a wanted thief, he is arrested and tied to a cross for execution in the capital, and it comes out that Tonoyasu is a false name: he is Shimotsuki Yasuie, once the daimyo of Hakumai.',
       },
       status: [
@@ -1693,7 +1693,7 @@ export const wano: OnePieceSaga = {
         {
           episode: 902,
           value: {
-            it: 'Grande sumo del Paese di Wano, yokozuna della Capitale dei Fiori; classe dei samurai',
+            it: 'Grande sumo del Paese di Wano, yokozuna della Capitale fiorita; classe dei samurai',
             en: 'Wano Country grand sumo, yokozuna of the Flower Capital; samurai class',
           },
         },
@@ -2128,7 +2128,7 @@ export const wano: OnePieceSaga = {
         {
           episode: 935,
           value: {
-            it: 'Famiglia Kozuki, sorella minore di Momonosuke; l’oiran Komurasaki della Capitale dei Fiori',
+            it: 'Famiglia Kozuki, sorella minore di Momonosuke; l’oiran Komurasaki della Capitale fiorita',
             en: 'Kozuki family, Momonosuke’s younger sister; Komurasaki, oiran of the Flower Capital',
           },
         },
@@ -2146,7 +2146,7 @@ export const wano: OnePieceSaga = {
         en: 'Samurai in Oden’s service',
       },
       log: {
-        it: 'Cresce da solo per le strade della Capitale dei Fiori, strappando una moneta alla volta ai bottegai e tenendo d’occhio le famiglie della yakuza. È amico di Kin’emon, e lo avverte in tempo quando un cinghiale bianco rubato sta per tirarsi dietro sulla città il suo genitore gigante. È uno dei nove samurai che servirono Oden, e dalla morte del suo signore nessuno sa che fine abbia fatto.',
+        it: 'Cresce da solo per le strade della Capitale fiorita, strappando una moneta alla volta ai bottegai e tenendo d’occhio le famiglie della yakuza. È amico di Kin’emon, e lo avverte in tempo quando un cinghiale bianco rubato sta per tirarsi dietro sulla città il suo genitore gigante. È uno dei nove samurai che servirono Oden, e dalla morte del suo signore nessuno sa che fine abbia fatto.',
         en: 'He grows up alone on the streets of the Flower Capital, cheating shopkeepers out of a coin at a time and keeping an ear on the yakuza families. He is a friend of Kin’emon’s, and warns him in time when a stolen white boar is about to bring its giant parent down on the city. He is one of the nine samurai who served Oden, and since his lord’s death nobody knows what has become of him.',
       },
       status: [
@@ -2181,7 +2181,7 @@ export const wano: OnePieceSaga = {
       chronicle: wanoChronicles['kozuki-sukiyaki'],
       role: { it: 'Ex shogun del Paese di Wano', en: 'Former shogun of Wano' },
       log: {
-        it: 'Governa Wano dal castello della Capitale dei Fiori mentre il suo erede, Oden, disonora la famiglia a ogni occasione. Dopo aver ascoltato da uno scrivano l’elenco di tutto quello che Oden ha combinato fin da prima di compiere un anno, non vuole sentire altri commenti e manda al figlio un avviso di ripudio. È lui, più tardi, a dare a Oden il titolo di daimyo di Kuri, quando il figlio ha domato quella terra senza legge.',
+        it: 'Governa Wano dal castello della Capitale fiorita mentre il suo erede, Oden, disonora la famiglia a ogni occasione. Dopo aver ascoltato da uno scrivano l’elenco di tutto quello che Oden ha combinato fin da prima di compiere un anno, non vuole sentire altri commenti e manda al figlio un avviso di ripudio. È lui, più tardi, a dare a Oden il titolo di daimyo di Kuri, quando il figlio ha domato quella terra senza legge.',
         en: 'He rules Wano from the castle in the Flower Capital while his heir, Oden, shames the family at every turn. After hearing a scribe list everything Oden has done since before his first birthday, he wants no more commentary and sends his son a notice of disavowal. It is he who later gives Oden the title of daimyo of Kuri, once his son has tamed that lawless land.',
       },
       status: [

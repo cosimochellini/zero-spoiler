@@ -839,7 +839,7 @@ const retained = {
     type: { en: 'Ally', it: 'Alleato' },
     summary: {
       en: 'Dorry and Brogy welcome Shanks on Elbaf and support him against Kid.',
-      it: 'Dori e Brogi accolgono Shanks a Elbaf e lo sostengono contro Kidd.',
+      it: 'Dori e Brogi accolgono Shanks a Erbaf e lo sostengono contro Kidd.',
     },
   },
   dorryLuffyRescue: {
@@ -855,7 +855,7 @@ const retained = {
     type: { en: 'Friend and rival', it: 'Amico e rivale' },
     summary: {
       en: 'Dorry and Brogy put their duel on hold and return to Elbaf for new weapons.',
-      it: 'Dori e Brogi sospendono il duello e tornano a Elbaf per procurarsi nuove armi.',
+      it: 'Dori e Brogi sospendono il duello e tornano a Erbaf per procurarsi nuove armi.',
     },
   },
   brogyRival: {
@@ -879,7 +879,7 @@ const retained = {
     type: { en: 'Ally', it: 'Alleato' },
     summary: {
       en: 'Brogy and Dorry welcome Shanks on Elbaf and support him against Kid.',
-      it: 'Brogi e Dori accolgono Shanks a Elbaf e lo sostengono contro Kidd.',
+      it: 'Brogi e Dori accolgono Shanks a Erbaf e lo sostengono contro Kidd.',
     },
   },
   brogyLuffyRescue: {
@@ -895,7 +895,7 @@ const retained = {
     type: { en: 'Friend and rival', it: 'Amico e rivale' },
     summary: {
       en: 'Brogy and Dorry put their duel on hold and return to Elbaf for new weapons.',
-      it: 'Brogi e Dori sospendono il duello e tornano a Elbaf per procurarsi nuove armi.',
+      it: 'Brogi e Dori sospendono il duello e tornano a Erbaf per procurarsi nuove armi.',
     },
   },
   brogyUsopp: {
@@ -903,7 +903,7 @@ const retained = {
     type: { en: 'Admirer', it: 'Ammiratore' },
     summary: {
       en: 'Usopp admires Brogy’s pride as a warrior and wants to visit Elbaf.',
-      it: 'Usop ammira l’orgoglio guerriero di Brogi e desidera visitare Elbaf.',
+      it: 'Usop ammira l’orgoglio guerriero di Brogi e desidera visitare Erbaf.',
     },
   },
   wapolDalton: {
@@ -1423,7 +1423,7 @@ const retained = {
     type: { en: 'Reunited friend', it: 'Amico ritrovato' },
     summary: {
       en: 'Robin reunites with Saul on Elbaf after twenty-two years.',
-      it: 'Robin ritrova Saul a Elbaf dopo ventidue anni.',
+      it: 'Robin ritrova Saul a Erbaf dopo ventidue anni.',
     },
   },
   dorryControlledPair: {
@@ -1434,7 +1434,7 @@ const retained = {
     },
     summary: {
       en: 'Im transforms Dorry and Brogy and forces them to obey orders against Elbaf.',
-      it: 'Im trasforma Dori e Brogi e li costringe a eseguire ordini contro Elbaf.',
+      it: 'Im trasforma Dori e Brogi e li costringe a eseguire ordini contro Erbaf.',
     },
   },
   dorryIm: {
@@ -1453,7 +1453,7 @@ const retained = {
     },
     summary: {
       en: 'Im transforms Brogy and Dorry and forces them to obey orders against Elbaf.',
-      it: 'Im trasforma Brogi e Dori e li costringe a eseguire ordini contro Elbaf.',
+      it: 'Im trasforma Brogi e Dori e li costringe a eseguire ordini contro Erbaf.',
     },
   },
   brogyIm: {

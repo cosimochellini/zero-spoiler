@@ -1,6 +1,7 @@
-// Checks every character's Italian name against the Italian One Piece Wiki
-// (onepiece.fandom.com/it), the rule in `src/data/series/one-piece/entities.ts`: the dub's
-// name, or the Star Comics spelling where the dub's cannot be checked. The
+// Checks every character's and place's Italian name against the Italian One
+// Piece Wiki (onepiece.fandom.com/it), the rule in
+// `src/data/series/one-piece/entities.ts`: the dub's name, or the Star Comics
+// spelling where the dub's cannot be checked. The
 // Italian wiki's page title follows Star Comics, and its "Nome doppiaggio
 // italiano" field (`nomeita`) gives the dub's name where it differs.
 //
@@ -9,8 +10,10 @@
 // infobox; or when it is part of one of those, so a surname or a real name
 // said later stays out (Sanji, not Vinsmoke Sanji), with an honorific in
 // front (O-Tama, Don Chinjao). A paired record (Oimo e Kashi) passes part by
-// part. A name that fails takes the dub's, the last one `nomeita` lists
-// (TonyTony Chopper from episode 751), or else the title.
+// part. A place's name passes without the place word the archive adds and
+// the wiki leaves out (Isola di Drum, Cacao Island). A name that fails takes
+// the dub's, the last one `nomeita` lists (TonyTony Chopper from episode
+// 751), or else the title.
 //
 // The Italian page is the English page's interlanguage link (`titlesOf` in
 // `./verify-chapters.mjs`), or the one in `ITALIAN_TITLES` where that link is
@@ -45,6 +48,9 @@ const UNLINKED = new Set(['game-of-thrones'])
 
 /** An honorific the archive writes in front of a name the wiki files bare. */
 const HONORIFIC = /^(?:O-|(?:Baron|Don|Fratelli|Miss|San|Sant|Santa) )/u
+
+/** A place word the archive writes around a name the wiki files bare. */
+const PLACE_WORD = /^(?:Arcipelago|Isola|Villaggio)(?: di)? | Island$/gu
 
 /**
  * One infobox field's raw value, up to the next field or the box's end.
@@ -269,11 +275,12 @@ export function verdictOf(record, pages) {
     return 'unresolved'
   }
 
+  const names = read.map((page) => namesOf(page))
+  const bare =
+    record.kind === 'place' ? record.name.it.replaceAll(PLACE_WORD, '') : ''
+
   return (
-      accepts(
-        record.name.it,
-        read.map((names) => namesOf(names)),
-      )
+      accepts(record.name.it, names) || (bare !== '' && accepts(bare, names))
     ) ?
       'ok'
     : 'wrong'
@@ -282,25 +289,25 @@ export function verdictOf(record, pages) {
 /** @typedef {{ id: string, it: string, pages: string, verdict: string, suggestion: string, aliases: string }} Row */
 
 /**
- * Every character of the series on the command line against its Italian
- * pages, in archive order.
- * @returns {Promise<Row[]>} One row per character.
+ * Every character and place of the series on the command line against its
+ * Italian pages, in archive order.
+ * @returns {Promise<Row[]>} One row per record.
  */
 async function verify() {
   const series = await seriesOrExit()
   const wiki = wikiOf(series)
   /** @type {Record_[]} */
-  const characters = /** @type {Record_[]} */ (series.archive.entities).filter(
-    ({ kind }) => kind === 'character',
+  const records = /** @type {Record_[]} */ (series.archive.entities).filter(
+    ({ kind }) => kind === 'character' || kind === 'place',
   )
   const known = ITALIAN_TITLES[wiki.slug] ?? {}
-  const english = characters
+  const english = records
     .filter(({ id }) => known[id] === undefined && !UNLINKED.has(wiki.slug))
     .flatMap((record) => titlesOf(record, wiki.slug)[0] ?? [])
   const asked = new Set(english)
   const linked = await italianTitles(asked.values().toArray(), wiki)
   const titles = new Map(
-    characters.map((record) => {
+    records.map((record) => {
       const named = known[record.id]
 
       return [
@@ -322,7 +329,7 @@ async function verify() {
   )
   const read = await italianPages(wanted.values().toArray(), wiki)
 
-  return characters.map((record) => {
+  return records.map((record) => {
     const pages = (titles.get(record.id) ?? []).map((title) =>
       title === undefined ? undefined : italianPageOf(title, read),
     )
@@ -359,7 +366,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
       ].join('\n')
 
   process.stdout.write(
-    `## Italian names (${String(rows.length)} characters)\n\n${table}\n`,
+    `## Italian names (${String(rows.length)} characters and places)\n\n${table}\n`,
   )
   process.exitCode = wrong.length === 0 ? 0 : 1
 }

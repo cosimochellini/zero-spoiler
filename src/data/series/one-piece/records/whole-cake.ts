@@ -7,7 +7,7 @@ import { wholeCakeRelationships } from './whole-cake.relationships'
  * an island made of sweets, and a council of kings.
  */
 
-const ZOU = { it: 'Zou', en: 'Zou' }
+const ZOU = { it: 'Zo', en: 'Zou' }
 
 const TOTTO_LAND = { it: 'Totto Land', en: 'Totto Land' }
 
@@ -53,7 +53,7 @@ export const wholeCake: OnePieceSaga = {
       kind: 'arc',
       revealedAtEpisode: 751,
       revealedAtChapter: 802,
-      name: { it: 'Zou', en: 'Zou' },
+      name: { it: 'Zo', en: 'Zou' },
       summary: {
         it: 'Un elefante alto un chilometro che cammina sul mare da mille anni, con una foresta e una città fortificata in cima alla schiena.',
         en: 'A mile-high elephant that has walked the sea for a thousand years, a forest and a walled city riding on its back.',
@@ -67,7 +67,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 809,
       name: { it: 'Jack', en: 'Jack' },
       summary: {
-        it: 'Un pirata delle Cento Bestie che arriva a Zou con una flotta e diventa un mammut alto quanto una nave per avere un uomo solo.',
+        it: 'Un pirata delle Cento Bestie che arriva a Zo con una flotta e diventa un mammut alto quanto una nave per avere un uomo solo.',
         en: 'A Beasts Pirate who comes to Zou with a fleet and turns into a mammoth as tall as a ship to get hold of one single man.',
       },
       visual: { art: 'jack', tint: 'wine' },
@@ -103,7 +103,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 808,
       name: { it: 'Cane-tempesta', en: 'Inuarashi' },
       summary: {
-        it: 'Il duca cane di Zou, che regna soltanto di giorno, a letto e fasciato dopo l’assalto, che non vuole sentirsi chiamare forte perché è stato sconfitto.',
+        it: 'Il duca cane di Zo, che regna soltanto di giorno, a letto e fasciato dopo l’assalto, che non vuole sentirsi chiamare forte perché è stato sconfitto.',
         en: 'The dog duke of Zou, who rules only by day, bandaged in his sickbed after the raid, who will not be called strong because he was beaten.',
       },
       visual: { art: 'inuarashi', tint: 'ocher' },
@@ -115,7 +115,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 810,
       name: { it: 'Pedro', en: 'Pedro' },
       summary: {
-        it: 'Un mink giaguaro a capo dei Guardiani della foresta di Zou, che richiama i suoi uomini da Rufy quando Wanda garantisce per lui.',
+        it: 'Un mink giaguaro a capo dei Guardiani della foresta di Zo, che richiama i suoi uomini da Rufy quando Wanda garantisce per lui.',
         en: 'A jaguar mink at the head of the Guardians of Zou’s forest, who calls his men off Luffy when Wanda vouches for him.',
       },
       visual: { art: 'pedro', tint: 'green' },
@@ -127,7 +127,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 813,
       name: { it: 'Gatto-vipera', en: 'Nekomamushi' },
       summary: {
-        it: 'Il signore della notte di Zou, un enorme mink gatto che si sveglia al tramonto e ride mentre gli portano notizie di guerra.',
+        it: 'Il signore della notte di Zo, un enorme mink gatto che si sveglia al tramonto e ride mentre gli portano notizie di guerra.',
         en: 'The night lord of Zou, an enormous cat mink who wakes at sunset and laughs while they bring him news of the war.',
       },
       visual: { art: 'nekomamushi', tint: 'yellow' },
@@ -433,7 +433,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 866,
       name: { it: 'Carmel', en: 'Carmel' },
       summary: {
-        it: 'Una suora che, in un ricordo lontano, accoglie a Elbaf i bambini che nessuno vuole e perdona alla piccola Linlin ogni danno.',
+        it: 'Una suora che, in un ricordo lontano, accoglie a Erbaf i bambini che nessuno vuole e perdona alla piccola Linlin ogni danno.',
         en: 'A nun who, in a distant memory, takes in the children nobody wants on Elbaph and forgives little Linlin every harm she does.',
       },
       visual: { art: 'carmel', tint: 'ivory' },
@@ -445,7 +445,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 866,
       name: { it: 'Gerd', en: 'Gerd' },
       summary: {
-        it: 'Una bambina gigante di Elbaf che, in un ricordo lontano, si fa rincorrere dalla piccola Linlin per il villaggio e le racconta del digiuno prima della festa.',
+        it: 'Una bambina gigante di Erbaf che, in un ricordo lontano, si fa rincorrere dalla piccola Linlin per il villaggio e le racconta del digiuno prima della festa.',
         en: 'A giant girl on Elbaph who, in a distant memory, is chased through the village by little Linlin and tells her about the fast before the festival.',
       },
       visual: { art: 'gerd', tint: 'flamingo' },
@@ -457,7 +457,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 866,
       name: { it: 'Jarl', en: 'Jarul' },
       summary: {
-        it: 'Un gigante anziano con un elmo cornuto e una barba larga come una montagna, che in un ricordo lontano raduna gli orfani di Elbaf attorno a un banchetto di semla.',
+        it: 'Un gigante anziano con un elmo cornuto e una barba larga come una montagna, che in un ricordo lontano raduna gli orfani di Erbaf attorno a un banchetto di semla.',
         en: 'An ancient giant in a horned helmet with a beard as broad as a mountain, who in a distant memory gathers Elbaph’s orphans around a feast of semla.',
       },
       visual: { art: 'jarul', tint: 'sand' },
@@ -609,7 +609,7 @@ export const wholeCake: OnePieceSaga = {
       kind: 'place',
       revealedAtEpisode: 752,
       revealedAtChapter: 803,
-      name: { it: 'Zou', en: 'Zou' },
+      name: { it: 'Zo', en: 'Zou' },
       summary: {
         it: 'Un paese sulla schiena di un elefante grande come una montagna, che cammina nella nebbia del Nuovo Mondo, abitato da mille anni da una tribù che odia gli umani.',
         en: 'A country on the back of a mountain-sized elephant that walks through the fog of the New World, home for a thousand years to a tribe that hates humans.',
@@ -635,7 +635,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 806,
       name: { it: 'Zunisha', en: 'Zunesha' },
       summary: {
-        it: 'L’elefante millenario che porta Zou sulla schiena e due volte al giorno si fa la doccia con l’acqua di mare, facendo piovere pesci sulla città.',
+        it: 'L’elefante millenario che porta Zo sulla schiena e due volte al giorno si fa la doccia con l’acqua di mare, facendo piovere pesci sulla città.',
         en: 'The thousand-year-old elephant that carries Zou on its back and twice a day sprays seawater over itself, raining fish on the city.',
       },
       visual: { art: 'zunesha', tint: 'azure' },
@@ -647,7 +647,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 808,
       name: { it: 'Sicilian', en: 'Shishilian' },
       summary: {
-        it: 'Un mink leone con il cappello piumato da moschettiere, di guardia al sanatorio del duca di Zou, che butta nel burrone chiunque parli di cose dolci.',
+        it: 'Un mink leone con il cappello piumato da moschettiere, di guardia al sanatorio del duca di Zo, che butta nel burrone chiunque parli di cose dolci.',
         en: 'A lion mink in a plumed musketeer’s hat, on guard at the duke’s sanatorium on Zou, who throws anyone who talks about sweet things into the ravine.',
       },
       visual: { art: 'shishilian', tint: 'red' },
@@ -805,7 +805,7 @@ export const wholeCake: OnePieceSaga = {
       revealedAtChapter: 866,
       name: { it: 'Jorl', en: 'Jorul' },
       summary: {
-        it: 'Un gigante antichissimo con una barba che scende fino a terra come una cascata, che in un ricordo lontano va al villaggio di Elbaf con un vecchio compagno a dividere la semla con gli orfani.',
+        it: 'Un gigante antichissimo con una barba che scende fino a terra come una cascata, che in un ricordo lontano va al villaggio di Erbaf con un vecchio compagno a dividere la semla con gli orfani.',
         en: 'An ancient giant with a beard that pours to the ground like a waterfall, who in a distant memory comes down to Elbaph’s village with an old comrade to share semla with the orphans.',
       },
       visual: { art: 'jorul', tint: 'azure' },
@@ -933,7 +933,7 @@ export const wholeCake: OnePieceSaga = {
         {
           episode: 753,
           chapter: 807,
-          value: { it: 'Mink di Zou', en: 'Mink of Zou' },
+          value: { it: 'Mink di Zo', en: 'Mink of Zou' },
         },
         // Inuarashi and Nekomamushi hand her the dukedom in chapter 1056,
         // episode 1083.
@@ -1073,7 +1073,7 @@ export const wholeCake: OnePieceSaga = {
         },
       ],
       log: {
-        it: 'Dorme tutto il giorno in una stanza piena di cuscini e prende il ducato quando il sole se n’è andato, perché a Zou il comando si divide in due. È grosso, rumoroso e affettuoso con i suoi, e passa dalla risata alla rabbia in un istante. Con il duca del giorno non si parla da anni, e nessuno dei due dice davvero il perché.',
+        it: 'Dorme tutto il giorno in una stanza piena di cuscini e prende il ducato quando il sole se n’è andato, perché a Zo il comando si divide in due. È grosso, rumoroso e affettuoso con i suoi, e passa dalla risata alla rabbia in un istante. Con il duca del giorno non si parla da anni, e nessuno dei due dice davvero il perché.',
         en: 'He sleeps through the day in a room full of cushions and takes the dukedom once the sun is gone, because on Zou command is split in two. He is huge, loud and fond of his own people, and goes from laughter to fury in a heartbeat. He has not spoken to the duke of the day in years, and neither of them will say quite why.',
       },
       status: [{ episode: 761, value: 'alive' }],
@@ -1101,7 +1101,7 @@ export const wholeCake: OnePieceSaga = {
           episode: 768,
           factions: ['independent'],
           value: {
-            it: 'Ninja di Wano, nascosto a Zou',
+            it: 'Ninja di Wano, nascosto a Zo',
             en: 'Ninja of Wano, in hiding on Zou',
           },
         },
@@ -1711,7 +1711,7 @@ export const wholeCake: OnePieceSaga = {
         en: 'Mother of the Sheep’s House',
       },
       log: {
-        it: 'Nel ricordo è una suora venuta da fuori che ferma la Marina mentre sta per giustiziare alcuni giganti catturati, e per questo i giganti di Elbaf la rispettano. Sull’isola apre un orfanotrofio dove accoglie bambini di ogni razza che non hanno un posto dove andare, e tutti la chiamano Mamma. Quando la piccola Linlin, abbandonata dai genitori, fa del male agli altri, lei la perdona ogni volta e ripete che è una bambina buona.',
+        it: 'Nel ricordo è una suora venuta da fuori che ferma la Marina mentre sta per giustiziare alcuni giganti catturati, e per questo i giganti di Erbaf la rispettano. Sull’isola apre un orfanotrofio dove accoglie bambini di ogni razza che non hanno un posto dove andare, e tutti la chiamano Mamma. Quando la piccola Linlin, abbandonata dai genitori, fa del male agli altri, lei la perdona ogni volta e ripete che è una bambina buona.',
         en: 'In the memory she is a wandering nun who stops the Navy as it is about to execute some captured giants, and the giants of Elbaph respect her for it. On the island she opens an orphanage that takes in children of any race with nowhere else to go, and they all call her Mother. When little Linlin, abandoned by her parents, hurts the others, she forgives her every time and says she is a kind girl.',
       },
       status: [
@@ -1741,9 +1741,9 @@ export const wholeCake: OnePieceSaga = {
     },
     'gerd': {
       relationships: wholeCakeRelationships.gerd,
-      role: { it: 'Bambina gigante di Elbaf', en: 'Giant girl of Elbaph' },
+      role: { it: 'Bambina gigante di Erbaf', en: 'Giant girl of Elbaph' },
       log: {
-        it: 'Nel ricordo è una bambina gigante del villaggio di Elbaf, e la piccola Linlin le corre dietro come dietro a un’amica. È lei a spiegarle che sull’isola si digiuna dodici giorni prima della festa del solstizio d’inverno, e a descriverle la semla finché a tutte e due non viene l’acquolina. Il settimo giorno di digiuno corre in preda al panico da Mamma Carmel.',
+        it: 'Nel ricordo è una bambina gigante del villaggio di Erbaf, e la piccola Linlin le corre dietro come dietro a un’amica. È lei a spiegarle che sull’isola si digiuna dodici giorni prima della festa del solstizio d’inverno, e a descriverle la semla finché a tutte e due non viene l’acquolina. Il settimo giorno di digiuno corre in preda al panico da Mamma Carmel.',
         en: 'In the memory she is a giant girl from the village on Elbaph, and little Linlin runs after her as after a friend. She is the one who explains that the island fasts for twelve days before the Winter Solstice Festival, and who describes semla until both of them are drooling. On the seventh day of the fast she runs to Mother Carmel in a panic.',
       },
       status: [{ episode: 836, value: 'alive' }],
@@ -1761,27 +1761,27 @@ export const wholeCake: OnePieceSaga = {
           episode: 836,
           chapter: 866,
           place: 'elbaf-island',
-          value: { it: 'Elbaf', en: 'Elbaph' },
+          value: { it: 'Erbaf', en: 'Elbaph' },
         },
       ],
     },
     'jarul': {
       relationships: wholeCakeRelationships.jarul,
-      role: { it: 'Anziano di Elbaf', en: 'Elder of Elbaph' },
+      role: { it: 'Anziano di Erbaf', en: 'Elder of Elbaph' },
       log: {
-        it: 'Nel ricordo è uno dei due vecchi capitani che i giganti di Elbaf trattano da eroi, alto il doppio di chiunque altro e con una barba che gli copre quasi tutto il corpo. Ai giovani ricorda che il commercio al posto del saccheggio, come predica Carmel, va benissimo, ma i giganti non devono mai dimenticare di essere guerrieri. Poi viene con il vecchio compagno a prendere gli orfani della Casa delle Pecore per mangiare la semla prima del digiuno.',
+        it: 'Nel ricordo è uno dei due vecchi capitani che i giganti di Erbaf trattano da eroi, alto il doppio di chiunque altro e con una barba che gli copre quasi tutto il corpo. Ai giovani ricorda che il commercio al posto del saccheggio, come predica Carmel, va benissimo, ma i giganti non devono mai dimenticare di essere guerrieri. Poi viene con il vecchio compagno a prendere gli orfani della Casa delle Pecore per mangiare la semla prima del digiuno.',
         en: 'In the memory he is one of the two old captains the giants of Elbaph treat as heroes, twice as tall as anyone else, with a beard that covers nearly his whole body. He tells the young that trade over plunder, as Carmel preaches, is all very well, but giants must never forget they are warriors. Then he comes with his old comrade to fetch the Sheep’s House orphans for semla before the fast.',
       },
       status: [{ episode: 836, value: 'alive' }],
       affiliation: [
-        { episode: 836, value: { it: 'Elbaf, anziano', en: 'Elbaph, elder' } },
+        { episode: 836, value: { it: 'Erbaf, anziano', en: 'Elbaph, elder' } },
       ],
       origin: [
         {
           episode: 836,
           chapter: 866,
           place: 'elbaf-island',
-          value: { it: 'Elbaf', en: 'Elbaph' },
+          value: { it: 'Erbaf', en: 'Elbaph' },
         },
       ],
       epithet: [
@@ -2118,7 +2118,7 @@ export const wholeCake: OnePieceSaga = {
       relationships: wholeCakeRelationships.zunesha,
       chronicle: wholeCakeChronicles.zunesha,
       role: {
-        it: 'L’elefante che porta Zou',
+        it: 'L’elefante che porta Zo',
         en: 'The elephant that carries Zou',
       },
       log: {
@@ -2538,7 +2538,7 @@ export const wholeCake: OnePieceSaga = {
         {
           episode: 836,
           value: {
-            it: 'Pirati Guerrieri Giganti, ex capitano; Elbaf',
+            it: 'Pirati Guerrieri Giganti, ex capitano; Erbaf',
             en: 'Giant Warrior Pirates, former co-captain; Elbaph',
           },
         },
@@ -2548,7 +2548,7 @@ export const wholeCake: OnePieceSaga = {
           episode: 836,
           chapter: 866,
           place: 'elbaf-island',
-          value: { it: 'Elbaf', en: 'Elbaph' },
+          value: { it: 'Erbaf', en: 'Elbaph' },
         },
       ],
       epithet: [

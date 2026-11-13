@@ -108,16 +108,17 @@ copied from them. Each place's pages are under its key in
 
 ### `winter-town`
 
-- Italian name "Città d'Inverno" not found on it.wikipedia; dub form
-  unconfirmed.
+- Italian name "Città dell'Inverno" from the Italian Game of Thrones Wiki
+  (#1244); Italian Wikipedia does not name it; dub form unconfirmed.
 - The show only names it in season 7 ("The Spoils of War"), so no nameSaidAt.
 - Ros is filed here: she is first seen at the brothel in episode 1, though her
   record opens at episode 4.
 
 ### `inn-at-the-crossroads`
 
-- Italian name "Locanda all'Incrocio" not found on it.wikipedia (the season 1
-  page says only "una locanda"); dub form unconfirmed.
+- Italian name "Locanda all'Incrocio": Italian Wikipedia writes it once (Arya
+  Stark) and "Locanda dell'Incrocio" on other pages; the Italian Game of Thrones
+  Wiki's headword is "Locanda all'Incrocio" (#1244). Dub form unconfirmed.
 - AWOIAF files Sansa I at the inn at the crossroads; the Fandom notes say the
   books stage the quarrel near Castle Darry. The book gate stays 16.
 - Uses the proposed new form "inn".

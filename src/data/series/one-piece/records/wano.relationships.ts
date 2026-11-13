@@ -74,7 +74,7 @@ const links = {
     type: { en: 'Son', it: 'Figlio' },
     summary: {
       en: 'Sukiyaki disowns Oden after his repeated disturbances in the Flower Capital.',
-      it: 'Sukiyaki ripudia Oden dopo i suoi continui disordini nella Capitale dei Fiori.',
+      it: 'Sukiyaki ripudia Oden dopo i suoi continui disordini nella Capitale fiorita.',
     },
   },
   sukiyakiOdenDaimyo: {
@@ -558,7 +558,7 @@ const links = {
     type: { en: 'Lord', it: 'Signore' },
     summary: {
       en: 'Denjiro follows Oden after watching him save the Flower Capital from the Mountain God.',
-      it: 'Denjiro segue Oden dopo averlo visto salvare la Capitale dei Fiori dal Dio della Montagna.',
+      it: 'Denjiro segue Oden dopo averlo visto salvare la Capitale fiorita dal Dio della Montagna.',
     },
   },
   denjiroHiyori: {
@@ -754,7 +754,7 @@ const links = {
     type: { en: 'Father', it: 'Padre' },
     summary: {
       en: 'Sukiyaki disowns Oden and bars him from the Flower Capital.',
-      it: 'Sukiyaki ripudia Oden e gli vieta di tornare nella Capitale dei Fiori.',
+      it: 'Sukiyaki ripudia Oden e gli vieta di tornare nella Capitale fiorita.',
     },
   },
   odenKin: {
@@ -1657,7 +1657,7 @@ const links = {
     type: { en: 'Shogun he returns to', it: 'Shogun da cui torna' },
     summary: {
       en: 'Yamato returns to the Flower Capital and pays respects to Wano’s fallen heroes with Momonosuke.',
-      it: 'Yamato torna nella Capitale dei Fiori e rende omaggio agli eroi caduti di Wano insieme a Momonosuke.',
+      it: 'Yamato torna nella Capitale fiorita e rende omaggio agli eroi caduti di Wano insieme a Momonosuke.',
     },
   },
   orochiOden: {

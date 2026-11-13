@@ -92,11 +92,11 @@ const ROLES: { changes: Change[]; id: string }[] = [
         episode: 3,
         chapter: 7,
         from: role(
-          'Capitano della base di Shells Town',
+          'Capitano della base di Sheltz Town',
           'Captain of the Shells Town base',
         ),
         to: role(
-          'Ex capitano della base di Shells Town',
+          'Ex capitano della base di Sheltz Town',
           'Former captain of the Shells Town base',
         ),
       },
@@ -589,7 +589,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
         episode: 1164,
         chapter: 1133,
         from: role('Gigante naufragato a Ohara', 'Giant castaway on Ohara'),
-        to: role('Insegnante di storia a Elbaf', 'History teacher on Elbaph'),
+        to: role('Insegnante di storia a Erbaf', 'History teacher on Elbaph'),
       },
     ],
   },
@@ -895,7 +895,7 @@ const ROLES: { changes: Change[]; id: string }[] = [
       {
         episode: 1083,
         chapter: 1056,
-        from: role('Mink di Zou', 'Mink of Zou'),
+        from: role('Mink di Zo', 'Mink of Zou'),
         to: role('Sovrana del Ducato di Mokomo', 'Ruler of the Mokomo Dukedom'),
       },
     ],

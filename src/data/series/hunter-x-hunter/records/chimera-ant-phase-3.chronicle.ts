@@ -271,9 +271,12 @@ export const chimeraAntPhase3Chronicles = {
       episode: 96,
       chapter: 224,
       value: {
-        title: { it: 'La regina di Meteor City', en: 'Meteor City’s queen' },
+        title: {
+          it: 'La regina della Città delle Stelle Cadenti',
+          en: 'Meteor City’s queen',
+        },
         body: {
-          it: 'Zazan occupa Meteor City e si proclama regina. Trasforma gli esseri umani catturati in sudditi con il proprio pungiglione, senza deporre uova come la madre. Gli abitanti non riescono a fermare le formichimere. Alcuni membri della Brigata Fantasma tornano in città e decidono di entrare nel suo palazzo per eliminarla.',
+          it: 'Zazan occupa la Città delle Stelle Cadenti e si proclama regina. Trasforma gli esseri umani catturati in sudditi con il proprio pungiglione, senza deporre uova come la madre. Gli abitanti non riescono a fermare le formichimere. Alcuni membri della Brigata Fantasma tornano in città e decidono di entrare nel suo palazzo per eliminarla.',
           en: 'Zazan occupies Meteor City and proclaims herself queen. She turns captured humans into subjects with her stinger rather than laying eggs as her mother did. The residents cannot stop the Chimera Ants. Members of the Phantom Troupe return to the city and decide to enter her palace to kill her.',
         },
       },
@@ -317,7 +320,7 @@ export const chimeraAntPhase3Chronicles = {
           en: 'The punch against the Ant',
         },
         body: {
-          it: 'Phinks torna a Meteor City con altri membri della Brigata e decide di affrontare le formichimere. Nel palazzo incontra un avversario simile a un gorilla. Fa ruotare il braccio per aumentare la potenza del colpo e lo uccide con un pugno. Si accorge poi che avrebbe potuto usare molta meno forza.',
+          it: 'Phinks torna alla Città delle Stelle Cadenti con altri membri della Brigata e decide di affrontare le formichimere. Nel palazzo incontra un avversario simile a un gorilla. Fa ruotare il braccio per aumentare la potenza del colpo e lo uccide con un pugno. Si accorge poi che avrebbe potuto usare molta meno forza.',
           en: 'Phinks returns to Meteor City with other Troupe members and joins the attack on the Chimera Ants. Inside the palace, he faces a gorilla-like opponent. He rotates his arm to increase the power of his attack and kills the Ant with one punch. Afterwards, he realizes that much less force would have been enough.',
         },
       },
@@ -728,7 +731,7 @@ export const chimeraAntPhase3Chronicles = {
           en: 'A call for help',
         },
         body: {
-          it: 'Nobunaga telefona a [[shalnark|Shalnark]] mentre gli altri della Brigata si trovano a Meteor City dopo gli scontri con le formichimere. Chiede se possono aiutarlo con un incarico. [[phinks|Phinks]] spera inizialmente che a chiamare sia [[chrollo|Quoll]], e si lamenta di dover aspettare ancora.',
+          it: 'Nobunaga telefona a [[shalnark|Shalnark]] mentre gli altri della Brigata si trovano nella Città delle Stelle Cadenti dopo gli scontri con le formichimere. Chiede se possono aiutarlo con un incarico. [[phinks|Phinks]] spera inizialmente che a chiamare sia [[chrollo|Quoll]], e si lamenta di dover aspettare ancora.',
           en: 'Nobunaga phones [[shalnark|Shalnark]] while the other Troupe members are in Meteor City after fighting the Chimera Ants. He asks whether they will help him with a job. [[phinks|Phinks]] initially hopes the caller is [[chrollo|Chrollo]], and complains about having to wait.',
         },
       },

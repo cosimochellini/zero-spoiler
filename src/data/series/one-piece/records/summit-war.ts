@@ -1496,7 +1496,7 @@ export const summitWar: OnePieceSaga = {
           episode: 754,
           chapter: 805,
           place: 'zou',
-          value: { it: 'Zou, Ducato di Mokomo', en: 'Zou, Mokomo Dukedom' },
+          value: { it: 'Zo, Ducato di Mokomo', en: 'Zou, Mokomo Dukedom' },
         },
       ],
     },

@@ -126,6 +126,19 @@ describe('the verdict on a record', () => {
     expect(verdictOf(record('x', 'X'), [])).toBe('unresolved')
   })
 
+  it('passes a place without the place word the wiki leaves out', () => {
+    const place = (id, it) => ({ ...record(id, it), kind: 'place' })
+
+    expect(verdictOf(place('drum', 'Isola di Drum'), [page('Drum')])).toBe('ok')
+    expect(verdictOf(place('cacao', 'Cacao Island'), [page('Cacao')])).toBe(
+      'ok',
+    )
+    expect(verdictOf(place('zou', 'Isola di Zou'), [page('Zo')])).toBe('wrong')
+    expect(verdictOf(record('drum', 'Isola di Drum'), [page('Drum')])).toBe(
+      'wrong',
+    )
+  })
+
   it('keeps a name checked by hand while it stays the one checked', () => {
     expect(verdictOf(record('shaka', 'Shaka'), [undefined])).toBe('kept')
     expect(verdictOf(record('shaka', 'Shakka'), [undefined])).toBe('unresolved')

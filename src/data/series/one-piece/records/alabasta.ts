@@ -1022,7 +1022,7 @@ export const alabasta: OnePieceSaga = {
     },
     'dorry': {
       relationships: alabastaRelationships.dorry,
-      role: { it: 'Guerriero gigante di Elbaf', en: 'Giant warrior of Elbaph' },
+      role: { it: 'Guerriero gigante di Erbaf', en: 'Giant warrior of Elbaph' },
       log: {
         it: 'È alto come una torre, porta uno scudo rotondo e una spada, e vive in una grotta di Little Garden dove arrostisce bestie preistoriche intere. Da cento anni, ogni volta che il vulcano erutta, duella con un altro gigante per una ragione che nessuno dei due ricorda più, e nessuno dei due ha ceduto un passo.',
         en: 'He stands as tall as a tower, carries a round shield and a sword, and lives in a cave on Little Garden where he roasts prehistoric beasts whole. For a hundred years, every time the volcano erupts, he has duelled another giant over a reason neither of them remembers, and neither has given a step.',
@@ -1052,7 +1052,7 @@ export const alabasta: OnePieceSaga = {
           episode: 71,
           chapter: 116,
           place: 'elbaf-island',
-          value: { it: 'Elbaf', en: 'Elbaph' },
+          value: { it: 'Erbaf', en: 'Elbaph' },
         },
       ],
       epithet: [{ episode: 71, value: { it: 'Orco Blu', en: 'Blue Ogre' } }],
@@ -1063,7 +1063,7 @@ export const alabasta: OnePieceSaga = {
     },
     'brogy': {
       relationships: alabastaRelationships.brogy,
-      role: { it: 'Guerriero gigante di Elbaf', en: 'Giant warrior of Elbaph' },
+      role: { it: 'Guerriero gigante di Erbaf', en: 'Giant warrior of Elbaph' },
       log: {
         it: 'Ha una barba a forma di lama d’ascia e una risata che si sente dall’altra parte dell’isola, e porta un’ascia che nessun uomo riuscirebbe a sollevare. Ogni volta che il vulcano erutta scende nel campo di battaglia e affronta lo stesso avversario, come fa da cento anni.',
         en: 'He has a beard shaped like an axe blade and a laugh you can hear from the far side of the island, and he carries an axe no man could lift. Every time the volcano erupts he walks down to the field and faces the same opponent, as he has for a hundred years.',
@@ -1085,7 +1085,7 @@ export const alabasta: OnePieceSaga = {
           episode: 71,
           chapter: 116,
           place: 'elbaf-island',
-          value: { it: 'Elbaf', en: 'Elbaph' },
+          value: { it: 'Erbaf', en: 'Elbaph' },
         },
       ],
       epithet: [{ episode: 71, value: { it: 'Orco Rosso', en: 'Red Ogre' } }],
