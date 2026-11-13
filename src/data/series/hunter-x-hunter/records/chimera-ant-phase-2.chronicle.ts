@@ -321,7 +321,7 @@ export const chimeraAntPhase2Chronicles = {
         title: { it: 'Il re degli uomini armati', en: 'The gunmen’s king' },
         body: {
           it: 'In un villaggio, uomini armati chiamano Giairo il loro re. Da lui ricevono l’ordine di eliminare le formiche che attaccano gli abitanti, e sparano contro gli insetti. La resistenza umana colpisce alcuni soldati della colonia, ma le formichimere continuano a espandersi nel paese.',
-          en: 'In a village, armed men call Gyro their king. They receive orders from him to eliminate the ants attacking the inhabitants, and they fire on the insects. The human resistance kills some of the colony’s soldiers, but the Chimera Ants continue spreading through the country.',
+          en: 'In a village, gunmen call Gyro their king. They receive orders from him to eliminate the ants attacking the inhabitants, and they fire on the insects. The human resistance kills some of the colony’s soldiers, but the Chimera Ants continue spreading through the country.',
         },
       },
       source: 'episode',

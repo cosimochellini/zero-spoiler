@@ -1449,6 +1449,28 @@ describe.each(
   },
 )
 
+/** Gyro's whole page for an episode reader, as one string. */
+function gyroAt(episode: number, locale: Locale): string {
+  const reader = readerFor(archive, at('episode', episode), locale)
+
+  expect(opened('gyro', false, reader)).toBe(true)
+
+  return JSON.stringify(characterPage('gyro', reader))
+}
+
+describe('Gyro before the anime ties him to NGL', () => {
+  // Episode 78 tells only his gunmen; his past at episode 80 makes him NGL's
+  // ruler (#1234). His summary, log and episode-78 story are frozen texts no
+  // step replaces, so the whole page is asked.
+  it.each(LOCALES)(
+    'names no NGL on his page until episode 80 in %s',
+    (locale) => {
+      expect(gyroAt(79, locale)).not.toContain('NGL')
+      expect(gyroAt(80, locale)).toContain('NGL')
+    },
+  )
+})
+
 describe.each([
   { id: 'neferpitou', episode: 131, chapter: 307 },
   { id: 'menthuthuyoupi', episode: 133, chapter: 310 },

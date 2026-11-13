@@ -572,7 +572,9 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     // The gunmen name him as their king in episode 78, which the anime
     // invents; the manga's caption names him as NGL's kingpin in chapter 203.
-    // The frozen texts keep to what both tell. Episode 78 never ties him to
+    // The frozen texts keep to episode 78's gunmen, which the manga's kingpin
+    // of a gun-running cartel (chapters 192, 203) does not contradict, and
+    // name no country. Episode 78 never ties him to
     // NGL: the anime does so in his past, episode 80 (chapter 204's story),
     // so the NGL role and affiliation wait there for an episode reader.
     'gyro': {
@@ -769,7 +771,7 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       name: { it: 'Giairo', en: 'Gyro' },
       summary: {
         it: 'Un capo i cui uomini armati hanno affrontato le formichimere.',
-        en: 'A leader whose armed men took on the Chimera Ants.',
+        en: 'A leader whose gunmen took on the Chimera Ants.',
       },
       visual: { art: 'gyro', tint: 'sand' },
     },
