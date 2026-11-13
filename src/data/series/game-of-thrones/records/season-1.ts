@@ -2406,8 +2406,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 60,
       name: { it: 'Torri Gemelle', en: 'the Twins' },
       summary: {
-        it: 'Due castelli uno di fronte all’altro sulle rive della Forca Verde, uniti da un ponte: la sede della Casa Frey.',
-        en: 'Two castles facing each other across the Green Fork, joined by a bridge: the seat of House Frey.',
+        it: 'Due castelli uno di fronte all’altro sulle rive di un fiume, uniti da un ponte: la sede della Casa Frey.',
+        en: 'Two castles facing each other across a river, joined by a bridge: the seat of House Frey.',
       },
       visual: { art: 'the-twins', tint: 'azure' },
     },
@@ -2560,6 +2560,134 @@ export const season1: ThronesSaga = {
         en: 'The strip of marshland that divides the North from the south.',
       },
       visual: { art: 'the-neck', tint: 'teal' },
+    },
+    // The first season's visited places #853 left out (#1252).
+    // Show: "Cripples, Bastards, and Broken Things", Janos Slynt reports a horse
+    // race down the Street of the Sisters. Books: Catelyn IV (site chapter 19),
+    // the street runs straight between two hills; Arya V (66) is set there.
+    {
+      id: 'street-of-the-sisters',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 19,
+      name: { it: 'Via delle Sorelle', en: 'the Street of the Sisters' },
+      summary: {
+        it: 'Una delle strade principali di Approdo del Re.',
+        en: 'One of the main streets of King’s Landing.',
+      },
+      visual: { art: 'street-of-the-sisters', tint: 'sand' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Littlefinger sends Ned to
+    // the top of the Street of Steel, to Tobho Mott's shop. Books: Eddard VI
+    // (site chapter 28), the same visit.
+    {
+      id: 'street-of-steel',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 28,
+      name: { it: 'Via dell’Acciaio', en: 'the Street of Steel' },
+      summary: {
+        it: 'Una strada di fabbri e armaioli ad Approdo del Re.',
+        en: 'A street of smiths and armourers in King’s Landing.',
+      },
+      visual: { art: 'street-of-steel', tint: 'orange' },
+    },
+    // Book only. Catelyn V (site chapter 29), the eastern road climbs into the
+    // Mountains of the Moon; Tyrion IV and VI cross them. The show crosses them
+    // from episode 5 and names them only later; episode 4, the arrest at the
+    // inn, orders it.
+    {
+      id: 'mountains-of-the-moon',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Montagne della Luna', en: 'the Mountains of the Moon' },
+      summary: {
+        it: 'Una catena di monti alti e selvaggi, sulla strada per la Valle.',
+        en: 'A range of high, wild mountains on the road to the Vale.',
+      },
+      visual: { art: 'mountains-of-the-moon', tint: 'ice' },
+    },
+    // Book only. Catelyn V (site chapter 29), the kingsroad runs along the Green
+    // Fork; Tyrion VIII (63) is set there. The show never names it in season
+    // 1; episode 4, where Catelyn V's events fall, orders it.
+    {
+      id: 'green-fork',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Forca Verde', en: 'the Green Fork' },
+      summary: {
+        it: 'Un fiume delle Terre dei Fiumi, lungo cui corre la Strada del Re.',
+        en: 'A river of the Riverlands, along which the kingsroad runs.',
+      },
+      visual: { art: 'green-fork', tint: 'green' },
+    },
+    // Book only. Catelyn VI (site chapter 35), the party reaches the Gates of
+    // the Moon on the climb to the Eyrie. The show names it only later;
+    // episode 5, the arrival at the Eyrie, orders it.
+    {
+      id: 'gates-of-the-moon',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 35,
+      name: { it: 'Porta della Luna', en: 'the Gates of the Moon' },
+      summary: {
+        it: 'Un castello ai piedi della montagna del Nido dell’Aquila.',
+        en: 'A castle at the foot of the Eyrie’s mountain.',
+      },
+      visual: { art: 'gates-of-the-moon', tint: 'lavender' },
+    },
+    // Book only. Daenerys IV (site chapter 37), Drogo leads the party through
+    // the bazaar of the Western Market. The show's market in episode 7 goes
+    // unnamed; episode 4, the arrival in Vaes Dothrak, orders it.
+    {
+      id: 'western-market',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 37,
+      name: { it: 'Mercato Occidentale', en: 'the Western Market' },
+      summary: {
+        it: 'Un grande mercato di Vaes Dothrak.',
+        en: 'A great market of Vaes Dothrak.',
+      },
+      visual: { art: 'western-market', tint: 'ocher' },
+    },
+    // Book only. Daenerys V (site chapter 47), the party rides to the lake the
+    // Dothraki call the Womb of the World. The show names it only later;
+    // episode 6, the heart ceremony, orders it.
+    {
+      id: 'womb-of-the-world',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 47,
+      name: { it: 'Grembo del Mondo', en: 'the Womb of the World' },
+      summary: {
+        it: 'Un lago vicino a Vaes Dothrak.',
+        en: 'A lake near Vaes Dothrak.',
+      },
+      visual: { art: 'womb-of-the-world', tint: 'azure' },
+    },
+    // Book only. Catelyn X (site chapter 64), the battle in the whispering
+    // wood. The show fights it in episode 9 and names it only in season 2;
+    // episode 9 orders it.
+    {
+      id: 'whispering-wood',
+      kind: 'place',
+      source: 'chapter',
+      revealedAtEpisode: 9,
+      revealedAtChapter: 64,
+      name: { it: 'Bosco dei Sussurri', en: 'the Whispering Wood' },
+      summary: {
+        it: 'Un bosco in una valle stretta delle Terre dei Fiumi.',
+        en: 'A wood in a narrow valley of the Riverlands.',
+      },
+      visual: { art: 'whispering-wood', tint: 'teal' },
     },
   ],
   dossiers: {
@@ -4940,8 +5068,8 @@ export const season1: ThronesSaga = {
         en: 'Lord Tywin’s brother and captain',
       },
       log: {
-        it: 'Combatte al fianco del fratello Tywin nell’esercito Lannister. È con lui quando Tyrion raggiunge l’esercito con i clan delle Montagne della Luna.',
-        en: 'He fights beside his brother Tywin in the Lannister army. He is with him when Tyrion reaches the army with the clans of the Mountains of the Moon.',
+        it: 'Combatte al fianco del fratello Tywin nell’esercito Lannister. È con lui quando Tyrion raggiunge l’esercito con i clan delle montagne.',
+        en: 'He fights beside his brother Tywin in the Lannister army. He is with him when Tyrion reaches the army with the mountain clans.',
       },
       status: [{ episode: 8, chapter: 57, value: 'alive' }],
       affiliation: [
@@ -5865,7 +5993,7 @@ export const SEASON_1_PLACES: Record<
       it: 'Le campane della città suonano per la morte del Primo Cavaliere del Re. Qui risiede la corte, e da qui si governa il regno.',
       en: 'The bells of the city ring for the death of the Hand of the King. The king’s court sits here, and the realm is governed from here.',
     },
-    filedHere: ['gendry', 'gregor-clegane', 'loras-tyrell'],
+    filedHere: ['gregor-clegane', 'loras-tyrell'],
   },
   'the-wall': {
     form: 'fortress',
@@ -6184,6 +6312,107 @@ export const SEASON_1_PLACES: Record<
     log: {
       it: 'È una striscia stretta di paludi tra il Nord e il sud. Un esercito diretto a sud o a nord deve attraversarla.',
       en: 'It is a narrow strip of bogs between the North and the south. An army bound south or north has to cross it.',
+    },
+    filedHere: [],
+  },
+  'street-of-the-sisters': {
+    form: 'street',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Una strada lunga e dritta tra le case',
+      en: 'A long straight street between the houses',
+    },
+    log: {
+      it: 'È una delle strade principali di Approdo del Re, lunga e dritta.',
+      en: 'It is one of the main streets of King’s Landing, long and straight.',
+    },
+    filedHere: [],
+  },
+  'street-of-steel': {
+    form: 'street',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Una strada in salita tra le forge',
+      en: 'A street climbing between forges',
+    },
+    log: {
+      it: 'Sale su una collina di Approdo del Re, tra fabbri e armaioli. In cima un armaiolo ha la sua bottega.',
+      en: 'It climbs a hill of King’s Landing, past smiths and armourers. An armourer keeps his shop at the top.',
+    },
+    filedHere: ['tobho-mott', 'gendry'],
+  },
+  'mountains-of-the-moon': {
+    form: 'mountains',
+    region: 'the-vale',
+    landmark: {
+      it: 'Vette alte e passi stretti',
+      en: 'High peaks and narrow passes',
+    },
+    log: {
+      it: 'Sono monti alti e selvaggi tra le Terre dei Fiumi e la Valle. La strada che li attraversa passa per passi alti e gole profonde.',
+      en: 'They are high, wild mountains between the Riverlands and the Vale. The road across them goes through high passes and deep chasms.',
+    },
+    filedHere: [],
+  },
+  'green-fork': {
+    form: 'river',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un fiume tra valli verdi',
+      en: 'A river through green valleys',
+    },
+    log: {
+      it: 'È un ramo del Tridente. La Strada del Re lo segue verso nord, tra valli fertili e castelli.',
+      en: 'It is a fork of the Trident. The kingsroad follows it north, through fertile valleys and castles.',
+    },
+    filedHere: [],
+  },
+  'gates-of-the-moon': {
+    form: 'castle',
+    region: 'the-vale',
+    landmark: {
+      it: 'Un castello ai piedi di una montagna',
+      en: 'A castle at the foot of a mountain',
+    },
+    log: {
+      it: 'È un castello della Valle, ai piedi della montagna su cui sorge il Nido dell’Aquila. Da qui comincia la salita.',
+      en: 'It is a castle of the Vale, at the foot of the mountain the Eyrie stands on. The climb begins here.',
+    },
+    filedHere: ['nestor-royce', 'mya-stone'],
+  },
+  'western-market': {
+    form: 'market',
+    region: 'essos',
+    landmark: {
+      it: 'Bancarelle su una grande piazza di terra battuta',
+      en: 'Stalls on a great square of beaten earth',
+    },
+    log: {
+      it: 'È un grande mercato di Vaes Dothrak, dove arrivano mercanti da occidente.',
+      en: 'It is a great market of Vaes Dothrak, where traders from the west come.',
+    },
+    filedHere: [],
+  },
+  'womb-of-the-world': {
+    form: 'lake',
+    region: 'essos',
+    landmark: { it: 'Acqua ferma tra le canne', en: 'Still water among reeds' },
+    log: {
+      it: 'È un lago calmo, circondato di canne, vicino a Vaes Dothrak.',
+      en: 'It is a calm lake, ringed with reeds, near Vaes Dothrak.',
+    },
+    filedHere: [],
+  },
+  'whispering-wood': {
+    form: 'forest',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Alberi fitti in una valle stretta',
+      en: 'Thick trees in a narrow valley',
+    },
+    log: {
+      it: 'È un bosco in una valle stretta delle Terre dei Fiumi. Tra i suoi alberi si può nascondere un esercito.',
+      en: 'It is a wood in a narrow valley of the Riverlands. An army can hide among its trees.',
     },
     filedHere: [],
   },

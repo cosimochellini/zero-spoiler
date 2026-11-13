@@ -662,6 +662,160 @@ const THE_NECK: Stroke[] = [
 ]
 
 /**
+ * The Street of the Sisters: a long straight street running away between
+ * rows of houses, named in episode 4 (Janos Slynt's report) and in Catelyn IV
+ * (chapter 19); Arya V is set in its crowd. The accent is the street's
+ * middle line.
+ */
+const STREET_OF_THE_SISTERS: Stroke[] = [
+  { d: 'M10 150 L70 70 M150 150 L90 70' },
+  {
+    d: 'M10 120 L40 110 V92 L58 84 V88 M150 120 L120 110 V92 L102 84 V88 M40 110 V150 M120 110 V150',
+    role: 'soft',
+  },
+  {
+    d: 'M80 150 V138 M80 128 V118 M80 108 V100 M80 92 V86 M80 80 V76',
+    role: 'accent',
+  },
+  {
+    d: 'M44 118 l6 -3 M44 132 l6 -3 M126 118 l6 -3 M126 132 l6 -3',
+    role: 'ambient',
+  },
+  { d: 'M70 70 H90', role: 'soft' },
+]
+
+/**
+ * The Street of Steel: a street climbing a hill past forges, an anvil at the
+ * top, named in episode 4 and in Eddard VI (chapter 28), when Ned climbs it
+ * to Tobho Mott's shop. The accent is the anvil.
+ */
+const STREET_OF_STEEL: Stroke[] = [
+  { d: 'M10 150 Q60 130 90 90 Q110 64 150 50' },
+  {
+    d: 'M20 138 V112 H44 V130 M58 124 V96 H80 V108 M96 84 V60 H118 V72',
+    role: 'soft',
+  },
+  {
+    d: 'M124 70 H146 M128 70 V78 H142 V70 M132 78 V86 H138 V78 M126 86 H144',
+    role: 'accent',
+  },
+  { d: 'M26 120 l6 -3 M64 104 l6 -3 M102 68 l6 -3', role: 'ambient' },
+  { d: 'M30 108 Q26 100 30 94 M68 92 Q64 84 68 78', role: 'soft' },
+]
+
+/**
+ * The Mountains of the Moon: high peaks with a road winding up through them,
+ * named in Catelyn V (chapter 29), a book-only record. The far slopes are
+ * hatched; the accent is the road.
+ */
+const MOUNTAINS_OF_THE_MOON: Stroke[] = [
+  { d: 'M10 140 L40 80 L56 100 L80 50 L104 96 L120 76 L150 140' },
+  {
+    d: 'M30 140 Q48 124 60 128 Q76 132 84 116 Q92 100 108 104',
+    role: 'accent',
+    dashed: true,
+  },
+  { d: 'M74 62 L80 50 L86 62 M36 88 L40 80 L44 88', role: 'soft' },
+  {
+    d: 'M92 74 l6 -4 M98 88 l6 -4 M124 98 l6 -4 M130 112 l6 -4 M60 90 l6 -4',
+    role: 'ambient',
+  },
+  shadow(80, 150, 70),
+]
+
+/**
+ * The Green Fork: a river through green hills, a tower on its bank, named in
+ * Catelyn V (chapter 29), a book-only record. The accent is the water.
+ */
+const GREEN_FORK: Stroke[] = [
+  {
+    d: 'M70 20 Q60 60 76 90 Q92 120 80 160 M90 20 Q80 60 94 90 Q110 120 100 160',
+  },
+  { d: 'M78 52 q4 -3 8 0 M88 104 q4 -3 8 0 M86 136 q4 -3 8 0', role: 'accent' },
+  {
+    d: 'M10 60 Q30 44 56 56 M104 50 Q128 36 150 50 M10 140 Q34 124 62 136 M106 140 Q130 126 150 136',
+    role: 'soft',
+  },
+  {
+    d: 'M26 106 V86 H40 V106 M26 86 V82 H30 V86 M36 86 V82 H40 V86',
+    role: 'soft',
+  },
+  { d: 'M104 80 l5 -3 M110 112 l5 -3', role: 'ambient' },
+]
+
+/**
+ * The Gates of the Moon: a castle at the foot of a mountain, the path up
+ * behind it, named in Catelyn VI (chapter 35), a book-only record. The accent
+ * is the gate.
+ */
+const GATES_OF_THE_MOON: Stroke[] = [
+  { d: 'M10 108 L80 24 L150 108', role: 'soft' },
+  {
+    d: 'M30 150 V108 H130 V150 M30 108 V100 H40 V108 M54 108 V100 H64 V108 M96 108 V100 H106 V108 M120 108 V100 H130 V108',
+  },
+  { d: 'M68 150 V128 Q80 116 92 128 V150', role: 'accent' },
+  { d: 'M80 100 Q92 86 84 70 Q76 56 82 40', role: 'ambient', dashed: true },
+  { d: 'M112 120 l6 -3 M112 134 l6 -3', role: 'ambient' },
+  shadow(80, 156, 66),
+]
+
+/**
+ * The Western Market: stalls under peaked awnings on a square of beaten
+ * earth, named in Daenerys IV (chapter 37), a book-only record. The accent is
+ * the awnings.
+ */
+const WESTERN_MARKET: Stroke[] = [
+  { d: 'M10 140 H150' },
+  {
+    d: 'M20 140 V112 M48 140 V112 M66 140 V108 M94 140 V108 M112 140 V112 M140 140 V112',
+  },
+  {
+    d: 'M16 112 L34 100 L52 112 M62 108 L80 94 L98 108 M108 112 L126 100 L144 112',
+    role: 'accent',
+  },
+  {
+    d: 'M24 140 V132 H34 V140 M70 140 V132 H80 M84 140 V134 H92 V140 M118 140 V132 H128 V140',
+    role: 'soft',
+  },
+  { d: 'M44 104 l4 -3 M90 100 l4 -3 M136 104 l4 -3', role: 'ambient' },
+  shadow(80, 150, 70),
+]
+
+/**
+ * The Womb of the World: still water ringed with reeds, named in Daenerys V
+ * (chapter 47), a book-only record. The accent is the reeds.
+ */
+const WOMB_OF_THE_WORLD: Stroke[] = [
+  {
+    d: 'M14 124 Q24 106 64 108 Q100 102 140 112 Q152 124 134 132 Q100 142 70 136 Q26 140 14 124 Z',
+  },
+  { d: 'M56 122 q8 -3 16 0 t16 0 t16 0', role: 'soft' },
+  {
+    d: 'M20 112 V92 M26 114 V96 M32 110 V88 M128 110 V90 M134 112 V94 M140 114 V96',
+    role: 'accent',
+  },
+  { d: 'M32 88 q-3 -4 0 -8 M128 90 q3 -4 0 -8', role: 'soft' },
+  { d: 'M110 130 l6 -3 M118 134 l6 -3', role: 'ambient' },
+]
+
+/**
+ * The Whispering Wood: trees on both sides of a narrow valley, named in
+ * Catelyn X (chapter 64), a book-only record. The accent is the trees.
+ */
+const WHISPERING_WOOD: Stroke[] = [
+  { d: 'M10 70 Q50 120 80 126 Q110 120 150 70' },
+  {
+    d: 'M24 96 V86 M14 86 L24 66 L34 86 Z M44 112 V102 M34 102 L44 82 L54 102 Z M116 112 V102 M106 102 L116 82 L126 102 Z M136 96 V86 M126 86 L136 66 L146 86 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M60 118 V110 M54 110 L60 98 L66 110 M100 118 V110 M94 110 L100 98 L106 110',
+    role: 'soft',
+  },
+  { d: 'M120 92 l4 -3 M140 76 l4 -3', role: 'ambient' },
+]
+
+/**
  * The first season's places (#1053), and the ones it only names (#1035),
  * keyed by record id.
  */
@@ -694,4 +848,12 @@ export const PLACE_DRAWINGS = {
   'pyke': PYKE,
   'white-harbor': WHITE_HARBOR,
   'the-neck': THE_NECK,
+  'street-of-the-sisters': STREET_OF_THE_SISTERS,
+  'street-of-steel': STREET_OF_STEEL,
+  'mountains-of-the-moon': MOUNTAINS_OF_THE_MOON,
+  'green-fork': GREEN_FORK,
+  'gates-of-the-moon': GATES_OF_THE_MOON,
+  'western-market': WESTERN_MARKET,
+  'womb-of-the-world': WOMB_OF_THE_WORLD,
+  'whispering-wood': WHISPERING_WOOD,
 } satisfies Drawings

@@ -56,6 +56,7 @@ export const PLACE_ITALIAN_TITLES = {
     'bear-island': `${PLACES}#Isola dell'Orso`,
     'pyke': `${PLACES}#Pyke`,
     'white-harbor': `${PLACES}#Porto Bianco`,
+    'mountains-of-the-moon': `${PLACES}#Montagne della Luna`,
   },
 }
 
@@ -69,6 +70,16 @@ export const PLACE_NAMES_KEPT = {
   // Neck in its prose (under La Barriera and Westeros), not in a section.
   'eastwatch': 'Forte Orientale',
   'the-neck': 'Incollatura',
+  // Named in the page's text, with no section of their own.
+  'green-fork': 'Forca Verde',
+  'western-market': 'Mercato Occidentale',
+  'womb-of-the-world': 'Grembo del Mondo',
+  // Not on the page: the books' Italian forms, the dub's unconfirmed (owner,
+  // #1252).
+  'street-of-steel': 'Via dell’Acciaio',
+  'street-of-the-sisters': 'Via delle Sorelle',
+  'gates-of-the-moon': 'Porta della Luna',
+  'whispering-wood': 'Bosco dei Sussurri',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',

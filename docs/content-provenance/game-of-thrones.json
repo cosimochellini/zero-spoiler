@@ -1223,6 +1223,102 @@
       "Italian: \"Incollatura\" is the books' form on Italian Wikipedia; the dub form is unconfirmed."
     ]
   },
+  "street-of-the-sisters": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Street_of_the_Sisters",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Janos Slynt's report in episode 4 (Fandom ref GOT104); not viewed. The show's crowd scene at the Sept goes unnamed.",
+      "Book gate: Catelyn IV, \"The Street of the Sisters ran between them\"; Arya V is set there; checked against the text.",
+      "Italian: \"Via delle Sorelle\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
+    ]
+  },
+  "street-of-steel": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Street_of_Steel",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_27",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Littlefinger's line in episode 4 (Fandom ref GOT104); not viewed.",
+      "Book gate: Eddard VI, \"at the top of the Street of Steel\"; checked against the text.",
+      "Italian: \"Via dell'Acciaio\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
+      "filedHere: Tobho Mott and Gendry, first met in Tobho Mott's shop; Gendry moves here from King's Landing (owner, #1252)."
+    ]
+  },
+  "mountains-of-the-moon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Mountains_of_the_Moon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Montagne_della_Luna"
+    ],
+    "unverified": [
+      "Book only: Catelyn V names them; the show crosses them from episode 5 and names them only later. Episode 4, the arrest at the inn, orders the record (owner, #1252).",
+      "Book gate: Catelyn V, \"into the Mountains of the Moon\"; checked against the text."
+    ]
+  },
+  "green-fork": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Green_Fork",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show never names it in season 1. Episode 4, where Catelyn V's events fall, orders the record (owner, #1252).",
+      "Book gate: Catelyn V, \"the kingsroad ran along the Green Fork\"; checked against the text."
+    ]
+  },
+  "gates-of-the-moon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Gates_of_the_Moon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show names it only later. Episode 5, the arrival at the Eyrie, orders the record (owner, #1252).",
+      "Book gate: Catelyn VI, birds sent \"to the Eyrie and the Gates of the Moon\"; checked against the text.",
+      "Italian: \"Porta della Luna\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
+      "filedHere: Nestor Royce and Mya Stone, both book-only, first met there in Catelyn VI (owner, #1252)."
+    ]
+  },
+  "western-market": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Western_Market",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show's market in episode 7 goes unnamed. Episode 4, the arrival in Vaes Dothrak, orders the record (owner, #1252).",
+      "Book gate: Daenerys IV, Jorah's \"The Western Market will have food more to your taste\"; the issue's lead (Daenerys VI, site 55) was late; checked against the text."
+    ]
+  },
+  "womb-of-the-world": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Womb_of_the_World",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show names it only later. Episode 6, the heart ceremony, orders the record (owner, #1252).",
+      "Book gate: Daenerys V, \"the lake the Dothraki called the Womb of the World\"; checked against the text."
+    ]
+  },
+  "whispering-wood": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Whispering_Wood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63"
+    ],
+    "unverified": [
+      "Book only: the show fights the battle in episode 9 and names the wood only in season 2; episode 9 orders the record (owner, #1252).",
+      "Book gate: Catelyn X, the battle in the whispering wood; checked against the text.",
+      "Italian: \"Bosco dei Sussurri\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
+    ]
+  },
   "hullen": {
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",

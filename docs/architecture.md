@@ -219,10 +219,11 @@ cast's are in `art/riverlands.ts` (#1057), with one. Every other character maps
 to a shared placeholder in `art/index.ts`, `PERSON`, until its own issue draws
 it, so the drawing tests hold it like any series. Its places are the 23 a scene
 of the season or the book is set in (#853) and those both name without visiting
-it (#1035: the North's five in #1248), each filed in one of the realms, the Iron
-Islands among them, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
-optional, and an arcless series prints no arc row. Darry is the book's alone and
-the Kingswood the show's. The demo shows the places the first ten episodes
+it (#1035: the North's five in #1248), and eight visited places #853 left out
+(#1252), each filed in one of the realms, the Iron Islands among them, beyond
+the Wall or Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless
+series prints no arc row. Darry and six of #1252's places are the book's alone,
+and the Kingswood the show's. The demo shows the places the first ten episodes
 reach, and covers in its tail the four the show first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
@@ -370,11 +371,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 176                                                   |
+| Records           | 184                                                   |
 | Characters        | 148                                                   |
-| Places            | 28                                                    |
+| Places            | 36                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 176, one per record, plus 21 redrawings of 20 records |
+| Line drawings     | 184, one per record, plus 21 redrawings of 20 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
