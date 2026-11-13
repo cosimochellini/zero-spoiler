@@ -6,6 +6,7 @@ import { ESSOS_DRAWINGS, essosRedrawn } from './essos'
 import { NORTH_DRAWINGS, northRedrawn } from './north'
 import { PLACE_DRAWINGS } from './places'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
+import { VALE_DRAWINGS, valeRedrawn } from './vale'
 import { WALL_DRAWINGS, wallRedrawn } from './wall'
 import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
 
@@ -92,7 +93,7 @@ const BATH: Stroke[] = [
 ]
 
 /**
- * What every other person shows until their issue draws them (#1055 to
+ * What every other person shows until their issue draws them (#1056,
  * #1057): a bust with a blank head and no face, the collar
  * in the record's tint. It stands for nobody, so it tells a reader nothing.
  */
@@ -111,9 +112,10 @@ const PERSON: Stroke[] = [
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
  * and the Essos cast's in `essos.ts` (#1052), the places' in `places.ts`
- * (#1053) and the northern household's in `north.ts` (#1054), with the four
- * leads drawn for the launch here (owner, #856); every other character
- * shows `PERSON` until its own issue draws it. `satisfies`
+ * (#1053), the northern household's in `north.ts` (#1054) and the Vale
+ * cast's in `vale.ts` (#1055), with the four leads drawn for the launch here
+ * (owner, #856); every other character shows `PERSON` until its own issue
+ * draws it. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -123,6 +125,7 @@ export const DRAWINGS = {
   ...ESSOS_DRAWINGS,
   ...NORTH_DRAWINGS,
   ...PLACE_DRAWINGS,
+  ...VALE_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
@@ -130,18 +133,6 @@ export const DRAWINGS = {
   'mycah': PERSON,
   'stiv': PERSON,
   'wallen': PERSON,
-  'marillion': PERSON,
-  'willis-wode': PERSON,
-  'donnel-waynwood': PERSON,
-  'nestor-royce': PERSON,
-  'mya-stone': PERSON,
-  'vardis-egen': PERSON,
-  'mord': PERSON,
-  'lyn-corbray': PERSON,
-  'anya-waynwood': PERSON,
-  'shagga': PERSON,
-  'timett': PERSON,
-  'chella': PERSON,
   'meryn-trant': PERSON,
   'boros-blount': PERSON,
   'mandon-moore': PERSON,
@@ -203,10 +194,10 @@ export type ArtId = keyof typeof DRAWINGS
 /**
  * The records drawn again later in the story, the Winterfell household's
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
- * Watch's from `wall.ts`, the Essos cast's from `essos.ts` and the northern
- * household's from `north.ts`. Eddard Stark is beheaded with Ice in "Baelor"
- * (episode 9) and in Arya V (chapter 66): from there the blade lies flat on
- * the ground, with nobody to hold it.
+ * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
+ * household's from `north.ts` and the Vale cast's from `vale.ts`. Eddard
+ * Stark is beheaded with Ice in "Baelor" (episode 9) and in Arya V (chapter
+ * 66): from there the blade lies flat on the ground, with nobody to hold it.
  */
 export const REDRAWINGS: Redrawings = {
   ...winterfellRedrawn,
@@ -214,6 +205,7 @@ export const REDRAWINGS: Redrawings = {
   ...wallRedrawn,
   ...essosRedrawn,
   ...northRedrawn,
+  ...valeRedrawn,
   'eddard-stark': [
     {
       episode: 9,

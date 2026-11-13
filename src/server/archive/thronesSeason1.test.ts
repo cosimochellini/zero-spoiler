@@ -885,10 +885,11 @@ describe.each([
 
 /**
  * The Winterfell household's stages (#854), the southern cast's (#1051) and
- * the Night's Watch's and Essos cast's (#1052) and the northern household's
- * (#1054), each pinned in the units that
+ * the Night's Watch's and Essos cast's (#1052), the northern household's
+ * (#1054) and the Vale cast's (#1055), each pinned in the units that
  * tell it: Bran's climb, which the book alone shows after his threshold, the
- * deaths, Barristan's thrown sword, Syrio's snapped blade, and the reveals of
+ * deaths (Willis Wode's the show's alone, Vardis Egen's the book's alone),
+ * Barristan's thrown sword, Syrio's snapped blade, and the reveals of
  * Jorah's master, Aemon's house and Mirri's blood magic. `stage` counts a
  * record's stages from 0, for a record redrawn more than once.
  */
@@ -915,6 +916,8 @@ const STAGES: {
   { id: 'tomard', episode: 7, chapter: 50, source: 'chapter' },
   { id: 'hullen', episode: 8, chapter: 51, source: 'chapter' },
   { id: 'vayon-poole', episode: 8, chapter: 52, source: 'chapter' },
+  { id: 'willis-wode', episode: 5, chapter: 35, source: 'episode' },
+  { id: 'vardis-egen', episode: 6, chapter: 41, source: 'chapter' },
 ]
 
 describe.each(
