@@ -2243,8 +2243,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 16,
       name: { it: 'Locanda all’Incrocio', en: 'the Inn at the Crossroads' },
       summary: {
-        it: 'Una locanda dove si incontrano le grandi strade del regno, vicino alle rive del Tridente.',
-        en: 'An inn where the great roads of the realm meet, near the banks of the Trident.',
+        it: 'Una locanda dove si incontrano le grandi strade del regno, vicino alle rive di un grande fiume.',
+        en: 'An inn where the great roads of the realm meet, near the banks of a great river.',
       },
       visual: { art: 'inn-at-the-crossroads', tint: 'azure' },
     },
@@ -2560,6 +2560,138 @@ export const season1: ThronesSaga = {
         en: 'The strip of marshland that divides the North from the south.',
       },
       visual: { art: 'the-neck', tint: 'teal' },
+    },
+    // The Riverlands', the Westerlands' and the Vale's named-only places (#1249).
+    // Show: "Winter Is Coming", Cersei recalls Jaime jumping off the cliffs at
+    // Casterly Rock. Books: Catelyn I (site chapter 3), the Lannisters of
+    // Casterly Rock came late to Robert's cause.
+    {
+      id: 'casterly-rock',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 3,
+      name: { it: 'Castel Granito', en: 'Casterly Rock' },
+      summary: {
+        it: 'Il castello di Casa Lannister, scavato in una grande rupe sul mare.',
+        en: 'The castle of House Lannister, built into a great rock above the sea.',
+      },
+      visual: { art: 'casterly-rock', tint: 'ocher' },
+    },
+    // Show: "Lord Snow", Tyrion: the fishermen of Lannisport see mermaids. Books:
+    // Jon III (site chapter 21), the alleys of Oldtown and Lannisport.
+    {
+      id: 'lannisport',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 21,
+      name: { it: 'Lannisport', en: 'Lannisport' },
+      summary: {
+        it: 'Una città portuale delle Terre dell’Ovest, ai piedi di Castel Granito.',
+        en: 'A port city of the Westerlands, at the foot of Casterly Rock.',
+      },
+      visual: { art: 'lannisport', tint: 'yellow' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Catelyn sees the black bat of
+    // Harrenhal on a knight's coat. Books: Catelyn V (site chapter 29), Lady
+    // Whent in the vaults of Harrenhal.
+    {
+      id: 'harrenhal',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Harrenhal', en: 'Harrenhal' },
+      summary: {
+        it: 'Un enorme castello nelle Terre dei Fiumi, la sede di Casa Whent.',
+        en: 'A vast castle in the Riverlands, the seat of House Whent.',
+      },
+      visual: { art: 'harrenhal', tint: 'lavender' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Littlefinger comes from a spit
+    // of land called the Fingers. Books: Tyrion II (site chapter 14), two
+    // peasant boys from the Fingers.
+    {
+      id: 'the-fingers',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 14,
+      name: { it: 'Dita', en: 'The Fingers' },
+      summary: {
+        it: 'Una terra spoglia e ventosa sulla costa della Valle.',
+        en: 'A bare, windswept stretch of land on the coast of the Vale.',
+      },
+      visual: { art: 'the-fingers', tint: 'green' },
+    },
+    // Show: "The Wolf and the Lion", Barristan fought Ned as an enemy at the
+    // Trident. Books: Catelyn I (site chapter 3), the Red Fork of the Trident.
+    {
+      id: 'the-trident',
+      kind: 'place',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 3,
+      name: { it: 'Tridente', en: 'The Trident' },
+      summary: {
+        it: 'Il grande fiume delle Terre dei Fiumi, formato da tre rami.',
+        en: 'The great river of the Riverlands, fed by three forks.',
+      },
+      visual: { art: 'the-trident', tint: 'azure' },
+    },
+    // Show: "The Wolf and the Lion", "Ser Marlon of Tumblestone" (owner: the
+    // epithet names it). Books: Catelyn X (site chapter 64), the waters of the
+    // Red Fork and the Tumblestone.
+    {
+      id: 'tumblestone',
+      kind: 'place',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 64,
+      name: { it: 'Tumblestone', en: 'Tumblestone' },
+      summary: {
+        it: 'Un fiume delle Terre dei Fiumi.',
+        en: 'A river of the Riverlands.',
+      },
+      visual: { art: 'tumblestone', tint: 'ice' },
+    },
+    // Show: "The Pointy End", Kevan: Jaime smashed the river lords at the Golden
+    // Tooth. Books: Catelyn VII (site chapter 41), the pass below the Golden
+    // Tooth.
+    {
+      id: 'golden-tooth',
+      kind: 'place',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 41,
+      name: { it: 'Dente d’Oro', en: 'The Golden Tooth' },
+      summary: {
+        it: 'Un castello che sorveglia il passo verso le Terre dell’Ovest.',
+        en: 'A castle that guards the pass into the Westerlands.',
+      },
+      visual: { art: 'golden-tooth', tint: 'sand' },
+    },
+    // Show: "Fire and Blood", Tywin: from God's Eye to the Red Fork. Books:
+    // Catelyn I (site chapter 3), Riverrun on the Red Fork of the Trident.
+    {
+      id: 'red-fork',
+      kind: 'place',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 3,
+      name: { it: 'Forca Rossa', en: 'The Red Fork' },
+      summary: {
+        it: 'Uno dei tre rami che formano il Tridente.',
+        en: 'One of the three rivers that form the Trident.',
+      },
+      visual: { art: 'red-fork', tint: 'teal' },
+    },
+    // Show: "Fire and Blood", Tywin: from God's Eye to the Red Fork. Books: Bran
+    // VII (site chapter 67), the great lake called Gods Eye.
+    {
+      id: 'gods-eye',
+      kind: 'place',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 67,
+      name: { it: 'Occhio degli Dei', en: 'Gods Eye' },
+      summary: {
+        it: 'Un grande lago nelle Terre dei Fiumi.',
+        en: 'A great lake in the Riverlands.',
+      },
+      visual: { art: 'gods-eye', tint: 'blue' },
     },
   ],
   dossiers: {
@@ -6184,6 +6316,123 @@ export const SEASON_1_PLACES: Record<
     log: {
       it: 'È una striscia stretta di paludi tra il Nord e il sud. Un esercito diretto a sud o a nord deve attraversarla.',
       en: 'It is a narrow strip of bogs between the North and the south. An army bound south or north has to cross it.',
+    },
+    filedHere: [],
+  },
+  'casterly-rock': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Un castello scavato in una rupe sul mare',
+      en: 'A castle cut into a rock above the sea',
+    },
+    log: {
+      it: 'È la sede di Casa Lannister, nell’ovest del regno.',
+      en: 'It is the seat of House Lannister, in the west of the realm.',
+    },
+    filedHere: [],
+  },
+  'lannisport': {
+    form: 'city',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Torri e navi ai piedi di una rupe',
+      en: 'Towers and ships at the foot of a rock',
+    },
+    log: {
+      it: 'È la grande città portuale dell’ovest, sotto il castello dei Lannister.',
+      en: 'It is the great port city of the west, below the Lannisters’ castle.',
+    },
+    filedHere: [],
+  },
+  'harrenhal': {
+    form: 'castle',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un castello di cinque grandi torri',
+      en: 'A castle of five great towers',
+    },
+    log: {
+      it: 'È la sede di Casa Whent, nelle Terre dei Fiumi. I suoi cavalieri portano il pipistrello nero del suo stemma.',
+      en: 'It is the seat of House Whent, in the Riverlands. Its knights wear the black bat of its arms.',
+    },
+    filedHere: [],
+  },
+  'the-fingers': {
+    form: 'peninsula',
+    region: 'the-vale',
+    landmark: {
+      it: 'Lingue di terra rocciosa nel mare',
+      en: 'Tongues of rocky land in the sea',
+    },
+    log: {
+      it: 'È una striscia di terra sulla costa della Valle.',
+      en: 'It is a stretch of land on the coast of the Vale.',
+    },
+    filedHere: [],
+  },
+  'the-trident': {
+    form: 'river',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Tre fiumi che si uniscono in uno',
+      en: 'Three rivers that join into one',
+    },
+    log: {
+      it: 'È il grande fiume delle Terre dei Fiumi, formato da tre rami.',
+      en: 'It is the great river of the Riverlands, fed by three forks.',
+    },
+    filedHere: [],
+  },
+  'tumblestone': {
+    form: 'river',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un fiume che scorre tra le pietre',
+      en: 'A river running over stones',
+    },
+    log: {
+      it: 'È uno dei fiumi delle Terre dei Fiumi. Un cavaliere ne porta il nome.',
+      en: 'It is one of the rivers of the Riverlands. A knight takes his name from it.',
+    },
+    filedHere: [],
+  },
+  'golden-tooth': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Un castello in cima a un passo di montagna',
+      en: 'A castle at the top of a mountain pass',
+    },
+    log: {
+      it: 'Sorveglia un passo di montagna tra le Terre dei Fiumi e l’ovest.',
+      en: 'It guards a mountain pass between the Riverlands and the west.',
+    },
+    filedHere: [],
+  },
+  'red-fork': {
+    form: 'river',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un fiume che si snoda tra le colline',
+      en: 'A river winding through hills',
+    },
+    log: {
+      it: 'È uno dei tre rami del Tridente, nelle Terre dei Fiumi.',
+      en: 'It is one of the three forks of the Trident, in the Riverlands.',
+    },
+    filedHere: [],
+  },
+  'gods-eye': {
+    form: 'lake',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un ampio lago tra le colline',
+      en: 'A wide lake among hills',
+    },
+    log: {
+      it: 'È un grande lago nelle Terre dei Fiumi.',
+      en: 'It is a great lake in the Riverlands.',
     },
     filedHere: [],
   },
