@@ -2496,7 +2496,7 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 13,
       name: { it: 'Isola dell’Orso', en: 'Bear Island' },
       summary: {
-        it: 'Un’isola al largo del Nord, la sede della casa Mormont.',
+        it: 'Un’isola al largo del Nord, la sede della Casa Mormont.',
         en: 'An island off the North, the seat of House Mormont.',
       },
       visual: { art: 'bear-island', tint: 'green' },
@@ -2526,7 +2526,7 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 25,
       name: { it: 'Pyke', en: 'Pyke' },
       summary: {
-        it: 'Il castello della casa Greyjoy, assediato durante una ribellione contro il re.',
+        it: 'Il castello della Casa Greyjoy, assediato durante una ribellione contro il re.',
         en: 'The castle of House Greyjoy, besieged during a rebellion against the king.',
       },
       visual: { art: 'pyke', tint: 'sand' },
@@ -6130,7 +6130,7 @@ export const SEASON_1_PLACES: Record<
       en: 'A wooded island in the cold sea',
     },
     log: {
-      it: 'È la terra della casa Mormont, nel mare a ovest del Nord. Il suo lord risponde agli Stark di Grande Inverno.',
+      it: 'È la terra della Casa Mormont, nel mare a ovest del Nord. Il suo lord risponde agli Stark di Grande Inverno.',
       en: 'It is the land of House Mormont, in the sea west of the North. Its lord answers to the Starks of Winterfell.',
     },
     filedHere: [],
@@ -6156,7 +6156,7 @@ export const SEASON_1_PLACES: Record<
       en: 'Towers on rocks in the open sea',
     },
     log: {
-      it: 'È la sede della casa Greyjoy. Quando i Greyjoy si ribellarono, l’esercito del re lo assediò e ne prese le mura.',
+      it: 'È la sede della Casa Greyjoy. Quando i Greyjoy si ribellarono, l’esercito del re lo assediò e ne prese le mura.',
       en: 'It is the seat of House Greyjoy. When the Greyjoys rebelled, the king’s army besieged it and took its walls.',
     },
     filedHere: [],
