@@ -136,8 +136,8 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // Counted 2026-11-13, after the North's named-only places (#1248): 148
-  // characters, 28 places and the season's heading.
+  // Counted 2026-11-13, after Essos's named-only places (#1251): 148
+  // characters, 38 places and the season's heading.
   'game-of-thrones': {
     kinds: [
       'affiliation',
@@ -156,7 +156,7 @@ const EXPECTED: Record<string, Expected> = {
       characters: 148,
       chronicles: 0,
       linkedOrigins: 0,
-      places: 28,
+      places: 38,
       statuses: 178,
       timelines: 337,
       visits: 0,

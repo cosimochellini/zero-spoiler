@@ -56,6 +56,14 @@ export const PLACE_ITALIAN_TITLES = {
     'bear-island': `${PLACES}#Isola dell'Orso`,
     'pyke': `${PLACES}#Pyke`,
     'white-harbor': `${PLACES}#Porto Bianco`,
+    'braavos': `${PLACES}#Braavos`,
+    'lys': `${PLACES}#Lys`,
+    'qohor': `${PLACES}#Qohor`,
+    'myr': `${PLACES}#Myr`,
+    'tyrosh': `${PLACES}#Tyrosh`,
+    'volantis': `${PLACES}#Volantis`,
+    'valyria': `${PLACES}#Valyria`,
+    'asshai': `${PLACES}#Asshai`,
   },
 }
 
@@ -69,6 +77,11 @@ export const PLACE_NAMES_KEPT = {
   // Neck in its prose (under La Barriera and Westeros), not in a section.
   'eastwatch': 'Forte Orientale',
   'the-neck': 'Incollatura',
+  // Named in the page's text, with no section of its own.
+  'qarth': 'Qarth',
+  // Not on the page: the books' Italian form, the dub's unconfirmed (owner,
+  // #1249).
+  'mother-of-mountains': 'Madre delle Montagne',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',

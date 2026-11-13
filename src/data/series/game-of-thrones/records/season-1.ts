@@ -2561,6 +2561,149 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'the-neck', tint: 'teal' },
     },
+    // Essos's named-only places (#1251).
+    // Show: "Winter Is Coming", Illyrio: dragon eggs from the Shadow Lands beyond
+    // Asshai. Books: Daenerys II (site chapter 12), the same words.
+    {
+      id: 'asshai',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 12,
+      name: { it: 'Asshai', en: 'Asshai' },
+      summary: {
+        it: 'Una città lontana, all’estremo oriente di Essos.',
+        en: 'A far city at the eastern edge of Essos.',
+      },
+      visual: { art: 'asshai', tint: 'magenta' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Viserys: the Targaryens rode
+    // dragons from Valyria. Books: Catelyn I (site chapter 3), Ice was forged in
+    // Valyria before the Doom.
+    {
+      id: 'valyria',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 3,
+      name: { it: 'Valyria', en: 'Valyria' },
+      summary: {
+        it: 'Una terra antica di Essos, oggi in rovina.',
+        en: 'An old land of Essos, now in ruins.',
+      },
+      visual: { art: 'valyria', tint: 'orange' },
+    },
+    // Show: "Lord Snow", Syrio was first sword to the Sealord of Braavos. Books:
+    // Daenerys I (site chapter 4), the exiles wandered from Braavos to Myr.
+    {
+      id: 'braavos',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 4,
+      name: { it: 'Braavos', en: 'Braavos' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the narrow sea.',
+      },
+      visual: { art: 'braavos', tint: 'azure' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Jaime recalls Thoros of Myr.
+    // Books: Daenerys I (site chapter 4), from Braavos to Myr.
+    {
+      id: 'myr',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 4,
+      name: { it: 'Myr', en: 'Myr' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the narrow sea.',
+      },
+      visual: { art: 'myr', tint: 'teal' },
+    },
+    // Show: "You Win or You Die", a trader cries Tyrosh pear brandy. Books:
+    // Daenerys I (site chapter 4), from Myr to Tyrosh.
+    {
+      id: 'tyrosh',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 4,
+      name: { it: 'Tyrosh', en: 'Tyrosh' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the narrow sea.',
+      },
+      visual: { art: 'tyrosh', tint: 'cyan' },
+    },
+    // Show: "Lord Snow", Jorah must ride to Qohor. Books: Daenerys I (site
+    // chapter 4), on to Qohor and Volantis and Lys.
+    {
+      id: 'qohor',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 4,
+      name: { it: 'Qohor', en: 'Qohor' },
+      summary: {
+        it: 'Una delle Città Libere, verso l’interno di Essos.',
+        en: 'One of the Free Cities, inland in Essos.',
+      },
+      visual: { art: 'qohor', tint: 'green' },
+    },
+    // Show: "You Win or You Die", the wine seller's reds from Lys, Volantis and
+    // the Arbor. Books: Daenerys I (site chapter 4), Qohor and Volantis and Lys.
+    {
+      id: 'volantis',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 4,
+      name: { it: 'Volantis', en: 'Volantis' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the narrow sea.',
+      },
+      visual: { art: 'volantis', tint: 'ocher' },
+    },
+    // Show: "The Kingsroad", Doreah speaks of Irogenia of Lys. Books: Daenerys I
+    // (site chapter 4), Volantis and Lys.
+    {
+      id: 'lys',
+      kind: 'place',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 4,
+      name: { it: 'Lys', en: 'Lys' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the narrow sea.',
+      },
+      visual: { art: 'lys', tint: 'pink' },
+    },
+    // Show: "The Kingsroad", Doreah: a trader from Qarth told her dragons came
+    // from the moon. Books: Daenerys III (site chapter 24), the same story.
+    {
+      id: 'qarth',
+      kind: 'place',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 24,
+      name: { it: 'Qarth', en: 'Qarth' },
+      summary: {
+        it: 'Una città lontana a oriente, da cui vengono mercanti.',
+        en: 'A far city to the east, from which traders come.',
+      },
+      visual: { art: 'qarth', tint: 'yellow' },
+    },
+    // Show: "You Win or You Die", Drogo swears before the Mother of Mountains
+    // (the English subtitle names it; owner: it counts). Books: Daenerys IV
+    // (site chapter 37), the Mother of Mountains looms over the city.
+    {
+      id: 'mother-of-mountains',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 37,
+      name: { it: 'Madre delle Montagne', en: 'The Mother of Mountains' },
+      summary: {
+        it: 'La montagna sacra dei Dothraki, sopra Vaes Dothrak.',
+        en: 'The sacred mountain of the Dothraki, above Vaes Dothrak.',
+      },
+      visual: { art: 'mother-of-mountains', tint: 'sand' },
+    },
   ],
   dossiers: {
     'eddard-stark': {
@@ -6184,6 +6327,121 @@ export const SEASON_1_PLACES: Record<
     log: {
       it: 'È una striscia stretta di paludi tra il Nord e il sud. Un esercito diretto a sud o a nord deve attraversarla.',
       en: 'It is a narrow strip of bogs between the North and the south. An army bound south or north has to cross it.',
+    },
+    filedHere: [],
+  },
+  'asshai': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Torri scure all’ombra', en: 'Dark towers in shadow' },
+    log: {
+      it: 'È una città lontana, all’estremo oriente del mondo conosciuto. Da oltre le sue terre vengono uova di drago.',
+      en: 'It is a far city, at the eastern edge of the known world. Dragon eggs come from beyond it.',
+    },
+    filedHere: [],
+  },
+  'valyria': {
+    form: 'ruin',
+    region: 'essos',
+    landmark: { it: 'Rovine fumanti', en: 'Smoking ruins' },
+    log: {
+      it: 'Era una terra antica di Essos, distrutta da una catastrofe. Ne restano rovine.',
+      en: 'It was an old land of Essos, destroyed by a disaster. Only ruins remain.',
+    },
+    filedHere: [],
+  },
+  'braavos': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Una città sull’acqua', en: 'A city on the water' },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the narrow sea.',
+    },
+    filedHere: [],
+  },
+  'myr': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Una città sulla costa', en: 'A city on the coast' },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the narrow sea.',
+    },
+    filedHere: [],
+  },
+  'tyrosh': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Una città su un’isola', en: 'A city on an island' },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the narrow sea.',
+    },
+    filedHere: [],
+  },
+  'qohor': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Una città ai margini di una foresta',
+      en: 'A city at the edge of a forest',
+    },
+    log: {
+      it: 'È una delle Città Libere, nell’interno di Essos.',
+      en: 'It is one of the Free Cities, inland in Essos.',
+    },
+    filedHere: [],
+  },
+  'volantis': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Un lungo ponte e mura scure',
+      en: 'A long bridge and dark walls',
+    },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the narrow sea.',
+    },
+    filedHere: [],
+  },
+  'lys': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Torri chiare su un’isola',
+      en: 'Pale towers on an island',
+    },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the narrow sea.',
+    },
+    filedHere: [],
+  },
+  'qarth': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Mura alte in un paese lontano',
+      en: 'High walls in a far land',
+    },
+    log: {
+      it: 'È una città lontana, a oriente. Un suo mercante racconta che i draghi vennero dalla luna.',
+      en: 'It is a far city, to the east. One of its traders tells that dragons came from the moon.',
+    },
+    filedHere: [],
+  },
+  'mother-of-mountains': {
+    form: 'mountain',
+    region: 'essos',
+    landmark: {
+      it: 'Una montagna sola sopra la pianura',
+      en: 'A lone mountain above the plain',
+    },
+    log: {
+      it: 'È la montagna sacra dei Dothraki, sopra Vaes Dothrak. Davanti a lei i khal pronunciano i loro giuramenti.',
+      en: 'It is the sacred mountain of the Dothraki, above Vaes Dothrak. Khals swear their oaths before it.',
     },
     filedHere: [],
   },

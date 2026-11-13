@@ -281,3 +281,26 @@ under the owner's rulings of 2026-11-13 on #1035:
   Barrowlands, Greywater Watch, Skagos, the Shadow Tower, Hardhome, the
   Frostfangs, the Fist of the First Men, Craster's Keep, the Lands of Always
   Winter, Lordsport: season 1 does not name them.
+
+### Filed (#1251)
+
+| Place                 | Episode | Chapter |
+| --------------------- | ------- | ------- |
+| `asshai`              | 1       | 12      |
+| `lys`                 | 2       | 4       |
+| `qarth`               | 2       | 24      |
+| `braavos`             | 3       | 4       |
+| `qohor`               | 3       | 4       |
+| `myr`                 | 4       | 4       |
+| `valyria`             | 4       | 3       |
+| `tyrosh`              | 7       | 4       |
+| `volantis`            | 7       | 4       |
+| `mother-of-mountains` | 7       | 37      |
+
+The Daenerys I gates of Lys, Myr, Tyrosh, Qohor and Volantis were checked
+against the text: each city's own name is in the chapter, not only a demonym.
+
+### Omitted (#1251)
+
+- The Shadow Lands: a land inside Essos, which is already the region; a land is
+  not a place record (owner, #1251).
