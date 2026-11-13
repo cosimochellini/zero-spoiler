@@ -1019,7 +1019,7 @@ export const season1: ThronesSaga = {
         it: 'Il figlio di un macellaio che viaggia verso sud al seguito del re e si allena con la spada insieme ad Arya Stark.',
         en: 'A butcher’s boy who travels south with the king’s party and practises swordplay with Arya Stark.',
       },
-      visual: { art: 'mycah', tint: 'wine' },
+      visual: { art: 'mycah', tint: 'sand' },
     },
     // Show: “A Golden Crown” (episode 6), one of the deserters who waylay Bran in the wolfswood. Books: Bran V (site chapter 38), the same ambush. He dies in the scene that opens him, so the log tells it.
     {
@@ -1413,7 +1413,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere ubriacone che Sansa Stark salva dall’ira di re Joffrey.',
         en: 'A drunken knight whom Sansa Stark saves from King Joffrey’s anger.',
       },
-      visual: { art: 'dontos-hollard', tint: 'wine' },
+      visual: { art: 'dontos-hollard', tint: 'green' },
     },
     // Show: "Cripples, Bastards, and Broken Things", he refuses to talk to Jory and
     // is killed by Gregor in the joust. Books: Sansa II (site chapter 30), killed

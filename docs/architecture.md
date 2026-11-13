@@ -213,15 +213,15 @@ own, Eddard's with a death stage, the Winterfell household's are in
 `art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
 in `art/wall.ts` and `art/essos.ts` (#1052), with six, the places' are in
 `art/places.ts` (#1053), the northern household's are in `art/north.ts` (#1054),
-with three, and the Vale cast's are in `art/vale.ts` (#1055), with two. Every
-other character maps to a shared placeholder in `art/index.ts`, `PERSON`, until
-its own issue draws it, so the drawing tests hold it like any series. Its 23
-places (#853) are the ones a scene of the season or the book is set in, each
-filed in one of the realms, beyond the Wall or Essos, with no arc:
-`PlaceDossier.arc` is optional, and an arcless series prints no arc row. Darry
-is the book's alone and the Kingswood the show's. The demo shows the places the
-first ten episodes reach, and covers in its tail the four the show first visits
-in later seasons.
+with three, the Vale cast's are in `art/vale.ts` (#1055), with two, and the
+King's Landing cast's are in `art/court.ts` (#1056), with one. Every other
+character maps to a shared placeholder in `art/index.ts`, `PERSON`, until its
+own issue draws it, so the drawing tests hold it like any series. Its 23 places
+(#853) are the ones a scene of the season or the book is set in, each filed in
+one of the realms, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
+optional, and an arcless series prints no arc row. Darry is the book's alone and
+the Kingswood the show's. The demo shows the places the first ten episodes
+reach, and covers in its tail the four the show first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -372,7 +372,7 @@ checks this block.
 | Characters        | 148                                                   |
 | Places            | 23                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 171, one per record, plus 19 redrawings of 18 records |
+| Line drawings     | 171, one per record, plus 20 redrawings of 19 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
