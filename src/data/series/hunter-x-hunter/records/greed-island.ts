@@ -372,7 +372,7 @@ export const greedIsland: HunterSaga = {
       kind: 'place',
       revealedAtEpisode: 75,
       revealedAtChapter: 183,
-      name: { it: 'Limeiro', en: 'Limeiro' },
+      name: { it: 'Riimeilo', en: 'Limeiro' },
       summary: {
         it: 'La capitale di Greed Island, dove Gon viene invitato a ritirare l’ultima carta del gioco.',
         en: 'The capital of Greed Island, where Gon is invited to receive the game’s final card.',

@@ -32871,6 +32871,16 @@
       "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153230591",
       "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153230591",
       "contentSha256": "8a3bf490dbdbd9fb131e8358e6616ffe8f18e7a2c64383ab1552f2fa304368d0"
+    },
+    "hxh-it-Geografia_di_Hunter_×_Hunter-153230604.json": {
+      "locale": "it",
+      "title": "Geografia di Hunter × Hunter",
+      "revision": 153230604,
+      "revisionDate": "2026-11-06T07:39:09Z",
+      "url": "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153230604",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153230604",
+      "contentSha256": "09fd4953e4d0931ba7142a13f309112e1a38a7b84a9e45d167355b81d9f4b208"
     }
   }
 }
