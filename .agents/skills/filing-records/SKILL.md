@@ -32,7 +32,7 @@ A record's gate in each medium is the first chapter or episode whose English-wik
 - Wiki first appearances and cast lists only name candidates. An unnamed appearance is a floor, never a gate.
 - A candidate from an earlier phase whose name is first said inside the window is filed in this phase.
 - Characters only mentioned and never seen are omitted, with the reason in the inventory. So are wiki descriptors, collectives and species labels.
-- A place is filed only when the story visits it; regions and countries only mentioned are omitted. Its gate is the first explicit naming signal in the window, even before the visit (Mandai City, named as the rendezvous at chapter 243 / episode 102, visited at 256 / 108). A place named in an earlier arc opens at its first visit (Meteor City, named at 102 / 24, opens at 224 / 96).
+- A place is filed only when the story visits it; regions and countries only mentioned are omitted. Game of Thrones also files a place both media name in a season and its book without visiting it, gated at its first naming in each medium, with `filedHere: []` (owner, #1035); a region stays a region, not a record. Its gate is the first explicit naming signal in the window, even before the visit (Mandai City, named as the rendezvous at chapter 243 / episode 102, visited at 256 / 108). A place named in an earlier arc opens at its first visit (Meteor City, named at 102 / 24, opens at 224 / 96).
 - Pending means the name is first said after the window, and the inventory cites that scene. A candidate left unchecked is not pending. (This is not the relationship registry's `pending` of §6.)
 
 ### Names in two media

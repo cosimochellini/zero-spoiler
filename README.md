@@ -93,8 +93,8 @@ characters and 20+ places. All three series are available in Italian and
 English. Every One Piece and Hunter x Hunter entry has its own line drawing made
 for this project (the newest Hunter x Hunter records show a placeholder until
 theirs is drawn), and some are redrawn from the episode the story changes them.
-Most Game of Thrones entries show a plain placeholder until theirs are drawn.
-There is no official artwork.
+Most Game of Thrones entries have their own line drawing too; the rest show a
+plain placeholder until theirs are drawn. There is no official artwork.
 
 Hunter x Hunter also files Nen abilities from Heavens Arena and Yorknew City.
 

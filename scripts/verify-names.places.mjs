@@ -53,6 +53,9 @@ export const PLACE_ITALIAN_TITLES = {
     'riverrun': `${PLACES}#Delta delle Acque`,
     'moles-town': `${PLACES}#Città della Talpa`,
     'moat-cailin': `${PLACES}#Moat Cailin`,
+    'bear-island': `${PLACES}#Isola dell'Orso`,
+    'pyke': `${PLACES}#Pyke`,
+    'white-harbor': `${PLACES}#Porto Bianco`,
   },
 }
 
@@ -62,6 +65,10 @@ export const PLACE_ITALIAN_TITLES = {
  * @type {Record<string, string>}
  */
 export const PLACE_NAMES_KEPT = {
+  // Game of Thrones. Italian Wikipedia's places page names Eastwatch and the
+  // Neck in its prose (under La Barriera and Westeros), not in a section.
+  'eastwatch': 'Forte Orientale',
+  'the-neck': 'Incollatura',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',
