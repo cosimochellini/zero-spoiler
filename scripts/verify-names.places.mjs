@@ -90,8 +90,9 @@ export const PLACE_NAMES_KEPT = {
   'masadora': 'Masadora',
   'soufrabi': 'Soufrabi',
   'aiai': 'Aiai',
+  // No Italian page names them; dub unviewed. The palace's name joins the
+  // chapter summaries' "palazzo reale" to Geografia's "Golt Orientale".
   'royal-palace-of-east-gorteau': 'Palazzo reale del Golt Orientale',
-  // No Italian page names them; dub unviewed.
   'd2-manufacturing-plant': 'Fabbrica di D²',
   'chimera-ant-nest': 'Nido delle formichimere',
   'milsy-wetlands': 'Palude di Numere',

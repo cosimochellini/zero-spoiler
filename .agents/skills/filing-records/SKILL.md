@@ -67,7 +67,7 @@ Done when `./node_modules/.bin/vitest run src/test scripts/archive-gate.test.mjs
 
 Both scripts read the wikis over the network and are not part of `npm run check`.
 
-- `scripts/verify-names.mjs` (its tables in `scripts/verify-names.tables.mjs`): add each new character to `ITALIAN_TITLES`, as `Page#Section` for a section of an Italian Wikipedia list page, and each new place to `PLACE_ITALIAN_TITLES` in `scripts/verify-names.places.mjs`. A place whose name differs from its page only by a place word (`Isola di`, `Villaggio di`, `Arcipelago`, ` Island`) needs no row. A name kept after a hand check found no page goes in `NAMES_KEPT`, or `PLACE_NAMES_KEPT` for a place.
+- `scripts/verify-names.mjs` (its tables in `scripts/verify-names.tables.mjs`): add each new character to `ITALIAN_TITLES`, as `Page#Section` for a section of an Italian Wikipedia list page, and each new place to `PLACE_ITALIAN_TITLES` in `scripts/verify-names.places.mjs`. A place whose name differs from its page only by a place word (`Isola di`, `Villaggio di`, `Arcipelago`, ` Island`) needs no row, once its English page links the Italian one. A name kept after a hand check found no page goes in `NAMES_KEPT`, or `PLACE_NAMES_KEPT` for a place.
 - `scripts/verify-chapters.mjs`: add to `TITLES` only a record whose English name is not its wiki page title.
 
 Done when `npm run verify:chapters -- --series hunter-x-hunter` reports nothing too low and nothing unresolved, and `npm run verify:names -- --series hunter-x-hunter` passes every new name. Failures already on main are named as such in the PR.
