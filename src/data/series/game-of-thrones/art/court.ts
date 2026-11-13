@@ -61,6 +61,15 @@ const GAUNTLET: Stroke[] = [
   shadow(78, 156, 34),
 ]
 
+/**
+ * A heater shield in 3/4, its far edge hatched. Arys Oakheart's and Beric
+ * Dondarrion's shields are this one.
+ */
+const HEATER: Stroke[] = [
+  { d: 'M44 40 H116 V80 Q116 124 80 148 Q44 124 44 80 Z' },
+  { d: 'M116 40 L122 44 V82 Q120 126 84 152', role: 'soft' },
+]
+
 /** One oak leaf, drawn from its stem. */
 const OAK_LEAF =
   'q-6 -4 -4 -10 q-4 -4 0 -8 q-2 -6 4 -6 q2 -6 6 0 q6 0 4 6 q4 4 0 8 q2 6 -4 10 z'
@@ -71,8 +80,7 @@ const OAK_LEAF =
  * the leaves.
  */
 const OAK_SHIELD: Stroke[] = [
-  { d: 'M44 40 H116 V80 Q116 124 80 148 Q44 124 44 80 Z' },
-  { d: 'M116 40 L122 44 V82 Q120 126 84 152', role: 'soft' },
+  ...HEATER,
   {
     d: `M64 80 ${OAK_LEAF} M96 80 ${OAK_LEAF} M80 116 ${OAK_LEAF}`,
     role: 'accent',
@@ -101,9 +109,10 @@ const JUG: Stroke[] = [
 ]
 
 /**
- * Dontos Hollard: a melon carved into a helm with a feather in it, the
- * fool's helm Joffrey makes him wear in Sansa V (chapter 58); the show
- * makes him a fool in episode 11. The accent is the feather. Retinted
+ * Dontos Hollard: a melon carved into a helm with a feather in it, for the
+ * drunken knight Joffrey makes his fool once Sansa saves him, in Sansa V
+ * (chapter 58) and in episode 11. Which medium puts a melon on his head,
+ * and when, is not confirmed: the owner's pick. The accent is the feather. Retinted
  * from `wine`: nothing on it is red.
  */
 const MELON_HELM: Stroke[] = [
@@ -199,8 +208,7 @@ const CRADLE: Stroke[] = [
  * is the bolt.
  */
 const LIGHTNING_SHIELD: Stroke[] = [
-  { d: 'M44 40 H116 V80 Q116 124 80 148 Q44 124 44 80 Z' },
-  { d: 'M116 40 L122 44 V82 Q120 126 84 152', role: 'soft' },
+  ...HEATER,
   {
     d: 'M90 50 L70 86 H84 L64 126 L98 80 H84 L100 50 Z M76 108 L60 112',
     role: 'accent',
