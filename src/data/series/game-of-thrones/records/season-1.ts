@@ -2697,7 +2697,7 @@ export const season1: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 7,
       revealedAtChapter: 37,
-      name: { it: 'Madre delle Montagne', en: 'The Mother of Mountains' },
+      name: { it: 'Madre di tutte le Montagne', en: 'The Mother of Mountains' },
       summary: {
         it: 'La montagna sacra dei Dothraki, sopra Vaes Dothrak.',
         en: 'The sacred mountain of the Dothraki, above Vaes Dothrak.',

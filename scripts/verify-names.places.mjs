@@ -77,11 +77,9 @@ export const PLACE_NAMES_KEPT = {
   // Neck in its prose (under La Barriera and Westeros), not in a section.
   'eastwatch': 'Forte Orientale',
   'the-neck': 'Incollatura',
-  // Named in the page's text, with no section of its own.
+  // Named in the page's text, with no section of their own.
   'qarth': 'Qarth',
-  // Not on the page: the books' Italian form, the dub's unconfirmed (owner,
-  // #1249).
-  'mother-of-mountains': 'Madre delle Montagne',
+  'mother-of-mountains': 'Madre di tutte le Montagne',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',
