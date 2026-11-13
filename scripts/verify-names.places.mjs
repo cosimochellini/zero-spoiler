@@ -71,18 +71,17 @@ export const PLACE_NAMES_KEPT = {
   // (revision 153230604), and List's entry in `Personaggi di Hunter × Hunter`
   // says the same (#1233).
   'limeiro': 'Riimeilo',
-  // Italian Wikipedia names these only in prose (2026-11-13):
-  // Super's entry of `Personaggi di Hunter × Hunter`, Rippo's of
-  // `Associazione Hunter`, the York Shin City and Neo Green Life sections of
-  // `Geografia di Hunter × Hunter`, Ging's entry, the Formichimere page.
+  // Italian Wikipedia names these only in prose (2026-11-13): Super's
+  // entry and the Kakin entries of `Personaggi di Hunter × Hunter`, Rippo's
+  // and Ging's entries of `Associazione Hunter`, and the York Shin City,
+  // Federazione di Mitene and Repubblica del Golt Orientale sections of
+  // `Geografia di Hunter × Hunter`.
   'zevil-island': 'Isola di Zebir',
   'trick-tower': 'Torre di Lotta',
   'southernpiece-auction-house': 'Sazan Piece',
   'republic-of-rokario': 'Repubblica di Rokario',
   'peijin': 'Peijin',
-  'd2-manufacturing-plant': 'Fabbrica di D²',
   'world-tree': 'Albero del Mondo',
-  'chimera-ant-nest': 'Nido delle formichimere',
   'black-whale': 'Black Whale',
   // Named so in the 2011 dub's title of episode 79, "Le ombre della NGL".
   'ngl': 'NGL',
@@ -93,6 +92,8 @@ export const PLACE_NAMES_KEPT = {
   'aiai': 'Aiai',
   'royal-palace-of-east-gorteau': 'Palazzo reale del Golt Orientale',
   // No Italian page names them; dub unviewed.
+  'd2-manufacturing-plant': 'Fabbrica di D²',
+  'chimera-ant-nest': 'Nido delle formichimere',
   'milsy-wetlands': 'Palude di Numere',
   'visca-forest-preserve': 'Riserva forestale di Visca',
   'split-mountain': 'Monte Spaccato',
