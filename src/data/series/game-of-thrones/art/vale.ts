@@ -296,8 +296,8 @@ export const valeRedrawn: Redrawings = {
       chapter: 41,
       source: 'chapter',
       value: [
-        ...moved(HELM, 'translate(-4 40) rotate(-80 80 90)'),
-        { d: 'M74 116 l6 6 l8 -4', role: 'soft' },
+        ...moved(HELM, 'translate(-4 26) rotate(-80 80 90)'),
+        { d: 'M74 102 l6 6 l8 -4', role: 'soft' },
         { d: 'M10 156 H150', role: 'ambient', dashed: true },
       ],
     },
