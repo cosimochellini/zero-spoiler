@@ -318,10 +318,10 @@ export const chimeraAntPhase2Chronicles = {
       episode: 78,
       chapter: 203,
       value: {
-        title: { it: 'Il capo nascosto di NGL', en: 'NGL’s hidden ruler' },
+        title: { it: 'Il re degli uomini armati', en: 'The gunmen’s king' },
         body: {
-          it: 'Giairo è il capo nascosto di NGL. I suoi uomini armati ricevono l’ordine di eliminare le formiche che attaccano gli abitanti. Nella nazione che vieta la tecnologia, il gruppo usa armi da fuoco contro gli insetti. La resistenza umana colpisce alcuni soldati della colonia, ma le formichimere continuano a espandersi nel paese.',
-          en: 'Gyro is NGL’s hidden ruler. His armed followers receive orders to eliminate the ants attacking the inhabitants. In a nation that forbids technology, his group uses firearms against the insects. The human resistance kills some of the colony’s soldiers, but the Chimera Ants continue spreading through the country.',
+          it: 'In un villaggio, uomini armati chiamano Giairo il loro re. Da lui ricevono l’ordine di eliminare le formiche che attaccano gli abitanti, e sparano contro gli insetti. La resistenza umana colpisce alcuni soldati della colonia, ma le formichimere continuano a espandersi nel paese.',
+          en: 'In a village, gunmen call Gyro their king. They receive orders from him to eliminate the ants attacking the inhabitants, and they fire on the insects. The human resistance kills some of the colony’s soldiers, but the Chimera Ants continue spreading through the country.',
         },
       },
       source: 'episode',
