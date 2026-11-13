@@ -329,4 +329,9 @@ export const NAMES_KEPT = {
   'coco-loo': 'Coco Loo',
   // No Italian Wikipedia entry names the foxbear; retain the English name.
   'kon': 'Kon',
+  // Places are not read by this script yet (#1244). Italian Wikipedia
+  // names the Greed Island capital only inside the Greed Island paragraph of
+  // `Geografia di Hunter × Hunter` (revision 153230604), and List's entry in
+  // `Personaggi di Hunter × Hunter` says the same (#1233).
+  'limeiro': 'Riimeilo',
 }

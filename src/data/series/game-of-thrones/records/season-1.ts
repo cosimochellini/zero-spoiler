@@ -1071,7 +1071,7 @@ export const season1: ThronesSaga = {
         it: 'Il figlio di Greatjon Umber, della casata che tiene l’Ultimo Focolare.',
         en: 'Greatjon Umber’s son, of the house that holds Last Hearth.',
       },
-      visual: { art: 'smalljon-umber', tint: 'red' },
+      visual: { art: 'smalljon-umber', tint: 'ice' },
     },
     // Show: “A Man Without Honor” (episode 17), the first episode that names him; an unnamed figure stands for him in episode 10. Books: Bran VI (site chapter 54), he arrives at Winterfell with his sons, the last of Robb’s bannermen.
     {
@@ -1256,7 +1256,7 @@ export const season1: ThronesSaga = {
         it: 'Il rozzo carceriere delle celle del cielo del Nido dell’Aquila.',
         en: 'The brutish gaoler of the Eyrie’s sky cells.',
       },
-      visual: { art: 'mord', tint: 'wine' },
+      visual: { art: 'mord', tint: 'yellow' },
     },
     // Book only. Tyrion V (site chapter 39), at the hearing where Tyrion demands a trial by combat. The show has no such character; episode 6, which tells the same hearing, orders him.
     {
@@ -1270,7 +1270,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere della Valle alla corte di lady Lysa, pronto a battersi per lei.',
         en: 'A knight of the Vale at Lady Lysa’s court, eager to fight for her.',
       },
-      visual: { art: 'lyn-corbray', tint: 'red' },
+      visual: { art: 'lyn-corbray', tint: 'violet' },
     },
     // Show: “The Mountain and the Viper” (episode 38), her only appearance, at the inquiry at the Eyrie. Books: Tyrion V (site chapter 39), in the hall with her sons when Tyrion demands a trial.
     {
@@ -2142,7 +2142,7 @@ export const season1: ThronesSaga = {
       visual: { art: 'eroeh', tint: 'violet' },
     },
     // The season’s places (#853): every place a scene is set in, in either
-    // medium, gated at its first scene there. Each shows `PLACE` until #854.
+    // medium, gated at its first scene there. Drawn in `art/places.ts` (#1053).
     // Show: "Winter Is Coming", the cold open, the rangers find the dead
     // wildlings. Books: Prologue (Will), site chapter 1.
     {
@@ -2200,7 +2200,7 @@ export const season1: ThronesSaga = {
         it: 'La capitale dei Sette Regni, una città affollata sulla costa dove il re tiene corte.',
         en: 'The capital of the Seven Kingdoms, a crowded city on the coast where the king holds court.',
       },
-      visual: { art: 'kings-landing', tint: 'red' },
+      visual: { art: 'kings-landing', tint: 'ocher' },
     },
     // Show: "Winter Is Coming", the cold open, the rangers ride out through the
     // gate tunnel. Books: Tyrion III (site chapter 22), the first scene on top
@@ -2366,7 +2366,7 @@ export const season1: ThronesSaga = {
         it: 'Una grande foresta reale a sud di Approdo del Re, dove il re va a caccia.',
         en: 'A wide royal forest south of King’s Landing, where the king goes to hunt.',
       },
-      visual: { art: 'kingswood', tint: 'red' },
+      visual: { art: 'kingswood', tint: 'green' },
     },
     // Show: "You Win or You Die", Tywin skins a stag in his tent and talks with
     // Jaime. Books: Tyrion VIII (site chapter 63), the camp on the eve of the
@@ -2423,7 +2423,7 @@ export const season1: ThronesSaga = {
         it: 'Il tempio più grande di Approdo del Re, dove officia l’Alto Septon.',
         en: 'The largest sept in King’s Landing, where the High Septon presides.',
       },
-      visual: { art: 'great-sept-of-baelor', tint: 'red' },
+      visual: { art: 'great-sept-of-baelor', tint: 'ivory' },
     },
     // Show: "Walk of Punishment" (season 3 episode 3, absolute 23), Hoster
     // Tully's funeral. Books: Catelyn XI (site chapter 72), Catelyn returns by
@@ -4630,7 +4630,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 8, chapter: 17, source: 'chapter', value: 'alive' },
-        { episode: 8, chapter: 51, source: 'episode', value: 'deceased' },
+        // Killed in the purge of Eddard's household: on screen in "The Pointy
+        // End" (episode 8), his threshold, and told in Sansa IV (chapter 52).
+        { episode: 8, chapter: 52, value: 'deceased' },
       ],
       affiliation: [
         {
