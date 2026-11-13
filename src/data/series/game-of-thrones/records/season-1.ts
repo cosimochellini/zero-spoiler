@@ -2485,6 +2485,82 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'moat-cailin', tint: 'ice' },
     },
+    // Named only, never visited in season 1 or the first book (#1035): each
+    // opens where each medium first names it, and has no one filed there.
+    // Show: "Winter Is Coming", Jorah introduces himself as of Bear Island.
+    // Books: Eddard II (site chapter 13), Ned recalls riding to Bear Island.
+    {
+      id: 'bear-island',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 13,
+      name: { it: 'Isola dell’Orso', en: 'Bear Island' },
+      summary: {
+        it: 'Un’isola al largo del Nord, la sede della casa Mormont.',
+        en: 'An island off the North, the seat of House Mormont.',
+      },
+      visual: { art: 'bear-island', tint: 'green' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things" (episode 4), Thorne speaks
+    // of a rumoured attack on Eastwatch. Books: Jon III (site chapter 20),
+    // Benjen's friend now commands Eastwatch by the Sea.
+    {
+      id: 'eastwatch',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 20,
+      name: { it: 'Forte Orientale', en: 'Eastwatch' },
+      summary: {
+        it: 'Il castello più a est dei Guardiani della notte, sulla costa.',
+        en: 'The easternmost castle of the Night’s Watch, on the coast.',
+      },
+      visual: { art: 'eastwatch', tint: 'ice' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things" (episode 4), Jory recalls
+    // the siege of Pyke to Jaime. Books: Bran IV (site chapter 25), a
+    // grandson killed on the walls of Pyke.
+    {
+      id: 'pyke',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 25,
+      name: { it: 'Pyke', en: 'Pyke' },
+      summary: {
+        it: 'Il castello della casa Greyjoy, assediato durante una ribellione contro il re.',
+        en: 'The castle of House Greyjoy, besieged during a rebellion against the king.',
+      },
+      visual: { art: 'pyke', tint: 'sand' },
+    },
+    // Show: "A Golden Crown" (episode 6), Ros means to find a ship heading
+    // south in White Harbor. Books: Catelyn III (site chapter 15), Catelyn
+    // plans to hire a ship at White Harbor.
+    {
+      id: 'white-harbor',
+      kind: 'place',
+      revealedAtEpisode: 6,
+      revealedAtChapter: 15,
+      name: { it: 'Porto Bianco', en: 'White Harbor' },
+      summary: {
+        it: 'Una città portuale del Nord, da cui le navi partono verso sud.',
+        en: 'A port city in the North, where ships leave for the south.',
+      },
+      visual: { art: 'white-harbor', tint: 'azure' },
+    },
+    // Show: "The Pointy End" (episode 8), a rider reports that the Northmen
+    // have crossed the Neck. Books: Eddard I (site chapter 5), Robert finds
+    // scarcely a decent inn north of the Neck.
+    {
+      id: 'the-neck',
+      kind: 'place',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 5,
+      name: { it: 'Incollatura', en: 'The Neck' },
+      summary: {
+        it: 'La striscia di terra paludosa che separa il Nord dal sud.',
+        en: 'The strip of marshland that divides the North from the south.',
+      },
+      visual: { art: 'the-neck', tint: 'teal' },
+    },
   ],
   dossiers: {
     'eddard-stark': {
@@ -6043,6 +6119,71 @@ export const SEASON_1_PLACES: Record<
     log: {
       it: 'Delle antiche fortificazioni restano in piedi solo poche torri, ma chi le tiene controlla la strada rialzata attraverso le paludi. Un esercito che sale da sud non può passare finché sono tenute contro di lui.',
       en: 'Only a few towers of the old fortress still stand, but whoever holds them commands the causeway through the swamps. An army coming up from the south cannot pass while they are held against it.',
+    },
+    filedHere: [],
+  },
+  'bear-island': {
+    form: 'island',
+    region: 'the-north',
+    landmark: {
+      it: 'Un’isola boscosa nel mare freddo',
+      en: 'A wooded island in the cold sea',
+    },
+    log: {
+      it: 'È la terra della casa Mormont, nel mare a ovest del Nord. Il suo lord risponde agli Stark di Grande Inverno.',
+      en: 'It is the land of House Mormont, in the sea west of the North. Its lord answers to the Starks of Winterfell.',
+    },
+    filedHere: [],
+  },
+  'eastwatch': {
+    form: 'castle',
+    region: 'the-north',
+    landmark: {
+      it: 'Un castello sulla costa grigia e battuta dal vento',
+      en: 'A castle on a grey, windswept shore',
+    },
+    log: {
+      it: 'È uno dei pochi castelli che i Guardiani della notte tengono ancora. Sta all’estremità orientale della loro linea, dove la terra incontra il mare.',
+      en: 'It is one of the few castles the Night’s Watch still holds. It stands at the eastern end of their line, where the land meets the sea.',
+    },
+    filedHere: [],
+  },
+  'pyke': {
+    form: 'castle',
+    region: 'the-iron-islands',
+    landmark: {
+      it: 'Torri su scogli in mezzo al mare',
+      en: 'Towers on rocks in the open sea',
+    },
+    log: {
+      it: 'È la sede della casa Greyjoy. Quando i Greyjoy si ribellarono, l’esercito del re lo assediò e ne prese le mura.',
+      en: 'It is the seat of House Greyjoy. When the Greyjoys rebelled, the king’s army besieged it and took its walls.',
+    },
+    filedHere: [],
+  },
+  'white-harbor': {
+    form: 'city',
+    region: 'the-north',
+    landmark: {
+      it: 'Mura bianche sopra un porto',
+      en: 'White walls above a harbour',
+    },
+    log: {
+      it: 'È la città portuale del Nord, alla foce di un fiume. Chi dal Nord vuole andare a sud per mare cerca una nave qui.',
+      en: 'It is the North’s port city, at the mouth of a river. Anyone in the North who wants to go south by sea looks for a ship here.',
+    },
+    filedHere: [],
+  },
+  'the-neck': {
+    form: 'marsh',
+    region: 'the-north',
+    landmark: {
+      it: 'Paludi e canneti tra due mari',
+      en: 'Bogs and reeds between two seas',
+    },
+    log: {
+      it: 'È una striscia stretta di paludi tra il Nord e il sud. Un esercito diretto a sud o a nord deve attraversarla.',
+      en: 'It is a narrow strip of bogs between the North and the south. An army bound south or north has to cross it.',
     },
     filedHere: [],
   },

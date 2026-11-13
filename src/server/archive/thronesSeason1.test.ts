@@ -201,6 +201,12 @@ const RECORDS: {
   { id: 'moles-town', episode: 33, chapter: 71 },
   { id: 'bloody-gate', episode: 35, chapter: 35 },
   { id: 'moat-cailin', episode: 38, chapter: 56 },
+  // Named only (#1035, #1248): each opens where each medium first names it.
+  { id: 'bear-island', episode: 1, chapter: 13 },
+  { id: 'eastwatch', episode: 4, chapter: 20 },
+  { id: 'pyke', episode: 4, chapter: 25 },
+  { id: 'white-harbor', episode: 6, chapter: 15 },
+  { id: 'the-neck', episode: 8, chapter: 5 },
 ]
 
 /**
@@ -832,6 +838,7 @@ describe('the first season’s demo', () => {
       'haunted-forest',
       'winterfell',
       'pentos',
+      'bear-island',
       'kings-landing',
       'the-wall',
       'winter-town',
@@ -839,10 +846,14 @@ describe('the first season’s demo', () => {
       'castle-black',
       'dothraki-sea',
       'red-keep',
+      'eastwatch',
+      'pyke',
       'vaes-dothrak',
       'the-eyrie',
+      'white-harbor',
       'wolfswood',
       'lannister-camp',
+      'the-neck',
       'lhazar',
       'the-twins',
       'great-sept-of-baelor',

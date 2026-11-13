@@ -239,3 +239,44 @@ copied from them. Each place's pages are under its key in
   Neck" without naming Moat Cailin, so the show gate is season 4.
 - Name first said in episode 15, no nameSaidAt filed (no text needs it): first
   named in "The Ghost of Harrenhal" (season 2 episode 5, Fandom ref GOT205).
+
+## Named-only places (#1035)
+
+Places that season 1 and _A Game of Thrones_ both name and neither visits, filed
+under the owner's rulings of 2026-11-13 on #1035:
+
+- **Gate.** The first explicit naming signal in each medium: quoted or reported
+  speech, a caption or a title card in the show; speech or a POV character's
+  thought in the book, close-third POV narration included. Book gates were
+  checked against the text, beyond A Wiki of Ice and Fire's footnotes, which
+  cite claims rather than first namings; show gates come from the episodes'
+  lines as the Game of Thrones Wiki's `GOT1xx` refs place them. Neither medium
+  was viewed.
+- **Scope.** Only places both media name in season 1 / the first book. A place
+  only one medium names there is omitted, with its reason below. Roads are not
+  filed. No one is filed at a named-only place (`filedHere: []`).
+- **Drawings.** Each has a line drawing of its own in `art/places.ts`.
+- **Split.** #1248 (the North and the Iron Islands), #1249 (the Riverlands, the
+  Westerlands and the Vale), #1250 (the south and the seas), #1251 (Essos).
+  Visited places #853 left out are #1252.
+
+### Filed (#1248)
+
+| Place          | Episode | Chapter | Note                                      |
+| -------------- | ------- | ------- | ----------------------------------------- |
+| `bear-island`  | 1       | 13      |                                           |
+| `eastwatch`    | 4       | 20      |                                           |
+| `pyke`         | 4       | 25      | in the region the Iron Islands            |
+| `white-harbor` | 6       | 15      |                                           |
+| `the-neck`     | 8       | 5       | named only: its scenes are at Moat Cailin |
+
+### Omitted (#1248)
+
+- The Iron Islands: a region, not a place, so Pyke's region label does not name
+  a record before it opens (owner, #1248).
+- Last Hearth: the show names it in episode 4, but _A Game of Thrones_ never
+  names it.
+- Karhold, the Dreadfort, Deepwood Motte, Torrhen's Square, Barrowton, the
+  Barrowlands, Greywater Watch, Skagos, the Shadow Tower, Hardhome, the
+  Frostfangs, the Fist of the First Men, Craster's Keep, the Lands of Always
+  Winter, Lordsport: season 1 does not name them.

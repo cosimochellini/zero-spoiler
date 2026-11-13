@@ -1162,6 +1162,67 @@
       "Name first said in episode 15, no nameSaidAt filed (no text needs it): first named in \"The Ghost of Harrenhal\" (season 2 episode 5, Fandom ref GOT205)."
     ]
   },
+  "bear-island": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Bear_Island",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_12",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Isola_dell'Orso"
+    ],
+    "unverified": [
+      "Show gate: Jorah's line in episode 1 is taken from a fan transcript matched to the Fandom ref GOT101; the episode was not viewed.",
+      "Book gate: Eddard II, where Ned recalls riding to Bear Island; checked against the text, not against the wiki's footnotes alone."
+    ]
+  },
+  "eastwatch": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Eastwatch-by-the-Sea",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Barriera"
+    ],
+    "unverified": [
+      "Show gate: Thorne's line in episode 4, from a fan transcript matched to the Fandom ref GOT104; season 1 says only \"Eastwatch\".",
+      "Italian: \"Forte Orientale\" is Italian Wikipedia's form; the dub form is unconfirmed."
+    ]
+  },
+  "pyke": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Pyke",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pyke"
+    ],
+    "unverified": [
+      "Show gate: Jory's line on the siege of Pyke in episode 4, from a fan transcript matched to the Fandom ref GOT104.",
+      "Book gate: Bran IV, the first chapter that names the castle (Jon III names the person Cotter Pyke); checked against the text.",
+      "Region: the Iron Islands are a region, not a record, so Pyke's region label does not name a record before it opens (owner, #1248)."
+    ]
+  },
+  "white-harbor": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/White_Harbor",
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Porto_Bianco"
+    ],
+    "unverified": [
+      "Show gate: Ros's line in episode 6, from a fan transcript matched to the Fandom ref GOT106."
+    ]
+  },
+  "the-neck": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/The_Neck",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: the messenger's line in episode 8, from a fan transcript matched to the Fandom ref GOT108.",
+      "Filed as named only (owner, #1035): the scenes there are set at Moat Cailin, a place of its own, and at Robb's camp.",
+      "Italian: \"Incollatura\" is the books' form on Italian Wikipedia; the dub form is unconfirmed."
+    ]
+  },
   "hullen": {
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",

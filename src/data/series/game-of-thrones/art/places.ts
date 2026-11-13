@@ -554,7 +554,117 @@ const MOAT_CAILIN: Stroke[] = [
   },
 ]
 
-/** The first season's places (#1053), keyed by record id. */
+/**
+ * Bear Island: a wooded island rising from the sea, pines along its ridge,
+ * named in episode 1 (Jorah of Bear Island) and in Eddard II (chapter 13).
+ * No one goes there in the first season or book. The far slope is hatched;
+ * the accent is the pines.
+ */
+const BEAR_ISLAND: Stroke[] = [
+  { d: 'M12 140 Q26 116 52 110 Q72 94 100 100 Q128 106 148 140' },
+  {
+    d: 'M40 116 L48 96 L56 116 M62 104 L72 78 L82 104 M88 102 L96 84 L104 102',
+    role: 'accent',
+  },
+  { d: 'M48 96 V90 M72 78 V70 M96 84 V78', role: 'soft' },
+  { d: 'M112 118 l6 -3 M122 126 l6 -3 M130 134 l6 -3', role: 'ambient' },
+  { d: 'M30 132 Q60 124 90 128', role: 'soft' },
+  ...SEA,
+]
+
+/**
+ * Eastwatch: a castle of the Night's Watch on a cliff over the sea, named in
+ * episode 4 and in Jon III (chapter 20) and never visited in the first
+ * season or book. The cliff's far side is hatched; the accent is the lit
+ * window.
+ */
+const EASTWATCH: Stroke[] = [
+  { d: 'M12 140 L28 100 H100 L112 140' },
+  { d: 'M38 100 V62 H62 V100 M38 62 V56 H44 V62 M50 62 V56 H56 V62' },
+  { d: 'M62 100 V78 H90 V100 M62 78 V72 H68 V78 M76 78 V72 H82 V78' },
+  { d: 'M48 74 V82', role: 'accent' },
+  { d: 'M100 108 l6 -3 M104 120 l6 -3 M108 132 l5 -3', role: 'ambient' },
+  { d: 'M118 92 q8 -4 16 0 M122 100 q6 -3 12 0', role: 'soft' },
+  ...SEA,
+]
+
+/**
+ * Pyke: towers on rocks standing in the sea, bridges strung between them,
+ * named in episode 4 (the siege) and in Bran IV (chapter 25) and never
+ * visited in the first season or book. The rocks are hatched; the accent is
+ * the bridges.
+ */
+const PYKE: Stroke[] = [
+  {
+    d: 'M24 140 L30 96 H48 L52 140 M70 140 L74 80 H92 L96 140 M112 140 L116 100 H132 L136 140',
+  },
+  { d: 'M32 96 V70 H46 V96 M76 80 V44 H90 V80 M118 100 V78 H130 V100' },
+  {
+    d: 'M76 44 L83 32 L90 44 M32 70 L39 60 L46 70 M118 78 L124 68 L130 78',
+    role: 'soft',
+  },
+  { d: 'M46 82 Q61 90 76 82 M90 72 Q104 82 118 86', role: 'accent' },
+  {
+    d: 'M86 92 l5 -3 M86 112 l5 -3 M44 112 l5 -3 M128 116 l5 -3',
+    role: 'ambient',
+  },
+  ...SEA,
+]
+
+/**
+ * White Harbor: a walled city on the waterfront, a domed hall behind the
+ * walls and a ship at the quay, named in episode 6 and in Catelyn III
+ * (chapter 15) and never visited in the first season or book. The accent is
+ * the ship.
+ */
+const WHITE_HARBOR: Stroke[] = [
+  { d: 'M10 128 H150' },
+  {
+    d: 'M18 128 V98 H142 V128 M18 98 V92 H24 V98 M34 98 V92 H40 V98 M50 98 V92 H56 V98 M104 98 V92 H110 V98 M120 98 V92 H126 V98 M136 98 V92 H142 V98',
+  },
+  { d: 'M64 98 V70 H96 V98 M68 70 Q80 54 92 70', role: 'soft' },
+  {
+    d: 'M30 128 V112 Q34 106 38 112 V128 M122 128 V112 Q126 106 130 112 V128',
+    role: 'soft',
+  },
+  {
+    d: 'M44 146 Q60 152 84 146 L80 140 H48 Z M64 140 V112 M64 114 L80 132 H64',
+    role: 'accent',
+  },
+  { d: 'M132 104 l6 -3 M132 116 l6 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * The Neck: reeds and pools in the marsh, a plank causeway running into it,
+ * named in Eddard I (chapter 5) and in episode 8, and never a scene's
+ * setting in the first season or book. The accent is the reed heads.
+ */
+const THE_NECK: Stroke[] = [
+  { d: 'M10 150 H150', role: 'ambient', dashed: true },
+  {
+    d: 'M14 134 q8 -4 16 0 t16 0 M96 138 q8 -4 16 0 t16 0 t16 0 M40 120 q8 -4 16 0 t16 0',
+    role: 'ambient',
+  },
+  {
+    d: 'M24 150 Q26 124 20 104 M30 150 Q32 120 38 100 M36 150 Q38 128 34 112 M118 150 Q120 126 114 108 M124 150 Q126 120 132 102 M130 150 Q132 130 128 114',
+    role: 'soft',
+  },
+  {
+    d: 'M17 100 Q20 92 23 100 Q20 106 17 100 M35 96 Q38 88 41 96 Q38 102 35 96 M111 104 Q114 96 117 104 Q114 110 111 104 M129 98 Q132 90 135 98 Q132 104 129 98',
+    role: 'accent',
+  },
+  {
+    d: 'M60 150 H100 M64 140 H96 M67 131 H93 M70 123 H90 M72 116 H88 M74 110 H86',
+    role: 'soft',
+  },
+  shadow(80, 156, 54),
+]
+
+/**
+ * The first season's places (#1053), and the ones it only names (#1035),
+ * keyed by record id.
+ */
 export const PLACE_DRAWINGS = {
   'haunted-forest': HAUNTED_FOREST,
   'winterfell': WINTERFELL,
@@ -579,4 +689,9 @@ export const PLACE_DRAWINGS = {
   'moles-town': MOLES_TOWN,
   'bloody-gate': BLOODY_GATE,
   'moat-cailin': MOAT_CAILIN,
+  'bear-island': BEAR_ISLAND,
+  'eastwatch': EASTWATCH,
+  'pyke': PYKE,
+  'white-harbor': WHITE_HARBOR,
+  'the-neck': THE_NECK,
 } satisfies Drawings
