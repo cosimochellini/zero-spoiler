@@ -2920,7 +2920,7 @@ held to: every story below has a row, and every row below has a story.
 
 | Entry (en title)       | Episode | Fandom page that settles it                             | Note                                                                                                                                  |
 | ---------------------- | ------: | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| NGL’s hidden ruler     |      78 | https://hunterxhunter.fandom.com/wiki/Episode_78_(2011) | Read the MediaWiki API synopses: Episode 78 (2011).                                                                                   |
+| The gunmen’s king      |      78 | https://hunterxhunter.fandom.com/wiki/Episode_78_(2011) | Read the MediaWiki API synopses: Episode 78 (2011).                                                                                   |
 | The will that survives |      78 | https://hunterxhunter.fandom.com/wiki/Chapter_203       | Read the MediaWiki API synopses: Chapter 203. Gyro is unanchored78/203. The manga-only rebirth is not disclosed in the anime opening. |
 | Childhood and the drug |      80 | https://hunterxhunter.fandom.com/wiki/Episode_80_(2011) | Read the MediaWiki API synopses: Episode 80 (2011), Chapter 204.                                                                      |
 
