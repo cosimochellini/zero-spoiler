@@ -2226,7 +2226,7 @@ export const season1: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 1,
       revealedAtChapter: 38,
-      name: { it: 'Città d’Inverno', en: 'Winter town' },
+      name: { it: 'Città dell’Inverno', en: 'Winter town' },
       summary: {
         it: 'Il borgo sotto le mura di Grande Inverno, mezzo vuoto finché non arriva il freddo.',
         en: 'The town below the walls of Winterfell, half empty until the cold comes.',

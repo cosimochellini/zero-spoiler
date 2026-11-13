@@ -9,7 +9,7 @@ export const ZOLDYCK_PLACES: Record<string, PlaceDossier<HunterVocabulary>> = {
     filedHere: ['coco-loo'],
     region: 'mainland',
     arc: 'hunter-exam-arc',
-    landmark: { it: 'Il monte Kukruu', en: 'Kukuroo Mountain' },
+    landmark: { it: 'Il monte Kucruu', en: 'Kukuroo Mountain' },
     log: {
       it: 'Gon, Kurapika e Leorio arrivano nel paese in dirigibile e proseguono in treno verso il monte dove vive Killua. In una cittadina una negoziante consiglia loro il giro in autobus che passa ogni giorno dalla tenuta della famiglia.',
       en: 'Gon, Kurapika and Leorio arrive in the country by airship and continue by train towards the mountain where Killua lives. In a small town a shopkeeper recommends the daily bus tour to the family estate.',

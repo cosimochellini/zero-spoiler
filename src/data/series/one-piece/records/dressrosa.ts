@@ -363,7 +363,7 @@ export const dressrosa: OnePieceSaga = {
       unanchored: true,
       name: { it: 'Hajrudin', en: 'Hajrudin' },
       summary: {
-        it: 'Un gigante di Elbaf, presentato al colosseo come il più temibile dei mercenari pirati, tra i combattenti del blocco C.',
+        it: 'Un gigante di Erbaf, presentato al colosseo come il più temibile dei mercenari pirati, tra i combattenti del blocco C.',
         en: 'A giant from Elbaph, announced at the colosseum as the most formidable pirate mercenary, among the fighters of Block C.',
       },
       visual: { art: 'hajrudin', tint: 'sand' },
@@ -1793,7 +1793,7 @@ export const dressrosa: OnePieceSaga = {
         },
       ],
       log: {
-        it: 'Viene da Elbaf, il celebre paese dei giganti. Al Colosseo Corrida l’annunciatore lo presenta tra i combattenti del blocco C come il più temibile dei mercenari pirati.',
+        it: 'Viene da Erbaf, il celebre paese dei giganti. Al Colosseo Corrida l’annunciatore lo presenta tra i combattenti del blocco C come il più temibile dei mercenari pirati.',
         en: 'He comes from Elbaph, the famous country of the giants. At the Corrida Colosseum the announcer presents him among the fighters of Block C as the most formidable pirate mercenary of all.',
       },
       status: [
@@ -1822,7 +1822,7 @@ export const dressrosa: OnePieceSaga = {
         {
           episode: 1160,
           value: {
-            it: 'Nuovi Pirati Guerrieri Giganti, capitano; Grande Flotta di Cappello di Paglia; figlio del re di Elbaf',
+            it: 'Nuovi Pirati Guerrieri Giganti, capitano; Grande Flotta di Cappello di Paglia; figlio del re di Erbaf',
             en: 'New Giant Warrior Pirates, captain; Straw Hat Grand Fleet; son of the King of Elbaph',
           },
         },
@@ -1835,7 +1835,7 @@ export const dressrosa: OnePieceSaga = {
           episode: 644,
           chapter: 714,
           place: 'elbaf-island',
-          value: { it: 'Elbaf', en: 'Elbaph' },
+          value: { it: 'Erbaf', en: 'Elbaph' },
         },
       ],
     },

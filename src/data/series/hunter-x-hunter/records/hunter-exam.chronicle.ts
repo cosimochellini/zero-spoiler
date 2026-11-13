@@ -195,7 +195,7 @@ export const hunterExamChronicles = {
       value: {
         title: { it: 'La lettera di Gon', en: 'Gon’s letter' },
         body: {
-          it: 'Myto riceve una lettera di [[gon-freecss|Gon]] mentre la nonna guarda. Lui scrive di aver superato l’esame, ma di non essere contento di come ha vinto il combattimento finale. Racconta di essere stato a Monte Kukruu con [[leorio-paradinight|Leorio]] e [[kurapika|Kurapika]] per riprendere [[killua|Killua]], e che prima di tornare a casa deve restituire un debito a [[hisoka|Hisoka]]. Aggiunge che non tornerà presto. Myto incornicia una foto dei quattro amici e la appende al muro.',
+          it: 'Myto riceve una lettera di [[gon-freecss|Gon]] mentre la nonna guarda. Lui scrive di aver superato l’esame, ma di non essere contento di come ha vinto il combattimento finale. Racconta di essere stato sul Monte Kucruu con [[leorio-paradinight|Leorio]] e [[kurapika|Kurapika]] per riprendere [[killua|Killua]], e che prima di tornare a casa deve restituire un debito a [[hisoka|Hisoka]]. Aggiunge che non tornerà presto. Myto incornicia una foto dei quattro amici e la appende al muro.',
           en: 'Mito receives a letter from [[gon-freecss|Gon]] while her grandmother looks on. He writes that he has passed the exam but is unhappy about how he won the final match. He tells her he went to Kukuroo Mountain with [[leorio-paradinight|Leorio]] and [[kurapika|Kurapika]] to bring back [[killua|Killua]], and that before he comes home he has a debt to settle with [[hisoka|Hisoka]]. He adds that he will not be back soon. Mito frames a photo of the four friends and hangs it on the wall.',
         },
       },
@@ -831,7 +831,7 @@ export const hunterExamChronicles = {
           en: 'The promise to his father',
         },
         body: {
-          it: 'Dopo la finale Killua è rinchiuso a Monte Kukruu, incatenato e frustato dal fratello [[milluki|Milki]]. [[zeno|Zeno]] lo libera e gli dice che suo padre vuole vederlo. Il padre gli chiede se vuole rivedere i suoi amici e, quando Killua dice di sì, gli fa promettere di non tradirli mai. Killua raggiunge [[gon-freecss|Gon]], [[kurapika|Kurapika]] e [[leorio-paradinight|Leorio]] e lascia la tenuta con loro.',
+          it: 'Dopo la finale Killua è rinchiuso sul Monte Kucruu, incatenato e frustato dal fratello [[milluki|Milki]]. [[zeno|Zeno]] lo libera e gli dice che suo padre vuole vederlo. Il padre gli chiede se vuole rivedere i suoi amici e, quando Killua dice di sì, gli fa promettere di non tradirli mai. Killua raggiunge [[gon-freecss|Gon]], [[kurapika|Kurapika]] e [[leorio-paradinight|Leorio]] e lascia la tenuta con loro.',
           en: 'After the final Killua is locked up on Kukuroo Mountain, chained and whipped by his brother [[milluki|Milluki]]. [[zeno|Zeno]] frees him and tells him his father wants to see him. His father asks whether he wants to see his friends again and, when Killua says yes, has him promise never to betray them. Killua joins [[gon-freecss|Gon]], [[kurapika|Kurapika]] and [[leorio-paradinight|Leorio]] and leaves the estate with them.',
         },
       },

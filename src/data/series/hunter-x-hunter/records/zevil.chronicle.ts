@@ -9,7 +9,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'La guida della barca', en: 'The guide on the boat' },
         body: {
-          it: 'Sulla barca a vapore verso l’Isola di Zevil, Khara si presenta come la nuova guida e fa i complimenti ai ventiquattro aspiranti rimasti. Spiega che il viaggio dura due ore e che tutti hanno già l’invito per l’esame dell’anno dopo. Nessuno risponde e lei si scoraggia. Allo sbarco chiama gli aspiranti nell’ordine in cui sono usciti dalla Torre di Lotta, a due minuti l’uno dall’altro, e comincia da [[hisoka|Hisoka]]. Ricorda che resteranno sull’isola una settimana e che ognuno deve raccogliere sei punti.',
+          it: 'Sulla barca a vapore verso l’Isola di Zebir, Khara si presenta come la nuova guida e fa i complimenti ai ventiquattro aspiranti rimasti. Spiega che il viaggio dura due ore e che tutti hanno già l’invito per l’esame dell’anno dopo. Nessuno risponde e lei si scoraggia. Allo sbarco chiama gli aspiranti nell’ordine in cui sono usciti dalla Torre di Lotta, a due minuti l’uno dall’altro, e comincia da [[hisoka|Hisoka]]. Ricorda che resteranno sull’isola una settimana e che ognuno deve raccogliere sei punti.',
           en: 'On the steamboat to Zevil Island, Khara introduces herself as the new guide and congratulates the twenty-four remaining applicants. She says the trip takes two hours and that everyone already has an invitation to next year’s exam. Nobody answers and she is discouraged. At the landing she calls the applicants in the order they left Trick Tower, two minutes apart, starting with [[hisoka|Hisoka]]. She reminds them they will stay on the island for a week and that each must collect six points.',
         },
       },
@@ -175,7 +175,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'La freccia nell’erba', en: 'The arrow in the grass' },
         body: {
-          it: 'Sull’Isola di Zevil Pockul pedina un altro aspirante nell’erba alta, mentre [[gon-freecss|Gon]] guarda da un albero. La freccia ferisce l’uomo solo di striscio, ma la punta è drogata e poco dopo lui crolla a terra. Pockul gli dice che la droga lo terrà a terra per giorni e che c’è acqua lì vicino, così non morirà. Poi prende la sua targhetta e se ne va. Gon decide di avvicinarsi al suo bersaglio nello stesso modo.',
+          it: 'Sull’Isola di Zebir Pockul pedina un altro aspirante nell’erba alta, mentre [[gon-freecss|Gon]] guarda da un albero. La freccia ferisce l’uomo solo di striscio, ma la punta è drogata e poco dopo lui crolla a terra. Pockul gli dice che la droga lo terrà a terra per giorni e che c’è acqua lì vicino, così non morirà. Poi prende la sua targhetta e se ne va. Gon decide di avvicinarsi al suo bersaglio nello stesso modo.',
           en: 'On Zevil Island, Pokkle stalks another applicant through tall grass while [[gon-freecss|Gon]] watches from a tree. The arrow only grazes the man, but its tip is drugged, and he soon collapses. Pokkle tells him the drug will keep him down for days and that there is water nearby, so he will not die. Then he takes his badge and walks off. Gon decides to approach his own target the same way.',
         },
       },
@@ -253,7 +253,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'Una lancia sulla barca', en: 'A spear on the boat' },
         body: {
-          it: 'Fuori dalla Torre di Lotta, [[lippo|Rippo]] fa estrarre a sorte i ventiquattro aspiranti promossi, nell’ordine in cui hanno finito la prova. Ogni carta porta il numero della targhetta di un bersaglio. Fra loro c’è Gozu, che porta una grossa lancia. Sulla barca per l’Isola di Zevil quasi tutti si sono già tolti la targhetta e l’hanno nascosta, e nessuno guarda gli altri negli occhi. Sull’isola la caccia dura una settimana e a ognuno servono sei punti.',
+          it: 'Fuori dalla Torre di Lotta, [[lippo|Rippo]] fa estrarre a sorte i ventiquattro aspiranti promossi, nell’ordine in cui hanno finito la prova. Ogni carta porta il numero della targhetta di un bersaglio. Fra loro c’è Gozu, che porta una grossa lancia. Sulla barca per l’Isola di Zebir quasi tutti si sono già tolti la targhetta e l’hanno nascosta, e nessuno guarda gli altri negli occhi. Sull’isola la caccia dura una settimana e a ognuno servono sei punti.',
           en: 'Outside Trick Tower, [[lippo|Lippo]] has the twenty-four applicants who passed draw lots in the order they finished. Each card bears the badge number of a target. Goz, who carries a large spear, is one of them. On the boat to Zevil Island most applicants have already taken off their badges and hidden them, and nobody looks anyone in the eye. On the island the hunt lasts a week, and each of them needs six points.',
         },
       },
@@ -279,7 +279,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'Settimo a sbarcare', en: 'Seventh ashore' },
         body: {
-          it: 'Agon è uno dei ventiquattro aspiranti che fuori dalla Torre di Lotta pescano il numero di un bersaglio. Sulla barca [[khara|Khara]] spiega che sbarcheranno nell’ordine in cui hanno finito la terza prova, a due minuti l’uno dall’altro, a partire da [[hisoka|Hisoka]]. Agon è il settimo a scendere sull’Isola di Zevil. Sull’isola ognuno ha una settimana per raccogliere sei punti, e la targhetta del bersaglio da sola ne vale tre.',
+          it: 'Agon è uno dei ventiquattro aspiranti che fuori dalla Torre di Lotta pescano il numero di un bersaglio. Sulla barca [[khara|Khara]] spiega che sbarcheranno nell’ordine in cui hanno finito la terza prova, a due minuti l’uno dall’altro, a partire da [[hisoka|Hisoka]]. Agon è il settimo a scendere sull’Isola di Zebir. Sull’isola ognuno ha una settimana per raccogliere sei punti, e la targhetta del bersaglio da sola ne vale tre.',
           en: 'Agon is one of the twenty-four applicants who draw a target’s number outside Trick Tower. On the boat [[khara|Khara]] explains that they will land in the order they finished the Third Phase, two minutes apart, starting with [[hisoka|Hisoka]]. Agon is the seventh to go ashore on Zevil Island. Each applicant has a week there to collect six points, and the target’s badge alone is worth three.',
         },
       },
@@ -305,7 +305,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'Occhiali scuri a bordo', en: 'Dark glasses on board' },
         body: {
-          it: 'Super, un’aspirante con occhiali da sole squadrati, è fra i ventiquattro che lasciano la Torre di Lotta e pescano il numero di un bersaglio. Sulla barca per l’Isola di Zevil [[khara|Khara]] si congratula con tutti e annuncia che sono invitati all’esame dell’anno dopo, ma gli aspiranti quasi non reagiscono. Quasi tutti hanno già nascosto la targhetta e aspettano in silenzio, evitando di guardarsi, chiedendosi chi abbia pescato il proprio numero.',
+          it: 'Super, un’aspirante con occhiali da sole squadrati, è fra i ventiquattro che lasciano la Torre di Lotta e pescano il numero di un bersaglio. Sulla barca per l’Isola di Zebir [[khara|Khara]] si congratula con tutti e annuncia che sono invitati all’esame dell’anno dopo, ma gli aspiranti quasi non reagiscono. Quasi tutti hanno già nascosto la targhetta e aspettano in silenzio, evitando di guardarsi, chiedendosi chi abbia pescato il proprio numero.',
           en: 'Siper, an applicant in square sunglasses, is among the twenty-four who leave Trick Tower and draw a target’s number. On the boat to Zevil Island [[khara|Khara]] congratulates everyone and says they are all invited to next year’s exam, but the applicants barely react. Most have already hidden their badges and wait in silence, avoiding each other’s eyes, each wondering who has drawn their number.',
         },
       },
@@ -331,7 +331,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'Lo spadone', en: 'The broadsword' },
         body: {
-          it: 'Ryu, un aspirante con uno spadone alla cintura, è uno dei ventiquattro che superano la terza prova. [[lippo|Rippo]] li fa estrarre a sorte: ogni carta porta il numero della targhetta di un bersaglio. La targhetta del bersaglio vale tre punti, la propria altri tre se si riesce a tenerla, ogni altra targhetta uno. Per arrivare all’ultima prova ne servono sei, e Ryu parte con gli altri per l’Isola di Zevil.',
+          it: 'Ryu, un aspirante con uno spadone alla cintura, è uno dei ventiquattro che superano la terza prova. [[lippo|Rippo]] li fa estrarre a sorte: ogni carta porta il numero della targhetta di un bersaglio. La targhetta del bersaglio vale tre punti, la propria altri tre se si riesce a tenerla, ogni altra targhetta uno. Per arrivare all’ultima prova ne servono sei, e Ryu parte con gli altri per l’Isola di Zebir.',
           en: 'Ryu, an applicant with a broadsword at his belt, is one of the twenty-four who pass the Third Phase. [[lippo|Lippo]] has them draw lots: each card bears the badge number of a target. A target’s badge is worth three points, an applicant’s own badge three more if he keeps it, and any other badge one. Six points are needed to reach the last phase, so Ryu sails to Zevil Island with the others.',
         },
       },
@@ -357,7 +357,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'La freccia drogata', en: 'The drugged arrow' },
         body: {
-          it: 'Kyu, armato di spada, è uno dei ventiquattro aspiranti che pescano il numero di un bersaglio e sbarcano sull’Isola di Zevil. Nell’erba alta sente di essere seguito e si guarda intorno, ma non vede nessuno. Lo sta pedinando Pockul. La freccia gli sfiora appena il braccio, eppure poco dopo Kyu trema, lascia cadere la spada e crolla. Pockul gli spiega che la droga lo terrà debole per giorni, gli dice che c’è acqua lì vicino e prende la sua targhetta, la 105. [[gon-freecss|Gon]] guarda da un albero.',
+          it: 'Kyu, armato di spada, è uno dei ventiquattro aspiranti che pescano il numero di un bersaglio e sbarcano sull’Isola di Zebir. Nell’erba alta sente di essere seguito e si guarda intorno, ma non vede nessuno. Lo sta pedinando Pockul. La freccia gli sfiora appena il braccio, eppure poco dopo Kyu trema, lascia cadere la spada e crolla. Pockul gli spiega che la droga lo terrà debole per giorni, gli dice che c’è acqua lì vicino e prende la sua targhetta, la 105. [[gon-freecss|Gon]] guarda da un albero.',
           en: 'Kyu, who carries a sword, is one of the twenty-four applicants who draw a target’s number and land on Zevil Island. In the tall grass he senses he is being followed and looks around, but sees nobody. Pokkle is stalking him. The arrow only grazes his arm, yet soon Kyu trembles, drops his sword and collapses. Pokkle explains that the drug will leave him weak for days, tells him there is water nearby and takes his badge, number 105. [[gon-freecss|Gon]] watches from a tree.',
         },
       },
@@ -383,7 +383,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'Chi ha il mio numero', en: 'Who has my number' },
         body: {
-          it: 'Shishito è uno dei ventiquattro aspiranti che superano la terza prova. Ognuno pesca una carta con il numero della targhetta di un bersaglio, e nessuno sa chi ha pescato il suo. Sulla barca per l’Isola di Zevil Shishito resta in silenzio come gli altri e si chiede chi gli stia dando la caccia. Quasi tutti si sono già tolti la targhetta e l’hanno nascosta, quindi nessuno sa da chi guardarsi.',
+          it: 'Shishito è uno dei ventiquattro aspiranti che superano la terza prova. Ognuno pesca una carta con il numero della targhetta di un bersaglio, e nessuno sa chi ha pescato il suo. Sulla barca per l’Isola di Zebir Shishito resta in silenzio come gli altri e si chiede chi gli stia dando la caccia. Quasi tutti si sono già tolti la targhetta e l’hanno nascosta, quindi nessuno sa da chi guardarsi.',
           en: 'Shishito is one of the twenty-four applicants who pass the Third Phase. Each draws a card with a target’s badge number, and none of them knows who has drawn his own. On the boat to Zevil Island Shishito sits in silence like the others and wonders who is hunting him. Most applicants have already taken off their badges and hidden them, so nobody can tell whom to watch out for.',
         },
       },
@@ -412,7 +412,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'Un invito per l’anno dopo', en: 'Invited back' },
         body: {
-          it: 'Kenmi, un aspirante con la testa rasata, è fra i ventiquattro che pescano il numero di un bersaglio e salgono sulla barca per l’Isola di Zevil. La guida, [[khara|Khara]], si congratula con loro e dice che il viaggio dura due ore. Aggiunge che, se falliscono, sono già tutti invitati all’esame dell’anno dopo. Nessuno reagisce: ognuno pensa a chi abbia pescato il suo numero.',
+          it: 'Kenmi, un aspirante con la testa rasata, è fra i ventiquattro che pescano il numero di un bersaglio e salgono sulla barca per l’Isola di Zebir. La guida, [[khara|Khara]], si congratula con loro e dice che il viaggio dura due ore. Aggiunge che, se falliscono, sono già tutti invitati all’esame dell’anno dopo. Nessuno reagisce: ognuno pensa a chi abbia pescato il suo numero.',
           en: 'Kenmi, an applicant with a shaved head, is among the twenty-four who draw a target’s number and board the boat to Zevil Island. The guide, [[khara|Khara]], congratulates them and says the trip takes two hours. She adds that if they fail, they are all already invited to next year’s exam. Nobody reacts: each of them is thinking about who has drawn their number.',
         },
       },
@@ -438,7 +438,7 @@ export const zevilChronicles = {
       value: {
         title: { it: 'Silenzio sulla barca', en: 'Silence on the boat' },
         body: {
-          it: 'Somy è uno dei ventiquattro aspiranti che escono dalla Torre di Lotta. [[lippo|Rippo]] li fa estrarre a sorte nell’ordine in cui hanno finito, a partire da [[hisoka|Hisoka]], e ogni carta porta il numero della targhetta di un bersaglio. Una volta registrato il numero, possono anche buttare la carta. Sulla barca per l’Isola di Zevil Somy aspetta in silenzio con gli altri, che in gran parte hanno già nascosto la targhetta.',
+          it: 'Somy è uno dei ventiquattro aspiranti che escono dalla Torre di Lotta. [[lippo|Rippo]] li fa estrarre a sorte nell’ordine in cui hanno finito, a partire da [[hisoka|Hisoka]], e ogni carta porta il numero della targhetta di un bersaglio. Una volta registrato il numero, possono anche buttare la carta. Sulla barca per l’Isola di Zebir Somy aspetta in silenzio con gli altri, che in gran parte hanno già nascosto la targhetta.',
           en: 'Sommy is one of the twenty-four applicants who come out of Trick Tower. [[lippo|Lippo]] has them draw lots in the order they finished, starting with [[hisoka|Hisoka]], and each card bears a target’s badge number. Once the number is recorded, they may throw the card away. On the boat to Zevil Island Sommy waits in silence with the others, most of whom have already hidden their badges.',
         },
       },

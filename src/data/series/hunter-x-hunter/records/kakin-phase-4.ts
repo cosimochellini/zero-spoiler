@@ -393,7 +393,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 395,
       name: { it: 'Lisores', en: 'Lisores' },
       summary: {
-        it: 'Un sacerdote accoglie i bambini della Meteor City nella chiesa e li avverte dei rapimenti.',
+        it: 'Un sacerdote accoglie i bambini della Città delle Stelle Cadenti nella chiesa e li avverte dei rapimenti.',
         en: 'A priest welcomes Meteor City’s children into the church and warns them about kidnappings.',
       },
       visual: { art: 'lisores', tint: 'violet' },
@@ -406,7 +406,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 395,
       name: { it: 'Sarasa', en: 'Sarasa' },
       summary: {
-        it: 'Una bambina della Meteor City accetta di doppiare un personaggio per gli amici.',
+        it: 'Una bambina della Città delle Stelle Cadenti accetta di doppiare un personaggio per gli amici.',
         en: 'A Meteor City child agrees to voice a character for her friends.',
       },
       visual: { art: 'sarasa', tint: 'violet' },
@@ -419,7 +419,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 395,
       name: { it: 'Sheila', en: 'Sheila' },
       summary: {
-        it: 'Una bambina della Meteor City legge sempre lo stesso libro e vuole diventare Hunter.',
+        it: 'Una bambina della Città delle Stelle Cadenti legge sempre lo stesso libro e vuole diventare Hunter.',
         en: 'A Meteor City child keeps reading the same book and wants to become a Hunter.',
       },
       visual: { art: 'sheila', tint: 'violet' },
@@ -523,7 +523,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       revealedAtChapter: 395,
       name: { it: 'All-Faiths Church', en: 'All-Faiths Church' },
       summary: {
-        it: 'La chiesa della Meteor City ha una sala video e un auditorium per i bambini.',
+        it: 'La chiesa della Città delle Stelle Cadenti ha una sala video e un auditorium per i bambini.',
         en: 'Meteor City’s church has a video room and an auditorium for the children.',
       },
       visual: { art: 'all-faiths-church', tint: 'sand' },
@@ -1226,11 +1226,11 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         status: 'unknown',
         role: { it: 'Sacerdote', en: 'Priest' },
         log: {
-          it: 'Un sacerdote accoglie i bambini della Meteor City nella chiesa e li avverte dei rapimenti.',
+          it: 'Un sacerdote accoglie i bambini della Città delle Stelle Cadenti nella chiesa e li avverte dei rapimenti.',
           en: 'A priest welcomes Meteor City’s children into the church and warns them about kidnappings.',
         },
         affiliation: {
-          it: 'Chiesa della Meteor City',
+          it: 'Chiesa della Città delle Stelle Cadenti',
           en: 'Meteor City’s church',
         },
       },
@@ -1251,7 +1251,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         en: 'Voice actor in the children’s group',
       },
       log: {
-        it: 'Una bambina della Meteor City accetta di doppiare un personaggio per gli amici.',
+        it: 'Una bambina della Città delle Stelle Cadenti accetta di doppiare un personaggio per gli amici.',
         en: 'A Meteor City child agrees to voice a character for her friends.',
       },
       affiliation: [
@@ -1260,7 +1260,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 395,
           source: 'chapter',
           value: {
-            it: 'Gruppo di bambini della Meteor City',
+            it: 'Gruppo di bambini della Città delle Stelle Cadenti',
             en: 'Meteor City children’s group',
           },
         },
@@ -1274,7 +1274,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           episode: 148,
           chapter: 395,
           source: 'chapter',
-          value: { it: 'Meteor City', en: 'Meteor City' },
+          value: { it: 'Città delle Stelle Cadenti', en: 'Meteor City' },
           place: 'meteor-city',
         },
       ],
@@ -1299,7 +1299,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     'sheila': {
       role: { it: 'Aspirante Hunter', en: 'Aspiring Hunter' },
       log: {
-        it: 'Una bambina della Meteor City legge sempre lo stesso libro e vuole diventare Hunter.',
+        it: 'Una bambina della Città delle Stelle Cadenti legge sempre lo stesso libro e vuole diventare Hunter.',
         en: 'A Meteor City child keeps reading the same book and wants to become a Hunter.',
       },
       affiliation: [
@@ -1308,7 +1308,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 395,
           source: 'chapter',
           value: {
-            it: 'Gruppo di bambini della Meteor City',
+            it: 'Gruppo di bambini della Città delle Stelle Cadenti',
             en: 'Meteor City children’s group',
           },
         },
@@ -1330,7 +1330,7 @@ export const KAKIN_PHASE_4: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           episode: 148,
           chapter: 395,
           source: 'chapter',
-          value: { it: 'Meteor City', en: 'Meteor City' },
+          value: { it: 'Città delle Stelle Cadenti', en: 'Meteor City' },
           place: 'meteor-city',
         },
       ],
@@ -1488,7 +1488,7 @@ export const KAKIN_PHASE_4_PLACES: Record<
     region: 'mainland',
     landmark: { it: 'La sala video', en: 'The video room' },
     log: {
-      it: 'La chiesa della Meteor City ha una sala video e un auditorium per i bambini.',
+      it: 'La chiesa della Città delle Stelle Cadenti ha una sala video e un auditorium per i bambini.',
       en: 'Meteor City’s church has a video room and an auditorium for the children.',
     },
     filedHere: ['chrollo', 'pakunoda', 'lisores', 'sarasa', 'sheila'],

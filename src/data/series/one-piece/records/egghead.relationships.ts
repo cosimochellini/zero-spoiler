@@ -310,7 +310,7 @@ const links = {
     },
     summary: {
       en: 'Lilith brings a clone of Vegapunk to Elbaph and plans a new laboratory to revive him.',
-      it: 'Lilith porta un clone di Vegapunk a Elbaf e progetta un nuovo laboratorio per farlo rivivere.',
+      it: 'Lilith porta un clone di Vegapunk a Erbaf e progetta un nuovo laboratorio per farlo rivivere.',
     },
   },
   'edisonYork': {
@@ -1255,7 +1255,7 @@ const links = {
     },
     summary: {
       en: 'Lilith promises Bonney that a new laboratory on Elbaph will let her restore Kuma.',
-      it: 'Lilith promette a Bonney che un nuovo laboratorio su Elbaf le permetterà di riportare Kuma com’era.',
+      it: 'Lilith promette a Bonney che un nuovo laboratorio su Erbaf le permetterà di riportare Kuma com’era.',
     },
   },
   'lilithBonney': {
@@ -1274,7 +1274,7 @@ const links = {
     type: { en: 'King he pressures', it: 'Re su cui fa pressione' },
     summary: {
       en: 'The Elders demand that Harald kill Rocks in exchange for Elbaph joining the World Government.',
-      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Elbaf nel Governo Mondiale.',
+      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Erbaf nel Governo Mondiale.',
     },
   },
   'jaygarcia-saturnHaraldBlade': {
@@ -1282,7 +1282,7 @@ const links = {
     type: { en: 'King he recruits', it: 'Re che recluta' },
     summary: {
       en: 'The Elders make Harald a Devoted Blade and promise Elbaph admission if he becomes a Knight of God.',
-      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Elbaf se diventerà un Cavaliere di Dio.',
+      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Erbaf se diventerà un Cavaliere di Dio.',
     },
   },
   'marcus-marsHaraldDemand': {
@@ -1290,7 +1290,7 @@ const links = {
     type: { en: 'King he pressures', it: 'Re su cui fa pressione' },
     summary: {
       en: 'The Elders demand that Harald kill Rocks in exchange for Elbaph joining the World Government.',
-      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Elbaf nel Governo Mondiale.',
+      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Erbaf nel Governo Mondiale.',
     },
   },
   'marcus-marsHaraldBlade': {
@@ -1298,7 +1298,7 @@ const links = {
     type: { en: 'King he recruits', it: 'Re che recluta' },
     summary: {
       en: 'The Elders make Harald a Devoted Blade and promise Elbaph admission if he becomes a Knight of God.',
-      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Elbaf se diventerà un Cavaliere di Dio.',
+      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Erbaf se diventerà un Cavaliere di Dio.',
     },
   },
   'topman-warcuryHaraldDemand': {
@@ -1306,7 +1306,7 @@ const links = {
     type: { en: 'King he pressures', it: 'Re su cui fa pressione' },
     summary: {
       en: 'The Elders demand that Harald kill Rocks in exchange for Elbaph joining the World Government.',
-      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Elbaf nel Governo Mondiale.',
+      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Erbaf nel Governo Mondiale.',
     },
   },
   'topman-warcuryHaraldBlade': {
@@ -1314,7 +1314,7 @@ const links = {
     type: { en: 'King he recruits', it: 'Re che recluta' },
     summary: {
       en: 'The Elders make Harald a Devoted Blade and promise Elbaph admission if he becomes a Knight of God.',
-      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Elbaf se diventerà un Cavaliere di Dio.',
+      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Erbaf se diventerà un Cavaliere di Dio.',
     },
   },
   'ethanbaron-v-nusjuroHaraldDemand': {
@@ -1322,7 +1322,7 @@ const links = {
     type: { en: 'King he pressures', it: 'Re su cui fa pressione' },
     summary: {
       en: 'The Elders demand that Harald kill Rocks in exchange for Elbaph joining the World Government.',
-      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Elbaf nel Governo Mondiale.',
+      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Erbaf nel Governo Mondiale.',
     },
   },
   'ethanbaron-v-nusjuroHaraldBlade': {
@@ -1330,7 +1330,7 @@ const links = {
     type: { en: 'King he recruits', it: 'Re che recluta' },
     summary: {
       en: 'The Elders make Harald a Devoted Blade and promise Elbaph admission if he becomes a Knight of God.',
-      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Elbaf se diventerà un Cavaliere di Dio.',
+      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Erbaf se diventerà un Cavaliere di Dio.',
     },
   },
   'shepherd-ju-peterHaraldDemand': {
@@ -1338,7 +1338,7 @@ const links = {
     type: { en: 'King he pressures', it: 'Re su cui fa pressione' },
     summary: {
       en: 'The Elders demand that Harald kill Rocks in exchange for Elbaph joining the World Government.',
-      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Elbaf nel Governo Mondiale.',
+      it: 'Gli Astri esigono che Harald uccida Rocks in cambio dell’ingresso di Erbaf nel Governo Mondiale.',
     },
   },
   'shepherd-ju-peterHaraldBlade': {
@@ -1346,7 +1346,7 @@ const links = {
     type: { en: 'King he recruits', it: 'Re che recluta' },
     summary: {
       en: 'The Elders make Harald a Devoted Blade and promise Elbaph admission if he becomes a Knight of God.',
-      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Elbaf se diventerà un Cavaliere di Dio.',
+      it: 'Gli Astri nominano Harald Lama Devota e promettono l’ingresso di Erbaf se diventerà un Cavaliere di Dio.',
     },
   },
   'saturnImVessel': {

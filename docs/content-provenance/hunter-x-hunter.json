@@ -493,7 +493,13 @@
     ]
   },
   "zevil-island": {
-    "sources": ["https://hunterxhunter.fandom.com/wiki/Zevil_Island"]
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Zevil_Island",
+      "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter?oldid=153230591"
+    ],
+    "unverified": [
+      "#1244: the Italian name follows Italian Wikipedia; the 2011 Italian dub form was not viewed."
+    ]
   },
   "masta": {
     "sources": [
@@ -612,7 +618,13 @@
     "sources": ["https://hunterxhunter.fandom.com/wiki/Republic_of_Padokea"]
   },
   "kukuroo-mountain": {
-    "sources": ["https://hunterxhunter.fandom.com/wiki/Kukuroo_Mountain"]
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Kukuroo_Mountain",
+      "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter?oldid=153230604"
+    ],
+    "unverified": [
+      "#1244: the Italian name follows Italian Wikipedia; the 2011 Italian dub form was not viewed."
+    ]
   },
   "katzo": { "unverified": ["Rope against the chapter frame"] },
   "goz": {
@@ -4148,8 +4160,11 @@
     "pending": true
   },
   "dolle-harbor": {
-    "sources": [],
+    "sources": [
+      "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter?oldid=153230604"
+    ],
     "unverified": [
+      "#1244: the Italian name follows Italian Wikipedia; the 2011 Italian dub form was not viewed.",
       "#1019: manga panels, licensed 2011 anime frames/timestamps and Italian dub forms were not viewed. Facts and inventory were checked through lawful English Wiki MediaWiki API revisions. No disappearance, death or personal-name gate is inferred from appearance metadata or binder-only names.",
       "#1019 final inventory disposition: existing-record. Existing place record dolle-harbor; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof."
     ]
@@ -5106,9 +5121,11 @@
       "https://hunterxhunter.fandom.com/wiki/Episode_24_(2011)?oldid=416398",
       "https://hunterxhunter.fandom.com/wiki/Chapter_224?oldid=383536",
       "https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)?oldid=418152",
-      "https://hunterxhunter.fandom.com/wiki/Meteor_City?oldid=422644"
+      "https://hunterxhunter.fandom.com/wiki/Meteor_City?oldid=422644",
+      "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter?oldid=153230604"
     ],
     "unverified": [
+      "#1244: the Italian name follows Italian Wikipedia; the 2011 Italian dub form was not viewed.",
       "Direct panels, licensed episode timestamps and Italian dub audio unviewed.",
       "The record opens at the Troupe's visit, chapter 224 / episode 96; chapter 102 and episode 24 only name it."
     ]

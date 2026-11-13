@@ -1399,7 +1399,7 @@ export const fishManIsland: OnePieceSaga = {
           episode: 762,
           chapter: 811,
           place: 'zou',
-          value: { it: 'Zou', en: 'Zou' },
+          value: { it: 'Zo', en: 'Zou' },
         },
       ],
       devilFruit: [

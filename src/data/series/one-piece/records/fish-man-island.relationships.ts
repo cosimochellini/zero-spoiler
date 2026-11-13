@@ -591,7 +591,7 @@ const links = {
     type: { en: 'Saviour of his homeland', it: 'Salvatore della sua terra' },
     summary: {
       en: 'Pekoms thanks Luffy’s crew for saving the people of Zou and wants to spare Sanji.',
-      it: 'Pekoms ringrazia la ciurma di Rufy per aver salvato gli abitanti di Zou e vuole risparmiare Sanji.',
+      it: 'Pekoms ringrazia la ciurma di Rufy per aver salvato gli abitanti di Zo e vuole risparmiare Sanji.',
     },
   },
   pekomsCaponeBegeCrewmateWhoShootsHim: {

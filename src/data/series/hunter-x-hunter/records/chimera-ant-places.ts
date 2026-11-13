@@ -34,7 +34,7 @@ export const CHIMERA_ANT_PLACE_RECORDS: HunterEntity[] = [
     kind: 'place',
     revealedAtEpisode: 96,
     revealedAtChapter: 224,
-    name: { it: 'Meteor City', en: 'Meteor City' },
+    name: { it: 'Città delle Stelle Cadenti', en: 'Meteor City' },
     summary: {
       it: 'Una città che non compare nei registri ufficiali.',
       en: 'A city outside official records.',

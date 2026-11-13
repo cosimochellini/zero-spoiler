@@ -15,7 +15,7 @@ const STRAW_HATS = {
 const EAST_BLUE = { it: 'East Blue', en: 'East Blue' }
 
 const SYRUP_VILLAGE = {
-  it: 'Villaggio di Syrup, East Blue',
+  it: 'Villaggio di Shirop, East Blue',
   en: 'Syrup Village, East Blue',
 }
 
@@ -133,7 +133,7 @@ export const eastBlue: OnePieceSaga = {
       kind: 'place',
       revealedAtEpisode: 2,
       revealedAtChapter: 3,
-      name: { it: 'Shells Town', en: 'Shells Town' },
+      name: { it: 'Sheltz Town', en: 'Shells Town' },
       summary: {
         it: 'Una cittadina dell’East Blue cresciuta attorno a una base della Marina, con un cacciatore di pirati legato a un palo nel cortile.',
         en: 'An East Blue town grown up around a Marine base, with a pirate hunter tied to a post in the yard.',
@@ -159,7 +159,7 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 4,
       name: { it: 'Morgan', en: 'Morgan' },
       summary: {
-        it: 'Il capitano della base di Shells Town, con un’ascia al posto della mano destra e una mascella d’acciaio, temuto dai suoi più dei pirati.',
+        it: 'Il capitano della base di Sheltz Town, con un’ascia al posto della mano destra e una mascella d’acciaio, temuto dai suoi più dei pirati.',
         en: 'The captain of the Shells Town base, an axe where his right hand should be and a steel jaw, feared by his own men more than any pirate.',
       },
       visual: { art: 'morgan', tint: 'azure' },
@@ -171,7 +171,7 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 4,
       name: { it: 'Rica', en: 'Rika' },
       summary: {
-        it: 'Una bambina di Shells Town che scavalca il muro della base della Marina con delle polpette di riso fatte da lei, per il cacciatore di pirati che nessun altro osa sfamare.',
+        it: 'Una bambina di Sheltz Town che scavalca il muro della base della Marina con delle polpette di riso fatte da lei, per il cacciatore di pirati che nessun altro osa sfamare.',
         en: 'A little girl of Shells Town who climbs the wall of the Marine base with rice balls she made herself, for the pirate hunter nobody else dares to feed.',
       },
       visual: { art: 'rika', tint: 'ivory' },
@@ -193,7 +193,7 @@ export const eastBlue: OnePieceSaga = {
       kind: 'place',
       revealedAtEpisode: 4,
       revealedAtChapter: 1,
-      name: { it: 'Villaggio Fuschia', en: 'Foosha Village' },
+      name: { it: 'Villaggio di Foosha', en: 'Foosha Village' },
       summary: {
         it: 'Un villaggio di mulini a vento sull’isola da cui Rufy è salpato, con una taverna dove una ciurma pirata è stata di casa per un anno.',
         en: 'A windmill village on the island Luffy sailed from, with a tavern where a pirate crew made itself at home for a year.',
@@ -207,7 +207,7 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 1,
       name: { it: 'Makino', en: 'Makino' },
       summary: {
-        it: 'La proprietaria della taverna del Villaggio Fuschia, che versa da bere ai pirati come a chiunque altro e tiene d’occhio il bambino del paese.',
+        it: 'La proprietaria della taverna del Villaggio di Foosha, che versa da bere ai pirati come a chiunque altro e tiene d’occhio il bambino del paese.',
         en: 'The woman who keeps the Foosha Village tavern, pouring for pirates like anyone else and keeping one eye on the village boy.',
       },
       visual: { art: 'makino', tint: 'green' },
@@ -268,7 +268,7 @@ export const eastBlue: OnePieceSaga = {
       kind: 'arc',
       revealedAtEpisode: 5,
       revealedAtChapter: 8,
-      name: { it: 'Orange Town', en: 'Orange Town' },
+      name: { it: 'Villaggio di Orange', en: 'Orange Town' },
       summary: {
         it: 'Una cittadina dove alcuni uomini di una ciurma di pirati inseguono una ladra che ha appena rubato loro una mappa.',
         en: 'A town where some men of a pirate crew chase a thief who has just stolen their map.',
@@ -305,7 +305,7 @@ export const eastBlue: OnePieceSaga = {
       kind: 'place',
       revealedAtEpisode: 5,
       revealedAtChapter: 8,
-      name: { it: 'Orange Town', en: 'Orange Town' },
+      name: { it: 'Villaggio di Orange', en: 'Orange Town' },
       summary: {
         it: 'Una cittadina dell’East Blue dove una ciurma di pirati apre il fuoco su un uccello gigante.',
         en: 'An East Blue town where a pirate crew opens fire on a giant bird.',
@@ -319,7 +319,7 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 21,
       name: { it: 'Moji', en: 'Mohji' },
       summary: {
-        it: 'Il domatore dei Pirati di Bagy, che perlustra Orange Town in groppa a un leone e comanda ogni animale che incontra.',
+        it: 'Il domatore dei Pirati di Bagy, che perlustra il Villaggio di Orange in groppa a un leone e comanda ogni animale che incontra.',
         en: 'The Buggy Pirates’ beast tamer, who sweeps Orange Town on the back of a lion and commands any animal he meets.',
       },
       visual: { art: 'mohji', tint: 'yellow' },
@@ -331,7 +331,7 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 12,
       name: { it: 'Shushu', en: 'Chouchou' },
       summary: {
-        it: 'Un piccolo cane bianco che siede giorno e notte davanti a un negozio di cibo per animali chiuso di Orange Town, coperto di ferite, e non si sposta per i pirati che tengono la città.',
+        it: 'Un piccolo cane bianco che siede giorno e notte davanti a un negozio di cibo per animali chiuso del Villaggio di Orange, coperto di ferite, e non si sposta per i pirati che tengono la città.',
         en: 'A small white dog who sits day and night outside a shut pet-food shop in Orange Town, covered in wounds, and will not move for the pirates who hold the town.',
       },
       visual: { art: 'chouchou', tint: 'sand' },
@@ -344,7 +344,7 @@ export const eastBlue: OnePieceSaga = {
       // Rounded up to 21, the chapter that files Mohji, whom the text names.
       name: { it: 'Richi', en: 'Richie' },
       summary: {
-        it: 'Il leone dei Pirati di Bagy, abbastanza grosso da portare in groppa il suo domatore per le vie di Orange Town e abbastanza forte da spaccare una gabbia di ferro con un balzo.',
+        it: 'Il leone dei Pirati di Bagy, abbastanza grosso da portare in groppa il suo domatore per le vie del Villaggio di Orange e abbastanza forte da spaccare una gabbia di ferro con un balzo.',
         en: 'The Buggy Pirates’ lion, big enough for his tamer to ride through Orange Town and strong enough to break open an iron cage with one pounce.',
       },
       visual: { art: 'richie', tint: 'acid' },
@@ -368,7 +368,7 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 15,
       name: { it: 'Barboncino', en: 'Boodle' },
       summary: {
-        it: 'L’anziano sindaco di Orange Town, che quarant’anni fa l’ha costruita su una terra spoglia e marcia da solo, con un’armatura di cuoio, contro il capitano pirata che la occupa.',
+        it: 'L’anziano sindaco del Villaggio di Orange, che quarant’anni fa l’ha costruito su una terra spoglia e marcia da solo, con un’armatura di cuoio, contro il capitano pirata che lo occupa.',
         en: 'The old mayor of Orange Town, who built it out of bare ground forty years ago and marches out alone in leather armour to face the pirate captain holding it.',
       },
       visual: { art: 'boodle', tint: 'ocher' },
@@ -378,7 +378,7 @@ export const eastBlue: OnePieceSaga = {
       kind: 'arc',
       revealedAtEpisode: 9,
       revealedAtChapter: 22,
-      name: { it: 'Villaggio di Syrup', en: 'Syrup Village' },
+      name: { it: 'Villaggio di Shirop', en: 'Syrup Village' },
       summary: {
         it: 'Il prossimo approdo della rotta, per tre persone che navigano ancora l’East Blue senza una vera nave.',
         en: 'The next landfall on the route, for three people still sailing the East Blue without a proper ship.',
@@ -402,7 +402,7 @@ export const eastBlue: OnePieceSaga = {
       kind: 'place',
       revealedAtEpisode: 9,
       revealedAtChapter: 23,
-      name: { it: 'Villaggio di Syrup', en: 'Syrup Village' },
+      name: { it: 'Villaggio di Shirop', en: 'Syrup Village' },
       summary: {
         it: 'Un villaggio tranquillo delle isole Gecko, con una villa sulla collina e un ragazzo che ogni mattina grida che i pirati stanno arrivando.',
         en: 'A quiet village in the Gecko Islands, with a mansion on the hill and a boy who shouts every morning that pirates are coming.',
@@ -474,7 +474,7 @@ export const eastBlue: OnePieceSaga = {
         en: 'Ninjin, Piiman and Tamanegi',
       },
       summary: {
-        it: 'Tre ragazzini del Villaggio di Syrup, con le spade di legno e l’aria di tre ortaggi, che formano la ciurma pirata di Usop e vanno a spiare la nave pirata che uno di loro ha avvistato.',
+        it: 'Tre ragazzini del Villaggio di Shirop, con le spade di legno e l’aria di tre ortaggi, che formano la ciurma pirata di Usop e vanno a spiare la nave pirata che uno di loro ha avvistato.',
         en: 'Three small boys of Syrup Village with wooden swords and the look of three vegetables, who make up Usopp’s pirate crew and go to spy on the pirate ship one of them has sighted.',
       },
       visual: { art: 'ninjin-piiman-and-tamanegi', tint: 'orange' },
@@ -888,7 +888,7 @@ export const eastBlue: OnePieceSaga = {
       revealedAtChapter: 589,
       name: { it: 'Padrone della scogliera', en: 'Lord of the Coast' },
       summary: {
-        it: 'Il Re del mare delle acque davanti al Villaggio Fuschia, che dieci anni prima della partenza di Rufy ha inghiottito un bandito con tutta la barca e strappato il braccio sinistro a un capitano pirata.',
+        it: 'Il Re del mare delle acque davanti al Villaggio di Foosha, che dieci anni prima della partenza di Rufy ha inghiottito un bandito con tutta la barca e strappato il braccio sinistro a un capitano pirata.',
         en: 'The Sea King of the waters off Foosha Village, which swallowed a bandit and his boat in one bite and took a pirate captain’s left arm ten years before Luffy sailed.',
       },
       visual: { art: 'lord-of-the-coast', tint: 'teal' },
@@ -959,7 +959,7 @@ export const eastBlue: OnePieceSaga = {
           chapter: 1,
           place: 'foosha-village',
           value: {
-            it: 'Villaggio Fuschia, East Blue',
+            it: 'Villaggio di Foosha, East Blue',
             en: 'Foosha Village, East Blue',
           },
         },
@@ -1211,7 +1211,7 @@ export const eastBlue: OnePieceSaga = {
           episode: 2,
           chapter: 3,
           place: 'shells-town',
-          value: { it: 'Shells Town, East Blue', en: 'Shells Town, East Blue' },
+          value: { it: 'Sheltz Town, East Blue', en: 'Shells Town, East Blue' },
         },
       ],
     },
@@ -1222,7 +1222,7 @@ export const eastBlue: OnePieceSaga = {
           episode: 2,
           chapter: 4,
           value: {
-            it: 'Capitano della base di Shells Town',
+            it: 'Capitano della base di Sheltz Town',
             en: 'Captain of the Shells Town base',
           },
         },
@@ -1232,7 +1232,7 @@ export const eastBlue: OnePieceSaga = {
           episode: 3,
           chapter: 7,
           value: {
-            it: 'Ex capitano della base di Shells Town',
+            it: 'Ex capitano della base di Sheltz Town',
             en: 'Former captain of the Shells Town base',
           },
         },
@@ -1255,7 +1255,7 @@ export const eastBlue: OnePieceSaga = {
         {
           episode: 2,
           value: {
-            it: 'Marina, capitano della base di Shells Town',
+            it: 'Marina, capitano della base di Sheltz Town',
             en: 'Marines, captain of the Shells Town base',
           },
         },
@@ -1272,7 +1272,7 @@ export const eastBlue: OnePieceSaga = {
     'rika': {
       chronicle: eastBlueChronicles.rika,
       relationships: eastBlueRelationships.rika,
-      role: { it: 'Bambina di Shells Town', en: 'Shells Town girl' },
+      role: { it: 'Bambina di Sheltz Town', en: 'Shells Town girl' },
       log: {
         it: 'È la bambina che Zoro ha salvato quando il lupo di Hermeppo l’ha aggredita nel locale, ed è per questo che lui è finito legato nel cortile. Dopo nove giorni senza cibo, gli prepara delle polpette di riso per la prima volta in vita sua, con lo zucchero perché pensava che fossero più buone, e scavalca il muro con una scala per portargliele. Piange quando gliele calpestano, ed esulta ad alta voce quando uno sconosciuto con un cappello di paglia prende a pugni chi l’ha fatto.',
         en: 'She is the girl Zoro saved when Helmeppo’s wolf went for her in the bar, which is how he ended up tied in the yard. After nine days without food for him, she makes him rice balls for the first time in her life, sweet instead of salty because she thought they would taste better, and climbs the wall on a ladder to bring them. She cries when they are trampled, and cheers out loud when a stranger in a straw hat punches the man who trampled them.',
@@ -1281,7 +1281,7 @@ export const eastBlue: OnePieceSaga = {
       affiliation: [
         {
           episode: 2,
-          value: { it: 'Abitante di Shells Town', en: 'Shells Town resident' },
+          value: { it: 'Abitante di Sheltz Town', en: 'Shells Town resident' },
         },
       ],
       origin: [
@@ -1289,7 +1289,7 @@ export const eastBlue: OnePieceSaga = {
           episode: 2,
           chapter: 4,
           place: 'shells-town',
-          value: { it: 'Shells Town, East Blue', en: 'Shells Town, East Blue' },
+          value: { it: 'Sheltz Town, East Blue', en: 'Shells Town, East Blue' },
         },
       ],
     },
@@ -1344,7 +1344,7 @@ export const eastBlue: OnePieceSaga = {
           chapter: 1,
           place: 'foosha-village',
           value: {
-            it: 'Villaggio Fuschia, East Blue',
+            it: 'Villaggio di Foosha, East Blue',
             en: 'Foosha Village, East Blue',
           },
         },
@@ -1444,7 +1444,7 @@ export const eastBlue: OnePieceSaga = {
         en: 'Captain of the Buggy Pirates',
       },
       log: {
-        it: 'La sua ciurma tiene Orange Town, e gli abitanti si sono chiusi in un rifugio fuori dalle case. Odia ogni parola che assomigli a «naso», e la sua ciurma ha imparato a non pronunciarla. Usa volentieri il cannone: si dice che una volta abbia raso al suolo un’intera città perché un bambino aveva riso del suo naso.',
+        it: 'La sua ciurma tiene il Villaggio di Orange, e gli abitanti si sono chiusi in un rifugio fuori dalle case. Odia ogni parola che assomigli a «naso», e la sua ciurma ha imparato a non pronunciarla. Usa volentieri il cannone: si dice che una volta abbia raso al suolo un’intera città perché un bambino aveva riso del suo naso.',
         en: 'His crew holds Orange Town, and its people are hiding in a shelter away from their houses. He hates any word that sounds like “nose”, and his crew has learned not to say it. He is quick with his cannon: they say he once levelled a whole town because a boy laughed at his nose.',
       },
       status: [
@@ -1598,7 +1598,7 @@ export const eastBlue: OnePieceSaga = {
       relationships: eastBlueRelationships.richie,
       role: { it: 'Leone di Moji', en: 'Mohji’s lion' },
       log: {
-        it: 'Porta Moji in groppa per le vie svuotate di Orange Town e attacca chiunque il suo domatore gli indichi. Con un balzo spacca la gabbia di ferro in cui è chiuso un ragazzo, e con una zampata lo manda dentro il muro di una casa. Ma quello che vuole davvero è il cibo del negozio di animali, e ci si butta appena gli viene permesso.',
+        it: 'Porta Moji in groppa per le vie svuotate del Villaggio di Orange e attacca chiunque il suo domatore gli indichi. Con un balzo spacca la gabbia di ferro in cui è chiuso un ragazzo, e con una zampata lo manda dentro il muro di una casa. Ma quello che vuole davvero è il cibo del negozio di animali, e ci si butta appena gli viene permesso.',
         en: 'He carries Mohji through the emptied streets of Orange Town and attacks whatever his tamer points him at. One pounce breaks open the iron cage a boy has been locked in, and one swipe sends the boy through the wall of a house. What he really wants, though, is the food in the pet shop, and he goes in after it the moment he is allowed.',
       },
       status: [{ episode: 6, value: 'alive' }],
@@ -1641,7 +1641,10 @@ export const eastBlue: OnePieceSaga = {
     'boodle': {
       chronicle: eastBlueChronicles.boodle,
       relationships: eastBlueRelationships.boodle,
-      role: { it: 'Sindaco di Orange Town', en: 'Mayor of Orange Town' },
+      role: {
+        it: 'Sindaco del Villaggio di Orange',
+        en: 'Mayor of Orange Town',
+      },
       log: {
         it: 'È arrivato qui quarant’anni fa con gente la cui città era stata distrutta dai pirati, e con loro ha costruito questa, casa per casa. Quando sono arrivati i Pirati di Bagy è fuggito con tutti gli altri, e torna di nascosto solo per dare da mangiare al cane davanti al negozio di animali. Il giorno in cui un cane e uno sconosciuto combattono per la sua città mentre lui è scappato, una palla di cannone gli rade al suolo la casa, e lui prende una lancia e va a sfidare Bagy di persona.',
         en: 'He came here forty years ago with people whose own town pirates had destroyed, and built this one with them, house by house. When the Buggy Pirates arrived he fled with everyone else, and slips back only to feed the dog outside the pet shop. The day a dog and a stranger fight for his town while he has run for cover, a cannonball flattens his own house, and he picks up a spear and goes to challenge Buggy himself.',
@@ -1650,7 +1653,10 @@ export const eastBlue: OnePieceSaga = {
       affiliation: [
         {
           episode: 7,
-          value: { it: 'Orange Town, sindaco', en: 'Orange Town, mayor' },
+          value: {
+            it: 'Villaggio di Orange, sindaco',
+            en: 'Orange Town, mayor',
+          },
         },
       ],
     },
@@ -1699,7 +1705,7 @@ export const eastBlue: OnePieceSaga = {
           chapter: 23,
           place: 'syrup-village',
           value: {
-            it: 'Villaggio di Syrup, East Blue',
+            it: 'Villaggio di Shirop, East Blue',
             en: 'Syrup Village, East Blue',
           },
         },
@@ -1726,7 +1732,7 @@ export const eastBlue: OnePieceSaga = {
         {
           episode: 9,
           value: {
-            it: 'Erede della villa del Villaggio di Syrup',
+            it: 'Erede della villa del Villaggio di Shirop',
             en: 'Heiress of the Syrup Village mansion',
           },
         },
@@ -1799,7 +1805,7 @@ export const eastBlue: OnePieceSaga = {
         {
           episode: 13,
           value: {
-            it: 'Maggiordomo della villa del Villaggio di Syrup',
+            it: 'Maggiordomo della villa del Villaggio di Shirop',
             en: 'Butler of the Syrup Village mansion',
           },
         },
@@ -1838,7 +1844,7 @@ export const eastBlue: OnePieceSaga = {
           chapter: 23,
           place: 'syrup-village',
           value: {
-            it: 'Villaggio di Syrup, East Blue',
+            it: 'Villaggio di Shirop, East Blue',
             en: 'Syrup Village, East Blue',
           },
         },
@@ -2663,11 +2669,11 @@ export const eastBlue: OnePieceSaga = {
       chronicle: eastBlueChronicles['lord-of-the-coast'],
       relationships: eastBlueRelationships['lord-of-the-coast'],
       role: {
-        it: 'Re del mare delle acque di Fuschia',
+        it: 'Re del mare delle acque di Foosha',
         en: 'Sea King of the Foosha coast',
       },
       log: {
-        it: 'Vive nelle acque davanti al Villaggio Fuschia e sale in superficie per qualunque cosa ci cada dentro. Dieci anni fa ha inghiottito Higuma con tutta la barca, si è lanciato sul bambino che stava annegando, si è preso invece il braccio sinistro di Shanks ed è fuggito davanti a un solo sguardo. Quando quel bambino, ormai diciassettenne, esce in barca dallo stesso porto, riemerge, e un solo pugno di gomma lo stende sull’acqua.',
+        it: 'Vive nelle acque davanti al Villaggio di Foosha e sale in superficie per qualunque cosa ci cada dentro. Dieci anni fa ha inghiottito Higuma con tutta la barca, si è lanciato sul bambino che stava annegando, si è preso invece il braccio sinistro di Shanks ed è fuggito davanti a un solo sguardo. Quando quel bambino, ormai diciassettenne, esce in barca dallo stesso porto, riemerge, e un solo pugno di gomma lo stende sull’acqua.',
         en: 'It lives in the waters off Foosha Village and rises for anything that falls into them. Ten years ago it swallowed Higuma and his rowboat whole, went for the drowning boy next, took Shanks’s left arm instead, and fled from a single look. When that boy, now seventeen, rows out of the same harbour, it rises again, and one rubber punch lays it out on the water.',
       },
       status: [{ episode: 504, value: 'alive' }],
@@ -2675,7 +2681,7 @@ export const eastBlue: OnePieceSaga = {
         {
           episode: 504,
           value: {
-            it: 'Nessuna: le acque del Villaggio Fuschia',
+            it: 'Nessuna: le acque del Villaggio di Foosha',
             en: 'None: the waters off Foosha Village',
           },
         },

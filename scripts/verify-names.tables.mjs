@@ -5,6 +5,10 @@
 
 import { KAKIN_NAMES_KEPT } from './verify-names.kakin.mjs'
 import {
+  PLACE_ITALIAN_TITLES,
+  PLACE_NAMES_KEPT,
+} from './verify-names.places.mjs'
+import {
   THRONES_ITALIAN_TITLES,
   THRONES_NAMES_KEPT,
 } from './verify-names.thrones.mjs'
@@ -44,6 +48,7 @@ export const ITALIAN_TITLES = {
     // The disguise and the man are two records and one page.
     'tenguyama-hitetsu': 'Kozuki Sukiyaki',
     'terracotta': 'Terracotta',
+    ...PLACE_ITALIAN_TITLES['one-piece'],
   },
   // On Italian Wikipedia.
   'hunter-x-hunter': {
@@ -104,9 +109,6 @@ export const ITALIAN_TITLES = {
     'knuckle-bine': 'Associazione Hunter#Nackul Bain',
     'shoot-mcmahon': 'Associazione Hunter#Schult MacMahone',
     'gyro': 'Formichimere#Giairo',
-    'republic-of-rokario': 'Geografia di Hunter × Hunter#Federazione di Mitene',
-    'republic-of-east-gorteau':
-      'Geografia di Hunter × Hunter#Repubblica del Golt Orientale',
     'neferpitou': 'Formichimere#Neferpito',
     'meruem': 'Formichimere#Meruem',
     'shaiapouf': 'Formichimere#Shawapf',
@@ -199,10 +201,14 @@ export const ITALIAN_TITLES = {
     'kortopi': 'Brigata Fantasma#Kortopi',
     'bonolenov': 'Brigata Fantasma#Bonolenov Ndongo',
     'chrollo': 'Brigata Fantasma#Quoll Lucifer',
+    ...PLACE_ITALIAN_TITLES['hunter-x-hunter'],
   },
   // On Italian Wikipedia, which A Wiki of Ice and Fire does not link: every
   // Game of Thrones character's page is named in `./verify-names.thrones.mjs`.
-  'game-of-thrones': THRONES_ITALIAN_TITLES,
+  'game-of-thrones': {
+    ...THRONES_ITALIAN_TITLES,
+    ...PLACE_ITALIAN_TITLES['game-of-thrones'],
+  },
 }
 
 /**
@@ -213,6 +219,7 @@ export const ITALIAN_TITLES = {
 export const NAMES_KEPT = {
   ...THRONES_NAMES_KEPT,
   ...KAKIN_NAMES_KEPT,
+  ...PLACE_NAMES_KEPT,
   // Election names retained after checking Italian Wikipedia; dub not viewed.
   'beans': 'Beans',
   'cutie-beauty': 'Cutie Beauty',
@@ -329,9 +336,4 @@ export const NAMES_KEPT = {
   'coco-loo': 'Coco Loo',
   // No Italian Wikipedia entry names the foxbear; retain the English name.
   'kon': 'Kon',
-  // Places are not read by this script yet (#1244). Italian Wikipedia
-  // names the Greed Island capital only inside the Greed Island paragraph of
-  // `Geografia di Hunter × Hunter` (revision 153230604), and List's entry in
-  // `Personaggi di Hunter × Hunter` says the same (#1233).
-  'limeiro': 'Riimeilo',
 }

@@ -93,7 +93,7 @@ export const FILLER: FillerEntry[] = [
     },
     summary: {
       en: 'A retelling of the first five episodes, in which Luffy and Zoro recount their pirate days to Nami in Orange Town, jumping between different moments of the story.',
-      it: 'Un riassunto dei primi cinque episodi: Rufy e Zoro raccontano a Nami, a Orange Town, la loro vita da pirati, saltando da un momento all’altro della storia.',
+      it: 'Un riassunto dei primi cinque episodi: Rufy e Zoro raccontano a Nami, al Villaggio di Orange, la loro vita da pirati, saltando da un momento all’altro della storia.',
     },
   },
   {
@@ -977,7 +977,7 @@ export const FILLER: FillerEntry[] = [
     },
     summary: {
       en: 'The recap retells how young Luffy meets Shanks in Foosha Village. The leader of a bandit group throws Luffy into the sea, and Shanks saves him from a sea monster.',
-      it: 'L’episodio ripercorre l’incontro tra il piccolo Rufy e Shanks nel Villaggio Fuschia. Il capo di un gruppo di banditi getta Rufy in acqua e Shanks lo salva da un mostro marino.',
+      it: 'L’episodio ripercorre l’incontro tra il piccolo Rufy e Shanks nel Villaggio di Foosha. Il capo di un gruppo di banditi getta Rufy in acqua e Shanks lo salva da un mostro marino.',
     },
   },
   {
@@ -1798,7 +1798,7 @@ export const FILLER: FillerEntry[] = [
     },
     summary: {
       en: 'Usopp and Chopper tell Brook the story of their old ship, the Going Merry, from Syrup Village to the days of Water Seven and Enies Lobby, while out at sea in the Mini Merry II.',
-      it: 'Usop e Chopper raccontano a Brook la storia della loro vecchia nave, la Going Merry, dal Villaggio di Syrup fino a Water Seven ed Enies Lobby, a bordo della Mini Merry 2.',
+      it: 'Usop e Chopper raccontano a Brook la storia della loro vecchia nave, la Going Merry, dal Villaggio di Shirop fino a Water Seven ed Enies Lobby, a bordo della Mini Merry 2.',
     },
   },
   {
@@ -2555,7 +2555,7 @@ export const FILLER: FillerEntry[] = [
     },
     summary: {
       en: 'Luffy meets Shanks and his daughter Uta in Foosha Village as a child, and the two become friends. It is a flashback that opens with the Straw Hats hearing Uta’s song on a Tone Dial.',
-      it: 'Da bambino Rufy incontra Shanks e sua figlia Uta nel villaggio Fuschia, e i due diventano amici. È un flashback che inizia con i Cappello di Paglia che ascoltano la canzone di Uta.',
+      it: 'Da bambino Rufy incontra Shanks e sua figlia Uta nel villaggio di Foosha, e i due diventano amici. È un flashback che inizia con i Cappello di Paglia che ascoltano la canzone di Uta.',
     },
   },
   {

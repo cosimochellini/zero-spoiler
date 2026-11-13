@@ -376,7 +376,7 @@ const retained = {
     type: { en: 'Inspiration', it: 'Modello' },
     summary: {
       en: 'Dorry and Brogy’s commitment to their duel inspires Usopp’s dream of visiting Elbaph.',
-      it: 'La dedizione di Dori e Brogi al loro duello ispira in Usop il desiderio di visitare Elbaf.',
+      it: 'La dedizione di Dori e Brogi al loro duello ispira in Usop il desiderio di visitare Erbaf.',
     },
   },
   jangoHinaSuperior: {
@@ -400,7 +400,7 @@ const retained = {
     type: { en: 'Opponent', it: 'Avversario' },
     summary: {
       en: 'Zoro fights the brothers while defending Syrup Village.',
-      it: 'Zoro affronta i fratelli mentre difende il Villaggio di Syrup.',
+      it: 'Zoro affronta i fratelli mentre difende il Villaggio di Shirop.',
     },
   },
   johnnyRoronoaZoroFormerPartner: {
@@ -1748,7 +1748,7 @@ export const eastBlueRelationships = {
           type: { en: 'Trainer', it: 'Domatore' },
           summary: {
             en: 'Richie carries Mohji and follows his orders in Orange Town.',
-            it: 'Richi trasporta Moji e segue i suoi ordini a Orange Town.',
+            it: 'Richi trasporta Moji e segue i suoi ordini al Villaggio di Orange.',
           },
         },
         {
@@ -1773,7 +1773,7 @@ export const eastBlueRelationships = {
           type: { en: 'Captain', it: 'Capitano' },
           summary: {
             en: 'Cabaji fights on Buggy’s behalf in Orange Town.',
-            it: 'Kabaji combatte per Bagy a Orange Town.',
+            it: 'Kabaji combatte per Bagy al Villaggio di Orange.',
           },
         },
         {
@@ -1884,7 +1884,7 @@ export const eastBlueRelationships = {
           type: { en: 'Giant ally', it: 'Alleato gigante' },
           summary: {
             en: 'Usopp sails toward Elbaph with Brogy after the giants help the crew escape Egghead.',
-            it: 'Usop naviga verso Elbaf con Brogi dopo che i giganti hanno aiutato la ciurma a fuggire da Egghead.',
+            it: 'Usop naviga verso Erbaf con Brogi dopo che i giganti hanno aiutato la ciurma a fuggire da Egghead.',
           },
         },
         {

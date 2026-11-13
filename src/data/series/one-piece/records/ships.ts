@@ -15,7 +15,7 @@ export const SHIP_DOSSIERS: Record<string, ShipDossier> = {
     launched: 'syrup-village',
     // All told in episode 17, the episode before her threshold.
     log: {
-      it: 'La nave che Kaya regala alla ciurma quando la ciurma lascia il Villaggio di Syrup, carica di provviste. L’ha progettata il suo maggiordomo Merry, che spiega a Nami come si governa. È la prima vera nave della ciurma: fino a quel momento il mare l’ha attraversato su piccole barche.',
+      it: 'La nave che Kaya regala alla ciurma quando la ciurma lascia il Villaggio di Shirop, carica di provviste. L’ha progettata il suo maggiordomo Merry, che spiega a Nami come si governa. È la prima vera nave della ciurma: fino a quel momento il mare l’ha attraversato su piccole barche.',
       en: 'The ship Kaya gives the crew as it leaves Syrup Village, loaded with supplies. Kaya’s butler Merry designed her himself, and he shows Nami how she handles. She is the crew’s first real ship: until then it had crossed the sea in small boats.',
     },
     fate: [

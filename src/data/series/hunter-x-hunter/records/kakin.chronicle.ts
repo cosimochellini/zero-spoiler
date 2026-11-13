@@ -876,9 +876,12 @@ export const kakinChronicles = {
     ),
     told(
       395,
-      { it: 'Le videocassette di Meteor City', en: 'Meteor City’s videotapes' },
       {
-        it: 'Anni prima, a Meteor City, il giovane Quoll cerca videocassette tra i rifiuti con [[franklin|Franklin]] e [[shalnark|Shalnark]] nel territorio di [[uvogin|Uborghin]]. Mentre Franklin affronta Uborghin, Quoll scappa e consegna a [[phinks|Phinks]] una cassetta qualunque, tenendo per sé quella vera. In chiesa impara le lingue straniere dalle cassette, e lì lo trova [[pakunoda|Pakunoda]]. Sul nastro c’è un cartone, i Power Cleaners: Quoll le chiede di aiutarlo a doppiarlo nella loro lingua insieme a [[sheila|Sheila]] e [[sarasa|Sarasa]].',
+        it: 'Le videocassette della Città delle Stelle Cadenti',
+        en: 'Meteor City’s videotapes',
+      },
+      {
+        it: 'Anni prima, nella Città delle Stelle Cadenti, il giovane Quoll cerca videocassette tra i rifiuti con [[franklin|Franklin]] e [[shalnark|Shalnark]] nel territorio di [[uvogin|Uborghin]]. Mentre Franklin affronta Uborghin, Quoll scappa e consegna a [[phinks|Phinks]] una cassetta qualunque, tenendo per sé quella vera. In chiesa impara le lingue straniere dalle cassette, e lì lo trova [[pakunoda|Pakunoda]]. Sul nastro c’è un cartone, i Power Cleaners: Quoll le chiede di aiutarlo a doppiarlo nella loro lingua insieme a [[sheila|Sheila]] e [[sarasa|Sarasa]].',
         en: 'Years earlier in Meteor City, young Chrollo searches the rubbish for videotapes with [[franklin|Franklin]] and [[shalnark|Shalnark]] in [[uvogin|Uvogin]]’s territory. While Franklin fights Uvogin, Chrollo escapes and hands [[phinks|Phinks]] a different tape, keeping the real one. At the church he learns foreign languages from tapes, and [[pakunoda|Pakunoda]] finds him there. The tape holds a cartoon, the Power Cleaners: Chrollo asks her to help him dub it into their own language with [[sheila|Sheila]] and [[sarasa|Sarasa]].',
       },
     ),
@@ -894,7 +897,7 @@ export const kakinChronicles = {
       397,
       { it: 'La nascita del Ragno', en: 'The Spider is born' },
       {
-        it: 'Quando [[sarasa|Sarasa]] scompare, Quoll annulla lo spettacolo e si dà la colpa. Con [[uvogin|Uborghin]] trova il suo corpo in un sacco appeso a un albero a Uga Forest, con un biglietto che rifiuta di leggere ad alta voce. Dopo il funerale chiede a Uborghin di aspettare tre anni: la rivoluzione delle comunicazioni permetterà di creare a Meteor City un luogo che attiri criminali come gli assassini di Sarasa. Giura di vivere da cattivo e di far tremare il mondo. Uborghin e gli altri lo nominano loro capo, e anni dopo nasce il Ragno.',
+        it: 'Quando [[sarasa|Sarasa]] scompare, Quoll annulla lo spettacolo e si dà la colpa. Con [[uvogin|Uborghin]] trova il suo corpo in un sacco appeso a un albero a Uga Forest, con un biglietto che rifiuta di leggere ad alta voce. Dopo il funerale chiede a Uborghin di aspettare tre anni: la rivoluzione delle comunicazioni permetterà di creare nella Città delle Stelle Cadenti un luogo che attiri criminali come gli assassini di Sarasa. Giura di vivere da cattivo e di far tremare il mondo. Uborghin e gli altri lo nominano loro capo, e anni dopo nasce il Ragno.',
         en: 'When [[sarasa|Sarasa]] goes missing, Chrollo cancels the show and blames himself. With [[uvogin|Uvogin]] he finds her body in a bag hanging from a tree in Uga Forest, with a note he refuses to read aloud. After the funeral he asks Uvogin to wait three years: the coming communication revolution will let them build a place in Meteor City that draws in criminals like Sarasa’s killers. He vows to live as a villain who makes the world shudder. Uvogin and the others name him their head, and years later the Spider is born.',
       },
     ),
@@ -920,7 +923,7 @@ export const kakinChronicles = {
       397,
       { it: 'Il piano spiegato', en: 'The plan explained' },
       {
-        it: 'Anni prima, a Meteor City, Shalnark cerca videocassette con [[franklin|Franklin]] e [[chrollo|Quoll]] e si sceglie un ruolo negli spettacoli doppiati dei ragazzi. Dopo la morte di [[sarasa|Sarasa]], quando [[uvogin|Uborghin]] non capisce il piano di Quoll, Shalnark glielo spiega: usare le nuove tecnologie della comunicazione per creare un rifugio per criminali e trovare tra loro i colpevoli. Dice che lo aiuteranno, e che tre anni passeranno in fretta, con tutto quello che c’è da preparare.',
+        it: 'Anni prima, nella Città delle Stelle Cadenti, Shalnark cerca videocassette con [[franklin|Franklin]] e [[chrollo|Quoll]] e si sceglie un ruolo negli spettacoli doppiati dei ragazzi. Dopo la morte di [[sarasa|Sarasa]], quando [[uvogin|Uborghin]] non capisce il piano di Quoll, Shalnark glielo spiega: usare le nuove tecnologie della comunicazione per creare un rifugio per criminali e trovare tra loro i colpevoli. Dice che lo aiuteranno, e che tre anni passeranno in fretta, con tutto quello che c’è da preparare.',
         en: 'Years earlier in Meteor City, Shalnark searches for videotapes with [[franklin|Franklin]] and [[chrollo|Chrollo]] and picks a role in the children’s dubbed shows. After [[sarasa|Sarasa]]’s death, when [[uvogin|Uvogin]] fails to follow Chrollo’s plan, Shalnark explains it: using new communication technology to build a hideout for criminals and find the culprits among them. He says they will help, and that three years will pass quickly with so much to prepare.',
       },
     ),
@@ -956,7 +959,7 @@ export const kakinChronicles = {
       397,
       { it: 'Riportarla a casa', en: 'Taking her home' },
       {
-        it: 'Anni prima, a Meteor City, Machi è tra i ragazzi che cercano [[sarasa|Sarasa]]. Quando [[uvogin|Uborghin]] fa per andarsene dopo che il corpo è stato trovato, Machi lo ferma: devono riportarla a casa, perché lasciarla lì sarebbe troppo triste, e deve aver sofferto e avuto paura. Al funerale chiede all’imbalsamatrice [[renko|Renko]] di insegnarle. Renko le chiede se vede l’aura e le dà un lasciapassare per andarla a trovare, e la parola aura resta nella mente di Machi.',
+        it: 'Anni prima, nella Città delle Stelle Cadenti, Machi è tra i ragazzi che cercano [[sarasa|Sarasa]]. Quando [[uvogin|Uborghin]] fa per andarsene dopo che il corpo è stato trovato, Machi lo ferma: devono riportarla a casa, perché lasciarla lì sarebbe troppo triste, e deve aver sofferto e avuto paura. Al funerale chiede all’imbalsamatrice [[renko|Renko]] di insegnarle. Renko le chiede se vede l’aura e le dà un lasciapassare per andarla a trovare, e la parola aura resta nella mente di Machi.',
         en: 'Years earlier in Meteor City, Machi is among the children searching for [[sarasa|Sarasa]]. When [[uvogin|Uvogin]] starts to walk off after the body is found, Machi stops him: they must take her home, because leaving her would be too sad, and she must have been in pain and afraid. At the funeral she asks the embalmer [[renko|Renko]] to teach her. Renko asks whether she can see aura and gives her a pass to visit, and the word aura lingers in Machi’s mind.',
       },
     ),
@@ -2196,7 +2199,7 @@ export const kakinChronicles = {
       395,
       { it: 'Il prete della chiesa', en: 'The church’s priest' },
       {
-        it: 'Anni prima, a Meteor City, padre Lisores accoglie il giovane [[chrollo|Quoll]] di ritorno in chiesa, dove il ragazzo studia videocassette in lingue straniere, e lo avverte di non andare da solo in periferia: i bambini vengono rapiti, e fuori ci sono sempre più tombe piccole. I ragazzi evitano le sue prediche, ma lui lascia a Quoll la sala video. Nel seminterrato dice a una persona anziana che il ragazzo promette molto e si chiede se le sue idee possano essere utili agli anziani della città.',
+        it: 'Anni prima, nella Città delle Stelle Cadenti, padre Lisores accoglie il giovane [[chrollo|Quoll]] di ritorno in chiesa, dove il ragazzo studia videocassette in lingue straniere, e lo avverte di non andare da solo in periferia: i bambini vengono rapiti, e fuori ci sono sempre più tombe piccole. I ragazzi evitano le sue prediche, ma lui lascia a Quoll la sala video. Nel seminterrato dice a una persona anziana che il ragazzo promette molto e si chiede se le sue idee possano essere utili agli anziani della città.',
         en: 'Years earlier in Meteor City, Father Lisores welcomes young [[chrollo|Chrollo]] back to the church, where the boy studies videotapes in foreign languages, and warns him not to visit the outskirts alone: children are being abducted, and there are more and more small graves outside. The children avoid his lectures, but he lets Chrollo use the video room. In the basement he tells an older figure that the boy has great promise and wonders whether his ideas could be of use to the city’s elders.',
       },
     ),
@@ -2206,7 +2209,7 @@ export const kakinChronicles = {
       396,
       { it: 'La voce di Orange', en: 'Orange’s voice' },
       {
-        it: 'Sarasa, la più piccola dei ragazzi intorno a [[chrollo|Quoll]] a Meteor City, accetta subito di dare la voce all’Orange Cleaner nel cartone che lui vuole doppiare. Alla proiezione costringe [[phinks|Phinks]] a distribuire gli snack e promette di occuparsi di [[uvogin|Uborghin]]. Dopo lo spettacolo finge di parlare con la voce di Uborghin per lodare la recitazione di Quoll. Più tardi si incammina da sola tra i rifiuti, decisa a sorprendere gli altri con nuove cassette prese in una discarica vicino a Uga Forest.',
+        it: 'Sarasa, la più piccola dei ragazzi intorno a [[chrollo|Quoll]] nella Città delle Stelle Cadenti, accetta subito di dare la voce all’Orange Cleaner nel cartone che lui vuole doppiare. Alla proiezione costringe [[phinks|Phinks]] a distribuire gli snack e promette di occuparsi di [[uvogin|Uborghin]]. Dopo lo spettacolo finge di parlare con la voce di Uborghin per lodare la recitazione di Quoll. Più tardi si incammina da sola tra i rifiuti, decisa a sorprendere gli altri con nuove cassette prese in una discarica vicino a Uga Forest.',
         en: 'Sarasa, the youngest of the children around [[chrollo|Chrollo]] in Meteor City, agrees at once to voice the Orange Cleaner in the cartoon he wants to dub. At the screening she makes [[phinks|Phinks]] hand out snacks and promises to deal with [[uvogin|Uvogin]]. After the show she pretends to speak in Uvogin’s voice to praise Chrollo’s performance. Later she sets off alone through the rubbish, determined to surprise the others with new tapes from a dump near Uga Forest.',
       },
     ),
@@ -2214,7 +2217,7 @@ export const kakinChronicles = {
       397,
       { it: 'Scomparsa', en: 'Missing' },
       {
-        it: 'Sarasa non arriva alla proiezione successiva, e chi si occupa di lei non la vede dal giorno prima. [[chrollo|Quoll]] annulla lo spettacolo, si dà la colpa per averla lasciata tornare a casa da sola, e i bambini di Meteor City si uniscono alle ricerche. Vicino a Uga Forest Quoll trova il suo borsellino e tracce di pneumatici. Nella foresta un sacco dei rifiuti pende da un albero, con un biglietto. Dentro c’è il corpo smembrato di Sarasa. Gli amici la riportano a casa, e un’imbalsamatrice la ricompone prima della sepoltura.',
+        it: 'Sarasa non arriva alla proiezione successiva, e chi si occupa di lei non la vede dal giorno prima. [[chrollo|Quoll]] annulla lo spettacolo, si dà la colpa per averla lasciata tornare a casa da sola, e i bambini della Città delle Stelle Cadenti si uniscono alle ricerche. Vicino a Uga Forest Quoll trova il suo borsellino e tracce di pneumatici. Nella foresta un sacco dei rifiuti pende da un albero, con un biglietto. Dentro c’è il corpo smembrato di Sarasa. Gli amici la riportano a casa, e un’imbalsamatrice la ricompone prima della sepoltura.',
         en: 'Sarasa does not come to the next screening, and her caretakers have not seen her since the day before. [[chrollo|Chrollo]] cancels the show, blames himself for letting her go home alone, and the children of Meteor City join the search. Near Uga Forest Chrollo finds her pouch and tyre tracks. In the forest a rubbish bag hangs from a tree, with a note. Inside is Sarasa’s dismembered body. Her friends take her home, and an embalmer restores her before she is buried.',
       },
     ),
@@ -2224,7 +2227,7 @@ export const kakinChronicles = {
       395,
       { it: 'Il libro del cacciatore', en: 'The Hunter book' },
       {
-        it: 'Sheila è una delle ragazze di Meteor City che [[pakunoda|Pakunoda]] coinvolge nel doppiaggio di un cartone con [[chrollo|Quoll]]. Accetta se accetta anche [[sarasa|Sarasa]]. Legge sempre lo stesso libro di avventure su un Hunter, perché vuole diventarlo, e nessun ragionamento la fa cambiare idea. Leggendo mentre cammina continua a inciampare. Vedendo il copione che Quoll ha scritto così in fretta, dice che è nato nel posto sbagliato.',
+        it: 'Sheila è una delle ragazze della Città delle Stelle Cadenti che [[pakunoda|Pakunoda]] coinvolge nel doppiaggio di un cartone con [[chrollo|Quoll]]. Accetta se accetta anche [[sarasa|Sarasa]]. Legge sempre lo stesso libro di avventure su un Hunter, perché vuole diventarlo, e nessun ragionamento la fa cambiare idea. Leggendo mentre cammina continua a inciampare. Vedendo il copione che Quoll ha scritto così in fretta, dice che è nato nel posto sbagliato.',
         en: 'Sheila is one of the Meteor City girls [[pakunoda|Pakunoda]] brings in to dub a cartoon with [[chrollo|Chrollo]]. She agrees if [[sarasa|Sarasa]] does. She always reads the same adventure book about a Hunter, because she wants to become one, and no sound argument will change her mind. Reading as she walks, she keeps tripping over. Seeing the script Chrollo wrote so quickly, she says he was born in the wrong place.',
       },
     ),
@@ -2232,7 +2235,7 @@ export const kakinChronicles = {
       397,
       { it: 'Lontano dal gruppo', en: 'Away from the group' },
       {
-        it: 'Quando [[sarasa|Sarasa]] scompare, Sheila aiuta [[chrollo|Quoll]] a cercarla, perché conosce chi si occupa di lei. Quando il corpo di Sarasa viene trovato nella foresta, Sheila piange con [[pakunoda|Pakunoda]]. Dopo la sepoltura, mentre Quoll e gli altri progettano di attirare a Meteor City gli assassini come quelli di Sarasa e di ucciderli, Sheila si allontana da sola nella foresta: non vuole seguirli su quella strada.',
+        it: 'Quando [[sarasa|Sarasa]] scompare, Sheila aiuta [[chrollo|Quoll]] a cercarla, perché conosce chi si occupa di lei. Quando il corpo di Sarasa viene trovato nella foresta, Sheila piange con [[pakunoda|Pakunoda]]. Dopo la sepoltura, mentre Quoll e gli altri progettano di attirare nella Città delle Stelle Cadenti gli assassini come quelli di Sarasa e di ucciderli, Sheila si allontana da sola nella foresta: non vuole seguirli su quella strada.',
         en: 'When [[sarasa|Sarasa]] goes missing, Sheila helps [[chrollo|Chrollo]] look for her, since she knows who looks after her. When Sarasa’s body is found in the forest, Sheila cries with [[pakunoda|Pakunoda]]. After the burial, while Chrollo and the others plan to draw killers like Sarasa’s into Meteor City and kill them, Sheila walks away alone into the forest: she will not follow them down that path.',
       },
     ),
@@ -2471,7 +2474,7 @@ export const kakinChronicles = {
       397,
       { it: 'Fino alla morte', en: 'Until he dies' },
       {
-        it: 'Anni prima, a Meteor City, Uborghin regna su una discarica che chiama il suo regno e si batte con [[franklin|Franklin]] per una cassetta rubata. Alla proiezione in chiesa le voci di [[chrollo|Quoll]] lo colpiscono più di qualsiasi pugno, e sogna di girare il mondo come il più grande dei cattivi. Quando [[sarasa|Sarasa]] viene uccisa, vuole partire per vendicarla. Quoll gli chiede di aspettare tre anni e di guidare la Brigata, ma Uborghin risponde che il capo è Quoll, e che lo seguirà fino alla morte.',
+        it: 'Anni prima, nella Città delle Stelle Cadenti, Uborghin regna su una discarica che chiama il suo regno e si batte con [[franklin|Franklin]] per una cassetta rubata. Alla proiezione in chiesa le voci di [[chrollo|Quoll]] lo colpiscono più di qualsiasi pugno, e sogna di girare il mondo come il più grande dei cattivi. Quando [[sarasa|Sarasa]] viene uccisa, vuole partire per vendicarla. Quoll gli chiede di aspettare tre anni e di guidare la Brigata, ma Uborghin risponde che il capo è Quoll, e che lo seguirà fino alla morte.',
         en: 'Years earlier in Meteor City, Uvogin rules a rubbish heap he calls his kingdom and fights [[franklin|Franklin]] over a stolen tape. At the church screening, [[chrollo|Chrollo]]’s voices hit him harder than any punch, and he dreams of touring the world as the greatest villain. When [[sarasa|Sarasa]] is killed, he wants to leave to avenge her. Chrollo asks him to wait three years and to lead the Troupe, but Uvogin answers that Chrollo is the head, and that he will follow him until he dies.',
       },
     ),
@@ -2481,7 +2484,7 @@ export const kakinChronicles = {
       396,
       { it: 'Il fratellino', en: 'Her little brother' },
       {
-        it: 'Anni prima, a Meteor City, Pakunoda trova [[chrollo|Quoll]] a studiare videocassette in chiesa e lo aiuta a doppiare un cartone: presta la voce alla Pink Cleaner e coinvolge [[sheila|Sheila]] e [[sarasa|Sarasa]]. Lo chiama il suo fratellino, anche se lui insiste di essere più grande. Prima della proiezione gli dice che le piace così com’è, un ragazzo che ogni giorno porta fiori alle tombe, e dietro le quinte loda il modo in cui ha dato la voce a tutti i personaggi maschili. Propone di chiamare il loro gruppo compagnia.',
+        it: 'Anni prima, nella Città delle Stelle Cadenti, Pakunoda trova [[chrollo|Quoll]] a studiare videocassette in chiesa e lo aiuta a doppiare un cartone: presta la voce alla Pink Cleaner e coinvolge [[sheila|Sheila]] e [[sarasa|Sarasa]]. Lo chiama il suo fratellino, anche se lui insiste di essere più grande. Prima della proiezione gli dice che le piace così com’è, un ragazzo che ogni giorno porta fiori alle tombe, e dietro le quinte loda il modo in cui ha dato la voce a tutti i personaggi maschili. Propone di chiamare il loro gruppo compagnia.',
         en: 'Years earlier in Meteor City, Pakunoda finds [[chrollo|Chrollo]] studying videotapes at the church and helps him dub a cartoon: she voices the Pink Cleaner and brings in [[sheila|Sheila]] and [[sarasa|Sarasa]]. She calls him her little brother, though he insists he is older. Before the screening she tells him she likes him just as he is, a boy who brings flowers to the graves every day, and backstage she praises how he voiced every male character. She suggests calling their group a troupe.',
       },
     ),

@@ -527,7 +527,7 @@ export const alabastaChronicles = {
       value: {
         title: { it: 'Il Poneglifo rosso', en: 'The red Poneglyph' },
         body: {
-          it: "Nel cuore dell'Albero Balena di Zou, a Robin viene concesso il raro permesso di leggere un Poneglifo inciso in rosso anziché in blu, il primo che vede di quel colore. Ricordando gli anni di studio delle pietre a Ohara, lo traduce in una sequenza di coordinate nautiche che [[nami|Nami]] può segnare su una mappa. [[inuarashi|Cane-tempesta]] le spiega cosa ha appena trovato: un Poneglifo della Rotta, uno dei quattro sparsi per il mondo, ciascuno indica un'isola. Solo quando tutti e quattro saranno letti e collegati si potrà trovare Laugh Tale e, con esso, lo One Piece.",
+          it: "Nel cuore dell'Albero Balena di Zo, a Robin viene concesso il raro permesso di leggere un Poneglifo inciso in rosso anziché in blu, il primo che vede di quel colore. Ricordando gli anni di studio delle pietre a Ohara, lo traduce in una sequenza di coordinate nautiche che [[nami|Nami]] può segnare su una mappa. [[inuarashi|Cane-tempesta]] le spiega cosa ha appena trovato: un Poneglifo della Rotta, uno dei quattro sparsi per il mondo, ciascuno indica un'isola. Solo quando tutti e quattro saranno letti e collegati si potrà trovare Laugh Tale e, con esso, lo One Piece.",
           en: 'Inside the Whale Tree on Zou, Robin is given rare permission to read a Poneglyph carved in red instead of blue, the first she has ever seen in this colour. Recalling her years studying the stones on Ohara, she translates it into a string of nautical coordinates that [[nami|Nami]] can plot on a chart. [[inuarashi|Inuarashi]] explains what she has just found: a Road Poneglyph, one of four scattered across the world, each pointing to an island. Only once all four are read and connected can anyone find Laugh Tale and, with it, the One Piece.',
         },
       },
@@ -559,7 +559,7 @@ export const alabastaChronicles = {
       value: {
         title: { it: 'I libri di Ohara', en: 'The books of Ohara' },
         body: {
-          it: '[[shaka|Shaka]] racconta a Robin che i giganti recuperano i libri dal lago di Ohara e li portano a Elbaf. Il dottor Vegapunk va a leggerli di persona. Quando sente che a guidare quei giganti è un uomo coperto di bende, Robin pensa a [[jaguar-d-saul|Sauro]], che l’ha aiutata a fuggire da bambina.',
+          it: '[[shaka|Shaka]] racconta a Robin che i giganti recuperano i libri dal lago di Ohara e li portano a Erbaf. Il dottor Vegapunk va a leggerli di persona. Quando sente che a guidare quei giganti è un uomo coperto di bende, Robin pensa a [[jaguar-d-saul|Sauro]], che l’ha aiutata a fuggire da bambina.',
           en: '[[shaka|Shaka]] tells Robin that giants recover the books from Ohara’s lake and take them to Elbaph. Dr. Vegapunk goes there to read them himself. When she hears that a man covered in bandages leads the giants, Robin thinks of [[jaguar-d-saul|Saul]], who helped her escape as a child.',
         },
       },
@@ -580,7 +580,7 @@ export const alabastaChronicles = {
       value: {
         title: { it: 'I tre mondi', en: 'The three worlds' },
         body: {
-          it: 'In biblioteca, [[jaguar-d-saul|Sauro]] mostra a Robin l’Harley, il testo da cui nascono le leggende di Elbaf. Ciascuno lo interpreta a modo suo, spiega Sauro, e si fa un’idea diversa del dio del sole. Sauro racconta che le leggende su Nika si tramandano in tutto il mondo e hanno un tratto in comune: Nika appare ridendo a un ritmo preciso. Robin legge i tre capitoli. Secondo Sauro, il terzo parla del mondo in cui vivono e di ciò che deve ancora accadere.',
+          it: 'In biblioteca, [[jaguar-d-saul|Sauro]] mostra a Robin l’Harley, il testo da cui nascono le leggende di Erbaf. Ciascuno lo interpreta a modo suo, spiega Sauro, e si fa un’idea diversa del dio del sole. Sauro racconta che le leggende su Nika si tramandano in tutto il mondo e hanno un tratto in comune: Nika appare ridendo a un ritmo preciso. Robin legge i tre capitoli. Secondo Sauro, il terzo parla del mondo in cui vivono e di ciò che deve ancora accadere.',
           en: 'In the library, [[jaguar-d-saul|Saul]] shows Robin the Harley, the text behind Elbaph’s legends. Saul explains that people read it differently and imagine the sun god differently too. Saul tells her that tales of Nika are told around the world and share one detail: Nika appears laughing to a particular rhythm. Robin reads the three chapters. According to Saul, the third speaks of the world they live in and of events still to come.',
         },
       },

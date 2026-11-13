@@ -232,7 +232,7 @@ const links = {
     type: { en: 'Rival he has repaid', it: 'Rivale con cui si è sdebitato' },
     summary: {
       en: 'In their match at Heavens Arena, Gon punched Hisoka in the face and handed back the badge Hisoka had given him on Zevil Island.',
-      it: 'Nel loro incontro all’Arena Celeste, Gon ha colpito Hisoka in faccia con un pugno e gli ha restituito la targhetta che Hisoka gli aveva dato sull’Isola di Zevil.',
+      it: 'Nel loro incontro all’Arena Celeste, Gon ha colpito Hisoka in faccia con un pugno e gli ha restituito la targhetta che Hisoka gli aveva dato sull’Isola di Zebir.',
     },
   },
   mitoGon: {
@@ -358,7 +358,7 @@ const links = {
   },
   leorioKurapikaTeam: {
     character: 'kurapika',
-    type: { en: 'Partner on Zevil Island', it: 'Compagno sull’Isola di Zevil' },
+    type: { en: 'Partner on Zevil Island', it: 'Compagno sull’Isola di Zebir' },
     summary: {
       en: 'Kurapika stops Tonpa after he tricks Leorio, and from then on the two work together on the island.',
       it: 'Kurapika ferma Tonpa dopo che ha ingannato Leorio, e da quel momento i due lavorano insieme sull’isola.',
@@ -372,7 +372,7 @@ const links = {
     },
     summary: {
       en: 'Tonpa and another applicant trick Leorio out of his badge on Zevil Island, and Leorio gets it back with Kurapika’s help.',
-      it: 'Tonpa e un altro aspirante sottraggono con l’inganno la targhetta a Leorio sull’Isola di Zevil, e Leorio la recupera con l’aiuto di Kurapika.',
+      it: 'Tonpa e un altro aspirante sottraggono con l’inganno la targhetta a Leorio sull’Isola di Zebir, e Leorio la recupera con l’aiuto di Kurapika.',
     },
   },
   leorioKillua: {
@@ -494,7 +494,7 @@ const links = {
   },
   kurapikaLeorioTeam: {
     character: 'leorio-paradinight',
-    type: { en: 'Partner on Zevil Island', it: 'Compagno sull’Isola di Zevil' },
+    type: { en: 'Partner on Zevil Island', it: 'Compagno sull’Isola di Zebir' },
     summary: {
       en: 'After stopping Tonpa, Kurapika teams up with Leorio and helps him get his badge back.',
       it: 'Dopo aver fermato Tonpa, Kurapika si allea con Leorio e lo aiuta a riprendersi la targhetta.',
@@ -508,7 +508,7 @@ const links = {
     },
     summary: {
       en: 'On Zevil Island Kurapika stops Tonpa after he tricks Leorio, and takes his badge to reach the points he needs.',
-      it: 'Sull’Isola di Zevil Kurapika ferma Tonpa dopo che ha ingannato Leorio, e gli prende la targhetta per raggiungere i punti che gli servono.',
+      it: 'Sull’Isola di Zebir Kurapika ferma Tonpa dopo che ha ingannato Leorio, e gli prende la targhetta per raggiungere i punti che gli servono.',
     },
   },
   kurapikaHisokaMatch: {
@@ -681,7 +681,7 @@ const links = {
     type: { en: 'Rookie he robs', it: 'Matricola che deruba' },
     summary: {
       en: 'On Zevil Island Tonpa and another applicant trick Leorio out of his badge. Leorio and Kurapika catch Tonpa and tie him to a rock.',
-      it: 'Sull’Isola di Zevil Tonpa e un altro aspirante sottraggono a Leorio la sua targhetta con un inganno. Leorio e Kurapika prendono Tonpa e lo legano a una roccia.',
+      it: 'Sull’Isola di Zebir Tonpa e un altro aspirante sottraggono a Leorio la sua targhetta con un inganno. Leorio e Kurapika prendono Tonpa e lo legano a una roccia.',
     },
   },
   tonpaKurapikaIsland: {
@@ -689,7 +689,7 @@ const links = {
     type: { en: 'Rookie who stops him', it: 'Matricola che lo ferma' },
     summary: {
       en: 'On Zevil Island Kurapika stops Tonpa and takes his badge.',
-      it: 'Sull’Isola di Zevil Kurapika ferma Tonpa e gli prende la targhetta.',
+      it: 'Sull’Isola di Zebir Kurapika ferma Tonpa e gli prende la targhetta.',
     },
   },
   tonpaSommy: {
@@ -697,7 +697,7 @@ const links = {
     type: { en: 'Accomplice', it: 'Complice' },
     summary: {
       en: 'On Zevil Island Sommy helps Tonpa trick Leorio and grab his badge.',
-      it: 'Sull’Isola di Zevil Somy aiuta Tonpa a ingannare Leorio e a prendergli la targhetta.',
+      it: 'Sull’Isola di Zebir Somy aiuta Tonpa a ingannare Leorio e a prendergli la targhetta.',
     },
   },
   hisokaGon: {
@@ -743,7 +743,7 @@ const links = {
     },
     summary: {
       en: 'Gon hooks Hisoka’s badge on Zevil Island, and Hisoka gives it back, punches him and says he will take it back once Gon can hit him like that.',
-      it: 'Sull’Isola di Zevil Gon aggancia la targhetta di Hisoka, e Hisoka gliela restituisce, gli dà un pugno e dice che se la riprenderà quando Gon saprà colpirlo allo stesso modo.',
+      it: 'Sull’Isola di Zebir Gon aggancia la targhetta di Hisoka, e Hisoka gliela restituisce, gli dà un pugno e dice che se la riprenderà quando Gon saprà colpirlo allo stesso modo.',
     },
   },
   hisokaKurapikaBadge: {
@@ -754,7 +754,7 @@ const links = {
     },
     summary: {
       en: 'On Zevil Island Kurapika offers Hisoka a one-point badge to leave him and Leorio alone, and Hisoka accepts.',
-      it: 'Sull’Isola di Zevil Kurapika offre a Hisoka una targhetta da un punto perché lasci andare lui e Leorio, e Hisoka accetta.',
+      it: 'Sull’Isola di Zebir Kurapika offre a Hisoka una targhetta da un punto perché lasci andare lui e Leorio, e Hisoka accetta.',
     },
   },
   hisokaGeretta: {
@@ -770,7 +770,7 @@ const links = {
     type: { en: 'Applicant who knows him', it: 'Aspirante che lo conosce' },
     summary: {
       en: 'On Zevil Island Gittarackur kills an applicant who is attacking Hisoka and hands him another applicant’s badge.',
-      it: 'Sull’Isola di Zevil Ghitarakur uccide un aspirante che sta attaccando Hisoka e gli consegna la targhetta di un altro aspirante.',
+      it: 'Sull’Isola di Zebir Ghitarakur uccide un aspirante che sta attaccando Hisoka e gli consegna la targhetta di un altro aspirante.',
     },
   },
   hisokaIllumi: {
@@ -778,7 +778,7 @@ const links = {
     type: { en: 'Ally in the exam', it: 'Alleato nell’esame' },
     summary: {
       en: 'Illumi, who took the exam as Gittarackur, kills an applicant attacking Hisoka on Zevil Island and hands him a badge.',
-      it: 'Illumi, iscritto all’esame come Ghitarakur, uccide sull’Isola di Zevil un aspirante che attacca Hisoka e gli consegna una targhetta.',
+      it: 'Illumi, iscritto all’esame come Ghitarakur, uccide sull’Isola di Zebir un aspirante che attacca Hisoka e gli consegna una targhetta.',
     },
   },
   hisokaKurapikaMatch: {
@@ -826,7 +826,7 @@ const links = {
     },
     summary: {
       en: 'In their match at Heavens Arena, Gon punched Hisoka in the face and handed back the badge Hisoka had given him on Zevil Island.',
-      it: 'Nel loro incontro all’Arena Celeste, Gon ha colpito Hisoka in faccia con un pugno e gli ha restituito la targhetta che Hisoka gli aveva dato sull’Isola di Zevil.',
+      it: 'Nel loro incontro all’Arena Celeste, Gon ha colpito Hisoka in faccia con un pugno e gli ha restituito la targhetta che Hisoka gli aveva dato sull’Isola di Zebir.',
     },
   },
   // Todo
@@ -863,7 +863,7 @@ const links = {
     type: { en: 'Target he stalks', it: 'Bersaglio che pedina' },
     summary: {
       en: 'Gon is Geretta’s target on Zevil Island, and Geretta follows him without being seen.',
-      it: 'Gon è il bersaglio di Ghereta sull’Isola di Zevil, e Ghereta lo segue senza farsi vedere.',
+      it: 'Gon è il bersaglio di Ghereta sull’Isola di Zebir, e Ghereta lo segue senza farsi vedere.',
     },
   },
   gerettaGonBadge: {
@@ -938,7 +938,7 @@ const links = {
     },
     summary: {
       en: 'On Zevil Island Killua keeps one of the Amori brothers’ badges and throws the other two far away. Hanzo chases one down, and it is not the one he needs.',
-      it: 'Sull’Isola di Zevil Killua tiene una delle targhette dei fratelli Amori e lancia lontano le altre due. Hanzo ne insegue una, e non è quella che gli serve.',
+      it: 'Sull’Isola di Zebir Killua tiene una delle targhette dei fratelli Amori e lancia lontano le altre due. Hanzo ne insegue una, e non è quella che gli serve.',
     },
   },
   hanzoGon: {

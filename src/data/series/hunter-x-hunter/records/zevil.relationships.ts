@@ -55,7 +55,7 @@ const links = {
     type: { en: 'Applicant who defeats him', it: 'Aspirante che lo sconfigge' },
     summary: {
       en: 'On Zevil Island Ryu fights Bodoro and loses, so he fails the Fourth Phase.',
-      it: 'Sull’Isola di Zevil Ryu affronta Bodoro e perde, e così non supera la quarta prova.',
+      it: 'Sull’Isola di Zebir Ryu affronta Bodoro e perde, e così non supera la quarta prova.',
     },
   },
   kyuPokkle: {
@@ -239,7 +239,7 @@ const links = {
     type: { en: 'Younger brother', it: 'Fratello minore' },
     summary: {
       en: 'On Zevil Island Umori gives up his badge to Killua when Killua takes Amori hostage.',
-      it: 'Sull’Isola di Zevil Umori cede la sua targhetta a Killua quando Killua prende Amori in ostaggio.',
+      it: 'Sull’Isola di Zebir Umori cede la sua targhetta a Killua quando Killua prende Amori in ostaggio.',
     },
   },
   amoriImoriZevil: {
@@ -542,7 +542,7 @@ const links = {
     type: { en: 'Applicant he defeats', it: 'Aspirante che sconfigge' },
     summary: {
       en: 'On Zevil Island Bodoro fights Ryu and beats him.',
-      it: 'Sull’Isola di Zevil Bodoro affronta Ryu e lo sconfigge.',
+      it: 'Sull’Isola di Zebir Bodoro affronta Ryu e lo sconfigge.',
     },
   },
   bodoroKilluaKills: {

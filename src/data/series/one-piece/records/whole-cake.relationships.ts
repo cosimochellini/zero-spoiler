@@ -7,7 +7,7 @@ const links = {
     type: { en: 'Captain', it: 'Capitano' },
     summary: {
       en: 'Jack invades Zou in Kaido’s name and demands the surrender of a ninja.',
-      it: 'Jack invade Zou in nome di Kaido e pretende la consegna di un ninja.',
+      it: 'Jack invade Zo in nome di Kaido e pretende la consegna di un ninja.',
     },
   },
   'jackInu': {
@@ -23,7 +23,7 @@ const links = {
     type: { en: 'Opponent', it: 'Avversario' },
     summary: {
       en: 'Nekomamushi takes over the defence of Zou against Jack at night.',
-      it: 'Gatto-vipera prende il posto di Cane-tempesta nella difesa notturna di Zou contro Jack.',
+      it: 'Gatto-vipera prende il posto di Cane-tempesta nella difesa notturna di Zo contro Jack.',
     },
   },
   'jackZunesha': {
@@ -50,7 +50,7 @@ const links = {
     type: { en: 'Guest she guides', it: 'Ospite che accompagna' },
     summary: {
       en: 'Wanda stops the Guardians from attacking Luffy and guides him through Zou.',
-      it: 'Wanda ferma i Guardiani che attaccano Rufy e lo accompagna per Zou.',
+      it: 'Wanda ferma i Guardiani che attaccano Rufy e lo accompagna per Zo.',
     },
   },
   'wandaInu': {
@@ -58,7 +58,7 @@ const links = {
     type: { en: 'Duke she serves', it: 'Duca che serve' },
     summary: {
       en: 'Wanda defends Inuarashi’s strength after the attack on Zou.',
-      it: 'Wanda difende il valore di Cane-tempesta dopo l’attacco a Zou.',
+      it: 'Wanda difende il valore di Cane-tempesta dopo l’attacco a Zo.',
     },
   },
   'wandaNami': {
@@ -98,7 +98,7 @@ const links = {
     type: { en: 'Friend', it: 'Amica' },
     summary: {
       en: 'Carrot travels around Zou with Wanda and helps her guide Luffy.',
-      it: 'Carrot percorre Zou con Wanda e la aiuta ad accompagnare Rufy.',
+      it: 'Carrot percorre Zo con Wanda e la aiuta ad accompagnare Rufy.',
     },
   },
   'carrotPedro': {
@@ -157,7 +157,7 @@ const links = {
     type: { en: 'Rival ruler', it: 'Sovrano rivale' },
     summary: {
       en: 'Inuarashi and Nekomamushi rule Zou at different hours and avoid each other.',
-      it: 'Cane-tempesta e Gatto-vipera governano Zou a orari diversi e si evitano.',
+      it: 'Cane-tempesta e Gatto-vipera governano Zo a orari diversi e si evitano.',
     },
   },
   'inuNekoTruce': {
@@ -176,7 +176,7 @@ const links = {
     type: { en: 'Invader', it: 'Invasore' },
     summary: {
       en: 'Inuarashi fights Jack when the pirate refuses a peaceful search of Zou.',
-      it: 'Cane-tempesta affronta Jack quando il pirata rifiuta di perquisire Zou senza violenza.',
+      it: 'Cane-tempesta affronta Jack quando il pirata rifiuta di perquisire Zo senza violenza.',
     },
   },
   'inuJackEnd': {
@@ -192,7 +192,7 @@ const links = {
     type: { en: 'Comrade he protects', it: 'Compagno che protegge' },
     summary: {
       en: 'Inuarashi refuses to surrender Raizo despite the torture inflicted on Zou.',
-      it: 'Cane-tempesta rifiuta di consegnare Raizo nonostante le torture inflitte a Zou.',
+      it: 'Cane-tempesta rifiuta di consegnare Raizo nonostante le torture inflitte a Zo.',
     },
   },
   'inuMomo': {
@@ -216,7 +216,7 @@ const links = {
     type: { en: 'Rival ruler', it: 'Sovrano rivale' },
     summary: {
       en: 'Nekomamushi shares rule of Zou with Inuarashi but refuses to meet him.',
-      it: 'Gatto-vipera divide il governo di Zou con Cane-tempesta ma rifiuta di incontrarlo.',
+      it: 'Gatto-vipera divide il governo di Zo con Cane-tempesta ma rifiuta di incontrarlo.',
     },
   },
   'nekoInuTruce': {
@@ -642,7 +642,7 @@ const links = {
     type: { en: 'Childhood guardian', it: 'Tutrice d’infanzia' },
     summary: {
       en: 'Carmel takes in the young Linlin after her parents leave her on Elbaph.',
-      it: 'Carmel accoglie Linlin bambina dopo che i genitori la lasciano a Elbaf.',
+      it: 'Carmel accoglie Linlin bambina dopo che i genitori la lasciano a Erbaf.',
     },
   },
   'linlinStreusen': {
@@ -1002,7 +1002,7 @@ const links = {
     type: { en: 'Child in her care', it: 'Bambina affidata alle sue cure' },
     summary: {
       en: 'Carmel shelters Linlin after her parents abandon her on Elbaph.',
-      it: 'Carmel accoglie Linlin dopo che i genitori la abbandonano a Elbaf.',
+      it: 'Carmel accoglie Linlin dopo che i genitori la abbandonano a Erbaf.',
     },
   },
   'carmelLinlinSale': {
@@ -1018,7 +1018,7 @@ const links = {
     type: { en: 'Giant she persuades', it: 'Gigante che convince' },
     summary: {
       en: 'Carmel persuades Jarul to spare Linlin and promises to take her away from Elbaph.',
-      it: 'Carmel convince Jarul a risparmiare Linlin e promette di portarla via da Elbaf.',
+      it: 'Carmel convince Jarul a risparmiare Linlin e promette di portarla via da Erbaf.',
     },
   },
   'gerdHajrudin': {
@@ -1026,7 +1026,7 @@ const links = {
     type: { en: 'Childhood friend', it: 'Amico d’infanzia' },
     summary: {
       en: 'Gerd watches Hajrudin train to become a warrior while they are children on Elbaph.',
-      it: 'Gerd guarda Hajrudin allenarsi per diventare un guerriero quando sono bambini a Elbaf.',
+      it: 'Gerd guarda Hajrudin allenarsi per diventare un guerriero quando sono bambini a Erbaf.',
     },
   },
   'gerdLinlin': {
@@ -1034,7 +1034,7 @@ const links = {
     type: { en: 'Childhood playmate', it: 'Compagna di giochi d’infanzia' },
     summary: {
       en: 'Gerd plays with the young Linlin and tells her about Elbaph’s customs.',
-      it: 'Gerd gioca con la piccola Linlin e le racconta le usanze di Elbaf.',
+      it: 'Gerd gioca con la piccola Linlin e le racconta le usanze di Erbaf.',
     },
   },
   'gerdHajrudinCaptain': {
@@ -1053,7 +1053,7 @@ const links = {
     type: { en: 'Crewmate', it: 'Compagno di ciurma' },
     summary: {
       en: 'Gerd searches Elbaph with Goldberg and discusses Road’s behaviour with him.',
-      it: 'Gerd perlustra Elbaf con Goldberg e discute con lui del comportamento di Road.',
+      it: 'Gerd perlustra Erbaf con Goldberg e discute con lui del comportamento di Road.',
     },
   },
   'gerdRoad': {
@@ -1072,7 +1072,7 @@ const links = {
     type: { en: 'Lifelong comrade', it: 'Compagno di una vita' },
     summary: {
       en: 'Jarul and Jorul are former co-captains revered by the giants of Elbaph.',
-      it: 'Jarul e Jorul sono ex capitani venerati dai giganti di Elbaf.',
+      it: 'Jarul e Jorul sono ex capitani venerati dai giganti di Erbaf.',
     },
   },
   'jarulJorulDead': {
@@ -1457,7 +1457,7 @@ const links = {
     type: { en: 'Commander', it: 'Comandante' },
     summary: {
       en: 'Sheepshead announces Jack’s authority during the attack on Zou.',
-      it: 'Sheepshead annuncia l’autorità di Jack durante l’attacco a Zou.',
+      it: 'Sheepshead annuncia l’autorità di Jack durante l’attacco a Zo.',
     },
   },
   'sheepJackPunish': {
@@ -2057,7 +2057,7 @@ const links = {
     },
     summary: {
       en: 'Im takes control of Gunko’s body to intervene in the attack on Elbaph.',
-      it: 'Im prende il controllo del corpo di Gunko per intervenire nell’attacco a Elbaf.',
+      it: 'Im prende il controllo del corpo di Gunko per intervenire nell’attacco a Erbaf.',
     },
   },
   'imDorry': {

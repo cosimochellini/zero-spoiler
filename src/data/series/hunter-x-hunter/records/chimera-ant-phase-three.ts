@@ -133,7 +133,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         source: 'episode',
         name: { it: 'Pell', en: 'Pell' },
         summary: {
-          it: 'Una formichimera che Shalnark uccide a Meteor City.',
+          it: 'Una formichimera che Shalnark uccide nella Città delle Stelle Cadenti.',
           en: 'A Chimera Ant whom Shalnark kills in Meteor City.',
         },
         visual: { art: 'pell', tint: 'azure' },

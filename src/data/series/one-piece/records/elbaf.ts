@@ -10,7 +10,7 @@ import type { OnePieceSaga } from './saga'
  */
 
 // The origin the archive gives every giant, Dorry and Brogy first.
-const ELBAF = { it: 'Elbaf', en: 'Elbaph' }
+const ELBAF = { it: 'Erbaf', en: 'Elbaph' }
 
 const KNIGHTS = { it: 'Cavalieri di Dio', en: 'Knights of God' }
 
@@ -28,11 +28,11 @@ function WALRUS_SCHOOL(it: string, en: string): LocalizedText {
 }
 
 export const elbaf: OnePieceSaga = {
-  name: { it: 'Saga di Elbaf', en: 'Elbaph Saga' },
+  name: { it: 'Saga di Erbaf', en: 'Elbaph Saga' },
   entries: [
     // Elbaph, not Elbaf, in English: the anime (Crunchyroll), VIZ and the
-    // wiki all spell it with the ph. The Italian edition writes Elbaf, which
-    // is what the Italian names here and in the ELBAF origin above keep.
+    // wiki all spell it with the ph. The Italian dub writes Erbaf (#1244),
+    // which is what the Italian names here and in the ELBAF origin above keep.
     {
       id: 'elbaf',
       kind: 'arc',
@@ -40,9 +40,9 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1126,
       // The giants’ homeland from 71, where Brogy calls himself its strongest warrior.
       nameSaidAt: 71,
-      name: { it: 'Elbaf', en: 'Elbaph' },
+      name: { it: 'Erbaf', en: 'Elbaph' },
       summary: {
-        it: 'La ciurma riprende il mare insieme ai giganti dei Pirati Guerrieri Giganti, diretta verso Elbaf, la patria dei guerrieri di cui parlavano Dori e Brogi.',
+        it: 'La ciurma riprende il mare insieme ai giganti dei Pirati Guerrieri Giganti, diretta verso Erbaf, la patria dei guerrieri di cui parlavano Dori e Brogi.',
         en: 'The crew sails on with the giants of the Giant Warrior Pirates, bound for Elbaph, the warriors’ homeland Dorry and Brogy spoke of long ago.',
       },
       visual: { art: 'elbaf', tint: 'green' },
@@ -80,7 +80,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1130,
       // The giants’ homeland from 71, where Brogy calls himself its strongest warrior.
       nameSaidAt: 71,
-      name: { it: 'Elbaf', en: 'Elbaph' },
+      name: { it: 'Erbaf', en: 'Elbaph' },
       summary: {
         it: 'L’isola dei giganti nel Nuovo Mondo, dominata da un albero così alto che la chioma sparisce tra le nuvole e le navi sembrano giocattoli ai suoi piedi.',
         en: 'The giants’ island in the New World, ruled by a tree so tall its crown vanishes into the clouds and ships look like toys at its feet.',
@@ -94,7 +94,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1130,
       name: { it: 'Warland', en: 'Warland' },
       summary: {
-        it: 'Il regno guerriero dei giganti su Elbaf, che Loki chiama la terra da cui nascono le guerre.',
+        it: 'Il regno guerriero dei giganti su Erbaf, che Loki chiama la terra da cui nascono le guerre.',
         en: 'The giants’ warrior kingdom on Elbaph, which Loki calls the land where wars come from.',
       },
       visual: { art: 'warland', tint: 'red' },
@@ -130,9 +130,9 @@ export const elbaf: OnePieceSaga = {
       kind: 'place',
       revealedAtEpisode: 1162,
       revealedAtChapter: 1132,
-      name: { it: 'Mondo del Sole', en: 'Sun World' },
+      name: { it: 'Regno del Sole', en: 'Sun World' },
       summary: {
-        it: 'Il piano di mezzo di Elbaf, in alto sull’albero colossale dell’isola, dove vivono i giganti e sotto il quale si apre il Mondo Sotterraneo.',
+        it: 'Il piano di mezzo di Erbaf, in alto sull’albero colossale dell’isola, dove vivono i giganti e sotto il quale si apre il Mondo Sotterraneo.',
         en: 'Elbaph’s middle layer, high up the island’s colossal tree, where the giants make their homes and beneath which the Underworld opens.',
       },
       visual: { art: 'sun-world', tint: 'yellow' },
@@ -156,7 +156,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1134,
       name: { it: 'Ripley', en: 'Ripley' },
       summary: {
-        it: 'Una gigante che insegna biologia alla Scuola Walrus, una delle guerriere dell’ultima generazione di Elbaf, che spiega alla ciurma come il defunto re ha cambiato i giganti.',
+        it: 'Una gigante che insegna biologia alla Scuola Walrus, una delle guerriere dell’ultima generazione di Erbaf, che spiega alla ciurma come il defunto re ha cambiato i giganti.',
         en: 'A giantess teaching biology at the Walrus School, one of Elbaph’s last generation of warriors, who tells the crew how the late king changed the giants.',
       },
       visual: { art: 'ripley', tint: 'vermilion' },
@@ -205,7 +205,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1137,
       name: { it: 'Manmayer Gunko', en: 'Manmayer Gunko' },
       summary: {
-        it: 'Una donna incappucciata sbarcata su Elbaf accanto a un altro intruso incappucciato, che ferisce le guardie con strisce di stoffa simili a bende ed è venuta come Cavaliere di Dio a reclutare Loki.',
+        it: 'Una donna incappucciata sbarcata su Erbaf accanto a un altro intruso incappucciato, che ferisce le guardie con strisce di stoffa simili a bende ed è venuta come Cavaliere di Dio a reclutare Loki.',
         en: 'A hooded woman who lands on Elbaph beside another hooded intruder, cuts down the guards with bandage-like strips of cloth, and has come as a Knight of God to recruit Loki.',
       },
       visual: { art: 'manmayer-gunko', tint: 'violet' },
@@ -217,7 +217,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1137,
       name: { it: 'Harald', en: 'Harald' },
       summary: {
-        it: 'Il re di Elbaf che non c’è più, un gigante dal volto severo che la ciurma conosce da un ritratto, e che l’isola dice ucciso da suo figlio Loki.',
+        it: 'Il re di Erbaf che non c’è più, un gigante dal volto severo che la ciurma conosce da un ritratto, e che l’isola dice ucciso da suo figlio Loki.',
         en: 'The late King of Elbaph, a stern-faced giant the crew knows from a portrait, whom the island says was killed by his own son Loki.',
       },
       visual: { art: 'harald', tint: 'ivory' },
@@ -253,7 +253,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1139,
       name: { it: 'Scopper Gabin', en: 'Scopper Gaban' },
       summary: {
-        it: 'Un vecchio umano con due asce, che su Elbaf si faceva chiamare Mr. Ya e si rivela Scopper Gabin, la Mano Sinistra del Re dei Pirati.',
+        it: 'Un vecchio umano con due asce, che su Erbaf si faceva chiamare Mr. Ya e si rivela Scopper Gabin, la Mano Sinistra del Re dei Pirati.',
         en: 'An old human with two axes, who went by Mr. Ya on Elbaph and turns out to be Scopper Gaban, the Left Hand of the Pirate King.',
       },
       visual: { art: 'scopper-gaban', tint: 'azure' },
@@ -266,7 +266,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1143,
       name: { it: 'Shepherd Sommers', en: 'Shepherd Sommers' },
       summary: {
-        it: 'Un Cavaliere di Dio evocato su Elbaf ancora in mutande, un Drago Celeste che si lamenta della fame a Marijoa e chiede se Shamrock è venuto per la tomba di Harald.',
+        it: 'Un Cavaliere di Dio evocato su Erbaf ancora in mutande, un Drago Celeste che si lamenta della fame a Marijoa e chiede se Shamrock è venuto per la tomba di Harald.',
         en: 'A Knight of God summoned to Elbaph still in his underwear, a Celestial Dragon grumbling about Mary Geoise going hungry and asking if Shamrock came for Harald’s grave.',
       },
       visual: { art: 'shepherd-sommers', tint: 'green' },
@@ -279,7 +279,7 @@ export const elbaf: OnePieceSaga = {
       revealedAtChapter: 1143,
       name: { it: 'Rimoshifu Killingham', en: 'Rimoshifu Killingham' },
       summary: {
-        it: 'Un Cavaliere di Dio evocato su Elbaf nella forma di una bestia, un kirin cornuto, metà cervo e metà cavallo, e di fretta perché è in ritardo.',
+        it: 'Un Cavaliere di Dio evocato su Erbaf nella forma di una bestia, un kirin cornuto, metà cervo e metà cavallo, e di fretta perché è in ritardo.',
         en: 'A Knight of God summoned to Elbaph in the shape of a beast, a horned kirin, half deer and half horse, and in a hurry because he is late.',
       },
       visual: { art: 'rimoshifu-killingham', tint: 'ice' },
@@ -377,9 +377,9 @@ export const elbaf: OnePieceSaga = {
     },
     'loki': {
       relationships: elbafRelationships.loki,
-      role: { it: 'Principe di Elbaf', en: 'Prince of Elbaph' },
+      role: { it: 'Principe di Erbaf', en: 'Prince of Elbaph' },
       log: {
-        it: 'Da anni è incatenato ai piedi di un albero colossale, bendato, nel buio gelido sotto il villaggio. Lo chiamano il Principe Maledetto e la Vergogna di Elbaf, perché l’isola dice che ha ucciso il re suo padre per il frutto del diavolo della famiglia reale. A Rufy si presenta come il Dio del Sole che porterà la fine del mondo.',
+        it: 'Da anni è incatenato ai piedi di un albero colossale, bendato, nel buio gelido sotto il villaggio. Lo chiamano il Principe Maledetto e la Vergogna di Erbaf, perché l’isola dice che ha ucciso il re suo padre per il frutto del diavolo della famiglia reale. A Rufy si presenta come il Dio del Sole che porterà la fine del mondo.',
         en: 'For years he has been chained, blindfolded, at the foot of a colossal tree in the cold dark below the village. They call him the Accursed Prince and the Shame of Elbaph, because the island says he killed the king his father for the royal family’s devil fruit. To Luffy he introduces himself as the Sun God who will bring the end of the world.',
       },
       status: [{ episode: 1160, value: 'imprisoned' }],
@@ -387,7 +387,7 @@ export const elbaf: OnePieceSaga = {
         {
           episode: 1160,
           value: {
-            it: 'Famiglia reale di Elbaf, principe',
+            it: 'Famiglia reale di Erbaf, principe',
             en: 'Elbaph royal family, prince',
           },
         },
@@ -447,7 +447,7 @@ export const elbaf: OnePieceSaga = {
         en: 'Walrus School biology teacher',
       },
       log: {
-        it: 'Insegna biologia alla Scuola Walrus, e la ciurma la incontra standole in piedi sopra senza accorgersene. Racconta che le leggende sui giganti pirati hanno cent’anni, e che il defunto re voleva un’Elbaf che commerciasse invece di saccheggiare. È dell’ultima generazione di guerrieri, e la trasformazione di Rufy le ricorda un eroe delle vecchie storie.',
+        it: 'Insegna biologia alla Scuola Walrus, e la ciurma la incontra standole in piedi sopra senza accorgersene. Racconta che le leggende sui giganti pirati hanno cent’anni, e che il defunto re voleva un’Erbaf che commerciasse invece di saccheggiare. È dell’ultima generazione di guerrieri, e la trasformazione di Rufy le ricorda un eroe delle vecchie storie.',
         en: 'She teaches biology at the Walrus School, and the Straw Hats meet her while standing on her without realising. She tells them the tales of fearsome giant pirates are a century old, and that the late king wanted Elbaph to trade rather than plunder. She is of the last generation of warriors, and Luffy’s transformation reminds her of a hero from the old stories.',
       },
       status: [{ episode: 1164, value: 'alive' }],
@@ -489,7 +489,7 @@ export const elbaf: OnePieceSaga = {
       relationships: elbafRelationships.colon,
       role: { it: 'Alunno della Scuola Walrus', en: 'Walrus School pupil' },
       log: {
-        it: 'È mezzo gigante, più rissoso di tutti i compagni, e alla Scuola Walrus lo conoscono come il teppista. Colpisce Rufy in testa con una spada di legno, che si spezza, ed è entusiasta quando Rufy risponde con un pugno nel terreno; sua madre Ripley lo sgrida ma loda il colpo, e suo padre è un ex pirata umano. Vuole diventare un guerriero di Elbaf, e non gli importa quanti pugni deve prendere per arrivarci.',
+        it: 'È mezzo gigante, più rissoso di tutti i compagni, e alla Scuola Walrus lo conoscono come il teppista. Colpisce Rufy in testa con una spada di legno, che si spezza, ed è entusiasta quando Rufy risponde con un pugno nel terreno; sua madre Ripley lo sgrida ma loda il colpo, e suo padre è un ex pirata umano. Vuole diventare un guerriero di Erbaf, e non gli importa quanti pugni deve prendere per arrivarci.',
         en: 'He is half giant, quicker to fight than any of his classmates, and at the Walrus School he is known as the delinquent. He swings a wooden sword at Luffy’s head, which snaps, and is thrilled when Luffy answers with a punch into the ground; his mother Ripley scolds him but praises the strike, and his father is a human former pirate. He wants to become a warrior of Elbaph, and does not care how many punches it takes.',
       },
       status: [{ episode: 1165, value: 'alive' }],
@@ -524,7 +524,7 @@ export const elbaf: OnePieceSaga = {
       relationships: elbafRelationships['manmayer-gunko'],
       role: KNIGHT_ROLE,
       log: {
-        it: 'Arriva su Elbaf dentro un cerchio magico, avvolta in un mantello col cappuccio calato sul viso, e mette fuori combattimento due guardie giganti del castello. Con le bende dei suoi vestiti solleva per il collo perfino un lupo del Mondo Sotterraneo. Dice di essere un Cavaliere di Dio, e di essere venuta a cercare Loki.',
+        it: 'Arriva su Erbaf dentro un cerchio magico, avvolta in un mantello col cappuccio calato sul viso, e mette fuori combattimento due guardie giganti del castello. Con le bende dei suoi vestiti solleva per il collo perfino un lupo del Mondo Sotterraneo. Dice di essere un Cavaliere di Dio, e di essere venuta a cercare Loki.',
         en: 'She arrives on Elbaph inside a magic circle, wrapped in a cloak with its hood pulled over her face, and puts two giant castle guards out of action. With the bandages of her clothes she hoists even an Underworld wolf by the neck. She says she is a Knight of God, and that she has come looking for Loki.',
       },
       status: [{ episode: 1166, value: 'alive' }],
@@ -535,14 +535,14 @@ export const elbaf: OnePieceSaga = {
     },
     'harald': {
       relationships: elbafRelationships.harald,
-      role: { it: 'Re di Elbaf', en: 'King of Elbaph' },
+      role: { it: 'Re di Erbaf', en: 'King of Elbaph' },
       log: {
-        it: 'Era il re di Elbaf, e oggi di lui resta un grande ritratto che i giganti guardano ancora con rispetto. Nel dipinto ha il volto severo e due grandi cicatrici dove un tempo aveva le corna, strappate da lui stesso, e i giganti ne parlano abbassando la voce. Tutta Elbaf dice che a ucciderlo è stato suo figlio Loki.',
+        it: 'Era il re di Erbaf, e oggi di lui resta un grande ritratto che i giganti guardano ancora con rispetto. Nel dipinto ha il volto severo e due grandi cicatrici dove un tempo aveva le corna, strappate da lui stesso, e i giganti ne parlano abbassando la voce. Tutta Erbaf dice che a ucciderlo è stato suo figlio Loki.',
         en: 'He was the King of Elbaph, and today what remains of him is a great portrait the giants still look at with respect. In the painting his face is stern, with two great scars where his horns once were, torn out by his own hand, and the giants lower their voices when they speak of him. All of Elbaph says it was his son Loki who killed him.',
       },
       status: [{ episode: 1167, value: 'deceased' }],
       affiliation: [
-        { episode: 1167, value: { it: 'Elbaf, re', en: 'Elbaph, king' } },
+        { episode: 1167, value: { it: 'Erbaf, re', en: 'Elbaph, king' } },
       ],
       origin: [
         { episode: 1167, chapter: 1137, place: 'elbaf-island', value: ELBAF },
@@ -555,7 +555,7 @@ export const elbaf: OnePieceSaga = {
         en: 'Commander of the Knights of God',
       },
       log: {
-        it: 'È San Figarland Shamrock, un Drago Celeste che comanda i Cavalieri di Dio, arrivato su Elbaf insieme a Gunko. Porta una spada al fianco e parla con la calma di chi non ha mai dovuto chiedere il permesso. Gli ordini che i cavalieri eseguono su Elbaf vengono da lui.',
+        it: 'È San Figarland Shamrock, un Drago Celeste che comanda i Cavalieri di Dio, arrivato su Erbaf insieme a Gunko. Porta una spada al fianco e parla con la calma di chi non ha mai dovuto chiedere il permesso. Gli ordini che i cavalieri eseguono su Erbaf vengono da lui.',
         en: 'He is Saint Figarland Shamrock, a Celestial Dragon who commands the Knights of God, come to Elbaph together with Gunko. He wears a sword at his hip and speaks with the calm of someone who has never needed permission. The orders the knights carry out on Elbaph come from him.',
       },
       status: [{ episode: 1167, value: 'alive' }],
@@ -594,7 +594,7 @@ export const elbaf: OnePieceSaga = {
       relationships: elbafRelationships['scopper-gaban'],
       role: { it: 'Ex membro dei Pirati di Roger', en: 'Former Roger Pirate' },
       log: {
-        it: 'Su Elbaf viveva da anni come Mr. Ya, un vecchio umano con due asce, ex pirata, che i giganti chiamavano con rispetto Ya-san. Poi si rivela Scopper Gabin, il Mangiamontagne, la Mano Sinistra del Re dei Pirati, che navigò con Roger fino alla fine. È il marito di Ripley e il padre di Collon.',
+        it: 'Su Erbaf viveva da anni come Mr. Ya, un vecchio umano con due asce, ex pirata, che i giganti chiamavano con rispetto Ya-san. Poi si rivela Scopper Gabin, il Mangiamontagne, la Mano Sinistra del Re dei Pirati, che navigò con Roger fino alla fine. È il marito di Ripley e il padre di Collon.',
         en: 'For years he lived on Elbaph as Mr. Ya, an old human with two axes, a former pirate the giants respectfully called Ya-san. Then he is revealed as Scopper Gaban, the Mountain-Eater, the Left Hand of the Pirate King, who sailed with Roger to the end. He is Ripley’s husband and Colon’s father.',
       },
       // Gunko's arrows send him off the branch into the Underworld in chapter
@@ -621,7 +621,7 @@ export const elbaf: OnePieceSaga = {
       relationships: elbafRelationships['shepherd-sommers'],
       role: KNIGHT_ROLE,
       log: {
-        it: 'Il cerchio magico lo trascina su Elbaf mentre è ancora in mutande e si lamenta della carenza di cibo a Marijoa. Vestendosi chiede a Shamrock se è lì per visitare la tomba di Harald. Poi ascolta il piano del comandante per rapire i bambini dei giganti.',
+        it: 'Il cerchio magico lo trascina su Erbaf mentre è ancora in mutande e si lamenta della carenza di cibo a Marijoa. Vestendosi chiede a Shamrock se è lì per visitare la tomba di Harald. Poi ascolta il piano del comandante per rapire i bambini dei giganti.',
         en: 'The magic circle drags him to Elbaph while he is still in his underwear, complaining about the food shortage in Mary Geoise. Getting dressed, he asks Shamrock whether he came to visit Harald’s grave. Then he listens to the commander’s plan to kidnap the giants’ children.',
       },
       status: [{ episode: 1170, value: 'alive' }],
@@ -637,7 +637,7 @@ export const elbaf: OnePieceSaga = {
       relationships: elbafRelationships['rimoshifu-killingham'],
       role: KNIGHT_ROLE,
       log: {
-        it: 'Il cerchio magico lo evoca su Elbaf quando meno se lo aspetta, e arriva non come un uomo ma come una bestia: un kirin cornuto, metà cervo e metà cavallo, già in ritardo. Porta a Shamrock l’ordine di tornare a Marijoa, dove dopo il Reverie tutto va a pezzi. Poi resta con gli altri per il gioco del comandante.',
+        it: 'Il cerchio magico lo evoca su Erbaf quando meno se lo aspetta, e arriva non come un uomo ma come una bestia: un kirin cornuto, metà cervo e metà cavallo, già in ritardo. Porta a Shamrock l’ordine di tornare a Marijoa, dove dopo il Reverie tutto va a pezzi. Poi resta con gli altri per il gioco del comandante.',
         en: 'The magic circle summons him to Elbaph when he least expects it, and he arrives not as a man but as a beast: a horned kirin, half deer and half horse, already late. He brings Shamrock the order to return to Mary Geoise, where everything has been falling apart since the Levely. Then he stays with the others for the commander’s game.',
       },
       status: [{ episode: 1170, value: 'alive' }],
