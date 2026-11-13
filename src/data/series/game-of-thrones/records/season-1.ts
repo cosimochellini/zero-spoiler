@@ -2586,8 +2586,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 3,
       name: { it: 'Valyria', en: 'Valyria' },
       summary: {
-        it: 'Una terra antica di Essos, oggi in rovina.',
-        en: 'An old land of Essos, now in ruins.',
+        it: 'Una terra antica di Essos.',
+        en: 'An old land of Essos.',
       },
       visual: { art: 'valyria', tint: 'orange' },
     },
@@ -2601,7 +2601,7 @@ export const season1: ThronesSaga = {
       name: { it: 'Braavos', en: 'Braavos' },
       summary: {
         it: 'Una delle Città Libere, al di là del Mare Stretto.',
-        en: 'One of the Free Cities, across the narrow sea.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
       },
       visual: { art: 'braavos', tint: 'azure' },
     },
@@ -2615,7 +2615,7 @@ export const season1: ThronesSaga = {
       name: { it: 'Myr', en: 'Myr' },
       summary: {
         it: 'Una delle Città Libere, al di là del Mare Stretto.',
-        en: 'One of the Free Cities, across the narrow sea.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
       },
       visual: { art: 'myr', tint: 'teal' },
     },
@@ -2629,7 +2629,7 @@ export const season1: ThronesSaga = {
       name: { it: 'Tyrosh', en: 'Tyrosh' },
       summary: {
         it: 'Una delle Città Libere, al di là del Mare Stretto.',
-        en: 'One of the Free Cities, across the narrow sea.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
       },
       visual: { art: 'tyrosh', tint: 'cyan' },
     },
@@ -2657,7 +2657,7 @@ export const season1: ThronesSaga = {
       name: { it: 'Volantis', en: 'Volantis' },
       summary: {
         it: 'Una delle Città Libere, al di là del Mare Stretto.',
-        en: 'One of the Free Cities, across the narrow sea.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
       },
       visual: { art: 'volantis', tint: 'ocher' },
     },
@@ -2671,7 +2671,7 @@ export const season1: ThronesSaga = {
       name: { it: 'Lys', en: 'Lys' },
       summary: {
         it: 'Una delle Città Libere, al di là del Mare Stretto.',
-        en: 'One of the Free Cities, across the narrow sea.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
       },
       visual: { art: 'lys', tint: 'pink' },
     },
@@ -6343,10 +6343,10 @@ export const SEASON_1_PLACES: Record<
   'valyria': {
     form: 'ruin',
     region: 'essos',
-    landmark: { it: 'Rovine fumanti', en: 'Smoking ruins' },
+    landmark: { it: 'Colonne antiche', en: 'Old columns' },
     log: {
-      it: 'Era una terra antica di Essos, distrutta da una catastrofe. Ne restano rovine.',
-      en: 'It was an old land of Essos, destroyed by a disaster. Only ruins remain.',
+      it: 'È una terra antica di Essos, di cui si parla come di un tempo passato.',
+      en: 'It is an old land of Essos, spoken of as a thing of the past.',
     },
     filedHere: [],
   },
@@ -6356,7 +6356,7 @@ export const SEASON_1_PLACES: Record<
     landmark: { it: 'Una città sull’acqua', en: 'A city on the water' },
     log: {
       it: 'È una delle Città Libere, oltre il Mare Stretto.',
-      en: 'It is one of the Free Cities, across the narrow sea.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
     },
     filedHere: [],
   },
@@ -6366,7 +6366,7 @@ export const SEASON_1_PLACES: Record<
     landmark: { it: 'Una città sulla costa', en: 'A city on the coast' },
     log: {
       it: 'È una delle Città Libere, oltre il Mare Stretto.',
-      en: 'It is one of the Free Cities, across the narrow sea.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
     },
     filedHere: [],
   },
@@ -6376,7 +6376,7 @@ export const SEASON_1_PLACES: Record<
     landmark: { it: 'Una città su un’isola', en: 'A city on an island' },
     log: {
       it: 'È una delle Città Libere, oltre il Mare Stretto.',
-      en: 'It is one of the Free Cities, across the narrow sea.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
     },
     filedHere: [],
   },
@@ -6402,7 +6402,7 @@ export const SEASON_1_PLACES: Record<
     },
     log: {
       it: 'È una delle Città Libere, oltre il Mare Stretto.',
-      en: 'It is one of the Free Cities, across the narrow sea.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
     },
     filedHere: [],
   },
@@ -6415,7 +6415,7 @@ export const SEASON_1_PLACES: Record<
     },
     log: {
       it: 'È una delle Città Libere, oltre il Mare Stretto.',
-      en: 'It is one of the Free Cities, across the narrow sea.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
     },
     filedHere: [],
   },

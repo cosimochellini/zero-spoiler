@@ -32,7 +32,7 @@ export const GAME_OF_THRONES_PLACE_WORDS: PlaceWords<ThronesVocabulary> = {
     marsh: { en: 'Marsh', it: 'Palude' },
     mountain: { en: 'Mountain', it: 'Montagna' },
     plain: { en: 'Plain', it: 'Pianura' },
-    ruin: { en: 'Ruin', it: 'Rovina' },
+    ruin: { en: 'Ruin', it: 'Rovine' },
     sept: { en: 'Sept', it: 'Tempio' },
     town: { en: 'Town', it: 'Borgo' },
   },

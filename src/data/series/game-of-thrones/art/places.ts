@@ -682,25 +682,18 @@ const ASSHAI: Stroke[] = [
 ]
 
 /**
- * Valyria: broken columns under rising smoke, the ruin named in Catelyn I
- * (chapter 3) and in episode 4 and never visited in the first season or
- * book. The accent is the arch still standing.
+ * Valyria: old columns round a standing arch, for the land named in Catelyn I
+ * (chapter 3) and in episode 4 and never visited in the first season or book.
+ * Neither tells its fate by then, so nothing is broken or burning. The accent
+ * is the arch.
  */
 const VALYRIA: Stroke[] = [
   {
-    d: 'M30 150 V96 L36 90 L40 98 V150 M60 150 V78 L66 70 L72 80 V150 M100 150 V88 L106 82 L112 92 V150',
+    d: 'M30 150 V96 L35 90 L40 96 V150 M60 150 V78 L66 70 L72 78 V150 M100 150 V78 L106 70 L112 78 V150 M120 150 V96 L125 90 L130 96 V150',
   },
   { d: 'M72 110 Q86 92 100 110', role: 'accent' },
   {
-    d: 'M66 64 Q58 52 66 42 Q74 32 66 20 M106 76 Q98 64 106 54 Q114 44 106 34',
-    role: 'soft',
-  },
-  {
-    d: 'M20 150 L28 140 H44 L48 150 M118 150 L124 144 H136 L140 150',
-    role: 'soft',
-  },
-  {
-    d: 'M68 100 l3 -2 M68 120 l3 -2 M108 110 l3 -2 M108 130 l3 -2 M38 110 l2 -2 M38 130 l2 -2',
+    d: 'M68 100 l3 -2 M68 120 l3 -2 M108 100 l3 -2 M108 120 l3 -2 M38 110 l2 -2 M38 130 l2 -2 M128 110 l2 -2 M128 130 l2 -2',
     role: 'ambient',
   },
   shadow(80, 156, 66),
