@@ -1642,7 +1642,7 @@ export const season1: ThronesSaga = {
         it: 'Il fratello minore di lord Tywin Lannister, al suo fianco in guerra.',
         en: 'Lord Tywin Lannister’s younger brother, at his side in the war.',
       },
-      visual: { art: 'kevan-lannister', tint: 'wine' },
+      visual: { art: 'kevan-lannister', tint: 'yellow' },
     },
     // Show: "Fire and Blood", at Tywin's council after the Whispering Wood, he
     // argues against a truce. Books: Tyrion VIII (site chapter 63), he commands
