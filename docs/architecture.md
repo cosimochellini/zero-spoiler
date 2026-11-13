@@ -212,7 +212,8 @@ own, Eddard's with a death stage, the Winterfell household's are in
 `art/winterfell.ts` (#854), with four stages, the southern cast's are in
 `art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
 in `art/wall.ts` and `art/essos.ts` (#1052), with six, and the places' are in
-`art/places.ts` (#1053). Every other character maps to a shared placeholder in
+`art/places.ts` (#1053), and the northern household's are in `art/north.ts`
+(#1054), with three. Every other character maps to a shared placeholder in
 `art/index.ts`, `PERSON`, until its own issue draws it, so the drawing tests
 hold it like any series. Its 23 places (#853) are the ones a scene of the season
 or the book is set in, each filed in one of the realms, beyond the Wall or
@@ -370,7 +371,7 @@ checks this block.
 | Characters        | 148                                                   |
 | Places            | 23                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 171, one per record, plus 14 redrawings of 13 records |
+| Line drawings     | 171, one per record, plus 17 redrawings of 16 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
