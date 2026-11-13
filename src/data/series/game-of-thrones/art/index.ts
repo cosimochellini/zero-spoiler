@@ -2,10 +2,13 @@ import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
+import { COURT_DRAWINGS, courtRedrawn } from './court'
 import { ESSOS_DRAWINGS, essosRedrawn } from './essos'
+import { NORTH_DRAWINGS, northRedrawn } from './north'
 import { PLACE_DRAWINGS } from './places'
 import { RIVERLANDS_DRAWINGS, riverlandsRedrawn } from './riverlands'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
+import { VALE_DRAWINGS, valeRedrawn } from './vale'
 import { WALL_DRAWINGS, wallRedrawn } from './wall'
 import { WINTERFELL_DRAWINGS, winterfellRedrawn } from './winterfell'
 
@@ -92,9 +95,10 @@ const BATH: Stroke[] = [
 ]
 
 /**
- * What every other person shows until their issue draws them (#1054 to
- * #1056): a bust with a blank head and no face, the collar
- * in the record's tint. It stands for nobody, so it tells a reader nothing.
+ * What every other person shows until an issue draws them (the Night's
+ * Watch and Dothraki records filed in #1007 and #1008): a bust with a blank
+ * head and no face, the collar in the record's tint. It stands for nobody,
+ * so it tells a reader nothing.
  */
 const PERSON: Stroke[] = [
   { d: circle(80, 58, 19) },
@@ -111,9 +115,11 @@ const PERSON: Stroke[] = [
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
  * and the Essos cast's in `essos.ts` (#1052), the places' in `places.ts`
- * (#1053) and the Riverlands cast's in `riverlands.ts` (#1057), with the
- * four leads drawn for the launch here (owner, #856);
- * every other character shows `PERSON` until its own issue draws it. `satisfies`
+ * (#1053), the northern household's in `north.ts` (#1054), the Vale cast's
+ * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
+ * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
+ * drawn for the launch here (owner, #856); every other character shows
+ * `PERSON` until its own issue draws it. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -121,56 +127,15 @@ export const DRAWINGS = {
   ...SOUTH_DRAWINGS,
   ...WALL_DRAWINGS,
   ...ESSOS_DRAWINGS,
+  ...NORTH_DRAWINGS,
   ...PLACE_DRAWINGS,
+  ...VALE_DRAWINGS,
+  ...COURT_DRAWINGS,
   ...RIVERLANDS_DRAWINGS,
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': BATH,
-  'hullen': PERSON,
-  'jeyne-poole': PERSON,
-  'mikken': PERSON,
-  'hallis-mollen': PERSON,
-  'mycah': PERSON,
-  'greatjon-umber': PERSON,
-  'smalljon-umber': PERSON,
-  'rickard-karstark': PERSON,
-  'roose-bolton': PERSON,
-  'galbart-glover': PERSON,
-  'robett-glover': PERSON,
-  'maege-mormont': PERSON,
-  'dacey-mormont': PERSON,
-  'wendel-manderly': PERSON,
-  'marillion': PERSON,
-  'willis-wode': PERSON,
-  'donnel-waynwood': PERSON,
-  'nestor-royce': PERSON,
-  'mya-stone': PERSON,
-  'vardis-egen': PERSON,
-  'mord': PERSON,
-  'lyn-corbray': PERSON,
-  'anya-waynwood': PERSON,
-  'shagga': PERSON,
-  'timett': PERSON,
-  'chella': PERSON,
-  'meryn-trant': PERSON,
-  'boros-blount': PERSON,
-  'mandon-moore': PERSON,
-  'arys-oakheart': PERSON,
-  'lancel-lannister': PERSON,
-  'dontos-hollard': PERSON,
-  'hugh-of-the-vale': PERSON,
-  'tobho-mott': PERSON,
-  'mhaegen': PERSON,
-  'vayon-poole': PERSON,
-  'tomard': PERSON,
-  'harwin': PERSON,
-  'alyn': PERSON,
-  'beric-dondarrion': PERSON,
-  'thoros-of-myr': PERSON,
-  'balon-swann': PERSON,
-  'robar-royce': PERSON,
-  'yohn-royce': PERSON,
   'will': PERSON,
   'gared': PERSON,
   'waymar-royce': PERSON,
@@ -204,16 +169,21 @@ export type ArtId = keyof typeof DRAWINGS
 /**
  * The records drawn again later in the story, the Winterfell household's
  * from `winterfell.ts`, the southern cast's from `south.ts`, the Night's
- * Watch's from `wall.ts`, the Essos cast's from `essos.ts` and the
- * Riverlands cast's from `riverlands.ts`. Eddard Stark is beheaded with Ice in "Baelor"
- * (episode 9) and in Arya V (chapter 66): from there the blade lies flat on
- * the ground, with nobody to hold it.
+ * Watch's from `wall.ts`, the Essos cast's from `essos.ts`, the northern
+ * household's from `north.ts`, the Vale cast's from `vale.ts`, the King's
+ * Landing cast's from `court.ts` and the Riverlands cast's from
+ * `riverlands.ts`. Eddard Stark is beheaded with Ice in "Baelor" (episode 9)
+ * and in Arya V (chapter 66): from there the blade lies flat on the ground,
+ * with nobody to hold it.
  */
 export const REDRAWINGS: Redrawings = {
   ...winterfellRedrawn,
   ...southRedrawn,
   ...wallRedrawn,
   ...essosRedrawn,
+  ...northRedrawn,
+  ...valeRedrawn,
+  ...courtRedrawn,
   ...riverlandsRedrawn,
   'eddard-stark': [
     {

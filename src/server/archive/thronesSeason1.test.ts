@@ -262,13 +262,7 @@ const CHANGES: {
   },
   { id: 'vardis-egen', episode: 6, chapter: 41, value: 'deceased' },
   { id: 'hugh-of-the-vale', episode: 4, chapter: 30, value: 'deceased' },
-  {
-    id: 'vayon-poole',
-    episode: 8,
-    chapter: 51,
-    value: 'deceased',
-    source: 'episode',
-  },
+  { id: 'vayon-poole', episode: 8, chapter: 52, value: 'deceased' },
   {
     id: 'tomard',
     episode: 7,
@@ -891,12 +885,15 @@ describe.each([
 
 /**
  * The Winterfell household's stages (#854), the southern cast's (#1051) and
- * the Night's Watch's and Essos cast's (#1052) and the Riverlands cast's
- * (#1057), each pinned in the units that tell it: Bran's climb, which the
- * book alone shows after his threshold, the deaths (Masha Heddle's the
- * book's alone), Barristan's thrown sword, Syrio's snapped blade, and the reveals of
- * Jorah's master, Aemon's house and Mirri's blood magic. `stage` counts a
- * record's stages from 0, for a record redrawn more than once.
+ * the Night's Watch's and Essos cast's (#1052), the northern household's
+ * (#1054), the Vale cast's (#1055), the King's Landing cast's (#1056) and
+ * the Riverlands cast's (#1057), each pinned in the units that tell it:
+ * Bran's climb, which the book alone shows after his threshold, the deaths
+ * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
+ * Heddle's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
+ * magic. `stage` counts a record's stages from 0, for a record redrawn more
+ * than once.
  */
 const STAGES: {
   chapter: number
@@ -918,6 +915,12 @@ const STAGES: {
   { id: 'mirri-maz-duur', episode: 9, chapter: 65 },
   { id: 'drogo', episode: 10, chapter: 69 },
   { id: 'mirri-maz-duur', episode: 10, chapter: 73, stage: 1 },
+  { id: 'tomard', episode: 7, chapter: 50, source: 'chapter' },
+  { id: 'hullen', episode: 8, chapter: 51, source: 'chapter' },
+  { id: 'vayon-poole', episode: 8, chapter: 52, source: 'chapter' },
+  { id: 'willis-wode', episode: 5, chapter: 35, source: 'episode' },
+  { id: 'vardis-egen', episode: 6, chapter: 41, source: 'chapter' },
+  { id: 'mycah', episode: 2, chapter: 17, source: 'chapter' },
   { id: 'masha-heddle', episode: 8, chapter: 57, source: 'chapter' },
 ]
 

@@ -572,7 +572,11 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
     // The gunmen name him as their king in episode 78, which the anime
     // invents; the manga's caption names him as NGL's kingpin in chapter 203.
-    // The frozen texts keep to what both tell.
+    // The frozen texts keep to episode 78's gunmen, which the manga's kingpin
+    // of a gun-running cartel (chapters 192, 203) does not contradict, and
+    // name no country. Episode 78 never ties him to
+    // NGL: the anime does so in his past, episode 80 (chapter 204's story),
+    // so the NGL role and affiliation wait there for an episode reader.
     'gyro': {
       chronicle: chimeraAntPhase2Chronicles.gyro,
       relationships: [
@@ -594,22 +598,34 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: { it: 'Capo nascosto di NGL', en: 'Hidden ruler of NGL' },
+      role: [
+        {
+          episode: 78,
+          chapter: 203,
+          value: { it: 'Capo degli uomini armati', en: 'Leader of the gunmen' },
+        },
+        {
+          episode: 78,
+          chapter: 203,
+          source: 'chapter',
+          value: { it: 'Capo nascosto di NGL', en: 'Hidden ruler of NGL' },
+        },
+        {
+          episode: 80,
+          chapter: 204,
+          source: 'episode',
+          value: { it: 'Capo nascosto di NGL', en: 'Hidden ruler of NGL' },
+        },
+      ],
       log: {
-        it: 'Gli uomini armati di NGL prendevano ordini da lui.',
-        en: 'NGL’s gunmen took their orders from him.',
+        it: 'I suoi uomini armati prendevano ordini da lui.',
+        en: 'His gunmen took their orders from him.',
       },
       // Episode 79's commander found dead at his desk is tied to him only by
       // the wiki's link, and the manga has him reborn as an ant, so no death
       // is filed until an owner check of the episode settles it.
       status: [{ episode: 78, chapter: 203, value: 'alive' }],
       affiliation: [
-        {
-          episode: 78,
-          chapter: 203,
-          source: 'episode',
-          value: { it: 'NGL', en: 'NGL' },
-        },
         // The manga alone, at its gate: eaten by the Queen, reborn as one of
         // her soldiers, he keeps his memories and leaves the nest.
         {
@@ -620,6 +636,12 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
             it: 'Formichimera che ha lasciato la regina',
             en: 'Chimera Ant who left the Queen',
           },
+        },
+        {
+          episode: 80,
+          chapter: 204,
+          source: 'episode',
+          value: { it: 'NGL', en: 'NGL' },
         },
       ],
     },
@@ -748,8 +770,8 @@ export const CHIMERA_ANT_HUNTERS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       unanchored: true,
       name: { it: 'Giairo', en: 'Gyro' },
       summary: {
-        it: 'Il capo nascosto di NGL, i cui uomini armati hanno affrontato le formichimere.',
-        en: 'NGL’s hidden ruler, whose armed men took on the Chimera Ants.',
+        it: 'Un capo i cui uomini armati hanno affrontato le formichimere.',
+        en: 'A leader whose gunmen took on the Chimera Ants.',
       },
       visual: { art: 'gyro', tint: 'sand' },
     },

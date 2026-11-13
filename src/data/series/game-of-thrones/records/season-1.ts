@@ -1019,7 +1019,7 @@ export const season1: ThronesSaga = {
         it: 'Il figlio di un macellaio che viaggia verso sud al seguito del re e si allena con la spada insieme ad Arya Stark.',
         en: 'A butcher’s boy who travels south with the king’s party and practises swordplay with Arya Stark.',
       },
-      visual: { art: 'mycah', tint: 'wine' },
+      visual: { art: 'mycah', tint: 'sand' },
     },
     // Show: “A Golden Crown” (episode 6), one of the deserters who waylay Bran in the wolfswood. Books: Bran V (site chapter 38), the same ambush. He dies in the scene that opens him, so the log tells it.
     {
@@ -1071,7 +1071,7 @@ export const season1: ThronesSaga = {
         it: 'Il figlio di Greatjon Umber, della casata che tiene l’Ultimo Focolare.',
         en: 'Greatjon Umber’s son, of the house that holds Last Hearth.',
       },
-      visual: { art: 'smalljon-umber', tint: 'red' },
+      visual: { art: 'smalljon-umber', tint: 'ice' },
     },
     // Show: “A Man Without Honor” (episode 17), the first episode that names him; an unnamed figure stands for him in episode 10. Books: Bran VI (site chapter 54), he arrives at Winterfell with his sons, the last of Robb’s bannermen.
     {
@@ -1256,7 +1256,7 @@ export const season1: ThronesSaga = {
         it: 'Il rozzo carceriere delle celle del cielo del Nido dell’Aquila.',
         en: 'The brutish gaoler of the Eyrie’s sky cells.',
       },
-      visual: { art: 'mord', tint: 'wine' },
+      visual: { art: 'mord', tint: 'yellow' },
     },
     // Book only. Tyrion V (site chapter 39), at the hearing where Tyrion demands a trial by combat. The show has no such character; episode 6, which tells the same hearing, orders him.
     {
@@ -1270,7 +1270,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere della Valle alla corte di lady Lysa, pronto a battersi per lei.',
         en: 'A knight of the Vale at Lady Lysa’s court, eager to fight for her.',
       },
-      visual: { art: 'lyn-corbray', tint: 'red' },
+      visual: { art: 'lyn-corbray', tint: 'violet' },
     },
     // Show: “The Mountain and the Viper” (episode 38), her only appearance, at the inquiry at the Eyrie. Books: Tyrion V (site chapter 39), in the hall with her sons when Tyrion demands a trial.
     {
@@ -1413,7 +1413,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere ubriacone che Sansa Stark salva dall’ira di re Joffrey.',
         en: 'A drunken knight whom Sansa Stark saves from King Joffrey’s anger.',
       },
-      visual: { art: 'dontos-hollard', tint: 'wine' },
+      visual: { art: 'dontos-hollard', tint: 'green' },
     },
     // Show: "Cripples, Bastards, and Broken Things", he refuses to talk to Jory and
     // is killed by Gregor in the joust. Books: Sansa II (site chapter 30), killed
@@ -4630,7 +4630,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 8, chapter: 17, source: 'chapter', value: 'alive' },
-        { episode: 8, chapter: 51, source: 'episode', value: 'deceased' },
+        // Killed in the purge of Eddard's household: on screen in "The Pointy
+        // End" (episode 8), his threshold, and told in Sansa IV (chapter 52).
+        { episode: 8, chapter: 52, value: 'deceased' },
       ],
       affiliation: [
         {
