@@ -4,7 +4,7 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
 /**
  * Marillion: a round-backed lute lying aslant, its rose, neck and bent-back
@@ -63,7 +63,16 @@ const GATE_BAR: Stroke[] = [
   { d: 'M16 84 H144 V98 H16 Z', role: 'accent' },
   { d: 'M38 76 V106 H50 V76 Z M110 76 V106 H122 V76 Z' },
   {
-    d: `M30 56 h0.01 M66 56 h0.01 M94 56 h0.01 M130 56 h0.01 M30 128 h0.01 M66 128 h0.01 M94 128 h0.01 M130 128 h0.01`,
+    d: dots([
+      [30, 56],
+      [66, 56],
+      [94, 56],
+      [130, 56],
+      [30, 128],
+      [66, 128],
+      [94, 128],
+      [130, 128],
+    ]),
   },
   { d: 'M120 112 l6 -3 M120 124 l6 -3 M120 136 l6 -3', role: 'ambient' },
   shadow(80, 156, 60),
