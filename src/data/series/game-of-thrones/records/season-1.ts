@@ -6392,8 +6392,8 @@ export const SEASON_1_PLACES: Record<
       en: 'A river running over stones',
     },
     log: {
-      it: 'È uno dei fiumi delle Terre dei Fiumi. Un cavaliere ne porta il nome.',
-      en: 'It is one of the rivers of the Riverlands. A knight takes his name from it.',
+      it: 'È uno dei fiumi delle Terre dei Fiumi.',
+      en: 'It is one of the rivers of the Riverlands.',
     },
     filedHere: [],
   },
