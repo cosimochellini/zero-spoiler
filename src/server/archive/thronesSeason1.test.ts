@@ -207,6 +207,12 @@ const RECORDS: {
   { id: 'pyke', episode: 4, chapter: 25 },
   { id: 'white-harbor', episode: 6, chapter: 15 },
   { id: 'the-neck', episode: 8, chapter: 5 },
+  // Named only (#1250).
+  { id: 'narrow-sea', episode: 1, chapter: 3 },
+  { id: 'the-citadel', episode: 3, chapter: 22 },
+  { id: 'horn-hill', episode: 4, chapter: 27 },
+  { id: 'dragonstone', episode: 7, chapter: 4 },
+  { id: 'the-arbor', episode: 7, chapter: 40 },
 ]
 
 /**
@@ -837,6 +843,7 @@ describe('the first season’s demo', () => {
     expect(demo.places.map(({ id }) => id)).toStrictEqual([
       'haunted-forest',
       'winterfell',
+      'narrow-sea',
       'pentos',
       'bear-island',
       'kings-landing',
@@ -846,12 +853,16 @@ describe('the first season’s demo', () => {
       'castle-black',
       'dothraki-sea',
       'red-keep',
+      'the-citadel',
       'eastwatch',
       'pyke',
+      'horn-hill',
       'vaes-dothrak',
       'the-eyrie',
       'white-harbor',
       'wolfswood',
+      'dragonstone',
+      'the-arbor',
       'lannister-camp',
       'the-neck',
       'lhazar',

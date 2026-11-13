@@ -56,6 +56,10 @@ export const PLACE_ITALIAN_TITLES = {
     'bear-island': `${PLACES}#Isola dell'Orso`,
     'pyke': `${PLACES}#Pyke`,
     'white-harbor': `${PLACES}#Porto Bianco`,
+    'narrow-sea': `${PLACES}#Mare Stretto`,
+    'the-citadel': `${PLACES}#La Cittadella`,
+    'dragonstone': `${PLACES}#Roccia del Drago`,
+    'the-arbor': `${PLACES}#Arbor`,
   },
 }
 
@@ -69,6 +73,9 @@ export const PLACE_NAMES_KEPT = {
   // Neck in its prose (under La Barriera and Westeros), not in a section.
   'eastwatch': 'Forte Orientale',
   'the-neck': 'Incollatura',
+  // Horn Hill is not on the page: the books' Italian form, the dub's
+  // unconfirmed (owner, #1249).
+  'horn-hill': 'Collina del Corno',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',

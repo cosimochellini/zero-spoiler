@@ -26,6 +26,8 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'inn'
     | 'island'
     | 'marsh'
+    | 'open-sea'
+    | 'order'
     | 'plain'
     | 'sept'
     | 'town'
@@ -36,7 +38,9 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'the-crownlands'
     | 'the-iron-islands'
     | 'the-north'
+    | 'the-reach'
     | 'the-riverlands'
+    | 'the-seas'
     | 'the-vale'
 }
 

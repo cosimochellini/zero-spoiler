@@ -1223,6 +1223,66 @@
       "Italian: \"Incollatura\" is the books' form on Italian Wikipedia; the dub form is unconfirmed."
     ]
   },
+  "narrow-sea": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Narrow_Sea",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mare_Stretto"
+    ],
+    "unverified": [
+      "Show gate: the caption \"Pentos: Across the Narrow Sea\" and Illyrio's line in episode 1 (Fandom ref GOT101); not viewed.",
+      "Region: the seas between the realms, a new region (owner, #1250)."
+    ]
+  },
+  "the-citadel": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Citadel",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Cittadella"
+    ],
+    "unverified": [
+      "Show gate: Aemon's line in episode 3 (Fandom ref GOT103); not viewed.",
+      "Book gate: Tyrion III, Mormont tells Tyrion that Aemon has had letters from the Citadel; checked against the text.",
+      "Form: the seat of an order, the Order of Maesters (owner, #1250); Oldtown, where it stands, is not named in season 1."
+    ]
+  },
+  "horn-hill": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Horn_Hill",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Sam's line in episode 4 (Fandom ref GOT104); not viewed.",
+      "Italian: \"Collina del Corno\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+    ]
+  },
+  "dragonstone": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Dragonstone",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Roccia_del_Drago"
+    ],
+    "unverified": [
+      "Show gate: Ned's order to Tomard in episode 7 (Fandom ref GOT107); not viewed."
+    ]
+  },
+  "the-arbor": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Arbor",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_39",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Arbor"
+    ],
+    "unverified": [
+      "Show gate: the wine seller's line in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Eddard X, \"From the Arbor\"; an earlier hit, in Catelyn IV, is the common noun \"arbors\"; checked against the text."
+    ]
+  },
   "hullen": {
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
