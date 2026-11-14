@@ -92,8 +92,9 @@ under its key in `game-of-thrones.json`.
 
 - Book gate: Catelyn IV opens aboard the Storm Dancer in Blackwater Bay and
   lands at King's Landing in the same chapter.
-- Gendry (the forge, ep 4 / site 28), Gregor and Loras (the Hand's tourney, ep
-  4-5 / site 30) are filed at the city rather than at a sub-place.
+- Gregor and Loras (the Hand's tourney, ep 4-5 / site 30) are filed at the city
+  rather than at a sub-place; Gendry (the forge, ep 4 / site 28) is filed at the
+  Street of Steel (#1252).
 
 ### `the-wall`
 
@@ -156,7 +157,7 @@ under its key in `game-of-thrones.json`.
   (ep 3), which Rakharo's log needs. The book is assumed to name it before
   Rakharo's chapter (site 24), from Daenerys II and III; not checked, and the
   leak scan reads only the episode side of the fact.
-- The Womb of the World (Daenerys V, site 47) is folded into this record.
+- The Womb of the World (Daenerys V, site 47) has its own record since #1252.
 
 ### `the-eyrie`
 

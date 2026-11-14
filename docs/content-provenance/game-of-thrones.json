@@ -912,7 +912,7 @@
     ],
     "unverified": [
       "Book gate: Catelyn IV opens aboard the Storm Dancer in Blackwater Bay and lands at King's Landing in the same chapter.",
-      "Gendry (the forge, ep 4 / site 28), Gregor and Loras (the Hand's tourney, ep 4-5 / site 30) are filed at the city rather than at a sub-place."
+      "Gregor and Loras (the Hand's tourney, ep 4-5 / site 30) are filed at the city rather than at a sub-place; Gendry (the forge, ep 4 / site 28) is filed at the Street of Steel (#1252)."
     ]
   },
   "the-wall": {
@@ -1018,7 +1018,7 @@
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Vaes_Dothrak"
     ],
     "unverified": [
-      "The Womb of the World (Daenerys V, site 47) is folded into this record.",
+      "The Womb of the World (Daenerys V, site 47) has its own record since #1252.",
       "nameSaidAt 3: the khalasar's destination is named in the show by \"Lord Snow\" (ep 3), which Rakharo's log needs. The book is assumed to name it before Rakharo's chapter (site 24), from Daenerys II and III; not checked, and the leak scan reads only the episode side of the fact."
     ]
   },
@@ -2622,13 +2622,12 @@
     "unverified": [
       "Book only: the show names it only later. Episode 5, the arrival at the Eyrie, orders the record (owner, #1252).",
       "Book gate: Catelyn VI, birds sent \"to the Eyrie and the Gates of the Moon\"; checked against the text.",
-      "Italian: \"Porta della Luna\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
+      "Italian: \"Porte della Luna\" as Italian Wikipedia's Personaggi and Casa Arryn pages write it; the places page does not name it, and the dub form is unconfirmed (owner, #1252).",
       "filedHere: Nestor Royce and Mya Stone, both book-only, first met there in Catelyn VI (owner, #1252)."
     ]
   },
   "western-market": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Western_Market",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
@@ -2639,7 +2638,6 @@
   },
   "womb-of-the-world": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Womb_of_the_World",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],

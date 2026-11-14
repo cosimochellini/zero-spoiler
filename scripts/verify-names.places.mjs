@@ -109,7 +109,9 @@ export const PLACE_NAMES_KEPT = {
   // #1252).
   'street-of-steel': 'Via dell’Acciaio',
   'street-of-the-sisters': 'Via delle Sorelle',
-  'gates-of-the-moon': 'Porta della Luna',
+  // Named as "Porte della Luna" in the prose of Italian Wikipedia's pages on
+  // the characters and on House Arryn, not on the places page.
+  'gates-of-the-moon': 'Porte della Luna',
   'whispering-wood': 'Bosco dei Sussurri',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.

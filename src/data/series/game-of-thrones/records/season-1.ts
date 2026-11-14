@@ -2982,7 +2982,7 @@ export const season1: ThronesSaga = {
       source: 'chapter',
       revealedAtEpisode: 5,
       revealedAtChapter: 35,
-      name: { it: 'Porta della Luna', en: 'the Gates of the Moon' },
+      name: { it: 'Porte della Luna', en: 'the Gates of the Moon' },
       summary: {
         it: 'Un castello ai piedi della montagna del Nido dell’Aquila.',
         en: 'A castle at the foot of the Eyrie’s mountain.',
