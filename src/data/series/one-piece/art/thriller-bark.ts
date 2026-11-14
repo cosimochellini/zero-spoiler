@@ -762,12 +762,13 @@ const COAT_FALLEN =
 /** Brook's violin, moved up and right to make room for the guitar. */
 const VIOLIN_UP = 'translate(10 -6)'
 
+/** The mast mansion, laid on its side behind the wall. */
+const TOPPLED = 'rotate(15 81 40)'
 /**
  * The mast mansion on its side: the round tower, its end cap towards us, two
  * floor bands and a few windows, the underside hatched, the base broken off
  * jagged. The arc draws the shell in its colour.
  */
-const TOPPLED = 'rotate(15 81 40)'
 const TOPPLED_SHELL = 'M50 28 H110 L114 33 L109 37 L116 42 L108 46 L106 52 H50'
 const TOPPLED_DETAILS: Stroke[] = [
   { d: ellipse(50, 40, 4.5, 12) },
