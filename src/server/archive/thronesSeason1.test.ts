@@ -207,6 +207,33 @@ const RECORDS: {
   { id: 'pyke', episode: 4, chapter: 25 },
   { id: 'white-harbor', episode: 6, chapter: 15 },
   { id: 'the-neck', episode: 8, chapter: 5 },
+  // Named only (#1249).
+  { id: 'casterly-rock', episode: 1, chapter: 3 },
+  { id: 'lannisport', episode: 3, chapter: 21 },
+  { id: 'harrenhal', episode: 4, chapter: 29 },
+  { id: 'the-fingers', episode: 4, chapter: 14 },
+  { id: 'the-trident', episode: 5, chapter: 3 },
+  { id: 'tumblestone', episode: 5, chapter: 64 },
+  { id: 'golden-tooth', episode: 8, chapter: 41 },
+  { id: 'red-fork', episode: 10, chapter: 3 },
+  { id: 'gods-eye', episode: 10, chapter: 67 },
+  // Named only (#1251).
+  { id: 'asshai', episode: 1, chapter: 12 },
+  { id: 'lys', episode: 2, chapter: 4 },
+  { id: 'qarth', episode: 2, chapter: 24 },
+  { id: 'braavos', episode: 3, chapter: 4 },
+  { id: 'qohor', episode: 3, chapter: 4 },
+  { id: 'myr', episode: 4, chapter: 4 },
+  { id: 'valyria', episode: 4, chapter: 3 },
+  { id: 'tyrosh', episode: 7, chapter: 4 },
+  { id: 'volantis', episode: 7, chapter: 4 },
+  { id: 'mother-of-mountains', episode: 7, chapter: 37 },
+  // Named only (#1250).
+  { id: 'narrow-sea', episode: 1, chapter: 3 },
+  { id: 'the-citadel', episode: 3, chapter: 22 },
+  { id: 'horn-hill', episode: 4, chapter: 27 },
+  { id: 'dragonstone', episode: 7, chapter: 4 },
+  { id: 'the-arbor', episode: 7, chapter: 40 },
   // Visited, left out by #853 (#1252).
   { id: 'street-of-the-sisters', episode: 4, chapter: 19 },
   { id: 'street-of-steel', episode: 4, chapter: 28 },
@@ -250,7 +277,8 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
-  // Hoster opens at one pin with a status per medium: alive in the book, a corpse on screen.
+  // Hoster opens at one pin alive in the book and a corpse on screen; the
+  // book kills him in A Storm of Swords (#1242).
   {
     id: 'hoster-tully',
     episode: 23,
@@ -258,14 +286,20 @@ const CHANGES: {
     value: 'alive',
     source: 'chapter',
   },
-  {
-    id: 'hoster-tully',
-    episode: 23,
-    chapter: 72,
-    value: 'deceased',
-    source: 'episode',
-  },
+  { id: 'hoster-tully', episode: 23, chapter: 179, value: 'deceased' },
   { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
+  // Later deaths (#1242).
+  { id: 'lommy', episode: 13, chapter: 93, value: 'deceased' },
+  { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
+  { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
+  { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
+  {
+    id: 'stevron-frey',
+    episode: 14,
+    chapter: 109,
+    value: 'deceased',
+    source: 'chapter',
+  },
   { id: 'stiv', episode: 6, chapter: 38, value: 'deceased' },
   { id: 'wallen', episode: 6, chapter: 38, value: 'deceased' },
   {
@@ -847,28 +881,52 @@ describe('the first season’s demo', () => {
     expect(demo.places.map(({ id }) => id)).toStrictEqual([
       'haunted-forest',
       'winterfell',
+      'casterly-rock',
+      'narrow-sea',
       'pentos',
+      'asshai',
       'bear-island',
       'kings-landing',
       'the-wall',
       'winter-town',
+      'lys',
       'inn-at-the-crossroads',
       'castle-black',
       'dothraki-sea',
+      'qarth',
+      'braavos',
+      'qohor',
       'red-keep',
+      'lannisport',
+      'the-citadel',
+      'valyria',
+      'myr',
+      'the-fingers',
       'street-of-the-sisters',
       'eastwatch',
       'pyke',
+      'horn-hill',
       'street-of-steel',
+      'harrenhal',
       'vaes-dothrak',
+      'the-trident',
       'the-eyrie',
+      'tumblestone',
       'white-harbor',
       'wolfswood',
+      'tyrosh',
+      'volantis',
+      'dragonstone',
+      'mother-of-mountains',
+      'the-arbor',
       'lannister-camp',
       'the-neck',
+      'golden-tooth',
       'lhazar',
       'the-twins',
       'great-sept-of-baelor',
+      'red-fork',
+      'gods-eye',
     ])
     // Past the demo, only the four places later seasons first show, covered.
     expect(
@@ -913,7 +971,8 @@ describe.each([
  * the Riverlands cast's (#1057), each pinned in the units that tell it:
  * Bran's climb, which the book alone shows after his threshold, the deaths
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
- * Heddle's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
+ * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
  * magic. `stage` counts a record's stages from 0, for a record redrawn more
  * than once.
@@ -945,6 +1004,13 @@ const STAGES: {
   { id: 'vardis-egen', episode: 6, chapter: 41, source: 'chapter' },
   { id: 'mycah', episode: 2, chapter: 17, source: 'chapter' },
   { id: 'masha-heddle', episode: 8, chapter: 57, source: 'chapter' },
+  // Later deaths (#1242).
+  { id: 'lommy', episode: 13, chapter: 93 },
+  { id: 'stevron-frey', episode: 14, chapter: 109, source: 'chapter' },
+  { id: 'hoster-tully', episode: 23, chapter: 179, source: 'chapter' },
+  { id: 'rorge', episode: 37, chapter: 263 },
+  { id: 'biter', episode: 37, chapter: 268 },
+  { id: 'kevan-lannister', episode: 60, chapter: 344 },
 ]
 
 describe.each(

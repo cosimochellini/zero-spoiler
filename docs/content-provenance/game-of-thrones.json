@@ -1223,100 +1223,288 @@
       "Italian: \"Incollatura\" is the books' form on Italian Wikipedia; the dub form is unconfirmed."
     ]
   },
-  "street-of-the-sisters": {
+  "casterly-rock": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Street_of_the_Sisters",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://gameofthrones.fandom.com/wiki/Casterly_Rock",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Castel_Granito"
     ],
     "unverified": [
-      "Show gate: Janos Slynt's report in episode 4 (Fandom ref GOT104); not viewed. The show's crowd scene at the Sept goes unnamed.",
-      "Book gate: Catelyn IV, \"The Street of the Sisters ran between them\"; Arya V is set there; checked against the text.",
-      "Italian: \"Via delle Sorelle\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
+      "Show gate: Cersei's line in episode 1, as the Fandom ref GOT101 places it; not viewed."
     ]
   },
-  "street-of-steel": {
+  "lannisport": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Street_of_Steel",
+      "https://gameofthrones.fandom.com/wiki/Lannisport",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_20",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lannisport"
+    ],
+    "unverified": [
+      "Show gate: Tyrion's line in episode 3 (Fandom ref GOT103); not viewed."
+    ]
+  },
+  "harrenhal": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Harrenhal",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_27",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Harrenhal"
+    ],
+    "unverified": [
+      "Show gate: Catelyn's line in episode 4 (Fandom ref GOT104); not viewed."
+    ]
+  },
+  "the-fingers": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/The_Fingers",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
       "Show gate: Littlefinger's line in episode 4 (Fandom ref GOT104); not viewed.",
-      "Book gate: Eddard VI, \"at the top of the Street of Steel\"; checked against the text.",
-      "Italian: \"Via dell'Acciaio\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
-      "filedHere: Tobho Mott and Gendry, first met in Tobho Mott's shop; Gendry moves here from King's Landing (owner, #1252)."
+      "Italian: \"Dita\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
     ]
   },
-  "mountains-of-the-moon": {
+  "the-trident": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Mountains_of_the_Moon",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Montagne_della_Luna"
+      "https://gameofthrones.fandom.com/wiki/Trident",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Le_Terre_dei_Fiumi"
     ],
     "unverified": [
-      "Book only: Catelyn V names them; the show crosses them from episode 5 and names them only later. Episode 4, the arrest at the inn, orders the record (owner, #1252).",
-      "Book gate: Catelyn V, \"into the Mountains of the Moon\"; checked against the text."
+      "Show gate: Barristan's line in episode 5 (Fandom ref GOT105); not viewed.",
+      "Filed as named only although Sansa I is set on its bank and episode 9 crosses it (owner, #1035)."
     ]
   },
-  "green-fork": {
+  "tumblestone": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Green_Fork",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://gameofthrones.fandom.com/wiki/Tumblestone",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Delta_delle_Acque"
+    ],
+    "unverified": [
+      "Show gate: \"Ser Marlon of Tumblestone\" in episode 5, a knight's epithet (owner: it names the river, #1035); not viewed."
+    ]
+  },
+  "golden-tooth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Golden_Tooth",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
-      "Book only: the show never names it in season 1. Episode 4, where Catelyn V's events fall, orders the record (owner, #1252).",
-      "Book gate: Catelyn V, \"the kingsroad ran along the Green Fork\"; checked against the text."
+      "Show gate: Kevan's line in episode 8 (Fandom ref GOT108); not viewed.",
+      "Italian: \"Dente d’Oro\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
     ]
   },
-  "gates-of-the-moon": {
+  "red-fork": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Gates_of_the_Moon",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
+      "https://gameofthrones.fandom.com/wiki/Red_Fork",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Le_Terre_dei_Fiumi"
+    ],
+    "unverified": [
+      "Show gate: Tywin's line in episode 10 (Fandom ref GOT110); not viewed."
+    ]
+  },
+  "gods-eye": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Gods_Eye",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
-      "Book only: the show names it only later. Episode 5, the arrival at the Eyrie, orders the record (owner, #1252).",
-      "Book gate: Catelyn VI, birds sent \"to the Eyrie and the Gates of the Moon\"; checked against the text.",
-      "Italian: \"Porta della Luna\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
-      "filedHere: Nestor Royce and Mya Stone, both book-only, first met there in Catelyn VI (owner, #1252)."
+      "Show gate: Tywin's line in episode 10 (Fandom ref GOT110); not viewed.",
+      "Book gate: Bran VII, in the narration of Luwin's lesson (close-third narration counts, owner, #1035).",
+      "Italian: \"Occhio degli Dei\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
     ]
   },
-  "western-market": {
+  "asshai": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Western_Market",
+      "https://gameofthrones.fandom.com/wiki/Asshai",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Asshai"
+    ],
+    "unverified": [
+      "Show gate: Illyrio's line on the dragon eggs in episode 1 (Fandom ref GOT101); not viewed.",
+      "Book gate: Daenerys II, Illyrio's \"the Shadow Lands beyond Asshai\"; checked against the text."
+    ]
+  },
+  "lys": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Lys",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lys"
+    ],
+    "unverified": [
+      "Show gate: Doreah's line on Irogenia of Lys in episode 2 (Fandom ref GOT102); not viewed.",
+      "Book gate: Daenerys I, \"…Qohor and Volantis and Lys\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "qarth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Qarth",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Doreah's line on a trader from Qarth in episode 2 (Fandom ref GOT102); not viewed.",
+      "Book gate: Daenerys III, Doreah's trader from Qarth; checked against the text."
+    ]
+  },
+  "braavos": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Braavos",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Braavos"
+    ],
+    "unverified": [
+      "Show gate: Syrio's line on the Sealord of Braavos in episode 3 (Fandom ref GOT103); not viewed.",
+      "Book gate: Daenerys I, \"from Braavos to Myr\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "qohor": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Qohor",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Qohor"
+    ],
+    "unverified": [
+      "Show gate: Jorah's line on riding to Qohor in episode 3 (Fandom ref GOT103); not viewed.",
+      "Book gate: Daenerys I, \"on to Qohor and Volantis\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "myr": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Myr",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Myr"
+    ],
+    "unverified": [
+      "Show gate: Jaime's line on Thoros of Myr in episode 4 (Fandom ref GOT104); not viewed.",
+      "Book gate: Daenerys I, \"from Braavos to Myr\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "valyria": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Valyria",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Valyria"
+    ],
+    "unverified": [
+      "Show gate: Viserys's line on the dragons of Valyria in episode 4 (Fandom ref GOT104); not viewed.",
+      "Book gate: Catelyn I, Ice \"forged in Valyria, before the Doom\"; checked against the text."
+    ]
+  },
+  "tyrosh": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Tyrosh",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Tyrosh"
+    ],
+    "unverified": [
+      "Show gate: a trader's cry of Tyrosh pear brandy in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Daenerys I, \"from Myr to Tyrosh\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "volantis": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Volantis",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Volantis"
+    ],
+    "unverified": [
+      "Show gate: the wine seller's line in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Daenerys I, \"Qohor and Volantis and Lys\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "mother-of-mountains": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Mother_of_Mountains",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
-      "Book only: the show's market in episode 7 goes unnamed. Episode 4, the arrival in Vaes Dothrak, orders the record (owner, #1252).",
-      "Book gate: Daenerys IV, Jorah's \"The Western Market will have food more to your taste\"; the issue's lead (Daenerys VI, site 55) was late; checked against the text."
+      "Show gate: Drogo's vow, named in the English subtitle (owner, #1251) in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Daenerys IV, \"the Mother of Mountains looming overhead\"; checked against the text."
     ]
   },
-  "womb-of-the-world": {
+  "narrow-sea": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Womb_of_the_World",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+      "https://gameofthrones.fandom.com/wiki/Narrow_Sea",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Mare_Stretto"
+    ],
+    "unverified": [
+      "Show gate: the caption \"Pentos: Across the Narrow Sea\" and Illyrio's line in episode 1 (Fandom ref GOT101); not viewed.",
+      "Region: the seas between the realms, a new region (owner, #1250)."
+    ]
+  },
+  "the-citadel": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Citadel",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Cittadella"
+    ],
+    "unverified": [
+      "Show gate: Aemon's line in episode 3 (Fandom ref GOT103); not viewed.",
+      "Book gate: Tyrion III, Mormont tells Tyrion that Aemon has had letters from the Citadel; checked against the text.",
+      "Form: the seat of an order, the Order of Maesters (owner, #1250); Oldtown, where it stands, is not named in season 1."
+    ]
+  },
+  "horn-hill": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Horn_Hill",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
-      "Book only: the show names it only later. Episode 6, the heart ceremony, orders the record (owner, #1252).",
-      "Book gate: Daenerys V, \"the lake the Dothraki called the Womb of the World\"; checked against the text."
+      "Show gate: Sam's line in episode 4 (Fandom ref GOT104); not viewed.",
+      "Italian: \"Collina del Corno\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
     ]
   },
-  "whispering-wood": {
+  "dragonstone": {
     "sources": [
-      "https://gameofthrones.fandom.com/wiki/Whispering_Wood",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63"
+      "https://gameofthrones.fandom.com/wiki/Dragonstone",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Roccia_del_Drago"
     ],
     "unverified": [
-      "Book only: the show fights the battle in episode 9 and names the wood only in season 2; episode 9 orders the record (owner, #1252).",
-      "Book gate: Catelyn X, the battle in the whispering wood; checked against the text.",
-      "Italian: \"Bosco dei Sussurri\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
+      "Show gate: Ned's order to Tomard in episode 7 (Fandom ref GOT107); not viewed."
+    ]
+  },
+  "the-arbor": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Arbor",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_39",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Arbor"
+    ],
+    "unverified": [
+      "Show gate: the wine seller's line in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Eddard X, \"From the Arbor\"; an earlier hit, in Catelyn IV, is the common noun \"arbors\"; checked against the text."
     ]
   },
   "hullen": {
@@ -1897,9 +2085,14 @@
       "https://awoiaf.westeros.org/index.php/Kevan_Lannister",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_56",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister"
+      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister",
+      "https://awoiaf.westeros.org/index.php/A_Dance_with_Dragons-Epilogue",
+      "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter"
     ],
-    "unverified": ["Show: only mentioned (by Joffrey) in ep 3, off screen."]
+    "unverified": [
+      "Show: only mentioned (by Joffrey) in ep 3, off screen.",
+      "Death (#1242): the wildfire under the Great Sept in episode 60 (Fandom ref GOT610) and a crossbow bolt in the epilogue of A Dance with Dragons (site chapter 344); episode not viewed."
+    ]
   },
   "addam-marbrand": {
     "sources": [
@@ -1924,7 +2117,11 @@
       "https://awoiaf.westeros.org/index.php/Stevron_Frey",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_59",
       "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Stevron_Frey"
+      "https://gameofthrones.fandom.com/wiki/Stevron_Frey",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_35"
+    ],
+    "unverified": [
+      "Death (#1242): told in Bran V of A Clash of Kings (site chapter 109); the show never tells it, so the stage is the book's alone, ordered by episode 14 (owner)."
     ]
   },
   "edmure-tully": {
@@ -1941,10 +2138,12 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/Hoster_Tully",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/Hoster_Tully"
+      "https://gameofthrones.fandom.com/wiki/Hoster_Tully",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35"
     ],
     "unverified": [
-      "Media differ at the gate: alive and ailing in the book, already dead in the show; factsAtGate avoids both."
+      "Media differ at the gate: alive and ailing in the book, already dead in the show; factsAtGate avoids both.",
+      "Book death (#1242): Catelyn IV of A Storm of Swords (site chapter 179), the book's alone; the show's death is his status at his threshold."
     ]
   },
   "brynden-tully": {
@@ -1975,7 +2174,12 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://gameofthrones.fandom.com/wiki/Lommy",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_19",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die"
+    ],
+    "unverified": [
+      "Death (#1242): Polliver kills him in episode 13 (Fandom ref GOT203) and Raff the Sweetling in Arya V of A Clash of Kings (site chapter 93); episode not viewed, chapter checked against the text."
     ]
   },
   "jaqen-hghar": {
@@ -1996,11 +2200,14 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Rorge"
+      "https://gameofthrones.fandom.com/wiki/Rorge",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_37",
+      "https://gameofthrones.fandom.com/wiki/Mockingbird"
     ],
     "unverified": [
       "Show: in S2E2 Jaqen does not introduce his cage-mates on screen as he does in the book; the name may not be spoken until later (S4). 12 rests on Fandom's account.",
-      "Book: his page cites ACOK 1 for the cut-off nose (description only)."
+      "Book: his page cites ACOK 1 for the cut-off nose (description only).",
+      "Death (#1242): Arya kills him in episode 37 (Fandom ref GOT407) and Brienne in Brienne VII of A Feast for Crows (site chapter 263); episode not viewed."
     ]
   },
   "biter": {
@@ -2009,10 +2216,13 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Biter"
+      "https://gameofthrones.fandom.com/wiki/Biter",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_42",
+      "https://gameofthrones.fandom.com/wiki/Mockingbird"
     ],
     "unverified": [
-      "Show: the name may never be spoken in S2E2 (he is mute and nobody introduces him on screen); 12 rests on Fandom's account."
+      "Show: the name may never be spoken in S2E2 (he is mute and nobody introduces him on screen); 12 rests on Fandom's account.",
+      "Death (#1242): the Hound kills him in episode 37 (Fandom ref GOT407); in the book he dies at the end of Brienne VII and Brienne VIII (site chapter 268) tells it, the stage's pin (owner); episode not viewed."
     ]
   },
   "will": {
@@ -2351,6 +2561,102 @@
     "unverified": [
       "Books: whether she is named in chapters 61 or 64 (Appearing list, floor site chapter 62); the first synopsis naming is site chapter 69.",
       "Book only: Fandom says she does not appear in the show."
+    ]
+  },
+  "street-of-the-sisters": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Street_of_the_Sisters",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Janos Slynt's report in episode 4 (Fandom ref GOT104); not viewed. The show's crowd scene at the Sept goes unnamed.",
+      "Book gate: Catelyn IV, \"The Street of the Sisters ran between them\"; Arya V is set there; checked against the text.",
+      "Italian: \"Via delle Sorelle\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
+    ]
+  },
+  "street-of-steel": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Street_of_Steel",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_27",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Littlefinger's line in episode 4 (Fandom ref GOT104); not viewed.",
+      "Book gate: Eddard VI, \"at the top of the Street of Steel\"; checked against the text.",
+      "Italian: \"Via dell'Acciaio\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
+      "filedHere: Tobho Mott and Gendry, first met in Tobho Mott's shop; Gendry moves here from King's Landing (owner, #1252)."
+    ]
+  },
+  "mountains-of-the-moon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Mountains_of_the_Moon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Montagne_della_Luna"
+    ],
+    "unverified": [
+      "Book only: Catelyn V names them; the show crosses them from episode 5 and names them only later. Episode 4, the arrest at the inn, orders the record (owner, #1252).",
+      "Book gate: Catelyn V, \"into the Mountains of the Moon\"; checked against the text."
+    ]
+  },
+  "green-fork": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Green_Fork",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show never names it in season 1. Episode 4, where Catelyn V's events fall, orders the record (owner, #1252).",
+      "Book gate: Catelyn V, \"the kingsroad ran along the Green Fork\"; checked against the text."
+    ]
+  },
+  "gates-of-the-moon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Gates_of_the_Moon",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show names it only later. Episode 5, the arrival at the Eyrie, orders the record (owner, #1252).",
+      "Book gate: Catelyn VI, birds sent \"to the Eyrie and the Gates of the Moon\"; checked against the text.",
+      "Italian: \"Porta della Luna\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
+      "filedHere: Nestor Royce and Mya Stone, both book-only, first met there in Catelyn VI (owner, #1252)."
+    ]
+  },
+  "western-market": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Western_Market",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show's market in episode 7 goes unnamed. Episode 4, the arrival in Vaes Dothrak, orders the record (owner, #1252).",
+      "Book gate: Daenerys IV, Jorah's \"The Western Market will have food more to your taste\"; the issue's lead (Daenerys VI, site 55) was late; checked against the text."
+    ]
+  },
+  "womb-of-the-world": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Womb_of_the_World",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Book only: the show names it only later. Episode 6, the heart ceremony, orders the record (owner, #1252).",
+      "Book gate: Daenerys V, \"the lake the Dothraki called the Womb of the World\"; checked against the text."
+    ]
+  },
+  "whispering-wood": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Whispering_Wood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63"
+    ],
+    "unverified": [
+      "Book only: the show fights the battle in episode 9 and names the wood only in season 2; episode 9 orders the record (owner, #1252).",
+      "Book gate: Catelyn X, the battle in the whispering wood; checked against the text.",
+      "Italian: \"Bosco dei Sussurri\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
     ]
   }
 }

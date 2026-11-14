@@ -282,6 +282,78 @@ under the owner's rulings of 2026-11-13 on #1035:
   Frostfangs, the Fist of the First Men, Craster's Keep, the Lands of Always
   Winter, Lordsport: season 1 does not name them.
 
+### Filed (#1249)
+
+| Place           | Episode | Chapter | Note                                      |
+| --------------- | ------- | ------- | ----------------------------------------- |
+| `casterly-rock` | 1       | 3       | in the region the Westerlands             |
+| `lannisport`    | 3       | 21      |                                           |
+| `harrenhal`     | 4       | 29      |                                           |
+| `the-fingers`   | 4       | 14      |                                           |
+| `the-trident`   | 5       | 3       | named only, though Sansa I is on its bank |
+| `tumblestone`   | 5       | 64      | the show names it in a knight's epithet   |
+| `golden-tooth`  | 8       | 41      |                                           |
+| `red-fork`      | 10      | 3       |                                           |
+| `gods-eye`      | 10      | 67      |                                           |
+
+The Inn at the Crossroads' summary no longer names the Trident: the show names
+the river only at episode 5, after the inn opens (owner, #1249).
+
+### Omitted (#1249)
+
+- The Westerlands: a region; _A Game of Thrones_ never names it.
+- The Green Fork, the Whispering Wood, the Mountains of the Moon, the Gates of
+  the Moon: visited places, for #1252.
+- Acorn Hall: _A Game of Thrones_ never names it.
+- Mummer's Ford, Seagard, the Isle of Faces, Raventree Hall, Pinkmaiden, Stoney
+  Sept, Runestone, Gulltown, Heart's Home, Ironoaks, Redfort, Oxcross: season 1
+  does not name them.
+
+### Filed (#1251)
+
+| Place                 | Episode | Chapter |
+| --------------------- | ------- | ------- |
+| `asshai`              | 1       | 12      |
+| `lys`                 | 2       | 4       |
+| `qarth`               | 2       | 24      |
+| `braavos`             | 3       | 4       |
+| `qohor`               | 3       | 4       |
+| `myr`                 | 4       | 4       |
+| `valyria`             | 4       | 3       |
+| `tyrosh`              | 7       | 4       |
+| `volantis`            | 7       | 4       |
+| `mother-of-mountains` | 7       | 37      |
+
+The Daenerys I gates of Lys, Myr, Tyrosh, Qohor and Volantis were checked
+against the text: each city's own name is in the chapter, not only a demonym.
+
+### Omitted (#1251)
+
+- The Shadow Lands: a land inside Essos, which is already the region; a land is
+  not a place record (owner, #1251).
+
+### Filed (#1250)
+
+| Place         | Episode | Chapter | Note                                      |
+| ------------- | ------- | ------- | ----------------------------------------- |
+| `narrow-sea`  | 1       | 3       | in the new region the Seas                |
+| `the-citadel` | 3       | 22      | form: the seat of an order (the maesters) |
+| `horn-hill`   | 4       | 27      | in the region the Reach                   |
+| `dragonstone` | 7       | 4       |                                           |
+| `the-arbor`   | 7       | 40      |                                           |
+
+### Omitted (#1250)
+
+- Dorne: a region; it joins the regions with its first Dornish place, and none
+  is named in both media in season 1 (owner, #1250).
+- Summerhall, the Salt Shore: _A Game of Thrones_ never names them.
+- The Street of Steel, the Street of the Sisters: visited places, for #1252.
+- Blackwater Bay, Flea Bottom, Storm's End, Highgarden, Oldtown, the Reach, the
+  Stormlands, Tarth, Blackhaven, Sunspear, Starfall, the Tower of Joy, the Red
+  Mountains, the Dornish Marches, the Summer Isles, the Stepstones, the Sunset
+  Sea, Duskendale, Rosby, Claw Isle, Bitterbridge, Aegon's High Hill: season 1
+  does not name them.
+
 ### Filed (#1252)
 
 Places a scene of season 1 or _A Game of Thrones_ is set in, which #853 left

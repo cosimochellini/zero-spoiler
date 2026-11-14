@@ -53,7 +53,7 @@ function fruitOf(id: string): Entity {
   return entity
 }
 
-/** Every redrawn fruit with its one redrawing and the gate that opens it. */
+/** Every redrawn fruit with its first redrawing and the gate that opens it. */
 const REDRAWN = Object.entries(fruitRedrawn).map(([id, [entry]]) => {
   if (entry === undefined) {
     throw new Error(`${id} files no redrawing`)
@@ -99,6 +99,24 @@ describe('a fruit’s drawings', () => {
       }
     },
   )
+
+  it('switches a fruit drawn twice again between all three, in order', () => {
+    const id = 'cat-cat-fruit-model-leopard'
+    const [awakening, real] = fruitRedrawn[id] ?? []
+
+    for (const bookmark of [ep(1101), season(1101), ch(1070)]) {
+      const detail = detailOf(id, bookmark)
+
+      expect(detail.drawings, JSON.stringify(bookmark)).toStrictEqual([
+        { look: 'power', strokes: DRAWN[fruitOf(id).visual.art] },
+        { look: 'awakening', strokes: awakening?.value },
+        { look: 'real', strokes: real?.value },
+      ])
+      expect(
+        detail.slot.open ? detail.slot.record.visual.strokes : undefined,
+      ).toBe(real?.value)
+    }
+  })
 
   it('sends nothing to switch between under fog', () => {
     // The Op-Op Fruit is first named at 590; the bookmark is long before.

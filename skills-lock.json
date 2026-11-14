@@ -1,17 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "firecrawl-lean": {
       "source": "alexsmedile/firecrawl-lean",
       "sourceType": "github",
       "skillPath": "SKILL.md",
-      "computedHash": "290a06939bf56d54d179e1c147ba57d2693e36d9a5033570126dd90391727790"
+      "computedHash": "997a979bae906b0e1a213925dca410fa251ba2d7af03133386a58fb6092d89ad"
     },
     "hallmark": {
       "source": "nutlope/hallmark",
       "sourceType": "github",
       "skillPath": "skills/hallmark/SKILL.md",
-      "computedHash": "579f86b27cdd7eb972107f7aecedd537f472891c5fd7c7c821bea15f64e0fe86"
+      "computedHash": "e5d4ee5cf0af2dcc81a23ef49b587fbfd71236ff9f9df9da12d3bf347e26e572"
     }
   }
 }

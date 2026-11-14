@@ -105,7 +105,23 @@ const LOBES: [number, number][] = [
 ]
 
 /** Crocodile dissolves into sand in 106, before the fruit opens at 112/184. */
-const SAND_BODY: Body = { family: 'pear', cy: 102 }
+const SAND_BODY: Body = { family: 'pear', cy: 104 }
+
+/** The top of the dune the fruit is sunk in, from the near side to the far. */
+const DUNE: Point[] = [
+  [8, 186],
+  [30, 164],
+  [56, 136],
+  [80, 128],
+  [106, 133],
+  [132, 156],
+  [152, 186],
+]
+
+/** Whether a point of the rim is where the far shoulder blows away. */
+function blownOff(x: number, y: number): boolean {
+  return x > 96 && y > 96 && y < 134
+}
 
 /** Doflamingo moves people like puppets in 207/303, before the 700 opening. */
 const STRING_BODY: Body = { family: 'oblong', cy: 111 }
@@ -273,19 +289,28 @@ const WING: Growth = {
 /** The slip fruit: an oblong, glossy enough that what hits it slides off. */
 const SLIP_BODY: Body = { family: 'oblong', cy: 116 }
 
-/** The rim heights the glide hugs, and how far off the skin it runs. */
-const GLIDE = { from: 72, to: 104, off: 5 }
+/** The rim heights the streak runs between, and how far in from the rim. */
+const GLIDE = { from: 74, to: 124, inset: 5 }
 
-/** The glide: just off the near shoulder, down it, and away past the rim. */
+/**
+ * The streak: a long polish down the near shoulder, just in from the rim,
+ * flicking out past the rim at its foot where the stone came off it.
+ */
 function glide(): string {
-  const hug = Array.from({ length: 11 }, (_unused, at) => {
-    const y = GLIDE.from + ((GLIDE.to - GLIDE.from) * at) / 10
+  const hug = Array.from({ length: 13 }, (_unused, at) => {
+    const y = GLIDE.from + ((GLIDE.to - GLIDE.from) * at) / 12
     const [x] = onRim(SLIP_BODY, y, -1)
 
-    return point(x - GLIDE.off, y)
+    return [x + GLIDE.inset, y] as const
   })
+  const [endX, endY] = hug.at(-1) ?? [0, 0]
+  const flick = [
+    point(endX - 1, endY + 10),
+    point(endX - 6, endY + 18),
+    point(endX - 13, endY + 25),
+  ].join(' ')
 
-  return `${polyline(hug)} C32.6 117.4 30.1 129.7 30 134`
+  return `${polyline(hug.map(([x, y]) => point(x, y)))} C${flick}`
 }
 
 /** What every kit fruit is drawn with: its outline, crown, shine and hatching. */
@@ -1145,14 +1170,8 @@ const WAX_TOP: Point[] = [
   [120, 136],
 ]
 
-/** The clone fruit: a segmented one, a patch of its skin printed twice. */
+/** The clone fruit: a segmented one, a hand laid on it printed with its skin. */
 const CLONE_BODY: Body = { family: 'segmented', cy: 116 }
-
-/** The patch of skin that is copied: one large curl. */
-const PATCH: [number, number, number][] = [[76, 98, 14]]
-
-/** How far the copy is set from the patch it was taken from. */
-const COPY = { dx: 6, dy: 27 }
 
 /** The flame fruit: a round, sunk to its waist in fire. */
 const FIRE_BODY: Body = { family: 'round', cy: 100 }
@@ -1222,7 +1241,7 @@ function stab({ at, reach }: (typeof SPIKES)[number]): string {
   ])
 }
 
-/** The cage fruit: a gourd, an iron cuff closed round its waist. */
+/** The cage fruit: a gourd, an iron cuff round its waist and a band over it. */
 const CAGE_BODY: Body = { family: 'gourd', cy: 120 }
 
 /** The cuff: how wide and deep its ring is seen from above, and how tall. */
@@ -1231,11 +1250,54 @@ const CUFF = { cy: 109, rx: 23, ry: 6, tall: 11, rim: 3, tilt: 10 }
 /** A point on the cuff, in a frame tipped off level about the waist. */
 const onCuff = turnedAbout([80, CUFF.cy], -CUFF.tilt)
 
+/** A point of the box in the cuff's frame: across it, and down it. */
+const inCuffFrame = turnedAbout([0, 0], CUFF.tilt)
+
 /** Whether a point of the fruit is behind the near face of the cuff. */
 function behindCuff(x: number, y: number): boolean {
-  const [u, v] = turnedAbout([0, 0], CUFF.tilt)(x - 80, y - CUFF.cy)
+  const [u, v] = inCuffFrame(x - 80, y - CUFF.cy)
 
   return Math.abs(u) < CUFF.rx + 1 && v > -2 && v < CUFF.tall + CUFF.ry + 1
+}
+
+/**
+ * The band over the top and under the foot: each edge a line of longitude,
+ * set at a share of the body's half-width so it follows the skin round.
+ */
+const BAND = { near: 0.2, far: 0.46 }
+
+/** Whether a point of the rim is under the band where it goes over the top. */
+function underBand(x: number, y: number): boolean {
+  const half = halfWidth(CAGE_BODY, crownY(CAGE_BODY) + 1)
+
+  return (
+    y < crownY(CAGE_BODY) + 4
+    && x > 80 + BAND.near * half - 1.5
+    && x < 80 + BAND.far * half + 1.5
+  )
+}
+
+/**
+ * One edge of the band: down from the crown to the cuff's top edge, and on
+ * from the cuff's bottom edge to the foot.
+ */
+function bandEdge(share: number): string {
+  const runs: string[][] = [[], []]
+  const top = crownY(CAGE_BODY) + 1
+
+  for (let y = top; y <= top + 91; y += 1) {
+    const x = 80 + share * halfWidth(CAGE_BODY, y)
+    const [u, v] = inCuffFrame(x - 80, y - CUFF.cy)
+    const front = CUFF.ry * Math.sqrt(Math.max(0, 1 - (u / CUFF.rx) ** 2))
+
+    if (v < front) {
+      runs[0]?.push(point(x, y))
+    } else if (v > front + CUFF.tall) {
+      runs[1]?.push(point(x, y))
+    }
+  }
+
+  return runs.map((run) => polyline(run)).join(' ')
 }
 
 /** The near half of a ring of the cuff, dropped down its face. */
@@ -1282,21 +1344,55 @@ function digit({ u, v, angle, length }: (typeof DIGITS)[number]): Point[] {
   return [[u + nx, v + ny], ...cap, [u - nx, v - ny]]
 }
 
-/** The dachshund fruit: an oblong, standing on four short legs. */
-const DACHSHUND_BODY: Body = { family: 'oblong', cy: 114 }
+/** The curl of skin that is copied, and the copy of it on the hand. */
+const PATCH = { x: 66, y: 120, r: 10 }
 
-/** Where the underside of the fruit is, at a point across it. */
-function underside(x: number): number {
-  let y = crownY(DACHSHUND_BODY) + 92
+/** A point on the hand laid on the far shoulder, its fingers up and in. */
+const onCloneHand = turnedAbout([116, 112], -64)
 
-  while (
-    halfWidth(DACHSHUND_BODY, y) < Math.abs(x - 80)
-    && y > DACHSHUND_BODY.cy
-  ) {
-    y -= 0.5
+/** The hand's outline, from the wrist up round each digit and back down. */
+const CLONE_HAND: Point[] = [
+  [10, 36],
+  [10, 16],
+  [12, 6],
+  ...DIGITS.flatMap((one) => digit(one)),
+  [-11, 10],
+  [-10, 16],
+  [-10, 36],
+].map(([u = 0, v = 0]) => onCloneHand(u, v))
+
+/** Whether a point is under the hand, read by a ray cast to the right. */
+function underHand(x: number, y: number): boolean {
+  let inside = false
+
+  for (const [at, [ax, ay]] of CLONE_HAND.entries()) {
+    const [bx, by] = CLONE_HAND.at(at - 1) ?? [ax, ay]
+
+    if (ay > y !== by > y && x < ax + ((y - ay) * (bx - ax)) / (by - ay)) {
+      inside = !inside
+    }
   }
 
-  return y
+  return inside
+}
+
+/**
+ * The dachshund fruit: held the long way and low, on four short legs. No kit
+ * body lies on its side, so the body is an ellipse of its own.
+ */
+const LONG_BODY = { cx: 80, cy: 128, rx: 62, ry: 28 }
+
+/**
+ * A round kit body whose crown is the top of the long one, so the dimple and
+ * the stalk sit where they would on a kit fruit; nothing else of it is drawn.
+ */
+const DACHSHUND_BODY: Body = { family: 'round', cy: 146 }
+
+/** Where the underside of the long body is, at a point across it. */
+function underside(x: number): number {
+  const across = (x - LONG_BODY.cx) / LONG_BODY.rx
+
+  return LONG_BODY.cy + LONG_BODY.ry * Math.sqrt(Math.max(0, 1 - across ** 2))
 }
 
 /** The paws stand on this line. */
@@ -1343,22 +1439,22 @@ const JACKAL_BODY: Body = { family: 'segmented', cy: 118 }
  * back edge to a point, and down its front edge.
  */
 const EAR: Growth = {
-  from: 102,
-  to: 76,
+  from: 112,
+  to: 78,
   through: [
-    [46, 80],
-    [42, 56],
-    [36, 34],
-    [30, 50],
+    [62, 94],
+    [54, 58],
+    [40, 28],
+    [30, 46],
     [22, 62],
   ],
 }
 
-/** The horse fruit: a pear, standing on one hoofed foreleg. */
+/** The horse fruit: a pear, on two hoofed forelegs. */
 const HORSE_BODY: Body = { family: 'pear', cy: 88 }
 
-/** The rim heights the foreleg leaves the skin at, front and back. */
-const FORELEG = { front: 125.5, back: 129.7 }
+/** The rim height the two forelegs leave the skin at, either side. */
+const FORELEGS = 120
 
 /**
  * What a Zoan grows that is round in section, a trunk, a tail, a claw: the
@@ -1486,26 +1582,61 @@ function plume({ end, full, fullest, root }: Plume): (along: number) => number {
  */
 const TAIL: Limb = {
   line: [
-    [107, 148],
-    [125, 166],
-    [148, 170],
-    [146, 146],
+    [110, 142],
+    [148, 150],
+    [146, 98],
+    [136, 70],
+    [128, 50],
+    [112, 44],
+    [110, 60],
   ],
-  half: plume({ root: 6, full: 15, end: 2.5, fullest: PLUME }),
+  half: plume({ root: 6, full: 12, end: 3, fullest: PLUME }),
   rim: { body: WOLF_BODY, way: 1 },
 }
 
 /** The fur notches: steps along the outer edge (1) and the inner one (-1). */
-const FUR = { outer: [7, 12, 17], inner: [10, 15] }
+const FUR = { outer: [8, 13, 18], inner: [10, 15, 20] }
 
 /** The slow fruit: a segmented one, struck on the shoulder by a beam. */
 const SLOW_BODY: Body = { family: 'segmented', cy: 116 }
+
+/** The struck shoulder below the beam, drawn again a little behind itself. */
+function lagging(back: number): string {
+  return polyline(
+    Array.from({ length: 8 }, (_unused, at) => {
+      const y = 100 + at * 4
+
+      return point(onRim(SLOW_BODY, y, -1)[0] - back, y - back * 0.6)
+    }),
+  )
+}
 
 /** The door fruit: an oblong, a door open in its near side. */
 const DOOR_BODY: Body = { family: 'oblong', cy: 116 }
 
 /** The leopard fruit: a heart, claws out of its lower side. */
 const LEOPARD_BODY: Body = { family: 'heart', cy: 112 }
+
+/**
+ * The awakened mane: dark flame billowing out round the shoulders, broken
+ * where the stalk comes out, and on down the far side to the foot.
+ */
+const LEOPARD_MANE = [
+  billow([
+    [32, 102],
+    [36, 80],
+    [50, 62],
+    [72, 54],
+  ]),
+  billow([
+    [110, 60],
+    [126, 76],
+    [132, 100],
+    [128, 124],
+    [114, 146],
+    [96, 162],
+  ]),
+].join(' ')
 
 /** The short stub the claws grow from, both edges of it on the rim. */
 const STUB: Limb = {
@@ -2520,23 +2651,32 @@ export const fruitArt = {
    * Drawn from the first episode, although the show only opens the Red Hair
    * Pirates' chest in episode 4: the look of the fruit Luffy ate tells a
    * reader nothing the first episode has not, and every reader knows it.
+   * The light sits on the near shoulder and the far side is hatched where
+   * the curls leave room, as on the other real fruits.
    */
   'gum-gum-fruit': [
     { d: ring(80, 126, 44) },
     {
       d: [
         curl(80, 126, 14),
-        curl(58, 106, -12),
-        curl(103, 107, 12),
-        curl(106, 143, -12),
-        curl(55, 145, 12),
-        curl(80, 162, -11),
-        curl(47, 124, 10),
-        curl(114, 128, -10),
-        curl(80, 90, 11),
-        curl(66, 128, -8),
+        curl(62, 108, -10),
+        curl(103, 106, 11),
+        curl(94, 137, -8),
+        curl(56, 147, 11),
+        curl(78, 158, -10),
+        curl(52, 128, 9),
+        curl(111, 124, -9),
+        curl(80, 92, 10),
+        curl(66, 129, -7),
       ].join(' '),
       role: 'accent',
+    },
+    // The light on the near shoulder, just in from the rim.
+    { d: polyline(trace([80, 126], [39, 39], [204, 242, 6])), role: 'soft' },
+    // The far side turning away, in the gaps the curls leave.
+    {
+      d: 'M118.5 140 L111.5 133 M112.3 151.2 L105.3 144.2 M102.9 160 L96.9 154',
+      role: 'ambient',
     },
     {
       // The stalk: up out of the crown, along, and wound in on itself. The
@@ -2572,18 +2712,18 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit a stone has just slid off: one glide line hugs the near shoulder
-   * and flies off past the rim, and the chunk drops away at the end of it. In
-   * episode 52 Buggy blows up the fountain, a piece of it shoots at Alvida and
-   * slips right off her.
+   * The fruit a stone has just slid off: the skin polished to a long streak
+   * down the near shoulder, flicking off past the rim at its foot, and a chunk
+   * of stone glancing away from the end of it. In episode 52 Buggy blows up
+   * the fountain, a piece of it shoots at Alvida and slips right off her.
+   * The streak stands in for the shine.
    */
   'slip-slip-fruit': [
     { d: outline(SLIP_BODY) },
     crown(SLIP_BODY),
-    shine(SLIP_BODY),
     hatching(SLIP_BODY, [120, 132, 144]),
     ...skin([
-      [68, 120, 9],
+      [74, 116, 9],
       [96, 142, -8],
     ]),
     ...sprout(SLIP_BODY, 6, 'right'),
@@ -2591,13 +2731,13 @@ export const fruitArt = {
     // The chunk of the fountain, one face of it turned to the light.
     {
       d: [
-        'M11 155 L16 148 L25 147 L31 153 L29 162 L20 166 L12 163 Z',
-        'M25 147 L23 156 L29 162',
+        'M8 172 L13 161 L25 157 L35 164 L34 177 L22 184 L11 181 Z',
+        'M25 157 L23 170 L34 177 M23 170 L11 181',
       ].join(' '),
       role: 'ambient',
     },
-    // Which way it is going.
-    { d: 'M26 140 L23 144 M32 144 L29 148', role: 'soft' },
+    // Which way it went off the skin.
+    { d: 'M45 145 L40 152 M51 153 L45 161', role: 'soft' },
     shadowUnder(1),
   ],
 
@@ -2709,7 +2849,8 @@ export const fruitArt = {
    * shackle, piled higher on one side, its top edge rolled where the wax was
    * pushed up, the outline gone where the wax holds it. In episode 73 Mr. 3
    * binds Brogy's legs with a strange substance and Vivi names the fruit.
-   * Nothing dripping and nothing poured, and no candle.
+   * Two short runs down its outer face set hard before they reached the
+   * ground, which is what says wax. Nothing poured, and no candle.
    */
   'wax-wax-fruit': [
     ...kitBody(
@@ -2735,26 +2876,45 @@ export const fruitArt = {
       d: 'M58 158 C70 166 96 164 112 146 M124 154 C128 160 130 166 128 172',
       role: 'soft',
     },
+    // Two runs down the outer face, set hard before they reached the ground.
+    {
+      d: [
+        'M44 158 C43 163 43 167 46 168 C49 169 50 165 50 155',
+        'M112 151 C111 158 111 163 114 164 C117 165 118 160 117 150',
+      ].join(' '),
+      role: 'soft',
+    },
     { d: 'M14 184 C40 187 120 187 146 184', role: 'ambient', dashed: true },
   ],
 
   /**
-   * The fruit copied by touch: one large curl of its own skin, copied once
-   * just below itself, the same size and winding and never mirrored (a mirrored
-   * pair reads as a face), on the same body and with no second outline. In
-   * episode 92 Mr. 2 shows the crew
-   * that he can copy anyone whose face he touches with his right hand. Never a
-   * face, and never the real fruit's two joined calabashes.
+   * The fruit copied by touch: an open right hand laid flat on its far
+   * shoulder, the arm coming in from the side, and the curl of skin beside it
+   * printed on the back of the hand at the same size and winding. In episode
+   * 92 Mr. 2 shows the crew that he can copy anyone whose face he touches
+   * with his right hand. Laid on the far side, so it is never the human
+   * fruit's hand grown from the near one. Never a face, and never the real
+   * fruit's two joined calabashes.
    */
   'clone-clone-fruit': [
-    ...kitBody(CLONE_BODY, [98, 110, 122]),
-    ribs(CLONE_BODY),
-    ...skin(PATCH),
+    ...kitBody(CLONE_BODY, [146, 156, 164], (x, y) => !underHand(x, y)),
+    ribs(CLONE_BODY, undefined, [-1]),
+    ...skin([
+      [PATCH.x, PATCH.y, PATCH.r],
+      [88, 150, -7],
+    ]),
     ...sprout(CLONE_BODY, -4, 'left'),
+    { d: polyline(CLONE_HAND.map(([x, y]) => point(x, y))) },
+    // The knuckles, across the back of the hand.
     {
-      d: PATCH.map(([x, y, r]) => curl(x + COPY.dx, y + COPY.dy, r)).join(' '),
-      role: 'accent',
+      d: polyline(
+        [-9, -6, 0, 6, 9].map((u) =>
+          point(...onCloneHand(u, -9 - Math.abs(u) / 6)),
+        ),
+      ),
+      role: 'soft',
     },
+    { d: curl(...onCloneHand(0, 4), PATCH.r), role: 'accent' },
     shadowUnder(1),
   ],
 
@@ -2884,11 +3044,11 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit with a jackal's ear: one tall pointed ear grown straight up out
-   * of its near shoulder, wide where it leaves the skin, seen from the side,
-   * with the fold inside it. In episode 120 Chaka names his fruit and turns into
-   * a great black jackal to go at Crocodile. One ear and nothing else, never a
-   * pair, a muzzle or a head.
+   * The fruit with a jackal's ear: one tall pointed ear grown up out of its
+   * near shoulder, broad at the root, seen from the side, the hollow in front
+   * of its fold hatched dark. In episode 120 Chaka names his fruit and turns
+   * into a great black jackal to go at Crocodile. One ear and nothing else:
+   * two ears on the rim with the crown between them read as a head.
    */
   'dog-dog-fruit-model-jackal': [
     ...kitBody(JACKAL_BODY, [110, 122, 134]),
@@ -2899,8 +3059,9 @@ export const fruitArt = {
     ]),
     ...sprout(JACKAL_BODY, 6, 'right'),
     { d: grown(JACKAL_BODY, -1, EAR), role: 'accent' },
-    // The fold inside the ear.
-    { d: 'M42 94 C40 78 40 62 43 46 C46 58 50 68 54 78', role: 'soft' },
+    // The fold inside the ear, and the dark of the hollow in front of it.
+    { d: 'M36 104 C31 86 31 62 39 40 C44 54 48 64 52 76', role: 'soft' },
+    { d: 'M40 66 L46 60 M40 78 L48 70 M42 90 L50 82', role: 'ambient' },
     shadowUnder(1),
   ],
 
@@ -3060,78 +3221,128 @@ export const fruitArt = {
     shadowUnder(1),
   ],
 
-  /** An open foot feeds a thin stream into the cone below the pear. */
+  /**
+   * The fruit sunk in its own sand: a dune where the shadow would be, the
+   * skin going down into it, and the far shoulder blowing off in streaks and
+   * grains. Crocodile turns to sand in episode 106 and the fruit is named in
+   * 112.
+   */
   'sand-sand-fruit': [
-    ...kitBody(SAND_BODY, [91, 112, 129], (_x, y) => y < 146),
+    ...kitBody(
+      SAND_BODY,
+      [80, 88],
+      (x, y) => y < heightOn(DUNE, x) - 2 && !blownOff(x, y),
+    ),
     ...skin([
-      [73, 84, 6],
-      [64, 110, -7],
-      [91, 119, 6],
+      [70, 88, 6],
+      [62, 114, -7],
+      [84, 108, 5],
     ]),
     ...sprout(SAND_BODY, 4, 'right'),
     {
-      d: 'M75 145 L79 151 L79 165 M85 145 L81 151 L81 165 M43 185 C60 181 71 170 80 165 C89 170 100 181 117 185 Z M66 181 L72 177 M88 178 L95 182',
+      d: [
+        'M8 186 C22 170 38 144 60 133 C72 128 88 126 100 130 C120 136 138 160 152 186',
+        'M112 97 C120 94 130 94 140 88',
+        'M114 108 C124 106 136 108 148 102',
+        'M112 120 C122 119 130 122 142 120',
+        speck(148, 88),
+        speck(152, 114),
+        speck(136, 128),
+      ].join(' '),
       role: 'accent',
     },
-    { d: 'M56 184 L61 181 M99 181 L105 184', role: 'ambient' },
+    // Ripples the wind left on the dune.
+    {
+      d: 'M28 178 C40 168 52 160 64 156 M98 154 C112 158 124 168 132 178',
+      role: 'soft',
+    },
+    { d: 'M8 190 C40 193 120 193 152 190', role: 'ambient', dashed: true },
   ],
 
   /**
-   * The fruit on a dachshund's legs: four short bent legs grown out of its
-   * underside, the near pair whole and the far pair showing behind them, the
-   * paws planted and turned forward. In episode 113 Lassoo, Mr. 4's gun, walks
-   * and barks as a dog, and the fruit is named. Short legs and nothing else,
-   * never a head or a tail.
+   * The fruit on a dachshund's legs: held the long way and low, on four short
+   * splayed legs grown out of its underside, the near pair whole and the far
+   * pair behind them, the paws planted and turned forward. In episode 113
+   * Lassoo, Mr. 4's gun, walks and barks as a dog, and the fruit is named. The
+   * long, low body is the breed. Never a head or a tail.
    */
   'dog-dog-fruit-model-dachshund': [
-    ...kitBody(DACHSHUND_BODY, [116, 128, 140]),
+    {
+      d: polyline(
+        trace(
+          [LONG_BODY.cx, LONG_BODY.cy],
+          [LONG_BODY.rx, LONG_BODY.ry],
+          [0, 360, 48],
+        ),
+        true,
+      ),
+    },
+    crown(DACHSHUND_BODY),
+    // The light along the near end, and the far end turning away.
+    { d: polyline(trace([80, 128], [55, 21], [196, 236, 6])), role: 'soft' },
+    {
+      d: 'M137 124 L131 118 M135 136 L129 130 M124 146 L118 140',
+      role: 'ambient',
+    },
     ...skin([
-      [64, 112, 9],
-      [92, 134, -8],
+      [56, 122, 8],
+      [98, 138, -8],
     ]),
     ...sprout(DACHSHUND_BODY, 4, 'left'),
     {
-      d: [leg(58, -3), leg(100, 4), leg(68, -3, 172), leg(109, 4, 172)].join(
+      d: [leg(46, -4), leg(110, 5), leg(56, -4, 172), leg(120, 5, 172)].join(
         ' ',
       ),
       role: 'accent',
     },
-    shadowUnder(1),
+    { d: 'M20 180 C48 183 112 183 140 180', role: 'ambient', dashed: true },
   ],
 
   /**
    * The fruit caught in iron: a cuff closed round the gourd's waist, tipped
-   * off level, its near face thick with the edge of its top showing, the far
-   * side behind the fruit, the outline pinched in under it. In episode 130
-   * Hina lets a pirate pass through her and leaves him in a ring of iron.
+   * off level, its near face thick with the edge of its top showing, and a
+   * second band crossing it over the crown and down to the foot, following
+   * the skin round. In episode 130 Hina lets a pirate pass through her and
+   * leaves him bound in iron.
    */
   'cage-cage-fruit': [
-    ...kitBody(CAGE_BODY, [140, 152, 162], (x, y) => !behindCuff(x, y)),
+    { d: outline(CAGE_BODY, (x, y) => !behindCuff(x, y) && !underBand(x, y)) },
+    crown(CAGE_BODY, [82, 92]),
+    shine(CAGE_BODY),
+    hatching(CAGE_BODY, [140, 152, 162]),
     ...skin([
-      [70, 92, 6],
-      [64, 146, 8],
+      [66, 92, 6],
+      [62, 146, 8],
     ]),
-    ...sprout(CAGE_BODY, 4, 'right'),
+    ...sprout(CAGE_BODY, -4, 'left'),
     {
       d: [
         cuffArc(CUFF.rx, CUFF.ry, 0),
         cuffArc(CUFF.rx, CUFF.ry, CUFF.tall),
         `M${point(...onCuff(CUFF.rx, 0))} L${point(...onCuff(CUFF.rx, CUFF.tall))}`,
         `M${point(...onCuff(-CUFF.rx, 0))} L${point(...onCuff(-CUFF.rx, CUFF.tall))}`,
+        bandEdge(BAND.near),
+        bandEdge(BAND.far),
       ].join(' '),
       role: 'accent',
     },
     // The top of the ring, its inner edge seen from above.
     { d: cuffArc(CUFF.rx - CUFF.rim, CUFF.ry - 1.5, -0.5), role: 'soft' },
-    // The iron turning away on the far side of its face.
+    // The iron turning away on the far side of the cuff's face, and down the
+    // far edge of the band.
     {
-      d: [12, 17, 22]
-        .map((u) => {
+      d: [
+        ...[12, 17, 22].map((u) => {
           const v = CUFF.ry * Math.sqrt(1 - (u / CUFF.rx) ** 2)
 
           return `M${point(...onCuff(u, v + 3))} L${point(...onCuff(u - 3, v + CUFF.tall - 2))}`
-        })
-        .join(' '),
+        }),
+        ...[84, 94, 136, 148].map((y) => {
+          const half = halfWidth(CAGE_BODY, y)
+
+          return `M${point(80 + (BAND.far - 0.04) * half, y)} L${point(80 + (BAND.near + 0.08) * half, y + 4)}`
+        }),
+      ].join(' '),
       role: 'ambient',
     },
     shadowUnder(1),
@@ -3204,38 +3415,46 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit on a horse's foreleg: the foot of the fruit narrows into one
-   * leg, both edges of it out of the rim, the fetlock bent, the hoof
-   * planted, toe forward. In episode 153 Gan Fall shows the crew that Pierre
-   * ate the fruit and can turn into a Pegasus, and they find it ordinary. The
-   * leg and nothing else: no wings, which are the falcon's, no mane, never a
-   * head.
+   * The fruit on a horse's forelegs, mid-step: the foot of the fruit parts
+   * into two legs, one planted with its hoof flat and toe forward, the other
+   * raised, its knee bent forward and its hoof tucked back clear of the
+   * ground. In episode 153 Gan Fall shows the crew that Pierre ate the fruit
+   * and can turn into a Pegasus, and they find it ordinary. A pair of legs is
+   * a horse; one was a boot. No wings, which are the falcon's, no mane, never
+   * a head.
    */
   'horse-horse-fruit': [
-    ...kitBody(
-      HORSE_BODY,
-      [100, 112, 124],
-      (x, y) => y < (x < 80 ? FORELEG.front : FORELEG.back) + 0.5,
-    ),
+    ...kitBody(HORSE_BODY, [92, 102, 112], (_x, y) => y < FORELEGS + 0.5),
     ...skin([
-      [68, 98, 8],
-      [88, 120, -7],
+      [68, 96, 8],
+      [88, 112, -6],
     ]),
     ...sprout(HORSE_BODY, 4, 'left'),
     {
+      // The raised leg first, its knee bent forward and its hoof clear of the
+      // ground; then the chest between the legs; then the planted leg.
       d: [
-        `M${point(...onRim(HORSE_BODY, FORELEG.front, -1))}`,
-        'C67 132 69 140 69 150 C69 155 68 158 66 160 L60 164',
-        'L54 176 L79 176 L76 165',
-        'C80 164 84 163 86 161 C88 158 88 154 83 152',
-        `C83 144 85 134 ${point(...onRim(HORSE_BODY, FORELEG.back, 1))}`,
+        `M${point(...onRim(HORSE_BODY, FORELEGS, -1))}`,
+        'C52 128 46 134 44 140 C43 144 44 147 47 149',
+        'L57 156 C59 157 60 158 61 160',
+        'L63 167 L71 162 L67 155',
+        'C64 154 61 152 58 150 L55 147',
+        'C54 143 58 136 70 132',
+        'C74 130 82 130 86 132',
+        'C86 140 87 146 88 150 C87 154 89 156 89 160',
+        'C89 163 87 166 84 168',
+        'L80 177 L99 177 L97 168',
+        `C98 165 97 162 96 160 C96 156 97 152 98 150 C99 144 101 132 ${point(...onRim(HORSE_BODY, FORELEGS, 1))}`,
       ].join(' '),
       role: 'accent',
     },
-    // The coronet, where the hoof starts.
-    { d: 'M60 164 C65 165 71 166 76 165', role: 'soft' },
-    // The horn of the hoof.
-    { d: 'M60 175 L65 168 M67 175 L72 168', role: 'ambient' },
+    // The coronets, where the hooves start.
+    {
+      d: 'M61 160 C63 159 65 157 67 155 M84 168 C88 169 93 169 97 168',
+      role: 'soft',
+    },
+    // The horn of the hooves.
+    { d: 'M65 164 L67 159 M84 176 L88 170 M91 176 L95 170', role: 'ambient' },
     shadowUnder(1),
   ],
 
@@ -3260,18 +3479,18 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit struck by a beam: two parallel lines in from the upper left,
-   * landing on the near shoulder, the outline open where they land, and the
-   * struck shoulder trailing behind where it was. In episode 210 Foxy fires
-   * the beam at the Barrel Tiger to slow it in the race, and explains that he
-   * gives off particles that slow down what they hit. No cannonball and no
-   * mirror.
+   * The fruit struck by a beam: a wide beam in from the upper left, specked
+   * with the particles it carries, landing on the near shoulder with the
+   * outline open where it lands, and the shoulder below it drawn twice more
+   * behind itself, fading. In episode 210 Foxy fires the beam at the Barrel
+   * Tiger to slow it in the race, and explains that he gives off particles
+   * that slow down what they hit. No cannonball and no mirror.
    */
   'slow-slow-fruit': [
     ...kitBody(
       SLOW_BODY,
       [104, 116, 128],
-      (x, y) => x > 50 || y < 87 || y > 93,
+      (x, y) => x > 54 || y < 80 || y > 100,
     ),
     ribs(SLOW_BODY),
     ...skin([
@@ -3279,23 +3498,20 @@ export const fruitArt = {
       [86, 146, -6],
     ]),
     ...sprout(SLOW_BODY, 6, 'right'),
-    // The beam, both edges ending on the rim.
-    { d: 'M7.3 54.9 L41.3 94.9 M13.8 45.2 L47.8 85.2', role: 'accent' },
-    // The struck shoulder, lagging behind where it was.
+    // The beam, both edges ending on the rim, and the particles it carries.
     {
-      d: [5, 10]
-        .map((back) => {
-          return polyline(
-            Array.from({ length: 6 }, (_unused, at) => {
-              const y = 96 + at * 5
-
-              return point(onRim(SLOW_BODY, y, -1)[0] - back, y - back * 0.6)
-            }),
-          )
-        })
-        .join(' '),
-      role: 'soft',
+      d: [
+        'M19.9 45.4 L51 82 M8.9 61.4 L40 98',
+        speck(17.6, 63.3),
+        speck(31.4, 67.3),
+        speck(33.9, 80.9),
+        speck(44.7, 84.4),
+      ].join(' '),
+      role: 'accent',
     },
+    // The struck shoulder, twice, lagging behind where it was.
+    { d: lagging(6), role: 'ambient' },
+    { d: lagging(12), role: 'ambient', dashed: true },
     shadowUnder(1),
   ],
 
@@ -3337,7 +3553,8 @@ export const fruitArt = {
 
   /**
    * The real fruit, beside Kaku's in episode 271: a melon held the long way,
-   * its rind in segments under a skin of curls, a tendril for a stalk.
+   * its rind in segments under a skin of curls, a tendril for a stalk, the
+   * light on its near shoulder and the far side hatched.
    */
   'bubble-bubble-fruit': [
     {
@@ -3361,16 +3578,23 @@ export const fruitArt = {
     {
       d: [
         curl(80, 112, 12),
-        curl(60, 92, -9),
+        curl(64, 94, -8),
         curl(99, 89, 9),
         curl(55, 128, 9),
-        curl(104, 130, -10),
+        curl(102, 126, -9),
         curl(80, 150, -8),
         curl(81, 78, -7),
       ].join(' '),
       role: 'accent',
     },
     { d: 'M80 62 C79 54 80 46 88 42 C96 38 104 40 104 46 C104 52 96 52 96 47' },
+    // The light on the near shoulder, between the rim and the first segment.
+    { d: polyline(trace([80, 114], [36, 46], [196, 228, 6])), role: 'soft' },
+    // The far side turning away, between the last segment and the rim.
+    {
+      d: 'M118 111 L112 105 M118 128 L112 122 M112 146 L106 140',
+      role: 'ambient',
+    },
     shadowUnder(1),
   ],
 
@@ -3396,10 +3620,11 @@ export const fruitArt = {
 
   /**
    * The fruit with a wolf's tail: one large, bushy tail grown out of its lower
-   * side, sweeping out and down with the tip curled up, soft notches of fur on
-   * both edges. In episode 286 Jabra transforms and names his fruit, and the
-   * wiki gives his half-wolf form an unusually large tail. The tail and
-   * nothing else, never the snout or the head.
+   * side, sweeping out and up past the far shoulder with the tip curled over,
+   * three notches of fur on each edge and the fur parted down its middle. In
+   * episode 286 Jabra transforms and names his fruit, and the wiki gives his
+   * half-wolf form an unusually large tail. The tail and nothing else, never
+   * the snout or the head.
    */
   'dog-dog-fruit-model-wolf': [
     ...kitBody(WOLF_BODY, [84, 96, 108]),
@@ -3409,14 +3634,23 @@ export const fruitArt = {
     ]),
     ...sprout(WOLF_BODY, -4, 'left'),
     {
-      d: limbOutline(TAIL, 24, (step, way) => {
+      d: limbOutline(TAIL, 32, (step, way) => {
         if (way > 0) {
-          return FUR.outer.includes(step) ? 0.8 : 1
+          return FUR.outer.includes(step) ? 0.62 : 1
         }
 
-        return FUR.inner.includes(step) ? 0.86 : 1
+        return FUR.inner.includes(step) ? 0.62 : 1
       }),
       role: 'accent',
+    },
+    // The fur down the middle of the plume, where it parts.
+    {
+      d: polyline(
+        Array.from({ length: 9 }, (_unused, at) =>
+          point(...onLimb(TAIL, 0.2 + at * 0.06, 2)),
+        ),
+      ),
+      role: 'soft',
     },
     shadowUnder(1),
   ],
@@ -3457,7 +3691,8 @@ export const fruitArt = {
 
   /**
    * The real fruit, handed to Kaku in episode 271: a bunch of fingers like
-   * bananas under a skin of curls, held together at the crown by its stalk.
+   * bananas under a skin of curls, held together at the crown by its stalk,
+   * the light down the near finger and the far fingers hatched.
    */
   'ox-ox-fruit-model-giraffe': [
     {
@@ -3481,13 +3716,13 @@ export const fruitArt = {
     },
     {
       d: [
-        curl(45, 112, -7),
+        curl(47, 122, -6),
         curl(45, 142, 6),
         curl(69, 110, 6),
         curl(78, 148, -7),
         curl(93, 116, -6),
-        curl(107, 143, 7),
-        curl(127, 120, -6),
+        curl(105, 144, 6),
+        curl(124, 113, -6),
       ].join(' '),
       role: 'accent',
     },
@@ -3496,6 +3731,13 @@ export const fruitArt = {
         'M50 74 C56 80 76 80 80 74',
         'M64 70 C64 60 62 52 56 46 C50 40 40 42 40 50 C40 56 48 57 49 51',
       ].join(' '),
+    },
+    // The light down the near finger.
+    { d: 'M48 88 C45 96 43 104 42 112', role: 'soft' },
+    // The far fingers turning away.
+    {
+      d: 'M121 151 L116 146 M123 142 L118 137 M132 124 L128 120',
+      role: 'ambient',
     },
     shadowUnder(1),
   ],
@@ -6372,7 +6614,8 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
        * The fruit that is all flame: a body whose crown is a row of tongues, curls
        * burning across it, and a stalk that runs off with a hook at the end. Not
        * seen until Doflamingo holds it up in episode 629, so it is drawn from
-       * there, in `fruitRedrawn`; before that the fruit is a grown one.
+       * there, in `fruitRedrawn`; before that the fruit is a grown one. The
+       * light sits on the near shoulder and the far side is hatched.
        */
       value: [
         {
@@ -6392,14 +6635,20 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
           d: [
             curl(85, 110, 15),
             curl(55, 132, -12),
-            curl(114, 134, 12),
+            curl(110, 134, 10),
             curl(68, 158, 11),
-            curl(103, 158, -11),
+            curl(100, 157, -9),
             curl(85, 152, 9),
             curl(61, 112, -9),
-            curl(110, 111, 9),
+            curl(106, 110, 8),
           ].join(' '),
           role: 'accent',
+        },
+        // The light on the near shoulder, and the far side turning away.
+        { d: 'M48 100 C46 107 44 114 44 121', role: 'soft' },
+        {
+          d: 'M128 116 L122 110 M129 132 L123 126 M124 150 L118 144',
+          role: 'ambient',
         },
         {
           // The stalk runs off to the left and winds up at its own end. It goes
@@ -6580,9 +6829,36 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
     },
   ],
 
-  // Vegapunk's Zoan explanation, episode 1101; anime only, paired with the
-  // chapter the episode adapts, 1070.
+  // Lucci awakens the fruit on Egghead in chapter 1069 and episode 1100; the
+  // real fruit follows in episode 1101, paired with chapter 1070.
   'cat-cat-fruit-model-leopard': [
+    {
+      episode: 1100,
+      chapter: 1069,
+      look: 'awakening',
+      /**
+       * The awakening: the claws as they were, and a mane of dark flame
+       * billowing round the fruit's shoulders and down its far side, the
+       * cloud that rises off Lucci when he awakens. The flame is dark, so it
+       * is hatched where it meets the skin.
+       */
+      value: [
+        ...fruitArt['cat-cat-fruit-model-leopard']
+          .slice(0, -1)
+          .map((stroke) => {
+            return stroke.role === 'accent' ?
+                { ...stroke, d: `${stroke.d} ${LEOPARD_MANE}` }
+              : stroke
+          }),
+        {
+          d: 'M54 70 L50 66 M42 88 L37 86 M121 82 L125 78 M125 112 L129 110 M109 141 L113 138',
+          role: 'ambient',
+        },
+        shadowUnder(1),
+      ],
+    },
+    // Vegapunk's Zoan explanation, episode 1101; anime only, paired with the
+    // chapter the episode adapts, 1070.
     {
       episode: 1101,
       chapter: 1070,

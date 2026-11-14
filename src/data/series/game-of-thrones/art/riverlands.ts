@@ -377,6 +377,104 @@ export const RIVERLANDS_DRAWINGS = {
 
 /** The Riverlands cast drawn again later in the story. */
 export const riverlandsRedrawn: Redrawings = {
+  'lommy': [
+    // The vat on its side and the dye run out across the ground: Lannister
+    // men kill him, in episode 13 (Polliver) and in Arya V of A Clash of
+    // Kings (chapter 93, Raff the Sweetling).
+    {
+      episode: 13,
+      chapter: 93,
+      value: [
+        ...moved(DYE_VAT.slice(0, 2), 'rotate(-90 80 110)'),
+        ...moved(DYE_VAT.slice(3, 4), 'rotate(-90 80 110)'),
+        {
+          d: 'M48 120 Q36 134 40 146 Q26 150 14 152 Q10 158 30 158 Q56 158 52 148 Q50 136 54 126',
+          role: 'accent',
+        },
+        { d: 'M10 158 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'stevron-frey': [
+    // The shield dropped, leaning on its point, a crack across it: he dies of a wound after Oxcross,
+    // told in Bran V of A Clash of Kings (chapter 109). The book's alone;
+    // episode 14, the morning after Oxcross, orders it.
+    {
+      episode: 14,
+      chapter: 109,
+      source: 'chapter',
+      value: [
+        ...moved(
+          TOWERS_SHIELD.slice(0, 4),
+          'rotate(-32 80 148) translate(6 4)',
+        ),
+        {
+          d: 'M108 52 L100 66 L106 74 L96 90',
+          role: 'soft',
+          transform: 'rotate(-32 80 148) translate(6 4)',
+        },
+        { d: 'M10 156 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'hoster-tully': [
+    // The trout belly up on the water: he dies at Riverrun, in Catelyn IV of
+    // A Storm of Swords (chapter 179). The show's death is his status when
+    // his record opens, so this stage is the book's alone; episode 23 orders
+    // it.
+    {
+      episode: 23,
+      chapter: 179,
+      source: 'chapter',
+      value: [
+        ...moved(TROUT.slice(0, 5), 'translate(0 214) scale(1 -1)'),
+        ...TROUT.slice(5),
+      ],
+    },
+  ],
+  'rorge': [
+    // The wagon overturned, wheels up: he is
+    // killed in episode 37 (Arya) and in Brienne VII of A Feast for Crows
+    // (chapter 263, Brienne).
+    {
+      episode: 37,
+      chapter: 263,
+      value: [
+        ...moved(CAGE_WAGON.slice(0, 6), 'translate(0 196) scale(1 -1)'),
+        { d: 'M10 152 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'biter': [
+    // The cage empty, its chains fallen to the floor: he is
+    // killed in episode 37 (the Hound), and his death is told in Brienne VIII
+    // of A Feast for Crows (chapter 268, Gendry's spear).
+    {
+      episode: 37,
+      chapter: 268,
+      value: [
+        ...CAGE_CORNER.slice(0, 2),
+        {
+          d: `M90 70 v6 M70 76 v4 M44 150 Q60 144 72 150 ${ellipse(76, 151, 4.5, 3)} ${ellipse(86, 152, 3, 4.5)} ${ellipse(96, 153, 4.5, 3)}`,
+          role: 'accent',
+        },
+        ...CAGE_CORNER.slice(4),
+      ],
+    },
+  ],
+  'kevan-lannister': [
+    // The lion on its back, legs up: he is killed in episode 60 (the wildfire
+    // under the Great Sept) and in the epilogue of A Dance with Dragons
+    // (chapter 344, a crossbow bolt).
+    {
+      episode: 60,
+      chapter: 344,
+      value: [
+        ...moved(LION.slice(0, 6), 'translate(0 202) scale(1 -1)'),
+        { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
   'masha-heddle': [
     // The jug on its side and the mugs knocked down, the ale run out: Tywin's
     // men hang her, told in Tyrion VII (chapter 57). The book's alone;
