@@ -786,25 +786,27 @@ export const summitWarArt = {
     shadow(80, 176, 74),
   ],
 
-  // His round spectacles, folded and hung on the cross hilt of his sword, the
-  // lenses in his colour; the sword lies on its side, a double-edged straight
-  // blade with a round pommel, the grip wrapped. He is first seen in the
-  // glasses in episode 398 (ch. 504), and he stops Kizaru with the sword
+  // His round spectacles folded shut and hung by a temple from the top of
+  // his sword's cross hilt, the two lenses overlapping in 3/4 in his colour,
+  // the far rim seen through the near lens, clear of the blade. The sword
+  // lies on its side beneath them: a double-edged straight blade, the guard
+  // standing up, the wrapped grip and the round pommel. He is first seen in
+  // the glasses in episode 398 (ch. 504), and he stops Kizaru with the sword
   // inside the arc, in episode 404 (ch. 512).
   'silvers-rayleigh': [
-    { d: 'M70 136 L146 130 L158 138 L146 146 L70 150 Z' },
-    { d: 'M70 143 L148 138', role: 'soft' },
-    { d: 'M62 116 L70 116 L70 170 L62 170 Z' },
-    { d: 'M62 136 H34 C30 136 30 150 34 150 H62' },
-    { d: 'M40 136 l3 14 M48 136 l3 14 M56 136 l3 14', role: 'soft' },
-    { d: circle(22, 143, 10) },
-    { d: 'M16 149 l9 -9 M20 152 l8 -8', role: 'ambient' },
-    { d: `${circle(46, 114, 19)} ${circle(88, 114, 19)}`, role: 'accent' },
-    {
-      d: 'M65 112 Q67 106 69 112 M27 112 L22 117 L52 146 M107 112 L112 117 L84 148',
-    },
-    { d: 'M34 104 q4 -7 12 -7 M76 104 q4 -7 12 -7', role: 'soft' },
-    shadow(90, 180, 70),
+    { d: 'M102 154 L40 156 L28 162 L40 168 L102 170 Z' },
+    { d: 'M100 162 L38 162', role: 'soft' },
+    { d: 'M102 104 H110 V180 H102 Z' },
+    { d: 'M110 156 H136 C140 156 140 168 136 168 H110' },
+    { d: 'M116 156 l3 12 M124 156 l3 12 M132 156 l3 12', role: 'soft' },
+    { d: circle(147, 162, 9) },
+    { d: 'M142 167 l8 -8 M146 170 l6 -6', role: 'ambient' },
+    { d: 'M101 112 C100 98 112 96 112 106 L112 116' },
+    { d: `${circle(124, 124, 17)} ${circle(140, 130, 17)}`, role: 'accent' },
+    { d: 'M131 108 Q135 106 139 113' },
+    { d: 'M112 118 L150 122', role: 'soft' },
+    { d: 'M131 120 q3 -6 9 -6', role: 'soft' },
+    shadow(90, 186, 60),
   ],
 
   // One of his gauntlets lying on its side, the cuff flaring open towards the
