@@ -149,9 +149,9 @@ function setDownByTheSweets(hat: Stroke[]): Stroke[] {
 
 /**
  * Zunesha side on, wading and facing left: the head with its trunk raised,
- * the wrinkles of its skin soft, the ear tattered at the edge, the long back, and the upper
- * third of each leg above the water, the far legs fainter. Both Zou arc
- * drawings stand on it.
+ * the wrinkles of its skin soft, the ear tattered at the edge, the long
+ * back, and the upper third of each leg above the water, the far legs
+ * fainter. Both Zou arc drawings stand on it.
  */
 const ZUNESHA_WADING: Stroke[] = [
   {
@@ -2272,8 +2272,8 @@ const STUSSY_BAT_WINGS: Stroke[] = [
 
 /**
  * What Jack's raid left behind the wall: the gateway empty, its gate torn
- * off and a bar of it leaning on the wall beside it (the accent), and the roofs of the
- * town showing over the wall broken.
+ * off and a bar of it leaning on the wall beside it (the accent), and the
+ * roofs of the town showing over the wall broken.
  */
 const ZOU_RUINED_TOWN: Stroke[] = [
   { d: `${ZOU_GATEWAY} M139 66 L146 52 M142 67 L149 53`, role: 'accent' },
@@ -2895,9 +2895,9 @@ export const wholeCakeRedrawn: Redrawings = {
 
   // The heap of sweets and the bicorne all plain, and beside them a soul,
   // pink like smoke, narrowing to a point as it is pulled away (the accent),
-  // a sign of the power rather than the scene: she takes Moscato's lifespan with Soul Pocus at
-  // 789 (ch. 829 p. 13-14). The true chapter is below her record's 831, so
-  // it is pinned there.
+  // a sign of the power rather than the scene: she takes Moscato's lifespan
+  // with Soul Pocus at 789 (ch. 829 p. 13-14). The true chapter is below her
+  // record's 831, so it is pinned there.
   'charlotte-linlin': [
     {
       episode: 789,
