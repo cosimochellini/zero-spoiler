@@ -226,18 +226,28 @@ const PLASTER =
 
 /** The drawings of the records filed in the alabasta stretch of the route. */
 export const alabastaArt = {
-  // Twin peaks with the canal running up to the notch between them, the sea
-  // climbing it, and a lighthouse at the foot.
+  // Twin peaks with the canal cut up to the notch between them, seen a little
+  // from the side so its far wall shows, the sea climbing it from a square
+  // arch at its mouth, and a Twin Cape lighthouse at the foot (62).
   'reverse-mountain': [
-    { d: 'M4 150 L44 40 L72 58 L100 40 L128 150' },
-    { d: 'M60 150 L69 60 M84 150 L75 60', role: 'accent' },
+    { d: 'M4 150 L44 34 L72 56 L102 38 L134 150' },
+    { d: 'M52 150 L68 58 M96 150 L77 58' },
+    { d: 'M58 150 L69.5 60 M86 150 L75.5 60', role: 'accent' },
     {
-      d: 'M68 132 l4 -7 l4 7 M69 104 l3 -6 l3 6 M70 78 l2 -5 l2 5',
+      d: 'M88 140 l6 -2 M85 120 l5 -2 M82 100 l4 -1.5 M80 80 l3 -1',
+      role: 'ambient',
+    },
+    {
+      d: 'M68 140 l4 -7 l4 7 M69 112 l3 -6 l3 6 M70 88 l2.5 -5 l2.5 5',
       role: 'soft',
     },
-    { d: 'M134 150 L138 118 H146 L150 150z' },
-    { d: 'M137 118 V110 H147 V118 M134 110 L142 102 L150 110' },
-    { d: 'M152 106 h6 M151 98 l6 -5', role: 'ambient', dashed: true },
+    { d: 'M48 150 V126 H100 V150 M54 150 V132 H94 V150' },
+    { d: 'M110 84 l8 -4 M116 104 l8 -4 M122 124 l8 -4', role: 'ambient' },
+    {
+      d: 'M138 150 L141 118 H151 L154 150 M140 118 V110 H152 V118 M138 110 L146 102 L154 110',
+    },
+    { d: 'M144 150 L145.5 124', role: 'soft' },
+    { d: 'M156 106 h6 M155 98 l6 -5', role: 'ambient', dashed: true },
     ...SEA.slice(1),
   ],
 
@@ -443,27 +453,30 @@ export const alabastaArt = {
     shadow(74, 186, 42),
   ],
 
-  // A cactus-shaped rock under the moon, grave crosses standing on its top.
+  // A cactus-shaped rock under the moon, its ribs running round the column
+  // and the far side hatched, grave crosses standing on its top and its
+  // arms, and the flat-roofed houses of the town at its foot (64).
   'whisky-peak': [
-    { d: 'M60 150 V60 a20 20 0 0 1 40 0 V150' },
-    { d: 'M60 124 H34 a8 8 0 0 1 -8 -8 V88 a8 8 0 0 1 16 0 V108 H60' },
-    { d: 'M100 110 H126 a8 8 0 0 0 8 -8 V74 a8 8 0 0 0 -16 0 V94 H100' },
+    { d: 'M62 150 V62 a20 20 0 0 1 40 0 V150' },
+    { d: 'M76 44 Q73 96 75 150 M90 44 Q92 96 90 150', role: 'soft' },
     {
-      d: 'M70 44 V28 M65 33 H75 M80 40 V22 M75 27 H85 M90 44 V28 M85 33 H95 M34 81 V66 M29 71 H39 M126 67 V52 M121 57 H131',
+      d: 'M96 74 l6 -3 M96 92 l6 -3 M96 110 l6 -3 M96 128 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M62 124 H40 a8 8 0 0 1 -8 -8 V88 a8 8 0 0 1 16 0 V108 H62' },
+    { d: 'M102 108 H124 a8 8 0 0 0 8 -8 V74 a8 8 0 0 0 -16 0 V92 H102' },
+    {
+      d: 'M72 44 V28 M67 33 H77 M82 40 V22 M77 27 H87 M92 44 V28 M87 33 H97 M40 81 V66 M35 71 H45 M124 67 V52 M119 57 H129',
       role: 'accent',
     },
     {
-      d: dots([
-        [70, 72],
-        [88, 84],
-        [72, 100],
-        [90, 118],
-        [34, 100],
-        [126, 86],
-      ]),
+      d: 'M6 150 V132 H30 V150 M30 150 V140 H46 V150 M112 150 V128 H136 V150 M136 150 V138 H150 V150',
+    },
+    {
+      d: 'M12 138 h6 v6 h-6 z M120 134 h6 v6 h-6 z M36 144 h4 M142 144 h4 M30 136 h-3 M112 134 h-3',
       role: 'soft',
     },
-    { d: circle(134, 28, 11), role: 'ambient' },
+    { d: circle(140, 26, 10), role: 'ambient' },
     { d: 'M4 150 H156', role: 'ambient' },
     ...SEA.slice(1),
   ],
@@ -532,33 +545,32 @@ export const alabastaArt = {
     },
   ],
 
-  // The island from the sea: two volcanoes in 3/4 with their craters
-  // smoking, the jungle of giant ferns along the shore below them (70).
+  // The volcano that erupts every hour and starts the giants' duel, in 3/4
+  // with its far flank hatched and its smoke going up, over the jungle; in
+  // front, one of the Sea King skulls the island's mountains are, lying
+  // with its hollow socket hatched and its teeth along the jaw (70).
   'little-garden-arc': [
-    { d: 'M6 150 L42 70 M62 70 L98 150' },
-    { d: ellipse(52, 70, 10, 3) },
-    { d: 'M82 150 L110 96 M124 96 L152 150' },
-    { d: ellipse(117, 96, 7, 2.4) },
+    { d: 'M48 150 L80 66 M100 66 L134 150' },
+    { d: ellipse(90, 66, 10, 3.2) },
     {
-      d: 'M70 100 l8 -4 M78 118 l8 -4 M86 136 l8 -4 M132 118 l6 -3 M140 134 l6 -3',
+      d: 'M106 90 l7 -3 M112 108 l7 -3 M118 126 l7 -3 M124 142 l6 -2.5',
       role: 'ambient',
     },
+    { d: 'M88 60 C80 48 96 40 88 28 C82 18 96 10 92 0', role: 'accent' },
     {
-      d: 'M50 66 C44 54 54 50 50 38 C46 28 56 22 54 12 M56 66 C62 56 58 48 64 40',
+      d: 'M96 60 C104 50 98 42 108 34 C116 28 112 18 120 12',
       role: 'ambient',
       dashed: true,
     },
-    { d: 'M116 92 C112 82 120 78 118 68', role: 'ambient', dashed: true },
     {
-      d: 'M18 150 C18 134 24 124 34 118 M18 138 l-8 -6 M20 130 l-8 -8 M24 124 l-4 -10 M26 140 l8 -6 M28 130 l8 -8',
-      role: 'accent',
+      d: 'M6 150 C2 130 14 112 34 110 C50 108 60 116 68 124 L90 136 C96 139 95 146 88 146 L66 145 C58 150 40 152 26 150',
     },
+    { d: 'M28 124 C32 117 44 116 47 123 C48 131 38 135 30 131 Z' },
+    { d: 'M31 128 l8 -7 M35 132 l10 -9', role: 'ambient' },
+    { d: 'M70 145 v-4 M76 145.4 v-4 M82 145.8 v-4', role: 'soft' },
+    { d: 'M18 118 q6 8 3 18 M56 114 q-3 6 1 12', role: 'soft' },
     {
-      d: 'M128 150 C128 136 134 128 144 124 M130 140 l-8 -4 M132 132 l-6 -8 M136 144 l8 -4 M140 134 l6 -6',
-      role: 'accent',
-    },
-    {
-      d: 'M54 150 q4 -14 14 -18 M64 150 q-2 -12 -10 -16 M100 150 q4 -12 12 -14',
+      d: 'M108 150 q4 -14 14 -18 M118 150 q-2 -12 -10 -16 M140 150 q4 -12 12 -14 M146 150 q-4 -12 -14 -14',
       role: 'soft',
     },
     { d: 'M4 150 H156', role: 'ambient' },
@@ -676,14 +688,27 @@ export const alabastaArt = {
     { d: 'M70 182 q14 -4 30 0', role: 'ambient', dashed: true },
   ],
 
-  // A long-necked dinosaur looking out over the jungle, a palm and ferns in front.
+  // A long-necked dinosaur looking out over the jungle, the back of its neck
+  // and its flank hatched, a palm and ferns in front and one of the island's
+  // volcanoes smoking behind its back (70).
   'little-garden': [
     {
       d: 'M112 150 C112 104 100 70 80 50 C72 42 58 40 50 44 C42 48 42 58 52 58 H62 C72 60 80 90 88 150',
       role: 'accent',
     },
-    { d: dot(56, 48), role: 'soft' },
-    { d: 'M112 128 C124 114 148 112 164 122', role: 'soft' },
+    { d: 'M110 124 C122 106 150 106 164 124' },
+    {
+      d: 'M98 84 l7 -3 M104 100 l7 -3 M108 116 l7 -3 M140 116 l6 -4 M150 120 l6 -4',
+      role: 'ambient',
+    },
+    { d: 'M86 76 Q90 74 92 70 M90 92 Q94 90 96 86', role: 'soft' },
+    { d: 'M120 112 L134 76 M146 76 L158 104' },
+    { d: ellipse(140, 76, 6, 2) },
+    {
+      d: 'M140 72 C134 62 144 56 138 46 C134 38 142 32 140 24',
+      role: 'ambient',
+      dashed: true,
+    },
     { d: 'M26 150 C30 130 34 112 30 94' },
     {
       d: 'M30 94 q-16 -4 -24 8 M30 94 q-4 -14 8 -20 M30 94 q14 -8 26 2 M30 94 q10 4 12 16',
@@ -692,31 +717,54 @@ export const alabastaArt = {
       d: 'M50 150 q4 -18 16 -22 M58 150 q-2 -16 -12 -22 M126 150 q2 -16 14 -20 M134 150 q-4 -14 -16 -18',
       role: 'soft',
     },
-    { d: 'M112 34 q6 -6 12 0 q6 -6 12 0', role: 'ambient' },
     { d: 'M4 150 H156', role: 'ambient' },
     ...SEA.slice(1),
   ],
 
-  // A castle on a drum-shaped peak, with the snow coming down.
+  // The castle on Drum Rock, the drum-shaped peak in 3/4 with its top rim
+  // and a band of snow round it, the far side hatched, and over the tallest
+  // tower Hiluluk's Jolly Roger, the skull and crossbones ringed with
+  // cherry petals, the flag Luffy keeps from Wapol's cannon (87).
   'drum-island-arc': [
-    { d: 'M8 156 L44 56 H88 L124 156' },
-    { d: 'M118 156 L138 106 L156 156' },
-    { d: 'M31 92 q18 8 35 0 q17 -8 35 2', role: 'ambient' },
-    { d: 'M50 56 V26 H82 V56', role: 'accent' },
-    { d: 'M46 26 H86 M50 26 V16 h8 V26 M74 26 V16 h8 V26', role: 'accent' },
-    { d: 'M66 16 V4 l16 5 l-16 5' },
-    { d: 'M58 34 h8 v10 h-8z M70 34 h8 v10 h-8z' },
+    { d: 'M30 150 L38 82 M110 82 L118 150' },
+    { d: ellipse(74, 82, 36, 7) },
+    { d: 'M34 116 q20 8 40 2 q20 -6 40 2', role: 'soft' },
+    { d: 'M102 100 l7 -3 M106 122 l7 -3 M110 142 l6 -2.5', role: 'ambient' },
+    {
+      d: 'M124 150 L127 116 M147 116 L150 150 M127 116 Q137 120 147 116 Q137 112 127 116',
+    },
+    {
+      d: 'M50 80 V62 H98 V80 M64 62 V36 H84 V62 M62 36 h24 M64 36 v-5 h5 v5 M79 36 v-5 h5 v5',
+    },
+    { d: 'M58 74 v-6 M90 74 v-6 M74 54 v-10', role: 'soft' },
+    { d: 'M74 31 V6 M74 6 Q90 2 106 6 V28 Q90 24 74 28' },
+    {
+      d: `${circle(90, 15, 4.5)} ${dots([
+        [88.2, 14.4],
+        [91.8, 14.4],
+      ])} M87.5 19 V22 H92.5 V19 M85 21 L80 25 M95 21 L100 25 M85 9 L80 5 M95 9 L100 5`,
+      role: 'accent',
+    },
     {
       d: dots([
-        [20, 40],
-        [34, 72],
-        [110, 48],
-        [132, 82],
-        [142, 38],
+        [80, 15],
+        [100, 15],
+        [90, 23.5],
+        [90, 6.5],
+      ]),
+      role: 'soft',
+    },
+    {
+      d: dots([
+        [14, 40],
+        [24, 70],
+        [128, 52],
+        [146, 90],
+        [140, 30],
       ]),
       role: 'ambient',
     },
-    { d: 'M4 156 H156', role: 'ambient' },
+    { d: 'M4 150 H156', role: 'ambient' },
     ...SEA.slice(2),
   ],
 
@@ -818,30 +866,38 @@ export const alabastaArt = {
     { d: 'M4 176 L30 160 M20 192 L50 160 M120 192 L104 178', role: 'ambient' },
   ],
 
-  // Three drum-shaped mountains with snow on their rims, and snowed-in houses below.
+  // The Drum Rockies in 3/4: three drum-shaped mountains, their top rims and
+  // bands of snow, the far sides hatched, the castle small on Drum Rock, the
+  // tallest, and snowed-in houses below (80).
   'drum-island': [
-    { d: `${ellipse(80, 40, 22, 6)} M58 40 V116 M102 40 V116`, role: 'accent' },
-    { d: `${ellipse(34, 78, 16, 5)} M18 78 V116 M50 78 V116`, role: 'accent' },
     {
-      d: `${ellipse(128, 70, 18, 5)} M110 70 V116 M146 70 V116`,
+      d: `${ellipse(80, 44, 24, 6)} ${ellipse(32, 80, 16, 5)} ${ellipse(130, 72, 18, 5)}`,
       role: 'accent',
     },
     {
-      d: 'M58 54 q11 6 22 0 q11 -6 22 0 M18 90 q8 5 16 0 q8 -5 16 0 M110 82 q9 5 18 0 q9 -5 18 0',
+      d: 'M56 44 V122 M104 44 V122 M16 80 V122 M48 80 V122 M112 72 V122 M148 72 V122',
+    },
+    {
+      d: 'M56 60 q12 6 24 0 q12 -6 24 0 M16 92 q8 5 16 0 q8 -5 16 0 M112 86 q9 5 18 0 q9 -5 18 0',
       role: 'soft',
     },
-    { d: 'M4 118 q38 -8 76 0 t76 0 t10 0', role: 'ambient' },
+    {
+      d: 'M96 70 l6 -3 M96 90 l6 -3 M96 110 l6 -3 M42 98 l5 -2.5 M140 92 l5 -2.5 M140 110 l5 -2.5',
+      role: 'ambient',
+    },
+    { d: 'M70 40 V30 H90 V40 M75 30 V20 H85 V30 M73 20 H87' },
+    { d: 'M4 122 q38 -8 76 0 t76 0 t10 0', role: 'ambient' },
     {
       d: `${house(26, 22, 134, 122)} ${house(66, 28, 130, 118)} ${house(114, 22, 136, 124)}`,
     },
     {
       d: dots([
         [14, 30],
-        [36, 52],
+        [36, 54],
         [118, 30],
         [146, 44],
-        [104, 22],
-        [60, 16],
+        [110, 18],
+        [50, 16],
       ]),
       role: 'ambient',
     },
