@@ -479,9 +479,12 @@ const MERRY_MAIN_MAST: Stroke = {
 const MERRY_MAIN_SAIL: Stroke = {
   d: 'M46 42 H98 M50 42 C46 62 46 80 50 98 H94 C98 80 98 62 94 42',
 }
-// The Straw Hat Jolly Roger as the flag draws it: the hat on the skull, the
-// sockets, the bones crossed under it.
-const MERRY_JOLLY_ROGER: Stroke[] = [
+/**
+ * The Straw Hat Jolly Roger as the flag draws it: the hat on the skull, the
+ * sockets, the bones crossed under it. The Fish-Man Island arc puts it on the
+ * Sunny's sail.
+ */
+export const MERRY_JOLLY_ROGER: Stroke[] = [
   {
     d: `M60 64 H84 M64 64 C64 54 80 54 80 64 M64.4 60.5 H79.6 M65 64 C62 74 66 80 72 80 C78 80 82 74 79 64 ${circle(68.5, 70, 2)} ${circle(75.5, 70, 2)} M60 78 L84 92 M84 78 L60 92`,
     role: 'accent',

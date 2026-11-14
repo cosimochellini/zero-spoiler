@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import {
@@ -11,9 +12,16 @@ import {
   house,
   SEA,
   shadow,
+  sheath,
+  star,
   wave,
 } from '~/lib/svg/primitives'
 
+import { MERRY_JOLLY_ROGER } from './east-blue'
+import { SUNNY_SHIP } from './water-seven'
+
+/** The Sunny made small enough to sail inside its coating, in the arc's drawing. */
+const SUNNY_DESCENT = 'translate(27 46) scale(0.66)'
 /** The slant Fukaboshi's trident is drawn at. */
 const FUKABOSHI_SLANT = 'rotate(16 80 110)'
 /** Where Hyouzou's gourd stands, leaning toward his sword. */
@@ -83,6 +91,237 @@ const PEKOMS_BOOT: Stroke[] = [
   { d: 'M42 156 H52', role: 'soft' },
 ]
 
+/**
+ * Hody's pink newsboy cap in 3/4: the soft crown puffed out over the band,
+ * its panels meeting at the button, the far side of the crown and of the band
+ * hatched, the short visor out front with its underside hatched, and the
+ * small trident on its left side, the one mark in his colour.
+ */
+const HODY_CAP: Stroke[] = [
+  {
+    d: 'M44 126 C26 124 10 112 12 98 C16 72 54 52 94 54 C134 56 160 74 156 98 C154 112 140 120 124 122',
+  },
+  { d: 'M44 126 C68 134 102 132 124 122' },
+  { d: 'M46 136 C70 144 104 142 126 132 V122 M46 136 V126' },
+  { d: 'M46 134 C26 138 14 150 22 160 C32 170 70 166 90 146' },
+  { d: 'M26 154 C40 156 60 152 76 146', role: 'soft' },
+  { d: 'M32 162 l8 -6 M44 164 l9 -7 M58 162 l9 -7', role: 'ambient' },
+  {
+    d: 'M90 54 C76 72 68 98 70 132 M90 54 C110 70 120 94 120 126 M90 54 C58 64 34 84 30 112 M86 53 h8',
+    role: 'soft',
+  },
+  {
+    d: 'M134 70 l8 -5 M142 84 l9 -5 M142 100 l9 -5 M132 112 l9 -5',
+    role: 'ambient',
+  },
+  { d: 'M110 136 l6 -4 M117 133 l6 -4', role: 'ambient' },
+  {
+    d: 'M54 118 V90 M46 100 C46 108 62 108 62 100 M46 100 V93 L48 89 M62 100 V93 L60 89 M54 90 l-2 -4 M54 90 l2 -4',
+    role: 'accent',
+  },
+]
+
+/** Pekoms's two boots, one standing behind the other. */
+const PEKOMS_BOOTS: Stroke[] = [
+  ...PEKOMS_BOOT.map((stroke) => ({
+    // The boot standing behind.
+    ...stroke,
+    transform: 'translate(42 -10)',
+  })),
+  ...PEKOMS_BOOT,
+]
+
+/**
+ * The sword Pekoms wears on his right hip, in its sheath, leaning against
+ * his boots.
+ */
+const PEKOMS_SWORD: Stroke[] = [
+  // Turned hilt up and steepened, so it leans in from the right.
+  ...moved(sheath(0, 'soft'), 'translate(74 230) scale(0.76 -1)'),
+]
+
+/** Pekoms's boots smaller, standing on the floor, for his last two stages. */
+const PEKOMS_LOW_BOOTS = moved(
+  softened(PEKOMS_BOOTS),
+  'translate(88 182) scale(0.7) translate(-88 -182)',
+)
+
+/**
+ * Tamago's cup of hot tea on its saucer, the cup in his colour, its far side
+ * hatched and steam rising off it.
+ */
+const TAMAGO_CUP: Stroke[] = [
+  {
+    d: 'M24 160 A44 10 0 0 0 112 160 M24 160 A44 10 0 0 1 48 151.1 M88 151.1 A44 10 0 0 1 112 160',
+  },
+  { d: 'M26 164 C40 176 96 176 110 164', role: 'soft' },
+  { d: ellipse(68, 112, 28, 8), role: 'accent' },
+  { d: 'M40 112 C40 140 52 156 68 156 C84 156 96 140 96 112', role: 'accent' },
+  { d: 'M46 114 Q68 122 90 114', role: 'soft' },
+  { d: 'M96 120 C110 116 114 136 92 142' },
+  { d: 'M86 122 l6 -3 M86 134 l6 -3 M80 146 l6 -3', role: 'ambient' },
+  {
+    d: 'M56 96 c-6 -8 6 -14 0 -24 M70 94 c-6 -10 6 -16 0 -30 M84 96 c-6 -8 6 -14 0 -24',
+    role: 'ambient',
+  },
+]
+
+/** Tamago's long wooden cane with its crook, standing beside the cup. */
+const TAMAGO_CANE: Stroke[] = [
+  {
+    d: 'M128 188 V56 C128 38 108 38 108 52 M134 188 V56 C134 32 102 32 102 52 M102 52 h6',
+  },
+  { d: 'M128 182 h6', role: 'soft' },
+]
+
+/**
+ * Tamago's egg shell broken open: the bottom half standing like a bowl with
+ * a jagged rim, its far side hatched, the top half tipped over beside it,
+ * and his cup, smaller and plain now, above what comes out of it.
+ */
+const TAMAGO_SHELL: Stroke[] = [
+  {
+    d: 'M30 132 C28 160 46 182 74 182 C102 182 120 160 118 132 L110 138 L102 128 L92 138 L84 126 L74 136 L64 126 L56 138 L46 128 L38 138 Z',
+  },
+  { d: 'M104 146 l8 -5 M102 160 l9 -6 M94 172 l8 -6', role: 'ambient' },
+  {
+    d: 'M118 184 C124 164 140 156 154 160 C156 168 152 180 144 188 L138 182 L132 190 L126 182 Z',
+  },
+  { d: 'M136 168 C140 164 146 163 150 164', role: 'soft' },
+  ...moved(
+    softened(TAMAGO_CUP),
+    'translate(80 60) scale(0.46) translate(-68 -140)',
+  ),
+  shadow(80, 190, 56),
+]
+
+/** The Flying Dutchman's hull: the high stern, the planking, the bowsprit, the holes. */
+const DUTCHMAN_HULL: Stroke[] = [
+  {
+    d: 'M12 116 L118 116 L120 100 H146 L148 116 C144 140 124 150 100 150 H40 C26 150 16 136 12 116 Z',
+  },
+  { d: 'M18 128 H144 M26 140 H134 M120 108 H146', role: 'soft' },
+  { d: 'M12 116 L-2 106' },
+  {
+    d: 'M44 124 l5 -3 l3 6 l-6 3 Z M88 132 l7 -2 l2 7 l-5 3 l-4 -3 Z M126 122 l4 -2 l3 5 l-5 2 Z',
+    role: 'ambient',
+  },
+]
+
+/** The Dutchman's fore and mizzen masts, their torn sails in his colour and the yards. */
+const DUTCHMAN_RIG: Stroke[] = [
+  { d: 'M34 116 V42 M114 100 V54' },
+  {
+    d: 'M18 48 H52 V80 L48 76 L44 84 L38 78 L32 86 L28 78 L22 82 L18 76 Z M84 58 H140 V92 L134 86 L128 94 L122 86 L116 92 L108 86 L102 94 L96 86 L90 92 L84 88 Z',
+    role: 'accent',
+  },
+  { d: 'M40 58 l6 6 M26 62 l3 4 M126 68 l-5 6 M100 66 l4 4', role: 'soft' },
+  { d: 'M16 48 H54 M82 58 H142', role: 'soft' },
+]
+
+/** The fur along the collar of Caribou's coat. */
+const CARIBOU_COLLAR: Stroke = {
+  d: 'M56 44 c-4 -6 2 -12 7 -9 c1 -6 9 -7 11 -2 c3 -5 11 -5 12 0 c3 -5 11 -4 11 2 c6 -2 9 5 5 9 c-2 6 -40 8 -46 0 Z',
+  role: 'soft',
+}
+
+/** The very long sleeves of Caribou's shirt, hanging empty inside the coat. */
+const CARIBOU_SLEEVES: Stroke = {
+  d: 'M70 58 C68 80 66 110 68 140 H78 C77 110 78 82 80 60 M90 58 C92 80 94 110 92 140 H82 C83 110 82 82 80 60',
+  role: 'soft',
+}
+
+/** The far side of Caribou's dark coat, hatched. */
+const CARIBOU_HATCHING: Stroke = {
+  d: 'M124 78 l8 -4 M126 100 l9 -4 M128 122 l9 -4 M130 146 l9 -4 M132 168 l8 -4 M28 150 l8 -4 M30 128 l8 -4',
+  role: 'ambient',
+}
+
+/**
+ * Caribou's coat sinking into a swamp of himself: the panels end in a
+ * ragged hem that runs into a mud pool, bubbles rising off it in his
+ * colour, the spots and sleeves above it plain.
+ */
+const CARIBOU_SWAMP: Stroke[] = [
+  {
+    d: 'M58 42 C50 46 42 52 38 64 L28 140 C30 146 34 138 38 146 C42 152 48 142 52 148 C56 152 60 144 60 140 L70 56',
+  },
+  {
+    d: 'M102 42 C110 46 118 52 122 64 L132 140 C130 146 126 138 122 146 C118 152 112 142 108 148 C104 152 100 144 100 140 L90 56',
+  },
+  CARIBOU_COLLAR,
+  { d: 'M70 56 L62 72 L56 140 M90 56 L98 72 L104 140', role: 'soft' },
+  {
+    d: 'M58 92 c2 -3 5 -2 4 1 M55 118 c2 -3 5 -2 4 1 M98 86 c2 -3 5 -2 4 1 M101 110 c2 -3 5 -2 4 1 M97 130 c2 -3 5 -2 4 1',
+    role: 'soft',
+  },
+  CARIBOU_SLEEVES,
+  {
+    d: 'M124 78 l8 -4 M126 100 l9 -4 M128 122 l9 -4 M30 128 l8 -4',
+    role: 'ambient',
+  },
+  {
+    d: `M8 166 C20 150 52 148 80 152 C108 148 140 150 152 166 C140 182 20 182 8 166 Z M40 152 C38 158 40 162 44 164 M118 152 C120 158 118 162 114 164 ${circle(70, 168, 4)} ${circle(96, 164, 3)} ${circle(30, 168, 2.5)} ${circle(132, 170, 3)}`,
+    role: 'accent',
+  },
+  { d: 'M24 174 C50 180 110 180 136 174', role: 'soft' },
+]
+
+/**
+ * The great arched window of Shirahoshi's tower, its glazing bars, the far
+ * side of the frame hatched, and the sill.
+ */
+const SHIRAHOSHI_WINDOW: Stroke[] = [
+  { d: 'M22 150 V64 C22 8 138 8 138 64 V150' },
+  { d: 'M32 140 V66 C32 22 128 22 128 66 V140', role: 'soft' },
+  { d: 'M80 140 V22 M32 74 H128', role: 'soft' },
+  {
+    d: 'M128 56 l10 -6 M128 80 l10 -6 M128 104 l10 -6 M128 128 l10 -6',
+    role: 'ambient',
+  },
+  { d: 'M12 158 L22 150 H138 L148 158 Z M12 158 V168 H148 V158' },
+]
+
+/** A long lock of her hair falling across the window, behind the grip. */
+const SHIRAHOSHI_LOCK: Stroke[] = [
+  {
+    d: 'M-4 34 C20 46 36 62 46 80 M86 126 C100 146 114 172 124 200 M-4 54 C18 66 30 80 38 94 M76 136 C88 156 98 178 106 200',
+  },
+  {
+    d: 'M2 46 C22 58 34 70 42 86 M84 146 C96 164 106 182 112 198',
+    role: 'soft',
+  },
+]
+
+/**
+ * The taiyaki grip itself in 3/4, clipped onto the lock: the fish-shaped cake
+ * and its fin in her colour, the crust in short staggered lines, its edge
+ * showing the cake is thick, and the pin through the hair. No eye on the fish.
+ */
+const SHIRAHOSHI_GRIP: Stroke[] = moved(
+  [
+    {
+      d: 'M40 132 C40 116 58 108 80 109 C94 110 104 116 108 122 L126 110 C122 122 122 134 126 146 L108 138 C104 146 92 154 80 154 C58 154 40 148 40 132 Z',
+      role: 'accent',
+    },
+    { d: 'M62 110 L72 100 L86 110', role: 'accent' },
+    {
+      d: 'M44 142 C48 152 62 158 80 158 C94 158 104 152 108 146',
+      role: 'soft',
+    },
+    {
+      d: 'M54 116 C48 126 48 140 54 150 M110 130 L120 122 M110 134 L120 140',
+      role: 'soft',
+    },
+    {
+      d: 'M66 117 l7 7 M86 115 l7 7 M56 129 l7 7 M96 128 l6 6 M68 141 l7 7 M86 141 l7 7',
+      role: 'soft',
+    },
+    { d: 'M42 148 H18 Q14 151 18 154 H40' },
+  ],
+  'translate(70 108) rotate(30) scale(0.86) translate(-82 -132)',
+)
+
 /** The drawings of the records filed in the fish man island stretch of the route. */
 export const fishManIslandArt = {
   // The foot of one of the archipelago's giant mangroves, the trunk running
@@ -117,30 +356,32 @@ export const fishManIslandArt = {
     ...SEA,
   ],
 
-  // The Sunny going down in its coating, the bubble the whole ship sails in,
-  // with the lion's mane at the prow and the light from the surface thinning
-  // out above it, dark water below. The descent is what 523 opens on; the
-  // city under the roots is not reached until later.
+  // The Sunny going down in its coating, the bubble the whole ship sails in:
+  // the brigantine side on with the lion at its prow, and on its main sail
+  // the Straw Hat Jolly Roger in the arc's colour. The light from the
+  // surface thins out above it, the water below is dark. The descent is what
+  // 523 (ch. 603) opens on; the city under the roots is not reached until
+  // later.
   'fish-man-island-arc': [
+    ...moved(
+      [
+        ...softened(SUNNY_SHIP),
+        ...moved(
+          MERRY_JOLLY_ROGER,
+          'translate(70 60) scale(0.9) translate(-72 -74)',
+        ),
+      ],
+      SUNNY_DESCENT,
+    ),
+    { d: ellipse(80, 112, 66, 72) },
+    { d: 'M26 86 Q34 62 54 50 M134 132 q-6 18 -20 30', role: 'soft' },
     {
-      d: 'M24 112 C24 58 136 58 136 112 C136 150 112 168 80 168 C48 168 24 150 24 112 Z',
-      role: 'accent',
-    },
-    { d: 'M38 98 C42 84 54 74 70 70', role: 'soft' },
-    { d: 'M42 136 L50 152 Q80 162 110 152 L118 136 Z' },
-    { d: 'M48 144 Q80 152 112 144', role: 'soft' },
-    { d: 'M80 136 V80' },
-    { d: 'M62 88 Q80 84 98 88 L100 124 Q80 128 60 124 Z' },
-    {
-      d: 'M44 134 L36 136 L38 129 L31 126 L37 121 L33 115 L40 114 L40 107 L46 110 L50 104 L52 112 L48 122 L44 134',
-    },
-    {
-      d: 'M44 -4 L56 46 M80 -4 V40 M116 -4 L104 46',
+      d: 'M50 -4 L60 34 M80 -4 V32 M110 -4 L100 34',
       role: 'ambient',
       dashed: true,
     },
     {
-      d: 'M8 186 l14 -8 M34 192 l14 -8 M110 192 l14 -8 M136 186 l14 -8 M-2 166 l12 -7 M150 164 l12 -7',
+      d: 'M8 192 l14 -8 M36 196 l14 -8 M110 196 l14 -8 M138 192 l14 -8 M-2 172 l12 -7 M150 170 l12 -7',
       role: 'ambient',
     },
   ],
@@ -148,25 +389,26 @@ export const fishManIslandArt = {
   // His fur coat, worn draped over the shoulders like a cape and hanging
   // open: dark outside, hatched, the front edges turned back on the spotted
   // lining, whose spots are in his colour, and the fur of the collar along
-  // the top. That is what he wears at Grove 46 (519). The flintlock he
-  // shoots with comes two episodes later.
+  // the top. Inside it hang the very long sleeves of his shirt, and across
+  // the hem lies the flintlock he shoots the Marine with. He wears the coat
+  // at Grove 46 from 519 and fires the gun at 521 (ch. 601), still in the
+  // Return to Sabaody arc. The stages are in `fishManIslandRedrawn`: the
+  // swamp at 523, the Udon prison at 919 and the coat back at 1088.
   'caribou': [
     { d: 'M58 42 C50 46 42 52 38 64 L22 178 Q40 184 58 180 L70 56' },
     { d: 'M102 42 C110 46 118 52 122 64 L138 178 Q120 184 102 180 L90 56' },
-    {
-      d: 'M56 44 c-4 -6 2 -12 7 -9 c1 -6 9 -7 11 -2 c3 -5 11 -5 12 0 c3 -5 11 -4 11 2 c6 -2 9 5 5 9 c-2 6 -40 8 -46 0 Z',
-      role: 'soft',
-    },
+    CARIBOU_COLLAR,
     { d: 'M70 56 L62 72 L50 180 M90 56 L98 72 L110 180', role: 'soft' },
     {
       d: 'M58 92 c2 -3 5 -2 4 1 M55 118 c2 -3 5 -2 4 1 M59 140 c2 -3 5 -2 4 1 M53 160 c2 -3 5 -2 4 1 M98 86 c2 -3 5 -2 4 1 M101 110 c2 -3 5 -2 4 1 M97 130 c2 -3 5 -2 4 1 M103 152 c2 -3 5 -2 4 1 M99 170 c2 -3 5 -2 4 1 M57 172 c2 -3 5 -2 4 1',
       role: 'accent',
     },
-    { d: 'M62 174 Q80 180 98 174', role: 'soft' },
+    CARIBOU_SLEEVES,
+    CARIBOU_HATCHING,
     {
-      d: 'M124 78 l8 -4 M126 100 l9 -4 M128 122 l9 -4 M130 146 l9 -4 M132 168 l8 -4 M28 150 l8 -4 M30 128 l8 -4',
-      role: 'ambient',
+      d: 'M36 176 C32 170 36 164 44 164 L54 165 L60 160 H124 V166 H64 L58 172 H52 C46 174 42 178 36 176 Z',
     },
+    { d: 'M56 172 C56 178 62 179 65 176 V172 M60 160 l-3 -6 h6', role: 'soft' },
     shadow(80, 190, 58),
   ],
   // His shovel stood upright with its blade in the ground: the grip, the long
@@ -187,27 +429,44 @@ export const fishManIslandArt = {
     shadow(80, 188, 44),
   ],
 
-  // A black fedora over a long black coat worn open on a striped undershirt,
-  // the coat's far side hatched, the band of the hat in his colour. That is
-  // all he wears at the gate; the net he fires comes a meeting later, and he
-  // never carries a harpoon.
+  // His black fedora set on the stock of his net rifle, which lies on the
+  // seabed: the stock at the left, the lock and trigger guard, the barrel
+  // widening to the bell of its muzzle, and the trawl net spilling out of
+  // it onto the sand in a heap of mesh. The band of the hat is in
+  // his colour, the dark crown and the stock hatched. He fires the net at
+  // Luffy at 528 (ch. 609), in the arc he opens in.
   'hammond': [
-    { d: 'M44 40 C48 33 112 33 116 40 C112 47 48 47 44 40 Z' },
-    { d: 'M56 38 C54 20 62 10 72 10 Q80 16 88 10 C98 10 106 20 104 38' },
-    { d: 'M56 31 Q80 37 104 31', role: 'accent' },
-    { d: 'M94 20 l6 -4 M96 28 l7 -4', role: 'ambient' },
-    { d: 'M64 50 L40 58 Q30 62 28 76 L20 134 H34 L40 94 L36 176 H52 L60 80' },
-    {
-      d: 'M96 50 L120 58 Q130 62 132 76 L140 134 H126 L120 94 L124 176 H108 L100 80',
-    },
-    { d: 'M64 50 L56 72 L60 80 M96 50 L104 72 L100 80', role: 'soft' },
-    { d: 'M68 52 L74 62 L72 152 H57 M92 52 L86 62 L88 152 H103' },
-    { d: 'M63 84 V150 M67.5 66 V150 M97 84 V150 M92.5 66 V150', role: 'soft' },
-    {
-      d: 'M110 92 l10 -6 M110 112 l11 -6 M111 132 l11 -6 M112 152 l11 -6 M128 108 l6 -4',
-      role: 'ambient',
-    },
-    shadow(80, 188, 44),
+    ...moved(
+      [
+        {
+          d: 'M14 166 C10 156 18 148 30 150 L56 154 L64 148 H108 L122 140 V172 L108 162 H64 L58 166 H44 C32 170 20 172 14 166 Z',
+        },
+        { d: 'M108 148 V162 M84 148 V162', role: 'soft' },
+        {
+          d: 'M58 166 C58 172 64 174 68 170 V162 M64 148 l-2 -6 l6 1',
+          role: 'soft',
+        },
+        { d: 'M22 162 l7 -5 M32 164 l7 -5 M44 164 l7 -5', role: 'ambient' },
+        {
+          d: 'M122 140 C140 138 154 150 158 168 C160 178 156 184 148 184 H118 C124 180 126 176 122 172',
+        },
+        {
+          d: 'M128 142 L152 180 M138 142 L157 166 M124 154 L142 184 M124 168 L146 142 M126 180 L153 152 M138 184 L158 162',
+          role: 'soft',
+        },
+      ],
+      'translate(80 184) scale(1.08) translate(-87 -184)',
+    ),
+    ...moved(
+      [
+        { d: 'M44 40 C48 33 112 33 116 40 C112 47 48 47 44 40 Z' },
+        { d: 'M56 38 C54 20 62 10 72 10 Q80 16 88 10 C98 10 106 20 104 38' },
+        { d: 'M56 31 Q80 37 104 31', role: 'accent' },
+        { d: 'M94 20 l6 -4 M96 28 l7 -4', role: 'ambient' },
+      ],
+      'translate(26 138) rotate(-8) scale(0.8) translate(-80 -40)',
+    ),
+    shadow(80, 186, 76),
   ],
 
   // Her crystal ball in her colour, the far side of the glass hatched and a
@@ -236,56 +495,22 @@ export const fishManIslandArt = {
   // from their yards in his colour, the mainmast built up like a clock
   // tower, a high stern and ragged holes in the hull. No flag, no name and
   // no figurehead. It looms out of the dark at 525, with its captain still a
-  // shadow on deck.
+  // shadow on deck. The mast cut by his own axe is a stage at 532, in
+  // `fishManIslandRedrawn`.
   'vander-decken-ix': [
-    {
-      d: 'M12 116 L118 116 L120 100 H146 L148 116 C144 140 124 150 100 150 H40 C26 150 16 136 12 116 Z',
-    },
-    { d: 'M18 128 H144 M26 140 H134 M120 108 H146', role: 'soft' },
-    { d: 'M12 116 L-2 106' },
-    {
-      d: 'M44 124 l5 -3 l3 6 l-6 3 Z M88 132 l7 -2 l2 7 l-5 3 l-4 -3 Z M126 122 l4 -2 l3 5 l-5 2 Z',
-      role: 'ambient',
-    },
+    ...DUTCHMAN_HULL,
     { d: 'M70 116 V40 M78 116 V40 M66 40 H82 V24 H66 Z M64 24 L74 8 L84 24' },
     { d: 'M66 32 H82', role: 'soft' },
-    { d: 'M34 116 V42 M114 100 V54' },
-    {
-      d: 'M18 48 H52 V80 L48 76 L44 84 L38 78 L32 86 L28 78 L22 82 L18 76 Z M84 58 H140 V92 L134 86 L128 94 L122 86 L116 92 L108 86 L102 94 L96 86 L90 92 L84 88 Z',
-      role: 'accent',
-    },
-    { d: 'M40 58 l6 6 M26 62 l3 4 M126 68 l-5 6 M100 66 l4 4', role: 'soft' },
-    { d: 'M16 48 H54 M82 58 H142', role: 'soft' },
+    ...DUTCHMAN_RIG,
     ...SEA,
   ],
 
-  // His pink newsboy cap in 3/4, the soft crown puffed out over the band,
-  // its panels meeting at the button, the far side of the crown and of the
-  // band hatched, and the short visor out front with its underside hatched.
-  // He wears it from 530 (ch. 611). The cap's small trident mark is left
-  // out: he is first seen with the trident at 535 (ch. 616), in
-  // `fishManIslandRedrawn`.
-  'hody-jones': [
-    {
-      d: 'M44 126 C26 124 10 112 12 98 C16 72 54 52 94 54 C134 56 160 74 156 98 C154 112 140 120 124 122',
-      role: 'accent',
-    },
-    { d: 'M44 126 C68 134 102 132 124 122' },
-    { d: 'M46 136 C70 144 104 142 126 132 V122 M46 136 V126' },
-    { d: 'M46 134 C26 138 14 150 22 160 C32 170 70 166 90 146' },
-    { d: 'M26 154 C40 156 60 152 76 146', role: 'soft' },
-    { d: 'M32 162 l8 -6 M44 164 l9 -7 M58 162 l9 -7', role: 'ambient' },
-    {
-      d: 'M90 54 C76 72 68 98 70 132 M90 54 C110 70 120 94 120 126 M90 54 C58 64 34 84 30 112 M86 53 h8',
-      role: 'soft',
-    },
-    {
-      d: 'M134 70 l8 -5 M142 84 l9 -5 M142 100 l9 -5 M132 112 l9 -5',
-      role: 'ambient',
-    },
-    { d: 'M110 136 l6 -4 M117 133 l6 -4', role: 'ambient' },
-    shadow(84, 178, 62),
-  ],
+  // His pink newsboy cap in 3/4 with the small trident on its left side,
+  // which the cap wears from his first scene at 530 (ch. 611). The stages
+  // are in `fishManIslandRedrawn`: the real trident beside the cap at 535
+  // (ch. 616), the trident alone once the cap is gone at 551 (ch. 631), and
+  // the rifle he shot Otohime with at 552 (ch. 632).
+  'hody-jones': [...HODY_CAP, shadow(84, 178, 62)],
 
   // Noah looming over the district, the enormous ark in the district's
   // colour with its round curled figurehead, the dip in its rail, the bridge
@@ -435,36 +660,16 @@ export const fishManIslandArt = {
     shadow(80, 180, 54),
   ],
 
-  // Her hairgrip, a taiyaki filled with red bean paste, set down on the sill
-  // of her tower window: the cake's crust in short staggered lines, its edge
-  // showing the cake is thick, the pin beside it, the far side of the window
-  // hatched. No eye on the fish.
+  // Her hairgrip, a taiyaki filled with red bean paste, caught in a long
+  // lock of her pink hair that falls across the great arched window of her
+  // tower: a grip that size in front of that window can only be a giant's.
+  // She is first seen at the window at 531. The stage at 569, in
+  // `fishManIslandRedrawn`, brings the Sea Kings round the tower.
   'shirahoshi': [
-    { d: 'M30 150 V70 C30 20 130 20 130 70 V150' },
-    { d: 'M40 128 V72 C40 34 120 34 120 72 V110', role: 'soft' },
-    { d: 'M80 108 V30 M40 80 H120', role: 'soft' },
-    { d: 'M120 64 l10 -6 M120 82 l10 -6 M120 100 l10 -6', role: 'ambient' },
-    { d: 'M18 158 L28 150 H132 L142 158 Z' },
-    { d: 'M18 158 V170 H142 V158' },
-    {
-      d: 'M40 132 C40 116 58 108 80 109 C94 110 104 116 108 122 L126 110 C122 122 122 134 126 146 L108 138 C104 146 92 154 80 154 C58 154 40 148 40 132 Z',
-      role: 'accent',
-    },
-    { d: 'M62 110 L72 100 L86 110', role: 'accent' },
-    {
-      d: 'M44 142 C48 152 62 158 80 158 C94 158 104 152 108 146',
-      role: 'soft',
-    },
-    {
-      d: 'M54 116 C48 126 48 140 54 150 M110 130 L120 122 M110 134 L120 140',
-      role: 'soft',
-    },
-    {
-      d: 'M66 117 l7 7 M86 115 l7 7 M56 129 l7 7 M96 128 l6 6 M68 141 l7 7 M86 141 l7 7',
-      role: 'soft',
-    },
-    { d: 'M42 148 H18 Q14 151 18 154 H40' },
-    shadow(80, 186, 60),
+    ...SHIRAHOSHI_WINDOW,
+    ...SHIRAHOSHI_LOCK,
+    ...SHIRAHOSHI_GRIP,
+    shadow(80, 186, 66),
   ],
   // The one sword he is first seen with, a katana with no guard in a sheath
   // covered in long spots, and the gourd he drinks from leaning beside it,
@@ -701,44 +906,18 @@ export const fishManIslandArt = {
 
   // His black high-heeled boots, one standing behind the other, the white
   // ruffles round their tops in his colour and the dark leather hatched on
-  // the side that turns away. He wears them under the pink suit at 571. The
-  // shell he hides in comes the next episode, in `fishManIslandRedrawn`, and
-  // the dark glasses are left out.
-  'pekoms': [
-    ...PEKOMS_BOOT.map((stroke) => ({
-      // The boot standing behind.
-      ...stroke,
-      transform: 'translate(42 -10)',
-    })),
-    ...PEKOMS_BOOT,
-    shadow(86, 186, 58),
-  ],
+  // the side that turns away, and the sword he wears on his right hip
+  // leaning against them. Both are on him at 571, under the pink suit; the
+  // dark glasses are left out. The stages are in `fishManIslandRedrawn`: the
+  // turtle shell at 572, Bege's cliff at 795, the shore at 824, the Nazoms
+  // mask at 871 and the Sulong mane at 872.
+  'pekoms': [...PEKOMS_BOOTS, ...PEKOMS_SWORD, shadow(86, 186, 58)],
   // The cup of hot tea he wears on his head, on its saucer, steam rising off
   // it, and his long wooden cane with its crook beside it. The cup, not a
-  // top hat, is what he wears from his first scene.
-  'baron-tamago': [
-    {
-      d: 'M24 160 A44 10 0 0 0 112 160 M24 160 A44 10 0 0 1 48 151.1 M88 151.1 A44 10 0 0 1 112 160',
-    },
-    { d: 'M26 164 C40 176 96 176 110 164', role: 'soft' },
-    { d: ellipse(68, 112, 28, 8), role: 'accent' },
-    {
-      d: 'M40 112 C40 140 52 156 68 156 C84 156 96 140 96 112',
-      role: 'accent',
-    },
-    { d: 'M46 114 Q68 122 90 114', role: 'soft' },
-    { d: 'M96 120 C110 116 114 136 92 142' },
-    { d: 'M86 122 l6 -3 M86 134 l6 -3 M80 146 l6 -3', role: 'ambient' },
-    {
-      d: 'M56 96 c-6 -8 6 -14 0 -24 M70 94 c-6 -10 6 -16 0 -30 M84 96 c-6 -8 6 -14 0 -24',
-      role: 'ambient',
-    },
-    {
-      d: 'M128 188 V56 C128 38 108 38 108 52 M134 188 V56 C134 32 102 32 102 52 M102 52 h6',
-    },
-    { d: 'M128 182 h6', role: 'soft' },
-    shadow(84, 192, 58),
-  ],
+  // top hat, is what he wears from his first scene. The stages are in
+  // `fishManIslandRedrawn`: the shell broken open on a chick's wing at 820
+  // and the rooster's comb and tail at 822.
+  'baron-tamago': [...TAMAGO_CUP, ...TAMAGO_CANE, shadow(84, 192, 58)],
   // His frayed straw hat in 3/4, the striped band in his colour, the crown's
   // far side hatched and straw sticking out of the brim, and the flintlock
   // he shoots with lying under it. Both are on him from his first scene at
@@ -842,15 +1021,30 @@ export const fishManIslandArt = {
     { d: 'M-4 178 C40 170 120 172 164 180', role: 'ambient', dashed: true },
   ],
 
-  // A great bubble floating between the walls of a trench, clouds inside it
-  // and light falling on it from above.
+  // The island in its double-layered bubble, two outlines one inside the
+  // other, floating above the trench floor between the trench walls: the
+  // reef and its coral spires fill the lower half, and on top sits the
+  // smaller bubble of the Ryugu Palace in its colour, its towers inside,
+  // with the light falling on it from above. The crew sail in at 526 (ch.
+  // 607); the palace is reached at 531 (ch. 612), in the same arc.
   'fish-man-island': [
-    { d: circle(80, 92, 46), role: 'accent' },
-    { d: 'M52 76 q6 -18 26 -24', role: 'accent' },
-    { d: 'M54 100 q6 -10 16 -6 q8 -10 18 0 q10 -4 14 6', role: 'soft' },
-    { d: 'M70 120 q6 -8 14 -4 q8 -6 14 2', role: 'soft' },
+    { d: circle(80, 112, 50) },
+    { d: circle(80, 112, 44), role: 'soft' },
+    { d: circle(80, 50, 13), role: 'accent' },
     {
-      d: 'M56 6 L68 36 M80 2 V34 M104 6 L92 36',
+      d: 'M74 58 V48 l2 -4 l2 4 V58 M82 58 V46 l2 -4 l2 4 V58 M70 58 H90',
+      role: 'soft',
+    },
+    {
+      d: 'M40 120 C52 114 64 122 80 118 C96 114 108 122 120 118',
+      role: 'soft',
+    },
+    {
+      d: 'M44 140 C50 130 58 132 62 140 M56 132 V114 l3 -6 l3 6 V134 M78 146 V108 l3 -8 l3 8 V146 M98 140 V118 l3 -6 l3 6 V138 M98 140 C106 132 114 134 118 142',
+    },
+    { d: 'M46 104 q4 -24 26 -34', role: 'soft' },
+    {
+      d: 'M60 4 L70 34 M80 0 V32 M100 4 L90 34',
       role: 'ambient',
       dashed: true,
     },
@@ -860,14 +1054,7 @@ export const fishManIslandArt = {
       role: 'ambient',
     },
     { d: 'M30 190 C60 180 100 180 130 190', role: 'ambient' },
-    {
-      d: dots([
-        [80, 150],
-        [76, 162],
-        [82, 174],
-      ]),
-      role: 'soft',
-    },
+    shadow(80, 178, 40),
   ],
   // A black shark side on with a white belly, the sleeveless shirt he wears
   // in his colour round his middle with a fin through the armhole, the dark
@@ -987,9 +1174,6 @@ export const fishManIslandArt = {
   ],
 } satisfies Drawings
 
-/** Hody's cap as his first drawing has it, without its shadow. */
-const HODY_CAP = fishManIslandArt['hody-jones'].slice(0, -1)
-
 /**
  * The head of Hody's trident upright on x 80: the outer prongs, each a thin
  * pole with a plain point, and the one curved base they rise out of. No
@@ -1007,6 +1191,29 @@ const HODY_TRIDENT_POLE: Stroke[] = [
   { d: 'M78 186 V24 L80 14 L82 24 V186' },
   { d: 'M77 186 h6 v4 h-6 Z' },
   { d: 'M78 68 h4 M78 72 h4', role: 'soft' },
+]
+
+/** How Hody's trident leans on its butt once the cap is gone. */
+const HODY_LEANING = 'rotate(8 80 188)'
+/** The floor his trident leans on. */
+const HODY_FLOOR: Stroke = { d: 'M30 190 H130', role: 'ambient', dashed: true }
+
+/**
+ * The rifle Hody shot Otohime with, lying on the floor at the trident's
+ * butt: the stock to the left, the lock and trigger guard, the long barrel,
+ * and the smoke still curling off the muzzle in his colour.
+ */
+const HODY_RIFLE: Stroke[] = [
+  {
+    d: 'M12 186 C8 178 14 168 26 170 L54 175 L62 168 H128 V176 H66 L58 182 H48 C34 184 22 190 12 186 Z',
+  },
+  { d: 'M52 182 C52 189 60 191 65 187 V182 M62 168 l-3 -7 h7', role: 'soft' },
+  { d: 'M88 168 v8 M110 168 v8', role: 'soft' },
+  { d: 'M20 180 l7 -5 M30 181 l7 -5', role: 'ambient' },
+  {
+    d: 'M134 168 C144 160 132 150 142 140 C152 130 138 122 148 108 M140 172 C148 168 152 160 150 152',
+    role: 'accent',
+  },
 ]
 
 /** Shyarly's shark tail behind, drawn a little smaller to make room. */
@@ -1033,7 +1240,7 @@ const PEKOMS_SHELL: Stroke[] = [
 
 /** Pekoms's two boots as his first drawing stands them, smaller, beside the shell. */
 const PEKOMS_SMALL_BOOTS = moved(
-  fishManIslandArt.pekoms.slice(0, -1),
+  PEKOMS_BOOTS,
   'translate(104 120) scale(0.56) translate(-38 -58)',
 )
 
@@ -1073,9 +1280,24 @@ export const fishManIslandRedrawn: Redrawings = {
             { ...HODY_PRONG_BASE, role: 'accent' },
             ...HODY_TRIDENT_POLE,
           ],
-          'rotate(8 80 188)',
+          HODY_LEANING,
         ),
-        { d: 'M30 190 H130', role: 'ambient', dashed: true },
+        HODY_FLOOR,
+      ],
+    },
+    // The same trident with its prongs plain, and lying at its butt the
+    // rifle he shot Otohime with, smoke curling off the muzzle. He tells the
+    // whole plaza that he was the one who killed her at 552 (ch. 632).
+    {
+      episode: 552,
+      chapter: 632,
+      value: [
+        ...moved(
+          [HODY_PRONGS, HODY_PRONG_BASE, ...HODY_TRIDENT_POLE],
+          HODY_LEANING,
+        ),
+        HODY_FLOOR,
+        ...HODY_RIFLE,
       ],
     },
   ],
@@ -1164,6 +1386,183 @@ export const fishManIslandRedrawn: Redrawings = {
         { d: 'M92 160 C82 156 74 162 76 170 C78 177 86 179 92 175' },
         { d: 'M-4 182 H164', role: 'ambient', dashed: true },
         { d: wave(194), role: 'ambient' },
+      ],
+    },
+    // The boots smaller, and set on them the luchador mask he hides under
+    // as "Nazoms", dark and hatched, two small horns on top and the star
+    // between them in his colour. No eye holes. He helps Luffy reach Cacao
+    // Island in it at 871 (ch. 896).
+    {
+      episode: 871,
+      chapter: 896,
+      value: [
+        ...PEKOMS_LOW_BOOTS,
+        {
+          d: 'M52 102 C46 72 56 34 86 32 C116 34 126 72 120 102 C110 96 100 106 92 100 C82 106 72 96 62 104 C58 100 55 100 52 102 Z',
+        },
+        {
+          d: 'M76 48 C74 42 75 38 78 34 C80 40 82 44 82 48 M96 48 C96 44 98 40 100 34 C103 38 104 42 102 48',
+        },
+        { d: star(89, 62, 10, 4.5), role: 'accent' },
+        {
+          d: 'M60 56 C70 52 80 52 86 54 M118 70 C108 74 98 74 92 72',
+          role: 'soft',
+        },
+        { d: 'M106 52 l9 -5 M110 68 l9 -5 M110 84 l8 -5', role: 'ambient' },
+        shadow(88, 188, 46),
+      ],
+    },
+    // The boots as before, and his mane grown huge out over them, curl on
+    // curl, under the full moon in his colour. He turns Sulong on Cacao
+    // Island at 872 (ch. 897), and the story leaves him there.
+    {
+      episode: 872,
+      chapter: 897,
+      value: [
+        ...PEKOMS_LOW_BOOTS,
+        {
+          d: 'M35.3 137.2 Q22.5 125 18.4 126.7 L32.1 119.3 Q23 103.2 18.8 103.7 L33.6 101.2 Q28.9 82.5 25 81.8 L39.6 84.3 Q39.8 64.8 36.5 62.8 L49.7 70.1 Q54.7 51.4 52.3 48.4 L62.9 60 Q72.3 43.7 71 39.9 L78.1 54.7 Q91.1 42.2 91 38 L93.9 54.7 Q109.5 47.2 110.6 42.8 L109.1 60 Q125.8 58 128 54 L122.3 70.1 Q138.7 73.9 141.8 70.5 L132.4 84.3 Q147 93.5 150.8 91 L138.4 101.2 Q150 115 154.2 113.7 L139.9 119.3 Q147.5 136.5 151.6 136.5 L136.7 137.2',
+        },
+        {
+          d: 'M51.2 105.1 L37.7 101.5 M60.5 86.3 L50.6 76.4 M76.7 75.4 L73.1 61.9 M95.3 75.4 L98.9 61.9 M111.5 86.3 L121.4 76.4 M120.8 105.1 L134.3 101.5',
+          role: 'soft',
+        },
+        { d: circle(24, 22, 12), role: 'accent' },
+        shadow(88, 188, 46),
+      ],
+    },
+  ],
+  // The shell broken open and, rising out of it, the stubby feathered wing
+  // of a chick in his colour: Viscount Hiyoko. Pedro breaks the egg and he
+  // comes out of it at 820 (ch. 853).
+  'baron-tamago': [
+    {
+      episode: 820,
+      chapter: 853,
+      value: [
+        ...TAMAGO_SHELL,
+        {
+          d: 'M66 132 C66 114 78 100 96 96 C110 93 122 96 128 104 C121 106 118 110 120 116 C113 115 109 119 111 125 C104 124 99 128 100 134',
+          role: 'accent',
+        },
+        {
+          d: 'M80 116 C90 108 102 106 114 108 M84 126 C92 120 100 118 106 120',
+          role: 'soft',
+        },
+      ],
+    },
+    // The same shell, and out of it now a rooster's comb and the long
+    // sickle feathers of its tail in his colour: Count Niwatori. He sits in
+    // on Big Mom's meeting like that at 822 (ch. 854).
+    {
+      episode: 822,
+      chapter: 854,
+      value: [
+        ...TAMAGO_SHELL,
+        {
+          d: 'M66 128 C64 114 70 106 76 110 C76 100 84 96 88 104 C92 96 100 98 98 108 C104 106 108 114 102 128 M108 128 C112 96 128 72 152 66 M110 132 C118 104 136 88 156 88 M112 134 C124 114 140 106 154 108',
+          role: 'accent',
+        },
+      ],
+    },
+  ],
+  // The clock-tower mast cut through low down, the rest of it toppling off
+  // to the right, and the axe he threw at the palace stuck in the stump, the rose on its blade in his colour; the torn sails are plain
+  // now. The axe doubles back and chops his own mast at 532 (ch. 613, below
+  // his record's chapter, so pinned at 615 with his record).
+  'vander-decken-ix': [
+    {
+      episode: 532,
+      chapter: 615,
+      value: [
+        ...DUTCHMAN_HULL,
+        { d: 'M70 116 V100 L73 95 L75 101 L78 96 V116' },
+        ...moved(
+          [
+            {
+              d: 'M70 98 V40 M78 98 V40 M66 40 H82 V24 H66 Z M64 24 L74 8 L84 24',
+            },
+            { d: 'M66 32 H82', role: 'soft' },
+          ],
+          'translate(6 -4) rotate(22 78 98)',
+        ),
+        { d: 'M50 104 H16 M50 109 H16' },
+        {
+          d: 'M70 92 C58 88 46 94 44 106 C44 116 52 120 56 120 C54 114 56 110 62 110 H70 Z',
+        },
+        {
+          d: 'M55 104 c2 -2 5 0 4 3 c-1 4 -7 4 -8 0 c-1 -5 5 -9 10 -6 c4 3 4 9 0 12',
+          role: 'accent',
+        },
+        ...softened(DUTCHMAN_RIG),
+        ...SEA,
+      ],
+    },
+  ],
+  // His coat sinking into a swamp of his own: the hem runs into a mud pool
+  // and bubbles rise off it in his colour. He smothers the fake Straw Hats
+  // in it at 523 (ch. 603).
+  'caribou': [
+    { episode: 523, chapter: 603, value: CARIBOU_SWAMP },
+    // No coat in the Udon mine: his long-sleeved shirt with the cross on its
+    // chest, the empty sleeves brought together at the front like a
+    // straitjacket's and shut in handcuffs, the cuffs in his colour. He is a
+    // prisoner there from 919 (ch. 926).
+    {
+      episode: 919,
+      chapter: 926,
+      value: [
+        {
+          d: 'M56 40 C66 46 94 46 104 40 L124 52 C130 72 132 100 128 128 L112 122 L110 150 H50 L48 122 L32 128 C28 100 30 72 36 52 Z',
+        },
+        { d: 'M66 44 L80 58 L94 44', role: 'soft' },
+        { d: 'M76 74 h8 v6 h6 v8 h-6 v12 h-8 v-12 h-6 v-8 h6 Z', role: 'soft' },
+        {
+          d: 'M32 128 C38 146 52 160 72 166 M48 122 C52 138 62 150 74 156 M128 128 C122 146 108 160 88 166 M112 122 C108 138 98 150 86 156',
+        },
+        {
+          d: `${circle(70, 162, 9)} ${circle(90, 162, 9)} M79 162 h2`,
+          role: 'accent',
+        },
+        {
+          d: 'M116 60 l8 -4 M120 80 l8 -4 M120 100 l8 -4 M114 136 l8 -4',
+          role: 'ambient',
+        },
+        shadow(80, 186, 46),
+      ],
+    },
+    // The coat again, sinking into the swamp as before. He rides off Wano
+    // on the Sunny in it, found in a barrel at 1088 (ch. 1060). Inferred,
+    // not viewed: frame-check the outfit. A return to the coat reveals
+    // nothing.
+    { episode: 1088, chapter: 1060, value: CARIBOU_SWAMP },
+  ],
+  // Her window and hairgrip smaller, the grip plain now, and round the foot
+  // of the tower the arched backs of Sea Kings breaking the water, their
+  // spined ridges in her colour. Robin tells Neptune that she is Poseidon,
+  // the ancient weapon that commands the Sea Kings, at 569 (ch. 649).
+  'shirahoshi': [
+    {
+      episode: 569,
+      chapter: 649,
+      value: [
+        ...moved(
+          [
+            ...SHIRAHOSHI_WINDOW,
+            ...SHIRAHOSHI_LOCK,
+            ...softened(SHIRAHOSHI_GRIP),
+          ],
+          'translate(80 18) scale(0.7) translate(-80 0)',
+        ),
+        {
+          d: 'M4 178 C8 150 34 146 42 176 M10 160 l2 -7 l4 5 M20 152 l3 -7 l3 6 M30 152 l4 -6 l1 7 M118 176 C124 146 152 148 158 176 M126 156 l1 -7 l4 6 M136 150 l3 -7 l3 7 M147 154 l4 -6 l1 7 M58 172 C62 158 76 158 80 172 M66 162 l2 -6 l3 5 M100 172 C104 160 116 160 118 172',
+          role: 'accent',
+        },
+        {
+          d: 'M-4 172 H44 M56 172 H82 M98 172 H120 M154 172 H164',
+          role: 'ambient',
+        },
+        { d: wave(186), role: 'ambient' },
       ],
     },
   ],
