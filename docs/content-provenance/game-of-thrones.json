@@ -1097,7 +1097,7 @@
       "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
     ],
     "unverified": [
-      "Italian \"Forca Verde\" for the Green Fork is assumed, not confirmed."
+      "Italian \"Forca Verde\" for the Green Fork is on Italian Wikipedia's places page; this text no longer names the river (#1252)."
     ]
   },
   "great-sept-of-baelor": {
@@ -2574,7 +2574,7 @@
     "unverified": [
       "Show gate: Janos Slynt's report in episode 4 (Fandom ref GOT104); not viewed. The show's crowd scene at the Sept goes unnamed.",
       "Book gate: Catelyn IV, \"The Street of the Sisters ran between them\"; Arya V is set there; checked against the text.",
-      "Italian: \"Via delle Sorelle\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
+      "Italian: \"Strada delle Sorelle\" takes the \"Strada\" Italian Wikipedia gives every named road; its pages do not name this street, and the dub form is unconfirmed (owner, #1252)."
     ]
   },
   "street-of-steel": {
@@ -2587,7 +2587,7 @@
     "unverified": [
       "Show gate: Littlefinger's line in episode 4 (Fandom ref GOT104); not viewed.",
       "Book gate: Eddard VI, \"at the top of the Street of Steel\"; checked against the text.",
-      "Italian: \"Via dell'Acciaio\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252).",
+      "Italian: \"Strada dell'Acciaio\" as Italian Wikipedia's Personaggi and Casa Baratheon pages write it; the places page does not name it (owner, #1252).",
       "filedHere: Tobho Mott and Gendry, first met in Tobho Mott's shop; Gendry moves here from King's Landing (owner, #1252)."
     ]
   },
@@ -2617,7 +2617,8 @@
     "sources": [
       "https://gameofthrones.fandom.com/wiki/Gates_of_the_Moon",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://it.wikipedia.org/wiki/Casa_Arryn"
     ],
     "unverified": [
       "Book only: the show names it only later. Episode 5, the arrival at the Eyrie, orders the record (owner, #1252).",
@@ -2654,7 +2655,7 @@
     "unverified": [
       "Book only: the show fights the battle in episode 9 and names the wood only in season 2; episode 9 orders the record (owner, #1252).",
       "Book gate: Catelyn X, the battle in the whispering wood; checked against the text.",
-      "Italian: \"Bosco dei Sussurri\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1252)."
+      "Italian: \"Bosco dei Sussurri\" as Italian Wikipedia's Personaggi and Casa Lannister pages write it (\"Battaglia del Bosco dei Sussurri\"); the places page does not name it (owner, #1252)."
     ]
   }
 }

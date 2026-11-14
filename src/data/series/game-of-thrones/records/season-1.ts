@@ -2918,7 +2918,7 @@ export const season1: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 4,
       revealedAtChapter: 19,
-      name: { it: 'Via delle Sorelle', en: 'the Street of the Sisters' },
+      name: { it: 'Strada delle Sorelle', en: 'the Street of the Sisters' },
       summary: {
         it: 'Una delle strade principali di Approdo del Re.',
         en: 'One of the main streets of King’s Landing.',
@@ -2933,7 +2933,7 @@ export const season1: ThronesSaga = {
       kind: 'place',
       revealedAtEpisode: 4,
       revealedAtChapter: 28,
-      name: { it: 'Via dell’Acciaio', en: 'the Street of Steel' },
+      name: { it: 'Strada dell’Acciaio', en: 'the Street of Steel' },
       summary: {
         it: 'Una strada di fabbri e armaioli ad Approdo del Re.',
         en: 'A street of smiths and armourers in King’s Landing.',

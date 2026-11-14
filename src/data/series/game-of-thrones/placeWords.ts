@@ -44,7 +44,7 @@ export const GAME_OF_THRONES_PLACE_WORDS: PlaceWords<ThronesVocabulary> = {
     'river': { en: 'River', it: 'Fiume' },
     'ruin': { en: 'Ruin', it: 'Rovine' },
     'sept': { en: 'Sept', it: 'Tempio' },
-    'street': { en: 'Street', it: 'Via' },
+    'street': { en: 'Street', it: 'Strada' },
     'town': { en: 'Town', it: 'Borgo' },
   },
 }

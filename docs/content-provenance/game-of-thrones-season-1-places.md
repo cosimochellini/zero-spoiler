@@ -205,7 +205,8 @@ under its key in `game-of-thrones.json`.
 
 ### `the-twins`
 
-- Italian "Forca Verde" for the Green Fork is assumed, not confirmed.
+- Italian "Forca Verde" for the Green Fork is on Italian Wikipedia's places
+  page; this text no longer names the river (#1252).
 
 ### `great-sept-of-baelor`
 

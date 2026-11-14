@@ -105,10 +105,13 @@ export const PLACE_NAMES_KEPT = {
   'green-fork': 'Forca Verde',
   'western-market': 'Mercato Occidentale',
   'womb-of-the-world': 'Grembo del Mondo',
-  // Not on the page: the books' Italian forms, the dub's unconfirmed (owner,
-  // #1252).
-  'street-of-steel': 'Via dell’Acciaio',
-  'street-of-the-sisters': 'Via delle Sorelle',
+  // Not on the places page: the Street of Steel is "strada dell'Acciaio" in
+  // Italian Wikipedia's character and House Baratheon pages. The Street of the
+  // Sisters is not named there; it takes the same "Strada" the page gives every
+  // named road (owner, #1252).
+  'street-of-steel': 'Strada dell’Acciaio',
+  'street-of-the-sisters': 'Strada delle Sorelle',
+  // The books' Italian form, the dub's unconfirmed (owner, #1252).
   // Named as "Porte della Luna" in the prose of Italian Wikipedia's pages on
   // the characters and on House Arryn, not on the places page.
   'gates-of-the-moon': 'Porte della Luna',
