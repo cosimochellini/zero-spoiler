@@ -5218,7 +5218,10 @@ export const season1: ThronesSaga = {
         it: 'Combatte al fianco del fratello Tywin nell’esercito Lannister. È con lui quando Tyrion raggiunge l’esercito con i clan delle Montagne della Luna.',
         en: 'He fights beside his brother Tywin in the Lannister army. He is with him when Tyrion reaches the army with the clans of the Mountains of the Moon.',
       },
-      status: [{ episode: 8, chapter: 57, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 57, value: 'alive' },
+        { episode: 60, chapter: 344, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -5272,7 +5275,10 @@ export const season1: ThronesSaga = {
         it: 'È accanto al padre alle Torri Gemelle quando Catelyn Stark viene a trattare il passaggio del fiume per l’esercito di Robb.',
         en: 'He is at his father’s side at the Twins when Catelyn Stark comes to bargain for Robb’s army to cross the river.',
       },
-      status: [{ episode: 9, chapter: 60, value: 'alive' }],
+      status: [
+        { episode: 9, chapter: 60, value: 'alive' },
+        { episode: 14, chapter: 109, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 9,
@@ -5307,7 +5313,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 23, chapter: 72, source: 'chapter', value: 'alive' },
-        { episode: 23, chapter: 72, source: 'episode', value: 'deceased' },
+        // Dead on screen when his record opens; the book's death is Catelyn IV
+        // of A Storm of Swords (#1242).
+        { episode: 23, chapter: 179, value: 'deceased' },
       ],
       affiliation: [
         {
@@ -5368,7 +5376,10 @@ export const season1: ThronesSaga = {
         it: 'Viaggia verso la Barriera con le reclute di Yoren. Lui e Frittella prendono in giro Arya, che si fa passare per un ragazzo.',
         en: 'He travels to the Wall with Yoren’s recruits. He and Hot Pie mock Arya, who is passing as a boy.',
       },
-      status: [{ episode: 10, chapter: 75, value: 'alive' }],
+      status: [
+        { episode: 10, chapter: 75, value: 'alive' },
+        { episode: 13, chapter: 93, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 10,
@@ -5404,7 +5415,10 @@ export const season1: ThronesSaga = {
         it: 'Viaggia verso nord in catene con altri due prigionieri, destinati ai Guardiani della notte. Minaccia Arya dalla gabbia.',
         en: 'He travels north in chains with two other prisoners, bound for the Night’s Watch. He threatens Arya from the cage.',
       },
-      status: [{ episode: 12, chapter: 79, value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 79, value: 'alive' },
+        { episode: 37, chapter: 263, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
@@ -5422,7 +5436,10 @@ export const season1: ThronesSaga = {
         it: 'Viaggia verso nord in catene con altri due prigionieri, destinati ai Guardiani della notte. Non parla, e sibila contro chi si avvicina alla gabbia.',
         en: 'He travels north in chains with two other prisoners, bound for the Night’s Watch. He does not speak, and hisses at anyone who comes near the cage.',
       },
-      status: [{ episode: 12, chapter: 79, value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 79, value: 'alive' },
+        { episode: 37, chapter: 268, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,

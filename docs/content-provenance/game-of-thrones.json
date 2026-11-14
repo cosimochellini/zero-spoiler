@@ -2025,9 +2025,14 @@
       "https://awoiaf.westeros.org/index.php/Kevan_Lannister",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_56",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister"
+      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister",
+      "https://awoiaf.westeros.org/index.php/A_Dance_with_Dragons-Epilogue",
+      "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter"
     ],
-    "unverified": ["Show: only mentioned (by Joffrey) in ep 3, off screen."]
+    "unverified": [
+      "Show: only mentioned (by Joffrey) in ep 3, off screen.",
+      "Death (#1242): the wildfire under the Great Sept in episode 60 (Fandom ref GOT610) and a crossbow bolt in the epilogue of A Dance with Dragons (site chapter 344); episode not viewed."
+    ]
   },
   "addam-marbrand": {
     "sources": [
@@ -2052,7 +2057,11 @@
       "https://awoiaf.westeros.org/index.php/Stevron_Frey",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_59",
       "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Stevron_Frey"
+      "https://gameofthrones.fandom.com/wiki/Stevron_Frey",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_35"
+    ],
+    "unverified": [
+      "Death (#1242): told in Bran V of A Clash of Kings (site chapter 109); the show never tells it, so the stage is the book's alone, ordered by episode 14 (owner)."
     ]
   },
   "edmure-tully": {
@@ -2069,10 +2078,12 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/Hoster_Tully",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/Hoster_Tully"
+      "https://gameofthrones.fandom.com/wiki/Hoster_Tully",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_35"
     ],
     "unverified": [
-      "Media differ at the gate: alive and ailing in the book, already dead in the show; factsAtGate avoids both."
+      "Media differ at the gate: alive and ailing in the book, already dead in the show; factsAtGate avoids both.",
+      "Book death (#1242): Catelyn IV of A Storm of Swords (site chapter 179), the book's alone; the show's death is his status at his threshold."
     ]
   },
   "brynden-tully": {
@@ -2103,7 +2114,12 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://gameofthrones.fandom.com/wiki/Lommy",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_19",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die"
+    ],
+    "unverified": [
+      "Death (#1242): Polliver kills him in episode 13 (Fandom ref GOT203) and Raff the Sweetling in Arya V of A Clash of Kings (site chapter 93); episode not viewed, chapter checked against the text."
     ]
   },
   "jaqen-hghar": {
@@ -2124,11 +2140,14 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Rorge"
+      "https://gameofthrones.fandom.com/wiki/Rorge",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_37",
+      "https://gameofthrones.fandom.com/wiki/Mockingbird"
     ],
     "unverified": [
       "Show: in S2E2 Jaqen does not introduce his cage-mates on screen as he does in the book; the name may not be spoken until later (S4). 12 rests on Fandom's account.",
-      "Book: his page cites ACOK 1 for the cut-off nose (description only)."
+      "Book: his page cites ACOK 1 for the cut-off nose (description only).",
+      "Death (#1242): Arya kills him in episode 37 (Fandom ref GOT407) and Brienne in Brienne VII of A Feast for Crows (site chapter 263); episode not viewed."
     ]
   },
   "biter": {
@@ -2137,10 +2156,13 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Biter"
+      "https://gameofthrones.fandom.com/wiki/Biter",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_42",
+      "https://gameofthrones.fandom.com/wiki/Mockingbird"
     ],
     "unverified": [
-      "Show: the name may never be spoken in S2E2 (he is mute and nobody introduces him on screen); 12 rests on Fandom's account."
+      "Show: the name may never be spoken in S2E2 (he is mute and nobody introduces him on screen); 12 rests on Fandom's account.",
+      "Death (#1242): the Hound kills him in episode 37 (Fandom ref GOT407); in the book he dies at the end of Brienne VII and Brienne VIII (site chapter 268) tells it, the stage's pin (owner); episode not viewed."
     ]
   },
   "will": {
