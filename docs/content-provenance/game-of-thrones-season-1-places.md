@@ -331,3 +331,25 @@ against the text: each city's own name is in the chapter, not only a demonym.
 
 - The Shadow Lands: a land inside Essos, which is already the region; a land is
   not a place record (owner, #1251).
+
+### Filed (#1250)
+
+| Place         | Episode | Chapter | Note                                      |
+| ------------- | ------- | ------- | ----------------------------------------- |
+| `narrow-sea`  | 1       | 3       | in the new region the Seas                |
+| `the-citadel` | 3       | 22      | form: the seat of an order (the maesters) |
+| `horn-hill`   | 4       | 27      | in the region the Reach                   |
+| `dragonstone` | 7       | 4       |                                           |
+| `the-arbor`   | 7       | 40      |                                           |
+
+### Omitted (#1250)
+
+- Dorne: a region; it joins the regions with its first Dornish place, and none
+  is named in both media in season 1 (owner, #1250).
+- Summerhall, the Salt Shore: _A Game of Thrones_ never names them.
+- The Street of Steel, the Street of the Sisters: visited places, for #1252.
+- Blackwater Bay, Flea Bottom, Storm's End, Highgarden, Oldtown, the Reach, the
+  Stormlands, Tarth, Blackhaven, Sunspear, Starfall, the Tower of Joy, the Red
+  Mountains, the Dornish Marches, the Summer Isles, the Stepstones, the Sunset
+  Sea, Duskendale, Rosby, Claw Isle, Bitterbridge, Aegon's High Hill: season 1
+  does not name them.

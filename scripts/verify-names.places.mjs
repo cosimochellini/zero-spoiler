@@ -67,6 +67,10 @@ export const PLACE_ITALIAN_TITLES = {
     'volantis': `${PLACES}#Volantis`,
     'valyria': `${PLACES}#Valyria`,
     'asshai': `${PLACES}#Asshai`,
+    'narrow-sea': `${PLACES}#Mare Stretto`,
+    'the-citadel': `${PLACES}#La Cittadella`,
+    'dragonstone': `${PLACES}#Roccia del Drago`,
+    'the-arbor': `${PLACES}#Arbor`,
   },
 }
 
@@ -93,6 +97,9 @@ export const PLACE_NAMES_KEPT = {
   // Named in the page's text, with no section of their own.
   'qarth': 'Qarth',
   'mother-of-mountains': 'Madre di tutte le Montagne',
+  // Horn Hill is not on the page: the books' Italian form, the dub's
+  // unconfirmed (owner, #1249).
+  'horn-hill': 'Collina del Corno',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',
