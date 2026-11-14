@@ -27,9 +27,11 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'island'
     | 'lake'
     | 'marsh'
+    | 'mountain'
     | 'peninsula'
     | 'plain'
     | 'river'
+    | 'ruin'
     | 'sept'
     | 'town'
   group: never

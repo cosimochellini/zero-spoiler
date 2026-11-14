@@ -59,6 +59,14 @@ export const PLACE_ITALIAN_TITLES = {
     'casterly-rock': `${PLACES}#Castel Granito`,
     'lannisport': `${PLACES}#Lannisport`,
     'harrenhal': `${PLACES}#Harrenhal`,
+    'braavos': `${PLACES}#Braavos`,
+    'lys': `${PLACES}#Lys`,
+    'qohor': `${PLACES}#Qohor`,
+    'myr': `${PLACES}#Myr`,
+    'tyrosh': `${PLACES}#Tyrosh`,
+    'volantis': `${PLACES}#Volantis`,
+    'valyria': `${PLACES}#Valyria`,
+    'asshai': `${PLACES}#Asshai`,
   },
 }
 
@@ -82,6 +90,9 @@ export const PLACE_NAMES_KEPT = {
   'the-fingers': 'Dita',
   'golden-tooth': 'Dente d’Oro',
   'gods-eye': 'Occhio degli Dei',
+  // Named in the page's text, with no section of their own.
+  'qarth': 'Qarth',
+  'mother-of-mountains': 'Madre di tutte le Montagne',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',

@@ -842,6 +842,194 @@ const GODS_EYE: Stroke[] = [
 ]
 
 /**
+ * Asshai: three dark towers, for the far city named in episode 1 and in
+ * Daenerys II (chapter 12), Illyrio's "the Shadow Lands beyond Asshai", and
+ * never visited in the first season or book. The towers are hatched dark;
+ * the accent is their peaks.
+ */
+const ASSHAI: Stroke[] = [
+  { d: 'M30 150 V80 H48 V150 M70 150 V50 H90 V150 M112 150 V72 H130 V150' },
+  { d: 'M48 150 V110 H70 M90 120 H112', role: 'soft' },
+  {
+    d: 'M30 80 L39 66 L48 80 M70 50 L80 32 L90 50 M112 72 L121 58 L130 72',
+    role: 'accent',
+  },
+  {
+    d: 'M34 90 l10 -6 M34 104 l10 -6 M34 118 l10 -6 M34 132 l10 -6 M74 70 l12 -7 M74 86 l12 -7 M74 102 l12 -7 M74 118 l12 -7 M74 134 l12 -7 M116 82 l10 -6 M116 96 l10 -6 M116 110 l10 -6 M116 124 l10 -6 M116 138 l10 -6',
+    role: 'ambient',
+  },
+  shadow(80, 156, 66),
+]
+
+/**
+ * Valyria: old columns round a standing arch, for the land named in Catelyn I
+ * (chapter 3) and in episode 4 and never visited in the first season or book.
+ * Neither tells its fate by then, so nothing is broken or burning. The accent
+ * is the arch.
+ */
+const VALYRIA: Stroke[] = [
+  {
+    d: 'M30 150 V96 L35 90 L40 96 V150 M60 150 V78 L66 70 L72 78 V150 M100 150 V78 L106 70 L112 78 V150 M120 150 V96 L125 90 L130 96 V150',
+  },
+  { d: 'M72 110 Q86 92 100 110', role: 'accent' },
+  {
+    d: 'M68 100 l3 -2 M68 120 l3 -2 M108 100 l3 -2 M108 120 l3 -2 M38 110 l2 -2 M38 130 l2 -2 M128 110 l2 -2 M128 130 l2 -2',
+    role: 'ambient',
+  },
+  shadow(80, 156, 66),
+]
+
+/**
+ * Braavos: domed houses over an arcade on the water, named in Daenerys I
+ * (chapter 4) and in episode 3 (the Sealord of Braavos) and never visited in
+ * the first season or book. The accent is the great middle arch.
+ */
+const BRAAVOS: Stroke[] = [
+  {
+    d: 'M10 104 H150 M10 104 V124 M30 104 V124 M50 104 V124 M110 104 V124 M130 104 V124 M150 104 V124',
+  },
+  {
+    d: 'M10 124 Q20 110 30 124 M30 124 Q40 110 50 124 M110 124 Q120 110 130 124 M130 124 Q140 110 150 124',
+    role: 'soft',
+  },
+  { d: 'M50 124 Q80 84 110 124', role: 'accent' },
+  {
+    d: 'M20 104 V80 Q30 68 40 80 V104 M66 104 V70 Q80 54 94 70 V104 M120 104 V80 Q130 68 140 80 V104',
+  },
+  { d: 'M90 78 l4 -3 M90 92 l4 -3 M136 86 l4 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Myr: three domed houses on a coast, named in Daenerys I (chapter 4) and in
+ * episode 4 (Thoros of Myr) and never visited in the first season or book.
+ * The accent is the domes.
+ */
+const MYR: Stroke[] = [
+  { d: 'M10 128 Q50 120 80 126 Q120 132 150 124' },
+  { d: 'M24 124 V100 H56 V122 M64 126 V92 H96 V128 M104 128 V102 H136 V126' },
+  {
+    d: 'M24 100 Q40 80 56 100 M64 92 Q80 68 96 92 M104 102 Q120 82 136 102',
+    role: 'accent',
+  },
+  { d: 'M90 104 l4 -3 M90 116 l4 -3 M130 112 l4 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Tyrosh: a tall tower on an island, named in Daenerys I (chapter 4) and in
+ * episode 7 (a trader's pear brandy) and never visited in the first season or
+ * book. The accent is the tower.
+ */
+const TYROSH: Stroke[] = [
+  { d: 'M20 140 Q40 112 80 110 Q120 112 140 140' },
+  {
+    d: 'M70 112 V56 H90 V112 M66 56 H94 M70 56 V48 H76 V56 M84 56 V48 H90 V56',
+    role: 'accent',
+  },
+  { d: 'M44 124 V104 H62 V116 M98 116 V100 H116 V126', role: 'soft' },
+  {
+    d: 'M86 70 l3 -2 M86 86 l3 -2 M86 100 l3 -2 M120 128 l6 -3 M128 136 l6 -3',
+    role: 'ambient',
+  },
+  ...SEA,
+]
+
+/**
+ * Qohor: a walled city at the edge of a forest, named in Daenerys I (chapter
+ * 4) and in episode 3 and never visited in the first season or book. The
+ * accent is the trees.
+ */
+const QOHOR: Stroke[] = [
+  {
+    d: 'M60 150 V96 H140 V150 M60 96 V88 H68 V96 M84 96 V88 H92 V96 M108 96 V88 H116 V96 M132 96 V88 H140 V96',
+  },
+  { d: 'M90 150 V128 Q100 118 110 128 V150', role: 'soft' },
+  {
+    d: 'M22 150 V140 M10 140 L22 120 L34 140 Z M14 124 L22 108 L30 124 M44 150 V136 M32 136 L44 112 L56 136 Z M36 116 L44 98 L52 116',
+    role: 'accent',
+  },
+  { d: 'M130 110 l6 -3 M130 124 l6 -3 M130 138 l6 -3', role: 'ambient' },
+  shadow(80, 156, 70),
+]
+
+/**
+ * Volantis: two dark walls joined by a long bridge over water, named in
+ * Daenerys I (chapter 4) and in episode 7 (the wine seller) and never visited
+ * in the first season or book. The walls are hatched; the accent is the
+ * bridge's arches.
+ */
+const VOLANTIS: Stroke[] = [
+  { d: 'M10 112 H150 M10 120 H150' },
+  {
+    d: 'M14 140 Q24 122 34 140 M38 140 Q48 122 58 140 M62 140 Q72 122 82 140 M86 140 Q96 122 106 140 M110 140 Q120 122 130 140 M134 140 Q144 122 150 134 M34 140 V120 M58 140 V120 M82 140 V120 M106 140 V120 M130 140 V120',
+    role: 'accent',
+  },
+  { d: 'M20 112 V72 H60 V112 M100 112 V68 H140 V112', role: 'soft' },
+  {
+    d: 'M24 82 l8 -5 M24 96 l8 -5 M44 82 l8 -5 M44 96 l8 -5 M104 80 l8 -5 M104 94 l8 -5 M124 80 l8 -5 M124 94 l8 -5',
+    role: 'ambient',
+  },
+  {
+    d: 'M10 152 q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Lys: three pale towers on an island, named in Daenerys I (chapter 4) and in
+ * episode 2 (Doreah) and never visited in the first season or book. The
+ * accent is their domes.
+ */
+const LYS: Stroke[] = [
+  { d: 'M16 140 Q40 114 80 112 Q120 114 144 140' },
+  { d: 'M52 114 V66 H66 V114 M73 112 V52 H87 V112 M94 114 V70 H108 V114' },
+  {
+    d: 'M52 66 Q59 54 66 66 M73 52 Q80 38 87 52 M94 70 Q101 58 108 70',
+    role: 'accent',
+  },
+  { d: 'M110 124 l6 -3 M118 132 l6 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Qarth: a high wall with a great dome behind it, named in episode 2 and in
+ * Daenerys III (chapter 24), a trader from Qarth, and never visited in the
+ * first season or book. The accent is the dome.
+ */
+const QARTH: Stroke[] = [
+  { d: 'M10 150 V100 H150 V150 M10 100 V90 H24 V100 M136 100 V90 H150 V100' },
+  { d: 'M50 100 Q80 50 110 100', role: 'accent' },
+  { d: 'M36 100 V64 H44 V100 M116 100 V64 H124 V100', role: 'soft' },
+  { d: 'M70 150 V126 Q80 116 90 126 V150', role: 'soft' },
+  {
+    d: 'M120 110 l6 -3 M120 126 l6 -3 M120 142 l6 -3 M100 78 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 156, 70),
+]
+
+/**
+ * The Mother of Mountains: a lone mountain over a flat plain, named in
+ * episode 7 (Drogo's vow) and in Daenerys IV (chapter 37). The first season
+ * and book stay in the city below it. Its far side is hatched; the accent is
+ * the snow line.
+ */
+const MOTHER_OF_MOUNTAINS: Stroke[] = [
+  { d: 'M24 140 L64 70 L80 52 L96 70 L136 140' },
+  { d: 'M64 70 L72 78 L80 70 L88 80 L96 70', role: 'accent' },
+  { d: 'M10 140 H150', role: 'soft' },
+  {
+    d: 'M98 84 l6 -4 M106 98 l6 -4 M114 112 l6 -4 M122 126 l6 -4',
+    role: 'ambient',
+  },
+  {
+    d: 'M20 150 q6 -3 12 0 M60 152 q6 -3 12 0 M110 150 q6 -3 12 0',
+    role: 'soft',
+  },
+]
+
+/**
  * The first season's places (#1053), and the ones it only names (#1035),
  * keyed by record id.
  */
@@ -883,4 +1071,14 @@ export const PLACE_DRAWINGS = {
   'golden-tooth': GOLDEN_TOOTH,
   'red-fork': RED_FORK,
   'gods-eye': GODS_EYE,
+  'asshai': ASSHAI,
+  'valyria': VALYRIA,
+  'braavos': BRAAVOS,
+  'myr': MYR,
+  'tyrosh': TYROSH,
+  'qohor': QOHOR,
+  'volantis': VOLANTIS,
+  'lys': LYS,
+  'qarth': QARTH,
+  'mother-of-mountains': MOTHER_OF_MOUNTAINS,
 } satisfies Drawings

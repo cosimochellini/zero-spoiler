@@ -220,12 +220,12 @@ to a shared placeholder in `art/index.ts`, `PERSON`, until its own issue draws
 it, so the drawing tests hold it like any series. Its places are the 23 a scene
 of the season or the book is set in (#853) and those both name without visiting
 it (#1035: the North's five in #1248, nine of the Riverlands, the Westerlands
-and the Vale in #1249), each filed in one of the realms, the Iron Islands and
-the Westerlands among them, beyond the Wall or Essos, with no arc:
-`PlaceDossier.arc` is optional, and an arcless series prints no arc row. Darry
-is the book's alone and the Kingswood the show's. The demo shows the places the
-first ten episodes reach, and covers in its tail the four the show first visits
-in later seasons.
+and the Vale in #1249, Essos's ten in #1251), each filed in one of the realms,
+the Iron Islands and the Westerlands among them, beyond the Wall or Essos, with
+no arc: `PlaceDossier.arc` is optional, and an arcless series prints no arc row.
+Darry is the book's alone and the Kingswood the show's. The demo shows the
+places the first ten episodes reach, and covers in its tail the four the show
+first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -372,11 +372,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 185                                                   |
+| Records           | 195                                                   |
 | Characters        | 148                                                   |
-| Places            | 37                                                    |
+| Places            | 47                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 185, one per record, plus 21 redrawings of 20 records |
+| Line drawings     | 195, one per record, plus 21 redrawings of 20 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
