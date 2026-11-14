@@ -439,8 +439,14 @@ const BONNEY_SHRINK: Stroke = {
 /** Kuma's paw-shaped bubble, above Bonney's pizza. */
 const BONNEY_KUMA_PAW: Stroke[] = moved([KUMA_PAW_BUBBLE], 'translate(-48 8)')
 
-/** The shadows under the smaller pizza and under the slice. */
-const BONNEY_SHADOWS: Stroke[] = [shadow(54, 182, 48), shadow(130, 174, 20)]
+/** The shadow under the smaller pizza, in all three of Bonney's stages. */
+const BONNEY_PIZZA_SHADOW: Stroke = shadow(54, 182, 48)
+
+/** The shadow under the small slice on the bare table. */
+const BONNEY_SLICE_SHADOW: Stroke = shadow(130, 174, 20)
+
+/** The wider shadow under the child's plate the slice lies on at 1132. */
+const BONNEY_PLATE_SHADOW: Stroke = shadow(130, 178, 24)
 
 /** Ivankov's stage: the spotlight's dashed beam and the boards. */
 const IVANKOV_STAGE: Stroke[] = [
@@ -1039,7 +1045,7 @@ export const summitWarArt = {
   // 402, the eye band at 736 and the Marine gull at 957, in
   // `summitWarRedrawn`.
   'x-drake': [...DRAKE_HAT, ...DRAKE_CROSSED, shadow(80, 186, 60)],
-  // His pillar stood on end, a long six-sided stone in 3/4 with the far
+  // His pillar stood on end, long and six-sided, in 3/4 with the far
   // face hatched and a few cracks in the near one, his big bead necklace
   // draped over the top in his colour. He carries it on his shoulder at
   // Sabaody in episode 392. His power swells the beads at 401, in
@@ -3258,7 +3264,8 @@ export const summitWarRedrawn: Redrawings = {
         ...BONNEY_PIZZA_LEFT,
         ...BONNEY_SMALL_SLICE,
         BONNEY_SHRINK,
-        ...BONNEY_SHADOWS,
+        BONNEY_PIZZA_SHADOW,
+        BONNEY_SLICE_SHADOW,
       ],
     },
     // The same, the slice now plain, and Kuma's paw-shaped bubble above it
@@ -3272,7 +3279,8 @@ export const summitWarRedrawn: Redrawings = {
         ...softened(BONNEY_SMALL_SLICE),
         BONNEY_SHRINK,
         ...BONNEY_KUMA_PAW,
-        ...BONNEY_SHADOWS,
+        BONNEY_PIZZA_SHADOW,
+        BONNEY_SLICE_SHADOW,
       ],
     },
     // The same with the paw plain, and the small slice on a child's plate in
@@ -3287,8 +3295,8 @@ export const summitWarRedrawn: Redrawings = {
         { d: ellipse(130, 164, 27, 8), role: 'accent' },
         { d: 'M103 164 v2 C106 172 154 172 157 166 v-2', role: 'soft' },
         ...softened(BONNEY_KUMA_PAW),
-        shadow(54, 182, 48),
-        shadow(130, 178, 24),
+        BONNEY_PIZZA_SHADOW,
+        BONNEY_PLATE_SHADOW,
       ],
     },
   ],
