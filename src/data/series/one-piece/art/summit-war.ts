@@ -17,6 +17,7 @@ import {
 } from '~/lib/svg/primitives'
 
 import { LUCY_HELMET } from './east-blue'
+import { KUMA_PAW_BUBBLE } from './skypiea'
 
 /** The slant Saldeath's trident lies at, its butt resting on the net. */
 const SALDEATH_TRIDENT =
@@ -370,6 +371,173 @@ const PAPPAG_STAR: Stroke[] = [
     role: 'soft',
     transform: 'translate(0 8) rotate(-14 82 62)',
   },
+]
+
+/**
+ * Urouge's pillar stood on end in 3/4, two of its six faces turned to us: the
+ * top with its rim, the far face hatched and the near one cracked. The edges
+ * go in each drawing, which breaks them where the beads cross.
+ */
+const UROUGE_PILLAR: Stroke[] = [
+  { d: 'M54 36 L80 27 L106 36 L106 42 L80 48 L54 42 Z' },
+  { d: 'M60 37 L80 31 L100 37', role: 'soft' },
+  {
+    d: 'M88 60 l14 -6 M88 78 l14 -6 M88 96 l14 -6 M88 114 l14 -6 M88 132 l14 -6 M88 150 l14 -6 M88 166 l12 -5',
+    role: 'ambient',
+  },
+  { d: 'M64 116 l5 9 l-3 8 l4 6 M60 148 l6 7 M100 76 l-4 6', role: 'soft' },
+]
+
+/** Circles of radius `r` strung through the points, a string of beads. */
+function beads(points: [number, number][], r: number): string {
+  return points.map(([x, y]) => circle(x, y, r)).join(' ')
+}
+
+/** Bonney's pizza without the pulled slice: the gap is left in it. */
+const BONNEY_PIZZA: Stroke[] = [
+  {
+    d: 'M14 136 C14 118 46 108 80 108 C114 108 146 118 146 136 C146 154 114 164 80 164 C46 164 14 154 14 136 Z',
+  },
+  {
+    d: 'M24 136 C24 122 50 116 80 116 C110 116 136 122 136 136 C136 150 110 156 80 156 C50 156 24 150 24 136 Z',
+    role: 'soft',
+  },
+  { d: 'M14 136 v6 C14 160 146 160 146 142 v-6', role: 'soft' },
+  { d: 'M80 136 L136 136 L120 120 Z' },
+]
+
+/**
+ * The same pizza, smaller and to the left with its toppings, so the slice
+ * her power shrinks can lie on the table beside it.
+ */
+const BONNEY_PIZZA_LEFT: Stroke[] = moved(
+  [
+    ...BONNEY_PIZZA,
+    {
+      d: `${circle(46, 136, 4)} ${circle(60, 148, 4)} ${circle(84, 148, 4)} ${circle(66, 126, 4)}`,
+      role: 'soft',
+    },
+  ],
+  'translate(-6 34) scale(0.78)',
+)
+
+/** The pulled slice shrunk to a child's size, lying flat on the table. */
+const BONNEY_SMALL_SLICE: Stroke[] = [
+  { d: 'M112 160 L144 148 C149 153 149 160 145 165 Z', role: 'accent' },
+  {
+    d: `M146 150 C152 155 152 162 147 167 ${circle(134, 158, 1.6)}`,
+    role: 'soft',
+  },
+]
+
+/** The ticks round the small slice, pointing in as it shrinks. */
+const BONNEY_SHRINK: Stroke = {
+  d: 'M106 146 l5 4 M150 138 l-3 5 M158 168 l-5 -2 M120 176 l3 -4',
+  role: 'soft',
+}
+
+/** Kuma's paw-shaped bubble, above Bonney's pizza. */
+const BONNEY_KUMA_PAW: Stroke[] = moved([KUMA_PAW_BUBBLE], 'translate(-48 8)')
+
+/** The shadow under the smaller pizza, in all three of Bonney's stages. */
+const BONNEY_PIZZA_SHADOW: Stroke = shadow(54, 182, 48)
+
+/** The shadow under the small slice on the bare table. */
+const BONNEY_SLICE_SHADOW: Stroke = shadow(130, 174, 20)
+
+/** The wider shadow under the child's plate the slice lies on at 1132. */
+const BONNEY_PLATE_SHADOW: Stroke = shadow(130, 178, 24)
+
+/** Ivankov's stage: the spotlight's dashed beam and the boards. */
+const IVANKOV_STAGE: Stroke[] = [
+  { d: 'M66 6 L38 136 M94 6 L122 136', role: 'ambient', dashed: true },
+  { d: 'M2 144 L20 128 H158 M2 144 H156 V162 H2 Z' },
+  { d: 'M30 144 V162 M60 144 V162 M90 144 V162 M120 144 V162', role: 'soft' },
+]
+
+/**
+ * His queen's crown with the king's crown standing up out of it: the queen's
+ * points are the one accent, the band's far side hatched.
+ */
+const IVANKOV_CROWNS: Stroke[] = [
+  {
+    d: 'M46 112 L48 74 L62 96 L70 84 M90 84 L98 96 L112 74 L114 112',
+    role: 'accent',
+  },
+  { d: 'M46 112 C46 120 114 120 114 112 V124 C114 132 46 132 46 124 Z' },
+  { d: 'M46 112 C48 106 112 106 114 112', role: 'soft' },
+  {
+    d: dots([
+      [62, 124],
+      [80, 126],
+      [98, 124],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M104 120 l6 -6 M104 130 l8 -8', role: 'ambient' },
+  {
+    d: 'M66 104 V70 L73 58 L80 70 L87 58 L94 70 V104 M66 70 C66 74 94 74 94 70',
+    role: 'soft',
+  },
+  { d: 'M80 58 v-8 M76 54 h8', role: 'soft' },
+]
+
+/** Doc Q's basket of apples in 3/4, its handle over it, the wicker hatched. */
+const DOC_Q_BASKET: Stroke[] = [
+  { d: 'M24 112 C24 50 104 50 104 112 M30 112 C30 58 98 58 98 112' },
+  {
+    d: 'M28 110 C26 92 52 88 54 106 M52 104 C50 82 80 82 78 102 M78 102 C80 88 104 90 100 110',
+    role: 'soft',
+  },
+  { d: 'M64 86 l2 -6 M90 92 l3 -5 M40 94 l-2 -5', role: 'soft' },
+  { d: ellipse(64, 112, 42, 11) },
+  { d: 'M22 112 L32 162 C46 172 82 172 96 162 L106 112' },
+  {
+    d: 'M26 132 C44 142 84 142 102 132 M29 148 C46 157 82 157 99 148',
+    role: 'soft',
+  },
+  { d: 'M94 128 l8 -6 M92 144 l8 -6 M90 158 l7 -5', role: 'ambient' },
+]
+
+/** The apple set apart, smoke coming off it. */
+const DOC_Q_APPLE: Stroke[] = [
+  {
+    d: `${circle(132, 156, 11)} M132 145 l2 -7 M134 140 c4 -4 10 -3 12 0 c-4 3 -8 3 -12 0`,
+    role: 'accent',
+  },
+  {
+    d: 'M120 132 c-6 -6 0 -14 6 -10 c2 -8 14 -8 14 0 c8 -2 12 8 4 12',
+    role: 'soft',
+    dashed: true,
+  },
+]
+
+/** The shadows under the basket and under the apple. */
+const DOC_Q_SHADOWS: Stroke[] = [shadow(66, 178, 46), shadow(132, 172, 14)]
+
+/** Laffitte's top hat on its brim, the band, the crown's far side hatched. */
+const LAFFITTE_HAT: Stroke[] = [
+  { d: ellipse(76, 132, 50, 12) },
+  {
+    d: 'M26 132 C26 124 34 120 42 120 M126 132 C126 124 118 120 110 120',
+    role: 'soft',
+  },
+  { d: 'M48 126 L52 56 M104 126 L100 56' },
+  { d: ellipse(76, 56, 24, 7) },
+  {
+    d: 'M49 110 C49 116 103 116 103 110 M50 100 C50 106 102 106 102 100',
+    role: 'soft',
+  },
+  { d: 'M90 70 l8 -6 M90 84 l10 -8 M90 98 l10 -8', role: 'ambient' },
+]
+
+/** His cane on the floor, its crook hooked under the brim. */
+const LAFFITTE_CANE: Stroke[] = [
+  {
+    d: 'M150 178 L58 136 C52 132 44 130 40 134 C36 140 42 146 46 142',
+    role: 'accent',
+  },
+  { d: 'M150 178 l-4 4', role: 'soft' },
 ]
 
 /** The drawings of the records filed in the summit war stretch of the route. */
@@ -877,39 +1045,36 @@ export const summitWarArt = {
   // 402, the eye band at 736 and the Marine gull at 957, in
   // `summitWarRedrawn`.
   'x-drake': [...DRAKE_HAT, ...DRAKE_CROSSED, shadow(80, 186, 60)],
-
-  // His pillar stood on end, a long six-sided stone with the far faces
-  // hatched and a few cracks, his big bead necklace draped over the top in his
-  // colour. He carries it on his shoulder at Sabaody in episode 392.
+  // His pillar stood on end, long and six-sided, in 3/4 with the far
+  // face hatched and a few cracks in the near one, his big bead necklace
+  // draped over the top in his colour. He carries it on his shoulder at
+  // Sabaody in episode 392. His power swells the beads at 401, in
+  // `summitWarRedrawn`.
   'urouge': [
-    { d: 'M54 40 L66 32 H94 L106 40 L94 48 H66 Z' },
-    { d: 'M54 40 V170 L66 178 H94 L106 170 V40 M66 48 V178 M94 48 V178' },
+    ...UROUGE_PILLAR,
+    { d: 'M54 42 V168 L80 176 L106 168 V42 M80 48 V176' },
     {
-      d: 'M98 60 l6 -4 M98 80 l6 -4 M98 100 l6 -4 M98 120 l6 -4 M98 140 l6 -4 M98 160 l6 -4',
-      role: 'ambient',
-    },
-    { d: 'M74 120 l4 10 l-2 8 M84 150 l-4 8 M60 130 l2 10', role: 'soft' },
-    {
-      d: [
-        [52, 52],
-        [52, 64],
-        [53, 76],
-        [56, 88],
-        [62, 98],
-        [70, 105],
-        [80, 108],
-        [90, 105],
-        [98, 98],
-        [104, 88],
-        [107, 76],
-        [108, 64],
-        [108, 52],
-      ]
-        .map(([x = 0, y = 0]) => circle(x, y, 4))
-        .join(' '),
+      d: beads(
+        [
+          [52, 50],
+          [52, 62],
+          [54, 74],
+          [58, 86],
+          [64, 96],
+          [72, 103],
+          [81, 106],
+          [90, 103],
+          [98, 96],
+          [104, 86],
+          [107, 74],
+          [108, 62],
+          [108, 50],
+        ],
+        4,
+      ),
       role: 'accent',
     },
-    shadow(80, 188, 44),
+    shadow(80, 186, 46),
   ],
 
   // A steak on a plate with the fork stood upright in it, and a glass of wine
@@ -940,17 +1105,11 @@ export const summitWarArt = {
 
   // A pizza in three-quarters with one slice pulled out of it, in her colour,
   // the gap left behind and the cheese still trailing. She is eating
-  // everything in sight at a Sabaody restaurant in episode 392.
+  // everything in sight at a Sabaody restaurant in episode 392. Her power
+  // shrinks the slice at 393, Kuma's paw comes at 1092 and the child's plate
+  // at 1132, in `summitWarRedrawn`.
   'jewelry-bonney': [
-    {
-      d: 'M14 136 C14 118 46 108 80 108 C114 108 146 118 146 136 C146 154 114 164 80 164 C46 164 14 154 14 136 Z',
-    },
-    {
-      d: 'M24 136 C24 122 50 116 80 116 C110 116 136 122 136 136 C136 150 110 156 80 156 C50 156 24 150 24 136 Z',
-      role: 'soft',
-    },
-    { d: 'M14 136 v6 C14 160 146 160 146 142 v-6', role: 'soft' },
-    { d: 'M80 136 L136 136 L120 120 Z' },
+    ...BONNEY_PIZZA,
     { d: 'M86 128 L144 102 C136 92 120 90 108 92 Z', role: 'accent' },
     {
       d: 'M108 92 C122 88 138 92 144 102 M118 122 C112 116 104 112 100 118 M126 128 C118 124 112 120 108 124',
@@ -1211,37 +1370,12 @@ export const summitWarArt = {
     { d: 'M114 158 l8 -7 M114 148 l8 -7', role: 'ambient' },
     shadow(80, 176, 58),
   ],
-
   // His two crowns set down on his stage in the spotlight: the queen's crown,
-  // its points and band in his colour, the far rim seen and the side going
-  // away hatched, and the king's crown standing up out of it. He takes that
-  // stage wearing them in episode 438.
-  'emporio-ivankov': [
-    { d: 'M66 6 L38 136 M94 6 L122 136', role: 'ambient', dashed: true },
-    { d: 'M2 144 L20 128 H158 M2 144 H156 V162 H2 Z' },
-    { d: 'M30 144 V162 M60 144 V162 M90 144 V162 M120 144 V162', role: 'soft' },
-    {
-      d: 'M46 112 L48 74 L62 96 L70 84 M90 84 L98 96 L112 74 L114 112',
-      role: 'accent',
-    },
-    { d: 'M46 112 C46 120 114 120 114 112 V124 C114 132 46 132 46 124 Z' },
-    { d: 'M46 112 C48 106 112 106 114 112', role: 'soft' },
-    {
-      d: dots([
-        [62, 124],
-        [80, 126],
-        [98, 124],
-      ]),
-      role: 'soft',
-    },
-    { d: 'M104 120 l6 -6 M104 130 l8 -8', role: 'ambient' },
-    {
-      d: 'M66 104 V70 L73 58 L80 70 L87 58 L94 70 V104 M66 70 C66 74 94 74 94 70',
-      role: 'accent',
-    },
-    { d: 'M80 58 v-8 M76 54 h8', role: 'soft' },
-    shadow(80, 136, 40),
-  ],
+  // its points in his colour, the far rim seen and the side going away
+  // hatched, and the king's crown standing up out of it. He takes that stage
+  // wearing them in episode 438. His needle finger comes at 439 and the
+  // Revolutionary pennant at 441 (ch. 541), in `summitWarRedrawn`.
+  'emporio-ivankov': [...IVANKOV_STAGE, ...IVANKOV_CROWNS, shadow(80, 136, 40)],
 
   // His wine glass, the left half of the rim, bowl, stem and foot in his
   // colour and the right half plain, the way his hair and clothes are split;
@@ -1353,81 +1487,55 @@ export const summitWarArt = {
     },
     shadow(70, 158, 54),
   ],
-
   // His basket of apples in three-quarters, the handle over it, the wicker's
   // shaded side hatched, and one apple set apart in his colour with smoke
   // coming off it: some of the apples he offers explode. He offers them in
-  // Mock Town in episode 146.
-  'doc-q': [
-    { d: 'M24 112 C24 50 104 50 104 112 M30 112 C30 58 98 58 98 112' },
-    {
-      d: 'M28 110 C26 92 52 88 54 106 M52 104 C50 82 80 82 78 102 M78 102 C80 88 104 90 100 110',
-      role: 'soft',
-    },
-    { d: 'M64 86 l2 -6 M90 92 l3 -5 M40 94 l-2 -5', role: 'soft' },
-    { d: ellipse(64, 112, 42, 11) },
-    { d: 'M22 112 L32 162 C46 172 82 172 96 162 L106 112' },
-    {
-      d: 'M26 132 C44 142 84 142 102 132 M29 148 C46 157 82 157 99 148',
-      role: 'soft',
-    },
-    { d: 'M94 128 l8 -6 M92 144 l8 -6 M90 158 l7 -5', role: 'ambient' },
-    {
-      d: `${circle(132, 156, 11)} M132 145 l2 -7 M134 140 c4 -4 10 -3 12 0 c-4 3 -8 3 -12 0`,
-      role: 'accent',
-    },
-    {
-      d: 'M120 132 c-6 -6 0 -14 6 -10 c2 -8 14 -8 14 0 c8 -2 12 8 4 12',
-      role: 'soft',
-      dashed: true,
-    },
-    shadow(66, 178, 46),
-    shadow(132, 172, 14),
-  ],
+  // Mock Town in episode 146. His sickness comes off the basket at 1093, in
+  // `summitWarRedrawn`.
+  'doc-q': [...DOC_Q_BASKET, ...DOC_Q_APPLE, ...DOC_Q_SHADOWS],
 
   // His top hat standing on its brim, the band and the brim's curl, the far
   // side of the crown hatched, and his cane lying across the floor in his
   // colour, its crook hooked under the brim. He walks into the Warlords'
-  // meeting with both in episode 151.
-  'laffitte': [
-    { d: ellipse(76, 132, 50, 12) },
-    {
-      d: 'M26 132 C26 124 34 120 42 120 M126 132 C126 124 118 120 110 120',
-      role: 'soft',
-    },
-    { d: 'M48 126 L52 56 M104 126 L100 56' },
-    { d: ellipse(76, 56, 24, 7) },
-    {
-      d: 'M49 110 C49 116 103 116 103 110 M50 100 C50 106 102 106 102 100',
-      role: 'soft',
-    },
-    { d: 'M90 70 l8 -6 M90 84 l10 -8 M90 98 l10 -8', role: 'ambient' },
-    {
-      d: 'M150 178 L58 136 C52 132 44 130 40 134 C36 140 42 146 46 142',
-      role: 'accent',
-    },
-    { d: 'M150 178 l-4 4', role: 'soft' },
-    shadow(80, 154, 60),
-  ],
+  // meeting with both in episode 151. His wings open behind the hat at 444,
+  // in `summitWarRedrawn`.
+  'laffitte': [...LAFFITTE_HAT, ...LAFFITTE_CANE, shadow(80, 154, 60)],
 
-  // A Ferris wheel with its cabins hanging from the rim, bubbles drifting past.
+  // One of the giant Yarukiman mangroves seen from the sea, close: the
+  // striped trunk with its far side hatched, the crown with its hanging
+  // roots, the roots arching out of the water at its foot and the resin
+  // bubbles it breathes out rising in the record's colour; Sabaody Park's
+  // Ferris wheel small behind it. The crew reach the archipelago in episode
+  // 390 (ch. 496) and the park in 393 (ch. 499), inside the arc.
   'sabaody-archipelago': [
-    { d: circle(80, 84, 52), role: 'accent' },
+    { d: `${circle(134, 96, 18)} M134 96 l-8 52 M134 96 l8 52`, role: 'soft' },
     {
-      d: 'M80 84 L132 84 M80 84 L116.8 120.8 M80 84 L80 136 M80 84 L43.2 120.8 M80 84 L28 84 M80 84 L43.2 47.2 M80 84 L80 32 M80 84 L116.8 47.2',
-      role: 'soft',
-    },
-    { d: circle(80, 84, 6) },
-    {
-      d: 'M127 87 h10 v8 h-10z M111.8 123.8 h10 v8 h-10z M75 139 h10 v8 h-10z M38.2 123.8 h10 v8 h-10z M23 87 h10 v8 h-10z M38.2 50.2 h10 v8 h-10z M75 35 h10 v8 h-10z M111.8 50.2 h10 v8 h-10z',
-    },
-    { d: 'M80 84 L50 166 M80 84 L110 166' },
-    {
-      d: `${circle(22, 40, 7)} ${circle(142, 150, 6)} ${circle(146, 30, 4)}`,
+      d: 'M134 78 V114 M116 96 H152 M121.3 83.3 L146.7 108.7 M121.3 108.7 L146.7 83.3',
       role: 'ambient',
     },
-    { d: 'M-4 166 H164', role: 'ambient' },
-    ...SEA.slice(2),
+    { d: 'M50 150 C56 120 54 92 60 64 M92 150 C86 120 88 92 84 64' },
+    {
+      d: 'M60 64 C40 66 18 58 20 44 C10 34 20 18 36 22 C38 8 58 4 66 14 C74 4 96 6 100 16 C116 12 128 26 120 38 C130 48 118 64 100 62 C96 66 90 66 84 64 Z',
+    },
+    {
+      d: 'M60 64 l-10 -10 M84 64 l12 -10 M72 64 V50 M32 56 v14 M42 63 v12 M106 62 v12 M116 54 v14',
+      role: 'soft',
+    },
+    { d: 'M55 92 l30 -8 M54 112 l33 -9 M53 132 l35 -9', role: 'soft' },
+    {
+      d: 'M80 78 l5 -3 M82 98 l5 -3 M83 118 l5 -3 M84 138 l5 -3',
+      role: 'ambient',
+    },
+    {
+      d: 'M50 150 C40 132 22 132 14 156 M92 150 C102 132 120 134 126 156 M60 150 C56 140 58 134 64 128 M82 150 C86 140 84 134 78 128 M70 150 C70 142 70 136 71 130',
+      role: 'soft',
+    },
+    {
+      d: `${circle(30, 100, 7)} ${circle(20, 76, 4.5)} ${circle(108, 120, 5.5)} ${circle(112, 82, 4)} ${circle(38, 122, 3.5)}`,
+      role: 'accent',
+    },
+    { d: 'M-4 152 H164', role: 'ambient' },
+    ...SEA,
   ],
 
   // Her string of big pearls lying in a loose loop, the near ones larger and
@@ -1853,28 +1961,34 @@ export const summitWarArt = {
     { d: 'M18 160 H56 M98 162 H104', role: 'ambient' },
     shadow(84, 170, 56),
   ],
-
-  // A campfire of two crossed logs, the flame in her colour, its smoke
-  // climbing past the treetops. She follows the smoke to Luffy in episode
-  // 408.
+  // The coat she wears over her shoulders like a Marine officer's, hung
+  // empty and open down the front, its stand-up collar in her colour, the
+  // sleeves hanging inside and its far half hatched; her Kuja snake lies
+  // coiled at its foot with its head up. That coat is what sets her apart
+  // from the other Kuja when she finds Luffy in the forest, in episode 408
+  // (ch. 514), inside the arc.
   'sweet-pea': [
     {
-      d: 'M2 86 C8 70 22 70 26 80 C30 66 46 64 52 78 C56 70 66 70 68 78 M96 80 C100 68 114 66 118 78 C124 66 140 66 144 80 C150 74 158 76 162 84',
-      role: 'ambient',
+      d: 'M48 56 C40 58 30 62 26 70 L16 164 C28 168 46 168 62 165 L66 66 M70 66 L74 165 C90 168 108 168 120 164 L108 70 C104 62 94 58 86 56',
     },
-    { d: 'M30 160 L118 136 M36 170 L124 146' },
-    { d: `${ellipse(33, 165, 4, 6)} ${ellipse(121, 141, 4, 6)}`, role: 'soft' },
-    { d: 'M44 136 L126 166 M40 146 L122 176' },
-    { d: `${ellipse(42, 141, 4, 6)} ${ellipse(124, 171, 4, 6)}`, role: 'soft' },
+    { d: 'M48 56 C48 46 86 46 86 56 C80 62 54 62 48 56 Z', role: 'accent' },
+    { d: 'M52 60 L60 86 L66 66 M82 60 L76 86 L70 66', role: 'soft' },
     {
-      d: 'M80 150 C64 140 62 124 72 112 C72 122 78 124 80 118 C80 106 86 98 94 92 C92 104 100 112 98 124 C102 120 104 116 104 110 C112 124 104 142 90 150',
-      role: 'accent',
-    },
-    {
-      d: 'M86 88 C76 78 92 70 84 60 C76 50 92 42 84 32 C78 24 86 16 92 12',
+      d: 'M30 78 L24 140 H34 L38 82 M104 80 L110 140 H100 L96 84',
       role: 'soft',
     },
-    shadow(80, 186, 60),
+    {
+      d: 'M86 100 l18 -8 M88 120 l20 -8 M90 140 l22 -8 M92 160 l24 -8',
+      role: 'ambient',
+    },
+    {
+      d: `${ellipse(134, 176, 22, 7)} M147 175 C147 172 141 170 134 170 C126 170 121 172 121 175 C121 178 127 180 134 180`,
+    },
+    {
+      d: 'M147 175 C152 166 150 150 146 140 C144 136 148 132 154 133 C160 134 162 140 156 142 C152 143 148 141 146 140',
+    },
+    { d: 'M161 139 l5 -1 l2 -3 M166 138 l2 2', role: 'soft' },
+    shadow(68, 172, 52),
   ],
 
   // One of her tall brown boots, laced up the front, its back hatched and its
@@ -2440,35 +2554,31 @@ export const summitWarArt = {
     shadow(66, 150, 50),
     shadow(112, 176, 26),
   ],
-
-  // The papers on his desk at Mary Geoise, the top sheet with its corner
-  // turned up and the stack's edges below, and the inkwell beside them in his
-  // colour, its far side hatched. He talks over the fleet admiral's
-  // resignation at that desk in chapter 594 (episode 511); the panel shows
-  // the papers and the inkwell, and no stamp.
+  // The white Marine coat he wears draped over his shoulders, hung empty and
+  // open, its far half hatched, the epaulettes fully gold in his colour with
+  // their fringes; behind it the World Government's flag on its standard,
+  // the four circles round a fifth and no words. He wears it at Mary Geoise
+  // when Sengoku resigns, in chapter 594 (episode 511).
   'kong': [
-    { d: 'M12 132 L92 114 L126 142 L46 162 Z' },
-    { d: 'M12 132 V138 L46 168 L126 148 V142 M46 162 V168', role: 'soft' },
-    { d: 'M22 124 L96 106 L120 126 M20 118 L90 100 L106 112', role: 'soft' },
+    { d: 'M150 182 V14' },
+    { d: 'M150 16 H92 V64 H150', role: 'soft' },
     {
-      d: 'M36 136 L78 126 M42 142 L86 132 M48 148 L92 138 M54 154 L82 147',
-      role: 'ambient',
-    },
-    {
-      d: 'M126 142 C118 142 112 138 110 132 C116 134 122 136 126 142',
+      d: `${circle(120, 40, 3.5)} ${circle(120, 26, 3.5)} ${circle(120, 54, 3.5)} ${circle(106, 40, 3.5)} ${circle(134, 40, 3.5)} M120 29.5 V36.5 M120 43.5 V50.5 M109.5 40 H116.5 M123.5 40 H130.5`,
       role: 'soft',
     },
     {
-      d: 'M108 82 C108 76 114 74 118 72 V64 H130 V72 C134 74 142 76 142 82 V108 C142 114 108 114 108 108 Z',
+      d: 'M60 76 C52 78 42 82 38 90 L28 178 C40 182 58 182 74 179 L78 86 M82 86 L86 179 C102 182 120 182 132 178 L120 90 C116 82 106 78 98 76',
+    },
+    { d: 'M60 76 C60 66 98 66 98 76 C92 82 66 82 60 76 Z', role: 'soft' },
+    { d: 'M64 80 L72 106 L78 86 M94 80 L86 106 L82 86', role: 'soft' },
+    { d: 'M98 120 l18 -8 M100 140 l20 -8 M102 160 l22 -8', role: 'ambient' },
+    {
+      d: 'M34 94 C36 84 50 80 60 82 L58 94 Z M124 94 C122 84 108 80 98 82 L100 94 Z M36 96 v8 M42 96 v9 M48 96 v9 M54 96 v8 M122 96 v8 M116 96 v9 M110 96 v9 M104 96 v8',
       role: 'accent',
     },
-    {
-      d: `${ellipse(124, 64, 6, 2)} M108 82 C108 88 142 88 142 82`,
-      role: 'soft',
-    },
-    { d: 'M134 90 l6 -4 M134 100 l6 -4 M136 108 l5 -3', role: 'ambient' },
-    shadow(76, 180, 64),
+    shadow(80, 186, 54),
   ],
+
   // An empty cell in Impel Down, the place he left: a front of bars with its
   // door shut, the door and its lock in his colour, and the stone side wall.
   // Sengoku remembers him as the first and only prisoner ever to break out,
@@ -3103,6 +3213,182 @@ export const summitWarRedrawn: Redrawings = {
           d: `${circle(71, 106, 2)} ${circle(89, 106, 2)} ${circle(64, 120, 1.6)} ${circle(96, 120, 1.6)}`,
         },
         ...summitWarArt['avalo-pizarro'].slice(9),
+      ],
+    },
+  ],
+
+  'urouge': [
+    // The same pillar, the beads of his necklace swollen huge and pulled
+    // tight round its middle, the cord passing behind it: his power grows
+    // him to a Pacifista's size when it hits him, at 401 (ch. 508 p. 14).
+    {
+      episode: 401,
+      chapter: 508,
+      value: [
+        ...UROUGE_PILLAR,
+        {
+          d: 'M54 42 V94 M54 109 V168 L80 176 L106 168 V109 M106 94 V42 M80 48 V176',
+        },
+        {
+          d: beads(
+            [
+              [46, 96],
+              [52.5, 101.9],
+              [69.5, 105.5],
+              [90.5, 105.5],
+              [107.5, 101.9],
+              [114, 96],
+            ],
+            7,
+          ),
+          role: 'accent',
+        },
+        {
+          d: 'M42 90 C44 86 49 83 54 82 M118 90 C116 86 111 83 106 82',
+          role: 'soft',
+        },
+        shadow(80, 186, 46),
+      ],
+    },
+  ],
+
+  'jewelry-bonney': [
+    // The pizza smaller to the left, and the pulled slice shrunk to a
+    // child's size on the table beside it, the ticks pointing in: she turns
+    // herself into a little girl to pass Zoro off as her brother at 393
+    // (ch. 499 p. 15-17), the first time the Age-Age power is shown.
+    {
+      episode: 393,
+      chapter: 499,
+      value: [
+        ...BONNEY_PIZZA_LEFT,
+        ...BONNEY_SMALL_SLICE,
+        BONNEY_SHRINK,
+        BONNEY_PIZZA_SHADOW,
+        BONNEY_SLICE_SHADOW,
+      ],
+    },
+    // The same, the slice now plain, and Kuma's paw-shaped bubble above it
+    // in her colour: she tells Luffy's group that Kuma is her father when a
+    // Pacifista in his likeness attacks them, at 1092 (ch. 1063 p. 2-9).
+    {
+      episode: 1092,
+      chapter: 1063,
+      value: [
+        ...BONNEY_PIZZA_LEFT,
+        ...softened(BONNEY_SMALL_SLICE),
+        BONNEY_SHRINK,
+        ...BONNEY_KUMA_PAW,
+        BONNEY_PIZZA_SHADOW,
+        BONNEY_SLICE_SHADOW,
+      ],
+    },
+    // The same with the paw plain, and the small slice on a child's plate in
+    // her colour: Kuma's past shows her born twelve years ago, the little
+    // girl her power hides, at 1132 (ch. 1098).
+    {
+      episode: 1132,
+      chapter: 1098,
+      value: [
+        ...BONNEY_PIZZA_LEFT,
+        ...softened(BONNEY_SMALL_SLICE),
+        { d: ellipse(130, 164, 27, 8), role: 'accent' },
+        { d: 'M103 164 v2 C106 172 154 172 157 166 v-2', role: 'soft' },
+        ...softened(BONNEY_KUMA_PAW),
+        BONNEY_PIZZA_SHADOW,
+        BONNEY_PLATE_SHADOW,
+      ],
+    },
+  ],
+
+  'emporio-ivankov': [
+    // The crowns plain, and beside them a gloved fist from the right whose
+    // finger has become a syringe needle, in his colour: he injects Bellett
+    // with hormones and turns him into a woman at 439 (ch. 537 p. 16-17),
+    // pinned at the record's chapter, 540.
+    {
+      episode: 439,
+      chapter: 540,
+      value: [
+        ...IVANKOV_STAGE,
+        ...softened(IVANKOV_CROWNS),
+        {
+          d: 'M164 112 H156 C154 116 150 118 144 118 H136 C130 118 128 114 128 108 V98 C128 93 131 90 136 90 H150 C155 90 158 94 158 100 H164',
+        },
+        {
+          d: 'M128 100 H148 M128 109 H148 M148 92 C152 96 152 106 148 110',
+          role: 'soft',
+        },
+        {
+          d: 'M131 90 V62 h8 V90 M135 62 V38 M131 82 h4 M131 74 h4 M131 66 h4',
+          role: 'accent',
+        },
+        shadow(80, 136, 40),
+      ],
+    },
+    // The crowns plain on the stage, and the Revolutionaries' plain
+    // triangular pennant on a pole beside them, in his colour, with no
+    // letters: he tells Luffy he is one of the army's leaders at 441
+    // (ch. 539 p. 13). The record's chapter, 540, already holds the needle,
+    // and two stages cannot share a chapter, so this one waits for 541, a
+    // chapter late. The needle hand is left out so the stage stays readable
+    // at tile size.
+    {
+      episode: 441,
+      chapter: 541,
+      value: [
+        ...IVANKOV_STAGE,
+        ...softened(IVANKOV_CROWNS),
+        { d: 'M22 128 V26' },
+        { d: 'M22 28 L54 38 L22 48', role: 'accent' },
+        shadow(80, 136, 40),
+      ],
+    },
+  ],
+
+  'doc-q': [
+    // The same basket, the apple apart now plain, blight spots on the apples
+    // and a sickly haze curling up off them in his colour: he infects Law's
+    // crew with a disease from the Sick-Sick Fruit at 1093 (ch. 1063
+    // p. 10-12).
+    {
+      episode: 1093,
+      chapter: 1063,
+      value: [
+        ...DOC_Q_BASKET,
+        ...softened(DOC_Q_APPLE),
+        {
+          d: `${circle(38, 100, 2.5)} ${circle(68, 92, 2.5)} ${circle(90, 102, 2.5)} ${circle(60, 100, 1.5)}`,
+          role: 'soft',
+        },
+        {
+          d: 'M44 64 C34 54 46 46 40 36 C34 26 44 18 50 20 C54 22 52 28 48 26 M78 62 C88 52 76 42 84 32 C90 24 84 14 78 14 C74 14 74 20 78 20 M60 58 C54 48 64 40 60 30 C58 26 62 22 65 25',
+          role: 'accent',
+        },
+        ...DOC_Q_SHADOWS,
+      ],
+    },
+  ],
+
+  'laffitte': [
+    // The same hat and cane, the cane now plain, and a pair of feathered
+    // wings spread from behind the crown in his colour: he shows them outside
+    // the gates of Impel Down when the crew arrives, at 444 (ch. 542).
+    {
+      episode: 444,
+      chapter: 542,
+      value: [
+        ...LAFFITTE_HAT,
+        ...softened(LAFFITTE_CANE),
+        {
+          d: 'M48 96 C30 92 14 76 6 50 C20 60 34 64 50 64 M104 96 C122 92 138 76 146 50 C132 60 118 64 102 64',
+          role: 'accent',
+        },
+        {
+          d: 'M48 96 C40 98 34 96 30 90 C24 90 18 84 16 76 C10 72 8 62 6 50 M104 96 C112 98 118 96 122 90 C128 90 134 84 136 76 C142 72 144 62 146 50 M44 80 l-10 -6 M30 74 l-8 -8 M108 80 l10 -6 M122 74 l8 -8',
+          role: 'soft',
+        },
+        shadow(80, 154, 60),
       ],
     },
   ],
