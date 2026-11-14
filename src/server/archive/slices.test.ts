@@ -842,6 +842,8 @@ describe('a record drawn again later in the story', () => {
     // Bepo's boiler suit back after the yukata, and again after Sulong.
     ['bepo', 1, 'first'],
     ['bepo', 3, 'first'],
+    // Caribou's coat and swamp back after the Udon mine.
+    ['caribou', 3, 0],
   ] as const)(
     'redraws %s at stage %i as its drawing %s itself, not a copy',
     (id, stage, again) => {

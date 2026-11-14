@@ -95,8 +95,8 @@ const BLUENO_TRIM: Stroke = {
   role: 'soft',
 }
 
-/** The Sunny's side-on hull and rig, shared with its coated stage. */
-const SUNNY_SHIP: Stroke[] = [
+/** The Sunny's side-on hull and rig, shared with its coated stage and the Fish-Man Island arc. */
+export const SUNNY_SHIP: Stroke[] = [
   {
     d: 'M34 112 C28 132 40 150 66 154 H124 C142 152 152 138 152 104 H136 V112 Z',
   },
