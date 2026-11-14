@@ -273,19 +273,28 @@ const WING: Growth = {
 /** The slip fruit: an oblong, glossy enough that what hits it slides off. */
 const SLIP_BODY: Body = { family: 'oblong', cy: 116 }
 
-/** The rim heights the glide hugs, and how far off the skin it runs. */
-const GLIDE = { from: 72, to: 104, off: 5 }
+/** The rim heights the streak runs between, and how far in from the rim. */
+const GLIDE = { from: 74, to: 124, inset: 5 }
 
-/** The glide: just off the near shoulder, down it, and away past the rim. */
+/**
+ * The streak: a long polish down the near shoulder, just in from the rim,
+ * flicking out past the rim at its foot where the stone came off it.
+ */
 function glide(): string {
-  const hug = Array.from({ length: 11 }, (_unused, at) => {
-    const y = GLIDE.from + ((GLIDE.to - GLIDE.from) * at) / 10
+  const hug = Array.from({ length: 13 }, (_unused, at) => {
+    const y = GLIDE.from + ((GLIDE.to - GLIDE.from) * at) / 12
     const [x] = onRim(SLIP_BODY, y, -1)
 
-    return point(x - GLIDE.off, y)
+    return [x + GLIDE.inset, y] as const
   })
+  const [endX, endY] = hug.at(-1) ?? [0, 0]
+  const flick = [
+    point(endX - 1, endY + 10),
+    point(endX - 6, endY + 18),
+    point(endX - 13, endY + 25),
+  ].join(' ')
 
-  return `${polyline(hug)} C32.6 117.4 30.1 129.7 30 134`
+  return `${polyline(hug.map(([x, y]) => point(x, y)))} C${flick}`
 }
 
 /** What every kit fruit is drawn with: its outline, crown, shine and hatching. */
@@ -1148,12 +1157,6 @@ const WAX_TOP: Point[] = [
 /** The clone fruit: a segmented one, a patch of its skin printed twice. */
 const CLONE_BODY: Body = { family: 'segmented', cy: 116 }
 
-/** The patch of skin that is copied: one large curl. */
-const PATCH: [number, number, number][] = [[76, 98, 14]]
-
-/** How far the copy is set from the patch it was taken from. */
-const COPY = { dx: 6, dy: 27 }
-
 /** The flame fruit: a round, sunk to its waist in fire. */
 const FIRE_BODY: Body = { family: 'round', cy: 100 }
 
@@ -1282,6 +1285,38 @@ function digit({ u, v, angle, length }: (typeof DIGITS)[number]): Point[] {
   return [[u + nx, v + ny], ...cap, [u - nx, v - ny]]
 }
 
+/** The curl of skin that is copied, and the copy of it on the hand. */
+const PATCH = { x: 66, y: 120, r: 10 }
+
+/** A point on the hand laid on the far shoulder, its fingers up and in. */
+const onCloneHand = turnedAbout([116, 112], -64)
+
+/** The hand's outline, from the wrist up round each digit and back down. */
+const CLONE_HAND: Point[] = [
+  [10, 36],
+  [10, 16],
+  [12, 6],
+  ...DIGITS.flatMap((one) => digit(one)),
+  [-11, 10],
+  [-10, 16],
+  [-10, 36],
+].map(([u = 0, v = 0]) => onCloneHand(u, v))
+
+/** Whether a point is under the hand, read by a ray cast to the right. */
+function underHand(x: number, y: number): boolean {
+  let inside = false
+
+  for (const [at, [ax, ay]] of CLONE_HAND.entries()) {
+    const [bx, by] = CLONE_HAND.at(at - 1) ?? [ax, ay]
+
+    if (ay > y !== by > y && x < ax + ((y - ay) * (bx - ax)) / (by - ay)) {
+      inside = !inside
+    }
+  }
+
+  return inside
+}
+
 /** The dachshund fruit: an oblong, standing on four short legs. */
 const DACHSHUND_BODY: Body = { family: 'oblong', cy: 114 }
 
@@ -1343,13 +1378,13 @@ const JACKAL_BODY: Body = { family: 'segmented', cy: 118 }
  * back edge to a point, and down its front edge.
  */
 const EAR: Growth = {
-  from: 102,
-  to: 76,
+  from: 112,
+  to: 78,
   through: [
-    [46, 80],
-    [42, 56],
-    [36, 34],
-    [30, 50],
+    [62, 94],
+    [54, 58],
+    [40, 28],
+    [30, 46],
     [22, 62],
   ],
 }
@@ -2587,10 +2622,9 @@ export const fruitArt = {
   'slip-slip-fruit': [
     { d: outline(SLIP_BODY) },
     crown(SLIP_BODY),
-    shine(SLIP_BODY),
     hatching(SLIP_BODY, [120, 132, 144]),
     ...skin([
-      [68, 120, 9],
+      [74, 116, 9],
       [96, 142, -8],
     ]),
     ...sprout(SLIP_BODY, 6, 'right'),
@@ -2598,13 +2632,13 @@ export const fruitArt = {
     // The chunk of the fountain, one face of it turned to the light.
     {
       d: [
-        'M11 155 L16 148 L25 147 L31 153 L29 162 L20 166 L12 163 Z',
-        'M25 147 L23 156 L29 162',
+        'M8 172 L13 161 L25 157 L35 164 L34 177 L22 184 L11 181 Z',
+        'M25 157 L23 170 L34 177 M23 170 L11 181',
       ].join(' '),
       role: 'ambient',
     },
-    // Which way it is going.
-    { d: 'M26 140 L23 144 M32 144 L29 148', role: 'soft' },
+    // Which way it went off the skin.
+    { d: 'M45 145 L40 152 M51 153 L45 161', role: 'soft' },
     shadowUnder(1),
   ],
 
@@ -2742,6 +2776,14 @@ export const fruitArt = {
       d: 'M58 158 C70 166 96 164 112 146 M124 154 C128 160 130 166 128 172',
       role: 'soft',
     },
+    // Two runs down the outer face, set hard before they reached the ground.
+    {
+      d: [
+        'M44 158 C43 163 43 167 46 168 C49 169 50 165 50 155',
+        'M112 151 C111 158 111 163 114 164 C117 165 118 160 117 150',
+      ].join(' '),
+      role: 'soft',
+    },
     { d: 'M14 184 C40 187 120 187 146 184', role: 'ambient', dashed: true },
   ],
 
@@ -2754,14 +2796,24 @@ export const fruitArt = {
    * face, and never the real fruit's two joined calabashes.
    */
   'clone-clone-fruit': [
-    ...kitBody(CLONE_BODY, [98, 110, 122]),
-    ribs(CLONE_BODY),
-    ...skin(PATCH),
+    ...kitBody(CLONE_BODY, [146, 156, 164], (x, y) => !underHand(x, y)),
+    ribs(CLONE_BODY, undefined, [-1]),
+    ...skin([
+      [PATCH.x, PATCH.y, PATCH.r],
+      [88, 150, -7],
+    ]),
     ...sprout(CLONE_BODY, -4, 'left'),
+    { d: polyline(CLONE_HAND.map(([x, y]) => point(x, y))) },
+    // The knuckles, across the back of the hand.
     {
-      d: PATCH.map(([x, y, r]) => curl(x + COPY.dx, y + COPY.dy, r)).join(' '),
-      role: 'accent',
+      d: polyline(
+        [-9, -6, 0, 6, 9].map((u) =>
+          point(...onCloneHand(u, -9 - Math.abs(u) / 6)),
+        ),
+      ),
+      role: 'soft',
     },
+    { d: curl(...onCloneHand(0, 4), PATCH.r), role: 'accent' },
     shadowUnder(1),
   ],
 
@@ -2906,8 +2958,9 @@ export const fruitArt = {
     ]),
     ...sprout(JACKAL_BODY, 6, 'right'),
     { d: grown(JACKAL_BODY, -1, EAR), role: 'accent' },
-    // The fold inside the ear.
-    { d: 'M42 94 C40 78 40 62 43 46 C46 58 50 68 54 78', role: 'soft' },
+    // The fold inside the ear, and the dark of the hollow in front of it.
+    { d: 'M36 104 C31 86 31 62 39 40 C44 54 48 64 52 76', role: 'soft' },
+    { d: 'M40 66 L46 60 M40 78 L48 70 M42 90 L50 82', role: 'ambient' },
     shadowUnder(1),
   ],
 
