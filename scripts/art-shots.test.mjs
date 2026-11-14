@@ -115,10 +115,10 @@ describe('stage planning from the real archive', () => {
       'karoo',
       'karoo',
     ])
-    expect(rows[0].label).toBe('marshall-d-teach · ep 421 / c524')
+    expect(rows[0].label).toBe('marshall-d-teach · ep 325 / c440')
     expect(rows[0].bookmarks.slice(2)).toEqual([
-      { value: 'c523', open: true },
-      { value: 'c524', open: true },
+      { value: 'c439', open: true },
+      { value: 'c440', open: true },
     ])
   })
 
