@@ -396,7 +396,7 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'stevron-frey': [
-    // The shield fallen flat on the ground: he dies of a wound after Oxcross,
+    // The shield dropped, leaning on its point, a crack across it: he dies of a wound after Oxcross,
     // told in Bran V of A Clash of Kings (chapter 109). The book's alone;
     // episode 14, the morning after Oxcross, orders it.
     {
@@ -433,7 +433,7 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'rorge': [
-    // The wagon tipped over, a wheel off and the shaft on the ground: he is
+    // The wagon overturned, wheels up: he is
     // killed in episode 37 (Arya) and in Brienne VII of A Feast for Crows
     // (chapter 263, Brienne).
     {
@@ -446,7 +446,7 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'biter': [
-    // The cage corner thrown down and its chains slack on the ground: he is
+    // The cage empty, its chains fallen to the floor: he is
     // killed in episode 37 (the Hound), and his death is told in Brienne VIII
     // of A Feast for Crows (chapter 268, Gendry's spear).
     {
@@ -463,7 +463,7 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'kevan-lannister': [
-    // The lion fallen on its side: he is killed in episode 60 (the wildfire
+    // The lion on its back, legs up: he is killed in episode 60 (the wildfire
     // under the Great Sept) and in the epilogue of A Dance with Dragons
     // (chapter 344, a crossbow bolt).
     {

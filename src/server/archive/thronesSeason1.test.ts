@@ -908,7 +908,8 @@ describe.each([
  * the Riverlands cast's (#1057), each pinned in the units that tell it:
  * Bran's climb, which the book alone shows after his threshold, the deaths
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
- * Heddle's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
+ * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
  * magic. `stage` counts a record's stages from 0, for a record redrawn more
  * than once.
