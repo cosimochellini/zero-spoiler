@@ -207,6 +207,16 @@ const RECORDS: {
   { id: 'pyke', episode: 4, chapter: 25 },
   { id: 'white-harbor', episode: 6, chapter: 15 },
   { id: 'the-neck', episode: 8, chapter: 5 },
+  // Named only (#1249).
+  { id: 'casterly-rock', episode: 1, chapter: 3 },
+  { id: 'lannisport', episode: 3, chapter: 21 },
+  { id: 'harrenhal', episode: 4, chapter: 29 },
+  { id: 'the-fingers', episode: 4, chapter: 14 },
+  { id: 'the-trident', episode: 5, chapter: 3 },
+  { id: 'tumblestone', episode: 5, chapter: 64 },
+  { id: 'golden-tooth', episode: 8, chapter: 41 },
+  { id: 'red-fork', episode: 10, chapter: 3 },
+  { id: 'gods-eye', episode: 10, chapter: 67 },
 ]
 
 /**
@@ -837,6 +847,7 @@ describe('the first season’s demo', () => {
     expect(demo.places.map(({ id }) => id)).toStrictEqual([
       'haunted-forest',
       'winterfell',
+      'casterly-rock',
       'pentos',
       'bear-island',
       'kings-landing',
@@ -846,17 +857,25 @@ describe('the first season’s demo', () => {
       'castle-black',
       'dothraki-sea',
       'red-keep',
+      'lannisport',
+      'the-fingers',
       'eastwatch',
       'pyke',
+      'harrenhal',
       'vaes-dothrak',
+      'the-trident',
       'the-eyrie',
+      'tumblestone',
       'white-harbor',
       'wolfswood',
       'lannister-camp',
       'the-neck',
+      'golden-tooth',
       'lhazar',
       'the-twins',
       'great-sept-of-baelor',
+      'red-fork',
+      'gods-eye',
     ])
     // Past the demo, only the four places later seasons first show, covered.
     expect(
