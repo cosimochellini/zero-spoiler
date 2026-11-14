@@ -3328,15 +3328,21 @@ export const fruitArt = {
     },
     // The top of the ring, its inner edge seen from above.
     { d: cuffArc(CUFF.rx - CUFF.rim, CUFF.ry - 1.5, -0.5), role: 'soft' },
-    // The iron turning away on the far side of its face.
+    // The iron turning away on the far side of the cuff's face, and down the
+    // far edge of the band.
     {
-      d: [12, 17, 22]
-        .map((u) => {
+      d: [
+        ...[12, 17, 22].map((u) => {
           const v = CUFF.ry * Math.sqrt(1 - (u / CUFF.rx) ** 2)
 
           return `M${point(...onCuff(u, v + 3))} L${point(...onCuff(u - 3, v + CUFF.tall - 2))}`
-        })
-        .join(' '),
+        }),
+        ...[84, 94, 136, 148].map((y) => {
+          const half = halfWidth(CAGE_BODY, y)
+
+          return `M${point(80 + (BAND.far - 0.04) * half, y)} L${point(80 + (BAND.near + 0.08) * half, y + 4)}`
+        }),
+      ].join(' '),
       role: 'ambient',
     },
     shadowUnder(1),
@@ -6823,8 +6829,8 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
     },
   ],
 
-  // Lucci awakens the fruit on Egghead in chapter 1069 (episode 1100), a
-  // chapter before Vegapunk shows the real fruit.
+  // Lucci awakens the fruit on Egghead in chapter 1069 and episode 1100; the
+  // real fruit follows in episode 1101, paired with chapter 1070.
   'cat-cat-fruit-model-leopard': [
     {
       episode: 1100,
