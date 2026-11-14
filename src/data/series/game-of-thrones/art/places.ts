@@ -662,6 +662,27 @@ const THE_NECK: Stroke[] = [
 ]
 
 /**
+ * Casterly Rock: a great rock over the sea with the castle cut into it,
+ * named in episode 1 (Cersei's cliffs) and in Catelyn I (chapter 3) and
+ * never visited in the first season or book. The rock's far side is
+ * hatched; the accent is the gate.
+ */
+const CASTERLY_ROCK: Stroke[] = [
+  { d: 'M14 140 Q18 96 44 70 Q70 44 104 50 Q132 60 146 140' },
+  {
+    d: 'M60 92 V74 H72 V92 M84 86 V64 H96 V86 M108 96 V80 H118 V96',
+    role: 'soft',
+  },
+  { d: 'M74 140 V118 Q84 106 94 118 V140', role: 'accent' },
+  {
+    d: 'M118 104 l6 -3 M124 116 l6 -3 M130 128 l6 -3 M112 90 l6 -3',
+    role: 'ambient',
+  },
+  { d: 'M40 120 Q50 108 46 96 M128 82 Q120 70 110 66', role: 'soft' },
+  ...SEA,
+]
+
+/**
  * The Narrow Sea: open water between two coasts, a ship under sail between
  * them, named in episode 1 (the caption over Pentos) and in Catelyn I
  * (chapter 3); no scene is set on it in the first season or book. The
@@ -679,6 +700,46 @@ const NARROW_SEA: Stroke[] = [
     role: 'ambient',
   },
   ...SEA,
+]
+
+/**
+ * Lannisport: a port city's towers and spires on the waterfront, two ships
+ * at the quay, named in episode 3 and in Jon III (chapter 21) and never
+ * visited in the first season or book. The accent is the ships.
+ */
+const LANNISPORT: Stroke[] = [
+  { d: 'M10 128 H150' },
+  {
+    d: 'M20 128 V100 H40 V128 M48 128 V88 H62 V128 M70 128 V96 H90 V128 M98 128 V84 H112 V128 M120 128 V102 H140 V128',
+  },
+  { d: 'M48 88 L55 74 L62 88 M98 84 L105 68 L112 84', role: 'soft' },
+  { d: 'M76 108 h8 M126 112 h8 M26 110 h8', role: 'soft' },
+  {
+    d: 'M28 146 Q40 152 58 146 L56 140 H32 Z M44 140 V118 M44 120 L56 136 H44 M100 146 Q112 152 130 146 L128 140 H104 Z M116 140 V120 M116 122 L128 136 H116',
+    role: 'accent',
+  },
+  { d: 'M134 108 l5 -3 M134 118 l5 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Harrenhal: a castle of five great towers joined by its walls, named in
+ * episode 4 (the black bat of Harrenhal) and in Catelyn V (chapter 29) and
+ * never visited in the first season or book. The towers' far faces are
+ * hatched; the accent is the gate.
+ */
+const HARRENHAL: Stroke[] = [
+  {
+    d: 'M14 150 V84 Q20 76 26 84 V150 M44 150 V70 Q52 62 60 70 V150 M76 150 V58 Q84 50 92 58 V150 M108 150 V70 Q116 62 124 70 V150 M134 150 V84 Q140 76 146 84 V150',
+  },
+  { d: 'M26 120 H44 M60 110 H76 M92 110 H108 M124 120 H134' },
+  { d: 'M78 150 V132 Q84 124 90 132 V150', role: 'accent' },
+  { d: 'M52 86 V94 M84 74 V82 M116 86 V94', role: 'soft' },
+  {
+    d: 'M88 70 l4 -3 M88 90 l4 -3 M120 82 l4 -3 M120 102 l4 -3 M56 82 l4 -3 M56 102 l4 -3',
+    role: 'ambient',
+  },
+  shadow(80, 156, 66),
 ]
 
 /**
@@ -723,6 +784,219 @@ const HORN_HILL: Stroke[] = [
 ]
 
 /**
+ * The Fingers: narrow tongues of land reaching into the sea, named in
+ * episode 4 (Littlefinger's spit of land) and in Tyrion II (chapter 14) and
+ * never visited in the first season or book. The accent is their tips.
+ */
+const THE_FINGERS: Stroke[] = [
+  {
+    d: 'M14 60 Q30 66 34 100 Q38 70 52 72 Q58 110 64 112 Q70 76 84 80 Q90 116 98 116 Q102 84 116 88 Q124 120 130 118 Q136 96 146 100',
+  },
+  {
+    d: 'M34 100 Q36 118 40 128 M64 112 Q66 124 70 132 M98 116 Q100 126 104 134 M130 118 Q132 128 134 136',
+    role: 'accent',
+  },
+  {
+    d: 'M24 68 l5 -3 M58 80 l5 -3 M90 86 l5 -3 M120 96 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M14 40 Q60 30 146 44', role: 'soft' },
+  {
+    d: 'M20 150 q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 M44 140 q6 -3 12 0 M78 144 q6 -3 12 0 M112 146 q6 -3 12 0',
+    role: 'ambient',
+  },
+]
+
+/**
+ * The Trident: three rivers running together into one, named in episode 5
+ * and in Catelyn I (chapter 3); its bank and its crossing are no scene's
+ * setting in the first season or book. The accent is the joined river.
+ */
+const THE_TRIDENT: Stroke[] = [
+  { d: 'M20 30 Q50 70 66 100 M36 30 Q60 66 74 100' },
+  { d: 'M76 24 Q78 60 76 100 M86 24 Q86 60 84 100' },
+  { d: 'M140 30 Q108 70 92 100 M126 30 Q100 66 86 100' },
+  { d: 'M66 100 Q70 130 64 160 M94 100 Q96 130 102 160', role: 'accent' },
+  { d: 'M70 120 q6 -3 12 0 M76 140 q6 -3 12 0', role: 'soft' },
+  { d: 'M30 60 l5 -3 M110 60 l5 -3 M60 140 l-5 -3', role: 'ambient' },
+]
+
+/**
+ * Tumblestone: a river running over stones, named in episode 5 (Ser Marlon
+ * of Tumblestone) and in Catelyn X (chapter 64) and never visited in the
+ * first season or book. The accent is the broken water.
+ */
+const TUMBLESTONE: Stroke[] = [
+  {
+    d: 'M40 20 Q60 60 52 100 Q46 130 60 160 M80 20 Q96 60 90 100 Q86 130 100 160',
+  },
+  {
+    d: 'M54 60 q4 -4 8 0 t8 0 M50 100 q4 -4 8 0 t8 0 t8 0 M58 134 q4 -4 8 0 t8 0',
+    role: 'accent',
+  },
+  {
+    d: 'M62 72 Q66 66 72 70 Q74 76 66 78 Z M70 114 Q76 108 82 112 Q82 118 74 120 Z M60 88 Q64 84 68 88 Q66 92 60 92 Z',
+    role: 'soft',
+  },
+  {
+    d: 'M20 60 Q28 54 36 60 M110 90 Q118 84 126 90 M112 130 Q120 124 128 130',
+    role: 'soft',
+  },
+  { d: 'M96 50 l5 -3 M98 80 l5 -3 M100 120 l5 -3', role: 'ambient' },
+]
+
+/**
+ * The Golden Tooth: a castle on the peak above a mountain pass, named in
+ * episode 8 and in Catelyn VII (chapter 41) and never visited in the first
+ * season or book. The mountain's far side is hatched; the accent is the
+ * castle.
+ */
+const GOLDEN_TOOTH: Stroke[] = [
+  { d: 'M10 150 L44 90 L60 104 L80 50 L100 104 L116 90 L150 150' },
+  {
+    d: 'M72 66 V50 H88 V66 M72 50 V44 H76 V50 M84 50 V44 H88 V50',
+    role: 'accent',
+  },
+  { d: 'M68 150 Q76 130 80 110 Q84 130 92 150', role: 'ambient', dashed: true },
+  {
+    d: 'M92 80 l6 -3 M100 96 l6 -3 M120 110 l6 -3 M128 126 l6 -3',
+    role: 'ambient',
+  },
+  { d: 'M30 120 Q40 112 50 116 M110 120 Q120 112 130 116', role: 'soft' },
+  shadow(80, 156, 66),
+]
+
+/**
+ * The Red Fork: a river winding between hills, named in Catelyn I (chapter
+ * 3) and in episode 10 and never visited in the first season or book. The
+ * accent is the water.
+ */
+const RED_FORK: Stroke[] = [
+  {
+    d: 'M10 70 Q50 60 70 90 Q90 120 150 110 M10 86 Q46 78 62 104 Q84 136 150 126',
+  },
+  {
+    d: 'M24 76 q6 -3 12 0 M70 108 q6 -3 12 0 M114 118 q6 -3 12 0',
+    role: 'accent',
+  },
+  {
+    d: 'M10 50 Q40 34 70 46 Q100 30 150 44 M10 150 Q60 140 150 152',
+    role: 'soft',
+  },
+  { d: 'M30 140 Q36 130 42 140 M110 64 Q118 54 126 64', role: 'soft' },
+  { d: 'M90 56 l5 -3 M50 134 l5 -3', role: 'ambient' },
+]
+
+/**
+ * The Gods Eye: a wide lake under a line of hills, named in episode 10 and
+ * in Bran VII (chapter 67) and never visited in the first season or book.
+ * The accent is the water.
+ */
+const GODS_EYE: Stroke[] = [
+  {
+    d: 'M14 110 Q20 84 80 82 Q140 84 146 110 Q140 136 80 138 Q20 136 14 110 Z',
+  },
+  { d: 'M30 110 q8 -4 16 0 t16 0 M96 120 q8 -4 16 0 t16 0', role: 'accent' },
+  { d: 'M10 70 Q30 54 50 64 Q70 46 96 60 Q120 48 150 66', role: 'soft' },
+  { d: 'M120 126 l6 -3 M126 116 l6 -3', role: 'ambient' },
+  shadow(80, 150, 66),
+]
+
+/**
+ * Asshai: three dark towers, for the far city named in episode 1 and in
+ * Daenerys II (chapter 12), Illyrio's "the Shadow Lands beyond Asshai", and
+ * never visited in the first season or book. The towers are hatched dark;
+ * the accent is their peaks.
+ */
+const ASSHAI: Stroke[] = [
+  { d: 'M30 150 V80 H48 V150 M70 150 V50 H90 V150 M112 150 V72 H130 V150' },
+  { d: 'M48 150 V110 H70 M90 120 H112', role: 'soft' },
+  {
+    d: 'M30 80 L39 66 L48 80 M70 50 L80 32 L90 50 M112 72 L121 58 L130 72',
+    role: 'accent',
+  },
+  {
+    d: 'M34 90 l10 -6 M34 104 l10 -6 M34 118 l10 -6 M34 132 l10 -6 M74 70 l12 -7 M74 86 l12 -7 M74 102 l12 -7 M74 118 l12 -7 M74 134 l12 -7 M116 82 l10 -6 M116 96 l10 -6 M116 110 l10 -6 M116 124 l10 -6 M116 138 l10 -6',
+    role: 'ambient',
+  },
+  shadow(80, 156, 66),
+]
+
+/**
+ * Valyria: old columns round a standing arch, for the land named in Catelyn I
+ * (chapter 3) and in episode 4 and never visited in the first season or book.
+ * Neither tells its fate by then, so nothing is broken or burning. The accent
+ * is the arch.
+ */
+const VALYRIA: Stroke[] = [
+  {
+    d: 'M30 150 V96 L35 90 L40 96 V150 M60 150 V78 L66 70 L72 78 V150 M100 150 V78 L106 70 L112 78 V150 M120 150 V96 L125 90 L130 96 V150',
+  },
+  { d: 'M72 110 Q86 92 100 110', role: 'accent' },
+  {
+    d: 'M68 100 l3 -2 M68 120 l3 -2 M108 100 l3 -2 M108 120 l3 -2 M38 110 l2 -2 M38 130 l2 -2 M128 110 l2 -2 M128 130 l2 -2',
+    role: 'ambient',
+  },
+  shadow(80, 156, 66),
+]
+
+/**
+ * Braavos: domed houses over an arcade on the water, named in Daenerys I
+ * (chapter 4) and in episode 3 (the Sealord of Braavos) and never visited in
+ * the first season or book. The accent is the great middle arch.
+ */
+const BRAAVOS: Stroke[] = [
+  {
+    d: 'M10 104 H150 M10 104 V124 M30 104 V124 M50 104 V124 M110 104 V124 M130 104 V124 M150 104 V124',
+  },
+  {
+    d: 'M10 124 Q20 110 30 124 M30 124 Q40 110 50 124 M110 124 Q120 110 130 124 M130 124 Q140 110 150 124',
+    role: 'soft',
+  },
+  { d: 'M50 124 Q80 84 110 124', role: 'accent' },
+  {
+    d: 'M20 104 V80 Q30 68 40 80 V104 M66 104 V70 Q80 54 94 70 V104 M120 104 V80 Q130 68 140 80 V104',
+  },
+  { d: 'M90 78 l4 -3 M90 92 l4 -3 M136 86 l4 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Myr: three domed houses on a coast, named in Daenerys I (chapter 4) and in
+ * episode 4 (Thoros of Myr) and never visited in the first season or book.
+ * The accent is the domes.
+ */
+const MYR: Stroke[] = [
+  { d: 'M10 128 Q50 120 80 126 Q120 132 150 124' },
+  { d: 'M24 124 V100 H56 V122 M64 126 V92 H96 V128 M104 128 V102 H136 V126' },
+  {
+    d: 'M24 100 Q40 80 56 100 M64 92 Q80 68 96 92 M104 102 Q120 82 136 102',
+    role: 'accent',
+  },
+  { d: 'M90 104 l4 -3 M90 116 l4 -3 M130 112 l4 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * Tyrosh: a tall tower on an island, named in Daenerys I (chapter 4) and in
+ * episode 7 (a trader's pear brandy) and never visited in the first season or
+ * book. The accent is the tower.
+ */
+const TYROSH: Stroke[] = [
+  { d: 'M20 140 Q40 112 80 110 Q120 112 140 140' },
+  {
+    d: 'M70 112 V56 H90 V112 M66 56 H94 M70 56 V48 H76 V56 M84 56 V48 H90 V56',
+    role: 'accent',
+  },
+  { d: 'M44 124 V104 H62 V116 M98 116 V100 H116 V126', role: 'soft' },
+  {
+    d: 'M86 70 l3 -2 M86 86 l3 -2 M86 100 l3 -2 M120 128 l6 -3 M128 136 l6 -3',
+    role: 'ambient',
+  },
+  ...SEA,
+]
+
+/**
  * Dragonstone: a castle among the crags of a rocky island, named in Daenerys
  * I (chapter 4) and in episode 7 and never visited in the first season or
  * book. The dark rock is hatched; the accent is the castle.
@@ -740,6 +1014,63 @@ const DRAGONSTONE: Stroke[] = [
     d: 'M90 100 l6 -4 M96 112 l6 -4 M104 124 l6 -4 M114 120 l6 -4 M122 130 l6 -4 M54 104 l6 -4 M48 118 l6 -4',
     role: 'ambient',
   },
+  ...SEA,
+]
+
+/**
+ * Qohor: a walled city at the edge of a forest, named in Daenerys I (chapter
+ * 4) and in episode 3 and never visited in the first season or book. The
+ * accent is the trees.
+ */
+const QOHOR: Stroke[] = [
+  {
+    d: 'M60 150 V96 H140 V150 M60 96 V88 H68 V96 M84 96 V88 H92 V96 M108 96 V88 H116 V96 M132 96 V88 H140 V96',
+  },
+  { d: 'M90 150 V128 Q100 118 110 128 V150', role: 'soft' },
+  {
+    d: 'M22 150 V140 M10 140 L22 120 L34 140 Z M14 124 L22 108 L30 124 M44 150 V136 M32 136 L44 112 L56 136 Z M36 116 L44 98 L52 116',
+    role: 'accent',
+  },
+  { d: 'M130 110 l6 -3 M130 124 l6 -3 M130 138 l6 -3', role: 'ambient' },
+  shadow(80, 156, 70),
+]
+
+/**
+ * Volantis: two dark walls joined by a long bridge over water, named in
+ * Daenerys I (chapter 4) and in episode 7 (the wine seller) and never visited
+ * in the first season or book. The walls are hatched; the accent is the
+ * bridge's arches.
+ */
+const VOLANTIS: Stroke[] = [
+  { d: 'M10 112 H150 M10 120 H150' },
+  {
+    d: 'M14 140 Q24 122 34 140 M38 140 Q48 122 58 140 M62 140 Q72 122 82 140 M86 140 Q96 122 106 140 M110 140 Q120 122 130 140 M134 140 Q144 122 150 134 M34 140 V120 M58 140 V120 M82 140 V120 M106 140 V120 M130 140 V120',
+    role: 'accent',
+  },
+  { d: 'M20 112 V72 H60 V112 M100 112 V68 H140 V112', role: 'soft' },
+  {
+    d: 'M24 82 l8 -5 M24 96 l8 -5 M44 82 l8 -5 M44 96 l8 -5 M104 80 l8 -5 M104 94 l8 -5 M124 80 l8 -5 M124 94 l8 -5',
+    role: 'ambient',
+  },
+  {
+    d: 'M10 152 q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Lys: three pale towers on an island, named in Daenerys I (chapter 4) and in
+ * episode 2 (Doreah) and never visited in the first season or book. The
+ * accent is their domes.
+ */
+const LYS: Stroke[] = [
+  { d: 'M16 140 Q40 114 80 112 Q120 114 144 140' },
+  { d: 'M52 114 V66 H66 V114 M73 112 V52 H87 V112 M94 114 V70 H108 V114' },
+  {
+    d: 'M52 66 Q59 54 66 66 M73 52 Q80 38 87 52 M94 70 Q101 58 108 70',
+    role: 'accent',
+  },
+  { d: 'M110 124 l6 -3 M118 132 l6 -3', role: 'ambient' },
   ...SEA,
 ]
 
@@ -764,6 +1095,43 @@ const THE_ARBOR: Stroke[] = [
   },
   { d: 'M126 122 l6 -3 M134 132 l6 -3', role: 'ambient' },
   ...SEA,
+]
+
+/**
+ * Qarth: a high wall with a great dome behind it, named in episode 2 and in
+ * Daenerys III (chapter 24), a trader from Qarth, and never visited in the
+ * first season or book. The accent is the dome.
+ */
+const QARTH: Stroke[] = [
+  { d: 'M10 150 V100 H150 V150 M10 100 V90 H24 V100 M136 100 V90 H150 V100' },
+  { d: 'M50 100 Q80 50 110 100', role: 'accent' },
+  { d: 'M36 100 V64 H44 V100 M116 100 V64 H124 V100', role: 'soft' },
+  { d: 'M70 150 V126 Q80 116 90 126 V150', role: 'soft' },
+  {
+    d: 'M120 110 l6 -3 M120 126 l6 -3 M120 142 l6 -3 M100 78 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 156, 70),
+]
+
+/**
+ * The Mother of Mountains: a lone mountain over a flat plain, named in
+ * episode 7 (Drogo's vow) and in Daenerys IV (chapter 37). The first season
+ * and book stay in the city below it. Its far side is hatched; the accent is
+ * the snow line.
+ */
+const MOTHER_OF_MOUNTAINS: Stroke[] = [
+  { d: 'M24 140 L64 70 L80 52 L96 70 L136 140' },
+  { d: 'M64 70 L72 78 L80 70 L88 80 L96 70', role: 'accent' },
+  { d: 'M10 140 H150', role: 'soft' },
+  {
+    d: 'M98 84 l6 -4 M106 98 l6 -4 M114 112 l6 -4 M122 126 l6 -4',
+    role: 'ambient',
+  },
+  {
+    d: 'M20 150 q6 -3 12 0 M60 152 q6 -3 12 0 M110 150 q6 -3 12 0',
+    role: 'soft',
+  },
 ]
 
 /**
@@ -799,6 +1167,25 @@ export const PLACE_DRAWINGS = {
   'pyke': PYKE,
   'white-harbor': WHITE_HARBOR,
   'the-neck': THE_NECK,
+  'casterly-rock': CASTERLY_ROCK,
+  'lannisport': LANNISPORT,
+  'harrenhal': HARRENHAL,
+  'the-fingers': THE_FINGERS,
+  'the-trident': THE_TRIDENT,
+  'tumblestone': TUMBLESTONE,
+  'golden-tooth': GOLDEN_TOOTH,
+  'red-fork': RED_FORK,
+  'gods-eye': GODS_EYE,
+  'asshai': ASSHAI,
+  'valyria': VALYRIA,
+  'braavos': BRAAVOS,
+  'myr': MYR,
+  'tyrosh': TYROSH,
+  'qohor': QOHOR,
+  'volantis': VOLANTIS,
+  'lys': LYS,
+  'qarth': QARTH,
+  'mother-of-mountains': MOTHER_OF_MOUNTAINS,
   'narrow-sea': NARROW_SEA,
   'the-citadel': THE_CITADEL,
   'horn-hill': HORN_HILL,

@@ -25,10 +25,15 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'fortress'
     | 'inn'
     | 'island'
+    | 'lake'
     | 'marsh'
+    | 'mountain'
     | 'open-sea'
     | 'order'
+    | 'peninsula'
     | 'plain'
+    | 'river'
+    | 'ruin'
     | 'sept'
     | 'town'
   group: never
@@ -42,6 +47,7 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'the-riverlands'
     | 'the-seas'
     | 'the-vale'
+    | 'the-westerlands'
 }
 
 /**

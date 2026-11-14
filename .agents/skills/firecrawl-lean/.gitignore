@@ -11,3 +11,7 @@
 
 # Local archive
 _archive/
+
+# OPF local companions (shared content is committed; personal notes stay local)
+*.local.*
+.octopus.local/
