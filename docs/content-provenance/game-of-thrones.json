@@ -1223,6 +1223,230 @@
       "Italian: \"Incollatura\" is the books' form on Italian Wikipedia; the dub form is unconfirmed."
     ]
   },
+  "casterly-rock": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Casterly_Rock",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Castel_Granito"
+    ],
+    "unverified": [
+      "Show gate: Cersei's line in episode 1, as the Fandom ref GOT101 places it; not viewed."
+    ]
+  },
+  "lannisport": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Lannisport",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_20",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lannisport"
+    ],
+    "unverified": [
+      "Show gate: Tyrion's line in episode 3 (Fandom ref GOT103); not viewed."
+    ]
+  },
+  "harrenhal": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Harrenhal"
+    ],
+    "unverified": [
+      "Show gate: Catelyn's line in episode 4 (Fandom ref GOT104); not viewed."
+    ]
+  },
+  "the-fingers": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/The_Fingers",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Littlefinger's line in episode 4 (Fandom ref GOT104); not viewed.",
+      "Italian: \"Dita\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+    ]
+  },
+  "the-trident": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Trident",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Le_Terre_dei_Fiumi"
+    ],
+    "unverified": [
+      "Show gate: Barristan's line in episode 5 (Fandom ref GOT105); not viewed.",
+      "Filed as named only although Sansa I is set on its bank and episode 9 crosses it (owner, #1035)."
+    ]
+  },
+  "tumblestone": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Tumblestone",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Delta_delle_Acque"
+    ],
+    "unverified": [
+      "Show gate: \"Ser Marlon of Tumblestone\" in episode 5, a knight's epithet (owner: it names the river, #1035); not viewed."
+    ]
+  },
+  "golden-tooth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Golden_Tooth",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Kevan's line in episode 8 (Fandom ref GOT108); not viewed.",
+      "Italian: \"Dente d’Oro\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+    ]
+  },
+  "red-fork": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Red_Fork",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Le_Terre_dei_Fiumi"
+    ],
+    "unverified": [
+      "Show gate: Tywin's line in episode 10 (Fandom ref GOT110); not viewed."
+    ]
+  },
+  "gods-eye": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Gods_Eye",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Tywin's line in episode 10 (Fandom ref GOT110); not viewed.",
+      "Book gate: Bran VII, in the narration of Luwin's lesson (close-third narration counts, owner, #1035).",
+      "Italian: \"Occhio degli Dei\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+    ]
+  },
+  "asshai": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Asshai",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Asshai"
+    ],
+    "unverified": [
+      "Show gate: Illyrio's line on the dragon eggs in episode 1 (Fandom ref GOT101); not viewed.",
+      "Book gate: Daenerys II, Illyrio's \"the Shadow Lands beyond Asshai\"; checked against the text."
+    ]
+  },
+  "lys": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Lys",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lys"
+    ],
+    "unverified": [
+      "Show gate: Doreah's line on Irogenia of Lys in episode 2 (Fandom ref GOT102); not viewed.",
+      "Book gate: Daenerys I, \"…Qohor and Volantis and Lys\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "qarth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Qarth",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Doreah's line on a trader from Qarth in episode 2 (Fandom ref GOT102); not viewed.",
+      "Book gate: Daenerys III, Doreah's trader from Qarth; checked against the text."
+    ]
+  },
+  "braavos": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Braavos",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Braavos"
+    ],
+    "unverified": [
+      "Show gate: Syrio's line on the Sealord of Braavos in episode 3 (Fandom ref GOT103); not viewed.",
+      "Book gate: Daenerys I, \"from Braavos to Myr\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "qohor": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Qohor",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Qohor"
+    ],
+    "unverified": [
+      "Show gate: Jorah's line on riding to Qohor in episode 3 (Fandom ref GOT103); not viewed.",
+      "Book gate: Daenerys I, \"on to Qohor and Volantis\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "myr": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Myr",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Myr"
+    ],
+    "unverified": [
+      "Show gate: Jaime's line on Thoros of Myr in episode 4 (Fandom ref GOT104); not viewed.",
+      "Book gate: Daenerys I, \"from Braavos to Myr\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "valyria": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Valyria",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Valyria"
+    ],
+    "unverified": [
+      "Show gate: Viserys's line on the dragons of Valyria in episode 4 (Fandom ref GOT104); not viewed.",
+      "Book gate: Catelyn I, Ice \"forged in Valyria, before the Doom\"; checked against the text."
+    ]
+  },
+  "tyrosh": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Tyrosh",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Tyrosh"
+    ],
+    "unverified": [
+      "Show gate: a trader's cry of Tyrosh pear brandy in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Daenerys I, \"from Myr to Tyrosh\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "volantis": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Volantis",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Volantis"
+    ],
+    "unverified": [
+      "Show gate: the wine seller's line in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Daenerys I, \"Qohor and Volantis and Lys\"; checked against the text, the city's name and not only a demonym."
+    ]
+  },
+  "mother-of-mountains": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Mother_of_Mountains",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Drogo's vow, named in the English subtitle (owner, #1251) in episode 7 (Fandom ref GOT107); not viewed.",
+      "Book gate: Daenerys IV, \"the Mother of Mountains looming overhead\"; checked against the text."
+    ]
+  },
   "hullen": {
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",

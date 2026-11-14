@@ -2243,8 +2243,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 16,
       name: { it: 'Locanda all’Incrocio', en: 'the Inn at the Crossroads' },
       summary: {
-        it: 'Una locanda dove si incontrano le grandi strade del regno, vicino alle rive del Tridente.',
-        en: 'An inn where the great roads of the realm meet, near the banks of the Trident.',
+        it: 'Una locanda dove si incontrano le grandi strade del regno, vicino alle rive di un grande fiume.',
+        en: 'An inn where the great roads of the realm meet, near the banks of a great river.',
       },
       visual: { art: 'inn-at-the-crossroads', tint: 'azure' },
     },
@@ -2560,6 +2560,281 @@ export const season1: ThronesSaga = {
         en: 'The strip of marshland that divides the North from the south.',
       },
       visual: { art: 'the-neck', tint: 'teal' },
+    },
+    // The Riverlands', the Westerlands' and the Vale's named-only places (#1249).
+    // Show: "Winter Is Coming", Cersei recalls Jaime jumping off the cliffs at
+    // Casterly Rock. Books: Catelyn I (site chapter 3), the Lannisters of
+    // Casterly Rock came late to Robert's cause.
+    {
+      id: 'casterly-rock',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 3,
+      name: { it: 'Castel Granito', en: 'Casterly Rock' },
+      summary: {
+        it: 'Il castello di Casa Lannister, scavato in una grande rupe sul mare.',
+        en: 'The castle of House Lannister, built into a great rock above the sea.',
+      },
+      visual: { art: 'casterly-rock', tint: 'ocher' },
+    },
+    // Show: "Lord Snow", Tyrion: the fishermen of Lannisport see mermaids. Books:
+    // Jon III (site chapter 21), the alleys of Oldtown and Lannisport.
+    {
+      id: 'lannisport',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 21,
+      name: { it: 'Lannisport', en: 'Lannisport' },
+      summary: {
+        it: 'Una città portuale delle Terre dell’Ovest, ai piedi di Castel Granito.',
+        en: 'A port city of the Westerlands, at the foot of Casterly Rock.',
+      },
+      visual: { art: 'lannisport', tint: 'yellow' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Catelyn sees the black bat of
+    // Harrenhal on a knight's coat. Books: Catelyn V (site chapter 29), Lady
+    // Whent in the vaults of Harrenhal.
+    {
+      id: 'harrenhal',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 29,
+      name: { it: 'Harrenhal', en: 'Harrenhal' },
+      summary: {
+        it: 'Un enorme castello nelle Terre dei Fiumi, la sede di Casa Whent.',
+        en: 'A vast castle in the Riverlands, the seat of House Whent.',
+      },
+      visual: { art: 'harrenhal', tint: 'lavender' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Littlefinger comes from a spit
+    // of land called the Fingers. Books: Tyrion II (site chapter 14), two
+    // peasant boys from the Fingers.
+    {
+      id: 'the-fingers',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 14,
+      name: { it: 'Dita', en: 'The Fingers' },
+      summary: {
+        it: 'Una terra spoglia e ventosa sulla costa della Valle.',
+        en: 'A bare, windswept stretch of land on the coast of the Vale.',
+      },
+      visual: { art: 'the-fingers', tint: 'green' },
+    },
+    // Show: "The Wolf and the Lion", Barristan fought Ned as an enemy at the
+    // Trident. Books: Catelyn I (site chapter 3), the Red Fork of the Trident.
+    {
+      id: 'the-trident',
+      kind: 'place',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 3,
+      name: { it: 'Tridente', en: 'The Trident' },
+      summary: {
+        it: 'Il grande fiume delle Terre dei Fiumi, formato da tre rami.',
+        en: 'The great river of the Riverlands, fed by three forks.',
+      },
+      visual: { art: 'the-trident', tint: 'azure' },
+    },
+    // Show: "The Wolf and the Lion", "Ser Marlon of Tumblestone" (owner: the
+    // epithet names it). Books: Catelyn X (site chapter 64), the waters of the
+    // Red Fork and the Tumblestone.
+    {
+      id: 'tumblestone',
+      kind: 'place',
+      revealedAtEpisode: 5,
+      revealedAtChapter: 64,
+      name: { it: 'Tumblestone', en: 'Tumblestone' },
+      summary: {
+        it: 'Un fiume delle Terre dei Fiumi.',
+        en: 'A river of the Riverlands.',
+      },
+      visual: { art: 'tumblestone', tint: 'ice' },
+    },
+    // Show: "The Pointy End", Kevan: Jaime smashed the river lords at the Golden
+    // Tooth. Books: Catelyn VII (site chapter 41), the pass below the Golden
+    // Tooth.
+    {
+      id: 'golden-tooth',
+      kind: 'place',
+      revealedAtEpisode: 8,
+      revealedAtChapter: 41,
+      name: { it: 'Dente d’Oro', en: 'The Golden Tooth' },
+      summary: {
+        it: 'Un castello che sorveglia il passo verso le Terre dell’Ovest.',
+        en: 'A castle that guards the pass into the Westerlands.',
+      },
+      visual: { art: 'golden-tooth', tint: 'sand' },
+    },
+    // Show: "Fire and Blood", Tywin: from God's Eye to the Red Fork. Books:
+    // Catelyn I (site chapter 3), Riverrun on the Red Fork of the Trident.
+    {
+      id: 'red-fork',
+      kind: 'place',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 3,
+      name: { it: 'Forca Rossa', en: 'The Red Fork' },
+      summary: {
+        it: 'Uno dei tre rami che formano il Tridente.',
+        en: 'One of the three rivers that form the Trident.',
+      },
+      visual: { art: 'red-fork', tint: 'teal' },
+    },
+    // Show: "Fire and Blood", Tywin: from God's Eye to the Red Fork. Books: Bran
+    // VII (site chapter 67), the great lake called Gods Eye.
+    {
+      id: 'gods-eye',
+      kind: 'place',
+      revealedAtEpisode: 10,
+      revealedAtChapter: 67,
+      name: { it: 'Occhio degli Dei', en: 'Gods Eye' },
+      summary: {
+        it: 'Un grande lago nelle Terre dei Fiumi.',
+        en: 'A great lake in the Riverlands.',
+      },
+      visual: { art: 'gods-eye', tint: 'blue' },
+    },
+    // Essos's named-only places (#1251).
+    // Show: "Winter Is Coming", Illyrio: dragon eggs from the Shadow Lands beyond
+    // Asshai. Books: Daenerys II (site chapter 12), the same words.
+    {
+      id: 'asshai',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 12,
+      name: { it: 'Asshai', en: 'Asshai' },
+      summary: {
+        it: 'Una città lontana, all’estremo oriente di Essos.',
+        en: 'A far city at the eastern edge of Essos.',
+      },
+      visual: { art: 'asshai', tint: 'magenta' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Viserys: the Targaryens rode
+    // dragons from Valyria. Books: Catelyn I (site chapter 3), Ice was forged in
+    // Valyria before the Doom.
+    {
+      id: 'valyria',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 3,
+      name: { it: 'Valyria', en: 'Valyria' },
+      summary: {
+        it: 'Una terra antica di Essos.',
+        en: 'An old land of Essos.',
+      },
+      visual: { art: 'valyria', tint: 'orange' },
+    },
+    // Show: "Lord Snow", Syrio was first sword to the Sealord of Braavos. Books:
+    // Daenerys I (site chapter 4), the exiles wandered from Braavos to Myr.
+    {
+      id: 'braavos',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 4,
+      name: { it: 'Braavos', en: 'Braavos' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
+      },
+      visual: { art: 'braavos', tint: 'azure' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Jaime recalls Thoros of Myr.
+    // Books: Daenerys I (site chapter 4), from Braavos to Myr.
+    {
+      id: 'myr',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 4,
+      name: { it: 'Myr', en: 'Myr' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
+      },
+      visual: { art: 'myr', tint: 'teal' },
+    },
+    // Show: "You Win or You Die", a trader cries Tyrosh pear brandy. Books:
+    // Daenerys I (site chapter 4), from Myr to Tyrosh.
+    {
+      id: 'tyrosh',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 4,
+      name: { it: 'Tyrosh', en: 'Tyrosh' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
+      },
+      visual: { art: 'tyrosh', tint: 'cyan' },
+    },
+    // Show: "Lord Snow", Jorah must ride to Qohor. Books: Daenerys I (site
+    // chapter 4), on to Qohor and Volantis and Lys.
+    {
+      id: 'qohor',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 4,
+      name: { it: 'Qohor', en: 'Qohor' },
+      summary: {
+        it: 'Una delle Città Libere, verso l’interno di Essos.',
+        en: 'One of the Free Cities, inland in Essos.',
+      },
+      visual: { art: 'qohor', tint: 'green' },
+    },
+    // Show: "You Win or You Die", the wine seller's reds from Lys, Volantis and
+    // the Arbor. Books: Daenerys I (site chapter 4), Qohor and Volantis and Lys.
+    {
+      id: 'volantis',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 4,
+      name: { it: 'Volantis', en: 'Volantis' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
+      },
+      visual: { art: 'volantis', tint: 'ocher' },
+    },
+    // Show: "The Kingsroad", Doreah speaks of Irogenia of Lys. Books: Daenerys I
+    // (site chapter 4), Volantis and Lys.
+    {
+      id: 'lys',
+      kind: 'place',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 4,
+      name: { it: 'Lys', en: 'Lys' },
+      summary: {
+        it: 'Una delle Città Libere, al di là del Mare Stretto.',
+        en: 'One of the Free Cities, across the Narrow Sea.',
+      },
+      visual: { art: 'lys', tint: 'pink' },
+    },
+    // Show: "The Kingsroad", Doreah: a trader from Qarth told her dragons came
+    // from the moon. Books: Daenerys III (site chapter 24), the same story.
+    {
+      id: 'qarth',
+      kind: 'place',
+      revealedAtEpisode: 2,
+      revealedAtChapter: 24,
+      name: { it: 'Qarth', en: 'Qarth' },
+      summary: {
+        it: 'Una città lontana a oriente, da cui vengono mercanti.',
+        en: 'A far city to the east, from which traders come.',
+      },
+      visual: { art: 'qarth', tint: 'yellow' },
+    },
+    // Show: "You Win or You Die", Drogo swears before the Mother of Mountains
+    // (the English subtitle names it; owner: it counts). Books: Daenerys IV
+    // (site chapter 37), the Mother of Mountains looms over the city.
+    {
+      id: 'mother-of-mountains',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 37,
+      name: { it: 'Madre di tutte le Montagne', en: 'The Mother of Mountains' },
+      summary: {
+        it: 'La montagna sacra dei Dothraki, sopra Vaes Dothrak.',
+        en: 'The sacred mountain of the Dothraki, above Vaes Dothrak.',
+      },
+      visual: { art: 'mother-of-mountains', tint: 'sand' },
     },
   ],
   dossiers: {
@@ -6201,6 +6476,238 @@ export const SEASON_1_PLACES: Record<
     log: {
       it: 'È una striscia stretta di paludi tra il Nord e il sud. Un esercito diretto a sud o a nord deve attraversarla.',
       en: 'It is a narrow strip of bogs between the North and the south. An army bound south or north has to cross it.',
+    },
+    filedHere: [],
+  },
+  'casterly-rock': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Un castello scavato in una rupe sul mare',
+      en: 'A castle cut into a rock above the sea',
+    },
+    log: {
+      it: 'È la sede di Casa Lannister, nell’ovest del regno.',
+      en: 'It is the seat of House Lannister, in the west of the realm.',
+    },
+    filedHere: [],
+  },
+  'lannisport': {
+    form: 'city',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Torri e navi ai piedi di una rupe',
+      en: 'Towers and ships at the foot of a rock',
+    },
+    log: {
+      it: 'È la grande città portuale dell’ovest, sotto il castello dei Lannister.',
+      en: 'It is the great port city of the west, below the Lannisters’ castle.',
+    },
+    filedHere: [],
+  },
+  'harrenhal': {
+    form: 'castle',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un castello di cinque grandi torri',
+      en: 'A castle of five great towers',
+    },
+    log: {
+      it: 'È la sede di Casa Whent, nelle Terre dei Fiumi. I suoi cavalieri portano il pipistrello nero del suo stemma.',
+      en: 'It is the seat of House Whent, in the Riverlands. Its knights wear the black bat of its arms.',
+    },
+    filedHere: [],
+  },
+  'the-fingers': {
+    form: 'peninsula',
+    region: 'the-vale',
+    landmark: {
+      it: 'Lingue di terra rocciosa nel mare',
+      en: 'Tongues of rocky land in the sea',
+    },
+    log: {
+      it: 'È una striscia di terra sulla costa della Valle.',
+      en: 'It is a stretch of land on the coast of the Vale.',
+    },
+    filedHere: [],
+  },
+  'the-trident': {
+    form: 'river',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Tre fiumi che si uniscono in uno',
+      en: 'Three rivers that join into one',
+    },
+    log: {
+      it: 'È il grande fiume delle Terre dei Fiumi, formato da tre rami.',
+      en: 'It is the great river of the Riverlands, fed by three forks.',
+    },
+    filedHere: [],
+  },
+  'tumblestone': {
+    form: 'river',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un fiume che scorre tra le pietre',
+      en: 'A river running over stones',
+    },
+    log: {
+      it: 'È uno dei fiumi delle Terre dei Fiumi.',
+      en: 'It is one of the rivers of the Riverlands.',
+    },
+    filedHere: [],
+  },
+  'golden-tooth': {
+    form: 'castle',
+    region: 'the-westerlands',
+    landmark: {
+      it: 'Un castello in cima a un passo di montagna',
+      en: 'A castle at the top of a mountain pass',
+    },
+    log: {
+      it: 'Sorveglia un passo di montagna tra le Terre dei Fiumi e l’ovest.',
+      en: 'It guards a mountain pass between the Riverlands and the west.',
+    },
+    filedHere: [],
+  },
+  'red-fork': {
+    form: 'river',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un fiume che si snoda tra le colline',
+      en: 'A river winding through hills',
+    },
+    log: {
+      it: 'È uno dei tre rami del Tridente, nelle Terre dei Fiumi.',
+      en: 'It is one of the three forks of the Trident, in the Riverlands.',
+    },
+    filedHere: [],
+  },
+  'gods-eye': {
+    form: 'lake',
+    region: 'the-riverlands',
+    landmark: {
+      it: 'Un ampio lago tra le colline',
+      en: 'A wide lake among hills',
+    },
+    log: {
+      it: 'È un grande lago nelle Terre dei Fiumi.',
+      en: 'It is a great lake in the Riverlands.',
+    },
+    filedHere: [],
+  },
+  'asshai': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Torri scure all’ombra', en: 'Dark towers in shadow' },
+    log: {
+      it: 'È una città lontana, all’estremo oriente del mondo conosciuto. Da oltre le sue terre vengono uova di drago.',
+      en: 'It is a far city, at the eastern edge of the known world. Dragon eggs come from beyond it.',
+    },
+    filedHere: [],
+  },
+  'valyria': {
+    form: 'ruin',
+    region: 'essos',
+    landmark: { it: 'Colonne antiche', en: 'Old columns' },
+    log: {
+      it: 'È una terra antica di Essos, di cui si parla come di un tempo passato.',
+      en: 'It is an old land of Essos, spoken of as a thing of the past.',
+    },
+    filedHere: [],
+  },
+  'braavos': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Una città sull’acqua', en: 'A city on the water' },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
+    },
+    filedHere: [],
+  },
+  'myr': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Una città sulla costa', en: 'A city on the coast' },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
+    },
+    filedHere: [],
+  },
+  'tyrosh': {
+    form: 'city',
+    region: 'essos',
+    landmark: { it: 'Una città su un’isola', en: 'A city on an island' },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
+    },
+    filedHere: [],
+  },
+  'qohor': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Una città ai margini di una foresta',
+      en: 'A city at the edge of a forest',
+    },
+    log: {
+      it: 'È una delle Città Libere, nell’interno di Essos.',
+      en: 'It is one of the Free Cities, inland in Essos.',
+    },
+    filedHere: [],
+  },
+  'volantis': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Un lungo ponte e mura scure',
+      en: 'A long bridge and dark walls',
+    },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
+    },
+    filedHere: [],
+  },
+  'lys': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Torri chiare su un’isola',
+      en: 'Pale towers on an island',
+    },
+    log: {
+      it: 'È una delle Città Libere, oltre il Mare Stretto.',
+      en: 'It is one of the Free Cities, across the Narrow Sea.',
+    },
+    filedHere: [],
+  },
+  'qarth': {
+    form: 'city',
+    region: 'essos',
+    landmark: {
+      it: 'Mura alte in un paese lontano',
+      en: 'High walls in a far land',
+    },
+    log: {
+      it: 'È una città lontana, a oriente. Un suo mercante racconta che i draghi vennero dalla luna.',
+      en: 'It is a far city, to the east. One of its traders tells that dragons came from the moon.',
+    },
+    filedHere: [],
+  },
+  'mother-of-mountains': {
+    form: 'mountain',
+    region: 'essos',
+    landmark: {
+      it: 'Una montagna sola sopra la pianura',
+      en: 'A lone mountain above the plain',
+    },
+    log: {
+      it: 'È la montagna sacra dei Dothraki, sopra Vaes Dothrak. Davanti a lei i khal pronunciano i loro giuramenti.',
+      en: 'It is the sacred mountain of the Dothraki, above Vaes Dothrak. Khals swear their oaths before it.',
     },
     filedHere: [],
   },
