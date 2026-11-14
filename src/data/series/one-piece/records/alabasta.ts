@@ -319,8 +319,8 @@ export const alabasta: OnePieceSaga = {
       revealedAtChapter: 133,
       name: { it: 'Mr. Two Bon Kure', en: 'Bon Clay' },
       summary: {
-        it: 'Un ballerino con il cappotto da cigno e le scarpe a punta, che copia il volto di chiunque tocchi e lo indossa come una maschera.',
-        en: 'A dancer in a swan coat and pointed shoes, who copies the face of anyone he touches and wears it like a mask.',
+        it: 'Un ballerino con il cappotto da cigno e le scarpe a punta, mandato a Little Garden a occuparsi di Mr. Three.',
+        en: 'A dancer in a swan coat and pointed shoes, sent to Little Garden to deal with Mr. 3.',
       },
       visual: { art: 'bon-clay', tint: 'flamingo' },
     },
@@ -1183,8 +1183,8 @@ export const alabasta: OnePieceSaga = {
       relationships: alabastaRelationships['bon-clay'],
       role: BW_AGENT_ROLE,
       log: {
-        it: 'Viaggia su una nave a forma di cigno, indossa un cappotto di piume e scarpette da ballo a punta, e si presenta danzando. Il suo volto diventa quello di chiunque abbia toccato con la mano destra, e torna il suo quando si tocca con la sinistra. Ha passato una giornata intera a bordo con dei pirati senza dire chi fosse, e li ha trovati simpatici.',
-        en: 'He travels on a swan-shaped ship, wears a coat of feathers and pointed dancing shoes, and introduces himself in a pirouette. His face becomes the face of anyone he has touched with his right hand, and comes back when he touches himself with the left. He spent a whole day aboard with a crew of pirates without saying who he was, and rather liked them.',
+        it: 'Veste da ballerino, con le scarpe a punta e un cappotto a tema cigno. Viene mandato a Little Garden a occuparsi di Mr. Three.',
+        en: 'He dresses as a ballet dancer, in pointed shoes and a coat with a swan theme. He is sent to Little Garden to deal with Mr. 3.',
       },
       status: [
         { episode: 78, value: 'alive' },
