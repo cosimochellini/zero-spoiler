@@ -1678,6 +1678,26 @@ const PELL_SCARF: Stroke[] = [
   },
 ]
 
+/**
+ * Mr. 3's wax, running down the side of his cup and over the front edge of
+ * the saucer in drips, sealing the one to the other: on his cup from 73.
+ */
+const MR3_WAX: Stroke = {
+  d: 'M89 103 C92 112 86 118 89 126 C90 131 87 134 88 138 M44 132 C38 136 34 142 38 146 C42 150 46 146 48 147 C49 154 55 154 55 148 C64 150 74 150 80 148 C81 156 88 156 88 147 C94 146 100 142 96 136',
+  role: 'accent',
+}
+
+/** His steaming cup sealed by the wax, the tea a plain line under it. */
+const MR3_WAXED_CUP: Stroke[] = [
+  ...alabastaArt['mr-3'].slice(0, 1),
+  { d: 'M46 100 Q66 106 86 100', role: 'soft' },
+  ...alabastaArt['mr-3'].slice(2, 8),
+  MR3_WAX,
+]
+
+/** Where Bon Clay's raised hand is drawn, above the shoe. */
+const BON_CLAY_HAND_AT = 'translate(30 40) rotate(-12)'
+
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const alabastaRedrawn: Redrawings = {
   // The cap of the two years, worn over the old hat: a round crown ringed
@@ -1984,11 +2004,43 @@ export const alabastaRedrawn: Redrawings = {
     },
   ],
 
+  // The shoe and the swan of the first drawing, the ribbons gone quiet, and
+  // above them his right hand raised, fingers spread, in its cuff of
+  // feathers: the hand that copies any face it touches. He shows the crew
+  // the Clone-Clone Fruit aboard the Merry at 92 (ch. 156); no face is drawn.
   // The same shoe, without the swan, set down on the threshold of the Gate of
   // Justice: the two riveted leaves of its arch rise out of the sea and all
   // but meet, the far edge of the gap hatched. He stays behind to open it at
   // 451 (ch. 548).
   'bon-clay': [
+    {
+      episode: 92,
+      chapter: 156,
+      value: [
+        ...alabastaArt['bon-clay'].map((stroke): Stroke =>
+          stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke,
+        ),
+        {
+          d: 'M-8 30 C-10 22 -12 14 -14 10 L-22 2 C-25 -1 -22 -6 -18 -3 L-10 4 V-18 C-10 -22 -4 -22 -4 -18 V0 V-24 C-4 -28 2 -28 2 -24 V0 V-22 C2 -26 8 -26 8 -22 V2 V-14 C8 -18 14 -18 14 -14 V12 C14 22 12 26 12 30',
+          role: 'accent',
+          transform: BON_CLAY_HAND_AT,
+        },
+        {
+          d: 'M-9 4 l4 -1 M-3 1 l4 -1 M3 2 l4 -1',
+          role: 'soft',
+          transform: BON_CLAY_HAND_AT,
+        },
+        {
+          d: 'M-12 30 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 4 0 8 h-24 q-4 -4 0 -8',
+          transform: BON_CLAY_HAND_AT,
+        },
+        {
+          d: 'M-12 -30 l-2 -5 M-2 -34 V-39 M8 -32 l2 -5',
+          role: 'ambient',
+          transform: BON_CLAY_HAND_AT,
+        },
+      ],
+    },
     {
       episode: 451,
       chapter: 548,
@@ -2305,19 +2357,29 @@ export const alabastaRedrawn: Redrawings = {
     },
   ],
 
-  // The same cup, dried out: no steam, and a dry ring on its bottom where
-  // the tea was. Crocodile dries him up and feeds him to the Bananawani at 104
-  // (ch. 166).
+  // The same cup, his wax now running down it and over the saucer's edge:
+  // he holds Brogy's feet in wax and Vivi names the Wax-Wax Fruit at 73
+  // (ch. 120; the wax figures that take Zoro and Nami are in ch. 119, below
+  // his record's chapter, so pinned at 120 with it).
+  // The same cup, dried out, the wax still on it: no steam, and a dry ring on
+  // its bottom where the tea was. Crocodile dries him up and feeds him to the
+  // Bananawani at 104 (ch. 166).
   // At 109 (ch. 176) a Bananawani spits out the wax ball he sealed himself
-  // in: the cup steams again beside the two halves of the shell.
+  // in: the waxed cup steams again beside the two halves of the shell.
   'mr-3': [
+    {
+      episode: 73,
+      chapter: 120,
+      value: [...MR3_WAXED_CUP, ...alabastaArt['mr-3'].slice(8)],
+    },
     {
       episode: 104,
       chapter: 166,
       value: [
         ...alabastaArt['mr-3'].slice(0, 1),
-        { d: ellipse(66, 124, 12, 3), role: 'accent' },
+        { d: ellipse(66, 124, 12, 3), role: 'soft' },
         ...alabastaArt['mr-3'].slice(2, 7),
+        MR3_WAX,
         ...alabastaArt['mr-3'].slice(8),
       ],
     },
@@ -2325,7 +2387,7 @@ export const alabastaRedrawn: Redrawings = {
       episode: 109,
       chapter: 176,
       value: [
-        ...moved(alabastaArt['mr-3'].slice(0, 8), 'translate(-16 0)'),
+        ...moved(MR3_WAXED_CUP, 'translate(-16 0)'),
         shadow(50, 186, 42),
         {
           d: 'M100 150 C100 176 150 176 150 150 L144 146 L138 152 L130 144 L122 151 L114 145 L106 152 Z',

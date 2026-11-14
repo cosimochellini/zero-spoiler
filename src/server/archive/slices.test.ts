@@ -1050,17 +1050,19 @@ describe('a record drawn again later in the story', () => {
   it('sets Bon Clay’s shoes at the Gate of Justice only from episode 451', () => {
     const bonClay = filed('bon-clay')
     const shoes = DRAWINGS['bon-clay']
-    const gate = REDRAWINGS['bon-clay']?.[0]
+    // The stage before it is his power, the raised hand, from 92 (ch. 156).
+    const hand = REDRAWINGS['bon-clay']?.find(({ episode }) => episode === 92)
+    const gate = REDRAWINGS['bon-clay']?.find(({ episode }) => episode === 451)
     const drawnAt = (bookmark: Bookmark | null): Stroke[] =>
       characterOf(bonClay, readerFor(bookmark, 'en')).visual.strokes
 
     expect(gate?.episode).toBe(451)
 
-    expect(drawnAt(ep(450))).toBe(shoes)
+    expect(drawnAt(ep(450))).toBe(hand?.value)
     expect(drawnAt(ep(451))).toBe(gate?.value)
     expect(drawnAt(null)).toBe(shoes)
     // The manga has him stay behind to open the gate in chapter 548.
-    expect(drawnAt({ mode: 'chapter', chapter: 547 })).toBe(shoes)
+    expect(drawnAt({ mode: 'chapter', chapter: 547 })).toBe(hand?.value)
     expect(drawnAt({ mode: 'chapter', chapter: 548 })).toBe(gate?.value)
   })
 
