@@ -219,9 +219,10 @@ cast's are in `art/riverlands.ts` (#1057), with one. Every other character maps
 to a shared placeholder in `art/index.ts`, `PERSON`, until its own issue draws
 it, so the drawing tests hold it like any series. Its places are the 23 a scene
 of the season or the book is set in (#853) and those both name without visiting
-it (#1035: the North's five in #1248, Essos's ten in #1251), each filed in one
-of the realms, the Iron Islands among them, beyond the Wall or Essos, with no
-arc: `PlaceDossier.arc` is optional, and an arcless series prints no arc row.
+it (#1035: the North's five in #1248, nine of the Riverlands, the Westerlands
+and the Vale in #1249, Essos's ten in #1251), each filed in one of the realms,
+the Iron Islands and the Westerlands among them, beyond the Wall or Essos, with
+no arc: `PlaceDossier.arc` is optional, and an arcless series prints no arc row.
 Darry is the book's alone and the Kingswood the show's. The demo shows the
 places the first ten episodes reach, and covers in its tail the four the show
 first visits in later seasons.
@@ -352,7 +353,7 @@ checks this block.
 | Bodies of power     | 15, with 119 seats                                      |
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
-| Line drawings       | 742, one per record, plus 346 redrawings of 192 records |
+| Line drawings       | 742, one per record, plus 347 redrawings of 192 records |
 | Chronicle stories   | 792, for 189 characters                                 |
 
 ### `hunter-x-hunter`

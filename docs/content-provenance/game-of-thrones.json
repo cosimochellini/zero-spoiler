@@ -1223,6 +1223,110 @@
       "Italian: \"Incollatura\" is the books' form on Italian Wikipedia; the dub form is unconfirmed."
     ]
   },
+  "casterly-rock": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Casterly_Rock",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Castel_Granito"
+    ],
+    "unverified": [
+      "Show gate: Cersei's line in episode 1, as the Fandom ref GOT101 places it; not viewed."
+    ]
+  },
+  "lannisport": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Lannisport",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_20",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Lannisport"
+    ],
+    "unverified": [
+      "Show gate: Tyrion's line in episode 3 (Fandom ref GOT103); not viewed."
+    ]
+  },
+  "harrenhal": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_28",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Harrenhal"
+    ],
+    "unverified": [
+      "Show gate: Catelyn's line in episode 4 (Fandom ref GOT104); not viewed."
+    ]
+  },
+  "the-fingers": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/The_Fingers",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Littlefinger's line in episode 4 (Fandom ref GOT104); not viewed.",
+      "Italian: \"Dita\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+    ]
+  },
+  "the-trident": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Trident",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Le_Terre_dei_Fiumi"
+    ],
+    "unverified": [
+      "Show gate: Barristan's line in episode 5 (Fandom ref GOT105); not viewed.",
+      "Filed as named only although Sansa I is set on its bank and episode 9 crosses it (owner, #1035)."
+    ]
+  },
+  "tumblestone": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Tumblestone",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Delta_delle_Acque"
+    ],
+    "unverified": [
+      "Show gate: \"Ser Marlon of Tumblestone\" in episode 5, a knight's epithet (owner: it names the river, #1035); not viewed."
+    ]
+  },
+  "golden-tooth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Golden_Tooth",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Kevan's line in episode 8 (Fandom ref GOT108); not viewed.",
+      "Italian: \"Dente d’Oro\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+    ]
+  },
+  "red-fork": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Red_Fork",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Le_Terre_dei_Fiumi"
+    ],
+    "unverified": [
+      "Show gate: Tywin's line in episode 10 (Fandom ref GOT110); not viewed."
+    ]
+  },
+  "gods-eye": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Gods_Eye",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate: Tywin's line in episode 10 (Fandom ref GOT110); not viewed.",
+      "Book gate: Bran VII, in the narration of Luwin's lesson (close-third narration counts, owner, #1035).",
+      "Italian: \"Occhio degli Dei\" is the books' form; Italian Wikipedia does not name it, and the dub form is unconfirmed (owner, #1249)."
+    ]
+  },
   "asshai": {
     "sources": [
       "https://gameofthrones.fandom.com/wiki/Asshai",

@@ -56,6 +56,9 @@ export const PLACE_ITALIAN_TITLES = {
     'bear-island': `${PLACES}#Isola dell'Orso`,
     'pyke': `${PLACES}#Pyke`,
     'white-harbor': `${PLACES}#Porto Bianco`,
+    'casterly-rock': `${PLACES}#Castel Granito`,
+    'lannisport': `${PLACES}#Lannisport`,
+    'harrenhal': `${PLACES}#Harrenhal`,
     'braavos': `${PLACES}#Braavos`,
     'lys': `${PLACES}#Lys`,
     'qohor': `${PLACES}#Qohor`,
@@ -77,6 +80,16 @@ export const PLACE_NAMES_KEPT = {
   // Neck in its prose (under La Barriera and Westeros), not in a section.
   'eastwatch': 'Forte Orientale',
   'the-neck': 'Incollatura',
+  // The Trident, its Red Fork and the Tumblestone are named in the prose of
+  // the page's Riverlands sections. The Fingers, the Golden Tooth and the Gods
+  // Eye are not on the page: the books' Italian forms, the dub's unconfirmed
+  // (owner, #1249).
+  'the-trident': 'Tridente',
+  'red-fork': 'Forca Rossa',
+  'tumblestone': 'Tumblestone',
+  'the-fingers': 'Dita',
+  'golden-tooth': 'Dente d’Oro',
+  'gods-eye': 'Occhio degli Dei',
   // Named in the page's text, with no section of their own.
   'qarth': 'Qarth',
   'mother-of-mountains': 'Madre di tutte le Montagne',
