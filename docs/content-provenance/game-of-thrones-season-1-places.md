@@ -281,3 +281,24 @@ under the owner's rulings of 2026-11-13 on #1035:
   Barrowlands, Greywater Watch, Skagos, the Shadow Tower, Hardhome, the
   Frostfangs, the Fist of the First Men, Craster's Keep, the Lands of Always
   Winter, Lordsport: season 1 does not name them.
+
+### Filed (#1252)
+
+Places a scene of season 1 or _A Game of Thrones_ is set in, which #853 left
+out. A place only the book names in season 1 is a book-only record, gated at the
+book's naming, with the episode its events fall in to order it, as Darry is
+(owner, #1252).
+
+| Place                   | Episode | Chapter | Note                             |
+| ----------------------- | ------- | ------- | -------------------------------- |
+| `street-of-the-sisters` | 4       | 19      | both media                       |
+| `street-of-steel`       | 4       | 28      | both media                       |
+| `mountains-of-the-moon` | 4       | 29      | book only; the episode orders it |
+| `green-fork`            | 4       | 29      | book only; the episode orders it |
+| `gates-of-the-moon`     | 5       | 35      | book only; the episode orders it |
+| `western-market`        | 4       | 37      | book only; the episode orders it |
+| `womb-of-the-world`     | 6       | 47      | book only; the episode orders it |
+| `whispering-wood`       | 9       | 64      | book only; the episode orders it |
+
+The Western Market's lead (Daenerys VI, site chapter 55) was late: Daenerys IV
+(37) names it and is set there.

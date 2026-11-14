@@ -207,6 +207,15 @@ const RECORDS: {
   { id: 'pyke', episode: 4, chapter: 25 },
   { id: 'white-harbor', episode: 6, chapter: 15 },
   { id: 'the-neck', episode: 8, chapter: 5 },
+  // Visited, left out by #853 (#1252).
+  { id: 'street-of-the-sisters', episode: 4, chapter: 19 },
+  { id: 'street-of-steel', episode: 4, chapter: 28 },
+  { id: 'mountains-of-the-moon', episode: 4, chapter: 29, source: 'chapter' },
+  { id: 'green-fork', episode: 4, chapter: 29, source: 'chapter' },
+  { id: 'gates-of-the-moon', episode: 5, chapter: 35, source: 'chapter' },
+  { id: 'western-market', episode: 4, chapter: 37, source: 'chapter' },
+  { id: 'womb-of-the-world', episode: 6, chapter: 47, source: 'chapter' },
+  { id: 'whispering-wood', episode: 9, chapter: 64, source: 'chapter' },
 ]
 
 /**
@@ -832,8 +841,9 @@ describe('the first season’s demo', () => {
 
     expect(demo.arcs.map(({ id }) => id)).toStrictEqual(['season-1'])
     expect(demo.cast.map(({ id }) => id)).toStrictEqual(CAST)
-    // The places the first ten episodes and their chapters both reach; Darry
-    // and the Kingswood are one medium's, so the two-unit demo skips them.
+    // The places the first ten episodes and their chapters both reach; Darry,
+    // the Kingswood and six of #1252's places are one medium's, so the
+    // two-unit demo skips them.
     expect(demo.places.map(({ id }) => id)).toStrictEqual([
       'haunted-forest',
       'winterfell',
@@ -846,8 +856,10 @@ describe('the first season’s demo', () => {
       'castle-black',
       'dothraki-sea',
       'red-keep',
+      'street-of-the-sisters',
       'eastwatch',
       'pyke',
+      'street-of-steel',
       'vaes-dothrak',
       'the-eyrie',
       'white-harbor',
