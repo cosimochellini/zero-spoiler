@@ -809,9 +809,18 @@ export const skypiea: OnePieceSaga = {
         },
       ],
       epithet: [{ episode: 151, value: { it: 'Barbanera', en: 'Blackbeard' } }],
+      // He names the fruit and first turns to darkness at 325 (chapter 440),
+      // but the fruit's summary also says it takes another eater's power
+      // away, which only chapter 441 shows (in the same episode): pinned
+      // there so the text holds in both media. He takes Whitebeard's quake
+      // power at 486 (chapter 577 p.13-15), not at 485, where Whitebeard dies.
       devilFruit: [
-        { episode: 462, value: ['dark-dark-fruit'] },
-        { episode: 485, value: ['dark-dark-fruit', 'tremor-tremor-fruit'] },
+        { episode: 325, chapter: 441, value: ['dark-dark-fruit'] },
+        {
+          episode: 486,
+          chapter: 577,
+          value: ['dark-dark-fruit', 'tremor-tremor-fruit'],
+        },
       ],
       bounty: [
         { episode: 917, value: 2_247_600_000 },
