@@ -148,8 +148,8 @@ function setDownByTheSweets(hat: Stroke[]): Stroke[] {
 }
 
 /**
- * Zunesha side on, wading and facing left: the head with its trunk raised
- * and ringed, the ear tattered at the edge, the long back, and the upper
+ * Zunesha side on, wading and facing left: the head with its trunk raised,
+ * the wrinkles of its skin soft, the ear tattered at the edge, the long back, and the upper
  * third of each leg above the water, the far legs fainter. Both Zou arc
  * drawings stand on it.
  */
@@ -188,17 +188,20 @@ const ZOU_WHALE_FOREST: Stroke[] = [
 ]
 
 /**
- * The wall round the elephant's back, whole: its two faces, the merlons
- * along the top, and the gate near the tail.
+ * The wall round the elephant's back, standing on it with its two ends
+ * cut square, and the gateway near the tail.
  */
 const ZOU_WALL: Stroke[] = [
-  { d: 'M100 52 C120 46 140 52 152 68 M100 60 C118 54 136 60 148 74' },
   {
-    d: 'M106 50 v-5 h5 v5 M118 47 v-5 h5 v5 M130 48 v-5 h5 v5 M141 53 v-5 h5 v5',
-    role: 'soft',
+    d: 'M98 46 C118 40 138 46 150 60 M98 60 C118 58 138 62 150 74 M98 46 V60 M150 60 V74',
   },
-  { d: 'M146 74 V68 C146 62 152 62 152 66 V76', role: 'soft' },
 ]
+
+/** The gateway in the wall, an arched opening. */
+const ZOU_GATEWAY = 'M128 61 V52 C128 46 138 46 138 52 V63'
+
+/** The steel bars of the gate that shut the gateway. */
+const ZOU_GATE: Stroke = { d: 'M131 49 V61.5 M135 48.5 V62.3', role: 'soft' }
 
 /**
  * The two diamond-shaped panels Raizo wears on his back, quartered, the
@@ -271,9 +274,10 @@ const JUDGE_SPEAR_UPRIGHT =
   'translate(140 92) rotate(-80) scale(0.82) translate(-85 -100)'
 
 /**
- * Judge's golden helmet set down in three quarters (the accent): the dome
- * and the flared back, the open front low on the left and hatched, the brow
- * and the middle line soft, the far side hatched.
+ * Judge's golden helmet set down in three quarters (the accent), drawn by
+ * eye because the wiki gives it no shape: a plain dome, an opening low at
+ * the front hatched, the brow and the middle line soft, the far side
+ * hatched.
  */
 const JUDGE_HELMET: Stroke[] = [
   {
@@ -481,16 +485,24 @@ export const wholeCakeArt = {
   ],
 
   // Zunesha side on, wading through the sea with its trunk raised and its
-  // tattered ears spread, the Whale Forest at its nape, the great Whale tree
-  // bending up out of it like a whale, its tail spread at the top (the
-  // accent), and the wall round its back with a gate near the tail. The crew
-  // reach the elephant at 751 (ch. 802); the forest and the wall are seen
-  // whole at 753 (ch. 804), inside the arc. Stage: the wall broken at 753.
-  'zou-arc': [...ZUNESHA_WADING, ...ZOU_WHALE_FOREST, ...ZOU_WALL],
+  // tattered ear spread, its skin wrinkled, the Whale Forest at its nape, the
+  // great Whale tree bending up out of it like a whale, its tail spread at
+  // the top (the accent), and the wall round its back with the gateway near
+  // the tail, shut by the steel bars of its gate. The crew reach the elephant
+  // at 751 (ch. 802); the forest, the wall and the gateway are seen at 753
+  // (ch. 804), inside the arc. Stage: the gate gone and the town in ruins at
+  // 753.
+  'zou-arc': [
+    ...ZUNESHA_WADING,
+    ...ZOU_WHALE_FOREST,
+    ...ZOU_WALL,
+    { d: ZOU_GATEWAY, role: 'soft' },
+    ZOU_GATE,
+  ],
 
   // Jack's mammoth form, without its head: the two great tusks curving out,
-  // down and back up, the near one hatched where it turns away, and the
-  // ringed trunk raised between them, its tip curled. He steps onto Zou as
+  // down and back up (the accent), the near one hatched where it turns away,
+  // and the trunk raised between them, its tip curled. He steps onto Zou as
   // a mammoth at 757 (ch. 807 p. 17), the episode his record opens in.
   'jack': [
     {
@@ -510,10 +522,6 @@ export const wholeCakeArt = {
       d: 'M66 106 C60 82 60 56 70 38 C76 26 90 22 96 32 C100 40 92 46 86 40 M94 106 C90 84 88 64 90 52 C90 46 88 42 86 40',
     },
     { d: ellipse(91, 36, 4.5, 3), role: 'soft', transform: 'rotate(40 91 36)' },
-    {
-      d: 'M64 94 C70 97 86 97 92 94 M62 80 C68 83 84 83 90 80 M64 66 C70 69 82 69 89 66 M68 53 C73 55 82 55 89 52',
-      role: 'soft',
-    },
     { d: 'M84 102 l6 -6 M84 88 l5 -5 M84 74 l5 -5', role: 'ambient' },
     shadow(82, 176, 62),
   ],
@@ -2263,19 +2271,15 @@ const STUSSY_BAT_WINGS: Stroke[] = [
 ]
 
 /**
- * The wall round Zunesha's back as Jack's raid left it: the stretch in the
- * middle knocked down, its broken ends jagged and fallen blocks lying on the
- * back (the accent), the gate's posts standing with the gate gone.
+ * What Jack's raid left behind the wall: the gateway empty, its gate torn
+ * off and a bar of it leaning on the wall beside it (the accent), and the roofs of the
+ * town showing over the wall broken.
  */
-const ZOU_WALL_BROKEN: Stroke[] = [
+const ZOU_RUINED_TOWN: Stroke[] = [
+  { d: `${ZOU_GATEWAY} M139 66 L146 52 M142 67 L149 53`, role: 'accent' },
   {
-    d: 'M100 52 C106 50 110 49 114 48 M100 60 C106 58 110 57 114 56 M132 48 C140 51 146 58 152 68 M130 56 C138 59 144 66 148 74',
-  },
-  { d: 'M104 50 v-5 h5 v5 M141 53 v-5 h5 v5', role: 'soft' },
-  { d: 'M146 74 V68 M152 66 V76', role: 'soft' },
-  {
-    d: 'M114 48 l3 3 l-2 2 l3 3 M132 48 l-3 3 l2 2 l-3 3 M116 66 l6 -2 l2 4 l-6 2 Z M126 70 h5 v4 h-5 Z',
-    role: 'accent',
+    d: 'M102 45 L106 38 L109 42 L111 39 M112 42 L117 34 L119 40 M120 41 L123 37 L125 40 L128 37 M132 42 L136 36 L138 41',
+    role: 'soft',
   },
 ]
 
@@ -2469,8 +2473,9 @@ export const wholeCakeRedrawn: Redrawings = {
 
   // The sunhat and handbag, the rose plain, and the World Government's
   // emblem beside them as a symbol, in her colour: her true affiliation, an
-  // undercover CP0 agent, is revealed at 841 (ch. 871 p. 4-6). She is in her
-  // own clothes there, with no cape. Then the same hat and bag smaller,
+  // undercover CP0 agent, is revealed at 841 (ch. 871 p. 4-6), in her Tea
+  // Party clothes; their small white cape is left out to keep the tile
+  // readable. Then the same hat and bag smaller,
   // the emblem still beside them, and the CP0 mask she has taken off, seen
   // from behind so it shows no face: a hood of scalloped tufts, two small
   // dark ears, long wavy strands down its back. It lies on the table in
@@ -2814,10 +2819,11 @@ export const wholeCakeRedrawn: Redrawings = {
     },
   ],
 
-  // The same elephant, the wall round its back knocked down in the middle,
-  // fallen blocks lying on the back (the accent), the gate gone from its
-  // posts, the Whale plain: the crew find the Mokomo Dukedom in ruins, its
-  // gate ripped off, at 753 (ch. 804 p. 9-11).
+  // The same elephant and the same wall, the gateway empty with a bar of
+  // its torn-off gate leaning on the wall beside it (the accent), the roofs of
+  // the town showing broken over the wall, the Whale plain: the crew walk in
+  // through the gateway, its gates destroyed, and find the Mokomo Dukedom in
+  // ruins at 753 (ch. 804 p. 9-11).
   'zou-arc': [
     {
       episode: 753,
@@ -2825,7 +2831,8 @@ export const wholeCakeRedrawn: Redrawings = {
       value: [
         ...ZUNESHA_WADING,
         ...softened(ZOU_WHALE_FOREST),
-        ...ZOU_WALL_BROKEN,
+        ...ZOU_WALL,
+        ...ZOU_RUINED_TOWN,
       ],
     },
   ],
@@ -2851,12 +2858,13 @@ export const wholeCakeRedrawn: Redrawings = {
 
   // The tea and the chocolate smaller and plain, and in front of them a
   // strip of film cut in two (the accent), its frames and sprocket holes:
-  // she shows Reiju her true self at 817 (ch. 850 p. 14-17) and pulls
-  // memories out as film to cut them away (ch. 851 p. 3-7, the same
-  // episode). Pinned at 851 so the film reaches no reader early.
+  // she pulls Reiju's memories out of her head as film and cuts them away at
+  // 818 (ch. 851 p. 12-13), the first time the Memo-Memo Fruit is shown. Her
+  // true self, shown to Reiju and overheard by Sanji at 817 (ch. 850-851),
+  // has no object of its own; the film stands for both.
   'charlotte-pudding': [
     {
-      episode: 817,
+      episode: 818,
       chapter: 851,
       value: [
         ...moved(softened(PUDDING_TEA), 'translate(28 -10) scale(0.72)'),
@@ -2885,9 +2893,9 @@ export const wholeCakeRedrawn: Redrawings = {
     },
   ],
 
-  // The heap of sweets and the bicorne all plain, and a soul pulled up out
-  // of the side of the heap like pink smoke, narrowing to a point as it is
-  // drawn away (the accent): she takes Moscato's lifespan with Soul Pocus at
+  // The heap of sweets and the bicorne all plain, and beside them a soul,
+  // pink like smoke, narrowing to a point as it is pulled away (the accent),
+  // a sign of the power rather than the scene: she takes Moscato's lifespan with Soul Pocus at
   // 789 (ch. 829 p. 13-14). The true chapter is below her record's 831, so
   // it is pinned there.
   'charlotte-linlin': [
