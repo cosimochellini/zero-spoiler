@@ -281,6 +281,31 @@ const UPPER_YARD_FOREST: Stroke[] = [
   ...SEA.slice(1),
 ]
 
+/**
+ * Gan Fall's lance, its point the accent, and his helmet in 3/4 with the
+ * visor raised, the spike on the crown and the dark inside hatched: the
+ * first drawing stands them on a plinth, the 158 stage on the God's mantle.
+ */
+const GAN_FALL_LANCE_AND_HELMET: Stroke[] = [
+  { d: 'M30 18 L22 60 H38 Z' },
+  { d: 'M22 60 L16 74 H44 L38 60', role: 'accent' },
+  { d: 'M30 74 V184' },
+  { d: 'M26 22 L33 54', role: 'soft' },
+  { d: 'M70 140 C66 104 82 78 106 78 C130 78 146 104 142 140' },
+  { d: 'M106 78 V64 M101 70 L106 62 L111 70' },
+  { d: 'M106 78 C100 96 100 118 102 140', role: 'soft' },
+  { d: 'M74 106 C88 94 124 94 138 106 L136 116 C122 106 90 106 76 116 Z' },
+  {
+    d: 'M88 104 v6 M96 102 v6 M104 101 v6 M112 101 v6 M120 102 v6',
+    role: 'soft',
+  },
+  { d: 'M84 118 C84 130 88 138 94 142 M128 118 C128 130 124 138 118 142' },
+  {
+    d: 'M88 122 l4 -4 M88 132 l12 -12 M94 138 l18 -18 M104 140 l18 -18 M116 140 l10 -10',
+    role: 'ambient',
+  },
+]
+
 /** The drawings of the records filed in the skypiea stretch of the route. */
 export const skypieaArt = {
   // The St. Briss falling bow-first out of the sky, three masts and their
@@ -508,8 +533,9 @@ export const skypieaArt = {
 
   // The Bible he holds through the Warlords' meeting (151), closed and stood
   // on end: the rays on its cover, the page block on the far side hatched.
-  // The paw pressed into a steel plate beside it from 469, and the plate
-  // alone from 888, in `skypieaRedrawn`.
+  // His palm and a paw-shaped bubble of air beside it from 368, the paw
+  // pressed into a steel plate beside it from 469, a Revolutionary pennant
+  // by them from 510, and the plate alone from 888, in `skypieaRedrawn`.
   'bartholomew-kuma': [
     ...KUMA_BIBLE_BODY,
     KUMA_BIBLE_PAGES,
@@ -529,9 +555,9 @@ export const skypieaArt = {
 
   // The small sake barrel he drinks from, its far side hatched, and the drip
   // stand beside his chair with its line running down as the accent: the
-  // nurses keep him on IVs while he tears up Shanks's letter (151). His
-  // bisento stands on the broken plaza where he dies at 485, and over his
-  // grave from 505, in `skypieaRedrawn`.
+  // nurses keep him on IVs while he tears up Shanks's letter (151). The air
+  // cracks beside them from 461, his bisento stands on the broken plaza
+  // where he dies at 485, and over his grave from 505, in `skypieaRedrawn`.
   'edward-newgate': [
     { d: ellipse(60, 112, 34, 10) },
     {
@@ -613,23 +639,7 @@ export const skypieaArt = {
   // inside hatched, beside the lance he jousts with when he rides in to save
   // the crew from a masked attacker (153).
   'gan-fall': [
-    { d: 'M30 18 L22 60 H38 Z' },
-    { d: 'M22 60 L16 74 H44 L38 60', role: 'accent' },
-    { d: 'M30 74 V184' },
-    { d: 'M26 22 L33 54', role: 'soft' },
-    { d: 'M70 140 C66 104 82 78 106 78 C130 78 146 104 142 140' },
-    { d: 'M106 78 V64 M101 70 L106 62 L111 70' },
-    { d: 'M106 78 C100 96 100 118 102 140', role: 'soft' },
-    { d: 'M74 106 C88 94 124 94 138 106 L136 116 C122 106 90 106 76 116 Z' },
-    {
-      d: 'M88 104 v6 M96 102 v6 M104 101 v6 M112 101 v6 M120 102 v6',
-      role: 'soft',
-    },
-    { d: 'M84 118 C84 130 88 138 94 142 M128 118 C128 130 124 138 118 142' },
-    {
-      d: 'M88 122 l4 -4 M88 132 l12 -12 M94 138 l18 -18 M104 140 l18 -18 M116 140 l10 -10',
-      role: 'ambient',
-    },
+    ...GAN_FALL_LANCE_AND_HELMET,
     { d: 'M64 140 H148 L152 154 H60 Z' },
     shadow(104, 168, 50),
   ],
@@ -1970,7 +1980,7 @@ export const skypieaRedrawn: Redrawings = {
       episode: 158,
       chapter: 244,
       value: [
-        ...softened(skypieaArt['gan-fall'].slice(0, 11)),
+        ...softened(GAN_FALL_LANCE_AND_HELMET),
         ...GAN_FALL_MANTLE,
         shadow(104, 184, 54),
       ],
