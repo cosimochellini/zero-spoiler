@@ -2836,6 +2836,79 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'mother-of-mountains', tint: 'sand' },
     },
+    // The south's and the seas' named-only places (#1250).
+    // Show: "Winter Is Coming", the caption "Pentos: Across the Narrow Sea" and
+    // Illyrio's promise. Books: Catelyn I (site chapter 3), the First Men came
+    // across the narrow sea.
+    {
+      id: 'narrow-sea',
+      kind: 'place',
+      revealedAtEpisode: 1,
+      revealedAtChapter: 3,
+      name: { it: 'Mare Stretto', en: 'The Narrow Sea' },
+      summary: {
+        it: 'Il mare che separa il continente occidentale da Essos.',
+        en: 'The sea between the western continent and Essos.',
+      },
+      visual: { art: 'narrow-sea', tint: 'cyan' },
+    },
+    // Show: "Lord Snow", Aemon: reports from the Citadel say the days grow
+    // shorter. Books: Tyrion III (site chapter 22), Aemon has had letters from the
+    // Citadel.
+    {
+      id: 'the-citadel',
+      kind: 'place',
+      revealedAtEpisode: 3,
+      revealedAtChapter: 22,
+      name: { it: 'Cittadella', en: 'The Citadel' },
+      summary: {
+        it: 'La sede dell’ordine dei maestri, da cui arrivano lettere e studi.',
+        en: 'The seat of the order of maesters, from which letters and findings come.',
+      },
+      visual: { art: 'the-citadel', tint: 'ivory' },
+    },
+    // Show: "Cripples, Bastards, and Broken Things", Samwell Tarly of Horn Hill.
+    // Books: Jon IV (site chapter 27), the same words.
+    {
+      id: 'horn-hill',
+      kind: 'place',
+      revealedAtEpisode: 4,
+      revealedAtChapter: 27,
+      name: { it: 'Collina del Corno', en: 'Horn Hill' },
+      summary: {
+        it: 'Il castello di Casa Tarly, nel sud.',
+        en: 'The castle of House Tarly, in the south.',
+      },
+      visual: { art: 'horn-hill', tint: 'yellow' },
+    },
+    // Show: "You Win or You Die", Ned sends Tomard to sail to Dragonstone. Books:
+    // Daenerys I (site chapter 4), the midnight flight to Dragonstone.
+    {
+      id: 'dragonstone',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 4,
+      name: { it: 'Roccia del Drago', en: 'Dragonstone' },
+      summary: {
+        it: 'Un castello su un’isola, che si raggiunge per mare.',
+        en: 'A castle on an island, reached by sea.',
+      },
+      visual: { art: 'dragonstone', tint: 'lavender' },
+    },
+    // Show: "You Win or You Die", the wine seller's dry red from the Arbor. Books:
+    // Eddard X (site chapter 40), wine from the Arbor.
+    {
+      id: 'the-arbor',
+      kind: 'place',
+      revealedAtEpisode: 7,
+      revealedAtChapter: 40,
+      name: { it: 'Arbor', en: 'The Arbor' },
+      summary: {
+        it: 'Un’isola del sud famosa per il suo vino.',
+        en: 'An island in the south known for its wine.',
+      },
+      visual: { art: 'the-arbor', tint: 'violet' },
+    },
   ],
   dossiers: {
     'eddard-stark': {
@@ -6691,6 +6764,71 @@ export const SEASON_1_PLACES: Record<
     log: {
       it: 'È la montagna sacra dei Dothraki, sopra Vaes Dothrak. Davanti a lei i khal pronunciano i loro giuramenti.',
       en: 'It is the sacred mountain of the Dothraki, above Vaes Dothrak. Khals swear their oaths before it.',
+    },
+    filedHere: [],
+  },
+  'narrow-sea': {
+    form: 'open-sea',
+    region: 'the-seas',
+    landmark: {
+      it: 'Acqua aperta tra due coste',
+      en: 'Open water between two coasts',
+    },
+    log: {
+      it: 'È il mare tra il continente occidentale e Essos. Chi va dai Sette Regni alle Città Libere lo attraversa.',
+      en: 'It is the sea between the western continent and Essos. Anyone going from the Seven Kingdoms to the Free Cities crosses it.',
+    },
+    filedHere: [],
+  },
+  'the-citadel': {
+    form: 'order',
+    region: 'the-reach',
+    landmark: {
+      it: 'Torri di studiosi in una città del sud',
+      en: 'Towers of scholars in a southern city',
+    },
+    log: {
+      it: 'È la sede dei maestri, che servono i castelli del regno. Ne arrivano lettere e studi, come quelli sull’inverno che si avvicina.',
+      en: 'It is the seat of the maesters, who serve the castles of the realm. Letters and findings come from it, such as those on the coming winter.',
+    },
+    filedHere: [],
+  },
+  'horn-hill': {
+    form: 'castle',
+    region: 'the-reach',
+    landmark: {
+      it: 'Un castello su una collina boscosa',
+      en: 'A castle on a wooded hill',
+    },
+    log: {
+      it: 'È la sede di Casa Tarly, nel sud del regno. Il figlio maggiore del suo lord è stato mandato alla Barriera.',
+      en: 'It is the seat of House Tarly, in the south of the realm. Its lord’s eldest son has been sent to the Wall.',
+    },
+    filedHere: [],
+  },
+  'dragonstone': {
+    form: 'castle',
+    region: 'the-crownlands',
+    landmark: {
+      it: 'Un castello scuro su un’isola rocciosa',
+      en: 'A dark castle on a rocky island',
+    },
+    log: {
+      it: 'È un castello su un’isola nel mare, a est della capitale.',
+      en: 'It is a castle on an island in the sea, east of the capital.',
+    },
+    filedHere: [],
+  },
+  'the-arbor': {
+    form: 'island',
+    region: 'the-reach',
+    landmark: {
+      it: 'Vigne su un’isola al sole',
+      en: 'Vineyards on a sunlit island',
+    },
+    log: {
+      it: 'È un’isola del sud. Il suo vino si beve in tutto il regno.',
+      en: 'It is an island in the south. Its wine is drunk across the realm.',
     },
     filedHere: [],
   },

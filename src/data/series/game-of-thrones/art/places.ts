@@ -1,5 +1,5 @@
 import { type Drawings, moved, type Stroke } from '~/data/art/stroke'
-import { ellipse, SEA, shadow } from '~/lib/svg/primitives'
+import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
 
 /** A ground line in the rule colour, for a place that stands on open ground. */
 const GROUND: Stroke = { d: 'M14 150 H146', role: 'ambient', dashed: true }
@@ -683,6 +683,26 @@ const CASTERLY_ROCK: Stroke[] = [
 ]
 
 /**
+ * The Narrow Sea: open water between two coasts, a ship under sail between
+ * them, named in episode 1 (the caption over Pentos) and in Catelyn I
+ * (chapter 3); no scene is set on it in the first season or book. The
+ * coasts' far sides are hatched; the accent is the ship.
+ */
+const NARROW_SEA: Stroke[] = [
+  { d: 'M10 70 Q24 76 30 96 Q34 110 22 122 L10 126' },
+  { d: 'M150 64 Q134 72 130 92 Q128 108 138 118 L150 124' },
+  {
+    d: 'M60 112 Q80 120 100 112 L96 104 H64 Z M80 104 V68 M80 70 L98 98 H80',
+    role: 'accent',
+  },
+  {
+    d: 'M16 90 l5 -3 M18 104 l5 -3 M136 88 l5 -3 M134 102 l5 -3',
+    role: 'ambient',
+  },
+  ...SEA,
+]
+
+/**
  * Lannisport: a port city's towers and spires on the waterfront, two ships
  * at the quay, named in episode 3 and in Jon III (chapter 21) and never
  * visited in the first season or book. The accent is the ships.
@@ -719,6 +739,47 @@ const HARRENHAL: Stroke[] = [
     d: 'M88 70 l4 -3 M88 90 l4 -3 M120 82 l4 -3 M120 102 l4 -3 M56 82 l4 -3 M56 102 l4 -3',
     role: 'ambient',
   },
+  shadow(80, 156, 66),
+]
+
+/**
+ * The Citadel: a tall tower between two lower ones, for the maesters' seat
+ * named in episode 3 and in Tyrion III (chapter 22) and never visited in the
+ * first season or book. The towers' far faces are hatched; the accent is
+ * the high window.
+ */
+const THE_CITADEL: Stroke[] = [
+  { d: 'M70 150 V40 H90 V150 M70 40 L80 24 L90 40' },
+  {
+    d: 'M40 150 V90 H62 V150 M98 150 V96 H120 V150 M40 90 L51 80 L62 90 M98 96 L109 86 L120 96',
+  },
+  { d: 'M62 150 V118 H70 M90 124 H98 V150', role: 'soft' },
+  { d: circle(80, 54, 5), role: 'accent' },
+  { d: 'M76 70 V78 M84 88 V96 M50 104 V110 M108 108 V114', role: 'soft' },
+  {
+    d: 'M86 60 l3 -2 M86 100 l3 -2 M86 130 l3 -2 M116 110 l3 -2 M116 130 l3 -2',
+    role: 'ambient',
+  },
+  shadow(80, 156, 52),
+]
+
+/**
+ * Horn Hill: a castle on a wooded hill, named in episode 4 (Samwell Tarly of
+ * Horn Hill) and in Jon IV (chapter 27) and never visited in the first
+ * season or book. The hill's far side is hatched; the accent is the castle.
+ */
+const HORN_HILL: Stroke[] = [
+  { d: 'M10 150 Q40 96 80 92 Q120 96 150 150' },
+  {
+    d: 'M62 92 V62 H76 V92 M76 92 V72 H98 V92 M62 62 V56 H66 V62 M72 62 V56 H76 V62',
+    role: 'accent',
+  },
+  {
+    d: 'M24 136 L30 122 L36 136 M40 124 L46 110 L52 124 M110 122 L116 108 L122 124 M126 136 L132 122 L138 136',
+    role: 'soft',
+  },
+  { d: 'M104 112 l6 -3 M112 124 l6 -3 M120 136 l6 -3', role: 'ambient' },
+  { d: 'M86 92 V84 Q90 80 94 84 V92', role: 'soft' },
   shadow(80, 156, 66),
 ]
 
@@ -936,6 +997,27 @@ const TYROSH: Stroke[] = [
 ]
 
 /**
+ * Dragonstone: a castle among the crags of a rocky island, named in Daenerys
+ * I (chapter 4) and in episode 7 and never visited in the first season or
+ * book. The dark rock is hatched; the accent is the castle.
+ */
+const DRAGONSTONE: Stroke[] = [
+  {
+    d: 'M14 140 L26 110 L40 116 L52 84 L66 92 L80 60 L94 92 L108 80 L120 112 L134 106 L146 140',
+  },
+  {
+    d: 'M66 92 V70 H78 M82 70 H94 V92 M70 70 V64 H74 V70 M86 70 V64 H90 V70',
+    role: 'accent',
+  },
+  { d: 'M78 70 L80 60 L82 70', role: 'soft' },
+  {
+    d: 'M90 100 l6 -4 M96 112 l6 -4 M104 124 l6 -4 M114 120 l6 -4 M122 130 l6 -4 M54 104 l6 -4 M48 118 l6 -4',
+    role: 'ambient',
+  },
+  ...SEA,
+]
+
+/**
  * Qohor: a walled city at the edge of a forest, named in Daenerys I (chapter
  * 4) and in episode 3 and never visited in the first season or book. The
  * accent is the trees.
@@ -989,6 +1071,29 @@ const LYS: Stroke[] = [
     role: 'accent',
   },
   { d: 'M110 124 l6 -3 M118 132 l6 -3', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * The Arbor: vineyard rows on an island under the sun, named in episode 7
+ * (the wine seller) and in Eddard X (chapter 40) and never visited in the
+ * first season or book. The accent is the vines.
+ */
+const THE_ARBOR: Stroke[] = [
+  { d: 'M14 140 Q30 108 80 104 Q130 108 146 140' },
+  {
+    d: 'M34 130 Q60 120 90 122 M44 120 Q70 112 100 114 M60 112 Q80 106 110 108',
+    role: 'soft',
+  },
+  {
+    d: 'M50 122 q2 -6 6 -2 M70 116 q2 -6 6 -2 M90 118 q2 -6 6 -2 M80 110 q2 -6 6 -2',
+    role: 'accent',
+  },
+  {
+    d: `${circle(120, 50, 12)} M120 30 V34 M120 66 V70 M100 50 H104 M136 50 H140`,
+    role: 'soft',
+  },
+  { d: 'M126 122 l6 -3 M134 132 l6 -3', role: 'ambient' },
   ...SEA,
 ]
 
@@ -1081,4 +1186,9 @@ export const PLACE_DRAWINGS = {
   'lys': LYS,
   'qarth': QARTH,
   'mother-of-mountains': MOTHER_OF_MOUNTAINS,
+  'narrow-sea': NARROW_SEA,
+  'the-citadel': THE_CITADEL,
+  'horn-hill': HORN_HILL,
+  'dragonstone': DRAGONSTONE,
+  'the-arbor': THE_ARBOR,
 } satisfies Drawings

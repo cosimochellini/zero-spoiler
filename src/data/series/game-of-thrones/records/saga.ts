@@ -28,6 +28,8 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'lake'
     | 'marsh'
     | 'mountain'
+    | 'open-sea'
+    | 'order'
     | 'peninsula'
     | 'plain'
     | 'river'
@@ -41,7 +43,9 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'the-crownlands'
     | 'the-iron-islands'
     | 'the-north'
+    | 'the-reach'
     | 'the-riverlands'
+    | 'the-seas'
     | 'the-vale'
     | 'the-westerlands'
 }
