@@ -1453,8 +1453,8 @@ const EAR: Growth = {
 /** The horse fruit: a pear, standing on one hoofed foreleg. */
 const HORSE_BODY: Body = { family: 'pear', cy: 88 }
 
-/** The rim heights the foreleg leaves the skin at, front and back. */
-const FORELEG = { front: 125.5, back: 129.7 }
+/** The rim height the two forelegs leave the skin at, either side. */
+const FORELEGS = 120
 
 /**
  * What a Zoan grows that is round in section, a trunk, a tail, a claw: the
@@ -1582,20 +1582,34 @@ function plume({ end, full, fullest, root }: Plume): (along: number) => number {
  */
 const TAIL: Limb = {
   line: [
-    [107, 148],
-    [125, 166],
-    [148, 170],
-    [146, 146],
+    [110, 142],
+    [150, 150],
+    [148, 98],
+    [136, 70],
+    [128, 50],
+    [112, 44],
+    [110, 60],
   ],
-  half: plume({ root: 6, full: 15, end: 2.5, fullest: PLUME }),
+  half: plume({ root: 6, full: 12, end: 3, fullest: PLUME }),
   rim: { body: WOLF_BODY, way: 1 },
 }
 
 /** The fur notches: steps along the outer edge (1) and the inner one (-1). */
-const FUR = { outer: [7, 12, 17], inner: [10, 15] }
+const FUR = { outer: [8, 13, 18], inner: [10, 15, 20] }
 
 /** The slow fruit: a segmented one, struck on the shoulder by a beam. */
 const SLOW_BODY: Body = { family: 'segmented', cy: 116 }
+
+/** The struck shoulder below the beam, drawn again a little behind itself. */
+function lagging(back: number): string {
+  return polyline(
+    Array.from({ length: 8 }, (_unused, at) => {
+      const y = 100 + at * 4
+
+      return point(onRim(SLOW_BODY, y, -1)[0] - back, y - back * 0.6)
+    }),
+  )
+}
 
 /** The door fruit: an oblong, a door open in its near side. */
 const DOOR_BODY: Body = { family: 'oblong', cy: 116 }
@@ -3371,30 +3385,37 @@ export const fruitArt = {
    * head.
    */
   'horse-horse-fruit': [
-    ...kitBody(
-      HORSE_BODY,
-      [100, 112, 124],
-      (x, y) => y < (x < 80 ? FORELEG.front : FORELEG.back) + 0.5,
-    ),
+    ...kitBody(HORSE_BODY, [92, 102, 112], (_x, y) => y < FORELEGS + 0.5),
     ...skin([
-      [68, 98, 8],
-      [88, 120, -7],
+      [68, 96, 8],
+      [88, 112, -6],
     ]),
     ...sprout(HORSE_BODY, 4, 'left'),
     {
+      // The raised leg first, its knee bent forward and its hoof clear of the
+      // ground; then the chest between the legs; then the planted leg.
       d: [
-        `M${point(...onRim(HORSE_BODY, FORELEG.front, -1))}`,
-        'C67 132 69 140 69 150 C69 155 68 158 66 160 L60 164',
-        'L54 176 L79 176 L76 165',
-        'C80 164 84 163 86 161 C88 158 88 154 83 152',
-        `C83 144 85 134 ${point(...onRim(HORSE_BODY, FORELEG.back, 1))}`,
+        `M${point(...onRim(HORSE_BODY, FORELEGS, -1))}`,
+        'C52 128 46 134 44 140 C43 144 44 147 47 149',
+        'L57 156 C59 157 60 158 61 160',
+        'L63 167 L71 162 L67 155',
+        'C64 154 61 152 58 150 L55 147',
+        'C54 143 58 136 70 132',
+        'C74 130 82 130 86 132',
+        'C86 140 87 146 88 150 C87 154 89 156 89 160',
+        'C89 163 87 166 84 168',
+        'L80 177 L99 177 L97 168',
+        `C98 165 97 162 96 160 C96 156 97 152 98 150 C99 144 101 132 ${point(...onRim(HORSE_BODY, FORELEGS, 1))}`,
       ].join(' '),
       role: 'accent',
     },
-    // The coronet, where the hoof starts.
-    { d: 'M60 164 C65 165 71 166 76 165', role: 'soft' },
-    // The horn of the hoof.
-    { d: 'M60 175 L65 168 M67 175 L72 168', role: 'ambient' },
+    // The coronets, where the hooves start.
+    {
+      d: 'M61 160 C63 159 65 157 67 155 M84 168 C88 169 93 169 97 168',
+      role: 'soft',
+    },
+    // The horn of the hooves.
+    { d: 'M65 164 L67 159 M84 176 L88 170 M91 176 L95 170', role: 'ambient' },
     shadowUnder(1),
   ],
 
@@ -3430,7 +3451,7 @@ export const fruitArt = {
     ...kitBody(
       SLOW_BODY,
       [104, 116, 128],
-      (x, y) => x > 50 || y < 87 || y > 93,
+      (x, y) => x > 54 || y < 80 || y > 100,
     ),
     ribs(SLOW_BODY),
     ...skin([
@@ -3438,23 +3459,20 @@ export const fruitArt = {
       [86, 146, -6],
     ]),
     ...sprout(SLOW_BODY, 6, 'right'),
-    // The beam, both edges ending on the rim.
-    { d: 'M7.3 54.9 L41.3 94.9 M13.8 45.2 L47.8 85.2', role: 'accent' },
-    // The struck shoulder, lagging behind where it was.
+    // The beam, both edges ending on the rim, and the particles it carries.
     {
-      d: [5, 10]
-        .map((back) => {
-          return polyline(
-            Array.from({ length: 6 }, (_unused, at) => {
-              const y = 96 + at * 5
-
-              return point(onRim(SLOW_BODY, y, -1)[0] - back, y - back * 0.6)
-            }),
-          )
-        })
-        .join(' '),
-      role: 'soft',
+      d: [
+        'M19.9 45.4 L51 82 M8.9 61.4 L40 98',
+        speck(17.6, 63.3),
+        speck(31.4, 67.3),
+        speck(33.9, 80.9),
+        speck(44.7, 84.4),
+      ].join(' '),
+      role: 'accent',
     },
+    // The struck shoulder, twice, lagging behind where it was.
+    { d: lagging(6), role: 'ambient' },
+    { d: lagging(12), role: 'ambient', dashed: true },
     shadowUnder(1),
   ],
 
@@ -3575,14 +3593,23 @@ export const fruitArt = {
     ]),
     ...sprout(WOLF_BODY, -4, 'left'),
     {
-      d: limbOutline(TAIL, 24, (step, way) => {
+      d: limbOutline(TAIL, 32, (step, way) => {
         if (way > 0) {
-          return FUR.outer.includes(step) ? 0.8 : 1
+          return FUR.outer.includes(step) ? 0.62 : 1
         }
 
-        return FUR.inner.includes(step) ? 0.86 : 1
+        return FUR.inner.includes(step) ? 0.62 : 1
       }),
       role: 'accent',
+    },
+    // The fur down the middle of the plume, where it parts.
+    {
+      d: polyline(
+        Array.from({ length: 9 }, (_unused, at) =>
+          point(...onLimb(TAIL, 0.2 + at * 0.06, 2)),
+        ),
+      ),
+      role: 'soft',
     },
     shadowUnder(1),
   ],
