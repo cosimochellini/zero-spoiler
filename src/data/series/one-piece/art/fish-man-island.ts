@@ -322,6 +322,29 @@ const SHIRAHOSHI_GRIP: Stroke[] = moved(
   'translate(70 108) rotate(30) scale(0.86) translate(-82 -132)',
 )
 
+/**
+ * Caribou's long-sleeved shirt without his coat, as he wears it in the Udon
+ * mine: the body and collar, the very long sleeves brought round to the
+ * front, the far side hatched.
+ */
+const CARIBOU_PRISON_SHIRT: Stroke[] = [
+  {
+    d: 'M56 40 C66 46 94 46 104 40 L124 52 C130 72 132 100 128 128 L112 122 L110 150 H50 L48 122 L32 128 C28 100 30 72 36 52 Z',
+  },
+  { d: 'M66 44 L80 58 L94 44', role: 'soft' },
+  {
+    d: 'M32 128 C38 146 52 160 72 166 M48 122 C52 138 62 150 74 156 M128 128 C122 146 108 160 88 166 M112 122 C108 138 98 150 86 156',
+  },
+  {
+    d: 'M116 60 l8 -4 M120 80 l8 -4 M120 100 l8 -4 M114 136 l8 -4',
+    role: 'ambient',
+  },
+  shadow(80, 186, 46),
+]
+
+/** The cross on the chest of Caribou's shirt. */
+const CARIBOU_CROSS = 'M76 74 h8 v6 h6 v8 h-6 v12 h-8 v-12 h-6 v-8 h6 Z'
+
 /** The drawings of the records filed in the fish man island stretch of the route. */
 export const fishManIslandArt = {
   // The foot of one of the archipelago's giant mangroves, the trunk running
@@ -393,7 +416,8 @@ export const fishManIslandArt = {
   // the hem lies the flintlock he shoots the Marine with. He wears the coat
   // at Grove 46 from 519 and fires the gun at 521 (ch. 601), still in the
   // Return to Sabaody arc. The stages are in `fishManIslandRedrawn`: the
-  // swamp at 523, the Udon prison at 919 and the coat back at 1088.
+  // swamp at 523, the Udon prison at 919, the cuffs off at 937 and the coat
+  // back at 1088.
   'caribou': [
     { d: 'M58 42 C50 46 42 52 38 64 L22 178 Q40 184 58 180 L70 56' },
     { d: 'M102 42 C110 46 118 52 122 64 L138 178 Q120 184 102 180 L90 56' },
@@ -430,18 +454,18 @@ export const fishManIslandArt = {
   ],
 
   // His black fedora set on the stock of his net rifle, which lies on the
-  // seabed: the stock at the left, the lock and trigger guard, the barrel
-  // widening to the bell of its muzzle, and the trawl net spilling out of
-  // it onto the sand in a heap of mesh. The band of the hat is in
-  // his colour, the dark crown and the stock hatched. He fires the net at
+  // seabed: the stock at the left, the lock and trigger guard, the barrel,
+  // and the trawl net spilling out of its muzzle onto the sand in a heap of
+  // mesh. The band of the hat is in his colour, the dark crown and the
+  // stock hatched. He fires the net at
   // Luffy at 528 (ch. 609), in the arc he opens in.
   'hammond': [
     ...moved(
       [
         {
-          d: 'M14 166 C10 156 18 148 30 150 L56 154 L64 148 H108 L122 140 V172 L108 162 H64 L58 166 H44 C32 170 20 172 14 166 Z',
+          d: 'M14 166 C10 156 18 148 30 150 L56 154 L64 148 H122 V162 H64 L58 166 H44 C32 170 20 172 14 166 Z',
         },
-        { d: 'M108 148 V162 M84 148 V162', role: 'soft' },
+        { d: 'M84 148 V162 M116 148 V162', role: 'soft' },
         {
           d: 'M58 166 C58 172 64 174 68 170 V162 M64 148 l-2 -6 l6 1',
           role: 'soft',
@@ -1024,7 +1048,7 @@ export const fishManIslandArt = {
   // The island in its double-layered bubble, two outlines one inside the
   // other, floating above the trench floor between the trench walls: the
   // reef and its coral spires fill the lower half, and on top sits the
-  // smaller bubble of the Ryugu Palace in its colour, its towers inside,
+  // smaller bubble of the Ryugu Palace in its colour, the palace inside,
   // with the light falling on it from above. The crew sail in at 526 (ch.
   // 607); the palace is reached at 531 (ch. 612), in the same arc.
   'fish-man-island': [
@@ -1388,10 +1412,10 @@ export const fishManIslandRedrawn: Redrawings = {
         { d: wave(194), role: 'ambient' },
       ],
     },
-    // The boots smaller, and set on them the luchador mask he hides under
-    // as "Nazoms", dark and hatched, two small horns on top and the star
-    // between them in his colour. No eye holes. He helps Luffy reach Cacao
-    // Island in it at 871 (ch. 896).
+    // The boots smaller, and set on them the luchador mask he wears as
+    // "Nazoms", its far side hatched, two small horns on its front and the
+    // star between them in his colour. No eye holes. He goes by Nazoms to
+    // help Luffy at 871 (ch. 896).
     {
       episode: 871,
       chapter: 896,
@@ -1412,8 +1436,8 @@ export const fishManIslandRedrawn: Redrawings = {
         shadow(88, 188, 46),
       ],
     },
-    // The boots as before, and his mane grown huge out over them, curl on
-    // curl, under the full moon in his colour. He turns Sulong on Cacao
+    // The boots as before, and his mane grown huge out over them under the
+    // full moon in his colour. He turns Sulong on Cacao
     // Island at 872 (ch. 897), and the story leaves him there.
     {
       episode: 872,
@@ -1433,8 +1457,8 @@ export const fishManIslandRedrawn: Redrawings = {
     },
   ],
   // The shell broken open and, rising out of it, the stubby feathered wing
-  // of a chick in his colour: Viscount Hiyoko. Pedro breaks the egg and he
-  // comes out of it at 820 (ch. 853).
+  // of a chick in his colour: Viscount Hiyoko. Pedro has cut him in half,
+  // and he comes back out of the yolk with wings at 820 (ch. 853).
   'baron-tamago': [
     {
       episode: 820,
@@ -1466,9 +1490,11 @@ export const fishManIslandRedrawn: Redrawings = {
       ],
     },
   ],
-  // The clock-tower mast cut through low down, the rest of it toppling off
-  // to the right, and the axe he threw at the palace stuck in the stump, the rose on its blade in his colour; the torn sails are plain
-  // now. The axe doubles back and chops his own mast at 532 (ch. 613, below
+  // The clock-tower mast cut clean through low down, the rest of it
+  // toppling off to the left, and the axe he threw flying on past the cut,
+  // clear of the ship, a short trail behind it and the rose on its blade in
+  // his colour; the torn sails are plain now. The axe doubles back, chops
+  // through his own mast and flies on to the palace at 532 (ch. 613, below
   // his record's chapter, so pinned at 615 with his record).
   'vander-decken-ix': [
     {
@@ -1476,24 +1502,25 @@ export const fishManIslandRedrawn: Redrawings = {
       chapter: 615,
       value: [
         ...DUTCHMAN_HULL,
-        { d: 'M70 116 V100 L73 95 L75 101 L78 96 V116' },
+        { d: 'M70 116 V100 L78 94 V116' },
         ...moved(
           [
             {
-              d: 'M70 98 V40 M78 98 V40 M66 40 H82 V24 H66 Z M64 24 L74 8 L84 24',
+              d: 'M70 98 L78 92 M70 98 V40 M78 92 V40 M66 40 H82 V24 H66 Z M64 24 L74 8 L84 24',
             },
             { d: 'M66 32 H82', role: 'soft' },
           ],
-          'translate(6 -4) rotate(22 78 98)',
+          'translate(-4 -6) rotate(-22 70 98)',
         ),
-        { d: 'M50 104 H16 M50 109 H16' },
+        { d: 'M110 44 L142 18 M112 47 L144 21' },
         {
-          d: 'M70 92 C58 88 46 94 44 106 C44 116 52 120 56 120 C54 114 56 110 62 110 H70 Z',
+          d: 'M136 10 C148 4 160 12 160 26 C154 24 148 26 144 32 C144 24 142 16 136 10 Z',
         },
         {
-          d: 'M55 104 c2 -2 5 0 4 3 c-1 4 -7 4 -8 0 c-1 -5 5 -9 10 -6 c4 3 4 9 0 12',
+          d: 'M149 19 c2 -2 5 0 4 3 c-1 4 -7 4 -8 0 c-1 -5 5 -9 10 -6',
           role: 'accent',
         },
+        { d: 'M90 46 L102 36 M96 53 L106 45 M84 40 L94 32', role: 'soft' },
         ...softened(DUTCHMAN_RIG),
         ...SEA,
       ],
@@ -1504,31 +1531,33 @@ export const fishManIslandRedrawn: Redrawings = {
   // in it at 523 (ch. 603).
   'caribou': [
     { episode: 523, chapter: 603, value: CARIBOU_SWAMP },
-    // No coat in the Udon mine: his long-sleeved shirt with the cross on its
-    // chest, the empty sleeves brought together at the front like a
-    // straitjacket's and shut in handcuffs, the cuffs in his colour. He is a
-    // prisoner there from 919 (ch. 926).
+    // No coat in the Udon mine: his long-sleeved shirt, the empty sleeves
+    // brought together at the front like a straitjacket's and shut in
+    // handcuffs, the cuffs in his colour. He is a prisoner there from 919
+    // (ch. 926).
     {
       episode: 919,
       chapter: 926,
       value: [
-        {
-          d: 'M56 40 C66 46 94 46 104 40 L124 52 C130 72 132 100 128 128 L112 122 L110 150 H50 L48 122 L32 128 C28 100 30 72 36 52 Z',
-        },
-        { d: 'M66 44 L80 58 L94 44', role: 'soft' },
-        { d: 'M76 74 h8 v6 h6 v8 h-6 v12 h-8 v-12 h-6 v-8 h6 Z', role: 'soft' },
-        {
-          d: 'M32 128 C38 146 52 160 72 166 M48 122 C52 138 62 150 74 156 M128 128 C122 146 108 160 88 166 M112 122 C108 138 98 150 86 156',
-        },
+        ...CARIBOU_PRISON_SHIRT,
+        { d: CARIBOU_CROSS, role: 'soft' },
         {
           d: `${circle(70, 162, 9)} ${circle(90, 162, 9)} M79 162 h2`,
           role: 'accent',
         },
-        {
-          d: 'M116 60 l8 -4 M120 80 l8 -4 M120 100 l8 -4 M114 136 l8 -4',
-          role: 'ambient',
-        },
-        shadow(80, 186, 46),
+      ],
+    },
+    // The same shirt with the cuffs gone, the sleeves' ends hanging free and
+    // the cross on its chest now in his colour. Raizo stole the key to his
+    // cuffs by mistake, and he comes to the sumo ring free of them at 937
+    // (ch. 940).
+    {
+      episode: 937,
+      chapter: 940,
+      value: [
+        ...CARIBOU_PRISON_SHIRT,
+        { d: CARIBOU_CROSS, role: 'accent' },
+        { d: 'M72 166 L74 156 M88 166 L86 156' },
       ],
     },
     // The coat again, sinking into the swamp as before. He rides off Wano
@@ -1537,10 +1566,11 @@ export const fishManIslandRedrawn: Redrawings = {
     // nothing.
     { episode: 1088, chapter: 1060, value: CARIBOU_SWAMP },
   ],
-  // Her window and hairgrip smaller, the grip plain now, and round the foot
-  // of the tower the arched backs of Sea Kings breaking the water, their
-  // spined ridges in her colour. Robin tells Neptune that she is Poseidon,
-  // the ancient weapon that commands the Sea Kings, at 569 (ch. 649).
+  // Her window and hairgrip smaller, the grip plain now, and below them the
+  // arched backs of Sea Kings breaking the water, their spined ridges in
+  // her colour: a sign of the power, not a scene from the story. Robin tells
+  // Neptune that she is Poseidon, the ancient weapon who can speak to the
+  // Sea Kings, at 569 (ch. 649).
   'shirahoshi': [
     {
       episode: 569,
