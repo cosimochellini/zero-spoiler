@@ -262,7 +262,8 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
-  // Hoster opens at one pin with a status per medium: alive in the book, a corpse on screen.
+  // Hoster opens at one pin alive in the book and a corpse on screen; the
+  // book kills him in A Storm of Swords (#1242).
   {
     id: 'hoster-tully',
     episode: 23,
@@ -270,14 +271,20 @@ const CHANGES: {
     value: 'alive',
     source: 'chapter',
   },
-  {
-    id: 'hoster-tully',
-    episode: 23,
-    chapter: 72,
-    value: 'deceased',
-    source: 'episode',
-  },
+  { id: 'hoster-tully', episode: 23, chapter: 179, value: 'deceased' },
   { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
+  // Later deaths (#1242).
+  { id: 'lommy', episode: 13, chapter: 93, value: 'deceased' },
+  { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
+  { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
+  { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
+  {
+    id: 'stevron-frey',
+    episode: 14,
+    chapter: 109,
+    value: 'deceased',
+    source: 'chapter',
+  },
   { id: 'stiv', episode: 6, chapter: 38, value: 'deceased' },
   { id: 'wallen', episode: 6, chapter: 38, value: 'deceased' },
   {
@@ -941,7 +948,8 @@ describe.each([
  * the Riverlands cast's (#1057), each pinned in the units that tell it:
  * Bran's climb, which the book alone shows after his threshold, the deaths
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
- * Heddle's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
+ * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
  * magic. `stage` counts a record's stages from 0, for a record redrawn more
  * than once.
@@ -973,6 +981,13 @@ const STAGES: {
   { id: 'vardis-egen', episode: 6, chapter: 41, source: 'chapter' },
   { id: 'mycah', episode: 2, chapter: 17, source: 'chapter' },
   { id: 'masha-heddle', episode: 8, chapter: 57, source: 'chapter' },
+  // Later deaths (#1242).
+  { id: 'lommy', episode: 13, chapter: 93 },
+  { id: 'stevron-frey', episode: 14, chapter: 109, source: 'chapter' },
+  { id: 'hoster-tully', episode: 23, chapter: 179, source: 'chapter' },
+  { id: 'rorge', episode: 37, chapter: 263 },
+  { id: 'biter', episode: 37, chapter: 268 },
+  { id: 'kevan-lannister', episode: 60, chapter: 344 },
 ]
 
 describe.each(
