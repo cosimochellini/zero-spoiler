@@ -1170,7 +1170,7 @@ const WAX_TOP: Point[] = [
   [120, 136],
 ]
 
-/** The clone fruit: a segmented one, a patch of its skin printed twice. */
+/** The clone fruit: a segmented one, a hand laid on it printed with its skin. */
 const CLONE_BODY: Body = { family: 'segmented', cy: 116 }
 
 /** The flame fruit: a round, sunk to its waist in fire. */
@@ -1241,7 +1241,7 @@ function stab({ at, reach }: (typeof SPIKES)[number]): string {
   ])
 }
 
-/** The cage fruit: a gourd, an iron cuff closed round its waist. */
+/** The cage fruit: a gourd, an iron cuff round its waist and a band over it. */
 const CAGE_BODY: Body = { family: 'gourd', cy: 120 }
 
 /** The cuff: how wide and deep its ring is seen from above, and how tall. */
@@ -1450,7 +1450,7 @@ const EAR: Growth = {
   ],
 }
 
-/** The horse fruit: a pear, standing on one hoofed foreleg. */
+/** The horse fruit: a pear, on two hoofed forelegs. */
 const HORSE_BODY: Body = { family: 'pear', cy: 88 }
 
 /** The rim height the two forelegs leave the skin at, either side. */
@@ -1583,8 +1583,8 @@ function plume({ end, full, fullest, root }: Plume): (along: number) => number {
 const TAIL: Limb = {
   line: [
     [110, 142],
-    [150, 150],
-    [148, 98],
+    [148, 150],
+    [146, 98],
     [136, 70],
     [128, 50],
     [112, 44],
@@ -1616,6 +1616,27 @@ const DOOR_BODY: Body = { family: 'oblong', cy: 116 }
 
 /** The leopard fruit: a heart, claws out of its lower side. */
 const LEOPARD_BODY: Body = { family: 'heart', cy: 112 }
+
+/**
+ * The awakened mane: dark flame billowing out round the shoulders, broken
+ * where the stalk comes out, and on down the far side to the foot.
+ */
+const LEOPARD_MANE = [
+  billow([
+    [32, 102],
+    [36, 80],
+    [50, 62],
+    [72, 54],
+  ]),
+  billow([
+    [110, 60],
+    [126, 76],
+    [132, 100],
+    [128, 124],
+    [114, 146],
+    [96, 162],
+  ]),
+].join(' ')
 
 /** The short stub the claws grow from, both edges of it on the rim. */
 const STUB: Limb = {
@@ -2630,6 +2651,8 @@ export const fruitArt = {
    * Drawn from the first episode, although the show only opens the Red Hair
    * Pirates' chest in episode 4: the look of the fruit Luffy ate tells a
    * reader nothing the first episode has not, and every reader knows it.
+   * The light sits on the near shoulder and the far side is hatched where
+   * the curls leave room, as on the other real fruits.
    */
   'gum-gum-fruit': [
     { d: ring(80, 126, 44) },
@@ -2689,10 +2712,11 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit a stone has just slid off: one glide line hugs the near shoulder
-   * and flies off past the rim, and the chunk drops away at the end of it. In
-   * episode 52 Buggy blows up the fountain, a piece of it shoots at Alvida and
-   * slips right off her.
+   * The fruit a stone has just slid off: the skin polished to a long streak
+   * down the near shoulder, flicking off past the rim at its foot, and a chunk
+   * of stone glancing away from the end of it. In episode 52 Buggy blows up
+   * the fountain, a piece of it shoots at Alvida and slips right off her.
+   * The streak stands in for the shine.
    */
   'slip-slip-fruit': [
     { d: outline(SLIP_BODY) },
@@ -2825,7 +2849,8 @@ export const fruitArt = {
    * shackle, piled higher on one side, its top edge rolled where the wax was
    * pushed up, the outline gone where the wax holds it. In episode 73 Mr. 3
    * binds Brogy's legs with a strange substance and Vivi names the fruit.
-   * Nothing dripping and nothing poured, and no candle.
+   * Two short runs down its outer face set hard before they reached the
+   * ground, which is what says wax. Nothing poured, and no candle.
    */
   'wax-wax-fruit': [
     ...kitBody(
@@ -2863,12 +2888,13 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit copied by touch: one large curl of its own skin, copied once
-   * just below itself, the same size and winding and never mirrored (a mirrored
-   * pair reads as a face), on the same body and with no second outline. In
-   * episode 92 Mr. 2 shows the crew
-   * that he can copy anyone whose face he touches with his right hand. Never a
-   * face, and never the real fruit's two joined calabashes.
+   * The fruit copied by touch: an open right hand laid flat on its far
+   * shoulder, the arm coming in from the side, and the curl of skin beside it
+   * printed on the back of the hand at the same size and winding. In episode
+   * 92 Mr. 2 shows the crew that he can copy anyone whose face he touches
+   * with his right hand. Laid on the far side, so it is never the human
+   * fruit's hand grown from the near one. Never a face, and never the real
+   * fruit's two joined calabashes.
    */
   'clone-clone-fruit': [
     ...kitBody(CLONE_BODY, [146, 156, 164], (x, y) => !underHand(x, y)),
@@ -3018,11 +3044,11 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit with a jackal's ear: one tall pointed ear grown straight up out
-   * of its near shoulder, wide where it leaves the skin, seen from the side,
-   * with the fold inside it. In episode 120 Chaka names his fruit and turns into
-   * a great black jackal to go at Crocodile. One ear and nothing else, never a
-   * pair, a muzzle or a head.
+   * The fruit with a jackal's ear: one tall pointed ear grown up out of its
+   * near shoulder, broad at the root, seen from the side, the hollow in front
+   * of its fold hatched dark. In episode 120 Chaka names his fruit and turns
+   * into a great black jackal to go at Crocodile. One ear and nothing else:
+   * two ears on the rim with the crown between them read as a head.
    */
   'dog-dog-fruit-model-jackal': [
     ...kitBody(JACKAL_BODY, [110, 122, 134]),
@@ -3195,7 +3221,12 @@ export const fruitArt = {
     shadowUnder(1),
   ],
 
-  /** An open foot feeds a thin stream into the cone below the pear. */
+  /**
+   * The fruit sunk in its own sand: a dune where the shadow would be, the
+   * skin going down into it, and the far shoulder blowing off in streaks and
+   * grains. Crocodile turns to sand in episode 106 and the fruit is named in
+   * 112.
+   */
   'sand-sand-fruit': [
     ...kitBody(
       SAND_BODY,
@@ -3225,15 +3256,15 @@ export const fruitArt = {
       d: 'M28 178 C40 168 52 160 64 156 M98 154 C112 158 124 168 132 178',
       role: 'soft',
     },
-    { d: 'M4 190 C40 193 120 193 156 190', role: 'ambient', dashed: true },
+    { d: 'M8 190 C40 193 120 193 152 190', role: 'ambient', dashed: true },
   ],
 
   /**
-   * The fruit on a dachshund's legs: four short bent legs grown out of its
-   * underside, the near pair whole and the far pair showing behind them, the
-   * paws planted and turned forward. In episode 113 Lassoo, Mr. 4's gun, walks
-   * and barks as a dog, and the fruit is named. Short legs and nothing else,
-   * never a head or a tail.
+   * The fruit on a dachshund's legs: held the long way and low, on four short
+   * splayed legs grown out of its underside, the near pair whole and the far
+   * pair behind them, the paws planted and turned forward. In episode 113
+   * Lassoo, Mr. 4's gun, walks and barks as a dog, and the fruit is named. The
+   * long, low body is the breed. Never a head or a tail.
    */
   'dog-dog-fruit-model-dachshund': [
     {
@@ -3269,9 +3300,10 @@ export const fruitArt = {
 
   /**
    * The fruit caught in iron: a cuff closed round the gourd's waist, tipped
-   * off level, its near face thick with the edge of its top showing, the far
-   * side behind the fruit, the outline pinched in under it. In episode 130
-   * Hina lets a pirate pass through her and leaves him in a ring of iron.
+   * off level, its near face thick with the edge of its top showing, and a
+   * second band crossing it over the crown and down to the foot, following
+   * the skin round. In episode 130 Hina lets a pirate pass through her and
+   * leaves him bound in iron.
    */
   'cage-cage-fruit': [
     { d: outline(CAGE_BODY, (x, y) => !behindCuff(x, y) && !underBand(x, y)) },
@@ -3377,12 +3409,13 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit on a horse's foreleg: the foot of the fruit narrows into one
-   * leg, both edges of it out of the rim, the fetlock bent, the hoof
-   * planted, toe forward. In episode 153 Gan Fall shows the crew that Pierre
-   * ate the fruit and can turn into a Pegasus, and they find it ordinary. The
-   * leg and nothing else: no wings, which are the falcon's, no mane, never a
-   * head.
+   * The fruit on a horse's forelegs, mid-step: the foot of the fruit parts
+   * into two legs, one planted with its hoof flat and toe forward, the other
+   * raised, its knee bent forward and its hoof tucked back clear of the
+   * ground. In episode 153 Gan Fall shows the crew that Pierre ate the fruit
+   * and can turn into a Pegasus, and they find it ordinary. A pair of legs is
+   * a horse; one was a boot. No wings, which are the falcon's, no mane, never
+   * a head.
    */
   'horse-horse-fruit': [
     ...kitBody(HORSE_BODY, [92, 102, 112], (_x, y) => y < FORELEGS + 0.5),
@@ -3440,12 +3473,12 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit struck by a beam: two parallel lines in from the upper left,
-   * landing on the near shoulder, the outline open where they land, and the
-   * struck shoulder trailing behind where it was. In episode 210 Foxy fires
-   * the beam at the Barrel Tiger to slow it in the race, and explains that he
-   * gives off particles that slow down what they hit. No cannonball and no
-   * mirror.
+   * The fruit struck by a beam: a wide beam in from the upper left, specked
+   * with the particles it carries, landing on the near shoulder with the
+   * outline open where it lands, and the shoulder below it drawn twice more
+   * behind itself, fading. In episode 210 Foxy fires the beam at the Barrel
+   * Tiger to slow it in the race, and explains that he gives off particles
+   * that slow down what they hit. No cannonball and no mirror.
    */
   'slow-slow-fruit': [
     ...kitBody(
@@ -3514,7 +3547,8 @@ export const fruitArt = {
 
   /**
    * The real fruit, beside Kaku's in episode 271: a melon held the long way,
-   * its rind in segments under a skin of curls, a tendril for a stalk.
+   * its rind in segments under a skin of curls, a tendril for a stalk, the
+   * light on its near shoulder and the far side hatched.
    */
   'bubble-bubble-fruit': [
     {
@@ -3580,10 +3614,11 @@ export const fruitArt = {
 
   /**
    * The fruit with a wolf's tail: one large, bushy tail grown out of its lower
-   * side, sweeping out and down with the tip curled up, soft notches of fur on
-   * both edges. In episode 286 Jabra transforms and names his fruit, and the
-   * wiki gives his half-wolf form an unusually large tail. The tail and
-   * nothing else, never the snout or the head.
+   * side, sweeping out and up past the far shoulder with the tip curled over,
+   * three notches of fur on each edge and the fur parted down its middle. In
+   * episode 286 Jabra transforms and names his fruit, and the wiki gives his
+   * half-wolf form an unusually large tail. The tail and nothing else, never
+   * the snout or the head.
    */
   'dog-dog-fruit-model-wolf': [
     ...kitBody(WOLF_BODY, [84, 96, 108]),
@@ -3650,7 +3685,8 @@ export const fruitArt = {
 
   /**
    * The real fruit, handed to Kaku in episode 271: a bunch of fingers like
-   * bananas under a skin of curls, held together at the crown by its stalk.
+   * bananas under a skin of curls, held together at the crown by its stalk,
+   * the light down the near finger and the far fingers hatched.
    */
   'ox-ox-fruit-model-giraffe': [
     {
@@ -6572,7 +6608,8 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
        * The fruit that is all flame: a body whose crown is a row of tongues, curls
        * burning across it, and a stalk that runs off with a hook at the end. Not
        * seen until Doflamingo holds it up in episode 629, so it is drawn from
-       * there, in `fruitRedrawn`; before that the fruit is a grown one.
+       * there, in `fruitRedrawn`; before that the fruit is a grown one. The
+       * light sits on the near shoulder and the far side is hatched.
        */
       value: [
         {
@@ -6786,9 +6823,36 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
     },
   ],
 
-  // Vegapunk's Zoan explanation, episode 1101; anime only, paired with the
-  // chapter the episode adapts, 1070.
+  // Lucci awakens the fruit on Egghead in chapter 1069 (episode 1100), a
+  // chapter before Vegapunk shows the real fruit.
   'cat-cat-fruit-model-leopard': [
+    {
+      episode: 1100,
+      chapter: 1069,
+      look: 'awakening',
+      /**
+       * The awakening: the claws as they were, and a mane of dark flame
+       * billowing round the fruit's shoulders and down its far side, the
+       * cloud that rises off Lucci when he awakens. The flame is dark, so it
+       * is hatched where it meets the skin.
+       */
+      value: [
+        ...fruitArt['cat-cat-fruit-model-leopard']
+          .slice(0, -1)
+          .map((stroke) => {
+            return stroke.role === 'accent' ?
+                { ...stroke, d: `${stroke.d} ${LEOPARD_MANE}` }
+              : stroke
+          }),
+        {
+          d: 'M54 70 L50 66 M42 88 L37 86 M121 82 L125 78 M125 112 L129 110 M109 141 L113 138',
+          role: 'ambient',
+        },
+        shadowUnder(1),
+      ],
+    },
+    // Vegapunk's Zoan explanation, episode 1101; anime only, paired with the
+    // chapter the episode adapts, 1070.
     {
       episode: 1101,
       chapter: 1070,
