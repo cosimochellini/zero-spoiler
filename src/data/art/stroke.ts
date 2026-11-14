@@ -34,4 +34,15 @@ export function moved(strokes: Stroke[], by: string): Stroke[] {
   })
 }
 
+/**
+ * The same strokes with their accent made soft: a stage that adds a new
+ * mark keeps the old drawing and moves the one accent to what the story
+ * added.
+ */
+export function softened(strokes: Stroke[]): Stroke[] {
+  return strokes.map((stroke) => {
+    return stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke
+  })
+}
+
 export { type Stroke } from '~/lib/view/records'
