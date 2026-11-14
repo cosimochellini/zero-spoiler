@@ -71,6 +71,7 @@ export const PLACE_ITALIAN_TITLES = {
     'the-citadel': `${PLACES}#La Cittadella`,
     'dragonstone': `${PLACES}#Roccia del Drago`,
     'the-arbor': `${PLACES}#Arbor`,
+    'mountains-of-the-moon': `${PLACES}#Montagne della Luna`,
   },
 }
 
@@ -100,6 +101,21 @@ export const PLACE_NAMES_KEPT = {
   // Horn Hill is not on the page: the books' Italian form, the dub's
   // unconfirmed (owner, #1249).
   'horn-hill': 'Collina del Corno',
+  // Named in the page's text, with no section of their own.
+  'green-fork': 'Forca Verde',
+  'western-market': 'Mercato Occidentale',
+  'womb-of-the-world': 'Grembo del Mondo',
+  // Not on the places page: the Street of Steel is "strada dell'Acciaio" in
+  // Italian Wikipedia's character and House Baratheon pages. The Street of the
+  // Sisters is not named there; it takes the same "Strada" the page gives every
+  // named road (owner, #1252).
+  'street-of-steel': 'Strada dell’Acciaio',
+  'street-of-the-sisters': 'Strada delle Sorelle',
+  // The books' Italian form, the dub's unconfirmed (owner, #1252).
+  // Named as "Porte della Luna" in the prose of Italian Wikipedia's pages on
+  // the characters and on House Arryn, not on the places page.
+  'gates-of-the-moon': 'Porte della Luna',
+  'whispering-wood': 'Bosco dei Sussurri',
   // One Piece: the Italian wiki's Erbaf page (revision 372881) names the
   // kingdom and the level in its prose, not in a section.
   'warland': 'Warland',

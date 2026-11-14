@@ -33,8 +33,10 @@ export const GAME_OF_THRONES_PLACE_WORDS: PlaceWords<ThronesVocabulary> = {
     'inn': { en: 'Inn', it: 'Locanda' },
     'island': { en: 'Island', it: 'Isola' },
     'lake': { en: 'Lake', it: 'Lago' },
+    'market': { en: 'Market', it: 'Mercato' },
     'marsh': { en: 'Marsh', it: 'Palude' },
     'mountain': { en: 'Mountain', it: 'Montagna' },
+    'mountains': { en: 'Mountains', it: 'Montagne' },
     'open-sea': { en: 'Sea', it: 'Mare' },
     'order': { en: 'Seat of an order', it: 'Sede di un ordine' },
     'peninsula': { en: 'Peninsula', it: 'Penisola' },
@@ -42,6 +44,7 @@ export const GAME_OF_THRONES_PLACE_WORDS: PlaceWords<ThronesVocabulary> = {
     'river': { en: 'River', it: 'Fiume' },
     'ruin': { en: 'Ruin', it: 'Rovine' },
     'sept': { en: 'Sept', it: 'Tempio' },
+    'street': { en: 'Street', it: 'Strada' },
     'town': { en: 'Town', it: 'Borgo' },
   },
 }

@@ -92,8 +92,9 @@ under its key in `game-of-thrones.json`.
 
 - Book gate: Catelyn IV opens aboard the Storm Dancer in Blackwater Bay and
   lands at King's Landing in the same chapter.
-- Gendry (the forge, ep 4 / site 28), Gregor and Loras (the Hand's tourney, ep
-  4-5 / site 30) are filed at the city rather than at a sub-place.
+- Gregor and Loras (the Hand's tourney, ep 4-5 / site 30) are filed at the city
+  rather than at a sub-place; Gendry (the forge, ep 4 / site 28) is filed at the
+  Street of Steel (#1252).
 
 ### `the-wall`
 
@@ -156,7 +157,7 @@ under its key in `game-of-thrones.json`.
   (ep 3), which Rakharo's log needs. The book is assumed to name it before
   Rakharo's chapter (site 24), from Daenerys II and III; not checked, and the
   leak scan reads only the episode side of the fact.
-- The Womb of the World (Daenerys V, site 47) is folded into this record.
+- The Womb of the World (Daenerys V, site 47) has its own record since #1252.
 
 ### `the-eyrie`
 
@@ -204,7 +205,8 @@ under its key in `game-of-thrones.json`.
 
 ### `the-twins`
 
-- Italian "Forca Verde" for the Green Fork is assumed, not confirmed.
+- Italian "Forca Verde" for the Green Fork is on Italian Wikipedia's places
+  page; this text no longer names the river (#1252).
 
 ### `great-sept-of-baelor`
 
@@ -353,3 +355,24 @@ against the text: each city's own name is in the chapter, not only a demonym.
   Mountains, the Dornish Marches, the Summer Isles, the Stepstones, the Sunset
   Sea, Duskendale, Rosby, Claw Isle, Bitterbridge, Aegon's High Hill: season 1
   does not name them.
+
+### Filed (#1252)
+
+Places a scene of season 1 or _A Game of Thrones_ is set in, which #853 left
+out. A place only the book names in season 1 is a book-only record, gated at the
+book's naming, with the episode its events fall in to order it, as Darry is
+(owner, #1252).
+
+| Place                   | Episode | Chapter | Note                             |
+| ----------------------- | ------- | ------- | -------------------------------- |
+| `street-of-the-sisters` | 4       | 19      | both media                       |
+| `street-of-steel`       | 4       | 28      | both media                       |
+| `mountains-of-the-moon` | 4       | 29      | book only; the episode orders it |
+| `green-fork`            | 4       | 29      | book only; the episode orders it |
+| `gates-of-the-moon`     | 5       | 35      | book only; the episode orders it |
+| `western-market`        | 4       | 37      | book only; the episode orders it |
+| `womb-of-the-world`     | 6       | 47      | book only; the episode orders it |
+| `whispering-wood`       | 9       | 64      | book only; the episode orders it |
+
+The Western Market's lead (Daenerys VI, site chapter 55) was late: Daenerys IV
+(37) names it and is set there.
