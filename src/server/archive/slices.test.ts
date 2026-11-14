@@ -761,18 +761,18 @@ describe('a record drawn again later in the story', () => {
   it('is lifted by hand as the reader would see it, not as it ends', () => {
     const handle = handleOf('marshall-d-teach')
 
-    expect(peekCharacter(handle, 'en', ep(420))?.visual.strokes).toBe(first)
-    expect(peekCharacter(handle, 'en', ep(421))?.visual.strokes).toBe(
+    expect(peekCharacter(handle, 'en', ep(324))?.visual.strokes).toBe(first)
+    expect(peekCharacter(handle, 'en', ep(325))?.visual.strokes).toBe(
       redrawn?.value,
     )
   })
 
   it('is asked for by id as the reader would see it, and not before', () => {
-    expect(drawingsFor(['marshall-d-teach'], ep(420), 'en')).toStrictEqual({
+    expect(drawingsFor(['marshall-d-teach'], ep(324), 'en')).toStrictEqual({
       'marshall-d-teach': first,
     })
     expect(
-      drawingsFor(['marshall-d-teach'], ep(421), 'en')['marshall-d-teach'],
+      drawingsFor(['marshall-d-teach'], ep(325), 'en')['marshall-d-teach'],
     ).toBe(redrawn?.value)
     expect(
       drawingsFor(

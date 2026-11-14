@@ -4,7 +4,15 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, dots, ellipse, house, SEA, shadow } from '~/lib/svg/primitives'
+import {
+  circle,
+  dots,
+  ellipse,
+  house,
+  SEA,
+  shadow,
+  wave,
+} from '~/lib/svg/primitives'
 
 /**
  * Sengoku's cap: the crown with its far side hatched, the braided band, the
@@ -242,23 +250,76 @@ const MARCO_WING: Stroke[] = [
 /** Marco as a phoenix: the jacket and the wing, from 463 and again from 988. */
 const MARCO_PHOENIX: Stroke[] = [...MARCO_JACKET, ...MARCO_WING]
 
+/** The St. Briss tipped bow-first, as she falls out of the sky at 143. */
+const FALLING = 'translate(90 50) scale(1.15) rotate(-44) translate(-90 -50)'
+
+/** The hanged man of Roshio's Jolly Roger, as his headband repeats it. */
+const HANGED_MAN =
+  'M70 129 v3 M67.5 134.5 a2.5 2.5 0 1 0 5 0 a2.5 2.5 0 1 0 -5 0 M70 137 v6 M70 143 l-2.5 4 M70 143 l2.5 4'
+
+/**
+ * Upper Yard's forest edge: two giant trunks at either side, too tall to
+ * end in the frame, their far sides hatched, standing on the island cloud
+ * over the White Sea. Giant Jack stands between them, then lies across them
+ * from 191.
+ */
+const UPPER_YARD_FOREST: Stroke[] = [
+  {
+    d: 'M2 148 C10 140 12 120 13 90 C14 50 14 20 13 -4 M40 148 C32 140 30 120 30 90 C29 50 29 20 30 -4',
+  },
+  {
+    d: 'M120 148 C128 140 130 118 131 88 C132 50 132 20 131 -4 M158 148 C150 140 148 118 148 88 C147 50 147 20 148 -4',
+  },
+  {
+    d: 'M32 60 l6 -4 M32 80 l6 -4 M32 100 l6 -4 M32 120 l6 -4 M150 60 l6 -4 M150 80 l6 -4 M150 100 l6 -4 M150 120 l6 -4',
+    role: 'ambient',
+  },
+  {
+    d: 'M-4 150 q8 -8 16 -2 q8 -8 18 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q8 -6 14 2',
+    role: 'ambient',
+  },
+  ...SEA.slice(1),
+]
+
 /** The drawings of the records filed in the skypiea stretch of the route. */
 export const skypieaArt = {
-  // A Log Pose on its wrist band with the needle pointing straight up, and a
-  // galleon falling out of the sky above it.
+  // The St. Briss falling bow-first out of the sky, three masts and their
+  // sails tipped toward the sea, her reptile figurehead leading, the hull's
+  // underside hatched; below her the Log Pose on its wrist band, its needle
+  // pointing straight up as the accent. The ship drops in front of the crew
+  // at 143 (ch. 218), and the needle turns skyward at 144, the same chapter.
   'jaya-arc': [
-    { d: circle(80, 116, 28) },
-    { d: 'M80 136 V100 M73 108 L80 96 L87 108', role: 'accent' },
-    { d: 'M72 143 V150 M88 143 V150' },
-    { d: ellipse(80, 156, 32, 8) },
-    { d: 'M92 30 L138 20 L132 38 L100 46z', transform: 'rotate(28 114 32)' },
     {
-      d: 'M116 34 V8 M116 12 L130 18 L116 24',
-      role: 'soft',
-      transform: 'rotate(28 114 32)',
+      d: 'M50 56 C54 66 60 72 70 72 H116 C122 70 126 64 130 56 Z',
+      transform: FALLING,
     },
-    { d: 'M92 16 v-10 M126 8 v-6', role: 'ambient', dashed: true },
-    shadow(80, 176, 36),
+    { d: 'M50 56 L56 50 H134 L130 56', transform: FALLING },
+    {
+      d: 'M64 62 l4 6 M78 62 l4 8 M92 62 l4 8 M106 62 l4 8 M118 62 l3 6',
+      role: 'ambient',
+      transform: FALLING,
+    },
+    { d: 'M74 52 V18 M96 52 V14 M116 52 V24', transform: FALLING },
+    {
+      d: 'M66 24 q8 4 16 0 q-3 7 0 14 q-8 4 -16 0 q3 -7 0 -14z M88 20 q8 4 16 0 q-3 8 0 16 q-8 4 -16 0 q3 -8 0 -16z M109 28 q7 4 14 0 q-3 6 0 12 q-7 4 -14 0 q3 -6 0 -12z',
+      transform: FALLING,
+    },
+    {
+      d: 'M50 56 C44 54 40 48 42 42 C44 38 48 38 49 41',
+      role: 'soft',
+      transform: FALLING,
+    },
+    {
+      d: 'M126 6 v-14 M142 22 v-16 M110 2 v-10',
+      role: 'ambient',
+      dashed: true,
+    },
+    { d: circle(80, 134, 22) },
+    { d: 'M80 150 V120 M73 128 L80 114 L87 128', role: 'accent' },
+    { d: 'M66 124 C68 118 72 115 76 114', role: 'soft' },
+    { d: 'M72 156 V162 M88 156 V162' },
+    { d: `${ellipse(80, 168, 34, 8)} M46 168 v8 a34 8 0 0 0 68 0 v-8` },
+    shadow(80, 188, 40),
   ],
 
   // The Going Merry thrown up on a column of sea water toward the cloud bank,
@@ -331,30 +392,29 @@ export const skypieaArt = {
     { d: 'M-4 150 H164', role: 'ambient', dashed: true },
     ...SEA.slice(1),
   ],
-
-  // A salvage crane from his ship, the arm hatched underneath, its chain
-  // running down from the pulley into the sea where the wreck lies: his crew
-  // sets the cradle and hauls the St. Briss up off the bottom (144). He dives
-  // in goggles, not a helmet.
+  // The air tube running down from his ship into the great bubble that lifts
+  // the St. Briss off the bottom: he blows it with his own breath while his
+  // crew hauls the wreck up (ch. 220, ep 144). The bubble is the accent; his
+  // hull and the wreck's are hatched, and a few small bubbles rise. Lungs,
+  // not a fruit.
   'masira': [
-    { d: 'M-4 118 H50 C52 134 48 148 40 158 H-4' },
-    { d: 'M-4 128 H50 M-4 140 H48', role: 'soft' },
-    { d: 'M2 148 l6 -6 M14 152 l8 -8 M28 154 l8 -8', role: 'ambient' },
-    { d: 'M20 118 C16 84 38 48 100 28' },
-    { d: 'M32 118 C30 90 50 60 104 40' },
+    { d: wave(66), role: 'ambient' },
+    { d: 'M4 40 H58 C56 52 50 60 40 64 H12 C8 58 5 50 4 40 Z' },
+    { d: 'M4 40 L10 34 H62 L58 40', role: 'soft' },
+    { d: 'M6 56 l6 -6 M18 60 l8 -8 M32 60 l8 -8', role: 'ambient' },
+    { d: 'M30 40 C30 30 42 28 46 38 C52 62 66 76 82 96' },
+    { d: circle(96, 138, 44), role: 'accent' },
+    { d: 'M62 150 C66 162 76 166 88 166 H114 C122 164 128 156 130 146 Z' },
+    { d: 'M96 146 V112 L104 104 M78 146 V124', role: 'soft' },
     {
-      d: 'M22 102 l9 1 M24 86 l9 3 M30 70 l8 5 M42 56 l6 6 M58 44 l5 8 M76 36 l3 8',
+      d: 'M74 152 l4 8 M88 154 l4 8 M102 154 l4 8 M116 152 l4 8',
       role: 'ambient',
     },
-    { d: circle(108, 36, 9) },
-    { d: 'M112 30 L117 36', role: 'soft' },
     {
-      d: `${ellipse(117, 56, 3, 7)} ${ellipse(117, 84, 3, 7)} ${ellipse(117, 112, 3, 7)} M117 45 V49 M117 63 V77 M117 91 V105 M117 119 V133`,
-      role: 'accent',
+      d: `${circle(140, 84, 3)} ${circle(146, 70, 2)} ${circle(132, 96, 2)}`,
+      role: 'soft',
     },
-    { d: 'M117 133 V140 C117 148 107 150 104 144', role: 'accent' },
-    { d: 'M100 156 q8 -6 17 -6 q9 0 17 6', role: 'ambient' },
-    ...SEA.slice(1),
+    { d: 'M-4 190 q40 -8 84 0 t84 0', role: 'ambient', dashed: true },
   ],
 
   // His microphone on its stand: a ball with a lattice grille, and the sound
@@ -593,19 +653,24 @@ export const skypieaArt = {
     { d: 'M70 150 V142 H84 V150 M100 166 L104 178 H112 L108 166' },
     shadow(70, 188, 60),
   ],
-
-  // The long knife with a cross-guard he holds when he catches Aisa coming back
-  // from Upper Yard (ch. 249, ep. 163). The grip is hatched. His Burn Blade is
-  // left out: he first uses it against Enel (ch. 264).
+  // His Burn Blade, a wooden grip with a Breath Dial shell at its end and the
+  // blade of flame it throws as the accent, lying across his spear: he takes
+  // both to Enel at ch. 264 (ep 173), later in the arc he opens in. A dial
+  // weapon is no power. The grip's wrap is hatched.
   'kamakiri': [
-    { d: 'M64 128 L132 38 L136 30 L138 46 L72 134', role: 'accent' },
-    { d: 'M68 131 L134 40', role: 'soft' },
-    { d: 'M54 116 L84 142 M54 116 l-3 5 l29 25 l4 -4' },
-    { d: 'M66 132 L40 166 M72 136 L46 170' },
-    { d: 'M47 152 l7 5 M43 158 l7 5 M51 146 l7 5', role: 'ambient' },
-    { d: 'M40 166 C34 172 36 180 44 178 C48 176 48 172 46 170' },
-    { d: 'M132 38 l3 4', role: 'soft' },
-    shadow(84, 186, 52),
+    { d: 'M24 188 V26' },
+    { d: 'M24 26 C18 18 19 10 24 2 C29 10 30 18 24 26 Z' },
+    { d: 'M20 32 h8 M20 36 h8', role: 'soft' },
+    { d: 'M40 176 L70 140 M46 181 L76 145 M40 176 L46 181' },
+    { d: 'M48 168 l5 4 M55 160 l5 4 M62 152 l5 4', role: 'ambient' },
+    { d: 'M70 140 C64 128 76 114 92 118 C98 126 92 142 76 145 Z' },
+    { d: 'M76 132 c2 -5 9 -5 10 0 c0 4 -5 5 -6 2', role: 'soft' },
+    {
+      d: 'M90 118 C104 102 118 80 146 34 C134 66 122 90 98 128',
+      role: 'accent',
+    },
+    { d: 'M97 120 C110 100 122 80 136 58', role: 'soft' },
+    shadow(84, 190, 56),
   ],
 
   // Two flash guns, double-barrelled derringers, one behind the other: he is
@@ -841,30 +906,27 @@ export const skypieaArt = {
     },
     shadow(80, 188, 44),
   ],
-
-  // His wide white cloth belt, untied and dropped in a loose loop that crosses
-  // itself once, both ends trailing, the red disc on the band where it
-  // crosses. It shows in full when he fights the Shandia raid (165). The
-  // longer end is folded over, its underside hatched.
+  // His wide white cloth belt as he wears it, round an empty waist in 3/4,
+  // the red disc at the front as the accent, the inside of the far side
+  // hatched and the cloth creased: he wears it from his first panel with the
+  // priests (ch. 241, ep 155) and when he fights the Shandia raid (166).
   'gedatsu': [
-    { d: 'M25.8 177.6 L14.2 154.4' },
-    { d: 'M25.8 177.6 C44 168 62 158 79.4 149.9' },
-    { d: 'M14.2 154.4 C28 148 40 142 51.1 138' },
-    { d: 'M28 167 C38 161 48 156 58 151.5', role: 'soft' },
     {
-      d: 'M108.5 136.2 C122 129 136 123 142 114 C148 102 140 90 120 86 C96 80 60 80 38 86 C24 90 16 98 17.8 110 C19 122 34 130 50 137 C66 144 82 150 96.5 156.4',
+      d: 'M18 100 C18 84 46 72 80 72 C114 72 142 84 142 100 C142 116 114 128 80 128 C46 128 18 116 18 100 Z',
     },
     {
-      d: 'M80.8 126.4 C98 119.6 116 112 126 107 C131 104.5 128 100.5 118 98.6 C100 94.6 62 93.4 46 97.4 C34 100.4 30 104 36 107.6 C52 116 80 127 104.8 135.5',
+      d: 'M18 100 C16 108 18 116 20 122 C24 136 50 146 80 146 C110 146 136 136 140 122 C142 116 144 108 142 100',
     },
-    { d: circle(92.8, 142.9, 6), role: 'accent' },
-    { d: 'M96.5 156.4 L104.8 135.5' },
-    { d: 'M96.5 156.4 L112.5 194.4 L150.8 155.5 L104.8 135.5' },
     {
-      d: 'M104.8 162.5 L115.2 146.8 M111.4 172.8 L127.2 153.9 M118 183 L139 161',
+      d: 'M36 92 l-4 7 M50 85 l-3 8 M64 81 l-2 8 M80 80 v8 M96 81 l2 8 M110 85 l3 8 M124 92 l4 7',
       role: 'ambient',
     },
-    shadow(84, 188, 60),
+    {
+      d: 'M34 120 C36 128 40 134 44 138 M126 120 C124 128 120 134 116 138 M108 126 C108 134 106 140 104 144 M52 128 C52 134 54 140 56 144',
+      role: 'soft',
+    },
+    { d: circle(80, 137, 7), role: 'accent' },
+    shadow(80, 168, 58),
   ],
 
   // His sword, the Eisen Whip, with its round pommel as the accent, and
@@ -933,22 +995,29 @@ export const skypieaArt = {
     { d: 'M46 40 h10 M45 46 h10', role: 'soft' },
     shadow(96, 186, 46),
   ],
-  // A hand of cards fanned out on a round tavern table, the winning card on
-  // top: he wins a hand against Bellamy in a Mock Town bar (146). The rim of
-  // the table is hatched underneath.
+  // His headband tied in a loop, his Jolly Roger, a hanged man, repeated
+  // along it with the middle one as the accent, the knot's ends trailing,
+  // and the winning hand of cards beside it: he wins it against Bellamy in a
+  // Mock Town bar (ch. 222, ep 146). The inside of the band is hatched.
   'roshio': [
-    { d: ellipse(80, 118, 64, 30) },
-    { d: 'M16 118 v8 a64 30 0 0 0 128 0 v-8' },
+    { d: ellipse(70, 100, 58, 30) },
+    { d: 'M12 100 V112 a58 30 0 0 0 116 0 V100' },
     {
-      d: 'M28 142 l4 -6 M44 150 l4 -6 M112 150 l4 -6 M128 142 l4 -6',
+      d: 'M30 88 l-3 6 M44 80 l-2 7 M58 76 l-1 7 M72 75 v7 M86 76 l1 7 M100 79 l2 7 M112 86 l3 6',
       role: 'ambient',
     },
-    { d: 'M72 156 V182 M88 156 V182 M54 188 Q80 178 106 188' },
-    { d: 'M65.5 147.5 L29.1 116.4 L45.8 108.9 M64.5 144.6 L45.3 108 L65 104' },
-    { d: 'M65 141.6 L65 103.1 L85.7 103.1 M67 138.8 L86.1 102.2 L105.8 106.2' },
-    { d: 'M70.2 136.6 L106.7 105.5 L130.9 116.4 L94.5 147.5 Z' },
-    { d: 'M103.6 110 L108.6 116 L103.6 122 L98.6 116 Z', role: 'accent' },
-    shadow(80, 190, 40),
+    { d: HANGED_MAN, role: 'accent' },
+    { d: HANGED_MAN, role: 'soft', transform: 'translate(-28 -5)' },
+    { d: HANGED_MAN, role: 'soft', transform: 'translate(28 -5)' },
+    { d: 'M124 116 l10 -4 l3 9 l-10 4 Z' },
+    {
+      d: 'M136 116 C144 126 146 138 142 152 M137 121 C150 126 156 138 156 150',
+    },
+    {
+      d: 'M78 172 L86 150 L104 156 L96 178 Z M92 176 L108 156 L124 166 L108 186 Z',
+    },
+    { d: 'M110 172 l3 3 l-3 3 l-3 -3 z', role: 'soft' },
+    shadow(76, 192, 56),
   ],
   // His big knife, a kukri whose blade bends forward, the flat hatched where it
   // turns away, and the money he drops at the Straw Hats' feet so they can buy
@@ -1047,70 +1116,60 @@ export const skypieaArt = {
     { d: 'M66 116 q6 -6 12 0 q6 -6 12 0 q6 -6 12 0', role: 'soft' },
     shadow(80, 180, 46),
   ],
-
-  // Two giant trunks at the forest’s edge, too tall to end in the frame, and a small Waver below them.
+  // Giant Jack, the beanstalk at the island's heart, climbing out of the
+  // frame between two of the forest's giant trunks, its stalk twisting, a few
+  // leaves out to the sides and the cloud the God's Shrine sits on round it:
+  // first seen at ch. 249 (ep 163), later in the arc the island opens in. It
+  // lies toppled across the trunks from 191, in `skypieaRedrawn`.
   'upper-yard': [
+    ...UPPER_YARD_FOREST,
     {
-      d: 'M4 146 C18 138 22 118 24 90 C26 50 26 20 24 -4 M72 146 C58 138 54 118 54 90 C52 50 52 20 54 -4',
+      d: 'M68 148 C64 124 76 104 72 80 C68 56 78 30 74 -4 M92 148 C88 124 100 104 96 80 C92 56 102 30 98 -4',
       role: 'accent',
     },
     {
-      d: 'M84 146 C96 138 98 116 100 86 C102 50 102 20 100 -4 M150 146 C138 138 134 116 134 86 C132 50 132 20 134 -4',
-      role: 'accent',
-    },
-    {
-      d: 'M30 146 C34 136 38 128 38 118 M116 146 C118 136 118 128 118 118',
+      d: 'M68 132 q12 -2 22 -14 M72 100 q12 -2 24 -12 M70 70 q12 -2 24 -10 M76 38 q12 -2 24 -12 M76 12 q12 -2 22 -10',
       role: 'soft',
     },
     {
-      d: 'M34 70 q4 -10 0 -20 M42 40 q-4 -8 0 -16 M110 60 q4 -10 0 -20 M122 96 q-4 -8 0 -16',
+      d: 'M96 110 q14 -2 18 -12 q-12 -2 -18 8 M71 74 q-14 -2 -18 -12 q12 -2 18 8 M99 50 q12 0 16 -10 q-12 -2 -16 6',
       role: 'soft',
     },
-    { d: 'M54 34 q-10 -12 -26 -12 M134 50 q10 -14 26 -12', role: 'soft' },
     {
-      d: 'M-4 150 q8 -8 16 -2 q8 -8 18 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q8 -6 14 2',
-      role: 'ambient',
+      d: 'M46 44 q4 -8 12 -6 q6 -6 14 0 M98 36 q8 -6 16 0 q8 -2 10 6',
+      role: 'soft',
     },
-    { d: 'M56 174 q24 8 48 0 l-6 8 h-36z M92 174 v-6 h10' },
-    ...SEA.slice(1),
   ],
-  // A White Beret's beret, tipped on the cloud of Angel Beach with its stalk on
-  // top, the band as the accent and the inside hatched: the captain crawls up
-  // the beach to read the crew their fines (155).
+  // His caped overcoat, the cape over the shoulders that marks him as the
+  // captain, standing empty with a White Beret's beret on the collar, the
+  // band as the accent and the coat's far side hatched: he comes up Angel
+  // Beach in it at ch. 241 (ep 155) and reads the crew their fines (156).
   'mckinley': [
     {
-      d: 'M20 96 C16 74 52 58 90 60 C128 62 148 80 142 98 C138 110 110 116 78 114 C46 112 22 108 20 96 Z',
-      transform: 'rotate(-8 80 100)',
+      d: 'M58 76 C48 78 42 84 40 94 L32 170 H128 L120 94 C118 84 112 78 102 76',
     },
     {
-      d: 'M42 108 C40 120 52 128 82 130 C112 132 126 124 124 112',
-      transform: 'rotate(-8 80 100)',
+      d: 'M60 74 C42 78 30 92 26 112 C42 118 60 116 80 114 C100 116 118 118 134 112 C130 92 118 78 100 74',
     },
     {
-      d: 'M42 108 C56 104 104 106 124 112',
-      role: 'accent',
-      transform: 'rotate(-8 80 100)',
-    },
-    {
-      d: 'M48 116 l6 -6 M62 120 l6 -8 M76 122 l6 -8 M90 122 l6 -8 M104 122 l6 -8 M116 118 l5 -6',
-      role: 'ambient',
-      transform: 'rotate(-8 80 100)',
-    },
-    { d: 'M86 60 l2 -10 h5', transform: 'rotate(-8 80 100)' },
-    {
-      d: 'M34 86 C52 72 96 68 128 80',
-      role: 'soft',
-      transform: 'rotate(-8 80 100)',
-    },
-    {
-      d: 'M-4 164 q10 -14 26 -6 q10 -16 30 -6 q12 -14 30 -4 q14 -14 32 -2 q12 -10 26 0 q8 -4 24 4',
+      d: 'M74 80 L70 170 M86 80 L90 170 M64 72 L72 84 L80 76 L88 84 L96 72',
       role: 'soft',
     },
-    shadow(82, 150, 50),
     {
-      d: 'M-4 180 q12 -6 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0',
+      d: 'M112 122 l6 -4 M114 136 l6 -4 M114 150 l6 -4 M114 164 l6 -4',
       role: 'ambient',
     },
+    {
+      d: 'M52 58 C50 46 64 38 82 38 C100 38 112 46 110 56 C108 64 96 66 80 66 C64 66 54 64 52 58 Z',
+    },
+    { d: 'M60 63 C60 70 68 74 80 74 C92 74 102 70 102 63' },
+    { d: 'M60 63 C70 60 92 60 102 63', role: 'accent' },
+    { d: 'M80 38 l1 -6 h4' },
+    {
+      d: 'M-4 182 q10 -12 26 -6 q10 -14 30 -6 q12 -12 30 -4 q14 -12 32 -2 q12 -10 26 0 q8 -4 24 4',
+      role: 'soft',
+    },
+    shadow(80, 174, 52),
   ],
   // The Ten-Fold Axe: a black sash with ten axe dials sewn along it, stretched
   // wide the way he holds it out in front of him, its cloth hatched. He brings
@@ -1170,10 +1229,10 @@ export const skypieaArt = {
     },
     shadow(80, 182, 46),
   ],
-  // Holy sitting side on, with no eye or nose drawn, his ear hanging and his
-  // collar as the accent: the huge dog sits panting at Ohm's side as Ohm
-  // senses the raid (164, ch 251). The collar is the anime's; the manga draws
-  // none. His back is hatched.
+  // Holy sitting side on, with no eye, nose or tongue drawn, his hanging ear
+  // as the accent: the huge dog sits panting at Ohm's side as Ohm senses the
+  // raid (164, ch 251). No collar, as the manga draws none. His back is
+  // hatched.
   'holy': [
     {
       d: 'M63.9 111.3 C57 134.3 59.3 155 66.2 171.1 H84.6 M82.3 134.3 C84.6 150.4 84.6 161.9 91.5 171.1 H107.6 C126 168.8 137.5 148.1 132.9 122.8 C128.3 97.5 107.6 86 89.2 88.3 C80 90.6 73.1 95.2 70.8 99.8',
@@ -1186,10 +1245,6 @@ export const skypieaArt = {
     },
     {
       d: 'M75.4 44.6 C89.2 51.5 91.5 72.2 86.9 90.6 C82.3 99.8 73.1 97.5 73.1 86 C73.1 72.2 70.8 56.1 75.4 44.6 Z',
-      role: 'soft',
-    },
-    {
-      d: 'M63.9 106.7 C73.1 115.9 86.9 113.6 93.8 102.1 M63.9 115.9 C75.4 125.1 89.2 120.5 96.1 109',
       role: 'accent',
     },
     { d: 'M105.3 122.8 C116.8 129.7 121.4 148.1 114.5 166.5', role: 'soft' },
@@ -1389,11 +1444,133 @@ const KUMA_PLATE: Stroke[] = [
 ]
 
 /** Kuma's Bible, smaller, stood on the same ground as the steel plate. */
-function besideThePlate(strokes: Stroke[]): Stroke[] {
-  const beside = 'translate(92 89) scale(0.5)'
+const KUMA_SMALL_BIBLE: Stroke[] = KUMA_BIBLE_BODY.map((stroke) => {
+  return { ...stroke, transform: 'translate(92 89) scale(0.5)' }
+})
 
-  return strokes.map((stroke) => ({ ...stroke, transform: beside }))
+/**
+ * The same strokes with their accent made soft: a stage that adds a new
+ * mark keeps the old drawing and moves the one accent to what the story
+ * added.
+ */
+function softened(strokes: Stroke[]): Stroke[] {
+  return strokes.map((stroke) => {
+    return stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke
+  })
 }
+
+/**
+ * Teach's darkness: a spiral widening out round (30, 46), its two wisps
+ * hatched, as it swallows whatever it touches. From 325 (ch. 440), moved to
+ * where each stage has room for it.
+ */
+const TEACH_DARKNESS: Stroke[] = [
+  {
+    d: 'M30 46 c0 -5.6 7 -5.6 7 0 c0 8.4 -14 8.4 -14 0 c0 -12.6 22.4 -12.6 22.4 0 c0 18.2 -30.8 18.2 -30.8 0 c0 -23.8 42 -23.8 42 0',
+    role: 'accent',
+  },
+  { d: 'M56.6 46 q6 8 2 18 M14.6 46 q-6 -8 -2 -18', role: 'ambient' },
+]
+
+/**
+ * The air cracked like glass round (130, 44), the broken ring round the
+ * point soft: the quake power, Whitebeard's from 461 (ch. 552) and Teach's
+ * once he takes it at 486 (ch. 577), moved to where each stage has room.
+ */
+const QUAKE: Stroke[] = [
+  {
+    d: 'M130 44 l-14 -18 l-4 -10 M130 44 l16 -14 l6 -12 M130 44 l-20 4 l-10 -2 M130 44 l18 10 l12 2 M130 44 l-4 20 l2 8',
+    role: 'accent',
+  },
+  { d: 'M120 32 L138 36 L142 50 L128 56 L118 46 Z', role: 'soft' },
+]
+
+/**
+ * The tricorne over the knotted bandana that Teach wears from the Warlords'
+ * table on (ch. 524, ep. 421), the bandana soft now that his darkness is
+ * drawn beside it: the shade under the brim and down the crown's far side
+ * is hatched, never filled.
+ */
+const TEACH_TRICORNE: Stroke[] = [
+  { d: 'M52 110 C54 64 106 64 108 110' },
+  { d: 'M10 124 C6 104 14 84 30 74 C38 72 42 76 42 82 C44 94 48 104 52 110' },
+  {
+    d: 'M150 124 C154 104 146 84 130 74 C122 72 118 76 118 82 C116 94 112 104 108 110',
+  },
+  { d: 'M52 110 Q80 118 108 110', role: 'soft' },
+  { d: 'M10 124 C30 132 56 134 80 126 C104 134 130 132 150 124' },
+  ...softened(TEACH_BANDANA),
+  {
+    d: 'M98 82 l-5 8 M103 90 l-5 8 M106 99 l-4 6 M136 96 l-5 8 M141 106 l-5 8',
+    role: 'ambient',
+  },
+  shadow(80, 178, 50),
+]
+
+/**
+ * The three skulls of Teach's Jolly Roger, side by side over two pairs of
+ * crossed bones, on the front of the bigger tricorne from 917.
+ */
+const TEACH_JOLLY_ROGER: Stroke[] = [
+  {
+    d: 'M64 108 C62 104 64 99 68 99 C72 99 74 104 72 108 V111 H64 Z M75 106 C73 102 75 97 79 97 C83 97 85 102 83 106 V109 H75 Z M86 108 C84 104 86 99 90 99 C94 99 96 104 94 108 V111 H86 Z',
+    role: 'accent',
+  },
+  { d: 'M60 96 L98 118 M98 96 L60 118', role: 'soft' },
+]
+
+/**
+ * The paw-shaped bubble of air Kuma's palm pushes away, flying off up and
+ * to the right, and the open palm with its pads that sent it: from 368
+ * (ch. 473).
+ */
+const KUMA_PAW: Stroke[] = [
+  {
+    d: 'M104 176 C98 156 100 134 110 124 C120 114 142 116 148 132 C152 148 150 164 144 176',
+  },
+  {
+    d: `${ellipse(126, 154, 10, 8)} ${circle(113, 137, 3)} ${circle(122, 132, 3)} ${circle(132, 132, 3)} ${circle(141, 137, 3)}`,
+    role: 'soft',
+  },
+  {
+    d: `${ellipse(128, 62, 16, 12)} ${circle(108, 42, 5)} ${circle(121, 34, 5)} ${circle(136, 34, 5)} ${circle(149, 42, 5)}`,
+    role: 'accent',
+  },
+  { d: 'M110 108 l-4 -10 M124 104 v-12 M138 108 l4 -10', role: 'soft' },
+]
+
+/**
+ * The God's mantle folded under Gan Fall's helmet, white and gold, its
+ * front hem the red meander border as the accent and its far side hatched,
+ * in place of the plinth: from 158 (ch. 244), when he is named the former
+ * God.
+ */
+const GAN_FALL_MANTLE: Stroke[] = [
+  { d: 'M50 150 L60 140 H158 L152 150 Z' },
+  { d: 'M50 150 V170 H152 V150 M152 170 L158 160 V140' },
+  { d: 'M153 162 l4 -4 M153 154 l4 -4', role: 'ambient' },
+  { d: 'M50 158 H152', role: 'soft' },
+  {
+    d: 'M54 168 V161 H60 V165 H57 V163 M64 168 V161 H70 V165 H67 V163 M74 168 V161 H80 V165 H77 V163 M84 168 V161 H90 V165 H87 V163 M94 168 V161 H100 V165 H97 V163 M104 168 V161 H110 V165 H107 V163 M114 168 V161 H120 V165 H117 V163 M124 168 V161 H130 V165 H127 V163 M134 168 V161 H140 V165 H137 V163 M144 168 V161 H150 V165 H147 V163',
+    role: 'accent',
+  },
+]
+
+/**
+ * Bellamy's leg as a spring, coiled upright on the bar behind his
+ * flintlock, its two end rings soft: he first bounces on his springs at 150
+ * (ch. 231).
+ */
+const BELLAMY_SPRING: Stroke[] = [
+  {
+    d: 'M72 106 L96 100 L72 92 L96 86 L72 78 L96 72 L72 64 L96 58 L72 50 L96 44 L72 36',
+    role: 'accent',
+  },
+  {
+    d: `${ellipse(84, 108, 13, 3.5)} ${ellipse(84, 34, 13, 3.5)}`,
+    role: 'soft',
+  },
+]
 
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const skypieaRedrawn: Redrawings = {
@@ -1439,37 +1616,39 @@ export const skypieaRedrawn: Redrawings = {
       ],
     },
   ],
-  // A tricorne over a knotted bandana: the hat he wears from the Warlords'
-  // table on (ch. 524, ep. 421), and never at Mock Town. The shade under the
-  // brim and down the crown's far side is hatched, never filled. After the
-  // timeskip, the bigger plumed one.
+  // The pie, its cherries soft, swallowed at its left edge by a spiral of
+  // darkness: he first turns to darkness against Ace on Banaro at 325
+  // (ch. 440). Then the tricorne over the knotted bandana he wears from the
+  // Warlords' table on (ch. 524, ep. 421), never at Mock Town, with the same
+  // darkness beside it as the accent. Then the air cracked like glass beside
+  // the darkness, the accent moving to the cracks: he takes Whitebeard's
+  // quake power at Marineford at 486 (ch. 577). After the timeskip, the
+  // bigger plumed tricorne with his Jolly Roger on the front.
   'marshall-d-teach': [
+    {
+      episode: 325,
+      chapter: 440,
+      value: [
+        ...softened(skypieaArt['marshall-d-teach']),
+        ...moved(TEACH_DARKNESS, 'translate(-4 74)'),
+      ],
+    },
     {
       episode: 421,
       chapter: 524,
-      value: [
-        { d: 'M52 110 C54 64 106 64 108 110' },
-        {
-          d: 'M10 124 C6 104 14 84 30 74 C38 72 42 76 42 82 C44 94 48 104 52 110',
-        },
-        {
-          d: 'M150 124 C154 104 146 84 130 74 C122 72 118 76 118 82 C116 94 112 104 108 110',
-        },
-        { d: 'M52 110 Q80 118 108 110', role: 'soft' },
-        { d: 'M10 124 C30 132 56 134 80 126 C104 134 130 132 150 124' },
-        ...TEACH_BANDANA,
-        {
-          d: 'M98 82 l-5 8 M103 90 l-5 8 M106 99 l-4 6 M136 96 l-5 8 M141 106 l-5 8',
-          role: 'ambient',
-        },
-        shadow(80, 178, 50),
-      ],
+      value: [...TEACH_TRICORNE, ...TEACH_DARKNESS],
+    },
+    {
+      episode: 486,
+      chapter: 577,
+      value: [...TEACH_TRICORNE, ...softened(TEACH_DARKNESS), ...QUAKE],
     },
     // The bigger tricorne of the two years, two plumes standing out of a
-    // flower at its side, over the same bandana: first seen clearly on
-    // Hachinosu at 917 (ch. 925). The Jolly Roger on its front is left off;
-    // the plumes' dark tips are hatched. The bandana is kept from 421 on
-    // purpose, though the wiki has it yellow with red dots by now.
+    // flower at its side and the three skulls of his Jolly Roger on its
+    // front as the accent, over the same bandana, the darkness and the
+    // cracks soft beside it: first seen clearly on Hachinosu at 917
+    // (ch. 925). The plumes' dark tips are hatched. The bandana is kept from
+    // 421 on purpose, though the wiki has it yellow with red dots by now.
     {
       episode: 917,
       chapter: 925,
@@ -1483,7 +1662,7 @@ export const skypieaRedrawn: Redrawings = {
         },
         { d: 'M50 128 Q79 136 108 128', role: 'soft' },
         { d: 'M8 140 C30 148 56 150 80 142 C104 150 130 148 152 140' },
-        ...underTheBiggerHat(TEACH_BANDANA),
+        ...underTheBiggerHat(softened(TEACH_BANDANA)),
         {
           d: 'M112 100 C108 80 112 62 124 48 C134 38 144 32 154 30 C148 42 138 52 130 60 C122 70 118 84 118 100',
         },
@@ -1505,11 +1684,17 @@ export const skypieaRedrawn: Redrawings = {
           d: 'M94 84 l-5 8 M100 92 l-4 7 M138 98 l-5 8 M143 108 l-5 8',
           role: 'ambient',
         },
+        ...TEACH_JOLLY_ROGER,
+        ...moved(softened(TEACH_DARKNESS), 'translate(-8 8)'),
+        ...moved(softened(QUAKE), 'translate(-54 -6)'),
         shadow(80, 186, 50),
       ],
     },
   ],
-  // His bisento standing upright on a slab of Marineford's plaza, cracked
+  // The barrel and the drip stand, the drip soft, with the air beside them
+  // cracked like glass as the accent: he first uses his quakes at
+  // Marineford, raising two tidal waves, at 461 (ch. 552). Then his bisento
+  // standing upright on a slab of Marineford's plaza, cracked
   // open from its foot, with broken stone lying on it: he dies on his feet
   // with the bisento in his hand at 485 (ch. 576), after the quakes have
   // split the square. The slab's front edge is hatched, never filled. Then
@@ -1519,6 +1704,14 @@ export const skypieaRedrawn: Redrawings = {
   // the coat blowing out from the shaft. The mound's far side and the coat's
   // are hatched, never filled.
   'edward-newgate': [
+    {
+      episode: 461,
+      chapter: 552,
+      value: [
+        ...softened(skypieaArt['edward-newgate']),
+        ...moved(QUAKE, 'translate(-76 8)'),
+      ],
+    },
     {
       episode: 485,
       chapter: 576,
@@ -1625,24 +1818,49 @@ export const skypieaRedrawn: Redrawings = {
     },
   ],
 
-  // The paw pressed into a riveted steel plate standing on the ground, the
+  // The Bible stood to one side, its rays soft, and his open palm with its
+  // paw pads beside it, a paw-shaped bubble of air flying off it as the
+  // accent: he sends Perona away at 368 (ch. 473). Then the paw pressed into
+  // a riveted steel plate standing on the ground, the
   // Bible stood beside it on the same ground: Vegapunk has finished him, a
   // weapon with his past erased, as Doflamingo tells Ivankov at Marineford at
   // 469 (ch. 560). The plate's edge is hatched, never filled; the small
   // book's page block is left open so the tile stays clear.
   'bartholomew-kuma': [
     {
+      episode: 368,
+      chapter: 473,
+      value: [
+        ...moved(softened(skypieaArt['bartholomew-kuma']), 'translate(-26 0)'),
+        ...KUMA_PAW,
+      ],
+    },
+    {
       episode: 469,
       chapter: 560,
+      value: [...KUMA_PLATE, ...KUMA_SMALL_BIBLE, shadow(82, 180, 72)],
+    },
+    // The same plate and small Bible, the paw now soft, with a small
+    // triangular pennant planted beside them as the accent, the plain flag
+    // the Revolutionaries fly on their carriage: Rayleigh relays "I work for
+    // the Revolutionary Army" at 507 (ch. 591), but the story shows no sign
+    // of the army before that flag at 510 (ch. 593 p. 4), so the stage waits
+    // for it.
+    {
+      episode: 510,
+      chapter: 593,
       value: [
-        ...KUMA_PLATE,
-        ...besideThePlate(KUMA_BIBLE_BODY),
+        ...softened(KUMA_PLATE),
+        ...KUMA_SMALL_BIBLE,
+        { d: 'M156 178 V54' },
+        { d: 'M156 56 L118 68 L156 80', role: 'accent' },
         shadow(82, 180, 72),
       ],
     },
-    // The same plate on its own, stood in the middle, and no Bible: he is
-    // led through Mary Geoise as a rented slave at 888 (ch. 908), and he
-    // no longer holds his Bible. It does not come back on Egghead.
+    // The same plate on its own, stood in the middle, and no Bible or
+    // pennant: he is led through Mary Geoise as a rented slave at 888
+    // (ch. 908), his mind gone, and he no longer holds his Bible. It does not
+    // come back on Egghead.
     {
       episode: 888,
       chapter: 908,
@@ -1727,6 +1945,63 @@ export const skypieaRedrawn: Redrawings = {
           role: 'ambient',
         },
         ...SEA,
+      ],
+    },
+  ],
+
+  // The same counter and flintlock, the flintlock soft, with his leg as a
+  // coiled spring standing on the bar behind it as the accent: he first
+  // bounces on his springs to beat the Saruyama Alliance at 150 (ch. 231).
+  // At 146 the beaten Roshio only hints at them.
+  'bellamy': [
+    {
+      episode: 150,
+      chapter: 231,
+      value: [...softened(skypieaArt.bellamy), ...BELLAMY_SPRING],
+    },
+  ],
+
+  // The helmet and lance, the lance's point soft, set on the God's mantle
+  // folded in place of the plinth, its meander hem the accent: Conis names
+  // the Knight of the Sky the former God at 158 (ch. 244). The wiki does not
+  // date the first panel of the mantle itself.
+  'gan-fall': [
+    {
+      episode: 158,
+      chapter: 244,
+      value: [
+        ...softened(skypieaArt['gan-fall'].slice(0, 11)),
+        ...GAN_FALL_MANTLE,
+        shadow(104, 184, 54),
+      ],
+    },
+  ],
+
+  // The same forest edge, Giant Jack cut through and toppled across the
+  // frame as the accent, a jagged stump left standing at its foot and the
+  // shrine's cloud gone: the beanstalk is brought down to the west at 191
+  // (ch. 296).
+  'upper-yard': [
+    {
+      episode: 191,
+      chapter: 296,
+      value: [
+        ...UPPER_YARD_FOREST,
+        {
+          d: 'M68 148 C66 138 70 130 70 124 L74 128 L78 120 L82 128 L86 122 L90 130 C90 136 90 142 92 148',
+        },
+        {
+          d: 'M-4 70 C30 80 60 96 96 104 C120 110 140 112 164 118 M-4 92 C30 100 60 116 94 124 C120 130 140 132 164 138',
+          role: 'accent',
+        },
+        {
+          d: 'M10 74 q2 10 -2 20 M40 84 q2 10 -2 20 M70 94 q2 10 -2 20 M100 106 q2 10 -2 20 M130 112 q2 10 -2 20',
+          role: 'soft',
+        },
+        {
+          d: 'M52 90 q-4 -14 6 -20 q6 10 -6 20 M116 130 q6 14 -4 22 q-8 -10 4 -22',
+          role: 'soft',
+        },
       ],
     },
   ],
