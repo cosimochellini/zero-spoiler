@@ -372,11 +372,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 186                                                   |
+| Records           | 195                                                   |
 | Characters        | 148                                                   |
-| Places            | 38                                                    |
+| Places            | 47                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 186, one per record, plus 21 redrawings of 20 records |
+| Line drawings     | 195, one per record, plus 21 redrawings of 20 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
