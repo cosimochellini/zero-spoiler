@@ -1520,6 +1520,15 @@ const TEACH_JOLLY_ROGER: Stroke[] = [
 ]
 
 /**
+ * The paw-shaped bubble of air itself, its pad and four toes: Bonney's
+ * drawing borrows it for her father in `summit-war.ts`.
+ */
+export const KUMA_PAW_BUBBLE: Stroke = {
+  d: `${ellipse(128, 62, 16, 12)} ${circle(108, 42, 5)} ${circle(121, 34, 5)} ${circle(136, 34, 5)} ${circle(149, 42, 5)}`,
+  role: 'accent',
+}
+
+/**
  * The paw-shaped bubble of air Kuma's palm pushes away, flying off up and
  * to the right, and the open palm with its pads that sent it: from 368
  * (ch. 473).
@@ -1532,10 +1541,7 @@ const KUMA_PAW: Stroke[] = [
     d: `${ellipse(126, 154, 10, 8)} ${circle(113, 137, 3)} ${circle(122, 132, 3)} ${circle(132, 132, 3)} ${circle(141, 137, 3)}`,
     role: 'soft',
   },
-  {
-    d: `${ellipse(128, 62, 16, 12)} ${circle(108, 42, 5)} ${circle(121, 34, 5)} ${circle(136, 34, 5)} ${circle(149, 42, 5)}`,
-    role: 'accent',
-  },
+  KUMA_PAW_BUBBLE,
   { d: 'M110 108 l-4 -10 M124 104 v-12 M138 108 l4 -10', role: 'soft' },
 ]
 

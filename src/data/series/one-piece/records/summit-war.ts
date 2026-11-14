@@ -1747,8 +1747,8 @@ export const summitWar: OnePieceSaga = {
         en: 'Captain of the Bonney Pirates',
       },
       log: {
-        it: 'È l’unica donna fra gli undici capitani arrivati a Sabaody con una taglia sopra i cento milioni, e mangia mentre parla, mentre cammina e mentre minaccia. Ha modi da ragazzina e una ciurma che la segue senza fiatare. Mangia e beve a spese di chiunque le capiti davanti, e non ringrazia.',
-        en: 'She is the only woman among the eleven captains who reach Sabaody with a bounty above a hundred million, and she eats while she talks, while she walks and while she threatens. Her manners are a girl’s and her crew follows her without a murmur. She eats and drinks at the expense of whoever is nearest, and never says thank you.',
+        it: 'È l’unica donna fra gli undici capitani arrivati a Sabaody con una taglia sopra i cento milioni, e mangia mentre parla, mentre cammina e mentre minaccia. Non ha nessuna educazione a tavola, e ha una ciurma che la segue senza fiatare. Mangia e beve a spese di chiunque le capiti davanti, e non ringrazia.',
+        en: 'She is the only woman among the eleven captains who reach Sabaody with a bounty above a hundred million, and she eats while she talks, while she walks and while she threatens. She has no table manners, and her crew follows her without a murmur. She eats and drinks at the expense of whoever is nearest, and never says thank you.',
       },
       status: [
         { episode: 392, value: 'alive' },
