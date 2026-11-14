@@ -1183,8 +1183,8 @@ export const alabasta: OnePieceSaga = {
       relationships: alabastaRelationships['bon-clay'],
       role: BW_AGENT_ROLE,
       log: {
-        it: 'Veste da ballerino, con un cappotto rosa a tema cigno e scarpette a punta. Viene mandato a Little Garden a occuparsi di Mr. Three.',
-        en: 'He dresses as a ballet dancer, in a pink coat with a swan theme and pointed shoes. He is sent to Little Garden to deal with Mr. 3.',
+        it: 'Veste da ballerino, con le scarpe a punta e un cappotto a tema cigno. Viene mandato a Little Garden a occuparsi di Mr. Three.',
+        en: 'He dresses as a ballet dancer, in pointed shoes and a coat with a swan theme. He is sent to Little Garden to deal with Mr. 3.',
       },
       status: [
         { episode: 78, value: 'alive' },
