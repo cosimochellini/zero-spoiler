@@ -6,9 +6,6 @@ import {
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
 
-/** The barrel tipped as the waves lift it. */
-const BARREL_BOB = 'rotate(-10 80 110)'
-
 /** Perona's parasol, tipped as if over her shoulder. */
 const PARASOL_TILT = 'rotate(-24 80 112)'
 
@@ -52,64 +49,123 @@ const SPIKED_COLLAR = `${ellipse(0, 0, 4, 10)} M-2 -9 l-3 -6 M2 -9 l3 -6 M2 9 l3
 const SABRE_BLADE = 'M0 0 C-4 -36 0 -72 18 -100 C12 -70 8 -36 8 0 Z'
 const SABRE_GUARD = 'M-6 0 H14 M4 0 V22 M14 0 C22 8 18 20 4 22'
 
+/**
+ * The mast mansion standing, base at y 62: its round body and pointed roof,
+ * the bare mast above it. The arc draws the body in its colour.
+ */
+const MAST_TOWER = 'M68 62 V24 M92 62 V24 M66 24 L80 8 L94 24 Z'
+/** The mast mansion's mast, two floor bands, windows and far side hatched. */
+const MAST_DETAILS: Stroke[] = [
+  { d: 'M80 8 V-2', role: 'soft' },
+  { d: 'M68 38 q12 4 24 0 M68 50 q12 4 24 0', role: 'soft' },
+  { d: 'M75 29 v5 M80 30 v5 M75 42 v5 M80 43 v5', role: 'soft' },
+  { d: 'M86 30 l5 -3 M86 42 l5 -3 M86 54 l5 -3', role: 'ambient' },
+]
+
+/** The mast mansion on the arc's island, down on the rise behind the mansion. */
+const ARC_TOWER = 'translate(24 30)'
+/** The foot of the mast mansion, from the rise up to where the tower starts. */
+const ARC_TOWER_FOOT: Stroke = { d: 'M92 120 V92 M116 120 V92' }
+
+/**
+ * The island on its rise: Hogback's mansion with two towers and a rose
+ * window, its far side hatched, and a dead tree at each end.
+ */
+const THRILLER_BARK_ISLAND: Stroke[] = [
+  { d: 'M10 134 C30 124 52 120 80 119 C108 120 130 124 150 134' },
+  { d: 'M26 121 V84 H38 V121 M54 120 V84 H66 V120 M38 100 L46 90 L54 100' },
+  { d: 'M24 84 L32 72 L40 84 M52 84 L60 72 L68 84' },
+  {
+    d: `${circle(46, 108, 4)} M30 92 v8 M34 92 v8 M58 92 v8 M62 92 v8`,
+    role: 'soft',
+  },
+  { d: 'M62 88 l4 -3 M62 100 l4 -3 M62 112 l4 -3', role: 'ambient' },
+  { d: 'M16 128 V100 M16 116 l-8 -10 M16 108 l7 -12 M16 120 l6 4' },
+  { d: 'M140 130 V104 M140 120 l8 -10 M140 112 l-7 -11 M140 124 l-6 4' },
+]
+
+/** The hull under the island, and its underside hatched. */
+const THRILLER_BARK_HULL = 'M6 134 L22 156 Q80 168 138 156 L154 134 Z'
+const HULL_HATCHING: Stroke = {
+  d: 'M30 160 l4 -6 M50 163 l4 -6 M70 164 l4 -6',
+  role: 'ambient',
+}
+
+/**
+ * The outer wall: its top and foot, the gate shaped like a mouth with both
+ * rows of teeth in one stroke of the place's colour, two crenellated towers
+ * and the courses of stone.
+ */
+const THRILLER_BARK_WALL: Stroke[] = [
+  { d: 'M-4 62 H164 M-4 150 H164' },
+  { d: 'M40 150 V100 C40 64 120 64 120 100 V150' },
+  {
+    d: 'M40 100 L51.8 98.8 L43.4 88.2 L56.4 91.4 L52.5 79.8 L64.8 87 L65.3 74.7 L74.8 85.2 L80 73 L85.2 85.2 L94.7 74.7 L95.2 87 L107.5 79.8 L103.6 91.4 L116.6 88.2 L108.2 98.8 L120 100 M40 150 L46 138 L52 150 L60 136 L68 150 L76 136 L84 150 L92 136 L100 150 L108 136 L114 150 L120 138',
+    role: 'accent',
+  },
+  {
+    d: 'M12 62 V38 h6 v6 h6 v-6 h6 v6 h6 v-6 h6 V62 M118 62 V38 h6 v6 h6 v-6 h6 v6 h6 v-6 h6 V62',
+  },
+  {
+    d: 'M4 84 h26 M10 106 h24 M4 128 h26 M130 84 h26 M126 106 h24 M130 128 h26',
+    role: 'soft',
+  },
+]
+
+/** Lola's crown of flowers, the rim and the blooms on it. */
+const LOLA_CROWN = ellipse(80, 40, 16, 5)
+const LOLA_BLOOMS = 'M66 36 q-2 -6 4 -6 q2 -6 8 -2 q6 -4 8 2 q6 0 4 6'
+
 /** The drawings of the records filed in the thriller bark stretch of the route. */
 export const thrillerBarkArt = {
-  // The barrel the crew fishes out of the sea at 337, lid still on, bobbing
-  // in the waves with bands of fog around it. The hoops take the colour. The
-  // hull is drawn from 343, in `thrillerBarkRedrawn`.
+  // The island looming out of the fog: Hogback's mansion and the tall mast
+  // mansion on a rise, a dead tree at each end, the sea below. The mast
+  // mansion takes the colour. The island comes out of the fog at 338 (ch.
+  // 443), inside the arc. The hull is drawn from 343, the mast mansion
+  // toppled from 374, in `thrillerBarkRedrawn`.
   'thriller-bark-arc': [
-    { d: ellipse(80, 64, 26, 8), transform: BARREL_BOB },
-    { d: 'M64 62 h32 M70 58 h20', role: 'soft', transform: BARREL_BOB },
+    ...moved(THRILLER_BARK_ISLAND, 'translate(0 16)'),
     {
-      d: 'M54 64 C46 88 46 118 54 140 M106 64 C114 88 114 118 106 140',
-      transform: BARREL_BOB,
-    },
-    {
-      d: 'M51 82 Q80 94 109 82 M50 126 Q80 138 110 126',
+      d: MAST_TOWER,
       role: 'accent',
-      transform: BARREL_BOB,
+      transform: `translate(0 16) ${ARC_TOWER}`,
     },
+    ...moved(MAST_DETAILS, `translate(0 16) ${ARC_TOWER}`),
+    { ...ARC_TOWER_FOOT, transform: 'translate(0 16)' },
     {
-      d: 'M68 72 C65 98 65 120 67 144 M92 72 C95 98 95 120 93 144',
-      role: 'soft',
-      transform: BARREL_BOB,
-    },
-    {
-      d: 'M104 94 l7 -3 M105 104 l7 -3 M105 114 l7 -3 M105 124 l7 -3',
-      role: 'ambient',
-      transform: BARREL_BOB,
-    },
-    { d: 'M44 146 q12 -7 24 0 t24 0 t24 0 t24 0' },
-    {
-      d: 'M-4 152 q10 -6 20 0 t20 0 M124 152 q10 -6 20 0 t20 0',
-      role: 'ambient',
-    },
-    {
-      d: 'M-4 30 H44 M70 20 H164 M-4 92 H28 M134 84 H164 M-4 118 H22 M140 120 H164',
+      d: 'M-4 40 H50 M96 22 H164 M-4 72 H18 M126 66 H164 M-4 104 H12 M150 96 H164',
       role: 'ambient',
       dashed: true,
     },
     ...SEA.slice(1),
   ],
 
-  // A ship with torn sails drifting through bands of fog.
+  // Brook's ghost ship in 3/4 drifting through bands of fog: the deck seen
+  // from above, the stern turning away hatched, the sails in tatters. The
+  // torn top sail takes the colour. The crew meets it in the fog at 337
+  // (ch. 442).
   'florian-triangle': [
-    { d: 'M30 120 L42 146 H118 L132 116 L118 128 H44 Z' },
-    { d: 'M60 128 V40 M98 128 V52' },
+    { d: 'M28 116 L42 146 C70 152 104 150 120 144 L136 110' },
+    { d: 'M28 116 C56 126 108 124 136 110' },
+    { d: 'M34 113 C62 108 104 104 130 106', role: 'soft' },
+    { d: 'M108 140 l6 -10 M118 136 l6 -12 M126 128 l5 -10', role: 'ambient' },
+    { d: 'M60 122 V36 M100 118 V48' },
     {
-      d: 'M44 48 H76 L74 70 l-6 -6 l-5 8 l-5 -6 l-6 8 l-4 -6 L46 72 Z M82 60 H114 L112 84 l-6 -5 l-5 7 l-6 -6 l-5 7 l-5 -5 L84 86 Z',
+      d: 'M84 54 H116 L114 76 l-6 -5 l-5 7 l-6 -6 l-5 7 l-5 -5 L86 78 Z',
       role: 'accent',
     },
-    { d: 'M48 88 H74 L72 104 l-6 -4 l-6 6 l-5 -5 L50 106 Z', role: 'accent' },
-    { d: 'M60 40 L36 126 M98 52 L126 124 M60 40 L98 52', role: 'soft' },
-    { d: 'M56 36 h8 M94 48 h8', role: 'soft' },
     {
-      d: 'M-4 30 H40 M58 22 H164 M-4 112 H22 M136 104 H164',
+      d: 'M44 44 H76 L74 66 l-6 -6 l-5 8 l-5 -6 l-6 8 l-4 -6 L46 68 Z M46 80 H74 L72 98 l-6 -4 l-6 6 l-5 -5 L48 100 Z M86 86 H114 L112 100 l-6 -4 l-5 6 l-6 -5 L88 102 Z',
+      role: 'soft',
+    },
+    { d: 'M60 36 L32 118 M100 48 L132 112 M60 36 L100 48', role: 'soft' },
+    {
+      d: 'M-4 30 H40 M70 22 H164 M-4 112 H22 M140 100 H164 M-4 76 H30 M128 70 H164',
       role: 'ambient',
       dashed: true,
     },
     {
-      d: 'M-4 150 H30 M130 150 H164 M-4 138 H26',
+      d: 'M-4 150 H30 M130 150 H164 M-4 138 H24 M140 136 H164',
       role: 'ambient',
       dashed: true,
     },
@@ -117,15 +173,15 @@ export const thrillerBarkArt = {
   ],
 
   // His violin in 3/4, the rib showing on the far side and hatched, the bow
-  // laid across it; the f-holes take the colour. He plays it from 338. The
-  // Soul King's guitar is drawn from 517, in `thrillerBarkRedrawn`, over the
-  // same violin.
+  // laid across it; the f-holes take the colour. He plays it from 338. No
+  // shadow under it: Moria took his, and ch. 443 (ep 338) shows it gone. In
+  // `thrillerBarkRedrawn` the shadow is back from 362 and the Soul King's
+  // guitar lies across the same violin from 517.
   'brook': [
     ...BROOK_VIOLIN,
     { d: 'M26 176 L134 44' },
     { d: 'M30 180 L138 48', role: 'ambient' },
     { d: 'M28 178 l4 4 M134 44 l4 4', role: 'soft' },
-    shadow(84, 166, 32),
   ],
 
   // Her parasol, open and tilted in 3/4: the dome with two small devil
@@ -174,10 +230,12 @@ export const thrillerBarkArt = {
 
   // The bridal veil under its crown of flowers, folds falling to a wavy hem,
   // and the two warthog's tusks curving up out from under it. She proposes
-  // to Absalom in it at 345.
+  // to Absalom in it at 345. In `thrillerBarkRedrawn` the real Lola's bowler
+  // hat replaces it from 370, her shadow is back from 375, and Big Mom's
+  // Jolly Roger stands beside the hat from 797.
   'lola': [
-    { d: ellipse(80, 40, 16, 5), role: 'accent' },
-    { d: 'M66 36 q-2 -6 4 -6 q2 -6 8 -2 q6 -4 8 2 q6 0 4 6', role: 'accent' },
+    { d: LOLA_CROWN, role: 'accent' },
+    { d: LOLA_BLOOMS, role: 'accent' },
     { d: 'M64 42 C50 58 42 96 40 140 M96 42 C110 58 118 96 120 140' },
     { d: 'M40 140 q10 7 20 1 t20 1 t20 1 t20 -3' },
     {
@@ -485,28 +543,18 @@ export const thrillerBarkArt = {
     { d: 'M32 184 l-8 6 M128 184 l8 6' },
   ],
 
-  // A gate in the outer wall shaped like a mouth, its teeth closing on the sea.
-  // The mast mansion lies toppled behind it from 374, in `thrillerBarkRedrawn`.
+  // A gate in the outer wall shaped like a mouth, its teeth closing on the
+  // sea, and the mast mansion standing tall behind the wall, two of its four
+  // chains running down to the wall's towers. Thriller Bark opens at 343
+  // (ch. 449). The mast mansion lies toppled behind the wall from 374, in
+  // `thrillerBarkRedrawn`.
   'thriller-bark': [
-    { d: 'M-4 62 H164 M-4 150 H164' },
-    { d: 'M40 150 V100 C40 64 120 64 120 100 V150' },
+    ...THRILLER_BARK_WALL,
+    { d: MAST_TOWER },
+    ...MAST_DETAILS,
+    { d: 'M78 10 Q58 30 30 38 M82 10 Q102 30 130 38', role: 'soft' },
     {
-      d: 'M40 100 L51.8 98.8 L43.4 88.2 L56.4 91.4 L52.5 79.8 L64.8 87 L65.3 74.7 L74.8 85.2 L80 73 L85.2 85.2 L94.7 74.7 L95.2 87 L107.5 79.8 L103.6 91.4 L116.6 88.2 L108.2 98.8 L120 100',
-      role: 'accent',
-    },
-    {
-      d: 'M40 150 L46 138 L52 150 L60 136 L68 150 L76 136 L84 150 L92 136 L100 150 L108 136 L114 150 L120 138',
-      role: 'accent',
-    },
-    {
-      d: 'M12 62 V38 h6 v6 h6 v-6 h6 v6 h6 v-6 h6 V62 M118 62 V38 h6 v6 h6 v-6 h6 v6 h6 v-6 h6 V62',
-    },
-    {
-      d: 'M4 84 h26 M10 106 h24 M4 128 h26 M130 84 h26 M126 106 h24 M130 128 h26',
-      role: 'soft',
-    },
-    {
-      d: 'M-4 30 q20 -6 40 0 t40 0 M84 24 q20 -6 40 0 t40 0',
+      d: 'M-4 24 q14 -6 28 0 t28 0 M114 20 q14 -6 28 0 t28 0',
       role: 'ambient',
       dashed: true,
     },
@@ -641,24 +689,35 @@ export const thrillerBarkArt = {
     shadow(80, 190, 50),
   ],
 
-  // A spider web strung wide, one sticky thread hanging from it with a
-  // drop at the end.
+  // His aviator cap with its one goggle, the lens in his colour, lying under
+  // his web where one clean stroke has cut it through, a thread hanging
+  // loose down to the cap. Brook cuts him down at 348 (ch. 454) and his
+  // shadow leaves him at 349 (ch. 455), both by the record's 349 (ch. 456).
+  // No shadow under the cap: it has gone.
   'tararan': [
     {
-      d: 'M80 82 L144.7 108.8 M80 82 L106.8 146.7 M80 82 L53.2 146.7 M80 82 L15.3 108.8 M80 82 L15.3 55.2 M80 82 L53.2 17.3 M80 82 L106.8 17.3 M80 82 L144.7 55.2',
+      d: 'M62 60 L104 60 M62 60 L84.8 79.2 M62 60 L68.3 95.7 M62 60 L28.7 107.5 M62 60 L6 75 M62 60 L9.4 35.5 M62 60 L37.5 7.4 M62 60 L81.8 5.5 M62 60 L112.2 31',
     },
     {
-      d: 'M94.8 88.1 Q89 91 86.1 96.8 Q80 94.7 73.9 96.8 Q71 91 65.2 88.1 Q67.3 82 65.2 75.9 Q71 73 73.9 67.2 Q80 69.3 86.1 67.2 Q89 73 94.8 75.9 Q92.7 82 94.8 88.1',
-    },
-    {
-      d: 'M111.4 95 Q99.1 101.1 93 113.4 Q80 109 67 113.4 Q60.9 101.1 48.6 95 Q53 82 48.6 69 Q60.9 62.9 67 50.6 Q80 55 93 50.6 Q99.1 62.9 111.4 69 Q107 82 111.4 95',
+      d: 'M84 60 Q79.1 66.2 78.9 74.1 Q71.1 75.8 65.8 81.7 Q58.1 77.5 49.4 78 Q47.1 70.4 40.7 65.7 Q43.9 58.4 42.1 50.7 Q49.1 47.1 52.7 40.1 Q61.2 42.1 69.5 39.3 Q73.7 46.1 81.1 49 Q80.1 55.2 84 60',
       role: 'soft',
     },
     {
-      d: 'M129.9 102.7 Q110.3 112.3 100.7 131.9 Q80 124.9 59.3 131.9 Q49.7 112.3 30.1 102.7 Q37.1 82 30.1 61.3 Q49.7 51.7 59.3 32.1 Q80 39.1 100.7 32.1 Q110.3 51.7 129.9 61.3 Q122.9 82 129.9 102.7',
+      d: 'M63.8 100.2 Q52.2 92.8 37.9 94.4 Q33.5 79.9 21.4 70.9 Q27.4 57 23.9 42.3 Q37.4 35.4 44.3 21.9 Q60.5 25.9 76.4 20.5 Q84.3 33.4 98.4 39 Q96.5 50.8 104 60',
     },
-    { d: 'M101 132 C104 146 100 158 102 170', role: 'accent' },
-    { d: 'M102 170 c-6 4 -6 12 0 14 c6 -2 6 -10 0 -14z', role: 'accent' },
+    { d: 'M150 22 L46 126', role: 'soft' },
+    { d: 'M84.8 79.2 C88 92 84 104 90 118', role: 'ambient' },
+    { d: 'M84 150 C80 122 98 106 120 108 C140 110 150 126 148 150' },
+    {
+      d: 'M84 150 C100 156 132 156 148 150 M92 152 C90 164 96 172 104 170 L106 155',
+    },
+    { d: 'M85 132 C102 123 130 123 147 133', role: 'soft' },
+    {
+      d: `${ellipse(104, 127, 9, 6)} ${ellipse(104, 127, 5, 3.2)}`,
+      role: 'accent',
+    },
+    { d: 'M128 112 l6 -3 M136 120 l6 -3 M141 130 l5 -3', role: 'ambient' },
+    { d: 'M70 162 H160', role: 'ambient', dashed: true },
   ],
 
   // The short one's big sword in its scabbard on the strap he wears across
@@ -705,6 +764,50 @@ const VIOLIN_UP = 'translate(10 -6)'
 
 /** The mast mansion, laid on its side behind the wall. */
 const TOPPLED = 'rotate(15 81 40)'
+/**
+ * The mast mansion on its side: the round tower, its end cap towards us, two
+ * floor bands and a few windows, the underside hatched, the base broken off
+ * jagged. The arc draws the shell in its colour.
+ */
+const TOPPLED_SHELL = 'M50 28 H110 L114 33 L109 37 L116 42 L108 46 L106 52 H50'
+const TOPPLED_DETAILS: Stroke[] = [
+  { d: ellipse(50, 40, 4.5, 12) },
+  { d: 'M68 28 a4.5 12 0 0 0 0 24 M90 28 a4.5 12 0 0 0 0 24', role: 'soft' },
+  { d: 'M77 34 v6 M83 34 v6 M99 34 v6', role: 'soft' },
+  { d: 'M74 52 l5 -5 M86 52 l5 -5 M98 52 l5 -5', role: 'ambient' },
+]
+/** The fallen mast mansion moved down across the deck of the arc's hull. */
+const ACROSS_THE_DECK = 'translate(46 74) rotate(10 81 40)'
+
+/**
+ * The real Lola's small black bowler hat in 3/4, the crown hatched where it
+ * turns away, laid over the zombie bride's veil folded on the ground, with
+ * the crown of flowers beside it. The hat's crown is the one accent until
+ * 797.
+ */
+const LOLA_HAT_CROWN = 'M52 110 C48 60 112 60 108 110'
+const LOLA_HAT_AND_VEIL: Stroke[] = [
+  { d: 'M14 156 C18 132 44 122 80 122 C116 122 142 132 146 156', role: 'soft' },
+  { d: 'M14 156 q11 7 22 0 t22 0 t22 0 t22 0 t22 0 t22 0', role: 'soft' },
+  {
+    d: 'M34 134 C30 142 30 150 32 157 M126 134 C130 142 130 150 128 157',
+    role: 'soft',
+  },
+  ...moved(
+    [
+      { d: LOLA_CROWN, role: 'soft' },
+      { d: LOLA_BLOOMS, role: 'soft' },
+    ],
+    'translate(-40 108) rotate(-8 80 40)',
+  ),
+  {
+    d: 'M52 101 C42 102 34 106 34 112 C34 122 56 127 80 127 C104 127 126 122 126 112 C126 106 118 102 108 101 M34 112 c-3 -5 -2 -9 3 -11 M126 112 c3 -5 2 -9 -3 -11',
+  },
+  { d: 'M51 98 C64 105 96 105 109 98', role: 'soft' },
+  { d: 'M94 72 l7 -5 M100 82 l8 -5 M103 92 l6 -4', role: 'ambient' },
+]
+/** The real Lola, moved left and made smaller to leave room for the flag. */
+const BESIDE_THE_FLAG = 'translate(-10 10) scale(0.86)'
 
 /** Brook's guitar, drawn lying flat and tilted to where the bow lay. */
 const GUITAR = 'translate(-6 6) rotate(-50 80 110)'
@@ -720,26 +823,41 @@ export const thrillerBarkRedrawn: Redrawings = {
       value: [...thrillerBarkArt['risky-brothers'], shadow(88, 184, 62)],
     },
   ],
-  // A hull the size of an island, a mansion and two dead trees on the deck,
-  // the moon hung over all of it: Spoil's line at 343 says the island is the
-  // largest pirate ship in the world (ch. 449).
+  // The same island on a hull the size of an island, the hull in the arc's
+  // colour: Spoil's line at 343 says the island is the largest pirate ship
+  // in the world (ch. 449). From 374 (ch. 482) the mast mansion lies broken
+  // across the deck, in the arc's colour, and only its jagged stump stands:
+  // Luffy knocks Moria into the main mast and it topples onto him.
   'thriller-bark-arc': [
     {
       episode: 343,
       chapter: 449,
       value: [
-        { d: 'M10 132 L24 152 Q80 164 136 152 L150 132' },
-        { d: 'M10 132 H150' },
-        { d: 'M56 132 V72 H104 V132' },
-        { d: 'M50 72 L80 48 L110 72' },
-        { d: 'M66 86 h12 v14 h-12z M82 86 h12 v14 h-12z', role: 'soft' },
-        { d: 'M74 132 V112 h12 V132' },
-        {
-          d: 'M26 132 V94 M26 116 l-12 -14 M26 108 l12 -16 M26 124 l-10 8 M26 100 l-8 -12',
-        },
-        { d: 'M136 132 V98 M136 118 l12 -13 M136 110 l-11 -14 M136 126 l10 8' },
-        { d: circle(122, 30, 20), role: 'accent' },
-        ...SEA.slice(1),
+        ...THRILLER_BARK_ISLAND,
+        { d: MAST_TOWER, transform: ARC_TOWER },
+        ...moved(MAST_DETAILS, ARC_TOWER),
+        ARC_TOWER_FOOT,
+        { d: THRILLER_BARK_HULL, role: 'accent' },
+        HULL_HATCHING,
+        ...SEA.slice(2),
+      ],
+    },
+    {
+      episode: 374,
+      chapter: 482,
+      value: [
+        ...THRILLER_BARK_ISLAND,
+        { d: 'M92 120 V104 L97 99 L101 105 L106 98 L111 104 L116 100 V120' },
+        ...moved(
+          [
+            { d: TOPPLED_SHELL, role: 'accent', transform: TOPPLED },
+            ...moved(TOPPLED_DETAILS, TOPPLED),
+          ],
+          ACROSS_THE_DECK,
+        ),
+        { d: THRILLER_BARK_HULL },
+        HULL_HATCHING,
+        ...SEA.slice(2),
       ],
     },
   ],
@@ -803,10 +921,18 @@ export const thrillerBarkRedrawn: Redrawings = {
     },
   ],
 
-  // The same violin, still upright, the Soul King's guitar laid across it
-  // where the bow was: a shark's head for a body, jaws open on its teeth, gills and two
-  // fins for horns. He plays it at his farewell concert at 517 (ch. 598).
+  // The same violin and bow with a shadow beneath them again: Zoro beats
+  // Ryuma and Brook's shadow comes home at 362 (ch. 467). Then the same
+  // violin, still upright, the Soul King's guitar laid across it where the
+  // bow was: a shark's head for a body, jaws open on its teeth, gills and two
+  // fins for horns, and the shadow under both. He plays it at his farewell
+  // concert at 517 (ch. 598).
   'brook': [
+    {
+      episode: 362,
+      chapter: 467,
+      value: [...thrillerBarkArt.brook, shadow(84, 166, 32)],
+    },
     {
       episode: 517,
       chapter: 598,
@@ -840,6 +966,56 @@ export const thrillerBarkRedrawn: Redrawings = {
         {
           d: 'M144 106 L148 102 H162 Q168 110 162 118 H148 L144 114',
           transform: GUITAR,
+        },
+        shadow(80, 172, 46),
+      ],
+    },
+  ],
+
+  // The real Lola's bowler hat, in her colour, over the zombie bride's veil
+  // folded on the ground, with its crown of flowers beside it: the veil is
+  // kept as the link to the first drawing. The tusks are gone and there is
+  // no shadow: Moria has hers. She comes on at 370 (ch. 476). The same hat
+  // and veil with a shadow beneath again from 375 (ch. 483), when Moria's
+  // defeat sends the stolen shadows home. From 797 (ch. 835) Big Mom's Jolly
+  // Roger flies beside them, in her colour, and the hat goes soft: she is
+  // revealed as Big Mom's daughter.
+  'lola': [
+    {
+      episode: 370,
+      chapter: 476,
+      value: [{ d: LOLA_HAT_CROWN, role: 'accent' }, ...LOLA_HAT_AND_VEIL],
+    },
+    {
+      episode: 375,
+      chapter: 483,
+      value: [
+        { d: LOLA_HAT_CROWN, role: 'accent' },
+        ...LOLA_HAT_AND_VEIL,
+        shadow(80, 172, 66),
+      ],
+    },
+    {
+      episode: 797,
+      chapter: 835,
+      value: [
+        ...moved(
+          [{ d: LOLA_HAT_CROWN, role: 'soft' }, ...LOLA_HAT_AND_VEIL],
+          BESIDE_THE_FLAG,
+        ),
+        shadow(59, 172, 56),
+        { d: 'M148 164 V26' },
+        { d: 'M148 30 C134 24 114 34 98 28 L100 86 C116 92 134 82 148 88' },
+        {
+          d: 'M113 62 C104 46 114 34 125 34 C136 34 146 46 137 62 M110 64 Q117 59 125 62 Q133 59 140 64 Q125 76 110 64 M110 64 H140 M104 40 l6 6 M146 40 l-6 6 M104 82 l6 -6 M146 82 l-6 -6',
+          role: 'accent',
+        },
+        {
+          d: dots([
+            [119, 50],
+            [131, 50],
+          ]),
+          role: 'soft',
         },
       ],
     },
@@ -1078,30 +1254,18 @@ export const thrillerBarkRedrawn: Redrawings = {
     },
   ],
 
-  // The same gate and wall without the fog, and behind them the mast mansion
-  // on its side: the round tower, its end cap towards us, two floor bands and
-  // a few windows, the underside hatched, the base broken off jagged, dust
-  // rising off both ends. Oars splits the island and the mansion tips over
-  // at 374 (ch. 481); the gates still shut as the crew sails off (ch. 486).
+  // The same gate and wall without the fog or the chains, and behind them the
+  // mast mansion on its side, dust rising off both ends. Luffy knocks Moria
+  // into the main mast at 374 (ch. 482) and it topples onto him; the gates
+  // still shut as the crew sails off (ch. 486).
   'thriller-bark': [
     {
       episode: 374,
-      chapter: 481,
+      chapter: 482,
       value: [
-        ...thrillerBarkArt['thriller-bark'].slice(0, 6),
-        ...moved(
-          [
-            { d: ellipse(50, 40, 4.5, 12) },
-            { d: 'M50 28 H110 L114 33 L109 37 L116 42 L108 46 L106 52 H50' },
-            {
-              d: 'M68 28 a4.5 12 0 0 0 0 24 M90 28 a4.5 12 0 0 0 0 24',
-              role: 'soft',
-            },
-            { d: 'M77 34 v6 M83 34 v6 M99 34 v6', role: 'soft' },
-            { d: 'M74 52 l5 -5 M86 52 l5 -5 M98 52 l5 -5', role: 'ambient' },
-          ],
-          TOPPLED,
-        ),
+        ...THRILLER_BARK_WALL,
+        { d: TOPPLED_SHELL, transform: TOPPLED },
+        ...moved(TOPPLED_DETAILS, TOPPLED),
         {
           d: 'M116 36 q-2 -10 8 -12 q10 -4 8 -14 q-2 -6 8 -8 M46 28 q-2 -8 6 -11 q8 -4 6 -12',
           role: 'ambient',

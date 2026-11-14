@@ -111,6 +111,14 @@ const MOVED: Moved[] = [
   ],
   ['franky', 322, 437, 'Franky Family, boss', 'Straw Hat Pirates'],
   ['lola', 370, 476, undefined, 'Rolling Pirates, captain'],
+  // #1109: ch 835 p. 19, which ep 797 adapts, shows she is Big Mom's daughter.
+  [
+    'lola',
+    797,
+    835,
+    'Rolling Pirates, captain',
+    'Rolling Pirates, daughter of Big Mom',
+  ],
   [
     'shiryu',
     452,
