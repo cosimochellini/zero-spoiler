@@ -222,7 +222,6 @@ const PELL_WING: Stroke[] = [
 const PLASTER =
   'M-16 -3.5 H16 A3.5 3.5 0 0 1 16 3.5 H-16 A3.5 3.5 0 0 1 -16 -3.5 Z'
 
-/** The drawings of the records filed in the alabasta stretch of the route. */
 /** The Spiders Cafe counter in 3/4 with Paula's bandanna laid over its edge and her glass of tea. */
 const DOUBLEFINGER_CAFE: Stroke[] = [
   {
@@ -314,6 +313,7 @@ const HINA_SMOKE_AND_FLEET: Stroke[] = [
   ...SEA.slice(1),
 ]
 
+/** The drawings of the records filed in the alabasta stretch of the route. */
 export const alabastaArt = {
   // Twin peaks with the canal cut up to the notch between them, seen a little
   // from the side so its far wall shows, the sea climbing it from a square
@@ -1097,7 +1097,7 @@ export const alabastaArt = {
       d: 'M80 43 Q74 38.6 76.4 32 L80 34.4 L83.6 32 Q86 38.6 80 43 M99 62 Q103.4 56 110 58.4 L107.6 62 L110 65.6 Q103.4 68 99 62 M80 81 Q86 85.4 83.6 92 L80 89.6 L76.4 92 Q74 85.4 80 81 M61 62 Q56.6 68 50 65.6 L52.4 62 L50 58.4 Q56.6 56 61 62',
       role: 'accent',
     },
-    { d: 'M14 158 Q38 144 64 158' },
+    { d: 'M8 158 C18 154 28 151 38 152 C54 153 78 156 104 158' },
     { d: 'M4 158 H156', role: 'ambient', dashed: true },
     {
       d: dots([
@@ -1318,14 +1318,14 @@ export const alabastaArt = {
     { d: 'M-4 188 q30 -8 60 0 t60 0 t60 0', role: 'ambient', dashed: true },
   ],
 
-  // The throne in 3/4, its tall back crested in gold, the arms and the seat
+  // The throne in 3/4, its tall back crested, the arms and the seat
   // with its cushion, the underside hatched: where the king hears the news
   // from his guards (92). Beside it a royal standard on its pole, the
   // kingdom's sun on the banner: a circle with curved drops round it, as on
   // the flags and sails of Alabasta (ch 130 p8, ep 79).
   'nefertari-cobra': [
     { d: 'M50 110 V36 M126 110 V36' },
-    { d: 'M50 36 Q88 14 126 36', role: 'accent' },
+    { d: 'M50 36 Q88 14 126 36', role: 'soft' },
     { d: 'M58 106 V44 Q88 28 118 44 V106', role: 'soft' },
     { d: 'M34 118 H110 L126 110 H50 Z' },
     { d: 'M34 118 V130 H110 V118 M110 130 L126 122 V110' },
@@ -1511,8 +1511,10 @@ export const alabastaArt = {
 
   // His four-ton baseball bat in 3/4, lying across the floor and throwing
   // its shadow along it: the taped grip and the knob at one end, the round
-  // face of the barrel with its rim at the other. Beside it one of the
-  // baseballs his dog-gun coughs up for him to hit (103).
+  // face of the barrel with its rim at the other (103). Beside it one of
+  // the baseballs his dog-gun coughs up for him to hit, first at the east
+  // gate (ch 183-186, ep 113-115), in the arc, so the first drawing may
+  // show it.
   'mr-4': [
     { d: 'M32.3 162.6 L51.5 141.8 C58 130 62 116 68.9 109.7 L121.7 52.5' },
     { d: 'M39.7 169.4 L58.9 148.6 C70 140 80 134 89.5 128.7 L142.3 71.5' },
