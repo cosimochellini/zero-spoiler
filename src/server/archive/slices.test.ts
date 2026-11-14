@@ -103,6 +103,8 @@ function everyBookmark(): NonNullable<Bookmark>[] {
   return marks
 }
 const seenAt = (episode: number): Reader => readerFor(ep(episode), 'en')
+const readAtChapter = (chapter: number): Reader =>
+  readerFor({ mode: 'chapter', chapter }, 'en')
 const handleSpace = new Set(
   entities.flatMap((entity) => {
     return [
@@ -923,25 +925,31 @@ describe('a record drawn again later in the story', () => {
     expect(drawnAt({ mode: 'chapter', chapter: 983 })).toBe(beast?.value)
   })
 
-  it('hands Brook the Soul King’s guitar only from episode 517', () => {
+  describe('Brook', () => {
     const brook = filed('brook')
     const violin = DRAWINGS.brook
-    const guitar = REDRAWINGS['brook']?.[0]
-    const atChapter = (chapter: number): Reader =>
-      readerFor({ mode: 'chapter', chapter }, 'en')
+    const [shadowBack, guitar] = REDRAWINGS['brook'] ?? []
+    const drawnAt = (reader: Reader): unknown =>
+      characterOf(brook, reader).visual.strokes
 
-    expect(guitar?.episode).toBe(517)
+    it('gets his shadow back only from episode 362 and chapter 467', () => {
+      expect(shadowBack?.episode).toBe(362)
+      expect(drawnAt(readerFor(null, 'en'))).toBe(violin)
+      expect(drawnAt(seenAt(361))).toBe(violin)
+      expect(drawnAt(seenAt(362))).toBe(shadowBack?.value)
+      // The manga gives the shadow back in chapter 467, so no chapter below it may.
+      expect(drawnAt(readAtChapter(466))).toBe(violin)
+      expect(drawnAt(readAtChapter(467))).toBe(shadowBack?.value)
+    })
 
-    expect(characterOf(brook, seenAt(516)).visual.strokes).toBe(violin)
-    expect(characterOf(brook, seenAt(517)).visual.strokes).toBe(guitar?.value)
-    expect(characterOf(brook, readerFor(null, 'en')).visual.strokes).toBe(
-      violin,
-    )
-    // The manga draws the guitar in chapter 598, so no chapter below it may.
-    expect(characterOf(brook, atChapter(597)).visual.strokes).toBe(violin)
-    expect(characterOf(brook, atChapter(598)).visual.strokes).toBe(
-      guitar?.value,
-    )
+    it('is handed the Soul King’s guitar only from episode 517', () => {
+      expect(guitar?.episode).toBe(517)
+      expect(drawnAt(seenAt(516))).toBe(shadowBack?.value)
+      expect(drawnAt(seenAt(517))).toBe(guitar?.value)
+      // The manga draws the guitar in chapter 598, so no chapter below it may.
+      expect(drawnAt(readAtChapter(597))).toBe(shadowBack?.value)
+      expect(drawnAt(readAtChapter(598))).toBe(guitar?.value)
+    })
   })
 
   it('sets a crown on Buggy’s cannonball only from episode 1080', () => {

@@ -404,15 +404,24 @@ export const thrillerBark: OnePieceSaga = {
             en: 'Rolling Pirates, captain',
           },
         },
+        // Revealed as Big Mom's daughter in chapter 835, page 19, which
+        // episode 797 adapts.
         {
-          episode: 837,
+          episode: 797,
+          chapter: 835,
           value: {
             it: 'Pirati di Rolling, figlia di Big Mom',
             en: 'Rolling Pirates, daughter of Big Mom',
           },
         },
       ],
-      origin: [{ episode: 837, value: { it: 'Totto Land', en: 'Totto Land' } }],
+      origin: [
+        {
+          episode: 797,
+          chapter: 835,
+          value: { it: 'Totto Land', en: 'Totto Land' },
+        },
+      ],
       epithet: [
         { episode: 370, value: { it: 'La Proponente', en: 'the Proposer' } },
       ],
