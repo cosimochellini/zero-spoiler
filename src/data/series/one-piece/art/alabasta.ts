@@ -563,7 +563,7 @@ export const alabastaArt = {
   // The volcano that erupts every hour and starts the giants' duel, in 3/4
   // with its far flank hatched and its smoke going up, over the jungle; in
   // front, one of the Sea King skulls the island's mountains are, lying
-  // with its hollow socket hatched and its teeth along the jaw (70).
+  // with the hollow of its socket broken into the brow and hatched (70).
   'little-garden-arc': [
     { d: 'M48 150 L80 66 M100 66 L134 150' },
     { d: ellipse(90, 66, 10, 3.2) },
@@ -578,11 +578,9 @@ export const alabastaArt = {
       dashed: true,
     },
     {
-      d: 'M6 150 C2 130 14 112 34 110 C50 108 60 116 68 124 L90 136 C96 139 95 146 88 146 L66 145 C58 150 40 152 26 150',
+      d: 'M6 150 C2 130 10 114 24 112 C22 132 46 134 48 114 C57 113 62 118 68 124 L90 136 C96 139 95 146 88 146 L66 145 C58 150 40 152 26 150',
     },
-    { d: 'M28 124 C32 117 44 116 47 123 C48 131 38 135 30 131 Z' },
-    { d: 'M31 128 l8 -7 M35 132 l10 -9', role: 'ambient' },
-    { d: 'M70 145 v-4 M76 145.4 v-4 M82 145.8 v-4', role: 'soft' },
+    { d: 'M27 117 l7 8 M33 116 l8 10 M40 116 l6 8', role: 'ambient' },
     { d: 'M18 118 q6 8 3 18 M56 114 q-3 6 1 12', role: 'soft' },
     {
       d: 'M108 150 q4 -14 14 -18 M118 150 q-2 -12 -10 -16 M140 150 q4 -12 12 -14 M146 150 q-4 -12 -14 -14',
