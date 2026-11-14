@@ -19,6 +19,8 @@ import {
 /** One of Vivi's Peacock Slashers, a pointed jewel, drawn about its centre. */
 const PEACOCK_SLASHER =
   'M0 -30 C12 -30 18 -16 14 -2 L0 34 L-14 -2 C-18 -16 -12 -30 0 -30 Z'
+/** Where her first drawing hangs the jewel: large, swung out on its wire. */
+const SLASHER_SWUNG = 'translate(92 116) rotate(-20) scale(1.6)'
 
 /**
  * Bon Clay's ballet shoe and its ribbons, in his first drawing and, smaller,
@@ -226,18 +228,28 @@ const PLASTER =
 
 /** The drawings of the records filed in the alabasta stretch of the route. */
 export const alabastaArt = {
-  // Twin peaks with the canal running up to the notch between them, the sea
-  // climbing it, and a lighthouse at the foot.
+  // Twin peaks with the canal cut up to the notch between them, seen a little
+  // from the side so its far wall shows, the sea climbing it from a square
+  // arch at its mouth, and a Twin Cape lighthouse at the foot (62).
   'reverse-mountain': [
-    { d: 'M4 150 L44 40 L72 58 L100 40 L128 150' },
-    { d: 'M60 150 L69 60 M84 150 L75 60', role: 'accent' },
+    { d: 'M4 150 L44 34 L72 56 L102 38 L134 150' },
+    { d: 'M52 150 L68 58 M96 150 L77 58' },
+    { d: 'M58 150 L69.5 60 M86 150 L75.5 60', role: 'accent' },
     {
-      d: 'M68 132 l4 -7 l4 7 M69 104 l3 -6 l3 6 M70 78 l2 -5 l2 5',
+      d: 'M88 140 l6 -2 M85 120 l5 -2 M82 100 l4 -1.5 M80 80 l3 -1',
+      role: 'ambient',
+    },
+    {
+      d: 'M68 140 l4 -7 l4 7 M69 112 l3 -6 l3 6 M70 88 l2.5 -5 l2.5 5',
       role: 'soft',
     },
-    { d: 'M134 150 L138 118 H146 L150 150z' },
-    { d: 'M137 118 V110 H147 V118 M134 110 L142 102 L150 110' },
-    { d: 'M152 106 h6 M151 98 l6 -5', role: 'ambient', dashed: true },
+    { d: 'M48 150 V126 H100 V150 M54 150 V132 H94 V150' },
+    { d: 'M110 84 l8 -4 M116 104 l8 -4 M122 124 l8 -4', role: 'ambient' },
+    {
+      d: 'M138 150 L141 118 H151 L154 150 M140 118 V110 H152 V118 M138 110 L146 102 L154 110',
+    },
+    { d: 'M144 150 L145.5 124', role: 'soft' },
+    { d: 'M156 106 h6 M155 98 l6 -5', role: 'ambient', dashed: true },
     ...SEA.slice(1),
   ],
 
@@ -275,34 +287,34 @@ export const alabastaArt = {
     ...SEA,
   ],
 
-  // His deckchair in 3/4 on the iron islet inside the whale, the newspaper
-  // he reads left folded on the seat, the islet's chain going down into
-  // the water and a cloud of the sky he painted on the walls (62).
+  // The Twin Cape lighthouse he keeps, in 3/4: the tapering tower with its
+  // bands and the far side hatched, the gallery round the lamp room, the
+  // light going out from it and the door at its foot standing open, and his
+  // deckchair on the cape beside it (62).
   'crocus': [
-    { d: 'M34 72 L54 128 H110 L120 150 M54 128 L48 150 M110 128 L114 150' },
-    { d: 'M50 62 L70 118 H126 L136 140', role: 'soft' },
-    { d: 'M34 72 L50 62 M54 128 L70 118 M110 128 L126 118' },
-    { d: 'M42 67 L62 123 H118', role: 'accent' },
-    { d: 'M72 112 L98 108 L104 122 L78 126 Z' },
-    { d: 'M76 116 L100 112 M85 110 L91 124', role: 'soft' },
-    { d: 'M122 144 l6 -4 M126 134 l6 -4', role: 'ambient' },
-    { d: 'M8 150 H152 M8 150 L14 160 H146 L152 150' },
+    { d: 'M60 150 L68 52 M100 150 L92 52' },
+    { d: ellipse(80, 52, 16, 4) },
     {
-      d: dots([
-        [24, 155],
-        [48, 155],
-        [72, 155],
-        [96, 155],
-        [120, 155],
-      ]),
-      role: 'soft',
+      d: 'M70 50 V32 M90 50 V32 M67 32 H93 M68 32 Q80 14 92 32 M80 23 V16',
+      role: 'accent',
     },
-    { d: `${ellipse(30, 166, 3, 5)} ${ellipse(30, 177, 3, 5)}`, role: 'soft' },
+    { d: 'M75 48 V34 M85 48 V34', role: 'soft' },
+    { d: 'M64 112 Q80 117 96 112 M66 82 Q80 87 94 82', role: 'soft' },
     {
-      d: 'M96 40 q4 -12 16 -8 q6 -10 18 -4 q12 -2 12 10 q8 2 6 10 H98 q-8 -2 -2 -8',
+      d: 'M92 70 l5 -3 M94 96 l5 -3 M96 124 l5 -3 M98 142 l4 -2.5',
       role: 'ambient',
     },
-    ...SEA.slice(2),
+    { d: 'M72 150 V134 Q78 126 84 134 V150' },
+    { d: 'M84 150 L94 146 V130 L84 134', role: 'soft' },
+    {
+      d: 'M98 36 h18 M98 44 l16 6 M62 36 h-18 M62 44 l-16 6',
+      role: 'ambient',
+      dashed: true,
+    },
+    { d: 'M14 116 L26 142 H50 L56 150 M26 142 L22 150 M50 142 L48 150' },
+    { d: 'M19 119 L30 140 H48', role: 'soft' },
+    { d: 'M4 150 H156', role: 'ambient' },
+    ...SEA.slice(1),
   ],
 
   // His crown in 3/4, its points rising off the band, and the bazooka he
@@ -443,49 +455,56 @@ export const alabastaArt = {
     shadow(74, 186, 42),
   ],
 
-  // A cactus-shaped rock under the moon, grave crosses standing on its top.
+  // A cactus-shaped rock under the moon, its ribs running round the column
+  // and the far side hatched, grave crosses standing on its top and its
+  // arms, and the flat-roofed houses of the town at its foot (64).
   'whisky-peak': [
-    { d: 'M60 150 V60 a20 20 0 0 1 40 0 V150' },
-    { d: 'M60 124 H34 a8 8 0 0 1 -8 -8 V88 a8 8 0 0 1 16 0 V108 H60' },
-    { d: 'M100 110 H126 a8 8 0 0 0 8 -8 V74 a8 8 0 0 0 -16 0 V94 H100' },
+    { d: 'M62 150 V62 a20 20 0 0 1 40 0 V150' },
+    { d: 'M76 44 Q73 96 75 150 M90 44 Q92 96 90 150', role: 'soft' },
     {
-      d: 'M70 44 V28 M65 33 H75 M80 40 V22 M75 27 H85 M90 44 V28 M85 33 H95 M34 81 V66 M29 71 H39 M126 67 V52 M121 57 H131',
+      d: 'M96 74 l6 -3 M96 92 l6 -3 M96 110 l6 -3 M96 128 l6 -3',
+      role: 'ambient',
+    },
+    { d: 'M62 124 H40 a8 8 0 0 1 -8 -8 V88 a8 8 0 0 1 16 0 V108 H62' },
+    { d: 'M102 108 H124 a8 8 0 0 0 8 -8 V74 a8 8 0 0 0 -16 0 V92 H102' },
+    {
+      d: 'M72 44 V28 M67 33 H77 M82 40 V22 M77 27 H87 M92 44 V28 M87 33 H97 M40 81 V66 M35 71 H45 M124 67 V52 M119 57 H129',
       role: 'accent',
     },
     {
-      d: dots([
-        [70, 72],
-        [88, 84],
-        [72, 100],
-        [90, 118],
-        [34, 100],
-        [126, 86],
-      ]),
+      d: 'M6 150 V132 H30 V150 M30 150 V140 H46 V150 M112 150 V128 H136 V150 M136 150 V138 H150 V150',
+    },
+    {
+      d: 'M12 138 h6 v6 h-6 z M120 134 h6 v6 h-6 z M36 144 h4 M142 144 h4 M30 136 h-3 M112 134 h-3',
       role: 'soft',
     },
-    { d: circle(134, 28, 11), role: 'ambient' },
+    { d: circle(140, 26, 10), role: 'ambient' },
     { d: 'M4 150 H156', role: 'ambient' },
     ...SEA.slice(1),
   ],
 
-  // A hand at the moment of the flick, the thumb just let go and the
-  // finger snapped out, the coat sleeve pushed back off the wrist, and the
-  // pellet it sent going off like a bullet: the Nose Fancy Cannon he uses
-  // on Zoro at Whisky Peak (65).
+  // A hand at the moment of the flick, out of a coat cuff seen open: the
+  // thumb just let go and the finger snapped out, the curled fingers and the
+  // underside hatched, and the pellet it sent flying, then going off: the
+  // Nose Fancy Cannon he uses on Zoro at Whisky Peak (65).
   'mr-5': [
-    { d: 'M6 160 L34 128 M24 176 L52 144' },
-    { d: 'M34 128 Q46 128 52 144 M30 133 Q42 134 47 150', role: 'soft' },
-    { d: 'M40 136 L66 110 M50 148 L80 124' },
+    { d: 'M4 170 L36 136 M22 188 L54 154' },
+    { d: 'M36 136 C46 136 56 146 54 154' },
+    { d: 'M36 136 C34 146 44 156 54 154', role: 'soft' },
+    { d: 'M44 140 L62 122 M52 150 L74 132' },
     {
-      d: 'M66 110 C70 98 82 92 94 94 L122 82 C127 80 130 86 125 89 L100 102 C106 104 108 112 104 118 C100 126 90 128 80 124',
+      d: 'M62 122 C64 108 78 100 92 102 L124 86 C130 83 134 90 128 94 L102 108 C108 112 108 122 102 128 C96 134 84 136 74 132',
     },
-    { d: 'M94 94 C96 86 104 84 108 90 L102 100', role: 'soft' },
-    { d: 'M82 122 q4 -8 12 -8 M90 126 q4 -6 10 -6', role: 'soft' },
-    { d: 'M72 118 l6 -5 M76 124 l6 -5', role: 'ambient' },
-    { d: circle(136, 72, 2.5) },
-    { d: 'M126 78 l-8 4 M128 70 l-8 2', role: 'ambient', dashed: true },
+    { d: 'M92 102 C94 92 104 90 108 96 L104 106' },
     {
-      d: 'M144 52 l2 -12 l4 10 l10 -6 l-4 11 l12 1 l-11 5 l8 9 l-12 -3 l-2 11 l-5 -10 l-8 7 l2 -12 l-11 -3 l11 -4 l-7 -9 z',
+      d: 'M84 132 q4 -8 12 -8 M92 134 q4 -6 10 -6 M78 128 q4 -9 12 -10',
+      role: 'soft',
+    },
+    { d: 'M66 126 l6 -5 M70 132 l6 -5 M98 120 l5 -4', role: 'ambient' },
+    { d: circle(138, 72, 3.5) },
+    { d: 'M128 80 l-6 4 M131 84 l-6 4', role: 'ambient', dashed: true },
+    {
+      d: 'M126 17 L129.1 29.5 L137.6 24.2 L133.8 33.5 L148.7 34 L134.9 39.6 L142.5 47.5 L131.8 44.9 L133.5 58.7 L126 47 L120.2 54 L120.2 44.9 L107.8 48.5 L117.1 39.6 L102.4 33.8 L118.2 33.5 L113.1 22.7 L122.9 29.5 Z',
       role: 'accent',
     },
     shadow(70, 190, 46),
@@ -505,60 +524,66 @@ export const alabastaArt = {
     shadow(80, 184, 30),
   ],
 
-  // Her Peacock Slashers: sharp jewels on wires looped round a little
-  // finger, the near one swung out on its arc. She draws them on Zoro at
-  // Whisky Peak (65).
+  // One of her Peacock Slashers, large and in 3/4: the jewel with its side
+  // face hatched and the eye of a peacock's feather inside it, on the wire
+  // from the ring she loops round a little finger, swung out on its arc.
+  // She draws them on Zoro at Whisky Peak (65).
   'nefertari-vivi': [
-    { d: 'M42 36 a10 4.5 0 1 0 20 0 a10 4.5 0 1 0 -20 0' },
-    { d: 'M42 36 v3 a10 4.5 0 0 0 20 0 v-3', role: 'soft' },
-    { d: 'M60 42 C80 60 98 80 104 98' },
+    { d: 'M30 36 a12 5 0 1 0 24 0 a12 5 0 1 0 -24 0' },
+    { d: 'M30 36 v3 a12 5 0 0 0 24 0 v-3', role: 'soft' },
+    { d: 'M52 41 C66 48 74 60 75.6 70.9' },
+    { d: PEACOCK_SLASHER, transform: SLASHER_SWUNG },
     {
-      d: PEACOCK_SLASHER,
-      role: 'accent',
-      transform: 'translate(110 128) rotate(-20)',
+      d: 'M10 -28 C16 -26 21 -14 18 1 L4 37 L0 34 M14 -2 L18 1',
+      transform: SLASHER_SWUNG,
     },
     {
-      d: 'M0 -30 V-2 V34 M-14 -2 H14',
+      d: 'M16 -18 l3 1 M17 -8 l3 1 M13 8 l3 1 M9 18 l3 1',
+      role: 'ambient',
+      transform: SLASHER_SWUNG,
+    },
+    {
+      d: 'M0 -30 V-20 M-14 -2 H-7 M14 -2 H7 M0 34 V14',
       role: 'soft',
-      transform: 'translate(110 128) rotate(-20)',
+      transform: SLASHER_SWUNG,
     },
-    { d: 'M112 100 l10 -2 M120 116 l9 -1 M121 132 l8 1', role: 'ambient' },
-    { d: 'M46 42 C38 70 36 96 40 112' },
-    { d: PEACOCK_SLASHER, transform: 'translate(42 136) rotate(8) scale(0.6)' },
     {
-      d: 'M136 70 C156 110 144 160 104 176 M70 182 C46 180 26 166 18 146',
+      d: 'M0 -20 C7 -20 9 -10 7 -2 L0 14 L-7 -2 C-9 -10 -7 -20 0 -20 Z',
+      role: 'accent',
+      transform: SLASHER_SWUNG,
+    },
+    {
+      d: 'M136 64 C156 104 146 156 108 176 M70 184 C46 182 26 168 18 148',
       role: 'ambient',
       dashed: true,
     },
+    { d: 'M128 98 l10 -2 M132 116 l9 -1 M131 134 l8 1', role: 'ambient' },
   ],
 
-  // The island from the sea: two volcanoes in 3/4 with their craters
-  // smoking, the jungle of giant ferns along the shore below them (70).
+  // The volcano that erupts every hour and starts the giants' duel, in 3/4
+  // with its far flank hatched and its smoke going up, over the jungle; in
+  // front, one of the Sea King skulls the island's mountains are, lying
+  // with the hollow of its socket broken into the brow and hatched (70).
   'little-garden-arc': [
-    { d: 'M6 150 L42 70 M62 70 L98 150' },
-    { d: ellipse(52, 70, 10, 3) },
-    { d: 'M82 150 L110 96 M124 96 L152 150' },
-    { d: ellipse(117, 96, 7, 2.4) },
+    { d: 'M48 150 L80 66 M100 66 L134 150' },
+    { d: ellipse(90, 66, 10, 3.2) },
     {
-      d: 'M70 100 l8 -4 M78 118 l8 -4 M86 136 l8 -4 M132 118 l6 -3 M140 134 l6 -3',
+      d: 'M106 90 l7 -3 M112 108 l7 -3 M118 126 l7 -3 M124 142 l6 -2.5',
       role: 'ambient',
     },
+    { d: 'M88 60 C80 48 96 40 88 28 C82 18 96 10 92 0', role: 'accent' },
     {
-      d: 'M50 66 C44 54 54 50 50 38 C46 28 56 22 54 12 M56 66 C62 56 58 48 64 40',
+      d: 'M96 60 C104 50 98 42 108 34 C116 28 112 18 120 12',
       role: 'ambient',
       dashed: true,
     },
-    { d: 'M116 92 C112 82 120 78 118 68', role: 'ambient', dashed: true },
     {
-      d: 'M18 150 C18 134 24 124 34 118 M18 138 l-8 -6 M20 130 l-8 -8 M24 124 l-4 -10 M26 140 l8 -6 M28 130 l8 -8',
-      role: 'accent',
+      d: 'M6 150 C2 130 10 114 24 112 C22 132 46 134 48 114 C57 113 62 118 68 124 L90 136 C96 139 95 146 88 146 L66 145 C58 150 40 152 26 150',
     },
+    { d: 'M27 117 l7 8 M33 116 l8 10 M40 116 l6 8', role: 'ambient' },
+    { d: 'M18 118 q6 8 3 18 M56 114 q-3 6 1 12', role: 'soft' },
     {
-      d: 'M128 150 C128 136 134 128 144 124 M130 140 l-8 -4 M132 132 l-6 -8 M136 144 l8 -4 M140 134 l6 -6',
-      role: 'accent',
-    },
-    {
-      d: 'M54 150 q4 -14 14 -18 M64 150 q-2 -12 -10 -16 M100 150 q4 -12 12 -14',
+      d: 'M108 150 q4 -14 14 -18 M118 150 q-2 -12 -10 -16 M140 150 q4 -12 12 -14 M146 150 q-4 -12 -14 -14',
       role: 'soft',
     },
     { d: 'M4 150 H156', role: 'ambient' },
@@ -676,14 +701,27 @@ export const alabastaArt = {
     { d: 'M70 182 q14 -4 30 0', role: 'ambient', dashed: true },
   ],
 
-  // A long-necked dinosaur looking out over the jungle, a palm and ferns in front.
+  // A long-necked dinosaur looking out over the jungle, the back of its neck
+  // and its flank hatched, a palm and ferns in front and one of the island's
+  // volcanoes smoking behind its back (70).
   'little-garden': [
     {
       d: 'M112 150 C112 104 100 70 80 50 C72 42 58 40 50 44 C42 48 42 58 52 58 H62 C72 60 80 90 88 150',
       role: 'accent',
     },
-    { d: dot(56, 48), role: 'soft' },
-    { d: 'M112 128 C124 114 148 112 164 122', role: 'soft' },
+    { d: 'M110 124 C122 106 150 106 164 124' },
+    {
+      d: 'M98 84 l7 -3 M104 100 l7 -3 M108 116 l7 -3 M140 116 l6 -4 M150 120 l6 -4',
+      role: 'ambient',
+    },
+    { d: 'M86 76 Q90 74 92 70 M90 92 Q94 90 96 86', role: 'soft' },
+    { d: 'M120 112 L134 76 M146 76 L158 104' },
+    { d: ellipse(140, 76, 6, 2) },
+    {
+      d: 'M140 72 C134 62 144 56 138 46 C134 38 142 32 140 24',
+      role: 'ambient',
+      dashed: true,
+    },
     { d: 'M26 150 C30 130 34 112 30 94' },
     {
       d: 'M30 94 q-16 -4 -24 8 M30 94 q-4 -14 8 -20 M30 94 q14 -8 26 2 M30 94 q10 4 12 16',
@@ -692,60 +730,92 @@ export const alabastaArt = {
       d: 'M50 150 q4 -18 16 -22 M58 150 q-2 -16 -12 -22 M126 150 q2 -16 14 -20 M134 150 q-4 -14 -16 -18',
       role: 'soft',
     },
-    { d: 'M112 34 q6 -6 12 0 q6 -6 12 0', role: 'ambient' },
     { d: 'M4 150 H156', role: 'ambient' },
     ...SEA.slice(1),
   ],
 
-  // A castle on a drum-shaped peak, with the snow coming down.
+  // The castle on Drum Rock, the drum-shaped peak in 3/4 with its top rim
+  // and a band of snow round it, the far side hatched, and over the tallest
+  // tower Hiluluk's Jolly Roger, the skull and crossbones ringed with
+  // cherry petals, the flag Luffy keeps from Wapol's cannon (87).
   'drum-island-arc': [
-    { d: 'M8 156 L44 56 H88 L124 156' },
-    { d: 'M118 156 L138 106 L156 156' },
-    { d: 'M31 92 q18 8 35 0 q17 -8 35 2', role: 'ambient' },
-    { d: 'M50 56 V26 H82 V56', role: 'accent' },
-    { d: 'M46 26 H86 M50 26 V16 h8 V26 M74 26 V16 h8 V26', role: 'accent' },
-    { d: 'M66 16 V4 l16 5 l-16 5' },
-    { d: 'M58 34 h8 v10 h-8z M70 34 h8 v10 h-8z' },
+    { d: 'M30 150 L38 82 M110 82 L118 150' },
+    { d: ellipse(74, 82, 36, 7) },
+    { d: 'M34 116 q20 8 40 2 q20 -6 40 2', role: 'soft' },
+    { d: 'M102 100 l7 -3 M106 122 l7 -3 M110 142 l6 -2.5', role: 'ambient' },
     {
-      d: dots([
-        [20, 40],
-        [34, 72],
-        [110, 48],
-        [132, 82],
-        [142, 38],
-      ]),
-      role: 'ambient',
+      d: 'M124 150 L127 116 M147 116 L150 150 M127 116 Q137 120 147 116 Q137 112 127 116',
     },
-    { d: 'M4 156 H156', role: 'ambient' },
-    ...SEA.slice(2),
-  ],
-
-  // A sword used as a meat skewer, the tip of the blade bitten clean off:
-  // he eats the meat aboard the Merry at 79, then the sword with it.
-  'wapol': [
-    { d: 'M18 182 L38 156 M26 188 L46 162' },
-    { d: 'M24 176 l6 3 M30 168 l6 3', role: 'soft' },
-    { d: 'M18 148 L64 176' },
-    { d: 'M34 148 L48 130 M54 162 L68 144' },
     {
-      d: 'M44 132 C30 116 44 92 64 98 C82 86 104 104 92 122 C98 142 74 154 62 144 C50 152 36 144 44 132 Z',
+      d: 'M50 80 V62 H98 V80 M64 62 V36 H84 V62 M62 36 h24 M64 36 v-5 h5 v5 M79 36 v-5 h5 v5',
     },
-    { d: 'M56 112 l12 12 M66 104 l14 14 M78 100 l10 10', role: 'ambient' },
-    { d: 'M88 104 L112 72 M100 114 L126 82' },
+    { d: 'M58 74 v-6 M90 74 v-6 M74 54 v-10', role: 'soft' },
+    { d: 'M74 31 V6 M74 6 Q90 2 106 6 V28 Q90 24 74 28' },
     {
-      d: 'M112 72 a3.5 3.5 0 0 0 4.7 3.3 a3.5 3.5 0 0 0 4.7 3.3 a3.5 3.5 0 0 0 4.6 3.4',
+      d: `${circle(90, 15, 4.5)} ${dots([
+        [88.2, 14.4],
+        [91.8, 14.4],
+      ])} M87.5 19 V22 H92.5 V19 M85 21 L80 25 M95 21 L100 25 M85 9 L80 5 M95 9 L100 5`,
       role: 'accent',
     },
-    { d: 'M96 102 L114 78', role: 'soft' },
     {
       d: dots([
-        [132, 66],
-        [140, 74],
-        [128, 56],
+        [80, 15],
+        [100, 15],
+        [90, 23.5],
+        [90, 6.5],
       ]),
       role: 'soft',
     },
-    shadow(78, 192, 52),
+    {
+      d: dots([
+        [14, 40],
+        [24, 70],
+        [128, 52],
+        [146, 90],
+        [140, 30],
+      ]),
+      role: 'ambient',
+    },
+    { d: 'M4 150 H156', role: 'ambient' },
+    ...SEA.slice(2),
+  ],
+
+  // A hunk of meat skewered on a plain blade, its grip wrapped and no guard,
+  // the blade's tip bitten clean off: aboard the Merry he eats the meat, then
+  // the blade it was on (79). The manga has a knife, the anime a sword.
+  'wapol': [
+    {
+      d: 'M17 182.4 L34.7 156.4 M27.5 191.6 L45.3 165.6 M17 182.4 Q18 192 27.5 191.6',
+    },
+    { d: 'M22 177 l8 4.5 M27 170 l8 4.5 M32 163 l8 4.5', role: 'soft' },
+    { d: 'M34.7 156.4 L45.3 165.6' },
+    {
+      d: 'M34.7 156.4 L51.8 136.8 M45.3 165.6 L62.4 146 M84.7 99.2 L97.9 84.1 M95.3 108.4 L125.5 73.7',
+    },
+    {
+      d: 'M50 130 C42 116 50 98 68 96 C76 90 92 92 98 104 C106 116 100 132 92 138 C84 150 64 150 56 142 C52 138 50 134 50 130 Z',
+    },
+    {
+      d: 'M54 118 C54 106 62 99 72 98 M58 128 C64 116 74 108 88 104 M62 138 C72 130 82 122 96 118',
+      role: 'soft',
+    },
+    { d: 'M90 134 l6 -5 M82 142 l6 -5 M98 124 l4 -3.5', role: 'ambient' },
+    { d: 'M91 102 L108 83', role: 'soft' },
+    {
+      d: 'M97.9 84.1 A6 6 0 0 1 104.5 88 A6 6 0 0 1 112 88.5 A6 6 0 0 1 119 84.5 A7 7 0 0 1 125.5 73.7',
+      role: 'accent',
+    },
+    {
+      d: dots([
+        [128, 66],
+        [134, 74],
+        [120, 58],
+        [138, 62],
+      ]),
+      role: 'soft',
+    },
+    shadow(70, 194, 52),
   ],
 
   // A ballet shoe on its side, its ribbons curling loose, and the neck of one
@@ -818,30 +888,38 @@ export const alabastaArt = {
     { d: 'M4 176 L30 160 M20 192 L50 160 M120 192 L104 178', role: 'ambient' },
   ],
 
-  // Three drum-shaped mountains with snow on their rims, and snowed-in houses below.
+  // The Drum Rockies in 3/4: three drum-shaped mountains, their top rims and
+  // bands of snow, the far sides hatched, the castle small on Drum Rock, the
+  // tallest, and snowed-in houses below (80).
   'drum-island': [
-    { d: `${ellipse(80, 40, 22, 6)} M58 40 V116 M102 40 V116`, role: 'accent' },
-    { d: `${ellipse(34, 78, 16, 5)} M18 78 V116 M50 78 V116`, role: 'accent' },
     {
-      d: `${ellipse(128, 70, 18, 5)} M110 70 V116 M146 70 V116`,
+      d: `${ellipse(80, 44, 24, 6)} ${ellipse(32, 80, 16, 5)} ${ellipse(130, 72, 18, 5)}`,
       role: 'accent',
     },
     {
-      d: 'M58 54 q11 6 22 0 q11 -6 22 0 M18 90 q8 5 16 0 q8 -5 16 0 M110 82 q9 5 18 0 q9 -5 18 0',
+      d: 'M56 44 V122 M104 44 V122 M16 80 V122 M48 80 V122 M112 72 V122 M148 72 V122',
+    },
+    {
+      d: 'M56 60 q12 6 24 0 q12 -6 24 0 M16 92 q8 5 16 0 q8 -5 16 0 M112 86 q9 5 18 0 q9 -5 18 0',
       role: 'soft',
     },
-    { d: 'M4 118 q38 -8 76 0 t76 0 t10 0', role: 'ambient' },
+    {
+      d: 'M96 70 l6 -3 M96 90 l6 -3 M96 110 l6 -3 M42 98 l5 -2.5 M140 92 l5 -2.5 M140 110 l5 -2.5',
+      role: 'ambient',
+    },
+    { d: 'M70 40 V30 H90 V40 M75 30 V20 H85 V30 M73 20 H87' },
+    { d: 'M4 122 q38 -8 76 0 t76 0 t10 0', role: 'ambient' },
     {
       d: `${house(26, 22, 134, 122)} ${house(66, 28, 130, 118)} ${house(114, 22, 136, 124)}`,
     },
     {
       d: dots([
         [14, 30],
-        [36, 52],
+        [36, 54],
         [118, 30],
         [146, 44],
-        [104, 22],
-        [60, 16],
+        [110, 18],
+        [50, 16],
       ]),
       role: 'ambient',
     },
@@ -849,31 +927,32 @@ export const alabastaArt = {
     ...SEA.slice(1),
   ],
 
-  // Her sled in 3/4 on the snow, the box with its rolled rim and high back,
-  // the runners curling up at the front and the rope the reindeer pulls it
-  // by: how she comes down from the castle to the villages (81).
+  // Her small sunglasses, the lenses dark and hatched, resting on top of a
+  // bottle of plum wine as she wears them on her forehead; the bottle in
+  // 3/4 with its label, the far side hatched, and a plum beside it (82).
   'kureha': [
-    { d: 'M12 150 H112 C128 150 136 140 132 130 C130 124 124 124 122 130' },
-    { d: 'M26 142 H122 C136 142 144 132 140 122', role: 'soft' },
-    { d: 'M30 150 V136 M96 150 V136' },
-    { d: 'M24 136 H110 L116 106 H30 Z' },
-    { d: 'M30 106 V78 Q36 70 46 74 V98' },
-    { d: 'M30 106 Q72 98 116 106 L130 98 H46', role: 'accent' },
-    { d: 'M30 120 H112', role: 'soft' },
-    { d: 'M112 128 l-6 4 M114 118 l-6 4 M40 86 l4 -4', role: 'ambient' },
-    { d: 'M132 130 L156 116', role: 'soft' },
+    { d: 'M54 82 V150 M98 82 V150 M54 150 Q76 158 98 150' },
+    { d: 'M54 82 C54 70 66 66 68 58 V40 M98 82 C98 70 86 66 84 58 V40' },
+    { d: ellipse(76, 40, 8, 2.5) },
+    { d: 'M70 40 V32 M82 40 V32' },
+    { d: 'M54 104 Q76 110 98 104 M54 132 Q76 138 98 132', role: 'soft' },
     {
-      d: dots([
-        [20, 40],
-        [48, 24],
-        [96, 34],
-        [126, 56],
-        [146, 30],
-        [70, 60],
-      ]),
+      d: 'M90 112 l6 -4 M90 122 l6 -4 M90 142 l6 -4 M92 90 l5 -3',
       role: 'ambient',
     },
-    { d: 'M4 158 C40 152 120 154 156 158', role: 'ambient', dashed: true },
+    { d: 'M56 92 Q76 97 96 92', role: 'soft' },
+    {
+      d: `${ellipse(64, 30, 9, 5.5)} ${ellipse(88, 30, 9, 5.5)} M73 29 Q76 26 79 29`,
+      role: 'accent',
+    },
+    {
+      d: 'M58 32 l6 -5 M61 34 l6 -5 M82 32 l6 -5 M85 34 l6 -5',
+      role: 'ambient',
+    },
+    { d: 'M55 29 L62 16 M97 29 L104 16' },
+    { d: circle(124, 140, 10) },
+    { d: 'M124 130 q1 -6 4 -8 M128 124 q8 -4 12 2 q-6 4 -12 -2', role: 'soft' },
+    shadow(90, 186, 54),
   ],
 
   // His fuzzy top hat in 3/4, the cross turned on its side at the front and
@@ -1597,6 +1676,26 @@ const PELL_SCARF: Stroke[] = [
   },
 ]
 
+/**
+ * Mr. 3's wax, running down the side of his cup and over the front edge of
+ * the saucer in drips, sealing the one to the other: on his cup from 73.
+ */
+const MR3_WAX: Stroke = {
+  d: 'M89 103 C92 112 86 118 89 126 C90 131 87 134 88 138 M44 132 C38 136 34 142 38 146 C42 150 46 146 48 147 C49 154 55 154 55 148 C64 150 74 150 80 148 C81 156 88 156 88 147 C94 146 100 142 96 136',
+  role: 'accent',
+}
+
+/** His steaming cup sealed by the wax, the tea a plain line under it. */
+const MR3_WAXED_CUP: Stroke[] = [
+  ...alabastaArt['mr-3'].slice(0, 1),
+  { d: 'M46 100 Q66 106 86 100', role: 'soft' },
+  ...alabastaArt['mr-3'].slice(2, 8),
+  MR3_WAX,
+]
+
+/** Where Bon Clay's raised hand is drawn, above the shoe. */
+const BON_CLAY_HAND_AT = 'translate(30 40) rotate(-12)'
+
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const alabastaRedrawn: Redrawings = {
   // The cap of the two years, worn over the old hat: a round crown ringed
@@ -1903,11 +2002,43 @@ export const alabastaRedrawn: Redrawings = {
     },
   ],
 
+  // The shoe and the swan of the first drawing, the ribbons gone quiet, and
+  // above them his right hand raised, fingers spread, in its cuff of
+  // feathers: the hand that copies any face it touches. He shows the crew
+  // the Clone-Clone Fruit aboard the Merry at 92 (ch. 156); no face is drawn.
   // The same shoe, without the swan, set down on the threshold of the Gate of
   // Justice: the two riveted leaves of its arch rise out of the sea and all
   // but meet, the far edge of the gap hatched. He stays behind to open it at
   // 451 (ch. 548).
   'bon-clay': [
+    {
+      episode: 92,
+      chapter: 156,
+      value: [
+        ...alabastaArt['bon-clay'].map((stroke): Stroke =>
+          stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke,
+        ),
+        {
+          d: 'M-8 30 C-10 22 -12 14 -14 10 L-22 2 C-25 -1 -22 -6 -18 -3 L-10 4 V-18 C-10 -22 -4 -22 -4 -18 V0 V-24 C-4 -28 2 -28 2 -24 V0 V-22 C2 -26 8 -26 8 -22 V2 V-14 C8 -18 14 -18 14 -14 V12 C14 22 12 26 12 30',
+          role: 'accent',
+          transform: BON_CLAY_HAND_AT,
+        },
+        {
+          d: 'M-9 4 l4 -1 M-3 1 l4 -1 M3 2 l4 -1',
+          role: 'soft',
+          transform: BON_CLAY_HAND_AT,
+        },
+        {
+          d: 'M-12 30 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 4 0 8 h-24 q-4 -4 0 -8',
+          transform: BON_CLAY_HAND_AT,
+        },
+        {
+          d: 'M-12 -30 l-2 -5 M-2 -34 V-39 M8 -32 l2 -5',
+          role: 'ambient',
+          transform: BON_CLAY_HAND_AT,
+        },
+      ],
+    },
     {
       episode: 451,
       chapter: 548,
@@ -2224,19 +2355,29 @@ export const alabastaRedrawn: Redrawings = {
     },
   ],
 
-  // The same cup, dried out: no steam, and a dry ring on its bottom where
-  // the tea was. Crocodile dries him up and feeds him to the Bananawani at 104
-  // (ch. 166).
+  // The same cup, his wax now running down it and over the saucer's edge:
+  // he holds Brogy's feet in wax and Vivi names the Wax-Wax Fruit at 73
+  // (ch. 120; the wax figures that take Zoro and Nami are in ch. 119, below
+  // his record's chapter, so pinned at 120 with it).
+  // The same cup, dried out, the wax still on it: no steam, and a dry ring on
+  // its bottom where the tea was. Crocodile dries him up and feeds him to the
+  // Bananawani at 104 (ch. 166).
   // At 109 (ch. 176) a Bananawani spits out the wax ball he sealed himself
-  // in: the cup steams again beside the two halves of the shell.
+  // in: the waxed cup steams again beside the two halves of the shell.
   'mr-3': [
+    {
+      episode: 73,
+      chapter: 120,
+      value: [...MR3_WAXED_CUP, ...alabastaArt['mr-3'].slice(8)],
+    },
     {
       episode: 104,
       chapter: 166,
       value: [
         ...alabastaArt['mr-3'].slice(0, 1),
-        { d: ellipse(66, 124, 12, 3), role: 'accent' },
+        { d: ellipse(66, 124, 12, 3), role: 'soft' },
         ...alabastaArt['mr-3'].slice(2, 7),
+        MR3_WAX,
         ...alabastaArt['mr-3'].slice(8),
       ],
     },
@@ -2244,7 +2385,7 @@ export const alabastaRedrawn: Redrawings = {
       episode: 109,
       chapter: 176,
       value: [
-        ...moved(alabastaArt['mr-3'].slice(0, 8), 'translate(-16 0)'),
+        ...moved(MR3_WAXED_CUP, 'translate(-16 0)'),
         shadow(50, 186, 42),
         {
           d: 'M100 150 C100 176 150 176 150 150 L144 146 L138 152 L130 144 L122 151 L114 145 L106 152 Z',

@@ -223,12 +223,13 @@ own issue draws it, so the drawing tests hold it like any series. Its places are
 the 23 a scene of the season or the book is set in (#853) and those both name
 without visiting it (#1035: the North's five in #1248, nine of the Riverlands,
 the Westerlands and the Vale in #1249, five of the south and the seas in #1250,
-Essos's ten in #1251), each filed in one of the realms, the Iron Islands, the
-Reach and the seas among them, beyond the Wall or Essos, with no arc:
-`PlaceDossier.arc` is optional, and an arcless series prints no arc row. Darry
-is the book's alone and the Kingswood the show's. The demo shows the places the
-first ten episodes reach, and covers in its tail the four the show first visits
-in later seasons.
+Essos's ten in #1251), and eight visited places #853 left out (#1252), each
+filed in one of the realms, the Iron Islands, the Reach and the seas among them,
+beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is optional, and an
+arcless series prints no arc row. Darry and six of #1252's places are the book's
+alone, and the Kingswood the show's. The demo shows the places the first ten
+episodes reach, and covers in its tail the four the show first visits in later
+seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -356,7 +357,7 @@ checks this block.
 | Bodies of power     | 15, with 119 seats                                      |
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
-| Line drawings       | 742, one per record, plus 347 redrawings of 192 records |
+| Line drawings       | 742, one per record, plus 349 redrawings of 192 records |
 | Chronicle stories   | 792, for 189 characters                                 |
 
 ### `hunter-x-hunter`
@@ -375,11 +376,11 @@ checks this block.
 
 | Thing             | Count                                                 |
 | ----------------- | ----------------------------------------------------- |
-| Records           | 200                                                   |
+| Records           | 208                                                   |
 | Characters        | 148                                                   |
-| Places            | 52                                                    |
+| Places            | 60                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 200, one per record, plus 41 redrawings of 36 records |
+| Line drawings     | 208, one per record, plus 41 redrawings of 36 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->

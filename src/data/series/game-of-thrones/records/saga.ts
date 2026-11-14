@@ -26,8 +26,10 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'inn'
     | 'island'
     | 'lake'
+    | 'market'
     | 'marsh'
     | 'mountain'
+    | 'mountains'
     | 'open-sea'
     | 'order'
     | 'peninsula'
@@ -35,6 +37,7 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'river'
     | 'ruin'
     | 'sept'
+    | 'street'
     | 'town'
   group: never
   region:
