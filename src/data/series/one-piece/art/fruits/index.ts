@@ -2526,17 +2526,24 @@ export const fruitArt = {
     {
       d: [
         curl(80, 126, 14),
-        curl(58, 106, -12),
-        curl(103, 107, 12),
-        curl(106, 143, -12),
-        curl(55, 145, 12),
-        curl(80, 162, -11),
-        curl(47, 124, 10),
-        curl(114, 128, -10),
-        curl(80, 90, 11),
-        curl(66, 128, -8),
+        curl(62, 108, -10),
+        curl(103, 106, 11),
+        curl(94, 137, -8),
+        curl(56, 147, 11),
+        curl(78, 158, -10),
+        curl(52, 128, 9),
+        curl(111, 124, -9),
+        curl(80, 92, 10),
+        curl(66, 129, -7),
       ].join(' '),
       role: 'accent',
+    },
+    // The light on the near shoulder, just in from the rim.
+    { d: polyline(trace([80, 126], [39, 39], [204, 242, 6])), role: 'soft' },
+    // The far side turning away, in the gaps the curls leave.
+    {
+      d: 'M118.5 140 L111.5 133 M112.3 151.2 L105.3 144.2 M102.9 160 L96.9 154',
+      role: 'ambient',
     },
     {
       // The stalk: up out of the crown, along, and wound in on itself. The
@@ -3361,16 +3368,23 @@ export const fruitArt = {
     {
       d: [
         curl(80, 112, 12),
-        curl(60, 92, -9),
+        curl(64, 94, -8),
         curl(99, 89, 9),
         curl(55, 128, 9),
-        curl(104, 130, -10),
+        curl(102, 126, -9),
         curl(80, 150, -8),
         curl(81, 78, -7),
       ].join(' '),
       role: 'accent',
     },
     { d: 'M80 62 C79 54 80 46 88 42 C96 38 104 40 104 46 C104 52 96 52 96 47' },
+    // The light on the near shoulder, between the rim and the first segment.
+    { d: polyline(trace([80, 114], [36, 46], [196, 228, 6])), role: 'soft' },
+    // The far side turning away, between the last segment and the rim.
+    {
+      d: 'M118 111 L112 105 M118 128 L112 122 M112 146 L106 140',
+      role: 'ambient',
+    },
     shadowUnder(1),
   ],
 
@@ -3481,13 +3495,13 @@ export const fruitArt = {
     },
     {
       d: [
-        curl(45, 112, -7),
+        curl(47, 122, -6),
         curl(45, 142, 6),
         curl(69, 110, 6),
         curl(78, 148, -7),
         curl(93, 116, -6),
-        curl(107, 143, 7),
-        curl(127, 120, -6),
+        curl(105, 144, 6),
+        curl(124, 113, -6),
       ].join(' '),
       role: 'accent',
     },
@@ -3496,6 +3510,13 @@ export const fruitArt = {
         'M50 74 C56 80 76 80 80 74',
         'M64 70 C64 60 62 52 56 46 C50 40 40 42 40 50 C40 56 48 57 49 51',
       ].join(' '),
+    },
+    // The light down the near finger.
+    { d: 'M48 88 C45 96 43 104 42 112', role: 'soft' },
+    // The far fingers turning away.
+    {
+      d: 'M121 151 L116 146 M123 142 L118 137 M132 124 L128 120',
+      role: 'ambient',
     },
     shadowUnder(1),
   ],
@@ -6392,14 +6413,20 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
           d: [
             curl(85, 110, 15),
             curl(55, 132, -12),
-            curl(114, 134, 12),
+            curl(110, 134, 10),
             curl(68, 158, 11),
-            curl(103, 158, -11),
+            curl(100, 157, -9),
             curl(85, 152, 9),
             curl(61, 112, -9),
-            curl(110, 111, 9),
+            curl(106, 110, 8),
           ].join(' '),
           role: 'accent',
+        },
+        // The light on the near shoulder, and the far side turning away.
+        { d: 'M48 100 C46 107 44 114 44 121', role: 'soft' },
+        {
+          d: 'M128 116 L122 110 M129 132 L123 126 M124 150 L118 144',
+          role: 'ambient',
         },
         {
           // The stalk runs off to the left and winds up at its own end. It goes
