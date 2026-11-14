@@ -839,6 +839,9 @@ describe('a record drawn again later in the story', () => {
     ['thousand-sunny', 1, 'first'],
     // Loguetown's platform rebuilt.
     ['loguetown', 1, 'first'],
+    // Bepo's boiler suit back after the yukata, and again after Sulong.
+    ['bepo', 1, 'first'],
+    ['bepo', 3, 'first'],
   ] as const)(
     'redraws %s at stage %i as its drawing %s itself, not a copy',
     (id, stage, again) => {

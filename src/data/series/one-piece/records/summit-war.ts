@@ -242,8 +242,8 @@ export const summitWar: OnePieceSaga = {
       revealedAtChapter: 498,
       name: { it: 'Scratchmen Apoo', en: 'Scratchmen Apoo' },
       summary: {
-        it: 'Un capitano dalle braccia lunghissime che arriva a Sabaody suonando, con le cuffie al collo e il ritmo sempre in bocca.',
-        en: 'A captain with impossibly long arms who arrives at Sabaody playing, headphones round his neck and a beat always in his mouth.',
+        it: 'Un capitano dalle braccia lunghissime che arriva a Sabaody facendo baccano, con le cuffie al collo e il ritmo sempre in bocca.',
+        en: 'A captain with impossibly long arms who arrives at Sabaody making a racket, headphones round his neck and a beat always in his mouth.',
       },
       visual: { art: 'scratchmen-apoo', tint: 'acid' },
     },
@@ -1358,8 +1358,11 @@ export const summitWar: OnePieceSaga = {
             en: 'Camie’s pet and master',
           },
         },
+        // He tells the crew he owns the Criminal brand at his Fish-Man Island
+        // flagship in chapter 611 (pp. 6-7), which episode 530 adapts.
         {
-          episode: 523,
+          episode: 530,
+          chapter: 611,
           value: {
             it: 'Criminal, proprietario del marchio di moda',
             en: 'Criminal, fashion brand owner',
@@ -1507,8 +1510,8 @@ export const summitWar: OnePieceSaga = {
         en: 'Captain of the On Air Pirates',
       },
       log: {
-        it: 'Arriva a Sabaody nello stesso mese degli altri capitani con la taglia sopra i cento milioni, e si fa notare più di tutti perché non smette mai di fare rumore. Ha braccia lunghissime che cambiano forma, e il suo stesso corpo gli serve da strumento. Delle risse altrui ride come se avesse pagato il biglietto per vederle.',
-        en: 'He reaches Sabaody in the same month as the other captains with bounties above a hundred million, and stands out because he never stops making noise. His arms are long and change shape, and his own body serves him as an instrument. He laughs at other people’s brawls like a spectator who paid for the seat.',
+        it: 'Arriva a Sabaody nello stesso mese degli altri capitani con la taglia sopra i cento milioni, e si fa notare più di tutti perché non smette mai di fare rumore. Ha braccia lunghissime. Delle risse altrui ride come se avesse pagato il biglietto per vederle.',
+        en: 'He reaches Sabaody in the same month as the other captains with bounties above a hundred million, and stands out because he never stops making noise. His arms are extremely long. He laughs at other people’s brawls like a spectator who paid for the seat.',
       },
       status: [{ episode: 392, value: 'alive' }],
       affiliation: [

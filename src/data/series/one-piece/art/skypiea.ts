@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import {
@@ -1457,17 +1458,6 @@ const KUMA_PLATE: Stroke[] = [
 const KUMA_SMALL_BIBLE: Stroke[] = KUMA_BIBLE_BODY.map((stroke) => {
   return { ...stroke, transform: 'translate(92 89) scale(0.5)' }
 })
-
-/**
- * The same strokes with their accent made soft: a stage that adds a new
- * mark keeps the old drawing and moves the one accent to what the story
- * added.
- */
-function softened(strokes: Stroke[]): Stroke[] {
-  return strokes.map((stroke) => {
-    return stroke.role === 'accent' ? { ...stroke, role: 'soft' } : stroke
-  })
-}
 
 /**
  * Teach's darkness: a spiral widening out round (30, 46), its two wisps

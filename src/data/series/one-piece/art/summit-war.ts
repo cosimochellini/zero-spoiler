@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import {
@@ -177,12 +178,6 @@ const PEARLS = 'translate(80 104) scale(1.15) translate(-80 -136)'
  */
 const MARIGOLD_COIL = 'translate(12 142) scale(1 0.5)'
 
-/** One of Bepo's boots, drawn twice: the near one and the one set back. */
-const BEPO_BOOT = 'M0 0 H32 V24 C48 26 62 30 64 42 V48 H0 Z'
-const BEPO_SOLE = 'M0 42 H64 M32 24 C30 32 28 38 26 42'
-const BEPO_FAR = 'translate(84 92)'
-const BEPO_NEAR = 'translate(14 108)'
-
 /** The beads of Dadan's necklace, laid in a ring on the ground. */
 const DADAN_BEADS = (
   [
@@ -215,6 +210,167 @@ const HIBISCUS_PETAL =
 
 /** The hibiscus tipped back into three-quarters. */
 const HIBISCUS_TILT = 'translate(0 30) scale(1 0.7)'
+
+/**
+ * The Heart Pirates' Jolly Roger as the flag draws it, centred on the
+ * origin: a smiling face with six short spikes round it.
+ */
+const HEART_ROGER =
+  'M-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0 M0 -12 v-4 M10.4 -6 l3.5 -2 M10.4 6 l3.5 2 M0 12 v4 M-10.4 6 l-3.5 2 M-10.4 -6 l-3.5 -2 M-3 -2 h0.01 M3 -2 h0.01 M-4 3 Q0 6 4 3'
+
+/** The ring of small fish round it on Bepo's yukata. */
+const FISH_RING =
+  'M-10 -24 q4 -4 9 0 q-5 4 -9 0 l-3 -3 v6 z M12 -24 q4 -4 9 0 q-5 4 -9 0 l-3 -3 v6 z M22 -4 q-4 -4 -9 0 q5 4 9 0 l3 -3 v6 z M22 12 q-4 -4 -9 0 q5 4 9 0 l3 -3 v6 z M-22 -4 q4 -4 9 0 q-5 4 -9 0 l-3 -3 v6 z M-22 12 q4 -4 9 0 q-5 4 -9 0 l-3 -3 v6 z M-8 26 q4 -4 9 0 q-5 4 -9 0 l-3 -3 v6 z M8 26 q-4 -4 -9 0 q5 4 9 0 l3 -3 v6 z'
+
+/** Bepo's small brown boot side on, set down beside his suit. */
+const BEPO_BOOT: Stroke[] = moved(
+  [
+    { d: 'M0 0 H32 V24 C48 26 62 30 64 42 V48 H0 Z' },
+    { d: 'M0 42 H64 M32 24 C30 32 28 38 26 42', role: 'soft' },
+  ],
+  'translate(104 140) scale(0.75)',
+)
+
+/**
+ * Bepo's orange boiler suit laid out flat: the collar, the zip and the belt
+ * line, the cuffs and hems, the side turning away hatched. The suit stays
+ * the same at every stage that keeps it; only what the story adds changes.
+ */
+const BEPO_SUIT: Stroke[] = [
+  {
+    d: 'M50 28 L34 34 L12 92 L26 98 L40 60 L42 110 L34 172 H58 L66 122 L74 172 H98 L90 110 L92 60 L106 98 L120 92 L98 34 L82 28 Q66 36 50 28 Z',
+  },
+  { d: 'M50 28 L58 44 L66 38 L74 44 L82 28', role: 'soft' },
+  {
+    d: 'M66 40 V120 M42 110 H90 M14 88 l12 6 M118 88 l-12 6 M34 166 H58 M74 166 H98',
+    role: 'soft',
+  },
+  {
+    d: 'M88 80 l4 -4 M88 94 l4 -4 M86 130 l6 -4 M84 146 l8 -4 M84 160 l8 -4',
+    role: 'ambient',
+  },
+  ...BEPO_BOOT,
+]
+
+/**
+ * Bepo's suit with the Heart Pirates' Jolly Roger on its chest in his
+ * colour: his first drawing, and the drawing again each time a stage ends.
+ */
+const BEPO: Stroke[] = [
+  ...BEPO_SUIT,
+  { d: HEART_ROGER, role: 'accent', transform: 'translate(78 66)' },
+  shadow(80, 182, 64),
+]
+
+/**
+ * Apoo's headphones lying in three-quarters, the band doubled, one cup
+ * turned to the reader in his colour and the other on its edge, its side
+ * hatched.
+ */
+const APOO_HEADPHONES: Stroke[] = [
+  { d: 'M42 124 C36 70 60 36 96 38 C126 40 138 70 128 120' },
+  { d: 'M50 122 C46 76 66 48 96 48 C120 50 130 74 122 118', role: 'soft' },
+  { d: ellipse(42, 140, 20, 24), role: 'accent' },
+  { d: ellipse(42, 140, 12, 15), role: 'soft' },
+  {
+    d: 'M22 140 C22 160 30 168 40 170 M62 140 C64 156 58 166 48 168',
+    role: 'soft',
+  },
+  {
+    d: 'M122 116 L138 116 C144 130 144 150 138 162 L122 162 C116 150 116 130 122 116 Z',
+    role: 'soft',
+  },
+  {
+    d: 'M138 116 C146 118 148 160 138 162 M126 124 l8 -4 M124 138 l10 -5 M124 152 l10 -5',
+    role: 'ambient',
+  },
+]
+
+/**
+ * The same headphones, smaller and plain, with three rings of sound coming
+ * off the far cup in his colour: the music he plays on his own body.
+ */
+const APOO_SOUND: Stroke[] = [
+  ...moved(softened(APOO_HEADPHONES), 'translate(0 26) scale(0.8)'),
+  {
+    d: 'M122 112 C130 120 130 136 122 144 M132 104 C144 116 144 140 132 152 M142 96 C158 112 158 144 142 160',
+    role: 'accent',
+  },
+]
+
+/** Drake's cocked hat, side on, plume curling off the back, on the ground. */
+const DRAKE_HAT: Stroke[] = [
+  {
+    d: 'M16 112 C30 80 58 62 92 62 C118 62 138 74 146 94 C130 90 114 92 102 100 C76 108 46 110 16 112 Z',
+  },
+  { d: 'M56 106 C66 92 92 86 112 92', role: 'soft' },
+  {
+    d: 'M40 102 l12 -18 M54 102 l14 -24 M68 100 l14 -26 M82 96 l14 -26 M96 90 l12 -20 M110 80 l10 -14',
+    role: 'ambient',
+  },
+  {
+    d: 'M92 62 C96 48 112 40 124 46 C130 36 146 38 150 50 C158 52 160 64 154 70 C146 66 140 70 140 78',
+    role: 'accent',
+  },
+  { d: 'M108 50 l2 8 M126 48 l-2 8 M142 52 l-4 6 M150 64 l-6 2', role: 'soft' },
+  { d: 'M24 120 H136', role: 'ambient', dashed: true },
+]
+
+/** The sword and the axe he wears at his belt, lying crossed on the ground. */
+const DRAKE_CROSSED: Stroke[] = [
+  { d: 'M32.7 158.9 L146 128 L31.3 153.1' },
+  { d: 'M34.1 164.7 L29.9 147.3 M14 160 L32 156' },
+  { d: 'M17.2 134.4 L123.2 168.4 L124.8 163.6 L18.8 129.6 Z' },
+  {
+    d: 'M122 160 C130 150 144 150 152 156 C146 164 144 172 146 180 C138 180 128 176 124 170 Z',
+  },
+  { d: 'M134 158 l4 10 M142 157 l2 12', role: 'ambient' },
+]
+
+/**
+ * The black band he wears across his eyes after the timeskip, lying in 3/4
+ * with its knot tails in his colour.
+ */
+const DRAKE_EYE_BAND: Stroke[] = [
+  { d: 'M10 70 C10 56 98 54 98 70 C98 84 10 84 10 70 Z' },
+  { d: 'M18 70 C18 62 90 61 90 70', role: 'soft' },
+  { d: 'M10 70 V82 C10 98 98 98 98 82 V70' },
+  {
+    d: 'M18 86 l6 -10 M30 90 l7 -11 M44 92 l7 -12 M58 92 l7 -12 M72 90 l7 -11 M86 86 l6 -10',
+    role: 'ambient',
+  },
+  {
+    d: 'M96 80 C106 84 112 94 112 106 C108 100 104 96 98 94 M94 88 C100 96 100 106 96 114',
+    role: 'accent',
+  },
+]
+
+/** Pappag the starfish in three-quarters, his tam tilted on the top arm. */
+const PAPPAG_STAR: Stroke[] = [
+  {
+    d: 'M80 64 L92 104 L134 106 L100 130 L114 170 L80 146 L46 170 L60 130 L26 106 L68 104 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M114 170 l2 6 L80 152 L44 176 L46 170 M134 106 l2 4 L104 134',
+    role: 'soft',
+  },
+  {
+    d: 'M80 82 V112 M96 114 L116 110 M92 130 L104 154 M68 130 L56 154 M64 114 L44 110',
+    role: 'soft',
+  },
+  { d: 'M118 112 l-4 8 M110 160 l-4 -6 M50 160 l4 -6', role: 'ambient' },
+  // The tam, tilted.
+  {
+    d: 'M60 72 C56 58 64 44 84 42 C104 40 112 52 106 62 M58 70 C66 76 100 70 108 62',
+    transform: 'translate(0 8) rotate(-14 82 62)',
+  },
+  {
+    d: `${circle(82, 38, 4)} M70 50 q12 6 26 -2`,
+    role: 'soft',
+    transform: 'translate(0 8) rotate(-14 82 62)',
+  },
+]
 
 /** The drawings of the records filed in the summit war stretch of the route. */
 export const summitWarArt = {
@@ -335,42 +491,32 @@ export const summitWarArt = {
     shadow(86, 194, 64),
   ],
 
-  // A stretch of the Level 6 cell wall, its square iron plate and a heavy
-  // chain sagging from it to a cuff on the floor, and beside it the great
-  // wave of his epithet, the crest in his colour. He is chained in that cell
-  // next to Ace in episode 430. The Sunny's helm rides the same wave from 980,
-  // in `summitWarRedrawn`.
+  // His epithet's great wave, the crest in his colour, and beside it a stub
+  // of the Level 6 cell wall with its iron plate and the chain sagging to a
+  // cuff on the floor: he is chained in that cell next to Ace in episode 430
+  // (ch. 528). The wave stays: over the open sea with the cuff broken from
+  // 451, carrying the Sunny's helm from 980, in `summitWarRedrawn`.
   'jinbe': [
-    { d: 'M6 150 V24 H78 V150', role: 'soft' },
+    ...moved(GREAT_WAVE, 'translate(34 30) scale(0.8)'),
+    { d: 'M-4 64 H36 V160', role: 'soft' },
     {
-      d: 'M6 48 H78 M6 72 H78 M6 96 H78 M6 120 H78 M32 24 V48 M60 24 V48 M18 48 V72 M46 48 V72 M74 48 V72 M32 72 V96 M60 96 V120 M18 96 V120 M46 120 V150',
+      d: 'M-4 88 H36 M-4 112 H36 M-4 136 H36 M16 64 V88 M8 88 V112 M24 112 V136 M12 136 V160',
       role: 'ambient',
     },
-    { d: 'M78 24 L86 30 V154 L78 150', role: 'soft' },
-    {
-      d: 'M80 44 l4 -4 M80 68 l4 -4 M80 92 l4 -4 M80 116 l4 -4 M80 140 l4 -4',
-      role: 'ambient',
-    },
-    { d: 'M20 36 h22 v22 h-22z M24 40 h14 v14 h-14z' },
-    { d: ellipse(31, 62, 4, 6) },
+    { d: 'M10 72 h14 v14 h-14z' },
     {
       d: [
-        ellipse(33, 78, 6, 10),
-        ellipse(42, 108, 6, 10),
-        ellipse(52, 136, 6, 9),
+        ellipse(17, 94, 3, 5),
+        ellipse(20, 106, 3, 5),
+        ellipse(24, 118, 3, 5),
+        ellipse(29, 130, 3, 5),
       ].join(' '),
     },
-    { d: 'M36 90 l3 6 M46 120 l3 6', role: 'soft' },
     {
-      d: `${ellipse(68, 150, 16, 6)} ${ellipse(68, 150, 10, 3.5)} M52 150 v5 C52 162 84 162 84 155 V150`,
+      d: `${ellipse(34, 150, 12, 4.5)} ${ellipse(34, 150, 7, 2.5)} M22 150 v4 C22 160 46 160 46 154 V150`,
     },
-    { d: 'M78 156 l4 -4 M72 158 l4 -4', role: 'ambient' },
-    { d: 'M0 166 H160', role: 'ambient', dashed: true },
-    ...GREAT_WAVE.map((stroke): Stroke => {
-      // The same wave, smaller, beside the wall.
-      return { ...stroke, transform: 'translate(78 58) scale(0.62)' }
-    }),
-    shadow(68, 172, 26),
+    { d: 'M-4 162 H164', role: 'ambient', dashed: true },
+    shadow(90, 168, 44),
   ],
 
   // Marine Headquarters, the castle of many storeys at the back of
@@ -403,90 +549,126 @@ export const summitWarArt = {
     },
     ...SEA,
   ],
-  // A newspaper folded open over the sea, the headline across the top, and a
-  // gull carrying the next edition in.
+  // The Ox Bell on its frame in Marineford's broken plaza, swinging as it is
+  // rung, the motion either side in the record's colour, the bay below.
+  // Luffy rings it sixteen times inside the arc, in episode 511 (ch. 594),
+  // and Brannew reports it. No size is given: the manga and the anime draw
+  // the bell at different sizes.
   'post-war': [
-    { d: 'M34 70 L118 58 L128 136 L44 148z' },
-    { d: 'M76 64 L86 142', role: 'soft' },
-    { d: 'M42 84 L110 74', role: 'accent' },
     {
-      d: 'M46 100 L74 96 M48 114 L76 110 M50 128 L78 124 M88 92 L116 88 M90 106 L118 102 M92 120 L120 116',
+      d: 'M30 150 V36 M130 150 V36 M22 36 H138 M22 28 H138 M22 28 V36 M138 28 V36',
+    },
+    { d: 'M30 52 L50 36 M130 52 L110 36', role: 'soft' },
+    { d: 'M80 36 V48' },
+    {
+      d: 'M68 48 H92 C96 48 98 54 98 62 C98 82 100 98 112 108 H48 C60 98 62 82 62 62 C62 54 64 48 68 48 Z',
+    },
+    { d: ellipse(80, 108, 32, 6) },
+    { d: 'M80 114 V122 M80 126 h0.01', role: 'soft' },
+    {
+      d: 'M90 60 l6 -4 M92 74 l6 -4 M94 88 l6 -4 M100 100 l6 -4',
       role: 'ambient',
     },
-    { d: 'M112 34 q8 -8 16 0 q8 -8 16 0', role: 'accent' },
-    { d: 'M124 38 h8 v6 h-8z', role: 'soft' },
+    {
+      d: 'M40 70 C34 78 34 90 40 98 M30 64 C22 76 22 92 30 104 M120 70 C126 78 126 90 120 98 M130 64 C138 76 138 92 130 104',
+      role: 'accent',
+    },
+    { d: 'M-4 150 H48 L54 146 L60 152 L70 148 H164' },
+    {
+      d: 'M54 146 L50 140 M70 148 l4 -6 l6 2 M104 150 l3 -5 l6 1 l2 4 M8 150 l4 -6 l5 3',
+      role: 'soft',
+    },
     ...SEA,
   ],
 
-  // The Sea Rabbit at the foot of the Red Line: it comes up out of the dark
-  // after the Shark Submerge and surfaces beside the Sunny, where Luffy beats
-  // it and it spits out Camie and Pappag (episode 385). Its scaled neck is
-  // arched, the far side hatched, the furred head turned to the left with no
-  // face, the long ears in the record's colour; behind it the wall's rough
-  // top, its sheer face and strata. The archipelago is not in sight until
-  // episode 390.
+  // Two of the giant Yarukiman mangroves at the foot of the Red Line, their
+  // trunks striped and their roots arching out of the sea, and the resin
+  // bubbles they breathe out rising past them in the record's colour; the
+  // wall's rough top behind. The crew reach the archipelago inside the arc,
+  // in episode 390 (ch. 496).
   'sabaody': [
     {
-      d: 'M-4 58 L12 54 L24 60 L40 52 L50 55 M96 50 L102 49 L118 54 L134 48 L150 53 L164 50',
+      d: 'M-4 24 L12 20 L28 26 L44 18 L60 22 L76 16 L94 21 L110 15 L126 20 L142 14 L164 19',
     },
     {
-      d: 'M24 60 C22 90 26 120 24 150 M134 48 C136 82 132 116 136 150',
-      role: 'soft',
-    },
-    {
-      d: 'M-4 74 H36 M-4 94 H34 M-4 114 H40 M-4 134 H58 M128 70 H164 M126 90 H164 M132 110 H164 M134 130 H164',
+      d: 'M-4 44 H12 M-4 64 H8 M-4 84 H10 M148 40 H164 M152 60 H164 M150 80 H164 M150 100 H164',
       role: 'ambient',
       dashed: true,
     },
-    { d: 'M122 152 C126 118 110 98 90 92 M94 152 C96 130 88 114 74 106' },
+    { d: 'M48 150 C52 124 50 98 54 74 M76 150 C72 124 74 98 70 74' },
     {
-      d: 'M74 106 C62 106 50 104 44 98 C36 92 36 80 46 74 C54 68 70 68 80 74 C88 78 92 86 90 92',
+      d: 'M54 74 C40 76 26 70 28 60 C22 52 30 42 40 44 C42 34 56 32 62 38 C68 30 82 32 84 40 C94 38 102 48 96 56 C100 66 88 74 70 74 Z',
     },
     {
-      d: 'M60 70 C54 52 52 34 58 22 C66 32 70 52 68 70 M72 70 C74 52 80 36 90 26 C94 40 88 58 80 74',
+      d: 'M53 86 l18 -6 M52 104 l20 -6 M51 122 l22 -6 M50 140 l24 -6',
+      role: 'soft',
+    },
+    { d: 'M70 82 l6 -4 M71 98 l5 -4 M72 114 l5 -4', role: 'ambient' },
+    {
+      d: 'M48 150 C42 138 30 136 22 152 M76 150 C82 138 94 138 100 152 M60 150 C56 142 58 136 62 130 M66 150 C70 142 68 136 64 130',
+      role: 'soft',
+    },
+    {
+      d: 'M118 150 C120 130 118 112 121 94 M136 150 C134 130 136 112 133 94 M121 94 C110 94 104 86 108 80 C106 72 114 68 120 72 C124 64 136 66 138 72 C146 72 150 80 144 86 C144 92 138 94 133 94',
+    },
+    { d: 'M120 106 l14 -4 M119 122 l16 -4 M119 138 l16 -4', role: 'soft' },
+    {
+      d: 'M118 150 C112 142 104 142 100 152 M136 150 C142 142 150 142 156 152',
+      role: 'soft',
+    },
+    {
+      d: `${circle(94, 118, 8)} ${circle(102, 92, 6)} ${circle(90, 72, 4.5)} ${circle(30, 110, 6)} ${circle(22, 86, 4)} ${circle(146, 116, 4)}`,
       role: 'accent',
-    },
-    { d: 'M74 106 q4 -5 8 0 q4 -5 8 0 q3 -4 6 -2', role: 'soft' },
-    {
-      d: 'M100 108 q6 5 12 0 M102 124 q6 5 12 0 M104 140 q6 5 12 0 M86 120 q5 4 10 0 M90 136 q5 4 10 0',
-      role: 'soft',
-    },
-    { d: 'M114 112 l6 -4 M118 126 l6 -4 M120 140 l6 -4', role: 'ambient' },
-    {
-      d: 'M80 154 C84 148 90 148 94 152 M122 152 C126 148 132 148 136 154',
-      role: 'soft',
     },
     ...SEA,
   ],
 
-  // Three of the jungle mushrooms Luffy eats when he lands, in
-  // three-quarters on the jungle floor, the biggest cap in the record's colour
-  // and its stem hatched on the shaded side. He falls into that jungle and
-  // eats them in episode 408.
+  // The Perfume Yuda side on: a red junk with the cabin on its deck, two
+  // masts with battened sails, the Kuja Jolly Roger (a skull with its snakes)
+  // on the front one, paddle wheels at the stern and, in place of a
+  // figurehead, two Yuda harnessed at the bow, the harness in the record's
+  // colour. It brings the empress back from the Calm Belt inside the arc, in
+  // episode 410 (ch. 516).
   'amazon-lily-arc': [
-    { d: 'M2 150 C40 146 120 146 158 150', role: 'ambient' },
-    { d: 'M22 96 C22 60 104 56 108 94 C92 104 38 104 22 96 Z', role: 'accent' },
+    { d: 'M46 140 C60 148 120 148 140 140 L156 96 L140 108 H70 L50 100 Z' },
     {
-      d: 'M22 96 C40 110 92 110 108 94 M40 100 l4 6 M54 103 l2 6 M70 104 v6 M86 102 l-2 6',
+      d: 'M54 120 C80 126 120 126 146 116 M50 130 C80 136 120 136 144 128',
       role: 'soft',
     },
     {
-      d: 'M54 106 C52 120 50 136 48 150 M78 106 C80 120 82 136 84 150 M48 150 Q66 156 84 150',
+      d: 'M74 142 l6 -8 M92 144 l6 -8 M110 144 l6 -8 M128 141 l6 -8',
+      role: 'ambient',
     },
-    { d: 'M80 108 l-6 8 M82 122 l-6 8 M83 136 l-6 8', role: 'ambient' },
-    { d: 'M98 120 C98 100 140 98 144 118 C134 124 108 126 98 120 Z' },
+    { d: 'M90 108 V90 H122 V108 M84 90 Q106 78 128 90 M88 84 Q106 70 124 82' },
+    { d: 'M78 108 V20 M138 104 V44' },
     {
-      d: 'M114 124 V150 M128 124 V150 M114 150 Q121 153 128 150',
+      d: 'M78 28 C94 28 104 32 106 38 V84 C96 80 86 80 78 82 M138 50 C148 50 154 54 154 58 V90 C150 88 144 88 138 90',
+    },
+    {
+      d: 'M78 44 C92 44 100 46 106 50 M78 70 C92 70 100 72 106 76 M138 66 C146 66 152 68 154 70',
       role: 'soft',
     },
     {
-      d: 'M16 132 C14 120 38 118 40 130 C34 134 22 134 16 132 Z M24 134 V150 M32 134 V150',
-    },
-    {
-      d: 'M146 150 C144 130 136 116 124 108 M146 150 C150 134 156 124 164 118 M6 150 C8 140 4 130 -4 124',
+      d: `M86 58 C86 50 98 50 98 58 C98 62 95 64 92 64 C89 64 86 62 86 58 Z ${circle(89.5, 57, 1.2)} ${circle(94.5, 57, 1.2)} M98 54 c3 -2 5 0 7 -2 M98 58 c3 0 5 2 7 0 M97 62 c3 2 5 4 7 2`,
       role: 'soft',
     },
-    shadow(80, 166, 70),
+    {
+      d: `${circle(148, 128, 9)} M148 119 V137 M139 128 H157 M141.6 121.6 L154.4 134.4 M154.4 121.6 L141.6 134.4`,
+      role: 'soft',
+    },
+    {
+      d: 'M40 158 C32 138 32 118 40 104 C44 96 42 88 34 86 L14 84 C6 84 4 90 10 92 L28 96 C30 98 30 102 28 106 C22 120 22 140 28 158',
+    },
+    {
+      d: 'M18 156 C12 140 12 126 16 116 C18 110 16 104 10 102 L-4 100 M8 156 C4 142 4 128 6 120',
+      role: 'soft',
+    },
+    { d: 'M36 118 l5 -3 M36 132 l5 -3 M36 146 l5 -3', role: 'ambient' },
+    {
+      d: `${ellipse(34, 112, 7, 3)} M41 112 L52 104 ${ellipse(12, 124, 6, 2.5)} M18 124 C30 118 42 110 52 104`,
+      role: 'accent',
+    },
+    ...SEA,
   ],
 
   // Impel Down from the deck of the warship coming in: the round wall standing
@@ -545,33 +727,9 @@ export const summitWarArt = {
 
   // A starfish turned three-quarters to the reader, its arms ridged and their
   // undersides showing, the tam tilted on the top arm. He rides on Camie's
-  // head from episode 385.
-  'pappag': [
-    {
-      d: 'M80 64 L92 104 L134 106 L100 130 L114 170 L80 146 L46 170 L60 130 L26 106 L68 104 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M114 170 l2 6 L80 152 L44 176 L46 170 M134 106 l2 4 L104 134',
-      role: 'soft',
-    },
-    {
-      d: 'M80 82 V112 M96 114 L116 110 M92 130 L104 154 M68 130 L56 154 M64 114 L44 110',
-      role: 'soft',
-    },
-    { d: 'M118 112 l-4 8 M110 160 l-4 -6 M50 160 l4 -6', role: 'ambient' },
-    // The tam, tilted.
-    {
-      d: 'M60 72 C56 58 64 44 84 42 C104 40 112 52 106 62 M58 70 C66 76 100 70 108 62',
-      transform: 'translate(0 8) rotate(-14 82 62)',
-    },
-    {
-      d: `${circle(82, 38, 4)} M70 50 q12 6 26 -2`,
-      role: 'soft',
-      transform: 'translate(0 8) rotate(-14 82 62)',
-    },
-    shadow(80, 186, 46),
-  ],
+  // head from episode 385. After the timeskip he wears sunglasses and a bow
+  // tie, from 529 (ch. 610), in `summitWarRedrawn`.
+  'pappag': [...PAPPAG_STAR, shadow(80, 186, 46)],
 
   // His harpoon gun in three-quarters: the stock joined to a boxy receiver,
   // its far side hatched, the barrel, and four harpoons out of the muzzle,
@@ -628,35 +786,27 @@ export const summitWarArt = {
     shadow(80, 176, 74),
   ],
 
-  // The explosive collar a moment before it goes off: a band standing open
-  // on the floor, hatched on its shaded side, the lock block on its front and
-  // the blast at the lock in his colour; the key lying beside it gives its
-  // size. He takes it off Camie's neck in the auction house in episode 398.
+  // His round spectacles folded shut and hung by a temple from the top of
+  // his sword's cross hilt, the two lenses overlapping in 3/4 in his colour,
+  // the far rim seen through the near lens, clear of the blade. The sword
+  // lies on its side beneath them: a double-edged straight blade, the guard
+  // standing up, the wrapped grip and the round pommel. He is first seen in
+  // the glasses in episode 398 (ch. 504), and he stops Kizaru with the sword
+  // inside the arc, in episode 404 (ch. 512).
   'silvers-rayleigh': [
-    {
-      d: 'M58 136 C30 132 20 118 24 106 C30 90 60 84 84 86 C108 88 128 96 132 110',
-    },
-    {
-      d: 'M58 120 C40 118 34 112 36 106 C40 98 60 96 82 98 C102 100 116 104 120 112',
-      role: 'soft',
-    },
-    {
-      d: 'M24 106 V122 C20 134 34 146 58 150 V136 M132 110 V126 C134 138 120 148 100 150',
-    },
-    {
-      d: 'M76 134 h28 v24 h-28z M104 134 l10 -6 v24 l-10 6 M76 134 l10 -6 h28',
-    },
-    { d: 'M90 141 v9', role: 'soft' },
-    { d: 'M28 128 l8 -4 M36 138 l8 -4 M46 144 l8 -4', role: 'ambient' },
-    {
-      d: 'M116 128 l14 -12 M120 140 l18 -2 M118 152 l14 10 M96 126 l2 -14 M108 124 l8 -12',
-      role: 'accent',
-    },
-    {
-      d: 'M30 172 h26 M56 172 l6 -4 v8 z M34 172 v6 h4 v-6 M42 172 v4',
-      role: 'soft',
-    },
-    shadow(80, 182, 66),
+    { d: 'M102 154 L40 156 L28 162 L40 168 L102 170 Z' },
+    { d: 'M100 162 L38 162', role: 'soft' },
+    { d: 'M102 104 H110 V180 H102 Z' },
+    { d: 'M110 156 H136 C140 156 140 168 136 168 H110' },
+    { d: 'M116 156 l3 12 M124 156 l3 12 M132 156 l3 12', role: 'soft' },
+    { d: circle(147, 162, 9) },
+    { d: 'M142 167 l8 -8 M146 170 l6 -6', role: 'ambient' },
+    { d: 'M101 112 C100 98 112 96 112 106 L112 116' },
+    { d: `${circle(124, 124, 17)} ${circle(140, 130, 17)}`, role: 'accent' },
+    { d: 'M131 108 Q135 106 139 113' },
+    { d: 'M112 118 L150 122', role: 'soft' },
+    { d: 'M131 120 q3 -6 9 -6', role: 'soft' },
+    shadow(90, 186, 60),
   ],
 
   // One of his gauntlets lying on its side, the cuff flaring open towards the
@@ -685,46 +835,18 @@ export const summitWarArt = {
     shadow(66, 182, 48),
   ],
 
-  // His small brown boots standing side by side, the near one with its top
-  // in his colour and its shaded side hatched, the far one set back. He wears
-  // them behind Law at Sabaody in episode 392 (chapter 498).
-  'bepo': [
-    { d: BEPO_BOOT, transform: BEPO_FAR, role: 'soft' },
-    { d: ellipse(16, 0, 16, 5), transform: BEPO_FAR, role: 'soft' },
-    { d: BEPO_SOLE, transform: BEPO_FAR, role: 'soft' },
-    { d: BEPO_BOOT, transform: BEPO_NEAR },
-    { d: ellipse(16, 0, 16, 5), transform: BEPO_NEAR, role: 'accent' },
-    { d: BEPO_SOLE, transform: BEPO_NEAR, role: 'soft' },
-    {
-      d: 'M4 10 l6 6 M4 22 l6 6 M4 34 l6 6',
-      transform: BEPO_NEAR,
-      role: 'ambient',
-    },
-    shadow(82, 168, 70),
-  ],
+  // His orange boiler suit laid out flat, the Heart Pirates' Jolly Roger on
+  // its chest in his colour, one of his small brown boots set down beside
+  // it. He wears it behind Law at Sabaody in episode 392 (ch. 498). In Wano
+  // the suit gives way to a yukata from 899 and comes back at 978; Sulong
+  // grows his fur from 1009 to 1021; both in `summitWarRedrawn`.
+  'bepo': BEPO,
 
-  // His headphones lying in three-quarters, the band doubled, one cup turned
-  // to the reader and the other on its edge with its side hatched, both cups
-  // in his colour. He wears them into Sabaody in episode 392.
-  'scratchmen-apoo': [
-    { d: 'M42 124 C36 70 60 36 96 38 C126 40 138 70 128 120' },
-    { d: 'M50 122 C46 76 66 48 96 48 C120 50 130 74 122 118', role: 'soft' },
-    { d: ellipse(42, 140, 20, 24), role: 'accent' },
-    { d: ellipse(42, 140, 12, 15), role: 'soft' },
-    {
-      d: 'M22 140 C22 160 30 168 40 170 M62 140 C64 156 58 166 48 168',
-      role: 'soft',
-    },
-    {
-      d: 'M122 116 L138 116 C144 130 144 150 138 162 L122 162 C116 150 116 130 122 116 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M138 116 C146 118 148 160 138 162 M126 124 l8 -4 M124 138 l10 -5 M124 152 l10 -5',
-      role: 'ambient',
-    },
-    shadow(84, 180, 60),
-  ],
+  // His headphones lying in three-quarters, the band doubled, the cup turned
+  // to the reader in his colour and the other on its edge with its side
+  // hatched. He wears them into Sabaody in episode 392. Their sound shows
+  // from 402 and the Beasts Pirates' flag from 774, in `summitWarRedrawn`.
+  'scratchmen-apoo': [...APOO_HEADPHONES, shadow(84, 180, 60)],
 
   // A tarot card stood on its edge at an angle, so its thickness shows, its
   // face left blank; three more lying face down in front of it, their dark
@@ -751,34 +873,10 @@ export const summitWarArt = {
   // His cocked hat side on, the brim sweeping to a point at the front, the
   // dark crown hatched and the white plume curling off the back; under it,
   // lying crossed on the ground, the sword and the axe he wears at his belt.
-  // He arrives at Sabaody in episode 392.
-  'x-drake': [
-    {
-      d: 'M16 112 C30 80 58 62 92 62 C118 62 138 74 146 94 C130 90 114 92 102 100 C76 108 46 110 16 112 Z',
-    },
-    { d: 'M56 106 C66 92 92 86 112 92', role: 'soft' },
-    {
-      d: 'M40 102 l12 -18 M54 102 l14 -24 M68 100 l14 -26 M82 96 l14 -26 M96 90 l12 -20 M110 80 l10 -14',
-      role: 'ambient',
-    },
-    {
-      d: 'M92 62 C96 48 112 40 124 46 C130 36 146 38 150 50 C158 52 160 64 154 70 C146 66 140 70 140 78',
-      role: 'accent',
-    },
-    {
-      d: 'M108 50 l2 8 M126 48 l-2 8 M142 52 l-4 6 M150 64 l-6 2',
-      role: 'soft',
-    },
-    { d: 'M24 120 H136', role: 'ambient', dashed: true },
-    { d: 'M32.7 158.9 L146 128 L31.3 153.1' },
-    { d: 'M34.1 164.7 L29.9 147.3 M14 160 L32 156' },
-    { d: 'M17.2 134.4 L123.2 168.4 L124.8 163.6 L18.8 129.6 Z' },
-    {
-      d: 'M122 160 C130 150 144 150 152 156 C146 164 144 172 146 180 C138 180 128 176 124 170 Z',
-    },
-    { d: 'M134 158 l4 10 M142 157 l2 12', role: 'ambient' },
-    shadow(80, 186, 60),
-  ],
+  // He arrives at Sabaody in episode 392. The allosaurus foreleg comes at
+  // 402, the eye band at 736 and the Marine gull at 957, in
+  // `summitWarRedrawn`.
+  'x-drake': [...DRAKE_HAT, ...DRAKE_CROSSED, shadow(80, 186, 60)],
 
   // His pillar stood on end, a long six-sided stone with the far faces
   // hatched and a few cracks, his big bead necklace draped over the top in his
@@ -2478,9 +2576,15 @@ const ALLOSAURUS_FORELEG: Stroke[] = [
 
 /** Drake's sword and axe, made smaller and moved left to leave room for it. */
 const DRAKE_WEAPONS: Stroke[] = moved(
-  summitWarArt['x-drake'].slice(6, 11),
+  DRAKE_CROSSED,
   'translate(-8 46) scale(0.7)',
 )
+
+/** The Marines' emblem, the simplified gull, wings spread. */
+const MARINE_GULL: Stroke = {
+  d: 'M18 36 C26 24 40 22 50 32 C54 28 58 28 60 32 C70 22 84 24 92 36 M50 32 C52 38 58 38 60 32 M55 36 V44 l-4 4 M55 44 l4 4',
+  role: 'accent',
+}
 
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const summitWarRedrawn: Redrawings = {
@@ -2603,11 +2707,9 @@ export const summitWarRedrawn: Redrawings = {
           role: 'ambient',
         },
         { d: `${circle(68, 56, 7)} ${dot(68, 56)}`, role: 'accent' },
-        ...GREAT_WAVE.map((stroke) => ({
-          // The same wave, smaller, so its crest carries the wheel.
-          ...stroke,
-          transform: 'translate(16 44) scale(0.8)',
-        })),
+        // The same wave, smaller, so its crest carries the wheel; the crest
+        // is plain here, so the hub keeps the one accent.
+        ...moved(softened(GREAT_WAVE), 'translate(16 44) scale(0.8)'),
         ...SEA.slice(1),
       ],
     },
@@ -2770,13 +2872,10 @@ export const summitWarRedrawn: Redrawings = {
       episode: 402,
       chapter: 509,
       value: [
-        ...moved(
-          summitWarArt['x-drake'].slice(0, 6),
-          'translate(-2 22) scale(0.7)',
-        ),
+        ...moved(DRAKE_HAT, 'translate(-2 22) scale(0.7)'),
         ...DRAKE_WEAPONS,
         ...ALLOSAURUS_FORELEG,
-        ...summitWarArt['x-drake'].slice(11),
+        shadow(80, 186, 60),
       ],
     },
     // After the timeskip the cocked hat is gone: in its place the black band
@@ -2786,20 +2885,130 @@ export const summitWarRedrawn: Redrawings = {
       episode: 736,
       chapter: 793,
       value: [
-        { d: 'M10 70 C10 56 98 54 98 70 C98 84 10 84 10 70 Z' },
-        { d: 'M18 70 C18 62 90 61 90 70', role: 'soft' },
-        { d: 'M10 70 V82 C10 98 98 98 98 82 V70' },
-        {
-          d: 'M18 86 l6 -10 M30 90 l7 -11 M44 92 l7 -12 M58 92 l7 -12 M72 90 l7 -11 M86 86 l6 -10',
-          role: 'ambient',
-        },
-        {
-          d: 'M96 80 C106 84 112 94 112 106 C108 100 104 96 98 94 M94 88 C100 96 100 106 96 114',
-          role: 'accent',
-        },
+        ...DRAKE_EYE_BAND,
         ...DRAKE_WEAPONS,
         ...ALLOSAURUS_FORELEG,
-        ...summitWarArt['x-drake'].slice(11),
+        shadow(80, 186, 60),
+      ],
+    },
+    // The same band (its knot tails now plain), sword, axe and foreleg, and
+    // above the band the Marines' gull emblem in his colour, set beside it as
+    // a symbol: he is a SWORD captain undercover, as his call to Koby shows
+    // at 957 (ch. 956).
+    {
+      episode: 957,
+      chapter: 956,
+      value: [
+        MARINE_GULL,
+        ...softened(DRAKE_EYE_BAND),
+        ...DRAKE_WEAPONS,
+        ...ALLOSAURUS_FORELEG,
+        shadow(80, 186, 60),
+      ],
+    },
+  ],
+
+  // The same starfish and tam after the timeskip, the star itself now plain:
+  // sunglasses across the middle in his colour, their dark lenses hatched,
+  // and a small bow tie below. He first appears like this at the Mermaid
+  // Cafe at 529 (ch. 610); no logo is drawn on the rims.
+  'pappag': [
+    {
+      episode: 529,
+      chapter: 610,
+      value: [
+        ...softened(PAPPAG_STAR),
+        {
+          d: `${ellipse(70, 113, 9, 7)} ${ellipse(90, 113, 9, 7)} M79 112 Q80 110 81 112`,
+          role: 'accent',
+        },
+        {
+          d: 'M64 112 l6 -5 M66 118 l8 -7 M84 112 l6 -5 M86 118 l8 -7',
+          role: 'ambient',
+        },
+        { d: 'M80 132 L72 127 V137 Z M80 132 L88 127 V137 Z' },
+        shadow(80, 186, 46),
+      ],
+    },
+  ],
+
+  'bepo': [
+    // In Wano the suit is put away: his yukata laid out from the back, its
+    // wide sleeves and obi, the far side hatched, and across the back the
+    // Heart Pirates' Jolly Roger ringed by fish in his colour. He wears it
+    // on the mountain above Okobore Town at 899 (ch. 913 p. 17).
+    {
+      episode: 899,
+      chapter: 913,
+      value: [
+        { d: 'M50 30 Q66 36 82 30 L96 36 V176 H36 V36 Z' },
+        {
+          d: 'M36 40 H6 V96 Q6 106 16 106 H30 M96 40 H126 V96 Q126 106 116 106 H102',
+        },
+        { d: 'M50 30 Q66 24 82 30', role: 'soft' },
+        { d: 'M36 112 H96 M36 128 H96' },
+        {
+          d: 'M110 52 l8 -6 M110 68 l8 -6 M110 84 l8 -6 M84 148 l8 -6 M84 164 l8 -6',
+          role: 'ambient',
+        },
+        { d: 'M12 60 V96 M30 106 L36 96 M102 106 L96 96', role: 'soft' },
+        {
+          d: `${HEART_ROGER} ${FISH_RING}`,
+          transform: 'translate(66 70)',
+          role: 'accent',
+        },
+        shadow(66, 186, 50),
+      ],
+    },
+    // The boiler suit again, the yukata gone, when the Heart Pirates come
+    // back into the story to pull Kin'emon's group out of Orochi's trap at
+    // 978 (ch. 975). Inferred, not viewed: which outfit the crew wear there
+    // needs a frame check.
+    { episode: 978, chapter: 975, value: BEPO },
+    // Sulong under the full moon on Onigashima: the same suit and boot, his
+    // fur grown long and wild out of the collar and the cuffs, the full moon
+    // above in his colour and the Jolly Roger plain. He transforms at 1009
+    // (ch. 995 p. 4-6).
+    {
+      episode: 1009,
+      chapter: 995,
+      value: [
+        ...BEPO_SUIT,
+        { d: HEART_ROGER, role: 'soft', transform: 'translate(78 66)' },
+        {
+          d: 'M52 28 C44 16 34 10 22 10 M58 28 C54 14 46 6 36 2 M74 28 C78 14 86 6 96 4 M80 28 C88 18 98 14 110 16 M14 96 C8 104 2 106 -4 106 M20 98 C18 108 12 114 6 116 M118 94 C124 102 130 104 136 104 M112 98 C114 108 120 114 126 116',
+        },
+        { d: circle(138, 30, 14), role: 'accent' },
+        shadow(80, 182, 64),
+      ],
+    },
+    // The suit as it was, Sulong over: clouds cover the moon over Onigashima
+    // and the minks lose the form at 1021 (ch. 1006 p. 6). Inferred from
+    // Carrot and Wanda, not viewed for Bepo.
+    { episode: 1021, chapter: 1006, value: BEPO },
+  ],
+
+  'scratchmen-apoo': [
+    // His power, first shown when he saves Hawkins from Kizaru: the same
+    // headphones, smaller and plain, with three rings of sound coming off the
+    // far cup in his colour, at 402 (ch. 509 p. 17-19).
+    { episode: 402, chapter: 509, value: [...APOO_SOUND, shadow(70, 180, 50)] },
+    // His secret tie to Kaido: he reports to Kaido after Jack's defeat at 774
+    // (ch. 821 p. 19). The same headphones and sound, plain, with the Beasts
+    // Pirates' Jolly Roger on a small flag above them in his colour: the
+    // horned skull over four crossed bones.
+    {
+      episode: 774,
+      chapter: 821,
+      value: [
+        ...softened(APOO_SOUND),
+        { d: 'M104 8 V60 M104 10 H154 V48 H104' },
+        {
+          d: `M114 40 C114 30 140 30 140 40 C140 47 134 50 127 50 C120 50 114 47 114 40 Z ${circle(121.5, 40, 2.4)} ${circle(132.5, 40, 2.4)} M115 35 C109 31 108 25 111 20 M139 35 C145 31 146 25 143 20 M108 54 L146 30 M108 30 L146 54 M127 22 V60 M104 44 H150`,
+          role: 'accent',
+          transform: 'translate(129 29) scale(0.62) translate(-127 -40)',
+        },
+        shadow(70, 180, 50),
       ],
     },
   ],
