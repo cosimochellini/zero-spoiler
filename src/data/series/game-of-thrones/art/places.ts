@@ -1,4 +1,9 @@
-import { type Drawings, moved, type Stroke } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  type Stroke,
+} from '~/data/art/stroke'
 import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
 
 /** A ground line in the rule colour, for a place that stands on open ground. */
@@ -1354,3 +1359,292 @@ export const PLACE_DRAWINGS = {
   'womb-of-the-world': WOMB_OF_THE_WORLD,
   'whispering-wood': WHISPERING_WOOD,
 } satisfies Drawings
+
+/** Smoke rising from a ruin: two curls. */
+const smokeAt = (x: number, y: number): string =>
+  `M${String(x)} ${String(y)} q-6 -8 2 -16 q-6 -8 2 -16 `
+  + `M${String(x + 14)} ${String(y + 6)} q-4 -6 2 -12 q-4 -6 2 -12`
+
+/** Winterfell after the sack: the towers and keep broken, the gate burned out. */
+const WINTERFELL_BURNED: Stroke[] = [
+  {
+    d: 'M20 150 V90 L26 84 L32 92 L40 86 M120 86 L128 94 L134 84 L140 90 V150 M40 150 V86 M120 150 V86',
+  },
+  { d: 'M40 150 V104 H56 L60 112 L66 104 H120 V150' },
+  { d: 'M60 104 V66 L68 60 L74 70 L82 58 L90 68 L96 62 V104' },
+  { d: 'M70 150 V130 Q80 120 90 130 V150' },
+  { d: 'M74 146 l8 -6 M74 138 l10 -8 M78 150 l8 -6', role: 'ambient' },
+  { d: 'M108 104 Q106 84 112 70 M110 86 Q118 80 122 74', role: 'soft' },
+  {
+    d: 'M100 70 q2 -10 12 -8 q6 -8 14 0 q8 2 4 10 q4 8 -6 8 q-6 6 -14 0 q-10 0 -10 -10 Z',
+    role: 'accent',
+  },
+  { d: smokeAt(70, 56), role: 'soft' },
+  {
+    d: 'M134 100 l5 -3 M134 114 l5 -3 M134 128 l5 -3 M90 76 l5 -3 M90 90 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 156, 64),
+]
+
+/** Winterfell after the battle with the dead: a breach in the wall, the gate smashed. */
+const WINTERFELL_BREACHED: Stroke[] = [
+  { d: 'M20 150 V82 H40 V150 M120 150 V82 H140 V150' },
+  { d: 'M20 82 V76 H25 V82 M130 82 V76 H135 V82', role: 'soft' },
+  {
+    d: 'M40 150 V104 H50 L56 118 L62 110 M100 112 L106 120 L112 104 H120 V150 M40 150 H120',
+  },
+  { d: 'M60 104 V58 H96 V104 M60 58 V52 H66 V58 M84 58 V52 H90 V58' },
+  {
+    d: 'M70 150 V130 Q80 120 90 130 V150 M74 150 L84 128 M88 150 L80 138',
+    role: 'soft',
+  },
+  { d: 'M108 104 Q106 84 112 70 M110 86 Q118 80 122 74', role: 'soft' },
+  {
+    d: 'M100 70 q2 -10 12 -8 q6 -8 14 0 q8 2 4 10 q4 8 -6 8 q-6 6 -14 0 q-10 0 -10 -10 Z',
+    role: 'accent',
+  },
+  { d: 'M62 118 l6 4 M68 112 l6 4 M94 116 l6 4', role: 'soft' },
+  {
+    d: 'M134 92 l5 -3 M134 106 l5 -3 M134 120 l5 -3 M90 66 l5 -3 M90 80 l5 -3',
+    role: 'ambient',
+  },
+  shadow(80, 156, 64),
+]
+
+/** The winter town burned: roofless frames and fallen beams under the wall. */
+const WINTER_TOWN_BURNED: Stroke[] = [
+  {
+    d: 'M10 78 H150 M10 78 V72 H16 V78 M28 78 V72 H34 V78 M108 78 V72 H114 V78 M126 78 V72 H132 V78',
+    role: 'soft',
+  },
+  {
+    d: 'M20 150 V120 M52 150 V124 M20 120 L32 112 M58 150 V114 M98 150 V118 M58 114 L72 104',
+  },
+  { d: 'M104 150 V122 M136 150 V128 M104 122 L116 114', role: 'soft' },
+  { d: 'M70 150 V136 M86 150 V140 M66 150 L90 140', role: 'accent' },
+  { d: 'M24 150 L40 140 M110 150 L128 142', role: 'soft' },
+  { d: smokeAt(78, 98), role: 'soft' },
+  { d: 'M92 130 l5 -3 M92 142 l5 -3 M130 136 l5 -3', role: 'ambient' },
+  shadow(78, 156, 62),
+]
+
+/** Darry burned: the keep and the gatehouse broken, smoke over them. */
+const DARRY_BURNED: Stroke[] = [
+  { d: 'M88 150 V60 L96 52 L102 62 L110 50 L120 58 V150' },
+  { d: 'M24 150 V104 H88' },
+  { d: 'M30 150 V98 L38 92 L44 100 L52 90 L62 96 V150' },
+  { d: 'M38 150 V132 Q46 122 54 132 V150', role: 'accent' },
+  { d: 'M42 146 l8 -6 M42 138 l8 -6', role: 'ambient' },
+  { d: smokeAt(100, 46), role: 'soft' },
+  {
+    d: 'M114 70 l5 -3 M114 86 l5 -3 M114 102 l5 -3 M114 118 l5 -3 M114 134 l5 -3',
+    role: 'ambient',
+  },
+  GROUND,
+  shadow(76, 156, 58),
+]
+
+/** Mole's Town after the raid: cold huts, no smoke, a door hanging open. */
+const MOLES_TOWN_SACKED: Stroke[] = [
+  { d: 'M24 150 V128 L40 114 L56 128 V150' },
+  { d: 'M96 150 V124 L114 108 L132 124 V150' },
+  { d: 'M60 150 V136 L72 126 L84 136 V150', role: 'soft' },
+  {
+    d: 'M24 128 Q40 120 56 128 M96 124 Q114 114 132 124 M104 118 L112 126 L120 114',
+    role: 'soft',
+  },
+  { d: 'M36 150 V138 H44 V150', role: 'soft' },
+  { d: 'M108 150 V136 L118 140 V152', role: 'accent' },
+  { d: 'M50 136 l5 -3 M126 134 l5 -3', role: 'ambient' },
+  { d: 'M70 150 L56 176 M90 150 L104 176', role: 'ambient', dashed: true },
+  {
+    d: 'M10 150 Q40 146 70 150 M90 150 Q120 146 150 150',
+    role: 'ambient',
+    dashed: true,
+  },
+]
+
+/** The Great Sept blown apart: broken stumps over a heap of stone on the steps. */
+const GREAT_SEPT_DESTROYED: Stroke[] = [
+  { d: 'M42 116 Q52 100 62 108 Q72 94 84 104 Q96 92 108 106 Q116 100 118 116' },
+  {
+    d: 'M26 128 V96 L30 90 L34 98 L36 94 V128 M124 128 V100 L128 94 L132 102 L134 98 V128',
+  },
+  {
+    d: 'M20 150 H140 M26 142 H134 M32 134 H128 M38 126 H122 M38 116 V126 M122 116 V126 M42 116 H118',
+  },
+  { d: 'M66 116 V108 Q72 102 78 108', role: 'accent' },
+  { d: 'M54 112 l4 -3 M92 110 l4 -3 M104 112 l4 -3', role: 'soft' },
+  { d: smokeAt(74, 90), role: 'soft' },
+  { d: 'M128 108 l5 -3 M128 120 l5 -3', role: 'ambient' },
+  shadow(80, 156, 62),
+]
+
+/** King's Landing burned: the wall broken, the gatehouse fallen, smoke over the roofs. */
+const KINGS_LANDING_BURNED: Stroke[] = [
+  { d: 'M14 112 Q30 98 40 104 M98 96 Q120 90 146 96', role: 'soft' },
+  { d: 'M24 112 L32 104 M108 92 L118 100', role: 'soft' },
+  {
+    d: 'M14 140 V112 H30 L36 122 L42 112 H66 M94 112 H110 L116 124 L122 112 H146 V140',
+  },
+  { d: 'M66 140 V100 L72 94 L78 104 L86 96 L94 102 V140' },
+  { d: 'M73 140 V122 Q80 112 87 122 V140', role: 'accent' },
+  { d: 'M76 136 l8 -6 M76 128 l8 -6', role: 'ambient' },
+  { d: `${smokeAt(46, 92)} ${smokeAt(118, 84)}`, role: 'soft' },
+  { d: 'M10 140 H150' },
+  ...SEA,
+]
+
+/** The Red Keep ruined: the curtain wall breached, the keep and towers broken. */
+const RED_KEEP_RUINED: Stroke[] = [
+  { d: 'M10 150 Q40 118 80 116 Q120 118 150 150' },
+  {
+    d: 'M34 120 V80 H54 L60 96 L66 88 L72 100 M100 98 L106 86 L112 94 L120 80 H126 V120',
+    role: 'accent',
+  },
+  { d: 'M30 80 V70 L38 66 L46 72 V80 M114 80 V72 L120 66 L130 70 V80' },
+  { d: 'M64 80 V52 L72 46 L78 56 L86 44 L96 54 V80' },
+  { d: 'M74 112 L80 104 L88 110 L94 104', role: 'soft' },
+  { d: smokeAt(80, 40), role: 'soft' },
+  {
+    d: 'M90 58 l5 -3 M90 70 l5 -3 M118 94 l6 -3 M118 108 l6 -3',
+    role: 'ambient',
+  },
+  { d: 'M10 156 Q80 150 150 156', role: 'ambient', dashed: true },
+]
+
+/** The Wall's gate tunnel sealed: rubble packed into the arch. */
+const THE_WALL_SEALED: Stroke[] = [
+  { d: 'M14 28 L150 106 M14 150 H150 M14 28 V150' },
+  { d: 'M14 64 L150 118 M14 104 L150 132', role: 'soft' },
+  { d: 'M60 52 L64 80 L58 104 M100 76 L104 96 M126 92 L128 110', role: 'soft' },
+  { d: 'M36 150 V128 Q50 112 64 128 V150', role: 'accent' },
+  {
+    d: 'M38 150 V142 H48 V150 M48 150 V144 H62 V150 M40 142 V134 H54 V142 M54 142 V132 H62 V144 M44 134 Q50 124 58 128',
+    role: 'soft',
+  },
+  { d: 'M10 156 Q60 150 150 156', role: 'ambient', dashed: true },
+]
+
+/** Castle Black after the attack: the hall burned to posts, the stair's lower flights broken off. */
+const CASTLE_BLACK_BURNED: Stroke[] = [
+  { d: 'M10 40 Q46 34 80 38 T150 36', role: 'soft' },
+  {
+    d: 'M16 44 L20 70 M40 40 L44 64 M140 40 L136 62 M118 38 L116 52',
+    role: 'soft',
+  },
+  { d: 'M96 108 L134 88 L96 68 L134 48', role: 'accent' },
+  {
+    d: 'M100 150 L110 140 L118 146 L128 136 L134 150 M106 128 l6 -4',
+    role: 'soft',
+  },
+  {
+    d: 'M24 150 V86 H62 V150 M24 86 V80 H30 V86 M37 86 V80 H43 V86 M50 86 V80 H56 V86',
+  },
+  { d: 'M66 150 V124 M90 150 V128 M66 124 L76 118' },
+  { d: 'M38 100 V110 M48 100 V110', role: 'soft' },
+  { d: 'M54 96 l5 -3 M54 112 l5 -3 M54 128 l5 -3', role: 'ambient' },
+  shadow(70, 156, 56),
+]
+
+/** Castle Black rebuilding: a new stair going up the ice, scaffold at its foot; the hall still gone. */
+const CASTLE_BLACK_REBUILDING: Stroke[] = [
+  { d: 'M10 40 Q46 34 80 38 T150 36', role: 'soft' },
+  {
+    d: 'M16 44 L20 70 M40 40 L44 64 M140 40 L136 62 M118 38 L116 52',
+    role: 'soft',
+  },
+  { d: 'M96 150 L134 128 L96 108 L134 88 L96 68 L134 48', role: 'accent' },
+  {
+    d: 'M100 150 V128 M112 150 V122 M124 150 V132 M100 136 H124',
+    role: 'soft',
+  },
+  {
+    d: 'M24 150 V86 H62 V150 M24 86 V80 H30 V86 M37 86 V80 H43 V86 M50 86 V80 H56 V86',
+  },
+  { d: 'M66 150 V124 M90 150 V128', role: 'soft' },
+  { d: 'M38 100 V110 M48 100 V110', role: 'soft' },
+  { d: 'M54 96 l5 -3 M54 112 l5 -3 M54 128 l5 -3', role: 'ambient' },
+  shadow(70, 156, 56),
+]
+
+/** Eastwatch destroyed: the castle fallen into a heap on the cliff, its tower a stump. */
+const EASTWATCH_DESTROYED: Stroke[] = [
+  { d: 'M12 140 L28 100 H100 L112 140' },
+  { d: 'M38 100 V80 L44 74 L50 82 L56 76 L62 84 V100', role: 'accent' },
+  { d: 'M62 100 Q70 90 78 94 Q86 88 92 100' },
+  { d: 'M100 108 l6 -3 M104 120 l6 -3 M108 132 l5 -3', role: 'ambient' },
+  { d: 'M118 92 q8 -4 16 0 M122 100 q6 -3 12 0', role: 'soft' },
+  ...SEA,
+]
+
+/**
+ * The places later seasons and books destroy, badly damage or rebuild
+ * (#1236), each stage pinned in the units that tell it. A show-only stage
+ * past the books takes chapter 344, the last, only to order it.
+ */
+export const placesRedrawn: Redrawings = {
+  'winterfell': [
+    { episode: 20, chapter: 140, value: WINTERFELL_BURNED },
+    { episode: 43, chapter: 309, value: WINTERFELL },
+    {
+      episode: 70,
+      chapter: 344,
+      source: 'episode',
+      value: WINTERFELL_BREACHED,
+    },
+  ],
+  'winter-town': [
+    { episode: 20, chapter: 143, source: 'chapter', value: WINTER_TOWN_BURNED },
+  ],
+  'darry': [
+    { episode: 20, chapter: 138, value: DARRY_BURNED },
+    { episode: 41, chapter: 256, value: DARRY },
+  ],
+  'moles-town': [{ episode: 38, chapter: 199, value: MOLES_TOWN_SACKED }],
+  'great-sept-of-baelor': [
+    {
+      episode: 60,
+      chapter: 344,
+      source: 'episode',
+      value: GREAT_SEPT_DESTROYED,
+    },
+  ],
+  'kings-landing': [
+    {
+      episode: 72,
+      chapter: 344,
+      source: 'episode',
+      value: KINGS_LANDING_BURNED,
+    },
+  ],
+  'red-keep': [
+    { episode: 72, chapter: 344, source: 'episode', value: RED_KEEP_RUINED },
+  ],
+  'the-wall': [
+    { episode: 39, chapter: 208, source: 'chapter', value: THE_WALL_SEALED },
+  ],
+  'castle-black': [
+    {
+      episode: 39,
+      chapter: 199,
+      source: 'chapter',
+      value: CASTLE_BLACK_BURNED,
+    },
+    {
+      episode: 41,
+      chapter: 231,
+      source: 'chapter',
+      value: CASTLE_BLACK_REBUILDING,
+    },
+  ],
+  'eastwatch': [
+    {
+      episode: 67,
+      chapter: 344,
+      source: 'episode',
+      value: EASTWATCH_DESTROYED,
+    },
+  ],
+}

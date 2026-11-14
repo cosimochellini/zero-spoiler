@@ -212,22 +212,24 @@ own, Eddard's with a death stage, the Winterfell household's are in
 `art/winterfell.ts` (#854), with four stages, the southern cast's are in
 `art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
 in `art/wall.ts` and `art/essos.ts` (#1052), with six, the places' are in
-`art/places.ts` (#1053), the northern household's are in `art/north.ts` (#1054),
-with three, the Vale cast's are in `art/vale.ts` (#1055), with two, the King's
-Landing cast's are in `art/court.ts` (#1056), with one, and the Riverlands
-cast's are in `art/riverlands.ts` (#1057), with seven, six of them the deaths
-later seasons and books give (#1242). Every other character maps to a shared
-placeholder in `art/index.ts`, `PERSON`, until its own issue draws it, so the
-drawing tests hold it like any series. Its places are the 23 a scene of the
-season or the book is set in (#853) and those both name without visiting it
-(#1035: the North's five in #1248, nine of the Riverlands, the Westerlands and
-the Vale in #1249, five of the south and the seas in #1250, Essos's ten in
-#1251), and eight visited places #853 left out (#1252), each filed in one of the
-realms, the Iron Islands, the Reach and the seas among them, beyond the Wall or
-Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless series prints
-no arc row. Darry and six of #1252's places are the book's alone, and the
-Kingswood the show's. The demo shows the places the first ten episodes reach,
-and covers in its tail the four the show first visits in later seasons.
+`art/places.ts` (#1053), with fourteen stages for the damage and rebuilding
+later seasons and books give (#1236), the northern household's are in
+`art/north.ts` (#1054), with three, the Vale cast's are in `art/vale.ts`
+(#1055), with two, the King's Landing cast's are in `art/court.ts` (#1056), with
+one, and the Riverlands cast's are in `art/riverlands.ts` (#1057), with seven,
+six of them the deaths later seasons and books give (#1242). Every other
+character maps to a shared placeholder in `art/index.ts`, `PERSON`, until its
+own issue draws it, so the drawing tests hold it like any series. Its places are
+the 23 a scene of the season or the book is set in (#853) and those both name
+without visiting it (#1035: the North's five in #1248, nine of the Riverlands,
+the Westerlands and the Vale in #1249, five of the south and the seas in #1250,
+Essos's ten in #1251), and eight visited places #853 left out (#1252), each
+filed in one of the realms, the Iron Islands, the Reach and the seas among them,
+beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is optional, and an
+arcless series prints no arc row. Darry and six of #1252's places are the book's
+alone, and the Kingswood the show's. The demo shows the places the first ten
+episodes reach, and covers in its tail the four the show first visits in later
+seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -378,7 +380,7 @@ checks this block.
 | Characters        | 148                                                   |
 | Places            | 60                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 208, one per record, plus 27 redrawings of 26 records |
+| Line drawings     | 208, one per record, plus 41 redrawings of 36 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->

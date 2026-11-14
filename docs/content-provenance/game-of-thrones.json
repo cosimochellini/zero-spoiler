@@ -879,7 +879,14 @@
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Winterfell",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Grande_Inverno",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)",
+      "https://gameofthrones.fandom.com/wiki/Sack_of_Winterfell",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://gameofthrones.fandom.com/wiki/High_Sparrow",
+      "https://gameofthrones.fandom.com/wiki/The_Long_Night",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_66",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
+      "https://awoiaf.westeros.org/index.php/A_Dance_with_Dragons-Chapter_37"
     ],
     "unverified": [
       "Cersei and Jaime are first seen in the show in King's Landing (ep 1, at Jon Arryn's body) but are named at Winterfell, where both records open; filed here.",
@@ -887,7 +894,8 @@
       "Sandor Clegane opens in the show at ep 4 (tourney, King's Landing) but is on screen at Winterfell from ep 1 and opens at Winterfell in the books (site 5); filed here.",
       "Italian \"parco degli dèi\" for godswood and \"albero del cuore\" for heart tree are the Mondadori forms; not checked against the dub.",
       "Region and form labels (#853): Il Nord, Terre dei Fiumi, La Valle, Terre della Corona, Borgo, Pianura, Tempio, Accampamento, Locanda are assumed Italian forms, not checked against the dub.",
-      "Book gate set at Bran I (site 2), not Catelyn I (site 3): the characters who open there are named as of Winterfell, and the chapter rides out from it; the first scene inside the walls is Catelyn I."
+      "Book gate set at Bran I (site 2), not Catelyn I (site 3): the characters who open there are named as of Winterfell, and the chapter rides out from it; the first scene inside the walls is Catelyn I.",
+      "Stages (#1236): sacked and burned in episode 20 (Fandom ref GOT210) and in ACOK chapter 66 (site 140, Theon VI per AWOIAF's Winterfell page; the POV label and chapter are to re-check), its ruins seen in Bran VII (143); rebuilt by the Boltons from episode 43 (Fandom ref GOT503) and ADWD chapter 37 (site 309; POV label to re-check); damaged in the battle with the dead in episode 70 (Fandom ref GOT803), the show's alone, ordered by chapter 344. Episodes not viewed."
     ]
   },
   "pentos": {
@@ -908,11 +916,13 @@
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/King%27s_Landing",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Approdo_del_Re",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)",
+      "https://gameofthrones.fandom.com/wiki/The_Bells"
     ],
     "unverified": [
       "Book gate: Catelyn IV opens aboard the Storm Dancer in Blackwater Bay and lands at King's Landing in the same chapter.",
-      "Gregor and Loras (the Hand's tourney, ep 4-5 / site 30) are filed at the city rather than at a sub-place; Gendry (the forge, ep 4 / site 28) is filed at the Street of Steel (#1252)."
+      "Gregor and Loras (the Hand's tourney, ep 4-5 / site 30) are filed at the city rather than at a sub-place; Gendry (the forge, ep 4 / site 28) is filed at the Street of Steel (#1252).",
+      "Stage (#1236): burned by the dragon in episode 72 (Fandom ref GOT805), the show's alone, ordered by chapter 344. Episode not viewed."
     ]
   },
   "the-wall": {
@@ -922,12 +932,15 @@
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Wall",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Barriera",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_64",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_73"
     ],
     "unverified": [
       "Show gate: the cold open of episode 1 shows the rangers leaving through the tunnel under the Wall (Fandom: they \"depart from the Wall\"); no transcript checked.",
       "Book gate set at Tyrion III (site 22), the first scene on top of the Wall, the later of 20 and 22 (owner rule: lean later).",
-      "commonWord is set for want of a chapter-side nameSaidAt: texts gated before the book gate (Castle Black at site 20) name the Wall, and nameSaidAt is episode-only. It takes \"the Wall\" / \"la Barriera\" out of the name scan for good."
+      "commonWord is set for want of a chapter-side nameSaidAt: texts gated before the book gate (Castle Black at site 20) name the Wall, and nameSaidAt is episode-only. It takes \"the Wall\" / \"la Barriera\" out of the name scan for good.",
+      "Stage (#1236): Mag breaks the gate and Jon has the tunnel blocked in Jon VIII of ASOS (site 208); Jon X (217) finds it 'sealed with rubble'. The book's alone; episode 39 orders it. The show's breach at Eastwatch (episode 67) is another stretch of the Wall, Eastwatch's stage."
     ]
   },
   "winter-town": {
@@ -935,12 +948,14 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
       "https://gameofthrones.fandom.com/wiki/Winter_town",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/it/wiki/Citt%C3%A0_dell%27Inverno?oldid=56441"
+      "https://gameofthrones.fandom.com/it/wiki/Citt%C3%A0_dell%27Inverno?oldid=56441",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69"
     ],
     "unverified": [
       "#1244: Italian name \"Città dell'Inverno\" from the Italian Game of Thrones Wiki; Italian Wikipedia does not name it; dub form unconfirmed.",
       "The show only names it in season 7 (\"The Spoils of War\"), so no nameSaidAt.",
-      "Ros is filed here: she is first seen at the brothel in episode 1, though her record opens at episode 4."
+      "Ros is filed here: she is first seen at the brothel in episode 1, though her record opens at episode 4.",
+      "Stage (#1236): burned with Winterfell, its ruins seen in Bran VII of ACOK (site 143), the book's alone: the show neither shows nor names its burning. Episode 20 orders it."
     ]
   },
   "inn-at-the-crossroads": {
@@ -963,10 +978,12 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
       "https://awoiaf.westeros.org/index.php/Darry",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_64"
     ],
     "unverified": [
-      "Italian: book-only, so the Mondadori form applies; \"Darry\" assumed unchanged, not checked against the edition."
+      "Italian: book-only, so the Mondadori form applies; \"Darry\" assumed unchanged, not checked against the edition.",
+      "Stages (#1236): Roose orders Darry burned in Arya X of ACOK (site 138); rebuilt under Lancel in AFFC chapter 30 (site 256, Jaime IV per a search summary: to re-check). Gregor's earlier sack kills its people; its chapter is to re-check and it draws no stage of its own. Episodes 20 and 41 order the stages."
     ]
   },
   "castle-black": {
@@ -976,10 +993,13 @@
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Barriera",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_55",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_5"
     ],
     "unverified": [
-      "Show gate: the arrival at the end of episode 2 is taken to be at Castle Black (Fandom first names it there); the first scene the synopsis sets \"At Castle Black\" is episode 3."
+      "Show gate: the arrival at the end of episode 2 is taken to be at Castle Black (Fandom first names it there); the first scene the synopsis sets \"At Castle Black\" is episode 3.",
+      "Stages (#1236): the stair's lower third breaks off and the common hall burns in Jon VII of ASOS (site 199); a new stair is being built in Samwell I of AFFC (site 231). The book's alone (the show damages neither); episodes 39 and 41 order them."
     ]
   },
   "dothraki-sea": {
@@ -1002,11 +1022,13 @@
       "https://gameofthrones.fandom.com/wiki/Red_Keep",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Fortezza_Rossa",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)",
+      "https://gameofthrones.fandom.com/wiki/The_Bells"
     ],
     "unverified": [
       "Show gate: the episode 1 scene at Jon Arryn's body may already be inside the Red Keep; not confirmed, so the gate is episode 3.",
-      "Renly and Barristan open in the books at the inn (Sansa I, site 16); Petyr and Varys at Littlefinger's place in the city (Catelyn IV, site 19). All four are filed here after the show (ep 3, Red Keep)."
+      "Renly and Barristan open in the books at the inn (Sansa I, site 16); Petyr and Varys at Littlefinger's place in the city (Catelyn IV, site 19). All four are filed here after the show (ep 3, Red Keep).",
+      "Stage (#1236): ruined in episode 72 (Fandom ref GOT805), the show's alone, ordered by chapter 344. The book's burning of the Tower of the Hand (AFFC) touches no part of the drawing, so it draws no stage (owner). Episode not viewed."
     ]
   },
   "vaes-dothrak": {
@@ -1106,11 +1128,14 @@
       "https://gameofthrones.fandom.com/wiki/Great_Sept_of_Baelor",
       "https://gameofthrones.fandom.com/wiki/Baelor",
       "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Il_Grande_Tempio_di_Baelor",
-      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)"
+      "https://it.wikipedia.org/wiki/Episodi_de_Il_Trono_di_Spade_(prima_stagione)",
+      "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter",
+      "https://gameofthrones.fandom.com/wiki/Destruction_of_the_Great_Sept_of_Baelor"
     ],
     "unverified": [
       "Italian: it.wikipedia's places page heads it \"Il Grande Tempio di Baelor\"; the season 1 page says \"Tempio di Baelor\". \"Alto Septon\" assumed.",
-      "Uses the proposed new form \"sept\"."
+      "Uses the proposed new form \"sept\".",
+      "Stage (#1236): destroyed by wildfire in episode 60 (Fandom ref GOT610), the show's alone, ordered by chapter 344. Episode not viewed."
     ]
   },
   "riverrun": {
@@ -1130,12 +1155,15 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
       "https://gameofthrones.fandom.com/wiki/Mole%27s_Town",
       "https://gameofthrones.fandom.com/wiki/Breaker_of_Chains",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Città_della_Talpa"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Città_della_Talpa",
+      "https://gameofthrones.fandom.com/wiki/The_Mountain_and_the_Viper",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_55"
     ],
     "unverified": [
       "Show gate: the \"Breaker of Chains\" synopsis calls it \"a vassal town\"; the Fandom place page ties the scene to Mole's Town.",
       "Name first said in episode 4, no nameSaidAt filed (no text needs it): Sam mentions the brothel in \"Cripples, Bastards, and Broken Things\" (Fandom ref GOT104).",
-      "Uses the proposed new form \"town\"."
+      "Uses the proposed new form \"town\".",
+      "Stage (#1236): sacked by the wildlings in episode 38 (Fandom ref GOT408) and burned in Jon VII of ASOS (site 199, 'the smoke of Mole's Town burning'); one stage for both raids, a cold, emptied town (owner). Episode not viewed."
     ]
   },
   "bloody-gate": {
@@ -1179,11 +1207,13 @@
       "https://gameofthrones.fandom.com/wiki/Eastwatch-by-the-Sea",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Barriera"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#La_Barriera",
+      "https://gameofthrones.fandom.com/wiki/The_Dragon_and_the_Wolf"
     ],
     "unverified": [
       "Show gate: Thorne's line in episode 4, from a fan transcript matched to the Fandom ref GOT104; season 1 says only \"Eastwatch\".",
-      "Italian: \"Forte Orientale\" is Italian Wikipedia's form; the dub form is unconfirmed."
+      "Italian: \"Forte Orientale\" is Italian Wikipedia's form; the dub form is unconfirmed.",
+      "Stage (#1236): destroyed with its stretch of the Wall in episode 67 (Fandom ref GOT707), the show's alone, ordered by chapter 344. Episode not viewed."
     ]
   },
   "pyke": {
