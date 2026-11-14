@@ -105,7 +105,23 @@ const LOBES: [number, number][] = [
 ]
 
 /** Crocodile dissolves into sand in 106, before the fruit opens at 112/184. */
-const SAND_BODY: Body = { family: 'pear', cy: 102 }
+const SAND_BODY: Body = { family: 'pear', cy: 104 }
+
+/** The top of the dune the fruit is sunk in, from the near side to the far. */
+const DUNE: Point[] = [
+  [8, 186],
+  [30, 164],
+  [56, 136],
+  [80, 128],
+  [106, 133],
+  [132, 156],
+  [152, 186],
+]
+
+/** Whether a point of the rim is where the far shoulder blows away. */
+function blownOff(x: number, y: number): boolean {
+  return x > 96 && y > 96 && y < 134
+}
 
 /** Doflamingo moves people like puppets in 207/303, before the 700 opening. */
 const STRING_BODY: Body = { family: 'oblong', cy: 111 }
@@ -1234,11 +1250,54 @@ const CUFF = { cy: 109, rx: 23, ry: 6, tall: 11, rim: 3, tilt: 10 }
 /** A point on the cuff, in a frame tipped off level about the waist. */
 const onCuff = turnedAbout([80, CUFF.cy], -CUFF.tilt)
 
+/** A point of the box in the cuff's frame: across it, and down it. */
+const inCuffFrame = turnedAbout([0, 0], CUFF.tilt)
+
 /** Whether a point of the fruit is behind the near face of the cuff. */
 function behindCuff(x: number, y: number): boolean {
-  const [u, v] = turnedAbout([0, 0], CUFF.tilt)(x - 80, y - CUFF.cy)
+  const [u, v] = inCuffFrame(x - 80, y - CUFF.cy)
 
   return Math.abs(u) < CUFF.rx + 1 && v > -2 && v < CUFF.tall + CUFF.ry + 1
+}
+
+/**
+ * The band over the top and under the foot: each edge a line of longitude,
+ * set at a share of the body's half-width so it follows the skin round.
+ */
+const BAND = { near: 0.2, far: 0.46 }
+
+/** Whether a point of the rim is under the band where it goes over the top. */
+function underBand(x: number, y: number): boolean {
+  const half = halfWidth(CAGE_BODY, crownY(CAGE_BODY) + 1)
+
+  return (
+    y < crownY(CAGE_BODY) + 4
+    && x > 80 + BAND.near * half - 1.5
+    && x < 80 + BAND.far * half + 1.5
+  )
+}
+
+/**
+ * One edge of the band: down from the crown to the cuff's top edge, and on
+ * from the cuff's bottom edge to the foot.
+ */
+function bandEdge(share: number): string {
+  const runs: string[][] = [[], []]
+  const top = crownY(CAGE_BODY) + 1
+
+  for (let y = top; y <= top + 91; y += 1) {
+    const x = 80 + share * halfWidth(CAGE_BODY, y)
+    const [u, v] = inCuffFrame(x - 80, y - CUFF.cy)
+    const front = CUFF.ry * Math.sqrt(Math.max(0, 1 - (u / CUFF.rx) ** 2))
+
+    if (v < front) {
+      runs[0]?.push(point(x, y))
+    } else if (v > front + CUFF.tall) {
+      runs[1]?.push(point(x, y))
+    }
+  }
+
+  return runs.map((run) => polyline(run)).join(' ')
 }
 
 /** The near half of a ring of the cuff, dropped down its face. */
@@ -1317,21 +1376,23 @@ function underHand(x: number, y: number): boolean {
   return inside
 }
 
-/** The dachshund fruit: an oblong, standing on four short legs. */
-const DACHSHUND_BODY: Body = { family: 'oblong', cy: 114 }
+/**
+ * The dachshund fruit: held the long way and low, on four short legs. No kit
+ * body lies on its side, so the body is an ellipse of its own.
+ */
+const LONG_BODY = { cx: 80, cy: 128, rx: 62, ry: 28 }
 
-/** Where the underside of the fruit is, at a point across it. */
+/**
+ * A round kit body whose crown is the top of the long one, so the dimple and
+ * the stalk sit where they would on a kit fruit; nothing else of it is drawn.
+ */
+const DACHSHUND_BODY: Body = { family: 'round', cy: 146 }
+
+/** Where the underside of the long body is, at a point across it. */
 function underside(x: number): number {
-  let y = crownY(DACHSHUND_BODY) + 92
+  const across = (x - LONG_BODY.cx) / LONG_BODY.rx
 
-  while (
-    halfWidth(DACHSHUND_BODY, y) < Math.abs(x - 80)
-    && y > DACHSHUND_BODY.cy
-  ) {
-    y -= 0.5
-  }
-
-  return y
+  return LONG_BODY.cy + LONG_BODY.ry * Math.sqrt(Math.max(0, 1 - across ** 2))
 }
 
 /** The paws stand on this line. */
@@ -3122,18 +3183,35 @@ export const fruitArt = {
 
   /** An open foot feeds a thin stream into the cone below the pear. */
   'sand-sand-fruit': [
-    ...kitBody(SAND_BODY, [91, 112, 129], (_x, y) => y < 146),
+    ...kitBody(
+      SAND_BODY,
+      [80, 88],
+      (x, y) => y < heightOn(DUNE, x) - 2 && !blownOff(x, y),
+    ),
     ...skin([
-      [73, 84, 6],
-      [64, 110, -7],
-      [91, 119, 6],
+      [70, 88, 6],
+      [62, 114, -7],
+      [84, 108, 5],
     ]),
     ...sprout(SAND_BODY, 4, 'right'),
     {
-      d: 'M75 145 L79 151 L79 165 M85 145 L81 151 L81 165 M43 185 C60 181 71 170 80 165 C89 170 100 181 117 185 Z M66 181 L72 177 M88 178 L95 182',
+      d: [
+        'M8 186 C22 170 38 144 60 133 C72 128 88 126 100 130 C120 136 138 160 152 186',
+        'M112 97 C120 94 130 94 140 88',
+        'M114 108 C124 106 136 108 148 102',
+        'M112 120 C122 119 130 122 142 120',
+        speck(148, 88),
+        speck(152, 114),
+        speck(136, 128),
+      ].join(' '),
       role: 'accent',
     },
-    { d: 'M56 184 L61 181 M99 181 L105 184', role: 'ambient' },
+    // Ripples the wind left on the dune.
+    {
+      d: 'M28 178 C40 168 52 160 64 156 M98 154 C112 158 124 168 132 178',
+      role: 'soft',
+    },
+    { d: 'M4 190 C40 193 120 193 156 190', role: 'ambient', dashed: true },
   ],
 
   /**
@@ -3144,19 +3222,35 @@ export const fruitArt = {
    * never a head or a tail.
    */
   'dog-dog-fruit-model-dachshund': [
-    ...kitBody(DACHSHUND_BODY, [116, 128, 140]),
+    {
+      d: polyline(
+        trace(
+          [LONG_BODY.cx, LONG_BODY.cy],
+          [LONG_BODY.rx, LONG_BODY.ry],
+          [0, 360, 48],
+        ),
+        true,
+      ),
+    },
+    crown(DACHSHUND_BODY),
+    // The light along the near end, and the far end turning away.
+    { d: polyline(trace([80, 128], [55, 21], [196, 236, 6])), role: 'soft' },
+    {
+      d: 'M137 124 L131 118 M135 136 L129 130 M124 146 L118 140',
+      role: 'ambient',
+    },
     ...skin([
-      [64, 112, 9],
-      [92, 134, -8],
+      [56, 122, 8],
+      [98, 138, -8],
     ]),
     ...sprout(DACHSHUND_BODY, 4, 'left'),
     {
-      d: [leg(58, -3), leg(100, 4), leg(68, -3, 172), leg(109, 4, 172)].join(
+      d: [leg(46, -4), leg(110, 5), leg(56, -4, 172), leg(120, 5, 172)].join(
         ' ',
       ),
       role: 'accent',
     },
-    shadowUnder(1),
+    { d: 'M20 180 C48 183 112 183 140 180', role: 'ambient', dashed: true },
   ],
 
   /**
@@ -3166,18 +3260,23 @@ export const fruitArt = {
    * Hina lets a pirate pass through her and leaves him in a ring of iron.
    */
   'cage-cage-fruit': [
-    ...kitBody(CAGE_BODY, [140, 152, 162], (x, y) => !behindCuff(x, y)),
+    { d: outline(CAGE_BODY, (x, y) => !behindCuff(x, y) && !underBand(x, y)) },
+    crown(CAGE_BODY, [82, 92]),
+    shine(CAGE_BODY),
+    hatching(CAGE_BODY, [140, 152, 162]),
     ...skin([
-      [70, 92, 6],
-      [64, 146, 8],
+      [66, 92, 6],
+      [62, 146, 8],
     ]),
-    ...sprout(CAGE_BODY, 4, 'right'),
+    ...sprout(CAGE_BODY, -4, 'left'),
     {
       d: [
         cuffArc(CUFF.rx, CUFF.ry, 0),
         cuffArc(CUFF.rx, CUFF.ry, CUFF.tall),
         `M${point(...onCuff(CUFF.rx, 0))} L${point(...onCuff(CUFF.rx, CUFF.tall))}`,
         `M${point(...onCuff(-CUFF.rx, 0))} L${point(...onCuff(-CUFF.rx, CUFF.tall))}`,
+        bandEdge(BAND.near),
+        bandEdge(BAND.far),
       ].join(' '),
       role: 'accent',
     },
