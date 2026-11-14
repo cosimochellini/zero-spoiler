@@ -5,7 +5,7 @@ import type { Stroke } from '~/lib/view/records'
 import { COURT_DRAWINGS, courtRedrawn } from './court'
 import { ESSOS_DRAWINGS, essosRedrawn } from './essos'
 import { NORTH_DRAWINGS, northRedrawn } from './north'
-import { PLACE_DRAWINGS } from './places'
+import { PLACE_DRAWINGS, placesRedrawn } from './places'
 import { RIVERLANDS_DRAWINGS, riverlandsRedrawn } from './riverlands'
 import { SOUTH_DRAWINGS, southRedrawn } from './south'
 import { VALE_DRAWINGS, valeRedrawn } from './vale'
@@ -185,6 +185,7 @@ export const REDRAWINGS: Redrawings = {
   ...valeRedrawn,
   ...courtRedrawn,
   ...riverlandsRedrawn,
+  ...placesRedrawn,
   'eddard-stark': [
     {
       episode: 9,

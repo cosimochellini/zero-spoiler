@@ -720,6 +720,15 @@ function opened(id: string, view: Reader): boolean {
   return page !== undefined && 'detail' in page && page.detail.slot.open
 }
 
+/** A redrawn record, character or place. */
+function recordOf(id: string): Entity {
+  const record = archive.getEntity(id)
+  if (record === undefined) {
+    throw new Error(`Missing ${id} fixture`)
+  }
+  return record
+}
+
 function character(id: string): Entity {
   const record = archive.getCharacter(id)
   if (record === undefined) {
@@ -992,6 +1001,27 @@ const STAGES: {
   { id: 'vardis-egen', episode: 6, chapter: 41, source: 'chapter' },
   { id: 'mycah', episode: 2, chapter: 17, source: 'chapter' },
   { id: 'masha-heddle', episode: 8, chapter: 57, source: 'chapter' },
+  // Places destroyed, damaged or rebuilt later (#1236).
+  { id: 'winterfell', episode: 20, chapter: 140 },
+  { id: 'winterfell', episode: 43, chapter: 309, stage: 1 },
+  { id: 'winterfell', episode: 70, chapter: 344, source: 'episode', stage: 2 },
+  { id: 'winter-town', episode: 20, chapter: 143, source: 'chapter' },
+  { id: 'darry', episode: 20, chapter: 138, source: 'chapter' },
+  { id: 'darry', episode: 41, chapter: 256, source: 'chapter', stage: 1 },
+  { id: 'moles-town', episode: 38, chapter: 199 },
+  { id: 'great-sept-of-baelor', episode: 60, chapter: 344, source: 'episode' },
+  { id: 'kings-landing', episode: 72, chapter: 344, source: 'episode' },
+  { id: 'red-keep', episode: 72, chapter: 344, source: 'episode' },
+  { id: 'the-wall', episode: 39, chapter: 208, source: 'chapter' },
+  { id: 'castle-black', episode: 39, chapter: 199, source: 'chapter' },
+  {
+    id: 'castle-black',
+    episode: 41,
+    chapter: 231,
+    source: 'chapter',
+    stage: 1,
+  },
+  { id: 'eastwatch', episode: 67, chapter: 344, source: 'episode' },
   // Later deaths (#1242).
   { id: 'lommy', episode: 13, chapter: 93 },
   { id: 'stevron-frey', episode: 14, chapter: 109, source: 'chapter' },
@@ -1017,7 +1047,7 @@ describe.each(
     const previous = index === 0 ? DRAWINGS[id] : stages[index - 1]?.value
 
     it('at its pin, not one before', () => {
-      const owner = character(id)
+      const owner = recordOf(id)
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
@@ -1040,7 +1070,7 @@ describe('the stages one medium alone tells', () => {
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
 
-      expect(drawingOf(character(id), last).strokes).toStrictEqual(DRAWINGS[id])
+      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(DRAWINGS[id])
     },
   )
 })
