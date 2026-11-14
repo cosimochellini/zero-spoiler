@@ -844,6 +844,9 @@ describe('a record drawn again later in the story', () => {
     ['bepo', 3, 'first'],
     // Caribou's coat and swamp back after the Udon mine.
     ['caribou', 3, 0],
+    // The sword leg and the gun forearm again once Sulong is over.
+    ['inuarashi', 3, 1],
+    ['nekomamushi', 3, 1],
   ] as const)(
     'redraws %s at stage %i as its drawing %s itself, not a copy',
     (id, stage, again) => {

@@ -540,6 +540,13 @@ const LAFFITTE_CANE: Stroke[] = [
   { d: 'M150 178 l-4 4', role: 'soft' },
 ]
 
+/**
+ * The World Government's emblem as its flag draws it: four small circles
+ * round a fifth, joined by short bars, centred on 120 40. Kong's flag
+ * carries it, and Stussy's drawings set it beside her things.
+ */
+export const WORLD_GOVERNMENT_EMBLEM = `${circle(120, 40, 3.5)} ${circle(120, 26, 3.5)} ${circle(120, 54, 3.5)} ${circle(106, 40, 3.5)} ${circle(134, 40, 3.5)} M120 29.5 V36.5 M120 43.5 V50.5 M109.5 40 H116.5 M123.5 40 H130.5`
+
 /** The drawings of the records filed in the summit war stretch of the route. */
 export const summitWarArt = {
   // His white fur hat seen from the front and a little above, the fur rim
@@ -2562,10 +2569,7 @@ export const summitWarArt = {
   'kong': [
     { d: 'M150 182 V14' },
     { d: 'M150 16 H92 V64 H150', role: 'soft' },
-    {
-      d: `${circle(120, 40, 3.5)} ${circle(120, 26, 3.5)} ${circle(120, 54, 3.5)} ${circle(106, 40, 3.5)} ${circle(134, 40, 3.5)} M120 29.5 V36.5 M120 43.5 V50.5 M109.5 40 H116.5 M123.5 40 H130.5`,
-      role: 'soft',
-    },
+    { d: WORLD_GOVERNMENT_EMBLEM, role: 'soft' },
     {
       d: 'M60 76 C52 78 42 82 38 90 L28 178 C40 182 58 182 74 179 L78 86 M82 86 L86 179 C102 182 120 182 132 178 L120 90 C116 82 106 78 98 76',
     },

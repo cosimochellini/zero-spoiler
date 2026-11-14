@@ -2506,8 +2506,9 @@ const MONET_SNOW: Stroke[] = [
  * its rim shows on the right: the ring, a small leaf on it at each diagonal,
  * the crane inside with its wings spread wide, its neck up and its tail
  * down, the orb a dot on its chest, the rim hatched, and its shadow.
+ * Inuarashi's and Nekomamushi's drawings set it beside them too.
  */
-const KOZUKI_CREST: Stroke[] = [
+export const KOZUKI_CREST: Stroke[] = [
   {
     d: 'M9 156 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M31 134 L34 134 A22 22 0 0 1 34 178 L31 178 M45.1 170.1 Q45.4 173.5 49 174 Q48.5 170.4 45.1 170.1 M16.9 170.1 Q13.5 170.4 13 174 Q16.6 173.5 16.9 170.1 M16.9 141.9 Q16.6 138.5 13 138 Q13.5 141.6 16.9 141.9 M45.1 141.9 Q48.5 141.6 49 138 Q45.4 138.5 45.1 141.9',
   },

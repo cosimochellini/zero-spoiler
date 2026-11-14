@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import {
@@ -13,6 +14,9 @@ import {
   shadow,
   wave,
 } from '~/lib/svg/primitives'
+
+import { KOZUKI_CREST } from './dressrosa'
+import { WORLD_GOVERNMENT_EMBLEM } from './summit-war'
 
 /**
  * Im on the Empty Throne: the platform and its steps, cut where the robe
@@ -56,15 +60,6 @@ const IM_ON_THE_THRONE: Stroke[] = [
 ]
 
 /**
- * One tusk of the Mammoth's figurehead, curving out ahead of the bow and
- * back up at the tip. Jack's drawing sets a second one behind it.
- */
-const MAMMOTH_TUSK: Stroke = {
-  d: 'M66 104 C50 124 26 132 12 114 C0 96 4 66 22 48 C28 42 34 38 42 36 C30 48 20 62 18 80 C16 98 26 114 42 112 C52 110 60 104 66 96',
-  role: 'accent',
-}
-
-/**
  * One of Vito's revolvers, side on and pointing left: the barrel hatched
  * underneath, the fluted drum, the hammer, the trigger guard and the
  * checkered grip. His drawing lays two of them one over the other.
@@ -94,9 +89,6 @@ function withVitoGun(transform: string): Stroke[] {
 
 /** The tilt of Cracker's sword Pretzel, drawn level about its guard. */
 const PRETZEL_TILT = 'rotate(51.2 118 142)'
-
-/** The lean of Judge's spear, drawn level with its blade to the right. */
-const JUDGE_SPEAR_TILT = 'rotate(-56 80 100)'
 
 /** The tilt of Randolph's spear, drawn level with a blade at each end. */
 const RANDOLPH_SPEAR_TILT = 'rotate(-20 80 142)'
@@ -154,6 +146,274 @@ function setDownByTheSweets(hat: Stroke[]): Stroke[] {
 
   return plain
 }
+
+/**
+ * Zunesha side on, wading and facing left: the head with its trunk raised
+ * and ringed, the ear tattered at the edge, the long back, and the upper
+ * third of each leg above the water, the far legs fainter. Both Zou arc
+ * drawings stand on it.
+ */
+const ZUNESHA_WADING: Stroke[] = [
+  {
+    d: 'M66 76 C82 64 104 60 122 64 C140 68 152 82 152 100 C152 114 148 124 142 128 H74 C62 128 50 124 40 116',
+  },
+  {
+    d: 'M56 74 C46 66 30 68 24 80 C20 88 20 96 22 104 C10 98 4 80 8 62 C10 52 16 46 24 48 M40 116 C32 112 28 108 26 102 M24 48 C18 58 18 72 24 84',
+  },
+  { d: ellipse(22, 48, 3, 2), role: 'soft' },
+  { d: 'M8 78 l7 -2 M8 66 l7 0 M12 55 l6 3', role: 'soft' },
+  {
+    d: 'M54 72 C66 66 80 74 82 90 C84 104 78 118 66 122 l-3 -5 l-2 6 l-4 -5 l-3 5 l-2 -6 l-4 3 C48 110 48 90 54 72 Z',
+  },
+  { d: 'M60 80 C66 86 68 98 64 110', role: 'soft' },
+  {
+    d: 'M78 128 C78 138 80 146 80 152 M92 128 C92 138 92 146 92 152 M124 128 V152 M138 127 V152',
+  },
+  { d: 'M100 128 V150 M146 122 V150', role: 'ambient' },
+  { d: 'M140 86 l8 -4 M144 100 l8 -4 M144 114 l7 -4', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * The Whale Forest at Zunesha's nape: the Whale, the great tree whose trunk
+ * bends upward like a whale with its tail spread at the top (the accent),
+ * and the trees round its foot.
+ */
+const ZOU_WHALE_FOREST: Stroke[] = [
+  {
+    d: 'M78 70 C74 56 76 44 84 34 M88 66 C86 56 88 46 94 40 M84 34 C84 26 88 20 94 18 C92 24 92 30 94 34 C98 30 104 30 110 32 C104 36 98 38 94 40',
+    role: 'accent',
+  },
+  { d: 'M66 74 q2 -8 9 -6 M90 64 q3 -8 9 -5 q4 -7 10 -3', role: 'soft' },
+]
+
+/**
+ * The wall round the elephant's back, whole: its two faces, the merlons
+ * along the top, and the gate near the tail.
+ */
+const ZOU_WALL: Stroke[] = [
+  { d: 'M100 52 C120 46 140 52 152 68 M100 60 C118 54 136 60 148 74' },
+  {
+    d: 'M106 50 v-5 h5 v5 M118 47 v-5 h5 v5 M130 48 v-5 h5 v5 M141 53 v-5 h5 v5',
+    role: 'soft',
+  },
+  { d: 'M146 74 V68 C146 62 152 62 152 66 V76', role: 'soft' },
+]
+
+/**
+ * The two diamond-shaped panels Raizo wears on his back, quartered, the
+ * far quarters hatched, the right panel turned a little away so its edge
+ * shows.
+ */
+const RAIZO_PANELS: Stroke[] = [
+  { d: 'M48 30 L78 88 L48 146 L18 88 Z M112 34 L136 88 L112 142 L88 88 Z' },
+  { d: 'M136 88 L140 90 L115 145 L112 142', role: 'soft' },
+  { d: 'M48 30 V146 M18 88 H78 M112 34 V142 M88 88 H136', role: 'soft' },
+  {
+    d: 'M52 50 l6 -4 M54 62 l10 -7 M56 74 l13 -9 M24 100 l8 -6 M30 112 l10 -7 M38 124 l8 -6 M116 54 l5 -4 M118 66 l8 -6 M120 78 l10 -7 M94 100 l7 -5 M99 112 l8 -6 M104 124 l6 -5',
+    role: 'ambient',
+  },
+]
+
+/**
+ * The purple nio-dasuki tied on his back: the knot, its two loops and its
+ * two hanging ends (the accent), the twist of the rope soft.
+ */
+const RAIZO_KNOT: Stroke[] = [
+  {
+    d: `${ellipse(80, 96, 8, 7)} M72 94 C58 80 42 86 46 98 C50 108 64 106 72 100 M88 94 C100 82 114 86 112 97 C110 106 96 106 88 100 M76 102 C72 120 66 136 60 154 M84 102 C88 120 94 136 100 154`,
+    role: 'accent',
+  },
+  {
+    d: 'M54 92 l4 4 M60 88 l3 5 M100 88 l-3 5 M105 92 l-4 4 M72 116 l5 2 M68 130 l5 2 M88 116 l-5 2 M92 130 l-5 2',
+    role: 'soft',
+  },
+]
+
+/**
+ * One of Brulee's mirrors standing on its rim in three quarters: the frame,
+ * its edge turning away and hatched, the glass inside it.
+ */
+const BRULEE_MIRROR: Stroke[] = [
+  { d: ellipse(92, 104, 36, 58) },
+  { d: 'M92 46 C116 46 134 72 134 104 C134 136 116 162 92 162', role: 'soft' },
+  { d: ellipse(92, 104, 28, 49), role: 'soft' },
+  {
+    d: 'M124 72 l6 -3 M128 92 l6 -2 M128 114 l6 -1 M124 136 l6 0',
+    role: 'ambient',
+  },
+]
+
+/** Judge's spear shaft, drawn level, the grip wrapped near the butt. */
+const JUDGE_SPEAR_SHAFT: Stroke[] = [
+  { d: 'M-24 97 H96 M-24 103 H96 M-24 97 V103' },
+  { d: 'M-8 97 l5 6 M0 97 l5 6 M8 97 l5 6 M16 97 l5 6', role: 'soft' },
+]
+
+/**
+ * The head of Judge's spear, drawn level to the right: the crossguard with
+ * its thickness and the collar, the long blade ridged down the middle with
+ * its lower facet hatched.
+ */
+const JUDGE_SPEAR_HEAD: Stroke[] = [
+  { d: 'M104 86 l3 -3 h5 v28 l-3 3 M109 86 l3 -3', role: 'soft' },
+  { d: 'M96 94 h8 v12 h-8 Z M104 86 h5 v28 h-5 Z' },
+  { d: 'M109 100 L128 90 L194 100 L128 110 Z' },
+  { d: 'M109 100 H194', role: 'soft' },
+  {
+    d: 'M126 103 l3 5 M138 102 l3 6 M150 102 l3 5 M162 101 l3 5 M174 101 l2 3',
+    role: 'ambient',
+  },
+]
+
+/** Judge's spear stood nearly upright on its butt, behind his helmet. */
+const JUDGE_SPEAR_UPRIGHT =
+  'translate(140 92) rotate(-80) scale(0.82) translate(-85 -100)'
+
+/**
+ * Judge's golden helmet set down in three quarters (the accent): the dome
+ * and the flared back, the open front low on the left and hatched, the brow
+ * and the middle line soft, the far side hatched.
+ */
+const JUDGE_HELMET: Stroke[] = [
+  {
+    d: 'M26 140 C26 112 46 92 70 92 C94 92 114 112 114 140 C114 150 118 156 126 162 C104 168 72 168 50 164 L48 146 C40 142 32 142 26 146 Z',
+    role: 'accent',
+  },
+  { d: 'M26 140 C50 146 90 146 114 140', role: 'soft' },
+  { d: 'M70 92 C74 108 76 124 78 142', role: 'soft' },
+  { d: 'M30 160 l6 -8 M36 162 l8 -10 M43 164 l5 -6', role: 'ambient' },
+  { d: 'M102 108 l7 -4 M108 122 l7 -4 M110 136 l7 -4', role: 'ambient' },
+]
+
+/** The duke's robe hung open, its fur trim the accent, without its shadow. */
+const INUARASHI_ROBE: Stroke[] = [
+  {
+    d: 'M58 48 C40 52 26 62 22 82 L12 140 C14 148 26 150 32 144 L38 112 L36 172 H124 L122 112 L128 144 C134 150 146 148 148 140 L138 82 C134 62 120 52 102 48',
+  },
+  {
+    d: 'M60 52 A4.5 4.5 0 0 1 60.2 59.5 A4.5 4.5 0 0 1 60.5 67 A4.5 4.5 0 0 1 60.8 74.5 A4.5 4.5 0 0 1 61 82 A4.5 4.5 0 0 1 61.2 89.5 A4.5 4.5 0 0 1 61.5 97 A4.5 4.5 0 0 1 61.8 104.5 A4.5 4.5 0 0 1 62 112 A4.5 4.5 0 0 1 62.2 119.5 A4.5 4.5 0 0 1 62.5 127 A4.5 4.5 0 0 1 62.8 134.5 A4.5 4.5 0 0 1 63 142 A4.5 4.5 0 0 1 63.2 149.5 A4.5 4.5 0 0 1 63.5 157 A4.5 4.5 0 0 1 63.8 164.5 A4.5 4.5 0 0 1 64 172',
+    role: 'accent',
+  },
+  {
+    d: 'M96 172 A4.5 4.5 0 0 1 96.2 164.5 A4.5 4.5 0 0 1 96.5 157 A4.5 4.5 0 0 1 96.8 149.5 A4.5 4.5 0 0 1 97 142 A4.5 4.5 0 0 1 97.2 134.5 A4.5 4.5 0 0 1 97.5 127 A4.5 4.5 0 0 1 97.8 119.5 A4.5 4.5 0 0 1 98 112 A4.5 4.5 0 0 1 98.2 104.5 A4.5 4.5 0 0 1 98.5 97 A4.5 4.5 0 0 1 98.8 89.5 A4.5 4.5 0 0 1 99 82 A4.5 4.5 0 0 1 99.2 74.5 A4.5 4.5 0 0 1 99.5 67 A4.5 4.5 0 0 1 99.8 59.5 A4.5 4.5 0 0 1 100 52',
+    role: 'accent',
+  },
+  {
+    d: 'M56 50 A5 5 0 0 1 60 42 A5 5 0 0 1 68 36 A5 5 0 0 1 80 34 A5 5 0 0 1 92 36 A5 5 0 0 1 100 42 A5 5 0 0 1 104 50',
+    role: 'accent',
+  },
+  { d: 'M64 50 C70 44 90 44 96 50', role: 'soft' },
+  {
+    d: 'M72 62 l10 -6 M72 78 l14 -8 M72 94 l14 -8 M72 110 l14 -8 M72 126 l14 -8 M72 142 l14 -8 M72 158 l14 -8',
+    role: 'ambient',
+  },
+  {
+    d: 'M44 92 C46 120 46 150 48 170 M116 92 C114 120 114 150 112 170',
+    role: 'soft',
+  },
+  {
+    d: 'M12 140 A3.5 3.5 0 0 1 18 146 A3.5 3.5 0 0 1 26 147 A3.5 3.5 0 0 1 32 144 M128 144 A3.5 3.5 0 0 1 134 147 A3.5 3.5 0 0 1 142 146 A3.5 3.5 0 0 1 148 140',
+    role: 'soft',
+  },
+  { d: 'M128 88 l8 -4 M130 104 l8 -4 M132 120 l8 -4', role: 'ambient' },
+]
+
+/** Nekomamushi's kiseru, the bowl and its smoke the accent, without its shadow. */
+const NEKOMAMUSHI_KISERU: Stroke[] = [
+  { d: 'M38 150 L14 166 a4 4 0 0 0 5 6 L44 158' },
+  { d: 'M32 154 l6 8', role: 'soft' },
+  { d: 'M38 150 L104 104 M44 158 L110 112' },
+  { d: 'M60 135 l6 8 M82 120 l6 8', role: 'soft' },
+  { d: 'M104 104 C112 98 118 90 120 80 M110 112 C120 106 130 96 134 82' },
+  { d: 'M104 104 l6 8', role: 'soft' },
+  { d: ellipse(127, 79, 8, 3.5), role: 'accent' },
+  { d: 'M114 106 l7 -3 M121 101 l7 -4 M127 95 l6 -5', role: 'ambient' },
+  { d: 'M126 72 C114 62 136 54 124 42 C114 32 130 24 120 12', role: 'accent' },
+  { d: 'M132 66 c10 -6 0 -14 10 -22 c6 -4 4 -10 8 -14', role: 'soft' },
+]
+
+/** Pudding's cup of tea on its saucer and the broken chocolate bar, without their shadow. */
+const PUDDING_TEA: Stroke[] = [
+  { d: ellipse(54, 98, 26, 7) },
+  { d: 'M28 98 C30 122 40 134 54 134 C68 134 78 122 80 98' },
+  { d: 'M79 106 C92 104 94 120 76 122', role: 'soft' },
+  { d: 'M34 100 C44 104 64 104 74 100', role: 'soft' },
+  { d: ellipse(54, 136, 42, 9) },
+  { d: 'M16 140 C32 148 76 148 92 140', role: 'soft' },
+  { d: 'M46 86 c-6 -8 6 -12 0 -20 M60 86 c-6 -8 6 -12 0 -20', role: 'soft' },
+  {
+    d: 'M96 164 L112 122 L140 125 l-3 6 l6 4 l-4 6 l6 5 l-5 7 l3 9 Z M112 122 l8 -6 L148 119 l-8 6',
+    role: 'accent',
+  },
+  { d: 'M108 133 l30 3 M103 147 l33 3 M126 124 l-14 40', role: 'soft' },
+  { d: 'M148 119 l-3 6 l6 4 M143 158 l6 -5', role: 'ambient' },
+]
+
+/** Stussy's sunhat with its rose, the accent, and her handbag, without their shadow. */
+const STUSSY_HAT_AND_BAG: Stroke[] = [
+  { d: ellipse(70, 118, 54, 15) },
+  { d: 'M42 114 C40 82 100 82 98 114' },
+  { d: 'M43 104 C58 110 84 110 97 104', role: 'soft' },
+  {
+    d: `${circle(94, 100, 9)} M94 100 m-4 0 a4 4 0 1 1 4 4 M98 108 C104 112 110 110 112 106`,
+    role: 'accent',
+  },
+  { d: 'M18 122 C30 132 110 132 122 122', role: 'soft' },
+  { d: 'M116 162 L120 138 H150 L154 162 Z' },
+  { d: 'M124 138 C124 122 146 122 146 138', role: 'soft' },
+  { d: 'M128 146 h14 v6 h-14 Z', role: 'soft' },
+]
+
+/** Cracker's sword Pretzel, long and level about its tilt, its round guard the accent. */
+const PRETZEL: Stroke[] = [
+  {
+    d: 'M77 136 H112 M77 148 H112 M13 136 H-31 L-43 142 L-31 148 H13',
+    transform: PRETZEL_TILT,
+  },
+  { d: 'M13 142 H-28 M80 142 H110', role: 'soft', transform: PRETZEL_TILT },
+  {
+    d: 'M124 138 H154 C158 138 160 140 160 142 C160 144 158 146 154 146 H124',
+    transform: PRETZEL_TILT,
+  },
+  {
+    d: 'M118 126 q4 2 2 6 q4 3 1 7 q4 3 0 7 q3 4 -2 7 q2 4 -3 5 q-6 0 -6 -16 q0 -16 8 -16 Z M114 127 C126 127 126 157 114 157',
+    role: 'accent',
+    transform: PRETZEL_TILT,
+  },
+]
+
+/**
+ * The great biscuit shield his armour carries, in three quarters: the
+ * scalloped edge, the thickness turning away and hatched, the docking holes.
+ */
+const CRACKER_SHIELD: Stroke[] = [
+  {
+    d: 'M28 64 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 L94 58 M28 64 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 M28 152 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 L94 146',
+  },
+  { d: 'M84 64 V152 M94 58 V146', role: 'soft' },
+  {
+    d: 'M86 74 l6 -6 M86 94 l6 -6 M86 114 l6 -6 M86 134 l6 -6',
+    role: 'ambient',
+  },
+  {
+    d: dots([
+      [40, 80],
+      [56, 80],
+      [72, 80],
+      [40, 100],
+      [56, 100],
+      [72, 100],
+      [40, 120],
+      [56, 120],
+      [72, 120],
+      [40, 138],
+      [56, 138],
+      [72, 138],
+    ]),
+    role: 'soft',
+  },
+]
 
 /** The drawings of the records filed in the whole cake stretch of the route. */
 export const wholeCakeArt = {
@@ -220,44 +480,42 @@ export const wholeCakeArt = {
     shadow(80, 180, 66),
   ],
 
-  // An elephant seen from the sea, a walled city riding on its back.
-  'zou-arc': [
-    { d: 'M18 132 C18 92 46 74 80 74 C114 74 142 92 142 132' },
-    { d: 'M40 132 V152 M70 132 V158 M98 132 V158 M126 132 V152' },
-    { d: 'M18 118 C4 124 6 148 16 152' },
-    { d: 'M22 128 q-10 8 -2 15', role: 'soft' },
-    { d: 'M46 74 V58 H118 V74' },
-    { d: 'M48 58 v-6 h8 v6 M72 58 v-6 h8 v6 M96 58 v-6 h8 v6', role: 'soft' },
-    { d: 'M104 52 V26 H120 V52', role: 'accent' },
-    { d: 'M104 26 v-5 h5 v5 M113 26 v-5 h5 v5', role: 'accent' },
-    ...SEA,
-  ],
+  // Zunesha side on, wading through the sea with its trunk raised and its
+  // tattered ears spread, the Whale Forest at its nape, the great Whale tree
+  // bending up out of it like a whale, its tail spread at the top (the
+  // accent), and the wall round its back with a gate near the tail. The crew
+  // reach the elephant at 751 (ch. 802); the forest and the wall are seen
+  // whole at 753 (ch. 804), inside the arc. Stage: the wall broken at 753.
+  'zou-arc': [...ZUNESHA_WADING, ...ZOU_WHALE_FOREST, ...ZOU_WALL],
 
-  // The bow of the Mammoth, the ship he commands, its figurehead's two
-  // tusks curving out over the water ahead of the stem, the far one behind
-  // the near; the planking turns under the hull. He sails it from his first
-  // pages at 746, and he is named as its captain at 757.
+  // Jack's mammoth form, without its head: the two great tusks curving out,
+  // down and back up, the near one hatched where it turns away, and the
+  // ringed trunk raised between them, its tip curled. He steps onto Zou as
+  // a mammoth at 757 (ch. 807 p. 17), the episode his record opens in.
   'jack': [
     {
-      d: 'M56 80 C80 90 116 90 156 82 V140 C128 146 104 148 88 144 C74 126 64 104 56 80 Z',
+      d: 'M64 100 C58 130 36 148 20 134 C6 120 12 78 34 44 C22 78 20 112 30 122 C40 130 54 122 68 104',
+      role: 'accent',
     },
-    { d: 'M56 80 C80 82 116 78 156 72 V82', role: 'soft' },
     {
-      d: 'M70 108 C96 114 128 112 156 106 M80 126 C106 130 132 128 156 122',
+      d: 'M96 100 C102 132 126 150 142 136 C158 122 152 76 128 42 C142 76 146 116 134 126 C122 134 106 124 92 104',
+      role: 'accent',
+    },
+    {
+      d: 'M100 112 C108 128 124 138 138 130 M24 116 C30 126 44 126 56 116',
       role: 'soft',
     },
+    { d: 'M142 124 l5 -5 M146 108 l6 -4 M146 92 l5 -4', role: 'ambient' },
     {
-      d: 'M94 145 l-4 -9 M108 146 l-4 -9 M122 145 l-4 -9 M136 143 l-4 -9 M150 141 l-4 -9',
-      role: 'ambient',
+      d: 'M66 106 C60 82 60 56 70 38 C76 26 90 22 96 32 C100 40 92 46 86 40 M94 106 C90 84 88 64 90 52 C90 46 88 42 86 40',
     },
-    { ...MAMMOTH_TUSK, transform: 'translate(30 -16)' },
-    MAMMOTH_TUSK,
-    { d: 'M6 86 l8 1 M10 108 l7 -3 M24 74 l8 1', role: 'soft' },
-    ...SEA.slice(1),
+    { d: ellipse(91, 36, 4.5, 3), role: 'soft', transform: 'rotate(40 91 36)' },
     {
-      d: 'M76 150 q10 -5 20 0 q10 5 20 0 M120 150 q10 -5 20 0 q10 5 20 0',
-      role: 'ambient',
+      d: 'M64 94 C70 97 86 97 92 94 M62 80 C68 83 84 83 90 80 M64 66 C70 69 82 69 89 66 M68 53 C73 55 82 55 89 52',
+      role: 'soft',
     },
+    { d: 'M84 102 l6 -6 M84 88 l5 -5 M84 74 l5 -5', role: 'ambient' },
+    shadow(82, 176, 62),
   ],
 
   // Warney, the crocodile-boar she rides, side on: the long ridged body,
@@ -320,38 +578,7 @@ export const wholeCakeArt = {
   // edges and round the collar, the fur at the cuffs, the dark inside showing
   // between the edges. He wears it in his sickbed when the crew are let in
   // to see him, at 758.
-  'inuarashi': [
-    {
-      d: 'M58 48 C40 52 26 62 22 82 L12 140 C14 148 26 150 32 144 L38 112 L36 172 H124 L122 112 L128 144 C134 150 146 148 148 140 L138 82 C134 62 120 52 102 48',
-    },
-    {
-      d: 'M60 52 A4.5 4.5 0 0 1 60.2 59.5 A4.5 4.5 0 0 1 60.5 67 A4.5 4.5 0 0 1 60.8 74.5 A4.5 4.5 0 0 1 61 82 A4.5 4.5 0 0 1 61.2 89.5 A4.5 4.5 0 0 1 61.5 97 A4.5 4.5 0 0 1 61.8 104.5 A4.5 4.5 0 0 1 62 112 A4.5 4.5 0 0 1 62.2 119.5 A4.5 4.5 0 0 1 62.5 127 A4.5 4.5 0 0 1 62.8 134.5 A4.5 4.5 0 0 1 63 142 A4.5 4.5 0 0 1 63.2 149.5 A4.5 4.5 0 0 1 63.5 157 A4.5 4.5 0 0 1 63.8 164.5 A4.5 4.5 0 0 1 64 172',
-      role: 'accent',
-    },
-    {
-      d: 'M96 172 A4.5 4.5 0 0 1 96.2 164.5 A4.5 4.5 0 0 1 96.5 157 A4.5 4.5 0 0 1 96.8 149.5 A4.5 4.5 0 0 1 97 142 A4.5 4.5 0 0 1 97.2 134.5 A4.5 4.5 0 0 1 97.5 127 A4.5 4.5 0 0 1 97.8 119.5 A4.5 4.5 0 0 1 98 112 A4.5 4.5 0 0 1 98.2 104.5 A4.5 4.5 0 0 1 98.5 97 A4.5 4.5 0 0 1 98.8 89.5 A4.5 4.5 0 0 1 99 82 A4.5 4.5 0 0 1 99.2 74.5 A4.5 4.5 0 0 1 99.5 67 A4.5 4.5 0 0 1 99.8 59.5 A4.5 4.5 0 0 1 100 52',
-      role: 'accent',
-    },
-    {
-      d: 'M56 50 A5 5 0 0 1 60 42 A5 5 0 0 1 68 36 A5 5 0 0 1 80 34 A5 5 0 0 1 92 36 A5 5 0 0 1 100 42 A5 5 0 0 1 104 50',
-      role: 'accent',
-    },
-    { d: 'M64 50 C70 44 90 44 96 50', role: 'soft' },
-    {
-      d: 'M72 62 l10 -6 M72 78 l14 -8 M72 94 l14 -8 M72 110 l14 -8 M72 126 l14 -8 M72 142 l14 -8 M72 158 l14 -8',
-      role: 'ambient',
-    },
-    {
-      d: 'M44 92 C46 120 46 150 48 170 M116 92 C114 120 114 150 112 170',
-      role: 'soft',
-    },
-    {
-      d: 'M12 140 A3.5 3.5 0 0 1 18 146 A3.5 3.5 0 0 1 26 147 A3.5 3.5 0 0 1 32 144 M128 144 A3.5 3.5 0 0 1 134 147 A3.5 3.5 0 0 1 142 146 A3.5 3.5 0 0 1 148 140',
-      role: 'soft',
-    },
-    { d: 'M128 88 l8 -4 M130 104 l8 -4 M132 120 l8 -4', role: 'ambient' },
-    shadow(80, 184, 52),
-  ],
+  'inuarashi': [...INUARASHI_ROBE, shadow(80, 184, 52)],
 
   // The green cape of the Guardians, high collar up, open at the front on
   // its dark inside and blown out to one side as he stands on a bough of
@@ -381,53 +608,14 @@ export const wholeCakeArt = {
 
   // His kiseru, the long pipe he is never without, the brass bowl still
   // smoking. He has it from the night he is first found, at 759.
-  'nekomamushi': [
-    { d: 'M38 150 L14 166 a4 4 0 0 0 5 6 L44 158' },
-    { d: 'M32 154 l6 8', role: 'soft' },
-    { d: 'M38 150 L104 104 M44 158 L110 112' },
-    { d: 'M60 135 l6 8 M82 120 l6 8', role: 'soft' },
-    { d: 'M104 104 C112 98 118 90 120 80 M110 112 C120 106 130 96 134 82' },
-    { d: 'M104 104 l6 8', role: 'soft' },
-    { d: ellipse(127, 79, 8, 3.5), role: 'accent' },
-    { d: 'M114 106 l7 -3 M121 101 l7 -4 M127 95 l6 -5', role: 'ambient' },
-    {
-      d: 'M126 72 C114 62 136 54 124 42 C114 32 130 24 120 12',
-      role: 'accent',
-    },
-    { d: 'M132 66 c10 -6 0 -14 10 -22 c6 -4 4 -10 8 -14', role: 'soft' },
-    shadow(74, 182, 54),
-  ],
+  'nekomamushi': [...NEKOMAMUSHI_KISERU, shadow(74, 182, 54)],
 
-  // The hidden door at the back of the Whale Tree's tail, swung open in
-  // three quarters, a long flight of stairs going down into the dark behind
-  // it. The minks bring the crew down it to the cave he is kept in at 768.
-  'raizo': [
-    {
-      d: 'M14 36 C10 80 10 120 14 150 M146 36 C150 80 150 120 146 150',
-      role: 'ambient',
-    },
-    {
-      d: 'M24 50 c-3 16 3 26 0 40 M30 104 c-3 14 3 24 0 36 M134 56 c3 16 -3 24 0 38 M136 110 c3 14 -3 22 0 34',
-      role: 'soft',
-    },
-    { d: 'M50 150 V94 C50 64 98 64 98 94 V150' },
-    { d: 'M98 94 L106 98 V150', role: 'soft' },
-    {
-      d: 'M50 150 L62 134 H86 L98 150 M62 134 L68 124 H80 L86 134 M68 124 L72 116 H76 L80 124',
-      role: 'soft',
-    },
-    {
-      d: 'M56 88 l10 -10 M56 102 l18 -18 M66 106 l22 -22 M80 108 l14 -14',
-      role: 'ambient',
-    },
-    {
-      d: 'M98 90 L128 100 V162 L98 150 Z M128 100 l6 -2 V160 l-6 2',
-      role: 'accent',
-    },
-    { d: circle(122, 132, 2.5), role: 'accent' },
-    { d: 'M8 150 H50 M106 150 H152', role: 'ambient' },
-    shadow(80, 172, 50),
-  ],
+  // The two diamond-shaped panels he wears on his back, quartered, the
+  // far halves hatched for the dark blue they alternate with, the right one
+  // turned a little away; in front of them the purple nio-dasuki tied on his
+  // back in a great knot (the accent), its two ends hanging. He wears both
+  // from his first pages on Zou, at 768 (ch. 817). Stage: the scroll at 1004.
+  'raizo': [...RAIZO_PANELS, ...RAIZO_KNOT, shadow(80, 176, 56)],
 
   // Whole Cake Island from the sea: a gathering of frosted cakes on the
   // shore, the tall tiered chateau in the middle with the cream running down
@@ -547,22 +735,7 @@ export const wholeCakeArt = {
   // saucer still steaming, and a bar of chocolate broken open beside it,
   // the minister of chocolate's own. She serves both in Chocolat Town at
   // 786.
-  'charlotte-pudding': [
-    { d: ellipse(54, 98, 26, 7) },
-    { d: 'M28 98 C30 122 40 134 54 134 C68 134 78 122 80 98' },
-    { d: 'M79 106 C92 104 94 120 76 122', role: 'soft' },
-    { d: 'M34 100 C44 104 64 104 74 100', role: 'soft' },
-    { d: ellipse(54, 136, 42, 9) },
-    { d: 'M16 140 C32 148 76 148 92 140', role: 'soft' },
-    { d: 'M46 86 c-6 -8 6 -12 0 -20 M60 86 c-6 -8 6 -12 0 -20', role: 'soft' },
-    {
-      d: 'M96 164 L112 122 L140 125 l-3 6 l6 4 l-4 6 l6 5 l-5 7 l3 9 Z M112 122 l8 -6 L148 119 l-8 6',
-      role: 'accent',
-    },
-    { d: 'M108 133 l30 3 M103 147 l33 3 M126 124 l-14 40', role: 'soft' },
-    { d: 'M148 119 l-3 6 l6 4 M143 158 l6 -5', role: 'ambient' },
-    shadow(80, 176, 70),
-  ],
+  'charlotte-pudding': [...PUDDING_TEA, shadow(80, 176, 70)],
 
   // A heap of the sweets she demands, a wrapped candy, a cupcake and a
   // lollipop on top, and her bicorne set down at its foot, small and plain:
@@ -624,95 +797,25 @@ export const wholeCakeArt = {
   // The great biscuit shield his armour carries, thick in three quarters
   // with the edge turning away, and the long sword Pretzel crossed behind
   // it, its round guard as the accent. He first comes on with both at 796.
-  'charlotte-cracker': [
-    {
-      d: 'M77 136 H112 M77 148 H112 M13 136 H-31 L-43 142 L-31 148 H13',
-      transform: PRETZEL_TILT,
-    },
-    { d: 'M13 142 H-28 M80 142 H110', role: 'soft', transform: PRETZEL_TILT },
-    {
-      d: 'M124 138 H154 C158 138 160 140 160 142 C160 144 158 146 154 146 H124',
-      transform: PRETZEL_TILT,
-    },
-    {
-      d: 'M118 126 q4 2 2 6 q4 3 1 7 q4 3 0 7 q3 4 -2 7 q2 4 -3 5 q-6 0 -6 -16 q0 -16 8 -16 Z M114 127 C126 127 126 157 114 157',
-      role: 'accent',
-      transform: PRETZEL_TILT,
-    },
-    {
-      d: 'M28 64 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 L94 58 M28 64 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 M28 152 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 q4 5 8 0 L94 146',
-    },
-    { d: 'M84 64 V152 M94 58 V146', role: 'soft' },
-    {
-      d: 'M86 74 l6 -6 M86 94 l6 -6 M86 114 l6 -6 M86 134 l6 -6',
-      role: 'ambient',
-    },
-    {
-      d: dots([
-        [40, 80],
-        [56, 80],
-        [72, 80],
-        [40, 100],
-        [56, 100],
-        [72, 100],
-        [40, 120],
-        [56, 120],
-        [72, 120],
-        [40, 138],
-        [56, 138],
-        [72, 138],
-      ]),
-      role: 'soft',
-    },
-    shadow(80, 182, 56),
-  ],
+  'charlotte-cracker': [...PRETZEL, ...CRACKER_SHIELD, shadow(80, 182, 56)],
 
-  // The crooked tree Carrot takes her for in the Seducing Woods, the trunk
-  // rounding at its roots and hatched on the side away from the light, its
-  // long branches reaching out like fingers, sharp at the tips. Carrot
-  // mistakes her for one at 792.
+  // Two of her mirrors standing on their rims in three quarters, the far one
+  // smaller, each frame's edge turning away and hatched, a glint across the
+  // near glass (the accent). She makes doubles with her mirror power at 790
+  // and reflects Luffy at 791 (ch. 831), before her record opens at 792; the
+  // wiki gives no frame or stand, so both are plain.
   'charlotte-brulee': [
-    { d: 'M62 176 C66 150 64 126 56 108 C50 94 38 80 16 66' },
-    { d: 'M96 176 C92 150 96 128 104 112 C112 98 126 88 148 86' },
-    {
-      d: 'M16 66 C34 70 50 76 60 84 C60 66 54 46 42 28 M70 82 C70 60 76 40 86 22 M80 86 C86 70 98 56 112 46 M94 96 C108 84 120 74 134 66',
-    },
-    {
-      d: 'M16 66 l-7 -4 M42 28 l-4 -7 M86 22 l2 -8 M112 46 l6 -5 M134 66 l7 -3 M148 86 l7 1',
-      role: 'accent',
-    },
-    {
-      d: 'M70 168 C72 146 70 124 64 104 M84 166 C84 144 86 124 92 106',
-      role: 'soft',
-    },
-    {
-      d: 'M94 160 l8 -4 M94 146 l9 -4 M96 132 l9 -4 M100 118 l8 -4 M108 104 l6 -4',
-      role: 'ambient',
-    },
-    {
-      d: 'M44 182 C52 178 58 176 62 172 M114 182 C104 178 100 176 96 172 M56 180 C68 186 92 186 104 180',
-      role: 'soft',
-    },
-    shadow(80, 190, 50),
+    ...moved(BRULEE_MIRROR, 'translate(-26 46) scale(0.6)'),
+    shadow(32, 152, 22),
+    ...BRULEE_MIRROR,
+    { d: 'M72 88 L90 66 M74 104 L102 70 M80 116 L94 100', role: 'accent' },
+    shadow(94, 174, 40),
   ],
 
   // The white sunhat she wears to the Tea Party, a rose on its band, the
   // brim seen from a little above, and the pink handbag she carries set down
   // beside it. She arrives in both with the bosses of the underworld at 830.
-  'stussy': [
-    { d: ellipse(70, 118, 54, 15) },
-    { d: 'M42 114 C40 82 100 82 98 114' },
-    { d: 'M43 104 C58 110 84 110 97 104', role: 'soft' },
-    {
-      d: `${circle(94, 100, 9)} M94 100 m-4 0 a4 4 0 1 1 4 4 M98 108 C104 112 110 110 112 106`,
-      role: 'accent',
-    },
-    { d: 'M18 122 C30 132 110 132 122 122', role: 'soft' },
-    { d: 'M116 162 L120 138 H150 L154 162 Z' },
-    { d: 'M124 138 C124 122 146 122 146 138', role: 'soft' },
-    { d: 'M128 146 h14 v6 h-14 Z', role: 'soft' },
-    shadow(84, 176, 70),
-  ],
+  'stussy': [...STUSSY_HAT_AND_BAG, shadow(84, 176, 70)],
 
   // His top hat, standing on a folded newspaper, the striped feather tucked
   // in its band as the accent and the dark crown hatched on the far side.
@@ -742,39 +845,15 @@ export const wholeCakeArt = {
     shadow(80, 172, 62),
   ],
 
-  // His spear, stood on its butt and leaning: a long blade ridged down the
-  // middle with its lower facet hatched, a crossguard with its thickness
-  // and a collar under it, the grip wrapped near the foot. He jabs at Sanji
-  // with it at 793 (ch. 833). The wiki gives him a golden helmet, never a
-  // crown, so there is none, and no charge in the blade.
+  // His golden helmet set down in three quarters (the accent), the open
+  // front low on the left and hatched, the far side hatched, and his spear
+  // stood upright behind it on its butt. He always wears the helmet, and he
+  // jabs at Sanji with the spear at 793 (ch. 833). The wiki gives the helmet
+  // no shape, so it is drawn plain, with no crest. Stage: both broken at 841.
   'vinsmoke-judge': [
-    { d: 'M-24 97 H96 M-24 103 H96 M-24 97 V103', transform: JUDGE_SPEAR_TILT },
-    {
-      d: 'M-8 97 l5 6 M0 97 l5 6 M8 97 l5 6 M16 97 l5 6',
-      role: 'soft',
-      transform: JUDGE_SPEAR_TILT,
-    },
-    {
-      d: 'M104 86 l3 -3 h5 v28 l-3 3 M109 86 l3 -3',
-      role: 'soft',
-      transform: JUDGE_SPEAR_TILT,
-    },
-    {
-      d: 'M96 94 h8 v12 h-8 Z M104 86 h5 v28 h-5 Z',
-      transform: JUDGE_SPEAR_TILT,
-    },
-    {
-      d: 'M109 100 L128 90 L194 100 L128 110 Z',
-      role: 'accent',
-      transform: JUDGE_SPEAR_TILT,
-    },
-    { d: 'M109 100 H194', role: 'soft', transform: JUDGE_SPEAR_TILT },
-    {
-      d: 'M126 103 l3 5 M138 102 l3 6 M150 102 l3 5 M162 101 l3 5 M174 101 l2 3',
-      role: 'ambient',
-      transform: JUDGE_SPEAR_TILT,
-    },
-    shadow(36, 186, 30),
+    ...moved([...JUDGE_SPEAR_SHAFT, ...JUDGE_SPEAR_HEAD], JUDGE_SPEAR_UPRIGHT),
+    ...JUDGE_HELMET,
+    shadow(76, 182, 56),
   ],
 
   // His white raid-suit cape laid out from the front: the high collar, the
@@ -2030,10 +2109,6 @@ const ZEUS_IN_THE_STAFF: Stroke[] = [
   shadow(62, 186, 44),
 ]
 
-/** The tilt that sinks the Mammoth's bow nose first. */
-const MAMMOTH_SINKING =
-  'translate(82 136) scale(0.82) translate(-82 -136) translate(3 4) rotate(-24 96 112) translate(-4 6)'
-
 /** The ring trim down the front edge of Pedro's disguise cape, a ring every 8. */
 const PEDRO_RINGS = [62, 70, 78, 86, 94, 102, 110, 118, 126, 134, 142]
   .map((y) => circle(88 + (y - 56) * 0.021, y, 3))
@@ -2070,6 +2145,178 @@ const PEDRO_FEDORA: Stroke[] = [
   shadow(80, 168, 58),
 ]
 
+/**
+ * The Kozuki crest standing as a medallion, its ring the accent: Inuarashi
+ * and Nekomamushi bear it on their bodies as the family's retainers.
+ */
+const KOZUKI_CREST_LIT: Stroke[] = KOZUKI_CREST.map((stroke) => {
+  return stroke.role === undefined ? { ...stroke, role: 'accent' } : stroke
+})
+
+/** Inuarashi's robe made smaller, standing above the crest. */
+const INUARASHI_ROBE_SMALL = moved(
+  softened(INUARASHI_ROBE),
+  'translate(18 -4) scale(0.72)',
+)
+
+/**
+ * The sword that stands in for Inuarashi's left leg, growing out of a pale
+ * round socket under the robe's hem and curving down like a sabre.
+ */
+const INUARASHI_SWORD_LEG: Stroke[] = [
+  { d: 'M82 119 V128 C82 136 98 136 98 128 V119' },
+  { d: 'M82 124 C87 127 93 127 98 124', role: 'soft' },
+  { d: 'M96 134 C126 132 150 150 148 188 C140 162 118 146 86 136' },
+  {
+    d: 'M111.3 135.6 l0.6 4.7 M120.5 138.3 l-0.3 4.7 M128.7 142.7 l-1.3 4.6 M135.6 148.8 l-2.3 4.1 M141.1 156.6 l-3.2 3.5 M145 166 l-3.9 2.7',
+    role: 'ambient',
+  },
+]
+
+/** The robe, the sword leg and the crest, from 993 and again after Sulong. */
+const INUARASHI_ON_THE_SWORD: Stroke[] = [
+  ...INUARASHI_ROBE_SMALL,
+  ...INUARASHI_SWORD_LEG,
+  ...KOZUKI_CREST_LIT,
+  shadow(100, 190, 48),
+]
+
+/** Nekomamushi's kiseru made smaller, above the gun forearm. */
+const NEKOMAMUSHI_KISERU_SMALL = moved(
+  softened(NEKOMAMUSHI_KISERU),
+  'translate(2 -6) scale(0.72)',
+)
+
+/**
+ * What replaces Nekomamushi's left forearm: a ringed, banded cuff ending in
+ * two short barrels, a small blank tag hanging from it.
+ */
+const NEKOMAMUSHI_GUN_ARM: Stroke[] = [
+  {
+    d: 'M96 132 C100 132 104 140 104 150 C104 160 100 168 96 168 C92 168 88 160 88 150 C88 140 92 132 96 132 Z M96 132 L138 128 M96 168 L138 172',
+  },
+  {
+    d: 'M110 130.6 C114 132 117 140 117 150 C117 160 114 168 110 169.4 M124 129.2 C128 131 131 140 131 150 C131 160 128 169 124 170.8 M138 128 C143 128 147 140 147 150 C147 160 143 172 138 172',
+    role: 'soft',
+  },
+  { d: 'M100 166 l6 4 M113 166 l6 4.5 M126 166 l6 5', role: 'ambient' },
+  {
+    d: `${ellipse(62, 142, 3.5, 6.5)} M62 135.5 H94 M62 148.5 H92 ${ellipse(62, 158, 3.5, 6.5)} M62 151.5 H92 M62 164.5 H94`,
+  },
+  {
+    d: `${ellipse(62, 142, 1.5, 3)} ${ellipse(62, 158, 1.5, 3)}`,
+    role: 'soft',
+  },
+  { d: 'M100 168 L98 176 M92 176 H104 V188 H92 Z' },
+]
+
+/** The kiseru, the gun forearm and the crest, from 992 and again after Sulong. */
+const NEKOMAMUSHI_ARMED: Stroke[] = [
+  ...NEKOMAMUSHI_KISERU_SMALL,
+  ...NEKOMAMUSHI_GUN_ARM,
+  ...KOZUKI_CREST_LIT,
+  shadow(104, 192, 40),
+]
+
+/** Electro crackling round a mink in Sulong, plain so the moon keeps the accent. */
+const SULONG_ELECTRO: Stroke = {
+  d: 'M14 60 l8 6 l-6 4 l10 6 M146 54 l-8 6 l6 4 l-10 6 M20 110 l8 4 l-6 4 l8 6',
+}
+
+/** The World Government's emblem set beside Stussy's things, in her colour. */
+function governmentEmblem(transform: string): Stroke {
+  return { d: WORLD_GOVERNMENT_EMBLEM, role: 'accent', transform }
+}
+
+/**
+ * Stussy's CP0 mask seen from behind so it shows no face: a hood of
+ * scalloped tufts, two small dark ears, long wavy strands down its back.
+ */
+const STUSSY_MASK: Stroke[] = [
+  {
+    d: 'M10 170 A6 6 0 0 1 12.1 154.7 A6 6 0 0 1 18.2 141.7 A6 6 0 0 1 27.3 133 A6 6 0 0 1 38 130 A6 6 0 0 1 48.7 133 A6 6 0 0 1 57.8 141.7 A6 6 0 0 1 63.9 154.7 A6 6 0 0 1 66 170 A6 6 0 0 1 56.7 170 A6 6 0 0 1 47.3 170 A6 6 0 0 1 38 170 A6 6 0 0 1 28.7 170 A6 6 0 0 1 19.3 170 A6 6 0 0 1 10 170',
+  },
+  { d: 'M17 145 L15 125 L28 135 M48 135 L61 125 L59 145' },
+  {
+    d: 'M17 139 l5 -5 M16 132 l2.5 -2.5 M59 139 l-5 -5 M60 132 l-2.5 -2.5',
+    role: 'ambient',
+  },
+  {
+    d: 'M26 146 C22 154 30 160 24 170 M38 140 C34 150 42 158 37 170 M50 146 C54 154 46 160 52 170',
+    role: 'soft',
+  },
+]
+
+/**
+ * A pair of bat wings spread from behind Stussy's mask: the leading edges
+ * up to the tips, the membrane scalloped between the bones (the accent).
+ */
+const STUSSY_BAT_WINGS: Stroke[] = [
+  {
+    d: 'M58 142 C50 108 34 74 2 60 C8 76 8 92 2 106 C14 104 22 110 24 122 C32 118 40 124 42 134 C48 132 54 138 56 150 M102 142 C110 108 126 74 158 60 C152 76 152 92 158 106 C146 104 138 110 136 122 C128 118 120 124 118 134 C112 132 106 138 104 150',
+    role: 'accent',
+  },
+  {
+    d: 'M58 144 L4 64 M57 146 L4 104 M57 148 L26 120 M102 144 L156 64 M103 146 L156 104 M103 148 L134 120',
+    role: 'soft',
+  },
+]
+
+/**
+ * The wall round Zunesha's back as Jack's raid left it: the stretch in the
+ * middle knocked down, its broken ends jagged and fallen blocks lying on the
+ * back (the accent), the gate's posts standing with the gate gone.
+ */
+const ZOU_WALL_BROKEN: Stroke[] = [
+  {
+    d: 'M100 52 C106 50 110 49 114 48 M100 60 C106 58 110 57 114 56 M132 48 C140 51 146 58 152 68 M130 56 C138 59 144 66 148 74',
+  },
+  { d: 'M104 50 v-5 h5 v5 M141 53 v-5 h5 v5', role: 'soft' },
+  { d: 'M146 74 V68 M152 66 V76', role: 'soft' },
+  {
+    d: 'M114 48 l3 3 l-2 2 l3 3 M132 48 l-3 3 l2 2 l-3 3 M116 66 l6 -2 l2 4 l-6 2 Z M126 70 h5 v4 h-5 Z',
+    role: 'accent',
+  },
+]
+
+/**
+ * Raizo's scroll hanging unrolled in the air: the roller across the top
+ * with its two ends, the paper falling from it and curling at the foot (the
+ * accent), its far edge hatched.
+ */
+const RAIZO_SCROLL: Stroke[] = [
+  {
+    d: `${ellipse(90, 34, 3, 6)} ${ellipse(150, 34, 3, 6)} M90 28 H150 M90 40 H150`,
+  },
+  {
+    d: 'M96 40 C94 70 100 100 96 132 C96 142 104 146 110 140 C116 136 112 130 106 132 M144 40 C142 70 148 100 144 130 C143 140 136 146 128 144 L110 140',
+    role: 'accent',
+  },
+  {
+    d: 'M102 46 C100 74 106 102 102 128 M138 46 C136 74 142 102 138 126',
+    role: 'soft',
+  },
+  { d: 'M138 50 l6 -4 M140 76 l6 -4 M140 102 l6 -4', role: 'ambient' },
+]
+
+/** The slant of Pudding's cut film, drawn level. */
+const PUDDING_FILM_TILT = 'rotate(-20 80 150)'
+
+/** Where the sprocket holes run along both edges of Pudding's film. */
+const PUDDING_FILM_HOLES = [
+  12, 20, 28, 36, 44, 52, 60, 88, 96, 104, 112, 120, 128, 136, 144,
+]
+
+/** The jagged break down the middle of Cracker's biscuit shield. */
+const CRACKER_BREAK =
+  'M54 64 L60 76 L52 88 L60 100 L52 112 L60 124 L52 138 L56 152'
+
+/** The right half of the broken shield, pushed a little apart. */
+const CRACKER_HALF_APART = 'translate(8 2) rotate(3 94 152)'
+
+/** Judge's helmet split in two, the back half tipped over onto its side. */
+const JUDGE_HELMET_TIPPED = 'translate(2 8) rotate(30 126 166)'
+
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const wholeCakeRedrawn: Redrawings = {
   // The same figure, with the arrow-tipped appendage it sends out of its body
@@ -2086,64 +2333,42 @@ export const wholeCakeRedrawn: Redrawings = {
       ],
     },
   ],
-  // The same bow broken off and going down, tipped nose first, its planks
-  // splintering where it snapped and pieces of it in the air, the tusks
-  // sinking under a wave. One swing of Zunesha's trunk wrecks the Mammoth
-  // at 774 (ch. 821).
-  'jack': [
-    {
-      episode: 774,
-      chapter: 821,
-      value: [
-        ...moved(wholeCakeArt.jack.slice(0, 6), MAMMOTH_SINKING),
-        {
-          d: 'M156 84 l5 4 l-3 4 l6 5 l-5 3 l4 6 l-4 2 M156 110 l6 2 l-3 4 l7 4 l-6 3 l4 5 M156 130 l5 -1 l-2 5 l6 2 l-5 4',
-          transform: MAMMOTH_SINKING,
-        },
-        {
-          d: 'M106 30 l16 -8 l3 5 l-16 8 Z M132 14 l12 8 l-3 4 l-12 -8 Z',
-          role: 'soft',
-        },
-        {
-          d: 'M96 40 l-4 -7 M146 34 l6 -3 M120 48 l5 -4 M138 52 l2 -6',
-          role: 'soft',
-        },
-        {
-          d: 'M-4 150 C10 138 30 132 46 138 C56 142 58 150 52 154 C50 148 44 146 40 150',
-          role: 'ambient',
-        },
-        {
-          d: 'M76 150 q6 -10 12 -2 q6 -12 14 0 M124 136 q6 -8 10 -2 q4 -8 12 0',
-          role: 'ambient',
-        },
-        ...SEA,
-      ],
-    },
-  ],
-
-  // The duke's robe again, hung open from the shoulders, and under its hem
-  // the long blade that stands in for his left leg, growing out of a pale
-  // round socket and curving down like a sabre. He fights on it in the raid
-  // on Onigashima at 993 (ch. 985).
+  // The robe smaller and plain, and the Kozuki crest standing beside it as a
+  // medallion, its ring the accent: Shishilian notes he bears the crest on
+  // his body and Kin'emon names Momonosuke his master at 768 (ch. 817 p. 4-9).
+  // Then the long blade that stands in for his left leg under the hem,
+  // growing out of a pale round socket and curving down like a sabre, the
+  // crest still beside it: he fights on it in the raid on Onigashima at 993
+  // (ch. 985). Then Sulong: the same robe, leg and crest, the crest plain,
+  // with the full moon above (the accent) and Electro crackling round him;
+  // he and Nekomamushi transform at 1000 (ch. 990 p. 5). The robe is cloth,
+  // so it does not whiten. Sulong over at 1021 (ch. 1006 p. 6), when clouds
+  // cover the moon and Carrot and Wanda lose the form: inferred for him, not
+  // viewed. Only his first Sulong counts.
   'inuarashi': [
     {
-      episode: 993,
-      chapter: 985,
+      episode: 768,
+      chapter: 817,
       value: [
-        ...moved(
-          wholeCakeArt.inuarashi.slice(0, 9),
-          'translate(18 -4) scale(0.72)',
-        ),
-        { d: 'M82 119 V128 C82 136 98 136 98 128 V119' },
-        { d: 'M82 124 C87 127 93 127 98 124', role: 'soft' },
-        { d: 'M96 134 C126 132 150 150 148 188 C140 162 118 146 86 136' },
-        {
-          d: 'M111.3 135.6 l0.6 4.7 M120.5 138.3 l-0.3 4.7 M128.7 142.7 l-1.3 4.6 M135.6 148.8 l-2.3 4.1 M141.1 156.6 l-3.2 3.5 M145 166 l-3.9 2.7',
-          role: 'ambient',
-        },
+        ...INUARASHI_ROBE_SMALL,
+        ...KOZUKI_CREST_LIT,
+        shadow(80, 132, 44),
+      ],
+    },
+    { episode: 993, chapter: 985, value: INUARASHI_ON_THE_SWORD },
+    {
+      episode: 1000,
+      chapter: 990,
+      value: [
+        ...INUARASHI_ROBE_SMALL,
+        ...INUARASHI_SWORD_LEG,
+        ...KOZUKI_CREST,
+        { d: circle(138, 22, 14), role: 'accent' },
+        SULONG_ELECTRO,
         shadow(100, 190, 48),
       ],
     },
+    { episode: 1021, chapter: 1006, value: INUARASHI_ON_THE_SWORD },
   ],
 
   // His Totto Land disguise: a dark cape, floor length and high in the
@@ -2205,69 +2430,88 @@ export const wholeCakeRedrawn: Redrawings = {
     },
   ],
 
-  // His kiseru still smoking, and beside it what replaces his left forearm:
-  // a ringed, banded cuff ending in two short barrels, a small blank tag
-  // hanging from it. He fights with it in the raid on Onigashima at 992
-  // (ch. 984).
+  // The kiseru, bowl and smoke now plain, and the Kozuki crest standing
+  // above it as a medallion, its ring the accent: he bears the crest on his
+  // body and bows to Momonosuke as his master at 768 (ch. 817 p. 5-9). Then
+  // the kiseru smaller and, beside it, what replaces his left forearm: a
+  // ringed, banded cuff ending in two short barrels, a small blank tag
+  // hanging from it, the crest still beside them. He fights with it in the
+  // raid on Onigashima at 992 (ch. 984). Then Sulong: the same kiseru, gun
+  // and crest, the crest plain, the full moon above (the accent) and Electro
+  // crackling round him; the smoke stays smoke. He and Inuarashi transform
+  // at 1000 (ch. 990 p. 5). Sulong over at 1021 (ch. 1006 p. 6), when clouds
+  // cover the moon over Onigashima: inferred for him, not viewed.
   'nekomamushi': [
     {
-      episode: 992,
-      chapter: 984,
+      episode: 768,
+      chapter: 817,
       value: [
-        ...moved(
-          wholeCakeArt.nekomamushi.slice(0, 9),
-          'translate(2 -6) scale(0.72)',
-        ),
-        {
-          d: 'M96 132 C100 132 104 140 104 150 C104 160 100 168 96 168 C92 168 88 160 88 150 C88 140 92 132 96 132 Z M96 132 L138 128 M96 168 L138 172',
-        },
-        {
-          d: 'M110 130.6 C114 132 117 140 117 150 C117 160 114 168 110 169.4 M124 129.2 C128 131 131 140 131 150 C131 160 128 169 124 170.8 M138 128 C143 128 147 140 147 150 C147 160 143 172 138 172',
-          role: 'soft',
-        },
-        { d: 'M100 166 l6 4 M113 166 l6 4.5 M126 166 l6 5', role: 'ambient' },
-        {
-          d: `${ellipse(62, 142, 3.5, 6.5)} M62 135.5 H94 M62 148.5 H92 ${ellipse(62, 158, 3.5, 6.5)} M62 151.5 H92 M62 164.5 H94`,
-        },
-        {
-          d: `${ellipse(62, 142, 1.5, 3)} ${ellipse(62, 158, 1.5, 3)}`,
-          role: 'soft',
-        },
-        { d: 'M100 168 L98 176 M92 176 H104 V188 H92 Z' },
+        ...softened(NEKOMAMUSHI_KISERU),
+        ...moved(KOZUKI_CREST_LIT, 'translate(0 -116)'),
+        shadow(74, 182, 54),
+      ],
+    },
+    { episode: 992, chapter: 984, value: NEKOMAMUSHI_ARMED },
+    {
+      episode: 1000,
+      chapter: 990,
+      value: [
+        ...NEKOMAMUSHI_KISERU_SMALL,
+        ...NEKOMAMUSHI_GUN_ARM,
+        ...KOZUKI_CREST,
+        { d: circle(138, 30, 14), role: 'accent' },
+        SULONG_ELECTRO,
         shadow(104, 192, 40),
       ],
     },
+    { episode: 1021, chapter: 1006, value: NEKOMAMUSHI_ARMED },
   ],
 
-  // The sunhat and handbag as before, and beside them the CP0 mask she has
-  // taken off, seen from behind so it shows no face: a hood of scalloped
-  // tufts, two small dark ears, long wavy strands down its back. It lies on
-  // the table in front of her at 1092 (ch. 1062). Then the jacket she wears
-  // on Egghead in place of the hat and the bag: black, cropped, the sleeves
-  // puffed and gathered into cuffs, laid out flat, its high collar the
-  // accent. She wears it on Egghead from 1106 (ch. 1074).
+  // The sunhat and handbag, the rose plain, and the World Government's
+  // emblem beside them as a symbol, in her colour: her true affiliation, an
+  // undercover CP0 agent, is revealed at 841 (ch. 871 p. 4-6). She is in her
+  // own clothes there, with no cape. Then the same hat and bag smaller,
+  // the emblem still beside them, and the CP0 mask she has taken off, seen
+  // from behind so it shows no face: a hood of scalloped tufts, two small
+  // dark ears, long wavy strands down its back. It lies on the table in
+  // front of her at 1092 (ch. 1062). Then the mask with a pair of bat wings
+  // spread behind it (the accent), the hat and bag small and plain, and no
+  // emblem: she bites Kaku with her Bat-Bat Fruit, is revealed as a clone and
+  // turns on CP0 at 1104 (ch. 1072 p. 9-17). Then the jacket she wears on
+  // Egghead in place of the hat and the bag, laid out flat, the sleeves
+  // puffed and gathered into cuffs, its high collar the accent. She wears it
+  // on Egghead from 1106 (ch. 1074).
   'stussy': [
+    {
+      episode: 841,
+      chapter: 871,
+      value: [
+        ...softened(STUSSY_HAT_AND_BAG),
+        governmentEmblem('translate(124 46) scale(1.5) translate(-120 -40)'),
+        shadow(84, 176, 70),
+      ],
+    },
     {
       episode: 1092,
       chapter: 1062,
       value: [
         ...moved(
-          wholeCakeArt.stussy.slice(0, 8),
+          softened(STUSSY_HAT_AND_BAG),
           'translate(60.1 63.2) scale(0.62)',
         ),
-        {
-          d: 'M10 170 A6 6 0 0 1 12.1 154.7 A6 6 0 0 1 18.2 141.7 A6 6 0 0 1 27.3 133 A6 6 0 0 1 38 130 A6 6 0 0 1 48.7 133 A6 6 0 0 1 57.8 141.7 A6 6 0 0 1 63.9 154.7 A6 6 0 0 1 66 170 A6 6 0 0 1 56.7 170 A6 6 0 0 1 47.3 170 A6 6 0 0 1 38 170 A6 6 0 0 1 28.7 170 A6 6 0 0 1 19.3 170 A6 6 0 0 1 10 170',
-        },
-        { d: 'M17 145 L15 125 L28 135 M48 135 L61 125 L59 145' },
-        {
-          d: 'M17 139 l5 -5 M16 132 l2.5 -2.5 M59 139 l-5 -5 M60 132 l-2.5 -2.5',
-          role: 'ambient',
-        },
-        {
-          d: 'M26 146 C22 154 30 160 24 170 M38 140 C34 150 42 158 37 170 M50 146 C54 154 46 160 52 170',
-          role: 'soft',
-        },
+        ...STUSSY_MASK,
+        governmentEmblem('translate(38 84) scale(1.3) translate(-120 -40)'),
         shadow(80, 182, 76),
+      ],
+    },
+    {
+      episode: 1104,
+      chapter: 1072,
+      value: [
+        ...STUSSY_BAT_WINGS,
+        ...moved(STUSSY_MASK, 'translate(42 -8)'),
+        ...moved(softened(STUSSY_HAT_AND_BAG), 'translate(110 136) scale(0.3)'),
+        shadow(80, 184, 70),
       ],
     },
     {
@@ -2566,6 +2810,193 @@ export const wholeCakeRedrawn: Redrawings = {
           role: 'soft',
         },
         ...wholeCakeArt['whole-cake-island'].slice(9),
+      ],
+    },
+  ],
+
+  // The same elephant, the wall round its back knocked down in the middle,
+  // fallen blocks lying on the back (the accent), the gate gone from its
+  // posts, the Whale plain: the crew find the Mokomo Dukedom in ruins, its
+  // gate ripped off, at 753 (ch. 804 p. 9-11).
+  'zou-arc': [
+    {
+      episode: 753,
+      chapter: 804,
+      value: [
+        ...ZUNESHA_WADING,
+        ...softened(ZOU_WHALE_FOREST),
+        ...ZOU_WALL_BROKEN,
+      ],
+    },
+  ],
+
+  // The panels and the knot smaller and plain, and beside them a scroll he
+  // conjures out of thin air, hanging unrolled. He first uses the Scroll-
+  // Scroll Fruit openly to catch Kaido's Bolo Breath at 1004 (ch. 992
+  // p. 14-15); his ninja clone at 768 is not shown to use scrolls.
+  'raizo': [
+    {
+      episode: 1004,
+      chapter: 992,
+      value: [
+        ...moved(
+          [...RAIZO_PANELS, ...softened(RAIZO_KNOT)],
+          'translate(0 40) scale(0.6)',
+        ),
+        ...RAIZO_SCROLL,
+        shadow(80, 182, 66),
+      ],
+    },
+  ],
+
+  // The tea and the chocolate smaller and plain, and in front of them a
+  // strip of film cut in two (the accent), its frames and sprocket holes:
+  // she shows Reiju her true self at 817 (ch. 850 p. 14-17) and pulls
+  // memories out as film to cut them away (ch. 851 p. 3-7, the same
+  // episode). Pinned at 851 so the film reaches no reader early.
+  'charlotte-pudding': [
+    {
+      episode: 817,
+      chapter: 851,
+      value: [
+        ...moved(softened(PUDDING_TEA), 'translate(28 -10) scale(0.72)'),
+        {
+          d: 'M8 136 H70 L66 152 H8 Z M84 136 H150 V152 H80 Z',
+          role: 'accent',
+          transform: PUDDING_FILM_TILT,
+        },
+        {
+          d: 'M24 136 V152 M40 136 V152 M56 136 V152 M100 136 V152 M116 136 V152 M132 136 V152',
+          role: 'soft',
+          transform: PUDDING_FILM_TILT,
+        },
+        {
+          d: dots(
+            PUDDING_FILM_HOLES.flatMap((x): [number, number][] => [
+              [x, 140],
+              [x, 148],
+            ]),
+          ),
+          role: 'soft',
+          transform: PUDDING_FILM_TILT,
+        },
+        shadow(80, 182, 70),
+      ],
+    },
+  ],
+
+  // The heap of sweets and the bicorne all plain, and a soul pulled up out
+  // of the side of the heap like pink smoke, narrowing to a point as it is
+  // drawn away (the accent): she takes Moscato's lifespan with Soul Pocus at
+  // 789 (ch. 829 p. 13-14). The true chapter is below her record's 831, so
+  // it is pinned there.
+  'charlotte-linlin': [
+    {
+      episode: 789,
+      chapter: 831,
+      value: [
+        ...softened(wholeCakeArt['charlotte-linlin']),
+        {
+          d: 'M32 118 C14 108 12 90 24 80 C34 72 26 60 18 54 C14 44 22 34 30 30 C36 24 40 16 44 6 M60 104 C50 98 48 88 54 80 C60 72 54 62 46 56 C42 50 42 40 44 30 C44 22 44 14 44 6',
+          role: 'accent',
+        },
+        {
+          d: 'M30 96 C34 92 38 86 36 80 M28 62 C32 58 36 52 36 46',
+          role: 'soft',
+        },
+      ],
+    },
+  ],
+
+  // The biscuit shield split down the middle, the jagged break (the accent)
+  // showing it hollow, the right half pushed apart, crumbs on the ground,
+  // and Pretzel whole behind it, its guard plain. Luffy shatters the armour,
+  // and the real Cracker comes out of it with the real Pretzel at 799
+  // (ch. 838 p. 4-6): the armour was a biscuit puppet.
+  'charlotte-cracker': [
+    {
+      episode: 799,
+      chapter: 838,
+      value: [
+        ...softened(PRETZEL),
+        {
+          d: 'M54 64 q-4 -5 -8 0 q-4 -5 -8 0 q-4 -5 -8 0 L28 64 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q-5 4 0 8 q4 5 8 0 q4 5 8 0 q4 5 8 0 L52 152',
+        },
+        { d: CRACKER_BREAK, role: 'accent' },
+        { d: CRACKER_BREAK, role: 'accent', transform: CRACKER_HALF_APART },
+        {
+          d: 'M54 64 q4 -5 8 0 q4 -5 8 0 q4 -5 8 0 L78 64 H84 L94 58 V146 L84 152 H56 M84 64 V152',
+          transform: CRACKER_HALF_APART,
+        },
+        {
+          d: 'M86 74 l6 -6 M86 94 l6 -6 M86 114 l6 -6 M86 134 l6 -6',
+          role: 'ambient',
+          transform: CRACKER_HALF_APART,
+        },
+        { d: 'M60 80 l6 3 M58 104 l7 3 M58 128 l7 3', role: 'ambient' },
+        {
+          d: dots([
+            [40, 80],
+            [40, 100],
+            [40, 120],
+            [40, 138],
+          ]),
+          role: 'soft',
+        },
+        {
+          d: dots([
+            [72, 80],
+            [72, 100],
+            [72, 120],
+            [72, 138],
+          ]),
+          role: 'soft',
+          transform: CRACKER_HALF_APART,
+        },
+        {
+          d: 'M40 166 l4 -3 l3 3 l-4 2 Z M110 170 l3 -3 l4 2 l-3 3 Z M62 172 l3 -2 l2 3 l-3 1 Z',
+          role: 'soft',
+        },
+        shadow(80, 182, 60),
+      ],
+    },
+  ],
+
+  // The helmet split in two (the accent), the back half tipped over on its
+  // side, and the spear shattered: the shaft snapped in two and the head
+  // lying apart. Big Mom shatters his spear and her Zeus's lightning breaks
+  // off his helmet at 841 (ch. 871 p. 10-12).
+  'vinsmoke-judge': [
+    {
+      episode: 841,
+      chapter: 871,
+      value: [
+        {
+          d: 'M26 140 C26 112 46 92 68 92 L64 102 L72 112 L64 122 L72 132 L66 144 L70 166 C62 166 56 165 50 164 L48 146 C40 142 32 142 26 146 Z',
+          role: 'accent',
+        },
+        {
+          d: 'M72 92 C94 92 114 112 114 140 C114 150 118 156 126 162 C108 167 90 167 74 166 L70 144 L76 132 L68 122 L76 112 L68 102 Z',
+          role: 'accent',
+          transform: JUDGE_HELMET_TIPPED,
+        },
+        { d: 'M26 140 C40 144 52 145 66 145', role: 'soft' },
+        { d: 'M30 160 l6 -8 M36 162 l8 -10 M43 164 l5 -6', role: 'ambient' },
+        {
+          d: 'M102 108 l7 -4 M108 122 l7 -4 M110 136 l7 -4',
+          role: 'ambient',
+          transform: JUDGE_HELMET_TIPPED,
+        },
+        ...moved(
+          JUDGE_SPEAR_HEAD,
+          'translate(96 182) rotate(-6) scale(0.6) translate(-96 -100)',
+        ),
+        {
+          d: 'M-24 97 H30 L34 100 L30 103 H-24 Z M44 97 L48 100 L44 103 H96 V97 Z',
+          transform:
+            'translate(18 180) rotate(4) scale(0.6) translate(-24 -100)',
+        },
+        shadow(80, 186, 68),
       ],
     },
   ],
