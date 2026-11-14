@@ -727,8 +727,8 @@ const links = {
     character: 'monkey-d-luffy',
     type: { en: 'Opponent', it: 'Avversario' },
     summary: {
-      en: 'Cracker attacks Luffy in the Seducing Woods with his biscuit soldiers.',
-      it: 'Cracker attacca Rufy nella Foresta della Seduzione con i suoi soldati di biscotto.',
+      en: 'Cracker attacks Luffy in the Seducing Woods.',
+      it: 'Cracker attacca Rufy nella Foresta della Seduzione.',
     },
   },
   'crackerNami': {
