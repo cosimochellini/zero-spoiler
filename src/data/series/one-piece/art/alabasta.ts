@@ -19,6 +19,8 @@ import {
 /** One of Vivi's Peacock Slashers, a pointed jewel, drawn about its centre. */
 const PEACOCK_SLASHER =
   'M0 -30 C12 -30 18 -16 14 -2 L0 34 L-14 -2 C-18 -16 -12 -30 0 -30 Z'
+/** Where her first drawing hangs the jewel: large, swung out on its wire. */
+const SLASHER_SWUNG = 'translate(92 116) rotate(-20) scale(1.6)'
 
 /**
  * Bon Clay's ballet shoe and its ribbons, in his first drawing and, smaller,
@@ -285,34 +287,34 @@ export const alabastaArt = {
     ...SEA,
   ],
 
-  // His deckchair in 3/4 on the iron islet inside the whale, the newspaper
-  // he reads left folded on the seat, the islet's chain going down into
-  // the water and a cloud of the sky he painted on the walls (62).
+  // The Twin Cape lighthouse he keeps, in 3/4: the tapering tower with its
+  // bands and the far side hatched, the gallery round the lamp room, the
+  // light going out from it and the door at its foot standing open, and his
+  // deckchair on the cape beside it (62).
   'crocus': [
-    { d: 'M34 72 L54 128 H110 L120 150 M54 128 L48 150 M110 128 L114 150' },
-    { d: 'M50 62 L70 118 H126 L136 140', role: 'soft' },
-    { d: 'M34 72 L50 62 M54 128 L70 118 M110 128 L126 118' },
-    { d: 'M42 67 L62 123 H118', role: 'accent' },
-    { d: 'M72 112 L98 108 L104 122 L78 126 Z' },
-    { d: 'M76 116 L100 112 M85 110 L91 124', role: 'soft' },
-    { d: 'M122 144 l6 -4 M126 134 l6 -4', role: 'ambient' },
-    { d: 'M8 150 H152 M8 150 L14 160 H146 L152 150' },
+    { d: 'M60 150 L68 52 M100 150 L92 52' },
+    { d: ellipse(80, 52, 16, 4) },
     {
-      d: dots([
-        [24, 155],
-        [48, 155],
-        [72, 155],
-        [96, 155],
-        [120, 155],
-      ]),
-      role: 'soft',
+      d: 'M70 50 V32 M90 50 V32 M67 32 H93 M68 32 Q80 14 92 32 M80 23 V16',
+      role: 'accent',
     },
-    { d: `${ellipse(30, 166, 3, 5)} ${ellipse(30, 177, 3, 5)}`, role: 'soft' },
+    { d: 'M75 48 V34 M85 48 V34', role: 'soft' },
+    { d: 'M64 112 Q80 117 96 112 M66 82 Q80 87 94 82', role: 'soft' },
     {
-      d: 'M96 40 q4 -12 16 -8 q6 -10 18 -4 q12 -2 12 10 q8 2 6 10 H98 q-8 -2 -2 -8',
+      d: 'M92 70 l5 -3 M94 96 l5 -3 M96 124 l5 -3 M98 142 l4 -2.5',
       role: 'ambient',
     },
-    ...SEA.slice(2),
+    { d: 'M72 150 V134 Q78 126 84 134 V150' },
+    { d: 'M84 150 L94 146 V130 L84 134', role: 'soft' },
+    {
+      d: 'M98 36 h18 M98 44 l16 6 M62 36 h-18 M62 44 l-16 6',
+      role: 'ambient',
+      dashed: true,
+    },
+    { d: 'M14 116 L26 142 H50 L56 150 M26 142 L22 150 M50 142 L48 150' },
+    { d: 'M19 119 L30 140 H48', role: 'soft' },
+    { d: 'M4 150 H156', role: 'ambient' },
+    ...SEA.slice(1),
   ],
 
   // His crown in 3/4, its points rising off the band, and the bazooka he
@@ -481,24 +483,28 @@ export const alabastaArt = {
     ...SEA.slice(1),
   ],
 
-  // A hand at the moment of the flick, the thumb just let go and the
-  // finger snapped out, the coat sleeve pushed back off the wrist, and the
-  // pellet it sent going off like a bullet: the Nose Fancy Cannon he uses
-  // on Zoro at Whisky Peak (65).
+  // A hand at the moment of the flick, out of a coat cuff seen open: the
+  // thumb just let go and the finger snapped out, the curled fingers and the
+  // underside hatched, and the pellet it sent flying, then going off: the
+  // Nose Fancy Cannon he uses on Zoro at Whisky Peak (65).
   'mr-5': [
-    { d: 'M6 160 L34 128 M24 176 L52 144' },
-    { d: 'M34 128 Q46 128 52 144 M30 133 Q42 134 47 150', role: 'soft' },
-    { d: 'M40 136 L66 110 M50 148 L80 124' },
+    { d: 'M4 170 L36 136 M22 188 L54 154' },
+    { d: 'M36 136 C46 136 56 146 54 154' },
+    { d: 'M36 136 C34 146 44 156 54 154', role: 'soft' },
+    { d: 'M44 140 L62 122 M52 150 L74 132' },
     {
-      d: 'M66 110 C70 98 82 92 94 94 L122 82 C127 80 130 86 125 89 L100 102 C106 104 108 112 104 118 C100 126 90 128 80 124',
+      d: 'M62 122 C64 108 78 100 92 102 L124 86 C130 83 134 90 128 94 L102 108 C108 112 108 122 102 128 C96 134 84 136 74 132',
     },
-    { d: 'M94 94 C96 86 104 84 108 90 L102 100', role: 'soft' },
-    { d: 'M82 122 q4 -8 12 -8 M90 126 q4 -6 10 -6', role: 'soft' },
-    { d: 'M72 118 l6 -5 M76 124 l6 -5', role: 'ambient' },
-    { d: circle(136, 72, 2.5) },
-    { d: 'M126 78 l-8 4 M128 70 l-8 2', role: 'ambient', dashed: true },
+    { d: 'M92 102 C94 92 104 90 108 96 L104 106' },
     {
-      d: 'M144 52 l2 -12 l4 10 l10 -6 l-4 11 l12 1 l-11 5 l8 9 l-12 -3 l-2 11 l-5 -10 l-8 7 l2 -12 l-11 -3 l11 -4 l-7 -9 z',
+      d: 'M84 132 q4 -8 12 -8 M92 134 q4 -6 10 -6 M78 128 q4 -9 12 -10',
+      role: 'soft',
+    },
+    { d: 'M66 126 l6 -5 M70 132 l6 -5 M98 120 l5 -4', role: 'ambient' },
+    { d: circle(138, 72, 3.5) },
+    { d: 'M128 80 l-6 4 M131 84 l-6 4', role: 'ambient', dashed: true },
+    {
+      d: 'M126 17 L129.1 29.5 L137.6 24.2 L133.8 33.5 L148.7 34 L134.9 39.6 L142.5 47.5 L131.8 44.9 L133.5 58.7 L126 47 L120.2 54 L120.2 44.9 L107.8 48.5 L117.1 39.6 L102.4 33.8 L118.2 33.5 L113.1 22.7 L122.9 29.5 Z',
       role: 'accent',
     },
     shadow(70, 190, 46),
@@ -518,31 +524,40 @@ export const alabastaArt = {
     shadow(80, 184, 30),
   ],
 
-  // Her Peacock Slashers: sharp jewels on wires looped round a little
-  // finger, the near one swung out on its arc. She draws them on Zoro at
-  // Whisky Peak (65).
+  // One of her Peacock Slashers, large and in 3/4: the jewel with its side
+  // face hatched and the eye of a peacock's feather inside it, on the wire
+  // from the ring she loops round a little finger, swung out on its arc.
+  // She draws them on Zoro at Whisky Peak (65).
   'nefertari-vivi': [
-    { d: 'M42 36 a10 4.5 0 1 0 20 0 a10 4.5 0 1 0 -20 0' },
-    { d: 'M42 36 v3 a10 4.5 0 0 0 20 0 v-3', role: 'soft' },
-    { d: 'M60 42 C80 60 98 80 104 98' },
+    { d: 'M30 36 a12 5 0 1 0 24 0 a12 5 0 1 0 -24 0' },
+    { d: 'M30 36 v3 a12 5 0 0 0 24 0 v-3', role: 'soft' },
+    { d: 'M52 41 C66 48 74 60 75.6 70.9' },
+    { d: PEACOCK_SLASHER, transform: SLASHER_SWUNG },
     {
-      d: PEACOCK_SLASHER,
-      role: 'accent',
-      transform: 'translate(110 128) rotate(-20)',
+      d: 'M10 -28 C16 -26 21 -14 18 1 L4 37 L0 34 M14 -2 L18 1',
+      transform: SLASHER_SWUNG,
     },
     {
-      d: 'M0 -30 V-2 V34 M-14 -2 H14',
+      d: 'M16 -18 l3 1 M17 -8 l3 1 M13 8 l3 1 M9 18 l3 1',
+      role: 'ambient',
+      transform: SLASHER_SWUNG,
+    },
+    {
+      d: 'M0 -30 V-20 M-14 -2 H-7 M14 -2 H7 M0 34 V14',
       role: 'soft',
-      transform: 'translate(110 128) rotate(-20)',
+      transform: SLASHER_SWUNG,
     },
-    { d: 'M112 100 l10 -2 M120 116 l9 -1 M121 132 l8 1', role: 'ambient' },
-    { d: 'M46 42 C38 70 36 96 40 112' },
-    { d: PEACOCK_SLASHER, transform: 'translate(42 136) rotate(8) scale(0.6)' },
     {
-      d: 'M136 70 C156 110 144 160 104 176 M70 182 C46 180 26 166 18 146',
+      d: 'M0 -20 C7 -20 9 -10 7 -2 L0 14 L-7 -2 C-9 -10 -7 -20 0 -20 Z',
+      role: 'accent',
+      transform: SLASHER_SWUNG,
+    },
+    {
+      d: 'M136 64 C156 104 146 156 108 176 M70 184 C46 182 26 168 18 148',
       role: 'ambient',
       dashed: true,
     },
+    { d: 'M128 98 l10 -2 M132 116 l9 -1 M131 134 l8 1', role: 'ambient' },
   ],
 
   // The volcano that erupts every hour and starts the giants' duel, in 3/4
@@ -768,32 +783,41 @@ export const alabastaArt = {
     ...SEA.slice(2),
   ],
 
-  // A sword used as a meat skewer, the tip of the blade bitten clean off:
-  // he eats the meat aboard the Merry at 79, then the sword with it.
+  // A hunk of meat skewered on a plain blade, its grip wrapped and no guard,
+  // the blade's tip bitten clean off: aboard the Merry he eats the meat, then
+  // the blade it was on (79). The manga has a knife, the anime a sword.
   'wapol': [
-    { d: 'M18 182 L38 156 M26 188 L46 162' },
-    { d: 'M24 176 l6 3 M30 168 l6 3', role: 'soft' },
-    { d: 'M18 148 L64 176' },
-    { d: 'M34 148 L48 130 M54 162 L68 144' },
     {
-      d: 'M44 132 C30 116 44 92 64 98 C82 86 104 104 92 122 C98 142 74 154 62 144 C50 152 36 144 44 132 Z',
+      d: 'M17 182.4 L34.7 156.4 M27.5 191.6 L45.3 165.6 M17 182.4 Q18 192 27.5 191.6',
     },
-    { d: 'M56 112 l12 12 M66 104 l14 14 M78 100 l10 10', role: 'ambient' },
-    { d: 'M88 104 L112 72 M100 114 L126 82' },
+    { d: 'M22 177 l8 4.5 M27 170 l8 4.5 M32 163 l8 4.5', role: 'soft' },
+    { d: 'M34.7 156.4 L45.3 165.6' },
     {
-      d: 'M112 72 a3.5 3.5 0 0 0 4.7 3.3 a3.5 3.5 0 0 0 4.7 3.3 a3.5 3.5 0 0 0 4.6 3.4',
+      d: 'M34.7 156.4 L51.8 136.8 M45.3 165.6 L62.4 146 M84.7 99.2 L97.9 84.1 M95.3 108.4 L125.5 73.7',
+    },
+    {
+      d: 'M50 130 C42 116 50 98 68 96 C76 90 92 92 98 104 C106 116 100 132 92 138 C84 150 64 150 56 142 C52 138 50 134 50 130 Z',
+    },
+    {
+      d: 'M54 118 C54 106 62 99 72 98 M58 128 C64 116 74 108 88 104 M62 138 C72 130 82 122 96 118',
+      role: 'soft',
+    },
+    { d: 'M90 134 l6 -5 M82 142 l6 -5 M98 124 l4 -3.5', role: 'ambient' },
+    { d: 'M91 102 L108 83', role: 'soft' },
+    {
+      d: 'M97.9 84.1 A6 6 0 0 1 104.5 88 A6 6 0 0 1 112 88.5 A6 6 0 0 1 119 84.5 A7 7 0 0 1 125.5 73.7',
       role: 'accent',
     },
-    { d: 'M96 102 L114 78', role: 'soft' },
     {
       d: dots([
-        [132, 66],
-        [140, 74],
-        [128, 56],
+        [128, 66],
+        [134, 74],
+        [120, 58],
+        [138, 62],
       ]),
       role: 'soft',
     },
-    shadow(78, 192, 52),
+    shadow(70, 194, 52),
   ],
 
   // A ballet shoe on its side, its ribbons curling loose, and the neck of one
@@ -905,31 +929,32 @@ export const alabastaArt = {
     ...SEA.slice(1),
   ],
 
-  // Her sled in 3/4 on the snow, the box with its rolled rim and high back,
-  // the runners curling up at the front and the rope the reindeer pulls it
-  // by: how she comes down from the castle to the villages (81).
+  // Her small sunglasses, the lenses dark and hatched, resting on top of a
+  // bottle of plum wine as she wears them on her forehead; the bottle in
+  // 3/4 with its label, the far side hatched, and a plum beside it (82).
   'kureha': [
-    { d: 'M12 150 H112 C128 150 136 140 132 130 C130 124 124 124 122 130' },
-    { d: 'M26 142 H122 C136 142 144 132 140 122', role: 'soft' },
-    { d: 'M30 150 V136 M96 150 V136' },
-    { d: 'M24 136 H110 L116 106 H30 Z' },
-    { d: 'M30 106 V78 Q36 70 46 74 V98' },
-    { d: 'M30 106 Q72 98 116 106 L130 98 H46', role: 'accent' },
-    { d: 'M30 120 H112', role: 'soft' },
-    { d: 'M112 128 l-6 4 M114 118 l-6 4 M40 86 l4 -4', role: 'ambient' },
-    { d: 'M132 130 L156 116', role: 'soft' },
+    { d: 'M54 82 V150 M98 82 V150 M54 150 Q76 158 98 150' },
+    { d: 'M54 82 C54 70 66 66 68 58 V40 M98 82 C98 70 86 66 84 58 V40' },
+    { d: ellipse(76, 40, 8, 2.5) },
+    { d: 'M70 40 V32 M82 40 V32' },
+    { d: 'M54 104 Q76 110 98 104 M54 132 Q76 138 98 132', role: 'soft' },
     {
-      d: dots([
-        [20, 40],
-        [48, 24],
-        [96, 34],
-        [126, 56],
-        [146, 30],
-        [70, 60],
-      ]),
+      d: 'M90 112 l6 -4 M90 122 l6 -4 M90 142 l6 -4 M92 90 l5 -3',
       role: 'ambient',
     },
-    { d: 'M4 158 C40 152 120 154 156 158', role: 'ambient', dashed: true },
+    { d: 'M56 92 Q76 97 96 92', role: 'soft' },
+    {
+      d: `${ellipse(64, 30, 9, 5.5)} ${ellipse(88, 30, 9, 5.5)} M73 29 Q76 26 79 29`,
+      role: 'accent',
+    },
+    {
+      d: 'M58 32 l6 -5 M61 34 l6 -5 M82 32 l6 -5 M85 34 l6 -5',
+      role: 'ambient',
+    },
+    { d: 'M55 29 L62 16 M97 29 L104 16' },
+    { d: circle(124, 140, 10) },
+    { d: 'M124 130 q1 -6 4 -8 M128 124 q8 -4 12 2 q-6 4 -12 -2', role: 'soft' },
+    shadow(90, 186, 54),
   ],
 
   // His fuzzy top hat in 3/4, the cross turned on its side at the front and
