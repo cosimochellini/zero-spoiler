@@ -799,7 +799,7 @@ describe('a record drawn again later in the story', () => {
     // The elephant again.
     ['funkfreed', 1, 'first'],
     // The scarf back on.
-    ['charlotte-katakuri', 2, 0],
+    ['charlotte-katakuri', 3, 1],
     // Big Mom's cloud, and the staff again.
     ['zeus', 1, 'first'],
     ['zeus', 2, 0],
@@ -847,6 +847,8 @@ describe('a record drawn again later in the story', () => {
     // The sword leg and the gun forearm again once Sulong is over.
     ['inuarashi', 3, 1],
     ['nekomamushi', 3, 1],
+    // Shishilian's hat again once Sulong is over.
+    ['shishilian', 1, 'first'],
   ] as const)(
     'redraws %s at stage %i as its drawing %s itself, not a copy',
     (id, stage, again) => {
