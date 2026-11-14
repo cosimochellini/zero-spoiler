@@ -225,7 +225,7 @@ const CARIBOU_COLLAR: Stroke = {
   role: 'soft',
 }
 
-/** The very long sleeves of Caribou's shirt, hanging empty inside the coat. */
+/** The very long sleeves of Caribou's shirt inside the coat, his arms hidden in them. */
 const CARIBOU_SLEEVES: Stroke = {
   d: 'M70 58 C68 80 66 110 68 140 H78 C77 110 78 82 80 60 M90 58 C92 80 94 110 92 140 H82 C83 110 82 82 80 60',
   role: 'soft',
@@ -268,21 +268,28 @@ const CARIBOU_SWAMP: Stroke[] = [
 ]
 
 /**
- * The great arched window of Shirahoshi's tower, its glazing bars, the far
- * side of the frame hatched, and the sill.
+ * The iron double door of the Hard-Shell Tower, which Luffy opens on her in
+ * ch. 612: the two leaves, ring knockers high up and handles near the
+ * floor, three swords and a double-bladed axe stuck in it, the far edge
+ * hatched.
  */
-const SHIRAHOSHI_WINDOW: Stroke[] = [
-  { d: 'M22 150 V64 C22 8 138 8 138 64 V150' },
-  { d: 'M32 140 V66 C32 22 128 22 128 66 V140', role: 'soft' },
-  { d: 'M80 140 V22 M32 74 H128', role: 'soft' },
+const SHIRAHOSHI_DOOR: Stroke[] = [
+  { d: 'M22 160 V16 H138 V160 M80 16 V88 M80 148 V160' },
   {
-    d: 'M128 56 l10 -6 M128 80 l10 -6 M128 104 l10 -6 M128 128 l10 -6',
-    role: 'ambient',
+    d: `${circle(72, 44, 5)} ${circle(88, 44, 5)} M72 150 v8 M88 150 v8`,
+    role: 'soft',
   },
-  { d: 'M12 158 L22 150 H138 L148 158 Z M12 158 V168 H148 V158' },
+  {
+    d: 'M30 24 L50 44 M28 30 l8 -8 M24 20 l4 4 M106 30 L128 50 M104 36 l8 -8 M100 26 l4 4 M30 130 L50 150 M28 136 l8 -8 M24 126 l4 4',
+  },
+  {
+    d: 'M100 98 L132 86 M124 76 C134 74 140 80 138 92 C134 90 130 92 128 94 Z M106 88 C96 86 92 94 96 104 C98 100 102 100 104 100 Z',
+  },
+  { d: 'M130 26 l8 -5 M130 64 l8 -5 M130 112 l8 -5', role: 'ambient' },
+  { d: 'M-4 160 H164', role: 'ambient', dashed: true },
 ]
 
-/** A long lock of her hair falling across the window, behind the grip. */
+/** A long lock of her hair falling across the door, behind the grip. */
 const SHIRAHOSHI_LOCK: Stroke[] = [
   {
     d: 'M-4 34 C20 46 36 62 46 80 M86 126 C100 146 114 172 124 200 M-4 54 C18 66 30 80 38 94 M76 136 C88 156 98 178 106 200',
@@ -412,7 +419,7 @@ export const fishManIslandArt = {
   // His fur coat, worn draped over the shoulders like a cape and hanging
   // open: dark outside, hatched, the front edges turned back on the spotted
   // lining, whose spots are in his colour, and the fur of the collar along
-  // the top. Inside it hang the very long sleeves of his shirt, and across
+  // the top. Inside it, his arms hidden in the long sleeves of his shirt; across
   // the hem lies the flintlock he shoots the Marine with. He wears the coat
   // at Grove 46 from 519 and fires the gun at 521 (ch. 601), still in the
   // Return to Sabaody arc. The stages are in `fishManIslandRedrawn`: the
@@ -685,16 +692,11 @@ export const fishManIslandArt = {
   ],
 
   // Her hairgrip, a taiyaki filled with red bean paste, caught in a long
-  // lock of her pink hair that falls across the great arched window of her
-  // tower: a grip that size in front of that window can only be a giant's.
-  // She is first seen at the window at 531. The stage at 569, in
-  // `fishManIslandRedrawn`, brings the Sea Kings round the tower.
-  'shirahoshi': [
-    ...SHIRAHOSHI_WINDOW,
-    ...SHIRAHOSHI_LOCK,
-    ...SHIRAHOSHI_GRIP,
-    shadow(80, 186, 66),
-  ],
+  // lock of her pink hair, in front of the iron door of the Hard-Shell
+  // Tower with the blades stuck in it: a grip that size against that door
+  // can only be a giant's. Luffy opens the door on her at 531 (ch. 612). The
+  // stage at 569, in `fishManIslandRedrawn`, brings in the Sea Kings.
+  'shirahoshi': [...SHIRAHOSHI_DOOR, ...SHIRAHOSHI_LOCK, ...SHIRAHOSHI_GRIP],
   // The one sword he is first seen with, a katana with no guard in a sheath
   // covered in long spots, and the gourd he drinks from leaning beside it,
   // a cord tied round its waist. The eight swords come out much later.
@@ -1531,9 +1533,9 @@ export const fishManIslandRedrawn: Redrawings = {
   // in it at 523 (ch. 603).
   'caribou': [
     { episode: 523, chapter: 603, value: CARIBOU_SWAMP },
-    // No coat in the Udon mine: his long-sleeved shirt, the empty sleeves
-    // brought together at the front like a straitjacket's and shut in
-    // handcuffs, the cuffs in his colour. He is a prisoner there from 919
+    // No coat in the Udon mine: his long-sleeved shirt, the long sleeves
+    // brought together at the front and shut in handcuffs, the cuffs in his
+    // colour. He is a prisoner there from 919
     // (ch. 926).
     {
       episode: 919,
@@ -1547,8 +1549,8 @@ export const fishManIslandRedrawn: Redrawings = {
         },
       ],
     },
-    // The same shirt with the cuffs gone, the sleeves' ends hanging free and
-    // the cross on its chest now in his colour. Raizo stole the key to his
+    // The same shirt with the cuffs gone, the ends of the long sleeves apart
+    // and the cross on its chest now in his colour. Raizo stole the key to his
     // cuffs by mistake, and he comes to the sumo ring free of them at 937
     // (ch. 940).
     {
@@ -1566,9 +1568,10 @@ export const fishManIslandRedrawn: Redrawings = {
     // nothing.
     { episode: 1088, chapter: 1060, value: CARIBOU_SWAMP },
   ],
-  // Her window and hairgrip smaller, the grip plain now, and below them the
-  // arched backs of Sea Kings breaking the water, their spined ridges in
-  // her colour: a sign of the power, not a scene from the story. Robin tells
+  // The door, the lock and the hairgrip smaller, the grip plain now, and
+  // below them the arched backs of Sea Kings breaking the water, their
+  // spined ridges in her colour: a sign of the power, not a scene from the
+  // story. Robin tells
   // Neptune that she is Poseidon, the ancient weapon who can speak to the
   // Sea Kings, at 569 (ch. 649).
   'shirahoshi': [
@@ -1578,7 +1581,7 @@ export const fishManIslandRedrawn: Redrawings = {
       value: [
         ...moved(
           [
-            ...SHIRAHOSHI_WINDOW,
+            ...SHIRAHOSHI_DOOR,
             ...SHIRAHOSHI_LOCK,
             ...softened(SHIRAHOSHI_GRIP),
           ],
