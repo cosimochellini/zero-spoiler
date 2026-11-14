@@ -857,7 +857,7 @@ export const wholeCakeArt = {
   // front low on the left and hatched, the far side hatched, and his spear
   // stood upright behind it on its butt. He always wears the helmet, and he
   // jabs at Sanji with the spear at 793 (ch. 833). The wiki gives the helmet
-  // no shape, so it is drawn plain, with no crest. Stage: both broken at 841.
+  // no shape, so it is drawn plain, with no crest. Stage: both broken at 842.
   'vinsmoke-judge': [
     ...moved([...JUDGE_SPEAR_SHAFT, ...JUDGE_SPEAR_HEAD], JUDGE_SPEAR_UPRIGHT),
     ...JUDGE_HELMET,
@@ -2973,10 +2973,12 @@ export const wholeCakeRedrawn: Redrawings = {
   // The helmet split in two (the accent), the back half tipped over on its
   // side, and the spear shattered: the shaft snapped in two and the head
   // lying apart. Big Mom shatters his spear and her Zeus's lightning breaks
-  // off his helmet at 841 (ch. 871 p. 10-12).
+  // off his helmet in ch. 871 p. 10-12. Episode 841 shows the spear broken
+  // and the strike; the broken helmet opens episode 842, so the stage dates
+  // from 842, the later of the two.
   'vinsmoke-judge': [
     {
-      episode: 841,
+      episode: 842,
       chapter: 871,
       value: [
         {
