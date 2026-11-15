@@ -7,7 +7,6 @@
  * drawing fixed down to one accent, or grown to more, fails until its entry
  * is changed, so the list can only shrink.
  */
-type Exception = [count: number, reason: string]
 
 /** Several strokes make up one mark, and the mark is one thing. */
 const PETALS = 'a flower is one mark, each petal its own stroke'
@@ -20,7 +19,10 @@ const GUARD = 'the knuckle-bow guard is one mark: hilt and bow are two strokes'
 /** Drawn before the rule was a test; each is a fix to make, not a precedent. */
 const OLD = 'drawn before the rule was a test (#1300)'
 
-export const ACCENT_EXCEPTIONS: Record<string, Exception> = {
+export const ACCENT_EXCEPTIONS: Record<
+  string,
+  [count: number, reason: string]
+> = {
   'one-piece/alvida@first': [2, OLD],
   'one-piece/roronoa-zoro@first': [4, OLD],
   'one-piece/shells-town@first': [2, OLD],
