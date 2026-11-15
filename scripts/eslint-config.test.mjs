@@ -11,6 +11,24 @@ const fillerPath = path.join(
   'src/server/archive/fillerRows.server.ts',
 )
 const arrowPath = path.join(repositoryRoot, 'scripts/eslint-arrow-fixture.mjs')
+const artPath = path.join(
+  repositoryRoot,
+  'src/data/series/game-of-thrones/art/essos.ts',
+)
+const grandfatheredArtPath = path.join(
+  repositoryRoot,
+  'src/data/series/one-piece/art/alabasta.ts',
+)
+/**
+ * Whether the positional-slice ban of the art files fired.
+ * @param {import('eslint').Linter.LintMessage[]} messages - Lint diagnostics.
+ * @returns {boolean} True when a message is the #1301 slice ban.
+ */
+function hasSliceBan(messages) {
+  return messages.some(({ message }) =>
+    message.startsWith('Do not reuse another drawing'),
+  )
+}
 const optionalChainRule = '@typescript-eslint/prefer-optional-chain'
 const eslint = new ESLint({ cwd: repositoryRoot })
 
@@ -189,6 +207,62 @@ export { indexedArchiveEntries }
       expect(
         messages.filter(({ ruleId }) => ruleId === 'no-restricted-imports'),
       ).toStrictEqual([])
+    })
+
+    // Drawings reuse another drawing's strokes by name, not by position, and
+    // keep their comments to 80 columns (#1301). Neither rule may drop the
+    // shared bans the art files live under.
+    it.each([
+      ['an `Art` table', "fooArt['x'].slice(0, 3)"],
+      ['a `_DRAWINGS` table', 'FOO_DRAWINGS.x.slice(0, 3)'],
+      ['a quoted `_DRAWINGS` key', "FOO_DRAWINGS['x'].slice(0, 3)"],
+    ])('bars a positional slice of %s in an art file', async (_label, call) => {
+      const { messages } = await lint(
+        `declare const fooArt: Record<string, number[]>
+declare const FOO_DRAWINGS: Record<string, number[]>
+export const strokes = ${call}
+`,
+        artPath,
+      )
+
+      expect(hasSliceBan(messages)).toBe(true)
+    })
+
+    it('lets a grandfathered art file keep its slices', async () => {
+      const { messages } = await lint(
+        "declare const fooArt: Record<string, number[]>\nexport const strokes = fooArt['x'].slice(0, 3)\n",
+        grandfatheredArtPath,
+      )
+
+      expect(hasSliceBan(messages)).toBe(false)
+    })
+
+    it.each([
+      [80, 0],
+      [81, 1],
+    ])(
+      'flags a %i-column comment in an art file %i time(s)',
+      async (columns, count) => {
+        const { messages } = await lint(
+          `// ${'x'.repeat(columns - 3)}\nexport const art = 1\n`,
+          artPath,
+        )
+
+        expect(
+          messages.filter(({ ruleId }) => ruleId === 'max-len'),
+        ).toHaveLength(count)
+      },
+    )
+
+    it('still applies the shared bans in an art file', async () => {
+      const { messages } = await lint(
+        "export async function load(): Promise<unknown> {\n  return import('~/data/series')\n}\n",
+        artPath,
+      )
+
+      expect(messages.map(({ ruleId }) => ruleId)).toContain(
+        'no-restricted-syntax',
+      )
     })
   },
 )

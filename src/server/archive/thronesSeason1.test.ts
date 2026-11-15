@@ -391,6 +391,43 @@ const CHANGES: {
   },
   { id: 'othor', episode: 8, chapter: 53, value: 'deceased' },
   { id: 'jafer-flowers', episode: 8, chapter: 53, value: 'deceased' },
+  // Later deaths of the Night's Watch (#1295).
+  {
+    id: 'grenn',
+    episode: 39,
+    chapter: 199,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'pypar',
+    episode: 39,
+    chapter: 199,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'rast', episode: 35, chapter: 199, value: 'deceased' },
+  {
+    id: 'dareon',
+    episode: 41,
+    chapter: 260,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'othell-yarwyck',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'bowen-marsh',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
   { id: 'qotho', episode: 9, chapter: 65, value: 'deceased' },
   {
     id: 'cohollo',
@@ -1073,7 +1110,10 @@ describe.each([
  * Bran's climb, which the book alone shows after his threshold, the deaths
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
  * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
- * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * and Hoster Tully's the book's alone; and the Night's Watch's of #1295,
+ * Grenn's, Pypar's, Othell Yarwyck's and Bowen Marsh's the show's alone,
+ * Gared's, Dareon's, Jaremy Rykker's and Othor's the book's alone, with
+ * the mutiny against Jon), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
  * magic, and the Winterfell audit's deaths, returns, crown, Reek and Needle
  * (#1285). `stage` counts a record's stages from 0, for a record redrawn
@@ -1224,6 +1264,25 @@ const STAGES: {
     stage: 1,
   },
   { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
+  // The Night's Watch's deaths and the mutiny against Jon (#1295).
+  { id: 'gared', episode: 1, chapter: 2, source: 'chapter' },
+  { id: 'grenn', episode: 39, chapter: 199, source: 'episode' },
+  { id: 'pypar', episode: 39, chapter: 199, source: 'episode' },
+  { id: 'rast', episode: 35, chapter: 199 },
+  { id: 'dareon', episode: 41, chapter: 260, source: 'chapter' },
+  { id: 'othell-yarwyck', episode: 50, chapter: 341, source: 'episode' },
+  {
+    id: 'othell-yarwyck',
+    episode: 53,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'bowen-marsh', episode: 50, chapter: 341 },
+  { id: 'bowen-marsh', episode: 53, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
+  { id: 'othor', episode: 8, chapter: 53, source: 'chapter' },
+  { id: 'othor', episode: 8, chapter: 61, source: 'chapter', stage: 1 },
 ]
 
 describe.each(
@@ -1235,7 +1294,7 @@ describe.each(
   ),
 )(
   '$id is redrawn by $unit at $episode/$chapter',
-  ({ id, episode, chapter, unit, stage: index = 0 }) => {
+  ({ id, episode, chapter, source, unit, stage: index = 0 }) => {
     const pin = unit === 'chapter' ? chapter : episode
     const stages = REDRAWINGS[id] ?? []
     const stage = stages[index]
@@ -1253,6 +1312,8 @@ describe.each(
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? REDRAWINGS[id]?.[index]?.source).toBe(source)
       expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
         previous,
       )

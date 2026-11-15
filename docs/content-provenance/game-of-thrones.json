@@ -2330,6 +2330,9 @@
       "https://gameofthrones.fandom.com/wiki/Will",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+    ],
+    "unverified": [
+      "Drawing (#1295): his black cloak laid out, the death in the first drawing (he dies in the scene that opens him in both media); the cloak is not checked on a frame of episode 1, and the execution block is left out under the owner's ruling on deaths."
     ]
   },
   "gared": {
@@ -2340,6 +2343,10 @@
       "https://gameofthrones.fandom.com/wiki/Gared",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+    ],
+    "unverified": [
+      "Drawing (#1295): the bloodied scrap of clothing he finds under the snow rests on the Game of Thrones Wiki's synopsis of episode 1; frame not viewed.",
+      "Book death stage (#1295): Bran I (site chapter 2), from the status already filed; AWOIAF not read for this PR."
     ]
   },
   "waymar-royce": {
@@ -2349,6 +2356,9 @@
       "https://gameofthrones.fandom.com/wiki/Waymar_Royce",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+    ],
+    "unverified": [
+      "Drawing (#1295): the book shatters his sword (Fandom's book section, AGOT Prologue); the show's synopsis does not, so the show's whole sword is drawn. Episode 1 not viewed."
     ]
   },
   "grenn": {
@@ -2362,7 +2372,8 @@
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
     ],
     "unverified": [
-      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified."
+      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
+      "Death (#1295): 'The Watchers on the Wall' (episode 39), Fandom; the book keeps him alive, so the stage and status are the show's alone, ordered by chapter 199 (the attack on Castle Black, ASOS 55) as the castle-black stage is. Episode not viewed; AWOIAF not read."
     ]
   },
   "pypar": {
@@ -2377,7 +2388,8 @@
     ],
     "unverified": [
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
-      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there."
+      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there.",
+      "Death (#1295): 'The Watchers on the Wall' (episode 39), Fandom; the book keeps him alive (ADWD 10), so the stage and status are the show's alone, ordered by chapter 199. Episode not viewed; AWOIAF not read."
     ]
   },
   "rast": {
@@ -2394,7 +2406,8 @@
     "unverified": [
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
       "Owner ruled episode 3: he rides north in episode 2, where the wiki’s infobox puts his first appearance, but the synopsis does not name him.",
-      "Sworn in at episode 7 on the wiki’s biography alone; the episode synopsis does not mention him. The book leaves him in training."
+      "Sworn in at episode 7 on the wiki’s biography alone; the episode synopsis does not mention him. The book leaves him in training.",
+      "Death (#1295): Ghost kills him in 'First of His Name' (episode 35, Fandom ref GOT405); a Thenn spears him in the attack on Castle Black, Fandom's Bookref ASOS 55 (site chapter 199). Episode not viewed; AWOIAF not read."
     ]
   },
   "dareon": {
@@ -2411,7 +2424,8 @@
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
       "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there.",
       "No credited actor in episode 7.",
-      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend."
+      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend.",
+      "Death (#1295): Arya kills him in Braavos in A Feast for Crows (Fandom's book section, no chapter given). Site chapter 260 is AFFC 34, 'Cat of the Canals' (reviewer correction from 248), not checked on AWOIAF. The show keeps him alive, so the stage and status are the book's alone, ordered by episode 41 (Arya reaches Braavos)."
     ]
   },
   "halder": {
@@ -2428,7 +2442,8 @@
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
       "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there.",
       "No credited actor in episode 7.",
-      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend."
+      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend.",
+      "Drawing (#1295): chisel and mallet, from the book's apprentice stonemason who helps carve Longclaw's wolf's head (Fandom's book section); the show gives him no object."
     ]
   },
   "todder": {
@@ -2444,7 +2459,8 @@
     ],
     "unverified": [
       "Owner ruled episode 30: the wiki’s behind-the-scenes note says episode 7 only mentions him and he first appears on screen in “Mhysa”. Its infobox and biography still place him at episode 7, and it does not say he is named aloud in episode 30.",
-      "The sworn step is pinned at episode 31, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend."
+      "The sworn step is pinned at episode 31, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend.",
+      "Drawing (#1295): a rolled black cloak, a declared B: 'Mhysa' (episode 30) was not viewed, and the wiki names no object for the brother at the gate. The Hardhome oar is from season 5 and is left out."
     ]
   },
   "othell-yarwyck": {
@@ -2456,7 +2472,9 @@
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
     ],
     "unverified": [
-      "Book gate rests on Jon VI’s Appearing list; the synopsis does not name him there."
+      "Book gate rests on Jon VI’s Appearing list; the synopsis does not name him there.",
+      "Mutiny (#1295): he is the second to stab Jon in 'Mother's Mercy' (episode 50), Fandom; the books leave it open, so the stage is the show's alone, ordered by Jon XIII (site chapter 341, ADWD 69, not checked on AWOIAF).",
+      "Death (#1295): hanged in 'Oathbreaker' (episode 53), Fandom; alive in the books, so the stage and status are the show's alone, at chapter 344. Episodes not viewed."
     ]
   },
   "bowen-marsh": {
@@ -2470,7 +2488,10 @@
     ],
     "unverified": [
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
-      "Episodes 11 to 40 were not checked beyond the wiki’s infobox, which gives episode 41 as his first appearance."
+      "Episodes 11 to 40 were not checked beyond the wiki’s infobox, which gives episode 41 as his first appearance.",
+      "Mutiny (#1295): he stabs Jon in 'Mother's Mercy' (episode 50), Fandom, and in Jon XIII of A Dance with Dragons; site chapter 341 (ADWD 69) is not checked on AWOIAF.",
+      "Death (#1295): hanged in 'Oathbreaker' (episode 53), Fandom; alive in the books, so the stage and status are the show's alone, at chapter 344. Episodes not viewed.",
+      "Drawing (#1295): the ledger and quill are the steward's work, not an object either medium shows in his hand; a declared B."
     ]
   },
   "jaremy-rykker": {
@@ -2484,7 +2505,8 @@
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
     ],
     "unverified": [
-      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified."
+      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
+      "Drawing (#1295): a knight's sword in its scabbard, a declared B; the wiki shows no object of his own. The book death stage keeps the status already filed (Jon VIII, site chapter 61)."
     ]
   },
   "othor": {
@@ -2496,7 +2518,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End"
     ],
     "unverified": [
-      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there, and the character page cites a later chapter for his departure with Benjen Stark."
+      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there, and the character page cites a later chapter for his departure with Benjen Stark.",
+      "Stages (#1295): his body brought back in Jon VII (site chapter 53) and the wight burned at chapter 61, the audit's pins. AWOIAF was not read; the burning may fall in Jon VII itself (chapter 53), which would merge the two stages. Both are the book's alone, since the show tells both in episode 8."
     ]
   },
   "jafer-flowers": {
