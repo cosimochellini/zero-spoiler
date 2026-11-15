@@ -171,7 +171,7 @@ describe('the fruit path alphabet', () => {
 })
 
 describe('the fruit sheet', () => {
-  it('spits the liquor clear of the intact gourd', () => {
+  it('spits the liquor clear of the gourd', () => {
     const gourd = fruitArt['gabu-gabu-fruit']
     const shell = traced(gourd[0]?.d ?? '')
 

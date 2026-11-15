@@ -277,55 +277,6 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
-  // Hoster opens at one pin alive in the book and a corpse on screen; the
-  // book kills him in A Storm of Swords (#1242).
-  {
-    id: 'hoster-tully',
-    episode: 23,
-    chapter: 72,
-    value: 'alive',
-    source: 'chapter',
-  },
-  { id: 'hoster-tully', episode: 23, chapter: 179, value: 'deceased' },
-  { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
-  // Later deaths (#1242).
-  { id: 'lommy', episode: 13, chapter: 93, value: 'deceased' },
-  { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
-  { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
-  { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
-  {
-    id: 'stevron-frey',
-    episode: 14,
-    chapter: 109,
-    value: 'deceased',
-    source: 'chapter',
-  },
-  { id: 'stiv', episode: 6, chapter: 38, value: 'deceased' },
-  { id: 'wallen', episode: 6, chapter: 38, value: 'deceased' },
-  {
-    id: 'willis-wode',
-    episode: 5,
-    chapter: 35,
-    value: 'deceased',
-    source: 'episode',
-  },
-  { id: 'vardis-egen', episode: 6, chapter: 41, value: 'deceased' },
-  { id: 'hugh-of-the-vale', episode: 4, chapter: 30, value: 'deceased' },
-  { id: 'vayon-poole', episode: 8, chapter: 52, value: 'deceased' },
-  {
-    id: 'tomard',
-    episode: 7,
-    chapter: 50,
-    value: 'deceased',
-    source: 'chapter',
-  },
-  {
-    id: 'masha-heddle',
-    episode: 8,
-    chapter: 57,
-    value: 'deceased',
-    source: 'chapter',
-  },
   // The King's Landing court's deaths the drawing audit found (#1289).
   {
     id: 'meryn-trant',
@@ -362,6 +313,108 @@ const CHANGES: {
     id: 'robar-royce',
     episode: 15,
     chapter: 110,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  // Hoster opens at one pin alive in the book and a corpse on screen; the
+  // book kills him in A Storm of Swords (#1242).
+  {
+    id: 'hoster-tully',
+    episode: 23,
+    chapter: 72,
+    value: 'alive',
+    source: 'chapter',
+  },
+  { id: 'hoster-tully', episode: 23, chapter: 179, value: 'deceased' },
+  { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
+  // Later deaths (#1242).
+  { id: 'lommy', episode: 13, chapter: 93, value: 'deceased' },
+  { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
+  { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
+  { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
+  // The northern lords' deaths (#1288).
+  {
+    id: 'mikken',
+    episode: 16,
+    chapter: 120,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'alyn',
+    episode: 21,
+    chapter: 161,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'greatjon-umber',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'smalljon-umber', episode: 59, chapter: 195, value: 'deceased' },
+  { id: 'rickard-karstark', episode: 25, chapter: 164, value: 'deceased' },
+  {
+    id: 'roose-bolton',
+    episode: 52,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'galbart-glover',
+    episode: 57,
+    chapter: 344,
+    value: 'presumed-dead',
+    source: 'episode',
+  },
+  {
+    id: 'maege-mormont',
+    episode: 57,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'dacey-mormont',
+    episode: 29,
+    chapter: 195,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  { id: 'wendel-manderly', episode: 29, chapter: 195, value: 'deceased' },
+  {
+    id: 'stevron-frey',
+    episode: 14,
+    chapter: 109,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  { id: 'stiv', episode: 6, chapter: 38, value: 'deceased' },
+  { id: 'wallen', episode: 6, chapter: 38, value: 'deceased' },
+  {
+    id: 'willis-wode',
+    episode: 5,
+    chapter: 35,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'vardis-egen', episode: 6, chapter: 41, value: 'deceased' },
+  { id: 'hugh-of-the-vale', episode: 4, chapter: 30, value: 'deceased' },
+  { id: 'vayon-poole', episode: 8, chapter: 52, value: 'deceased' },
+  {
+    id: 'tomard',
+    episode: 7,
+    chapter: 50,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'masha-heddle',
+    episode: 8,
+    chapter: 57,
     value: 'deceased',
     source: 'chapter',
   },
@@ -1080,6 +1133,25 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The northern lords' deaths and reveals (#1288).
+  { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
+  { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },
+  { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
+  { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
+  { id: 'smalljon-umber', episode: 59, chapter: 195 },
+  { id: 'rickard-karstark', episode: 25, chapter: 164 },
+  { id: 'roose-bolton', episode: 29, chapter: 195 },
+  {
+    id: 'roose-bolton',
+    episode: 52,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'galbart-glover', episode: 57, chapter: 344, source: 'episode' },
+  { id: 'maege-mormont', episode: 57, chapter: 344, source: 'episode' },
+  { id: 'dacey-mormont', episode: 29, chapter: 195, source: 'chapter' },
+  { id: 'wendel-manderly', episode: 29, chapter: 195, source: 'chapter' },
   // The King's Landing court redrawn from the drawing audit (#1289).
   { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
   { id: 'mandon-moore', episode: 19, chapter: 135, source: 'chapter' },
@@ -1138,25 +1210,25 @@ describe.each(
 )
 
 describe('the stages one medium alone tells', () => {
-  // A reader of the other medium who has reached its end sees the last
-  // stage their medium tells (Lancel's Sparrow star, before the show alone
-  // kills him), or the first drawing when it tells none.
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
-    ({ id, source }) => {
-      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
-      const owner = recordOf(id)
+    ({ id, source, stage: index = 0 }) => {
       const last =
-        other === 'episode' ?
+        source === 'chapter' ?
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
-      const seen = (REDRAWINGS[id] ?? []).filter(
-        (stage) => (owner.source ?? stage.source ?? other) === other,
-      )
+      // That reader still sees the record's last earlier stage both media
+      // (or theirs alone) tell, as Roose's Red Wedding before his death.
+      const seen = STAGES.filter(
+        (row) =>
+          row.id === id && (row.stage ?? 0) < index && row.source !== source,
+      ).map((row) => row.stage ?? 0)
+      const expected =
+        seen.length === 0 ?
+          DRAWINGS[id]
+        : REDRAWINGS[id]?.[Math.max(...seen)]?.value
 
-      expect(drawingOf(owner, last).strokes).toStrictEqual(
-        seen.at(-1)?.value ?? DRAWINGS[id],
-      )
+      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
     },
   )
 })
