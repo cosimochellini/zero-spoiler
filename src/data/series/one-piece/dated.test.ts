@@ -114,7 +114,9 @@ describe('every dated entry in the archive', () => {
 
 describe('the airing cut-off', () => {
   // `LAST_AIRED` ends the filler countdown; it fell behind the records once
-  // (#1298). Bump it with `npm run wiki:pairs` when records pass it.
+  // (#1298). It equals the last episode `npm run wiki:pairs` maps: when a
+  // record passes it, bump it only if that episode has aired; a manga-only
+  // entry that merely orders itself gets a lower episode instead.
   it('is no earlier than any record or dated entry', () => {
     for (const { revealedAtEpisode: episode, id: label } of entities) {
       expect(episode, label).toBeLessThanOrEqual(LAST_AIRED)
