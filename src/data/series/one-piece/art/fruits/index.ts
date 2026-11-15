@@ -2898,9 +2898,12 @@ function gigantic(x: number, y: number): string {
 /** A pear takes one step sideways: Augur warps in episode 1093/1063–1064. */
 const WARP_BODY: Body = { family: 'pear', cy: 114 }
 
-/** Two equal bodies fit side by side; only the arrived one has a shadow. */
-function arrived(x: number, y: number): string {
-  return point(106 + (x - 80) * 0.65, y)
+/**
+ * The warp fruit set down about a centre: two equal bodies fit side by side,
+ * where it stood and where it arrived; only the arrived one has a shadow.
+ */
+function warped(cx: number): (x: number, y: number) => string {
+  return (x, y) => point(cx + (x - 80) * 0.65, y)
 }
 
 /** The points a path is drawn through, back to the first when it closes. */
@@ -2961,9 +2964,9 @@ function gapped(d: string): string {
   return pieces.join(' ')
 }
 
-/** The same body where it stood before the warp. */
-function departed(x: number, y: number): string {
-  return point(44 + (x - 80) * 0.65, y)
+/** The bottom of a body, as far below its middle as its crown is above. */
+function bottomOf(body: Body): number {
+  return 2 * body.cy - crownY(body)
 }
 
 /** The flask body, its crown open where the drink comes out in 1121/1087. */
@@ -2975,15 +2978,9 @@ const RIDE_BODY: Body = { family: 'segmented', cy: 100 }
 /** How far the plate is tipped up, in degrees, and the fruit with it. */
 const RIDE_TIP = -12.6
 
-/** A point of the ride fruit, tipped with the plate about its foot. */
+/** A point of the ride fruit or its plate, tipped about the fruit's foot. */
 function ridden(x: number, y: number): string {
-  const [dx, dy] = [x - 80, y - 146]
-  const [cos, sin] = [
-    Math.cos(RIDE_TIP * DEGREES),
-    Math.sin(RIDE_TIP * DEGREES),
-  ]
-
-  return point(80 + dx * cos - dy * sin, 146 + dx * sin + dy * cos)
+  return point(...rotated([x, y], [80, bottomOf(RIDE_BODY)], RIDE_TIP))
 }
 
 /** Bonney shifts between young and grown in episode 1133, chapter 1099. */
@@ -7101,7 +7098,11 @@ export const fruitArt = {
     ]),
     ...sprout(AGE_BODY, -4, 'left'),
     {
-      d: `M80 67 ${tipped({ d: outline(AGE_BODY, (x) => x >= 80) }, aged).d.replace('M', 'L')} L80 159`,
+      d: [
+        `M${point(80, crownY(AGE_BODY))} L${aged(80, crownY(AGE_BODY))}`,
+        tipped({ d: outline(AGE_BODY, (x) => x >= 80) }, aged).d,
+        `M${aged(80, bottomOf(AGE_BODY))} L${point(80, bottomOf(AGE_BODY))}`,
+      ].join(' '),
       role: 'accent',
     },
     // Creases where the far half has shrunk, at odd heights and slants.
@@ -7325,14 +7326,14 @@ export const fruitArt = {
       ]),
       ...sprout(WARP_BODY, 4, 'right'),
       shadowUnder(1),
-    ].map((stroke) => tipped(stroke, arrived)),
+    ].map((stroke) => tipped(stroke, warped(106))),
     {
       d: [
         gapped(outline(WARP_BODY)),
         gapped(crown(WARP_BODY).d),
-        gapped('M80 74 L82 64 L84 54'),
+        gapped(sprout(WARP_BODY, 4, 'right')[0].d),
       ]
-        .map((d) => tipped({ d }, departed).d)
+        .map((d) => tipped({ d }, warped(44)).d)
         .join(' '),
       role: 'accent',
     },
@@ -7353,12 +7354,21 @@ export const fruitArt = {
       ]),
       ...sprout(RIDE_BODY, 5, 'right'),
     ].map((stroke) => tipped(stroke, ridden)),
-    {
-      d: 'M43 147.4 L24 152 L16 164 L150 134 L140 124 L120 128.7 M16 164 L18 174 L150 144 L150 134',
-      role: 'accent',
-    },
-    { d: 'M30 168 L30 168 M136 141 L136 141', role: 'soft' },
-    { d: 'M50 168 L54 163 M80 162 L84 157 M110 155 L114 150', role: 'ambient' },
+    // The plate, drawn level and tipped with the fruit: its top face, the
+    // back edge gone behind the fruit, and its front face below.
+    ...(
+      [
+        {
+          d: 'M44 140 L24 140 L14 150 L151 150 L143 140 L123 140 M14 150 L14 160 L149 160 L151 150',
+          role: 'accent',
+        },
+        { d: 'M26 155 L26 155 M136 153 L136 153', role: 'soft' },
+        {
+          d: 'M46 159 L50 154 M77 159 L81 154 M108 159 L112 154',
+          role: 'ambient',
+        },
+      ] satisfies Stroke[]
+    ).map((stroke) => tipped(stroke, ridden)),
     shadowUnder(1),
   ],
 
