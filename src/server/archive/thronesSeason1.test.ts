@@ -4,7 +4,7 @@ import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { CharacterStatus } from '~/lib/view/records'
+import type { CharacterStatus, Stroke } from '~/lib/view/records'
 import { LOADED_SERIES } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -293,6 +293,47 @@ const CHANGES: {
   { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
   { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
   { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
+  // The southern cast's later deaths (#1286).
+  {
+    id: 'cersei-lannister',
+    episode: 72,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'jaime-lannister',
+    episode: 72,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'tywin-lannister', episode: 40, chapter: 221, value: 'deceased' },
+  { id: 'joffrey-baratheon', episode: 32, chapter: 204, value: 'deceased' },
+  {
+    id: 'myrcella-baratheon',
+    episode: 50,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'tommen-baratheon',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'renly-baratheon', episode: 15, chapter: 107, value: 'deceased' },
+  { id: 'lysa-arryn', episode: 37, chapter: 236, value: 'deceased' },
+  { id: 'shae', episode: 40, chapter: 221, value: 'deceased' },
+  {
+    id: 'walder-frey',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
   {
     id: 'stevron-frey',
     episode: 14,
@@ -982,8 +1023,9 @@ describe.each([
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
  * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
  * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
- * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
- * magic. `stage` counts a record's stages from 0, for a record redrawn more
+ * blade, the reveals of Jorah's master, Aemon's house and Mirri's blood
+ * magic, and the southern cast's later looks and deaths (#1286), most of
+ * them the show's alone and Bronn's banner the book's. `stage` counts a record's stages from 0, for a record redrawn more
  * than once.
  */
 const STAGES: {
@@ -1041,7 +1083,54 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The southern cast's later looks and deaths (#1286).
+  { id: 'cersei-lannister', episode: 72, chapter: 344, source: 'episode' },
+  { id: 'jaime-lannister', episode: 56, chapter: 344, source: 'episode' },
+  {
+    id: 'jaime-lannister',
+    episode: 72,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'tywin-lannister', episode: 40, chapter: 221 },
+  { id: 'joffrey-baratheon', episode: 7, chapter: 50 },
+  { id: 'joffrey-baratheon', episode: 32, chapter: 204, stage: 1 },
+  { id: 'myrcella-baratheon', episode: 42, chapter: 344, source: 'episode' },
+  {
+    id: 'myrcella-baratheon',
+    episode: 50,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'tommen-baratheon', episode: 60, chapter: 344, source: 'episode' },
+  { id: 'renly-baratheon', episode: 15, chapter: 107 },
+  { id: 'lysa-arryn', episode: 37, chapter: 236 },
+  { id: 'bronn', episode: 41, chapter: 242, source: 'chapter' },
+  { id: 'bronn', episode: 73, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'shae', episode: 40, chapter: 221 },
+  { id: 'walder-frey', episode: 29, chapter: 195 },
+  { id: 'walder-frey', episode: 60, chapter: 344, source: 'episode', stage: 1 },
 ]
+
+/**
+ * The drawing a reader of `unit` sees last among a record's first `count`
+ * stages: a stage the other medium alone tells is skipped, so Bronn's
+ * banner, the books', never stands before his rose for a viewer.
+ */
+function lastSeen(
+  id: keyof typeof DRAWINGS,
+  unit: 'chapter' | 'episode',
+  count: number,
+): Stroke[] {
+  const record = recordOf(id)
+  const seen = (REDRAWINGS[id] ?? [])
+    .slice(0, count)
+    .filter((stage) => (record.source ?? stage.source ?? unit) === unit)
+
+  return seen.at(-1)?.value ?? DRAWINGS[id]
+}
 
 describe.each(
   STAGES.flatMap((stage) =>
@@ -1054,9 +1143,8 @@ describe.each(
   '$id is redrawn by $unit at $episode/$chapter',
   ({ id, episode, chapter, unit, stage: index = 0 }) => {
     const pin = unit === 'chapter' ? chapter : episode
-    const stages = REDRAWINGS[id] ?? []
-    const stage = stages[index]
-    const previous = index === 0 ? DRAWINGS[id] : stages[index - 1]?.value
+    const stage = REDRAWINGS[id]?.[index]
+    const previous = lastSeen(id, unit, index)
 
     it('at its pin, not one before', () => {
       const owner = recordOf(id)
@@ -1077,12 +1165,15 @@ describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
     ({ id, source }) => {
+      const other = source === 'chapter' ? 'episode' : 'chapter'
       const last =
-        source === 'chapter' ?
+        other === 'episode' ?
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
 
-      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(DRAWINGS[id])
+      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(
+        lastSeen(id, other, Infinity),
+      )
     },
   )
 })

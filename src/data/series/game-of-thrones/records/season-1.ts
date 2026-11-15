@@ -3651,7 +3651,10 @@ export const season1: ThronesSaga = {
           },
         },
       ],
-      status: [{ episode: 1, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 5, value: 'alive' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'jaime-lannister': {
       affiliation: [
@@ -3686,6 +3689,7 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 1, chapter: 5, value: 'alive' },
         { episode: 9, chapter: 64, value: 'captured' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
       ],
     },
     'tyrion-lannister': {
@@ -3751,7 +3755,10 @@ export const season1: ThronesSaga = {
           value: { it: 'Primo Cavaliere del Re', en: 'Hand of the King' },
         },
       ],
-      status: [{ episode: 7, chapter: 57, value: 'alive' }],
+      status: [
+        { episode: 7, chapter: 57, value: 'alive' },
+        { episode: 40, chapter: 221, value: 'deceased' },
+      ],
     },
     'joffrey-baratheon': {
       affiliation: [
@@ -3777,7 +3784,10 @@ export const season1: ThronesSaga = {
           value: { it: 'Re dei Sette Regni', en: 'King of the Seven Kingdoms' },
         },
       ],
-      status: [{ episode: 1, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 5, value: 'alive' },
+        { episode: 32, chapter: 204, value: 'deceased' },
+      ],
     },
     'myrcella-baratheon': {
       affiliation: [
@@ -3792,7 +3802,10 @@ export const season1: ThronesSaga = {
         en: 'She is the young daughter of the king and queen. She travels north with her parents and brothers.',
       },
       role: { it: 'Principessa', en: 'Princess' },
-      status: [{ episode: 1, chapter: 6, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 6, value: 'alive' },
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'tommen-baratheon': {
       affiliation: [
@@ -3807,7 +3820,10 @@ export const season1: ThronesSaga = {
         en: 'He is the youngest child of the king and queen. He travels north with his parents, his brother and his sister.',
       },
       role: { it: 'Principe', en: 'Prince' },
-      status: [{ episode: 1, chapter: 6, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 6, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'robert-baratheon': {
       affiliation: [
@@ -3865,7 +3881,10 @@ export const season1: ThronesSaga = {
           },
         },
       ],
-      status: [{ episode: 3, chapter: 16, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 16, value: 'alive' },
+        { episode: 15, chapter: 107, value: 'deceased' },
+      ],
     },
     'lysa-arryn': {
       affiliation: [
@@ -3880,7 +3899,10 @@ export const season1: ThronesSaga = {
         en: 'She is Catelyn’s sister and the widow of the last Hand of the King. She lives in the Eyrie with her son and shields him from everything.',
       },
       role: { it: 'Lady del Nido dell’Aquila', en: 'Lady of the Eyrie' },
-      status: [{ episode: 5, chapter: 35, value: 'alive' }],
+      status: [
+        { episode: 5, chapter: 35, value: 'alive' },
+        { episode: 37, chapter: 236, value: 'deceased' },
+      ],
     },
     'robin-arryn': {
       affiliation: [
@@ -3941,7 +3963,10 @@ export const season1: ThronesSaga = {
         en: 'She is a young woman who follows the Lannister camp. Bronn finds her for Tyrion, and she spends the night before the battle with him.',
       },
       role: { it: 'Prostituta al seguito dell’esercito', en: 'Camp follower' },
-      status: [{ episode: 9, chapter: 63, value: 'alive' }],
+      status: [
+        { episode: 9, chapter: 63, value: 'alive' },
+        { episode: 40, chapter: 221, value: 'deceased' },
+      ],
     },
     'walder-frey': {
       affiliation: [
@@ -3956,7 +3981,10 @@ export const season1: ThronesSaga = {
         en: 'He is a very old lord with a great many children, and he holds the bridge at the Twins. He lets Robb’s army cross in exchange for marriages into his family.',
       },
       role: { it: 'Signore del Guado', en: 'Lord of the Crossing' },
-      status: [{ episode: 9, chapter: 60, value: 'alive' }],
+      status: [
+        { episode: 9, chapter: 60, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'ros': {
       affiliation: [

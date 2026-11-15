@@ -394,7 +394,9 @@
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
     ],
     "unverified": [
-      "The exact line that names Cersei aloud in episode 1 was not checked; the episode synopsis calls her the queen at the arrival."
+      "The exact line that names Cersei aloud in episode 1 was not checked; the episode synopsis calls her the queen at the arrival.",
+      "First drawing (#1286): the slim gold queen’s crown with small lions is the owner’s ruling, not a frame check of season 1.",
+      "Death (#1286): under the Red Keep in “The Bells” (episode 72, Fandom DeathEp; the bodies are found in GOT806); the books leave her alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "jaime-lannister": {
@@ -408,6 +410,10 @@
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Baelor"
+    ],
+    "unverified": [
+      "Costume (#1286): Tommen removes him from the Kingsguard in “Blood of My Blood” (episode 56, Fandom ref GOT606); in the books he is never dismissed, so the stage is the show’s alone, ordered at chapter 344; episode not viewed.",
+      "Death (#1286): with Cersei under the Red Keep in “The Bells” (episode 72, Fandom DeathEp); the books leave him alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "tyrion-lannister": {
@@ -439,7 +445,8 @@
     ],
     "unverified": [
       "Whether his name is said aloud in his first scene in episode 7 (Jaime calls him father; the name is not quoted in the synopsis).",
-      "When the show first says he is the new Hand: dated at episode 10, where he sends Tyrion to rule in his place; episode 8’s court scene may announce it earlier."
+      "When the show first says he is the new Hand: dated at episode 10, where he sends Tyrion to rule in his place; episode 8’s court scene may announce it earlier.",
+      "Death (#1286): “The Children” (episode 40, Fandom DeathEp, ref GOT410) and Tyrion XI of A Storm of Swords (site chapter 221, the verifier’s reading of Fandom’s Bookref ASOS 77); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "joffrey-baratheon": {
@@ -451,6 +458,10 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ],
+    "unverified": [
+      "Crown (#1286): he takes the throne at Robert’s death, “You Win or You Die” (episode 7, Fandom ref GOT107) and Eddard XIV (chapter 50); the owner rules crowns a costume stage; episode not viewed.",
+      "Death (#1286): “The Lion and the Rose” (episode 32, Fandom DeathEp, ref GOT402) and Tyrion VIII of A Storm of Swords (site chapter 204, provisional: he chokes in Sansa IV, chapter 203); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "myrcella-baratheon": {
@@ -461,11 +472,15 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/The_Wars_to_Come",
+      "https://gameofthrones.fandom.com/wiki/The_House_of_Black_and_White"
     ],
     "unverified": [
       "Episode gate 1 is Fandom’s first appearance; no source quotes her name said aloud in season 1 episode 1 (or 2). Check when the show first names her.",
-      "Chapter gate 6 (Jon I): A Wiki of Ice and Fire lists her as appearing in Eddard I (chapter 5) but its synopsis there only says ‘the younger children’; Jon I names her."
+      "Chapter gate 6 (Jon I): A Wiki of Ice and Fire lists her as appearing in Eddard I (chapter 5) but its synopsis there only says ‘the younger children’; Jon I names her.",
+      "Necklace (#1286): first shown in “The House of Black and White” (episode 42, Fandom synopsis and trivia: Cersei knows the lion pendant as Myrcella’s), not in episode 41 as the audit had it; the books have no such necklace, so the stage is the show’s alone, ordered at chapter 344; episode not viewed.",
+      "Death (#1286): “Mother’s Mercy” (episode 50, Fandom DeathEp, ref GOT510); the books leave her alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "tommen-baratheon": {
@@ -481,7 +496,8 @@
     ],
     "unverified": [
       "Episode gate 1 is Fandom’s first appearance; the first quoted line naming him is in episode 5 (‘Tommen is eight’). If episodes 1–4 never say his name, the gate is 5.",
-      "Chapter gate 6 (Jon I): listed as appearing in Eddard I (chapter 5) but named only in Jon I by the synopses."
+      "Chapter gate 6 (Jon I): listed as appearing in Eddard I (chapter 5) but named only in Jon I by the synopses.",
+      "Death (#1286): “The Winds of Winter” (episode 60, Fandom DeathEp, ref GOT610); the books leave him alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "robert-baratheon": {
@@ -509,6 +525,9 @@
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Death (#1286): “The Ghost of Harrenhal” (episode 15, Fandom DeathEp, ref GOT205) and Catelyn IV of A Clash of Kings (site chapter 107, the verifier’s reading of chapter 33); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "lysa-arryn": {
@@ -520,7 +539,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion"
     ],
     "unverified": [
-      "Italian Wikipedia files her under her maiden name (Casa Arryn#Lysa Tully); ‘Lysa Arryn’ as the dub’s form is assumed."
+      "Italian Wikipedia files her under her maiden name (Casa Arryn#Lysa Tully); ‘Lysa Arryn’ as the dub’s form is assumed.",
+      "Death (#1286): “Mockingbird” (episode 37, Fandom DeathEp, ref GOT407) and Sansa I of A Feast for Crows (site chapter 236, the verifier’s reading of chapter 10); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "robin-arryn": {
@@ -544,11 +564,16 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown"
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Lollys_Stokeworth",
+      "https://gameofthrones.fandom.com/wiki/House_Stokeworth"
     ],
     "unverified": [
       "Episode gate 4 is Fandom’s first appearance (he offers Tyrion his room). No source quotes his name said aloud in episodes 4–6; if it is first said later, the gate moves.",
-      "Book: present at the inn in Catelyn V (chapter 29) but absent from that chapter’s character list and synopsis; first named in Tyrion IV (chapter 32)."
+      "Book: present at the inn in Catelyn V (chapter 29) but absent from that chapter’s character list and synopsis; first named in Tyrion IV (chapter 32).",
+      "First drawing (#1286): the whetstone is gone, as the owner rules; the show never gives him one.",
+      "Book stage (#1286): married to Lollys Stokeworth by Jaime II of A Feast for Crows (site chapter 242, where her son is born and named Tyrion, the chapter a search snippet of A Wiki of Ice and Fire’s Tyrion Tanner page cites); an earlier chapter of A Feast for Crows may tell the wedding first; book chapter not checked on A Wiki of Ice and Fire (no access from this session). The show breaks the match (GOT502), so the stage is the book’s alone, ordered at episode 41. The banner is House Stokeworth’s arms as Fandom gives them (a white lamb holding a golden goblet).",
+      "Show stage (#1286): Lord of Highgarden in “The Iron Throne” (episode 73, Fandom ref GOT806), the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "shae": {
@@ -560,6 +585,9 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_69",
       "https://gameofthrones.fandom.com/wiki/Baelor",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Death (#1286): Tyrion strangles her in “The Children” (episode 40, Fandom DeathEp, ref GOT410) and in Tyrion XI of A Storm of Swords (site chapter 221); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "walder-frey": {
@@ -571,6 +599,10 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_59",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Baelor"
+    ],
+    "unverified": [
+      "Allegiance (#1286): the Red Wedding shows his pact with Tywin, in “The Rains of Castamere” (episode 29) and in Catelyn VII of A Storm of Swords (site chapter 195); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed.",
+      "Death (#1286): Arya kills him in “The Winds of Winter” (episode 60, Fandom DeathEp, ref GOT610); the books leave him alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "ros": {
