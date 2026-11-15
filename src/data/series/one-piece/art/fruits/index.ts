@@ -1358,14 +1358,14 @@ const KIRIN_BODY: Body = { family: 'pear', cy: 118 }
  * straight out and back to its point.
  */
 const KIRIN_HORN: Growth = {
-  from: 102,
-  to: 84,
+  from: 104,
+  to: 82,
   through: [
-    [23.2, 100.5],
-    [42.3, 65.7],
-    [62, 36],
-    [40.4, 57.6],
-    [19, 85],
+    [27, 101],
+    [48, 60],
+    [68, 22],
+    [44, 52],
+    [22, 81],
   ],
 }
 
@@ -2903,14 +2903,101 @@ function arrived(x: number, y: number): string {
   return point(106 + (x - 80) * 0.65, y)
 }
 
-/** The flask body, kept whole beneath the drink spat in episode 1121/1087. */
+/** The points a path is drawn through, back to the first when it closes. */
+function pointsOf(d: string): Point[] {
+  const numbers = d.match(/-?[\d.]+/gu)?.map(Number) ?? []
+  const points = Array.from(
+    { length: Math.floor(numbers.length / 2) },
+    (_unused, at): Point => [numbers[at * 2] ?? 0, numbers[at * 2 + 1] ?? 0],
+  )
+
+  return d.endsWith('Z') ? [...points, ...points.slice(0, 1)] : points
+}
+
+/** Points a pixel or so apart along a straight span, leaving out its end. */
+function stepsAlong([x0, y0]: Point, [x1, y1]: Point): Point[] {
+  const length = Math.ceil(Math.hypot(x1 - x0, y1 - y0))
+
+  return Array.from({ length }, (_unused, step): Point => {
+    const t = step / length
+
+    return [x0 + (x1 - x0) * t, y0 + (y1 - y0) * t]
+  })
+}
+
+/** How long each piece of the warp trace is, and the gap after it. */
+const DASH = 7
+const GAP = 5
+
+/**
+ * A line broken into even pieces along its length: the trace of the body
+ * where it stood. Only the points of the path are read, so a curve is drawn
+ * through its control points, which is close enough for a short crown rim.
+ */
+function gapped(d: string): string {
+  const points = pointsOf(d)
+  const steps = points
+    .slice(1)
+    .flatMap((to, at) => stepsAlong(points[at] ?? to, to))
+  const runs: Point[][] = []
+
+  for (const [along, here] of steps.entries()) {
+    if (along % (DASH + GAP) === 0) {
+      runs.push([])
+    }
+    if (along % (DASH + GAP) < DASH) {
+      runs.at(-1)?.push(here)
+    }
+  }
+
+  const pieces: string[] = []
+
+  for (const run of runs) {
+    if (run.length > 1) {
+      pieces.push(polyline(run.map(([x, y]) => point(x, y))))
+    }
+  }
+
+  return pieces.join(' ')
+}
+
+/** The same body where it stood before the warp. */
+function departed(x: number, y: number): string {
+  return point(44 + (x - 80) * 0.65, y)
+}
+
+/** The flask body, its crown open where the drink comes out in 1121/1087. */
 const GABU_BODY: Body = { family: 'gourd', cy: 126 }
 
 /** Bluegrass controls a Pacifista she rides in episode 1128, chapter 1094. */
-const RIDE_BODY: Body = { family: 'segmented', cy: 106 }
+const RIDE_BODY: Body = { family: 'segmented', cy: 100 }
+
+/** How far the plate is tipped up, in degrees, and the fruit with it. */
+const RIDE_TIP = -12.6
+
+/** A point of the ride fruit, tipped with the plate about its foot. */
+function ridden(x: number, y: number): string {
+  const [dx, dy] = [x - 80, y - 146]
+  const [cos, sin] = [
+    Math.cos(RIDE_TIP * DEGREES),
+    Math.sin(RIDE_TIP * DEGREES),
+  ]
+
+  return point(80 + dx * cos - dy * sin, 146 + dx * sin + dy * cos)
+}
 
 /** Bonney shifts between young and grown in episode 1133, chapter 1099. */
 const AGE_BODY: Body = { family: 'segmented', cy: 113 }
+
+/** The far half of the age fruit, shrunk in and down and puckered at its rim. */
+function aged(x: number, y: number): string {
+  const pucker = 1 + 0.06 * Math.sin(y / 3)
+
+  return point(
+    80 + (x - 80) * 0.7 * pucker,
+    AGE_BODY.cy + (y - AGE_BODY.cy) * 0.88,
+  )
+}
 
 /** Vegapunk's knowledge enlarges his brain in episode 1097, chapter 1067. */
 const BRAIN_BODY: Body = { family: 'gourd', cy: 125 }
@@ -2925,12 +3012,28 @@ function brainBulb(x: number, y: number): string {
 /** Doc Q's contagious disease spreads among the Heart Pirates in 1093/1063. */
 const SICK_BODY: Body = { family: 'gourd', cy: 122 }
 
+/**
+ * A blotch on the skin: a smooth, uneven ring about a point, never lobed
+ * evenly, which would read as a flower.
+ */
+function blotch(cx: number, cy: number, r: number): string {
+  const points = Array.from({ length: 18 }, (_unused, at) => {
+    const angle = at * 20 * DEGREES
+    const reach =
+      r * (1 + 0.2 * Math.sin(2 * angle + cx) + 0.1 * Math.sin(3 * angle + cy))
+
+    return point(cx + reach * Math.cos(angle), cy + reach * Math.sin(angle))
+  })
+
+  return polyline(points, true)
+}
+
 /** Burgess lifts a mountain in episode 1093, chapter 1063. */
 const STRONG_BODY: Body = { family: 'heart', cy: 132 }
 
 /** The crown presses flat beneath the load. */
 function strongCrown(x: number, y: number): string {
-  return point(x, Math.max(94, y))
+  return point(x, Math.max(100, y))
 }
 
 /** Pizarro merges into Hachinosu in episode 1113, chapter 1080. */
@@ -6770,7 +6873,9 @@ export const fruitArt = {
   /**
    * The real fruit, seen once in a flashback in episode 976: the foot of a
    * gourd, dark above with fishhooks on it and light below with curls, its
-   * stalk a crossbar wound up at one end and down at the other.
+   * stalk a crossbar wound up at one end and down at the other. The light
+   * sits on the near shoulder and the far side is hatched, as on the other
+   * real fruits.
    */
   'brush-brush-fruit': [
     {
@@ -6802,14 +6907,12 @@ export const fruitArt = {
       ].join(' '),
       role: 'accent',
     },
+    // The light on the near shoulder, and the far side turning away.
+    { d: 'M58 95 C53 99 49 104 47 110', role: 'soft' },
     {
-      // The dark half is hatched where it turns away, at either side.
-      d: [
-        'M36 120 L44 110',
-        'M42 121 L50 111',
-        'M124 120 L116 110',
-        'M118 121 L110 111',
-      ].join(' '),
+      d: ['M124 120 L116 110', 'M118 121 L110 111', 'M125 146 L118 139'].join(
+        ' ',
+      ),
       role: 'ambient',
     },
     {
@@ -6831,6 +6934,7 @@ export const fruitArt = {
    * curls hanging from the calyx halfway down, a stalk swirling up on the
    * left. The anime shows it in episode 1041, as Kaido and Yamato talk about
    * why Yamato ate it (chapter 1019), one episode before the fruit is named.
+   * The light sits on the near shoulder and the far side is hatched.
    */
   'dog-dog-fruit-model-okuchi-no-makami': [
     {
@@ -6841,16 +6945,18 @@ export const fruitArt = {
       d: 'M80 102 C79 90 78 78 79 66 C90 58 102 56 114 57 M79 66 C68 60 57 61 50 56 C42 51 44 40 52 40 C59 40 61 48 56 51 C52 53 49 49 52 47',
     },
     { d: MAKAMI_HOOKS.map((hook) => hookCurl(hook)).join(' '), role: 'accent' },
-    { d: 'M122 140 L128 146 M116 156 L121 161', role: 'ambient' },
-    { d: 'M36 140 C36 147 39 153 44 158', role: 'soft' },
+    // The light on the near shoulder, and the far side turning away.
+    { d: 'M45 115 C39 118 35 123 33 130', role: 'soft' },
+    { d: 'M130 126 L123 119 M131 139 L125 133', role: 'ambient' },
     shadowUnder(2),
   ],
 
   /**
-   * Blades, barrels and bent plates packed together on the shoulder, swelling
-   * it out into a clump of iron. Kid gathers weapons into a metal arm in
-   * episodes 398–399 (chapters 504–505), long before the record's threshold
-   * at 1058. No flying scraps, magnetic lettering or awakened technique.
+   * Scrap packed onto the shoulder and clenched into a fist of bent plates,
+   * a barrel and a blade jutting out of it. Kid gathers weapons into a metal
+   * arm in episodes 398–399 (chapters 504–505) and fights with giant scrap
+   * arms through the raid on Onigashima, before the record's threshold at
+   * 1058. No flying scraps, magnetic lettering or awakened technique.
    */
   'magnet-magnet-fruit': [
     ...kitBody(MAGNET_BODY, [142, 154], (x, y) => x < 80 || y < 90 || y > 137),
@@ -6861,32 +6967,35 @@ export const fruitArt = {
     ...sprout(MAGNET_BODY, -5, 'left'),
     {
       d: [
-        'M100 94 L114 80 L126 88 L139 82 L149 98 L143 112',
-        'L151 125 L137 140 L122 134 L109 140 L100 130',
-        'M114 80 L108 66 L113 63 L124 84',
-        'M125 90 L141 60 L144 90 L137 102 Z',
-        'M111 103 L138 113 L135 124 L108 114 Z',
-        'M135 124 L131 118 L134 113',
-        'M117 124 L124 135 L136 130 L129 119 Z',
+        'M104 91 L110 78 L144 76 L151 82',
+        'L154 86 L154 96 L150 99 L154 101 L154 110 L150 112',
+        'L154 114 L154 123 L150 125 L153 129 L150 136 L110 138',
+        'M150 99 L134 99 M150 112 L134 112 M150 125 L136 125',
+        'M112 121 L139 113 L141 122 L115 130',
+        'M114 88 L126 85 L128 96 L118 104',
+        'M111 80 L99 70 L103 64 L117 77',
+        'M110 138 L105 150 L112 153 L117 138',
       ].join(' '),
       role: 'accent',
     },
-    // The far faces of the scraps, turned away from the light.
+    // The far faces of the scrap, turned away from the light.
     {
-      d: 'M144 98 L139 94 M142 106 L137 102 M140 127 L136 123',
+      d: 'M148 106 L143 101 M148 119 L143 114 M142 134 L137 129',
       role: 'ambient',
     },
     shadowUnder(1),
   ],
 
   /**
-   * The fruit's foot turned to wood, branching roots along the ground, two
-   * uneven tips curling up to grasp. In episodes 1080–1081 (chapters 1053–1054),
-   * Ryokugyu's roots ensnare and drain his opponents. No later fireproofing,
-   * regeneration or flower propeller.
+   * The fruit's foot turned to wood and flaring out into roots along the
+   * ground, bark on them and three leaves, two on short shoots. In episodes
+   * 1080–1081 (chapters 1053–1054) Ryokugyu's roots ensnare and drain his
+   * opponents, and his body takes on the traits of trees, wood to foliage. The
+   * roots lie flat and leaf, with no curled tips, so they never read as
+   * tentacles. No fireproofing, regeneration or flower propeller.
    */
   'woods-woods-fruit': [
-    ...kitBody(WOODS_BODY, [94, 106, 118], (_x, y) => y < 132),
+    ...kitBody(WOODS_BODY, [94, 106, 118], (_x, y) => y < 136),
     ...skin([
       [68, 91, 7],
       [84, 117, -6],
@@ -6894,69 +7003,113 @@ export const fruitArt = {
     ...sprout(WOODS_BODY, 3, 'right'),
     {
       d: [
-        `M${point(...onRim(WOODS_BODY, 132, -1))}`,
-        'L60 147 L48 153 L28 151 C16 148 15 140 20 137',
-        'C9 137 9 151 20 158 L37 165 L18 176 L36 172 L51 164 L66 160',
-        'L60 171 L44 184 L64 178 L80 165 L90 174 L108 187 L104 174 L93 159',
-        'L112 166 L131 165 C145 164 152 152 147 144',
-        'C148 155 138 159 129 155 L112 157 L97 148 L',
-        point(...onRim(WOODS_BODY, 132, 1)),
+        `M${point(...onRim(WOODS_BODY, 136, -1))}`,
+        'C52 146 46 152 36 155 C26 157 16 157 8 159',
+        'C18 161 30 162 40 162 C46 162 50 166 48 171',
+        'C46 175 42 178 38 180 C46 179 54 174 60 168',
+        'C66 164 72 166 76 170 C78 174 80 178 82 181',
+        'C86 175 90 169 96 166 C104 164 112 168 118 173',
+        'C121 175 124 177 128 178 C124 172 118 166 122 163',
+        'C132 162 142 161 152 159 C144 157 134 157 124 155',
+        'C114 152 108 146',
+        point(...onRim(WOODS_BODY, 136, 1)),
+        'M24 157 L18 145 M138 158 L143 146',
+        'M18 145 C16 138 19 133 25 131 C26 137 23 142 18 145',
+        'M143 146 C142 139 138 135 132 135 C132 141 137 145 143 146',
+        'M104 165 C107 159 112 157 118 158 C115 164 110 166 104 165',
       ].join(' '),
       role: 'accent',
     },
-    // Grain where the skin is becoming wood, and along the near roots.
+    // Bark where the skin is becoming wood, and along the near roots.
     {
-      d: 'M68 132 L68 147 L73 153 M85 134 L86 147 L92 152 M54 158 L33 157 M101 157 L116 162',
+      d: 'M68 136 C66 142 62 148 56 152 M90 137 C94 143 100 148 108 151 M44 159 C34 159 24 159 16 159 M62 170 C66 168 70 170 72 173',
       role: 'soft',
     },
     {
-      d: 'M53 177 L58 171 M61 174 L66 168 M99 176 L95 168 M122 162 L118 158',
+      d: 'M146 160 L140 157 M132 160 L126 157 M122 172 L116 168 M90 173 L86 170',
       role: 'ambient',
     },
   ],
 
-  /** A swollen gourd and one winding fold, explained by Vegapunk in 1097/1067. */
+  /**
+   * The upper bulb swollen into a brain, lobed all round, its folds in soft
+   * lines and the stalk set on top; the lower bulb stays a fruit. In episode
+   * 1097 (chapter 1067) Vegapunk explains that his brain keeps growing with
+   * everything he learns.
+   */
   'brain-brain-fruit': [
     ...[
-      ...kitBody(BRAIN_BODY, [92, 104, 140]),
+      { d: outline(BRAIN_BODY, (_x, y) => y > 118) },
+      hatching(BRAIN_BODY, [140, 152]),
       ...skin([
         [69, 139, 6],
         [89, 149, -5],
         [75, 159, 4],
       ]),
-      ...sprout(BRAIN_BODY, -3, 'left'),
     ].map((stroke) => tipped(stroke, brainBulb)),
+    ...sprout(BRAIN_BODY, -3, 'left').map((stroke) =>
+      tipped(stroke, (x, y) => point(x, y - 17)),
+    ),
     {
-      d: 'M47 100 C53 88 68 88 72 98 C75 109 57 111 61 119 C65 126 84 121 86 111 C88 100 105 103 111 94 C114 88 109 84 104 84',
+      d: `${billow([
+        [61, 118],
+        [42, 113],
+        [32, 98],
+        [38, 82],
+        [56, 71],
+        [75, 68],
+      ])} ${billow([
+        [85, 68],
+        [104, 71],
+        [122, 82],
+        [128, 98],
+        [118, 113],
+        [99, 118],
+      ])}`,
       role: 'accent',
     },
+    // The folds of the brain, none level with another.
+    {
+      d: [
+        'M80 71 C77 82 83 92 80 106',
+        'M42 96 C48 90 54 99 60 93 C64 89 68 95 71 91',
+        'M54 80 C59 76 64 83 70 80',
+        'M90 84 C96 80 100 89 107 85 C111 82 115 87 119 90',
+        'M88 105 C94 100 99 108 105 103',
+      ].join(' '),
+      role: 'soft',
+    },
+    { d: 'M122 100 L115 93 M117 110 L110 103', role: 'ambient' },
     shadowUnder(1),
   ],
 
-  /** A younger whole fruit inside the same grown body; no decay marks. */
+  /**
+   * The fruit half young and half old: the near half plump, with its shine,
+   * the far half shrunk in, puckered at the rim and creased, the outline
+   * stepping in where the two meet at the crown and the foot. Bonney turns
+   * people old and young from episode 401 (chapter 507), long before the
+   * fruit opens at 1133/1099. No decay marks.
+   */
   'age-age-fruit': [
-    ...kitBody(AGE_BODY, [95, 108, 121]),
+    { d: outline(AGE_BODY, (x) => x <= 80) },
+    crown(AGE_BODY, [80, 160]),
+    shine(AGE_BODY),
     ribs(AGE_BODY, 148, [-1]),
     ...skin([
-      [65, 101, 6],
-      [97, 102, -5],
+      [62, 100, 6],
+      [58, 134, -5],
     ]),
     ...sprout(AGE_BODY, -4, 'left'),
     {
-      d: [
-        outline(AGE_BODY),
-        crown(AGE_BODY).d,
-        ...sprout(AGE_BODY, -4, 'left').map(({ d }) => d),
-      ]
-        .map(
-          (d) =>
-            tipped({ d }, (x, y) =>
-              point(88 + (x - 80) * 0.42, 133 + (y - AGE_BODY.cy) * 0.42),
-            ).d,
-        )
-        .join(' '),
+      d: `M80 67 ${tipped({ d: outline(AGE_BODY, (x) => x >= 80) }, aged).d.replace('M', 'L')} L80 159`,
       role: 'accent',
     },
+    // Creases where the far half has shrunk, at odd heights and slants.
+    {
+      d: 'M92 88 C96 91 99 95 100 100 M86 114 C91 113 96 115 100 119 M95 134 C98 136 100 140 100 144',
+      role: 'soft',
+    },
+    { d: 'M108 104 L101 97 M108 126 L101 119', role: 'ambient' },
     shadowUnder(1),
   ],
 
@@ -7004,9 +7157,17 @@ export const fruitArt = {
     tipped(shadowUnder(1), foxSide),
   ],
 
-  /** Shot spits a Gulp of liquor; the ignition in 1121 is deliberately omitted. */
+  /**
+   * Liquor arcing out of the open crown, as out of a flask, and falling in
+   * drops. Shot gulps liquor and spits it back out in episode 1121 (chapter
+   * 1087); the fire he lights it with is left out, so the drawing is never
+   * read as a fire fruit.
+   */
   'gabu-gabu-fruit': [
-    ...kitBody(GABU_BODY, [106, 121, 148]),
+    { d: outline(GABU_BODY) },
+    crown(GABU_BODY, [80, 94]),
+    shine(GABU_BODY),
+    hatching(GABU_BODY, [106, 121, 148]),
     ...skin([
       [71, 116, 6],
       [87, 143, -7],
@@ -7014,90 +7175,146 @@ export const fruitArt = {
     ]),
     ...sprout(GABU_BODY, -5, 'left'),
     {
-      d: 'M75 66 C91 44 119 48 122 64 C124 74 122 82 119 88 M79 68 C93 54 109 56 113 66 C116 75 114 82 111 86 M116 95 L112 103 M128 94 L133 100 M132 82 L140 85',
+      d: 'M86 79 C94 56 124 52 130 70 C133 79 133 88 130 97 C129 101 125 101 125 97 C126 90 126 82 123 75 C119 64 100 64 93 80 M121 106 C119 110 119 113 121.5 113 C124 113 124 110 121 106 M133 107 C131 111 131 114 133.5 114 C136 114 136 111 133 107 M127 119 C125 123 125 126 127.5 126 C130 126 130 123 127 119',
       role: 'accent',
     },
     shadowUnder(1),
   ],
 
-  /** A giant beside an ordinary fruit, standing in the sea as Wolf does in 513/595. */
+  /**
+   * A giant standing in the sea up to its middle, the waves breaking against
+   * it, and an ordinary fruit bobbing on the swell beside it for scale. Wolf
+   * stands on the seabed with his head out of the water in episode 513
+   * (chapter 595); the fruit is named in 1113/1080. No shadow: the sea is
+   * its ground.
+   */
   'huge-huge-fruit': [
     ...[
-      ...kitBody(HUGE_BODY, [95, 108, 123]),
+      ...kitBody(HUGE_BODY, [90, 102, 114], (_x, y) => y < 120),
       ...skin([
-        [68, 91, 7],
-        [89, 123, -7],
-        [69, 142, 6],
+        [68, 88, 7],
+        [90, 104, -6],
+        [70, 114, 5],
       ]),
       ...sprout(HUGE_BODY, 5, 'right'),
     ].map((stroke) => tipped(stroke, gigantic)),
     {
-      d: 'M9 125 C26 117 43 132 63 125 C83 118 101 132 121 125 C133 120 143 122 151 125',
+      d: 'M8 127 C18 121 28 133 38 127 C46 122 56 132 66 127 C76 122 86 132 96 127 C104 122 112 132 122 127 C130 122 140 132 152 127 M40 122 C37 116 39 111 44 109 M106 122 C109 116 107 111 102 109',
       role: 'accent',
     },
-    // A plain fruit, not another power: the comparison makes the scale visible.
+    // A plain fruit, not another power: bobbing on the swell, it gives the scale.
     {
-      d: `${tipped({ d: outline(HUGE_BODY) }, (x, y) => point(139 + (x - 80) * 0.23, 160 + (y - 110) * 0.3)).d} M139 147 L140 142`,
+      d: `${tipped({ d: outline(HUGE_BODY, (_x, y) => y < 136) }, (x, y) => point(137 + (x - 80) * 0.2, 117 + (y - 110) * 0.2)).d} M137 108 L138 104`,
     },
-    shadowUnder(1),
+    {
+      d: 'M14 148 C26 142 38 154 50 148 C62 142 74 154 86 148 C98 142 110 154 122 148 C130 144 138 150 146 148 M30 168 C42 162 54 174 66 168 C78 162 90 174 102 168 C112 163 122 172 132 168',
+      role: 'ambient',
+      dashed: true,
+    },
   ],
 
-  /** The fruit's lower rim disappears into a solid slab of island rock. */
+  /**
+   * The fruit's foot sunk into a slab of island rock with cliff faces, and a
+   * palm on it, as Hachinosu has. Pizarro merges with Hachinosu in episode
+   * 1113 (chapter 1080). No skull rock, which would be a face, and none of
+   * the arms he raises from the ground in 1121. No shadow: the slab is its
+   * ground.
+   */
   'island-island-fruit': [
-    ...kitBody(ISLAND_BODY, [99, 113, 129], (_x, y) => y < 155),
+    ...kitBody(ISLAND_BODY, [99, 113, 129], (_x, y) => y < 153),
     ...skin([
       [66, 103, 6],
       [87, 123, -7],
-      [76, 144, 5],
+      [76, 141, 5],
     ]),
     ...sprout(ISLAND_BODY, -5, 'left'),
     {
-      d: 'M73 155 L61 164 L39 158 L17 166 L29 181 L67 187 L104 182 L143 184 L151 168 L127 159 L110 164 L97 155 M17 166 L58 174 L103 169 L151 168 M58 174 L67 187 M103 169 L104 182',
+      d: [
+        'M65 152 L46 149 L26 152 L10 162 L28 166 L52 164 L74 170 L98 165 L122 169 L150 162 L140 153 L118 149 L95 152',
+        'M10 162 L16 178 L30 186 L56 184 L80 190 L104 184 L124 188 L142 178 L150 162',
+        'M52 164 L56 184 M98 165 L104 184 M122 169 L124 188',
+      ].join(' '),
       role: 'accent',
     },
-    { d: 'M45 163 L53 166 L47 169 M116 163 L121 166 L115 168', role: 'soft' },
-    { d: 'M32 175 L42 177 M76 178 L84 177 M124 175 L133 176', role: 'ambient' },
-    shadowUnder(1),
+    // A palm, as Hachinosu has, standing clear of the fruit.
+    {
+      d: 'M132 160 C134 144 136 124 141 106 M141 106 C147 99 151 99 154 104 M141 106 C148 107 152 113 151 121 M141 106 C141 99 145 93 151 91 M141 106 C135 101 130 98 124 99 M141 106 C134 108 129 112 127 118',
+    },
+    { d: 'M22 171 L34 176 M64 175 L76 180 M108 174 L117 178', role: 'soft' },
+    {
+      d: 'M116 182 L110 176 M136 180 L131 174 M146 172 L141 167',
+      role: 'ambient',
+    },
   ],
 
-  /** Two unequal marks and a short link, without rot or an invented fever. */
+  /**
+   * Blotches spreading over the near half, one large and the rest smaller
+   * towards the far side, and the leaf hanging limp off the stalk. Doc Q's
+   * disease turns the Heart Pirates' men into women and spreads among them
+   * in episode 1093 (chapter 1063). No rot or invented fever.
+   */
   'sick-sick-fruit': [
     ...kitBody(SICK_BODY, [94, 108, 145]),
     ...skin([
       [84, 96, 5],
-      [67, 140, -6],
-      [85, 156, 5],
+      [98, 140, -6],
+      [92, 158, 4],
     ]),
-    ...sprout(SICK_BODY, 3, 'right'),
+    // The stalk bowed over, its leaf hanging limp off the end.
+    { d: 'M80 82 C80 72 82 65 88 60' },
     {
-      d: 'M72 108 C64 102 61 113 65 119 C60 125 69 133 75 128 C84 132 89 122 83 117 C87 110 79 103 72 108 Z M84 129 L90 140 M96 139 C91 134 86 140 89 145 C87 151 94 155 98 151 C104 153 107 146 102 143 C103 139 99 137 96 139 Z',
+      d: 'M88 60 C95 59 101 63 103 70 C96 71 90 67 88 60 M89 61 L101 69',
+      role: 'soft',
+    },
+    {
+      d: [
+        blotch(66, 138, 10),
+        blotch(66, 110, 6),
+        blotch(78, 157, 5.5),
+        blotch(85, 123, 4),
+        blotch(92, 106, 3),
+      ].join(' '),
       role: 'accent',
     },
     shadowUnder(1),
   ],
 
-  /** A mountain on the flattened crown, with the stalk clear on its left. */
+  /**
+   * A mountain wider than the fruit held up on its crown, which is pressed
+   * flat under it, the underside ragged where it was torn out of the ground;
+   * the stalk is squeezed out sideways. Burgess rips a mountain out of the
+   * ground, lifts it over his head and throws it in episode 1093 (chapter
+   * 1063).
+   */
   'strong-strong-fruit': [
-    ...kitBody(STRONG_BODY, [113, 127, 141]).map((stroke) =>
+    ...kitBody(STRONG_BODY, [118, 132, 146]).map((stroke) =>
       tipped(stroke, strongCrown),
     ),
     ...skin([
-      [65, 113, 6],
-      [88, 136, -7],
-      [75, 154, 5],
+      [62, 120, 6],
+      [88, 140, -7],
+      [74, 158, 5],
     ]),
-    ...sprout(STRONG_BODY, -5, 'left').map((stroke) =>
-      tipped(stroke, (x, y) => point(x - 24, y + 4)),
-    ),
+    // The stalk squeezed out sideways under the weight, its leaf beside it.
+    { d: 'M52 101 C46 101 40 103 34 108' },
     {
-      d: 'M64 91 L74 69 L84 74 L99 41 L113 66 L121 62 L135 89 L126 94 L116 91 L109 97 L99 94 L89 99 L80 94 L72 97 Z',
+      d: 'M34 108 C28 104 21 106 19 112 C26 115 31 113 34 108 M33 109 L21 111',
+      role: 'soft',
+    },
+    {
+      d: 'M26 92 L40 66 L52 70 L74 24 L88 46 L98 38 L118 62 L126 58 L144 92 L137 99 L131 96 L121 100 L112 95 L106 99 L95 97 L86 100 L77 94 L66 100 L58 96 L49 99 L40 94 L32 97 Z',
       role: 'accent',
     },
-    { d: 'M99 44 L97 71 L109 83 M84 76 L79 86 M119 69 L123 83', role: 'soft' },
+    { d: 'M74 27 L70 56 L80 72 M98 41 L102 64 M52 72 L48 84', role: 'soft' },
+    { d: 'M126 66 L120 72 M134 76 L128 82 M114 70 L108 76', role: 'ambient' },
     shadowUnder(1),
   ],
 
-  /** The solid fruit and the broken trace of its old position, shown in 1093. */
+  /**
+   * The solid fruit where it arrived, and an evenly broken trace of its body,
+   * crown and stalk where it stood, with nothing between the two. Augur warps
+   * from place to place in an instant in episode 1093 (chapter 1063).
+   */
   'warp-warp-fruit': [
     ...[
       ...kitBody(WARP_BODY, [104, 117, 137]),
@@ -7110,34 +7327,38 @@ export const fruitArt = {
       shadowUnder(1),
     ].map((stroke) => tipped(stroke, arrived)),
     {
-      d: tipped(
-        {
-          d: outline(
-            WARP_BODY,
-            (_x, y) =>
-              y < 81 || (y > 89 && y < 109) || (y > 122 && y < 140) || y > 150,
-          ),
-        },
-        (x, y) => point(44 + (x - 80) * 0.65, y),
-      ).d,
+      d: [
+        gapped(outline(WARP_BODY)),
+        gapped(crown(WARP_BODY).d),
+        gapped('M80 74 L82 64 L84 54'),
+      ]
+        .map((d) => tipped({ d }, departed).d)
+        .join(' '),
       role: 'accent',
     },
   ],
 
-  /** A tilted machine shoulder, with a command line from fruit to plate. */
+  /**
+   * The fruit seated on a machine plate, the plate tipped up and the fruit
+   * leaning with it. Bluegrass rides a Pacifista and takes it over in
+   * episode 1128 (chapter 1094).
+   */
   'ride-ride-fruit': [
-    ...kitBody(RIDE_BODY, [94, 107, 121], (_x, y) => y < 148),
-    ribs(RIDE_BODY, 147),
-    ...skin([
-      [65, 104, 6],
-      [95, 128, -6],
-    ]),
-    ...sprout(RIDE_BODY, 5, 'right'),
+    ...[
+      ...kitBody(RIDE_BODY, [88, 101, 115]),
+      ribs(RIDE_BODY, 140),
+      ...skin([
+        [62, 98, 6],
+        [96, 122, -6],
+      ]),
+      ...sprout(RIDE_BODY, 5, 'right'),
+    ].map((stroke) => tipped(stroke, ridden)),
     {
-      d: 'M22 157 L130 141 L144 154 L27 173 Z M22 157 L27 173 M130 141 L129 156 M35 158 L35 158 M124 147 L124 147',
-      role: 'soft',
+      d: 'M43 147.4 L24 152 L16 164 L150 134 L140 124 L120 128.7 M16 164 L18 174 L150 144 L150 134',
+      role: 'accent',
     },
-    { d: `M${point(...onRim(RIDE_BODY, 123, 1))} L132 146`, role: 'accent' },
+    { d: 'M30 168 L30 168 M136 141 L136 141', role: 'soft' },
+    { d: 'M50 168 L54 163 M80 162 L84 157 M110 155 L114 150', role: 'ambient' },
     shadowUnder(1),
   ],
 
@@ -7229,9 +7450,10 @@ export const fruitArt = {
 
   /**
    * The fruit with a qilin's horn: one long straight horn out of its far
-   * shoulder, leaning back. In episode 1170 Killingham arrives transformed,
-   * with a single straight horn swept back; episode 1173 names the fruit. The
-   * horn and nothing else, never the head, the mane or the sleep beams.
+   * shoulder, leaning back, rising from a collar at its root with a second
+   * edge along it. In episode 1170 Killingham arrives transformed, with a
+   * single straight horn swept back; episode 1173 names the fruit. The horn
+   * and nothing else, never the head, the mane or the sleep beams.
    */
   'dragon-dragon-fruit-mythical-model-kirin': [
     ...kitBody(KIRIN_BODY, [132, 144]),
@@ -7241,6 +7463,11 @@ export const fruitArt = {
     ]),
     ...sprout(KIRIN_BODY, -4, 'left'),
     { d: grown(KIRIN_BODY, 1, KIRIN_HORN), role: 'accent' },
+    // The collar the horn rises from, and its far edge turning away.
+    {
+      d: 'M96 106 C104 102 107 88 101 79 M103 90 C110 76 122 56 141 31',
+      role: 'soft',
+    },
     shadowUnder(1),
   ],
 } satisfies Drawings
