@@ -22,7 +22,7 @@ const CROWN_BAND: Stroke = { d: 'M34 112 V134 Q80 150 126 134 V112' }
  * tipped with beads and two small lions facing each other on the band, for
  * the queen who comes north with the court in episode 1 and in Eddard I
  * (chapter 5); the owner's pick (#1286). The far side of the band is
- * hatched; the accent is the lions.
+ * hatched; the accent is the left lion, and its mirror is soft.
  */
 const CROWN: Stroke[] = [
   CROWN_BAND,
@@ -40,7 +40,7 @@ const CROWN: Stroke[] = [
   },
   { d: 'M44 108 L48 95 L52 106.5 M108 106.5 L112 95 L116 108', role: 'soft' },
   { d: CROWN_LION, role: 'accent' },
-  { d: CROWN_LION, role: 'accent', transform: 'translate(160 0) scale(-1 1)' },
+  { d: CROWN_LION, role: 'soft', transform: 'translate(160 0) scale(-1 1)' },
   { d: ellipse(80, 131, 4, 5), role: 'soft' },
   { d: 'M116 119 l6 -3 M116 127 l6 -3 M115 135 l6 -3', role: 'ambient' },
 ]
@@ -707,7 +707,7 @@ const NECKLACE_CHAIN: Stroke = { d: 'M38 72 Q40 132 80 138 Q120 132 122 72' }
 /** Bronn's rose on its pommel, the Tyrell rose of Highgarden. */
 const POMMEL_ROSE: Stroke[] = [
   { d: circle(80, 20, 7), role: 'accent' },
-  { d: 'M80 20 q3 -1 2 3 q-3 3 -5 -1 q0 -5 5 -5', role: 'accent' },
+  { d: 'M80 20 q3 -1 2 3 q-3 3 -5 -1 q0 -5 5 -5', role: 'soft' },
 ]
 
 /**
