@@ -8,6 +8,7 @@ import {
 import { circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
 
 import { MERRY_JOLLY_ROGER } from './east-blue'
+import { KOZUKI_CREST_LIT } from './whole-cake'
 
 /**
  * One neck of Orochi's shadow behind the paper door, base at (0, 0), the head
@@ -44,6 +45,9 @@ const WHOS_WHO_LAY = 'translate(0 26) rotate(-12 80 112)'
 
 /** His hilt drawn out of the scabbard, tipped up on the dagger's blade. */
 const WHOS_WHO_DRAWN = 'translate(16 -12) rotate(-18 40 112)'
+
+/** Wado Ichimonji drawn level and then laid along the slope of Kozaburo's rock. */
+const KOZABURO_WADO = 'translate(0 -12) rotate(-5 80 120)'
 
 /** Hotei's sword that is still whole, laid above the one that was snapped. */
 const HOTEI_WHOLE = 'translate(0 30)'
@@ -129,12 +133,17 @@ const ULTI_HEEL: Stroke[] = [
   { d: 'M10 -15 C20 -12 32 -18 42 -30 C48 -38 54 -42 60 -40', role: 'soft' },
 ]
 
-/** One of Solitaire's four swords, point up, the end of the grip at (0, 0). */
+/**
+ * One of Solitaire's four swords, point up, the end of the grip at (0, 0):
+ * the blade and the grip, then the ridge down the blade and the wrap.
+ */
 const SOLITAIRE_SWORD: Stroke[] = [
-  { d: 'M-3 -26 V-116 L0 -124 L3 -116 V-26' },
-  { d: ellipse(0, -24, 9, 3), role: 'accent' },
-  { d: 'M-2.5 -21 V0 H2.5 V-21 M-2.5 -14 L2.5 -10 M-2.5 -7 L2.5 -3' },
+  { d: 'M-3.5 -28 V-114 L0 -124 L3.5 -114 V-28 M-2.5 -20 V0 H2.5 V-20' },
+  { d: 'M0 -30 V-118 M-2.5 -15 L2.5 -11 M-2.5 -8 L2.5 -4', role: 'soft' },
 ]
+
+/** The guard of one of her swords, seen a little from above, with its edge. */
+const SOLITAIRE_GUARD = `${ellipse(0, -25, 9, 3)} M-9 -25 V-22 A9 3 0 0 0 9 -22 V-25`
 
 /** One of the four fireballs on Raijin's ring, its flame licking up. */
 const RAIJIN_FIREBALL =
@@ -354,20 +363,119 @@ const FLOWER_CAPITAL_TOWN: Stroke[] = [
 ]
 
 /**
- * Denjiro's two clay pots and the two holed coins above them, the drawing
- * of the pot he cheats the shopkeeper over (960): his own first drawing,
- * and the pots Kyoshiro's sword is laid in front of once he is Denjiro.
+ * The two clay pots of Denjiro's first scene, the large one he walks off
+ * with and the small one he hands back (ch. 960 p. 11): the big pot's lip
+ * and the dark of its mouth, its shoulder, its far side hatched, its foot,
+ * and the small pot beside it. His own first drawing and the Kyoshiro
+ * stage both stand them up.
  */
 const DENJIRO_POTS: Stroke[] = [
-  { d: 'M30 90 C18 134 34 162 50 168 H90 C106 162 122 134 110 90 Z' },
-  { d: ellipse(70, 90, 40, 9) },
-  { d: 'M38 118 C58 126 82 126 102 118', role: 'soft' },
-  { d: 'M120 146 C114 162 122 172 128 174 H144 C150 172 156 162 152 146 Z' },
-  { d: ellipse(136, 146, 16, 4) },
-  { d: circle(128, 58, 9), role: 'accent' },
-  { d: 'M125 55 h6 v6 h-6 Z', role: 'accent' },
-  { d: circle(142, 80, 9), role: 'accent' },
-  { d: 'M139 77 h6 v6 h-6 Z', role: 'accent' },
+  { d: ellipse(68, 84, 30, 7) },
+  {
+    d: `${ellipse(68, 84, 25, 5)} M28 106 C50 116 86 116 108 106`,
+    role: 'soft',
+  },
+  {
+    d: 'M38 85 C20 104 20 146 42 162 H94 C116 146 116 104 98 85 M46 162 L48 168 H88 L90 162',
+  },
+  {
+    d: 'M100 110 l6 -5 M104 124 l6 -5 M104 138 l6 -5 M100 152 l6 -5 M144 152 l4 -4 M144 162 l4 -4',
+    role: 'ambient',
+  },
+  {
+    d: `${ellipse(134, 140, 14, 4)} M120 141 C114 154 120 166 128 170 H140 C148 166 154 154 148 141`,
+  },
+]
+
+/**
+ * The sunglasses Denjiro always wears before Oden's death, folded and laid
+ * in front of the pots: two lenses, the bridge, the folded arms.
+ */
+const DENJIRO_GLASSES: Stroke = {
+  d: `${ellipse(46, 189, 9, 6)} ${ellipse(68, 189, 9, 6)} M55 188 Q57 185 59 188 M37 187 L30 181 M77 187 L84 181`,
+  role: 'accent',
+}
+
+/**
+ * Kyoshiro's sword in its sheath laid in front of Denjiro's pots, the
+ * sheath the one accent and no sunglasses: Kyoshiro is Denjiro, told at
+ * 976 (ch. 973 p. 12-17). Both records take this drawing at that pair.
+ */
+const KYOSHIRO_IS_DENJIRO: Stroke[] = [
+  ...DENJIRO_POTS,
+  ...placed(KYOSHIRO_SWORD, 'translate(44 190) rotate(-3) scale(0.86)'),
+  shadow(86, 197, 66),
+]
+
+/**
+ * Hitetsu's red tengu mask on its back: the shell and its rim's thickness,
+ * the nose rising as a cone in his colour, its base and far side shaded.
+ * Sukiyaki's 1080 stage lays it behind his scroll.
+ */
+const HITETSU_MASK: Stroke[] = [
+  { d: 'M14 146 C16 120 46 104 80 104 C112 104 140 120 142 146' },
+  {
+    d: 'M14 146 Q78 158 142 146 M16 152 Q78 164 140 152 M14 146 V152 M142 146 V152',
+  },
+  { d: 'M34 130 Q58 118 76 118', role: 'soft' },
+  {
+    d: 'M66 118 C76 94 98 60 124 30 C128 26 136 28 134 36 C116 66 102 98 96 120 Q80 126 66 118 Z',
+    role: 'accent',
+  },
+  { d: 'M70 112 l9 2 M74 102 l9 2 M79 92 l8 2', role: 'ambient' },
+  { d: 'M86 116 C94 92 108 66 128 34', role: 'soft' },
+]
+
+/** Komurasaki's pair of tall geta set down side by side, hatched, with their shadow. */
+const KOMURASAKI_PAIR: Stroke[] = [
+  ...placed(KOMURASAKI_GETA, 'translate(54 112)'),
+  ...placed(KOMURASAKI_GETA, 'translate(106 102) rotate(8)'),
+  {
+    d: 'M41 122 l-4 6 M41 136 l-4 6 M120 114 l-4 6 M118 128 l-4 6',
+    role: 'ambient',
+  },
+  shadow(80, 166, 58),
+]
+
+/** Two of the golden hairpins she wears, laid in front of her geta. */
+const KOMURASAKI_HAIRPINS: Stroke[] = [
+  { d: 'M14 186 L86 174 M40 194 L112 186', role: 'accent' },
+  {
+    d: 'M86 174 L100 166 L104 178 Z M112 186 L126 178 L128 190 Z',
+    role: 'accent',
+  },
+  { d: 'M100 172 v10 M103 174 v9 M125 184 v8', role: 'soft' },
+]
+
+/**
+ * The oiran is Hiyori, Oden's daughter: Komurasaki's geta and hairpins set
+ * back, and the Kozuki crest standing in front of them as the one accent.
+ * She tells Zoro who she is at 935 (ch. 938 p. 12-13), and both of her
+ * records take this drawing at that pair.
+ */
+const KOMURASAKI_IS_HIYORI: Stroke[] = [
+  ...moved(KOMURASAKI_PAIR, 'translate(34 0) scale(0.8)'),
+  ...moved(softened(KOMURASAKI_HAIRPINS), 'translate(62 48) scale(0.6)'),
+  ...moved(KOZUKI_CREST_LIT, 'translate(4 0)'),
+]
+
+/** The ink pooled at the end of Kanjuro's last stroke, its dark hatched. */
+const KAZENBO_POOL: Stroke[] = [
+  {
+    d: 'M20 176 C40 162 70 168 92 160 C110 154 126 150 142 156 C124 164 108 170 90 174 C66 180 40 184 20 176 Z',
+  },
+  {
+    d: 'M40 174 l6 -6 M56 174 l6 -6 M72 172 l6 -6 M90 168 l6 -6 M108 162 l6 -6',
+    role: 'ambient',
+  },
+]
+
+/** Kanjuro's brush laid down at the end of the stroke: the handle and the inked tip. */
+const KANJURO_BRUSH: Stroke[] = [
+  { d: 'M10 112 L48 150 L54 145 L16 106 Z' },
+  { d: 'M22 118 l6 -6 M34 130 l6 -6', role: 'soft' },
+  { d: 'M48 150 L54 145 C62 150 70 160 74 172 C62 168 52 160 48 150 Z' },
+  { d: 'M56 154 l4 -3 M60 160 l5 -3', role: 'ambient' },
 ]
 
 /** The drawings of the records filed in the wano stretch of the route. */
@@ -467,17 +575,7 @@ export const wanoArt = {
   // mouth. The sword he draws on Luffy lies in front of it. He wears the
   // mask from his first scene, at Amigasa (894).
   'tenguyama-hitetsu': [
-    { d: 'M14 146 C16 120 46 104 80 104 C112 104 140 120 142 146' },
-    {
-      d: 'M14 146 Q78 158 142 146 M16 152 Q78 164 140 152 M14 146 V152 M142 146 V152',
-    },
-    { d: 'M34 130 Q58 118 76 118', role: 'soft' },
-    {
-      d: 'M66 118 C76 94 98 60 124 30 C128 26 136 28 134 36 C116 66 102 98 96 120 Q80 126 66 118 Z',
-      role: 'accent',
-    },
-    { d: 'M70 112 l9 2 M74 102 l9 2 M79 92 l8 2', role: 'ambient' },
-    { d: 'M86 116 C94 92 108 66 128 34', role: 'soft' },
+    ...HITETSU_MASK,
     { d: 'M108 112 l8 4 M118 116 l8 5 M128 122 l7 5', role: 'ambient' },
     { d: 'M44 176 L148 164 L149 171 L45 183 Z' },
     { d: ellipse(42, 179, 3, 8) },
@@ -739,21 +837,7 @@ export const wanoArt = {
   // The oiran's tall geta, a pair set down side by side, and two of the golden
   // hairpins she wears laid in front of them: she parades through the capital
   // on them at 921.
-  'komurasaki': [
-    ...placed(KOMURASAKI_GETA, 'translate(54 112)'),
-    ...placed(KOMURASAKI_GETA, 'translate(106 102) rotate(8)'),
-    {
-      d: 'M41 122 l-4 6 M41 136 l-4 6 M120 114 l-4 6 M118 128 l-4 6',
-      role: 'ambient',
-    },
-    shadow(80, 166, 58),
-    { d: 'M14 186 L86 174 M40 194 L112 186', role: 'accent' },
-    {
-      d: 'M86 174 L100 166 L104 178 Z M112 186 L126 178 L128 190 Z',
-      role: 'accent',
-    },
-    { d: 'M100 172 v10 M103 174 v9 M125 184 v8', role: 'soft' },
-  ],
+  'komurasaki': [...KOMURASAKI_PAIR, ...KOMURASAKI_HAIRPINS],
 
   // Her purple obi with its pink dots, untied and lying in a loose curve, the
   // end that turns over hatched, and the small yellow bow it is tied with in
@@ -1325,70 +1409,89 @@ export const wanoArt = {
     shadow(80, 172, 48),
   ],
 
-  // Her four swords, one for each of her four lower hands, fanned out with
-  // the guards in her colour: she has them at her side when she learns the
-  // keys are gone (930).
+  // Her four swords, one for each of her four lower hands, fanned out, each
+  // blade with its ridge and each guard with its edge; one guard is in her
+  // colour. She has them at her side when she learns the keys are gone
+  // (930, ch. 935).
   'solitaire': [
     ...placed(SOLITAIRE_SWORD, 'translate(50 178) rotate(-30)'),
     ...placed(SOLITAIRE_SWORD, 'translate(70 172) rotate(-10)'),
     ...placed(SOLITAIRE_SWORD, 'translate(90 172) rotate(10)'),
     ...placed(SOLITAIRE_SWORD, 'translate(110 178) rotate(30)'),
+    { d: SOLITAIRE_GUARD, transform: 'translate(50 178) rotate(-30)' },
+    {
+      d: SOLITAIRE_GUARD,
+      transform: 'translate(70 172) rotate(-10)',
+      role: 'accent',
+    },
+    { d: SOLITAIRE_GUARD, transform: 'translate(90 172) rotate(10)' },
+    { d: SOLITAIRE_GUARD, transform: 'translate(110 178) rotate(30)' },
     shadow(80, 188, 46),
   ],
 
-  // His open leather jacket over the yellow cape with its frill of feathers,
-  // the dark leather hatched, and the two chains across the front in his
-  // colour: what he wears when he spits on Luffy (929). His sabres come at
-  // 935, in `wanoRedrawn`.
+  // His open leather jacket over the yellow cape with its frill of
+  // feathers, turned a little so the far front shows its lining, the dark
+  // leather hatched, and the two chains across the opening in his colour:
+  // what he wears when he spits on Luffy (929, ch. 934). The sabres of one
+  // fight (ch. 939) keep the drawing.
   'alpacaman': [
     {
       d: 'M48 40 C32 62 22 120 16 168 C24 164 26 176 34 170 C40 178 46 168 52 176 C58 168 64 180 70 172 L68 60 M112 40 C128 62 138 120 144 168 C136 164 134 176 126 170 C120 178 114 168 108 176 C102 168 96 180 90 172 L92 60',
       role: 'soft',
     },
     {
-      d: 'M56 40 C48 44 40 52 38 64 L32 160 Q46 166 60 162 L70 56 M104 40 C112 44 120 52 122 64 L128 160 Q114 166 100 162 L90 56',
+      d: 'M56 40 C46 46 38 56 36 68 L30 160 Q46 168 62 164 L68 58 M104 40 C112 46 118 56 120 68 L124 158 Q112 164 100 160 L92 58',
     },
-    { d: 'M56 40 Q80 30 104 40 L96 50 Q80 44 64 50 Z' },
-    { d: 'M70 56 L62 74 L58 160 M90 56 L98 74 L102 160', role: 'soft' },
+    { d: 'M56 40 Q80 28 104 40 Q100 48 96 52 Q80 44 64 52 Q60 48 56 40 Z' },
     {
-      d: 'M62 84 C72 94 88 94 98 84 M60 100 C72 112 88 112 100 100',
-      role: 'accent',
+      d: 'M68 58 L58 78 L64 160 M92 58 L102 76 L98 158 M64 52 L58 78',
+      role: 'soft',
     },
     {
-      d: 'M120 80 l7 -4 M122 102 l7 -4 M124 126 l6 -4 M40 120 l6 -4 M38 144 l6 -4',
+      d: 'M98 92 l4 -4 M98 110 l4 -4 M98 128 l4 -4 M98 146 l4 -4 M34 98 l6 -4 M33 122 l6 -4 M32 146 l6 -4',
       role: 'ambient',
+    },
+    {
+      d: 'M61 80 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0 M67.9 85.6 a1.4 2.2 0 1 0 2.8 0 a1.4 2.2 0 1 0 -2.8 0 M71.7 88.9 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0 M78.6 90 a1.4 2.2 0 1 0 2.8 0 a1.4 2.2 0 1 0 -2.8 0 M82.3 88.9 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0 M89.3 85.6 a1.4 2.2 0 1 0 2.8 0 a1.4 2.2 0 1 0 -2.8 0 M93 80 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0 M59 98 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0 M66.6 105.8 a1.4 2.2 0 1 0 2.8 0 a1.4 2.2 0 1 0 -2.8 0 M71 110.4 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0 M78.6 112 a1.4 2.2 0 1 0 2.8 0 a1.4 2.2 0 1 0 -2.8 0 M83 110.4 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0 M90.6 105.8 a1.4 2.2 0 1 0 2.8 0 a1.4 2.2 0 1 0 -2.8 0 M95 98 a3 1.8 0 1 0 6 0 a3 1.8 0 1 0 -6 0',
+      role: 'accent',
     },
     shadow(80, 188, 60),
   ],
 
   // His great belt, still buckled, standing in a hoop as wide as he is, the
-  // inside of the far side hatched, studs along it, the round buckle in his
-  // colour off to one side with its prong, the end of the strap hanging past
-  // it (930).
+  // inside of the far side hatched, the large round buckle at the front, and
+  // the trunk of the elephant on his chest hanging down over the buckle in
+  // his colour, its wrinkles across it, with no head and no eye. Belt,
+  // buckle and elephant are his from his first scene (929, ch. 934 p. 13;
+  // his record opens later, at 930/935); how far the trunk reaches is not
+  // checked against a frame.
   'babanuki': [
-    { d: 'M18 120 C18 98 142 98 142 120', role: 'soft' },
     {
-      d: 'M34 108 l6 8 M50 105 l6 8 M102 105 l6 8 M118 108 l6 8',
+      d: 'M18 118 C18 108.7 40.4 103.3 66.2 101.9 M89.7 101.7 C117.2 102.7 142 108.2 142 118',
+      role: 'soft',
+    },
+    {
+      d: 'M32 110 l6 8 M48 106 l6 8 M104 106 l6 8 M120 110 l6 8',
       role: 'ambient',
     },
-    { d: 'M18 120 V140 C18 164 142 164 142 140 V120 C142 140 18 140 18 120 Z' },
     {
-      d: dots([
-        [28, 140],
-        [40, 146],
-        [54, 150],
-        [108, 150],
-        [122, 146],
-        [134, 140],
-      ]),
+      d: 'M142 118 C142 127.6 118.5 133 92 134.2 M68 134.2 C41.5 133 18 127.6 18 118 V138 C18 148.2 40.4 154.1 66.2 155.6 M111.2 153.8 C128.9 151.1 142 145.8 142 138 V118',
+    },
+    {
+      d: 'M22 128 C25.3 133.7 43.8 137.1 65.2 138.1 M94.8 138.1 C116.2 137.1 134.7 133.7 138 128',
       role: 'soft',
     },
     {
-      d: 'M74 142 C96 146 124 150 140 160 L136 170 C120 160 96 154 74 152',
+      d: 'M87.8 132 A16 16 0 0 1 94.5 152.8 M77.5 161.8 A16 16 0 0 1 68.9 134.5',
+    },
+    {
+      d: 'M58 10 C60 50 68 92 70 128 C71 146 74 160 84 166 C96 172 108 164 110 152 L106 150 M100 10 C96 50 88 90 86 126 C86 140 88 150 94 154 C100 158 104 156 106 150',
+      role: 'accent',
+    },
+    {
+      d: 'M60 40 Q79 45 97.5 40 M64.5 72 Q79 77 92.5 72 M68.6 104 Q78.5 108 88 104',
       role: 'soft',
     },
-    { d: circle(60, 146, 13), role: 'accent' },
-    { d: 'M47 146 H73 M60 146 L76 150', role: 'soft' },
     shadow(80, 182, 64),
   ],
   // His bull-horned headpiece in 3/4, the near horn swept forward and the
@@ -1438,57 +1541,74 @@ export const wanoArt = {
     shadow(80, 186, 54),
   ],
 
-  // Sugamichi, the giant catfish he rides on land, side on with its long
-  // whiskers and no eye, and his puffed-up cape swelling over its back like
-  // cloud. He rides it through the shogun's castle at 928.
+  // Sugamichi, the round catfish he rides on land, turned a little toward
+  // us with its long whiskers and no eye, its belly hatched where it turns
+  // under, and his puffed-up cape swelling over its back like cloud in his
+  // colour. He rides it through the shogun's castle at 928 (ch. 933).
   'fujin': [
     {
-      d: 'M14 134 C14 112 34 100 60 100 C90 100 120 108 136 120 L154 108 L150 132 L156 152 L136 142 C118 152 88 156 60 156 C34 156 14 150 14 134 Z',
+      d: 'M30 130 C30 102 58 90 88 92 C118 94 140 106 142 126 C144 148 122 162 88 162 C56 162 30 154 30 130 Z',
     },
     {
-      d: 'M20 132 C8 132 2 140 4 150 M24 138 C16 146 16 156 22 162 M22 126 C10 120 6 110 12 102',
+      d: 'M32 122 C24 114 16 106 8 104 C12 118 12 134 8 148 C16 146 24 140 32 136',
     },
     {
-      d: 'M70 156 C72 166 80 170 88 168 C86 162 84 158 84 155 M60 100 C66 92 78 90 86 102',
+      d: 'M140 130 C150 132 156 140 154 152 M137 138 C143 148 141 158 135 164 M141 120 C152 114 156 104 152 96',
+    },
+    {
+      d: 'M40 132 C70 140 110 138 138 128 M100 144 C104 154 112 158 120 156 C116 150 112 146 110 142',
       role: 'soft',
     },
-    { d: 'M110 150 l6 -6 M120 146 l6 -6 M100 152 l6 -6', role: 'ambient' },
     {
-      d: 'M52 104 C46 92 56 80 68 86 C72 72 90 70 96 82 C106 74 122 82 118 96 C128 98 132 110 124 116 C108 108 74 102 52 104 Z',
+      d: 'M58 158 l6 -6 M74 160 l6 -6 M90 160 l6 -6 M106 158 l6 -6 M120 154 l5 -5',
+      role: 'ambient',
+    },
+    {
+      d: 'M48 100 C40 86 52 72 66 78 C70 62 92 60 98 74 C108 64 128 72 124 88 C134 92 136 104 128 110 C110 100 70 96 48 100 Z',
       role: 'accent',
     },
-    {
-      d: 'M64 96 C70 90 78 90 82 94 M98 92 C104 88 110 90 112 96',
-      role: 'soft',
-    },
-    shadow(84, 176, 70),
+    { d: 'M56 98 C70 92 104 92 122 104', role: 'soft' },
+    shadow(84, 178, 70),
   ],
 
-  // His two swords: one still whole in its dark scabbard, the other snapped
-  // in two, the grip with a stub of blade and the rest of it lying apart.
-  // Hyogoro breaks it with a single stroke at 1022.
+  // His two swords: one still whole in its scabbard, the scabbard's
+  // underside turning away and hatched, the other snapped in two, the grip
+  // with a stub of blade and the rest of the blade, its ridge along it,
+  // lying apart in his colour. Hyogoro breaks it with a single stroke at
+  // 1022 (ch. 1006 p. 12), one episode before his record opens.
   'hotei': [
     { d: 'M14 86 L44 76 L46 82 L16 92 Z', transform: HOTEI_WHOLE },
     {
-      d: 'M20 84 l4 6 M28 81 l4 6 M36 79 l4 6',
+      d: 'M18 86 L24 80 L30 86 L36 78 L42 84',
       role: 'soft',
       transform: HOTEI_WHOLE,
     },
     { d: ellipse(49, 78, 3, 8), transform: `${HOTEI_WHOLE} rotate(-18 49 78)` },
+    {
+      d: 'M49 70 C52 70 53.5 74 53 79 C52.5 84 50.5 87 48 86',
+      role: 'soft',
+      transform: `${HOTEI_WHOLE} rotate(-18 49 78)`,
+    },
     { d: 'M53 74 L146 44 Q152 46 148 52 L55 82 Z', transform: HOTEI_WHOLE },
     {
-      d: 'M70 76 l4 -6 M90 70 l4 -6 M110 63 l4 -6 M130 57 l4 -6',
+      d: 'M55 82 L57 87 L149 57 Q153 55 148 52',
+      role: 'soft',
+      transform: HOTEI_WHOLE,
+    },
+    {
+      d: 'M72 82 l2 -4 M92 76 l2 -4 M112 69 l2 -4 M132 63 l2 -4',
       role: 'ambient',
       transform: HOTEI_WHOLE,
     },
     { d: 'M14 160 L44 154 L45 160 L15 166 Z' },
-    { d: 'M20 158 l3 6 M28 156 l3 6 M36 155 l3 6', role: 'soft' },
+    { d: 'M18 162 L24 156 L30 161 L36 154 L42 159', role: 'soft' },
     { d: ellipse(48, 156, 3, 8), transform: 'rotate(-10 48 156)' },
     { d: 'M52 153 L76 149 L79 152 L76 154 L78 157 L53 159 Z', role: 'accent' },
     {
       d: 'M92 166 L95 162 L93 160 L96 157 L140 150 L152 151 L142 156 L94 169 Z',
       role: 'accent',
     },
+    { d: 'M98 163 L142 153.5', role: 'soft' },
     shadow(82, 184, 70),
   ],
 
@@ -1515,20 +1635,24 @@ export const wanoArt = {
     { d: 'M8 168 l4 9 M146 150 l4 9', role: 'soft' },
     shadow(80, 186, 66),
   ],
-  // His white bowler set down beside the dark scarf he wears, folded, its
-  // dots in his colour: hat and scarf side by side, not one on the other.
-  // He wears both from his first scene, at Dressrosa (635).
+  // His white bowler in 3/4, the round crown with its far side hatched and
+  // the brim curling up at either side, set down beside the dark scarf he
+  // wears, folded over on itself, the fold hatched, its dots in his colour:
+  // hat and scarf side by side, not one on the other. He wears both from
+  // his first scene, at Dressrosa (635); dead before his record opens, he
+  // is drawn by what he wore.
   'guernica': [
-    { d: 'M18 132 C18 96 82 96 82 132' },
-    { d: 'M8 134 C8 124 92 124 92 134 C92 146 8 146 8 134 Z' },
+    { d: 'M20 126 C18 94 36 82 52 82 C70 82 86 96 82 126' },
+    { d: 'M74 96 l6 -3 M78 106 l6 -3 M80 116 l5 -3', role: 'ambient' },
     {
-      d: 'M18 124 C30 130 70 130 82 124 V130 C70 136 30 136 18 130 Z',
-      role: 'soft',
+      d: 'M6 128 C4 118 12 116 20 122 C34 132 70 132 82 122 C90 116 98 118 96 128 C94 142 72 148 50 148 C28 148 8 142 6 128 Z',
     },
-    { d: 'M68 108 l6 -4 M74 118 l6 -4', role: 'ambient' },
+    { d: 'M20 122 C32 138 70 138 82 122', role: 'soft' },
     {
       d: 'M86 168 C80 150 98 140 112 146 C126 152 150 148 152 160 C154 172 138 180 120 176 C104 172 92 182 86 168 Z',
     },
+    { d: 'M100 146 C96 138 104 132 114 136 C126 140 140 138 146 150' },
+    { d: 'M104 140 l4 -4 M118 141 l4 -4 M132 142 l4 -4', role: 'ambient' },
     {
       d: 'M96 160 C108 152 124 160 140 154 M98 170 C112 164 126 172 144 166',
       role: 'soft',
@@ -1616,24 +1740,35 @@ export const wanoArt = {
     ...SEA,
   ],
 
-  // Two clay pots, one big and one small, and two holed coins above them.
-  'denjiro': [...DENJIRO_POTS, shadow(90, 182, 62)],
+  // The large clay pot he swaps a small one for at no extra cost, and the
+  // small one beside it, with his sunglasses folded in front of them in his
+  // colour: Oden's flashback shows him first at that shop (960, ch. 960
+  // p. 11). That he is Kyoshiro waits for 976, in `wanoRedrawn`.
+  'denjiro': [...DENJIRO_POTS, shadow(84, 175, 66), DENJIRO_GLASSES],
 
-  // An open scroll of disavowal between its two rollers, a red seal at its
-  // foot, and the brush laid across it.
+  // The note that disowns his son, an open scroll seen a little from the
+  // side: the rolled end standing as a roll with its far side hatched, the
+  // sheet curving away, columns of writing too faint to read, and the
+  // sheet's leading edge curling back on itself in his colour. He sends it
+  // at 960 (ch. 960); the wiki gives the note no seal, brush or cord.
   'kozuki-sukiyaki': [
-    { d: 'M34 50 H126 V146 H34 Z' },
-    { d: 'M28 44 V152 M34 44 V152 M126 44 V152 M132 44 V152' },
-    { d: 'M26 44 H36 M26 152 H36 M124 44 H134 M124 152 H134' },
+    { d: `${ellipse(32, 50, 8, 3)} M24 50 V148 A8 3 0 0 0 40 148 V50` },
+    { d: 'M32 47 V40 M32 151 V158', role: 'soft' },
     {
-      d: 'M112 64 V128 M98 64 V134 M84 64 V118 M70 64 V126',
+      d: 'M36 58 l3 -3 M36 76 l3 -3 M36 116 l3 -3 M36 134 l3 -3',
+      role: 'ambient',
+    },
+    { d: 'M40 52 C70 46 100 50 128 46 V144 C100 148 70 144 40 150' },
+    {
+      d: 'M128 46 C136 44 140 50 136 56 C133 60 128 58 129 54 M128 144 C136 142 140 148 136 154 C133 158 128 156 129 152 M138 52 V150',
+      role: 'accent',
+    },
+    {
+      d: 'M114 60 V128 M100 62 V134 M86 62 V118 M72 64 V126 M58 66 V110',
       role: 'soft',
       dashed: true,
     },
-    { d: 'M46 118 h16 v16 h-16 Z M50 122 h8 v8 h-8 Z', role: 'accent' },
-    { d: 'M72 184 L136 150' },
-    { d: 'M136 150 L146 142 L150 148 L140 154 Z', role: 'accent' },
-    shadow(80, 188, 54),
+    shadow(80, 176, 60),
   ],
   // Ringo's graves in the snow, each marked by the sword of the one buried
   // there, the shaded side of the mound hatched; his fox lies curled at
@@ -1677,24 +1812,45 @@ export const wanoArt = {
     { d: 'M0 176 H160', role: 'ambient' },
   ],
 
-  // A fishing rod bent out over the sea from a shore rock, and a long
-  // kiseru pipe set down on the stone.
+  // Wado Ichimonji, the sword he made, laid on a shore rock by the sea he
+  // fished beside: the white sheath with its underside and its end cap, the
+  // round guard in his colour, the white hilt with its diamond wrap; his
+  // kiseru set down in front of it, the rock's face hatched. The sword is
+  // what he left: he is dead when his record opens, and Zoro works out at
+  // 1060 (ch. 1033 p. 11-15) that the old man made Wado and Enma.
   'shimotsuki-kozaburo': [
-    { d: 'M14 152 C18 132 46 122 70 128 C86 132 96 144 98 152 Z' },
-    { d: 'M44 130 Q98 72 144 40' },
-    { d: 'M144 40 V146', role: 'soft' },
-    { d: circle(144, 150, 3.5), role: 'accent' },
-    { d: 'M32 141 L90 135', role: 'accent' },
-    { d: 'M23 135 h9 v6 q-4.5 4 -9 0 z', role: 'accent' },
-    { d: 'M90 133.5 v3', role: 'accent' },
-    { d: 'M27 128 q-6 -8 0 -14 q6 -6 0 -14', role: 'soft' },
-    ...SEA,
+    {
+      d: 'M12 120 L28 104 L62 98 L104 97 L134 103 L150 116 L134 125 L92 129 L46 127 Z',
+    },
+    { d: 'M12 120 L6 138 L12 150 L4 166 M150 116 L156 134 L148 148 L156 166' },
+    { d: 'M46 127 L40 146 L48 166 M92 129 L98 148 L90 166', role: 'soft' },
+    {
+      d: 'M16 150 l6 -6 M24 162 l6 -6 M60 146 l6 -6 M66 160 l6 -6 M108 146 l6 -6 M114 160 l6 -6 M134 140 l6 -6 M136 156 l6 -6',
+      role: 'ambient',
+    },
+    {
+      d: 'M22 116 H46 V124 H22 Q17 120 22 116 Z M53 116.5 H142 Q148 120 142 123.5 H53 Z',
+      transform: KOZABURO_WADO,
+    },
+    {
+      d: 'M25 116 L29 124 L33 116 L37 124 L41 116 L45 124 M53 123.5 L55 126 H143 Q147 125 146 121.5 M136 116.5 V123.5',
+      role: 'soft',
+      transform: KOZABURO_WADO,
+    },
+    { d: ellipse(49, 120, 3.5, 9), role: 'accent', transform: KOZABURO_WADO },
+    { d: 'M34 121 L104 117.5 M26 115.5 h8 v6 q-4 4 -8 0 z M104 115.8 v3.4' },
+    ...SEA.slice(1),
   ],
 
-  // A morning star on a short haft, spikes all round its head, and a pair of
-  // oval sunglasses left at its foot.
+  // His spiked club, a morning star on a short haft: the round head in his
+  // colour with spikes all round its edge, the side turning away hatched and
+  // the light along its near shoulder, the haft with its bands; and his
+  // oval sunglasses left at its foot. He swings it at the intruders in his
+  // first scene (987, ch. 981).
   'hatcha': [
     { d: circle(96, 70, 24), role: 'accent' },
+    { d: 'M110 84 l5 -5 M102 90 l5 -5 M114 75 l4 -4', role: 'ambient' },
+    { d: 'M78 54 Q86 48 96 47', role: 'soft' },
     {
       d: 'M100.4 46.4 L109.8 36.7 L109.6 50.2 M115.8 56.4 L129.3 56.2 L119.6 65.6 M119.6 74.4 L129.3 83.8 L115.8 83.6 M109.6 89.8 L109.8 103.3 L100.4 93.6 M91.6 93.6 L82.2 103.3 L82.4 89.8 M76.2 83.6 L62.7 83.8 L72.4 74.4 M72.4 65.6 L62.7 56.2 L76.2 56.4 M82.4 50.2 L82.2 36.7 L91.6 46.4',
       role: 'accent',
@@ -1754,22 +1910,13 @@ export const wanoArt = {
   // and hatched, and the flame rising out of the stroke in the record's
   // colour: he draws the clan's grudge as he dies (1055).
   'kazenbo': [
-    {
-      d: 'M20 176 C40 162 70 168 92 160 C110 154 126 150 142 156 C124 164 108 170 90 174 C66 180 40 184 20 176 Z',
-    },
-    {
-      d: 'M40 174 l6 -6 M56 174 l6 -6 M72 172 l6 -6 M90 168 l6 -6 M108 162 l6 -6',
-      role: 'ambient',
-    },
+    ...KAZENBO_POOL,
     {
       d: 'M86 164 C70 140 74 116 84 98 C80 82 84 62 96 44 C98 60 106 66 110 56 C118 74 122 92 112 110 C124 104 128 92 126 82 C138 104 134 134 116 158',
       role: 'accent',
     },
     { d: 'M98 156 C92 140 96 126 102 116', role: 'accent' },
-    { d: 'M10 112 L48 150 L54 145 L16 106 Z' },
-    { d: 'M22 118 l6 -6 M34 130 l6 -6', role: 'soft' },
-    { d: 'M48 150 L54 145 C62 150 70 160 74 172 C62 168 52 160 48 150 Z' },
-    { d: 'M56 154 l4 -3 M60 160 l5 -3', role: 'ambient' },
+    ...KANJURO_BRUSH,
     shadow(80, 188, 64),
   ],
 } satisfies Drawings
@@ -1883,18 +2030,6 @@ const ONIMARU: Stroke[] = [
     role: 'accent',
   },
   { d: 'M136 86 C144 76 144 64 138 52', role: 'accent' },
-]
-
-/**
- * One of Alpacaman's cavalry sabres, level, edge down, the cross-guard at
- * (0, 0): the slender blade curving up to its tip, the guard's lip and its
- * knuckle-bow, the ribbed grip.
- */
-const ALPACAMAN_SABRE: Stroke[] = [
-  { d: 'M0 -3 C40 -3 80 -6 112 -16 C84 -1 42 3 0 3' },
-  { d: 'M0 -7 V7 M2 6 C-2 18 -26 18 -32 4' },
-  { d: 'M0 -3 H-28 Q-34 0 -30 4 H0' },
-  { d: 'M-7 -3 v7 M-14 -3 v7 M-21 -3 v7', role: 'soft' },
 ]
 
 /**
@@ -2355,27 +2490,6 @@ export const wanoRedrawn: Redrawings = {
       ],
     },
   ],
-  // The same jacket and cape, set back, and his two cavalry sabres crossed
-  // beneath them, knuckle-bows and all: he fights Hyogoro and Luffy with
-  // them at 935 (ch. 939).
-  'alpacaman': [
-    {
-      episode: 935,
-      chapter: 939,
-      value: [
-        ...moved(
-          wanoArt.alpacaman.slice(0, -1),
-          'translate(18 -10) scale(0.78)',
-        ),
-        ...moved(ALPACAMAN_SABRE, 'translate(38 178) rotate(-12) scale(0.82)'),
-        ...moved(
-          ALPACAMAN_SABRE,
-          'translate(126 172) scale(-1 1) rotate(-22) scale(0.82)',
-        ),
-        shadow(80, 190, 62),
-      ],
-    },
-  ],
   // Out of the cell, with his sword back: Soto Muso laid in front in its
   // scabbard, with no guard, and behind it the straw kasa he wears, the wide
   // cone, its far side hatched and the frayed rim in his colour. Raizo throws
@@ -2523,33 +2637,33 @@ export const wanoRedrawn: Redrawings = {
         ...placed(KOMURASAKI_GETA, 'translate(108 132) rotate(-80)'),
         { d: 'M33 122 l-4 6 M33 136 l-4 6', role: 'ambient' },
         shadow(84, 166, 64),
-        ...moved(
-          wanoArt.komurasaki.slice(10, 13),
-          'translate(0 -6) rotate(6 70 184)',
-        ),
+        ...moved(KOMURASAKI_HAIRPINS, 'translate(0 -6) rotate(6 70 184)'),
       ],
     },
-    // A mortar with its pestle, the grooves inside the bowl, and one of her
-    // hairpins laid in front: alive, out of the oiran's dress, she grinds
-    // medicine in a hut by the graveyard at Ringo at 935 (ch. 938).
+    // Her geta and hairpins set back behind the Kozuki crest: alive, she
+    // tells Zoro she is Kozuki Hiyori at 935 (ch. 938 p. 12-13).
+    { episode: 935, chapter: 938, value: KOMURASAKI_IS_HIYORI },
+  ],
+  // She is the oiran Komurasaki: the geta and hairpins of the oiran set back
+  // behind the Kozuki crest, told at 935 (ch. 938 p. 12-13).
+  'kozuki-hiyori': [
+    { episode: 935, chapter: 938, value: KOMURASAKI_IS_HIYORI },
+  ],
+  // The same brush and pool, the flame torn down to one small wisp in the
+  // record's colour: the bomb Big Mom sets off in the Armory blows most of
+  // Kazenbo away at 1067 (ch. 1040 p. 9).
+  'kazenbo': [
     {
-      episode: 935,
-      chapter: 938,
+      episode: 1067,
+      chapter: 1040,
       value: [
-        { d: ellipse(70, 112, 48, 13) },
-        { d: 'M22 112 C24 146 46 164 70 164 C94 164 116 146 118 112' },
-        { d: 'M56 164 L58 172 H82 L84 164' },
+        ...KAZENBO_POOL,
         {
-          d: 'M36 114 l6 7 M52 118 l4 7 M70 119 v7 M88 118 l-4 7 M104 114 l-6 7',
-          role: 'soft',
+          d: 'M96 160 C88 150 92 140 98 132 C98 140 104 142 106 136 C112 144 110 154 104 160',
+          role: 'accent',
         },
-        { d: 'M104 140 l6 -6 M96 152 l6 -6 M110 128 l5 -5', role: 'ambient' },
-        { d: 'M78 118 L124 46 Q130 40 135 45 Q138 50 134 56 L88 124' },
-        { d: 'M118 58 L128 64', role: 'soft' },
-        shadow(70, 180, 50),
-        { d: 'M74 190 L140 176', role: 'accent' },
-        { d: 'M140 176 L154 168 L156 180 Z', role: 'accent' },
-        { d: 'M153 172 v9', role: 'soft' },
+        ...KANJURO_BRUSH,
+        shadow(80, 188, 64),
       ],
     },
   ],
@@ -2655,16 +2769,12 @@ export const wanoRedrawn: Redrawings = {
     },
   ],
   'kozuki-sukiyaki': [
-    // The scroll rolled shut and tied with its cord, and the brush laid
-    // across it: Orochi tells Wano that the shogun has died at 965 (ch. 965).
+    // The scroll rolled shut and tied with its cord: Orochi tells Wano that
+    // the shogun has died at 965 (ch. 965).
     {
       episode: 965,
       chapter: 965,
-      value: [
-        ...SUKIYAKI_SCROLL_SHUT,
-        ...moved(wanoArt['kozuki-sukiyaki'].slice(5, 7), 'translate(-4 -6)'),
-        shadow(80, 188, 58),
-      ],
+      value: [...SUKIYAKI_SCROLL_SHUT, shadow(80, 188, 58)],
     },
     // The same shut scroll, lower, and the red tengu mask of the swordsmith
     // Hitetsu laid behind it: Hitetsu says he is Kozuki Sukiyaki at 1080
@@ -2677,10 +2787,7 @@ export const wanoRedrawn: Redrawings = {
           SUKIYAKI_SCROLL_SHUT,
           'translate(0 36) scale(0.9) translate(8 0)',
         ),
-        ...moved(
-          wanoArt['tenguyama-hitetsu'].slice(0, 6),
-          'translate(12 -8) scale(0.84)',
-        ),
+        ...moved(HITETSU_MASK, 'translate(12 -8) scale(0.84)'),
         shadow(80, 192, 62),
       ],
     },
@@ -2856,20 +2963,12 @@ export const wanoRedrawn: Redrawings = {
       ],
     },
   ],
-  // The same sword, laid in front of Denjiro's pots and coins, the coins
-  // plain and the sheath keeping the accent: Kyoshiro is Denjiro, told at
-  // 976 (ch. 973 p. 12-17).
-  'kyoshiro': [
-    {
-      episode: 976,
-      chapter: 973,
-      value: [
-        ...softened(DENJIRO_POTS),
-        ...placed(KYOSHIRO_SWORD, 'translate(44 190) rotate(-3) scale(0.86)'),
-        shadow(86, 197, 66),
-      ],
-    },
-  ],
+  // The same sword, laid in front of Denjiro's pots: Kyoshiro is Denjiro,
+  // told at 976 (ch. 973 p. 12-17).
+  'kyoshiro': [{ episode: 976, chapter: 973, value: KYOSHIRO_IS_DENJIRO }],
+  // Kyoshiro's sword laid in front of his pots, the sunglasses gone: Denjiro
+  // is Kyoshiro, told at 976 (ch. 973 p. 12-17).
+  'denjiro': [{ episode: 976, chapter: 973, value: KYOSHIRO_IS_DENJIRO }],
   // The giant Straw Hat Jolly Roger banner hung under the castle once
   // Momonosuke rules, the Jolly Roger now the accent and the eaves plain;
   // the banner hides the top of the stem. Shown at 1148 (ch. 1115 p. 2).

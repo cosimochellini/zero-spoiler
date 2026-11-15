@@ -2309,7 +2309,7 @@ const PEDRO_FEDORA: Stroke[] = [
  * The Kozuki crest standing as a medallion, its ring the accent: Inuarashi
  * and Nekomamushi bear it on their bodies as the family's retainers.
  */
-const KOZUKI_CREST_LIT: Stroke[] = KOZUKI_CREST.map((stroke) => {
+export const KOZUKI_CREST_LIT: Stroke[] = KOZUKI_CREST.map((stroke) => {
   return stroke.role === undefined ? { ...stroke, role: 'accent' } : stroke
 })
 
