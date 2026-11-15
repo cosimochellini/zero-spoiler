@@ -57,7 +57,14 @@ function isADrawing(id: string, strokes: Stroke[]): void {
   // One accent, on the one mark that identifies the record (#1300).
   const accents = strokes.filter((stroke) => stroke.role === 'accent')
 
-  expect(accents, id).toHaveLength(ACCENT_EXCEPTIONS[id]?.[0] ?? 1)
+  const listed = ACCENT_EXCEPTIONS[id]?.[0]
+
+  // An entry lists a drawing with more than one accent; at one, delete it.
+  if (listed !== undefined) {
+    expect(listed, id).toBeGreaterThan(1)
+  }
+
+  expect(accents, id).toHaveLength(listed ?? 1)
 
   for (const stroke of strokes) {
     expect(stroke.d.length, id).toBeGreaterThan(0)

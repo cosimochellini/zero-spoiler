@@ -3,9 +3,10 @@
  *
  * The line-drawings rule is one accent per drawing, on the one mark that
  * identifies the record (#1300). A drawing is keyed `series/id@stage`, the
- * stage being `first` or the episode of the redrawing. The count is exact: a
- * drawing fixed down to one accent, or grown to more, fails until its entry
- * is changed, so the list can only shrink.
+ * stage being `first`, the episode of the redrawing, or `c<chapter>` for a
+ * stage only the manga tells. The count is exact, and above one: a drawing
+ * fixed down to one accent, or grown to more, fails until its entry is
+ * changed. New drawings are not added here.
  */
 
 /** Several strokes make up one mark, and the mark is one thing. */
