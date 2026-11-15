@@ -356,7 +356,7 @@ const ARTIFICIAL_APPLE: Body = { family: 'round', cy: 118 }
 
 /** Unequal ring pairs scattered over the apple, as seen in the flashback. */
 const APPLE_RINGS: [number, number, number][] = [
-  [61, 101, 10],
+  [57, 124, 9],
   [95, 119, 12],
   [65, 145, 8],
   [99, 88, 6],
@@ -4235,8 +4235,10 @@ export const fruitArt = {
   ],
 
   /**
-   * The real fruit, seen in Teach's hand in episode 325: a round bunch of
-   * teardrop lobes, a curl on each, and a tuft of long leaves on top.
+   * The real fruit, in Teach's hand in episode 325 (chapter 440 p.17): a
+   * round bunch of teardrop lobes, a curl on each, and a tuft of long leaves
+   * on top. The light sits on the near shoulder and the far side is hatched.
+   * Its page opens a chapter later, at 441, with Teach's fruit entry.
    */
   'dark-dark-fruit': [
     {
@@ -4268,6 +4270,12 @@ export const fruitArt = {
         'M80 72 C74 60 66 50 56 44 C64 56 72 64 80 72 Z',
         'M80 72 C86 58 94 50 104 44 C96 56 88 64 80 72 Z',
       ].join(' '),
+    },
+    // The light on the near shoulder, and the far side turning away.
+    { d: 'M41 106 C42 99 44 93 48 88', role: 'soft' },
+    {
+      d: 'M123 104 L118 99 M123 121 L118 116 M117 138 L112 133',
+      role: 'ambient',
     },
     shadowUnder(1),
   ],
@@ -4584,7 +4592,11 @@ export const fruitArt = {
     { d: 'M14 186 C40 189 120 189 146 186', role: 'ambient', dashed: true },
   ],
 
-  /** The pure apple, with double rings staggered across its skin. No horns. */
+  /**
+   * The real fruit Momonosuke eats in his flashback, in episode 611 (chapter
+   * 685 p.8-11): an apple with double rings staggered across its skin, the
+   * light on the near shoulder and the far side hatched. No horns.
+   */
   'artificial-dragon-dragon-fruit': [
     {
       d: 'M80 77 C64 61 43 73 38 95 C27 124 42 157 65 163 C72 166 77 160 80 160 C85 160 89 166 97 163 C122 155 133 121 122 95 C116 72 96 62 80 77 Z',
@@ -6703,6 +6715,12 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
             'M64 54 C60 50 54 54 56 59 C58 63 68 63 80 62',
             'C92 63 102 63 104 59 C106 54 100 50 96 54',
           ].join(' '),
+        },
+        // The light on the near lobe, and the far side turning away.
+        { d: 'M33 84 C31 92 32 100 35 106', role: 'soft' },
+        {
+          d: 'M127 101 L121 95 M119 128 L113 122 M104 150 L99 145',
+          role: 'ambient',
         },
         shadowUnder(1),
       ],
