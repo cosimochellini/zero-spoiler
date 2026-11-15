@@ -1557,10 +1557,12 @@
       "https://gameofthrones.fandom.com/wiki/Jeyne_Poole",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://it.wikipedia.org/wiki/Casa_Stark",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://awoiaf.westeros.org/index.php/Jeyne_Poole"
     ],
     "unverified": [
-      "The show never names her on screen (identified only in the DVD commentary). Filed book-only (source \"chapter\"), as the owner decided."
+      "The show never names her on screen (identified only in the DVD commentary). Filed book-only (source \"chapter\"), as the owner decided.",
+      "False identity (#1288): passed off as Arya Stark to wed Ramsay Bolton, a books-only stage at site chapter 243 (A Feast for Crows 17, where Cersei tells the council the bride is a \"steward's whelp\" dressed up by Petyr Baelish; A Wiki of Ice and Fire, Jeyne Poole). A Storm of Swords 37 and 72 only say the girl is a fraud, without naming her, so they draw no stage; Jeyne is named in A Dance with Dragons 20. Episode 29 orders it. The cloak's look is not checked against the text."
     ]
   },
   "mikken": {
@@ -1572,10 +1574,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
       "https://gameofthrones.fandom.com/wiki/Mikken",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://it.wikipedia.org/wiki/Casa_Stark"
+      "https://it.wikipedia.org/wiki/Casa_Stark",
+      "https://awoiaf.westeros.org/index.php/Mikken"
     ],
     "unverified": [
-      "Show: seen unnamed in the background of ep 1 (Fandom); took the later ep 2, the first where he is named. Owner may lower to 1."
+      "Show: seen unnamed in the background of ep 1 (Fandom); took the later ep 2, the first where he is named. Owner may lower to 1.",
+      "Death (#1288): killed by an ironborn (Stygg) when Theon takes Winterfell, books only (Game of Thrones Wiki, In the books). Site chapter 120 (A Clash of Kings 46, Bran VI; A Wiki of Ice and Fire, Mikken); episode 16 (S2E6) orders it."
     ]
   },
   "hallis-mollen": {
@@ -1631,10 +1635,12 @@
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://gameofthrones.fandom.com/it/wiki/Greatjon_Umber"
+      "https://gameofthrones.fandom.com/it/wiki/Greatjon_Umber",
+      "https://gameofthrones.fandom.com/wiki/Oathbreaker"
     ],
     "unverified": [
-      "Italian: it.wikipedia's TV cast list says \"Greatjon Umber\"; the Italian Fandom wiki calls him \"Grande Jon\". Kept the it.wikipedia form per the rule."
+      "Italian: it.wikipedia's TV cast list says \"Greatjon Umber\"; the Italian Fandom wiki calls him \"Grande Jon\". Kept the it.wikipedia form per the rule.",
+      "Death (#1288): Smalljon says he is dead in Oathbreaker (episode 53, Fandom ref GOT603), show only; the books leave him a prisoner of the Freys, so chapter 344 orders it. Episode not viewed."
     ]
   },
   "smalljon-umber": {
@@ -1643,11 +1649,14 @@
       "https://awoiaf.westeros.org/index.php/Jon_Umber_(son_of_Jon)",
       "https://gameofthrones.fandom.com/wiki/Smalljon_Umber",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://gameofthrones.fandom.com/it/wiki/Jon_Umber_(il_Piccolo)"
+      "https://gameofthrones.fandom.com/it/wiki/Jon_Umber_(il_Piccolo)",
+      "https://gameofthrones.fandom.com/wiki/Battle_of_the_Bastards",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
     ],
     "unverified": [
       "factsAtGate: the two media share almost nothing at the gate (book: Robb's guard in 298 AC; show: lord of Last Hearth in S6). Keep facts minimal.",
-      "Italian Fandom calls him \"Jon Umber il Piccolo\"; it.wikipedia's cast list \"Smalljon Umber\"."
+      "Italian Fandom calls him \"Jon Umber il Piccolo\"; it.wikipedia's cast list \"Smalljon Umber\".",
+      "Death (#1288): Tormund kills him in Battle of the Bastards (episode 59, Fandom DeathEp), and the Boltons' men at the Red Wedding in Catelyn VII, A Storm of Swords 51 (site 195, Bookref on the Game of Thrones Wiki's Red Wedding page). Chapter not read on A Wiki of Ice and Fire; episode not viewed."
     ]
   },
   "rickard-karstark": {
@@ -1659,10 +1668,13 @@
       "https://gameofthrones.fandom.com/wiki/Rickard_Karstark",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://gameofthrones.fandom.com/it/wiki/Rickard_Karstark"
+      "https://gameofthrones.fandom.com/it/wiki/Rickard_Karstark",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20"
     ],
     "unverified": [
-      "Show: his S1 figure (Steven Blount, Fire and Blood) is identified only through the actor's CV; Fandom says he is first named on screen in A Man Without Honor."
+      "Show: his S1 figure (Steven Blount, Fire and Blood) is identified only through the actor's CV; Fandom says he is first named on screen in A Man Without Honor.",
+      "Death (#1288): beheaded by Robb in Kissed by Fire (episode 25, Fandom DeathEp) and in A Storm of Swords 20 (site 164, the verifier's pin; the audit's 186 was wrong). Chapter not checked on A Wiki of Ice and Fire; episode not viewed."
     ]
   },
   "roose-bolton": {
@@ -1672,7 +1684,14 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_59",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62",
       "https://gameofthrones.fandom.com/wiki/Roose_Bolton",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://gameofthrones.fandom.com/wiki/House_Bolton",
+      "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51",
+      "https://gameofthrones.fandom.com/wiki/Home"
+    ],
+    "unverified": [
+      "Drawing (#1288): the flayed man upside down on the X-cross, as the show's banner has him (Game of Thrones Wiki, House Bolton). Red Wedding stage: the mail under his sleeve and Robb's stabbing in The Rains of Castamere (episode 29) and Catelyn VII, A Storm of Swords 51 (site 195, not read on A Wiki of Ice and Fire). Death: Ramsay kills him in Home (episode 52, Fandom DeathEp), show only. Episodes not viewed."
     ]
   },
   "galbart-glover": {
@@ -1685,10 +1704,12 @@
       "https://gameofthrones.fandom.com/wiki/Galbart_Glover",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://gameofthrones.fandom.com/it/wiki/Galbart_Glover"
+      "https://gameofthrones.fandom.com/it/wiki/Galbart_Glover",
+      "https://gameofthrones.fandom.com/wiki/The_Broken_Man"
     ],
     "unverified": [
-      "Show: uncredited-style bit part; whether his name is said on screen in ep 8 is not confirmed (no later S1 number is better documented)."
+      "Show: uncredited-style bit part; whether his name is said on screen in ep 8 is not confirmed (no later S1 number is better documented).",
+      "Presumed dead (#1288, owner): Robett speaks of him in the past tense in The Broken Man (episode 57), never saying he is dead; show only, chapter 344 orders it. Episode not viewed."
     ]
   },
   "robett-glover": {
@@ -1711,10 +1732,12 @@
       "https://awoiaf.westeros.org/index.php/Maege_Mormont",
       "https://gameofthrones.fandom.com/wiki/Maege_Mormont",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://gameofthrones.fandom.com/it/wiki/Maege_Mormont"
+      "https://gameofthrones.fandom.com/it/wiki/Maege_Mormont",
+      "https://gameofthrones.fandom.com/wiki/The_Broken_Man"
     ],
     "unverified": [
-      "Show: no episode synopsis names her; whether her name is spoken on screen in ep 8 is not confirmed."
+      "Show: no episode synopsis names her; whether her name is spoken on screen in ep 8 is not confirmed.",
+      "Death (#1288): Lyanna says she died fighting for Robb in The Broken Man (episode 57, Fandom ref GOT607); show only, the books never tell it, so chapter 344 orders it. Episode not viewed."
     ]
   },
   "dacey-mormont": {
@@ -1722,7 +1745,11 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
       "https://awoiaf.westeros.org/index.php/Dacey_Mormont",
       "https://gameofthrones.fandom.com/wiki/Dacey_Mormont",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+    ],
+    "unverified": [
+      "Death (#1288): Ryman Frey kills her at the Red Wedding in Catelyn VII, A Storm of Swords 51 (site 195, per the verifier's reading of the Game of Thrones Wiki's Bookref). Chapter not read on A Wiki of Ice and Fire."
     ]
   },
   "wendel-manderly": {
@@ -1732,10 +1759,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
       "https://gameofthrones.fandom.com/wiki/Wendel_Manderly",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://gameofthrones.fandom.com/it/wiki/Wendel_Manderly"
+      "https://gameofthrones.fandom.com/it/wiki/Wendel_Manderly",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
     ],
     "unverified": [
-      "Show: whether he is named on screen in S3E9 is not confirmed (his only episode). it.wikipedia mentions him only inside the Wyman Manderly section."
+      "Show: whether he is named on screen in S3E9 is not confirmed (his only episode). it.wikipedia mentions him only inside the Wyman Manderly section.",
+      "Death (#1288): killed at the Red Wedding, on screen in The Rains of Castamere (episode 29, his threshold, Fandom DeathEp) and told in Catelyn VII, A Storm of Swords 51 (site 195); one deceased entry for both media and a books-only stage, as Vayon Poole's (owner). Chapter not read on A Wiki of Ice and Fire."
     ]
   },
   "marillion": {
@@ -2034,10 +2063,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_12",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_43",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45",
-      "https://gameofthrones.fandom.com/wiki/Alyn"
+      "https://gameofthrones.fandom.com/wiki/Alyn",
+      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17"
     ],
     "unverified": [
-      "Step order: the affiliation step (ch 44) comes before the role step (ch 46) in the book; both share ordering episode 6."
+      "Step order: the affiliation step (ch 44) comes before the role step (ch 46) in the book; both share ordering episode 6.",
+      "Death (#1288): dead after the Mummer's Ford, books only. Site chapter 161 (A Storm of Swords 17) is the verifier's pin, not checked on A Wiki of Ice and Fire (34, site 178, is the other candidate); episode 21 orders it."
     ]
   },
   "beric-dondarrion": {
