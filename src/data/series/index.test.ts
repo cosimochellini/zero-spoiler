@@ -9,6 +9,7 @@ import { LOCALES } from '~/i18n/locales'
 import { FIRST_CHAPTER, FIRST_EPISODE } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
 import type { Stroke } from '~/lib/view/records'
+import { ACCENT_EXCEPTIONS } from '~/test/accents'
 import { LOADED_SERIES } from '~/test/series'
 
 import { SERIES } from '.'
@@ -44,14 +45,19 @@ describe('the series list', () => {
   })
 })
 
-/** The rules every drawing on the site obeys, in every series, first or redrawn. */
+/**
+ * The rules every drawing on the site obeys, in every series, first or redrawn.
+ * `id` is `series/record@stage`, which is also how an exception to the one
+ * accent is keyed in `~/test/accents`.
+ */
 function isADrawing(id: string, strokes: Stroke[]): void {
   // Fewer than four strokes is an icon, not a drawing.
   expect(strokes.length, id).toBeGreaterThan(3)
-  expect(
-    strokes.some((stroke) => stroke.role === 'accent'),
-    id,
-  ).toBe(true)
+
+  // One accent, on the one mark that identifies the record (#1300).
+  const accents = strokes.filter((stroke) => stroke.role === 'accent')
+
+  expect(accents, id).toHaveLength(ACCENT_EXCEPTIONS[id]?.[0] ?? 1)
 
   for (const stroke of strokes) {
     expect(stroke.d.length, id).toBeGreaterThan(0)
@@ -400,12 +406,12 @@ describe.each(LOADED_SERIES)(
 
     // A series with no record or no drawing yet has nothing to draw.
     it.skipIf(!open || entities.length === 0)(
-      'draws every record with at least four strokes and one in its colour',
+      'draws every record with at least four strokes and one accent',
       () => {
         expect.hasAssertions()
 
         for (const [id, strokes] of Object.entries(drawings)) {
-          isADrawing(id, strokes)
+          isADrawing(`${folder}/${id}@first`, strokes)
         }
       },
     )
@@ -454,7 +460,11 @@ describe.each(LOADED_SERIES)(
             entity.id,
           ).toBe(true)
 
-          isADrawing(entity.id, value)
+          // A stage only the manga tells is named by its chapter: several
+          // may share the episode their chapter is filed at.
+          const at = mangaOnly ? `c${String(chapter)}` : String(episode)
+
+          isADrawing(`${folder}/${entity.id}@${at}`, value)
         }
       }
     })

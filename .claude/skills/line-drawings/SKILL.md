@@ -74,8 +74,9 @@ the rest are left to review, so check them yourself.
 - **The pen.** One 2 px line, round caps and joins, kept at 2 px at every size
   (`non-scaling-stroke`) **(test)**. No fills, anywhere. A dot is a zero-length
   line (`dot()`), a circle two arcs (`circle()`).
-- **Four strokes or more, at least one `accent`** **(test)**. Fewer than four
-  is an icon, not a drawing.
+- **Four strokes or more, exactly one `accent`** **(test)**. Fewer than four
+  is an icon, not a drawing. A drawing that must carry more is listed, with
+  its count and the reason, in `src/test/accents.ts`; a new one is not added.
 - **Roles.** No role is the second ink (`ink2`). `accent` is the record's tint.
   `ambient` is the muted rule colour, for hatching, ground, water and things
   that are merely there. `dashed: true` is for shadows, ground and water.
