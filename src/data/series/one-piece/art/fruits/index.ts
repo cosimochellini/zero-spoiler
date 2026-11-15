@@ -2397,8 +2397,8 @@ const PACHY_BODY: Body = { family: 'oblong', cy: 116 }
 
 /**
  * A bent forelimb: out from the shoulder to the elbow, down to the wrist,
- * three hooked claws gripping the fruit's flank, and back up the inside of
- * the forearm to the rim.
+ * hooked claws gripping the fruit's flank, and back up the inside of the
+ * forearm to the rim.
  */
 const GRIPPING_ARM: Growth = {
   from: 98,
@@ -6111,12 +6111,12 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit drawn out in mochi: a thick strand out of its near side,
-   * sagging with a fold in it, to a sticky blob at its end short of the
-   * ground, the outline open where it leaves. In episode 833 (chapter 863)
-   * Katakuri's leg stretches out as a tendril of a sticky substance that
-   * swallows Luffy's arms and legs, and Jinbe names the fruit. The awakening
-   * of episode 855 is the same drawing with the ground turned to mochi.
+   * The fruit drawn out in mochi: a thick strand out of its near side, sagging
+   * with a fold in it, to a sticky blob at its end that rests on the ground
+   * beside the fruit, the outline open where it leaves. In episode 833 (chapter
+   * 863) Katakuri's leg stretches out as a tendril of a sticky substance that
+   * swallows Luffy's arms and legs, and Jinbe names the fruit. The awakening of
+   * episode 855 is the same drawing with the ground turned to mochi.
    */
   'mochi-mochi-fruit': [...MOCHI_FRUIT, shadowUnder(1)],
 
@@ -6228,10 +6228,11 @@ export const fruitArt = {
 
   /**
    * The fruit with a plume rising out of its belly: narrow at a neck where it
-   * leaves the skin, up beside the fruit and billowing out into a cloud at
-   * the top, like a lamp's genie before the figure. In episode 834 (chapter
-   * 864) Daifuku's genie comes out of him to fight Sanji; the fruit's name
-   * is the smoke a lamp gives off. No figure.
+   * leaves the skin, up beside the fruit and billowing out into a cloud at the
+   * top, like a lamp's genie before the figure. In chapter 864 (episode 834)
+   * Daifuku's genie comes out of his belt buckle to fight Sanji; the smoke
+   * round it is the anime's (episode 834), and the billowing plume is the shape
+   * the issue proposed. No figure.
    */
   'puff-puff-fruit': [
     ...kitBody(PUFF_BODY, [134, 144], (x, y) => x < 110 || y < 108 || y > 124),
@@ -6263,11 +6264,11 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit turned to food from the seam down: above it the skin, below it
-   * a rounded roast swelling wider than the fruit, cut clean across its near
-   * end, a hard step in the outline where the two meet. In episode 838 (chapter 868) a young
-   * Streusen cuts a log, turns it into meat and eats it. No bone, no cake,
-   * and no marbling: the story says meat and nothing more.
+   * The fruit turned to food from the seam down: above it the skin, below it a
+   * rounded roast swelling wider than the fruit, cut clean across its near end,
+   * a hard step in the outline where the two meet. In episode 838 (chapter 868)
+   * a young Streusen cuts a log, turns it into meat and eats it. No bone, no
+   * cake, and no marbling: the story says meat and nothing more.
    */
   'cook-cook-fruit': [
     ...kitBody(COOK_BODY, [96, 108, 118], (_x, y) => y < SEAM),
@@ -6321,7 +6322,8 @@ export const fruitArt = {
     },
     { d: OBELISKS.map((one) => obelisk(one, 'edge')).join(' '), role: 'soft' },
     { d: OBELISKS.map((one) => obeliskShade(one)).join(' '), role: 'ambient' },
-    // Loose soot along the ground at their feet, where it was left.
+    // Loose soot along the ground at their feet, where it was left: the
+    // ground line, in place of a shadow.
     {
       d: billow([
         [12, 179],
@@ -6334,6 +6336,7 @@ export const fruitArt = {
         [148, 179],
       ]),
       role: 'ambient',
+      dashed: true,
     },
   ],
 
@@ -6401,9 +6404,9 @@ export const fruitArt = {
 
   /**
    * A dango pinched out of the near flank on a narrow neck of dough, a crease
-   * where it is pinched, and two finished dumplings piled on the other side
-   * of the fruit, one resting on the other. Tama pinches a millet dumpling off her cheek
-   * and feeds Hihimaru in episode 893 (chapter 911), before the record
+   * where it is pinched, and two finished dumplings piled on the other side of
+   * the fruit, one resting on the other. Tama pinches a millet dumpling off her
+   * cheek and feeds Hihimaru in episode 893 (chapter 911), before the record
    * opens. The dumplings sit one above the other, never side by side.
    */
   'millet-millet-fruit': [
@@ -6539,9 +6542,9 @@ export const fruitArt = {
   /**
    * The lower half gone past ripe: sagging lower and wider than the foot it
    * was, more on the near side, soft and creased, its bottom edge crumbling
-   * open, crumbs falling into a pit below it. Shinobu decays the ground into a pit to escape Kaido's
-   * breath in episode 916 (chapter 924). Curls stay high, away from the
-   * sagging lower edge.
+   * open, crumbs falling into a pit below it. Shinobu decays the ground into a
+   * pit to escape Kaido's breath in episode 916 (chapter 924). Curls stay high,
+   * away from the sagging lower edge.
    */
   'ripe-ripe-fruit': [
     ...kitBody(RIPE_BODY, [100, 112, 124], (_x, y) => y < RIPE_SAG),
@@ -6681,11 +6684,10 @@ export const fruitArt = {
   ],
 
   /**
-   * Two clawed forelimbs gripping the fruit, grown from its shoulders, bent
-   * at the elbow, three hooked claws on each hand over the flank. Ulti's
-   * claws pin Luffy by the shoulders in chapter 983, pages 14–15 (episode
-   * 990). No claim about the full claw count, and never the head's dome or
-   * a ring of knobs.
+   * Two clawed forelimbs gripping the fruit, grown from its shoulders, bent at
+   * the elbow, hooked claws on each hand over the flank. Ulti's claws pin Luffy
+   * by the shoulders in chapter 983, pages 14–15 (episode 990). Never the
+   * head's dome or a ring of knobs.
    */
   'dragon-dragon-fruit-ancient-model-pachycephalosaurus': [
     ...kitBody(PACHY_BODY, [148, 154], (_x, y) => y < 100 || y > 140),
