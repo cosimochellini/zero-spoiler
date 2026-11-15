@@ -326,6 +326,45 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
+  // The King's Landing court's deaths the drawing audit found (#1289).
+  {
+    id: 'meryn-trant',
+    episode: 50,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'mandon-moore', episode: 19, chapter: 135, value: 'deceased' },
+  {
+    id: 'arys-oakheart',
+    episode: 8,
+    chapter: 247,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'lancel-lannister',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'dontos-hollard', episode: 33, chapter: 205, value: 'deceased' },
+  { id: 'beric-dondarrion', episode: 70, chapter: 268, value: 'deceased' },
+  {
+    id: 'thoros-of-myr',
+    episode: 66,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'robar-royce',
+    episode: 15,
+    chapter: 110,
+    value: 'deceased',
+    source: 'chapter',
+  },
   { id: 'will', episode: 1, chapter: 1, value: 'deceased' },
   { id: 'gared', episode: 1, chapter: 2, value: 'deceased' },
   { id: 'waymar-royce', episode: 1, chapter: 1, value: 'deceased' },
@@ -1041,6 +1080,31 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The King's Landing court redrawn from the drawing audit (#1289).
+  { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
+  { id: 'mandon-moore', episode: 19, chapter: 135, source: 'chapter' },
+  { id: 'arys-oakheart', episode: 8, chapter: 247, source: 'chapter' },
+  { id: 'lancel-lannister', episode: 44, chapter: 256 },
+  {
+    id: 'lancel-lannister',
+    episode: 60,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'dontos-hollard', episode: 33, chapter: 205 },
+  { id: 'mhaegen', episode: 11, chapter: 80, source: 'episode' },
+  { id: 'beric-dondarrion', episode: 25, chapter: 178 },
+  { id: 'beric-dondarrion', episode: 70, chapter: 268, stage: 1 },
+  { id: 'thoros-of-myr', episode: 25, chapter: 178 },
+  {
+    id: 'thoros-of-myr',
+    episode: 66,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
 ]
 
 describe.each(
@@ -1074,15 +1138,25 @@ describe.each(
 )
 
 describe('the stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end sees the last
+  // stage their medium tells (Lancel's Sparrow star, before the show alone
+  // kills him), or the first drawing when it tells none.
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
     ({ id, source }) => {
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
+      const owner = recordOf(id)
       const last =
-        source === 'chapter' ?
+        other === 'episode' ?
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
+      const seen = (REDRAWINGS[id] ?? []).filter(
+        (stage) => (owner.source ?? stage.source ?? other) === other,
+      )
 
-      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(DRAWINGS[id])
+      expect(drawingOf(owner, last).strokes).toStrictEqual(
+        seen.at(-1)?.value ?? DRAWINGS[id],
+      )
     },
   )
 })
