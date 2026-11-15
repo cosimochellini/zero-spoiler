@@ -103,6 +103,9 @@ about ten spoilers: Bon Clay (#1264), Apoo (#1271), Bonney (#1272), Cracker
   entry in `wano.ts`, Pekoms in `fish-man-island.ts`. The gate is the later of
   the record's chapter and the entry's `chapter:`, or without one the first
   chapter that reaches its episode, which can be many chapters late.
+- **The airing cut-off** is the last episode `npm run wiki:pairs` maps to a
+  chapter, not a number in a brief: `LAST_AIRED` in `filler.ts` must match it,
+  and `dated.test.ts` fails when a record or entry sits above it (#1298).
 
 ## Research and verification
 
