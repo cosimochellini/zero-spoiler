@@ -13,9 +13,10 @@ import { DRAGON_SIGIL } from './essos'
  * Nothing of his own reads at his threshold in both media (the book's raven
  * is not on screen in season 1), so the animal stands in, as Joffrey's
  * stag does. The bear is black, so its back is hatched; the accent is the
- * claws of the raised paw.
+ * claws of the raised paw. His first drawing and his death share the
+ * animal, `BEAR_BODY`.
  */
-const BEAR: Stroke[] = [
+const BEAR_BODY: Stroke[] = [
   {
     d: 'M40 58 Q44 50 54 48 Q58 40 66 38 Q68 28 76 30 Q82 32 80 40 Q100 46 106 72 Q112 100 106 124 Q104 134 108 140 L110 150 H94 L92 140 Q80 130 76 112',
   },
@@ -29,7 +30,13 @@ const BEAR: Stroke[] = [
     d: 'M94 56 l6 -3 M98 70 l6 -3 M100 84 l6 -3 M100 98 l6 -3 M99 112 l5 -3',
     role: 'ambient',
   },
-  shadow(92, 154, 30),
+]
+const BEAR: Stroke[] = [...BEAR_BODY, shadow(92, 154, 30)]
+
+/** The rookery perch: its bar, and the post on its foot. */
+const PERCH: Stroke[] = [
+  { d: 'M30 114 H130 V120 H30 Z' },
+  { d: 'M76 120 V150 M84 120 V150 M62 150 H98' },
 ]
 
 /**
@@ -39,11 +46,6 @@ const BEAR: Stroke[] = [
  * side is hatched; the accent is the letter tied to its leg. His first
  * drawing and his stage share it.
  */
-/** The rookery perch: its bar, and the post on its foot. */
-const PERCH: Stroke[] = [
-  { d: 'M30 114 H130 V120 H30 Z' },
-  { d: 'M76 120 V150 M84 120 V150 M62 150 H98' },
-]
 const RAVEN: Stroke[] = [
   {
     d: 'M54 60 Q56 46 68 46 Q80 48 84 60 Q100 74 110 96 L132 116 L118 118 L106 104',
@@ -93,9 +95,10 @@ const BOOKS: Stroke[] = [
  * Alliser Thorne: a straw dummy on a post in the yard with a sword struck
  * into it, for the master-at-arms who drills the recruits from episode 3
  * and Jon III (chapter 20). The head is blank. The sack's far side is
- * hatched; the accent is the sword's grip.
+ * hatched; the accent is the sword's grip. His first drawing and his death
+ * share the dummy and its sword, `DUMMY_BODY`.
  */
-const DUMMY: Stroke[] = [
+const DUMMY_BODY: Stroke[] = [
   { d: circle(80, 38, 10) },
   { d: 'M64 54 Q58 80 64 112 H96 Q102 80 96 54 Z' },
   { d: 'M38 66 H64 M96 66 H122 M38 72 H64 M96 72 H122 M38 66 V72 M122 66 V72' },
@@ -115,8 +118,8 @@ const DUMMY: Stroke[] = [
     d: 'M90 60 l5 -3 M91 72 l5 -3 M91 86 l5 -3 M90 100 l5 -3',
     role: 'ambient',
   },
-  shadow(80, 154, 30),
 ]
+const DUMMY: Stroke[] = [...DUMMY_BODY, shadow(80, 154, 30)]
 
 /**
  * Yoren: a pair of iron manacles on their chain, for the recruiter who
@@ -171,8 +174,8 @@ export const wallRedrawn: Redrawings = {
     { episode: 9, chapter: 61, value: [...RAVEN, ...AEMON_BANNER] },
     // The perch empty, the banner still hanging and the letter fallen to
     // the floor under it: the raven has gone with him. He dies at Castle
-    // Black in "The Gift" (episode 47), and on the ship to Oldtown in
-    // Samwell IV of A Feast for Crows (chapter 261).
+    // Black in "The Gift" (episode 47), and in Samwell IV of A Feast for
+    // Crows (chapter 261).
     {
       episode: 47,
       chapter: 261,
@@ -194,7 +197,7 @@ export const wallRedrawn: Redrawings = {
       episode: 24,
       chapter: 177,
       value: [
-        ...moved(BEAR.slice(0, 8), 'translate(11 2) rotate(-90 80 100)'),
+        ...moved(BEAR_BODY, 'translate(11 2) rotate(-90 80 100)'),
         { d: 'M10 154 H150', role: 'ambient', dashed: true },
       ],
     },
@@ -209,7 +212,7 @@ export const wallRedrawn: Redrawings = {
       chapter: 344,
       source: 'episode',
       value: [
-        ...moved(DUMMY.slice(0, 10), 'translate(10 2) rotate(-90 80 100)'),
+        ...moved(DUMMY_BODY, 'translate(10 2) rotate(-90 80 100)'),
         { d: 'M10 154 H150', role: 'ambient', dashed: true },
       ],
     },
