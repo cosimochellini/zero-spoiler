@@ -362,17 +362,14 @@ const YORK_GUN: Stroke[] = [
 /**
  * Conney's side cap in 3/4, the light brim's top edge as the accent, without
  * the hatching of its dark crown: the boat-shaped crown rising to its top
- * crease, the brim round it, its thickness and the notch at the front.
+ * crease, the brim round it and its thickness.
  */
 const CONNEY_CAP: Stroke[] = [
   { d: 'M20 128 C26 70 104 50 140 92' },
   { d: 'M20 128 C52 114 104 100 140 92', role: 'accent' },
   { d: 'M20 128 Q80 140 142 110 L140 92' },
   { d: 'M24 133 C56 120 104 106 140 99', role: 'soft' },
-  {
-    d: 'M20 128 L28 118 M58 118 Q62 128 60 136 M60 80 C80 74 104 76 124 84',
-    role: 'soft',
-  },
+  { d: 'M58 118 Q62 128 60 136 M60 80 C80 74 104 76 124 84', role: 'soft' },
 ]
 
 /** The hatching of Conney's crown while it is dark, six years back. */
@@ -963,8 +960,8 @@ export const eggheadArt = {
   // Her silhouette, the only way she is shown at 1118 (ch. 1084): a royal
   // crown in 3/4, plain points round the front of its band as the accent,
   // the back of the band and two far points in soft, and under it the fall
-  // of her cape from the shoulders, the clasp and the folds in soft and the
-  // far side hatched. No face. No stages.
+  // of her cape from the shoulders, its far side hatched. A silhouette shows
+  // no more than that. No face. No stages.
   'nefertari-lili': [
     { d: 'M48 70 Q80 84 112 70 V82 Q80 96 48 82 Z' },
     { d: 'M52 69 Q80 60 108 69', role: 'soft' },
@@ -977,11 +974,7 @@ export const eggheadArt = {
     {
       d: 'M62 104 C46 104 36 112 32 126 C28 146 22 166 14 184 C40 178 60 192 82 184 C104 192 124 180 148 186 C138 166 132 146 128 126 C124 112 114 104 98 104',
     },
-    { d: 'M62 104 Q80 112 98 104 M76 109 V116', role: 'soft' },
-    {
-      d: 'M58 116 C56 140 50 162 44 182 M100 116 C104 140 110 162 116 184',
-      role: 'soft',
-    },
+    { d: 'M62 104 Q80 112 98 104', role: 'soft' },
     { d: 'M126 144 l7 -6 M132 160 l7 -6 M136 176 l7 -6', role: 'ambient' },
     shadow(80, 194, 60),
   ],
@@ -1129,25 +1122,20 @@ export const eggheadArt = {
 
   // Her side cap in 3/4, as she wears it at 1133 (ch. 1099, six years back):
   // the dark crown hatched between its top crease and the light brim, the
-  // brim's top edge as the accent, its thickness and the notch at the front
-  // in soft. Then from 1134 (ch. 1100, three and a half years back) the same
+  // brim's top edge as the accent, its thickness in soft. Then from 1134 (ch. 1100, three and a half years back) the same
   // cap light all over, the crown no longer hatched.
   'conney': [...CONNEY_CAP, CONNEY_DARK_CROWN, shadow(82, 160, 56)],
 
   // His white ushanka in 3/4, as he wears it at 1133 (ch. 1099): the fur
-  // crown with its seam in soft, the turned-up band across the front, and
-  // the ear flaps hanging at the sides, their yellow edging as the accent,
-  // the far side hatched. No stages.
+  // crown and its lower edge, and the ear flaps hanging at the sides, their
+  // yellow edging as the accent, the far side hatched. No stages.
   'bulldog': [
     { d: 'M40 100 C38 68 58 50 84 50 C110 50 128 68 126 98' },
-    { d: 'M38 92 Q82 110 128 88 L130 104 Q82 128 36 108 Z' },
-    { d: 'M84 50 Q82 70 82 98 M40 100 Q82 117 129 96', role: 'soft' },
+    { d: 'M40 100 Q82 117 129 96' },
+    { d: 'M104 110 C104 136 104 150 110 158 C118 164 128 156 128 142 L128 99' },
+    { d: 'M40 101 C38 124 38 136 42 144 C46 148 52 144 52 136 L52 105' },
     {
-      d: 'M104 120 C104 136 104 150 110 158 C118 164 128 156 128 142 L128 106',
-    },
-    { d: 'M40 110 C38 124 38 136 42 144 C46 148 52 144 52 136 L52 114' },
-    {
-      d: 'M108 122 C108 136 108 148 112 154 C118 158 124 152 124 140 L124 110 M43 113 C42 125 42 135 45 140',
+      d: 'M108 112 C108 136 108 148 112 154 C118 158 124 152 124 140 L124 102 M43 104 C42 125 42 135 45 140',
       role: 'accent',
     },
     { d: 'M110 68 l8 -6 M116 80 l7 -5 M112 118 l6 -5', role: 'ambient' },
@@ -1294,12 +1282,13 @@ export const eggheadArt = {
     { d: 'M136 140 l7 -6 M140 156 l7 -6 M120 140 l6 -6', role: 'ambient' },
   ],
 
-  // Its horned helmet in 3/4, as it wakes on Egghead and is named at 1151
-  // (ch. 1119): the grill of vertical bars over the face, the right horn
-  // whole and the left horn snapped off to a stub as the accent, the side of
-  // the helmet hatched, moss and rust in soft. No stages: the arm Ju Peter
-  // bites off at 1152 is a state of the body, and at 1153 it only powers
-  // down.
+  // Its horned helmet in 3/4, missing its left horn, as it is on screen
+  // from 1095 (ch. 1065 pp. 18-19); it wakes at 1145 (ch. 1111) and is
+  // named at 1151 (ch. 1119). The grill of vertical bars over the face, the
+  // right horn whole and the left horn snapped off to a stub as the accent,
+  // the side of the helmet hatched, moss and rust in soft. No stages: the
+  // arm Ju Peter bites off at 1152 is a state of the body, and at 1153 it
+  // only powers down.
   'emet': [
     { d: 'M32 176 V112 C32 76 54 58 80 58 C108 58 130 76 132 108 V170' },
     { d: 'M112 70 C118 86 118 100 118 112 V176' },
