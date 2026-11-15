@@ -1049,7 +1049,7 @@ const STAGES: {
     source: 'chapter',
     stage: 1,
   },
-  { id: 'robb-stark', episode: 10, chapter: 72, source: 'chapter' },
+  { id: 'robb-stark', episode: 10, chapter: 81, source: 'chapter' },
   { id: 'robb-stark', episode: 29, chapter: 195, stage: 1 },
   { id: 'bran-stark', episode: 56, chapter: 344, source: 'episode' },
   { id: 'rickon-stark', episode: 59, chapter: 344, source: 'episode' },
@@ -1085,7 +1085,7 @@ const STAGES: {
   { id: 'osha', episode: 54, chapter: 344, source: 'episode' },
   { id: 'arya-stark', episode: 13, chapter: 93 },
   { id: 'arya-stark', episode: 31, chapter: 218, stage: 1 },
-  { id: 'arya-stark', episode: 43, chapter: 232, stage: 2 },
+  { id: 'arya-stark', episode: 43, chapter: 248, stage: 2 },
   { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 3 },
 ]
 

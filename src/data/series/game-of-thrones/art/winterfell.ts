@@ -657,14 +657,14 @@ export const winterfellRedrawn: Redrawings = {
   ],
   'robb-stark': [
     // The crown of bronze and iron spikes set down beside the sword: the
-    // book's King in the North wears it, from his proclamation in Catelyn
-    // XI of A Game of Thrones (chapter 72). The show's Robb never wears a
+    // book's King in the North wears it, as Catelyn I of A Clash of Kings
+    // first describes it (chapter 81). The show's Robb never wears a
     // crown, so the stage is the book's alone and episode 10, the show's
     // proclamation, only orders it (owner, 2026-11-15: a crown is a
     // costume).
     {
       episode: 10,
-      chapter: 72,
+      chapter: 81,
       source: 'chapter',
       value: [...ROBB_SWORD, shadow(80, 156, 40), ...NORTHERN_CROWN],
     },
@@ -1043,11 +1043,11 @@ export const winterfellRedrawn: Redrawings = {
     { episode: 31, chapter: 218, value: NEEDLE },
     // The hilt standing out of a pile of stones, the blade hidden under
     // them: she cannot throw it away and hides it before she serves the
-    // House of Black and White, in "High Sparrow" (episode 43) and in Arya I
-    // of A Feast for Crows (chapter 232).
+    // House of Black and White, in "High Sparrow" (episode 43) and in Arya II
+    // of A Feast for Crows (chapter 248).
     {
       episode: 43,
-      chapter: 232,
+      chapter: 248,
       value: [
         ...moved(NEEDLE_HILT, 'translate(0 52)'),
         { d: 'M82 110 L84 120 L86 110', role: 'accent' },
