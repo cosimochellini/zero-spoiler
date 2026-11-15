@@ -512,7 +512,8 @@ const CHANGES: {
     source: 'episode',
   },
   { id: 'janos-slynt', episode: 43, chapter: 279, value: 'deceased' },
-  // Two different deaths, one per medium, in one entry (see season-1.ts).
+  // Two different deaths, one per medium, in one entry; the engine reads
+  // it as an anchor that can only add fog (see season-1.ts).
   { id: 'gregor-clegane', episode: 72, chapter: 243, value: 'deceased' },
   {
     id: 'loras-tyrell',

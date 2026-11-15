@@ -4295,8 +4295,11 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 4, chapter: 30, value: 'alive' },
         // Deliberately one entry for two different deaths, one per medium,
-        // so each reads its own pin. It is not a true anchor: episode 72
-        // and chapter 243 are not the same moment of the story.
+        // so each reads its own pin; episode 72 and chapter 243 are not the
+        // same moment of the story. The engine still reads the pair as an
+        // anchor for the chapter table. That can only add fog: it lowers
+        // `episodeAtChapter` and never opens anything early. Today Janos
+        // Slynt's 43/279 entry dominates it anyway.
         { episode: 72, chapter: 243, value: 'deceased' },
       ],
       affiliation: [
