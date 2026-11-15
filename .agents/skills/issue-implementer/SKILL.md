@@ -22,6 +22,9 @@ in Codex or through Claude's `issue-implementer` subagent.
    user-facing copy, read `.claude/skills/tone-of-voice/SKILL.md`; for art, read
    `.claude/skills/line-drawings/SKILL.md`. These are ordinary Markdown
    instructions in either tool. Follow only pointers relevant to this issue.
+   **Plan first.** When the orchestrator asks for a plan and questions first,
+   stop after this research and return a per-record plan and numbered
+   questions, each with a default; implement only on its reply.
 4. Implement the smallest complete change, including affected callers, fixtures,
    exports and tests. Hidden ids, names, prose and drawings stay server-side
    until their episode/chapter gates; preserve source/series isolation.
