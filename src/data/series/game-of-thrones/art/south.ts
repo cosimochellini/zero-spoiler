@@ -78,8 +78,9 @@ const TANKARD: Stroke[] = [
  * Joffrey Baratheon: a stag, the animal of the house he is the heir of,
  * side on with no eye or mouth. Nothing of his own reads at his threshold
  * in both media, so the animal stands in. The accent is the antlers.
+ * Mandon Moore's banner in `court.ts` carries it.
  */
-const STAG: Stroke[] = [
+export const STAG: Stroke[] = [
   {
     d: 'M68 100 Q64 88 60 76 Q50 80 42 82 Q34 82 34 76 Q36 70 46 66 L58 56 Q66 56 72 68 Q78 86 92 90 Q110 92 122 92 Q134 94 134 108 Q134 120 126 126',
   },
@@ -1059,10 +1060,11 @@ export const southRedrawn: Redrawings = {
   ],
   'gregor-clegane': [
     // The books alone: the lance down on the ground in two pieces. The
-    // manticore venom on Oberyn's spear kills him slowly; Cersei sends his
-    // skull to Dorne, which The Watcher (chapter 310) tells. The show keeps
-    // him alive after the duel; episode 38 only orders the stage.
-    { episode: 38, chapter: 310, source: 'chapter', value: [...FALLEN_LANCE] },
+    // manticore venom on Oberyn's spear kills him slowly, and Qyburn
+    // prepares his skull for Dorne in Cersei IV (chapter 243, unverified).
+    // The show keeps him alive after the duel; episode 38 only orders the
+    // stage.
+    { episode: 38, chapter: 243, source: 'chapter', value: [...FALLEN_LANCE] },
     // The show alone: the lance gone and a white Kingsguard great helm in
     // its place, the new knight Qyburn brings to Cersei in "Mother's Mercy"
     // (episode 50). The books leave it a guess; their last chapter orders it.
@@ -1076,7 +1078,8 @@ export const southRedrawn: Redrawings = {
         shadow(80, 156, 40),
       ],
     },
-    // The show alone: the helm down on its side by the broken lance. He
+    // The show alone: the helm down on its side beside the broken lance,
+    // the lance's splinters soft so the eye slit keeps the one accent. He
     // falls with Sandor in "The Bells" (episode 72); the books' last chapter
     // orders it.
     {
@@ -1084,11 +1087,12 @@ export const southRedrawn: Redrawings = {
       chapter: 344,
       source: 'episode',
       value: [
+        ...moved(softened(FALLEN_LANCE), 'translate(3.5 40) scale(0.75)'),
         ...moved(
           WHITE_GREAT_HELM,
-          'translate(114 133) scale(0.6) rotate(-90) translate(-80 -94)',
+          'translate(132 146) scale(0.5) rotate(-90) translate(-80 -94)',
         ),
-        ...FALLEN_LANCE,
+        { d: 'M112 160 H152', role: 'ambient', dashed: true },
       ],
     },
   ],
