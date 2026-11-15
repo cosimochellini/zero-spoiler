@@ -1227,8 +1227,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Fude Fude', en: 'Brush-Brush Fruit' },
     summary: {
-      it: 'Quello che viene dipinto col pennello esce dalla carta e si muove: un uccello, un cavallo, un muro di fuoco, disegnati male come solo quella mano sa fare.',
-      en: 'Whatever is painted with the brush comes off the paper and moves: a bird, a horse, a wall of fire, all drawn as badly as the hand can draw.',
+      it: 'Quello che viene dipinto col suo inchiostro esce dalla carta e si muove: un passero, un drago che si arrampica, una copia perfetta del pittore stesso.',
+      en: 'Whatever is painted in its ink comes off the paper and moves: a sparrow, a dragon that climbs, a perfect copy of the painter himself.',
     },
     visual: { art: 'brush-brush-fruit', tint: 'wine' },
   },
@@ -1250,8 +1250,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Jiki Jiki', en: 'Magnet-Magnet Fruit' },
     summary: {
-      it: 'Richiama il metallo nell’aria da qualsiasi distanza e lo compatta, così una mano tesa si ritrova a reggere una massa di ferro grande come una casa.',
-      en: 'Pulls metal through the air from any distance and packs it together, so an open hand ends up holding a mass of iron the size of a house.',
+      it: 'Attira il metallo attraverso l’aria e lo compatta, così spade e pistole diventano un braccio gigante di ferraglia.',
+      en: 'Pulls metal in through the air and packs it together, so swords and guns end up as a giant arm of scrap iron.',
     },
     visual: { art: 'magnet-magnet-fruit', tint: 'vermilion' },
   },
@@ -1316,8 +1316,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Gabu Gabu', en: 'Gabu-Gabu Fruit' },
     summary: {
-      it: 'Trasforma in liquore il corpo di chi l’ha mangiato: viene ingoiato a fiaschi interi e risputato fuori in un getto che prende fuoco.',
-      en: 'Turns the body of whoever ate it to liquor: it goes down by the flaskful and comes back out in a stream that catches fire.',
+      it: 'Il liquore viene trangugiato e risputato fuori in un getto che prende fuoco.',
+      en: 'Liquor is gulped down and spat back out in a stream that catches fire.',
     },
     visual: { art: 'gabu-gabu-fruit', tint: 'ocher' },
   },
