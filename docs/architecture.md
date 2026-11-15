@@ -210,10 +210,10 @@ the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules. The
 series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
 own, Eddard's with a death stage, the Winterfell household's are in
 `art/winterfell.ts` (#854), with four stages, the southern cast's are in
-`art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
-in `art/wall.ts` and `art/essos.ts` (#1052), with six, the places' are in
-`art/places.ts` (#1053), with fourteen stages for the damage and rebuilding
-later seasons and books give (#1236), the northern household's are in
+`art/south.ts` (#1051), with twenty-one (#1287), and the Night's Watch's and
+Essos cast's are in `art/wall.ts` and `art/essos.ts` (#1052), with six, the
+places' are in `art/places.ts` (#1053), with fourteen stages for the damage and
+rebuilding later seasons and books give (#1236), the northern household's are in
 `art/north.ts` (#1054), with three, the Vale cast's are in `art/vale.ts`
 (#1055), with two, the King's Landing cast's are in `art/court.ts` (#1056), with
 one, and the Riverlands cast's are in `art/riverlands.ts` (#1057), with seven,
@@ -380,7 +380,7 @@ checks this block.
 | Characters        | 148                                                   |
 | Places            | 60                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 208, one per record, plus 41 redrawings of 36 records |
+| Line drawings     | 208, one per record, plus 59 redrawings of 44 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->

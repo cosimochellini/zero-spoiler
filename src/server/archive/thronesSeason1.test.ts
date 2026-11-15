@@ -4,7 +4,7 @@ import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { CharacterStatus } from '~/lib/view/records'
+import type { CharacterStatus, Stroke } from '~/lib/view/records'
 import { LOADED_SERIES } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -367,6 +367,66 @@ const CHANGES: {
     chapter: 69,
     value: 'deceased',
     source: 'chapter',
+  },
+  // The southern characters' deaths from the drawing audit (#1287).
+  {
+    id: 'ros',
+    episode: 26,
+    chapter: 175,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'barristan-selmy',
+    episode: 44,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'petyr-baelish',
+    episode: 67,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'varys',
+    episode: 72,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'pycelle',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'sandor-clegane', episode: 40, chapter: 218, value: 'presumed-dead' },
+  {
+    id: 'sandor-clegane',
+    episode: 57,
+    chapter: 344,
+    value: 'alive',
+    source: 'episode',
+  },
+  {
+    id: 'sandor-clegane',
+    episode: 72,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'janos-slynt', episode: 43, chapter: 279, value: 'deceased' },
+  { id: 'gregor-clegane', episode: 72, chapter: 310, value: 'deceased' },
+  {
+    id: 'loras-tyrell',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
   },
 ]
 
@@ -1041,6 +1101,18 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The southern characters redrawn from the drawing audit (#1287); the
+  // stages that sit beside another medium's are in `MIXED_STAGES` below.
+  { id: 'ros', episode: 20, chapter: 143, source: 'episode' },
+  { id: 'ros', episode: 26, chapter: 175, source: 'episode', stage: 1 },
+  { id: 'petyr-baelish', episode: 38, chapter: 224 },
+  { id: 'varys', episode: 41, chapter: 274, source: 'episode' },
+  { id: 'varys', episode: 72, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'pycelle', episode: 60, chapter: 344, source: 'episode' },
+  { id: 'sandor-clegane', episode: 40, chapter: 218 },
+  { id: 'janos-slynt', episode: 31, chapter: 213 },
+  { id: 'janos-slynt', episode: 43, chapter: 279, stage: 1 },
+  { id: 'loras-tyrell', episode: 60, chapter: 344, source: 'episode' },
 ]
 
 describe.each(
@@ -1086,3 +1158,130 @@ describe('the stages one medium alone tells', () => {
     },
   )
 })
+
+/**
+ * The stages of #1287 that sit beside a stage of the other medium, which
+ * the `STAGES` rows above cannot hold: they take the stage just before as
+ * the one a reader sees, and the first drawing as what the other medium's
+ * last reader sees. Each row names both by stage index instead, -1 for the
+ * first drawing: `before`, what a reader in `unit` sees one before the
+ * pin, and `last`, what the other medium's last reader sees.
+ */
+const MIXED_STAGES: {
+  before: number
+  chapter: number
+  episode: number
+  id: keyof typeof DRAWINGS
+  last: number
+  stage: number
+  unit: Unit
+}[] = [
+  // Arstan Whitebeard (the books') and the death (the show's).
+  {
+    id: 'barristan-selmy',
+    stage: 1,
+    unit: 'chapter',
+    episode: 21,
+    chapter: 201,
+    before: 0,
+    last: 2,
+  },
+  {
+    id: 'barristan-selmy',
+    stage: 2,
+    unit: 'episode',
+    episode: 44,
+    chapter: 344,
+    before: 0,
+    last: 1,
+  },
+  // The show's death after the Lord Protector both media tell.
+  {
+    id: 'petyr-baelish',
+    stage: 1,
+    unit: 'episode',
+    episode: 67,
+    chapter: 344,
+    before: 0,
+    last: 0,
+  },
+  // The show's return and death after the fall both media tell.
+  {
+    id: 'sandor-clegane',
+    stage: 1,
+    unit: 'episode',
+    episode: 57,
+    chapter: 344,
+    before: 0,
+    last: 0,
+  },
+  {
+    id: 'sandor-clegane',
+    stage: 2,
+    unit: 'episode',
+    episode: 72,
+    chapter: 344,
+    before: 1,
+    last: 0,
+  },
+  // The books' death, then the show's return and death.
+  {
+    id: 'gregor-clegane',
+    stage: 0,
+    unit: 'chapter',
+    episode: 38,
+    chapter: 310,
+    before: -1,
+    last: 2,
+  },
+  {
+    id: 'gregor-clegane',
+    stage: 1,
+    unit: 'episode',
+    episode: 50,
+    chapter: 344,
+    before: -1,
+    last: 0,
+  },
+  {
+    id: 'gregor-clegane',
+    stage: 2,
+    unit: 'episode',
+    episode: 72,
+    chapter: 344,
+    before: 1,
+    last: 0,
+  },
+]
+
+describe.each(MIXED_STAGES)(
+  '$id is redrawn by $unit at $episode/$chapter beside the other medium',
+  ({ id, stage: index, unit, episode, chapter, before, last }) => {
+    const stages = REDRAWINGS[id] ?? []
+    const value = (position: number): Stroke[] | undefined =>
+      position === -1 ? DRAWINGS[id] : stages[position]?.value
+    const owner = recordOf(id)
+
+    it('at its pin, not one before', () => {
+      const pin = unit === 'chapter' ? chapter : episode
+
+      expect(stages[index]?.episode).toBe(episode)
+      expect(stages[index]?.chapter).toBe(chapter)
+      expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
+        value(before),
+      )
+      expect(drawingOf(owner, reader(unit, pin)).strokes).toStrictEqual(
+        value(index),
+      )
+    })
+
+    it('shows the other medium’s last reader that medium’s own drawing', () => {
+      const end =
+        unit === 'chapter' ?
+          reader('episode', archive.series.episodeCeiling)
+        : reader('chapter', archive.series.chapterCeiling)
+
+      expect(drawingOf(owner, end).strokes).toStrictEqual(value(last))
+    })
+  },
+)
