@@ -1298,14 +1298,14 @@ const STAGES: {
 ]
 
 /**
- * The medium the data files a stage in: the stage's own `source`, else its
- * record's. Undefined for a stage both media tell.
+ * The medium a stage is told in: the record's `source`, else the stage's, as
+ * the engine reads it. Undefined for a stage both media tell.
  */
 function mediumOf(
   id: keyof typeof DRAWINGS,
   index: number,
 ): 'chapter' | 'episode' | undefined {
-  return REDRAWINGS[id]?.[index]?.source ?? recordOf(id).source
+  return recordOf(id).source ?? REDRAWINGS[id]?.[index]?.source
 }
 
 describe.each(
