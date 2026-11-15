@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
+import { classesOf } from './filler-classes.mjs'
 import {
   allowedKinds,
   chaptersOf,
-  classesOf,
   kindProblem,
   matchSpecials,
   normalise,
@@ -44,6 +44,16 @@ describe('the kinds an episode may have', () => {
     expect(
       classesOf('<tr class="mixed_canon/filler odd" id="eps-9">').get(9),
     ).toBe('mixed_canon/filler')
+  })
+
+  it('counts the episodes aired past its last row as canon', () => {
+    const page = '<tr class="filler odd" id="eps-9">'
+
+    expect([...classesOf(page, 11)]).toEqual([
+      [9, 'filler'],
+      [10, 'anime_canon'],
+      [11, 'anime_canon'],
+    ])
   })
 })
 

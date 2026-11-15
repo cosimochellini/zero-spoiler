@@ -6,6 +6,8 @@ import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
 
 import { episodeAtChapter } from './chapter-table'
 import { datedOf, eatersOf, latestOf, reachedOf, timelines } from './dated'
+import { entities } from './entities'
+import { LAST_AIRED } from './filler'
 import { fruits } from './fruits'
 
 const ep = (episode: number): Bookmark => ({ mode: 'episode', episode })
@@ -106,6 +108,22 @@ describe('every dated entry in the archive', () => {
       const at = reveal(bookmark, ONE_PIECE_BOOKMARK)
 
       expect(latestOf(at, owner, field), label).toBe(entry.value)
+    }
+  })
+})
+
+describe('the airing cut-off', () => {
+  // `LAST_AIRED` ends the filler countdown; it fell behind the records once
+  // (#1298). It equals the last episode `npm run wiki:pairs` maps: when a
+  // record passes it, bump it only if that episode has aired; a manga-only
+  // entry that merely orders itself gets a lower episode instead.
+  it('is no earlier than any record or dated entry', () => {
+    for (const { revealedAtEpisode: episode, id: label } of entities) {
+      expect(episode, label).toBeLessThanOrEqual(LAST_AIRED)
+    }
+
+    for (const { episode, label } of ENTRIES) {
+      expect(episode, label).toBeLessThanOrEqual(LAST_AIRED)
     }
   })
 })

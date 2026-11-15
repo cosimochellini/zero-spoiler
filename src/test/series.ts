@@ -136,8 +136,8 @@ const EXPECTED: Record<string, Expected> = {
     },
     namesSaidEarly: true,
   },
-  // Counted 2026-11-14, after the visited places #853 left out (#1252): 148
-  // characters, 60 places and the season's heading.
+  // Counted 2026-11-15, after the southern cast's later looks and deaths
+  // (#1286): 148 characters, 60 places and the season's heading.
   'game-of-thrones': {
     kinds: [
       'affiliation',
@@ -157,8 +157,8 @@ const EXPECTED: Record<string, Expected> = {
       chronicles: 0,
       linkedOrigins: 0,
       places: 60,
-      statuses: 227,
-      timelines: 398,
+      statuses: 250,
+      timelines: 438,
       visits: 0,
     },
     namesSaidEarly: true,

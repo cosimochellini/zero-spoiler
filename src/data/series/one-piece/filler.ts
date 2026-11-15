@@ -27,8 +27,11 @@ export type { FillerEntry } from '~/data/features'
 /** A filler arc: a run of episodes the wikis name as one story. */
 export type { FillerArc } from '~/data/features'
 
-/** The last episode aired when the list was checked. */
-export const LAST_AIRED = 1168
+/**
+ * The last episode aired: the last one `npm run wiki:pairs` maps to a chapter.
+ * The filler countdown stops here, and a test holds every record under it.
+ */
+export const LAST_AIRED = 1180
 
 export const FILLER_ARCS: FillerArc[] = [
   { first: 54, last: 61, name: { en: 'Warship Island', it: 'Warship Island' } },
@@ -2856,6 +2859,19 @@ export const FILLER: FillerEntry[] = [
     summary: {
       en: 'Nami hurts her feet in a pair of poorly made shoes and goes to return them, meeting the designer Lebno Listchaque, who asks her to perform in a show.',
       it: 'Nami si fa male ai piedi con un paio di scarpe fatte male e va a restituirle, dove incontra lo stilista Lebno Listchaque, che le chiede di partecipare a uno spettacolo.',
+    },
+  },
+  {
+    episode: 1174,
+    kind: 'mixed',
+    chapter: 1144,
+    title: {
+      en: 'Save the Children! The Elbaph Warriors Rise Up',
+      it: 'Salvare i bambini! Insorgono i guerrieri di Erbaf',
+    },
+    summary: {
+      en: 'As the monsters rampage through Elbaph, Nami warns the giants about the intruders. The children are told to flee while the warriors step in to fight.',
+      it: 'Mentre i mostri devastano Erbaf, Nami avverte i giganti degli intrusi. I bambini devono mettersi in salvo mentre i guerrieri intervengono per combattere.',
     },
   },
 ]
