@@ -774,8 +774,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Pamu Pamu', en: 'Pop-Pop Fruit' },
     summary: {
-      it: 'Fa gonfiare fino a scoppiare tutto quello che ha toccato: un sasso, un muro, un pezzo di metallo, un cappello.',
-      en: 'Makes anything it has touched swell up until it bursts: a stone, a wall, a piece of metal, a hat.',
+      it: 'Fa gonfiare fino a scoppiare tutto quello che ha toccato: un cappello, un elmo, un bracciale di metallo.',
+      en: 'Makes anything it has touched swell up until it bursts: a hat, a helmet, a metal cuff.',
     },
     visual: { art: 'pop-pop-fruit', tint: 'ocher' },
   },
@@ -824,8 +824,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Chiyu Chiyu', en: 'Heal-Heal Fruit' },
     summary: {
-      it: 'Trasforma le lacrime in cura: una ferita si richiude e l’osso torna al suo posto, al prezzo delle forze di chi sta piangendo.',
-      en: 'Turns tears into a cure: a wound closes and bone goes back where it belongs, paid for out of the strength of whoever is crying.',
+      it: 'Trasforma le lacrime in cura: le ferite di chi ne viene toccato si richiudono.',
+      en: 'Turns tears into a cure: the wounds of whoever they touch close up.',
     },
     visual: { art: 'heal-heal-fruit', tint: 'flamingo' },
   },
