@@ -517,7 +517,7 @@ export const northRedrawn: Redrawings = {
     // collar, the Stark direwolf on it and its clasp at the top: she is
     // passed off as Arya Stark to wed Ramsay Bolton. The book's alone;
     // episode 29 orders it. Cersei tells the council of the "steward's
-    // whelp" in Cersei II of A Feast for Crows (chapter 17, site 243).
+    // whelp" in Cersei IV of A Feast for Crows (chapter 17, site 243).
     {
       episode: 29,
       chapter: 243,

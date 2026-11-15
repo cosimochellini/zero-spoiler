@@ -4508,8 +4508,7 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 2, chapter: 54, value: 'alive' },
         // Killed by an ironborn when Theon takes Winterfell (#1288). The
-        // book's alone; episode 16 orders it. The chapter is not checked
-        // against the book.
+        // book's alone; episode 16 orders it (A Clash of Kings 46, Bran VI).
         { episode: 16, chapter: 120, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
