@@ -4056,7 +4056,10 @@ export const season1: ThronesSaga = {
         en: 'She works in the brothel of the town outside Winterfell. Theon and Tyrion are among her clients.',
       },
       role: { it: 'Prostituta', en: 'Prostitute' },
-      status: [{ episode: 4, chapter: 25, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 25, value: 'alive' },
+        { episode: 26, chapter: 175, source: 'episode', value: 'deceased' },
+      ],
     },
     'ilyn-payne': {
       role: { it: 'Boia del re', en: 'King’s headsman' },
@@ -4096,7 +4099,10 @@ export const season1: ThronesSaga = {
         it: 'Guida la Guardia Reale, i cavalieri che hanno giurato di proteggere il re. È anziano ma ancora forte, e veste di bianco come tutti i suoi confratelli.',
         en: 'He leads the Kingsguard, the knights sworn to protect the king. He is old but still strong, and wears white like the rest of his brothers.',
       },
-      status: [{ episode: 3, chapter: 16, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 16, value: 'alive' },
+        { episode: 44, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4140,7 +4146,10 @@ export const season1: ThronesSaga = {
         it: 'Siede nel Concilio ristretto come maestro del conio, ed è chiamato Ditocorto. Quando Catelyn arriva in segreto ad Approdo del Re, i suoi uomini la portano da lui. Le dice che il pugnale usato contro suo figlio era suo e che lo perse in una scommessa con Tyrion Lannister, poi le offre il suo aiuto.',
         en: 'He sits on the small council as master of coin, and is called Littlefinger. When Catelyn comes to King’s Landing in secret, his men bring her to him. He tells her the dagger used against her son was his, lost in a wager to Tyrion Lannister, and offers her his help.',
       },
-      status: [{ episode: 3, chapter: 19, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 19, value: 'alive' },
+        { episode: 67, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4155,7 +4164,10 @@ export const season1: ThronesSaga = {
         it: 'Siede nel Concilio ristretto come maestro dei sussurri, e i suoi informatori gli riferiscono ciò che accade in città. Sa che Catelyn è arrivata in segreto e si unisce al suo incontro con Ditocorto per esaminare il pugnale.',
         en: 'He sits on the small council as master of whisperers, and his informers tell him what happens in the city. He knows Catelyn has arrived in secret and joins her meeting with Littlefinger to look at the dagger.',
       },
-      status: [{ episode: 3, chapter: 19, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 19, value: 'alive' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4170,7 +4182,10 @@ export const season1: ThronesSaga = {
         it: 'È il gran maestro e siede da molti anni nel Concilio ristretto. Quando Eddard Stark arriva ad Approdo del Re come nuovo Primo Cavaliere, lo accoglie insieme al resto del Concilio.',
         en: 'He is the Grand Maester and has sat on the small council for many years. When Eddard Stark arrives in King’s Landing as the new Hand, he receives him with the rest of the council.',
       },
-      status: [{ episode: 3, chapter: 21, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 21, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4202,7 +4217,12 @@ export const season1: ThronesSaga = {
         it: 'Arriva a Grande Inverno con il seguito del re. È un uomo enorme, al servizio del principe Joffrey.',
         en: 'He comes to Winterfell with the king’s party. He is a huge man in the service of Prince Joffrey.',
       },
-      status: [{ episode: 4, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 5, value: 'alive' },
+        { episode: 40, chapter: 218, value: 'presumed-dead' },
+        { episode: 57, chapter: 344, source: 'episode', value: 'alive' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -4239,7 +4259,10 @@ export const season1: ThronesSaga = {
         it: 'Comanda la Guardia cittadina di Approdo del Re. Con la città piena di gente venuta per il torneo, dice al Concilio ristretto che i suoi uomini non bastano. Eddard Stark gli presta venti guardie della sua casa e ordina di assumere altre cinquanta guardie cittadine.',
         en: 'He commands the City Watch of King’s Landing. With the city full of people come for the tourney, he tells the small council he has too few men. Eddard Stark lends him twenty of his own household guards and orders fifty more watchmen hired.',
       },
-      status: [{ episode: 4, chapter: 28, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 28, value: 'alive' },
+        { episode: 43, chapter: 279, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -4306,7 +4329,19 @@ export const season1: ThronesSaga = {
         it: 'Giostra al torneo in onore del nuovo Primo Cavaliere e uccide con la lancia un giovane cavaliere. Da ragazzi, spinse il viso del fratello minore nel fuoco per un giocattolo, e le cicatrici si vedono ancora.',
         en: 'He jousts in the tourney for the new Hand and kills a young knight with his lance. When they were boys, he pushed his younger brother’s face into a fire over a toy, and the scars still show.',
       },
-      status: [{ episode: 4, chapter: 30, value: 'alive' }],
+      // Both media kill him, years apart: the show in "The Bells" (episode
+      // 72), the books by the venom, Qyburn preparing his skull in Cersei IV
+      // (chapter 243, unverified; #1287).
+      status: [
+        { episode: 4, chapter: 30, value: 'alive' },
+        // Deliberately one entry for two different deaths, one per medium,
+        // so each reads its own pin; episode 72 and chapter 243 are not the
+        // same moment of the story. The engine still reads the pair as an
+        // anchor for the chapter table. That can only add fog: it lowers
+        // `episodeAtChapter` and never opens anything early. Today Janos
+        // Slynt's 43/279 entry dominates it anyway.
+        { episode: 72, chapter: 243, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -4321,7 +4356,10 @@ export const season1: ThronesSaga = {
         it: 'È un giovane giostratore molto ammirato, detto il Cavaliere dei Fiori. Al torneo in onore del nuovo Primo Cavaliere regala una rosa a Sansa Stark davanti alla folla.',
         en: 'He is a young and much admired jouster, called the Knight of Flowers. At the tourney for the new Hand, he gives Sansa Stark a rose in front of the crowd.',
       },
-      status: [{ episode: 5, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 5, chapter: 30, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 5,
