@@ -5162,9 +5162,8 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 19, chapter: 52, source: 'chapter', value: 'alive' },
         // Drowned in the Blackwater: on screen in "Blackwater" (episode 19),
-        // his threshold, and told in Tyrion XIV of A Clash of Kings (chapter
-        // 135).
-        { episode: 19, chapter: 135, value: 'deceased' },
+        // his threshold, and confirmed by A Clash of Kings 67 (chapter 141).
+        { episode: 19, chapter: 141, value: 'deceased' },
       ],
       affiliation: [
         {
