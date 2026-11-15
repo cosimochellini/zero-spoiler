@@ -729,25 +729,39 @@ const SOUND: Point = [37, 154]
 const MAMMOTH_BODY: Body = { family: 'gourd', cy: 118 }
 
 /**
- * One tusk out of the side, both ends on the rim: out and down past the
- * lower bulb, the tip turned forward, and back up along its inside.
+ * One heavy tusk out of the side, both ends on the rim: out and down past
+ * the lower bulb, curling forward and up at the tip, and back up along its
+ * inside.
  */
 const TUSK: Growth = {
-  from: 104,
-  to: 120,
+  from: 102,
+  to: 124,
   through: [
-    [40, 104],
-    [54, 116],
-    [58, 134],
-    [61, 150],
-    [65, 160],
-    [72, 157],
-    [64, 156],
-    [54, 148],
-    [48, 136],
-    [43, 127],
-    [36, 121],
+    [50, 102],
+    [60, 108],
+    [64, 124],
+    [68, 142],
+    [64, 166],
+    [52, 176],
+    [44, 178],
+    [36, 168],
+    [34, 148],
+    [38, 158],
+    [44, 166],
+    [50, 162],
+    [55, 152],
+    [55, 138],
+    [49, 128],
+    [45, 124],
+    [42, 124],
   ],
+}
+
+/** The line down the middle of a tusk, which gives it its round. */
+function tuskRound(way: number): string {
+  const at = (dx: number, y: number): string => point(80 + way * dx, y)
+
+  return `M${at(50, 112)} C${at(58, 122)} ${at(62, 146)} ${at(54, 164)}`
 }
 
 /** The soul fruit: a round, its soul leaving the near shoulder. */
@@ -758,17 +772,28 @@ const SOUL_GAP = { top: 80, bottom: 96 }
 
 /**
  * The soul drawn out of the gap: a wavering neck up and away from the
- * shoulder, and the soft, rounded billow of it at the end, still joined.
+ * shoulder into the fist that holds it, and above the fist the plume of
+ * it, a lumpy billow of smoke with one curl in it.
  */
 function soul(): string {
   return [
     `M${point(...onRim(SOUL_BODY, SOUL_GAP.bottom, -1))}`,
-    'C36 92 34 86 32 80 C30 74 24 72 22 66',
-    'C8 62 8 40 20 34 C24 22 42 20 48 30',
-    'C56 36 54 50 46 54 C40 58 44 64 42 68',
-    `C40 74 48 78 ${point(...onRim(SOUL_BODY, SOUL_GAP.top, -1))}`,
+    'C36 92 38 86 38 81',
+    `M${point(...onRim(SOUL_BODY, SOUL_GAP.top, -1))}`,
+    'C50 76 44 70 39 66',
+    'M22 60 C14 56 14 48 18 44 C10 40 10 28 20 28 C20 18 34 14 40 22 C48 20 56 28 50 34 C56 40 52 48 46 48 C44 52 40 56 36 60',
+    'M27 38 C25 32 31 30 33 34',
   ].join(' ')
 }
+
+/**
+ * The hand pulling the soul out: the fist closed round it, the thumb over
+ * the top, and the forearm off to the left.
+ */
+const SOUL_FIST = [
+  'M20 62 C26 58 34 58 38 63 L40 80 C34 86 24 86 18 82 L18 62',
+  'M18 64 L6 66 M18 80 L6 81',
+].join(' ')
 
 /** The book fruit: a round, held up over an open book. */
 const BOOK_BODY: Body = { family: 'round', cy: 96 }
@@ -963,14 +988,24 @@ function onShellLine(points: Point[], closed = false): string {
 /** Where the stalk comes up through the top of the shell. */
 const SHELL_STALK = { baseY: 110 - SHELL.ry + 2, lean: 4, rise: 18 }
 
-/** The castle fruit: a segmented one, a doorway open in its near flank. */
+/** The castle fruit: a segmented one, a gate open in its near flank. */
 const CASTLE_BODY: Body = { family: 'segmented', cy: 116 }
+
+/** The barrels out of the gate: their top and bottom edges, and the muzzle. */
+const CASTLE_BARRELS: [top: number, bottom: number, muzzle: number][] = [
+  [109, 117, 16],
+  [129, 137, 22],
+]
 
 /** The lick fruit: an oblong, its near flank turned to candy. */
 const LICK_BODY: Body = { family: 'oblong', cy: 116 }
 
-/** The stretch of the near rim the candy has, top and bottom. */
-const CANDY = { top: 88, bottom: 158 }
+/**
+ * The candy round the near half: its radii about the fruit's middle, the
+ * angle it starts at below the far side and runs round to above it, and
+ * the x of its straight edge, where those two ends meet.
+ */
+const CANDY = { rx: 50, ry: 53, from: 76, edge: 92 }
 
 /** The mirror fruit: an oblong, its far half gone into a mirror. */
 const MIRROR_BODY: Body = { family: 'oblong', cy: 118 }
@@ -1080,37 +1115,41 @@ function sprockets(from: number, to: number): string[] {
 const ALBATROSS_BODY: Body = { family: 'segmented', cy: 108 }
 
 /**
- * One wing out of the side, both ends on the rim: out over the shoulder,
- * bent at the wrist, and down the long flight feathers, tip by tip, back
- * up its inside.
+ * One wing out of the side, both ends on the rim: up over the shoulder to a
+ * sharp bend at the wrist, down the leading edge, the flight feathers
+ * fanned out tip by tip, and back up its inside.
  */
 const HANGING_WING: Growth = {
   from: 100,
   to: 126,
   through: [
-    [52, 96],
-    [60, 98],
-    [64, 108],
-    [68, 118],
-    [70, 130],
-    [68, 140],
-    [70, 156],
-    [70, 168],
-    [68, 180],
-    [64, 170],
-    [62, 166],
-    [60, 176],
-    [56, 166],
-    [54, 162],
-    [50, 172],
-    [48, 162],
-    [46, 156],
-    [42, 164],
-    [42, 154],
-    [44, 144],
-    [48, 136],
-    [48, 130],
-    [46, 128],
+    [54, 94],
+    [60, 86],
+    [66, 86],
+    [70, 86],
+    [72, 98],
+    [72, 112],
+    [72, 130],
+    [73, 150],
+    [73, 172],
+    ...(
+      [
+        [72, 180],
+        [66, 168],
+        [63, 184],
+        [58, 170],
+        [54, 182],
+        [50, 166],
+        [45, 176],
+        [44, 160],
+        [38, 168],
+      ] satisfies Point[]
+    ).flatMap((at) => [at, at, at]),
+    [40, 156],
+    [46, 146],
+    [46, 136],
+    [46, 130],
+    [44, 127],
   ],
 }
 
@@ -5453,10 +5492,12 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit with a mammoth's tusks: two long tusks out of its sides, down
-   * past the lower bulb, the tips turned forward and kept apart. In episode
-   * 759 Jack fights as a mammoth and Nekomamushi names his fruit an ancient
-   * Elephant-Elephant. The tusks and nothing else, never the trunk or the head.
+   * The fruit with a mammoth's tusks: two heavy tusks out of its sides, down
+   * past the lower bulb and curling forward and up, the tips well clear of
+   * each other. In episode 757 (chapter 807) Jack turns into a mammoth, and
+   * in 759 (chapter 810) Nekomamushi names his fruit an ancient
+   * Elephant-Elephant. The tusks and nothing else, never the trunk, the head
+   * or a coat of hair.
    */
   'elephant-elephant-fruit-ancient-model-mammoth': [
     ...kitBody(MAMMOTH_BODY, [140, 150, 160]),
@@ -5471,6 +5512,7 @@ export const fruitArt = {
       d: `${grown(MAMMOTH_BODY, -1, TUSK)} ${grown(MAMMOTH_BODY, 1, TUSK)}`,
       role: 'accent',
     },
+    { d: `${tuskRound(-1)} ${tuskRound(1)}`, role: 'soft' },
     shadowUnder(1),
   ],
 
@@ -5507,19 +5549,22 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit as a fortress: an arched doorway open in its near flank, with
-   * no door in it, and a cannon barrel poking out of it, the skin open where
-   * the barrel leaves. The fortress is kept inside the body, as it is when
-   * Bege's crew fire from inside him; in episode 763 a door opens in his
-   * chest, his men run out of it, and the fruit is named. Nothing castle-like
-   * beyond the doorway.
+   * The fruit as a fortress: a large arched gate open in its near flank,
+   * with no door in it, and two cannon barrels poking out of it, the skin
+   * open where they leave. The fortress is kept inside the body, as it is
+   * when Bege's crew fire from inside him in episode 401 (chapter 508); in
+   * episode 763 (chapter 812) a door opens in his chest, his men run out of
+   * it, and the fruit is named. Nothing castle-like beyond the gate.
    */
   'castle-castle-fruit': [
-    ...kitBody(
-      CASTLE_BODY,
-      [96, 108, 120],
-      (x, y) => x > 44 || y < 121 || y > 134,
-    ),
+    ...kitBody(CASTLE_BODY, [96, 108, 120], (x, y) => {
+      return (
+        x > 44
+        || CASTLE_BARRELS.every(
+          ([top, bottom]) => y <= top - 2 || y >= bottom + 2,
+        )
+      )
+    }),
     ribs(CASTLE_BODY),
     ...skin([
       [100, 104, 7],
@@ -5528,16 +5573,27 @@ export const fruitArt = {
     ...sprout(CASTLE_BODY, 6, 'right'),
     {
       d: [
-        // The doorway: its jambs, its arch and the sill.
-        'M42 140 L42 133 M42 123 L42 106 C42 95 58 95 58 106 L58 140 Z',
-        // The barrel out of it: the near edge, the muzzle, the far edge.
-        'M52 124 L22 122.5 C19.5 122.5 18 125 18 127.5 C18 130 19.5 132.5 22 132.5 L52 131',
-        'M22 122.5 C24 124 24 131 22 132.5',
+        // The gate: the near jamb, broken where the barrels pass, the arch,
+        // the far jamb and the sill.
+        'M38 146 L38 139 M38 127 L38 119 M38 107 C38 90 64 90 64 106 L64 146 L38 146',
+        // Each barrel out of it: the near edge, the muzzle, the far edge.
+        ...CASTLE_BARRELS.map(([top, bottom, muzzle]) => {
+          const mid = (top + bottom) / 2
+          const lip = muzzle + 4
+
+          return [
+            `M${point(50, top)} L${point(lip, top)}`,
+            `C${point(muzzle + 1.5, top)} ${point(muzzle, mid - 2.5)} ${point(muzzle, mid)}`,
+            `C${point(muzzle, mid + 2.5)} ${point(muzzle + 1.5, bottom)} ${point(lip, bottom)}`,
+            `L${point(50, bottom)}`,
+            `M${point(lip, top)} C${point(lip + 2, mid - 2)} ${point(lip + 2, mid + 2)} ${point(lip, bottom)}`,
+          ].join(' ')
+        }),
       ].join(' '),
       role: 'accent',
     },
-    // The depth of the doorway, inside the arch.
-    { d: 'M58 140 L55 137 L55 106 C55 99 49 98 46 101', role: 'soft' },
+    // The depth of the gate, inside the arch.
+    { d: 'M64 146 L60 142 L60 106 C60 98 52 95 47 97', role: 'soft' },
     shadowUnder(1),
   ],
 
@@ -5574,10 +5630,11 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit losing its soul: a pale, smoke-soft billow of it drawn up out
-   * of a gap in the near shoulder and still joined to it there. In episode
-   * 796 Pound tells how Big Mom takes lifespan as soul and puts it into
-   * things. No homie and no face.
+   * The fruit losing its soul: a hand, closed round a pale, smoke-soft plume
+   * of it, pulling it up out of a gap in the near shoulder. In episode 796
+   * (chapter 835) Pound tells how Big Mom takes lifespan as soul and puts it
+   * into things; she grabs a soul and pulls it out in 789 (chapter 829). No
+   * homie and no face.
    */
   'soul-soul-fruit': [
     ...kitBody(
@@ -5592,46 +5649,39 @@ export const fruitArt = {
     ]),
     ...sprout(SOUL_BODY, 4, 'right'),
     { d: soul(), role: 'accent' },
+    { d: SOUL_FIST },
+    // The fingers round the plume, one over the next.
+    { d: 'M20 68 L38.6 67 M20 74 L39.2 73 M20 79 L39.6 78', role: 'soft' },
     shadowUnder(1),
   ],
 
   /**
-   * The fruit with its near flank turned to candy: the patch drawn on the
-   * rim, one clean edge across the skin, and a shine down it. No drip and
-   * nothing poured. In episode 795 Perospero threatens to turn Caesar into
-   * candy if the research is not done in two weeks.
+   * The fruit half encased in clear hard candy: the candy round its near
+   * side and over its crown, cut off in one clean straight edge, a shine
+   * down it, and the fruit showing through. No stripe: that is Perospero's
+   * cane, not his power. In episode 795 (chapter 834) Perospero threatens to
+   * turn Caesar into candy; the candy holding people fast is episode 834
+   * (chapter 864), when it pins the Vinsmokes, later in the same arc.
    */
   'lick-lick-fruit': [
-    ...kitBody(
-      LICK_BODY,
-      [112, 124, 136],
-      (x, y) => x > 64 || y < CANDY.top - 1 || y > CANDY.bottom + 1,
-    ),
+    ...kitBody(LICK_BODY, [112, 124, 136]),
     ...skin([
       [94, 98, 7],
       [104, 140, -6],
     ]),
     ...sprout(LICK_BODY, 4, 'right'),
     {
-      d: [
-        polyline(
-          Array.from({ length: 17 }, (_unused, at) => {
-            return point(
-              ...onRim(
-                LICK_BODY,
-                CANDY.top + ((CANDY.bottom - CANDY.top) * at) / 16,
-                -1,
-              ),
-            )
-          }),
-        ),
-        'C60 154 68 136 68 122',
-        `C68 106 60 92 ${point(...onRim(LICK_BODY, CANDY.top, -1))}`,
-      ].join(' '),
+      d: `${polyline(trace([80, LICK_BODY.cy], [CANDY.rx, CANDY.ry], [CANDY.from, 360 - CANDY.from, 24]))} Z`,
       role: 'accent',
     },
-    // The candy's shine: a streak down it and a glint.
-    { d: 'M40 108 C37 118 37 132 41 142 M43 100 L45 97', role: 'soft' },
+    // The candy's cut face along the edge, its shine and a glint.
+    {
+      d: [
+        `M${point(CANDY.edge - 4, 66)} L${point(CANDY.edge - 4, 166)}`,
+        'M36 100 C32 112 32 128 36 140 M39 92 L41 89',
+      ].join(' '),
+      role: 'soft',
+    },
     shadowUnder(1),
   ],
 
@@ -5717,10 +5767,10 @@ export const fruitArt = {
 
   /**
    * The fruit with an albatross's wings: two long wings out of its sides,
-   * hanging down and bent at the wrist like arms, the flight feathers fanned
-   * at their ends, never spread. In episode 830 Morgans arrives at the Tea
-   * Party with wings that resemble human arms. The wings and nothing else,
-   * never the beak or the head.
+   * bent sharply at the wrist and hanging down like arms, the flight
+   * feathers fanned at their ends, never spread. In episode 830 (chapter
+   * 860) Morgans arrives at the Tea Party with wings that resemble human
+   * arms. The wings and nothing else, never the beak or the head.
    */
   'bird-bird-fruit-model-albatross': [
     ...kitBody(ALBATROSS_BODY, [98, 110]),
@@ -5736,7 +5786,7 @@ export const fruitArt = {
     },
     // The coverts, where the flight feathers start.
     {
-      d: 'M10 140 C16 146 24 148 32 146 M150 140 C144 146 136 148 128 146',
+      d: 'M9 148 C16 154 28 155 36 150 M151 148 C144 154 132 155 124 150',
       role: 'soft',
     },
     shadowUnder(1),
