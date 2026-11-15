@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
@@ -237,7 +238,8 @@ const SNAPPED_BLADE: Stroke[] = [
 /**
  * Pypar: two practice swords crossed and stood on their points, for the
  * recruit in the yard in episode 3 and in Jon III (chapter 20). A declared
- * B: nothing of his own shows in either medium.
+ * B: nothing of his own shows in either medium. The accent is the grip of
+ * the sword leaning left; the one leaning right is softened.
  */
 const CROSSED_SWORDS: Stroke[] = [
   ...moved(
@@ -245,7 +247,7 @@ const CROSSED_SWORDS: Stroke[] = [
     'translate(80 116) rotate(-40) scale(0.85) translate(-80 -100)',
   ),
   ...moved(
-    PRACTICE_SWORD,
+    softened(PRACTICE_SWORD),
     'translate(80 116) rotate(40) scale(0.85) translate(-80 -100)',
   ),
   shadow(80, 152, 46),
@@ -407,11 +409,12 @@ const HAMMER_HANDLE: Stroke[] = [
 const HAMMER_HEAD = 'M66 75.3 L84.2 79.5 L80 88.7 L61.8 84.5 Z'
 /**
  * A dagger struck point down into a surface, for the mutiny against Jon:
- * the stub of blade above it, the guard, the grip and the pommel.
+ * the stub of blade above it, the guard, the grip and the pommel. The
+ * accent is the blade and guard.
  */
 const MUTINY_DAGGER: Stroke[] = [
   { d: 'M115 59 V46 M122 59 V46 M109 46 H128 V42 H109 Z', role: 'accent' },
-  { d: `M116 42 V32 H121 V42 ${circle(118.5, 29, 3)}`, role: 'accent' },
+  { d: `M116 42 V32 H121 V42 ${circle(118.5, 29, 3)}` },
 ]
 /**
  * Othell Yarwyck: a mason's hammer leaning on a block of the Wall, for the
