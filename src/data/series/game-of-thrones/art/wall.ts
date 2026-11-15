@@ -39,6 +39,11 @@ const BEAR: Stroke[] = [
  * side is hatched; the accent is the letter tied to its leg. His first
  * drawing and his stage share it.
  */
+/** The rookery perch: its bar, and the post on its foot. */
+const PERCH: Stroke[] = [
+  { d: 'M30 114 H130 V120 H30 Z' },
+  { d: 'M76 120 V150 M84 120 V150 M62 150 H98' },
+]
 const RAVEN: Stroke[] = [
   {
     d: 'M54 60 Q56 46 68 46 Q80 48 84 60 Q100 74 110 96 L132 116 L118 118 L106 104',
@@ -49,9 +54,17 @@ const RAVEN: Stroke[] = [
   { d: 'M86 70 l6 -3 M92 80 l6 -3 M96 90 l5 -3', role: 'ambient' },
   { d: 'M76 102 V114 M86 104 V114', role: 'soft' },
   { d: 'M87 106 H94 V112 H87 Z', role: 'accent' },
-  { d: 'M30 114 H130 V120 H30 Z' },
-  { d: 'M76 120 V150 M84 120 V150 M62 150 H98' },
+  ...PERCH,
   shadow(80, 154, 26),
+]
+
+/**
+ * The three-headed dragon of his house on a banner hung under the perch,
+ * from the episode and chapter where he tells Jon he is a Targaryen.
+ */
+const AEMON_BANNER: Stroke[] = [
+  { d: 'M32 120 V152 L47 146 L62 152 V120' },
+  ...moved(DRAGON_SIGIL, 'translate(47 135) scale(0.34) translate(-80 -92)'),
 ]
 
 /**
@@ -129,6 +142,17 @@ const MANACLES: Stroke[] = [
   shadow(80, 140, 64),
 ]
 
+/**
+ * One of Yoren's manacles lying open: the band, the near half of the
+ * cuff, and the far half swung up on its hinge. The other is its mirror.
+ */
+const OPEN_CUFF: Stroke[] = [
+  { d: 'M24 116 V122 Q24 132 44 132 Q64 132 64 122 V116' },
+  { d: 'M24 116 Q24 126 44 126 Q64 126 64 116', role: 'soft' },
+  { d: 'M64 116 Q66 96 50 88 Q34 82 30 92 Q42 92 54 100 Q60 106 60 116' },
+  { d: 'M30 126 l4 -2 M36 128 l4 -2', role: 'ambient' },
+]
+
 /** The first season's Night's Watch (#1052), keyed by record id. */
 export const WALL_DRAWINGS = {
   'jeor-mormont': BEAR,
@@ -140,20 +164,71 @@ export const WALL_DRAWINGS = {
 
 /** The Night's Watch drawn again later in the story. */
 export const wallRedrawn: Redrawings = {
-  aemon: [
+  'aemon': [
     // The same raven, with the three-headed dragon of his house on a banner
     // under the perch: he tells Jon he is a Targaryen in "Baelor" (episode
     // 9) and in Jon VIII (chapter 61).
+    { episode: 9, chapter: 61, value: [...RAVEN, ...AEMON_BANNER] },
+    // The perch empty, the banner still hanging and the letter fallen to
+    // the floor under it: the raven has gone with him. He dies at Castle
+    // Black in "The Gift" (episode 47), and on the ship to Oldtown in
+    // Samwell IV of A Feast for Crows (chapter 261).
     {
-      episode: 9,
-      chapter: 61,
+      episode: 47,
+      chapter: 261,
       value: [
-        ...RAVEN,
-        { d: 'M32 120 V152 L47 146 L62 152 V120' },
-        ...moved(
-          DRAGON_SIGIL,
-          'translate(47 135) scale(0.34) translate(-80 -92)',
-        ),
+        ...PERCH,
+        ...AEMON_BANNER,
+        { d: 'M98 152 L116 147 L118 151 L100 156 Z', role: 'accent' },
+        { d: 'M107 150 q5 4 10 1', role: 'soft' },
+        shadow(80, 154, 26),
+      ],
+    },
+  ],
+  'jeor-mormont': [
+    // The bear fallen on its side, its back hatched and the claws of the
+    // paw still raised: the mutineers kill him at Craster's Keep in "And
+    // Now His Watch Is Ended" (episode 24) and in Samwell II of A Storm of
+    // Swords (chapter 177).
+    {
+      episode: 24,
+      chapter: 177,
+      value: [
+        ...moved(BEAR.slice(0, 8), 'translate(11 2) rotate(-90 80 100)'),
+        { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'alliser-thorne': [
+    // The dummy knocked over on the ground, the sword still struck into it:
+    // Jon hangs him for the mutiny in "Oathbreaker" (episode 53). The
+    // show's alone: the books leave him alive, so chapter 344, their last,
+    // orders it.
+    {
+      episode: 53,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(DUMMY.slice(0, 10), 'translate(10 2) rotate(-90 80 100)'),
+        { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'yoren': [
+    // The manacles lying open on the ground, the chain slack between them:
+    // Amory Lorch's men kill him in "What Is Dead May Never Die" (episode
+    // 13) and in Arya IV of A Clash of Kings (chapter 88).
+    {
+      episode: 13,
+      chapter: 88,
+      value: [
+        ...OPEN_CUFF,
+        ...moved(OPEN_CUFF, 'translate(160 0) scale(-1 1)'),
+        {
+          d: `${ellipse(70, 128, 6, 3)} ${ellipse(81, 131, 6, 3)} ${ellipse(92, 128, 6, 3)}`,
+          role: 'accent',
+        },
+        { d: 'M10 140 H150', role: 'ambient', dashed: true },
       ],
     },
   ],

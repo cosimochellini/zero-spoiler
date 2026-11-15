@@ -211,13 +211,15 @@ series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
 own, Eddard's with a death stage, the Winterfell household's are in
 `art/winterfell.ts` (#854), with four stages, the southern cast's are in
 `art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
-in `art/wall.ts` and `art/essos.ts` (#1052), with six, the places' are in
-`art/places.ts` (#1053), with fourteen stages for the damage and rebuilding
-later seasons and books give (#1236), the northern household's are in
+in `art/wall.ts` and `art/essos.ts` (#1052), with ten, four of them the deaths
+of Jeor, Aemon, Alliser and Yoren from the drawing audit (#1290), the places'
+are in `art/places.ts` (#1053), with fourteen stages for the damage and
+rebuilding later seasons and books give (#1236), the northern household's are in
 `art/north.ts` (#1054), with three, the Vale cast's are in `art/vale.ts`
 (#1055), with two, the King's Landing cast's are in `art/court.ts` (#1056), with
-one, and the Riverlands cast's are in `art/riverlands.ts` (#1057), with seven,
-six of them the deaths later seasons and books give (#1242). Every other
+one, and the Riverlands cast's are in `art/riverlands.ts` (#1057), with ten: six
+of them the deaths later seasons and books give (#1242), and the Blackfish's
+death, Jaqen's coin and Pod's axe from the drawing audit (#1290). Every other
 character maps to a shared placeholder in `art/index.ts`, `PERSON`, until its
 own issue draws it, so the drawing tests hold it like any series. Its places are
 the 23 a scene of the season or the book is set in (#853) and those both name
@@ -380,7 +382,7 @@ checks this block.
 | Characters        | 148                                                   |
 | Places            | 60                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 208, one per record, plus 41 redrawings of 36 records |
+| Line drawings     | 208, one per record, plus 48 redrawings of 42 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
