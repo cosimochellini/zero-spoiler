@@ -2,34 +2,60 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
 /**
- * Cersei Lannister: the royal wheelhouse she rides north in, in episode 1
- * and in Eddard I (chapter 5). A tall carriage in 3/4, two storeys on
- * iron-shod wheels, its far side hatched. The accent is the gilt trim
- * between the storeys.
+ * A small gold lion sitting side on, facing right, as the crown carries it on
+ * its band: a scalloped mane, back, forelegs and tail, with no face.
  */
-const WHEELHOUSE: Stroke[] = [
-  { d: 'M32 60 L54 44 H130 L108 60 Z' },
-  { d: 'M36 60 V116 H104 V60 M104 116 L126 102 V48' },
-  { d: 'M36 78 H104 L126 64', role: 'accent' },
-  { d: 'M46 64 H60 V73 H46 Z M78 64 H94 V73 H78 Z', role: 'soft' },
-  { d: 'M60 116 V86 H82 V116 M71 86 V116', role: 'soft' },
-  { d: circle(54, 130, 19) },
+const CROWN_LION =
+  'M48 138 Q47 130 52 128 L56 127 q-3 -3 0 -6 q0 -4 4 -3 q3 -3 6 0 q4 1 2 5 q2 4 -2 5 q-1 3 -4 3 L63 138 M58 132 V138 M48 134 Q42 132 44 125 q1 -2 2 0'
+
+/** The band of Cersei Lannister's crown: its two sides and its lower rim. */
+const CROWN_BAND: Stroke = { d: 'M34 112 V134 Q80 150 126 134 V112' }
+
+/**
+ * Cersei Lannister: a slim gold queen's crown in 3/4, its three points
+ * tipped with beads and two small lions facing each other on the band, for
+ * the queen who comes north with the court in episode 1 and in Eddard I
+ * (chapter 5); the owner's pick (#1286). The far side of the band is
+ * hatched; the accent is the left lion, and its mirror is soft.
+ */
+const CROWN: Stroke[] = [
+  CROWN_BAND,
+  { d: 'M34 112 Q80 128 126 112' },
+  { d: 'M34 112 Q80 96 126 112', role: 'soft' },
   {
-    d: `${circle(54, 130, 4)} M54 111 V126 M54 134 V149 M35 130 H50 M58 130 H73`,
-    role: 'soft',
+    d: 'M72 119.8 L80 84 L88 119.8 M51 116.8 L57 96 L63 118.9 M97 118.9 L103 96 L109 116.8',
   },
-  { d: `${circle(116, 130, 15)} ${circle(116, 130, 3)}` },
   {
-    d: 'M112 70 l8 -5 M112 80 l8 -5 M112 90 l8 -5 M112 100 l8 -5',
-    role: 'ambient',
+    d: dots([
+      [80, 79],
+      [57, 91],
+      [103, 91],
+    ]),
   },
-  shadow(80, 153, 54),
+  { d: 'M44 108 L48 95 L52 106.5 M108 106.5 L112 95 L116 108', role: 'soft' },
+  { d: CROWN_LION, role: 'accent' },
+  { d: CROWN_LION, role: 'soft', transform: 'translate(160 0) scale(-1 1)' },
+  { d: ellipse(80, 131, 4, 5), role: 'soft' },
+  { d: 'M116 119 l6 -3 M116 127 l6 -3 M115 135 l6 -3', role: 'ambient' },
 ]
+
+/** The crown on the table: Cersei Lannister's first drawing. */
+const STANDING_CROWN: Stroke[] = [...CROWN, shadow(80, 151, 50)]
+
+/** The legs of the bench Jaime Lannister's cloak lies on. */
+const BENCH_LEGS: Stroke = { d: 'M30 110 V150 M116 110 V150 M130 101 V140' }
+
+/** The hatching on the far end of that bench. */
+const BENCH_HATCH: Stroke = {
+  d: 'M122 104 l6 -3 M122 116 l6 -3 M122 128 l6 -3',
+  role: 'ambient',
+}
 
 /**
  * Jaime Lannister: the white cloak of the Kingsguard thrown over a bench,
@@ -40,7 +66,7 @@ const WHEELHOUSE: Stroke[] = [
 const WHITE_CLOAK: Stroke[] = [
   { d: 'M58 88 H44 L22 102 H54 M106 102 H116 L138 88 H102' },
   { d: 'M22 102 V110 H52 M108 110 H116 L138 96 V88' },
-  { d: 'M30 110 V150 M116 110 V150 M130 101 V140' },
+  BENCH_LEGS,
   {
     d: 'M58 88 Q80 80 102 88 L106 104 Q100 130 104 148 Q80 156 54 148 Q60 126 54 104 Z',
   },
@@ -50,9 +76,12 @@ const WHITE_CLOAK: Stroke[] = [
     role: 'soft',
   },
   { d: `${circle(68, 96, 5)} M73 96 H80`, role: 'accent' },
-  { d: 'M122 104 l6 -3 M122 116 l6 -3 M122 128 l6 -3', role: 'ambient' },
+  BENCH_HATCH,
   shadow(80, 155, 52),
 ]
+
+/** The rim of Tywin Lannister's tankard. */
+const TANKARD_RIM = ellipse(76, 66, 28, 8)
 
 /**
  * Tywin Lannister: a pewter tankard of ale on a plank table, the owner's
@@ -61,7 +90,7 @@ const WHITE_CLOAK: Stroke[] = [
  * ale.
  */
 const TANKARD: Stroke[] = [
-  { d: ellipse(76, 66, 28, 8) },
+  { d: TANKARD_RIM },
   { d: ellipse(76, 66, 24, 6), role: 'accent' },
   { d: 'M48 66 V124 Q76 136 104 124 V66' },
   { d: 'M48 80 Q76 90 104 80 M48 114 Q76 124 104 114', role: 'soft' },
@@ -114,6 +143,11 @@ const RIBBON: Stroke[] = [
   shadow(80, 158, 40),
 ]
 
+/** The dome of Tommen Baratheon's applecake. */
+const APPLECAKE_TOP: Stroke = {
+  d: 'M32 124 Q28 92 64 88 Q100 92 98 126 Q64 136 32 124',
+}
+
 /**
  * Tommen Baratheon: an applecake on a plate with an apple beside it, for the plump boy who comes
  * north with the court in episode 1 and in Jon I (chapter 6). The book
@@ -123,7 +157,7 @@ const RIBBON: Stroke[] = [
 const APPLECAKE: Stroke[] = [
   { d: ellipse(80, 126, 60, 15) },
   { d: 'M20 128 Q26 144 80 146 Q134 144 140 128' },
-  { d: 'M32 124 Q28 92 64 88 Q100 92 98 126 Q64 136 32 124' },
+  APPLECAKE_TOP,
   {
     d: 'M33 106 q5 10 11 2 q6 14 12 2 q6 12 12 0 q6 10 12 0 q6 8 16 -4',
     role: 'accent',
@@ -275,10 +309,10 @@ const DOLL: Stroke[] = [
 ]
 
 /**
- * A longsword, the wrapped grip, a plain guard and a bare blade.
+ * A longsword below its pommel: the wrapped grip (the accent), a plain guard
+ * and a bare blade.
  */
-const LONGSWORD: Stroke[] = [
-  { d: circle(80, 22, 5) },
+const SWORD_BELOW_POMMEL: Stroke[] = [
   { d: 'M76 27 H84 V48 H76 Z' },
   { d: 'M76 33 L84 37 M76 40 L84 44', role: 'accent' },
   { d: 'M60 48 H100 V54 H60 Z' },
@@ -291,17 +325,26 @@ const LONGSWORD: Stroke[] = [
 ]
 
 /**
- * Bronn: a bare longsword leaning at a slant, with the whetstone that keeps
- * it, for the sellsword who joins Catelyn's party in episode 4 and in
- * Tyrion IV (chapter 32). The accent is the leather of the grip.
+ * A longsword, the wrapped grip, a plain guard and a bare blade.
  */
-const BARE_SWORD: Stroke[] = [
-  ...moved(LONGSWORD, 'rotate(18 80 150)'),
-  { d: 'M92 150 L104 138 H138 L126 150 Z' },
-  { d: 'M92 150 V156 H126 V150 M126 156 L138 144 V138', role: 'soft' },
-  { d: 'M108 146 h10', role: 'soft' },
-  shadow(90, 160, 44),
+const LONGSWORD: Stroke[] = [{ d: circle(80, 22, 5) }, ...SWORD_BELOW_POMMEL]
+
+/** Bronn's planted sword's ground and shadow, the same in every stage. */
+const SWORD_GROUND: Stroke[] = [
+  { d: 'M64 150 H96 M70 150 l-6 4 M90 150 l7 3', role: 'soft' },
+  shadow(84, 158, 34),
 ]
+
+/** The slant Bronn's sword stands at, pivoted on its point. */
+const PLANTED = 'rotate(18 80 150)'
+
+/**
+ * Bronn: a bare longsword planted point down in the ground at a slant, for
+ * the sellsword who joins Catelyn's party in episode 4 and in Tyrion IV
+ * (chapter 32). No whetstone: the show never gives him one (owner, #1286).
+ * The accent is the leather of the grip.
+ */
+const PLANTED_SWORD: Stroke[] = [...moved(LONGSWORD, PLANTED), ...SWORD_GROUND]
 
 /**
  * A plain sword in its scabbard, the grip wrapped in white leather: the
@@ -572,7 +615,7 @@ const ROSE: Stroke[] = [
 
 /** The first season's southern cast (#1051), keyed by record id. */
 export const SOUTH_DRAWINGS = {
-  'cersei-lannister': WHEELHOUSE,
+  'cersei-lannister': STANDING_CROWN,
   'jaime-lannister': WHITE_CLOAK,
   'tywin-lannister': TANKARD,
   'joffrey-baratheon': STAG,
@@ -582,7 +625,7 @@ export const SOUTH_DRAWINGS = {
   'renly-baratheon': FOLDED_CLOAK,
   'lysa-arryn': FALCON,
   'robin-arryn': DOLL,
-  'bronn': BARE_SWORD,
+  'bronn': PLANTED_SWORD,
   'shae': TENT,
   'walder-frey': WALKING_STICK,
   'ros': CURTAINED_BED,
@@ -599,8 +642,407 @@ export const SOUTH_DRAWINGS = {
   'loras-tyrell': ROSE,
 } satisfies Drawings
 
+/** How a fallen object lies on the floor: a dashed line under it. */
+const FLOOR: Stroke = { d: 'M8 156 H152', role: 'ambient', dashed: true }
+
+/**
+ * Stone blocks fallen round an object on the floor, their far faces
+ * hatched: Cersei Lannister's and Jaime Lannister's deaths share them.
+ */
+const RUBBLE: Stroke[] = [
+  {
+    d: 'M4 152 L6 126 L28 122 L32 152 M6 126 L14 118 L34 115 L28 122 M34 115 L36 146 L32 152',
+  },
+  {
+    d: 'M130 152 L132 130 L152 128 L154 152 M132 130 L138 124 L156 122 L152 128',
+  },
+  { d: 'M42 152 l3 -6 l6 1 l1 5 M114 152 l2 -5 l6 0 l1 5', role: 'soft' },
+  {
+    d: 'M30 128 l4 -3 M31 138 l4 -3 M31 147 l4 -3 M151 134 l3 -2 M152 144 l3 -2',
+    role: 'ambient',
+  },
+  FLOOR,
+]
+
+/** How Cersei Lannister's crown lies at her death: tipped onto its side. */
+const CROWN_FALLEN =
+  'translate(0 6) rotate(16 80 142) translate(16 28.4) scale(0.8)'
+
+/** The bench bare, the white cloak gone and its clasp left on the wood. */
+const BARE_BENCH: Stroke[] = [
+  { d: 'M22 102 L44 88 H138 L116 102 Z' },
+  { d: 'M22 102 V110 H116 V102 M116 110 L138 96 V88' },
+  BENCH_LEGS,
+  { d: 'M40 95 H124', role: 'soft' },
+  { d: `${circle(76, 95, 5)} M81 95 H88`, role: 'accent' },
+  BENCH_HATCH,
+  shadow(80, 155, 52),
+]
+
+/** A small gold crown seen side on, three points over a plain band. */
+const LITTLE_CROWN =
+  'M48 58 L49 46 L54 52 L59 42 L64 52 L69 46 L70 58 Q59 62 48 58'
+
+/**
+ * A stag lying on its side on the ground, its neck slack and its head down,
+ * the antlers flat behind it.
+ */
+const LYING_STAG: Stroke[] = [
+  { d: 'M54 146 Q48 124 74 116 Q104 110 126 120 Q142 128 136 148' },
+  { d: 'M54 146 Q96 154 136 148' },
+  { d: 'M62 126 Q48 132 40 142 Q32 150 22 149 Q14 147 18 142 Q26 138 36 136' },
+  {
+    d: 'M30 140 Q22 128 10 122 M24 131 Q16 131 10 126 M36 137 Q36 124 28 112 M33 126 Q39 122 42 116',
+    role: 'soft',
+  },
+  { d: 'M84 149 Q92 142 104 146 M112 150 Q120 144 128 148', role: 'soft' },
+  { d: 'M136 130 Q144 128 144 120', role: 'soft' },
+  { d: 'M116 126 l6 -3 M120 134 l6 -3', role: 'ambient' },
+  FLOOR,
+]
+
+/** Myrcella Baratheon's gold chain, hanging round under her ribbon. */
+const NECKLACE_CHAIN: Stroke = { d: 'M38 72 Q40 132 80 138 Q120 132 122 72' }
+
+/** Bronn's rose on its pommel, the Tyrell rose of Highgarden. */
+const POMMEL_ROSE: Stroke[] = [
+  { d: circle(80, 20, 7), role: 'accent' },
+  { d: 'M80 20 q3 -1 2 3 q-3 3 -5 -1 q0 -5 5 -5', role: 'soft' },
+]
+
+/**
+ * The Stokeworth banner hung from a pole beside Bronn's sword: a white lamb
+ * holding a golden goblet. The accent is the lamb.
+ */
+const STOKEWORTH_BANNER: Stroke[] = [
+  { d: 'M28 152 V22 M28 30 H66' },
+  { d: 'M31 30 V90 L47 82 L63 90 V30' },
+  {
+    d: 'M36 64 Q34 58 40 57 Q42 52 48 54 Q53 51 56 56 Q61 57 59 63 Q60 68 54 69 H40 Q35 69 36 64 M56 56 Q60 52 63 55 Q63 59 59 59 M41 69 V75 M53 69 V75',
+    role: 'accent',
+  },
+  { d: 'M58 60 H63 L62 64 H59 Z', role: 'soft' },
+  { d: 'M55 38 l5 -3 M55 46 l5 -3', role: 'ambient' },
+]
+
+/** Walder Frey's chair and stick, smaller and lower, under two banners. */
+const UNDER_BANNERS = 'translate(4 30) scale(0.8)'
+
+/** Walder Frey's stick fallen flat on the floor in front of the chair. */
+const STICK_FALLEN = 'translate(122 0) rotate(-106 18 150)'
+
 /** The southern cast drawn again later in the story. */
 export const southRedrawn: Redrawings = {
+  'cersei-lannister': [
+    // The crown fallen on its side among stones, the lions gone out and the
+    // band taking the accent: she dies under the Red Keep as it falls, in
+    // "The Bells" (episode 72). The show's alone (the books leave her
+    // alive); chapter 344, the last, orders it.
+    {
+      episode: 72,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(
+          [{ ...CROWN_BAND, role: 'accent' }, ...softened(CROWN.slice(1))],
+          CROWN_FALLEN,
+        ),
+        ...RUBBLE,
+      ],
+    },
+  ],
+  'jaime-lannister': [
+    // The bench bare, the cloak gone and the clasp left on the wood: Tommen
+    // removes him from the Kingsguard in "Blood of My Blood" (episode 56).
+    // The show's alone (in the books he stays Lord Commander); chapter 344
+    // orders it.
+    { episode: 56, chapter: 344, source: 'episode', value: BARE_BENCH },
+    // The bench broken under fallen stones and the white cloak on the
+    // floor: he dies with Cersei under the Red Keep in "The Bells" (episode
+    // 72). The show's alone; chapter 344 orders it.
+    {
+      episode: 72,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        { d: 'M16 146 L120 96 L134 102 L30 152 Z' },
+        { d: 'M124 104 V150 M40 152 l18 -4', role: 'soft' },
+        {
+          d: 'M58 130 L62 112 L84 108 L88 124 Z M94 114 L98 98 L114 96 L116 108 Z',
+        },
+        {
+          d: 'M44 156 Q48 138 70 142 Q86 128 108 138 Q124 132 136 146 Q142 150 140 157 Q92 164 44 156',
+        },
+        { d: 'M60 155 Q68 144 80 146 M94 158 Q100 144 116 142', role: 'soft' },
+        { d: `${circle(74, 148, 4)} M78 148 H84`, role: 'accent' },
+        { d: 'M84 116 l4 -3 M84 124 l4 -3 M112 102 l4 -3', role: 'ambient' },
+        FLOOR,
+      ],
+    },
+  ],
+  'tywin-lannister': [
+    // The tankard on its side on the table, the ale run out and dark, the
+    // rim taking the accent: Tyrion kills him in the privy of the Tower of
+    // the Hand, in "The Children" (episode 40) and in Tyrion XI of A Storm
+    // of Swords (chapter 221).
+    {
+      episode: 40,
+      chapter: 221,
+      value: [
+        ...moved(
+          [{ d: TANKARD_RIM, role: 'accent' }, ...TANKARD.slice(2, 7)],
+          'rotate(-90 76 107)',
+        ),
+        {
+          d: 'M44 136 Q30 131 18 134 Q12 136 16 137 M20 137 V146 M27 137 V142',
+          role: 'ambient',
+        },
+        ...TANKARD.slice(7),
+      ],
+    },
+  ],
+  'joffrey-baratheon': [
+    // A crown on the stag's head between its antlers, the accent moved to
+    // it: he is king from Robert's death, in "You Win or You Die" (episode
+    // 7) and in Eddard XIV (chapter 50). Crowns count (owner, #1286).
+    {
+      episode: 7,
+      chapter: 50,
+      value: [...softened(STAG), { d: LITTLE_CROWN, role: 'accent' }],
+    },
+    // The stag down on its side, its antlers out, the crown fallen off: he
+    // dies at his wedding feast, in "The Lion and the Rose" (episode 32) and
+    // in Tyrion VIII of A Storm of Swords (chapter 204).
+    {
+      episode: 32,
+      chapter: 204,
+      value: [
+        ...LYING_STAG,
+        {
+          d: LITTLE_CROWN,
+          role: 'accent',
+          transform: 'translate(84 92) rotate(24 59 52)',
+        },
+      ],
+    },
+  ],
+  'myrcella-baratheon': [
+    // Her gold necklace hanging round under a smaller ribbon, its round
+    // pendant carrying the Lannister lion, the accent moved to the lion:
+    // Cersei knows it as hers when Dorne sends it back in a viper's jaws, in
+    // "The House of Black and White" (episode 42), the first episode to
+    // show it. The show's alone; chapter 344 orders it.
+    {
+      episode: 42,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(softened(RIBBON.slice(0, 8)), 'translate(32 10) scale(0.6)'),
+        NECKLACE_CHAIN,
+        { d: circle(80, 152, 14) },
+        {
+          d: CROWN_LION,
+          role: 'accent',
+          transform: 'translate(80 152) scale(0.9) translate(-56 -130)',
+        },
+        shadow(80, 178, 36),
+      ],
+    },
+    // The ribbon untied and lying flat, the chain broken beside it and the
+    // pendant face down: she
+    // dies on the ship home from Dorne, in "Mother's Mercy" (episode 50).
+    // The show's alone (the books leave her alive); chapter 344 orders it.
+    {
+      episode: 50,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        {
+          d: 'M13.8 140 Q27.8 122 41.8 136 Q55.8 150 69.8 134 Q82.4 120 96.4 134 Q103.4 142 109 138',
+        },
+        {
+          d: 'M16.6 147 Q29.2 130 41.8 143 Q55.8 157 71.2 141 Q83.8 127 96.4 141 Q102 147 107.6 145',
+        },
+        { d: 'M13.8 140 L16.6 147 M109 138 L107.6 145', role: 'soft' },
+        {
+          d: 'M15.2 143.5 Q28.5 126 41.8 139.5 Q55.8 153.5 70.5 137.5 Q83.1 123.5 96.4 137.5',
+          role: 'accent',
+        },
+        {
+          d: 'M110 150 Q114 140 121 146 M139 147 Q146 139 152 146',
+          role: 'soft',
+        },
+        { d: ellipse(130, 149, 10, 4), role: 'soft' },
+        { d: 'M46 133 l5 -3 M82 128 l5 -3', role: 'ambient' },
+        FLOOR,
+      ],
+    },
+  ],
+  'tommen-baratheon': [
+    // The plate upside down, the cake rolled off on its side and the apple
+    // away, the glaze gone out and the cake taking the accent: he falls from
+    // a window of the Red Keep in "The Winds of Winter" (episode 60). The
+    // show's alone (the books leave him alive); chapter 344 orders it.
+    {
+      episode: 60,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        { d: 'M62 152 Q66 138 92 136 Q118 138 122 152 Z' },
+        { d: ellipse(92, 140, 13, 2.5), role: 'soft' },
+        ...moved(
+          [
+            { ...APPLECAKE_TOP, role: 'accent' },
+            ...softened(APPLECAKE.slice(3, 5)),
+          ],
+          'translate(-24 22) rotate(-30 64 128)',
+        ),
+        ...moved(APPLECAKE.slice(5, 7), 'translate(22 30)'),
+        { d: 'M108 146 l5 -3 M114 149 l5 -3', role: 'ambient' },
+        FLOOR,
+      ],
+    },
+  ],
+  'renly-baratheon': [
+    // The cloak in a heap on the floor and the clasp come away, lying far
+    // from it: he dies in his tent, in "The Ghost of Harrenhal" (episode 15)
+    // and in Catelyn IV of A Clash of Kings (chapter 107).
+    {
+      episode: 15,
+      chapter: 107,
+      value: [
+        {
+          d: 'M18 150 Q24 128 46 132 Q60 116 82 124 Q102 114 116 132 Q128 136 128 150 Q72 160 18 150',
+        },
+        {
+          d: 'M36 148 Q44 138 56 140 M64 152 Q72 134 88 132 M96 152 Q102 140 114 140',
+          role: 'soft',
+        },
+        { d: 'M46 132 Q56 136 60 126 M82 124 Q90 130 100 120', role: 'soft' },
+        { d: 'M112 142 l6 -3 M116 148 l6 -3', role: 'ambient' },
+        {
+          d: `${ellipse(142, 151, 8, 3.5)} ${ellipse(142, 151, 3.5, 1.5)}`,
+          role: 'accent',
+        },
+        FLOOR,
+      ],
+    },
+  ],
+  'lysa-arryn': [
+    // The perch empty and the falcon falling past it, head down and wings
+    // open: Petyr pushes her through the Moon Door, in "Mockingbird"
+    // (episode 37) and in Sansa VII of A Storm of Swords (chapter 224).
+    {
+      episode: 37,
+      chapter: 224,
+      value: [
+        {
+          d: 'M56 144 Q48 136 50 122 Q50 104 56 88 Q62 104 62 122 Q64 136 56 144 L54 150',
+        },
+        {
+          d: 'M52 114 Q36 104 16 76 L26 80 L22 68 L32 74 L32 60 Q46 86 54 100',
+        },
+        {
+          d: 'M60 114 Q76 104 96 76 L86 80 L90 68 L80 74 L80 60 Q66 86 58 100',
+        },
+        { d: 'M38 92 Q30 82 26 74', role: 'accent' },
+        { d: 'M53 90 L48 72 H64 L59 90', role: 'soft' },
+        { d: 'M66 96 l5 -3 M68 104 l5 -3', role: 'ambient' },
+        ...moved(
+          [...FALCON.slice(5, 6), ...FALCON.slice(7)],
+          'translate(40 0)',
+        ),
+      ],
+    },
+  ],
+  'bronn': [
+    // The Stokeworth banner, a lamb holding a goblet, on a pole beside the
+    // sword, the accent moved to the lamb: he is wed to Lollys Stokeworth,
+    // their son born and named, by Jaime II of A Feast for Crows (chapter
+    // 242). The match is arranged earlier (Tyrion IX of A Storm of Swords,
+    // chapter 210, still to check), so the pin is late, never early. The
+    // book's alone (the show breaks the match); episode 41 orders it.
+    {
+      episode: 41,
+      chapter: 242,
+      source: 'chapter',
+      value: [...softened(PLANTED_SWORD), ...STOKEWORTH_BANNER],
+    },
+    // A Tyrell rose for a pommel, the accent moved to it: he is made Lord of
+    // Highgarden in "The Iron Throne" (episode 73). The show's alone;
+    // chapter 344 orders it.
+    {
+      episode: 73,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved([...POMMEL_ROSE, ...softened(SWORD_BELOW_POMMEL)], PLANTED),
+        ...SWORD_GROUND,
+      ],
+    },
+  ],
+  'shae': [
+    // The flap untied and fallen shut, the cord on the ground and the lamp
+    // down beside it: Tyrion strangles her in his father's bed, in "The
+    // Children" (episode 40) and in Tyrion XI of A Storm of Swords (chapter
+    // 221).
+    {
+      episode: 40,
+      chapter: 221,
+      value: [
+        ...TENT.slice(0, 2),
+        { d: 'M80 36 Q82 98 74 150' },
+        ...TENT.slice(4, 5),
+        { d: 'M64 140 l8 -4 M62 148 l10 -5', role: 'ambient' },
+        {
+          d: 'M94 150 L98 136 L114 140 L112 152 Z M102 140 L106 150',
+          role: 'soft',
+        },
+        { d: 'M118 150 Q124 144 130 150 Q136 156 142 150', role: 'accent' },
+        ...TENT.slice(7),
+      ],
+    },
+  ],
+  'walder-frey': [
+    // Two banners behind the chair, the Frey towers and the Lannister lion,
+    // the accent moved to the lion: the Red Wedding shows whom he serves,
+    // in "The Rains of Castamere" (episode 29) and in Catelyn VII of A
+    // Storm of Swords (chapter 195).
+    {
+      episode: 29,
+      chapter: 195,
+      value: [
+        ...moved(softened(WALKING_STICK), UNDER_BANNERS),
+        { d: 'M100 14 H154' },
+        {
+          d: 'M104 14 V54 L114 47 L124 54 V14 M130 14 V54 L140 47 L150 54 V14',
+        },
+        {
+          d: 'M107 44 V30 L109 26 L111 30 V44 M117 44 V30 L119 26 L121 30 V44 M111 38 H117',
+          role: 'soft',
+        },
+        {
+          d: CROWN_LION,
+          role: 'accent',
+          transform: 'translate(140 32) scale(0.75) translate(-56 -130)',
+        },
+      ],
+    },
+    // The chair empty and the stick fallen on the floor: Arya kills him at
+    // the Twins in "The Winds of Winter" (episode 60). The show's alone (the
+    // books leave him alive); chapter 344 orders it.
+    {
+      episode: 60,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...WALKING_STICK.slice(0, 6),
+        ...moved(WALKING_STICK.slice(6, 8), STICK_FALLEN),
+        ...WALKING_STICK.slice(8, 9),
+        FLOOR,
+      ],
+    },
+  ],
   'robert-baratheon': [
     // The horn on its side, the stand gone and the wine run out: the
     // episode and the chapter that tell his death, "You Win or You Die"

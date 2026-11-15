@@ -293,6 +293,47 @@ const CHANGES: {
   { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
   { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
   { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
+  // The southern cast's later deaths (#1286).
+  {
+    id: 'cersei-lannister',
+    episode: 72,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'jaime-lannister',
+    episode: 72,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'tywin-lannister', episode: 40, chapter: 221, value: 'deceased' },
+  { id: 'joffrey-baratheon', episode: 32, chapter: 204, value: 'deceased' },
+  {
+    id: 'myrcella-baratheon',
+    episode: 50,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'tommen-baratheon',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'renly-baratheon', episode: 15, chapter: 107, value: 'deceased' },
+  { id: 'lysa-arryn', episode: 37, chapter: 224, value: 'deceased' },
+  { id: 'shae', episode: 40, chapter: 221, value: 'deceased' },
+  {
+    id: 'walder-frey',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
   // Later deaths of the Wall and the Riverlands from the drawing audit (#1290).
   { id: 'yoren', episode: 13, chapter: 88, value: 'deceased' },
   { id: 'jeor-mormont', episode: 24, chapter: 177, value: 'deceased' },
@@ -1148,8 +1189,9 @@ describe.each([
  * Gared's, Dareon's, Jaremy Rykker's and Othor's the book's alone, with
  * the mutiny against Jon), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
- * magic, and the Winterfell audit's deaths, returns, crown, Reek and Needle
- * (#1285). `stage` counts a record's stages from 0, for a record redrawn
+ * magic, the Winterfell audit's deaths, returns, crown, Reek and Needle
+ * (#1285), and the southern cast's later looks and deaths (#1286), Bronn's
+ * banner the book's alone. `stage` counts a record's stages from 0, for a record redrawn
  * more than once.
  */
 const STAGES: {
@@ -1306,6 +1348,35 @@ const STAGES: {
     stage: 1,
   },
   { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
+  // The southern cast's later looks and deaths (#1286).
+  { id: 'cersei-lannister', episode: 72, chapter: 344, source: 'episode' },
+  { id: 'jaime-lannister', episode: 56, chapter: 344, source: 'episode' },
+  {
+    id: 'jaime-lannister',
+    episode: 72,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'tywin-lannister', episode: 40, chapter: 221 },
+  { id: 'joffrey-baratheon', episode: 7, chapter: 50 },
+  { id: 'joffrey-baratheon', episode: 32, chapter: 204, stage: 1 },
+  { id: 'myrcella-baratheon', episode: 42, chapter: 344, source: 'episode' },
+  {
+    id: 'myrcella-baratheon',
+    episode: 50,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'tommen-baratheon', episode: 60, chapter: 344, source: 'episode' },
+  { id: 'renly-baratheon', episode: 15, chapter: 107 },
+  { id: 'lysa-arryn', episode: 37, chapter: 224 },
+  { id: 'bronn', episode: 41, chapter: 242, source: 'chapter' },
+  { id: 'bronn', episode: 73, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'shae', episode: 40, chapter: 221 },
+  { id: 'walder-frey', episode: 29, chapter: 195 },
+  { id: 'walder-frey', episode: 60, chapter: 344, source: 'episode', stage: 1 },
   // The second group of placeholder characters redrawn (#1296).
   { id: 'donal-noye', episode: 39, chapter: 208, source: 'chapter' },
   { id: 'chett', episode: 28, chapter: 190, source: 'chapter' },
