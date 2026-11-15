@@ -293,6 +293,59 @@ const CHANGES: {
   { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
   { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
   { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
+  // The northern lords' deaths (#1288).
+  {
+    id: 'mikken',
+    episode: 16,
+    chapter: 120,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'alyn',
+    episode: 21,
+    chapter: 161,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'greatjon-umber',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'smalljon-umber', episode: 59, chapter: 195, value: 'deceased' },
+  { id: 'rickard-karstark', episode: 25, chapter: 164, value: 'deceased' },
+  {
+    id: 'roose-bolton',
+    episode: 52,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'galbart-glover',
+    episode: 57,
+    chapter: 344,
+    value: 'presumed-dead',
+    source: 'episode',
+  },
+  {
+    id: 'maege-mormont',
+    episode: 57,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'dacey-mormont',
+    episode: 29,
+    chapter: 195,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  { id: 'wendel-manderly', episode: 29, chapter: 195, value: 'deceased' },
   {
     id: 'stevron-frey',
     episode: 14,
@@ -978,13 +1031,14 @@ describe.each([
  * the Night's Watch's and Essos cast's (#1052), the northern household's
  * (#1054), the Vale cast's (#1055), the King's Landing cast's (#1056) and
  * the Riverlands cast's (#1057), each pinned in the units that tell it:
- * the deaths (Willis Wode's the show's alone; Vardis Egen's, Mycah's and
- * Masha Heddle's the book's alone; and the later deaths of #1242, Stevron
- * Frey's and Hoster Tully's the book's alone), Barristan's thrown sword,
- * Syrio's snapped blade, the reveals of Jorah's master, Aemon's house and
- * Mirri's blood magic, and the Winterfell audit's deaths, returns, crown,
- * Reek and Needle (#1285). `stage` counts a record's stages from 0, for a
- * record redrawn more than once.
+ * Bran's climb, which the book alone shows after his threshold, the deaths
+ * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
+ * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
+ * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
+ * magic, and the Winterfell audit's deaths, returns, crown, Reek and Needle
+ * (#1285). `stage` counts a record's stages from 0, for a record redrawn
+ * more than once.
  */
 const STAGES: {
   chapter: number
@@ -1040,6 +1094,25 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The northern lords' deaths and reveals (#1288).
+  { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
+  { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },
+  { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
+  { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
+  { id: 'smalljon-umber', episode: 59, chapter: 195 },
+  { id: 'rickard-karstark', episode: 25, chapter: 164 },
+  { id: 'roose-bolton', episode: 29, chapter: 195 },
+  {
+    id: 'roose-bolton',
+    episode: 52,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'galbart-glover', episode: 57, chapter: 344, source: 'episode' },
+  { id: 'maege-mormont', episode: 57, chapter: 344, source: 'episode' },
+  { id: 'dacey-mormont', episode: 29, chapter: 195, source: 'chapter' },
+  { id: 'wendel-manderly', episode: 29, chapter: 195, source: 'chapter' },
   // The Winterfell characters redrawn from the drawing audit (#1285).
   { id: 'catelyn-stark', episode: 29, chapter: 195 },
   {
@@ -1134,7 +1207,6 @@ describe('the stages one medium alone tells', () => {
         source === 'chapter' ?
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
-
       // The other medium's own last stage, or the first drawing.
       const other = source === 'chapter' ? 'episode' : 'chapter'
       const expected =

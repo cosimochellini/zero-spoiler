@@ -4544,7 +4544,12 @@ export const season1: ThronesSaga = {
         it: 'Lavora alla forgia di Grande Inverno. Prima di partire per la Barriera, Jon gli fa forgiare per Arya una spada sottile e leggera.',
         en: 'He works the forge at Winterfell. Before Jon leaves for the Wall, he has Mikken make a slender, light sword for Arya.',
       },
-      status: [{ episode: 2, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 2, chapter: 54, value: 'alive' },
+        // Killed by an ironborn when Theon takes Winterfell (#1288). The
+        // book's alone; episode 16 orders it (A Clash of Kings 46, Bran VI).
+        { episode: 16, chapter: 120, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 2,
@@ -4640,7 +4645,12 @@ export const season1: ThronesSaga = {
         it: 'Porta i suoi uomini nell’esercito di Robb e pretende di guidare l’avanguardia, minacciando di tornarsene a casa. Quando sguaina la spada a tavola, Vento Grigio gli stacca due dita con un morso, e lui ci ride sopra.',
         en: 'He brings his men to Robb’s host and demands to lead the vanguard, threatening to go home if he does not. When he draws his sword at the table, Grey Wind bites off two of his fingers, and he laughs it off.',
       },
-      status: [{ episode: 8, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 54, value: 'alive' },
+        // Dead by "Oathbreaker" (episode 53), where Smalljon says so. The
+        // show's alone; the books leave him a prisoner of the Freys (#1288).
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -4666,7 +4676,12 @@ export const season1: ThronesSaga = {
         it: 'È il figlio di Greatjon Umber e un guerriero di Casa Umber. La sua casata tiene l’Ultimo Focolare, nell’estremo nord del Nord.',
         en: 'He is Greatjon Umber’s son and a fighter of House Umber. His house holds Last Hearth, in the far north of the North.',
       },
-      status: [{ episode: 53, chapter: 64, value: 'alive' }],
+      status: [
+        { episode: 53, chapter: 64, value: 'alive' },
+        // Killed by Tormund in "Battle of the Bastards" (episode 59), and at
+        // the Red Wedding in Catelyn VII of A Storm of Swords (#1288).
+        { episode: 59, chapter: 195, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 53,
@@ -4681,7 +4696,12 @@ export const season1: ThronesSaga = {
         it: 'È a capo di Casa Karstark, che ha sede a Karhold. Marcia nell’esercito di Robb con i suoi uomini.',
         en: 'He is the head of House Karstark, whose seat is Karhold. He marches in Robb’s host with his men.',
       },
-      status: [{ episode: 17, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 17, chapter: 54, value: 'alive' },
+        // Beheaded by Robb in "Kissed by Fire" (episode 25) and in Catelyn
+        // III of A Storm of Swords (#1288).
+        { episode: 25, chapter: 164, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 17,
@@ -4723,7 +4743,12 @@ export const season1: ThronesSaga = {
         it: 'È a capo di Casa Bolton, che ha sede a Forte Terrore. Parla poco e a voce bassa, e ha portato i suoi uomini nell’esercito di Robb.',
         en: 'He is the head of House Bolton, whose seat is the Dreadfort. He speaks little and softly, and he has brought his men to Robb’s host.',
       },
-      status: [{ episode: 14, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 14, chapter: 54, value: 'alive' },
+        // Killed by Ramsay in "Home" (episode 52). The show's alone; in the
+        // books he is alive (#1288).
+        { episode: 52, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 14,
@@ -4741,7 +4766,17 @@ export const season1: ThronesSaga = {
         it: 'È a capo di Casa Glover, che ha sede a Deepwood Motte. Risponde alla chiamata alle armi di Robb insieme agli altri signori del Nord e siede al suo consiglio di guerra.',
         en: 'He is the head of House Glover, whose seat is Deepwood Motte. He answers Robb’s call to arms with the other northern lords and sits at his war council.',
       },
-      status: [{ episode: 8, chapter: 56, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 56, value: 'alive' },
+        // Robett speaks of him as gone in "The Broken Man" (episode 57), and
+        // never says he is dead. The show's alone (owner, #1288).
+        {
+          episode: 57,
+          chapter: 344,
+          source: 'episode',
+          value: 'presumed-dead',
+        },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -4782,7 +4817,12 @@ export const season1: ThronesSaga = {
         it: 'Governa Casa Mormont dall’Isola dell’Orso. Risponde alla chiamata alle armi di Robb e si unisce al suo esercito con la sua gente.',
         en: 'She rules House Mormont from Bear Island. She answers Robb’s call to arms and joins his host with her people.',
       },
-      status: [{ episode: 8, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 54, value: 'alive' },
+        // Lyanna says she died fighting for Robb in "The Broken Man"
+        // (episode 57). The show's alone (#1288).
+        { episode: 57, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -4811,7 +4851,12 @@ export const season1: ThronesSaga = {
         it: 'È la figlia maggiore di lady Maege ed erede dell’Isola dell’Orso. Cavalca nella guardia personale di Robb durante la battaglia nel Bosco dei Sussurri.',
         en: 'She is Lady Maege’s eldest daughter and the heir to Bear Island. She rides in Robb’s personal guard in the battle in the Whispering Wood.',
       },
-      status: [{ episode: 9, chapter: 64, value: 'alive' }],
+      status: [
+        { episode: 9, chapter: 64, value: 'alive' },
+        // Killed by Ryman Frey at the Red Wedding, in Catelyn VII of A Storm
+        // of Swords (#1288).
+        { episode: 29, chapter: 195, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 9,
@@ -4826,7 +4871,13 @@ export const season1: ThronesSaga = {
         it: 'È figlio del lord di Porto Bianco ed è cavaliere. Combatte per Robb insieme agli uomini di Casa Manderly.',
         en: 'He is a son of the lord of White Harbor and a knight. He fights for Robb with the men of House Manderly.',
       },
-      status: [{ episode: 29, chapter: 56, value: 'alive' }],
+      status: [
+        { episode: 29, chapter: 56, source: 'chapter', value: 'alive' },
+        // Killed at the Red Wedding: on screen in "The Rains of Castamere"
+        // (episode 29), his threshold, and told in Catelyn VII of A Storm of
+        // Swords (chapter 195), as Vayon Poole's death is (owner, #1288).
+        { episode: 29, chapter: 195, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 29,
@@ -5296,7 +5347,12 @@ export const season1: ThronesSaga = {
         it: 'È una delle guardie di Eddard Stark sulla strada del Re. Una mattina lo sveglia perché il re vuole cavalcare con lui.',
         en: 'He is one of Eddard Stark’s guards on the kingsroad. One morning he wakes him because the king wants to ride with him.',
       },
-      status: [{ episode: 1, chapter: 13, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 13, value: 'alive' },
+        // Killed at the Mummer's Ford, told in Arya III of A Storm of Swords
+        // (#1288). The chapter is not checked against the book.
+        { episode: 21, chapter: 161, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
