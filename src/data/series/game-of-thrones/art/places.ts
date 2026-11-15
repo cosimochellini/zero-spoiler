@@ -846,24 +846,29 @@ const GATES_OF_THE_MOON: Stroke[] = [
 ]
 
 /**
- * The Citadel: a tall tower between two lower ones, for the maesters' seat
- * named in episode 3 and in Tyrion III (chapter 22) and never visited in the
- * first season or book. The towers' far faces are hatched; the accent is
- * the high window.
+ * The Citadel: the Hightower's tiers rising over Oldtown, its beacon burning
+ * on top, and the maesters' arcaded halls at its foot, for the order named
+ * in episode 3 and in Tyrion III (chapter 22). Sam first reaches it in
+ * season 6; the owner ruled that a named place may open on that later look.
+ * The tiers' far faces are hatched; the accent is the beacon.
  */
 const THE_CITADEL: Stroke[] = [
-  { d: 'M70 150 V40 H90 V150 M70 40 L80 24 L90 40' },
   {
-    d: 'M40 150 V90 H62 V150 M98 150 V96 H120 V150 M40 90 L51 80 L62 90 M98 96 L109 86 L120 96',
+    d: 'M64 150 V110 H96 V150 M68 110 V80 H92 V110 M72 80 V54 H88 V80 M75 54 V38 H85 V54',
   },
-  { d: 'M62 150 V118 H70 M90 124 H98 V150', role: 'soft' },
-  { d: circle(80, 54, 5), role: 'accent' },
-  { d: 'M76 70 V78 M84 88 V96 M50 104 V110 M108 108 V114', role: 'soft' },
+  { d: 'M80 36 q-6 -6 -1 -14 q2 5 4 2 q4 7 -3 12', role: 'accent' },
+  { d: 'M80 92 V100 M80 62 V70 M80 124 V134', role: 'soft' },
   {
-    d: 'M86 60 l3 -2 M86 100 l3 -2 M86 130 l3 -2 M116 110 l3 -2 M116 130 l3 -2',
+    d: 'M90 116 l4 -2 M90 130 l4 -2 M90 144 l4 -2 M87 86 l3 -2 M87 98 l3 -2 M84 60 l3 -2',
     role: 'ambient',
   },
-  shadow(80, 156, 52),
+  { d: 'M18 150 V124 H58 V150 M104 150 V128 H142 V150' },
+  { d: 'M28 124 Q38 108 48 124', role: 'soft' },
+  {
+    d: 'M24 150 V140 Q28 134 32 140 V150 M44 150 V140 Q48 134 52 140 V150 M112 150 V140 Q116 134 120 140 V150 M128 150 V140 Q132 134 136 140 V150',
+    role: 'soft',
+  },
+  shadow(80, 156, 70),
 ]
 
 /**
@@ -949,60 +954,79 @@ const TUMBLESTONE: Stroke[] = [
 ]
 
 /**
- * The Golden Tooth: a castle on the peak above a mountain pass, named in
+ * The Golden Tooth: a narrow keep on a high peak, seen corner on, the pass
+ * road coming down on either side below it, for the Lefford seat named in
  * episode 8 and in Catelyn VII (chapter 41) and never visited in the first
- * season or book. The mountain's far side is hatched; the accent is the
- * castle.
+ * season or book. The peak's far face and the keep's side are hatched; the
+ * accent is the keep.
  */
 const GOLDEN_TOOTH: Stroke[] = [
-  { d: 'M10 150 L44 90 L60 104 L80 50 L100 104 L116 90 L150 150' },
+  { d: 'M14 150 L46 106 L58 114 L72 62 M94 64 L104 102 L116 94 L146 150' },
+  { d: 'M72 60 V30 H86 V60', role: 'accent' },
+  { d: 'M86 30 L94 34 V62 M72 60 L94 62' },
+  { d: 'M72 30 V24 H77 V30 M81 30 V24 H86 V30 M79 40 V46', role: 'soft' },
+  { d: 'M90 64 L98 106 L106 150', role: 'soft' },
   {
-    d: 'M72 66 V50 H88 V66 M72 50 V44 H76 V50 M84 50 V44 H88 V50',
-    role: 'accent',
-  },
-  { d: 'M68 150 Q76 130 80 110 Q84 130 92 150', role: 'ambient', dashed: true },
-  {
-    d: 'M92 80 l6 -3 M100 96 l6 -3 M120 110 l6 -3 M128 126 l6 -3',
+    d: 'M88 42 l4 -2 M88 52 l4 -2 M102 84 l6 -3 M108 100 l6 -3 M116 114 l6 -3 M126 128 l6 -3 M134 142 l6 -3',
     role: 'ambient',
   },
-  { d: 'M30 120 Q40 112 50 116 M110 120 Q120 112 130 116', role: 'soft' },
+  {
+    d: 'M22 150 Q38 136 58 132 M138 150 Q122 136 104 130',
+    role: 'ambient',
+    dashed: true,
+  },
   shadow(80, 156, 66),
 ]
 
 /**
- * The Red Fork: a river winding between hills, named in Catelyn I (chapter
- * 3) and in episode 10 and never visited in the first season or book. The
- * accent is the water.
+ * The Red Fork: a wide river bending toward the viewer, a tributary joining
+ * it, and Riverrun on the point where the two meet, as Catelyn I (chapter 3)
+ * sets the castle on the Red Fork; the show names the river in episode 10.
+ * No scene of the first season or book is set on it. The castle's side is
+ * hatched; the accent is the water.
  */
 const RED_FORK: Stroke[] = [
+  { d: 'M10 52 Q40 36 70 48 Q100 34 150 50', role: 'soft' },
   {
-    d: 'M10 70 Q50 60 70 90 Q90 120 150 110 M10 86 Q46 78 62 104 Q84 136 150 126',
+    d: 'M150 70 Q116 72 104 92 Q88 116 40 120 Q20 122 10 124 M150 84 Q126 86 118 104 Q102 140 46 148 Q24 150 10 151',
   },
+  { d: 'M14 82 Q46 90 62 117 M24 64 Q66 70 86 108' },
+  { d: 'M78 90 V62 H85 V70 H93 V62 H100 V90' },
   {
-    d: 'M24 76 q6 -3 12 0 M70 108 q6 -3 12 0 M114 118 q6 -3 12 0',
+    d: 'M78 62 V58 H82 V62 M96 62 V58 H100 V62 M87 90 V83 Q89 80 91 83 V90',
+    role: 'soft',
+  },
+  { d: 'M100 62 L104 65 V86', role: 'soft' },
+  {
+    d: 'M30 136 q6 -3 12 0 M92 132 q6 -3 12 0 M124 80 q5 -2 10 0 M26 76 q5 -2 10 0',
     role: 'accent',
   },
   {
-    d: 'M10 50 Q40 34 70 46 Q100 30 150 44 M10 150 Q60 140 150 152',
-    role: 'soft',
+    d: 'M101 72 l2 -1 M101 80 l2 -1 M120 60 l5 -3 M40 58 l5 -3',
+    role: 'ambient',
   },
-  { d: 'M30 140 Q36 130 42 140 M110 64 Q118 54 126 64', role: 'soft' },
-  { d: 'M90 56 l5 -3 M50 134 l5 -3', role: 'ambient' },
 ]
 
 /**
- * The Gods Eye: a wide lake under a line of hills, named in episode 10 and
- * in Bran VII (chapter 67) and never visited in the first season or book.
- * The accent is the water.
+ * The Gods Eye: a wide lake seen from its shore, the far bank in the light
+ * and reeds standing on the near one, named in episode 10 and in Bran VII
+ * (chapter 67) and never visited in the first season or book. No island:
+ * the Isle of Faces waits until that chapter is checked for it. The far
+ * bank is hatched; the accent is the water.
  */
 const GODS_EYE: Stroke[] = [
+  { d: 'M10 70 Q30 56 50 64 Q72 48 96 60 Q122 50 150 64', role: 'soft' },
   {
-    d: 'M14 110 Q20 84 80 82 Q140 84 146 110 Q140 136 80 138 Q20 136 14 110 Z',
+    d: 'M14 112 Q20 86 80 84 Q140 86 146 112 Q140 138 80 140 Q20 138 14 112 Z',
   },
-  { d: 'M30 110 q8 -4 16 0 t16 0 M96 120 q8 -4 16 0 t16 0', role: 'accent' },
-  { d: 'M10 70 Q30 54 50 64 Q70 46 96 60 Q120 48 150 66', role: 'soft' },
-  { d: 'M120 126 l6 -3 M126 116 l6 -3', role: 'ambient' },
-  shadow(80, 150, 66),
+  { d: 'M24 100 Q44 93 80 93 Q116 93 136 100', role: 'soft' },
+  { d: 'M40 116 q8 -4 16 0 t16 0 M88 126 q8 -4 16 0 t16 0', role: 'accent' },
+  {
+    d: 'M22 156 V138 M28 158 V130 M34 156 V140 M124 156 V140 M130 158 V132 M136 156 V138',
+    role: 'soft',
+  },
+  { d: 'M28 130 q-3 -4 0 -8 M130 132 q3 -4 0 -8' },
+  { d: 'M100 90 l5 -2 M114 91 l5 -2 M128 94 l5 -2', role: 'ambient' },
 ]
 
 /**
@@ -1044,23 +1068,28 @@ const VALYRIA: Stroke[] = [
 ]
 
 /**
- * Braavos: domed houses over an arcade on the water, named in Daenerys I
- * (chapter 4) and in episode 3 (the Sealord of Braavos) and never visited in
- * the first season or book. The accent is the great middle arch.
+ * Braavos: the Titan, the giant armoured statue astride the harbour
+ * entrance, its feet on two stone piers and one arm raised, for the city
+ * named in Daenerys I (chapter 4) and in episode 3 (the Sealord of
+ * Braavos). The show first sails under it in season 4; the owner ruled
+ * that a named city may open on the look a later season gives it. The
+ * piers' far faces are hatched; the accent is the raised arm.
  */
 const BRAAVOS: Stroke[] = [
+  { d: 'M34 152 V122 H62 V152 M98 152 V122 H126 V152' },
+  { d: 'M46 122 L70 84 M114 122 L90 84 M56 122 L76 92 H84 L104 122' },
+  { d: 'M70 84 L68 58 M90 84 L92 58 M64 58 H96' },
+  { d: 'M74 58 V48 Q80 40 86 48 V58', role: 'soft' },
   {
-    d: 'M10 104 H150 M10 104 V124 M30 104 V124 M50 104 V124 M110 104 V124 M130 104 V124 M150 104 V124',
+    d: 'M96 58 L110 36 L112 20 M92 66 L104 44 L106 20 M106 20 Q109 16 112 20',
+    role: 'accent',
   },
+  { d: 'M64 58 L58 82 M68 66 L64 84' },
+  { d: 'M69 68 H91 M70 78 H90', role: 'soft' },
   {
-    d: 'M10 124 Q20 110 30 124 M30 124 Q40 110 50 124 M110 124 Q120 110 130 124 M130 124 Q140 110 150 124',
-    role: 'soft',
+    d: 'M86 70 l4 -2 M87 80 l4 -2 M120 130 l6 -3 M120 142 l6 -3 M56 130 l6 -3 M56 142 l6 -3',
+    role: 'ambient',
   },
-  { d: 'M50 124 Q80 84 110 124', role: 'accent' },
-  {
-    d: 'M20 104 V80 Q30 68 40 80 V104 M66 104 V70 Q80 54 94 70 V104 M120 104 V80 Q130 68 140 80 V104',
-  },
-  { d: 'M90 78 l4 -3 M90 92 l4 -3 M136 86 l4 -3', role: 'ambient' },
   ...SEA,
 ]
 
@@ -1100,21 +1129,27 @@ const TYROSH: Stroke[] = [
 ]
 
 /**
- * Dragonstone: a castle among the crags of a rocky island, named in Daenerys
- * I (chapter 4) and in episode 7 and never visited in the first season or
- * book. The dark rock is hatched; the accent is the castle.
+ * Dragonstone: the Targaryen castle on its rock in the sea, one tower rising
+ * into a carved dragon's neck and head, a stone wing along the wall and the
+ * stair cut into the cliff, for the island named in Daenerys I (chapter 4)
+ * and in episode 7. The show goes there from season 2 and opens up its
+ * dragon-carved castle in season 7; the owner ruled that a named place may
+ * open on that later look. The rock's far side is hatched; the accent is
+ * the dragon.
  */
 const DRAGONSTONE: Stroke[] = [
+  { d: 'M14 150 L24 122 L38 128 L50 96 H110 L122 120 L136 114 L146 150' },
+  { d: 'M54 96 V66 H106 V96' },
   {
-    d: 'M14 140 L26 110 L40 116 L52 84 L66 92 L80 60 L94 92 L108 80 L120 112 L134 106 L146 140',
-  },
-  {
-    d: 'M66 92 V70 H78 M82 70 H94 V92 M70 70 V64 H74 V70 M86 70 V64 H90 V70',
+    d: 'M60 66 V46 Q60 30 74 30 L80 24 L82 31 L92 35 L80 38 L88 43 L74 41 Q68 41 68 50 V66',
     role: 'accent',
   },
-  { d: 'M78 70 L80 60 L82 70', role: 'soft' },
+  { d: 'M94 66 V48 H104 V66 M94 48 V44 H98 V48 M100 48 V44 H104 V48' },
+  { d: 'M70 66 L76 54 L82 60 L88 52 L94 60', role: 'soft' },
+  { d: 'M74 96 V84 Q80 78 86 84 V96', role: 'soft' },
+  { d: 'M86 98 h6 v4 h6 v4 h6 v4 h6 v4', role: 'soft' },
   {
-    d: 'M90 100 l6 -4 M96 112 l6 -4 M104 124 l6 -4 M114 120 l6 -4 M122 130 l6 -4 M54 104 l6 -4 M48 118 l6 -4',
+    d: 'M100 54 l4 -2 M100 76 l5 -3 M100 88 l5 -3 M118 128 l6 -3 M126 138 l6 -3 M34 138 l6 -3',
     role: 'ambient',
   },
   ...SEA,
@@ -1201,17 +1236,24 @@ const THE_ARBOR: Stroke[] = [
 ]
 
 /**
- * Qarth: a high wall with a great dome behind it, named in episode 2 and in
- * Daenerys III (chapter 24), a trader from Qarth, and never visited in the
- * first season or book. The accent is the dome.
+ * Qarth: the city's great gate seen corner on, its arched doors set with
+ * carved panels between the high walls, for the city named in episode 2 and
+ * in Daenerys III (chapter 24), a trader from Qarth. Daenerys first stands
+ * before it in season 2; the owner ruled that a named city may open on that
+ * later look. The gatehouse's side is hatched; the accent is the gate.
  */
 const QARTH: Stroke[] = [
-  { d: 'M10 150 V100 H150 V150 M10 100 V90 H24 V100 M136 100 V90 H150 V100' },
-  { d: 'M50 100 Q80 50 110 100', role: 'accent' },
-  { d: 'M36 100 V64 H44 V100 M116 100 V64 H124 V100', role: 'soft' },
-  { d: 'M70 150 V126 Q80 116 90 126 V150', role: 'soft' },
+  { d: 'M10 150 V100 H50 M120 104 H150 V150' },
+  { d: 'M50 150 V58 H110 V150' },
+  { d: 'M110 58 L120 64 V150', role: 'soft' },
+  { d: 'M64 150 V96 Q80 74 96 96 V150', role: 'accent' },
   {
-    d: 'M120 110 l6 -3 M120 126 l6 -3 M120 142 l6 -3 M100 78 l5 -3',
+    d: 'M80 150 V86 M68 106 h8 v10 h-8 Z M84 106 h8 v10 h-8 Z M68 124 h8 v10 h-8 Z M84 124 h8 v10 h-8 Z',
+    role: 'soft',
+  },
+  { d: 'M46 58 H114 M50 68 H110', role: 'soft' },
+  {
+    d: 'M112 76 l6 -3 M112 92 l6 -3 M112 108 l6 -3 M112 124 l6 -3 M112 140 l6 -3',
     role: 'ambient',
   },
   shadow(80, 156, 70),
@@ -1277,20 +1319,29 @@ const WOMB_OF_THE_WORLD: Stroke[] = [
 ]
 
 /**
- * The Whispering Wood: trees on both sides of a narrow valley, named in
- * Catelyn X (chapter 64), a book-only record. The accent is the trees.
+ * The Whispering Wood: a narrow valley at night, thick pines on both flanks
+ * and a line of spears waiting between the trunks, where Robb's host falls
+ * on Jaime's in Catelyn X (chapter 64), a book-only record. The pines' far
+ * sides are hatched; the accent is the trees.
  */
 const WHISPERING_WOOD: Stroke[] = [
-  { d: 'M10 70 Q50 120 80 126 Q110 120 150 70' },
+  { d: 'M10 84 Q50 126 80 130 Q110 126 150 84' },
   {
-    d: 'M24 96 V86 M14 86 L24 66 L34 86 Z M44 112 V102 M34 102 L44 82 L54 102 Z M116 112 V102 M106 102 L116 82 L126 102 Z M136 96 V86 M126 86 L136 66 L146 86 Z',
+    d: 'M18 106 V96 M6 96 L18 66 L30 96 Z M38 118 V108 M26 108 L38 78 L50 108 Z M122 118 V108 M110 108 L122 78 L134 108 Z M142 106 V96 M130 96 L142 66 L154 96 Z',
     role: 'accent',
   },
   {
-    d: 'M60 118 V110 M54 110 L60 98 L66 110 M100 118 V110 M94 110 L100 98 L106 110',
+    d: 'M28 92 L18 76 M48 104 L38 88 M132 104 L122 88 M152 92 L142 76',
+    role: 'ambient',
+  },
+  {
+    d: 'M58 124 V100 M66 126 V102 M74 128 V104 M86 128 V104 M94 126 V102 M102 124 V100',
+  },
+  {
+    d: 'M56 100 L58 94 L60 100 M64 102 L66 96 L68 102 M72 104 L74 98 L76 104 M84 104 L86 98 L88 104 M92 102 L94 96 L96 102 M100 100 L102 94 L104 100',
     role: 'soft',
   },
-  { d: 'M120 92 l4 -3 M140 76 l4 -3', role: 'ambient' },
+  { d: 'M76 30 a12 12 0 1 0 10 20 a9 9 0 1 1 -10 -20', role: 'soft' },
 ]
 
 /**
