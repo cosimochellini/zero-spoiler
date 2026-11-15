@@ -875,18 +875,24 @@ function lifted(x: number, y: number): string {
 /** The heat fruit: a pear, its near side too hot to touch. */
 const HEAT_BODY: Body = { family: 'pear', cy: 118 }
 
-/** The band of heat: its top and bottom, and where it ends across the fruit. */
-const HEAT = { top: 132, bottom: 148, end: 84 }
+/** The stretch of the near side that wavers with the heat, top and bottom. */
+const HEAT = { top: 116, bottom: 152 }
 
-/** A wavering line across the band, from the rim to its end. */
-function shimmer(y: number): string {
+/**
+ * One line of heat off the near side at a height: short, wavering, out and
+ * a little up, and straight at its tip, so it never curls into steam.
+ */
+function heatLine(y: number): string {
   const [x0] = onRim(HEAT_BODY, y, -1)
 
   return polyline(
-    Array.from({ length: 25 }, (_unused, at) => {
-      const x = x0 - 2 + ((HEAT.end - x0 + 2) * at) / 24
+    Array.from({ length: 13 }, (_unused, at) => {
+      const along = at / 12
 
-      return point(x, y + 1.8 * Math.sin(x / 2.4))
+      return point(
+        x0 - 6 - 20 * along,
+        y - 6 * along + 1.8 * Math.sin(along * 2.5 * Math.PI),
+      )
     }),
   )
 }
@@ -905,10 +911,30 @@ const PUMP_BODY: Body = { family: 'segmented', cy: 120 }
 
 /** The sticks: the rim angle each leaves at, which way it points, how long. */
 const STICKS = [
-  { at: 206, way: 232, reach: 38 },
-  { at: 222, way: 246, reach: 44 },
-  { at: 238, way: 262, reach: 38 },
+  { at: 214, way: 250, reach: 36 },
+  { at: 232, way: 264, reach: 42 },
+  { at: 250, way: 278, reach: 36 },
 ]
+
+/** The burst over the sticks: its middle, and the angles of its rays. */
+const ROUSING = {
+  cx: 50,
+  cy: 58,
+  from: 26,
+  to: 34,
+  rays: [200, 235, 270, 305, 340],
+}
+
+/** The short rays of the burst, the people roused, over the sticks. */
+const ROUSING_RAYS = ROUSING.rays
+  .map((angle) => {
+    const [dx, dy] = [Math.cos(angle * DEGREES), Math.sin(angle * DEGREES)]
+    const at = (r: number): string =>
+      point(ROUSING.cx + dx * r, ROUSING.cy + dy * r)
+
+    return `M${at(ROUSING.from)} L${at(ROUSING.to)}`
+  })
+  .join(' ')
 
 /** Where a stick leaves the rim. */
 function stickBase(at: number): Point {
@@ -941,17 +967,68 @@ function stick({ at, way, reach }: (typeof STICKS)[number]): string {
 /** The push fruit: a pear, the ground pushed up over its foot. */
 const PUSH_BODY: Body = { family: 'pear', cy: 114 }
 
-/** The top of the bank, from the ground on the near side to the foot. */
-const BANK: Point[] = [
+/**
+ * The street rolled up into a wave, as chains of cubics: its top, from the
+ * ground on the near side up to the crest curling over the foot, and its
+ * face, from under the lip down to the ground.
+ */
+const PUSH_WAVE: Point[] = [
   [8, 176],
-  [30, 150],
-  [52, 132],
-  [66, 129],
-  [77, 140],
-  [74, 152],
-  [80, 164],
-  [86, 176],
+  [24, 160],
+  [36, 136],
+  [52, 126],
+  [62, 120],
+  [76, 122],
+  [80, 132],
+  [82, 140],
+  [76, 146],
+  [70, 142],
 ]
+const PUSH_FACE: Point[] = [
+  [72, 148],
+  [78, 156],
+  [86, 166],
+  [90, 176],
+]
+
+/** Points along a chain of cubics, from one end to the other. */
+function alongChain(line: Point[], steps: number, upTo = 1): Point[] {
+  return Array.from({ length: steps + 1 }, (_unused, at) => {
+    return onChain(line, (upTo * at) / steps)
+  })
+}
+
+/**
+ * The height of the wave across the box, its top up to the crest and then
+ * its face, which is what hides the fruit's foot.
+ */
+const BANK: Point[] = [
+  ...alongChain(PUSH_WAVE, 12, 2 / 3),
+  ...alongChain(PUSH_FACE, 6).filter(([x]) => x > 80),
+]
+
+/**
+ * The paving on the wave's face: two courses following its top, and the
+ * joints across them, staggered from one course to the next.
+ */
+const PAVING = [
+  ...[7, 14].map((across) => {
+    return polyline(
+      Array.from({ length: 13 }, (_unused, at) => {
+        return point(...offChain(PUSH_WAVE, 0.1 + (0.46 * at) / 12, across))
+      }),
+    )
+  }),
+  ...[
+    [0.2, 0],
+    [0.36, 0],
+    [0.52, 0],
+    [0.28, 7],
+    [0.44, 7],
+  ].map(([along = 0, across = 0]) => {
+    return `M${point(...offChain(PUSH_WAVE, along, across))} L${point(...offChain(PUSH_WAVE, along, across + 7))}`
+  }),
+].join(' ')
 
 /** A frame turned about a centre: a point across it and down it, in the box. */
 function turnedAbout(
@@ -1172,7 +1249,7 @@ const HANGING_WING: Growth = {
 const MOCHI_BODY: Body = { family: 'oblong', cy: 106 }
 
 /** Where on the near rim the strand leaves, top and bottom. */
-const STRAND = { top: 112, bottom: 142 }
+const STRAND = { top: 108, bottom: 144 }
 
 /** The grow fruit: a gourd, a giant book leaning into its side. */
 const GROW_BODY: Body = { family: 'gourd', cy: 120 }
@@ -2308,42 +2385,118 @@ const WOODS_BODY: Body = { family: 'heart', cy: 110 }
 /** The sabre-toothed tiger's fruit: a segmented body above a resting forepaw. */
 const SABRE_BODY: Body = { family: 'segmented', cy: 108 }
 
+/** Where each claw comes out at the front of a toe, hooking down. */
+const SABRE_CLAWS: Point[] = [
+  [13, 168],
+  [26, 173],
+  [42, 173],
+]
+
 /** Ulti's fruit, with short forelimbs cupped down over its sides. */
 const PACHY_BODY: Body = { family: 'oblong', cy: 116 }
 
-/** A bent forelimb gripping inward; the other digits are hidden by the fruit. */
+/**
+ * A bent forelimb: out from the shoulder to the elbow, down to the wrist,
+ * hooked claws gripping the fruit's flank, and back up the inside of the
+ * forearm to the rim.
+ */
 const GRIPPING_ARM: Growth = {
-  from: 100,
-  to: 140,
+  from: 98,
+  to: 110,
   through: [
-    [48, 98],
-    [58, 108],
-    [56, 121],
-    [55, 132],
-    [46, 142],
-    [34, 146],
-    [35, 140],
-    [38, 137],
-    [43, 132],
-    [38, 138],
-    [31, 139],
-    [32, 134],
-    [35, 130],
-    [43, 125],
+    [52, 94],
+    [62, 102],
+    [62, 114],
+    [62, 124],
+    [58, 132],
+    [50, 136],
+    [44, 136],
+    [34, 134],
+    [26, 130],
+    [32, 136],
+    [38, 139],
+    [42, 140],
+    [36, 142],
+    [28, 143],
+    [22, 141],
+    [30, 146],
+    [38, 147],
+    [43, 148],
+    [38, 151],
+    [32, 154],
+    [26, 154],
+    [34, 157],
+    [44, 155],
+    [48, 148],
+    [52, 138],
+    [50, 126],
     [44, 118],
-    [44, 126],
-    [39, 134],
+    [42, 112],
+    [40, 108],
   ],
 }
 
 /** Tama's fruit: a round, a dumpling pulled from its near flank. */
 const MILLET_BODY: Body = { family: 'round', cy: 116 }
 
+/** Where on the rim the neck of dough leaves, top and bottom. */
+const MILLET_NECK = { top: 108, bottom: 132 }
+
+/** The two finished dumplings, as centre and radius: one on the ground, one on it. */
+const MILLET_DUMPLINGS: [number, number, number][] = [
+  [24, 170, 11],
+  [32, 150, 9],
+]
+
 /** Hawkins's fruit: a segmented body split by a bursting tuft of straw. */
 const STRAW_BODY: Body = { family: 'segmented', cy: 116 }
 
+/** The one root every stalk fans out from, inside the split near side. */
+const STRAW_ROOT: Point = [50, 121]
+
+/** The stalks, by angle and length: the long ones, and three short between. */
+const STRAWS: [number, number][] = [
+  [128, 34],
+  [142, 38],
+  [155, 36],
+  [168, 38],
+  [181, 36],
+  [194, 38],
+  [207, 36],
+  [220, 38],
+  [233, 34],
+]
+const SHORT_STRAWS: [number, number][] = [
+  [148, 24],
+  [175, 26],
+  [201, 24],
+]
+
+/** A stalk out of the root, and the split at its tip when `split`. */
+function stalk([angle, length]: [number, number], split: boolean): string {
+  const [rx, ry] = STRAW_ROOT
+  const end: Point = [
+    rx + length * Math.cos(angle * DEGREES),
+    ry + length * Math.sin(angle * DEGREES),
+  ]
+  // A point a short way off `from`, turned from the stalk's own angle.
+  const off = (turn: number, from: Point): string => {
+    const way = (angle + turn) * DEGREES
+
+    return point(from[0] + 6 * Math.cos(way), from[1] + 6 * Math.sin(way))
+  }
+  const line = `M${off(0, STRAW_ROOT)} L${point(...end)}`
+
+  return split ?
+      `${line} M${off(-24, end)} L${point(...end)} L${off(24, end)}`
+    : line
+}
+
 /** Shinobu's fruit: a pear whose lower skin has gone past ripe. */
 const RIPE_BODY: Body = { family: 'pear', cy: 116 }
+
+/** Where on the rim the skin starts to sag. */
+const RIPE_SAG = 130
 
 /** Drake's fruit: a gourd with a plain, stiff reptilian counterweight tail. */
 const ALLOSAURUS_BODY: Body = { family: 'gourd', cy: 112 }
@@ -2392,20 +2545,24 @@ const OROCHI_LOOPS = [-1, 1]
 const BRACHIOSAURUS_BODY: Body = { family: 'pear', cy: 128 }
 
 /**
- * The neck: out of the near shoulder and steeply up and away from the
- * fruit, high above the crown, thick at the root and narrowing.
+ * The neck: out of the near shoulder, thick at the root, and up in an S,
+ * first away from the fruit, then back over it, then away again, high above
+ * the crown and narrowing.
  */
 const BRACHIOSAURUS_NECK: Limb = {
   line: [
-    [66, 94],
-    [56, 92],
-    [46, 82],
-    [42, 66],
-    [40, 48],
-    [36, 30],
-    [28, 18],
+    [64, 110],
+    [48, 110],
+    [34, 102],
+    [34, 86],
+    [34, 70],
+    [50, 62],
+    [50, 46],
+    [50, 34],
+    [46, 24],
+    [40, 16],
   ],
-  half: (along) => 11 - 4 * along,
+  half: (along) => 14 - 8 * along,
   rim: { body: BRACHIOSAURUS_BODY, way: -1 },
 }
 
@@ -2413,30 +2570,71 @@ const BRACHIOSAURUS_NECK: Limb = {
 const TIME_BODY: Body = { family: 'gourd', cy: 121 }
 
 /**
- * The pieces of the far shoulder, from the foot of it up: the stretch of
- * rim each one was, and how far it has drifted up and away from it.
+ * The flakes of the far shoulder, from the foot of it up: the stretch of
+ * rim each one was, how far it has drifted up and away, and how thick it
+ * is, smaller the further it goes.
  */
-const TIME_PIECES: [number, number, number, number][] = [
-  [97, 104, 2, -1],
-  [89, 94, 7, -6],
-  [84, 87, 15, -14],
+const TIME_PIECES: [number, number, number, number, number][] = [
+  [92, 106, 4, -3, 2.4],
+  [85, 95, 12, -12, 2],
+  [83, 89, 21, -23, 1.6],
 ]
 
 /** The specks beyond them, the last of the shoulder, further and further. */
 const TIME_SPECKS: Point[] = [
-  [121, 58],
-  [130, 47],
-  [141, 36],
-  [116, 82],
-  [127, 74],
-  [140, 66],
+  [126, 54],
+  [136, 44],
+  [146, 34],
+  [130, 72],
+  [142, 64],
 ]
+
+/**
+ * One flake: the stretch of rim it was, moved off, and a second edge set in
+ * from it and bowed, so it is a curved piece of skin and not a line.
+ */
+function flakeOf([
+  from,
+  to,
+  dx,
+  dy,
+  thick,
+]: (typeof TIME_PIECES)[number]): string {
+  const steps = 6
+  const [mx, my] = onRim(TIME_BODY, (from + to) / 2, 1)
+  // Each flake turns as it drifts, the further the more.
+  const turn = -dy * 2.4 * DEGREES
+  const along = Array.from({ length: steps + 1 }, (_unused, at) => {
+    const y = from + ((to - from) * at) / steps
+    const [x] = onRim(TIME_BODY, y, 1)
+
+    return [x, y, Math.sin((Math.PI * at) / steps)] as const
+  })
+  const placed = (x: number, y: number): string => {
+    const [ux, uy] = [x - mx, y - my]
+
+    return point(
+      mx + dx + ux * Math.cos(turn) - uy * Math.sin(turn),
+      my + dy + ux * Math.sin(turn) + uy * Math.cos(turn),
+    )
+  }
+
+  return polyline(
+    [
+      ...along.map(([x, y]) => placed(x, y)),
+      ...along
+        .toReversed()
+        .map(([x, y, bow]) => placed(x - thick * bow - 0.6, y)),
+    ],
+    true,
+  )
+}
 
 /** Sasaki's fruit: a heart, a bony frill fanned out behind its shoulder. */
 const TRICERATOPS_BODY: Body = { family: 'heart', cy: 123 }
 
 /** The frill: a fan round a point on the far shoulder, and its knobs. */
-const FRILL = { cx: 108, cy: 86, r: 40, from: -122, to: 38, knobs: 5 }
+const FRILL = { cx: 104, cy: 86, r: 44, from: -132, to: 46, knobs: 6 }
 
 /** A point of the frill, at an angle in degrees, `r` out from its middle. */
 function frillAt(angle: number, r: number): Point {
@@ -2611,8 +2809,75 @@ function whipped(x: number, y: number): string {
   return point(x + (WHIP_BODY.cy - y) * 0.16, y)
 }
 
-/** Karasu drives hard soot spikes up from the ground in episode 1117/1083. */
+/** Karasu's fruit: a gourd, thin soot obelisks shot up through it. */
 const SOOT_BODY: Body = { family: 'gourd', cy: 112 }
+
+/**
+ * The obelisks: where each stands, its foot, its tip and half its width at
+ * the foot. Four-sided, so the far face shows beside the near one.
+ */
+const OBELISKS = [
+  { x: 32, foot: 174, peak: 74, half: 9 },
+  { x: 90, foot: 176, peak: 40, half: 9 },
+  { x: 136, foot: 172, peak: 100, half: 8 },
+]
+
+/** Whether a point is behind an obelisk, so the fruit's outline stops there. */
+function behindObelisk(x: number, y: number): boolean {
+  return OBELISKS.some((one) => {
+    return y > one.peak && Math.abs(x - one.x) < one.half + 2
+  })
+}
+
+/**
+ * One obelisk: the shaft narrowing up to the point where its cap starts,
+ * the cap to the tip, and the edge between the near face and the far one.
+ * `part` picks the outline or the edge.
+ */
+function obelisk(
+  { x, foot, peak, half }: (typeof OBELISKS)[number],
+  part: 'edge' | 'outline',
+): string {
+  const cap = peak + half * 2.4
+  const top = half * 0.6
+
+  if (part === 'edge') {
+    return [
+      `M${point(x - top, cap)} L${point(x + top * 0.3, cap + 2)} L${point(x + top, cap)}`,
+      `M${point(x + top * 0.3, cap + 2)} L${point(x + half * 0.3, foot)}`,
+      `M${point(x + top * 0.3, cap + 2)} L${point(x, peak)}`,
+    ].join(' ')
+  }
+
+  return polyline([
+    point(x - half, foot),
+    point(x - top, cap),
+    point(x, peak),
+    point(x + top, cap),
+    point(x + half, foot),
+  ])
+}
+
+/** Short hatches down an obelisk's far face, where the soot is darkest. */
+function obeliskShade({
+  x,
+  foot,
+  peak,
+  half,
+}: (typeof OBELISKS)[number]): string {
+  const cap = peak + half * 2.4
+  const lines: string[] = []
+
+  for (let y = cap + 12; y < foot - 6; y += 18) {
+    const along = (y - cap) / (foot - cap)
+    const near = x + half * 0.3 * along + 1.5
+    const far = x + half * 0.6 + half * 0.4 * along - 1.5
+
+    lines.push(`M${point(near, y + 3)} L${point(far, y - 3)}`)
+  }
+
+  return lines.join(' ')
+}
 
 /** Devon reveals the fox's nine tails in episode 917, chapter 925. No face. */
 const FOX_BODY: Body = { family: 'oblong', cy: 110 }
@@ -2802,6 +3067,42 @@ function uncovered(circle: Circle, others: Circle[], from: number): string {
 
   return paths.join(' ')
 }
+
+/**
+ * The mochi fruit without its shadow, which the awakening replaces with the
+ * ground turned to mochi.
+ */
+const MOCHI_FRUIT: Stroke[] = [
+  ...kitBody(
+    MOCHI_BODY,
+    [100, 112, 124],
+    (x, y) => x > 60 || y < STRAND.top - 1 || y > STRAND.bottom + 1,
+  ),
+  ...skin([
+    [92, 88, 8],
+    [96, 130, -7],
+  ]),
+  ...sprout(MOCHI_BODY, 4, 'right'),
+  {
+    d: [
+      `M${point(...onRim(MOCHI_BODY, STRAND.top, -1))}`,
+      'C26 112 17 124 16 140 C15 148 14 152 12 158',
+      'C7 166 8 182 19 184 C29 186 38 180 37 170',
+      'C36 164 32 162 32 158',
+      `C40 156 50 152 ${point(...onRim(MOCHI_BODY, STRAND.bottom, -1))}`,
+    ].join(' '),
+    role: 'accent',
+  },
+  // The fold where the strand sags, and the blob gathering at its end.
+  {
+    d: 'M20 132 C24 140 30 146 40 148 M14 166 C16 174 22 178 28 178',
+    role: 'soft',
+  },
+]
+
+/** The ground of the awakening, rolled up in mochi either side of the blob. */
+const MOCHI_GROUND =
+  'M44 186 C56 180 58 164 72 168 C84 171 86 184 100 182 C112 180 116 166 128 168 C140 170 142 184 152 186 M8 192 C24 190 40 192 56 190 M110 191 C124 188 136 188 146 192'
 
 /**
  * Every devil fruit drawing, keyed by the id of the record it was drawn for,
@@ -5810,37 +6111,14 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit drawn out in mochi: a thick strand out of its near side,
-   * stretching out and down and sagging, its end free short of the ground,
-   * the outline open where it leaves. In episode 833 Katakuri's leg stretches
-   * out as a tendril of a sticky substance that Luffy cannot get out of, and
-   * Jinbe names the fruit. Nothing pooled on the ground.
+   * The fruit drawn out in mochi: a thick strand out of its near side, sagging
+   * with a fold in it, to a sticky blob at its end that rests on the ground
+   * beside the fruit, the outline open where it leaves. In episode 833 (chapter
+   * 863) Katakuri's leg stretches out as a tendril of a sticky substance that
+   * swallows Luffy's arms and legs, and Jinbe names the fruit. The awakening of
+   * episode 855 is the same drawing with the ground turned to mochi.
    */
-  'mochi-mochi-fruit': [
-    ...kitBody(
-      MOCHI_BODY,
-      [100, 112, 124],
-      (x, y) => x > 60 || y < STRAND.top - 1 || y > STRAND.bottom + 1,
-    ),
-    ...skin([
-      [92, 88, 8],
-      [96, 130, -7],
-    ]),
-    ...sprout(MOCHI_BODY, 4, 'right'),
-    {
-      d: [
-        `M${point(...onRim(MOCHI_BODY, STRAND.top, -1))}`,
-        'C30 120 26 136 22 146 C20 152 12 154 8 160',
-        'C6 165 9 174 16 172 C24 171 34 168 36 160',
-        'C37 156 32 154 32 150',
-        `C34 146 ${point(onRim(MOCHI_BODY, STRAND.bottom, -1)[0] - 3, STRAND.bottom + 2)} ${point(...onRim(MOCHI_BODY, STRAND.bottom, -1))}`,
-      ].join(' '),
-      role: 'accent',
-    },
-    // The mochi drawn thin where it stretched.
-    { d: 'M30 128 C28 136 27 142 25 148', role: 'soft' },
-    shadowUnder(1),
-  ],
+  'mochi-mochi-fruit': [...MOCHI_FRUIT, shadowUnder(1)],
 
   /**
    * The fruit wrung like a cloth: the top bulb turned one way and the bottom
@@ -5914,10 +6192,11 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit with its near side made too hot to touch: a short band across
-   * it, its edges wavering as air over heat does, the outline wavering with
-   * it. In episode 834 Oven heats Pedro's sword until it is too hot to hold.
-   * Nothing rising off it and no sparks, so it is never fire or steam.
+   * The fruit with its near side made too hot to touch: the outline wavers
+   * there as air over heat does, and three short lines of heat come off it,
+   * out and a little up. In episode 834 (chapter 864) Oven heats Pedro's
+   * sword until Pedro cannot hold it. The lines stay short and straight at
+   * their tips, so it is never fire or steam.
    */
   'heat-heat-fruit': [
     ...kitBody(
@@ -5932,16 +6211,15 @@ export const fruitArt = {
     ...sprout(HEAT_BODY, -4, 'left'),
     {
       d: [
-        shimmer(HEAT.top),
-        shimmer(HEAT.bottom),
         polyline(
-          Array.from({ length: 9 }, (_unused, at) => {
-            const y = HEAT.top + ((HEAT.bottom - HEAT.top) * at) / 8
+          Array.from({ length: 13 }, (_unused, at) => {
+            const y = HEAT.top + ((HEAT.bottom - HEAT.top) * at) / 12
             const [x] = onRim(HEAT_BODY, y, -1)
 
-            return point(x - 2 + 2 * Math.sin(at * 1.8), y)
+            return point(x - 1 + 2 * Math.sin(at * 1.8), y)
           }),
         ),
+        ...[122, 136, 150].map((y) => heatLine(y)),
       ].join(' '),
       role: 'accent',
     },
@@ -5950,12 +6228,14 @@ export const fruitArt = {
 
   /**
    * The fruit with a plume rising out of its belly: narrow at a neck where it
-   * leaves the skin, up in an S beside the fruit and off in a flat swirl,
-   * like a lamp's genie with no figure. In episode 834 Daifuku rubs his belly
-   * and a genie comes out of it to fight Sanji.
+   * leaves the skin, up beside the fruit and billowing out into a cloud at the
+   * top, like a lamp's genie before the figure. In chapter 864 (episode 834)
+   * Daifuku's genie comes out of his belt buckle to fight Sanji; the smoke
+   * round it is the anime's (episode 834), and the billowing plume is the shape
+   * the issue proposed. No figure.
    */
   'puff-puff-fruit': [
-    ...kitBody(PUFF_BODY, [134, 144], (x, y) => x < 110 || y < 110 || y > 122),
+    ...kitBody(PUFF_BODY, [134, 144], (x, y) => x < 110 || y < 108 || y > 124),
     ...skin([
       [62, 104, 9],
       [88, 132, -8],
@@ -5964,22 +6244,31 @@ export const fruitArt = {
     {
       d: [
         `M${point(...onRim(PUFF_BODY, 110, 1))}`,
-        'C126 108 128 102 128 96 C128 88 120 82 120 72',
-        'C120 60 132 56 134 48 C135 42 128 40 126 44 C124 48 130 50 132 46',
-        `M${point(...onRim(PUFF_BODY, 120, 1))}`,
-        'C134 120 144 110 144 98 C144 88 134 84 136 74',
-        'C138 64 152 60 150 46 C148 34 132 30 122 38',
+        'C128 104 124 94 118 86 C114 80 112 76 114 70',
+        billow([
+          [114, 70],
+          [106, 56],
+          [114, 40],
+          [130, 32],
+          [144, 42],
+          [145, 62],
+        ]),
+        'M145 62 C149 74 148 90 140 102',
+        `C134 112 126 120 ${point(...onRim(PUFF_BODY, 122, 1))}`,
       ].join(' '),
       role: 'accent',
     },
+    // A fold of the plume where it widens.
+    { d: 'M128 112 C136 104 138 94 136 84', role: 'soft' },
     shadowUnder(1),
   ],
 
   /**
-   * The fruit turned to food from the seam down: above it the skin, below it
-   * a plain chunk of meat, soft and rounded, a hard step in the outline where
-   * the two meet. In episode 838 a young Streusen turns a log into meat and
-   * eats it. No bone and no cake.
+   * The fruit turned to food from the seam down: above it the skin, below it a
+   * rounded roast swelling wider than the fruit, cut clean across its near end,
+   * a hard step in the outline where the two meet. In episode 838 (chapter 868)
+   * a young Streusen cuts a log, turns it into meat and eats it. No bone, no
+   * cake, and no marbling: the story says meat and nothing more.
    */
   'cook-cook-fruit': [
     ...kitBody(COOK_BODY, [96, 108, 118], (_x, y) => y < SEAM),
@@ -5991,53 +6280,73 @@ export const fruitArt = {
     {
       d: [
         `M${point(...onRim(COOK_BODY, SEAM, -1))}`,
-        'L31 129 C26 138 26 148 34 154 C38 162 50 166 60 165',
-        'C70 171 90 171 100 165 C112 163 120 154 119 146',
-        'C123 141 123 137 121 133',
-        `L${point(...onRim(COOK_BODY, SEAM, 1))}`,
+        'C33 128 31 132 31 136',
+        'C36 139 38 145 37 150 C36 158 31 165 25 166',
+        'C20 166 18 160 19 152 C20 144 25 136 31 136',
+        'M25 166 C36 176 56 178 70 176 C90 182 116 176 126 164',
+        'C136 152 134 136',
+        point(...onRim(COOK_BODY, SEAM, 1)),
       ].join(' '),
       role: 'accent',
     },
-    // Where the skin stops, across the front, and a shine on the meat.
+    // Where the skin stops, across the front, and a shine on the roast.
     {
       d: [
         `M${point(...onRim(COOK_BODY, SEAM, -1))}`,
-        'C58 134 102 134',
+        'C60 134 102 134',
         point(...onRim(COOK_BODY, SEAM, 1)),
-        'M40 142 C40 148 44 153 50 155',
+        'M118 150 C114 158 106 164 96 166',
       ].join(' '),
       role: 'soft',
     },
     shadowUnder(1),
   ],
 
-  /** The gourd pierced by Obelisusu, shown in episode 1117, chapter 1083. */
+  /**
+   * The gourd pierced by three thin soot obelisks shot up from the ground,
+   * four-sided and capped, their far faces hatched because soot is black,
+   * and a little loose soot at their feet. Karasu leaves soot between his
+   * enemies' feet and drives it up as Obelisusu in episode 1117 (chapter
+   * 1083), where the fruit is named.
+   */
   'soot-soot-fruit': [
-    ...kitBody(
-      SOOT_BODY,
-      [88, 99, 110],
-      (x, y) =>
-        (y < 135 && (x > 60 || y < 115)) || (y >= 135 && x > 60 && x < 97),
-    ),
+    ...kitBody(SOOT_BODY, [126, 138, 148], (x, y) => !behindObelisk(x, y)),
     ...skin([
       [69, 98, 6],
-      [88, 117, -6],
       [70, 128, 5],
     ]),
-    ...sprout(SOOT_BODY, 5, 'right'),
+    ...sprout(SOOT_BODY, -8, 'left'),
     {
-      d: 'M33 169 L39 119 L49 72 L59 166 Z M77 172 L96 125 L110 83 L115 169 Z M121 172 L132 131 L143 110 L149 172 Z',
+      d: OBELISKS.map((one) => obelisk(one, 'outline')).join(' '),
       role: 'accent',
     },
-    shadowUnder(1),
+    { d: OBELISKS.map((one) => obelisk(one, 'edge')).join(' '), role: 'soft' },
+    { d: OBELISKS.map((one) => obeliskShade(one)).join(' '), role: 'ambient' },
+    // Loose soot along the ground at their feet, where it was left: the
+    // ground line, in place of a shadow.
+    {
+      d: billow([
+        [12, 179],
+        [30, 175],
+        [40, 178],
+        [70, 179],
+        [80, 177],
+        [104, 178],
+        [124, 176],
+        [148, 179],
+      ]),
+      role: 'ambient',
+      dashed: true,
+    },
   ],
 
   /**
    * The fruit roused: three sticks raised out of its near rim, the skin open
-   * where they come out. In episode 880 Belo Betty waves her flag and the
-   * townspeople of Lulusia take up sticks and drive the pirates off. The
-   * power shows only in what it rouses, so the sticks are what is drawn; no
-   * flag, which is hers and not the fruit's.
+   * where they come out, and a burst of short rays over them. In episode 880
+   * (chapter 904) Belo Betty's words of encouragement rouse the townspeople
+   * of Lulusia, who take up sticks and drive the pirates off. The power shows
+   * only in what it rouses, so the sticks are what is drawn; no flag, which
+   * is hers and not the fruit's.
    */
   'pump-pump-fruit': [
     ...kitBody(PUMP_BODY, [116, 128, 140], (x, y) => {
@@ -6057,15 +6366,20 @@ export const fruitArt = {
       [96, 150, -7],
     ]),
     ...sprout(PUMP_BODY, 8, 'right'),
-    { d: STICKS.map((one) => stick(one)).join(' '), role: 'accent' },
+    {
+      d: `${STICKS.map((one) => stick(one)).join(' ')} ${ROUSING_RAYS}`,
+      role: 'accent',
+    },
     shadowUnder(1),
   ],
 
   /**
-   * The ground pushed up like clay: a bank rises at the fruit's foot and
-   * rolls over the near side of it, the outline lost where the earth folds
-   * over. In episode 880 Morley comes up out of the ground and pushes it at
-   * the Peachbeard Pirates like clay.
+   * The street pushed up like clay: it rolls up into a wave at the fruit's
+   * foot and curls over the near side of it, the paving still on its face,
+   * the outline lost where it folds over. In episode 880 (chapter 904)
+   * Morley plants her trident in the street of Lulusia and moves it like
+   * clay, driving the Peachbeard Pirates back with a wave of it. No trident,
+   * which is hers and not the fruit's.
    */
   'push-push-fruit': [
     ...kitBody(PUSH_BODY, [130, 142, 152], (x, y) => y < heightOn(BANK, x) - 2),
@@ -6076,17 +6390,12 @@ export const fruitArt = {
     ...sprout(PUSH_BODY, 4, 'right'),
     {
       d: [
-        'M8 176 C20 162 36 140 52 132 C62 126 74 130 77 140',
-        'C79 148 75 153 68 151',
-        'M70 152 C76 158 82 168 86 176',
+        polyline(alongChain(PUSH_WAVE, 30).map(([x, y]) => point(x, y))),
+        polyline(alongChain(PUSH_FACE, 8).map(([x, y]) => point(x, y))),
       ].join(' '),
       role: 'accent',
     },
-    // The clay, folded as it was pushed.
-    {
-      d: 'M22 168 C32 156 44 146 58 140 M40 172 C48 164 58 158 68 157',
-      role: 'soft',
-    },
+    { d: PAVING, role: 'soft' },
     {
       d: 'M6 176 L154 176 M96 174 L100 169 L106 170 L108 174 Z M118 174 L121 171 L125 173 Z',
       role: 'ambient',
@@ -6094,15 +6403,17 @@ export const fruitArt = {
   ],
 
   /**
-   * A dango pinched out on a short neck of dough, and one finished dumpling
-   * resting beside the fruit. Tama pulls a millet dumpling off her cheek and
-   * feeds Hihimaru in episode 893 (chapter 911), before the record opens.
+   * A dango pinched out of the near flank on a narrow neck of dough, a crease
+   * where it is pinched, and two finished dumplings piled on the other side of
+   * the fruit, one resting on the other. Tama pinches a millet dumpling off her
+   * cheek and feeds Hihimaru in episode 893 (chapter 911), before the record
+   * opens. The dumplings sit one above the other, never side by side.
    */
   'millet-millet-fruit': [
     ...kitBody(
       MILLET_BODY,
       [94, 102, 144, 154],
-      (x, y) => x < 80 || y < 110 || y > 132,
+      (x, y) => x < 80 || y < MILLET_NECK.top || y > MILLET_NECK.bottom,
     ),
     ...skin([
       [68, 101, 8],
@@ -6111,22 +6422,28 @@ export const fruitArt = {
     ...sprout(MILLET_BODY, 3, 'left'),
     {
       d: [
-        `M${point(...onRim(MILLET_BODY, 110, 1))}`,
-        'C125 110 128 115 132 114 C140 108 150 114 150 122',
-        'C150 132 138 136 132 128',
-        `L${point(...onRim(MILLET_BODY, 132, 1))}`,
-        ring(135, 168, 8),
+        `M${point(...onRim(MILLET_BODY, MILLET_NECK.top, 1))}`,
+        'C128 110 131 113 133 114 C134 104 152 104 152 120',
+        'C152 136 134 136 133 126 C131 127 128 130',
+        point(...onRim(MILLET_BODY, MILLET_NECK.bottom, 1)),
+        ...MILLET_DUMPLINGS.map(([x, y, r]) => ring(x, y, r)),
       ].join(' '),
       role: 'accent',
     },
-    { d: 'M137 118 C141 115 145 118 146 121 M132 164 L137 163', role: 'soft' },
+    // The pinch at the neck, and a shine on each dumpling.
+    {
+      d: 'M132 115 C134 118 134 123 132 126 M139 111 C143 109 147 111 148 114 M28 144 C31 142 34 143 35 145 M19 164 C22 161 26 161 28 163',
+      role: 'soft',
+    },
     shadowUnder(1),
   ],
 
   /**
-   * Straw bursting out of the near side, individual stiff stalks still
-   * separate at their tips. Hawkins draws straw from his body in episodes
-   * 401–402; no doll, wound or later straw weapon is drawn here.
+   * Straw bursting out of the near side: long, stiff stalks fanning out from
+   * one root inside the split skin, each split at its tip, and a few short
+   * ones between. Hawkins draws straw from his body in episodes 401–402
+   * (chapters 508–509) and names the fruit in episode 898 (chapter 913); no
+   * doll, wound or later straw weapon is drawn here.
    */
   'straw-straw-fruit': [
     ...kitBody(
@@ -6140,16 +6457,8 @@ export const fruitArt = {
       [90, 145, -6],
     ]),
     ...sprout(STRAW_BODY, 5, 'right'),
-    {
-      d: [
-        'M42 108 L16 87 L12 81 M45 115 L18 101 L8 98',
-        'M48 121 L22 116 L8 116 M46 127 L20 134 L11 140',
-        'M43 135 L24 152 L21 162 M42 116 L26 94 L25 86',
-        'M45 126 L29 141 L27 154',
-      ].join(' '),
-      role: 'accent',
-    },
-    { d: 'M21 104 L25 96 M20 120 L23 110 M22 139 L28 135', role: 'soft' },
+    { d: STRAWS.map((one) => stalk(one, true)).join(' '), role: 'accent' },
+    { d: SHORT_STRAWS.map((one) => stalk(one, false)).join(' '), role: 'soft' },
     shadowUnder(1),
   ],
 
@@ -6231,12 +6540,14 @@ export const fruitArt = {
   ],
 
   /**
-   * The foot caved in and crumbling, crumbs falling into a pit below it.
-   * Shinobu decays the ground to escape Kaido's breath in episode 916
-   * (chapter 924). Curls stay high, away from the sagging lower edge.
+   * The lower half gone past ripe: sagging lower and wider than the foot it
+   * was, more on the near side, soft and creased, its bottom edge crumbling
+   * open, crumbs falling into a pit below it. Shinobu decays the ground into a
+   * pit to escape Kaido's breath in episode 916 (chapter 924). Curls stay high,
+   * away from the sagging lower edge.
    */
   'ripe-ripe-fruit': [
-    ...kitBody(RIPE_BODY, [100, 112, 124], (_x, y) => y < 140),
+    ...kitBody(RIPE_BODY, [100, 112, 124], (_x, y) => y < RIPE_SAG),
     ...skin([
       [78, 95, 5],
       [74, 119, -5],
@@ -6244,17 +6555,20 @@ export const fruitArt = {
     ...sprout(RIPE_BODY, -3, 'left'),
     {
       d: [
-        `M${point(...onRim(RIPE_BODY, 140, -1))}`,
-        'L54 148 L62 146 L68 155 L74 153',
-        'M81 157 L90 151 L96 145',
-        point(...onRim(RIPE_BODY, 140, 1)),
-        'M68 164 L72 161 L75 166 Z M87 167 L90 164 L93 169 Z',
-        'M77 174 L80 171 L83 175 Z',
+        `M${point(...onRim(RIPE_BODY, RIPE_SAG, -1))}`,
+        'C46 146 46 162 54 168 L58 165 L62 170 L67 165 L72 167',
+        'M81 164 L86 166 L90 161 L96 163 C106 158 109 146',
+        point(...onRim(RIPE_BODY, RIPE_SAG, 1)),
+        'M64 175 L68 172 L71 177 Z M77 171 L80 169 L82 172 Z',
         'M51 184 C65 175 99 175 113 184 C96 189 68 189 51 184 Z',
       ].join(' '),
       role: 'accent',
     },
-    { d: 'M62 133 L65 141 L71 139 M86 132 L82 141 L86 146', role: 'soft' },
+    // Short creases in the soft skin, at odd heights and angles.
+    {
+      d: 'M55 144 C59 147 60 151 59 155 M97 138 C99 141 99 145 97 148 M66 155 C68 158 68 161 66 163',
+      role: 'soft',
+    },
     { d: 'M65 183 L70 179 M78 185 L83 179 M93 184 L98 180', role: 'ambient' },
   ],
 
@@ -6280,27 +6594,30 @@ export const fruitArt = {
   ],
 
   /**
-   * Queen becomes a brachiosaurus in episode 944 (chapter 945). The long neck
-   * and nothing else, never the head, and nothing it does later.
+   * The long neck grown out of the near shoulder, thick at the root and
+   * rising in an S. Queen becomes a brachiosaurus in episode 944 (chapter
+   * 945). The neck and nothing else, never the head, and nothing it does
+   * later.
    */
   'dragon-dragon-fruit-ancient-model-brachiosaurus': [
     ...kitBody(
       BRACHIOSAURUS_BODY,
       [122, 136, 150],
-      (x, y) => x > 80 || y < 84 || y > 104,
+      (x, y) => x > 80 || y < 95 || y > 125,
     ),
     ...skin([
       [88, 116, 7],
       [72, 152, -6],
     ]),
     ...sprout(BRACHIOSAURUS_BODY, 6, 'right'),
-    { d: limbOutline(BRACHIOSAURUS_NECK, 24), role: 'accent' },
+    { d: limbOutline(BRACHIOSAURUS_NECK, 30), role: 'accent' },
     shadowUnder(1),
   ],
 
   /**
    * The fruit whole, and its far shoulder going: the skin there comes away
-   * in pieces that drift up and off, smaller and further apart, to specks.
+   * in curved flakes that drift up and off, smaller and further apart, to
+   * specks.
    * Toki sends her son and four retainers forward in time in episode 910
    * (chapter 920). Nothing missing below, and no second outline.
    */
@@ -6317,15 +6634,7 @@ export const fruitArt = {
     ...sprout(TIME_BODY, -4, 'left'),
     {
       d: [
-        ...TIME_PIECES.map(([from, to, dx, dy]) => {
-          return polyline(
-            [from, (from + to) / 2, to].map((y) => {
-              const [x] = onRim(TIME_BODY, y, 1)
-
-              return point(x + dx, y + dy)
-            }),
-          )
-        }),
+        ...TIME_PIECES.map((piece) => flakeOf(piece)),
         ...TIME_SPECKS.map(([x, y]) => speck(x, y)),
       ].join(' '),
       role: 'accent',
@@ -6335,9 +6644,11 @@ export const fruitArt = {
 
   /**
    * A heavy forepaw grown from the lower near side, resting with its claws
-   * sheathed. Who's-Who lounges in beast form in chapter 998 (episode 1012),
-   * before the record opens at 1013. A paw cannot name the model on its own;
-   * fangs would read as a mouth. The tail stays out of this composition.
+   * out. Who's-Who lounges in beast form in episode 1013 (chapter 998); his
+   * claws retract, and his clawed fingers are out as he fights Jinbe in
+   * episodes 1039–1040 (chapters 1017–1018), later in the same arc. Fangs
+   * would read as a mouth, so the paw carries it. The tail stays out of
+   * this composition.
    */
   'cat-cat-fruit-ancient-model-sabre-tooth-tiger': [
     ...kitBody(
@@ -6358,10 +6669,13 @@ export const fruitArt = {
         'C10 176 18 177 23 174 C27 178 35 178 39 174',
         'C43 177 51 176 53 171 C60 163 61 156',
         point(...onRim(SABRE_BODY, 151, -1)),
+        ...SABRE_CLAWS.map(([x, y]) => {
+          return `M${point(x, y)} C${point(x - 4, y - 1)} ${point(x - 7, y + 1)} ${point(x - 7, y + 6)}`
+        }),
       ].join(' '),
       role: 'accent',
     },
-    // Toe creases on the resting paw, without exposed claws or pads.
+    // Toe creases on the resting paw.
     {
       d: 'M24 174 C26 168 24 164 22 162 M40 173 C41 168 39 164 36 162',
       role: 'soft',
@@ -6370,35 +6684,39 @@ export const fruitArt = {
   ],
 
   /**
-   * Two short clawed forelimbs gripping the fruit, grown from its shoulders.
-   * Ulti pins Luffy in chapter 983, pages 14–15 (episode 990). The digits
-   * overlap what they grip, so only the near claw tips show here; no claim
-   * about the full claw count, and never the head's dome or a ring of knobs.
+   * Two clawed forelimbs gripping the fruit, grown from its shoulders, bent at
+   * the elbow, hooked claws on each hand over the flank. Ulti's claws pin Luffy
+   * by the shoulders in chapter 983, pages 14–15 (episode 990). Never the
+   * head's dome or a ring of knobs.
    */
   'dragon-dragon-fruit-ancient-model-pachycephalosaurus': [
     ...kitBody(PACHY_BODY, [148, 154], (_x, y) => y < 100 || y > 140),
     ...skin([
-      [80, 108, 7],
-      [78, 143, -6],
+      [66, 104, 7],
+      [90, 128, -6],
     ]),
     ...sprout(PACHY_BODY, 3, 'right'),
     {
       d: `${grown(PACHY_BODY, -1, GRIPPING_ARM)} ${grown(PACHY_BODY, 1, GRIPPING_ARM)}`,
       role: 'accent',
     },
-    // The elbows and wrists, folded down rather than spread as wings.
+    // The elbows, folded down rather than spread as wings.
     {
-      d: 'M27 111 C23 122 31 132 38 133 M133 111 C137 122 129 132 122 133',
+      d: [-1, 1]
+        .map((way) => {
+          return `M${point(80 + way * 56, 108)} C${point(80 + way * 58, 116)} ${point(80 + way * 56, 122)} ${point(80 + way * 52, 126)}`
+        })
+        .join(' '),
       role: 'soft',
     },
     shadowUnder(1),
   ],
 
   /**
-   * A solid bony frill, fanned out behind the far shoulder and off to one
+   * A wide bony frill, fanned out behind the far shoulder and off to one
    * side, so the fruit is a body with a plate behind it and never a head in
-   * a ruff; a few low knobs on its rim. Sasaki turns into a triceratops in
-   * episode 1012 (chapter 998). No horns, and none of the later spinning.
+   * a ruff. Sasaki turns into a triceratops in episode 1012 (chapter 998).
+   * No horns, and none of the later spinning.
    */
   'dragon-dragon-fruit-ancient-model-triceratops': [
     ...kitBody(
@@ -6421,7 +6739,10 @@ export const fruitArt = {
     },
     {
       d: polyline(
-        [-114, -96, -78, -60, -42, -24, -6, 12, 26].map((angle) => {
+        Array.from({ length: 11 }, (_unused, at) => {
+          const angle =
+            FRILL.from + 8 + ((FRILL.to - FRILL.from - 20) * at) / 10
+
           return point(...frillAt(angle, FRILL.r - 9))
         }),
       ),
@@ -7141,16 +7462,11 @@ export const fruitRedrawn: Record<string, FruitRedrawing[]> = {
       episode: 855,
       chapter: 882,
       look: 'awakening',
-      value: fruitArt['mochi-mochi-fruit']
-        .slice(0, -1)
-        .map((stroke) =>
-          stroke.role === 'accent' ?
-            {
-              ...stroke,
-              d: `${stroke.d} M8 184 C24 180 24 153 42 157 C54 159 51 178 70 180 C85 182 90 163 105 164 C119 165 121 183 151 185 M10 191 C34 188 35 169 43 170 M86 188 C105 177 112 177 120 187 M41 157 C43 149 51 147 57 150`,
-            }
-          : stroke,
-        ),
+      value: MOCHI_FRUIT.map((stroke) => {
+        return stroke.role === 'accent' ?
+            { ...stroke, d: `${stroke.d} ${MOCHI_GROUND}` }
+          : stroke
+      }),
     },
   ],
 
