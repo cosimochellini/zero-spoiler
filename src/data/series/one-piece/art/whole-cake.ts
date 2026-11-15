@@ -500,7 +500,9 @@ const KATAKURI_SCARF: Stroke[] = [
  * Ryokugyu from behind, so nothing of his face shows: the wild hair, its
  * dark mass hatched, and the admiral's coat worn as a cape over his
  * shoulders, its empty sleeves hanging, folds down the back, no lettering;
- * the gold epaulettes on the shoulders are the accent.
+ * the gold epaulettes on the shoulders are the accent. The coat is the one
+ * he wears when first seen in full (ch. 1053 p. 10-12, ep 1080); at 882 he
+ * is only a silhouette, and its shoulders are not viewed.
  */
 const RYOKUGYU_COAT: Stroke[] = [
   {
@@ -1597,8 +1599,10 @@ export const wholeCakeArt = {
   // wild hair, and the Marine coat worn as a cape over his shoulders, its
   // sleeves hanging empty, the gold epaulettes on the shoulders (the
   // accent), no lettering. He sits with Fujitora at Mary Geoise at 882
-  // (ch. 905 p. 14-15), drawn there in silhouette. Stage: the flower he
-  // flies on at 1079.
+  // (ch. 905 p. 14-15), where the wiki only says he is a silhouette. The
+  // cape and the epaulettes are the coat the reader sees on him in full at
+  // 1080 (ch. 1053 p. 10-12); the silhouette's shoulders are not viewed.
+  // Stage: the flower he flies on at 1079.
   'ryokugyu': [...RYOKUGYU_COAT, shadow(80, 178, 64)],
   // A sheep's curled horn in three quarters, ridged, its underside hatched, as
   // his hands become at 739, above the big sword he carries on his back.
@@ -2632,8 +2636,11 @@ export const wholeCakeRedrawn: Redrawings = {
 
   // The cuff on his forearm, the sleeve running out of the frame, the wrist
   // open and a winch drum across the cuff, and the fist shot out of it on a
-  // cable (the accent), the ascot left out: the device on his right forearm is a winch that sends his hand
-  // out on a cable to grab Yuen's head at 873 (ch. 898 p. 11-13).
+  // cable (the accent), the ascot left out: the device on his right forearm
+  // is a winch that sends his hand out on a cable to grab Yuen's head at 873
+  // (ch. 898 p. 11-13). He punches as Winch Green earlier, at 839 (ch. 869
+  // p. 12), but the wiki first shows the hand going out on its cable at 873,
+  // and the cable is what the drawing shows; 839 is not viewed.
   'vinsmoke-yonji': [
     {
       episode: 873,
