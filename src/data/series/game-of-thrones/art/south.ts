@@ -106,8 +106,9 @@ const TANKARD: Stroke[] = [
  * Joffrey Baratheon: a stag, the animal of the house he is the heir of,
  * side on with no eye or mouth. Nothing of his own reads at his threshold
  * in both media, so the animal stands in. The accent is the antlers.
+ * Mandon Moore's banner in `court.ts` carries it.
  */
-const STAG: Stroke[] = [
+export const STAG: Stroke[] = [
   {
     d: 'M68 100 Q64 88 60 76 Q50 80 42 82 Q34 82 34 76 Q36 70 46 66 L58 56 Q66 56 72 68 Q78 86 92 90 Q110 92 122 92 Q134 94 134 108 Q134 120 126 126',
   },
@@ -930,10 +931,10 @@ export const southRedrawn: Redrawings = {
   'lysa-arryn': [
     // The perch empty and the falcon falling past it, head down and wings
     // open: Petyr pushes her through the Moon Door, in "Mockingbird"
-    // (episode 37) and in Sansa I of A Feast for Crows (chapter 236).
+    // (episode 37) and in Sansa VII of A Storm of Swords (chapter 224).
     {
       episode: 37,
-      chapter: 236,
+      chapter: 224,
       value: [
         {
           d: 'M56 144 Q48 136 50 122 Q50 104 56 88 Q62 104 62 122 Q64 136 56 144 L54 150',
@@ -956,9 +957,11 @@ export const southRedrawn: Redrawings = {
   ],
   'bronn': [
     // The Stokeworth banner, a lamb holding a goblet, on a pole beside the
-    // sword, the accent moved to the lamb: he has married Lollys Stokeworth
-    // by Jaime II of A Feast for Crows (chapter 242). The book's alone (the
-    // show breaks the match); episode 41 orders it.
+    // sword, the accent moved to the lamb: he is wed to Lollys Stokeworth,
+    // their son born and named, by Jaime II of A Feast for Crows (chapter
+    // 242). The match is arranged earlier (Tyrion IX of A Storm of Swords,
+    // chapter 210, still to check), so the pin is late, never early. The
+    // book's alone (the show breaks the match); episode 41 orders it.
     {
       episode: 41,
       chapter: 242,

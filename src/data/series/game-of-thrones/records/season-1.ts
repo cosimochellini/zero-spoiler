@@ -3083,7 +3083,11 @@ export const season1: ThronesSaga = {
         it: 'Raggiunge il marito nel parco degli dei con una notizia. Il Primo Cavaliere del Re è morto e il re sta venendo a Grande Inverno.',
         en: 'She finds her husband in the godswood with news. The Hand of the King is dead, and the king is riding to Winterfell.',
       },
-      status: [{ episode: 1, chapter: 3, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 3, value: 'alive' },
+        { episode: 29, chapter: 195, value: 'deceased' },
+        { episode: 30, chapter: 225, source: 'chapter', value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3109,7 +3113,10 @@ export const season1: ThronesSaga = {
         it: 'Accompagna il padre all’esecuzione di un disertore. Al ritorno lui e Jon trovano una meta-lupa morta con i suoi cuccioli, e lui ne prende uno.',
         en: 'He rides with his father to the execution of a deserter. On the way back he and Jon find a dead direwolf with her pups, and he takes one.',
       },
-      status: [{ episode: 1, chapter: 2, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 2, value: 'alive' },
+        { episode: 29, chapter: 195, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3184,7 +3191,10 @@ export const season1: ThronesSaga = {
         it: 'È il più piccolo dei figli Stark e tiene uno dei cuccioli di meta-lupo. Accoglie il re nel cortile di Grande Inverno con il resto della famiglia.',
         en: 'He is the youngest of the Stark children and keeps one of the direwolf pups. He greets the king in the yard of Winterfell with the rest of his family.',
       },
-      status: [{ episode: 1, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 5, value: 'alive' },
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3247,7 +3257,12 @@ export const season1: ThronesSaga = {
         it: 'Scende dalla Barriera a Grande Inverno durante la visita del re. Al banchetto parla con Jon, che gli chiede di portarlo con sé sulla Barriera.',
         en: 'He comes down from the Wall to Winterfell during the king’s visit. At the feast he talks with Jon, who asks to go back to the Wall with him.',
       },
-      status: [{ episode: 1, chapter: 6, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 6, value: 'alive' },
+        { episode: 7, chapter: 42, value: 'missing' },
+        { episode: 56, chapter: 344, source: 'episode', value: 'alive' },
+        { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3262,7 +3277,10 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Lo prende Robb.',
         en: 'He is one of the pups found beside their dead mother on the way back to Winterfell. Robb takes him.',
       },
-      status: [{ episode: 8, chapter: 11, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 11, value: 'alive' },
+        { episode: 29, chapter: 198, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -3310,7 +3328,10 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Lo prende Bran.',
         en: 'He is one of the pups found beside their dead mother on the way back to Winterfell. Bran takes him.',
       },
-      status: [{ episode: 4, chapter: 18, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 18, value: 'alive' },
+        { episode: 55, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -3325,7 +3346,10 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Va a Rickon, il più piccolo dei fratelli.',
         en: 'He is one of the pups found beside their dead mother on the way back to Winterfell. He goes to Rickon, the youngest of the children.',
       },
-      status: [{ episode: 10, chapter: 25, value: 'alive' }],
+      status: [
+        { episode: 10, chapter: 25, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 10,
@@ -3355,7 +3379,10 @@ export const season1: ThronesSaga = {
         it: 'Accompagna Lord Stark all’esecuzione di un disertore dei Guardiani della notte. Al ritorno è con i ragazzi quando trovano una lupa morta e i suoi cuccioli, e vorrebbe ucciderli.',
         en: 'He rides with Lord Stark to the execution of a deserter from the Night’s Watch. On the way back he is with the boys when they find a dead direwolf and her pups, and he wants to kill the pups.',
       },
-      status: [{ episode: 1, chapter: 2, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 2, value: 'alive' },
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3373,7 +3400,10 @@ export const season1: ThronesSaga = {
         it: 'Serve la Casa Stark come consigliere e guaritore. Porta a Lord Stark e alla moglie una lettera segreta della sorella di lei. Consiglia a Lord Stark di accettare l’offerta del re.',
         en: 'He serves House Stark as counsellor and healer. He brings Lord Stark and his wife a secret letter from her sister. He advises Lord Stark to accept the king’s offer.',
       },
-      status: [{ episode: 1, chapter: 7, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 7, value: 'alive' },
+        { episode: 20, chapter: 143, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3406,7 +3436,10 @@ export const season1: ThronesSaga = {
         it: 'Addestra alle armi i ragazzi di Grande Inverno. È uno dei cavalieri al servizio di Lord Stark.',
         en: 'He trains the boys of Winterfell at arms. He is one of the knights who serve Lord Stark.',
       },
-      status: [{ episode: 1, chapter: 8, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 8, value: 'alive' },
+        { episode: 16, chapter: 140, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3436,7 +3469,10 @@ export const season1: ThronesSaga = {
         it: 'È altissimo e forte, ma semplice, e l’unica parola che dice è “Hodor”. Porta in braccio Bran, che non può camminare, fino alla sala grande per incontrare Tyrion Lannister.',
         en: 'He is very tall and strong but simple, and the only word he says is “Hodor”. He carries Bran, who cannot walk, down to the great hall to meet Tyrion Lannister.',
       },
-      status: [{ episode: 4, chapter: 25, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 25, value: 'alive' },
+        { episode: 55, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -3465,7 +3501,10 @@ export const season1: ThronesSaga = {
         it: 'Con un gruppo di fuorilegge assale Bran mentre cavalca fuori da Grande Inverno. Quando i suoi compagni vengono uccisi, si arrende a Robb. Robb la porta al castello come prigioniera.',
         en: 'With a band of outlaws she attacks Bran while he rides outside Winterfell. When her companions are killed, she surrenders to Robb. Robb takes her back to the castle as a prisoner.',
       },
-      status: [{ episode: 6, chapter: 38, value: 'alive' }],
+      status: [
+        { episode: 6, chapter: 38, value: 'alive' },
+        { episode: 54, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         { episode: 6, chapter: 38, value: { it: 'Bruti', en: 'Wildlings' } },
         {
@@ -3901,7 +3940,7 @@ export const season1: ThronesSaga = {
       role: { it: 'Lady del Nido dell’Aquila', en: 'Lady of the Eyrie' },
       status: [
         { episode: 5, chapter: 35, value: 'alive' },
-        { episode: 37, chapter: 236, value: 'deceased' },
+        { episode: 37, chapter: 224, value: 'deceased' },
       ],
     },
     'robin-arryn': {
@@ -4533,7 +4572,12 @@ export const season1: ThronesSaga = {
         it: 'Lavora alla forgia di Grande Inverno. Prima di partire per la Barriera, Jon gli fa forgiare per Arya una spada sottile e leggera.',
         en: 'He works the forge at Winterfell. Before Jon leaves for the Wall, he has Mikken make a slender, light sword for Arya.',
       },
-      status: [{ episode: 2, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 2, chapter: 54, value: 'alive' },
+        // Killed by an ironborn when Theon takes Winterfell (#1288). The
+        // book's alone; episode 16 orders it (A Clash of Kings 46, Bran VI).
+        { episode: 16, chapter: 120, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 2,
@@ -4629,7 +4673,12 @@ export const season1: ThronesSaga = {
         it: 'Porta i suoi uomini nell’esercito di Robb e pretende di guidare l’avanguardia, minacciando di tornarsene a casa. Quando sguaina la spada a tavola, Vento Grigio gli stacca due dita con un morso, e lui ci ride sopra.',
         en: 'He brings his men to Robb’s host and demands to lead the vanguard, threatening to go home if he does not. When he draws his sword at the table, Grey Wind bites off two of his fingers, and he laughs it off.',
       },
-      status: [{ episode: 8, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 54, value: 'alive' },
+        // Dead by "Oathbreaker" (episode 53), where Smalljon says so. The
+        // show's alone; the books leave him a prisoner of the Freys (#1288).
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -4655,7 +4704,12 @@ export const season1: ThronesSaga = {
         it: 'È il figlio di Greatjon Umber e un guerriero di Casa Umber. La sua casata tiene l’Ultimo Focolare, nell’estremo nord del Nord.',
         en: 'He is Greatjon Umber’s son and a fighter of House Umber. His house holds Last Hearth, in the far north of the North.',
       },
-      status: [{ episode: 53, chapter: 64, value: 'alive' }],
+      status: [
+        { episode: 53, chapter: 64, value: 'alive' },
+        // Killed by Tormund in "Battle of the Bastards" (episode 59), and at
+        // the Red Wedding in Catelyn VII of A Storm of Swords (#1288).
+        { episode: 59, chapter: 195, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 53,
@@ -4670,7 +4724,12 @@ export const season1: ThronesSaga = {
         it: 'È a capo di Casa Karstark, che ha sede a Karhold. Marcia nell’esercito di Robb con i suoi uomini.',
         en: 'He is the head of House Karstark, whose seat is Karhold. He marches in Robb’s host with his men.',
       },
-      status: [{ episode: 17, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 17, chapter: 54, value: 'alive' },
+        // Beheaded by Robb in "Kissed by Fire" (episode 25) and in Catelyn
+        // III of A Storm of Swords (#1288).
+        { episode: 25, chapter: 164, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 17,
@@ -4712,7 +4771,12 @@ export const season1: ThronesSaga = {
         it: 'È a capo di Casa Bolton, che ha sede a Forte Terrore. Parla poco e a voce bassa, e ha portato i suoi uomini nell’esercito di Robb.',
         en: 'He is the head of House Bolton, whose seat is the Dreadfort. He speaks little and softly, and he has brought his men to Robb’s host.',
       },
-      status: [{ episode: 14, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 14, chapter: 54, value: 'alive' },
+        // Killed by Ramsay in "Home" (episode 52). The show's alone; in the
+        // books he is alive (#1288).
+        { episode: 52, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 14,
@@ -4730,7 +4794,17 @@ export const season1: ThronesSaga = {
         it: 'È a capo di Casa Glover, che ha sede a Deepwood Motte. Risponde alla chiamata alle armi di Robb insieme agli altri signori del Nord e siede al suo consiglio di guerra.',
         en: 'He is the head of House Glover, whose seat is Deepwood Motte. He answers Robb’s call to arms with the other northern lords and sits at his war council.',
       },
-      status: [{ episode: 8, chapter: 56, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 56, value: 'alive' },
+        // Robett speaks of him as gone in "The Broken Man" (episode 57), and
+        // never says he is dead. The show's alone (owner, #1288).
+        {
+          episode: 57,
+          chapter: 344,
+          source: 'episode',
+          value: 'presumed-dead',
+        },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -4771,7 +4845,12 @@ export const season1: ThronesSaga = {
         it: 'Governa Casa Mormont dall’Isola dell’Orso. Risponde alla chiamata alle armi di Robb e si unisce al suo esercito con la sua gente.',
         en: 'She rules House Mormont from Bear Island. She answers Robb’s call to arms and joins his host with her people.',
       },
-      status: [{ episode: 8, chapter: 54, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 54, value: 'alive' },
+        // Lyanna says she died fighting for Robb in "The Broken Man"
+        // (episode 57). The show's alone (#1288).
+        { episode: 57, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -4800,7 +4879,12 @@ export const season1: ThronesSaga = {
         it: 'È la figlia maggiore di lady Maege ed erede dell’Isola dell’Orso. Cavalca nella guardia personale di Robb durante la battaglia nel Bosco dei Sussurri.',
         en: 'She is Lady Maege’s eldest daughter and the heir to Bear Island. She rides in Robb’s personal guard in the battle in the Whispering Wood.',
       },
-      status: [{ episode: 9, chapter: 64, value: 'alive' }],
+      status: [
+        { episode: 9, chapter: 64, value: 'alive' },
+        // Killed by Ryman Frey at the Red Wedding, in Catelyn VII of A Storm
+        // of Swords (#1288).
+        { episode: 29, chapter: 195, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 9,
@@ -4815,7 +4899,13 @@ export const season1: ThronesSaga = {
         it: 'È figlio del lord di Porto Bianco ed è cavaliere. Combatte per Robb insieme agli uomini di Casa Manderly.',
         en: 'He is a son of the lord of White Harbor and a knight. He fights for Robb with the men of House Manderly.',
       },
-      status: [{ episode: 29, chapter: 56, value: 'alive' }],
+      status: [
+        { episode: 29, chapter: 56, source: 'chapter', value: 'alive' },
+        // Killed at the Red Wedding: on screen in "The Rains of Castamere"
+        // (episode 29), his threshold, and told in Catelyn VII of A Storm of
+        // Swords (chapter 195), as Vayon Poole's death is (owner, #1288).
+        { episode: 29, chapter: 195, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 29,
@@ -5055,7 +5145,13 @@ export const season1: ThronesSaga = {
         it: 'Porta il mantello bianco della Guardia reale, i cavalieri giurati a proteggere il re. Presta servizio alla corte di Approdo del Re.',
         en: 'He wears the white cloak of the Kingsguard, the knights sworn to protect the king. He serves at the court in King’s Landing.',
       },
-      status: [{ episode: 8, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 30, value: 'alive' },
+        // Arya kills him in Braavos in "Mother's Mercy" (episode 50). The
+        // show's alone: in the books he is alive, so chapter 344 only orders
+        // it.
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -5091,7 +5187,13 @@ export const season1: ThronesSaga = {
         it: 'Veste il mantello bianco della Guardia reale. Sorveglia la famiglia reale nella Fortezza Rossa.',
         en: 'He wears the white cloak of the Kingsguard. He stands guard over the royal family in the Red Keep.',
       },
-      status: [{ episode: 19, chapter: 52, value: 'alive' }],
+      status: [
+        { episode: 19, chapter: 52, source: 'chapter', value: 'alive' },
+        // Drowned in the Blackwater: on screen in "Blackwater" (episode 19),
+        // his threshold, and told in Tyrion XIV of A Clash of Kings (chapter
+        // 135).
+        { episode: 19, chapter: 135, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 19,
@@ -5109,7 +5211,12 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cavalieri della Guardia reale. È presente nella sala del trono quando Barristan Selmy viene congedato dalla Guardia reale.',
         en: 'He is one of the knights of the Kingsguard. He is in the throne room when Barristan Selmy is dismissed from the Kingsguard.',
       },
-      status: [{ episode: 8, chapter: 58, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 58, value: 'alive' },
+        // Killed on the Greenblood, told in The Queenmaker of A Feast for
+        // Crows (chapter 247). The book's alone; episode 8 orders it.
+        { episode: 8, chapter: 247, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -5124,7 +5231,13 @@ export const season1: ThronesSaga = {
         it: 'È uno degli scudieri di re Robert Baratheon e lo serve da vicino. Il re lo tratta con poca pazienza.',
         en: 'He is one of King Robert Baratheon’s squires and waits on him closely. The king has little patience with him.',
       },
-      status: [{ episode: 3, chapter: 31, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 31, value: 'alive' },
+        // Dies under the Great Sept in "The Winds of Winter" (episode 60).
+        // The show's alone: in the books he is alive, so chapter 344 only
+        // orders it.
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5142,7 +5255,12 @@ export const season1: ThronesSaga = {
         it: 'Si presenta ubriaco davanti a re Joffrey, che vuole farlo uccidere. Sansa convince il re a risparmiarlo, e Joffrey ne fa il suo giullare.',
         en: 'He comes before King Joffrey drunk, and the king wants him killed. Sansa talks the king into sparing him, and Joffrey makes him his fool.',
       },
-      status: [{ episode: 11, chapter: 58, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 58, value: 'alive' },
+        // Littlefinger's men kill him in "Breaker of Chains" (episode 33)
+        // and in Sansa V of A Storm of Swords (chapter 205).
+        { episode: 33, chapter: 205, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -5285,7 +5403,12 @@ export const season1: ThronesSaga = {
         it: 'È una delle guardie di Eddard Stark sulla strada del Re. Una mattina lo sveglia perché il re vuole cavalcare con lui.',
         en: 'He is one of Eddard Stark’s guards on the kingsroad. One morning he wakes him because the king wants to ride with him.',
       },
-      status: [{ episode: 1, chapter: 13, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 13, value: 'alive' },
+        // Killed at the Mummer's Ford, told in Arya III of A Storm of Swords
+        // (#1288). The chapter is not checked against the book.
+        { episode: 21, chapter: 161, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -5324,7 +5447,13 @@ export const season1: ThronesSaga = {
         it: 'È un lord delle Terre della Tempesta. Si trova ad Approdo del Re, alla corte del re.',
         en: 'He is a lord of the stormlands. He is in King’s Landing, at the king’s court.',
       },
-      status: [{ episode: 6, chapter: 28, value: 'alive' }],
+      status: [
+        { episode: 6, chapter: 28, value: 'alive' },
+        // Dies for Arya in "The Long Night" (episode 70); in Brienne VIII of
+        // A Feast for Crows (chapter 268) he has given his last life to
+        // Catelyn.
+        { episode: 70, chapter: 268, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 6,
@@ -5339,7 +5468,12 @@ export const season1: ThronesSaga = {
         it: 'È un prete rosso, arrivato nei Sette Regni da Myr, una delle città libere.',
         en: 'He is a red priest, come to the Seven Kingdoms from Myr, one of the free cities.',
       },
-      status: [{ episode: 22, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 22, chapter: 30, value: 'alive' },
+        // Dies of the cold in "Beyond the Wall" (episode 66). The show's
+        // alone: in the books he is alive, so chapter 344 only orders it.
+        { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -5378,7 +5512,12 @@ export const season1: ThronesSaga = {
         it: 'È uno dei figli del lord di Runestone, nella Valle di Arryn. Giostra nel torneo del Primo Cavaliere ad Approdo del Re.',
         en: 'He is one of the sons of the lord of Runestone, in the Vale of Arryn. He rides in the Hand’s tourney in King’s Landing.',
       },
-      status: [{ episode: 4, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 30, value: 'alive' },
+        // Loras kills him at Storm's End, told in Tyrion VIII of A Clash of
+        // Kings (chapter 110). The book's alone; episode 15 orders it.
+        { episode: 15, chapter: 110, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,

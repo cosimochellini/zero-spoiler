@@ -4,7 +4,7 @@ import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { CharacterStatus, Stroke } from '~/lib/view/records'
+import type { CharacterStatus } from '~/lib/view/records'
 import { LOADED_SERIES } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -325,7 +325,7 @@ const CHANGES: {
     source: 'episode',
   },
   { id: 'renly-baratheon', episode: 15, chapter: 107, value: 'deceased' },
-  { id: 'lysa-arryn', episode: 37, chapter: 236, value: 'deceased' },
+  { id: 'lysa-arryn', episode: 37, chapter: 224, value: 'deceased' },
   { id: 'shae', episode: 40, chapter: 221, value: 'deceased' },
   {
     id: 'walder-frey',
@@ -334,6 +334,59 @@ const CHANGES: {
     value: 'deceased',
     source: 'episode',
   },
+  // The northern lords' deaths (#1288).
+  {
+    id: 'mikken',
+    episode: 16,
+    chapter: 120,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'alyn',
+    episode: 21,
+    chapter: 161,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'greatjon-umber',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'smalljon-umber', episode: 59, chapter: 195, value: 'deceased' },
+  { id: 'rickard-karstark', episode: 25, chapter: 164, value: 'deceased' },
+  {
+    id: 'roose-bolton',
+    episode: 52,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'galbart-glover',
+    episode: 57,
+    chapter: 344,
+    value: 'presumed-dead',
+    source: 'episode',
+  },
+  {
+    id: 'maege-mormont',
+    episode: 57,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'dacey-mormont',
+    episode: 29,
+    chapter: 195,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  { id: 'wendel-manderly', episode: 29, chapter: 195, value: 'deceased' },
   {
     id: 'stevron-frey',
     episode: 14,
@@ -406,6 +459,45 @@ const CHANGES: {
     id: 'eroeh',
     episode: 10,
     chapter: 69,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  // The King's Landing court's deaths the drawing audit found (#1289).
+  {
+    id: 'meryn-trant',
+    episode: 50,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'mandon-moore', episode: 19, chapter: 135, value: 'deceased' },
+  {
+    id: 'arys-oakheart',
+    episode: 8,
+    chapter: 247,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'lancel-lannister',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'dontos-hollard', episode: 33, chapter: 205, value: 'deceased' },
+  { id: 'beric-dondarrion', episode: 70, chapter: 268, value: 'deceased' },
+  {
+    id: 'thoros-of-myr',
+    episode: 66,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'robar-royce',
+    episode: 15,
+    chapter: 110,
     value: 'deceased',
     source: 'chapter',
   },
@@ -1023,10 +1115,11 @@ describe.each([
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
  * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
  * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
- * blade, the reveals of Jorah's master, Aemon's house and Mirri's blood
- * magic, and the southern cast's later looks and deaths (#1286), most of
- * them the show's alone and Bronn's banner the book's. `stage` counts a record's stages from 0, for a record redrawn more
- * than once.
+ * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
+ * magic, the Winterfell audit's deaths, returns, crown, Reek and Needle
+ * (#1285), and the southern cast's later looks and deaths (#1286), Bronn's
+ * banner the book's alone. `stage` counts a record's stages from 0, for a record redrawn
+ * more than once.
  */
 const STAGES: {
   chapter: number
@@ -1038,7 +1131,6 @@ const STAGES: {
   { id: 'lady-direwolf', episode: 2, chapter: 17 },
   { id: 'jory-cassel', episode: 5, chapter: 36 },
   { id: 'mordane', episode: 10, chapter: 68 },
-  { id: 'bran-stark', episode: 2, chapter: 9, source: 'chapter' },
   { id: 'robert-baratheon', episode: 7, chapter: 50 },
   { id: 'barristan-selmy', episode: 8, chapter: 58 },
   { id: 'syrio-forel', episode: 8, chapter: 51 },
@@ -1083,6 +1175,97 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The northern lords' deaths and reveals (#1288).
+  { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
+  { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },
+  { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
+  { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
+  { id: 'smalljon-umber', episode: 59, chapter: 195 },
+  { id: 'rickard-karstark', episode: 25, chapter: 164 },
+  { id: 'roose-bolton', episode: 29, chapter: 195 },
+  {
+    id: 'roose-bolton',
+    episode: 52,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'galbart-glover', episode: 57, chapter: 344, source: 'episode' },
+  { id: 'maege-mormont', episode: 57, chapter: 344, source: 'episode' },
+  { id: 'dacey-mormont', episode: 29, chapter: 195, source: 'chapter' },
+  { id: 'wendel-manderly', episode: 29, chapter: 195, source: 'chapter' },
+  // The Winterfell characters redrawn from the drawing audit (#1285).
+  { id: 'catelyn-stark', episode: 29, chapter: 195 },
+  {
+    id: 'catelyn-stark',
+    episode: 30,
+    chapter: 225,
+    source: 'chapter',
+    stage: 1,
+  },
+  { id: 'robb-stark', episode: 10, chapter: 81, source: 'chapter' },
+  { id: 'robb-stark', episode: 29, chapter: 195, stage: 1 },
+  { id: 'bran-stark', episode: 56, chapter: 344, source: 'episode' },
+  { id: 'rickon-stark', episode: 59, chapter: 344, source: 'episode' },
+  { id: 'benjen-stark', episode: 7, chapter: 42 },
+  {
+    id: 'benjen-stark',
+    episode: 56,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  {
+    id: 'benjen-stark',
+    episode: 66,
+    chapter: 344,
+    source: 'episode',
+    stage: 2,
+  },
+  { id: 'grey-wind', episode: 29, chapter: 198 },
+  { id: 'summer-direwolf', episode: 55, chapter: 344, source: 'episode' },
+  { id: 'shaggydog', episode: 53, chapter: 344, source: 'episode' },
+  { id: 'theon-greyjoy', episode: 30, chapter: 284 },
+  {
+    id: 'theon-greyjoy',
+    episode: 70,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'luwin', episode: 20, chapter: 143 },
+  { id: 'rodrik-cassel', episode: 16, chapter: 140 },
+  { id: 'hodor', episode: 55, chapter: 344, source: 'episode' },
+  { id: 'osha', episode: 54, chapter: 344, source: 'episode' },
+  { id: 'arya-stark', episode: 13, chapter: 93 },
+  { id: 'arya-stark', episode: 31, chapter: 218, stage: 1 },
+  { id: 'arya-stark', episode: 43, chapter: 248, stage: 2 },
+  { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 3 },
+  // The King's Landing court redrawn from the drawing audit (#1289).
+  { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
+  { id: 'mandon-moore', episode: 19, chapter: 135, source: 'chapter' },
+  { id: 'arys-oakheart', episode: 8, chapter: 247, source: 'chapter' },
+  { id: 'lancel-lannister', episode: 44, chapter: 256 },
+  {
+    id: 'lancel-lannister',
+    episode: 60,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'dontos-hollard', episode: 33, chapter: 205 },
+  { id: 'mhaegen', episode: 11, chapter: 80, source: 'episode' },
+  { id: 'beric-dondarrion', episode: 25, chapter: 178 },
+  { id: 'beric-dondarrion', episode: 70, chapter: 268, stage: 1 },
+  { id: 'thoros-of-myr', episode: 25, chapter: 178 },
+  {
+    id: 'thoros-of-myr',
+    episode: 66,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
   // The southern cast's later looks and deaths (#1286).
   { id: 'cersei-lannister', episode: 72, chapter: 344, source: 'episode' },
   { id: 'jaime-lannister', episode: 56, chapter: 344, source: 'episode' },
@@ -1106,7 +1289,7 @@ const STAGES: {
   },
   { id: 'tommen-baratheon', episode: 60, chapter: 344, source: 'episode' },
   { id: 'renly-baratheon', episode: 15, chapter: 107 },
-  { id: 'lysa-arryn', episode: 37, chapter: 236 },
+  { id: 'lysa-arryn', episode: 37, chapter: 224 },
   { id: 'bronn', episode: 41, chapter: 242, source: 'chapter' },
   { id: 'bronn', episode: 73, chapter: 344, source: 'episode', stage: 1 },
   { id: 'shae', episode: 40, chapter: 221 },
@@ -1115,21 +1298,14 @@ const STAGES: {
 ]
 
 /**
- * The drawing a reader of `unit` sees last among a record's first `count`
- * stages: a stage the other medium alone tells is skipped, so Bronn's
- * banner, the books', never stands before his rose for a viewer.
+ * The medium the data files a stage in: the stage's own `source`, else its
+ * record's. Undefined for a stage both media tell.
  */
-function lastSeen(
+function mediumOf(
   id: keyof typeof DRAWINGS,
-  unit: 'chapter' | 'episode',
-  count: number,
-): Stroke[] {
-  const record = recordOf(id)
-  const seen = (REDRAWINGS[id] ?? [])
-    .slice(0, count)
-    .filter((stage) => (record.source ?? stage.source ?? unit) === unit)
-
-  return seen.at(-1)?.value ?? DRAWINGS[id]
+  index: number,
+): 'chapter' | 'episode' | undefined {
+  return REDRAWINGS[id]?.[index]?.source ?? recordOf(id).source
 }
 
 describe.each(
@@ -1141,16 +1317,27 @@ describe.each(
   ),
 )(
   '$id is redrawn by $unit at $episode/$chapter',
-  ({ id, episode, chapter, unit, stage: index = 0 }) => {
+  ({ id, episode, chapter, source, unit, stage: index = 0 }) => {
     const pin = unit === 'chapter' ? chapter : episode
-    const stage = REDRAWINGS[id]?.[index]
-    const previous = lastSeen(id, unit, index)
+    const stages = REDRAWINGS[id] ?? []
+    const stage = stages[index]
+    // The drawing just before is the last earlier stage this unit reads:
+    // a stage the other medium alone tells is never shown here.
+    const previous =
+      stages
+        .slice(0, index)
+        .findLast(
+          (earlier) => (recordOf(id).source ?? earlier.source ?? unit) === unit,
+        )?.value ?? DRAWINGS[id]
 
     it('at its pin, not one before', () => {
       const owner = recordOf(id)
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
+      // The row's medium must be the data's, so a stage that lost its
+      // `source` fails here instead of leaking to the other medium.
+      expect(mediumOf(id, index)).toBe(source)
       expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
         previous,
       )
@@ -1161,19 +1348,27 @@ describe.each(
   },
 )
 
+/** The last point of a medium. */
+function ceilingOf(unit: 'chapter' | 'episode'): number {
+  return unit === 'chapter' ?
+      archive.series.chapterCeiling
+    : archive.series.episodeCeiling
+}
+
 describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
-    ({ id, source }) => {
+    ({ id, source, stage: index = 0 }) => {
       const other = source === 'chapter' ? 'episode' : 'chapter'
-      const last =
-        other === 'episode' ?
-          reader('episode', archive.series.episodeCeiling)
-        : reader('chapter', archive.series.chapterCeiling)
+      const last = reader(other, ceilingOf(other))
+      // The other medium's own last stage, or the first drawing.
+      const expected =
+        (REDRAWINGS[id] ?? []).findLast(
+          (stage) => (recordOf(id).source ?? stage.source ?? other) === other,
+        )?.value ?? DRAWINGS[id]
 
-      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(
-        lastSeen(id, other, Infinity),
-      )
+      expect(mediumOf(id, index)).toBe(source)
+      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
     },
   )
 })
