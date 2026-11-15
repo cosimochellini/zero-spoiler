@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
@@ -35,22 +36,35 @@ const HULLEN: Stroke[] = [
 ]
 
 /**
- * Jeyne Poole: a pair of sewing shears lying open on a folded length of
- * linen, its hem half stitched, for the steward's daughter who sews beside
- * Sansa at the needlework lesson in Arya I (chapter 8). The book's alone.
- * The accent is the shears' handles.
+ * A folded length of linen, its hem half stitched, with its hatching and
+ * shadow. Jeyne's shears lie on it, and the wedding cloak after them.
  */
-const SHEARS: Stroke[] = [
+const HEM_STITCHES: Stroke = {
+  d: 'M34 134 h4 M44 134 h4 M54 134 h4 M64 134 h4 M74 134 h4',
+  role: 'soft',
+}
+const LINEN: Stroke[] = [
   {
     d: 'M24 130 L46 112 H134 L112 130 Z M24 130 V140 H112 V130 M112 140 L134 122 V112',
   },
   { d: 'M30 136 H106 M48 118 H128', role: 'soft' },
-  { d: 'M34 134 h4 M44 134 h4 M54 134 h4 M64 134 h4 M74 134 h4', role: 'soft' },
+  HEM_STITCHES,
+]
+const LINEN_SHADE: Stroke[] = [
+  { d: 'M116 126 l6 -4 M122 120 l6 -4', role: 'ambient' },
+  shadow(80, 146, 56),
+]
+/**
+ * Jeyne Poole: a pair of sewing shears lying open on the linen, for the
+ * steward's daughter who sews beside Sansa at the needlework lesson in
+ * Arya I (chapter 8). The book's alone. The accent is the shears' handles.
+ */
+const SHEARS: Stroke[] = [
+  ...LINEN,
   { d: `${circle(52, 92, 8)} ${circle(56, 112, 8)}`, role: 'accent' },
   { d: 'M59 96 L80 100 M63 109 L80 100' },
   { d: 'M80 100 L128 80 L124 88 Z M80 100 L130 104 L124 108 Z' },
-  { d: 'M116 126 l6 -4 M122 120 l6 -4', role: 'ambient' },
-  shadow(80, 146, 56),
+  ...LINEN_SHADE,
 ]
 
 /**
@@ -159,6 +173,10 @@ const LANCE: Stroke[] = [
   shadow(70, 156, 44),
 ]
 
+/** The running direwolf of House Stark, with no eye, as its banner shows it. */
+const DIREWOLF =
+  'M58 70 L64 66 L66 58 L71 64 Q84 60 98 66 Q106 66 114 60 Q112 70 104 72 L110 86 H104 L96 76 Q86 78 78 76 L72 88 H66 L70 76 Q62 74 58 70 Z'
+
 /**
  * Alyn: the direwolf standard of House Stark on its staff, the wolf
  * running with no eye, which he carries at the head of the Stark men in
@@ -169,10 +187,7 @@ const STANDARD: Stroke[] = [
   { d: `${circle(40, 18, 4)} M40 22 V150` },
   { d: 'M40 30 H120' },
   { d: 'M50 30 V112 L84 100 L118 112 V30' },
-  {
-    d: 'M58 70 L64 66 L66 58 L71 64 Q84 60 98 66 Q106 66 114 60 Q112 70 104 72 L110 86 H104 L96 76 Q86 78 78 76 L72 88 H66 L70 76 Q62 74 58 70 Z',
-    role: 'accent',
-  },
+  { d: DIREWOLF, role: 'accent' },
   { d: 'M58 36 Q56 72 60 104 M110 36 Q112 72 108 104', role: 'soft' },
   { d: 'M112 44 l5 -3 M112 58 l5 -3 M112 86 l5 -3', role: 'ambient' },
   shadow(40, 153, 14),
@@ -248,22 +263,60 @@ const SUNBURST: Stroke[] = [
   },
   shadow(80, 150, 40),
 ]
-
-/**
- * Roose Bolton: the X-shaped cross of the Bolton banner, empty, with its
- * ropes at the four ends and no figure on it, for the lord of the Dreadfort
- * in Bran VI (chapter 54) and in episode 14. The accent is the ropes.
- */
-const X_CROSS: Stroke[] = [
-  { d: 'M36 28 L44 22 L130 144 L122 150 Z' },
-  { d: 'M124 28 L116 22 L30 144 L38 150 Z' },
+/** The two halves of Rickard's shield once it is split, along one crack. */
+const KARSTARK_CRACK = 'L83 124 L78 108 L82 92 L78 76 L82 60 Z'
+const KARSTARK_HALF_LEFT: Stroke[] = [
+  { d: `M80 44 A48 48 0 0 0 80 140 ${KARSTARK_CRACK}` },
+  { d: 'M80 49 A43 43 0 0 0 80 135', role: 'soft' },
   {
-    d: 'M40 38 q-6 4 0 8 q6 4 0 8 M120 38 q6 4 0 8 q6 4 0 8 M42 124 q-6 4 0 8 M118 124 q6 4 0 8',
+    d: 'M78 80.2 A12 12 0 0 0 78 103.8 M64 92 H44 M69 81 L55 67 M69 103 L55 117',
     role: 'accent',
   },
-  { d: 'M74 80 L86 80 M80 74 V86', role: 'soft' },
-  { d: 'M88 96 l5 -3 M100 112 l5 -3 M112 128 l5 -3', role: 'ambient' },
-  shadow(80, 154, 48),
+  { d: 'M65 86 L52 82 M65 98 L52 102 M74 77 L70 64', role: 'soft' },
+  { d: 'M44 64 l6 -3 M38 92 l6 -3 M44 120 l6 -3', role: 'ambient' },
+]
+const KARSTARK_HALF_RIGHT: Stroke[] = [
+  { d: `M80 44 A48 48 0 0 1 80 140 ${KARSTARK_CRACK}` },
+  { d: 'M84 49.2 A43 43 0 0 1 84 134.8', role: 'soft' },
+  {
+    d: 'M86 81.7 A12 12 0 0 1 86 102.3 M96 92 H116 M91 81 L105 67 M91 103 L105 117',
+    role: 'accent',
+  },
+  { d: 'M95 86 L108 82 M95 98 L108 102 M86 107 L90 120', role: 'soft' },
+]
+
+/**
+ * The flayed man of House Bolton bound upside down on his X-shaped cross,
+ * as the show's banner has him: a silhouette with no face, his feet tied
+ * at the top ends, his hands at the bottom, his head between them. The
+ * accent is the ropes. Every stage of Roose's drawing keeps it.
+ */
+const FLAYED_MAN: Stroke[] = [
+  {
+    d: 'M54.1 55.5 L35.1 28.5 L44.9 21.5 L63.9 48.5 M96.4 115.5 L121.1 150.5 L130.9 143.5 L106.2 108.5',
+  },
+  {
+    d: 'M105.9 55.5 L124.9 28.5 L115.1 21.5 L96.1 48.5 M63.6 115.5 L38.9 150.5 L29.1 143.5 L53.8 108.5',
+  },
+  {
+    d: 'M80 77.5 L58.2 46.6 L55 40 L50 42 L54.2 49.4 L71 73.2 V90.3 L52.9 116 L47 124 L51 126 L56.9 118.8 L76 91.6 H84 L103.1 118.8 L109 126 L113 124 L107.1 116 L89 90.3 V73.2 L105.8 49.4 L110 42 L105 40 L101.8 46.6 Z',
+  },
+  { d: circle(80, 99, 6) },
+  {
+    d: 'M58.3 40.5 L48.5 47.5 M55.5 36.5 L45.7 43.5 M101.7 40.5 L111.5 47.5 M104.5 36.5 L114.3 43.5 M46.7 118.5 L56.5 125.5 M43.9 122.5 L53.7 129.5 M113.3 118.5 L103.5 125.5 M116.1 122.5 L106.3 129.5',
+    role: 'accent',
+  },
+  { d: 'M75 80 H85 M75 85 H85', role: 'soft' },
+]
+/**
+ * Roose Bolton: the flayed man on the X-cross of the Bolton banner, for
+ * the lord of the Dreadfort in Bran VI (chapter 54) and in episode 14
+ * (owner, #1288).
+ */
+const X_CROSS: Stroke[] = [
+  ...FLAYED_MAN,
+  { d: 'M116 134 l5 -3 M122 142 l5 -3', role: 'ambient' },
+  shadow(80, 156, 48),
 ]
 
 /**
@@ -456,6 +509,262 @@ export const northRedrawn: Redrawings = {
           'translate(124 146) rotate(-80) scale(0.6) translate(-80 -78)',
         ),
         { d: 'M10 156 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'jeyne-poole': [
+    // The shears gone and a maiden's cloak spread on the linen, fur at its
+    // collar, the Stark direwolf on it and its clasp at the top: she is
+    // passed off as Arya Stark to wed Ramsay Bolton. The book's alone;
+    // episode 29 orders it. Cersei tells the council of the "steward's
+    // whelp" in Cersei IV of A Feast for Crows (chapter 17, site 243).
+    {
+      episode: 29,
+      chapter: 243,
+      value: [
+        {
+          d: 'M24 130 L30 125 M128 112 H134 L112 130 H24 V140 H112 V130 M112 140 L134 122 V112',
+        },
+        { d: 'M30 136 H106', role: 'soft' },
+        HEM_STITCHES,
+        {
+          d: 'M64 38 Q54 50 46 74 Q36 102 26 124 Q36 130 46 126 Q56 132 68 128 Q80 134 92 128 Q104 132 114 126 Q124 130 134 124 Q124 102 114 74 Q106 50 96 38',
+        },
+        { d: 'M58 40 q4 -6 9 -3 t9 -3 t9 0 t9 3 t9 3 M60 42 Q80 54 100 42' },
+        { d: 'M66 50 Q56 90 46 126 M94 50 Q104 90 114 126', role: 'soft' },
+        {
+          d: DIREWOLF,
+          transform: 'translate(80 90) scale(0.8) translate(-86 -73)',
+        },
+        { d: `${circle(80, 33, 4)} M72 35 H76 M84 35 H88`, role: 'accent' },
+        { d: 'M114 80 l5 -3 M118 96 l5 -3', role: 'ambient' },
+        ...LINEN_SHADE,
+      ],
+    },
+  ],
+  'mikken': [
+    // The anvil tipped over on the ground, the hammer and tongs dropped
+    // beside it: an ironborn kills him when Theon takes Winterfell. The
+    // book's alone; episode 16, where the show takes the castle and leaves
+    // him out, orders it.
+    {
+      episode: 16,
+      chapter: 120,
+      source: 'chapter',
+      value: [
+        ...moved(
+          ANVIL.slice(0, 2),
+          'translate(36 154) rotate(-14) translate(-48 -108)',
+        ),
+        ...moved(
+          ANVIL.slice(3, 5),
+          'translate(150 150) scale(-1 1) translate(-50 -72)',
+        ),
+        ...moved(ANVIL.slice(5, 6), 'translate(-96 0)'),
+        { d: 'M120 104 l5 -3 M112 122 l5 -3', role: 'ambient' },
+        { d: 'M8 154 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'alyn': [
+    // The standard down on the ground, its staff broken and the stump left
+    // standing: he is killed at
+    // the Mummer's Ford with Beric's men, told in Arya III of A Storm of
+    // Swords (chapter 161). The book's alone; episode 21 orders it.
+    {
+      episode: 21,
+      chapter: 161,
+      value: [
+        { d: 'M24 154 V104 l3 -4 l-2 -3 M24 104 l-3 -3' },
+        {
+          d: `M48 150 l-4 -3 M48 150 l-3 4 M48 150 H140 ${circle(144, 150, 4)}`,
+        },
+        {
+          d: 'M42 154 Q44 136 56 126 Q64 118 76 122 Q92 114 108 118 L136 116 L118 132 L134 150',
+        },
+        { d: 'M60 128 Q56 140 60 152 M104 120 Q100 136 106 150', role: 'soft' },
+        {
+          d: DIREWOLF,
+          role: 'accent',
+          transform:
+            'translate(84 136) rotate(-4) scale(0.6) translate(-86 -73)',
+        },
+        { d: 'M118 138 l5 -3', role: 'ambient' },
+        { d: 'M8 154 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'greatjon-umber': [
+    // The ring down on the ground and the chains slack beside it: Smalljon
+    // tells Ramsay his father is dead in "Oathbreaker" (episode 53). The
+    // show's alone; in the books he is alive, a prisoner of the Freys, so
+    // the last chapter orders it.
+    {
+      episode: 53,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        { d: `${ellipse(80, 136, 16, 12)} ${ellipse(80, 136, 10, 7)}` },
+        {
+          d: `${ellipse(58, 144, 7, 4)} ${ellipse(46, 148, 4, 6)} ${ellipse(34, 150, 7, 4)} ${ellipse(102, 144, 7, 4)} ${ellipse(114, 148, 4, 6)} ${ellipse(126, 150, 7, 4)}`,
+        },
+        {
+          d: 'M24 150 Q18 148 18 142 M22 156 Q16 156 14 152 M136 150 Q142 148 142 142 M138 156 Q144 156 146 152',
+          role: 'accent',
+        },
+        { d: 'M88 128 l5 -3 M90 140 l5 -3', role: 'ambient' },
+        { d: 'M8 156 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'smalljon-umber': [
+    // The Umber banner down on the ground beside a fur, its giant in broken
+    // chains upside down: Tormund kills him in "Battle of the Bastards" (episode 59), and
+    // the Bolton men kill him at the Red Wedding in Catelyn VII of A Storm
+    // of Swords (chapter 195).
+    {
+      episode: 59,
+      chapter: 195,
+      value: [
+        { d: 'M70 151 H144' },
+        {
+          d: 'M64 124 Q74 96 98 98 Q116 90 130 94 L150 92 L134 120 L150 148 L138 154',
+        },
+        {
+          d: `${circle(102, 142, 7)} M95 133 V113 H109 V133 Z M97 113 L90 100 M107 113 L114 100 M95 130 L82 142 M109 130 L122 142`,
+        },
+        {
+          d: 'M82 142 l-6 3 M80 138 l-6 -2 M122 142 l6 3 M124 138 l6 -2',
+          role: 'accent',
+        },
+        {
+          d: 'M18 142 Q20 126 34 124 Q46 116 60 122 Q72 126 70 140 Q66 152 50 150 Q34 154 22 150 Q16 148 18 142 Z',
+        },
+        {
+          d: 'M26 134 l3 -4 M40 126 l3 -4 M56 126 l3 -4 M30 148 l3 3 M54 148 l3 3',
+          role: 'soft',
+        },
+        { d: 'M132 104 l5 -3 M136 136 l5 -3', role: 'ambient' },
+        { d: 'M8 156 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'rickard-karstark': [
+    // The shield split in two, one half still standing and the other down
+    // on the ground: Robb has him beheaded in "Kissed by Fire" (episode 25)
+    // and in Catelyn III of A Storm of Swords (chapter 164).
+    {
+      episode: 25,
+      chapter: 164,
+      value: [
+        ...moved(KARSTARK_HALF_LEFT, 'translate(-20 6) rotate(-6 80 140)'),
+        ...moved(
+          KARSTARK_HALF_RIGHT,
+          'translate(30 58) rotate(-90 80 92) scale(0.8)',
+        ),
+        { d: 'M10 152 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'roose-bolton': [
+    // The flayed man with a dagger stood before him, the mail Roose wears
+    // under his sleeve at its grip: at the Red Wedding he stabs Robb, in
+    // "The Rains of Castamere" (episode 29) and in Catelyn VII of A Storm
+    // of Swords (chapter 195), and shows he is the Lannisters' man.
+    {
+      episode: 29,
+      chapter: 195,
+      value: [
+        ...moved(softened(FLAYED_MAN), 'translate(-12 0)'),
+        { d: `${circle(140, 66, 4)} M136 70 V92 M144 70 V92` },
+        {
+          d: 'M134 76 q3 -3 6 0 t6 0 M134 82 q3 -3 6 0 t6 0 M134 88 q3 -3 6 0 t6 0',
+          role: 'accent',
+        },
+        { d: 'M128 94 H152 V98 H128 Z M135 98 V142 L140 152 L145 142 V98' },
+        { d: 'M140 102 V142', role: 'soft' },
+        { d: 'M104 134 l5 -3 M110 142 l5 -3', role: 'ambient' },
+        shadow(80, 156, 60),
+      ],
+    },
+    // The flayed man's cross fallen flat on the ground: Ramsay stabs his father in
+    // "Home" (episode 52). The show's alone; in the books Roose is alive,
+    // so the last chapter orders it.
+    {
+      episode: 52,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(
+          FLAYED_MAN,
+          'translate(0 152) scale(1 0.42) translate(0 -152)',
+        ),
+        { d: 'M10 156 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'galbart-glover': [
+    // The mailed fist down on its side on the ground: Robett speaks of him
+    // as gone in "The Broken Man" (episode 57), so he is left for dead. The
+    // show's alone; the books never tell his fate, so the last chapter
+    // orders it.
+    {
+      episode: 57,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(MAILED_FIST.slice(0, 6), 'translate(0 15) rotate(90 80 107)'),
+        { d: 'M84 104 l5 -3 M100 104 l5 -3', role: 'ambient' },
+        { d: 'M10 152 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'maege-mormont': [
+    // The bear on its back, legs up, as Kevan's lion lies: Lyanna says
+    // her mother died fighting for Robb in "The Broken Man" (episode 57).
+    // The show's alone; the books never tell her fate, so the last chapter
+    // orders it.
+    {
+      episode: 57,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(BEAR_WALKING.slice(0, 6), 'translate(0 214) scale(1 -1)'),
+        { d: 'M8 156 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'dacey-mormont': [
+    // The morningstar down on the ground, its haft broken: Ryman Frey kills
+    // her at the Red Wedding, in Catelyn VII of A Storm of Swords (chapter
+    // 195). The book's alone; episode 29 orders it.
+    {
+      episode: 29,
+      chapter: 195,
+      value: [
+        { d: 'M14 146 L60 140 l4 -4 M14 152 L61 146 l3 2' },
+        { d: 'M24 144 L25 150 M32 143 L33 149 M40 142 L41 148', role: 'soft' },
+        { d: 'M72 146 l-4 -3 M72 146 l-3 4 M72 146 L98 140 M73 152 L99 146' },
+        ...moved(
+          MORNINGSTAR.slice(2, 5),
+          'translate(114 130) rotate(22) translate(-104 -60)',
+        ),
+        { d: 'M8 156 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'wendel-manderly': [
+    // The trident fallen across the waves: he is killed at the Red Wedding,
+    // in Catelyn VII of A Storm of Swords (chapter 195). The show kills him
+    // in "The Rains of Castamere" (episode 29), the episode he opens in,
+    // where no stage can sit, so the stage is the book's (owner, #1288).
+    {
+      episode: 29,
+      chapter: 195,
+      source: 'chapter',
+      value: [
+        ...moved(TRIDENT.slice(0, 5), 'translate(0 52) rotate(-80 80 90)'),
+        ...SEA,
       ],
     },
   ],
