@@ -697,13 +697,13 @@ const BROKEN_LANCE: Stroke[] = [
 /**
  * The lance down on the ground in two pieces, the point gone: the butt with
  * its vamplate, snapped short, and a length of shaft splintered at both
- * ends. The accent is the splintered wood.
+ * ends. The accent is the splintered shaft; the butt's snapped end is soft.
  */
 const FALLEN_LANCE: Stroke[] = [
   ...moved(
     [
       { d: 'M74 118 V92 M86 118 V92' },
-      { d: 'M74 92 L77 86 L80 94 L83 84 L86 92', role: 'accent' },
+      { d: 'M74 92 L77 86 L80 94 L83 84 L86 92', role: 'soft' },
       { d: 'M74 118 L52 134 Q80 146 108 134 L86 118' },
       { d: 'M60 132 Q80 140 100 132', role: 'soft' },
       { d: 'M76 141 V156 H84 V141' },
@@ -1552,7 +1552,7 @@ export const southRedrawn: Redrawings = {
         { d: 'M76 88 Q72 94 66 94 M76 88 Q80 96 86 96', role: 'soft' },
         { d: 'M78 64 Q82 72 80 82', role: 'soft' },
         { d: 'M86 108 Q68 110 58 124 Q74 126 85 116', role: 'accent' },
-        { d: 'M89 94 Q106 98 112 114 Q98 112 90 102', role: 'accent' },
+        { d: 'M89 94 Q106 98 112 114 Q98 112 90 102', role: 'soft' },
         { d: 'M84 70 l4 -2 M83 78 l4 -2', role: 'ambient' },
         { d: 'M100 150 Q106 144 114 149 Q106 154 100 150', role: 'soft' },
         shadow(84, 154, 30),
