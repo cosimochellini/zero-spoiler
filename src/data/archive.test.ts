@@ -486,20 +486,28 @@ describe.each(LOADED_SERIES)(
     it('allows only confirmed reincarnations after death', () => {
       // Reina and Kite return as Chimera Ants. Each retains the earlier death
       // and starts a new life only when the story identifies the reincarnation.
-      const rebirths = new Map([
-        ['reina', 315],
-        ['kite', 316],
-      ])
+      // Catelyn Stark returns as Lady Stoneheart in the books alone (#1285).
+      const rebirths: Record<
+        string,
+        Record<string, { chapter: number; episode: number; source?: Source }>
+      > = {
+        'game-of-thrones': {
+          'catelyn-stark': { chapter: 225, episode: 30, source: 'chapter' },
+        },
+        'hunter-x-hunter': {
+          kite: { chapter: 316, episode: 136 },
+          reina: { chapter: 315, episode: 136 },
+        },
+      }
 
       for (const { character, label, timeline } of STATUSES) {
-        const chapter =
-          slug === 'hunter-x-hunter' ? rebirths.get(character.id) : undefined
-        const expected =
-          chapter === undefined ?
-            []
-          : [{ chapter, episode: 136, value: 'alive' }]
+        const rebirth = rebirths[slug]?.[character.id]
 
         for (const source of ['episode', 'chapter'] as const) {
+          const expected =
+            rebirth === undefined || !toldIn(rebirth, source) ?
+              []
+            : [{ ...rebirth, value: 'alive' }]
           const read = timeline.filter((entry) => toldIn(entry, source))
           const returns = read.flatMap((entry, index) =>
             entry.value === 'deceased' ? read.slice(index + 1, index + 2) : [],
