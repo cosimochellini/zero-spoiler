@@ -1,9 +1,14 @@
-import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  softened,
+} from '~/data/art/stroke'
+import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
 import { COURT_DRAWINGS, courtRedrawn } from './court'
-import { ESSOS_DRAWINGS, essosRedrawn } from './essos'
+import { DRAGON_SIGIL, ESSOS_DRAWINGS, essosRedrawn } from './essos'
 import { NORTH_DRAWINGS, northRedrawn } from './north'
 import { PLACE_DRAWINGS, placesRedrawn } from './places'
 import { RIVERLANDS_DRAWINGS, riverlandsRedrawn } from './riverlands'
@@ -40,10 +45,32 @@ const ICE: Stroke[] = [
 const ICE_STANDING: Stroke[] = [...ICE, shadow(80, 153, 24)]
 
 /**
+ * One of the two shorter swords Ice is forged into, lying flat: the
+ * pommel, the wrapped grip, the crossguard and the blade, the ripple down
+ * its near face in the accent and its far face hatched. Eddard's stage
+ * after Ice is melted lays two of them side by side.
+ */
+const REFORGED: Stroke[] = [
+  { d: circle(30, 0, 4) },
+  { d: 'M34 -3 H50 V3 H34 Z' },
+  { d: 'M38 -3 L41 3 M43 -3 L46 3', role: 'soft' },
+  { d: 'M50 -11 H55 V11 H50 Z' },
+  { d: 'M55 -5 H118 L130 0 L118 5 H55' },
+  { d: 'M57 0 H126', role: 'soft' },
+  { d: 'M60 -3 q4 2 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0', role: 'accent' },
+  {
+    d: 'M64 2 l3 3 M76 2 l3 3 M88 2 l3 3 M100 2 l3 3 M112 2 l3 3',
+    role: 'ambient',
+  },
+]
+
+/**
  * Jon Snow: the albino runt of the direwolf litter, sitting, side on and
  * with no face. He finds it after the other five in episode 1 and in Bran I
- * (chapter 2), before it has a name. The accent is the ruff on its chest;
- * the pup is white, so nothing is hatched.
+ * (chapter 2), before it has a name. The accent is the ruff on its chest,
+ * with a second line of fur beside it; the pup is white, so only the
+ * shadow under its belly, between the legs, is hatched. His return and his
+ * true name keep it.
  */
 const RUNT: Stroke[] = [
   {
@@ -56,7 +83,76 @@ const RUNT: Stroke[] = [
   { d: 'M112 150 Q106 128 95 132 M98 150 H112', role: 'soft' },
   { d: 'M116 142 Q130 142 140 150 Q128 154 114 150', role: 'soft' },
   { d: 'M68 58 L72 64 M90 58 L90 66', role: 'soft' },
+  { d: 'M80 78 Q76 88 82 96 Q78 104 84 112', role: 'soft' },
+  { d: 'M101 138 l5 -4 M102 146 l5 -4', role: 'ambient' },
   shadow(88, 153, 38),
+]
+
+/**
+ * The runt howling with its muzzle to the sky, sitting in the snow, no
+ * face: Jon's stage from the night he is killed. The ruff is still the
+ * accent; the lines by the muzzle are the howl.
+ */
+const HOWL: Stroke[] = [
+  {
+    d: 'M42 26 L60 36 Q66 32 72 34 L74 46 Q82 58 92 80 Q116 96 120 126 Q122 142 112 150',
+  },
+  { d: 'M42 26 Q46 36 54 44 Q56 58 58 70' },
+  { d: 'M58 70 Q52 76 58 82 Q52 88 58 94 Q53 100 60 104', role: 'accent' },
+  { d: 'M60 104 V145 Q60 150 66 150 Q72 150 72 145 V110' },
+  { d: 'M76 112 V145 Q76 150 82 150 Q88 150 88 145 V118', role: 'soft' },
+  { d: 'M112 150 Q106 126 92 128 M88 150 H112', role: 'soft' },
+  { d: 'M116 142 Q130 142 140 150 Q128 154 114 150', role: 'soft' },
+  { d: 'M66 34 L66 42 M70 74 Q66 84 72 94', role: 'soft' },
+  { d: 'M36 16 q-4 6 0 12 M28 10 q-6 10 0 20', role: 'ambient' },
+  { d: 'M16 150 H144', role: 'ambient', dashed: true },
+  {
+    d: dots([
+      [24, 120],
+      [130, 60],
+      [140, 100],
+      [30, 70],
+      [118, 30],
+    ]),
+    role: 'ambient',
+  },
+]
+
+/**
+ * Daenerys Targaryen: one dragon egg on a folded cushion, the egg in 3/4
+ * with its scales soft and its far side hatched, the accent on the one seam
+ * between its scales. Illyrio gives her three at the wedding, in episode 1
+ * and in Daenerys II (chapter 12). One egg, so it is not Illyrio's chest.
+ */
+const DRAGON_EGG: Stroke[] = [
+  { d: 'M80 44 Q106 46 110 92 Q110 126 80 128 Q50 126 50 92 Q54 46 80 44 Z' },
+  {
+    d: 'M66 58 q4 4 7 0 t7 0 t7 0 M60 72 q5 5 10 0 t10 0 t10 0 t10 0 M54 90 q5 5 10 0 t10 0 t10 0 t10 0 t10 0 M56 108 q5 5 10 0 t10 0 t10 0 t10 0 t8 0',
+    role: 'soft',
+  },
+  { d: 'M74 50 Q70 62 76 74 Q82 86 76 98 Q72 108 76 118', role: 'accent' },
+  {
+    d: 'M100 66 l5 -3 M104 82 l5 -3 M104 100 l5 -3 M98 116 l5 -3',
+    role: 'ambient',
+  },
+  {
+    d: 'M22 134 Q80 118 138 134 Q142 142 138 150 Q80 166 22 150 Q18 142 22 134 Z',
+  },
+  { d: 'M22 142 Q80 158 138 142 M22 134 l-6 -4 M138 134 l6 -4', role: 'soft' },
+  {
+    d: 'M40 154 l5 -4 M60 157 l5 -4 M100 157 l5 -4 M120 154 l5 -4',
+    role: 'ambient',
+  },
+  shadow(80, 166, 56),
+]
+
+/** A dragon hatchling sitting up, wings raised, no face, on a base at y 0. */
+const HATCHLING: Stroke[] = [
+  {
+    d: 'M-8 0 Q-12 -20 -4 -32 Q0 -44 10 -48 L20 -46 L12 -41 Q6 -36 6 -26 Q8 -12 12 0',
+  },
+  { d: 'M12 0 Q22 2 24 -8 Q26 -14 20 -14 M-8 0 H12', role: 'soft' },
+  { d: 'M-4 -26 L-20 -52 L-18 -38 L-30 -42 L-22 -28 L-32 -26 L-8 -14' },
 ]
 
 /**
@@ -74,24 +170,6 @@ const GOBLET: Stroke[] = [
   { d: 'M76 134 Q60 138 56 144 Q80 152 104 144 Q100 138 84 134' },
   { d: 'M96 84 l6 -3 M95 94 l6 -3 M91 103 l5 -3', role: 'ambient' },
   shadow(80, 152, 30),
-]
-
-/**
- * Daenerys Targaryen: the bath her maid thinks will scald her, which she
- * steps into without noticing, in Pentos, in episode 1 and in Daenerys I
- * (chapter 4). A round tub in 3/4, the rim with its thickness and the far
- * side hatched; the accent is the steam.
- */
-const BATH: Stroke[] = [
-  { d: ellipse(80, 100, 46, 11) },
-  { d: ellipse(80, 101, 41, 8), role: 'soft' },
-  { d: 'M34 100 Q36 126 44 146 Q80 156 116 146 Q124 126 126 100' },
-  { d: 'M44 124 Q80 134 116 124', role: 'soft' },
-  { d: 'M110 116 l6 -3 M112 126 l6 -3 M112 136 l5 -3', role: 'ambient' },
-  { d: 'M62 92 q-6 -10 0 -20 t0 -20', role: 'accent' },
-  { d: 'M80 88 q-6 -10 0 -20 t0 -20 t0 -18', role: 'accent' },
-  { d: 'M98 92 q-6 -10 0 -20 t0 -20', role: 'accent' },
-  shadow(80, 152, 44),
 ]
 
 /**
@@ -135,7 +213,7 @@ export const DRAWINGS = {
   'eddard-stark': ICE_STANDING,
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
-  'daenerys-targaryen': BATH,
+  'daenerys-targaryen': DRAGON_EGG,
   'will': PERSON,
   'gared': PERSON,
   'waymar-royce': PERSON,
@@ -193,6 +271,117 @@ export const REDRAWINGS: Redrawings = {
       value: [
         ...moved(ICE, 'translate(0 54) rotate(-90 80 85)'),
         shadow(80, 152, 64),
+      ],
+    },
+    // Ice is gone, and two shorter swords lie where it lay: Tywin has it
+    // melted down in "Two Swords" (episode 31). The book has it reforged
+    // by Tobho Mott, and Tyrion sees what became of it at Joffrey's
+    // wedding feast, Tyrion VIII of A Storm of Swords (chapter 204).
+    {
+      episode: 31,
+      chapter: 204,
+      value: [
+        ...moved(REFORGED, 'translate(-2 112)'),
+        ...moved(REFORGED, 'translate(6 136)'),
+        shadow(80, 154, 62),
+      ],
+    },
+  ],
+  'jon-snow': [
+    // The runt howling in the snow: Jon is killed at Castle Black in
+    // "Mother's Mercy" (episode 50) and left for dead in Jon XIII of A
+    // Dance with Dragons (chapter 341). Ghost howls for him in the show.
+    { episode: 50, chapter: 341, value: HOWL },
+    // The runt up again beside a black cloak with five rents in it:
+    // Melisandre brings him back in "Home" (episode 52), the show's alone.
+    // The books have not reached it, so chapter 344, their last, orders it.
+    {
+      episode: 52,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(RUNT, 'translate(-26 0)'),
+        {
+          d: 'M100 150 Q100 124 116 112 Q122 108 128 112 Q134 108 140 112 Q156 124 156 150 Z',
+        },
+        { d: 'M116 112 Q120 122 128 120 Q136 122 140 112', role: 'soft' },
+        {
+          d: 'M106 136 h5 M104 144 h5 M148 140 h5 M146 132 h5',
+          role: 'ambient',
+        },
+        {
+          d: 'M114 146 L122 128 M120 148 L128 130 M126 148 L134 130 M132 148 L140 130 M138 146 L146 128',
+        },
+      ],
+    },
+    // The runt before a banner of the three-headed dragon: Bran and Sam
+    // tell that he is Rhaegar's son, Aegon Targaryen, in "The Dragon and
+    // the Wolf" (episode 67), the show's alone. The books only hint at it,
+    // so chapter 344, their last, orders it.
+    {
+      episode: 67,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        { d: `${circle(150, 12, 4)} M150 16 V150` },
+        { d: 'M98 22 H150' },
+        { d: 'M102 22 V98 L124 86 L146 98 V22' },
+        ...moved(
+          softened(DRAGON_SIGIL),
+          'translate(124 54) scale(0.66) translate(-80 -92)',
+        ),
+        ...moved(RUNT, 'translate(-24 0)'),
+      ],
+    },
+  ],
+  'daenerys-targaryen': [
+    // Drogo's pyre burning with three hatchlings on its logs, the fire in
+    // the accent: she walks into it and comes out unburnt with her dragons
+    // in "Fire and Blood" (episode 10) and in Daenerys X (chapter 73).
+    {
+      episode: 10,
+      chapter: 73,
+      value: [
+        { d: 'M22 130 H138 M22 142 H138 M22 154 H138' },
+        {
+          d: `${ellipse(22, 136, 3, 6)} ${ellipse(22, 148, 3, 6)}`,
+          role: 'soft',
+        },
+        { d: 'M52 140 l4 -4 M92 152 l4 -4 M122 140 l4 -4', role: 'ambient' },
+        {
+          d: 'M24 128 q-4 -8 2 -14 q3 5 6 2 q3 6 -2 12 M62 128 q-4 -8 2 -14 q3 5 6 2 q3 6 -2 12 M106 128 q-4 -8 2 -14 q3 5 6 2 q3 6 -2 12 M144 128 q-4 -8 2 -14 q3 5 6 2 q3 6 -2 12',
+          role: 'accent',
+        },
+        ...moved(HATCHLING, 'translate(38 128)'),
+        ...moved(HATCHLING, 'translate(84 128)'),
+        ...moved(HATCHLING, 'translate(130 128)'),
+        shadow(80, 162, 60),
+      ],
+    },
+    // The egg fallen from its cushion and broken in two on the ground,
+    // empty: she dies in "The Iron Throne" (episode 73), the show's alone.
+    // The books leave her alive, so chapter 344, their last, orders it.
+    {
+      episode: 73,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        { d: 'M74 104 Q40 104 38 128 Q40 152 74 150' },
+        {
+          d: 'M74 104 L68 112 L76 118 L68 126 L76 134 L68 142 L74 150',
+          role: 'accent',
+        },
+        { d: 'M98 140 Q104 112 128 108 Q146 110 144 132' },
+        {
+          d: 'M98 140 L106 136 L110 144 L120 138 L126 146 L136 138 L144 132',
+          role: 'accent',
+        },
+        {
+          d: 'M46 116 q4 4 8 0 t8 0 M42 130 q4 4 8 0 t8 0 t8 0 M112 120 q4 4 8 0 t8 0',
+          role: 'soft',
+        },
+        { d: 'M46 142 l5 -3 M54 147 l5 -3 M132 120 l5 -3', role: 'ambient' },
+        { d: 'M16 152 H144', role: 'ambient', dashed: true },
       ],
     },
   ],

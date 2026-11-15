@@ -14,10 +14,14 @@
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://it.wikipedia.org/wiki/Eddard_Stark#Prima_stagione"
+      "https://it.wikipedia.org/wiki/Eddard_Stark#Prima_stagione",
+      "https://gameofthrones.fandom.com/wiki/Ice",
+      "https://gameofthrones.fandom.com/wiki/Two_Swords",
+      "https://gameofthrones.fandom.com/wiki/The_Lion_and_the_Rose"
     ],
     "unverified": [
-      "Role step Hand of the King filed at episode 2: the show has him accept at the end of episode 1, which is also the gate, so it moves to the first episode he travels as Hand. Book step at Catelyn II (site 7), where he decides to accept."
+      "Role step Hand of the King filed at episode 2: the show has him accept at the end of episode 1, which is also the gate, so it moves to the first episode he travels as Hand. Book step at Catelyn II (site 7), where he decides to accept.",
+      "Stages (#1292): Ice melted down in episode 31 (Fandom \"Ice\", \"Two Swords\"). Book pin site 204, Tyrion VIII of ASOS (chapter 60), where Fandom \"Ice\" says Tyrion realises Ice was reforged at the wedding feast; Fandom's \"Two Swords\" page instead lists Tyrion IV (ASOS 32, site 176) as the adapted forging chapter, so the later of the two is filed. Not checked on AWOIAF (unreachable in this session). Episodes not viewed."
     ]
   },
   "catelyn-stark": {
@@ -125,7 +129,14 @@
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://it.wikipedia.org/wiki/Jon_Snow#Prima_stagione"
+      "https://it.wikipedia.org/wiki/Jon_Snow#Prima_stagione",
+      "https://gameofthrones.fandom.com/wiki/Mother%27s_Mercy",
+      "https://gameofthrones.fandom.com/wiki/Home",
+      "https://gameofthrones.fandom.com/wiki/The_Dragon_and_the_Wolf",
+      "https://gameofthrones.fandom.com/wiki/Ghost"
+    ],
+    "unverified": [
+      "Stages and statuses (#1292, owner 2026-11-15): killed in episode 50 (Fandom DeathEp, Ghost howls in mourning per Fandom \"Ghost\") and left for dead in Jon XIII, ADWD chapter 69 (site 341), from the chapter list on Fandom's \"Mother's Mercy\" page; back in episode 52 (GOT602, the show's alone); named Aegon Targaryen in episode 67 (GOT707, the show's alone). Both one-medium stages ordered at chapter 344. The ADWD chapter is not checked on AWOIAF (unreachable in this session). Episodes not viewed."
     ]
   },
   "benjen-stark": {
@@ -782,10 +793,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/The_Iron_Throne"
     ],
     "unverified": [
-      "Show wedding is in episode 1 (her gate); the khaleesi step is dated episode 2 only because episodes must strictly increase."
+      "Show wedding is in episode 1 (her gate); the khaleesi step is dated episode 2 only because episodes must strictly increase.",
+      "Drawings (#1292): the dragon egg first drawing (wedding gift, episode 1, Daenerys II, site 12) and the pyre stage at episode 10 / chapter 73 (the pin Mirri's pyre stage already uses); dies in episode 73 (Fandom DeathEp, GOT806), the show's alone, ordered at chapter 344. Chapter pins not re-checked on AWOIAF (unreachable in this session). Episodes not viewed."
     ]
   },
   "viserys-targaryen": {
@@ -823,10 +836,12 @@
       "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Long_Night"
     ],
     "unverified": [
-      "That the show’s episode 1 makes clear he knows the Dothraki well (summary). The books say so at site chapter 4."
+      "That the show’s episode 1 makes clear he knows the Dothraki well (summary). The books say so at site chapter 4.",
+      "Stage and status (#1292): dies at Winterfell in episode 70 (Fandom DeathEp, GOT803), the show's alone, ordered at chapter 344. Episode not viewed."
     ]
   },
   "illyrio-mopatis": {
@@ -848,10 +863,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow"
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New"
     ],
     "unverified": [
-      "Show: whether her name is said aloud in episode 2 (Fandom lists her in episode 2 and its synopsis names her; the line is not checked)."
+      "Show: whether her name is said aloud in episode 2 (Fandom lists her in episode 2 and its synopsis names her; the line is not checked).",
+      "Stage and status (#1292): found strangled in episode 16 (Fandom \"The Old Gods and the New\", GOT206), the show's alone; ordered at site 114, ACOK Daenerys III (chapter 40), the Qarth chapter that episode adapts per its Fandom chapter list. Not checked on AWOIAF. Episode not viewed."
     ]
   },
   "doreah": {
@@ -862,10 +879,12 @@
       "https://it.wikipedia.org/wiki/Il_Trono_di_Spade_(serie_televisiva)#Personaggi_e_interpreti",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis"
     ],
     "unverified": [
-      "Show: whether her name is said aloud in episode 2 (synopsis names her; the line is not checked)."
+      "Show: whether her name is said aloud in episode 2 (synopsis names her; the line is not checked).",
+      "Stage and status (#1292): the show ends her in episode 20 (GOT210); the book has her die of a wasting disease in the Red Waste (Fandom \"Doreah\", In the books), filed at site 86, ACOK Daenerys I (chapter 12), the only Red Waste Daenerys chapter (Fandom \"The Night Lands\" chapter list). The chapter is not checked on AWOIAF. Episode not viewed."
     ]
   },
   "rakharo": {
@@ -878,11 +897,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands"
     ],
     "unverified": [
       "Book gate: AWOIAF lists him as appearing in AGOT chapter 23 (site 24), but his character page cites nothing before chapter 54 (site 55). If he is not named in chapter 23, the gate is 55.",
-      "Show: whether his name is said aloud in episode 3 (Jorah talks with him about his father; the line is not checked)."
+      "Show: whether his name is said aloud in episode 3 (Jorah talks with him about his father; the line is not checked).",
+      "Stage and status (#1292): his head is found in episode 12 (Fandom \"The Night Lands\", {{Corpse}}), the show's alone; the book's Rakharo survives the Red Waste (Fandom \"Rakharo\", In the books). Ordered at site 86, ACOK Daenerys I (chapter 12), the chapter the episode adapts. Not checked on AWOIAF. Episode not viewed."
     ]
   },
   "mirri-maz-duur": {

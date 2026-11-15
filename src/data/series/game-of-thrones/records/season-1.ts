@@ -3234,7 +3234,20 @@ export const season1: ThronesSaga = {
         it: 'All’esecuzione di un disertore dice a Bran di non distogliere lo sguardo. Quando trovano i cuccioli di meta-lupo convince il padre a risparmiarli, uno per ciascuno dei figli legittimi. Poi trova un sesto cucciolo, bianco, e lo tiene per sé.',
         en: 'At a deserter’s execution he tells Bran not to look away. When the direwolf pups are found he talks his father into sparing them, one for each trueborn child. Then he finds a sixth pup, a white one, and keeps it for himself.',
       },
-      status: [{ episode: 1, chapter: 2, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 2, value: 'alive' },
+        // Stabbed at Castle Black: dead in "Mother's Mercy" (episode 50), left
+        // for dead in Jon XIII of A Dance with Dragons (owner, #1292). The
+        // show alone brings him back, in "Home" (episode 52).
+        { episode: 50, chapter: 341, source: 'episode', value: 'deceased' },
+        {
+          episode: 50,
+          chapter: 341,
+          source: 'chapter',
+          value: 'presumed-dead',
+        },
+        { episode: 52, chapter: 344, source: 'episode', value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -4323,7 +4336,11 @@ export const season1: ThronesSaga = {
         it: 'Vive a Pentos con il fratello Viserys, ospite del magistro Illyrio. Viserys vuole darla in sposa a khal Drogo per avere l’esercito con cui riprendersi il Trono di Spade. Lei gli dice che vuole tornare a casa, e lui non la ascolta.',
         en: 'She lives in Pentos with her brother Viserys, a guest of Magister Illyrio. Viserys means to marry her to Khal Drogo for the army he needs to take back the Iron Throne. She tells him she wants to go home, and he does not listen.',
       },
-      status: [{ episode: 1, chapter: 4, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 4, value: 'alive' },
+        // Dies in "The Iron Throne" (episode 73), the show's alone.
+        { episode: 73, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -4392,7 +4409,11 @@ export const season1: ThronesSaga = {
         it: 'Ha lasciato i Sette Regni e vive in esilio a Essos. Conosce i Dothraki e le loro usanze. A Pentos è tra gli ospiti riuniti intorno a khal Drogo e ai Targaryen.',
         en: 'He has left the Seven Kingdoms and lives in exile in Essos. He knows the Dothraki and their customs. In Pentos he is among the guests gathered around Khal Drogo and the Targaryens.',
       },
-      status: [{ episode: 1, chapter: 4, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 4, value: 'alive' },
+        // Dies at Winterfell in "The Long Night" (episode 70), the show's alone.
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -4421,7 +4442,12 @@ export const season1: ThronesSaga = {
         it: 'È una delle ancelle che servono Daenerys dopo le nozze con Drogo. È dothraki, come il popolo tra cui ora vive la sua khaleesi.',
         en: 'She is one of the handmaidens who serve Daenerys after her marriage to Drogo. She is Dothraki, like the people her khaleesi now lives among.',
       },
-      status: [{ episode: 2, chapter: 12, value: 'alive' }],
+      status: [
+        { episode: 2, chapter: 12, value: 'alive' },
+        // Killed in Qarth in "The Old Gods and the New" (episode 16), the
+        // show's alone; Daenerys III of A Clash of Kings orders it.
+        { episode: 16, chapter: 114, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 2,
@@ -4436,7 +4462,12 @@ export const season1: ThronesSaga = {
         it: 'È una delle ancelle che servono Daenerys dopo le nozze con Drogo. A differenza delle altre non è dothraki. Insegna a Daenerys come dare piacere al marito.',
         en: 'She is one of the handmaidens who serve Daenerys after her marriage to Drogo. Unlike the others, she is not Dothraki. She teaches Daenerys how to please her husband.',
       },
-      status: [{ episode: 2, chapter: 12, value: 'alive' }],
+      status: [
+        { episode: 2, chapter: 12, value: 'alive' },
+        // The show ends her in "Valar Morghulis" (episode 20), the book in
+        // the Red Waste, in Daenerys I of A Clash of Kings: one pair.
+        { episode: 20, chapter: 86, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 2,
@@ -4467,7 +4498,13 @@ export const season1: ThronesSaga = {
         it: 'È uno dei guerrieri dothraki incaricati di proteggere Daenerys. Cavalca con lei mentre il khalasar di Drogo viaggia verso est, in direzione di Vaes Dothrak.',
         en: 'He is one of the Dothraki warriors charged with protecting Daenerys. He rides with her as Drogo’s khalasar travels east toward Vaes Dothrak.',
       },
-      status: [{ episode: 3, chapter: 24, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 24, value: 'alive' },
+        // His head comes back on his horse in "The Night Lands" (episode 12),
+        // the show's alone; the book's Rakharo lives, and its Red Waste
+        // chapter the episode adapts, Daenerys I of A Clash of Kings, orders it.
+        { episode: 12, chapter: 86, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
