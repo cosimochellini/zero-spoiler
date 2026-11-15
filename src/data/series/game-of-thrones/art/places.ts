@@ -1008,25 +1008,27 @@ const RED_FORK: Stroke[] = [
 ]
 
 /**
- * The Gods Eye: a wide lake seen from its shore, the far bank in the light
- * and reeds standing on the near one, named in episode 10 and in Bran VII
- * (chapter 67) and never visited in the first season or book. No island:
- * the Isle of Faces waits until that chapter is checked for it. The far
- * bank is hatched; the accent is the water.
+ * The Gods Eye: a wide lake seen from its shore under a line of hills, the
+ * far bank's edge drawn inside the rim and two tufts of reeds growing on
+ * the near shore, named in episode 10 and in Bran VII (chapter 67) and
+ * never visited in the first season or book. No island: the Isle of Faces
+ * waits until that chapter is checked for it. The far bank is hatched; the
+ * accent is the water.
  */
 const GODS_EYE: Stroke[] = [
-  { d: 'M10 70 Q30 56 50 64 Q72 48 96 60 Q122 50 150 64', role: 'soft' },
+  { d: 'M10 62 Q30 48 50 56 Q72 40 96 52 Q122 42 150 56', role: 'soft' },
   {
-    d: 'M14 112 Q20 86 80 84 Q140 86 146 112 Q140 138 80 140 Q20 138 14 112 Z',
+    d: 'M14 102 Q20 78 80 76 Q140 78 146 102 Q140 126 80 128 Q20 126 14 102 Z',
   },
-  { d: 'M24 100 Q44 93 80 93 Q116 93 136 100', role: 'soft' },
-  { d: 'M40 116 q8 -4 16 0 t16 0 M88 126 q8 -4 16 0 t16 0', role: 'accent' },
+  { d: 'M24 90 Q44 84 80 84 Q116 84 136 90', role: 'soft' },
+  { d: 'M44 104 q8 -4 16 0 t16 0 M90 114 q8 -4 16 0 t16 0', role: 'accent' },
   {
-    d: 'M22 156 V138 M28 158 V130 M34 156 V140 M124 156 V140 M130 158 V132 M136 156 V138',
+    d: 'M34 150 Q30 132 20 118 M34 150 Q34 130 32 112 M34 150 Q38 132 46 120 M34 150 Q42 138 56 132 M122 148 Q120 136 112 128 M122 148 V124 M122 148 Q126 138 134 132',
     role: 'soft',
   },
-  { d: 'M28 130 q-3 -4 0 -8 M130 132 q3 -4 0 -8' },
-  { d: 'M100 90 l5 -2 M114 91 l5 -2 M128 94 l5 -2', role: 'ambient' },
+  { d: 'M32 112 q-3 -5 0 -10 M122 124 q3 -5 0 -10' },
+  { d: 'M10 150 Q80 142 150 150', role: 'ambient', dashed: true },
+  { d: 'M100 82 l5 -2 M114 83 l5 -2 M128 86 l5 -2', role: 'ambient' },
 ]
 
 /**
@@ -1130,9 +1132,9 @@ const TYROSH: Stroke[] = [
 
 /**
  * Dragonstone: the Targaryen castle on its rock in the sea, one tower rising
- * into a carved dragon's neck and head, a stone wing along the wall and the
- * stair cut into the cliff, for the island named in Daenerys I (chapter 4)
- * and in episode 7. The show goes there from season 2 and opens up its
+ * into a carved dragon's long neck and horned head, jaws open, and the stair
+ * cut into the cliff, for the island named in Daenerys I (chapter 4) and in
+ * episode 7. The show goes there from season 2 and opens up its
  * dragon-carved castle in season 7; the owner ruled that a named place may
  * open on that later look. The rock's far side is hatched; the accent is
  * the dragon.
@@ -1141,11 +1143,11 @@ const DRAGONSTONE: Stroke[] = [
   { d: 'M14 150 L24 122 L38 128 L50 96 H110 L122 120 L136 114 L146 150' },
   { d: 'M54 96 V66 H106 V96' },
   {
-    d: 'M60 66 V46 Q60 30 74 30 L80 24 L82 31 L92 35 L80 38 L88 43 L74 41 Q68 41 68 50 V66',
+    d: 'M60 66 V44 Q60 26 76 24 L98 30 L80 33 L96 39 L76 38 Q68 38 68 48 V66',
     role: 'accent',
   },
+  { d: 'M71 25 L62 13 M76 24 L72 12' },
   { d: 'M94 66 V48 H104 V66 M94 48 V44 H98 V48 M100 48 V44 H104 V48' },
-  { d: 'M70 66 L76 54 L82 60 L88 52 L94 60', role: 'soft' },
   { d: 'M74 96 V84 Q80 78 86 84 V96', role: 'soft' },
   { d: 'M86 98 h6 v4 h6 v4 h6 v4 h6 v4', role: 'soft' },
   {
@@ -1319,13 +1321,14 @@ const WOMB_OF_THE_WORLD: Stroke[] = [
 ]
 
 /**
- * The Whispering Wood: a narrow valley at night, thick pines on both flanks
- * and a line of spears waiting between the trunks, where Robb's host falls
- * on Jaime's in Catelyn X (chapter 64), a book-only record. The pines' far
- * sides are hatched; the accent is the trees.
+ * The Whispering Wood: a narrow valley at night between two ridges, thick
+ * pines on both flanks and a line of spears waiting between the trunks,
+ * where Robb's host falls on Jaime's in Catelyn X (chapter 64), a book-only
+ * record. The pines' far sides are hatched; the accent is the trees.
  */
 const WHISPERING_WOOD: Stroke[] = [
   { d: 'M10 84 Q50 126 80 130 Q110 126 150 84' },
+  { d: 'M4 62 Q30 48 58 72 M156 62 Q130 48 102 72', role: 'soft' },
   {
     d: 'M18 106 V96 M6 96 L18 66 L30 96 Z M38 118 V108 M26 108 L38 78 L50 108 Z M122 118 V108 M110 108 L122 78 L134 108 Z M142 106 V96 M130 96 L142 66 L154 96 Z',
     role: 'accent',
