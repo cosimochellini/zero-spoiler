@@ -577,15 +577,15 @@ export const essosRedrawn: Redrawings = {
     },
   ],
   'quaro': [
-    // The same arakh slid off the boulder and lying on the ground: he dies
+    // The same arakh fallen flat in front of the boulder: he dies
     // in Daenerys VIII (chapter 65). The book's alone; episode 9 orders it.
     {
       episode: 9,
       chapter: 65,
       value: [
         ...BOULDER,
-        ...moved(KHAS_ARAKH, 'translate(-6 88) scale(0.7) rotate(-94 80 80)'),
-        shadow(70, 154, 50),
+        ...moved(KHAS_ARAKH, 'translate(-6 238) scale(1 -1) rotate(-92 80 80)'),
+        shadow(74, 180, 56),
       ],
     },
   ],

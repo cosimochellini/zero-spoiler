@@ -200,6 +200,7 @@ const KENNEL_BEAM: Stroke[] = [
   { d: 'M24 30 H136 V44 H24 Z' },
   { d: 'M40 36 h22 M90 38 h30', role: 'soft' },
   { d: `M78 44 V58 ${circle(78, 60, 3)}` },
+  { d: 'M24 44 V150 M136 44 V150 M52 44 V150 M108 44 V150', role: 'ambient' },
 ]
 
 /**
@@ -210,7 +211,6 @@ const KENNEL_BEAM: Stroke[] = [
  */
 const KENNEL_LEASH: Stroke[] = [
   ...KENNEL_BEAM,
-  { d: 'M24 44 V150 M136 44 V150 M52 44 V150 M108 44 V150', role: 'ambient' },
   { d: 'M74 58 Q64 70 72 84 L84 84 Q92 70 82 58' },
   {
     d: `${ellipse(78, 92, 3, 6)} ${ellipse(78, 103, 2, 5)} ${ellipse(78, 114, 3, 6)}`,
