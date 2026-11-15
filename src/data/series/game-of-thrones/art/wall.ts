@@ -206,7 +206,7 @@ const NOYE_FORGE: Stroke[] = [
   ...NOYE_HAMMER_HEAD,
   { d: 'M64 74 H92 V78 H64' },
   { d: 'M96 79 L122 77 L123 81 L97 83 Z', role: 'accent' },
-  { d: 'M104 72 q-3 -5 0 -10 M114 71 q-3 -5 0 -10', role: 'accent' },
+  { d: 'M104 72 q-3 -5 0 -10 M114 71 q-3 -5 0 -10', role: 'soft' },
 ]
 
 /**
