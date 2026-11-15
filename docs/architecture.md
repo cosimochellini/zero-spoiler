@@ -209,15 +209,16 @@ medium meets in a later season or book keep that later gate. #1007 adds 16 of
 the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules. The
 series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
 own, Eddard's with a death stage, the Winterfell household's are in
-`art/winterfell.ts` (#854), with four stages, the southern cast's are in
-`art/south.ts` (#1051), with three, and the Night's Watch's and Essos cast's are
-in `art/wall.ts` and `art/essos.ts` (#1052), with six, the places' are in
-`art/places.ts` (#1053), with fourteen stages for the damage and rebuilding
-later seasons and books give (#1236), the northern household's are in
-`art/north.ts` (#1054), with fifteen, twelve of them the deaths, Roose Bolton's
-allegiance and Jeyne Poole's false identity from the drawing audit (#1288), the
-Vale cast's are in `art/vale.ts` (#1055), with two, the King's Landing cast's
-are in `art/court.ts` (#1056), with one, and the Riverlands cast's are in
+`art/winterfell.ts` (#854), with 25 stages after the drawing audit (#1285), the
+southern cast's are in `art/south.ts` (#1051), with three, and the Night's
+Watch's and Essos cast's are in `art/wall.ts` and `art/essos.ts` (#1052), with
+six, the places' are in `art/places.ts` (#1053), with fourteen stages for the
+damage and rebuilding later seasons and books give (#1236), the northern
+household's are in `art/north.ts` (#1054), with fifteen, twelve of them the
+deaths, Roose Bolton's allegiance and Jeyne Poole's false identity from the
+drawing audit (#1288), the Vale cast's are in `art/vale.ts` (#1055), with two,
+the King's Landing cast's are in `art/court.ts` (#1056), with thirteen, twelve
+of them from the drawing audit (#1289), and the Riverlands cast's are in
 `art/riverlands.ts` (#1057), with seven, six of them the deaths later seasons
 and books give (#1242). Every other character maps to a shared placeholder in
 `art/index.ts`, `PERSON`, until its own issue draws it, so the drawing tests

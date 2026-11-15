@@ -304,7 +304,7 @@ const CHANGES: {
   {
     id: 'alyn',
     episode: 21,
-    chapter: 161,
+    chapter: 178,
     value: 'deceased',
     source: 'chapter',
   },
@@ -1136,7 +1136,7 @@ const STAGES: {
   // The northern lords' deaths and reveals (#1288).
   { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
   { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },
-  { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
+  { id: 'alyn', episode: 21, chapter: 178, source: 'chapter' },
   { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
   { id: 'smalljon-umber', episode: 59, chapter: 195 },
   { id: 'rickard-karstark', episode: 25, chapter: 164 },
