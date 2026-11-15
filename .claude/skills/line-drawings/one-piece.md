@@ -22,6 +22,8 @@ filed by saga in `src/data/series/one-piece/art/<saga>.ts`, the devil fruits in
 - The whole place counts even when the landmark survives: a ruin brings the
   damage into the frame. A rebuilt place shows only what is truly new, or
   keeps its stage. A landmark leaving is not a stage (owner, PR #655).
+- A redrawn place keeps its `landmark` caption in `places.ts` (it and en) in
+  step with the new first drawing (#1276).
 
 ## Devil fruits
 
@@ -77,6 +79,16 @@ own drawing keeps it when its eater dies.
 - **Stages past the anime wait.** A change the manga tells in a chapter no
   episode adapts yet is filed once that episode airs, as an issue with an
   `Unblocks at: ch. N` line (#612, #652).
+
+## A stage that dates a power, identity or affiliation
+
+Read what the record says about it against the record's gate, in both media:
+its `summary`, the dossier `log`, the relationship texts and, for a fruit, the
+fruit's `summary`. A power, identity or affiliation the drawing shows only
+from its stage cannot sit in text a reader sees before it. This sweep found
+about ten spoilers: Bon Clay (#1264), Apoo (#1271), Bonney (#1272), Cracker
+(#1274) and the fruit summaries heal-heal, pop-pop (#1282), mochi, sabre-tooth
+(#1283) and Spinosaurus (#1276).
 
 ## Filing a stage
 
