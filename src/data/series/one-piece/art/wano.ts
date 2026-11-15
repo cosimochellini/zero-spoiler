@@ -2,9 +2,12 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
-import { cell, circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
+
+import { MERRY_JOLLY_ROGER } from './east-blue'
 
 /**
  * One neck of Orochi's shadow behind the paper door, base at (0, 0), the head
@@ -36,8 +39,11 @@ const MARIA_HAIR_SWORD =
 /** Black Maria's pipe, set down on the crossing of her two hair swords. */
 const MARIA_PIPE = 'translate(0 12)'
 
-/** Who's-Who's katana, drawn level and then laid at a slant on the floor. */
+/** Who's-Who's scabbard and hilt, drawn level and then laid at a slant on the floor. */
 const WHOS_WHO_LAY = 'translate(0 26) rotate(-12 80 112)'
+
+/** His hilt drawn out of the scabbard, tipped up on the dagger's blade. */
+const WHOS_WHO_DRAWN = 'translate(16 -12) rotate(-18 40 112)'
 
 /** Hotei's sword that is still whole, laid above the one that was snapped. */
 const HOTEI_WHOLE = 'translate(0 30)'
@@ -134,6 +140,236 @@ const SOLITAIRE_SWORD: Stroke[] = [
 const RAIJIN_FIREBALL =
   'M0 8 C-9 8 -12 0 -10 -6 C-8 -12 -2 -14 0 -22 C4 -16 2 -12 6 -10 C12 -6 11 8 0 8 Z'
 
+/**
+ * The flanks of the mountain Oden Castle stood on, above Okobore, with the
+ * far one hatched, the ground and the sea: Kuri's two drawings share them.
+ */
+const KURI_FLANKS: Stroke[] = [
+  { d: 'M2 150 C16 138 26 122 36 104 M124 104 C134 122 144 138 158 150' },
+  { d: 'M124 104 C128 120 134 134 142 146', role: 'soft' },
+  {
+    d: 'M128 116 l8 -4 M132 128 l9 -5 M138 138 l9 -5 M146 146 l7 -4',
+    role: 'ambient',
+  },
+  { d: 'M-4 150 H164', role: 'ambient' },
+  ...SEA.slice(1),
+]
+
+/**
+ * Kiku's gold clover guard, face on about (0, 0): four round lobes meeting
+ * in the middle. Her drawing tips it with the blade, at two sizes for the
+ * rim and the inner edge.
+ */
+const KIKU_CLOVER =
+  'M-2.5 -2.5 A7 7 0 1 1 2.5 -2.5 A7 7 0 1 1 2.5 2.5 A7 7 0 1 1 -2.5 2.5 A7 7 0 1 1 -2.5 -2.5 Z'
+
+/** One small flower of the tattoo on Hyogoro's back: five round petals about (x, y). */
+function blossom(x: number, y: number): string {
+  return [0, 72, 144, 216, 288]
+    .map((angle) => {
+      const a = ((angle - 90) * Math.PI) / 180
+      return circle(x + 3.6 * Math.cos(a), y + 3.6 * Math.sin(a), 2.6)
+    })
+    .join(' ')
+}
+
+/**
+ * Kyoshiro's sword in its sheath, level, the guard at (0, 0) and the hilt
+ * to the left: the sheath and its ridge, the round guard seen edge on, the
+ * bound grip. The sheath is the record's mark in both of his drawings.
+ */
+const KYOSHIRO_SWORD: Stroke[] = [
+  { d: 'M4 -5 H112 Q120 -5 120 0 Q120 5 112 5 H4 Z', role: 'accent' },
+  { d: 'M8 -2 H112', role: 'soft' },
+  { d: ellipse(0, 0, 3.5, 11) },
+  { d: 'M-4 -4 H-42 Q-47 0 -42 4 H-4' },
+  { d: 'M-10 -4 l5 8 M-19 -4 l5 8 M-28 -4 l5 8 M-37 -4 l4 8', role: 'soft' },
+]
+
+/**
+ * One of Oden's two swords in its sheath, level, the guard at (0, 0) and
+ * the hilt to the left: the lacquered sheath with its round far edge, the
+ * cap past its knobbed ring, three of the flowers on it, the lacquered hilt
+ * with its bands and the trefoil cap at its end. Enma and Ame no Habakiri
+ * are made alike, so one shape serves both.
+ */
+const ODEN_SWORD: Stroke[] = [
+  { d: 'M6 -4.5 C40 -6 80 -8 104 -11 L106 -2 C82 1 42 3 6 4.5 Z' },
+  {
+    d: 'M104 -11 C110 -12 114 -10 114 -6.5 C114 -3 110 -2 106 -2 M101 -10.5 L103 -1.5',
+    role: 'soft',
+  },
+  { d: 'M10 1.5 C44 0 80 -2 104 -5', role: 'soft' },
+  {
+    d: `${circle(60, -2, 2)} ${circle(76, -3, 2)} ${circle(92, -5, 2)}`,
+    role: 'soft',
+  },
+  {
+    d: 'M-5 -4 H-38 Q-44 0 -38 4 H-5 M-38 -4 C-46 -8 -50 -2 -46 0 C-50 2 -46 8 -38 4',
+  },
+  { d: 'M-14 -4 V4 M-17 -4 V4 M-28 -4 V4', role: 'soft' },
+]
+
+/**
+ * The trefoil guard of one of Oden's swords about (x, 128), where both of
+ * his drawing's guards sit, turned by `angle` degrees: three round lobes,
+ * each holed in the middle as the wiki has it.
+ */
+function trefoil(x: number, angle: number): string {
+  return [0, 120, 240]
+    .map((turn) => {
+      const a = ((angle + turn) * Math.PI) / 180
+      return circle(x + 5.5 * Math.cos(a), 128 + 5.5 * Math.sin(a), 5.2)
+    })
+    .join(' ')
+}
+
+/**
+ * Higurashi's headband ring seen from a little above: the front of the band
+ * with its depth, which turns accent when the candles go out.
+ */
+const HIGURASHI_BAND_FRONT =
+  'M24 118 C40 138 120 138 136 118 V130 C120 150 40 150 24 130 Z'
+
+/** The back of the ring, the inside of it hatched, and the knot's two ends. */
+const HIGURASHI_BAND: Stroke[] = [
+  { d: 'M24 118 C30 104 130 104 136 118', role: 'soft' },
+  {
+    d: 'M30 116 C40 108 120 108 130 116 M34 120 l6 -6 M48 116 l5 -5 M108 112 l5 5 M122 114 l5 5',
+    role: 'ambient',
+  },
+  {
+    d: 'M136 124 C146 126 152 132 150 142 M138 128 C144 136 144 146 140 154',
+    role: 'soft',
+  },
+]
+
+/** The two candles fastened to the front of the band: tops, wicks, drips, the shade down one side. */
+const HIGURASHI_CANDLES: Stroke[] = [
+  { d: 'M54 132 V78 M66 133 V78 M94 133 V78 M106 132 V78' },
+  { d: `${ellipse(60, 78, 6, 2)} ${ellipse(100, 78, 6, 2)}` },
+  { d: 'M60 76 v-5 M100 76 v-5', role: 'soft' },
+  { d: 'M63 84 C64 90 62 94 63 98 M97 86 C96 92 98 96 97 100', role: 'soft' },
+  { d: 'M62 82 V130 M102 82 V130', role: 'ambient' },
+]
+
+/**
+ * Semimaru's biwa leaning back, the body low and the neck up and to the
+ * right: the teardrop body with its depth, the far side hatched, the neck,
+ * the pegbox bent back with its pegs, the frets, three strings and the
+ * bridge they run to.
+ */
+const SEMIMARU_BIWA: Stroke[] = [
+  {
+    d: 'M52 164 C34 150 36 120 58 108 C68 102 80 100 90 96 C96 102 98 112 96 122 C96 146 76 170 52 164 Z',
+  },
+  {
+    d: 'M52 164 C48 168 56 172 62 170 C82 166 100 146 100 122 L96 122',
+    role: 'soft',
+  },
+  { d: 'M64 160 l6 3 M78 152 l6 4 M88 140 l6 4 M94 128 l5 3', role: 'ambient' },
+  { d: 'M86 98 L112 58 M93 104 L117 64' },
+  {
+    d: 'M112 58 L117 64 L126 58 L122 48 Z M120 54 l6 -2 M116 50 l-4 -4 M124 50 l-2 -5',
+  },
+  { d: 'M96 88 l6 4 M101 80 l6 4 M106 72 l6 4', role: 'soft' },
+  { d: 'M58 146 L106 70 M62 148 L109 72 M66 150 L112 74', role: 'soft' },
+  { d: 'M54 142 L70 152' },
+]
+
+/**
+ * The hilt of Who's-Who's blade, level at y 104-120 with the guard to the
+ * right: the pink wrap crossing in diamonds over the white beneath it, and
+ * the gold quatrefoil guard in his colour.
+ */
+const WHOS_WHO_HILT: Stroke[] = [
+  { d: 'M2 104 H38 V120 H2 Q-3 112 2 104 Z' },
+  { d: 'M6 104 L12 120 L18 104 L24 120 L30 104 L36 120', role: 'soft' },
+  {
+    d: 'M43 102 C38 94 52 92 49 102 C58 99 58 113 49 110 C52 120 38 118 43 110 C34 113 34 99 43 102 Z',
+    role: 'accent',
+  },
+]
+
+/**
+ * His long pink scabbard, level, mouth to the left: the near face, the
+ * underside turning away and hatched, and the white flowers on it.
+ */
+const WHOS_WHO_SCABBARD: Stroke[] = [
+  { d: 'M54 104 H150 Q158 112 150 120 H54 Z' },
+  { d: 'M54 120 L57 124 H151 Q157 122 156 116', role: 'soft' },
+  {
+    d: 'M66 124 l3 -4 M84 124 l3 -4 M102 124 l3 -4 M120 124 l3 -4 M138 124 l3 -4',
+    role: 'ambient',
+  },
+  {
+    d: 'M80 109 v8 M76.5 111 l7 4 M76.5 115 l7 -4 M106 109 v8 M102.5 111 l7 4 M102.5 115 l7 -4 M132 109 v8 M128.5 111 l7 4 M128.5 115 l7 -4',
+    role: 'soft',
+  },
+]
+
+/** The cigarette he always has, set down and still smoking. */
+const WHOS_WHO_CIGARETTE: Stroke[] = [
+  { d: 'M92 170 L128 164 L129 170 L93 176 Z M120 165 l1 6' },
+  {
+    d: 'M130 167 C138 162 132 156 138 150 C142 146 138 142 142 138',
+    role: 'ambient',
+    dashed: true,
+  },
+]
+
+/** The foot of the plant the shogun's castle stands on, below where its leaves spring. */
+const FLOWER_CAPITAL_STEM_FOOT: Stroke[] = [
+  { d: 'M66 150 C68 140 70 128 70.5 116 M94 150 C92 140 90 128 89.5 116' },
+  { d: 'M84 148 C83 138 82.5 128 82.6 118', role: 'soft' },
+  { d: 'M86 140 l6 -3 M86 126 l6 -3', role: 'ambient' },
+]
+
+/** The plant's two broad leaves, and the castle on top of it: stone base, two storeys. */
+const FLOWER_CAPITAL_CASTLE: Stroke[] = [
+  {
+    d: 'M69.8 130 C56 116 38 116 24 126 C38 136 56 138 69.8 130 Z M89.8 124 C102 110 120 108 136 116 C124 128 106 132 89.8 124 Z',
+  },
+  {
+    d: 'M68 130 C54 126 40 126 28 126 M92 124 C106 118 120 116 132 116',
+    role: 'soft',
+  },
+  { d: 'M46 72 H114 L108 62 H52 Z' },
+  { d: 'M58 62 V48 H102 V62 M66 36 V28 H94 V36' },
+  { d: 'M70 48 V62 M80 48 V62 M90 48 V62 M74 28 V36 M86 28 V36', role: 'soft' },
+]
+
+/** The castle's three tiers of curved eaves. */
+const FLOWER_CAPITAL_ROOFS =
+  'M42 50 Q52 48 58 44 H102 Q108 48 118 50 M52 38 Q60 36 64 32 H96 Q100 36 108 38 M64 22 Q72 20 76 14 H84 Q88 20 96 22'
+
+/** The capital's roofs at the plant's foot, the ground and the sea. */
+const FLOWER_CAPITAL_TOWN: Stroke[] = [
+  {
+    d: 'M-4 150 V136 L10 128 L24 136 V150 M24 140 L38 132 L52 140 V150 M108 140 L122 132 L136 140 V150 M136 136 L150 128 L164 136 V150',
+    role: 'soft',
+  },
+  { d: 'M-4 150 H164', role: 'ambient' },
+  ...SEA.slice(1),
+]
+
+/**
+ * Denjiro's two clay pots and the two holed coins above them, the drawing
+ * of the pot he cheats the shopkeeper over (960): his own first drawing,
+ * and the pots Kyoshiro's sword is laid in front of once he is Denjiro.
+ */
+const DENJIRO_POTS: Stroke[] = [
+  { d: 'M30 90 C18 134 34 162 50 168 H90 C106 162 122 134 110 90 Z' },
+  { d: ellipse(70, 90, 40, 9) },
+  { d: 'M38 118 C58 126 82 126 102 118', role: 'soft' },
+  { d: 'M120 146 C114 162 122 172 128 174 H144 C150 172 156 162 152 146 Z' },
+  { d: ellipse(136, 146, 16, 4) },
+  { d: circle(128, 58, 9), role: 'accent' },
+  { d: 'M125 55 h6 v6 h-6 Z', role: 'accent' },
+  { d: circle(142, 80, 9), role: 'accent' },
+  { d: 'M139 77 h6 v6 h-6 Z', role: 'accent' },
+]
+
 /** The drawings of the records filed in the wano stretch of the route. */
 export const wanoArt = {
   // A closed country seen from the sea: one tall peak, the far flank hatched,
@@ -164,58 +400,65 @@ export const wanoArt = {
     ...SEA.slice(1),
   ],
 
-  // A pine leaning out from the edge of a forest over a beach, the sea washing up on the sand.
+  // The ruins of Oden Castle on the top of its mountain above Okobore: the
+  // stone base, a stump of the first storey, what is left of the curved eave
+  // and two charred posts in the record's colour, a slab of roof fallen down
+  // the far flank. The mountain is shown at 900 (ch. 914) and Kin'emon says
+  // Kaido burned the castle down at 910 (ch. 920); arc latitude covers both.
+  // Kaido's fire breath wipes the ruins off the top at 913, in `wanoRedrawn`.
   'kuri': [
+    ...KURI_FLANKS,
+    { d: 'M36 104 H124' },
+    { d: 'M46 104 L52 90 H108 L114 104' },
     {
-      d: 'M50 140 C54 118 44 102 56 86 C64 76 74 68 88 60 M58 90 C68 88 86 86 104 84 M52 110 C44 106 36 104 26 104',
-      role: 'accent',
-    },
-    {
-      d: 'M64 60 q2 -10 14 -10 q6 -10 18 -6 q10 -6 18 2 q10 0 10 10 Z M88 84 q2 -8 12 -8 q6 -8 14 -2 q10 0 10 10 Z M8 104 q2 -8 10 -8 q6 -6 12 0 q8 0 8 8 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M126 140 C124 124 130 112 138 104 C142 100 146 98 150 98',
+      d: 'M49 97 H111 M66 90 l-2 7 M80 90 v7 M94 90 l2 7 M58 97 l-2 7 M73 97 l-1 7 M87 97 l1 7 M102 97 l2 7',
       role: 'soft',
     },
-    { d: 'M134 98 q2 -8 10 -8 q6 -6 12 0 q6 0 6 8 Z', role: 'soft' },
+    { d: 'M60 90 V74 M100 90 V76 M72 76 V90 M88 76 V90', role: 'soft' },
+    { d: 'M60 74 H100' },
     {
-      d: 'M-4 128 q6 -14 12 -2 q6 -16 12 0 q4 -10 10 0 M108 130 q6 -12 10 -2',
-      role: 'ambient',
-    },
-    { d: 'M-4 140 C40 142 90 146 164 150', role: 'soft' },
-    {
-      d: dots([
-        [30, 148],
-        [70, 152],
-        [104, 151],
-        [138, 156],
-      ]),
-      role: 'ambient',
-    },
-    ...SEA,
-  ],
-
-  // A bowl of red bean soup, and the dango skewer laid beside it.
-  'tama': [
-    { d: 'M30 118 C34 152 50 170 72 170 C94 170 110 152 114 118 Z' },
-    { d: ellipse(72, 118, 42, 9) },
-    { d: ellipse(72, 120, 33, 6), role: 'accent' },
-    {
-      d: dots([
-        [58, 118],
-        [72, 125],
-        [86, 118],
-        [66, 111],
-      ]),
+      d: 'M38 76 Q52 74 58 64 Q66 60 80 60 L84 66 L88 58 L92 68 L96 62 L102 72 L108 70 M68 60 V42 L71 36 L73 44 L76 40 V60 M86 60 V50 L89 54 L91 46',
       role: 'accent',
     },
-    { d: 'M60 170 h24 M64 178 h16' },
-    { d: 'M112 28 L140 92' },
-    { d: circle(118, 42, 9) },
-    { d: circle(126, 60, 9) },
-    { d: circle(134, 78, 9) },
-    shadow(72, 182, 44),
+    { d: 'M62 74 l6 -6 M74 74 l6 -6 M86 74 l6 -6', role: 'ambient' },
+    { d: 'M108 90 L113 86 L119 100 L114 104', role: 'soft' },
+    { d: 'M112 92 L136 104 L134 108 L110 96 Z' },
+  ],
+
+  // A bowl of red bean soup, its far side hatched, and three of the dango
+  // she makes from her cheek set down beside it in her colour: loose and
+  // round, no skewer. She tames Hihimaru with them at 893 (ch. 911), and
+  // Tsuru gives her the oshiruko at 900 (ch. 914).
+  'tama': [
+    { d: 'M18 106 C22 142 40 160 62 160 C84 160 102 142 106 106' },
+    { d: ellipse(62, 106, 44, 10) },
+    { d: ellipse(62, 108, 36, 7), role: 'soft' },
+    {
+      d: dots([
+        [48, 107],
+        [62, 112],
+        [76, 106],
+        [56, 103],
+        [70, 101],
+      ]),
+      role: 'soft',
+    },
+    { d: 'M48 160 Q62 166 76 160 M50 160 V166 Q62 171 74 166 V160' },
+    {
+      d: 'M84 146 l8 -8 M92 150 l9 -10 M96 130 l7 -7 M100 120 l5 -5',
+      role: 'ambient',
+    },
+    { d: 'M26 122 C30 140 42 152 56 156', role: 'soft' },
+    shadow(62, 176, 46),
+    {
+      d: `${circle(117, 170, 10)} ${circle(139, 170, 10)} M120.4 160.6 A10 10 0 1 1 135.6 160.6`,
+      role: 'accent',
+    },
+    {
+      d: 'M110 166 q2 -5 7 -5 M132 166 q2 -5 7 -5 M122 148 q2 -4 6 -4',
+      role: 'soft',
+    },
+    shadow(128, 186, 24),
   ],
 
   // His red tengu mask laid flat on its back and seen from the side: the
@@ -243,24 +486,36 @@ export const wanoArt = {
     shadow(82, 192, 66),
   ],
 
-  // A tea tray with a pot and a cup, a chrysanthemum beside it: she serves
-  // at a tea house, and takes up a sword only at 901, in `wanoRedrawn`.
+  // Her katana drawn, the gentle curve of the blade with its ridge, the gold
+  // clover guard in her colour tipped with the blade, the bound red hilt,
+  // and the orange scabbard laid in front, its underside hatched. Tsurujo
+  // says she can use it and she ties back her sleeves to fight at 901
+  // (ch. 914 p. 14-15), two episodes after her record opens: arc latitude.
   'kiku': [
-    { d: 'M26 152 H134 L128 162 H32 Z' },
-    { d: ellipse(68, 128, 26, 22) },
-    { d: 'M54 108 Q68 96 82 108' },
-    { d: 'M94 126 Q108 122 112 106', role: 'soft' },
-    { d: 'M42 116 Q28 128 44 140', role: 'soft' },
-    { d: 'M100 136 H120 L117 150 H103 Z' },
-    { d: 'M106 128 q-4 -6 0 -12 M114 128 q-4 -6 0 -12', role: 'ambient' },
-    { d: circle(116, 62, 14), role: 'accent' },
+    { d: 'M58 122 C78 97 104 66 136 30 C134 40 112 70 63 126' },
+    { d: 'M61 124 C84 97 108 68 135 34', role: 'soft' },
+    { d: 'M58 122 l5 4', role: 'soft' },
     {
-      d: 'M116 48 V76 M102 62 H130 M106.1 52.1 L125.9 71.9 M125.9 52.1 L106.1 71.9',
+      d: KIKU_CLOVER,
       role: 'accent',
+      transform: 'translate(53 133) rotate(-51) scale(0.85 1.3)',
     },
-    { d: circle(116, 62, 4), role: 'accent' },
-    { d: 'M116 76 Q126 112 128 150', role: 'soft' },
-    shadow(80, 174, 52),
+    {
+      d: KIKU_CLOVER,
+      role: 'soft',
+      transform: 'translate(53 133) rotate(-51) scale(0.55 0.85)',
+    },
+    { d: 'M47 136 L27 162 L34 168 L54 142' },
+    { d: 'M44 140 l7 5 M40 145 l7 5 M36 150 l7 5 M32 155 l7 5', role: 'soft' },
+    { d: 'M26 162 L22 168 L30 173 L34 168', role: 'soft' },
+    { d: 'M54 178 L146 160 Q151 162 149 167 L56 186 Z' },
+    { d: 'M56 186 Q50 186 50 182 Q50 178 54 178' },
+    {
+      d: 'M60 184 l4 -5 M76 181 l4 -5 M92 178 l4 -5 M108 175 l4 -5 M124 172 l4 -5',
+      role: 'ambient',
+    },
+    { d: 'M70 175 l2 7 M74 174 l2 7', role: 'soft' },
+    shadow(96, 192, 56),
   ],
 
   // His open kimono folded, the flowers on it in his colour, its sides
@@ -287,29 +542,35 @@ export const wanoArt = {
     shadow(84, 186, 62),
   ],
 
-  // The spinosaurus he walks into the capital as, side on: the sail and its
-  // spines in his colour, the far legs and the belly hatched, no eye. His
-  // power is shown with him, and named, the night he is sent after the soba
-  // seller (923, ch. 929).
+  // The spinosaurus he walks into the capital as, seen a little from the
+  // front: the near face of the sail and its spines in his colour, the far
+  // face showing past it and hatched, the far legs and the belly drawn
+  // light, no eye. His power is shown with him, and named, the night he is
+  // sent after the soba seller (923, ch. 929 p. 17-18).
   'page-one': [
     {
-      d: 'M2 94 C8 86 24 82 36 82 C46 82 50 90 52 98 C54 106 56 110 58 112 C76 112 104 110 124 114 C138 116 150 124 158 136 C146 134 132 132 120 136 C110 144 92 146 74 142 C62 140 50 134 44 126 C40 116 36 106 28 102 C20 100 8 100 2 94 Z',
+      d: 'M2 96 C8 86 24 82 36 82 C46 82 50 90 52 98 C54 106 56 110 60 112 C78 110 104 108 124 112 C138 114 150 122 158 134 C146 132 132 130 120 136 C110 146 92 150 74 146 C62 144 50 138 44 128 C40 118 36 108 28 104 C20 102 8 102 2 96 Z',
     },
-    { d: 'M54 112 C56 70 74 44 92 44 C110 44 126 76 124 114', role: 'accent' },
+    { d: 'M60 112 C64 70 82 42 100 40 C118 40 132 72 128 114', role: 'soft' },
     {
-      d: 'M64 110 L66 64 M78 110 L82 48 M92 112 L94 44 M106 112 L108 54 M118 114 L118 78',
+      d: 'M112 52 l8 2 M118 64 l8 2 M122 78 l7 2 M124 92 l6 2 M126 104 l5 1',
+      role: 'ambient',
+    },
+    { d: 'M54 112 C56 70 74 46 92 46 C110 46 124 76 122 114', role: 'accent' },
+    {
+      d: 'M66 111 L68 66 M80 110 L83 50 M94 110 L95 46 M108 111 L110 56 M118 113 L119 80',
       role: 'soft',
     },
     {
-      d: 'M100 142 C102 154 98 166 96 176 H108 M84 144 C86 156 84 166 82 176 H92',
+      d: 'M100 146 C102 156 98 166 96 176 H108 M84 148 C86 158 84 168 82 176 H92',
     },
     {
-      d: 'M54 134 C52 148 52 162 54 176 H64 M44 128 C42 144 40 160 42 176 H50',
+      d: 'M56 138 C54 150 54 164 56 176 H66 M46 132 C44 146 42 162 44 176 H52',
       role: 'soft',
     },
-    { d: 'M46 128 Q70 134 96 130', role: 'soft' },
+    { d: 'M48 130 Q72 138 98 134', role: 'soft' },
     {
-      d: 'M60 140 l4 4 M70 142 l4 4 M110 140 l4 4 M120 138 l4 4',
+      d: 'M62 142 l4 4 M72 144 l4 4 M112 142 l4 4 M122 140 l4 4',
       role: 'ambient',
     },
     shadow(80, 182, 64),
@@ -367,20 +628,55 @@ export const wanoArt = {
     shadow(80, 176, 56),
   ],
 
-  // A paper lantern with the flower crest of the old yakuza.
+  // Hyogoro seen from behind, as the Udon prison shows him from his first
+  // scene (919, ch. 926): the flame-like tuft of hair, the small scarf at his
+  // neck, his bare shoulders and back with the tattoo that looks like a vest
+  // of flowers, its border, the flowers in his colour, the side that turns
+  // away hatched, and the striped prison yukata undone and fallen round his
+  // waist. Who he really is is told at 929 (ch. 934), before his record opens.
   'hyogoro': [
-    { d: 'M54 58 C38 78 38 130 54 150 H106 C122 130 122 78 106 58 Z' },
-    { d: 'M60 58 h40 v-8 h-40 Z' },
-    { d: 'M80 50 V30' },
-    { d: circle(80, 25, 5) },
-    { d: 'M60 150 h40 v8 h-40 Z' },
-    { d: 'M42 74 H118 M40 86 H120 M40 126 H120 M42 138 H116', role: 'soft' },
+    { d: 'M70 46 C68 32 92 32 90 46 C90 54 86 58 80 58 C74 58 70 54 70 46 Z' },
     {
-      d: `${circle(80, 92, 7)} ${circle(91, 100, 7)} ${circle(87, 113, 7)} ${circle(73, 113, 7)} ${circle(69, 100, 7)}`,
+      d: 'M76 34 C72 26 78 22 76 14 C82 18 84 24 82 30 C86 26 88 22 86 18 C92 24 90 32 84 36',
+      role: 'soft',
+    },
+    {
+      d: 'M74 58 C72 62 66 64 62 66 M86 58 C88 62 94 64 98 66 M68 64 Q80 70 92 64 M80 68 l-4 8 M80 68 l5 7',
+      role: 'soft',
+    },
+    {
+      d: 'M62 66 C46 68 36 74 34 86 C32 104 34 124 36 140 M98 66 C114 68 124 74 126 86 C128 104 126 124 124 140',
+    },
+    {
+      d: 'M44 92 C46 108 48 124 52 138 M116 92 C114 108 112 124 108 138',
+      role: 'soft',
+    },
+    {
+      d: 'M44 80 C50 74 58 70 66 70 C72 76 88 76 94 70 C102 70 110 74 116 80 C116 98 114 112 110 120 C96 126 64 126 50 120 C46 112 44 98 44 80 Z',
+    },
+    {
+      d: 'M50 84 C54 80 60 76 66 76 M110 84 C106 80 100 76 94 76 M54 116 C68 120 92 120 106 116',
+      role: 'soft',
+    },
+    {
+      d: `${blossom(64, 92)} ${blossom(96, 92)} ${blossom(80, 106)} ${blossom(58, 110)} ${blossom(102, 110)} ${blossom(80, 86)}`,
       role: 'accent',
     },
-    { d: circle(80, 104, 4), role: 'accent' },
-    shadow(80, 170, 40),
+    {
+      d: 'M120 96 l6 -4 M120 110 l6 -4 M118 124 l6 -4 M116 136 l6 -4',
+      role: 'ambient',
+    },
+    {
+      d: 'M36 140 C30 150 26 166 28 184 H132 C134 166 130 150 124 140 C110 134 50 134 36 140 Z',
+    },
+    {
+      d: 'M30 150 C16 152 10 166 14 180 H28 M130 150 C144 152 150 166 146 180 H132',
+      role: 'soft',
+    },
+    {
+      d: 'M46 140 l-4 44 M60 138 l-2 46 M74 137 v47 M88 137 v47 M102 138 l2 46 M116 140 l4 44',
+      role: 'ambient',
+    },
   ],
 
   // His blond braid hanging through its eight ties down to the stinger-shaped
@@ -490,18 +786,25 @@ export const wanoArt = {
     shadow(84, 186, 66),
   ],
 
-  // A yakuza's sabre over the money box.
+  // His sword in its sheath, the sheath in his colour, laid in front of his
+  // kimono folded on its side with the circles and targets on it, the
+  // folded edges hatched where they turn away. Both are his from his first
+  // scene as Kyoshiro (909, ch. 919). That he is Denjiro waits for 976, in
+  // `wanoRedrawn`.
   'kyoshiro': [
-    { d: 'M20 84 C56 60 104 44 146 38', role: 'accent' },
-    { d: 'M24 96 C58 74 104 58 144 50', role: 'accent' },
-    { d: 'M146 38 C152 40 150 48 144 50', role: 'accent' },
-    { d: 'M14 76 L30 104' },
-    { d: 'M4 92 L20 116 L28 110 L12 86 Z' },
-    { d: 'M30 118 H118 V172 H30 Z' },
-    { d: 'M30 118 L48 106 H136 L118 118 M118 172 L136 160 V106' },
-    { d: 'M44 118 V172 M104 118 V172', role: 'soft' },
-    { d: 'M66 132 h16 v14 h-16 Z' },
-    shadow(80, 182, 56),
+    { d: 'M18 112 L98 94 L144 116 L64 136 Z' },
+    { d: 'M18 112 V126 L64 150 V136 M64 150 L144 130 V116' },
+    {
+      d: 'M24 130 l6 -6 M36 136 l6 -6 M48 142 l6 -6 M84 144 l6 -6 M106 138 l6 -6 M128 132 l6 -6',
+      role: 'ambient',
+    },
+    { d: 'M30 117 L108 99.5 M44 122 L120 105', role: 'soft' },
+    {
+      d: `${ellipse(44, 118, 7, 3.6)} ${ellipse(44, 118, 2.6, 1.4)} ${ellipse(74, 126, 7, 3.6)} ${ellipse(74, 126, 2.6, 1.4)} ${ellipse(116, 116, 7, 3.6)} ${ellipse(116, 116, 2.6, 1.4)} ${ellipse(104, 104, 5, 2.6)} ${ellipse(34, 110, 4, 2)}`,
+      role: 'soft',
+    },
+    ...placed(KYOSHIRO_SWORD, 'translate(50 172) rotate(-9) scale(0.9)'),
+    shadow(82, 188, 70),
   ],
 
   // Tonoyasu's polka-dot bandana, still tied in the ring it makes round his
@@ -611,51 +914,48 @@ export const wanoArt = {
     shadow(112, 186, 40),
   ],
 
-  // A blank flag, torn, hanging from the yard of a broken mast over a ship's
-  // rail: Sengoku tells of the crew that fought itself on board and was
-  // broken at God Valley (958). Rocks himself is only a silhouette there.
+  // The top of a mast, whole, and the crew's Jolly Roger hanging from its
+  // yard over a ship's rail: the burning skull in the record's colour, its
+  // flames rising like two horns, the flag's folds and the side turning away
+  // hatched. Sengoku tells of the crew at 958 (ch. 957); the Jolly Roger
+  // itself is first shown on their ship in Kaido's story at 1076 (ch. 1049
+  // p. 5), within the arc. Rocks is long dead when the record opens; the
+  // wiki gives the ship's fate as unknown, so nothing on it is broken.
   'rocks-d-xebec': [
-    { d: 'M74 150 V60 L77 48 L80 58 L83 42 L86 56 V150' },
+    { d: 'M76 150 V118 M84 150 V118 M76 45 V30 H84 V45 M74 30 H86 V24 H74 Z' },
+    { d: 'M81 40 l3 -2 M81 128 l3 -2 M81 140 l3 -2', role: 'ambient' },
+    { d: 'M24 42 Q80 36 136 42 M24 42 v-4 M136 42 v-4' },
     {
-      d: 'M82 66 l4 -3 M82 84 l4 -3 M82 102 l4 -3 M82 120 l4 -3 M82 138 l4 -3',
-      role: 'ambient',
-    },
-    { d: 'M28 74 Q80 66 132 74 M28 74 v-4 M132 74 v-4' },
-    {
-      d: 'M32 76 C56 86 100 86 128 76 C124 92 130 110 122 126 L110 118 L102 134 L90 120 L78 136 L66 120 L54 132 L46 118 L36 126 C40 108 30 92 32 76 Z',
-      role: 'accent',
+      d: 'M30 44 C50 48 110 48 130 44 L132 116 C116 122 104 112 88 118 C72 124 60 114 44 120 C38 122 32 120 28 118 Z',
     },
     {
-      d: 'M56 84 C60 100 54 114 58 124 M100 84 C96 100 104 114 100 126',
+      d: 'M48 50 C46 74 50 98 46 118 M114 50 C116 74 112 96 116 116',
       role: 'soft',
     },
-    { d: 'M104 88 l8 6 M106 100 l8 6 M104 112 l6 5', role: 'ambient' },
-    { d: 'M28 74 L10 110 M132 74 L150 110', role: 'ambient', dashed: true },
+    { d: 'M118 60 l8 6 M118 76 l8 6 M118 92 l8 6', role: 'ambient' },
     {
-      d: 'M-4 150 H164 M-4 142 H164 M10 142 V150 M30 142 V150 M50 142 V150 M110 142 V150 M130 142 V150 M150 142 V150',
+      d: `M70 98 C62 96 60 88 60 82 C60 72 70 66 80 66 C90 66 100 72 100 82 C100 88 98 96 90 98 V104 Q80 107 70 104 Z M66 70 C58 66 54 58 58 48 C60 56 64 58 68 58 C66 52 68 48 72 46 C72 54 74 60 78 66 M94 70 C102 66 106 58 102 48 C100 56 96 58 92 58 C94 52 92 48 88 46 C88 54 86 60 82 66 ${circle(72, 84, 4.5)} ${circle(88, 84, 4.5)} M78 96 l2 -5 l2 5`,
+      role: 'accent',
+    },
+    { d: 'M24 42 L6 100 M136 42 L154 100', role: 'ambient', dashed: true },
+    {
+      d: 'M-4 150 H164 M-4 140 H164 M10 140 V150 M30 140 V150 M50 140 V150 M110 140 V150 M130 140 V150 M150 140 V150',
       role: 'soft',
     },
     ...SEA.slice(1),
   ],
 
-  // A pot of oden with two swords crossed behind it.
+  // His two swords, Enma and Ame no Habakiri, crossed in their sheaths, the
+  // hilts down: the lacquered sheaths with their flowers, the caps past the
+  // knobbed rings, the trefoil caps on the hilts, and the two trefoil guards
+  // in his colour. He wears both at his hip through his story; they are
+  // named at 955 (ch. 954) and he cuts the Mountain God with them at 961
+  // (ch. 961). His death is told before his record opens, so no stage.
   'kozuki-oden': [
-    { d: 'M52 112 L126 36 L134 42 L60 118 Z', role: 'accent' },
-    { d: 'M108 112 L34 36 L26 42 L100 118 Z', role: 'accent' },
-    { d: 'M46 106 L60 122 M114 106 L100 122' },
-    { d: 'M36 124 C36 162 54 176 80 176 C106 176 124 162 124 124 Z' },
-    { d: ellipse(80, 124, 44, 10) },
-    { d: ellipse(80, 126, 34, 7), role: 'soft' },
-    { d: 'M36 134 C24 132 24 146 34 148 M124 134 C136 132 136 146 126 148' },
-    {
-      d: dots([
-        [66, 124],
-        [82, 130],
-        [96, 124],
-      ]),
-      role: 'soft',
-    },
-    { d: 'M4 186 H156', role: 'ambient' },
+    ...placed(ODEN_SWORD, 'translate(56 128) rotate(-38)'),
+    ...placed(ODEN_SWORD, 'translate(104 128) scale(-1 1) rotate(-38)'),
+    { d: `${trefoil(56, -38)} ${trefoil(104, 218)}`, role: 'accent' },
+    shadow(80, 186, 60),
   ],
 
   // An hourglass with cherry petals falling through it.
@@ -672,33 +972,30 @@ export const wanoArt = {
     shadow(80, 184, 48),
   ],
 
-  // Two lit candles on a headband, as she wore them when she found Orochi (965).
+  // Her headband ring seen from a little above, the inside hatched and the
+  // knot's two ends hanging, and the two candles fastened to its front with
+  // their flames in her colour: how she wears them when she finds Orochi
+  // (965, ch. 965). The flames go out when Kaido has her killed, at 974, in
+  // `wanoRedrawn`.
   'kurozumi-higurashi': [
-    { d: 'M52 124 V72 h12 V124 M96 124 V72 h12 V124' },
-    { d: 'M58 72 v-6 M102 72 v-6', role: 'soft' },
+    { d: HIGURASHI_BAND_FRONT },
+    ...HIGURASHI_BAND,
+    ...HIGURASHI_CANDLES,
     {
-      d: 'M58 64 c-7 -8 -2 -16 0 -26 c5 10 7 18 0 26 Z M102 64 c-7 -8 -2 -16 0 -26 c5 10 7 18 0 26 Z',
+      d: 'M60 70 c-7 -8 -2 -16 0 -26 c5 10 7 18 0 26 Z M100 70 c-7 -8 -2 -16 0 -26 c5 10 7 18 0 26 Z',
       role: 'accent',
     },
-    { d: 'M64 80 v8 M96 84 v6', role: 'soft' },
-    { d: 'M28 120 C50 134 110 134 132 120 V130 C110 144 50 144 28 130 Z' },
-    { d: 'M28 120 C50 108 110 108 132 120', role: 'soft' },
-    { d: 'M132 124 l14 10 M132 128 l8 16', role: 'soft' },
-    shadow(80, 176, 48),
+    shadow(80, 172, 56),
   ],
 
-  // A cicada under the dome of a barrier.
+  // His biwa, leaning back on the ground under the dome of one of his
+  // barriers, the dome in his colour with a glint along it: the biwa priest
+  // stops Oden's blade in mid-air with a barrier at 970 (ch. 969 p. 2-4).
   'kurozumi-semimaru': [
-    { d: 'M22 178 C22 78 138 78 138 178', role: 'accent' },
-    { d: 'M34 178 C34 94 126 94 126 178', role: 'soft' },
-    { d: `${cell(50, 112)} ${cell(70, 112)} ${cell(90, 112)}`, role: 'soft' },
-    {
-      d: 'M80 132 C74 132 70 140 72 150 C74 162 78 170 80 170 C82 170 86 162 88 150 C90 140 86 132 80 132 Z',
-    },
-    { d: 'M72 136 C52 138 38 150 44 158 C52 164 68 154 75 145 Z' },
-    { d: 'M88 136 C108 138 122 150 116 158 C108 164 92 154 85 145 Z' },
-    { d: 'M50 152 L70 143 M110 152 L90 143', role: 'soft' },
-    { d: 'M6 178 H154', role: 'ambient' },
+    { d: 'M10 172 C10 34 150 34 150 172', role: 'accent' },
+    { d: 'M24 130 C28 104 42 84 62 74', role: 'soft' },
+    ...placed(SEMIMARU_BIWA, 'translate(22 40) scale(0.78)'),
+    { d: 'M2 172 H158', role: 'ambient' },
   ],
 
   // Two open folding fans, the smaller one tipped the other way over the
@@ -732,35 +1029,16 @@ export const wanoArt = {
     shadow(80, 188, 72),
   ],
 
-  // His long katana in its pink scabbard with the white flowers on it, the
-  // quatrefoil guard, and a cigarette left burning beside it: he walks into
-  // Onigashima with both at 982. His saber-toothed tiger waits for 1013, in
-  // `wanoRedrawn`.
+  // His long pink scabbard with the white flowers on it, its underside
+  // hatched, the hilt and its quatrefoil guard in his colour, laid at a
+  // slant, and the cigarette left burning beside it: he walks into
+  // Onigashima with both at 982 (ch. 977). What the scabbard holds is not
+  // the katana it looks like: his saber-toothed tiger waits for 1013 and the
+  // short dagger he draws from it for 1039, in `wanoRedrawn`.
   'whos-who': [
-    { d: 'M2 104 H38 V120 H2 Q-3 112 2 104 Z', transform: WHOS_WHO_LAY },
-    {
-      d: 'M6 104 L12 120 L18 104 L24 120 L30 104 L36 120',
-      role: 'soft',
-      transform: WHOS_WHO_LAY,
-    },
-    {
-      d: 'M43 102 C38 94 52 92 49 102 C58 99 58 113 49 110 C52 120 38 118 43 110 C34 113 34 99 43 102 Z',
-      role: 'accent',
-      transform: WHOS_WHO_LAY,
-    },
-    { d: 'M54 104 H150 Q158 112 150 120 H54 Z', transform: WHOS_WHO_LAY },
-    { d: 'M62 104 V120 M62 108 H150', role: 'soft', transform: WHOS_WHO_LAY },
-    {
-      d: 'M80 109 v8 M76.5 111 l7 4 M76.5 115 l7 -4 M106 109 v8 M102.5 111 l7 4 M102.5 115 l7 -4 M132 109 v8 M128.5 111 l7 4 M128.5 115 l7 -4',
-      role: 'soft',
-      transform: WHOS_WHO_LAY,
-    },
-    { d: 'M92 170 L128 164 L129 170 L93 176 Z M120 165 l1 6' },
-    {
-      d: 'M130 167 C138 162 132 156 138 150 C142 146 138 142 142 138',
-      role: 'ambient',
-      dashed: true,
-    },
+    ...placed(WHOS_WHO_HILT, WHOS_WHO_LAY),
+    ...placed(WHOS_WHO_SCABBARD, WHOS_WHO_LAY),
+    ...WHOS_WHO_CIGARETTE,
     shadow(80, 186, 70),
   ],
 
@@ -996,33 +1274,25 @@ export const wanoArt = {
     shadow(80, 174, 58),
   ],
 
-  // A street of the capital running away between rows of shops, the roofs'
-  // eaves in the record's colour, the fronts in shade hatched, a gate at the
-  // far end: the streets Zoro walks the night of the crossroad killings
-  // (892). The shogun's castle on its trunk is not cited before 920.
+  // The shogun's castle on the large plant at the centre of the capital,
+  // the castle's three tiers of curved eaves in the record's colour, the
+  // stem hatched where it turns away, two broad leaves, and the capital's
+  // roofs at the plant's foot. The wiki says only "a large plant"; the leaves
+  // are there so the stem reads as one. The castle is shown at 920 (ch. 927
+  // p. 13), within the arc. The Straw Hat banner hangs under it from 1148, in
+  // `wanoRedrawn`.
   'flower-capital': [
-    { d: 'M4 150 V82 L66 106 V122 M156 150 V82 L94 106 V122' },
+    ...FLOWER_CAPITAL_STEM_FOOT,
     {
-      d: 'M-2 76 Q30 84 70 102 M162 76 Q130 84 90 102 M-2 76 l8 -8 Q36 76 74 96 L70 102 M162 76 l-8 -8 Q124 76 86 96 L90 102',
-      role: 'accent',
+      d: 'M70.5 116 C71 104 70 94 66 86 C62 78 54 74 46 72 M89.5 116 C89 104 90 94 94 86 C98 78 106 74 114 72',
     },
     {
-      d: 'M24 150 V90 M44 150 V98 M58 150 V103 M136 150 V90 M116 150 V98 M102 150 V103',
+      d: 'M82.6 118 C82.8 108 84 98 88 90 M86 112 l6 -3 M88 98 l6 -3',
       role: 'soft',
     },
-    { d: 'M4 112 L66 124 M156 112 L94 124', role: 'soft' },
-    {
-      d: 'M120 104 l8 4 M120 118 l8 4 M120 132 l8 4 M140 98 l8 4 M140 114 l8 4 M140 130 l8 4',
-      role: 'ambient',
-    },
-    { d: 'M70 122 V112 H90 V122 M66 112 L80 102 L94 112', role: 'soft' },
-    { d: 'M66 122 L30 190 M94 122 L130 190 M66 122 H94' },
-    {
-      d: 'M80 128 V140 M80 152 V166 M80 178 V190',
-      role: 'ambient',
-      dashed: true,
-    },
-    { d: 'M-4 150 H4 M156 150 H164', role: 'ambient' },
+    ...FLOWER_CAPITAL_CASTLE,
+    { d: FLOWER_CAPITAL_ROOFS, role: 'accent' },
+    ...FLOWER_CAPITAL_TOWN,
   ],
   // Three dumplings left on a plate, two daggers crossed beneath it.
   'dobon': [
@@ -1038,18 +1308,17 @@ export const wanoArt = {
     shadow(80, 184, 46),
   ],
 
-  // A scorpion's tail curled over two meal tickets, a stamp on the front one.
-  // His flintlocks come and go in `wanoRedrawn` (947 to 1019).
+  // A scorpion's tail and stinger, what his SMILE makes of his hair, curled
+  // in his colour over two of the camp's meal tickets: he beats Hyo for
+  // eating on tickets he did not earn at 929 (ch. 934).
   'daifugo': [
     { d: 'M60 110 H122 V144 H60 Z', role: 'soft' },
     { d: 'M38 122 H100 V156 H38 Z' },
     { d: 'M48 134 h30 M48 145 h40', role: 'soft' },
-    { d: circle(89, 134, 6), role: 'accent' },
     {
-      d: 'M126 150 C146 128 148 96 132 76 C118 58 96 58 88 74',
+      d: 'M126 150 C146 128 148 96 132 76 C118 58 96 58 88 74 M88 74 L78 66 L82 84 Z',
       role: 'accent',
     },
-    { d: 'M88 74 L78 66 L82 84 Z', role: 'accent' },
     {
       d: 'M136 130 l9 3 M141 111 l9 0 M137 92 l8 -4 M124 76 l5 -7 M106 67 l0 -8',
     },
@@ -1348,18 +1617,7 @@ export const wanoArt = {
   ],
 
   // Two clay pots, one big and one small, and two holed coins above them.
-  'denjiro': [
-    { d: 'M30 90 C18 134 34 162 50 168 H90 C106 162 122 134 110 90 Z' },
-    { d: ellipse(70, 90, 40, 9) },
-    { d: 'M38 118 C58 126 82 126 102 118', role: 'soft' },
-    { d: 'M120 146 C114 162 122 172 128 174 H144 C150 172 156 162 152 146 Z' },
-    { d: ellipse(136, 146, 16, 4) },
-    { d: circle(128, 58, 9), role: 'accent' },
-    { d: 'M125 55 h6 v6 h-6 Z', role: 'accent' },
-    { d: circle(142, 80, 9), role: 'accent' },
-    { d: 'M139 77 h6 v6 h-6 Z', role: 'accent' },
-    shadow(90, 182, 62),
-  ],
+  'denjiro': [...DENJIRO_POTS, shadow(90, 182, 62)],
 
   // An open scroll of disavowal between its two rollers, a red seal at its
   // foot, and the brush laid across it.
@@ -1640,19 +1898,6 @@ const ALPACAMAN_SABRE: Stroke[] = [
 ]
 
 /**
- * One of Daifugo's small flintlocks, level, muzzle right, the lock at
- * (0, 0): the stock under the barrel with its round butt, the barrel and
- * the muzzle ring, the cock and the trigger guard.
- */
-const DAIFUGO_FLINTLOCK: Stroke[] = [
-  {
-    d: 'M-6 -4 H34 V0 H6 C2 2 -2 8 -4 14 C-5 18 -10 20 -13 18 C-15 16 -15 13 -14 11 C-12 6 -10 0 -10 -2 Z',
-  },
-  { d: 'M34 -4 H52 M34 0 H52 M52 -5.5 V1.5' },
-  { d: 'M-4 -4 C-5 -8 -9 -10 -12 -8 M2 0 Q3 6 8 6 Q11 5 11 0', role: 'soft' },
-]
-
-/**
  * Soto Muso in its scabbard, level, the butt of the hilt at (0, 0): the
  * black hilt with its white diamonds and no guard, the pale collar, the long
  * straight scabbard with the light wave along its edge.
@@ -1757,35 +2002,6 @@ export const wanoRedrawn: Redrawings = {
         },
         ...KING_FIRE,
         { d: 'M4 188 H156', role: 'ambient' },
-      ],
-    },
-  ],
-  // Her katana, with the gold clover she has for a guard: four round lobes
-  // and a rim inside the edge, the blade and hilt running into its notches,
-  // three diamond windows in the hilt's wrap. She draws it for the first
-  // time at 901 (ch. 914), when Tama is taken from the tea house.
-  'kiku': [
-    {
-      episode: 901,
-      chapter: 914,
-      value: [
-        { d: 'M114 34 L66 112.9 M122 40 L73.9 119' },
-        { d: 'M114 34 L122 40' },
-        {
-          d: 'M70.4 119.1 A11.5 11.5 0 0 1 75.9 141.4 A11.5 11.5 0 0 1 53.6 146.9 A11.5 11.5 0 0 1 48.1 124.6 A11.5 11.5 0 0 1 70.4 119.1',
-          role: 'accent',
-        },
-        {
-          d: 'M67 124.8 A8 8 0 1 1 70.2 138 A8 8 0 1 1 57 141.2 A8 8 0 1 1 53.8 128 A8 8 0 1 1 67 124.8',
-          role: 'accent',
-        },
-        { d: 'M34 172 L52.3 147 M42 178 L59.6 154' },
-        { d: 'M34 172 L42 178' },
-        {
-          d: 'M53.2 154.3 L53.5 158.2 L49.7 159.1 L49.3 155.2 Z M48.1 161.2 L48.4 165.2 L44.6 166 L44.2 162.1 Z M43 168.1 L43.3 172.1 L39.5 173 L39.2 169 Z',
-          role: 'soft',
-        },
-        shadow(84, 186, 40),
       ],
     },
   ],
@@ -1995,8 +2211,33 @@ export const wanoRedrawn: Redrawings = {
           role: 'soft',
         },
         { d: 'M86 152 l4 4 M94 152 l4 4 M102 152 l4 4', role: 'ambient' },
-        ...moved(wanoArt['whos-who'].slice(6, 8), 'translate(-90 8)'),
+        ...moved(WHOS_WHO_CIGARETTE, 'translate(-90 8)'),
         shadow(84, 188, 70),
+      ],
+    },
+    // The dagger out: the long scabbard laid lower, empty, and the hilt and
+    // guard drawn out of it on a short straight blade in his colour, the
+    // guard plain now; the striped tail of his tiger curls up behind, the
+    // form he keeps. He draws it on Jinbe at 1039 (ch. 1017 p. 13).
+    {
+      episode: 1039,
+      chapter: 1017,
+      value: [
+        {
+          d: 'M150 150 C150 120 138 92 116 74 C100 62 96 46 106 36 C112 30 120 34 116 42 C112 48 116 54 124 62 C146 82 160 116 158 150',
+        },
+        {
+          d: 'M150 124 l7 -3 M146 106 l8 -4 M138 88 l8 -6 M124 72 l6 -7 M108 52 l6 -4',
+          role: 'ambient',
+        },
+        ...placed(WHOS_WHO_SCABBARD, 'translate(-20 40) rotate(-8 100 112)'),
+        ...placed(softened(WHOS_WHO_HILT), WHOS_WHO_DRAWN),
+        {
+          d: 'M56 106 H96 L104 112 L96 118 H56 Z M56 112 H100',
+          role: 'accent',
+          transform: WHOS_WHO_DRAWN,
+        },
+        shadow(80, 186, 70),
       ],
     },
   ],
@@ -2131,26 +2372,6 @@ export const wanoRedrawn: Redrawings = {
         shadow(80, 190, 62),
       ],
     },
-  ],
-  // The same tail and tickets, set higher, and two small flintlocks laid in
-  // front of them, muzzle to muzzle: he holds the prisoners with them from
-  // 947 (ch. 948). He has them no more when he is back at Onigashima, at
-  // 1019 (ch. 1004), and the drawing is his first one again.
-  'daifugo': [
-    {
-      episode: 947,
-      chapter: 948,
-      value: [
-        ...moved(wanoArt.daifugo.slice(0, -1), 'translate(0 -22)'),
-        ...moved(DAIFUGO_FLINTLOCK, 'translate(44 164) rotate(-6)'),
-        ...moved(
-          DAIFUGO_FLINTLOCK,
-          'translate(116 176) scale(-1 1) rotate(-6)',
-        ),
-        shadow(80, 192, 58),
-      ],
-    },
-    { episode: 1019, chapter: 1004, value: wanoArt.daifugo },
   ],
   // Out of the cell, with his sword back: Soto Muso laid in front in its
   // scabbard, with no guard, and behind it the straw kasa he wears, the wide
@@ -2363,24 +2584,22 @@ export const wanoRedrawn: Redrawings = {
     },
   ],
   // The same two candles on their headband, out, a wisp of smoke rising
-  // from each wick, and the band itself takes the accent the flames had:
-  // Kaido says he had her killed at 974 (ch. 972).
+  // from each wick, and the front of the band takes the accent the flames
+  // had: Kaido says he had her killed at 974 (ch. 972).
   'kurozumi-higurashi': [
     {
       episode: 974,
       chapter: 972,
       value: [
-        ...wanoArt['kurozumi-higurashi'].slice(0, 2),
-        ...wanoArt['kurozumi-higurashi'].slice(3, 4),
-        ...wanoArt['kurozumi-higurashi']
-          .slice(4, 5)
-          .map((stroke): Stroke => ({ ...stroke, role: 'accent' })),
-        ...wanoArt['kurozumi-higurashi'].slice(5, 8),
+        { d: HIGURASHI_BAND_FRONT, role: 'accent' },
+        ...HIGURASHI_BAND,
+        ...HIGURASHI_CANDLES,
         {
-          d: 'M58 64 C52 56 62 50 56 40 C52 32 60 28 56 18 M102 64 C96 56 106 50 100 40 C96 32 104 28 100 18',
+          d: 'M60 70 C54 62 64 56 58 46 C54 38 62 34 58 24 M100 70 C94 62 104 56 98 46 C94 38 102 34 98 24',
           role: 'ambient',
           dashed: true,
         },
+        shadow(80, 172, 56),
       ],
     },
   ],
@@ -2604,6 +2823,68 @@ export const wanoRedrawn: Redrawings = {
           d: 'M14 56 l6 -4 l4 4 l-2 6 l-6 0 Z M30 50 l4 -2 l3 3 l-3 4 l-4 -1 Z M6 78 l5 -2 l2 5 l-5 2 Z',
         },
         { d: 'M44 70 L34 60 M48 66 L44 54 M40 76 L24 72', role: 'ambient' },
+      ],
+    },
+  ],
+  // Destroyed: the top of the mountain blown into a hollow where the ruins
+  // stood, the hollow in the record's colour, rubble on the rim and smoke
+  // rising. Kaido's fire breath wipes out what was left of Oden Castle at
+  // 913 (ch. 922 p. 10-15). Shinobu's sinkhole, at 916, is not drawn.
+  'kuri': [
+    {
+      episode: 913,
+      chapter: 922,
+      value: [
+        ...KURI_FLANKS,
+        { d: 'M36 104 C48 132 112 132 124 104', role: 'accent' },
+        {
+          d: 'M48 110 C60 124 100 124 112 110 M56 110 l4 6 M104 110 l-4 6',
+          role: 'soft',
+        },
+        {
+          d: 'M30 102 l4 -4 l4 3 Z M124 100 l5 -5 l3 5 Z M132 106 l3 -3 l3 3 Z',
+          role: 'soft',
+        },
+        {
+          d: 'M70 116 C64 100 76 92 70 76 C66 64 74 56 70 44 M90 116 C96 98 86 88 92 72 C96 60 88 50 92 38',
+          role: 'ambient',
+          dashed: true,
+        },
+      ],
+    },
+  ],
+  // The same sword, laid in front of Denjiro's pots and coins, the coins
+  // plain and the sheath keeping the accent: Kyoshiro is Denjiro, told at
+  // 976 (ch. 973 p. 12-17).
+  'kyoshiro': [
+    {
+      episode: 976,
+      chapter: 973,
+      value: [
+        ...softened(DENJIRO_POTS),
+        ...placed(KYOSHIRO_SWORD, 'translate(44 190) rotate(-3) scale(0.86)'),
+        shadow(86, 197, 66),
+      ],
+    },
+  ],
+  // The giant Straw Hat Jolly Roger banner hung under the castle once
+  // Momonosuke rules, the Jolly Roger now the accent and the eaves plain;
+  // the banner hides the top of the stem. Shown at 1148 (ch. 1115 p. 2).
+  'flower-capital': [
+    {
+      episode: 1148,
+      chapter: 1115,
+      value: [
+        ...FLOWER_CAPITAL_STEM_FOOT,
+        ...FLOWER_CAPITAL_CASTLE,
+        { d: FLOWER_CAPITAL_ROOFS, role: 'soft' },
+        ...FLOWER_CAPITAL_TOWN,
+        { d: 'M58 72 V118 C66 114 72 120 80 116 C88 112 94 118 102 114 V72' },
+        {
+          d: 'M64 76 C62 90 64 104 62 116 M96 76 C98 90 96 102 98 112',
+          role: 'soft',
+        },
+        ...moved(MERRY_JOLLY_ROGER, 'translate(8 22)'),
       ],
     },
   ],

@@ -379,8 +379,8 @@ describe('a fruit’s own page', () => {
     },
     {
       id: 'dragon-dragon-fruit-ancient-model-spinosaurus',
-      episode: 924,
-      chapter: 935,
+      episode: 923,
+      chapter: 929,
     },
     {
       id: 'snake-snake-fruit-mythical-model-yamata-no-orochi',
