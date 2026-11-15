@@ -149,18 +149,6 @@ export const DRAWINGS = {
   'bowen-marsh': PERSON,
   'jaremy-rykker': PERSON,
   'othor': PERSON,
-  'jafer-flowers': PERSON,
-  'donal-noye': PERSON,
-  'chett': PERSON,
-  'qotho': PERSON,
-  'cohollo': PERSON,
-  'haggo': PERSON,
-  'jhiqui': PERSON,
-  'aggo': PERSON,
-  'jhogo': PERSON,
-  'quaro': PERSON,
-  'mago': PERSON,
-  'eroeh': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

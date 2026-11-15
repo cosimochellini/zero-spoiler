@@ -206,6 +206,209 @@ const HEALER_BOWL: Stroke[] = [
   shadow(76, 146, 40),
 ]
 
+/** The grip and pommel of a khas warrior's arakh, held point down. */
+const KHAS_GRIP = `M76 24 H84 V54 H76 Z ${circle(80, 20, 4)}`
+
+/** The cutting edge of the same arakh. */
+const KHAS_EDGE = 'M86 62 Q84 96 104 120 Q114 132 100 146'
+
+/**
+ * The narrow arakh the riders of Drogo's khalasar carry, point down: the
+ * guard, the blade's back with its spine, and the back hatched. Each
+ * drawing adds the grip and the edge, with the accent where it belongs.
+ */
+const KHAS_BLADE: Stroke[] = [
+  { d: 'M64 58 H96 V62 H64 Z' },
+  { d: 'M76 62 Q70 100 92 126 Q98 134 100 146' },
+  { d: 'M81 64 Q80 100 98 126', role: 'soft' },
+  { d: 'M74 80 l-5 -3 M76 96 l-5 -3 M82 112 l-5 -3', role: 'ambient' },
+]
+
+/**
+ * The arakh with its grip in accent. Qotho's first drawing and his death
+ * share it, and so do Quaro's.
+ */
+const KHAS_ARAKH: Stroke[] = [
+  ...KHAS_BLADE,
+  { d: KHAS_GRIP, role: 'accent' },
+  { d: KHAS_EDGE },
+]
+
+/**
+ * Qotho: his arakh driven point down into the grass, for the bloodrider
+ * who favours it, at Drogo's side from episode 6 and Daenerys VII
+ * (chapter 62). The accent is the grip.
+ */
+const PLANTED_ARAKH: Stroke[] = [
+  ...KHAS_ARAKH,
+  {
+    d: 'M30 150 q3 -10 6 0 q3 -12 6 0 M112 150 q3 -10 6 0 q3 -12 6 0 M20 150 H140',
+    role: 'ambient',
+  },
+  shadow(92, 154, 24),
+]
+
+/**
+ * The arakh chased in gold that Cohollo gives at the wedding. Both his
+ * drawings share it; the accent is the gold.
+ */
+const CHASED_ARAKH: Stroke[] = [
+  ...KHAS_BLADE,
+  { d: KHAS_GRIP },
+  { d: KHAS_EDGE },
+  { d: 'M80 70 q-2 6 0 12 t1 12 t3 12 t5 10', role: 'accent' },
+]
+
+/**
+ * Cohollo: the arakh chased in gold laid flat on a folded cloth, his
+ * wedding gift to Daenerys in the book, where he opens in Daenerys IV
+ * (chapter 37). The cloth's far side is hatched.
+ */
+const ARAKH_GIFT: Stroke[] = [
+  {
+    d: 'M20 128 L42 110 H140 L118 128 Z M20 128 V136 H118 V128 M118 136 L140 118 V110',
+  },
+  { d: 'M50 114 Q80 118 110 114 M60 122 Q90 126 116 120', role: 'soft' },
+  { d: 'M120 134 l14 -11 M124 126 l10 -8', role: 'ambient' },
+  ...moved(CHASED_ARAKH, 'translate(-2 28) rotate(-90 80 80)'),
+  shadow(80, 142, 56),
+]
+
+/** The silver handle of Haggo's whip; both his drawings share it. */
+const SILVER_HANDLE: Stroke[] = [
+  { d: 'M86 116 L128 88 L132 94 L90 122 Z', role: 'accent' },
+  { d: `${circle(132, 89, 4)} M100 108 l4 6 M112 100 l4 6`, role: 'soft' },
+]
+
+/**
+ * Haggo: the great leather whip with a silver handle he gives at the
+ * wedding in the book, coiled on the ground, where he opens in Daenerys
+ * VII (chapter 62). The leather is dark, so the coil's near side is
+ * hatched; the accent is the silver handle.
+ */
+const COILED_WHIP: Stroke[] = [
+  { d: ellipse(74, 126, 44, 16) },
+  { d: ellipse(74, 124, 34, 12) },
+  { d: ellipse(74, 122, 24, 8), role: 'soft' },
+  { d: 'M50 122 Q60 132 74 130', role: 'soft' },
+  { d: 'M40 136 l6 -3 M58 141 l6 -3 M104 138 l6 -3', role: 'ambient' },
+  ...SILVER_HANDLE,
+  shadow(76, 146, 48),
+]
+
+/**
+ * Jhiqui: the tent she helps Daenerys into with Irri and Doreah, its flap
+ * thrown open, in episode 2; the book gives her to Daenerys in Daenerys II
+ * (chapter 12). The far side and the dark inside are hatched; the accent is
+ * the flap.
+ */
+const TENT: Stroke[] = [
+  { d: 'M22 150 Q28 92 80 62 Q132 92 138 150' },
+  { d: 'M80 62 L72 40 M80 62 L88 40 M80 62 V48' },
+  { d: 'M64 150 L80 98 L96 150' },
+  { d: 'M80 98 L110 150 L120 132 Z', role: 'accent' },
+  { d: 'M48 76 Q52 112 46 150 M112 76 Q108 112 114 150', role: 'soft' },
+  { d: 'M30 118 L10 150 M134 118 L150 146', role: 'soft' },
+  {
+    d: 'M74 128 l6 -4 M70 140 l8 -5 M120 104 l6 -4 M126 118 l6 -4',
+    role: 'ambient',
+  },
+  { d: 'M6 150 H154', role: 'ambient' },
+  shadow(80, 154, 60),
+]
+
+/**
+ * Aggo: a Dothraki recurve bow with an arrow on the string, for the archer
+ * of the book from Daenerys VII (chapter 62); the show sends him out to
+ * scout in episode 11. The limbs' backs are hatched; the accent is the
+ * grip.
+ */
+const RECURVE_BOW: Stroke[] = [
+  { d: 'M80 22 Q70 24 70 34 Q92 60 94 90 Q92 120 70 146 Q70 156 80 158' },
+  { d: 'M74 32 Q98 60 100 90 Q98 120 74 148' },
+  { d: 'M70 34 L70 146', role: 'soft' },
+  {
+    d: 'M92 82 H102 V98 H92 Z M92 86 h10 M92 90 h10 M92 94 h10',
+    role: 'accent',
+  },
+  { d: 'M70 90 H142 M134 84 L144 90 L134 96' },
+  { d: 'M70 90 l-8 -6 M70 90 l-8 6 M78 90 l-8 -6 M78 90 l-8 6', role: 'soft' },
+  {
+    d: 'M90 54 l-5 3 M96 70 l-5 3 M96 110 l-5 3 M90 126 l-5 3',
+    role: 'ambient',
+  },
+  shadow(84, 166, 30),
+]
+
+/**
+ * Jhogo: a long-handled whip, its lash thrown into an open loop, the whip
+ * that catches Viserys around the neck in Daenerys III (chapter 24). The
+ * show has no Jhogo. The accent is the handle.
+ */
+const LOOPED_WHIP: Stroke[] = [
+  { d: 'M34 148 L60 52 L67 54 L41 150 Z', role: 'accent' },
+  { d: 'M40 128 l7 2 M46 106 l7 2 M52 84 l7 2', role: 'soft' },
+  {
+    d: 'M63 52 Q72 30 98 40 Q126 52 122 82 Q118 112 94 112 Q72 110 76 88 Q82 70 104 76 Q132 90 126 124 Q122 142 136 150',
+  },
+  { d: 'M136 150 l6 -2 M136 150 l5 3', role: 'soft' },
+  { d: 'M20 150 H70 M110 150 H146', role: 'ambient' },
+  shadow(42, 154, 20),
+]
+
+/** A low boulder on the ground, its far side hatched. */
+const BOULDER: Stroke[] = [
+  { d: 'M84 150 Q84 132 100 128 Q122 122 142 132 Q152 140 148 150' },
+  { d: 'M130 134 l6 -3 M136 142 l6 -3', role: 'ambient' },
+  { d: 'M14 150 H146', role: 'ambient' },
+]
+
+/**
+ * Quaro: a khas arakh leaned on a boulder, point up. The book gives him
+ * no object of his own when he rides as Daenerys's guard in Daenerys VII
+ * (chapter 62), and the show has no Quaro, so this is the arakh every rider
+ * of the khalasar carries, in a pose of its own (a declared B). The accent
+ * is the grip.
+ */
+const LEANING_ARAKH: Stroke[] = [
+  ...BOULDER,
+  ...moved(KHAS_ARAKH, 'translate(14 34) rotate(-118 80 80)'),
+  shadow(90, 154, 50),
+]
+
+/**
+ * Mago: an arakh laid flat on its side, its edge towards the viewer, for
+ * the rider who cuts Drogo with it in episode 8 and complains to him in
+ * Daenerys VII (chapter 62). The back is hatched; the accent is the edge.
+ */
+const FLAT_ARAKH: Stroke[] = [
+  ...moved(
+    [...KHAS_BLADE, { d: KHAS_GRIP }, { d: KHAS_EDGE, role: 'accent' }],
+    'translate(4 46) rotate(90 80 80)',
+  ),
+  { d: 'M14 150 H146', role: 'ambient', dashed: true },
+  shadow(80, 148, 56),
+]
+
+/**
+ * Eroeh: a lamb with no eye beside a shepherd's crook, for the Lhazareen
+ * girl, of the people the Dothraki call the lamb men, who is already dead
+ * when the book names her in Daenerys IX (chapter 69). The show has no
+ * Eroeh. The lamb is white, so nothing is hatched; the accent is the crook.
+ */
+const LAMB_AND_CROOK: Stroke[] = [
+  {
+    d: 'M52 96 q2 -10 12 -8 q4 -8 14 -4 q8 -6 16 2 q10 -2 12 8 q10 4 6 14 q4 10 -6 14 q-4 8 -14 4 q-8 6 -16 0 q-10 4 -14 -4 q-10 -2 -8 -12 q-6 -8 -2 -14 Z',
+  },
+  { d: 'M52 96 Q40 92 34 100 Q30 110 38 114 Q46 116 52 108' },
+  { d: 'M44 96 Q48 86 56 90', role: 'soft' },
+  { d: 'M62 124 V148 M72 126 V148 M92 126 V148 M100 124 V148' },
+  { d: 'M60 118 q4 -4 8 0 M78 121 q4 -4 8 0 M96 118 q4 -4 8 0', role: 'soft' },
+  { d: 'M126 150 V46 Q126 26 110 26 Q96 28 98 42', role: 'accent' },
+  { d: 'M14 150 H146 M28 150 q2 -8 4 0 q2 -9 4 0', role: 'ambient' },
+  shadow(80, 154, 40),
+]
+
 /** The first season's Essos cast (#1052), keyed by record id. */
 export const ESSOS_DRAWINGS = {
   'viserys-targaryen': [...BANNER, shadow(36, 153, 14)],
@@ -216,6 +419,15 @@ export const ESSOS_DRAWINGS = {
   'doreah': MOONS,
   'rakharo': ARAKH,
   'mirri-maz-duur': HEALER_BOWL,
+  'qotho': PLANTED_ARAKH,
+  'cohollo': ARAKH_GIFT,
+  'haggo': COILED_WHIP,
+  'jhiqui': TENT,
+  'aggo': RECURVE_BOW,
+  'jhogo': LOOPED_WHIP,
+  'quaro': LEANING_ARAKH,
+  'mago': FLAT_ARAKH,
+  'eroeh': LAMB_AND_CROOK,
 } satisfies Drawings
 
 /** The Essos cast drawn again later in the story. */
@@ -302,6 +514,78 @@ export const essosRedrawn: Redrawings = {
         { d: 'M34 104 Q30 120 34 136 M126 104 Q130 120 126 136', role: 'soft' },
         ...moved(BRAID, 'rotate(-62 80 90) translate(-10 10)'),
         shadow(80, 150, 60),
+      ],
+    },
+  ],
+  'qotho': [
+    // The same arakh fallen whole in the grass: Jorah kills him in "Baelor"
+    // (episode 9) and in Daenerys VIII (chapter 65).
+    {
+      episode: 9,
+      chapter: 65,
+      value: [
+        ...moved(KHAS_ARAKH, 'translate(0 56) rotate(-74 80 80)'),
+        {
+          d: 'M20 150 H140 M30 150 q3 -10 6 0 q3 -12 6 0 M76 150 q2 -9 4 0 q3 -11 6 0 M118 150 q3 -10 6 0 q3 -12 6 0',
+          role: 'ambient',
+        },
+        shadow(80, 154, 50),
+      ],
+    },
+  ],
+  'cohollo': [
+    // The same arakh turned over off its cloth, the cloth thrown into
+    // folds: he dies in the fight at Mirri Maz Duur's tent in Daenerys VIII
+    // (chapter 65). The book's alone; episode 9 orders it.
+    {
+      episode: 9,
+      chapter: 65,
+      value: [
+        {
+          d: 'M16 132 L30 116 Q44 122 56 112 L70 120 L84 110 L80 132 Q60 128 46 136 Q30 128 16 132 Z',
+        },
+        {
+          d: 'M30 116 Q36 124 32 130 M56 112 Q60 124 46 136 M70 120 Q76 126 80 132',
+          role: 'soft',
+        },
+        ...moved(
+          CHASED_ARAKH,
+          'translate(4 206) scale(1 -1) rotate(-90 80 80)',
+        ),
+        shadow(80, 152, 60),
+      ],
+    },
+  ],
+  'haggo': [
+    // The same whip uncoiled along the ground: he dies in the fight at Mirri
+    // Maz Duur's tent in Daenerys VIII (chapter 65). The book's alone;
+    // episode 9 orders it.
+    {
+      episode: 9,
+      chapter: 65,
+      value: [
+        ...moved(SILVER_HANDLE, 'translate(-60 26)'),
+        { d: 'M28 145 Q46 156 70 146 Q96 134 112 146 Q126 156 142 140' },
+        {
+          d: 'M30 140 Q48 151 70 141 Q96 129 112 141 Q125 150 140 137',
+          role: 'soft',
+        },
+        { d: 'M142 140 l6 -2 M142 140 l3 -6', role: 'soft' },
+        { d: 'M60 152 l6 -3 M100 146 l6 -3', role: 'ambient' },
+        { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'quaro': [
+    // The same arakh slid off the boulder and lying on the ground: he dies
+    // in Daenerys VIII (chapter 65). The book's alone; episode 9 orders it.
+    {
+      episode: 9,
+      chapter: 65,
+      value: [
+        ...BOULDER,
+        ...moved(KHAS_ARAKH, 'translate(-6 88) scale(0.7) rotate(-94 80 80)'),
+        shadow(70, 154, 50),
       ],
     },
   ],

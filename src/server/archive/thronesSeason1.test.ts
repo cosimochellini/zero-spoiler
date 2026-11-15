@@ -460,6 +460,21 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
+  // The second group of placeholder characters' deaths (#1296).
+  {
+    id: 'donal-noye',
+    episode: 39,
+    chapter: 208,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'chett',
+    episode: 28,
+    chapter: 190,
+    value: 'deceased',
+    source: 'chapter',
+  },
 ]
 
 /**
@@ -1224,6 +1239,13 @@ const STAGES: {
     stage: 1,
   },
   { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
+  // The second group of placeholder characters redrawn (#1296).
+  { id: 'donal-noye', episode: 39, chapter: 208, source: 'chapter' },
+  { id: 'chett', episode: 28, chapter: 190, source: 'chapter' },
+  { id: 'qotho', episode: 9, chapter: 65 },
+  { id: 'cohollo', episode: 9, chapter: 65, source: 'chapter' },
+  { id: 'haggo', episode: 9, chapter: 65, source: 'chapter' },
+  { id: 'quaro', episode: 9, chapter: 65, source: 'chapter' },
 ]
 
 describe.each(
@@ -1235,7 +1257,7 @@ describe.each(
   ),
 )(
   '$id is redrawn by $unit at $episode/$chapter',
-  ({ id, episode, chapter, unit, stage: index = 0 }) => {
+  ({ id, episode, chapter, source, unit, stage: index = 0 }) => {
     const pin = unit === 'chapter' ? chapter : episode
     const stages = REDRAWINGS[id] ?? []
     const stage = stages[index]
@@ -1253,6 +1275,8 @@ describe.each(
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? REDRAWINGS[id]?.[index]?.source).toBe(source)
       expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
         previous,
       )
