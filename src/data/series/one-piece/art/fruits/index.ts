@@ -594,6 +594,9 @@ const JOINT: Point = onRim(HOBBY_BODY, 92, -1)
 
 const ARM = { from: 98, to: 130, width: 10, swing: 24 * DEGREES }
 
+/** The pin joint at the foot, where the doll's leg hangs. */
+const HIP = { cx: 80, cy: 154, r: 5 }
+
 /** A point of the arm, swung out about the joint. */
 function swung([x, y]: Point): string {
   const [dx, dy] = [x - JOINT[0], y - JOINT[1]]
@@ -719,8 +722,8 @@ const SWELL = { from: 196, to: 252 }
 /** The calm fruit: a heart, its sound kept in. */
 const CALM_BODY: Body = { family: 'heart', cy: 114 }
 
-/** Where the sound leaves the fruit, on its near side. */
-const SOUND: Point = onRim(CALM_BODY, 116, -1)
+/** Where the sound of the broken vase starts, beside the fruit. */
+const SOUND: Point = [37, 154]
 
 /** The mammoth fruit: a gourd, tusks out of its sides at the waist. */
 const MAMMOTH_BODY: Body = { family: 'gourd', cy: 118 }
@@ -5203,10 +5206,11 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit swelling until it bursts: the near shoulder blown up past the
-   * rim in a tight bulge, its skin stretched, and split open at the top with
-   * three short bursts. On the left, clear of the daibutsu's arm. In episode
-   * 673 Gladius makes his arms and his helmet swell up and rupture.
+   * The fruit swelling until it bursts: the near shoulder blown up far past
+   * the rim in a tight bulge, tension lines stretched across its skin, and
+   * split open at the top with three short bursts. On the left, clear of the
+   * daibutsu's arm. In episode 673 (chapter 740) Gladius makes his helmet and
+   * the cuffs on his arms swell up and rupture.
    */
   'pop-pop-fruit': [
     ...kitBody(POP_BODY, [126, 138, 150], (x, y) => {
@@ -5221,14 +5225,17 @@ export const fruitArt = {
     ...sprout(POP_BODY, 6, 'right'),
     {
       d: [
-        'M38 104 C24 96 18 78 28 66 C31 62 34 60 38 60',
-        'M45 59 C52 57 60 62 66 70 C68 73 69 75 70 76',
-        'M40 56 L38 47 M44 56 L49 48 M36 59 L28 55',
+        'M38 105 C20 102 10 86 11 68 C12 56 19 46 29 42 L32 44',
+        'M39 40 L42 38 C54 38 64 48 68 60 C69 66 69 70 67 75',
+        'M33 38 L29 27 M37 37 L39 25 M42 39 L50 30',
       ].join(' '),
       role: 'accent',
     },
-    // The skin, stretched tight over the swelling.
-    { d: 'M32 80 C34 74 38 70 42 68 M36 92 C38 86 42 82 46 80', role: 'soft' },
+    // The skin, stretched tight across the swelling.
+    {
+      d: 'M18 84 C20 70 26 60 34 54 M26 96 C28 84 34 74 44 66 M40 102 C42 94 48 86 56 80',
+      role: 'soft',
+    },
     shadowUnder(1),
   ],
 
@@ -5258,22 +5265,28 @@ export const fruitArt = {
 
   /**
    * The fruit turned into a toy: its near side is a doll's arm, swung out at
-   * a round joint in the shoulder. In episode 663 Kyros explains that Sugar
-   * turns people into toys with a touch: soldiers, dolls, marionettes. No
-   * key: that is the real fruit's stalk, and it is not shown yet.
+   * a round pin joint in the shoulder, and its foot a doll's leg on another,
+   * the skin open round each joint. In episode 663 (chapter 731) Kyros
+   * explains that Sugar turns people into toys with a touch: soldiers,
+   * dolls, marionettes. No key: that is the real fruit's stalk, and it is
+   * not shown in the story.
    */
   'hobby-hobby-fruit': [
-    ...kitBody(
-      HOBBY_BODY,
-      [100, 112, 124],
-      (x, y) => x > 70 || y < 86 || y > ARM.to + 4,
-    ),
+    ...kitBody(HOBBY_BODY, [100, 112, 124], (x, y) => {
+      return (x > 70 || y < 86 || y > ARM.to + 4) && y < HIP.cy - HIP.r + 3
+    }),
     ...skin([
       [78, 110, 8],
       [96, 138, -7],
     ]),
     ...sprout(HOBBY_BODY, 4, 'left'),
-    { d: polyline(trace(JOINT, [6, 6], [0, 360, 16]), true), role: 'accent' },
+    {
+      d: [
+        polyline(trace(JOINT, [6, 6], [0, 360, 16]), true),
+        polyline(trace([HIP.cx, HIP.cy], [HIP.r, HIP.r], [0, 360, 16]), true),
+      ].join(' '),
+      role: 'accent',
+    },
     {
       // The arm: down its outside, round the end and back up its inside.
       d: [
@@ -5293,14 +5306,19 @@ export const fruitArt = {
         ),
       ),
     },
-    shadowUnder(1),
+    // The leg under the hip joint, down to a rounded foot it stands on.
+    {
+      d: 'M75 159 L75 178 C75 182 77 184 81 184 L94 184 C98 184 98 177 94 177 L85 177 L85 159',
+    },
+    { d: 'M60 186 L112 186', role: 'ambient', dashed: true },
   ],
 
   /**
-   * The fruit's skin opened down the front like a coat: the lapels folded
-   * back, one wider than the other, and the hem parting at the foot. In
-   * episode 646 Kelly Funk turns into a jacket and his brother Bobby puts
-   * him on.
+   * The fruit's skin opened down the front like a jacket: a collar turned
+   * up at the neck, the lapels folded back, one wider than the other, a zip
+   * done up below them with its pull, and the hem parting at the foot. In
+   * episode 646 (chapter 716) Kelly Funk unzips into a jacket and his
+   * brother Bobby puts him on.
    */
   'jacket-jacket-fruit': [
     ...kitBody(
@@ -5315,14 +5333,22 @@ export const fruitArt = {
     ...sprout(JACKET_BODY, 6, 'right'),
     {
       d: [
+        'M70 74 L68 67 C74 64 86 64 92 67 L90 74',
         'M70 74 L54 94 L61 96 L57 102 L80 126',
         'M90 74 L100 86 L95 88 L97 93 L80 126',
         'M80 126 C81 136 82 144 82 150 L76 162 M82 150 L90 160',
       ].join(' '),
       role: 'accent',
     },
-    // The lining, where the lapels turn.
-    { d: 'M70 80 L78 116 M90 80 L82 116', role: 'soft' },
+    // The lining where the lapels turn, the zip's teeth and its pull.
+    {
+      d: [
+        'M70 80 L78 116 M90 80 L82 116',
+        'M78.5 132 L80.8 132 M81.4 136 L83.6 136 M79.3 140 L81.6 140 M82 144 L84.2 144',
+        'M80.4 127 L85 131 L83.6 132.8 L79.6 128.8',
+      ].join(' '),
+      role: 'soft',
+    },
     shadowUnder(1),
   ],
 
@@ -5354,21 +5380,24 @@ export const fruitArt = {
   ],
 
   /**
-   * One tear on the fruit's lower half, resting on a split in the skin that is
-   * closing under it. Low and off to the side, so it never reads as an eye. In
-   * episode 714 Mansherry's tears heal whatever they touch.
+   * A large tear landing on a split in the fruit's lower half: under the
+   * tear the split has shut to a line, past it it is still open. Low and off
+   * to the side, so it never reads as an eye. In episode 714 (chapter 774)
+   * Mansherry's tears heal whatever they touch.
    */
   'heal-heal-fruit': [
-    ...kitBody(HEAL_BODY, [130, 142, 154]),
+    ...kitBody(HEAL_BODY, [112, 122]),
     ...skin([
-      [70, 104, 6],
-      [66, 136, 8],
-      [96, 112, -5],
+      [70, 100, 6],
+      [62, 128, 7],
     ]),
     ...sprout(HEAL_BODY, 4, 'right'),
-    { d: teardrop(93, 140, 6), role: 'accent' },
-    // The split, closing.
-    { d: 'M86 152 C90 150 96 150 100 152 C96 154 90 154 86 152', role: 'soft' },
+    { d: teardrop(98, 141, 8), role: 'accent' },
+    // The split: shut to a line where the tear has touched it, still open
+    // past it.
+    {
+      d: 'M106 147 L92 151 C84 152 76 152 66 155 M92 151 C86 154 80 157 72 160',
+    },
     shadowUnder(1),
   ],
 
@@ -5388,11 +5417,12 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit's sound stopped dead: three broken sound arcs leave its near
-   * side and end where a short stretch of a soundproof field, close round
-   * the fruit, crosses them. Only that stretch is drawn, so it never reads as
-   * the Room of the op-op fruit. In episodes 703 and 704 Rosinante puts up
-   * his Silent field and breaks a vase without a sound.
+   * The fruit's sound stopped dead: a vase broken on the ground beside it,
+   * its sound arcs going out and ending where a short stretch of a
+   * soundproof field, close round the fruit, crosses them. Only that stretch
+   * is drawn, so it never reads as the Room of the op-op fruit. In episode
+   * 703 (chapter 764) Rosinante puts up his Silent field, and in 704
+   * (chapter 765) he smashes a vase without a sound.
    */
   'calm-calm-fruit': [
     ...kitBody(CALM_BODY, [100, 112, 124]),
@@ -5401,17 +5431,23 @@ export const fruitArt = {
       [96, 136, -7],
     ]),
     ...sprout(CALM_BODY, 4, 'right'),
+    { d: polyline(trace([80, 140], [70, 70], [150, 215, 13])), role: 'accent' },
     {
-      d: polyline(trace([80, CALM_BODY.cy], [62, 62], [146, 214, 12])),
-      role: 'accent',
-    },
-    {
-      d: [7, 13, 19]
-        .flatMap((r, at) => [
-          polyline(trace(SOUND, [r, r], [140 + at * 2, 172, 4])),
-          polyline(trace(SOUND, [r, r], [188, 220 - at * 2, 4])),
-        ])
+      d: [14, 21, 28]
+        .map((r, at) =>
+          polyline(trace(SOUND, [r, r], [192 + at * 2, 240 - at * 4, 4])),
+        )
         .join(' '),
+    },
+    // The vase: its foot and belly standing, broken across, and the neck
+    // and lip knocked up off them.
+    {
+      d: [
+        'M33 180 C28 176 27 170 29 166 L33 168 L37 165 L41 168 L45 166',
+        'C47 170 46 176 41 180 Z',
+        'M28 160 C27 156 29 153 32 151 L31 146 L39 145 L39 150',
+        'C43 151 45 154 45 158 L41 156 L37 159 L33 157 Z',
+      ].join(' '),
     },
     shadowUnder(1),
   ],
