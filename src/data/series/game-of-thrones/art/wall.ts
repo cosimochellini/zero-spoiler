@@ -611,7 +611,7 @@ export const wallRedrawn: Redrawings = {
       chapter: 261,
       value: [
         ...PERCH,
-        ...AEMON_BANNER,
+        ...softened(AEMON_BANNER),
         { d: 'M98 152 L116 147 L118 151 L100 156 Z', role: 'accent' },
         { d: 'M107 150 q5 4 10 1', role: 'soft' },
         shadow(80, 154, 26),
