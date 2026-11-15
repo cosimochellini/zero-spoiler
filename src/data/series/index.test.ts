@@ -72,6 +72,22 @@ function isADrawing(id: string, strokes: Stroke[]): void {
   expect(distinct.size, id).toBe(keys.length)
 }
 
+/**
+ * A stage's name in `~/test/accents`: its episode, or its chapter when only
+ * the manga tells it, since several such stages may share one episode.
+ */
+function stageAt({
+  chapter,
+  episode,
+  told,
+}: {
+  chapter?: number
+  episode: number
+  told: string | undefined
+}): string {
+  return told === 'chapter' ? `c${String(chapter)}` : String(episode)
+}
+
 /** A dated fact or a later visit, with the record whose gate it shares. */
 interface Told {
   entry: Dated<unknown>
@@ -460,11 +476,7 @@ describe.each(LOADED_SERIES)(
             entity.id,
           ).toBe(true)
 
-          // A stage only the manga tells is named by its chapter: several
-          // may share the episode their chapter is filed at.
-          const at = mangaOnly ? `c${String(chapter)}` : String(episode)
-
-          isADrawing(`${folder}/${entity.id}@${at}`, value)
+          isADrawing(`${folder}/${entity.id}@${stageAt(stage)}`, value)
         }
       }
     })
