@@ -26,10 +26,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_2",
       "https://gameofthrones.fandom.com/wiki/Catelyn_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://it.wikipedia.org/wiki/Catelyn_Stark"
+      "https://it.wikipedia.org/wiki/Catelyn_Stark",
+      "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_(episode)"
     ],
     "unverified": [
-      "Italian name: it.wikipedia's page heads 'Catelyn Stark, nata Tully'; the dub form 'Catelyn Stark' is assumed."
+      "Italian name: it.wikipedia's page heads 'Catelyn Stark, nata Tully'; the dub form 'Catelyn Stark' is assumed.",
+      "Stages (#1285): dies at the Red Wedding in episode 29 (Fandom DeathEp) and in Catelyn VII, ASOS chapter 51 (site 195; read on AWOIAF by the audit verifier); back as Lady Stoneheart in the books alone, ASOS epilogue (site 225, the book table's last ASOS chapter), ordered at episode 30 (owner, 2026-11-15). The epilogue pin is not checked on AWOIAF here. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "robb-stark": {
@@ -40,7 +42,12 @@
       "https://gameofthrones.fandom.com/wiki/Robb_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://it.wikipedia.org/wiki/Casa_Stark#Robb_Stark"
+      "https://it.wikipedia.org/wiki/Casa_Stark#Robb_Stark",
+      "https://gameofthrones.fandom.com/wiki/Crown",
+      "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_(episode)"
+    ],
+    "unverified": [
+      "Stages (#1285): the crown is the books' alone (Fandom \"Crown\": the show's Robb chooses not to wear one), pinned at Catelyn I of A Clash of Kings (site 81), the chapter that first describes it (A Wiki of Ice and Fire, Robb Stark), and ordered at episode 10. Dies at the Red Wedding in episode 29 (Fandom DeathEp) and in Catelyn VII (site 195; read on AWOIAF by the audit verifier). Episodes not viewed; AWOIAF was read only for the crown's chapter (#1285)."
     ]
   },
   "sansa-stark": {
@@ -65,10 +72,17 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
       "https://gameofthrones.fandom.com/wiki/Arya_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://it.wikipedia.org/wiki/Arya_Stark#Prima_stagione"
+      "https://it.wikipedia.org/wiki/Arya_Stark#Prima_stagione",
+      "https://awoiaf.westeros.org/index.php/Needle",
+      "https://gameofthrones.fandom.com/wiki/Needle",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://gameofthrones.fandom.com/wiki/Two_Swords",
+      "https://gameofthrones.fandom.com/wiki/High_Sparrow_(episode)",
+      "https://gameofthrones.fandom.com/wiki/Blood_of_My_Blood"
     ],
     "unverified": [
-      "Chapter gate 5 (Eddard I): AWOIAF lists her as appearing; that she is named in Eddard I is not stated by the synopsis. If not, the gate is 6 (Jon I, named as Tommen's partner at the feast)."
+      "Chapter gate 5 (Eddard I): AWOIAF lists her as appearing; that she is named in Eddard I is not stated by the synopsis. If not, the gate is 6 (Jon I, named as Tommen's partner at the feast).",
+      "Stages (#1285, owner 2026-11-15): Polliver takes Needle in episode 13 (Fandom \"Needle\", GOT203) and in Arya V, ACOK chapter 19 (site 93, the capture the Lommy stage cites); she takes it back in episode 31 (GOT401) and in Arya XIII, ASOS chapter 74 (site 218); she hides it in episode 43 (GOT503) and in Arya II, AFFC chapter 22 (site 248; A Wiki of Ice and Fire, Needle); she takes it back from the stones in episode 56 (GOT606), the show's alone, ordered by chapter 344. The other two book chapters are from memory, not checked on AWOIAF. Episodes not viewed; AWOIAF was read only for Needle's hiding chapter (#1285)."
     ]
   },
   "bran-stark": {
@@ -78,7 +92,11 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_8",
       "https://gameofthrones.fandom.com/wiki/Bran_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://it.wikipedia.org/wiki/Bran_Stark#Prima_stagione"
+      "https://it.wikipedia.org/wiki/Bran_Stark#Prima_stagione",
+      "https://gameofthrones.fandom.com/wiki/Blood_of_My_Blood"
+    ],
+    "unverified": [
+      "Stages (#1285): the broken tower is his first drawing in both media (owner, 2026-11-15, overturning #854); the Three-Eyed Raven from episode 56 (Fandom infobox ref GOT606), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "rickon-stark": {
@@ -88,11 +106,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Rickon_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://it.wikipedia.org/wiki/Casa_Stark#Rickon_Stark"
+      "https://it.wikipedia.org/wiki/Casa_Stark#Rickon_Stark",
+      "https://gameofthrones.fandom.com/wiki/Battle_of_the_Bastards_(episode)"
     ],
     "unverified": [
       "Chapter gate 5 (Eddard I): AWOIAF lists him as appearing; whether he is named in that chapter is not in the synopsis.",
-      "Episode gate 1: Fandom gives 'Winter Is Coming' as first; that his name is said aloud in that episode is not confirmed."
+      "Episode gate 1: Fandom gives 'Winter Is Coming' as first; that his name is said aloud in that episode is not confirmed.",
+      "Stage (#1285): dies in episode 59 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "jon-snow": {
@@ -114,10 +134,14 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Benjen_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://it.wikipedia.org/wiki/Casa_Stark#Benjen_Stark"
+      "https://it.wikipedia.org/wiki/Casa_Stark#Benjen_Stark",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Blood_of_My_Blood",
+      "https://gameofthrones.fandom.com/wiki/Beyond_the_Wall_(episode)"
     ],
     "unverified": [
-      "Role kept as 'Ranger'; both media call him First Ranger, but it is not checked that the title is given at the gate in each."
+      "Role kept as 'Ranger'; both media call him First Ranger, but it is not checked that the title is given at the gate in each.",
+      "Stages (#1285): missing from episode 7, where his horse comes back without him (Fandom ref GOT107; the audit's episode 5 is wrong), and in the books from Jon V (site 42), a chapter from memory, not checked on AWOIAF (the audit's chapter 10 is Tyrion I, before he rides out); back in episode 56 (Fandom ref GOT606) and dead in episode 66 (Fandom ref GOT706), both the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "grey-wind": {
@@ -129,12 +153,14 @@
       "https://gameofthrones.fandom.com/wiki/Grey_Wind",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://it.wikipedia.org/wiki/Casa_Stark#Robb_Stark"
+      "https://it.wikipedia.org/wiki/Casa_Stark#Robb_Stark",
+      "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_(episode)"
     ],
     "unverified": [
       "Chapter gate 11 (Jon II): AWOIAF lists him as appearing; whether he is named in that chapter is not confirmed. Named but absent in Bran II (site 9); certainly named and present in Bran IV (site 25).",
       "Italian 'Vento Grigio' comes from the books section of Casa Stark; the dub form is not confirmed.",
-      "Show gate moved to episode 8, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+      "Show gate moved to episode 8, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed",
+      "Stage (#1285): killed at the Red Wedding in episode 29 (Fandom DeathEp); the book first tells it in ASOS chapter 54 (site 198), per the audit verifier's reading of AWOIAF's Grey Wind page; the chapter itself is not checked. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "lady-direwolf": {
@@ -175,10 +201,12 @@
       "https://gameofthrones.fandom.com/wiki/Summer",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://it.wikipedia.org/wiki/Bran_Stark#Prima_stagione"
+      "https://it.wikipedia.org/wiki/Bran_Stark#Prima_stagione",
+      "https://gameofthrones.fandom.com/wiki/The_Door"
     ],
     "unverified": [
-      "Show gate moved to episode 4, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+      "Show gate moved to episode 4, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed",
+      "Stage (#1285): dies in episode 55 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "shaggydog": {
@@ -189,11 +217,13 @@
       "https://gameofthrones.fandom.com/wiki/Shaggydog",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://it.wikipedia.org/wiki/Casa_Stark#Rickon_Stark"
+      "https://it.wikipedia.org/wiki/Casa_Stark#Rickon_Stark",
+      "https://gameofthrones.fandom.com/wiki/Oathbreaker"
     ],
     "unverified": [
       "Italian 'Cagnaccio' comes from the books section of Casa Stark; the dub form is not confirmed.",
-      "Show gate moved to episode 10, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed"
+      "Show gate moved to episode 10, the first synopsis that names the wolf; an earlier spoken name on screen is not viewed",
+      "Stage (#1285): his head brought to Ramsay in episode 53 (Fandom ref GOT603), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "ghost-direwolf": {
@@ -216,10 +246,13 @@
       "https://gameofthrones.fandom.com/wiki/Theon_Greyjoy",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Theon_Greyjoy"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Theon_Greyjoy",
+      "https://gameofthrones.fandom.com/wiki/Mhysa",
+      "https://gameofthrones.fandom.com/wiki/The_Long_Night"
     ],
     "unverified": [
-      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”."
+      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
+      "Stages (#1285): Reek from episode 30, where Ramsay names him (Fandom AKA ref GOT310), and in the books from Reek I, ADWD chapter 12 (site 284), a chapter from memory, not checked on AWOIAF; dies in episode 70 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "luwin": {
@@ -228,10 +261,12 @@
       "https://gameofthrones.fandom.com/wiki/Luwin",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_6",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Luwin"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Luwin",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis"
     ],
     "unverified": [
-      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”."
+      "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
+      "Stage (#1285): dies in episode 20 (Fandom DeathEp) and in Bran VII, ACOK chapter 69 (site 143, the chapter the Winterfell and Winter Town stages already cite); not checked on AWOIAF here. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "rodrik-cassel": {
@@ -242,11 +277,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_55",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Rodrik_Cassel"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Rodrik_Cassel",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New"
     ],
     "unverified": [
       "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
-      "The castellan step (chapter 56) is book-only; episode 8 only orders it (Rodrik is at Moat Cailin with Catelyn in both)."
+      "The castellan step (chapter 56) is book-only; episode 8 only orders it (Rodrik is at Moat Cailin with Catelyn in both).",
+      "Stage (#1285): beheaded in episode 16 (Fandom DeathEp); in the books Ramsay kills him at the siege of Winterfell, pinned at Theon VI, ACOK chapter 66 (site 140, the sack the Winterfell stage cites), a chapter not checked on AWOIAF. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "old-nan": {
@@ -272,11 +309,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Hodor"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Hodor",
+      "https://gameofthrones.fandom.com/wiki/The_Door"
     ],
     "unverified": [
       "Book: Bran III (chapter 18) lists him as “appearing in dream”; treated as not an appearance, so the gate is chapter 25.",
-      "Show: on screen unnamed in episode 1; Theon calls him by name in episode 4."
+      "Show: on screen unnamed in episode 1; Theon calls him by name in episode 4.",
+      "Stage (#1285): dies in episode 55 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "osha": {
@@ -287,10 +326,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
       "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Osha"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Osha",
+      "https://gameofthrones.fandom.com/wiki/Book_of_the_Stranger"
     ],
     "unverified": [
-      "Episode 6: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “A Golden Crown”. If her name is first said in episode 7, the gate moves to 7 and the role/affiliation step must move later."
+      "Episode 6: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “A Golden Crown”. If her name is first said in episode 7, the gate moves to 7 and the role/affiliation step must move later.",
+      "Stage (#1285): dies in episode 54 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "mordane": {
@@ -306,7 +347,8 @@
     ],
     "unverified": [
       "Episode 1: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Winter Is Coming”.",
-      "Death dated where both media confirm it (episode 10, chapter 68: her head on the spikes). Episode 8 leaves her facing Lannister soldiers without showing the death."
+      "Death dated where both media confirm it (episode 10, chapter 68: her head on the spikes). Episode 8 leaves her facing Lannister soldiers without showing the death.",
+      "Stage fix (#1285): the spool of the death stage is turned less, so it no longer lies in one row with the cushion at tile size (owner, 2026-11-15)."
     ]
   },
   "jory-cassel": {

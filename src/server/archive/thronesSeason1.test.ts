@@ -277,45 +277,6 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
-  // The King's Landing court's deaths the drawing audit found (#1289).
-  {
-    id: 'meryn-trant',
-    episode: 50,
-    chapter: 344,
-    value: 'deceased',
-    source: 'episode',
-  },
-  { id: 'mandon-moore', episode: 19, chapter: 135, value: 'deceased' },
-  {
-    id: 'arys-oakheart',
-    episode: 8,
-    chapter: 247,
-    value: 'deceased',
-    source: 'chapter',
-  },
-  {
-    id: 'lancel-lannister',
-    episode: 60,
-    chapter: 344,
-    value: 'deceased',
-    source: 'episode',
-  },
-  { id: 'dontos-hollard', episode: 33, chapter: 205, value: 'deceased' },
-  { id: 'beric-dondarrion', episode: 70, chapter: 268, value: 'deceased' },
-  {
-    id: 'thoros-of-myr',
-    episode: 66,
-    chapter: 344,
-    value: 'deceased',
-    source: 'episode',
-  },
-  {
-    id: 'robar-royce',
-    episode: 15,
-    chapter: 110,
-    value: 'deceased',
-    source: 'chapter',
-  },
   // Hoster opens at one pin alive in the book and a corpse on screen; the
   // book kills him in A Storm of Swords (#1242).
   {
@@ -457,6 +418,45 @@ const CHANGES: {
     id: 'eroeh',
     episode: 10,
     chapter: 69,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  // The King's Landing court's deaths the drawing audit found (#1289).
+  {
+    id: 'meryn-trant',
+    episode: 50,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'mandon-moore', episode: 19, chapter: 135, value: 'deceased' },
+  {
+    id: 'arys-oakheart',
+    episode: 8,
+    chapter: 247,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'lancel-lannister',
+    episode: 60,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'dontos-hollard', episode: 33, chapter: 205, value: 'deceased' },
+  { id: 'beric-dondarrion', episode: 70, chapter: 268, value: 'deceased' },
+  {
+    id: 'thoros-of-myr',
+    episode: 66,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'robar-royce',
+    episode: 15,
+    chapter: 110,
     value: 'deceased',
     source: 'chapter',
   },
@@ -1075,8 +1075,9 @@ describe.each([
  * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
  * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
- * magic. `stage` counts a record's stages from 0, for a record redrawn more
- * than once.
+ * magic, and the Winterfell audit's deaths, returns, crown, Reek and Needle
+ * (#1285). `stage` counts a record's stages from 0, for a record redrawn
+ * more than once.
  */
 const STAGES: {
   chapter: number
@@ -1088,7 +1089,6 @@ const STAGES: {
   { id: 'lady-direwolf', episode: 2, chapter: 17 },
   { id: 'jory-cassel', episode: 5, chapter: 36 },
   { id: 'mordane', episode: 10, chapter: 68 },
-  { id: 'bran-stark', episode: 2, chapter: 9, source: 'chapter' },
   { id: 'robert-baratheon', episode: 7, chapter: 50 },
   { id: 'barristan-selmy', episode: 8, chapter: 58 },
   { id: 'syrio-forel', episode: 8, chapter: 51 },
@@ -1152,6 +1152,53 @@ const STAGES: {
   { id: 'maege-mormont', episode: 57, chapter: 344, source: 'episode' },
   { id: 'dacey-mormont', episode: 29, chapter: 195, source: 'chapter' },
   { id: 'wendel-manderly', episode: 29, chapter: 195, source: 'chapter' },
+  // The Winterfell characters redrawn from the drawing audit (#1285).
+  { id: 'catelyn-stark', episode: 29, chapter: 195 },
+  {
+    id: 'catelyn-stark',
+    episode: 30,
+    chapter: 225,
+    source: 'chapter',
+    stage: 1,
+  },
+  { id: 'robb-stark', episode: 10, chapter: 81, source: 'chapter' },
+  { id: 'robb-stark', episode: 29, chapter: 195, stage: 1 },
+  { id: 'bran-stark', episode: 56, chapter: 344, source: 'episode' },
+  { id: 'rickon-stark', episode: 59, chapter: 344, source: 'episode' },
+  { id: 'benjen-stark', episode: 7, chapter: 42 },
+  {
+    id: 'benjen-stark',
+    episode: 56,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  {
+    id: 'benjen-stark',
+    episode: 66,
+    chapter: 344,
+    source: 'episode',
+    stage: 2,
+  },
+  { id: 'grey-wind', episode: 29, chapter: 198 },
+  { id: 'summer-direwolf', episode: 55, chapter: 344, source: 'episode' },
+  { id: 'shaggydog', episode: 53, chapter: 344, source: 'episode' },
+  { id: 'theon-greyjoy', episode: 30, chapter: 284 },
+  {
+    id: 'theon-greyjoy',
+    episode: 70,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'luwin', episode: 20, chapter: 143 },
+  { id: 'rodrik-cassel', episode: 16, chapter: 140 },
+  { id: 'hodor', episode: 55, chapter: 344, source: 'episode' },
+  { id: 'osha', episode: 54, chapter: 344, source: 'episode' },
+  { id: 'arya-stark', episode: 13, chapter: 93 },
+  { id: 'arya-stark', episode: 31, chapter: 218, stage: 1 },
+  { id: 'arya-stark', episode: 43, chapter: 248, stage: 2 },
+  { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 3 },
   // The King's Landing court redrawn from the drawing audit (#1289).
   { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
   { id: 'mandon-moore', episode: 19, chapter: 135, source: 'chapter' },
@@ -1192,7 +1239,14 @@ describe.each(
     const pin = unit === 'chapter' ? chapter : episode
     const stages = REDRAWINGS[id] ?? []
     const stage = stages[index]
-    const previous = index === 0 ? DRAWINGS[id] : stages[index - 1]?.value
+    // The drawing just before is the last earlier stage this unit reads:
+    // a stage the other medium alone tells is never shown here.
+    const previous =
+      stages
+        .slice(0, index)
+        .findLast(
+          (earlier) => (recordOf(id).source ?? earlier.source ?? unit) === unit,
+        )?.value ?? DRAWINGS[id]
 
     it('at its pin, not one before', () => {
       const owner = recordOf(id)
@@ -1212,21 +1266,17 @@ describe.each(
 describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
-    ({ id, source, stage: index = 0 }) => {
+    ({ id, source }) => {
       const last =
         source === 'chapter' ?
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
-      // That reader still sees the record's last earlier stage both media
-      // (or theirs alone) tell, as Roose's Red Wedding before his death.
-      const seen = STAGES.filter(
-        (row) =>
-          row.id === id && (row.stage ?? 0) < index && row.source !== source,
-      ).map((row) => row.stage ?? 0)
+      // The other medium's own last stage, or the first drawing.
+      const other = source === 'chapter' ? 'episode' : 'chapter'
       const expected =
-        seen.length === 0 ?
-          DRAWINGS[id]
-        : REDRAWINGS[id]?.[Math.max(...seen)]?.value
+        (REDRAWINGS[id] ?? []).findLast(
+          (stage) => (recordOf(id).source ?? stage.source ?? other) === other,
+        )?.value ?? DRAWINGS[id]
 
       expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
     },
