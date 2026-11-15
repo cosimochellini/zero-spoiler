@@ -357,7 +357,7 @@ checks this block.
 | Bodies of power     | 15, with 119 seats                                      |
 | Arcs, places, ships | 34 · 39 · 2                                             |
 | Saga modules        | 12, plus one for the devil fruits                       |
-| Line drawings       | 742, one per record, plus 430 redrawings of 237 records |
+| Line drawings       | 742, one per record, plus 433 redrawings of 240 records |
 | Chronicle stories   | 792, for 189 characters                                 |
 
 ### `hunter-x-hunter`
