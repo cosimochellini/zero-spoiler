@@ -5868,7 +5868,10 @@ export const season1: ThronesSaga = {
         it: 'Si addestra a Castello Nero, dove Jon Snow lo batte nel cortile. Con altre reclute affronta Jon nell’armeria.',
         en: 'He trains at Castle Black, where Jon Snow beats him in the yard. He and other recruits confront Jon in the armory.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 39, chapter: 199, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5900,7 +5903,10 @@ export const season1: ThronesSaga = {
         it: 'Si addestra a Castello Nero con Jon Snow.',
         en: 'He trains at Castle Black with Jon Snow.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 39, chapter: 199, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5933,7 +5939,10 @@ export const season1: ThronesSaga = {
         it: 'Si addestra a Castello Nero, dove combatte contro Jon Snow nel cortile.',
         en: 'He trains at Castle Black, where he fights Jon Snow in the yard.',
       },
-      status: [{ episode: 3, chapter: 27, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 27, value: 'alive' },
+        { episode: 35, chapter: 199, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5965,7 +5974,10 @@ export const season1: ThronesSaga = {
         it: 'Fa parte dello stesso gruppo di reclute di Jon Snow a Castello Nero.',
         en: 'He is in the same group of recruits as Jon Snow at Castle Black.',
       },
-      status: [{ episode: 7, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 7, chapter: 20, value: 'alive' },
+        { episode: 41, chapter: 260, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 7,
@@ -6047,7 +6059,10 @@ export const season1: ThronesSaga = {
         it: 'Comanda i costruttori, che tengono in piedi la Barriera e i suoi castelli. È presente quando i nuovi confratelli pronunciano il giuramento.',
         en: 'He commands the builders, who maintain the Wall and its castles. He is present when the new brothers swear their oath.',
       },
-      status: [{ episode: 7, chapter: 49, value: 'alive' }],
+      status: [
+        { episode: 7, chapter: 49, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 7,
@@ -6065,7 +6080,10 @@ export const season1: ThronesSaga = {
         it: 'Comanda gli attendenti dei Guardiani della notte a Castello Nero.',
         en: 'He commands the stewards of the Night’s Watch at Castle Black.',
       },
-      status: [{ episode: 41, chapter: 22, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 22, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,
