@@ -69,48 +69,56 @@ const WINTERFELL: Stroke[] = [
 ]
 
 /**
- * Pentos: Illyrio's domed manse on its colonnade above the sea, where
- * Viserys presents his sister in episode 1 and in Daenerys I (chapter 4).
- * The dome's far side is hatched; the accent is its finial.
+ * Pentos: Illyrio's manse on its rise above the beach, the sea behind it,
+ * where Viserys presents his sister in episode 1 and in Daenerys I (chapter
+ * 4); the wedding is on the beach below. The house is seen corner on, its
+ * far side hatched; the accent is the roof.
  */
 const PENTOS: Stroke[] = [
-  { d: 'M30 140 V100 H130 V140' },
-  { d: 'M56 100 Q80 60 104 100' },
-  { d: 'M78 70 L80 58 L82 70', role: 'accent' },
+  { d: 'M10 100 H32 M116 94 H150', role: 'ambient' },
   {
-    d: 'M40 140 V118 Q46 110 52 118 V140 M60 140 V118 Q66 110 72 118 V140 M88 140 V118 Q94 110 100 118 V140 M108 140 V118 Q114 110 120 118 V140',
-    role: 'soft',
-  },
-  { d: 'M24 100 H136 M20 140 H140', role: 'soft' },
-  {
-    d: 'M92 80 l6 -3 M98 90 l5 -3 M122 106 l5 -3 M122 120 l5 -3',
+    d: 'M12 110 q5 -3 10 0 t10 0 M120 104 q5 -3 10 0 t10 0 t10 0',
     role: 'ambient',
   },
-  ...SEA,
+  { d: 'M10 124 Q20 122 30 122 H104 Q118 124 124 134 L136 150' },
+  { d: 'M36 122 V88 H96 V122 M96 88 L112 80 V116 L104 122' },
+  { d: 'M32 88 L46 72 H102 L116 80 M100 72 L96 88', role: 'accent' },
+  { d: 'M100 94 l8 -4 M100 104 l8 -4 M100 114 l6 -3', role: 'ambient' },
+  { d: 'M28 122 H108', role: 'soft' },
+  { d: 'M122 150 Q134 146 150 148', role: 'ambient', dashed: true },
+  {
+    d: 'M126 158 q6 -3 12 0 t12 0 M118 168 q6 -3 12 0 t12 0 t12 0',
+    role: 'ambient',
+  },
 ]
 
+/** The ground the Red Keep's towers stand on, above King's Landing's roofs. */
+const KL_KEEP_GROUND: Stroke = { d: 'M50 68 H110' }
+
 /**
- * King's Landing: the city wall and its gatehouse on the bay, the roofs
- * climbing the hill behind, as Catelyn lands there in Catelyn IV (chapter
- * 19) and the show opens on it in episode 1. The accent is the gate.
+ * King's Landing: the Red Keep's towers on the hill, the roofs packed tier
+ * on tier below them and the city wall low on the bay, as the show opens on
+ * it in episode 1 and Catelyn lands there in Catelyn IV (chapter 19). The
+ * towers' far faces are hatched; the accent is the Red Keep.
  */
 const KINGS_LANDING: Stroke[] = [
-  { d: 'M14 112 Q60 70 146 96', role: 'soft' },
   {
-    d: 'M24 112 L32 102 L40 112 M44 106 L54 94 L64 106 M98 100 L108 88 L118 100 M120 104 L130 94 L140 104',
+    d: `M56 68 V46 H68 V68 M72 68 V34 H88 V68 M92 68 V48 H104 V68 ${ellipse(62, 46, 6, 1.8)} ${ellipse(98, 48, 6, 1.8)}`,
+    role: 'accent',
+  },
+  { d: 'M72 34 V29 H77 V34 M83 34 V29 H88 V34', role: 'soft' },
+  KL_KEEP_GROUND,
+  {
+    d: 'M46 80 V76 L51 71 L56 76 V80 M58 80 V73 L62 69 L66 73 V80 M68 80 V77 L74 71 L80 77 V80 M82 80 V74 L86.5 71 L91 74 V80 M93 80 V76 L98 71 L103 76 V80 M105 80 V73 L109 69 L113 73 V80 M30 95 V89 L36 83 L42 89 V95 M44 95 V92 L48.5 88 L53 92 V95 M55 95 V87 L62 82 L69 87 V95 M71 95 V91 L76 84 L81 91 V95 M83 95 V90 L87 86 L91 90 V95 M93 95 V89 L99 83 L105 89 V95 M107 95 V92 L111.5 88 L116 92 V95 M118 95 V87 L124 82 L130 87 V95 M16 110 V105 L23 98 L30 105 V110 M32 110 V102 L37 97 L42 102 V110 M44 110 V106 L50 98 L56 106 V110 M58 110 V104 L66 100 L74 104 V110 M76 110 V101 L80.5 95 L85 101 V110 M87 110 V107 L93.5 102 L100 107 V110 M102 110 V105 L109 98 L116 105 V110 M118 110 V102 L123 97 L128 102 V110 M130 110 V106 L136 98 L142 106 V110',
     role: 'soft',
   },
-  { d: 'M14 140 V112 H66 M94 112 H146 V140' },
   {
-    d: 'M14 112 V106 H20 V112 M28 112 V106 H34 V112 M42 112 V106 H48 V112 M112 112 V106 H118 V112 M126 112 V106 H132 V112 M140 112 V106 H146 V112',
+    d: 'M14 116 V111 H20 V116 M30 116 V111 H36 V116 M46 116 V111 H52 V116 M62 116 V111 H68 V116 M92 116 V111 H98 V116 M108 116 V111 H114 V116 M124 116 V111 H130 V116 M140 116 V111 H146 V116',
     role: 'soft',
   },
+  { d: 'M14 140 V116 H146 V140' },
   {
-    d: 'M66 140 V92 H94 V140 M66 92 V86 H72 V92 M77 92 V86 H83 V92 M88 92 V86 H94 V92',
-  },
-  { d: 'M73 140 V122 Q80 112 87 122 V140', role: 'accent' },
-  {
-    d: 'M88 100 l5 -3 M88 112 l5 -3 M134 120 l6 -3 M134 132 l6 -3',
+    d: 'M83 44 l5 -3 M83 56 l5 -3 M99 56 l5 -3 M134 124 l6 -3 M134 134 l6 -3',
     role: 'ambient',
   },
   { d: 'M10 140 H150' },
@@ -469,25 +477,34 @@ const GREAT_SEPT: Stroke[] = [
 ]
 
 /**
- * Riverrun: the castle where two rivers meet, its towers on the water and
- * the water gate at its foot, where Catelyn returns by boat in Catelyn XI
- * (chapter 72) and the show buries Hoster Tully in episode 23. The accent
- * is the water gate.
+ * Riverrun: the wedge of a castle in the fork where two rivers meet, its
+ * point towards the viewer with the water gate at its foot and the Tully
+ * trout flying over it, where Catelyn returns by boat in Catelyn XI
+ * (chapter 72) and the show buries Hoster Tully in episode 23. The right
+ * wall turns away and is hatched; the accent is the trout banner.
  */
 const RIVERRUN: Stroke[] = [
-  { d: 'M36 140 V82 H124 V140' },
-  { d: 'M30 140 V70 H48 V140 M112 140 V70 H130 V140' },
+  { d: 'M68 142 V74 H92 V142' },
+  { d: 'M68 86 L30 72 M68 136 L30 114 M92 86 L130 72 M92 136 L130 114' },
+  { d: 'M20 116 V60 H32 V112 M128 112 V60 H140 V116' },
   {
-    d: 'M30 70 V64 H36 V70 M42 70 V64 H48 V70 M112 70 V64 H118 V70 M124 70 V64 H130 V70 M60 82 V76 H66 V82 M76 82 V76 H82 V82 M92 82 V76 H98 V82',
+    d: 'M20 60 V55 H24 V60 M28 60 V55 H32 V60 M128 60 V55 H132 V60 M136 60 V55 H140 V60 M68 74 V69 H73 V74 M78 74 V69 H82 V74 M87 74 V69 H92 V74',
     role: 'soft',
   },
-  { d: 'M66 140 V122 Q80 108 94 122 V140', role: 'accent' },
-  { d: 'M70 140 V124 M80 140 V116 M90 140 V124', role: 'soft' },
+  { d: 'M72 142 V128 Q80 118 88 128 V142', role: 'soft' },
+  { d: 'M76 142 V126 M80 142 V122 M84 142 V126', role: 'soft' },
   {
-    d: 'M122 84 l6 -3 M122 98 l6 -3 M122 112 l6 -3 M122 126 l6 -3',
+    d: 'M80 69 V40 M80 40 H100 L95 46 L100 52 H80 M84 46 Q89 42 94 46 Q89 50 84 46 L82 44 M84 46 L82 48',
+    role: 'accent',
+  },
+  {
+    d: 'M100 92 l6 -3 M106 104 l6 -3 M112 116 l6 -3 M134 72 l4 -2 M134 86 l4 -2',
     role: 'ambient',
   },
-  { d: 'M10 140 H150' },
+  {
+    d: 'M10 128 q6 -2 12 2 t12 4 t12 6 M114 140 q6 -2 12 -4 t12 -6 t12 -4',
+    role: 'ambient',
+  },
   ...SEA,
 ]
 
@@ -641,16 +658,12 @@ const WHITE_HARBOR: Stroke[] = [
 ]
 
 /**
- * The Neck: reeds and pools in the marsh, a plank causeway running into it,
- * named in Eddard I (chapter 5) and in episode 8, and never a scene's
- * setting in the first season or book. The accent is the reed heads.
+ * The Neck: a plank causeway on piles crossing the marsh, seen side on,
+ * reeds standing out of the water at either end, named in Eddard I
+ * (chapter 5) and in episode 8, and never a scene's setting in the first
+ * season or book. The accent is the reed heads.
  */
 const THE_NECK: Stroke[] = [
-  { d: 'M10 150 H150', role: 'ambient', dashed: true },
-  {
-    d: 'M14 134 q8 -4 16 0 t16 0 M96 138 q8 -4 16 0 t16 0 t16 0 M40 120 q8 -4 16 0 t16 0',
-    role: 'ambient',
-  },
   {
     d: 'M24 150 Q26 124 20 104 M30 150 Q32 120 38 100 M36 150 Q38 128 34 112 M118 150 Q120 126 114 108 M124 150 Q126 120 132 102 M130 150 Q132 130 128 114',
     role: 'soft',
@@ -659,11 +672,17 @@ const THE_NECK: Stroke[] = [
     d: 'M17 100 Q20 92 23 100 Q20 106 17 100 M35 96 Q38 88 41 96 Q38 102 35 96 M111 104 Q114 96 117 104 Q114 110 111 104 M129 98 Q132 90 135 98 Q132 104 129 98',
     role: 'accent',
   },
+  { d: 'M28 124 H132 M28 130 H132 M28 124 V130 M132 124 V130' },
   {
-    d: 'M60 150 H100 M64 140 H96 M67 131 H93 M70 123 H90 M72 116 H88 M74 110 H86',
+    d: 'M42 124 V130 M56 124 V130 M70 124 V130 M84 124 V130 M98 124 V130 M112 124 V130',
     role: 'soft',
   },
-  shadow(80, 156, 54),
+  { d: 'M36 130 V152 M62 130 V152 M88 130 V152 M114 130 V152' },
+  { d: 'M10 144 H150', role: 'ambient', dashed: true },
+  {
+    d: 'M40 150 q6 -3 12 0 M66 154 q6 -3 12 0 M92 150 q6 -3 12 0 M14 158 q8 -4 16 0 t16 0 M108 160 q8 -4 16 0 t16 0',
+    role: 'ambient',
+  },
 ]
 
 /**
@@ -887,65 +906,112 @@ const HORN_HILL: Stroke[] = [
 ]
 
 /**
- * The Fingers: narrow tongues of land reaching into the sea, named in
- * episode 4 (Littlefinger's spit of land) and in Tyrion II (chapter 14) and
- * never visited in the first season or book. The accent is their tips.
+ * The Fingers: five long, bare peninsulas reaching from the Vale's coast
+ * into the sea, the land they leave from behind them and the sea in the
+ * inlets between them, named in episode 4 (Littlefinger's spit of land) and
+ * in Tyrion II (chapter 14) and never visited in the first season or book.
+ * Each finger's far side is hatched; the accent is the rock at their tips.
  */
 const THE_FINGERS: Stroke[] = [
   {
-    d: 'M14 60 Q30 66 34 100 Q38 70 52 72 Q58 110 64 112 Q70 76 84 80 Q90 116 98 116 Q102 84 116 88 Q124 120 130 118 Q136 96 146 100',
+    d: 'M10 52 Q12 58 14 60 L14.3 80.4 L10.1 100.8 L11.6 117.8 L12 128 L14.8 114.4 L20.8 98.4 L20.4 79.2 L26 60 Q33 36 40 60 L38.5 84.6 L41 109.2 L39 129.7 L42 142 L47.2 126.3 L45.2 106.8 L51.1 83.4 L52 60 Q59 36 66 60 L70 87 L71 114 L76.5 136.5 L78 150 L77.7 133.1 L80.7 111.6 L77.1 85.8 L78 60 Q85 36 92 60 L97 82.8 L106 105.6 L107 124.6 L114 136 L115.7 121.2 L109.7 103.2 L108.6 81.6 L104 60 Q110 36 116 60 L125.2 75 L128.4 90 L137.9 102.5 L142 110 L139.8 99.1 L137.8 87.6 L130.4 73.8 L126 60 Q136 38 150 48',
   },
   {
-    d: 'M34 100 Q36 118 40 128 M64 112 Q66 124 70 132 M98 116 Q100 126 104 134 M130 118 Q132 128 134 136',
+    d: 'M9 125 l3 3 l3 -3 M39 139 l3 3 l3 -3 M75 147 l3 3 l3 -3 M111 133 l3 3 l3 -3 M139 107 l3 3 l3 -3',
     role: 'accent',
   },
   {
-    d: 'M24 68 l5 -3 M58 80 l5 -3 M90 86 l5 -3 M120 96 l5 -3',
+    d: 'M17.2 85.6 l4 -3 M13.6 104.8 l4 -3 M44.8 91.2 l4 -3 M42.4 114.6 l4 -3 M74.8 94.4 l4 -3 M75.4 120.2 l4 -3 M104.8 88.8 l4 -3 M108.4 110.4 l4 -3 M129.2 78.4 l4 -3 M134.6 92.2 l4 -3',
     role: 'ambient',
   },
-  { d: 'M14 40 Q60 30 146 44', role: 'soft' },
   {
-    d: 'M20 150 q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 M44 140 q6 -3 12 0 M78 144 q6 -3 12 0 M112 146 q6 -3 12 0',
+    d: 'M10 30 Q22 18 34 26 Q48 12 62 24 Q78 10 94 22 Q108 14 122 24 Q138 14 150 26',
+    role: 'soft',
+  },
+  {
+    d: 'M20 40 l4 -3 M46 36 l4 -3 M72 38 l4 -3 M98 36 l4 -3 M120 38 l4 -3 M140 40 l4 -3 M30 32 l4 -3 M86 30 l4 -3 M132 30 l4 -3',
+    role: 'ambient',
+  },
+  {
+    d: 'M29 54 q3 -2 6 0 M55 54 q3 -2 6 0 M81 54 q3 -2 6 0 M107 54 q3 -2 6 0 M30 84 q3 -2 6 0 M56 92 q4 -2 8 0 M88 96 q4 -2 8 0 M116 86 q4 -2 8 0 M134 64 q4 -2 8 0 M28 112 q4 -2 8 0 M58 120 q4 -2 8 0 M92 124 q4 -2 8 0',
+    role: 'ambient',
+  },
+  {
+    d: 'M18 150 q6 -3 12 0 M52 156 q6 -3 12 0 M96 152 q6 -3 12 0 t12 0 M126 128 q6 -3 12 0 M16 168 q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0',
     role: 'ambient',
   },
 ]
 
 /**
- * The Trident: three rivers running together into one, named in episode 5
- * and in Catelyn I (chapter 3); its bank and its crossing are no scene's
- * setting in the first season or book. The accent is the joined river.
+ * The Trident: three rivers coming down from the horizon and running
+ * together into one wide water, seen from the water's level, named in
+ * episode 5 and in Catelyn I (chapter 3); its bank and its crossing are no
+ * scene's setting in the first season or book. The spits between the
+ * rivers are hatched on their far side; the accent is the joined river.
  */
 const THE_TRIDENT: Stroke[] = [
-  { d: 'M20 30 Q50 70 66 100 M36 30 Q60 66 74 100' },
-  { d: 'M76 24 Q78 60 76 100 M86 24 Q86 60 84 100' },
-  { d: 'M140 30 Q108 70 92 100 M126 30 Q100 66 86 100' },
-  { d: 'M66 100 Q70 130 64 160 M94 100 Q96 130 102 160', role: 'accent' },
-  { d: 'M70 120 q6 -3 12 0 M76 140 q6 -3 12 0', role: 'soft' },
-  { d: 'M30 60 l5 -3 M110 60 l5 -3 M60 140 l-5 -3', role: 'ambient' },
-]
-
-/**
- * Tumblestone: a river running over stones, named in episode 5 (Ser Marlon
- * of Tumblestone) and in Catelyn X (chapter 64) and never visited in the
- * first season or book. The accent is the broken water.
- */
-const TUMBLESTONE: Stroke[] = [
   {
-    d: 'M40 20 Q60 60 52 100 Q46 130 60 160 M80 20 Q96 60 90 100 Q86 130 100 160',
+    d: 'M10 60 Q16 56 20 60 M34 60 Q52 54 72 60 M88 60 Q108 54 126 60 M140 60 Q146 56 150 60',
+    role: 'soft',
+  },
+  { d: 'M20 60 Q24 90 10 110 M140 60 Q136 90 150 110' },
+  {
+    d: 'M34 60 Q56 74 62 114 Q64 76 72 60 M88 60 Q96 76 98 114 Q104 74 126 60',
   },
   {
-    d: 'M54 60 q4 -4 8 0 t8 0 M50 100 q4 -4 8 0 t8 0 t8 0 M58 134 q4 -4 8 0 t8 0',
+    d: 'M62 100 l3 -2 M64 86 l3 -2 M66 72 l3 -2 M100 100 l3 -2 M102 86 l3 -2 M106 72 l3 -2',
+    role: 'ambient',
+  },
+  {
+    d: 'M24 76 q3 -2 6 0 M26 96 q4 -2 8 0 M78 70 q2 -1 4 0 M76 86 q4 -2 8 0 M74 104 q6 -3 12 0 M128 76 q3 -2 6 0 M126 96 q4 -2 8 0',
+    role: 'ambient',
+  },
+  {
+    d: 'M52 74 l-1 -4 M58 88 l-1 -4 M104 88 l1 -4 M110 72 l1 -4',
+    role: 'ambient',
+  },
+  {
+    d: 'M10 126 q10 -5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 M24 142 q10 -5 20 0 t20 0 t20 0 t20 0 t20 0',
     role: 'accent',
   },
   {
-    d: 'M62 72 Q66 66 72 70 Q74 76 66 78 Z M70 114 Q76 108 82 112 Q82 118 74 120 Z M60 88 Q64 84 68 88 Q66 92 60 92 Z',
-    role: 'soft',
+    d: 'M14 160 q8 -4 16 0 t16 0 M108 160 q8 -4 16 0 t16 0 M60 172 q8 -4 16 0 t16 0',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Tumblestone: a river breaking over stones between two low banks, named in
+ * episode 5 (Ser Marlon of Tumblestone) and in Catelyn X (chapter 64) and
+ * never visited in the first season or book. The stones' far sides are
+ * hatched; the accent is the broken water.
+ */
+const TUMBLESTONE: Stroke[] = [
+  { d: 'M10 70 H62 M98 70 H150', role: 'soft' },
+  { d: 'M62 70 Q40 96 10 116 M98 70 Q120 96 150 116' },
+  {
+    d: 'M20 110 l3 -6 M34 98 l3 -6 M126 98 l-3 -6 M140 110 l-3 -6',
+    role: 'ambient',
   },
   {
-    d: 'M20 60 Q28 54 36 60 M110 90 Q118 84 126 90 M112 130 Q120 124 128 130',
-    role: 'soft',
+    d: 'M30 146 Q32 132 44 132 Q56 132 58 146 Z M70 128 Q72 118 80 118 Q88 118 90 128 Z M98 152 Q100 138 112 138 Q124 138 126 152 Z M72 100 Q74 92 80 92 Q86 92 88 100 Z',
   },
-  { d: 'M96 50 l5 -3 M98 80 l5 -3 M100 120 l5 -3', role: 'ambient' },
+  {
+    d: 'M50 136 l4 -3 M52 142 l4 -3 M84 122 l3 -2 M85 126 l3 -2 M118 142 l4 -3 M120 148 l4 -3 M83 96 l3 -2',
+    role: 'ambient',
+  },
+  {
+    d: 'M18 148 q4 -4 8 0 M58 140 q4 -4 8 0 t8 0 M60 128 q4 -4 8 0 M90 124 q4 -4 8 0 t8 0 M86 152 q4 -4 8 0 M126 148 q4 -4 8 0 M64 100 q4 -4 8 0 M88 98 q4 -4 8 0',
+    role: 'accent',
+  },
+  {
+    d: 'M70 78 Q66 90 58 104 M90 78 Q94 90 104 104 M80 74 V86',
+    role: 'ambient',
+  },
+  {
+    d: 'M16 164 q8 -4 16 0 t16 0 t16 0 M84 168 q8 -4 16 0 t16 0 t16 0',
+    role: 'ambient',
+  },
 ]
 
 /**
@@ -1481,17 +1547,23 @@ const GREAT_SEPT_DESTROYED: Stroke[] = [
   shadow(80, 156, 62),
 ]
 
-/** King's Landing burned: the wall broken, the gatehouse fallen, smoke over the roofs. */
+/** King's Landing burned: the Red Keep's towers broken, roofs fallen, the wall breached, smoke over the city. */
 const KINGS_LANDING_BURNED: Stroke[] = [
-  { d: 'M14 112 Q30 98 40 104 M98 96 Q120 90 146 96', role: 'soft' },
-  { d: 'M24 112 L32 104 M108 92 L118 100', role: 'soft' },
   {
-    d: 'M14 140 V112 H30 L36 122 L42 112 H66 M94 112 H110 L116 124 L122 112 H146 V140',
+    d: 'M56 68 V52 L60 48 L64 54 L68 50 V68 M72 68 V42 L77 36 L80 46 L84 38 L88 44 V68 M92 68 V56 L97 52 L104 58 V68',
+    role: 'accent',
   },
-  { d: 'M66 140 V100 L72 94 L78 104 L86 96 L94 102 V140' },
-  { d: 'M73 140 V122 Q80 112 87 122 V140', role: 'accent' },
-  { d: 'M76 136 l8 -6 M76 128 l8 -6', role: 'ambient' },
-  { d: `${smokeAt(46, 92)} ${smokeAt(118, 84)}`, role: 'soft' },
+  KL_KEEP_GROUND,
+  {
+    d: 'M46 80 V76 L51 71 L56 76 V80 M68 80 V77 L72 74 L76 78 M93 80 V76 L98 71 L103 76 V80 M30 95 V89 L36 83 L42 89 V95 M55 95 V87 L60 84 L64 88 M83 95 V90 L87 86 L91 90 V95 M118 95 V87 L124 82 L130 87 V95 M16 110 V105 L23 98 L30 105 V110 M44 110 V106 L48 102 L52 105 M76 110 V101 L80.5 95 L85 101 V110 M102 110 V105 L106 101 L110 104 M130 110 V106 L136 98 L142 106 V110',
+    role: 'soft',
+  },
+  { d: 'M14 140 V116 H40 L46 126 L52 116 H98 L104 128 L110 116 H146 V140' },
+  { d: `${smokeAt(40, 96)} ${smokeAt(112, 88)}`, role: 'soft' },
+  {
+    d: 'M83 50 l5 -3 M83 60 l5 -3 M134 124 l6 -3 M134 134 l6 -3',
+    role: 'ambient',
+  },
   { d: 'M10 140 H150' },
   ...SEA,
 ]
