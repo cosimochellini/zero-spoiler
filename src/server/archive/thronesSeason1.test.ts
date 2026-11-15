@@ -1277,7 +1277,7 @@ const STAGES: {
   },
   { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
   // The leads and the Essos cast redrawn from the drawing audit (#1292).
-  { id: 'eddard-stark', episode: 31, chapter: 204, stage: 1 },
+  { id: 'eddard-stark', episode: 31, chapter: 176, stage: 1 },
   { id: 'jon-snow', episode: 50, chapter: 341 },
   { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 1 },
   { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 2 },
@@ -1310,7 +1310,7 @@ describe.each(
   ),
 )(
   '$id is redrawn by $unit at $episode/$chapter',
-  ({ id, episode, chapter, unit, stage: index = 0 }) => {
+  ({ id, episode, chapter, source, unit, stage: index = 0 }) => {
     const pin = unit === 'chapter' ? chapter : episode
     const stages = REDRAWINGS[id] ?? []
     const stage = stages[index]
@@ -1328,6 +1328,8 @@ describe.each(
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? REDRAWINGS[id]?.[index]?.source).toBe(source)
       expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
         previous,
       )
