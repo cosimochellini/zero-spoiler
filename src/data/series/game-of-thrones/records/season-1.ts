@@ -3083,7 +3083,11 @@ export const season1: ThronesSaga = {
         it: 'Raggiunge il marito nel parco degli dei con una notizia. Il Primo Cavaliere del Re è morto e il re sta venendo a Grande Inverno.',
         en: 'She finds her husband in the godswood with news. The Hand of the King is dead, and the king is riding to Winterfell.',
       },
-      status: [{ episode: 1, chapter: 3, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 3, value: 'alive' },
+        { episode: 29, chapter: 195, value: 'deceased' },
+        { episode: 30, chapter: 225, source: 'chapter', value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3109,7 +3113,10 @@ export const season1: ThronesSaga = {
         it: 'Accompagna il padre all’esecuzione di un disertore. Al ritorno lui e Jon trovano una meta-lupa morta con i suoi cuccioli, e lui ne prende uno.',
         en: 'He rides with his father to the execution of a deserter. On the way back he and Jon find a dead direwolf with her pups, and he takes one.',
       },
-      status: [{ episode: 1, chapter: 2, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 2, value: 'alive' },
+        { episode: 29, chapter: 195, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3184,7 +3191,10 @@ export const season1: ThronesSaga = {
         it: 'È il più piccolo dei figli Stark e tiene uno dei cuccioli di meta-lupo. Accoglie il re nel cortile di Grande Inverno con il resto della famiglia.',
         en: 'He is the youngest of the Stark children and keeps one of the direwolf pups. He greets the king in the yard of Winterfell with the rest of his family.',
       },
-      status: [{ episode: 1, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 5, value: 'alive' },
+        { episode: 59, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3247,7 +3257,12 @@ export const season1: ThronesSaga = {
         it: 'Scende dalla Barriera a Grande Inverno durante la visita del re. Al banchetto parla con Jon, che gli chiede di portarlo con sé sulla Barriera.',
         en: 'He comes down from the Wall to Winterfell during the king’s visit. At the feast he talks with Jon, who asks to go back to the Wall with him.',
       },
-      status: [{ episode: 1, chapter: 6, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 6, value: 'alive' },
+        { episode: 7, chapter: 42, value: 'missing' },
+        { episode: 56, chapter: 344, source: 'episode', value: 'alive' },
+        { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3262,7 +3277,10 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Lo prende Robb.',
         en: 'He is one of the pups found beside their dead mother on the way back to Winterfell. Robb takes him.',
       },
-      status: [{ episode: 8, chapter: 11, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 11, value: 'alive' },
+        { episode: 29, chapter: 198, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -3310,7 +3328,10 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Lo prende Bran.',
         en: 'He is one of the pups found beside their dead mother on the way back to Winterfell. Bran takes him.',
       },
-      status: [{ episode: 4, chapter: 18, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 18, value: 'alive' },
+        { episode: 55, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -3325,7 +3346,10 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Va a Rickon, il più piccolo dei fratelli.',
         en: 'He is one of the pups found beside their dead mother on the way back to Winterfell. He goes to Rickon, the youngest of the children.',
       },
-      status: [{ episode: 10, chapter: 25, value: 'alive' }],
+      status: [
+        { episode: 10, chapter: 25, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 10,
@@ -3355,7 +3379,10 @@ export const season1: ThronesSaga = {
         it: 'Accompagna Lord Stark all’esecuzione di un disertore dei Guardiani della notte. Al ritorno è con i ragazzi quando trovano una lupa morta e i suoi cuccioli, e vorrebbe ucciderli.',
         en: 'He rides with Lord Stark to the execution of a deserter from the Night’s Watch. On the way back he is with the boys when they find a dead direwolf and her pups, and he wants to kill the pups.',
       },
-      status: [{ episode: 1, chapter: 2, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 2, value: 'alive' },
+        { episode: 70, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3373,7 +3400,10 @@ export const season1: ThronesSaga = {
         it: 'Serve la Casa Stark come consigliere e guaritore. Porta a Lord Stark e alla moglie una lettera segreta della sorella di lei. Consiglia a Lord Stark di accettare l’offerta del re.',
         en: 'He serves House Stark as counsellor and healer. He brings Lord Stark and his wife a secret letter from her sister. He advises Lord Stark to accept the king’s offer.',
       },
-      status: [{ episode: 1, chapter: 7, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 7, value: 'alive' },
+        { episode: 20, chapter: 143, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3406,7 +3436,10 @@ export const season1: ThronesSaga = {
         it: 'Addestra alle armi i ragazzi di Grande Inverno. È uno dei cavalieri al servizio di Lord Stark.',
         en: 'He trains the boys of Winterfell at arms. He is one of the knights who serve Lord Stark.',
       },
-      status: [{ episode: 1, chapter: 8, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 8, value: 'alive' },
+        { episode: 16, chapter: 140, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -3436,7 +3469,10 @@ export const season1: ThronesSaga = {
         it: 'È altissimo e forte, ma semplice, e l’unica parola che dice è “Hodor”. Porta in braccio Bran, che non può camminare, fino alla sala grande per incontrare Tyrion Lannister.',
         en: 'He is very tall and strong but simple, and the only word he says is “Hodor”. He carries Bran, who cannot walk, down to the great hall to meet Tyrion Lannister.',
       },
-      status: [{ episode: 4, chapter: 25, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 25, value: 'alive' },
+        { episode: 55, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -3465,7 +3501,10 @@ export const season1: ThronesSaga = {
         it: 'Con un gruppo di fuorilegge assale Bran mentre cavalca fuori da Grande Inverno. Quando i suoi compagni vengono uccisi, si arrende a Robb. Robb la porta al castello come prigioniera.',
         en: 'With a band of outlaws she attacks Bran while he rides outside Winterfell. When her companions are killed, she surrenders to Robb. Robb takes her back to the castle as a prisoner.',
       },
-      status: [{ episode: 6, chapter: 38, value: 'alive' }],
+      status: [
+        { episode: 6, chapter: 38, value: 'alive' },
+        { episode: 54, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         { episode: 6, chapter: 38, value: { it: 'Bruti', en: 'Wildlings' } },
         {

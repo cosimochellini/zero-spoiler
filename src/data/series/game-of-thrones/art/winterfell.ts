@@ -26,6 +26,20 @@ const LETTER: Stroke[] = [
 ]
 
 /**
+ * The same letter dropped and lying open on the ground, its roll undone and
+ * its seal still on the sheet: Catelyn's later stages keep it and move only
+ * the cord.
+ */
+const LETTER_DROPPED: Stroke[] = [
+  { d: 'M28 138 L58 118 L134 122 L112 146 Z' },
+  { d: 'M58 118 Q52 108 60 104 Q68 104 66 112 Q64 118 58 118', role: 'soft' },
+  { d: 'M28 138 Q20 144 26 150 Q34 152 36 146', role: 'soft' },
+  { d: circle(84, 134, 5) },
+  { d: 'M64 128 L100 130 M56 136 L76 137', role: 'soft' },
+  { d: 'M18 156 H142', role: 'ambient', dashed: true },
+]
+
+/**
  * Robb Stark: a longsword in its scabbard, laid at a slant: the pommel, the
  * wrapped grip, the crossguard, the far side of the leather hatched and the
  * belt's two ends hanging from the locket. The accent is the locket's band.
@@ -44,6 +58,24 @@ const SHEATHED_SWORD: Stroke[] = [
     role: 'ambient',
   },
   { d: 'M72 73 Q60 74 54 82 M88 75 Q100 76 104 84', role: 'soft' },
+]
+
+/** Robb's first drawing: the sheathed sword at a slant, as it stands. */
+const ROBB_SWORD: Stroke[] = moved(SHEATHED_SWORD, 'rotate(-28 80 90)')
+
+/**
+ * The crown the book forges for him as King in the North, a circlet of
+ * bronze seen a little from above with its iron spikes, set on the ground
+ * beside the sword.
+ */
+const NORTHERN_CROWN: Stroke[] = [
+  { d: 'M22 120 Q42 128 64 120 V132 Q42 140 22 132 Z' },
+  { d: 'M22 120 Q42 112 64 120', role: 'soft' },
+  {
+    d: 'M26 122 L28 106 L31 124 M36 125 L38 108 L41 126 M46 125 L48 108 L51 125 M56 123 L58 106 L61 122',
+  },
+  { d: 'M26 128 Q42 134 60 128', role: 'soft' },
+  shadow(43, 146, 26),
 ]
 
 /**
@@ -81,36 +113,45 @@ const HOOP: Stroke[] = [
  * first book, so it is her first drawing: the object every reader knows her
  * by (owner, 2026-11-05, #1058).
  */
-const NEEDLE: Stroke[] = [
+const NEEDLE_HILT: Stroke[] = [
   { d: circle(84, 34, 4) },
   { d: 'M81 38 H87 V54 H81 Z' },
   { d: 'M81 43 L87 46 M81 49 L87 52', role: 'soft' },
   { d: 'M70 56 Q84 52 98 56 M70 56 Q84 60 98 56', role: 'soft' },
-  { d: 'M82 58 L84 148 L86 58', role: 'accent' },
-  { d: 'M84 62 V140', role: 'soft' },
-  shadow(84, 153, 16),
 ]
 
+/** Needle whole, hilt and blade, as it stands in her first drawing. */
+const NEEDLE_SWORD: Stroke[] = [
+  ...NEEDLE_HILT,
+  { d: 'M82 58 L84 148 L86 58', role: 'accent' },
+  { d: 'M84 62 V140', role: 'soft' },
+]
+
+const NEEDLE: Stroke[] = [...NEEDLE_SWORD, shadow(84, 153, 16)]
+
 /**
- * Bran Stark: his pony side on, saddled, with no eye or mouth. He rides it
- * out to the execution in episode 1 and in Bran I (chapter 2). The accent
- * is the bridle; the far flank is hatched.
+ * Bran Stark: the broken tower he climbs, its corner seen in 3/4 with the
+ * stone courses, the handholds and the high window in the accent. He climbs
+ * Winterfell's walls in episode 1 and falls from the tower at its end, and
+ * the book tells his climbing in Bran II (chapter 9). The owner makes the
+ * tower his first drawing in both media at his threshold (2026-11-15,
+ * overturning #854): the tower is no fate, and the fall stays out of it.
  */
-const PONY: Stroke[] = [
+const BROKEN_TOWER: Stroke[] = [
+  { d: 'M40 150 V40 L84 30 L124 40 V150' },
+  { d: 'M84 30 V150', role: 'soft' },
   {
-    d: 'M66 108 Q60 98 58 86 L46 100 Q40 104 36 100 Q34 94 40 88 L52 70 L52 58 L60 66 Q70 66 76 80 Q82 92 92 94 Q112 96 124 96 Q134 98 134 112 Q134 124 126 128',
-  },
-  { d: 'M66 108 Q68 120 74 126 Q96 130 126 128' },
-  { d: 'M74 126 V152 M82 128 V152 M114 128 V152 M122 128 V152' },
-  { d: 'M60 66 Q66 70 70 78 Q72 84 76 90', role: 'soft' },
-  { d: 'M134 106 Q146 112 144 136', role: 'soft' },
-  {
-    d: 'M88 96 Q90 84 102 84 Q114 84 116 96 M86 98 V118 M114 98 V118',
+    d: 'M40 62 L84 54 M40 86 L84 78 M40 110 L84 102 M40 134 L84 126 M84 54 L124 62 M84 78 L124 86 M84 102 L124 110 M84 126 L124 134',
     role: 'soft',
   },
-  { d: 'M40 94 L50 80 L58 90 M50 80 L74 96', role: 'accent' },
-  { d: 'M120 112 l6 -3 M122 120 l6 -3', role: 'ambient' },
-  shadow(98, 154, 36),
+  { d: 'M60 46 V36 M100 46 V36', role: 'soft' },
+  { d: 'M54 72 V60 Q60 54 66 60 V72 Z', role: 'accent' },
+  {
+    d: 'M90 90 l8 -2 M94 116 l8 -2 M100 140 l8 -2 M106 68 l8 -2 M112 96 l6 -2 M112 122 l6 -2',
+    role: 'ambient',
+  },
+  { d: 'M48 98 h4 M70 118 h4 M58 140 h4', role: 'soft' },
+  { d: 'M28 150 H136', role: 'ambient', dashed: true },
 ]
 
 /**
@@ -134,7 +175,6 @@ const MANTLE: Stroke[] = [
     role: 'accent',
   },
   { d: 'M112 96 l6 -3 M116 110 l6 -3 M119 124 l6 -3', role: 'ambient' },
-  shadow(80, 158, 46),
 ]
 
 /**
@@ -143,8 +183,13 @@ const MANTLE: Stroke[] = [
  * clasp and its chain. He comes to the feast in black in episode 1 and in
  * Jon I (chapter 6).
  */
+/** The peg the cloak hangs from, and the rail it is set in. */
+const PEG_HOOK: Stroke = { d: 'M60 30 H100 M80 30 V40', role: 'soft' }
+const RAIL: Stroke = { d: 'M28 30 H132', role: 'ambient' }
+const PEG: Stroke[] = [PEG_HOOK, RAIL]
+
 const BLACK_CLOAK: Stroke[] = [
-  { d: 'M60 30 H100 M80 30 V40', role: 'soft' },
+  PEG_HOOK,
   { d: 'M66 44 Q80 38 94 44 Q112 70 118 148 Q80 156 42 148 Q48 70 66 44' },
   { d: 'M66 44 Q72 56 80 56 Q88 56 94 44', role: 'soft' },
   {
@@ -156,9 +201,37 @@ const BLACK_CLOAK: Stroke[] = [
     d: 'M98 80 l8 -4 M100 94 l9 -4 M103 108 l9 -4 M105 122 l9 -4 M106 136 l9 -4 M50 100 l7 -4 M48 116 l7 -4 M46 132 l7 -4',
     role: 'ambient',
   },
-  { d: 'M28 30 H132', role: 'ambient' },
+  RAIL,
   shadow(80, 156, 40),
 ]
+
+/**
+ * The black cloak he comes back in, its hem torn to rags, the far side
+ * still hatched and the clasp in the accent.
+ */
+const TORN_CLOAK: Stroke[] = [
+  {
+    d: 'M66 44 Q80 38 94 44 Q110 70 114 140 L106 132 L100 146 L92 134 L84 148 L78 134 L70 146 L64 132 L56 144 L50 130 L44 140 Q48 70 66 44',
+  },
+  { d: 'M66 44 Q72 56 80 56 Q88 56 94 44', role: 'soft' },
+  { d: circle(80, 58, 4), role: 'accent' },
+  { d: 'M70 70 Q66 100 62 130 M90 70 Q94 100 98 132', role: 'soft' },
+  {
+    d: 'M98 80 l8 -4 M100 94 l9 -4 M103 108 l8 -4 M104 122 l8 -4 M50 100 l7 -4 M48 116 l7 -4',
+    role: 'ambient',
+  },
+]
+
+/** The flail he swings, its chain hanging from the rail to an iron ball. */
+const FLAIL: Stroke[] = [
+  { d: 'M126 30 V96 M123 40 h6 M123 52 h6 M123 64 h6 M123 76 h6 M123 88 h6' },
+  { d: circle(126, 104, 7) },
+]
+
+/** The fire on the flail's ball. */
+const FLAME: Stroke = {
+  d: 'M120 112 Q108 100 116 84 Q118 94 122 96 Q120 82 128 70 Q134 84 130 96 Q136 92 138 82 Q146 100 132 112',
+}
 
 /**
  * Theon Greyjoy: a kraken, the animal of his house, in the water with its
@@ -166,7 +239,7 @@ const BLACK_CLOAK: Stroke[] = [
  * threshold in both media, so the house's animal stands in (owner, #854);
  * the accent is one arm.
  */
-const KRAKEN: Stroke[] = [
+const KRAKEN_BODY: Stroke[] = [
   { d: 'M64 76 Q60 40 80 28 Q100 40 96 76 Q88 82 80 82 Q72 82 64 76' },
   { d: 'M66 50 Q80 56 94 50', role: 'soft' },
   { d: 'M66 78 Q56 104 40 112 Q28 116 30 104', role: 'soft' },
@@ -175,6 +248,10 @@ const KRAKEN: Stroke[] = [
   { d: 'M88 82 Q100 112 104 130 Q108 144 98 144' },
   { d: 'M94 78 Q110 100 126 104 Q136 104 132 94', role: 'soft' },
   { d: 'M86 40 l6 -3 M90 52 l5 -3 M90 64 l5 -3', role: 'ambient' },
+]
+
+/** The two rows of sea under the kraken. */
+const KRAKEN_SEA: Stroke[] = [
   {
     d: 'M20 158 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0',
     role: 'ambient',
@@ -187,15 +264,19 @@ const KRAKEN: Stroke[] = [
   },
 ]
 
+const KRAKEN: Stroke[] = [...KRAKEN_BODY, ...KRAKEN_SEA]
+
 /**
  * Luwin: a maester's chain laid on a table in a loop, its links of mixed
  * metals, the far ones drawn lighter and the dark iron ones hatched. The
  * accent is one link.
  */
+const CHAIN_NEAR_LINKS: Stroke = {
+  d: `${ellipse(36, 116, 5, 3)} ${ellipse(46, 128, 4, 3)} ${ellipse(60, 135, 5, 3)} ${ellipse(76, 138, 5, 3)} ${ellipse(92, 137, 5, 3)} ${ellipse(108, 132, 5, 3)} ${ellipse(122, 124, 5, 3)}`,
+}
+
 const MAESTER_CHAIN: Stroke[] = [
-  {
-    d: `${ellipse(36, 116, 5, 3)} ${ellipse(46, 128, 4, 3)} ${ellipse(60, 135, 5, 3)} ${ellipse(76, 138, 5, 3)} ${ellipse(92, 137, 5, 3)} ${ellipse(108, 132, 5, 3)} ${ellipse(122, 124, 5, 3)}`,
-  },
+  CHAIN_NEAR_LINKS,
   {
     d: `${ellipse(126, 110, 4, 3)} ${ellipse(116, 102, 5, 3)} ${ellipse(100, 98, 5, 3)} ${ellipse(68, 98, 5, 3)} ${ellipse(52, 101, 5, 3)} ${ellipse(40, 106, 4, 3)}`,
     role: 'soft',
@@ -212,10 +293,14 @@ const MAESTER_CHAIN: Stroke[] = [
  * in the yard, as he sets the boys to fight with them in Arya I (chapter
  * 8). The accent is the leather wrap on one grip.
  */
-const PRACTICE_SWORDS: Stroke[] = [
+const YARD_POST: Stroke[] = [
   { d: 'M80 150 V44 M86 150 V48', role: 'soft' },
   { d: 'M76 44 H90 V150' },
   { d: 'M80 70 l6 3 M80 96 l6 -2 M80 120 l6 3', role: 'ambient' },
+]
+
+const PRACTICE_SWORDS: Stroke[] = [
+  ...YARD_POST,
   { d: 'M44 148 L96 40 L102 43 L50 151 Z' },
   { d: 'M88 56 L104 64 M93 50 L100 53', role: 'soft' },
   { d: 'M98 44 L106 28 L112 31 L104 47', role: 'accent' },
@@ -249,18 +334,27 @@ const KNITTING_BASKET: Stroke[] = [
  * stall post behind it and a tuft of straw. The accent is the bucket's top
  * hoop.
  */
-const STABLE: Stroke[] = [
+const BUCKET: Stroke[] = [
   { d: ellipse(64, 104, 26, 8) },
   { d: 'M38 104 L44 148 Q64 156 84 148 L90 104' },
   { d: 'M40 118 Q64 126 88 118', role: 'accent' },
   { d: 'M43 138 Q64 146 85 138', role: 'soft' },
   { d: 'M54 112 L56 150 M74 112 L72 150', role: 'soft' },
   { d: 'M82 112 l5 -3 M82 128 l5 -3', role: 'ambient' },
+]
+
+/** The stall post and the hayfork leaning on it. */
+const HAYFORK: Stroke[] = [
   { d: 'M110 150 L124 40' },
   {
     d: 'M114 44 Q124 36 134 44 M116 44 L112 24 M124 40 L124 20 M132 44 L136 24',
   },
   { d: 'M128 150 V30 M134 150 V34', role: 'soft' },
+]
+
+const STABLE: Stroke[] = [
+  ...BUCKET,
+  ...HAYFORK,
   { d: 'M92 150 q4 -8 8 0 q4 -10 8 0 q4 -6 8 0', role: 'ambient' },
   shadow(70, 156, 34),
 ]
@@ -271,7 +365,7 @@ const STABLE: Stroke[] = [
  * Bran V (chapter 38); the accent is its steel head. The rust the book
  * gives the head is the book's alone, so it is not drawn.
  */
-const SPEAR: Stroke[] = [
+const SPEAR_SHAFT: Stroke[] = [
   { d: 'M78 150 L84 52 M84 150 L90 52' },
   { d: 'M84 52 Q80 40 87 18 Q94 40 90 52 Z', role: 'accent' },
   { d: 'M87 22 V50', role: 'soft' },
@@ -281,6 +375,10 @@ const SPEAR: Stroke[] = [
     d: 'M88 84 l4 -2 M87 100 l4 -2 M86 116 l4 -2 M85 132 l4 -2',
     role: 'ambient',
   },
+]
+
+const SPEAR: Stroke[] = [
+  ...SPEAR_SHAFT,
   { d: 'M40 150 H128', role: 'ambient', dashed: true },
   { d: 'M74 150 q6 -6 14 0', role: 'soft' },
   shadow(82, 154, 22),
@@ -498,13 +596,10 @@ const GHOST: Stroke[] = [
 /** The Winterfell household's first drawings, keyed by record id (#854). */
 export const WINTERFELL_DRAWINGS = {
   'catelyn-stark': LETTER,
-  'robb-stark': [
-    ...moved(SHEATHED_SWORD, 'rotate(-28 80 90)'),
-    shadow(80, 156, 40),
-  ],
+  'robb-stark': [...ROBB_SWORD, shadow(80, 156, 40)],
   'sansa-stark': HOOP,
-  'bran-stark': PONY,
-  'rickon-stark': MANTLE,
+  'bran-stark': BROKEN_TOWER,
+  'rickon-stark': [...MANTLE, shadow(80, 158, 46)],
   'benjen-stark': BLACK_CLOAK,
   'grey-wind': GREY_WIND,
   'lady-direwolf': LADY,
@@ -525,31 +620,341 @@ export const WINTERFELL_DRAWINGS = {
 
 /** Their later stages, each with its true pin in each medium. */
 export const winterfellRedrawn: Redrawings = {
-  'bran-stark': [
-    // The broken tower he climbs, its corner seen in 3/4 with the stone
-    // courses, the handholds and the high window in the accent: the book
-    // shows his climbing from Bran II (chapter 9), the chapter he falls in.
-    // The show has it only in episode 1, his own threshold, so the stage is
-    // the book's alone and episode 2 only orders it (owner, #854).
+  'catelyn-stark': [
+    // The letter dropped and lying open, its cord undone beside it: she dies
+    // at the Red Wedding, in "The Rains of Castamere" (episode 29) and in
+    // Catelyn VII of A Storm of Swords (chapter 195). How she dies is not
+    // drawn (owner, 2026-11-15).
     {
-      episode: 2,
-      chapter: 9,
+      episode: 29,
+      chapter: 195,
+      value: [
+        ...LETTER_DROPPED,
+        {
+          d: 'M96 150 Q110 158 122 150 Q132 142 142 150 M104 154 Q100 160 92 158',
+          role: 'accent',
+        },
+      ],
+    },
+    // The same cord taken up as a noose hanging from a branch over the
+    // letter: the book alone brings her back as Lady Stoneheart, who hangs
+    // her captives, in the epilogue of A Storm of Swords (chapter 225). The
+    // show never does, and episode 30 only orders the stage (owner,
+    // 2026-11-15).
+    {
+      episode: 30,
+      chapter: 225,
       source: 'chapter',
       value: [
-        { d: 'M40 150 V40 L84 30 L124 40 V150' },
-        { d: 'M84 30 V150', role: 'soft' },
+        ...LETTER_DROPPED,
+        { d: 'M20 28 Q80 18 142 30 M110 25 L128 10', role: 'soft' },
         {
-          d: 'M40 62 L84 54 M40 86 L84 78 M40 110 L84 102 M40 134 L84 126 M84 54 L124 62 M84 78 L124 86 M84 102 L124 110 M84 126 L124 134',
-          role: 'soft',
+          d: `M84 24 V64 ${ellipse(84, 82, 9, 14)} M79 64 H89 M79 69 H89`,
+          role: 'accent',
         },
-        { d: 'M60 46 V36 M100 46 V36', role: 'soft' },
-        { d: 'M54 72 V60 Q60 54 66 60 V72 Z', role: 'accent' },
+      ],
+    },
+  ],
+  'robb-stark': [
+    // The crown of bronze and iron spikes set down beside the sword: the
+    // book's King in the North wears it, from his proclamation in Catelyn
+    // XI of A Game of Thrones (chapter 72). The show's Robb never wears a
+    // crown, so the stage is the book's alone and episode 10, the show's
+    // proclamation, only orders it (owner, 2026-11-15: a crown is a
+    // costume).
+    {
+      episode: 10,
+      chapter: 72,
+      source: 'chapter',
+      value: [...ROBB_SWORD, shadow(80, 156, 40), ...NORTHERN_CROWN],
+    },
+    // The sword fallen flat across the ground, without the crown: he dies at
+    // the Red Wedding, in "The Rains of Castamere" (episode 29) and in
+    // Catelyn VII of A Storm of Swords (chapter 195).
+    {
+      episode: 29,
+      chapter: 195,
+      value: [
+        ...moved(SHEATHED_SWORD, 'translate(2 52) rotate(-78 80 90)'),
+        { d: 'M14 158 H146', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'bran-stark': [
+    // A raven perched on a weirwood branch, its three eyes in the accent:
+    // Bran is the Three-Eyed Raven from "Blood of My Blood" (episode 56).
+    // In the books he is still the raven's pupil, so the stage is the
+    // show's alone and chapter 344 only orders it. The three eyes are the
+    // owner's exception to the house style, as the raven is the sigil of
+    // his title (2026-11-15).
+    {
+      episode: 56,
+      chapter: 344,
+      source: 'episode',
+      value: [
         {
-          d: 'M90 90 l8 -2 M94 116 l8 -2 M100 140 l8 -2 M106 68 l8 -2 M112 96 l6 -2 M112 122 l6 -2',
+          d: 'M84 58 Q96 46 108 54 L128 60 L108 66 Q112 82 102 98 Q92 112 72 116 L42 140 L38 134 L58 112 Q54 94 64 78 Q72 64 84 58',
+        },
+        { d: 'M66 84 Q86 84 98 100 Q86 110 64 112', role: 'soft' },
+        { d: 'M72 92 l10 8 M66 100 l12 6', role: 'soft' },
+        {
+          d: 'M76 70 l8 -5 M68 82 l6 -4 M90 108 l8 -6 M80 112 l6 -4',
           role: 'ambient',
         },
-        { d: 'M48 98 h4 M70 118 h4 M58 140 h4', role: 'soft' },
-        { d: 'M28 150 H136', role: 'ambient', dashed: true },
+        {
+          d: `${circle(98, 56, 1.6)} ${circle(105, 59, 1.6)} ${circle(100, 63, 1.6)}`,
+          role: 'accent',
+        },
+        { d: 'M80 116 L78 126 M90 112 L92 126', role: 'soft' },
+        { d: 'M18 128 Q80 120 146 130 M22 135 Q80 128 142 137' },
+        {
+          d: 'M124 129 L138 112 M138 112 q8 -6 10 2 q-6 6 -10 -2',
+          role: 'soft',
+        },
+      ],
+    },
+  ],
+  'rickon-stark': [
+    // The mantle fallen across the ground: he dies at the Battle of the
+    // Bastards (episode 59). In the books he lives, so the stage is the
+    // show's alone and chapter 344 only orders it. How he dies is not
+    // drawn (owner, 2026-11-15).
+    {
+      episode: 59,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(MANTLE, 'translate(0 68) scale(1 0.6) rotate(-80 80 100)'),
+        { d: 'M12 160 H148', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'benjen-stark': [
+    // The empty peg, the cloak gone and only the clasp's chain left hanging:
+    // he rides beyond the Wall and does not come back. His horse returns
+    // without him in "You Win or You Die" (episode 7); the book says he is
+    // missing in Jon V of A Game of Thrones (chapter 42).
+    {
+      episode: 7,
+      chapter: 42,
+      value: [
+        ...PEG,
+        {
+          d: `M80 40 Q70 52 76 62 M80 40 Q90 52 84 62 ${circle(80, 66, 4)}`,
+          role: 'accent',
+        },
+        { d: 'M40 156 H120', role: 'ambient', dashed: true },
+      ],
+    },
+    // The black cloak back on the peg, its hem torn, with a chain hanging
+    // beside it that ends in a burning ball: he returns as the hooded rider
+    // with the flaming flail in "Blood of My Blood" (episode 56). The book's
+    // Coldhands is someone else, so the stage is the show's alone and
+    // chapter 344 only orders it.
+    {
+      episode: 56,
+      chapter: 344,
+      source: 'episode',
+      value: [...PEG, ...TORN_CLOAK, ...FLAIL, FLAME, shadow(80, 156, 40)],
+    },
+    // The same torn cloak on the ground, the chain slack and the fire out:
+    // he dies holding off the dead in "Beyond the Wall" (episode 66), the
+    // show's alone.
+    {
+      episode: 66,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(
+          TORN_CLOAK,
+          'translate(0 80) scale(1 0.55) rotate(-90 80 100)',
+        ),
+        {
+          d: `M90 160 Q104 166 116 158 Q126 152 136 157 ${circle(142, 157, 6)}`,
+        },
+        { d: 'M12 162 H148', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'grey-wind': [
+    // Lying on his side, still, his head low on the ground: he is killed at
+    // the Red Wedding, in "The Rains of Castamere" (episode 29); the book
+    // first tells it after the wedding, in chapter 54 of A Storm of Swords
+    // (chapter 198). How he dies is not drawn (owner, 2026-11-15).
+    {
+      episode: 29,
+      chapter: 198,
+      value: [
+        {
+          d: 'M16 146 L28 142 Q34 138 40 138 L38 126 L46 134 L52 126 L54 138 Q66 130 90 130 Q118 130 132 140 Q138 148 132 152',
+        },
+        { d: 'M16 146 Q24 154 44 154 Q76 156 104 156 Q122 156 132 152' },
+        { d: 'M58 152 L74 160 M66 152 L84 160', role: 'soft' },
+        { d: 'M104 154 L122 162 M112 154 L130 162', role: 'soft' },
+        { d: 'M132 146 Q146 142 154 150 Q146 156 134 154', role: 'soft' },
+        { d: 'M56 134 Q52 142 58 150', role: 'accent' },
+        { d: 'M42 128 L44 134 M50 128 L50 134', role: 'soft' },
+        { d: 'M86 134 Q92 144 88 154', role: 'soft' },
+        { d: 'M10 164 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'summer-direwolf': [
+    // Lying on his side in the snow, out of the bed he guarded: he dies
+    // holding the cave in "The Door" (episode 55). He lives in the books,
+    // so the stage is the show's alone and chapter 344 only orders it.
+    {
+      episode: 55,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        {
+          d: 'M144 140 L132 136 Q126 132 120 132 L122 120 L114 128 L108 120 L106 132 Q94 126 72 128 Q46 130 32 140 Q26 148 32 152',
+        },
+        { d: 'M144 140 Q136 150 116 152 Q86 156 58 156 Q42 156 32 152' },
+        { d: 'M100 152 L88 162 M92 152 L78 162', role: 'soft' },
+        { d: 'M56 154 L40 162 M48 154 L32 162', role: 'soft' },
+        { d: 'M32 146 Q18 140 12 128 Q22 130 30 142', role: 'soft' },
+        { d: 'M104 134 Q108 142 102 150', role: 'accent' },
+        { d: 'M118 124 L116 130 M110 124 L110 130', role: 'soft' },
+        {
+          d: 'M126 160 h8 M140 156 h8 M136 166 h8 M150 164 h6 M20 166 h8',
+          role: 'ambient',
+        },
+        { d: 'M14 160 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'shaggydog': [
+    // The black wolf lying on his side, his head on the ground, still
+    // hatched: his head is brought to Ramsay in "Oathbreaker" (episode 53).
+    // He lives in the books, so the stage is the show's alone and chapter
+    // 344 only orders it.
+    {
+      episode: 53,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        {
+          d: 'M18 144 L30 140 Q36 136 42 136 L42 124 L48 132 L56 124 L56 136 Q70 126 96 128 Q120 130 134 142 Q140 150 132 154',
+        },
+        { d: 'M18 144 Q26 152 46 152 Q78 156 106 156 Q124 156 132 154' },
+        { d: 'M62 152 L76 160 M70 152 L86 160', role: 'soft' },
+        { d: 'M108 154 L124 162 M116 154 L132 162', role: 'soft' },
+        { d: 'M134 146 Q148 140 152 130 Q154 140 136 152', role: 'soft' },
+        {
+          d: 'M74 136 l8 -6 M84 140 l10 -8 M96 144 l12 -9 M108 146 l12 -9 M84 150 l12 -9 M98 152 l12 -9',
+          role: 'ambient',
+        },
+        {
+          d: 'M58 132 Q54 140 60 148 M66 130 l2 -6 M74 129 l2 -6',
+          role: 'accent',
+        },
+        { d: 'M46 128 L48 134 M54 128 L54 134', role: 'soft' },
+        { d: 'M12 164 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'theon-greyjoy': [
+    // The kraken dragged out of the sea and huddled on bare ground, an iron
+    // ring round one arm chained to a stake: Ramsay breaks him into Reek,
+    // naming him so in "Mhysa" (episode 30) and in Reek I of A Dance with
+    // Dragons (chapter 284).
+    {
+      episode: 30,
+      chapter: 284,
+      value: [
+        ...moved(KRAKEN_BODY, 'translate(24 44) scale(0.72)'),
+        { d: ellipse(66, 140, 5, 3) },
+        {
+          d: `M61 141 Q46 146 34 138 ${circle(30, 136, 4)} M30 132 V108 M26 108 H34`,
+        },
+        { d: 'M14 152 H146', role: 'ambient', dashed: true },
+      ],
+    },
+    // The same kraken capsized on the waves, its arms thrown loose: he dies
+    // defending Bran in "The Long Night" (episode 70). He lives in the books,
+    // so the stage is the show's alone and chapter 344 only orders it.
+    {
+      episode: 70,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(KRAKEN_BODY, 'translate(0 66) rotate(-96 80 80)'),
+        ...KRAKEN_SEA,
+      ],
+    },
+  ],
+  'luwin': [
+    // The chain broken open on the table, a few links scattered from it and
+    // the accent link lying apart: he dies of his wounds in the godswood, in
+    // "Valar Morghulis" (episode 20) and in Bran VII of A Clash of Kings
+    // (chapter 143).
+    {
+      episode: 20,
+      chapter: 143,
+      value: [
+        CHAIN_NEAR_LINKS,
+        {
+          d: `${ellipse(40, 106, 4, 3)} ${ellipse(52, 101, 5, 3)} ${ellipse(126, 110, 4, 3)}`,
+          role: 'soft',
+        },
+        { d: `${ellipse(98, 152, 4, 3)} ${ellipse(132, 150, 4, 3)}` },
+        { d: ellipse(116, 154, 6, 4), role: 'accent' },
+        { d: 'M60 135 l3 -2 M92 137 l3 -2 M122 124 l3 -2', role: 'ambient' },
+        { d: 'M24 160 H136', role: 'ambient', dashed: true },
+        shadow(80, 162, 54),
+      ],
+    },
+  ],
+  'rodrik-cassel': [
+    // The bare post, the two practice swords fallen at its foot and one
+    // snapped in two: Theon has him beheaded in "The Old Gods and the New"
+    // (episode 16), and the book's Ramsay kills him outside Winterfell, told
+    // in Theon VI of A Clash of Kings (chapter 140). How he dies is not
+    // drawn (owner, 2026-11-15).
+    {
+      episode: 16,
+      chapter: 140,
+      value: [
+        ...YARD_POST,
+        { d: 'M18 146 L70 138 L71 144 L19 152 Z' },
+        { d: 'M64 139 l1 6 M58 140 l1 6', role: 'soft' },
+        { d: 'M70 138 L82 136 L83 142 L71 144', role: 'accent' },
+        { d: 'M98 150 L132 140 L134 146 L100 156 Z' },
+        { d: 'M120 132 L142 124 L144 130 L122 138' },
+        { d: 'M14 158 H146', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'hodor': [
+    // The bucket knocked over on its side by the stall, the straw spilled:
+    // he dies holding the door in "The Door" (episode 55). He lives in the
+    // books, so the stage is the show's alone and chapter 344 only orders
+    // it. The door is not drawn (owner, 2026-11-15).
+    {
+      episode: 55,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(BUCKET, 'rotate(-90 64 128) translate(-4 -18)'),
+        ...HAYFORK,
+        { d: 'M14 150 q4 -6 8 0 q4 -8 8 0 q4 -6 8 0', role: 'ambient' },
+        shadow(64, 156, 44),
+      ],
+    },
+  ],
+  'osha': [
+    // The spear fallen flat on the ground: she is killed at Winterfell in
+    // "Book of the Stranger" (episode 54). She lives in the books, so the
+    // stage is the show's alone and chapter 344 only orders it.
+    {
+      episode: 54,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(SPEAR_SHAFT, 'translate(0 56) rotate(-88 84 92)'),
+        { d: 'M12 156 H148', role: 'ambient', dashed: true },
       ],
     },
   ],
@@ -601,11 +1006,62 @@ export const winterfellRedrawn: Redrawings = {
       chapter: 68,
       value: [
         ...PINCUSHION,
-        ...moved(SPOOL, 'rotate(90 118 140) translate(-12 12)'),
+        ...moved(SPOOL, 'rotate(40 118 146) translate(8 -2)'),
         { d: 'M40 150 L104 144 M100 144 l6 -1' },
         { d: 'M106 143 Q124 150 132 140 Q140 128 124 130', role: 'accent' },
         { d: 'M28 152 H136', role: 'ambient', dashed: true },
       ],
     },
+  ],
+  'arya-stark': [
+    // Needle thrust through a man-at-arms' belt, no longer hers: Polliver
+    // takes it from her when the Lannister men capture her, in "What Is
+    // Dead May Never Die" (episode 13) and in Arya V of A Clash of Kings
+    // (chapter 93).
+    {
+      episode: 13,
+      chapter: 93,
+      value: [
+        { d: 'M14 96 Q80 116 146 96 M14 110 Q80 130 146 110' },
+        { d: 'M38 100 H56 V122 H38 Z M44 111 H56', role: 'soft' },
+        {
+          d: dots([
+            [72, 112],
+            [92, 112],
+            [112, 110],
+            [130, 104],
+          ]),
+          role: 'soft',
+        },
+        { d: 'M24 108 l6 -4 M126 112 l6 -4', role: 'ambient' },
+        ...moved(NEEDLE_SWORD, 'rotate(34 84 100)'),
+      ],
+    },
+    // Needle back on its point as in her first drawing: she kills Polliver
+    // and takes it back at the inn at the crossroads, in "Two Swords"
+    // (episode 31) and in Arya XIII of A Storm of Swords (chapter 218).
+    { episode: 31, chapter: 218, value: NEEDLE },
+    // The hilt standing out of a pile of stones, the blade hidden under
+    // them: she cannot throw it away and hides it before she serves the
+    // House of Black and White, in "High Sparrow" (episode 43) and in Arya I
+    // of A Feast for Crows (chapter 232).
+    {
+      episode: 43,
+      chapter: 232,
+      value: [
+        ...moved(NEEDLE_HILT, 'translate(0 52)'),
+        { d: 'M82 110 L84 120 L86 110', role: 'accent' },
+        {
+          d: 'M42 150 L46 132 L60 122 L76 126 L82 150 M82 150 L88 130 L102 122 L118 128 L124 150',
+        },
+        { d: 'M62 124 L70 112 L96 110 L104 122', role: 'soft' },
+        { d: 'M60 134 l6 -3 M104 136 l6 -3 M70 142 l5 -3', role: 'ambient' },
+        { d: 'M30 152 H134', role: 'ambient', dashed: true },
+      ],
+    },
+    // Needle on its point again: she takes it back from the stones in
+    // "Blood of My Blood" (episode 56). In the books it is still hidden, so
+    // the stage is the show's alone and chapter 344 only orders it.
+    { episode: 56, chapter: 344, source: 'episode', value: NEEDLE },
   ],
 }

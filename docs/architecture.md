@@ -380,7 +380,7 @@ checks this block.
 | Characters        | 148                                                   |
 | Places            | 60                                                    |
 | Saga modules      | 1                                                     |
-| Line drawings     | 208, one per record, plus 41 redrawings of 36 records |
+| Line drawings     | 208, one per record, plus 62 redrawings of 49 records |
 | Chronicle stories | 0, for 0 characters                                   |
 
 <!-- End of the generated counts. -->
