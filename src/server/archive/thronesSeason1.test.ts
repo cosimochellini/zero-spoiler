@@ -515,6 +515,21 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
+  // The second group of placeholder characters' deaths (#1296).
+  {
+    id: 'donal-noye',
+    episode: 39,
+    chapter: 208,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'chett',
+    episode: 28,
+    chapter: 190,
+    value: 'deceased',
+    source: 'chapter',
+  },
 ]
 
 /**
@@ -1291,6 +1306,13 @@ const STAGES: {
     stage: 1,
   },
   { id: 'robar-royce', episode: 15, chapter: 110, source: 'chapter' },
+  // The second group of placeholder characters redrawn (#1296).
+  { id: 'donal-noye', episode: 39, chapter: 208, source: 'chapter' },
+  { id: 'chett', episode: 28, chapter: 190, source: 'chapter' },
+  { id: 'qotho', episode: 9, chapter: 65 },
+  { id: 'cohollo', episode: 9, chapter: 65, source: 'chapter' },
+  { id: 'haggo', episode: 9, chapter: 65, source: 'chapter' },
+  { id: 'quaro', episode: 9, chapter: 65, source: 'chapter' },
   // The Night's Watch's deaths and the mutiny against Jon (#1295).
   { id: 'gared', episode: 1, chapter: 2, source: 'chapter' },
   { id: 'grenn', episode: 39, chapter: 199, source: 'episode' },

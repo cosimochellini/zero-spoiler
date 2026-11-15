@@ -147,6 +147,99 @@ const MANACLES: Stroke[] = [
 ]
 
 /**
+ * Jafer Flowers: his severed hand lying in the snow, the fingers stiff, for
+ * the ranger who is already dead when he opens: Ghost brings the hand back
+ * in episode 7, and his body is carried to Castle Black in episode 8 and
+ * in Jon VII (chapter 53). The accent is the cut wrist.
+ */
+const SEVERED_HAND: Stroke[] = [
+  ...moved(
+    [
+      {
+        d: 'M116 104 Q100 98 82 101 L54 95 Q48 95 49 100 Q50 103 56 104 L80 108 L50 106 Q44 107 45 112 Q46 115 52 115 L80 115 L54 118 Q48 120 50 124 Q52 127 58 126 L82 122 L62 128 Q56 131 59 135 Q62 137 67 135 L90 129 Q104 128 116 126',
+      },
+      { d: 'M100 101 Q94 90 82 84 Q76 82 76 87 Q78 92 88 98' },
+      { d: 'M80 103 v4 M80 110 v4 M81 117 v4 M84 123 v4', role: 'soft' },
+      { d: ellipse(116, 115, 4.5, 11), role: 'accent' },
+    ],
+    'translate(-24 -36) scale(1.3)',
+  ),
+  {
+    d: 'M14 140 Q40 130 66 140 Q92 132 118 140 Q134 134 148 140',
+    role: 'ambient',
+  },
+  { d: 'M40 132 Q60 138 74 132 M96 138 Q116 142 132 134', role: 'ambient' },
+  shadow(82, 134, 40),
+]
+
+/**
+ * The armorer's anvil in 3/4, its horn to the left, on a footed base. The
+ * far faces are hatched. Donal Noye's first drawing and his death share it.
+ */
+const NOYE_ANVIL: Stroke[] = [
+  { d: 'M20 90 Q34 84 50 84 H120 V96 H54 Q36 96 20 90 Z' },
+  { d: 'M50 84 L60 76 H130 L120 84 M130 76 V88 L120 96' },
+  { d: 'M62 96 Q68 110 62 126 M110 96 Q104 110 110 126' },
+  { d: 'M50 126 H122 V136 H50 Z M122 126 L130 120 V130 L122 136' },
+  { d: 'M50 136 L44 150 H128 L122 136' },
+  {
+    d: 'M123 87 l5 -4 M123 93 l5 -4 M112 104 l5 -4 M112 114 l5 -4 M124 132 l5 -4',
+    role: 'ambient',
+  },
+  shadow(86, 154, 48),
+]
+
+/** His hammer's head in 3/4; the handle is added by each drawing. */
+const NOYE_HAMMER_HEAD: Stroke[] = [
+  { d: 'M50 70 H64 V82 H50 Z' },
+  { d: 'M50 70 L54 66 H68 L64 70 M68 66 V78 L64 82', role: 'soft' },
+]
+
+/**
+ * Donal Noye: the hammer laid on the anvil's face beside a bar of iron
+ * still hot from the forge, for the one-armed smith who keeps Castle
+ * Black's armory, in Jon III (chapter 20). The show has no Donal Noye; the
+ * accent is the hot iron.
+ */
+const NOYE_FORGE: Stroke[] = [
+  ...NOYE_ANVIL,
+  ...NOYE_HAMMER_HEAD,
+  { d: 'M64 74 H92 V78 H64' },
+  { d: 'M96 79 L122 77 L123 81 L97 83 Z', role: 'accent' },
+  { d: 'M104 72 q-3 -5 0 -10 M114 71 q-3 -5 0 -10', role: 'soft' },
+]
+
+/**
+ * The kennel's beam with the peg the leash hangs from, the boards of the
+ * pens behind it. Chett's first drawing and his death share it.
+ */
+const KENNEL_BEAM: Stroke[] = [
+  { d: 'M24 30 H136 V44 H24 Z' },
+  { d: 'M40 36 h22 M90 38 h30', role: 'soft' },
+  { d: `M78 44 V58 ${circle(78, 60, 3)}` },
+  { d: 'M24 44 V150 M136 44 V150 M52 44 V150 M108 44 V150', role: 'ambient' },
+]
+
+/**
+ * Chett: a leash and its collar hung from a peg in the kennels, for the
+ * steward sent from Maester Aemon's door to the hounds, from Jon V
+ * (chapter 42) and Jon VI (chapter 49). The show has no Chett. The
+ * collar's far side is hatched; the accent is the chain.
+ */
+const KENNEL_LEASH: Stroke[] = [
+  ...KENNEL_BEAM,
+  { d: 'M74 58 Q64 70 72 84 L84 84 Q92 70 82 58' },
+  {
+    d: `${ellipse(78, 92, 3, 6)} ${ellipse(78, 103, 2, 5)} ${ellipse(78, 114, 3, 6)}`,
+    role: 'accent',
+  },
+  { d: ellipse(78, 128, 24, 8) },
+  { d: 'M54 128 V134 Q54 142 78 142 Q102 142 102 134 V128' },
+  { d: 'M70 136 h12 v8 h-12 z M76 136 v8', role: 'soft' },
+  { d: 'M92 137 l5 -3 M98 134 l3 -2', role: 'ambient' },
+]
+
+/**
  * One of Yoren's manacles lying open: the band, the near half of the
  * cuff, and the far half swung up on its hinge. The other is its mirror.
  */
@@ -580,6 +673,9 @@ export const WALL_DRAWINGS = {
   'samwell-tarly': BOOKS,
   'alliser-thorne': DUMMY,
   'yoren': MANACLES,
+  'jafer-flowers': SEVERED_HAND,
+  'donal-noye': NOYE_FORGE,
+  'chett': KENNEL_LEASH,
   'will': FALLEN_CLOAK,
   'gared': SCRAP_IN_SNOW,
   'waymar-royce': SWORD_IN_SNOW,
@@ -891,6 +987,44 @@ export const wallRedrawn: Redrawings = {
         DRAPE_FOLDS,
         ...moved(LAMP, 'rotate(-35 133 150)'),
         shadow(80, 156, 68),
+      ],
+    },
+  ],
+  'donal-noye': [
+    // The anvil cold and the hammer fallen on the ground beside it: he dies
+    // holding the gate against the giants in Jon VIII (chapter 208). The
+    // book's alone; episode 39, where the show gives the gate to Grenn,
+    // orders it.
+    {
+      episode: 39,
+      chapter: 208,
+      value: [
+        ...NOYE_ANVIL,
+        ...moved(
+          [...NOYE_HAMMER_HEAD, { d: 'M64 74 H92 V78 H64', role: 'accent' }],
+          'translate(-36 72)',
+        ),
+      ],
+    },
+  ],
+  'chett': [
+    // The peg empty and the leash fallen to the ground, the collar lying
+    // flat: he dies at the Fist of the First Men, which Samwell III
+    // (chapter 190) tells when Sam meets him among the dead. The book's
+    // alone; episode 28, where the show reaches the same scene, orders it.
+    {
+      episode: 28,
+      chapter: 190,
+      value: [
+        ...KENNEL_BEAM,
+        { d: ellipse(56, 140, 24, 7) },
+        { d: 'M32 140 V144 Q32 150 56 150 Q80 150 80 144 V140' },
+        {
+          d: `${ellipse(88, 144, 6, 3)} ${ellipse(100, 146, 5, 2.5)} ${ellipse(112, 144, 6, 3)}`,
+          role: 'accent',
+        },
+        { d: 'M118 144 Q132 136 140 146 Q130 152 118 148', role: 'soft' },
+        { d: 'M14 152 H146', role: 'ambient', dashed: true },
       ],
     },
   ],

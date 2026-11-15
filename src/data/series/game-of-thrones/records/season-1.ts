@@ -2030,7 +2030,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere di sangue di khal Drogo.',
         en: 'One of Khal Drogo’s bloodriders.',
       },
-      visual: { art: 'qotho', tint: 'wine' },
+      visual: { art: 'qotho', tint: 'azure' },
     },
     // Books only: Daenerys IV (site chapter 37), he meets Daenerys. The show’s rider has the name only by wiki conjecture; episode 4 orders him.
     {
@@ -2125,7 +2125,7 @@ export const season1: ThronesSaga = {
         it: 'Un guerriero del khalasar di Drogo che protesta quando Daenerys reclama i prigionieri.',
         en: 'A rider of Drogo’s khalasar who objects when Daenerys claims the captives.',
       },
-      visual: { art: 'mago', tint: 'vermilion' },
+      visual: { art: 'mago', tint: 'ice' },
     },
     // Books only: Daenerys IX (site chapter 69), first named when her death is told, so she opens `deceased`. The show has no such character; episode 10 orders her.
     {
@@ -6172,7 +6172,13 @@ export const season1: ThronesSaga = {
         it: 'Ferma le reclute che vogliono picchiare Jon Snow nell’armeria. Poi spiega a Jon che lui è stato addestrato e loro no.',
         en: 'He stops the recruits who mean to beat Jon Snow in the armory. Then he tells Jon that he has had training and they have not.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      // He dies holding the gate against Mag the Mighty in Jon VIII (site
+      // chapter 208); episode 39, where the show gives the gate to Grenn,
+      // orders it.
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 39, chapter: 208, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -6204,7 +6210,13 @@ export const season1: ThronesSaga = {
         it: 'Si occupa di maestro Aemon e dei corvi a Castello Nero. Dice a Jon Snow che il lavoro degli attendenti non è adatto ai vigliacchi.',
         en: 'He looks after Maester Aemon and the ravens at Castle Black. He tells Jon Snow that a steward’s work is not fit for cowards.',
       },
-      status: [{ episode: 5, chapter: 42, value: 'alive' }],
+      // He dies at the Fist of the First Men. Samwell III (site chapter 190)
+      // tells it; an earlier chapter may (unverified, #1296). Episode 28,
+      // where the show reaches that scene, orders it.
+      status: [
+        { episode: 5, chapter: 42, value: 'alive' },
+        { episode: 28, chapter: 190, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 5,
