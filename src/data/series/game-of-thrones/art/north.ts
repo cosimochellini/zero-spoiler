@@ -293,20 +293,22 @@ const KARSTARK_HALF_RIGHT: Stroke[] = [
  */
 const FLAYED_MAN: Stroke[] = [
   {
-    d: 'M54.1 55.5 L35.1 28.5 L44.9 21.5 L63.9 48.5 M96.4 115.5 L121.1 150.5 L130.9 143.5 L106.2 108.5',
+    d: 'M43 36.3 L31.8 20.3 L38.4 15.7 L49.6 31.7 M120.1 131.7 L132.8 149.7 L126.2 154.3 L113.5 136.3',
+    role: 'ambient',
   },
   {
-    d: 'M105.9 55.5 L124.9 28.5 L115.1 21.5 L96.1 48.5 M63.6 115.5 L38.9 150.5 L29.1 143.5 L53.8 108.5',
+    d: 'M117 36.3 L128.2 20.3 L121.6 15.7 L110.4 31.7 M39.9 131.7 L27.2 149.7 L33.8 154.3 L46.5 136.3',
+    role: 'ambient',
   },
   {
-    d: 'M80 77.5 L58.2 46.6 L55 40 L50 42 L54.2 49.4 L71 73.2 V90.3 L52.9 116 L47 124 L51 126 L56.9 118.8 L76 91.6 H84 L103.1 118.8 L109 126 L113 124 L107.1 116 L89 90.3 V73.2 L105.8 49.4 L110 42 L105 40 L101.8 46.6 Z',
+    d: 'M80 72 L58 44 L54 36 L49 38 L52 46 L66 70 L69 80 L64 94 L48 120 L43 127 L47 131 L52 124 L70 98 H90 L108 124 L113 131 L117 127 L112 120 L96 94 L91 80 L94 70 L108 46 L111 38 L106 36 L102 44 Z',
   },
-  { d: circle(80, 99, 6) },
+  { d: circle(80, 108, 9) },
   {
-    d: 'M58.3 40.5 L48.5 47.5 M55.5 36.5 L45.7 43.5 M101.7 40.5 L111.5 47.5 M104.5 36.5 L114.3 43.5 M46.7 118.5 L56.5 125.5 M43.9 122.5 L53.7 129.5 M113.3 118.5 L103.5 125.5 M116.1 122.5 L106.3 129.5',
+    d: 'M40.2 32.3 L46.8 27.7 M37.4 28.3 L44 23.7 M119.8 32.3 L113.2 27.7 M122.6 28.3 L116 23.7 M37 135.7 L43.6 140.3 M34.2 139.7 L40.8 144.3 M123 135.7 L116.4 140.3 M125.8 139.7 L119.2 144.3',
     role: 'accent',
   },
-  { d: 'M75 80 H85 M75 85 H85', role: 'soft' },
+  { d: 'M74 80 H86 M74 86 H86', role: 'soft' },
 ]
 /**
  * Roose Bolton: the flayed man on the X-cross of the Bolton banner, for
@@ -315,8 +317,8 @@ const FLAYED_MAN: Stroke[] = [
  */
 const X_CROSS: Stroke[] = [
   ...FLAYED_MAN,
-  { d: 'M116 134 l5 -3 M122 142 l5 -3', role: 'ambient' },
-  shadow(80, 156, 48),
+  { d: 'M86 92 l4 -3 M86 78 l4 -3', role: 'ambient' },
+  shadow(80, 160, 48),
 ]
 
 /**
@@ -568,12 +570,13 @@ export const northRedrawn: Redrawings = {
   ],
   'alyn': [
     // The standard down on the ground, its staff broken and the stump left
-    // standing: he is killed at
-    // the Mummer's Ford with Beric's men, told in Arya III of A Storm of
-    // Swords (chapter 161). The book's alone; episode 21 orders it.
+    // standing: he is killed at the Mummer's Ford with Beric's men, told in
+    // A Storm of Swords. The book's alone; episode 21 orders it. The pin is
+    // the later of the two candidate chapters (34, site 178; 17 is 161),
+    // neither checked against the book (#1288).
     {
       episode: 21,
-      chapter: 161,
+      chapter: 178,
       value: [
         { d: 'M24 154 V104 l3 -4 l-2 -3 M24 104 l-3 -3' },
         {

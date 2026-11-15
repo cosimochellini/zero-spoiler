@@ -5311,9 +5311,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 13, value: 'alive' },
-        // Killed at the Mummer's Ford, told in Arya III of A Storm of Swords
-        // (#1288). The chapter is not checked against the book.
-        { episode: 21, chapter: 161, source: 'chapter', value: 'deceased' },
+        // Killed at the Mummer's Ford, told in A Storm of Swords: the later
+        // of two candidate chapters, not checked against the book (#1288).
+        { episode: 21, chapter: 178, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {

@@ -304,7 +304,7 @@ const CHANGES: {
   {
     id: 'alyn',
     episode: 21,
-    chapter: 161,
+    chapter: 178,
     value: 'deceased',
     source: 'chapter',
   },
@@ -1097,7 +1097,7 @@ const STAGES: {
   // The northern lords' deaths and reveals (#1288).
   { id: 'jeyne-poole', episode: 29, chapter: 332, source: 'chapter' },
   { id: 'mikken', episode: 16, chapter: 126, source: 'chapter' },
-  { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
+  { id: 'alyn', episode: 21, chapter: 178, source: 'chapter' },
   { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
   { id: 'smalljon-umber', episode: 59, chapter: 195 },
   { id: 'rickard-karstark', episode: 25, chapter: 164 },
@@ -1145,6 +1145,26 @@ describe.each(
   },
 )
 
+/**
+ * The drawing a reader of the other medium sees at its ceiling: the
+ * record's latest stage both media (or that medium alone) tell, as Roose's
+ * Red Wedding before his show-only death, else its first drawing.
+ */
+function otherMediumSees(
+  id: keyof typeof DRAWINGS,
+  source: 'chapter' | 'episode' | undefined,
+  index: number,
+): unknown {
+  const seen = STAGES.filter(
+    (row) =>
+      row.id === id && (row.stage ?? 0) !== index && row.source !== source,
+  ).map((row) => row.stage ?? 0)
+
+  return seen.length === 0 ?
+      DRAWINGS[id]
+    : REDRAWINGS[id]?.[Math.max(...seen)]?.value
+}
+
 describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
@@ -1153,17 +1173,11 @@ describe('the stages one medium alone tells', () => {
         source === 'chapter' ?
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
-      // That reader still sees the record's last earlier stage both media
-      // (or theirs alone) tell, as Roose's Red Wedding before his death.
-      const seen = STAGES.filter(
-        (row) =>
-          row.id === id && (row.stage ?? 0) < index && row.source !== source,
-      ).map((row) => row.stage ?? 0)
-      const expected =
-        seen.length === 0 ?
-          DRAWINGS[id]
-        : REDRAWINGS[id]?.[Math.max(...seen)]?.value
+      const expected = otherMediumSees(id, source, index)
 
+      expect(REDRAWINGS[id]?.[index]?.source ?? recordOf(id).source).toBe(
+        source,
+      )
       expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
     },
   )
