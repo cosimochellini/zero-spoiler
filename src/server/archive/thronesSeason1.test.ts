@@ -1313,7 +1313,7 @@ describe.each(
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
       // The row's medium is the one the engine reads for this stage.
-      expect(REDRAWINGS[id]?.[index]?.source ?? owner.source).toBe(source)
+      expect(owner.source ?? REDRAWINGS[id]?.[index]?.source).toBe(source)
       expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
         previous,
       )
