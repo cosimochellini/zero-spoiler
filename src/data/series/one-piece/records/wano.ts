@@ -902,9 +902,12 @@ export const wano: OnePieceSaga = {
       affiliation: [
         { episode: 923, factions: ['beasts-pirates'], value: TOBIROPPO },
       ],
+      // Ep 923 adapts ch. 929 p. 13-18: he shows the spinosaurus and it is
+      // named on p. 17-18.
       devilFruit: [
         {
-          episode: 924,
+          episode: 923,
+          chapter: 929,
           value: ['dragon-dragon-fruit-ancient-model-spinosaurus'],
         },
       ],

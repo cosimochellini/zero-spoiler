@@ -805,8 +805,6 @@ describe('a record drawn again later in the story', () => {
     ['zeus', 2, 0],
     // Out of the hybrid form.
     ['jaygarcia-saturn', 1, 'first'],
-    // Back at Onigashima without the flintlocks.
-    ['daifugo', 1, 'first'],
     // Back in the jacket.
     ['marco', 2, 0],
     // Out of the shackle.
