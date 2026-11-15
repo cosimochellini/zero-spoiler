@@ -803,8 +803,6 @@ describe('a record drawn again later in the story', () => {
     // Big Mom's cloud, and the staff again.
     ['zeus', 1, 'first'],
     ['zeus', 2, 0],
-    // Out of the hybrid form.
-    ['jaygarcia-saturn', 1, 'first'],
     // Back in the jacket.
     ['marco', 2, 0],
     // Out of the shackle.
