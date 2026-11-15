@@ -2,9 +2,10 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, dots, ellipse, SEA, shadow, wave } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
 
 /**
  * The laboratory of Egghead, a giant egg cracked open along its top, seen in
@@ -38,7 +39,7 @@ const PYTHAGORAS_KEY = 'rotate(-40 80 100)'
 const MARS_TILT = 'rotate(-23 80 90)'
 /** Ginny's joint of meat, enlarged by a quarter toward the top left. */
 const GINNY_MEAT = 'translate(-20 -20) scale(1.25)'
-/** The slant Nusjuro's katana lies at, over his coins. */
+/** The slant Nusjuro's katana lies at. */
 const NUSJURO_KATANA = 'rotate(-24 80 100)'
 /** One bearded ear of Ju Peter's wheat, and the beard on it. */
 const WHEAT_EAR = 'M80 60 q-7 -12 0 -34 q7 22 0 34'
@@ -50,8 +51,300 @@ const WHEAT_RIGHT = 'rotate(36 80 118)'
 const GARLING_SWORD = 'rotate(-50 80 100)'
 /** The tilt of Bluegrass's steering wheel. */
 const BLUEGRASS_WHEEL = 'rotate(-10 80 104)'
+/** The lunarian flame on a Seraphim's back, as S-Bear's first drawing has it. */
+const LUNARIAN_FLAME =
+  'M116 106 C134 108 148 96 150 76 C145 84 140 86 136 86 C142 72 140 58 132 46 C132 60 126 68 120 70 C122 62 120 56 116 52 C118 66 116 76 114 84'
+
 /** The lean of the barrel out of Urban's hat. */
 const URBAN_BARREL = 'rotate(-14 80 96)'
+
+/**
+ * The island cloud under the Labophase once Nusjuro's ranged slash has gone
+ * through it (ch. 1115 pp. 8-11, ep. 1149): the upper part still under the
+ * egg, the lower part cut off along a straight line and dropping away, its
+ * underside hatched, and the slash itself, as the accent, running out past
+ * both ends. The cut is below the egg, which stays whole. The arc draws it
+ * full size; the place draws it with the egg, over the island.
+ */
+const EGGHEAD_CLOUD_CUT: Stroke[] = [
+  {
+    d: 'M6 142 C0 132 10 124 26 130 C28 118 38 114 44 120 C60 130 100 130 116 120 C122 114 132 118 134 130 C150 126 160 134 154 142 Z',
+  },
+  {
+    d: 'M12 154 L150 160 C158 164 156 172 146 173 Q80 182 16 168 C8 166 6 158 12 154 Z',
+  },
+  {
+    d: 'M30 170 l6 -6 M50 174 l6 -6 M108 176 l6 -6 M128 174 l6 -6',
+    role: 'ambient',
+  },
+  { d: 'M-8 150 Q80 140 168 152 Q80 145 -8 150 Z', role: 'accent' },
+]
+
+/** The egg drawn small over the island, on its cloud as the place shows it. */
+const EGGHEAD_ISLAND_SKY: Stroke[] = [
+  ...moved(EGGHEAD_EGG, EGG_OVER_ISLAND),
+  {
+    d: 'M28 86 C16 80 20 64 36 66 C38 56 50 52 56 58 C66 64 94 64 104 58 C110 52 122 56 124 66 C140 64 144 80 132 86 Z',
+  },
+  { d: 'M40 80 q10 -6 22 -2', role: 'soft' },
+]
+
+/** The island's shore line, under the egg and its cloud. */
+const EGGHEAD_ISLAND_SHORE: Stroke = {
+  d: 'M6 150 C16 140 28 136 42 138 C54 128 70 126 82 130 C96 124 116 128 128 138 C138 136 148 142 154 150',
+}
+
+/** The water line the island stands on, and the sea below it. */
+const EGGHEAD_ISLAND_SEA: Stroke[] = [
+  { d: 'M-4 150 H164', role: 'ambient' },
+  ...SEA,
+]
+
+/**
+ * The island under the Buster Call from 1139: two of the trees left, the
+ * others gone to flames, a blast going up between them and the smoke rising
+ * off the fires towards the cloud.
+ */
+const EGGHEAD_ISLAND_BURNING: Stroke[] = [
+  { d: 'M38 137 q4 -10 8 0 M120 134 q4 -10 8 0', role: 'soft' },
+  {
+    d: 'M58 129 q-3 -6 1 -11 q1 4 4 4 q0 -6 4 -9 q3 8 -1 15 M100 126 q-3 -6 1 -11 q1 4 4 4 q0 -6 4 -9 q3 8 -1 15',
+  },
+  {
+    d: 'M62 116 q-8 -8 0 -14 q8 -6 2 -14 q-4 -6 4 -10 M68 114 q-6 -8 2 -12 q8 -6 4 -12 M104 113 q-8 -8 0 -14 q8 -6 2 -14 q-4 -6 4 -10 M110 111 q-6 -8 2 -12 q8 -6 4 -12',
+    role: 'ambient',
+  },
+  { d: 'M78 128 L74 116 L80 120 L83 108 L86 120 L93 116 L89 128' },
+]
+
+/**
+ * The Thousand Sunny side on, as Lilith's robot carries it: the hull, the
+ * lion's mane at the prow with the round of its face in soft, the mast, the
+ * sail and the cabin. No flag and no face.
+ */
+const LILITH_SUNNY: Stroke[] = [
+  { d: 'M34 78 H136 C135 88 130 96 120 98 H46 C38 96 34 88 34 78' },
+  {
+    d: 'M24 65 Q28.3 60.7 29.3 66.7 Q35.3 65.8 32.6 71.2 Q38 74 32.6 76.8 Q35.3 82.2 29.3 81.3 Q28.3 87.3 24 83 Q19.7 87.3 18.7 81.3 Q12.7 82.2 15.4 76.8 Q10 74 15.4 71.2 Q12.7 65.8 18.7 66.7 Q19.7 60.7 24 65',
+  },
+  { d: circle(24, 74, 5), role: 'soft' },
+  { d: 'M84 78 V18' },
+  {
+    d: 'M70 28 H98 C101 40 101 54 98 66 H70 C67 54 67 40 70 28 Z',
+    role: 'soft',
+  },
+  { d: 'M116 78 V66 H134 V78', role: 'soft' },
+]
+
+/**
+ * One fist of the Vegaforce-01 in 3/4, as the accent: the front of the
+ * fingers with their joints in soft, the thumb across them, the side face
+ * showing its thickness and hatched, and the thin metal bar of the forearm
+ * under it, ringed.
+ */
+const LILITH_FIST: Stroke[] = [
+  {
+    d: 'M50 102 H104 Q110 102 110 108 V130 Q110 136 104 136 H56 Q50 136 50 130 Z',
+    role: 'accent',
+  },
+  { d: 'M110 106 L120 100 V128 Q120 134 110 136' },
+  { d: 'M64 102 V118 M78 102 V118 M92 102 V118', role: 'soft' },
+  { d: 'M50 120 H84 q6 0 6 6 q0 6 -6 6 H54' },
+  { d: 'M112 116 l6 -4 M112 128 l6 -4', role: 'ambient' },
+  { d: 'M70 136 V160 M90 136 V160' },
+  { d: 'M70 146 Q80 150 90 146', role: 'soft' },
+]
+
+/**
+ * Hancock's golden serpent earring, which S-Snake wears from her first
+ * appearance: the snake's body bent into a hoop, its thickness showing along
+ * the bottom and hatched underneath, scales across it in soft, the tail
+ * turning up into the hook through the ear, and the head turned out at the
+ * top with the line of its mouth and no eye. The lunarian flame on her back
+ * rises from behind it as the accent.
+ */
+const S_SNAKE_EARRING: Stroke[] = [
+  { d: 'M61.6 72.5 A42 42 0 1 0 103 79.8' },
+  { d: 'M65.1 81.9 A32 32 0 1 0 96.6 87.5' },
+  { d: 'M61.6 72.5 Q61 78 65.1 81.9' },
+  { d: 'M103 79.8 C110 70 124 66 128 72 C130 78 118 86 96.6 87.5' },
+  { d: 'M127 74 Q120 76 113 77', role: 'soft' },
+  { d: 'M62 72 C58 58 70 50 78 58' },
+  { d: 'M34.6 124 A42 42 0 0 0 117.4 124', role: 'soft' },
+  {
+    d: 'M42 136 l-3 4 M58 149 l-2 4 M94 149 l2 4 M110 136 l3 4',
+    role: 'ambient',
+  },
+  {
+    d: 'M36.5 97.6 L45.9 101.1 M43.8 139 L51.5 132.6 M76 154 V144 M108.2 139 L100.5 132.6 M118 112 H108',
+    role: 'soft',
+  },
+  { d: LUNARIAN_FLAME, role: 'accent', transform: 'translate(2 40)' },
+]
+
+/**
+ * S-Hawk's cross-shaped sword laid at a slant, shaped like Mihawk's but
+ * plainer and with a pale blade: the single edge swelling toward the point,
+ * the bevel in soft, the spine's far face showing and hatched, the long guard
+ * with its top face and its forked ends, the wrapped grip and the round
+ * pommel. The lunarian flame burns beside it as the accent.
+ */
+const S_HAWK_SWORD: Stroke[] = [
+  {
+    d: 'M76 118 V36 C76 26 80 20 88 12 C94 30 96 48 92 70 C90 88 86 104 86 118',
+    transform: S_HAWK_SLANT,
+  },
+  { d: 'M76 118 L72 114 V38 C72 28 78 18 88 12', transform: S_HAWK_SLANT },
+  {
+    d: 'M72 50 l4 -4 M72 70 l4 -4 M72 90 l4 -4 M72 108 l4 -4',
+    role: 'ambient',
+    transform: S_HAWK_SLANT,
+  },
+  {
+    d: 'M80 114 V40 C80 32 83 26 87 20',
+    role: 'soft',
+    transform: S_HAWK_SLANT,
+  },
+  { d: 'M42 118 h76 v6 h-76z', transform: S_HAWK_SLANT },
+  { d: 'M42 118 l4 -4 h76 l-4 4', role: 'soft', transform: S_HAWK_SLANT },
+  {
+    d: 'M42 118 q-6 -2 -8 -10 M42 124 q-6 2 -8 10 M118 118 q6 -2 8 -10 M118 124 q6 2 8 10',
+    transform: S_HAWK_SLANT,
+  },
+  { d: 'M76 124 V160 M84 124 V160', transform: S_HAWK_SLANT },
+  {
+    d: 'M76 134 l8 5 M76 144 l8 5 M76 154 l8 5',
+    role: 'soft',
+    transform: S_HAWK_SLANT,
+  },
+  { d: circle(80, 166, 6), transform: S_HAWK_SLANT },
+  {
+    d: 'M36 92 C18 84 8 66 10 44 C18 58 28 62 36 62 C34 72 36 82 36 92 Z',
+    role: 'accent',
+  },
+]
+
+/**
+ * York's plate heaped with food in 3/4, the heap as the accent: the rim and
+ * the plate's thickness under it, hatched, the heap's folds in soft and its
+ * far side hatched, and a joint of meat sticking out of it.
+ */
+const YORK_PLATE: Stroke[] = [
+  { d: ellipse(80, 138, 58, 16) },
+  { d: ellipse(80, 136, 44, 10), role: 'soft' },
+  { d: 'M22 138 v5 a58 16 0 0 0 116 0 v-5' },
+  {
+    d: 'M40 136 C40 120 50 108 64 108 C70 96 92 94 100 106 C112 108 120 120 120 136',
+    role: 'accent',
+  },
+  { d: 'M52 124 q10 -8 20 0 M84 116 q10 -8 22 2', role: 'soft' },
+  { d: 'M108 118 l6 -5 M112 128 l6 -5', role: 'ambient' },
+  {
+    d: 'M100 108 L122 88 M106 112 L128 92 M122 88 q-4 -8 2 -10 q6 -1 6 6 q6 -1 7 5 q-1 6 -7 4',
+  },
+  { d: 'M96 155 l6 -4 M110 154 l6 -4', role: 'ambient' },
+]
+
+/**
+ * Saturn's square black hat in 3/4, low and wide, flat on top with softened
+ * corners, the band in soft, and hatched because it is black.
+ */
+const SATURN_HAT: Stroke[] = [
+  {
+    d: 'M34 94 Q32 92 36 91 L78 84 Q80 83.5 82 84 L124 91 Q128 92 126 94 L82 103 Q80 104 78 103 Z',
+  },
+  { d: 'M34 94 V108 Q34 112 38 113.5 Q58 119 80 119 V103' },
+  { d: 'M80 119 Q102 119 122 113.5 Q126 112 126 108 V94' },
+  { d: 'M34 104 Q58 114 80 114 Q102 114 126 104', role: 'soft' },
+  {
+    d: 'M38 106 l8 -6 M44 115 l14 -10 M60 118 l14 -10 M86 118 l14 -10 M104 115 l14 -10 M64 92 l12 -6 M88 96 l12 -6',
+    role: 'ambient',
+  },
+]
+
+/** Saturn's walking cane lying in front of the hat, the round grip as the accent. */
+const SATURN_CANE: Stroke[] = [
+  { d: 'M24 176 L132 152 M25.5 182 L133.5 158' },
+  { d: 'M24 176 L25.5 182' },
+  { d: 'M133 151 c4 -12 26 -10 26 4 c0 12 -16 14 -24 6', role: 'accent' },
+]
+
+/**
+ * The Five Elders' awakened forms each wear the ribbon of dark, flaming
+ * smoke round the shoulders (ch. 1110 pp. 4-7, ep. 1144): a ribbon looping
+ * round, its far side dashed, flames licking up off it, all in ambient.
+ */
+const ELDER_SMOKE: Stroke[] = [
+  { d: 'M20 128 C50 146 110 146 140 128', role: 'ambient' },
+  { d: 'M30 122 C56 112 104 112 130 122', role: 'ambient', dashed: true },
+  {
+    d: 'M44 138 q-6 -10 2 -18 M78 142 q-6 -10 2 -18 M112 138 q-6 -10 2 -18',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Nusjuro's katana, which he always keeps in his hand, half drawn and laid
+ * at a slant: the wooden saya with its grain in soft, the band at its mouth,
+ * the bare steel with the flame-shaped temper line in soft, the four-lobed
+ * gold guard as the accent with its thickness, and the wrapped grip. Zoro
+ * names it a Kitetsu, the first, at 1150 (ch. 1117 pp. 7-8).
+ */
+const NUSJURO_SWORD: Stroke[] = [
+  { d: 'M6 94 H84 V106 H6 Q1 100 6 94 Z', transform: NUSJURO_KATANA },
+  {
+    d: 'M12 100 q12 -3 24 0 q12 3 24 0 q8 -1.5 14 0',
+    role: 'soft',
+    transform: NUSJURO_KATANA,
+  },
+  { d: 'M78 94 V106', role: 'soft', transform: NUSJURO_KATANA },
+  { d: 'M84 95.5 H116 V104.5 H84', transform: NUSJURO_KATANA },
+  {
+    d: 'M88 101.5 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0',
+    role: 'soft',
+    transform: NUSJURO_KATANA,
+  },
+  {
+    d: 'M117.6 87.5 Q122 77.5 126.4 87.5 Q132 100 126.4 112.5 Q122 122.5 117.6 112.5 Q112 100 117.6 87.5 Z',
+    role: 'accent',
+    transform: NUSJURO_KATANA,
+  },
+  {
+    d: 'M127.6 89 Q133.5 100 127.6 111',
+    role: 'soft',
+    transform: NUSJURO_KATANA,
+  },
+  { d: 'M129 94 H156 Q159 100 156 106 H129 Z', transform: NUSJURO_KATANA },
+  {
+    d: 'M132 94 l6 12 M139 94 l6 12 M146 94 l6 12 M138 106 l6 -12 M145 106 l6 -12',
+    role: 'soft',
+    transform: NUSJURO_KATANA,
+  },
+]
+
+/**
+ * Prince Grus's Marine cap in 3/4: the crown with its seam and button, its
+ * far side hatched, the band without lettering, and the oversized bill as
+ * the accent, its red underside showing and hatched.
+ */
+const GRUS_CAP: Stroke[] = [
+  { d: 'M36 114 C34 76 104 70 110 112' },
+  { d: 'M72 74 Q70 92 72 112', role: 'soft' },
+  { d: dots([[72, 74]]) },
+  { d: 'M34 112 Q72 122 112 110 V120 Q72 132 34 122 Z' },
+  {
+    d: 'M108 112 C128 112 146 118 154 128 C150 136 138 138 126 136 C118 134 112 130 108 124',
+    role: 'accent',
+  },
+  { d: 'M154 128 C140 130 122 128 110 120', role: 'soft' },
+  { d: 'M122 130 l6 -4 M134 133 l6 -4 M144 132 l5 -4', role: 'ambient' },
+  { d: 'M94 84 l8 -6 M98 96 l10 -8 M100 108 l8 -6', role: 'ambient' },
+]
+
+/** Lilith's fist knocked over into the sea once the robot is wrecked. */
+const LILITH_FALLEN = 'translate(4 12) rotate(-80 80 130)'
+/** The slant York's pistol lies at across her plate. */
+const YORK_PISTOL = 'rotate(-14 80 160)'
 
 /** The drawings of the records filed in the egghead stretch of the route. */
 export const eggheadArt = {
@@ -59,6 +352,7 @@ export const eggheadArt = {
   // 1090: the giant egg cracked open along its top, its broken rim the
   // accent, standing on the island cloud that holds it over the water.
   // No laser bands round the cloud: the Frontier Dome is shown at 1099.
+  // The cloud cut through by Nusjuro at 1149, in `eggheadRedrawn`.
   'egghead': [
     ...EGGHEAD_EGG,
     {
@@ -71,22 +365,16 @@ export const eggheadArt = {
   // The island from the sea, as it first shows at 1090: a low island dotted
   // with trees, and high over it the cloud with the cracked egg of the
   // laboratory on top, the egg of the arc drawn small. Bombarded by the
-  // Buster Call from 1139, in `eggheadRedrawn`.
+  // Buster Call from 1139 and its cloud cut through by Nusjuro at 1149, in
+  // `eggheadRedrawn`.
   'egghead-island': [
-    ...EGGHEAD_EGG.map((stroke) => ({ ...stroke, transform: EGG_OVER_ISLAND })),
-    {
-      d: 'M28 86 C16 80 20 64 36 66 C38 56 50 52 56 58 C66 64 94 64 104 58 C110 52 122 56 124 66 C140 64 144 80 132 86 Z',
-    },
-    { d: 'M40 80 q10 -6 22 -2', role: 'soft' },
-    {
-      d: 'M6 150 C16 140 28 136 42 138 C54 128 70 126 82 130 C96 124 116 128 128 138 C138 136 148 142 154 150',
-    },
+    ...EGGHEAD_ISLAND_SKY,
+    EGGHEAD_ISLAND_SHORE,
     {
       d: 'M38 137 q4 -10 8 0 M58 130 q5 -12 10 0 M78 128 q5 -11 10 0 M100 127 q5 -12 10 0 M120 134 q4 -10 8 0',
       role: 'soft',
     },
-    { d: 'M-4 150 H164', role: 'ambient' },
-    ...SEA,
+    ...EGGHEAD_ISLAND_SEA,
   ],
 
   // The apple core on its shaft that stands on Vegapunk's sliced head, set
@@ -138,130 +426,29 @@ export const eggheadArt = {
     shadow(82, 178, 50),
   ],
 
-  // The two fists of the Vegaforce-01, her giant robot, rising out of the
-  // sea with the Sunny held across them, as she carries the ship at 1091:
-  // the fists as the accent, their fingers in soft, the right side of each
-  // fist and forearm showing its thickness, the forearms ringed, the far
-  // side of the right one hatched. The Sunny side on, the lion's mane at the
-  // prow and no flag. No helmet: she wears hers only in the cockpit at 1090.
-  'lilith': [
-    {
-      d: 'M136 84 H28 C29 96 34 106 42 112 M80 116 H90 M128 108 C132 102 135 94 136 84',
-    },
-    { d: 'M118 84 V70 H136 V84', role: 'soft' },
-    {
-      d: 'M24 65 Q28.3 60.7 29.3 66.7 Q35.3 65.8 32.6 71.2 Q38 74 32.6 76.8 Q35.3 82.2 29.3 81.3 Q28.3 87.3 24 83 Q19.7 87.3 18.7 81.3 Q12.7 82.2 15.4 76.8 Q10 74 15.4 71.2 Q12.7 65.8 18.7 66.7 Q19.7 60.7 24 65',
-    },
-    { d: circle(24, 74, 5), role: 'soft' },
-    { d: 'M80 84 V24 M106 84 V40' },
-    {
-      d: 'M66 32 H94 C97 44 97 58 94 70 H66 C63 58 63 44 66 32 Z',
-      role: 'soft',
-    },
-    {
-      d: 'M42 102 C42 95 46 92 52 92 H64 C70 92 74 95 74 102 V124 C74 131 70 134 64 134 H52 C46 134 42 131 42 124 Z M90 102 C90 95 94 92 100 92 H112 C118 92 122 95 122 102 V124 C122 131 118 134 112 134 H100 C94 134 90 131 90 124 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M64 92 C72 90 80 94 80 102 V122 C80 130 76 134 70 135 M112 92 C120 90 128 94 128 102 V122 C128 130 124 134 118 135',
-    },
-    {
-      d: 'M50 92 C48 100 48 106 50 110 M58 92 V110 M66 92 C68 100 68 106 66 110 M98 92 C96 100 96 106 98 110 M106 92 V110 M114 92 C116 100 116 106 114 110',
-      role: 'soft',
-    },
-    {
-      d: 'M44 134 V158 M72 134 V158 M78 132 V156 M92 134 V158 M120 134 V158 M126 132 V156',
-    },
-    {
-      d: 'M44 142 Q58 148 72 142 M44 150 Q58 156 72 150 M92 142 Q106 148 120 142 M92 150 Q106 156 120 150',
-      role: 'soft',
-    },
-    {
-      d: 'M122 106 l6 -5 M122 118 l6 -5 M122 130 l6 -5 M120 144 l6 -5',
-      role: 'ambient',
-    },
-    ...SEA,
-  ],
+  // One fist of the Vegaforce-01, her giant robot, rising out of the sea
+  // with the Sunny held on it, as she carries the ship up to the Labophase
+  // (ch. 1064, ep. 1094; the robot first lifts the ship out of the water at
+  // 1090): the fist as the accent, in 3/4, and the Sunny side on above it.
+  // No helmet: she wears hers only in the cockpit. Wrecked at 1126, in
+  // `eggheadRedrawn`.
+  'lilith': [...LILITH_SUNNY, ...LILITH_FIST, ...SEA],
 
-  // One of her golden serpent earrings, the same as Hancock's: a snake with
-  // a wavy tail bent into a hoop, its head turned out at the top with the
-  // line of its mouth and no eye, the hook through the ear at the tail, the
-  // band's second face showing its thickness and hatched underneath, scales
-  // in soft, and the lunarian flame on her back rising from behind it as the
-  // accent. She wears both from her first appearance (1087).
-  's-snake': [
-    {
-      d: 'M53.6 49.7 L51.1 54.5 L49.9 60 L50.1 65.3 L51 70.1 L52.2 74.7 L53.3 79.1 L54 83.3 L54.1 87.3 L53.4 91.3 L51.4 96 L48.7 102.2 L47 109.3 L46.4 116.7 L47 124.2 L48.8 131.4 L51.8 138.1 L56.3 144.1 L62.2 148.8 L69.5 151.9 L78 153 L86 151.9 L93 148.9 L98.6 144 L102.9 137.8 L106 130.6 L108 122.5 L109 113.8 L109.1 104.6 L108.4 95 L106.9 85.3',
-    },
-    {
-      d: 'M62.4 54.3 L60.5 57.9 L59.9 60.9 L60 64.2 L60.7 68 L61.8 72.3 L63 77 L63.9 82.3 L64.1 88 L63 94.1 L60.6 100 L58.2 105.4 L56.9 110.9 L56.4 116.7 L56.9 122.6 L58.2 128.1 L60.5 133 L63.5 137.1 L67.3 140.2 L72.1 142.2 L78 143 L83.3 142.3 L87.6 140.4 L91.2 137.3 L94.2 133 L96.5 127.4 L98.1 120.8 L99 113.2 L99.1 104.9 L98.5 96.1 L97.1 86.7',
-    },
-    {
-      d: 'M43 124.8 L45 132.7 L48.4 140.2 L53.4 146.8 L60.2 152.3 L68.5 155.8 L78 157 L87.1 155.8 L95.1 152.2 L101.6 146.7 L106.4 139.7 L109.8 131.8 L111.9 123.2',
-      role: 'soft',
-    },
-    {
-      d: 'M48 136 l-3 3 M58 148 l-2 4 M78 153 v4 M96 148 l3 3 M107 132 l4 1',
-      role: 'ambient',
-    },
-    { d: 'M53.6 49.7 Q56 44 62.4 54.3' },
-    { d: 'M58 47 C56 34 68 28 74 36' },
-    {
-      d: 'M97.1 86.7 C92 74 100 64 112 62 C124 60 133 63 131 69 C129 76 116 80 106.9 85.3',
-    },
-    { d: 'M131 68 Q121 71 112 72', role: 'soft' },
-    {
-      d: 'M53.3 79.1 L63 77 M47 124.2 L56.9 122.6 M69.5 151.9 L72.1 142.2 M108 122.5 L98.1 120.8 M54 98 L62 99',
-      role: 'soft',
-    },
-    {
-      d: 'M109 134 C128 128 142 114 148 92 C138 104 128 110 120 110 C122 118 118 124 110 122',
-      role: 'accent',
-    },
-    { d: 'M114 128 C126 124 134 116 138 106', role: 'soft' },
-  ],
+  // Her serpent earring, the same as Hancock's, with her lunarian flame
+  // behind it, as she wears it from her first appearance (1087). Her
+  // Love-Love beam is added at 1101, in `eggheadRedrawn`.
+  's-snake': S_SNAKE_EARRING,
 
-  // His cross-shaped sword laid at a slant, shaped like Mihawk's but plainer
-  // and with a pale blade: the single edge swelling toward the point, the
-  // bevel in soft, the long guard forked at both ends, the wrapped grip and
-  // the round pommel. The lunarian flame burns beside it as the accent.
-  // Both are with him from his first appearance (1087).
-  's-hawk': [
-    {
-      d: 'M76 118 V36 C76 26 80 20 88 12 C94 30 96 48 92 70 C90 88 86 104 86 118',
-      transform: S_HAWK_SLANT,
-    },
-    {
-      d: 'M80 114 V40 C80 32 83 26 87 20',
-      role: 'soft',
-      transform: S_HAWK_SLANT,
-    },
-    { d: 'M42 118 h76 v6 h-76z', transform: S_HAWK_SLANT },
-    {
-      d: 'M42 118 q-6 -2 -8 -10 M42 124 q-6 2 -8 10 M118 118 q6 -2 8 -10 M118 124 q6 2 8 10',
-      transform: S_HAWK_SLANT,
-    },
-    { d: 'M76 124 V160 M84 124 V160', transform: S_HAWK_SLANT },
-    {
-      d: 'M76 134 l8 5 M76 144 l8 5 M76 154 l8 5',
-      role: 'soft',
-      transform: S_HAWK_SLANT,
-    },
-    { d: circle(80, 166, 6), transform: S_HAWK_SLANT },
-    {
-      d: 'M36 92 C18 84 8 66 10 44 C18 58 28 62 36 62 C34 72 36 82 36 92 Z',
-      role: 'accent',
-    },
-    shadow(80, 188, 46),
-  ],
+  // His cross-shaped sword and the lunarian flame, both with him from his
+  // first appearance (1087), over a shadow. His leg turned into a blade is
+  // added at 1108, in `eggheadRedrawn`.
+  's-hawk': [...S_HAWK_SWORD, shadow(80, 188, 46)],
 
   // Kuma's spotted bucket hat with its two round bear ears, the near one
-  // whole, and the flame of a lunarian rising from behind its crown.
+  // whole, and the flame of a lunarian rising from behind its crown. His
+  // paw pads are added at 1099, in `eggheadRedrawn`.
   's-bear': [
-    {
-      d: 'M116 106 C134 108 148 96 150 76 C145 84 140 86 136 86 C142 72 140 58 132 46 C132 60 126 68 120 70 C122 62 120 56 116 52 C118 66 116 76 114 84',
-      role: 'accent',
-    },
+    { d: LUNARIAN_FLAME, role: 'accent' },
     { d: 'M44 112 C40 82 58 64 80 64 C102 64 118 80 116 112' },
     { d: 'M44 112 Q80 124 116 112', role: 'soft' },
     {
@@ -278,23 +465,32 @@ export const eggheadArt = {
     shadow(80, 180, 58),
   ],
 
-  // A dorsal fin, a wing of flame, the sea climbing either side of it.
+  // His webbed hand coming up out of a floor that ripples round it like
+  // water, the way he swims through the ground at Egghead from his first
+  // fight (ch. 1065 p. 9, ep. 1095): the forearm with its far side hatched,
+  // the webbing between the fingers in soft, the rings spreading over the
+  // floor, drops thrown up, and his lunarian flame breaking the surface
+  // behind as the accent.
   's-shark': [
-    { d: 'M52 140 C64 92 84 62 104 44 C104 84 96 118 92 140 Z' },
-    { d: 'M92 96 C84 108 74 122 66 132', role: 'soft' },
+    { d: ellipse(80, 152, 26, 6) },
+    { d: ellipse(80, 154, 46, 11), role: 'ambient', dashed: true },
+    { d: ellipse(80, 156, 68, 16), role: 'ambient', dashed: true },
+    { d: 'M68 150 C68 130 70 112 72 96 M92 150 C92 130 90 112 90 96' },
+    { d: 'M86 118 l5 -4 M86 132 l5 -4 M86 146 l5 -4', role: 'ambient' },
     {
-      d: 'M104 122 C122 116 136 102 140 82 C130 96 118 102 110 102 C112 112 110 118 104 122 Z',
-      role: 'accent',
+      d: 'M72 96 L60 84 L48 56 L54 53 L66 74 L64 40 L71 39 L76 70 L82 38 L89 39 L88 70 L98 44 L105 47 L96 78 L110 68 L115 73 L90 96',
     },
-    { d: 'M36 150 C30 128 34 112 40 100', role: 'ambient', dashed: true },
-    { d: 'M128 150 C136 126 132 110 126 98', role: 'ambient', dashed: true },
-    { d: wave(152), role: 'ambient' },
-    { d: wave(166), role: 'ambient' },
+    {
+      d: 'M52 66 Q58 70 66 62 M68 56 Q74 62 84 56 M88 58 Q94 64 101 60 M98 74 Q104 78 112 71',
+      role: 'soft',
+    },
+    { d: LUNARIAN_FLAME, role: 'accent', transform: 'translate(-10 42)' },
     {
       d: dots([
-        [46, 92],
-        [128, 90],
-        [80, 40],
+        [42, 136],
+        [52, 124],
+        [116, 112],
+        [34, 146],
       ]),
       role: 'ambient',
     },
@@ -375,52 +571,31 @@ export const eggheadArt = {
     },
   ],
 
-  // A plate heaped with food in 3/4, the heap as the accent, a joint of meat
-  // sticking out of it and a bone she has already picked clean beside the
-  // plate: she eats for all the satellites at 1095.
+  // Her plate heaped with food, a joint of meat sticking out of it and a bone
+  // she has already picked clean beside the plate: she eats for all the
+  // satellites from her first appearance (1095). Her pistol across the plate
+  // from 1111, in `eggheadRedrawn`.
   'york': [
-    { d: ellipse(80, 140, 58, 16) },
-    { d: ellipse(80, 138, 44, 10), role: 'soft' },
-    {
-      d: 'M40 136 C40 120 50 108 64 108 C70 96 92 94 100 106 C112 108 120 120 120 136',
-      role: 'accent',
-    },
-    { d: 'M52 124 q10 -8 20 0 M84 116 q10 -8 22 2', role: 'soft' },
-    { d: 'M104 110 L126 90 M126 90 q-2 -8 4 -9 q5 0 4 6 q6 -1 7 4 q-1 6 -7 4' },
+    ...YORK_PLATE,
     {
       d: 'M14 172 L46 164 M14 172 q-7 -1 -6 -6 q2 -4 7 -1 M14 172 q-4 6 -8 3 M46 164 q2 -6 7 -4 q3 4 -2 7 q5 3 1 6 q-5 1 -6 -5',
     },
-    { d: 'M98 150 l6 -4 M110 150 l6 -4', role: 'ambient' },
-    shadow(80, 162, 58),
+    shadow(80, 166, 58),
   ],
 
-  // His square black hat in 3/4, flat on top with softened corners and
-  // hatched because it is black,
-  // and his walking cane lying in front of it, the round grip as the accent.
-  // He has both from his first appearance (151) and on the way to Egghead
-  // (1105).
-  'jaygarcia-saturn': [
-    {
-      d: 'M44 92 Q42 90 46 89 L78 82 Q80 81.5 82 82 L114 89 Q118 90 116 92 L82 101 Q80 102 78 101 Z',
-    },
-    { d: 'M44 92 V116 Q44 120 48 122 Q62 128 80 128 V102' },
-    { d: 'M80 128 Q98 128 112 122 Q116 120 116 116 V92' },
-    { d: 'M44 110 Q60 120 80 120 Q100 120 116 110', role: 'soft' },
-    {
-      d: 'M48 104 l12 -8 M50 116 l16 -11 M62 124 l16 -11 M84 124 l16 -11 M100 122 l16 -11 M90 108 l16 -11',
-      role: 'ambient',
-    },
-    { d: 'M24 176 L132 152 M25.5 182 L133.5 158' },
-    { d: 'M24 176 L25.5 182' },
-    { d: 'M133 151 c4 -12 26 -10 26 4 c0 12 -16 14 -24 6', role: 'accent' },
-    shadow(80, 144, 44),
-  ],
+  // His square black hat and his walking cane, the grip as the accent: he
+  // has both from his first appearance (151) and on the way to Egghead
+  // (1105). His human-beast form at 1128 and his death at 1155, in
+  // `eggheadRedrawn`.
+  'jaygarcia-saturn': [...SATURN_HAT, ...SATURN_CANE, shadow(80, 132, 50)],
 
   // A joint of meat on the bone with a bite taken out of it, the bite as the
   // accent: she has one when she first turns up beside Ivankov, biting it in
   // her debut panel (ch. 1095 p. 15, boxed "Slave Jinny") and holding it up
   // under the caption "Emporio Ivankov and Ginny, slaves" (ep. 1129,
-  // 21:13). The bone ends in a single knuckle, the meat's underside hatched.
+  // 21:13). In 3/4: the meat's cut end round the bone in soft, a fold and a
+  // light along its top, its underside hatched, the bone ending in a
+  // knuckle. Her grave from 1132, in `eggheadRedrawn`.
   'ginny': [
     {
       d: 'M44 120 C38 92 60 72 84 74 C92 72 96 76 98 80 q-6 4 -4 10 q-6 4 -2 10 q-6 4 -2 10 C102 112 98 118 92 122 C76 132 50 134 44 120 Z',
@@ -436,23 +611,31 @@ export const eggheadArt = {
       role: 'soft',
       transform: GINNY_MEAT,
     },
+    { d: 'M58 84 q10 -6 20 -4', role: 'soft', transform: GINNY_MEAT },
     {
       d: 'M52 126 l8 -6 M64 128 l10 -8 M80 124 l8 -6',
       role: 'ambient',
       transform: GINNY_MEAT,
+    },
+    {
+      d: ellipse(97, 115, 6, 9),
+      role: 'soft',
+      transform: `${GINNY_MEAT} rotate(-50 97 115)`,
     },
     { d: 'M94 118 L124 142 M100 112 L130 136', transform: GINNY_MEAT },
     {
       d: 'M124 142 q-4 8 4 10 q6 2 8 -4 q8 0 8 -8 q-2 -6 -10 -4 q0 -6 -8 -4',
       transform: GINNY_MEAT,
     },
+    { d: 'M130 146 q4 -2 6 -6', role: 'soft', transform: GINNY_MEAT },
     shadow(84, 180, 54),
   ],
 
   // A globe tilted on its stand: a title emblem, not an object he holds. It
   // stands for Warrior God of Environment, the title he is named with at
   // ch. 1086 / ep. 1120. The equator is the accent, a meridian in soft, the
-  // half ring that holds it, and its night side hatched.
+  // half ring that holds it, and its night side hatched. His Itsumade form
+  // takes its place at 1144, in `eggheadRedrawn`.
   'marcus-mars': [
     { d: circle(80, 90, 44) },
     { d: ellipse(80, 90, 44, 12), role: 'accent', transform: MARS_TILT },
@@ -470,7 +653,8 @@ export const eggheadArt = {
   // A pair of scales in 3/4: a title emblem, not an object he holds. It
   // stands for Warrior God of Justice, the title he is named with at
   // ch. 1086 / ep. 1120. The beam is the accent, tipped toward the near pan,
-  // which hangs lower and larger, the undersides of the pans hatched.
+  // which hangs lower and larger, the undersides of the pans hatched. His
+  // Fengxi form takes its place at 1144, in `eggheadRedrawn`.
   'topman-warcury': [
     { d: 'M80 44 V160' },
     { d: 'M76 44 L80 38 L84 44 L80 50 Z', role: 'soft' },
@@ -487,45 +671,17 @@ export const eggheadArt = {
     shadow(80, 182, 34),
   ],
 
-  // His katana, which he always keeps in his hand, half drawn as he draws it
-  // on Cobra, laid at a slant: the pale sheath with its seam, the bare steel
-  // as the accent, the guard, and the wrapped grip. Under it, a short stack
-  // of coins with soft rims: a title emblem, not something he holds. It
-  // stands for Warrior God of Finance, the title he is named with at
-  // ch. 1086 / ep. 1120.
-  'ethanbaron-v-nusjuro': [
-    { d: ellipse(48, 164, 24, 6) },
-    { d: 'M24 164 v4 a24 6 0 0 0 48 0 v-4' },
-    { d: ellipse(52, 156, 24, 6) },
-    { d: 'M28 156 v4 M76 156 v4', role: 'soft' },
-    { d: ellipse(46, 148, 24, 6) },
-    { d: ellipse(46, 148, 18, 4), role: 'soft' },
-    { d: 'M22 148 v4 M70 148 v4', role: 'soft' },
-    {
-      d: 'M16 96 H88 L92 100 L88 104 H16 Q12 100 16 96 Z',
-      transform: NUSJURO_KATANA,
-    },
-    { d: 'M24 100 H84', role: 'soft', transform: NUSJURO_KATANA },
-    {
-      d: 'M92 98 H120 Q124 100 120 102 H92',
-      role: 'accent',
-      transform: NUSJURO_KATANA,
-    },
-    { d: ellipse(124, 100, 3, 12), transform: NUSJURO_KATANA },
-    { d: 'M127 96 H152 Q155 100 152 104 H127 Z', transform: NUSJURO_KATANA },
-    {
-      d: 'M130 96 l5 8 M136 96 l5 8 M142 96 l5 8 M135 104 l5 -8 M141 104 l5 -8',
-      role: 'soft',
-      transform: NUSJURO_KATANA,
-    },
-    shadow(70, 182, 60),
-  ],
+  // His katana alone, half drawn: he always keeps it in his hand, from his
+  // first appearance (151) to Egghead, where his record opens at 1120. His
+  // skeletal horse's foreleg is added at 1144, in `eggheadRedrawn`.
+  'ethanbaron-v-nusjuro': [...NUSJURO_SWORD, shadow(80, 176, 60)],
 
   // A sheaf of wheat bound at its waist, the binding as the accent: a title
   // emblem, not something he holds. It stands for Warrior God of
   // Agriculture, the title he is named with at ch. 1086 / ep. 1120. Three
   // bearded ears fan out on top, the stalks splay out under the binding, and
-  // the far stalks are hatched.
+  // the far stalks are hatched. His Sandworm form takes its place at 1144,
+  // in `eggheadRedrawn`.
   'shepherd-ju-peter': [
     { d: 'M72 118 L56 166 M76 118 L70 170 M84 118 L90 170 M88 118 L104 166' },
     {
@@ -542,55 +698,59 @@ export const eggheadArt = {
     shadow(80, 180, 40),
   ],
 
-  // A pair of headphones on their band, a small teddy bear hanging from a
-  // cord below them, as on her backpack.
+  // Her pink headphones in 3/4, as she wears them from her first appearance
+  // (1090): the band, the near cup as the accent with its blue stripes in
+  // soft and its back rim hatched, the far cup turned away. Below, the strap
+  // of her backpack with Kopy-senpai, her teddy bear, hanging from it on a
+  // cord. No face on the bear.
   'hibari': [
-    { d: 'M42 104 C42 46 118 46 118 104' },
-    { d: 'M50 102 C50 60 110 60 110 102', role: 'soft' },
-    { d: ellipse(42, 112, 12, 18), role: 'accent' },
-    { d: ellipse(118, 112, 12, 18), role: 'accent' },
-    { d: 'M80 96 V136', role: 'soft' },
-    { d: circle(80, 148, 12) },
-    { d: [circle(70, 137, 4), circle(90, 137, 4)].join(' ') },
-    { d: ellipse(80, 172, 14, 11) },
-    shadow(80, 188, 44),
+    { d: 'M40 96 C38 44 118 40 120 92' },
+    { d: 'M48 94 C48 54 110 52 112 90', role: 'soft' },
+    { d: ellipse(42, 106, 13, 19), role: 'accent' },
+    { d: 'M42 87 C34 87 28 95 28 106 C28 117 34 125 42 125' },
+    { d: 'M30 100 l5 -4 M30 112 l5 -4', role: 'ambient' },
+    { d: ellipse(120, 102, 8, 16) },
+    { d: 'M34 98 h16 M32 106 h20 M34 114 h16', role: 'soft' },
+    { d: 'M24 146 L136 128 M26 154 L138 136' },
+    { d: circle(82, 141, 3), role: 'soft' },
+    { d: 'M82 144 V152' },
+    { d: circle(82, 161, 9) },
+    { d: [circle(74, 153, 3), circle(90, 153, 3)].join(' ') },
+    { d: ellipse(82, 179, 11, 8) },
+    shadow(82, 194, 40),
   ],
-  // A Marine cap with a bill that runs far out past the crown, over the
-  // fur collar of a coat.
+  // His Marine cap with its oversized bill, "his most noticeable trait",
+  // over the fur collar of his coat, as he first appears (1090). His clay
+  // from 1114, in `eggheadRedrawn`.
   'prince-grus': [
-    { d: 'M34 118 C34 74 110 70 112 118' },
-    { d: 'M30 118 h86 v10 h-86z' },
-    { d: 'M52 112 C58 96 84 92 96 106', role: 'soft' },
+    ...GRUS_CAP,
     {
-      d: 'M116 124 C132 126 146 132 150 142 C136 146 124 140 112 130 Z',
-      role: 'accent',
+      d: 'M22 160 q6 -10 14 -3 q8 -10 16 -2 q8 -10 16 -1 q8 -10 16 0 q8 -10 16 -1 q8 -10 16 -2 q8 -8 14 3',
     },
-    { d: 'M30 128 C58 140 96 142 116 128', role: 'accent' },
-    {
-      d: 'M30 170 q8 -12 16 0 q8 -12 16 0 q8 -12 16 0 q8 -12 16 0 q8 -12 16 0 q8 -12 16 0',
-      role: 'soft',
-    },
-    shadow(80, 188, 50),
+    { d: 'M30 166 Q80 178 134 166', role: 'soft' },
+    shadow(80, 186, 54),
   ],
-  // Her spiked choker standing on its edge in 3/4, as she wears it from her
-  // first appearance (1090): the band with its thickness, the spikes round
-  // it as the accent, the inside of the band hatched where it turns away,
-  // and one of her hoop earrings beside it.
+  // Her spiked choker lying open in 3/4, as she wears it from her first
+  // appearance (1090): the band with its thickness, hatched at the front,
+  // the two cut ends of the opening at the back, seven large spikes round it
+  // as the accent, and one of her hoop earrings beside it.
   'doll': [
-    { d: ellipse(72, 100, 34, 46) },
-    { d: 'M72 54 C96 54 112 76 112 100 C112 124 96 146 72 146', role: 'soft' },
-    { d: ellipse(72, 100, 26, 37) },
+    { d: 'M89.1 106.1 A50 19 0 1 1 54.9 106.1' },
+    { d: 'M85.7 109.7 A40 15.2 0 1 1 58.3 109.7' },
+    { d: 'M89.1 106.1 L85.7 109.7 M54.9 106.1 L58.3 109.7' },
+    { d: 'M22 124 V132 A50 19 0 0 0 122 132 V124' },
     {
-      d: 'M67.3 54.5 L72 39.3 L76.7 54.5 M90 61 L100.8 53.5 L97.3 69.2 M104.3 85.8 L116.2 89.5 L106 98.4 M103.5 117.2 L110.9 130.4 L98.8 128.3 M88 140.6 L87.3 157.1 L79.1 145 M64.9 145 L56.7 157.1 L56 140.6 M45.2 128.3 L33.1 130.4 L40.5 117.2 M38 98.4 L27.8 89.5 L39.7 85.8 M46.7 69.2 L43.2 53.5 L54 61',
-      role: 'accent',
-    },
-    {
-      d: 'M86 72 l6 -6 M90 86 l8 -8 M92 100 l8 -8 M90 114 l8 -8 M86 128 l6 -6',
+      d: 'M34 139 l4 -5 M52 144 l4 -5 M92 144 l4 -5 M110 139 l4 -5',
       role: 'ambient',
     },
-    { d: circle(134, 162, 10) },
-    { d: 'M134 152 q4 -8 0 -12', role: 'soft' },
-    shadow(84, 184, 54),
+    {
+      d: 'M33.1 136 L10.5 137.5 L25.3 130.8 M58.2 142.3 L42 148.5 L44 139.8 M88.3 142 L84.3 150.6 L72.9 143 M112.5 135.2 L122.2 143.1 L101.4 139.4 M122 124.3 L141.9 128.7 L119.3 130.2 M23.9 118.8 L7.7 112.6 L30.5 113.4 M113.5 113.4 L136.3 112.6 L120.1 118.8',
+      role: 'accent',
+    },
+    { d: circle(128, 66, 13) },
+    { d: 'M119 74 A13 13 0 0 0 139 72', role: 'soft' },
+    { d: 'M128 53 q4 -8 0 -12', role: 'soft' },
+    shadow(76, 162, 60),
   ],
 
   // A coiled whip lying on its side, the handle up and the lash running
@@ -1057,9 +1217,6 @@ export const eggheadArt = {
   ],
 } satisfies Drawings
 
-/** Saturn's hat, as his first drawing has it. */
-const SATURN_HAT = eggheadArt['jaygarcia-saturn'].slice(0, 5)
-
 /** Vegapunk's apple core on its shaft, without the shadow under it. */
 const VEGAPUNK_APPLE = eggheadArt.vegapunk.slice(0, -1)
 
@@ -1267,8 +1424,8 @@ export const eggheadRedrawn: Redrawings = {
   // accent, their outer curves hatched because they are black. The cane in
   // front has grown with him into a long twisted stick with a lumpy knot of
   // root for a head. He is first seen in this human-beast form on Egghead at
-  // 1128 (ch. 1094), and Joy Boy's Haki forces him out of it at 1153
-  // (ch. 1122), where he is the first drawing again. At 1155 (ch. 1125
+  // 1128 (ch. 1094 p. 14). A Zoan form is a lasting stage, so Joy Boy's Haki
+  // forcing him out of it at 1153 changes nothing here. At 1155 (ch. 1125
   // p. 14) Im kills him in front of the vice admirals and leaves only his
   // bones: his hat knocked over onto its side, the cane lying where it
   // was, a bone beside them and smoke rising. No skull, which would be a
@@ -1280,15 +1437,15 @@ export const eggheadRedrawn: Redrawings = {
       value: [
         ...SATURN_HAT,
         {
-          d: 'M44 126 C20 134 0 116 6 88 C10 70 22 56 38 48 C26 64 18 84 24 100 C28 110 36 114 44 112',
+          d: 'M36 112.5 C18 118.5 3 105 7.5 84 C10.5 70.5 19.5 60 31.5 54 C22.5 66 16.5 81 21 93 C24 100.5 30 103.5 36 102',
           role: 'accent',
         },
         {
-          d: 'M116 126 C140 134 160 116 154 88 C150 70 138 56 122 48 C134 64 142 84 136 100 C132 110 124 114 116 112',
+          d: 'M124 112.5 C142 118.5 157 105 152.5 84 C149.5 70.5 140.5 60 128.5 54 C137.5 66 143.5 81 139 93 C136 100.5 130 103.5 124 102',
           role: 'accent',
         },
         {
-          d: 'M9 106 l9 -6 M18 120 l10 -7 M151 106 l-9 -6 M142 120 l-10 -7',
+          d: 'M9.8 97.5 l6.8 -4.5 M16.5 108 l7.5 -5.2 M150.2 97.5 l-6.8 -4.5 M143.5 108 l-7.5 -5.2',
           role: 'ambient',
         },
         { d: 'M14 182 C40 176 60 178 84 170 C102 164 116 162 130 155' },
@@ -1301,16 +1458,15 @@ export const eggheadRedrawn: Redrawings = {
         {
           d: 'M130 155 C130 147 136 140 144 141 C150 138 155 143 153 149 C155 155 149 160 143 158 C139 162 134 162 134 161',
         },
-        ...eggheadArt['jaygarcia-saturn'].slice(-1),
+        shadow(80, 132, 50),
       ],
     },
-    { episode: 1153, chapter: 1122, value: eggheadArt['jaygarcia-saturn'] },
     {
       episode: 1155,
       chapter: 1125,
       value: [
         ...moved(SATURN_HAT, 'translate(-14 34) rotate(-74 80 110)'),
-        ...eggheadArt['jaygarcia-saturn'].slice(5, 8),
+        ...SATURN_CANE,
         {
           d: 'M96 140 q-5 -4 -2 -8 q4 -2 6 2 L124 126 q2 -5 6 -3 q3 4 -2 7 q4 3 1 6 q-4 2 -6 -2 L104 144 q-1 5 -6 3 q-3 -3 2 -7',
         },
@@ -1364,23 +1520,275 @@ export const eggheadRedrawn: Redrawings = {
   // smoking when the arc ends (ch. 1125 p. 3). The egg on its cloud stands
   // whole above, as the first drawing has it; below, two of the trees are
   // gone to flames, a blast goes up between them and the smoke rises off
-  // the fires towards the cloud.
+  // the fires towards the cloud. Then Nusjuro's ranged slash cuts through
+  // the cloud under the Labophase (ch. 1115 pp. 8-11, ep. 1149): the egg
+  // whole on the cut cloud, drawn small with it over the burning island.
   'egghead-island': [
     {
       episode: 1139,
       chapter: 1105,
       value: [
-        ...eggheadArt['egghead-island'].slice(0, 8),
-        { d: 'M38 137 q4 -10 8 0 M120 134 q4 -10 8 0', role: 'soft' },
+        ...EGGHEAD_ISLAND_SKY,
+        EGGHEAD_ISLAND_SHORE,
+        ...EGGHEAD_ISLAND_BURNING,
+        ...EGGHEAD_ISLAND_SEA,
+      ],
+    },
+    {
+      episode: 1149,
+      chapter: 1115,
+      value: [
+        ...moved(softened(EGGHEAD_EGG), EGG_OVER_ISLAND),
+        ...moved(EGGHEAD_CLOUD_CUT, EGG_OVER_ISLAND),
+        EGGHEAD_ISLAND_SHORE,
+        ...EGGHEAD_ISLAND_BURNING,
+        ...EGGHEAD_ISLAND_SEA,
+      ],
+    },
+  ],
+  // The egg whole on its cloud, the cloud cut through under it by Nusjuro's
+  // ranged slash (ch. 1115 pp. 8-11, ep. 1149), its lower part dropping
+  // away; the slash is the accent now, so the egg's rim goes soft.
+  'egghead': [
+    {
+      episode: 1149,
+      chapter: 1115,
+      value: [...softened(EGGHEAD_EGG), ...EGGHEAD_CLOUD_CUT, ...SEA.slice(2)],
+    },
+  ],
+  // The Vegaforce-01 wrecked: Luffy is sent crashing through it by Kizaru
+  // and it explodes (ch. 1092, ep. 1126). The fist lies over on its side in
+  // the sea with a crack running across it as the accent, the Sunny gone
+  // from it, chips flying and smoke going up.
+  'lilith': [
+    {
+      episode: 1126,
+      chapter: 1092,
+      value: [
+        ...moved(softened(LILITH_FIST), LILITH_FALLEN),
         {
-          d: 'M58 129 q-3 -6 1 -11 q1 4 4 4 q0 -6 4 -9 q3 8 -1 15 M100 126 q-3 -6 1 -11 q1 4 4 4 q0 -6 4 -9 q3 8 -1 15',
+          d: 'M60 102 L68 112 L62 120 L74 128 L70 136',
+          role: 'accent',
+          transform: LILITH_FALLEN,
         },
         {
-          d: 'M62 116 q-8 -8 0 -14 q8 -6 2 -14 q-4 -6 4 -10 M68 114 q-6 -8 2 -12 q8 -6 4 -12 M104 113 q-8 -8 0 -14 q8 -6 2 -14 q-4 -6 4 -10 M110 111 q-6 -8 2 -12 q8 -6 4 -12',
+          d: 'M30 92 l6 -4 l1 7 z M124 80 l7 1 l-4 6 z M44 64 l5 -5 l2 6 z',
+          role: 'soft',
+        },
+        {
+          d: 'M84 96 c-8 -10 8 -18 0 -28 c-8 -10 8 -18 0 -28',
           role: 'ambient',
         },
-        { d: 'M78 128 L74 116 L80 120 L83 108 L86 120 L93 116 L89 128' },
-        ...eggheadArt['egghead-island'].slice(9),
+        {
+          d: 'M102 100 c-6 -8 6 -14 0 -22 c-6 -8 6 -14 0 -22',
+          role: 'ambient',
+        },
+        ...SEA,
+      ],
+    },
+  ],
+  // Her Love-Love beam: the earring as before, its flame now soft, and a
+  // heart-shaped beam flying out past it as the accent, its trail in soft.
+  // She turns soldiers to stone with it (ch. 1070 p. 7, ep. 1101).
+  's-snake': [
+    {
+      episode: 1101,
+      chapter: 1070,
+      value: [
+        ...softened(S_SNAKE_EARRING),
+        { d: 'M28 50 C12 38 16 20 28 28 C40 20 44 38 28 50 Z', role: 'accent' },
+        { d: 'M40 48 L54 60 M34 56 L48 68', role: 'soft' },
+      ],
+    },
+  ],
+  // The Dice-Dice power: his leg turned into a steel blade, kicking across
+  // the sword, as he first uses it on Luffy and Zoro (ch. 1076 p. 4,
+  // ep. 1108). The knee and shin, then the blade where the foot would be,
+  // as the accent, with its bevel in soft; the flame goes soft. No face.
+  's-hawk': [
+    {
+      episode: 1108,
+      chapter: 1076,
+      value: [
+        ...softened(S_HAWK_SWORD),
+        { d: 'M-4 24 L28 60 M14 8 L46 56' },
+        { d: 'M28 60 C30 68 42 68 46 56', role: 'soft' },
+        { d: 'M30 64 L56 104 M46 58 L66 96' },
+        { d: 'M56 104 L132 154 L66 96', role: 'accent' },
+        { d: 'M62 101 L126 150', role: 'soft' },
+        shadow(80, 188, 46),
+      ],
+    },
+  ],
+  // His paw pads: the hat as before, its flame now soft, and the print of a
+  // paw beside it as the accent, one large pad and four small ones. With it
+  // he sends Lucci and his agents straight into Egghead (ch. 1068 p. 10,
+  // ep. 1099).
+  's-bear': [
+    {
+      episode: 1099,
+      chapter: 1068,
+      value: [
+        ...softened(eggheadArt['s-bear']),
+        {
+          d: `M18 48 C18 38 34 34 40 42 C46 50 40 60 30 60 C20 60 18 54 18 48 Z ${ellipse(12, 34, 4, 5)} ${ellipse(22, 25, 4, 5)} ${ellipse(34, 23, 4, 5)} ${ellipse(45, 29, 4, 5)}`,
+          role: 'accent',
+        },
+      ],
+    },
+  ],
+  // The traitor shown: the plate as before, its heap soft now, and the large
+  // pistol she shot Shaka with laid across it as the accent, its grip
+  // hatched. She steps out as the one who fired and tells Vegapunk she will
+  // be the only Vegapunk (ch. 1078 pp. 13-15, ep. 1111).
+  'york': [
+    {
+      episode: 1111,
+      chapter: 1078,
+      value: [
+        ...softened(YORK_PLATE),
+        {
+          d: 'M30 150 H120 V164 H98 L104 186 H86 L80 164 H30 Z',
+          role: 'accent',
+          transform: YORK_PISTOL,
+        },
+        { d: 'M80 164 Q76 174 90 174', role: 'soft', transform: YORK_PISTOL },
+        {
+          d: 'M36 150 V164 M106 150 V164',
+          role: 'soft',
+          transform: YORK_PISTOL,
+        },
+        {
+          d: 'M88 172 l6 -5 M90 180 l8 -6',
+          role: 'ambient',
+          transform: YORK_PISTOL,
+        },
+        shadow(80, 172, 64),
+      ],
+    },
+  ],
+  // His Itsumade form, as he comes to Egghead with the other Elders and his
+  // fruit is named (ch. 1110 pp. 5-7, ep. 1144): a great feathered wing as
+  // the accent, its feathers in soft and its underside hatched, the
+  // serpent's body that the bird ends in coiling down from it with its
+  // scales in soft, in the ribbon of dark, flaming smoke. No face.
+  'marcus-mars': [
+    {
+      episode: 1144,
+      chapter: 1110,
+      value: [
+        {
+          d: 'M88 100 C68 70 40 38 8 12 C12 24 12 32 18 38 C16 46 20 54 26 58 C26 68 32 74 40 78 C42 86 50 92 58 94 C62 100 70 106 80 108 Z',
+          role: 'accent',
+        },
+        {
+          d: 'M84 102 L16 32 M82 104 L24 54 M80 106 L36 74 M80 107 L52 90',
+          role: 'soft',
+        },
+        { d: 'M50 60 l6 -6 M60 72 l6 -6 M68 84 l6 -6', role: 'ambient' },
+        {
+          d: 'M88 100 C116 108 128 128 112 146 C98 160 108 176 140 180 M80 108 C102 118 112 132 100 144 C86 158 96 184 140 180',
+        },
+        {
+          d: 'M96 112 l-4 8 M112 126 l-8 3 M108 146 l-7 -3 M108 166 l-5 5',
+          role: 'soft',
+        },
+        ...moved(ELDER_SMOKE, 'translate(20 40) scale(0.75)'),
+      ],
+    },
+  ],
+  // His Fengxi form, as he comes to Egghead with the other Elders and his
+  // fruit is named (ch. 1110 pp. 5-7, ep. 1144): the boar's four tusks as
+  // the accent, the two great ones curving out and up, the far sides
+  // hatched, over the line of the jaw they grow from, in the ribbon of
+  // dark, flaming smoke. No face.
+  'topman-warcury': [
+    {
+      episode: 1144,
+      chapter: 1110,
+      value: [
+        { d: 'M30 116 C40 150 120 150 130 116' },
+        { d: 'M38 132 C52 152 108 152 122 132', role: 'soft' },
+        {
+          d: 'M44 124 C16 116 6 84 22 50 C24 80 38 98 58 110 Z M116 124 C144 116 154 84 138 50 C136 80 122 98 102 110 Z M64 130 C50 120 48 102 56 88 C60 104 66 114 76 120 Z M96 130 C110 120 112 102 104 88 C100 104 94 114 84 120 Z',
+          role: 'accent',
+        },
+        {
+          d: 'M16 84 l6 -4 M18 100 l7 -4 M144 84 l-6 -4 M142 100 l-7 -4',
+          role: 'ambient',
+        },
+        ...moved(ELDER_SMOKE, 'translate(0 34)'),
+      ],
+    },
+  ],
+  // His Bakotsu form, as he comes to Egghead with the other Elders and his
+  // fruit is named (ch. 1110 pp. 4-14, ep. 1144): the katana as before, its
+  // guard soft now, and beside it a skeletal horse's foreleg, the bones
+  // with their knobbed joints and the hoof as the accent, in the ribbon of
+  // dark, flaming smoke.
+  'ethanbaron-v-nusjuro': [
+    {
+      episode: 1144,
+      chapter: 1110,
+      value: [
+        ...softened(NUSJURO_SWORD),
+        { d: 'M100 104 L108 134 M106 102 L114 132' },
+        { d: circle(112, 138, 5.5) },
+        { d: 'M112 144 L114 164 M117 143 L119 163' },
+        { d: circle(117, 167, 3.5) },
+        { d: 'M118 170 L124 177 M121 168 L128 175', role: 'soft' },
+        { d: 'M116 188 L121 176 H135 L140 188 Z', role: 'accent' },
+        ...moved(ELDER_SMOKE, 'translate(52 46) scale(0.5)'),
+        shadow(80, 176, 60),
+      ],
+    },
+  ],
+  // His Sandworm form, as he comes to Egghead with the other Elders and his
+  // fruit is named (ch. 1110 p. 5, ep. 1144): the great worm's body rising
+  // and turning, the folds round it in soft and its far side hatched, the
+  // round rim of its open end as the accent, with no teeth, in the ribbon
+  // of dark, flaming smoke.
+  'shepherd-ju-peter': [
+    {
+      episode: 1144,
+      chapter: 1110,
+      value: [
+        { d: 'M50 180 C44 140 40 100 60 70 C70 54 84 44 100 38' },
+        { d: 'M92 180 C86 146 84 112 98 90 C106 78 116 72 128 70' },
+        {
+          d: ellipse(114, 54, 10, 21),
+          role: 'accent',
+          transform: 'rotate(-42 114 54)',
+        },
+        {
+          d: 'M48 160 Q70 168 90 160 M46 136 Q68 146 86 138 M50 112 Q70 124 88 116 M62 86 Q80 100 98 92',
+          role: 'soft',
+        },
+        { d: 'M82 172 l6 -5 M80 150 l6 -5 M82 126 l6 -5', role: 'ambient' },
+        ...ELDER_SMOKE,
+        { d: 'M24 182 H136', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  // His Glorp-Glorp clay: the cap as before, its bill soft now, and beside
+  // it the arm of one of his clay golems, its hand open, soft clay sagging
+  // off the forearm as the accent. The clay soldiers on Hachinosu are his,
+  // and his caption names the fruit (ch. 1080 p. 13, ep. 1114).
+  'prince-grus': [
+    {
+      episode: 1114,
+      chapter: 1080,
+      value: [
+        ...moved(softened(GRUS_CAP), 'translate(36 50) scale(0.75)'),
+        { d: 'M8 190 C10 150 14 110 16 76 M34 190 C34 150 34 110 36 78' },
+        {
+          d: 'M16 76 L8 60 L12 58 L20 70 L18 50 L23 50 L26 70 L30 52 L35 54 L32 72 L40 62 L44 66 L36 78',
+        },
+        {
+          d: 'M35 112 C44 116 44 128 40 136 C38 140 34 138 35 132 M15 124 C8 130 8 140 12 146 C14 150 18 148 16 142',
+          role: 'accent',
+        },
+        { d: 'M28 100 l5 -4 M28 114 l5 -4', role: 'ambient' },
       ],
     },
   ],
