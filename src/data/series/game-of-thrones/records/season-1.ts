@@ -5117,7 +5117,13 @@ export const season1: ThronesSaga = {
         it: 'Porta il mantello bianco della Guardia reale, i cavalieri giurati a proteggere il re. Presta servizio alla corte di Approdo del Re.',
         en: 'He wears the white cloak of the Kingsguard, the knights sworn to protect the king. He serves at the court in King’s Landing.',
       },
-      status: [{ episode: 8, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 30, value: 'alive' },
+        // Arya kills him in Braavos in "Mother's Mercy" (episode 50). The
+        // show's alone: in the books he is alive, so chapter 344 only orders
+        // it.
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -5153,7 +5159,13 @@ export const season1: ThronesSaga = {
         it: 'Veste il mantello bianco della Guardia reale. Sorveglia la famiglia reale nella Fortezza Rossa.',
         en: 'He wears the white cloak of the Kingsguard. He stands guard over the royal family in the Red Keep.',
       },
-      status: [{ episode: 19, chapter: 52, value: 'alive' }],
+      status: [
+        { episode: 19, chapter: 52, source: 'chapter', value: 'alive' },
+        // Drowned in the Blackwater: on screen in "Blackwater" (episode 19),
+        // his threshold, and told in Tyrion XIV of A Clash of Kings (chapter
+        // 135).
+        { episode: 19, chapter: 135, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 19,
@@ -5171,7 +5183,12 @@ export const season1: ThronesSaga = {
         it: 'È uno dei cavalieri della Guardia reale. È presente nella sala del trono quando Barristan Selmy viene congedato dalla Guardia reale.',
         en: 'He is one of the knights of the Kingsguard. He is in the throne room when Barristan Selmy is dismissed from the Kingsguard.',
       },
-      status: [{ episode: 8, chapter: 58, value: 'alive' }],
+      status: [
+        { episode: 8, chapter: 58, value: 'alive' },
+        // Killed on the Greenblood, told in The Queenmaker of A Feast for
+        // Crows (chapter 247). The book's alone; episode 8 orders it.
+        { episode: 8, chapter: 247, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 8,
@@ -5186,7 +5203,13 @@ export const season1: ThronesSaga = {
         it: 'È uno degli scudieri di re Robert Baratheon e lo serve da vicino. Il re lo tratta con poca pazienza.',
         en: 'He is one of King Robert Baratheon’s squires and waits on him closely. The king has little patience with him.',
       },
-      status: [{ episode: 3, chapter: 31, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 31, value: 'alive' },
+        // Dies under the Great Sept in "The Winds of Winter" (episode 60).
+        // The show's alone: in the books he is alive, so chapter 344 only
+        // orders it.
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5204,7 +5227,12 @@ export const season1: ThronesSaga = {
         it: 'Si presenta ubriaco davanti a re Joffrey, che vuole farlo uccidere. Sansa convince il re a risparmiarlo, e Joffrey ne fa il suo giullare.',
         en: 'He comes before King Joffrey drunk, and the king wants him killed. Sansa talks the king into sparing him, and Joffrey makes him his fool.',
       },
-      status: [{ episode: 11, chapter: 58, value: 'alive' }],
+      status: [
+        { episode: 11, chapter: 58, value: 'alive' },
+        // Littlefinger's men kill him in "Breaker of Chains" (episode 33)
+        // and in Sansa V of A Storm of Swords (chapter 205).
+        { episode: 33, chapter: 205, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 11,
@@ -5391,7 +5419,13 @@ export const season1: ThronesSaga = {
         it: 'È un lord delle Terre della Tempesta. Si trova ad Approdo del Re, alla corte del re.',
         en: 'He is a lord of the stormlands. He is in King’s Landing, at the king’s court.',
       },
-      status: [{ episode: 6, chapter: 28, value: 'alive' }],
+      status: [
+        { episode: 6, chapter: 28, value: 'alive' },
+        // Dies for Arya in "The Long Night" (episode 70); in Brienne VIII of
+        // A Feast for Crows (chapter 268) he has given his last life to
+        // Catelyn.
+        { episode: 70, chapter: 268, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 6,
@@ -5406,7 +5440,12 @@ export const season1: ThronesSaga = {
         it: 'È un prete rosso, arrivato nei Sette Regni da Myr, una delle città libere.',
         en: 'He is a red priest, come to the Seven Kingdoms from Myr, one of the free cities.',
       },
-      status: [{ episode: 22, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 22, chapter: 30, value: 'alive' },
+        // Dies of the cold in "Beyond the Wall" (episode 66). The show's
+        // alone: in the books he is alive, so chapter 344 only orders it.
+        { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 22,
@@ -5445,7 +5484,12 @@ export const season1: ThronesSaga = {
         it: 'È uno dei figli del lord di Runestone, nella Valle di Arryn. Giostra nel torneo del Primo Cavaliere ad Approdo del Re.',
         en: 'He is one of the sons of the lord of Runestone, in the Vale of Arryn. He rides in the Hand’s tourney in King’s Landing.',
       },
-      status: [{ episode: 4, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 30, value: 'alive' },
+        // Loras kills him at Storm's End, told in Tyrion VIII of A Clash of
+        // Kings (chapter 110). The book's alone; episode 15 orders it.
+        { episode: 15, chapter: 110, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
