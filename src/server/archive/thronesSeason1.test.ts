@@ -338,6 +338,43 @@ const CHANGES: {
   },
   { id: 'othor', episode: 8, chapter: 53, value: 'deceased' },
   { id: 'jafer-flowers', episode: 8, chapter: 53, value: 'deceased' },
+  // Later deaths of the Night's Watch (#1295).
+  {
+    id: 'grenn',
+    episode: 39,
+    chapter: 199,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'pypar',
+    episode: 39,
+    chapter: 199,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'rast', episode: 35, chapter: 199, value: 'deceased' },
+  {
+    id: 'dareon',
+    episode: 41,
+    chapter: 248,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'othell-yarwyck',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'bowen-marsh',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
   { id: 'qotho', episode: 9, chapter: 65, value: 'deceased' },
   {
     id: 'cohollo',
@@ -981,7 +1018,10 @@ describe.each([
  * Bran's climb, which the book alone shows after his threshold, the deaths
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
  * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
- * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * and Hoster Tully's the book's alone; and the Night's Watch's of #1295,
+ * Grenn's, Pypar's, Othell Yarwyck's and Bowen Marsh's the show's alone,
+ * Gared's, Dareon's, Jaremy Rykker's and Othor's the book's alone, with
+ * the mutiny against Jon), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
  * magic. `stage` counts a record's stages from 0, for a record redrawn more
  * than once.
@@ -1041,6 +1081,25 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The Night's Watch's deaths and the mutiny against Jon (#1295).
+  { id: 'gared', episode: 1, chapter: 2, source: 'chapter' },
+  { id: 'grenn', episode: 39, chapter: 199, source: 'episode' },
+  { id: 'pypar', episode: 39, chapter: 199, source: 'episode' },
+  { id: 'rast', episode: 35, chapter: 199 },
+  { id: 'dareon', episode: 41, chapter: 248, source: 'chapter' },
+  { id: 'othell-yarwyck', episode: 50, chapter: 341, source: 'episode' },
+  {
+    id: 'othell-yarwyck',
+    episode: 53,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'bowen-marsh', episode: 50, chapter: 341 },
+  { id: 'bowen-marsh', episode: 53, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
+  { id: 'othor', episode: 8, chapter: 53, source: 'chapter' },
+  { id: 'othor', episode: 8, chapter: 61, source: 'chapter', stage: 1 },
 ]
 
 describe.each(
@@ -1081,8 +1140,18 @@ describe('the stages one medium alone tells', () => {
         source === 'chapter' ?
           reader('episode', archive.series.episodeCeiling)
         : reader('chapter', archive.series.chapterCeiling)
+      // The other medium's reader keeps the last stage both media tell, or
+      // the first drawing (Bowen Marsh's mutiny is in both, his death the
+      // show's alone).
+      const shared = STAGES.findLast(
+        (stage) => stage.id === id && stage.source === undefined,
+      )
+      const expected =
+        shared === undefined ?
+          DRAWINGS[id]
+        : REDRAWINGS[id]?.[shared.stage ?? 0]?.value
 
-      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(DRAWINGS[id])
+      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
     },
   )
 })
