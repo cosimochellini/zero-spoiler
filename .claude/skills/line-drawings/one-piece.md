@@ -83,9 +83,9 @@ own drawing keeps it when its eater dies.
 ## A stage that dates a power, identity or affiliation
 
 Read what the record says about it against the record's gate, in both media:
-its `summary`, the dossier `log`, the relationship texts and, for a fruit, the
-fruit's `summary`. A power, identity or affiliation the drawing shows only
-from its stage cannot sit in text a reader sees before it. This sweep found
+its `summary`, `role`, `epithet`, the dossier `log`, the relationship texts, the
+chronicle stories and, for a fruit, the fruit's `summary`. A power, identity or affiliation the drawing shows only
+from its stage stays out of any text a reader sees before it. This sweep found
 about ten spoilers: Bon Clay (#1264), Apoo (#1271), Bonney (#1272), Cracker
 (#1274) and the fruit summaries heal-heal, pop-pop (#1282), mochi, sabre-tooth
 (#1283) and Spinosaurus (#1276).

@@ -56,13 +56,13 @@ one nobody recognises (owner, 2026-11-05, #1097).
   [Redrawings](#redrawings).
 - **Nothing invented.** The object and every detail on it are ones the story
   shows, and the object is never a pun on the record's name (an oden pot for
-  Oden, a cicada for Semimaru; owner, 2026-11-05). Check the object against the wiki's Appearance section, not memory or
-  an issue's wording (Chopper's cap and Brook's guitar were both described
-  wrong in their issues; the early Egghead drawings had a volcano and a
-  bulb-headed Vegapunk the show never has, #180).
-  An issue's proposal, an audit's included, is a lead exactly like the wiki's
-  prose: every object, setting and detail in the drawing *and its comment* is
-  on the wiki or the frame. The loop that redrew One Piece (#1102) caught a
+  Oden, a cicada for Semimaru; owner, 2026-11-05). Check the object against
+  the wiki's Appearance section, not memory or an issue's wording, an audit's
+  included (Chopper's cap and Brook's guitar were both described wrong in
+  their issues; the early Egghead drawings had a volcano and a bulb-headed
+  Vegapunk the show never has, #180). Every object, setting and detail in the
+  drawing *and its comment* is on the wiki or the frame. The loop that redrew
+  One Piece (#1102) caught a
   "huge arched window" (Shirahoshi), an axe "stuck in the stump" (Decken), a
   castle on Whole Cake Island, Komurasaki's mortar and Lilith's fist in the
   sea, each one in a proposal and none on the wiki or the frame.
@@ -290,5 +290,3 @@ To bring a whole arc or kind up to the bar:
   every key is quoted.
 - `scripts/archive-gate.mjs` reads the art modules' quoted two-space keys, so
   keys are written out one by one, never built from a table.
-- An issue's candidate episode or object is a lead, not a fact. Several redraw
-  PRs filed a later episode or corrected the object.
