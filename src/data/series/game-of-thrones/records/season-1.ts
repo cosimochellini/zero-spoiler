@@ -5837,7 +5837,7 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 7, chapter: 20, value: 'alive' },
-        { episode: 41, chapter: 248, source: 'chapter', value: 'deceased' },
+        { episode: 41, chapter: 260, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {

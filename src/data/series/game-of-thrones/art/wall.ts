@@ -658,12 +658,12 @@ export const wallRedrawn: Redrawings = {
   ],
   'dareon': [
     // The same cloak tipped over and come open on the cobbles of Braavos:
-    // Arya kills the deserter there in Cat of the Canals (chapter 248). The
+    // Arya kills the deserter there in Cat of the Canals (chapter 260). The
     // show keeps him alive, so the stage is the book's alone, ordered by
     // Arya's arrival in Braavos (episode 41).
     {
       episode: 41,
-      chapter: 248,
+      chapter: 260,
       source: 'chapter',
       value: [
         ...moved(FOLDED_CLOAK, 'translate(4 6) rotate(-10 80 140)'),

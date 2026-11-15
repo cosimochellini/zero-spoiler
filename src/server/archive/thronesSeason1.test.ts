@@ -357,7 +357,7 @@ const CHANGES: {
   {
     id: 'dareon',
     episode: 41,
-    chapter: 248,
+    chapter: 260,
     value: 'deceased',
     source: 'chapter',
   },
@@ -1086,7 +1086,7 @@ const STAGES: {
   { id: 'grenn', episode: 39, chapter: 199, source: 'episode' },
   { id: 'pypar', episode: 39, chapter: 199, source: 'episode' },
   { id: 'rast', episode: 35, chapter: 199 },
-  { id: 'dareon', episode: 41, chapter: 248, source: 'chapter' },
+  { id: 'dareon', episode: 41, chapter: 260, source: 'chapter' },
   { id: 'othell-yarwyck', episode: 50, chapter: 341, source: 'episode' },
   {
     id: 'othell-yarwyck',
