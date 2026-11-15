@@ -1462,8 +1462,9 @@ export const wanoArt = {
   // inside of the far side hatched, the large round buckle at the front, and
   // the trunk of the elephant on his chest hanging down over the buckle in
   // his colour, its wrinkles across it, with no head and no eye. Belt,
-  // buckle and elephant are his from his first scene (930, ch. 934); how far
-  // the trunk reaches is not checked against a frame.
+  // buckle and elephant are his from his first scene (929, ch. 934 p. 13;
+  // his record opens later, at 930/935); how far the trunk reaches is not
+  // checked against a frame.
   'babanuki': [
     {
       d: 'M18 118 C18 108.7 40.4 103.3 66.2 101.9 M89.7 101.7 C117.2 102.7 142 108.2 142 118',
@@ -1747,9 +1748,9 @@ export const wanoArt = {
 
   // The note that disowns his son, an open scroll seen a little from the
   // side: the rolled end standing as a roll with its far side hatched, the
-  // sheet curving away to its thin stave, columns of writing too faint to
-  // read, and the cord round the roll in his colour, its ends hanging. He
-  // sends it at 960 (ch. 960); the wiki gives the note no seal or brush.
+  // sheet curving away, columns of writing too faint to read, and the
+  // sheet's leading edge curling back on itself in his colour. He sends it
+  // at 960 (ch. 960); the wiki gives the note no seal, brush or cord.
   'kozuki-sukiyaki': [
     { d: `${ellipse(32, 50, 8, 3)} M24 50 V148 A8 3 0 0 0 40 148 V50` },
     { d: 'M32 47 V40 M32 151 V158', role: 'soft' },
@@ -1758,15 +1759,14 @@ export const wanoArt = {
       role: 'ambient',
     },
     { d: 'M40 52 C70 46 100 50 128 46 V144 C100 148 70 144 40 150' },
-    { d: 'M128 46 L134 45 V143 L128 144', role: 'soft' },
+    {
+      d: 'M128 46 C136 44 140 50 136 56 C133 60 128 58 129 54 M128 144 C136 142 140 148 136 154 C133 158 128 156 129 152 M138 52 V150',
+      role: 'accent',
+    },
     {
       d: 'M114 60 V128 M100 62 V134 M86 62 V118 M72 64 V126 M58 66 V110',
       role: 'soft',
       dashed: true,
-    },
-    {
-      d: 'M24 94 C28 98 36 98 40 94 M24 100 C28 104 36 104 40 100 M30 103 C24 110 30 116 24 124 M34 103 C40 112 34 118 40 126',
-      role: 'accent',
     },
     shadow(80, 176, 60),
   ],
