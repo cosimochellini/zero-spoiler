@@ -224,18 +224,17 @@ are in `art/court.ts` (#1056), with thirteen, twelve of them from the drawing
 audit (#1289), and the Riverlands cast's are in `art/riverlands.ts` (#1057),
 with ten: six of them the deaths later seasons and books give (#1242), and the
 Blackfish's death, Jaqen's coin and Pod's axe from the drawing audit (#1290).
-Every other character maps to a shared placeholder in `art/index.ts`, `PERSON`,
-until its own issue draws it, so the drawing tests hold it like any series. Its
-places are the 23 a scene of the season or the book is set in (#853) and those
-both name without visiting it (#1035: the North's five in #1248, nine of the
-Riverlands, the Westerlands and the Vale in #1249, five of the south and the
-seas in #1250, Essos's ten in #1251), and eight visited places #853 left out
-(#1252), each filed in one of the realms, the Iron Islands, the Reach and the
-seas among them, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
-optional, and an arcless series prints no arc row. Darry and six of #1252's
-places are the book's alone, and the Kingswood the show's. The demo shows the
-places the first ten episodes reach, and covers in its tail the four the show
-first visits in later seasons.
+Every character has its own drawing; there is no shared placeholder, and the
+drawing tests hold the series like any other. Its places are the 23 a scene of
+the season or the book is set in (#853) and those both name without visiting it
+(#1035: the North's five in #1248, nine of the Riverlands, the Westerlands and
+the Vale in #1249, five of the south and the seas in #1250, Essos's ten in
+#1251), and eight visited places #853 left out (#1252), each filed in one of the
+realms, the Iron Islands, the Reach and the seas among them, beyond the Wall or
+Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless series prints
+no arc row. Darry and six of #1252's places are the book's alone, and the
+Kingswood the show's. The demo shows the places the first ten episodes reach,
+and covers in its tail the four the show first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
