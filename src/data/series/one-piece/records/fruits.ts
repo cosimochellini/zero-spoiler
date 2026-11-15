@@ -953,8 +953,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Mochi Mochi', en: 'Mochi-Mochi Fruit' },
     summary: {
-      it: 'Trasforma il corpo in mochi: si allunga e incassa un colpo senza strapparsi, e la stessa pasta si rapprende attorno a chi la tocca e lo tiene fermo.',
-      en: 'Turns the body to mochi: it stretches and takes a blow without tearing, and the same paste sets around whoever touches it and holds them there.',
+      it: 'Trasforma il corpo in mochi: una gamba si allunga in un filamento spesso e appiccicoso, e la pasta si rapprende attorno a chi viene preso e lo tiene fermo.',
+      en: 'Turns the body to mochi: a leg stretches out into a thick, sticky strand, and the paste sets around whoever it catches and holds them there.',
     },
     visual: { art: 'mochi-mochi-fruit', tint: 'ivory' },
   },
@@ -1023,8 +1023,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Kobu Kobu', en: 'Pump-Pump Fruit' },
     summary: {
-      it: 'Sventolando una bandiera tira fuori dalla gente comune la forza che non sapeva di avere, e la manda avanti con quello che ha in mano.',
-      en: 'A wave of a flag pulls out of ordinary people the strength they did not know they had, and sends them forward with whatever they are holding.',
+      it: 'Con parole d’incoraggiamento tira fuori dalla gente comune la forza che non sapeva di avere, e la manda avanti con quello che ha in mano.',
+      en: 'Words of encouragement pull out of ordinary people the strength they did not know they had, and send them forward with whatever they are holding.',
     },
     visual: { art: 'pump-pump-fruit', tint: 'ocher' },
   },
@@ -1033,8 +1033,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Oshi Oshi', en: 'Push-Push Fruit' },
     summary: {
-      it: 'Spinge il terreno come fosse argilla, e la roccia cede sotto le mani.',
-      en: 'Pushes the ground as though it were clay, and rock gives way under the hands.',
+      it: 'Spinge il terreno come fosse argilla: un tridente piantato nella strada la solleva in un’onda.',
+      en: 'Pushes the ground as though it were clay: a trident planted in a street rolls it up into a wave.',
     },
     visual: { art: 'push-push-fruit', tint: 'yellow' },
   },
@@ -1166,8 +1166,8 @@ export const devilFruits: OnePieceFruit[] = [
       en: 'Cat-Cat Fruit, Ancient Model: Sabre-Tooth Tiger',
     },
     summary: {
-      it: 'Un modello ancestrale: il corpo diventa una tigre dai denti a sciabola, due zanne oltre la mascella e tutto il peso dietro ogni zampata.',
-      en: 'An Ancient Model: the body becomes a sabre-toothed tiger, two teeth hanging past the jaw and the whole weight behind every swipe.',
+      it: 'Un modello ancestrale: il corpo diventa una tigre dai denti a sciabola, con due zanne oltre la mascella.',
+      en: 'An Ancient Model: the body becomes a sabre-toothed tiger, two teeth hanging past the jaw.',
     },
     visual: {
       art: 'cat-cat-fruit-ancient-model-sabre-tooth-tiger',
@@ -1198,8 +1198,8 @@ export const devilFruits: OnePieceFruit[] = [
       en: 'Dragon-Dragon Fruit, Ancient Model: Triceratops',
     },
     summary: {
-      it: 'Un modello ancestrale: il corpo diventa un triceratopo, tre corna davanti a un collare d’osso, e la carica non si ferma davanti a un muro.',
-      en: 'An Ancient Model: the body becomes a triceratops, three horns in front of a collar of bone, and the charge does not stop for a wall.',
+      it: 'Un modello ancestrale: il corpo diventa un triceratopo, tre corna davanti a un collare d’osso, e la sua carica respinge un robot gigante.',
+      en: 'An Ancient Model: the body becomes a triceratops, three horns in front of a collar of bone, and its charge knocks a giant robot back.',
     },
     visual: {
       art: 'dragon-dragon-fruit-ancient-model-triceratops',
