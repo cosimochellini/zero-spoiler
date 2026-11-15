@@ -1263,22 +1263,53 @@ describe.each(
   },
 )
 
+type Drawn = (typeof DRAWINGS)[keyof typeof DRAWINGS]
+
+/**
+ * A stage's drawing, or nothing when the stage brings the first drawing back
+ * (Darry rebuilt): that one may match what the other medium sees.
+ */
+function ownDrawing(id: keyof typeof DRAWINGS, index: number): Drawn {
+  const value = REDRAWINGS[id]?.[index]?.value
+  return value === undefined || value === DRAWINGS[id] ? [] : value
+}
+
+/** The drawing a reader of `unit` is shown at the end of that medium. */
+function shownAtTheEnd(
+  id: keyof typeof DRAWINGS,
+  unit: 'chapter' | 'episode',
+): Drawn {
+  const last =
+    unit === 'episode' ?
+      reader('episode', archive.series.episodeCeiling)
+    : reader('chapter', archive.series.chapterCeiling)
+  return drawingOf(recordOf(id), last).strokes
+}
+
+/** That medium's own last stage, or the first drawing. */
+function lastStageIn(
+  id: keyof typeof DRAWINGS,
+  unit: 'chapter' | 'episode',
+): Drawn {
+  const source = recordOf(id).source
+  const stage = (REDRAWINGS[id] ?? []).findLast(
+    (each) => (source ?? each.source ?? unit) === unit,
+  )
+  return stage?.value ?? DRAWINGS[id]
+}
+
 describe('the stages one medium alone tells', () => {
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
-    ({ id, source }) => {
-      const last =
-        source === 'chapter' ?
-          reader('episode', archive.series.episodeCeiling)
-        : reader('chapter', archive.series.chapterCeiling)
-      // The other medium's own last stage, or the first drawing.
+    ({ id, source, stage: index = 0 }) => {
+      const stage = REDRAWINGS[id]?.[index]
       const other = source === 'chapter' ? 'episode' : 'chapter'
-      const expected =
-        (REDRAWINGS[id] ?? []).findLast(
-          (stage) => (recordOf(id).source ?? stage.source ?? other) === other,
-        )?.value ?? DRAWINGS[id]
+      const seen = shownAtTheEnd(id, other)
 
-      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
+      // The stage is still the one-medium stage this row says it is.
+      expect(stage?.source ?? recordOf(id).source).toBe(source)
+      expect(seen).toStrictEqual(lastStageIn(id, other))
+      expect(seen).not.toStrictEqual(ownDrawing(id, index))
     },
   )
 })
