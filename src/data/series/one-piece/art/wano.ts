@@ -2219,6 +2219,9 @@ export const wanoRedrawn: Redrawings = {
     // guard drawn out of it on a short straight blade in his colour, the
     // guard plain now; the striped tail of his tiger curls up behind, the
     // form he keeps. He draws it on Jinbe at 1039 (ch. 1017 p. 13).
+    // The wiki notes the dagger's guard is round on that page and in that
+    // episode, and calls it a possible art error; the quatrefoil is kept for
+    // continuity with his scabbard.
     {
       episode: 1039,
       chapter: 1017,

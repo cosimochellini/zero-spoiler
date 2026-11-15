@@ -778,9 +778,12 @@ const PLACE_DOSSIERS: Record<string, OnePiecePlace> = {
     region: 'new-world',
     form: 'region',
     arc: 'wano',
+    // The ruins are shown at 900 (ch. 914) and the drawing has them from
+    // the threshold on arc latitude. The castle is left unnamed: Oden's own
+    // record opens only at 960.
     landmark: {
-      it: 'Un pino chino sulla spiaggia',
-      en: 'A pine leaning over the beach',
+      it: 'Le rovine di un castello in cima a un monte',
+      en: 'The ruins of a castle on a mountain top',
     },
     log: {
       it: 'Rufy ci arriva da solo con la nave, spinto a riva dopo che un vortice lo ha separato dagli altri, senza sapere se sia davvero Wano. Sulla spiaggia una bestia simile a un cane si batte con un babbuino armato di spada, poi arrivano due uomini in sella a un rettile con una bambina rapita per le sue parole. Sistemati loro, la bambina risponde alla sua domanda: questa è Kuri, nel Paese di Wano.',
@@ -802,9 +805,12 @@ const PLACE_DOSSIERS: Record<string, OnePiecePlace> = {
     region: 'new-world',
     form: 'city',
     arc: 'wano',
+    // The castle on its plant is shown at 920 (ch. 927 p. 13); the shogun
+    // living here is said at the threshold, so naming it as his gives
+    // nothing away.
     landmark: {
-      it: 'Una bottega con le lanterne di carta',
-      en: 'A shop front hung with paper lanterns',
+      it: 'Il castello dello shogun su una pianta gigante',
+      en: 'The shogun’s castle on a giant plant',
     },
     log: {
       it: 'L’unico posto di Wano che prospera ancora: qui vive lo shogun, mentre il resto del paese è stato ridotto a una landa senza legge. Una parte della ciurma ne percorre già le strade travestita, e uno spadaccino che lì ha abbattuto un magistrato è ricercato in tutto il paese. A scuola i bambini imparano che tenere chiuso il paese ne mantiene la pace, e ridono dei samurai che volevano aprirlo.',

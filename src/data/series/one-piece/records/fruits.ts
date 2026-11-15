@@ -1066,8 +1066,8 @@ export const devilFruits: OnePieceFruit[] = [
       en: 'Dragon-Dragon Fruit, Ancient Model: Spinosaurus',
     },
     summary: {
-      it: 'Un modello ancestrale: il corpo diventa uno spinosauro, una vela lungo la schiena e un muso abbastanza lungo da raccogliere un uomo dalla strada.',
-      en: 'An Ancient Model: the body becomes a spinosaurus, a sail along the back and a snout long enough to pick a man up off the street.',
+      it: 'Un modello ancestrale: il corpo diventa uno spinosauro con un’alta vela lungo la schiena, e la gente per strada scappa al suo arrivo.',
+      en: 'An Ancient Model: the body becomes a spinosaurus with a tall sail along its back, and the people in the street run from it.',
     },
     visual: {
       art: 'dragon-dragon-fruit-ancient-model-spinosaurus',
