@@ -1043,11 +1043,11 @@ export const winterfellRedrawn: Redrawings = {
     { episode: 31, chapter: 218, value: NEEDLE },
     // The hilt standing out of a pile of stones, the blade hidden under
     // them: she cannot throw it away and hides it before she serves the
-    // House of Black and White, in "High Sparrow" (episode 43) and in Arya I
-    // of A Feast for Crows (chapter 232).
+    // House of Black and White, in "High Sparrow" (episode 43) and in Arya II
+    // of A Feast for Crows (chapter 248).
     {
       episode: 43,
-      chapter: 232,
+      chapter: 248,
       value: [
         ...moved(NEEDLE_HILT, 'translate(0 52)'),
         { d: 'M82 110 L84 120 L86 110', role: 'accent' },
