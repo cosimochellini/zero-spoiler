@@ -5,7 +5,9 @@ import {
   softened,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, dots, ellipse, SEA, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, SEA, shadow, star } from '~/lib/svg/primitives'
+
+import { WORLD_GOVERNMENT_EMBLEM } from './summit-war'
 
 /**
  * The laboratory of Egghead, a giant egg cracked open along its top, seen in
@@ -285,10 +287,14 @@ const ELDER_SMOKE: Stroke[] = [
 
 /**
  * Nusjuro's katana, which he always keeps in his hand, half drawn and laid
- * at a slant: the wooden saya with its grain in soft, the band at its mouth,
- * the bare steel with the flame-shaped temper line in soft, the four-lobed
- * gold guard as the accent with its thickness, and the wrapped grip. Zoro
- * names it a Kitetsu, the first, at 1150 (ch. 1117 pp. 7-8).
+ * at a slant: the saya, the bare steel, the guard as the accent with its
+ * thickness, and the grip, left plain. Zoro only notices that it is a
+ * Kitetsu (ch. 1117 pp. 7-8, ep. 1150), and the manga has not confirmed
+ * that it is the first one, Shodai Kitetsu. The wooden look of the saya
+ * with its grain in soft, the flame-shaped temper line in soft and the
+ * four-lobed shape of the guard come from the wiki's Shodai Kitetsu page,
+ * on that unconfirmed identification; the page calls the temper line and
+ * the guard's shape typical of a Kitetsu.
  */
 const NUSJURO_SWORD: Stroke[] = [
   { d: 'M6 94 H84 V106 H6 Q1 100 6 94 Z', transform: NUSJURO_KATANA },
@@ -297,7 +303,6 @@ const NUSJURO_SWORD: Stroke[] = [
     role: 'soft',
     transform: NUSJURO_KATANA,
   },
-  { d: 'M78 94 V106', role: 'soft', transform: NUSJURO_KATANA },
   { d: 'M84 95.5 H116 V104.5 H84', transform: NUSJURO_KATANA },
   {
     d: 'M88 101.5 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0 q2 -2.5 4 0',
@@ -315,11 +320,6 @@ const NUSJURO_SWORD: Stroke[] = [
     transform: NUSJURO_KATANA,
   },
   { d: 'M129 94 H156 Q159 100 156 106 H129 Z', transform: NUSJURO_KATANA },
-  {
-    d: 'M132 94 l6 12 M139 94 l6 12 M146 94 l6 12 M138 106 l6 -12 M145 106 l6 -12',
-    role: 'soft',
-    transform: NUSJURO_KATANA,
-  },
 ]
 
 /**
@@ -341,10 +341,26 @@ const GRUS_CAP: Stroke[] = [
   { d: 'M94 84 l8 -6 M98 96 l10 -8 M100 108 l8 -6', role: 'ambient' },
 ]
 
-/** Lilith's fist knocked over into the sea once the robot is wrecked. */
-const LILITH_FALLEN = 'translate(4 12) rotate(-80 80 130)'
+/** The Sunny dropping clear of the wrecked robot, small and tipped up. */
+const LILITH_SUNNY_FALLING = 'translate(96 6) rotate(18 0 0) scale(0.42)'
 /** The slant York's pistol lies at across her plate. */
 const YORK_PISTOL = 'rotate(-14 80 160)'
+
+/**
+ * The large pistol York shot Shaka with, laid across her plate: the barrel
+ * and the grip in one outline, the trigger guard and the muzzle and breech
+ * lines in soft, the grip hatched. It carries the accent.
+ */
+const YORK_GUN: Stroke[] = [
+  {
+    d: 'M30 150 H120 V164 H98 L104 186 H86 L80 164 H30 Z',
+    role: 'accent',
+    transform: YORK_PISTOL,
+  },
+  { d: 'M80 164 Q76 174 90 174', role: 'soft', transform: YORK_PISTOL },
+  { d: 'M36 150 V164 M106 150 V164', role: 'soft', transform: YORK_PISTOL },
+  { d: 'M88 172 l6 -5 M90 180 l8 -6', role: 'ambient', transform: YORK_PISTOL },
+]
 
 /** The drawings of the records filed in the egghead stretch of the route. */
 export const eggheadArt = {
@@ -468,7 +484,8 @@ export const eggheadArt = {
   // His webbed hand coming up out of a floor that ripples round it like
   // water, the way he swims through the ground at Egghead from his first
   // fight (ch. 1065 p. 9, ep. 1095): the forearm with its far side hatched,
-  // the webbing between the fingers in soft, the rings spreading over the
+  // the webbing between the fingers with its free edge and hatched, the
+  // rings spreading over the
   // floor, drops thrown up, and his lunarian flame breaking the surface
   // behind as the accent.
   's-shark': [
@@ -482,7 +499,10 @@ export const eggheadArt = {
     },
     {
       d: 'M52 66 Q58 70 66 62 M68 56 Q74 62 84 56 M88 58 Q94 64 101 60 M98 74 Q104 78 112 71',
-      role: 'soft',
+    },
+    {
+      d: 'M57 70 l5 -5 M61 75 l3 -3 M73 62 l4 -4 M75 67 l2 -2 M89 64 l4 -4 M90 69 l3 -3 M101 76 l4 -3',
+      role: 'ambient',
     },
     { d: LUNARIAN_FLAME, role: 'accent', transform: 'translate(-10 42)' },
     {
@@ -574,7 +594,8 @@ export const eggheadArt = {
   // Her plate heaped with food, a joint of meat sticking out of it and a bone
   // she has already picked clean beside the plate: she eats for all the
   // satellites from her first appearance (1095). Her pistol across the plate
-  // from 1111, in `eggheadRedrawn`.
+  // from 1111 and the World Government's emblem from 1123, in
+  // `eggheadRedrawn`.
   'york': [
     ...YORK_PLATE,
     {
@@ -1556,34 +1577,34 @@ export const eggheadRedrawn: Redrawings = {
       value: [...softened(EGGHEAD_EGG), ...EGGHEAD_CLOUD_CUT, ...SEA.slice(2)],
     },
   ],
-  // The Vegaforce-01 wrecked: Luffy is sent crashing through it by Kizaru
-  // and it explodes (ch. 1092, ep. 1126). The fist lies over on its side in
-  // the sea with a crack running across it as the accent, the Sunny gone
-  // from it, chips flying and smoke going up.
+  // The Vegaforce-01 destroyed: Kizaru kicks Luffy into it, it explodes,
+  // and the Sunny falls out of its hands as Franky, Bonney and Lilith run
+  // (ch. 1092, ep. 1126). The burst of the explosion is the accent; under it
+  // the wreckage lies on the Labophase floor: a plate of the broad torso
+  // with the star it carries on its breast, and the thin metal bars of its
+  // limbs bent and broken. Above, the Sunny drops clear, small and tipped.
+  // Chips fly and smoke rises.
   'lilith': [
     {
       episode: 1126,
       chapter: 1092,
       value: [
-        ...moved(softened(LILITH_FIST), LILITH_FALLEN),
         {
-          d: 'M60 102 L68 112 L62 120 L74 128 L70 136',
+          d: 'M80 52 L87.7 73.5 L108.3 63.7 L98.5 84.3 L120 92 L98.5 99.7 L108.3 120.3 L87.7 110.5 L80 132 L72.3 110.5 L51.7 120.3 L61.5 99.7 L40 92 L61.5 84.3 L51.7 63.7 L72.3 73.5 Z',
           role: 'accent',
-          transform: LILITH_FALLEN,
         },
+        { d: 'M20 162 L26 134 L60 126 L70 150 L62 162' },
+        { d: 'M60 126 L66 122 L76 146 L70 150', role: 'soft' },
+        { d: star(44, 146, 8, 3.5), role: 'soft' },
+        { d: 'M96 162 L106 140 L128 132 M102 162 L110 144 L130 138' },
+        { d: 'M128 132 L130 138 M134 162 L140 146 L152 150', role: 'soft' },
         {
-          d: 'M30 92 l6 -4 l1 7 z M124 80 l7 1 l-4 6 z M44 64 l5 -5 l2 6 z',
+          d: 'M24 112 l6 -4 l1 7 z M128 104 l7 1 l-4 6 z M30 80 l5 -5 l2 6 z M140 124 l6 3 l-6 3 z',
           role: 'soft',
         },
-        {
-          d: 'M84 96 c-8 -10 8 -18 0 -28 c-8 -10 8 -18 0 -28',
-          role: 'ambient',
-        },
-        {
-          d: 'M102 100 c-6 -8 6 -14 0 -22 c-6 -8 6 -14 0 -22',
-          role: 'ambient',
-        },
-        ...SEA,
+        { d: 'M66 46 c-6 -8 6 -14 0 -22 c-6 -8 6 -14 0 -22', role: 'ambient' },
+        ...moved(LILITH_SUNNY, LILITH_SUNNY_FALLING),
+        { d: 'M0 162 H160', role: 'ambient', dashed: true },
       ],
     },
   ],
@@ -1640,28 +1661,27 @@ export const eggheadRedrawn: Redrawings = {
   // The traitor shown: the plate as before, its heap soft now, and the large
   // pistol she shot Shaka with laid across it as the accent, its grip
   // hatched. She steps out as the one who fired and tells Vegapunk she will
-  // be the only Vegapunk (ch. 1078 pp. 13-15, ep. 1111).
+  // be the only Vegapunk (ch. 1078 pp. 13-15, ep. 1111). Then the plate and
+  // the pistol both soft and the World Government's emblem over them as the
+  // accent: chained up by the Straw Hats, she calls the Five Elders, who are
+  // listening in at Mary Geoise, and tells them she is the one who told
+  // them of Stella's betrayal (ch. 1089, ep. 1123).
   'york': [
     {
       episode: 1111,
       chapter: 1078,
+      value: [...softened(YORK_PLATE), ...YORK_GUN, shadow(80, 172, 64)],
+    },
+    {
+      episode: 1123,
+      chapter: 1089,
       value: [
         ...softened(YORK_PLATE),
+        ...softened(YORK_GUN),
         {
-          d: 'M30 150 H120 V164 H98 L104 186 H86 L80 164 H30 Z',
+          d: WORLD_GOVERNMENT_EMBLEM,
           role: 'accent',
-          transform: YORK_PISTOL,
-        },
-        { d: 'M80 164 Q76 174 90 174', role: 'soft', transform: YORK_PISTOL },
-        {
-          d: 'M36 150 V164 M106 150 V164',
-          role: 'soft',
-          transform: YORK_PISTOL,
-        },
-        {
-          d: 'M88 172 l6 -5 M90 180 l8 -6',
-          role: 'ambient',
-          transform: YORK_PISTOL,
+          transform: 'translate(-80 4)',
         },
         shadow(80, 172, 64),
       ],
