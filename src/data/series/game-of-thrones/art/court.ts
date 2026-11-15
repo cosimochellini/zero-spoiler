@@ -301,21 +301,22 @@ const SWAN: Stroke[] = [
   { d: 'M72 60 L80 62 L72 66', role: 'accent' },
 ]
 /**
- * Balon Swann: the arms of his house on a shield parted down the middle, a
- * white swan on the black half and a black swan on the white, face to face,
- * for the knight who rides in the Hand's tourney in Sansa II (chapter 30).
- * The book's alone. The black half and the black swan are hatched; the
- * accent is the beaks.
+ * Balon Swann: the arms of his house, per fess white and black, two swans
+ * counterchanged: a black swan on the white upper half, facing the viewer's
+ * left, and a white swan on the black lower half, contourny, facing the
+ * viewer's right. For the knight who rides in
+ * the Hand's tourney in Sansa II (chapter 30). The book's alone. The black
+ * swan and the black half are hatched; the accent is the beaks.
  */
 const SWAN_SHIELD: Stroke[] = [
-  { d: 'M40 40 H120 V80 Q120 126 80 150 Q40 126 40 80 Z M80 40 V150' },
-  ...moved(SWAN, 'translate(28 34) scale(0.62)'),
-  ...moved(SWAN, 'translate(132 34) scale(-0.62 0.62)'),
+  { d: 'M40 40 H120 V80 Q120 126 80 150 Q40 126 40 80 Z M40 94 H119' },
+  ...moved(SWAN, 'translate(106 18) scale(-0.52 0.52)'),
+  ...moved(SWAN, 'translate(54 66) scale(0.52)'),
+  { d: 'M78 80 l5 -3 M86 80 l5 -3', role: 'ambient' },
   {
-    d: 'M46 52 l6 -3 M58 52 l6 -3 M70 52 l6 -3 M46 64 l6 -3 M46 124 l6 -3 M56 132 l6 -3 M66 138 l6 -3 M66 122 l6 -3',
+    d: 'M46 104 l6 -3 M48 116 l6 -3 M56 128 l6 -3 M104 104 l6 -3 M102 116 l6 -3 M94 130 l6 -3 M72 140 l6 -3',
     role: 'ambient',
   },
-  { d: 'M96 110 l5 -3 M104 110 l5 -3 M110 106 l4 -2.4', role: 'ambient' },
   shadow(80, 160, 34),
 ]
 
@@ -434,13 +435,13 @@ export const courtRedrawn: Redrawings = {
   ],
   'mandon-moore': [
     // The banner fallen into the river, its pole broken: he goes into the
-    // Blackwater and drowns, told in Tyrion XIV of A Clash of Kings
-    // (chapter 135). The show kills him in "Blackwater" (episode 19), the
-    // episode he opens in, where no stage can sit, so the stage is the
-    // book's (owner, as Mycah's).
+    // Blackwater, his drowning told by A Clash of Kings 67 (chapter 141), the
+    // first chapter known to confirm it. The show kills him in "Blackwater"
+    // (episode 19), the episode he opens in, where no stage can sit, so the
+    // stage is the book's (owner, as Mycah's).
     {
       episode: 19,
-      chapter: 135,
+      chapter: 141,
       source: 'chapter',
       value: [
         ...moved(STAG_BANNER, 'translate(6 108) scale(1 0.48)'),
@@ -523,19 +524,19 @@ export const courtRedrawn: Redrawings = {
     },
   ],
   'dontos-hollard': [
-    // The cask on its side by the water, the funnel gone and a crossbow
-    // bolt beside it: Littlefinger's men kill him in "Breaker of Chains"
-    // (episode 33), and in Sansa V of A Storm of Swords (chapter 205), the
-    // cask motif as the owner ruled.
+    // The cask on its side by the water, the funnel gone: Littlefinger's men
+    // kill him in "Breaker of Chains" (episode 33), and in Sansa V of A
+    // Storm of Swords (chapter 205). The accent moves to the cask's hoops.
     {
       episode: 33,
       chapter: 205,
       value: [
-        ...moved(CASK, 'translate(-4 10) rotate(-90 80 100) scale(0.86)'),
-        {
-          d: 'M98 150 H144 M144 150 l-6 -4 M144 150 l-6 4 M98 150 l-6 -4 M98 150 l-6 4 M104 150 l-6 -4 M104 150 l-6 4',
-          role: 'accent',
-        },
+        ...moved(
+          CASK.map((stroke, index) =>
+            index === 1 ? { ...stroke, role: 'accent' as const } : stroke,
+          ),
+          'translate(-4 10) rotate(-90 80 100) scale(0.86)',
+        ),
         { d: 'M10 154 H150', role: 'ambient' },
         { ...WATER, transform: 'translate(0 10)' },
       ],
@@ -632,8 +633,8 @@ export const courtRedrawn: Redrawings = {
         { d: 'M118 146 l5 -3 M124 158 l5 -3', role: 'ambient' },
       ],
     },
-    // The red robe under snow and his sword lying spent on it: he dies of
-    // the cold beyond the Wall in "Beyond the Wall" (episode 66). The
+    // The red robe dropped on bare ground and his sword lying spent before
+    // it: he dies beyond the Wall in "Beyond the Wall" (episode 66). The
     // show's alone: in the books he is alive, so chapter 344 only orders
     // it.
     {
@@ -644,26 +645,6 @@ export const courtRedrawn: Redrawings = {
         { d: ROBE, role: 'accent' },
         ROBE_FOLDS,
         { d: LONGSWORD, transform: 'translate(-8 30) rotate(-58 100 121)' },
-        {
-          d: dots([
-            [24, 132],
-            [40, 112],
-            [56, 120],
-            [66, 104],
-            [92, 108],
-            [100, 92],
-            [118, 112],
-            [134, 124],
-            [130, 100],
-            [36, 96],
-            [84, 140],
-          ]),
-          role: 'soft',
-        },
-        {
-          d: 'M16 136 Q32 122 52 126 Q66 116 82 122 M100 118 Q122 114 142 132',
-          role: 'soft',
-        },
         shadow(80, 160, 64),
       ],
     },

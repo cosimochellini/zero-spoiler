@@ -136,19 +136,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': BATH,
-  'will': PERSON,
-  'gared': PERSON,
-  'waymar-royce': PERSON,
-  'grenn': PERSON,
-  'pypar': PERSON,
-  'rast': PERSON,
-  'dareon': PERSON,
-  'halder': PERSON,
-  'todder': PERSON,
-  'othell-yarwyck': PERSON,
-  'bowen-marsh': PERSON,
-  'jaremy-rykker': PERSON,
-  'othor': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

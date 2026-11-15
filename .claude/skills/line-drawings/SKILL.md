@@ -56,10 +56,16 @@ one nobody recognises (owner, 2026-11-05, #1097).
   [Redrawings](#redrawings).
 - **Nothing invented.** The object and every detail on it are ones the story
   shows, and the object is never a pun on the record's name (an oden pot for
-  Oden, a cicada for Semimaru; owner, 2026-11-05). Check the object against the wiki's Appearance section, not memory or
-  an issue's wording (Chopper's cap and Brook's guitar were both described
-  wrong in their issues; the early Egghead drawings had a volcano and a
-  bulb-headed Vegapunk the show never has, #180).
+  Oden, a cicada for Semimaru; owner, 2026-11-05). Check the object against
+  the wiki's Appearance section, not memory or an issue's wording, an audit's
+  included (Chopper's cap and Brook's guitar were both described wrong in
+  their issues; the early Egghead drawings had a volcano and a bulb-headed
+  Vegapunk the show never has, #180). Every object, setting and detail in the
+  drawing *and its comment* is on the wiki or the frame. The loop that redrew
+  One Piece (#1102) caught a
+  "huge arched window" (Shirahoshi), an axe "stuck in the stump" (Decken), a
+  castle on Whole Cake Island, Komurasaki's mortar and Lilith's fist in the
+  sea, each one in a proposal and none on the wiki or the frame.
 
 ## The house style
 
@@ -74,8 +80,11 @@ the rest are left to review, so check them yourself.
 - **The pen.** One 2 px line, round caps and joins, kept at 2 px at every size
   (`non-scaling-stroke`) **(test)**. No fills, anywhere. A dot is a zero-length
   line (`dot()`), a circle two arcs (`circle()`).
-- **Four strokes or more, at least one `accent`** **(test)**. Fewer than four
-  is an icon, not a drawing.
+- **Four strokes or more, exactly one `accent`** **(test)**. Fewer than four
+  is an icon, not a drawing. Put the accent on the one mark that identifies
+  the record. `src/test/accents.ts` lists the drawings that still carry more,
+  each with its count and reason; fixing one means lowering or deleting its
+  entry, and a new drawing needs none.
 - **Roles.** No role is the second ink (`ink2`). `accent` is the record's tint.
   `ambient` is the muted rule colour, for hatching, ground, water and things
   that are merely there. `dashed: true` is for shadows, ground and water.
@@ -284,5 +293,3 @@ To bring a whole arc or kind up to the bar:
   every key is quoted.
 - `scripts/archive-gate.mjs` reads the art modules' quoted two-space keys, so
   keys are written out one by one, never built from a table.
-- An issue's candidate episode or object is a lead, not a fact. Several redraw
-  PRs filed a later episode or corrected the object.

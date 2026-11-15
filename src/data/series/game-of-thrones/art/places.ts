@@ -1020,8 +1020,8 @@ const TUMBLESTONE: Stroke[] = [
 ]
 
 /**
- * The Golden Tooth: a narrow keep on a high peak, seen corner on, the pass
- * road coming down on either side below it, for the Lefford seat named in
+ * The Golden Tooth: a narrow keep on a high peak, seen corner on, with a
+ * dashed track at its foot on either side, for the Lefford seat named in
  * episode 8 and in Catelyn VII (chapter 41) and never visited in the first
  * season or book. The peak's far face and the keep's side are hatched; the
  * accent is the keep.
@@ -1089,10 +1089,10 @@ const GODS_EYE: Stroke[] = [
   { d: 'M24 90 Q44 84 80 84 Q116 84 136 90', role: 'soft' },
   { d: 'M44 104 q8 -4 16 0 t16 0 M90 114 q8 -4 16 0 t16 0', role: 'accent' },
   {
-    d: 'M34 150 Q30 132 20 118 M34 150 Q34 130 32 112 M34 150 Q38 132 46 120 M34 150 Q42 138 56 132 M122 148 Q120 136 112 128 M122 148 V124 M122 148 Q126 138 134 132',
+    d: 'M34 150 Q30 144 22 138 M34 150 Q34 142 32 136 M34 150 Q38 144 44 138 M34 150 Q42 146 52 142 M122 148 Q120 144 114 140 M122 148 V138 M122 148 Q126 144 132 140',
     role: 'soft',
   },
-  { d: 'M32 112 q-3 -5 0 -10 M122 124 q3 -5 0 -10' },
+  { d: 'M32 136 q-2 -3 0 -6 M122 138 q2 -3 0 -6' },
   { d: 'M10 150 Q80 142 150 150', role: 'ambient', dashed: true },
   { d: 'M100 82 l5 -2 M114 83 l5 -2 M128 86 l5 -2', role: 'ambient' },
 ]
@@ -1137,20 +1137,19 @@ const VALYRIA: Stroke[] = [
 
 /**
  * Braavos: the Titan, the giant armoured statue astride the harbour
- * entrance, its feet on two stone piers and one arm raised, for the city
+ * entrance, its feet on two stone piers and one fist raised, for the city
  * named in Daenerys I (chapter 4) and in episode 3 (the Sealord of
  * Braavos). The show first sails under it in season 4; the owner ruled
  * that a named city may open on the look a later season gives it. The
- * piers' far faces are hatched; the accent is the raised arm.
+ * piers' far faces are hatched; the accent is the helm.
  */
 const BRAAVOS: Stroke[] = [
   { d: 'M34 152 V122 H62 V152 M98 152 V122 H126 V152' },
   { d: 'M46 122 L70 84 M114 122 L90 84 M56 122 L76 92 H84 L104 122' },
   { d: 'M70 84 L68 58 M90 84 L92 58 M64 58 H96' },
-  { d: 'M74 58 V48 Q80 40 86 48 V58', role: 'soft' },
+  { d: 'M74 58 V48 Q80 40 86 48 V58 M74 52 H86', role: 'accent' },
   {
-    d: 'M96 58 L110 36 L112 20 M92 66 L104 44 L106 20 M106 20 Q109 16 112 20',
-    role: 'accent',
+    d: 'M96 58 L111 42 L113 30 M92 66 L104 46 L105 30 M103 30 H115 L116 22 Q109 16 102 22 Z M104 24 H114',
   },
   { d: 'M64 58 L58 82 M68 66 L64 84' },
   { d: 'M69 68 H91 M70 78 H90', role: 'soft' },
