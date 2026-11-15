@@ -2210,7 +2210,7 @@ const ALLOSAURUS_TAIL: Limb = {
   rim: { body: ALLOSAURUS_BODY, way: 1 },
 }
 
-/** The hind leg out of the foot, down to three clawed toes on the ground. */
+/** The hind leg out of the foot, down to a clawed foot on the ground. */
 const ALLOSAURUS_FOOT = [
   'M64 156 C62 162 62 168 64 172 L46 172 C40 172 36 176 38 179',
   'L56 178 L48 181 C44 182 43 186 47 186 L66 182 L68 184',
@@ -3803,11 +3803,11 @@ export const fruitArt = {
    * The fruit its soul comes back to: one soft wisp of soul diving nose first
    * into the dimple at its crown, beside the stalk, the rim of the dimple open
    * where it goes in, and below a clean line round its middle the skin is
-   * gone to bare bones, a cage of curved ribs on a spine. Brook first appears as a
-   * living skeleton in episode 337, and in episode 338 (chapter 443 p.6-7) he
-   * tells the crew he ate the fruit, and that after he died his soul came
-   * back from the underworld and looked for his body. A wisp, never a flame
-   * or a ghost: no point, no dome and no face, and no skull.
+   * gone to bare bones, a cage of curved ribs on a spine. Brook first appears
+   * as a living skeleton in episode 337, and in episode 338 (chapter 443
+   * p.6-7) he tells the crew he ate the fruit, and that after he died his
+   * soul came back from the underworld and looked for his body. A wisp,
+   * never a flame or a ghost: no point, no dome and no face, and no skull.
    */
   'revive-revive-fruit': [
     ...kitBody(REVIVE_BODY, [104, 114]).with(1, crown(REVIVE_BODY, [80, 101])),
@@ -4002,7 +4002,7 @@ export const fruitArt = {
 
   /**
    * The fruit standing on an allosaurus's hind foot: one thick leg grown out
-   * of its foot, planted on three clawed toes, and a long bare tail out of
+   * of its foot, planted on clawed toes, and a long bare tail out of
    * its far side, held off the ground as a counterweight. Drake's allosaurus
    * is already seen in episode 402 (chapter 509), before Law names it at
    * episode 923 (chapter 929). The tail is bare: the spines along it are
@@ -4391,8 +4391,9 @@ export const fruitArt = {
    * knuckles up, the outline open behind it, and two lumps of rock flung off
    * the top. In episode 463 (chapter 554 p.8-12) Akainu turns his fist to
    * magma and melts Jozu's iceberg with it; the pool is that magma, not his
-   * body, which is confirmed a Logia only in chapter 573 (episode 482),
-   * later in the same arc, where his Meteor Volcano also rains rock.
+   * body. Later in the same arc his Meteor Volcano rains rock in chapter 564
+   * p.16-17 (episode 473), and he is confirmed a Logia in chapter 573
+   * (episode 482).
    */
   'magma-magma-fruit': [
     ...kitBody(
