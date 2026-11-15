@@ -293,6 +293,24 @@ const CHANGES: {
   { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
   { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
   { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
+  // Later deaths of the Wall and the Riverlands from the drawing audit (#1290).
+  { id: 'yoren', episode: 13, chapter: 88, value: 'deceased' },
+  { id: 'jeor-mormont', episode: 24, chapter: 177, value: 'deceased' },
+  { id: 'aemon', episode: 47, chapter: 261, value: 'deceased' },
+  {
+    id: 'alliser-thorne',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'brynden-tully',
+    episode: 58,
+    chapter: 264,
+    value: 'deceased',
+    source: 'episode',
+  },
   // The northern lords' deaths (#1288).
   {
     id: 'mikken',
@@ -1173,6 +1191,15 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The Vale, Riverlands and Night's Watch stages of the drawing audit
+  // (#1290): deaths, Jaqen's coin and Pod's axe.
+  { id: 'yoren', episode: 13, chapter: 88 },
+  { id: 'jaqen-hghar', episode: 20, chapter: 121 },
+  { id: 'jeor-mormont', episode: 24, chapter: 177 },
+  { id: 'podrick-payne', episode: 34, chapter: 235, source: 'episode' },
+  { id: 'aemon', episode: 47, chapter: 261, stage: 1 },
+  { id: 'alliser-thorne', episode: 53, chapter: 344, source: 'episode' },
+  { id: 'brynden-tully', episode: 58, chapter: 264, source: 'episode' },
   // The northern lords' deaths and reveals (#1288).
   { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
   { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },

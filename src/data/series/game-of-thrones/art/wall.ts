@@ -14,9 +14,10 @@ import { DRAGON_SIGIL } from './essos'
  * Nothing of his own reads at his threshold in both media (the book's raven
  * is not on screen in season 1), so the animal stands in, as Joffrey's
  * stag does. The bear is black, so its back is hatched; the accent is the
- * claws of the raised paw.
+ * claws of the raised paw. His first drawing and his death share the
+ * animal, `BEAR_BODY`.
  */
-const BEAR: Stroke[] = [
+const BEAR_BODY: Stroke[] = [
   {
     d: 'M40 58 Q44 50 54 48 Q58 40 66 38 Q68 28 76 30 Q82 32 80 40 Q100 46 106 72 Q112 100 106 124 Q104 134 108 140 L110 150 H94 L92 140 Q80 130 76 112',
   },
@@ -30,7 +31,13 @@ const BEAR: Stroke[] = [
     d: 'M94 56 l6 -3 M98 70 l6 -3 M100 84 l6 -3 M100 98 l6 -3 M99 112 l5 -3',
     role: 'ambient',
   },
-  shadow(92, 154, 30),
+]
+const BEAR: Stroke[] = [...BEAR_BODY, shadow(92, 154, 30)]
+
+/** The rookery perch: its bar, and the post on its foot. */
+const PERCH: Stroke[] = [
+  { d: 'M30 114 H130 V120 H30 Z' },
+  { d: 'M76 120 V150 M84 120 V150 M62 150 H98' },
 ]
 
 /**
@@ -50,9 +57,17 @@ const RAVEN: Stroke[] = [
   { d: 'M86 70 l6 -3 M92 80 l6 -3 M96 90 l5 -3', role: 'ambient' },
   { d: 'M76 102 V114 M86 104 V114', role: 'soft' },
   { d: 'M87 106 H94 V112 H87 Z', role: 'accent' },
-  { d: 'M30 114 H130 V120 H30 Z' },
-  { d: 'M76 120 V150 M84 120 V150 M62 150 H98' },
+  ...PERCH,
   shadow(80, 154, 26),
+]
+
+/**
+ * The three-headed dragon of his house on a banner hung under the perch,
+ * from the episode and chapter where he tells Jon he is a Targaryen.
+ */
+const AEMON_BANNER: Stroke[] = [
+  { d: 'M32 120 V152 L47 146 L62 152 V120' },
+  ...moved(DRAGON_SIGIL, 'translate(47 135) scale(0.34) translate(-80 -92)'),
 ]
 
 /**
@@ -81,9 +96,10 @@ const BOOKS: Stroke[] = [
  * Alliser Thorne: a straw dummy on a post in the yard with a sword struck
  * into it, for the master-at-arms who drills the recruits from episode 3
  * and Jon III (chapter 20). The head is blank. The sack's far side is
- * hatched; the accent is the sword's grip.
+ * hatched; the accent is the sword's grip. His first drawing and his death
+ * share the dummy and its sword, `DUMMY_BODY`.
  */
-const DUMMY: Stroke[] = [
+const DUMMY_BODY: Stroke[] = [
   { d: circle(80, 38, 10) },
   { d: 'M64 54 Q58 80 64 112 H96 Q102 80 96 54 Z' },
   { d: 'M38 66 H64 M96 66 H122 M38 72 H64 M96 72 H122 M38 66 V72 M122 66 V72' },
@@ -103,8 +119,8 @@ const DUMMY: Stroke[] = [
     d: 'M90 60 l5 -3 M91 72 l5 -3 M91 86 l5 -3 M90 100 l5 -3',
     role: 'ambient',
   },
-  shadow(80, 154, 30),
 ]
+const DUMMY: Stroke[] = [...DUMMY_BODY, shadow(80, 154, 30)]
 
 /**
  * Yoren: a pair of iron manacles on their chain, for the recruiter who
@@ -128,6 +144,17 @@ const MANACLES: Stroke[] = [
   { d: 'M40 106 h8 M112 106 h8', role: 'soft' },
   { d: 'M54 124 l6 -3 M126 124 l6 -3 M30 126 l4 -2', role: 'ambient' },
   shadow(80, 140, 64),
+]
+
+/**
+ * One of Yoren's manacles lying open: the band, the near half of the
+ * cuff, and the far half swung up on its hinge. The other is its mirror.
+ */
+const OPEN_CUFF: Stroke[] = [
+  { d: 'M24 116 V122 Q24 132 44 132 Q64 132 64 122 V116' },
+  { d: 'M24 116 Q24 126 44 126 Q64 126 64 116', role: 'soft' },
+  { d: 'M64 116 Q66 96 50 88 Q34 82 30 92 Q42 92 54 100 Q60 106 60 116' },
+  { d: 'M30 126 l4 -2 M36 128 l4 -2', role: 'ambient' },
 ]
 
 /**
@@ -574,16 +601,67 @@ export const wallRedrawn: Redrawings = {
     // The same raven, with the three-headed dragon of his house on a banner
     // under the perch: he tells Jon he is a Targaryen in "Baelor" (episode
     // 9) and in Jon VIII (chapter 61).
+    { episode: 9, chapter: 61, value: [...RAVEN, ...AEMON_BANNER] },
+    // The perch empty, the banner still hanging and the letter fallen to
+    // the floor under it: the raven has gone with him. He dies at Castle
+    // Black in "The Gift" (episode 47), and in Samwell IV of A Feast for
+    // Crows (chapter 261).
     {
-      episode: 9,
-      chapter: 61,
+      episode: 47,
+      chapter: 261,
       value: [
-        ...RAVEN,
-        { d: 'M32 120 V152 L47 146 L62 152 V120' },
-        ...moved(
-          DRAGON_SIGIL,
-          'translate(47 135) scale(0.34) translate(-80 -92)',
-        ),
+        ...PERCH,
+        ...softened(AEMON_BANNER),
+        { d: 'M98 152 L116 147 L118 151 L100 156 Z', role: 'accent' },
+        { d: 'M107 150 q5 4 10 1', role: 'soft' },
+        shadow(80, 154, 26),
+      ],
+    },
+  ],
+  'jeor-mormont': [
+    // The bear fallen on its side, its back hatched and the claws of the
+    // paw still raised: the mutineers kill him at Craster's Keep in "And
+    // Now His Watch Is Ended" (episode 24) and in Samwell II of A Storm of
+    // Swords (chapter 177).
+    {
+      episode: 24,
+      chapter: 177,
+      value: [
+        ...moved(BEAR_BODY, 'translate(11 2) rotate(-90 80 100)'),
+        { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'alliser-thorne': [
+    // The dummy knocked over on the ground, the sword still struck into it:
+    // Jon hangs him for the mutiny in "Oathbreaker" (episode 53). The
+    // show's alone: the books leave him alive, so chapter 344, their last,
+    // orders it.
+    {
+      episode: 53,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(DUMMY_BODY, 'translate(10 2) rotate(-90 80 100)'),
+        { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'yoren': [
+    // The manacles lying open on the ground, the chain slack between them:
+    // Amory Lorch's men kill him in "What Is Dead May Never Die" (episode
+    // 13) and in Arya IV of A Clash of Kings (chapter 88).
+    {
+      episode: 13,
+      chapter: 88,
+      value: [
+        ...OPEN_CUFF,
+        ...moved(OPEN_CUFF, 'translate(160 0) scale(-1 1)'),
+        {
+          d: `${ellipse(70, 128, 6, 3)} ${ellipse(81, 131, 6, 3)} ${ellipse(92, 128, 6, 3)}`,
+          role: 'accent',
+        },
+        { d: 'M10 140 H150', role: 'ambient', dashed: true },
       ],
     },
   ],

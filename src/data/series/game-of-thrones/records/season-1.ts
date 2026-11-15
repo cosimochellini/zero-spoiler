@@ -3568,7 +3568,10 @@ export const season1: ThronesSaga = {
         it: 'Guida i Guardiani della notte da Castello Nero. È un uomo anziano e burbero. Jon Snow è tra le reclute che si addestrano sotto il suo comando.',
         en: 'He leads the Night’s Watch from Castle Black. He is a gruff old man. Jon Snow is among the recruits training under his command.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 24, chapter: 177, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -3583,7 +3586,10 @@ export const season1: ThronesSaga = {
         it: 'È molto anziano e cieco. Siede con il lord comandante quando a Tyrion Lannister viene chiesto di far sapere a corte che la Barriera ha bisogno di uomini.',
         en: 'He is very old and blind. He sits with the Lord Commander when Tyrion Lannister is asked to tell the court that the Wall needs men.',
       },
-      status: [{ episode: 3, chapter: 22, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 22, value: 'alive' },
+        { episode: 47, chapter: 261, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -3633,7 +3639,10 @@ export const season1: ThronesSaga = {
         it: 'Addestra le reclute dei Guardiani della notte con disprezzo. Jon è il più abile di loro, e lui lo chiama “Lord Snow” per deriderlo.',
         en: 'He trains the recruits of the Night’s Watch with contempt. Jon is the most skilled of them, and he calls him “Lord Snow” to mock him.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -3651,7 +3660,10 @@ export const season1: ThronesSaga = {
         it: 'Si unisce al gruppo diretto alla Barriera con Jon e suo zio. Porta con sé due condannati come nuove reclute.',
         en: 'He joins the party riding to the Wall with Jon and his uncle. He brings two convicts with him as new recruits.',
       },
-      status: [{ episode: 3, chapter: 14, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 14, value: 'alive' },
+        { episode: 13, chapter: 88, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5670,7 +5682,10 @@ export const season1: ThronesSaga = {
         it: 'È il fratello del padre di Catelyn Stark e un cavaliere di Casa Tully. Lo chiamano il Pesce Nero.',
         en: 'He is the brother of Catelyn Stark’s father and a knight of House Tully. He is known as the Blackfish.',
       },
-      status: [{ episode: 23, chapter: 35, value: 'alive' }],
+      status: [
+        { episode: 23, chapter: 35, value: 'alive' },
+        { episode: 58, chapter: 264, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 23,

@@ -371,10 +371,12 @@
       "https://gameofthrones.fandom.com/wiki/Jeor_Mormont",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Jeor_Mormont"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Jeor_Mormont",
+      "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended"
     ],
     "unverified": [
-      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
+      "Death (#1290): the mutiny at Craster's Keep in episode 24 (Fandom DeathEp); the wiki's adaptation list for the episode places it in A Storm of Swords 33, Samwell II (site chapter 177; the audit's estimate was 162). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "aemon": {
@@ -383,11 +385,15 @@
       "https://gameofthrones.fandom.com/wiki/Aemon",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Maestro_Aemon"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Maestro_Aemon",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/The_Gift"
     ],
     "unverified": [
       "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
-      "Blindness at the book gate (Tyrion III) is not in the chapter synopsis; check the text."
+      "Blindness at the book gate (Tyrion III) is not in the chapter synopsis; check the text.",
+      "Targaryen stage: the wiki's adaptation list for \"Baelor\" gives A Game of Thrones 60, Jon VIII (site chapter 61), as filed. Not checked on A Wiki of Ice and Fire.",
+      "Death (#1290): at Castle Black in episode 47 (Fandom DeathEp \"The Gift\"); the wiki's adaptation list places the book's death in A Feast for Crows 35, Samwell IV (site chapter 261; the audit's estimate was 247). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "samwell-tarly": {
@@ -407,10 +413,12 @@
       "https://gameofthrones.fandom.com/wiki/Alliser_Thorne",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Alliser_Thorne"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Alliser_Thorne",
+      "https://gameofthrones.fandom.com/wiki/Oathbreaker"
     ],
     "unverified": [
-      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
+      "Death (#1290): hanged by Jon in episode 53 (Fandom DeathEp \"Oathbreaker\"), the show's alone; alive at the end of the books, so chapter 344 orders it."
     ]
   },
   "yoren": {
@@ -419,10 +427,12 @@
       "https://gameofthrones.fandom.com/wiki/Yoren",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Yoren"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Yoren",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die"
     ],
     "unverified": [
-      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
+      "Death (#1290): killed by Amory Lorch's men in episode 13 (Fandom DeathEp); the wiki's adaptation list for the episode places it in A Clash of Kings 14, Arya IV (site chapter 88; the audit's 93 is Lommy's chapter). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "cersei-lannister": {
@@ -1885,7 +1895,8 @@
     ],
     "unverified": [
       "Show: first seen in ep 5 per Fandom; took 6, the first episode that names him. Owner may lower to 5.",
-      "commonWord false: \"Mord\" is not an English or Italian word."
+      "commonWord false: \"Mord\" is not an English or Italian word.",
+      "Drawing (#1290): the truncheon Mord beats Tyrion with in episode 6 (Fandom, behind the scenes); the book gives him none, so the show is the reference. Episode not viewed."
     ]
   },
   "lyn-corbray": {
@@ -2189,7 +2200,8 @@
     ],
     "unverified": [
       "Show: only mentioned (by Joffrey) in ep 3, off screen.",
-      "Death (#1242): the wildfire under the Great Sept in episode 60 (Fandom ref GOT610) and a crossbow bolt in the epilogue of A Dance with Dragons (site chapter 344); episode not viewed."
+      "Death (#1242): the wildfire under the Great Sept in episode 60 (Fandom ref GOT610) and a crossbow bolt in the epilogue of A Dance with Dragons (site chapter 344); episode not viewed.",
+      "Death drawing redrawn (#1290): the lion lying on its side; pins unchanged."
     ]
   },
   "addam-marbrand": {
@@ -2207,7 +2219,14 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/Podrick_Payne",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62",
-      "https://gameofthrones.fandom.com/wiki/Podrick_Payne"
+      "https://gameofthrones.fandom.com/wiki/Podrick_Payne",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://gameofthrones.fandom.com/wiki/Oathkeeper_(episode)"
+    ],
+    "unverified": [
+      "Drawing (#1290): the spear he kills Mandon Moore with in episode 19 (Fandom ref GOT209) and the wine he pours in episode 12 (GOT202); the book's Pod pushes Mandon into the river without a spear. Episodes not viewed.",
+      "Axe stage (#1290): Bronn brings him Tyrion's axe in episode 34 (Fandom ref GOT404), the show's alone. Chapter 235 (A Feast for Crows 9, Brienne II, where Pod joins Brienne) only orders it; taken from the Game of Thrones Wiki's adaptation list for \"Oathkeeper\". Not checked on A Wiki of Ice and Fire."
     ]
   },
   "stevron-frey": {
@@ -2249,11 +2268,13 @@
       "https://awoiaf.westeros.org/index.php/Brynden_Tully",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_55",
-      "https://gameofthrones.fandom.com/wiki/Brynden_Tully"
+      "https://gameofthrones.fandom.com/wiki/Brynden_Tully",
+      "https://gameofthrones.fandom.com/wiki/No_One"
     ],
     "unverified": [
       "Book gate is in the Vale storyline (Catelyn VI); check against the north-vale roster to avoid a duplicate record.",
-      "Italian nickname: 'il Pesce Nero'."
+      "Italian nickname: 'il Pesce Nero'.",
+      "Death (#1290): dies fighting at Riverrun in episode 58 (Fandom DeathEp \"No One\"), the show's alone; the book's Blackfish escapes. Chapter 264 (A Feast for Crows 38, the siege, the verifier's value) only orders it; the wiki's adaptation list for \"No One\" puts Riverrun's surrender at A Feast for Crows 44 (site 270). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "hot-pie": {
@@ -2286,10 +2307,13 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Jaqen_H'ghar"
+      "https://gameofthrones.fandom.com/wiki/Jaqen_H'ghar",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis"
     ],
     "unverified": [
-      "Show: Fandom's S1 biography calls him by name in its ep 10 account; if the owner reads the rule literally, gate = 10."
+      "Show: Fandom's S1 biography calls him by name in its ep 10 account; if the owner reads the rule literally, gate = 10.",
+      "Drawing (#1290): the tankard of water he asks Arya to fill in episode 12 (Fandom ref GOT202). Episode not viewed.",
+      "Coin stage (#1290): gives Arya the iron coin and changes his face in episode 20 (Fandom); the wiki's adaptation list for \"Valar Morghulis\" places it in A Clash of Kings 47, Arya IX (site chapter 121). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "rorge": {
