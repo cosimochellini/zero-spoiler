@@ -107,7 +107,7 @@ const BIBLO_BOOK: Stroke[] = [
 ]
 
 /** The same book at the size a human holds it, at the bigger one's foot. */
-const HUMAN_SIZE = 'translate(20 102) scale(0.4) translate(-66 -70)'
+const HUMAN_SIZE = 'translate(20 128) scale(0.4) translate(-66 -70)'
 
 /** The two halves of Colon's wooden sword, enlarged together. */
 const SWORD_HILT_HALF =
@@ -172,11 +172,9 @@ export const elbafArt = {
 
   // Bigstein Castle, where it rules, built of toy bricks and drawn in 3/4:
   // the studs on top, the seams between the bricks, the far faces hatched.
-  // It lies behind the walls, the back of its head and its ears over the
-  // tower, the robe on its back trimmed at the hem and its tail curling up
-  // from its haunch.
-  // The crown is left out: it breaks in the fight the crew finds it in
-  // (1157), before the record opens.
+  // Behind the walls, the massive cat: its ears over the tower, the robe on
+  // its back and its tail curling out. The crown is left out: it breaks in
+  // the fight the crew finds it in (1157), before the record opens.
   'iscat': [
     { d: 'M38 158 V108 H108 V158 Z' },
     { d: 'M108 108 L126 96 V146 L108 158 M38 108 L54 97.3 M106 96 H126' },
@@ -197,10 +195,7 @@ export const elbafArt = {
     },
     { d: 'M106 70 C122 62 140 74 144 98 C147 116 146 136 142 152' },
     { d: 'M126 100 C132 104 138 108 145 114' },
-    {
-      d: 'M126 106 C132 110 138 114 145.5 120 M120 70 C124 80 126 90 126 96',
-      role: 'soft',
-    },
+    { d: 'M120 70 C124 80 126 90 126 96', role: 'soft' },
     {
       d: 'M144 138 C158 132 160 108 152 96 C148 90 150 82 156 82',
       role: 'accent',
@@ -390,8 +385,9 @@ export const elbafArt = {
 
   // One of the colossal tree's branches, its underside hatched, two
   // longhouses on it in 3/4 with crossed boards at their gables, a sprig at
-  // its tip, and the sea clouds the giants sail on banked under its end
-  // (1163). The giants live up here from the climb at 1162.
+  // its tip, and clouds below it: the Sun World is high enough for sea
+  // clouds, which the giants use to get about (1163). The giants live up
+  // here from the climb at 1162.
   'sun-world': [
     {
       d: 'M-4 116 C40 112 100 104 148 92 M-4 162 C40 152 100 134 148 108 M148 92 C158 90 160 102 148 108',
@@ -579,8 +575,8 @@ export const elbafArt = {
       d: 'M86 72 q-2 -7 4 -9 M92 72 q0 -8 4 -10 M108 72 q-2 -7 4 -9 M114 72 q0 -8 4 -10',
     },
     { d: 'M122 58 l5 -4 M124 46 l5 -4 M123 34 l5 -4', role: 'ambient' },
-    shadow(100, 172, 44),
-    shadow(30, 172, 18),
+    shadow(100, 164, 44),
+    shadow(30, 166, 18),
   ],
 
   // One of the bandage-like strips she cuts the castle guards down with,
