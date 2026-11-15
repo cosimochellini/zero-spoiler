@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
@@ -51,7 +52,8 @@ const SHAMROCK_HILT: Stroke[] = [
 
 /**
  * One of Cerberus's spiked collars at the origin, seen in 3/4 with its
- * spikes and the flame its neck flies on. The drawing places three.
+ * spikes and the flame its neck flies on. The drawing places three, and
+ * puts its accent on the blades they carry.
  */
 const CERBERUS_COLLAR: Stroke[] = [
   {
@@ -59,7 +61,7 @@ const CERBERUS_COLLAR: Stroke[] = [
   },
   {
     d: 'M-15.9 6 L-13.4 11 L-10.9 6 M-10.5 8.5 L-8 13.5 L-5.5 8.5 M-2.5 9.5 L0 14.5 L2.5 9.5 M5.5 8.5 L8 13.5 L10.5 8.5 M10.9 6 L13.4 11 L15.9 6 M-15 1 l-6 2 l6 2 M15 1 l6 2 l-6 2',
-    role: 'accent',
+    role: 'soft',
   },
   {
     d: 'M-6 16 q-6 10 2 20 q-2 -8 4 -12 q4 8 0 16 q8 -6 6 -18',
@@ -79,6 +81,34 @@ const SABER_TILT =
 /** The same saber drawn, leaning left to leave room for the collars. */
 const DRAWN_TILT = 'translate(-30 10) rotate(-12 80 100)'
 
+/**
+ * The saber drawn and leaning left, its hilt without an accent: Shamrock's
+ * 1168 stage and Cerberus's first drawing both hold it, and each puts its
+ * one accent on what the sword does.
+ */
+const DRAWN_SABER: Stroke[] = [
+  ...moved(
+    SHAMROCK_HILT.map(({ d }) => ({ d })),
+    DRAWN_TILT,
+  ),
+  { d: 'M75 75 V170 Q78 180 85 186 V75', transform: DRAWN_TILT },
+  { d: 'M79 80 V168', role: 'soft', transform: DRAWN_TILT },
+]
+
+/**
+ * The cover of the book Biblo grows, upright in 3/4: the front, the top
+ * edge and the fore-edge, the pages in soft and two bands on the cover.
+ */
+const BIBLO_COVER = 'M66 70 H126 V160 H66 Z'
+const BIBLO_BOOK: Stroke[] = [
+  { d: 'M66 70 L78 62 H138 L126 70 M126 160 L138 152 V62' },
+  { d: 'M129 68 V156 M133 65 V153', role: 'soft' },
+  { d: 'M74 84 H118 M74 146 H118', role: 'soft' },
+]
+
+/** The same book at the size a human holds it, at the bigger one's foot. */
+const HUMAN_SIZE = 'translate(20 102) scale(0.4) translate(-66 -70)'
+
 /** The two halves of Colon's wooden sword, enlarged together. */
 const SWORD_HILT_HALF =
   'translate(80 96) scale(1.15) translate(-86 -134) rotate(-55 60 150)'
@@ -97,32 +127,56 @@ const TILT = 'rotate(-24 80 100)'
 
 /** The drawings of the records filed in the elbaf stretch of the route. */
 export const elbafArt = {
-  // A longship under a square sail, a row of round shields along its side.
+  // The colossal tree rising out of the mist that hangs round Elbaph (1158),
+  // its trunk's far side hatched and its limbs running out of the top, and
+  // in front of it, small, the giants' longboat the crew sails on from 1156:
+  // shields along the rail, the building in the middle, the horns of the
+  // figurehead and the white sail. The tree is seen at 1160 and the ship
+  // docks under it at 1162, both within the arc.
   'elbaf': [
-    { d: 'M20 132 Q80 156 140 132 L132 118 H28 Z' },
     {
-      d: 'M140 132 C150 118 150 100 138 96 c-8 -2 -10 8 -2 10',
-      role: 'accent',
+      d: 'M72 96 C76 76 74 56 70 34 C66 18 56 8 44 -4 M138 104 C134 84 134 62 140 34 C144 18 154 8 166 -4',
     },
-    { d: 'M80 118 V34' },
-    { d: 'M50 44 H110 L114 104 H46 Z', role: 'accent' },
-    { d: 'M50 64 H110 M48 84 H112', role: 'soft' },
+    { d: 'M90 44 C90 26 86 12 82 -4 M120 44 C120 26 124 12 128 -4' },
+    {
+      d: 'M88 96 C90 84 88 72 90 58 M120 100 C118 88 122 76 120 62',
+      role: 'soft',
+    },
+    {
+      d: 'M128 98 l6 -4 M128 84 l6 -4 M129 70 l6 -4 M131 56 l6 -4',
+      role: 'ambient',
+    },
+    {
+      d: 'M108 102 q8 -4 16 0 t16 0 t16 0 M98 114 q8 -4 16 0 t16 0 t16 0 t16 0',
+      role: 'soft',
+    },
+    { d: 'M10 132 L18 146 Q50 158 84 146 L94 130 Q52 142 10 132 Z' },
+    { d: 'M10 132 C6 124 8 118 14 117' },
+    {
+      d: 'M94 130 C98 124 98 118 95 114 M95 114 q-6 -4 -4 -11 M95 114 q6 -4 11 -2',
+    },
     {
       d: [
-        circle(44, 124, 5),
-        circle(64, 126, 5),
-        circle(84, 126, 5),
-        circle(104, 125, 5),
+        circle(28, 143, 3.5),
+        circle(42, 145, 3.5),
+        circle(56, 146, 3.5),
+        circle(70, 145, 3.5),
       ].join(' '),
     },
+    { d: 'M26 137 V126 L36 118 L46 126 V138.5' },
+    { d: 'M66 139 V92' },
+    { d: 'M54 96 H78 L80 126 H52 Z', role: 'accent' },
+    { d: 'M53 111 H79', role: 'soft' },
     ...SEA,
   ],
 
   // Bigstein Castle, where it rules, built of toy bricks and drawn in 3/4:
   // the studs on top, the seams between the bricks, the far faces hatched.
-  // Its tail curls out from behind the walls. The crown is left out: it
-  // breaks in the fight the crew finds it in (1157), and on a brick it would
-  // be staged.
+  // It lies behind the walls, the back of its head and its ears over the
+  // tower, the robe on its back trimmed at the hem and its tail curling up
+  // from its haunch.
+  // The crown is left out: it breaks in the fight the crew finds it in
+  // (1157), before the record opens.
   'iscat': [
     { d: 'M38 158 V108 H108 V158 Z' },
     { d: 'M108 108 L126 96 V146 L108 158 M38 108 L54 97.3 M106 96 H126' },
@@ -141,16 +195,27 @@ export const elbafArt = {
       d: 'M112 118 l10 -7 M112 130 l10 -7 M112 142 l10 -7 M97 70 l6 -4 M97 84 l6 -4',
       role: 'ambient',
     },
+    { d: 'M106 70 C122 62 140 74 144 98 C147 116 146 136 142 152' },
+    { d: 'M126 100 C132 104 138 108 145 114' },
     {
-      d: 'M38 128 C16 122 10 98 18 80 C26 62 22 46 12 40 C10 34 16 32 20 36 C32 46 34 66 26 84 C20 98 24 114 38 118',
+      d: 'M126 106 C132 110 138 114 145.5 120 M120 70 C124 80 126 90 126 96',
+      role: 'soft',
+    },
+    {
+      d: 'M144 138 C158 132 160 108 152 96 C148 90 150 82 156 82',
       role: 'accent',
     },
-    shadow(82, 172, 52),
+    {
+      d: 'M66 52 C67 42 72 36 75 30 L84 42 C88 41 92 41 96 42 L104 30 C108 36 109 44 108 52',
+    },
+    shadow(92, 172, 60),
   ],
 
-  // The diorama he rules as the Sun God, toy houses on a slab in 3/4, and
-  // his staff standing behind it: a sun-shaped head with a metal net
-  // across it, the one he traps the crew with (1158).
+  // The diorama he rules as the Sun God, toy houses on a slab in 3/4, his
+  // staff standing behind it, and the deer skull he wears as the Sun God
+  // (1158) looming over the slab in profile, antlers up, no eye socket. The
+  // staff's sun-shaped head holds the metal net he traps the crew with
+  // (1159).
   'road': [
     { d: 'M10 148 H110 V166 H10 Z' },
     { d: 'M10 148 L30 134 H108 M117 134 H130 L110 148 M110 166 L130 152 V134' },
@@ -168,15 +233,22 @@ export const elbafArt = {
       role: 'soft',
     },
     { d: 'M108 61 V134 M117 61 V134' },
-    { d: circle(112, 42, 16), role: 'accent' },
+    { d: circle(112, 42, 16) },
     {
       d: 'M131 42 L141 42 M128.5 51.5 L133.7 54.5 M121.5 58.5 L126.5 67.1 M102.5 58.5 L97.5 67.1 M95.5 51.5 L90.3 54.5 M93 42 L83 42 M95.5 32.5 L90.3 29.5 M102.5 25.5 L97.5 16.9 M112 23 L112 17 M121.5 25.5 L126.5 16.9 M128.5 32.5 L133.7 29.5',
-      role: 'accent',
+      role: 'soft',
     },
     {
       d: 'M98.5 35.5 L118.5 55.5 M105.5 28.5 L125.5 48.5 M98.5 48.5 L118.5 28.5 M105.5 55.5 L125.5 35.5',
-      role: 'soft',
+      role: 'accent',
     },
+    {
+      d: 'M16 50 C14 40 22 34 34 36 L44 37 C50 39 52 44 54 48 L80 86 C81 90 78 92 75 90 L46 68 L30 66 C22 64 17 58 16 50 Z',
+    },
+    {
+      d: 'M28 37 C20 24 14 14 2 4 M22 26 l-14 -2 M16 17 l-3 -14 M40 36 C42 22 50 12 64 4 M44 24 l14 -4 M50 15 l0 -13',
+    },
+    { d: 'M28 58 C36 56 42 60 48 66 M54 52 L76 84', role: 'soft' },
     shadow(70, 180, 60),
   ],
 
@@ -317,11 +389,14 @@ export const elbafArt = {
   ],
 
   // One of the colossal tree's branches, its underside hatched, two
-  // longhouses on it with crossed boards at their gables, a sprig at its tip.
+  // longhouses on it in 3/4 with crossed boards at their gables, a sprig at
+  // its tip, and the sea clouds the giants sail on banked under its end
+  // (1163). The giants live up here from the climb at 1162.
   'sun-world': [
     {
       d: 'M-4 116 C40 112 100 104 148 92 M-4 162 C40 152 100 134 148 108 M148 92 C158 90 160 102 148 108',
     },
+    { d: 'M148 92 C143 94 142 106 148 108', role: 'soft' },
     {
       d: 'M150 94 C152 82 156 74 164 68 M156 76 q8 -8 6 -14 q-8 2 -6 14 M152 84 q-8 -6 -14 -2 q6 6 14 2',
       role: 'soft',
@@ -337,44 +412,70 @@ export const elbafArt = {
     {
       d: 'M14 115 V92 L30 76 L46 92 V112.5 M46 92 L62 86 V110 M30 76 L46 70 L62 86',
     },
-    { d: 'M24 114.5 v-12 h10 v11', role: 'soft' },
+    { d: 'M24 114.5 v-12 h10 v11 M50 102 l8 -3', role: 'soft' },
     {
       d: 'M84 106.5 V90 L96 78 L108 90 V103.5 M108 90 L120 85 V100.5 M96 78 L108 73 L120 85',
     },
+    { d: 'M90 105 v-9 h8 v8 M111 96 l6 -2.5', role: 'soft' },
     {
       d: 'M30 76 L21 66 M30 76 L39 66 M96 78 L89 70 M96 78 L103 70',
       role: 'accent',
     },
-  ],
-
-  // A stack of books, a ribbon marking a page in the top one.
-  'ange': [
-    { d: 'M30 150 H130 V168 H30 Z' },
-    { d: 'M38 132 H122 V150 H38 Z' },
-    { d: 'M34 114 H126 V132 H34 Z' },
-    { d: 'M34 114 L42 104 H134 L126 114', role: 'soft' },
-    { d: 'M96 104 V96 M96 132 V152 l-5 -6 l-5 6 V132', role: 'accent' },
-    shadow(80, 178, 54),
-  ],
-
-  // A leaf under a magnifying glass for the biology teacher: the veins and
-  // the glints on the lens in soft, the leaf's near edge hatched, a double
-  // rim on the glass.
-  'ripley': [
     {
-      d: 'M18 150 C12 108 50 66 116 52 C128 104 92 150 18 150 Z M18 150 L8 160',
-    },
-    {
-      d: 'M18 150 C50 120 80 92 116 52 M34 134 l-8 -22 M50 118 l-6 -26 M66 100 l-2 -24 M86 80 l-2 -16 M36 136 l20 2 M56 116 l22 0',
+      d: 'M96 170 q-2 -10 10 -10 q6 -10 20 -6 q8 -8 20 -2 q12 -2 14 8 q6 10 -6 10 H102 q-8 0 -6 0 M70 186 q-2 -8 8 -8 q6 -8 18 -4 q8 -6 18 0 q10 0 8 8 q0 6 -8 6 H76 q-6 0 -6 -2',
       role: 'soft',
     },
-    { d: 'M28 149 l8 -8 M42 149 l10 -10 M56 148 l8 -8', role: 'ambient' },
-    { d: circle(92, 118, 26), role: 'accent' },
-    { d: circle(92, 118, 21), role: 'soft' },
-    { d: 'M76 128 L90 106 M90 136 L108 112', role: 'soft' },
-    { d: 'M111.4 131.8 L116 136.4 L110.4 142 L105.8 137.4' },
-    { d: 'M116.7 135.7 L139.4 158.3 Q138.7 164.7 132.3 165.4 L109.7 142.7' },
-    shadow(76, 182, 58),
+    { d: 'M100 182 q8 -3 16 0 t16 0 t16 0', role: 'ambient' },
+  ],
+
+  // Two of the books she keeps at the Owl Library, stacked in 3/4 with the
+  // fore-edges in soft, and on top her chupalla, the straw hat she wears
+  // from her first scene (1161): a wide flat brim with its thickness
+  // showing, a low round crown, the band bright, the far side hatched.
+  'ange': [
+    { d: 'M26 148 H116 V168 H26 Z M116 148 L132 138 V158 L116 168' },
+    { d: 'M36 130 H112 V148 M36 130 V148 M112 130 L126 121 V139.6' },
+    { d: 'M26 148 L36 141.8 M126 139.6 L132 138 M36 130 L50 121 H126' },
+    {
+      d: 'M120 153 l9 -6 M120 159 l9 -6 M120 165 l9 -6 M115 136 l8 -5 M115 142 l8 -5',
+      role: 'soft',
+    },
+    { d: 'M40 148 V168 M102 148 V168 M46 130 V148', role: 'soft' },
+    { d: ellipse(82, 118, 36, 8.5) },
+    { d: 'M46 118 v2.5 a36 8.5 0 0 0 72 0 v-2.5' },
+    { d: 'M64 117 C64 104 70 98 82 98 C94 98 100 104 100 117' },
+    { d: 'M64.3 112 A17.8 4.4 0 0 0 99.7 112', role: 'accent' },
+    { d: 'M93 102 l4 -2 M95.5 108 l4 -2 M108 125 l5 -2', role: 'ambient' },
+    shadow(80, 178, 56),
+  ],
+
+  // Her green tank top, cut off above the midriff, with the horned Jolly
+  // Roger printed on its front, and her fur cape falling behind it to a
+  // tufted hem (1164).
+  // The flag's shape is drawn by eye: the wiki only calls it horned, and
+  // gives it no crossbones.
+  'ripley': [
+    {
+      d: 'M56 34 H64 C68 56 92 56 96 34 H104 C104 54 112 64 118 70 L116 128 Q80 136 44 128 L42 70 C48 64 56 54 56 34 Z',
+    },
+    { d: 'M58 38 C62 60 98 60 102 38', role: 'soft' },
+    { d: 'M46 124 Q80 131 114 124', role: 'soft' },
+    {
+      d: `M68 92 C68 76 92 76 92 92 C92 98 88 100 87 106 H73 C72 100 68 98 68 92 Z ${circle(74.5, 91, 3.4)} ${circle(85.5, 91, 3.4)} M80 96 l-2 4 h4 Z M69 86 C60 86 56 80 56 72 C60 78 64 80 70 81 M91 86 C100 86 104 80 104 72 C100 78 96 80 90 81`,
+      role: 'accent',
+    },
+    {
+      d: 'M56 34 C40 34 30 40 24 50 C16 90 12 130 10 170 M104 34 C120 34 130 40 136 50 C144 90 148 130 150 170',
+    },
+    {
+      d: 'M10 170 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0 q7 8 14 0',
+      role: 'soft',
+    },
+    {
+      d: 'M134 160 l8 -8 M136 140 l8 -8 M136 120 l8 -8 M134 100 l8 -8',
+      role: 'ambient',
+    },
+    { d: 'M108 74 l5 -4 M110 88 l5 -4 M110 102 l5 -4', role: 'ambient' },
   ],
 
   // His giant hammer, held level: the barrel-shaped head in 3/4 with iron
@@ -457,22 +558,29 @@ export const elbafArt = {
     shadow(112, 182, 50),
   ],
 
-  // An open book as wide as a table, a quill feather lying on its pages.
+  // A book at the size humans print it beside the same book grown to a
+  // giant's size, as books grow the moment they enter his library (1164),
+  // and on top of the big one the owl perched with his back turned, a wing
+  // folded and his talons over the edge. The ear tufts, his mark, are left
+  // out: over a book they would read as a face.
   'biblo': [
+    { d: BIBLO_COVER, role: 'accent' },
+    ...BIBLO_BOOK,
+    ...moved([{ d: BIBLO_COVER }, ...BIBLO_BOOK], HUMAN_SIZE),
+    { d: 'M78 66 C70 50 70 26 84 14 C94 6 110 6 120 14 C134 26 134 50 126 66' },
     {
-      d: 'M14 130 C40 116 64 118 80 130 C96 118 120 116 146 130 V66 C120 52 96 54 80 66 C64 54 40 52 14 66 Z',
-    },
-    { d: 'M80 66 V130', role: 'soft' },
-    {
-      d: 'M26 80 q24 -8 44 0 M26 94 q24 -8 44 0 M92 80 q24 -8 44 0',
-      role: 'ambient',
+      d: 'M108 22 C120 30 124 48 120 64 L114 58 L110 66 L104 58 L100 66 C96 52 98 34 108 22 Z',
     },
     {
-      d: 'M60 150 C80 130 110 100 134 90 C130 110 104 132 72 146 Z',
-      role: 'accent',
+      d: 'M110 32 C114 40 114 50 112 58 M104 40 C106 46 106 54 104 60',
+      role: 'soft',
     },
-    { d: 'M60 150 L128 96', role: 'accent' },
-    shadow(80, 172, 60),
+    {
+      d: 'M86 72 q-2 -7 4 -9 M92 72 q0 -8 4 -10 M108 72 q-2 -7 4 -9 M114 72 q0 -8 4 -10',
+    },
+    { d: 'M122 58 l5 -4 M124 46 l5 -4 M123 34 l5 -4', role: 'ambient' },
+    shadow(100, 172, 44),
+    shadow(30, 172, 18),
   ],
 
   // One of the bandage-like strips she cuts the castle guards down with,
@@ -499,14 +607,22 @@ export const elbafArt = {
     shadow(96, 190, 26),
   ],
 
-  // The empty throne in 3/4, its far side hatched, under the heavy frame of
-  // the royal portrait the crew is shown (1167). The frame is left empty.
+  // The empty throne in 3/4, its far side hatched, under the royal portrait
+  // the crew is shown (1167), framed so it holds only his shoulders: the
+  // cloak with its claw-like points, the chainmail tunic under it.
   'harald': [
-    { d: 'M50 4 H110 V52 H50 Z', role: 'accent' },
-    { d: 'M57 11 H103 V45 H57 Z', role: 'soft' },
+    { d: 'M40 2 H120 V58 H40 Z' },
+    { d: 'M47 9 H113 V51 H47 Z', role: 'soft' },
     {
-      d: 'M60 18 l3 -3 M60 27 l3 -3 M60 36 l3 -3 M69 14 l2 -2 M80 14 l2 -2 M91 14 l2 -2',
-      role: 'ambient',
+      d: 'M74 9 V16 M86 9 V16 M74 16 C64 17 56 21 52 30 C50 38 50 44 50 51 M86 16 C96 17 104 21 108 30 C110 38 110 44 110 51',
+    },
+    {
+      d: 'M54 24 C48 22 44 24 41 28 C45 26 49 27 52 29 M52 31 C46 31 43 34 41 38 C45 35 48 35 51 35 M106 24 C112 22 116 24 119 28 C115 26 111 27 108 29 M108 31 C114 31 117 34 119 38 C115 35 112 35 109 35',
+      role: 'accent',
+    },
+    {
+      d: 'M62 26 L86 50 M70 22 L98 50 M80 20 L100 40 M62 38 L74 50 M98 26 L74 50 M90 22 L62 50 M80 20 L60 40 M98 38 L86 50',
+      role: 'soft',
     },
     { d: 'M48 129 V74 Q74 62 100 74 V129' },
     { d: 'M100 74 L110 68 V122' },
@@ -542,15 +658,18 @@ export const elbafArt = {
   ],
 
   // The same saber drawn, and the three spiked collars of the dog it turns
-  // into flying off with flame at their necks, as when Shamrock sends its
-  // heads after Loki (1168). The heads themselves are left out.
+  // into flying off with flame at their necks, each carrying the blade that
+  // juts from that head's mouth, as when Shamrock sends the heads after
+  // Loki (1168). The heads themselves are left out.
   'cerberus': [
-    ...SHAMROCK_HILT.map((stroke) => ({ ...stroke, transform: DRAWN_TILT })),
-    { d: 'M75 75 V170 Q78 180 85 186 V75', transform: DRAWN_TILT },
-    { d: 'M79 80 V168', role: 'soft', transform: DRAWN_TILT },
-    ...collarAt('translate(116 30) rotate(-14)'),
-    ...collarAt('translate(128 84) rotate(10)'),
-    ...collarAt('translate(106 134) rotate(-6)'),
+    ...DRAWN_SABER,
+    ...collarAt('translate(104 30) rotate(-14)'),
+    ...collarAt('translate(116 84) rotate(10)'),
+    ...collarAt('translate(96 134) rotate(-6)'),
+    {
+      d: 'M116 22 L152 10 L119 30 M128 82 L162 80 L129 90 M108 128 L146 122 L110 136',
+      role: 'accent',
+    },
     shadow(66, 192, 28),
   ],
 
@@ -590,8 +709,9 @@ export const elbafArt = {
   ],
 
   // His trident, tilted, three barbed prongs of different lengths on a
-  // doubled crossbar, a collar where it meets the shaft. He carries it when
-  // he is summoned in his kirin form (1170).
+  // doubled crossbar, a collar where it meets the shaft, as he carries it
+  // when he is summoned (1170). At its foot, the resin bubble he wears over
+  // his head, its orange respirator with two disk filters on the front.
   'rimoshifu-killingham': [
     { d: 'M77 82 V186 M83 82 V186 M77 186 Q80 190 83 186', transform: LEAN },
     { d: 'M75 70 H85 V82 H75 Z', transform: LEAN },
@@ -602,21 +722,28 @@ export const elbafArt = {
     },
     {
       d: 'M76 64 V34 L80 4 L84 34 V64 M52 56 L48 40 L50 26 L57 38 L58 56 M102 52 L108 24 L114 4 L114 28 L108 52',
-      role: 'accent',
       transform: LEAN,
     },
     {
-      d: 'M84 34 l4 4 M76 34 l-4 4 M57 38 l3 6 M108 24 l-4 6',
-      role: 'accent',
+      d: 'M84 34 l4 4 M76 34 l-4 4 M57 38 l3 6 M108 24 l-4 6 M80 20 V58 M110.5 20 L106 46',
+      role: 'soft',
       transform: LEAN,
     },
-    { d: 'M80 20 V58 M110.5 20 L106 46', role: 'soft', transform: LEAN },
     {
       d: 'M86 92 l-3 3 M86 104 l-3 3 M86 116 l-3 3',
       role: 'ambient',
       transform: LEAN,
     },
-    shadow(98, 190, 30),
+    { d: circle(124, 158, 22) },
+    { d: ellipse(124, 177, 11, 3), role: 'soft' },
+    { d: 'M112 146 C116 141 122 139 128 140', role: 'soft' },
+    {
+      d: `M98 150 C100 144 108 142 114 145 L116 166 C110 170 102 168 98 162 Z ${circle(96, 156, 9)} ${ellipse(112, 158, 5, 8.5)}`,
+      role: 'accent',
+    },
+    { d: 'M138 148 l6 -4 M141 160 l5 -4 M138 172 l5 -4', role: 'ambient' },
+    shadow(70, 190, 22),
+    shadow(122, 186, 24),
   ],
 
   // Loki's warhammer: a rectangular sledge head in 3/4 with its far end
@@ -664,40 +791,56 @@ export const elbafArt = {
     shadow(96, 190, 34),
   ],
 
-  // A coach's whistle for the gym teacher, the round chamber in 3/4 with its
-  // far side hatched, the mouthpiece square, the cord hanging in a loop.
+  // His green feathered coat, as he wears it the day the serpent reaches
+  // the school (1172): the feathers at the collar bright, more down the
+  // body, the far sleeve hatched, and leaning on it the stick he faces the
+  // serpent with to protect the children.
   'wolf-elbaph': [
-    { d: circle(94, 104, 24), role: 'accent' },
-    { d: 'M81.7 83.4 L91.7 77.4 A24 24 0 0 1 116.3 118.6 L106.3 124.6' },
-    { d: 'M71.4 96 H24 V114 H72.2 M24 96 L32 91 H74.5 M24 114 L32 109 V91' },
     {
-      d: 'M110 121 l6 -4 M116 112 l6 -4 M119 100 l5 -4 M118 90 l4 -4',
-      role: 'ambient',
+      d: 'M58 44 C50 46 40 52 36 60 L28 150 H48 L50 92 L54 172 H106 L110 92 L112 150 H132 L124 60 C120 52 110 46 102 44',
     },
-    { d: circle(112, 74, 5) },
     {
-      d: 'M116 77 C132 90 140 120 128 146 C118 168 84 172 70 160 C60 150 76 138 92 146 C108 154 106 172 92 178',
+      d: 'M58 44 L62 32 L68 42 L72 28 L78 40 L82 28 L88 40 L94 30 L98 42 L102 44',
+      role: 'accent',
+    },
+    { d: 'M80 48 V172 M50 92 L48 60 M110 92 L112 60', role: 'soft' },
+    {
+      d: 'M62 80 l4 6 l4 -6 M64 112 l4 6 l4 -6 M60 144 l4 6 l4 -6 M88 96 l4 6 l4 -6 M90 128 l4 6 l4 -6 M92 158 l4 6 l4 -6',
       role: 'soft',
     },
-    shadow(84, 186, 50),
+    {
+      d: 'M116 80 l6 -4 M117 96 l6 -4 M118 112 l6 -4 M119 128 l6 -4 M120 144 l6 -4',
+      role: 'ambient',
+    },
+    { d: 'M144 186 L118 34 M150 185 L124 34 M118 34 Q121 30 124 34' },
+    { d: 'M128 92 l6 -2', role: 'soft' },
+    shadow(84, 186, 56),
   ],
 
-  // A set square and a ruler for the maths teacher, both lying flat in 3/4
-  // with their thin edges showing, the ticks in soft.
+  // The horns of his ancient giants' blood (1172), the one thing that marks
+  // him out among the teachers, over the collar of his dark fur cape, its
+  // tufted edge in soft and its dark fur hatched.
   'blade': [
-    { d: 'M16 166 L118 156 L34 92 Z', role: 'accent' },
-    { d: 'M36 152 L87 147 L45 115 Z', role: 'soft' },
-    { d: 'M16 166 v5 L118 161 V156' },
-    { d: 'M56 64 L152 96 L146 110 L50 78 Z M50 78 v4 L146 114 V110' },
     {
-      d: 'M64 66.7 l-1.4 3.2 M72 69.3 l-1.4 3.2 M80 72 l-2.4 5.5 M88 74.7 l-1.4 3.2 M96 77.3 l-1.4 3.2 M104 80 l-2.4 5.5 M112 82.7 l-1.4 3.2 M120 85.3 l-1.4 3.2 M128 88 l-2.4 5.5 M136 90.7 l-1.4 3.2 M144 93.3 l-1.4 3.2',
+      d: 'M62 84 C50 72 46 52 54 30 C58 50 64 64 74 78 M98 84 C110 72 114 52 106 30 C102 50 96 64 86 78',
+      role: 'accent',
+    },
+    {
+      d: 'M55 62 C58 64 62 66 66 68 M53 50 C55 52 58 54 61 55 M105 62 C102 64 98 66 94 68 M107 50 C105 52 102 54 99 55',
       role: 'soft',
     },
     {
-      d: 'M30 170 l3 -3 M50 168 l3 -3 M70 166 l3 -3 M90 164 l3 -3 M108 162 l3 -3 M60 84 l3 -3 M84 92 l3 -3 M108 100 l3 -3 M132 108 l3 -3',
+      d: 'M20 150 C26 120 50 104 80 104 C110 104 134 120 140 150 M58 108 C64 118 96 118 102 108',
+    },
+    {
+      d: 'M20 150 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l6 6 l5 -6 l5 6 l5 -6',
+      role: 'soft',
+    },
+    {
+      d: 'M30 140 l8 -8 M44 134 l10 -10 M60 130 l10 -10 M84 128 l10 -10 M100 130 l10 -10 M116 134 l10 -10 M128 142 l6 -6',
       role: 'ambient',
     },
-    shadow(70, 184, 56),
+    shadow(80, 172, 56),
   ],
 } satisfies Drawings
 
@@ -762,6 +905,57 @@ export const elbafRedrawn: Redrawings = {
           d: GUNKO_ARROWHEAD,
           transform:
             'translate(146 179) rotate(83) scale(0.32) translate(-122 -34)',
+        },
+      ],
+    },
+  ],
+  // The saber drawn, and the black wisp of smoke that runs off its blade
+  // to the dog it has become: its Zoan power, shown when Shamrock turns it
+  // on Loki in 1168 (ch. 1138).
+  'figarland-shamrock': [
+    {
+      episode: 1168,
+      chapter: 1138,
+      value: [
+        ...DRAWN_SABER,
+        {
+          d: 'M66 150 C82 146 86 130 100 126 C114 122 116 108 130 104 C142 100 146 88 166 82 M70 164 C86 160 92 146 106 142',
+          role: 'accent',
+        },
+        shadow(66, 192, 28),
+      ],
+    },
+  ],
+  // The same sword, its thorn guard no longer bright, with a thorny vine
+  // wound round the sheath: his Thorn-Thorn power, first felt when Saul
+  // runs into it in 1173 (ch. 1143). The show keeps the thorns invisible;
+  // they are drawn so they show, as the fruit's own drawing has them.
+  'shepherd-sommers': [
+    {
+      episode: 1173,
+      chapter: 1143,
+      value: [
+        ...softened(elbafArt['shepherd-sommers']),
+        {
+          d: 'M62 102 C58 110 66 116 80 116 C94 116 100 122 96 130 C92 136 78 136 70 138 C60 140 58 148 66 152 C76 156 92 154 98 162 M64 114 l-6 2 l5 3 M90 117 l3 -6 l2 6 M96 133 l6 1 l-4 4 M66 139 l-4 -5 l-1 6 M82 155 l1 6 l3 -5',
+          role: 'accent',
+          transform: TILT,
+        },
+      ],
+    },
+  ],
+  // The same hammer, its plate no longer bright, with lightning striking
+  // its head: Loki brings it down on the tree and calls the bolts down in
+  // 1172 (ch. 1142).
+  'ragnir': [
+    {
+      episode: 1172,
+      chapter: 1142,
+      value: [
+        ...softened(elbafArt.ragnir),
+        {
+          d: 'M56 -4 L44 14 L52 16 L36 38 M86 -4 L74 8 L82 10 L62 27 M120 -4 L106 6 L112 8 L86 17',
+          role: 'accent',
         },
       ],
     },
