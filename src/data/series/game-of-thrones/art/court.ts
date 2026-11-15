@@ -302,16 +302,17 @@ const SWAN: Stroke[] = [
 ]
 /**
  * Balon Swann: the arms of his house, per fess white and black, two swans
- * counterchanged: a black swan on the white upper half and a white swan on
- * the black lower half, turned the other way. For the knight who rides in
+ * counterchanged: a black swan on the white upper half, facing the viewer's
+ * left, and a white swan on the black lower half, contourny, facing the
+ * viewer's right. For the knight who rides in
  * the Hand's tourney in Sansa II (chapter 30). The book's alone. The black
  * swan and the black half are hatched; the accent is the beaks.
  */
 const SWAN_SHIELD: Stroke[] = [
   { d: 'M40 40 H120 V80 Q120 126 80 150 Q40 126 40 80 Z M40 94 H119' },
-  ...moved(SWAN, 'translate(54 18) scale(0.52)'),
-  ...moved(SWAN, 'translate(106 66) scale(-0.52 0.52)'),
-  { d: 'M70 80 l5 -3 M78 80 l5 -3', role: 'ambient' },
+  ...moved(SWAN, 'translate(106 18) scale(-0.52 0.52)'),
+  ...moved(SWAN, 'translate(54 66) scale(0.52)'),
+  { d: 'M78 80 l5 -3 M86 80 l5 -3', role: 'ambient' },
   {
     d: 'M46 104 l6 -3 M48 116 l6 -3 M56 128 l6 -3 M104 104 l6 -3 M102 116 l6 -3 M94 130 l6 -3 M72 140 l6 -3',
     role: 'ambient',

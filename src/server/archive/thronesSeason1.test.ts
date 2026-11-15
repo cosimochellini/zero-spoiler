@@ -1299,7 +1299,7 @@ function mediumOf(
   id: keyof typeof DRAWINGS,
   index: number,
 ): 'chapter' | 'episode' | undefined {
-  return REDRAWINGS[id]?.[index]?.source ?? recordOf(id).source
+  return recordOf(id).source ?? REDRAWINGS[id]?.[index]?.source
 }
 
 /** Whether these strokes are this stage's drawing. */
