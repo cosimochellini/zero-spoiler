@@ -734,12 +734,12 @@ const MAMMOTH_BODY: Body = { family: 'gourd', cy: 118 }
  * inside.
  */
 const TUSK: Growth = {
-  from: 102,
-  to: 124,
+  from: 104,
+  to: 126,
   through: [
-    [50, 102],
-    [60, 108],
-    [64, 124],
+    [48, 110],
+    [58, 116],
+    [63, 128],
     [68, 142],
     [64, 166],
     [52, 176],
@@ -751,9 +751,9 @@ const TUSK: Growth = {
     [50, 162],
     [55, 152],
     [55, 138],
-    [49, 128],
-    [45, 124],
-    [42, 124],
+    [50, 132],
+    [46, 128],
+    [42, 126],
   ],
 }
 
@@ -761,7 +761,7 @@ const TUSK: Growth = {
 function tuskRound(way: number): string {
   const at = (dx: number, y: number): string => point(80 + way * dx, y)
 
-  return `M${at(50, 112)} C${at(58, 122)} ${at(62, 146)} ${at(54, 164)}`
+  return `M${at(52, 121)} C${at(57, 128)} ${at(60, 146)} ${at(56, 164)}`
 }
 
 /** The soul fruit: a round, its soul leaving the near shoulder. */
