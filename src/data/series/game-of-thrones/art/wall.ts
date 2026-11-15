@@ -238,8 +238,8 @@ const SNAPPED_BLADE: Stroke[] = [
 /**
  * Pypar: two practice swords crossed and stood on their points, for the
  * recruit in the yard in episode 3 and in Jon III (chapter 20). A declared
- * B: nothing of his own shows in either medium. The accent is the front
- * sword's grip; the sword behind it keeps its wrap in soft ink.
+ * B: nothing of his own shows in either medium. The accent is the grip of
+ * the sword leaning left; the one leaning right is softened.
  */
 const CROSSED_SWORDS: Stroke[] = [
   ...moved(
