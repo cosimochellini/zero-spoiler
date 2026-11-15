@@ -5,8 +5,8 @@ media are the HBO show and the five books. Its records are filed by show
 season in `src/data/series/game-of-thrones/records/season-N.ts` (no arcs), and
 its drawings are `DRAWINGS` in `src/data/series/game-of-thrones/art/index.ts`,
 spread from `winterfell.ts`, `south.ts`, `wall.ts`, `essos.ts` and `places.ts`.
-Characters not drawn yet show the `PERSON` placeholder until their issue draws
-them. Render them with
+Every character has its own drawing; there is no shared placeholder. Render
+them with
 `npm run art:sheet -- --series game-of-thrones <id>` (or `--kind
 character|place`), on the series' own paper.
 

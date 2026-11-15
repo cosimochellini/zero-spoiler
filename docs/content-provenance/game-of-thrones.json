@@ -2595,10 +2595,13 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
       "https://awoiaf.westeros.org/index.php/Donal_Noye",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte",
+      "https://gameofthrones.fandom.com/wiki/Battle_for_the_Wall",
+      "https://gameofthrones.fandom.com/wiki/The_Watchers_on_the_Wall"
     ],
     "unverified": [
-      "Book only: the Game of Thrones Wiki has no page or mention of him."
+      "Book only: the Game of Thrones Wiki has no page or mention of him.",
+      "Death at site chapter 208 (A Storm of Swords, Jon VIII) rests on the Game of Thrones Wiki's list of the chapters episode 39 adapts; not checked on AWOIAF or in the book (#1296)."
     ]
   },
   "chett": {
@@ -2607,9 +2610,14 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
       "https://awoiaf.westeros.org/index.php/Chett",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte",
+      "https://gameofthrones.fandom.com/wiki/Fight_at_the_Fist",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)"
     ],
-    "unverified": ["Book only: the Game of Thrones Wiki has no page of his."]
+    "unverified": [
+      "Book only: the Game of Thrones Wiki has no page of his.",
+      "Death at site chapter 190 (A Storm of Swords, Samwell III) rests on the Game of Thrones Wiki's Fight at the Fist page, which cites that chapter for his body among the dead; an earlier chapter may tell it. Not checked on AWOIAF or in the book (#1296)."
+    ]
   },
   "qotho": {
     "sources": [
