@@ -51,8 +51,6 @@ const WHEAT_LEFT = 'rotate(-36 80 118)'
 const WHEAT_RIGHT = 'rotate(36 80 118)'
 /** The slant Garling's sword lies at, the pommel up and to the right. */
 const GARLING_SWORD = 'rotate(-50 80 100)'
-/** The tilt of Bluegrass's steering wheel. */
-const BLUEGRASS_WHEEL = 'rotate(-10 80 104)'
 /** The lunarian flame on a Seraphim's back, as S-Bear's first drawing has it. */
 const LUNARIAN_FLAME =
   'M116 106 C134 108 148 96 150 76 C145 84 140 86 136 86 C142 72 140 58 132 46 C132 60 126 68 120 70 C122 62 120 56 116 52 C118 66 116 76 114 84'
@@ -359,6 +357,57 @@ const YORK_GUN: Stroke[] = [
   { d: 'M80 164 Q76 174 90 174', role: 'soft', transform: YORK_PISTOL },
   { d: 'M36 150 V164 M106 150 V164', role: 'soft', transform: YORK_PISTOL },
   { d: 'M88 172 l6 -5 M90 180 l8 -6', role: 'ambient', transform: YORK_PISTOL },
+]
+
+/**
+ * Conney's side cap in 3/4, the light brim's top edge as the accent, without
+ * the hatching of its dark crown: the boat-shaped crown rising to its top
+ * crease, the brim round it, its thickness and the notch at the front.
+ */
+const CONNEY_CAP: Stroke[] = [
+  { d: 'M20 128 C26 70 104 50 140 92' },
+  { d: 'M20 128 C52 114 104 100 140 92', role: 'accent' },
+  { d: 'M20 128 Q80 140 142 110 L140 92' },
+  { d: 'M24 133 C56 120 104 106 140 99', role: 'soft' },
+  {
+    d: 'M20 128 L28 118 M58 118 Q62 128 60 136 M60 80 C80 74 104 76 124 84',
+    role: 'soft',
+  },
+]
+
+/** The hatching of Conney's crown while it is dark, six years back. */
+const CONNEY_DARK_CROWN: Stroke = {
+  d: 'M30 114 l10 -14 M42 112 l20 -26 M58 108 l22 -26 M76 104 l22 -22 M94 100 l20 -18 M112 96 l14 -10',
+  role: 'ambient',
+}
+
+/**
+ * Alpha's nurse's cap in 3/4, the band with its fold as the accent, the
+ * crown pleated to the back and the far side hatched, with its shadow.
+ */
+const ALPHA_CAP: Stroke[] = [
+  { d: 'M64 104 Q100 120 144 100 L140 126 Q102 142 68 128 Z' },
+  { d: 'M66 114 Q102 130 142 112', role: 'accent' },
+  { d: 'M64 104 C70 84 86 76 104 76 C122 76 138 86 144 100' },
+  {
+    d: 'M104 76 Q100 92 102 112 M82 82 Q92 96 102 112 M126 82 Q112 96 102 112',
+    role: 'soft',
+  },
+  { d: 'M128 124 l8 -6 M132 110 l8 -6', role: 'ambient' },
+  shadow(104, 150, 40),
+]
+
+/**
+ * Alpha's glasses lying folded in front of the cap: two lenses, the bridge,
+ * the arms folded back behind them and the glints in soft, with a shadow.
+ */
+const ALPHA_GLASSES: Stroke[] = [
+  { d: 'M12 150 H36 V160 Q36 166 30 166 H18 Q12 166 12 160 Z' },
+  { d: 'M46 148 H70 V158 Q70 164 64 164 H52 Q46 164 46 158 Z' },
+  { d: 'M36 152 Q41 147 46 151' },
+  { d: 'M12 151 L26 141 H50 M70 149 L60 140', role: 'soft' },
+  { d: 'M16 158 l6 -5 M50 156 l6 -5', role: 'soft' },
+  shadow(42, 176, 32),
 ]
 
 /** The drawings of the records filed in the egghead stretch of the route. */
@@ -772,17 +821,35 @@ export const eggheadArt = {
     shadow(76, 162, 60),
   ],
 
-  // A coiled whip lying on its side, the handle up and the lash running
-  // loose out of the coil.
+  // Beethoven, her steel-core whip: its handle the hilt of a sword with a
+  // round guard, lying on the ground, the wrap and the guard's rim in soft,
+  // and its lash, as the accent, cracking out and round the corner of a
+  // building that leans as it moves, the windows in soft and the side
+  // hatched. Whatever she whips obeys her, and she drives the buildings of
+  // Hachinosu out of the way in her debut (ch. 1080 pp. 9-17, ep. 1113).
+  // No stages.
   'kujaku': [
-    { d: ellipse(74, 140, 48, 18) },
-    { d: ellipse(74, 132, 38, 13), role: 'soft' },
-    { d: ellipse(74, 126, 28, 9), role: 'soft' },
-    { d: 'M98 70 L122 42 L130 49 L106 77 Z' },
-    { d: 'M102 74 C92 92 70 100 60 118', role: 'accent' },
-    { d: 'M118 146 C132 152 140 162 146 176', role: 'accent' },
-    { d: dots([[126, 38]]), role: 'accent' },
-    shadow(80, 188, 52),
+    { d: 'M92 176 L104 108 H140 L128 176' },
+    { d: 'M104 108 L113 101 H149 L140 108 M149 101 L137 169 L128 176' },
+    {
+      d: 'M106 120 h9 l-1.4 9 h-9 z M122 120 h9 l-1.4 9 h-9 z M103 142 h9 l-1.4 9 h-9 z M119 142 h9 l-1.4 9 h-9 z',
+      role: 'soft',
+    },
+    { d: 'M141 120 l5 -4 M139 136 l5 -4 M136 152 l5 -4', role: 'ambient' },
+    { d: circle(14, 168, 5) },
+    { d: 'M19 163 H48 M19 173 H48' },
+    { d: 'M24 163 l5 10 M33 163 l5 10 M42 163 l5 10', role: 'soft' },
+    { d: ellipse(53, 168, 4, 13) },
+    { d: 'M56 155 a4 13 0 0 1 0 26', role: 'soft' },
+    {
+      d: 'M57 168 C76 166 82 150 72 134 C60 116 42 104 50 82 C58 62 86 66 92 88 C96 104 98 120 100 136 L134 131 L142 122',
+      role: 'accent',
+    },
+    {
+      d: 'M90 148 l-8 4 M88 136 l-8 2 M150 112 l6 -2 M150 124 h6',
+      role: 'soft',
+    },
+    shadow(80, 184, 66),
   ],
   // Her mechanical left arm, raised the way she aims it at the ship coming
   // in to Momoiro, ready to shoot (ch. 1082 pp. 12–13, ep. 1116): the ball
@@ -893,51 +960,58 @@ export const eggheadArt = {
     },
     shadow(80, 182, 56),
   ],
-  // A queen's crown in three-quarters, its straight upright points fanning
-  // out as in her silhouette at 1118: the band seen from the front with a
-  // ridge and one set stone, the back of the band between the points, and
-  // the band's ends hatched where they turn away.
+  // Her silhouette, the only way she is shown at 1118 (ch. 1084): a royal
+  // crown in 3/4, plain points round the front of its band as the accent,
+  // the back of the band and two far points in soft, and under it the fall
+  // of her cape from the shoulders, the clasp and the folds in soft and the
+  // far side hatched. No face. No stages.
   'nefertari-lili': [
-    { d: 'M32 128 Q80 160 128 128 V148 Q80 180 32 148 Z' },
-    { d: 'M32 138 Q80 170 128 138', role: 'soft' },
-    { d: 'M80 149 L85 154 L80 159 L75 154 Z', role: 'soft' },
+    { d: 'M48 70 Q80 84 112 70 V82 Q80 96 48 82 Z' },
+    { d: 'M52 69 Q80 60 108 69', role: 'soft' },
     {
-      d: 'M44 125.8 Q49 125 54 124.5 M66 123.4 Q70.5 123.2 75 123.1 M85 123.1 Q89.5 123.2 94 123.4 M106 124.5 Q111 125 116 125.8',
+      d: 'M48 70 L50 46 L61 75.2 L69 42 L80 77 L91 42 L99 75.2 L110 46 L112 70',
+      role: 'accent',
+    },
+    { d: 'M64 66 L66 56 L68 65 M92 65 L94 56 L96 66', role: 'soft' },
+    { d: 'M50 86 l5 -5 M104 89 l6 -6', role: 'ambient' },
+    {
+      d: 'M62 104 C46 104 36 112 32 126 C28 146 22 166 14 184 C40 178 60 192 82 184 C104 192 124 180 148 186 C138 166 132 146 128 126 C124 112 114 104 98 104',
+    },
+    { d: 'M62 104 Q80 112 98 104 M76 109 V116', role: 'soft' },
+    {
+      d: 'M58 116 C56 140 50 162 44 182 M100 116 C104 140 110 162 116 184',
       role: 'soft',
     },
-    { d: 'M34 129.3 L28 105 L29.8 98.8 L36 109.7 L42 134', role: 'accent' },
-    {
-      d: 'M55 139.7 L51.6 106.8 L54.6 99.2 L59.6 109.2 L63 142',
-      role: 'accent',
-    },
-    { d: 'M76 143.9 L76 104.9 L80 96 L84 104.9 L84 143.9', role: 'accent' },
-    {
-      d: 'M97 142 L100.4 109.2 L105.4 99.2 L108.4 106.8 L105 139.7',
-      role: 'accent',
-    },
-    {
-      d: 'M118 134 L124 109.7 L130.2 98.8 L132 105 L126 129.3',
-      role: 'accent',
-    },
-    { d: 'M35 147 l6 -6 M35 139 l5 -5 M118 151 l7 -7', role: 'ambient' },
-    shadow(80, 182, 54),
+    { d: 'M126 144 l7 -6 M132 160 l7 -6 M136 176 l7 -6', role: 'ambient' },
+    shadow(80, 194, 60),
   ],
-  // His straight sword in its sheath, laid at a slant, as he has it when he
-  // first appears at 1120: the black sheath hatched, its two bands near the
-  // mouth, the round golden knuckle-bow guard as the accent, the wrapped
-  // grip and the round pommel. No glasses.
+  // His saber in its black sheath, laid at a slant, as he carries it from
+  // his debut at 1120 (ch. 1086): the sheath and its lower face showing its
+  // thickness, hatched because it is black, its two gold bands near the
+  // mouth in soft, the round golden knuckle-bow guard as the accent with its
+  // inner edge in soft, the wrapped grip and the buttoned gold pommel. No
+  // glasses. No stages: he still carries it in his left hand as an Elder.
   'figarland-garling': [
     { d: 'M2 95 H100 V105 H2 Q-4 100 2 95 Z', transform: GARLING_SWORD },
+    { d: 'M2 105 L5 109 H100 V105', transform: GARLING_SWORD },
     {
       d: 'M8 95 l8 10 M24 95 l8 10 M40 95 l8 10 M56 95 l8 10 M72 95 l8 10',
       role: 'ambient',
       transform: GARLING_SWORD,
     },
-    { d: 'M88 95 V105 M94 95 V105', role: 'soft', transform: GARLING_SWORD },
-    { d: 'M100 90 h5 v20 h-5 z', transform: GARLING_SWORD },
+    { d: 'M88 95 V109 M94 95 V109', role: 'soft', transform: GARLING_SWORD },
+    {
+      d: 'M100 90 h5 v20 h-5 z M105 90 l2 -2 v20 l-2 2',
+      transform: GARLING_SWORD,
+    },
     {
       d: 'M105 106 C116 126 140 128 150 104',
       role: 'accent',
+      transform: GARLING_SWORD,
+    },
+    {
+      d: 'M107 109 C118 132 144 132 153 106',
+      role: 'soft',
       transform: GARLING_SWORD,
     },
     { d: 'M105 97 H146 M105 103 H146', transform: GARLING_SWORD },
@@ -947,163 +1021,145 @@ export const eggheadArt = {
       transform: GARLING_SWORD,
     },
     { d: circle(151, 100, 5), transform: GARLING_SWORD },
+    { d: dots([[156, 100]]), transform: GARLING_SWORD },
     shadow(80, 184, 44),
   ],
 
-  // The steering wheel she grips riding a Pacifista at 1128, when she says
-  // she is a Driving Human who ate the Ride-Ride Fruit: the rim in 3/4 with
-  // its near edge as the accent, its thickness, the hub and three spokes,
-  // the grips wrapped in soft and the underside hatched.
+  // Her headphones in 3/4, as she wears them at 1128 (ch. 1094 pp. 7-9): the
+  // band with its thickness, the near cup with its pad in soft, the far cup
+  // hatched where it turns away, and in front her sunglasses lying folded,
+  // the dark lenses as the accent and lightly hatched, the arms in soft. Her
+  // Ride-Ride power, shown the same episode, would need the Pacifista she
+  // rides, and is left out. No stages.
   'bluegrass': [
-    { d: ellipse(80, 100, 58, 36), transform: BLUEGRASS_WHEEL },
-    { d: ellipse(80, 100, 48, 28), transform: BLUEGRASS_WHEEL },
+    { d: 'M34 106 C34 44 126 44 126 106' },
+    { d: 'M42 104 C42 56 118 56 118 104' },
+    { d: ellipse(122, 116, 14, 20) },
+    { d: ellipse(124, 116, 8, 13), role: 'soft' },
+    { d: 'M108 116 a14 20 0 0 1 14 -20', role: 'soft' },
+    { d: ellipse(38, 114, 9, 16) },
+    { d: 'M32 106 l6 -5 M31 118 l8 -7 M33 128 l6 -5', role: 'ambient' },
     {
-      d: 'M22 100 a58 36 0 0 0 116 0',
+      d: 'M44 152 H74 Q74 170 59 170 Q44 170 44 152 Z M86 152 H116 Q116 170 101 170 Q86 170 86 152 Z',
       role: 'accent',
-      transform: BLUEGRASS_WHEEL,
     },
-    { d: ellipse(80, 104, 12, 7), transform: BLUEGRASS_WHEEL },
-    {
-      d: 'M68 104 L33 98 M92 104 L127 98 M80 111 V128',
-      transform: BLUEGRASS_WHEEL,
-    },
-    {
-      d: 'M26 88 l6 6 M24 100 l8 2 M28 112 l7 -2 M132 88 l-6 6 M136 100 l-8 2 M132 112 l-7 -2',
-      role: 'soft',
-      transform: BLUEGRASS_WHEEL,
-    },
-    {
-      d: 'M60 128 l8 -6 M80 132 l8 -6 M100 128 l8 -6',
-      role: 'ambient',
-      transform: BLUEGRASS_WHEEL,
-    },
-    shadow(80, 170, 54),
+    { d: 'M74 154 Q80 148 86 154' },
+    { d: 'M44 152 L58 142 H76 M116 152 L104 142', role: 'soft' },
+    { d: 'M52 162 l8 -6 M94 162 l8 -6', role: 'ambient' },
+    shadow(80, 182, 50),
   ],
 
-  // A maul whose head is a scallop shell, ribs fanning out from the hinge.
+  // His maul, its head a seashell in 3/4: the scalloped rim as the accent,
+  // its thickness in soft behind it, the ribs fanning from the hinge and the
+  // hinge's two ears. A sea otter's paw grips the haft, its fingers in soft
+  // and the fur of the arm hatched: he turns half into a sea otter and swings
+  // it at Bonney and Sanji in his first episode (ch. 1094 p. 9, ep. 1128).
+  // No stages.
   'pomsky': [
-    { d: 'M100 96 L66 60 Q100 20 134 60 Z' },
+    { d: 'M100 98 L64 62 Q100 18 136 62 Z' },
     {
-      d: 'M66 60 q8 -10 17 -14 q8 -8 17 -8 q9 0 17 8 q9 4 17 14',
+      d: 'M64 62 q8 -12 18 -15 q8 -9 18 -9 q10 0 18 9 q10 3 18 15',
       role: 'accent',
     },
     {
-      d: 'M100 96 L78 46 M100 96 L92 38 M100 96 L108 38 M100 96 L122 46',
+      d: 'M64 62 l3 4 q8 -11 18 -14 q8 -8 16 -8 q9 0 17 8 q9 3 16 14 l2 -4',
       role: 'soft',
     },
-    { d: 'M90 96 h20 v8 h-20 Z' },
-    { d: 'M96 104 L40 172 M104 104 L48 178' },
-    { d: 'M52 158 l8 7 M46 166 l8 7', role: 'soft' },
-    shadow(80, 188, 44),
-  ],
-  // The iron collar of a slave and its chain, as he wears it in Kuma's
-  // memories at 1129: the heavy ring lying in 3/4 with its rim as the
-  // accent, its thickness hatched underneath, the lock in soft, and the
-  // chain running off it, one link flat and the next on its edge.
-  'clapp': [
-    { d: ellipse(66, 132, 48, 18), role: 'accent' },
-    { d: ellipse(66, 130, 32, 10) },
-    { d: 'M18 132 v12 a48 18 0 0 0 96 0 v-12' },
     {
-      d: 'M30 152 l8 -6 M50 158 l8 -6 M74 158 l8 -6 M96 152 l8 -6',
+      d: 'M100 98 L78 50 M100 98 L92 42 M100 98 L108 42 M100 98 L122 50',
+      role: 'soft',
+    },
+    { d: 'M86 90 l-6 -2 M114 90 l6 -2', role: 'ambient' },
+    { d: 'M88 102 L82 110 H112 L106 102' },
+    { d: 'M92 110 L74 132 M104 110 L84 136' },
+    { d: 'M56 158 L38 178 M66 162 L46 184' },
+    {
+      d: 'M58 140 q2 -9 10 -6 q4 -8 11 -3 q6 -6 11 1 q6 3 2 11 L88 154 C84 166 68 170 58 162 C52 156 52 148 58 140 Z',
+    },
+    {
+      d: 'M68 134 q2 6 -1 12 M79 131 q3 7 0 14 M90 132 q2 6 -2 12',
+      role: 'soft',
+    },
+    {
+      d: 'M84 164 C94 172 104 180 118 188 M66 168 C74 180 86 188 100 196 M90 176 l5 -2 l-1 5 M102 184 l5 -2 l-1 5',
       role: 'ambient',
     },
-    { d: 'M60 150 h12 v14 h-12 z', role: 'soft' },
-    { d: ellipse(122, 122, 10, 6), transform: 'rotate(-45 122 122)' },
-    { d: ellipse(133, 109, 9, 2.5), transform: 'rotate(-45 133 109)' },
-    { d: ellipse(144, 96, 10, 6), transform: 'rotate(-45 144 96)' },
-    { d: ellipse(155, 83, 9, 2.5), transform: 'rotate(-45 155 83)' },
-    shadow(70, 182, 54),
+    shadow(52, 194, 34),
+  ],
+  // What he left: the collar of a slave of the Celestial Dragons lying in
+  // 3/4, its thickness hatched underneath and the lock in soft, and above it
+  // the Hoof of the Soaring Dragon, the mark burned into every one of their
+  // slaves, as the accent. He is one of them in Kuma's memories at 1129
+  // (ch. 1095), where a Celestial Dragon shoots him. The brand is drawn by
+  // eye and needs a frame check. No stages.
+  'clapp': [
+    { d: ellipse(78, 146, 50, 18) },
+    { d: ellipse(78, 144, 34, 10) },
+    { d: 'M28 146 v12 a50 18 0 0 0 100 0 v-12' },
+    {
+      d: 'M40 166 l8 -6 M60 172 l8 -6 M88 172 l8 -6 M108 166 l8 -6',
+      role: 'ambient',
+    },
+    { d: 'M72 164 h12 v14 h-12 z', role: 'soft' },
+    { d: 'M44 142 Q78 152 112 142', role: 'soft' },
+    {
+      d: 'M58 76 Q80 88 102 76 M60 74 L52 38 L70 68 M74 70 L80 30 L86 70 M90 68 L108 38 L100 74 M66 86 C66 102 74 110 80 112 C86 110 94 102 94 86',
+      role: 'accent',
+    },
+    shadow(78, 188, 52),
   ],
 
-  // His crown in 3/4, as he wears it from 1131: a tall gold band flaring
-  // out to its top and cut into square battlements, the far rim seen over
-  // the near one in soft, the row of round stones near the base as the
-  // accent, and the inside and the turning side hatched.
+  // His crown in 3/4, as he wears it from 1131 (ch. 1097): a tall band
+  // flaring out to its rim, plain points round the front as the accent, the
+  // back of the rim and two far points in soft, a line round the base in
+  // soft, and the turning side hatched. No stages.
   'bekori': [
     {
-      d: 'M30 96 L47.5 99.5 V115.5 H52.5 V100.2 L67.5 101.6 V117.6 H72.5 V101.9 L87.5 101.9 V117.9 H92.5 V101.6 L107.5 100.2 V116.2 H112.5 V99.5 L130 96',
-    },
-    {
-      d: 'M30 96 L48 90.1 V100.1 H52 V89.1 L68 86.6 V96.6 H72 V86.3 L88 86.3 V96.3 H92 V86.6 L108 89.1 V99.1 H112 V90.1 L130 96',
-      role: 'soft',
-    },
-    { d: 'M30 96 L38 150 M130 96 L122 150' },
-    { d: 'M38 150 Q80 162 122 150' },
-    {
-      d: [
-        circle(54, 140, 3.5),
-        circle(67, 143, 3.5),
-        circle(80, 144, 3.5),
-        circle(93, 143, 3.5),
-        circle(106, 140, 3.5),
-      ].join(' '),
+      d: 'M30 96 L38 64 L55 100.4 L64 60 L80 101.9 L96 60 L105 100.4 L122 64 L130 96',
       role: 'accent',
     },
-    { d: 'M58 90 l8 -6 M94 90 l8 -6', role: 'ambient' },
+    { d: 'M30 96 Q80 84 130 96', role: 'soft' },
+    { d: 'M44 92 L48 76 L54 92 M106 92 L112 76 L116 92', role: 'soft' },
+    { d: 'M30 96 L38 150 M130 96 L122 150' },
+    { d: 'M38 150 Q80 162 122 150' },
+    { d: 'M36 136 Q80 150 124 136', role: 'soft' },
     { d: 'M116 122 l8 -6 M114 138 l7 -6', role: 'ambient' },
     shadow(80, 176, 44),
   ],
 
-  // Her side cap in 3/4, as she wears it at 1133: the crown dark then, so
-  // hatched, and the light brim rolled up round it, its top edge as the
-  // accent, with the fold where the brim turns.
-  'conney': [
-    { d: 'M38 114 C34 80 56 58 84 58 C112 58 130 80 126 112' },
-    {
-      d: 'M30 122 C30 110 44 108 58 112 C62 106 70 104 76 108 C96 112 126 104 132 118',
-      role: 'accent',
-    },
-    { d: 'M30 122 C34 138 60 144 82 142 C104 142 128 136 132 118' },
-    { d: 'M58 112 Q62 126 60 140', role: 'soft' },
-    { d: 'M38 128 Q48 134 56 134 M64 136 Q96 140 124 126', role: 'soft' },
-    {
-      d: 'M44 96 l16 -16 M50 104 l26 -26 M70 106 l30 -30 M90 106 l24 -24 M108 104 l14 -14',
-      role: 'ambient',
-    },
-    shadow(80, 166, 54),
-  ],
+  // Her side cap in 3/4, as she wears it at 1133 (ch. 1099, six years back):
+  // the dark crown hatched between its top crease and the light brim, the
+  // brim's top edge as the accent, its thickness and the notch at the front
+  // in soft. Then from 1134 (ch. 1100, three and a half years back) the same
+  // cap light all over, the crown no longer hatched.
+  'conney': [...CONNEY_CAP, CONNEY_DARK_CROWN, shadow(82, 160, 56)],
 
-  // His white ushanka in 3/4, as he wears it at 1133, with its ear flaps
-  // turned up and tied over the crown: the near flap's edging as the accent,
-  // the tip of the far one showing over the top, the fold of the front in
-  // soft, and the side that turns away hatched.
+  // His white ushanka in 3/4, as he wears it at 1133 (ch. 1099): the fur
+  // crown with its seam in soft, the turned-up band across the front, and
+  // the ear flaps hanging at the sides, their yellow edging as the accent,
+  // the far side hatched. No stages.
   'bulldog': [
-    { d: 'M38 126 C34 90 56 68 84 68 C112 68 130 88 126 124' },
-    { d: 'M38 126 Q82 144 126 124' },
-    { d: 'M40 112 Q82 128 124 110', role: 'soft' },
+    { d: 'M40 100 C38 68 58 50 84 50 C110 50 128 68 126 98' },
+    { d: 'M38 92 Q82 110 128 88 L130 104 Q82 128 36 108 Z' },
+    { d: 'M84 50 Q82 70 82 98 M40 100 Q82 117 129 96', role: 'soft' },
     {
-      d: 'M80 72 C96 58 126 62 132 82 C136 96 126 104 114 98 C102 92 92 84 80 72 Z',
+      d: 'M104 120 C104 136 104 150 110 158 C118 164 128 156 128 142 L128 106',
+    },
+    { d: 'M40 110 C38 124 38 136 42 144 C46 148 52 144 52 136 L52 114' },
+    {
+      d: 'M108 122 C108 136 108 148 112 154 C118 158 124 152 124 140 L124 110 M43 113 C42 125 42 135 45 140',
       role: 'accent',
     },
-    { d: 'M92 74 C104 68 120 72 124 84 C126 92 120 94 114 90', role: 'soft' },
-    { d: 'M48 88 C46 76 54 70 64 70', role: 'accent' },
-    { d: 'M108 112 l10 -8 M112 124 l8 -6 M60 128 l8 -6', role: 'ambient' },
-    shadow(82, 160, 52),
+    { d: 'M110 68 l8 -6 M116 80 l7 -5 M112 118 l6 -5', role: 'ambient' },
+    shadow(84, 176, 52),
   ],
 
-  // Her nurse's cap in 3/4, as she arrives at Kuma's church at 1134: the
-  // band with its fold as the accent, the crown pleated to the back, the
-  // far side hatched. Before it, the black clipboard she carries in, hatched,
-  // with its clip. No medicine: it is first shown at 1135.
-  'alpha': [
-    { d: 'M10 150 L74 134 L102 160 L38 178 Z' },
-    { d: 'M38 178 V184 L102 166 V160' },
-    { d: 'M34 146 l14 -4 l2 -6 l-10 3 z', role: 'soft' },
-    {
-      d: 'M26 164 l10 -10 M42 168 l18 -18 M60 164 l16 -16 M76 160 l10 -10',
-      role: 'ambient',
-    },
-    { d: 'M64 104 Q100 120 144 100 L140 126 Q102 142 68 128 Z' },
-    { d: 'M66 114 Q102 130 142 112', role: 'accent' },
-    { d: 'M64 104 C70 84 86 76 104 76 C122 76 138 86 144 100' },
-    {
-      d: 'M104 76 Q100 92 102 112 M82 82 Q92 96 102 112 M126 82 Q112 96 102 112',
-      role: 'soft',
-    },
-    { d: 'M128 124 l8 -6 M132 110 l8 -6', role: 'ambient' },
-    shadow(104, 150, 40),
-  ],
+  // Her nurse's cap in 3/4, as she arrives at Kuma's church at 1134
+  // (ch. 1100): the band with its fold as the accent, the crown pleated to
+  // the back, the far side hatched. Before it, her glasses lying folded. No
+  // medicine: it is first shown at 1135. From 1135 the World Government's
+  // emblem joins them.
+  'alpha': [...ALPHA_CAP, ...ALPHA_GLASSES],
 
   // The giant gauntlet punching to the left: a fist in its glove, the
   // cylinder over the forearm hatched underneath, and the Steam Knuckle's
@@ -1124,49 +1180,69 @@ export const eggheadArt = {
     },
     shadow(72, 178, 58),
   ],
-  // A pair of glasses whose lenses sweep out to sharp points, arms folded
-  // under them.
+  // His glasses in 3/4, as he wears them from 1142 (ch. 1108): the lenses
+  // sweeping out to sharp points as the accent, the near one larger, the top
+  // face of the frame in soft, the bridge, the nose pads and the glints in
+  // soft, and the arms folded under. No stages.
   'hound': [
-    { d: 'M16 132 L30 118 H70 q4 18 -8 28 q-26 8 -38 -8 Z' },
-    { d: 'M144 132 L130 118 H90 q-4 18 8 28 q26 8 38 -8 Z' },
-    { d: 'M70 124 q10 -8 20 0' },
-    { d: 'M20 136 L42 166 M140 136 L118 166', role: 'soft' },
-    { d: 'M38 128 l14 -5 M102 128 l14 -5', role: 'accent' },
-    shadow(80, 188, 52),
-  ],
-  // The crescent he wears upright on his head, its horns up and curling in,
-  // set apart as an object, as he is first named at 1142: the inner edge as
-  // the accent, the dark outer half hatched below the line where it turns,
-  // and the short foot it sits on.
-  'guillotine': [
-    { d: 'M40 46 C12 70 18 130 80 134 C142 130 148 70 120 46' },
-    { d: 'M40 46 C40 80 58 104 80 104 C102 104 120 80 120 46', role: 'accent' },
-    { d: 'M26 80 C32 112 54 122 80 122 C106 122 128 112 134 80', role: 'soft' },
     {
-      d: 'M24 92 l8 -8 M30 110 l10 -10 M44 122 l10 -10 M62 128 l10 -10 M84 128 l10 -10 M104 124 l10 -10 M120 112 l10 -10 M130 94 l6 -6',
+      d: 'M26 118 L40 110 H66 Q68 126 58 134 Q42 138 34 126 Z M150 112 L134 104 H92 Q88 124 100 134 Q122 142 140 128 Z',
+      role: 'accent',
+    },
+    { d: 'M66 114 Q78 106 92 108' },
+    {
+      d: 'M40 110 L44 106 H68 L66 110 M134 104 L138 100 H94 L92 104',
+      role: 'soft',
+    },
+    { d: 'M28 122 L50 152 M146 118 L122 154' },
+    { d: 'M44 122 l10 -4 M104 118 l14 -5', role: 'soft' },
+    { d: 'M70 122 l-3 6 M88 118 l3 6', role: 'soft' },
+    shadow(86, 176, 58),
+  ],
+  // The crescent-shaped blade he wears on top of his head, set apart as an
+  // object, as he is first named at 1142 (ch. 1108): the inner edge as the
+  // accent, the bevel in soft, and the blade's thickness along the outer
+  // curve, hatched where it turns away. No stages.
+  'guillotine': [
+    { d: 'M36 40 C8 70 16 148 80 150 C144 148 152 70 124 40' },
+    { d: 'M36 40 C38 84 58 110 80 110 C102 110 122 84 124 40', role: 'accent' },
+    { d: 'M34 56 C40 100 60 122 80 122 C100 122 120 100 126 56', role: 'soft' },
+    { d: 'M18 84 C20 138 52 158 82 158 C116 158 142 134 144 84' },
+    {
+      d: 'M24 118 l4 -6 M36 140 l4 -6 M54 152 l4 -6 M76 156 l4 -6 M98 156 l4 -6 M118 148 l4 -6 M134 132 l4 -6',
       role: 'ambient',
     },
-    { d: 'M72 134 v14 h16 v-14' },
-    { d: 'M72 141 h16', role: 'soft' },
-    shadow(80, 166, 40),
+    shadow(80, 176, 44),
   ],
 
-  // His cap in 3/4, as he wears it at 1142: the band across the front as
-  // the accent, left blank where it reads MARINES, the seam and the button
-  // of the crown, the short peak hatched underneath, the far side hatched.
+  // His hand closing like a jaw, as he goes after Bonney at 1142 (ch. 1108
+  // p. 7): he bites with his hands, ten Finger Pistol fingers hardened with
+  // Armament Haki, so the fingers are hatched; the claw tips of the fingers
+  // and the thumb as the accent, the knuckles in soft, the hairy wrist
+  // rising off to the right. A fighting style, not a devil fruit. The cap
+  // that reads MARINES is left out, as it would be lettering. No stages.
   'tosa': [
-    { d: 'M40 128 C38 92 58 72 86 72 C112 72 128 90 126 124' },
-    { d: 'M40 128 Q84 146 126 124' },
-    { d: 'M44 102 Q78 116 112 102 L114 124 Q78 138 42 124 Z', role: 'accent' },
-    { d: 'M86 72 Q84 96 80 112', role: 'soft' },
-    { d: dots([[86, 72]]) },
-    { d: 'M40 128 C24 134 18 146 28 152 C48 160 80 156 96 140' },
+    { d: 'M34 94 C30 74 52 58 82 56 C106 54 126 66 132 92' },
     {
-      d: 'M30 146 l6 -5 M42 152 l7 -6 M56 152 l7 -6 M70 150 l7 -6',
+      d: 'M40 90 q8 6 16 0 M62 84 q8 6 16 0 M86 84 q8 6 16 0 M108 88 q8 6 16 0',
+      role: 'soft',
+    },
+    {
+      d: 'M36 94 C30 114 34 130 44 140 L48 132 C44 124 44 112 48 96 M58 88 C54 110 56 128 66 138 L70 130 C66 122 66 108 70 88 M82 86 C78 108 80 126 90 136 L94 128 C90 120 90 106 94 86 M106 88 C102 110 104 126 114 134 L118 126 C114 118 114 106 118 90',
+    },
+    {
+      d: 'M38 110 l6 -3 M38 122 l6 -3 M60 106 l6 -3 M60 118 l6 -3 M84 104 l6 -3 M84 116 l6 -3 M108 106 l6 -3 M108 118 l6 -3',
       role: 'ambient',
     },
-    { d: 'M114 112 l10 -8 M116 96 l8 -6', role: 'ambient' },
-    shadow(80, 176, 50),
+    {
+      d: 'M44 140 l-2 6 M66 138 l-2 6 M90 136 l-2 6 M114 134 l-2 6 M70 162 l-6 -3',
+      role: 'accent',
+    },
+    {
+      d: 'M132 92 C146 122 140 154 112 168 C96 176 78 172 70 162 L78 156 C94 164 112 156 120 136 C126 122 126 106 120 92',
+    },
+    { d: 'M132 92 C142 74 150 62 160 56 M110 56 C120 40 130 30 140 24' },
+    { d: 'M144 66 l5 -2 M152 60 l4 -3 M126 40 l4 -3', role: 'soft' },
   ],
 
   // His black top hat in 3/4, hatched because it is black, its crown turned
@@ -1197,38 +1273,56 @@ export const eggheadArt = {
     shadow(80, 184, 58),
   ],
 
-  // A drum with volume, its head in 3/4 as the accent, the hoops above and
-  // below, the lacing between them and the turning side hatched: the Drums
-  // of Liberation, the rhythm Zunesha hears and names as Joy Boy's return
-  // (ch. 1043 / ep. 1070). An emblem, not something he is shown with.
+  // His silhouette, as Emet remembers him at 1153 (ch. 1122), within the arc
+  // his record opens in: a wide-brimmed hat in 3/4, the near edge of the
+  // brim as the accent, the crown hatched because a silhouette is dark, and
+  // the edge of his cape blowing out behind it, hatched. His own hat, not
+  // Luffy's. No stages: his power is only told, in Vegapunk's broadcast.
   'joy-boy': [
-    { d: ellipse(80, 82, 46, 14), role: 'accent' },
-    { d: 'M34 82 V150 M126 82 V150' },
-    { d: 'M34 150 a46 14 0 0 0 92 0' },
-    { d: 'M34 92 a46 14 0 0 0 92 0 M34 140 a46 14 0 0 0 92 0', role: 'soft' },
+    { d: ellipse(70, 96, 58, 15) },
+    { d: 'M12 96 a58 15 0 0 0 116 0', role: 'accent' },
+    { d: 'M42 94 C40 64 52 54 70 54 C88 54 100 64 98 94' },
+    { d: 'M44 82 Q70 92 96 82', role: 'soft' },
     {
-      d: 'M40 102 L54 150 L68 106 L82 154 L96 106 L110 150 L120 102',
-      role: 'soft',
+      d: 'M50 76 l10 -10 M52 90 l20 -20 M68 92 l22 -22 M86 92 l12 -12',
+      role: 'ambient',
     },
-    { d: 'M112 112 l10 -8 M112 126 l10 -8', role: 'ambient' },
-    shadow(80, 184, 52),
+    {
+      d: 'M104 108 C120 112 134 122 142 138 C148 152 152 164 158 172 L146 168 L148 182 L134 172 L130 186 L120 172 L110 182 C112 160 108 136 96 110',
+    },
+    { d: 'M114 116 C124 132 128 150 126 170', role: 'soft' },
+    { d: 'M136 140 l7 -6 M140 156 l7 -6 M120 140 l6 -6', role: 'ambient' },
   ],
 
-  // A horned iron helmet with a barred visor, one horn snapped off, moss on
-  // the rust.
+  // Its horned helmet in 3/4, as it wakes on Egghead and is named at 1151
+  // (ch. 1119): the grill of vertical bars over the face, the right horn
+  // whole and the left horn snapped off to a stub as the accent, the side of
+  // the helmet hatched, moss and rust in soft. No stages: the arm Ju Peter
+  // bites off at 1152 is a state of the body, and at 1153 it only powers
+  // down.
   'emet': [
-    { d: 'M36 176 V112 a44 44 0 0 1 88 0 V176' },
-    { d: 'M28 176 h104' },
-    { d: 'M52 112 h56 v58 h-56z M66 112 V170 M80 112 V170 M94 112 V170' },
-    { d: 'M40 104 C22 92 14 70 20 44 C26 66 38 78 52 84', role: 'accent' },
-    { d: 'M120 104 C128 100 134 94 138 86 l-5 -4 l-3 6', role: 'accent' },
+    { d: 'M32 176 V112 C32 76 54 58 80 58 C108 58 130 76 132 108 V170' },
+    { d: 'M112 70 C118 86 118 100 118 112 V176' },
+    { d: 'M124 124 l6 -6 M124 142 l6 -6 M124 160 l6 -6', role: 'ambient' },
+    {
+      d: 'M42 112 h60 v58 h-60z M54 112 V170 M66 112 V170 M78 112 V170 M90 112 V170',
+    },
+    { d: 'M24 176 h116 M132 170 L118 176' },
+    { d: 'M36 100 C18 88 10 66 16 40 C22 62 34 74 48 80' },
+    {
+      d: 'M126 96 C132 92 136 86 138 80 L133 77 L132 82 L128 79 C126 84 124 88 120 90',
+      role: 'accent',
+    },
+    {
+      d: 'M48 74 q3 -4 6 0 q3 -4 6 0 M100 66 q3 -4 6 0 M36 150 q3 -4 6 0',
+      role: 'soft',
+    },
     {
       d: dots([
-        [44, 150],
-        [116, 140],
-        [46, 164],
-        [114, 160],
-        [60, 80],
+        [60, 90],
+        [94, 84],
+        [38, 132],
+        [112, 150],
       ]),
       role: 'soft',
     },
@@ -1808,6 +1902,34 @@ export const eggheadRedrawn: Redrawings = {
         },
         { d: 'M28 100 l5 -4 M28 114 l5 -4', role: 'ambient' },
       ],
+    },
+  ],
+  // The nurse shown to be a Government agent: Conney learns that Alpha and
+  // her people are Cipher Pol (ch. 1101, ep. 1135). The cap and the glasses
+  // as before, the cap's band soft now, and the World Government's emblem
+  // above them as the accent.
+  'alpha': [
+    {
+      episode: 1135,
+      chapter: 1101,
+      value: [
+        ...softened(ALPHA_CAP),
+        ...ALPHA_GLASSES,
+        {
+          d: WORLD_GOVERNMENT_EMBLEM,
+          role: 'accent',
+          transform: 'translate(-80 4)',
+        },
+      ],
+    },
+  ],
+  // Three and a half years back her side cap is light all over (ch. 1100,
+  // ep. 1134): the same cap, its crown no longer hatched.
+  'conney': [
+    {
+      episode: 1134,
+      chapter: 1100,
+      value: [...CONNEY_CAP, shadow(82, 160, 56)],
     },
   ],
 }
