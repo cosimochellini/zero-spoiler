@@ -162,15 +162,14 @@ const LILITH_FIST: Stroke[] = [
  * appearance: the snake's body bent into a hoop, its thickness showing along
  * the bottom and hatched underneath, scales across it in soft, the tail
  * turning up into the hook through the ear, and the head turned out at the
- * top with the line of its mouth and no eye. The lunarian flame on her back
- * rises from behind it as the accent.
+ * top, with no eye and no mouth. The lunarian flame on her back rises from
+ * behind it as the accent.
  */
 const S_SNAKE_EARRING: Stroke[] = [
   { d: 'M61.6 72.5 A42 42 0 1 0 103 79.8' },
   { d: 'M65.1 81.9 A32 32 0 1 0 96.6 87.5' },
   { d: 'M61.6 72.5 Q61 78 65.1 81.9' },
   { d: 'M103 79.8 C110 70 124 66 128 72 C130 78 118 86 96.6 87.5' },
-  { d: 'M127 74 Q120 76 113 77', role: 'soft' },
   { d: 'M62 72 C58 58 70 50 78 58' },
   { d: 'M34.6 124 A42 42 0 0 0 117.4 124', role: 'soft' },
   {
@@ -483,11 +482,10 @@ export const eggheadArt = {
 
   // His webbed hand coming up out of a floor that ripples round it like
   // water, the way he swims through the ground at Egghead from his first
-  // fight (ch. 1065 p. 9, ep. 1095): the forearm with its far side hatched,
-  // the webbing between the fingers with its free edge and hatched, the
-  // rings spreading over the
-  // floor, drops thrown up, and his lunarian flame breaking the surface
-  // behind as the accent.
+  // fight (ch. 1065, ep. 1095 covers p. 8-19): the forearm with its far side
+  // hatched, the webbing between the fingers with its free edge and
+  // hatched, the rings spreading over the floor, drops thrown up, and his
+  // lunarian flame breaking the surface behind as the accent.
   's-shark': [
     { d: ellipse(80, 152, 26, 6) },
     { d: ellipse(80, 154, 46, 11), role: 'ambient', dashed: true },
