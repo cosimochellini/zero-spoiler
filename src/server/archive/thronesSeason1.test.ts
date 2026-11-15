@@ -1095,7 +1095,7 @@ const STAGES: {
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
   // The northern lords' deaths and reveals (#1288).
-  { id: 'jeyne-poole', episode: 29, chapter: 241, source: 'chapter' },
+  { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
   { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },
   { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
   { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
