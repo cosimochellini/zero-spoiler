@@ -136,7 +136,3 @@ export const house = (
   ridge: number,
 ): string =>
   `M${n(x)} 150 V${n(top)} h${n(w)} V150 M${n(x - 4)} ${n(top)} L${n(x + w / 2)} ${n(ridge)} L${n(x + w + 4)} ${n(top)} M${n(x + w / 2 - 4)} 150 V${n(top + 16)} h8 V150`
-
-/** A hexagonal cell of the lattice behind the dome. */
-export const cell = (x: number, y: number): string =>
-  `M${n(x)} ${n(y)} l10 -6 l10 6 v12 l-10 6 l-10 -6z`
