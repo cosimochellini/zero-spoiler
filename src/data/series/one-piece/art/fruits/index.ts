@@ -398,7 +398,7 @@ function rim(from: number, to: number, drop = 0): string {
 /** The glare fruit: a pear, seen through. */
 const GLARE_BODY: Body = { family: 'pear', cy: 118 }
 
-/** The finger-and-thumb circle, half over the near side. */
+/** The ring of thumb and index finger, half over the near side. */
 const LENS = { cx: 54, cy: 132, r: 19 }
 
 /** The jacket fruit: an oblong, its skin worn like a coat. */
@@ -410,8 +410,11 @@ const BARRIER_BODY: Body = { family: 'round', cy: 114 }
 /** Where the fruit meets the pane. */
 const PANE_X = 114
 
-/** The swim fruit: an oblong, coming up out of the ground. */
-const SWIM_BODY: Body = { family: 'oblong', cy: 110 }
+/** The swim fruit: an oblong, half under the ground it swims in. */
+const SWIM_BODY: Body = { family: 'oblong', cy: 122 }
+
+/** The ground line the swim fruit is half under. */
+const SWIM_GROUND = 128
 
 /** How far the swimmer is tipped forward, in degrees. */
 const SWIM_TIP = 22
@@ -425,6 +428,15 @@ function tip(x: number, y: number): string {
   ]
 
   return point(80 + dx * cos - dy * sin, SWIM_BODY.cy + dx * sin + dy * cos)
+}
+
+/** How low a point of the swim fruit sits once it is tipped forward. */
+function swimHeight(x: number, y: number): number {
+  return (
+    SWIM_BODY.cy
+    + (x - 80) * Math.sin(SWIM_TIP * DEGREES)
+    + (y - SWIM_BODY.cy) * Math.cos(SWIM_TIP * DEGREES)
+  )
 }
 
 /**
@@ -512,26 +524,67 @@ function crossStitch(x: number): string {
 /** The art fruit: a gourd, its lower bulb pulled out of line. */
 const ART_BODY: Body = { family: 'gourd', cy: 118 }
 
-/** The bands of the lower bulb, top to bottom, and how far each has slid. */
+/** Where the upper bulb ends and the cut bands of the lower one begin. */
 const ART_TOP = 118
 
-const ART_BANDS = [ART_TOP, 134, 150, 164]
+/**
+ * The bands of the lower bulb, each as its top and bottom, how far it has
+ * slid sideways and how far it has turned, in degrees, about its middle.
+ */
+const ART_BANDS: [top: number, bottom: number, slide: number, turn: number][] =
+  [
+    [ART_TOP + 2, 130, 12, 0],
+    [136, 146, -13, -12],
+    [152, 164, 7, 0],
+  ]
 
-const ART_SLIDE = [7, -8, 4]
+/** A point turned about a centre by an angle in degrees. */
+function rotated([x, y]: Point, [cx, cy]: Point, angle: number): Point {
+  const [cos, sin] = [Math.cos(angle * DEGREES), Math.sin(angle * DEGREES)]
 
-/** One side of the lower bulb, every band slid its own way. */
-function artSide(way: number): string[] {
-  return ART_SLIDE.flatMap((dx, at) => {
-    const top = ART_BANDS[at] ?? 0
-    const bottom = ART_BANDS[at + 1] ?? 0
-
-    return Array.from({ length: (bottom - top) / 2 + 1 }, (_unused, step) => {
-      const y = top + step * 2
-
-      return point(onRim(ART_BODY, y, way)[0] + dx, y)
-    })
-  })
+  return [
+    cx + (x - cx) * cos - (y - cy) * sin,
+    cy + (x - cx) * sin + (y - cy) * cos,
+  ]
 }
+
+/**
+ * One band of the lower bulb, cut straight across top and bottom, slid and
+ * turned, with the near edge of its cut face; `rib` is where its own
+ * segment line runs, which no other band's meets.
+ */
+function artBand(at: number, rib: number): [band: string, line: string] {
+  const [top = 0, bottom = 0, slide = 0, turn = 0] = ART_BANDS[at] ?? []
+  const heights = Array.from(
+    { length: (bottom - top) / 2 + 1 },
+    (_unused, step) => top + step * 2,
+  )
+  const middle: Point = [80 + slide, (top + bottom) / 2]
+  const placed = (x: number, y: number): string => {
+    return point(...rotated([x + slide, y], middle, turn))
+  }
+  const band = [
+    ...heights.map((y) => placed(onRim(ART_BODY, y, -1)[0], y)),
+    ...heights.toReversed().map((y) => placed(onRim(ART_BODY, y, 1)[0], y)),
+  ]
+
+  const [left, right] = [
+    onRim(ART_BODY, top, -1)[0],
+    onRim(ART_BODY, top, 1)[0],
+  ]
+
+  return [
+    polyline(band, true),
+    [
+      // The near edge of the cut face, which shows from above.
+      `M${placed(left, top)} C${placed(left + 8, top + 5)}`,
+      `${placed(right - 8, top + 5)} ${placed(right, top)}`,
+      `M${placed(80 + rib, top + 6)} L${placed(80 + rib, bottom - 2)}`,
+    ].join(' '),
+  ]
+}
+
+const ART_CUTS = [artBand(0, -10), artBand(1, 8), artBand(2, -2)]
 
 /** The hobby fruit: a heart, its near side a doll's arm. */
 const HOBBY_BODY: Body = { family: 'heart', cy: 112 }
@@ -616,6 +669,45 @@ function block(x0: number, x1: number): string {
     corners.map(([x, y]) => point(x, y)),
     true,
   )
+}
+
+/**
+ * The stone arm that rises out of the course past the fruit's far side: up
+ * from the bottom of the course, a rough wrist, and a hand of three blocky
+ * fingers and a thumb turned towards the fruit, then back down.
+ */
+const STONE_ARM = {
+  left: 134,
+  right: 152,
+  rim: [
+    [134, 172],
+    [134, 128],
+    [133, 104],
+    [134, 82],
+    [128, 72],
+    [122, 60],
+    [125, 54],
+    [131, 62],
+    [131, 46],
+    [136, 43],
+    [138, 58],
+    [139, 40],
+    [144, 38],
+    [146, 58],
+    [147, 46],
+    [152, 47],
+    [153, 66],
+    [151, 84],
+    [152, 106],
+    [152, 172],
+  ] satisfies Point[],
+  /** Each joint, as its heights at the near and the far edge. */
+  joints: [
+    [148, 148],
+    [126, 125],
+    [104, 106],
+    [86, 84],
+  ] satisfies [near: number, far: number][],
 }
 
 /** The pop fruit: a round, its shoulder swelling up. */
@@ -4937,10 +5029,13 @@ export const fruitArt = {
 
   /**
    * The fruit gone into the stone: a course of blocks runs along the ground
-   * and through its foot, and where it does, the skin stops at one seam and
-   * the ribs carry on down as the joints between the stones. In episode 669
-   * Pica merges with the palace and moves its walls; he never turns to stone
-   * himself.
+   * and through its foot, the skin stops at one seam and the ribs carry on
+   * down as the joints between the stones, and past its far side the course
+   * rises into a rough stone arm and hand. In episode 669 (chapter 736) Pica
+   * comes out of the palace wall, merged with its stone, and moves its walls;
+   * he never turns to stone himself. The arm and hand are the stone body he
+   * stands up in, as the giant of episode 683 (chapter 747) has them, later
+   * in the same Dressrosa arc.
    */
   'stone-stone-fruit': [
     ...kitBody(STONE_BODY, [106, 118, 130], (_x, y) => y < COURSE.top),
@@ -4949,7 +5044,7 @@ export const fruitArt = {
       [94, 102, 6],
       [104, 134, -6],
     ]),
-    ...sprout(STONE_BODY, -4, 'right'),
+    ...sprout(STONE_BODY, -4, 'left'),
     {
       d: [
         `M${point(intoCourse(1, -1), COURSE.top)} L${point(intoCourse(1, 1), COURSE.top)}`,
@@ -4961,75 +5056,94 @@ export const fruitArt = {
           }),
         ),
       ].join(' '),
-      role: 'accent',
     },
     {
       d: [
         block(8, 24),
         block(26, intoCourse(1, -1) - 2),
-        block(intoCourse(1, 1) + 2, 134),
-        block(136, 152),
+        block(intoCourse(1, 1) + 2, STONE_ARM.left - 2),
         `M${point(intoCourse(1, -1), COURSE.bottom)} L${point(intoCourse(1, 1), COURSE.bottom)}`,
       ].join(' '),
       role: 'soft',
     },
-    { d: 'M13 154 L19 160 M126 154 L132 160 M68 160 L74 166', role: 'ambient' },
+    { d: polyline(STONE_ARM.rim.map(([x, y]) => point(x, y))), role: 'accent' },
+    // The joints of the arm's stones, the lowest one where the course runs on.
+    {
+      d: [
+        ...STONE_ARM.joints.map(([y0, y1]) => {
+          return `M${point(STONE_ARM.left, y0)} L${point(STONE_ARM.right, y1)}`
+        }),
+        'M141 148 L141 126 M146 125.5 L146 105 M140 105 L140 85',
+      ].join(' '),
+      role: 'soft',
+    },
+    { d: 'M13 154 L19 160 M68 160 L74 166 M144 112 L148 116', role: 'ambient' },
   ],
 
   /**
    * The fruit made a work of art: the upper bulb is still a fruit, the lower
-   * one is cut into bands that have slid apart and no longer line up. In
+   * one is cut into three bands that have slid apart, the middle one turned
+   * sideways, and the segment line down each no longer meets the next. In
    * episodes 644 to 648 Giolla turns the Sunny, Nami's Clima-Tact and the
-   * crew into abstract art that no longer works.
+   * crew into abstract art that no longer works; she names her fruit in
+   * episode 648 (chapter 718).
    */
   'art-art-fruit': [
     ...kitBody(ART_BODY, [84, 94], (_x, y) => y < ART_TOP),
     waist(ART_BODY, 116),
     ...skin([[70, 94, 6]]),
     ...sprout(ART_BODY, -4, 'right'),
-    {
-      d: polyline([...artSide(-1), ...artSide(1).toReversed()]),
-      role: 'accent',
-    },
-    // The planes the bands were cut along.
-    { d: 'M66 140 L78 150 M100 124 L108 132', role: 'soft' },
-    { d: 'M118 140 L124 146 M124 152 L130 158', role: 'ambient' },
+    { d: ART_CUTS.map(([band]) => band).join(' '), role: 'accent' },
+    { d: ART_CUTS.map(([, line]) => line).join(' '), role: 'soft' },
     shadowUnder(1),
   ],
 
   /**
-   * The fruit surfacing from the ground as a swimmer does from water, tipped
-   * forward, one swell in the ground rolling behind it and flat again past
-   * it. In episode 664 Senor Pink swims through solid ground and comes up
-   * behind his opponent.
+   * The fruit swimming in the ground as in water: tipped forward and half
+   * under the ground line, two ripples ringing it, and the swell it rolled
+   * up behind it. In episode 664 (chapter 732) Senor Pink swims through
+   * solid ground and comes up behind his opponent; he names his fruit in
+   * episode 667 (chapter 735).
    */
   'swim-swim-fruit': [
     ...[
-      ...kitBody(SWIM_BODY, [114, 126, 138]),
-      ...skin([
-        [64, 112, 9],
-        [94, 138, -8],
-      ]),
+      ...kitBody(SWIM_BODY, [92, 104], (x, y) => {
+        return swimHeight(x, y) < SWIM_GROUND
+      }),
+      ...skin([[62, 110, 8]]),
       ...sprout(SWIM_BODY, 4, 'right'),
     ].map((stroke) => tipped(stroke)),
     {
-      d: 'M8 170 C20 170 26 154 36 153 C46 152 50 166 60 170 L152 170',
+      d: [10, 24]
+        .map((grow) => {
+          return polyline(
+            trace([80, SWIM_GROUND + 2], [44 + grow, grow * 0.6], [8, 172, 14]),
+          )
+        })
+        .join(' '),
       role: 'accent',
+    },
+    // The ground, with the swell behind.
+    {
+      d: 'M8 128 C14 128 18 114 26 114 C32 114 34 124 39.6 126.4 M120.1 123.9 C122 127 126 128 132 128 L152 128',
     },
     // The ground, moving like water.
     {
       d: [
-        'M14 180 C18 177 22 177 26 180 C30 183 34 183 38 180',
-        'M102 180 C106 177 110 177 114 180 C118 183 122 183 126 180',
+        'M18 164 C22 161 26 161 30 164 C34 167 38 167 42 164',
+        'M106 170 C110 167 114 167 118 170 C122 173 126 173 130 170',
       ].join(' '),
       role: 'soft',
     },
   ],
 
   /**
-   * The fruit coming down at its full weight: two drop lines above it, and
-   * the ground sagging under its foot. In episode 667 Machvise floats up over
-   * Franky and drops on him; in 682 Law calls him a Super-Weight Human.
+   * The fruit come down at its full weight: the ground sags wide under its
+   * foot and cracks either side of the sag, and two short drop lines are
+   * left above it. In episode 667 (chapter 735) Machvise floats up over
+   * Franky and drops on him; in 682 (chapter 747) Law calls him a
+   * Super-Weight Human. The cracks are the ground his landings break, as
+   * against Hajrudin in episode 709 (chapter 770), later in the same arc.
    */
   'ton-ton-fruit': [
     ...kitBody(TON_BODY, [140, 152]),
@@ -5039,21 +5153,23 @@ export const fruitArt = {
       [62, 144, 9],
     ]),
     ...sprout(TON_BODY, 0, 'left'),
+    { d: 'M50 38 L50 58 M110 42 L110 60' },
     {
       d: [
-        'M54 20 L54 60 M106 28 L106 64',
-        'M8 160 C34 160 44 168 80 168 C116 168 126 160 152 160',
+        'M8 156 C26 156 34 170 80 170 C126 170 134 156 152 156',
+        'M26 160 L20 168 L24 172 L18 180 M134 160 L140 168 L136 172 L142 180',
       ].join(' '),
       role: 'accent',
     },
-    { d: 'M24 176 C50 182 110 182 136 176', role: 'ambient', dashed: true },
   ],
 
   /**
-   * The fruit seen through: a finger-and-thumb circle held half over its near
-   * side, and inside it the skin is gone and the far side shows. In episode
-   * 640 Viola looks through clothes and skin this way. The circle is left open
-   * where the finger meets the thumb, so it is never an eye.
+   * The fruit seen through: a hand held up against its near side, the thumb
+   * and index finger closed into a ring and the other fingers folded, and
+   * inside the ring the skin is gone and the far side shows. In episode 640
+   * (chapter 712) Viola makes these rings with her fingers and looks through
+   * clothes and skin. The ring is left open where the fingertips meet, so it
+   * is never an eye.
    */
   'glare-glare-fruit': [
     ...kitBody(
@@ -5070,6 +5186,17 @@ export const fruitArt = {
       d: polyline(trace([LENS.cx, LENS.cy], [LENS.r, LENS.r], [-50, 280, 30])),
       role: 'accent',
     },
+    // The hand: the back of it from the index knuckle down to the wrist,
+    // and in front the three folded fingers, knuckle under knuckle.
+    {
+      d: [
+        'M37.6 122 C28 118 18 122 15 134 C12 146 13 162 14 178',
+        'M39.5 146 C47 145 50 151 44 155 C51 156 51 163 43 165',
+        'C49 167 48 173 40 174 C36 175 34 177 34 180',
+      ].join(' '),
+    },
+    // Where the folded fingers meet the palm, and the wrist.
+    { d: 'M44 155 L36 154 M43 165 L35 164 M14 178 L34 180', role: 'soft' },
     // The far side, through the skin.
     { d: polyline(trace([80, 136], [18, 26], [150, 214, 8])), role: 'soft' },
     shadowUnder(1),
