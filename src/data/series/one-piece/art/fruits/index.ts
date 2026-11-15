@@ -711,6 +711,21 @@ const STONE_ARM = {
     [104, 106],
     [86, 84],
   ] satisfies [near: number, far: number][],
+  /**
+   * Where the upright joint runs in each course between two joints, so the
+   * stones are laid staggered; its ends sit on the joints above and below.
+   */
+  bonds: [141, 146, 140],
+}
+
+/** The height of one of the stone arm's joints at an x across the arm. */
+function armJoint(at: number, x: number): number {
+  const [near = 0, far = near] = STONE_ARM.joints[at] ?? []
+
+  return (
+    near
+    + ((far - near) * (x - STONE_ARM.left)) / (STONE_ARM.right - STONE_ARM.left)
+  )
 }
 
 /** The pop fruit: a round, its shoulder swelling up. */
@@ -5115,7 +5130,9 @@ export const fruitArt = {
         ...STONE_ARM.joints.map(([y0, y1]) => {
           return `M${point(STONE_ARM.left, y0)} L${point(STONE_ARM.right, y1)}`
         }),
-        'M141 148 L141 126 M146 125.5 L146 105 M140 105 L140 85',
+        ...STONE_ARM.bonds.map((x, at) => {
+          return `M${point(x, armJoint(at, x))} L${point(x, armJoint(at + 1, x))}`
+        }),
       ].join(' '),
       role: 'soft',
     },

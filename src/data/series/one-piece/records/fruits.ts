@@ -774,8 +774,8 @@ export const devilFruits: OnePieceFruit[] = [
     kind: 'fruit',
     name: { it: 'Frutto Pamu Pamu', en: 'Pop-Pop Fruit' },
     summary: {
-      it: 'Fa gonfiare fino a scoppiare tutto quello che ha toccato: un pezzo di metallo, un elmo, i capelli di chi l’ha mangiato.',
-      en: 'Makes anything it has touched swell up until it bursts: a piece of metal, a helmet, the eater’s own hair.',
+      it: 'Fa gonfiare fino a scoppiare tutto quello che ha toccato: un cappello, un elmo, un bracciale di metallo.',
+      en: 'Makes anything it has touched swell up until it bursts: a hat, a helmet, a metal cuff.',
     },
     visual: { art: 'pop-pop-fruit', tint: 'ocher' },
   },
