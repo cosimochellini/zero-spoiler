@@ -569,8 +569,8 @@ const STICK_BODY: Body = { family: 'gourd', cy: 106 }
 const PUDDLE_Y = 174
 
 /**
- * One strand of mucus from the foot down to the puddle: wide where it holds
- * on at either end, pulled thin at a neck partway down.
+ * One thick strand of mucus from the foot down to the puddle: wide where it
+ * holds on at either end, sagging to a neck partway down.
  */
 function strand(x: number, neck: number): string {
   const top = crownY(STICK_BODY) + 92 - Math.abs(x - 80) / 4
@@ -579,9 +579,9 @@ function strand(x: number, neck: number): string {
   return [-1, 1]
     .map((way) => {
       return [
-        `M${point(x + way * 5, top)}`,
-        `C${point(x + way, mid - 4)} ${point(x + way, mid + 2)}`,
-        point(x + way * 6, PUDDLE_Y),
+        `M${point(x + way * 8, top)}`,
+        `C${point(x + way * 2.5, mid - 6)} ${point(x + way * 2.5, mid + 4)}`,
+        point(x + way * 10, PUDDLE_Y),
       ].join(' ')
     })
     .join(' ')
@@ -1535,15 +1535,16 @@ const ELEPHANT_BODY: Body = { family: 'pear', cy: 118 }
  */
 const TRUNK: Limb = {
   line: [
-    [94, 98],
-    [112, 98],
-    [124, 108],
-    [126, 124],
-    [128, 142],
-    [126, 162],
-    [140, 152],
+    [96, 98],
+    [118, 94],
+    [136, 104],
+    [140, 124],
+    [142, 144],
+    [138, 164],
+    [146, 167],
+    [150, 154],
   ],
-  half: (along) => 3.5 + 10.5 * (1 - along) ** 2,
+  half: (along) => 3.5 + 12.5 * (1 - along) ** 2,
   rim: { body: ELEPHANT_BODY, way: 1 },
 }
 
@@ -1688,6 +1689,12 @@ function claw(line: Point[]): string {
 /** The revive fruit: a heart, its soul coming back in at the crown. */
 const REVIVE_BODY: Body = { family: 'heart', cy: 116 }
 
+/** Where the skin stops and the bones start, round the middle. */
+const REVIVE_BONES = 122
+
+/** How far down the cage each rib curves round. */
+const REVIBS = [129, 139, 148]
+
 /**
  * The soul: nose first into the dimple at the crown, round where it goes
  * in, and an S of tail behind it up in the air, thinning to a round end.
@@ -1803,22 +1810,14 @@ const SHADOW_BODY: Body = { family: 'oblong', cy: 100 }
 /** The paw fruit: a gourd pressed inward on its near side. */
 const PAW_BODY: Body = { family: 'gourd', cy: 112 }
 
-/** The glint fruit: a pear, its near side gone at the speed of light. */
+/** The glint fruit: a pear, sunk in its own light. */
 const GLINT_BODY: Body = { family: 'pear', cy: 118 }
 
-/** Where the near side has gone: the rim heights the outline opens between. */
-const GLINT_GAP = { top: 98, bottom: 150 }
+/** Where the fruit goes into the light. */
+const GLINT_SUNK = 150
 
-/** The streaks of light: the rim height each leaves at, and how far it runs. */
-const STREAKS = [
-  { y: 106, reach: 30 },
-  { y: 117, reach: 46 },
-  { y: 128, reach: 48 },
-  { y: 139, reach: 32 },
-]
-
-/** How far a streak climbs for every step it runs back. */
-const STREAK_RISE = 0.28
+/** The rays of the burst round the foot, by angle: in front and to either side. */
+const GLINT_RAYS = [-20, 10, 40, 65, 90, 115, 140, 170, 200]
 
 /** A snake's tail: thick at the root, narrowing to `end` at its point. */
 function taper(root: number, end: number): (along: number) => number {
@@ -1888,6 +1887,26 @@ const STRIKE_TAIL: Limb = {
   rim: { body: COBRA_BODY, way: 1 },
 }
 
+/**
+ * A heart, the shape of Hancock's beam, about a centre, `r` its half-width,
+ * its point turned down and to the right, toward the fruit.
+ */
+function beamHeart(cx: number, cy: number, r: number): string {
+  const [cos, sin] = [Math.cos(-45 * DEGREES), Math.sin(-45 * DEGREES)]
+  const at = (x: number, y: number): string => {
+    return point(cx + r * (x * cos - y * sin), cy + r * (x * sin + y * cos))
+  }
+
+  return [
+    `M${at(0, -0.35)}`,
+    `C${at(0.1, -0.95)} ${at(1, -0.95)} ${at(1, -0.2)}`,
+    `C${at(1, 0.35)} ${at(0.4, 0.6)} ${at(0, 1)}`,
+    `C${at(-0.4, 0.6)} ${at(-1, 0.35)} ${at(-1, -0.2)}`,
+    `C${at(-1, -0.95)} ${at(-0.1, -0.95)} ${at(0, -0.35)}`,
+    'Z',
+  ].join(' ')
+}
+
 /** The love fruit: a heart, its point turned to stone. */
 const LOVE_BODY: Body = { family: 'heart', cy: 112 }
 
@@ -1916,11 +1935,11 @@ const STONE_FACES: Point[] = [
   [99, 146],
 ]
 
-/** The magma fruit: a heart, magma surging out of its point. */
-const MAGMA_BODY: Body = { family: 'heart', cy: 104 }
+/** The magma fruit: a heart, its point in a pool of magma. */
+const MAGMA_BODY: Body = { family: 'heart', cy: 110 }
 
-/** How far down the heart the magma has it. */
-const MAGMA_LINE = 140
+/** Where the point goes into the pool. */
+const MAGMA_LINE = 152
 
 /** A lump of rock: a few flat faces about a point. */
 function rock(cx: number, cy: number, r: number): string {
@@ -1982,11 +2001,11 @@ const STRIP: Limb = {
   line: [
     [107, SNIP_HINGE],
     [107, 158],
-    [148, 134],
-    [146, 112],
+    [142, 150],
+    [148, 132],
+    [147, 116],
+    [149, 104],
     [144, 92],
-    [150, 76],
-    [140, 60],
   ],
   half: (along) => (9 - 3 * along) * Math.cos(Math.PI * along),
   end: [],
@@ -2104,7 +2123,11 @@ const GIANT_ARM: Limb = {
 /** The swamp fruit's segmented body, half swallowed by its own mud. */
 const SWAMP_BODY: Body = { family: 'segmented', cy: 100 }
 
-const SWAMP_WAIST = 112
+/** Where the fruit goes into the mud, below its middle. */
+const SWAMP_WAIST = 124
+
+/** How far down the box the middle of the pool lies. */
+const SWAMP_POOL = 132
 
 /** The mark fruit, with room above its shoulder for the incoming axe. */
 const MARK_BODY: Body = { family: 'round', cy: 124 }
@@ -2179,13 +2202,20 @@ const ALLOSAURUS_BODY: Body = { family: 'gourd', cy: 112 }
 const ALLOSAURUS_TAIL: Limb = {
   line: [
     [104, 137],
-    [121, 142],
-    [132, 133],
-    [146, 128],
+    [124, 147],
+    [140, 138],
+    [150, 116],
   ],
-  half: (along) => 10 * (1 - along),
+  half: (along) => 1.5 + 11.5 * (1 - along),
   rim: { body: ALLOSAURUS_BODY, way: 1 },
 }
+
+/** The hind leg out of the foot, down to three clawed toes on the ground. */
+const ALLOSAURUS_FOOT = [
+  'M64 156 C62 162 62 168 64 172 L46 172 C40 172 36 176 38 179',
+  'L56 178 L48 181 C44 182 43 186 47 186 L66 182 L68 184',
+  'C70 187 74 186 74 183 L86 179 C92 174 100 166 96 155',
+].join(' ')
 
 /** Page One's fruit: an oblong in front of the tall spines of a dorsal sail. */
 const SPINOSAURUS_BODY: Body = { family: 'oblong', cy: 122 }
@@ -3743,12 +3773,13 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit with an elephant's trunk: one short, thick trunk grown out of
-   * its far shoulder and hanging down beside it, the tip curled, two creases
-   * across it. In episode 285 Spandam calls Funkfreed, an elephant, which
-   * turns into a sword, and he tells Robin the sword was given the fruit. The
-   * trunk and nothing else, never ears, tusks or the head, and no blade: the
-   * trunk melding into the blade is the hybrid form, which comes later.
+   * The fruit with an elephant's trunk: one thick trunk grown out of its far
+   * shoulder, widest at the root, standing clear of the fruit as it hangs,
+   * three creases across it and the tip curled up. In episode 285 (chapter
+   * 400 p.6) Spandam calls Funkfreed, an elephant, which turns into a sword,
+   * and he tells Robin the sword was given the fruit. The trunk and nothing
+   * else, never ears, tusks or the head, and no blade: the trunk melding into
+   * the blade is the hybrid form, which comes later.
    */
   'elephant-elephant-fruit': [
     ...kitBody(ELEPHANT_BODY, [140, 150, 160]),
@@ -3757,10 +3788,12 @@ export const fruitArt = {
       [86, 152, -6],
     ]),
     ...sprout(ELEPHANT_BODY, -4, 'left'),
-    { d: limbOutline(TRUNK, 20), role: 'accent' },
+    { d: limbOutline(TRUNK, 24), role: 'accent' },
     // The creases across it.
     {
-      d: [0.5, 0.62].map((along) => acrossLimb(TRUNK, along, 0.7)).join(' '),
+      d: [0.42, 0.54, 0.66]
+        .map((along) => acrossLimb(TRUNK, along, 0.75))
+        .join(' '),
       role: 'soft',
     },
     shadowUnder(1),
@@ -3769,22 +3802,42 @@ export const fruitArt = {
   /**
    * The fruit its soul comes back to: one soft wisp of soul diving nose first
    * into the dimple at its crown, beside the stalk, the rim of the dimple open
-   * where it goes in. In episode 338 Brook tells the crew he ate the fruit,
-   * and that after he died his soul came back from the underworld and looked
-   * for his body. A wisp, never a flame or a ghost: no point, no dome and no
-   * face.
+   * where it goes in, and below a clean line round its middle the skin is
+   * gone to bare bones, a cage of curved ribs on a spine. Brook first appears as a
+   * living skeleton in episode 337, and in episode 338 (chapter 443 p.6-7) he
+   * tells the crew he ate the fruit, and that after he died his soul came
+   * back from the underworld and looked for his body. A wisp, never a flame
+   * or a ghost: no point, no dome and no face, and no skull.
    */
   'revive-revive-fruit': [
-    ...kitBody(REVIVE_BODY, [104, 116, 128]).with(
-      1,
-      crown(REVIVE_BODY, [80, 101]),
-    ),
-    ...skin([
-      [64, 104, 8],
-      [86, 134, -7],
-    ]),
+    ...kitBody(REVIVE_BODY, [104, 114]).with(1, crown(REVIVE_BODY, [80, 101])),
+    ...skin([[62, 98, 8]]),
     ...sprout(REVIVE_BODY, -4, 'left'),
     { d: limbOutline(WISP, 36), role: 'accent' },
+    // Where the skin stops: a clean line round the middle, seen from above.
+    {
+      d: [
+        `M${point(...onRim(REVIVE_BODY, REVIVE_BONES, -1))}`,
+        `C${point(56, REVIVE_BONES + 9)} ${point(104, REVIVE_BONES + 9)}`,
+        point(...onRim(REVIVE_BODY, REVIVE_BONES, 1)),
+      ].join(' '),
+    },
+    // The ribs, out from the spine either side and curving down round the
+    // shape the fruit had, and the spine down to its point.
+    {
+      d: REVIBS.flatMap((y) => {
+        return [-1, 1].map((way) => {
+          const reach = halfWidth(REVIVE_BODY, y) - 7
+
+          return [
+            `M${point(80 + way * 2, y - 2)}`,
+            `C${point(80 + way * 0.7 * reach, y - 4)} ${point(80 + way * reach, y)}`,
+            point(80 + way * (reach - 4), y + 10),
+          ].join(' ')
+        })
+      }).join(' '),
+    },
+    { d: `M${point(80, REVIVE_BONES + 7)} L${point(80, REVIVE_BODY.cy + 44)}` },
     shadowUnder(1),
   ],
 
@@ -3902,76 +3955,105 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit leaving at the speed of light: its near side is not there, the
-   * outline stopping at the shoulder and at the foot, and out of the gap four
-   * ruler-straight streaks run off back to the left, longest in the middle.
-   * In episode 401 Kizaru kicks with light at the speed of light, and in 404
-   * shots go straight through him and he names his fruit a Logia.
+   * The fruit sunk in its own light: where its shadow would be, a burst of
+   * short ruler-straight rays fans out round its foot, the outline stopping
+   * where it goes in, and two streaks run off its near side back to the left.
+   * In episode 400 (chapter 506) Kizaru leaps off a cannonball he rode in
+   * on, in 401 he kicks at the speed of light, and in 404 (chapter 511 p.17)
+   * he names his fruit a Logia and the light it makes him.
    */
   'glint-glint-fruit': [
-    {
-      d: outline(
-        GLINT_BODY,
-        (x, y) => x > 80 || y < GLINT_GAP.top || y > GLINT_GAP.bottom,
-      ),
-    },
-    crown(GLINT_BODY),
-    hatching(GLINT_BODY, [130, 142, 154]),
+    ...kitBody(GLINT_BODY, [124, 136], (_x, y) => y < GLINT_SUNK),
     ...skin([
       [94, 110, 7],
-      [76, 128, -6],
-      [92, 148, 6],
+      [70, 124, -6],
+      [92, 142, 5],
     ]),
     ...sprout(GLINT_BODY, 4, 'right'),
+    // Where the fruit goes into the light.
     {
-      d: STREAKS.map(({ y, reach }) => {
-        const x = onRim(GLINT_BODY, y, -1)[0] + 8
+      d: [
+        `M${point(...onRim(GLINT_BODY, GLINT_SUNK, -1))}`,
+        `C${point(60, GLINT_SUNK + 8)} ${point(100, GLINT_SUNK + 8)}`,
+        point(...onRim(GLINT_BODY, GLINT_SUNK, 1)),
+      ].join(' '),
+      role: 'soft',
+    },
+    {
+      d: [
+        ...GLINT_RAYS.map((degrees) => {
+          const [dx, dy] = [
+            Math.cos(degrees * DEGREES),
+            Math.sin(degrees * DEGREES),
+          ]
 
-        return `M${point(x, y)} L${point(x - reach, y - reach * STREAK_RISE)}`
-      }).join(' '),
+          return `M${point(80 + 50 * dx, GLINT_SUNK + 6 + 13 * dy)} L${point(80 + 72 * dx, GLINT_SUNK + 6 + 22 * dy)}`
+        }),
+        ...[104, 120].map((y, at) => {
+          const x = onRim(GLINT_BODY, y, -1)[0] - 6
+          const reach = 32 - 6 * at
+
+          return `M${point(x, y)} L${point(x - reach, y - reach * 0.28)}`
+        }),
+      ].join(' '),
       role: 'accent',
     },
-    shadowUnder(1),
   ],
 
   /**
-   * The bare tail grown from the lower side, held off the ground as a
-   * counterweight. Drake's allosaurus is already seen in episode 402
-   * (chapter 509), before Law names it at episode 923 (chapter 929).
-   * Anatomy only, without later spines or a tail attack.
+   * The fruit standing on an allosaurus's hind foot: one thick leg grown out
+   * of its foot, planted on three clawed toes, and a long bare tail out of
+   * its far side, held off the ground as a counterweight. Drake's allosaurus
+   * is already seen in episode 402 (chapter 509), before Law names it at
+   * episode 923 (chapter 929). The tail is bare: the spines along it are
+   * first drawn in chapter 944, after the record opens. No head, no jaw.
    */
   'dragon-dragon-fruit-ancient-model-allosaurus': [
     ...kitBody(
       ALLOSAURUS_BODY,
       [90, 102, 118],
-      (x, y) => x < 80 || y < 126 || y > 149,
+      (x, y) => (x < 80 || y < 124 || y > 150) && (x < 62 || x > 96 || y < 150),
     ),
     ...skin([
       [75, 85, 6],
-      [76, 140, -6],
+      [62, 136, -6],
     ]),
     ...sprout(ALLOSAURUS_BODY, -4, 'left'),
-    { d: limbOutline(ALLOSAURUS_TAIL), role: 'accent' },
-    { d: 'M111 143 C123 147 133 139 140 135', role: 'soft' },
+    {
+      d: [limbOutline(ALLOSAURUS_TAIL, 20), ALLOSAURUS_FOOT].join(' '),
+      role: 'accent',
+    },
+    // The scales along the underside of the tail, and the knee.
+    { d: 'M112 147 C126 151 140 142 150 126', role: 'soft' },
     shadowUnder(1),
   ],
 
   /**
-   * The fruit turned to stone from the point up: a seam slants down across
-   * it, and under it the skin stops and the stone is plain and whole, cut in
-   * flat faces. In episode 410 Hancock turns Momonga's Marines to stone, and
-   * in 415 she tells Luffy how she came to eat the fruit.
+   * The fruit struck by a heart: a heart-shaped beam flies in from above its
+   * near shoulder, and below a seam slanting down across the fruit the skin
+   * stops and the stone is plain and whole, cut in flat faces. In episode 410
+   * (chapter 516 p.17-18) Hancock makes a heart with her hands and fires it
+   * at Momonga's Marines, who turn to stone, and in 415 (chapter 521) she
+   * tells Luffy how she came to eat the fruit. The heart is the beam's own
+   * shape, drawn as a symbol.
    */
   'love-love-fruit': [
     { d: outline(LOVE_BODY, (x, y) => y < heightOn(STONE_SEAM, x) - 1) },
     crown(LOVE_BODY),
     shine(LOVE_BODY),
     hatching(LOVE_BODY, [112, 122, 132]),
-    ...skin([[74, 88, 8]]),
+    ...skin([[84, 96, -7]]),
     ...sprout(LOVE_BODY, 4, 'right'),
-    { d: polyline(STONE_SEAM.map(([x, y]) => point(x, y))), role: 'accent' },
+    { d: polyline(STONE_SEAM.map(([x, y]) => point(x, y))) },
     // The stone, cut in flat faces down to the point.
     { d: polyline(STONE_FACES.map(([x, y]) => point(x, y))) },
+    {
+      d: [
+        beamHeart(34, 62, 13),
+        'M10 28 L24 48 M20 22 L32 42 M28 34 L34 44',
+      ].join(' '),
+      role: 'accent',
+    },
     shadowUnder(1),
   ],
 
@@ -4104,11 +4186,13 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit cut like paper: the segment on its far side cut free along the
-   * rib and peeled away like a strip of paper, turning over once, the cut
-   * face of the skin showing along the rib, and the outline open where the
-   * strip came away. In episode 442 Inazuma turns his hands into scissors
-   * and cuts the stone floor into strips as if it were paper.
+   * The fruit cut like paper: two scissor blades, open, close on its far
+   * shoulder, and the segment there has been cut free along the rib and
+   * peeled away like a strip of paper, turning over once, the cut face of the
+   * skin showing along the rib and the outline open where the strip came
+   * away. In episode 442 (chapter 540) Inazuma turns his hands into scissors
+   * and cuts the stone floor of Level 6 as if it were paper. The blades
+   * only, no handles and no hand.
    */
   'snip-snip-fruit': [
     {
@@ -4127,7 +4211,15 @@ export const fruitArt = {
       [70, 140, -6],
     ]),
     ...sprout(SNIP_BODY, -4, 'left'),
-    { d: limbOutline(STRIP, 32), role: 'accent' },
+    { d: limbOutline(STRIP, 28) },
+    {
+      d: [
+        'M152 40 C134 41 112 51 92 66 C112 60 130 55 147 51',
+        'M146 34 C141 49 126 66 108 86 C125 75 139 62 153 47',
+        ring(145, 45, 2.5),
+      ].join(' '),
+      role: 'accent',
+    },
     shadowUnder(1),
   ],
 
@@ -4188,12 +4280,13 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit gone limp as laundry: below a crease at the waist it has gone
+   * The fruit hung out as laundry: below a crease at the waist it has gone
    * flat and limp as cloth, narrower than the skin at the crease, hanging
-   * askew to an uneven hem with one corner folded over and a wrinkle across it. In
-   * episode 465 Tsuru turns the pirates who attack her into laundry. No
-   * clothes peg, no line and no hook: hanging them out to dry is only said
-   * later, in an SBS.
+   * askew to an uneven hem with one corner folded over and a wrinkle across
+   * it, and a clothes-line runs out either side of the crease it hangs from.
+   * In episode 465 (chapter 556) Tsuru turns the pirates who attack her into
+   * laundry, washed and hung out to dry. No clothes peg and no twist: the
+   * wiki gives neither.
    */
   'wash-wash-fruit': [
     { d: outline(WASH_BODY, (_x, y) => y < WASH_WAIST) },
@@ -4208,6 +4301,18 @@ export const fruitArt = {
         'C60 118 100 118',
         point(...onRim(WASH_BODY, WASH_WAIST, 1)),
       ].join(' '),
+    },
+    // The line it hangs from, out either side.
+    {
+      d: [
+        `M${point(8, WASH_WAIST - 9)}`,
+        `C${point(18, WASH_WAIST - 4)} ${point(27, WASH_WAIST - 1)}`,
+        point(...onRim(WASH_BODY, WASH_WAIST, -1)),
+        `M${point(...onRim(WASH_BODY, WASH_WAIST, 1))}`,
+        `C${point(133, WASH_WAIST - 1)} ${point(142, WASH_WAIST - 4)}`,
+        point(152, WASH_WAIST - 9),
+      ].join(' '),
+      role: 'ambient',
     },
     {
       d: [
@@ -4281,36 +4386,43 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit erupting: out of its point surges one swell of molten magma,
-   * shaped like a fist, the outline open where it leaves, and two lumps of
-   * rock flung up from it. In episode 463 Akainu melts Jozu's iceberg with a
-   * giant fist of magma and rains volcanic rock on the battlefield.
+   * The fruit and a fist of magma: out of a pool of magma where the shadow
+   * would be, a fist bigger than half the fruit rises up its far side,
+   * knuckles up, the outline open behind it, and two lumps of rock flung off
+   * the top. In episode 463 (chapter 554 p.8-12) Akainu turns his fist to
+   * magma and melts Jozu's iceberg with it; the pool is that magma, not his
+   * body, which is confirmed a Logia only in chapter 573 (episode 482),
+   * later in the same arc, where his Meteor Volcano also rains rock.
    */
   'magma-magma-fruit': [
-    ...kitBody(MAGMA_BODY, [92, 104, 116], (_x, y) => y < MAGMA_LINE),
+    ...kitBody(
+      MAGMA_BODY,
+      [76, 86],
+      (x, y) => y < MAGMA_LINE && (x < 104 || y < 92),
+    ),
     ...skin([
-      [62, 86, 8],
-      [86, 112, -7],
+      [62, 94, 8],
+      [84, 124, -7],
     ]),
     ...sprout(MAGMA_BODY, -4, 'left'),
     {
       d: [
-        `M${point(...onRim(MAGMA_BODY, MAGMA_LINE, -1))}`,
-        'C62 156 72 172 96 172 C112 172 126 172 136 168',
-        'C144 166 147 160 141 156 C148 154 149 147 142 144',
-        'C147 140 144 134 136 134 C124 132 110 132',
-        point(...onRim(MAGMA_BODY, MAGMA_LINE, 1)),
-        rock(132, 104, 6),
-        rock(146, 122, 4.5),
+        'M110 166 C110 152 108 140 106 128 L106 104 C106 96 112 94 116 97',
+        'C118 90 126 89 129 94 C131 88 139 88 141 93 C143 89 152 91 152 100',
+        'L152 126 C150 140 148 152 148 166',
+        'M8 172 C20 163 50 160 80 160 C94 160 102 161 108 162',
+        'M150 163 C151 165 152 167 152 170',
+        'M8 172 C28 184 132 184 152 170',
+        rock(134, 64, 6),
+        rock(148, 80, 4.5),
       ].join(' '),
       role: 'accent',
     },
-    // Which way the magma is flowing.
+    // The fingers curled down into the palm, and the thumb across them.
     {
-      d: 'M74 148 C78 160 94 164 112 162 M96 152 C108 152 120 150 128 146',
+      d: 'M118 96 L118 108 M129 93 L129 106 M140 93 L140 106 M106 116 C118 120 132 118 142 110',
       role: 'soft',
     },
-    shadowUnder(1),
   ],
 
   /** A struck pane on the far flank, with cracks ending in the air. */
@@ -4360,28 +4472,52 @@ export const fruitArt = {
   ],
 
   /**
-   * A fruit sinking into a bottomless swamp, the mud drawn down into a deep
-   * funnel beneath it. In episode 531 (chapter 612), Caribou explains that
-   * the mermaids he swallows remain inside his bottomless swamp.
+   * The fruit half sunk in its own swamp: where its shadow would be, a wide
+   * flat pool of mud, hatched, the fruit gone into it to below its middle and
+   * a ring round it where it went in. In episode 531 (chapter 612 p.4-5)
+   * Caribou turns his lower body into a bottomless swamp and says the
+   * mermaids he swallowed are still inside it.
    */
   'swamp-swamp-fruit': [
     ...kitBody(SWAMP_BODY, [82, 94, 106], (_x, y) => y < SWAMP_WAIST),
     ribs(SWAMP_BODY, SWAMP_WAIST - 2),
     ...skin([
       [80, 82, 6],
-      [76, 105, -4],
+      [70, 104, -4],
     ]),
     ...sprout(SWAMP_BODY, 5, 'right'),
     {
-      d: [
-        'M8 144 C18 142 26 126 37 112',
-        'C54 128 106 128 123 112 C134 126 142 142 152 144',
-        'M37 112 C40 138 60 162 80 180 C100 162 120 138 123 112',
-      ].join(' '),
+      // The rim of the pool, never quite level, as mud lies.
+      d: polyline(
+        Array.from({ length: 41 }, (_unused, at) => {
+          const angle = (306 + (288 * at) / 40) * DEGREES
+
+          return point(
+            80 + 72 * Math.cos(angle),
+            SWAMP_POOL + 16 * Math.sin(angle) + 1.6 * Math.sin(7 * angle),
+          )
+        }),
+      ),
       role: 'accent',
     },
-    // The far wall of the mud, turning away inside the funnel.
-    { d: 'M44 133 L51 129 M51 147 L58 142 M61 161 L67 156', role: 'ambient' },
+    // Where the fruit went in.
+    {
+      d: [
+        `M${point(...onRim(SWAMP_BODY, SWAMP_WAIST, -1))}`,
+        `C${point(44, SWAMP_WAIST + 9)} ${point(116, SWAMP_WAIST + 9)}`,
+        point(...onRim(SWAMP_BODY, SWAMP_WAIST, 1)),
+      ].join(' '),
+      role: 'soft',
+    },
+    // The mud, hatched.
+    {
+      d: [
+        'M16 134 L22 128 M24 141 L30 135 M36 145 L42 139 M50 141 L56 135',
+        'M66 143 L72 137 M88 143 L94 137 M104 141 L110 135',
+        'M118 145 L124 139 M130 141 L136 135 M138 134 L144 128',
+      ].join(' '),
+      role: 'ambient',
+    },
   ],
 
   /**
@@ -4529,9 +4665,11 @@ export const fruitArt = {
 
   /**
    * The fruit with its lower half turned to gas: the skin stops at its
-   * widest, and below it two wisps twist down into one tail that curls off to
-   * nothing, so it floats with no foot and no shadow. From episode 582
-   * Caesar's lower body is always gas; in 594 Law names him a Logia.
+   * widest, and below it the gas billows out fuller than the fruit in
+   * rounded lobes that trail off to one side, smaller and smaller, so it
+   * floats with no foot and no shadow. From episode 582 (chapter 658)
+   * Caesar's lower body is always gas; in 594 (chapter 668) Law names him a
+   * Logia.
    */
   'gas-gas-fruit': [
     ...kitBody(GAS_BODY, [108, 118], (_x, y) => y < GAS_LINE),
@@ -4542,18 +4680,27 @@ export const fruitArt = {
     ...sprout(GAS_BODY, 4, 'right'),
     {
       d: [
-        `M${point(...onRim(GAS_BODY, GAS_LINE, -1))}`,
-        'C36 146 56 152 78 156 C100 160 108 170 100 178 C96 182 90 180 92 175',
-        `M${point(...onRim(GAS_BODY, GAS_LINE, 1))}`,
-        'C124 142 112 148 96 150 C80 152 66 158 70 168',
+        billow([
+          onRim(GAS_BODY, GAS_LINE, 1),
+          [132, 144],
+          [122, 158],
+          [102, 164],
+          [80, 168],
+          [58, 162],
+          [42, 150],
+          onRim(GAS_BODY, GAS_LINE, -1),
+        ]),
+        billow([
+          [146, 180],
+          [132, 176],
+          [118, 174],
+          [104, 166],
+        ]),
       ].join(' '),
       role: 'accent',
     },
     // A last wisp, drifting off the tail.
-    {
-      d: 'M108 170 C112 166 116 168 120 166 C124 164 126 160 124 156',
-      role: 'soft',
-    },
+    { d: 'M148 172 C151 168 153 164 151 160', role: 'soft' },
   ],
 
   /**
@@ -4632,16 +4779,18 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit turning into a weapon: a sickle blade breaks out of the gourd's
-   * waist, level, and curves up to its point, the skin open where it leaves.
-   * In episode 608 Baby 5 turns her arms into sickles to go at Doflamingo;
-   * the guns come later.
+   * The fruit turning into a weapon: a heavy sickle blade breaks out of the
+   * gourd's waist, deep at the root where it leaves the skin, and curves up
+   * to its point, a bevel along its cutting edge and the skin open where it
+   * leaves. In episode 608 (chapter 682) Baby 5 turns her hands into sickles,
+   * an axe and a hand cannon to go at Doflamingo; the sickle stands for the
+   * lot. No hilt: it is her hand, not a tool she holds.
    */
   'arms-arms-fruit': [
     ...kitBody(
       ARMS_BODY,
       [140, 152, 162],
-      (x, y) => x < 90 || y < 110 || y > 123,
+      (x, y) => x < 90 || y < 106 || y > 126,
     ),
     waist(ARMS_BODY, 116),
     ...skin([
@@ -4652,14 +4801,18 @@ export const fruitArt = {
     ...sprout(ARMS_BODY, -4, 'right'),
     {
       d: [
-        `M${point(...onRim(ARMS_BODY, 121, 1))}`,
-        'L112 121 C136 122 154 102 150 70 C146 92 132 108 112 112',
-        `L${point(...onRim(ARMS_BODY, 112, 1))}`,
+        `M${point(...onRim(ARMS_BODY, 125, 1))}`,
+        'L114 125 C142 126 154 102 150 64 C147 90 134 104 114 107',
+        `L${point(...onRim(ARMS_BODY, 107, 1))}`,
       ].join(' '),
       role: 'accent',
     },
-    // The bevel along the cutting edge.
-    { d: 'M118 115 C134 112 144 100 148 82', role: 'soft' },
+    // The bevel along the cutting edge, and the back of the blade where it
+    // thickens into the root.
+    {
+      d: 'M118 112 C135 110 145 96 148 77 M114 120 C128 120 139 114 146 104',
+      role: 'soft',
+    },
     shadowUnder(1),
   ],
 
@@ -4728,10 +4881,12 @@ export const fruitArt = {
   ],
 
   /**
-   * The fruit lifted off a sticky puddle, three strands of mucus still
-   * stretched between its foot and the ground, one sagging across to the
-   * next. In episode 629 Trebol hangs off a tower by it, in 658 he takes Sai
-   * with a chain of it, and in 669 the fruit is named.
+   * The fruit lifted off a sticky puddle: two thick strands of mucus still
+   * stretched between its foot and the ground, sagging thin in the middle,
+   * and the puddle glossy, with a long shine across it. In
+   * episode 629 (chapter 700) Trebol hangs off a tower by it, in 658 he
+   * takes Sai with a chain of it, and in 669 (chapter 737 p.16) the fruit is
+   * named.
    */
   'stick-stick-fruit': [
     ...kitBody(STICK_BODY, [126, 138]),
@@ -4743,17 +4898,15 @@ export const fruitArt = {
     ...sprout(STICK_BODY, 4, 'left'),
     {
       d: [
-        strand(64, 0.6),
-        strand(80, 0.4),
-        strand(96, 0.55),
-        'M69 160 C72 166 75 166 78 162',
+        strand(66, 0.55),
+        strand(96, 0.45),
         'M30 176 C36 170 56 172 80 172 C104 172 124 170 130 176',
         'C132 181 116 183 98 181 C84 183 66 182 52 183 C38 183 28 181 30 176 Z',
       ].join(' '),
       role: 'accent',
     },
     // The shine on the puddle.
-    { d: 'M104 177 L116 177', role: 'soft' },
+    { d: 'M96 177 L122 176', role: 'soft' },
   ],
 
   /**
