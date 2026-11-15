@@ -516,11 +516,11 @@ export const northRedrawn: Redrawings = {
     // The shears gone and a maiden's cloak spread on the linen, fur at its
     // collar, the Stark direwolf on it and its clasp at the top: she is
     // passed off as Arya Stark to wed Ramsay Bolton. The book's alone;
-    // episode 29 orders it. The chapter is not checked against the book
-    // (#1288).
+    // episode 29 orders it. Cersei tells the council of the "steward's
+    // whelp" in Cersei II of A Feast for Crows (chapter 17, site 241).
     {
       episode: 29,
-      chapter: 332,
+      chapter: 241,
       value: [
         {
           d: 'M24 130 L30 125 M128 112 H134 L112 130 H24 V140 H112 V130 M112 140 L134 122 V112',
@@ -549,7 +549,7 @@ export const northRedrawn: Redrawings = {
     // him out, orders it.
     {
       episode: 16,
-      chapter: 126,
+      chapter: 120,
       source: 'chapter',
       value: [
         ...moved(
