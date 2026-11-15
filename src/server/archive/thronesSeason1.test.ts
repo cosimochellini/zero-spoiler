@@ -334,6 +334,24 @@ const CHANGES: {
     value: 'deceased',
     source: 'episode',
   },
+  // Later deaths of the Wall and the Riverlands from the drawing audit (#1290).
+  { id: 'yoren', episode: 13, chapter: 88, value: 'deceased' },
+  { id: 'jeor-mormont', episode: 24, chapter: 177, value: 'deceased' },
+  { id: 'aemon', episode: 47, chapter: 261, value: 'deceased' },
+  {
+    id: 'alliser-thorne',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'brynden-tully',
+    episode: 58,
+    chapter: 264,
+    value: 'deceased',
+    source: 'episode',
+  },
   // The northern lords' deaths (#1288).
   {
     id: 'mikken',
@@ -345,7 +363,7 @@ const CHANGES: {
   {
     id: 'alyn',
     episode: 21,
-    chapter: 161,
+    chapter: 178,
     value: 'deceased',
     source: 'chapter',
   },
@@ -432,6 +450,43 @@ const CHANGES: {
   },
   { id: 'othor', episode: 8, chapter: 53, value: 'deceased' },
   { id: 'jafer-flowers', episode: 8, chapter: 53, value: 'deceased' },
+  // Later deaths of the Night's Watch (#1295).
+  {
+    id: 'grenn',
+    episode: 39,
+    chapter: 199,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'pypar',
+    episode: 39,
+    chapter: 199,
+    value: 'deceased',
+    source: 'episode',
+  },
+  { id: 'rast', episode: 35, chapter: 199, value: 'deceased' },
+  {
+    id: 'dareon',
+    episode: 41,
+    chapter: 260,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'othell-yarwyck',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
+  {
+    id: 'bowen-marsh',
+    episode: 53,
+    chapter: 344,
+    value: 'deceased',
+    source: 'episode',
+  },
   { id: 'qotho', episode: 9, chapter: 65, value: 'deceased' },
   {
     id: 'cohollo',
@@ -470,7 +525,7 @@ const CHANGES: {
     value: 'deceased',
     source: 'episode',
   },
-  { id: 'mandon-moore', episode: 19, chapter: 135, value: 'deceased' },
+  { id: 'mandon-moore', episode: 19, chapter: 141, value: 'deceased' },
   {
     id: 'arys-oakheart',
     episode: 8,
@@ -1114,7 +1169,10 @@ describe.each([
  * Bran's climb, which the book alone shows after his threshold, the deaths
  * (Willis Wode's the show's alone; Vardis Egen's, Mycah's and Masha
  * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
- * and Hoster Tully's the book's alone), Barristan's thrown sword, Syrio's snapped
+ * and Hoster Tully's the book's alone; and the Night's Watch's of #1295,
+ * Grenn's, Pypar's, Othell Yarwyck's and Bowen Marsh's the show's alone,
+ * Gared's, Dareon's, Jaremy Rykker's and Othor's the book's alone, with
+ * the mutiny against Jon), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
  * magic, the Winterfell audit's deaths, returns, crown, Reek and Needle
  * (#1285), and the southern cast's later looks and deaths (#1286), Bronn's
@@ -1175,10 +1233,19 @@ const STAGES: {
   { id: 'rorge', episode: 37, chapter: 263 },
   { id: 'biter', episode: 37, chapter: 268 },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
+  // The Vale, Riverlands and Night's Watch stages of the drawing audit
+  // (#1290): deaths, Jaqen's coin and Pod's axe.
+  { id: 'yoren', episode: 13, chapter: 88 },
+  { id: 'jaqen-hghar', episode: 20, chapter: 121 },
+  { id: 'jeor-mormont', episode: 24, chapter: 177 },
+  { id: 'podrick-payne', episode: 34, chapter: 235, source: 'episode' },
+  { id: 'aemon', episode: 47, chapter: 261, stage: 1 },
+  { id: 'alliser-thorne', episode: 53, chapter: 344, source: 'episode' },
+  { id: 'brynden-tully', episode: 58, chapter: 264, source: 'episode' },
   // The northern lords' deaths and reveals (#1288).
   { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
   { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },
-  { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
+  { id: 'alyn', episode: 21, chapter: 178, source: 'chapter' },
   { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
   { id: 'smalljon-umber', episode: 59, chapter: 195 },
   { id: 'rickard-karstark', episode: 25, chapter: 164 },
@@ -1243,7 +1310,7 @@ const STAGES: {
   { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 3 },
   // The King's Landing court redrawn from the drawing audit (#1289).
   { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
-  { id: 'mandon-moore', episode: 19, chapter: 135, source: 'chapter' },
+  { id: 'mandon-moore', episode: 19, chapter: 141, source: 'chapter' },
   { id: 'arys-oakheart', episode: 8, chapter: 247, source: 'chapter' },
   { id: 'lancel-lannister', episode: 44, chapter: 256 },
   {
@@ -1295,18 +1362,26 @@ const STAGES: {
   { id: 'shae', episode: 40, chapter: 221 },
   { id: 'walder-frey', episode: 29, chapter: 195 },
   { id: 'walder-frey', episode: 60, chapter: 344, source: 'episode', stage: 1 },
+  // The Night's Watch's deaths and the mutiny against Jon (#1295).
+  { id: 'gared', episode: 1, chapter: 2, source: 'chapter' },
+  { id: 'grenn', episode: 39, chapter: 199, source: 'episode' },
+  { id: 'pypar', episode: 39, chapter: 199, source: 'episode' },
+  { id: 'rast', episode: 35, chapter: 199 },
+  { id: 'dareon', episode: 41, chapter: 260, source: 'chapter' },
+  { id: 'othell-yarwyck', episode: 50, chapter: 341, source: 'episode' },
+  {
+    id: 'othell-yarwyck',
+    episode: 53,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'bowen-marsh', episode: 50, chapter: 341 },
+  { id: 'bowen-marsh', episode: 53, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
+  { id: 'othor', episode: 8, chapter: 53, source: 'chapter' },
+  { id: 'othor', episode: 8, chapter: 61, source: 'chapter', stage: 1 },
 ]
-
-/**
- * The medium a stage is told in: the record's `source`, else the stage's, as
- * the engine reads it. Undefined for a stage both media tell.
- */
-function mediumOf(
-  id: keyof typeof DRAWINGS,
-  index: number,
-): 'chapter' | 'episode' | undefined {
-  return recordOf(id).source ?? REDRAWINGS[id]?.[index]?.source
-}
 
 describe.each(
   STAGES.flatMap((stage) =>
@@ -1335,9 +1410,8 @@ describe.each(
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
-      // The row's medium must be the data's, so a stage that lost its
-      // `source` fails here instead of leaking to the other medium.
-      expect(mediumOf(id, index)).toBe(source)
+      // The row's medium is the one the engine reads for this stage.
+      expect(owner.source ?? REDRAWINGS[id]?.[index]?.source).toBe(source)
       expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
         previous,
       )
@@ -1348,27 +1422,70 @@ describe.each(
   },
 )
 
-/** The last point of a medium. */
-function ceilingOf(unit: 'chapter' | 'episode'): number {
-  return unit === 'chapter' ?
-      archive.series.chapterCeiling
-    : archive.series.episodeCeiling
+/** A reader at the end of this medium, who has reached all of it. */
+function atTheEnd(unit: Unit): Reader {
+  return unit === 'episode' ?
+      reader('episode', archive.series.episodeCeiling)
+    : reader('chapter', archive.series.chapterCeiling)
+}
+
+/**
+ * The drawing a reader of this medium ends on: the last stage it tells, or
+ * the first drawing when it tells none.
+ */
+function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
+  const owner = recordOf(id)
+  const told = (REDRAWINGS[id] ?? []).filter(
+    (stage) => (owner.source ?? stage.source ?? unit) === unit,
+  )
+
+  return told.at(-1)?.value ?? DRAWINGS[id]
+}
+
+/**
+ * Whether this stage is a new look: one that does not draw the first
+ * drawing again (Darry rebuilt), which every reader sees anyway.
+ */
+function isNewLook(id: keyof typeof DRAWINGS, index: number): boolean {
+  return (
+    JSON.stringify(REDRAWINGS[id]?.[index]?.value)
+    !== JSON.stringify(DRAWINGS[id])
+  )
+}
+
+/** The medium a stage is told in: its record's, else its own. */
+function mediumOf(
+  id: keyof typeof DRAWINGS,
+  index: number,
+): 'chapter' | 'episode' | undefined {
+  return recordOf(id).source ?? REDRAWINGS[id]?.[index]?.source
+}
+
+/** Whether these strokes are this stage's drawing. */
+function shows(
+  strokes: unknown,
+  id: keyof typeof DRAWINGS,
+  index: number,
+): boolean {
+  return (
+    JSON.stringify(strokes) === JSON.stringify(REDRAWINGS[id]?.[index]?.value)
+  )
 }
 
 describe('the stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end sees the last
+  // stage their medium tells (Lancel's Sparrow star, before the show alone
+  // kills him), or the first drawing when it tells none. The stage's medium
+  // is held to the table's, so a stage that lost its `source` fails here.
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
     ({ id, source, stage: index = 0 }) => {
-      const other = source === 'chapter' ? 'episode' : 'chapter'
-      const last = reader(other, ceilingOf(other))
-      // The other medium's own last stage, or the first drawing.
-      const expected =
-        (REDRAWINGS[id] ?? []).findLast(
-          (stage) => (recordOf(id).source ?? stage.source ?? other) === other,
-        )?.value ?? DRAWINGS[id]
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
+      const drawn = drawingOf(recordOf(id), atTheEnd(other)).strokes
 
       expect(mediumOf(id, index)).toBe(source)
-      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
+      expect(isNewLook(id, index) && shows(drawn, id, index)).toBe(false)
+      expect(drawn).toStrictEqual(endsOn(id, other))
     },
   )
 })

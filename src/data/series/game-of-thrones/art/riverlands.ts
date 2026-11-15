@@ -102,19 +102,39 @@ const BURNING_TREE: Stroke[] = [
 ]
 
 /**
- * Podrick Payne: Tyrion's battle-axe and half-helm, carried by the squire
- * Kevan gives him before the battle in Tyrion VIII (chapter 63); the show
- * brings him in episode 12. The accent is the axe's blade.
+ * Podrick Payne: the spear he drives through Ser Mandon Moore's head to save
+ * Tyrion on the Blackwater (episode 19), with the wine jug he pours for
+ * Tyrion and Janos Slynt in episode 12, where the show brings him in; the
+ * book has him from Tyrion VIII (chapter 63) and gives him no spear. The
+ * show is the reference. The jug's far side is hatched; the accent is the
+ * spear's point.
  */
-const AXE_HELM: Stroke[] = [
+const SPEAR_JUG: Stroke[] = [
+  { d: 'M42 152 L109 45 M47 154 L113 48' },
+  { d: 'M107 44 L114 49 L118 43 L111 38 Z' },
+  { d: 'M112 40 Q114 26 132 16 Q127 34 117 45', role: 'accent' },
+  { d: 'M115 42 L129 21 M42 152 l5 2', role: 'soft' },
+  {
+    d: 'M104 150 Q94 134 100 120 Q104 112 102 104 H122 Q120 112 124 120 Q130 134 120 150 Z M102 104 L95 100',
+  },
+  {
+    d: `${ellipse(112, 104, 10, 2.5)} M122 110 Q134 114 131 127 Q129 134 122 134`,
+    role: 'soft',
+  },
+  { d: 'M116 124 l5 -3 M117 136 l5 -3', role: 'ambient' },
+  shadow(84, 158, 48),
+]
+
+/**
+ * Tyrion's battle-axe on its haft, aslant, the blade's far face hatched.
+ * The accent is the blade.
+ */
+const TYRION_AXE: Stroke[] = [
   { d: 'M44 152 L112 40 M50 154 L117 43' },
   { d: 'M104 46 Q88 40 82 56 Q90 72 108 66 L112 56', role: 'accent' },
   { d: 'M117 43 L124 34 L128 40 L120 48' },
   { d: 'M50 144 l6 4 M54 138 l6 4', role: 'soft' },
-  { d: 'M90 150 V128 Q90 110 110 110 Q130 110 130 128 V150' },
-  { d: 'M110 110 V150 M88 150 H132', role: 'soft' },
-  { d: 'M120 122 l5 -3 M122 134 l5 -3', role: 'ambient' },
-  shadow(90, 158, 46),
+  { d: 'M94 52 l5 -3 M96 61 l5 -3', role: 'ambient' },
 ]
 
 /**
@@ -180,24 +200,32 @@ const TROUT: Stroke[] = [
   },
 ]
 
-/**
- * Brynden Tully: the black fish clasp at the throat of his cloak, hatched
- * because it is black, for the Blackfish who meets Catelyn at the Bloody
- * Gate in Catelyn VI (chapter 35) and takes the bow at the funeral in
- * episode 23. The accent is the pin.
- */
-const FISH_CLASP: Stroke[] = [
-  {
-    d: 'M30 56 Q60 62 70 84 Q66 118 60 152 M130 56 Q100 62 90 84 Q94 118 100 152',
-  },
-  { d: 'M30 56 Q24 104 26 150 M130 56 Q136 104 134 150', role: 'soft' },
+/** The black fish of the clasp, hatched because it is black. */
+const BLACK_FISH: Stroke[] = [
   { d: 'M52 76 Q68 58 94 64 Q104 68 106 76 Q98 84 90 86 Q68 92 52 76 Z' },
   { d: 'M106 76 L116 68 L114 78 L118 86 L106 80' },
   {
     d: 'M60 76 l5 -4 M68 78 l6 -5 M76 80 l6 -6 M84 80 l6 -6 M92 78 l5 -5',
     role: 'ambient',
   },
+]
+/** The clasp's ring and pin, under the fish. */
+const CLASP_PIN: Stroke[] = [
   { d: `${circle(80, 98, 5)} M80 86 V93`, role: 'accent' },
+]
+/**
+ * Brynden Tully: the black fish clasp at the throat of his cloak, for the
+ * Blackfish who meets Catelyn at the Bloody Gate in Catelyn VI (chapter
+ * 35) and takes the bow at the funeral in episode 23. The accent is the
+ * pin. His first drawing and his death share the fish and the pin.
+ */
+const FISH_CLASP: Stroke[] = [
+  {
+    d: 'M30 56 Q60 62 70 84 Q66 118 60 152 M130 56 Q100 62 90 84 Q94 118 100 152',
+  },
+  { d: 'M30 56 Q24 104 26 150 M130 56 Q136 104 134 150', role: 'soft' },
+  ...BLACK_FISH,
+  ...CLASP_PIN,
   { d: 'M44 80 Q40 116 42 148 M116 80 Q120 116 118 148', role: 'soft' },
   shadow(80, 158, 54),
 ]
@@ -243,24 +271,34 @@ const DYE_VAT: Stroke[] = [
   shadow(80, 154, 46),
 ]
 
+/** The box of the cage on Yoren's wagon, seen from the front. */
+const CAGE_BOX: Stroke = {
+  d: 'M30 40 H130 V150 H30 Z M30 40 L40 30 H140 L130 40 M130 150 L140 140 V30',
+}
+/** The cage's crossbar. */
+const CAGE_RAIL: Stroke = { d: 'M30 96 H130', role: 'soft' }
 /**
- * Jaqen H'ghar: the cage on Yoren's wagon seen from the front, its door
- * padlocked, for the prisoner who asks Arya for water in episode 12 and in
- * A Clash of Kings (chapter 79). The far side is hatched; the accent is
- * the padlock.
+ * Jaqen H'ghar: the tankard of water he asks Arya to fill for him, in
+ * front of the cage on Yoren's wagon, in episode 12 and in A Clash of
+ * Kings (chapter 79). The tankard's far side is hatched; the accent is
+ * the water.
  */
-const CAGE_FRONT: Stroke[] = [
-  {
-    d: 'M30 40 H130 V150 H30 Z M30 40 L40 30 H140 L130 40 M130 150 L140 140 V30',
-  },
-  { d: 'M50 40 V150 M70 40 V150 M90 40 V150 M110 40 V150', role: 'soft' },
-  { d: 'M30 96 H130', role: 'soft' },
-  { d: 'M82 100 H98 V114 H82 Z M85 100 V94 Q90 88 95 94 V100', role: 'accent' },
-  {
-    d: 'M132 60 l6 -4 M132 80 l6 -4 M132 100 l6 -4 M132 120 l6 -4',
-    role: 'ambient',
-  },
-  shadow(84, 156, 58),
+const TANKARD_CAGE: Stroke[] = [
+  ...moved(
+    [
+      CAGE_BOX,
+      { d: 'M50 40 V150 M70 40 V150 M90 40 V150 M110 40 V150', role: 'soft' },
+      CAGE_RAIL,
+    ],
+    'translate(64 14) scale(0.55)',
+  ),
+  { d: 'M36 104 V144 Q60 154 84 144 V104' },
+  { d: ellipse(60, 104, 24, 6) },
+  { d: ellipse(60, 106, 20, 4), role: 'accent' },
+  { d: 'M84 112 Q102 114 100 128 Q98 140 84 138' },
+  { d: 'M36 118 Q60 126 84 118 M36 134 Q60 142 84 134', role: 'soft' },
+  { d: 'M72 112 l5 -3 M74 126 l5 -3 M72 140 l5 -3', role: 'ambient' },
+  shadow(64, 156, 34),
 ]
 /**
  * Rorge: the cage on its wagon side on, wheels and shaft, for the prisoner
@@ -361,14 +399,14 @@ export const RIVERLANDS_DRAWINGS = {
   'masha-heddle': MASHA,
   'kevan-lannister': LION,
   'addam-marbrand': BURNING_TREE,
-  'podrick-payne': AXE_HELM,
+  'podrick-payne': SPEAR_JUG,
   'stevron-frey': TOWERS_SHIELD,
   'edmure-tully': BOW_ARROW,
   'hoster-tully': TROUT,
   'brynden-tully': FISH_CLASP,
   'hot-pie': PIE,
   'lommy': DYE_VAT,
-  'jaqen-hghar': CAGE_FRONT,
+  'jaqen-hghar': TANKARD_CAGE,
   'rorge': CAGE_WAGON,
   'biter': CAGE_CORNER,
   'stiv': DAGGER_LEAVES,
@@ -463,15 +501,80 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'kevan-lannister': [
-    // The lion on its back, legs up: he is killed in episode 60 (the wildfire
-    // under the Great Sept) and in the epilogue of A Dance with Dragons
-    // (chapter 344, a crossbow bolt).
+    // The lion lying on its side, its mane spread on the ground and its legs
+    // folded: he is killed in episode 60 (the wildfire under the Great Sept)
+    // and in the epilogue of A Dance with Dragons (chapter 344, a crossbow
+    // bolt).
     {
       episode: 60,
       chapter: 344,
       value: [
-        ...moved(LION.slice(0, 6), 'translate(0 202) scale(1 -1)'),
+        { d: 'M56 128 Q70 112 96 114 Q122 114 132 132 Q136 144 128 150 H62' },
+        { d: 'M56 128 Q44 126 36 134 Q30 142 36 150 H62' },
+        {
+          d: 'M40 130 q-8 -2 -10 4 M48 126 q-2 -8 4 -10 M58 124 q4 -8 10 -6 M34 140 q-8 0 -10 6 M64 132 q8 2 8 10 M30 150 q-6 -4 -12 0',
+          role: 'accent',
+        },
+        { d: 'M72 150 Q70 140 78 138 Q88 140 88 150', role: 'soft' },
+        { d: 'M116 126 Q102 128 102 140 Q102 148 92 150', role: 'soft' },
+        { d: 'M132 140 Q144 150 152 148 Q155 145 151 142', role: 'soft' },
+        { d: 'M90 120 l6 -3 M104 120 l6 -3 M116 124 l6 -3', role: 'ambient' },
         { d: 'M10 154 H150', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'podrick-payne': [
+    // Tyrion's axe, which Bronn brings him from Tyrion when he rides out with
+    // Brienne in "Oathkeeper" (episode 34). The show's alone: the book's Pod
+    // has had an axe since A Game of Thrones and joins Brienne without this
+    // gift, in Brienne II of A Feast for Crows (chapter 235), which orders it.
+    {
+      episode: 34,
+      chapter: 235,
+      source: 'episode',
+      value: [...TYRION_AXE, shadow(80, 158, 46)],
+    },
+  ],
+  'brynden-tully': [
+    // The black fish clasp fallen on the ground beside his slumped cloak, its
+    // pin come away: he dies fighting at Riverrun in "No One" (episode 58).
+    // The show's alone: the book's Blackfish escapes the siege alive, and
+    // Jaime VI of A Feast for Crows (chapter 264), the siege, orders it.
+    {
+      episode: 58,
+      chapter: 264,
+      source: 'episode',
+      value: [
+        { d: 'M8 158 Q10 138 22 128 Q34 118 44 124 Q54 134 54 158' },
+        { d: 'M22 128 Q28 140 24 156 M36 121 Q40 138 38 154', role: 'soft' },
+        { d: 'M45 134 l4 -3 M48 146 l4 -3', role: 'ambient' },
+        ...moved(BLACK_FISH, 'translate(6 66)'),
+        ...moved(CLASP_PIN, 'translate(56 58) rotate(90 80 95)'),
+        { d: 'M8 158 H152', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'jaqen-hghar': [
+    // The cage empty, its door swung open, and the iron coin he gives Arya,
+    // its rim marked: he says "valar morghulis" and changes his face in
+    // "Valar Morghulis" (episode 20) and in Arya IX of A Clash of Kings
+    // (chapter 121).
+    {
+      episode: 20,
+      chapter: 121,
+      value: [
+        CAGE_BOX,
+        { d: 'M50 40 V150 M110 40 V150 M70 40 V96 M90 40 V96', role: 'soft' },
+        CAGE_RAIL,
+        { d: 'M70 96 L52 104 V158 L70 150' },
+        { d: 'M61 100 V154', role: 'soft' },
+        { d: circle(90, 124, 10), role: 'accent' },
+        { d: circle(90, 124, 6.5), role: 'soft' },
+        {
+          d: 'M132 60 l6 -4 M132 80 l6 -4 M132 100 l6 -4 M132 120 l6 -4',
+          role: 'ambient',
+        },
+        shadow(84, 156, 58),
       ],
     },
   ],
