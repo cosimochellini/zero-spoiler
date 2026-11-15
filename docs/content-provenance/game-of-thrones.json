@@ -47,7 +47,7 @@
       "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere_(episode)"
     ],
     "unverified": [
-      "Stages (#1285): the crown is the books' alone (Fandom \"Crown\": the show's Robb chooses not to wear one), pinned at Catelyn I of A Clash of Kings (site 81), the chapter that first describes it (A Wiki of Ice and Fire, Robb Stark), and ordered at episode 10. Dies at the Red Wedding in episode 29 (Fandom DeathEp) and in Catelyn VII (site 195; read on AWOIAF by the audit verifier). Episodes not viewed; AWOIAF could not be read in this session (#1285)."
+      "Stages (#1285): the crown is the books' alone (Fandom \"Crown\": the show's Robb chooses not to wear one), pinned at Catelyn I of A Clash of Kings (site 81), the chapter that first describes it (A Wiki of Ice and Fire, Robb Stark), and ordered at episode 10. Dies at the Red Wedding in episode 29 (Fandom DeathEp) and in Catelyn VII (site 195; read on AWOIAF by the audit verifier). Episodes not viewed; AWOIAF was read only for the crown's chapter (#1285)."
     ]
   },
   "sansa-stark": {
@@ -73,6 +73,7 @@
       "https://gameofthrones.fandom.com/wiki/Arya_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://it.wikipedia.org/wiki/Arya_Stark#Prima_stagione",
+      "https://awoiaf.westeros.org/index.php/Needle",
       "https://gameofthrones.fandom.com/wiki/Needle",
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://gameofthrones.fandom.com/wiki/Two_Swords",
@@ -81,7 +82,7 @@
     ],
     "unverified": [
       "Chapter gate 5 (Eddard I): AWOIAF lists her as appearing; that she is named in Eddard I is not stated by the synopsis. If not, the gate is 6 (Jon I, named as Tommen's partner at the feast).",
-      "Stages (#1285, owner 2026-11-15): Polliver takes Needle in episode 13 (Fandom \"Needle\", GOT203) and in Arya V, ACOK chapter 19 (site 93, the capture the Lommy stage cites); she takes it back in episode 31 (GOT401) and in Arya XIII, ASOS chapter 74 (site 218); she hides it in episode 43 (GOT503) and in Arya II, AFFC chapter 22 (site 248; A Wiki of Ice and Fire, Needle); she takes it back from the stones in episode 56 (GOT606), the show's alone, ordered by chapter 344. The other two book chapters are from memory, not checked on AWOIAF. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
+      "Stages (#1285, owner 2026-11-15): Polliver takes Needle in episode 13 (Fandom \"Needle\", GOT203) and in Arya V, ACOK chapter 19 (site 93, the capture the Lommy stage cites); she takes it back in episode 31 (GOT401) and in Arya XIII, ASOS chapter 74 (site 218); she hides it in episode 43 (GOT503) and in Arya II, AFFC chapter 22 (site 248; A Wiki of Ice and Fire, Needle); she takes it back from the stones in episode 56 (GOT606), the show's alone, ordered by chapter 344. The other two book chapters are from memory, not checked on AWOIAF. Episodes not viewed; AWOIAF was read only for Needle's hiding chapter (#1285)."
     ]
   },
   "bran-stark": {
