@@ -182,6 +182,113 @@ const RESTRICTED_SYNTAX = [
   },
 ]
 
+/**
+ * Every ban a shipped `src` module lives under: the shared list, the
+ * `.filter().map()` pass and the dynamic imports that would slip the series
+ * and copy walls. Named once because the art block below must repeat it:
+ * `no-restricted-syntax` is replaced by the last block that sets it, never
+ * merged.
+ */
+const READER_SYNTAX = [
+  ...RESTRICTED_SYNTAX,
+  FILTER_MAP,
+  {
+    selector: String.raw`ImportExpression[source.value=/^(?:~\/data\/series|\.\.?(?:\/(?:index)?)?(?:\.ts)?$)/]`,
+    message: OPEN_ONLY,
+  },
+  // Nor may a series' copy be imported dynamically into the client.
+  {
+    selector: String.raw`ImportExpression[source.value=/^(?:~\/i18n\/dictionaries\/|(?:\.\.?\/)+(?:dictionaries\/)?)(?!dictionaries\/)(?:[a-z-]+\/(?:en|it)|one-piece\/(?:factions|seas))(?:\.[jt]sx?)?$|^~\/server\/copy\.server(?:\.[jt]sx?)?$/]`,
+    message: SERIES_COPY_MESSAGE,
+  },
+  // A template literal hides its specifier from the selector above.
+  {
+    selector: 'ImportExpression > TemplateLiteral.source',
+    message: `${OPEN_ONLY} Write a dynamic import's specifier as a string literal.`,
+  },
+]
+
+/**
+ * Art files only: the drawings under `src/data/series/<series>/art`.
+ */
+const ART = ['src/data/series/*/art/**/*.ts', 'src/data/art/**/*.ts']
+
+/**
+ * Positional reuse of another drawing's strokes, `fooArt['x'].slice(0, 3)`,
+ * silently picks the wrong strokes when `x` is reordered and no test notices.
+ * Shared geometry lives in a named const instead (#1301).
+ */
+const ART_SLICE = {
+  selector:
+    "CallExpression[callee.property.name='slice'] > MemberExpression.callee > MemberExpression.object[object.name=/^(?:art|.+Art|[A-Z0-9_]+_DRAWINGS)$/]",
+  message:
+    'Do not reuse another drawing’s strokes by position: `fooArt[id].slice(…)` breaks silently when that drawing is reordered. Name the shared geometry in a const that both drawings use (#1301).',
+}
+
+/**
+ * Art files that still slice another drawing by position or hold a comment
+ * line over 80 columns, when the rules above were added (#1301). Frozen:
+ * remove a file from a list when you fix it, never add one.
+ */
+const SLICE_GRANDFATHERED = [
+  'src/data/series/hunter-x-hunter/art/chimera-ant-phase-five.ts',
+  'src/data/series/hunter-x-hunter/art/chimera-ant-phase-four.ts',
+  'src/data/series/hunter-x-hunter/art/chimera-ant-phase-three.ts',
+  'src/data/series/hunter-x-hunter/art/chimera-ant-returning.ts',
+  'src/data/series/hunter-x-hunter/art/chimera-ant-squads.ts',
+  'src/data/series/hunter-x-hunter/art/election.ts',
+  'src/data/series/hunter-x-hunter/art/index.ts',
+  'src/data/series/hunter-x-hunter/art/kakin-phase-1.ts',
+  'src/data/series/one-piece/art/alabasta.ts',
+  'src/data/series/one-piece/art/dressrosa.ts',
+  'src/data/series/one-piece/art/east-blue.ts',
+  'src/data/series/one-piece/art/egghead.ts',
+  'src/data/series/one-piece/art/elbaf.ts',
+  'src/data/series/one-piece/art/fish-man-island.ts',
+  'src/data/series/one-piece/art/fruits/index.ts',
+  'src/data/series/one-piece/art/summit-war.ts',
+  'src/data/series/one-piece/art/thriller-bark.ts',
+  'src/data/series/one-piece/art/wano.ts',
+  'src/data/series/one-piece/art/water-seven.ts',
+  'src/data/series/one-piece/art/whole-cake.ts',
+]
+const LONG_COMMENT_GRANDFATHERED = [
+  'src/data/series/game-of-thrones/art/court.ts',
+  'src/data/series/game-of-thrones/art/north.ts',
+  'src/data/series/game-of-thrones/art/places.ts',
+  'src/data/series/game-of-thrones/art/riverlands.ts',
+  'src/data/series/game-of-thrones/art/south.ts',
+  'src/data/series/game-of-thrones/art/vale.ts',
+  'src/data/series/hunter-x-hunter/art/chimera-ant-returning.ts',
+  'src/data/series/hunter-x-hunter/art/chimera-ant-royals.ts',
+  'src/data/series/hunter-x-hunter/art/election.ts',
+  'src/data/series/hunter-x-hunter/art/index.ts',
+  'src/data/series/hunter-x-hunter/art/kakin-phase-1.ts',
+  'src/data/series/hunter-x-hunter/art/kakin-phase-2.ts',
+  'src/data/series/hunter-x-hunter/art/kakin-phase-3.ts',
+  'src/data/series/hunter-x-hunter/art/kakin-phase-4.ts',
+  'src/data/series/hunter-x-hunter/art/trick-tower.ts',
+  'src/data/series/hunter-x-hunter/art/zevil.ts',
+  'src/data/series/hunter-x-hunter/art/zoldyck.ts',
+  'src/data/series/one-piece/art/alabasta.ts',
+  'src/data/series/one-piece/art/dressrosa.ts',
+  'src/data/series/one-piece/art/east-blue.ts',
+  'src/data/series/one-piece/art/egghead.ts',
+  'src/data/series/one-piece/art/elbaf.ts',
+  'src/data/series/one-piece/art/fish-man-island.ts',
+  'src/data/series/one-piece/art/fruits/drawings.test.ts',
+  'src/data/series/one-piece/art/fruits/index.ts',
+  'src/data/series/one-piece/art/fruits/kit.ts',
+  'src/data/series/one-piece/art/fruits/parts.ts',
+  'src/data/series/one-piece/art/index.ts',
+  'src/data/series/one-piece/art/skypiea.ts',
+  'src/data/series/one-piece/art/summit-war.ts',
+  'src/data/series/one-piece/art/thriller-bark.ts',
+  'src/data/series/one-piece/art/wano.ts',
+  'src/data/series/one-piece/art/water-seven.ts',
+  'src/data/series/one-piece/art/whole-cake.ts',
+]
+
 const config = defineConfig(
   // Global ignores. `globalIgnores` is the only form that ignores rather than
   // scopes, which is why it is not folded into any block that carries `files`.
@@ -927,25 +1034,7 @@ const config = defineConfig(
       // A dynamic import of the registry would take the filed list past the
       // import rule above. The registry's own imports of a series are
       // relative and stay allowed.
-      'no-restricted-syntax': [
-        'error',
-        ...RESTRICTED_SYNTAX,
-        FILTER_MAP,
-        {
-          selector: String.raw`ImportExpression[source.value=/^(?:~\/data\/series|\.\.?(?:\/(?:index)?)?(?:\.ts)?$)/]`,
-          message: OPEN_ONLY,
-        },
-        // Nor may a series' copy be imported dynamically into the client.
-        {
-          selector: String.raw`ImportExpression[source.value=/^(?:~\/i18n\/dictionaries\/|(?:\.\.?\/)+(?:dictionaries\/)?)(?!dictionaries\/)(?:[a-z-]+\/(?:en|it)|one-piece\/(?:factions|seas))(?:\.[jt]sx?)?$|^~\/server\/copy\.server(?:\.[jt]sx?)?$/]`,
-          message: SERIES_COPY_MESSAGE,
-        },
-        // A template literal hides its specifier from the selector above.
-        {
-          selector: 'ImportExpression > TemplateLiteral.source',
-          message: `${OPEN_ONLY} Write a dynamic import's specifier as a string literal.`,
-        },
-      ],
+      'no-restricted-syntax': ['error', ...READER_SYNTAX],
     },
   },
 
@@ -1051,6 +1140,23 @@ const config = defineConfig(
   // on immediately after.
   prettierConfig,
   { rules: { curly: ['error', 'all'] } },
+
+  // Art: no positional slices of another drawing, no comment line past 80
+  // columns. After Prettier, which switches `max-len` off and never rewraps a
+  // comment. The syntax list repeats the shared one because the rule is
+  // replaced, not merged; the grandfathered files keep the shared list alone.
+  {
+    files: ART,
+    ignores: [...SLICE_GRANDFATHERED, ...TESTS],
+    rules: { 'no-restricted-syntax': ['error', ...READER_SYNTAX, ART_SLICE] },
+  },
+  {
+    files: ART,
+    ignores: LONG_COMMENT_GRANDFATHERED,
+    rules: {
+      'max-len': ['error', { code: Infinity, comments: 80, ignoreUrls: true }],
+    },
+  },
 )
 
 export default config

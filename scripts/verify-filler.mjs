@@ -18,6 +18,7 @@ import { setTimeout as sleep } from 'node:timers/promises'
 import { pathToFileURL } from 'node:url'
 
 import { importOrExit, seriesOrExit } from './archive-loader.mjs'
+import { classesOf } from './filler-classes.mjs'
 import { cached, pageOf, wikiOf } from './wiki.mjs'
 
 /**
@@ -120,23 +121,6 @@ export function allowedKinds(rowClass, tipo) {
   })
 
   return byClass[rowClass] ?? []
-}
-
-/**
- * The class of every episode row on the AnimeFillerList page.
- * @param {string} html The page.
- * @returns {Map<number, string>} Episode to class.
- */
-export function classesOf(html) {
-  const rows = html.split('<tr class="').slice(1)
-
-  return new Map(
-    rows.map((row) => {
-      const [classes = '', , eps = ''] = row.split('"', 3)
-
-      return [Number(eps.slice(4)), classes.split(' ', 1)[0] ?? '']
-    }),
-  )
 }
 
 /**
@@ -455,7 +439,8 @@ async function verify(series, wiki) {
     all.filter((entry) => 'episode' in entry)
   )
   const entries = new Map(numbered.map((entry) => [entry.episode, entry]))
-  const classes = classesOf(await animeFillerList(wiki))
+  const aired = Number(data['LAST_AIRED'])
+  const classes = classesOf(await animeFillerList(wiki), aired)
   const top = Math.max(...classes.keys())
   const last = Math.max(...all.map((entry) => position(entry)), top)
   const titles = Array.from(
@@ -472,8 +457,7 @@ async function verify(series, wiki) {
     /** @type {Unnumbered[]} */ (all.filter((entry) => !('episode' in entry))),
     await guideSpecials(wiki),
   )
-  const aired = `${String(data['LAST_AIRED'])} vs ${String(top)}`
-  console.log(`${String(arcs.length)} arcs; LAST_AIRED ${aired}`)
+  console.log(`${String(arcs.length)} arcs; LAST_AIRED ${String(aired)}`)
 
   return {
     problems: [
@@ -481,8 +465,11 @@ async function verify(series, wiki) {
       ...titleProblems(numbered, english, italian),
       ...chapterProblems(all, italian),
       ...specials.problems,
-      // The strip, the countdown and "no filler ahead" all end at LAST_AIRED.
-      ...(data['LAST_AIRED'] === top ? [] : [`LAST_AIRED is ${aired} on AFL`]),
+      // The strip, the countdown and "no filler ahead" all end at LAST_AIRED:
+      // it may run past AnimeFillerList, never behind it.
+      ...(top > aired ?
+        [`LAST_AIRED is ${String(aired)}, AFL lists ${String(top)}`]
+      : []),
     ],
     kept: specials.kept,
     count: all.length,
