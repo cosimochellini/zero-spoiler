@@ -419,6 +419,233 @@ const CRACKER_SHIELD: Stroke[] = [
   },
 ]
 
+/**
+ * Niji's earphones set down in three quarters, without their shadow: the
+ * band arching over, the near cup with its depth hatched, the far cup turned
+ * away, and the horn standing up off each cup (the accent).
+ */
+const NIJI_EARPHONES: Stroke[] = [
+  { d: 'M56 112 C52 70 72 44 100 46 C120 48 132 66 128 96' },
+  { d: 'M66 108 C64 76 78 56 100 56 C114 58 122 70 120 92', role: 'soft' },
+  { d: ellipse(50, 128, 18, 26) },
+  { d: 'M50 102 C62 102 70 114 70 128 C70 142 62 154 50 154' },
+  {
+    d: 'M58 108 l6 -3 M62 118 l7 -4 M64 130 l7 -4 M62 142 l6 -4',
+    role: 'ambient',
+  },
+  { d: 'M38 112 C34 122 34 136 40 146', role: 'soft' },
+  {
+    d: 'M120 96 C124 88 136 88 138 98 C140 112 134 124 126 124 C120 124 116 112 120 96 Z',
+  },
+  { d: 'M128 104 l8 -4 M128 114 l8 -4', role: 'ambient' },
+  { d: 'M42 106 L32 46 L50 103', role: 'accent' },
+  { d: 'M126 92 L130 50 L134 90', role: 'accent' },
+]
+
+/**
+ * Yonji's metal glove closed in a fist, in three quarters, without its
+ * cuff: the knuckles along the top, the curled fingers facing out, each in
+ * plates, the thumb laid across them, the side of the hand turning away and
+ * hatched.
+ */
+const YONJI_FIST: Stroke[] = [
+  {
+    d: 'M42 86 C40 72 48 64 58 66 C62 58 74 57 78 64 C82 56 96 56 100 64 C104 58 116 60 118 70 C124 72 126 80 124 90 V112 C124 126 114 134 100 134 H62 C50 134 42 126 42 114 Z',
+  },
+  { d: 'M124 90 L132 96 V120 C132 130 124 138 112 138 L104 134', role: 'soft' },
+  { d: 'M126 104 l5 -3 M126 116 l5 -3 M122 128 l5 -3', role: 'ambient' },
+  {
+    d: 'M58 66 C56 80 56 96 60 104 C64 108 72 108 76 104 C80 96 80 80 78 64 M78 64 C78 80 80 96 82 104 C86 108 94 108 98 104 C102 96 102 80 100 64 M100 64 C100 80 102 96 104 104 C108 108 116 108 120 102 C122 94 120 80 118 70',
+  },
+  { d: 'M60 80 h16 M80 80 h18 M102 80 h16', role: 'soft' },
+  {
+    d: 'M42 96 C46 110 58 118 76 118 H98 C106 118 108 108 100 106 H78 C66 106 56 100 50 92',
+  },
+  { d: 'M84 112 h10', role: 'soft' },
+]
+
+/** The flared metal cuff of Yonji's glove, its rim seen from below. */
+const YONJI_CUFF: Stroke[] = [
+  { d: `M60 134 L54 166 M106 134 L112 166 ${ellipse(83, 166, 29, 7)}` },
+  { d: 'M57 150 C72 156 94 156 109 150', role: 'soft' },
+]
+
+/** The ascot of his raid suit, knotted, its two ends falling (the accent). */
+const YONJI_ASCOT: Stroke = {
+  d: `${ellipse(140, 136, 5, 4)} M136 139 C128 150 124 166 128 182 L136 172 L140 140 M144 139 C152 150 156 166 150 182 L144 172 L140 140`,
+  role: 'accent',
+}
+
+/**
+ * The feathered scarf Katakuri wears over his mouth, without the cloak: its
+ * ragged lower edge in long tufts (the accent), the neck slit hatched.
+ */
+const KATAKURI_SCARF: Stroke[] = [
+  {
+    d: 'M44 62 C30 66 22 78 20 92 C26 98 30 104 28 112 C36 106 40 102 44 104 C46 110 46 116 42 122 C52 116 58 112 62 112 C64 118 64 124 62 130 C70 124 76 118 82 118 C86 124 88 128 90 134 C94 126 98 120 104 118 C106 122 108 126 110 130 C112 122 116 116 122 112 C124 116 128 120 132 122 C132 114 134 108 138 104 C140 106 142 108 144 110 C142 104 142 98 144 92 C142 78 134 66 120 62 C104 56 60 56 44 62 Z',
+    role: 'accent',
+  },
+  { d: 'M52 62 C66 68 98 68 112 62', role: 'soft' },
+  {
+    d: 'M60 62 l4 3 M70 60 l6 5 M82 60 l6 5 M94 60 l6 4 M104 61 l4 3',
+    role: 'ambient',
+  },
+  {
+    d: 'M36 92 C40 98 40 104 38 110 M60 100 C64 106 64 112 60 120 M104 100 C100 106 100 112 104 120 M128 92 C124 98 124 104 126 110',
+    role: 'soft',
+  },
+]
+
+/**
+ * Ryokugyu from behind, so nothing of his face shows: the wild hair, its
+ * dark mass hatched, and the admiral's coat worn as a cape over his
+ * shoulders, its empty sleeves hanging, folds down the back, no lettering;
+ * the gold epaulettes on the shoulders are the accent. The coat is the one
+ * he wears when first seen in full (ch. 1053 p. 10-12, ep 1080); at 882 he
+ * is only a silhouette, and its shoulders are not viewed.
+ */
+const RYOKUGYU_COAT: Stroke[] = [
+  {
+    d: 'M64 66 C58 58 56 48 60 40 L55 33 L64 34 L66 24 L72 30 L78 20 L84 30 L90 24 L94 34 L103 32 L98 40 C102 48 100 58 96 66',
+  },
+  { d: 'M68 46 l6 -6 M74 54 l10 -10 M86 50 l6 -6', role: 'ambient' },
+  {
+    d: 'M70 68 C56 70 44 74 38 84 C30 108 22 136 16 162 C40 168 120 168 144 162 C138 136 130 108 122 84 C116 74 104 70 90 68',
+  },
+  { d: 'M64 70 C70 62 90 62 96 70' },
+  {
+    d: 'M80 74 V164 M54 100 C50 124 46 146 44 164 M106 100 C110 124 114 146 116 164',
+    role: 'soft',
+  },
+  {
+    d: 'M38 84 C30 100 28 120 30 140 H42 C42 122 44 104 48 92 M122 84 C130 100 132 120 130 140 H118 C118 122 116 104 112 92',
+  },
+  { d: 'M30 132 H42 M118 132 H130', role: 'soft' },
+  {
+    d: 'M36 84 C38 76 52 72 60 78 M38 84 v6 M43 81 v7 M48 79 v7 M53 78 v7 M58 78 v6 M124 84 C122 76 108 72 100 78 M122 84 v6 M117 81 v7 M112 79 v7 M107 78 v7 M102 78 v6',
+    role: 'accent',
+  },
+]
+
+/**
+ * The underside of Zunesha seen from the sea, without the sea: the near leg
+ * rising from the water (the accent, with its toenails at the waterline),
+ * its skin folds wrapping round it and its far side hatched, the sagging
+ * belly above, the second leg behind, fog over everything higher.
+ */
+const ZOU_LEGS: Stroke[] = [
+  {
+    d: 'M38 154 C46 142 50 128 50 110 C50 88 52 66 46 40 M110 154 C102 142 98 128 98 110 C98 88 100 66 106 44 M48 154 q8 -10 16 0 M66 154 q8 -10 16 0 M84 154 q8 -10 16 0',
+    role: 'accent',
+  },
+  { d: 'M-4 32 C30 46 120 54 164 36' },
+  {
+    d: 'M116 154 C120 124 120 92 118 52 M148 154 C144 124 146 90 150 46',
+    role: 'soft',
+  },
+  {
+    d: 'M46 138 C54 133 60 136 68 132 C76 129 84 134 92 131 M51 100 C58 96 64 99 72 95 M78 76 C84 73 90 76 99 72',
+    role: 'soft',
+  },
+  {
+    d: 'M58 118 q5 -3 10 0 M80 108 q5 -3 10 0 M56 80 q5 -3 10 0 M74 58 q5 -3 10 0',
+    role: 'soft',
+  },
+  {
+    d: 'M93 144 l8 -5 M93 120 l8 -5 M92 96 l8 -5 M94 72 l8 -5',
+    role: 'ambient',
+  },
+  {
+    d: 'M8 46 l6 -6 M24 50 l6 -6 M126 54 l6 -6 M142 50 l6 -6',
+    role: 'ambient',
+  },
+  { d: 'M-4 18 q30 -10 60 0 t60 0 t60 0', role: 'ambient', dashed: true },
+]
+
+/**
+ * Shishilian's black musketeer's hat in three quarters, without its shadow:
+ * the broad brim showing its thickness, the crown hatched, the curly plume
+ * (the accent).
+ */
+const SHISHILIAN_HAT: Stroke[] = [
+  {
+    d: 'M8 120 C4 104 20 94 34 102 C50 112 104 114 128 108 C144 104 156 112 152 124 C146 138 116 146 80 146 C44 146 12 136 8 120 Z',
+  },
+  { d: 'M46 112 C44 86 58 70 80 70 C102 70 116 86 114 112' },
+  { d: 'M46 102 C64 108 96 108 114 102', role: 'soft' },
+  { d: 'M102 76 l8 -4 M108 88 l7 -4 M110 100 l5 -3', role: 'ambient' },
+  { d: 'M14 124 C30 136 60 140 80 140 C110 140 138 134 148 124', role: 'soft' },
+  {
+    d: 'M54 104 C40 104 28 96 26 84 C20 78 24 68 32 68 C30 58 40 52 48 58 C50 48 62 44 68 52 C74 44 88 46 90 56 C98 52 108 56 108 64 C116 64 122 70 120 78',
+    role: 'accent',
+  },
+  {
+    d: 'M32 80 c3 -4 8 -1 6 3 M44 62 c3 -4 8 -1 6 3 M66 56 c3 -4 8 -1 6 3 M94 60 c3 -4 8 -1 6 3',
+    role: 'soft',
+  },
+]
+
+/**
+ * The bottom layer of the Whole Cake Chateau, a cake in three quarters: its
+ * top, its side down to the ground with the horizontal stripes of its
+ * style, and the cream running down from its rim.
+ */
+const CHATEAU_BASE: Stroke[] = [
+  {
+    d: `${ellipse(80, 118, 64, 8)} M16 118 V150 M144 118 V150 M16 150 C40 158 120 158 144 150`,
+  },
+  {
+    d: 'M16 130 C40 138 120 138 144 130 M16 140 C40 148 120 148 144 140',
+    role: 'soft',
+  },
+  {
+    d: 'M16 118 Q21.3 126.2 26.7 122.4 Q32 132.2 37.3 124 Q42.7 130.4 48 124.9 Q53.3 134.2 58.7 125.5 Q64 131.7 69.3 125.9 Q74.7 134.9 80 126 Q85.3 131.9 90.7 125.9 Q96 134.7 101.3 125.5 Q106.7 131.2 112 124.9 Q117.3 133.4 122.7 124 Q128 129.2 133.3 122.4 Q138.7 129.2 144 118',
+    role: 'soft',
+  },
+]
+
+/**
+ * The three layers above it, each smaller, each in its own style: vertical
+ * stripes, slashes over a level band, backslashes; the cream down each rim,
+ * and the kitchen's chimney on the third layer against the fourth.
+ */
+const CHATEAU_TIERS: Stroke[] = [
+  {
+    d: `${ellipse(80, 92, 50, 7)} M30 92 V118 M130 92 V118 M30 118 C50 124 110 124 130 118`,
+  },
+  {
+    d: 'M42 101 V122 M56 102 V123 M70 102 V124 M84 102 V124 M98 102 V124 M112 101 V122',
+    role: 'soft',
+  },
+  {
+    d: `${ellipse(80, 68, 36, 6)} M44 68 V92 M116 68 V92 M44 92 C60 98 100 98 116 92`,
+  },
+  {
+    d: 'M44 88 C60 94 100 94 116 88 M50 85 l7 -9 M62 87 l7 -10 M74 88 l7 -10 M86 88 l7 -10 M98 87 l7 -10 M108 85 l6 -8',
+    role: 'soft',
+  },
+  {
+    d: `${ellipse(80, 46, 24, 5)} M56 46 V68 M104 46 V68 M56 68 C66 73 94 73 104 68`,
+  },
+  { d: 'M62 54 l7 12 M72 55 l7 12 M82 55 l7 12 M92 54 l7 11', role: 'soft' },
+  {
+    d: 'M30 92 Q35 100.1 40 96.2 Q45 105.9 50 97.6 Q55 104 60 98.4 Q65 107.6 70 98.9 Q75 104.9 80 99 Q85 107.9 90 98.9 Q95 104.6 100 98.4 Q105 107 110 97.6 Q115 102.9 120 96.2 Q125 103.1 130 92 M44 68 Q48.5 76 53 72 Q57.5 81.6 62 73.2 Q66.5 79.5 71 73.8 Q75.5 82.9 80 74 Q84.5 79.9 89 73.8 Q93.5 82.5 98 73.2 Q102.5 78.6 107 72 Q111.5 79 116 68 M56 46 Q60 53.9 64 49.7 Q68 59.2 72 50.7 Q76 56.9 80 51 Q84 59.9 88 50.7 Q92 56.2 96 49.7 Q100 56.9 104 46',
+    role: 'soft',
+  },
+  { d: 'M106 70 V50 H113 V68 M105 50 H114' },
+]
+
+/** The thin trees on the second layer's rim, standing like candles. */
+const CHATEAU_TREE_TRUNKS: Stroke = {
+  d: 'M34 95 V74 M40 96 V78 M120 96 V78 M126 95 V74',
+}
+
+/** Their red leaves, like the candles' flames (the accent). */
+const CHATEAU_CANDLE_FLAMES: Stroke = {
+  d: 'M34 74 q-4 -6 0 -13 q4 7 0 13 M40 78 q-4 -6 0 -13 q4 7 0 13 M120 78 q-4 -6 0 -13 q4 7 0 13 M126 74 q-4 -6 0 -13 q4 7 0 13',
+  role: 'accent',
+}
+
 /** The drawings of the records filed in the whole cake stretch of the route. */
 export const wholeCakeArt = {
   // The yellow checked kerchief she wears over her braids as a child, off
@@ -898,58 +1125,26 @@ export const wholeCakeArt = {
   // His earphones set down in three quarters: the band arching over, the
   // near cup with its depth hatched, the far cup turned away, and the horn
   // standing up off each cup. He wears them on Broc Coli Island at 787. No
-  // goggles, no bolt: his lightning comes later.
-  'vinsmoke-niji': [
-    { d: 'M56 112 C52 70 72 44 100 46 C120 48 132 66 128 96' },
-    { d: 'M66 108 C64 76 78 56 100 56 C114 58 122 70 120 92', role: 'soft' },
-    { d: ellipse(50, 128, 18, 26) },
-    { d: 'M50 102 C62 102 70 114 70 128 C70 142 62 154 50 154' },
-    {
-      d: 'M58 108 l6 -3 M62 118 l7 -4 M64 130 l7 -4 M62 142 l6 -4',
-      role: 'ambient',
-    },
-    { d: 'M38 112 C34 122 34 136 40 146', role: 'soft' },
-    {
-      d: 'M120 96 C124 88 136 88 138 98 C140 112 134 124 126 124 C120 124 116 112 120 96 Z',
-    },
-    { d: 'M128 104 l8 -4 M128 114 l8 -4', role: 'ambient' },
-    { d: 'M42 106 L32 46 L50 103', role: 'accent' },
-    { d: 'M126 92 L130 50 L134 90', role: 'accent' },
-    shadow(88, 168, 52),
-  ],
+  // goggles, no bolt. Stage: his electricity at 803.
+  'vinsmoke-niji': [...NIJI_EARPHONES, shadow(88, 168, 52)],
 
-  // A hand winch on its plank, in three quarters: the drum between two
-  // frames with the cable wound on and its free end hanging off, the crank
-  // on the near side, the underside hatched. It is an emblem of the epithet
-  // the caption gives him when he is named at 784, Winch Green: the winch
-  // he fights with is built into his gauntlets, shown only at 839.
+  // The metal glove of his raid suit closed in a fist, in three quarters,
+  // on its flared cuff, and the ascot of the suit knotted beside it (the
+  // accent; orange in the wiki): he wears both when he is named at 784
+  // (ch. 826 p. 4). Stage: the fist shot out on the winch's cable at 873.
   'vinsmoke-yonji': [
-    { d: 'M14 150 L40 132 H150 L124 150 Z' },
-    { d: 'M14 150 V158 H124 V150 M124 158 L150 140 V132' },
-    {
-      d: 'M54 116 L42 146 M66 116 L78 146 M112 114 L104 138 M120 112 L130 134',
-    },
-    { d: ellipse(60, 92, 10, 24) },
-    { d: 'M60 68 H116 M60 116 H116' },
-    {
-      d: 'M116 68 C124 68 128 80 128 92 C128 104 124 116 116 116',
-      role: 'soft',
-    },
-    {
-      d: 'M68 69 L76 115 M78 69 L86 115 M88 69 L96 115 M98 69 L106 115 M108 69 L114 104',
-      role: 'accent',
-    },
-    { d: 'M72 114 l6 -10 M90 114 l6 -10 M108 114 l6 -10', role: 'ambient' },
-    { d: 'M60 92 L36 74 V58 M31 58 h10' },
-    { d: 'M114 104 C120 124 128 128 140 122', role: 'accent' },
-    shadow(82, 174, 66),
+    ...YONJI_FIST,
+    ...YONJI_CUFF,
+    YONJI_ASCOT,
+    shadow(86, 184, 62),
   ],
 
-  // The fur he wears as a scarf, draped over the shoulders of the dark
-  // cloak he arrives at the chateau in at 825: its lower edge hangs in long
-  // tufts, the opening at the neck is a dark hatched slit, and the cloak
-  // below is hatched to its ragged hem. No trident: he first draws it at
-  // 832, in `wholeCakeRedrawn`.
+  // The feathered scarf he wears over his mouth, draped over the shoulders
+  // of the dark cloak he arrives at the chateau in at 825: its lower edge
+  // hangs in long tufts, the opening at the neck is a dark hatched slit, and
+  // the cloak below is hatched to its ragged hem. No trident: he first draws
+  // it at 832. Stages: Mogura at 832, the mochi at 833, the scarf off at
+  // 868, and back at 1151.
   'charlotte-katakuri': [
     {
       d: 'M34 104 C28 128 20 150 12 172 C26 166 36 176 50 168 C62 176 72 166 82 174 C94 166 104 176 114 168 C126 176 138 166 150 172 C142 150 134 128 128 104',
@@ -962,19 +1157,7 @@ export const wholeCakeArt = {
       d: 'M30 132 l10 -8 M24 156 l14 -12 M58 140 l12 -10 M56 160 l16 -14 M88 140 l12 -10 M88 160 l16 -14 M116 132 l10 -8 M120 156 l12 -10',
       role: 'ambient',
     },
-    {
-      d: 'M44 62 C30 66 22 78 20 92 C26 98 30 104 28 112 C36 106 40 102 44 104 C46 110 46 116 42 122 C52 116 58 112 62 112 C64 118 64 124 62 130 C70 124 76 118 82 118 C86 124 88 128 90 134 C94 126 98 120 104 118 C106 122 108 126 110 130 C112 122 116 116 122 112 C124 116 128 120 132 122 C132 114 134 108 138 104 C140 106 142 108 144 110 C142 104 142 98 144 92 C142 78 134 66 120 62 C104 56 60 56 44 62 Z',
-      role: 'accent',
-    },
-    { d: 'M52 62 C66 68 98 68 112 62', role: 'soft' },
-    {
-      d: 'M60 62 l4 3 M70 60 l6 5 M82 60 l6 5 M94 60 l6 4 M104 61 l4 3',
-      role: 'ambient',
-    },
-    {
-      d: 'M36 92 C40 98 40 104 38 110 M60 100 C64 106 64 112 60 120 M104 100 C100 106 100 112 104 120 M128 92 C124 98 124 104 126 110',
-      role: 'soft',
-    },
+    ...KATAKURI_SCARF,
     shadow(81, 186, 66),
   ],
 
@@ -1412,30 +1595,15 @@ export const wholeCakeArt = {
   // Cobra with is a stage of its own, in `wholeCakeRedrawn`.
   'im': IM_ON_THE_THRONE,
 
-  // A bull's horns on their boss, in three quarters, the near horn ridged at
-  // the base and the far one hatched: the emblem of the name he is captioned
-  // with at 882, Ryokugyu, the Green Bull. His features stay hidden, so
-  // nothing of him is drawn.
-  'ryokugyu': [
-    {
-      d: 'M62 146 C40 144 18 132 16 108 C14 88 22 70 34 52 C32 72 32 92 40 106 C48 120 58 126 66 132',
-      role: 'accent',
-    },
-    {
-      d: 'M98 134 C114 132 130 122 134 104 C136 90 132 76 124 64 C126 80 124 96 118 106 C112 116 104 122 96 124',
-    },
-    {
-      d: 'M60 140 C60 130 70 124 82 124 C94 124 102 128 102 136 C102 146 92 152 80 152 C68 152 60 148 60 140 Z',
-    },
-    {
-      d: 'M48 140 l6 -10 M36 134 l8 -8 M26 122 l10 -5 M20 106 l12 -2',
-      role: 'soft',
-    },
-    { d: 'M112 126 l4 -6 M120 120 l4 -7 M126 112 l3 -7', role: 'ambient' },
-    { d: 'M66 134 C72 130 90 130 98 134', role: 'soft' },
-    { d: 'M88 150 l6 -6 M96 148 l4 -5', role: 'ambient' },
-    shadow(80, 166, 52),
-  ],
+  // The admiral seen from behind, so his hidden features stay hidden: his
+  // wild hair, and the Marine coat worn as a cape over his shoulders, its
+  // sleeves hanging empty, the gold epaulettes on the shoulders (the
+  // accent), no lettering. He sits with Fujitora at Mary Geoise at 882
+  // (ch. 905 p. 14-15), where the wiki only says he is a silhouette. The
+  // cape and the epaulettes are the coat the reader sees on him in full at
+  // 1080 (ch. 1053 p. 10-12); the silhouette's shoulders are not viewed.
+  // Stage: the flower he flies on at 1079.
+  'ryokugyu': [...RYOKUGYU_COAT, shadow(80, 178, 64)],
   // A sheep's curled horn in three quarters, ridged, its underside hatched, as
   // his hands become at 739, above the big sword he carries on his back.
   'sheepshead': [
@@ -1486,29 +1654,12 @@ export const wholeCakeArt = {
     shadow(80, 184, 64),
   ],
 
-  // An elephant's leg rising out of the sea into the fog, its toenails at the waterline.
-  'zou': [
-    {
-      d: 'M42 154 C52 126 54 90 46 58 C42 42 44 28 48 14 M118 154 C108 126 106 90 114 58 C118 42 116 28 112 14',
-      role: 'accent',
-    },
-    {
-      d: 'M52 154 q7 -10 14 0 M73 154 q7 -10 14 0 M94 154 q7 -10 14 0',
-      role: 'accent',
-    },
-    {
-      d: 'M56 128 q24 -6 48 0 M54 100 q26 -6 52 0 M50 72 q30 -6 60 0',
-      role: 'soft',
-    },
-    { d: 'M60 114 q8 -3 14 0 M88 86 q8 -3 14 0', role: 'soft' },
-    {
-      d: 'M2 44 q20 -8 40 0 M122 38 q18 -8 36 0 M6 80 q16 -6 32 0 M124 88 q16 -6 32 0',
-      role: 'ambient',
-      dashed: true,
-    },
-    { d: 'M-4 18 q30 -10 60 0 t60 0 t60 0', role: 'ambient', dashed: true },
-    ...SEA,
-  ],
+  // Zou from the sea: one of Zunesha's legs rising out of the water, its
+  // toenails at the waterline, the folds of its rough, rippled skin wrapping
+  // round it, the belly sagging above and the second leg behind, the rest
+  // lost in the fog. The crew reach the elephant at 751 and climb it at 752
+  // (ch. 803). Stage: the town in ruins over its back at 753.
+  'zou': [...ZOU_LEGS, ...SEA],
 
   // Her little green bowler with a pink flower on its band, beside the
   // T-handled cane she leans on. Both are in her first panel, chapter 802,
@@ -1572,28 +1723,9 @@ export const wholeCakeArt = {
   ],
   // His black musketeer's hat in three quarters, the broad brim showing its
   // thickness and the crown hatched, the curly plume as the accent. No
-  // rapier: he draws it only in chapter 809.
-  'shishilian': [
-    {
-      d: 'M8 120 C4 104 20 94 34 102 C50 112 104 114 128 108 C144 104 156 112 152 124 C146 138 116 146 80 146 C44 146 12 136 8 120 Z',
-    },
-    { d: 'M46 112 C44 86 58 70 80 70 C102 70 116 86 114 112' },
-    { d: 'M46 102 C64 108 96 108 114 102', role: 'soft' },
-    { d: 'M102 76 l8 -4 M108 88 l7 -4 M110 100 l5 -3', role: 'ambient' },
-    {
-      d: 'M14 124 C30 136 60 140 80 140 C110 140 138 134 148 124',
-      role: 'soft',
-    },
-    {
-      d: 'M54 104 C40 104 28 96 26 84 C20 78 24 68 32 68 C30 58 40 52 48 58 C50 48 62 44 68 52 C74 44 88 46 90 56 C98 52 108 56 108 64 C116 64 122 70 120 78',
-      role: 'accent',
-    },
-    {
-      d: 'M32 80 c3 -4 8 -1 6 3 M44 62 c3 -4 8 -1 6 3 M66 56 c3 -4 8 -1 6 3 M94 60 c3 -4 8 -1 6 3',
-      role: 'soft',
-    },
-    shadow(80, 160, 64),
-  ],
+  // rapier: he draws it only in chapter 809. Stage: Sulong at 997, over at
+  // 1021.
+  'shishilian': [...SHISHILIAN_HAT, shadow(80, 160, 64)],
 
   // The three-barrelled gun in place of his right forearm, in three quarters:
   // the ribbed drum at the back, the bands, the underside hatched, the three
@@ -1629,43 +1761,44 @@ export const wholeCakeArt = {
     shadow(76, 184, 62),
   ],
 
-  // A castle standing on the top layer of a cake, cream running down the edge below its gate.
-  // Blown open by the Tamatebako at 842 and never rebuilt, in `wholeCakeRedrawn`.
+  // The Whole Cake Chateau, a castle built as a cake of four layers, each
+  // smaller than the one below and each in its own style of stripes, the
+  // cream running down every rim, the thin red-leaved trees on the second
+  // layer's rim that make it a birthday cake with lit candles (the accent),
+  // and the kitchen's chimney on the third layer against the fourth. The
+  // island is seen from 571 and the chateau from the crew's landing at 790,
+  // inside the arc the record opens in at 786. Stage: blown open at 842.
   'whole-cake-island': [
-    { d: 'M20 150 V132 H140 V150', role: 'ambient' },
-    {
-      d: 'M20 132 q6 10 12 0 q6 12 12 0 q6 8 12 0 q6 12 12 0 q6 10 12 0 q6 12 12 0 q6 8 12 0 q6 12 12 0 q6 10 12 0 q6 12 12 0',
-      role: 'soft',
-    },
-    { d: 'M52 132 V78 H108 V132' },
-    {
-      d: 'M52 78 v-6 h8 v6 M68 78 v-6 h8 v6 M84 78 v-6 h8 v6 M100 78 v-6 h8 v6',
-      role: 'soft',
-    },
-    { d: 'M70 132 V110 a10 10 0 0 1 20 0 V132', role: 'accent' },
-    { d: 'M30 132 V70 H48 V132 M112 132 V70 H130 V132', role: 'accent' },
-    { d: 'M26 70 L39 40 L52 70 M108 70 L121 40 L134 70', role: 'accent' },
-    { d: 'M72 72 V46 H88 V72 M68 46 L80 20 L92 46', role: 'accent' },
-    {
-      d: `${circle(39, 88, 3)} ${circle(121, 88, 3)} ${circle(80, 56, 3)}`,
-      role: 'soft',
-    },
-    shadow(80, 170, 64),
+    ...CHATEAU_BASE,
+    ...CHATEAU_TIERS,
+    CHATEAU_TREE_TRUNKS,
+    CHATEAU_CANDLE_FLAMES,
+    ...SEA,
   ],
 
-  // A house whose roof is a slab of chocolate scored into tiles, a smaller one beside it.
+  // Pudding's cafe Caramel, a chocolate house in three quarters with its
+  // roof a slab scored into tiles, most of it eaten away: the bites taken
+  // out of its wall and its roof are the accent, a door and a window left
+  // in what stands. Her own house stands small and plain beside it. Luffy
+  // and Chopper eat most of the cafe at 786 (ch. 827), the episode the
+  // record opens in; she covers for them by calling them dismantlers she
+  // hired, the only people allowed to eat a building's roof.
   'cacao-island': [
-    { d: 'M34 150 V104 H112 V150' },
-    { d: 'M24 104 L44 64 H102 L122 104 Z', role: 'accent' },
-    { d: 'M29 94 H117 M34 84 H112 M39 74 H107', role: 'accent' },
-    { d: 'M56 64 L50 104 M73 64 V104 M90 64 L96 104', role: 'soft' },
-    { d: 'M64 150 V124 H82 V150', role: 'soft' },
-    { d: 'M44 116 h12 v10 h-12z M92 116 h12 v10 h-12z', role: 'soft' },
     {
-      d: 'M116 150 V122 H146 V150 M112 122 L120 108 H142 L150 122 Z',
+      d: 'M40 150 H94 V100 H86 M74 100 H67 M86 70 H104 L94 100 M104 70 L116 92 V100 M116 122 V140 L94 150',
+    },
+    {
+      d: 'M40 150 A9 9 0 0 0 46 134 A9 9 0 0 0 54 120 A9 9 0 0 0 62 106 A9 9 0 0 0 70 92 A9 9 0 0 0 78 80 A9 9 0 0 0 86 70 M74 100 A6 6 0 0 1 86 100 M116 100 A11 11 0 0 0 116 122',
+      role: 'accent',
+    },
+    { d: 'M72 90 H97.3 M79 80 H100.7 M94 70 L90 100', role: 'soft' },
+    { d: 'M98 106 l12 -5 M98 120 l12 -5 M98 134 l12 -5', role: 'ambient' },
+    { d: 'M66 150 V134 H77 V150 M80 112 h10 v10 h-10 Z', role: 'soft' },
+    {
+      d: 'M126 150 V128 H150 V150 M122 128 L128 116 H148 L154 128 Z',
       role: 'soft',
     },
-    { d: 'M116 115 H146 M131 108 V122', role: 'ambient' },
+    { d: 'M124 122 H152 M138 116 V128', role: 'ambient' },
     { d: 'M-4 150 H164', role: 'ambient' },
     { d: wave(168), role: 'ambient', dashed: true },
   ],
@@ -2081,17 +2214,36 @@ const MOGURA_LEANING = 'translate(136 4) rotate(30) scale(1.2)'
 /** Where Mogura stands planted beside the scarf he has taken off. */
 const MOGURA_PLANTED = 'translate(126 6) scale(1.2)'
 
-/** Katakuri's fur scarf, its neck slit and its tufts, without the cloak. */
-const KATAKURI_SCARF = wholeCakeArt['charlotte-katakuri'].slice(3, 7)
-
-/** The fur scarf with Mogura crossed behind it, from 832 and again from 1151. */
-const KATAKURI_MOGURA: Stroke[] = [
+/** Mogura crossed behind Katakuri's scarf, its shaft capped at the butt. */
+const MOGURA_CROSSED: Stroke[] = [
   ...moved(MOGURA, MOGURA_LEANING),
   {
     d: 'M-2 50 V69 M2 50 V68 M-2 128 V164 M2 128 V164 M-3 164 H3 V171 H-3 Z',
     transform: MOGURA_LEANING,
   },
+]
+
+/** The scarf with Mogura crossed behind it, at 832. */
+const KATAKURI_MOGURA: Stroke[] = [
+  ...MOGURA_CROSSED,
   ...moved(KATAKURI_SCARF, 'translate(0 14)'),
+  shadow(80, 188, 52),
+]
+
+/**
+ * A thick coil of mochi (the accent), curling down out of the scarf's tufts
+ * and round and up, its end rolled in: the tendril he grows from his body.
+ */
+const MOCHI_COIL: Stroke = {
+  d: 'M94 146 C96 172 108 186 126 186 C142 186 156 174 156 154 C156 140 146 132 136 134 C128 136 124 144 128 152 C130 156 135 155 134 150 M106 146 C108 168 116 176 126 176 C138 176 146 166 146 154 C146 146 142 142 137 143 C133 144 133 148 134 150',
+  role: 'accent',
+}
+
+/** The scarf, plain, with Mogura behind it and the mochi, from 833 and 1151. */
+const KATAKURI_MOCHI: Stroke[] = [
+  ...MOGURA_CROSSED,
+  ...moved(softened(KATAKURI_SCARF), 'translate(0 14)'),
+  MOCHI_COIL,
   shadow(80, 188, 52),
 ]
 
@@ -2321,18 +2473,201 @@ const CRACKER_HALF_APART = 'translate(8 2) rotate(3 94 152)'
 /** Judge's helmet split in two, the back half tipped over onto its side. */
 const JUDGE_HELMET_TIPPED = 'translate(2 8) rotate(30 126 166)'
 
+/** Electricity crackling round Niji's near earphone (the accent). */
+const NIJI_CRACKLE: Stroke = {
+  d: 'M16 96 l11 8 l-7 5 l12 9 M12 148 l12 -3 l-4 8 l13 -2 M82 104 l-9 8 l8 4 l-10 10 M84 150 l-10 3 l6 6 l-11 3',
+  role: 'accent',
+}
+
+/** Where Yonji's cuff lies as his forearm, its wrist turned up to the right. */
+const YONJI_FOREARM = 'translate(-30 0) rotate(40 81 152)'
+
+/** Where his fist flies out on the cable, smaller, up to the right. */
+const YONJI_FIST_OUT = 'translate(70 6) scale(0.6)'
+
+/**
+ * The winch on Yonji's forearm: the open wrist, and a drum on the cuff's
+ * side with the cable wound round it.
+ */
+const YONJI_WINCH: Stroke[] = [
+  { d: ellipse(83, 134, 23, 5) },
+  {
+    d: `${ellipse(70, 150, 4, 8)} ${ellipse(96, 150, 4, 8)} M70 142 H96 M70 158 H96`,
+  },
+  { d: 'M74 143 l4 14 M80 142 l4 15 M86 142 l4 15', role: 'soft' },
+]
+
+/**
+ * The torn scrap of Carmel's habit: the ragged cloth, the frilled hem (the
+ * accent), a seam, the dark cloth hatched.
+ */
+const CARMEL_SCRAP: Stroke[] = [
+  {
+    d: 'M24 132 L137 118 L130 130 L142 140 L128 146 L136 158 L120 160 L124 172 L106 166 L96 176 L88 164 L74 172 L66 160 L52 168 L46 156 L32 160 L30 148 L20 146 Z',
+  },
+  { d: `M24 132 ${'a5 5 0 0 1 9.4 -1.2 '.repeat(12).trim()}`, role: 'accent' },
+  { d: 'M24 140 L134 126', role: 'soft' },
+  {
+    d: 'M36 152 l10 -12 M50 158 l14 -18 M66 156 l16 -20 M82 158 l16 -20 M98 154 l16 -20 M114 150 l14 -18',
+    role: 'ambient',
+  },
+]
+
+/** Tufts of grass round the scrap. */
+const CARMEL_GRASS: Stroke = {
+  d: 'M8 172 l3 -8 l3 8 M144 168 l3 -8 l3 8 M130 180 l3 -7 l3 7 M26 178 l3 -6 l3 6',
+  role: 'ambient',
+}
+
+/**
+ * Carmel's portrait frame lying face down, seen from above in three
+ * quarters: the frame's back (the accent), the backing board inside it,
+ * the near edge showing its thickness.
+ */
+const CARMEL_FRAME_FACE_DOWN: Stroke[] = [
+  { d: 'M50 104 L140 96 L152 136 L54 146 Z', role: 'accent' },
+  { d: 'M60 110 L133 104 L143 131 L63 139 Z', role: 'soft' },
+  { d: 'M54 146 V152 L152 142 V136' },
+  {
+    d: 'M64 152 l4 -6 M84 150 l4 -6 M104 148 l4 -6 M124 146 l4 -6',
+    role: 'ambient',
+  },
+]
+
+/** The full moon a mink turns Sulong under (the accent). */
+const SULONG_MOON: Stroke = { d: circle(138, 22, 14), role: 'accent' }
+
+/**
+ * The flower Ryokugyu flies on, spinning (the accent): six petals round
+ * its heart, the turn of them in two soft arcs, a short stem below.
+ */
+const RYOKUGYU_FLOWER: Stroke[] = [
+  {
+    d: 'M80 30 C73.4 19.9 78 6.7 86.7 4.9 C93.4 10.8 90.8 24.6 80 30 M80 30 C85.4 19.2 99.2 16.6 105.1 23.3 C103.3 32 90.1 36.6 80 30 M80 30 C92 29.3 101.2 39.9 98.4 48.4 C89.9 51.2 79.3 42 80 30 M80 30 C86.6 40.1 82 53.3 73.3 55.1 C66.6 49.2 69.2 35.4 80 30 M80 30 C74.6 40.8 60.8 43.4 54.9 36.7 C56.7 28 69.9 23.4 80 30 M80 30 C68 30.7 58.8 20.1 61.6 11.6 C70.1 8.8 80.7 18 80 30',
+    role: 'accent',
+  },
+  { d: circle(80, 30, 4) },
+  { d: 'M46 16 A36 36 0 0 1 60 2 M114 44 A36 36 0 0 1 100 58', role: 'soft' },
+  { d: 'M80 56 V64' },
+]
+
+/** The chateau's upper layers tipped over to the right off the blown base. */
+const CHATEAU_TIPPED = 'rotate(12 130 118)'
+
+/**
+ * Two plumes of smoke rising out of the blown chateau and drifting left,
+ * and chunks of it thrown into the air.
+ */
+const CHATEAU_SMOKE: Stroke[] = [
+  {
+    d: 'M54 142 A8.8 8.8 0 0 1 44 132 A8.9 8.9 0 0 1 32 124 A10 10 0 0 1 18 116 A10.5 10.5 0 0 1 6 104 M64 138 A9 9 0 0 0 60 124 A9.7 9.7 0 0 0 50 112 A10.7 10.7 0 0 0 36 102 A10 10 0 0 0 22 94',
+  },
+  {
+    d: 'M12 32 l5 -3 l3 5 l-5 3 z M10 70 l4 -4 l4 4 l-4 3 z M98 12 l5 -1 l1 5 l-5 1 z M20 18 l3 -3 l3 3 l-3 2 z',
+    role: 'soft',
+  },
+]
+
 /** The records of this stretch drawn again, from the episode the story changes them. */
 export const wholeCakeRedrawn: Redrawings = {
-  // The same figure, with the arrow-tipped appendage it sends out of its body
-  // to pierce Cobra: its power, first shown at 1119 (ch. 1085).
+  // The coat smaller and plain, and above him a great flower spinning on a
+  // short stem (the accent): he flies over Wano on a flower at 1079
+  // (ch. 1052 p. 17), the Woods-Woods Fruit's first showing.
+  'ryokugyu': [
+    {
+      episode: 1079,
+      chapter: 1052,
+      value: [
+        ...RYOKUGYU_FLOWER,
+        ...moved(softened(RYOKUGYU_COAT), 'translate(16 50) scale(0.8)'),
+        shadow(80, 190, 52),
+      ],
+    },
+  ],
+
+  // The same legs and belly, plain, and over the belly the wall round the
+  // elephant's back, its gateway empty with a bar of the torn-off gate
+  // leaning beside it (the accent) and the town's roofs broken behind it:
+  // the crew climb up and find the Mokomo Dukedom in ruins at 753 (ch. 804
+  // p. 9-11), as the arc's drawing shows. From the sea the back could not
+  // be seen; it is lifted into view.
+  'zou': [
+    {
+      episode: 753,
+      chapter: 804,
+      value: [
+        ...softened(ZOU_LEGS),
+        ...moved([...ZOU_WALL, ...ZOU_RUINED_TOWN], 'translate(-44 -34)'),
+        ...SEA,
+      ],
+    },
+  ],
+
+  // The same hat, the plume plain, under the full moon (the accent), with
+  // Electro crackling round it: the minks on the Skull Dome turn Sulong at
+  // 997 (ch. 988 p. 4-5). The hat is felt, so it does not whiten. Then the
+  // hat itself again at 1021 (ch. 1006 p. 6), when clouds cover the moon and
+  // Carrot and Wanda lose the form: inferred for him, not viewed.
+  'shishilian': [
+    {
+      episode: 997,
+      chapter: 988,
+      value: [
+        ...softened(SHISHILIAN_HAT),
+        SULONG_MOON,
+        SULONG_ELECTRO,
+        shadow(80, 160, 64),
+      ],
+    },
+    { episode: 1021, chapter: 1006, value: wholeCakeArt.shishilian },
+  ],
+
+  // The same earphones, the horns plain, with electricity crackling round
+  // the near cup (the accent). It stands for the body he electrifies: at
+  // 803 (ch. 840 p. 7-9) he drives an electrified knee into Sanji's back
+  // and knocks him down with an electrified fist.
+  'vinsmoke-niji': [
+    {
+      episode: 803,
+      chapter: 840,
+      value: [...softened(NIJI_EARPHONES), NIJI_CRACKLE, shadow(88, 168, 52)],
+    },
+  ],
+
+  // The cuff on his forearm, the sleeve running out of the frame, the wrist
+  // open and a winch drum across the cuff, and the fist shot out of it on a
+  // cable (the accent), the ascot left out: the device on his right forearm
+  // is a winch that sends his hand out on a cable to grab Yuen's head at 873
+  // (ch. 898 p. 11-13). He punches as Winch Green earlier, at 839 (ch. 869
+  // p. 12), but the wiki first shows the hand going out on its cable at 873,
+  // and the cable is what the drawing shows; 839 is not viewed.
+  'vinsmoke-yonji': [
+    {
+      episode: 873,
+      chapter: 898,
+      value: [
+        ...moved([...YONJI_CUFF, ...YONJI_WINCH], YONJI_FOREARM),
+        { d: 'M64 140 C80 118 100 102 120 87', role: 'accent' },
+        ...moved(YONJI_FIST, YONJI_FIST_OUT),
+        { d: 'M21 145 L2 168 M66 183 L52 200' },
+      ],
+    },
+  ],
+
+  // The same figure, its crown plain, with the long devil tail it sends out
+  // of its body to impale Cobra (the accent), sweeping out from under the
+  // robe and up past the throne to an arrow point: its power, first shown at
+  // 1119 (ch. 1085). No horns: the wiki gives them only to the form it is
+  // fully seen in later.
   'im': [
     {
       episode: 1119,
       chapter: 1085,
       value: [
-        ...IM_ON_THE_THRONE,
+        ...softened(IM_ON_THE_THRONE),
         {
-          d: 'M112 128 C130 124 140 110 138 92 C136 76 142 64 152 54 M152 54 L141 56 M152 54 L150 65',
+          d: 'M108 138 C136 140 152 124 148 98 C145 78 142 60 150 38 M112 146 C142 148 160 126 156 98 C153 78 152 60 154 40 M146 42 L152 24 L159 44 Z',
+          role: 'accent',
         },
       ],
     },
@@ -2367,7 +2702,7 @@ export const wholeCakeRedrawn: Redrawings = {
         ...INUARASHI_ROBE_SMALL,
         ...INUARASHI_SWORD_LEG,
         ...KOZUKI_CREST,
-        { d: circle(138, 22, 14), role: 'accent' },
+        SULONG_MOON,
         SULONG_ELECTRO,
         shadow(100, 190, 48),
       ],
@@ -2554,28 +2889,36 @@ export const wholeCakeRedrawn: Redrawings = {
     },
   ],
 
-  // The fur scarf without the cloak, and Mogura crossed behind it: a shaft
+  // The scarf without the cloak, and Mogura crossed behind it: a shaft
   // longer than he is tall, capped at the butt, a diamond head between two
-  // barbed prongs. He first fights with it at 832 (ch. 862). Then the scarf
-  // taken off and lying slack beside Mogura planted upright, nothing under
-  // it: he takes it off to fight Luffy at 868 (ch. 893), and it is back
-  // on his shoulders when he is next seen, at 1151 (ch. 1119).
+  // barbed prongs. He first fights with it at 832 (ch. 862). Then the same,
+  // the scarf plain, and a thick coil of mochi curling out from under it (the
+  // accent): at 833 (ch. 863 p. 12-15) his leg turns into a sticky tendril
+  // that traps Luffy, and Jinbe names the Mochi-Mochi Fruit. Then the scarf
+  // taken off and lying slack beside Mogura planted upright, the mochi rising
+  // behind it: he takes it off to fight Luffy at 868 (ch. 893). It is back
+  // on his shoulders at 1151 (ch. 1119), the first time he is seen after the
+  // duel whose scarf can be told: at 877 (ch. 902) Brulee tends him and the
+  // wiki does not say whether he wears it, not viewed; at 929 (ch. 934 p. 3)
+  // Daifuku only names him.
   'charlotte-katakuri': [
     { episode: 832, chapter: 862, value: KATAKURI_MOGURA },
+    { episode: 833, chapter: 863, value: KATAKURI_MOCHI },
     {
       episode: 868,
       chapter: 893,
       value: [
         ...moved(MOGURA, MOGURA_PLANTED),
         { d: 'M-2 50 V146 M2 50 V146', transform: MOGURA_PLANTED },
+        ...moved([MOCHI_COIL], 'translate(-40 4) rotate(180 100 146)'),
         ...moved(
-          KATAKURI_SCARF,
+          softened(KATAKURI_SCARF),
           'rotate(-6 60 160) translate(-13.8 97.3) scale(0.9 0.66)',
         ),
         shadow(74, 188, 64),
       ],
     },
-    { episode: 1151, chapter: 1119, value: KATAKURI_MOGURA },
+    { episode: 1151, chapter: 1119, value: KATAKURI_MOCHI },
   ],
 
   // The same helmet set down beside the feather coat, a sword run down
@@ -2709,30 +3052,27 @@ export const wholeCakeRedrawn: Redrawings = {
   ],
 
   // A torn scrap of her dark habit lying on the grass, its hem edged with
-  // white scallops, the rest of it ragged where it tore. At Linlin's sixth
-  // birthday Carmel and the children simply vanish, and a scrap like this is
-  // all that is left at 837 (ch. 867).
+  // frills (light blue in the wiki), the rest of it ragged where it tore. At
+  // Linlin's sixth birthday Carmel, the children and the table vanish, and
+  // scraps and parts of her clothing are all that is left at 837 (ch. 867;
+  // Episode 837 shows them, the chapter's page is not viewed). Then the
+  // scrap smaller and plain in front, and her portrait's frame lying face
+  // down on the grass behind it (the accent), a sign for her: her
+  // Soul-Soul Fruit's power has passed to Linlin at 838 (ch. 868 p. 8-10),
+  // so she is dead. Neither the frame nor the scrap is in that scene.
   'carmel': [
     {
       episode: 837,
       chapter: 867,
+      value: [...CARMEL_SCRAP, CARMEL_GRASS, shadow(80, 188, 70)],
+    },
+    {
+      episode: 838,
+      chapter: 868,
       value: [
-        {
-          d: 'M24 132 L137 118 L130 130 L142 140 L128 146 L136 158 L120 160 L124 172 L106 166 L96 176 L88 164 L74 172 L66 160 L52 168 L46 156 L32 160 L30 148 L20 146 Z',
-        },
-        {
-          d: `M24 132 ${'a5 5 0 0 1 9.4 -1.2 '.repeat(12).trim()}`,
-          role: 'accent',
-        },
-        { d: 'M24 140 L134 126', role: 'soft' },
-        {
-          d: 'M36 152 l10 -12 M50 158 l14 -18 M66 156 l16 -20 M82 158 l16 -20 M98 154 l16 -20 M114 150 l14 -18',
-          role: 'ambient',
-        },
-        {
-          d: 'M8 172 l3 -8 l3 8 M144 168 l3 -8 l3 8 M130 180 l3 -7 l3 7 M26 178 l3 -6 l3 6',
-          role: 'ambient',
-        },
+        ...CARMEL_FRAME_FACE_DOWN,
+        ...moved(softened(CARMEL_SCRAP), 'translate(4 76) scale(0.62)'),
+        CARMEL_GRASS,
         shadow(80, 188, 70),
       ],
     },
@@ -2775,46 +3115,33 @@ export const wholeCakeRedrawn: Redrawings = {
     { episode: 1037, chapter: 1015, value: ZEUS_IN_THE_STAFF },
   ],
 
-  // The same castle blown open from the middle: the body's upper left torn
-  // into a jagged edge with cracks running down from it, the left tower
-  // snapped off, the central spire knocked askew, two plumes of smoke rising
-  // out of the break and blown to the left, and chunks thrown into the air.
-  // The Tamatebako goes off in the chateau at 842 (ch. 871), and it is never
-  // rebuilt.
+  // The same chateau blown open from below: a jagged hole torn in the
+  // bottom layer's front (the accent), the three layers above tipped over
+  // to the right, the fourth split down the middle, the candle-trees plain,
+  // two plumes of smoke rising out of the break and chunks thrown into the
+  // air. The Tamatebako goes off at its base at 842 (ch. 871 p. 16-17), and
+  // the chateau collapses and is never rebuilt.
   'whole-cake-island': [
     {
       episode: 842,
       chapter: 871,
       value: [
-        ...wholeCakeArt['whole-cake-island'].slice(0, 2),
+        ...CHATEAU_BASE,
         {
-          d: 'M52 132 V102 L58 98 L55 90 L63 88 L66 80 L73 82 L77 75 L84 78 H108 V132',
-        },
-        { d: 'M84 78 v-6 h8 v6 M100 78 v-6 h8 v6', role: 'soft' },
-        ...wholeCakeArt['whole-cake-island'].slice(4, 5),
-        {
-          d: 'M30 132 V112 l3 -6 l4 4 l4 -8 l3 5 l4 -3 V132 M112 132 V70 H130 V132',
+          d: 'M52 152 L56 138 L64 142 L67 130 L75 136 L80 126 L88 135 L95 129 L99 141 L106 137 L110 153',
           role: 'accent',
         },
-        { d: 'M108 70 L121 40 L134 70', role: 'accent' },
-        {
-          d: 'M72 80 V46 H88 V80 M68 46 L80 20 L92 46',
-          role: 'accent',
-          transform: 'rotate(12 80 80)',
-        },
-        { d: `${circle(121, 88, 3)} ${circle(80, 56, 3)}`, role: 'soft' },
-        {
-          d: 'M50 96 A8.8 8.8 0 0 1 40 86 A8.9 8.9 0 0 1 28 78 A10 10 0 0 1 14 70 A10.5 10.5 0 0 1 2 58 M60 88 A9 9 0 0 0 56 74 A9.7 9.7 0 0 0 46 62 A10.7 10.7 0 0 0 32 52 A10 10 0 0 0 18 44',
-        },
-        {
-          d: 'M64 84 A10.2 10.2 0 0 1 60 68 A10.2 10.2 0 0 1 56 52 A10.6 10.6 0 0 1 50 36 A10.6 10.6 0 0 1 44 20 M72 78 A8.8 8.8 0 0 0 70 64 A8.8 8.8 0 0 0 68 50 A9 9 0 0 0 64 36 A10 10 0 0 0 62 20',
-        },
-        { d: 'M63 88 l3 8 l-3 7 l4 9 M73 82 l1 6 l5 4', role: 'soft' },
-        {
-          d: 'M12 32 l5 -3 l3 5 l-5 3 z M10 100 l4 -4 l4 4 l-4 3 z M98 12 l5 -1 l1 5 l-5 1 z M20 18 l3 -3 l3 3 l-3 2 z',
-          role: 'soft',
-        },
-        ...wholeCakeArt['whole-cake-island'].slice(9),
+        ...moved(
+          [
+            ...CHATEAU_TIERS,
+            { d: 'M80 41 L78 52 L82 60 L79 72', role: 'soft' },
+            CHATEAU_TREE_TRUNKS,
+            ...softened([CHATEAU_CANDLE_FLAMES]),
+          ],
+          CHATEAU_TIPPED,
+        ),
+        ...CHATEAU_SMOKE,
+        ...SEA,
       ],
     },
   ],
