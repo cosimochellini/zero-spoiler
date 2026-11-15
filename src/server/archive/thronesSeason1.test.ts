@@ -304,7 +304,7 @@ const CHANGES: {
   {
     id: 'alyn',
     episode: 21,
-    chapter: 161,
+    chapter: 178,
     value: 'deceased',
     source: 'chapter',
   },
@@ -466,7 +466,7 @@ const CHANGES: {
     value: 'deceased',
     source: 'episode',
   },
-  { id: 'mandon-moore', episode: 19, chapter: 135, value: 'deceased' },
+  { id: 'mandon-moore', episode: 19, chapter: 141, value: 'deceased' },
   {
     id: 'arys-oakheart',
     episode: 8,
@@ -1176,7 +1176,7 @@ const STAGES: {
   // The northern lords' deaths and reveals (#1288).
   { id: 'jeyne-poole', episode: 29, chapter: 243, source: 'chapter' },
   { id: 'mikken', episode: 16, chapter: 120, source: 'chapter' },
-  { id: 'alyn', episode: 21, chapter: 161, source: 'chapter' },
+  { id: 'alyn', episode: 21, chapter: 178, source: 'chapter' },
   { id: 'greatjon-umber', episode: 53, chapter: 344, source: 'episode' },
   { id: 'smalljon-umber', episode: 59, chapter: 195 },
   { id: 'rickard-karstark', episode: 25, chapter: 164 },
@@ -1241,7 +1241,7 @@ const STAGES: {
   { id: 'arya-stark', episode: 56, chapter: 344, source: 'episode', stage: 3 },
   // The King's Landing court redrawn from the drawing audit (#1289).
   { id: 'meryn-trant', episode: 50, chapter: 344, source: 'episode' },
-  { id: 'mandon-moore', episode: 19, chapter: 135, source: 'chapter' },
+  { id: 'mandon-moore', episode: 19, chapter: 141, source: 'chapter' },
   { id: 'arys-oakheart', episode: 8, chapter: 247, source: 'chapter' },
   { id: 'lancel-lannister', episode: 44, chapter: 256 },
   {
@@ -1324,22 +1324,70 @@ describe.each(
   },
 )
 
+/** A reader at the end of this medium, who has reached all of it. */
+function atTheEnd(unit: Unit): Reader {
+  return unit === 'episode' ?
+      reader('episode', archive.series.episodeCeiling)
+    : reader('chapter', archive.series.chapterCeiling)
+}
+
+/**
+ * The drawing a reader of this medium ends on: the last stage it tells, or
+ * the first drawing when it tells none.
+ */
+function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
+  const owner = recordOf(id)
+  const told = (REDRAWINGS[id] ?? []).filter(
+    (stage) => (owner.source ?? stage.source ?? unit) === unit,
+  )
+
+  return told.at(-1)?.value ?? DRAWINGS[id]
+}
+
+/**
+ * Whether this stage is a new look: one that does not draw the first
+ * drawing again (Darry rebuilt), which every reader sees anyway.
+ */
+function isNewLook(id: keyof typeof DRAWINGS, index: number): boolean {
+  return (
+    JSON.stringify(REDRAWINGS[id]?.[index]?.value)
+    !== JSON.stringify(DRAWINGS[id])
+  )
+}
+
+/** The medium a stage is told in: its record's, else its own. */
+function mediumOf(
+  id: keyof typeof DRAWINGS,
+  index: number,
+): 'chapter' | 'episode' | undefined {
+  return recordOf(id).source ?? REDRAWINGS[id]?.[index]?.source
+}
+
+/** Whether these strokes are this stage's drawing. */
+function shows(
+  strokes: unknown,
+  id: keyof typeof DRAWINGS,
+  index: number,
+): boolean {
+  return (
+    JSON.stringify(strokes) === JSON.stringify(REDRAWINGS[id]?.[index]?.value)
+  )
+}
+
 describe('the stages one medium alone tells', () => {
+  // A reader of the other medium who has reached its end sees the last
+  // stage their medium tells (Lancel's Sparrow star, before the show alone
+  // kills him), or the first drawing when it tells none. The stage's medium
+  // is held to the table's, so a stage that lost its `source` fails here.
   it.each(STAGES.filter(({ source }) => source !== undefined))(
     'never redraws $id for a reader of the other medium',
-    ({ id, source }) => {
-      const last =
-        source === 'chapter' ?
-          reader('episode', archive.series.episodeCeiling)
-        : reader('chapter', archive.series.chapterCeiling)
-      // The other medium's own last stage, or the first drawing.
-      const other = source === 'chapter' ? 'episode' : 'chapter'
-      const expected =
-        (REDRAWINGS[id] ?? []).findLast(
-          (stage) => (recordOf(id).source ?? stage.source ?? other) === other,
-        )?.value ?? DRAWINGS[id]
+    ({ id, source, stage: index = 0 }) => {
+      const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
+      const drawn = drawingOf(recordOf(id), atTheEnd(other)).strokes
 
-      expect(drawingOf(recordOf(id), last).strokes).toStrictEqual(expected)
+      expect(mediumOf(id, index)).toBe(source)
+      expect(isNewLook(id, index) && shows(drawn, id, index)).toBe(false)
+      expect(drawn).toStrictEqual(endsOn(id, other))
     },
   )
 })

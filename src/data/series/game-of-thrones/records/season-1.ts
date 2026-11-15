@@ -5162,9 +5162,8 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 19, chapter: 52, source: 'chapter', value: 'alive' },
         // Drowned in the Blackwater: on screen in "Blackwater" (episode 19),
-        // his threshold, and told in Tyrion XIV of A Clash of Kings (chapter
-        // 135).
-        { episode: 19, chapter: 135, value: 'deceased' },
+        // his threshold, and confirmed by A Clash of Kings 67 (chapter 141).
+        { episode: 19, chapter: 141, value: 'deceased' },
       ],
       affiliation: [
         {
@@ -5377,9 +5376,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 13, value: 'alive' },
-        // Killed at the Mummer's Ford, told in Arya III of A Storm of Swords
-        // (#1288). The chapter is not checked against the book.
-        { episode: 21, chapter: 161, source: 'chapter', value: 'deceased' },
+        // Killed at the Mummer's Ford, told in A Storm of Swords: the later
+        // of two candidate chapters, not checked against the book (#1288).
+        { episode: 21, chapter: 178, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
