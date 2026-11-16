@@ -144,9 +144,9 @@ Beside it:
   reverse holds too.
 - `game-of-thrones-relationships.json` lists every first-stage Game of Thrones
   character once: under `authored`, with the URLs of the A Wiki of Ice and Fire
-  (books) and Game of Thrones Wiki (show) pages read, under `omitted`, with the
-  reason, or under `pending`, with the issue that will author it. Revision
-  pinning in `sources.json` is still to come.
+  or Ice and Fire Wiki (books) and Game of Thrones Wiki (show) pages read, under
+  `omitted`, with the reason, or under `pending`, with the issue that will
+  author it. Revision pinning in `sources.json` is still to come.
 
 The wiki is read for facts only; no passages, dialogue, frames or scans enter
 the repository. A decision the data cannot show, such as a gate delayed behind

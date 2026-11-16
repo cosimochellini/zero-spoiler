@@ -222,10 +222,13 @@ describe('Game of Thrones provenance', () => {
     LOADED_SERIES.find(
       ({ slug }) => slug === 'game-of-thrones',
     )?.archive.entities.map(({ id }) => id) ?? []
-  // The lawful sources of #725: the two wikis and Italian Wikipedia.
+  // The lawful sources of #725: the two wikis and Italian Wikipedia, and the
+  // Ice and Fire Wiki for the books where A Wiki of Ice and Fire cannot be read
+  // (owner, 2026-11-16).
   const hosts = new Set([
     'awoiaf.westeros.org',
     'gameofthrones.fandom.com',
+    'iceandfire.fandom.com',
     'it.wikipedia.org',
   ])
 
@@ -266,9 +269,13 @@ describe('Game of Thrones relationship provenance', () => {
       (entity) => (archive?.datedOf(entity, 'relationships') ?? []).length > 0,
     )
     .map(({ id }) => id)
-  // The two wikis: A Wiki of Ice and Fire for the books, the Game of Thrones
-  // Wiki for the show (#1344).
-  const hosts = new Set(['awoiaf.westeros.org', 'gameofthrones.fandom.com'])
+  // A Wiki of Ice and Fire and the Ice and Fire Wiki for the books, the Game
+  // of Thrones Wiki for the show (#1344; Ice and Fire Wiki, owner 2026-11-16).
+  const hosts = new Set([
+    'awoiaf.westeros.org',
+    'gameofthrones.fandom.com',
+    'iceandfire.fandom.com',
+  ])
 
   it('accounts for every archived character exactly once', () => {
     const listed = [
