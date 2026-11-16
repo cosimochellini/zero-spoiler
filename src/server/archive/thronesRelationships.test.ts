@@ -842,6 +842,31 @@ describe.each(LOCALES)(
       expect(summary(sansa, ep(8))).toBe(summary(sansa, ch(58)))
     })
 
+    it('tells Robin’s wish to see Tyrion fly at episode 5 and chapter 39', () => {
+      const tyrion: [string, string] = ['robin-arryn', 'tyrion-lannister']
+      const robin: [string, string] = ['lysa-arryn', 'robin-arryn']
+
+      expect(summary(tyrion, ch(38))).toBeDefined()
+      expect(summary(tyrion, ch(39))).not.toBe(summary(tyrion, ch(38)))
+      expect(summary(tyrion, ep(5))).toBe(summary(tyrion, ch(39)))
+      expect(summary(robin, ch(38))).toBeDefined()
+      expect(summary(robin, ch(39))).not.toBe(summary(robin, ch(38)))
+      expect(summary(robin, ep(5))).toBe(summary(robin, ch(39)))
+    })
+
+    it('stops calling Robert the children’s father at his death', () => {
+      for (const child of [
+        'joffrey-baratheon',
+        'myrcella-baratheon',
+        'tommen-baratheon',
+      ]) {
+        const robert: [string, string] = [child, 'robert-baratheon']
+
+        expect(type(robert, ch(50)), child).not.toBe(type(robert, ch(49)))
+        expect(type(robert, ep(7)), child).not.toBe(type(robert, ep(6)))
+      }
+    })
+
     it('has Sandor guard a king from Robert’s death', () => {
       const joffrey: [string, string] = ['sandor-clegane', 'joffrey-baratheon']
 

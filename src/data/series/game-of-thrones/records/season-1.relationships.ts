@@ -5228,12 +5228,12 @@ const crown = {
     type: { en: 'Boy he attacked', it: 'Ragazzo aggredito da lui' },
     summary: {
       en: 'A butcher’s boy he went at with his sword by the river. The boy was hunted down and killed.',
-      it: 'Il figlio di un macellaio che ha aggredito con la spada vicino al fiume. Il ragazzo è stato inseguito e ucciso.',
+      it: 'Il figlio di un macellaio che lui ha aggredito con la spada vicino al fiume. Il ragazzo è stato inseguito e ucciso.',
     },
   },
   jofRobertDead: {
     character: 'robert-baratheon',
-    type: { en: 'Father', it: 'Padre' },
+    type: { en: 'King who raised him', it: 'Re che lo ha cresciuto' },
     summary: {
       en: 'The king who raised him as his son. Robert died of a wound from a boar hunt, and Joffrey took the throne.',
       it: 'Il re che lo ha cresciuto come figlio. Robert è morto per la ferita di un cinghiale durante una caccia, e Joffrey è salito al trono.',
@@ -5315,7 +5315,7 @@ const crown = {
   },
   myrRobertDead: {
     character: 'robert-baratheon',
-    type: { en: 'Father', it: 'Padre' },
+    type: { en: 'King who raised her', it: 'Re che l’ha cresciuta' },
     summary: {
       en: 'The king who raised her as his daughter. He died of a wound from a boar hunt.',
       it: 'Il re che l’ha cresciuta come figlia. È morto per la ferita di un cinghiale durante una caccia.',
@@ -5363,7 +5363,7 @@ const crown = {
   },
   tomRobertDead: {
     character: 'robert-baratheon',
-    type: { en: 'Father', it: 'Padre' },
+    type: { en: 'King who raised him', it: 'Re che lo ha cresciuto' },
     summary: {
       en: 'The king who raised him as his son. He died of a wound from a boar hunt.',
       it: 'Il re che lo ha cresciuto come figlio. È morto per la ferita di un cinghiale durante una caccia.',
@@ -5450,10 +5450,10 @@ const crown = {
   },
   robJoffreyHeir: {
     character: 'joffrey-baratheon',
-    type: { en: 'Son', it: 'Figlio' },
+    type: { en: 'Heir', it: 'Erede' },
     summary: {
-      en: 'His eldest son and heir, who will take the throne.',
-      it: 'Il primogenito ed erede, che salirà al trono.',
+      en: 'His heir, the queen’s eldest son, who will take the throne.',
+      it: 'Il suo erede, primogenito della regina, che salirà al trono.',
     },
   },
   robDaenerysRecall: {
@@ -5461,7 +5461,7 @@ const crown = {
     type: { en: 'Enemy', it: 'Nemica' },
     summary: {
       en: 'The exiled Targaryen princess he wanted dead. As he dies, he asks for the killers sent after her to be called back.',
-      it: 'La principessa Targaryen in esilio che voleva morta. In punto di morte chiede di richiamare i sicari mandati a ucciderla.',
+      it: 'La principessa Targaryen in esilio che lui voleva morta. In punto di morte chiede di richiamare i sicari mandati a ucciderla.',
     },
   },
   // Renly
@@ -5539,6 +5539,14 @@ const crown = {
       it: 'Sua sorella, che arriva al Nido dell’Aquila con Tyrion Lannister prigioniero.',
     },
   },
+  lysRobinChapter: {
+    character: 'robin-arryn',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'Her only son, the young lord of the Eyrie.',
+      it: 'Il suo unico figlio, il giovane signore del Nido dell’Aquila.',
+    },
+  },
   lysRobin: {
     character: 'robin-arryn',
     type: { en: 'Son', it: 'Figlio' },
@@ -5560,7 +5568,7 @@ const crown = {
     type: { en: 'Prisoner', it: 'Prigioniero' },
     summary: {
       en: 'The queen’s brother, whom she kept in a sky cell. He wins his freedom in a trial by combat.',
-      it: 'Il fratello della regina, che ha tenuto in una cella del cielo. Si guadagna la libertà con un processo per duello.',
+      it: 'Il fratello della regina, che lei ha tenuto in una cella del cielo. Si guadagna la libertà con un processo per duello.',
     },
   },
   lysVardis: {
@@ -5580,6 +5588,22 @@ const crown = {
     },
   },
   // Robin
+  rbnLysaChapter: {
+    character: 'lysa-arryn',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who rules the Vale in his name.',
+      it: 'Sua madre, che governa la Valle in suo nome.',
+    },
+  },
+  rbnTyrionChapter: {
+    character: 'tyrion-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'A prisoner brought to the Eyrie.',
+      it: 'Un prigioniero portato al Nido dell’Aquila.',
+    },
+  },
   rbnLysa: {
     character: 'lysa-arryn',
     type: { en: 'Mother', it: 'Madre' },
@@ -5629,6 +5653,14 @@ const crown = {
       it: 'La signora che alla locanda chiede aiuto per arrestare Tyrion. Bronn cavalca nella sua scorta.',
     },
   },
+  brnCatelynPast: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady he escorted', it: 'Signora da lui scortata' },
+    summary: {
+      en: 'The lady who had Tyrion seized at the inn. Bronn rode in her escort until the trial at the Eyrie.',
+      it: 'La signora che ha fatto arrestare Tyrion alla locanda. Bronn ha cavalcato nella sua scorta fino al processo al Nido dell’Aquila.',
+    },
+  },
   brnTyrionChampion: {
     character: 'tyrion-lannister',
     type: { en: 'Employer', it: 'Datore di lavoro' },
@@ -5650,7 +5682,7 @@ const crown = {
     type: { en: 'Girl he found for Tyrion', it: 'Ragazza trovata per Tyrion' },
     summary: {
       en: 'A camp follower he finds for Tyrion on the eve of a battle.',
-      it: 'Una ragazza al seguito dell’accampamento che trova per Tyrion alla vigilia di una battaglia.',
+      it: 'Una ragazza al seguito dell’accampamento che lui trova per Tyrion alla vigilia di una battaglia.',
     },
   },
   // Shae
@@ -5746,7 +5778,7 @@ const crown = {
     type: { en: 'Client', it: 'Cliente' },
     summary: {
       en: 'Her regular client at Winterfell, whom she left to look for work in King’s Landing.',
-      it: 'Il suo cliente abituale a Grande Inverno, che ha lasciato per cercare lavoro ad Approdo del Re.',
+      it: 'Il suo cliente abituale a Grande Inverno, che lei ha lasciato per cercare lavoro ad Approdo del Re.',
     },
   },
   rosPycelle: {
@@ -5787,7 +5819,7 @@ const crown = {
     type: { en: 'Man he beheaded', it: 'Uomo decapitato da lui' },
     summary: {
       en: 'Robert’s Hand, whom he beheaded on Joffrey’s order with Eddard’s own sword.',
-      it: 'Il Primo Cavaliere di Robert, che ha decapitato per ordine di Joffrey con la spada dello stesso Eddard.',
+      it: 'Il Primo Cavaliere di Robert, decapitato da lui per ordine di Joffrey con la spada dello stesso Eddard.',
     },
   },
   ilyJoffrey: {
@@ -5840,7 +5872,7 @@ const crown = {
     type: { en: 'King', it: 'Re' },
     summary: {
       en: 'The king he was sworn to guard. Robert died of a wound from a boar hunt.',
-      it: 'Il re che aveva giurato di proteggere. Robert è morto per la ferita di un cinghiale durante una caccia.',
+      it: 'Il re che lui aveva giurato di proteggere. Robert è morto per la ferita di un cinghiale durante una caccia.',
     },
   },
   barNedProtector: {
@@ -5992,7 +6024,7 @@ const crown = {
     type: { en: 'Secret ally', it: 'Alleato segreto' },
     summary: {
       en: 'A magister of Pentos he meets in secret beneath the castle. They speak of the war to come.',
-      it: 'Un magistro di Pentos che incontra in segreto nei sotterranei del castello. Parlano della guerra che verrà.',
+      it: 'Un magistro di Pentos che lui incontra in segreto nei sotterranei del castello. Parlano della guerra che verrà.',
     },
   },
   varJorahEpisode: {
@@ -6073,7 +6105,7 @@ const crown = {
     type: { en: 'King', it: 'Re' },
     summary: {
       en: 'The king he served as Grand Maester. Robert died of a wound from a boar hunt.',
-      it: 'Il re che ha servito come gran maestro. Robert è morto per la ferita di un cinghiale durante una caccia.',
+      it: 'Il re di cui è stato gran maestro. Robert è morto per la ferita di un cinghiale durante una caccia.',
     },
   },
   pycNedSeized: {
@@ -6131,7 +6163,7 @@ const crown = {
     type: { en: 'Boy he killed', it: 'Ragazzo ucciso da lui' },
     summary: {
       en: 'A butcher’s boy he hunted down and killed after the quarrel by the river.',
-      it: 'Il figlio di un macellaio che ha inseguito e ucciso dopo la lite al fiume.',
+      it: 'Il figlio di un macellaio che lui ha inseguito e ucciso dopo la lite al fiume.',
     },
   },
   // Show: "The Wolf and the Lion". Books: Eddard VII (chapter 31), after
@@ -6149,7 +6181,7 @@ const crown = {
     type: { en: 'Knight he saved', it: 'Cavaliere salvato da lui' },
     summary: {
       en: 'A young knight he saves from Gregor’s sword. Loras gives him the victory.',
-      it: 'Un giovane cavaliere che salva dalla spada di Gregor. Loras gli concede la vittoria.',
+      it: 'Un giovane cavaliere che lui salva dalla spada di Gregor. Loras gli concede la vittoria.',
     },
   },
   // Show: "Fire and Blood". Books: Sansa VI (chapter 68).
@@ -6246,7 +6278,7 @@ const crown = {
   // Show only: "Fire and Blood".
   genArya: {
     character: 'arya-stark',
-    type: { en: 'Fellow recruit', it: 'Compagna di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'Eddard Stark’s daughter, travelling as a boy called Arry. Gendry takes her side when the other recruits pick on her.',
       it: 'La figlia di Eddard Stark, che viaggia travestita da ragazzo con il nome di Arry. Gendry si schiera con lei quando le altre reclute la prendono di mira.',
@@ -6270,7 +6302,7 @@ const crown = {
   },
   genHotPie: {
     character: 'hot-pie',
-    type: { en: 'Fellow recruit', it: 'Compagno di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'A recruit who tries to take Arry’s sword. Gendry threatens him to make him leave her alone.',
       it: 'Una recluta che prova a prendere la spada di Arry. Gendry lo minaccia perché la lasci in pace.',
@@ -6282,7 +6314,7 @@ const crown = {
     type: { en: 'Knight killed by him', it: 'Cavaliere ucciso da lui' },
     summary: {
       en: 'A young knight he killed with his lance in the Hand’s tourney.',
-      it: 'Un giovane cavaliere che ha ucciso con la lancia nel torneo del Primo Cavaliere.',
+      it: 'Un giovane cavaliere ucciso da lui con la lancia nel torneo del Primo Cavaliere.',
     },
   },
   greSandor: {
@@ -6390,8 +6422,8 @@ const crown = {
     character: 'joffrey-baratheon',
     type: { en: 'Attacker', it: 'Aggressore' },
     summary: {
-      en: 'The king’s eldest son, who drew his sword on him by the river.',
-      it: 'Il primogenito del re, che ha sguainato la spada contro di lui vicino al fiume.',
+      en: 'The queen’s eldest son, who drew his sword on him by the river.',
+      it: 'Il primogenito della regina, che ha sguainato la spada contro di lui vicino al fiume.',
     },
   },
   mycSandor: {
@@ -6474,7 +6506,7 @@ const crown = {
     type: { en: 'King', it: 'Re' },
     summary: {
       en: 'The late king he was sworn to guard. Robert died of a wound from a boar hunt.',
-      it: 'Il re defunto che aveva giurato di proteggere. Robert è morto per la ferita di un cinghiale durante una caccia.',
+      it: 'Il re defunto che lui aveva giurato di proteggere. Robert è morto per la ferita di un cinghiale durante una caccia.',
     },
   },
   // Books: Sansa IV (chapter 52), as Mandon's own gate has it.
@@ -6492,7 +6524,7 @@ const crown = {
     type: { en: 'King he squires for', it: 'Re di cui è scudiero' },
     summary: {
       en: 'The king he serves as squire. Robert has little patience with him and mocks him.',
-      it: 'Il re che serve come scudiero. Robert ha poca pazienza con lui e lo prende in giro.',
+      it: 'Il re di cui è scudiero. Robert ha poca pazienza con lui e lo prende in giro.',
     },
   },
   lanRobertDead: {
@@ -6500,7 +6532,7 @@ const crown = {
     type: { en: 'King he squired for', it: 'Re di cui era scudiero' },
     summary: {
       en: 'The king he served as squire. Lancel kept him in wine on the hunt where a boar wounded him, and Robert died.',
-      it: 'Il re che serviva come scudiero. Lancel gli ha versato vino per tutta la caccia in cui un cinghiale lo ha ferito, e Robert è morto.',
+      it: 'Il re di cui era scudiero. Lancel gli ha versato vino per tutta la caccia in cui un cinghiale lo ha ferito, e Robert è morto.',
     },
   },
   // Show only: "Fire and Blood".
@@ -6606,8 +6638,8 @@ const crown = {
     character: 'robert-baratheon',
     type: { en: 'Father of her child', it: 'Padre di sua figlia' },
     summary: {
-      en: 'The king, the father of her baby daughter. He died of a wound from a boar hunt.',
-      it: 'Il re, padre della sua bambina. È morto per la ferita di un cinghiale durante una caccia.',
+      en: 'The late king, the father of her baby daughter. He died of a wound from a boar hunt.',
+      it: 'Il re defunto, padre della sua bambina. È morto per la ferita di un cinghiale durante una caccia.',
     },
   },
   // Beric. Show: "A Golden Crown". Books: Eddard XI (chapter 44), as his
@@ -6847,7 +6879,7 @@ const crown = {
     type: { en: 'Commander', it: 'Comandante' },
     summary: {
       en: 'The lord he serves in the war against the Starks.',
-      it: 'Il lord che serve nella guerra contro gli Stark.',
+      it: 'Il lord al cui servizio combatte nella guerra contro gli Stark.',
     },
   },
   // Podrick, books only: Tyrion VIII (chapter 63).
@@ -6861,7 +6893,7 @@ const crown = {
   },
   podKevan: {
     character: 'kevan-lannister',
-    type: { en: 'Lord who placed him', it: 'Lord che lo ha assegnato' },
+    type: { en: 'Knight who placed him', it: 'Cavaliere che lo ha assegnato' },
     summary: {
       en: 'Tyrion’s uncle, who gives him to Tyrion as a squire before the battle.',
       it: 'Lo zio di Tyrion, che lo assegna a Tyrion come scudiero prima della battaglia.',
@@ -6889,8 +6921,8 @@ const crown = {
     character: 'robb-stark',
     type: { en: 'Commander', it: 'Comandante' },
     summary: {
-      en: 'The young lord whose army he marches with after the bargain. At Riverrun he advises ransoming Jaime Lannister.',
-      it: 'Il giovane lord con il cui esercito marcia dopo l’accordo. A Delta delle Acque gli consiglia di riscattare Jaime Lannister.',
+      en: 'Catelyn’s son, whose army he marches with after the bargain. At Riverrun he advises ransoming Jaime Lannister, and the northern lords name Robb King in the North instead.',
+      it: 'Il figlio di Catelyn, con il cui esercito marcia dopo l’accordo. A Delta delle Acque gli consiglia di riscattare Jaime Lannister, ma i lord del Nord proclamano Robb Re del Nord.',
     },
   },
   // The Tullys, books only: Catelyn VI (chapter 35), Catelyn VIII (chapter
@@ -7008,7 +7040,7 @@ const crown = {
   // links are the show's ("Fire and Blood").
   hotArya: {
     character: 'arya-stark',
-    type: { en: 'Fellow recruit', it: 'Compagna di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'Eddard Stark’s daughter, travelling as a boy called Arry. Hot Pie tries to take her sword, and she draws it on him.',
       it: 'La figlia di Eddard Stark, che viaggia travestita da ragazzo con il nome di Arry. Frittella prova a prenderle la spada, e lei gliela punta contro.',
@@ -7016,7 +7048,7 @@ const crown = {
   },
   hotGendry: {
     character: 'gendry',
-    type: { en: 'Fellow recruit', it: 'Compagno di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'Another recruit, who takes Arry’s side and threatens him.',
       it: 'Un’altra recluta, che si schiera con Arry e lo minaccia.',
@@ -7032,7 +7064,7 @@ const crown = {
   },
   hotLommy: {
     character: 'lommy',
-    type: { en: 'Fellow recruit', it: 'Compagno di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'Another recruit, who picks on Arry with him.',
       it: 'Un’altra recluta, che prende di mira Arry insieme a lui.',
@@ -7040,7 +7072,7 @@ const crown = {
   },
   lomArya: {
     character: 'arya-stark',
-    type: { en: 'Fellow recruit', it: 'Compagna di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'Eddard Stark’s daughter, travelling as a boy called Arry. Lommy backs Hot Pie when he tries to take her sword.',
       it: 'La figlia di Eddard Stark, che viaggia travestita da ragazzo con il nome di Arry. Lommy spalleggia Frittella quando lui prova a prenderle la spada.',
@@ -7048,7 +7080,7 @@ const crown = {
   },
   lomGendry: {
     character: 'gendry',
-    type: { en: 'Fellow recruit', it: 'Compagno di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'Another recruit, who takes Arry’s side and threatens him.',
       it: 'Un’altra recluta, che si schiera con Arry e lo minaccia.',
@@ -7064,7 +7096,7 @@ const crown = {
   },
   lomHotPie: {
     character: 'hot-pie',
-    type: { en: 'Fellow recruit', it: 'Compagno di viaggio' },
+    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
     summary: {
       en: 'Another recruit, who picks on Arry with him.',
       it: 'Un’altra recluta, che prende di mira Arry insieme a lui.',
@@ -7118,7 +7150,7 @@ const crown = {
     type: { en: 'Prisoner', it: 'Prigioniero' },
     summary: {
       en: 'The prisoner he helps seize and escort.',
-      it: 'Il prigioniero che aiuta ad arrestare e a scortare.',
+      it: 'Il prigioniero che lui aiuta ad arrestare e a scortare.',
     },
   },
   // The Vale, books only: Catelyn VI (chapter 35), Tyrion V (chapter 39),
@@ -10079,9 +10111,25 @@ export const season1Relationships = {
     },
   ],
   'lysa-arryn': [
+    // Show: "The Wolf and the Lion" (GOT105) has her nurse him. The pages
+    // read do not place it in Catelyn VI, so the books wait for Tyrion V
+    // (chapter 39), which is later and safe.
     {
       episode: 5,
       chapter: 35,
+      source: 'episode',
+      value: [crown.lysCatelyn, crown.lysRobin, crown.lysTyrion],
+    },
+    {
+      episode: 5,
+      chapter: 35,
+      source: 'chapter',
+      value: [crown.lysCatelyn, crown.lysRobinChapter, crown.lysTyrion],
+    },
+    {
+      episode: 5,
+      chapter: 39,
+      source: 'chapter',
       value: [crown.lysCatelyn, crown.lysRobin, crown.lysTyrion],
     },
     {
@@ -10097,9 +10145,24 @@ export const season1Relationships = {
     },
   ],
   'robin-arryn': [
+    // The same split as Lysa's: the show has the nursing and the fly line in
+    // episode 5 (GOT105); the books wait for Tyrion V (chapter 39).
     {
       episode: 5,
       chapter: 35,
+      source: 'episode',
+      value: [crown.rbnLysa, crown.rbnCatelyn, crown.rbnTyrion],
+    },
+    {
+      episode: 5,
+      chapter: 35,
+      source: 'chapter',
+      value: [crown.rbnLysaChapter, crown.rbnCatelyn, crown.rbnTyrionChapter],
+    },
+    {
+      episode: 5,
+      chapter: 39,
+      source: 'chapter',
       value: [crown.rbnLysa, crown.rbnCatelyn, crown.rbnTyrion],
     },
     {
@@ -10116,7 +10179,7 @@ export const season1Relationships = {
     {
       episode: 6,
       chapter: 41,
-      value: [crown.brnTyrionChampion, crown.brnVardis, crown.brnCatelyn],
+      value: [crown.brnTyrionChampion, crown.brnVardis, crown.brnCatelynPast],
     },
     {
       episode: 9,
