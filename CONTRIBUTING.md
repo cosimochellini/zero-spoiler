@@ -142,6 +142,11 @@ Beside it:
   `Episode N (2011)` and `Chapter N` page must be pinned from the Hunter x
   Hunter wiki; a One Piece page of the same title is no evidence, and the
   reverse holds too.
+- `game-of-thrones-relationships.json` lists every first-stage Game of Thrones
+  character once: under `authored`, with the URLs of the A Wiki of Ice and Fire
+  (books) and Game of Thrones Wiki (show) pages read, under `omitted`, with the
+  reason, or under `pending`, with the issue that will author it. Revision
+  pinning in `sources.json` is still to come.
 
 The wiki is read for facts only; no passages, dialogue, frames or scans enter
 the repository. A decision the data cannot show, such as a gate delayed behind
