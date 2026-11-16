@@ -2819,8 +2819,8 @@ const north = {
     character: 'petyr-baelish',
     type: { en: 'Betrayer', it: 'Traditore' },
     summary: {
-      en: 'The master of coin who promised him the City Watch, then held a knife to his throat when the guards turned on him.',
-      it: 'Il maestro del conio che gli aveva promesso la Guardia cittadina e poi gli ha puntato un pugnale alla gola quando le guardie gli si sono rivoltate contro.',
+      en: 'The master of coin, who promised to win him the City Watch. When Eddard moved against the queen, the Watch turned on his men.',
+      it: 'Il maestro del conio, che aveva promesso di procurargli la Guardia cittadina. Quando Eddard si è mosso contro la regina, la Guardia si è rivoltata contro i suoi uomini.',
     },
   },
   nedSansaCourt: {
@@ -2962,8 +2962,8 @@ const north = {
     character: 'lysa-arryn',
     type: { en: 'Sister', it: 'Sorella' },
     summary: {
-      en: 'Her younger sister, the widow of the Hand. Catelyn brings Tyrion to her and finds her changed.',
-      it: 'Sua sorella minore, vedova del Primo Cavaliere. Catelyn le porta Tyrion e la trova cambiata.',
+      en: 'Her younger sister, the widow of the Hand. Catelyn brings Tyrion to her at the Eyrie, and Lysa takes him into her custody.',
+      it: 'Sua sorella minore, vedova del Primo Cavaliere. Catelyn le porta Tyrion al Nido dell’Aquila, e Lysa lo prende in custodia.',
     },
   },
   catWalder: {
@@ -3778,8 +3778,8 @@ const north = {
     character: 'jon-snow',
     type: { en: 'Nephew', it: 'Nipote' },
     summary: {
-      en: 'His brother’s bastard son. Jon asks to join the Night’s Watch, and Benjen warns him the life is hard.',
-      it: 'Il figlio bastardo di suo fratello. Jon chiede di unirsi ai Guardiani della notte, e Benjen lo avverte che è una vita dura.',
+      en: 'His brother’s bastard son. Jon asks to join the Night’s Watch, and Benjen tries to talk him out of it.',
+      it: 'Il figlio bastardo di suo fratello. Jon chiede di unirsi ai Guardiani della notte, e Benjen cerca di dissuaderlo.',
     },
   },
   benEddard: {
@@ -4130,16 +4130,16 @@ const north = {
     character: 'catelyn-stark',
     type: { en: 'Lady', it: 'Signora' },
     summary: {
-      en: 'The lady of Winterfell, whom he escorts. He helps her seize Tyrion at the inn.',
-      it: 'La signora di Grande Inverno, che scorta. La aiuta a catturare Tyrion alla locanda.',
+      en: 'The lady of Winterfell, whom he escorts. He is with her when she seizes Tyrion at the inn.',
+      it: 'La signora di Grande Inverno, che scorta. È con lei quando cattura Tyrion alla locanda.',
     },
   },
   rodTyrion: {
     character: 'tyrion-lannister',
     type: { en: 'Captive', it: 'Prigioniero' },
     summary: {
-      en: 'The queen’s brother, whom Catelyn accuses of sending a killer after Bran. Rodrik helps take him.',
-      it: 'Il fratello della regina, che Catelyn accusa di aver mandato un sicario da Bran. Rodrik la aiuta a catturarlo.',
+      en: 'The queen’s brother, whom Catelyn accuses of sending a killer after Bran. Rodrik is with her when she takes him.',
+      it: 'Il fratello della regina, che Catelyn accusa di aver mandato un sicario da Bran. Rodrik è con lei quando lo cattura.',
     },
   },
   rodJoryDead: {
@@ -4587,8 +4587,8 @@ const north = {
     character: 'robb-stark',
     type: { en: 'Liege', it: 'Signore' },
     summary: {
-      en: 'Lord Eddard’s heir, who has called the banners. Robett comes to Winterfell and asks him for a command.',
-      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Robett viene a Grande Inverno e gli chiede un comando.',
+      en: 'Lord Eddard’s heir, who has called the banners. Robett is among the northmen who come to Winterfell for him.',
+      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Robett è tra gli uomini del Nord che arrivano a Grande Inverno per lui.',
     },
   },
   maeRobb: {
@@ -4779,16 +4779,24 @@ const north = {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
     summary: {
-      en: 'Lord Eddard, whom he followed south. After Jory’s death Alyn led his guard, until Eddard sent him away with Lord Beric’s company.',
-      it: 'Lord Eddard, che ha seguito al sud. Dopo la morte di Jory Alyn ha guidato la sua guardia, finché Eddard non lo ha mandato via con la compagnia di lord Beric.',
+      en: 'Lord Eddard, whom he followed south. As Hand of the King, Eddard sent him at the head of twenty men in Lord Beric’s company.',
+      it: 'Lord Eddard, che ha seguito al sud. Come Primo Cavaliere, Eddard lo ha mandato al comando di venti uomini nella compagnia di lord Beric.',
+    },
+  },
+  alyBeric: {
+    character: 'beric-dondarrion',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The lord whose company Eddard sends against Gregor Clegane. Alyn leads twenty of Eddard’s men in it.',
+      it: 'Il lord della cui compagnia Eddard si serve contro Gregor Clegane. Alyn vi guida venti uomini di Eddard.',
     },
   },
   alyEddardDead: {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
     summary: {
-      en: 'Lord Eddard, whose guard Alyn led after Jory’s death. Eddard was beheaded in the capital.',
-      it: 'Lord Eddard, di cui Alyn ha guidato la guardia dopo la morte di Jory. Eddard è stato decapitato nella capitale.',
+      en: 'Lord Eddard, who sent him with twenty men in Lord Beric’s company. Eddard was beheaded in the capital.',
+      it: 'Lord Eddard, che lo aveva mandato con venti uomini nella compagnia di lord Beric. Eddard è stato decapitato nella capitale.',
     },
   },
 } satisfies Record<string, Relationship>
@@ -6595,9 +6603,9 @@ export const season1Relationships = {
       value: [north.tomEddardDead],
     },
   ],
-  // Books only, as their records are. Harwin joins Lord Beric's company at
-  // Sansa III (chapter 45); Alyn takes the Hand's guard at Eddard XII
-  // (chapter 46).
+  // Books only, as their records are. Eddard sends Harwin, and Alyn at the
+  // head of twenty men, with Lord Beric's company: pinned to the records'
+  // steps at chapters 45 and 46.
   'harwin': [
     {
       episode: 1,
@@ -6631,13 +6639,13 @@ export const season1Relationships = {
       episode: 6,
       chapter: 46,
       source: 'chapter',
-      value: [north.alyEddardCaptain],
+      value: [north.alyEddardCaptain, north.alyBeric],
     },
     {
       episode: 9,
       chapter: 66,
       source: 'chapter',
-      value: [north.alyEddardDead],
+      value: [north.alyEddardDead, north.alyBeric],
     },
   ],
 
