@@ -476,7 +476,7 @@ describe.each(LOCALES)(
       expect(said(...lord, ep(8))).toBe(said(...lord, ch(52)))
     })
 
-    it('tells the Twins at chapter 60, two chapters before Eddard dies', () => {
+    it('tells the Twins at chapter 60 and Eddard’s death at 66', () => {
       expect(people('catelyn-stark', ch(59))).not.toContain('walder-frey')
       expect(people('catelyn-stark', ch(60))).toContain('walder-frey')
       expect(people('catelyn-stark', ep(8))).not.toContain('walder-frey')
@@ -553,6 +553,24 @@ describe.each(LOCALES)(
       expect(said('harwin', 'hullen', ch(51))).not.toBe(
         said('harwin', 'hullen', ch(50)),
       )
+    })
+
+    it('turns Eddard to the past tense on Rickon’s and Luwin’s pages at 9 / 66', () => {
+      for (const owner of ['rickon-stark', 'luwin']) {
+        const father = [owner, 'eddard-stark'] as const
+
+        expect(said(...father, ch(66)), owner).not.toBe(said(...father, ch(65)))
+        expect(said(...father, ep(9)), owner).not.toBe(said(...father, ep(8)))
+        expect(said(...father, ep(9)), owner).toBe(said(...father, ch(66)))
+      }
+    })
+
+    it('holds Sansa on Arya’s page at episode 8 but chapter 52', () => {
+      const sister = ['arya-stark', 'sansa-stark'] as const
+
+      expect(said(...sister, ch(52))).not.toBe(said(...sister, ch(51)))
+      expect(said(...sister, ch(51))).not.toBe(said(...sister, ep(8)))
+      expect(said(...sister, ep(8))).toBe(said(...sister, ch(52)))
     })
 
     it('opens Mikken in each medium at its own gate', () => {

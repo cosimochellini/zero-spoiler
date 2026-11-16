@@ -1672,8 +1672,8 @@ const north = {
     character: 'robb-stark',
     type: { en: 'Eldest son', it: 'Figlio maggiore' },
     summary: {
-      en: 'Her eldest son, who runs Winterfell while she cannot leave Bran’s side.',
-      it: 'Il primogenito, che manda avanti Grande Inverno mentre lei non si stacca da Bran.',
+      en: 'Her eldest son, who runs Winterfell while she is away.',
+      it: 'Il primogenito, che manda avanti Grande Inverno mentre lei è lontana.',
     },
   },
   catRodrik: {
@@ -1850,8 +1850,8 @@ const north = {
     character: 'eddard-stark',
     type: { en: 'Father', it: 'Padre' },
     summary: {
-      en: 'His father, who has gone south as Hand of the King and left him the castle.',
-      it: 'Suo padre, partito per il sud come Primo Cavaliere, che gli ha lasciato il castello.',
+      en: 'His father, who went south as Hand of the King and left him the castle.',
+      it: 'Suo padre, che è partito per il sud come Primo Cavaliere e gli ha lasciato il castello.',
     },
   },
   robbBranRescue: {
@@ -2133,8 +2133,8 @@ const north = {
     character: 'eddard-stark',
     type: { en: 'Father', it: 'Padre' },
     summary: {
-      en: 'Her father, the Hand of the King. He killed her wolf with his own hands.',
-      it: 'Suo padre, Primo Cavaliere. Ha ucciso la sua lupa con le proprie mani.',
+      en: 'Her father. As Hand of the King he killed her wolf with his own hands.',
+      it: 'Suo padre. Da Primo Cavaliere ha ucciso la sua lupa con le proprie mani.',
     },
   },
   sanAryaQuarrel: {
@@ -2284,8 +2284,8 @@ const north = {
     character: 'eddard-stark',
     type: { en: 'Father', it: 'Padre' },
     summary: {
-      en: 'Her father, the Hand of the King. He finds her sword and, rather than take it away, hires her a teacher.',
-      it: 'Suo padre, Primo Cavaliere. Scopre la sua spada e, invece di togliergliela, le trova un maestro.',
+      en: 'Her father. As Hand of the King he found her sword and, rather than take it away, hired her a teacher.',
+      it: 'Suo padre. Da Primo Cavaliere ha scoperto la sua spada e, invece di togliergliela, le ha trovato un maestro.',
     },
   },
   arySyrio: {
@@ -2366,6 +2366,14 @@ const north = {
     summary: {
       en: 'Her swordmaster, who held off the guards so she could run. She never saw what became of him.',
       it: 'Il suo maestro di spada, che ha tenuto a bada le guardie per farla scappare. Lei non ha mai saputo che fine abbia fatto.',
+    },
+  },
+  aryaSansaApart: {
+    character: 'sansa-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her elder sister, still in the castle when Arya runs.',
+      it: 'La sorella maggiore, ancora nel castello quando Arya fugge.',
     },
   },
   aryaSansaHeld: {
@@ -3072,8 +3080,8 @@ const north = {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
     summary: {
-      en: 'The lord whose daughters she taught. Their heads were set side by side on the walls.',
-      it: 'Il lord di cui istruiva le figlie. Le loro teste sono state esposte una accanto all’altra sulle mura.',
+      en: 'The lord whose daughters she taught. His head and hers were set side by side on the walls.',
+      it: 'Il lord di cui istruiva le figlie. La sua testa e quella della septa sono state esposte una accanto all’altra sulle mura.',
     },
   },
 
@@ -3126,6 +3134,14 @@ const north = {
     summary: {
       en: 'Sansa’s younger sister, whose clumsy needlework she and Sansa whisper about.',
       it: 'La sorella minore di Sansa, del cui ricamo maldestro lei e Sansa parlano sottovoce.',
+    },
+  },
+  jeySansaApart: {
+    character: 'sansa-stark',
+    type: { en: 'Best friend', it: 'Migliore amica' },
+    summary: {
+      en: 'Lord Eddard’s elder daughter. After the attack on the household they were locked in a room together, until Jeyne was taken away.',
+      it: 'La figlia maggiore di lord Eddard. Dopo l’attacco alla casa sono state rinchiuse insieme in una stanza, finché Jeyne non è stata portata via.',
     },
   },
   jeyVayon: {
@@ -3421,8 +3437,8 @@ const north = {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
     summary: {
-      en: 'The Hand of the King, whom he guards. Eddard sends him with a letter for Stannis Baratheon.',
-      it: 'Il Primo Cavaliere, di cui è la guardia. Eddard gli affida una lettera per Stannis Baratheon.',
+      en: 'Lord Eddard, who sends him away from the capital with a letter for Stannis Baratheon.',
+      it: 'Lord Eddard, che lo manda via dalla capitale con una lettera per Stannis Baratheon.',
     },
   },
   tomEddardDead: {
@@ -4584,6 +4600,30 @@ export const season1Relationships = {
     },
     // The crypts: Osha takes Bran down in "Fire and Blood", Maester Luwin
     // in Bran VII.
+    // Eddard dies at 9 / 66, a step before the crypts.
+    {
+      episode: 9,
+      chapter: 66,
+      source: 'episode',
+      value: [
+        north.ricEddardDead,
+        north.ricRobbWar,
+        north.ricCatelyn,
+        north.ricBran,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      source: 'chapter',
+      value: [
+        north.ricShaggydog,
+        north.ricEddardDead,
+        north.ricCatelyn,
+        north.ricRobb,
+        north.ricBran,
+      ],
+    },
     {
       episode: 10,
       chapter: 67,
@@ -4722,9 +4762,36 @@ export const season1Relationships = {
         north.aryaNymeriaGone,
       ],
     },
+    // The show holds Sansa in the same episode; the books tell it in
+    // Sansa IV (chapter 52).
     {
       episode: 8,
       chapter: 51,
+      source: 'episode',
+      value: [
+        north.arySyrioStand,
+        north.aryaEddardSeized,
+        north.aryaMeryn,
+        north.aryaSansaHeld,
+        north.aryaJonNeedle,
+      ],
+    },
+    {
+      episode: 8,
+      chapter: 51,
+      source: 'chapter',
+      value: [
+        north.arySyrioStand,
+        north.aryaEddardSeized,
+        north.aryaMeryn,
+        north.aryaSansaApart,
+        north.aryaJonNeedle,
+      ],
+    },
+    {
+      episode: 8,
+      chapter: 52,
+      source: 'chapter',
       value: [
         north.arySyrioStand,
         north.aryaEddardSeized,
@@ -4934,6 +5001,26 @@ export const season1Relationships = {
       value: [north.luwBran, north.luwRobb, north.luwEddard, north.luwCatelyn],
     },
     {
+      episode: 8,
+      chapter: 54,
+      value: [
+        north.luwBran,
+        north.luwRobbWar,
+        north.luwEddard,
+        north.luwCatelyn,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        north.luwBran,
+        north.luwRobbWar,
+        north.luwEddardDead,
+        north.luwCatelyn,
+      ],
+    },
+    {
       episode: 10,
       chapter: 67,
       value: [
@@ -5079,7 +5166,7 @@ export const season1Relationships = {
       episode: 8,
       chapter: 52,
       source: 'chapter',
-      value: [north.jeySansa, north.jeyVayonDead, north.jeyArya],
+      value: [north.jeySansaApart, north.jeyVayonDead, north.jeyArya],
     },
   ],
   // Each medium at its own gate: "The Kingsroad" and Bran VI.
