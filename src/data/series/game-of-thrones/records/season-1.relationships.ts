@@ -2081,8 +2081,10 @@ const links = {
     },
   },
 
-  // Will, Gared and Waymar Royce. All three are dead by the end of the
-  // scene that opens them, so their cards tell it in the past tense.
+  // Will, Gared and Waymar Royce. The show's three, and the book's Will and
+  // Waymar, die in their opening scene; the book's Gared is beheaded in
+  // Bran I (chapter 2), where his own `source: 'chapter'` entry opens. Their
+  // cards tell it in the past tense.
   willWaymar: {
     character: 'waymar-royce',
     type: { en: 'Commander', it: 'Comandante' },
