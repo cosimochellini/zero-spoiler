@@ -386,6 +386,235 @@ function magoWords(mode: Mode, locale: Locale): string {
   return relation.summary[locale]
 }
 
+// Winterfell and the North (#1345): each link the two media time or word
+// apart, checked just before its pin and at it.
+describe.each(LOCALES)(
+  'Game of Thrones northern revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    // What one owner's card says about one person at a bookmark.
+    const said = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.summary
+    const typed = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.type
+
+    it('has Jaime push Bran in episode 1 but chapter 9', () => {
+      expect(people('bran-stark', ep(1))).toContain('jaime-lannister')
+      expect(people('bran-stark', ch(8))).not.toContain('jaime-lannister')
+      expect(people('bran-stark', ch(9))).toContain('jaime-lannister')
+    })
+
+    it('names Sansa’s wolf at episode 1 but chapter 16', () => {
+      expect(people('sansa-stark', ep(1))).toContain('lady-direwolf')
+      expect(people('sansa-stark', ch(15))).not.toContain('lady-direwolf')
+      expect(people('sansa-stark', ch(16))).toContain('lady-direwolf')
+    })
+
+    it('has Nymeria bite Joffrey at her show gate but in chapter 17', () => {
+      expect(people('nymeria', ep(2))).toContain('joffrey-baratheon')
+      expect(people('nymeria', ch(8))).toStrictEqual(['arya-stark'])
+      expect(people('nymeria', ch(16))).not.toContain('joffrey-baratheon')
+      expect(people('nymeria', ch(17))).toContain('joffrey-baratheon')
+    })
+
+    it('gives Grey Wind his master at chapter 11 and the Greatjon at 8 / 54', () => {
+      expect(projected('grey-wind', ch(10), locale)).toStrictEqual([])
+      expect(people('grey-wind', ch(11))).toStrictEqual(['robb-stark'])
+      expect(people('grey-wind', ch(53))).not.toContain('greatjon-umber')
+      expect(people('grey-wind', ch(54))).toContain('greatjon-umber')
+      expect(projected('grey-wind', ep(7), locale)).toStrictEqual([])
+      expect(people('grey-wind', ep(8))).toContain('greatjon-umber')
+    })
+
+    it('names Rickon’s wolf at chapter 25 but episode 10', () => {
+      expect(people('rickon-stark', ch(24))).not.toContain('shaggydog')
+      expect(people('rickon-stark', ch(25))).toContain('shaggydog')
+      expect(people('rickon-stark', ep(9))).not.toContain('shaggydog')
+      expect(people('rickon-stark', ep(10))).toContain('shaggydog')
+    })
+
+    it('takes Bran into the crypts with Osha in the show and Luwin in the books', () => {
+      expect(people('rickon-stark', ep(9))).not.toContain('osha')
+      expect(people('rickon-stark', ep(10))).toContain('osha')
+      expect(people('rickon-stark', ep(10))).not.toContain('luwin')
+      expect(people('rickon-stark', ch(66))).not.toContain('luwin')
+      expect(people('rickon-stark', ch(67))).toContain('luwin')
+      expect(people('rickon-stark', ch(67))).not.toContain('osha')
+      expect(people('shaggydog', ep(10))).toContain('bran-stark')
+      expect(people('shaggydog', ch(66))).not.toContain('luwin')
+      expect(people('shaggydog', ch(67))).toContain('luwin')
+      expect(people('osha', ep(9))).not.toContain('rickon-stark')
+      expect(people('osha', ep(10))).toContain('rickon-stark')
+      expect(people('osha', ch(archive.series.chapterCeiling))).not.toContain(
+        'rickon-stark',
+      )
+    })
+
+    it('kills Tomard in chapter 50 and lets the show’s survive', () => {
+      const lord = ['tomard', 'eddard-stark'] as const
+
+      expect(said(...lord, ch(50))).not.toBe(said(...lord, ch(49)))
+      expect(said(...lord, ep(9))).not.toBe(said(...lord, ep(8)))
+      expect(said(...lord, ep(9))).not.toBe(said(...lord, ch(50)))
+    })
+
+    it('opens Vayon Poole at his death in the show and alive in the books', () => {
+      expect(projected('vayon-poole', ch(16), locale)).toStrictEqual([])
+      expect(people('vayon-poole', ch(17))).toContain('jeyne-poole')
+      expect(people('vayon-poole', ep(8))).toStrictEqual(['eddard-stark'])
+
+      const lord = ['vayon-poole', 'eddard-stark'] as const
+
+      expect(said(...lord, ch(52))).not.toBe(said(...lord, ch(51)))
+      expect(said(...lord, ep(8))).toBe(said(...lord, ch(52)))
+    })
+
+    it('tells the Twins at chapter 60 and Eddard’s death at 66', () => {
+      expect(people('catelyn-stark', ch(59))).not.toContain('walder-frey')
+      expect(people('catelyn-stark', ch(60))).toContain('walder-frey')
+      expect(people('catelyn-stark', ep(8))).not.toContain('walder-frey')
+      expect(people('catelyn-stark', ep(9))).toContain('walder-frey')
+
+      const husband = ['catelyn-stark', 'eddard-stark'] as const
+
+      expect(said(...husband, ch(66))).not.toBe(said(...husband, ch(65)))
+      expect(said(...husband, ep(9))).toBe(said(...husband, ch(66)))
+      expect(people('robb-stark', ch(63))).not.toContain('jaime-lannister')
+      expect(people('robb-stark', ch(64))).toContain('jaime-lannister')
+    })
+
+    it('opens Old Nan with Bran in the show and Catelyn in the books', () => {
+      expect(people('old-nan', ep(3))).toStrictEqual(['bran-stark'])
+      expect(people('old-nan', ch(15))).toStrictEqual(['catelyn-stark'])
+      expect(people('old-nan', ch(24))).not.toContain('bran-stark')
+      expect(people('old-nan', ch(25))).toContain('bran-stark')
+    })
+
+    it('keeps the show’s own scenes out of the books', () => {
+      expect(people('benjen-stark', ep(2))).not.toContain('yoren')
+      expect(people('benjen-stark', ep(3))).toContain('yoren')
+      expect(people('rickon-stark', ep(7))).toStrictEqual(
+        people('rickon-stark', ep(1)),
+      )
+      expect(said('rickon-stark', 'robb-stark', ep(8))).not.toBe(
+        said('rickon-stark', 'robb-stark', ep(7)),
+      )
+      expect(people('osha', ep(6))).not.toContain('luwin')
+      expect(people('osha', ep(7))).toContain('luwin')
+      expect(people('mordane', ep(7))).toStrictEqual(people('mordane', ep(1)))
+      expect(said('mordane', 'sansa-stark', ep(8))).not.toBe(
+        said('mordane', 'sansa-stark', ep(7)),
+      )
+      expect(people('galbart-glover', ep(8))).toContain('greatjon-umber')
+      expect(people('galbart-glover', ch(56))).toStrictEqual(['robb-stark'])
+    })
+
+    it('swears Theon to King Robb and keeps the show’s scenes out of the books', () => {
+      const king = ['theon-greyjoy', 'robb-stark'] as const
+
+      expect(typed(...king, ep(10))).not.toBe(typed(...king, ep(9)))
+      expect(typed(...king, ch(archive.series.chapterCeiling))).toBe(
+        typed(...king, ep(9)),
+      )
+
+      for (const id of ['benjen-stark', 'osha', 'galbart-glover']) {
+        const last = people(id, ch(archive.series.chapterCeiling))
+
+        expect(last, id).not.toContain('yoren')
+        expect(last, id).not.toContain('luwin')
+        expect(last, id).not.toContain('greatjon-umber')
+      }
+    })
+
+    it('tells Smalljon, Dacey and Jeyne Poole in the books alone', () => {
+      expect(people('greatjon-umber', ch(63))).not.toContain('smalljon-umber')
+      expect(people('greatjon-umber', ch(64))).toContain('smalljon-umber')
+      expect(people('maege-mormont', ch(63))).not.toContain('dacey-mormont')
+      expect(people('maege-mormont', ch(64))).toContain('dacey-mormont')
+      expect(people('mordane', ch(8))).toContain('jeyne-poole')
+
+      for (const id of ['greatjon-umber', 'maege-mormont', 'mordane']) {
+        const last = people(id, ep(archive.series.episodeCeiling))
+
+        expect(last, id).not.toContain('smalljon-umber')
+        expect(last, id).not.toContain('dacey-mormont')
+        expect(last, id).not.toContain('jeyne-poole')
+      }
+    })
+
+    it('gives Harwin his father’s death at chapter 51', () => {
+      expect(said('harwin', 'hullen', ch(51))).not.toBe(
+        said('harwin', 'hullen', ch(50)),
+      )
+    })
+
+    it('turns Eddard to the past tense on Rickon’s and Luwin’s pages at 9 / 66', () => {
+      for (const owner of ['rickon-stark', 'luwin']) {
+        const father = [owner, 'eddard-stark'] as const
+
+        expect(said(...father, ch(66)), owner).not.toBe(said(...father, ch(65)))
+        expect(said(...father, ep(9)), owner).not.toBe(said(...father, ep(8)))
+        expect(said(...father, ep(9)), owner).toBe(said(...father, ch(66)))
+      }
+    })
+
+    it('holds Sansa on Arya’s page at episode 8 but chapter 52', () => {
+      const sister = ['arya-stark', 'sansa-stark'] as const
+
+      expect(said(...sister, ch(52))).not.toBe(said(...sister, ch(51)))
+      expect(said(...sister, ch(51))).not.toBe(said(...sister, ep(8)))
+      expect(said(...sister, ep(8))).toBe(said(...sister, ch(52)))
+    })
+
+    it('opens Mikken in each medium at its own gate', () => {
+      expect(projected('mikken', ep(1), locale)).toStrictEqual([])
+      expect(people('mikken', ep(2))).toContain('arya-stark')
+      expect(projected('mikken', ch(53), locale)).toStrictEqual([])
+      expect(people('mikken', ch(54))).toContain('arya-stark')
+    })
+
+    it('keeps the book-only roster and the late northern lords out of show pages', () => {
+      for (const id of [
+        'hullen',
+        'jeyne-poole',
+        'hallis-mollen',
+        'dacey-mormont',
+        'harwin',
+        'alyn',
+        'smalljon-umber',
+        'rickard-karstark',
+        'roose-bolton',
+        'robett-glover',
+        'wendel-manderly',
+      ]) {
+        expect(
+          projected(id, ep(archive.series.episodeCeiling), locale),
+          id,
+        ).toStrictEqual([])
+        expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
+      }
+    })
+  },
+)
+
+/** The current card one owner shows for one person at a bookmark. */
+function wordsOf(
+  [owner, person]: [string, string],
+  bookmark: Bookmark,
+  locale: Locale,
+): RelationshipView | undefined {
+  return projected(owner, bookmark, locale).find(
+    (relation) => relation.person.id === person,
+  )
+}
+
 // The Night's Watch cast (#1347): the links the two media time or word
 // differently. Each check compares the bookmark before a pin with the pin.
 describe.each(LOCALES)(

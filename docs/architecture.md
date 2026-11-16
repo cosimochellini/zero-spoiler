@@ -119,8 +119,9 @@ Piece and every archived Hunter x Hunter character through authored selections
 or documented deliberate omissions; Hunter x Hunter characters filed later wait
 under `pending` with the issue that will author them
 (`docs/content-provenance/hunter-x-hunter-relationships.json`). The Game of
-Thrones stage-1 inventory lists every character as authored, omitted, or pending
-under its child issue of #893
+Thrones inventory lists every first-stage character: the Essos, Winterfell,
+northern and Night's Watch casts are authored or omitted, and the rest wait
+under `pending` with the child issue of #893 that will author them
 (`docs/content-provenance/game-of-thrones-relationships.json`). No relationships
 are inferred. Character archive-order navigation and nearby recommendations have
 been retired, and so has the place page's previous and next stop; a place's map
