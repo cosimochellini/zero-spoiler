@@ -734,6 +734,28 @@ describe.each(LOCALES)(
       )
     })
 
+    it('names Jorah on Jeor’s page in the show alone', () => {
+      expect(people('jeor-mormont', ep(8))).not.toContain('jorah-mormont')
+      expect(people('jeor-mormont', ep(9))).toContain('jorah-mormont')
+      expect(people('jeor-mormont', ch(61))).toContain('jon-snow')
+      expect(people('jeor-mormont', ch(61))).not.toContain('jorah-mormont')
+      expect(
+        people('jeor-mormont', ch(archive.series.chapterCeiling)),
+      ).not.toContain('jorah-mormont')
+    })
+
+    it('has Sam bring Jon word of Robb in the show alone', () => {
+      const samShow = card('jon-snow', 'samwell-tarly', ep(9))?.summary
+      const samBooks = card('jon-snow', 'samwell-tarly', ch(66))?.summary
+
+      expect(samShow).toBeDefined()
+      expect(samBooks).toBeDefined()
+      expect(samShow).not.toBe(
+        card('jon-snow', 'samwell-tarly', ep(8))?.summary,
+      )
+      expect(samBooks).not.toBe(samShow)
+    })
+
     it('keeps the Wall’s books-only roster out of show pages', () => {
       for (const id of ['donal-noye', 'chett', 'todder', 'bowen-marsh']) {
         expect(
