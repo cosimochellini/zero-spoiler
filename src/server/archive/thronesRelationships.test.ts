@@ -832,6 +832,23 @@ describe.each(LOCALES)(
       expect(people('ilyn-payne', ep(9))).toContain('eddard-stark')
     })
 
+    it('tells Sansa’s plea to Joffrey at episode 8 and chapter 58', () => {
+      const sansa: [string, string] = ['joffrey-baratheon', 'sansa-stark']
+
+      expect(summary(sansa, ep(7))).toBeDefined()
+      expect(summary(sansa, ep(8))).not.toBe(summary(sansa, ep(7)))
+      expect(summary(sansa, ch(57))).toBeDefined()
+      expect(summary(sansa, ch(58))).not.toBe(summary(sansa, ch(57)))
+      expect(summary(sansa, ep(8))).toBe(summary(sansa, ch(58)))
+    })
+
+    it('has Sandor guard a king from Robert’s death', () => {
+      const joffrey: [string, string] = ['sandor-clegane', 'joffrey-baratheon']
+
+      expect(summary(joffrey, ep(7))).not.toBe(summary(joffrey, ep(6)))
+      expect(summary(joffrey, ch(50))).not.toBe(summary(joffrey, ch(49)))
+    })
+
     it('keeps Varys’s meeting with Illyrio and his informer to the show', () => {
       expect(people('varys', ep(4))).not.toContain('illyrio-mopatis')
       expect(people('varys', ep(5))).toContain('illyrio-mopatis')

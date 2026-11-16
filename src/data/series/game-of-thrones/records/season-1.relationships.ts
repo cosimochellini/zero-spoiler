@@ -4974,7 +4974,7 @@ const crown = {
     type: { en: 'Enemy', it: 'Nemico' },
     summary: {
       en: 'Robert’s Hand. He found out that her children are Jaime’s and told her to flee. When Robert dies, she has him seized.',
-      it: 'Il Primo Cavaliere di Robert. Ha scoperto che i suoi figli sono di Jaime e le ha detto di fuggire. Alla morte di Robert lo fa arrestare.',
+      it: 'Il Primo Cavaliere di Robert. Ha scoperto che i figli della regina sono di Jaime e le ha detto di fuggire. Alla morte di Robert lo fa arrestare.',
     },
   },
   cerRobertDead: {
@@ -5006,7 +5006,7 @@ const crown = {
     type: { en: 'Enemy', it: 'Nemico' },
     summary: {
       en: 'Robert’s Hand, who found out that her children are Jaime’s. Joffrey had him beheaded.',
-      it: 'Il Primo Cavaliere di Robert, che aveva scoperto che i suoi figli sono di Jaime. Joffrey lo ha fatto decapitare.',
+      it: 'Il Primo Cavaliere di Robert, che aveva scoperto che i figli della regina sono di Jaime. Joffrey lo ha fatto decapitare.',
     },
   },
   cerJaimeCaptive: {
@@ -5042,7 +5042,7 @@ const crown = {
     type: { en: 'King', it: 'Re' },
     summary: {
       en: 'The king, whom he guards as a knight of the Kingsguard.',
-      it: 'Il re, che protegge come cavaliere della Guardia reale.',
+      it: 'Il re, che lui protegge come cavaliere della Guardia reale.',
     },
   },
   jaiCerseiLover: {
@@ -5069,8 +5069,8 @@ const crown = {
     character: 'eddard-stark',
     type: { en: 'Enemy', it: 'Nemico' },
     summary: {
-      en: 'Eddard Stark, on whose orders Tyrion was seized. Jaime attacked him in the street, and his men killed Eddard’s guards.',
-      it: 'Eddard Stark, che ha fatto arrestare Tyrion. Jaime lo ha attaccato per strada e i suoi uomini gli hanno ucciso le guardie.',
+      en: 'Eddard Stark, who claims Tyrion was seized on his orders. Jaime attacked him in the street, and his men killed Eddard’s guards.',
+      it: 'Eddard Stark, che sostiene che Tyrion sia stato arrestato per suo ordine. Jaime lo ha attaccato per strada e i suoi uomini gli hanno ucciso le guardie.',
     },
   },
   jaiJory: {
@@ -5098,7 +5098,7 @@ const crown = {
     type: { en: 'Captor', it: 'Carceriere' },
     summary: {
       en: 'Eddard Stark’s eldest son, who defeats his army in battle and takes him prisoner.',
-      it: 'Il primogenito di Eddard Stark, che sconfigge il suo esercito in battaglia e lo fa prigioniero.',
+      it: 'Il primogenito di Eddard Stark, che sconfigge in battaglia l’esercito di Jaime e lo fa prigioniero.',
     },
   },
   jaiTywin: {
@@ -5116,7 +5116,7 @@ const crown = {
     type: { en: 'Son', it: 'Figlio' },
     summary: {
       en: 'His elder son, whom he sends to besiege the Tullys’ castle with half his army.',
-      it: 'Il figlio maggiore, che manda ad assediare il castello dei Tully con metà del suo esercito.',
+      it: 'Il figlio maggiore, che lui manda ad assediare il castello dei Tully con metà del suo esercito.',
     },
   },
   tywTyrionCaptive: {
@@ -5124,7 +5124,7 @@ const crown = {
     type: { en: 'Son', it: 'Figlio' },
     summary: {
       en: 'His younger son, whom he holds the least worthy of the family. He goes to war over his capture all the same.',
-      it: 'Il figlio minore, che considera il meno degno della famiglia. Entra comunque in guerra per la sua cattura.',
+      it: 'Il figlio minore, che lui considera il meno degno della famiglia. Entra comunque in guerra per la sua cattura.',
     },
   },
   tywCersei: {
@@ -5161,7 +5161,7 @@ const crown = {
     type: { en: 'Son', it: 'Figlio' },
     summary: {
       en: 'His younger son, whom he sends to King’s Landing as Hand of the King in his place.',
-      it: 'Il figlio minore, che manda ad Approdo del Re come Primo Cavaliere al posto suo.',
+      it: 'Il figlio minore, che lui manda ad Approdo del Re come Primo Cavaliere al posto suo.',
     },
   },
   tywJaimeCaptive: {
@@ -5267,8 +5267,18 @@ const crown = {
     character: 'sansa-stark',
     type: { en: 'Betrothed', it: 'Promessa sposa' },
     summary: {
-      en: 'Eddard Stark’s daughter, still promised to him. She begs him to spare her father.',
-      it: 'La figlia di Eddard Stark, ancora sua promessa sposa. Lo supplica di risparmiare suo padre.',
+      en: 'Eddard Stark’s daughter, still promised to him.',
+      it: 'La figlia di Eddard Stark, ancora sua promessa sposa.',
+    },
+  },
+  // Show: "The Pointy End". Books: Sansa V (chapter 58), the court where
+  // Joffrey answers her.
+  jofSansaPlea: {
+    character: 'sansa-stark',
+    type: { en: 'Betrothed', it: 'Promessa sposa' },
+    summary: {
+      en: 'Eddard Stark’s daughter, still promised to him. Before the court she begs him to spare her father, and he promises mercy if Eddard confesses.',
+      it: 'La figlia di Eddard Stark, ancora sua promessa sposa. Davanti alla corte lo supplica di risparmiare suo padre, e lui promette clemenza se Eddard confesserà.',
     },
   },
   jofNedDead: {
@@ -5394,7 +5404,7 @@ const crown = {
     type: { en: 'Son', it: 'Figlio' },
     summary: {
       en: 'His eldest son and heir, whom he means to marry to Eddard’s daughter Sansa.',
-      it: 'Il primogenito ed erede, che vuole far sposare con Sansa, la figlia di Eddard.',
+      it: 'Il primogenito ed erede, che lui vuole far sposare con Sansa, la figlia di Eddard.',
     },
   },
   robJaime: {
@@ -5427,7 +5437,7 @@ const crown = {
     type: { en: 'Old friend', it: 'Vecchio amico' },
     summary: {
       en: 'His Hand, whom he names Protector of the Realm as he lies dying.',
-      it: 'Il suo Primo Cavaliere, che nomina Protettore del Regno mentre sta morendo.',
+      it: 'Il suo Primo Cavaliere, che lui nomina Protettore del Regno mentre sta morendo.',
     },
   },
   robLancel: {
@@ -5467,8 +5477,8 @@ const crown = {
     character: 'eddard-stark',
     type: { en: 'Councillor', it: 'Consigliere' },
     summary: {
-      en: 'The new Hand of the King. Renly sits with him on the small council.',
-      it: 'Il nuovo Primo Cavaliere. Renly siede con lui nel Concilio ristretto.',
+      en: 'Eddard Stark, who joins Renly on the small council as the new Hand.',
+      it: 'Eddard Stark, che entra nel Concilio ristretto, dove siede Renly, come nuovo Primo Cavaliere.',
     },
   },
   // Show only: "The Wolf and the Lion".
@@ -5534,7 +5544,7 @@ const crown = {
     type: { en: 'Son', it: 'Figlio' },
     summary: {
       en: 'Her only son, the young lord of the Eyrie, whom she still nurses.',
-      it: 'Il suo unico figlio, il giovane signore del Nido dell’Aquila, che allatta ancora.',
+      it: 'Il suo unico figlio, il giovane signore del Nido dell’Aquila, che lei allatta ancora.',
     },
   },
   lysTyrion: {
@@ -5819,10 +5829,10 @@ const crown = {
   },
   barNed: {
     character: 'eddard-stark',
-    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    type: { en: 'Visitor', it: 'Visitatore' },
     summary: {
-      en: 'The new Hand, who comes to ask him about Hugh’s death.',
-      it: 'Il nuovo Primo Cavaliere, che viene a chiedergli della morte di Hugh.',
+      en: 'Eddard Stark, who comes to ask him about Hugh’s death.',
+      it: 'Eddard Stark, che viene a chiedergli della morte di Hugh.',
     },
   },
   barRobertDead: {
@@ -5835,7 +5845,10 @@ const crown = {
   },
   barNedProtector: {
     character: 'eddard-stark',
-    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    type: {
+      en: 'Protector named by Robert',
+      it: 'Protettore nominato da Robert',
+    },
     summary: {
       en: 'Eddard Stark. Before the throne, Barristan was handed the letter in which Robert named him Protector of the Realm.',
       it: 'Eddard Stark. Davanti al trono Barristan ha ricevuto la lettera con cui Robert lo nominava Protettore del Regno.',
@@ -5896,7 +5909,7 @@ const crown = {
     type: { en: 'Childhood friend', it: 'Amica d’infanzia' },
     summary: {
       en: 'Lady Stark, whom he has known since they were young. He tells her the dagger sent against her son was his, lost in a wager to Tyrion Lannister.',
-      it: 'Lady Stark, che conosce fin da ragazzi. Le dice che il pugnale usato contro suo figlio era suo, perso in una scommessa con Tyrion Lannister.',
+      it: 'Lady Stark, che lui conosce fin da ragazzi. Le dice che il pugnale usato contro suo figlio era suo, perso in una scommessa con Tyrion Lannister.',
     },
   },
   petTyrion: {
@@ -5919,8 +5932,8 @@ const crown = {
     character: 'eddard-stark',
     type: { en: 'Ally', it: 'Alleato' },
     summary: {
-      en: 'The new Hand. Petyr takes him to Catelyn and promises to help him find out how Jon Arryn died.',
-      it: 'Il nuovo Primo Cavaliere. Petyr lo porta da Catelyn e promette di aiutarlo a scoprire come è morto Jon Arryn.',
+      en: 'Catelyn’s husband, who comes to court as Hand. Petyr takes him to Catelyn and promises to help him find out how Jon Arryn died.',
+      it: 'Il marito di Catelyn, arrivato a corte come Primo Cavaliere. Petyr lo porta da Catelyn e promette di aiutarlo a scoprire come è morto Jon Arryn.',
     },
   },
   petNedBetrayed: {
@@ -5958,15 +5971,15 @@ const crown = {
   },
   varNed: {
     character: 'eddard-stark',
-    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    type: { en: 'Councillor', it: 'Consigliere' },
     summary: {
-      en: 'The new Hand, whom he greets at his first small council.',
-      it: 'Il nuovo Primo Cavaliere, che accoglie al suo primo Concilio ristretto.',
+      en: 'Eddard Stark, whom he greets as the new Hand at his first small council.',
+      it: 'Eddard Stark, che lui accoglie come nuovo Primo Cavaliere al suo primo Concilio ristretto.',
     },
   },
   varNedWarned: {
     character: 'eddard-stark',
-    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    type: { en: 'Man he warned', it: 'Uomo avvertito da lui' },
     summary: {
       en: 'Eddard Stark, whom Varys warned in secret that Jon Arryn had been poisoned and that the king’s life was in danger.',
       it: 'Eddard Stark, a cui Varys ha rivelato in segreto che Jon Arryn era stato avvelenato e che la vita del re era in pericolo.',
@@ -6025,10 +6038,10 @@ const crown = {
   // Pycelle
   pycNed: {
     character: 'eddard-stark',
-    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    type: { en: 'Councillor', it: 'Consigliere' },
     summary: {
-      en: 'The new Hand, whom he receives with the small council.',
-      it: 'Il nuovo Primo Cavaliere, che accoglie insieme al Concilio ristretto.',
+      en: 'Eddard Stark, whom he receives as the new Hand with the small council.',
+      it: 'Eddard Stark, che lui accoglie come nuovo Primo Cavaliere insieme al Concilio ristretto.',
     },
   },
   pycRobert: {
@@ -6036,7 +6049,7 @@ const crown = {
     type: { en: 'King', it: 'Re' },
     summary: {
       en: 'The king, whom he serves as Grand Maester.',
-      it: 'Il re, che serve come gran maestro.',
+      it: 'Il re, di cui è gran maestro.',
     },
   },
   pycVarys: {
@@ -6084,7 +6097,7 @@ const crown = {
     type: { en: 'King', it: 'Re' },
     summary: {
       en: 'The young king, whom he now serves.',
-      it: 'Il giovane re, che ora serve.',
+      it: 'Il giovane re, al cui servizio è ora.',
     },
   },
   pycCersei: {
@@ -6159,10 +6172,10 @@ const crown = {
   // Janos Slynt
   janNed: {
     character: 'eddard-stark',
-    type: { en: 'Hand of the King', it: 'Primo Cavaliere' },
+    type: { en: 'Ally', it: 'Alleato' },
     summary: {
-      en: 'The Hand, who lends him twenty of his own guards while the city is full for the tourney.',
-      it: 'Il Primo Cavaliere, che gli presta venti delle sue guardie mentre la città è piena per il torneo.',
+      en: 'Eddard Stark, who as Hand lends him twenty of his own guards while the city is full for the tourney.',
+      it: 'Eddard Stark, che da Primo Cavaliere gli presta venti delle sue guardie mentre la città è piena per il torneo.',
     },
   },
   janNedBetrayed: {
@@ -6218,16 +6231,16 @@ const crown = {
     character: 'robert-baratheon',
     type: { en: 'Unknown father', it: 'Padre sconosciuto' },
     summary: {
-      en: 'The king. Eddard sees his features in Gendry’s face: Gendry is his son, though he does not know it.',
-      it: 'Il re. Eddard riconosce i suoi tratti nel viso di Gendry: Gendry è suo figlio, anche se non lo sa.',
+      en: 'The king. Eddard sees his features in Gendry’s face: Gendry is his son, though Gendry does not know it.',
+      it: 'Il re. Eddard riconosce i tratti del re nel viso di Gendry: Gendry è suo figlio, anche se Gendry non lo sa.',
     },
   },
   genRobertDead: {
     character: 'robert-baratheon',
     type: { en: 'Unknown father', it: 'Padre sconosciuto' },
     summary: {
-      en: 'The late king. Eddard saw his features in Gendry’s face: Gendry is his son, though he does not know it.',
-      it: 'Il re defunto. Eddard ha riconosciuto i suoi tratti nel viso di Gendry: Gendry è suo figlio, anche se non lo sa.',
+      en: 'The late king. Eddard saw his features in Gendry’s face: Gendry is his son, though Gendry does not know it.',
+      it: 'Il re defunto. Eddard ha riconosciuto i tratti del re nel viso di Gendry: Gendry è suo figlio, anche se Gendry non lo sa.',
     },
   },
   // Show only: "Fire and Blood".
@@ -6251,8 +6264,8 @@ const crown = {
     character: 'tobho-mott',
     type: { en: 'Former master', it: 'Ex maestro' },
     summary: {
-      en: 'The armorer he served, who sent him to the Night’s Watch once the money for his keep stopped coming.',
-      it: 'L’armaiolo che ha servito, che lo ha mandato ai Guardiani della notte quando il denaro per il suo mantenimento ha smesso di arrivare.',
+      en: 'The armorer he worked for, who sent him to the Night’s Watch.',
+      it: 'L’armaiolo presso cui lavorava, che lo ha mandato ai Guardiani della notte.',
     },
   },
   genHotPie: {
@@ -6375,10 +6388,10 @@ const crown = {
   },
   mycJoffrey: {
     character: 'joffrey-baratheon',
-    type: { en: 'Prince who attacked him', it: 'Principe che lo ha aggredito' },
+    type: { en: 'Attacker', it: 'Aggressore' },
     summary: {
-      en: 'The crown prince, who drew his sword on him by the river.',
-      it: 'Il principe ereditario, che ha sguainato la spada contro di lui vicino al fiume.',
+      en: 'The king’s eldest son, who drew his sword on him by the river.',
+      it: 'Il primogenito del re, che ha sguainato la spada contro di lui vicino al fiume.',
     },
   },
   mycSandor: {
@@ -6429,7 +6442,7 @@ const crown = {
     type: { en: 'King', it: 'Re' },
     summary: {
       en: 'The young king, whom he guards as a knight of the Kingsguard.',
-      it: 'Il giovane re, che protegge come cavaliere della Guardia reale.',
+      it: 'Il giovane re, che lui protegge come cavaliere della Guardia reale.',
     },
   },
   kgBarristanLaugh: {
@@ -6470,7 +6483,7 @@ const crown = {
     type: { en: 'Girl he escorts', it: 'Ragazza scortata da lui' },
     summary: {
       en: 'Eddard Stark’s daughter, whom he walks back from the council chamber.',
-      it: 'La figlia di Eddard Stark, che riaccompagna dopo il Concilio.',
+      it: 'La figlia di Eddard Stark, che lui riaccompagna dopo il Concilio.',
     },
   },
   // Lancel
@@ -6537,8 +6550,8 @@ const crown = {
     character: 'barristan-selmy',
     type: { en: 'Knight who kept vigil', it: 'Cavaliere che lo ha vegliato' },
     summary: {
-      en: 'The Lord Commander of the Kingsguard, who kept vigil over his body when no one else would.',
-      it: 'Il Lord Comandante della Guardia reale, che ha vegliato il suo corpo quando nessun altro lo avrebbe fatto.',
+      en: 'Barristan Selmy, Lord Commander of the Kingsguard at the time, who kept vigil over his body when no one else would.',
+      it: 'Barristan Selmy, all’epoca Lord Comandante della Guardia reale, che ha vegliato il suo corpo quando nessun altro lo avrebbe fatto.',
     },
   },
   // Tobho Mott
@@ -6560,8 +6573,8 @@ const crown = {
     character: 'gendry',
     type: { en: 'Former apprentice', it: 'Ex apprendista' },
     summary: {
-      en: 'His apprentice, whom he sends to the Night’s Watch once the money for the boy’s keep stops coming.',
-      it: 'Il suo apprendista, che manda ai Guardiani della notte quando il denaro per il mantenimento del ragazzo smette di arrivare.',
+      en: 'His apprentice, whom he sends to the Night’s Watch.',
+      it: 'Il suo apprendista, mandato da lui ai Guardiani della notte.',
     },
   },
   // Mhaegen, show only
@@ -6766,7 +6779,7 @@ const crown = {
     type: { en: 'Old acquaintance', it: 'Vecchia conoscenza' },
     summary: {
       en: 'Lady Stark, whom he has known since she was a girl. He passes her on the road without knowing her.',
-      it: 'Lady Stark, che conosce da quando era ragazza. La incrocia sulla strada senza riconoscerla.',
+      it: 'Lady Stark, che lui conosce da quando era ragazza. La incrocia sulla strada senza riconoscerla.',
     },
   },
   // Masha Heddle
@@ -7029,8 +7042,8 @@ const crown = {
     character: 'arya-stark',
     type: { en: 'Fellow recruit', it: 'Compagna di viaggio' },
     summary: {
-      en: 'Eddard Stark’s daughter, travelling as a boy called Arry. Lommy tries to take her sword, and she draws it on him.',
-      it: 'La figlia di Eddard Stark, che viaggia travestita da ragazzo con il nome di Arry. Lommy prova a prenderle la spada, e lei gliela punta contro.',
+      en: 'Eddard Stark’s daughter, travelling as a boy called Arry. Lommy backs Hot Pie when he tries to take her sword.',
+      it: 'La figlia di Eddard Stark, che viaggia travestita da ragazzo con il nome di Arry. Lommy spalleggia Frittella quando lui prova a prenderle la spada.',
     },
   },
   lomGendry: {
@@ -7063,7 +7076,7 @@ const crown = {
     type: { en: 'Lady he follows', it: 'Signora da lui seguita' },
     summary: {
       en: 'A lady travelling in secret, whom he tries to charm at the inn. When she seizes Tyrion, he follows her party in the hope of a song.',
-      it: 'Una signora in viaggio in segreto, che alla locanda prova a conquistare. Quando lei fa arrestare Tyrion, segue il suo gruppo sperando di trarne una canzone.',
+      it: 'Una signora in viaggio in segreto, che lui prova a conquistare alla locanda. Quando lei fa arrestare Tyrion, segue il suo gruppo sperando di trarne una canzone.',
     },
   },
   marTyrion: {
@@ -7131,7 +7144,7 @@ const crown = {
     type: { en: 'Guest', it: 'Ospite' },
     summary: {
       en: 'Lady Stark, whom he receives at the Gates of the Moon with her prisoner.',
-      it: 'Lady Stark, che accoglie con il suo prigioniero alle Porte della Luna.',
+      it: 'Lady Stark, che lui accoglie con il suo prigioniero alle Porte della Luna.',
     },
   },
   nesLysa: {
@@ -7147,7 +7160,7 @@ const crown = {
     type: { en: 'Traveller she guided', it: 'Viaggiatrice guidata da lei' },
     summary: {
       en: 'Lady Stark, whom she guides up the mountain to the Eyrie by night.',
-      it: 'Lady Stark, che guida di notte su per la montagna fino al Nido dell’Aquila.',
+      it: 'Lady Stark, che lei guida di notte su per la montagna fino al Nido dell’Aquila.',
     },
   },
   vrdLysa: {
@@ -7163,7 +7176,7 @@ const crown = {
     type: { en: 'Guest', it: 'Ospite' },
     summary: {
       en: 'Lysa’s sister, whom he takes to see her.',
-      it: 'La sorella di Lysa, che accompagna da lei.',
+      it: 'La sorella di Lysa, che lui accompagna da lei.',
     },
   },
   vrdLysaChampion: {
@@ -7227,7 +7240,7 @@ const crown = {
     type: { en: 'Freed prisoner', it: 'Prigioniero liberato' },
     summary: {
       en: 'The prisoner freed by the trial, whom he escorts down the mountain and tells never to come back.',
-      it: 'Il prigioniero liberato dal processo, che scorta giù dalla montagna intimandogli di non tornare mai più.',
+      it: 'Il prigioniero liberato dal processo, che lui scorta giù dalla montagna intimandogli di non tornare mai più.',
     },
   },
   lynBronn: {
@@ -9924,11 +9937,22 @@ export const season1Relationships = {
       ],
     },
     {
+      episode: 8,
+      chapter: 58,
+      value: [
+        crown.jofSansaPlea,
+        crown.jofNed,
+        crown.jofCerseiKing,
+        crown.jofJaime,
+        crown.jofRobertDead,
+      ],
+    },
+    {
       episode: 9,
       chapter: 66,
       value: [
         crown.jofNedDead,
-        crown.jofSansaKing,
+        crown.jofSansaPlea,
         crown.jofCerseiKing,
         crown.jofJaime,
         crown.jofRobertDead,
@@ -10117,15 +10141,22 @@ export const season1Relationships = {
   ],
   // Show only, as her record is. Her chapters only order her.
   'ros': [
-    { episode: 4, chapter: 25, value: [crown.rosTheon, crown.rosTyrion] },
+    {
+      episode: 4,
+      chapter: 25,
+      source: 'episode',
+      value: [crown.rosTheon, crown.rosTyrion],
+    },
     {
       episode: 7,
       chapter: 48,
+      source: 'episode',
       value: [crown.rosPetyr, crown.rosTheonLeft, crown.rosTyrion],
     },
     {
       episode: 10,
       chapter: 73,
+      source: 'episode',
       value: [
         crown.rosPycelle,
         crown.rosPetyr,
@@ -10324,6 +10355,16 @@ export const season1Relationships = {
       chapter: 31,
       value: [
         crown.sanJoffrey,
+        crown.sanGregor,
+        crown.sanLoras,
+        crown.sanMycah,
+      ],
+    },
+    {
+      episode: 7,
+      chapter: 50,
+      value: [
+        crown.sanJoffreyKing,
         crown.sanGregor,
         crown.sanLoras,
         crown.sanMycah,
@@ -10532,11 +10573,13 @@ export const season1Relationships = {
     {
       episode: 5,
       chapter: 36,
+      source: 'episode',
       value: [crown.mhaNed, crown.mhaPetyr, crown.mhaRobert],
     },
     {
       episode: 7,
       chapter: 50,
+      source: 'episode',
       value: [crown.mhaNed, crown.mhaPetyr, crown.mhaRobertDead],
     },
   ],
