@@ -401,7 +401,6 @@ export const ACCENT_EXCEPTIONS: Record<
   'game-of-thrones/balon-swann@first': [2, OLD],
   'game-of-thrones/jason-mallister@first': [2, OLD],
   'game-of-thrones/biter@first': [2, OLD],
-  'game-of-thrones/daenerys-targaryen@first': [3, OLD],
   'game-of-thrones/aemon@9': [2, OLD],
   'game-of-thrones/viserys-targaryen@6': [2, OLD],
   'game-of-thrones/jorah-mormont@5': [2, OLD],

@@ -493,6 +493,8 @@ describe.each(LOADED_SERIES)(
       > = {
         'game-of-thrones': {
           'catelyn-stark': { chapter: 225, episode: 30, source: 'chapter' },
+          // Melisandre brings Jon back in the show alone (#1292).
+          'jon-snow': { chapter: 344, episode: 52, source: 'episode' },
         },
         'hunter-x-hunter': {
           kite: { chapter: 316, episode: 136 },

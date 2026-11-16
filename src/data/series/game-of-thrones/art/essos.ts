@@ -4,7 +4,7 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
 /**
  * The three-headed dragon of House Targaryen, with no eyes: three necks
@@ -68,13 +68,11 @@ const BRAID: Stroke[] = [
 ]
 
 /**
- * Jorah Mormont: a longsword stood point down in the grass of the Dothraki
- * sea, the Westerosi steel he weighs against the arakh in episode 3, a
- * knight's sword in both media from episode 1 and Daenerys I (chapter 4).
- * The blade's far face is hatched; the accent is the grip. His first
- * drawing and his stage share it.
+ * Jorah Mormont's longsword on its own: the pommel, the grip with its wrap
+ * in the accent, the crossguard and the blade, its far face hatched. His
+ * first drawing, his stage and his death share it.
  */
-const PLANTED_SWORD: Stroke[] = [
+const LONGSWORD: Stroke[] = [
   { d: circle(80, 34, 5) },
   { d: 'M76 39 H84 V60 H76 Z' },
   { d: 'M76 45 L84 49 M76 52 L84 56', role: 'accent' },
@@ -85,6 +83,17 @@ const PLANTED_SWORD: Stroke[] = [
     d: 'M83 76 l4 -3 M83 90 l4 -3 M83 104 l4 -3 M83 118 l4 -3 M83 132 l4 -3',
     role: 'ambient',
   },
+]
+
+/**
+ * Jorah Mormont: a longsword stood point down in the grass of the Dothraki
+ * sea, the Westerosi steel he weighs against the arakh in episode 3, a
+ * knight's sword in both media from episode 1 and Daenerys I (chapter 4).
+ * The blade's far face is hatched; the accent is the grip. His first
+ * drawing and his stage share it.
+ */
+const PLANTED_SWORD: Stroke[] = [
+  ...LONGSWORD,
   {
     d: 'M40 150 q3 -10 6 0 q3 -12 6 0 M108 150 q3 -10 6 0 q3 -12 6 0 M30 150 H130',
     role: 'ambient',
@@ -115,6 +124,17 @@ const EGG_CHEST: Stroke[] = [
   shadow(80, 155, 56),
 ]
 
+/** Irri's brazier: the rim of its bowl in 3/4, the bowl and its legs. */
+const BRAZIER_RIM: Stroke = { d: ellipse(80, 100, 40, 10) }
+const BRAZIER_BODY: Stroke = { d: 'M40 100 Q44 126 80 130 Q116 126 120 100' }
+const BRAZIER_LEGS: Stroke = {
+  d: 'M56 126 L44 150 M104 126 L116 150 M80 130 V150',
+}
+const BRAZIER_HATCH: Stroke = {
+  d: 'M108 110 l6 -3 M104 120 l6 -3',
+  role: 'ambient',
+}
+
 /**
  * Irri: a bronze brazier on three legs with a dragon egg in its coals, the
  * egg she burns her hands lifting out in episode 6. The show is the
@@ -123,9 +143,9 @@ const EGG_CHEST: Stroke[] = [
  * accent is the flames.
  */
 const BRAZIER: Stroke[] = [
-  { d: ellipse(80, 100, 40, 10) },
-  { d: 'M40 100 Q44 126 80 130 Q116 126 120 100' },
-  { d: 'M56 126 L44 150 M104 126 L116 150 M80 130 V150' },
+  BRAZIER_RIM,
+  BRAZIER_BODY,
+  BRAZIER_LEGS,
   {
     d: 'M48 102 q4 -4 8 0 t8 0 t8 0 M96 102 q4 -4 8 0 t8 0 t8 0',
     role: 'soft',
@@ -136,9 +156,25 @@ const BRAZIER: Stroke[] = [
     d: 'M54 96 q-6 -10 0 -20 q4 8 6 2 q4 8 2 18 M104 96 q-4 -12 2 -22 q4 8 6 4 q2 10 -2 18',
     role: 'accent',
   },
-  { d: 'M108 110 l6 -3 M104 120 l6 -3', role: 'ambient' },
+  BRAZIER_HATCH,
   shadow(80, 154, 42),
 ]
+
+/**
+ * Doreah's whole moon, its far side hatched, and the two halves of the
+ * cracked one. Her first drawing and her death share them.
+ */
+const WHOLE_MOON: Stroke[] = [
+  { d: circle(54, 62, 26) },
+  { d: 'M54 36 Q42 62 54 88', role: 'soft' },
+  { d: 'M66 46 l6 -3 M72 56 l6 -3 M74 68 l6 -3 M70 80 l5 -3', role: 'ambient' },
+]
+const MOON_LEFT: Stroke = {
+  d: 'M112 88 A24 24 0 0 0 96 132 L104 118 L98 108 L108 100 Z',
+}
+const MOON_RIGHT: Stroke = {
+  d: 'M118 90 A24 24 0 0 1 106 136 L112 120 L106 110 L116 102 Z',
+}
 
 /**
  * Doreah: two moons, one whole and one cracked open by the sun, for the
@@ -147,11 +183,9 @@ const BRAZIER: Stroke[] = [
  * accent is the crack.
  */
 const MOONS: Stroke[] = [
-  { d: circle(54, 62, 26) },
-  { d: 'M54 36 Q42 62 54 88', role: 'soft' },
-  { d: 'M66 46 l6 -3 M72 56 l6 -3 M74 68 l6 -3 M70 80 l5 -3', role: 'ambient' },
-  { d: 'M112 88 A24 24 0 0 0 96 132 L104 118 L98 108 L108 100 Z' },
-  { d: 'M118 90 A24 24 0 0 1 106 136 L112 120 L106 110 L116 102 Z' },
+  ...WHOLE_MOON,
+  MOON_LEFT,
+  MOON_RIGHT,
   {
     d: 'M108 100 L98 108 L104 118 L96 132 M116 102 L106 110 L112 120 L106 136',
     role: 'accent',
@@ -444,6 +478,115 @@ export const essosRedrawn: Redrawings = {
         {
           d: 'M60 60 Q56 50 62 46 Q66 44 70 48 Q74 54 70 60 M70 50 l8 -2 l-7 4 M60 56 L50 62 L58 60',
           role: 'accent',
+        },
+      ],
+    },
+    // The sword down flat in the snow, the little bird gone from its guard:
+    // he dies at Winterfell in "The Long Night" (episode 70), the show's
+    // alone. The books leave him alive, so chapter 344, their last, only
+    // orders it.
+    {
+      episode: 70,
+      chapter: 344,
+      source: 'episode',
+      value: [
+        ...moved(LONGSWORD, 'translate(0 52) rotate(-90 80 90)'),
+        {
+          d: 'M12 150 q14 -6 28 0 M64 156 q16 -6 32 0 M116 150 q16 -6 32 0',
+          role: 'ambient',
+        },
+        shadow(80, 154, 62),
+      ],
+    },
+  ],
+  'irri': [
+    // The brazier knocked over on its side, the coals cold and spilled, the
+    // egg gone: she dies in Qarth the night the dragons are taken,
+    // "The Old Gods and the New" (episode 16), the show's alone. The book
+    // keeps her alive; its Qarth chapter the episode adapts, Daenerys III
+    // of A Clash of Kings (chapter 114), orders it.
+    {
+      episode: 16,
+      chapter: 114,
+      source: 'episode',
+      value: [
+        ...moved(
+          [
+            { ...BRAZIER_RIM, role: 'accent' },
+            BRAZIER_BODY,
+            BRAZIER_LEGS,
+            BRAZIER_HATCH,
+          ],
+          'translate(14 -2) rotate(-90 80 110)',
+        ),
+        {
+          d: dots([
+            [28, 148],
+            [36, 146],
+            [44, 149],
+            [52, 147],
+            [60, 149],
+          ]),
+          role: 'soft',
+        },
+        { d: 'M14 152 H146', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'doreah': [
+    // The two moons fallen to the ground, the cracked one in its two
+    // halves, with nothing of how she dies: the show ends her in "Valar
+    // Morghulis" (episode 20), the book in the Red Waste, in Daenerys I of
+    // A Clash of Kings (chapter 86). Two deaths, one stage.
+    {
+      episode: 20,
+      chapter: 86,
+      value: [
+        ...moved(WHOLE_MOON, 'translate(-14 62)'),
+        ...moved(
+          [
+            MOON_LEFT,
+            { d: 'M108 100 L98 108 L104 118 L96 132', role: 'accent' },
+          ],
+          'translate(0 22) rotate(-24 104 110)',
+        ),
+        ...moved(
+          [
+            MOON_RIGHT,
+            { d: 'M116 102 L106 110 L112 120 L106 136', role: 'soft' },
+          ],
+          'translate(22 18) rotate(30 112 112)',
+        ),
+        { d: 'M14 150 H146', role: 'ambient' },
+      ],
+    },
+  ],
+  'rakharo': [
+    // The arakh broken in two in the grass, its point on the ground: he
+    // dies in the Red Waste in "The Night Lands" (episode 12), the
+    // show's alone. The book's Rakharo lives; Daenerys I of A Clash of Kings
+    // (chapter 86), the Red Waste chapter the episode adapts, orders it.
+    {
+      episode: 12,
+      chapter: 86,
+      source: 'episode',
+      value: [
+        { d: 'M16 134 H36 V142 H16 Z' },
+        { d: 'M22 134 L25 142 M28 134 L31 142', role: 'soft' },
+        { d: 'M40 124 L36 152' },
+        { d: 'M38 134 Q58 130 76 122 L73 128 L79 131 L77 136 Q60 142 38 142' },
+        { d: 'M38 142 Q60 142 77 136', role: 'accent' },
+        {
+          d: 'M92 134 L96 129 L91 125 L94 121 Q118 112 142 98 Q124 124 94 140 Z',
+        },
+        { d: 'M94 140 Q124 124 142 98', role: 'soft' },
+        {
+          d: 'M52 132 l-2 -4 M64 128 l-2 -4 M106 122 l-2 -4 M120 114 l-2 -4',
+          role: 'ambient',
+        },
+        {
+          d: 'M8 150 H152 M46 150 q3 -10 6 0 q3 -12 6 0 M84 150 q3 -10 6 0 q3 -12 6 0 M124 150 q3 -10 6 0',
+          role: 'ambient',
         },
       ],
     },
