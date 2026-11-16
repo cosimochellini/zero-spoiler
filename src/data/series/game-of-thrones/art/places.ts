@@ -1711,7 +1711,10 @@ const EASTWATCH_DESTROYED: Stroke[] = [
  */
 export const placesRedrawn: Redrawings = {
   'winterfell': [
+    // Sacked and burned: Ramsay orders it burned in Theon VI (ACOK 66).
     { episode: 20, chapter: 140, value: WINTERFELL_BURNED },
+    // Rebuilt: the squatters Roose finds raise new gates and a new roof over
+    // the Great Hall in "The Prince of Winterfell" (ADWD 37, Theon).
     { episode: 43, chapter: 309, value: WINTERFELL },
     {
       episode: 70,
@@ -1724,7 +1727,12 @@ export const placesRedrawn: Redrawings = {
     { episode: 20, chapter: 143, source: 'chapter', value: WINTER_TOWN_BURNED },
   ],
   'darry': [
+    // Burned: Roose orders the castle put to the torch in Arya X (ACOK 64),
+    // the first telling. Gregor's earlier sack (Catelyn I, ACOK 7) kills its
+    // people and draws no stage of its own.
     { episode: 20, chapter: 138, value: DARRY_BURNED },
+    // Rebuilt: Lancel has set the burned castle to rights by Jaime IV
+    // (AFFC 30).
     { episode: 41, chapter: 256, value: DARRY },
   ],
   'moles-town': [{ episode: 38, chapter: 199, value: MOLES_TOWN_SACKED }],
