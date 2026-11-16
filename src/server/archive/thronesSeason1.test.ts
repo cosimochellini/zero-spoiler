@@ -1578,6 +1578,29 @@ const STAGES: {
   { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
   { id: 'othor', episode: 8, chapter: 53, source: 'chapter' },
   { id: 'othor', episode: 8, chapter: 61, source: 'chapter', stage: 1 },
+  // The leads and the Essos cast redrawn from the drawing audit (#1292).
+  { id: 'eddard-stark', episode: 31, chapter: 176, stage: 1 },
+  { id: 'jon-snow', episode: 50, chapter: 341 },
+  { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 1 },
+  { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 2 },
+  { id: 'daenerys-targaryen', episode: 10, chapter: 73 },
+  {
+    id: 'daenerys-targaryen',
+    episode: 73,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  {
+    id: 'jorah-mormont',
+    episode: 70,
+    chapter: 344,
+    source: 'episode',
+    stage: 1,
+  },
+  { id: 'irri', episode: 16, chapter: 114, source: 'episode' },
+  { id: 'doreah', episode: 20, chapter: 86 },
+  { id: 'rakharo', episode: 12, chapter: 86, source: 'episode' },
 ]
 
 describe.each(
