@@ -425,9 +425,13 @@ describe.each(LOCALES)(
     it('lets Tyrion stop the armory fight in the show and Donal Noye in the books', () => {
       expect(people('jon-snow', ep(2))).not.toContain('alliser-thorne')
       expect(people('jon-snow', ep(3))).toContain('alliser-thorne')
-      expect(card('jon-snow', 'tyrion-lannister', ep(3))?.summary).not.toBe(
-        card('jon-snow', 'tyrion-lannister', ch(20))?.summary,
-      )
+
+      const tyrionShow = card('jon-snow', 'tyrion-lannister', ep(3))?.summary
+      const tyrionBooks = card('jon-snow', 'tyrion-lannister', ch(20))?.summary
+
+      expect(tyrionShow).toBeDefined()
+      expect(tyrionBooks).toBeDefined()
+      expect(tyrionShow).not.toBe(tyrionBooks)
       expect(people('jon-snow', ep(3))).not.toContain('donal-noye')
       expect(people('jon-snow', ch(19))).not.toContain('donal-noye')
       expect(people('jon-snow', ch(20))).toContain('donal-noye')
@@ -508,6 +512,20 @@ describe.each(LOCALES)(
         ).toStrictEqual([])
         expect(projected(id, ch(73), locale)).not.toStrictEqual([])
       }
+    })
+
+    it.each([
+      // owner, the chapter of an entry, a person it adds there
+      ['donal-noye', 20, 'jon-snow'],
+      ['todder', 20, 'jon-snow'],
+      ['todder', 71, 'samwell-tarly'],
+      ['bowen-marsh', 22, 'tyrion-lannister'],
+      ['bowen-marsh', 49, 'samwell-tarly'],
+      ['chett', 42, 'aemon'],
+      ['chett', 49, 'samwell-tarly'],
+    ])('opens %s’s chapter %i entry with %s', (owner, chapter, person) => {
+      expect(people(owner, ch(chapter - 1))).not.toContain(person)
+      expect(people(owner, ch(chapter))).toContain(person)
     })
   },
 )

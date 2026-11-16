@@ -1658,7 +1658,7 @@ const links = {
     character: 'aemon',
     type: { en: 'Maester', it: 'Maestro' },
     summary: {
-      en: 'The blind old maester of Castle Black. He tells Jon that he is a Targaryen, and that he chose the Watch over his own family.',
+      en: 'The blind old maester of Castle Black. He reveals to Jon his own Targaryen birth, and his own choice of the Watch over his family.',
       it: 'Il vecchio maestro cieco di Castello Nero. Rivela a Jon di essere un Targaryen e di aver scelto i Guardiani invece della propria famiglia.',
     },
   },
@@ -1878,7 +1878,7 @@ const links = {
     character: 'jon-snow',
     type: { en: 'Brother of the Watch', it: 'Confratello' },
     summary: {
-      en: 'The Lord Commander’s steward, torn between his vows and his brother’s war. Aemon tells him that he is a Targaryen, and that he chose the Watch over his own family.',
+      en: 'The Lord Commander’s steward, torn between his vows and his brother’s war. Aemon reveals to him his own Targaryen birth, and his own choice of the Watch over his family.',
       it: 'L’attendente del lord comandante, diviso tra il giuramento e la guerra di suo fratello. Aemon gli rivela di essere un Targaryen e di aver scelto i Guardiani invece della propria famiglia.',
     },
   },
@@ -2505,6 +2505,14 @@ const links = {
     summary: {
       en: 'The head of the Night’s Watch, under whom Jaremy commands rangers.',
       it: 'Il capo dei Guardiani della notte. Jaremy comanda i ranger ai suoi ordini.',
+    },
+  },
+  jarJeorDead: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, under whom Jaremy commanded rangers.',
+      it: 'Il capo dei Guardiani della notte. Jaremy comandava i ranger ai suoi ordini.',
     },
   },
   jarJon: {
@@ -3958,7 +3966,7 @@ export const season1Relationships = {
       episode: 8,
       chapter: 61,
       source: 'chapter',
-      value: [links.jarJaferKiller, links.jarOthorDead, links.jarJeor],
+      value: [links.jarJaferKiller, links.jarOthorDead, links.jarJeorDead],
     },
   ],
   // Books: he rides out with Benjen in Jon III (chapter 20). Both media
