@@ -1026,7 +1026,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Long_Night",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_66",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_69",
-      "https://awoiaf.westeros.org/index.php/A_Dance_with_Dragons-Chapter_37"
+      "https://awoiaf.westeros.org/index.php/A_Dance_with_Dragons-Chapter_37",
+      "https://awoiaf.westeros.org/index.php/Winterfell"
     ],
     "unverified": [
       "Cersei and Jaime are first seen in the show in King's Landing (ep 1, at Jon Arryn's body) but are named at Winterfell, where both records open; filed here.",
@@ -1035,7 +1036,7 @@
       "Italian \"parco degli dèi\" for godswood and \"albero del cuore\" for heart tree are the Mondadori forms; not checked against the dub.",
       "Region and form labels (#853): Il Nord, Terre dei Fiumi, La Valle, Terre della Corona, Borgo, Pianura, Tempio, Accampamento, Locanda are assumed Italian forms, not checked against the dub.",
       "Book gate set at Bran I (site 2), not Catelyn I (site 3): the characters who open there are named as of Winterfell, and the chapter rides out from it; the first scene inside the walls is Catelyn I.",
-      "Stages (#1236): sacked and burned in episode 20 (Fandom ref GOT210) and in ACOK chapter 66 (site 140, Theon VI per AWOIAF's Winterfell page; the POV label and chapter are to re-check), its ruins seen in Bran VII (143); rebuilt by the Boltons from episode 43 (Fandom ref GOT503) and ADWD chapter 37 (site 309; POV label to re-check); damaged in the battle with the dead in episode 70 (Fandom ref GOT803), the show's alone, ordered by chapter 344. Episodes not viewed."
+      "Stages (#1236): the show's stages are dated from Fandom refs (sacked GOT210, rebuilt GOT503, damaged in the battle with the dead GOT803, the show's alone, ordered by chapter 344); episodes not viewed."
     ]
   },
   "pentos": {
@@ -1119,11 +1120,12 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
       "https://awoiaf.westeros.org/index.php/Darry",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_64"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_64",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_7",
+      "https://awoiaf.westeros.org/index.php/A_Feast_for_Crows-Chapter_30"
     ],
     "unverified": [
-      "Italian: book-only, so the Mondadori form applies; \"Darry\" assumed unchanged, not checked against the edition.",
-      "Stages (#1236): Roose orders Darry burned in Arya X of ACOK (site 138); rebuilt under Lancel in AFFC chapter 30 (site 256, Jaime IV per a search summary: to re-check). Gregor's earlier sack kills its people; its chapter is to re-check and it draws no stage of its own. Episodes 20 and 41 order the stages."
+      "Italian: book-only, so the Mondadori form applies; \"Darry\" assumed unchanged, not checked against the edition."
     ]
   },
   "castle-black": {
