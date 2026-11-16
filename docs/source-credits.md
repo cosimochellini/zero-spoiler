@@ -51,7 +51,11 @@ Game of Thrones is filed closed (#849) and lists no entry reference. Its notice
 links A Wiki of Ice and Fire (book chapters) and the Game of Thrones Wiki on
 Fandom (episodes), both CC BY-SA 3.0 Unported by default, and Italian Wikipedia
 (dub names), CC BY-SA 4.0, with Fandom's and Wikimedia's terms. A Wiki of Ice
-and Fire's licence was read from its Copyrights page on 30 October 2026.
+and Fire's licence was read from its Copyrights page on 30 October 2026. The Ice
+and Fire Wiki on Fandom, accepted as a further source for book facts on 16
+November 2026, declares Fandom's licensing (CC BY-SA, per its site rights
+information read that day); it is not yet linked from the notice because no
+wording is adapted from it.
 
 ## Spoiler boundary
 

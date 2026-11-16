@@ -316,7 +316,7 @@ describe('Game of Thrones relationship provenance', () => {
   )
 
   it.each(Object.entries(authored))(
-    'lists the pages read for %s on the two wikis',
+    'lists the pages read for %s on the allowed wikis',
     (id, urls) => {
       expect(urls.length, id).toBeGreaterThan(0)
       expect(

@@ -37,10 +37,11 @@ checked; they do not establish provenance for every historical entry.
 - Game of Thrones is filed but not yet open and holds no archive text (#849).
   Its sources are [A Wiki of Ice and Fire](https://awoiaf.westeros.org/) and the
   [Game of Thrones Wiki](https://gameofthrones.fandom.com/), both declaring **CC
-  BY-SA 3.0 Unported** by default, and
-  [Italian Wikipedia](https://it.wikipedia.org/), **CC BY-SA 4.0**. Game of
-  Thrones is an HBO series based on George R. R. Martin's A Song of Ice and
-  Fire; MIT grants no rights in either.
+  BY-SA 3.0 Unported** by default, the
+  [Ice and Fire Wiki](https://iceandfire.fandom.com/) for book facts, under
+  Fandom's same default, and [Italian Wikipedia](https://it.wikipedia.org/),
+  **CC BY-SA 4.0**. Game of Thrones is an HBO series based on George R. R.
+  Martin's A Song of Ice and Fire; MIT grants no rights in either.
 - For verified wording or adaptations retained under that license, identify the
   affected local fields, article title, source/revision URL and authors through
   the permitted attribution/history links. Preserve supplied copyright,
@@ -110,7 +111,9 @@ le verifiche svolte, senza stabilire la provenienza di ogni voce storica.
   dell’archivio (#849). Le sue fonti sono
   [A Wiki of Ice and Fire](https://awoiaf.westeros.org/) e la
   [Game of Thrones Wiki](https://gameofthrones.fandom.com/), che dichiarano
-  entrambe la **CC BY-SA 3.0 Unported** come licenza predefinita, e
+  entrambe la **CC BY-SA 3.0 Unported** come licenza predefinita, la
+  [Ice and Fire Wiki](https://iceandfire.fandom.com/) per i fatti dei libri, con
+  la stessa licenza predefinita di Fandom, e
   [Wikipedia in italiano](https://it.wikipedia.org/), **CC BY-SA 4.0**. Il Trono
   di Spade è una serie HBO tratta dalle Cronache del ghiaccio e del fuoco di
   George R. R. Martin; la MIT non concede diritti su nessuna delle due.
