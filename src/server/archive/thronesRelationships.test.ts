@@ -259,6 +259,11 @@ describe.each(LOCALES)(
   (locale) => {
     const people = (owner: string, bookmark: Bookmark): string[] =>
       projected(owner, bookmark, locale).map(({ person }) => person.id)
+    // The type Daenerys's selection gives Mirri at a bookmark.
+    const mirriType = (bookmark: Bookmark): string | undefined =>
+      projected('daenerys-targaryen', bookmark, locale).find(
+        ({ person }) => person.id === 'mirri-maz-duur',
+      )?.type
 
     it('keeps the last stage-1 selection across both stage edges', () => {
       for (const owner of owners) {
@@ -352,7 +357,9 @@ describe.each(LOCALES)(
 
     it('opens Mirri’s revenge at chapter 69 and the pyre at chapter 73', () => {
       expect(people('daenerys-targaryen', ch(68))).not.toContain('rakharo')
-      expect(people('daenerys-targaryen', ch(69))).toContain('mirri-maz-duur')
+      expect(mirriType(ch(68))).toBeDefined()
+      expect(mirriType(ch(69))).toBeDefined()
+      expect(mirriType(ch(69))).not.toBe(mirriType(ch(68)))
       expect(people('daenerys-targaryen', ch(69))).not.toContain('rakharo')
       expect(people('daenerys-targaryen', ch(73))).toContain('rakharo')
       expect(people('daenerys-targaryen', ep(9))).not.toContain('rakharo')

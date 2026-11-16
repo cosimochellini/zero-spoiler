@@ -87,7 +87,7 @@ const links = {
     type: { en: 'Brother', it: 'Fratello' },
     summary: {
       en: 'Her brother, who gave her away for an army. He threatened her and her unborn child, and Drogo killed him with molten gold.',
-      it: 'Suo fratello, che l’aveva data via in cambio di un esercito. Ha minacciato lei e il bambino che aspetta, e Drogo lo ha ucciso con l’oro fuso.',
+      it: 'Suo fratello, che l’aveva data via in cambio di un esercito. Ha minacciato lei e il bambino che aspettava, e Drogo lo ha ucciso con l’oro fuso.',
     },
   },
   daeDrogoVow: {
@@ -112,7 +112,7 @@ const links = {
     type: { en: 'Enemy', it: 'Nemico' },
     summary: {
       en: 'The king who took her family’s throne. He wanted her and her unborn child dead.',
-      it: 'Il re che aveva preso il trono della sua famiglia. Voleva morti lei e il bambino che aspetta.',
+      it: 'Il re che aveva preso il trono della sua famiglia. Voleva morti lei e il bambino che aspettava.',
     },
   },
   daeDrogoRaid: {
@@ -125,7 +125,7 @@ const links = {
   },
   daeMirri: {
     character: 'mirri-maz-duur',
-    type: { en: 'Healer she saved', it: 'Guaritrice che ha salvato' },
+    type: { en: 'Healer she saved', it: 'Guaritrice salvata da lei' },
     summary: {
       en: 'A Lhazareen godswife Daenerys takes from the riders. She trusts her to treat Drogo’s wound.',
       it: 'Una sacerdotessa lhazareen che Daenerys sottrae ai razziatori. Le affida la ferita di Drogo.',
@@ -283,7 +283,7 @@ const links = {
     type: { en: 'Sister', it: 'Sorella' },
     summary: {
       en: 'His sister. He threatened her and her unborn child at a feast, and Drogo killed him for it.',
-      it: 'Sua sorella. L’ha minacciata insieme al bambino che aspetta durante un banchetto, e Drogo lo ha ucciso per questo.',
+      it: 'Sua sorella. L’ha minacciata insieme al bambino che aspettava durante un banchetto, e Drogo lo ha ucciso per questo.',
     },
   },
   visDrogoDead: {
@@ -411,7 +411,7 @@ const links = {
   // Show only: Mago challenges Drogo and dies ("The Pointy End").
   droMagoEpisode: {
     character: 'mago',
-    type: { en: 'Rider he kills', it: 'Guerriero che uccide' },
+    type: { en: 'Rider he kills', it: 'Guerriero ucciso da lui' },
     summary: {
       en: 'A rider who rejects his wife’s claim to the captives and challenges him. Drogo kills him, and takes a wound in the fight.',
       it: 'Un guerriero che rifiuta il diritto di sua moglie sulle prigioniere e lo sfida. Drogo lo uccide, ma nello scontro viene ferito.',
@@ -420,7 +420,7 @@ const links = {
   // Books only: Mago complains and lives (Daenerys VII).
   droMagoChapter: {
     character: 'mago',
-    type: { en: 'Rider he rebukes', it: 'Guerriero che rimprovera' },
+    type: { en: 'Rider he rebukes', it: 'Guerriero rimproverato da lui' },
     summary: {
       en: 'A rider who complains that the khaleesi took a captive from him. Drogo tells him to find another.',
       it: 'Un guerriero che si lamenta perché la khaleesi gli ha tolto una prigioniera. Drogo gli dice di trovarsene un’altra.',
@@ -454,7 +454,7 @@ const links = {
   // Jorah
   jorViserys: {
     character: 'viserys-targaryen',
-    type: { en: 'King he serves', it: 'Re che serve' },
+    type: { en: 'King he serves', it: 'Re al cui servizio è' },
     summary: {
       en: 'The exiled heir he offers his service to. Viserys accepts it.',
       it: 'L’erede in esilio a cui offre i suoi servigi. Viserys li accetta.',
@@ -512,7 +512,7 @@ const links = {
   },
   jorViserysDoubt: {
     character: 'viserys-targaryen',
-    type: { en: 'King he serves', it: 'Re che serve' },
+    type: { en: 'King he serves', it: 'Re al cui servizio è' },
     summary: {
       en: 'The exiled heir he serves. Jorah tells Daenerys her brother would make a poor king.',
       it: 'L’erede in esilio che serve. Jorah dice a Daenerys che il fratello sarebbe un cattivo re.',
@@ -545,7 +545,7 @@ const links = {
   },
   jorViserysDead: {
     character: 'viserys-targaryen',
-    type: { en: 'King he served', it: 'Re che serviva' },
+    type: { en: 'King he served', it: 'Re al cui servizio era' },
     summary: {
       en: 'The exiled heir he served. Jorah stopped him from stealing Daenerys’s dragon eggs, and Drogo killed him at a feast.',
       it: 'L’erede in esilio che serviva. Jorah gli ha impedito di rubare le uova di drago di Daenerys, e Drogo lo ha ucciso durante un banchetto.',
@@ -565,6 +565,14 @@ const links = {
     summary: {
       en: 'Daenerys’s husband. For saving her from poison, he lets Jorah choose a horse.',
       it: 'Il marito di Daenerys. Per averla salvata dal veleno, lascia scegliere a Jorah un cavallo.',
+    },
+  },
+  jorDrogoSmothered: {
+    character: 'drogo',
+    type: { en: 'Khaleesi’s husband', it: 'Marito della khaleesi' },
+    summary: {
+      en: 'Daenerys’s husband, who once rewarded Jorah for saving her. The blood magic left Drogo empty, and Daenerys smothered him.',
+      it: 'Il marito di Daenerys, che aveva ricompensato Jorah per averla salvata. La magia del sangue ha lasciato Drogo assente, e Daenerys lo ha soffocato.',
     },
   },
   // Show only: the pardon comes by a message from Varys ("You Win or You Die").
@@ -595,7 +603,10 @@ const links = {
   },
   jorQotho: {
     character: 'qotho',
-    type: { en: 'Bloodrider he kills', it: 'Cavaliere di sangue che uccide' },
+    type: {
+      en: 'Bloodrider he kills',
+      it: 'Cavaliere di sangue ucciso da lui',
+    },
     summary: {
       en: 'One of Drogo’s bloodriders. He turns on Daenerys over the blood magic, and Jorah kills him.',
       it: 'Uno dei cavalieri di sangue di Drogo. Si rivolta contro Daenerys per la magia del sangue, e Jorah lo uccide.',
@@ -605,7 +616,7 @@ const links = {
     character: 'qotho',
     type: {
       en: 'Bloodrider he killed',
-      it: 'Cavaliere di sangue che ha ucciso',
+      it: 'Cavaliere di sangue ucciso da lui',
     },
     summary: {
       en: 'One of Drogo’s bloodriders. He turned on Daenerys over the blood magic, and Jorah killed him.',
@@ -656,7 +667,7 @@ const links = {
   },
   ilyDrogo: {
     character: 'drogo',
-    type: { en: 'Groom he finds', it: 'Sposo che procura' },
+    type: { en: 'Groom he finds', it: 'Sposo trovato da lui' },
     summary: {
       en: 'The Dothraki khal he binds to the Targaryens through Daenerys’s marriage.',
       it: 'Il khal dothraki che lega ai Targaryen attraverso le nozze di Daenerys.',
@@ -689,7 +700,7 @@ const links = {
   },
   ilyDrogoDead: {
     character: 'drogo',
-    type: { en: 'Groom he found', it: 'Sposo che ha procurato' },
+    type: { en: 'Groom he found', it: 'Sposo trovato da lui' },
     summary: {
       en: 'The Dothraki khal he bound to the Targaryens through Daenerys’s marriage. Drogo died after his wound festered.',
       it: 'Il khal dothraki che aveva legato ai Targaryen con le nozze di Daenerys. Drogo è morto dopo che la sua ferita si era infettata.',
@@ -824,6 +835,14 @@ const links = {
       it: 'La khaleesi che serve. Doreah le insegna come dare piacere al marito.',
     },
   },
+  dorDaenerysWidow: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she serves. Doreah once taught her how to please her husband, Drogo, who is now dead.',
+      it: 'La khaleesi che serve. Doreah le aveva insegnato come dare piacere al marito, Drogo, che ora è morto.',
+    },
+  },
   dorIrri: {
     character: 'irri',
     type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
@@ -859,9 +878,9 @@ const links = {
   // Books only: Eroeh is named only when her death is told (Daenerys IX).
   dorEroeh: {
     character: 'eroeh',
-    type: { en: 'Girl she tended', it: 'Ragazza che ha curato' },
+    type: { en: 'Girl she tended', it: 'Ragazza curata da lei' },
     summary: {
-      en: 'A Lhazareen girl Daenerys saved from rape and gave Doreah to tend. When the khalasar broke apart, Mago seized and raped her, then handed her to his new khal, whose bloodriders killed her.',
+      en: 'A Lhazareen girl Daenerys saved from rape and gave to Doreah to tend. When the khalasar broke apart, Mago seized and raped her, then handed her to his new khal, whose bloodriders killed her.',
       it: 'Una ragazza lhazareen che Daenerys ha salvato da uno stupro e affidato alle cure di Doreah. Quando il khalasar si è diviso, Mago l’ha presa e violentata, poi l’ha consegnata al suo nuovo khal, i cui cavalieri di sangue l’hanno uccisa.',
     },
   },
@@ -918,7 +937,10 @@ const links = {
   },
   rakHaggo: {
     character: 'haggo',
-    type: { en: 'Bloodrider he kills', it: 'Cavaliere di sangue che uccide' },
+    type: {
+      en: 'Bloodrider he kills',
+      it: 'Cavaliere di sangue ucciso da lui',
+    },
     summary: {
       en: 'One of Drogo’s bloodriders. When they try to stop the blood magic, Rakharo kills him after Jhogo’s whip brings him down.',
       it: 'Uno dei cavalieri di sangue di Drogo. Quando cercano di fermare la magia del sangue, Rakharo lo uccide dopo che la frusta di Jhogo lo ha atterrato.',
@@ -928,7 +950,7 @@ const links = {
     character: 'haggo',
     type: {
       en: 'Bloodrider he killed',
-      it: 'Cavaliere di sangue che ha ucciso',
+      it: 'Cavaliere di sangue ucciso da lui',
     },
     summary: {
       en: 'One of Drogo’s bloodriders. When they tried to stop the blood magic, Rakharo killed him after Jhogo’s whip brought him down.',
@@ -948,8 +970,8 @@ const links = {
     character: 'daenerys-targaryen',
     type: { en: 'Khaleesi', it: 'Khaleesi' },
     summary: {
-      en: 'The khaleesi he guards. When she names him her bloodrider he only promises to take her to the dosh khaleen; when she walks out of the fire, he kneels to her.',
-      it: 'La khaleesi che protegge. Quando lei lo nomina suo cavaliere di sangue, lui promette soltanto di portarla dalle dosh khaleen; quando esce dal fuoco, si inginocchia davanti a lei.',
+      en: 'The khaleesi he guards. She names him her ko and asks for his oath as bloodrider, and he only promises to take her to the dosh khaleen; when she walks out of the fire, he kneels to her.',
+      it: 'La khaleesi che protegge. Lei lo nomina suo ko e gli chiede il giuramento da cavaliere di sangue, e lui promette soltanto di portarla dalle dosh khaleen; quando esce dal fuoco, si inginocchia davanti a lei.',
     },
   },
 
@@ -965,7 +987,7 @@ const links = {
   // Show only: "A Golden Crown". The books give the arm to Haggo.
   qotViserys: {
     character: 'viserys-targaryen',
-    type: { en: 'Man he seizes', it: 'Uomo che afferra' },
+    type: { en: 'Man he seizes', it: 'Uomo afferrato da lui' },
     summary: {
       en: 'The khaleesi’s brother. When Viserys draws a sword at a feast, Qotho breaks his arm and holds him while Drogo crowns him with molten gold.',
       it: 'Il fratello della khaleesi. Quando Viserys sguaina la spada durante un banchetto, Qotho gli spezza il braccio e lo tiene fermo mentre Drogo lo incorona con l’oro fuso.',
@@ -973,7 +995,7 @@ const links = {
   },
   qotViserysDead: {
     character: 'viserys-targaryen',
-    type: { en: 'Man he seized', it: 'Uomo che ha afferrato' },
+    type: { en: 'Man he seized', it: 'Uomo afferrato da lui' },
     summary: {
       en: 'The khaleesi’s brother. When Viserys drew a sword at a feast, Qotho broke his arm and held him while Drogo crowned him with molten gold.',
       it: 'Il fratello della khaleesi. Quando Viserys ha sguainato la spada durante un banchetto, Qotho gli ha spezzato il braccio e lo ha tenuto fermo mentre Drogo lo incoronava con l’oro fuso.',
@@ -1133,7 +1155,7 @@ const links = {
     character: 'haggo',
     type: {
       en: 'Bloodrider he fights',
-      it: 'Cavaliere di sangue che combatte',
+      it: 'Cavaliere di sangue affrontato da lui',
     },
     summary: {
       en: 'One of Drogo’s bloodriders. Jhogo’s whip catches him by the throat, and Rakharo kills him.',
@@ -1144,7 +1166,7 @@ const links = {
     character: 'haggo',
     type: {
       en: 'Bloodrider he fought',
-      it: 'Cavaliere di sangue che ha combattuto',
+      it: 'Cavaliere di sangue affrontato da lui',
     },
     summary: {
       en: 'One of Drogo’s bloodriders. Jhogo’s whip caught him by the throat, and Rakharo killed him.',
@@ -1155,8 +1177,8 @@ const links = {
     character: 'daenerys-targaryen',
     type: { en: 'Khaleesi', it: 'Khaleesi' },
     summary: {
-      en: 'The khaleesi he guards. She names him her bloodrider and he refuses, saying it would shame him; when she walks out of the fire, he kneels to her.',
-      it: 'La khaleesi che protegge. Lei lo nomina suo cavaliere di sangue e lui rifiuta, perché lo considera un disonore; quando esce dal fuoco, si inginocchia davanti a lei.',
+      en: 'The khaleesi he guards. She names him her ko and asks for his oath as bloodrider, and he refuses, saying it would shame him; when she walks out of the fire, he kneels to her.',
+      it: 'La khaleesi che protegge. Lei lo nomina suo ko e gli chiede il giuramento da cavaliere di sangue, e lui rifiuta, perché lo considera un disonore; quando esce dal fuoco, si inginocchia davanti a lei.',
     },
   },
   jhoDrogoDead: {
@@ -1232,7 +1254,10 @@ const links = {
   },
   aggCohollo: {
     character: 'cohollo',
-    type: { en: 'Bloodrider he kills', it: 'Cavaliere di sangue che uccide' },
+    type: {
+      en: 'Bloodrider he kills',
+      it: 'Cavaliere di sangue ucciso da lui',
+    },
     summary: {
       en: 'One of Drogo’s bloodriders. Aggo’s arrow kills him as he is about to kill the khaleesi.',
       it: 'Uno dei cavalieri di sangue di Drogo. La freccia di Aggo lo uccide mentre sta per uccidere la khaleesi.',
@@ -1242,7 +1267,7 @@ const links = {
     character: 'cohollo',
     type: {
       en: 'Bloodrider he killed',
-      it: 'Cavaliere di sangue che ha ucciso',
+      it: 'Cavaliere di sangue ucciso da lui',
     },
     summary: {
       en: 'One of Drogo’s bloodriders. Aggo’s arrow killed him as he was about to kill the khaleesi.',
@@ -1253,8 +1278,8 @@ const links = {
     character: 'daenerys-targaryen',
     type: { en: 'Khaleesi', it: 'Khaleesi' },
     summary: {
-      en: 'The khaleesi he guards. She names him her bloodrider and he refuses, saying only a man can lead a khalasar; when she walks out of the fire, he kneels to her.',
-      it: 'La khaleesi che protegge. Lei lo nomina suo cavaliere di sangue e lui rifiuta, dicendo che solo un uomo può guidare un khalasar; quando esce dal fuoco, si inginocchia davanti a lei.',
+      en: 'The khaleesi he guards. She names him her ko and asks for his oath as bloodrider, and he refuses, saying only a man can lead a khalasar; when she walks out of the fire, he kneels to her.',
+      it: 'La khaleesi che protegge. Lei lo nomina suo ko e gli chiede il giuramento da cavaliere di sangue, e lui rifiuta, dicendo che solo un uomo può guidare un khalasar; quando esce dal fuoco, si inginocchia davanti a lei.',
     },
   },
 
@@ -1262,7 +1287,7 @@ const links = {
   // Show only: "The Pointy End", he challenges Drogo and dies.
   magDrogoEpisode: {
     character: 'drogo',
-    type: { en: 'Khal he challenges', it: 'Khal che sfida' },
+    type: { en: 'Khal he challenges', it: 'Khal sfidato da lui' },
     summary: {
       en: 'The khal he challenges over the captive women. Drogo kills him in the fight.',
       it: 'Il khal che sfida per le prigioniere. Drogo lo uccide nello scontro.',
@@ -1295,7 +1320,7 @@ const links = {
   },
   magEroeh: {
     character: 'eroeh',
-    type: { en: 'Girl he seizes', it: 'Ragazza che prende' },
+    type: { en: 'Girl he seizes', it: 'Ragazza presa da lui' },
     summary: {
       en: 'The Lhazareen girl the khaleesi took from him. When the khalasar broke apart, he seized and raped her, then handed her to his new khal, whose bloodriders killed her.',
       it: 'La ragazza lhazareen che la khaleesi gli aveva tolto. Quando il khalasar si è diviso, l’ha presa e violentata, poi l’ha consegnata al suo nuovo khal, i cui cavalieri di sangue l’hanno uccisa.',
@@ -1329,7 +1354,7 @@ const links = {
   },
   mirDrogo: {
     character: 'drogo',
-    type: { en: 'Khal she treats', it: 'Khal che cura' },
+    type: { en: 'Khal she treats', it: 'Khal che lei cura' },
     summary: {
       en: 'The khal whose riders sacked her town. She treats his wound.',
       it: 'Il khal i cui guerrieri hanno saccheggiato il suo villaggio. Lei gli cura la ferita.',
@@ -1353,7 +1378,7 @@ const links = {
   },
   mirDrogoRite: {
     character: 'drogo',
-    type: { en: 'Khal she treats', it: 'Khal che cura' },
+    type: { en: 'Khal she treats', it: 'Khal che lei cura' },
     summary: {
       en: 'The khal whose riders sacked her town. When his wound festers, she kills his stallion to work blood magic over him.',
       it: 'Il khal i cui guerrieri hanno saccheggiato il suo villaggio. Quando la ferita si infetta, lei uccide il suo stallone per una magia del sangue.',
@@ -1386,7 +1411,7 @@ const links = {
   },
   mirDrogoEmpty: {
     character: 'drogo',
-    type: { en: 'Khal she treated', it: 'Khal che ha curato' },
+    type: { en: 'Khal she treated', it: 'Khal curato da lei' },
     summary: {
       en: 'The khal whose riders sacked her town. Her blood magic leaves him alive but without a mind, until Daenerys smothers him.',
       it: 'Il khal i cui guerrieri hanno saccheggiato il suo villaggio. La sua magia del sangue lo lascia vivo ma senza più coscienza, finché Daenerys non lo soffoca.',
@@ -1394,7 +1419,7 @@ const links = {
   },
   mirDrogoDead: {
     character: 'drogo',
-    type: { en: 'Khal she treated', it: 'Khal che ha curato' },
+    type: { en: 'Khal she treated', it: 'Khal curato da lei' },
     summary: {
       en: 'The khal whose riders sacked her town. Her blood magic left him alive but without a mind, until Daenerys smothered him.',
       it: 'Il khal i cui guerrieri avevano saccheggiato il suo villaggio. La sua magia del sangue lo ha lasciato vivo ma senza più coscienza, finché Daenerys non lo ha soffocato.',
@@ -1428,7 +1453,7 @@ const links = {
   },
   eroMago: {
     character: 'mago',
-    type: { en: 'Man who killed her', it: 'Uomo che l’ha uccisa' },
+    type: { en: 'Man who seized her', it: 'Uomo che l’ha presa' },
     summary: {
       en: 'A rider who complained when the khaleesi took her from him. When the khalasar broke apart, he seized and raped her, then handed her to his new khal, whose bloodriders killed her.',
       it: 'Un guerriero che si era lamentato quando la khaleesi gliel’aveva tolta. Quando il khalasar si è diviso, l’ha presa e violentata, poi l’ha consegnata al suo nuovo khal, i cui cavalieri di sangue l’hanno uccisa.',
@@ -1640,6 +1665,19 @@ export const season1Relationships = {
         links.droJorah,
       ],
     },
+    // Qotho dies here (Baelor; Daenerys VIII). Mago is the show's dead and
+    // the book's living, so neither medium keeps him in this list.
+    {
+      episode: 9,
+      chapter: 65,
+      value: [
+        links.droDaenerysRaid,
+        links.droMirri,
+        links.droQothoDead,
+        links.droJorah,
+        links.droViserysDead,
+      ],
+    },
     {
       episode: 10,
       chapter: 69,
@@ -1774,6 +1812,18 @@ export const season1Relationships = {
         links.jorDaenerysRite,
         links.jorDrogo,
         links.jorQotho,
+        links.jorViserysDead,
+      ],
+    },
+    // Books: Daenerys IX, Drogo dies a chapter before his pyre.
+    {
+      episode: 10,
+      chapter: 69,
+      source: 'chapter',
+      value: [
+        links.jorDaenerysRite,
+        links.jorDrogoSmothered,
+        links.jorQothoDead,
         links.jorViserysDead,
       ],
     },
@@ -1933,8 +1983,20 @@ export const season1Relationships = {
       chapter: 69,
       source: 'chapter',
       value: [
-        links.dorDaenerys,
+        links.dorDaenerysWidow,
         links.dorEroeh,
+        links.dorViserysDead,
+        links.dorIrri,
+        links.dorJhiqui,
+      ],
+    },
+    // The show's Drogo dies in episode 10; the chapter only orders it.
+    {
+      episode: 10,
+      chapter: 73,
+      source: 'episode',
+      value: [
+        links.dorDaenerysWidow,
         links.dorViserysDead,
         links.dorIrri,
         links.dorJhiqui,
@@ -2069,6 +2131,13 @@ export const season1Relationships = {
       source: 'chapter',
       value: [links.jhoDaenerys, links.jhoViserys],
     },
+    // Viserys dies in Daenerys V (chapter 47).
+    {
+      episode: 6,
+      chapter: 47,
+      source: 'chapter',
+      value: [links.jhoDaenerys, links.jhoViserysDead],
+    },
     {
       episode: 7,
       chapter: 55,
@@ -2084,6 +2153,19 @@ export const season1Relationships = {
         links.jhoDrogo,
         links.jhoMirri,
         links.jhoHaggo,
+        links.jhoViserysDead,
+      ],
+    },
+    // Drogo dies in Daenerys IX (chapter 69).
+    {
+      episode: 10,
+      chapter: 69,
+      source: 'chapter',
+      value: [
+        links.jhoDaenerys,
+        links.jhoDrogoDead,
+        links.jhoMirri,
+        links.jhoHaggoDead,
         links.jhoViserysDead,
       ],
     },
