@@ -233,12 +233,13 @@ export const REDRAWINGS: Redrawings = {
       ],
     },
     // Ice is gone, and two shorter swords lie where it lay: Tywin has it
-    // melted down in "Two Swords" (episode 31). The book first tells it
-    // when Tywin shows Tyrion the new blades Tobho Mott forged from it,
-    // Tyrion IV of A Storm of Swords (chapter 176).
+    // melted down in "Two Swords" (episode 31). The book has Tobho Mott
+    // forge the blades in Tyrion IV, but has Tyrion realise they are Ice
+    // only at Joffrey's wedding feast, Tyrion VIII of A Storm of Swords
+    // (chapter 204); the pin takes the later chapter, the one sure telling.
     {
       episode: 31,
-      chapter: 176,
+      chapter: 204,
       value: [
         ...moved(REFORGED, 'translate(-2 112)'),
         ...moved(softened(REFORGED), 'translate(6 136)'),

@@ -1579,7 +1579,7 @@ const STAGES: {
   { id: 'othor', episode: 8, chapter: 53, source: 'chapter' },
   { id: 'othor', episode: 8, chapter: 61, source: 'chapter', stage: 1 },
   // The leads and the Essos cast redrawn from the drawing audit (#1292).
-  { id: 'eddard-stark', episode: 31, chapter: 176, stage: 1 },
+  { id: 'eddard-stark', episode: 31, chapter: 204, stage: 1 },
   { id: 'jon-snow', episode: 50, chapter: 341 },
   { id: 'jon-snow', episode: 52, chapter: 344, source: 'episode', stage: 1 },
   { id: 'jon-snow', episode: 67, chapter: 344, source: 'episode', stage: 2 },
