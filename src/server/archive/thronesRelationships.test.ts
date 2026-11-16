@@ -422,6 +422,9 @@ describe.each(LOCALES)(
       expect(people('nymeria', ch(8))).toStrictEqual(['arya-stark'])
       expect(people('nymeria', ch(16))).not.toContain('joffrey-baratheon')
       expect(people('nymeria', ch(17))).toContain('joffrey-baratheon')
+      expect(said('nymeria', 'arya-stark', ch(17))).not.toBe(
+        said('nymeria', 'arya-stark', ep(2)),
+      )
     })
 
     it('gives Grey Wind his master at chapter 11 and the Greatjon at 8 / 54', () => {
@@ -440,21 +443,23 @@ describe.each(LOCALES)(
       expect(people('rickon-stark', ep(10))).toContain('shaggydog')
     })
 
-    it('takes Bran into the crypts with Osha in the show and Luwin in the books', () => {
+    it('has Luwin lead the crypt visit in the books alone', () => {
       expect(people('rickon-stark', ep(9))).not.toContain('osha')
       expect(people('rickon-stark', ep(10))).toContain('osha')
       expect(people('rickon-stark', ep(10))).not.toContain('luwin')
       expect(people('rickon-stark', ch(66))).not.toContain('luwin')
       expect(people('rickon-stark', ch(67))).toContain('luwin')
-      expect(people('rickon-stark', ch(67))).not.toContain('osha')
+      expect(people('rickon-stark', ch(67))).toContain('osha')
       expect(people('shaggydog', ep(10))).toContain('bran-stark')
       expect(people('shaggydog', ch(66))).not.toContain('luwin')
       expect(people('shaggydog', ch(67))).toContain('luwin')
+    })
+
+    it('brings Osha into the crypts at episode 10 and chapter 67', () => {
       expect(people('osha', ep(9))).not.toContain('rickon-stark')
       expect(people('osha', ep(10))).toContain('rickon-stark')
-      expect(people('osha', ch(archive.series.chapterCeiling))).not.toContain(
-        'rickon-stark',
-      )
+      expect(people('osha', ch(66))).not.toContain('rickon-stark')
+      expect(people('osha', ch(67))).toContain('rickon-stark')
     })
 
     it('kills Tomard in chapter 50 and lets the show’s survive', () => {
@@ -547,6 +552,14 @@ describe.each(LOCALES)(
         expect(last, id).not.toContain('dacey-mormont')
         expect(last, id).not.toContain('jeyne-poole')
       }
+    })
+
+    it('has Maege proclaim Robb at episode 10 and chapter 72', () => {
+      const liege = ['maege-mormont', 'robb-stark'] as const
+
+      expect(typed(...liege, ep(10))).not.toBe(typed(...liege, ep(9)))
+      expect(typed(...liege, ch(72))).not.toBe(typed(...liege, ch(71)))
+      expect(typed(...liege, ch(72))).toBe(typed(...liege, ep(10)))
     })
 
     it('gives Harwin his father’s death at chapter 51', () => {

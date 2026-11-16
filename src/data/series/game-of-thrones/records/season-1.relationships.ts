@@ -1874,8 +1874,8 @@ const north = {
     character: 'osha',
     type: { en: 'Prisoner', it: 'Prigioniera' },
     summary: {
-      en: 'One of the outlaws who attacked Bran. She yields to Robb, and he takes her back to Winterfell as a prisoner.',
-      it: 'Una dei fuorilegge che hanno aggredito Bran. Si arrende a Robb, che la porta a Grande Inverno come prigioniera.',
+      en: 'One of the outlaws who attacked Bran, and the only one taken alive. Robb takes her back to Winterfell as a prisoner.',
+      it: 'Una dei fuorilegge che hanno aggredito Bran, e l’unica presa viva. Robb la porta a Grande Inverno come prigioniera.',
     },
   },
   robbGreatjon: {
@@ -2141,8 +2141,8 @@ const north = {
     character: 'arya-stark',
     type: { en: 'Sister', it: 'Sorella' },
     summary: {
-      en: 'Her younger sister. Arya calls her a liar and strikes her for siding with the prince.',
-      it: 'La sorella minore. Arya le dà della bugiarda e la colpisce perché ha preso le parti del principe.',
+      en: 'Her younger sister, who flies at her for siding with the prince.',
+      it: 'La sorella minore, che le si scaglia contro perché ha preso le parti del principe.',
     },
   },
   sanCersei: {
@@ -2252,8 +2252,8 @@ const north = {
     character: 'nymeria',
     type: { en: 'Direwolf', it: 'Metalupo' },
     summary: {
-      en: 'Her direwolf. After Nymeria bit the prince to protect her, Arya drove her away with stones so she would not be killed.',
-      it: 'La sua metalupa. Dopo che Nymeria ha morso il principe per difenderla, Arya l’ha scacciata a sassate perché non la uccidessero.',
+      en: 'Her direwolf. Nymeria bit the prince to protect her, and was gone before the queen could have her killed.',
+      it: 'La sua metalupa. Nymeria ha morso il principe per difenderla, ed è sparita prima che la regina potesse farla uccidere.',
     },
   },
   aryaMycah: {
@@ -2268,8 +2268,8 @@ const north = {
     character: 'sansa-stark',
     type: { en: 'Sister', it: 'Sorella' },
     summary: {
-      en: 'Her elder sister, who would not tell the king what the prince did. Arya called her a liar and hit her.',
-      it: 'La sorella maggiore, che non ha voluto raccontare al re cosa aveva fatto il principe. Arya le ha dato della bugiarda e l’ha colpita.',
+      en: 'Her elder sister, who would not tell the king what the prince did. Arya flew at her for it.',
+      it: 'La sorella maggiore, che non ha voluto raccontare al re cosa aveva fatto il principe. Arya le si è scagliata contro.',
     },
   },
   aryaJonNeedle: {
@@ -2300,8 +2300,8 @@ const north = {
     character: 'nymeria',
     type: { en: 'Direwolf', it: 'Metalupo' },
     summary: {
-      en: 'Her direwolf, which she drove away on the road south to save her life.',
-      it: 'La sua metalupa, che ha scacciato sulla strada verso sud per salvarle la vita.',
+      en: 'Her direwolf, gone since the quarrel on the road south.',
+      it: 'La sua metalupa, sparita dopo la lite lungo la strada verso sud.',
     },
   },
   aryaSansaCourt: {
@@ -2348,8 +2348,8 @@ const north = {
     character: 'yoren',
     type: { en: 'Protector', it: 'Protettore' },
     summary: {
-      en: 'A recruiter of the Night’s Watch. In the crowd at her father’s execution he grabs her and keeps her out of sight.',
-      it: 'Un reclutatore dei Guardiani della notte. Tra la folla dell’esecuzione del padre la afferra e la tiene nascosta.',
+      en: 'A recruiter of the Night’s Watch. In the crowd at her father’s execution he holds her back when she tries to reach him.',
+      it: 'Un reclutatore dei Guardiani della notte. Tra la folla dell’esecuzione del padre la trattiene quando lei cerca di raggiungerlo.',
     },
   },
   aryaJoffrey: {
@@ -2658,8 +2658,8 @@ const north = {
     character: 'arya-stark',
     type: { en: 'Mistress', it: 'Padrona' },
     summary: {
-      en: 'The girl who raises her and names her after a warrior queen.',
-      it: 'La ragazza che la cresce e le dà il nome di una regina guerriera.',
+      en: 'The girl who raises her and names her.',
+      it: 'La ragazza che la cresce e le dà il nome.',
     },
   },
   nymAryaStones: {
@@ -2668,6 +2668,14 @@ const north = {
     summary: {
       en: 'The girl who raised her. After the bite she drove Nymeria away with stones so that she would not be killed.',
       it: 'La ragazza che l’ha cresciuta. Dopo il morso ha scacciato Nymeria a sassate perché non la uccidessero.',
+    },
+  },
+  nymAryaGone: {
+    character: 'arya-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The girl who raised her. After the bite Nymeria was gone, out of the queen’s reach.',
+      it: 'La ragazza che l’ha cresciuta. Dopo il morso Nymeria è sparita, lontano dalla regina.',
     },
   },
   nymJoffrey: {
@@ -2738,8 +2746,8 @@ const north = {
     character: 'jeor-mormont',
     type: { en: 'Man he helped save', it: 'Uomo salvato con il suo aiuto' },
     summary: {
-      en: 'The Lord Commander. In the night Ghost leads Jon to his rooms, where a dead man has risen to kill him.',
-      it: 'Il Lord Comandante. Di notte Spettro guida Jon fino alle sue stanze, dove un morto si è rialzato per ucciderlo.',
+      en: 'The Lord Commander. One night Ghost rouses Jon at his door, and Jon finds a dead man risen in the Lord Commander’s rooms.',
+      it: 'Il Lord Comandante. Una notte Spettro sveglia Jon grattando alla porta, e Jon trova un morto rialzatosi nelle stanze del Lord Comandante.',
     },
   },
 
@@ -2966,8 +2974,8 @@ const north = {
     character: 'robb-stark',
     type: { en: 'Captor', it: 'Chi l’ha catturata' },
     summary: {
-      en: 'Bran’s brother. She yields to him, and he takes her to Winterfell as a prisoner.',
-      it: 'Il fratello di Bran. Lei si arrende a lui, che la porta a Grande Inverno come prigioniera.',
+      en: 'Bran’s brother. She is the only outlaw he takes alive, and he brings her to Winterfell as a prisoner.',
+      it: 'Il fratello di Bran. È l’unica fuorilegge che prende viva, e la porta a Grande Inverno come prigioniera.',
     },
   },
   oshTheon: {
@@ -3042,6 +3050,14 @@ const north = {
     summary: {
       en: 'Lord Eddard’s younger daughter, who struggles with her stitches.',
       it: 'La figlia minore di lord Eddard, che fatica con i punti.',
+    },
+  },
+  morSansaBook: {
+    character: 'sansa-stark',
+    type: { en: 'Pupil', it: 'Allieva' },
+    summary: {
+      en: 'Lord Eddard’s elder daughter, whom she teaches needlework.',
+      it: 'La figlia maggiore di lord Eddard, a cui insegna il ricamo.',
     },
   },
   morJeyne: {
@@ -3132,8 +3148,8 @@ const north = {
     character: 'arya-stark',
     type: { en: 'Friend’s sister', it: 'Sorella dell’amica' },
     summary: {
-      en: 'Sansa’s younger sister, whose clumsy needlework she and Sansa whisper about.',
-      it: 'La sorella minore di Sansa, del cui ricamo maldestro lei e Sansa parlano sottovoce.',
+      en: 'Sansa’s younger sister, who sits at the same needlework lesson.',
+      it: 'La sorella minore di Sansa, che partecipa alla stessa lezione di ricamo.',
     },
   },
   jeySansaApart: {
@@ -3529,16 +3545,16 @@ const north = {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
     summary: {
-      en: 'Lord Eddard, who as Hand of the King makes him captain of his guard.',
-      it: 'Lord Eddard, che come Primo Cavaliere lo nomina capitano della sua guardia.',
+      en: 'Lord Eddard, whom he followed south. After Jory’s death Alyn led his guard, until Eddard sent him away with Lord Beric’s company.',
+      it: 'Lord Eddard, che ha seguito al sud. Dopo la morte di Jory Alyn ha guidato la sua guardia, finché Eddard non lo ha mandato via con la compagnia di lord Beric.',
     },
   },
   alyEddardDead: {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
     summary: {
-      en: 'The Hand of the King, who made him captain of his guard. Eddard was beheaded in the capital.',
-      it: 'Il Primo Cavaliere, che lo aveva nominato capitano della sua guardia. Eddard è stato decapitato nella capitale.',
+      en: 'Lord Eddard, whose guard Alyn led after Jory’s death. Eddard was beheaded in the capital.',
+      it: 'Lord Eddard, di cui Alyn ha guidato la guardia dopo la morte di Jory. Eddard è stato decapitato nella capitale.',
     },
   },
 } satisfies Record<string, Relationship>
@@ -4598,8 +4614,8 @@ export const season1Relationships = {
         north.ricBran,
       ],
     },
-    // The crypts: Osha takes Bran down in "Fire and Blood", Maester Luwin
-    // in Bran VII.
+    // The crypts: Osha carries Bran down in both media; in Bran VII Maester
+    // Luwin leads them.
     // Eddard dies at 9 / 66, a step before the crypts.
     {
       episode: 9,
@@ -4645,7 +4661,7 @@ export const season1Relationships = {
         north.ricShaggydog,
         north.ricEddardDead,
         north.ricLuwin,
-        north.ricRobb,
+        north.ricOsha,
       ],
     },
   ],
@@ -4866,8 +4882,8 @@ export const season1Relationships = {
         north.branHodor,
       ],
     },
-    // The crypts: Osha takes him down in "Fire and Blood", Maester Luwin in
-    // Bran VII.
+    // The crypts: Osha carries him down in both media; in Bran VII Maester
+    // Luwin leads them and Shaggydog bites him.
     {
       episode: 10,
       chapter: 67,
@@ -4888,8 +4904,8 @@ export const season1Relationships = {
         north.branEddardDead,
         north.branRickonCrypt,
         north.branLuwinCrypt,
+        north.branOshaCrypt,
         north.branSummer,
-        north.branOshaGodswood,
       ],
     },
   ],
@@ -4931,8 +4947,9 @@ export const season1Relationships = {
       value: [north.ladySansaDead, north.ladyEddard, north.ladyCersei],
     },
   ],
-  // The show names her in "The Kingsroad", the episode of the bite; the
-  // book names her in Arya I and tells the bite in Sansa I and Eddard III.
+  // The show names her in "The Kingsroad", the episode of the bite, and Arya
+  // drives her off with stones. The book names her in Arya I and tells the
+  // bite in Sansa I and Eddard III, where she is simply gone.
   'nymeria': [
     { episode: 2, chapter: 8, source: 'chapter', value: [north.nymArya] },
     {
@@ -4945,7 +4962,7 @@ export const season1Relationships = {
       episode: 2,
       chapter: 17,
       source: 'chapter',
-      value: [north.nymAryaStones, north.nymJoffrey],
+      value: [north.nymAryaGone, north.nymJoffrey],
     },
   ],
   'summer-direwolf': [
@@ -5091,12 +5108,10 @@ export const season1Relationships = {
       chapter: 54,
       value: [north.oshBranGodswood, north.oshRobbWar, north.oshTheon],
     },
-    // Show only: "Fire and Blood". In Bran VII Maester Luwin takes Bran
-    // down instead.
+    // "Fire and Blood" and Bran VII: she carries Bran into the crypts.
     {
       episode: 10,
-      chapter: 54,
-      source: 'episode',
+      chapter: 67,
       value: [
         north.oshBranCrypt,
         north.oshRickon,
@@ -5118,7 +5133,7 @@ export const season1Relationships = {
       episode: 1,
       chapter: 8,
       source: 'chapter',
-      value: [north.morSansa, north.morArya, north.morJeyne],
+      value: [north.morSansaBook, north.morArya, north.morJeyne],
     },
     {
       episode: 8,
@@ -5267,8 +5282,8 @@ export const season1Relationships = {
   'robett-glover': [
     { episode: 57, chapter: 54, source: 'chapter', value: [north.robRobb] },
   ],
-  // Dacey is the book's alone (Catelyn X); "Fire and Blood" has Maege at
-  // the proclamation.
+  // Dacey is the book's alone (Catelyn X). Both media have Maege at the
+  // proclamation: "Fire and Blood" and Catelyn XI.
   'maege-mormont': [
     { episode: 8, chapter: 54, value: [north.maeRobb] },
     {
@@ -5277,7 +5292,13 @@ export const season1Relationships = {
       source: 'chapter',
       value: [north.maeRobb, north.maeDacey],
     },
-    { episode: 10, chapter: 64, source: 'episode', value: [north.maeRobbKing] },
+    { episode: 10, chapter: 72, source: 'episode', value: [north.maeRobbKing] },
+    {
+      episode: 10,
+      chapter: 72,
+      source: 'chapter',
+      value: [north.maeRobbKing, north.maeDacey],
+    },
   ],
   'dacey-mormont': [
     {
