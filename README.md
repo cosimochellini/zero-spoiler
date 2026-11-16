@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/media/hero-banner.svg" alt="Zero Spoiler: a drawn route that disappears into fog" width="900">
+  <img src="docs/media/hero-banner.svg" alt="Zero Spoiler: a gold bookmark cuts a row of entries. Luffy, Gon and Eddard are drawn before it; the entries after it are under fog." width="900">
 </p>
 
 <h1 align="center">Zero Spoiler</h1>
@@ -7,7 +7,7 @@
 <p align="center">
   <strong>The wiki without spoilers for One Piece, Hunter x Hunter and Game of Thrones.</strong>
   <br>
-  Set a bookmark at the last episode or chapter you reached. Everything after it stays on the server.
+  Set a bookmark at the last episode or chapter you reached. Every entry after it stays under fog.
 </p>
 
 <p align="center">
@@ -30,89 +30,40 @@
 
 Look up one character on a normal wiki and the sidebar tells you who dies and
 who betrays whom. Here you set a bookmark, and every entry after it is under
-fog.
+fog, with its name, drawing and text left out.
 
-| Bookmark at episode 45                                                                                                                        | Bookmark at episode 650                                                                                                        |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="docs/media/fog-before.png" alt="The character grid at episode 45: the crests after that point are blurred and unnamed" width="420"> | <img src="docs/media/fog-after.png" alt="The same crop at episode 650: the same crests are open, named and drawn" width="420"> |
+| Bookmark at episode 45                                                                                                                                        | Bookmark at episode 650                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="docs/media/fog-before.png" alt="One Piece's main characters at episode 45: six are drawn and named, the ones after them are under fog" width="420"> | <img src="docs/media/fog-after.png" alt="The same crop at episode 650: the entries under fog are open, named and drawn, and the first six show their later drawings" width="420"> |
 
-A link can set the bookmark too. Add `?ep=650` for an episode, `?s=2&ep=3` for
-an episode in a season, or `?ch=1044` for a chapter to a series page. Links on
-the root, legal and privacy pages set no bookmark. The link replaces the
-bookmark you had, so a link from someone further ahead can open entries you have
-not reached.
-
-## Hidden entries never reach the browser
-
-The fog is not a blur over the full page. Ask the live site for a character you
-have not met yet, with no bookmark set:
-
-```sh
-curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
-  | grep -c 'Trafalgar Law'
-# 0
-
-curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
-  | grep -o '<title>[^<]*</title>'
-# <title>A character under fog | Zero Spoiler</title>
-```
-
-With `Cookie: zs_one-piece=650` the title is the name. The server reads the
-bookmark before it builds the page. An entry you have not reached is sent as its
-kind, two thresholds and an opaque handle, with no name, no id and no text:
-
-```mermaid
-flowchart LR
-  A["Request + zs_one-piece cookie"] --> B["Loader calls a server function"]
-  B --> C["reveal(bookmark).sees() per record, on the server"]
-  C --> D["Revealed records, in the route's locale"]
-  C --> E["Covered records: two thresholds and an opaque handle"]
-  D --> F["HTML, and a payload with nothing else in it"]
-  E --> F
-```
-
-The one exception is the landing page for a visitor with no bookmark. It carries
-the series’ introduction, East Blue, the Hunter Exam or the first season of Game
-of Thrones, so its dial can open and cover those entries in the browser, and
-nothing past it.
-
-The archive is never compiled into the client bundle, and a build gate fails if
-any of it gets there. Search, drawings and links follow the same rule. The full
-design is in [docs/architecture.md](docs/architecture.md).
+Entries under fog are not hidden in the browser. The server leaves them out of
+the page you receive. The
+[architecture notes](docs/architecture.md#fog-on-the-server) show it on the live
+site.
 
 ## What's inside
 
-One Piece has 500+ characters, 120+ devil fruits and about 40 places, from the
-first episode to the latest arc. Its Ranks page shows who holds the ranks in
-about fifteen groups, such as the Emperors and the Marines, and a character's
-page links to the ranks they hold. Hunter x Hunter currently covers the Hunter
-Exam, Heavens Arena, Yorknew City, Greed Island, Chimera Ant, Election and Kakin
-up to its latest chapter, with 250+ characters and about forty places. Game of
-Thrones currently covers the first season and the first book, with 140+
-characters and 20+ places. All three series are available in Italian and
-English. Every One Piece and Hunter x Hunter entry has its own line drawing made
-for this project (the newest Hunter x Hunter records show a placeholder until
-theirs is drawn), and some are redrawn from the episode the story changes them.
-Most Game of Thrones entries have their own line drawing too; the rest show a
-plain placeholder until theirs are drawn. There is no official artwork.
+- **One Piece**, from the first episode to the latest arc: about 540 characters,
+  130 devil fruits and 40 places. The Ranks page shows who holds the ranks in
+  about fifteen groups, such as the Emperors and the Marines. When filler is
+  close, the landing page warns you, and the Filler episodes page lists every
+  one.
+- **Hunter x Hunter**, from the Hunter Exam to Kakin, up to its latest chapter:
+  about 290 characters, 30 Nen abilities and 40 places. The abilities page
+  groups the Nen abilities by Nen type.
+- **Game of Thrones**, the first season and the first book: about 150 characters
+  and 60 places.
 
-Hunter x Hunter also files Nen abilities from Heavens Arena and Yorknew City.
+Every entry has its own line drawing, made for this project; there is no
+official artwork. Some are redrawn from the episode or chapter the story changes
+them. Search finds only the entries you have reached. Each series counts in its
+own units (episodes, seasons, chapters or books), and the wiki is in English and
+Italian.
 
-|                                                                                                                                                                                              |                                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="docs/media/home-ep650.png" alt="The landing page at episode 650: the Dressrosa arc with its drawing" width="420"><br>The landing page: the arc you are in, and what just happened. | <img src="docs/media/characters-ep650.png" alt="The characters page with the search field and the main characters' crests" width="420"><br>Characters: each one with its own crest.                    |
-| <img src="docs/media/fruits-ep650.png" alt="The devil fruits page with the Gum-Gum Fruit and its drawing" width="420"><br>Devil fruits: grouped by type, in the order the story names them.  | <img src="docs/media/bookmark-dialog.png" alt="The bookmark dialog offering anime episode, season and episode, or manga chapter" width="420"><br>The bookmark dialog: three ways to say where you are. |
-
-## Run it
-
-Node 24.22 and npm 12.2, as set in `.nvmrc` and `packageManager`.
-
-```sh
-nvm use
-npm install
-npm run dev     # http://localhost:3000
-npm run check   # everything CI runs: types, lint, format, tests, build, gates
-```
+|                                                                                                                                                                                                                                               |                                                                                                                                                                                                      |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="docs/media/landing-one-piece.png" alt="One Piece's landing page at episode 650: the Dressrosa arc with its drawing" width="420"><br>One Piece at episode 650: the arc you are in.                                                   | <img src="docs/media/landing-hunter-x-hunter.png" alt="Hunter x Hunter's landing page at episode 12: the Hunter Exam arc with its drawing" width="420"><br>Hunter x Hunter at episode 12.            |
+| <img src="docs/media/landing-game-of-thrones.png" alt="Game of Thrones' landing page with no bookmark: a dial through the first season and the first book" width="420"><br>Game of Thrones with no bookmark: a dial through the first season. | <img src="docs/media/bookmark-dialog.png" alt="The bookmark dialog at episode 650, counting by episode, season or chapter" width="420"><br>The bookmark dialog: count by episode, season or chapter. |
 
 ## Contribute
 
@@ -126,25 +77,14 @@ The most useful contributions need no code:
   should change with them. Each one is a
   [good first issue](https://github.com/cosimochellini/zero-spoiler/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
   with a checklist.
-- **Stories, places and devil fruits** that the wiki does not have yet.
 
 [CONTRIBUTING.md](CONTRIBUTING.md) covers setup, checks, sources and pull
-requests, with links to the relevant guides.
+requests.
 
 ## Stack
 
 React 19 · TanStack Start (SSR) · StyleX · TypeScript `strict` · Vite · Vitest ·
 Cloudflare Workers. Six runtime dependencies, each pinned to an exact version.
-
-## Built with Claude Code
-
-This project was built in agentic sessions with
-[Claude Code](https://claude.com/claude-code). The checks came first: a
-type-aware lint of over a thousand rules, tests that scan every text for names
-the reader has not reached, a production build and three blocking gates. Code
-from a person or an agent is accepted by those checks, not on trust, and copy
-from either follows the same
-[tone-of-voice skill](.claude/skills/tone-of-voice/SKILL.md).
 
 ## License
 
