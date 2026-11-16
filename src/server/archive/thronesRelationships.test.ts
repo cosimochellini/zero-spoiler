@@ -385,3 +385,129 @@ function magoWords(mode: Mode, locale: Locale): string {
 
   return relation.summary[locale]
 }
+
+// The Night's Watch cast (#1347): the links the two media time or word
+// differently. Each check compares the bookmark before a pin with the pin.
+describe.each(LOCALES)(
+  'Game of Thrones Night’s Watch revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    // The card an owner's selection gives one person at a bookmark.
+    const card = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): RelationshipView | undefined =>
+      projected(owner, bookmark, locale).find(
+        (relation) => relation.person.id === person,
+      )
+    // Ned's words on Jon's page, Jafer's type on Jaremy's, Jon's on Halder's.
+    const ned = (bookmark: Bookmark): string | undefined =>
+      card('jon-snow', 'eddard-stark', bookmark)?.summary
+    const jafer = (bookmark: Bookmark): string | undefined =>
+      card('jaremy-rykker', 'jafer-flowers', bookmark)?.type
+    const halderJon = (bookmark: Bookmark): string | undefined =>
+      card('halder', 'jon-snow', bookmark)?.summary
+
+    it('has the show’s Ned behead Will and the book’s behead Gared', () => {
+      expect(people('will', ep(1))).toContain('eddard-stark')
+      expect(people('will', ch(archive.series.chapterCeiling))).not.toContain(
+        'eddard-stark',
+      )
+      expect(people('gared', ch(1))).not.toContain('eddard-stark')
+      expect(people('gared', ch(2))).toContain('eddard-stark')
+      expect(people('gared', ep(archive.series.episodeCeiling))).not.toContain(
+        'eddard-stark',
+      )
+    })
+
+    it('lets Tyrion stop the armory fight in the show and Donal Noye in the books', () => {
+      expect(people('jon-snow', ep(2))).not.toContain('alliser-thorne')
+      expect(people('jon-snow', ep(3))).toContain('alliser-thorne')
+      expect(card('jon-snow', 'tyrion-lannister', ep(3))?.summary).not.toBe(
+        card('jon-snow', 'tyrion-lannister', ch(20))?.summary,
+      )
+      expect(people('jon-snow', ep(3))).not.toContain('donal-noye')
+      expect(people('jon-snow', ch(19))).not.toContain('donal-noye')
+      expect(people('jon-snow', ch(20))).toContain('donal-noye')
+    })
+
+    it('tells Ned’s death on Jon’s page at episode 9 and chapter 66', () => {
+      expect(ned(ep(8))).toBeDefined()
+      expect(ned(ep(9))).not.toBe(ned(ep(8)))
+      expect(ned(ch(65))).toBeDefined()
+      expect(ned(ch(66))).not.toBe(ned(ch(65)))
+      expect(ned(ep(9))).toBe(ned(ch(66)))
+    })
+
+    it('gives Jeor the letter for Jon in the books alone', () => {
+      expect(projected('jeor-mormont', ch(19), locale)).toStrictEqual([])
+      expect(people('jeor-mormont', ch(20))).toContain('jon-snow')
+      expect(people('jeor-mormont', ep(6))).not.toContain('jon-snow')
+      expect(people('jeor-mormont', ep(7))).toContain('jon-snow')
+    })
+
+    it('opens Rast at episode 3 but chapter 27', () => {
+      expect(projected('rast', ep(2), locale)).toStrictEqual([])
+      expect(people('rast', ep(3))).toContain('jon-snow')
+      expect(people('rast', ep(3))).not.toContain('samwell-tarly')
+      expect(people('rast', ep(4))).toContain('samwell-tarly')
+      expect(projected('rast', ch(26), locale)).toStrictEqual([])
+      expect(people('rast', ch(27))).toContain('samwell-tarly')
+    })
+
+    it('sends Yoren north with Gendry in the show alone', () => {
+      expect(people('yoren', ep(8))).not.toContain('arya-stark')
+      expect(people('yoren', ep(9))).toContain('arya-stark')
+      expect(people('yoren', ch(65))).not.toContain('arya-stark')
+      expect(people('yoren', ch(66))).toContain('arya-stark')
+      expect(people('yoren', ep(9))).not.toContain('gendry')
+      expect(people('yoren', ep(10))).toContain('gendry')
+      expect(people('yoren', ch(archive.series.chapterCeiling))).not.toContain(
+        'gendry',
+      )
+    })
+
+    it('kills Jaremy by Jafer’s corpse in the books alone', () => {
+      expect(jafer(ch(60))).toBeDefined()
+      expect(jafer(ch(61))).not.toBe(jafer(ch(60)))
+      expect(people('jafer-flowers', ch(60))).not.toContain('jaremy-rykker')
+      expect(people('jafer-flowers', ch(61))).toContain('jaremy-rykker')
+      expect(
+        people('jafer-flowers', ep(archive.series.episodeCeiling)),
+      ).not.toContain('jaremy-rykker')
+    })
+
+    it('keeps the show’s escort at the oath out of the books', () => {
+      expect(projected('othell-yarwyck', ep(6), locale)).toStrictEqual([])
+      expect(people('othell-yarwyck', ep(7))).toContain('jon-snow')
+      expect(
+        projected('othell-yarwyck', ch(archive.series.chapterCeiling), locale),
+      ).toStrictEqual([])
+      expect(people('jaremy-rykker', ep(6))).not.toContain('jon-snow')
+      expect(people('jaremy-rykker', ep(7))).toContain('jon-snow')
+      expect(
+        people('jaremy-rykker', ch(archive.series.chapterCeiling)),
+      ).not.toContain('jon-snow')
+    })
+
+    it('has Halder ride after Jon in the books alone', () => {
+      expect(halderJon(ch(70))).toBeDefined()
+      expect(halderJon(ch(71))).not.toBe(halderJon(ch(70)))
+      expect(halderJon(ep(archive.series.episodeCeiling))).toBeDefined()
+      expect(halderJon(ep(archive.series.episodeCeiling))).not.toBe(
+        halderJon(ch(71)),
+      )
+    })
+
+    it('keeps the Wall’s books-only roster out of show pages', () => {
+      for (const id of ['donal-noye', 'chett', 'todder', 'bowen-marsh']) {
+        expect(
+          projected(id, ep(archive.series.episodeCeiling), locale),
+        ).toStrictEqual([])
+        expect(projected(id, ch(73), locale)).not.toStrictEqual([])
+      }
+    })
+  },
+)
