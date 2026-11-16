@@ -1658,7 +1658,7 @@ const links = {
     character: 'aemon',
     type: { en: 'Maester', it: 'Maestro' },
     summary: {
-      en: 'The blind old maester of Castle Black. He reveals to Jon his own Targaryen birth, and his own choice of the Watch over his family.',
+      en: 'The blind old maester of Castle Black. A Targaryen by birth, he tells Jon how he chose the Watch over his family.',
       it: 'Il vecchio maestro cieco di Castello Nero. Rivela a Jon di essere un Targaryen e di aver scelto i Guardiani invece della propria famiglia.',
     },
   },
@@ -1878,7 +1878,7 @@ const links = {
     character: 'jon-snow',
     type: { en: 'Brother of the Watch', it: 'Confratello' },
     summary: {
-      en: 'The Lord Commander’s steward, torn between his vows and his brother’s war. Aemon reveals to him his own Targaryen birth, and his own choice of the Watch over his family.',
+      en: 'The Lord Commander’s steward, torn between his vows and his brother’s war. Aemon, a Targaryen by birth, tells him how he chose the Watch over his family.',
       it: 'L’attendente del lord comandante, diviso tra il giuramento e la guerra di suo fratello. Aemon gli rivela di essere un Targaryen e di aver scelto i Guardiani invece della propria famiglia.',
     },
   },
