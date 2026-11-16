@@ -90,13 +90,15 @@ flowchart LR
   E --> F
 ```
 
-The one exception is the landing page for a visitor with no bookmark. It carries
-the series’ introduction, East Blue, the Hunter Exam or the first season of Game
-of Thrones, so its dial can open and cover those entries in the browser, and
-nothing past it.
+The landing page for a visitor with no bookmark also carries the series’
+introduction, East Blue, the Hunter Exam or the first season of Game of Thrones,
+so its dial can open and cover those entries in the browser, and nothing past
+it.
 
 The archive is never compiled into the client bundle, and `gate:archive` fails
-if any of it gets there. Search, drawings and links follow the same rule.
+if any of it gets there. Search, drawings and links follow the same rule. The
+other ways past the fog are the social pictures above and “Show anyway”
+([Security](#security)).
 
 ## Relationship selections
 

@@ -36,7 +36,7 @@ fog, with its name, drawing and text left out.
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="docs/media/fog-before.png" alt="One Piece's main characters at episode 45: six are drawn and named, the ones after them are under fog" width="420"> | <img src="docs/media/fog-after.png" alt="The same crop at episode 650: the entries under fog are open, named and drawn, and the first six show their later drawings" width="420"> |
 
-Entries under fog are not hidden in the browser. The server leaves them out of
+The fog is not a blur in the browser. The server leaves entries under fog out of
 the page you receive. The
 [architecture notes](docs/architecture.md#fog-on-the-server) show it on the live
 site.
@@ -55,10 +55,10 @@ site.
   and 60 places.
 
 Every entry has its own line drawing, made for this project; there is no
-official artwork. Some are redrawn from the episode or chapter the story changes
-them. Search finds only the entries you have reached. Each series counts in its
-own units (episodes, seasons, chapters or books), and the wiki is in English and
-Italian.
+official artwork. Some are redrawn from the episode or chapter in which the
+story changes them. Search finds only the entries you have reached. Each series
+counts in its own units (episodes, seasons, chapters or books), and the wiki is
+in English and Italian.
 
 |                                                                                                                                                                                                                                               |                                                                                                                                                                                                      |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
