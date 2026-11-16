@@ -4757,6 +4757,14 @@ const north = {
       it: 'Il lord della cui compagnia Eddard si serve contro Gregor Clegane. Harwin cavalca con lui.',
     },
   },
+  harBericPast: {
+    character: 'beric-dondarrion',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The lord whose company Eddard sent against Gregor Clegane. Harwin rode with him.',
+      it: 'Il lord nella cui compagnia Eddard lo ha mandato contro Gregor Clegane. Harwin ha cavalcato con lui.',
+    },
+  },
   harEddardDead: {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
@@ -4775,7 +4783,7 @@ const north = {
       it: 'Il lord di cui è la guardia sulla strada verso sud. Una mattina Alyn lo sveglia perché il re vuole cavalcare con lui.',
     },
   },
-  alyEddardCaptain: {
+  alyEddardBeric: {
     character: 'eddard-stark',
     type: { en: 'Lord', it: 'Signore' },
     summary: {
@@ -4789,6 +4797,14 @@ const north = {
     summary: {
       en: 'The lord whose company Eddard sends against Gregor Clegane. Alyn leads twenty of Eddard’s men in it.',
       it: 'Il lord della cui compagnia Eddard si serve contro Gregor Clegane. Alyn vi guida venti uomini di Eddard.',
+    },
+  },
+  alyBericPast: {
+    character: 'beric-dondarrion',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The lord whose company Eddard sent against Gregor Clegane. Alyn led twenty of Eddard’s men in it.',
+      it: 'Il lord nella cui compagnia Eddard lo ha mandato contro Gregor Clegane. Alyn vi ha guidato venti uomini di Eddard.',
     },
   },
   alyEddardDead: {
@@ -6125,7 +6141,7 @@ export const season1Relationships = {
       ],
     },
     // The crypts: Osha carries him down in both media; in Bran VII Maester
-    // Luwin leads them and Shaggydog bites him.
+    // Luwin leads them and Shaggydog bites the maester.
     {
       episode: 10,
       chapter: 67,
@@ -6604,8 +6620,9 @@ export const season1Relationships = {
     },
   ],
   // Books only, as their records are. Eddard sends Harwin, and Alyn at the
-  // head of twenty men, with Lord Beric's company: pinned to the records'
-  // steps at chapters 45 and 46.
+  // head of twenty men, with Lord Beric's company. Harwin's entry follows
+  // his record's step at chapter 45; Alyn's waits for Eddard XII (46), where
+  // Fat Tom commands the guard in his place.
   'harwin': [
     {
       episode: 1,
@@ -6630,7 +6647,7 @@ export const season1Relationships = {
       episode: 9,
       chapter: 66,
       source: 'chapter',
-      value: [north.harEddardDead, north.harBeric, north.harHullenDead],
+      value: [north.harEddardDead, north.harBericPast, north.harHullenDead],
     },
   ],
   'alyn': [
@@ -6639,13 +6656,13 @@ export const season1Relationships = {
       episode: 6,
       chapter: 46,
       source: 'chapter',
-      value: [north.alyEddardCaptain, north.alyBeric],
+      value: [north.alyEddardBeric, north.alyBeric],
     },
     {
       episode: 9,
       chapter: 66,
       source: 'chapter',
-      value: [north.alyEddardDead, north.alyBeric],
+      value: [north.alyEddardDead, north.alyBericPast],
     },
   ],
 
