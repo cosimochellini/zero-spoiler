@@ -129,11 +129,12 @@ Gon and Eddard from the project's own first drawings, `docs/media/` holds six
 README screenshots (`fog-before`, `fog-after`, `bookmark-dialog` and the three
 `landing-*`) plus the `issue-739` set, and the `characters-ep650`,
 `fruits-ep650`, `home-ep650`, `issue-500`, `issue-754` and `issue-757` images
-are deleted. No One Piece skull emblem or official series wordmark was observed
-in these assets. The visual compositions present lower concern than the flagged
-fictional designs; no reverse-image search or trademark register search was
-performed. Series naming and the unqualified preview description still warrant
-F7's affiliation review. The installed tool skill's
+are deleted. The rest of this paragraph covers the 2026-10-20 assets only. No
+One Piece skull emblem or official series wordmark was observed in these assets.
+The visual compositions present lower concern than the flagged fictional
+designs; no reverse-image search or trademark register search was performed.
+Series naming and the unqualified preview description still warrant F7's
+affiliation review. The installed tool skill's
 `.agents/skills/firecrawl-lean/docs/assets/firecrawl-lean-mark.svg` is a tooling
 asset outside the app illustration/media scope, not project branding.
 

@@ -97,8 +97,10 @@ it.
 
 The archive is never compiled into the client bundle, and `gate:archive` fails
 if any of it gets there. Search, drawings and links follow the same rule. The
-other ways past the fog are the social pictures above and “Show anyway”
-([Security](#security)).
+fog is an editorial promise, not access control: the social pictures above, a
+shared link from someone further ahead, “Show anyway” and the crawler bookmark
+can all open an entry early ([Security](#security),
+[Series and routing](#series-and-routing)).
 
 ## Relationship selections
 
