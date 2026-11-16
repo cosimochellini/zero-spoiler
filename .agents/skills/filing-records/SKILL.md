@@ -105,7 +105,7 @@ Done when the test passes, and moving one gate or pin down by one makes it fail.
 
 - `npm run docs:counts` rewrites the counts block of `docs/architecture.md`; `gate:docs` fails without it.
 - Update the Hunter x Hunter coverage paragraph under `## Series and routing` in `docs/architecture.md`.
-- Update the rounded line in `README.md` ("Hunter x Hunter currently covers …").
+- Update the Hunter x Hunter line under "What's inside" in `README.md` when its coverage or a rounded number changes.
 
 **Loaded machine**: when other sessions keep the load average above the core count and the full check times out on unrelated tests, a pure content PR may use the content check instead.
 
