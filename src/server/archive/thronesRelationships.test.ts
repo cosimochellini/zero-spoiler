@@ -737,6 +737,7 @@ describe.each(LOCALES)(
     it('names Jorah on Jeor’s page in the show alone', () => {
       expect(people('jeor-mormont', ep(8))).not.toContain('jorah-mormont')
       expect(people('jeor-mormont', ep(9))).toContain('jorah-mormont')
+      expect(people('jeor-mormont', ep(10))).toContain('jorah-mormont')
       expect(people('jeor-mormont', ch(61))).toContain('jon-snow')
       expect(people('jeor-mormont', ch(61))).not.toContain('jorah-mormont')
       expect(
@@ -754,6 +755,7 @@ describe.each(LOCALES)(
         card('jon-snow', 'samwell-tarly', ep(8))?.summary,
       )
       expect(samBooks).not.toBe(samShow)
+      expect(samBooks).toBe(card('jon-snow', 'samwell-tarly', ch(53))?.summary)
     })
 
     it('keeps the Wall’s books-only roster out of show pages', () => {

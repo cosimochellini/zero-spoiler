@@ -6699,8 +6699,9 @@ export const season1Relationships = {
     },
     // The book gives Longclaw and Aemon's name in Jon VIII (chapter 61); its
     // entry waits for Ned's death at chapter 66, which the show tells in the
-    // same episode as Longclaw. Only the show has Sam bring Jon word of Robb
-    // (GOT109); the book does not say who tells him (#1352).
+    // same episode as Longclaw. The show has Sam bring Jon word of Robb
+    // (GOT109). The Jon VIII and Jon IX synopses read for #1352 don't say who
+    // tells him; restore the book side with a chapter-cited source.
     {
       episode: 9,
       chapter: 66,
@@ -6778,8 +6779,9 @@ export const season1Relationships = {
         links.jeorAlliser,
       ],
     },
-    // Only the show has Jeor tell Jon that Longclaw was meant for Jorah
-    // (GOT109); the book's Jon VIII does not name him (#1352).
+    // The show has Jeor tell Jon that Longclaw was meant for Jorah (GOT109).
+    // The Jon VIII synopsis read for #1352 doesn't name him; restore the book
+    // side with a chapter-cited source.
     {
       episode: 9,
       chapter: 61,
