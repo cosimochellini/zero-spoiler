@@ -1467,6 +1467,1240 @@ const links = {
       it: 'Un’ancella della khaleesi, che ha curato le sue ferite dopo l’assalto.',
     },
   },
+
+  // The Night's Watch cast (#1347).
+  // Jon Snow
+  jonEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'The Lord of Winterfell. Jon is his bastard son.',
+      it: 'Il lord di Grande Inverno. Jon è il suo figlio bastardo.',
+    },
+  },
+  jonRobb: {
+    character: 'robb-stark',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'Eddard’s heir, his half-brother and the same age. They grew up together at Winterfell.',
+      it: 'L’erede di Eddard, suo fratellastro e suo coetaneo. Sono cresciuti insieme a Grande Inverno.',
+    },
+  },
+  jonBran: {
+    character: 'bran-stark',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'His younger half-brother. At the execution of a deserter, Jon tells him not to look away.',
+      it: 'Il fratellastro più piccolo. All’esecuzione di un disertore, Jon gli dice di non distogliere lo sguardo.',
+    },
+  },
+  jonBenjenNorth: {
+    character: 'benjen-stark',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His father’s brother, a ranger of the Night’s Watch. Jon rides north with him to join the Watch.',
+      it: 'Il fratello di suo padre, ranger dei Guardiani della notte. Jon parte con lui verso nord per unirsi ai Guardiani.',
+    },
+  },
+  jonArya: {
+    character: 'arya-stark',
+    type: { en: 'Half-sister', it: 'Sorellastra' },
+    summary: {
+      en: 'His younger half-sister. Before he leaves, he gives her a small sword made for her.',
+      it: 'La sorellastra più piccola. Prima di partire le regala una piccola spada fatta forgiare per lei.',
+    },
+  },
+  jonRobbFarewell: {
+    character: 'robb-stark',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'Eddard’s heir, his half-brother and the same age. They say goodbye with an embrace when Jon leaves.',
+      it: 'L’erede di Eddard, suo fratellastro e suo coetaneo. Quando Jon parte si salutano con un abbraccio.',
+    },
+  },
+  jonCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Father’s wife', it: 'Moglie del padre' },
+    summary: {
+      en: 'Eddard’s wife, who does not want Jon at Winterfell. She sends him away from Bran’s bedside.',
+      it: 'La moglie di Eddard, che non vuole Jon a Grande Inverno. Lo manda via dal capezzale di Bran.',
+    },
+  },
+  jonBenjenRanging: {
+    character: 'benjen-stark',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His father’s brother, a ranger. At Castle Black he refuses to take Jon on a ranging and leaves without him.',
+      it: 'Il fratello di suo padre, ranger dei Guardiani. A Castello Nero si rifiuta di portare Jon in perlustrazione e parte senza di lui.',
+    },
+  },
+  jonAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits. He mocks Jon as “Lord Snow”.',
+      it: 'Il cavaliere che addestra le reclute. Deride Jon chiamandolo “Lord Snow”.',
+    },
+  },
+  jonTyrionEpisode: {
+    character: 'tyrion-lannister',
+    type: { en: 'Queen’s brother', it: 'Fratello della regina' },
+    summary: {
+      en: 'He rides north with Jon. When recruits gang up on Jon, Tyrion stops them and points out that they never had a master-at-arms.',
+      it: 'Viaggia verso nord con Jon. Quando alcune reclute se la prendono con lui, Tyrion le ferma e gli fa notare che loro non hanno mai avuto un maestro d’armi.',
+    },
+  },
+  jonTyrionChapter: {
+    character: 'tyrion-lannister',
+    type: { en: 'Queen’s brother', it: 'Fratello della regina' },
+    summary: {
+      en: 'He rides north with Jon. At Castle Black he is one of the few who show Jon any sympathy.',
+      it: 'Viaggia verso nord con Jon. A Castello Nero è uno dei pochi a mostrargli comprensione.',
+    },
+  },
+  jonNoye: {
+    character: 'donal-noye',
+    type: { en: 'Armorer', it: 'Armaiolo' },
+    summary: {
+      en: 'The one-armed smith of Castle Black. He breaks up a fight in the armory and tells Jon that the others never had his training.',
+      it: 'Il fabbro monco di Castello Nero. Interrompe una rissa nell’armeria e spiega a Jon che gli altri non hanno mai avuto il suo addestramento.',
+    },
+  },
+  jonSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Recruit he protects', it: 'Recluta protetta da lui' },
+    summary: {
+      en: 'A fat, clumsy recruit who calls himself a coward. When Ser Alliser sets the others on him, Jon stands in their way.',
+      it: 'Un ragazzo grasso e impacciato, arrivato tra le reclute, che si definisce un codardo. Quando ser Alliser gli scatena contro gli altri, Jon si mette in mezzo.',
+    },
+  },
+  jonGhost: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'The white pup Jon found apart from the others and kept. Jon uses him to frighten Rast into leaving Sam alone.',
+      it: 'Il cucciolo bianco che Jon ha trovato in disparte e ha tenuto per sé. Jon se ne serve per spaventare Rast e convincerlo a lasciare in pace Sam.',
+    },
+  },
+  jonJeorSteward: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. When the recruits are given their duties, Jeor makes Jon his own steward instead of a ranger.',
+      it: 'Il capo dei Guardiani della notte. Quando alle reclute vengono assegnati i compiti, Jeor fa di Jon il proprio attendente invece di un ranger.',
+    },
+  },
+  jonSamwellSworn: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The recruit Jon protected. The two swear their vows together at a heart tree beyond the Wall.',
+      it: 'La recluta che Jon ha protetto. I due pronunciano insieme il giuramento davanti a un albero del cuore oltre la Barriera.',
+    },
+  },
+  jonBenjenMissing: {
+    character: 'benjen-stark',
+    type: { en: 'Uncle', it: 'Zio' },
+    summary: {
+      en: 'His father’s brother, a ranger. He left Castle Black on a ranging and has not come back.',
+      it: 'Il fratello di suo padre, ranger dei Guardiani. È partito da Castello Nero per una perlustrazione e non è più tornato.',
+    },
+  },
+  jonEddardArrested: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'The Lord of Winterfell, whose bastard son Jon is. Word reaches the Wall that he has been arrested for treason.',
+      it: 'Il lord di Grande Inverno, di cui Jon è il figlio bastardo. Alla Barriera arriva la notizia che è stato arrestato per tradimento.',
+    },
+  },
+  jonJeorSaved: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, who made Jon his steward. Jon saves him from a dead ranger who rises in his rooms.',
+      it: 'Il capo dei Guardiani della notte, che ha fatto di Jon il suo attendente. Jon lo salva da un ranger morto che si rialza nelle sue stanze.',
+    },
+  },
+  jonAlliserKnife: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits. He calls Jon a traitor’s bastard, and Jon goes for him with a knife.',
+      it: 'Il cavaliere che addestra le reclute. Chiama Jon il bastardo di un traditore, e Jon gli si scaglia contro con un coltello.',
+    },
+  },
+  jonOthor: {
+    character: 'othor',
+    type: { en: 'Dead ranger', it: 'Ranger morto' },
+    summary: {
+      en: 'A ranger of his uncle’s party, found dead beyond the Wall. His corpse rises and attacks the Lord Commander, and Jon destroys it with fire.',
+      it: 'Un ranger del gruppo di suo zio, trovato morto oltre la Barriera. Il suo cadavere si rialza e attacca il lord comandante, e Jon lo distrugge con il fuoco.',
+    },
+  },
+  jonEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'The Lord of Winterfell, whose bastard son Jon is. Arrested for treason, he was beheaded in King’s Landing.',
+      it: 'Il lord di Grande Inverno, di cui Jon è il figlio bastardo. Arrestato per tradimento, è stato decapitato ad Approdo del Re.',
+    },
+  },
+  jonJeorLongclaw: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. To thank Jon for saving his life, he gives him Longclaw, his family’s Valyrian steel sword.',
+      it: 'Il capo dei Guardiani della notte. Per ringraziare Jon di avergli salvato la vita, gli regala Lungo Artiglio, la spada di acciaio di Valyria della sua famiglia.',
+    },
+  },
+  jonAemon: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The blind old maester of Castle Black. A Targaryen by birth, he tells Jon how he chose the Watch over his family.',
+      it: 'Il vecchio maestro cieco di Castello Nero. Rivela a Jon di essere un Targaryen e di aver scelto i Guardiani invece della propria famiglia.',
+    },
+  },
+  jonSamwellRobb: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The recruit Jon protected, sworn with him. He brings Jon word that Robb has marched south to war.',
+      it: 'La recluta che Jon ha protetto, entrata con lui nei Guardiani. Gli porta la notizia che Robb è partito per la guerra verso sud.',
+    },
+  },
+  jonRobbWar: {
+    character: 'robb-stark',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'Eddard’s heir, his half-brother. He has called the banners of the North and marched south against the Lannisters.',
+      it: 'L’erede di Eddard, suo fratellastro. Ha chiamato a raccolta i vessilli del Nord e marcia verso sud contro i Lannister.',
+    },
+  },
+  jonEddardDesert: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'The Lord of Winterfell, beheaded in King’s Landing. When the news reaches the Wall, Jon tries to leave and join Robb.',
+      it: 'Il lord di Grande Inverno, decapitato ad Approdo del Re. Quando la notizia arriva alla Barriera, Jon tenta di partire per unirsi a Robb.',
+    },
+  },
+  jonJeorRanging: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. He lets Jon’s flight pass, and means to lead the Watch beyond the Wall in force.',
+      it: 'Il capo dei Guardiani della notte. Chiude un occhio sulla fuga di Jon e intende guidare i Guardiani in forze oltre la Barriera.',
+    },
+  },
+  jonSamwellStop: {
+    character: 'samwell-tarly',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The recruit Jon protected, sworn with him. He tries to stop Jon from deserting.',
+      it: 'La recluta che Jon ha protetto, entrata con lui nei Guardiani. Cerca di impedirgli di disertare.',
+    },
+  },
+  jonGrenn: {
+    character: 'grenn',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A recruit Jon beat in the yard and then taught. He rides after Jon and helps bring him back.',
+      it: 'Una recluta che Jon ha battuto nel cortile e poi ha addestrato. Gli corre dietro e lo convince a tornare insieme agli altri.',
+    },
+  },
+  jonPyp: {
+    character: 'pypar',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A recruit Jon trained with. He rides after Jon and helps bring him back.',
+      it: 'Una recluta con cui Jon si è addestrato. Gli corre dietro e lo convince a tornare insieme agli altri.',
+    },
+  },
+
+  // Jeor Mormont
+  jeorJonLetter: {
+    character: 'jon-snow',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, training at Castle Black. Jeor gives him word from Winterfell that his brother Bran has woken.',
+      it: 'Il figlio bastardo di Eddard Stark, recluta a Castello Nero. Jeor gli porta la notizia da Grande Inverno che suo fratello Bran si è svegliato.',
+    },
+  },
+  jeorTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The queen’s brother, visiting Castle Black. Jeor asks him to tell the court that the Watch needs men.',
+      it: 'Il fratello della regina, in visita a Castello Nero. Jeor gli chiede di far sapere a corte che i Guardiani hanno bisogno di uomini.',
+    },
+  },
+  jeorAemon: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The blind old maester of Castle Black, at Jeor’s side.',
+      it: 'Il vecchio maestro cieco di Castello Nero, al fianco di Jeor.',
+    },
+  },
+  jeorAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the Watch’s recruits.',
+      it: 'Il cavaliere che addestra le reclute dei Guardiani.',
+    },
+  },
+  jeorJonSteward: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, a new brother of the Watch. Jeor makes him his own steward.',
+      it: 'Il figlio bastardo di Eddard Stark, appena entrato nei Guardiani. Jeor ne fa il proprio attendente.',
+    },
+  },
+  jeorJonSaved: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, Eddard Stark’s bastard son. Jon saves him from a dead ranger who attacks him in his rooms.',
+      it: 'Il suo attendente, figlio bastardo di Eddard Stark. Jon lo salva da un ranger morto che lo aggredisce nelle sue stanze.',
+    },
+  },
+  jeorOthor: {
+    character: 'othor',
+    type: { en: 'Dead ranger', it: 'Ranger morto' },
+    summary: {
+      en: 'A ranger of Benjen Stark’s party, brought back dead from beyond the Wall. His corpse rises and attacks Jeor.',
+      it: 'Un ranger del gruppo di Benjen Stark, riportato morto da oltre la Barriera. Il suo cadavere si rialza e aggredisce Jeor.',
+    },
+  },
+  jeorJonLongclaw: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, who saved his life. Jeor gives him Longclaw, his family’s Valyrian steel sword.',
+      it: 'Il suo attendente, che gli ha salvato la vita. Jeor gli regala Lungo Artiglio, la spada di acciaio di Valyria della sua famiglia.',
+    },
+  },
+  jeorJorah: {
+    character: 'jorah-mormont',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, who shamed their house and fled into exile. Longclaw was meant for him.',
+      it: 'Suo figlio, che ha disonorato la casata ed è fuggito in esilio. Lungo Artiglio era destinata a lui.',
+    },
+  },
+  jeorAlliserSent: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trained the recruits. Jeor sends him to King’s Landing with the dead man’s hand, to ask the king for help.',
+      it: 'Il cavaliere che addestrava le reclute. Jeor lo manda ad Approdo del Re con la mano del morto, per chiedere aiuto al re.',
+    },
+  },
+  jeorOthorDead: {
+    character: 'othor',
+    type: { en: 'Dead ranger', it: 'Ranger morto' },
+    summary: {
+      en: 'A ranger of Benjen Stark’s party, brought back dead from beyond the Wall. His corpse rose and attacked Jeor, and Jon burned it.',
+      it: 'Un ranger del gruppo di Benjen Stark, riportato morto da oltre la Barriera. Il suo cadavere si è rialzato e ha aggredito Jeor, e Jon lo ha bruciato.',
+    },
+  },
+  jeorJonRanging: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, who tried to desert. Jeor lets it pass, and means to lead the Watch beyond the Wall in force.',
+      it: 'Il suo attendente, che ha tentato di disertare. Jeor chiude un occhio e intende guidare i Guardiani in forze oltre la Barriera.',
+    },
+  },
+
+  // Aemon
+  aemJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. Aemon is his maester.',
+      it: 'Il capo dei Guardiani della notte. Aemon è il suo maestro.',
+    },
+  },
+  aemTyrionEpisode: {
+    character: 'tyrion-lannister',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The queen’s brother, visiting Castle Black. Aemon warns him that the coming winter will be worse than any in memory.',
+      it: 'Il fratello della regina, in visita a Castello Nero. Aemon lo avverte che l’inverno in arrivo sarà il peggiore a memoria d’uomo.',
+    },
+  },
+  aemTyrionChapter: {
+    character: 'tyrion-lannister',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The queen’s brother, a guest at the Lord Commander’s table. At supper Aemon calls him a giant among the men of the Watch.',
+      it: 'Il fratello della regina, ospite alla tavola del lord comandante. A cena Aemon lo definisce un gigante tra gli uomini dei Guardiani.',
+    },
+  },
+  aemJonSam: {
+    character: 'jon-snow',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'Eddard Stark’s bastard son. He comes to Aemon at night and asks him to take Samwell Tarly as a steward.',
+      it: 'Il figlio bastardo di Eddard Stark. Va da Aemon di notte e gli chiede di prendere Samwell Tarly come attendente.',
+    },
+  },
+  aemChett: {
+    character: 'chett',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'His steward, who looks after him and the ravens. He tries to turn Jon away from Aemon’s door.',
+      it: 'Il suo attendente, che si occupa di lui e dei corvi. Cerca di mandare via Jon dalla porta di Aemon.',
+    },
+  },
+  aemSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'A new brother of the Watch, who becomes Aemon’s steward.',
+      it: 'Un nuovo confratello dei Guardiani, che diventa l’attendente di Aemon.',
+    },
+  },
+  aemJon: {
+    character: 'jon-snow',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, made steward to the Lord Commander.',
+      it: 'Il figlio bastardo di Eddard Stark, nominato attendente del lord comandante.',
+    },
+  },
+  aemJonTold: {
+    character: 'jon-snow',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'The Lord Commander’s steward, torn between his vows and his brother’s war. Aemon, a Targaryen by birth, tells him how he chose the Watch over his family.',
+      it: 'L’attendente del lord comandante, diviso tra il giuramento e la guerra di suo fratello. Aemon gli rivela di essere un Targaryen e di aver scelto i Guardiani invece della propria famiglia.',
+    },
+  },
+
+  // Samwell Tarly
+  samJon: {
+    character: 'jon-snow',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, the best fighter among the recruits. When Ser Alliser sets the others on Sam, Jon stands in their way.',
+      it: 'Il figlio bastardo di Eddard Stark, il miglior combattente tra le reclute. Quando ser Alliser scatena gli altri contro Sam, Jon si mette in mezzo.',
+    },
+  },
+  samAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits. He humiliates Sam in the yard and sets the others on him.',
+      it: 'Il cavaliere che addestra le reclute. Umilia Sam nel cortile e gli scatena contro gli altri.',
+    },
+  },
+  samRast: {
+    character: 'rast',
+    type: { en: 'Bully', it: 'Prepotente' },
+    summary: {
+      en: 'A recruit who means to keep hurting Sam, whatever Jon says. Jon and his friends frighten him off with Ghost.',
+      it: 'Un ragazzo tra le reclute, deciso a continuare a picchiare Sam qualunque cosa dica Jon. Jon e i suoi amici lo spaventano con Spettro.',
+    },
+  },
+  samJonSworn: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, who stood up for Sam. They swear their vows together at a heart tree beyond the Wall.',
+      it: 'Il figlio bastardo di Eddard Stark, che ha preso le difese di Sam. Pronunciano insieme il giuramento davanti a un albero del cuore oltre la Barriera.',
+    },
+  },
+  samAemon: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The blind old maester of Castle Black. Sam becomes his steward.',
+      it: 'Il vecchio maestro cieco di Castello Nero. Sam diventa il suo attendente.',
+    },
+  },
+  samJonDesert: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, sworn with Sam. When Jon tries to desert and join Robb, Sam tries to stop him.',
+      it: 'Il figlio bastardo di Eddard Stark, entrato con Sam nei Guardiani. Quando Jon tenta di disertare per unirsi a Robb, Sam cerca di fermarlo.',
+    },
+  },
+  samGrenn: {
+    character: 'grenn',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. He rides after Jon and helps bring him back.',
+      it: 'Un amico di Jon. Gli corre dietro e lo convince a tornare insieme agli altri.',
+    },
+  },
+  samPyp: {
+    character: 'pypar',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. He rides after Jon and helps bring him back.',
+      it: 'Un amico di Jon. Gli corre dietro e lo convince a tornare insieme agli altri.',
+    },
+  },
+
+  // Alliser Thorne
+  allJon: {
+    character: 'jon-snow',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, the best fighter among the recruits. Alliser mocks him as “Lord Snow”.',
+      it: 'Il figlio bastardo di Eddard Stark, il miglior combattente tra le reclute. Alliser lo deride chiamandolo “Lord Snow”.',
+    },
+  },
+  allJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. Alliser trains the recruits under his command.',
+      it: 'Il capo dei Guardiani della notte. Alliser addestra le reclute ai suoi ordini.',
+    },
+  },
+  allTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The queen’s brother, a guest at the Lord Commander’s table. He mocks Alliser until the officers laugh at him, and Alliser walks out.',
+      it: 'Il fratello della regina, ospite alla tavola del lord comandante. Si prende gioco di Alliser finché gli ufficiali ridono di lui, e Alliser se ne va.',
+    },
+  },
+  allSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'A fat new recruit who cannot fight. Alliser humiliates him and sets the others on him.',
+      it: 'Un ragazzo grasso appena arrivato tra le reclute, che non sa combattere. Alliser lo umilia e gli scatena contro gli altri.',
+    },
+  },
+  allJonKnife: {
+    character: 'jon-snow',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, whom Alliser mocks as “Lord Snow”. When Alliser calls him a traitor’s bastard, Jon goes for him with a knife.',
+      it: 'Il figlio bastardo di Eddard Stark, che Alliser deride chiamandolo “Lord Snow”. Quando Alliser lo chiama bastardo di un traditore, Jon gli si scaglia contro con un coltello.',
+    },
+  },
+  allJeorSent: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. He sends Alliser to King’s Landing with the dead man’s hand, to ask the king for help.',
+      it: 'Il capo dei Guardiani della notte. Manda Alliser ad Approdo del Re con la mano del morto, per chiedere aiuto al re.',
+    },
+  },
+
+  // Yoren
+  yorBenjenEpisode: {
+    character: 'benjen-stark',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A ranger of the Watch, who travelled with him to the Wall. Benjen says goodbye to him before leaving on a ranging.',
+      it: 'Un ranger dei Guardiani, con cui ha viaggiato fino alla Barriera. Benjen lo saluta prima di partire in perlustrazione.',
+    },
+  },
+  yorTyrionEpisode: {
+    character: 'tyrion-lannister',
+    type: { en: 'Travelling companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The queen’s brother. Yoren leaves the Wall with him on the road south.',
+      it: 'Il fratello della regina. Yoren lascia la Barriera con lui, diretto a sud.',
+    },
+  },
+  yorBenjenChapter: {
+    character: 'benjen-stark',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A ranger of the Watch. Yoren joins his party on the road to the Wall.',
+      it: 'Un ranger dei Guardiani. Yoren si unisce al suo gruppo sulla strada per la Barriera.',
+    },
+  },
+  yorJon: {
+    character: 'jon-snow',
+    type: { en: 'Future recruit', it: 'Futura recluta' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, riding north to join the Watch.',
+      it: 'Il figlio bastardo di Eddard Stark, diretto a nord per unirsi ai Guardiani.',
+    },
+  },
+  yorTyrionChapter: {
+    character: 'tyrion-lannister',
+    type: { en: 'Travelling companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The queen’s brother, riding north to see the Wall. Yoren travels with his party.',
+      it: 'Il fratello della regina, diretto a nord per vedere la Barriera. Yoren viaggia con il suo gruppo.',
+    },
+  },
+  yorArya: {
+    character: 'arya-stark',
+    type: { en: 'Girl he saves', it: 'Ragazza salvata da lui' },
+    summary: {
+      en: 'Eddard Stark’s younger daughter. When her father is executed, Yoren grabs her and takes her away from the crowd.',
+      it: 'La figlia minore di Eddard Stark. Quando il padre viene giustiziato, Yoren la afferra e la porta via dalla folla.',
+    },
+  },
+  yorEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord of Winterfell', it: 'Lord di Grande Inverno' },
+    summary: {
+      en: 'Yoren once rode to him with word that his wife had seized Tyrion. He was beheaded before a crowd in King’s Landing.',
+      it: 'Yoren gli aveva portato la notizia che sua moglie aveva catturato Tyrion. È stato decapitato davanti alla folla ad Approdo del Re.',
+    },
+  },
+  yorTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Travelling companion', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The queen’s brother, with whom he rode south from the Wall. Yoren was there when Catelyn Stark seized him at an inn.',
+      it: 'Il fratello della regina, con cui è sceso a sud dalla Barriera. Yoren era presente quando Catelyn Stark lo ha catturato in una locanda.',
+    },
+  },
+  yorAryaArry: {
+    character: 'arya-stark',
+    type: { en: 'Girl he saves', it: 'Ragazza salvata da lui' },
+    summary: {
+      en: 'Eddard Stark’s younger daughter. Yoren passes her off as a boy called Arry and takes her north with his recruits.',
+      it: 'La figlia minore di Eddard Stark. Yoren la fa passare per un ragazzo di nome Arry e la porta a nord con le sue reclute.',
+    },
+  },
+  yorGendry: {
+    character: 'gendry',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'A young smith who joins Yoren’s recruits for the Wall. He takes Arya’s side against the other boys.',
+      it: 'Un giovane fabbro che si unisce alle reclute di Yoren dirette alla Barriera. Prende le parti di Arya contro gli altri ragazzi.',
+    },
+  },
+
+  // Will, Gared and Waymar Royce. The show's three, and the book's Will and
+  // Waymar, die in their opening scene; the book's Gared is beheaded in
+  // Bran I (chapter 2), where his own `source: 'chapter'` entry opens. Their
+  // cards tell it in the past tense.
+  willWaymar: {
+    character: 'waymar-royce',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The young knight in command of the patrol. He would not turn back, and he died in the forest.',
+      it: 'Il giovane cavaliere al comando della pattuglia. Non ha voluto tornare indietro ed è morto nella foresta.',
+    },
+  },
+  willGared: {
+    character: 'gared',
+    type: { en: 'Fellow ranger', it: 'Compagno di pattuglia' },
+    summary: {
+      en: 'The oldest ranger of the patrol. He wanted to turn back to the Wall.',
+      it: 'Il ranger più anziano della pattuglia. Voleva tornare alla Barriera.',
+    },
+  },
+  willEddard: {
+    character: 'eddard-stark',
+    type: { en: 'His executioner', it: 'Il suo giustiziere' },
+    summary: {
+      en: 'The Lord of Winterfell. Will fled south of the Wall, and Eddard beheaded him as a deserter.',
+      it: 'Il lord di Grande Inverno. Will è fuggito a sud della Barriera, ed Eddard lo ha decapitato come disertore.',
+    },
+  },
+  garWaymar: {
+    character: 'waymar-royce',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The young knight in command of the patrol. He would not listen when Gared advised turning back.',
+      it: 'Il giovane cavaliere al comando della pattuglia. Non ha ascoltato Gared, che consigliava di tornare indietro.',
+    },
+  },
+  garWill: {
+    character: 'will',
+    type: { en: 'Fellow ranger', it: 'Compagno di pattuglia' },
+    summary: {
+      en: 'The ranger who scouted ahead and found the dead wildlings.',
+      it: 'Il ranger che è andato in avanscoperta e ha trovato i bruti morti.',
+    },
+  },
+  garEddard: {
+    character: 'eddard-stark',
+    type: { en: 'His executioner', it: 'Il suo giustiziere' },
+    summary: {
+      en: 'The Lord of Winterfell. Gared fled south, and Eddard beheaded him as a deserter.',
+      it: 'Il lord di Grande Inverno. Gared è fuggito a sud, ed Eddard lo ha decapitato come disertore.',
+    },
+  },
+  wayWill: {
+    character: 'will',
+    type: { en: 'Scout', it: 'Esploratore' },
+    summary: {
+      en: 'The patrol’s scout, who led them to the place where he had seen the dead wildlings.',
+      it: 'L’esploratore della pattuglia, che li ha guidati fino al punto in cui aveva visto i bruti morti.',
+    },
+  },
+  wayGared: {
+    character: 'gared',
+    type: { en: 'Ranger', it: 'Ranger' },
+    summary: {
+      en: 'The oldest ranger of the patrol. He advised turning back, and Waymar overruled him.',
+      it: 'Il ranger più anziano della pattuglia. Consigliava di tornare indietro, ma Waymar non lo ha ascoltato.',
+    },
+  },
+
+  // Grenn
+  greJon: {
+    character: 'jon-snow',
+    type: { en: 'Fellow recruit', it: 'Compagno di addestramento' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, the best fighter among the recruits. He beats Grenn in the yard, and Grenn and others go after him. Afterwards Jon offers to teach him.',
+      it: 'Il figlio bastardo di Eddard Stark, il miglior combattente tra le reclute. Batte Grenn nel cortile, e Grenn e altri se la prendono con lui. Poi Jon si offre di insegnargli.',
+    },
+  },
+  greAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits, with contempt for all of them.',
+      it: 'Il cavaliere che addestra le reclute, disprezzandole tutte.',
+    },
+  },
+  greJonFriend: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, who has been teaching the recruits. He asks Grenn and the others to stop hurting Sam, and Grenn goes along.',
+      it: 'Il figlio bastardo di Eddard Stark, che insegna alle altre reclute. Chiede a Grenn e agli altri di smettere di picchiare Sam, e Grenn accetta.',
+    },
+  },
+  greSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'A fat new recruit who cannot fight. Grenn agrees to go easy on him.',
+      it: 'Un ragazzo grasso appena arrivato tra le reclute, che non sa combattere. Grenn accetta di andarci piano con lui.',
+    },
+  },
+  greJonDesert: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, now a brother of the Watch. When Jon deserts to join Robb, Grenn rides after him and helps bring him back.',
+      it: 'Il figlio bastardo di Eddard Stark, ora suo confratello. Quando Jon diserta per unirsi a Robb, Grenn gli corre dietro e lo convince a tornare insieme agli altri.',
+    },
+  },
+  grePyp: {
+    character: 'pypar',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. He rides after Jon with Grenn.',
+      it: 'Un amico di Jon. Lo insegue insieme a Grenn.',
+    },
+  },
+  greSamwell10: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. He tries to stop Jon from leaving.',
+      it: 'Un amico di Jon. Cerca di impedirgli di partire.',
+    },
+  },
+
+  // Pypar
+  pypJon: {
+    character: 'jon-snow',
+    type: { en: 'Fellow recruit', it: 'Compagno di addestramento' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, the best fighter among the recruits Pyp trains with.',
+      it: 'Il figlio bastardo di Eddard Stark, il miglior combattente tra le reclute con cui Pyp si addestra.',
+    },
+  },
+  pypAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits, with contempt for all of them.',
+      it: 'Il cavaliere che addestra le reclute, disprezzandole tutte.',
+    },
+  },
+  pypJonFriend: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, who has been teaching the recruits. He asks them to stop hurting Sam, and Pyp sides with him.',
+      it: 'Il figlio bastardo di Eddard Stark, che insegna alle altre reclute. Chiede loro di smettere di picchiare Sam, e Pyp si schiera con lui.',
+    },
+  },
+  pypSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'A fat new recruit who cannot fight. Pyp agrees to go easy on him.',
+      it: 'Un ragazzo grasso appena arrivato tra le reclute, che non sa combattere. Pyp accetta di andarci piano con lui.',
+    },
+  },
+  pypRast: {
+    character: 'rast',
+    type: { en: 'Bully', it: 'Prepotente' },
+    summary: {
+      en: 'A recruit who means to keep hurting Sam. Pyp helps Jon frighten him off with Ghost.',
+      it: 'Un ragazzo tra le reclute, deciso a continuare a picchiare Sam. Pyp aiuta Jon a spaventarlo con Spettro.',
+    },
+  },
+  pypJonDesert: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, now a brother of the Watch. When Jon deserts to join Robb, Pyp rides after him and helps bring him back.',
+      it: 'Il figlio bastardo di Eddard Stark, ora suo confratello. Quando Jon diserta per unirsi a Robb, Pyp gli corre dietro e lo convince a tornare insieme agli altri.',
+    },
+  },
+  pypGrenn: {
+    character: 'grenn',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. He rides after Jon with Pyp.',
+      it: 'Un amico di Jon. Lo insegue insieme a Pyp.',
+    },
+  },
+  pypSamwell10: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. He tries to stop Jon from leaving.',
+      it: 'Un amico di Jon. Cerca di impedirgli di partire.',
+    },
+  },
+
+  // Rast
+  rastJonEpisode: {
+    character: 'jon-snow',
+    type: { en: 'Fellow recruit', it: 'Compagno di addestramento' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, the best fighter among the recruits. He beats Rast in the yard, and Rast and two others threaten him in the armory.',
+      it: 'Il figlio bastardo di Eddard Stark, il miglior combattente tra le reclute. Batte Rast nel cortile, e Rast e altri due lo minacciano nell’armeria.',
+    },
+  },
+  rastAlliserTrain: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits.',
+      it: 'Il cavaliere che addestra le reclute.',
+    },
+  },
+  rastSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Recruit he bullies', it: 'Recluta presa di mira da lui' },
+    summary: {
+      en: 'A fat new recruit who cannot fight. Rast means to keep hurting him.',
+      it: 'Un ragazzo grasso appena arrivato tra le reclute, che non sa combattere. Rast vuole continuare a picchiarlo.',
+    },
+  },
+  rastJon: {
+    character: 'jon-snow',
+    type: { en: 'Sam’s protector', it: 'Protettore di Sam' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, who protects Sam. He comes to Rast at night with his direwolf and warns him off.',
+      it: 'Il figlio bastardo di Eddard Stark, che protegge Sam. Va da Rast di notte con il suo meta-lupo e lo diffida.',
+    },
+  },
+  rastGhost: {
+    character: 'ghost-direwolf',
+    type: { en: 'Direwolf', it: 'Meta-lupo' },
+    summary: {
+      en: 'Jon’s white direwolf. Jon uses him to frighten Rast.',
+      it: 'Il meta-lupo bianco di Jon. Jon se ne serve per spaventare Rast.',
+    },
+  },
+  rastAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits. Rast follows his orders against Sam.',
+      it: 'Il cavaliere che addestra le reclute. Rast esegue i suoi ordini contro Sam.',
+    },
+  },
+
+  // Dareon and Halder
+  darJon: {
+    character: 'jon-snow',
+    type: { en: 'Fellow recruit', it: 'Compagno di addestramento' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, a recruit in Dareon’s group at Castle Black.',
+      it: 'Il figlio bastardo di Eddard Stark, recluta nello stesso gruppo di Dareon a Castello Nero.',
+    },
+  },
+  darJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. He takes Dareon’s group of recruits into the Watch.',
+      it: 'Il capo dei Guardiani della notte. Accoglie nei Guardiani il gruppo di reclute di Dareon.',
+    },
+  },
+  halJon: {
+    character: 'jon-snow',
+    type: { en: 'Fellow recruit', it: 'Compagno di addestramento' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, a recruit in Halder’s group at Castle Black.',
+      it: 'Il figlio bastardo di Eddard Stark, recluta nello stesso gruppo di Halder a Castello Nero.',
+    },
+  },
+  halJonSam: {
+    character: 'jon-snow',
+    type: { en: 'Fellow recruit', it: 'Compagno di addestramento' },
+    summary: {
+      en: 'Eddard Stark’s bastard son. When Ser Alliser sends Halder against Sam, Jon knocks him down, then talks him into leaving Sam alone.',
+      it: 'Il figlio bastardo di Eddard Stark. Quando ser Alliser manda Halder contro Sam, Jon lo mette al tappeto, poi lo convince a lasciare in pace Sam.',
+    },
+  },
+  halSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'A fat new recruit who cannot fight. Ser Alliser sends Halder to beat him.',
+      it: 'Un ragazzo grasso appena arrivato tra le reclute, che non sa combattere. Ser Alliser manda Halder a picchiarlo.',
+    },
+  },
+  halAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Master-at-arms', it: 'Maestro d’armi' },
+    summary: {
+      en: 'The knight who trains the recruits. He orders Halder to keep hitting Sam until he gets up.',
+      it: 'Il cavaliere che addestra le reclute. Ordina a Halder di continuare a colpire Sam finché non si rialza.',
+    },
+  },
+  halJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. He takes Halder’s group into the Watch and sends Halder to the builders.',
+      it: 'Il capo dei Guardiani della notte. Accoglie nei Guardiani il gruppo di Halder e assegna Halder ai costruttori.',
+    },
+  },
+  halJonDesert: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, now a brother of the Watch. When Jon deserts, Halder rides after him with Jon’s other friends and helps bring him back.',
+      it: 'Il figlio bastardo di Eddard Stark, ora suo confratello. Quando Jon diserta, Halder gli corre dietro con gli altri amici di Jon e lo convince a tornare.',
+    },
+  },
+  halSamwell71: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. When Jon slips away, Sam tells the others.',
+      it: 'Un amico di Jon. Quando Jon se ne va di nascosto, Sam avverte gli altri.',
+    },
+  },
+
+  // Todder (books only within the stage)
+  todJon: {
+    character: 'jon-snow',
+    type: { en: 'Fellow recruit', it: 'Compagno di addestramento' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, the best fighter among the recruits. Todder and others go after him in the armory.',
+      it: 'Il figlio bastardo di Eddard Stark, il miglior combattente tra le reclute. Todder e altri se la prendono con lui nell’armeria.',
+    },
+  },
+  todNoye: {
+    character: 'donal-noye',
+    type: { en: 'Armorer', it: 'Armaiolo' },
+    summary: {
+      en: 'The one-armed smith of Castle Black. He breaks up the fight in the armory before anyone is hurt.',
+      it: 'Il fabbro monco di Castello Nero. Interrompe la rissa nell’armeria prima che qualcuno si faccia male.',
+    },
+  },
+  todJonDesert: {
+    character: 'jon-snow',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, now a brother of the Watch. When Jon deserts, Todder rides after him with Jon’s other friends and helps bring him back.',
+      it: 'Il figlio bastardo di Eddard Stark, ora suo confratello. Quando Jon diserta, Todder gli corre dietro con gli altri amici di Jon e lo convince a tornare.',
+    },
+  },
+  todSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Brother of the Watch', it: 'Confratello' },
+    summary: {
+      en: 'A friend of Jon’s. When Jon slips away, Sam tells the others.',
+      it: 'Un amico di Jon. Quando Jon se ne va di nascosto, Sam avverte gli altri.',
+    },
+  },
+
+  // Othell Yarwyck (show only within the stage)
+  othlJon: {
+    character: 'jon-snow',
+    type: { en: 'New brother', it: 'Nuovo confratello' },
+    summary: {
+      en: 'Eddard Stark’s bastard son. Othell goes with him beyond the Wall to witness his vow at a heart tree.',
+      it: 'Il figlio bastardo di Eddard Stark. Othell lo accompagna oltre la Barriera come testimone del suo giuramento davanti a un albero del cuore.',
+    },
+  },
+  othlSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'New brother', it: 'Nuovo confratello' },
+    summary: {
+      en: 'The new brother who swears his vow beside Jon at the heart tree. Othell is there as a witness.',
+      it: 'Il compagno che pronuncia il giuramento accanto a Jon davanti all’albero del cuore. Othell è presente come testimone.',
+    },
+  },
+
+  // Bowen Marsh (books only within the stage)
+  bowTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Guest', it: 'Ospite' },
+    summary: {
+      en: 'The queen’s brother, a guest at the Lord Commander’s table. Bowen remarks on how much he drinks for so small a man.',
+      it: 'Il fratello della regina, ospite alla tavola del lord comandante. Bowen osserva quanto beve, per essere così piccolo.',
+    },
+  },
+  bowJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. Bowen sits at his table among the officers.',
+      it: 'Il capo dei Guardiani della notte. Bowen siede alla sua tavola con gli altri ufficiali.',
+    },
+  },
+  bowJon: {
+    character: 'jon-snow',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'Eddard Stark’s bastard son. Bowen names him steward to the Lord Commander, and goes with him beyond the Wall to swear his vow.',
+      it: 'Il figlio bastardo di Eddard Stark. Bowen lo nomina attendente del lord comandante e lo accompagna oltre la Barriera a pronunciare il giuramento.',
+    },
+  },
+  bowSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'A new brother of the Watch. Bowen sends him to Maester Aemon’s library and rookery, and goes with him to swear his vow.',
+      it: 'Un nuovo confratello dei Guardiani. Bowen lo manda a lavorare nella biblioteca e nella voliera di maestro Aemon, e lo accompagna a pronunciare il giuramento.',
+    },
+  },
+  bowChett: {
+    character: 'chett',
+    type: { en: 'Steward', it: 'Attendente' },
+    summary: {
+      en: 'Maester Aemon’s steward until Sam takes his place. Bowen announces that he has been moved to the kennels.',
+      it: 'L’attendente di maestro Aemon finché Sam non prende il suo posto. Bowen annuncia che è stato spostato ai canili.',
+    },
+  },
+
+  // Jaremy Rykker
+  jarAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Fellow knight', it: 'Cavaliere come lui' },
+    summary: {
+      en: 'The knight who trains the recruits. Both fought for King Aerys at King’s Landing, and took the black rather than be executed by Tyrion’s father.',
+      it: 'Il cavaliere che addestra le reclute. Entrambi hanno combattuto per re Aerys ad Approdo del Re, e hanno preso il nero per non essere giustiziati dal padre di Tyrion.',
+    },
+  },
+  jarJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, under whom Jaremy commands rangers.',
+      it: 'Il capo dei Guardiani della notte. Jaremy comanda i ranger ai suoi ordini.',
+    },
+  },
+  jarJeorDead: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch, under whom Jaremy commanded rangers.',
+      it: 'Il capo dei Guardiani della notte. Jaremy comandava i ranger ai suoi ordini.',
+    },
+  },
+  jarJon: {
+    character: 'jon-snow',
+    type: { en: 'New brother', it: 'Nuovo confratello' },
+    summary: {
+      en: 'Eddard Stark’s bastard son. Jaremy leads his escort beyond the Wall to swear his vow, and embraces him afterwards.',
+      it: 'Il figlio bastardo di Eddard Stark. Jaremy guida la sua scorta oltre la Barriera per il giuramento, e poi lo abbraccia.',
+    },
+  },
+  jarSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'New brother', it: 'Nuovo confratello' },
+    summary: {
+      en: 'The new brother who swears his vow beside Jon. Jaremy leads their escort, and embraces him afterwards.',
+      it: 'Il compagno che pronuncia il giuramento accanto a Jon. Jaremy guida la loro scorta, e poi lo abbraccia.',
+    },
+  },
+  jarOthor: {
+    character: 'othor',
+    type: { en: 'Dead ranger', it: 'Ranger morto' },
+    summary: {
+      en: 'A ranger of Benjen Stark’s party, found dead beyond the Wall and brought back to Castle Black.',
+      it: 'Un ranger del gruppo di Benjen Stark, trovato morto oltre la Barriera e riportato a Castello Nero.',
+    },
+  },
+  jarJafer: {
+    character: 'jafer-flowers',
+    type: { en: 'Dead ranger', it: 'Ranger morto' },
+    summary: {
+      en: 'A ranger of Benjen Stark’s party, found dead beside Othor and brought back to Castle Black.',
+      it: 'Un ranger del gruppo di Benjen Stark, trovato morto accanto a Othor e riportato a Castello Nero.',
+    },
+  },
+  jarJaferKiller: {
+    character: 'jafer-flowers',
+    type: { en: 'His killer', it: 'Il suo uccisore' },
+    summary: {
+      en: 'A ranger of Benjen Stark’s party, brought back dead. His corpse rose at Castle Black and killed Jaremy.',
+      it: 'Un ranger del gruppo di Benjen Stark, riportato morto. Il suo cadavere si è rialzato a Castello Nero e ha ucciso Jaremy.',
+    },
+  },
+  jarOthorDead: {
+    character: 'othor',
+    type: { en: 'Dead ranger', it: 'Ranger morto' },
+    summary: {
+      en: 'A ranger of Benjen Stark’s party, brought back dead. His corpse rose and attacked the Lord Commander, and was burned.',
+      it: 'Un ranger del gruppo di Benjen Stark, riportato morto. Il suo cadavere si è rialzato e ha aggredito il lord comandante, ed è stato bruciato.',
+    },
+  },
+
+  // Othor and Jafer Flowers
+  otrBenjen: {
+    character: 'benjen-stark',
+    type: { en: 'Ranger he rides with', it: 'Ranger al cui seguito parte' },
+    summary: {
+      en: 'The ranger at the head of the party Othor rides out with.',
+      it: 'Il ranger alla guida del gruppo con cui Othor parte in perlustrazione.',
+    },
+  },
+  otrBenjenLost: {
+    character: 'benjen-stark',
+    type: {
+      en: 'Ranger he rode with',
+      it: 'Ranger al cui seguito era partito',
+    },
+    summary: {
+      en: 'The ranger at the head of the party Othor rode out with. Benjen has not come back.',
+      it: 'Il ranger alla guida del gruppo con cui Othor era partito in perlustrazione. Benjen non è tornato.',
+    },
+  },
+  otrJafer: {
+    character: 'jafer-flowers',
+    type: { en: 'Fellow ranger', it: 'Compagno di pattuglia' },
+    summary: {
+      en: 'A ranger of the same party, found dead beside him.',
+      it: 'Un ranger dello stesso gruppo, trovato morto accanto a lui.',
+    },
+  },
+  otrJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Lord Commander', it: 'Lord comandante' },
+    summary: {
+      en: 'The head of the Night’s Watch. Othor’s corpse rises and attacks him in his rooms.',
+      it: 'Il capo dei Guardiani della notte. Il cadavere di Othor si rialza e lo aggredisce nelle sue stanze.',
+    },
+  },
+  otrJon: {
+    character: 'jon-snow',
+    type: {
+      en: 'Lord Commander’s steward',
+      it: 'Attendente del lord comandante',
+    },
+    summary: {
+      en: 'Eddard Stark’s bastard son. He destroys Othor’s corpse with fire.',
+      it: 'Il figlio bastardo di Eddard Stark. Distrugge il cadavere di Othor con il fuoco.',
+    },
+  },
+  jafOthor: {
+    character: 'othor',
+    type: { en: 'Fellow ranger', it: 'Compagno di pattuglia' },
+    summary: {
+      en: 'A ranger of the same party, found dead beside him.',
+      it: 'Un ranger dello stesso gruppo, trovato morto accanto a lui.',
+    },
+  },
+  jafBenjen: {
+    character: 'benjen-stark',
+    type: {
+      en: 'Ranger he rode with',
+      it: 'Ranger al cui seguito era partito',
+    },
+    summary: {
+      en: 'The ranger at the head of the party Jafer rode out with. Benjen has not come back.',
+      it: 'Il ranger alla guida del gruppo con cui Jafer era partito in perlustrazione. Benjen non è tornato.',
+    },
+  },
+  jafJaremy: {
+    character: 'jaremy-rykker',
+    type: {
+      en: 'Knight killed by his corpse',
+      it: 'Cavaliere ucciso dal suo cadavere',
+    },
+    summary: {
+      en: 'The knight of the Watch who named Jafer’s body. Jafer’s corpse rose at Castle Black and killed him.',
+      it: 'Il cavaliere dei Guardiani che ha riconosciuto il corpo di Jafer. Il cadavere di Jafer si è rialzato a Castello Nero e lo ha ucciso.',
+    },
+  },
+  jafAlliser: {
+    character: 'alliser-thorne',
+    type: { en: 'Bearer of his hand', it: 'Latore della sua mano' },
+    summary: {
+      en: 'The knight sent to King’s Landing with Jafer’s severed hand, to show the king what rose at Castle Black.',
+      it: 'Il cavaliere mandato ad Approdo del Re con la mano mozzata di Jafer, per mostrare al re che cosa si è rialzato a Castello Nero.',
+    },
+  },
+
+  // Donal Noye and Chett (books only)
+  noyJon: {
+    character: 'jon-snow',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'Eddard Stark’s bastard son, the best fighter among the recruits. Noye stops the others from beating him, then tells him he has had training they never had.',
+      it: 'Il figlio bastardo di Eddard Stark, il miglior combattente tra le reclute. Noye impedisce agli altri di picchiarlo, poi gli fa notare che lui ha avuto un addestramento che loro non hanno mai avuto.',
+    },
+  },
+  noyGrenn: {
+    character: 'grenn',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'A recruit who, with others, goes after Jon in the armory. Noye breaks up the fight.',
+      it: 'Una delle reclute che se la prendono con Jon nell’armeria. Noye interrompe la rissa.',
+    },
+  },
+  cheAemon: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The blind old maester of Castle Black. Chett is his steward.',
+      it: 'Il vecchio maestro cieco di Castello Nero. Chett è il suo attendente.',
+    },
+  },
+  cheJon: {
+    character: 'jon-snow',
+    type: { en: 'Recruit', it: 'Recluta' },
+    summary: {
+      en: 'Eddard Stark’s bastard son. He comes to Aemon’s door at night, and Chett tries to send him away.',
+      it: 'Il figlio bastardo di Eddard Stark. Si presenta di notte alla porta di Aemon, e Chett cerca di mandarlo via.',
+    },
+  },
+  cheSamwell: {
+    character: 'samwell-tarly',
+    type: { en: 'His replacement', it: 'Il suo sostituto' },
+    summary: {
+      en: 'A new brother of the Watch, who takes Chett’s place as Maester Aemon’s steward. Chett is moved to the kennels.',
+      it: 'Un nuovo confratello dei Guardiani, che prende il posto di Chett come attendente di maestro Aemon. Chett viene spostato ai canili.',
+    },
+  },
+  cheAemonFormer: {
+    character: 'aemon',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The blind old maester of Castle Black. Chett was his steward until Sam took his place.',
+      it: 'Il vecchio maestro cieco di Castello Nero. Chett è stato il suo attendente finché Sam non ha preso il suo posto.',
+    },
+  },
 } satisfies Record<string, Relationship>
 
 export const season1Relationships = {
@@ -2277,6 +3511,512 @@ export const season1Relationships = {
       chapter: 69,
       source: 'chapter',
       value: [links.eroDaenerys, links.eroMago, links.eroDoreah],
+    },
+  ],
+
+  // The Night's Watch cast (#1347). Ned dies at 9 / 66, so from there every
+  // card that names him is in the past tense.
+  'jon-snow': [
+    {
+      episode: 1,
+      chapter: 2,
+      value: [links.jonEddard, links.jonRobb, links.jonBran],
+    },
+    {
+      episode: 2,
+      chapter: 11,
+      value: [
+        links.jonEddard,
+        links.jonBenjenNorth,
+        links.jonArya,
+        links.jonRobbFarewell,
+        links.jonCatelyn,
+      ],
+    },
+    // The show's Tyrion stops the recruits in the armory; the book's Donal
+    // Noye does, and the show has no Noye.
+    {
+      episode: 3,
+      chapter: 20,
+      source: 'episode',
+      value: [
+        links.jonEddard,
+        links.jonBenjenRanging,
+        links.jonAlliser,
+        links.jonTyrionEpisode,
+      ],
+    },
+    {
+      episode: 3,
+      chapter: 20,
+      source: 'chapter',
+      value: [
+        links.jonEddard,
+        links.jonBenjenRanging,
+        links.jonAlliser,
+        links.jonNoye,
+        links.jonTyrionChapter,
+      ],
+    },
+    {
+      episode: 4,
+      chapter: 27,
+      value: [
+        links.jonSamwell,
+        links.jonGhost,
+        links.jonAlliser,
+        links.jonBenjenRanging,
+        links.jonEddard,
+      ],
+    },
+    {
+      episode: 7,
+      chapter: 49,
+      value: [
+        links.jonJeorSteward,
+        links.jonSamwellSworn,
+        links.jonBenjenMissing,
+        links.jonGhost,
+        links.jonEddard,
+      ],
+    },
+    {
+      episode: 8,
+      chapter: 53,
+      value: [
+        links.jonEddardArrested,
+        links.jonJeorSaved,
+        links.jonAlliserKnife,
+        links.jonOthor,
+        links.jonSamwellSworn,
+      ],
+    },
+    // The book gives Longclaw and Aemon's name in Jon VIII (chapter 61); the
+    // entry waits for Ned's death at chapter 66, which the show tells in the
+    // same episode as Longclaw.
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        links.jonEddardDead,
+        links.jonJeorLongclaw,
+        links.jonAemon,
+        links.jonSamwellRobb,
+        links.jonRobbWar,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 71,
+      value: [
+        links.jonEddardDesert,
+        links.jonJeorRanging,
+        links.jonSamwellStop,
+        links.jonGrenn,
+        links.jonPyp,
+      ],
+    },
+  ],
+  // Books: Jon III (chapter 20) has him give Jon word of Bran; the show has
+  // no such scene, and its Jeor first deals with Jon at the oath.
+  'jeor-mormont': [
+    {
+      episode: 3,
+      chapter: 20,
+      source: 'chapter',
+      value: [links.jeorJonLetter],
+    },
+    {
+      episode: 3,
+      chapter: 22,
+      source: 'episode',
+      value: [links.jeorTyrion, links.jeorAemon, links.jeorAlliser],
+    },
+    {
+      episode: 3,
+      chapter: 22,
+      source: 'chapter',
+      value: [
+        links.jeorTyrion,
+        links.jeorAemon,
+        links.jeorAlliser,
+        links.jeorJonLetter,
+      ],
+    },
+    {
+      episode: 7,
+      chapter: 49,
+      value: [links.jeorJonSteward, links.jeorAemon, links.jeorAlliser],
+    },
+    {
+      episode: 8,
+      chapter: 53,
+      value: [
+        links.jeorJonSaved,
+        links.jeorOthor,
+        links.jeorAemon,
+        links.jeorAlliser,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 61,
+      value: [
+        links.jeorJonLongclaw,
+        links.jeorJorah,
+        links.jeorAemon,
+        links.jeorAlliserSent,
+        links.jeorOthorDead,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 71,
+      value: [
+        links.jeorJonRanging,
+        links.jeorJorah,
+        links.jeorAemon,
+        links.jeorAlliserSent,
+        links.jeorOthorDead,
+      ],
+    },
+  ],
+  // The two media give his talk with Tyrion different words.
+  'aemon': [
+    {
+      episode: 3,
+      chapter: 22,
+      source: 'episode',
+      value: [links.aemJeor, links.aemTyrionEpisode],
+    },
+    {
+      episode: 3,
+      chapter: 22,
+      source: 'chapter',
+      value: [links.aemJeor, links.aemTyrionChapter],
+    },
+    // Books only: Jon V (chapter 42) and Chett, whom the show does not have.
+    {
+      episode: 5,
+      chapter: 42,
+      source: 'chapter',
+      value: [links.aemJeor, links.aemJonSam, links.aemChett],
+    },
+    {
+      episode: 7,
+      chapter: 49,
+      value: [links.aemJeor, links.aemSamwell, links.aemJon],
+    },
+    {
+      episode: 9,
+      chapter: 61,
+      value: [links.aemJonTold, links.aemSamwell, links.aemJeor],
+    },
+  ],
+  'samwell-tarly': [
+    {
+      episode: 4,
+      chapter: 27,
+      value: [links.samJon, links.samAlliser, links.samRast],
+    },
+    {
+      episode: 7,
+      chapter: 49,
+      value: [
+        links.samJonSworn,
+        links.samAemon,
+        links.samAlliser,
+        links.samRast,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 71,
+      value: [links.samJonDesert, links.samAemon, links.samGrenn, links.samPyp],
+    },
+  ],
+  // Tyrion mocks him at the officers' table in the book alone.
+  'alliser-thorne': [
+    { episode: 3, chapter: 20, value: [links.allJon, links.allJeor] },
+    {
+      episode: 3,
+      chapter: 22,
+      source: 'chapter',
+      value: [links.allJon, links.allJeor, links.allTyrion],
+    },
+    {
+      episode: 4,
+      chapter: 27,
+      source: 'episode',
+      value: [links.allJon, links.allSamwell, links.allJeor],
+    },
+    {
+      episode: 4,
+      chapter: 27,
+      source: 'chapter',
+      value: [links.allJon, links.allSamwell, links.allJeor, links.allTyrion],
+    },
+    {
+      episode: 8,
+      chapter: 53,
+      value: [links.allJonKnife, links.allSamwell, links.allJeor],
+    },
+    {
+      episode: 9,
+      chapter: 61,
+      value: [links.allJeorSent, links.allJonKnife, links.allSamwell],
+    },
+  ],
+  // The show names him at Castle Black as he leaves with Tyrion; the book
+  // has him join the party on the road north (Tyrion II, chapter 14). Only
+  // the show has him take Gendry north within the stage.
+  'yoren': [
+    {
+      episode: 3,
+      chapter: 14,
+      source: 'chapter',
+      value: [links.yorBenjenChapter, links.yorJon, links.yorTyrionChapter],
+    },
+    {
+      episode: 3,
+      chapter: 22,
+      source: 'episode',
+      value: [links.yorBenjenEpisode, links.yorTyrionEpisode],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [links.yorArya, links.yorEddard, links.yorTyrion],
+    },
+    {
+      episode: 10,
+      chapter: 73,
+      source: 'episode',
+      value: [
+        links.yorAryaArry,
+        links.yorGendry,
+        links.yorEddard,
+        links.yorTyrion,
+      ],
+    },
+  ],
+  // The show's Ned beheads Will; the book's beheads Gared (Bran I).
+  'will': [
+    {
+      episode: 1,
+      chapter: 1,
+      source: 'episode',
+      value: [links.willWaymar, links.willGared, links.willEddard],
+    },
+    {
+      episode: 1,
+      chapter: 1,
+      source: 'chapter',
+      value: [links.willWaymar, links.willGared],
+    },
+  ],
+  'gared': [
+    { episode: 1, chapter: 1, value: [links.garWaymar, links.garWill] },
+    {
+      episode: 1,
+      chapter: 2,
+      source: 'chapter',
+      value: [links.garWaymar, links.garWill, links.garEddard],
+    },
+  ],
+  'waymar-royce': [
+    { episode: 1, chapter: 1, value: [links.wayWill, links.wayGared] },
+  ],
+  'grenn': [
+    { episode: 3, chapter: 20, value: [links.greJon, links.greAlliser] },
+    {
+      episode: 4,
+      chapter: 27,
+      value: [links.greJonFriend, links.greSamwell, links.greAlliser],
+    },
+    {
+      episode: 10,
+      chapter: 71,
+      value: [links.greJonDesert, links.grePyp, links.greSamwell10],
+    },
+  ],
+  'pypar': [
+    { episode: 3, chapter: 20, value: [links.pypJon, links.pypAlliser] },
+    {
+      episode: 4,
+      chapter: 27,
+      value: [
+        links.pypJonFriend,
+        links.pypSamwell,
+        links.pypRast,
+        links.pypAlliser,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 71,
+      value: [links.pypJonDesert, links.pypGrenn, links.pypSamwell10],
+    },
+  ],
+  // The show beats and names him in the yard in episode 3; the book opens
+  // him in Jon IV (chapter 27), against Sam.
+  'rast': [
+    {
+      episode: 3,
+      chapter: 27,
+      source: 'episode',
+      value: [links.rastJonEpisode, links.rastAlliserTrain],
+    },
+    {
+      episode: 4,
+      chapter: 27,
+      value: [
+        links.rastSamwell,
+        links.rastJon,
+        links.rastGhost,
+        links.rastAlliser,
+      ],
+    },
+  ],
+  'dareon': [
+    { episode: 7, chapter: 20, source: 'chapter', value: [links.darJon] },
+    { episode: 7, chapter: 49, value: [links.darJon, links.darJeor] },
+  ],
+  // The book has him beaten by Jon over Sam and riding after Jon; the show,
+  // within the stage, has him only at the assignments.
+  'halder': [
+    { episode: 7, chapter: 20, source: 'chapter', value: [links.halJon] },
+    {
+      episode: 7,
+      chapter: 27,
+      source: 'chapter',
+      value: [links.halJonSam, links.halSamwell, links.halAlliser],
+    },
+    {
+      episode: 7,
+      chapter: 49,
+      source: 'episode',
+      value: [links.halJon, links.halJeor],
+    },
+    {
+      episode: 10,
+      chapter: 71,
+      source: 'chapter',
+      value: [links.halJonDesert, links.halSamwell71],
+    },
+  ],
+  // Books only: his show gate (episode 30) is past the stage.
+  'todder': [
+    {
+      episode: 30,
+      chapter: 20,
+      source: 'chapter',
+      value: [links.todJon, links.todNoye],
+    },
+    {
+      episode: 30,
+      chapter: 71,
+      source: 'chapter',
+      value: [links.todJonDesert, links.todSamwell],
+    },
+  ],
+  // Show only: the book has him at the oath but tells no tie of his.
+  'othell-yarwyck': [
+    {
+      episode: 7,
+      chapter: 49,
+      source: 'episode',
+      value: [links.othlJon, links.othlSamwell],
+    },
+  ],
+  // Books only: his show gate (episode 41) is past the stage.
+  'bowen-marsh': [
+    {
+      episode: 41,
+      chapter: 22,
+      source: 'chapter',
+      value: [links.bowTyrion, links.bowJeor],
+    },
+    {
+      episode: 41,
+      chapter: 49,
+      source: 'chapter',
+      value: [links.bowJon, links.bowSamwell, links.bowJeor, links.bowChett],
+    },
+  ],
+  // The show has him escort Jon and Sam to their vows; only the book kills
+  // him within the stage, at the hands of Jafer's corpse (Jon VIII).
+  'jaremy-rykker': [
+    {
+      episode: 7,
+      chapter: 22,
+      source: 'chapter',
+      value: [links.jarAlliser, links.jarJeor],
+    },
+    {
+      episode: 7,
+      chapter: 49,
+      source: 'episode',
+      value: [links.jarJon, links.jarSamwell, links.jarJeor],
+    },
+    {
+      episode: 8,
+      chapter: 53,
+      value: [links.jarOthor, links.jarJafer, links.jarJeor],
+    },
+    {
+      episode: 8,
+      chapter: 61,
+      source: 'chapter',
+      value: [links.jarJaferKiller, links.jarOthorDead, links.jarJeorDead],
+    },
+  ],
+  // Books: he rides out with Benjen in Jon III (chapter 20). Both media
+  // bring him back dead at 8 / 53.
+  'othor': [
+    { episode: 8, chapter: 20, source: 'chapter', value: [links.otrBenjen] },
+    {
+      episode: 8,
+      chapter: 53,
+      value: [links.otrBenjenLost, links.otrJafer, links.otrJeor, links.otrJon],
+    },
+  ],
+  'jafer-flowers': [
+    { episode: 8, chapter: 53, value: [links.jafOthor, links.jafBenjen] },
+    {
+      episode: 8,
+      chapter: 61,
+      source: 'chapter',
+      value: [
+        links.jafOthor,
+        links.jafBenjen,
+        links.jafJaremy,
+        links.jafAlliser,
+      ],
+    },
+  ],
+  // Books only.
+  'donal-noye': [
+    {
+      episode: 3,
+      chapter: 20,
+      source: 'chapter',
+      value: [links.noyJon, links.noyGrenn],
+    },
+  ],
+  // Books only: Jon V (chapter 42), then Sam takes his place (Jon VI).
+  'chett': [
+    {
+      episode: 5,
+      chapter: 42,
+      source: 'chapter',
+      value: [links.cheAemon, links.cheJon],
+    },
+    {
+      episode: 7,
+      chapter: 49,
+      source: 'chapter',
+      value: [links.cheSamwell, links.cheAemonFormer, links.cheJon],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>

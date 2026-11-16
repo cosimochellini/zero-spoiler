@@ -163,6 +163,175 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
       "https://awoiaf.westeros.org/index.php/Eroeh"
+    ],
+    "jon-snow": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_10",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "jeor-mormont": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+      "https://awoiaf.westeros.org/index.php/Jeor_Mormont",
+      "https://awoiaf.westeros.org/index.php/House_Mormont",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "aemon": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_41",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+      "https://awoiaf.westeros.org/index.php/Aemon_Targaryen_(son_of_Maekar_I)",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Baelor"
+    ],
+    "samwell-tarly": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+      "https://awoiaf.westeros.org/index.php/Samwell_Tarly",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "alliser-thorne": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Baelor"
+    ],
+    "yoren": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+      "https://awoiaf.westeros.org/index.php/Yoren",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "will": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+    ],
+    "gared": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+    ],
+    "waymar-royce": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
+    ],
+    "grenn": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+      "https://awoiaf.westeros.org/index.php/Grenn",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Grenn"
+    ],
+    "pypar": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+      "https://awoiaf.westeros.org/index.php/Pypar",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Pypar"
+    ],
+    "rast": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Rast"
+    ],
+    "dareon": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Dareon"
+    ],
+    "halder": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Halder"
+    ],
+    "todder": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70"
+    ],
+    "othell-yarwyck": [
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/Othell_Yarwyck"
+    ],
+    "bowen-marsh": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://awoiaf.westeros.org/index.php/Bowen_Marsh"
+    ],
+    "jaremy-rykker": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+      "https://awoiaf.westeros.org/index.php/Jaremy_Rykker",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Jaremy_Rykker"
+    ],
+    "othor": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End"
+    ],
+    "jafer-flowers": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End"
+    ],
+    "donal-noye": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19"
+    ],
+    "chett": [
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_41",
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+      "https://awoiaf.westeros.org/index.php/Chett"
     ]
   },
   "omitted": {},
@@ -174,7 +343,6 @@
     "arya-stark": "#1345",
     "bran-stark": "#1345",
     "rickon-stark": "#1345",
-    "jon-snow": "#1347",
     "benjen-stark": "#1345",
     "grey-wind": "#1345",
     "lady-direwolf": "#1345",
@@ -190,11 +358,6 @@
     "osha": "#1345",
     "mordane": "#1345",
     "jory-cassel": "#1345",
-    "jeor-mormont": "#1347",
-    "aemon": "#1347",
-    "samwell-tarly": "#1347",
-    "alliser-thorne": "#1347",
-    "yoren": "#1347",
     "cersei-lannister": "#1346",
     "jaime-lannister": "#1346",
     "tyrion-lannister": "#1346",
@@ -280,22 +443,6 @@
     "lommy": "#1346",
     "jaqen-hghar": "#1346",
     "rorge": "#1346",
-    "biter": "#1346",
-    "will": "#1347",
-    "gared": "#1347",
-    "waymar-royce": "#1347",
-    "grenn": "#1347",
-    "pypar": "#1347",
-    "rast": "#1347",
-    "dareon": "#1347",
-    "halder": "#1347",
-    "todder": "#1347",
-    "othell-yarwyck": "#1347",
-    "bowen-marsh": "#1347",
-    "jaremy-rykker": "#1347",
-    "othor": "#1347",
-    "jafer-flowers": "#1347",
-    "donal-noye": "#1347",
-    "chett": "#1347"
+    "biter": "#1346"
   }
 }
