@@ -299,8 +299,8 @@ describe.each(LOCALES)(
     })
 
     it('keeps Varys a show-only link', () => {
-      expect(people('jorah-mormont', ep(3))).not.toContain('varys')
-      expect(people('jorah-mormont', ep(4))).toContain('varys')
+      expect(people('jorah-mormont', ep(4))).not.toContain('varys')
+      expect(people('jorah-mormont', ep(5))).toContain('varys')
       expect(people('illyrio-mopatis', ep(4))).not.toContain('varys')
       expect(people('illyrio-mopatis', ep(5))).toContain('varys')
 

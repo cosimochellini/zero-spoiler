@@ -285,7 +285,7 @@ describe('Game of Thrones relationship provenance', () => {
     )
   })
 
-  it('lists as authored exactly the thronesCharacters that have relationships', () => {
+  it('lists as authored exactly the characters that have relationships', () => {
     expect(Object.keys(authored).toSorted(byId)).toStrictEqual(
       thronesOwners.toSorted(byId),
     )
