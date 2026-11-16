@@ -172,7 +172,11 @@
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Eddard_Stark"
+      "https://gameofthrones.fandom.com/wiki/Eddard_Stark",
+      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Catelyn_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_Stark"
     ],
     "catelyn-stark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
@@ -184,7 +188,15 @@
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
       "https://gameofthrones.fandom.com/wiki/Baelor",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Catelyn_Stark"
+      "https://gameofthrones.fandom.com/wiki/Catelyn_Stark",
+      "https://iceandfire.fandom.com/wiki/Catelyn_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Catelyn_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Catelyn_Stark",
+      "https://iceandfire.fandom.com/wiki/Lysa_Arryn"
     ],
     "robb-stark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
@@ -199,7 +211,11 @@
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Baelor",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Robb_Stark"
+      "https://gameofthrones.fandom.com/wiki/Robb_Stark",
+      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Catelyn_Stark",
+      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
     ],
     "rickon-stark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
@@ -215,7 +231,8 @@
     "jory-cassel": [
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Jory_Cassel"
+      "https://gameofthrones.fandom.com/wiki/Jory_Cassel",
+      "https://iceandfire.fandom.com/wiki/Jory_Cassel"
     ],
     "sansa-stark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
@@ -229,7 +246,8 @@
       "https://gameofthrones.fandom.com/wiki/Baelor",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://gameofthrones.fandom.com/wiki/Sansa_Stark",
-      "https://gameofthrones.fandom.com/wiki/Mordane"
+      "https://gameofthrones.fandom.com/wiki/Mordane",
+      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
     ],
     "arya-stark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
@@ -243,7 +261,9 @@
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Arya_Stark"
+      "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones"
     ],
     "bran-stark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
@@ -256,40 +276,48 @@
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://gameofthrones.fandom.com/wiki/Bran_Stark",
-      "https://gameofthrones.fandom.com/wiki/Luwin"
+      "https://gameofthrones.fandom.com/wiki/Luwin",
+      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Bran_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Bran_III_-_A_Game_of_Thrones"
     ],
     "benjen-stark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Benjen_Stark"
+      "https://gameofthrones.fandom.com/wiki/Benjen_Stark",
+      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones"
     ],
     "grey-wind": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Grey_Wind",
-      "https://gameofthrones.fandom.com/wiki/Greatjon_Umber"
+      "https://gameofthrones.fandom.com/wiki/Greatjon_Umber",
+      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones"
     ],
     "lady-direwolf": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lady"
+      "https://gameofthrones.fandom.com/wiki/Lady",
+      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
     ],
     "nymeria": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://gameofthrones.fandom.com/wiki/Arya_Stark",
-      "https://gameofthrones.fandom.com/wiki/Sansa_Stark"
+      "https://gameofthrones.fandom.com/wiki/Sansa_Stark",
+      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
     ],
     "summer-direwolf": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Summer"
+      "https://gameofthrones.fandom.com/wiki/Summer",
+      "https://iceandfire.fandom.com/wiki/Bran_III_-_A_Game_of_Thrones"
     ],
     "shaggydog": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
@@ -303,7 +331,9 @@
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Ghost"
+      "https://gameofthrones.fandom.com/wiki/Ghost",
+      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones"
     ],
     "theon-greyjoy": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
@@ -311,7 +341,8 @@
       "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Theon_Greyjoy"
+      "https://gameofthrones.fandom.com/wiki/Theon_Greyjoy",
+      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones"
     ],
     "luwin": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
@@ -320,7 +351,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Luwin"
+      "https://gameofthrones.fandom.com/wiki/Luwin",
+      "https://iceandfire.fandom.com/wiki/Catelyn_II_-_A_Game_of_Thrones"
     ],
     "rodrik-cassel": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
@@ -330,7 +362,10 @@
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
       "https://gameofthrones.fandom.com/wiki/Rodrik_Cassel",
-      "https://gameofthrones.fandom.com/wiki/Jory_Cassel"
+      "https://gameofthrones.fandom.com/wiki/Jory_Cassel",
+      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Jory_Cassel"
     ],
     "old-nan": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
@@ -365,7 +400,9 @@
     ],
     "hullen": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50",
-      "https://gameofthrones.fandom.com/wiki/Hullen"
+      "https://gameofthrones.fandom.com/wiki/Hullen",
+      "https://iceandfire.fandom.com/wiki/Harwin",
+      "https://iceandfire.fandom.com/wiki/Hullen"
     ],
     "jeyne-poole": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
@@ -378,7 +415,9 @@
     "mikken": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Mikken"
+      "https://gameofthrones.fandom.com/wiki/Mikken",
+      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones"
     ],
     "hallis-mollen": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
@@ -390,13 +429,15 @@
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://gameofthrones.fandom.com/wiki/Greatjon_Umber",
-      "https://gameofthrones.fandom.com/wiki/Jon_Umber_(Smalljon)"
+      "https://gameofthrones.fandom.com/wiki/Jon_Umber_(Smalljon)",
+      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
     ],
     "smalljon-umber": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
       "https://gameofthrones.fandom.com/wiki/Jon_Umber_(Smalljon)",
-      "https://gameofthrones.fandom.com/wiki/Greatjon_Umber"
+      "https://gameofthrones.fandom.com/wiki/Greatjon_Umber",
+      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
     ],
     "rickard-karstark": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
@@ -406,28 +447,37 @@
     "roose-bolton": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62",
-      "https://gameofthrones.fandom.com/wiki/Roose_Bolton"
+      "https://gameofthrones.fandom.com/wiki/Roose_Bolton",
+      "https://iceandfire.fandom.com/wiki/Roose_Bolton"
     ],
     "galbart-glover": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Galbart_Glover"
+      "https://gameofthrones.fandom.com/wiki/Galbart_Glover",
+      "https://iceandfire.fandom.com/wiki/Galbart_Glover"
     ],
-    "robett-glover": ["https://gameofthrones.fandom.com/wiki/Robett_Glover"],
+    "robett-glover": [
+      "https://gameofthrones.fandom.com/wiki/Robett_Glover",
+      "https://iceandfire.fandom.com/wiki/Robett_Glover"
+    ],
     "maege-mormont": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Maege_Mormont"
+      "https://gameofthrones.fandom.com/wiki/Maege_Mormont",
+      "https://iceandfire.fandom.com/wiki/Dacey_Mormont"
     ],
     "dacey-mormont": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-      "https://gameofthrones.fandom.com/wiki/Maege_Mormont"
+      "https://gameofthrones.fandom.com/wiki/Maege_Mormont",
+      "https://iceandfire.fandom.com/wiki/Dacey_Mormont",
+      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
     ],
     "wendel-manderly": [
-      "https://gameofthrones.fandom.com/wiki/Wendel_Manderly"
+      "https://gameofthrones.fandom.com/wiki/Wendel_Manderly",
+      "https://iceandfire.fandom.com/wiki/Wendel_Manderly"
     ],
     "vayon-poole": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
@@ -438,16 +488,21 @@
     "tomard": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Tomard"
+      "https://gameofthrones.fandom.com/wiki/Tomard",
+      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Tomard"
     ],
     "harwin": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50",
       "https://gameofthrones.fandom.com/wiki/Hullen",
-      "https://gameofthrones.fandom.com/wiki/Tomard"
+      "https://gameofthrones.fandom.com/wiki/Tomard",
+      "https://iceandfire.fandom.com/wiki/Harwin",
+      "https://iceandfire.fandom.com/wiki/Hullen"
     ],
     "alyn": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45",
-      "https://gameofthrones.fandom.com/wiki/Tomard"
+      "https://gameofthrones.fandom.com/wiki/Tomard",
+      "https://iceandfire.fandom.com/wiki/Alyn"
     ]
   },
   "omitted": {},
