@@ -119,13 +119,13 @@ Piece and every archived Hunter x Hunter character through authored selections
 or documented deliberate omissions; Hunter x Hunter characters filed later wait
 under `pending` with the issue that will author them
 (`docs/content-provenance/hunter-x-hunter-relationships.json`). The Game of
-Thrones inventory lists every first-stage character: the Essos cast is authored
-or omitted, and the rest wait under `pending` with the child issue of #893 that
-will author them (`docs/content-provenance/game-of-thrones-relationships.json`).
-No relationships are inferred. Character archive-order navigation and nearby
-recommendations have been retired, and so has the place page's previous and next
-stop; a place's map names the reached stops around it instead. The fruit rails
-remain.
+Thrones inventory lists every first-stage character: the Essos, Winterfell and
+northern casts are authored or omitted, and the rest wait under `pending` with
+the child issue of #893 that will author them
+(`docs/content-provenance/game-of-thrones-relationships.json`). No relationships
+are inferred. Character archive-order navigation and nearby recommendations have
+been retired, and so has the place page's previous and next stop; a place's map
+names the reached stops around it instead. The fruit rails remain.
 
 The authoring contract and provenance requirements are in
 [Contributing](../CONTRIBUTING.md#authoring-relationship-selections). Selection

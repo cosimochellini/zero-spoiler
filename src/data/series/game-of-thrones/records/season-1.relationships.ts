@@ -1469,6 +1469,2064 @@ const links = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Winterfell and the northern cast (#1345). The same rules as `links`; the
+ * show pins follow the Game of Thrones Wiki's `{{Ref|GOTxxx}}` citations, and
+ * the chapter pins the chapter that tells each event, the records' own where
+ * they cite one.
+ */
+const north = {
+  // Eddard
+  nedBranExecution: {
+    character: 'bran-stark',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His second son, whom he brings to watch a deserter’s execution so that he learns what a lord’s justice costs.',
+      it: 'Il suo secondogenito, che porta ad assistere all’esecuzione di un disertore perché impari cosa costa la giustizia di un lord.',
+    },
+  },
+  nedJon: {
+    character: 'jon-snow',
+    type: { en: 'Bastard son', it: 'Figlio bastardo' },
+    summary: {
+      en: 'The son he brought home to Winterfell and raises with his trueborn children.',
+      it: 'Il figlio che ha portato a Grande Inverno e che cresce insieme ai figli legittimi.',
+    },
+  },
+  nedRobb: {
+    character: 'robb-stark',
+    type: { en: 'Eldest son', it: 'Figlio maggiore' },
+    summary: {
+      en: 'His eldest son and the heir to Winterfell.',
+      it: 'Il suo primogenito ed erede di Grande Inverno.',
+    },
+  },
+  nedTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Ward', it: 'Pupillo' },
+    summary: {
+      en: 'The young Greyjoy who grows up in his household as his ward.',
+      it: 'Il giovane Greyjoy che cresce in casa sua come suo pupillo.',
+    },
+  },
+  nedCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His wife and the lady of Winterfell.',
+      it: 'Sua moglie e signora di Grande Inverno.',
+    },
+  },
+  nedRobertOffer: {
+    character: 'robert-baratheon',
+    type: { en: 'Old friend and king', it: 'Vecchio amico e re' },
+    summary: {
+      en: 'The king, his friend since boyhood. He comes to Winterfell to make Eddard his Hand and to marry his son to Sansa.',
+      it: 'Il re, suo amico fin da ragazzo. Arriva a Grande Inverno per nominare Eddard Primo Cavaliere e dare in sposa Sansa a suo figlio.',
+    },
+  },
+  nedRobertHand: {
+    character: 'robert-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The king he now serves as Hand. Robert gives way to the queen and orders a direwolf killed.',
+      it: 'Il re che ora serve come Primo Cavaliere. Robert cede alla regina e ordina di uccidere un metalupo.',
+    },
+  },
+  nedSansaLady: {
+    character: 'sansa-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His elder daughter, promised to the prince. When the queen demands her wolf’s death, Eddard kills it with his own hand.',
+      it: 'La figlia maggiore, promessa al principe. Quando la regina pretende la morte della sua lupa, Eddard la uccide con le proprie mani.',
+    },
+  },
+  nedArya: {
+    character: 'arya-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His younger daughter, who comes south with him. She would rather fight than sew.',
+      it: 'La figlia minore, che lo segue al sud. Preferisce combattere che cucire.',
+    },
+  },
+  nedCatelynHome: {
+    character: 'catelyn-stark',
+    type: { en: 'Wife', it: 'Moglie' },
+    summary: {
+      en: 'His wife, who stays at Winterfell with their children while he goes south.',
+      it: 'Sua moglie, che resta a Grande Inverno con i figli mentre lui va al sud.',
+    },
+  },
+  nedBranFall: {
+    character: 'bran-stark',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, who fell from a tower before Eddard left. Eddard had to go south without knowing whether he would live.',
+      it: 'Suo figlio, caduto da una torre prima della partenza di Eddard. Eddard è dovuto partire senza sapere se sarebbe sopravvissuto.',
+    },
+  },
+  nedRobertDead: {
+    character: 'robert-baratheon',
+    type: { en: 'Old friend and king', it: 'Vecchio amico e re' },
+    summary: {
+      en: 'The king he served as Hand. Dying after a hunt, Robert named Eddard to rule until his heir came of age.',
+      it: 'Il re che ha servito come Primo Cavaliere. In punto di morte, dopo una caccia, Robert ha affidato a Eddard il regno finché il suo erede non fosse diventato adulto.',
+    },
+  },
+  nedCersei: {
+    character: 'cersei-lannister',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The queen. Eddard knows her children are not Robert’s, and when he challenges her son’s claim she has him seized.',
+      it: 'La regina. Eddard sa che i suoi figli non sono di Robert, e quando contesta il diritto di suo figlio al trono lei lo fa arrestare.',
+    },
+  },
+  nedPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Betrayer', it: 'Traditore' },
+    summary: {
+      en: 'The master of coin who promised him the City Watch, then held a knife to his throat when the guards turned on him.',
+      it: 'Il maestro del conio che gli aveva promesso la Guardia cittadina e poi gli ha puntato un pugnale alla gola quando le guardie gli si sono rivoltate contro.',
+    },
+  },
+  nedSansaCourt: {
+    character: 'sansa-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His elder daughter, still promised to the queen’s son.',
+      it: 'La figlia maggiore, ancora promessa al figlio della regina.',
+    },
+  },
+  nedJoffreyExecution: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King who had him killed', it: 'Re che lo ha fatto uccidere' },
+    summary: {
+      en: 'The boy king. Eddard confessed to treason and named him rightful king, and Joffrey had him beheaded all the same.',
+      it: 'Il giovane re. Eddard ha confessato il tradimento e lo ha riconosciuto re legittimo, ma Joffrey lo ha fatto decapitare lo stesso.',
+    },
+  },
+  nedSansaExecution: {
+    character: 'sansa-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His elder daughter, held by the Lannisters. She watched him die before the Great Sept of Baelor.',
+      it: 'La figlia maggiore, in mano ai Lannister. Lo ha visto morire davanti al Grande Tempio di Baelor.',
+    },
+  },
+  nedAryaCrowd: {
+    character: 'arya-stark',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His younger daughter, who escaped the castle. She was in the crowd at his execution.',
+      it: 'La figlia minore, fuggita dal castello. Era tra la folla alla sua esecuzione.',
+    },
+  },
+  nedCerseiDead: {
+    character: 'cersei-lannister',
+    type: { en: 'Enemy', it: 'Nemica' },
+    summary: {
+      en: 'The queen. He told her he knew her children were not Robert’s, and she had him seized after the king’s death.',
+      it: 'La regina. Le aveva detto di sapere che i suoi figli non erano di Robert, e lei lo ha fatto arrestare dopo la morte del re.',
+    },
+  },
+
+  // Catelyn
+  catEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband, the lord of Winterfell. She brings him word that the Hand of the King is dead.',
+      it: 'Suo marito, il lord di Grande Inverno. È lei a portargli la notizia che il Primo Cavaliere è morto.',
+    },
+  },
+  catRobb: {
+    character: 'robb-stark',
+    type: { en: 'Eldest son', it: 'Figlio maggiore' },
+    summary: {
+      en: 'Her eldest son and the heir to Winterfell.',
+      it: 'Il suo primogenito ed erede di Grande Inverno.',
+    },
+  },
+  catBran: {
+    character: 'bran-stark',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: { en: 'Her second son.', it: 'Il suo secondogenito.' },
+  },
+  catBranAttack: {
+    character: 'bran-stark',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'Her son, who lies senseless after a fall. She keeps watch by his bed and fights off the man sent to kill him.',
+      it: 'Suo figlio, privo di sensi dopo una caduta. Lei veglia al suo capezzale e respinge l’uomo mandato a ucciderlo.',
+    },
+  },
+  catEddardSouth: {
+    character: 'eddard-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband, gone south as Hand of the King. She sets out to warn him that the Lannisters tried to kill their son.',
+      it: 'Suo marito, partito per il sud come Primo Cavaliere. Lei si mette in viaggio per avvertirlo che i Lannister hanno cercato di uccidere loro figlio.',
+    },
+  },
+  catRobbCastle: {
+    character: 'robb-stark',
+    type: { en: 'Eldest son', it: 'Figlio maggiore' },
+    summary: {
+      en: 'Her eldest son, who runs Winterfell while she cannot leave Bran’s side.',
+      it: 'Il primogenito, che manda avanti Grande Inverno mentre lei non si stacca da Bran.',
+    },
+  },
+  catRodrik: {
+    character: 'rodrik-cassel',
+    type: { en: 'Escort', it: 'Scorta' },
+    summary: {
+      en: 'The master-at-arms of Winterfell, who rides south with her so that she need not travel alone.',
+      it: 'Il maestro d’armi di Grande Inverno, che la accompagna al sud perché non viaggi da sola.',
+    },
+  },
+  catJon: {
+    character: 'jon-snow',
+    type: { en: 'Husband’s bastard', it: 'Bastardo del marito' },
+    summary: {
+      en: 'Her husband’s bastard son. When he comes to say goodbye to Bran before leaving for the Wall, she sends him away coldly.',
+      it: 'Il figlio bastardo del marito. Quando viene a salutare Bran prima di partire per la Barriera, lei lo manda via con freddezza.',
+    },
+  },
+  catTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Captive', it: 'Prigioniero' },
+    summary: {
+      en: 'The queen’s brother. Believing he sent the killer after Bran, she has him seized at an inn on the road.',
+      it: 'Il fratello della regina. Convinta che abbia mandato lui il sicario da Bran, lo fa catturare in una locanda lungo la strada.',
+    },
+  },
+  catPetyr: {
+    character: 'petyr-baelish',
+    type: { en: 'Childhood friend', it: 'Amico d’infanzia' },
+    summary: {
+      en: 'A friend from her girlhood, now master of coin. He tells her the killer’s dagger was his, until he lost it to Tyrion in a wager.',
+      it: 'Un amico di quando era ragazza, ora maestro del conio. Le dice che il pugnale del sicario era suo, finché non l’ha perso con Tyrion in una scommessa.',
+    },
+  },
+  catBranSouth: {
+    character: 'bran-stark',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'Her son. Someone tried to kill him after his fall, and she left him at Winterfell to find out who.',
+      it: 'Suo figlio. Qualcuno ha cercato di ucciderlo dopo la caduta, e lei lo ha lasciato a Grande Inverno per scoprire chi.',
+    },
+  },
+  catEddardHand: {
+    character: 'eddard-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband. She met him in secret in the capital to warn him about the Lannisters.',
+      it: 'Suo marito. Lo ha incontrato di nascosto nella capitale per metterlo in guardia contro i Lannister.',
+    },
+  },
+  catLysa: {
+    character: 'lysa-arryn',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her younger sister, the widow of the Hand. Catelyn brings Tyrion to her and finds her changed.',
+      it: 'Sua sorella minore, vedova del Primo Cavaliere. Catelyn le porta Tyrion e la trova cambiata.',
+    },
+  },
+  catWalder: {
+    character: 'walder-frey',
+    type: { en: 'Ally by bargain', it: 'Alleato per patto' },
+    summary: {
+      en: 'The lord of the Twins. Catelyn goes to him herself and buys the crossing: Robb is to marry one of his daughters.',
+      it: 'Il lord delle Torri Gemelle. Catelyn va da lui di persona e ottiene il passaggio: Robb dovrà sposare una delle sue figlie.',
+    },
+  },
+  catRobbHost: {
+    character: 'robb-stark',
+    type: { en: 'Eldest son', it: 'Figlio maggiore' },
+    summary: {
+      en: 'Her eldest son, who has called the banners and marches south. She joins his host.',
+      it: 'Il primogenito, che ha chiamato a raccolta i vessilli e marcia verso sud. Lei si unisce al suo esercito.',
+    },
+  },
+  catEddardCaptive: {
+    character: 'eddard-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband, a prisoner in the capital since the king’s death.',
+      it: 'Suo marito, prigioniero nella capitale dalla morte del re.',
+    },
+  },
+  catLysaRefusal: {
+    character: 'lysa-arryn',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her younger sister, who will not send the knights of the Vale to help the Starks.',
+      it: 'Sua sorella minore, che non vuole mandare i cavalieri della Valle in aiuto agli Stark.',
+    },
+  },
+  catRobbVictory: {
+    character: 'robb-stark',
+    type: { en: 'Eldest son', it: 'Figlio maggiore' },
+    summary: {
+      en: 'Her eldest son, who leads the northern host. He has won a battle and taken Jaime Lannister prisoner.',
+      it: 'Il primogenito, alla guida dell’esercito del Nord. Ha vinto una battaglia e fatto prigioniero Jaime Lannister.',
+    },
+  },
+  catEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Husband', it: 'Marito' },
+    summary: {
+      en: 'Her husband. He was held in the capital after the king’s death and beheaded on Joffrey’s order.',
+      it: 'Suo marito. È stato tenuto prigioniero nella capitale dopo la morte del re e decapitato per ordine di Joffrey.',
+    },
+  },
+  catJaime: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The queen’s brother, taken in battle by Robb’s host and held as a captive.',
+      it: 'Il fratello della regina, catturato in battaglia dall’esercito di Robb e tenuto prigioniero.',
+    },
+  },
+  catRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'Son and king', it: 'Figlio e re' },
+    summary: {
+      en: 'Her eldest son. After his father’s death the northern lords proclaim him King in the North.',
+      it: 'Il primogenito. Dopo la morte del padre i lord del Nord lo proclamano Re del Nord.',
+    },
+  },
+
+  // Robb
+  robbEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of Winterfell, whose heir he is.',
+      it: 'Suo padre, il lord di Grande Inverno, di cui è l’erede.',
+    },
+  },
+  robbBran: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His younger brother, who rides with them to the execution.',
+      it: 'Il fratello minore, che cavalca con loro fino all’esecuzione.',
+    },
+  },
+  robbJon: {
+    character: 'jon-snow',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'His father’s bastard son, raised beside him at Winterfell.',
+      it: 'Il figlio bastardo di suo padre, cresciuto con lui a Grande Inverno.',
+    },
+  },
+  robbTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His father’s ward, who grows up at Winterfell alongside him.',
+      it: 'Il pupillo di suo padre, che cresce a Grande Inverno insieme a lui.',
+    },
+  },
+  robbCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother. She leaves him in charge of Winterfell when she goes south.',
+      it: 'Sua madre. Gli lascia il comando di Grande Inverno quando parte per il sud.',
+    },
+  },
+  robbBranBed: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His younger brother, who lies senseless after a fall from a tower.',
+      it: 'Il fratello minore, privo di sensi dopo una caduta da una torre.',
+    },
+  },
+  robbEddardSouth: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who has gone south as Hand of the King and left him the castle.',
+      it: 'Suo padre, partito per il sud come Primo Cavaliere, che gli ha lasciato il castello.',
+    },
+  },
+  robbBranRescue: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His crippled brother. Robb comes to his aid when outlaws surround him in the wolfswood.',
+      it: 'Il fratello storpio. Robb accorre quando dei fuorilegge lo circondano nella Foresta del Lupo.',
+    },
+  },
+  robbTheonArrow: {
+    character: 'theon-greyjoy',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'His father’s ward. He kills the outlaw holding a knife to Bran with an arrow, a shot that could have hit Bran.',
+      it: 'Il pupillo di suo padre. Uccide con una freccia il fuorilegge che tiene un coltello alla gola di Bran, un tiro che poteva colpire Bran.',
+    },
+  },
+  robbOsha: {
+    character: 'osha',
+    type: { en: 'Prisoner', it: 'Prigioniera' },
+    summary: {
+      en: 'One of the outlaws who attacked Bran. She yields to Robb, and he takes her back to Winterfell as a prisoner.',
+      it: 'Una dei fuorilegge che hanno aggredito Bran. Si arrende a Robb, che la porta a Grande Inverno come prigioniera.',
+    },
+  },
+  robbGreatjon: {
+    character: 'greatjon-umber',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'A lord who defies him over the vanguard and reaches for his steel. Grey Wind bites off two of his fingers, and he laughs and follows Robb.',
+      it: 'Un lord che lo sfida per il comando dell’avanguardia e mette mano alla spada. Vento Grigio gli stacca due dita con un morso, e lui ride e segue Robb.',
+    },
+  },
+  robbGreyWind: {
+    character: 'grey-wind',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'The direwolf he raised from a pup. He stays at Robb’s side and turns on anyone who threatens him.',
+      it: 'Il metalupo che ha cresciuto da cucciolo. Gli resta accanto e si avventa su chiunque lo minacci.',
+    },
+  },
+  robbEddardSeized: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, seized in the capital after the king’s death. Robb calls his father’s banners and marches south.',
+      it: 'Suo padre, arrestato nella capitale dopo la morte del re. Robb chiama a raccolta i vessilli del padre e marcia verso sud.',
+    },
+  },
+  robbBranFarewell: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His younger brother, whom he leaves at Winterfell when he goes to war.',
+      it: 'Il fratello minore, che lascia a Grande Inverno quando parte per la guerra.',
+    },
+  },
+  robbJaime: {
+    character: 'jaime-lannister',
+    type: { en: 'Prisoner', it: 'Prigioniero' },
+    summary: {
+      en: 'The queen’s brother, who led a Lannister army in the riverlands. Robb defeats him in battle and takes him prisoner.',
+      it: 'Il fratello della regina, al comando di un esercito Lannister nelle terre dei fiumi. Robb lo sconfigge in battaglia e lo fa prigioniero.',
+    },
+  },
+  robbWalder: {
+    character: 'walder-frey',
+    type: { en: 'Ally by bargain', it: 'Alleato per patto' },
+    summary: {
+      en: 'The lord of the Twins. He lets Robb’s host cross the river, and Robb agrees to marry one of his daughters.',
+      it: 'Il lord delle Torri Gemelle. Lascia passare il fiume all’esercito di Robb, e Robb accetta di sposare una delle sue figlie.',
+    },
+  },
+  robbCatelynTwins: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, who joins his host and goes into the Twins herself to bargain for the crossing.',
+      it: 'Sua madre, che si unisce all’esercito ed entra di persona alle Torri Gemelle per trattare il passaggio.',
+    },
+  },
+  robbEddardCaptive: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, held prisoner in the capital. Robb has gone to war to free him.',
+      it: 'Suo padre, prigioniero nella capitale. Robb è partito in guerra per liberarlo.',
+    },
+  },
+  robbEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, beheaded in the capital on Joffrey’s order while Robb was at war to free him.',
+      it: 'Suo padre, decapitato nella capitale per ordine di Joffrey mentre Robb combatteva per liberarlo.',
+    },
+  },
+  robbGreatjonKing: {
+    character: 'greatjon-umber',
+    type: { en: 'Bannerman', it: 'Alfiere' },
+    summary: {
+      en: 'The lord who once drew steel on him. After Eddard’s death he is the first to proclaim Robb King in the North.',
+      it: 'Il lord che una volta aveva sguainato la spada contro di lui. Dopo la morte di Eddard è il primo a proclamare Robb Re del Nord.',
+    },
+  },
+  robbCatelynWar: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, at his side in the war. She won him the crossing at the Twins.',
+      it: 'Sua madre, al suo fianco in guerra. È lei che gli ha ottenuto il passaggio alle Torri Gemelle.',
+    },
+  },
+
+  // Rickon
+  ricEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of Winterfell.',
+      it: 'Suo padre, il lord di Grande Inverno.',
+    },
+  },
+  ricCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'His mother, the lady of Winterfell.',
+      it: 'Sua madre, la signora di Grande Inverno.',
+    },
+  },
+  ricRobb: {
+    character: 'robb-stark',
+    type: { en: 'Eldest brother', it: 'Fratello maggiore' },
+    summary: {
+      en: 'His eldest brother and their father’s heir.',
+      it: 'Il fratello maggiore ed erede del padre.',
+    },
+  },
+  ricBran: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, the closest to him in age.',
+      it: 'Il fratello più vicino a lui per età.',
+    },
+  },
+  ricShaggydog: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'The black direwolf he raised from a pup.',
+      it: 'Il metalupo nero che ha cresciuto da cucciolo.',
+    },
+  },
+  ricRobbWar: {
+    character: 'robb-stark',
+    type: { en: 'Eldest brother', it: 'Fratello maggiore' },
+    summary: {
+      en: 'His eldest brother, who leaves Winterfell for the war. Rickon is sure he will not come back.',
+      it: 'Il fratello maggiore, che lascia Grande Inverno per la guerra. Rickon è sicuro che non tornerà.',
+    },
+  },
+  ricBranCrypt: {
+    character: 'bran-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His brother, who comes down into the crypts looking for their father and finds Rickon there.',
+      it: 'Suo fratello, che scende nelle cripte a cercare il padre e vi trova Rickon.',
+    },
+  },
+  ricEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, beheaded in the capital.',
+      it: 'Suo padre, decapitato nella capitale.',
+    },
+  },
+  ricLuwin: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester of Winterfell. He brings Bran down into the crypts and finds Rickon there.',
+      it: 'Il maestro di Grande Inverno. Accompagna Bran nelle cripte e vi trova Rickon.',
+    },
+  },
+  ricOsha: {
+    character: 'osha',
+    type: { en: 'Servant', it: 'Serva' },
+    summary: {
+      en: 'The wildling woman serving at Winterfell. She goes down into the crypts with Bran and finds Rickon there.',
+      it: 'La bruta al servizio di Grande Inverno. Scende nelle cripte con Bran e vi trova Rickon.',
+    },
+  },
+
+  // Jory
+  joryEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord of Winterfell, whom he serves as captain of the guard.',
+      it: 'Il lord di Grande Inverno, che serve come capitano della guardia.',
+    },
+  },
+  joryEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord he served as captain of the guard. Jory died defending him in a street of the capital.',
+      it: 'Il lord che ha servito come capitano della guardia. Jory è morto difendendolo in una strada della capitale.',
+    },
+  },
+  joryJaime: {
+    character: 'jaime-lannister',
+    type: { en: 'Attacker', it: 'Aggressore' },
+    summary: {
+      en: 'The queen’s brother. He came with his men for Eddard after Tyrion’s arrest, and Jory was killed in the fight.',
+      it: 'Il fratello della regina. È arrivato con i suoi uomini per affrontare Eddard dopo l’arresto di Tyrion, e Jory è stato ucciso nello scontro.',
+    },
+  },
+
+  // Sansa
+  sanJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The crown prince, whom the king means Sansa to marry.',
+      it: 'Il principe ereditario, a cui il re vuole dare Sansa in sposa.',
+    },
+  },
+  sanEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, the lord of Winterfell.',
+      it: 'Suo padre, il lord di Grande Inverno.',
+    },
+  },
+  sanArya: {
+    character: 'arya-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: { en: 'Her younger sister.', it: 'La sorella minore.' },
+  },
+  sanLady: {
+    character: 'lady-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'The gentlest of the direwolf pups, which Sansa raises and names.',
+      it: 'La più docile dei cuccioli di metalupo, che Sansa cresce e a cui dà il nome.',
+    },
+  },
+  sanCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'Her mother, the lady of Winterfell.',
+      it: 'Sua madre, la signora di Grande Inverno.',
+    },
+  },
+  sanJoffreyRiver: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The prince she is to marry. When he is bitten by Arya’s wolf, Sansa does not tell the king what she saw.',
+      it: 'Il principe che dovrà sposare. Quando la lupa di Arya lo morde, Sansa non racconta al re ciò che ha visto.',
+    },
+  },
+  sanLadyDead: {
+    character: 'lady-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'Her direwolf. The queen demanded her death in place of Arya’s wolf, and Sansa’s father killed her.',
+      it: 'La sua metalupa. La regina ne ha preteso la morte al posto della lupa di Arya, e il padre di Sansa l’ha uccisa.',
+    },
+  },
+  sanEddardLady: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, the Hand of the King. He killed her wolf with his own hands.',
+      it: 'Suo padre, Primo Cavaliere. Ha ucciso la sua lupa con le proprie mani.',
+    },
+  },
+  sanAryaQuarrel: {
+    character: 'arya-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her younger sister. Arya calls her a liar and strikes her for siding with the prince.',
+      it: 'La sorella minore. Arya le dà della bugiarda e la colpisce perché ha preso le parti del principe.',
+    },
+  },
+  sanCersei: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen and her future mother-in-law. She demanded that Sansa’s wolf die in place of Arya’s.',
+      it: 'La regina e sua futura suocera. Ha preteso che la lupa di Sansa morisse al posto di quella di Arya.',
+    },
+  },
+  sanCerseiHostage: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen', it: 'Regina' },
+    summary: {
+      en: 'The queen regent. After Eddard’s arrest Sansa is kept in the castle under her watch.',
+      it: 'La regina reggente. Dopo l’arresto di Eddard Sansa è trattenuta al castello sotto la sua sorveglianza.',
+    },
+  },
+  sanJoffreyKing: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The new king, still promised to her after her father’s arrest.',
+      it: 'Il nuovo re, ancora promesso a lei dopo l’arresto del padre.',
+    },
+  },
+  sanEddardSeized: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, seized as a traitor after the king’s death.',
+      it: 'Suo padre, arrestato come traditore dopo la morte del re.',
+    },
+  },
+  sanAryaGone: {
+    character: 'arya-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her younger sister, who was not taken with Sansa when their father’s household was attacked.',
+      it: 'La sorella minore, che non è stata presa con lei quando la casa del padre è stata attaccata.',
+    },
+  },
+  sanJoffreyExecution: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is to marry. Her father confessed and Joffrey had him beheaded anyway.',
+      it: 'Il re che dovrà sposare. Suo padre ha confessato e Joffrey lo ha fatto decapitare lo stesso.',
+    },
+  },
+  sanEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, beheaded on Joffrey’s order before her eyes.',
+      it: 'Suo padre, decapitato davanti ai suoi occhi per ordine di Joffrey.',
+    },
+  },
+  sanJoffreyHeads: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Betrothed', it: 'Promesso sposo' },
+    summary: {
+      en: 'The king she is still to marry. He makes her look at her father’s head on the castle walls and has her struck.',
+      it: 'Il re che dovrà ancora sposare. La costringe a guardare la testa del padre sulle mura del castello e la fa picchiare.',
+    },
+  },
+  sanMordaneDead: {
+    character: 'mordane',
+    type: { en: 'Septa', it: 'Septa' },
+    summary: {
+      en: 'The septa who taught her. Her head was set on the walls beside Eddard’s.',
+      it: 'La septa che la istruiva. La sua testa è stata esposta sulle mura accanto a quella di Eddard.',
+    },
+  },
+  sanSandor: {
+    character: 'sandor-clegane',
+    type: { en: 'King’s guard', it: 'Guardia del re' },
+    summary: {
+      en: 'Joffrey’s sworn shield. On the walls he stops her from acting against the king and gives her something to wipe the blood away.',
+      it: 'La guardia giurata di Joffrey. Sulle mura le impedisce di agire contro il re e le dà qualcosa per pulirsi il sangue.',
+    },
+  },
+
+  // Arya
+  aryaEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, the lord of Winterfell.',
+      it: 'Suo padre, il lord di Grande Inverno.',
+    },
+  },
+  aryaSansa: {
+    character: 'sansa-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: { en: 'Her elder sister.', it: 'La sorella maggiore.' },
+  },
+  aryaJon: {
+    character: 'jon-snow',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'Her father’s bastard son.',
+      it: 'Il figlio bastardo del padre.',
+    },
+  },
+  aryaNymeria: {
+    character: 'nymeria',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'Her direwolf. After Nymeria bit the prince to protect her, Arya drove her away with stones so she would not be killed.',
+      it: 'La sua metalupa. Dopo che Nymeria ha morso il principe per difenderla, Arya l’ha scacciata a sassate perché non la uccidessero.',
+    },
+  },
+  aryaMycah: {
+    character: 'mycah',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'The butcher’s boy she practised swords with on the road. Joffrey’s sworn shield hunted him down and killed him.',
+      it: 'Il garzone del macellaio con cui si allenava con la spada lungo la strada. La guardia giurata di Joffrey gli ha dato la caccia e lo ha ucciso.',
+    },
+  },
+  aryaSansaLie: {
+    character: 'sansa-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her elder sister, who would not tell the king what the prince did. Arya called her a liar and hit her.',
+      it: 'La sorella maggiore, che non ha voluto raccontare al re cosa aveva fatto il principe. Arya le ha dato della bugiarda e l’ha colpita.',
+    },
+  },
+  aryaJonNeedle: {
+    character: 'jon-snow',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'Her father’s bastard son, the brother closest to her. Before leaving for the Wall he gave her a slender sword, which she calls Needle.',
+      it: 'Il figlio bastardo del padre, il fratello a cui è più legata. Prima di partire per la Barriera le ha regalato una spada sottile, che lei chiama Ago.',
+    },
+  },
+  aryaEddardHand: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, the Hand of the King. He finds her sword and, rather than take it away, hires her a teacher.',
+      it: 'Suo padre, Primo Cavaliere. Scopre la sua spada e, invece di togliergliela, le trova un maestro.',
+    },
+  },
+  arySyrio: {
+    character: 'syrio-forel',
+    type: { en: 'Teacher', it: 'Maestro' },
+    summary: {
+      en: 'The swordmaster from Braavos her father hires for her. He teaches her to fight with a light blade.',
+      it: 'Il maestro di spada di Braavos che il padre le ha trovato. Le insegna a combattere con una lama leggera.',
+    },
+  },
+  aryaNymeriaGone: {
+    character: 'nymeria',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'Her direwolf, which she drove away on the road south to save her life.',
+      it: 'La sua metalupa, che ha scacciato sulla strada verso sud per salvarle la vita.',
+    },
+  },
+  aryaSansaCourt: {
+    character: 'sansa-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her elder sister, promised to the prince. The two quarrel over what happened on the road.',
+      it: 'La sorella maggiore, promessa al principe. Le due litigano per quanto è successo lungo la strada.',
+    },
+  },
+  arySyrioStand: {
+    character: 'syrio-forel',
+    type: { en: 'Teacher', it: 'Maestro' },
+    summary: {
+      en: 'Her swordmaster. When guards come to take her, he holds them off with a wooden sword and tells her to run. She does not see what becomes of him.',
+      it: 'Il suo maestro di spada. Quando le guardie vengono a prenderla, le tiene a bada con una spada di legno e le dice di scappare. Lei non vede che fine fa.',
+    },
+  },
+  aryaEddardSeized: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, seized after the king’s death. His household is attacked and Arya runs.',
+      it: 'Suo padre, arrestato dopo la morte del re. La sua casa viene attaccata e Arya fugge.',
+    },
+  },
+  aryaMeryn: {
+    character: 'meryn-trant',
+    type: { en: 'Pursuer', it: 'Inseguitore' },
+    summary: {
+      en: 'The knight of the Kingsguard who comes with the guards to take her, and whom Syrio holds off.',
+      it: 'Il cavaliere della Guardia reale che arriva con le guardie per prenderla, e che Syrio tiene a bada.',
+    },
+  },
+  aryaEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, beheaded before the Great Sept of Baelor while she was in the crowd.',
+      it: 'Suo padre, decapitato davanti al Grande Tempio di Baelor mentre lei era tra la folla.',
+    },
+  },
+  aryaYoren: {
+    character: 'yoren',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'A recruiter of the Night’s Watch. In the crowd at her father’s execution he grabs her and keeps her out of sight.',
+      it: 'Un reclutatore dei Guardiani della notte. Tra la folla dell’esecuzione del padre la afferra e la tiene nascosta.',
+    },
+  },
+  aryaJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The boy king who had her father beheaded.',
+      it: 'Il giovane re che ha fatto decapitare suo padre.',
+    },
+  },
+  arySyrioPast: {
+    character: 'syrio-forel',
+    type: { en: 'Teacher', it: 'Maestro' },
+    summary: {
+      en: 'Her swordmaster, who held off the guards so she could run. She never saw what became of him.',
+      it: 'Il suo maestro di spada, che ha tenuto a bada le guardie per farla scappare. Lei non ha mai saputo che fine abbia fatto.',
+    },
+  },
+  aryaSansaHeld: {
+    character: 'sansa-stark',
+    type: { en: 'Sister', it: 'Sorella' },
+    summary: {
+      en: 'Her elder sister, still held by the Lannisters in the castle.',
+      it: 'La sorella maggiore, ancora in mano ai Lannister nel castello.',
+    },
+  },
+
+  // Bran
+  branEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, who takes him to see a deserter beheaded so that he learns what a lord’s justice means.',
+      it: 'Suo padre, che lo porta a vedere un disertore decapitato perché impari cosa significa la giustizia di un lord.',
+    },
+  },
+  branRobb: {
+    character: 'robb-stark',
+    type: { en: 'Eldest brother', it: 'Fratello maggiore' },
+    summary: {
+      en: 'His eldest brother and their father’s heir.',
+      it: 'Il fratello maggiore ed erede del padre.',
+    },
+  },
+  branJon: {
+    character: 'jon-snow',
+    type: { en: 'Half-brother', it: 'Fratellastro' },
+    summary: {
+      en: 'His father’s bastard son. On the ride home he finds a sixth pup, and talks their father into letting them keep the litter.',
+      it: 'Il figlio bastardo del padre. Sulla via del ritorno trova un sesto cucciolo e convince il padre a lasciare loro la cucciolata.',
+    },
+  },
+  branJaime: {
+    character: 'jaime-lannister',
+    type: { en: 'Man who pushed him', it: 'Uomo che l’ha spinto' },
+    summary: {
+      en: 'The queen’s brother. Bran saw him with the queen in an old tower, and Jaime pushed him out of the window.',
+      it: 'Il fratello della regina. Bran lo ha visto con la regina in una vecchia torre, e Jaime lo ha spinto giù dalla finestra.',
+    },
+  },
+  branSummer: {
+    character: 'summer-direwolf',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'His direwolf. While Bran lay senseless, Summer killed the man sent to murder him.',
+      it: 'Il suo metalupo. Mentre Bran era privo di sensi, Estate ha ucciso l’uomo mandato ad assassinarlo.',
+    },
+  },
+  branTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Unexpected help', it: 'Aiuto inatteso' },
+    summary: {
+      en: 'The queen’s brother. On his way back from the Wall he gives Bran the design for a saddle he can ride in.',
+      it: 'Il fratello della regina. Di ritorno dalla Barriera regala a Bran il progetto di una sella con cui potrà cavalcare.',
+    },
+  },
+  branHodor: {
+    character: 'hodor',
+    type: { en: 'Carrier', it: 'Portatore' },
+    summary: {
+      en: 'The giant of a man at Winterfell who can only say his own name. He carries Bran now that he cannot walk.',
+      it: 'L’omone di Grande Inverno che sa dire soltanto il proprio nome. Porta in braccio Bran ora che non può camminare.',
+    },
+  },
+  branRobbCastle: {
+    character: 'robb-stark',
+    type: { en: 'Eldest brother', it: 'Fratello maggiore' },
+    summary: {
+      en: 'His eldest brother, who rules Winterfell while their parents are away.',
+      it: 'Il fratello maggiore, che governa Grande Inverno mentre i genitori sono lontani.',
+    },
+  },
+  branOsha: {
+    character: 'osha',
+    type: { en: 'Captive', it: 'Prigioniera' },
+    summary: {
+      en: 'One of the outlaws who waylaid him in the wolfswood. She is the only one taken alive.',
+      it: 'Una dei fuorilegge che lo hanno assalito nella Foresta del Lupo. È l’unica presa viva.',
+    },
+  },
+  branRobbRescue: {
+    character: 'robb-stark',
+    type: { en: 'Eldest brother', it: 'Fratello maggiore' },
+    summary: {
+      en: 'His eldest brother, who comes to his aid when outlaws surround him in the wolfswood.',
+      it: 'Il fratello maggiore, che accorre quando i fuorilegge lo circondano nella Foresta del Lupo.',
+    },
+  },
+  branTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Rescuer', it: 'Salvatore' },
+    summary: {
+      en: 'His father’s ward, who kills the outlaw holding a knife to him.',
+      it: 'Il pupillo del padre, che uccide il fuorilegge che gli punta un coltello.',
+    },
+  },
+  branRobbWar: {
+    character: 'robb-stark',
+    type: { en: 'Eldest brother', it: 'Fratello maggiore' },
+    summary: {
+      en: 'His eldest brother, who calls the banners and leaves Winterfell for the war.',
+      it: 'Il fratello maggiore, che chiama a raccolta i vessilli e lascia Grande Inverno per la guerra.',
+    },
+  },
+  branOshaGodswood: {
+    character: 'osha',
+    type: { en: 'Servant', it: 'Serva' },
+    summary: {
+      en: 'The wildling woman, now a servant at Winterfell. In the godswood she tells him Robb is marching the wrong way, and that the real danger is beyond the Wall.',
+      it: 'La bruta, ora serva a Grande Inverno. Nel parco degli dei gli dice che Robb marcia nella direzione sbagliata e che il vero pericolo è oltre la Barriera.',
+    },
+  },
+  branRickon: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who is left with him at Winterfell.',
+      it: 'Il fratellino, rimasto con lui a Grande Inverno.',
+    },
+  },
+  branEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father. Bran dreamed of him in the crypts, and then the news came that he had been beheaded.',
+      it: 'Suo padre. Bran lo ha sognato nelle cripte, poi è arrivata la notizia che era stato decapitato.',
+    },
+  },
+  branRickonCrypt: {
+    character: 'rickon-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His little brother, who had the same dream about their father and is waiting in the crypts.',
+      it: 'Il fratellino, che ha fatto lo stesso sogno sul padre e si trova nelle cripte.',
+    },
+  },
+  branOshaCrypt: {
+    character: 'osha',
+    type: { en: 'Servant', it: 'Serva' },
+    summary: {
+      en: 'The wildling woman who serves at Winterfell. She goes down into the crypts with him to look for his father.',
+      it: 'La bruta al servizio di Grande Inverno. Scende con lui nelle cripte a cercare suo padre.',
+    },
+  },
+  branLuwin: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester of Winterfell, who teaches and looks after him.',
+      it: 'Il maestro di Grande Inverno, che lo istruisce e si prende cura di lui.',
+    },
+  },
+  branLuwinCrypt: {
+    character: 'luwin',
+    type: { en: 'Maester', it: 'Maestro' },
+    summary: {
+      en: 'The maester of Winterfell. He takes Bran down into the crypts to show him his father is not there, and is with him when word of Eddard’s death arrives.',
+      it: 'Il maestro di Grande Inverno. Porta Bran nelle cripte per mostrargli che suo padre non c’è, ed è con lui quando arriva la notizia della morte di Eddard.',
+    },
+  },
+
+  // Benjen
+  benJon: {
+    character: 'jon-snow',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His brother’s bastard son. Jon asks to join the Night’s Watch, and Benjen warns him the life is hard.',
+      it: 'Il figlio bastardo di suo fratello. Jon chiede di unirsi ai Guardiani della notte, e Benjen lo avverte che è una vita dura.',
+    },
+  },
+  benEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, the lord of Winterfell, whom he visits from the Wall.',
+      it: 'Il fratello maggiore, il lord di Grande Inverno, che va a trovare dalla Barriera.',
+    },
+  },
+  benJonRoad: {
+    character: 'jon-snow',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His brother’s bastard son, whom he takes north to join the Night’s Watch.',
+      it: 'Il figlio bastardo di suo fratello, che porta al nord perché si unisca ai Guardiani della notte.',
+    },
+  },
+  benTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Fellow traveller', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The queen’s brother, who rides north with them to see the Wall.',
+      it: 'Il fratello della regina, che cavalca con loro verso nord per vedere la Barriera.',
+    },
+  },
+  benJonRanging: {
+    character: 'jon-snow',
+    type: { en: 'Nephew', it: 'Nipote' },
+    summary: {
+      en: 'His brother’s bastard son. Jon asks to come on his ranging, and Benjen tells him he is not ready.',
+      it: 'Il figlio bastardo di suo fratello. Jon chiede di seguirlo in perlustrazione, e Benjen gli dice che non è pronto.',
+    },
+  },
+  benYoren: {
+    character: 'yoren',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'A recruiter of the Watch and an old friend, whom he says goodbye to before riding beyond the Wall.',
+      it: 'Un reclutatore dei Guardiani e vecchio amico, che saluta prima di partire oltre la Barriera.',
+    },
+  },
+  benTyrionWall: {
+    character: 'tyrion-lannister',
+    type: { en: 'Fellow traveller', it: 'Compagno di viaggio' },
+    summary: {
+      en: 'The queen’s brother, who rode north with him. Benjen feels he looks down on the Watch.',
+      it: 'Il fratello della regina, che ha viaggiato con lui verso nord. Benjen pensa che guardi i Guardiani dall’alto in basso.',
+    },
+  },
+  benEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Brother', it: 'Fratello' },
+    summary: {
+      en: 'His elder brother, the lord of Winterfell, beheaded in the capital.',
+      it: 'Il fratello maggiore, il lord di Grande Inverno, decapitato nella capitale.',
+    },
+  },
+
+  // The direwolves
+  gwRobb: {
+    character: 'robb-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who took him from the litter and raised him.',
+      it: 'Il ragazzo che lo ha preso dalla cucciolata e lo ha cresciuto.',
+    },
+  },
+  gwGreatjon: {
+    character: 'greatjon-umber',
+    type: { en: 'Man he bit', it: 'Uomo morso da lui' },
+    summary: {
+      en: 'A lord who drew steel at Robb’s table. Grey Wind knocked him down and bit off two of his fingers.',
+      it: 'Un lord che ha sguainato la spada alla tavola di Robb. Vento Grigio lo ha atterrato e gli ha staccato due dita.',
+    },
+  },
+  ladySansa: {
+    character: 'sansa-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The girl who raises her and names her.',
+      it: 'La ragazza che la cresce e le dà il nome.',
+    },
+  },
+  ladySansaDead: {
+    character: 'sansa-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The girl who raised her. Lady was killed because of a quarrel Sansa had no part in.',
+      it: 'La ragazza che l’ha cresciuta. Lady è stata uccisa per una lite in cui Sansa non c’entrava.',
+    },
+  },
+  ladyEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Man who killed her', it: 'Uomo che l’ha uccisa' },
+    summary: {
+      en: 'Sansa’s father. Rather than leave it to the king’s headsman, he killed her himself.',
+      it: 'Il padre di Sansa. Invece di lasciarlo fare al boia del re, l’ha uccisa lui stesso.',
+    },
+  },
+  ladyCersei: {
+    character: 'cersei-lannister',
+    type: { en: 'Queen who doomed her', it: 'Regina che l’ha condannata' },
+    summary: {
+      en: 'The queen. With Arya’s wolf gone, she demanded that Lady die in its place.',
+      it: 'La regina. Sparita la lupa di Arya, ha preteso che Lady morisse al suo posto.',
+    },
+  },
+  nymArya: {
+    character: 'arya-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The girl who raises her and names her after a warrior queen.',
+      it: 'La ragazza che la cresce e le dà il nome di una regina guerriera.',
+    },
+  },
+  nymAryaStones: {
+    character: 'arya-stark',
+    type: { en: 'Mistress', it: 'Padrona' },
+    summary: {
+      en: 'The girl who raised her. After the bite she drove Nymeria away with stones so that she would not be killed.',
+      it: 'La ragazza che l’ha cresciuta. Dopo il morso ha scacciato Nymeria a sassate perché non la uccidessero.',
+    },
+  },
+  nymJoffrey: {
+    character: 'joffrey-baratheon',
+    type: { en: 'Prince she bit', it: 'Principe morso da lei' },
+    summary: {
+      en: 'The prince who threatened Arya with a sword by the river. Nymeria bit his arm.',
+      it: 'Il principe che ha minacciato Arya con la spada vicino al fiume. Nymeria gli ha morso il braccio.',
+    },
+  },
+  sumBran: {
+    character: 'bran-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy he belongs to. Summer killed the man sent to murder Bran in his bed and keeps watch over him.',
+      it: 'Il ragazzo a cui appartiene. Estate ha ucciso l’uomo mandato ad assassinare Bran nel suo letto e veglia su di lui.',
+    },
+  },
+  sumCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Woman he saved', it: 'Donna salvata da lui' },
+    summary: {
+      en: 'Bran’s mother, who fought the killer in her son’s room until Summer tore out his throat.',
+      it: 'La madre di Bran, che ha lottato con il sicario nella stanza del figlio finché Estate non gli ha squarciato la gola.',
+    },
+  },
+  shaRickon: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The youngest Stark, who raised him from a pup.',
+      it: 'Il più giovane degli Stark, che lo ha cresciuto da cucciolo.',
+    },
+  },
+  shaRickonCrypt: {
+    character: 'rickon-stark',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The youngest Stark, who raised him. Shaggydog is with him in the crypts.',
+      it: 'Il più giovane degli Stark, che lo ha cresciuto. Cagnaccio è con lui nelle cripte.',
+    },
+  },
+  shaBran: {
+    character: 'bran-stark',
+    type: { en: 'Rickon’s brother', it: 'Fratello di Rickon' },
+    summary: {
+      en: 'Rickon’s brother. Shaggydog leaps out at him in the dark of the crypts.',
+      it: 'Il fratello di Rickon. Cagnaccio gli balza addosso nel buio delle cripte.',
+    },
+  },
+  shaLuwin: {
+    character: 'luwin',
+    type: { en: 'Man he bit', it: 'Uomo morso da lui' },
+    summary: {
+      en: 'The maester of Winterfell. Shaggydog springs at him in the crypts and bites him.',
+      it: 'Il maestro di Grande Inverno. Cagnaccio gli salta addosso nelle cripte e lo morde.',
+    },
+  },
+  ghoJon: {
+    character: 'jon-snow',
+    type: { en: 'Master', it: 'Padrone' },
+    summary: {
+      en: 'The boy who found the white pup apart from the litter and kept him.',
+      it: 'Il ragazzo che ha trovato il cucciolo bianco lontano dalla cucciolata e lo ha tenuto.',
+    },
+  },
+  ghoJeor: {
+    character: 'jeor-mormont',
+    type: { en: 'Man he helped save', it: 'Uomo salvato con il suo aiuto' },
+    summary: {
+      en: 'The Lord Commander. In the night Ghost leads Jon to his rooms, where a dead man has risen to kill him.',
+      it: 'Il Lord Comandante. Di notte Spettro guida Jon fino alle sue stanze, dove un morto si è rialzato per ucciderlo.',
+    },
+  },
+
+  // Theon
+  theEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Guardian', it: 'Tutore' },
+    summary: {
+      en: 'The lord of Winterfell, in whose household he lives as a ward.',
+      it: 'Il lord di Grande Inverno, nella cui casa vive come pupillo.',
+    },
+  },
+  theRobb: {
+    character: 'robb-stark',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Lord Eddard’s heir, with whom he grew up at Winterfell.',
+      it: 'L’erede di lord Eddard, con cui è cresciuto a Grande Inverno.',
+    },
+  },
+  theBran: {
+    character: 'bran-stark',
+    type: { en: 'Boy he saved', it: 'Ragazzo salvato da lui' },
+    summary: {
+      en: 'Lord Eddard’s crippled son. Theon kills the outlaw holding a knife to him with an arrow.',
+      it: 'Il figlio storpio di lord Eddard. Theon uccide con una freccia il fuorilegge che gli punta un coltello.',
+    },
+  },
+  theRobbAnger: {
+    character: 'robb-stark',
+    type: { en: 'Friend', it: 'Amico' },
+    summary: {
+      en: 'Lord Eddard’s heir. He is angry that Theon risked Bran with the shot.',
+      it: 'L’erede di lord Eddard. È arrabbiato perché con quel tiro Theon ha messo in pericolo Bran.',
+    },
+  },
+  theOsha: {
+    character: 'osha',
+    type: { en: 'Captive', it: 'Prigioniera' },
+    summary: {
+      en: 'The outlaw woman taken alive in the wolfswood.',
+      it: 'La fuorilegge presa viva nella Foresta del Lupo.',
+    },
+  },
+  theRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'Lord Eddard’s heir. When the lords proclaim him King in the North, Theon asks if they are brothers and swears his sword to him.',
+      it: 'L’erede di lord Eddard. Quando i lord lo proclamano Re del Nord, Theon gli chiede se sono fratelli e gli giura la sua spada.',
+    },
+  },
+  theOshaLord: {
+    character: 'osha',
+    type: { en: 'Servant', it: 'Serva' },
+    summary: {
+      en: 'The outlaw woman, now a servant at Winterfell. She will not call him lord.',
+      it: 'La fuorilegge, ora serva a Grande Inverno. Si rifiuta di chiamarlo “mio signore”.',
+    },
+  },
+
+  // Luwin
+  luwEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord of Winterfell. Luwin brings him a letter that was sent in secret.',
+      it: 'Il lord di Grande Inverno. Luwin gli consegna una lettera arrivata in segreto.',
+    },
+  },
+  luwCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady of Winterfell. The secret letter is from her sister.',
+      it: 'La signora di Grande Inverno. La lettera segreta è di sua sorella.',
+    },
+  },
+  luwBran: {
+    character: 'bran-stark',
+    type: { en: 'Pupil', it: 'Allievo' },
+    summary: {
+      en: 'Lord Eddard’s son. Luwin tended him after his fall and still looks after him.',
+      it: 'Il figlio di lord Eddard. Luwin lo ha curato dopo la caduta e continua a prendersi cura di lui.',
+    },
+  },
+  luwRobb: {
+    character: 'robb-stark',
+    type: { en: 'Young lord', it: 'Giovane signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, who runs the castle with Luwin’s help while his parents are away.',
+      it: 'L’erede di lord Eddard, che manda avanti il castello con l’aiuto di Luwin mentre i genitori sono lontani.',
+    },
+  },
+  luwBranNews: {
+    character: 'bran-stark',
+    type: { en: 'Pupil', it: 'Allievo' },
+    summary: {
+      en: 'Lord Eddard’s son, crippled by his fall. He is with Luwin when the news of his father’s death reaches Winterfell.',
+      it: 'Il figlio di lord Eddard, storpio dopo la caduta. È con Luwin quando a Grande Inverno arriva la notizia della morte del padre.',
+    },
+  },
+  luwRickon: {
+    character: 'rickon-stark',
+    type: { en: 'Charge', it: 'Protetto' },
+    summary: {
+      en: 'Lord Eddard’s youngest son, left at Winterfell with Bran.',
+      it: 'Il figlio più giovane di lord Eddard, rimasto a Grande Inverno con Bran.',
+    },
+  },
+  luwEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord of Winterfell he served, beheaded in the capital.',
+      it: 'Il lord di Grande Inverno che serviva, decapitato nella capitale.',
+    },
+  },
+  luwRobbWar: {
+    character: 'robb-stark',
+    type: { en: 'Young lord', it: 'Giovane signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, away at war in the south.',
+      it: 'L’erede di lord Eddard, lontano in guerra al sud.',
+    },
+  },
+
+  // Rodrik
+  rodEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord of Winterfell, whom he serves as master-at-arms.',
+      it: 'Il lord di Grande Inverno, che serve come maestro d’armi.',
+    },
+  },
+  rodCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady of Winterfell. He rides south with her in secret to warn her husband.',
+      it: 'La signora di Grande Inverno. La accompagna di nascosto al sud per avvertire il marito.',
+    },
+  },
+  rodCatelynInn: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady of Winterfell, whom he escorts. He helps her seize Tyrion at the inn.',
+      it: 'La signora di Grande Inverno, che scorta. La aiuta a catturare Tyrion alla locanda.',
+    },
+  },
+  rodTyrion: {
+    character: 'tyrion-lannister',
+    type: { en: 'Captive', it: 'Prigioniero' },
+    summary: {
+      en: 'The queen’s brother, whom Catelyn accuses of sending a killer after Bran. Rodrik helps take him.',
+      it: 'Il fratello della regina, che Catelyn accusa di aver mandato un sicario da Bran. Rodrik la aiuta a catturarlo.',
+    },
+  },
+  rodJoryDead: {
+    character: 'jory-cassel',
+    type: { en: 'Kinsman', it: 'Parente' },
+    summary: {
+      en: 'A Cassel and the captain of Lord Eddard’s guard. He was killed defending Eddard against Jaime Lannister’s men.',
+      it: 'Un Cassel, capitano della guardia di lord Eddard. È stato ucciso difendendo Eddard dagli uomini di Jaime Lannister.',
+    },
+  },
+  rodEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord of Winterfell he served, beheaded in the capital.',
+      it: 'Il lord di Grande Inverno che serviva, decapitato nella capitale.',
+    },
+  },
+
+  // Old Nan
+  nanBran: {
+    character: 'bran-stark',
+    type: { en: 'Listener', it: 'Ascoltatore' },
+    summary: {
+      en: 'Lord Eddard’s son. She sits by his bed and tells him of the Long Night and the White Walkers.',
+      it: 'Il figlio di lord Eddard. Siede accanto al suo letto e gli racconta della Lunga Notte e degli Estranei.',
+    },
+  },
+  nanCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady of Winterfell. Old Nan bathes her after she fights off the man who came to kill Bran.',
+      it: 'La signora di Grande Inverno. La Vecchia Nan le fa il bagno dopo che ha respinto l’uomo venuto a uccidere Bran.',
+    },
+  },
+  nanBranBook: {
+    character: 'bran-stark',
+    type: { en: 'Listener', it: 'Ascoltatore' },
+    summary: {
+      en: 'Lord Eddard’s son, crippled by his fall. She tells him her old stories.',
+      it: 'Il figlio di lord Eddard, storpio dopo la caduta. Gli racconta le sue vecchie storie.',
+    },
+  },
+
+  // Hodor
+  hodBran: {
+    character: 'bran-stark',
+    type: { en: 'Boy he carries', it: 'Ragazzo portato da lui' },
+    summary: {
+      en: 'Lord Eddard’s crippled son. Hodor carries him through the castle.',
+      it: 'Il figlio storpio di lord Eddard. Hodor lo porta in braccio per il castello.',
+    },
+  },
+
+  // Osha
+  oshBran: {
+    character: 'bran-stark',
+    type: { en: 'Boy she waylaid', it: 'Ragazzo assalito da lei' },
+    summary: {
+      en: 'A crippled boy on a horse in the wolfswood. She and her companions try to take him.',
+      it: 'Un ragazzo storpio a cavallo nella Foresta del Lupo. Lei e i suoi compagni cercano di prenderlo.',
+    },
+  },
+  oshRobb: {
+    character: 'robb-stark',
+    type: { en: 'Captor', it: 'Chi l’ha catturata' },
+    summary: {
+      en: 'Bran’s brother. She yields to him, and he takes her to Winterfell as a prisoner.',
+      it: 'Il fratello di Bran. Lei si arrende a lui, che la porta a Grande Inverno come prigioniera.',
+    },
+  },
+  oshTheon: {
+    character: 'theon-greyjoy',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'Lord Eddard’s ward, who killed one of her companions with an arrow.',
+      it: 'Il pupillo di lord Eddard, che ha ucciso uno dei suoi compagni con una freccia.',
+    },
+  },
+  oshBranGodswood: {
+    character: 'bran-stark',
+    type: { en: 'Young lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The crippled boy, now her master. In the godswood she tells him the real enemy waits beyond the Wall.',
+      it: 'Il ragazzo storpio, ora suo padrone. Nel parco degli dei gli dice che il vero nemico è oltre la Barriera.',
+    },
+  },
+  oshRobbWar: {
+    character: 'robb-stark',
+    type: { en: 'Captor', it: 'Chi l’ha catturata' },
+    summary: {
+      en: 'Bran’s brother, who took her prisoner. She says he is marching his army the wrong way.',
+      it: 'Il fratello di Bran, che l’ha fatta prigioniera. Lei dice che sta portando l’esercito nella direzione sbagliata.',
+    },
+  },
+  oshLuwin: {
+    character: 'luwin',
+    type: { en: 'Questioner', it: 'Interrogatore' },
+    summary: {
+      en: 'The maester of Winterfell. He asks why she came south of the Wall and does not believe her answer.',
+      it: 'Il maestro di Grande Inverno. Le chiede perché sia venuta a sud della Barriera e non crede alla sua risposta.',
+    },
+  },
+  oshBranCrypt: {
+    character: 'bran-stark',
+    type: { en: 'Young lord', it: 'Giovane signore' },
+    summary: {
+      en: 'The crippled boy she serves. She goes down into the crypts with him to look for his father.',
+      it: 'Il ragazzo storpio che serve. Scende con lui nelle cripte a cercare suo padre.',
+    },
+  },
+  oshRickon: {
+    character: 'rickon-stark',
+    type: { en: 'Young lord', it: 'Giovane signore' },
+    summary: {
+      en: 'Bran’s little brother, whom they find in the crypts with his wolf.',
+      it: 'Il fratellino di Bran, che trovano nelle cripte con il suo lupo.',
+    },
+  },
+  oshShaggydog: {
+    character: 'shaggydog',
+    type: { en: 'Direwolf', it: 'Metalupo' },
+    summary: {
+      en: 'Rickon’s black direwolf, which leaps out at them in the crypts.',
+      it: 'Il metalupo nero di Rickon, che balza loro addosso nelle cripte.',
+    },
+  },
+
+  // Mordane
+  morSansa: {
+    character: 'sansa-stark',
+    type: { en: 'Pupil', it: 'Allieva' },
+    summary: {
+      en: 'Lord Eddard’s elder daughter, whose needlework the septa praises.',
+      it: 'La figlia maggiore di lord Eddard, di cui la septa loda il ricamo.',
+    },
+  },
+  morArya: {
+    character: 'arya-stark',
+    type: { en: 'Pupil', it: 'Allieva' },
+    summary: {
+      en: 'Lord Eddard’s younger daughter, who struggles with her stitches.',
+      it: 'La figlia minore di lord Eddard, che fatica con i punti.',
+    },
+  },
+  morJeyne: {
+    character: 'jeyne-poole',
+    type: { en: 'Pupil', it: 'Allieva' },
+    summary: {
+      en: 'The steward’s daughter, who sews beside Sansa at the lesson.',
+      it: 'La figlia dell’intendente, che cuce accanto a Sansa durante la lezione.',
+    },
+  },
+  morSansaFlight: {
+    character: 'sansa-stark',
+    type: { en: 'Pupil', it: 'Allieva' },
+    summary: {
+      en: 'Lord Eddard’s elder daughter. When fighting breaks out in the castle, the septa sends her to bar herself in her room.',
+      it: 'La figlia maggiore di lord Eddard. Quando nel castello scoppiano gli scontri, la septa la manda a barricarsi in camera.',
+    },
+  },
+  morSansaHeads: {
+    character: 'sansa-stark',
+    type: { en: 'Pupil', it: 'Allieva' },
+    summary: {
+      en: 'Lord Eddard’s elder daughter, whom she taught. Joffrey made Sansa look at the septa’s head on the castle walls.',
+      it: 'La figlia maggiore di lord Eddard, a cui faceva da insegnante. Joffrey ha costretto Sansa a guardare la testa della septa sulle mura del castello.',
+    },
+  },
+  morAryaPast: {
+    character: 'arya-stark',
+    type: { en: 'Pupil', it: 'Allieva' },
+    summary: {
+      en: 'Lord Eddard’s younger daughter, who never took to her lessons.',
+      it: 'La figlia minore di lord Eddard, che non si è mai appassionata alle sue lezioni.',
+    },
+  },
+  morEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord whose daughters she taught. Their heads were set side by side on the walls.',
+      it: 'Il lord di cui istruiva le figlie. Le loro teste sono state esposte una accanto all’altra sulle mura.',
+    },
+  },
+
+  // Hullen
+  hulEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord of Winterfell, whom he serves as master of horse. He rides with him to the execution.',
+      it: 'Il lord di Grande Inverno, che serve come maestro dei cavalli. Lo accompagna all’esecuzione.',
+    },
+  },
+  hulEddardPast: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord he served as master of horse, and followed south.',
+      it: 'Il lord che ha servito come maestro dei cavalli e ha seguito al sud.',
+    },
+  },
+  hulHarwin: {
+    character: 'harwin',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, a guard in Lord Eddard’s household.',
+      it: 'Suo figlio, una guardia della casa di lord Eddard.',
+    },
+  },
+  hulArya: {
+    character: 'arya-stark',
+    type: { en: 'Lord’s daughter', it: 'Figlia del suo signore' },
+    summary: {
+      en: 'Lord Eddard’s daughter. Running from the guards, she found him dying in the stables, and he told her to warn her father.',
+      it: 'La figlia di lord Eddard. Mentre fuggiva dalle guardie lo ha trovato morente nelle stalle, e lui le ha detto di avvertire il padre.',
+    },
+  },
+
+  // Jeyne Poole
+  jeySansa: {
+    character: 'sansa-stark',
+    type: { en: 'Best friend', it: 'Migliore amica' },
+    summary: {
+      en: 'Lord Eddard’s elder daughter. They sew side by side and share their talk.',
+      it: 'La figlia maggiore di lord Eddard. Cuciono fianco a fianco e si confidano.',
+    },
+  },
+  jeyArya: {
+    character: 'arya-stark',
+    type: { en: 'Friend’s sister', it: 'Sorella dell’amica' },
+    summary: {
+      en: 'Sansa’s younger sister, whose clumsy needlework she and Sansa whisper about.',
+      it: 'La sorella minore di Sansa, del cui ricamo maldestro lei e Sansa parlano sottovoce.',
+    },
+  },
+  jeyVayon: {
+    character: 'vayon-poole',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, the steward of Lord Eddard’s household.',
+      it: 'Suo padre, intendente della casa di lord Eddard.',
+    },
+  },
+  jeyVayonDead: {
+    character: 'vayon-poole',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'Her father, Lord Eddard’s steward. He was killed when the Lannisters fell on the household.',
+      it: 'Suo padre, intendente di lord Eddard. È stato ucciso quando i Lannister si sono scagliati contro la casa.',
+    },
+  },
+
+  // Mikken
+  mikArya: {
+    character: 'arya-stark',
+    type: {
+      en: 'Girl he made a sword for',
+      it: 'Ragazza a cui ha forgiato una spada',
+    },
+    summary: {
+      en: 'Lord Eddard’s younger daughter. He forged the slender sword that Jon gives her.',
+      it: 'La figlia minore di lord Eddard. Ha forgiato la spada sottile che Jon le regala.',
+    },
+  },
+  mikJon: {
+    character: 'jon-snow',
+    type: { en: 'Customer', it: 'Committente' },
+    summary: {
+      en: 'Lord Eddard’s bastard son, who has him make a sword for Arya before he leaves for the Wall.',
+      it: 'Il figlio bastardo di lord Eddard, che prima di partire per la Barriera gli fa forgiare una spada per Arya.',
+    },
+  },
+
+  // Hallis Mollen
+  halCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady', it: 'Signora' },
+    summary: {
+      en: 'The lady of Winterfell. He reports to her on the search after a man tries to kill Bran.',
+      it: 'La signora di Grande Inverno. Le riferisce le ricerche dopo che un uomo ha cercato di uccidere Bran.',
+    },
+  },
+  halRobb: {
+    character: 'robb-stark',
+    type: { en: 'Young lord', it: 'Giovane signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, with whom he comes to Catelyn after the attack.',
+      it: 'L’erede di lord Eddard, con cui si presenta da Catelyn dopo l’aggressione.',
+    },
+  },
+
+  // Greatjon Umber
+  gjRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, who has called the banners. The Greatjon demands the vanguard and draws steel at his table, then laughs and follows him.',
+      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Il Greatjon pretende l’avanguardia e sguaina la spada alla sua tavola, poi ride e lo segue.',
+    },
+  },
+  gjGreyWind: {
+    character: 'grey-wind',
+    type: { en: 'Wolf that bit him', it: 'Lupo che l’ha morso' },
+    summary: {
+      en: 'Robb’s direwolf, which knocked him down and bit off two of his fingers.',
+      it: 'Il metalupo di Robb, che lo ha atterrato e gli ha staccato due dita.',
+    },
+  },
+  gjRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he once drew steel on. After Eddard’s death the Greatjon is the first to proclaim him King in the North.',
+      it: 'Il giovane lord contro cui aveva sguainato la spada. Dopo la morte di Eddard il Greatjon è il primo a proclamarlo Re del Nord.',
+    },
+  },
+  gjSmalljon: {
+    character: 'smalljon-umber',
+    type: { en: 'Son', it: 'Figlio' },
+    summary: {
+      en: 'His son, who rides in Robb’s guard.',
+      it: 'Suo figlio, che cavalca nella guardia di Robb.',
+    },
+  },
+
+  // Smalljon Umber
+  sjGreatjon: {
+    character: 'greatjon-umber',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the lord of House Umber, who marches in Robb’s host.',
+      it: 'Suo padre, il lord di Casa Umber, che marcia nell’esercito di Robb.',
+    },
+  },
+  sjRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'The young lord of Winterfell, in whose guard he rides when Robb takes Jaime Lannister.',
+      it: 'Il giovane lord di Grande Inverno, nella cui guardia cavalca quando Robb cattura Jaime Lannister.',
+    },
+  },
+  sjRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he guards. His father is the first to proclaim Robb King in the North.',
+      it: 'Il giovane lord che protegge. Suo padre è il primo a proclamare Robb Re del Nord.',
+    },
+  },
+
+  // The northern lords
+  rkRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir. Lord Karstark brings his sons and his men to Winterfell to march with him.',
+      it: 'L’erede di lord Eddard. Lord Karstark porta i figli e i suoi uomini a Grande Inverno per marciare con lui.',
+    },
+  },
+  rkRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he marched south with. The northern lords proclaim him King in the North.',
+      it: 'Il giovane lord con cui ha marciato verso sud. I lord del Nord lo proclamano Re del Nord.',
+    },
+  },
+  rooRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, who has called the banners. Lord Bolton brings his men to Winterfell for him.',
+      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Lord Bolton porta i suoi uomini a Grande Inverno per lui.',
+    },
+  },
+  rooRobbFoot: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'The young lord of Winterfell. He gives Lord Bolton command of the foot and sends him down the kingsroad against Lord Tywin.',
+      it: 'Il giovane lord di Grande Inverno. Affida a lord Bolton il comando della fanteria e lo manda lungo la strada del re contro lord Tywin.',
+    },
+  },
+  rooTywin: {
+    character: 'tywin-lannister',
+    type: { en: 'Enemy commander', it: 'Comandante nemico' },
+    summary: {
+      en: 'The lord of Casterly Rock. Bolton’s foot meet his army in battle by the Green Fork.',
+      it: 'Il lord di Castel Granito. La fanteria di Bolton affronta il suo esercito in battaglia vicino alla Forca Verde.',
+    },
+  },
+  galRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, who has called the banners. Lord Glover sits at his war council.',
+      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Lord Glover siede al suo consiglio di guerra.',
+    },
+  },
+  galRobbVanguard: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, who has called the banners. He gives Lord Glover the vanguard of his host.',
+      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Affida a lord Glover l’avanguardia del suo esercito.',
+    },
+  },
+  galGreatjon: {
+    character: 'greatjon-umber',
+    type: { en: 'Rival', it: 'Rivale' },
+    summary: {
+      en: 'A northern lord who will not march behind a Glover and demands the vanguard for himself.',
+      it: 'Un lord del Nord che non vuole marciare dietro a un Glover e pretende l’avanguardia per sé.',
+    },
+  },
+  galRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord he marched south with. Lord Glover joins the lords who proclaim him King in the North.',
+      it: 'Il giovane lord con cui ha marciato verso sud. Lord Glover si unisce ai lord che lo proclamano Re del Nord.',
+    },
+  },
+  robRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, who has called the banners. Robett comes to Winterfell and asks him for a command.',
+      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Robett viene a Grande Inverno e gli chiede un comando.',
+    },
+  },
+  maeRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, who has called the banners. Lady Mormont brings her people to join his host.',
+      it: 'L’erede di lord Eddard, che ha chiamato a raccolta i vessilli. Lady Mormont porta la sua gente a unirsi al suo esercito.',
+    },
+  },
+  maeDacey: {
+    character: 'dacey-mormont',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'Her eldest daughter and heir, who rides in Robb’s guard.',
+      it: 'La figlia maggiore ed erede, che cavalca nella guardia di Robb.',
+    },
+  },
+  maeRobbKing: {
+    character: 'robb-stark',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young lord she marched south with. She is among the lords who proclaim him King in the North.',
+      it: 'Il giovane lord con cui ha marciato verso sud. È tra i lord che lo proclamano Re del Nord.',
+    },
+  },
+  dacRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'The young lord of Winterfell, in whose guard she rides when he takes Jaime Lannister.',
+      it: 'Il giovane lord di Grande Inverno, nella cui guardia cavalca quando cattura Jaime Lannister.',
+    },
+  },
+  dacMaege: {
+    character: 'maege-mormont',
+    type: { en: 'Mother', it: 'Madre' },
+    summary: {
+      en: 'Her mother, the lady of Bear Island, whose heir she is.',
+      it: 'Sua madre, la signora dell’Isola dell’Orso, di cui è l’erede.',
+    },
+  },
+  wenCatelyn: {
+    character: 'catelyn-stark',
+    type: { en: 'Lady he escorts', it: 'Signora scortata da lui' },
+    summary: {
+      en: 'Lord Eddard’s wife. Ser Wendel rides with her to join Robb’s host.',
+      it: 'La moglie di lord Eddard. Ser Wendel cavalca con lei per raggiungere l’esercito di Robb.',
+    },
+  },
+  wenRobb: {
+    character: 'robb-stark',
+    type: { en: 'Liege', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard’s heir, for whom the men of House Manderly march.',
+      it: 'L’erede di lord Eddard, per cui marciano gli uomini di Casa Manderly.',
+    },
+  },
+
+  // Vayon Poole
+  vayEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord he serves as steward. He follows Eddard south when he becomes Hand.',
+      it: 'Il lord che serve come intendente. Segue Eddard al sud quando diventa Primo Cavaliere.',
+    },
+  },
+  vayJeyne: {
+    character: 'jeyne-poole',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, Sansa’s friend.',
+      it: 'Sua figlia, amica di Sansa.',
+    },
+  },
+  vayEddardPast: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord he served as steward. After the king’s death the Lannisters seized Eddard and fell on his household.',
+      it: 'Il lord che ha servito come intendente. Dopo la morte del re i Lannister hanno arrestato Eddard e si sono scagliati contro la sua casa.',
+    },
+  },
+  vayJeynePast: {
+    character: 'jeyne-poole',
+    type: { en: 'Daughter', it: 'Figlia' },
+    summary: {
+      en: 'His daughter, Sansa’s friend, who came south with the household.',
+      it: 'Sua figlia, amica di Sansa, venuta al sud con la casa.',
+    },
+  },
+
+  // Tomard
+  tomEddardLetter: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The Hand of the King, whom he guards. Eddard sends him with a letter for Stannis Baratheon.',
+      it: 'Il Primo Cavaliere, di cui è la guardia. Eddard gli affida una lettera per Stannis Baratheon.',
+    },
+  },
+  tomEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The Hand of the King he guarded, who sent him away with a letter. Eddard was later beheaded in the capital.',
+      it: 'Il Primo Cavaliere di cui era la guardia, che lo aveva mandato via con una lettera. In seguito Eddard è stato decapitato nella capitale.',
+    },
+  },
+  tomEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The Hand of the King, whom he guards in the capital.',
+      it: 'Il Primo Cavaliere, di cui è la guardia nella capitale.',
+    },
+  },
+  tomEddardThrone: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The Hand of the King he guarded. Tomard was killed in the throne room when the guards turned on Eddard’s men.',
+      it: 'Il Primo Cavaliere di cui era la guardia. Tomard è stato ucciso nella sala del trono quando le guardie si sono rivoltate contro gli uomini di Eddard.',
+    },
+  },
+
+  // Harwin
+  harEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord of Winterfell, in whose party he rides to the execution. When the pups are found, Harwin says they cannot be kept.',
+      it: 'Il lord di Grande Inverno, con il cui seguito cavalca fino all’esecuzione. Quando trovano i cuccioli, Harwin dice che non si possono tenere.',
+    },
+  },
+  harHullen: {
+    character: 'hullen',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the master of horse at Winterfell.',
+      it: 'Suo padre, il maestro dei cavalli di Grande Inverno.',
+    },
+  },
+  harEddardHand: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard, whom he followed south. As Hand of the King, Eddard sent him with Lord Beric to bring Gregor Clegane to justice.',
+      it: 'Lord Eddard, che ha seguito al sud. Come Primo Cavaliere, Eddard lo ha mandato con lord Beric a consegnare Gregor Clegane alla giustizia.',
+    },
+  },
+  harHullenDead: {
+    character: 'hullen',
+    type: { en: 'Father', it: 'Padre' },
+    summary: {
+      en: 'His father, the master of horse at Winterfell. He was killed in the capital when the Lannisters turned on Lord Eddard’s household.',
+      it: 'Suo padre, il maestro dei cavalli di Grande Inverno. È stato ucciso nella capitale quando i Lannister si sono rivoltati contro la casa di lord Eddard.',
+    },
+  },
+  harBeric: {
+    character: 'beric-dondarrion',
+    type: { en: 'Commander', it: 'Comandante' },
+    summary: {
+      en: 'The lord whose company Eddard sends against Gregor Clegane. Harwin rides with him.',
+      it: 'Il lord della cui compagnia Eddard si serve contro Gregor Clegane. Harwin cavalca con lui.',
+    },
+  },
+  harEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord who sent him with Lord Beric. Eddard was beheaded in the capital.',
+      it: 'Il lord che lo aveva mandato con lord Beric. Eddard è stato decapitato nella capitale.',
+    },
+  },
+
+  // Alyn
+  alyEddard: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The lord he guards on the road south. Alyn wakes him one morning because the king wants to ride with him.',
+      it: 'Il lord di cui è la guardia sulla strada verso sud. Una mattina Alyn lo sveglia perché il re vuole cavalcare con lui.',
+    },
+  },
+  alyEddardCaptain: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'Lord Eddard, who as Hand of the King makes him captain of his guard.',
+      it: 'Lord Eddard, che come Primo Cavaliere lo nomina capitano della sua guardia.',
+    },
+  },
+  alyEddardDead: {
+    character: 'eddard-stark',
+    type: { en: 'Lord', it: 'Signore' },
+    summary: {
+      en: 'The Hand of the King, who made him captain of his guard. Eddard was beheaded in the capital.',
+      it: 'Il Primo Cavaliere, che lo aveva nominato capitano della sua guardia. Eddard è stato decapitato nella capitale.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -2277,6 +4335,967 @@ export const season1Relationships = {
       chapter: 69,
       source: 'chapter',
       value: [links.eroDaenerys, links.eroMago, links.eroDoreah],
+    },
+  ],
+  // Winterfell and the North (#1345). Each death a card outlives gets a
+  // snapshot in the past tense at its pin: Lady 2 / 17, Robert 7 / 50 and
+  // Eddard 9 / 66, the episode of each and the chapter that tells it.
+  'eddard-stark': [
+    // Bran I: the execution and the pups. Catelyn, Robert and the girls
+    // open at Eddard I (chapter 5).
+    {
+      episode: 1,
+      chapter: 2,
+      source: 'chapter',
+      value: [
+        north.nedBranExecution,
+        north.nedJon,
+        north.nedRobb,
+        north.nedTheon,
+      ],
+    },
+    {
+      episode: 1,
+      chapter: 5,
+      value: [
+        north.nedCatelyn,
+        north.nedRobertOffer,
+        north.nedRobb,
+        north.nedBranExecution,
+        north.nedJon,
+      ],
+    },
+    {
+      episode: 2,
+      chapter: 17,
+      value: [
+        north.nedRobertHand,
+        north.nedSansaLady,
+        north.nedArya,
+        north.nedCatelynHome,
+        north.nedBranFall,
+      ],
+    },
+    {
+      episode: 7,
+      chapter: 50,
+      value: [
+        north.nedRobertDead,
+        north.nedCersei,
+        north.nedPetyr,
+        north.nedSansaCourt,
+        north.nedArya,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        north.nedJoffreyExecution,
+        north.nedSansaExecution,
+        north.nedAryaCrowd,
+        north.nedCerseiDead,
+        north.nedRobertDead,
+      ],
+    },
+  ],
+  'catelyn-stark': [
+    {
+      episode: 1,
+      chapter: 3,
+      value: [north.catEddard, north.catRobb, north.catBran],
+    },
+    {
+      episode: 2,
+      chapter: 15,
+      value: [
+        north.catBranAttack,
+        north.catEddardSouth,
+        north.catRobbCastle,
+        north.catRodrik,
+        north.catJon,
+      ],
+    },
+    {
+      episode: 4,
+      chapter: 29,
+      value: [
+        north.catTyrion,
+        north.catPetyr,
+        north.catEddardHand,
+        north.catBranSouth,
+        north.catRodrik,
+      ],
+    },
+    {
+      episode: 5,
+      chapter: 35,
+      value: [
+        north.catTyrion,
+        north.catLysa,
+        north.catEddardHand,
+        north.catBranSouth,
+        north.catPetyr,
+      ],
+    },
+    // Catelyn IX: the Twins, before the battle (Catelyn X, chapter 64) and
+    // Eddard's death (chapter 66). The show has all three in "Baelor".
+    {
+      episode: 9,
+      chapter: 60,
+      source: 'chapter',
+      value: [
+        north.catWalder,
+        north.catRobbHost,
+        north.catEddardCaptive,
+        north.catLysaRefusal,
+        north.catBranSouth,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        north.catRobbVictory,
+        north.catEddardDead,
+        north.catWalder,
+        north.catJaime,
+        north.catLysaRefusal,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 72,
+      value: [
+        north.catRobbKing,
+        north.catEddardDead,
+        north.catJaime,
+        north.catWalder,
+        north.catLysaRefusal,
+      ],
+    },
+  ],
+  'robb-stark': [
+    {
+      episode: 1,
+      chapter: 2,
+      value: [north.robbEddard, north.robbBran, north.robbJon, north.robbTheon],
+    },
+    {
+      episode: 2,
+      chapter: 15,
+      value: [
+        north.robbCatelyn,
+        north.robbBranBed,
+        north.robbEddardSouth,
+        north.robbTheon,
+        north.robbJon,
+      ],
+    },
+    {
+      episode: 6,
+      chapter: 38,
+      value: [
+        north.robbBranRescue,
+        north.robbTheonArrow,
+        north.robbOsha,
+        north.robbCatelyn,
+        north.robbEddardSouth,
+      ],
+    },
+    {
+      episode: 8,
+      chapter: 54,
+      value: [
+        north.robbGreatjon,
+        north.robbGreyWind,
+        north.robbEddardSeized,
+        north.robbTheon,
+        north.robbBranFarewell,
+      ],
+    },
+    // Catelyn X: the battle, two chapters before Eddard's death. The show
+    // has both in "Baelor".
+    {
+      episode: 9,
+      chapter: 64,
+      source: 'chapter',
+      value: [
+        north.robbJaime,
+        north.robbWalder,
+        north.robbCatelynTwins,
+        north.robbEddardCaptive,
+        north.robbGreyWind,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        north.robbEddardDead,
+        north.robbJaime,
+        north.robbWalder,
+        north.robbCatelynTwins,
+        north.robbGreatjon,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 72,
+      value: [
+        north.robbGreatjonKing,
+        north.robbCatelynWar,
+        north.robbEddardDead,
+        north.robbJaime,
+        north.robbWalder,
+      ],
+    },
+  ],
+  'rickon-stark': [
+    {
+      episode: 1,
+      chapter: 5,
+      value: [north.ricEddard, north.ricCatelyn, north.ricRobb, north.ricBran],
+    },
+    // Bran IV names his wolf; the show names it only in "Fire and Blood".
+    {
+      episode: 1,
+      chapter: 25,
+      source: 'chapter',
+      value: [
+        north.ricShaggydog,
+        north.ricEddard,
+        north.ricCatelyn,
+        north.ricRobb,
+        north.ricBran,
+      ],
+    },
+    // Show only: "The Pointy End", he tells Bran they will not come back.
+    {
+      episode: 8,
+      chapter: 25,
+      source: 'episode',
+      value: [
+        north.ricRobbWar,
+        north.ricEddard,
+        north.ricCatelyn,
+        north.ricBran,
+      ],
+    },
+    // The crypts: Osha takes Bran down in "Fire and Blood", Maester Luwin
+    // in Bran VII.
+    {
+      episode: 10,
+      chapter: 67,
+      source: 'episode',
+      value: [
+        north.ricBranCrypt,
+        north.ricShaggydog,
+        north.ricEddardDead,
+        north.ricOsha,
+        north.ricRobb,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 67,
+      source: 'chapter',
+      value: [
+        north.ricBranCrypt,
+        north.ricShaggydog,
+        north.ricEddardDead,
+        north.ricLuwin,
+        north.ricRobb,
+      ],
+    },
+  ],
+  'jory-cassel': [
+    { episode: 1, chapter: 2, value: [north.joryEddard] },
+    { episode: 5, chapter: 36, value: [north.joryEddardDead, north.joryJaime] },
+  ],
+  'sansa-stark': [
+    {
+      episode: 1,
+      chapter: 5,
+      source: 'chapter',
+      value: [
+        north.sanJoffrey,
+        north.sanEddard,
+        north.sanArya,
+        north.sanCatelyn,
+      ],
+    },
+    // The show's Sansa names her wolf at her gate; Sansa I (chapter 16) is
+    // the book's first chapter to name it.
+    {
+      episode: 1,
+      chapter: 5,
+      source: 'episode',
+      value: [
+        north.sanJoffrey,
+        north.sanEddard,
+        north.sanArya,
+        north.sanLady,
+        north.sanCatelyn,
+      ],
+    },
+    {
+      episode: 1,
+      chapter: 16,
+      source: 'chapter',
+      value: [
+        north.sanJoffrey,
+        north.sanLady,
+        north.sanEddard,
+        north.sanArya,
+        north.sanCatelyn,
+      ],
+    },
+    {
+      episode: 2,
+      chapter: 17,
+      value: [
+        north.sanJoffreyRiver,
+        north.sanLadyDead,
+        north.sanEddardLady,
+        north.sanAryaQuarrel,
+        north.sanCersei,
+      ],
+    },
+    {
+      episode: 8,
+      chapter: 52,
+      value: [
+        north.sanCerseiHostage,
+        north.sanJoffreyKing,
+        north.sanEddardSeized,
+        north.sanAryaGone,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        north.sanJoffreyExecution,
+        north.sanEddardDead,
+        north.sanCerseiHostage,
+        north.sanAryaGone,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 68,
+      value: [
+        north.sanJoffreyHeads,
+        north.sanEddardDead,
+        north.sanMordaneDead,
+        north.sanSandor,
+        north.sanCerseiHostage,
+      ],
+    },
+  ],
+  'arya-stark': [
+    {
+      episode: 1,
+      chapter: 5,
+      value: [north.aryaEddard, north.aryaSansa, north.aryaJon],
+    },
+    {
+      episode: 2,
+      chapter: 17,
+      value: [
+        north.aryaNymeria,
+        north.aryaMycah,
+        north.aryaSansaLie,
+        north.aryaJonNeedle,
+        north.aryaEddard,
+      ],
+    },
+    {
+      episode: 3,
+      chapter: 23,
+      value: [
+        north.arySyrio,
+        north.aryaEddardHand,
+        north.aryaJonNeedle,
+        north.aryaSansaCourt,
+        north.aryaNymeriaGone,
+      ],
+    },
+    {
+      episode: 8,
+      chapter: 51,
+      value: [
+        north.arySyrioStand,
+        north.aryaEddardSeized,
+        north.aryaMeryn,
+        north.aryaSansaHeld,
+        north.aryaJonNeedle,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        north.aryaEddardDead,
+        north.aryaYoren,
+        north.aryaJoffrey,
+        north.arySyrioPast,
+        north.aryaSansaHeld,
+      ],
+    },
+  ],
+  // The show has Jaime push him at the end of episode 1, his gate; the
+  // book does it in Bran II (chapter 9).
+  'bran-stark': [
+    {
+      episode: 1,
+      chapter: 2,
+      source: 'chapter',
+      value: [north.branEddard, north.branRobb, north.branJon],
+    },
+    {
+      episode: 1,
+      chapter: 2,
+      source: 'episode',
+      value: [north.branEddard, north.branRobb, north.branJon, north.branJaime],
+    },
+    {
+      episode: 1,
+      chapter: 9,
+      source: 'chapter',
+      value: [north.branJaime, north.branEddard, north.branRobb, north.branJon],
+    },
+    {
+      episode: 4,
+      chapter: 25,
+      value: [
+        north.branSummer,
+        north.branTyrion,
+        north.branHodor,
+        north.branRobbCastle,
+        north.branJaime,
+      ],
+    },
+    {
+      episode: 6,
+      chapter: 38,
+      value: [
+        north.branOsha,
+        north.branRobbRescue,
+        north.branTheon,
+        north.branSummer,
+        north.branHodor,
+      ],
+    },
+    {
+      episode: 8,
+      chapter: 54,
+      value: [
+        north.branRobbWar,
+        north.branOshaGodswood,
+        north.branSummer,
+        north.branRickon,
+        north.branHodor,
+      ],
+    },
+    // The crypts: Osha takes him down in "Fire and Blood", Maester Luwin in
+    // Bran VII.
+    {
+      episode: 10,
+      chapter: 67,
+      source: 'episode',
+      value: [
+        north.branEddardDead,
+        north.branRickonCrypt,
+        north.branOshaCrypt,
+        north.branSummer,
+        north.branLuwin,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 67,
+      source: 'chapter',
+      value: [
+        north.branEddardDead,
+        north.branRickonCrypt,
+        north.branLuwinCrypt,
+        north.branSummer,
+        north.branOshaGodswood,
+      ],
+    },
+  ],
+  'benjen-stark': [
+    { episode: 1, chapter: 6, value: [north.benJon, north.benEddard] },
+    {
+      episode: 2,
+      chapter: 14,
+      value: [north.benJonRoad, north.benEddard, north.benTyrion],
+    },
+    // Show only: "Lord Snow", the farewells at Castle Black.
+    {
+      episode: 3,
+      chapter: 14,
+      source: 'episode',
+      value: [
+        north.benJonRanging,
+        north.benEddard,
+        north.benYoren,
+        north.benTyrionWall,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [north.benJonRoad, north.benEddardDead, north.benTyrion],
+    },
+  ],
+  // The show names him only in "The Pointy End"; Jon II (chapter 11) does.
+  'grey-wind': [
+    { episode: 8, chapter: 11, source: 'chapter', value: [north.gwRobb] },
+    { episode: 8, chapter: 54, value: [north.gwRobb, north.gwGreatjon] },
+  ],
+  'lady-direwolf': [
+    { episode: 1, chapter: 16, value: [north.ladySansa] },
+    {
+      episode: 2,
+      chapter: 17,
+      value: [north.ladySansaDead, north.ladyEddard, north.ladyCersei],
+    },
+  ],
+  // The show names her in "The Kingsroad", the episode of the bite; the
+  // book names her in Arya I and tells the bite in Sansa I and Eddard III.
+  'nymeria': [
+    { episode: 2, chapter: 8, source: 'chapter', value: [north.nymArya] },
+    {
+      episode: 2,
+      chapter: 8,
+      source: 'episode',
+      value: [north.nymAryaStones, north.nymJoffrey],
+    },
+    {
+      episode: 2,
+      chapter: 17,
+      source: 'chapter',
+      value: [north.nymAryaStones, north.nymJoffrey],
+    },
+  ],
+  'summer-direwolf': [
+    { episode: 4, chapter: 18, value: [north.sumBran, north.sumCatelyn] },
+  ],
+  'shaggydog': [
+    { episode: 10, chapter: 25, source: 'chapter', value: [north.shaRickon] },
+    // In the crypts he leaps at Bran and Osha in "Fire and Blood", and bites
+    // Maester Luwin in Bran VII.
+    {
+      episode: 10,
+      chapter: 67,
+      source: 'episode',
+      value: [north.shaRickonCrypt, north.shaBran],
+    },
+    {
+      episode: 10,
+      chapter: 67,
+      source: 'chapter',
+      value: [north.shaRickonCrypt, north.shaLuwin],
+    },
+  ],
+  'ghost-direwolf': [
+    { episode: 4, chapter: 6, value: [north.ghoJon] },
+    { episode: 8, chapter: 53, value: [north.ghoJon, north.ghoJeor] },
+  ],
+  'theon-greyjoy': [
+    { episode: 1, chapter: 2, value: [north.theEddard, north.theRobb] },
+    {
+      episode: 6,
+      chapter: 38,
+      value: [north.theBran, north.theRobbAnger, north.theOsha],
+    },
+    // Show only: "You Win or You Die" and "Fire and Blood".
+    {
+      episode: 7,
+      chapter: 38,
+      source: 'episode',
+      value: [north.theBran, north.theRobbAnger, north.theOshaLord],
+    },
+    {
+      episode: 10,
+      chapter: 38,
+      source: 'episode',
+      value: [north.theRobbKing, north.theBran, north.theOshaLord],
+    },
+  ],
+  'luwin': [
+    { episode: 1, chapter: 7, value: [north.luwEddard, north.luwCatelyn] },
+    {
+      episode: 4,
+      chapter: 25,
+      value: [north.luwBran, north.luwRobb, north.luwEddard, north.luwCatelyn],
+    },
+    {
+      episode: 10,
+      chapter: 67,
+      value: [
+        north.luwBranNews,
+        north.luwRickon,
+        north.luwEddardDead,
+        north.luwRobbWar,
+      ],
+    },
+  ],
+  'rodrik-cassel': [
+    { episode: 1, chapter: 8, value: [north.rodEddard] },
+    { episode: 2, chapter: 15, value: [north.rodCatelyn, north.rodEddard] },
+    {
+      episode: 4,
+      chapter: 29,
+      value: [north.rodCatelynInn, north.rodTyrion, north.rodEddard],
+    },
+    {
+      episode: 5,
+      chapter: 36,
+      value: [
+        north.rodCatelynInn,
+        north.rodTyrion,
+        north.rodJoryDead,
+        north.rodEddard,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      value: [
+        north.rodCatelynInn,
+        north.rodEddardDead,
+        north.rodJoryDead,
+        north.rodTyrion,
+      ],
+    },
+  ],
+  // Show: "Lord Snow", her story at Bran's bed. Books: Catelyn III, she
+  // bathes Catelyn; her stories for Bran wait for Bran IV.
+  'old-nan': [
+    { episode: 3, chapter: 15, source: 'episode', value: [north.nanBran] },
+    { episode: 3, chapter: 15, source: 'chapter', value: [north.nanCatelyn] },
+    {
+      episode: 3,
+      chapter: 25,
+      source: 'chapter',
+      value: [north.nanBranBook, north.nanCatelyn],
+    },
+  ],
+  'hodor': [{ episode: 4, chapter: 25, value: [north.hodBran] }],
+  'osha': [
+    {
+      episode: 6,
+      chapter: 38,
+      value: [north.oshBran, north.oshRobb, north.oshTheon],
+    },
+    // Show only: "You Win or You Die", Luwin questions her.
+    {
+      episode: 7,
+      chapter: 38,
+      source: 'episode',
+      value: [north.oshBran, north.oshRobb, north.oshTheon, north.oshLuwin],
+    },
+    {
+      episode: 8,
+      chapter: 54,
+      value: [north.oshBranGodswood, north.oshRobbWar, north.oshTheon],
+    },
+    // Show only: "Fire and Blood". In Bran VII Maester Luwin takes Bran
+    // down instead.
+    {
+      episode: 10,
+      chapter: 54,
+      source: 'episode',
+      value: [
+        north.oshBranCrypt,
+        north.oshRickon,
+        north.oshShaggydog,
+        north.oshRobbWar,
+      ],
+    },
+  ],
+  // Jeyne Poole is the book's alone. The show sends Mordane to face the
+  // soldiers in "The Pointy End"; both media tell her death at 10 / 68.
+  'mordane': [
+    {
+      episode: 1,
+      chapter: 8,
+      source: 'episode',
+      value: [north.morSansa, north.morArya],
+    },
+    {
+      episode: 1,
+      chapter: 8,
+      source: 'chapter',
+      value: [north.morSansa, north.morArya, north.morJeyne],
+    },
+    {
+      episode: 8,
+      chapter: 8,
+      source: 'episode',
+      value: [north.morSansaFlight, north.morArya],
+    },
+    {
+      episode: 10,
+      chapter: 68,
+      value: [north.morSansaHeads, north.morAryaPast, north.morEddardDead],
+    },
+  ],
+  // Books only, as his record is. Arya IV (chapter 51) finds him dying.
+  'hullen': [
+    {
+      episode: 1,
+      chapter: 2,
+      source: 'chapter',
+      value: [north.hulEddard, north.hulHarwin],
+    },
+    {
+      episode: 8,
+      chapter: 51,
+      source: 'chapter',
+      value: [north.hulArya, north.hulEddardPast, north.hulHarwin],
+    },
+  ],
+  // Books only, as her record is. Vayon Poole opens at Eddard III
+  // (chapter 17), and his death is told in Sansa IV (chapter 52).
+  'jeyne-poole': [
+    {
+      episode: 1,
+      chapter: 8,
+      source: 'chapter',
+      value: [north.jeySansa, north.jeyArya],
+    },
+    {
+      episode: 2,
+      chapter: 17,
+      source: 'chapter',
+      value: [north.jeySansa, north.jeyArya, north.jeyVayon],
+    },
+    {
+      episode: 8,
+      chapter: 52,
+      source: 'chapter',
+      value: [north.jeySansa, north.jeyVayonDead, north.jeyArya],
+    },
+  ],
+  // Each medium at its own gate: "The Kingsroad" and Bran VI.
+  'mikken': [
+    {
+      episode: 2,
+      chapter: 54,
+      source: 'episode',
+      value: [north.mikArya, north.mikJon],
+    },
+    {
+      episode: 2,
+      chapter: 54,
+      source: 'chapter',
+      value: [north.mikArya, north.mikJon],
+    },
+  ],
+  'hallis-mollen': [
+    {
+      episode: 2,
+      chapter: 15,
+      source: 'chapter',
+      value: [north.halCatelyn, north.halRobb],
+    },
+  ],
+  // Smalljon opens in the books at Catelyn X (chapter 64) and in the show
+  // only in season 6.
+  'greatjon-umber': [
+    { episode: 8, chapter: 54, value: [north.gjRobb, north.gjGreyWind] },
+    {
+      episode: 9,
+      chapter: 64,
+      source: 'chapter',
+      value: [north.gjRobb, north.gjGreyWind, north.gjSmalljon],
+    },
+    {
+      episode: 10,
+      chapter: 72,
+      source: 'episode',
+      value: [north.gjRobbKing, north.gjGreyWind],
+    },
+    {
+      episode: 10,
+      chapter: 72,
+      source: 'chapter',
+      value: [north.gjRobbKing, north.gjGreyWind, north.gjSmalljon],
+    },
+  ],
+  // The northern lords whose show gates fall after episode 10 keep the
+  // book's links alone in stage 1.
+  'smalljon-umber': [
+    {
+      episode: 53,
+      chapter: 64,
+      source: 'chapter',
+      value: [north.sjGreatjon, north.sjRobb],
+    },
+    {
+      episode: 53,
+      chapter: 72,
+      source: 'chapter',
+      value: [north.sjGreatjon, north.sjRobbKing],
+    },
+  ],
+  'rickard-karstark': [
+    { episode: 17, chapter: 54, source: 'chapter', value: [north.rkRobb] },
+    { episode: 17, chapter: 72, source: 'chapter', value: [north.rkRobbKing] },
+  ],
+  // Tyrion VIII (chapter 63): the battle on the Green Fork.
+  'roose-bolton': [
+    { episode: 14, chapter: 54, source: 'chapter', value: [north.rooRobb] },
+    {
+      episode: 14,
+      chapter: 63,
+      source: 'chapter',
+      value: [north.rooRobbFoot, north.rooTywin],
+    },
+  ],
+  // Show: "The Pointy End" gives him the vanguard, and "Fire and Blood" has
+  // him among the lords who name Robb king. Books: Catelyn VIII, at the
+  // war council, and Catelyn XI, at the proclamation.
+  'galbart-glover': [
+    {
+      episode: 8,
+      chapter: 56,
+      source: 'episode',
+      value: [north.galRobbVanguard, north.galGreatjon],
+    },
+    { episode: 8, chapter: 56, source: 'chapter', value: [north.galRobb] },
+    {
+      episode: 10,
+      chapter: 72,
+      source: 'episode',
+      value: [north.galRobbKing, north.galGreatjon],
+    },
+    { episode: 10, chapter: 72, source: 'chapter', value: [north.galRobbKing] },
+  ],
+  'robett-glover': [
+    { episode: 57, chapter: 54, source: 'chapter', value: [north.robRobb] },
+  ],
+  // Dacey is the book's alone (Catelyn X); "Fire and Blood" has Maege at
+  // the proclamation.
+  'maege-mormont': [
+    { episode: 8, chapter: 54, value: [north.maeRobb] },
+    {
+      episode: 8,
+      chapter: 64,
+      source: 'chapter',
+      value: [north.maeRobb, north.maeDacey],
+    },
+    { episode: 10, chapter: 64, source: 'episode', value: [north.maeRobbKing] },
+  ],
+  'dacey-mormont': [
+    {
+      episode: 9,
+      chapter: 64,
+      source: 'chapter',
+      value: [north.dacRobb, north.dacMaege],
+    },
+  ],
+  'wendel-manderly': [
+    {
+      episode: 29,
+      chapter: 56,
+      source: 'chapter',
+      value: [north.wenCatelyn, north.wenRobb],
+    },
+  ],
+  // The show opens him at his death in "The Pointy End"; Sansa IV
+  // (chapter 52) tells it.
+  'vayon-poole': [
+    {
+      episode: 8,
+      chapter: 17,
+      source: 'chapter',
+      value: [north.vayEddard, north.vayJeyne],
+    },
+    {
+      episode: 8,
+      chapter: 52,
+      source: 'episode',
+      value: [north.vayEddardPast],
+    },
+    {
+      episode: 8,
+      chapter: 52,
+      source: 'chapter',
+      value: [north.vayEddardPast, north.vayJeynePast],
+    },
+  ],
+  // Show: "You Win or You Die", he leaves with the letter for Stannis and
+  // lives. Books: Eddard XIV (chapter 50), he dies in the throne room.
+  'tomard': [
+    { episode: 7, chapter: 23, source: 'chapter', value: [north.tomEddard] },
+    {
+      episode: 7,
+      chapter: 23,
+      source: 'episode',
+      value: [north.tomEddardLetter],
+    },
+    {
+      episode: 7,
+      chapter: 50,
+      source: 'chapter',
+      value: [north.tomEddardThrone],
+    },
+    {
+      episode: 9,
+      chapter: 50,
+      source: 'episode',
+      value: [north.tomEddardDead],
+    },
+  ],
+  // Books only, as their records are. Harwin joins Lord Beric's company at
+  // Sansa III (chapter 45); Alyn takes the Hand's guard at Eddard XII
+  // (chapter 46).
+  'harwin': [
+    {
+      episode: 1,
+      chapter: 2,
+      source: 'chapter',
+      value: [north.harEddard, north.harHullen],
+    },
+    {
+      episode: 6,
+      chapter: 45,
+      source: 'chapter',
+      value: [north.harEddardHand, north.harBeric, north.harHullen],
+    },
+    // Hullen dies in Arya IV (chapter 51).
+    {
+      episode: 8,
+      chapter: 51,
+      source: 'chapter',
+      value: [north.harEddardHand, north.harBeric, north.harHullenDead],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      source: 'chapter',
+      value: [north.harEddardDead, north.harBeric, north.harHullenDead],
+    },
+  ],
+  'alyn': [
+    { episode: 1, chapter: 13, source: 'chapter', value: [north.alyEddard] },
+    {
+      episode: 6,
+      chapter: 46,
+      source: 'chapter',
+      value: [north.alyEddardCaptain],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      source: 'chapter',
+      value: [north.alyEddardDead],
     },
   ],
 } satisfies Record<string, Timeline<Relationship[]>>
