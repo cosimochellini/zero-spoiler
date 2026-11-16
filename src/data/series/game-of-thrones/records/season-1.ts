@@ -2030,7 +2030,7 @@ export const season1: ThronesSaga = {
         it: 'Un cavaliere di sangue di khal Drogo.',
         en: 'One of Khal Drogo’s bloodriders.',
       },
-      visual: { art: 'qotho', tint: 'wine' },
+      visual: { art: 'qotho', tint: 'azure' },
     },
     // Books only: Daenerys IV (site chapter 37), he meets Daenerys. The show’s rider has the name only by wiki conjecture; episode 4 orders him.
     {
@@ -2125,7 +2125,7 @@ export const season1: ThronesSaga = {
         it: 'Un guerriero del khalasar di Drogo che protesta quando Daenerys reclama i prigionieri.',
         en: 'A rider of Drogo’s khalasar who objects when Daenerys claims the captives.',
       },
-      visual: { art: 'mago', tint: 'vermilion' },
+      visual: { art: 'mago', tint: 'ice' },
     },
     // Books only: Daenerys IX (site chapter 69), first named when her death is told, so she opens `deceased`. The show has no such character; episode 10 orders her.
     {
@@ -3581,7 +3581,10 @@ export const season1: ThronesSaga = {
         it: 'Guida i Guardiani della notte da Castello Nero. È un uomo anziano e burbero. Jon Snow è tra le reclute che si addestrano sotto il suo comando.',
         en: 'He leads the Night’s Watch from Castle Black. He is a gruff old man. Jon Snow is among the recruits training under his command.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 24, chapter: 177, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -3596,7 +3599,10 @@ export const season1: ThronesSaga = {
         it: 'È molto anziano e cieco. Siede con il lord comandante quando a Tyrion Lannister viene chiesto di far sapere a corte che la Barriera ha bisogno di uomini.',
         en: 'He is very old and blind. He sits with the Lord Commander when Tyrion Lannister is asked to tell the court that the Wall needs men.',
       },
-      status: [{ episode: 3, chapter: 22, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 22, value: 'alive' },
+        { episode: 47, chapter: 261, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -3646,7 +3652,10 @@ export const season1: ThronesSaga = {
         it: 'Addestra le reclute dei Guardiani della notte con disprezzo. Jon è il più abile di loro, e lui lo chiama “Lord Snow” per deriderlo.',
         en: 'He trains the recruits of the Night’s Watch with contempt. Jon is the most skilled of them, and he calls him “Lord Snow” to mock him.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -3664,7 +3673,10 @@ export const season1: ThronesSaga = {
         it: 'Si unisce al gruppo diretto alla Barriera con Jon e suo zio. Porta con sé due condannati come nuove reclute.',
         en: 'He joins the party riding to the Wall with Jon and his uncle. He brings two convicts with him as new recruits.',
       },
-      status: [{ episode: 3, chapter: 14, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 14, value: 'alive' },
+        { episode: 13, chapter: 88, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -3703,7 +3715,10 @@ export const season1: ThronesSaga = {
           },
         },
       ],
-      status: [{ episode: 1, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 5, value: 'alive' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'jaime-lannister': {
       affiliation: [
@@ -3738,6 +3753,7 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 1, chapter: 5, value: 'alive' },
         { episode: 9, chapter: 64, value: 'captured' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
       ],
     },
     'tyrion-lannister': {
@@ -3803,7 +3819,10 @@ export const season1: ThronesSaga = {
           value: { it: 'Primo Cavaliere del Re', en: 'Hand of the King' },
         },
       ],
-      status: [{ episode: 7, chapter: 57, value: 'alive' }],
+      status: [
+        { episode: 7, chapter: 57, value: 'alive' },
+        { episode: 40, chapter: 221, value: 'deceased' },
+      ],
     },
     'joffrey-baratheon': {
       affiliation: [
@@ -3829,7 +3848,10 @@ export const season1: ThronesSaga = {
           value: { it: 'Re dei Sette Regni', en: 'King of the Seven Kingdoms' },
         },
       ],
-      status: [{ episode: 1, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 5, value: 'alive' },
+        { episode: 32, chapter: 204, value: 'deceased' },
+      ],
     },
     'myrcella-baratheon': {
       affiliation: [
@@ -3844,7 +3866,10 @@ export const season1: ThronesSaga = {
         en: 'She is the young daughter of the king and queen. She travels north with her parents and brothers.',
       },
       role: { it: 'Principessa', en: 'Princess' },
-      status: [{ episode: 1, chapter: 6, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 6, value: 'alive' },
+        { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'tommen-baratheon': {
       affiliation: [
@@ -3859,7 +3884,10 @@ export const season1: ThronesSaga = {
         en: 'He is the youngest child of the king and queen. He travels north with his parents, his brother and his sister.',
       },
       role: { it: 'Principe', en: 'Prince' },
-      status: [{ episode: 1, chapter: 6, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 6, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'robert-baratheon': {
       affiliation: [
@@ -3917,7 +3945,10 @@ export const season1: ThronesSaga = {
           },
         },
       ],
-      status: [{ episode: 3, chapter: 16, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 16, value: 'alive' },
+        { episode: 15, chapter: 107, value: 'deceased' },
+      ],
     },
     'lysa-arryn': {
       affiliation: [
@@ -3932,7 +3963,10 @@ export const season1: ThronesSaga = {
         en: 'She is Catelyn’s sister and the widow of the last Hand of the King. She lives in the Eyrie with her son and shields him from everything.',
       },
       role: { it: 'Lady del Nido dell’Aquila', en: 'Lady of the Eyrie' },
-      status: [{ episode: 5, chapter: 35, value: 'alive' }],
+      status: [
+        { episode: 5, chapter: 35, value: 'alive' },
+        { episode: 37, chapter: 224, value: 'deceased' },
+      ],
     },
     'robin-arryn': {
       affiliation: [
@@ -3993,7 +4027,10 @@ export const season1: ThronesSaga = {
         en: 'She is a young woman who follows the Lannister camp. Bronn finds her for Tyrion, and she spends the night before the battle with him.',
       },
       role: { it: 'Prostituta al seguito dell’esercito', en: 'Camp follower' },
-      status: [{ episode: 9, chapter: 63, value: 'alive' }],
+      status: [
+        { episode: 9, chapter: 63, value: 'alive' },
+        { episode: 40, chapter: 221, value: 'deceased' },
+      ],
     },
     'walder-frey': {
       affiliation: [
@@ -4008,7 +4045,10 @@ export const season1: ThronesSaga = {
         en: 'He is a very old lord with a great many children, and he holds the bridge at the Twins. He lets Robb’s army cross in exchange for marriages into his family.',
       },
       role: { it: 'Signore del Guado', en: 'Lord of the Crossing' },
-      status: [{ episode: 9, chapter: 60, value: 'alive' }],
+      status: [
+        { episode: 9, chapter: 60, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
     },
     'ros': {
       affiliation: [
@@ -4029,7 +4069,10 @@ export const season1: ThronesSaga = {
         en: 'She works in the brothel of the town outside Winterfell. Theon and Tyrion are among her clients.',
       },
       role: { it: 'Prostituta', en: 'Prostitute' },
-      status: [{ episode: 4, chapter: 25, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 25, value: 'alive' },
+        { episode: 26, chapter: 175, source: 'episode', value: 'deceased' },
+      ],
     },
     'ilyn-payne': {
       role: { it: 'Boia del re', en: 'King’s headsman' },
@@ -4069,7 +4112,10 @@ export const season1: ThronesSaga = {
         it: 'Guida la Guardia Reale, i cavalieri che hanno giurato di proteggere il re. È anziano ma ancora forte, e veste di bianco come tutti i suoi confratelli.',
         en: 'He leads the Kingsguard, the knights sworn to protect the king. He is old but still strong, and wears white like the rest of his brothers.',
       },
-      status: [{ episode: 3, chapter: 16, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 16, value: 'alive' },
+        { episode: 44, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4113,7 +4159,10 @@ export const season1: ThronesSaga = {
         it: 'Siede nel Concilio ristretto come maestro del conio, ed è chiamato Ditocorto. Quando Catelyn arriva in segreto ad Approdo del Re, i suoi uomini la portano da lui. Le dice che il pugnale usato contro suo figlio era suo e che lo perse in una scommessa con Tyrion Lannister, poi le offre il suo aiuto.',
         en: 'He sits on the small council as master of coin, and is called Littlefinger. When Catelyn comes to King’s Landing in secret, his men bring her to him. He tells her the dagger used against her son was his, lost in a wager to Tyrion Lannister, and offers her his help.',
       },
-      status: [{ episode: 3, chapter: 19, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 19, value: 'alive' },
+        { episode: 67, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4128,7 +4177,10 @@ export const season1: ThronesSaga = {
         it: 'Siede nel Concilio ristretto come maestro dei sussurri, e i suoi informatori gli riferiscono ciò che accade in città. Sa che Catelyn è arrivata in segreto e si unisce al suo incontro con Ditocorto per esaminare il pugnale.',
         en: 'He sits on the small council as master of whisperers, and his informers tell him what happens in the city. He knows Catelyn has arrived in secret and joins her meeting with Littlefinger to look at the dagger.',
       },
-      status: [{ episode: 3, chapter: 19, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 19, value: 'alive' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4143,7 +4195,10 @@ export const season1: ThronesSaga = {
         it: 'È il gran maestro e siede da molti anni nel Concilio ristretto. Quando Eddard Stark arriva ad Approdo del Re come nuovo Primo Cavaliere, lo accoglie insieme al resto del Concilio.',
         en: 'He is the Grand Maester and has sat on the small council for many years. When Eddard Stark arrives in King’s Landing as the new Hand, he receives him with the rest of the council.',
       },
-      status: [{ episode: 3, chapter: 21, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 21, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -4175,7 +4230,12 @@ export const season1: ThronesSaga = {
         it: 'Arriva a Grande Inverno con il seguito del re. È un uomo enorme, al servizio del principe Joffrey.',
         en: 'He comes to Winterfell with the king’s party. He is a huge man in the service of Prince Joffrey.',
       },
-      status: [{ episode: 4, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 5, value: 'alive' },
+        { episode: 40, chapter: 218, value: 'presumed-dead' },
+        { episode: 57, chapter: 344, source: 'episode', value: 'alive' },
+        { episode: 72, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -4212,7 +4272,10 @@ export const season1: ThronesSaga = {
         it: 'Comanda la Guardia cittadina di Approdo del Re. Con la città piena di gente venuta per il torneo, dice al Concilio ristretto che i suoi uomini non bastano. Eddard Stark gli presta venti guardie della sua casa e ordina di assumere altre cinquanta guardie cittadine.',
         en: 'He commands the City Watch of King’s Landing. With the city full of people come for the tourney, he tells the small council he has too few men. Eddard Stark lends him twenty of his own household guards and orders fifty more watchmen hired.',
       },
-      status: [{ episode: 4, chapter: 28, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 28, value: 'alive' },
+        { episode: 43, chapter: 279, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -4279,7 +4342,19 @@ export const season1: ThronesSaga = {
         it: 'Giostra al torneo in onore del nuovo Primo Cavaliere e uccide con la lancia un giovane cavaliere. Da ragazzi, spinse il viso del fratello minore nel fuoco per un giocattolo, e le cicatrici si vedono ancora.',
         en: 'He jousts in the tourney for the new Hand and kills a young knight with his lance. When they were boys, he pushed his younger brother’s face into a fire over a toy, and the scars still show.',
       },
-      status: [{ episode: 4, chapter: 30, value: 'alive' }],
+      // Both media kill him, years apart: the show in "The Bells" (episode
+      // 72), the books by the venom, Qyburn preparing his skull in Cersei IV
+      // (chapter 243, unverified; #1287).
+      status: [
+        { episode: 4, chapter: 30, value: 'alive' },
+        // Deliberately one entry for two different deaths, one per medium,
+        // so each reads its own pin; episode 72 and chapter 243 are not the
+        // same moment of the story. The engine still reads the pair as an
+        // anchor for the chapter table. That can only add fog: it lowers
+        // `episodeAtChapter` and never opens anything early. Today Janos
+        // Slynt's 43/279 entry dominates it anyway.
+        { episode: 72, chapter: 243, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -4294,7 +4369,10 @@ export const season1: ThronesSaga = {
         it: 'È un giovane giostratore molto ammirato, detto il Cavaliere dei Fiori. Al torneo in onore del nuovo Primo Cavaliere regala una rosa a Sansa Stark davanti alla folla.',
         en: 'He is a young and much admired jouster, called the Knight of Flowers. At the tourney for the new Hand, he gives Sansa Stark a rose in front of the crowd.',
       },
-      status: [{ episode: 5, chapter: 30, value: 'alive' }],
+      status: [
+        { episode: 5, chapter: 30, value: 'alive' },
+        { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 5,
@@ -5199,9 +5277,8 @@ export const season1: ThronesSaga = {
       status: [
         { episode: 19, chapter: 52, source: 'chapter', value: 'alive' },
         // Drowned in the Blackwater: on screen in "Blackwater" (episode 19),
-        // his threshold, and told in Tyrion XIV of A Clash of Kings (chapter
-        // 135).
-        { episode: 19, chapter: 135, value: 'deceased' },
+        // his threshold, and confirmed by A Clash of Kings 67 (chapter 141).
+        { episode: 19, chapter: 141, value: 'deceased' },
       ],
       affiliation: [
         {
@@ -5414,9 +5491,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 13, value: 'alive' },
-        // Killed at the Mummer's Ford, told in Arya III of A Storm of Swords
-        // (#1288). The chapter is not checked against the book.
-        { episode: 21, chapter: 161, source: 'chapter', value: 'deceased' },
+        // Killed at the Mummer's Ford, told in A Storm of Swords: the later
+        // of two candidate chapters, not checked against the book (#1288).
+        { episode: 21, chapter: 178, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -5708,7 +5785,10 @@ export const season1: ThronesSaga = {
         it: 'È il fratello del padre di Catelyn Stark e un cavaliere di Casa Tully. Lo chiamano il Pesce Nero.',
         en: 'He is the brother of Catelyn Stark’s father and a knight of House Tully. He is known as the Blackfish.',
       },
-      status: [{ episode: 23, chapter: 35, value: 'alive' }],
+      status: [
+        { episode: 23, chapter: 35, value: 'alive' },
+        { episode: 58, chapter: 264, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 23,
@@ -5905,7 +5985,10 @@ export const season1: ThronesSaga = {
         it: 'Si addestra a Castello Nero, dove Jon Snow lo batte nel cortile. Con altre reclute affronta Jon nell’armeria.',
         en: 'He trains at Castle Black, where Jon Snow beats him in the yard. He and other recruits confront Jon in the armory.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 39, chapter: 199, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5937,7 +6020,10 @@ export const season1: ThronesSaga = {
         it: 'Si addestra a Castello Nero con Jon Snow.',
         en: 'He trains at Castle Black with Jon Snow.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 39, chapter: 199, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -5970,7 +6056,10 @@ export const season1: ThronesSaga = {
         it: 'Si addestra a Castello Nero, dove combatte contro Jon Snow nel cortile.',
         en: 'He trains at Castle Black, where he fights Jon Snow in the yard.',
       },
-      status: [{ episode: 3, chapter: 27, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 27, value: 'alive' },
+        { episode: 35, chapter: 199, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -6002,7 +6091,10 @@ export const season1: ThronesSaga = {
         it: 'Fa parte dello stesso gruppo di reclute di Jon Snow a Castello Nero.',
         en: 'He is in the same group of recruits as Jon Snow at Castle Black.',
       },
-      status: [{ episode: 7, chapter: 20, value: 'alive' }],
+      status: [
+        { episode: 7, chapter: 20, value: 'alive' },
+        { episode: 41, chapter: 260, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 7,
@@ -6084,7 +6176,10 @@ export const season1: ThronesSaga = {
         it: 'Comanda i costruttori, che tengono in piedi la Barriera e i suoi castelli. È presente quando i nuovi confratelli pronunciano il giuramento.',
         en: 'He commands the builders, who maintain the Wall and its castles. He is present when the new brothers swear their oath.',
       },
-      status: [{ episode: 7, chapter: 49, value: 'alive' }],
+      status: [
+        { episode: 7, chapter: 49, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 7,
@@ -6102,7 +6197,10 @@ export const season1: ThronesSaga = {
         it: 'Comanda gli attendenti dei Guardiani della notte a Castello Nero.',
         en: 'He commands the stewards of the Night’s Watch at Castle Black.',
       },
-      status: [{ episode: 41, chapter: 22, value: 'alive' }],
+      status: [
+        { episode: 41, chapter: 22, value: 'alive' },
+        { episode: 53, chapter: 344, source: 'episode', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 41,
@@ -6177,7 +6275,13 @@ export const season1: ThronesSaga = {
         it: 'Ferma le reclute che vogliono picchiare Jon Snow nell’armeria. Poi spiega a Jon che lui è stato addestrato e loro no.',
         en: 'He stops the recruits who mean to beat Jon Snow in the armory. Then he tells Jon that he has had training and they have not.',
       },
-      status: [{ episode: 3, chapter: 20, value: 'alive' }],
+      // He dies holding the gate against Mag the Mighty in Jon VIII (site
+      // chapter 208); episode 39, where the show gives the gate to Grenn,
+      // orders it.
+      status: [
+        { episode: 3, chapter: 20, value: 'alive' },
+        { episode: 39, chapter: 208, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 3,
@@ -6209,7 +6313,13 @@ export const season1: ThronesSaga = {
         it: 'Si occupa di maestro Aemon e dei corvi a Castello Nero. Dice a Jon Snow che il lavoro degli attendenti non è adatto ai vigliacchi.',
         en: 'He looks after Maester Aemon and the ravens at Castle Black. He tells Jon Snow that a steward’s work is not fit for cowards.',
       },
-      status: [{ episode: 5, chapter: 42, value: 'alive' }],
+      // He dies at the Fist of the First Men. Samwell III (site chapter 190)
+      // tells it; an earlier chapter may (unverified, #1296). Episode 28,
+      // where the show reaches that scene, orders it.
+      status: [
+        { episode: 5, chapter: 42, value: 'alive' },
+        { episode: 28, chapter: 190, value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 5,

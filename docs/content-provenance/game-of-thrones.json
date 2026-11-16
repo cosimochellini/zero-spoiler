@@ -383,10 +383,12 @@
       "https://gameofthrones.fandom.com/wiki/Jeor_Mormont",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Jeor_Mormont"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Jeor_Mormont",
+      "https://gameofthrones.fandom.com/wiki/And_Now_His_Watch_Is_Ended"
     ],
     "unverified": [
-      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
+      "Death (#1290): the mutiny at Craster's Keep in episode 24 (Fandom DeathEp); the wiki's adaptation list for the episode places it in A Storm of Swords 33, Samwell II (site chapter 177; the audit's estimate was 162). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "aemon": {
@@ -395,11 +397,15 @@
       "https://gameofthrones.fandom.com/wiki/Aemon",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Maestro_Aemon"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Maestro_Aemon",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/The_Gift"
     ],
     "unverified": [
       "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
-      "Blindness at the book gate (Tyrion III) is not in the chapter synopsis; check the text."
+      "Blindness at the book gate (Tyrion III) is not in the chapter synopsis; check the text.",
+      "Targaryen stage: the wiki's adaptation list for \"Baelor\" gives A Game of Thrones 60, Jon VIII (site chapter 61), as filed. Not checked on A Wiki of Ice and Fire.",
+      "Death (#1290): at Castle Black in episode 47 (Fandom DeathEp \"The Gift\"); the wiki's adaptation list places the book's death in A Feast for Crows 35, Samwell IV (site chapter 261; the audit's estimate was 247). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "samwell-tarly": {
@@ -419,10 +425,12 @@
       "https://gameofthrones.fandom.com/wiki/Alliser_Thorne",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Alliser_Thorne"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Alliser_Thorne",
+      "https://gameofthrones.fandom.com/wiki/Oathbreaker"
     ],
     "unverified": [
-      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
+      "Death (#1290): hanged by Jon in episode 53 (Fandom DeathEp \"Oathbreaker\"), the show's alone; alive at the end of the books, so chapter 344 orders it."
     ]
   },
   "yoren": {
@@ -431,10 +439,12 @@
       "https://gameofthrones.fandom.com/wiki/Yoren",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Yoren"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Yoren",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die"
     ],
     "unverified": [
-      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”."
+      "Episode 3: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “Lord Snow”.",
+      "Death (#1290): killed by Amory Lorch's men in episode 13 (Fandom DeathEp); the wiki's adaptation list for the episode places it in A Clash of Kings 14, Arya IV (site chapter 88; the audit's 93 is Lommy's chapter). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "cersei-lannister": {
@@ -448,7 +458,9 @@
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
     ],
     "unverified": [
-      "The exact line that names Cersei aloud in episode 1 was not checked; the episode synopsis calls her the queen at the arrival."
+      "The exact line that names Cersei aloud in episode 1 was not checked; the episode synopsis calls her the queen at the arrival.",
+      "First drawing (#1286): the slim gold queen’s crown with small lions is the owner’s ruling, not a frame check of season 1.",
+      "Death (#1286): under the Red Keep in “The Bells” (episode 72, Fandom DeathEp; the bodies are found in GOT806); the books leave her alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "jaime-lannister": {
@@ -462,6 +474,10 @@
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Baelor"
+    ],
+    "unverified": [
+      "Costume (#1286): Tommen removes him from the Kingsguard in “Blood of My Blood” (episode 56, Fandom ref GOT606); in the books he is never dismissed, so the stage is the show’s alone, ordered at chapter 344; episode not viewed.",
+      "Death (#1286): with Cersei under the Red Keep in “The Bells” (episode 72, Fandom DeathEp); the books leave him alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "tyrion-lannister": {
@@ -493,7 +509,8 @@
     ],
     "unverified": [
       "Whether his name is said aloud in his first scene in episode 7 (Jaime calls him father; the name is not quoted in the synopsis).",
-      "When the show first says he is the new Hand: dated at episode 10, where he sends Tyrion to rule in his place; episode 8’s court scene may announce it earlier."
+      "When the show first says he is the new Hand: dated at episode 10, where he sends Tyrion to rule in his place; episode 8’s court scene may announce it earlier.",
+      "Death (#1286): “The Children” (episode 40, Fandom DeathEp, ref GOT410) and Tyrion XI of A Storm of Swords (site chapter 221, the verifier’s reading of Fandom’s Bookref ASOS 77); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "joffrey-baratheon": {
@@ -505,6 +522,10 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_49",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ],
+    "unverified": [
+      "Crown (#1286): he takes the throne at Robert’s death, “You Win or You Die” (episode 7, Fandom ref GOT107) and Eddard XIV (chapter 50); the owner rules crowns a costume stage; episode not viewed.",
+      "Death (#1286): “The Lion and the Rose” (episode 32, Fandom DeathEp, ref GOT402) and Tyrion VIII of A Storm of Swords (site chapter 204, provisional: he chokes in Sansa IV, chapter 203); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "myrcella-baratheon": {
@@ -515,11 +536,15 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/The_Wars_to_Come",
+      "https://gameofthrones.fandom.com/wiki/The_House_of_Black_and_White"
     ],
     "unverified": [
       "Episode gate 1 is Fandom’s first appearance; no source quotes her name said aloud in season 1 episode 1 (or 2). Check when the show first names her.",
-      "Chapter gate 6 (Jon I): A Wiki of Ice and Fire lists her as appearing in Eddard I (chapter 5) but its synopsis there only says ‘the younger children’; Jon I names her."
+      "Chapter gate 6 (Jon I): A Wiki of Ice and Fire lists her as appearing in Eddard I (chapter 5) but its synopsis there only says ‘the younger children’; Jon I names her.",
+      "Necklace (#1286): first shown in “The House of Black and White” (episode 42, Fandom synopsis and trivia: Cersei knows the lion pendant as Myrcella’s), not in episode 41 as the audit had it; the books have no such necklace, so the stage is the show’s alone, ordered at chapter 344; episode not viewed.",
+      "Death (#1286): “Mother’s Mercy” (episode 50, Fandom DeathEp, ref GOT510); the books leave her alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "tommen-baratheon": {
@@ -535,7 +560,8 @@
     ],
     "unverified": [
       "Episode gate 1 is Fandom’s first appearance; the first quoted line naming him is in episode 5 (‘Tommen is eight’). If episodes 1–4 never say his name, the gate is 5.",
-      "Chapter gate 6 (Jon I): listed as appearing in Eddard I (chapter 5) but named only in Jon I by the synopses."
+      "Chapter gate 6 (Jon I): listed as appearing in Eddard I (chapter 5) but named only in Jon I by the synopses.",
+      "Death (#1286): “The Winds of Winter” (episode 60, Fandom DeathEp, ref GOT610); the books leave him alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "robert-baratheon": {
@@ -563,6 +589,9 @@
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Death (#1286): “The Ghost of Harrenhal” (episode 15, Fandom DeathEp, ref GOT205) and Catelyn IV of A Clash of Kings (site chapter 107, the verifier’s reading of chapter 33); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "lysa-arryn": {
@@ -574,7 +603,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion"
     ],
     "unverified": [
-      "Italian Wikipedia files her under her maiden name (Casa Arryn#Lysa Tully); ‘Lysa Arryn’ as the dub’s form is assumed."
+      "Italian Wikipedia files her under her maiden name (Casa Arryn#Lysa Tully); ‘Lysa Arryn’ as the dub’s form is assumed.",
+      "Death (#1286): “Mockingbird” (episode 37, Fandom DeathEp, ref GOT407) and Sansa VII of A Storm of Swords (site chapter 224, ASOS 80, where Petyr pushes her through the Moon Door; review correction of the audit’s 236); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "robin-arryn": {
@@ -598,11 +628,16 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown"
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Lollys_Stokeworth",
+      "https://gameofthrones.fandom.com/wiki/House_Stokeworth"
     ],
     "unverified": [
       "Episode gate 4 is Fandom’s first appearance (he offers Tyrion his room). No source quotes his name said aloud in episodes 4–6; if it is first said later, the gate moves.",
-      "Book: present at the inn in Catelyn V (chapter 29) but absent from that chapter’s character list and synopsis; first named in Tyrion IV (chapter 32)."
+      "Book: present at the inn in Catelyn V (chapter 29) but absent from that chapter’s character list and synopsis; first named in Tyrion IV (chapter 32).",
+      "First drawing (#1286): the whetstone is gone, as the owner rules; the show never gives him one.",
+      "Book stage (#1286): filed at Jaime II of A Feast for Crows (site chapter 242, AFFC 16), where Lollys’s son is born and Bronn names him Tyrion, as a search snippet of A Wiki of Ice and Fire’s Tyrion Tanner page cites; a late pin is safe, but it is not where the books first tell the match. A Wiki of Ice and Fire’s Castle Stokeworth page cites ASOS 66 (Tyrion IX, site chapter 210) for the marriage being arranged: 210 is the candidate still to check, and so is the chapter that first tells him wed. Book chapter not checked on A Wiki of Ice and Fire (no access from this session). The show breaks the match (GOT502), so the stage is the book’s alone, ordered at episode 41. The banner is House Stokeworth’s arms as Fandom gives them (a white lamb holding a golden goblet).",
+      "Show stage (#1286): Lord of Highgarden in “The Iron Throne” (episode 73, Fandom ref GOT806), the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "shae": {
@@ -614,6 +649,9 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_69",
       "https://gameofthrones.fandom.com/wiki/Baelor",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
+    ],
+    "unverified": [
+      "Death (#1286): Tyrion strangles her in “The Children” (episode 40, Fandom DeathEp, ref GOT410) and in Tyrion XI of A Storm of Swords (site chapter 221); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed."
     ]
   },
   "walder-frey": {
@@ -625,6 +663,10 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_59",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
       "https://gameofthrones.fandom.com/wiki/Baelor"
+    ],
+    "unverified": [
+      "Allegiance (#1286): the Red Wedding shows his pact with Tywin, in “The Rains of Castamere” (episode 29) and in Catelyn VII of A Storm of Swords (site chapter 195); book chapter not checked on A Wiki of Ice and Fire (no access from this session); episode not viewed.",
+      "Death (#1286): Arya kills him in “The Winds of Winter” (episode 60, Fandom DeathEp, ref GOT610); the books leave him alive, so the stage and the status are the show’s alone, ordered at chapter 344; episode not viewed."
     ]
   },
   "ros": {
@@ -639,7 +681,8 @@
     ],
     "unverified": [
       "Unnamed in episode 1 (Fandom: George R. R. Martin suggested she be given a name once the role grew); episode 4 is where Theon recommends her to Tyrion and Jon speaks of her by name, per Fandom’s summary, not a quoted line.",
-      "Ordering chapter 25 (Bran IV, Tyrion’s stop at Winterfell on the way back) and 48 for the move to the King’s Landing brothel are story-point choices."
+      "Ordering chapter 25 (Bran IV, Tyrion’s stop at Winterfell on the way back) and 48 for the move to the King’s Landing brothel are story-point choices.",
+      "Drawing stages (#1287): Varys recruits her in \"Valar Morghulis\" (episode 20, Fandom ref GOT210) and Joffrey kills her in \"The Climb\" (episode 26); chapters 143 and 175 only order the show-only record; episodes not viewed."
     ]
   },
   "ilyn-payne": {
@@ -662,11 +705,13 @@
       "https://gameofthrones.fandom.com/wiki/Barristan_Selmy",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barristan_Selmy"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barristan_Selmy",
+      "https://gameofthrones.fandom.com/wiki/Sons_of_the_Harpy_(episode)"
     ],
     "unverified": [
       "Episode 3: that he is named aloud and identified as Lord Commander in the war-stories scene.",
-      "Italian role wording 'Lord comandante della Guardia Reale' (it.wikipedia capitalisation, dub form not checked)."
+      "Italian role wording 'Lord comandante della Guardia Reale' (it.wikipedia capitalisation, dub form not checked).",
+      "Drawing stages (#1287): the death in \"Sons of the Harpy\" (episode 44, Fandom ref GOT504), show only; the Arstan Whitebeard stage, books only, at Daenerys V of A Storm of Swords (site chapter 201, AWOIAF not read: unverified), episode 21 only orders it."
     ]
   },
   "syrio-forel": {
@@ -689,11 +734,17 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
       "https://gameofthrones.fandom.com/wiki/Petyr_Baelish",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Petyr_Baelish"
+      "https://it.wikipedia.org/wiki/Petyr_Baelish",
+      "https://gameofthrones.fandom.com/wiki/Catspaw_dagger",
+      "https://gameofthrones.fandom.com/wiki/The_Mountain_and_the_Viper",
+      "https://gameofthrones.fandom.com/wiki/The_Dragon_and_the_Wolf"
     ],
     "unverified": [
       "Episode 3: that the nickname Littlefinger is said aloud (the log says he is called Littlefinger).",
-      "Episode 3: that the show says he has known Catelyn since youth (Fandom: 'the affection he once bore Catelyn as a youngster')."
+      "Episode 3: that the show says he has known Catelyn since youth (Fandom: 'the affection he once bore Catelyn as a youngster').",
+      "Drawing (#1287): Fandom has him examine the dagger and claim it in \"Lord Snow\" (GOT103) and Catelyn show it to him in AGOT 18 (site 19), so the dagger joins the glove from the first drawing; frame not viewed.",
+      "Lord Protector stage (#1287): episode 38 (GOT408, the Vale lords accept his account) and Sansa VII of A Storm of Swords (site chapter 224, AWOIAF not read: unverified).",
+      "Death (#1287): \"The Dragon and the Wolf\" (episode 67, GOT707), show only."
     ]
   },
   "varys": {
@@ -702,10 +753,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_18",
       "https://gameofthrones.fandom.com/wiki/Varys",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Varys"
+      "https://it.wikipedia.org/wiki/Varys",
+      "https://gameofthrones.fandom.com/wiki/The_Wars_to_Come",
+      "https://gameofthrones.fandom.com/wiki/The_Bells"
     ],
     "unverified": [
-      "Italian title 'Maestro dei sussurri' is it.wikipedia's form; the Mondadori books may say otherwise, but the dub governs."
+      "Italian title 'Maestro dei sussurri' is it.wikipedia's form; the Mondadori books may say otherwise, but the dub governs.",
+      "Drawing stages (#1287): the Targaryen loyalty in \"The Wars to Come\" (episode 41, GOT501), show only, chapter 274 only orders it; the death in \"The Bells\" (episode 72, GOT805), show only."
     ]
   },
   "pycelle": {
@@ -714,7 +768,11 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_20",
       "https://gameofthrones.fandom.com/wiki/Pycelle",
       "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pycelle"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Pycelle",
+      "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter"
+    ],
+    "unverified": [
+      "Death (#1287): \"The Winds of Winter\" (episode 60, GOT610), show only; episode not viewed."
     ]
   },
   "sandor-clegane": {
@@ -727,12 +785,16 @@
       "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://it.wikipedia.org/wiki/Sandor_Clegane"
+      "https://it.wikipedia.org/wiki/Sandor_Clegane",
+      "https://gameofthrones.fandom.com/wiki/The_Children",
+      "https://gameofthrones.fandom.com/wiki/The_Broken_Man"
     ],
     "unverified": [
       "Episode gate: on screen from episode 1; gate set at 4, where Littlefinger names him to Sansa. If 'Sandor' or 'the Hound' is said aloud in episode 1 or 2, lower the gate.",
       "Chapter 5 (Eddard I): that the chapter already marks him as Joffrey's guard (the log and summary say he guards the prince); the AWOIAF synopsis only says Eddard recognizes him.",
-      "Affiliation 'House Lannister' at the gate: neither source states it in so many words at chapter 5."
+      "Affiliation 'House Lannister' at the gate: neither source states it in so many words at chapter 5.",
+      "Presumed dead (#1287): episode 40 (GOT410) and Arya XIII of A Storm of Swords (site chapter 218, AWOIAF not read: unverified).",
+      "Return (#1287): \"The Broken Man\" (episode 57, GOT607), show only; death in \"The Bells\" (episode 72, GOT805), show only."
     ]
   },
   "janos-slynt": {
@@ -743,7 +805,13 @@
       "https://gameofthrones.fandom.com/wiki/Janos_Slynt",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Janos_Slynt"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Janos_Slynt",
+      "https://gameofthrones.fandom.com/wiki/Two_Swords",
+      "https://gameofthrones.fandom.com/wiki/High_Sparrow"
+    ],
+    "unverified": [
+      "Black cloak (#1287): \"Two Swords\" (episode 31, GOT401) and Jon IX of A Storm of Swords (site chapter 213, AWOIAF not read: unverified).",
+      "Death (#1287): \"High Sparrow\" (episode 43, GOT503) and Jon II of A Dance with Dragons (site chapter 279, AWOIAF not read: unverified)."
     ]
   },
   "gendry": {
@@ -768,10 +836,14 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_43",
       "https://gameofthrones.fandom.com/wiki/Gregor_Clegane",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Gregor_Clegane"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Gregor_Clegane",
+      "https://gameofthrones.fandom.com/wiki/Mother%27s_Mercy",
+      "https://gameofthrones.fandom.com/wiki/The_Bells"
     ],
     "unverified": [
-      "Show step at episode 6 ('A Golden Crown'): Fandom's Gregor page cites GOT106 for Eddard's sentence; the episode page itself was not read."
+      "Show step at episode 6 ('A Golden Crown'): Fandom's Gregor page cites GOT106 for Eddard's sentence; the episode page itself was not read.",
+      "Death (#1287): show in \"The Bells\" (episode 72, GOT805); books at Cersei IV of A Feast for Crows (AFFC 17, site chapter 243), where Qyburn prepares his skull (coordinator lead; AWOIAF not read: unverified). One status entry, 72/243, spans the two different deaths and is not a true episode-chapter anchor.",
+      "Return as the white-armoured knight (#1287): \"Mother's Mercy\" (episode 50, GOT510), show only."
     ]
   },
   "loras-tyrell": {
@@ -780,7 +852,11 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_29",
       "https://gameofthrones.fandom.com/wiki/Loras_Tyrell",
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://it.wikipedia.org/wiki/Casa_Tyrell#Loras_Tyrell"
+      "https://it.wikipedia.org/wiki/Casa_Tyrell#Loras_Tyrell",
+      "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter"
+    ],
+    "unverified": [
+      "Death (#1287): \"The Winds of Winter\" (episode 60, GOT610), show only; episode not viewed."
     ]
   },
   "daenerys-targaryen": {
@@ -1714,13 +1790,12 @@
       "https://gameofthrones.fandom.com/wiki/Smalljon_Umber",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://gameofthrones.fandom.com/it/wiki/Jon_Umber_(il_Piccolo)",
-      "https://gameofthrones.fandom.com/wiki/Battle_of_the_Bastards",
-      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+      "https://gameofthrones.fandom.com/wiki/Battle_of_the_Bastards"
     ],
     "unverified": [
       "factsAtGate: the two media share almost nothing at the gate (book: Robb's guard in 298 AC; show: lord of Last Hearth in S6). Keep facts minimal.",
       "Italian Fandom calls him \"Jon Umber il Piccolo\"; it.wikipedia's cast list \"Smalljon Umber\".",
-      "Death (#1288): Tormund kills him in Battle of the Bastards (episode 59, Fandom DeathEp), and the Boltons' men at the Red Wedding in Catelyn VII, A Storm of Swords 51 (site 195, Bookref on the Game of Thrones Wiki's Red Wedding page). Chapter not read on A Wiki of Ice and Fire; episode not viewed."
+      "Death (#1288): Tormund kills him in Battle of the Bastards (episode 59, Fandom DeathEp), and the Boltons' men at the Red Wedding in Catelyn VII, A Storm of Swords 51 (site 195, Bookref on the Game of Thrones Wiki's Red Wedding page). Chapter not read on A Wiki of Ice and Fire; episode not viewed. To check: https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51."
     ]
   },
   "rickard-karstark": {
@@ -1733,12 +1808,11 @@
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://gameofthrones.fandom.com/it/wiki/Rickard_Karstark",
-      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
-      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20"
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire"
     ],
     "unverified": [
       "Show: his S1 figure (Steven Blount, Fire and Blood) is identified only through the actor's CV; Fandom says he is first named on screen in A Man Without Honor.",
-      "Death (#1288): beheaded by Robb in Kissed by Fire (episode 25, Fandom DeathEp) and in A Storm of Swords 20 (site 164, the verifier's pin; the audit's 186 was wrong). Chapter not checked on A Wiki of Ice and Fire; episode not viewed."
+      "Death (#1288): beheaded by Robb in Kissed by Fire (episode 25, Fandom DeathEp) and in A Storm of Swords 20 (site 164, the verifier's pin; the audit's 186 was wrong). Chapter not checked on A Wiki of Ice and Fire; episode not viewed. To check: https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_20."
     ]
   },
   "roose-bolton": {
@@ -1751,11 +1825,10 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://gameofthrones.fandom.com/wiki/House_Bolton",
       "https://gameofthrones.fandom.com/wiki/The_Rains_of_Castamere",
-      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51",
       "https://gameofthrones.fandom.com/wiki/Home"
     ],
     "unverified": [
-      "Drawing (#1288): the flayed man upside down on the X-cross, as the show's banner has him (Game of Thrones Wiki, House Bolton). Red Wedding stage: the mail under his sleeve and Robb's stabbing in The Rains of Castamere (episode 29) and Catelyn VII, A Storm of Swords 51 (site 195, not read on A Wiki of Ice and Fire). Death: Ramsay kills him in Home (episode 52, Fandom DeathEp), show only. Episodes not viewed."
+      "Drawing (#1288): the flayed man upside down on the X-cross, as the show's banner has him (Game of Thrones Wiki, House Bolton). Red Wedding stage: the mail under his sleeve and Robb's stabbing in The Rains of Castamere (episode 29) and Catelyn VII, A Storm of Swords 51 (site 195, not read on A Wiki of Ice and Fire). Death: Ramsay kills him in Home (episode 52, Fandom DeathEp), show only. Episodes not viewed. To check: https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51."
     ]
   },
   "galbart-glover": {
@@ -1809,11 +1882,10 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
       "https://awoiaf.westeros.org/index.php/Dacey_Mormont",
       "https://gameofthrones.fandom.com/wiki/Dacey_Mormont",
-      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
-      "Death (#1288): Ryman Frey kills her at the Red Wedding in Catelyn VII, A Storm of Swords 51 (site 195, per the verifier's reading of the Game of Thrones Wiki's Bookref). Chapter not read on A Wiki of Ice and Fire."
+      "Death (#1288): Ryman Frey kills her at the Red Wedding in Catelyn VII, A Storm of Swords 51 (site 195, per the verifier's reading of the Game of Thrones Wiki's Bookref). Chapter not read on A Wiki of Ice and Fire. To check: https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51."
     ]
   },
   "wendel-manderly": {
@@ -1823,12 +1895,11 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
       "https://gameofthrones.fandom.com/wiki/Wendel_Manderly",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
-      "https://gameofthrones.fandom.com/it/wiki/Wendel_Manderly",
-      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51"
+      "https://gameofthrones.fandom.com/it/wiki/Wendel_Manderly"
     ],
     "unverified": [
       "Show: whether he is named on screen in S3E9 is not confirmed (his only episode). it.wikipedia mentions him only inside the Wyman Manderly section.",
-      "Death (#1288): killed at the Red Wedding, on screen in The Rains of Castamere (episode 29, his threshold, Fandom DeathEp) and told in Catelyn VII, A Storm of Swords 51 (site 195); one deceased entry for both media and a books-only stage, as Vayon Poole's (owner). Chapter not read on A Wiki of Ice and Fire."
+      "Death (#1288): killed at the Red Wedding, on screen in The Rains of Castamere (episode 29, his threshold, Fandom DeathEp) and told in Catelyn VII, A Storm of Swords 51 (site 195); one deceased entry for both media and a books-only stage, as Vayon Poole's (owner). Chapter not read on A Wiki of Ice and Fire. To check: https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_51."
     ]
   },
   "marillion": {
@@ -1912,7 +1983,8 @@
     ],
     "unverified": [
       "Show: first seen in ep 5 per Fandom; took 6, the first episode that names him. Owner may lower to 5.",
-      "commonWord false: \"Mord\" is not an English or Italian word."
+      "commonWord false: \"Mord\" is not an English or Italian word.",
+      "Drawing (#1290): the truncheon Mord beats Tyrion with in episode 6 (Fandom, behind the scenes); the book gives him none, so the show is the reference. Episode not viewed."
     ]
   },
   "lyn-corbray": {
@@ -2018,7 +2090,8 @@
     ],
     "unverified": [
       "Show: Fandom also places him at Cersei's dinner in S2E8 (18), but that account does not say he is named there; took the later 19.",
-      "Book: Eddard XIV (50) is the Appearing-list-only alternative."
+      "Book: Eddard XIV (50) is the Appearing-list-only alternative.",
+      "Death (#1289): drowned in the Blackwater, a books-only stage pinned at site chapter 141 (A Clash of Kings 67), where the verifier's note confirms the drowning; the earlier candidate, A Clash of Kings 61 (site 135), is not used because later is spoiler-safe. Neither chapter read on A Wiki of Ice and Fire. The show kills him in his opening episode, 19. To check: https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_67, https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_61."
     ]
   },
   "arys-oakheart": {
@@ -2123,16 +2196,14 @@
   },
   "alyn": {
     "sources": [
-      "https://awoiaf.westeros.org/index.php/Alyn",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_12",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_43",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45",
-      "https://gameofthrones.fandom.com/wiki/Alyn",
-      "https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17"
+      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45"
     ],
     "unverified": [
+      "Show: the Game of Thrones Wiki has no page for this Alyn (its Alyn page is a House of the Dragon character); he is book-only.",
       "Step order: the affiliation step (ch 44) comes before the role step (ch 46) in the book; both share ordering episode 6.",
-      "Death (#1288): dead after the Mummer's Ford, books only. Site chapter 161 (A Storm of Swords 17) is the verifier's pin, not checked on A Wiki of Ice and Fire (34, site 178, is the other candidate); episode 21 orders it."
+      "Death (#1288): dead after the Mummer's Ford, books only. Pinned at site chapter 178 (A Storm of Swords 34), the later of the two candidates (17, site 161, is the other), because later is spoiler-safe; neither checked on A Wiki of Ice and Fire. Episode 21 orders it. To check: https://awoiaf.westeros.org/index.php/Alyn, https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_17, https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34."
     ]
   },
   "beric-dondarrion": {
@@ -2160,7 +2231,8 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/Balon_Swann",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_29",
-      "https://gameofthrones.fandom.com/wiki/Balon_Swann"
+      "https://gameofthrones.fandom.com/wiki/Balon_Swann",
+      "https://gameofthrones.fandom.com/wiki/House_Swann"
     ],
     "unverified": [
       "Owner: if the inferred extra counts, show gate = 27 with no source."
@@ -2216,7 +2288,8 @@
     ],
     "unverified": [
       "Show: only mentioned (by Joffrey) in ep 3, off screen.",
-      "Death (#1242): the wildfire under the Great Sept in episode 60 (Fandom ref GOT610) and a crossbow bolt in the epilogue of A Dance with Dragons (site chapter 344); episode not viewed."
+      "Death (#1242): the wildfire under the Great Sept in episode 60 (Fandom ref GOT610) and a crossbow bolt in the epilogue of A Dance with Dragons (site chapter 344); episode not viewed.",
+      "Death drawing redrawn (#1290): the lion lying on its side; pins unchanged."
     ]
   },
   "addam-marbrand": {
@@ -2234,7 +2307,14 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/Podrick_Payne",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62",
-      "https://gameofthrones.fandom.com/wiki/Podrick_Payne"
+      "https://gameofthrones.fandom.com/wiki/Podrick_Payne",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://gameofthrones.fandom.com/wiki/Oathkeeper_(episode)"
+    ],
+    "unverified": [
+      "Drawing (#1290): the spear he kills Mandon Moore with in episode 19 (Fandom ref GOT209) and the wine he pours in episode 12 (GOT202); the book's Pod pushes Mandon into the river without a spear. Episodes not viewed.",
+      "Axe stage (#1290): Bronn brings him Tyrion's axe in episode 34 (Fandom ref GOT404), the show's alone. Chapter 235 (A Feast for Crows 9, Brienne II, where Pod joins Brienne) only orders it; taken from the Game of Thrones Wiki's adaptation list for \"Oathkeeper\". Not checked on A Wiki of Ice and Fire."
     ]
   },
   "stevron-frey": {
@@ -2276,11 +2356,13 @@
       "https://awoiaf.westeros.org/index.php/Brynden_Tully",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_55",
-      "https://gameofthrones.fandom.com/wiki/Brynden_Tully"
+      "https://gameofthrones.fandom.com/wiki/Brynden_Tully",
+      "https://gameofthrones.fandom.com/wiki/No_One"
     ],
     "unverified": [
       "Book gate is in the Vale storyline (Catelyn VI); check against the north-vale roster to avoid a duplicate record.",
-      "Italian nickname: 'il Pesce Nero'."
+      "Italian nickname: 'il Pesce Nero'.",
+      "Death (#1290): dies fighting at Riverrun in episode 58 (Fandom DeathEp \"No One\"), the show's alone; the book's Blackfish escapes. Chapter 264 (A Feast for Crows 38, the siege, the verifier's value) only orders it; the wiki's adaptation list for \"No One\" puts Riverrun's surrender at A Feast for Crows 44 (site 270). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "hot-pie": {
@@ -2313,10 +2395,13 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_1",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_5",
       "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Jaqen_H'ghar"
+      "https://gameofthrones.fandom.com/wiki/Jaqen_H'ghar",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis"
     ],
     "unverified": [
-      "Show: Fandom's S1 biography calls him by name in its ep 10 account; if the owner reads the rule literally, gate = 10."
+      "Show: Fandom's S1 biography calls him by name in its ep 10 account; if the owner reads the rule literally, gate = 10.",
+      "Drawing (#1290): the tankard of water he asks Arya to fill in episode 12 (Fandom ref GOT202). Episode not viewed.",
+      "Coin stage (#1290): gives Arya the iron coin and changes his face in episode 20 (Fandom); the wiki's adaptation list for \"Valar Morghulis\" places it in A Clash of Kings 47, Arya IX (site chapter 121). Not checked on A Wiki of Ice and Fire."
     ]
   },
   "rorge": {
@@ -2357,6 +2442,9 @@
       "https://gameofthrones.fandom.com/wiki/Will",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+    ],
+    "unverified": [
+      "Drawing (#1295): his black cloak laid out, the death in the first drawing (he dies in the scene that opens him in both media); the cloak is not checked on a frame of episode 1, and the execution block is left out under the owner's ruling on deaths."
     ]
   },
   "gared": {
@@ -2367,6 +2455,10 @@
       "https://gameofthrones.fandom.com/wiki/Gared",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+    ],
+    "unverified": [
+      "Drawing (#1295): the bloodied scrap of clothing he finds under the snow rests on the Game of Thrones Wiki's synopsis of episode 1; frame not viewed.",
+      "Book death stage (#1295): Bran I (site chapter 2), from the status already filed; AWOIAF not read for this PR."
     ]
   },
   "waymar-royce": {
@@ -2376,6 +2468,9 @@
       "https://gameofthrones.fandom.com/wiki/Waymar_Royce",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+    ],
+    "unverified": [
+      "Drawing (#1295): the book shatters his sword (Fandom's book section, AGOT Prologue); the show's synopsis does not, so the show's whole sword is drawn. Episode 1 not viewed."
     ]
   },
   "grenn": {
@@ -2389,7 +2484,8 @@
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
     ],
     "unverified": [
-      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified."
+      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
+      "Death (#1295): 'The Watchers on the Wall' (episode 39), Fandom; the book keeps him alive, so the stage and status are the show's alone, ordered by chapter 199 (the attack on Castle Black, ASOS 55) as the castle-black stage is. Episode not viewed; AWOIAF not read."
     ]
   },
   "pypar": {
@@ -2404,7 +2500,8 @@
     ],
     "unverified": [
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
-      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there."
+      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there.",
+      "Death (#1295): 'The Watchers on the Wall' (episode 39), Fandom; the book keeps him alive (ADWD 10), so the stage and status are the show's alone, ordered by chapter 199. Episode not viewed; AWOIAF not read."
     ]
   },
   "rast": {
@@ -2421,7 +2518,8 @@
     "unverified": [
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
       "Owner ruled episode 3: he rides north in episode 2, where the wiki’s infobox puts his first appearance, but the synopsis does not name him.",
-      "Sworn in at episode 7 on the wiki’s biography alone; the episode synopsis does not mention him. The book leaves him in training."
+      "Sworn in at episode 7 on the wiki’s biography alone; the episode synopsis does not mention him. The book leaves him in training.",
+      "Death (#1295): Ghost kills him in 'First of His Name' (episode 35, Fandom ref GOT405); a Thenn spears him in the attack on Castle Black, Fandom's Bookref ASOS 55 (site chapter 199). Episode not viewed; AWOIAF not read."
     ]
   },
   "dareon": {
@@ -2438,7 +2536,8 @@
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
       "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there.",
       "No credited actor in episode 7.",
-      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend."
+      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend.",
+      "Death (#1295): Arya kills him in Braavos in A Feast for Crows (Fandom's book section, no chapter given). Site chapter 260 is AFFC 34, 'Cat of the Canals' (reviewer correction from 248), not checked on AWOIAF. The show keeps him alive, so the stage and status are the book's alone, ordered by episode 41 (Arya reaches Braavos)."
     ]
   },
   "halder": {
@@ -2455,7 +2554,8 @@
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
       "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there.",
       "No credited actor in episode 7.",
-      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend."
+      "The sworn step is pinned at episode 8, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend.",
+      "Drawing (#1295): chisel and mallet, from the book's apprentice stonemason who helps carve Longclaw's wolf's head (Fandom's book section); the show gives him no object."
     ]
   },
   "todder": {
@@ -2471,7 +2571,8 @@
     ],
     "unverified": [
       "Owner ruled episode 30: the wiki’s behind-the-scenes note says episode 7 only mentions him and he first appears on screen in “Mhysa”. Its infobox and biography still place him at episode 7, and it does not say he is named aloud in episode 30.",
-      "The sworn step is pinned at episode 31, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend."
+      "The sworn step is pinned at episode 31, one after the gate: the show already has him sworn there, and a timeline’s episodes strictly ascend.",
+      "Drawing (#1295): a rolled black cloak, a declared B: 'Mhysa' (episode 30) was not viewed, and the wiki names no object for the brother at the gate. The Hardhome oar is from season 5 and is left out."
     ]
   },
   "othell-yarwyck": {
@@ -2483,7 +2584,9 @@
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
     ],
     "unverified": [
-      "Book gate rests on Jon VI’s Appearing list; the synopsis does not name him there."
+      "Book gate rests on Jon VI’s Appearing list; the synopsis does not name him there.",
+      "Mutiny (#1295): he is the second to stab Jon in 'Mother's Mercy' (episode 50), Fandom; the books leave it open, so the stage is the show's alone, ordered by Jon XIII (site chapter 341, ADWD 69, not checked on AWOIAF).",
+      "Death (#1295): hanged in 'Oathbreaker' (episode 53), Fandom; alive in the books, so the stage and status are the show's alone, at chapter 344. Episodes not viewed."
     ]
   },
   "bowen-marsh": {
@@ -2497,7 +2600,10 @@
     ],
     "unverified": [
       "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
-      "Episodes 11 to 40 were not checked beyond the wiki’s infobox, which gives episode 41 as his first appearance."
+      "Episodes 11 to 40 were not checked beyond the wiki’s infobox, which gives episode 41 as his first appearance.",
+      "Mutiny (#1295): he stabs Jon in 'Mother's Mercy' (episode 50), Fandom, and in Jon XIII of A Dance with Dragons; site chapter 341 (ADWD 69) is not checked on AWOIAF.",
+      "Death (#1295): hanged in 'Oathbreaker' (episode 53), Fandom; alive in the books, so the stage and status are the show's alone, at chapter 344. Episodes not viewed.",
+      "Drawing (#1295): the ledger and quill are the steward's work, not an object either medium shows in his hand; a declared B."
     ]
   },
   "jaremy-rykker": {
@@ -2511,7 +2617,8 @@
       "https://it.wikipedia.org/wiki/Guardiani_della_notte"
     ],
     "unverified": [
-      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified."
+      "Show gate rests on the Game of Thrones Wiki’s infobox and biography citation; that the name is spoken aloud in the episode is unverified.",
+      "Drawing (#1295): a knight's sword in its scabbard, a declared B; the wiki shows no object of his own. The book death stage keeps the status already filed (Jon VIII, site chapter 61)."
     ]
   },
   "othor": {
@@ -2523,7 +2630,8 @@
       "https://gameofthrones.fandom.com/wiki/The_Pointy_End"
     ],
     "unverified": [
-      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there, and the character page cites a later chapter for his departure with Benjen Stark."
+      "Book gate rests on Jon III’s Appearing list; the synopsis does not name him there, and the character page cites a later chapter for his departure with Benjen Stark.",
+      "Stages (#1295): his body brought back in Jon VII (site chapter 53) and the wight burned at chapter 61, the audit's pins. AWOIAF was not read; the burning may fall in Jon VII itself (chapter 53), which would merge the two stages. Both are the book's alone, since the show tells both in episode 8."
     ]
   },
   "jafer-flowers": {
@@ -2543,10 +2651,13 @@
     "sources": [
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
       "https://awoiaf.westeros.org/index.php/Donal_Noye",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte",
+      "https://gameofthrones.fandom.com/wiki/Battle_for_the_Wall",
+      "https://gameofthrones.fandom.com/wiki/The_Watchers_on_the_Wall"
     ],
     "unverified": [
-      "Book only: the Game of Thrones Wiki has no page or mention of him."
+      "Book only: the Game of Thrones Wiki has no page or mention of him.",
+      "Death at site chapter 208 (A Storm of Swords, Jon VIII) rests on the Game of Thrones Wiki's list of the chapters episode 39 adapts; not checked on AWOIAF or in the book (#1296)."
     ]
   },
   "chett": {
@@ -2555,9 +2666,14 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
       "https://awoiaf.westeros.org/index.php/Chett",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte",
+      "https://gameofthrones.fandom.com/wiki/Fight_at_the_Fist",
+      "https://gameofthrones.fandom.com/wiki/Second_Sons_(episode)"
     ],
-    "unverified": ["Book only: the Game of Thrones Wiki has no page of his."]
+    "unverified": [
+      "Book only: the Game of Thrones Wiki has no page of his.",
+      "Death at site chapter 190 (A Storm of Swords, Samwell III) rests on the Game of Thrones Wiki's Fight at the Fist page, which cites that chapter for his body among the dead; an earlier chapter may tell it. Not checked on AWOIAF or in the book (#1296)."
+    ]
   },
   "qotho": {
     "sources": [

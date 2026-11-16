@@ -173,22 +173,6 @@ const GOBLET: Stroke[] = [
 ]
 
 /**
- * What every other person shows until an issue draws them (the Night's
- * Watch and Dothraki records filed in #1007 and #1008): a bust with a blank
- * head and no face, the collar in the record's tint. It stands for nobody,
- * so it tells a reader nothing.
- */
-const PERSON: Stroke[] = [
-  { d: circle(80, 58, 19) },
-  { d: 'M72 76 V88 M88 76 V88', role: 'soft' },
-  { d: 'M72 88 Q44 92 38 118 L36 150 M88 88 Q116 92 122 118 L124 150' },
-  { d: 'M64 90 Q80 104 96 90', role: 'accent' },
-  { d: 'M56 112 Q60 130 58 148 M104 112 Q100 130 102 148', role: 'soft' },
-  { d: 'M30 150 H130', role: 'ambient' },
-  shadow(80, 154, 46),
-]
-
-/**
  * Game of Thrones' drawings, keyed by the id of the record each was drawn
  * for. The Winterfell household's are in `winterfell.ts` (#854), the
  * southern cast's in `south.ts` (#1051), the Night's Watch's in `wall.ts`
@@ -196,8 +180,8 @@ const PERSON: Stroke[] = [
  * (#1053), the northern household's in `north.ts` (#1054), the Vale cast's
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
- * drawn for the launch here (owner, #856); every other character shows
- * `PERSON` until its own issue draws it. `satisfies`
+ * drawn for the launch here (owner, #856). Every character has its own
+ * drawing; there is no shared placeholder. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -214,31 +198,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  'will': PERSON,
-  'gared': PERSON,
-  'waymar-royce': PERSON,
-  'grenn': PERSON,
-  'pypar': PERSON,
-  'rast': PERSON,
-  'dareon': PERSON,
-  'halder': PERSON,
-  'todder': PERSON,
-  'othell-yarwyck': PERSON,
-  'bowen-marsh': PERSON,
-  'jaremy-rykker': PERSON,
-  'othor': PERSON,
-  'jafer-flowers': PERSON,
-  'donal-noye': PERSON,
-  'chett': PERSON,
-  'qotho': PERSON,
-  'cohollo': PERSON,
-  'haggo': PERSON,
-  'jhiqui': PERSON,
-  'aggo': PERSON,
-  'jhogo': PERSON,
-  'quaro': PERSON,
-  'mago': PERSON,
-  'eroeh': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */
@@ -282,7 +241,7 @@ export const REDRAWINGS: Redrawings = {
       chapter: 176,
       value: [
         ...moved(REFORGED, 'translate(-2 112)'),
-        ...moved(REFORGED, 'translate(6 136)'),
+        ...moved(softened(REFORGED), 'translate(6 136)'),
         shadow(80, 154, 62),
       ],
     },
@@ -374,7 +333,7 @@ export const REDRAWINGS: Redrawings = {
         { d: 'M98 140 Q104 112 128 108 Q146 110 144 132' },
         {
           d: 'M98 140 L106 136 L110 144 L120 138 L126 146 L136 138 L144 132',
-          role: 'accent',
+          role: 'soft',
         },
         {
           d: 'M46 116 q4 4 8 0 t8 0 M42 130 q4 4 8 0 t8 0 t8 0 M112 120 q4 4 8 0 t8 0',

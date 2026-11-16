@@ -4,7 +4,7 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, dots, shadow } from '~/lib/svg/primitives'
 
 /**
  * Marillion: a round-backed lute lying aslant, its rose, neck and bent-back
@@ -136,23 +136,30 @@ const HELM: Stroke[] = [
 const VARDIS: Stroke[] = [...HELM, shadow(80, 140, 36)]
 
 /**
- * Mord: a fat leather purse with coins spilt from it at the lip of a sky
- * cell's sloping floor, for the gaoler Tyrion buys with gold in episode 6
- * and in Tyrion V (chapter 39). The leather's far side is hatched; the
- * accent is the coins. Retinted from `wine`: nothing on it is red.
+ * Mord: his truncheon laid across the lip of a sky cell's sloping floor,
+ * the drop below it, for the gaoler who beats Tyrion with it in episode 6
+ * and keeps the sky cells in Tyrion V (chapter 39). The book gives him no
+ * truncheon; the show is the reference. Its underside is hatched; the
+ * accent is the truncheon. Retinted from `wine`: nothing on it is red.
  */
-const PURSE: Stroke[] = [
-  { d: 'M60 84 Q48 96 52 118 Q56 140 80 142 Q104 140 108 118 Q112 96 100 84' },
-  { d: 'M60 84 Q80 92 100 84 M62 74 L60 84 M98 74 L100 84' },
-  { d: 'M62 74 Q80 66 98 74 M80 70 Q86 58 96 60', role: 'soft' },
-  {
-    d: `${ellipse(122, 142, 6, 2.5)} ${ellipse(134, 150, 6, 2.5)} ${ellipse(112, 152, 6, 2.5)} ${ellipse(118, 136, 6, 2.5)}`,
-    role: 'accent',
-  },
-  { d: 'M96 100 l6 -3 M98 112 l6 -3 M96 124 l6 -3', role: 'ambient' },
-  { d: 'M10 144 L142 156', role: 'ambient' },
-  { d: 'M142 156 V180', role: 'ambient', dashed: true },
-]
+const TRUNCHEON: Stroke[] = moved(
+  [
+    {
+      d: 'M26 145.5 L124 154.3 Q135 144 124 134.3 L26 137.5 Q21 141.5 26 145.5 Z',
+      role: 'accent',
+    },
+    { d: 'M32 139.5 L118 137.5', role: 'soft' },
+    { d: 'M34 137.4 V145.9 M40 137.2 V146.5 M46 137 V147', role: 'soft' },
+    { d: 'M24 139 Q10 132 14 126 Q20 122 26 138', role: 'soft' },
+    {
+      d: 'M70 148 l3 -4 M84 149.5 l3 -4 M98 150.5 l3 -4 M110 151.5 l3 -4',
+      role: 'ambient',
+    },
+    { d: 'M10 144 L142 156', role: 'ambient' },
+    { d: 'M142 156 V180', role: 'ambient', dashed: true },
+  ],
+  'translate(-8 -30) scale(1.15)',
+)
 
 /**
  * Lyn Corbray: Lady Forlorn, his Valyrian longsword, laid aslant, the
@@ -265,7 +272,7 @@ export const VALE_DRAWINGS = {
   'nestor-royce': STAFF,
   'mya-stone': MULE,
   'vardis-egen': VARDIS,
-  'mord': PURSE,
+  'mord': TRUNCHEON,
   'lyn-corbray': LADY_FORLORN,
   'anya-waynwood': BROKEN_WHEEL,
   'shagga': AXES,

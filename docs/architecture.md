@@ -60,6 +60,48 @@ gates.
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
 
+### Fog on the server
+
+The fog is not a blur over the full page. Ask the live site for a character a
+reader with no bookmark has not met (checked on 2026-11-16):
+
+```sh
+curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+  | grep -c 'Trafalgar Law'
+# 0
+
+curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+  | grep -o '<title>[^<]*</title>'
+# <title>A character under fog | One Piece | Zero Spoiler</title>
+```
+
+With `Cookie: zs_one-piece=650` the title is
+`Trafalgar Law | One Piece | Zero Spoiler`. The server reads the bookmark before
+it builds the page. An entry the reader has not reached is sent as its kind, two
+thresholds and an opaque handle, with no name, no id and no text:
+
+```mermaid
+flowchart LR
+  A["Request + zs_one-piece cookie"] --> B["Loader calls a server function"]
+  B --> C["reveal(bookmark).sees() per record, on the server"]
+  C --> D["Revealed records, in the route's locale"]
+  C --> E["Covered records: two thresholds and an opaque handle"]
+  D --> F["HTML, and a payload with nothing else in it"]
+  E --> F
+```
+
+The landing page for a visitor with no bookmark also carries the series’
+introduction, East Blue, the Hunter Exam or the first season of Game of Thrones,
+so its dial can open and cover those entries in the browser, and nothing past
+it.
+
+The archive is never compiled into the client bundle, and `gate:archive` fails
+if any of it gets there. Search, drawings and links follow the same rule. The
+fog is an editorial promise, not access control: the social pictures above, a
+shared link from someone further ahead, “Show anyway” and the crawler bookmark
+can all open an entry early ([Security](#security),
+[Series and routing](#series-and-routing)).
+
 ## Relationship selections
 
 `CharacterDossier.relationships` uses complete dated snapshots of at most five
@@ -210,29 +252,35 @@ the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules. The
 series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
 own, with seven stages: Eddard's death and Ice melted, Jon's death, return and
 true name, and Daenerys's fire and death from the drawing audit (#1292), the
-Winterfell household's are in `art/winterfell.ts` (#854), with four stages, the
-southern cast's are in `art/south.ts` (#1051), with three, and the Night's
-Watch's and Essos cast's are in `art/wall.ts` and `art/essos.ts` (#1052), with
-ten, four of them the deaths of Jorah, Irri, Doreah and Rakharo from the drawing
-audit (#1292), the places' are in `art/places.ts` (#1053), with fourteen stages
-for the damage and rebuilding later seasons and books give (#1236), the northern
-household's are in `art/north.ts` (#1054), with fifteen, twelve of them the
-deaths, Roose Bolton's allegiance and Jeyne Poole's false identity from the
+Winterfell household's are in `art/winterfell.ts` (#854), with 25 stages after
+the drawing audit (#1285), the southern cast's are in `art/south.ts` (#1051),
+with thirty-seven, sixteen of them the later looks and deaths of #1286 and
+eighteen from the drawing audit (#1287), and the Night's Watch's and Essos
+cast's are in `art/wall.ts` and `art/essos.ts` (#1052), with twenty, four of
+them the deaths of Jeor, Aemon, Alliser and Yoren from the drawing audit
+(#1290), six from the drawing audit (#1296) and four those of Jorah, Irri,
+Doreah and Rakharo (#1292), and thirteen more of the Watch's in `art/wall.ts`
+(#1295), with twelve, the places' are in `art/places.ts` (#1053), with fourteen
+stages for the damage and rebuilding later seasons and books give (#1236), the
+northern household's are in `art/north.ts` (#1054), with fifteen, twelve of them
+the deaths, Roose Bolton's allegiance and Jeyne Poole's false identity from the
 drawing audit (#1288), the Vale cast's are in `art/vale.ts` (#1055), with two,
-the King's Landing cast's are in `art/court.ts` (#1056), with one, and the
-Riverlands cast's are in `art/riverlands.ts` (#1057), with seven, six of them
-the deaths later seasons and books give (#1242). Every other character maps to a
-shared placeholder in `art/index.ts`, `PERSON`, until its own issue draws it, so
-the drawing tests hold it like any series. Its places are the 23 a scene of the
-season or the book is set in (#853) and those both name without visiting it
-(#1035: the North's five in #1248, nine of the Riverlands, the Westerlands and
-the Vale in #1249, five of the south and the seas in #1250, Essos's ten in
-#1251), and eight visited places #853 left out (#1252), each filed in one of the
-realms, the Iron Islands, the Reach and the seas among them, beyond the Wall or
-Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless series prints
-no arc row. Darry and six of #1252's places are the book's alone, and the
-Kingswood the show's. The demo shows the places the first ten episodes reach,
-and covers in its tail the four the show first visits in later seasons.
+the King's Landing cast's are in `art/court.ts` (#1056), with thirteen, twelve
+of them from the drawing audit (#1289), and the Riverlands cast's are in
+`art/riverlands.ts` (#1057), with ten: six of them the deaths later seasons and
+books give (#1242), and the Blackfish's death, Jaqen's coin and Pod's axe from
+the drawing audit (#1290). Every character has its own drawing; there is no
+shared placeholder, and the drawing tests hold the series like any other. Its
+places are the 23 a scene of the season or the book is set in (#853) and those
+both name without visiting it (#1035: the North's five in #1248, nine of the
+Riverlands, the Westerlands and the Vale in #1249, five of the south and the
+seas in #1250, Essos's ten in #1251), and eight visited places #853 left out
+(#1252), each filed in one of the realms, the Iron Islands, the Reach and the
+seas among them, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
+optional, and an arcless series prints no arc row. Darry and six of #1252's
+places are the book's alone, and the Kingswood the show's. The demo shows the
+places the first ten episodes reach, and covers in its tail the four the show
+first visits in later seasons.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -249,10 +297,14 @@ Content routes are `/<series>/<locale>/…`; `/<locale>` is the hub and hosts
 legal/privacy pages. Unknown series and locales return 404. Legacy locale-first
 content routes redirect under `/one-piece` before bookmark parameters are read.
 `src/start.ts` handles shared-link bookmarks, legacy cookie migration and the
-`/` redirect (cookie, then country, then `Accept-Language`) before loaders. Use
-a content URL such as `/one-piece/en?ep=650` to set progress. `src/server.ts` is
-the Worker entry: it adds a `Link` header for the stylesheet and the fonts the
-root route preloads, which Cloudflare replays as a `103 Early Hints`.
+`/` redirect (cookie, then country, then `Accept-Language`) before loaders. A
+link to a series page sets the bookmark: `?ep=650` for an episode, `?s=2&ep=3`
+for an episode in a season, or `?ch=1044` for a chapter. Links on the root,
+legal and privacy pages set no bookmark. The link replaces the bookmark the
+reader had, so a link from someone further ahead can open entries they have not
+reached. `src/server.ts` is the Worker entry: it adds a `Link` header for the
+stylesheet and the fonts the root route preloads, which Cloudflare replays as a
+`103 Early Hints`.
 
 ## Social pictures
 
@@ -377,13 +429,13 @@ checks this block.
 
 ### `game-of-thrones`
 
-| Thing             | Count                                                 |
-| ----------------- | ----------------------------------------------------- |
-| Records           | 208                                                   |
-| Characters        | 148                                                   |
-| Places            | 60                                                    |
-| Saga modules      | 1                                                     |
-| Line drawings     | 208, one per record, plus 96 redrawings of 74 records |
-| Chronicle stories | 0, for 0 characters                                   |
+| Thing             | Count                                                   |
+| ----------------- | ------------------------------------------------------- |
+| Records           | 208                                                     |
+| Characters        | 148                                                     |
+| Places            | 60                                                      |
+| Saga modules      | 1                                                       |
+| Line drawings     | 208, one per record, plus 155 redrawings of 114 records |
+| Chronicle stories | 0, for 0 characters                                     |
 
 <!-- End of the generated counts. -->
