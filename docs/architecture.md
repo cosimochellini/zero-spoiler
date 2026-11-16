@@ -60,6 +60,44 @@ gates.
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
 
+### Fog on the server
+
+The fog is not a blur over the full page. Ask the live site for a character a
+reader with no bookmark has not met (checked on 2026-11-16):
+
+```sh
+curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+  | grep -c 'Trafalgar Law'
+# 0
+
+curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+  | grep -o '<title>[^<]*</title>'
+# <title>A character under fog | One Piece | Zero Spoiler</title>
+```
+
+With `Cookie: zs_one-piece=650` the title is
+`Trafalgar Law | One Piece | Zero Spoiler`. The server reads the bookmark before
+it builds the page. An entry the reader has not reached is sent as its kind, two
+thresholds and an opaque handle, with no name, no id and no text:
+
+```mermaid
+flowchart LR
+  A["Request + zs_one-piece cookie"] --> B["Loader calls a server function"]
+  B --> C["reveal(bookmark).sees() per record, on the server"]
+  C --> D["Revealed records, in the route's locale"]
+  C --> E["Covered records: two thresholds and an opaque handle"]
+  D --> F["HTML, and a payload with nothing else in it"]
+  E --> F
+```
+
+The one exception is the landing page for a visitor with no bookmark. It carries
+the series’ introduction, East Blue, the Hunter Exam or the first season of Game
+of Thrones, so its dial can open and cover those entries in the browser, and
+nothing past it.
+
+The archive is never compiled into the client bundle, and `gate:archive` fails
+if any of it gets there. Search, drawings and links follow the same rule.
+
 ## Relationship selections
 
 `CharacterDossier.relationships` uses complete dated snapshots of at most five
@@ -253,10 +291,14 @@ Content routes are `/<series>/<locale>/…`; `/<locale>` is the hub and hosts
 legal/privacy pages. Unknown series and locales return 404. Legacy locale-first
 content routes redirect under `/one-piece` before bookmark parameters are read.
 `src/start.ts` handles shared-link bookmarks, legacy cookie migration and the
-`/` redirect (cookie, then country, then `Accept-Language`) before loaders. Use
-a content URL such as `/one-piece/en?ep=650` to set progress. `src/server.ts` is
-the Worker entry: it adds a `Link` header for the stylesheet and the fonts the
-root route preloads, which Cloudflare replays as a `103 Early Hints`.
+`/` redirect (cookie, then country, then `Accept-Language`) before loaders. A
+link to a series page sets the bookmark: `?ep=650` for an episode, `?s=2&ep=3`
+for an episode in a season, or `?ch=1044` for a chapter. Links on the root,
+legal and privacy pages set no bookmark. The link replaces the bookmark the
+reader had, so a link from someone further ahead can open entries they have not
+reached. `src/server.ts` is the Worker entry: it adds a `Link` header for the
+stylesheet and the fonts the root route preloads, which Cloudflare replays as a
+`103 Early Hints`.
 
 ## Social pictures
 
