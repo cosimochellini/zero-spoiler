@@ -531,78 +531,453 @@
       "https://gameofthrones.fandom.com/wiki/Hullen",
       "https://gameofthrones.fandom.com/wiki/Tomard"
     ],
-    "alyn": ["https://gameofthrones.fandom.com/wiki/Tomard"]
+    "alyn": ["https://gameofthrones.fandom.com/wiki/Tomard"],
+    "cersei-lannister": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Lancel_Lannister",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Bran_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Cersei_Lannister",
+      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_Stark",
+      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon"
+    ],
+    "jaime-lannister": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Jaime_Lannister",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://iceandfire.fandom.com/wiki/Bran_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Jaime_Lannister"
+    ],
+    "tyrion-lannister": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Chella",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Shagga",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Timett",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://iceandfire.fandom.com/wiki/Bronn",
+      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Shae",
+      "https://iceandfire.fandom.com/wiki/Tyrion_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Tyrion_Lannister",
+      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
+    ],
+    "tywin-lannister": [
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Timett",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Shae",
+      "https://iceandfire.fandom.com/wiki/Tywin_Lannister"
+    ],
+    "joffrey-baratheon": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_Stark",
+      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon",
+      "https://iceandfire.fandom.com/wiki/Sandor_Clegane"
+    ],
+    "myrcella-baratheon": [
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Cersei_Lannister",
+      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Myrcella_Baratheon"
+    ],
+    "tommen-baratheon": [
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Cersei_Lannister",
+      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Tommen_Baratheon"
+    ],
+    "robert-baratheon": [
+      "https://gameofthrones.fandom.com/wiki/Lancel_Lannister",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
+      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Robert_I_Baratheon",
+      "https://iceandfire.fandom.com/wiki/Varys"
+    ],
+    "renly-baratheon": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Renly_Baratheon"
+    ],
+    "lysa-arryn": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Lysa_Arryn",
+      "https://gameofthrones.fandom.com/wiki/Robin_Arryn",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://iceandfire.fandom.com/wiki/Lysa_Arryn",
+      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
+    ],
+    "robin-arryn": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Robin_Arryn",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://iceandfire.fandom.com/wiki/Robert_Arryn"
+    ],
+    "bronn": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Bronn",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://iceandfire.fandom.com/wiki/Bronn",
+      "https://iceandfire.fandom.com/wiki/Tyrion_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
+    ],
+    "shae": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Shae",
+      "https://iceandfire.fandom.com/wiki/Shae"
+    ],
+    "walder-frey": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Stevron_Frey",
+      "https://gameofthrones.fandom.com/wiki/Walder_Frey",
+      "https://iceandfire.fandom.com/wiki/Walder_Frey"
+    ],
+    "ros": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Ros",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ],
+    "ilyn-payne": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Ilyn_Payne",
+      "https://gameofthrones.fandom.com/wiki/Marillion",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Ilyn_Payne",
+      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
+    ],
+    "barristan-selmy": [
+      "https://gameofthrones.fandom.com/wiki/Barristan_Selmy",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Hugh_of_the_Vale",
+      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
+    ],
+    "syrio-forel": [
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Syrio_Forel",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Meryn_Trant",
+      "https://iceandfire.fandom.com/wiki/Syrio_Forel"
+    ],
+    "petyr-baelish": [
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Petyr_Baelish",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Petyr_Baelish"
+    ],
+    "varys": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/Varys",
+      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Varys"
+    ],
+    "pycelle": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/Pycelle",
+      "https://gameofthrones.fandom.com/wiki/Ros",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Pycelle"
+    ],
+    "sandor-clegane": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Sandor_Clegane",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon",
+      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
+      "https://iceandfire.fandom.com/wiki/Sandor_Clegane"
+    ],
+    "janos-slynt": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Janos_Slynt",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Janos_Slynt"
+    ],
+    "gendry": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Gendry",
+      "https://gameofthrones.fandom.com/wiki/Hot_Pie",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Gendry"
+    ],
+    "gregor-clegane": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Beric_Dondarrion",
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Gregor_Clegane",
+      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
+      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
+    ],
+    "loras-tyrell": [
+      "https://gameofthrones.fandom.com/wiki/Loras_Tyrell",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
+      "https://iceandfire.fandom.com/wiki/Renly_Baratheon",
+      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
+    ],
+    "mycah": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Mycah",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
+      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Mycah",
+      "https://iceandfire.fandom.com/wiki/Sandor_Clegane",
+      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
+    ],
+    "stiv": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Stiv",
+      "https://iceandfire.fandom.com/wiki/Bran_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Stiv"
+    ],
+    "wallen": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Wallen",
+      "https://iceandfire.fandom.com/wiki/Bran_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Wallen"
+    ],
+    "marillion": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Marillion",
+      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Marillion"
+    ],
+    "willis-wode": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Willis_Wode",
+      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Willis_Wode"
+    ],
+    "donnel-waynwood": [
+      "https://iceandfire.fandom.com/wiki/Catelyn_Stark",
+      "https://iceandfire.fandom.com/wiki/Donnel_Waynwood"
+    ],
+    "nestor-royce": ["https://iceandfire.fandom.com/wiki/Catelyn_Stark"],
+    "mya-stone": ["https://iceandfire.fandom.com/wiki/Mya_Stone"],
+    "vardis-egen": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Vardis_Egen",
+      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
+    ],
+    "mord": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Mord",
+      "https://iceandfire.fandom.com/wiki/Mord"
+    ],
+    "lyn-corbray": [
+      "https://iceandfire.fandom.com/wiki/Lyn_Corbray",
+      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
+    ],
+    "anya-waynwood": [
+      "https://iceandfire.fandom.com/wiki/Anya_Waynwood",
+      "https://iceandfire.fandom.com/wiki/Lyn_Corbray"
+    ],
+    "shagga": [
+      "https://gameofthrones.fandom.com/wiki/Chella",
+      "https://gameofthrones.fandom.com/wiki/Shagga",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Timett"
+    ],
+    "timett": [
+      "https://gameofthrones.fandom.com/wiki/Chella",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Timett"
+    ],
+    "chella": [
+      "https://gameofthrones.fandom.com/wiki/Chella",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://gameofthrones.fandom.com/wiki/Timett"
+    ],
+    "meryn-trant": [
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Meryn_Trant",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon",
+      "https://iceandfire.fandom.com/wiki/Meryn_Trant"
+    ],
+    "boros-blount": [
+      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
+      "https://iceandfire.fandom.com/wiki/Boros_Blount"
+    ],
+    "mandon-moore": [
+      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
+      "https://iceandfire.fandom.com/wiki/Mandon_Moore"
+    ],
+    "arys-oakheart": [
+      "https://iceandfire.fandom.com/wiki/Arys_Oakheart",
+      "https://iceandfire.fandom.com/wiki/Barristan_Selmy"
+    ],
+    "lancel-lannister": [
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Lancel_Lannister",
+      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Lancel_Lannister",
+      "https://iceandfire.fandom.com/wiki/Robert_I_Baratheon"
+    ],
+    "dontos-hollard": [
+      "https://gameofthrones.fandom.com/wiki/Dontos_Hollard",
+      "https://iceandfire.fandom.com/wiki/Dontos_Hollard"
+    ],
+    "hugh-of-the-vale": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Hugh_of_the_Vale",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
+      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Hugh_of_the_Vale",
+      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
+    ],
+    "tobho-mott": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Gendry",
+      "https://gameofthrones.fandom.com/wiki/Tobho_Mott",
+      "https://iceandfire.fandom.com/wiki/Tobho_Mott"
+    ],
+    "mhaegen": [
+      "https://gameofthrones.fandom.com/wiki/Mhaegen",
+      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
+      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
+    ],
+    "beric-dondarrion": [
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Beric_Dondarrion",
+      "https://iceandfire.fandom.com/wiki/Beric_Dondarrion"
+    ],
+    "thoros-of-myr": [
+      "https://iceandfire.fandom.com/wiki/Beric_Dondarrion",
+      "https://iceandfire.fandom.com/wiki/Edmure_Tully",
+      "https://iceandfire.fandom.com/wiki/Thoros_of_Myr"
+    ],
+    "balon-swann": [
+      "https://iceandfire.fandom.com/wiki/Balon_Swann",
+      "https://iceandfire.fandom.com/wiki/Gregor_Clegane",
+      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
+    ],
+    "robar-royce": [
+      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
+      "https://iceandfire.fandom.com/wiki/Robar_Royce",
+      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
+    ],
+    "yohn-royce": [
+      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Yohn_Royce"
+    ],
+    "jason-mallister": [
+      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Jason_Mallister"
+    ],
+    "masha-heddle": [
+      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
+      "https://gameofthrones.fandom.com/wiki/Masha_Heddle",
+      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Masha_Heddle"
+    ],
+    "kevan-lannister": [
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister",
+      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
+      "https://iceandfire.fandom.com/wiki/Kevan_Lannister"
+    ],
+    "addam-marbrand": [
+      "https://gameofthrones.fandom.com/wiki/Addam_Marbrand",
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://iceandfire.fandom.com/wiki/Addam_Marbrand"
+    ],
+    "podrick-payne": [
+      "https://gameofthrones.fandom.com/wiki/Podrick_Payne",
+      "https://iceandfire.fandom.com/wiki/Bronn"
+    ],
+    "stevron-frey": [
+      "https://gameofthrones.fandom.com/wiki/Baelor",
+      "https://gameofthrones.fandom.com/wiki/Stevron_Frey",
+      "https://iceandfire.fandom.com/wiki/Stevron_Frey"
+    ],
+    "edmure-tully": [
+      "https://iceandfire.fandom.com/wiki/Brynden_Tully",
+      "https://iceandfire.fandom.com/wiki/Edmure_Tully",
+      "https://iceandfire.fandom.com/wiki/Hoster_Tully"
+    ],
+    "hoster-tully": [
+      "https://iceandfire.fandom.com/wiki/Edmure_Tully",
+      "https://iceandfire.fandom.com/wiki/Hoster_Tully"
+    ],
+    "brynden-tully": [
+      "https://iceandfire.fandom.com/wiki/Brynden_Tully",
+      "https://iceandfire.fandom.com/wiki/Catelyn_Stark"
+    ],
+    "hot-pie": [
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Hot_Pie"
+    ],
+    "lommy": [
+      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
+      "https://gameofthrones.fandom.com/wiki/Lommy_Greenhands"
+    ]
   },
-  "omitted": {},
-  "pending": {
-    "cersei-lannister": "#1346",
-    "jaime-lannister": "#1346",
-    "tyrion-lannister": "#1346",
-    "tywin-lannister": "#1346",
-    "joffrey-baratheon": "#1346",
-    "myrcella-baratheon": "#1346",
-    "tommen-baratheon": "#1346",
-    "robert-baratheon": "#1346",
-    "renly-baratheon": "#1346",
-    "lysa-arryn": "#1346",
-    "robin-arryn": "#1346",
-    "bronn": "#1346",
-    "shae": "#1346",
-    "walder-frey": "#1346",
-    "ros": "#1346",
-    "ilyn-payne": "#1346",
-    "barristan-selmy": "#1346",
-    "syrio-forel": "#1346",
-    "petyr-baelish": "#1346",
-    "varys": "#1346",
-    "pycelle": "#1346",
-    "sandor-clegane": "#1346",
-    "janos-slynt": "#1346",
-    "gendry": "#1346",
-    "gregor-clegane": "#1346",
-    "loras-tyrell": "#1346",
-    "mycah": "#1346",
-    "stiv": "#1346",
-    "wallen": "#1346",
-    "marillion": "#1346",
-    "willis-wode": "#1346",
-    "donnel-waynwood": "#1346",
-    "nestor-royce": "#1346",
-    "mya-stone": "#1346",
-    "vardis-egen": "#1346",
-    "mord": "#1346",
-    "lyn-corbray": "#1346",
-    "anya-waynwood": "#1346",
-    "shagga": "#1346",
-    "timett": "#1346",
-    "chella": "#1346",
-    "meryn-trant": "#1346",
-    "boros-blount": "#1346",
-    "mandon-moore": "#1346",
-    "arys-oakheart": "#1346",
-    "lancel-lannister": "#1346",
-    "dontos-hollard": "#1346",
-    "hugh-of-the-vale": "#1346",
-    "tobho-mott": "#1346",
-    "mhaegen": "#1346",
-    "beric-dondarrion": "#1346",
-    "thoros-of-myr": "#1346",
-    "balon-swann": "#1346",
-    "robar-royce": "#1346",
-    "yohn-royce": "#1346",
-    "jason-mallister": "#1346",
-    "masha-heddle": "#1346",
-    "kevan-lannister": "#1346",
-    "addam-marbrand": "#1346",
-    "podrick-payne": "#1346",
-    "stevron-frey": "#1346",
-    "edmure-tully": "#1346",
-    "hoster-tully": "#1346",
-    "brynden-tully": "#1346",
-    "hot-pie": "#1346",
-    "lommy": "#1346",
-    "jaqen-hghar": "#1346",
-    "rorge": "#1346",
-    "biter": "#1346"
-  }
+  "omitted": {
+    "jaqen-hghar": "Not reached in stage 1 in either medium: the record opens at episode 12 and chapter 79, after season 1 episode 10 and A Game of Thrones (chapter 73).",
+    "rorge": "Not reached in stage 1 in either medium: the record opens at episode 12 and chapter 79, after season 1 episode 10 and A Game of Thrones (chapter 73).",
+    "biter": "Not reached in stage 1 in either medium: the record opens at episode 12 and chapter 79, after season 1 episode 10 and A Game of Thrones (chapter 73)."
+  },
+  "pending": {}
 }

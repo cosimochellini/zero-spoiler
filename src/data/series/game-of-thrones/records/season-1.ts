@@ -3715,6 +3715,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'cersei-lannister': {
+      relationships: season1Relationships['cersei-lannister'],
       affiliation: [
         {
           episode: 1,
@@ -3750,6 +3751,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'jaime-lannister': {
+      relationships: season1Relationships['jaime-lannister'],
       affiliation: [
         {
           episode: 1,
@@ -3786,6 +3788,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'tyrion-lannister': {
+      relationships: season1Relationships['tyrion-lannister'],
       affiliation: [
         {
           episode: 1,
@@ -3822,6 +3825,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'tywin-lannister': {
+      relationships: season1Relationships['tywin-lannister'],
       affiliation: [
         {
           episode: 7,
@@ -3854,6 +3858,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'joffrey-baratheon': {
+      relationships: season1Relationships['joffrey-baratheon'],
       affiliation: [
         {
           episode: 1,
@@ -3883,6 +3888,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'myrcella-baratheon': {
+      relationships: season1Relationships['myrcella-baratheon'],
       affiliation: [
         {
           episode: 1,
@@ -3901,6 +3907,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'tommen-baratheon': {
+      relationships: season1Relationships['tommen-baratheon'],
       affiliation: [
         {
           episode: 1,
@@ -3919,6 +3926,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'robert-baratheon': {
+      relationships: season1Relationships['robert-baratheon'],
       affiliation: [
         {
           episode: 1,
@@ -3937,6 +3945,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'renly-baratheon': {
+      relationships: season1Relationships['renly-baratheon'],
       affiliation: [
         {
           episode: 3,
@@ -3980,6 +3989,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'lysa-arryn': {
+      relationships: season1Relationships['lysa-arryn'],
       affiliation: [
         {
           episode: 5,
@@ -3998,6 +4008,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'robin-arryn': {
+      relationships: season1Relationships['robin-arryn'],
       affiliation: [
         {
           episode: 5,
@@ -4013,6 +4024,7 @@ export const season1: ThronesSaga = {
       status: [{ episode: 5, chapter: 35, value: 'alive' }],
     },
     'bronn': {
+      relationships: season1Relationships.bronn,
       affiliation: [
         {
           episode: 4,
@@ -4044,6 +4056,7 @@ export const season1: ThronesSaga = {
       status: [{ episode: 4, chapter: 32, value: 'alive' }],
     },
     'shae': {
+      relationships: season1Relationships.shae,
       affiliation: [
         {
           episode: 9,
@@ -4062,6 +4075,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'walder-frey': {
+      relationships: season1Relationships['walder-frey'],
       affiliation: [
         {
           episode: 9,
@@ -4080,6 +4094,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'ros': {
+      relationships: season1Relationships.ros,
       affiliation: [
         {
           episode: 4,
@@ -4104,6 +4119,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'ilyn-payne': {
+      relationships: season1Relationships['ilyn-payne'],
       role: { it: 'Boia del re', en: 'King’s headsman' },
       log: {
         it: 'È il cavaliere che esegue le condanne a morte del re. Il Re Folle gli fece strappare la lingua, e da allora non parla più. Quando Sansa Stark lo incontra, il suo aspetto la spaventa.',
@@ -4119,6 +4135,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'barristan-selmy': {
+      relationships: season1Relationships['barristan-selmy'],
       role: [
         {
           episode: 3,
@@ -4159,6 +4176,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'syrio-forel': {
+      relationships: season1Relationships['syrio-forel'],
       role: {
         it: 'Maestro di spada di Arya Stark',
         en: 'Arya Stark’s sword master',
@@ -4183,6 +4201,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'petyr-baelish': {
+      relationships: season1Relationships['petyr-baelish'],
       role: { it: 'Maestro del conio', en: 'Master of coin' },
       log: {
         it: 'Siede nel Concilio ristretto come maestro del conio, ed è chiamato Ditocorto. Quando Catelyn arriva in segreto ad Approdo del Re, i suoi uomini la portano da lui. Le dice che il pugnale usato contro suo figlio era suo e che lo perse in una scommessa con Tyrion Lannister, poi le offre il suo aiuto.',
@@ -4201,6 +4220,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'varys': {
+      relationships: season1Relationships.varys,
       role: { it: 'Maestro dei sussurri', en: 'Master of whisperers' },
       log: {
         it: 'Siede nel Concilio ristretto come maestro dei sussurri, e i suoi informatori gli riferiscono ciò che accade in città. Sa che Catelyn è arrivata in segreto e si unisce al suo incontro con Ditocorto per esaminare il pugnale.',
@@ -4219,6 +4239,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'pycelle': {
+      relationships: season1Relationships.pycelle,
       role: { it: 'Gran maestro', en: 'Grand Maester' },
       log: {
         it: 'È il gran maestro e siede da molti anni nel Concilio ristretto. Quando Eddard Stark arriva ad Approdo del Re come nuovo Primo Cavaliere, lo accoglie insieme al resto del Concilio.',
@@ -4237,6 +4258,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'sandor-clegane': {
+      relationships: season1Relationships['sandor-clegane'],
       role: [
         {
           episode: 4,
@@ -4279,6 +4301,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'janos-slynt': {
+      relationships: season1Relationships['janos-slynt'],
       role: [
         {
           episode: 4,
@@ -4314,6 +4337,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'gendry': {
+      relationships: season1Relationships.gendry,
       role: [
         {
           episode: 4,
@@ -4356,6 +4380,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'gregor-clegane': {
+      relationships: season1Relationships['gregor-clegane'],
       role: [
         { episode: 4, chapter: 30, value: { it: 'Cavaliere', en: 'Knight' } },
         {
@@ -4393,6 +4418,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'loras-tyrell': {
+      relationships: season1Relationships['loras-tyrell'],
       role: { it: 'Cavaliere', en: 'Knight' },
       log: {
         it: 'È un giovane giostratore molto ammirato, detto il Cavaliere dei Fiori. Al torneo in onore del nuovo Primo Cavaliere regala una rosa a Sansa Stark davanti alla folla.',
@@ -4734,6 +4760,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'mycah': {
+      relationships: season1Relationships.mycah,
       role: {
         it: 'Garzone di macellaio al seguito del re',
         en: 'Butcher’s boy in the king’s party',
@@ -4755,6 +4782,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'stiv': {
+      relationships: season1Relationships.stiv,
       role: {
         it: 'Disertore dei Guardiani della notte',
         en: 'Deserter of the Night’s Watch',
@@ -4776,6 +4804,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'wallen': {
+      relationships: season1Relationships.wallen,
       role: {
         it: 'Disertore dei Guardiani della notte',
         en: 'Deserter of the Night’s Watch',
@@ -5056,6 +5085,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'marillion': {
+      relationships: season1Relationships.marillion,
       role: { it: 'Cantastorie', en: 'Singer' },
       log: {
         it: 'Canta alla locanda e cerca di ingraziarsi Catelyn. Quando lei fa prigioniero Tyrion, segue il suo gruppo sperando di ricavarne una canzone.',
@@ -5071,6 +5101,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'willis-wode': {
+      relationships: season1Relationships['willis-wode'],
       role: {
         it: 'Cavaliere al servizio di Casa Whent',
         en: 'Knight sworn to House Whent',
@@ -5092,6 +5123,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'donnel-waynwood': {
+      relationships: season1Relationships['donnel-waynwood'],
       role: {
         it: 'Custode della Porta Insanguinata',
         en: 'Keeper of the Bloody Gate',
@@ -5110,6 +5142,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'nestor-royce': {
+      relationships: season1Relationships['nestor-royce'],
       role: {
         it: 'Alto attendente della Valle',
         en: 'High Steward of the Vale',
@@ -5128,6 +5161,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'mya-stone': {
+      relationships: season1Relationships['mya-stone'],
       role: {
         it: 'Guida sul sentiero per il Nido dell’Aquila',
         en: 'Guide on the path to the Eyrie',
@@ -5149,6 +5183,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'vardis-egen': {
+      relationships: season1Relationships['vardis-egen'],
       role: {
         it: 'Capitano della guardia del Nido dell’Aquila',
         en: 'Captain of the guard at the Eyrie',
@@ -5170,6 +5205,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'mord': {
+      relationships: season1Relationships.mord,
       role: {
         it: 'Carceriere delle celle del cielo',
         en: 'Gaoler of the sky cells',
@@ -5188,6 +5224,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'lyn-corbray': {
+      relationships: season1Relationships['lyn-corbray'],
       role: { it: 'Cavaliere della Valle', en: 'Knight of the Vale' },
       log: {
         it: 'Assiste all’udienza in cui Tyrion chiede un processo per combattimento. È tra i cavalieri che si offrono di battersi come campioni di lady Lysa.',
@@ -5203,6 +5240,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'anya-waynwood': {
+      relationships: season1Relationships['anya-waynwood'],
       role: { it: 'Lady di Ironoaks', en: 'Lady of Ironoaks' },
       log: {
         it: 'Guida Casa Waynwood da Ironoaks. Siede tra i signori della Valle al Nido dell’Aquila.',
@@ -5218,6 +5256,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'shagga': {
+      relationships: season1Relationships.shagga,
       role: {
         it: 'Guerriero dei Corvi di Pietra',
         en: 'Warrior of the Stone Crows',
@@ -5236,6 +5275,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'timett': {
+      relationships: season1Relationships.timett,
       role: {
         it: 'Capo degli Uomini Bruciati',
         en: 'Leader of the Burned Men',
@@ -5257,6 +5297,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'chella': {
+      relationships: season1Relationships.chella,
       role: { it: 'Capo delle Orecchie Nere', en: 'Leader of the Black Ears' },
       log: {
         it: 'Guida le Orecchie Nere, che con gli altri clan delle montagne seguono Tyrion. Lo accompagna all’esercito di suo padre, lord Tywin.',
@@ -5275,6 +5316,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'meryn-trant': {
+      relationships: season1Relationships['meryn-trant'],
       role: {
         it: 'Cavaliere della Guardia reale',
         en: 'Knight of the Kingsguard',
@@ -5299,6 +5341,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'boros-blount': {
+      relationships: season1Relationships['boros-blount'],
       role: {
         it: 'Cavaliere della Guardia reale',
         en: 'Knight of the Kingsguard',
@@ -5317,6 +5360,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'mandon-moore': {
+      relationships: season1Relationships['mandon-moore'],
       role: {
         it: 'Cavaliere della Guardia reale',
         en: 'Knight of the Kingsguard',
@@ -5340,6 +5384,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'arys-oakheart': {
+      relationships: season1Relationships['arys-oakheart'],
       role: {
         it: 'Cavaliere della Guardia reale',
         en: 'Knight of the Kingsguard',
@@ -5363,6 +5408,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'lancel-lannister': {
+      relationships: season1Relationships['lancel-lannister'],
       role: { it: 'Scudiero di re Robert', en: 'Squire to King Robert' },
       log: {
         it: 'È uno degli scudieri di re Robert Baratheon e lo serve da vicino. Il re lo tratta con poca pazienza.',
@@ -5384,6 +5430,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'dontos-hollard': {
+      relationships: season1Relationships['dontos-hollard'],
       role: {
         it: 'Cavaliere e giullare di corte',
         en: 'Knight and court fool',
@@ -5407,6 +5454,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'hugh-of-the-vale': {
+      relationships: season1Relationships['hugh-of-the-vale'],
       role: {
         it: 'Cavaliere, ex scudiero di Jon Arryn',
         en: 'Knight, Jon Arryn’s former squire',
@@ -5425,6 +5473,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'tobho-mott': {
+      relationships: season1Relationships['tobho-mott'],
       role: { it: 'Mastro armaiolo', en: 'Master armorer' },
       log: {
         it: 'Ha la sua bottega in una via di fabbri di Approdo del Re. Eddard Stark va da lui per vedere il ragazzo che Jon Arryn era venuto a cercare, il suo apprendista Gendry.',
@@ -5443,6 +5492,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'mhaegen': {
+      relationships: season1Relationships.mhaegen,
       role: { it: 'Prostituta', en: 'Prostitute' },
       log: {
         it: 'Lavora in uno dei bordelli di Ditocorto. Mostra a Eddard Stark la sua bambina, figlia di re Robert.',
@@ -5568,6 +5618,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'beric-dondarrion': {
+      relationships: season1Relationships['beric-dondarrion'],
       role: [
         {
           episode: 6,
@@ -5604,6 +5655,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'thoros-of-myr': {
+      relationships: season1Relationships['thoros-of-myr'],
       role: { it: 'Prete rosso', en: 'Red priest' },
       log: {
         it: 'È un prete rosso, arrivato nei Sette Regni da Myr, una delle città libere.',
@@ -5633,6 +5685,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'balon-swann': {
+      relationships: season1Relationships['balon-swann'],
       role: { it: 'Cavaliere', en: 'Knight' },
       log: {
         it: 'È un cavaliere di Casa Swann, nelle Terre della Tempesta. Partecipa alla giostra nel torneo del Primo Cavaliere ad Approdo del Re.',
@@ -5648,6 +5701,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'robar-royce': {
+      relationships: season1Relationships['robar-royce'],
       role: { it: 'Cavaliere', en: 'Knight' },
       log: {
         it: 'È uno dei figli del lord di Runestone, nella Valle di Arryn. Giostra nel torneo del Primo Cavaliere ad Approdo del Re.',
@@ -5668,6 +5722,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'yohn-royce': {
+      relationships: season1Relationships['yohn-royce'],
       role: { it: 'Lord di Runestone', en: 'Lord of Runestone' },
       log: {
         it: 'È il capo di Casa Royce. È uno dei grandi lord della Valle di Arryn, vassalli di Casa Arryn.',
@@ -5683,6 +5738,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'jason-mallister': {
+      relationships: season1Relationships['jason-mallister'],
       role: { it: 'Lord di Seagard', en: 'Lord of Seagard' },
       log: {
         it: 'Passa con i suoi uomini davanti alla locanda all’incrocio, diretto al torneo del Primo Cavaliere. Catelyn Stark lo vede passare.',
@@ -5698,6 +5754,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'masha-heddle': {
+      relationships: season1Relationships['masha-heddle'],
       role: { it: 'Locandiera', en: 'Innkeeper' },
       log: {
         it: 'Gestisce la locanda all’incrocio, sulla strada del Re. Sotto il suo tetto Catelyn Stark fa arrestare Tyrion Lannister.',
@@ -5719,6 +5776,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'kevan-lannister': {
+      relationships: season1Relationships['kevan-lannister'],
       role: {
         it: 'Fratello e capitano di lord Tywin',
         en: 'Lord Tywin’s brother and captain',
@@ -5740,6 +5798,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'addam-marbrand': {
+      relationships: season1Relationships['addam-marbrand'],
       role: {
         it: 'Cavaliere, comandante degli esploratori',
         en: 'Knight, commander of outriders',
@@ -5758,6 +5817,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'podrick-payne': {
+      relationships: season1Relationships['podrick-payne'],
       role: {
         it: 'Scudiero di Tyrion Lannister',
         en: 'Squire to Tyrion Lannister',
@@ -5779,6 +5839,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'stevron-frey': {
+      relationships: season1Relationships['stevron-frey'],
       role: { it: 'Erede delle Torri Gemelle', en: 'Heir to the Twins' },
       log: {
         it: 'È accanto al padre alle Torri Gemelle quando Catelyn Stark viene a trattare il passaggio del fiume per l’esercito di Robb.',
@@ -5797,6 +5858,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'edmure-tully': {
+      relationships: season1Relationships['edmure-tully'],
       role: {
         it: 'Figlio di lord Hoster Tully',
         en: 'Son of Lord Hoster Tully',
@@ -5815,6 +5877,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'hoster-tully': {
+      relationships: season1Relationships['hoster-tully'],
       role: { it: 'Lord di Delta delle Acque', en: 'Lord of Riverrun' },
       log: {
         it: 'È il padre di Catelyn Stark, Lysa Arryn ed Edmure Tully. La sua casata, i Tully, governa le Terre dei Fiumi da Delta delle Acque.',
@@ -5835,6 +5898,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'brynden-tully': {
+      relationships: season1Relationships['brynden-tully'],
       role: { it: 'Cavaliere di Casa Tully', en: 'Knight of House Tully' },
       log: {
         it: 'È il fratello del padre di Catelyn Stark e un cavaliere di Casa Tully. Lo chiamano il Pesce Nero.',
@@ -5862,6 +5926,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'hot-pie': {
+      relationships: season1Relationships['hot-pie'],
       role: {
         it: 'Garzone di fornaio, recluta dei Guardiani della notte',
         en: 'Baker’s boy, Night’s Watch recruit',
@@ -5880,6 +5945,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'lommy': {
+      relationships: season1Relationships.lommy,
       role: {
         it: 'Apprendista tintore, recluta dei Guardiani della notte',
         en: 'Dyer’s apprentice, Night’s Watch recruit',
