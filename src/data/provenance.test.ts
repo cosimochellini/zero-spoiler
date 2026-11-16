@@ -8,6 +8,8 @@ import { LOADED_SERIES } from '~/test/series'
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import elbafEvidence from '../../docs/content-provenance/elbaf-relationships.json' with { type: 'json' }
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
+import thronesRelationshipEvidence from '../../docs/content-provenance/game-of-thrones-relationships.json' with { type: 'json' }
+// eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import thronesEvidence from '../../docs/content-provenance/game-of-thrones.json' with { type: 'json' }
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import hunterRelationshipEvidence from '../../docs/content-provenance/hunter-x-hunter-relationships.json' with { type: 'json' }
@@ -239,6 +241,79 @@ describe('Game of Thrones provenance', () => {
       expect(read.length + unverified.length, id).toBeGreaterThan(0)
       expect(
         read.map((url) => hostOf(url)).filter((host) => !hosts.has(host)),
+      ).toStrictEqual([])
+    },
+  )
+})
+
+describe('Game of Thrones relationship provenance', () => {
+  const {
+    authored,
+    omitted,
+    pending,
+  }: {
+    authored: Record<string, string[]>
+    omitted: Record<string, string>
+    pending: Record<string, string>
+  } = thronesRelationshipEvidence
+  const archive = LOADED_SERIES.find(
+    ({ slug }) => slug === 'game-of-thrones',
+  )?.archive
+  const thronesCharacters =
+    archive?.entities.filter(({ kind }) => kind === 'character') ?? []
+  const thronesOwners = thronesCharacters
+    .filter(
+      (entity) => (archive?.datedOf(entity, 'relationships') ?? []).length > 0,
+    )
+    .map(({ id }) => id)
+  // The two wikis: A Wiki of Ice and Fire for the books, the Game of Thrones
+  // Wiki for the show (#1344).
+  const hosts = new Set(['awoiaf.westeros.org', 'gameofthrones.fandom.com'])
+
+  it('accounts for every archived character exactly once', () => {
+    const listed = [
+      ...Object.keys(authored),
+      ...Object.keys(omitted),
+      ...Object.keys(pending),
+    ]
+
+    const distinct = new Set(listed)
+
+    expect(distinct.size).toBe(listed.length)
+    expect(listed.toSorted(byId)).toStrictEqual(
+      thronesCharacters.map(({ id }) => id).toSorted(byId),
+    )
+  })
+
+  it('lists as authored exactly the thronesCharacters that have relationships', () => {
+    expect(Object.keys(authored).toSorted(byId)).toStrictEqual(
+      thronesOwners.toSorted(byId),
+    )
+  })
+
+  // Waiting for the child issue that authors them: no deliberate omission.
+  it.each(Object.entries(pending))(
+    'names the issue that will author %s',
+    (id, issue) => {
+      expect(thronesOwners).not.toContain(id)
+      expect(issue).toMatch(/^#\d+$/u)
+    },
+  )
+
+  it.each(Object.entries(omitted))(
+    'gives a reason to omit %s',
+    (id, reason) => {
+      expect(thronesOwners).not.toContain(id)
+      expect(reason.trim().length).toBeGreaterThan(0)
+    },
+  )
+
+  it.each(Object.entries(authored))(
+    'lists the pages read for %s on the two wikis',
+    (id, urls) => {
+      expect(urls.length, id).toBeGreaterThan(0)
+      expect(
+        urls.map((url) => hostOf(url)).filter((host) => !hosts.has(host)),
       ).toStrictEqual([])
     },
   )

@@ -35,9 +35,10 @@ const { core, filed: FILED } = sagaArchive({
 const { entities, gateOf } = core
 
 /**
- * Every record's gate and every dated step's, redrawings included, so the
- * sweep asks both sides of each in the unit that tells it without a
- * hand-kept list: the two media gate the same record at unrelated numbers.
+ * Every record's gate and every dated step's, redrawings and relationship
+ * selections included, so the sweep asks both sides of each in the unit
+ * that tells it without a hand-kept list: the two media gate the same record
+ * at unrelated numbers.
  */
 const GATES: Gated[] = entities.flatMap((owner) => {
   const role = FILED.roleOf(owner)
@@ -45,6 +46,7 @@ const GATES: Gated[] = entities.flatMap((owner) => {
     ...(FILED.timelineOf(owner, 'affiliation') ?? []),
     ...(FILED.timelineOf(owner, 'status') ?? []),
     ...(FILED.timelineOf(owner, 'redrawing') ?? []),
+    ...(FILED.timelineOf(owner, 'relationships') ?? []),
     ...(Array.isArray(role) ? role : []),
   ]
   return [owner, ...steps.map((entry) => gateOf(entry, owner))]

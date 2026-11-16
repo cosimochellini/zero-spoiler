@@ -147,6 +147,8 @@ const EXPECTED: Record<string, Expected> = {
       'landmark',
       'log',
       'region',
+      'relationships[].summary',
+      'relationships[].type',
       'role',
       'summary',
     ],

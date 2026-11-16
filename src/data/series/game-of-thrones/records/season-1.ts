@@ -1,6 +1,7 @@
 import type { PlaceDossier } from '~/data/types'
 
 import type { ThronesSaga, ThronesVocabulary } from './saga'
+import { season1Relationships } from './season-1.relationships'
 
 /**
  * Season 1 of the show and *A Game of Thrones*: the main cast (#852), the
@@ -4382,6 +4383,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'daenerys-targaryen': {
+      relationships: season1Relationships['daenerys-targaryen'],
       role: [
         {
           episode: 1,
@@ -4444,6 +4446,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'viserys-targaryen': {
+      relationships: season1Relationships['viserys-targaryen'],
       role: {
         it: 'Pretendente in esilio al Trono di Spade',
         en: 'Exiled claimant to the Iron Throne',
@@ -4465,6 +4468,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'drogo': {
+      relationships: season1Relationships.drogo,
       role: {
         it: 'Khal, a capo di un khalasar dothraki',
         en: 'Khal, leader of a Dothraki khalasar',
@@ -4482,6 +4486,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'jorah-mormont': {
+      relationships: season1Relationships['jorah-mormont'],
       role: { it: 'Cavaliere in esilio', en: 'Exiled knight' },
       log: {
         it: 'Ha lasciato i Sette Regni e vive in esilio a Essos. Conosce i Dothraki e le loro usanze. A Pentos è tra gli ospiti riuniti intorno a khal Drogo e ai Targaryen.',
@@ -4504,6 +4509,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'illyrio-mopatis': {
+      relationships: season1Relationships['illyrio-mopatis'],
       role: { it: 'Magistro di Pentos', en: 'Magister of Pentos' },
       log: {
         it: 'Accoglie Viserys e Daenerys nella sua dimora a Pentos. Combina le nozze di Daenerys con khal Drogo. È presente quando Drogo vede Daenerys per la prima volta.',
@@ -4515,6 +4521,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'irri': {
+      relationships: season1Relationships.irri,
       role: { it: 'Ancella di Daenerys', en: 'Handmaiden to Daenerys' },
       log: {
         it: 'È una delle ancelle che servono Daenerys dopo le nozze con Drogo. È dothraki, come il popolo tra cui ora vive la sua khaleesi.',
@@ -4535,6 +4542,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'doreah': {
+      relationships: season1Relationships.doreah,
       role: { it: 'Ancella di Daenerys', en: 'Handmaiden to Daenerys' },
       log: {
         it: 'È una delle ancelle che servono Daenerys dopo le nozze con Drogo. A differenza delle altre non è dothraki. Insegna a Daenerys come dare piacere al marito.',
@@ -4555,6 +4563,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'rakharo': {
+      relationships: season1Relationships.rakharo,
       role: [
         {
           episode: 3,
@@ -4597,6 +4606,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'mirri-maz-duur': {
+      relationships: season1Relationships['mirri-maz-duur'],
       role: { it: 'Sacerdotessa e guaritrice', en: 'Godswife and healer' },
       log: {
         it: 'Daenerys la sottrae ai guerrieri che attaccano la sua gente. Dice di essere una sacerdotessa e una guaritrice, e Drogo le permette di curargli una ferita. Chi è vicino al khal la chiama maegi.',
@@ -6329,6 +6339,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'qotho': {
+      relationships: season1Relationships.qotho,
       role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
       log: {
         it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco.',
@@ -6347,6 +6358,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'cohollo': {
+      relationships: season1Relationships.cohollo,
       role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
       log: {
         it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco.',
@@ -6365,6 +6377,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'haggo': {
+      relationships: season1Relationships.haggo,
       role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
       log: {
         it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco. È lui a spezzare il braccio a Viserys. Offre il suo aiuto a Drogo, che lo rifiuta.',
@@ -6383,6 +6396,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'jhiqui': {
+      relationships: season1Relationships.jhiqui,
       role: { it: 'Ancella di Daenerys', en: 'Handmaiden to Daenerys' },
       log: {
         it: 'È una delle ancelle che servono Daenerys dopo le nozze con Drogo. È dothraki, come il popolo tra cui ora vive la sua khaleesi.',
@@ -6399,6 +6413,7 @@ export const season1: ThronesSaga = {
     },
     // His opening step and the show’s gate share episode 11, so the bloodrider step takes the next one, as Dareon’s does.
     'aggo': {
+      relationships: season1Relationships.aggo,
       role: [
         {
           episode: 11,
@@ -6435,6 +6450,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'jhogo': {
+      relationships: season1Relationships.jhogo,
       role: [
         {
           episode: 3,
@@ -6469,6 +6485,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'quaro': {
+      relationships: season1Relationships.quaro,
       role: { it: 'Guardia di Daenerys', en: 'Daenerys’s guard' },
       log: {
         it: 'È uno dei guerrieri dothraki incaricati di proteggere Daenerys. La accompagna nella città lhazareen messa a sacco dal khalasar.',
@@ -6488,6 +6505,7 @@ export const season1: ThronesSaga = {
     },
     // The show kills him at his gate and the book keeps him alive, the reverse of Gared. Chapter 63 only orders the death.
     'mago': {
+      relationships: season1Relationships.mago,
       role: [
         {
           episode: 8,
@@ -6530,6 +6548,7 @@ export const season1: ThronesSaga = {
       ],
     },
     'eroeh': {
+      relationships: season1Relationships.eroeh,
       role: { it: 'Ragazza lhazareen', en: 'Lhazareen girl' },
       log: {
         it: 'Daenerys la sottrae a Mago durante l’attacco alla sua città. Quando il khalasar si divide, Mago la violenta e la uccide.',
