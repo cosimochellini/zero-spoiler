@@ -1,14 +1,3 @@
-/* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Portfolio Grid · theme:
- *   the series' own (locked) · enrichment: Tier B hand-built SVG (each
- *   ability's own drawing) · nav: N9 edge-aligned (shared) · footer: Ft4
- *   colophon (shared)
- * · idea: "the fruits' album, plated by Nen type: a pinned control bar
- *   (search, type chips, both in the address) over a plate per type an open
- *   ability has, the abilities whose type the story had not told last, and
- *   one band of fog for every covered ability, so no plate says the type of
- *   one the reader has not reached"
- * · motion: the fog tiles' drift and clear (shared) */
 import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
@@ -38,8 +27,7 @@ export const Route = createFileRoute('/$series/$locale/abilities/')({
 })
 
 /**
- * Hunter x Hunter's Nen abilities page (Hallmark macrostructure 18,
- * Portfolio Grid): the brand line and a count, then the album
+ * Hunter x Hunter's Nen abilities page, an album of tiles: the brand line and a count, then the album
  * (`AbilityAlbum`).
  */
 function AbilitiesPage(): ReactElement {

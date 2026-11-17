@@ -1,18 +1,3 @@
-/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
-/* Hallmark · route: custom (bespoke) · genre: atmospheric · macrostructure: Marquee Hero
- *   (a hero title over a hall of thrones; the last build was Map / Diagram)
- * · idea: "thrones lit one by one" — every seat the reader has met is a throne,
- *   and a throne lights in its holder's colour only once the bookmark reaches
- *   who sits in it. A fogged seat is a dashed, unlit throne; a vacant one a
- *   solid, empty throne. The spoiler contract is the picture: the dark is what
- *   is not yet known. Mocked against a tiered monument and a ladder of ranks.
- * · theme: Sea Chart (locked) · display: Bricolage Grotesque 800 at `hero`
- * · hierarchy: a council's seats stand level; a chain's or a crew's first seat
- *   (the top rank, the captain) stands alone above the rest, larger
- * · motion: each lit throne's glow fades up in seat order, opacity only, and
- *   not at all under reduced motion; the title never animates (#929)
- * · contrast: names ink, titles muted, states ink2/muted on paper (40-41);
- *   the glow is decorative and carries no text */
 import * as stylex from '@stylexjs/stylex'
 import { Link } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
@@ -45,6 +30,12 @@ import { settleStyles } from '~/styles/settle'
  * them only for a holder the reader has reached, so the hall is as dark as
  * the reader's bookmark leaves it. Bodies met with every seat under fog are
  * one line at the end, never named, counted or placed.
+ *
+ * A council's seats stand level; a chain's or a crew's first seat (the top
+ * rank, the captain) stands alone above the rest, larger. Each lit throne's
+ * glow fades up in seat order, opacity only, and not at all under reduced
+ * motion; the title never animates (#929). The glow is decorative and
+ * carries no text.
  */
 export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
   const t = useSeriesOnlyT('one-piece')

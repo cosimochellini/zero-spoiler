@@ -1,18 +1,3 @@
-/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 */
-/* Hallmark · genre: atmospheric · macrostructure: Map / Diagram (the world
- *   map) over a Catalogue index · theme: Sea Chart (locked) · enrichment:
- *   Tier B hand-built SVG (the world in Oda's layout, an outline per island,
- *   the ships' own drawings on the route, each place's plate in the index)
- *   · nav: N9 edge-aligned (shared) · footer: Ft4 colophon (shared)
- * · idea: "the world as Oda draws it, filling in as you go; under it, every
- *   place reached as a plate, found by name, sea, type or saga, and the map
- *   lights what the index keeps"
- * · differs from the previous build (#671's schematic chart, rows or plates)
- *   on structure: the map is the world, zooms and pans across and names
- *   every stop; the index is plates only, the layout switch gone (owner,
- *   #728); theme is the project's locked system and does not rotate
- * · #676: the ships band at the foot is gone; each ship has her own page,
- *   reached from her peek on the chart */
 import { createFileRoute } from '@tanstack/react-router'
 import { createIsomorphicFn } from '@tanstack/react-start'
 import { getRequestHeader } from '@tanstack/react-start/server'

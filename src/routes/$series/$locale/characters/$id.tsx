@@ -7,12 +7,6 @@ import { ArchivePage } from '~/components/ArchivePage'
 import { useT } from '~/i18n/LocaleContext'
 import { readPlain } from '~/lib/plain'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
-/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Split Studio · theme: Sea
- *   Chart (locked) · enrichment: Tier B hand-built SVG (crest seal) · nav: N9 (shared) · footer: Ft4 (shared)
- * · structure: the crest | dossier diptych · the chronicle as one ledger ·
- *   reached relationships
- * · idea: "a page from the signal book, opened flat" */
 import type { RelationshipView } from '~/lib/view/relationships'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink } from '~/routes/$series/$locale/-back'

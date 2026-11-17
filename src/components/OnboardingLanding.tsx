@@ -16,8 +16,8 @@ import { settleStyles } from '~/styles/settle'
 const BAND = { controls: 0, wake: 1, faq: 2 } as const
 
 /**
- * The landing page for a visitor with no bookmark (Hallmark macrostructure
- * 21, Component Playground).
+ * The landing page for a visitor with no bookmark: a control and its
+ * playground.
  *
  * The page is one control and its live preview. A dial runs over East Blue;
  * moving it opens the arcs, the leads, the places and the ship the story has

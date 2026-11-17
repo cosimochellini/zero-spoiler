@@ -1,57 +1,22 @@
-/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V5 */
-/* Hallmark · route: custom (bespoke) · genre: atmospheric · macrostructure: Map / Diagram
- *   with an illustrated fold
- * · structure: illustrated fold (night sea, a full moon low on the water, the
- *   Thousand Sunny in silhouette cut out of it, course into fog, headline and
- *   two actions set into it) · sticky orientation column
- *   (lede · dial · legend) beside a vertical sea-route of waypoints, each with
- *   a framed line drawing; the reader's episode
- *   is a horizon line across the route and everything below it is under fog
- * · idea: "the spoiler boundary is a horizon you move"
- * · theme: custom "Sea Chart" · vibe: night sea, lantern gold, hand-drawn chart
- *   (One Piece's theme in src/styles/themes.ts since #757; pages with no series
- *   take the neutral "Blackout" set below)
- * · paper: oklch(13% 0.025 250) · accent: oklch(84% 0.16 88)
- * · display: Bricolage Grotesque 800 · body: Instrument Sans · outlier: JetBrains Mono
- *   (episode numerals + the horizon label)
- * · axes: dark / geometric-sans / chromatic-amber (88°) — differs from the previous
- *   build on all three (was light / display-heavy / warm 55°)
- * · nav: N9 edge-aligned (was N6) · footer: Ft4 dense colophon (was Ft5)
- * · sections: H2-shaped orientation column · F4-shaped route · legend · FAQ rows
- * · enrichment: Tier B hand-built SVG throughout — 35 line drawings (one object or
- *   place per record, 2px uniform stroke, no fills, one tint each from the 19-hue
- *   `tint` set), the fold chart (the one filled shape: the ship, paper on the
- *   moon's ink2 with a hairline accent rim), route segments, compass, legend
- *   swatches; no photographs, no official artwork
- * · contrast: pass (40-41) — ink 17.4:1 · ink2 12.3:1 · muted 8.1:1 · accent 12.2:1
- *   on paper; rule2 3.15:1 on paper3, the darkest surface a control sits on;
- *   accentInk 11.8:1 on accent
- * · honest: pass (46) — every number on the page is the reader's bookmark or a
- *   count of the archive at render time
- * · slop: pass (42-45) · chrome: pass (47) · tokens: pass (48) · icons: pass (30)
- * · type: 3 families, outlier in 2 registers (37-38) · no italic heads (38a);
- *   one step above `display` (`hero`) reserved for the fold headline, set on the
- *   display face's width axis at semi-condensed (87.5%) so two lines still hold
- *   16 characters
- * · mobile 320/375/414/768 + 1280/1440: verified in headless Chrome — no horizontal
- *   scroll, no wrapped affordance, horizon between open and fogged rows (34, 49-57) */
 import * as stylex from '@stylexjs/stylex'
 
 /**
  * Design tokens for "Sea Chart": a One Piece wiki drawn as a night-time sea
  * route, now one series among several, so its colours are a theme
  * (`src/styles/themes.ts`) and the defaults below are the site's own. The
- * taxonomy is Hallmark's canonical set (paper / ink / rule / muted / accent /
- * accentInk / focus, a 4pt space scale, named easings and durations), so a
- * reader of any other Hallmark project knows the names already.
+ * names are the usual token set (paper / ink / rule / muted / accent /
+ * accentInk / focus, a 4pt space scale, named easings and durations).
  *
- * Hallmark normally emits a `tokens.css` holding `:root { --color-ink: … }`.
- * We do not, and there is no second source of truth: `stylex.defineVars`
- * compiles to exactly those CSS custom properties. Keeping the values here
- * means the StyleX compiler can inline them and the fallow gate can see them.
+ * There is no `tokens.css` holding `:root { --color-ink: … }`, and no second
+ * source of truth: `stylex.defineVars` compiles to exactly those CSS custom
+ * properties. Keeping the values here means the StyleX compiler can inline
+ * them and the fallow gate can see them.
  *
  * The `.stylex.ts` suffix is mandatory rather than decorative: the compiler
  * only evaluates `defineVars` inside a `*.stylex.{js,ts}` module.
+ *
+ * Every number on a page is the reader's bookmark or a count of the archive
+ * at render time, and no heading is set in italics.
  */
 
 /**
@@ -140,8 +105,8 @@ export const tint = stylex.defineVars({
 })
 
 /**
- * Hallmark's 4pt scale, ten steps, named by role. The keys are camelCase
- * because a `defineVars` key has to be a valid identifier, so the usual
+ * A 4pt scale, ten steps, named by role. The keys are camelCase because a
+ * `defineVars` key has to be a valid identifier, so the usual
  * `3xs … 4xl` names shift one character:
  *
  *   xs3 = 3xs (2px)    xs2 = 2xs (4px)    xs = 8px     sm = 12px   md = 16px
@@ -163,9 +128,9 @@ export const space = stylex.defineVars({
 })
 
 /**
- * Two families plus one outlier, which is Hallmark's 2+1 ceiling. The outlier
- * is confined to two slots: episode numerals wherever they appear, and the
- * horizon label on the route.
+ * Two families plus one outlier, and never a fourth: the 2+1 ceiling. The
+ * outlier is confined to two slots: episode numerals wherever they appear,
+ * and the horizon label on the route.
  *
  * `Bricolage Grotesque` is a display grotesque with an optical-size axis. It
  * is set at 800 on the headline, the wordmark, waypoint names and legend
@@ -247,7 +212,7 @@ export const radius = stylex.defineVars({
 export const rule = stylex.defineVars({ hair: '1px', fine: '2px' })
 
 /**
- * Hallmark's six named levels, plus `skip`.
+ * Six named levels, plus `skip`.
  *
  * `sticky` and `stickyNav` are separate so a banner pinned under the bar
  * cannot climb over it, and `bar` is the site bar over both. `skip` sits

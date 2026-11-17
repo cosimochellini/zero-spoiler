@@ -1,7 +1,3 @@
-/* Hallmark · component: modal (bookmark dialog) · genre: atmospheric · theme: Sea Chart (locked)
- * states: default · hover · focus · active · disabled · loading · error · success
- * redesign 2026-10-12: the number as the hero, bottom sheet under 40rem, gold Save
- */
 import * as stylex from '@stylexjs/stylex'
 
 import {

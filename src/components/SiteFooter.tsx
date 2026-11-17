@@ -8,7 +8,7 @@ import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 export const REPOSITORY = 'https://github.com/cosimochellini/zero-spoiler'
 
 /**
- * The footer (Hallmark Ft4, dense colophon).
+ * The footer, a dense colophon.
  *
  * One block of small type that says what the page is made of and how it
  * behaves, the way a colophon closes a book. Four columns of links and a row of

@@ -1,14 +1,3 @@
-/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 */
-/* Hallmark · genre: atmospheric · macrostructure: Map / Diagram · theme: Sea
- *   Chart (locked) · enrichment: Tier B hand-built SVG (the world itself: the
- *   Red Line's ridges, Reverse Mountain, waves, a Sea King, the compass; an
- *   outline per island; the ships' own drawings ride on it) · each stop and
- *   ship peeks (popover, a sheet under 40rem: SeaChartPeek.styles)
- * · idea: "the world as Oda draws it, filling in as you go: every place you
- *   have reached named on it, every saga written over its stretch"
- * · differs from the schematic chart before it (#671) on structure: the
- *   world's own layout, a window that zooms and pans across, names always
- *   written; gold stays the one accent: the route sailed and the ship */
 import * as stylex from '@stylexjs/stylex'
 import { type ReactElement, type ReactNode, useMemo } from 'react'
 
@@ -43,8 +32,7 @@ import { useChartZoom } from '~/components/useChartZoom'
 import { useT } from '~/i18n/LocaleContext'
 
 /**
- * The sea chart at the top of the places page (Hallmark macrostructure Map /
- * Diagram).
+ * The sea chart at the top of the places page, a map of the world.
  *
  * The world as Oda draws it, the route running from East Blue over Reverse
  * Mountain and on through every stop the reader has reached, gold, in the

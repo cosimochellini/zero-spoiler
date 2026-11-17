@@ -22,8 +22,8 @@ type Palette = Record<keyof typeof NEUTRAL, string>
  * 3:1 on every surface. `accentInk` on `accent` is 11.8:1.
  *
  * The chroma on the papers (0.025-0.030) runs above the 0.005-0.015 band
- * Hallmark suggests for neutrals. That is the sea, and it is the one
- * deliberate deviation in this palette.
+ * usual for neutrals. That is the sea, and it is the one deliberate
+ * deviation in this palette.
  */
 const ONE_PIECE: Palette = {
   paper: 'oklch(13% 0.025 250)',

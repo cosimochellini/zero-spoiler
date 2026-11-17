@@ -4,18 +4,6 @@ import type { ReactElement, ReactNode } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
 import { useT } from '~/i18n/LocaleContext'
-/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Split Studio (as the
- *   character page) · theme: Sea Chart (locked) · enrichment: Tier B
- *   hand-built SVG (the plate, the stretch of the sea chart around the
- *   place, the place's drawings in a row) · nav: N9 (shared) · footer: Ft4
- *   (shared)
- * · structure: the plate | entry diptych (records found here, characters
- *   from here) · map words and later visits |
- *   the stretch of the chart, its stops named · the drawings in order
- * · a ship (#676): the same diptych (facts, log, places she reaches) and the
- *   drawings in order; no map, because a ship is not a stop
- * · idea: "one stop of the chart, opened flat" */
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink } from '~/routes/$series/$locale/-back'
 import {
@@ -52,8 +40,7 @@ export const Route = createFileRoute('/$series/$locale/places/$id')({
 })
 
 /**
- * A place's page (Hallmark macrostructure 15, Split Studio, as a
- * character's), and a ship's, which is served from the same address.
+ * A place's page (a split, as a character's), and a ship's, which is served from the same address.
  *
  * Three bands down a place's page. The first is the plate beside the entry:
  * kind and episode in mono, the name as the only display line, the
