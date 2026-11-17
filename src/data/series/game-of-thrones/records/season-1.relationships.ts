@@ -5089,7 +5089,7 @@ const crown = {
     type: { en: 'Brother', it: 'Fratello' },
     summary: {
       en: 'His younger brother, whom Catelyn Stark took prisoner.',
-      it: 'Il fratello minore, fatto prigioniero da Catelyn Stark.',
+      it: 'Il fratello minore, che Catelyn Stark aveva fatto prigioniero.',
     },
   },
   // Show: "Baelor". Books: Catelyn X (chapter 64).
@@ -5152,8 +5152,8 @@ const crown = {
     character: 'jaime-lannister',
     type: { en: 'Son', it: 'Figlio' },
     summary: {
-      en: 'His elder son, at war with the Tullys in the riverlands.',
-      it: 'Il figlio maggiore, in guerra con i Tully nelle Terre dei Fiumi.',
+      en: 'His elder son, who has led a Lannister army against the Tullys in the riverlands.',
+      it: 'Il figlio maggiore, che ha guidato un esercito dei Lannister contro i Tully nelle Terre dei Fiumi.',
     },
   },
   tywTyrionHand: {
@@ -5559,16 +5559,16 @@ const crown = {
     character: 'tyrion-lannister',
     type: { en: 'Prisoner', it: 'Prigioniero' },
     summary: {
-      en: 'The queen’s brother, brought to her court as Catelyn’s prisoner.',
-      it: 'Il fratello della regina, portato alla sua corte come prigioniero di Catelyn.',
+      en: 'The queen’s brother, brought to Lysa’s court as Catelyn’s prisoner.',
+      it: 'Il fratello della regina, portato alla corte di Lysa come prigioniero di Catelyn.',
     },
   },
   lysTyrionFreed: {
     character: 'tyrion-lannister',
     type: { en: 'Prisoner', it: 'Prigioniero' },
     summary: {
-      en: 'The queen’s brother, whom she kept in a sky cell. He wins his freedom in a trial by combat.',
-      it: 'Il fratello della regina, che lei ha tenuto in una cella del cielo. Si guadagna la libertà con un processo per duello.',
+      en: 'The queen’s brother, whom Lysa kept in a sky cell. He wins his freedom in a trial by combat.',
+      it: 'Il fratello della regina, che Lysa ha tenuto in una cella del cielo. Si guadagna la libertà con un processo per duello.',
     },
   },
   lysVardis: {
@@ -6437,10 +6437,10 @@ const crown = {
   // Meryn Trant
   merArya: {
     character: 'arya-stark',
-    type: { en: 'Girl he was sent for', it: 'Ragazza da catturare' },
+    type: { en: 'Girl he was sent for', it: 'Ragazza che doveva catturare' },
     summary: {
-      en: 'Eddard Stark’s younger daughter, whom he is sent to seize.',
-      it: 'La figlia minore di Eddard Stark, che viene mandato a catturare.',
+      en: 'Eddard Stark’s younger daughter, whom he was sent to seize.',
+      it: 'La figlia minore di Eddard Stark, che lui è stato mandato a catturare.',
     },
   },
   merSyrio: {
@@ -7113,7 +7113,10 @@ const crown = {
   },
   marTyrion: {
     character: 'tyrion-lannister',
-    type: { en: 'Lord he sang for', it: 'Lord per cui ha cantato' },
+    type: {
+      en: 'Lord he offered to sing for',
+      it: 'Lord a cui ha offerto una canzone',
+    },
     summary: {
       en: 'The queen’s brother. Marillion offers to sing for him and draws his eye to Catelyn’s table.',
       it: 'Il fratello della regina. Marillion si offre di cantare per lui e gli fa notare il tavolo di Catelyn.',
@@ -7237,10 +7240,10 @@ const crown = {
   },
   morTyrion: {
     character: 'tyrion-lannister',
-    type: { en: 'Prisoner', it: 'Prigioniero' },
+    type: { en: 'Prisoner he kept', it: 'Prigioniero da lui custodito' },
     summary: {
-      en: 'His prisoner in the sky cells, who promises him gold to carry a message to Lady Lysa.',
-      it: 'Il suo prigioniero nelle celle del cielo, che gli promette dell’oro se porterà un messaggio a lady Lysa.',
+      en: 'The prisoner he kept in the sky cells, who promised him gold to carry a message to Lady Lysa.',
+      it: 'Il prigioniero che lui custodiva nelle celle del cielo, che gli ha promesso dell’oro se avesse portato un messaggio a lady Lysa.',
     },
   },
   morLysa: {
