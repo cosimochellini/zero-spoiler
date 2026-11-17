@@ -135,6 +135,18 @@ function rowIn(line, section) {
   }
 }
 
+/**
+ * The wiki pages each series may cite. Game of Thrones cites the show's wiki,
+ * the Ice and Fire Wiki for the books, and A Wiki of Ice and Fire where it
+ * could be read.
+ */
+const WIKI_PAGES = {
+  'game-of-thrones':
+    /^https:\/\/(?:(?:gameofthrones|iceandfire)\.fandom\.com\/wiki|awoiaf\.westeros\.org\/index\.php)\/\S+$/u,
+  'hunter-x-hunter': /^https:\/\/hunterxhunter\.fandom\.com\/wiki\/\S+$/u,
+  'one-piece': /^https:\/\/onepiece\.fandom\.com\/wiki\/\S+$/u,
+}
+
 /** The series each top-level heading opens; One Piece needs none. */
 const SERIES_HEADINGS = {
   '# Game of Thrones': 'game-of-thrones',
@@ -229,13 +241,9 @@ describe('the chronicle verification log', () => {
     }
   })
 
-  it('cites a wiki page and a note for every story', () => {
-    // Game of Thrones cites the show's wiki, the Ice and Fire Wiki for the
-    // books, and A Wiki of Ice and Fire where it could be read.
+  it('cites a wiki page of its own series and a note for every story', () => {
     for (const row of ROWS) {
-      expect(row.source, asLine(row)).toMatch(
-        /^https:\/\/(?:(?:onepiece|hunterxhunter|gameofthrones|iceandfire)\.fandom\.com\/wiki|awoiaf\.westeros\.org\/index\.php)\/\S+$/u,
-      )
+      expect(row.source, asLine(row)).toMatch(WIKI_PAGES[row.series])
       expect(row.note.length, asLine(row)).toBeGreaterThan(0)
     }
   })

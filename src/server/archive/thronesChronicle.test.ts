@@ -524,7 +524,7 @@ const STORIES: Row[] = [
     medium: 'books',
     episode: 8,
     chapter: 62,
-    title: 'An offer to the khal',
+    title: 'Mago’s complaint',
   },
   {
     id: 'haggo',
