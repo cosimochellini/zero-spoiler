@@ -29,6 +29,13 @@ with `docs:chronicle` when their inputs change. CI client JavaScript growth over
 2,048 bytes needs a standalone `client-budget: <reason>` in the PR body; leak
 checks remain blocking.
 
+`gate:design` serves the build and scans its pages with impeccable's detector at
+390 and 1440 px wide; it needs Chrome. Fix a finding in the page. A rule the
+house style contradicts is waived in `.impeccable/config.json` with
+`npx impeccable ignores add-value <rule> "*" --file "<glob>" --reason "…"`, and
+the gate refuses a waiver that gives no reason.
+`npm run gate:design -- --no-config` lists what the waivers hide.
+
 ## Archive and drawing verification
 
 - **One Piece data:** compare base/head `npm run --silent archive:table` dumps;
