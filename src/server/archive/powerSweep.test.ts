@@ -29,7 +29,7 @@ const { archive } = ONE_PIECE_LOADED
 const { bodies } = withFeatures(archive)
 
 /** Every gate the power page reads. */
-function gatesOf(): Gated[] {
+function powerGates(): Gated[] {
   return bodies.flatMap((body) => [
     body,
     ...body.description.map((version) => archive.gateOf(version, body)),
@@ -64,7 +64,7 @@ const HOLDERS: Entity[] = [
   ),
 ].flatMap((id) => (id === null ? [] : (archive.getCharacter(id) ?? [])))
 
-const POINTS: Bookmark[] = [null, ...aroundGates(gatesOf(), archive.series)]
+const POINTS: Bookmark[] = [null, ...aroundGates(powerGates(), archive.series)]
 
 const ASKS = POINTS.flatMap((bookmark) =>
   LOCALES.map((locale) => ({ bookmark, locale })),
