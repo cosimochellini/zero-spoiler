@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import type { Locale } from '~/i18n/locales'
+import { readOpenEntries } from '~/lib/progress/openEntries'
 import type {
   CharacterView,
   CoveredRecord,
@@ -14,6 +15,7 @@ import {
   at,
   coveredRecord,
   coveredSlot,
+  openEntryLinks,
   openSlot,
   peekPending,
   peekTo,
@@ -502,5 +504,13 @@ describe('CharacterGrid', () => {
 
     expect(screen.getByLabelText('Cerca un personaggio')).toBeInTheDocument()
     expect(screen.getByText('3 nella nebbia')).toBeInTheDocument()
+  })
+
+  it('reports as many open entries as it draws', async () => {
+    book()
+    await settle()
+
+    expect(openEntryLinks('characters')).toBeGreaterThan(0)
+    expect(readOpenEntries()).toBe(openEntryLinks('characters'))
   })
 })

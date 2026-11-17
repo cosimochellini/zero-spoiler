@@ -23,6 +23,7 @@ import { SearchField } from '~/components/SearchField'
 import { searchStyles } from '~/components/SearchField.styles'
 import { useSettled } from '~/components/useSettled'
 import { useSeriesT, useT } from '~/i18n/LocaleContext'
+import { useOpenEntries } from '~/lib/progress/openEntries'
 import { foldName } from '~/lib/search/fold'
 import type {
   CharacterView,
@@ -185,6 +186,7 @@ function SearchCount({
 }): ReactElement {
   const t = useT()
   const open = sections.flatMap((section) => section.open)
+  useOpenEntries(open.length)
   const count = matchesIn(open, needle).length
   const empty = query !== '' && count === 0
   const status =

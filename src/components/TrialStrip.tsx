@@ -1,6 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement } from 'react'
 
+import { stripStyles } from '~/components/Strip.styles'
 import { Button } from '~/components/ui/Button'
 import { useT } from '~/i18n/LocaleContext'
 import type { Translate } from '~/i18n/types'
@@ -9,7 +10,7 @@ import { type Bookmark, bookmarkValue } from '~/lib/progress/episode'
 import type { Book } from '~/lib/progress/series'
 import { bookmarkBook } from '~/lib/progress/threshold'
 import { markWelcome } from '~/lib/progress/welcome'
-import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
+import { color, space } from '~/styles/tokens.stylex'
 
 /**
  * The line under the bar while a visitor is on a trial point: which point,
@@ -26,9 +27,9 @@ export function TrialStrip(): null | ReactElement {
   return (
     <div
       role="status"
-      {...stylex.props(styles.strip)}
+      {...stylex.props(stripStyles.strip)}
     >
-      <p {...stylex.props(styles.words)}>
+      <p {...stylex.props(stripStyles.words)}>
         {trialWords(t, bookmark, series?.books)}
       </p>
       <div {...stylex.props(styles.actions)}>
@@ -64,28 +65,6 @@ function trialWords(
 }
 
 const styles = stylex.create({
-  strip: {
-    borderBlockStyle: 'solid',
-    gap: space.sm,
-    paddingBlock: space.sm,
-    paddingInline: space.md,
-    alignItems: 'center',
-    backgroundColor: color.paper2,
-    borderBlockColor: color.accent,
-    borderBlockWidth: rule.hair,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-  words: {
-    color: color.ink,
-    fontFamily: font.mono,
-    fontSize: text.xs,
-    fontWeight: 700,
-    letterSpacing: '0.06em',
-    lineHeight: leading.heading,
-    textTransform: 'uppercase',
-  },
   actions: { gap: space.xs, display: 'flex', flexWrap: 'wrap' },
   save: { borderColor: color.accent, color: color.accent },
 })

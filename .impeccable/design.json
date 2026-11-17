@@ -923,7 +923,7 @@
       },
       {
         "name": "The Mono Rule",
-        "body": "JetBrains Mono is the voice of data: numerals, counts and short uppercase labels (owner, 2026-11-17). It is never used for a sentence or a heading. The code uses it in 55 style lines in 32 files, and those uses stand. Two are sentences set in mono today, the trial strip's line and the map's hint; the bookmark and places passes judge them.",
+        "body": "JetBrains Mono is the voice of data: numerals, counts and short uppercase labels (owner, 2026-11-17). It is never used for a sentence or a heading. The code uses it in 54 style lines in 31 files, and those uses stand. One is a sentence set in mono today, the map's hint; the places pass judges it. The trial strip's line was the other, and is in the body face since #1375.",
         "section": "typography"
       }
     ],

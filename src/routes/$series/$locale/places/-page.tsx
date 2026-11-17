@@ -11,6 +11,7 @@ import type { Orientation } from '~/components/chartGeometry'
 import { SeaChart } from '~/components/SeaChart'
 import { useSeriesT } from '~/i18n/LocaleContext'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
+import { useOpenEntries } from '~/lib/progress/openEntries'
 import type { PlacesView } from '~/lib/view/places'
 import type { PortView } from '~/lib/view/records'
 import { useScrollBackOnceTall } from '~/routes/$series/$locale/-scrollBack'
@@ -60,6 +61,7 @@ export function PlacesBody({
   // Always on: after a client visit the index is drawn at once, the page is
   // already tall, and the hook stops at its first look.
   useScrollBackOnceTall(true)
+  useOpenEntries(open.length)
 
   const index = (
     <PlaceIndex
