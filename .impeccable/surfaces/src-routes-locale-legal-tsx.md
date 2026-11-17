@@ -12,14 +12,14 @@ related_targets: ["src/routes/$locale/privacy.tsx","src/components/LegalPage.tsx
 **For:** every notice in one place: the unofficial project notice, the rights
 contact, privacy and cookies, sources and licenses.
 
-**Where:** `/<locale>/legal`. `/<locale>/privacy` redirects to its privacy
-section. The page belongs to no series, so it is in Blackout.
+**Where:** `/<locale>/legal` (`LegalPage`, `PrivacyNotice`).
+`/<locale>/privacy` redirects to its privacy section.
 
-**Holds today:**
+**Must not break:**
 
-- Legal notices live on this page (owner decision). The footer carries one
-  line of notice and one link to it, and no other page repeats them.
-- The privacy notice does not depend on the reader's bookmark. The source credits do:
-  they list only references open at the bookmark.
-- Links here keep their underline; `src/styles/themes.test.tsx` fails when an
-  accent link loses it.
+- Legal notices live on this page; the footer carries one line and one link to
+  it (owner decision; `LegalPage.tsx`).
+- An accent link keeps its underline (`src/styles/themes.test.tsx`).
+
+**Open points:** the page's measure is 76ch, over the 52 to 66ch rule
+(`LegalNotice.styles.ts`).

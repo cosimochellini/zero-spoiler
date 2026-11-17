@@ -14,19 +14,15 @@ reached.
 
 **Where:** `/<series>/<locale>/places` and `/<series>/<locale>/places/<id>`,
 which also serves a ship's page. One Piece's places page opens with the world
-map (`SeaChart*`) over an index of plates; the other series have the index
-only.
+map (`SeaChart*`) over an index; the other series have the index only.
 
-**Holds today:**
+**Must not break:**
 
-- The map fills in as the reader goes: reached islands are drawn in their
-  saga's tint and named, and a sea is drawn and named only once the reader has
-  a stop in it. The sea, the belts, the Red Line and the currents take fixed
-  tints, and the leg where the ship does not sail is a red line.
-- The accent draws the route travelled, the ship, the reader's stop and the
-  compass's north.
-  Past the ship the route goes on dashed into fog, one unnamed dot per stop.
-- The map is drawn upright on a phone, where it does not move, and across on a
-  wider window, where it zooms and pans.
-- Every stop and ship opens a peek: a popover, or a bottom sheet below 40rem.
-  A peek has no disabled control; a stop under fog shows a veil in it.
+- A sea is drawn and named only once the reader has a stop in it
+  (`SeaChart.tsx`, `src/lib/view/chart.ts`).
+- A stop under fog says its number and threshold and nothing else, and its
+  peek is veiled (`SeaChart.tsx`).
+- The index names a saga only once the reader has a stop in it
+  (`src/server/archive/places.server.ts`).
+
+**Open points:** none recorded.

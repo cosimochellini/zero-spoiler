@@ -160,23 +160,18 @@ spacing:
 **Creative North Star: "The spoiler boundary is a horizon you move"**
 
 The reader's bookmark is one line through the story. What lies before it is
-drawn, named and lit; what lies after it is under fog. A series' pages mark that
-line in several ways: the accent on the bookmark mark and on the route travelled
-on the places map; fog, muted ink and often a dashed rule for what is not
-reached.
-
-The site is dark, and only dark. Four colour sets share one structure:
-"Blackout" for the hub and the legal page, and one theme per series. Type,
-spacing, radii and motion are shared. The pictures are line drawings made for
-this project.
+drawn, named and lit; what lies after it is under fog. The site is dark, and
+only dark. Four colour sets share one structure: "Blackout" for the hub and the
+legal page, and one theme per series. Type, spacing, radii and motion are
+shared. The pictures are line drawings made for this project.
 
 The owner prefers bold, dramatic, eye-catching UI with one central idea over
-restrained layouts. Today the home fold, the landing page, the hub, the ranks
-page and a fruit's or an ability's page state theirs at the Hero size; the
-listings (characters, places, filler) set their title at the Headline size. This
-identity is fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing,
-states, motion, copy, responsive behaviour and accessibility, and add no font,
-colour or theme.
+restrained layouts. This identity is fixed (owner, 2026-11-17). Later passes
+refine hierarchy, spacing, states, motion, copy, responsive behaviour and
+accessibility, and add no font, colour or theme.
+
+The code is the reference for how a component looks. This file holds the tokens,
+the rules and the open points.
 
 **Key Characteristics:**
 
@@ -190,58 +185,45 @@ colour or theme.
 Dark neutrals tinted toward one hue per set, with a single accent. Every value
 is OKLCH. The frontmatter lists them, prefixed by set: `blackout-`,
 `one-piece-`, `hunter-x-hunter-`, `game-of-thrones-`, and `tint-`. A theme
-overrides every colour token, so nothing of Blackout shows on a series page.
+overrides every colour token.
 
 ### Primary
 
-- **Lantern Gold** (`one-piece-accent`): One Piece's theme, "Sea Chart". Gold on
-  blue neutrals, complementary on purpose.
-- **Gon's Green** (`hunter-x-hunter-accent`): a leaf green on forest-green
-  neutrals.
-- **Ember Red** (`game-of-thrones-accent`): the theme "Ember". A true red on
-  dark ember neutrals.
-- **Spotlight White** (`blackout-accent`): the hub and the legal page. Nothing
-  else there is chromatic, so each series card brings the only colour.
+- **Lantern Gold** (`one-piece-accent`): One Piece's theme, "Sea Chart".
+- **Gon's Green** (`hunter-x-hunter-accent`): Hunter x Hunter's theme.
+- **Ember Red** (`game-of-thrones-accent`): Game of Thrones' theme, "Ember".
+- **Spotlight White** (`blackout-accent`): the hub and the legal page.
 
 ### Neutral
 
-- **Paper, Paper 2, Paper 3** (`*-paper`, `*-paper2`, `*-paper3`): the page; a
-  tile's frame and a dialog; a pressed or picked control.
+- **Paper, Paper 2, Paper 3** (`*-paper`, `*-paper2`, `*-paper3`): the page and
+  its two lighter surfaces.
 - **Rule, Rule 2** (`*-rule`, `*-rule2`): decorative hairlines; the boundary of
   a control.
-- **Muted, Ink 2, Ink** (`*-muted`, `*-ink2`, `*-ink`): labels and counts; ledes
-  and secondary text; text and headings.
-- **Accent Ink** (`*-accentInk`): text on a surface painted in the accent.
+- **Muted, Ink 2, Ink** (`*-muted`, `*-ink2`, `*-ink`): three text inks, from
+  quietest to strongest.
+- **Accent Ink** (`*-accentInk`): text on a surface filled with the accent.
 - **Focus** (`*-focus`): the focus ring.
-- **Glow, Scrim, Veil** (`*-glow`, `*-scrim`, `*-veil`): overlays, and the only
-  tokens with alpha: the bloom at the top of the page, the dark behind a dialog,
-  the glass of the site bar.
+- **Glow, Scrim, Veil** (`*-glow`, `*-scrim`, `*-veil`): the overlays, and the
+  only tokens with alpha.
 
 ### Drawing Tints
 
 Nineteen hues (`tint-*`), shared by every series. A record's drawing takes
-exactly one, for the stroke that identifies it. The same tint draws the frame
-around that drawing and may wash the surface behind it at low alpha: the home
-fold, a fruit's or an ability's page, the lead of the fruits page, a held seat
-on the ranks page. The places map uses tints most widely: a reached island's
-outline and wash, its stop's dot and its saga's name in the saga's tint; fixed
-tints for the sea, the belts, the Red Line and the currents; and a red line for
-the leg of the route where the ship does not sail. It is not the colour of a
-button, a field or a chip, or of running text.
+exactly one. A tint may also colour the frame around its drawing and wash the
+surface behind it at low alpha, and the places map draws its saga hues and the
+world map's fixed features in tints. A tint is not the colour of a button, a
+field or a chip, or of running text.
 
 ### Named Rules
 
 **The One Accent Rule.** One accent per series, never a large fill (owner,
-2026-11-17). The accent is a line, a word, a border or a dot. The code today
-fills these surfaces with it, and they are the accepted set: the button of a
-primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing
-page's primary buttons); the cells of pure filler episodes in the filler
-countdown and strip (a recap is filled with Ink 2, a mixed episode is half
-filled with the accent, a canon one is not filled); and small marks (a picked
-chip's dot, a dot on a fruit's history, the north of the map's compass, a legend
-swatch). The hub lights each series card with a low-alpha beam of its accent.
-Text on a filled accent surface is Accent Ink. Keep these filled, and add no
-other.
+2026-11-17). The accent is a line, a word, a border or a dot. The code fills a
+few surfaces with it, and they are the accepted set: the button of a primary
+action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's
+primary buttons); the marks for filler in `FillerCountdown.styles.ts` and
+`FillerStrip.tsx`; and small marks such as a picked chip's dot. Text on a filled
+accent surface is Accent Ink. Keep these filled, and add no other.
 
 **The Floors Rule.** On every paper of every set, Ink and Ink 2 hold 7:1, Muted
 and the accent 4.5:1, Rule 2 and Focus 3:1, and Accent Ink on the accent 4.5:1.
@@ -265,35 +247,22 @@ values. Its schema has no `clamp()`, so it gives Hero and Display at their
 largest; the clamps are in `src/styles/tokens.stylex.ts` and
 `.impeccable/design.json`.
 
-- **Hero** (800, fluid, line height 1): the one largest line of a page. Tracked
-  -0.02em to -0.035em, semi-condensed where two lines have to hold.
-- **Display** (800, fluid, line height 1): a page's or a record's title.
-- **Headline** (800, line height 1.15): a listing's title, section headings.
-- **Title** (800, line height 1.15): group names and names in rows.
-- **Body** and **Lede** (400, line height 1.6): running text and the sentence
-  under a title. The measure most components set is 52 to 66ch. Wider today, for
-  the surface passes (#1375 to #1383) to bring in: the legal page (76ch), the
-  footer (72ch) and the landing page's lede.
-- **Label** (600, uppercase, tracked 0.08em): the word above or beside a value.
-- **Numeral** (mono, 600 to 700, tabular figures): episode and chapter numbers
-  and the reader's point, often uppercase and tracked with their unit.
-- **Micro** (mono): below the scale, for the filler countdown cells on a phone
-  and the names of seas on the places map.
+- **Hero** and **Display** (800, line height 1): the largest line of a page.
+- **Headline** and **Title** (800, line height 1.15): headings and names.
+- **Body** and **Lede** (400, line height 1.6): running text.
+- **Label** (600, uppercase, tracked): the word above or beside a value.
+- **Numeral** and **Micro** (mono, tabular figures): numbers.
 
 ### Named Rules
 
 **The Two Plus One Rule.** Two families and one outlier, and never a fourth.
 
 **The Numerals Rule (open decision).** The owner's rule: JetBrains Mono is for
-episode numerals (2026-11-17). The code today sets 55 style lines in 32 files in
-it: episode and chapter numerals, counts, the number in the bookmark dialog and
-short uppercase lines that carry a number. A few carry none: the arc's name
-under the number in the bookmark dialog, the language code, the names of seas
-and the hint on the places map, an epithet on the landing page, the trial
-strip's sentence and the glyph of a `quiet` button. The owner has not ruled
-between narrowing the code and widening the rule. Until then: keep every
-existing use, and add mono only for a numeral or a short line that carries one,
-never for prose or a heading.
+episode numerals (2026-11-17). The code uses it more widely (55 style lines in
+32 files): numerals, counts, short uppercase lines beside a number, and a few
+lines with no number. The owner has not ruled between narrowing the code and
+widening the rule. Until then: keep every existing use, and add mono only for a
+numeral or a short line that carries one, never for prose or a heading.
 
 ## Layout
 
@@ -301,45 +270,29 @@ The shell is one centred column, at most 76rem wide. Spacing is a 4pt scale
 (`spacing` in the frontmatter; `xl4` is defined and unused today). Siblings are
 spaced with `gap`; `margin` is for optical adjustment only.
 
-The site bar is pinned at every width. Its pinned height is 6rem below 40rem and
-3.25rem from there up; a series page keeps 6rem up to 56rem. A series bar fills
-that height with two rows. On the hub and the legal page the bar has one row at
-every width and still pins at 6rem below 40rem. A listing's control bar and the
-sticky heads under it pin below it. A listing's control bar pins whole only in a
-window at least 40rem wide and 32rem tall; in a narrower or shorter one it folds
-to one row.
+The site bar is pinned at every width, at the height the `pin.bar` token gives,
+and a listing's controls and sticky heads pin under it (`src/styles/sticky.ts`).
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
-is no named scale. `.impeccable/design.json` lists each with its use. Two carry
-most of the layout: below 40rem a dialog and a peek are bottom sheets and grids
-drop to two columns or one; from 60rem a record's page is two columns.
+is no named scale. `.impeccable/design.json` lists each with its use. 40rem is
+the line between a phone and a wider window.
 
 ## Elevation & Depth
 
 Flat, with no drop shadows. Depth comes from the three papers, hairline rules
-and the overlays: the site bar is frosted glass (Veil with a backdrop blur) and
-a dialog darkens the page with Scrim. `box-shadow` appears only as a flat line
-that costs no layout. The z-index levels are in `.impeccable/design.json`
-(`z.base` is defined and unused today); dialogs are native `<dialog>` elements
-in the top layer.
+and the overlays. `box-shadow` appears only as a flat line that costs no layout.
+The z-index levels are in `.impeccable/design.json` (`z.base` is defined and
+unused today); dialogs are native `<dialog>` elements in the top layer.
 
 ## Shapes
 
 Corners are nearly square: `rounded.card` for tiles and dialogs, `rounded.input`
-for buttons, fields and chips. `rounded.pill` is for round controls and marks,
-such as a stepper, a close button or a dot on the map. Lines are 1px for
-hairlines and 2px for a control's boundary and the focus ring. A button, a field
-and a chip keep their border width in every state.
+for buttons, fields and chips, `rounded.pill` for round controls and marks.
+Lines are 1px for hairlines and 2px for a control's boundary and the focus ring.
 
-Dashes do two jobs today. They mark what is not reached: the rule over a fog
-band and over the fog row of the places index, the bookmark mark with no
-bookmark set, a covered card on the landing page, a seat whose holder is under
-fog and the line for groups under fog on the ranks page, and the route past the
-reader's stop on the places map. They are also plain drawing on reached content:
-the inner ring of a character's seal, the inner rule of a place's plate, the
-ground, shadow and water strokes of a drawing, the sea currents on the map, and
-the dotted accent line of the route already travelled. A dash alone therefore
-does not say "under fog".
+A dash does not by itself mean "under fog". Dashes mark some things the reader
+has not reached, and they are also plain drawing on reached content. The fog
+brief holds this as an open point.
 
 Drawings follow the
 [`line-drawings` skill](.claude/skills/line-drawings/SKILL.md), which owns their
@@ -350,53 +303,34 @@ and no lettering, and nothing the reader has not reached.
 ## Components
 
 The code is the reference; each component's comment gives its reasons.
-`.impeccable/design.json` carries six of them as HTML and CSS. The bookmark
-controls and the fog components are in their surface briefs
-(`.impeccable/surfaces/`).
+`.impeccable/design.json` carries six components as HTML and CSS. Each surface's
+brief in `.impeccable/surfaces/` lists what its pass must not break.
 
 ### Buttons
 
-- **Shape:** `src/components/ui/Button.tsx` is the shared button: a 2px border
-  in Rule 2, at least 44px tall. `chip` is the default; `quiet` is a 44px square
-  for a glyph. Five components draw a `<button>` of their own, where a whole
-  tile, a stop on the map or a cell is the target: `SpoilerVeil`, `FogTile`,
-  `SeaChartStops`, `SeaChartPins` and `FillerCountdown`.
-- **Hover / Focus:** the text takes the accent and the border Ink. The focus
-  ring is a 2px outline in Focus, reserved at rest. A press moves it down 1px.
-- **Disabled:** the shared button sets the attribute, a `not-allowed` cursor and
-  55% opacity together. Save does not fade: disabled, it is Paper 3 with a Rule
-  border and Muted text at full opacity. A control that could never act is left
-  out instead: the line that clears the bookmark is absent when there is none.
+- **Shape:** `src/components/ui/Button.tsx` is the shared button. Its border
+  keeps one width in every state, and its focus ring is reserved at rest.
+- **Disabled:** never by opacity alone. A control that could never act is left
+  out, not disabled.
 
 ### Inputs / Fields
 
-- **Search:** `src/components/SearchField.tsx`, on the listings: Paper, a 2px
-  border in Rule 2, 44px tall. On focus the border takes Ink and the 2px Focus
-  outline shows.
-- **The bookmark's number:** `src/components/BookmarkCounter.tsx`, a text input
-  in mono at the Display size over a 2px underline. It has no outline: on focus
-  the underline takes Focus and is doubled by a `box-shadow`.
-- **Native controls:** the selects (language, season or book, the picks of the
-  places index), the dial's range input and the radios behind `ChoiceGroup` and
-  the dialog's unit.
+- **Style:** two text fields exist: the search (`SearchField.tsx`) and the
+  bookmark's number (`BookmarkCounter.tsx`). The other inputs are native
+  selects, a range and radios.
 
 ### Navigation
 
-`src/components/SiteBar.tsx`: the wordmark at the left edge; the pages, the
-bookmark mark and the language select at the right. The current page has an
-accent underline and `aria-current`.
+`src/components/SiteBar.tsx`, in this order: the wordmark, the series' name, its
+pages, the bookmark mark, the language select. The current page is marked by
+more than colour.
 
 ### Motion
 
 Three durations and three easings, in `.impeccable/design.json` (`ease.in` is
-defined and no code uses it today): the shortest for a control's state, the
-middle for the crossfade between pages and a dialog surfacing, the longest for a
-band settling, a sheet rising and the fog clearing. Movement uses `opacity` and
-`transform`. A state change may also transition a colour, a border or an
-underline, and a drawing may draw itself in once along its stroke. A page's
-title does not settle in with the bands, because it is the largest paint. Under
-`prefers-reduced-motion` spatial motion becomes a crossfade and the fog stands
-still.
+defined and no code uses it today). Movement uses `opacity` and `transform`. A
+page's title does not settle in with the bands, because it is the largest paint.
+Under `prefers-reduced-motion` spatial motion becomes a crossfade.
 
 ## Do's and Don'ts
 
@@ -417,9 +351,9 @@ still.
 - **Do** space siblings with `gap`.
 - **Do** keep controls at least 44px tall. Under it today, for the surface
   passes (#1375 to #1383) to fix: the wordmark link, back links, relationship
-  rows and the filler catalogue's rows. A button, a chip and the search field
-  reserve a 2px Focus outline at rest; the bookmark's number shows focus on its
-  underline.
+  rows and the filler catalogue's rows.
+- **Do** keep running text to a measure of 52 to 66ch. Wider today, for the same
+  passes: the legal page (76ch) and the footer (72ch).
 - **Do** check every pass at a width of 390px. Mobile is the owner's second
   priority, after the bookmark and progress and before fog.
 
@@ -429,17 +363,13 @@ still.
 - **Don't** add a font, a colour, a theme or a light scheme.
 - **Don't** paint a large surface in the accent, or fill any surface with it
   beyond the set in the One Accent Rule.
-- **Don't** use a drawing tint as the colour of a control or of running text, or
-  as a solid fill outside the places map.
+- **Don't** use a drawing tint as the colour of a control or of running text.
 - **Don't** use a radius above `rounded.card` on a rectangle, or a drop shadow.
 - **Don't** set a heading in italics.
 - **Don't** animate a `filter` or a layout property.
-- **Don't** show, name or hint at anything past the reader's bookmark: not what
-  a covered entry is, nor its name, drawing or text. A page may say that an
-  entry of a kind is under fog, when it opens and how many there are.
-  `PRODUCT.md` lists the owner-ruled limits (the filler page, the arc under the
-  bookmark's number, saga names) and `docs/architecture.md#spoiler-contract` is
-  the authority.
+- **Don't** show, name or hint at anything past the reader's bookmark.
+  `PRODUCT.md` lists what is public by design, and
+  `docs/architecture.md#spoiler-contract` is the authority.
 - **Don't** spread the legal notices: they live on the legal page, and the
   footer carries one line and one link.
 - **Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it

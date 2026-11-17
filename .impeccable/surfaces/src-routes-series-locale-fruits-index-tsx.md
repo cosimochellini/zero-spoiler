@@ -12,22 +12,20 @@ related_targets: ["src/routes/$series/$locale/fruits/$id.tsx","src/routes/$serie
 **For:** browsing the devil fruits (One Piece) or the Nen abilities (Hunter x
 Hunter) the reader has reached, and reading one in full.
 
-**Where:** `/<series>/<locale>/fruits` and `/fruits/<id>`;
-`/<series>/<locale>/abilities` and `/abilities/<id>`.
+**Where:** `/<series>/<locale>/fruits` and `/fruits/<id>` (`SagaMarquee`,
+`FruitWall`, `AlbumGroups`, `AlbumTile`); `/<series>/<locale>/abilities` and
+`/abilities/<id>` (`AbilityAlbum`).
 
-**Holds today:**
+**Must not break:**
 
-- The fruits page leads with the saga the reader is in: its name, a rail of
-  its fruits so far and the latest one large. Under it an album with a pinned
-  control bar: search, a view switch and kind chips, all kept in the address.
-- The abilities page is an album with a plate per Nen type. Covered abilities
-  are one fog band, so no plate gives a covered ability's type.
-- A record's page is a stage: the drawing large in a soft light of its tint,
-  the name, and under fog an empty frame with the kind and threshold left
-  outside the veil. A fruit's page goes on to its history, who ate it (each
-  eater with its own fog) and two rails, same kind and same saga. An ability's
-  page lists the users reached; a covered user is left out and not counted.
-- Covered fruits are fog tiles or one fog band, depending on the view. With no
-  bookmark the page is one bank of fog with the count of fruits, the question,
-  the control that sets a bookmark and a count for each kind; the covered
-  tiles stay under it, behind a disclosure.
+- The view, the kind and the query live in the address (`fruits/index.tsx`).
+- The search filters the open tiles only (`AlbumGroups.tsx`,
+  `AbilityAlbum.tsx`).
+- No saga past the bookmark is named or counted
+  (`src/server/archive/fruits.server.ts`).
+- A covered ability sits in no plate, so the page does not say its Nen type
+  (`AbilityAlbum.tsx`).
+- A fruit's eater has its own fog: knowing the fruit is not knowing who ate it
+  (`fruits/$id.tsx`).
+
+**Open points:** none recorded.

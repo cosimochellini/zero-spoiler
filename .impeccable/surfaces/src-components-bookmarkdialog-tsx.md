@@ -11,32 +11,25 @@ related_targets: ["src/components/BookmarkForm.tsx","src/components/BookmarkCoun
 
 **For:** the reader says how far they have got, and sees what that changes.
 
-**Where:** the mark in the site bar of every series page and the dialog it
-opens; the dial and its preview on a series' landing page with no bookmark; the
-intro on a series page opened with no bookmark, once per session; the strip
-under the bar during a trial. `ControlBar` is a listing's pinned controls, which
-fold to one row on a phone.
+**Where:** the mark in the site bar of a series page and the dialog it opens;
+the dial and its preview on a series' landing page with no bookmark; the intro
+on a series page opened with no bookmark; the strip under the bar during a
+trial. `ControlBar` is a listing's pinned controls.
 
-**Holds today:**
+**Must not break:**
 
-- Nothing is saved until Save. Save is filled with the accent, as the landing
-  page's primary buttons are, and is disabled until the draft is a real
-  bookmark. The line that clears the bookmark is absent, not disabled, when
-  there is none.
-- The dialog is a native `<dialog>`, a bottom sheet below 40rem. Its number is
-  its largest element, in mono between two round steppers.
-- The line under the number names the arc that number falls in, in mono,
-  uppercase and the accent, in the dialog and on the dial. Its table, every
-  arc of the unit with where it opens, is sent at every bookmark (owner,
-  2026-10-12; `PRODUCT.md`).
-- The dial's range is the series' demo span, and the landing page receives
-  the records of that span and none past it.
-- Saving a bookmark writes the cookie and re-reads the pages.
+- Nothing reaches the cookie until Save (`BookmarkForm.tsx`).
+- The dialog stays a native `<dialog>` opened with `showModal()`: the browser
+  supplies Escape, the inert page and the return of focus
+  (`BookmarkDialog.tsx`).
+- The intro opens once per browser session, and not on the landing page, in a
+  trial or to a crawler (`IntroDialog.tsx`).
+- The arc named under the number is public by design (`PRODUCT.md`).
 
-**Unresolved:**
+**Open points:**
 
-- The dialog's number shows focus on its underline, which takes Focus and is
-  doubled by a `box-shadow`; it has no outline (`BookmarkCounter.styles.ts`).
-  This pass judges whether that is visible enough.
+- The dialog's number shows focus on its underline and has no outline
+  (`BookmarkCounter.styles.ts`). This pass judges whether that is visible
+  enough.
 - What the reader is shown right after moving the bookmark.
   `docs/homepage.md` leaves a summary of what opened out of scope.

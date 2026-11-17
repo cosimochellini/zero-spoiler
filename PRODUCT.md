@@ -56,59 +56,39 @@ for this project, and no official artwork is used.
 ## Capabilities and Constraints
 
 - **Zero spoilers is the product** (owner, 2026-11-17): nothing past the
-  reader's bookmark is shown, named or hinted, in text, drawings, counts or
-  metadata. `docs/architecture.md#spoiler-contract` is the authority on what
-  that means in the code; where this file and it differ, it wins.
-  - _Never revealed (the contract, quoted):_ "Covered records contain only an
-    opaque handle, kind and episode/chapter thresholds. Hidden ids, names,
-    prose, links and drawings stay out of payloads, HTML, metadata and client
-    chunks. A blurred real record is still a leak."
-  - _What a page may say about covered entries (a reading of the contract and
-    the code):_ that an entry of a kind exists, when it opens, and how many
-    there are. A fog band's title counts the covered entries of its listing. The
-    fruits page with no bookmark gives the number of fruits and a count for each
-    kind. A series' card on the hub counts every entry the reader's medium
-    tells, covered ones included. No count tells one covered entry from another.
-  - _Counts the contract withholds:_ records only the other medium tells are
-    absent, "including from counts and handles"; a group on the ranks page with
-    every seat under fog is one line "with no count"; a covered user of an
-    ability is dropped, "so no tile or page counts one".
-- **Deliberate limits**, each ruled by the owner and written in the contract or
-  the code. A pass treats them as intended, not as leaks.
-  - _The filler page_ (owner, 2026-10-10, confirmed and extended 2026-11-17;
-    `src/server/archive/filler.server.ts`, `fillerRows.server.ts`). At every
-    bookmark it sends: the runs to skip; the strip of every numbered episode's
-    kind; the name of each canon arc that holds at least one filler entry, films
-    and specials included, with its two thresholds; the name of every filler
-    arc; a count of entries per group that includes covered rows; and for each
-    row its number, kind and thresholds. Titles, summaries and release data are
-    under fog past the bookmark. Every group name the ranges and the catalogue
-    print is public on that page. The home's filler warning (2026-10-12,
-    `docs/homepage.md`) gives numbers and kinds for the reader's episode and the
-    five after it.
-  - _The arc under the bookmark's number_ (owner, 2026-10-12;
-    `src/server/archive/sagaLabels.server.ts`). Every series page fetches, for
-    each arc the reader's unit tells, where it opens and its name, and the runs
-    of pure filler. The line under the number in the bookmark dialog and on the
-    landing page's dial names the arc a number falls in, so the reader sees
-    which arc they are choosing.
-  - _Saga names_ are not gated anywhere (owner, 2026-10-17, `Saga.name` in
-    `src/data/types.ts`). A saga is a group of arcs.
-  - _Arc names are gated records everywhere else._ The two rulings above open
-    them on the filler page and under the bookmark's number only. They do not
-    license an arc's name on any other page.
-  - _Social pictures_ (`public/og/`) are static files anyone can fetch: a
-    record's first drawing, its name and one line.
-  - _Crawlers_ with no bookmark are given an end-of-anime bookmark.
-  - _"The fog is an editorial promise, not access control"_: Show anyway and a
-    shared link from someone further ahead can open an entry early.
-- **Without a bookmark** no record is open. The landing page alone receives the
-  series' opening stretch, as a demo.
+  reader's bookmark is shown, named or hinted, in text, drawings or metadata.
+  The contract says: "Covered records contain only an opaque handle, kind and
+  episode/chapter thresholds. Hidden ids, names, prose, links and drawings stay
+  out of payloads, HTML, metadata and client chunks. A blurred real record is
+  still a leak." `docs/architecture.md#spoiler-contract` is the authority, and
+  the code is the ground truth.
+- **Public by design: do not remove, and do not copy to other pages.**
+  - The filler guide's group names (canon arcs and filler arcs), ranges, strip
+    and counts (owner, 2026-10-10, confirmed 2026-11-17).
+  - The home's filler warning (owner, 2026-10-12).
+  - The arc named under the bookmark's number, in the dialog, the intro and the
+    dial's "further" form, from a table fetched when that line mounts (owner,
+    2026-10-12).
+  - The landing page's demo stretch, with its covered tail.
+  - Counts of entries, where the contract allows them.
+  - The sitemap: the address and square picture of every record both sources
+    tell, with no bookmark (`docs/architecture.md`; the code gives no dated
+    ruling).
+  - Social pictures, the crawler's bookmark, Show anyway and shared links, as
+    the contract section has them.
+
+  Anything else that shows, names or hints at an entry past the bookmark is a
+  leak. An arc's name is gated everywhere outside this list.
+
+- **Saga names.** A saga with no arc record has its heading sent open on the
+  character shelves (owner, 2026-10-17, `src/data/types.ts`; in practice Game of
+  Thrones' seasons). The fruits and places pages name a saga only once the
+  reader has reached it. Never show a saga's name ahead of the bookmark on a
+  page that does not already do so.
 - **Terms.** One word per concept: bookmark, under fog, open, entry, arc. The
-  glossary is in the `tone-of-voice` skill. In One Piece an arc is one stretch
-  of the story and a saga is a group of arcs; the English copy uses both. The
-  fruits and places pages group by saga, the characters and filler pages by arc.
-  Italian says "saga" for an arc. Game of Thrones has no arcs.
+  glossary is in the `tone-of-voice` skill. In One Piece a saga groups several
+  arcs. In Hunter x Hunter each saga holds one arc of the same name. Game of
+  Thrones has no arcs.
 - **Styling.** StyleX only. Colours, type sizes, spacing and motion come from
   `src/styles/tokens.stylex.ts`.
 
