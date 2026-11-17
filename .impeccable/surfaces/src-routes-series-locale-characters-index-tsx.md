@@ -22,7 +22,7 @@ facts, then the chronicle, then the relationships reached.
   and the fog does not answer a search.
 - A character's drawing and name travel between the list and their page, for
   the one record the reader clicked.
-- Every fact, story and relationship is dated: the page shows what the
+- Facts, stories and relationships are dated: the page shows what the
   bookmark has reached.
 - Relationships show only when at least one is reached; otherwise the section
   is absent, also while it loads.

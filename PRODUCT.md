@@ -56,8 +56,16 @@ for this project, and no official artwork is used.
 ## Capabilities and Constraints
 
 - **Zero spoilers is the product.** Nothing past the reader's bookmark is shown,
-  named or hinted, in text, drawings, counts or metadata. A blurred real record
-  is still a leak.
+  named or hinted, in text, drawings, counts or metadata (owner, 2026-11-17).
+  The spoiler contract (`docs/architecture.md#spoiler-contract`) says what a
+  covered entry may carry: "Covered records contain only an opaque handle, kind
+  and episode/chapter thresholds. Hidden ids, names, prose, links and drawings
+  stay out of payloads, HTML, metadata and client chunks. A blurred real record
+  is still a leak." So a page may say how many entries are under fog and when
+  each opens, as the hub's count of entries, a fog band's title and the fruits
+  page with no bookmark do. A count leaves out the records the reader's medium
+  does not have, and a group on the ranks page with every seat under fog gets no
+  count.
 - **One exception about the future.** The filler warning gives an anime reader
   the numbers and types of the next episodes, and nothing else
   (`docs/homepage.md`).
@@ -65,7 +73,8 @@ for this project, and no official artwork is used.
   series' opening stretch, as a demo.
 - **Terms.** One word per concept: bookmark, under fog, open, entry, arc. The
   glossary is in the `tone-of-voice` skill. Game of Thrones has no arcs.
-- **Styling.** StyleX only, with every value from `src/styles/tokens.stylex.ts`.
+- **Styling.** StyleX only. Colours, type sizes, spacing and motion come from
+  `src/styles/tokens.stylex.ts`.
 
 ## Brand Commitments
 
@@ -102,8 +111,8 @@ any.
 
 1. **A leak is the worst bug.** An uncertain threshold is rounded up, so an
    entry is more likely to open late than early.
-2. **The bookmark is the one control.** Every page reads it, and moving it
-   changes what every page shows.
+2. **The bookmark is the one control.** Every page of a series reads it, and
+   moving it changes what those pages show.
 3. **Show, do not describe.** The landing page is the wiki in miniature.
 4. **Say what is hidden without saying what it is.** A covered entry gives its
    threshold and nothing else.

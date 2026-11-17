@@ -22,7 +22,8 @@ and changing language.
 - The wordmark leads to the hub; on a series page the series' name follows it.
 - The language switch is a native `<select>` under a drawn face. It navigates
   to the same page in the other language.
-- `Button` is the only button and `SearchField` the only text field. Both are
+- `Button` is the shared button and `SearchField` the listings' search field.
+  Both are
   at least 44px tall, with the focus ring reserved at rest.
 - The footer is one block of small type: what the site is, one line of notice
   with one link to the legal page, and the repository link.

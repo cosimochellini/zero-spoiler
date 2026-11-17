@@ -160,7 +160,7 @@ spacing:
 **Creative North Star: "The spoiler boundary is a horizon you move"**
 
 The reader's bookmark is one line through the story. What lies before it is
-drawn, named and lit; what lies after it is under fog. Every page draws that
+drawn, named and lit; what lies after it is under fog. A series' pages draw that
 line with the same two marks: solid and the accent for what is reached; dashed,
 fog and muted ink for what is not.
 
@@ -211,21 +211,30 @@ overrides every colour token, so nothing of Blackout shows on a series page.
 - **Accent Ink** (`*-accentInk`): text on a surface painted in the accent.
 - **Focus** (`*-focus`): the focus ring.
 - **Glow, Scrim, Veil** (`*-glow`, `*-scrim`, `*-veil`): overlays, and the only
-  values with alpha: the bloom at the top of the page, the dark behind a dialog,
+  tokens with alpha: the bloom at the top of the page, the dark behind a dialog,
   the glass of the site bar.
 
 ### Drawing Tints
 
 Nineteen hues (`tint-*`), shared by every series. A record's drawing takes
-exactly one, for the stroke that identifies it. The same tint colours the frame
-around that drawing and the soft light behind a featured one. On the places map
-it also draws a reached island and writes its saga's name.
+exactly one, for the stroke that identifies it. The same tint draws the frame
+around that drawing and may wash the surface behind it at low alpha: the home
+fold, a fruit's or an ability's page, the lead of the fruits page, a held seat
+on the ranks page. On the places map it outlines and washes a reached island,
+fills that stop's dot and writes its saga's name. It is not the colour of a
+button, a field or a chip, or of running text.
 
 ### Named Rules
 
-**The One Accent Rule.** The accent is a line, a word, a border or a dot. The
-one filled accent surface is the Save button of the bookmark dialog (owner,
-2026-10-12), with its text in Accent Ink.
+**The One Accent Rule.** One accent per series, never a large fill (owner,
+2026-11-17). The accent is a line, a word, a border or a dot. The code today
+fills these surfaces with it, and they are the accepted set: the button of a
+primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing
+page's primary buttons); the filler episodes a reader can skip, as cells in the
+countdown and the strip; and small marks (a picked chip's dot, a dot on a
+fruit's history, the north of the map's compass, a legend swatch). The hub
+lights each series card with a low-alpha beam of its accent. Text on a filled
+accent surface is Accent Ink. Keep these filled, and add no other.
 
 **The Floors Rule.** On every paper of every set, Ink and Ink 2 hold 7:1, Muted
 and the accent 4.5:1, Rule 2 and Focus 3:1, and Accent Ink on the accent 4.5:1.
@@ -266,10 +275,15 @@ largest; the clamps are in `src/styles/tokens.stylex.ts` and
 
 **The Two Plus One Rule.** Two families and one outlier, and never a fourth.
 
-**The Numerals Rule.** JetBrains Mono is for numerals (owner, 2026-11-17). In
-the code today it also sets counts and the short uppercase lines beside a
-numeral: a tile's kind, the line under a fog tile, the language code. Leave
-those, and extend mono no further without the owner.
+**The Numerals Rule (open decision).** The owner's rule: JetBrains Mono is for
+episode numerals (2026-11-17). The code today sets 55 style lines in 32 files in
+it: episode and chapter numerals, counts, the number in the bookmark dialog and
+short uppercase lines that carry a number. A few carry none: the language code,
+the names of seas and the hint on the places map, an epithet on the landing
+page, the trial strip's sentence and the glyph of a `quiet` button. The owner
+has not ruled between narrowing the code and widening the rule. Until then: keep
+every existing use, and add mono only for a numeral or a short line that carries
+one, never for prose or a heading.
 
 ## Layout
 
@@ -278,7 +292,10 @@ The shell is one centred column, at most 76rem wide. Spacing is a 4pt scale
 optical adjustment only.
 
 The site bar is pinned at every width: two rows on a phone, one row from 40rem,
-or from 56rem on a series page. Everything else that pins, pins under it.
+or from 56rem on a series page. A listing's control bar and the sticky heads
+under it pin below it. A listing's control bar pins whole only in a window at
+least 40rem wide and 32rem tall; in a narrower or shorter one it folds to one
+row.
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
 is no named scale. `.impeccable/design.json` lists each with its use. Two carry
@@ -298,8 +315,8 @@ dialogs are native `<dialog>` elements in the top layer.
 Corners are nearly square: `rounded.card` for tiles and dialogs, `rounded.input`
 for buttons, fields and chips. `rounded.pill` is for round controls and marks,
 such as a stepper, a close button or a dot on the map. Lines are 1px for
-hairlines and 2px for a control's boundary and the focus ring. A border keeps
-its width in every state.
+hairlines and 2px for a control's boundary and the focus ring. A button, a field
+and a chip keep their border width in every state.
 
 A dashed line means "not reached": the rule over a fog band, the bookmark mark
 with no bookmark set, the route past the reader's point on the map.
@@ -319,9 +336,11 @@ controls and the fog components are in their surface briefs
 
 ### Buttons
 
-- **Shape:** `src/components/ui/Button.tsx` is the only button: a 2px border in
-  Rule 2, at least 44px tall. `chip` is the default; `quiet` is a 44px square
-  for a glyph.
+- **Shape:** `src/components/ui/Button.tsx` is the shared button: a 2px border
+  in Rule 2, at least 44px tall. `chip` is the default; `quiet` is a 44px square
+  for a glyph. Five components draw a `<button>` of their own, where a whole
+  tile, a stop on the map or a cell is the target: `SpoilerVeil`, `FogTile`,
+  `SeaChartStops`, `SeaChartPins` and `FillerCountdown`.
 - **Hover / Focus:** the text takes the accent and the border Ink. The focus
   ring is a 2px outline in Focus, reserved at rest. A press moves it down 1px.
 - **Disabled:** the attribute, the cursor and 55% opacity together, as on Save
@@ -330,9 +349,15 @@ controls and the fog components are in their surface briefs
 
 ### Inputs / Fields
 
-- **Style:** `src/components/SearchField.tsx` is the only text field: Paper, a
-  2px border in Rule 2, 44px tall. On focus the border takes Ink and the Focus
+- **Search:** `src/components/SearchField.tsx`, on the listings: Paper, a 2px
+  border in Rule 2, 44px tall. On focus the border takes Ink and the 2px Focus
   outline shows.
+- **The bookmark's number:** `src/components/BookmarkCounter.tsx`, a text input
+  in mono at the Display size over a 2px underline. It has no outline: on focus
+  the underline takes Focus and is doubled by a `box-shadow`.
+- **Native controls:** the selects (language, season or book, the picks of the
+  places index), the dial's range input and the radios behind `ChoiceGroup` and
+  the dialog's unit.
 
 ### Navigation
 
@@ -345,10 +370,11 @@ accent underline and `aria-current`.
 Three durations and three easings, in `.impeccable/design.json`: the shortest
 for a control's state, the middle for the crossfade between pages and a dialog
 surfacing, the longest for a band settling, a sheet rising and the fog clearing.
-Movement uses `opacity` and `transform` only; a state change may also transition
-a colour. A page's title never animates, because it is the largest paint. Under
-`prefers-reduced-motion` spatial motion becomes a crossfade and the fog stands
-still.
+Movement uses `opacity` and `transform`. A state change may also transition a
+colour, a border or an underline, and a drawing may draw itself in once along
+its stroke. A page's title does not settle in with the bands, because it is the
+largest paint. Under `prefers-reduced-motion` spatial motion becomes a crossfade
+and the fog stands still.
 
 ## Do's and Don'ts
 
@@ -360,26 +386,34 @@ still.
 - **Do** keep the uppercase tracked label above or beside a heading. Impeccable
   bans a kicker above a heading; here it is part of the style (owner,
   2026-11-17).
-- **Do** set numerals in JetBrains Mono. Impeccable treats mono outside code as
-  a costume; here it marks numerals by design (owner, 2026-11-17).
+- **Do** keep every existing use of JetBrains Mono, and add it only for a
+  numeral or a short line that carries one, never for prose or a heading.
+  Impeccable treats mono outside code as a costume; here it marks numerals by
+  design (owner, 2026-11-17).
 - **Do** mark a link inside text with an underline. The accent sits within 3:1
   of the inks in every set, so colour alone cannot.
 - **Do** space siblings with `gap`.
-- **Do** keep controls at least 44px tall, with the focus ring reserved at rest.
+- **Do** keep controls at least 44px tall. A button, a chip and the search field
+  reserve a 2px Focus outline at rest; the bookmark's number shows focus on its
+  underline.
 - **Do** design the phone layout first: mobile is the owner's second priority.
 
 ### Don't:
 
 - **Don't** use `#000`, `#fff` or a grey with no hue.
 - **Don't** add a font, a colour, a theme or a light scheme.
-- **Don't** paint a large surface in the accent.
-- **Don't** use a drawing tint for a control, a fill or text. The saga names on
-  the places map are the one exception.
+- **Don't** paint a large surface in the accent, or fill any surface with it
+  beyond the set in the One Accent Rule.
+- **Don't** use a drawing tint as the colour of a control or of running text, or
+  as a solid fill outside the places map.
 - **Don't** use a radius above `rounded.card` on a rectangle, or a drop shadow.
 - **Don't** set a heading in italics.
 - **Don't** animate a `filter` or a layout property.
-- **Don't** show, name or hint at anything past the reader's bookmark, in text,
-  drawings, counts or metadata. A blurred real record is still a leak.
+- **Don't** show, name or hint at anything past the reader's bookmark. A covered
+  record carries only its kind, its thresholds and an opaque handle
+  (`docs/architecture.md#spoiler-contract`), so a page may say how many entries
+  are under fog and when each opens, and nothing else about them. A blurred real
+  record is still a leak.
 - **Don't** spread the legal notices: they live on the legal page, and the
   footer carries one line and one link.
 - **Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it

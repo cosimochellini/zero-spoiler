@@ -17,9 +17,9 @@ section. The page belongs to no series, so it is in Blackout.
 
 **Holds today:**
 
-- Legal notices live on this page and nowhere else. The footer carries one
-  line and one link to it (owner decision).
-- The notices never depend on the reader's bookmark. The source credits do:
+- Legal notices live on this page (owner decision). The footer carries one
+  line of notice and one link to it, and no other page repeats them.
+- The privacy notice does not depend on the reader's bookmark. The source credits do:
   they list only references open at the bookmark.
 - Links here keep their underline; `src/styles/themes.test.tsx` fails when an
   accent link loses it.
