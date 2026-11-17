@@ -55,6 +55,15 @@ coverage
 **/.impeccable/live/deferred-svelte-component-accepts.json
 **/.impeccable/live/*.png
 # impeccable-ignore-end
+# Live-mode state the block above leaves out. impeccable adds these to
+# .git/info/exclude on its first boot in a clone; here they hold from the start.
+.impeccable/live/roots.json
+.impeccable/live/app-root.json
+.impeccable/live/inject-journal.json
+.impeccable/live/artifacts/
+.impeccable/live/accept-receipts/
+.impeccable/live/locks/
+src/impeccable/
 # The engine binary, should an install ever put one beside the launcher.
 .claude/skills/impeccable/scripts/bin/
 .agents/skills/impeccable/scripts/bin/

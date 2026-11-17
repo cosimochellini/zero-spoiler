@@ -135,9 +135,11 @@ exists.
 ## Security
 
 SSR security headers, including the per-request nonce CSP, are set in
-`src/security-headers.ts`; static asset headers cannot protect SSR documents.
-Server functions use the CSRF middleware in `src/start.ts` and read progress
-from request cookies, never a client-supplied bookmark.
+`src/security-headers.ts`; static asset headers cannot protect SSR documents. On
+the dev server only, the policy also admits `http://localhost:*` for
+impeccable's live-mode helper; a production build drops the allowance. Server
+functions use the CSRF middleware in `src/start.ts` and read progress from
+request cookies, never a client-supplied bookmark.
 
 Fog prevents accidental spoilers, not deliberate access: “Show anyway” reveals a
 record by handle. Recognized crawlers without a valid saved/trial bookmark
