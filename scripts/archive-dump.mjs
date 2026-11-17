@@ -18,10 +18,10 @@
 //                       a head that added sweep bookmarks dumps the base's.
 import { readFileSync } from 'node:fs'
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
 
 import { importArchive } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 
 /**
  * The flags of one dump.
@@ -168,7 +168,7 @@ export function* dumpLines({ archive, payloads, bookmarks, locales }) {
   }
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   let run
   try {
     run = await dumpOf(process.argv.slice(2))

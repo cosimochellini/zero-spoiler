@@ -15,10 +15,10 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { setTimeout as sleep } from 'node:timers/promises'
-import { pathToFileURL } from 'node:url'
 
 import { importOrExit, seriesOrExit } from './archive-loader.mjs'
 import { classesOf } from './filler-classes.mjs'
+import { isMain } from './is-main.mjs'
 import { cached, pageOf, wikiOf } from './wiki.mjs'
 
 /**
@@ -476,7 +476,7 @@ async function verify(series, wiki) {
   }
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const series = await seriesOrExit()
   const { problems, kept, count } = await verify(series, wikiOf(series))
   const total = `${String(count)} entries checked, ${String(problems.length)} failures, ${String(kept.length)} kept`
