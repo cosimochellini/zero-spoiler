@@ -35,6 +35,7 @@ import { createServer } from 'node:net'
 import path from 'node:path'
 import process from 'node:process'
 import { setTimeout as sleep } from 'node:timers/promises'
+import { fileURLToPath } from 'node:url'
 
 const EXIT_CLEAN = 0
 const EXIT_FINDINGS = 1
@@ -45,6 +46,7 @@ const DETECTOR_FINDINGS = 2
 
 const VIEWPORTS = ['390x844', '1440x900']
 const LOCALE = 'en'
+const HOST = '127.0.0.1'
 const READY_TIMEOUT_MS = 60_000
 const READY_POLL_MS = 250
 const DETECT_TIMEOUT_MS = 300_000
@@ -98,22 +100,22 @@ function fail(headline) {
  * with no room for a reason, so a waiver goes in `ignoreValues`: `"*"` as the
  * value and a `files` glob turn a whole rule off, on every page (`**`) or on
  * the pages of one type.
+ * @param {object} config The parsed `.impeccable/config.json`.
+ * @returns {string[]} The waivers that give no reason.
  */
-function assertWaiversExplained() {
-  const { detector = {} } = JSON.parse(readFileSync(configPath, 'utf8'))
-  const bare = [
-    ...(detector.ignoreRules ?? []),
-    ...(detector.ignoreFiles ?? []),
+export function unexplainedWaivers(config) {
+  const {
+    ignoreRules = [],
+    ignoreFiles = [],
+    ignoreValues = [],
+  } = config.detector ?? {}
+  return [
+    ...ignoreRules,
+    ...ignoreFiles,
+    ...ignoreValues
+      .filter((waiver) => !waiver.reason?.trim())
+      .map((waiver) => `${waiver.rule}=${waiver.value}`),
   ]
-  const unexplained = (detector.ignoreValues ?? [])
-    .filter((waiver) => !waiver.reason?.trim())
-    .map((waiver) => `${waiver.rule}=${waiver.value}`)
-  if (bare.length > 0 || unexplained.length > 0) {
-    fail(
-      `.impeccable/config.json waives ${[...bare, ...unexplained].join(', ')} with no reason.\n`
-        + '  Use `impeccable ignores add-value <rule> "*" --file <glob> --reason "..."`.',
-    )
-  }
 }
 
 /**
@@ -123,6 +125,7 @@ function assertWaiversExplained() {
  *   The child and both streams, filled as it writes.
  */
 function start(args) {
+  // fallow-ignore-next-line security-sink -- this Node binary, on a script path this file builds
   const child = spawn(process.execPath, args, {
     cwd: repositoryRoot,
     stdio: ['ignore', 'pipe', 'pipe'],
@@ -139,7 +142,7 @@ function freePort() {
   return new Promise((resolve, reject) => {
     const probe = createServer()
     probe.on('error', reject)
-    probe.listen(0, '127.0.0.1', () => {
+    probe.listen(0, HOST, () => {
       const { port } = probe.address()
       probe.close(() => {
         resolve(port)
@@ -155,6 +158,7 @@ function freePort() {
 async function sitemapOf(origin) {
   let response
   try {
+    // fallow-ignore-next-line security-sink -- the preview server this gate started on 127.0.0.1
     response = await fetch(`${origin}/sitemap.xml`)
   } catch {
     // Not listening yet.
@@ -169,14 +173,15 @@ async function sitemapOf(origin) {
  *   and its sitemap.
  */
 async function serve() {
-  if (!existsSync(path.join(repositoryRoot, 'dist', 'client'))) {
-    fail('dist/ is missing: run `npm run build` first')
-  }
   const port = await freePort()
-  const origin = `http://localhost:${port}`
+  // An address, not `localhost`: on Linux Vite binds that name to ::1 alone,
+  // and neither this process nor the detector's browser then reaches it.
+  const origin = `http://${HOST}:${port}`
   const { child, output } = start([
     path.join(repositoryRoot, 'node_modules', 'vite', 'bin', 'vite.js'),
     'preview',
+    '--host',
+    HOST,
     '--port',
     String(port),
     '--strictPort',
@@ -215,7 +220,7 @@ function seriesPages(slug, own) {
       return `${home}/${kind}`
     }
     if (!ids.includes(id)) {
-      fail(
+      throw new Error(
         `SAMPLES names ${slug}/${kind}/${id}, which the sitemap does not list: update scripts/design-gate.mjs`,
       )
     }
@@ -229,8 +234,9 @@ function seriesPages(slug, own) {
  * @param {string} sitemap The served sitemap.
  * @returns {{landing: string[], bookmarked: string[]}} Paths with no bookmark,
  *   and paths that set one.
+ * @throws {Error} When SAMPLES names a record the sitemap does not list.
  */
-function pagesOf(sitemap) {
+export function pagesOf(sitemap) {
   const paths = sitemap
     .matchAll(/<loc>(?<loc>[^<]+)<\/loc>/gu)
     .map((match) => URL.parse(match.groups.loc).pathname.split('/').slice(1))
@@ -270,6 +276,7 @@ function pagesOf(sitemap) {
  */
 async function assertServed(origin, pages) {
   for (const page of pages) {
+    // fallow-ignore-next-line security-sink -- the preview server this gate started on 127.0.0.1
     const response = await fetch(origin + page)
     if (response.status !== 200) {
       fail(`${page} answered ${response.status}, expected 200`)
@@ -285,16 +292,9 @@ async function assertServed(origin, pages) {
  * @returns {Promise<object[]>} The findings, each with its page and viewport.
  */
 async function detect(origin, viewport, pages) {
-  const cli = path.join(
-    repositoryRoot,
-    'node_modules',
-    'impeccable',
-    'cli',
-    'bin',
-    'cli.js',
-  )
   const { child, output } = start([
-    cli,
+    // The npm shim: it runs the engine of this platform's optional package.
+    fileURLToPath(import.meta.resolve('impeccable/cli/bin/cli.js')),
     'detect',
     '--json',
     '--viewport',
@@ -332,9 +332,17 @@ async function detect(origin, viewport, pages) {
   }))
 }
 
+/**
+ * Advisory rules are listed in the report and never block.
+ * @param {object[]} findings Every finding.
+ * @returns {object[]} The ones that fail the gate.
+ */
+export function blockingOf(findings) {
+  return findings.filter((finding) => !finding.advisory)
+}
+
 function report(findings) {
-  // Advisory rules are listed in the report and never block.
-  const blocking = findings.filter((finding) => !finding.advisory)
+  const blocking = blockingOf(findings)
   process.stdout.write(
     `\ndesign gate: ${findings.length} finding(s), ${blocking.length} blocking\n`
       + `  report: ${path.relative(repositoryRoot, reportPath)}\n`,
@@ -343,18 +351,15 @@ function report(findings) {
     process.stdout.write('\ndesign gate: PASSED\n')
     return EXIT_CLEAN
   }
-  process.stdout.write('\n  blocking findings:\n')
-  for (const finding of blocking.slice(0, MAX_PRINTED)) {
-    process.stdout.write(
-      `    [${finding.antipattern}] ${finding.file} at ${finding.viewport}\n`
+  // Only the first MAX_PRINTED are listed; the report file keeps the rest.
+  const lines = blocking
+    .slice(0, MAX_PRINTED)
+    .map(
+      (finding) =>
+        `    [${finding.antipattern}] ${finding.file} at ${finding.viewport}\n`
         + `        ${finding.snippet}\n        ${finding.selector ?? ''}\n`,
     )
-  }
-  if (blocking.length > MAX_PRINTED) {
-    process.stdout.write(
-      `    ... and ${blocking.length - MAX_PRINTED} more, see the report\n`,
-    )
-  }
+  process.stdout.write(`\n  blocking findings:\n${lines.join('')}`)
   process.stderr.write(
     `\ndesign gate: FAILED with ${blocking.length} blocking finding(s).\n`
       + '  Fix the page, or waive a rule the house style contradicts in\n'
@@ -385,11 +390,26 @@ async function scan(origin, sitemap) {
   return runs.flat()
 }
 
+function assertReady() {
+  const unexplained = unexplainedWaivers(
+    JSON.parse(readFileSync(configPath, 'utf8')),
+  )
+  if (unexplained.length > 0) {
+    fail(
+      `.impeccable/config.json waives ${unexplained.join(', ')} with no reason.\n`
+        + '  Use `impeccable ignores add-value <rule> "*" --file <glob> --reason "..."`.',
+    )
+  }
+  if (!existsSync(path.join(repositoryRoot, 'dist', 'client'))) {
+    fail('dist/ is missing: run `npm run build` first')
+  }
+}
+
 async function main() {
   mkdirSync(path.dirname(reportPath), { recursive: true })
   // A stale report must never survive a failed run.
   rmSync(reportPath, { force: true })
-  assertWaiversExplained()
+  assertReady()
 
   const started = Date.now()
   const { origin, sitemap } = await serve()
@@ -400,5 +420,11 @@ async function main() {
   return verdict
 }
 
-// An explicit exit: the preview server would keep the process alive.
-process.exit(await main())
+if (import.meta.url === `file://${process.argv[1]}`) {
+  try {
+    // An explicit exit: the preview server would keep the process alive.
+    process.exit(await main())
+  } catch (error) {
+    fail(String(error))
+  }
+}
