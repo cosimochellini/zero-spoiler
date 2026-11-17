@@ -7,7 +7,7 @@ import { NEUTRAL } from '~/styles/tokens.stylex'
 
 /** A file by its path from this folder, as text. */
 function read(file: string): string {
-  // eslint-disable-next-line security/detect-non-literal-fs-filename -- one of the two constant names below.
+  // eslint-disable-next-line security/detect-non-literal-fs-filename -- every call below passes a constant path.
   return readFileSync(path.join(import.meta.dirname, file), 'utf8')
 }
 
@@ -129,6 +129,18 @@ function ceiling(size: string): string {
 /** The sidecar, with every run of white space as one space. */
 const SIDECAR = read('../../.impeccable/design.json').replaceAll(/\s+/gu, ' ')
 
+/** The text between the first `from` and the `to` after it. */
+function between(text: string, from: string, to: string): string {
+  const start = text.indexOf(from) + from.length
+
+  return text.slice(start, text.indexOf(to, start))
+}
+
+/** How many named entries a stretch of the sidecar holds. */
+function named(list: string): number {
+  return list.split('"name":').length - 1
+}
+
 /** Each type role's font, size and leading, by the token's name. */
 const ROLES: Record<string, [string, string, null | string]> = {
   hero: ['display', 'hero', 'display'],
@@ -186,22 +198,32 @@ describe('the tokens in DESIGN.md', () => {
     )
   })
 
-  it('have their motion, layers and fluid sizes in the sidecar', () => {
+  it('have their motion, layers and fluid sizes in the sidecar, and no other', () => {
     const motion = {
       ...prefixed('dur', group('dur')),
       ...prefixed('ease', group('ease')),
+      'settle-step': `${between(read('settle.ts'), 'SETTLE_STEP_MS = ', '\n')}ms`,
+      'reduced-motion': between(
+        read('global.css'),
+        'animation-duration: ',
+        ' !important',
+      ),
     }
+    const layers = Object.entries(group('z'))
+    const { display = '', hero = '' } = group('text')
 
     for (const [name, value] of Object.entries(motion)) {
       expect(SIDECAR).toContain(`"name": "${name}", "value": "${value}"`)
     }
-    const layers = Object.entries(group('z'))
-
     for (const [name, value] of layers) {
       expect(SIDECAR).toContain(`{ "name": "${name}", "value": ${value} }`)
     }
-    const { display = '', hero = '' } = group('text')
 
+    // As many entries as tokens, so the sidecar lists none the source lacks.
+    expect(named(between(SIDECAR, '"motion": [', ']'))).toBe(
+      Object.keys(motion).length,
+    )
+    expect(named(between(SIDECAR, '"zIndex": [', ']'))).toBe(layers.length)
     expect(SIDECAR).toContain(`"fluid": "${hero}"`)
     expect(SIDECAR).toContain(`"fluid": "${display}"`)
   })
