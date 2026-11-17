@@ -58,12 +58,12 @@ export function sweepOf(
  * Every gate of an archive: each record's, abilities included, and each dated
  * step's of every timeline it files, whatever the field. Name facts
  * (`nameSaidAt`, `episodeName`) and place visits are not timelines, so they
- * are not here. Hunter x Hunter and
- * Game of Thrones sweep both sides of all of them, so a new record or step
- * enters the sweep without a hand-listed number. One Piece does not: its
- * 530 owners would take its sweep from 24 bookmarks in each unit to about
- * 1,070, and its per-cohort boundary tests (`*Relationships.test.ts`)
- * already ask every relationship entry at gate−1 and gate.
+ * are not here. Hunter x Hunter and Game of Thrones sweep both sides of all
+ * of them, so a new record or step enters the sweep without a hand-listed
+ * number. One Piece does not: its 530 owners would take its sweep from 24
+ * bookmarks in each unit to about 1,070, and its per-cohort boundary tests
+ * (`*Relationships.test.ts`) already ask every relationship entry at gate−1
+ * and gate.
  */
 export function gatesOf({
   entities,
