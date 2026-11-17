@@ -80,5 +80,6 @@
         "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px prose runs 87 to 112 characters a line: the footer on the hub, the legal notices, the landing introduction, the stories of a series home, and the summary and dated entries of a character or place page."
       }
     ]
-  }
+  },
+  "buildPath": "code"
 }

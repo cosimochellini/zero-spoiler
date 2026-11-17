@@ -14,4 +14,7 @@ package-lock.json
 .claude/skills
 .claude/agents/impeccable-*.md
 .impeccable/config.json
+# The skill reads a brief's frontmatter as one line of JSON; Prettier rewraps it
+# and the related targets stop matching.
+.impeccable/surfaces
 src/routeTree.gen.ts
