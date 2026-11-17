@@ -92,3 +92,20 @@ if (
     writable: true,
   })
 }
+
+/**
+ * jsdom does not lay out, so it has no `scrollIntoView`. The line that says
+ * what a bookmark move changed scrolls itself into view; a stand-in that does
+ * nothing lets every test that saves a bookmark run. Skipped under the plain
+ * Node environment, as above.
+ */
+if (
+  typeof Element !== 'undefined'
+  && typeof Element.prototype.scrollIntoView !== 'function'
+) {
+  Object.defineProperty(Element.prototype, 'scrollIntoView', {
+    configurable: true,
+    value: vi.fn<() => void>(),
+    writable: true,
+  })
+}

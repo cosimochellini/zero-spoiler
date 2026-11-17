@@ -32,5 +32,8 @@ trial. `ControlBar` is a listing's pinned controls.
 - The dialog's number shows focus on its underline and has no outline
   (`BookmarkCounter.styles.ts`). This pass judges whether that is visible
   enough.
-- What the reader is shown right after moving the bookmark.
-  `docs/homepage.md` leaves a summary of what opened out of scope.
+- What the reader is shown right after moving the bookmark: the line under
+  the bar (`BookmarkStatus.tsx`, #1375) says where the bookmark is and, on a
+  listing, how many entries opened or went back under fog. It counts open
+  entries only. `docs/homepage.md` leaves a summary of what opened out of
+  scope.

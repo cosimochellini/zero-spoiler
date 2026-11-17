@@ -370,3 +370,17 @@ export function spyPeek<T>(value: T): {
     },
   }
 }
+
+/**
+ * How many open entries of a kind the page draws: its distinct links to
+ * `/<segment>/<id>`. A listing's count for the bookmark status line
+ * (`openEntries`) is held to this number, so the line cannot say a different
+ * one from what the reader sees.
+ */
+export function openEntryLinks(segment: string): number {
+  const links = document.querySelectorAll(`a[href*="/${CSS.escape(segment)}/"]`)
+
+  const pages = new Set(Array.from(links, (link) => link.getAttribute('href')))
+
+  return pages.size
+}
