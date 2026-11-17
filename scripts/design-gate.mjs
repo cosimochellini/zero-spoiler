@@ -271,14 +271,22 @@ async function bookmarkedProblem(origin, page) {
  * @param {{landing: string[], bookmarked: object[]}} pages The page list.
  */
 async function assertServed(origin, { landing, bookmarked }) {
+  const checks = [
+    ...landing.map((page) => [
+      page,
+      async () => pageProblem(await ask(origin + page)),
+    ]),
+    ...bookmarked.map((page) => [
+      page.path,
+      () => bookmarkedProblem(origin, page),
+    ]),
+  ]
   const problems = []
-  for (const page of landing) {
-    const problem = pageProblem(await ask(origin + page))
-    problems.push(...(problem === null ? [] : [`${page} ${problem}`]))
-  }
-  for (const page of bookmarked) {
-    const problem = await bookmarkedProblem(origin, page)
-    problems.push(...(problem === null ? [] : [`${page.path} ${problem}`]))
+  for (const [page, check] of checks) {
+    const problem = await check()
+    if (problem !== null) {
+      problems.push(`${page} ${problem}`)
+    }
   }
   if (problems.length > 0) {
     fail(
@@ -314,9 +322,8 @@ async function detect(viewport, urls) {
   if (problem !== null) {
     fail(
       `impeccable detect ${problem} (${viewport}, limit ${DETECT_TIMEOUT_MS / 1000}s).\n`
-        + '  It needs Chrome, Chromium or Edge: set IMPECCABLE_BROWSER to the executable when\n'
-        + '  it is not on PATH. If Chrome refuses to start for want of a sandbox,\n'
-        + '  PUPPETEER_DANGEROUS_NO_SANDBOX=1 turns it off for this run.\n'
+        + '  It needs Chrome, Chromium or Edge: IMPECCABLE_BROWSER names the executable. If\n'
+        + '  Chrome will not start for want of a sandbox, set PUPPETEER_DANGEROUS_NO_SANDBOX=1.\n'
         + `  Its output:\n${output.stderr}${output.stdout}`,
     )
   }
@@ -398,8 +405,7 @@ function readConfig() {
   const unexplained = unexplainedWaivers(config)
   if (unexplained.length > 0) {
     fail(
-      `.impeccable/config.json waives ${unexplained.join(', ')} with no reason.\n`
-        + '  Use `npx impeccable ignores add-value <rule> "*" --file "<url glob>" --reason "..."`.',
+      `.impeccable/config.json waives ${unexplained.join(', ')} with no reason: see CONTRIBUTING.md, "Checks".`,
     )
   }
   return config
