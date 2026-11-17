@@ -9,7 +9,8 @@
 // local build is audited with the paths it will serve. Not part of `npm run
 // check`: it needs a server.
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
+
+import { isMain } from './is-main.mjs'
 
 const SITE = 'Zero Spoiler'
 /** Series slug → the name its titles carry. */
@@ -220,6 +221,6 @@ async function main() {
   return findings.length === 0 ? 0 : 1
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (isMain(import.meta)) {
   process.exit(await main())
 }

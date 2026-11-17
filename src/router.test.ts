@@ -263,6 +263,13 @@ describe('the root route on a client navigation', { timeout: 15_000 }, () => {
   })
 })
 
+/** Long enough for a navigation to run as far as it can, inside `act`. */
+async function moment(): Promise<void> {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 100)
+  })
+}
+
 /**
  * The real root route, mounted over one page per language, from the fresh
  * modules `fresh` leaves: React and the router are imported after it, so the
@@ -342,6 +349,8 @@ describe('the real root route, mounted', { timeout: 30_000 }, () => {
       'Something went wrong',
     )
     expect(document.querySelector('main a')).toHaveAttribute('href', '/en')
+    // Set by the page itself: `head` gives a route in error no title.
+    expect(document.title).toBe('Something went wrong | Zero Spoiler')
     expect(page()).toContain('This page could not be loaded.')
     // Not the router's white default, and never the error's own message.
     expect(page()).not.toContain('Show Error')
@@ -349,5 +358,65 @@ describe('the real root route, mounted', { timeout: 30_000 }, () => {
     expect(page()).not.toContain('copy is not loaded')
     // The failed import, as the reload path logs it for whoever debugs.
     expect(error).toHaveBeenCalledWith(expect.any(Error))
+  })
+
+  // The router moves its location when a navigation starts, before the
+  // root's guard has loaded the copy of the new address. A page above every
+  // locale route reads its language from the root's context, which lands
+  // with that copy: read from the location, the page on screen asked for a
+  // copy not loaded yet, and the root's error page showed until the
+  // navigation ended (#1386).
+  it('keeps the not-found page and `<html lang>` as they are until the copy of the page being opened has arrived', async () => {
+    const { loaded } = await fresh('/it')
+    const copy = { arrived: false }
+    const arrived = (): boolean => copy.arrived
+    vi.doMock(import('./i18n/dictionaries/en'), async (importOriginal) => {
+      await vi.waitUntil(arrived, { timeout: 20_000, interval: 5 })
+      return importOriginal()
+    })
+    vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true)
+    const { act, createElement } = await import('react')
+    const { createRoot } = await import('react-dom/client')
+    const { createMemoryHistory, createRouter, RouterProvider } =
+      await import('@tanstack/react-router')
+    const { NotFoundPage } = await import('./routes/-fallback')
+    const { Route: realRoot } = await import('./routes/__root')
+    const english = '/nowhere/en/x'
+    const router = createRouter({
+      routeTree: realRoot,
+      history: createMemoryHistory({ initialEntries: ['/nowhere/it/x'] }),
+      defaultNotFoundComponent: NotFoundPage,
+    })
+    await router.load()
+    // eslint-disable-next-line testing-library/no-unnecessary-act -- as in `mounted`: React's own `root.render`, into `document`.
+    await act(async () => {
+      createRoot(document).render(createElement(RouterProvider, { router }))
+      await Promise.resolve()
+    })
+    const error = silenceErrors()
+
+    expect(document.querySelector('h1')).toHaveTextContent('Pagina non trovata')
+    expect(document.documentElement).toHaveAttribute('lang', 'it')
+
+    await act(async () => {
+      router.history.push(english)
+      await moment()
+    })
+
+    // The address has moved, the copy has not arrived: the page stays.
+    expect(router.state.location.pathname).toBe(english)
+    expect(loaded('en')).toBe(false)
+    expect(document.querySelector('h1')).toHaveTextContent('Pagina non trovata')
+    expect(document.documentElement).toHaveAttribute('lang', 'it')
+
+    await act(async () => {
+      copy.arrived = true
+      await moment()
+    })
+
+    expect(document.querySelector('h1')).toHaveTextContent('Page not found')
+    expect(document.documentElement).toHaveAttribute('lang', 'en')
+    expect(document.title).toBe('Page not found | Zero Spoiler')
+    expect(error).not.toHaveBeenCalled()
   })
 })

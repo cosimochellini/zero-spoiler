@@ -15,9 +15,9 @@ import {
 } from 'node:fs'
 import path from 'node:path'
 import { setTimeout as sleep } from 'node:timers/promises'
-import { pathToFileURL } from 'node:url'
 
 import { ROOT } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 import { animePairs, pairChapters } from './wiki-pairs.mjs'
 
 // fallow-ignore-next-line security-sink -- ROOT is this repository's absolute path; both child segments are literals.
@@ -504,6 +504,6 @@ const run = async (args) => {
   process.exitCode = await printPairs(args)
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   await run(process.argv.slice(2))
 }

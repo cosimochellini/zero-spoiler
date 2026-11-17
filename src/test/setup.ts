@@ -7,7 +7,7 @@ import { LOCALES } from '~/i18n/locales'
 import { loadDictionary } from '~/i18n/translate'
 
 // The shared copy of every locale, which a page has loaded by the time it
-// renders: its locale route awaits it (`src/routes/$locale.tsx`).
+// renders: the root route awaits it (`src/routes/__root.tsx`).
 await Promise.all(LOCALES.map(async (locale) => loadDictionary(locale)))
 
 // No explicit `afterEach(cleanup)` here on purpose. Vitest runs with

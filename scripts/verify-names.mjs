@@ -29,9 +29,9 @@
 // so it is not part of `npm run check` or CI; the answers are cached under
 // `.gate/wiki/<slug>/` (`./wiki.mjs`) and never expire.
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 
 import { seriesOrExit } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 import { titlesOf } from './verify-chapters.mjs'
 import { ITALIAN_TITLES, NAMES_KEPT } from './verify-names.tables.mjs'
 import { italianPages, italianTitles, wikiOf } from './wiki.mjs'
@@ -346,7 +346,7 @@ async function verify() {
   })
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const rows = await verify()
   const wrong = rows.filter(
     ({ verdict }) => verdict === 'wrong' || verdict === 'unresolved',

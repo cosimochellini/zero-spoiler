@@ -38,9 +38,9 @@
 // never expire, so delete that folder to read the wiki afresh, for instance
 // after new chapters come out.
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 
 import { seriesOrExit } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 import { abilityReadingOf } from './verify-chapters.abilities.mjs'
 import { EPISODE_KEPT, TITLES } from './verify-chapters.tables.mjs'
 import { thronesSourceOf } from './verify-chapters.thrones.mjs'
@@ -547,7 +547,7 @@ function table(title, rows, cells) {
   return `${heading}\n\n| kind | record | filed | wiki | page |\n| --- | --- | ---: | ---: | --- |\n${lines.join('\n')}`
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const { rows, thrones } = await verify()
   const failures = ['too low', 'unresolved', 'pin mismatch']
   const wrong = rows.some((row) =>

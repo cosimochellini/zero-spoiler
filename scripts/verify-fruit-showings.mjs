@@ -32,9 +32,9 @@
 // and never expire, so delete that folder to read the wiki afresh. The fruit pages are found the way
 // `./verify-chapters.mjs` finds them (`pagesOf`).
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 
 import { importOrExit, seriesOrExit } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 import { pagesOf } from './verify-chapters.mjs'
 import { wikiOf } from './wiki.mjs'
 
@@ -485,7 +485,7 @@ function table(verdict, rows) {
   return `${heading}\n\n| fruit | threshold | first shown | page | showings |\n| --- | --- | --- | --- | --- |\n${lines.join('\n')}`
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const rows = await verify()
   const failing = Object.values(FAILS)
   const never = rows.filter((row) => row.verdict === LISTED.never)

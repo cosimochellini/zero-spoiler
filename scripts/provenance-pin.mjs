@@ -6,10 +6,10 @@
 import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import { pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
 
 import { ROOT, seriesOrExit } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 import { cached, wikiOf } from './wiki.mjs'
 
 // fallow-ignore-next-line security-sink -- ROOT is this repository's absolute path; the rest is a literal.
@@ -398,6 +398,6 @@ const run = async () => {
   process.exitCode = await main()
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   await run()
 }

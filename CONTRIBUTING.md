@@ -3,7 +3,8 @@
 ## Setup
 
 Use Node from `.nvmrc` and npm from `package.json`, then `npm ci` and
-`npm run dev`. Keep optional dependencies: fallow needs its platform binary.
+`npm run dev`. Keep optional dependencies: fallow and impeccable's detector each
+arrive as the optional package of your platform.
 
 ## Scope and implementation
 
@@ -42,10 +43,18 @@ npx impeccable ignores add-value skipped-heading "*" \
 ```
 
 `**` as the glob waives the rule on every page. The gate fails on a waiver with
-no reason and on one that matches no finding any more, so remove a waiver in the
-change that fixes its page. It reads neither `.impeccable/config.local.json` nor
-ignore comments, and it refuses a page that carries `data-impeccable-ignore`.
-`.gate/design.json` lists every raw finding, waived or not.
+no reason, on a `"*"` with no glob (the detector never applies one), on a
+wildcard inside `{}`, and on one that matches no finding any more, so remove a
+waiver in the change that fixes its page. A waiver that states the house style
+is kept for good: start its reason with `Permanent: ` and the gate lets it match
+nothing. The gate prints `no sample for …` for a series or page type it scans
+with no entry in `SAMPLES` (`scripts/design-gate.mjs`), and fails when a page
+type named there leaves the sitemap. The detector's `design-system-*` rules are
+not part of it: the detector loads `DESIGN.md` for source files, as the design
+hook scans them, and never for a page address. It reads neither
+`.impeccable/config.local.json` nor ignore comments, and it refuses a page that
+carries `data-impeccable-ignore`. `.gate/design.json` lists every raw finding,
+waived or not.
 
 ## Archive and drawing verification
 

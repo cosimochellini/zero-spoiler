@@ -72,8 +72,9 @@ jobs:
           corepack enable npm
           npm --version
 
-      # Never add --omit=optional: fallow ships its binary through
-      # optionalDependencies and bin/fallow resolves it at runtime.
+      # Never add --omit=optional: fallow and impeccable (the engine behind
+      # gate:design) each ship their binary through optionalDependencies and
+      # resolve it at runtime.
       - name: Install
         run: npm ci
 

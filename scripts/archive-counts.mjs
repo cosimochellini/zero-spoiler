@@ -10,10 +10,10 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 import { format, resolveConfig } from 'prettier'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 
 /** The document the table sits in. */
 // fallow-ignore-next-line security-sink -- a constant: the repository's own docs folder
@@ -142,7 +142,7 @@ async function render() {
   return { after, before }
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const { after, before } = await render()
 
   if (process.argv.includes('--check')) {

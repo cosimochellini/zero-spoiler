@@ -20,10 +20,10 @@ import {
 } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 
 import { ROOT } from './archive-loader.mjs'
 import { chromePath } from './art-shots.mjs'
+import { isMain } from './is-main.mjs'
 import {
   FIT_NAME,
   FONT_RULES,
@@ -138,6 +138,6 @@ async function main() {
   )
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   await main()
 }
