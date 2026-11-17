@@ -241,7 +241,7 @@ and the accent 4.5:1, Rule 2 and Focus 3:1, and Accent Ink on the accent 4.5:1.
 **Label/Mono Font:** JetBrains Mono (with a metric-matched local fallback)
 
 **Character:** A heavy display grotesque over a plain text sans, with a mono for
-numbers. All three are self-hosted.
+numbers and short labels. All three are self-hosted.
 
 ### Hierarchy
 
@@ -260,12 +260,11 @@ largest; the clamps are in `src/styles/tokens.stylex.ts` and
 
 **The Two Plus One Rule.** Two families and one outlier, and never a fourth.
 
-**The Numerals Rule (open decision).** The owner's rule: JetBrains Mono is for
-episode numerals (2026-11-17). The code uses it more widely (55 style lines in
-32 files): numerals, counts, short uppercase lines beside a number, and a few
-lines with no number. The owner has not ruled between narrowing the code and
-widening the rule. Until then: keep every existing use, and add mono only for a
-numeral or a short line that carries one, never for prose or a heading.
+**The Mono Rule.** JetBrains Mono is the voice of data: numerals, counts and
+short uppercase labels (owner, 2026-11-17). It is never used for a sentence or a
+heading. The code uses it in 55 style lines in 32 files, and those uses stand.
+Two are sentences set in mono today, the trial strip's line and the map's hint;
+the bookmark and places passes judge them.
 
 ## Layout
 
@@ -353,10 +352,9 @@ Under `prefers-reduced-motion` spatial motion becomes a crossfade.
 - **Do** keep the uppercase tracked label above or beside a heading. Impeccable
   bans a kicker above a heading; here it is part of the style (owner,
   2026-11-17).
-- **Do** keep every existing use of JetBrains Mono, and add it only for a
-  numeral or a short line that carries one, never for prose or a heading.
-  Impeccable treats mono outside code as a costume; here it marks numerals by
-  design (owner, 2026-11-17).
+- **Do** set numerals, counts and short uppercase labels in JetBrains Mono, and
+  nothing longer: never a sentence or a heading. Impeccable treats mono outside
+  code as a costume; here it is the voice of data by design (owner, 2026-11-17).
 - **Do** mark a link inside text with an underline. The accent sits within 3:1
   of the inks in every set, so colour alone cannot.
 - **Do** space siblings with `gap` in new work; see Layout for today's state.
