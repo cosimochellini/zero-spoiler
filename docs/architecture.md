@@ -300,16 +300,20 @@ importing a series directly. Optional slices are declared through features;
 `hasPage` governs page availability, navigation and sitemap membership.
 
 Content routes are `/<series>/<locale>/…`; `/<locale>` is the hub and hosts
-legal/privacy pages. Unknown series and locales return 404. Legacy locale-first
-content routes redirect under `/one-piece` before bookmark parameters are read.
-`src/start.ts` handles shared-link bookmarks, legacy cookie migration and the
-`/` redirect (cookie, then country, then `Accept-Language`) before loaders. A
-link to a series page sets the bookmark: `?ep=650` for an episode, `?s=2&ep=3`
-for an episode in a season, or `?ch=1044` for a chapter. Links on the root,
-legal and privacy pages set no bookmark. The link replaces the bookmark the
-reader had, so a link from someone further ahead can open entries they have not
-reached. `src/server.ts` is the Worker entry: it adds a `Link` header for the
-stylesheet and the fonts the root route preloads, which Cloudflare replays as a
+legal/privacy pages. Unknown series and locales return 404. Every 404 without a
+route's own not-found page, and every render error, is drawn by
+`src/routes/-fallback.tsx` in the site's shell: the series' shell under
+`/<series>/<locale>`, where the root still reads the series for the bookmark
+provider, and the shared one elsewhere. Legacy locale-first content routes
+redirect under `/one-piece` before bookmark parameters are read. `src/start.ts`
+handles shared-link bookmarks, legacy cookie migration and the `/` redirect
+(cookie, then country, then `Accept-Language`) before loaders. A link to a
+series page sets the bookmark: `?ep=650` for an episode, `?s=2&ep=3` for an
+episode in a season, or `?ch=1044` for a chapter. Links on the root, legal and
+privacy pages set no bookmark. The link replaces the bookmark the reader had, so
+a link from someone further ahead can open entries they have not reached.
+`src/server.ts` is the Worker entry: it adds a `Link` header for the stylesheet
+and the fonts the root route preloads, which Cloudflare replays as a
 `103 Early Hints`.
 
 ## Social pictures

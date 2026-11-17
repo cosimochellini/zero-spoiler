@@ -35,6 +35,9 @@ export function ArchivePage({
   return (
     <main
       id="content"
+      // Focusable from code only: the skip link lands here, and a not-found
+      // page takes the focus after a navigation (#1374).
+      tabIndex={-1}
       {...stylex.props(styles.page)}
     >
       <header {...stylex.props(styles.head)}>
@@ -56,6 +59,8 @@ const styles = stylex.create({
     gap: space.xl,
     paddingInline: space.md,
     display: 'grid',
+    // The whole page is not a control: no ring around it when it is focused.
+    outlineStyle: 'none',
     paddingBlockEnd: space.xl3,
     paddingBlockStart: space.lg,
   },

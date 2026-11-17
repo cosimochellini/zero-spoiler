@@ -61,6 +61,19 @@ describe('the series candidate in a route', () => {
     expect(seriesSlugFromPath(path)).toBe('one-piece')
   })
 
+  // The series shell renders around the not-found page of these (#1374).
+  it.each([
+    '/one-piece/en/nope',
+    '/one-piece/en/legal',
+    '/one-piece/it/privacy',
+    '/one-piece/en/characters/nami/extra',
+    '/one-piece/en/ranks/anything',
+    // The ranks page's old address, which only redirects (#1194).
+    '/one-piece/it/power',
+  ])('reads the slug of %s, an address no page answers', (path) => {
+    expect(seriesSlugFromPath(path)).toBe('one-piece')
+  })
+
   it('leaves registration checks to the registry', () => {
     expect(seriesSlugFromPath('/other-series/en')).toBe('other-series')
   })
@@ -72,13 +85,8 @@ describe('the series candidate in a route', () => {
     '/en/legal',
     '/it/privacy',
     '/en/characters',
-    '/one-piece/en/legal',
-    '/one-piece/it/privacy',
     '/one-piece/fr',
-    '/one-piece/en/characters/nami/extra',
-    '/one-piece/en/ranks/anything',
-    // The ranks page's old address, which only redirects (#1194).
-    '/one-piece/it/power',
+    '/one-piece/fr/characters',
     '//en',
   ])('reads no series from %s', (path) => {
     expect(seriesSlugFromPath(path)).toBeNull()
@@ -114,6 +122,13 @@ describe('the series a link parameter sets the bookmark of', () => {
     '/one-piece/en/abilities',
     '/missing/en/characters',
     '/en/legal',
+    // No bookmark is written on the way to a 404.
+    '/one-piece/en/nope',
+    '/one-piece/en/legal',
+    '/one-piece/en/characters/nami/extra',
+    '/one-piece/en/ranks/anything',
+    '/one-piece/it/power',
+    '/one-piece/fr',
   ])('is none on %s', (path) => {
     expect(linkedSeries(path, filed)).toBeNull()
   })

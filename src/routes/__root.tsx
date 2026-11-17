@@ -2,18 +2,21 @@ import * as stylex from '@stylexjs/stylex'
 import {
   createRootRoute,
   HeadContent,
-  notFound,
   Outlet,
   Scripts,
+  useLocation,
   useMatch,
-  useParams,
 } from '@tanstack/react-router'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
 
-import { DEFAULT_LOCALE, isLocale } from '~/i18n/locales'
+import { LocaleProvider } from '~/i18n/LocaleProvider'
+import { localeOfPath } from '~/i18n/locales'
+import { getDictionary, loadDictionary, translate } from '~/i18n/translate'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import { readBookmark, readTrial } from '~/lib/progress/readBookmark'
 import { seriesSlugFromPath } from '~/lib/progress/series'
+import { isMissing } from '~/routes/$series/$locale/-found'
+import { Notice } from '~/routes/-fallback'
 import { seriesDescription } from '~/routes/-series'
 import { createSecurityHeaders } from '~/security-headers'
 import { seriesBarPin, stickyStyles } from '~/styles/sticky'
@@ -34,18 +37,35 @@ export const Route = createRootRoute({
   // this early is what makes the first painted HTML already correct.
   beforeLoad: async ({ location }) => {
     const slug = seriesSlugFromPath(location.pathname)
-    const series = slug === null ? null : await seriesDescription(slug)
-    if (slug !== null && series === null) {
-      throw notFound()
-    }
+    const [series] = await Promise.all([
+      // An unknown series is `null` here and a 404 at the series route's
+      // guard: thrown from here, the signal would leave this route's own
+      // component without the context it reads.
+      slug === null ? null : seriesDescription(slug),
+      // The not-found page of an address under no locale route still needs
+      // its words; a locale route loads the same copy for its own pages.
+      loadDictionary(localeOfPath(location.pathname)),
+    ])
     return {
       series,
       initialBookmark: readBookmark(series),
       initialTrial: readTrial(series) !== null,
+      locale: localeOfPath(location.pathname),
     }
   },
-  head: () => ({
+  head: ({ match, matches }) => ({
     meta: [
+      // A 404: on any other page a deeper route's title wins.
+      ...(isMissing(matches) ?
+        [
+          {
+            title: translate(
+              getDictionary(match.context.locale),
+              'notFound.pageTitle',
+            ),
+          },
+        ]
+      : []),
       // eslint-disable-next-line unicorn/text-encoding-identifier-case -- HTML requires this attribute to be an ASCII case-insensitive match for "utf-8"; `utf8` is a valid encoding label everywhere else, but not here.
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -112,6 +132,7 @@ export const Route = createRootRoute({
   // response the app itself returns.
   headers: ({ ssr }) => createSecurityHeaders(ssr?.nonce),
   component: RootComponent,
+  errorComponent: RootError,
 })
 
 function RootComponent(): ReactElement {
@@ -130,6 +151,23 @@ function RootComponent(): ReactElement {
   )
 }
 
+/**
+ * This route's own failure: the provider or a shell above every other error
+ * page. The document and the notice alone, without the bar and the footer,
+ * one of which may be what failed.
+ */
+function RootError(): ReactElement {
+  const locale = localeOfPath(useLocation({ select: (at) => at.pathname }))
+
+  return (
+    <RootDocument seriesPage={false}>
+      <LocaleProvider locale={locale}>
+        <Notice kind="error" />
+      </LocaleProvider>
+    </RootDocument>
+  )
+}
+
 // The default client entry hydrates the whole document, so the root route has
 // to render <html> itself.
 function RootDocument({
@@ -140,11 +178,9 @@ function RootDocument({
   /** A series page, as `SiteBar` reads it: its bar keeps two rows longer. */
   seriesPage: boolean
 }): ReactElement {
-  // Read loosely because the root route has no params of its own; the locale
-  // belongs to the `$locale` layout below it. Anything unrecognised falls back
-  // to the site default rather than emitting an invalid `lang`.
-  const params = useParams({ strict: false })
-  const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
+  // Read from the address because the root route has no params of its own,
+  // and its not-found page is in a language no locale route matched.
+  const locale = localeOfPath(useLocation({ select: (at) => at.pathname }))
   // A series page, its 404s included, wears the theme its description names;
   // the hub, the legal notices and an unknown address keep the site's own.
   const theme = themeOf(

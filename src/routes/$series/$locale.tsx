@@ -11,6 +11,7 @@ import {
 import { readPlain } from '~/lib/plain'
 import { type SagaTable, SagaTableContext } from '~/lib/progress/sagaLabel'
 import { DrawingsContext } from '~/lib/view/drawings'
+import { isMissing } from '~/routes/$series/$locale/-found'
 import { LocaleShell } from '~/routes/-LocaleShell'
 import { keepSeriesCopy, remembered, seriesCopy } from '~/routes/-series'
 import { loadDrawings, loadSagaLabels } from '~/server/api'
@@ -31,8 +32,9 @@ export const Route = createFileRoute('/$series/$locale')({
     ])
     return { locale: params.locale, copy }
   },
-  head: ({ match, params }) => {
-    if (!isLocale(params.locale)) {
+  head: ({ match, matches, params }) => {
+    // A 404 is titled by the root, as a missing page.
+    if (!isLocale(params.locale) || isMissing(matches)) {
       return {}
     }
     const { copy, locale } = match.context
