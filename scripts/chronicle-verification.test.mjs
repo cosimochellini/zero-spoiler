@@ -44,6 +44,9 @@ const ARCHIVES = {
   },
 }
 
+/** The medium a dated story is told in, as the log prints it. */
+const MEDIA = { chapter: 'books', episode: 'show' }
+
 /** Every story with its series-qualified character id. */
 const STORIES = Object.entries(ARCHIVES).flatMap(([series, archive]) =>
   archive.characters.flatMap((character) =>
@@ -53,6 +56,10 @@ const STORIES = Object.entries(ARCHIVES).flatMap(([series, archive]) =>
       chapter: story.chapter,
       episode: story.episode,
       medium: story.source,
+      dated:
+        series === 'game-of-thrones' ?
+          `${story.chapter} ${MEDIA[story.source] ?? 'both'}`
+        : undefined,
       title: story.value.title.en,
     })),
   ),
@@ -101,6 +108,30 @@ function quotationsIn(note) {
 const HEADING =
   /^## (?<name>.+) \(`(?<id>[a-z\d-]+)`, threshold ep (?<threshold>\d+)\)$/u
 
+/** A date cell that is an episode alone. */
+const EPISODE = /^(?<episode>\d+)$/u
+
+/** A Game of Thrones date cell: an episode, a site chapter and the medium. */
+const DATED = /^(?<episode>\d+) \/ (?<chapter>\d+) (?<medium>show|books|both)$/u
+
+/**
+ * A date cell read back: its episode, and for Game of Thrones its chapter and
+ * medium, or `null` when the cell is not a date.
+ * @param {string} cell The cell.
+ * @returns {null | object} The episode and, when dated, `chapter medium`.
+ */
+function dateIn(cell) {
+  const dated = DATED.exec(cell)
+  if (dated !== null) {
+    const { chapter, episode, medium } = dated.groups
+
+    return { episode: Number(episode), dated: `${chapter} ${medium}` }
+  }
+  const alone = EPISODE.exec(cell)
+
+  return alone === null ? null : { episode: Number(alone.groups.episode) }
+}
+
 /**
  * One table line read as a story row, or `null` when the line is the header,
  * the alignment rule, or not a table line at all.
@@ -117,9 +148,9 @@ function rowIn(line, section) {
     .slice(1, -1)
     .split('|')
     .map((cell) => cell.trim())
-  const episode = Number(cells[1])
+  const date = dateIn(cells[1] ?? '')
 
-  if (cells.length !== 4 || !Number.isSafeInteger(episode)) {
+  if (date === null || cells.length !== 4) {
     return null
   }
 
@@ -128,7 +159,7 @@ function rowIn(line, section) {
     id: section.id,
     name: section.name,
     threshold: Number(section.threshold),
-    episode,
+    ...date,
     title: cells[0],
     source: cells[2],
     note: cells[3],
@@ -193,7 +224,12 @@ const ROWS = rowsInDocument()
  * @returns {string} The line.
  */
 function asLine(entry) {
-  return `${entry.series}/${entry.id} @${entry.episode} — ${entry.title}`
+  const date =
+    entry.dated === undefined ?
+      String(entry.episode)
+    : `${entry.episode} / ${entry.dated}`
+
+  return `${entry.series}/${entry.id} @${date} — ${entry.title}`
 }
 
 /**

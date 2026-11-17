@@ -89,16 +89,26 @@ const COLUMNS = [
   'Note',
 ]
 
+/**
+ * Game of Thrones' columns: a story there is dated by an episode and a site
+ * chapter, and told by the show, the books or both.
+ */
+const DATED_COLUMNS = COLUMNS.with(1, 'Episode / chapter')
+
 /** The one right-aligned column, because an episode is a number. */
 const NUMERIC = 1
+
+/** The medium a dated story is told in, read off its `source`. */
+const MEDIA = { chapter: 'books', episode: 'show' }
 
 /**
  * One markdown table, its columns padded the way Prettier pads them.
  * @param {string[][]} rows One array of cells per story.
+ * @param {string[]} columns The headings.
  * @returns {string} The table, without a trailing newline.
  */
-function table(rows) {
-  const widths = COLUMNS.map((heading, index) =>
+function table(rows, columns) {
+  const widths = columns.map((heading, index) =>
     Math.max(heading.length, ...rows.map((row) => row[index]?.length ?? 0)),
   )
 
@@ -112,7 +122,7 @@ function table(rows) {
     index === NUMERIC ? `${'-'.repeat(width - 1)}:` : '-'.repeat(width),
   )
 
-  return [COLUMNS, rule, ...rows]
+  return [columns, rule, ...rows]
     .map(
       (row) => `| ${row.map((cell, index) => pad(cell, index)).join(' | ')} |`,
     )
@@ -143,10 +153,12 @@ function chronicled(archive) {
  * One `##` heading and table, for one character.
  * @param {object} character The character record.
  * @param {object[]} chronicle Its stories, in episode order.
- * @param {object} allSources The series' sources, by character id and episode.
+ * @param {object} log How the series is logged.
+ * @param {boolean} log.dated Whether its stories are dated by chapter too.
+ * @param {object} log.sources Its sources, by character id and episode.
  * @returns {string} The section, without a trailing newline.
  */
-function section(character, chronicle, allSources) {
+function section(character, chronicle, { dated, sources: allSources }) {
   const sources = allSources[character.id] ?? {}
   const rows = chronicle.map((story) => {
     const source =
@@ -160,17 +172,17 @@ function section(character, chronicle, allSources) {
       )
     }
 
-    return [
-      story.value.title.en,
-      String(story.episode),
-      source.source,
-      source.note,
-    ]
+    const date =
+      dated ?
+        `${story.episode} / ${story.chapter} ${MEDIA[story.source] ?? 'both'}`
+      : String(story.episode)
+
+    return [story.value.title.en, date, source.source, source.note]
   })
 
   const heading = `## ${character.name.en} (\`${character.id}\`, threshold ep ${character.revealedAtEpisode})`
 
-  return `${heading}\n\n${table(rows)}`
+  return `${heading}\n\n${table(rows, dated ? DATED_COLUMNS : COLUMNS)}`
 }
 
 /**
@@ -204,6 +216,7 @@ async function logs() {
         ...thrones,
         featuredIds: thrones.featuredCharacters.map(({ id }) => id),
       },
+      dated: true,
       heading: '# Game of Thrones',
       sources: GAME_OF_THRONES_SOURCES,
     },
@@ -216,13 +229,18 @@ async function logs() {
  */
 async function render() {
   const series = await logs()
-  const parts = series.flatMap(({ archive, heading, sources }) => {
-    const sections = chronicled(archive).map((character) =>
-      section(character, archive.dossierOf(character).chronicle, sources),
-    )
+  const parts = series.flatMap(
+    ({ archive, dated = false, heading, sources }) => {
+      const sections = chronicled(archive).map((character) =>
+        section(character, archive.dossierOf(character).chronicle, {
+          dated,
+          sources,
+        }),
+      )
 
-    return heading === null ? sections : [heading, ...sections]
-  })
+      return heading === null ? sections : [heading, ...sections]
+    },
+  )
 
   return `${[PREAMBLE.trimEnd(), ...parts].join('\n\n')}\n`
 }
