@@ -14,8 +14,13 @@ import {
   writeCookie,
 } from '~/lib/cookies'
 
-import { BookmarkContext, type BookmarkContextValue } from './BookmarkContext'
+import {
+  BookmarkContext,
+  type BookmarkContextValue,
+  type BookmarkNotice,
+} from './BookmarkContext'
 import { type Bookmark, serialiseBookmark } from './episode'
+import { readOpenEntries } from './openEntries'
 import type { BookmarkSeries } from './series'
 
 /**
@@ -69,11 +74,12 @@ function SeriesBookmarkProvider({
   series,
 }: BookmarkProviderProps): ReactElement {
   const router = useRouter()
-  // The point and whether it is a trial move together, in one update.
-  const [stored, setStored] = useState<{ bookmark: Bookmark; trial: boolean }>(
+  // The point, whether it is a trial and what the last save changed move
+  // together, in one update.
+  const [stored, setStored] = useState<Stored>(
     series === null ?
-      { bookmark: null, trial: false }
-    : { bookmark: initialBookmark, trial: initialTrial },
+      { bookmark: null, trial: false, notice: null }
+    : { bookmark: initialBookmark, trial: initialTrial, notice: null },
   )
   const [pending, startTransition] = useTransition()
 
@@ -88,6 +94,7 @@ function SeriesBookmarkProvider({
       // answer for the bookmark the reader has just left.
       // A saved bookmark, or none, ends a trial either way.
       saveCookie(series, next)
+      const seen = seenOn(router.latestLocation.pathname)
 
       // Inside a transition, so the pages the reader is looking at stay on
       // screen — already correct, already censored — until the new ones are
@@ -96,7 +103,7 @@ function SeriesBookmarkProvider({
       // one thing this site is for.
       startTransition(async () => {
         // Before the await, so it lands in this transition with the records.
-        setStored({ bookmark: next, trial: false })
+        setStored((was) => savedOver(was, next, seen))
         await router.invalidate()
       })
     },
@@ -113,7 +120,7 @@ function SeriesBookmarkProvider({
       writeCookie(series.trialCookie, serialiseBookmark(point))
       router.clearCache()
       startTransition(() => {
-        setStored({ bookmark: point, trial: true })
+        setStored({ bookmark: point, trial: true, notice: null })
       })
     },
     [router, series],
@@ -125,7 +132,7 @@ function SeriesBookmarkProvider({
     }
     expireCookie(series.trialCookie)
     startTransition(async () => {
-      setStored({ bookmark: null, trial: false })
+      setStored({ bookmark: null, trial: false, notice: null })
       await router.invalidate()
     })
   }, [router, series])
@@ -136,6 +143,43 @@ function SeriesBookmarkProvider({
   )
 
   return <BookmarkContext value={value}>{children}</BookmarkContext>
+}
+
+/** What the provider holds: the point, and what the last save changed. */
+interface Stored {
+  bookmark: Bookmark
+  notice: BookmarkNotice | null
+  trial: boolean
+}
+
+/** What a notice keeps of the page a save was made on. */
+type Seen = Pick<BookmarkNotice, 'open' | 'path'>
+
+/**
+ * Read before the pages change: the listing on screen still counts what was
+ * open at the bookmark the reader is leaving.
+ */
+function seenOn(path: string): Seen {
+  return { open: readOpenEntries(), path }
+}
+
+/**
+ * The saved bookmark, and what saving it changed: nothing, when it is the
+ * bookmark already held. A trial point was never saved, so a save out of a
+ * trial starts from none.
+ */
+function savedOver(was: Stored, to: Bookmark, seen: Seen): Stored {
+  const from = was.trial ? null : was.bookmark
+
+  return {
+    bookmark: to,
+    trial: false,
+    notice: cookieOf(from) === cookieOf(to) ? null : { ...seen, from, to },
+  }
+}
+
+function cookieOf(bookmark: Bookmark): null | string {
+  return bookmark === null ? null : serialiseBookmark(bookmark)
 }
 
 /** Saving or forgetting progress ends this series' trial. */

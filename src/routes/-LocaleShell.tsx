@@ -1,6 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
+import { BookmarkStatus } from '~/components/BookmarkStatus'
 import { ReportLink } from '~/components/ReportLink'
 import { SiteBar } from '~/components/SiteBar'
 import { SiteFooter } from '~/components/SiteFooter'
@@ -40,7 +41,14 @@ export function LocaleShell({
       </a>
       <div {...stylex.props(styles.shell)}>
         <SiteBar />
-        <div>{trial && <TrialStrip />}</div>
+        <div>
+          {trial && (
+            <>
+              <TrialStrip />
+              <BookmarkStatus />
+            </>
+          )}
+        </div>
         {children}
         {!shared && <ReportLink />}
         <SiteFooter shared={shared} />

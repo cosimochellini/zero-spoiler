@@ -66,6 +66,15 @@ export const enDictionary = {
   'trial.save': 'Save this point',
   'trial.leave': 'Leave the trial',
 
+  'status.set': 'Bookmark set to {threshold}.',
+  'status.moved': 'Bookmark moved to {threshold}.',
+  'status.cleared': 'Bookmark cleared.',
+  'status.opened': '{count} more entries are open.',
+  'status.openedOne': '1 more entry is open.',
+  'status.fogged': '{count} entries went back under fog.',
+  'status.foggedOne': '1 entry went back under fog.',
+  'status.undo': 'Undo',
+
   'welcome.title': 'What you can do now',
   'welcome.lede':
     'Your bookmark is saved. Every page shows what you have reached and keeps the rest under fog.',

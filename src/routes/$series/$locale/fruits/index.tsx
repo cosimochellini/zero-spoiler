@@ -6,6 +6,7 @@ import { FruitsAlbum } from '~/components/FruitWall'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
+import { useOpenEntries } from '~/lib/progress/openEntries'
 import { type AlbumView, parseFruitParams } from '~/lib/search/fruitParams'
 import { seriesPageHead } from '~/routes/$locale/-head'
 import { requirePage } from '~/routes/$series/$locale/-found'
@@ -78,6 +79,7 @@ function FruitsPage(): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   const { bookmark } = useBookmark()
   const { filed, marquee, plates } = Route.useLoaderData()
+  useOpenEntries(plates.reduce((sum, plate) => sum + plate.opened, 0))
   const { album, retry } = useFruitAlbum()
 
   const peek = usePeek(liftFruit)

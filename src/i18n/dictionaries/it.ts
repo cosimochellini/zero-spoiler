@@ -56,6 +56,15 @@ export const itDictionary: Dictionary = {
   'trial.save': 'Salva questo punto',
   'trial.leave': 'Esci dalla prova',
 
+  'status.set': 'Segnalibro impostato su {threshold}.',
+  'status.moved': 'Segnalibro spostato su {threshold}.',
+  'status.cleared': 'Segnalibro cancellato.',
+  'status.opened': 'Altre {count} voci sono visibili.',
+  'status.openedOne': 'Un’altra voce è visibile.',
+  'status.fogged': '{count} voci sono tornate nella nebbia.',
+  'status.foggedOne': 'Una voce è tornata nella nebbia.',
+  'status.undo': 'Annulla',
+
   'welcome.title': 'Cosa puoi fare ora',
   'welcome.lede':
     'Il segnalibro è salvato. Ogni pagina mostra quello che hai già raggiunto e tiene il resto nella nebbia.',
