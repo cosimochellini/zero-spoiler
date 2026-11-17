@@ -160,9 +160,10 @@ spacing:
 **Creative North Star: "The spoiler boundary is a horizon you move"**
 
 The reader's bookmark is one line through the story. What lies before it is
-drawn, named and lit; what lies after it is under fog. A series' pages draw that
-line with the same two marks: solid and the accent for what is reached; dashed,
-fog and muted ink for what is not.
+drawn, named and lit; what lies after it is under fog. A series' pages mark that
+line in several ways: the accent on the bookmark mark and on the route travelled
+on the places map; fog, muted ink and often a dashed rule for what is not
+reached.
 
 The site is dark, and only dark. Four colour sets share one structure:
 "Blackout" for the hub and the legal page, and one theme per series. Type,
@@ -288,8 +289,8 @@ one, never for prose or a heading.
 ## Layout
 
 The shell is one centred column, at most 76rem wide. Spacing is a 4pt scale
-(`spacing` in the frontmatter). Siblings are spaced with `gap`; `margin` is for
-optical adjustment only.
+(`spacing` in the frontmatter; `xl4` is defined and unused today). Siblings are
+spaced with `gap`; `margin` is for optical adjustment only.
 
 The site bar is pinned at every width: two rows on a phone, one row from 40rem,
 or from 56rem on a series page. A listing's control bar and the sticky heads
@@ -307,8 +308,9 @@ drop to two columns or one; from 60rem a record's page is two columns.
 Flat, with no drop shadows. Depth comes from the three papers, hairline rules
 and the overlays: the site bar is frosted glass (Veil with a backdrop blur) and
 a dialog darkens the page with Scrim. `box-shadow` appears only as a flat line
-that costs no layout. The z-index levels are in `.impeccable/design.json`;
-dialogs are native `<dialog>` elements in the top layer.
+that costs no layout. The z-index levels are in `.impeccable/design.json`
+(`z.base` is defined and unused today); dialogs are native `<dialog>` elements
+in the top layer.
 
 ## Shapes
 
@@ -318,8 +320,15 @@ such as a stepper, a close button or a dot on the map. Lines are 1px for
 hairlines and 2px for a control's boundary and the focus ring. A button, a field
 and a chip keep their border width in every state.
 
-A dashed line means "not reached": the rule over a fog band, the bookmark mark
-with no bookmark set, the route past the reader's point on the map.
+Dashes do two jobs today. They mark what is not reached: the rule over a fog
+band and over the fog row of the places index, the bookmark mark with no
+bookmark set, a covered card on the landing page, a seat whose holder is under
+fog and the line for groups under fog on the ranks page, and the route past the
+reader's stop on the places map. They are also plain drawing on reached content:
+the inner ring of a character's seal, the inner rule of a place's plate, the
+ground, shadow and water strokes of a drawing, the sea currents on the map, and
+the dotted accent line of the route already travelled. A dash alone therefore
+does not say "under fog".
 
 Drawings follow the
 [`line-drawings` skill](.claude/skills/line-drawings/SKILL.md), which owns their
@@ -343,8 +352,9 @@ controls and the fog components are in their surface briefs
   `SeaChartStops`, `SeaChartPins` and `FillerCountdown`.
 - **Hover / Focus:** the text takes the accent and the border Ink. The focus
   ring is a 2px outline in Focus, reserved at rest. A press moves it down 1px.
-- **Disabled:** the attribute, the cursor and 55% opacity together, as on Save
-  before the draft is a real bookmark. A control that could never act is left
+- **Disabled:** the shared button sets the attribute, a `not-allowed` cursor and
+  55% opacity together. Save does not fade: disabled, it is Paper 3 with a Rule
+  border and Muted text at full opacity. A control that could never act is left
   out instead: the line that clears the bookmark is absent when there is none.
 
 ### Inputs / Fields
@@ -367,14 +377,15 @@ accent underline and `aria-current`.
 
 ### Motion
 
-Three durations and three easings, in `.impeccable/design.json`: the shortest
-for a control's state, the middle for the crossfade between pages and a dialog
-surfacing, the longest for a band settling, a sheet rising and the fog clearing.
-Movement uses `opacity` and `transform`. A state change may also transition a
-colour, a border or an underline, and a drawing may draw itself in once along
-its stroke. A page's title does not settle in with the bands, because it is the
-largest paint. Under `prefers-reduced-motion` spatial motion becomes a crossfade
-and the fog stands still.
+Three durations and three easings, in `.impeccable/design.json` (`ease.in` is
+defined and no code uses it today): the shortest for a control's state, the
+middle for the crossfade between pages and a dialog surfacing, the longest for a
+band settling, a sheet rising and the fog clearing. Movement uses `opacity` and
+`transform`. A state change may also transition a colour, a border or an
+underline, and a drawing may draw itself in once along its stroke. A page's
+title does not settle in with the bands, because it is the largest paint. Under
+`prefers-reduced-motion` spatial motion becomes a crossfade and the fog stands
+still.
 
 ## Do's and Don'ts
 
@@ -396,7 +407,8 @@ and the fog stands still.
 - **Do** keep controls at least 44px tall. A button, a chip and the search field
   reserve a 2px Focus outline at rest; the bookmark's number shows focus on its
   underline.
-- **Do** design the phone layout first: mobile is the owner's second priority.
+- **Do** check every pass at a width of 390px. Mobile is the owner's second
+  priority, after the bookmark and progress and before fog.
 
 ### Don't:
 
@@ -409,11 +421,11 @@ and the fog stands still.
 - **Don't** use a radius above `rounded.card` on a rectangle, or a drop shadow.
 - **Don't** set a heading in italics.
 - **Don't** animate a `filter` or a layout property.
-- **Don't** show, name or hint at anything past the reader's bookmark. A covered
-  record carries only its kind, its thresholds and an opaque handle
-  (`docs/architecture.md#spoiler-contract`), so a page may say how many entries
-  are under fog and when each opens, and nothing else about them. A blurred real
-  record is still a leak.
+- **Don't** show, name or hint at anything past the reader's bookmark: not what
+  a covered entry is, nor its name, drawing or text. A page may say that an
+  entry of a kind is under fog, when it opens and how many there are.
+  `PRODUCT.md` lists the owner-ruled limits (the filler page, saga names) and
+  `docs/architecture.md#spoiler-contract` is the authority.
 - **Don't** spread the legal notices: they live on the legal page, and the
   footer carries one line and one link.
 - **Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it

@@ -18,8 +18,14 @@ facts, then the chronicle, then the relationships reached.
 
 **Holds today:**
 
-- Search finds only open entries. The covered ones are a fog band at the foot,
-  and the fog does not answer a search.
+- Search finds only open entries. The covered featured characters are a fog
+  band under the featured grid, and covered tiles stay on their arc's shelf;
+  neither moves when the reader types.
+- A covered card keeps its episode legible; its seal, name and role are
+  covered together. On a covered character's page the seal is drawn empty and
+  the kind and threshold stay outside the veil.
+- The chronicle lists the stories reached, latest first. With none reached it
+  draws nothing, not a heading over an empty list.
 - A character's drawing and name travel between the list and their page, for
   the one record the reader clicked.
 - Facts, stories and relationships are dated: the page shows what the

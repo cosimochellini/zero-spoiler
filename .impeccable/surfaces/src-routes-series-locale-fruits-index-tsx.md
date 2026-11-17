@@ -23,7 +23,11 @@ Hunter) the reader has reached, and reading one in full.
 - The abilities page is an album with a plate per Nen type. Covered abilities
   are one fog band, so no plate gives a covered ability's type.
 - A record's page is a stage: the drawing large in a soft light of its tint,
-  then its history and who uses it. A covered user is left out, not counted.
+  the name, and under fog an empty frame with the kind and threshold left
+  outside the veil. A fruit's page goes on to its history, who ate it (each
+  eater with its own fog) and two rails, same kind and same saga. An ability's
+  page lists the users reached; a covered user is left out and not counted.
 - Covered fruits are fog tiles or one fog band, depending on the view. With no
-  bookmark the page is one bank of fog with the count of fruits, the question
-  and the control that sets a bookmark.
+  bookmark the page is one bank of fog with the count of fruits, the question,
+  the control that sets a bookmark and a count for each kind; the covered
+  tiles stay under it, behind a disclosure.

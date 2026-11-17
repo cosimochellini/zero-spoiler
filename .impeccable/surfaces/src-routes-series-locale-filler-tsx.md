@@ -20,7 +20,11 @@ its address, not from the bar; `/<series>/<locale>/ranks`, in the bar.
 
 - The filler page leads with one sentence over six cells: the reader's episode
   and the five after it. Then the runs to skip by saga, a strip of the whole
-  series, and the catalogue, under fog past the bookmark.
+  series, and the catalogue.
+- Owner-ruled and not a leak (2026-10-10, `filler.server.ts`): the runs, the
+  strip of every aired episode's kind and the names of the sagas are on the
+  page at every bookmark. Only the catalogue's rows, with their titles, are
+  under fog past the bookmark.
 - The ranks page is a row of seats per group (`PowerBoard`). A seat is dashed
   and unlit while its holder is under fog, solid and empty when vacant, and in
   its holder's tint with their drawing once held.

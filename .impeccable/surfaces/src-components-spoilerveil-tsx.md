@@ -29,5 +29,11 @@ band (`FogBand`), the covered records at the foot of a listing.
   title is a different sentence for none, one and many.
 - The blur under a veil is never animated; the curtain fades over it.
 
-**Unresolved:** empty states have no shared component; each page writes its
-own line.
+**Unresolved:**
+
+- Empty states have no shared component; each page writes its own line.
+- Dashes mark what is not reached (a fog band's rule, an unknown seat, the
+  route past the reader) and are also plain drawing on reached content (a
+  seal's inner ring, a plate's inner rule, ground and water strokes).
+  `DESIGN.md`, Shapes, lists both. This pass judges whether the mixed use
+  blurs "what is hidden".

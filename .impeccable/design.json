@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-17T13:44:20.296Z",
+  "generatedAt": "2026-11-17T14:05:10.451Z",
   "title": "Design System: Zero Spoiler",
   "extensions": {
     "colorMeta": {
@@ -765,7 +765,7 @@
       {
         "name": "ease-in",
         "value": "cubic-bezier(0.7, 0, 0.84, 0)",
-        "purpose": "Leaving elements: they accelerate away."
+        "purpose": "Defined for leaving elements; no code uses it today."
       },
       {
         "name": "ease-inOut",
@@ -840,6 +840,7 @@
         "purpose": "The fruit album has six columns."
       }
     ],
+    "unused": ["ease.in", "z.base", "space.xl4"],
     "zIndex": [
       { "name": "base", "value": 1 },
       { "name": "raised", "value": 10 },
@@ -871,7 +872,7 @@
       "kind": "button",
       "description": "The bookmark dialog's action, filled with the accent as a primary action's button is. Shown in One Piece's colours.",
       "html": "<button class=\"ds-btn-save\" type=\"button\">Save</button>",
-      "css": ".ds-btn-save { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; width: 100%; padding: 0.5rem 1rem; border: 2px solid oklch(84% 0.16 88); border-radius: 3px; background: oklch(84% 0.16 88); color: oklch(16% 0.03 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; white-space: nowrap; cursor: pointer; outline: 2px solid transparent; outline-offset: 0.125rem; transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1), transform 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-save:hover { background: color-mix(in oklch, oklch(84% 0.16 88) 80%, oklch(95% 0.01 250)); } .ds-btn-save:focus-visible { outline-color: oklch(88% 0.15 92); } .ds-btn-save:active { background: color-mix(in oklch, oklch(84% 0.16 88) 88%, oklch(16% 0.03 250)); transform: translateY(1px); }"
+      "css": ".ds-btn-save { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; width: 100%; padding: 0.5rem 1rem; border: 2px solid oklch(84% 0.16 88); border-radius: 3px; background: oklch(84% 0.16 88); color: oklch(16% 0.03 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; white-space: nowrap; cursor: pointer; outline: 2px solid transparent; outline-offset: 0.125rem; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1), border-color 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms cubic-bezier(0.16, 1, 0.3, 1), transform 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-save:hover { background: color-mix(in oklch, oklch(84% 0.16 88) 80%, oklch(95% 0.01 250)); } .ds-btn-save:focus-visible { outline-color: oklch(88% 0.15 92); } .ds-btn-save:active { background: color-mix(in oklch, oklch(84% 0.16 88) 88%, oklch(16% 0.03 250)); transform: translateY(1px); }"
     },
     {
       "name": "Bookmark Mark",
@@ -897,7 +898,7 @@
   ],
   "narrative": {
     "northStar": "The spoiler boundary is a horizon you move",
-    "overview": "The reader's bookmark is one line through the story. What lies before it is drawn, named and lit; what lies after it is under fog. A series' pages draw that line with the same two marks: solid and the accent for what is reached; dashed, fog and muted ink for what is not.\n\nThe site is dark, and only dark. Four colour sets share one structure: \"Blackout\" for the hub and the legal page, and one theme per series. Type, spacing, radii and motion are shared. The pictures are line drawings made for this project.\n\nThe owner prefers bold, dramatic, eye-catching UI with one central idea over restrained layouts: each page states one idea at display size. This identity is fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing, states, motion, copy, responsive behaviour and accessibility, and add no font, colour or theme.",
+    "overview": "The reader's bookmark is one line through the story. What lies before it is drawn, named and lit; what lies after it is under fog. A series' pages mark that line in several ways: the accent on the bookmark mark and on the route travelled on the places map; fog, muted ink and often a dashed rule for what is not reached.\n\nThe site is dark, and only dark. Four colour sets share one structure: \"Blackout\" for the hub and the legal page, and one theme per series. Type, spacing, radii and motion are shared. The pictures are line drawings made for this project.\n\nThe owner prefers bold, dramatic, eye-catching UI with one central idea over restrained layouts: each page states one idea at display size. This identity is fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing, states, motion, copy, responsive behaviour and accessibility, and add no font, colour or theme.",
     "keyCharacteristics": [
       "Dark only, with one accent per colour set.",
       "One display idea per page, in Bricolage Grotesque at weight 800.",
@@ -934,7 +935,7 @@
       "**Do** mark a link inside text with an underline. The accent sits within 3:1 of the inks in every set, so colour alone cannot.",
       "**Do** space siblings with `gap`.",
       "**Do** keep controls at least 44px tall. A button, a chip and the search field reserve a 2px Focus outline at rest; the bookmark's number shows focus on its underline.",
-      "**Do** design the phone layout first: mobile is the owner's second priority."
+      "**Do** check every pass at a width of 390px. Mobile is the owner's second priority, after the bookmark and progress and before fog."
     ],
     "donts": [
       "**Don't** use `#000`, `#fff` or a grey with no hue.",
@@ -944,7 +945,7 @@
       "**Don't** use a radius above `rounded.card` on a rectangle, or a drop shadow.",
       "**Don't** set a heading in italics.",
       "**Don't** animate a `filter` or a layout property.",
-      "**Don't** show, name or hint at anything past the reader's bookmark. A covered record carries only its kind, its thresholds and an opaque handle (`docs/architecture.md#spoiler-contract`), so a page may say how many entries are under fog and when each opens, and nothing else about them. A blurred real record is still a leak.",
+      "**Don't** show, name or hint at anything past the reader's bookmark: not what a covered entry is, nor its name, drawing or text. A page may say that an entry of a kind is under fog, when it opens and how many there are. `PRODUCT.md` lists the owner-ruled limits (the filler page, saga names) and `docs/architecture.md#spoiler-contract` is the authority.",
       "**Don't** spread the legal notices: they live on the legal page, and the footer carries one line and one link.",
       "**Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it follows the `tone-of-voice` skill."
     ]

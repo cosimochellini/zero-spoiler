@@ -25,5 +25,5 @@ and changing language.
 - `Button` is the shared button and `SearchField` the listings' search field.
   Both are
   at least 44px tall, with the focus ring reserved at rest.
-- The footer is one block of small type: what the site is, one line of notice
+- The footer is one block of body-size type in Muted: what the site is, one line of notice
   with one link to the legal page, and the repository link.

@@ -22,7 +22,8 @@ only.
 - The map fills in as the reader goes: reached islands are drawn in their
   saga's tint and named, and a sea is drawn and named only once the reader has
   a stop in it.
-- The accent is kept for the route travelled, the ship and the reader's stop.
+- The accent draws the route travelled, the ship, the reader's stop and the
+  compass's north.
   Past the ship the route goes on dashed into fog, one unnamed dot per stop.
 - The map is drawn upright on a phone, where it does not move, and across on a
   wider window, where it zooms and pans.
