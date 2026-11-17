@@ -1,17 +1,16 @@
 import * as stylex from '@stylexjs/stylex'
-import {
-  type KeyboardEvent,
-  type ReactElement,
-  type ReactNode,
-  type RefObject,
-  useRef,
-  useState,
-} from 'react'
+import type { ReactElement, ReactNode } from 'react'
 
 import { DrawInContext } from '~/components/drawing'
 import { PHASES, styles } from '~/components/FogTile.styles'
+import {
+  followFocus,
+  type Lift,
+  type LiftState,
+  SAYS,
+  useLift,
+} from '~/components/useLift'
 import { useT } from '~/i18n/LocaleContext'
-import type { TranslationKey } from '~/i18n/types'
 import { useThreshold } from '~/lib/progress/BookmarkContext'
 import type { Gated } from '~/lib/progress/spoiler'
 
@@ -38,16 +37,6 @@ export interface FogTileProps<T> {
   children: (record: T) => ReactNode
 }
 
-/** Resting, asked once, waiting on the server, or back with nothing. */
-type FogState = 'asking' | 'confirming' | 'failed' | 'resting'
-
-/** What the tile says in each state. Resting, the fog says nothing. */
-const SAYS: Record<Exclude<FogState, 'resting'>, TranslationKey> = {
-  asking: 'veil.revealing',
-  confirming: 'veil.ask',
-  failed: 'veil.peekFailed',
-}
-
 /**
  * A covered record as a tile of living fog: a frame the size of an open tile
  * with slow fog drifting in it, and under it the lines that are already
@@ -55,7 +44,8 @@ const SAYS: Record<Exclude<FogState, 'resting'>, TranslationKey> = {
  * record, with no tint and no outline, because a drawing can spoil (#136).
  *
  * The whole tile is one button. The first press asks, inline: "Show it
- * anyway?". The second calls `peek`; Escape or leaving the tile cancels.
+ * anyway?". The second calls `peek`; Escape or leaving the tile cancels
+ * (`useLift`), and each step is said aloud by the page's one live region.
  * Nothing of the record is in the DOM until it arrives, so there is nothing
  * under the fog to make `inert`: the fog itself is `aria-hidden`.
  *
@@ -72,7 +62,7 @@ export function FogTile<T>({
   phase = 0,
   children,
 }: FogTileProps<T>): ReactElement {
-  const { buttonRef, cancel, press, record, state } = useLift(covered, peek)
+  const { button, record, state } = useLift(covered.handle, peek)
   const lifted = record !== null
 
   return (
@@ -80,7 +70,7 @@ export function FogTile<T>({
       {lifted ?
         <div
           ref={(node) => {
-            followFocus(node, buttonRef)
+            followFocus(node, button.ref)
           }}
           {...stylex.props(styles.content)}
         >
@@ -105,82 +95,14 @@ export function FogTile<T>({
         phase={phase}
       />
       <Ask
-        buttonRef={buttonRef}
+        button={button}
         covered={covered}
         name={lines[0] ?? ''}
-        onCancel={cancel}
-        onPress={press}
         spent={lifted}
         state={state}
       />
-      <Said state={state} />
     </div>
   )
-}
-
-/**
- * The two-step lift: the first press asks, the second sends for the record.
- * A failed request leaves the question answered, so the next press retries.
- */
-function useLift<T>(
-  covered: Gated & { handle: string },
-  peek: (handle: string) => Promise<T>,
-): {
-  buttonRef: RefObject<HTMLButtonElement | null>
-  cancel: () => void
-  press: () => void
-  record: null | T
-  state: FogState
-} {
-  const [record, setRecord] = useState<null | T>(null)
-  const [state, setState] = useState<FogState>('resting')
-  const buttonRef = useRef<HTMLButtonElement>(null)
-
-  const ask = async (): Promise<void> => {
-    setState('asking')
-    try {
-      setRecord(await peek(covered.handle))
-      setState('resting')
-    } catch {
-      setState('failed')
-    }
-  }
-
-  const press = (): void => {
-    if (record !== null || state === 'asking') {
-      return
-    }
-    if (state === 'resting') {
-      setState('confirming')
-      return
-    }
-
-    void ask()
-  }
-
-  const cancel = (): void => {
-    if (state === 'confirming') {
-      setState('resting')
-    }
-  }
-
-  return { buttonRef, cancel, press, record, state }
-}
-
-/**
- * Focus was on the button the reader pressed. Once that button is spent it
- * follows the reader into what the fog was hiding, rather than falling back
- * to the top of the page.
- */
-function followFocus(
-  node: HTMLDivElement | null,
-  buttonRef: RefObject<HTMLButtonElement | null>,
-): void {
-  if (node !== null && document.activeElement === buttonRef.current) {
-    node
-      .querySelector<HTMLElement>('a[href], button')
-      ?.focus({ preventScroll: true })
-  }
 }
 
 /** The fog itself: two banks drifting in the frame, cleared once lifted. */
@@ -216,32 +138,22 @@ function Fog({
 
 /** The button over the whole tile, and the words it says once pressed. */
 function Ask({
-  buttonRef,
+  button,
   covered,
   name,
-  onCancel,
-  onPress,
   spent,
   state,
 }: {
-  buttonRef: RefObject<HTMLButtonElement | null>
+  button: Lift<unknown>['button']
   covered: Gated
   /** What tells this tile from the next to a screen reader: its first line. */
   name: string
-  onCancel: () => void
-  onPress: () => void
   spent: boolean
-  state: FogState
+  state: LiftState
 }): ReactElement {
   const t = useT()
   const threshold = useThreshold()
   const resting = state === 'resting'
-
-  const handleKeyDown = (event: KeyboardEvent): void => {
-    if (event.key === 'Escape') {
-      onCancel()
-    }
-  }
 
   return (
     <button
@@ -257,11 +169,8 @@ function Ask({
           `${name}. ${threshold('veil.locked', covered)}. ${t('veil.reveal')}`
         : undefined
       }
-      onBlur={onCancel}
-      onClick={onPress}
-      onKeyDown={handleKeyDown}
-      ref={buttonRef}
       type="button"
+      {...button}
       {...stylex.props(styles.button, spent && styles.buttonSpent)}
     >
       <span {...stylex.props(styles.prompt)}>
@@ -272,28 +181,10 @@ function Ask({
 }
 
 /**
- * The words, said aloud as they change. Outside the button, whose children
- * are presentational, and mounted from the start, since a live region born
- * with its text is not announced.
+ * What a pressed fog control says: the question and its answer, or the
+ * state. Resting, nothing. A verb-only `SpoilerVeil` says the same words.
  */
-function Said({ state }: { state: FogState }): ReactElement {
-  const t = useT()
-
-  return (
-    <span
-      role="status"
-      {...stylex.props(styles.hidden)}
-    >
-      {state === 'resting' ? null : t(SAYS[state])}
-    </span>
-  )
-}
-
-/**
- * What a pressed tile says: the question and its answer, or the state.
- * Resting, nothing.
- */
-function Words({ state }: { state: FogState }): null | ReactElement {
+export function Words({ state }: { state: LiftState }): null | ReactElement {
   const t = useT()
 
   if (state === 'resting') {

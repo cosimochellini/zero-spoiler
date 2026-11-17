@@ -1,6 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
+import { Announcer } from '~/components/Announcer'
 import { ReportLink } from '~/components/ReportLink'
 import { SiteBar } from '~/components/SiteBar'
 import { SiteFooter } from '~/components/SiteFooter'
@@ -45,6 +46,7 @@ export function LocaleShell({
         {!shared && <ReportLink />}
         <SiteFooter shared={shared} />
       </div>
+      <Announcer />
     </LocaleProvider>
   )
 }

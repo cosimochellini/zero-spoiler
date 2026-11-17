@@ -13,6 +13,7 @@ import {
 } from '~/test/fixtures'
 import { ep, renderWithProviders, settle } from '~/test/providers'
 
+import { Announcer } from './Announcer'
 import { FogTile } from './FogTile'
 
 interface Secret {
@@ -28,13 +29,16 @@ function body(shown: Secret): ReactElement {
 
 function tile(peek: (handle: string) => Promise<Secret>): ReactElement {
   return (
-    <FogTile
-      covered={coveredRecord({ handle: 'zz', ...at(462) })}
-      lines={['Fruit 03 · Zoan', 'First named in episode 462']}
-      peek={peek}
-    >
-      {body}
-    </FogTile>
+    <>
+      <FogTile
+        covered={coveredRecord({ handle: 'zz', ...at(462) })}
+        lines={['Fruit 03 · Zoan', 'First named in episode 462']}
+        peek={peek}
+      >
+        {body}
+      </FogTile>
+      <Announcer />
+    </>
   )
 }
 
@@ -85,8 +89,8 @@ describe('FogTile', () => {
     expect(screen.getByRole('button')).toHaveAccessibleName(
       'Show it anyway? Yes, show',
     )
-    // Said aloud from a live region outside the button, whose children a
-    // screen reader treats as presentational.
+    // Said aloud from the page's one live region, outside the button, whose
+    // children a screen reader treats as presentational.
     expect(screen.getByRole('status')).toHaveTextContent('Show it anyway?')
     expect(screen.getByRole('button')).not.toContainElement(
       screen.getByRole('status'),

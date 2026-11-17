@@ -307,6 +307,9 @@ describe('CharacterGrid', () => {
     expect(control).toHaveTextContent('Show')
     expect(screen.queryByText('A later arc')).not.toBeInTheDocument()
 
+    // A heading in a list asks first (#1376): the second press sends, and
+    // the one call below is all the server hears.
+    await user.click(control)
     await user.click(control)
     await settle()
 
@@ -329,12 +332,10 @@ describe('CharacterGrid', () => {
       name: 'Under fog until chapter 100. Show anyway',
     })
     await user.click(control)
+    await user.click(control)
     await settle()
 
-    expect(control).toHaveTextContent('Try again')
-    expect(control).toHaveAccessibleName(
-      'Under fog until chapter 100. Show anyway',
-    )
+    expect(control).toHaveAccessibleName('Could not load it. Try again.')
     expect(screen.queryByText('A later arc')).not.toBeInTheDocument()
     expect(within(section).getByText('From chapter 100')).toBeVisible()
     expect(within(section).getByText('2 characters')).toBeVisible()

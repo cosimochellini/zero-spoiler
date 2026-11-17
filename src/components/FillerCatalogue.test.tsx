@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 
 import type { FillerGroup, FillerRowView, FillerSlot } from '~/lib/view/filler'
-import { at, peekPending } from '~/test/fixtures'
-import { ep, renderWithProviders } from '~/test/providers'
+import { at, peekPending, spyPeek } from '~/test/fixtures'
+import { ep, renderWithProviders, settle } from '~/test/providers'
 
 import { FillerCatalogue } from './FillerCatalogue'
 import { FillerRanges } from './FillerRanges'
@@ -82,6 +82,34 @@ describe('FillerCatalogue', () => {
     expect(screen.getByText('After EP 60')).toBeInTheDocument()
     expect(screen.getByText('· 2001', { exact: false })).toBeInTheDocument()
     expect(document.querySelector('#ep-54')).not.toBeNull()
+  })
+
+  it('asks before it lifts a covered row, and sends for that row alone', async () => {
+    const user = userEvent.setup()
+    const { asked, peek } = spyPeek({ ...film, title: 'A later film' })
+    renderWithProviders(
+      <FillerCatalogue
+        groups={groups}
+        mode="episode"
+        peek={peek}
+      />,
+      { bookmark: ep(60) },
+    )
+    const row = screen.getByRole('button', {
+      name: 'Under fog until episode 61. Show anyway',
+    })
+
+    await user.click(row)
+
+    expect(row).toHaveAccessibleName('Show it anyway? Yes, show')
+    expect(asked).toStrictEqual([])
+    expect(screen.queryByText('A later film')).not.toBeInTheDocument()
+
+    await user.click(row)
+    await settle()
+
+    expect(asked).toStrictEqual(['1'])
+    expect(screen.getByText('A later film', { exact: false })).toBeVisible()
   })
 
   it('opens the reader’s saga only, and folds covered rows in a row', () => {
