@@ -300,17 +300,26 @@ importing a series directly. Optional slices are declared through features;
 `hasPage` governs page availability, navigation and sitemap membership.
 
 Content routes are `/<series>/<locale>/…`; `/<locale>` is the hub and hosts
-legal/privacy pages. Unknown series and locales return 404. Legacy locale-first
-content routes redirect under `/one-piece` before bookmark parameters are read.
-`src/start.ts` handles shared-link bookmarks, legacy cookie migration and the
-`/` redirect (cookie, then country, then `Accept-Language`) before loaders. A
-link to a series page sets the bookmark: `?ep=650` for an episode, `?s=2&ep=3`
-for an episode in a season, or `?ch=1044` for a chapter. Links on the root,
-legal and privacy pages set no bookmark. The link replaces the bookmark the
-reader had, so a link from someone further ahead can open entries they have not
-reached. `src/server.ts` is the Worker entry: it adds a `Link` header for the
-stylesheet and the fonts the root route preloads, which Cloudflare replays as a
-`103 Early Hints`.
+legal/privacy pages. Unknown series and locales return 404. A 404 without a
+route's own not-found page, and a record route of a section its series does not
+declare, is drawn by `NotFoundPage` (`src/routes/-fallback.tsx`): in the series'
+shell under `/<series>/<locale>`, where the root still reads the series for the
+bookmark provider, and in the shared shell elsewhere. A render error below a
+locale layout is drawn by `ErrorPage` in that layout's shell. An error in a
+locale layout itself, a series' included, falls back to the shared shell. An
+error in the root (its guard, the bookmark provider or that shared shell) is
+`RootError` in `src/routes/__root.tsx`: the document, a heading, a sentence and
+a reload link, with no bar or footer and without the dictionary. Legacy
+locale-first content routes redirect under `/one-piece` before bookmark
+parameters are read. `src/start.ts` handles shared-link bookmarks, legacy cookie
+migration and the `/` redirect (cookie, then country, then `Accept-Language`)
+before loaders. A link to a series page sets the bookmark: `?ep=650` for an
+episode, `?s=2&ep=3` for an episode in a season, or `?ch=1044` for a chapter.
+Links on the root, legal and privacy pages set no bookmark. The link replaces
+the bookmark the reader had, so a link from someone further ahead can open
+entries they have not reached. `src/server.ts` is the Worker entry: it adds a
+`Link` header for the stylesheet and the fonts the root route preloads, which
+Cloudflare replays as a `103 Early Hints`.
 
 ## Social pictures
 
@@ -348,14 +357,17 @@ the seat links of a character who holds one of its seats (`seatsHeldBy`); its
 seas' names live in `src/i18n/dictionaries/one-piece/seas.ts` and reach the
 places page only for the regions its open stops open on the chart (`regionsFor`,
 `src/lib/view/chart.ts`), and a place's page or peek for its own sea. The shared
-dictionary is one chunk per locale: the locale routes await `loadDictionary` in
-`beforeLoad` and the router awaits it before hydrating, so a page downloads its
-own language only. A chunk that fails to load reloads the page once per tab and
-address (a `sessionStorage` flag; without storage, no reload). If it fails
-again, a page that is hydrating deliberately stays as the server rendered it,
-while a client-side navigation shows the route error. The privacy notice
-(`src/i18n/dictionaries/privacy.ts`) ships with the legal page alone. Copy rules
-live in the [tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
+dictionary is one chunk per locale: the root route awaits the copy of the
+address's language in `beforeLoad` (`localeOfPath`), for a locale route's page
+and for the not-found page of an address no locale route matches, and the router
+awaits it before hydrating, so a page downloads its own language only. A chunk
+that fails to load reloads the page once per tab and address (a `sessionStorage`
+flag; without storage, no reload); a hovered link's preload never reloads. If it
+fails again, a page that is hydrating deliberately stays as the server rendered
+it, while a client-side navigation shows the root's own error page, which needs
+no dictionary. The privacy notice (`src/i18n/dictionaries/privacy.ts`) ships
+with the legal page alone. Copy rules live in the
+[tone-of-voice skill](../.claude/skills/tone-of-voice/SKILL.md).
 
 ## Extending the archive boundary
 

@@ -1,7 +1,8 @@
 import { createRouter } from '@tanstack/react-router'
 
-import { DEFAULT_LOCALE, isLocale, type Locale } from '~/i18n/locales'
+import { localeOfPath } from '~/i18n/locales'
 import { loadDictionaryOrReload } from '~/i18n/translate'
+import { ErrorPage, NotFoundPage } from '~/routes/-fallback'
 
 import { routeTree } from './routeTree.gen'
 
@@ -13,6 +14,11 @@ const PAGE_KEPT_MS = 1_800_000
 export function getRouter(): ReturnType<typeof createRouter<typeof routeTree>> {
   return createRouter({
     routeTree,
+    // An address no route answers, and a page that failed to render: both in
+    // the site's shell rather than the router's own unstyled pages (#1374).
+    // A record route keeps its own not-found page.
+    defaultNotFoundComponent: NotFoundPage,
+    defaultErrorComponent: ErrorPage,
     defaultPreload: 'intent',
     // A page read once is kept as read for half an hour from the read, and
     // read again sooner only when something invalidates it: a bookmark move
@@ -71,18 +77,4 @@ export function getRouter(): ReturnType<typeof createRouter<typeof routeTree>> {
       }
     },
   })
-}
-
-/**
- * The locale a page is in, read from its address as the routes match it:
- * `/$locale/…` or `/$series/$locale/…` (a series slug is never a locale), or
- * the default on a page outside any locale. Not `<html lang>`, which browser
- * translation and extensions rewrite.
- */
-function localeOfPath(pathname: string): Locale {
-  const [first, second] = pathname.split('/').slice(1)
-  if (isLocale(first)) {
-    return first
-  }
-  return isLocale(second) ? second : DEFAULT_LOCALE
 }
