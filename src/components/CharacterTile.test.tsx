@@ -10,8 +10,9 @@ import {
   openSlot,
   peekPending,
   searchable,
+  spyPeek,
 } from '~/test/fixtures'
-import { ep, renderWithProviders } from '~/test/providers'
+import { ep, renderWithProviders, settle } from '~/test/providers'
 
 import { CharacterTile } from './CharacterTile'
 
@@ -55,6 +56,35 @@ describe('CharacterTile', () => {
     expect(container.querySelectorAll('path')).toHaveLength(0)
     expect(screen.getByText('Spoiler')).toBeInTheDocument()
     expect(screen.getByText('Episode 5')).toBeVisible()
+  })
+
+  it('asks before it lifts a covered character, then focuses their link', async () => {
+    const user = userEvent.setup()
+    const { asked, peek } = spyPeek(nami)
+    renderWithProviders(
+      <ul>
+        <CharacterTile
+          peek={peek}
+          slot={coveredSlot({ handle: 'zz', ...at(5) })}
+        />
+      </ul>,
+      { bookmark: ep(1) },
+    )
+
+    // One tap on a tile-sized target is a slip of the thumb (#1376).
+    await user.click(screen.getByRole('button'))
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(
+      'Show it anyway? Yes, show',
+    )
+    expect(asked).toStrictEqual([])
+    expect(screen.queryByRole('link')).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('button'))
+    await settle()
+
+    expect(asked).toStrictEqual(['zz'])
+    expect(screen.getByRole('link', { name: /Nami/u })).toHaveFocus()
   })
 
   it('names the drawing and the name once clicked, and only then', async () => {

@@ -1,6 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
+import { Announcer } from '~/components/Announcer'
 import { BookmarkStatus } from '~/components/BookmarkStatus'
 import { ReportLink } from '~/components/ReportLink'
 import { SiteBar } from '~/components/SiteBar'
@@ -43,6 +44,9 @@ export function LocaleShell({
       >
         {translate(getDictionary(locale), 'nav.skip')}
       </a>
+      {/* Ahead of the shell, at the top of the page: out of flow at its foot
+          it would add its own pixel to the page's height. */}
+      <Announcer />
       <div {...stylex.props(styles.shell)}>
         <SiteBar />
         <div>

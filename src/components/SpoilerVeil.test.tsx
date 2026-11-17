@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import type { ReactElement } from 'react'
 import { describe, expect, it } from 'vitest'
 
+import { requestLeadPeek } from '~/lib/progress/intro'
 import type { CharacterView } from '~/lib/view/records'
 import {
   at,
@@ -16,6 +17,7 @@ import {
 } from '~/test/fixtures'
 import { ep, renderWithProviders, settle } from '~/test/providers'
 
+import { Announcer } from './Announcer'
 import { SpoilerVeil } from './SpoilerVeil'
 
 const record = character({ name: 'Spoiler body', ...at(1089) })
@@ -296,5 +298,193 @@ describe('SpoilerVeil at inline density', () => {
     expect(control).toHaveAccessibleName(
       'Under fog until episode 1089. Show anyway',
     )
+  })
+})
+
+/** What a card or a row covers: a link, as a tile's is. */
+function linked(shown: CharacterView): ReactElement {
+  return <a href="/secret">{shown.name}</a>
+}
+
+describe.each(['compact', 'inline'] as const)(
+  'SpoilerVeil in a list, at %s density',
+  (density) => {
+    function veil(
+      peek: (handle: string) => Promise<CharacterView>,
+    ): ReactElement {
+      return (
+        <>
+          <SpoilerVeil
+            density={density}
+            peek={peek}
+            placeholder={<p data-testid="fog">Spoiler</p>}
+            slot={coveredSlot<CharacterView>({ handle: 'zz', ...at(1089) })}
+          >
+            {linked}
+          </SpoilerVeil>
+          <Announcer />
+        </>
+      )
+    }
+
+    it('asks on the first press and sends for nothing', async () => {
+      const user = userEvent.setup()
+      const { asked, peek } = spyPeek(record)
+      renderWithProviders(veil(peek))
+
+      await user.click(screen.getByRole('button'))
+
+      expect(screen.getByRole('button')).toHaveAccessibleName(
+        'Show it anyway? Yes, show',
+      )
+      expect(screen.getByRole('status')).toHaveTextContent('Show it anyway?')
+      expect(asked).toStrictEqual([])
+      // Still covered: the placeholder, inert and out of the reader's tree.
+      expect(screen.queryByRole('link')).not.toBeInTheDocument()
+      expect(screen.getByTestId('fog').parentElement).toHaveAttribute('inert')
+      expect(screen.getByTestId('fog').parentElement).toHaveAttribute(
+        'aria-hidden',
+        'true',
+      )
+    })
+
+    it('sends on the second press and moves focus to the lifted link', async () => {
+      const user = userEvent.setup()
+      const { asked, peek } = spyPeek(record)
+      renderWithProviders(veil(peek))
+
+      await user.tab()
+      await user.keyboard('{Enter}')
+      await user.keyboard('{Enter}')
+      await settle()
+
+      expect(asked).toStrictEqual(['zz'])
+      expect(screen.getByRole('link', { name: 'Spoiler body' })).toHaveFocus()
+      expect(screen.getByRole('status')).toBeEmptyDOMElement()
+    })
+
+    it('cancels the question on Escape and when the reader leaves it', async () => {
+      const user = userEvent.setup()
+      const { asked, peek } = spyPeek(record)
+      renderWithProviders(veil(peek))
+      const resting = 'Under fog until episode 1089. Show anyway'
+
+      await user.tab()
+      await user.keyboard('{Enter}')
+      await user.keyboard('{Escape}')
+
+      expect(screen.getByRole('button')).toHaveAccessibleName(resting)
+      expect(screen.getByRole('status')).toBeEmptyDOMElement()
+
+      await user.keyboard('{Enter}')
+      await user.tab()
+
+      expect(screen.getByRole('button')).toHaveAccessibleName(resting)
+      expect(asked).toStrictEqual([])
+    })
+
+    it('retries on the next press after a failure, without asking twice', async () => {
+      const user = userEvent.setup()
+      const failing = peekFails<CharacterView>()
+      let calls = 0
+      renderWithProviders(
+        veil(async (handle) => {
+          calls += 1
+          return failing(handle)
+        }),
+      )
+
+      await user.click(screen.getByRole('button'))
+      await user.click(screen.getByRole('button'))
+      await settle()
+
+      expect(screen.getByRole('status')).toHaveTextContent(
+        'Could not load it. Try again.',
+      )
+
+      await user.click(screen.getByRole('button'))
+      await settle()
+
+      expect(calls).toBe(2)
+    })
+  },
+)
+
+describe('SpoilerVeil on a page of its own, at block density', () => {
+  it('lifts on one press and keeps the focus on what was lifted', async () => {
+    const user = userEvent.setup()
+    const { asked, peek } = spyPeek(record)
+    renderWithProviders(
+      <SpoilerVeil
+        peek={peek}
+        placeholder={<p>Spoiler</p>}
+        slot={coveredSlot<CharacterView>({ handle: 'zz' })}
+      >
+        {body}
+      </SpoilerVeil>,
+    )
+
+    await user.tab()
+    await user.keyboard('{Enter}')
+    await settle()
+
+    expect(asked).toStrictEqual(['zz'])
+    // No link in it, so the lifted content itself holds the focus.
+    expect(screen.getByTestId('secret').parentElement).toHaveFocus()
+  })
+
+  it('leaves the focus alone when the intro lifts it, not its own control', async () => {
+    renderWithProviders(
+      <SpoilerVeil
+        lead
+        peek={peekTo(record)}
+        placeholder={<p>Spoiler</p>}
+        slot={coveredSlot<CharacterView>()}
+      >
+        {body}
+      </SpoilerVeil>,
+    )
+
+    requestLeadPeek()
+    await settle()
+
+    expect(screen.getByTestId('secret')).toBeInTheDocument()
+    expect(document.body).toHaveFocus()
+  })
+})
+
+describe('the fog in a listing', () => {
+  it('speaks through one live region, not one per card', async () => {
+    const user = userEvent.setup()
+    renderWithProviders(
+      <>
+        {['a', 'b', 'c'].map((handle) => {
+          return (
+            <SpoilerVeil
+              key={handle}
+              density="compact"
+              peek={peekPending()}
+              placeholder={<p>Spoiler</p>}
+              slot={coveredSlot<CharacterView>({ handle })}
+            >
+              {linked}
+            </SpoilerVeil>
+          )
+        })}
+        <Announcer />
+      </>,
+    )
+
+    expect(screen.getAllByRole('status')).toHaveLength(1)
+    expect(screen.getByRole('status')).toBeEmptyDOMElement()
+
+    const [first, second] = screen.getAllByRole('button')
+    await user.click(first!)
+    await user.click(second!)
+    await user.click(second!)
+
+    // The first card went back to rest when the reader left it.
+    expect(first).toHaveAccessibleName(/Show anyway/u)
+    expect(screen.getByRole('status')).toHaveTextContent('Loading…')
   })
 })
