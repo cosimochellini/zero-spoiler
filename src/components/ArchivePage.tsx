@@ -58,6 +58,9 @@ const styles = stylex.create({
   page: {
     gap: space.xl,
     paddingInline: space.md,
+    // The shell gives a short page the height left over; the heading, the
+    // sentence and the link stay together at its top, not spread over it.
+    alignContent: 'start',
     display: 'grid',
     // The whole page is not a control: no ring around it when it is focused.
     outlineStyle: 'none',
