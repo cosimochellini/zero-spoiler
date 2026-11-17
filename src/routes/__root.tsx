@@ -2,18 +2,26 @@ import * as stylex from '@stylexjs/stylex'
 import {
   createRootRoute,
   HeadContent,
-  notFound,
   Outlet,
   Scripts,
+  useLocation,
   useMatch,
-  useParams,
 } from '@tanstack/react-router'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
 
-import { DEFAULT_LOCALE, isLocale } from '~/i18n/locales'
+import { ArchivePage } from '~/components/ArchivePage'
+import { type Locale, localeOfPath } from '~/i18n/locales'
+import {
+  getDictionary,
+  loadDictionary,
+  loadDictionaryOrReload,
+  translate,
+} from '~/i18n/translate'
+import { isMissing } from '~/lib/missing'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import { readBookmark, readTrial } from '~/lib/progress/readBookmark'
 import { seriesSlugFromPath } from '~/lib/progress/series'
+import { recordStyles } from '~/routes/$series/$locale/-record.styles'
 import { seriesDescription } from '~/routes/-series'
 import { createSecurityHeaders } from '~/security-headers'
 import { seriesBarPin, stickyStyles } from '~/styles/sticky'
@@ -32,20 +40,43 @@ export const Route = createRootRoute({
   // Runs on the server for a document request and on the client for a
   // navigation, and `readBookmark` has a branch for each. Reading the bookmark
   // this early is what makes the first painted HTML already correct.
-  beforeLoad: async ({ location }) => {
+  beforeLoad: async ({ location, preload, abortController }) => {
     const slug = seriesSlugFromPath(location.pathname)
-    const series = slug === null ? null : await seriesDescription(slug)
-    if (slug !== null && series === null) {
-      throw notFound()
-    }
+    const locale = localeOfPath(location.pathname)
+    const [series] = await Promise.all([
+      // An unknown series is `null` here and a 404 at the series route's
+      // guard: thrown from here, the signal would leave this route's own
+      // component without the context it reads.
+      slug === null ? null : seriesDescription(slug),
+      // The shared copy of the address's language, for every page under it:
+      // the locale routes' pages, and the not-found page of an address no
+      // locale route matches. A copy that cannot be fetched reloads the page
+      // once (#930, #938); a hovered link's preload must not reload the page
+      // into it.
+      preload ?
+        loadDictionary(locale)
+      : loadDictionaryOrReload(locale, abortController.signal),
+    ])
     return {
       series,
       initialBookmark: readBookmark(series),
       initialTrial: readTrial(series) !== null,
+      locale,
     }
   },
-  head: () => ({
+  head: ({ match, matches }) => ({
     meta: [
+      // A 404: on any other page a deeper route's title wins.
+      ...(isMissing(matches) ?
+        [
+          {
+            title: translate(
+              getDictionary(match.context.locale),
+              'notFound.pageTitle',
+            ),
+          },
+        ]
+      : []),
       // eslint-disable-next-line unicorn/text-encoding-identifier-case -- HTML requires this attribute to be an ASCII case-insensitive match for "utf-8"; `utf8` is a valid encoding label everywhere else, but not here.
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -112,6 +143,7 @@ export const Route = createRootRoute({
   // response the app itself returns.
   headers: ({ ssr }) => createSecurityHeaders(ssr?.nonce),
   component: RootComponent,
+  errorComponent: RootError,
 })
 
 function RootComponent(): ReactElement {
@@ -130,6 +162,56 @@ function RootComponent(): ReactElement {
   )
 }
 
+/**
+ * The words of `RootError`, here and not in the dictionaries: the copy that
+ * failed to load is one of the things that end on that page.
+ */
+const ROOT_ERROR: Record<
+  Locale,
+  { body: string; link: string; title: string }
+> = {
+  en: {
+    title: 'Something went wrong',
+    body: 'This page could not be loaded.',
+    link: 'Reload the page',
+  },
+  it: {
+    title: 'Qualcosa è andato storto',
+    body: 'Non è stato possibile caricare questa pagina.',
+    link: 'Ricarica la pagina',
+  },
+}
+
+/**
+ * This route's own failure, the last page there is: its guard, the bookmark
+ * provider, or a shell above every other error page. It reads nothing that
+ * can be what failed: no dictionary, no locale or bookmark provider, no
+ * series. The document, a heading, a sentence and a link that loads the
+ * address again from the server; never the error's own message.
+ */
+function RootError(): ReactElement {
+  const { href, pathname } = useLocation()
+  const words = ROOT_ERROR[localeOfPath(pathname)]
+
+  return (
+    <RootDocument seriesPage={false}>
+      <ArchivePage
+        count={words.body}
+        title={words.title}
+      >
+        <p>
+          <a
+            href={href}
+            {...stylex.props(recordStyles.backLink)}
+          >
+            {words.link}
+          </a>
+        </p>
+      </ArchivePage>
+    </RootDocument>
+  )
+}
+
 // The default client entry hydrates the whole document, so the root route has
 // to render <html> itself.
 function RootDocument({
@@ -140,11 +222,9 @@ function RootDocument({
   /** A series page, as `SiteBar` reads it: its bar keeps two rows longer. */
   seriesPage: boolean
 }): ReactElement {
-  // Read loosely because the root route has no params of its own; the locale
-  // belongs to the `$locale` layout below it. Anything unrecognised falls back
-  // to the site default rather than emitting an invalid `lang`.
-  const params = useParams({ strict: false })
-  const locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE
+  // Read from the address because the root route has no params of its own,
+  // and its not-found page is in a language no locale route matched.
+  const locale = localeOfPath(useLocation({ select: (at) => at.pathname }))
   // A series page, its 404s included, wears the theme its description names;
   // the hub, the legal notices and an unknown address keep the site's own.
   const theme = themeOf(

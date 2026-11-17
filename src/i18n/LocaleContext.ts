@@ -35,6 +35,15 @@ function useContextValue(): LocaleContextValue {
 }
 
 /**
+ * Whether a provider is above: the one question a page that may render
+ * outside every shell asks before it reads the words (the router's fallback
+ * pages, #1374).
+ */
+export function useInLocale(): boolean {
+  return use(LocaleContext) !== null
+}
+
+/**
  * The active locale and series. Throws rather than falling back to a default,
  * because a subtree outside the provider would render in the wrong language
  * instead of failing.

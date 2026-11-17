@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { useMatch } from '@tanstack/react-router'
+import { useMatch, useRouterState } from '@tanstack/react-router'
 import {
   type ReactElement,
   type ReactNode,
@@ -15,6 +15,7 @@ import { Button } from '~/components/ui/Button'
 import { type Modal, useModal } from '~/components/useModal'
 import { useT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
+import { isMissing } from '~/lib/missing'
 import { useBookmark, useThreshold } from '~/lib/progress/BookmarkContext'
 import {
   dismissIntro,
@@ -30,7 +31,8 @@ const STEPS: TranslationKey[] = ['intro.step1', 'intro.step2', 'intro.step3']
 /**
  * The intro for a reader who opens a series page with no bookmark, most often
  * from a search result (#864). Not on the series landing, which is an intro of
- * its own; not during a trial; not to a crawler, whose bookmark is the
+ * its own; not over a not-found page, which has nothing to explain (#1374);
+ * not during a trial; not to a crawler, whose bookmark is the
  * ceiling; once a bookmark has been seen in the session; and once per
  * browser session.
  *
@@ -49,9 +51,12 @@ export function FirstVisitIntro(): ReactNode {
     }
   }, [bookmark])
   const onLanding = useMatch({ from: '/$series/$locale/', shouldThrow: false })
+  const missing = useRouterState({
+    select: ({ matches }) => isMissing(matches),
+  })
   const owed = useSyncExternalStore(subscribeIntro, introOwed, () => false)
 
-  if (bookmark !== null || onLanding !== undefined || !owed) {
+  if (bookmark !== null || onLanding !== undefined || missing || !owed) {
     return null
   }
 

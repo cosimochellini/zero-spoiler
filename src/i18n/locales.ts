@@ -33,3 +33,17 @@ const LOCALE_SET = new Set<string>(LOCALES)
 export function isLocale(value: unknown): value is Locale {
   return typeof value === 'string' && LOCALE_SET.has(value)
 }
+
+/**
+ * The locale a page is in, read from its address as the routes match it:
+ * `/$locale/…` or `/$series/$locale/…` (a series slug is never a locale), or
+ * the default on a page outside any locale. Not `<html lang>`, which browser
+ * translation and extensions rewrite.
+ */
+export function localeOfPath(pathname: string): Locale {
+  const [first, second] = pathname.split('/').slice(1)
+  if (isLocale(first)) {
+    return first
+  }
+  return isLocale(second) ? second : DEFAULT_LOCALE
+}
