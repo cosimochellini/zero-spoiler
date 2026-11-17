@@ -17,8 +17,9 @@ contact, privacy and cookies, sources and licenses.
 
 **Must not break:**
 
-- Legal notices live on this page; the footer carries one line and one link to
-  it (owner decision; `LegalPage.tsx`).
+- Legal notices live on this page; the footer carries one line of notice and
+  one link to the legal page (owner decision; `LegalPage.tsx`,
+  `SiteFooter.tsx`).
 - An accent link keeps its underline (`src/styles/themes.test.tsx`).
 
 **Open points:** the page's measure is 76ch, over the 52 to 66ch rule

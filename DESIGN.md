@@ -278,8 +278,10 @@ The site bar is pinned at every width, at the height the `pin.bar` token gives,
 and a listing's controls and sticky heads pin under it (`src/styles/sticky.ts`).
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
-is no named scale. `.impeccable/design.json` lists each with its use. 40rem is
-the line between a phone and a wider window.
+is no named scale. Two exceptions: `max-width: 39.99rem` for the bottom sheets,
+and one `min-height: 32rem` paired with 40rem for a listing's controls.
+`.impeccable/design.json` lists each with its use. 40rem is the line between a
+phone and a wider window.
 
 ## Elevation & Depth
 
@@ -378,6 +380,6 @@ Under `prefers-reduced-motion` spatial motion becomes a crossfade.
   `PRODUCT.md` lists what is public by design, and
   `docs/architecture.md#spoiler-contract` is the authority.
 - **Don't** spread the legal notices: they live on the legal page, and the
-  footer carries one line and one link.
+  footer carries one line of notice and one link to the legal page.
 - **Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it
   follows the `tone-of-voice` skill.
