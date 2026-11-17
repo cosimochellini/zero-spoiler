@@ -15,8 +15,7 @@ import * as stylex from '@stylexjs/stylex'
  * The `.stylex.ts` suffix is mandatory rather than decorative: the compiler
  * only evaluates `defineVars` inside a `*.stylex.{js,ts}` module.
  *
- * Every number on a page is the reader's bookmark or a count of the archive
- * at render time, and no heading is set in italics.
+ * No heading is set in italics.
  */
 
 /**

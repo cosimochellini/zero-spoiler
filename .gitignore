@@ -55,3 +55,6 @@ coverage
 **/.impeccable/live/deferred-svelte-component-accepts.json
 **/.impeccable/live/*.png
 # impeccable-ignore-end
+# The engine binary, should an install ever put one beside the launcher.
+.claude/skills/impeccable/scripts/bin/
+.agents/skills/impeccable/scripts/bin/

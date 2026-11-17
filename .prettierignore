@@ -13,5 +13,5 @@ package-lock.json
 .agents
 .claude/skills
 .claude/agents/impeccable-*.md
-.impeccable
+.impeccable/config.json
 src/routeTree.gen.ts

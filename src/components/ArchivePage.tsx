@@ -22,7 +22,7 @@ export interface ArchivePageProps {
  * and the listing itself. The heading is there from the first frame and the
  * listing settles under it.
  *
- * The signal book and the ship's log are different macrostructures – a
+ * The signal book and the ship's log are different page structures – a
  * catalogue and a narrative workflow – but they open the same way, and when
  * the two shells were written out separately they drifted apart by a
  * half-step of padding. One component is what keeps the two pages siblings.

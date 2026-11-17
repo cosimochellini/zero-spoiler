@@ -40,7 +40,7 @@ export const Route = createFileRoute('/$series/$locale/places/$id')({
 })
 
 /**
- * A place's page (a split, as a character's), and a ship's, which is served from the same address.
+ * A place's page, and a ship's, which is served from the same address.
  *
  * Three bands down a place's page. The first is the plate beside the entry:
  * kind and episode in mono, the name as the only display line, the
