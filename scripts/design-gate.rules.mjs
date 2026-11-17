@@ -219,8 +219,10 @@ function globCovers(glob, url) {
     .replaceAll('?', '[^/]')
     .replaceAll(/\*+/gu, (stars) => (stars.length > 1 ? '.*' : '[^/]*'))
   const subject = glob.includes('/') ? url : url.slice(url.lastIndexOf('/') + 1)
-  // eslint-disable-next-line security/detect-non-literal-regexp -- built from a glob of this repository's config, every other character escaped
-  const expression = new RegExp(`^${pattern}$`, 'u')
+  // Built from a glob of this repository's committed config, with every
+  // character but the wildcards escaped.
+  // fallow-ignore-next-line security-sink -- the glob comes from .impeccable/config.json, not from input
+  const expression = new RegExp(`^${pattern}$`, 'u') // eslint-disable-line security/detect-non-literal-regexp -- see above
   return expression.test(subject)
 }
 
