@@ -78,7 +78,7 @@ In `<hxh>/archive.ts`:
 
 - `leads['<arc>-arc']`: the arc's cast row.
 
-The payload sweep derives its bookmarks itself: both sides, gate−1 and gate, of every record and every step of its timelines (`gatesOf` in `src/data/sweep.ts`). Add no number by hand. A name fact (`nameSaidAt`, `episodeName`) is not among them: the leak scan in `src/data/leaks.test.ts` holds it.
+The payload sweep derives its bookmarks itself: both sides, gate−1 and gate, of every record and every step of its timelines (`gatesOf` in `src/data/sweep.ts`). Add no number by hand. A name fact (`nameSaidAt`, `episodeName`) is not among them: the leak scan in `src/data/leaks.test.ts` holds it, and the payload sweep checks an `episodeName` only at bookmarks another gate puts there.
 
 The home page ranks the arc's leads by chronicle mentions and falls back to `newcomersOf` in `src/server/archive/home.server.ts`, the leads first shelved in this arc. Returning leads show there only once the arc's chronicles exist; state that in the PR.
 
