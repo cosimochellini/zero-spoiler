@@ -49,4 +49,25 @@ describe('LocaleSwitch', () => {
     expect(where).toBeInTheDocument()
     expect(document.cookie).toContain('opzs_lang=it')
   })
+
+  // An unknown address has no locale to swap: the switch went to the same
+  // address, with the cookie already written (#1386).
+  it('goes to the hub from an address with no locale in it', async () => {
+    await renderOnRoute(
+      <>
+        <LocaleSwitch />
+        <Where />
+      </>,
+      { locale: 'it', pattern: '/$', path: '/nope' },
+    )
+
+    fireEvent.change(screen.getByRole('combobox', { name: 'Lingua' }), {
+      target: { value: 'en' },
+    })
+
+    const where = await screen.findByText('/en')
+
+    expect(where).toBeInTheDocument()
+    expect(document.cookie).toContain('opzs_lang=en')
+  })
 })

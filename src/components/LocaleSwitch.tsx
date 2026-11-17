@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
-import { useNavigate } from '@tanstack/react-router'
+import { useNavigate, useParams } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 import { useLocale, useT } from '~/i18n/LocaleContext'
@@ -28,6 +28,34 @@ function remember(next: Locale): void {
 }
 
 /**
+ * Where a choice goes: the current route with only the locale param swapped
+ * (`to="."`), or the hub from an address with no locale in it, an unknown
+ * one on its not-found page, which has no other language to offer.
+ */
+function useSwitchTo(): (next: Locale) => void {
+  const navigate = useNavigate()
+  const inAddress = useParams({
+    strict: false,
+    select: (params) => 'locale' in params,
+  })
+
+  return (next) => {
+    remember(next)
+    void navigate(
+      inAddress ?
+        {
+          params: (previous: Record<string, string | undefined>) => ({
+            ...previous,
+            locale: next,
+          }),
+          to: '.',
+        }
+      : { params: { locale: next }, to: '/$locale' },
+    )
+  }
+}
+
+/**
  * Switches language by navigating, not by swapping strings in place.
  *
  * A native `<select>` laid over its own face, transparent, so the tap and the
@@ -40,13 +68,14 @@ function remember(next: Locale): void {
  * land on the same language without asking again, and goes to the current
  * route with only the locale param swapped (`to="."`), so a reader on a
  * character's page gets the same page in the other language and not the
- * landing. Crawlers find the other language through the sitemap's hreflang
- * alternates, not through this control.
+ * landing; from an address with no locale in it, to the hub. Crawlers find
+ * the other language through the sitemap's hreflang alternates, not through
+ * this control.
  */
 export function LocaleSwitch(): ReactElement {
   const { locale } = useLocale()
   const t = useT()
-  const navigate = useNavigate()
+  const switchTo = useSwitchTo()
 
   return (
     <label {...stylex.props(styles.pick)}>
@@ -77,15 +106,7 @@ export function LocaleSwitch(): ReactElement {
           if (!isLocale(target.value)) {
             return
           }
-          const next = target.value
-          remember(next)
-          void navigate({
-            params: (previous: Record<string, string | undefined>) => ({
-              ...previous,
-              locale: next,
-            }),
-            to: '.',
-          })
+          switchTo(target.value)
         }}
         value={locale}
         {...stylex.props(styles.native)}

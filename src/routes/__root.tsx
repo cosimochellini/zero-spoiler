@@ -20,9 +20,9 @@ import {
 import { isMissing } from '~/lib/missing'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import { readBookmark, readTrial } from '~/lib/progress/readBookmark'
-import { seriesSlugFromPath } from '~/lib/progress/series'
+import { type Series, seriesSlugFromPath } from '~/lib/progress/series'
 import { recordStyles } from '~/routes/$series/$locale/-record.styles'
-import { seriesDescription } from '~/routes/-series'
+import { seriesCopy, seriesDescription } from '~/routes/-series'
 import { createSecurityHeaders } from '~/security-headers'
 import { seriesBarPin, stickyStyles } from '~/styles/sticky'
 import { themeOf } from '~/styles/themes'
@@ -47,7 +47,7 @@ export const Route = createRootRoute({
       // An unknown series is `null` here and a 404 at the series route's
       // guard: thrown from here, the signal would leave this route's own
       // component without the context it reads.
-      slug === null ? null : seriesDescription(slug),
+      slug === null ? null : describedWithCopy(slug, locale, location.pathname),
       // The shared copy of the address's language, for every page under it:
       // the locale routes' pages, and the not-found page of an address no
       // locale route matches. A copy that cannot be fetched reloads the page
@@ -61,6 +61,9 @@ export const Route = createRootRoute({
       series,
       initialBookmark: readBookmark(series),
       initialTrial: readTrial(series) !== null,
+      // The language of the page on screen, for everything above a locale
+      // route: it lands with the copy loaded above, when the page does. The
+      // address changes as soon as a navigation starts, before either.
       locale,
     }
   },
@@ -146,11 +149,42 @@ export const Route = createRootRoute({
   errorComponent: RootError,
 })
 
+/**
+ * A series' description. Once the series is known, its own copy in the
+ * address's language is asked for without being waited on, so the series
+ * route finds it on its way: asked there, it would start only after the
+ * shared copy had arrived (#1386). An unknown series asks for nothing, and
+ * neither does `/{series}`, which names no language.
+ */
+async function describedWithCopy(
+  slug: string,
+  locale: Locale,
+  pathname: string,
+): Promise<null | Series> {
+  const series = await seriesDescription(slug)
+  if (series !== null && pathname.startsWith(`/${slug}/${locale}`)) {
+    void startSeriesCopy(slug, locale)
+  }
+  return series
+}
+
+async function startSeriesCopy(slug: string, locale: Locale): Promise<void> {
+  try {
+    await seriesCopy(slug, locale)
+  } catch {
+    // The series route's to meet, when it asks again.
+  }
+}
+
 function RootComponent(): ReactElement {
-  const { series, initialBookmark, initialTrial } = Route.useRouteContext()
+  const { series, initialBookmark, initialTrial, locale } =
+    Route.useRouteContext()
 
   return (
-    <RootDocument seriesPage={series !== null}>
+    <RootDocument
+      locale={locale}
+      seriesPage={series !== null}
+    >
       <BookmarkProvider
         initialBookmark={initialBookmark}
         initialTrial={initialTrial}
@@ -187,14 +221,21 @@ const ROOT_ERROR: Record<
  * provider, or a shell above every other error page. It reads nothing that
  * can be what failed: no dictionary, no locale or bookmark provider, no
  * series. The document, a heading, a sentence and a link that loads the
- * address again from the server; never the error's own message.
+ * address again from the server; never the error's own message. Its language
+ * is the address's: this route's context is what failed. The title is set
+ * here because `head` gives a route in error none.
  */
 function RootError(): ReactElement {
   const { href, pathname } = useLocation()
-  const words = ROOT_ERROR[localeOfPath(pathname)]
+  const locale = localeOfPath(pathname)
+  const words = ROOT_ERROR[locale]
 
   return (
-    <RootDocument seriesPage={false}>
+    <RootDocument
+      locale={locale}
+      seriesPage={false}
+      title={`${words.title} | Zero Spoiler`}
+    >
       <ArchivePage
         count={words.body}
         title={words.title}
@@ -216,15 +257,17 @@ function RootError(): ReactElement {
 // to render <html> itself.
 function RootDocument({
   children,
+  locale,
   seriesPage,
+  title,
 }: {
   children: ReactNode
+  locale: Locale
   /** A series page, as `SiteBar` reads it: its bar keeps two rows longer. */
   seriesPage: boolean
+  /** The title of a page whose `head` has none: this route's error page. */
+  title?: string
 }): ReactElement {
-  // Read from the address because the root route has no params of its own,
-  // and its not-found page is in a language no locale route matched.
-  const locale = localeOfPath(useLocation({ select: (at) => at.pathname }))
   // A series page, its 404s included, wears the theme its description names;
   // the hub, the legal notices and an unknown address keep the site's own.
   const theme = themeOf(
@@ -264,6 +307,7 @@ function RootDocument({
       )}
     >
       <head>
+        {title !== undefined && <title>{title}</title>}
         <HeadContent />
       </head>
       {/*
