@@ -171,7 +171,8 @@ function movedWords(
     return t('status.cleared')
   }
 
+  // No-break spaces, so a narrow phone never parts "Episode" from its number.
   return t(from === null ? 'status.set' : 'status.moved', {
-    point: bookmarkPoint(t, to, books),
+    point: bookmarkPoint(t, to, books).replaceAll(' ', '\u{A0}'),
   })
 }

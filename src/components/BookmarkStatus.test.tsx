@@ -284,8 +284,9 @@ describe('BookmarkStatus', () => {
     })
     observer.disconnect()
 
+    // The point is held together by a no-break space.
     expect(said).toStrictEqual([
-      'Bookmark moved: Episode 45. 15 more entries are open.',
+      'Bookmark moved: Episode\u{A0}45. 15 more entries are open.',
     ])
   })
 
