@@ -275,6 +275,13 @@ const STORIES: Row[] = [
   {
     id: 'jorah-mormont',
     medium: 'books',
+    episode: 2,
+    chapter: 13,
+    title: 'Reports to the council',
+  },
+  {
+    id: 'jorah-mormont',
+    medium: 'books',
     episode: 3,
     chapter: 24,
     title: 'Siding with the khaleesi',
@@ -302,7 +309,7 @@ const STORIES: Row[] = [
   },
   {
     id: 'jorah-mormont',
-    medium: 'both',
+    medium: 'show',
     episode: 6,
     chapter: 47,
     title: 'The dragon eggs',
@@ -379,6 +386,13 @@ const STORIES: Row[] = [
   },
   {
     id: 'irri',
+    medium: 'books',
+    episode: 3,
+    chapter: 24,
+    title: 'The first to notice',
+  },
+  {
+    id: 'irri',
     medium: 'show',
     episode: 6,
     chapter: 47,
@@ -397,6 +411,13 @@ const STORIES: Row[] = [
     episode: 2,
     chapter: 12,
     title: 'A handmaiden from Lys',
+  },
+  {
+    id: 'doreah',
+    medium: 'books',
+    episode: 3,
+    chapter: 24,
+    title: 'The second moon',
   },
   {
     id: 'doreah',
@@ -559,7 +580,7 @@ const STORIES: Row[] = [
     medium: 'books',
     episode: 7,
     chapter: 55,
-    title: 'A horse of his choosing',
+    title: 'The wine seller’s flight',
   },
   {
     id: 'jhogo',
@@ -591,17 +612,17 @@ const STORIES: Row[] = [
   },
   {
     id: 'mago',
-    medium: 'show',
-    episode: 8,
-    chapter: 62,
-    title: 'Challenging the khal',
-  },
-  {
-    id: 'mago',
     medium: 'books',
     episode: 8,
     chapter: 62,
     title: 'A captive taken from him',
+  },
+  {
+    id: 'mago',
+    medium: 'show',
+    episode: 8,
+    chapter: 63,
+    title: 'Challenging the khal',
   },
   {
     id: 'mago',

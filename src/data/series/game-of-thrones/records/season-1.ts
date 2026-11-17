@@ -4678,6 +4678,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 8, chapter: 62, value: 'alive' },
+        // Books: Daenerys IX has her bound once she owns to the blood
+        // magic's price; the show binds her only to the pyre (#1360).
+        { episode: 10, chapter: 69, source: 'chapter', value: 'captured' },
         { episode: 10, chapter: 73, value: 'deceased' },
       ],
       affiliation: [

@@ -269,6 +269,13 @@ const CHANGES: {
   { id: 'jaime-lannister', episode: 9, chapter: 64, value: 'captured' },
   { id: 'viserys-targaryen', episode: 6, chapter: 47, value: 'deceased' },
   { id: 'drogo', episode: 10, chapter: 69, value: 'deceased' },
+  {
+    id: 'mirri-maz-duur',
+    episode: 10,
+    chapter: 69,
+    value: 'captured',
+    source: 'chapter',
+  },
   { id: 'mirri-maz-duur', episode: 10, chapter: 73, value: 'deceased' },
   {
     id: 'hullen',

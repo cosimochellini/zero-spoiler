@@ -33,14 +33,12 @@ Every story in a character's chronicle (\`chronicle\` in the dossiers, filed in
 \`src/data/series/<series>/records/<saga>.chronicle.ts\`) was checked against the
 series' English wiki (onepiece.fandom.com, hunterxhunter.fandom.com, and for
 Game of Thrones gameofthrones.fandom.com for the show and iceandfire.fandom.com
-for the books) twice: once
-as it was written and once more by an independent pass that re-read every
-episode against the episode page named in the table, whose summary settles
-whether the event is complete by the end of that episode, and against the
-character's wiki page (One Piece's \`/History\` cites each event as
-\`{{Qref|…|ep=N}}\`). Where the
-second pass disagreed with the first, the story was moved or rewritten; the
-note says what changed.
+for the books) twice: once as it was written and once more by an independent
+pass that re-read every episode against the episode page named in the table,
+whose summary settles whether the event is complete by the end of that episode,
+and against the character's wiki page (One Piece's \`/History\` cites each event
+as \`{{Qref|…|ep=N}}\`). Where the second pass disagreed with the first, the story
+was moved or rewritten; the note says what changed.
 
 A note says in its own words what the wiki, the manga or the subtitles show. It
 quotes a source only where the exact words prove a name or a threshold, at most
@@ -51,16 +49,17 @@ The first batch — the twelve chronicles of the crew, Shanks and Ace — was
 written on 2026-09-15 and re-verified on 2026-09-19. The Dressrosa batch —
 Kaido's chronicle, and the Punk Hazard and Dressrosa stories the twelve were
 missing — was written and re-verified on 2026-09-20. The Summit War batch —
-Law's, Rayleigh's, Borsalino's, Sakazuki's and Sabo's chronicles, and the
-Summit War stories the twelve were missing — was written and re-verified on
-2026-09-20. The Thriller Bark batch — Gecko Moria's chronicle, and the
-Thriller Bark stories the twelve were missing — was written and re-verified
-on 2026-09-20. Hunter x Hunter's batch — every Hunter Exam character, filed
-by #762 — was written and re-verified on 2026-10-26. Game of Thrones' first
-batch, the Essos cast of the first season and *A Game of Thrones* (#1360), was
-written on 2026-11-17. A Game of Thrones story is dated by an episode and a
-site chapter: one both media tell holds at both, and one told by a single
-medium (\`source\`) at that medium's number alone, the other only ordering it.
+Law's, Rayleigh's, Borsalino's, Sakazuki's and Sabo's chronicles, and the Summit
+War stories the twelve were missing — was written and re-verified on 2026-09-20.
+The Thriller Bark batch — Gecko Moria's chronicle, and the Thriller Bark stories
+the twelve were missing — was written and re-verified on 2026-09-20. Hunter x
+Hunter's batch — every Hunter Exam character, filed by #762 — was written and
+re-verified on 2026-10-26. Game of Thrones' first batch, the Essos cast of the
+first season and _A Game of Thrones_ (#1360), was written and re-verified by
+three independent passes on 2026-11-17. A Game of Thrones story is dated by an
+episode and a site chapter: one both media tell holds at both, and one told by a
+single medium (\`source\`) at that medium's number alone, the other only ordering
+it.
 
 The rule is the one the \`status\` field already follows: **the episode filed is
 the first one at whose end the viewer knows everything the story says**, with or
@@ -71,8 +70,7 @@ too-late one only keeps it covered a little longer, and a few are filed late on
 purpose, as the notes say.
 
 Two further rules hold for every story, and the data tests
-(\`src/data/archive.test.ts\`, "the chronicles") enforce what
-can be enforced:
+(\`src/data/archive.test.ts\`, "the chronicles") enforce what can be enforced:
 
 - the first story sits at the character's own \`revealedAtEpisode\`, so the band
   never appears because something has happened;

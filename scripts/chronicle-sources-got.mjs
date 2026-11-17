@@ -50,7 +50,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '3:chapter': {
       source: DANY_III,
-      note: 'Chapter 24 synopsis: she adapts, drifts from Viserys and acknowledges the pregnancy. Jhogo’s whip and his question are on the Ice and Fire Wiki’s Jhogo page and the reviewed relationship pin at 3/24; Jorah taking the horse is on its Aggo page, his poor-king remark on its Jorah page. Doreah’s lesson is on its Drogo page, during the ride, and chapter 24 is the only ride chapter.',
+      note: 'Corrected after review: Jhogo’s question was dropped, and Irri, not Jhiqui, notices the pregnancy (Ice and Fire Wiki, Irri page). Chapter 24 synopsis: she adapts, drifts from Viserys and acknowledges the pregnancy. Jhogo’s whip and his release at Irri’s word are on the Ice and Fire Wiki’s Jhogo page and the reviewed relationship pin at 3/24; Jorah taking the horse is on its Aggo page, his poor-king remark on its Jorah page. Doreah’s lesson is on its Drogo page, during the ride, and chapter 24 is the only ride chapter.',
     },
     '3:episode': {
       source: EPISODE_3,
@@ -62,7 +62,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '6:47': {
       source: EPISODE_6,
-      note: `The synopsis has the stallion’s heart, the crones’ prophecy, the name Rhaego, the sword drawn at the feast, the threat to the child, the molten gold and “no true dragon”. The Ice and Fire Wiki’s Daenerys page tells the same feast in the book; the episode adapts Daenerys V. ${PAST_CHAPTER_PAGES}`,
+      note: `The synopsis has the stallion’s heart, the crones’ prophecy, the name Rhaego, the sword drawn at the feast, the threat to the child, the molten gold and “no true dragon”, said aloud on screen and thought in the book, so the story states it without saying which. The Ice and Fire Wiki’s Daenerys page tells the same feast in the book; the episode adapts Daenerys V. ${PAST_CHAPTER_PAGES}`,
     },
     '7:55': {
       source: EPISODE_7,
@@ -74,15 +74,15 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '8:chapter': {
       source: `${SHOW}Mago`,
-      note: `In the books: Drogo is wounded in a battle against another khalasar, not by Mago, who only complains and is denied (Mago and Drogo pages). Quaro’s remark, Mirri’s offer and Drogo’s consent are the reviewed relationship pins at 8/62; the episode adapts Daenerys VII. ${PAST_CHAPTER_PAGES}`,
+      note: `In the books: Drogo is wounded in a battle against another khalasar, not by Mago, who only complains and is denied (Mago and Drogo pages); corrected after review: Mago complains to Haggo, and Drogo sends word back. Quaro’s remark, Mirri’s offer and Drogo’s consent are the reviewed relationship pins at 8/62; the episode adapts Daenerys VII. ${PAST_CHAPTER_PAGES}`,
     },
     '9:65': {
       source: EPISODE_9,
-      note: `The synopsis has the fall, Jorah’s advice to leave, the life for a life, the stallion, Qotho killed by Jorah and Jorah carrying her into the tent in labor. The relationship pins at 9/65 hold the stallion, Qotho and the tent in both media; the episode adapts Daenerys VIII. ${PAST_CHAPTER_PAGES}`,
+      note: `The synopsis has the fall, Jorah’s advice to leave, the life for a life, the stallion, Qotho killed by Jorah and Jorah carrying her into the tent in labor. The relationship pins at 9/65 hold the stallion, Qotho and the tent in both media; Corrected after review: Qotho turns on Daenerys and the rite, since only the show has him shove her. The episode adapts Daenerys VIII. ${PAST_CHAPTER_PAGES}`,
     },
     '10:69': {
       source: `${SHOW}Mago`,
-      note: `Book only: the son born dead, Drogo empty, Mirri’s revenge and binding, and the smothering are the relationship pins at 10/69; Mago’s page, In the books, has Eroeh seized, raped and killed by Jhaqo’s bloodriders and Daenerys’s oath. The episode adapts Daenerys IX. ${PAST_CHAPTER_PAGES}`,
+      note: `Book only: the son born dead, Drogo empty, Mirri’s revenge and binding, and the smothering are the relationship pins at 10/69; Mago’s page, In the books, has Eroeh seized, raped and killed by Jhaqo’s bloodriders, and Daenerys swearing to make Mago and Jhaqo pay (corrected after review: the oath names both men). The episode adapts Daenerys IX. ${PAST_CHAPTER_PAGES}`,
     },
     '10:73': {
       source: EPISODE_10,
@@ -104,7 +104,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '3:24': {
       source: EPISODE_3,
-      note: 'Both media, told without the guard’s name: the show gives the whip to Rakharo, the books to Jhogo (Ice and Fire Wiki, Jhogo page; Daenerys III, site chapter 24). Jorah not obeying and the lost horse are in both (Jorah pages of both wikis).',
+      note: 'Both media, told without the guard’s name: the show gives the whip to Rakharo, the books to Jhogo (Ice and Fire Wiki, Jhogo page; Daenerys III, site chapter 24). Jorah not obeying and the lost horse are in both (Jorah pages of both wikis). Corrected after review: the Italian names Daenerys’s guards, not his.',
     },
     '4:37': {
       source: EPISODE_4,
@@ -112,7 +112,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '6:47': {
       source: EPISODE_6,
-      note: `The synopsis has the eggs, the drawn sword in the sacred city, the threat, “a golden crown that men will tremble to behold”, the broken arm and the molten gold. Book: the Ice and Fire Wiki’s Cohollo page has the bloodriders seizing him, Haggo’s record log the broken arm; the episode adapts Daenerys V. ${PAST_CHAPTER_PAGES}`,
+      note: `Corrected after review: the egg theft is dropped, as no book source places it. The synopsis has the drawn sword in the sacred city, the threat, “a golden crown that men will tremble to behold”, the broken arm and the molten gold. Book: the Ice and Fire Wiki’s Cohollo page has the bloodriders seizing him, Haggo’s record log the broken arm; the episode adapts Daenerys V. ${PAST_CHAPTER_PAGES}`,
     },
   },
   'drogo': {
@@ -138,7 +138,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '7:55': {
       source: EPISODE_7,
-      note: `The synopsis has the poison, the horse for Jorah and the vow to cross the poison water “as no khalasar has done”. The relationship pins at 7/55 hold the poison and the horse in both media; the episode adapts Daenerys VI. ${PAST_CHAPTER_PAGES}`,
+      note: `The synopsis has the poison, the horse for Jorah and the vow to cross the poison water “as no khalasar has done” and take the Iron Throne; corrected after review: the Italian and the English now both say the Iron Throne. The relationship pins at 7/55 hold the poison and the horse in both media; the episode adapts Daenerys VI. ${PAST_CHAPTER_PAGES}`,
     },
     '8:episode': {
       source: `${SHOW}Mago`,
@@ -146,7 +146,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '8:chapter': {
       source: `${SHOW}Drogo`,
-      note: `In the books: wounded in a battle against another khalasar by a rival bloodrider, an arrow through the arm; Mago is only denied. Haggo’s offer and Drogo’s refusal are the relationship pin at 8/62. ${PAST_CHAPTER_PAGES}`,
+      note: `In the books: wounded in a battle against another khalasar by a rival bloodrider, an arrow through the arm; Mago is only denied. Corrected after review: Mago complains to Haggo and Drogo sends word back; Haggo’s offer to carry him is dropped, as it may belong to the fall at site chapter 65. ${PAST_CHAPTER_PAGES}`,
     },
     '9:65': {
       source: EPISODE_9,
@@ -174,6 +174,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_2,
       note: 'The synopsis has the comfort for Daenerys, the advice to Viserys, the poachers and Eddard Stark’s sentence, and Viserys laughing.',
     },
+    '2:13': {
+      source: `${BOOKS}Eddard_II_-_A_Game_of_Thrones`,
+      note: 'Added after review: chapter 13 has Eddard and Robert riding apart and discussing Daenerys. That the news of her marriage comes from Jorah’s reports to the small council is the verifier’s reading; the chapter page has no synopsis, so it is unverified on the chapter text.',
+    },
     '3:chapter': {
       source: `${BOOKS}Jorah_Mormont`,
       note: 'He sides with Daenerys after the confrontation on the Dothraki Sea, wants to go home and thinks Viserys a poor king; the Aggo page has him taking Viserys’s horse, the relationship pin at 3/24 the order to punish her. Daenerys III, site chapter 24.',
@@ -188,11 +192,11 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '5:47': {
       source: `${SHOW}Jorah_Mormont`,
-      note: 'Season 1, citing episode 5: the report to Varys sent from Qohor, Eddard calling him a traitor who will say anything for a pardon, and the council ordering the killing.',
+      note: 'Season 1, citing episode 5: the report to Varys sent from Qohor, Eddard calling him a traitor who will say anything for a pardon, and the council ordering the killing. Corrected after review: lower-case “re Robert” in the Italian.',
     },
     '6:47': {
       source: EPISODE_6,
-      note: `The synopsis has Jorah finding Viserys at the eggs and the feast. The relationship pin at 6/47 holds the eggs in both media; the episode adapts Daenerys V. ${PAST_CHAPTER_PAGES}`,
+      note: 'Corrected after review: show only, since in the book Jorah stops the theft off the page. The synopsis has Jorah finding Viserys at the eggs, the feast, and Jorah telling her to look away while she watches.',
     },
     '7:episode': {
       source: EPISODE_7,
@@ -204,7 +208,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '9:65': {
       source: `${SHOW}Jorah_Mormont`,
-      note: `Season 1, citing episode 9: the warning that the son will be killed, the advice to leave, the armor, Qotho killed and Daenerys carried in. The relationship pins at 9/65 hold the fight and the tent in both media. ${PAST_CHAPTER_PAGES}`,
+      note: `Season 1, citing episode 9: the warning that the son will be killed, the advice to leave, the armor, Qotho killed and Daenerys carried in; corrected after review, with Daenerys’s story: Qotho turns on her and the rite. The relationship pins at 9/65 hold the fight and the tent in both media. ${PAST_CHAPTER_PAGES}`,
     },
     '10:73': {
       source: EPISODE_10,
@@ -214,11 +218,11 @@ export const GAME_OF_THRONES_SOURCES = {
   'illyrio-mopatis': {
     '1:4': {
       source: `${SHOW}Illyrio_Mopatis`,
-      note: 'Season 1, citing episode 1: he brokers the match and reassures Viserys when Drogo rides off. In the book (Daenerys I, site chapter 4) he reassures Viserys that she is old and beautiful enough; the story keeps to the reassurance both tell.',
+      note: 'Season 1, citing episode 1: he brokers the match and reassures Viserys when Drogo rides off. In the book (Daenerys I, site chapter 4) he reassures Viserys that she is old and beautiful enough; the story keeps to the reassurance both tell. Corrected after review: the order of events is no longer the show’s.',
     },
     '2:12': {
       source: DANY_II,
-      note: 'Chapter 12: the wedding outside the walls, Illyrio’s saying about three deaths, the eggs from the Shadow Lands beyond Asshai. The show has all of it in episode 1; the story waits for episode 2 because episodes must rise.',
+      note: 'Chapter 12: the wedding outside the walls, Illyrio’s saying about three deaths (corrected after review: given as his, not as something he told her), the eggs from the Shadow Lands beyond Asshai. The show has all of it in episode 1; the story waits for episode 2 because episodes must rise.',
     },
     '5:47': {
       source: `${SHOW}Illyrio_Mopatis`,
@@ -234,7 +238,11 @@ export const GAME_OF_THRONES_SOURCES = {
       source: DANY_II,
       note: 'Chapter 12: the three handmaidens as Viserys’s gift, Irri and Jhiqui Dothraki, Doreah from Lys. The tasks are the reviewed relationship pins at 2/12 (riding, the tongue) and the Ice and Fire Wiki’s Doreah page (the arts of love).',
     },
-    '3:24': {
+    '3:chapter': {
+      source: `${BOOKS}Irri`,
+      note: 'Added after review: Irri is the first to notice the pregnancy; Viserys gave her to teach Daenerys to ride (Ice and Fire Wiki, Irri page). Daenerys III, site chapter 24.',
+    },
+    '3:episode': {
       source: `${SHOW}Irri`,
       note: 'Season 1, citing episode 3: translating for Rakharo, the shared puzzlement at the mercy, working out the pregnancy, telling Jorah and demanding something other than horseflesh.',
     },
@@ -244,6 +252,10 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'doreah': {
+    '3:24': {
+      source: `${BOOKS}Doreah`,
+      note: 'Added after review: the tale of the second moon and the further lessons in the arts of love, on the ride east (Ice and Fire Wiki, Doreah page). Daenerys III, site chapter 24, the only ride chapter; unverified on the chapter text.',
+    },
     '2:episode': {
       source: EPISODE_2,
       note: 'The synopsis has the second moon and the thousands of dragons, the other handmaidens dismissing it, the lesson and “no slave”.',
@@ -290,7 +302,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '10:69': {
       source: `${SHOW}Mirri_Maz_Duur`,
-      note: `Book side: Drogo without a mind, the son dead, the revenge for her people and the binding are the relationship pin at 10/69; the sun in the west is quoted on Mirri’s page. The episode adapts Daenerys IX. ${PAST_CHAPTER_PAGES}`,
+      note: `Book side: Drogo without a mind, the son dead, the revenge for her people and the binding are the relationship pin at 10/69, and her captured status there (added after review); the sun in the west is quoted on Mirri’s page. The episode adapts Daenerys IX. ${PAST_CHAPTER_PAGES}`,
     },
     '10:73': {
       source: EPISODE_10,
@@ -308,13 +320,13 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '9:65': {
       source: `${SHOW}Qotho`,
-      note: `Season 1, citing episode 9: he objects to the rite, pushes Daenerys to the ground and is killed by Jorah. The book note on the same page has Jorah killing him too; the relationship pin at 9/65 has him shoving her aside. ${PAST_CHAPTER_PAGES}`,
+      note: `Corrected after review: his motive is now distrust of Mirri, whom he calls a maegi. Season 1, citing episode 9: he objects to the rite, pushes Daenerys to the ground and is killed by Jorah. The book note on the same page has Jorah killing him too; the relationship pin at 9/65 has him shoving her aside. ${PAST_CHAPTER_PAGES}`,
     },
   },
   'cohollo': {
     '4:37': {
       source: `${BOOKS}Cohollo`,
-      note: `The oldest bloodrider, kind to Daenerys, the arakh chased in gold as his wedding gift. That he has guarded Drogo since his birth is the relationship pin at 4/37; the episode adapts Daenerys IV. ${PAST_CHAPTER_PAGES}`,
+      note: `The oldest bloodrider, kind to Daenerys, the arakh chased in gold as his wedding gift. Corrected after review: the claim that he has guarded Drogo since his birth is dropped. The episode adapts Daenerys IV. ${PAST_CHAPTER_PAGES}`,
     },
     '6:47': {
       source: `${BOOKS}Cohollo`,
@@ -328,7 +340,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'haggo': {
     '8:62': {
       source: `${BOOKS}Haggo`,
-      note: `A tall bloodrider; the broken arm is his record log, the distrust of Mirri, the offer to carry Drogo and the refusal the relationship pin at 8/62. ${PAST_CHAPTER_PAGES}`,
+      note: `A tall bloodrider; the broken arm is his record log, the distrust of Mirri the relationship pin at 8/62. Corrected after review: Mago complains to him, and the offer to carry Drogo is dropped, as it may belong to the fall at site chapter 65. ${PAST_CHAPTER_PAGES}`,
     },
     '9:65': {
       source: `${SHOW}Haggo`,
@@ -366,7 +378,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '7:55': {
       source: `${BOOKS}Jhogo`,
-      note: `The horse of his choosing for helping save her from poison is the relationship pin at 7/55; what he did in it is not checked, so the story does not say. ${PAST_CHAPTER_PAGES}`,
+      note: `Corrected after review: the horse reward is cut, and Jhogo brings the fleeing wine seller down with his whip, the verifier’s reading of the chapter; unverified on the chapter text. ${PAST_CHAPTER_PAGES}`,
     },
     '9:65': {
       source: `${SHOW}Haggo`,
@@ -390,15 +402,15 @@ export const GAME_OF_THRONES_SOURCES = {
   'mago': {
     '8:episode': {
       source: `${SHOW}Mago`,
-      note: 'Season 1, citing episode 8: “a foreign whore”, the challenge, Drogo disarming himself, the cut, the throat and the tongue.',
+      note: 'Corrected after review: filed at chapter 63, beside his show death. Season 1, citing episode 8: “a foreign whore”, the challenge, Drogo disarming himself, the cut, the throat and the tongue.',
     },
     '8:chapter': {
       source: `${SHOW}Mago`,
-      note: `In the books: a rider under the ko Jhaqo who complains that Daenerys took his victim and is denied. ${PAST_CHAPTER_PAGES}`,
+      note: `In the books: a rider under the ko Jhaqo who complains that Daenerys took his victim and is denied; corrected after review: he complains to Haggo, and Drogo sends word back. ${PAST_CHAPTER_PAGES}`,
     },
     '10:69': {
       source: `${SHOW}Mago`,
-      note: `In the books: Jhaqo’s bloodrider after Drogo falls, Eroeh seized, raped and handed to Jhaqo, whose other bloodriders rape her and cut her throat, and Daenerys’s oath (relationship pin at 10/69: “die screaming”). ${PAST_CHAPTER_PAGES}`,
+      note: `In the books: Jhaqo’s bloodrider after Drogo falls, Eroeh seized, raped and handed to Jhaqo, whose other bloodriders rape her and cut her throat, and Daenerys’s oath to make Mago and Jhaqo pay (corrected after review: Jhaqo is plain text, not a record). ${PAST_CHAPTER_PAGES}`,
     },
   },
   'eroeh': {
