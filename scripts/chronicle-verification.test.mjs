@@ -17,11 +17,13 @@ import {
   characters as onePieceCharacters,
   dossierOf as onePieceDossierOf,
 } from '../src/data/series/one-piece/characters.ts'
+import { GAME_OF_THRONES_SOURCES } from './chronicle-sources-got.mjs'
 import { HUNTER_X_HUNTER_SOURCES } from './chronicle-sources-hxh.mjs'
 import { CHRONICLE_SOURCES } from './chronicle-sources.mjs'
 import { DOC_PATH } from './chronicle-verification.mjs'
 
 const hunter = await filedArchiveOf('hunter-x-hunter')
+const thrones = await filedArchiveOf('game-of-thrones')
 
 /** The log keeps each series' characters, dossiers and evidence together. */
 const ARCHIVES = {
@@ -34,6 +36,11 @@ const ARCHIVES = {
     characters: hunter.characters,
     dossierOf: hunter.dossierOf,
     sources: HUNTER_X_HUNTER_SOURCES,
+  },
+  'game-of-thrones': {
+    characters: thrones.characters,
+    dossierOf: thrones.dossierOf,
+    sources: GAME_OF_THRONES_SOURCES,
   },
 }
 
@@ -128,6 +135,12 @@ function rowIn(line, section) {
   }
 }
 
+/** The series each top-level heading opens; One Piece needs none. */
+const SERIES_HEADINGS = {
+  '# Game of Thrones': 'game-of-thrones',
+  '# Hunter x Hunter': 'hunter-x-hunter',
+}
+
 /**
  * The document read back as rows, so a row can be matched against a story.
  * @returns {object[]} One row per table line, under the section it sits in.
@@ -138,8 +151,10 @@ function rowsInDocument() {
   let series = 'one-piece'
 
   for (const line of DOCUMENT.split('\n')) {
-    if (line === '# Hunter x Hunter') {
-      series = 'hunter-x-hunter'
+    const opened = SERIES_HEADINGS[line]
+
+    if (opened !== undefined) {
+      series = opened
       section = undefined
       continue
     }
@@ -215,9 +230,11 @@ describe('the chronicle verification log', () => {
   })
 
   it('cites a wiki page and a note for every story', () => {
+    // Game of Thrones cites the show's wiki, the Ice and Fire Wiki for the
+    // books, and A Wiki of Ice and Fire where it could be read.
     for (const row of ROWS) {
       expect(row.source, asLine(row)).toMatch(
-        /^https:\/\/(?:onepiece|hunterxhunter)\.fandom\.com\/wiki\/\S+$/u,
+        /^https:\/\/(?:(?:onepiece|hunterxhunter|gameofthrones|iceandfire)\.fandom\.com\/wiki|awoiaf\.westeros\.org\/index\.php)\/\S+$/u,
       )
       expect(row.note.length, asLine(row)).toBeGreaterThan(0)
     }

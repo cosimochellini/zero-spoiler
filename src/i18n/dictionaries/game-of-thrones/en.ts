@@ -22,6 +22,9 @@ export const gameOfThronesEn = {
   'characters.count':
     '{count} characters, in the order they appear in the show. Characters under fog do not show up in search.',
   'characters.featuredLede': 'The key characters of the story.',
+  // The two media: a story starts at an episode or at a chapter (#1360).
+  'character.chronicleLede':
+    'What happens to them up to your bookmark, latest first. Each part starts at the episode or chapter where it takes place.',
   'credits.coverage':
     'No Game of Thrones entry has a documented source review yet, so none is listed below. Game of Thrones’ chapter numbers are checked against A Wiki of Ice and Fire, its episode numbers against the Game of Thrones Wiki, and its Italian names against Italian Wikipedia.',
   'credits.otherTerms':

@@ -20,6 +20,8 @@ export const gameOfThronesIt: SeriesWords<'game-of-thrones'> = {
   'characters.count':
     '{count} personaggi, nell’ordine in cui compaiono nella serie. Quelli nella nebbia non compaiono nei risultati della ricerca.',
   'characters.featuredLede': 'I personaggi chiave della storia.',
+  'character.chronicleLede':
+    'Le sue vicende fino al tuo segnalibro, dalla più recente. Ogni parte inizia dall’episodio o dal capitolo in cui avviene.',
   'credits.coverage':
     'Nessuna voce del Trono di Spade ha ancora una verifica documentata delle fonti, quindi qui sotto non ne compare nessuna. I numeri di capitolo sono confrontati con A Wiki of Ice and Fire, quelli di episodio con la Game of Thrones Wiki, i nomi italiani con Wikipedia in italiano.',
   'credits.otherTerms':

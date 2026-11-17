@@ -291,8 +291,6 @@ export const enDictionary = {
   'character.origin': 'Origin',
   'character.factsLabel': 'Facts up to your bookmark',
   'character.chronicleTitle': 'Story so far',
-  'character.chronicleLede':
-    'What happens to them up to your bookmark, latest first. Each part starts at the episode where it takes place.',
   'character.chronicleMore': 'Show more',
   'character.chronicleMoreError':
     'Could not load the other stories. Try again.',

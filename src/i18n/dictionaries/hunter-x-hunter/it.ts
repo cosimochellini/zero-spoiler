@@ -87,6 +87,8 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
   'characters.count':
     '{count} personaggi, nell’ordine in cui compaiono nell’anime. Quelli nella nebbia non compaiono nei risultati della ricerca.',
   'characters.featuredLede': 'I personaggi chiave della storia.',
+  'character.chronicleLede':
+    'Le sue vicende fino al tuo segnalibro, dalla più recente. Ogni parte inizia dall’episodio in cui avviene.',
   'credits.coverage':
     'Nessuna voce di Hunter x Hunter ha ancora una verifica documentata delle fonti, quindi qui sotto non ne compare nessuna. I numeri di episodio e di capitolo sono confrontati con la Hunter x Hunter Wiki inglese, i nomi italiani con Wikipedia in italiano.',
   'credits.otherTerms':

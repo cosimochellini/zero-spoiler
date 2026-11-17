@@ -1172,18 +1172,29 @@ describe('the steps one medium alone tells', () => {
 })
 
 describe('the season’s leads', () => {
-  it.each(UNITS)('heads the home page by %s with the main cast', (unit) => {
-    const page = homePage(reader(unit, 10))
+  // The home page ranks the leads by how often the reached stories name them.
+  // Only the Essos cast has a chronicle yet (#1360): by episode 10 the show’s
+  // stories also name Eddard and Arya, while a reader at chapter 10 has only
+  // the Pentos chapters, which name Daenerys alone. The other leads join as
+  // their storylines’ chronicles land (#1361–#1363).
+  it.each<[Unit, string[]]>([
+    ['episode', ['daenerys-targaryen', 'eddard-stark', 'arya-stark']],
+    ['chapter', ['daenerys-targaryen']],
+  ])(
+    'heads the home page by %s with the leads its stories name',
+    (unit, cast) => {
+      const page = homePage(reader(unit, 10))
 
-    expect(JSON.stringify(page)).toContain('Eddard Stark')
-    expect(archive.leads['season-1']).toStrictEqual([
-      'eddard-stark',
-      'jon-snow',
-      'daenerys-targaryen',
-      'tyrion-lannister',
-      'arya-stark',
-    ])
-  })
+      expect(page.cast.map(({ id }) => id)).toStrictEqual(cast)
+      expect(archive.leads['season-1']).toStrictEqual([
+        'eddard-stark',
+        'jon-snow',
+        'daenerys-targaryen',
+        'tyrion-lannister',
+        'arya-stark',
+      ])
+    },
+  )
 })
 
 /** The five leads, in the order the demo's cast shows them. */

@@ -86,6 +86,8 @@ export const hunterXHunterEn = {
   'characters.count':
     '{count} characters, in the order they appear in the anime. Characters under fog do not show up in search.',
   'characters.featuredLede': 'The key characters of the story.',
+  'character.chronicleLede':
+    'What happens to them up to your bookmark, latest first. Each part starts at the episode where it takes place.',
   'credits.coverage':
     'No Hunter x Hunter entry has a documented source review yet, so none is listed below. Hunter x Hunter’s episode and chapter numbers are checked against the English Hunter x Hunter Wiki, and its Italian names against Italian Wikipedia.',
   'credits.otherTerms':

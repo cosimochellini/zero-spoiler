@@ -36,14 +36,15 @@ const { entities, gateOf } = core
 
 /**
  * Every record's gate and every dated step's, redrawings and relationship
- * selections included, so the sweep asks both sides of each in the unit
- * that tells it without a hand-kept list: the two media gate the same record
- * at unrelated numbers.
+ * selections and chronicle stories included, so the sweep asks both sides of
+ * each in the unit that tells it without a hand-kept list: the two media gate
+ * the same record at unrelated numbers.
  */
 const GATES: Gated[] = entities.flatMap((owner) => {
   const role = FILED.roleOf(owner)
   const steps = [
     ...(FILED.timelineOf(owner, 'affiliation') ?? []),
+    ...(FILED.timelineOf(owner, 'chronicle') ?? []),
     ...(FILED.timelineOf(owner, 'status') ?? []),
     ...(FILED.timelineOf(owner, 'redrawing') ?? []),
     ...(FILED.timelineOf(owner, 'relationships') ?? []),
