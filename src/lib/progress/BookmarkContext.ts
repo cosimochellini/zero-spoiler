@@ -9,6 +9,20 @@ import type { BookmarkSeries } from './series'
 import type { Gated } from './spoiler'
 import { describeThreshold, type ThresholdSentence } from './threshold'
 
+/**
+ * What the last save changed, for the line that says so (`BookmarkStatus`).
+ */
+export interface BookmarkNotice {
+  /** The saved bookmark before the move; `null` when there was none. */
+  from: Bookmark
+  /** How many entries the listing on screen had open; `null` off a listing. */
+  open: null | number
+  /** The page the save was made on: the notice ends when the reader leaves it. */
+  path: string
+  /** The saved bookmark now; `null` when it was cleared. */
+  to: Bookmark
+}
+
 /** What the provider puts on the context: the bookmark, and how to move it. */
 export interface BookmarkContextValue {
   /** The series selected by the current route; none on shared site pages. */
@@ -23,6 +37,11 @@ export interface BookmarkContextValue {
   enterTrial: (point: NonNullable<Bookmark>) => void
   /** Drops the trial point and re-reads the pages without it. */
   leaveTrial: () => void
+  /**
+   * What the last save changed. It ends when the reader leaves the page the
+   * save was made on, and does not come back with that page.
+   */
+  notice: BookmarkNotice | null
   /** True while the pages are being re-read for a bookmark that just moved. */
   pending: boolean
   /** Saves a bookmark, or forgets it with `null`. Ends any trial. */

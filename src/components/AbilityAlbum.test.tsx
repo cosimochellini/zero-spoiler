@@ -3,12 +3,14 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 
 import type { Locale } from '~/i18n/locales'
+import { readOpenEntries } from '~/lib/progress/openEntries'
 import { HUNTER_X_HUNTER_SERIES } from '~/lib/progress/series'
 import type { AbilityParams } from '~/lib/search/abilityParams'
 import type { AbilitySheetView } from '~/lib/view/abilities'
 import {
   ability,
   coveredRecord,
+  openEntryLinks,
   peekPending,
   untypedAbility,
 } from '~/test/fixtures'
@@ -160,5 +162,12 @@ describe('AbilityAlbum', () => {
       'Tipo non rivelato',
       '2 nella nebbia',
     ])
+  })
+
+  it('reports as many open entries as it draws', async () => {
+    await renderAlbum()
+
+    expect(openEntryLinks('abilities')).toBe(2)
+    expect(readOpenEntries()).toBe(openEntryLinks('abilities'))
   })
 })

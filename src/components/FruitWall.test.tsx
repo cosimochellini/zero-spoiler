@@ -4,10 +4,12 @@ import type { ReactElement } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 
 import { useBookmark } from '~/lib/progress/BookmarkContext'
+import { readOpenEntries } from '~/lib/progress/openEntries'
 import type { FruitBandView } from '~/lib/view/records'
 import {
   coveredRecord,
   fruitBand,
+  openEntryLinks,
   peekTo,
   platesOf,
   specimen,
@@ -167,5 +169,24 @@ describe('FruitsAlbum', () => {
     expect(screen.queryByText('Browse anyway')).not.toBeInTheDocument()
     expect(screen.getByRole('searchbox')).toBeInTheDocument()
     expect(view.container.querySelector('[tabindex="-1"]')).toHaveFocus()
+  })
+
+  it('reports as many open entries as it draws', async () => {
+    renderWithProviders(
+      <FruitsAlbum
+        album={albumOf(OPEN)}
+        filed={1}
+        marquee={null}
+        onParams={vi.fn<SpecimenBandsProps['onParams']>()}
+        params={{}}
+        peek={peekTo(GUM)}
+        plates={platesOf(OPEN)}
+      />,
+      { bookmark: ep(650) },
+    )
+    await settle()
+
+    expect(openEntryLinks('fruits')).toBe(1)
+    expect(readOpenEntries()).toBe(openEntryLinks('fruits'))
   })
 })

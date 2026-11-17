@@ -19,9 +19,17 @@ export interface EpisodeMarkProps {
   placement?: 'bar' | 'fold'
 }
 
+/**
+ * The id of the mark in the bar: where focus goes when the control that saved
+ * the bookmark left the page with the save (`BookmarkStatus`).
+ */
+export const MARK_ID = 'bookmark-mark'
+
 /** What the mark shows, and what a screen reader is told beyond that. */
 interface MarkFace {
   hint: string | undefined
+  /** The bar's mark carries `MARK_ID`; the fold's invitation has none. */
+  id: string | undefined
   label: string
 }
 
@@ -42,12 +50,17 @@ function faceOf(t: Translate, said: null | string, inFold: boolean): MarkFace {
   // name.
   if (!inFold) {
     return said === null ?
-        { hint: mark, label: t('mark.unsetShort') }
-      : { hint: t('mark.change', { threshold: mark }), label: mark }
+        { hint: mark, id: MARK_ID, label: t('mark.unsetShort') }
+      : {
+          hint: t('mark.change', { threshold: mark }),
+          id: MARK_ID,
+          label: mark,
+        }
   }
 
   return {
     hint: undefined,
+    id: undefined,
     label:
       said === null ?
         t('hero.setBookmark')
@@ -100,6 +113,7 @@ export function EpisodeMark({
         aria-expanded={open}
         aria-haspopup="dialog"
         aria-label={face.hint}
+        id={face.id}
         onClick={() => {
           setOpen(true)
         }}

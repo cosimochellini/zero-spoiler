@@ -9,6 +9,7 @@ import { styles } from '~/components/SpecimenBands.styles'
 import { useSettled } from '~/components/useSettled'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { Translate } from '~/i18n/types'
+import { useOpenEntries } from '~/lib/progress/openEntries'
 import {
   type AbilityParams,
   type AbilityType,
@@ -68,6 +69,7 @@ export function AbilityControls({
   const query = (params.q ?? '').trim()
   const pick: Pick = params.type ?? 'all'
   const choices = typeChoices(t, bands)
+  useOpenEntries(bands.reduce((sum, band) => sum + band.open.length, 0))
   // Every pick goes through the parser, so a default ("all", a blank
   // query) is left out of the address rather than written into it.
   const move = (next: Record<string, unknown>, replace: boolean): void => {
