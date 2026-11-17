@@ -1650,8 +1650,8 @@ const links = {
     character: 'jeor-mormont',
     type: { en: 'Lord Commander', it: 'Lord comandante' },
     summary: {
-      en: 'The head of the Night’s Watch. To thank Jon for saving his life, he gives him Longclaw, his family’s Valyrian steel sword.',
-      it: 'Il capo dei Guardiani della notte. Per ringraziare Jon di avergli salvato la vita, gli regala Lungo Artiglio, la spada di acciaio di Valyria della sua famiglia.',
+      en: 'The head of the Night’s Watch. To thank Jon for saving his life, he gives him Longclaw, a Valyrian steel sword.',
+      it: 'Il capo dei Guardiani della notte. Per ringraziare Jon di avergli salvato la vita, gli regala Lungo Artiglio, una spada di acciaio di Valyria.',
     },
   },
   jonAemon: {
@@ -1780,8 +1780,8 @@ const links = {
     character: 'jon-snow',
     type: { en: 'Steward', it: 'Attendente' },
     summary: {
-      en: 'His steward, who saved his life. Jeor gives him Longclaw, his family’s Valyrian steel sword.',
-      it: 'Il suo attendente, che gli ha salvato la vita. Jeor gli regala Lungo Artiglio, la spada di acciaio di Valyria della sua famiglia.',
+      en: 'His steward, who saved his life. Jeor gives him Longclaw, a Valyrian steel sword.',
+      it: 'Il suo attendente, che gli ha salvato la vita. Jeor gli regala Lungo Artiglio, una spada di acciaio di Valyria.',
     },
   },
   jeorJorah: {
@@ -1854,8 +1854,8 @@ const links = {
     character: 'chett',
     type: { en: 'Steward', it: 'Attendente' },
     summary: {
-      en: 'His steward, who looks after him and the ravens. He tries to turn Jon away from Aemon’s door.',
-      it: 'Il suo attendente, che si occupa di lui e dei corvi. Cerca di mandare via Jon dalla porta di Aemon.',
+      en: 'One of his stewards. He tries to send Jon away from Aemon’s door at night.',
+      it: 'Uno dei suoi attendenti. Cerca di mandare via Jon dalla porta di Aemon, di notte.',
     },
   },
   aemSamwell: {
@@ -6697,17 +6697,32 @@ export const season1Relationships = {
         links.jonSamwellSworn,
       ],
     },
-    // The book gives Longclaw and Aemon's name in Jon VIII (chapter 61); the
+    // The book gives Longclaw and Aemon's name in Jon VIII (chapter 61); its
     // entry waits for Ned's death at chapter 66, which the show tells in the
-    // same episode as Longclaw.
+    // same episode as Longclaw. The show has Sam bring Jon word of Robb
+    // (GOT109). The Jon VIII and Jon IX synopses read for #1352 don't say who
+    // tells him; restore the book side with a chapter-cited source.
     {
       episode: 9,
       chapter: 66,
+      source: 'episode',
       value: [
         links.jonEddardDead,
         links.jonJeorLongclaw,
         links.jonAemon,
         links.jonSamwellRobb,
+        links.jonRobbWar,
+      ],
+    },
+    {
+      episode: 9,
+      chapter: 66,
+      source: 'chapter',
+      value: [
+        links.jonEddardDead,
+        links.jonJeorLongclaw,
+        links.jonAemon,
+        links.jonSamwellSworn,
         links.jonRobbWar,
       ],
     },
@@ -6764,9 +6779,13 @@ export const season1Relationships = {
         links.jeorAlliser,
       ],
     },
+    // The show has Jeor tell Jon that Longclaw was meant for Jorah (GOT109).
+    // The Jon VIII synopsis read for #1352 doesn't name him; restore the book
+    // side with a chapter-cited source.
     {
       episode: 9,
       chapter: 61,
+      source: 'episode',
       value: [
         links.jeorJonLongclaw,
         links.jeorJorah,
@@ -6776,11 +6795,34 @@ export const season1Relationships = {
       ],
     },
     {
+      episode: 9,
+      chapter: 61,
+      source: 'chapter',
+      value: [
+        links.jeorJonLongclaw,
+        links.jeorAemon,
+        links.jeorAlliserSent,
+        links.jeorOthorDead,
+      ],
+    },
+    {
       episode: 10,
       chapter: 71,
+      source: 'episode',
       value: [
         links.jeorJonRanging,
         links.jeorJorah,
+        links.jeorAemon,
+        links.jeorAlliserSent,
+        links.jeorOthorDead,
+      ],
+    },
+    {
+      episode: 10,
+      chapter: 71,
+      source: 'chapter',
+      value: [
+        links.jeorJonRanging,
         links.jeorAemon,
         links.jeorAlliserSent,
         links.jeorOthorDead,
