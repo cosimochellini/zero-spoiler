@@ -6,12 +6,16 @@
  * The leading `-` keeps the file out of the generated route tree.
  */
 import * as stylex from '@stylexjs/stylex'
-import { Link, useLocation, useMatch, useRouter } from '@tanstack/react-router'
+import {
+  Link,
+  useMatch,
+  useRouteContext,
+  useRouter,
+} from '@tanstack/react-router'
 import { type ReactElement, type ReactNode, useEffect } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
 import { useInLocale, useLocale, useT } from '~/i18n/LocaleContext'
-import { localeOfPath } from '~/i18n/locales'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { recordStyles } from '~/routes/$series/$locale/-record.styles'
 import { LocaleShell } from '~/routes/-LocaleShell'
@@ -22,10 +26,17 @@ import { LocaleShell } from '~/routes/-LocaleShell'
  * or locale has none, and neither has a locale layout that failed to render
  * (a series' included): they get the shared one, in the language of the
  * address. If that fails too, the root's own error page is left.
+ *
+ * The language is the root's, which lands with its copy. Not the address's:
+ * that changes when a navigation starts, before the new copy is loaded
+ * (#1386).
  */
 function InShell({ children }: { children: ReactNode }): ReactNode {
   const inShell = useInLocale()
-  const locale = localeOfPath(useLocation({ select: (at) => at.pathname }))
+  const locale = useRouteContext({
+    from: '__root__',
+    select: (context) => context.locale,
+  })
 
   return inShell ? children : (
       <LocaleShell

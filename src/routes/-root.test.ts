@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
 import { ONE_PIECE_SERIES } from '~/lib/progress/series'
-import { seriesDescription } from '~/routes/-series'
+import { seriesCopy, seriesDescription } from '~/routes/-series'
 import { createSecurityHeaders } from '~/security-headers'
 
 import { Route } from './__root'
@@ -14,6 +14,9 @@ vi.mock(import('~/routes/-series'), async (importOriginal) => {
     seriesDescription: vi
       .fn<typeof original.seriesDescription>()
       .mockResolvedValue(null),
+    seriesCopy: vi
+      .fn<typeof original.seriesCopy>()
+      .mockRejectedValue(new Error('no server here')),
   }
 })
 
@@ -48,6 +51,24 @@ describe('the root route', () => {
     await expect(
       call('beforeLoad', entering('/no-such-series/en')),
     ).resolves.toMatchObject({ series: null, initialBookmark: null })
+    expect(seriesCopy).not.toHaveBeenCalled()
+  })
+
+  // Asked for here so it travels with the shared copy, not after it; the
+  // series route awaits the same call (#1386). A failure is not the root's.
+  it("starts a known series' copy in the address's language, and does not wait on it", async () => {
+    vi.mocked(seriesDescription).mockResolvedValue(ONE_PIECE_SERIES)
+
+    await call('beforeLoad', entering('/one-piece/en/characters'))
+
+    expect(seriesCopy).toHaveBeenCalledExactlyOnceWith('one-piece', 'en')
+
+    vi.mocked(seriesCopy).mockClear()
+    await call('beforeLoad', entering('/one-piece'))
+
+    expect(seriesCopy).not.toHaveBeenCalled()
+
+    vi.mocked(seriesDescription).mockResolvedValue(null)
   })
 
   it('reads the series of an address no page answers, for its shell', async () => {

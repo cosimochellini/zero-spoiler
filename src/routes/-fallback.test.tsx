@@ -12,7 +12,7 @@ import type { ReactElement } from 'react'
 import { afterEach, describe, expect, it } from 'vitest'
 
 import { FirstVisitIntro } from '~/components/IntroDialog'
-import { isLocale, type Locale } from '~/i18n/locales'
+import { isLocale, type Locale, localeOfPath } from '~/i18n/locales'
 import { isMissing } from '~/lib/missing'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import {
@@ -43,6 +43,7 @@ const SERIES = [
  */
 const root = createRootRouteWithContext<{ series: null | Series }>()({
   beforeLoad: ({ location }) => ({
+    locale: localeOfPath(location.pathname),
     series:
       SERIES.find(({ slug }) => slug === seriesSlugFromPath(location.pathname))
       ?? null,

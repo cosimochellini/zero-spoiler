@@ -57,8 +57,8 @@ export function getRouter(): ReturnType<typeof createRouter<typeof routeTree>> {
     // suppressHydrationWarning.
     ssr: { nonce: crypto.randomUUID() },
     // The shared copy of the language the server rendered, fetched before
-    // the page hydrates: the locale routes' `beforeLoad`, which loads it on
-    // a navigation, does not run on hydration (#930).
+    // the page hydrates: the root route's `beforeLoad`, which loads it on a
+    // navigation, does not run on hydration (#930).
     //
     // When the copy cannot be fetched (a flaky network, or a deploy that
     // replaced the chunk this page was built with), the page reloads once

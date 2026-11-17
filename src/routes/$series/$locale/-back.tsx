@@ -60,7 +60,8 @@ export function RecordBackLink({
 /**
  * `/fruits/<not-a-fruit>` or `/abilities/<not-an-ability>`: says so, and
  * points at the index. A series without the page gets the site's not-found
- * page, with no link back to it; so does a page whose words are not on this series' page.
+ * page, with no link back to it; so does a page whose words are not on this
+ * series' page.
  */
 export function SectionNotFound({
   body,
