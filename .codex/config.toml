@@ -1,0 +1,5 @@
+# impeccable live mode: "Apply" goes to the chat session that is polling, never
+# to a `codex` or `claude` CLI started with approvals and the sandbox bypassed.
+# .claude/settings.json sets the same variable for Claude Code.
+[shell_environment_policy.set]
+IMPECCABLE_LIVE_COPY_AGENT = "chat"

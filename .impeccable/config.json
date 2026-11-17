@@ -1,5 +1,86 @@
 {
   "telemetry": false,
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "createdAt": "2026-11-17T12:52:41.894Z",
+        "reason": "House style, owner 2026-11-17 (#1364): the identity is fixed and Instrument Sans is its body face (font tokens in src/styles/tokens.stylex.ts)."
+      },
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "**"
+        ],
+        "createdAt": "2026-11-17T12:52:41.978Z",
+        "reason": "House style, owner 2026-11-17 (#1364): uppercase tracked labels are part of the fixed identity, and a record page states its kind and first episode above its name."
+      },
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "**"
+        ],
+        "createdAt": "2026-11-17T12:52:42.060Z",
+        "reason": "House style: each line drawing takes one of the nineteen tint hues in src/styles/tokens.stylex.ts, violet, lavender and cyan among them, and its backdrop is that hue. The colours are fixed (owner 2026-11-17, #1364)."
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "http://127.0.0.1:*/*/*/places/*"
+        ],
+        "createdAt": "2026-11-17T12:52:42.135Z",
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: a place page goes from its h1 to an h3 (\"Found here\") with no h2."
+      },
+      {
+        "rule": "first-viewport-column-overflow",
+        "value": "*",
+        "files": [
+          "http://127.0.0.1:*/*/*/places/*"
+        ],
+        "createdAt": "2026-11-17T12:52:42.215Z",
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px a place page opens on two columns, one several viewports tall beside one that ends above the fold."
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "http://127.0.0.1:*/*/*/fruits?ep=*"
+        ],
+        "createdAt": "2026-11-17T12:52:42.298Z",
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the fruits index draws a card inside a card."
+      },
+      {
+        "rule": "radial-spotlight-glow",
+        "value": "*",
+        "files": [
+          "http://127.0.0.1:*/*/en?ep=*",
+          "http://127.0.0.1:*/en"
+        ],
+        "createdAt": "2026-11-17T12:52:42.381Z",
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: the series cards of the hub and the hero drawing of a bookmarked series home sit under an accent-coloured radial glow."
+      },
+      {
+        "rule": "line-length",
+        "value": "*",
+        "files": [
+          "http://127.0.0.1:*/*/*/characters/*",
+          "http://127.0.0.1:*/*/*/places/*",
+          "http://127.0.0.1:*/*/en",
+          "http://127.0.0.1:*/*/en?ep=*",
+          "http://127.0.0.1:*/en",
+          "http://127.0.0.1:*/en/legal"
+        ],
+        "createdAt": "2026-11-17T12:52:42.460Z",
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px prose runs 87 to 112 characters a line: the footer on the hub, the legal notices, the landing introduction, the stories of a series home, and the summary and dated entries of a character or place page."
+      }
+    ]
+  },
   "buildPath": "code",
   "stalenessCheck": false
 }

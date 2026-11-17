@@ -1,6 +1,6 @@
 {
   "name": "zero-spoiler",
-  "version": "1.182.2",
+  "version": "1.182.4",
   "private": true,
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "art:sheet": "node scripts/art-sheet.mjs",
     "art:shots": "node scripts/art-shots.mjs",
     "build": "vite build",
-    "check": "node scripts/dependencies-fresh.mjs && npm run typecheck && npm run lint && npm run format:check && npm run gate:docs && npm run test && npm run build && npm run gate:react-doctor && npm run gate:fallow && npm run gate:archive",
+    "check": "node scripts/dependencies-fresh.mjs && npm run typecheck && npm run lint && npm run format:check && npm run gate:docs && npm run test && npm run build && npm run gate:design && npm run gate:react-doctor && npm run gate:fallow && npm run gate:archive",
     "check:content": "npm run typecheck && npm run lint && npm run format:check && npm run gate:docs && vitest run src/data src/server/archive src/test scripts/archive-gate scripts/chronicle-verification scripts/og-images /-records.test id.relationships.test src/components/seriesEmblems src/components/LegalPage src/lib/search/fold",
     "deploy": "npm run build && wrangler deploy",
     "dev": "vite dev",
@@ -22,6 +22,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "gate:archive": "node scripts/archive-gate.mjs",
+    "gate:design": "node scripts/design-gate.mjs",
     "gate:docs": "node scripts/archive-counts.mjs --check",
     "gate:fallow": "node scripts/fallow-gate.mjs",
     "gate:react-doctor": "node scripts/react-doctor-gate.mjs",
@@ -97,6 +98,7 @@
     "eslint-plugin-unicorn": "79.0.0",
     "fallow": "3.38.1",
     "globals": "17.14.0",
+    "impeccable": "4.9.1",
     "jsdom": "30.1.3",
     "lefthook": "2.2.2",
     "prettier": "3.9.10",
