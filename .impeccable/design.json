@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-17T15:47:03.291Z",
+  "generatedAt": "2026-11-17T15:48:23.030Z",
   "title": "Design System: Zero Spoiler",
   "extensions": {
     "colorMeta": {
@@ -908,7 +908,7 @@
     "rules": [
       {
         "name": "The One Accent Rule",
-        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code fills a few surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the marks for filler in `FillerCountdown.styles.ts` and `FillerStrip.tsx`; small marks such as a picked chip's dot; and the hub's beam, a low-alpha wash of a series' accent over its card. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
+        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code fills a few surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the marks for filler in `FillerCountdown.styles.ts` and `FillerStrip.tsx`; and small marks such as a picked chip's dot. The hub also lights each series card with a low-alpha beam of its accent, and the home sets a glow behind its drawing. The design gate holds both glows under a temporary waiver until the owner says whether they stay; leave them as they are. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
         "section": "colors"
       },
       {

@@ -222,9 +222,11 @@ field or a chip, or of running text.
 few surfaces with it, and they are the accepted set: the button of a primary
 action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's
 primary buttons); the marks for filler in `FillerCountdown.styles.ts` and
-`FillerStrip.tsx`; small marks such as a picked chip's dot; and the hub's beam,
-a low-alpha wash of a series' accent over its card. Text on a filled accent
-surface is Accent Ink. Keep these filled, and add no other.
+`FillerStrip.tsx`; and small marks such as a picked chip's dot. The hub also
+lights each series card with a low-alpha beam of its accent, and the home sets a
+glow behind its drawing. The design gate holds both glows under a temporary
+waiver until the owner says whether they stay; leave them as they are. Text on a
+filled accent surface is Accent Ink. Keep these filled, and add no other.
 
 **The Floors Rule.** On every paper of every set, Ink and Ink 2 hold 7:1, Muted
 and the accent 4.5:1, Rule 2 and Focus 3:1, and Accent Ink on the accent 4.5:1.
