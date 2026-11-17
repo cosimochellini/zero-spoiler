@@ -6,7 +6,7 @@ import { type Gated, type Source, thresholdIn } from '~/lib/progress/spoiler'
 
 import { toldIn } from './reveal'
 import { headingsOf } from './shelves'
-import type { Entity, Saga } from './types'
+import type { Entity, Saga, SeriesArchive } from './types'
 
 /**
  * Every saga's start, on both sides, in one unit: its earliest heading, an
@@ -55,17 +55,40 @@ export function sweepOf(
 }
 
 /**
- * Both sides of every gate in each unit that tells it (`toldIn`), merged with
- * the numbers named by hand: episodes, then chapters, each ascending and once,
- * and none past the series' ceiling in that unit.
+ * Every gate of an archive: each record's, abilities included, and each dated
+ * step's of every timeline it files, whatever the field. Name facts
+ * (`nameSaidAt`, `episodeName`) and place visits are not timelines, so they
+ * are not here. Hunter x Hunter and Game of Thrones sweep both sides of all
+ * of them, so a new record or step enters the sweep without a hand-listed
+ * number. One Piece does not: its 530 owners would take its sweep from 24
+ * bookmarks in each unit to about 1,070, and its per-cohort boundary tests
+ * (`*Relationships.test.ts`) already ask every relationship entry at gate−1
+ * and gate.
+ */
+export function gatesOf({
+  entities,
+  gateOf,
+  timelines,
+}: Pick<SeriesArchive, 'entities' | 'gateOf' | 'timelines'>): Gated[] {
+  return [
+    ...entities,
+    ...timelines.flatMap(({ owner, timeline }) =>
+      timeline.map((entry) => gateOf(entry, owner)),
+    ),
+  ]
+}
+
+/**
+ * Both sides of every gate in each unit that tells it (`toldIn`): episodes,
+ * then chapters, each ascending and once, and none past the series' ceiling
+ * in that unit.
  */
 export function aroundGates(
   gates: Gated[],
-  named: Record<Source, number[]>,
   series: BookmarkSeries,
 ): Bookmark[] {
   const around = (source: Source): number[] => {
-    const counts = new Set(named[source])
+    const counts = new Set<number>()
     for (const gate of gates) {
       if (!toldIn(gate, source)) {
         continue

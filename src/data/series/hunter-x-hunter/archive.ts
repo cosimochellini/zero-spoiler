@@ -1,5 +1,5 @@
 import { sagaArchive } from '~/data/sagaArchive'
-import { aroundGates, sweepOf } from '~/data/sweep'
+import { aroundGates, gatesOf, sweepOf } from '~/data/sweep'
 import type { SeriesArchive } from '~/data/types'
 import { HUNTER_X_HUNTER_SERIES as SERIES } from '~/lib/progress/series'
 
@@ -15,7 +15,7 @@ import { sagas } from './sagas'
  * and dated facts from the records and dossiers the sagas file, as it does
  * One Piece's.
  */
-const { core, filed: FILED } = sagaArchive({
+const { core } = sagaArchive({
   abilities: NEN_ABILITIES,
   // The main characters of the Hunter Exam, as they are filed: the landing
   // chart and the featured row.
@@ -32,82 +32,13 @@ const { core, filed: FILED } = sagaArchive({
   series: SERIES,
 })
 
-const { entities, gateOf } = core
-
-/**
- * Every relationship entry's gate, so a new cohort's selections enter the
- * payload sweep without a hand-listed number. One Piece keeps its sweep: its
- * 530 owners would multiply it, and its per-cohort boundary tests
- * (`*Relationships.test.ts`) already ask every entry at gate−1 and gate.
- */
-const SWEEP_GATES = entities.flatMap((owner) =>
-  (FILED.timelineOf(owner, 'relationships') ?? []).map((entry) =>
-    gateOf(entry, owner),
-  ),
-)
-
-for (const ability of NEN_ABILITIES.records) {
-  SWEEP_GATES.push(ability)
-}
-for (const { field, owner, timeline } of core.timelines) {
-  if (field === 'ability' || field === 'nen') {
-    SWEEP_GATES.push(...timeline.map((entry) => gateOf(entry, owner)))
-  }
-}
-
-for (const { episode, gate } of core.stories) {
-  if (episode >= 76 && episode <= 148) {
-    SWEEP_GATES.push(gate)
-  }
-}
-
-/** The named scenes the sweep asks at, listed by hand in each unit. */
-const NAMED_SCENES = {
-  episode: [
-    2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
-    23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 39, 40, 41, 42, 43,
-    44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62,
-    63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81,
-    82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,
-    101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 115, 116, 117, 119, 120,
-    122, 123, 124, 125, 126, 127, 128, 130, 131, 132, 133, 134, 135, 136, 137,
-    138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148,
-  ],
-  chapter: [
-    2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23,
-    24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
-    43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61,
-    62, 63, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81,
-    82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,
-    101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115,
-    116, 117, 118, 119, 120, 121, 125, 126, 127, 128, 129, 127, 128, 130, 131,
-    132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146,
-    147, 148, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149,
-    150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 169, 170, 173,
-    174, 176, 177, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192,
-    193, 194, 195, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 209, 210,
-    212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226,
-    227, 228, 229, 233, 234, 235, 237, 238, 239, 240, 241, 242, 243, 245, 246,
-    249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 277, 278,
-    292, 293, 294, 297, 298, 299, 305, 306, 307, 308, 309, 310, 313, 314, 315,
-    316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330,
-    331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345,
-    346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360,
-    361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375,
-    376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390,
-    391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405,
-    406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420,
-  ],
-}
-
 /** One dynamically loaded archive; its public description contains no records. */
 export const HUNTER_X_HUNTER_ARCHIVE: SeriesArchive = {
   series: SERIES,
-  // Both sides of every relationship and Chimera Ant/Election story gate, and scenes listed by
-  // hand, followed by the first two season boundaries (the demo end and a
-  // boundary inside an arc).
+  // Both sides of every gate, then the first season boundaries (the demo end
+  // and a boundary inside an arc).
   bookmarks: sweepOf(sagas, SERIES, [
-    ...aroundGates(SWEEP_GATES, NAMED_SCENES, SERIES),
+    ...aroundGates(gatesOf(core), SERIES),
     { mode: 'season', season: 1, episode: 26 },
     { mode: 'season', season: 2, episode: 1 },
     { mode: 'season', season: 2, episode: 12 },
