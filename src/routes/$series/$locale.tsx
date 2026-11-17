@@ -8,10 +8,10 @@ import {
   loadDictionaryOrReload,
   translatorFor,
 } from '~/i18n/translate'
+import { isMissing } from '~/lib/missing'
 import { readPlain } from '~/lib/plain'
 import { type SagaTable, SagaTableContext } from '~/lib/progress/sagaLabel'
 import { DrawingsContext } from '~/lib/view/drawings'
-import { isMissing } from '~/routes/$series/$locale/-found'
 import { LocaleShell } from '~/routes/-LocaleShell'
 import { keepSeriesCopy, remembered, seriesCopy } from '~/routes/-series'
 import { loadDrawings, loadSagaLabels } from '~/server/api'

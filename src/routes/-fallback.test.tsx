@@ -13,6 +13,7 @@ import { afterEach, describe, expect, it } from 'vitest'
 
 import { FirstVisitIntro } from '~/components/IntroDialog'
 import { isLocale, type Locale } from '~/i18n/locales'
+import { isMissing } from '~/lib/missing'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import {
   ONE_PIECE_SERIES,
@@ -21,7 +22,6 @@ import {
 } from '~/lib/progress/series'
 import { copyOf } from '~/server/copy.server'
 
-import { isMissing } from './$series/$locale/-found'
 import { ErrorPage, NotFoundPage } from './-fallback'
 import { LocaleShell } from './-LocaleShell'
 

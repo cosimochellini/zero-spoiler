@@ -15,6 +15,7 @@ import { Button } from '~/components/ui/Button'
 import { type Modal, useModal } from '~/components/useModal'
 import { useT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
+import { isMissing } from '~/lib/missing'
 import { useBookmark, useThreshold } from '~/lib/progress/BookmarkContext'
 import {
   dismissIntro,
@@ -24,7 +25,6 @@ import {
   subscribeIntro,
 } from '~/lib/progress/intro'
 import type { Gated } from '~/lib/progress/spoiler'
-import { isMissing } from '~/routes/$series/$locale/-found'
 
 const STEPS: TranslationKey[] = ['intro.step1', 'intro.step2', 'intro.step3']
 
