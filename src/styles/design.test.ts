@@ -126,6 +126,9 @@ function ceiling(size: string): string {
     : size
 }
 
+/** The sidecar, with every run of white space as one space. */
+const SIDECAR = read('../../.impeccable/design.json').replaceAll(/\s+/gu, ' ')
+
 /** Each type role's font, size and leading, by the token's name. */
 const ROLES: Record<string, [string, string, null | string]> = {
   hero: ['display', 'hero', 'display'],
@@ -181,5 +184,25 @@ describe('the tokens in DESIGN.md', () => {
     expect(new Set(Object.values(ROLES).map(([, size]) => size))).toStrictEqual(
       new Set(Object.keys(text)),
     )
+  })
+
+  it('have their motion, layers and fluid sizes in the sidecar', () => {
+    const motion = {
+      ...prefixed('dur', group('dur')),
+      ...prefixed('ease', group('ease')),
+    }
+
+    for (const [name, value] of Object.entries(motion)) {
+      expect(SIDECAR).toContain(`"name": "${name}", "value": "${value}"`)
+    }
+    const layers = Object.entries(group('z'))
+
+    for (const [name, value] of layers) {
+      expect(SIDECAR).toContain(`{ "name": "${name}", "value": ${value} }`)
+    }
+    const { display = '', hero = '' } = group('text')
+
+    expect(SIDECAR).toContain(`"fluid": "${hero}"`)
+    expect(SIDECAR).toContain(`"fluid": "${display}"`)
   })
 })
