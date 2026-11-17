@@ -18,10 +18,12 @@ map (`SeaChart*`) over an index; the other series have the index only.
 
 **Must not break:**
 
-- A sea is drawn and named only once the reader has a stop in it
-  (`SeaChart.tsx`, `src/lib/view/chart.ts`).
-- A stop under fog says its number and threshold and nothing else, and its
-  peek is veiled (`SeaChart.tsx`).
+- A region's name reaches a page no earlier than the map draws that region;
+  one table decides both, and one stop can open several regions (owner, #674).
+  A place lifted with Show anyway names its own region
+  (`src/lib/view/chart.ts`).
+- A stop under fog is labelled with a generic name and its threshold, and its
+  peek is veiled (`SeaChartStops.tsx`, `SeaChartPeek.tsx`).
 - The index names a saga only once the reader has a stop in it
   (`src/server/archive/places.server.ts`).
 

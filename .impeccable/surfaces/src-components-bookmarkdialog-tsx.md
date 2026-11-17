@@ -18,12 +18,13 @@ trial. `ControlBar` is a listing's pinned controls.
 
 **Must not break:**
 
-- Nothing reaches the cookie until Save (`BookmarkForm.tsx`).
+- An edit reaches the cookie only on Save; the line that forgets the bookmark
+  writes at once (`BookmarkForm.tsx`).
 - The dialog stays a native `<dialog>` opened with `showModal()`: the browser
   supplies Escape, the inert page and the return of focus
   (`BookmarkDialog.tsx`).
-- The intro opens once per browser session, and not on the landing page, in a
-  trial or to a crawler (`IntroDialog.tsx`).
+- The intro opens only with no bookmark, off the landing page, and once per
+  browser session (`IntroDialog.tsx`, `src/lib/progress/intro.ts`).
 - The arc named under the number is public by design (`PRODUCT.md`).
 
 **Open points:**

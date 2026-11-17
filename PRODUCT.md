@@ -67,8 +67,10 @@ for this project, and no official artwork is used.
     and counts (owner, 2026-10-10, confirmed 2026-11-17).
   - The home's filler warning (owner, 2026-10-12).
   - The arc named under the bookmark's number, in the dialog, the intro and the
-    dial's "further" form, from a table fetched when that line mounts (owner,
-    2026-10-12).
+    dial's "further" form. Its table is sent at any bookmark: where every arc of
+    the unit opens and its name, in both units, and the runs of pure filler. The
+    line names the arc and marks an episode inside a filler run (owner,
+    2026-10-12; the filler mark, 2026-10-10).
   - The landing page's demo stretch, with its covered tail.
   - Counts of entries, where the contract allows them.
   - The sitemap: the address and square picture of every record both sources
@@ -84,7 +86,9 @@ for this project, and no official artwork is used.
   character shelves (owner, 2026-10-17, `src/data/types.ts`; in practice Game of
   Thrones' seasons). The fruits and places pages name a saga only once the
   reader has reached it. Never show a saga's name ahead of the bookmark on a
-  page that does not already do so.
+  page that does not already do so. This is deliberately narrower than the
+  comment in `src/data/types.ts` ("saga names are not spoilers"), because in
+  Hunter x Hunter a saga and its one arc share a name.
 - **Terms.** One word per concept: bookmark, under fog, open, entry, arc. The
   glossary is in the `tone-of-voice` skill. In One Piece a saga groups several
   arcs. In Hunter x Hunter each saga holds one arc of the same name. Game of

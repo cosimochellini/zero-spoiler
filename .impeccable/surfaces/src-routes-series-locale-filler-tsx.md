@@ -22,7 +22,8 @@ met. Both are One Piece's only.
 - The filler page's group names, ranges, strip and counts are public by
   design; its titles are under fog past the bookmark (`PRODUCT.md`,
   `src/server/archive/filler.server.ts`).
-- Only an episode or season reader gets the countdown
+- The countdown is for an episode or season bookmark within the aired
+  episodes; a chapter reader and a visitor with no bookmark get none
   (`src/server/archive/fillerCountdown.server.ts`).
 - On the ranks page only a held seat has a drawing and a colour
   (`PowerBoard.tsx`).

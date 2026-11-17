@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-17T15:07:20.240Z",
+  "generatedAt": "2026-11-17T15:29:41.546Z",
   "title": "Design System: Zero Spoiler",
   "extensions": {
     "colorMeta": {
@@ -908,7 +908,7 @@
     "rules": [
       {
         "name": "The One Accent Rule",
-        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code fills a few surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the marks for filler in `FillerCountdown.styles.ts` and `FillerStrip.tsx`; and small marks such as a picked chip's dot. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
+        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code fills a few surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the marks for filler in `FillerCountdown.styles.ts` and `FillerStrip.tsx`; small marks such as a picked chip's dot; and the hub's beam, a low-alpha wash of a series' accent over its card. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
         "section": "colors"
       },
       {
@@ -933,7 +933,7 @@
       "**Do** keep the uppercase tracked label above or beside a heading. Impeccable bans a kicker above a heading; here it is part of the style (owner, 2026-11-17).",
       "**Do** keep every existing use of JetBrains Mono, and add it only for a numeral or a short line that carries one, never for prose or a heading. Impeccable treats mono outside code as a costume; here it marks numerals by design (owner, 2026-11-17).",
       "**Do** mark a link inside text with an underline. The accent sits within 3:1 of the inks in every set, so colour alone cannot.",
-      "**Do** space siblings with `gap`.",
+      "**Do** space siblings with `gap` in new work; see Layout for today's state.",
       "**Do** keep controls at least 44px tall. Under it today, for the surface passes (#1375 to #1383) to fix: the wordmark link, back links, relationship rows and the filler catalogue's rows.",
       "**Do** keep running text to a measure of 52 to 66ch. Wider today, for the same passes: the legal page (76ch) and the footer (72ch).",
       "**Do** check every pass at a width of 390px. Mobile is the owner's second priority, after the bookmark and progress and before fog."

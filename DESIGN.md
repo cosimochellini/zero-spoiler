@@ -222,8 +222,9 @@ field or a chip, or of running text.
 few surfaces with it, and they are the accepted set: the button of a primary
 action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's
 primary buttons); the marks for filler in `FillerCountdown.styles.ts` and
-`FillerStrip.tsx`; and small marks such as a picked chip's dot. Text on a filled
-accent surface is Accent Ink. Keep these filled, and add no other.
+`FillerStrip.tsx`; small marks such as a picked chip's dot; and the hub's beam,
+a low-alpha wash of a series' accent over its card. Text on a filled accent
+surface is Accent Ink. Keep these filled, and add no other.
 
 **The Floors Rule.** On every paper of every set, Ink and Ink 2 hold 7:1, Muted
 and the accent 4.5:1, Rule 2 and Focus 3:1, and Accent Ink on the accent 4.5:1.
@@ -267,8 +268,11 @@ numeral or a short line that carries one, never for prose or a heading.
 ## Layout
 
 The shell is one centred column, at most 76rem wide. Spacing is a 4pt scale
-(`spacing` in the frontmatter; `xl4` is defined and unused today). Siblings are
-spaced with `gap`; `margin` is for optical adjustment only.
+(`spacing` in the frontmatter; `xl4` is defined and unused today). The rule:
+siblings are spaced with `gap`, and `margin` is for optical adjustment only.
+About thirty non-zero margins remain today and several space siblings (the legal
+page, the filler countdown and ranges, the home fold); the surface passes (#1375
+to #1383) fix them.
 
 The site bar is pinned at every width, at the height the `pin.bar` token gives,
 and a listing's controls and sticky heads pin under it (`src/styles/sticky.ts`).
@@ -280,9 +284,11 @@ the line between a phone and a wider window.
 ## Elevation & Depth
 
 Flat, with no drop shadows. Depth comes from the three papers, hairline rules
-and the overlays. `box-shadow` appears only as a flat line that costs no layout.
-The z-index levels are in `.impeccable/design.json` (`z.base` is defined and
-unused today); dialogs are native `<dialog>` elements in the top layer.
+and the overlays. The pinned site bar is frosted glass, the one
+`backdrop-filter` on the site. `box-shadow` appears only as a flat line that
+costs no layout. The z-index levels are in `.impeccable/design.json` (`z.base`
+is defined and unused today); dialogs are native `<dialog>` elements in the top
+layer.
 
 ## Shapes
 
@@ -328,7 +334,8 @@ more than colour.
 ### Motion
 
 Three durations and three easings, in `.impeccable/design.json` (`ease.in` is
-defined and no code uses it today). Movement uses `opacity` and `transform`. A
+defined and no code uses it today). Movement uses `opacity` and `transform`,
+plus a drawing's stroke drawing itself in. No layout property is animated. A
 page's title does not settle in with the bands, because it is the largest paint.
 Under `prefers-reduced-motion` spatial motion becomes a crossfade.
 
@@ -348,7 +355,7 @@ Under `prefers-reduced-motion` spatial motion becomes a crossfade.
   design (owner, 2026-11-17).
 - **Do** mark a link inside text with an underline. The accent sits within 3:1
   of the inks in every set, so colour alone cannot.
-- **Do** space siblings with `gap`.
+- **Do** space siblings with `gap` in new work; see Layout for today's state.
 - **Do** keep controls at least 44px tall. Under it today, for the surface
   passes (#1375 to #1383) to fix: the wordmark link, back links, relationship
   rows and the filler catalogue's rows.
