@@ -64,10 +64,7 @@ const HOLDERS: Entity[] = [
   ),
 ].flatMap((id) => (id === null ? [] : (archive.getCharacter(id) ?? [])))
 
-const POINTS: Bookmark[] = [
-  null,
-  ...aroundGates(gatesOf(), { episode: [], chapter: [] }, archive.series),
-]
+const POINTS: Bookmark[] = [null, ...aroundGates(gatesOf(), archive.series)]
 
 const ASKS = POINTS.flatMap((bookmark) =>
   LOCALES.map((locale) => ({ bookmark, locale })),
