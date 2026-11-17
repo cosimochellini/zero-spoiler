@@ -37,6 +37,7 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
+  realpathSync,
   rmSync,
   writeFileSync,
 } from 'node:fs'
@@ -44,7 +45,7 @@ import { createServer } from 'node:net'
 import path from 'node:path'
 import process from 'node:process'
 import { setTimeout as sleep } from 'node:timers/promises'
-import { fileURLToPath, pathToFileURL } from 'node:url'
+import { fileURLToPath } from 'node:url'
 
 import {
   bookmarkedPageProblem,
@@ -354,7 +355,6 @@ function report(findings, blocking, origin) {
       + `  report: ${path.relative(repositoryRoot, reportPath)}\n`,
   )
   if (blocking.length === 0) {
-    process.stdout.write('\ndesign gate: PASSED\n')
     return EXIT_CLEAN
   }
   // Only the first MAX_PRINTED are listed; the report file keeps the rest.
@@ -372,6 +372,25 @@ function report(findings, blocking, origin) {
       + '  .impeccable/config.json with a reason (see CONTRIBUTING.md, "Checks").\n',
   )
   return EXIT_FINDINGS
+}
+
+/**
+ * A waiver that hides nothing would hide the next violation on its pages, so
+ * it fails the gate even when every finding is covered.
+ * @param {number} verdict The exit code the findings ask for.
+ * @param {string[]} stale The waivers that matched no finding.
+ * @returns {number} The exit code.
+ */
+function conclude(verdict, stale) {
+  if (stale.length > 0) {
+    fail(
+      `${stale.length} waiver(s) in .impeccable/config.json match no finding any more. Remove them:\n    ${stale.join('\n    ')}`,
+    )
+  }
+  if (verdict === EXIT_CLEAN) {
+    process.stdout.write('\ndesign gate: PASSED\n')
+  }
+  return verdict
 }
 
 function readConfig() {
@@ -405,15 +424,12 @@ async function main() {
   )
   const verdict = report(findings, blocking, origin)
   process.stdout.write(`  took ${Math.round((Date.now() - started) / 1000)}s\n`)
-  if (stale.length > 0) {
-    fail(
-      `${stale.length} waiver(s) in .impeccable/config.json match no finding any more. Remove them:\n    ${stale.join('\n    ')}`,
-    )
-  }
-  return verdict
+  return conclude(verdict, stale)
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+// The real path, not the one typed: a checkout reached through a symlink
+// would otherwise compare unequal, skip the gate and exit 0.
+if (realpathSync(process.argv[1] ?? '.') === import.meta.filename) {
   try {
     // An explicit exit: the preview server would keep the process alive.
     process.exit(await main())

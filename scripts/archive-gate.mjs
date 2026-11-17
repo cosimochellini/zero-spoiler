@@ -52,7 +52,7 @@
  *   2  nothing to check: no build, or no canary could be read
  */
 import console from 'node:console'
-import { readdirSync, readFileSync, statSync } from 'node:fs'
+import { readdirSync, readFileSync, realpathSync, statSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { byNumber, byValue } from 'sort-es'
@@ -572,6 +572,6 @@ async function main() {
   return checkServer(repositoryRoot, canaries)
 }
 
-if (process.argv[1] === import.meta.filename) {
+if (realpathSync(process.argv[1] ?? '.') === import.meta.filename) {
   process.exit(await main())
 }
