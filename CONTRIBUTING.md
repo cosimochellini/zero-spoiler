@@ -30,11 +30,22 @@ with `docs:chronicle` when their inputs change. CI client JavaScript growth over
 checks remain blocking.
 
 `gate:design` serves the build and scans its pages with impeccable's detector at
-390 and 1440 px wide; it needs Chrome. Fix a finding in the page. A rule the
-house style contradicts is waived in `.impeccable/config.json` with
-`npx impeccable ignores add-value <rule> "*" --file "<glob>" --reason "…"`, and
-the gate refuses a waiver that gives no reason.
-`npm run gate:design -- --no-config` lists what the waivers hide.
+390 and 1440 px wide. It needs Chrome, Chromium or Edge; set
+`IMPECCABLE_BROWSER` to the executable when the detector does not find one. Fix
+a finding in the page. A rule the house style contradicts is waived in the
+shared `.impeccable/config.json` with a reason and a glob of page addresses,
+since a scan of rendered pages has no source files:
+
+```sh
+npx impeccable ignores add-value skipped-heading "*" \
+  --file "http://127.0.0.1:*/*/*/places/*" --reason "…"
+```
+
+`**` as the glob waives the rule on every page. The gate fails on a waiver with
+no reason and on one that matches no finding any more, so remove a waiver in the
+change that fixes its page. It reads neither `.impeccable/config.local.json` nor
+ignore comments, and it refuses a page that carries `data-impeccable-ignore`.
+`.gate/design.json` lists every raw finding, waived or not.
 
 ## Archive and drawing verification
 
@@ -51,7 +62,8 @@ the gate refuses a waiver that gives no reason.
 - **Site changes:** build, `npm start` on a free port, then check the affected
   flow in Chrome with local `puppeteer-core`, running inside the worktree. Set
   the series cookie; check before/at changed episode and chapter gates. Capture
-  visual evidence and close browser/preview. Docs/tooling need no browser/dumps.
+  visual evidence and close browser/preview. Docs/tooling need no browser flow
+  or dumps; `npm run check` itself still needs Chrome, for `gate:design`.
 - **Drawings:** inspect `npm run art:sheet -- <id>` output. For One Piece
   character redrawings, build and run `npm run art:shots -- <id>`; inspect the
   gate screenshots. Keep generated evidence out of commits.
