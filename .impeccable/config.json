@@ -8,7 +8,7 @@
         "rule": "overused-font",
         "value": "instrument sans",
         "createdAt": "2026-11-17T12:52:41.894Z",
-        "reason": "House style, owner 2026-11-17 (#1364): the identity is fixed and Instrument Sans is its body face (font tokens in src/styles/tokens.stylex.ts)."
+        "reason": "Permanent: house style, owner 2026-11-17 (#1364): the identity is fixed and Instrument Sans is its body face (font tokens in src/styles/tokens.stylex.ts)."
       },
       {
         "rule": "kicker-above-heading",
@@ -17,7 +17,7 @@
           "**"
         ],
         "createdAt": "2026-11-17T12:52:41.978Z",
-        "reason": "House style, owner 2026-11-17 (#1364): uppercase tracked labels are part of the fixed identity, and a record page states its kind and first episode above its name."
+        "reason": "Permanent: house style, owner 2026-11-17 (#1364): uppercase tracked labels are part of the fixed identity, and a record page states its kind and first episode above its name."
       },
       {
         "rule": "ai-color-palette",
@@ -26,7 +26,7 @@
           "**"
         ],
         "createdAt": "2026-11-17T12:52:42.060Z",
-        "reason": "House style: each line drawing takes one of the nineteen tint hues in src/styles/tokens.stylex.ts, violet, lavender and cyan among them, and its backdrop is that hue. The colours are fixed (owner 2026-11-17, #1364)."
+        "reason": "Permanent: house style: each line drawing takes one of the nineteen tint hues in src/styles/tokens.stylex.ts, violet, lavender and cyan among them, and its backdrop is that hue. The colours are fixed (owner 2026-11-17, #1364)."
       },
       {
         "rule": "skipped-heading",

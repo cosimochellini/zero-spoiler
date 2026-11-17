@@ -12,9 +12,16 @@
  * file. The scan itself is raw (`--no-config`) and the gate applies the
  * waivers, in `design-gate.rules.mjs`, because that is the only way one scan
  * shows both what a waiver hides and that it still hides something: a waiver
- * that matches nothing fails the gate. `.impeccable/config.local.json` and
+ * that matches nothing fails the gate, unless its reason starts with
+ * `Permanent: ` (the house style). `.impeccable/config.local.json` and
  * in-file ignore comments are therefore never read, so a developer's machine
  * and CI agree. Advisory rules never fail the gate.
+ *
+ * The detector's `design-system-*` rules are not part of the gate. They need
+ * `DESIGN.md`, and engine 0.1.24 loads it only for a local file target, found
+ * upwards from that file: never for an HTTP address, whatever the working
+ * directory, the config or the environment (probed in #1385). Scanning saved
+ * copies of the pages would be a second scan of pages no reader gets.
  *
  * The bookmark: `?ep=N` answers 302 and sets the series cookie. The detector's
  * browser follows it and keeps cookies for the rest of one run, on a profile
@@ -29,7 +36,8 @@
  *   2  the gate cannot vouch for the scan: no build, the server did not
  *      start, the page list is short, a page was not served as asked, the
  *      detector could not scan a target or ran out of time, or a waiver gives
- *      no reason or matches nothing
+ *      no reason, is one the detector would not apply, or is temporary and
+ *      matches nothing
  */
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
@@ -37,7 +45,6 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
-  realpathSync,
   rmSync,
   writeFileSync,
 } from 'node:fs'
@@ -54,7 +61,7 @@ import {
   judge,
   pageProblem,
   pagesOf,
-  unexplainedWaivers,
+  refusedWaivers,
 } from './design-gate.rules.mjs'
 
 const EXIT_CLEAN = 0
@@ -75,8 +82,11 @@ const MAX_PRINTED = 60
 /**
  * Per series: a bookmark in the middle of the story, so a page shows revealed
  * and fogged content together, and the record of each kind to open, which has
- * to be open at that bookmark. A series that is not listed is still scanned,
- * with no bookmark and the first record of each kind in the sitemap.
+ * to be open at that bookmark. `indexes` are its kinds with one page and no
+ * record. The sitemap has to list every kind named here, so a page type that
+ * leaves it fails the gate; add a kind here when a series gains one. A series
+ * or a kind that is not listed is still scanned, the series with no bookmark
+ * and the kind on its first record in the sitemap, and the gate says so.
  */
 const SAMPLES = {
   'one-piece': {
@@ -84,6 +94,7 @@ const SAMPLES = {
     characters: 'monkey-d-luffy',
     places: 'water-seven',
     fruits: 'gum-gum-fruit',
+    indexes: ['filler', 'ranks'],
   },
   'hunter-x-hunter': {
     ep: 75,
@@ -344,8 +355,9 @@ async function scan(origin, sitemap) {
   const bookmarked = pages.bookmarked.map(
     (page) => `${origin}${page.path}?ep=${page.ep}`,
   )
+  const thin = pages.thin.map((line) => `  no sample for ${line}\n`)
   process.stdout.write(
-    `design gate: scanning ${landing.length + bookmarked.length} page(s) at ${VIEWPORTS.join(' and ')}\n`,
+    `design gate: scanning ${landing.length + bookmarked.length} page(s) at ${VIEWPORTS.join(' and ')}\n${thin.join('')}`,
   )
   const runs = await Promise.all(
     VIEWPORTS.flatMap((viewport) => [
@@ -391,7 +403,7 @@ function report(findings, blocking, origin) {
 function conclude(verdict, stale) {
   if (stale.length > 0) {
     fail(
-      `${stale.length} waiver(s) in .impeccable/config.json match no finding any more. Remove them:\n    ${stale.join('\n    ')}`,
+      `${stale.length} temporary waiver(s) in .impeccable/config.json match no finding any more. Remove them:\n    ${stale.join('\n    ')}`,
     )
   }
   if (verdict === EXIT_CLEAN) {
@@ -402,10 +414,10 @@ function conclude(verdict, stale) {
 
 function readConfig() {
   const config = JSON.parse(readFileSync(configPath, 'utf8'))
-  const unexplained = unexplainedWaivers(config)
-  if (unexplained.length > 0) {
+  const refused = refusedWaivers(config)
+  if (refused.length > 0) {
     fail(
-      `.impeccable/config.json waives ${unexplained.join(', ')} with no reason: see CONTRIBUTING.md, "Checks".`,
+      `.impeccable/config.json holds ${refused.length} waiver(s) the gate refuses (see CONTRIBUTING.md, "Checks"):\n    ${refused.join('\n    ')}`,
     )
   }
   return config
@@ -433,13 +445,11 @@ async function main() {
   return conclude(verdict, stale)
 }
 
-// The real path, not the one typed: a checkout reached through a symlink
-// would otherwise compare unequal, skip the gate and exit 0.
-if (realpathSync(process.argv[1] ?? '.') === import.meta.filename) {
-  try {
-    // An explicit exit: the preview server would keep the process alive.
-    process.exit(await main())
-  } catch (error) {
-    fail(String(error))
-  }
+// No main guard: nothing imports this file, and a guard is one more way to
+// skip the gate and exit 0.
+try {
+  // An explicit exit: the preview server would keep the process alive.
+  process.exit(await main())
+} catch (error) {
+  fail(String(error))
 }

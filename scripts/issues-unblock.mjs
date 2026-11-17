@@ -4,9 +4,8 @@
 // that page) or `#N` (that issue is closed). Run it when an orchestrator loop
 // starts: `npm run issues:unblock`.
 import { execFileSync } from 'node:child_process'
-import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 
+import { isMain } from './is-main.mjs'
 import { chapterPairs } from './wiki.mjs'
 
 /** @typedef {{ chapter: number, page?: number } | { issue: number }} Condition */
@@ -112,7 +111,7 @@ async function met(condition) {
     : chapterMet(condition)
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   /** @type {{ number: number, body: string }[]} */
   const blocked = JSON.parse(
     gh([

@@ -1,9 +1,9 @@
 // A stable, line-oriented archive dump for before/after diffs. Dated entries
 // deliberately retain their order and duplicates: each one is an archive fact.
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 
 import { importArchive } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 
 /**
  * Validates the command line before loading the archive.
@@ -52,7 +52,7 @@ export function archiveTable(archive, onlyDated = false) {
   return lines.length === 0 ? '' : `${lines.join('\n')}\n`
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   try {
     const onlyDated = datedOnly(process.argv.slice(2))
     const { DATED } = await importArchive('data/series/one-piece/chapters.ts')

@@ -4,9 +4,9 @@
 // Exit 2 blocks the call and hands stderr back to the agent.
 import { existsSync, readFileSync } from 'node:fs'
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 
 import labels from '../.github/labels.json' with { type: 'json' }
+import { isMain } from './is-main.mjs'
 
 /** The groups every issue carries exactly one label of. */
 const GROUPS = ['type', 'area', 'status', 'priority', 'size']
@@ -111,7 +111,7 @@ export function problems(given, body) {
   return [...unknown, ...groups, ...blocked]
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const input = JSON.parse(readFileSync(process.stdin.fd, 'utf8'))
   const command = String(input.tool_input?.command ?? '')
   const found =

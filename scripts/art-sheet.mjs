@@ -23,6 +23,7 @@ import { pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
+import { isMain } from './is-main.mjs'
 
 /** @typedef {{ d: string, dashed?: boolean, role?: 'accent' | 'ambient' | 'soft', transform?: string }} Stroke */
 /** @typedef {{ label: string, note: string, strokes: Stroke[], tint: string }} Cell */
@@ -460,7 +461,7 @@ export function writeSheets({ name, cells }, palette, out) {
   })
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const options = readArgs(process.argv.slice(2))
   const sheet = await cellsFor(options)
   const palette = seriesPalette(options.series)

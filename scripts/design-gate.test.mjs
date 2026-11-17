@@ -11,7 +11,8 @@ import {
   judge,
   pageProblem,
   pagesOf,
-  unexplainedWaivers,
+  PERMANENT,
+  refusedWaivers,
 } from './design-gate.rules.mjs'
 
 const SAMPLES = {
@@ -52,9 +53,22 @@ const waiver = (files) => ({
   },
 })
 
+const waivers = (reason) => ({
+  detector: {
+    ignoreValues: [
+      { rule: 'overused-font', value: 'house sans', reason },
+      { rule: 'kicker', value: '*', files: ['**', 'legal'], reason },
+    ],
+  },
+})
+
+const valued = (value) => ({
+  detector: { ignoreValues: [{ rule: 'overused-font', value, reason: 'r' }] },
+})
+
 describe('the pages the design gate scans', () => {
   it('takes one page of each type, in one locale, with the series bookmark', () => {
-    const { landing, bookmarked } = pagesOf(
+    const { landing, bookmarked, thin } = pagesOf(
       sitemapOf(['/en', '/it', '/en/legal', ...SAGA]),
       SAMPLES,
       'en',
@@ -79,10 +93,33 @@ describe('the pages the design gate scans', () => {
       ep: 40,
     })
     expect(bookmarked[0]).not.toHaveProperty('id')
+    // Ships has a sample; filler has none and is not declared an index.
+    expect(thin).toStrictEqual(['saga/filler'])
+  })
+
+  it('is silent about a kind the sample declares, and asks the sitemap for it', () => {
+    const samples = { saga: { ...SAMPLES.saga, indexes: ['filler'] } }
+
+    expect(pagesOf(sitemapOf(SAGA), samples, 'en').thin).toStrictEqual([])
+    const without = SAGA.filter((page) => !page.endsWith('/filler'))
+    expect(() => pagesOf(sitemapOf(without), samples, 'en')).toThrow(
+      'no filler page for saga',
+    )
+  })
+
+  it('names a kind it opens on the first record for want of a sample', () => {
+    const { bookmarked, thin } = pagesOf(
+      sitemapOf([...SAGA, '/saga/en/crews', '/saga/en/crews/first']),
+      { saga: { ...SAMPLES.saga, indexes: ['filler'] } },
+      'en',
+    )
+
+    expect(pathsOf(bookmarked)).toContain('/saga/en/crews/first')
+    expect(thin).toStrictEqual(['saga/crews'])
   })
 
   it('scans a series it has no sample for, with no bookmark', () => {
-    const { landing, bookmarked } = pagesOf(
+    const { landing, bookmarked, thin } = pagesOf(
       sitemapOf([
         ...SAGA,
         '/sequel/en',
@@ -101,6 +138,10 @@ describe('the pages the design gate scans', () => {
       '/sequel/en/places/first',
     ])
     expect(pathsOf(bookmarked)).not.toContain('/sequel/en')
+    expect(thin).toStrictEqual([
+      'saga/filler',
+      'sequel: scanned with no bookmark',
+    ])
   })
 
   it.each([
@@ -228,23 +269,6 @@ describe('the waivers of the design gate', () => {
     },
   }
 
-  it('asks every waiver for a reason', () => {
-    expect(
-      unexplainedWaivers({
-        detector: {
-          ignoreRules: ['side-tab'],
-          ignoreFiles: ['src/**'],
-          ignoreValues: [
-            { rule: 'overused-font', value: 'inter', reason: 'the face' },
-            { rule: 'line-length', value: '*', reason: ' ' },
-            { rule: 'low-contrast', value: '*' },
-          ],
-        },
-      }),
-    ).toStrictEqual(['side-tab', 'src/**', 'line-length=*', 'low-contrast=*'])
-    expect(unexplainedWaivers({ telemetry: false })).toStrictEqual([])
-  })
-
   it('blocks on what no waiver covers and never on an advisory finding', () => {
     const uncovered = [
       finding('line-length', '/en'),
@@ -286,17 +310,144 @@ describe('the waivers of the design gate', () => {
     ])
   })
 
-  it('reads a glob with no slash against the last segment, case kept', () => {
+  it('refuses a waiver with no reason or one the detector would not apply', () => {
+    expect(
+      refusedWaivers({
+        detector: {
+          ignoreRules: ['side-tab'],
+          ignoreFiles: ['src/**'],
+          ignoreValues: [
+            { rule: 'overused-font', value: 'inter', reason: 'the face' },
+            { rule: 'line-length', value: '*', files: ['**'], reason: ' ' },
+            { rule: 'low-contrast', value: '*', file: 'legal' },
+            { rule: 'kicker', value: '*', files: ['**'], reason: PERMANENT },
+            { rule: 'glow', value: '*', reason: 'everywhere' },
+            { rule: 'glow', value: ' * ', files: [' '], reason: 'blank' },
+            {
+              rule: 'cards',
+              value: '*',
+              files: ['{en,it}/legal', '{e*,it}/legal', 'en/{legal', '{a{b}}'],
+              reason: 'braces',
+            },
+          ],
+        },
+      }),
+    ).toStrictEqual([
+      'side-tab: no reason',
+      'src/**: no reason',
+      'line-length=*: no reason',
+      'low-contrast=*: no reason',
+      'kicker=*: no reason',
+      expect.stringMatching(/^glow=\*: "\*" with no files/u),
+      expect.stringMatching(/^glow= \* : "\*" with no files/u),
+      expect.stringMatching(/^cards=\*: \{e\*,it\}\/legal has a \{/u),
+      expect.stringMatching(/^cards=\*: en\/\{legal has a \{/u),
+      expect.stringMatching(/^cards=\*: \{a\{b\}\} has a \{/u),
+    ])
+    expect(refusedWaivers({ telemetry: false })).toStrictEqual([])
+  })
+
+  it('never applies a "*" that names no files, as the detector does not', () => {
+    const found = [finding('kicker', '/en')]
+    const unscoped = {
+      detector: { ignoreValues: [{ rule: 'kicker', value: '*', reason: 'r' }] },
+    }
+
+    expect(judge(found, unscoped)).toStrictEqual({
+      blocking: found,
+      stale: ['kicker=* on everywhere'],
+    })
+  })
+
+  it('keeps a permanent waiver that matches nothing and drops no temporary one', () => {
+    expect(judge([], waivers(`${PERMANENT}house style`)).stale).toStrictEqual(
+      [],
+    )
+    expect(judge([], waivers('Temporary baseline')).stale).toStrictEqual([
+      'overused-font=house sans on everywhere',
+      'kicker=* on **',
+      'kicker=* on legal',
+    ])
+    // The prefix, not the word: a reason that only mentions it is temporary.
+    expect(judge([], waivers('Not permanent: a baseline')).stale).toHaveLength(
+      3,
+    )
+    expect(
+      judge(
+        [finding('kicker', '/en'), finding('overused-font', '/en')],
+        waivers(`${PERMANENT}house style`),
+      ).blocking,
+    ).toStrictEqual([])
+  })
+
+  it("matches a value on the finding's own, or as whole words of its snippet", () => {
+    const font = [finding('overused-font', '/en')]
+    const colour = [
+      finding('overused-font', '/en', {
+        snippet: 'text color rgb(18, 52, 86) on h1 is outside DESIGN.md colors',
+        ignoreValue: 'rgb(18, 52, 86)',
+      }),
+    ]
+
+    for (const value of ['house sans', ' "House+Sans" ', 'HOUSE  SANS']) {
+      expect(judge(font, valued(value)).blocking).toStrictEqual([])
+    }
+    for (const value of ['hous', 'house san', 'ouse sans', 'sans house']) {
+      expect(judge(font, valued(value)).blocking).toStrictEqual(font)
+    }
+    expect(judge(colour, valued('RGB(18, 52, 86)')).blocking).toStrictEqual([])
+    // In the snippet, and still not the finding's value.
+    expect(judge(colour, valued('rgb')).blocking).toStrictEqual(colour)
+    expect(judge(colour, valued('h1')).blocking).toStrictEqual(colour)
+  })
+
+  it('reads a glob against the address and each ending of it, case kept', () => {
     const found = [finding('kicker', '/en/legal')]
 
-    expect(judge(found, waiver(['*legal'])).blocking).toStrictEqual([])
-    expect(
-      judge(found, waiver(['HTTP://127.0.0.1:*/en/legal'])).stale,
-    ).toHaveLength(1)
-    expect(judge(found, waiver(['http://127.0.0.1:*'])).stale).toHaveLength(1)
-    expect(
-      judge(found, waiver(['http://127.0.0.1:*/en?legal'])).stale,
-    ).toHaveLength(1)
+    for (const glob of [
+      '*legal',
+      'en/legal',
+      '*/legal',
+      '127.0.0.1:*/en/legal',
+      'http:/127.0.0.1:4000/en/legal',
+      '**/legal',
+      '**',
+      '*',
+      'http:/**',
+      'http://127.0.0.1:*/{it,en}/legal',
+      '{legal,privacy}',
+      'en/leg?l',
+    ]) {
+      expect(judge(found, waiver([glob])).blocking, glob).toStrictEqual([])
+    }
+    for (const glob of [
+      'HTTP://127.0.0.1:*/en/legal',
+      'http://127.0.0.1:*',
+      'http://127.0.0.1:*/en?legal',
+      '//127.0.0.1:*/en/legal',
+      'n/legal',
+      'en',
+      'http://127.0.0.1:*/{it,de}/legal',
+    ]) {
+      expect(judge(found, waiver([glob])).stale, glob).toHaveLength(1)
+    }
     expect(judge([], {})).toStrictEqual({ blocking: [], stale: [] })
+  })
+
+  it('takes every character of a glob but its wildcards as itself', () => {
+    const glob = 'http://127.0.0.1:*/en/v1.0(beta)+[x]{y|z^$\\'
+    const on = (page) => judge([finding('kicker', page)], waiver([glob]))
+
+    expect(on('/en/v1.0(beta)+[x]{y|z^$\\').blocking).toStrictEqual([])
+    for (const page of [
+      '/en/v1x0(beta)+[x]{y|z^$\\',
+      '/en/v1.0beta+[x]{y|z^$\\',
+      '/en/v1.0(beta)(beta)[x]{y|z^$\\',
+      '/en/v1.0(beta)+x{y|z^$\\',
+      '/en/v1.0(beta)+[x]y|z^$\\',
+      '/en/v1.0(beta)+[x]{y',
+    ]) {
+      expect(on(page).stale, page).toHaveLength(1)
+    }
   })
 })

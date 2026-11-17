@@ -8,13 +8,12 @@
 // Prettier wants it, so `format:check` passes on a freshly generated file.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 import { byNumber, byValue } from 'sort-es'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
 import { HUNTER_X_HUNTER_SOURCES } from './chronicle-sources-hxh.mjs'
 import { CHRONICLE_SOURCES } from './chronicle-sources.mjs'
+import { isMain } from './is-main.mjs'
 
 /** Where the rendered log is written. */
 export const DOC_PATH = path.join(ROOT, 'docs', 'chronicle-verification.md')
@@ -212,7 +211,7 @@ async function render() {
   return `${[PREAMBLE.trimEnd(), ...parts].join('\n\n')}\n`
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const rendered = await render()
   const before = existsSync(DOC_PATH) ? readFileSync(DOC_PATH, 'utf8') : ''
 

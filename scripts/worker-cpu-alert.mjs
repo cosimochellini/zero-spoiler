@@ -6,7 +6,8 @@
 // CLOUDFLARE_API_TOKEN (Account Analytics: Read) and CLOUDFLARE_ACCOUNT_ID set.
 import { execFileSync } from 'node:child_process'
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
+
+import { isMain } from './is-main.mjs'
 
 /**
  * @typedef {object} Row One group of invocations, as the analytics return it.
@@ -166,7 +167,7 @@ function gh(args) {
   return execFileSync('gh', args, { encoding: 'utf8' })
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   const day = process.argv[2]
   if (!day) {
     throw new Error('Usage: node scripts/worker-cpu-alert.mjs YYYY-MM-DD')
