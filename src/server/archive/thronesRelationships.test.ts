@@ -782,3 +782,271 @@ describe.each(LOCALES)(
     })
   },
 )
+
+// King's Landing, the riverlands and the Vale (#1346): the links the two
+// media time or word differently. Each check compares the bookmark before a
+// pin with the pin, so moving the entry fails it.
+describe.each(LOCALES)(
+  'Game of Thrones King’s Landing revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const type = (
+      pair: [string, string],
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf(pair, bookmark, locale)?.type
+    const summary = (
+      pair: [string, string],
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf(pair, bookmark, locale)?.summary
+
+    it('tells the twins are lovers at episode 1 but chapter 9', () => {
+      const twins: [string, string] = ['cersei-lannister', 'jaime-lannister']
+      const lover = type(twins, ep(1))
+
+      expect(lover).toBeDefined()
+      expect(type(twins, ch(8))).not.toBe(lover)
+      expect(type(twins, ch(9))).toBe(lover)
+      expect(people('jaime-lannister', ep(1))).toContain('bran-stark')
+      expect(people('jaime-lannister', ch(8))).not.toContain('bran-stark')
+      expect(people('jaime-lannister', ch(9))).toContain('bran-stark')
+    })
+
+    it('names Jaime the children’s father at episode 7 and chapter 50', () => {
+      for (const child of [
+        'joffrey-baratheon',
+        'myrcella-baratheon',
+        'tommen-baratheon',
+      ]) {
+        expect(people(child, ep(6)), child).not.toContain('jaime-lannister')
+        expect(people(child, ep(7)), child).toContain('jaime-lannister')
+        expect(people(child, ch(49)), child).not.toContain('jaime-lannister')
+        expect(people(child, ch(50)), child).toContain('jaime-lannister')
+      }
+    })
+
+    it('puts Robert in the past tense at his death in each medium', () => {
+      for (const owner of [
+        'cersei-lannister',
+        'joffrey-baratheon',
+        'ilyn-payne',
+        'barristan-selmy',
+        'gendry',
+      ]) {
+        const robert: [string, string] = [owner, 'robert-baratheon']
+
+        expect(summary(robert, ep(7)), owner).toBeDefined()
+        expect(summary(robert, ep(7)), owner).not.toBe(summary(robert, ep(6)))
+        expect(summary(robert, ch(50)), owner).not.toBe(summary(robert, ch(49)))
+      }
+    })
+
+    it('tells Eddard’s death at episode 9 and chapter 66', () => {
+      for (const owner of ['cersei-lannister', 'pycelle', 'renly-baratheon']) {
+        const ned: [string, string] = [owner, 'eddard-stark']
+
+        expect(summary(ned, ep(9)), owner).toBeDefined()
+        expect(summary(ned, ep(9)), owner).not.toBe(summary(ned, ep(8)))
+        expect(summary(ned, ch(66)), owner).not.toBe(summary(ned, ch(65)))
+      }
+
+      expect(people('ilyn-payne', ch(65))).not.toContain('eddard-stark')
+      expect(people('ilyn-payne', ch(66))).toContain('eddard-stark')
+      expect(people('ilyn-payne', ep(8))).not.toContain('eddard-stark')
+      expect(people('ilyn-payne', ep(9))).toContain('eddard-stark')
+    })
+
+    it('tells Sansa’s plea to Joffrey at episode 8 and chapter 58', () => {
+      const sansa: [string, string] = ['joffrey-baratheon', 'sansa-stark']
+
+      expect(summary(sansa, ep(7))).toBeDefined()
+      expect(summary(sansa, ep(8))).not.toBe(summary(sansa, ep(7)))
+      expect(summary(sansa, ch(57))).toBeDefined()
+      expect(summary(sansa, ch(58))).not.toBe(summary(sansa, ch(57)))
+      expect(summary(sansa, ep(8))).toBe(summary(sansa, ch(58)))
+    })
+
+    it('tells Robin’s wish to see Tyrion fly at episode 5 and chapter 39', () => {
+      const tyrion: [string, string] = ['robin-arryn', 'tyrion-lannister']
+      const robin: [string, string] = ['lysa-arryn', 'robin-arryn']
+
+      expect(summary(tyrion, ch(38))).toBeDefined()
+      expect(summary(tyrion, ch(39))).not.toBe(summary(tyrion, ch(38)))
+      expect(summary(tyrion, ep(5))).toBe(summary(tyrion, ch(39)))
+      expect(summary(robin, ch(38))).toBeDefined()
+      expect(summary(robin, ch(39))).not.toBe(summary(robin, ch(38)))
+      expect(summary(robin, ep(5))).toBe(summary(robin, ch(39)))
+    })
+
+    it('stops calling Robert the children’s father at his death', () => {
+      for (const child of [
+        'joffrey-baratheon',
+        'myrcella-baratheon',
+        'tommen-baratheon',
+      ]) {
+        const robert: [string, string] = [child, 'robert-baratheon']
+
+        expect(type(robert, ch(50)), child).not.toBe(type(robert, ch(49)))
+        expect(type(robert, ep(7)), child).not.toBe(type(robert, ep(6)))
+      }
+    })
+
+    it('has Sandor guard a king from Robert’s death', () => {
+      const joffrey: [string, string] = ['sandor-clegane', 'joffrey-baratheon']
+
+      expect(summary(joffrey, ep(7))).not.toBe(summary(joffrey, ep(6)))
+      expect(summary(joffrey, ch(50))).not.toBe(summary(joffrey, ch(49)))
+    })
+
+    it('keeps Varys’s meeting with Illyrio and his informer to the show', () => {
+      expect(people('varys', ep(4))).not.toContain('illyrio-mopatis')
+      expect(people('varys', ep(5))).toContain('illyrio-mopatis')
+      expect(people('varys', ep(4))).not.toContain('jorah-mormont')
+      expect(people('varys', ep(5))).toContain('jorah-mormont')
+      expect(people('varys', ch(archive.series.chapterCeiling))).not.toContain(
+        'illyrio-mopatis',
+      )
+      // The books bring Jorah's reports to the council in Eddard VIII.
+      expect(people('varys', ch(33))).not.toContain('jorah-mormont')
+      expect(people('varys', ch(34))).toContain('jorah-mormont')
+      expect(type(['varys', 'eddard-stark'], ch(59))).not.toBe(
+        type(['varys', 'eddard-stark'], ch(58)),
+      )
+    })
+
+    it('makes Renly and Loras lovers in the show alone', () => {
+      const pair: [string, string] = ['renly-baratheon', 'loras-tyrell']
+      const lover = type(pair, ep(5))
+
+      expect(people('renly-baratheon', ep(4))).not.toContain('loras-tyrell')
+      expect(lover).toBeDefined()
+      expect(people('renly-baratheon', ch(49))).not.toContain('loras-tyrell')
+      expect(people('renly-baratheon', ch(50))).toContain('loras-tyrell')
+      expect(type(pair, ch(50))).not.toBe(lover)
+      expect(people('loras-tyrell', ep(4))).not.toContain('renly-baratheon')
+      expect(people('loras-tyrell', ep(5))).toContain('renly-baratheon')
+      expect(people('loras-tyrell', ch(49))).not.toContain('renly-baratheon')
+      expect(people('loras-tyrell', ch(50))).toContain('renly-baratheon')
+    })
+
+    it('gives the rose at chapter 30 and the fight with Gregor at 31', () => {
+      expect(people('loras-tyrell', ch(29))).toStrictEqual([])
+      expect(people('loras-tyrell', ch(30))).toStrictEqual(['sansa-stark'])
+      expect(people('loras-tyrell', ch(31))).toContain('gregor-clegane')
+      expect(people('loras-tyrell', ep(5))).toContain('gregor-clegane')
+      expect(people('gregor-clegane', ch(30))).not.toContain('loras-tyrell')
+      expect(people('gregor-clegane', ch(31))).toContain('loras-tyrell')
+      expect(people('sandor-clegane', ch(30))).not.toContain('gregor-clegane')
+      expect(people('sandor-clegane', ch(31))).toContain('gregor-clegane')
+    })
+
+    it('keeps Cersei’s and Lancel’s affair to the show', () => {
+      const ceiling = ch(archive.series.chapterCeiling)
+
+      expect(people('cersei-lannister', ep(9))).not.toContain(
+        'lancel-lannister',
+      )
+      expect(people('cersei-lannister', ep(10))).toContain('lancel-lannister')
+      expect(people('lancel-lannister', ep(9))).not.toContain(
+        'cersei-lannister',
+      )
+      expect(people('lancel-lannister', ep(10))).toContain('cersei-lannister')
+      expect(people('cersei-lannister', ceiling)).not.toContain(
+        'lancel-lannister',
+      )
+      expect(people('lancel-lannister', ceiling)).not.toContain(
+        'cersei-lannister',
+      )
+    })
+
+    it('has Robb kill Wallen in the show and Grey Wind in the books', () => {
+      expect(people('wallen', ep(6))).toContain('robb-stark')
+      expect(people('wallen', ep(6))).not.toContain('grey-wind')
+      expect(people('wallen', ch(38))).toContain('grey-wind')
+      expect(people('wallen', ch(38))).not.toContain('robb-stark')
+    })
+
+    it('splits Tywin’s first links between episode 7 and chapter 57', () => {
+      const jaime: [string, string] = ['tywin-lannister', 'jaime-lannister']
+
+      expect(people('tywin-lannister', ep(7))).not.toContain('kevan-lannister')
+      expect(people('tywin-lannister', ep(8))).toContain('kevan-lannister')
+      expect(people('tywin-lannister', ch(57))).toContain('kevan-lannister')
+      expect(summary(jaime, ep(7))).toBeDefined()
+      expect(summary(jaime, ep(7))).not.toBe(summary(jaime, ch(57)))
+    })
+
+    it.each([
+      // owner, the chapter of an entry, a person it adds there
+      ['tyrion-lannister', 6, 'jon-snow'],
+      ['petyr-baelish', 21, 'eddard-stark'],
+      ['varys', 21, 'eddard-stark'],
+      ['mycah', 17, 'sandor-clegane'],
+      ['sandor-clegane', 17, 'mycah'],
+      ['masha-heddle', 57, 'tywin-lannister'],
+      ['beric-dondarrion', 44, 'thoros-of-myr'],
+      ['stevron-frey', 72, 'robb-stark'],
+      ['brynden-tully', 56, 'robb-stark'],
+      ['mandon-moore', 58, 'barristan-selmy'],
+      ['lyn-corbray', 43, 'lysa-arryn'],
+      ['shagga', 57, 'tywin-lannister'],
+    ])('opens %s’s chapter %i entry with %s', (owner, chapter, person) => {
+      expect(people(owner, ch(chapter - 1))).not.toContain(person)
+      expect(people(owner, ch(chapter))).toContain(person)
+    })
+
+    it('pins the show’s side of those links to its episodes', () => {
+      expect(people('tyrion-lannister', ep(1))).toContain('jon-snow')
+      expect(people('petyr-baelish', ep(2))).toStrictEqual([])
+      expect(people('petyr-baelish', ep(3))).toContain('eddard-stark')
+      expect(people('mycah', ep(3))).not.toContain('sandor-clegane')
+      expect(people('mycah', ep(4))).toContain('sandor-clegane')
+      expect(
+        people('masha-heddle', ep(archive.series.episodeCeiling)),
+      ).not.toContain('tywin-lannister')
+      expect(
+        people('beric-dondarrion', ep(archive.series.episodeCeiling)),
+      ).not.toContain('thoros-of-myr')
+    })
+
+    it('keeps the show-only recruits out of book pages', () => {
+      for (const id of ['hot-pie', 'lommy']) {
+        expect(projected(id, ep(9), locale), id).toStrictEqual([])
+        expect(projected(id, ep(10), locale), id).not.toStrictEqual([])
+        expect(
+          projected(id, ch(archive.series.chapterCeiling), locale),
+          id,
+        ).toStrictEqual([])
+      }
+    })
+
+    it('keeps the riverlands and Vale books-only roster out of show pages', () => {
+      for (const id of [
+        'boros-blount',
+        'mandon-moore',
+        'arys-oakheart',
+        'dontos-hollard',
+        'thoros-of-myr',
+        'balon-swann',
+        'robar-royce',
+        'yohn-royce',
+        'jason-mallister',
+        'podrick-payne',
+        'edmure-tully',
+        'hoster-tully',
+        'brynden-tully',
+        'donnel-waynwood',
+        'nestor-royce',
+        'mya-stone',
+        'lyn-corbray',
+        'anya-waynwood',
+      ]) {
+        expect(
+          projected(id, ep(archive.series.episodeCeiling), locale),
+          id,
+        ).toStrictEqual([])
+        expect(projected(id, ch(73), locale), id).not.toStrictEqual([])
+      }
+    })
+  },
+)
