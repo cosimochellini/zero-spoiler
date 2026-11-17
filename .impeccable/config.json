@@ -1,4 +1,5 @@
 {
   "telemetry": false,
-  "buildPath": "code"
+  "buildPath": "code",
+  "stalenessCheck": false
 }
