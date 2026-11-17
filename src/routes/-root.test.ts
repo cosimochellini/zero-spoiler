@@ -32,12 +32,21 @@ function call(name: string, input: object): unknown {
   return Reflect.apply(option, undefined, [input])
 }
 
+/** What the root's guard is handed on a navigation to an address. */
+function entering(pathname: string): object {
+  return {
+    abortController: new AbortController(),
+    location: { pathname },
+    preload: false,
+  }
+}
+
 describe('the root route', () => {
   // The series route's guard answers the 404: thrown from here, the signal
   // would leave the root's own component without its context (#1374).
   it('reads no series from an address under an unknown one', async () => {
     await expect(
-      call('beforeLoad', { location: { pathname: '/no-such-series/en' } }),
+      call('beforeLoad', entering('/no-such-series/en')),
     ).resolves.toMatchObject({ series: null, initialBookmark: null })
   })
 
@@ -45,7 +54,7 @@ describe('the root route', () => {
     vi.mocked(seriesDescription).mockResolvedValueOnce(ONE_PIECE_SERIES)
 
     await expect(
-      call('beforeLoad', { location: { pathname: '/one-piece/en/nope' } }),
+      call('beforeLoad', entering('/one-piece/en/nope')),
     ).resolves.toMatchObject({ series: ONE_PIECE_SERIES, locale: 'en' })
     expect(seriesDescription).toHaveBeenCalledWith('one-piece')
   })

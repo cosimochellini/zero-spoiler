@@ -101,14 +101,18 @@ function AbilityNotFound(): ReactElement {
 
 describe('an ability address that is not found', () => {
   // Its own 404 links back to the index, which only a series that files the
-  // kind has; any other series gets the router's plain one.
+  // kind has; any other series gets the site's not-found page (#1374).
   it.each([
     {
       series: HUNTER_X_HUNTER_SERIES,
       said: 'Ability not found',
       back: ['/hunter-x-hunter/en/abilities'],
     },
-    { series: ONE_PIECE_SERIES, said: 'Not Found', back: [] },
+    {
+      series: ONE_PIECE_SERIES,
+      said: 'Page not found',
+      back: ['/one-piece/en'],
+    },
   ])('says $said on $series.slug', async ({ series, said, back }) => {
     await renderUnderSeries(<AbilityNotFound />, {
       path: `/${series.slug}/en/abilities/missing`,

@@ -7,20 +7,21 @@
  */
 import * as stylex from '@stylexjs/stylex'
 import { Link, useLocation, useMatch, useRouter } from '@tanstack/react-router'
-import { type ReactElement, type ReactNode, use, useEffect } from 'react'
+import { type ReactElement, type ReactNode, useEffect } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
 import { useInLocale, useLocale, useT } from '~/i18n/LocaleContext'
 import { localeOfPath } from '~/i18n/locales'
-import { BookmarkContext } from '~/lib/progress/BookmarkContext'
+import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { recordStyles } from '~/routes/$series/$locale/-record.styles'
 import { LocaleShell } from '~/routes/-LocaleShell'
 
 /**
  * The shell, when the page is not in one already. Under a locale route the
  * shell is that route's, the series' own on a series page. An unknown series
- * or locale, or a page whose shell failed, has none: it gets the shared
- * one, in the language of the address.
+ * or locale has none, and neither has a locale layout that failed to render
+ * (a series' included): they get the shared one, in the language of the
+ * address. If that fails too, the root's own error page is left.
  */
 function InShell({ children }: { children: ReactNode }): ReactNode {
   const inShell = useInLocale()
@@ -38,13 +39,12 @@ function InShell({ children }: { children: ReactNode }): ReactNode {
 
 /**
  * The way out: the series' home on a page of a series, the hub anywhere
- * else. The series is read without `useBookmark`, which throws outside its
- * provider: the root's own error page has none.
+ * else.
  */
 function HomeLink(): ReactElement {
   const t = useT()
   const { locale } = useLocale()
-  const series = use(BookmarkContext)?.series ?? null
+  const { series } = useBookmark()
   // The public description, for the series' name in the reader's language.
   const described = useMatch({ from: '/$series', shouldThrow: false })?.context
     .series
@@ -86,7 +86,7 @@ function useFocusOnArrival(): void {
 }
 
 /** The heading, the sentence and the link. */
-export function Notice({ kind }: { kind: 'error' | 'notFound' }): ReactElement {
+function Notice({ kind }: { kind: 'error' | 'notFound' }): ReactElement {
   const t = useT()
   useFocusOnArrival()
 

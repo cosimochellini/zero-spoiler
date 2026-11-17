@@ -428,14 +428,18 @@ function FruitNotFound(): ReactElement {
 
 describe('a fruit address that is not found', () => {
   // Its own 404 links back to the album, which only a series with fruits has;
-  // any other series gets the router's plain one.
+  // any other series gets the site's not-found page (#1374).
   it.each([
     {
       series: ONE_PIECE_SERIES,
       said: 'Fruit not found',
       back: ['/one-piece/en/fruits'],
     },
-    { series: HUNTER_X_HUNTER_SERIES, said: 'Not Found', back: [] },
+    {
+      series: HUNTER_X_HUNTER_SERIES,
+      said: 'Page not found',
+      back: ['/hunter-x-hunter/en'],
+    },
   ])('says $said on $series.slug', async ({ series, said, back }) => {
     await renderUnderSeries(<FruitNotFound />, {
       path: `/${series.slug}/en/fruits/missing`,
