@@ -27,7 +27,8 @@ facts, then the chronicle, then the relationships reached.
 - The chronicle lists the stories reached, latest first. With none reached it
   draws nothing, not a heading over an empty list.
 - A character's drawing and name travel between the list and their page, for
-  the one record the reader clicked.
+  the one record the reader clicked. A featured character's shelf tile does
+  not travel: its card higher up carries the names.
 - Facts, stories and relationships are dated: the page shows what the
   bookmark has reached.
 - Relationships show only when at least one is reached; otherwise the section

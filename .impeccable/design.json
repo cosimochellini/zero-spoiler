@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-17T14:05:10.451Z",
+  "generatedAt": "2026-11-17T14:25:01.368Z",
   "title": "Design System: Zero Spoiler",
   "extensions": {
     "colorMeta": {
@@ -802,7 +802,7 @@
       {
         "name": "40rem",
         "value": "40rem",
-        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it the site bar of a page with no series is one row."
+        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it the site bar's pinned height on a page with no series drops from 6rem to 3.25rem."
       },
       {
         "name": "48rem",
@@ -817,7 +817,7 @@
       {
         "name": "seriesWide",
         "value": "56rem",
-        "purpose": "A series page's site bar is one row (BAR.seriesWide)."
+        "purpose": "A series page's site bar sets its two rows on one and pins at 3.25rem (BAR.seriesWide)."
       },
       {
         "name": "60rem",
@@ -898,17 +898,17 @@
   ],
   "narrative": {
     "northStar": "The spoiler boundary is a horizon you move",
-    "overview": "The reader's bookmark is one line through the story. What lies before it is drawn, named and lit; what lies after it is under fog. A series' pages mark that line in several ways: the accent on the bookmark mark and on the route travelled on the places map; fog, muted ink and often a dashed rule for what is not reached.\n\nThe site is dark, and only dark. Four colour sets share one structure: \"Blackout\" for the hub and the legal page, and one theme per series. Type, spacing, radii and motion are shared. The pictures are line drawings made for this project.\n\nThe owner prefers bold, dramatic, eye-catching UI with one central idea over restrained layouts: each page states one idea at display size. This identity is fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing, states, motion, copy, responsive behaviour and accessibility, and add no font, colour or theme.",
+    "overview": "The reader's bookmark is one line through the story. What lies before it is drawn, named and lit; what lies after it is under fog. A series' pages mark that line in several ways: the accent on the bookmark mark and on the route travelled on the places map; fog, muted ink and often a dashed rule for what is not reached.\n\nThe site is dark, and only dark. Four colour sets share one structure: \"Blackout\" for the hub and the legal page, and one theme per series. Type, spacing, radii and motion are shared. The pictures are line drawings made for this project.\n\nThe owner prefers bold, dramatic, eye-catching UI with one central idea over restrained layouts. Today the home fold, the landing page, the hub, the ranks page and a fruit's or an ability's page state theirs at the Hero size; the listings (characters, places, filler) set their title at the Headline size. This identity is fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing, states, motion, copy, responsive behaviour and accessibility, and add no font, colour or theme.",
     "keyCharacteristics": [
       "Dark only, with one accent per colour set.",
-      "One display idea per page, in Bricolage Grotesque at weight 800.",
+      "One central idea per page (owner); headings in Bricolage Grotesque at 800.",
       "Uppercase tracked labels and mono numerals beside sentence-case headings.",
       "Small radii, hairline rules, no drop shadows, line drawings."
     ],
     "rules": [
       {
         "name": "The One Accent Rule",
-        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code today fills these surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the filler episodes a reader can skip, as cells in the countdown and the strip; and small marks (a picked chip's dot, a dot on a fruit's history, the north of the map's compass, a legend swatch). The hub lights each series card with a low-alpha beam of its accent. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
+        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code today fills these surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the cells of pure filler episodes in the filler countdown and strip (a recap is filled with Ink 2, a mixed episode is half filled with the accent, a canon one is not filled); and small marks (a picked chip's dot, a dot on a fruit's history, the north of the map's compass, a legend swatch). The hub lights each series card with a low-alpha beam of its accent. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
         "section": "colors"
       },
       {
@@ -923,7 +923,7 @@
       },
       {
         "name": "The Numerals Rule (open decision)",
-        "body": "The owner's rule: JetBrains Mono is for episode numerals (2026-11-17). The code today sets 55 style lines in 32 files in it: episode and chapter numerals, counts, the number in the bookmark dialog and short uppercase lines that carry a number. A few carry none: the language code, the names of seas and the hint on the places map, an epithet on the landing page, the trial strip's sentence and the glyph of a `quiet` button. The owner has not ruled between narrowing the code and widening the rule. Until then: keep every existing use, and add mono only for a numeral or a short line that carries one, never for prose or a heading.",
+        "body": "The owner's rule: JetBrains Mono is for episode numerals (2026-11-17). The code today sets 55 style lines in 32 files in it: episode and chapter numerals, counts, the number in the bookmark dialog and short uppercase lines that carry a number. A few carry none: the arc's name under the number in the bookmark dialog, the language code, the names of seas and the hint on the places map, an epithet on the landing page, the trial strip's sentence and the glyph of a `quiet` button. The owner has not ruled between narrowing the code and widening the rule. Until then: keep every existing use, and add mono only for a numeral or a short line that carries one, never for prose or a heading.",
         "section": "typography"
       }
     ],
@@ -934,7 +934,7 @@
       "**Do** keep every existing use of JetBrains Mono, and add it only for a numeral or a short line that carries one, never for prose or a heading. Impeccable treats mono outside code as a costume; here it marks numerals by design (owner, 2026-11-17).",
       "**Do** mark a link inside text with an underline. The accent sits within 3:1 of the inks in every set, so colour alone cannot.",
       "**Do** space siblings with `gap`.",
-      "**Do** keep controls at least 44px tall. A button, a chip and the search field reserve a 2px Focus outline at rest; the bookmark's number shows focus on its underline.",
+      "**Do** keep controls at least 44px tall. Under it today, for the surface passes (#1375 to #1383) to fix: the wordmark link, back links, relationship rows and the filler catalogue's rows. A button, a chip and the search field reserve a 2px Focus outline at rest; the bookmark's number shows focus on its underline.",
       "**Do** check every pass at a width of 390px. Mobile is the owner's second priority, after the bookmark and progress and before fog."
     ],
     "donts": [
@@ -945,7 +945,7 @@
       "**Don't** use a radius above `rounded.card` on a rectangle, or a drop shadow.",
       "**Don't** set a heading in italics.",
       "**Don't** animate a `filter` or a layout property.",
-      "**Don't** show, name or hint at anything past the reader's bookmark: not what a covered entry is, nor its name, drawing or text. A page may say that an entry of a kind is under fog, when it opens and how many there are. `PRODUCT.md` lists the owner-ruled limits (the filler page, saga names) and `docs/architecture.md#spoiler-contract` is the authority.",
+      "**Don't** show, name or hint at anything past the reader's bookmark: not what a covered entry is, nor its name, drawing or text. A page may say that an entry of a kind is under fog, when it opens and how many there are. `PRODUCT.md` lists the owner-ruled limits (the filler page, the arc under the bookmark's number, saga names) and `docs/architecture.md#spoiler-contract` is the authority.",
       "**Don't** spread the legal notices: they live on the legal page, and the footer carries one line and one link.",
       "**Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it follows the `tone-of-voice` skill."
     ]

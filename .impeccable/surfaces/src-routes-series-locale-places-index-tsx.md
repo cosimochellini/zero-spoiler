@@ -21,7 +21,8 @@ only.
 
 - The map fills in as the reader goes: reached islands are drawn in their
   saga's tint and named, and a sea is drawn and named only once the reader has
-  a stop in it.
+  a stop in it. The sea, the belts, the Red Line and the currents take fixed
+  tints, and the leg where the ship does not sail is a red line.
 - The accent draws the route travelled, the ship, the reader's stop and the
   compass's north.
   Past the ship the route goes on dashed into fog, one unnamed dot per stop.

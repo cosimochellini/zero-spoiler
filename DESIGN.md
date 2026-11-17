@@ -171,15 +171,17 @@ spacing, radii and motion are shared. The pictures are line drawings made for
 this project.
 
 The owner prefers bold, dramatic, eye-catching UI with one central idea over
-restrained layouts: each page states one idea at display size. This identity is
-fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing, states,
-motion, copy, responsive behaviour and accessibility, and add no font, colour or
-theme.
+restrained layouts. Today the home fold, the landing page, the hub, the ranks
+page and a fruit's or an ability's page state theirs at the Hero size; the
+listings (characters, places, filler) set their title at the Headline size. This
+identity is fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing,
+states, motion, copy, responsive behaviour and accessibility, and add no font,
+colour or theme.
 
 **Key Characteristics:**
 
 - Dark only, with one accent per colour set.
-- One display idea per page, in Bricolage Grotesque at weight 800.
+- One central idea per page (owner); headings in Bricolage Grotesque at 800.
 - Uppercase tracked labels and mono numerals beside sentence-case headings.
 - Small radii, hairline rules, no drop shadows, line drawings.
 
@@ -221,8 +223,10 @@ Nineteen hues (`tint-*`), shared by every series. A record's drawing takes
 exactly one, for the stroke that identifies it. The same tint draws the frame
 around that drawing and may wash the surface behind it at low alpha: the home
 fold, a fruit's or an ability's page, the lead of the fruits page, a held seat
-on the ranks page. On the places map it outlines and washes a reached island,
-fills that stop's dot and writes its saga's name. It is not the colour of a
+on the ranks page. The places map uses tints most widely: a reached island's
+outline and wash, its stop's dot and its saga's name in the saga's tint; fixed
+tints for the sea, the belts, the Red Line and the currents; and a red line for
+the leg of the route where the ship does not sail. It is not the colour of a
 button, a field or a chip, or of running text.
 
 ### Named Rules
@@ -231,11 +235,13 @@ button, a field or a chip, or of running text.
 2026-11-17). The accent is a line, a word, a border or a dot. The code today
 fills these surfaces with it, and they are the accepted set: the button of a
 primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing
-page's primary buttons); the filler episodes a reader can skip, as cells in the
-countdown and the strip; and small marks (a picked chip's dot, a dot on a
-fruit's history, the north of the map's compass, a legend swatch). The hub
-lights each series card with a low-alpha beam of its accent. Text on a filled
-accent surface is Accent Ink. Keep these filled, and add no other.
+page's primary buttons); the cells of pure filler episodes in the filler
+countdown and strip (a recap is filled with Ink 2, a mixed episode is half
+filled with the accent, a canon one is not filled); and small marks (a picked
+chip's dot, a dot on a fruit's history, the north of the map's compass, a legend
+swatch). The hub lights each series card with a low-alpha beam of its accent.
+Text on a filled accent surface is Accent Ink. Keep these filled, and add no
+other.
 
 **The Floors Rule.** On every paper of every set, Ink and Ink 2 hold 7:1, Muted
 and the accent 4.5:1, Rule 2 and Focus 3:1, and Accent Ink on the accent 4.5:1.
@@ -264,8 +270,10 @@ largest; the clamps are in `src/styles/tokens.stylex.ts` and
 - **Display** (800, fluid, line height 1): a page's or a record's title.
 - **Headline** (800, line height 1.15): a listing's title, section headings.
 - **Title** (800, line height 1.15): group names and names in rows.
-- **Body** and **Lede** (400, line height 1.6): running text, at a measure of 52
-  to 66ch, and the sentence under a title.
+- **Body** and **Lede** (400, line height 1.6): running text and the sentence
+  under a title. The measure most components set is 52 to 66ch. Wider today, for
+  the surface passes (#1375 to #1383) to bring in: the legal page (76ch), the
+  footer (72ch) and the landing page's lede.
 - **Label** (600, uppercase, tracked 0.08em): the word above or beside a value.
 - **Numeral** (mono, 600 to 700, tabular figures): episode and chapter numbers
   and the reader's point, often uppercase and tracked with their unit.
@@ -279,12 +287,13 @@ largest; the clamps are in `src/styles/tokens.stylex.ts` and
 **The Numerals Rule (open decision).** The owner's rule: JetBrains Mono is for
 episode numerals (2026-11-17). The code today sets 55 style lines in 32 files in
 it: episode and chapter numerals, counts, the number in the bookmark dialog and
-short uppercase lines that carry a number. A few carry none: the language code,
-the names of seas and the hint on the places map, an epithet on the landing
-page, the trial strip's sentence and the glyph of a `quiet` button. The owner
-has not ruled between narrowing the code and widening the rule. Until then: keep
-every existing use, and add mono only for a numeral or a short line that carries
-one, never for prose or a heading.
+short uppercase lines that carry a number. A few carry none: the arc's name
+under the number in the bookmark dialog, the language code, the names of seas
+and the hint on the places map, an epithet on the landing page, the trial
+strip's sentence and the glyph of a `quiet` button. The owner has not ruled
+between narrowing the code and widening the rule. Until then: keep every
+existing use, and add mono only for a numeral or a short line that carries one,
+never for prose or a heading.
 
 ## Layout
 
@@ -292,11 +301,13 @@ The shell is one centred column, at most 76rem wide. Spacing is a 4pt scale
 (`spacing` in the frontmatter; `xl4` is defined and unused today). Siblings are
 spaced with `gap`; `margin` is for optical adjustment only.
 
-The site bar is pinned at every width: two rows on a phone, one row from 40rem,
-or from 56rem on a series page. A listing's control bar and the sticky heads
-under it pin below it. A listing's control bar pins whole only in a window at
-least 40rem wide and 32rem tall; in a narrower or shorter one it folds to one
-row.
+The site bar is pinned at every width. Its pinned height is 6rem below 40rem and
+3.25rem from there up; a series page keeps 6rem up to 56rem. A series bar fills
+that height with two rows. On the hub and the legal page the bar has one row at
+every width and still pins at 6rem below 40rem. A listing's control bar and the
+sticky heads under it pin below it. A listing's control bar pins whole only in a
+window at least 40rem wide and 32rem tall; in a narrower or shorter one it folds
+to one row.
 
 Breakpoints are `min-width` queries in rem, written where they are used; there
 is no named scale. `.impeccable/design.json` lists each with its use. Two carry
@@ -404,7 +415,9 @@ still.
 - **Do** mark a link inside text with an underline. The accent sits within 3:1
   of the inks in every set, so colour alone cannot.
 - **Do** space siblings with `gap`.
-- **Do** keep controls at least 44px tall. A button, a chip and the search field
+- **Do** keep controls at least 44px tall. Under it today, for the surface
+  passes (#1375 to #1383) to fix: the wordmark link, back links, relationship
+  rows and the filler catalogue's rows. A button, a chip and the search field
   reserve a 2px Focus outline at rest; the bookmark's number shows focus on its
   underline.
 - **Do** check every pass at a width of 390px. Mobile is the owner's second
@@ -424,8 +437,9 @@ still.
 - **Don't** show, name or hint at anything past the reader's bookmark: not what
   a covered entry is, nor its name, drawing or text. A page may say that an
   entry of a kind is under fog, when it opens and how many there are.
-  `PRODUCT.md` lists the owner-ruled limits (the filler page, saga names) and
-  `docs/architecture.md#spoiler-contract` is the authority.
+  `PRODUCT.md` lists the owner-ruled limits (the filler page, the arc under the
+  bookmark's number, saga names) and `docs/architecture.md#spoiler-contract` is
+  the authority.
 - **Don't** spread the legal notices: they live on the legal page, and the
   footer carries one line and one link.
 - **Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it

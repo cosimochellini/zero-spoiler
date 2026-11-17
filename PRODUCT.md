@@ -75,14 +75,28 @@ for this project, and no official artwork is used.
     ability is dropped, "so no tile or page counts one".
 - **Deliberate limits**, each ruled by the owner and written in the contract or
   the code. A pass treats them as intended, not as leaks.
-  - _Filler_ (2026-10-10, `src/server/archive/filler.server.ts`). The filler
-    page sends, whatever the bookmark, the runs to skip, the strip of every
-    aired episode's kind, and the names of the sagas, canon and filler. They are
-    "numbers and kinds only", and "the titles and plots under them still wait
-    for the bookmark": the catalogue's rows are under fog past it. The home's
-    filler warning (2026-10-12, `docs/homepage.md`) gives the same numbers and
-    kinds for the reader's episode and the five after it.
-  - _Saga names_ are not gated (2026-10-17, `src/data/types.ts`).
+  - _The filler page_ (owner, 2026-10-10, confirmed and extended 2026-11-17;
+    `src/server/archive/filler.server.ts`, `fillerRows.server.ts`). At every
+    bookmark it sends: the runs to skip; the strip of every numbered episode's
+    kind; the name of each canon arc that holds at least one filler entry, films
+    and specials included, with its two thresholds; the name of every filler
+    arc; a count of entries per group that includes covered rows; and for each
+    row its number, kind and thresholds. Titles, summaries and release data are
+    under fog past the bookmark. Every group name the ranges and the catalogue
+    print is public on that page. The home's filler warning (2026-10-12,
+    `docs/homepage.md`) gives numbers and kinds for the reader's episode and the
+    five after it.
+  - _The arc under the bookmark's number_ (owner, 2026-10-12;
+    `src/server/archive/sagaLabels.server.ts`). Every series page fetches, for
+    each arc the reader's unit tells, where it opens and its name, and the runs
+    of pure filler. The line under the number in the bookmark dialog and on the
+    landing page's dial names the arc a number falls in, so the reader sees
+    which arc they are choosing.
+  - _Saga names_ are not gated anywhere (owner, 2026-10-17, `Saga.name` in
+    `src/data/types.ts`). A saga is a group of arcs.
+  - _Arc names are gated records everywhere else._ The two rulings above open
+    them on the filler page and under the bookmark's number only. They do not
+    license an arc's name on any other page.
   - _Social pictures_ (`public/og/`) are static files anyone can fetch: a
     record's first drawing, its name and one line.
   - _Crawlers_ with no bookmark are given an end-of-anime bookmark.
@@ -92,9 +106,9 @@ for this project, and no official artwork is used.
   series' opening stretch, as a demo.
 - **Terms.** One word per concept: bookmark, under fog, open, entry, arc. The
   glossary is in the `tone-of-voice` skill. In One Piece an arc is one stretch
-  of the story and a saga is a group of arcs; the English copy uses both, and
-  the fruits, places and filler pages group by saga. Italian says "saga" for an
-  arc. Game of Thrones has no arcs.
+  of the story and a saga is a group of arcs; the English copy uses both. The
+  fruits and places pages group by saga, the characters and filler pages by arc.
+  Italian says "saga" for an arc. Game of Thrones has no arcs.
 - **Styling.** StyleX only. Colours, type sizes, spacing and motion come from
   `src/styles/tokens.stylex.ts`.
 

@@ -25,7 +25,12 @@ fold to one row on a phone.
   there is none.
 - The dialog is a native `<dialog>`, a bottom sheet below 40rem. Its number is
   its largest element, in mono between two round steppers.
-- The dial covers the series' demo span only; the server sends nothing past it.
+- The line under the number names the arc that number falls in, in mono,
+  uppercase and the accent, in the dialog and on the dial. Its table, every
+  arc of the unit with where it opens, is sent at every bookmark (owner,
+  2026-10-12; `PRODUCT.md`).
+- The dial's range is the series' demo span, and the landing page receives
+  the records of that span and none past it.
 - Saving a bookmark writes the cookie and re-reads the pages.
 
 **Unresolved:**
