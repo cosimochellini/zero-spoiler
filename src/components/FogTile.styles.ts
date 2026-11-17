@@ -183,6 +183,14 @@ export const styles = stylex.create({
     textDecorationLine: 'underline',
     textUnderlineOffset: '2px',
   },
+  // On one line, in a table cell or beside a heading: the answer is whole
+  // at every width, and the question gives way to it.
+  questionLine: {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  },
+  confirmLine: { flexShrink: 0, whiteSpace: 'nowrap' },
 })
 
 // Where in its drift a tile starts: three offsets, so neighbours differ.

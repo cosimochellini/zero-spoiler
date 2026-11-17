@@ -184,7 +184,14 @@ function Ask({
  * What a pressed fog control says: the question and its answer, or the
  * state. Resting, nothing. A verb-only `SpoilerVeil` says the same words.
  */
-export function Words({ state }: { state: LiftState }): null | ReactElement {
+export function Words({
+  line = false,
+  state,
+}: {
+  /** Set on one line, where a second would break the row it sits in. */
+  line?: boolean
+  state: LiftState
+}): null | ReactElement {
   const t = useT()
 
   if (state === 'resting') {
@@ -193,10 +200,14 @@ export function Words({ state }: { state: LiftState }): null | ReactElement {
 
   return (
     <>
-      <span {...stylex.props(styles.question)}>{t(SAYS[state])}</span>
+      <span {...stylex.props(styles.question, line && styles.questionLine)}>
+        {t(SAYS[state])}
+      </span>
       {/* A space, so the name reads "Show it anyway? Yes, show". */}{' '}
       {state === 'confirming' ?
-        <span {...stylex.props(styles.confirm)}>{t('veil.confirm')}</span>
+        <span {...stylex.props(styles.confirm, line && styles.confirmLine)}>
+          {t('veil.confirm')}
+        </span>
       : null}
     </>
   )

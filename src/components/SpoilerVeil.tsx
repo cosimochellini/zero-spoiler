@@ -274,7 +274,12 @@ function Verb({
   const t = useT()
 
   if (state !== 'resting') {
-    return <Words state={state} />
+    return (
+      <Words
+        line={inline}
+        state={state}
+      />
+    )
   }
 
   return (
@@ -384,6 +389,8 @@ const styles = stylex.create({
     padding: space.xs,
     alignContent: 'center',
     justifyItems: 'center',
+    // A question that wraps on a narrow card stays centred over it.
+    textAlign: 'center',
   },
   curtainLifted: {
     opacity: 0,
