@@ -294,6 +294,13 @@ export const enDictionary = {
   'character.chronicleMore': 'Show more',
   'character.chronicleMoreError':
     'Could not load the other stories. Try again.',
+
+  'notFound.title': 'Page not found',
+  'notFound.body': 'There is no page at this address.',
+  'notFound.pageTitle': 'Page not found | Zero Spoiler',
+  'error.title': 'Something went wrong',
+  'error.body': 'This page could not be loaded.',
+
   'character.notFoundTitle': 'Character not found',
   'character.notFoundBody':
     'There is no character at this address. The characters page lists all of them.',

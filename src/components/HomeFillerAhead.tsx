@@ -10,10 +10,6 @@ import {
   runSentenceOf,
 } from '~/components/fillerLabels'
 import { useLocale, useSeriesOnlyT } from '~/i18n/LocaleContext'
-/* Hallmark · component: notice · genre: atmospheric · theme: Sea Chart (locked)
- * states: default · hover · focus · active (the link; the cells are static)
- * · idea: the filler page's countdown row, cut down to a warning on the home
- *   page: a headline, the countdown's own sentence, the six cells, a link */
 import {
   useBookmarkSeries,
   useSeriesParams,

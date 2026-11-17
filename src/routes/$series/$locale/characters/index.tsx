@@ -1,11 +1,3 @@
-/* Hallmark · pre-emit critique: P5 H4 E4 S5 R5 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Catalogue · theme: Sea Chart
- *   (locked) · enrichment: Tier B hand-built SVG (CharacterCrest seals)
- * · nav: N9 edge-aligned (shared) · footer: Ft4 colophon (shared)
- * · idea: "a signal book — every flag on one chart, and the fog does not
- *   answer a search"
- * · differs from the previous build (Map / Diagram) on macrostructure; theme
- *   is the project's locked system and does not rotate */
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { type ReactElement, useEffect } from 'react'
 
@@ -55,7 +47,7 @@ export const Route = createFileRoute('/$series/$locale/characters/')({
 })
 
 /**
- * The characters page (Hallmark macrostructure 11, Catalogue).
+ * The characters page, a catalogue.
  *
  * A signal book: the brand line and a count, then the featured crests on one
  * uniform grid and the whole cast on shelves by arc, in the order the reader's

@@ -29,9 +29,9 @@ const DICTIONARIES: Record<Locale, () => Promise<Dictionary>> = {
 const loaded = new Map<Locale, Dictionary>()
 
 /**
- * Fetches one locale's shared copy, once. The locale routes await it before
- * they render, and the router before it hydrates (`src/router.tsx`), so a
- * language switch paints in the new language with no flash of the old one.
+ * Fetches one locale's shared copy, once. The root route awaits it before
+ * any page renders, and the router before it hydrates (`src/router.tsx`), so
+ * a language switch paints in the new language with no flash of the old one.
  */
 export async function loadDictionary(locale: Locale): Promise<void> {
   if (!loaded.has(locale)) {

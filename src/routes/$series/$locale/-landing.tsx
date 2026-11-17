@@ -51,7 +51,7 @@ export function LandingPage({
 }
 
 /**
- * The home page (Hallmark macrostructure 03, Marquee Hero).
+ * The home page, a marquee hero.
  *
  * Three questions, in order, for a reader picking the series back up: where
  * am I, what just happened, who matters now. The fold answers the first with

@@ -1,5 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
+import { ONE_PIECE_SERIES } from '~/lib/progress/series'
+import { seriesCopy, seriesDescription } from '~/routes/-series'
 import { createSecurityHeaders } from '~/security-headers'
 
 import { Route } from './__root'
@@ -12,8 +14,17 @@ vi.mock(import('~/routes/-series'), async (importOriginal) => {
     seriesDescription: vi
       .fn<typeof original.seriesDescription>()
       .mockResolvedValue(null),
+    seriesCopy: vi
+      .fn<typeof original.seriesCopy>()
+      .mockRejectedValue(new Error('no server here')),
   }
 })
+
+// The cookie readers ask the request for its headers, and there is none here.
+vi.mock(import('~/lib/progress/readBookmark'), () => ({
+  readBookmark: vi.fn<() => null>().mockReturnValue(null),
+  readTrial: vi.fn<() => null>().mockReturnValue(null),
+}))
 
 /** One option of the root route, reached through `unknown`: the typed ones want a whole router context. */
 function call(name: string, input: object): unknown {
@@ -24,11 +35,49 @@ function call(name: string, input: object): unknown {
   return Reflect.apply(option, undefined, [input])
 }
 
+/** What the root's guard is handed on a navigation to an address. */
+function entering(pathname: string): object {
+  return {
+    abortController: new AbortController(),
+    location: { pathname },
+    preload: false,
+  }
+}
+
 describe('the root route', () => {
-  it('answers 404 for an address under an unknown series', async () => {
+  // The series route's guard answers the 404: thrown from here, the signal
+  // would leave the root's own component without its context (#1374).
+  it('reads no series from an address under an unknown one', async () => {
     await expect(
-      call('beforeLoad', { location: { pathname: '/no-such-series/en' } }),
-    ).rejects.toMatchObject({ isNotFound: true })
+      call('beforeLoad', entering('/no-such-series/en')),
+    ).resolves.toMatchObject({ series: null, initialBookmark: null })
+    expect(seriesCopy).not.toHaveBeenCalled()
+  })
+
+  // Asked for here so it travels with the shared copy, not after it; the
+  // series route awaits the same call (#1386). A failure is not the root's.
+  it("starts a known series' copy in the address's language, and does not wait on it", async () => {
+    vi.mocked(seriesDescription).mockResolvedValue(ONE_PIECE_SERIES)
+
+    await call('beforeLoad', entering('/one-piece/en/characters'))
+
+    expect(seriesCopy).toHaveBeenCalledExactlyOnceWith('one-piece', 'en')
+
+    vi.mocked(seriesCopy).mockClear()
+    await call('beforeLoad', entering('/one-piece'))
+
+    expect(seriesCopy).not.toHaveBeenCalled()
+
+    vi.mocked(seriesDescription).mockResolvedValue(null)
+  })
+
+  it('reads the series of an address no page answers, for its shell', async () => {
+    vi.mocked(seriesDescription).mockResolvedValueOnce(ONE_PIECE_SERIES)
+
+    await expect(
+      call('beforeLoad', entering('/one-piece/en/nope')),
+    ).resolves.toMatchObject({ series: ONE_PIECE_SERIES, locale: 'en' })
+    expect(seriesDescription).toHaveBeenCalledWith('one-piece')
   })
 
   it('puts the security headers on the document, nonce included', () => {

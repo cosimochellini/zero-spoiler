@@ -72,8 +72,9 @@ jobs:
           corepack enable npm
           npm --version
 
-      # Never add --omit=optional: fallow ships its binary through
-      # optionalDependencies and bin/fallow resolves it at runtime.
+      # Never add --omit=optional: fallow and impeccable (the engine behind
+      # gate:design) each ship their binary through optionalDependencies and
+      # resolve it at runtime.
       - name: Install
         run: npm ci
 
@@ -96,6 +97,12 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      # Serves the build, so it has to follow it. The detector drives the
+      # Chrome the runner image ships: it looks for `google-chrome` on PATH
+      # and in /opt/google/chrome, or takes IMPECCABLE_BROWSER.
+      - name: design gate
+        run: npm run gate:design
 
       - name: react-doctor gate
         run: npm run gate:react-doctor

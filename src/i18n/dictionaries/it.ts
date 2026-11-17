@@ -292,6 +292,13 @@ export const itDictionary: Dictionary = {
   'character.chronicleMore': 'Mostra altre storie',
   'character.chronicleMoreError':
     'Caricamento delle altre storie non riuscito. Riprova.',
+
+  'notFound.title': 'Pagina non trovata',
+  'notFound.body': 'A questo indirizzo non c’è nessuna pagina.',
+  'notFound.pageTitle': 'Pagina non trovata | Zero Spoiler',
+  'error.title': 'Qualcosa è andato storto',
+  'error.body': 'Non è stato possibile caricare questa pagina.',
+
   'character.notFoundTitle': 'Personaggio non trovato',
   'character.notFoundBody':
     'A questo indirizzo non c’è nessun personaggio. Li trovi tutti nella pagina Personaggi.',

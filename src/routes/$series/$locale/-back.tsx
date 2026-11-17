@@ -1,11 +1,12 @@
 import * as stylex from '@stylexjs/stylex'
-import { DefaultGlobalNotFound, Link } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
 import { useDeclares } from '~/components/useDeclares'
 import { onlyUnder, useSeriesT, useT } from '~/i18n/LocaleContext'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
+import { NotFoundPage } from '~/routes/-fallback'
 
 import { recordStyles } from './-record.styles'
 
@@ -58,8 +59,9 @@ export function RecordBackLink({
 
 /**
  * `/fruits/<not-a-fruit>` or `/abilities/<not-an-ability>`: says so, and
- * points at the index. A series without the page gets the plain 404, with no
- * link back to it; so does a page whose words are not on this series' page.
+ * points at the index. A series without the page gets the site's not-found
+ * page, with no link back to it; so does a page whose words are not on this
+ * series' page.
  */
 export function SectionNotFound({
   body,
@@ -72,7 +74,7 @@ export function SectionNotFound({
 }): ReactElement {
   const declares = useDeclares()
   if (body === undefined || title === undefined || !declares(section)) {
-    return <DefaultGlobalNotFound />
+    return <NotFoundPage />
   }
 
   return (

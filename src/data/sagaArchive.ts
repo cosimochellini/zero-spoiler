@@ -5,7 +5,6 @@ import {
   datedArchive,
   type DatedArchive,
   dossiersOf,
-  type Filed,
   filedTimelines,
   usersBy,
 } from '~/data/dated'
@@ -61,8 +60,6 @@ export interface SagaArchive<V extends Vocabulary> {
    * and description), derived from the sagas.
    */
   core: Omit<SeriesArchive<V>, 'bookmarks' | 'drawings' | 'leads' | 'series'>
-  /** Its timelines, for the gates its own sweep reads. */
-  filed: Filed
 }
 
 /**
@@ -119,7 +116,6 @@ export function sagaArchive<V extends Vocabulary>({
       }
 
   return {
-    filed,
     core: {
       entities,
       getEntity: (id) => byId.get(id),

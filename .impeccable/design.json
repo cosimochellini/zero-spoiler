@@ -1,0 +1,954 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T15:48:23.030Z",
+  "title": "Design System: Zero Spoiler",
+  "extensions": {
+    "colorMeta": {
+      "blackout-paper": {
+        "role": "neutral",
+        "displayName": "Blackout Paper",
+        "canonical": "oklch(12% 0.005 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-paper2": {
+        "role": "neutral",
+        "displayName": "Blackout Paper 2",
+        "canonical": "oklch(16% 0.006 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-paper3": {
+        "role": "neutral",
+        "displayName": "Blackout Paper 3",
+        "canonical": "oklch(21% 0.007 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-rule": {
+        "role": "neutral",
+        "displayName": "Blackout Rule",
+        "canonical": "oklch(30% 0.006 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-rule2": {
+        "role": "neutral",
+        "displayName": "Blackout Rule 2",
+        "canonical": "oklch(52% 0.008 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-muted": {
+        "role": "neutral",
+        "displayName": "Blackout Muted",
+        "canonical": "oklch(72% 0.006 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-ink2": {
+        "role": "neutral",
+        "displayName": "Blackout Ink 2",
+        "canonical": "oklch(82% 0.005 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-ink": {
+        "role": "neutral",
+        "displayName": "Blackout Ink",
+        "canonical": "oklch(93% 0.005 285)",
+        "tonalRamp": [
+          "oklch(12% 0.005 285)",
+          "oklch(16% 0.006 285)",
+          "oklch(21% 0.007 285)",
+          "oklch(30% 0.006 285)",
+          "oklch(52% 0.008 285)",
+          "oklch(72% 0.006 285)",
+          "oklch(82% 0.005 285)",
+          "oklch(93% 0.005 285)"
+        ]
+      },
+      "blackout-accent": {
+        "role": "primary",
+        "displayName": "Spotlight White",
+        "canonical": "oklch(99% 0.005 285)"
+      },
+      "blackout-accentInk": {
+        "role": "neutral",
+        "displayName": "Blackout Accent Ink",
+        "canonical": "oklch(13% 0.005 285)"
+      },
+      "blackout-focus": {
+        "role": "neutral",
+        "displayName": "Blackout Focus",
+        "canonical": "oklch(99% 0.005 285)"
+      },
+      "blackout-glow": {
+        "role": "neutral",
+        "displayName": "Blackout Glow",
+        "canonical": "oklch(92% 0.01 285 / 0.12)"
+      },
+      "blackout-scrim": {
+        "role": "neutral",
+        "displayName": "Blackout Scrim",
+        "canonical": "oklch(12% 0.005 285 / 0.72)"
+      },
+      "blackout-veil": {
+        "role": "neutral",
+        "displayName": "Blackout Veil",
+        "canonical": "oklch(12% 0.005 285 / 0.88)"
+      },
+      "one-piece-paper": {
+        "role": "neutral",
+        "displayName": "Sea Chart Paper",
+        "canonical": "oklch(13% 0.025 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-paper2": {
+        "role": "neutral",
+        "displayName": "Sea Chart Paper 2",
+        "canonical": "oklch(17% 0.028 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-paper3": {
+        "role": "neutral",
+        "displayName": "Sea Chart Paper 3",
+        "canonical": "oklch(22% 0.03 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-rule": {
+        "role": "neutral",
+        "displayName": "Sea Chart Rule",
+        "canonical": "oklch(30% 0.025 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-rule2": {
+        "role": "neutral",
+        "displayName": "Sea Chart Rule 2",
+        "canonical": "oklch(52% 0.03 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-muted": {
+        "role": "neutral",
+        "displayName": "Sea Chart Muted",
+        "canonical": "oklch(72% 0.02 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-ink2": {
+        "role": "neutral",
+        "displayName": "Sea Chart Ink 2",
+        "canonical": "oklch(84% 0.015 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-ink": {
+        "role": "neutral",
+        "displayName": "Sea Chart Ink",
+        "canonical": "oklch(95% 0.01 250)",
+        "tonalRamp": [
+          "oklch(13% 0.025 250)",
+          "oklch(17% 0.028 250)",
+          "oklch(22% 0.03 250)",
+          "oklch(30% 0.025 250)",
+          "oklch(52% 0.03 250)",
+          "oklch(72% 0.02 250)",
+          "oklch(84% 0.015 250)",
+          "oklch(95% 0.01 250)"
+        ]
+      },
+      "one-piece-accent": {
+        "role": "primary",
+        "displayName": "Lantern Gold",
+        "canonical": "oklch(84% 0.16 88)"
+      },
+      "one-piece-accentInk": {
+        "role": "neutral",
+        "displayName": "Sea Chart Accent Ink",
+        "canonical": "oklch(16% 0.03 250)"
+      },
+      "one-piece-focus": {
+        "role": "neutral",
+        "displayName": "Sea Chart Focus",
+        "canonical": "oklch(88% 0.15 92)"
+      },
+      "one-piece-glow": {
+        "role": "neutral",
+        "displayName": "Sea Chart Glow",
+        "canonical": "oklch(70% 0.12 80 / 0.22)"
+      },
+      "one-piece-scrim": {
+        "role": "neutral",
+        "displayName": "Sea Chart Scrim",
+        "canonical": "oklch(13% 0.025 250 / 0.72)"
+      },
+      "one-piece-veil": {
+        "role": "neutral",
+        "displayName": "Sea Chart Veil",
+        "canonical": "oklch(13% 0.025 250 / 0.88)"
+      },
+      "hunter-x-hunter-paper": {
+        "role": "neutral",
+        "displayName": "Gon's Green Paper",
+        "canonical": "oklch(13% 0.022 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-paper2": {
+        "role": "neutral",
+        "displayName": "Gon's Green Paper 2",
+        "canonical": "oklch(17% 0.025 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-paper3": {
+        "role": "neutral",
+        "displayName": "Gon's Green Paper 3",
+        "canonical": "oklch(22% 0.028 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-rule": {
+        "role": "neutral",
+        "displayName": "Gon's Green Rule",
+        "canonical": "oklch(30% 0.022 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-rule2": {
+        "role": "neutral",
+        "displayName": "Gon's Green Rule 2",
+        "canonical": "oklch(52% 0.026 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-muted": {
+        "role": "neutral",
+        "displayName": "Gon's Green Muted",
+        "canonical": "oklch(72% 0.018 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-ink2": {
+        "role": "neutral",
+        "displayName": "Gon's Green Ink 2",
+        "canonical": "oklch(84% 0.013 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-ink": {
+        "role": "neutral",
+        "displayName": "Gon's Green Ink",
+        "canonical": "oklch(95% 0.009 160)",
+        "tonalRamp": [
+          "oklch(13% 0.022 160)",
+          "oklch(17% 0.025 160)",
+          "oklch(22% 0.028 160)",
+          "oklch(30% 0.022 160)",
+          "oklch(52% 0.026 160)",
+          "oklch(72% 0.018 160)",
+          "oklch(84% 0.013 160)",
+          "oklch(95% 0.009 160)"
+        ]
+      },
+      "hunter-x-hunter-accent": {
+        "role": "primary",
+        "displayName": "Gon's Green",
+        "canonical": "oklch(82% 0.2 145)"
+      },
+      "hunter-x-hunter-accentInk": {
+        "role": "neutral",
+        "displayName": "Gon's Green Accent Ink",
+        "canonical": "oklch(16% 0.03 160)"
+      },
+      "hunter-x-hunter-focus": {
+        "role": "neutral",
+        "displayName": "Gon's Green Focus",
+        "canonical": "oklch(88% 0.17 140)"
+      },
+      "hunter-x-hunter-glow": {
+        "role": "neutral",
+        "displayName": "Gon's Green Glow",
+        "canonical": "oklch(72% 0.16 145 / 0.2)"
+      },
+      "hunter-x-hunter-scrim": {
+        "role": "neutral",
+        "displayName": "Gon's Green Scrim",
+        "canonical": "oklch(13% 0.022 160 / 0.72)"
+      },
+      "hunter-x-hunter-veil": {
+        "role": "neutral",
+        "displayName": "Gon's Green Veil",
+        "canonical": "oklch(13% 0.022 160 / 0.88)"
+      },
+      "game-of-thrones-paper": {
+        "role": "neutral",
+        "displayName": "Ember Paper",
+        "canonical": "oklch(13% 0.022 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-paper2": {
+        "role": "neutral",
+        "displayName": "Ember Paper 2",
+        "canonical": "oklch(17% 0.025 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-paper3": {
+        "role": "neutral",
+        "displayName": "Ember Paper 3",
+        "canonical": "oklch(22% 0.028 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-rule": {
+        "role": "neutral",
+        "displayName": "Ember Rule",
+        "canonical": "oklch(30% 0.022 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-rule2": {
+        "role": "neutral",
+        "displayName": "Ember Rule 2",
+        "canonical": "oklch(52% 0.026 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-muted": {
+        "role": "neutral",
+        "displayName": "Ember Muted",
+        "canonical": "oklch(72% 0.018 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-ink2": {
+        "role": "neutral",
+        "displayName": "Ember Ink 2",
+        "canonical": "oklch(84% 0.013 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-ink": {
+        "role": "neutral",
+        "displayName": "Ember Ink",
+        "canonical": "oklch(95% 0.009 20)",
+        "tonalRamp": [
+          "oklch(13% 0.022 20)",
+          "oklch(17% 0.025 20)",
+          "oklch(22% 0.028 20)",
+          "oklch(30% 0.022 20)",
+          "oklch(52% 0.026 20)",
+          "oklch(72% 0.018 20)",
+          "oklch(84% 0.013 20)",
+          "oklch(95% 0.009 20)"
+        ]
+      },
+      "game-of-thrones-accent": {
+        "role": "primary",
+        "displayName": "Ember Red",
+        "canonical": "oklch(70% 0.19 25)"
+      },
+      "game-of-thrones-accentInk": {
+        "role": "neutral",
+        "displayName": "Ember Accent Ink",
+        "canonical": "oklch(16% 0.03 20)"
+      },
+      "game-of-thrones-focus": {
+        "role": "neutral",
+        "displayName": "Ember Focus",
+        "canonical": "oklch(80% 0.09 30)"
+      },
+      "game-of-thrones-glow": {
+        "role": "neutral",
+        "displayName": "Ember Glow",
+        "canonical": "oklch(62% 0.17 25 / 0.2)"
+      },
+      "game-of-thrones-scrim": {
+        "role": "neutral",
+        "displayName": "Ember Scrim",
+        "canonical": "oklch(13% 0.022 20 / 0.72)"
+      },
+      "game-of-thrones-veil": {
+        "role": "neutral",
+        "displayName": "Ember Veil",
+        "canonical": "oklch(13% 0.022 20 / 0.88)"
+      },
+      "tint-red": {
+        "role": "tertiary",
+        "displayName": "Tint Red",
+        "canonical": "oklch(68% 0.2 25)"
+      },
+      "tint-vermilion": {
+        "role": "tertiary",
+        "displayName": "Tint Vermilion",
+        "canonical": "oklch(70% 0.19 38)"
+      },
+      "tint-orange": {
+        "role": "tertiary",
+        "displayName": "Tint Orange",
+        "canonical": "oklch(76% 0.17 58)"
+      },
+      "tint-ocher": {
+        "role": "tertiary",
+        "displayName": "Tint Ocher",
+        "canonical": "oklch(78% 0.13 82)"
+      },
+      "tint-yellow": {
+        "role": "tertiary",
+        "displayName": "Tint Yellow",
+        "canonical": "oklch(88% 0.16 98)"
+      },
+      "tint-acid": {
+        "role": "tertiary",
+        "displayName": "Tint Acid",
+        "canonical": "oklch(86% 0.2 128)"
+      },
+      "tint-green": {
+        "role": "tertiary",
+        "displayName": "Tint Green",
+        "canonical": "oklch(76% 0.17 148)"
+      },
+      "tint-teal": {
+        "role": "tertiary",
+        "displayName": "Tint Teal",
+        "canonical": "oklch(80% 0.13 188)"
+      },
+      "tint-cyan": {
+        "role": "tertiary",
+        "displayName": "Tint Cyan",
+        "canonical": "oklch(83% 0.13 212)"
+      },
+      "tint-azure": {
+        "role": "tertiary",
+        "displayName": "Tint Azure",
+        "canonical": "oklch(80% 0.11 236)"
+      },
+      "tint-blue": {
+        "role": "tertiary",
+        "displayName": "Tint Blue",
+        "canonical": "oklch(74% 0.12 262)"
+      },
+      "tint-ice": {
+        "role": "tertiary",
+        "displayName": "Tint Ice",
+        "canonical": "oklch(92% 0.04 220)"
+      },
+      "tint-lavender": {
+        "role": "tertiary",
+        "displayName": "Tint Lavender",
+        "canonical": "oklch(80% 0.1 296)"
+      },
+      "tint-violet": {
+        "role": "tertiary",
+        "displayName": "Tint Violet",
+        "canonical": "oklch(74% 0.15 306)"
+      },
+      "tint-magenta": {
+        "role": "tertiary",
+        "displayName": "Tint Magenta",
+        "canonical": "oklch(74% 0.19 346)"
+      },
+      "tint-pink": {
+        "role": "tertiary",
+        "displayName": "Tint Pink",
+        "canonical": "oklch(82% 0.11 352)"
+      },
+      "tint-flamingo": {
+        "role": "tertiary",
+        "displayName": "Tint Flamingo",
+        "canonical": "oklch(78% 0.14 6)"
+      },
+      "tint-sand": {
+        "role": "tertiary",
+        "displayName": "Tint Sand",
+        "canonical": "oklch(86% 0.08 82)"
+      },
+      "tint-wine": {
+        "role": "tertiary",
+        "displayName": "Tint Wine",
+        "canonical": "oklch(66% 0.17 14)"
+      }
+    },
+    "typographyMeta": {
+      "hero": {
+        "displayName": "Hero",
+        "fluid": "clamp(3rem, 4.2vw + 1.2rem, 5.5rem)",
+        "purpose": "The one largest line of a page: the home fold, the hub's series names, the landing headline, the ranks title, a fruit's or an ability's name."
+      },
+      "display": {
+        "displayName": "Display",
+        "fluid": "clamp(2.5rem, 1.6vw + 1.6rem, 4rem)",
+        "purpose": "The hub's headline, the legal page's title, the saga's name on the fruits page, a character's name."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "A listing's title and section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Questions, group names and names in rows."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, at a measure of 52 to 66ch."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The sentence under a page's title."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "The uppercase tracked word above or beside a value."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Episode and chapter numbers and the reader's point, in tabular figures."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "The kind inside a filler countdown cell on a phone, and the names of seas on the places map."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "dur-micro",
+        "value": "120ms",
+        "purpose": "A state change on a control: hover, press, pick."
+      },
+      {
+        "name": "dur-short",
+        "value": "220ms",
+        "purpose": "The crossfade between two pages, and a dialog surfacing."
+      },
+      {
+        "name": "dur-long",
+        "value": "420ms",
+        "purpose": "A band settling, a sheet rising, the fog clearing, a drawing travelling between a list and its page."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entering elements and state changes: they decelerate."
+      },
+      {
+        "name": "ease-in",
+        "value": "cubic-bezier(0.7, 0, 0.84, 0)",
+        "purpose": "Defined for leaving elements; no code uses it today."
+      },
+      {
+        "name": "ease-inOut",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "The crossfade between two pages."
+      },
+      {
+        "name": "settle-step",
+        "value": "70ms",
+        "purpose": "The delay between one band of a page settling and the next (src/styles/settle.ts)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "150ms",
+        "purpose": "The cap on every animation and transition under prefers-reduced-motion (src/styles/global.css)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "30rem",
+        "value": "30rem",
+        "purpose": "A character's facts set label and value side by side."
+      },
+      {
+        "name": "32rem (min-height)",
+        "value": "32rem",
+        "purpose": "With min-width: 40rem, the window in which a listing's control bar pins whole; in a shorter or narrower one it folds to one row (ControlBar.tsx)."
+      },
+      {
+        "name": "37.5rem",
+        "value": "37.5rem",
+        "purpose": "Up to it the places map is drawn upright; from it the fruit album has three columns."
+      },
+      {
+        "name": "40rem",
+        "value": "40rem",
+        "purpose": "The line between phone and wider. Below it (max-width: 39.99rem) dialogs and peeks are bottom sheets. From it the site bar's pinned height on a page with no series drops from 6rem to 3.25rem."
+      },
+      {
+        "name": "48rem",
+        "value": "48rem",
+        "purpose": "The hub and the intro dialog take their wide layout."
+      },
+      {
+        "name": "50rem",
+        "value": "50rem",
+        "purpose": "The fruit album has four columns."
+      },
+      {
+        "name": "seriesWide",
+        "value": "56rem",
+        "purpose": "A series page's site bar sets its two rows on one and pins at 3.25rem (BAR.seriesWide)."
+      },
+      {
+        "name": "60rem",
+        "value": "60rem",
+        "purpose": "A record's page is two columns; the character grid and the home's cast gain columns."
+      },
+      {
+        "name": "64rem",
+        "value": "64rem",
+        "purpose": "The control bar sets its groups beside the search; the fruit album has five columns and the landing preview six."
+      },
+      {
+        "name": "76rem",
+        "value": "76rem",
+        "purpose": "The character grid has its last column. Also the width of the shell."
+      },
+      {
+        "name": "80rem",
+        "value": "80rem",
+        "purpose": "The fruit album has six columns."
+      }
+    ],
+    "unused": ["ease.in", "z.base", "space.xl4"],
+    "zIndex": [
+      { "name": "base", "value": 1 },
+      { "name": "raised", "value": 10 },
+      { "name": "dropdown", "value": 100 },
+      { "name": "sticky", "value": 200 },
+      { "name": "stickyNav", "value": 210 },
+      { "name": "bar", "value": 220 },
+      { "name": "tooltip", "value": 600 },
+      { "name": "skip", "value": 700 }
+    ]
+  },
+  "components": [
+    {
+      "name": "Chip Button",
+      "kind": "button",
+      "description": "The default variant of the shared button (src/components/ui/Button.tsx). Shown in One Piece's colours.",
+      "html": "<button class=\"ds-btn-chip\" type=\"button\">Show anyway</button>",
+      "css": ".ds-btn-chip { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 44px; border: 2px solid oklch(52% 0.03 250); border-radius: 3px; background: transparent; color: oklch(95% 0.01 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-weight: 600; cursor: pointer; outline: 2px solid transparent; outline-offset: 0.125rem; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1), border-color 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms cubic-bezier(0.16, 1, 0.3, 1), transform 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-chip:hover { color: oklch(84% 0.16 88); border-color: oklch(95% 0.01 250); } .ds-btn-chip:focus-visible { outline-color: oklch(88% 0.15 92); } .ds-btn-chip:active { background: oklch(22% 0.03 250); transform: translateY(1px); } .ds-btn-chip { padding: 0.5rem 1rem; font-size: 1rem; letter-spacing: 0.02em; white-space: nowrap; }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "description": "The square variant, for a stepper or a glyph with an aria-label. Shown in One Piece's colours.",
+      "html": "<button class=\"ds-btn-quiet\" type=\"button\" aria-label=\"One more\">+</button>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 44px; border: 2px solid oklch(52% 0.03 250); border-radius: 3px; background: transparent; color: oklch(95% 0.01 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-weight: 600; cursor: pointer; outline: 2px solid transparent; outline-offset: 0.125rem; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1), border-color 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms cubic-bezier(0.16, 1, 0.3, 1), transform 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-quiet:hover { color: oklch(84% 0.16 88); border-color: oklch(95% 0.01 250); } .ds-btn-quiet:focus-visible { outline-color: oklch(88% 0.15 92); } .ds-btn-quiet:active { background: oklch(22% 0.03 250); transform: translateY(1px); } .ds-btn-quiet { padding: 0.5rem; min-width: 44px; font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1rem; line-height: 1; }"
+    },
+    {
+      "name": "Save Button",
+      "kind": "button",
+      "description": "The bookmark dialog's action, filled with the accent as a primary action's button is. Shown in One Piece's colours.",
+      "html": "<button class=\"ds-btn-save\" type=\"button\">Save</button>",
+      "css": ".ds-btn-save { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; width: 100%; padding: 0.5rem 1rem; border: 2px solid oklch(84% 0.16 88); border-radius: 3px; background: oklch(84% 0.16 88); color: oklch(16% 0.03 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; white-space: nowrap; cursor: pointer; outline: 2px solid transparent; outline-offset: 0.125rem; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1), border-color 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms cubic-bezier(0.16, 1, 0.3, 1), transform 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-save:hover { background: color-mix(in oklch, oklch(84% 0.16 88) 80%, oklch(95% 0.01 250)); } .ds-btn-save:focus-visible { outline-color: oklch(88% 0.15 92); } .ds-btn-save:active { background: color-mix(in oklch, oklch(84% 0.16 88) 88%, oklch(16% 0.03 250)); transform: translateY(1px); }"
+    },
+    {
+      "name": "Bookmark Mark",
+      "kind": "custom",
+      "description": "The reader's point in the site bar of a series page; it opens the bookmark dialog (src/components/EpisodeMark.tsx). Shown in One Piece's colours.",
+      "html": "<button class=\"ds-mark\" type=\"button\">EP 650</button>",
+      "css": ".ds-mark { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 44px; border: 2px solid oklch(52% 0.03 250); border-radius: 3px; background: transparent; color: oklch(95% 0.01 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-weight: 600; cursor: pointer; outline: 2px solid transparent; outline-offset: 0.125rem; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1), border-color 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms cubic-bezier(0.16, 1, 0.3, 1), transform 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-mark:hover { color: oklch(84% 0.16 88); border-color: oklch(95% 0.01 250); } .ds-mark:focus-visible { outline-color: oklch(88% 0.15 92); } .ds-mark:active { background: oklch(22% 0.03 250); transform: translateY(1px); } .ds-mark { padding: 0.5rem 0.75rem; border-color: oklch(52% 0.03 250); color: oklch(84% 0.16 88); font-family: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.75rem; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; } .ds-mark:hover { color: oklch(95% 0.01 250); border-color: oklch(84% 0.16 88); }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "description": "The search field of the listings (src/components/SearchField.tsx). Shown in One Piece's colours.",
+      "html": "<input class=\"ds-input-search\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">",
+      "css": ".ds-input-search { appearance: textfield; min-height: 44px; width: min(100%, 22rem); padding: 0.25rem 0.75rem; border: 2px solid oklch(52% 0.03 250); border-radius: 3px; background: oklch(13% 0.025 250); color: oklch(95% 0.01 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-size: 1.25rem; font-weight: 600; outline: 2px solid transparent; outline-offset: 0.125rem; transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1), border-color 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-input-search::placeholder { color: oklch(72% 0.02 250); font-weight: 400; } .ds-input-search:hover { background: oklch(17% 0.028 250); } .ds-input-search:focus { border-color: oklch(95% 0.01 250); } .ds-input-search:focus-visible { outline-color: oklch(88% 0.15 92); }"
+    },
+    {
+      "name": "Bar Link",
+      "kind": "nav",
+      "description": "A page link in the site bar; the current page carries an accent underline and aria-current (src/components/SiteBar.tsx). Shown in One Piece's colours.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">Characters</a><a class=\"ds-nav-link\" href=\"#\">Places</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 0.5rem; } .ds-nav-link { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 0.5rem; color: oklch(84% 0.015 250); font-family: 'Instrument Sans', 'Instrument Sans Fallback', Arial, sans-serif; font-size: 1rem; font-weight: 600; white-space: nowrap; text-decoration-line: underline; text-decoration-color: transparent; text-decoration-thickness: 2px; text-underline-offset: 4px; outline: 2px solid transparent; outline-offset: 0.125rem; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-link[aria-current=\"page\"] { color: oklch(95% 0.01 250); text-decoration-color: oklch(84% 0.16 88); } .ds-nav-link:hover { color: oklch(84% 0.16 88); } .ds-nav-link:focus-visible { outline-color: oklch(88% 0.15 92); } .ds-nav-link:active { color: oklch(95% 0.01 250); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The spoiler boundary is a horizon you move",
+    "overview": "The reader's bookmark is one line through the story. What lies before it is drawn, named and lit; what lies after it is under fog. The site is dark, and only dark. Four colour sets share one structure: \"Blackout\" for the hub and the legal page, and one theme per series. Type, spacing, radii and motion are shared. The pictures are line drawings made for this project.\n\nThe owner prefers bold, dramatic, eye-catching UI with one central idea over restrained layouts. This identity is fixed (owner, 2026-11-17). Later passes refine hierarchy, spacing, states, motion, copy, responsive behaviour and accessibility, and add no font, colour or theme.\n\nThe code is the reference for how a component looks. This file holds the tokens, the rules and the open points.",
+    "keyCharacteristics": [
+      "Dark only, with one accent per colour set.",
+      "One central idea per page (owner); headings in Bricolage Grotesque at 800.",
+      "Uppercase tracked labels and mono numerals beside sentence-case headings.",
+      "Small radii, hairline rules, no drop shadows, line drawings."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "One accent per series, never a large fill (owner, 2026-11-17). The accent is a line, a word, a border or a dot. The code fills a few surfaces with it, and they are the accepted set: the button of a primary action (Save in the bookmark dialog, owner 2026-10-12, and the landing page's primary buttons); the marks for filler in `FillerCountdown.styles.ts` and `FillerStrip.tsx`; and small marks such as a picked chip's dot. The hub also lights each series card with a low-alpha beam of its accent, and the home sets a glow behind its drawing. The design gate holds both glows under a temporary waiver until the owner says whether they stay; leave them as they are. Text on a filled accent surface is Accent Ink. Keep these filled, and add no other.",
+        "section": "colors"
+      },
+      {
+        "name": "The Floors Rule",
+        "body": "On every paper of every set, Ink and Ink 2 hold 7:1, Muted and the accent 4.5:1, Rule 2 and Focus 3:1, and Accent Ink on the accent 4.5:1. `src/styles/themes.test.tsx` computes them; a colour that changes keeps them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Plus One Rule",
+        "body": "Two families and one outlier, and never a fourth.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Rule",
+        "body": "JetBrains Mono is the voice of data: numerals, counts and short uppercase labels (owner, 2026-11-17). It is never used for a sentence or a heading. The code uses it in 55 style lines in 32 files, and those uses stand. Two are sentences set in mono today, the trial strip's line and the map's hint; the bookmark and places passes judge them.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "**Do** write every colour in OKLCH and take it from the tokens.",
+      "**Do** keep Instrument Sans as the body face. Impeccable lists it as overused; here it is fixed (owner, 2026-11-17).",
+      "**Do** keep the uppercase tracked label above or beside a heading. Impeccable bans a kicker above a heading; here it is part of the style (owner, 2026-11-17).",
+      "**Do** set numerals, counts and short uppercase labels in JetBrains Mono, and nothing longer: never a sentence or a heading. Impeccable treats mono outside code as a costume; here it is the voice of data by design (owner, 2026-11-17).",
+      "**Do** mark a link inside text with an underline. The accent sits within 3:1 of the inks in every set, so colour alone cannot.",
+      "**Do** space siblings with `gap` in new work; see Layout for today's state.",
+      "**Do** keep controls at least 44px tall. Under it today, for the surface passes (#1375 to #1383) to fix: the wordmark link, back links, relationship rows and the filler catalogue's rows.",
+      "**Do** keep running text to a measure of 52 to 66ch. Wider today, for the same passes: the legal page (76ch) and the footer (72ch).",
+      "**Do** check every pass at a width of 390px. Mobile is the owner's second priority, after the bookmark and progress and before fog."
+    ],
+    "donts": [
+      "**Don't** use `#000`, `#fff` or a grey with no hue.",
+      "**Don't** add a font, a colour, a theme or a light scheme.",
+      "**Don't** paint a large surface in the accent, or fill any surface with it beyond the set in the One Accent Rule.",
+      "**Don't** use a drawing tint as the colour of a control or of running text.",
+      "**Don't** use a radius above `rounded.card` on a rectangle, or a drop shadow.",
+      "**Don't** set a heading in italics.",
+      "**Don't** animate a `filter` or a layout property.",
+      "**Don't** show, name or hint at anything past the reader's bookmark. `PRODUCT.md` lists what is public by design, and `docs/architecture.md#spoiler-contract` is the authority.",
+      "**Don't** spread the legal notices: they live on the legal page, and the footer carries one line of notice and one link to the legal page.",
+      "**Don't** put design vocabulary (horizon, Blackout, Sea Chart) in the copy; it follows the `tone-of-voice` skill."
+    ]
+  }
+}

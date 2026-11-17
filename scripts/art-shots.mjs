@@ -2,13 +2,13 @@
 import { existsSync, mkdirSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
 import { launch } from 'puppeteer-core'
 import { preview } from 'vite'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
 import { SERVER_MANIFEST } from './archive-server-gate.mjs'
+import { isMain } from './is-main.mjs'
 
 /** @typedef {{ value: string, open: boolean }} Bookmark */
 /** @typedef {{ id: string, label: string, bookmarks: Bookmark[] }} Row */
@@ -349,7 +349,7 @@ async function saveShots(browser, server, rows, ids) {
   return file
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+if (isMain(import.meta)) {
   try {
     // fallow-ignore-next-line security-sink -- prints only the local evidence path, formed from validated archive ids
     console.log(await artShots(process.argv.slice(2)))

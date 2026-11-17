@@ -22,7 +22,7 @@ export interface ArchivePageProps {
  * and the listing itself. The heading is there from the first frame and the
  * listing settles under it.
  *
- * The signal book and the ship's log are different macrostructures – a
+ * The signal book and the ship's log are different page structures – a
  * catalogue and a narrative workflow – but they open the same way, and when
  * the two shells were written out separately they drifted apart by a
  * half-step of padding. One component is what keeps the two pages siblings.
@@ -35,6 +35,9 @@ export function ArchivePage({
   return (
     <main
       id="content"
+      // Focusable from code only: the skip link lands here, and a not-found
+      // page takes the focus after a navigation (#1374).
+      tabIndex={-1}
       {...stylex.props(styles.page)}
     >
       <header {...stylex.props(styles.head)}>
@@ -55,7 +58,12 @@ const styles = stylex.create({
   page: {
     gap: space.xl,
     paddingInline: space.md,
+    // The shell gives a short page the height left over; the heading, the
+    // sentence and the link stay together at its top, not spread over it.
+    alignContent: 'start',
     display: 'grid',
+    // The whole page is not a control: no ring around it when it is focused.
+    outlineStyle: 'none',
     paddingBlockEnd: space.xl3,
     paddingBlockStart: space.lg,
   },

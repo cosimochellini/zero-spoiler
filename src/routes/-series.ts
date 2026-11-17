@@ -20,6 +20,16 @@ export async function seriesDescription(slug: string): Promise<null | Series> {
 }
 
 /**
+ * Keeps the description a page arrived with, as `keepSeriesCopy` keeps its
+ * copy: the root's `beforeLoad` does not run on hydration either, and the
+ * first navigation would wait on the server for what the page already has
+ * before it could ask for anything else (#1386).
+ */
+export function keepSeriesDescription(series: Series): void {
+  descriptions.set(series.slug, series)
+}
+
+/**
  * What a series and language answered, reused for the page's lifetime. A
  * failed call is asked again; the server's answers here are public and the
  * same for every reader.

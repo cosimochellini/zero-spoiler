@@ -1,8 +1,7 @@
 import { sagaArchive } from '~/data/sagaArchive'
-import { aroundGates, sweepOf } from '~/data/sweep'
+import { aroundGates, gatesOf, sweepOf } from '~/data/sweep'
 import type { SeriesArchive } from '~/data/types'
 import { GAME_OF_THRONES_SERIES as SERIES } from '~/lib/progress/series'
-import type { Gated } from '~/lib/progress/spoiler'
 
 import { DRAWINGS, REDRAWINGS } from './art'
 import { SEASON_1_PLACES } from './records/season-1'
@@ -24,33 +23,12 @@ const LEADS = [
   'arya-stark',
 ]
 
-const { core, filed: FILED } = sagaArchive({
+const { core } = sagaArchive({
   featured: LEADS,
   placeDossiers: SEASON_1_PLACES,
   redrawings: REDRAWINGS,
   sagas,
   series: SERIES,
-})
-
-const { entities, gateOf } = core
-
-/**
- * Every record's gate and every dated step's, redrawings and relationship
- * selections and chronicle stories included, so the sweep asks both sides of
- * each in the unit that tells it without a hand-kept list: the two media gate
- * the same record at unrelated numbers.
- */
-const GATES: Gated[] = entities.flatMap((owner) => {
-  const role = FILED.roleOf(owner)
-  const steps = [
-    ...(FILED.timelineOf(owner, 'affiliation') ?? []),
-    ...(FILED.timelineOf(owner, 'chronicle') ?? []),
-    ...(FILED.timelineOf(owner, 'status') ?? []),
-    ...(FILED.timelineOf(owner, 'redrawing') ?? []),
-    ...(FILED.timelineOf(owner, 'relationships') ?? []),
-    ...(Array.isArray(role) ? role : []),
-  ]
-  return [owner, ...steps.map((entry) => gateOf(entry, owner))]
 })
 
 /** One dynamically loaded archive; its public description contains no records. */
@@ -59,7 +37,7 @@ export const GAME_OF_THRONES_ARCHIVE: SeriesArchive = {
   // Both sides of every gate, then the demo's last episode and the first
   // past it.
   bookmarks: sweepOf(sagas, SERIES, [
-    ...aroundGates(GATES, { episode: [], chapter: [] }, SERIES),
+    ...aroundGates(gatesOf(core), SERIES),
     { mode: 'season', season: 1, episode: 10 },
     { mode: 'season', season: 2, episode: 1 },
   ]),

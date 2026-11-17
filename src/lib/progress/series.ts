@@ -288,32 +288,36 @@ function isContentPage(page: string | undefined, rest: string[]): boolean {
   return rest.length <= 1 && rest[0] !== ''
 }
 
-/** `/{series}/{locale}/{page}`: the page is the split's fourth part. */
-const PAGE_SEGMENT = 3
-
 /**
- * Whether a content address (one `seriesSlugFromPath` reads a slug from) is
- * a page the series declares: its home always is.
+ * Whether a content address (one `isContentPage` accepts) is a page the
+ * series declares: its home always is.
  */
 function declaresPath(series: Series, pathname: string): boolean {
   const page = pathname.split('/', PAGE_SEGMENT + 1)[PAGE_SEGMENT]
   return page === undefined || !isSeriesPage(page) || hasPage(series, page)
 }
 
-/** The series slug of a content URL, before registry validation. */
+/** `/{series}/{locale}/{page}`: the page is the split's fourth part. */
+const PAGE_SEGMENT = 3
+
+/** `/{series}` or `/{series}/{locale}/…`, split; a trailing slash dropped. */
+function seriesParts(pathname: string): string[] {
+  return pathname.replace(/\/$/u, '').split('/').slice(1)
+}
+
+/**
+ * The series slug of an address under a series, before registry validation:
+ * `/{series}` or anything under `/{series}/{locale}`, an address no route
+ * matches included. The series shell renders there too, around the not-found
+ * page, so the bookmark provider needs the same series the shell reads
+ * (#1374).
+ */
 export function seriesSlugFromPath(pathname: string): null | string {
-  const [slug, locale, page, ...rest] = pathname
-    .replace(/\/$/u, '')
-    .split('/')
-    .slice(1)
+  const [slug, locale] = seriesParts(pathname)
   if (slug === undefined || slug === '' || isLocale(slug)) {
     return null
   }
-  return (
-      locale === undefined || (isLocale(locale) && isContentPage(page, rest))
-    ) ?
-      slug
-    : null
+  return locale === undefined || isLocale(locale) ? slug : null
 }
 
 /**
@@ -329,6 +333,8 @@ export function linkedSeries(
   describe: (slug: string) => null | Series,
 ): null | Series {
   const slug = seriesSlugFromPath(pathname)
-  const series = slug === null ? null : describe(slug)
+  const [page, ...rest] = seriesParts(pathname).slice(PAGE_SEGMENT - 1)
+  const series =
+    slug === null || !isContentPage(page, rest) ? null : describe(slug)
   return series !== null && declaresPath(series, pathname) ? series : null
 }

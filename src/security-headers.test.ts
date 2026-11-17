@@ -1,10 +1,32 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { createSecurityHeaders } from './security-headers'
 
 const NONCE = 'test-nonce-value'
 
 describe('createSecurityHeaders', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs()
+  })
+
+  it('names no other origin in a production build', () => {
+    vi.stubEnv('DEV', false)
+
+    expect(createSecurityHeaders(NONCE)['Content-Security-Policy']).toBe(
+      `default-src 'self'; script-src 'self' 'nonce-${NONCE}'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'`,
+    )
+  })
+
+  it('lets the live-mode helper in on the dev server only', () => {
+    vi.stubEnv('DEV', true)
+    const csp = createSecurityHeaders(NONCE)['Content-Security-Policy']
+
+    expect(csp).toContain(
+      `script-src 'self' 'nonce-${NONCE}' http://localhost:*;`,
+    )
+    expect(csp).toContain("connect-src 'self' http://localhost:*;")
+  })
+
   it('gives every header a non-empty value', () => {
     const headers = Object.entries(createSecurityHeaders(NONCE))
 

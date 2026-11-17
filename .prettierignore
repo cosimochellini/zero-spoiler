@@ -7,8 +7,14 @@ coverage
 .wrangler
 .gate
 package-lock.json
-# Vendored agent skills. skills-lock.json pins their content hash, so
-# reformatting them would invalidate the lockfile.
+# Vendored agent skills: skills-lock.json pins firecrawl-lean's content hash,
+# and impeccable's installer owns its skill copies, subagents and config, so
+# reformatting any of them would drift from upstream.
 .agents
 .claude/skills
+.claude/agents/impeccable-*.md
+.impeccable/config.json
+# The skill reads a brief's frontmatter as one line of JSON; Prettier rewraps it
+# and the related targets stop matching.
+.impeccable/surfaces
 src/routeTree.gen.ts

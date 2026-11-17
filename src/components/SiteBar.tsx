@@ -23,7 +23,7 @@ import {
 } from '~/styles/tokens.stylex'
 
 /**
- * The bar (Hallmark N9, edge-aligned).
+ * The bar, edge-aligned.
  *
  * The wordmark hard-left, the controls hard-right. On a series page the
  * series' name follows the wordmark, a breadcrumb: the wordmark is the way

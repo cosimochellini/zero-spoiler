@@ -15,8 +15,7 @@ import {
 } from '~/styles/tokens.stylex'
 
 /**
- * The onboarding (Hallmark macrostructure 21, Component Playground): the dial
- * is the hero, and the page under it is its live preview.
+ * The onboarding, a control and its playground: the dial is the hero, and the page under it is its live preview.
  */
 export const styles = stylex.create({
   page: { paddingInline: space.md, display: 'grid' },

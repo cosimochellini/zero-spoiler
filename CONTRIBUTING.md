@@ -3,7 +3,8 @@
 ## Setup
 
 Use Node from `.nvmrc` and npm from `package.json`, then `npm ci` and
-`npm run dev`. Keep optional dependencies: fallow needs its platform binary.
+`npm run dev`. Keep optional dependencies: fallow and impeccable's detector each
+arrive as the optional package of your platform.
 
 ## Scope and implementation
 
@@ -29,6 +30,32 @@ with `docs:chronicle` when their inputs change. CI client JavaScript growth over
 2,048 bytes needs a standalone `client-budget: <reason>` in the PR body; leak
 checks remain blocking.
 
+`gate:design` serves the build and scans its pages with impeccable's detector at
+390 and 1440 px wide. It needs Chrome, Chromium or Edge; set
+`IMPECCABLE_BROWSER` to the executable when the detector does not find one. Fix
+a finding in the page. A rule the house style contradicts is waived in the
+shared `.impeccable/config.json` with a reason and a glob of page addresses,
+since a scan of rendered pages has no source files:
+
+```sh
+npx impeccable ignores add-value skipped-heading "*" \
+  --file "http://127.0.0.1:*/*/*/places/*" --reason "…"
+```
+
+`**` as the glob waives the rule on every page. The gate fails on a waiver with
+no reason, on a `"*"` with no glob (the detector never applies one), on a
+wildcard inside `{}`, and on one that matches no finding any more, so remove a
+waiver in the change that fixes its page. A waiver that states the house style
+is kept for good: start its reason with `Permanent: ` and the gate lets it match
+nothing. The gate prints `no sample for …` for a series or page type it scans
+with no entry in `SAMPLES` (`scripts/design-gate.mjs`), and fails when a page
+type named there leaves the sitemap. The detector's `design-system-*` rules are
+not part of it: the detector loads `DESIGN.md` for source files, as the design
+hook scans them, and never for a page address. It reads neither
+`.impeccable/config.local.json` nor ignore comments, and it refuses a page that
+carries `data-impeccable-ignore`. `.gate/design.json` lists every raw finding,
+waived or not.
+
 ## Archive and drawing verification
 
 - **One Piece data:** compare base/head `npm run --silent archive:table` dumps;
@@ -44,7 +71,8 @@ checks remain blocking.
 - **Site changes:** build, `npm start` on a free port, then check the affected
   flow in Chrome with local `puppeteer-core`, running inside the worktree. Set
   the series cookie; check before/at changed episode and chapter gates. Capture
-  visual evidence and close browser/preview. Docs/tooling need no browser/dumps.
+  visual evidence and close browser/preview. Docs/tooling need no browser flow
+  or dumps; `npm run check` itself still needs Chrome, for `gate:design`.
 - **Drawings:** inspect `npm run art:sheet -- <id>` output. For One Piece
   character redrawings, build and run `npm run art:shots -- <id>`; inspect the
   gate screenshots. Keep generated evidence out of commits.

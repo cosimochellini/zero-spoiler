@@ -23,6 +23,8 @@
  */
 import process from 'node:process'
 
+import { isMain } from './is-main.mjs'
+
 const EXIT_VALID = 0
 const EXIT_INVALID = 1
 const EXIT_MISCONFIGURED = 2
@@ -201,6 +203,6 @@ function main() {
   process.exit(EXIT_INVALID)
 }
 
-if (process.argv[1] === import.meta.filename) {
+if (isMain(import.meta)) {
   main()
 }

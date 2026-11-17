@@ -1,10 +1,3 @@
-/* Hallmark · component: popover (a stop's peek on the sea chart; a bottom
- *   sheet under 40rem, as the bookmark dialog is) · genre: atmospheric ·
- *   theme: Sea Chart (locked)
- * states: default · hover · focus · active · loading · error (the veil's) ·
- *   success (the place, revealed); no disabled state: nothing in it is ever
- *   off
- */
 import * as stylex from '@stylexjs/stylex'
 
 import {

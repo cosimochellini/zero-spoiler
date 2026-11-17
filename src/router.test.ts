@@ -13,6 +13,17 @@ import type * as Translate from './i18n/translate'
 
 const FLAG = 'zs-copy-reloaded:'
 
+// The root's guard asks the server for the series and the request for its
+// cookies; neither is there under Vitest, and neither is what is tested.
+vi.mock(import('./routes/-series'), async (importOriginal) => ({
+  ...(await importOriginal()),
+  seriesDescription: vi.fn<() => Promise<null>>().mockResolvedValue(null),
+}))
+vi.mock(import('./lib/progress/readBookmark'), () => ({
+  readBookmark: vi.fn<() => null>().mockReturnValue(null),
+  readTrial: vi.fn<() => null>().mockReturnValue(null),
+}))
+
 /**
  * The router and the dictionary registry, from fresh modules: the test setup
  * has already loaded every locale, which would hide a locale the hook forgot
@@ -26,7 +37,7 @@ async function fresh(
   failedImports: () => number
   hydrate: () => Promise<void>
   loaded: (locale: Locale) => boolean
-  routes: { locale: Guarded; seriesLocale: Guarded }
+  root: Guarded
   translate: typeof Translate
 }> {
   let failedImports = 0
@@ -34,8 +45,7 @@ async function fresh(
   globalThis.history.replaceState(null, '', path)
   const { getRouter } = await import('./router')
   const translate = await import('./i18n/translate')
-  const { Route: localeRoute } = await import('./routes/$locale')
-  const { Route: seriesLocale } = await import('./routes/$series/$locale')
+  const { Route: root } = await import('./routes/__root')
   // The series' own copy, as the page it came from keeps it.
   const { keepSeriesCopy } = await import('./routes/-series')
   keepSeriesCopy({ slug: 'one-piece', name: 'One Piece', words: {} }, 'en')
@@ -57,7 +67,7 @@ async function fresh(
         return false
       }
     },
-    routes: { locale: localeRoute, seriesLocale },
+    root,
     translate,
   }
 }
@@ -66,20 +76,20 @@ interface Guarded {
   options: { beforeLoad?: unknown }
 }
 
-/** Runs a route's real `beforeLoad` on a client navigation to `/…/en`. */
+/** Runs the root's real `beforeLoad` on a client navigation to an address. */
 async function enter(
   route: Guarded,
-  navigation: { abortController?: AbortController; preload?: boolean },
+  pathname: string,
+  navigation: { abortController?: AbortController; preload?: boolean } = {},
 ): Promise<unknown> {
   const guard: unknown = route.options.beforeLoad
   if (typeof guard !== 'function') {
-    throw new TypeError('A locale route needs its guard')
+    throw new TypeError('The root route needs its guard')
   }
   const result: unknown = await Reflect.apply(guard, undefined, [
     {
       abortController: new AbortController(),
-      context: { series: { slug: 'one-piece' } },
-      params: { locale: 'en' },
+      location: { pathname },
       preload: false,
       ...navigation,
     },
@@ -194,68 +204,219 @@ describe('getRouter', { timeout: 15_000 }, () => {
   })
 })
 
-// A navigation has pushed its address before the routes' `beforeLoad` runs,
-// so the stubbed address bar shows the page being opened.
-describe(
-  'the locale routes on a client navigation',
-  { timeout: 15_000 },
-  () => {
-    afterEach(() => {
-      vi.doUnmock('./i18n/dictionaries/en')
-      vi.unstubAllGlobals()
-      sessionStorage.clear()
-    })
+// A navigation has pushed its address before the root's `beforeLoad` runs,
+// so the stubbed address bar shows the page being opened. The root loads the
+// copy for every address: a page of a locale route, and the not-found page of
+// an address no locale route matches (#1374).
+describe('the root route on a client navigation', { timeout: 15_000 }, () => {
+  afterEach(() => {
+    vi.doUnmock('./i18n/dictionaries/en')
+    vi.unstubAllGlobals()
+    sessionStorage.clear()
+  })
 
-    it.each(['locale', 'seriesLocale'] as const)(
-      '%s: a preload never reloads, the navigation itself reloads once',
-      async (name) => {
-        const { routes } = await fresh('/it', true)
-        const reload = stubLocation('/one-piece/en')
+  it.each(['/en', '/one-piece/en', '/one-piece/en/nope', '/en/nope'])(
+    '%s: a preload never reloads, the navigation itself reloads once',
+    async (path) => {
+      const { root } = await fresh('/it', true)
+      const reload = stubLocation(path)
 
-        await expect(enter(routes[name], { preload: true })).rejects.toThrow(
-          Error,
-        )
-        expect(reload).not.toHaveBeenCalled()
-        expect(sessionStorage).toHaveLength(0)
-
-        const entering = enter(routes[name], {})
-        await vi.waitFor(() => {
-          expect(reload).toHaveBeenCalledTimes(1)
-        })
-
-        await expect(stillPending(entering)).resolves.toBe(true)
-        expect(sessionStorage.getItem(`${FLAG}/one-piece/en`)).toBe('1')
-      },
-    )
-
-    it('throws for the route to show its error when the reload did not help', async () => {
-      sessionStorage.setItem(`${FLAG}/one-piece/en`, '1')
-      const { routes } = await fresh('/it', true)
-      const reload = stubLocation('/one-piece/en')
-      const error = silenceErrors()
-
-      await expect(enter(routes.seriesLocale, {})).rejects.toThrow(Error)
+      await expect(enter(root, path, { preload: true })).rejects.toThrow(Error)
       expect(reload).not.toHaveBeenCalled()
-      expect(error).toHaveBeenCalledTimes(1)
+      expect(sessionStorage).toHaveLength(0)
+
+      const entering = enter(root, path)
+      await vi.waitFor(() => {
+        expect(reload).toHaveBeenCalledTimes(1)
+      })
+
+      await expect(stillPending(entering)).resolves.toBe(true)
+      expect(sessionStorage.getItem(FLAG + path)).toBe('1')
+    },
+  )
+
+  it('throws for the root to show its error when the reload did not help', async () => {
+    sessionStorage.setItem(`${FLAG}/one-piece/en`, '1')
+    const { root } = await fresh('/it', true)
+    const reload = stubLocation('/one-piece/en')
+    const error = silenceErrors()
+
+    await expect(enter(root, '/one-piece/en')).rejects.toThrow(Error)
+    expect(reload).not.toHaveBeenCalled()
+    expect(error).toHaveBeenCalledTimes(1)
+  })
+
+  it('leaves the page alone when a newer navigation superseded this one', async () => {
+    const { root } = await fresh('/it', true)
+    // Back to the page the reader came from, before the import failed.
+    const reload = stubLocation('/it')
+    const error = silenceErrors()
+    const abortController = new AbortController()
+    abortController.abort()
+
+    await expect(
+      enter(root, '/one-piece/en', { abortController }),
+    ).rejects.toThrow(Error)
+    expect(reload).not.toHaveBeenCalled()
+    expect(sessionStorage).toHaveLength(0)
+    expect(error).not.toHaveBeenCalled()
+  })
+})
+
+/** Long enough for a navigation to run as far as it can, inside `act`. */
+async function moment(): Promise<void> {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 100)
+  })
+}
+
+/**
+ * The real root route, mounted over one page per language, from the fresh
+ * modules `fresh` leaves: React and the router are imported after it, so the
+ * page and the root share one copy of each.
+ */
+async function mounted(): Promise<{
+  open: (path: string) => Promise<void>
+  page: () => string
+}> {
+  const { root } = await fresh('/it', true)
+  vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true)
+  const { act, createElement } = await import('react')
+  const { createRoot } = await import('react-dom/client')
+  const { createMemoryHistory, createRoute, createRouter, RouterProvider } =
+    await import('@tanstack/react-router')
+  const { Route: realRoot } = await import('./routes/__root')
+
+  expect(realRoot).toBe(root)
+
+  const page = createRoute({
+    getParentRoute: () => realRoot,
+    path: '$locale',
+    component: () => createElement('main', null, 'A page of the site'),
+  })
+  const router = createRouter({
+    routeTree: realRoot.addChildren([page]),
+    history: createMemoryHistory({ initialEntries: ['/it'] }),
+  })
+  await router.load()
+  // eslint-disable-next-line testing-library/no-unnecessary-act -- the rule takes React's own `root.render` for Testing Library's, which cannot render into `document` and would bring a second copy of React.
+  await act(async () => {
+    createRoot(document).render(createElement(RouterProvider, { router }))
+    await Promise.resolve()
+  })
+  return {
+    open: async (path) => {
+      await act(async () => {
+        void router.navigate({ to: path })
+        await new Promise((resolve) => {
+          setTimeout(resolve, 50)
+        })
+      })
+    },
+    page: () => document.body.textContent,
+  }
+}
+
+describe('the real root route, mounted', { timeout: 30_000 }, () => {
+  afterEach(() => {
+    vi.doUnmock('./i18n/dictionaries/en')
+    vi.unstubAllGlobals()
+    sessionStorage.clear()
+  })
+
+  it('reloads when the copy of the page being opened is gone, and keeps the page meanwhile', async () => {
+    const { open, page } = await mounted()
+    const reload = stubLocation('/en')
+
+    await open('/en')
+
+    expect(reload).toHaveBeenCalledTimes(1)
+    expect(page()).toContain('A page of the site')
+    expect(page()).not.toContain('Show Error')
+  })
+
+  it('draws its own error page, without the copy, when the reload did not help', async () => {
+    sessionStorage.setItem(`${FLAG}/en`, '1')
+    const { open, page } = await mounted()
+    const reload = stubLocation('/en')
+    const error = silenceErrors()
+
+    await open('/en')
+
+    expect(reload).not.toHaveBeenCalled()
+    expect(document.querySelectorAll('h1')).toHaveLength(1)
+    expect(document.querySelector('h1')).toHaveTextContent(
+      'Something went wrong',
+    )
+    expect(document.querySelector('main a')).toHaveAttribute('href', '/en')
+    // Set by the page itself: `head` gives a route in error no title.
+    expect(document.title).toBe('Something went wrong | Zero Spoiler')
+    expect(page()).toContain('This page could not be loaded.')
+    // Not the router's white default, and never the error's own message.
+    expect(page()).not.toContain('Show Error')
+    expect(page()).not.toContain('Importing a module script failed')
+    expect(page()).not.toContain('copy is not loaded')
+    // The failed import, as the reload path logs it for whoever debugs.
+    expect(error).toHaveBeenCalledWith(expect.any(Error))
+  })
+
+  // The router moves its location when a navigation starts, before the
+  // root's guard has loaded the copy of the new address. A page above every
+  // locale route reads its language from the root's context, which lands
+  // with that copy: read from the location, the page on screen asked for a
+  // copy not loaded yet, and the root's error page showed until the
+  // navigation ended (#1386).
+  it('keeps the not-found page and `<html lang>` as they are until the copy of the page being opened has arrived', async () => {
+    const { loaded } = await fresh('/it')
+    const copy = { arrived: false }
+    const arrived = (): boolean => copy.arrived
+    vi.doMock(import('./i18n/dictionaries/en'), async (importOriginal) => {
+      await vi.waitUntil(arrived, { timeout: 20_000, interval: 5 })
+      return importOriginal()
+    })
+    vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true)
+    const { act, createElement } = await import('react')
+    const { createRoot } = await import('react-dom/client')
+    const { createMemoryHistory, createRouter, RouterProvider } =
+      await import('@tanstack/react-router')
+    const { NotFoundPage } = await import('./routes/-fallback')
+    const { Route: realRoot } = await import('./routes/__root')
+    const english = '/nowhere/en/x'
+    const router = createRouter({
+      routeTree: realRoot,
+      history: createMemoryHistory({ initialEntries: ['/nowhere/it/x'] }),
+      defaultNotFoundComponent: NotFoundPage,
+    })
+    await router.load()
+    // eslint-disable-next-line testing-library/no-unnecessary-act -- as in `mounted`: React's own `root.render`, into `document`.
+    await act(async () => {
+      createRoot(document).render(createElement(RouterProvider, { router }))
+      await Promise.resolve()
+    })
+    const error = silenceErrors()
+
+    expect(document.querySelector('h1')).toHaveTextContent('Pagina non trovata')
+    expect(document.documentElement).toHaveAttribute('lang', 'it')
+
+    await act(async () => {
+      router.history.push(english)
+      await moment()
     })
 
-    it.each(['locale', 'seriesLocale'] as const)(
-      '%s: leaves the page alone when a newer navigation superseded this one',
-      async (name) => {
-        const { routes } = await fresh('/it', true)
-        // Back to the page the reader came from, before the import failed.
-        const reload = stubLocation('/it')
-        const error = silenceErrors()
-        const abortController = new AbortController()
-        abortController.abort()
+    // The address has moved, the copy has not arrived: the page stays.
+    expect(router.state.location.pathname).toBe(english)
+    expect(loaded('en')).toBe(false)
+    expect(document.querySelector('h1')).toHaveTextContent('Pagina non trovata')
+    expect(document.documentElement).toHaveAttribute('lang', 'it')
 
-        await expect(enter(routes[name], { abortController })).rejects.toThrow(
-          Error,
-        )
-        expect(reload).not.toHaveBeenCalled()
-        expect(sessionStorage).toHaveLength(0)
-        expect(error).not.toHaveBeenCalled()
-      },
-    )
-  },
-)
+    await act(async () => {
+      copy.arrived = true
+      await moment()
+    })
+
+    expect(document.querySelector('h1')).toHaveTextContent('Page not found')
+    expect(document.documentElement).toHaveAttribute('lang', 'en')
+    expect(document.title).toBe('Page not found | Zero Spoiler')
+    expect(error).not.toHaveBeenCalled()
+  })
+})
