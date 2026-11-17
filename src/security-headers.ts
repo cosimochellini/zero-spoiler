@@ -22,7 +22,7 @@ export function createSecurityHeaders(
       // 'unsafe-inline' next to one and logs a warning for it, and browsers
       // without nonce support are no longer a target. The keyword survives
       // only in the fallback below, for a render that has no nonce at all.
-      scriptSource(nonce),
+      scriptSource(nonce) + liveHelper(),
       // Unlike `script-src`, this one stays on blanket 'unsafe-inline' on
       // purpose. A nonce here would be counter-productive: nonces cannot be
       // attached to a `style` attribute, so `style-src-attr` inherits this
@@ -36,7 +36,7 @@ export function createSecurityHeaders(
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data:",
       "font-src 'self' data:",
-      "connect-src 'self'",
+      `connect-src 'self'${liveHelper()}`,
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -51,6 +51,15 @@ export function createSecurityHeaders(
     // preload list as a whole.
     'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
   }
+}
+
+// Dev only. impeccable's live mode (`/impeccable live`) loads its picker from a
+// helper on the developer's machine and talks back to it: port 8400, or the
+// next free one when another checkout's helper holds that. In a production
+// build `import.meta.env.DEV` is replaced with `false`, the allowance folds to
+// the empty string and the policy is the one written above, byte for byte.
+function liveHelper(): string {
+  return import.meta.env.DEV ? ' http://localhost:*' : ''
 }
 
 function scriptSource(nonce: string | undefined): string {
