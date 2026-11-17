@@ -572,6 +572,6 @@ async function main() {
   return checkServer(repositoryRoot, canaries)
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] === import.meta.filename) {
   process.exit(await main())
 }

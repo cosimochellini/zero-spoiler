@@ -1,6 +1,7 @@
 /** Compare raw client JavaScript bytes with a separately built PR base. */
 import console from 'node:console'
 import process from 'node:process'
+import { pathToFileURL } from 'node:url'
 
 import { clientChunks } from './archive-gate.mjs'
 
@@ -78,7 +79,7 @@ export function checkClientBudget(baseDirectory, headDirectory, body) {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   const [baseDirectory, headDirectory] = process.argv.slice(2)
   if (!baseDirectory || !headDirectory) {
     console.error(

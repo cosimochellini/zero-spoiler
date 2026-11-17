@@ -7,20 +7,29 @@
  * desktop width. URLs are scanned, not source: the detector applies only a few
  * regex rules to `.tsx` and cannot read `stylex.create`.
  *
- * Waivers live in `.impeccable/config.json` under `detector`, each with a
- * reason, and the detector applies them itself, so the design hook reads the
- * same baseline. Advisory rules never fail the gate.
+ * Waivers live in the shared `.impeccable/config.json` under
+ * `detector.ignoreValues`, each with a reason; the design hook reads the same
+ * file. The scan itself is raw (`--no-config`) and the gate applies the
+ * waivers, in `design-gate.rules.mjs`, because that is the only way one scan
+ * shows both what a waiver hides and that it still hides something: a waiver
+ * that matches nothing fails the gate. `.impeccable/config.local.json` and
+ * in-file ignore comments are therefore never read, so a developer's machine
+ * and CI agree. Advisory rules never fail the gate.
  *
  * The bookmark: `?ep=N` answers 302 and sets the series cookie. The detector's
  * browser follows it and keeps cookies for the rest of one run, on a profile
  * that starts empty. So each width takes two runs: one with no bookmark (the
  * landing and onboarding pages), one where every address carries `?ep=N`.
+ * Before either, the gate asks for every page itself and refuses to scan one
+ * that is not in the state it wants.
  *
  * Exit codes:
  *   0  clean
  *   1  findings that no waiver covers
- *   2  the tool failed: no build, the server did not start, a page did not
- *      answer 200, or the detector could not scan a target
+ *   2  the gate cannot vouch for the scan: no build, the server did not
+ *      start, the page list is short, a page was not served as asked, the
+ *      detector could not scan a target or ran out of time, or a waiver gives
+ *      no reason or matches nothing
  */
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
@@ -35,28 +44,38 @@ import { createServer } from 'node:net'
 import path from 'node:path'
 import process from 'node:process'
 import { setTimeout as sleep } from 'node:timers/promises'
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+
+import {
+  bookmarkedPageProblem,
+  bookmarkProblem,
+  detectorProblem,
+  judge,
+  pageProblem,
+  pagesOf,
+  unexplainedWaivers,
+} from './design-gate.rules.mjs'
 
 const EXIT_CLEAN = 0
 const EXIT_FINDINGS = 1
 const EXIT_TOOL_FAILURE = 2
-
-// The detector's own codes: 0 clean, 2 findings, 1 a target was not scanned.
-const DETECTOR_FINDINGS = 2
+// 128 + the signal's number, as a shell reports a process a signal ended.
+const SIGNAL_EXITS = { SIGINT: 130, SIGTERM: 143 }
 
 const VIEWPORTS = ['390x844', '1440x900']
 const LOCALE = 'en'
 const HOST = '127.0.0.1'
 const READY_TIMEOUT_MS = 60_000
 const READY_POLL_MS = 250
+const FETCH_TIMEOUT_MS = 15_000
 const DETECT_TIMEOUT_MS = 300_000
 const MAX_PRINTED = 60
 
 /**
  * Per series: a bookmark in the middle of the story, so a page shows revealed
- * and fogged content together, and the record of each kind to open. A series
- * that is not listed is still scanned, with no bookmark and the first record
- * of each kind in the sitemap.
+ * and fogged content together, and the record of each kind to open, which has
+ * to be open at that bookmark. A series that is not listed is still scanned,
+ * with no bookmark and the first record of each kind in the sitemap.
  */
 const SAMPLES = {
   'one-piece': {
@@ -69,6 +88,7 @@ const SAMPLES = {
     ep: 75,
     characters: 'gon-freecss',
     places: 'heavens-arena',
+    abilities: 'battle-waltz',
   },
   'game-of-thrones': { ep: 35, characters: 'jon-snow', places: 'winterfell' },
 }
@@ -77,49 +97,44 @@ const repositoryRoot = path.resolve(import.meta.dirname, '..')
 const reportPath = path.join(repositoryRoot, '.gate', 'design.json')
 const configPath = path.join(repositoryRoot, '.impeccable', 'config.json')
 
-// The preview server and the detector runs. None may outlive the gate, on a
-// pass, a failure or an uncaught throw alike.
+// The preview server and the detector runs, each the leader of a process
+// group of its own: the preview starts workerd, and the detector is a shim
+// that starts the engine, which starts Chrome. Killing the group is the only
+// way to reach all of them, and only groups started here are ever killed.
 const children = new Set()
+
+function killGroup(child) {
+  try {
+    process.kill(-child.pid, 'SIGKILL')
+  } catch {
+    // The group is already gone.
+  }
+}
+
+// On a pass, a failure, an uncaught throw or a cancelled run alike, nothing
+// started here outlives the gate. The groups are detached, so a Ctrl-C does
+// not reach them by itself: the handlers turn the signal into an exit.
 process.on('exit', () => {
   for (const child of children) {
-    child.kill()
+    killGroup(child)
   }
 })
+for (const [signal, code] of Object.entries(SIGNAL_EXITS)) {
+  process.on(signal, () => process.exit(code))
+}
 
 function fail(headline) {
   process.stderr.write(
     `\ndesign gate: TOOL FAILURE\n  ${headline}\n\n`
-      + '  This is not a design finding: the pages were not scanned, so the\n'
-      + '  gate refuses to pass.\n',
+      + '  This is not a design finding: the gate cannot vouch for the scan,\n'
+      + '  so it refuses to pass.\n',
   )
   process.exit(EXIT_TOOL_FAILURE)
 }
 
 /**
- * Every waiver says why. `ignoreRules` and `ignoreFiles` hold bare strings
- * with no room for a reason, so a waiver goes in `ignoreValues`: `"*"` as the
- * value and a `files` glob turn a whole rule off, on every page (`**`) or on
- * the pages of one type.
- * @param {object} config The parsed `.impeccable/config.json`.
- * @returns {string[]} The waivers that give no reason.
- */
-export function unexplainedWaivers(config) {
-  const {
-    ignoreRules = [],
-    ignoreFiles = [],
-    ignoreValues = [],
-  } = config.detector ?? {}
-  return [
-    ...ignoreRules,
-    ...ignoreFiles,
-    ...ignoreValues
-      .filter((waiver) => !waiver.reason?.trim())
-      .map((waiver) => `${waiver.rule}=${waiver.value}`),
-  ]
-}
-
-/**
- * Starts this Node binary on a script and keeps what it prints.
+ * Starts this Node binary on a script, in a process group of its own, and
+ * keeps what it prints.
  * @param {string[]} args The script and its arguments.
  * @returns {{child: import('node:child_process').ChildProcess, output: {stdout: string, stderr: string}}}
  *   The child and both streams, filled as it writes.
@@ -128,9 +143,14 @@ function start(args) {
   // fallow-ignore-next-line security-sink -- this Node binary, on a script path this file builds
   const child = spawn(process.execPath, args, {
     cwd: repositoryRoot,
+    detached: true,
+    // The scan passes --no-config, which also skips the config's own
+    // `telemetry: false`.
+    env: { ...process.env, IMPECCABLE_NO_TELEMETRY: '1' },
     stdio: ['ignore', 'pipe', 'pipe'],
   })
   children.add(child)
+  child.on('close', () => children.delete(child))
   const output = { stdout: '', stderr: '' }
   child.stdout.on('data', (chunk) => (output.stdout += chunk))
   child.stderr.on('data', (chunk) => (output.stderr += chunk))
@@ -152,19 +172,40 @@ function freePort() {
 }
 
 /**
+ * One request to the preview server, never followed and never left waiting.
+ * @param {string} url The address.
+ * @param {string} [cookie] A `name=value` to send.
+ * @returns {Promise<{status: number, html: string, setCookie: null | string, location: null | string}>}
+ *   What it answered.
+ */
+async function ask(url, cookie) {
+  // fallow-ignore-next-line security-sink -- the preview server this gate started on 127.0.0.1
+  const response = await fetch(url, {
+    headers: cookie === undefined ? {} : { cookie },
+    redirect: 'manual',
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+  })
+  return {
+    status: response.status,
+    html: await response.text(),
+    setCookie: response.headers.get('set-cookie'),
+    location: response.headers.get('location'),
+  }
+}
+
+/**
  * @param {string} origin The preview server.
  * @returns {Promise<null | string>} Its sitemap, or null while it is not up.
  */
 async function sitemapOf(origin) {
-  let response
+  let answer
   try {
-    // fallow-ignore-next-line security-sink -- the preview server this gate started on 127.0.0.1
-    response = await fetch(`${origin}/sitemap.xml`)
+    answer = await ask(`${origin}/sitemap.xml`)
   } catch {
-    // Not listening yet.
+    // Not listening yet, or accepting and not answering.
     return null
   }
-  return response.ok ? response.text() : null
+  return answer.status === 200 ? answer.html : null
 }
 
 /**
@@ -202,149 +243,114 @@ async function serve() {
 }
 
 /**
- * The home of one series, its indexes and one record of each kind.
- * @param {string} slug The series.
- * @param {string[][]} own Its sitemap paths, split: slug, locale, kind, id.
- * @returns {string[]} Paths, the home first.
- */
-function seriesPages(slug, own) {
-  const home = `/${slug}/${LOCALE}`
-  const kinds = new Set(own.map((parts) => parts[2]).filter(Boolean))
-  return [home, ...kinds].flatMap((kind) => {
-    if (kind === home) {
-      return home
-    }
-    const ids = own.filter((p) => p[2] === kind && p[3]).map((p) => p[3])
-    const id = SAMPLES[slug]?.[kind] ?? ids[0]
-    if (id === undefined) {
-      return `${home}/${kind}`
-    }
-    if (!ids.includes(id)) {
-      throw new Error(
-        `SAMPLES names ${slug}/${kind}/${id}, which the sitemap does not list: update scripts/design-gate.mjs`,
-      )
-    }
-    return [`${home}/${kind}`, `${home}/${kind}/${id}`]
-  })
-}
-
-/**
- * The pages to scan, as paths. The sitemap is built from the series registry,
- * so a new series or page type is scanned without an edit here.
- * @param {string} sitemap The served sitemap.
- * @returns {{landing: string[], bookmarked: string[]}} Paths with no bookmark,
- *   and paths that set one.
- * @throws {Error} When SAMPLES names a record the sitemap does not list.
- */
-export function pagesOf(sitemap) {
-  const paths = sitemap
-    .matchAll(/<loc>(?<loc>[^<]+)<\/loc>/gu)
-    .map((match) => URL.parse(match.groups.loc).pathname.split('/').slice(1))
-    .filter((parts) => parts.includes(LOCALE))
-    .toArray()
-
-  // `/en` and `/en/legal`: the pages outside any series.
-  const landing = paths
-    .filter((parts) => parts[0] === LOCALE)
-    .map((parts) => `/${parts.join('/')}`)
-  const bookmarked = []
-
-  const slugs = new Set(
-    paths.filter((parts) => parts[1] === LOCALE).map((parts) => parts[0]),
-  )
-  for (const slug of slugs) {
-    const pages = seriesPages(
-      slug,
-      paths.filter((parts) => parts[0] === slug),
-    )
-    const ep = SAMPLES[slug]?.ep
-    // With no bookmark to set, the whole series is scanned as a new reader
-    // sees it; with one, only its home is.
-    landing.push(...(ep === undefined ? pages : pages.slice(0, 1)))
-    bookmarked.push(
-      ...(ep === undefined ? [] : pages.map((page) => `${page}?ep=${ep}`)),
-    )
-  }
-  return { landing, bookmarked }
-}
-
-/**
- * A wrong id or a server error still renders a page the detector would scan
- * and pass, so every address has to answer 200 first.
+ * Sets the bookmark as the detector's browser will, then asks for the page
+ * with it.
  * @param {string} origin The preview server.
- * @param {string[]} pages Paths to request.
+ * @param {object} page A bookmarked page of `pagesOf`.
+ * @returns {Promise<null | string>} What is wrong with it, or null.
  */
-async function assertServed(origin, pages) {
-  for (const page of pages) {
-    // fallow-ignore-next-line security-sink -- the preview server this gate started on 127.0.0.1
-    const response = await fetch(origin + page)
-    if (response.status !== 200) {
-      fail(`${page} answered ${response.status}, expected 200`)
-    }
+async function bookmarkedProblem(origin, page) {
+  const redirect = await ask(`${origin}${page.path}?ep=${page.ep}`)
+  const problem = bookmarkProblem(page, redirect)
+  if (problem !== null) {
+    return problem
+  }
+  const [cookie] = redirect.setCookie.split(';', 1)
+  return bookmarkedPageProblem(
+    page,
+    await ask(origin + redirect.location, cookie),
+  )
+}
+
+/**
+ * A wrong id, a server error, a bookmark the site refused or a record under
+ * fog all render a page the detector would scan and pass, so every page is
+ * asked for first.
+ * @param {string} origin The preview server.
+ * @param {{landing: string[], bookmarked: object[]}} pages The page list.
+ */
+async function assertServed(origin, { landing, bookmarked }) {
+  const problems = []
+  for (const page of landing) {
+    const problem = pageProblem(await ask(origin + page))
+    problems.push(...(problem === null ? [] : [`${page} ${problem}`]))
+  }
+  for (const page of bookmarked) {
+    const problem = await bookmarkedProblem(origin, page)
+    problems.push(...(problem === null ? [] : [`${page.path} ${problem}`]))
+  }
+  if (problems.length > 0) {
+    fail(
+      `${problems.length} page(s) were not served as the gate asked:\n    ${problems.join('\n    ')}`,
+    )
   }
 }
 
 /**
  * One detector run: one browser profile, one viewport.
- * @param {string} origin The preview server.
  * @param {string} viewport Width and height, as `390x844`.
- * @param {string[]} pages Paths, scanned in order.
- * @returns {Promise<object[]>} The findings, each with its page and viewport.
+ * @param {string[]} urls Addresses, scanned in order; never empty.
+ * @returns {Promise<object[]>} The raw findings, each with its viewport.
  */
-async function detect(origin, viewport, pages) {
+async function detect(viewport, urls) {
   const { child, output } = start([
     // The npm shim: it runs the engine of this platform's optional package.
     fileURLToPath(import.meta.resolve('impeccable/cli/bin/cli.js')),
     'detect',
     '--json',
+    '--no-config',
     '--viewport',
     viewport,
-    // Anything after `npm run gate:design --` goes to the detector, so
-    // `-- --no-config` shows the findings the waivers hide.
-    ...process.argv.slice(2),
-    ...pages.map((page) => origin + page),
+    ...urls,
   ])
-  const timer = setTimeout(() => child.kill(), DETECT_TIMEOUT_MS)
+  const timer = setTimeout(() => {
+    killGroup(child)
+  }, DETECT_TIMEOUT_MS)
   const [status] = await once(child, 'close')
   clearTimeout(timer)
-  const { stdout, stderr } = output
-  if (status !== 0 && status !== DETECTOR_FINDINGS) {
+
+  const problem = detectorProblem(status)
+  if (problem !== null) {
     fail(
-      `impeccable detect exited ${status} at ${viewport}: a page could not be scanned.\n`
-        + '  It needs Chrome, Chromium or Edge: set IMPECCABLE_BROWSER (or CHROME_PATH) to the\n'
-        + '  executable when it is not on PATH. If Chrome refuses to start for want of a sandbox,\n'
+      `impeccable detect ${problem} (${viewport}, limit ${DETECT_TIMEOUT_MS / 1000}s).\n`
+        + '  It needs Chrome, Chromium or Edge: set IMPECCABLE_BROWSER to the executable when\n'
+        + '  it is not on PATH. If Chrome refuses to start for want of a sandbox,\n'
         + '  PUPPETEER_DANGEROUS_NO_SANDBOX=1 turns it off for this run.\n'
-        + `  Its output:\n${stderr}${stdout}`,
+        + `  Its output:\n${output.stderr}${output.stdout}`,
     )
   }
-  let findings
-  try {
-    findings = JSON.parse(stdout)
-  } catch (error) {
-    fail(
-      `impeccable detect printed no JSON at ${viewport}: ${String(error)}\n${stderr}`,
-    )
-  }
-  return findings.map((finding) => ({
-    ...finding,
-    file: finding.file.replace(origin, ''),
-    viewport,
-  }))
+  return JSON.parse(output.stdout).map((finding) => ({ ...finding, viewport }))
 }
 
 /**
- * Advisory rules are listed in the report and never block.
- * @param {object[]} findings Every finding.
- * @returns {object[]} The ones that fail the gate.
+ * Scans every page at every width, each run in a browser of its own, side by
+ * side: in sequence they take four times as long.
+ * @param {string} origin The preview server.
+ * @param {string} sitemap Its sitemap.
+ * @returns {Promise<object[]>} Every raw finding.
  */
-export function blockingOf(findings) {
-  return findings.filter((finding) => !finding.advisory)
+async function scan(origin, sitemap) {
+  const pages = pagesOf(sitemap, SAMPLES, LOCALE)
+  await assertServed(origin, pages)
+  const landing = pages.landing.map((page) => origin + page)
+  const bookmarked = pages.bookmarked.map(
+    (page) => `${origin}${page.path}?ep=${page.ep}`,
+  )
+  process.stdout.write(
+    `design gate: scanning ${landing.length + bookmarked.length} page(s) at ${VIEWPORTS.join(' and ')}\n`,
+  )
+  const runs = await Promise.all(
+    VIEWPORTS.flatMap((viewport) => [
+      detect(viewport, landing),
+      detect(viewport, bookmarked),
+    ]),
+  )
+  return runs.flat()
 }
 
-function report(findings) {
-  const blocking = blockingOf(findings)
+function report(findings, blocking, origin) {
   process.stdout.write(
-    `\ndesign gate: ${findings.length} finding(s), ${blocking.length} blocking\n`
+    `\ndesign gate: ${findings.length} raw finding(s), ${blocking.length} blocking\n`
       + `  report: ${path.relative(repositoryRoot, reportPath)}\n`,
   )
   if (blocking.length === 0) {
@@ -356,71 +362,58 @@ function report(findings) {
     .slice(0, MAX_PRINTED)
     .map(
       (finding) =>
-        `    [${finding.antipattern}] ${finding.file} at ${finding.viewport}\n`
+        `    [${finding.antipattern}] ${finding.file.replace(origin, '')} at ${finding.viewport}\n`
         + `        ${finding.snippet}\n        ${finding.selector ?? ''}\n`,
     )
   process.stdout.write(`\n  blocking findings:\n${lines.join('')}`)
   process.stderr.write(
     `\ndesign gate: FAILED with ${blocking.length} blocking finding(s).\n`
       + '  Fix the page, or waive a rule the house style contradicts in\n'
-      + '  .impeccable/config.json with a reason (`impeccable ignores --help`).\n',
+      + '  .impeccable/config.json with a reason (see CONTRIBUTING.md, "Checks").\n',
   )
   return EXIT_FINDINGS
 }
 
-/**
- * Scans every page at every width, each run in a browser of its own, side by
- * side: in sequence they take four times as long.
- * @param {string} origin The preview server.
- * @param {string} sitemap Its sitemap.
- * @returns {Promise<object[]>} Every finding.
- */
-async function scan(origin, sitemap) {
-  const { landing, bookmarked } = pagesOf(sitemap)
-  await assertServed(origin, [...landing, ...bookmarked])
-  process.stdout.write(
-    `design gate: scanning ${landing.length + bookmarked.length} page(s) at ${VIEWPORTS.join(' and ')}\n`,
-  )
-  const runs = await Promise.all(
-    VIEWPORTS.flatMap((viewport) => [
-      detect(origin, viewport, landing),
-      detect(origin, viewport, bookmarked),
-    ]),
-  )
-  return runs.flat()
-}
-
-function assertReady() {
-  const unexplained = unexplainedWaivers(
-    JSON.parse(readFileSync(configPath, 'utf8')),
-  )
+function readConfig() {
+  const config = JSON.parse(readFileSync(configPath, 'utf8'))
+  const unexplained = unexplainedWaivers(config)
   if (unexplained.length > 0) {
     fail(
       `.impeccable/config.json waives ${unexplained.join(', ')} with no reason.\n`
-        + '  Use `impeccable ignores add-value <rule> "*" --file <glob> --reason "..."`.',
+        + '  Use `npx impeccable ignores add-value <rule> "*" --file "<url glob>" --reason "..."`.',
     )
   }
-  if (!existsSync(path.join(repositoryRoot, 'dist', 'client'))) {
-    fail('dist/ is missing: run `npm run build` first')
-  }
+  return config
 }
 
 async function main() {
   mkdirSync(path.dirname(reportPath), { recursive: true })
   // A stale report must never survive a failed run.
   rmSync(reportPath, { force: true })
-  assertReady()
+  const config = readConfig()
+  if (!existsSync(path.join(repositoryRoot, 'dist', 'client'))) {
+    fail('dist/ is missing: run `npm run build` first')
+  }
 
   const started = Date.now()
   const { origin, sitemap } = await serve()
   const findings = await scan(origin, sitemap)
-  writeFileSync(reportPath, `${JSON.stringify(findings, null, 2)}\n`)
-  const verdict = report(findings)
+  const { blocking, stale } = judge(findings, config)
+  writeFileSync(
+    reportPath,
+    `${JSON.stringify({ blocking, stale, findings }, null, 2)}\n`,
+  )
+  const verdict = report(findings, blocking, origin)
   process.stdout.write(`  took ${Math.round((Date.now() - started) / 1000)}s\n`)
+  if (stale.length > 0) {
+    fail(
+      `${stale.length} waiver(s) in .impeccable/config.json match no finding any more. Remove them:\n    ${stale.join('\n    ')}`,
+    )
+  }
   return verdict
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   try {
     // An explicit exit: the preview server would keep the process alive.
     process.exit(await main())
