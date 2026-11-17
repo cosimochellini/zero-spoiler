@@ -2,12 +2,14 @@ import { screen, within } from '@testing-library/react'
 import type { ReactElement } from 'react'
 import { describe, expect, it } from 'vitest'
 
+import { readOpenEntries } from '~/lib/progress/openEntries'
 import type { PlaceDetail, PlacesView, StopView } from '~/lib/view/places'
 import type { PlaceWordsView } from '~/lib/view/records'
 import {
   at,
   coveredRecord,
   dossier,
+  openEntryLinks,
   openSlot,
   peekPending,
   port,
@@ -187,6 +189,20 @@ describe('the places page without the world map', () => {
     expect(
       screen.getByRole('heading', { level: 2, name: 'Yorbia' }),
     ).toBeVisible()
+  })
+
+  it('reports as many open entries as it draws', async () => {
+    await renderOnRoute(
+      <PlacesBody
+        page={page({ open })}
+        peekPort={peekPending()}
+        served={null}
+      />,
+      onRoute,
+    )
+
+    expect(openEntryLinks('places')).toBe(open.length)
+    expect(readOpenEntries()).toBe(openEntryLinks('places'))
   })
 
   it('says everything is under fog with nothing reached', async () => {

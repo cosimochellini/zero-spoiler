@@ -66,8 +66,8 @@ export const enDictionary = {
   'trial.save': 'Save this point',
   'trial.leave': 'Leave the trial',
 
-  'status.set': 'Bookmark set to {threshold}.',
-  'status.moved': 'Bookmark moved to {threshold}.',
+  'status.set': 'Bookmark set: {point}.',
+  'status.moved': 'Bookmark moved: {point}.',
   'status.cleared': 'Bookmark cleared.',
   'status.opened': '{count} more entries are open.',
   'status.openedOne': '1 more entry is open.',

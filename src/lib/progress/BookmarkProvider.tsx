@@ -1,8 +1,11 @@
 import { useRouter } from '@tanstack/react-router'
 import {
+  type Dispatch,
   type ReactElement,
   type ReactNode,
+  type SetStateAction,
   useCallback,
+  useEffect,
   useMemo,
   useState,
   useTransition,
@@ -74,9 +77,7 @@ function SeriesBookmarkProvider({
   series,
 }: BookmarkProviderProps): ReactElement {
   const router = useRouter()
-  // The point, whether it is a trial and what the last save changed move
-  // together, in one update.
-  const [stored, setStored] = useState<Stored>(
+  const [stored, setStored] = useStored(
     series === null ?
       { bookmark: null, trial: false, notice: null }
     : { bookmark: initialBookmark, trial: initialTrial, notice: null },
@@ -94,7 +95,12 @@ function SeriesBookmarkProvider({
       // answer for the bookmark the reader has just left.
       // A saved bookmark, or none, ends a trial either way.
       saveCookie(series, next)
-      const seen = seenOn(router.latestLocation.pathname)
+      // Read before the pages change: the listing on screen still counts
+      // what was open at the bookmark the reader is leaving.
+      const seen = {
+        open: readOpenEntries(),
+        path: router.latestLocation.pathname,
+      }
 
       // Inside a transition, so the pages the reader is looking at stay on
       // screen — already correct, already censored — until the new ones are
@@ -107,7 +113,7 @@ function SeriesBookmarkProvider({
         await router.invalidate()
       })
     },
-    [router, series],
+    [router, series, setStored],
   )
 
   // The caller is a link, so the page it opens reads this cookie; the cache
@@ -123,7 +129,7 @@ function SeriesBookmarkProvider({
         setStored({ bookmark: point, trial: true, notice: null })
       })
     },
-    [router, series],
+    [router, series, setStored],
   )
 
   const leaveTrial = useCallback(() => {
@@ -135,7 +141,7 @@ function SeriesBookmarkProvider({
       setStored({ bookmark: null, trial: false, notice: null })
       await router.invalidate()
     })
-  }, [router, series])
+  }, [router, series, setStored])
 
   const value = useMemo<BookmarkContextValue>(
     () => ({ ...stored, series, enterTrial, leaveTrial, pending, setBookmark }),
@@ -145,6 +151,36 @@ function SeriesBookmarkProvider({
   return <BookmarkContext value={value}>{children}</BookmarkContext>
 }
 
+/**
+ * The point, whether it is a trial and what the last save changed: they move
+ * together, in one update.
+ *
+ * The notice ends when the reader leaves the page the save was made on. It is
+ * dropped as the navigation starts, not hidden, so coming back to that page,
+ * by a link or with Back, does not bring the sentence and its Undo back. A
+ * re-read of the same page, as a save itself asks for, leaves it.
+ */
+function useStored(
+  initial: Stored,
+): [Stored, Dispatch<SetStateAction<Stored>>] {
+  const router = useRouter()
+  const [stored, setStored] = useState(initial)
+
+  useEffect(
+    () =>
+      router.subscribe('onBeforeLoad', ({ toLocation }) => {
+        setStored((was) =>
+          was.notice === null || was.notice.path === toLocation.pathname ?
+            was
+          : { ...was, notice: null },
+        )
+      }),
+    [router],
+  )
+
+  return [stored, setStored]
+}
+
 /** What the provider holds: the point, and what the last save changed. */
 interface Stored {
   bookmark: Bookmark
@@ -152,23 +188,16 @@ interface Stored {
   trial: boolean
 }
 
-/** What a notice keeps of the page a save was made on. */
-type Seen = Pick<BookmarkNotice, 'open' | 'path'>
-
-/**
- * Read before the pages change: the listing on screen still counts what was
- * open at the bookmark the reader is leaving.
- */
-function seenOn(path: string): Seen {
-  return { open: readOpenEntries(), path }
-}
-
 /**
  * The saved bookmark, and what saving it changed: nothing, when it is the
  * bookmark already held. A trial point was never saved, so a save out of a
  * trial starts from none.
  */
-function savedOver(was: Stored, to: Bookmark, seen: Seen): Stored {
+function savedOver(
+  was: Stored,
+  to: Bookmark,
+  seen: Pick<BookmarkNotice, 'open' | 'path'>,
+): Stored {
   const from = was.trial ? null : was.bookmark
 
   return {

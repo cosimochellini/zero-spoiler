@@ -56,8 +56,8 @@ export const itDictionary: Dictionary = {
   'trial.save': 'Salva questo punto',
   'trial.leave': 'Esci dalla prova',
 
-  'status.set': 'Segnalibro impostato su {threshold}.',
-  'status.moved': 'Segnalibro spostato su {threshold}.',
+  'status.set': 'Segnalibro impostato: {point}.',
+  'status.moved': 'Segnalibro spostato: {point}.',
   'status.cleared': 'Segnalibro cancellato.',
   'status.opened': 'Altre {count} voci sono visibili.',
   'status.openedOne': 'Un’altra voce è visibile.',

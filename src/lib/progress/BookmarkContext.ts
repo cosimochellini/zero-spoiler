@@ -17,7 +17,7 @@ export interface BookmarkNotice {
   from: Bookmark
   /** How many entries the listing on screen had open; `null` off a listing. */
   open: null | number
-  /** The page the save was made on: the line leaves with it. */
+  /** The page the save was made on: the notice ends when the reader leaves it. */
   path: string
   /** The saved bookmark now; `null` when it was cleared. */
   to: Bookmark
@@ -37,7 +37,10 @@ export interface BookmarkContextValue {
   enterTrial: (point: NonNullable<Bookmark>) => void
   /** Drops the trial point and re-reads the pages without it. */
   leaveTrial: () => void
-  /** What the last save on this page changed; `null` before one. */
+  /**
+   * What the last save changed. It ends when the reader leaves the page the
+   * save was made on, and does not come back with that page.
+   */
   notice: BookmarkNotice | null
   /** True while the pages are being re-read for a bookmark that just moved. */
   pending: boolean

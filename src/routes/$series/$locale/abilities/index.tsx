@@ -4,7 +4,6 @@ import type { ReactElement } from 'react'
 import { AbilityAlbum } from '~/components/AbilityAlbum'
 import { ArchivePage } from '~/components/ArchivePage'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
-import { useOpenEntries } from '~/lib/progress/openEntries'
 import { parseAbilityParams } from '~/lib/search/abilityParams'
 import { seriesPageHead } from '~/routes/$locale/-head'
 import { requirePage } from '~/routes/$series/$locale/-found'
@@ -34,7 +33,6 @@ export const Route = createFileRoute('/$series/$locale/abilities/')({
 function AbilitiesPage(): ReactElement {
   const t = useSeriesOnlyT('hunter-x-hunter')
   const sheet = Route.useLoaderData()
-  useOpenEntries(sheet.filed - sheet.covered.length)
   const [params, onParams] = useAddressParams(parseAbilityParams)
 
   return (

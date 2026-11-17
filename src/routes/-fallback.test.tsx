@@ -105,7 +105,7 @@ const seriesLocale = createRoute({
       <LocaleShell
         copy={copyOf(described, locale)}
         locale={locale}
-        trial
+        series
       >
         <Outlet />
         <FirstVisitIntro />

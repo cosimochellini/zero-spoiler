@@ -18,7 +18,7 @@ export function LocaleShell({
   copy,
   children,
   shared = false,
-  trial = false,
+  series = false,
 }: {
   children: ReactNode
   /** The series' own copy, on a page of a series. */
@@ -26,7 +26,11 @@ export function LocaleShell({
   locale: Locale
   /** A page with no series: the hub and the legal notices. */
   shared?: boolean
-  trial?: boolean
+  /**
+   * A page of a series: it carries the two lines that speak about that
+   * series' bookmark, the trial strip and the status after a save.
+   */
+  series?: boolean
 }): ReactElement {
   return (
     <LocaleProvider
@@ -42,7 +46,7 @@ export function LocaleShell({
       <div {...stylex.props(styles.shell)}>
         <SiteBar />
         <div>
-          {trial && (
+          {series && (
             <>
               <TrialStrip />
               <BookmarkStatus />

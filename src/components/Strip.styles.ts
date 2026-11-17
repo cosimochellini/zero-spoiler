@@ -7,9 +7,11 @@ import { color, leading, rule, space, text } from '~/styles/tokens.stylex'
  * strip, and the status after a save. Two accent hairlines on the second
  * paper, a sentence and its buttons.
  *
- * The sentence is set in the body face. It was mono uppercase on the trial
- * strip; the Mono Rule keeps that face for numerals, counts and short labels,
- * and a sentence is none of them (#1375).
+ * The sentence is the Body role (Instrument Sans at 1rem, line height 1.6, so
+ * a wrap on a phone reads as running text) at weight 600, the weight a button
+ * has, which sets it apart from the page's text. It was mono uppercase on the
+ * trial strip; the Mono Rule keeps that face for numerals, counts and short
+ * labels, and a sentence is none of them (#1375).
  */
 export const stripStyles = stylex.create({
   strip: {
@@ -30,7 +32,7 @@ export const stripStyles = stylex.create({
     fontSize: text.base,
     fontVariantNumeric: 'tabular-nums',
     fontWeight: 600,
-    lineHeight: leading.heading,
+    lineHeight: leading.body,
     textWrap: 'balance',
   },
 })

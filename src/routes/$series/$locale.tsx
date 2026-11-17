@@ -82,7 +82,7 @@ function SeriesLayout(): ReactElement {
         <LocaleShell
           copy={copy}
           locale={locale}
-          trial
+          series
         >
           <Outlet />
           <FirstVisitIntro />

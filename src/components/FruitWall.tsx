@@ -12,6 +12,7 @@ import {
 } from '~/components/SpecimenBands'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
+import { useOpenEntries } from '~/lib/progress/openEntries'
 import { sagaAnchor } from '~/lib/search/fruitParams'
 import type { FruitPlateCount } from '~/lib/view/fruits'
 import type { FruitMarqueeView, FruitView } from '~/lib/view/records'
@@ -65,6 +66,7 @@ export function FruitsAlbum({
 }: FruitsAlbumProps): ReactElement {
   const { bookmark } = useBookmark()
   const fromWallRef = useRef(false)
+  useOpenEntries(sheet.plates.reduce((sum, plate) => sum + plate.opened, 0))
 
   if (bookmark === null) {
     return (

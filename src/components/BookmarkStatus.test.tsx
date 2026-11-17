@@ -1,33 +1,43 @@
-import { act, fireEvent, screen } from '@testing-library/react'
-import type { ReactElement } from 'react'
-import { afterEach, describe, expect, it } from 'vitest'
+import { act, fireEvent, screen, waitFor } from '@testing-library/react'
+import { type ReactElement, useEffect, useState } from 'react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { expireCookie, parseCookieHeader } from '~/lib/cookies'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import type { Bookmark } from '~/lib/progress/episode'
 import { useOpenEntries } from '~/lib/progress/openEntries'
-import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
+import {
+  GAME_OF_THRONES_SERIES,
+  ONE_PIECE_BOOKMARK,
+} from '~/lib/progress/series'
 import { dismissWelcome } from '~/lib/progress/welcome'
-import { ep, renderWithProviders, settle } from '~/test/providers'
+import {
+  ep,
+  type RenderOptions,
+  renderWithProviders,
+  settle,
+} from '~/test/providers'
 
 import { BookmarkStatus } from './BookmarkStatus'
 import { EpisodeMark } from './EpisodeMark'
 import { TrialStrip } from './TrialStrip'
 
-/** How many entries a listing has open at a bookmark, for the fixture. */
+/** How many entries the fixture's listing has open at an episode. */
 const OPEN = new Map<null | number, number>([
   [20, 36],
+  [21, 37],
   [45, 51],
-  [46, 52],
   [null, 0],
 ])
+
+function openAt(bookmark: Bookmark): number {
+  return OPEN.get(bookmark?.mode === 'episode' ? bookmark.episode : null) ?? 40
+}
 
 /** A listing that counts its open entries, and a control that moves on. */
 function Listing({ to }: { to: Bookmark }): ReactElement {
   const { bookmark, setBookmark } = useBookmark()
-  useOpenEntries(
-    OPEN.get(bookmark?.mode === 'episode' ? bookmark.episode : null) ?? 0,
-  )
+  useOpenEntries(openAt(bookmark))
 
   return (
     <button
@@ -38,6 +48,52 @@ function Listing({ to }: { to: Bookmark }): ReactElement {
     >
       Move
     </button>
+  )
+}
+
+/** The count, on screen once it has arrived. */
+function Count({ count }: { count: number }): null {
+  useOpenEntries(count)
+
+  return null
+}
+
+/**
+ * A listing whose count arrives `after` ms behind the page, as the
+ * characters' does behind its deferred shelves; with `fromStart` false it has
+ * none yet when the save is made.
+ */
+function LateListing({
+  after,
+  fromStart,
+}: {
+  after: number
+  fromStart: boolean
+}): ReactElement {
+  const { bookmark, setBookmark } = useBookmark()
+  const [counted, setCounted] = useState(fromStart ? bookmark : undefined)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCounted(bookmark)
+    }, after)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [after, bookmark])
+
+  return (
+    <>
+      {counted !== undefined && <Count count={openAt(counted)} />}
+      <button
+        onClick={() => {
+          setBookmark(ep(45))
+        }}
+        type="button"
+      >
+        Move
+      </button>
+    </>
   )
 }
 
@@ -62,10 +118,37 @@ async function press(name: string): Promise<void> {
   await settle()
 }
 
+/** Presses Move on a listing and waits for the sentence to be said. */
+async function move(
+  from: Bookmark,
+  to: Bookmark,
+  options: RenderOptions = {},
+): Promise<HTMLElement> {
+  renderWithProviders(
+    <>
+      <BookmarkStatus />
+      <Listing to={to} />
+    </>,
+    { bookmark: from, ...options },
+  )
+  await press('Move')
+  const region = screen.getByRole('status')
+  await waitFor(() => {
+    expect(region).not.toBeEmptyDOMElement()
+  })
+
+  return region
+}
+
+function cookie(name: string): string | undefined {
+  return parseCookieHeader(document.cookie).get(name)
+}
+
 describe('BookmarkStatus', () => {
   afterEach(() => {
     expireCookie(ONE_PIECE_BOOKMARK.cookie)
     expireCookie(ONE_PIECE_BOOKMARK.trialCookie)
+    expireCookie(GAME_OF_THRONES_SERIES.cookie)
     dismissWelcome()
   })
 
@@ -77,51 +160,66 @@ describe('BookmarkStatus', () => {
   })
 
   it('says where the bookmark moved and how many entries that opened', async () => {
-    renderWithProviders(
-      <>
-        <BookmarkStatus />
-        <Listing to={ep(45)} />
-      </>,
-      { bookmark: ep(20) },
-    )
+    const said = await move(ep(20), ep(45))
 
-    await press('Move')
-
-    expect(screen.getByRole('status')).toHaveTextContent(
-      'Bookmark moved to EP 45. 15 more entries are open.',
+    expect(said).toHaveTextContent(
+      'Bookmark moved: Episode 45. 15 more entries are open.',
     )
   })
 
   it('says how many entries went back under fog on a move back', async () => {
-    renderWithProviders(
-      <>
-        <BookmarkStatus />
-        <Listing to={ep(20)} />
-      </>,
-      { bookmark: ep(45), locale: 'it' },
-    )
+    const said = await move(ep(45), ep(20), { locale: 'it' })
 
-    await press('Move')
-
-    expect(screen.getByRole('status')).toHaveTextContent(
-      'Segnalibro spostato su EP 20. 15 voci sono tornate nella nebbia.',
+    expect(said).toHaveTextContent(
+      'Segnalibro spostato: Episodio 20. 15 voci sono tornate nella nebbia.',
     )
   })
 
-  it('counts a single entry in the singular', async () => {
-    renderWithProviders(
-      <>
-        <BookmarkStatus />
-        <Listing to={ep(46)} />
-      </>,
-      { bookmark: ep(45) },
+  it('counts a single entry in the singular, either way', async () => {
+    const said = await move(ep(20), ep(21))
+
+    expect(said).toHaveTextContent(
+      'Bookmark moved: Episode 21. 1 more entry is open.',
+    )
+  })
+
+  it('counts a single entry gone back under fog in the singular', async () => {
+    const said = await move(ep(21), ep(20), { locale: 'it' })
+
+    expect(said).toHaveTextContent(
+      'Segnalibro spostato: Episodio 20. Una voce è tornata nella nebbia.',
+    )
+  })
+
+  it('says a season bookmark in words', async () => {
+    const said = await move(ep(20), { mode: 'season', season: 2, episode: 3 })
+
+    expect(said).toHaveTextContent(/^Bookmark moved: Season 2 · episode 3\./u)
+  })
+
+  it('says a chapter of a series with books as its book', async () => {
+    const said = await move(
+      { mode: 'chapter', chapter: 5 },
+      { mode: 'chapter', chapter: 20 },
+      {
+        locale: 'it',
+        path: '/game-of-thrones/it/characters',
+        series: GAME_OF_THRONES_SERIES,
+      },
     )
 
-    await press('Move')
-
-    expect(screen.getByRole('status')).toHaveTextContent(
-      'Bookmark moved to EP 46. 1 more entry is open.',
+    expect(said).toHaveTextContent(
+      /^Segnalibro spostato: Libro 1, capitolo 20\.$/u,
     )
+  })
+
+  it('gives no count when the unit changed between the anime and the manga', async () => {
+    // The listing counts 36 open at episode 20 and 40 at any chapter: other
+    // records exist in the manga, so the difference is not what the move
+    // opened.
+    const said = await move(ep(20), { mode: 'chapter', chapter: 100 })
+
+    expect(said).toHaveTextContent(/^Bookmark moved: Chapter 100\.$/u)
   })
 
   it('gives no count off a listing', async () => {
@@ -134,9 +232,9 @@ describe('BookmarkStatus', () => {
 
     await press('I’m here')
 
-    expect(screen.getByRole('status')).toHaveTextContent(
-      /^Bookmark set to EP 12\.$/u,
-    )
+    const said = await screen.findByText('Bookmark set: Episode 12.')
+
+    expect(said).toHaveRole('status')
   })
 
   it('says nothing when the save is the bookmark already held', async () => {
@@ -149,39 +247,104 @@ describe('BookmarkStatus', () => {
     )
 
     await press('Move')
+    await act(async () => {
+      await new Promise((resolve) => {
+        setTimeout(resolve, 300)
+      })
+    })
 
     expect(screen.getByRole('status')).toBeEmptyDOMElement()
   })
 
-  it('offers to undo a cleared bookmark, and puts it back', async () => {
+  it('changes the live region once when the count arrives behind the page', async () => {
     renderWithProviders(
       <>
         <BookmarkStatus />
-        <Listing to={null} />
+        <LateListing
+          after={100}
+          fromStart
+        />
+      </>,
+      { bookmark: ep(20) },
+    )
+    const region = screen.getByRole('status')
+    const said: string[] = []
+    const observer = new MutationObserver(() => {
+      said.push(region.textContent)
+    })
+    observer.observe(region, {
+      characterData: true,
+      childList: true,
+      subtree: true,
+    })
+
+    await press('Move')
+    await waitFor(() => {
+      expect(region).toHaveTextContent('15 more entries are open.')
+    })
+    observer.disconnect()
+
+    expect(said).toStrictEqual([
+      'Bookmark moved: Episode 45. 15 more entries are open.',
+    ])
+  })
+
+  it('gives no count when the listing had none at the save', async () => {
+    renderWithProviders(
+      <>
+        <BookmarkStatus />
+        <LateListing
+          after={50}
+          fromStart={false}
+        />
       </>,
       { bookmark: ep(20) },
     )
 
+    // Before the count has arrived: the baseline is unknown.
     await press('Move')
+    await act(async () => {
+      await new Promise((resolve) => {
+        setTimeout(resolve, 400)
+      })
+    })
 
     expect(screen.getByRole('status')).toHaveTextContent(
+      /^Bookmark moved: Episode 45\.$/u,
+    )
+  })
+
+  it('offers to undo a cleared bookmark, and puts it back', async () => {
+    const region = await move(ep(20), null)
+
+    expect(region).toHaveTextContent(
       'Bookmark cleared. 36 entries went back under fog.',
     )
-    expect(
-      parseCookieHeader(document.cookie).has(ONE_PIECE_BOOKMARK.cookie),
-    ).toBe(false)
+    expect(cookie(ONE_PIECE_BOOKMARK.cookie)).toBeUndefined()
 
     await press('Undo')
 
-    expect(
-      parseCookieHeader(document.cookie).get(ONE_PIECE_BOOKMARK.cookie),
-    ).toBe('20')
-    expect(screen.getByRole('status')).toHaveTextContent(
-      'Bookmark set to EP 20. 36 more entries are open.',
-    )
+    expect(cookie(ONE_PIECE_BOOKMARK.cookie)).toBe('20')
     expect(
       screen.queryByRole('button', { name: 'Undo' }),
     ).not.toBeInTheDocument()
+
+    await waitFor(() => {
+      expect(region).toHaveTextContent(
+        'Bookmark set: Episode 20. 36 more entries are open.',
+      )
+    })
+  })
+
+  it('puts a chapter bookmark back in chapters', async () => {
+    await move({ mode: 'chapter', chapter: 40 }, null)
+    await press('Undo')
+
+    expect(cookie(ONE_PIECE_BOOKMARK.cookie)).toBe('c40')
+
+    const said = await screen.findByText(/^Bookmark set: Chapter 40\./u)
+
+    expect(said).toBeInTheDocument()
   })
 
   it('moves focus to the mark when the control that saved leaves the page', async () => {
@@ -212,12 +375,12 @@ describe('BookmarkStatus', () => {
       </>,
       { bookmark: ep(20) },
     )
-    const move = screen.getByRole('button', { name: 'Move' })
-    move.focus()
+    const control = screen.getByRole('button', { name: 'Move' })
+    control.focus()
 
     await press('Move')
 
-    expect(move).toHaveFocus()
+    expect(control).toHaveFocus()
   })
 
   it('announces a trial point saved as the bookmark', async () => {
@@ -231,22 +394,27 @@ describe('BookmarkStatus', () => {
 
     await press('Save this point')
 
-    expect(screen.getByRole('status')).toHaveTextContent(
-      'Bookmark set to EP 12.',
-    )
+    const said = await screen.findByText('Bookmark set: Episode 12.')
+
+    expect(said).toBeInTheDocument()
   })
 
-  it('leaves with the page it was made on', async () => {
+  it('ends when the reader leaves the page, and does not come back with it', async () => {
+    const scroll = vi.spyOn(Element.prototype, 'scrollIntoView')
     const { router } = renderWithProviders(
       <>
+        <EpisodeMark />
         <BookmarkStatus />
-        <Listing to={ep(45)} />
+        <Listing to={null} />
       </>,
       { bookmark: ep(20), path: '/one-piece/en/characters' },
     )
     await press('Move')
-
-    expect(screen.getByRole('status')).not.toBeEmptyDOMElement()
+    const region = screen.getByRole('status')
+    await waitFor(() => {
+      expect(region).toHaveTextContent('Bookmark cleared.')
+    })
+    const scrolled = scroll.mock.calls.length
 
     await act(async () => {
       await router.navigate({
@@ -255,6 +423,31 @@ describe('BookmarkStatus', () => {
       })
     })
 
-    expect(screen.getByRole('status')).toBeEmptyDOMElement()
+    expect(region).toBeEmptyDOMElement()
+    expect(
+      screen.queryByRole('button', { name: 'Undo' }),
+    ).not.toBeInTheDocument()
+
+    // Back on the page the save was made on, with focus lost to the body as
+    // after a navigation: nothing is said, focused or scrolled.
+    screen.getByRole('button', { name: 'Set episode' }).blur()
+    await act(async () => {
+      await router.navigate({
+        to: '/$series/$locale/characters',
+        params: { series: 'one-piece', locale: 'en' },
+      })
+    })
+    await act(async () => {
+      await new Promise((resolve) => {
+        setTimeout(resolve, 300)
+      })
+    })
+
+    expect(region).toBeEmptyDOMElement()
+    expect(
+      screen.queryByRole('button', { name: 'Undo' }),
+    ).not.toBeInTheDocument()
+    expect(document.body).toHaveFocus()
+    expect(scroll).toHaveBeenCalledTimes(scrolled)
   })
 })
