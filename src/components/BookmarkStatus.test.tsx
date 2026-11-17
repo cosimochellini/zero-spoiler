@@ -1,10 +1,10 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react'
-import { type ReactElement, useEffect, useState } from 'react'
+import { type ReactElement, useState } from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { expireCookie, parseCookieHeader } from '~/lib/cookies'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
-import type { Bookmark } from '~/lib/progress/episode'
+import { type Bookmark, serialiseBookmark } from '~/lib/progress/episode'
 import { useOpenEntries } from '~/lib/progress/openEntries'
 import {
   GAME_OF_THRONES_SERIES,
@@ -59,32 +59,26 @@ function Count({ count }: { count: number }): null {
 }
 
 /**
- * A listing whose count arrives `after` ms behind the page, as the
- * characters' does behind its deferred shelves; with `fromStart` false it has
- * none yet when the save is made.
+ * A listing whose count arrives behind the page, as the characters' does
+ * behind its deferred shelves: on "Arrive", for the bookmark held then. With
+ * `fromStart` false it has no count yet when the save is made.
  */
-function LateListing({
-  after,
-  fromStart,
-}: {
-  after: number
-  fromStart: boolean
-}): ReactElement {
+function LateListing({ fromStart }: { fromStart: boolean }): ReactElement {
   const { bookmark, setBookmark } = useBookmark()
   const [counted, setCounted] = useState(fromStart ? bookmark : undefined)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCounted(bookmark)
-    }, after)
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [after, bookmark])
 
   return (
     <>
       {counted !== undefined && <Count count={openAt(counted)} />}
+      <span>{bookmark === null ? 'none' : serialiseBookmark(bookmark)}</span>
+      <button
+        onClick={() => {
+          setCounted(bookmark)
+        }}
+        type="button"
+      >
+        Arrive
+      </button>
       <button
         onClick={() => {
           setBookmark(ep(45))
@@ -95,6 +89,13 @@ function LateListing({
       </button>
     </>
   )
+}
+
+/** Steps the stepped clock, inside React's scope. */
+async function tick(ms: number): Promise<void> {
+  await act(async () => {
+    await vi.advanceTimersByTimeAsync(ms)
+  })
 }
 
 /** A control that leaves the page with the save, as the landing's does. */
@@ -150,6 +151,7 @@ describe('BookmarkStatus', () => {
     expireCookie(ONE_PIECE_BOOKMARK.trialCookie)
     expireCookie(GAME_OF_THRONES_SERIES.cookie)
     dismissWelcome()
+    vi.useRealTimers()
   })
 
   it('is an empty live region until the bookmark moves', () => {
@@ -260,10 +262,7 @@ describe('BookmarkStatus', () => {
     renderWithProviders(
       <>
         <BookmarkStatus />
-        <LateListing
-          after={100}
-          fromStart
-        />
+        <LateListing fromStart />
       </>,
       { bookmark: ep(20) },
     )
@@ -277,11 +276,28 @@ describe('BookmarkStatus', () => {
       childList: true,
       subtree: true,
     })
+    // The hold's clock is stepped by hand, so a busy machine cannot let it
+    // run out before the count arrives.
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] })
 
-    await press('Move')
-    await waitFor(() => {
-      expect(region).toHaveTextContent('15 more entries are open.')
-    })
+    fireEvent.click(screen.getByRole('button', { name: 'Move' }))
+    // The re-read commits within a few turns of the loop; no time passes.
+    for (let pass = 0; pass < 5; pass += 1) {
+      await tick(0)
+    }
+
+    expect(screen.getByText('45')).toBeInTheDocument()
+
+    await tick(200)
+
+    expect(region).toBeEmptyDOMElement()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Arrive' }))
+    await tick(249)
+
+    expect(region).toBeEmptyDOMElement()
+
+    await tick(1)
     observer.disconnect()
 
     // The point is held together by a no-break space.
@@ -294,25 +310,17 @@ describe('BookmarkStatus', () => {
     renderWithProviders(
       <>
         <BookmarkStatus />
-        <LateListing
-          after={50}
-          fromStart={false}
-        />
+        <LateListing fromStart={false} />
       </>,
       { bookmark: ep(20) },
     )
 
-    // Before the count has arrived: the baseline is unknown.
+    // The save comes first: the baseline is unknown.
     await press('Move')
-    await act(async () => {
-      await new Promise((resolve) => {
-        setTimeout(resolve, 400)
-      })
-    })
+    await press('Arrive')
+    const line = await screen.findByText(/^Bookmark moved: Episode 45\.$/u)
 
-    expect(screen.getByRole('status')).toHaveTextContent(
-      /^Bookmark moved: Episode 45\.$/u,
-    )
+    expect(line).toHaveRole('status')
   })
 
   it('offers to undo a cleared bookmark, and puts it back', async () => {
