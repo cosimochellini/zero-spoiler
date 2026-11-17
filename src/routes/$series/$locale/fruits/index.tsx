@@ -1,32 +1,3 @@
-/* Hallmark · pre-emit critique: P5 H4 E4 S5 R5 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: saga marquee over a
- *   Portfolio Grid · theme: Sea
- *   Chart (locked) · enrichment: Tier B hand-built SVG (a grown drawing for
- *   every fruit, eleven of them drawn by hand) · nav: N9 edge-aligned (shared)
- * · footer: Ft4 colophon (shared)
- * · idea: "the saga you are watching first, its name in gold and a rail
- *   of its fruits so far that snaps as it scrolls, the latest one large in a
- *   glow of its own tint, and a link on to the whole saga; then an album —
- *   a pinned control bar (search, view, kind chips, all in the address; on
- *   a phone it folds to one row once you scroll) over
- *   three plates of tiles, or in the saga view one pinned group per saga
- *   reached, its fog tiles in their place in time and every later saga one
- *   band of fog, or in the faction view one pinned group per faction the
- *   open eaters stand in at the bookmark, a fruit under each of its eaters'
- *   factions with that eater on the tile, and every covered fruit one band
- *   of fog, the drawing big, who ate it
- *   under the name, two across on a phone, and the fog keeps its place at
- *   the foot of each plate as tiles of drifting fog that clear on a peek
- *   while the drawing draws itself in; with no bookmark, one wide bank of
- *   that fog with the question and the bookmark control in its centre, and
- *   the plates closed behind a disclosure under it"
- * · motion: fog drift (transform/opacity, paused off-screen, the wall's
- *   bank too), fog clear
- *   420ms, stroke draw-in once (a lifted tile, and the marquee's lead on
- *   arrival); reduced motion → still fog, no draw-in, 150ms crossfade
- * · differs from the previous build (Specimen) on macrostructure: the
- *   saga marquee is the hero the album lacked; theme is
- *   the project's locked system and does not rotate */
 import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
@@ -75,7 +46,7 @@ const COUNT_KEY: Record<AlbumView, TranslationKey<'one-piece'>> = {
 }
 
 /**
- * The devil fruits page (Hallmark macrostructure 18, Portfolio Grid).
+ * The devil fruits page, an album of tiles.
  *
  * The saga the reader is watching leads (`SagaMarquee`): its name, its open
  * fruits so far as a rail of large tiles, the latest first. Then an album:

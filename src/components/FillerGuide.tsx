@@ -15,8 +15,7 @@ import type { FillerPageView, FillerRowView } from '~/lib/view/filler'
 import { color, leading, space, text } from '~/styles/tokens.stylex'
 
 /**
- * The filler guide (Hallmark macrostructure 19, Map / Diagram), reached by
- * its address only: it is not in the bar.
+ * The filler guide, a map of the whole series, reached by its address only: it is not in the bar.
  *
  * It leads with the countdown, the answer the page is for: how far the next
  * filler is from the reader's episode. The runs to skip come next, by saga,

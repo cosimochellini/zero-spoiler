@@ -1,13 +1,3 @@
-/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 */
-/* Hallmark · genre: atmospheric · macrostructure: Map / Diagram, v2 led by
- *   a countdown · theme: Sea Chart (locked) · enrichment: Tier B hand-built
- *   SVG (the whole series as a strip of cells) · nav: N9 (shared) · footer:
- *   Ft4 (shared) · mobile first
- * · idea: "how far the next filler is", said in one sentence over six
- *   calendar cells; then the runs to skip and the catalogue, both by saga
- *   with the saga pinned while it scrolls, the catalogue folded to the
- *   reader's own saga
- * · theme is the project's locked system and does not rotate */
 import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 

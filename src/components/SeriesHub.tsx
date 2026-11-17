@@ -21,7 +21,7 @@ import {
 } from '~/styles/tokens.stylex'
 
 /**
- * The hub (Hallmark · direction "Stage", owner 2026-10-24): the house lights
+ * The hub (the "Stage" direction, owner 2026-10-24): the house lights
  * are down, as on every page with no series, and each series is a stage lit
  * by a beam of its own accent. The card wears the series' whole theme, so
  * One Piece's stage is its night blue and gold inside the black page. A

@@ -1,10 +1,3 @@
-/* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Stage · theme: the
- *   series' own (locked) · enrichment: Tier B hand-built SVG (the ability's
- *   own drawing, large, in a glow of its tint) · nav: N9 (shared)
- *   · footer: Ft4 (shared)
- * · structure: the stage, then who uses it
- * · idea: "one ability under the lights, and the users the reader has met" */
 import * as stylex from '@stylexjs/stylex'
 import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
@@ -37,7 +30,7 @@ export const Route = createFileRoute('/$series/$locale/abilities/$id')({
 })
 
 /**
- * A Nen ability's page (Hallmark macrostructure: Stage): the drawing large,
+ * A Nen ability's page, the ability alone on a stage: the drawing large,
  * the name, its Nen type and the sentence, then the users the reader has
  * reached, each a link to their page. Nothing past the stage under fog.
  */

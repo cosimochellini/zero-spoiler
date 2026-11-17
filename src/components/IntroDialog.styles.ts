@@ -1,8 +1,6 @@
-/* Hallmark · component: modal (intro for a reader with no bookmark, #864)
- * genre: atmospheric · theme: Sea Chart (locked)
- * states: default · hover · focus · active · disabled · loading · error · success
- * (the controls are the bookmark dialog's: the shared Button, the form and
- * its skeleton, so every state is theirs)
+/*
+ * The intro for a reader with no bookmark (#864). Its controls are the
+ * bookmark dialog's: the shared Button, the form and its skeleton.
  */
 import * as stylex from '@stylexjs/stylex'
 

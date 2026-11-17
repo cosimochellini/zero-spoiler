@@ -3,15 +3,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 import { useSeriesT } from '~/i18n/LocaleContext'
-/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Stage · theme: Sea Chart
- *   (locked) · enrichment: Tier B hand-built SVG (the fruit's own drawing,
- *   large, in a glow of its tint, drawn in on arrival, and a switch under it
- *   between the drawings the reader has reached) · nav: N9 (shared)
- *   · footer: Ft4 (shared)
- * · structure: the stage, its history, who ate it, then the rest of its own
- *   kind and of its own saga
- * · idea: "one fruit under the lights, and its story told in order" */
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink, SectionNotFound } from '~/routes/$series/$locale/-back'
 import {
@@ -63,7 +54,7 @@ export const Route = createFileRoute('/$series/$locale/fruits/$id')({
 })
 
 /**
- * A devil fruit's page (Hallmark macrostructure: Stage).
+ * A devil fruit's page: the fruit alone on a stage.
  *
  * One fruit under the lights: the drawing large in a glow of its tint, with
  * a switch under it once the reader has seen the fruit drawn more than once,

@@ -29,7 +29,7 @@ export type NativeButtonProps = Omit<
  */
 export interface ButtonProps extends NativeButtonProps {
   /**
-   * `chip` is the outlined typographic action (Hallmark C1); `quiet` is the
+   * `chip` is the outlined typographic action; `quiet` is the
    * square control used by the episode stepper, where the label is an icon
    * glyph and the accessible name comes from `aria-label`.
    */

@@ -34,8 +34,7 @@ function haloOf(hue: TintId): string {
 }
 
 /**
- * The fold (Hallmark macrostructure 03, Marquee Hero): the arc the reader is
- * in, and nothing else above the fold.
+ * The fold, a marquee hero: the arc the reader is in, and nothing else above the fold.
  *
  * The arc's own drawing fills the frame, set large and on a wash of its own
  * colour, and fades into the paper along the lower edge where the words

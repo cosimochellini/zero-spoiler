@@ -301,9 +301,10 @@ const config = defineConfig(
     '.wrangler/**',
     '.gate/**',
     'src/routeTree.gen.ts',
-    // Vendored agent skills, pinned by skills-lock.json (as in .prettierignore).
-    // hallmark ships .mjs scripts that are not ours to lint.
+    // Vendored agent skills (as in .prettierignore). impeccable installs a
+    // copy per harness, each with .js scripts that are not ours to lint.
     '.agents/**',
+    '.claude/skills/impeccable/**',
   ]),
 
   // A disable comment that no longer silences anything, and an inline config

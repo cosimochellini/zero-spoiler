@@ -15,3 +15,13 @@ relabel an issue.
 
 Load the `landing-prs` skill (`.agents/skills/landing-prs/SKILL.md`) before you
 review, fix review findings on, or merge a pull request.
+
+## Design
+
+Load the `impeccable` skill (`.agents/skills/impeccable/SKILL.md`; Claude Code
+reads its own copy in `.claude/skills/impeccable/`) before you change the UI.
+
+- The house style wins over the skill's defaults: the tokens in
+  `src/styles/tokens.stylex.ts` and the themes in `src/styles/themes.ts` are
+  fixed.
+- A live-mode variant is plain CSS; port the one you keep to `stylex.create`.

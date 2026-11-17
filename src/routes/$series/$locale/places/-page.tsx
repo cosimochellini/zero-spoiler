@@ -30,7 +30,7 @@ export interface PlacesBodyProps {
 }
 
 /**
- * The places page (Hallmark macrostructure Map / Diagram).
+ * The places page, a map over an index.
  *
  * The brand line and a count, then the sea chart: the route as far as the
  * reader has come, the ship on it and fog past it. Under it, the index of
