@@ -249,14 +249,32 @@ function Curtain({
           inline={density === 'inline'}
           state={state}
         />
-      : <>
-          <span {...stylex.props(styles.notice)}>{notice}</span>
-          <span {...stylex.props(styles.action)}>
-            {t(state === 'resting' ? 'veil.reveal' : SAYS[state])}
-          </span>
-        </>
+      : <Sign
+          notice={notice}
+          state={state}
+        />
       }
     </button>
+  )
+}
+
+/** What a block curtain says: the threshold, then the verb or the state. */
+function Sign({
+  notice,
+  state,
+}: {
+  notice: string
+  state: LiftState
+}): ReactElement {
+  const t = useT()
+
+  return (
+    <>
+      <span {...stylex.props(styles.notice)}>{notice}</span>
+      <span {...stylex.props(styles.action)}>
+        {t(state === 'resting' ? 'veil.reveal' : SAYS[state])}
+      </span>
+    </>
   )
 }
 
