@@ -18,6 +18,8 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
     '{count} personaggi, nell’ordine in cui compaiono nell’anime. Quelli nella nebbia non compaiono nei risultati della ricerca.',
   'characters.featuredLede':
     'La ciurma di Cappello di Paglia e gli altri personaggi chiave della storia.',
+  'character.chronicleLede':
+    'Le sue vicende fino al tuo segnalibro, dalla più recente. Ogni parte inizia dall’episodio in cui avviene.',
   'credits.coverage':
     'L’elenco copre il campione verificato il 20 ottobre 2026 e la sostituzione del riassunto verificata il 22 ottobre 2026. Altri testi storici, traduzioni e disegni restano non verificati o con questioni aperte. Questi riferimenti non certificano i diritti su tutte le voci.',
   'credits.otherTerms':

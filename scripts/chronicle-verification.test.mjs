@@ -17,11 +17,13 @@ import {
   characters as onePieceCharacters,
   dossierOf as onePieceDossierOf,
 } from '../src/data/series/one-piece/characters.ts'
+import { GAME_OF_THRONES_SOURCES } from './chronicle-sources-got.mjs'
 import { HUNTER_X_HUNTER_SOURCES } from './chronicle-sources-hxh.mjs'
 import { CHRONICLE_SOURCES } from './chronicle-sources.mjs'
 import { DOC_PATH } from './chronicle-verification.mjs'
 
 const hunter = await filedArchiveOf('hunter-x-hunter')
+const thrones = await filedArchiveOf('game-of-thrones')
 
 /** The log keeps each series' characters, dossiers and evidence together. */
 const ARCHIVES = {
@@ -35,7 +37,15 @@ const ARCHIVES = {
     dossierOf: hunter.dossierOf,
     sources: HUNTER_X_HUNTER_SOURCES,
   },
+  'game-of-thrones': {
+    characters: thrones.characters,
+    dossierOf: thrones.dossierOf,
+    sources: GAME_OF_THRONES_SOURCES,
+  },
 }
+
+/** The medium a dated story is told in, as the log prints it. */
+const MEDIA = { chapter: 'books', episode: 'show' }
 
 /** Every story with its series-qualified character id. */
 const STORIES = Object.entries(ARCHIVES).flatMap(([series, archive]) =>
@@ -46,6 +56,10 @@ const STORIES = Object.entries(ARCHIVES).flatMap(([series, archive]) =>
       chapter: story.chapter,
       episode: story.episode,
       medium: story.source,
+      dated:
+        series === 'game-of-thrones' ?
+          `${story.chapter} ${MEDIA[story.source] ?? 'both'}`
+        : undefined,
       title: story.value.title.en,
     })),
   ),
@@ -94,6 +108,30 @@ function quotationsIn(note) {
 const HEADING =
   /^## (?<name>.+) \(`(?<id>[a-z\d-]+)`, threshold ep (?<threshold>\d+)\)$/u
 
+/** A date cell that is an episode alone. */
+const EPISODE = /^(?<episode>\d+)$/u
+
+/** A Game of Thrones date cell: an episode, a site chapter and the medium. */
+const DATED = /^(?<episode>\d+) \/ (?<chapter>\d+) (?<medium>show|books|both)$/u
+
+/**
+ * A date cell read back: its episode, and for Game of Thrones its chapter and
+ * medium, or `null` when the cell is not a date.
+ * @param {string} cell The cell.
+ * @returns {null | object} The episode and, when dated, `chapter medium`.
+ */
+function dateIn(cell) {
+  const dated = DATED.exec(cell)
+  if (dated !== null) {
+    const { chapter, episode, medium } = dated.groups
+
+    return { episode: Number(episode), dated: `${chapter} ${medium}` }
+  }
+  const alone = EPISODE.exec(cell)
+
+  return alone === null ? null : { episode: Number(alone.groups.episode) }
+}
+
 /**
  * One table line read as a story row, or `null` when the line is the header,
  * the alignment rule, or not a table line at all.
@@ -110,9 +148,9 @@ function rowIn(line, section) {
     .slice(1, -1)
     .split('|')
     .map((cell) => cell.trim())
-  const episode = Number(cells[1])
+  const date = dateIn(cells[1] ?? '')
 
-  if (cells.length !== 4 || !Number.isSafeInteger(episode)) {
+  if (date === null || cells.length !== 4) {
     return null
   }
 
@@ -121,11 +159,29 @@ function rowIn(line, section) {
     id: section.id,
     name: section.name,
     threshold: Number(section.threshold),
-    episode,
+    ...date,
     title: cells[0],
     source: cells[2],
     note: cells[3],
   }
+}
+
+/**
+ * The wiki pages each series may cite. Game of Thrones cites the show's wiki,
+ * the Ice and Fire Wiki for the books, and A Wiki of Ice and Fire where it
+ * could be read.
+ */
+const WIKI_PAGES = {
+  'game-of-thrones':
+    /^https:\/\/(?:(?:gameofthrones|iceandfire)\.fandom\.com\/wiki|awoiaf\.westeros\.org\/index\.php)\/\S+$/u,
+  'hunter-x-hunter': /^https:\/\/hunterxhunter\.fandom\.com\/wiki\/\S+$/u,
+  'one-piece': /^https:\/\/onepiece\.fandom\.com\/wiki\/\S+$/u,
+}
+
+/** The series each top-level heading opens; One Piece needs none. */
+const SERIES_HEADINGS = {
+  '# Game of Thrones': 'game-of-thrones',
+  '# Hunter x Hunter': 'hunter-x-hunter',
 }
 
 /**
@@ -138,8 +194,10 @@ function rowsInDocument() {
   let series = 'one-piece'
 
   for (const line of DOCUMENT.split('\n')) {
-    if (line === '# Hunter x Hunter') {
-      series = 'hunter-x-hunter'
+    const opened = SERIES_HEADINGS[line]
+
+    if (opened !== undefined) {
+      series = opened
       section = undefined
       continue
     }
@@ -166,7 +224,12 @@ const ROWS = rowsInDocument()
  * @returns {string} The line.
  */
 function asLine(entry) {
-  return `${entry.series}/${entry.id} @${entry.episode} — ${entry.title}`
+  const date =
+    entry.dated === undefined ?
+      String(entry.episode)
+    : `${entry.episode} / ${entry.dated}`
+
+  return `${entry.series}/${entry.id} @${date} — ${entry.title}`
 }
 
 /**
@@ -214,11 +277,9 @@ describe('the chronicle verification log', () => {
     }
   })
 
-  it('cites a wiki page and a note for every story', () => {
+  it('cites a wiki page of its own series and a note for every story', () => {
     for (const row of ROWS) {
-      expect(row.source, asLine(row)).toMatch(
-        /^https:\/\/(?:onepiece|hunterxhunter)\.fandom\.com\/wiki\/\S+$/u,
-      )
+      expect(row.source, asLine(row)).toMatch(WIKI_PAGES[row.series])
       expect(row.note.length, asLine(row)).toBeGreaterThan(0)
     }
   })

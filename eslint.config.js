@@ -63,6 +63,7 @@ const RECORDS = [
   // than code, and it grows by one entry per story written.
   'scripts/chronicle-sources.mjs',
   'scripts/chronicle-sources-hxh.mjs',
+  'scripts/chronicle-sources-got.mjs',
 ]
 const TOKENS = ['src/**/*.stylex.ts']
 

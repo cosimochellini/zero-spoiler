@@ -112,6 +112,7 @@ describe('each series’ own copy', () => {
 
 /** The keys every series words for itself, as the copies hold them. */
 const COMMON = new Set<string>([
+  'character.chronicleLede',
   'characters.bookLede',
   'characters.count',
   'characters.featuredLede',

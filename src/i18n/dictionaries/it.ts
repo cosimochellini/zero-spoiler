@@ -298,8 +298,6 @@ export const itDictionary: Dictionary = {
   'character.origin': 'Origine',
   'character.factsLabel': 'Fatti fino al tuo segnalibro',
   'character.chronicleTitle': 'La storia finora',
-  'character.chronicleLede':
-    'Le sue vicende fino al tuo segnalibro, dalla più recente. Ogni parte inizia dall’episodio in cui avviene.',
   'character.chronicleMore': 'Mostra altre storie',
   'character.chronicleMoreError':
     'Caricamento delle altre storie non riuscito. Riprova.',

@@ -21,6 +21,8 @@ export const onePieceEn = {
     '{count} characters, in the order they appear in the anime. Characters under fog do not show up in search.',
   'characters.featuredLede':
     'The Straw Hat crew and the other key characters of the story.',
+  'character.chronicleLede':
+    'What happens to them up to your bookmark, latest first. Each part starts at the episode where it takes place.',
   'credits.coverage':
     'This list covers the bounded review recorded on 20 October 2026 and the summary replacement reviewed on 22 October 2026. Other historical text, translations and illustrations remain unreviewed or unresolved. These references do not certify the rights in every entry.',
   'credits.otherTerms':

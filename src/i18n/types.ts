@@ -12,6 +12,7 @@ export type SharedKey = keyof typeof enDictionary
  * of them, so a page that prints one prints the words of its own series.
  */
 export type CommonKey =
+  | 'character.chronicleLede'
   | 'characters.bookLede'
   | 'characters.count'
   | 'characters.featuredLede'

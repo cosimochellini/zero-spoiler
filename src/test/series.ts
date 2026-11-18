@@ -139,11 +139,14 @@ const EXPECTED: Record<string, Expected> = {
   // Counted 2026-11-15, after the southern cast's later looks and deaths
   // (#1286): 148 characters, 60 places and the season's heading. Timelines
   // counted 2026-11-16, after the King's Landing, riverlands and Vale
-  // relationships (#1346): 588.
+  // relationships (#1346): 588. Chronicles, timelines and statuses counted
+  // 2026-11-17, after the Essos cast's stories (#1360): 88 stories, 606
+  // timelines and 259 statuses.
   'game-of-thrones': {
     kinds: [
       'affiliation',
       'allRegions',
+      'chronicle',
       'copy',
       'form',
       'landmark',
@@ -158,11 +161,11 @@ const EXPECTED: Record<string, Expected> = {
       affiliations: 170,
       arcs: 1,
       characters: 148,
-      chronicles: 0,
+      chronicles: 88,
       linkedOrigins: 0,
       places: 60,
-      statuses: 258,
-      timelines: 588,
+      statuses: 259,
+      timelines: 606,
       visits: 0,
     },
     namesSaidEarly: true,
