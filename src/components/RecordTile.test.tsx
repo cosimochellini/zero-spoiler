@@ -1,9 +1,21 @@
 import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
 import { HUNTER_X_HUNTER_SERIES } from '~/lib/progress/series'
-import { at, coveredSlot, openSlot, peekPending, record } from '~/test/fixtures'
-import { renderUnderSeries, renderWithProviders } from '~/test/providers'
+import {
+  at,
+  coveredSlot,
+  openSlot,
+  peekPending,
+  record,
+  spyPeek,
+} from '~/test/fixtures'
+import {
+  renderUnderSeries,
+  renderWithProviders,
+  settle,
+} from '~/test/providers'
 
 import { RecordTile } from './RecordTile'
 
@@ -100,5 +112,30 @@ describe('RecordTile', () => {
     expect(container.querySelector('a')).toBeNull()
     expect(container.querySelector('svg')).toBeNull()
     expect(screen.getByText('Episode 20')).toBeVisible()
+  })
+
+  it('asks before it lifts a covered record, then focuses its link', async () => {
+    const user = userEvent.setup()
+    const { asked, peek } = spyPeek(record({ name: 'Sanji', ...at(20) }))
+    renderWithProviders(
+      <RecordTile
+        peek={peek}
+        slot={coveredSlot({ handle: 'zz', ...at(20) })}
+      />,
+    )
+
+    await user.click(screen.getByRole('button'))
+
+    expect(screen.getByRole('button')).toHaveAccessibleName(
+      'Show it anyway? Yes, show',
+    )
+    expect(asked).toStrictEqual([])
+    expect(screen.queryByText('Sanji')).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('button'))
+    await settle()
+
+    expect(asked).toStrictEqual(['zz'])
+    expect(screen.getByRole('link', { name: 'Sanji' })).toHaveFocus()
   })
 })

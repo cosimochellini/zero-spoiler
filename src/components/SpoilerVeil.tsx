@@ -1,13 +1,15 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
+import { Words } from '~/components/FogTile'
 import {
-  type PeekState,
-  useVeilPeek,
-  type VeilSlot,
-} from '~/components/useVeilPeek'
+  followFocus,
+  type Lift,
+  type LiftState,
+  SAYS,
+} from '~/components/useLift'
+import { useVeilPeek, type VeilSlot } from '~/components/useVeilPeek'
 import { useT } from '~/i18n/LocaleContext'
-import type { TranslationKey } from '~/i18n/types'
 import { useThreshold } from '~/lib/progress/BookmarkContext'
 import type { Gated } from '~/lib/progress/spoiler'
 import {
@@ -50,6 +52,12 @@ export interface SpoilerVeilProps<T extends Gated> {
    * cell, where a two-line curtain would set the row height. `compact` is for
    * a small card: the verb alone, centred, with the threshold left to the
    * card's own meta line and to the control's accessible name.
+   *
+   * It also decides how the fog lifts (#1376). `inline` and `compact` sit in
+   * lists, where a tap can be a slip of the thumb while scrolling, so they
+   * ask first, as a fog tile does: "Show it anyway? Yes, show". `block` is
+   * a record's own page or a panel the reader opened, and its control says
+   * "Show anyway" in full, so one press lifts it.
    */
   density?: 'block' | 'compact' | 'inline'
   /**
@@ -101,7 +109,8 @@ export interface SpoilerVeilProps<T extends Gated> {
  * Lifting the fog by hand is a request now rather than a state flip: the
  * record is on the server. The curtain says so while the request is in flight
  * and stays put, so nothing of the record is in the DOM until it arrives —
- * the same guarantee the covered state gives.
+ * the same guarantee the covered state gives. Once it arrives, focus follows
+ * the reader from the spent control into what was lifted (`followFocus`).
  */
 export function SpoilerVeil<T extends Gated>({
   slot,
@@ -113,12 +122,17 @@ export function SpoilerVeil<T extends Gated>({
   children,
 }: SpoilerVeilProps<T>): ReactElement {
   const threshold = useThreshold()
-  const { shown, state, uncover } = useVeilPeek(slot, peek, lead)
+  const { button, shown, state } = useVeilPeek(slot, peek, {
+    lead,
+    twoStep: density !== 'block',
+  })
   const visible = shown !== null
 
   return (
     <div {...stylex.props(styles.frame)}>
       <Covered
+        // An open slot was never covered: no control, and no focus to move.
+        control={slot.open ? undefined : button.ref}
         density={density}
         strength={strength}
         visible={visible}
@@ -128,10 +142,10 @@ export function SpoilerVeil<T extends Gated>({
 
       {slot.open ? null : (
         <Curtain
+          button={button}
           density={density}
           lifted={visible}
           notice={threshold('veil.locked', slot.covered)}
-          onUncover={uncover}
           state={state}
         />
       )}
@@ -146,12 +160,15 @@ export function SpoilerVeil<T extends Gated>({
  * record itself is not in the browser to mount.
  */
 function Covered({
+  control,
   density,
   strength,
   visible,
   children,
 }: {
   children: ReactNode
+  /** The control that lifts this content, when it was sent covered. */
+  control: Lift<unknown>['button']['ref'] | undefined
   density: Density
   strength: Strength
   visible: boolean
@@ -163,6 +180,13 @@ function Covered({
       // if the covered state were still being managed once it is not.
       aria-hidden={!visible || undefined}
       inert={!visible}
+      ref={
+        control === undefined || !visible ?
+          undefined
+        : (node) => {
+            followFocus(node, control)
+          }
+      }
       {...stylex.props(styles.content, !visible && fogFor(density, strength))}
     >
       {children}
@@ -181,17 +205,17 @@ function Covered({
  * fifth of a list page's HTML and of the time spent rendering it (#621).
  */
 function Curtain({
+  button,
   density,
   lifted,
   notice,
-  onUncover,
   state,
 }: {
+  button: Lift<unknown>['button']
   density: Density
   lifted: boolean
   notice: string
-  onUncover: () => void
-  state: PeekState
+  state: LiftState
 }): ReactElement {
   const t = useT()
   const verbOnly = density !== 'block'
@@ -206,42 +230,81 @@ function Curtain({
       // Block density reads its name off the visible notice. The verb-only
       // densities show the verb alone — the threshold already sits in its
       // own line beside them — so the sentence has to be supplied here.
-      aria-label={verbOnly ? `${notice}. ${t('veil.reveal')}` : undefined}
-      onClick={onUncover}
+      // From the first press on, the words they show are their name.
+      aria-label={
+        verbOnly && state === 'resting' ?
+          `${notice}. ${t('veil.reveal')}`
+        : undefined
+      }
       type="button"
+      {...button}
       {...stylex.props(
         styles.curtain,
         curtainFor(density),
         lifted && styles.curtainLifted,
       )}
     >
-      {verbOnly ? null : <span {...stylex.props(styles.notice)}>{notice}</span>}
-      <span
-        role="status"
-        {...stylex.props(
-          styles.action,
-          density === 'inline' && styles.actionInline,
-        )}
-      >
-        {t(verbFor(state, verbOnly))}
-      </span>
+      {verbOnly ?
+        <Verb
+          inline={density === 'inline'}
+          state={state}
+        />
+      : <Sign
+          notice={notice}
+          state={state}
+        />
+      }
     </button>
   )
 }
 
+/** What a block curtain says: the threshold, then the verb or the state. */
+function Sign({
+  notice,
+  state,
+}: {
+  notice: string
+  state: LiftState
+}): ReactElement {
+  const t = useT()
+
+  return (
+    <>
+      <span {...stylex.props(styles.notice)}>{notice}</span>
+      <span {...stylex.props(styles.action)}>
+        {t(state === 'resting' ? 'veil.reveal' : SAYS[state])}
+      </span>
+    </>
+  )
+}
+
 /**
- * What the curtain says. A verb-only curtain has the threshold beside it
- * already, so it says the short form; the rest of the time the state speaks.
+ * What a verb-only curtain says: the verb at rest, and from the first press
+ * the words a fog tile says, the question and its answer or the state.
  */
-function verbFor(state: PeekState, verbOnly: boolean): TranslationKey {
-  if (state === 'asking') {
-    return 'veil.revealing'
-  }
-  if (state === 'failed') {
-    return 'veil.peekFailed'
+function Verb({
+  inline,
+  state,
+}: {
+  inline: boolean
+  state: LiftState
+}): ReactElement {
+  const t = useT()
+
+  if (state !== 'resting') {
+    return (
+      <Words
+        line={inline}
+        state={state}
+      />
+    )
   }
 
-  return verbOnly ? 'veil.revealShort' : 'veil.reveal'
+  return (
+    <span {...stylex.props(styles.action, inline && styles.actionInline)}>
+      {t('veil.revealShort')}
+    </span>
+  )
 }
 
 type Density = NonNullable<SpoilerVeilProps<Gated>['density']>
@@ -281,6 +344,9 @@ const styles = stylex.create({
     // not a compositor-only property and animating it drops frames on a large
     // block of text.
     filter: 'none',
+    // Lifted content that holds no link takes the focus itself. It is not a
+    // control: no ring around it.
+    outlineStyle: 'none',
     userSelect: 'auto',
   },
   covered: {
@@ -341,6 +407,8 @@ const styles = stylex.create({
     padding: space.xs,
     alignContent: 'center',
     justifyItems: 'center',
+    // A question that wraps on a narrow card stays centred over it.
+    textAlign: 'center',
   },
   curtainLifted: {
     opacity: 0,
