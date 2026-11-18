@@ -184,7 +184,8 @@ export const itDictionary: Dictionary = {
   'legal.projectTitle': 'Un progetto non ufficiale',
   'legal.unofficial':
     'Zero Spoiler è un progetto amatoriale non ufficiale e senza scopo di lucro. Non è affiliato né approvato dai titolari dei diritti delle serie presenti nella wiki.',
-  'legal.creditSource': 'Fonte ufficiale dei crediti',
+  'legal.contents': 'In questa pagina',
+  'legal.creditSource': 'Fonte ufficiale dei crediti di {series}',
   'legal.contact': 'Richieste sui diritti e correzioni su GitHub',
   'legal.contactHelp':
     'Indica l’URL della pagina, il materiale interessato e la richiesta sui diritti o la correzione. Evita spoiler nel titolo. Le issue GitHub sono pubbliche e richiedono un account. Non inserire informazioni riservate.',

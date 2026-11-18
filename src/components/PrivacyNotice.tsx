@@ -1,7 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement } from 'react'
 
-import { styles } from '~/components/LegalNotice.styles'
+import { part, styles } from '~/components/LegalNotice.styles'
 import { PRIVACY, type PrivacyKey } from '~/i18n/dictionaries/privacy'
 import { useLocale } from '~/i18n/LocaleContext'
 import { translate } from '~/i18n/translate'
@@ -35,13 +35,11 @@ export function PrivacyNotice(): ReactElement {
     <section id="privacy">
       <h2 {...stylex.props(styles.heading)}>{t('privacy.title')}</h2>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.updated')}</p>
-      <h3 {...stylex.props(styles.subheading)}>
-        {t('privacy.controllerTitle')}
-      </h3>
+      <h3 {...part('privacy-controller')}>{t('privacy.controllerTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.controller')}</p>
-      <h3 {...stylex.props(styles.subheading)}>{t('privacy.serviceTitle')}</h3>
+      <h3 {...part('privacy-service')}>{t('privacy.serviceTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.service')}</p>
-      <h3 {...stylex.props(styles.subheading)}>{t('privacy.cookiesTitle')}</h3>
+      <h3 {...part('privacy-cookies')}>{t('privacy.cookiesTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.cookiesIntro')}</p>
       <ul {...stylex.props(styles.list)}>
         <li>{t('privacy.bookmark')}</li>
@@ -50,15 +48,15 @@ export function PrivacyNotice(): ReactElement {
       </ul>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.attributes')}</p>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.storage')}</p>
-      <h3 {...stylex.props(styles.subheading)}>{t('privacy.controlTitle')}</h3>
+      <h3 {...part('privacy-control')}>{t('privacy.controlTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.control')}</p>
-      <h3 {...stylex.props(styles.subheading)}>{t('privacy.hostingTitle')}</h3>
+      <h3 {...part('privacy-hosting')}>{t('privacy.hostingTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.hosting')}</p>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.logs')}</p>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.terms')}</p>
-      <h3 {...stylex.props(styles.subheading)}>{t('privacy.basesTitle')}</h3>
+      <h3 {...part('privacy-bases')}>{t('privacy.basesTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.bases')}</p>
-      <h3 {...stylex.props(styles.subheading)}>{t('privacy.rightsTitle')}</h3>
+      <h3 {...part('privacy-rights')}>{t('privacy.rightsTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('privacy.rights')}</p>
       <p {...stylex.props(styles.paragraph)}>
         <a
@@ -69,7 +67,7 @@ export function PrivacyNotice(): ReactElement {
         </a>{' '}
         {t('privacy.contactHelp')}
       </p>
-      <h3 {...stylex.props(styles.subheading)}>{t('privacy.sourcesTitle')}</h3>
+      <h3 {...part('privacy-sources')}>{t('privacy.sourcesTitle')}</h3>
       <ul {...stylex.props(styles.list)}>
         {SOURCES.map(([key, href]) => (
           <li key={key}>

@@ -1,7 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
-import { styles } from '~/components/LegalNotice.styles'
+import { part, styles } from '~/components/LegalNotice.styles'
 import { onlyUnder, useLocale, useSeriesT, useT } from '~/i18n/LocaleContext'
 import { LocaleProvider } from '~/i18n/LocaleProvider'
 import type { SeriesCopy } from '~/i18n/types'
@@ -43,9 +43,7 @@ export function SourceCredits({
       <h2 {...stylex.props(styles.heading)}>{t('credits.title')}</h2>
       <p {...stylex.props(styles.paragraph)}>{t('credits.intro')}</p>
       <LicenseNotices series={series} />
-      <h3 {...stylex.props(styles.subheading)}>
-        {t('credits.referencesTitle')}
-      </h3>
+      <h3 {...part('credits-references')}>{t('credits.referencesTitle')}</h3>
       {series.map(({ copy }) => (
         <InSeries
           key={copy.slug}
@@ -57,7 +55,7 @@ export function SourceCredits({
       <p {...stylex.props(styles.paragraph)}>{t('credits.factCheck')}</p>
       <p {...stylex.props(styles.paragraph)}>{t('credits.bookmark')}</p>
       {series.every(({ credits }) => credits.length === 0) ?
-        <p>{t('credits.empty')}</p>
+        <p {...stylex.props(styles.paragraph)}>{t('credits.empty')}</p>
       : <ul {...stylex.props(styles.list)}>
           {series.map(({ copy, credits, sources }) => (
             <InSeries
@@ -100,14 +98,15 @@ function CreditEntry({
     onlyUnder(onePiece, 'one-piece')('credits.scope.filler')
   const official = (): string =>
     onlyUnder(onePiece, 'one-piece')('credits.source.official')
+  const label = (kind: SourceCredit['sources'][number]['kind']): string =>
+    kind === 'official' ? official() : t(`credits.source.${kind}`)
+  const title =
+    credit.episode === undefined ?
+      credit.name
+    : `${credit.name} · ${t('credits.episode', { episode: credit.episode })}`
   return (
     <li>
-      <h4>
-        {credit.name}
-        {credit.episode === undefined ? null : (
-          ` · ${t('credits.episode', { episode: credit.episode })}`
-        )}
-      </h4>
+      <h4>{title}</h4>
       <p>
         {credit.scope === 'filler' ?
           filler()
@@ -119,11 +118,13 @@ function CreditEntry({
       <ul {...stylex.props(styles.list)}>
         {credit.sources.map(({ kind, url }) => (
           <li key={url}>
+            {/* The entry's title is in the name, so a list of links tells its revisions apart. */}
             <a
+              aria-label={`${label(kind)}. ${title}`}
               href={url}
               {...stylex.props(styles.link)}
             >
-              {kind === 'official' ? official() : t(`credits.source.${kind}`)}
+              {label(kind)}
             </a>{' '}
             {kind === 'official' ?
               t('credits.noOpenLicense')
@@ -145,7 +146,7 @@ function LicenseNotices({ series }: { series: SeriesCredits[] }): ReactElement {
   const t = useT()
   return (
     <>
-      <h3 {...stylex.props(styles.subheading)}>{t('credits.licensesTitle')}</h3>
+      <h3 {...part('credits-licenses')}>{t('credits.licensesTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('credits.software')}</p>
       <ul {...stylex.props(styles.list)}>
         <li>
@@ -166,7 +167,7 @@ function LicenseNotices({ series }: { series: SeriesCredits[] }): ReactElement {
         </li>
       </ul>
       <p {...stylex.props(styles.paragraph)}>{t('credits.content')}</p>
-      <h3 {...stylex.props(styles.subheading)}>{t('credits.sourcesTitle')}</h3>
+      <h3 {...part('credits-sources')}>{t('credits.sourcesTitle')}</h3>
       <p {...stylex.props(styles.paragraph)}>{t('credits.external')}</p>
       {series.map(({ copy, sources }) => (
         <InSeries
