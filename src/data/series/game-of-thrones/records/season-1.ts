@@ -3043,6 +3043,7 @@ export const season1: ThronesSaga = {
   dossiers: {
     'eddard-stark': {
       relationships: season1Relationships['eddard-stark'],
+      chronicle: season1Chronicles['eddard-stark'],
       role: [
         {
           episode: 1,
@@ -3082,6 +3083,7 @@ export const season1: ThronesSaga = {
     },
     'catelyn-stark': {
       relationships: season1Relationships['catelyn-stark'],
+      chronicle: season1Chronicles['catelyn-stark'],
       role: { it: 'Signora di Grande Inverno', en: 'Lady of Winterfell' },
       log: {
         it: 'Raggiunge il marito nel parco degli dei con una notizia. Il Primo Cavaliere del Re è morto e il re sta venendo a Grande Inverno.',
@@ -3102,6 +3104,7 @@ export const season1: ThronesSaga = {
     },
     'robb-stark': {
       relationships: season1Relationships['robb-stark'],
+      chronicle: season1Chronicles['robb-stark'],
       role: [
         {
           episode: 1,
@@ -3132,6 +3135,7 @@ export const season1: ThronesSaga = {
     },
     'sansa-stark': {
       relationships: season1Relationships['sansa-stark'],
+      chronicle: season1Chronicles['sansa-stark'],
       role: {
         it: 'Figlia di lord Eddard Stark',
         en: 'Daughter of Lord Eddard Stark',
@@ -3154,6 +3158,7 @@ export const season1: ThronesSaga = {
     },
     'arya-stark': {
       relationships: season1Relationships['arya-stark'],
+      chronicle: season1Chronicles['arya-stark'],
       role: {
         it: 'Figlia di lord Eddard Stark',
         en: 'Daughter of Lord Eddard Stark',
@@ -3173,6 +3178,7 @@ export const season1: ThronesSaga = {
     },
     'bran-stark': {
       relationships: season1Relationships['bran-stark'],
+      chronicle: season1Chronicles['bran-stark'],
       role: {
         it: 'Figlio di lord Eddard Stark',
         en: 'Son of Lord Eddard Stark',
@@ -3192,6 +3198,7 @@ export const season1: ThronesSaga = {
     },
     'rickon-stark': {
       relationships: season1Relationships['rickon-stark'],
+      chronicle: season1Chronicles['rickon-stark'],
       role: {
         it: 'Figlio di lord Eddard Stark',
         en: 'Son of Lord Eddard Stark',
@@ -3273,6 +3280,7 @@ export const season1: ThronesSaga = {
     },
     'benjen-stark': {
       relationships: season1Relationships['benjen-stark'],
+      chronicle: season1Chronicles['benjen-stark'],
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -3297,6 +3305,7 @@ export const season1: ThronesSaga = {
     },
     'grey-wind': {
       relationships: season1Relationships['grey-wind'],
+      chronicle: season1Chronicles['grey-wind'],
       role: { it: 'Meta-lupo di Robb Stark', en: 'Robb Stark’s direwolf' },
       log: {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Lo prende Robb.',
@@ -3316,6 +3325,7 @@ export const season1: ThronesSaga = {
     },
     'lady-direwolf': {
       relationships: season1Relationships['lady-direwolf'],
+      chronicle: season1Chronicles['lady-direwolf'],
       role: { it: 'Meta-lupa di Sansa Stark', en: 'Sansa Stark’s direwolf' },
       log: {
         it: 'È una dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. La prende Sansa.',
@@ -3335,6 +3345,7 @@ export const season1: ThronesSaga = {
     },
     'nymeria': {
       relationships: season1Relationships.nymeria,
+      chronicle: season1Chronicles.nymeria,
       role: { it: 'Meta-lupa di Arya Stark', en: 'Arya Stark’s direwolf' },
       log: {
         it: 'È una dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. La prende Arya.',
@@ -3351,6 +3362,7 @@ export const season1: ThronesSaga = {
     },
     'summer-direwolf': {
       relationships: season1Relationships['summer-direwolf'],
+      chronicle: season1Chronicles['summer-direwolf'],
       role: { it: 'Meta-lupo di Bran Stark', en: 'Bran Stark’s direwolf' },
       log: {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Lo prende Bran.',
@@ -3370,6 +3382,7 @@ export const season1: ThronesSaga = {
     },
     'shaggydog': {
       relationships: season1Relationships.shaggydog,
+      chronicle: season1Chronicles.shaggydog,
       role: { it: 'Meta-lupo di Rickon Stark', en: 'Rickon Stark’s direwolf' },
       log: {
         it: 'È uno dei cuccioli trovati accanto alla madre morta, sulla via del ritorno a Grande Inverno. Va a Rickon, il più piccolo dei fratelli.',
@@ -3389,6 +3402,7 @@ export const season1: ThronesSaga = {
     },
     'ghost-direwolf': {
       relationships: season1Relationships['ghost-direwolf'],
+      chronicle: season1Chronicles['ghost-direwolf'],
       role: { it: 'Meta-lupo di Jon Snow', en: 'Jon Snow’s direwolf' },
       log: {
         it: 'È il sesto cucciolo della cucciolata, tutto bianco, trovato da Jon in disparte dagli altri. Jon lo tiene per sé.',
@@ -3405,6 +3419,7 @@ export const season1: ThronesSaga = {
     },
     'theon-greyjoy': {
       relationships: season1Relationships['theon-greyjoy'],
+      chronicle: season1Chronicles['theon-greyjoy'],
       role: { it: 'Pupillo di Eddard Stark', en: 'Eddard Stark’s ward' },
       log: {
         it: 'Accompagna Lord Stark all’esecuzione di un disertore dei Guardiani della notte. Al ritorno è con i ragazzi quando trovano una lupa morta e i suoi cuccioli, e vorrebbe ucciderli.',
@@ -3427,6 +3442,7 @@ export const season1: ThronesSaga = {
     },
     'luwin': {
       relationships: season1Relationships.luwin,
+      chronicle: season1Chronicles.luwin,
       role: { it: 'Maestro di Grande Inverno', en: 'Maester of Winterfell' },
       log: {
         it: 'Serve la Casa Stark come consigliere e guaritore. Porta a Lord Stark e alla moglie una lettera segreta della sorella di lei. Consiglia a Lord Stark di accettare l’offerta del re.',
@@ -3446,6 +3462,7 @@ export const season1: ThronesSaga = {
     },
     'rodrik-cassel': {
       relationships: season1Relationships['rodrik-cassel'],
+      chronicle: season1Chronicles['rodrik-cassel'],
       role: [
         {
           episode: 1,
@@ -3483,6 +3500,7 @@ export const season1: ThronesSaga = {
     },
     'old-nan': {
       relationships: season1Relationships['old-nan'],
+      chronicle: season1Chronicles['old-nan'],
       role: { it: 'Servitrice di Grande Inverno', en: 'Servant at Winterfell' },
       log: {
         it: 'Fa parte della servitù degli Stark da molto tempo. I ragazzi di Grande Inverno conoscono le sue storie sull’inverno e su ciò che vive oltre la Barriera.',
@@ -3499,6 +3517,7 @@ export const season1: ThronesSaga = {
     },
     'hodor': {
       relationships: season1Relationships.hodor,
+      chronicle: season1Chronicles.hodor,
       role: { it: 'Servitore di Grande Inverno', en: 'Servant at Winterfell' },
       log: {
         it: 'È altissimo e forte, ma semplice, e l’unica parola che dice è “Hodor”. Porta in braccio Bran, che non può camminare, fino alla sala grande per incontrare Tyrion Lannister.',
@@ -3518,6 +3537,7 @@ export const season1: ThronesSaga = {
     },
     'osha': {
       relationships: season1Relationships.osha,
+      chronicle: season1Chronicles.osha,
       role: [
         {
           episode: 6,
@@ -3538,7 +3558,8 @@ export const season1: ThronesSaga = {
         en: 'With a band of outlaws she attacks Bran while he rides outside Winterfell. When her companions are killed, she surrenders to Robb. Robb takes her back to the castle as a prisoner.',
       },
       status: [
-        { episode: 6, chapter: 38, value: 'alive' },
+        // Taken alive in the wolfswood in both media (#1361).
+        { episode: 6, chapter: 38, value: 'captured' },
         { episode: 54, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
@@ -3555,6 +3576,7 @@ export const season1: ThronesSaga = {
     },
     'mordane': {
       relationships: season1Relationships.mordane,
+      chronicle: season1Chronicles.mordane,
       role: {
         it: 'Septa e istitutrice delle figlie degli Stark',
         en: 'Septa and tutor to the Stark girls',
@@ -3577,6 +3599,7 @@ export const season1: ThronesSaga = {
     },
     'jory-cassel': {
       relationships: season1Relationships['jory-cassel'],
+      chronicle: season1Chronicles['jory-cassel'],
       role: {
         it: 'Capitano della guardia di Casa Stark',
         en: 'Captain of the House Stark guard',
@@ -4693,6 +4716,7 @@ export const season1: ThronesSaga = {
     },
     'hullen': {
       relationships: season1Relationships.hullen,
+      chronicle: season1Chronicles.hullen,
       role: {
         it: 'Mastro dei cavalli di Grande Inverno',
         en: 'Master of horse at Winterfell',
@@ -4715,6 +4739,7 @@ export const season1: ThronesSaga = {
     },
     'jeyne-poole': {
       relationships: season1Relationships['jeyne-poole'],
+      chronicle: season1Chronicles['jeyne-poole'],
       role: {
         it: 'Figlia dell’intendente di Grande Inverno',
         en: 'Daughter of the steward of Winterfell',
@@ -4723,7 +4748,11 @@ export const season1: ThronesSaga = {
         it: 'Cuce accanto a Sansa alla lezione di ricamo della septa Mordane e chiacchiera con lei mentre lavorano. È la sua amica più cara.',
         en: 'She sews beside Sansa at Septa Mordane’s needlework lesson and talks with her while they work. She is Sansa’s closest friend.',
       },
-      status: [{ episode: 1, chapter: 8, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 8, value: 'alive' },
+        // Locked in a tower room with Sansa after the attack (#1361).
+        { episode: 8, chapter: 52, source: 'chapter', value: 'captured' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -4734,6 +4763,7 @@ export const season1: ThronesSaga = {
     },
     'mikken': {
       relationships: season1Relationships.mikken,
+      chronicle: season1Chronicles.mikken,
       role: { it: 'Fabbro di Grande Inverno', en: 'Blacksmith of Winterfell' },
       log: {
         it: 'Lavora alla forgia di Grande Inverno. Prima di partire per la Barriera, Jon gli fa forgiare per Arya una spada sottile e leggera.',
@@ -4755,6 +4785,7 @@ export const season1: ThronesSaga = {
     },
     'hallis-mollen': {
       relationships: season1Relationships['hallis-mollen'],
+      chronicle: season1Chronicles['hallis-mollen'],
       role: {
         it: 'Capitano della guardia di Grande Inverno',
         en: 'Captain of the guard at Winterfell',
@@ -4840,6 +4871,7 @@ export const season1: ThronesSaga = {
     },
     'greatjon-umber': {
       relationships: season1Relationships['greatjon-umber'],
+      chronicle: season1Chronicles['greatjon-umber'],
       role: { it: 'Lord dell’Ultimo Focolare', en: 'Lord of Last Hearth' },
       log: {
         it: 'Porta i suoi uomini nell’esercito di Robb e pretende di guidare l’avanguardia, minacciando di tornarsene a casa. Quando sguaina la spada a tavola, Vento Grigio gli stacca due dita con un morso, e lui ci ride sopra.',
@@ -4872,6 +4904,7 @@ export const season1: ThronesSaga = {
     },
     'smalljon-umber': {
       relationships: season1Relationships['smalljon-umber'],
+      chronicle: season1Chronicles['smalljon-umber'],
       role: { it: 'Figlio di Greatjon Umber', en: 'Son of Greatjon Umber' },
       log: {
         it: 'È il figlio di Greatjon Umber e un guerriero di Casa Umber. La sua casata tiene l’Ultimo Focolare, nell’estremo nord del Nord.',
@@ -4893,6 +4926,7 @@ export const season1: ThronesSaga = {
     },
     'rickard-karstark': {
       relationships: season1Relationships['rickard-karstark'],
+      chronicle: season1Chronicles['rickard-karstark'],
       role: { it: 'Lord di Karhold', en: 'Lord of Karhold' },
       log: {
         it: 'È a capo di Casa Karstark, che ha sede a Karhold. Marcia nell’esercito di Robb con i suoi uomini.',
@@ -4926,6 +4960,7 @@ export const season1: ThronesSaga = {
     },
     'roose-bolton': {
       relationships: season1Relationships['roose-bolton'],
+      chronicle: season1Chronicles['roose-bolton'],
       role: [
         {
           episode: 14,
@@ -4965,6 +5000,7 @@ export const season1: ThronesSaga = {
     },
     'galbart-glover': {
       relationships: season1Relationships['galbart-glover'],
+      chronicle: season1Chronicles['galbart-glover'],
       role: { it: 'Lord di Deepwood Motte', en: 'Lord of Deepwood Motte' },
       log: {
         it: 'È a capo di Casa Glover, che ha sede a Deepwood Motte. Risponde alla chiamata alle armi di Robb insieme agli altri signori del Nord e siede al suo consiglio di guerra.',
@@ -5002,6 +5038,7 @@ export const season1: ThronesSaga = {
     },
     'robett-glover': {
       relationships: season1Relationships['robett-glover'],
+      chronicle: season1Chronicles['robett-glover'],
       role: { it: 'Membro di Casa Glover', en: 'Member of House Glover' },
       log: {
         it: 'Appartiene a Casa Glover, una casata del Nord. La sua sede è Deepwood Motte.',
@@ -5018,6 +5055,7 @@ export const season1: ThronesSaga = {
     },
     'maege-mormont': {
       relationships: season1Relationships['maege-mormont'],
+      chronicle: season1Chronicles['maege-mormont'],
       role: { it: 'Lady dell’Isola dell’Orso', en: 'Lady of Bear Island' },
       log: {
         it: 'Governa Casa Mormont dall’Isola dell’Orso. Risponde alla chiamata alle armi di Robb e si unisce al suo esercito con la sua gente.',
@@ -5050,6 +5088,7 @@ export const season1: ThronesSaga = {
     },
     'dacey-mormont': {
       relationships: season1Relationships['dacey-mormont'],
+      chronicle: season1Chronicles['dacey-mormont'],
       role: {
         it: 'Erede dell’Isola dell’Orso, nella guardia di Robb Stark',
         en: 'Heir to Bear Island, in Robb Stark’s guard',
@@ -5074,6 +5113,7 @@ export const season1: ThronesSaga = {
     },
     'wendel-manderly': {
       relationships: season1Relationships['wendel-manderly'],
+      chronicle: season1Chronicles['wendel-manderly'],
       role: { it: 'Cavaliere di Porto Bianco', en: 'Knight of White Harbor' },
       log: {
         it: 'È figlio del lord di Porto Bianco ed è cavaliere. Combatte per Robb insieme agli uomini di Casa Manderly.',
@@ -5522,6 +5562,7 @@ export const season1: ThronesSaga = {
     },
     'vayon-poole': {
       relationships: season1Relationships['vayon-poole'],
+      chronicle: season1Chronicles['vayon-poole'],
       role: { it: 'Intendente di Casa Stark', en: 'Steward of House Stark' },
       log: {
         it: 'Gestisce la casa di Eddard Stark. Lo segue a sud quando diventa Primo Cavaliere del Re.',
@@ -5543,6 +5584,7 @@ export const season1: ThronesSaga = {
     },
     'tomard': {
       relationships: season1Relationships.tomard,
+      chronicle: season1Chronicles.tomard,
       role: { it: 'Guardia di Casa Stark', en: 'Guard of House Stark' },
       log: {
         it: 'È uno degli uomini della guardia di Eddard Stark ad Approdo del Re.',
@@ -5562,6 +5604,7 @@ export const season1: ThronesSaga = {
     },
     'harwin': {
       relationships: season1Relationships.harwin,
+      chronicle: season1Chronicles.harwin,
       role: { it: 'Guardia di Casa Stark', en: 'Guard of House Stark' },
       log: {
         it: 'Cavalca con il seguito di Eddard Stark all’esecuzione del disertore. Quando i ragazzi trovano i cuccioli di meta-lupo, dice che non si possono tenere.',
@@ -5587,6 +5630,7 @@ export const season1: ThronesSaga = {
     },
     'alyn': {
       relationships: season1Relationships.alyn,
+      chronicle: season1Chronicles.alyn,
       role: [
         {
           episode: 1,

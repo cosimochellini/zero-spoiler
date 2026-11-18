@@ -284,6 +284,15 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
+  // Statuses the Winterfell and northern chronicles tell (#1361).
+  { id: 'osha', episode: 6, chapter: 38, value: 'captured' },
+  {
+    id: 'jeyne-poole',
+    episode: 8,
+    chapter: 52,
+    value: 'captured',
+    source: 'chapter',
+  },
   // Hoster opens at one pin alive in the book and a corpse on screen; the
   // book kills him in A Storm of Swords (#1242).
   {
@@ -1180,13 +1189,31 @@ describe('the steps one medium alone tells', () => {
 
 describe('the season’s leads', () => {
   // The home page ranks the leads by how often the reached stories name them.
-  // Only the Essos cast has a chronicle yet (#1360): by episode 10 the show’s
-  // stories also name Eddard and Arya, while a reader at chapter 10 has only
-  // the Pentos chapters, which name Daenerys alone. The other leads join as
-  // their storylines’ chronicles land (#1361–#1363).
+  // The Essos (#1360) and the Winterfell and northern (#1361) casts have
+  // chronicles: by episode 10 the reached stories name Eddard most often, and
+  // by chapter 10 they name Eddard, Jon and Arya more often than Daenerys.
+  // The order moves again as the other storylines land (#1362, #1363).
   it.each<[Unit, string[]]>([
-    ['episode', ['daenerys-targaryen', 'eddard-stark', 'arya-stark']],
-    ['chapter', ['daenerys-targaryen']],
+    [
+      'episode',
+      [
+        'eddard-stark',
+        'daenerys-targaryen',
+        'arya-stark',
+        'jon-snow',
+        'tyrion-lannister',
+      ],
+    ],
+    [
+      'chapter',
+      [
+        'eddard-stark',
+        'jon-snow',
+        'arya-stark',
+        'daenerys-targaryen',
+        'tyrion-lannister',
+      ],
+    ],
   ])(
     'heads the home page by %s with the leads its stories name',
     (unit, cast) => {
