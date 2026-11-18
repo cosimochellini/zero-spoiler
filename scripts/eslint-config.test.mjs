@@ -45,12 +45,13 @@ async function lint(source, filePath) {
   return { formatted, messages: result.messages }
 }
 
-// The first typed lint builds the project's TypeScript service. A quiet machine
-// runs this whole file in about 11 s, but CI runs it about ten times slower,
-// because the rest of the suite shares its CPUs: the filler case alone took
-// about 30 s there and hit the old 30 s limit (#1401). Keep the cases
-// sequential and the limit at four times that CI time; it costs nothing when
-// the cases pass.
+// The first typed lint builds the project's TypeScript service, which in CI
+// falls on the "production filler helpers" case. It ran out of its old 30 s
+// limit there (#1401). CI runs this file several times slower than a quiet
+// machine (11 s), because the rest of the suite shares its CPUs. The cases run
+// in order on one shared ESLint instance, so one pays for the build and most
+// reuse it. Each case gets 120 s, more than the whole file took in the
+// slowest CI run (97 s).
 describe(
   'the ESLint configuration',
   { timeout: 120_000, sequential: true },
