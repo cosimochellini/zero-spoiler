@@ -19,8 +19,8 @@ export const season1: ThronesSaga = {
   heading: {
     id: 'season-1',
     summary: {
-      it: 'La prima stagione della serie e il primo libro, *A Game of Thrones*.',
-      en: 'The show’s first season and the first book, *A Game of Thrones*.',
+      it: 'La prima stagione della serie e il primo libro, A Game of Thrones.',
+      en: 'The show’s first season and the first book, A Game of Thrones.',
     },
     visual: { art: 'season-1', tint: 'red' },
   },

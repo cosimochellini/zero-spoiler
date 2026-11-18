@@ -101,6 +101,9 @@ and its records `src/data/series/game-of-thrones/records/season-N.ts`;
   "libro N", counting the five English books, never the volumes an Italian
   edition splits them into. When prose names a book, it gives the English
   title in italics (*A Game of Thrones*) in both languages (owner, #851).
+  A plain-text field cannot carry italics, and a `*` there prints as an
+  asterisk: record summaries, dictionary strings and meta descriptions name the
+  title bare (`archive.test.ts` fails on a `*` in a summary, #1321).
 - **No arcs.** The series files no arcs, so its copy never says "arc",
   "saga" or "arco". A stretch of the story is a season or a book.
 - **No nautical imagery.** The fog is still the one image, and nothing
