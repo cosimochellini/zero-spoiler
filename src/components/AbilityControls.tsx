@@ -50,10 +50,10 @@ function typeChoices(
 function summaryOf(
   t: Translate<typeof SERIES>,
   pick: Pick,
-  query: string,
+  trimmed: string,
 ): string {
   const chip = pick === 'all' ? t('abilities.all') : typeLabel(t, pick)
-  return query === '' ? chip : `${chip} · “${query}”`
+  return trimmed === '' ? chip : `${chip} · “${trimmed}”`
 }
 
 /**
