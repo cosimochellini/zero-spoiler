@@ -362,7 +362,10 @@ Under `prefers-reduced-motion` spatial motion becomes a crossfade.
   passes (#1375 to #1383) to fix: the wordmark link, back links, relationship
   rows and the filler catalogue's rows.
 - **Do** keep running text to a measure of 52 to 66ch. Wider today, for the same
-  passes: the legal page (76ch) and the footer (72ch).
+  passes: the footer (72ch). In Instrument Sans a line holds about 1.4
+  characters per `ch`, so the 60 to 75 characters a line the impeccable skill
+  asks for is about 44 to 54ch. The legal page sets 48ch, about 67 characters
+  (#1383).
 - **Do** check every pass at a width of 390px. Mobile is the owner's second
   priority, after the bookmark and progress and before fog.
 
