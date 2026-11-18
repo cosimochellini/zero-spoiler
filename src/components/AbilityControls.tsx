@@ -46,6 +46,16 @@ function typeChoices(
   ]
 }
 
+/** The collapsed bar's line: the picked chip, then the query if any. */
+function summaryOf(
+  t: Translate<typeof SERIES>,
+  pick: Pick,
+  query: string,
+): string {
+  const chip = pick === 'all' ? t('abilities.all') : typeLabel(t, pick)
+  return query === '' ? chip : `${chip} · “${query}”`
+}
+
 /**
  * The bar: the search field and its count, and a chip per plate on the
  * page, each with its open abilities, "all" first. Both live in the address.
@@ -66,9 +76,10 @@ export function AbilityControls({
   params: AbilityParams
 }): ReactElement {
   const t = useSeriesOnlyT(SERIES)
-  const query = (params.q ?? '').trim()
+  const query = params.q ?? ''
   const pick: Pick = params.type ?? 'all'
   const choices = typeChoices(t, bands)
+  const total = choices.find((choice) => choice.value === pick)?.count ?? 0
   useOpenEntries(bands.reduce((sum, band) => sum + band.open.length, 0))
   // Every pick goes through the parser, so a default ("all", a blank
   // query) is left out of the address rather than written into it.
@@ -79,10 +90,7 @@ export function AbilityControls({
   return (
     <ControlBar
       searchLabel={t('abilities.searchOpen')}
-      summary={[
-        pick === 'all' ? t('abilities.all') : typeLabel(t, pick),
-        ...(query === '' ? [] : [`“${query}”`]),
-      ].join(' · ')}
+      summary={summaryOf(t, pick, query.trim())}
       toggleLabel={t('abilities.controls')}
     >
       <AbilitySearch
@@ -91,8 +99,8 @@ export function AbilityControls({
         onQuery={(next) => {
           move({ q: next }, true)
         }}
-        query={params.q ?? ''}
-        total={choices.find((choice) => choice.value === pick)?.count ?? 0}
+        query={query}
+        total={total}
       />
       <div {...stylex.props(styles.choices)}>
         <ChoiceGroup
