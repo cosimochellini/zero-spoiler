@@ -112,10 +112,19 @@ describe('LegalPage', () => {
       const revisions = document.querySelectorAll('a[href*="oldid="]')
 
       expect(revisions).toHaveLength(32)
-      // A list of links tells them apart: each name carries its entry's title.
-      expect(
-        new Set([...revisions].map((link) => link.getAttribute('aria-label'))),
-      ).toHaveProperty('size', 32)
+
+      // The link's text, then its entry's title: a list of links tells them apart.
+      const names = [...revisions].map((link) =>
+        link.getAttribute('aria-label'),
+      )
+
+      expect(names).toStrictEqual(
+        [...revisions].map(
+          (link) =>
+            `${link.textContent}. ${link.closest('ul')?.closest('li')?.querySelector('h4')?.textContent ?? ''}`,
+        ),
+      )
+      expect(new Set(names)).toHaveProperty('size', 32)
       expect(
         document.querySelector(`a[href="${CSS.escape(OFFICIAL)}"]`),
       ).toBeInTheDocument()
@@ -171,7 +180,7 @@ describe('LegalPage', () => {
       const prefix =
         locale === 'en' ?
           'Official credit source for'
-        : 'Fonte ufficiale dei crediti di'
+        : 'Fonte ufficiale dei crediti:'
 
       expect(
         screen
