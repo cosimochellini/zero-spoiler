@@ -150,6 +150,42 @@ function chronicled(archive) {
 }
 
 /**
+ * The source that vouches for a story, looked up by episode and chapter, then
+ * by episode and medium, then by episode.
+ * @param {object} sources The character's sources.
+ * @param {object} story The story.
+ * @param {string} id The character's id, for the error.
+ * @returns {object} The source and note.
+ */
+function sourceFor(sources, story, id) {
+  const source =
+    sources[`${story.episode}:${story.chapter}`]
+    ?? sources[`${story.episode}:${story.source}`]
+    ?? sources[story.episode]
+
+  if (source === undefined) {
+    throw new Error(
+      `No verification source for ${id} at episode ${story.episode}: add it to scripts/chronicle-sources.mjs (One Piece), scripts/chronicle-sources-hxh.mjs (Hunter x Hunter) or scripts/chronicle-sources-got.mjs (Game of Thrones).`,
+    )
+  }
+
+  return source
+}
+
+/**
+ * A story's date cell: its episode, or for a series dated by chapter too, the
+ * episode, the chapter and the medium that tells it.
+ * @param {object} story The story.
+ * @param {boolean} dated Whether the series dates by chapter too.
+ * @returns {string} The cell.
+ */
+function dateCell(story, dated) {
+  return dated ?
+      `${story.episode} / ${story.chapter} ${MEDIA[story.source] ?? 'both'}`
+    : String(story.episode)
+}
+
+/**
  * One `##` heading and table, for one character.
  * @param {object} character The character record.
  * @param {object[]} chronicle Its stories, in episode order.
@@ -161,23 +197,9 @@ function chronicled(archive) {
 function section(character, chronicle, { dated, sources: allSources }) {
   const sources = allSources[character.id] ?? {}
   const rows = chronicle.map((story) => {
-    const source =
-      sources[`${story.episode}:${story.chapter}`]
-      ?? sources[`${story.episode}:${story.source}`]
-      ?? sources[story.episode]
+    const { note, source } = sourceFor(sources, story, character.id)
 
-    if (source === undefined) {
-      throw new Error(
-        `No verification source for ${character.id} at episode ${story.episode}: add it to scripts/chronicle-sources.mjs (One Piece), scripts/chronicle-sources-hxh.mjs (Hunter x Hunter) or scripts/chronicle-sources-got.mjs (Game of Thrones).`,
-      )
-    }
-
-    const date =
-      dated ?
-        `${story.episode} / ${story.chapter} ${MEDIA[story.source] ?? 'both'}`
-      : String(story.episode)
-
-    return [story.value.title.en, date, source.source, source.note]
+    return [story.value.title.en, dateCell(story, dated), source, note]
   })
 
   const heading = `## ${character.name.en} (\`${character.id}\`, threshold ep ${character.revealedAtEpisode})`
