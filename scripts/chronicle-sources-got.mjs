@@ -26,6 +26,23 @@ const DANY_I = `${BOOKS}Daenerys_I_-_A_Game_of_Thrones`
 const DANY_II = `${BOOKS}Daenerys_II_-_A_Game_of_Thrones`
 const DANY_III = `${BOOKS}Daenerys_III_-_A_Game_of_Thrones`
 
+// The Night’s Watch cast (#1363): its book chapters on the Ice and Fire Wiki
+// up to site 27, and on A Wiki of Ice and Fire past it.
+const WALL_AWOIAF =
+  'https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_'
+const WALL_PROLOGUE = `${BOOKS}Prologue_-_A_Game_of_Thrones`
+const WALL_BRAN_I = `${BOOKS}Bran_I_-_A_Game_of_Thrones`
+const WALL_JON_I = `${BOOKS}Jon_I_-_A_Game_of_Thrones`
+const WALL_TYRION_II = `${BOOKS}Tyrion_II_-_A_Game_of_Thrones`
+const WALL_JON_III = `${BOOKS}Jon_III_-_A_Game_of_Thrones`
+const WALL_TYRION_III = `${BOOKS}Tyrion_III_-_A_Game_of_Thrones`
+const WALL_JON_IV = `${BOOKS}Jon_IV_-_A_Game_of_Thrones`
+const WALL_AGOT_41 = `${WALL_AWOIAF}41`
+const WALL_AGOT_48 = `${WALL_AWOIAF}48`
+const WALL_AGOT_52 = `${WALL_AWOIAF}52`
+const WALL_AGOT_60 = `${WALL_AWOIAF}60`
+const WALL_AGOT_70 = `${WALL_AWOIAF}70`
+
 /** The note on a book pin past the Ice and Fire Wiki's chapter pages. */
 const PAST_CHAPTER_PAGES =
   'No chapter page exists past site chapter 33, so the pin rests on the episode page’s adaptation list and the reviewed relationship pins; unverified on the chapter text.'
@@ -417,6 +434,384 @@ export const GAME_OF_THRONES_SOURCES = {
     '10:69': {
       source: `${SHOW}Mago`,
       note: `In the books: the Lhazareen girl Daenerys took from Mago, seized again, raped and killed by Jhaqo’s bloodriders. Doreah tending her is the relationship pin at 10/69. ${PAST_CHAPTER_PAGES}`,
+    },
+  },
+  // The Night’s Watch cast (#1363). Book chapters past site 33 were read on A
+  // Wiki of Ice and Fire through Firecrawl: Jon V to Jon IX and Arya V.
+  'jon-snow': {
+    '1:2': {
+      source: WALL_BRAN_I,
+      note: 'Site chapter 2: the ride to the execution with Eddard, Robb, Bran and Theon, Jon telling Bran not to look away, Jon calling Theon an ass when he kicks the head, the five pups for the five trueborn children and the albino sixth pup with red eyes that Jon keeps.',
+    },
+    '1:episode': {
+      source: EPISODE_1,
+      note: 'Show only, filed at chapter 6 so it may link Benjen and Tyrion. The North synopsis: Will beheaded, Jon praising Bran for not flinching, the pups, the albino runt, Catelyn not wanting a bastard at the feast, Jon at sword practice outside, Benjen agreeing to consider his request, and Tyrion’s advice to wear it like armor.',
+    },
+    '1:chapter': {
+      source: WALL_JON_I,
+      note: 'Site chapter 6: Jon with the squires because Catelyn forbade him the family table, Ghost under the table, Benjen refusing him as too young and telling him to father bastards first, Jon stumbling out amid laughter, and Tyrion in the yard telling him never to forget what he is.',
+    },
+    '2:11': {
+      source: EPISODE_2,
+      note: 'Both media, in a different order: the goodbye at Bran’s bedside with Catelyn wanting him gone, the embrace with Robb, the sword for Arya and the pointy end, and the ride north with Benjen. Jon II (site 11) on the Ice and Fire Wiki tells the same four; the relationship pin at 2/11 holds them in both media.',
+    },
+    '3:episode': {
+      source: EPISODE_3,
+      note: 'The Wall synopsis: Jon besting the recruits, Alliser calling him Lord Snow, the recruits ganging up until Tyrion steps in and tells Jon they never had a master-at-arms, Benjen refusing him on top of the Wall. Grenn and Pyp in the armory and Jon starting to train them are on their character pages, citing GOT103.',
+    },
+    '3:chapter': {
+      source: WALL_JON_III,
+      note: 'Site chapter 20: Grenn beaten, Alliser’s taunts, Benjen gone on a ranging, Grenn, Todder and the two rapers in the armory, Todder held by the throat, Donal Noye’s lesson, Mormont’s news of Bran, the offer to help Grenn and the joke that makes Alliser an enemy.',
+    },
+    '4:27': {
+      source: EPISODE_4,
+      note: 'Both media: Sam arrives, Alliser sets the others on him, Jon stands in the way, Sam calls himself a coward, his father’s threat of a hunting accident, the plan to go easy and Rast frightened with Ghost (episode 4 synopsis; Jon IV, site 27, on the Ice and Fire Wiki). Grenn and Pyp with Jon at night are on the Rast pages of both wikis.',
+    },
+    '5:42': {
+      source: WALL_AGOT_41,
+      note: 'Book only, Jon V (site 42): Alliser passes eight recruits but not Sam, Jon’s fear for him, the late visit, Chett at the door and the foot in it, the request that Sam serve Aemon because he can read, write and do sums, and Aemon saying he will think on it.',
+    },
+    '7:49': {
+      source: EPISODE_7,
+      note: 'Both media: the assignments, Jon made the Lord Commander’s own steward, Sam’s view that Mormont means to groom him, the vows together before a heart tree beyond the Wall and Ghost bringing back a hand. Jon VI (site 49) on A Wiki of Ice and Fire tells the same; the show-only horse of Benjen is left out.',
+    },
+    '8:53': {
+      source: EPISODE_8,
+      note: 'Both media: the two bodies brought back, burning urged and refused for Aemon to examine them, the arrest for treason and the warning, the knife at Alliser after the taunt, friends holding Jon back, Ghost waking him and Othor’s corpse destroyed with fire. Jon VII (site 53) on A Wiki of Ice and Fire tells the same; the two media burn it differently, so the story says only fire.',
+    },
+    '9:61': {
+      source: EPISODE_9,
+      note: 'Both media: Longclaw for saving Mormont’s life, Alliser sent to King’s Landing with the hand, Aemon’s duty and family talk, his birth as son and brother of kings, and his refusal to choose for Jon (episode 9 synopsis; Jon VIII, site 61, on A Wiki of Ice and Fire). Jorah and Sam’s news of Robb are the show’s alone and left out.',
+    },
+    '10:71': {
+      source: EPISODE_10,
+      note: 'Both media: news of his father’s death, the horse saddled to join Robb, Sam unable to stop him, friends including Grenn and Pyp reciting the vows, Mormont letting it pass and the ranging in force to find Benjen. Jon IX (site 71) on A Wiki of Ice and Fire tells the same; who rides after him differs, so the story names only Grenn and Pyp.',
+    },
+  },
+  'jeor-mormont': {
+    '3:20': {
+      source: WALL_JON_III,
+      note: 'Site chapter 20: Jon runs to the Lord Commander’s chambers and learns that Bran has woken but is crippled, then swings Tyrion in the air. The Ice and Fire Wiki’s Jeor page has Jon too happy to take in the crippling.',
+    },
+    '3:episode': {
+      source: EPISODE_3,
+      note: 'Show only: Jeor watching the recruits with Tyrion, wanting Alliser only to make men of thieves and runaways, then with Aemon asking Tyrion to get the Watch more men, and Tyrion agreeing to take word to the queen.',
+    },
+    '3:chapter': {
+      source: WALL_TYRION_III,
+      note: 'Book only, site chapter 22: the officers’ supper, Mormont asking Tyrion to speak to the king, his father and brother, wildlings fleeing south and fisherfolk near Eastwatch seeing the Others. His composure at the jibes is on the Jeor Mormont page; his regret over Waymar and disbelief at Gared turning are on the Gared page, citing this chapter.',
+    },
+    '7:49': {
+      source: EPISODE_7,
+      note: 'Both media: the recruits taken into the Watch, the posts handed out, Jon made Mormont’s own steward (at Mormont’s request in Jon VI, site 49, on A Wiki of Ice and Fire), Jon’s anger, Sam’s grooming remark and the vows before a heart tree beyond the Wall.',
+    },
+    '8:53': {
+      source: EPISODE_8,
+      note: 'Both media: the bodies found and carried back, Mormont wanting Aemon to examine them, the news of Eddard’s arrest and the warning not to do anything stupid, Othor’s corpse coming for Mormont and Jon burning it (episode 8 synopsis; Jon VII, site 53, on A Wiki of Ice and Fire).',
+    },
+    '9:episode': {
+      source: EPISODE_9,
+      note: 'Show only: Longclaw for saving his life, meant for Jorah who disgraced himself and fled into exile, Jon reinstated, and Alliser sent to King’s Landing with the wight’s hand to ask for aid. Jorah is the show’s alone (#1352).',
+    },
+    '9:chapter': {
+      source: WALL_AGOT_60,
+      note: 'Book only, Jon VIII (site 61): Longclaw, five centuries in House Mormont, the pommel remade as a white wolf’s head after the fire in the tower, Jon’s attempt to refuse, the sword earned by the quick thinking with fire, and Alliser sent with Jafer’s hand, a thousand leagues from Jon.',
+    },
+    '10:71': {
+      source: EPISODE_10,
+      note: 'Both media: the desertion let pass because the Watch would have no men left otherwise, the war of Starks and Lannisters set below the threat beyond the Wall, and the ranging in force to find Benjen (episode 10 synopsis; Jon IX, site 71, on A Wiki of Ice and Fire).',
+    },
+  },
+  'aemon': {
+    '3:episode': {
+      source: EPISODE_3,
+      note: 'Show only: Aemon as Mormont’s ancient, blind chief adviser, warning Tyrion that the Stark words are right, that the winter will be worse than any in living memory and that worse than wildlings may come, and Tyrion agreeing to take word to his queen.',
+    },
+    '3:chapter': {
+      source: WALL_TYRION_III,
+      note: 'Book only, site chapter 22: the officers’ supper, Alliser storming out under Tyrion’s taunts, and Aemon calling Tyrion a giant. The Ice and Fire Wiki’s Aemon page has Tyrion calling him kind in return.',
+    },
+    '5:42': {
+      source: WALL_AGOT_41,
+      note: 'Book only, Jon V (site 42): Chett at the door, Aemon receiving Jon by the fire, the request for Sam, Aemon leaving training to Alliser, Chett’s objection about cowards, Sam’s reading, writing and sums, and the promise to think on it.',
+    },
+    '7:49': {
+      source: EPISODE_7,
+      note: 'Both media: Sam made Aemon’s steward, Jon’s complaint about being made a steward meeting no sympathy, and the vows before a heart tree. In Jon VI (site 49) on A Wiki of Ice and Fire, Aemon answers that they took him for a man of the Watch.',
+    },
+    '9:61': {
+      source: EPISODE_9,
+      note: 'Both media: Aemon sees Jon torn, reveals that he is the son of a king and brother of another, recalls staying at the Wall, old and blind, while his house was destroyed, and leaves the choice to Jon (episode 9 synopsis; Jon VIII, site 61, on A Wiki of Ice and Fire).',
+    },
+  },
+  'samwell-tarly': {
+    '4:27': {
+      source: EPISODE_4,
+      note: 'Both media: the arrival, Alliser’s mockery and the others set on him, Jon in the way, the confession of cowardice, Lord Randyll’s choice of the black or a hunting accident, the plan to go easy and Rast frightened with Ghost (episode 4 synopsis; Jon IV, site 27, and the Samwell Tarly page on the Ice and Fire Wiki).',
+    },
+    '7:49': {
+      source: EPISODE_7,
+      note: 'Both media: Sam made Aemon’s steward, his grooming remark to Jon, the vows beside Jon before a heart tree beyond the Wall because the Seven never answered him, and Ghost with the hand (episode 7 synopsis; Jon VI, site 49, on A Wiki of Ice and Fire).',
+    },
+    '8:53': {
+      source: EPISODE_8,
+      note: 'Both media: Sam with the party that brings the bodies back, noting they look long dead yet do not stink, Mormont wanting Aemon to examine them, and Othor’s corpse burned by Jon (episode 8 synopsis; Jon VII, site 53, on A Wiki of Ice and Fire, where Sam goes as Aemon’s eyes).',
+    },
+    '9:61': {
+      source: EPISODE_9,
+      note: 'Show only: the brothers fussing over Longclaw while Sam keeps apart, Sam telling Jon that Robb has led an army south to war, and Aemon telling Jon that their duty comes first. Sam’s news is the show’s alone (#1352).',
+    },
+    '10:episode': {
+      source: EPISODE_10,
+      note: 'Show only: Sam’s plea, the pursuit with Grenn and Pyp, Sam knocked from his horse by a branch and Jon turning back for him, and the vows recited until Jon returns.',
+    },
+    '10:chapter': {
+      source: WALL_AGOT_70,
+      note: 'Book only, Jon IX (site 71): Sam in the stable doorway, Jon spurring the mare so Sam has to leap aside, Sam waking his friends rather than the Lord Commander, and Grenn, Pyp, Toad, Halder and Matthar bringing Jon back an hour before dawn.',
+    },
+  },
+  'alliser-thorne': {
+    '3:20': {
+      source: EPISODE_3,
+      note: 'Both media: the master-at-arms who trains the recruits with contempt, has no praise for Jon and calls him Lord Snow (episode 3 synopsis; Jon III, site 20, and the Alliser Thorne page on the Ice and Fire Wiki, which says he gave Jon the name).',
+    },
+    '3:22': {
+      source: WALL_TYRION_III,
+      note: 'Book only, site chapter 22: Tyrion angers Alliser, who storms out, and Jaremy says Tyrion’s father gave him and Alliser the choice of execution or the Watch after the sack of King’s Landing. The challenge before he leaves is on the Ice and Fire Wiki’s Alliser page.',
+    },
+    '4:27': {
+      source: EPISODE_4,
+      note: 'Both media: Sam humiliated and set upon, Jon defending him, more recruits sent against Jon, and Alliser angry when the recruits stop hurting Sam (episode 4 synopsis; Jon IV, site 27, and the Alliser page on the Ice and Fire Wiki).',
+    },
+    '8:53': {
+      source: EPISODE_8,
+      note: 'Both media: the arrest of Eddard, Mormont’s warning, the traitor’s bastard taunt, the knife and the friends holding Jon back (episode 8 synopsis; Jon VII, site 53, on A Wiki of Ice and Fire).',
+    },
+    '9:61': {
+      source: EPISODE_9,
+      note: 'Both media: Mormont sends Alliser to King’s Landing with the hand of the wight to ask the king for aid (episode 9 synopsis; Jon VIII, site 61, on A Wiki of Ice and Fire, where it is Jafer’s hand).',
+    },
+  },
+  'yoren': {
+    '3:14': {
+      source: WALL_TYRION_II,
+      note: 'Book only, site chapter 14: Yoren, a wandering crow, joins the party with two rapers. The Ice and Fire Wiki’s Yoren page has the squirrel for the stew and the choice of the Wall over castration; its Jon page has Jon disillusioned by Yoren and his recruits on the way north.',
+    },
+    '3:22': {
+      source: `${SHOW}Yoren`,
+      note: 'Show only, Season 1, citing GOT103: Tyrion befriending him for his humor, the strangest things eaten, the farewell to his friend Benjen, his presence when Mormont asks for help, and the trip south with Tyrion for recruits from the dungeons.',
+    },
+    '5:33': {
+      source: `${SHOW}Yoren`,
+      note: 'Both media: Yoren at the inn when Catelyn takes Tyrion (GOT104) and riding to warn Eddard (GOT105). In the books he is at the inn in Catelyn V (site 29) and tells Eddard in Arya III (site 33), as the Ice and Fire Wiki’s Yoren page and the check for #1352 confirm; he asks Eddard for recruits in both.',
+    },
+    '9:66': {
+      source: `${SHOW}Yoren`,
+      note: 'Both media: at the execution Yoren grabs Arya as she pushes toward her father with her sword and keeps her from seeing it (GOT109; Arya V, site 66, on A Wiki of Ice and Fire, where he holds her tight and tells her not to look).',
+    },
+    '10:73': {
+      source: `${SHOW}Yoren`,
+      note: 'Show only, citing GOT110: Arya’s hair cut, Arry the orphan boy, the plan to take her to Winterfell among the recruits and the warning about them. Gendry among the recruits is the relationship pin at 10/73.',
+    },
+  },
+  'will': {
+    '1:1': {
+      source: WALL_PROLOGUE,
+      note: 'Book only, the Prologue: Will reports the wildlings dead with no blood, leads Waymar back to find the bodies gone, is sent up a sentinel tree, watches the Others kill Waymar and is strangled by Waymar risen with a blue eye.',
+    },
+    '1:2': {
+      source: `${SHOW}Will`,
+      note: 'Show only, filed at chapter 2 so it may link Eddard. Season 1, citing GOT101: the wildling corpses arranged in a pattern, the bodies gone, the dead girl walking, Gared beheaded by a White Walker, the flight south, capture near Winterfell, the plea about his mother and the execution.',
+    },
+  },
+  'gared': {
+    '1:chapter': {
+      source: WALL_PROLOGUE,
+      note: 'Book only, the Prologue: the oldest of the three, decades in the Watch, wanting to turn back, mocked by Waymar, left with the horses and forbidden a fire.',
+    },
+    '1:episode': {
+      source: `${SHOW}Gared`,
+      note: 'Show only, Season 1, citing GOT101: the ranging into the Haunted Forest, Gared advising a return, the bodies gone, the bloody clothing, Waymar killed by a White Walker and Gared caught and beheaded.',
+    },
+    '1:2': {
+      source: WALL_BRAN_I,
+      note: 'Book only, site chapter 2: the deserter with ears and a finger lost to frostbite, questioned and beheaded by Eddard, the head kicked by Theon and Jon calling Theon an ass. The Ice and Fire Wiki’s Gared page names him as the deserter, caught near Winterfell; the record files his death here.',
+    },
+  },
+  'waymar-royce': {
+    '1:chapter': {
+      source: WALL_PROLOGUE,
+      note: 'Book only, the Prologue: a highborn youth of eighteen on his first ranging, mocking Gared, sending Will up a tree, facing the Other, the sword shattering, the Others cutting him down, and Waymar risen with his remaining eye blue, strangling Will.',
+    },
+    '1:episode': {
+      source: `${SHOW}Waymar_Royce`,
+      note: 'Show only, Season 1, citing GOT101: the ranging, Will finding the corpses, Gared’s advice overridden, the bodies gone and Waymar slain by a White Walker in front of Gared.',
+    },
+  },
+  'grenn': {
+    '3:20': {
+      source: `${SHOW}Grenn`,
+      note: 'Both media: Jon beats and hurts him (his nose in GOT103, his wrist in Jon III on the Ice and Fire Wiki), Grenn and others go after Jon in the armory and are stopped (Tyrion on screen, Donal Noye in the book), and Jon offers to teach him. The relationship pin at 3/20 holds this in both media.',
+    },
+    '4:27': {
+      source: `${SHOW}Grenn`,
+      note: 'Both media: Grenn scorning Sam’s cowardice, agreeing to go easy on him, and Rast frightened with Ghost (GOT104; the Ice and Fire Wiki’s Grenn page for Jon IV, site 27, and its Alliser page for Alliser’s anger).',
+    },
+    '10:71': {
+      source: EPISODE_10,
+      note: 'Both media: Grenn among the rangers (GOT107; Jon VI), riding after Jon with Pyp, reciting the vows and bringing him back (episode 10 synopsis; Jon IX, site 71, on A Wiki of Ice and Fire).',
+    },
+  },
+  'pypar': {
+    '3:20': {
+      source: EPISODE_3,
+      note: 'Both media: Pyp a recruit under Alliser, Jon beating the others in the yard and his castle training (episode 3 synopsis and the Pypar page, GOT103; Jon III, site 20, where Pypar is on the Appearing list, and the Ice and Fire Wiki’s Jon page).',
+    },
+    '4:27': {
+      source: `${SHOW}Pypar`,
+      note: 'Both media: Pyp at first holding Jon back from interfering, going along with the plan, and Rast warned off with Ghost (GOT104; the Ice and Fire Wiki’s Pypar page for Jon IV, site 27).',
+    },
+    '7:49': {
+      source: `${SHOW}Pypar`,
+      note: 'Show only, citing GOT107: Pyp sent to the stewards with Jon and Sam, his confession about the lord he refused instead of the cheese, Sam’s request for a song and Pyp walking off. In the book he goes to the rangers.',
+    },
+    '10:71': {
+      source: EPISODE_10,
+      note: 'Both media: Pyp riding after Jon with Grenn, reciting the vows and bringing him back (episode 10 synopsis; Jon IX, site 71, on A Wiki of Ice and Fire).',
+    },
+  },
+  'rast': {
+    '3:27': {
+      source: `${SHOW}Rast`,
+      note: 'Show only, filed at chapter 27, the book gate. Season 1: a rapist joining the party with Yoren (GOT102), beaten with Grenn and Pyp, the threat in the armory ended by Tyrion, and no respect for Jon (GOT103).',
+    },
+    '4:chapter': {
+      source: WALL_JON_IV,
+      note: 'Book only, site chapter 27, filed at episode 4 so it may link Sam: Rast and Albett sent to help Halder, beaten by Jon with Grenn and Pyp, Rast refusing to go easy, and the night visit. The Ice and Fire Wiki’s Rast page has Ghost nipping his neck and the shaving excuse.',
+    },
+    '4:episode': {
+      source: `${SHOW}Rast`,
+      note: 'Show only, citing GOT104: Rast humiliating Sam on Alliser’s orders, the side of bacon, waking pinned down with Ghost on his chest, and refusing to beat Sam afterwards.',
+    },
+  },
+  'dareon': {
+    '7:20': {
+      source: WALL_JON_III,
+      note: 'Book only, site chapter 20: Dareon on the Appearing list of the recruits. Jon beating each of them and earning their ire and Alliser’s is on the Ice and Fire Wiki’s Jon page for this chapter.',
+    },
+    '7:episode': {
+      source: `${SHOW}Dareon`,
+      note: 'Show only, citing GOT107: present at the speech, assigned to the stewards, and sent by Aemon to Eastwatch to present himself to Borcas.',
+    },
+    '7:chapter': {
+      source: WALL_AGOT_48,
+      note: 'Book only, Jon VI (site 49): Dareon to the stewards with Sam and Jon, sent by Bowen Marsh to Eastwatch to work with the merchants, and angered by Jon’s tantrum because he was sent to the Wall on a false accusation.',
+    },
+  },
+  'halder': {
+    '7:20': {
+      source: WALL_JON_III,
+      note: 'Book only, site chapter 20: Halder on the Appearing list, Alliser’s contempt, Jon beating the others and Donal Noye’s lesson about their lack of training.',
+    },
+    '7:27': {
+      source: WALL_JON_IV,
+      note: 'Book only, site chapter 27: Halder, a stonemason’s apprentice, sent against Sam and told to keep hitting him with the flat of his blade, then beaten with Rast and Albett. The Ice and Fire Wiki’s Halder page has his blow to Jon’s shoulder and his quick agreement to protect Sam.',
+    },
+    '7:49': {
+      source: `${SHOW}Halder`,
+      note: 'Show only, citing GOT107: present at the speech and assigned to the builders.',
+    },
+    '10:71': {
+      source: WALL_AGOT_70,
+      note: 'Book only, Jon IX (site 71): Halder with Grenn, Pyp, Toad and Matthar, hearing the mare and asking the others to be quiet, the vows recited and the return before dawn. He is a builder since Jon VI (site 49).',
+    },
+  },
+  'todder': {
+    '30:20': {
+      source: WALL_JON_III,
+      note: 'Book only, at the show gate (episode 30): Toad, Grenn and the two rapers confronting Jon, the taunt, Jon holding him by the throat, and Donal Noye breaking it up. Fed up with being beaten is on the Ice and Fire Wiki’s Todder page.',
+    },
+    '30:71': {
+      source: WALL_AGOT_70,
+      note: 'Book only, Jon IX (site 71): Toad with Grenn, Pyp, Halder and Matthar bringing Jon back. Named to the rangers in Jon VI (site 49), as the Ice and Fire Wiki’s Todder page says.',
+    },
+  },
+  'othell-yarwyck': {
+    '7:49': {
+      source: `${SHOW}Othell_Yarwyck`,
+      note: 'Both media: the First Builder, present at the induction (GOT107) and, in the book, present as First Builder when the new brothers swear (Ice and Fire Wiki, Othell page; Jon VI, site 49). Halder to the builders in both (GOT107; Jon VI).',
+    },
+    '8:53': {
+      source: `${SHOW}Othell_Yarwyck`,
+      note: 'Show only, citing GOT107 and GOT108: witnessing the vows at the heart tree, congratulating Jon and Sam, his party bringing back the bodies, confirming they do not smell, and wanting them burned before Mormont overrules him. The book does not send him to the grove.',
+    },
+  },
+  'bowen-marsh': {
+    '41:22': {
+      source: WALL_TYRION_III,
+      note: 'Book only, at the show gate (episode 41): Bowen at the Lord Commander’s table with Aemon and Jaremy. His remark on how much Tyrion drinks is the relationship pin at 41/22, from a full read of the chapter for #1350; his defense of Alliser is on the Ice and Fire Wiki’s Bowen page.',
+    },
+    '41:49': {
+      source: WALL_AGOT_48,
+      note: 'Book only, Jon VI (site 49): Bowen assigns Sam to the library and rookery because Chett goes to the kennels, Dareon to Eastwatch and Jon to Mormont at his request, unlocks the three gates under the Wall, and declares Jon and Sam men of the Watch at the grove.',
+    },
+  },
+  'jaremy-rykker': {
+    '7:22': {
+      source: WALL_TYRION_III,
+      note: 'Book only, site chapter 22: Jaremy at the supper says Tyrion’s father gave him and Alliser the choice of execution or the Watch after the sack of King’s Landing. That he fought for Aerys is on the Ice and Fire Wiki’s Jaremy page.',
+    },
+    '7:49': {
+      source: `${SHOW}Jaremy_Rykker`,
+      note: 'Show only, citing GOT107: acting First Ranger in Benjen’s absence, summoning the rangers after the speech, leading the escort for Jon and Sam to the godswood and embracing them after their vows.',
+    },
+    '8:53': {
+      source: WALL_AGOT_52,
+      note: 'Book only, Jon VII (site 53): Ghost leading the rangers to the bodies, Jaremy naming Othor and Jafer, his complaint about too few men, the blame on wildlings, a day dead at most, Sam’s dry blood and no rot, and Mormont’s order to search ten leagues around.',
+    },
+    '8:61': {
+      source: WALL_AGOT_60,
+      note: 'Book only, Jon VIII (site 61): the other wight hacked to pieces after killing Jaremy and four men. The Game of Thrones Wiki’s Jaremy page, In the books, citing this chapter, has the head hacked off and his own dagger in his bowels; his death is the record’s book status at 8/61.',
+    },
+  },
+  'othor': {
+    '8:20': {
+      source: `${BOOKS}Othor`,
+      note: 'Book only, site chapter 20, the record gate: Othor rides out in Benjen’s party, which is looking for Waymar Royce, singing bawdy songs. Benjen refusing Jon is in Jon III on the Ice and Fire Wiki.',
+    },
+    '8:53': {
+      source: EPISODE_8,
+      note: 'Both media: the body found beside Jafer’s and brought back, Mormont wanting Aemon to examine it, the corpse rising and attacking Mormont, the arm cut off without stopping it, and Jon burning it (episode 8 synopsis and the Othor page, GOT108; Jon VII, site 53, on A Wiki of Ice and Fire).',
+    },
+  },
+  'jafer-flowers': {
+    '8:episode': {
+      source: `${SHOW}Jafer_Flowers`,
+      note: 'Show only, citing GOT107 and GOT108: Ghost finding his severed hand, the bodies found by Othell’s party and brought back, Mormont wanting Aemon to examine them, the corpses rising and Jafer causing trouble elsewhere before he is put down and burned.',
+    },
+    '8:chapter': {
+      source: WALL_AGOT_52,
+      note: 'Book only, Jon VII (site 53): the hand from the grove was Jafer’s right hand, Jaremy names the bodies, the axe blow to the neck, Dywen recalling Othor’s axe, the black hands and blue eyes, and the bodies carried back for Aemon.',
+    },
+    '8:61': {
+      source: WALL_AGOT_60,
+      note: 'Book only, Jon VIII (site 61): the other wight kills Jaremy and four men before it is hacked apart, and Alliser takes Jafer’s hand to King’s Landing to get the king’s attention. The headless body and the dagger are on the Jafer Flowers page of the Game of Thrones Wiki, In the books.',
+    },
+  },
+  'donal-noye': {
+    '3:20': {
+      source: `${BOOKS}Donal_Noye`,
+      note: 'Book only, site chapter 20: the one-armed armorer who breaks up the armory fight and tells Jon he had castle training the others never had and is making enemies. The warhammer is the chapter line the page quotes; sending the others away is in Jon III on the same wiki.',
+    },
+  },
+  'chett': {
+    '5:42': {
+      source: WALL_AGOT_41,
+      note: 'Book only, Jon V (site 42): Chett and Clydas at Aemon’s door, Chett saying the maester is asleep, the foot in the door, and Chett holding that Alliser will make a man of Sam or kill him and that a steward’s work is not for cowards.',
+    },
+    '8:53': {
+      source: WALL_AGOT_52,
+      note: 'Book only, Jon VII (site 53): Mormont orders Chett to bring a hound closer and it fights to stay away. Sam replacing him and the kennels are Bowen Marsh’s words in Jon VI (site 49).',
     },
   },
 }

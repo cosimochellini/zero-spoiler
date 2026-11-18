@@ -797,4 +797,730 @@ export const season1Chronicles = {
       },
     ),
   ],
+  // The Night’s Watch cast (#1363). Will, Gared and Waymar Royce open and
+  // die in the first episode and the first chapters; the book’s Gared lives
+  // to be beheaded in Bran I (chapter 2). Donal Noye and Chett are the books’
+  // alone, and Todder and Bowen Marsh are too within the stage, since the
+  // show first names them at episodes 30 and 41, so their stories sit at those
+  // episodes. Jorah and Sam’s news of Robb are the show’s alone (#1352).
+  'jon-snow': [
+    inBooks(
+      [1, 2],
+      { it: 'Il disertore e i cuccioli', en: 'The deserter and the pups' },
+      {
+        it: 'Jon, il figlio bastardo di lord [[eddard-stark|Eddard Stark]], cavalca con il padre, i fratelli [[robb-stark|Robb]] e [[bran-stark|Bran]] e il pupillo [[theon-greyjoy|Theon Greyjoy]] per assistere alla decapitazione di un disertore dei Guardiani della notte. Jon dice a Bran di non distogliere lo sguardo. Quando Theon allontana la testa con un calcio, Jon gli dà dell’idiota sottovoce. Sulla via del ritorno Jon e Robb trovano una meta-lupa morta con i suoi cuccioli. Jon fa notare che sono cinque, uno per ciascuno dei figli legittimi di Eddard, e il padre li risparmia. Poi Jon trova un sesto cucciolo, albino e con gli occhi rossi, e lo tiene per sé.',
+        en: 'Jon, the bastard son of Lord [[eddard-stark|Eddard Stark]], rides out with his father, his brothers [[robb-stark|Robb]] and [[bran-stark|Bran]] and the ward [[theon-greyjoy|Theon Greyjoy]] to see a deserter of the Night’s Watch beheaded. Jon tells Bran not to look away. When Theon kicks the head aside, Jon calls him an ass under his breath. On the way back Jon and Robb find a dead direwolf and her pups. There are five, Jon points out, one for each of Eddard’s trueborn children, and his father spares them. Then Jon finds a sixth pup, an albino with red eyes, and keeps it.',
+      },
+    ),
+    onScreen(
+      [1, 6],
+      { it: 'Come un’armatura', en: 'Worn like armor' },
+      {
+        it: 'Jon, il figlio bastardo di lord [[eddard-stark|Eddard Stark]], assiste alla decapitazione del disertore [[will|Will]] per mano del padre e loda [[bran-stark|Bran]], che non ha distolto lo sguardo. Sulla via del ritorno gli Stark trovano una meta-lupa morta con cinque cuccioli. Jon convince il padre a risparmiarli, uno per ciascuno dei suoi figli legittimi, poi trova un sesto cucciolo, bianco e più piccolo degli altri, e lo tiene per sé. Quando arriva il re, [[catelyn-stark|Catelyn]] ritiene che un bastardo non debba partecipare al banchetto, e Jon si allena con la spada fuori dalla sala. Chiede allo zio [[benjen-stark|Benjen]] di portarlo con sé alla Barriera, e Benjen promette di pensarci. [[tyrion-lannister|Tyrion Lannister]] consiglia a Jon di portare il suo essere bastardo come un’armatura, perché nessuno possa usarlo per ferirlo.',
+        en: 'Jon, the bastard son of Lord [[eddard-stark|Eddard Stark]], watches his father behead the deserter [[will|Will]] and praises [[bran-stark|Bran]] for not flinching. On the road back the Starks find a dead direwolf with five pups. Jon convinces his father to spare them, one for each of his trueborn children, then finds a sixth, a white runt, and keeps it. When the king visits, [[catelyn-stark|Catelyn]] thinks a bastard should not attend the feast, and Jon practices with his sword outside. He asks his uncle [[benjen-stark|Benjen]] to take him to the Wall, and Benjen agrees to think about it. [[tyrion-lannister|Tyrion Lannister]] tells Jon to wear being a bastard like armor, so that no one can use it to hurt him.',
+      },
+    ),
+    inBooks(
+      [1, 6],
+      { it: 'Al tavolo degli scudieri', en: 'At the squires’ table' },
+      {
+        it: 'Al banchetto per re [[robert-baratheon|Robert]] a Grande Inverno, Jon siede con gli scudieri, perché lady [[catelyn-stark|Catelyn]] gli ha proibito di sedere con gli altri ragazzi davanti agli ospiti reali. Spettro aspetta sotto il tavolo. Lo zio [[benjen-stark|Benjen]], un uomo dei Guardiani della notte, si ferma a parlare con lui, e Jon chiede a Benjen di portarlo con sé alla Barriera. Benjen risponde che Jon è troppo giovane e che prima dovrebbe mettere al mondo qualche bastardo suo. Jon esce barcollando tra le risate. Nel cortile incontra [[tyrion-lannister|Tyrion Lannister]], che gli dice di non dimenticare mai ciò che è, così che nessuno possa usarlo per ferirlo.',
+        en: 'At the feast for King [[robert-baratheon|Robert]] at Winterfell, Jon sits with the squires, because Lady [[catelyn-stark|Catelyn]] has forbidden him to sit with the other children in front of the royal party. Ghost waits under the table. His uncle [[benjen-stark|Benjen]], a man of the Night’s Watch, stops to talk, and Jon asks to go with him to the Wall. Benjen says that Jon is too young and should father a few bastards of his own first. Jon stumbles out amid laughter. In the yard he meets [[tyrion-lannister|Tyrion Lannister]], who tells him never to forget what he is, so that no one can use it to hurt him.',
+      },
+    ),
+    inBoth(
+      [2, 11],
+      { it: 'Gli addii a Grande Inverno', en: 'Farewells at Winterfell' },
+      {
+        it: 'Jon sta per lasciare Grande Inverno per unirsi ai Guardiani della notte con lo zio [[benjen-stark|Benjen]]. Prima di partire saluta [[bran-stark|Bran]], che giace privo di sensi dopo la caduta, e al suo capezzale trova [[catelyn-stark|Catelyn]], che non lo vuole lì. Abbraccia [[robb-stark|Robb]], e i due sperano di rivedersi presto. Ad [[arya-stark|Arya]] regala una spada sottile fatta apposta per lei, con la prima lezione: si colpisce con la punta. Poi parte verso nord.',
+        en: 'Jon is leaving Winterfell to join the Night’s Watch with his uncle [[benjen-stark|Benjen]]. Before he goes, he says goodbye to [[bran-stark|Bran]], who lies unconscious after his fall, and finds [[catelyn-stark|Catelyn]] at the bedside. She does not want him there. He embraces [[robb-stark|Robb]], and the two hope to meet again soon. He gives [[arya-stark|Arya]] a slim sword made for her, with her first lesson: stick them with the pointy end. Then he rides north.',
+      },
+    ),
+    onScreen(
+      [3, 20],
+      { it: 'Lord Snow', en: 'Lord Snow' },
+      {
+        it: 'A Castello Nero Jon batte le altre reclute nel cortile. Ser [[alliser-thorne|Alliser Thorne]], il maestro d’armi, non lo loda e lo chiama “Lord Snow”. Alcune reclute, tra cui [[grenn|Grenn]] e [[pypar|Pyp]], se la prendono con Jon, finché non interviene [[tyrion-lannister|Tyrion Lannister]]. Tyrion fa notare a Jon che nessuno di loro ha mai avuto un maestro d’armi. In cima alla Barriera lo zio [[benjen-stark|Benjen]] si rifiuta di portarlo in perlustrazione nella Foresta Stregata: Jon non è pronto, e lì ogni uomo deve guadagnarsi ciò che ottiene. Jon comincia ad addestrare gli altri.',
+        en: 'At Castle Black, Jon beats the other recruits in the yard. Ser [[alliser-thorne|Alliser Thorne]], the master-at-arms, gives him no praise and calls him “Lord Snow”. Several recruits, [[grenn|Grenn]] and [[pypar|Pyp]] among them, gang up on Jon, until [[tyrion-lannister|Tyrion Lannister]] steps in. Tyrion points out to Jon that none of them ever had a master-at-arms. On top of the Wall his uncle [[benjen-stark|Benjen]] refuses to take him on a ranging into the Haunted Forest: Jon is not ready, and there every man must earn what he gets. Jon begins to train the others.',
+      },
+    ),
+    inBooks(
+      [3, 20],
+      { it: 'La lezione dell’armaiolo', en: 'The armorer’s lesson' },
+      {
+        it: 'A Castello Nero Jon batte facilmente [[grenn|Grenn]] nel cortile, e ser [[alliser-thorne|Alliser Thorne]] lo deride lo stesso. Lo zio [[benjen-stark|Benjen]] è partito in perlustrazione senza di lui. Nell’armeria Grenn, Todder e i due stupratori arrivati al nord con Jon lo affrontano, e Jon tiene Todder a terra per la gola. L’armaiolo [[donal-noye|Donal Noye]] li separa e spiega a Jon che ha avuto un maestro d’armi per tutta la vita, mentre gli altri no. Jon capisce di averli umiliati. Il lord comandante [[jeor-mormont|Mormont]] gli comunica che [[bran-stark|Bran]] si è svegliato, e Jon si offre di aiutare Grenn a migliorare. Una battuta su ser Alliser fa del maestro d’armi un suo nemico.',
+        en: 'At Castle Black, Jon easily beats [[grenn|Grenn]] in the yard, and Ser [[alliser-thorne|Alliser Thorne]] still mocks him. His uncle [[benjen-stark|Benjen]] has left on a ranging without him. In the armory Grenn, Todder and the two rapers who rode north with Jon confront him, and Jon pins Todder down by the throat. The armorer [[donal-noye|Donal Noye]] breaks it up and tells Jon that he has had a master-at-arms all his life and the others never did. Jon sees that he has been shaming them. Lord Commander [[jeor-mormont|Mormont]] tells him that [[bran-stark|Bran]] has woken, and Jon offers to help Grenn improve. A joke at Ser Alliser’s expense makes the master-at-arms his enemy.',
+      },
+    ),
+    inBoth(
+      [4, 27],
+      { it: 'Il protettore di Sam', en: 'Sam’s protector' },
+      {
+        it: 'Una nuova recluta, [[samwell-tarly|Samwell Tarly]], arriva a Castello Nero: è grasso e non sa combattere. Ser [[alliser-thorne|Alliser Thorne]] gli aizza contro gli altri, e Jon si mette in mezzo. Sam ammette di essere un codardo. Racconta a Jon che il padre di Sam lo ha costretto a prendere il nero, minacciando di farlo morire in un incidente di caccia se avesse rifiutato. Jon convince le reclute ad andarci piano con Sam. Solo [[rast|Rast]] rifiuta, finché Jon, [[grenn|Grenn]] e [[pypar|Pyp]] non vanno da lui di notte con [[ghost-direwolf|Spettro]].',
+        en: 'A new recruit, [[samwell-tarly|Samwell Tarly]], arrives at Castle Black, fat and unable to fight. Ser [[alliser-thorne|Alliser Thorne]] sets the others on him, and Jon puts himself in their way. Sam admits that he is a coward. He tells Jon that Sam’s own father made him take the black, threatening to have him killed in a hunting accident if he refused. Jon persuades the recruits to go easy on Sam. Only [[rast|Rast]] refuses, until Jon, [[grenn|Grenn]] and [[pypar|Pyp]] visit him at night with [[ghost-direwolf|Ghost]].',
+      },
+    ),
+    inBooks(
+      [5, 42],
+      { it: 'Alla porta del maestro', en: 'At the maester’s door' },
+      {
+        it: 'Ser [[alliser-thorne|Alliser Thorne]] presenta al lord comandante otto reclute pronte, tra cui Jon, ma non [[samwell-tarly|Sam]]. Jon teme che, senza gli amici a proteggerlo, Sam resti alla mercé di ser Alliser. A notte fonda Jon va da maestro [[aemon|Aemon]]. L’attendente [[chett|Chett]] cerca di mandarlo via, ma Jon mette un piede nella porta. Chiede ad Aemon di lasciare che Sam pronunci il giuramento e serva come attendente, perché Sam sa leggere, scrivere e fare di conto. Aemon risponde che ci penserà.',
+        en: 'Ser [[alliser-thorne|Alliser Thorne]] passes eight recruits on to the Lord Commander, Jon among them, but not [[samwell-tarly|Sam]]. Without his friends to protect him, Jon fears, Sam will be at Ser Alliser’s mercy. Late at night Jon goes to Maester [[aemon|Aemon]]. The steward [[chett|Chett]] tries to send him away, but Jon puts his foot in the door. He asks Aemon to let Sam take his vows and serve as a steward, since Sam can read, write and do sums. Aemon says he will think on it.',
+      },
+    ),
+    inBoth(
+      [7, 49],
+      {
+        it: 'Attendente del lord comandante',
+        en: 'The Lord Commander’s steward',
+      },
+      {
+        it: 'Il lord comandante [[jeor-mormont|Jeor Mormont]] accoglie nei Guardiani della notte il gruppo di reclute di Jon e assegna gli incarichi. Jon, il migliore combattente del gruppo, viene destinato agli attendenti invece che ai ranger, come attendente personale del lord comandante. Jon è indignato. [[samwell-tarly|Sam]] gli fa notare che forse Mormont vuole prepararlo al comando. Jon e Sam pronunciano insieme il giuramento davanti a un albero del cuore oltre la Barriera. Poi [[ghost-direwolf|Spettro]] torna dal bosco con una mano umana tra le fauci.',
+        en: 'Lord Commander [[jeor-mormont|Jeor Mormont]] takes Jon’s group of recruits into the Night’s Watch and gives out their posts. Jon, the best fighter among them, is sent to the stewards rather than the rangers, to serve as the Lord Commander’s own steward. He is angry. [[samwell-tarly|Sam]] tells him that Mormont may mean to groom him for command. Jon and Sam swear their vows together before a heart tree beyond the Wall. Afterwards [[ghost-direwolf|Ghost]] comes back from the woods with a human hand in his jaws.',
+      },
+    ),
+    inBoth(
+      [8, 53],
+      {
+        it: 'Fuoco nelle stanze del lord comandante',
+        en: 'Fire in the Lord Commander’s rooms',
+      },
+      {
+        it: 'Il gruppo riporta da oltre la Barriera i corpi di [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]], due ranger di [[benjen-stark|Benjen]]. Alcuni confratelli vogliono bruciarli, ma il lord comandante [[jeor-mormont|Mormont]] vuole che li esamini maestro [[aemon|Aemon]]. Mormont comunica a Jon che il padre di Jon, [[eddard-stark|Eddard Stark]], è stato arrestato per tradimento, e lo avverte di non fare sciocchezze. Quando ser [[alliser-thorne|Alliser Thorne]] lo chiama bastardo di un traditore, Jon gli si scaglia contro con un coltello, e gli amici di Jon lo trattengono. Quella notte [[ghost-direwolf|Spettro]] sveglia Jon, che nelle stanze del lord comandante trova il cadavere di Othor rianimato. Jon lo distrugge con il fuoco.',
+        en: 'The party brings back from beyond the Wall the bodies of [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]], two of [[benjen-stark|Benjen]]’s rangers. Some of the brothers want them burned, but Lord Commander [[jeor-mormont|Mormont]] wants Maester [[aemon|Aemon]] to examine them. Mormont tells Jon that Jon’s father, [[eddard-stark|Eddard Stark]], has been arrested for treason, and warns him not to do anything stupid. When Ser [[alliser-thorne|Alliser Thorne]] calls him a traitor’s bastard, Jon goes for him with a knife, and his friends hold him back. That night [[ghost-direwolf|Ghost]] wakes Jon, who finds Othor’s corpse risen in the Lord Commander’s rooms. Jon destroys it with fire.',
+      },
+    ),
+    inBoth(
+      [9, 61],
+      { it: 'Lungo Artiglio', en: 'Longclaw' },
+      {
+        it: 'Per ringraziare Jon di avergli salvato la vita, il lord comandante [[jeor-mormont|Mormont]] gli dona Lungo Artiglio, una spada d’acciaio di Valyria. Mormont ha mandato ser [[alliser-thorne|Alliser Thorne]] ad Approdo del Re con la mano di uno dei morti, per chiedere aiuto al re. Maestro [[aemon|Aemon]] capisce che Jon è diviso tra il giuramento e la famiglia. Targaryen di nascita, Aemon rivela di essere figlio di un re e fratello di un altro, ed è rimasto alla Barriera mentre la sua casata veniva distrutta. Aemon non dirà a Jon se restare o partire: Jon deve scegliere da solo, e convivere con la scelta.',
+        en: 'To thank Jon for saving his life, Lord Commander [[jeor-mormont|Mormont]] gives him Longclaw, a Valyrian steel sword. Mormont has sent Ser [[alliser-thorne|Alliser Thorne]] to King’s Landing with the hand of one of the dead men, to ask the king for help. Maester [[aemon|Aemon]] sees that Jon is torn between his vows and his family. A Targaryen by birth, Aemon reveals that he was born the son of one king and the brother of another, and that he stayed at the Wall while his house was destroyed. Aemon will not tell Jon whether to stay or go: Jon must choose, and live with it.',
+      },
+    ),
+    inBoth(
+      [10, 71],
+      { it: 'La fuga verso sud', en: 'The ride south' },
+      {
+        it: 'Jon viene a sapere che suo padre è stato decapitato ad Approdo del Re. Sella un cavallo per andare a sud e unirsi alla guerra di [[robb-stark|Robb]], e [[samwell-tarly|Sam]] non riesce a fermarlo. Gli amici di Jon lo inseguono, tra loro [[grenn|Grenn]] e [[pypar|Pyp]]. Lo circondano e recitano il giuramento dei Guardiani della notte finché Jon non accetta di tornare. Il lord comandante [[jeor-mormont|Mormont]] lascia correre la diserzione. La guerra nel sud, spiega a Jon, conta meno di ciò che arriva da oltre la Barriera: Mormont vuole guidare i Guardiani a nord in forze e ritrovare [[benjen-stark|Benjen]]. Jon resta.',
+        en: 'Jon learns that his father has been beheaded in King’s Landing. He saddles a horse to ride south and join [[robb-stark|Robb]]’s war, and [[samwell-tarly|Sam]] cannot stop him. His friends ride after him, [[grenn|Grenn]] and [[pypar|Pyp]] among them. They surround him and recite the vows of the Night’s Watch until he agrees to come back. Lord Commander [[jeor-mormont|Mormont]] lets the desertion pass. The war in the south matters less, he tells Jon, than what is coming from beyond the Wall: he means to lead the Watch north in force and find [[benjen-stark|Benjen]]. Jon stays.',
+      },
+    ),
+  ],
+  'jeor-mormont': [
+    inBooks(
+      [3, 20],
+      { it: 'Notizie da Grande Inverno', en: 'Word from Winterfell' },
+      {
+        it: 'Jeor Mormont è il lord comandante dei Guardiani della notte a Castello Nero. Da Grande Inverno gli arrivano notizie di [[bran-stark|Bran]], il fratello di [[jon-snow|Jon Snow]], e Jeor manda a chiamare Jon, una recluta in addestramento. Bran si è svegliato, anche se è rimasto storpio. Jon è così felice che quasi non ascolta il resto, corre di sotto e fa volteggiare in aria [[tyrion-lannister|Tyrion Lannister]].',
+        en: 'Jeor Mormont is the Lord Commander of the Night’s Watch at Castle Black. Word reaches him from Winterfell about [[bran-stark|Bran]], the brother of [[jon-snow|Jon Snow]], and Jeor sends for Jon, a recruit in training. Bran has woken, though he is crippled. Jon is so happy that he barely takes in the rest, runs downstairs and swings [[tyrion-lannister|Tyrion Lannister]] around in the air.',
+      },
+    ),
+    onScreen(
+      [3, 22],
+      { it: 'Uomini per la Barriera', en: 'Men for the Wall' },
+      {
+        it: 'Jeor Mormont, lord comandante dei Guardiani della notte, osserva con [[tyrion-lannister|Tyrion Lannister]] l’addestramento delle reclute a Castello Nero. Tyrion ha da ridire sui modi duri di ser [[alliser-thorne|Alliser Thorne]], ma a Jeor basta che Alliser trasformi ladri e fuggiaschi in uomini dei Guardiani. Più tardi, con maestro [[aemon|Aemon]] al suo fianco, Jeor chiede a Tyrion di perorare a corte la causa dei Guardiani, che hanno pericolosamente bisogno di uomini. Tyrion dubita che oltre la Barriera ci siano mostri, ma accetta di portare il messaggio alla regina, sua sorella.',
+        en: 'Jeor Mormont, Lord Commander of the Night’s Watch, watches the recruits train at Castle Black with [[tyrion-lannister|Tyrion Lannister]]. Tyrion questions the harsh ways of Ser [[alliser-thorne|Alliser Thorne]], but Jeor only needs Alliser to turn thieves and runaways into men of the Watch. Later, with Maester [[aemon|Aemon]] at his side, Jeor asks Tyrion to speak for the Watch at court, since it is dangerously short of men. Tyrion doubts that monsters wait beyond the Wall, but agrees to take word to his sister, the queen.',
+      },
+    ),
+    inBooks(
+      [3, 22],
+      { it: 'La cena degli ufficiali', en: 'The officers’ supper' },
+      {
+        it: 'Nell’ultima sera di [[tyrion-lannister|Tyrion Lannister]] a Castello Nero, Jeor cena con lui e con gli ufficiali dei Guardiani, e fatica a mantenere la calma mentre Tyrion si prende gioco di ser [[alliser-thorne|Alliser Thorne]]. Poi Jeor chiede a Tyrion di convincere il re, il padre e il fratello di Tyrion a mandare uomini alla Barriera. I bruti fuggono verso sud, e i pescatori vicino a Forte Orientale dicono di aver visto gli Estranei. Jeor si rammarica di aver affidato la pattuglia scomparsa all’inesperto ser [[waymar-royce|Waymar Royce]], e non avrebbe mai creduto che il vecchio [[gared|Gared]] potesse disertare.',
+        en: 'On [[tyrion-lannister|Tyrion Lannister]]’s last night at Castle Black, Jeor sups with him and the officers of the Watch, and struggles to keep his composure as Tyrion mocks Ser [[alliser-thorne|Alliser Thorne]]. Afterwards Jeor asks Tyrion to urge the king, Tyrion’s father and Tyrion’s brother to send men to the Wall. Wildlings are fleeing south, and fisherfolk near Eastwatch claim to have seen the Others. Jeor regrets giving the patrol that vanished to the green Ser [[waymar-royce|Waymar Royce]], and he never thought old [[gared|Gared]] would desert.',
+      },
+    ),
+    inBoth(
+      [7, 49],
+      { it: 'Il nuovo attendente', en: 'A new steward' },
+      {
+        it: 'Jeor Mormont accoglie nei Guardiani della notte il gruppo di reclute di [[jon-snow|Jon Snow]] e assegna gli incarichi. Jon, il migliore combattente del gruppo, spera di diventare ranger, ma Jeor lo destina agli attendenti, come suo attendente personale. Jon la prende come un affronto. L’amico [[samwell-tarly|Samwell Tarly]] gli fa notare che forse Jeor vuole prepararlo al comando, e Jon e Sam pronunciano il giuramento davanti a un albero del cuore oltre la Barriera.',
+        en: 'Jeor Mormont takes the group of recruits of [[jon-snow|Jon Snow]] into the Night’s Watch and hands out their posts. Jon, the best fighter of the group, hopes for the rangers, but Jeor has him sent to the stewards, to serve as the Lord Commander’s own steward. Jon takes it as a slight. His friend [[samwell-tarly|Samwell Tarly]] tells him that Jeor may mean to groom him for command, and Jon and Sam swear their vows before a heart tree beyond the Wall.',
+      },
+    ),
+    inBoth(
+      [8, 53],
+      { it: 'Il morto nella torre', en: 'The dead man in the tower' },
+      {
+        it: 'I corpi di [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]], due ranger di [[benjen-stark|Benjen Stark]], vengono trovati oltre la Barriera e riportati a Castello Nero. Alcuni confratelli vogliono bruciarli, ma Jeor vuole prima farli esaminare da maestro [[aemon|Aemon]]. Jeor comunica a [[jon-snow|Jon Snow]] che il padre di Jon, [[eddard-stark|Eddard Stark]], è stato arrestato per tradimento, e lo avverte di non fare sciocchezze. Quella notte il cadavere di Othor si rianima e va a cercare Jeor nelle sue stanze. Jon lo distrugge con il fuoco.',
+        en: 'The bodies of [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]], two of the rangers of [[benjen-stark|Benjen Stark]], are found beyond the Wall and carried back to Castle Black. Some of the brothers want them burned, but Jeor wants Maester [[aemon|Aemon]] to examine them first. Jeor tells [[jon-snow|Jon Snow]] that Jon’s father, [[eddard-stark|Eddard Stark]], has been arrested for treason, and warns him not to do anything stupid. That night Othor’s corpse rises and comes for Jeor in his rooms. Jon destroys it with fire.',
+      },
+    ),
+    onScreen(
+      [9, 61],
+      { it: 'La spada di un figlio', en: 'A son’s sword' },
+      {
+        it: 'Per ringraziare [[jon-snow|Jon Snow]] di avergli salvato la vita, Jeor gli dona Lungo Artiglio, una spada d’acciaio di Valyria. Era destinata al figlio di Jeor, [[jorah-mormont|Jorah]], che ha disonorato la casata ed è fuggito in esilio oltre il mare. Jeor restituisce a Jon i suoi incarichi e gli dice di aver mandato ser [[alliser-thorne|Alliser Thorne]] ad Approdo del Re con la mano del morto, per deporla davanti al re e chiedere aiuto.',
+        en: 'To thank [[jon-snow|Jon Snow]] for saving his life, Jeor gives him Longclaw, a Valyrian steel sword. It was meant for Jeor’s son, [[jorah-mormont|Jorah]], who shamed their house and fled into exile across the sea. Jeor restores Jon to his duties and tells him that he has sent Ser [[alliser-thorne|Alliser Thorne]] to King’s Landing with the dead man’s hand, to lay it before the king and ask for help.',
+      },
+    ),
+    inBooks(
+      [9, 61],
+      { it: 'La spada dei Mormont', en: 'The Mormonts’ sword' },
+      {
+        it: 'Jeor dona a [[jon-snow|Jon Snow]] Lungo Artiglio, una spada bastarda d’acciaio di Valyria che appartiene alla casa Mormont da cinque secoli. La spada è rimasta danneggiata nell’incendio della torre di Jeor, che ne ha fatto rifare il pomolo a forma di testa di lupo bianco. Jon cerca di rifiutarla, ma Jeor gli dice che se l’è guadagnata pensando di usare il fuoco contro il morto. Jeor ha mandato ser [[alliser-thorne|Alliser Thorne]] ad Approdo del Re con la mano di [[jafer-flowers|Jafer Flowers]], e così fra Alliser e Jon ci sono mille leghe.',
+        en: 'Jeor gives [[jon-snow|Jon Snow]] Longclaw, a Valyrian steel bastard sword that has belonged to House Mormont for five centuries. It was damaged in the fire in Jeor’s tower, and Jeor has had a new pommel made in the likeness of a white wolf’s head. Jon tries to refuse it, but Jeor says he earned it by thinking to use fire against the dead man. Jeor has sent Ser [[alliser-thorne|Alliser Thorne]] to King’s Landing with the hand of [[jafer-flowers|Jafer Flowers]], which also puts a thousand leagues between Alliser and Jon.',
+      },
+    ),
+    inBoth(
+      [10, 71],
+      { it: 'In forze oltre la Barriera', en: 'Beyond the Wall in force' },
+      {
+        it: 'Dopo la decapitazione di [[eddard-stark|Eddard Stark]], [[jon-snow|Jon Snow]] fugge per unirsi al fratello [[robb-stark|Robb]], ma gli amici di Jon lo riportano indietro. Jeor lascia correre la diserzione: se i Guardiani giustiziassero ogni uomo che scappa e poi torna, non resterebbe nessuno a difendere la Barriera. La guerra tra gli Stark e i Lannister, spiega a Jon, conta meno della minaccia oltre la Barriera. Jeor vuole guidare i Guardiani della notte a nord in forze e ritrovare [[benjen-stark|Benjen Stark]]. Jon resta.',
+        en: 'After [[eddard-stark|Eddard Stark]] is beheaded, [[jon-snow|Jon Snow]] rides off to join his brother [[robb-stark|Robb]], but Jon’s friends bring him back. Jeor lets the desertion pass: if the Watch executed every man who ran off and came back, there would be no one left to guard the Wall. The war between the Starks and the Lannisters, he tells Jon, matters less than the threat beyond the Wall. Jeor means to lead the Night’s Watch north in force and find [[benjen-stark|Benjen Stark]]. Jon stays.',
+      },
+    ),
+  ],
+  'aemon': [
+    onScreen(
+      [3, 22],
+      { it: 'Un inverno peggiore', en: 'A worse winter' },
+      {
+        it: 'Aemon è il maestro di Castello Nero, vecchissimo e cieco, e il principale consigliere del lord comandante [[jeor-mormont|Jeor Mormont]]. Quando Jeor chiede a [[tyrion-lannister|Tyrion Lannister]] di ottenere a corte più uomini per i Guardiani, Aemon avverte Tyrion che il motto degli Stark dice il vero: l’inverno sta arrivando, e sarà peggiore di qualunque inverno a memoria d’uomo. Con lui potrebbero arrivare cose più pericolose dei bruti. Tyrion ne dubita, ma accetta di portare il messaggio alla regina.',
+        en: 'Aemon is the maester of Castle Black, ancient and blind, and the chief adviser of Lord Commander [[jeor-mormont|Jeor Mormont]]. When Jeor asks [[tyrion-lannister|Tyrion Lannister]] to get the Watch more men at court, Aemon warns Tyrion that the Stark words are right: winter is coming, and it will be worse than any in living memory. Things more dangerous than wildlings may come with it. Tyrion doubts it, but agrees to take word to the queen.',
+      },
+    ),
+    inBooks(
+      [3, 22],
+      { it: 'Un gigante', en: 'A giant' },
+      {
+        it: 'Aemon è il maestro di Castello Nero, cieco e molto anziano. Nell’ultima sera di [[tyrion-lannister|Tyrion Lannister]] alla Barriera siede alla cena che il lord comandante [[jeor-mormont|Jeor Mormont]] offre a Tyrion con gli ufficiali dei Guardiani. Tyrion si prende gioco di ser [[alliser-thorne|Alliser Thorne]] finché il cavaliere non se ne va. Aemon parla con Tyrion e lo definisce un gigante, e Tyrion risponde che il maestro è gentile.',
+        en: 'Aemon is the maester of Castle Black, blind and very old. On the last night of [[tyrion-lannister|Tyrion Lannister]] at the Wall, he sits at the supper Lord Commander [[jeor-mormont|Jeor Mormont]] gives for Tyrion with the officers of the Watch. Tyrion mocks Ser [[alliser-thorne|Alliser Thorne]] until the knight walks out. Aemon speaks with Tyrion and calls him a giant, and Tyrion answers that the maester is kind.',
+      },
+    ),
+    inBooks(
+      [5, 42],
+      { it: 'Un visitatore a mezzanotte', en: 'A midnight visitor' },
+      {
+        it: 'A notte fonda [[jon-snow|Jon Snow]] si presenta alla porta di Aemon. L’attendente del maestro, [[chett|Chett]], cerca di mandarlo via, ma Jon non se ne va, e Aemon lo riceve accanto al fuoco. Jon gli chiede di permettere a [[samwell-tarly|Samwell Tarly]] di pronunciare il giuramento con le altre reclute. Aemon osserva che l’addestramento spetta a ser [[alliser-thorne|Alliser]], e Chett insiste che il lavoro di un attendente non è per i codardi. Jon risponde che Sam sa leggere, scrivere e fare di conto, e potrebbe aiutare il maestro. Aemon dice che ci penserà.',
+        en: 'Late at night [[jon-snow|Jon Snow]] comes to Aemon’s door. The maester’s steward [[chett|Chett]] tries to send Jon away, but Jon will not go, and Aemon receives him by the fire. Jon asks him to let [[samwell-tarly|Samwell Tarly]] swear his vows with the other recruits. Aemon points out that the training is for Ser [[alliser-thorne|Alliser]] to judge, and Chett insists that a steward’s work is not for cowards. Jon answers that Sam can read, write and do sums, and could help the maester. Aemon says he will think on it.',
+      },
+    ),
+    inBoth(
+      [7, 49],
+      { it: 'Nessuna comprensione', en: 'No sympathy' },
+      {
+        it: 'Quando le reclute entrano nei Guardiani della notte, [[samwell-tarly|Samwell Tarly]] diventa l’attendente di Aemon. [[jon-snow|Jon Snow]], che sperava di diventare ranger, viene invece nominato attendente personale del lord comandante e se ne lamenta. Aemon non mostra alcuna comprensione per lui. Poi Jon e Sam pronunciano il giuramento davanti a un albero del cuore oltre la Barriera.',
+        en: 'When the recruits are taken into the Night’s Watch, [[samwell-tarly|Samwell Tarly]] becomes Aemon’s steward. [[jon-snow|Jon Snow]], who hoped to be a ranger, is made the Lord Commander’s personal steward instead, and complains about it. Aemon shows him no sympathy. Then Jon and Sam swear their vows before a heart tree beyond the Wall.',
+      },
+    ),
+    inBoth(
+      [9, 61],
+      { it: 'Il dovere e la famiglia', en: 'Duty and family' },
+      {
+        it: 'Aemon capisce che [[jon-snow|Jon Snow]] è diviso tra il giuramento e la famiglia. Targaryen di nascita, Aemon rivela di essere figlio di un re e fratello di un altro. Quando la sua casata fu distrutta nel sud, Aemon, già vecchio e cieco, rimase alla Barriera senza fare nulla. Per questo non dirà a Jon se restare o partire: Jon deve scegliere da solo e convivere con la scelta per il resto della vita.',
+        en: 'Aemon sees that [[jon-snow|Jon Snow]] is torn between his vows and his family. A Targaryen by birth, Aemon reveals that he was born the son of one king and the brother of another. When his house was destroyed in the south, Aemon, already old and blind, stayed at the Wall and did nothing. So he will not tell Jon whether to stay or go: Jon must make the choice himself and live with it for the rest of his life.',
+      },
+    ),
+  ],
+  'samwell-tarly': [
+    inBoth(
+      [4, 27],
+      { it: 'Un codardo dichiarato', en: 'A self-confessed coward' },
+      {
+        it: 'Samwell Tarly arriva a Castello Nero: è grasso e non sa combattere. Nel cortile ser [[alliser-thorne|Alliser Thorne]] lo deride e gli aizza contro le altre reclute, finché [[jon-snow|Jon Snow]] non si mette in mezzo. Sam si dichiara apertamente un codardo. Racconta che suo padre, lord Randyll Tarly, gli ha dato una scelta: prendere il nero o morire in un incidente di caccia. Jon convince le altre reclute ad andarci piano con Sam. Solo [[rast|Rast]] rifiuta, finché Jon non lo spaventa con il suo meta-lupo, [[ghost-direwolf|Spettro]].',
+        en: 'Samwell Tarly arrives at Castle Black, fat and unable to fight. In the yard Ser [[alliser-thorne|Alliser Thorne]] mocks him and sets the other recruits on him, until [[jon-snow|Jon Snow]] stands in their way. Sam openly calls himself a coward. He says that his father, Lord Randyll Tarly, gave him a choice: take the black, or die in a hunting accident. Jon persuades the other recruits to go easy on Sam. Only [[rast|Rast]] refuses, until Jon frightens him with his direwolf, [[ghost-direwolf|Ghost]].',
+      },
+    ),
+    inBoth(
+      [7, 49],
+      { it: 'Davanti all’albero del cuore', en: 'Before the heart tree' },
+      {
+        it: 'Sam entra nei Guardiani della notte con il gruppo di [[jon-snow|Jon Snow]] e diventa l’attendente di maestro [[aemon|Aemon]]. Jon è furioso di essere stato destinato anche lui agli attendenti, e Sam gli fa notare che forse il lord comandante vuole prepararlo al comando. La famiglia di Sam venera i Sette, ma Sam sceglie di pronunciare il giuramento accanto a Jon davanti a un albero del cuore oltre la Barriera, perché i Sette non gli hanno mai risposto. Poi [[ghost-direwolf|Spettro]] torna dal bosco con una mano umana tra le fauci.',
+        en: 'Sam joins the Night’s Watch with the group of [[jon-snow|Jon Snow]] and becomes the steward of Maester [[aemon|Aemon]]. Jon is angry to be made a steward himself, and Sam tells him the Lord Commander may mean to groom him for command. Though Sam’s family keeps the Seven, Sam chooses to swear his vows beside Jon before a heart tree beyond the Wall, since the Seven have never answered him. Afterwards [[ghost-direwolf|Ghost]] returns from the woods with a human hand in his jaws.',
+      },
+    ),
+    inBoth(
+      [8, 53],
+      { it: 'Corpi che non marciscono', en: 'Bodies that do not rot' },
+      {
+        it: 'Sam fa parte del gruppo che riporta a Castello Nero i corpi di [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]]. Nota ciò che agli altri sfugge: i due ranger sembrano morti da tempo, eppure i corpi non puzzano. Il lord comandante [[jeor-mormont|Jeor Mormont]] vuole che maestro [[aemon|Aemon]] li esamini prima di decidere. Quella notte il cadavere di Othor si rianima, e [[jon-snow|Jon Snow]] lo distrugge con il fuoco.',
+        en: 'Sam is with the party that brings the bodies of [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]] back to Castle Black. He notices what the others miss: the two rangers look long dead, yet the bodies do not stink. Lord Commander [[jeor-mormont|Jeor Mormont]] wants Maester [[aemon|Aemon]] to examine them before anything is decided. That night Othor’s corpse rises, and [[jon-snow|Jon Snow]] destroys it with fire.',
+      },
+    ),
+    onScreen(
+      [9, 61],
+      { it: 'La notizia della guerra', en: 'News of the war' },
+      {
+        it: 'Nella sala i confratelli si accalcano intorno a Lungo Artiglio, la spada che il lord comandante ha donato a [[jon-snow|Jon Snow]], ma Sam se ne sta in disparte. Prende Jon da parte e gli dice che [[robb-stark|Robb]] marcia verso sud alla testa di un esercito, per fare la guerra. Jon sente che dovrebbe essere al fianco del fratello. Maestro [[aemon|Aemon]] dice a Jon che il dovere verso i Guardiani della notte viene prima di tutto.',
+        en: 'In the hall the brothers crowd around Longclaw, the sword the Lord Commander has given [[jon-snow|Jon Snow]], but Sam keeps apart. He takes Jon aside and tells him that [[robb-stark|Robb]] has marched south at the head of an army, to war. Jon feels he should be with his brother. Maester [[aemon|Aemon]] tells Jon that his duty to the Night’s Watch comes first.',
+      },
+    ),
+    onScreen(
+      [10, 71],
+      { it: 'Disarcionato', en: 'Thrown from his horse' },
+      {
+        it: 'Quando [[jon-snow|Jon Snow]] viene a sapere che suo padre è stato decapitato, sella un cavallo per raggiungere [[robb-stark|Robb]] nel sud. Sam lo supplica di restare e di rispettare il giuramento, ma Jon parte. Sam lo insegue con [[grenn|Grenn]] e [[pypar|Pyp]], finché un ramo non disarciona Sam, e Jon torna indietro ad aiutarlo. Gli amici circondano Jon e recitano il giuramento dei Guardiani della notte finché Jon non accetta di tornare.',
+        en: 'When [[jon-snow|Jon Snow]] learns that his father has been beheaded, he saddles a horse to join [[robb-stark|Robb]] in the south. Sam begs him to stay and keep his vows, but Jon rides off. Sam rides after him with [[grenn|Grenn]] and [[pypar|Pyp]], until a branch knocks Sam from his horse, and Jon turns back to help. His friends surround Jon and recite the vows of the Night’s Watch until he agrees to come back.',
+      },
+    ),
+    inBooks(
+      [10, 71],
+      { it: 'Sulla porta della stalla', en: 'In the stable door' },
+      {
+        it: 'A notte fonda Sam trova [[jon-snow|Jon Snow]] che sella una giumenta nelle stalle di Castello Nero, deciso a raggiungere il fratello [[robb-stark|Robb]]. Sam si piazza sulla porta e gli dice che non può farlo. Jon sprona il cavallo, e Sam deve gettarsi da parte. Sam non sveglia il lord comandante, ma avverte gli amici di Jon: [[grenn|Grenn]], [[pypar|Pyp]], Todder, [[halder|Halder]] e Matthar inseguono Jon e lo riportano indietro prima dell’alba.',
+        en: 'Late at night Sam finds [[jon-snow|Jon Snow]] saddling a mare in the stables of Castle Black, set on joining his brother [[robb-stark|Robb]]. Sam stands in the doorway and says Jon cannot do this. Jon spurs the horse, and Sam has to throw himself out of the way. Sam does not wake the Lord Commander, but he tells Jon’s friends: [[grenn|Grenn]], [[pypar|Pyp]], Todder, [[halder|Halder]] and Matthar ride after Jon and bring him back before dawn.',
+      },
+    ),
+  ],
+  'alliser-thorne': [
+    inBoth(
+      [3, 20],
+      { it: 'Il maestro d’armi', en: 'The master-at-arms' },
+      {
+        it: 'Ser Alliser Thorne è il maestro d’armi di Castello Nero e addestra le reclute dei Guardiani della notte con aperto disprezzo. [[jon-snow|Jon Snow]], cresciuto con un maestro d’armi tutto suo, batte uno dopo l’altro gli altri ragazzi nel cortile. Alliser non lo loda e lo deride chiamandolo “Lord Snow”.',
+        en: 'Ser Alliser Thorne is the master-at-arms of Castle Black, and he trains the recruits of the Night’s Watch with open contempt. [[jon-snow|Jon Snow]], who grew up with a master-at-arms of his own, beats the other boys in the yard one after another. Alliser gives him no praise and mocks him as “Lord Snow”.',
+      },
+    ),
+    inBooks(
+      [3, 22],
+      { it: 'Deriso a cena', en: 'Mocked at supper' },
+      {
+        it: 'Alla cena che il lord comandante [[jeor-mormont|Jeor Mormont]] offre nell’ultima sera di [[tyrion-lannister|Tyrion Lannister]] alla Barriera, Tyrion schernisce Alliser davanti agli ufficiali. Alliser lo sfida, Tyrion lo deride ancora e Alliser se ne va furioso. Poi ser Jaremy Rykker racconta a Tyrion che fu proprio il padre di Tyrion, dopo il sacco di Approdo del Re, a dare ad Alliser e a Jaremy la scelta tra i Guardiani della notte e l’esecuzione.',
+        en: 'At the supper Lord Commander [[jeor-mormont|Jeor Mormont]] gives on the last night of [[tyrion-lannister|Tyrion Lannister]] at the Wall, Tyrion taunts Alliser in front of the officers. Alliser challenges him, Tyrion mocks him further, and Alliser storms out. Ser Jaremy Rykker then tells Tyrion that it was Tyrion’s own father who, after the sack of King’s Landing, gave Alliser and Jaremy a choice between the Night’s Watch and execution.',
+      },
+    ),
+    inBoth(
+      [4, 27],
+      { it: 'La nuova recluta', en: 'The new recruit' },
+      {
+        it: 'Quando [[samwell-tarly|Samwell Tarly]] arriva a Castello Nero, grasso e incapace di combattere, Alliser lo umilia nel cortile e gli aizza contro le altre reclute. [[jon-snow|Jon Snow]] si mette in mezzo, e Alliser manda altri ragazzi contro di lui, ma Jon li tiene a bada. In seguito le reclute si rifiutano di fare del male a Sam durante l’addestramento, e Alliser va su tutte le furie.',
+        en: 'When [[samwell-tarly|Samwell Tarly]] arrives at Castle Black, fat and unable to fight, Alliser humiliates him in the yard and sets the other recruits on him. [[jon-snow|Jon Snow]] stands in their way, and Alliser sends more boys against Jon, but Jon holds them off. Afterwards the recruits refuse to hurt Sam in training, and Alliser is furious with them.',
+      },
+    ),
+    inBoth(
+      [8, 53],
+      { it: 'Il bastardo di un traditore', en: 'A traitor’s bastard' },
+      {
+        it: 'A Castello Nero arriva la notizia che [[eddard-stark|Eddard Stark]] è stato arrestato per tradimento, e il lord comandante [[jeor-mormont|Jeor Mormont]] avverte [[jon-snow|Jon Snow]] di non fare sciocchezze. Alliser schernisce Jon: non è solo un bastardo, è il bastardo di un traditore. Jon gli si scaglia contro con un coltello, ma gli amici di Jon lo trattengono prima che raggiunga Alliser.',
+        en: 'Word reaches Castle Black that [[eddard-stark|Eddard Stark]] has been arrested for treason, and Lord Commander [[jeor-mormont|Jeor Mormont]] warns [[jon-snow|Jon Snow]] not to do anything stupid. Alliser taunts Jon that he is not just a bastard but a traitor’s bastard. Jon goes for him with a knife, but Jon’s friends hold him back before he can reach Alliser.',
+      },
+    ),
+    inBoth(
+      [9, 61],
+      { it: 'La mano del morto', en: 'The dead man’s hand' },
+      {
+        it: 'Dopo che i ranger morti si sono rianimati a Castello Nero e [[jon-snow|Jon Snow]] ha salvato il lord comandante, [[jeor-mormont|Jeor Mormont]] allontana Alliser dalla Barriera. Alliser dovrà andare ad Approdo del Re con la mano mozzata di uno dei morti, deporla davanti al re e chiedere aiuto per i Guardiani della notte.',
+        en: 'After the dead rangers rise at Castle Black and [[jon-snow|Jon Snow]] saves the Lord Commander, [[jeor-mormont|Jeor Mormont]] sends Alliser away from the Wall. Alliser is to ride to King’s Landing with the severed hand of one of the dead men, lay it before the king and ask for help for the Night’s Watch.',
+      },
+    ),
+  ],
+  'yoren': [
+    inBooks(
+      [3, 14],
+      { it: 'Un corvo errante', en: 'A wandering crow' },
+      {
+        it: 'Yoren è un confratello dei Guardiani della notte che gira il regno in cerca di reclute. Sulla strada verso nord si unisce al gruppo di [[benjen-stark|Benjen Stark]], [[jon-snow|Jon Snow]] e [[tyrion-lannister|Tyrion Lannister]], con due stupratori che hanno scelto la Barriera piuttosto che la castrazione. Scuoia uno scoiattolo per uno stufato. Conoscendo Yoren e le sue reclute, Jon, che credeva i Guardiani una nobile vocazione, comincia a vederli in un altro modo.',
+        en: 'Yoren is a brother of the Night’s Watch who travels the realm looking for recruits. On the road north he joins the party of [[benjen-stark|Benjen Stark]], [[jon-snow|Jon Snow]] and [[tyrion-lannister|Tyrion Lannister]], bringing two rapers who chose the Wall over gelding. He skins a squirrel for a stew. Meeting Yoren and his recruits, Jon, who thought the Watch a noble calling, begins to see it differently.',
+      },
+    ),
+    onScreen(
+      [3, 22],
+      { it: 'In viaggio con Tyrion', en: 'On the road with Tyrion' },
+      {
+        it: 'Yoren è un confratello dei Guardiani della notte che cerca reclute nella capitale. A Castello Nero [[tyrion-lannister|Tyrion Lannister]] lo prende in simpatia, contento di trovare un confratello con il senso dell’umorismo, e i due si raccontano le cose più strane che abbiano mai mangiato. Yoren saluta l’amico [[benjen-stark|Benjen Stark]] quando Benjen parte in perlustrazione. È presente quando il lord comandante [[jeor-mormont|Jeor Mormont]] chiede a Tyrion di aiutare i Guardiani a corte, e accetta di tornare a sud con Tyrion per cercare reclute nelle prigioni della città.',
+        en: 'Yoren is a brother of the Night’s Watch who looks for recruits in the capital. At Castle Black [[tyrion-lannister|Tyrion Lannister]] takes to him, glad to find a brother of the Watch with a sense of humor, and the two trade stories of the strangest things they have eaten. Yoren sees off his friend [[benjen-stark|Benjen Stark]] when Benjen leaves on a ranging. He is there when Lord Commander [[jeor-mormont|Jeor Mormont]] asks Tyrion for help at court, and agrees to travel back south with Tyrion to find recruits in the city’s dungeons.',
+      },
+    ),
+    inBoth(
+      [5, 33],
+      { it: 'Una notizia per il Primo Cavaliere', en: 'Word for the Hand' },
+      {
+        it: 'Yoren sta viaggiando verso sud con [[tyrion-lannister|Tyrion Lannister]] quando i due si fermano in una locanda dove alloggia [[catelyn-stark|Catelyn Stark]]. Catelyn fa catturare Tyrion. Yoren prosegue fino ad Approdo del Re e racconta al marito di Catelyn, [[eddard-stark|Eddard Stark]], Primo Cavaliere del re, ciò che lei ha fatto. A Eddard chiede anche nuove reclute per la Barriera.',
+        en: 'Yoren is traveling south with [[tyrion-lannister|Tyrion Lannister]] when they stop at an inn where [[catelyn-stark|Catelyn Stark]] is staying. Catelyn has Tyrion seized. Yoren rides on to King’s Landing and tells her husband, [[eddard-stark|Eddard Stark]], the Hand of the King, what she has done. He also asks Eddard for new recruits for the Wall.',
+      },
+    ),
+    inBoth(
+      [9, 66],
+      { it: 'Trattenuta tra la folla', en: 'Held back in the crowd' },
+      {
+        it: 'Yoren è tra la folla davanti al Grande Tempio di Baelor quando [[eddard-stark|Eddard Stark]] viene portato fuori a confessare il tradimento. Re [[joffrey-baratheon|Joffrey]] ordina di decapitare Eddard. [[arya-stark|Arya]], la figlia di Eddard, cerca di farsi strada verso il padre con la spada in mano. Yoren la afferra e la tiene stretta, perché non veda l’esecuzione.',
+        en: 'Yoren is in the crowd outside the Great Sept of Baelor when [[eddard-stark|Eddard Stark]] is brought out to confess to treason. King [[joffrey-baratheon|Joffrey]] orders Eddard’s head. Eddard’s daughter [[arya-stark|Arya]] tries to push through to her father with her sword. Yoren grabs her and holds her fast, so that she does not see the beheading.',
+      },
+    ),
+    onScreen(
+      [10, 73],
+      { it: 'Arry l’orfano', en: 'Arry the orphan' },
+      {
+        it: 'Lontano dalla piazza, Yoren taglia i capelli ad [[arya-stark|Arya]] con un coltello e le dice di fingersi un ragazzo, Arry l’orfano, perché nessuno fa domande sugli orfani. Vuole riportarla a Grande Inverno, nascosta tra le reclute che sta portando alla Barriera, tra cui il giovane fabbro [[gendry|Gendry]]. La avverte di non fidarsi delle altre reclute: chiunque potrebbe consegnarla in cambio di una ricompensa.',
+        en: 'Out of the square, Yoren cuts the hair of [[arya-stark|Arya]] with a knife and tells her to pass as a boy, Arry the orphan, since nobody asks questions about orphans. He means to take her home to Winterfell, hidden among the recruits he is bringing to the Wall, among them the young smith [[gendry|Gendry]]. He warns her not to trust the other recruits: any of them could turn her in for a reward.',
+      },
+    ),
+  ],
+  'will': [
+    inBooks(
+      [1, 1],
+      { it: 'Dall’alto dell’albero', en: 'From the sentinel tree' },
+      {
+        it: 'Will è un ranger dei Guardiani della notte in ricognizione oltre la Barriera con [[gared|Gared]], agli ordini del giovane ser [[waymar-royce|Waymar Royce]]. Riferisce che i bruti a cui danno la caccia giacciono morti nel loro accampamento, senza traccia di sangue. Quando riporta Waymar sul posto, i corpi sono spariti, e Waymar lo manda in cima a un albero. Da lassù Will vede gli Estranei abbattere Waymar. Quando scende a raccogliere la spada spezzata del cavaliere, Waymar si rialza, con l’occhio azzurro, e gli stringe le mani intorno alla gola.',
+        en: 'Will is a ranger of the Night’s Watch, scouting beyond the Wall with [[gared|Gared]] under the command of young Ser [[waymar-royce|Waymar Royce]]. He reports that the wildlings they have been tracking lie dead in their camp, with no blood on them. When he leads Waymar back, the bodies are gone, and Waymar sends him up a tree. From there Will watches the Others cut Waymar down. When he climbs down to take the knight’s broken sword, Waymar rises, his eye now blue, and closes his hands around Will’s throat.',
+      },
+    ),
+    onScreen(
+      [1, 2],
+      { it: 'Il disertore', en: 'The deserter' },
+      {
+        it: 'Will è il miglior esploratore di una pattuglia dei Guardiani della notte oltre la Barriera, con [[gared|Gared]] e ser [[waymar-royce|Waymar Royce]]. Trova dei bruti morti disposti in uno strano schema, ma quando i tre tornano sul posto i corpi sono spariti. Mentre cerca, Will vede camminare una ragazza morta, poi vede un Estraneo decapitare Gared e gettargli la testa ai piedi. Fugge a sud della Barriera. Catturato vicino a Grande Inverno, racconta a lord [[eddard-stark|Eddard Stark]] di aver visto gli Estranei e chiede che sua madre venga avvisata. Eddard lo decapita come disertore.',
+        en: 'Will is the best scout of a patrol of the Night’s Watch beyond the Wall, with [[gared|Gared]] and Ser [[waymar-royce|Waymar Royce]]. He finds dead wildlings laid out in a strange pattern, but when the three return the bodies are gone. Searching, Will sees a dead girl walking, then watches a White Walker behead Gared and throw the head at his feet. He flees south of the Wall. Caught near Winterfell, he tells Lord [[eddard-stark|Eddard Stark]] that he saw the White Walkers, and asks that his mother be told. Eddard beheads him as a deserter.',
+      },
+    ),
+  ],
+  'gared': [
+    inBooks(
+      [1, 1],
+      { it: 'Il vecchio ranger', en: 'The old ranger' },
+      {
+        it: 'Gared è il più anziano dei tre ranger dei Guardiani della notte che seguono le tracce di alcuni predoni bruti nella Foresta Stregata, e serve da decenni. Quando [[will|Will]] riferisce che i bruti sono morti, Gared vuole tornare alla Barriera, ma il giovane ser [[waymar-royce|Waymar Royce]], che ha il comando, si fa beffe delle sue paure. Waymar lo lascia a guardia dei cavalli e gli vieta di accendere un fuoco, e Gared si piega.',
+        en: 'Gared is the oldest of three rangers of the Night’s Watch tracking a band of wildling raiders in the Haunted Forest, and he has served for decades. When [[will|Will]] reports the wildlings dead, Gared wants to turn back to the Wall, but young Ser [[waymar-royce|Waymar Royce]], who has the command, mocks his fears. Waymar leaves him to guard the horses and forbids him to light a fire, and Gared gives in.',
+      },
+    ),
+    onScreen(
+      [1, 1],
+      { it: 'Nella Foresta Stregata', en: 'In the Haunted Forest' },
+      {
+        it: 'Gared parte oltre la Barriera con ser [[waymar-royce|Waymar Royce]] e [[will|Will]] per controllare le voci sui bruti nella Foresta Stregata. Quando Will trova i bruti morti, Gared, più anziano, consiglia di tornare a riferirlo, ma Waymar non gli dà ascolto. Sul posto i corpi sono spariti, e Gared trova nella neve un pezzo di stoffa insanguinato. Un Estraneo uccide Waymar senza fatica. Gared tenta di fuggire, ma viene raggiunto e decapitato.',
+        en: 'Gared rides beyond the Wall with Ser [[waymar-royce|Waymar Royce]] and [[will|Will]] to look into reports of wildlings in the Haunted Forest. When Will finds the wildlings dead, the older Gared advises going back to report it, but Waymar overrules him. At the site the bodies are gone, and Gared finds a bloody piece of clothing in the snow. A White Walker kills Waymar with ease. Gared tries to run, but he is caught and beheaded.',
+      },
+    ),
+    inBooks(
+      [1, 2],
+      { it: 'La giustizia di lord Stark', en: 'Lord Stark’s justice' },
+      {
+        it: 'Gared, terrorizzato, fugge a sud della Barriera e diserta i Guardiani della notte. Viene catturato vicino a Grande Inverno: è un vecchio vestito di stracci neri che ha perso le orecchie e un dito per il gelo. Lord [[eddard-stark|Eddard Stark]] lo interroga brevemente, lo condanna a morte per diserzione e lo decapita di persona con la sua spada. [[theon-greyjoy|Theon Greyjoy]] ride e allontana la testa con un calcio, e [[jon-snow|Jon Snow]] dà sottovoce dell’idiota a Theon.',
+        en: 'Gared flees south of the Wall in terror and deserts the Night’s Watch. He is caught near Winterfell, an old man in ragged black who has lost his ears and a finger to frostbite. Lord [[eddard-stark|Eddard Stark]] questions him briefly, sentences him to death for desertion and beheads him himself with his sword. [[theon-greyjoy|Theon Greyjoy]] laughs and kicks the head away, and [[jon-snow|Jon Snow]] calls Theon an ass under his breath.',
+      },
+    ),
+  ],
+  'waymar-royce': [
+    inBooks(
+      [1, 1],
+      { it: 'Balla con me', en: 'Dance with me' },
+      {
+        it: 'Ser Waymar Royce, un giovane nobile di diciotto anni, comanda [[will|Will]] e [[gared|Gared]] nella sua prima perlustrazione oltre la Barriera. Quando Will riferisce che i bruti a cui danno la caccia sono morti, Waymar si fa beffe delle paure di Gared e vuole vedere con i propri occhi. I corpi sono spariti. Waymar manda Will in cima a un albero, e arrivano gli Estranei. Waymar affronta da solo il primo e gli tiene testa finché la sua spada non va in frantumi contro la lama dell’Estraneo. Gli Estranei lo fanno a pezzi. Poi Waymar si rialza, con l’occhio che gli resta diventato azzurro, e strangola Will.',
+        en: 'Ser Waymar Royce, a highborn youth of eighteen, commands [[will|Will]] and [[gared|Gared]] on his first ranging beyond the Wall. When Will reports that the wildlings they are tracking are dead, Waymar mocks the fears of Gared and insists on seeing for himself. The bodies are gone. Waymar sends Will up a tree, and then the Others come. Waymar faces the first of them alone and holds it off until his sword shatters against its blade. The Others cut him down. Then he rises again, his remaining eye turned blue, and strangles Will.',
+      },
+    ),
+    onScreen(
+      [1, 1],
+      {
+        it: 'La pattuglia oltre la Barriera',
+        en: 'The patrol beyond the Wall',
+      },
+      {
+        it: 'Ser Waymar Royce guida una perlustrazione oltre la Barriera con [[will|Will]] e [[gared|Gared]], inviati a controllare le voci sui bruti nella Foresta Stregata. Will, il miglior esploratore del gruppo, trova i bruti morti. Il più anziano Gared consiglia di tornare indietro a riferirlo, ma Waymar vuole vedere i cadaveri e scoprire che cosa li ha uccisi. Quando arrivano sul posto, i corpi sono spariti. Appare un Estraneo, che uccide Waymar senza fatica davanti a Gared terrorizzato.',
+        en: 'Ser Waymar Royce commands a ranging beyond the Wall with [[will|Will]] and [[gared|Gared]], sent to look into reports of wildlings in the Haunted Forest. Will, the best scout in the group, finds the wildlings dead. The older Gared advises turning back to report it, but Waymar insists on seeing the corpses and learning what killed them. When they reach the place, the bodies are gone. A White Walker appears and kills Waymar with ease, in front of the terrified Gared.',
+      },
+    ),
+  ],
+  'grenn': [
+    inBoth(
+      [3, 20],
+      { it: 'Battuto nel cortile', en: 'Beaten in the yard' },
+      {
+        it: 'Grenn è una delle reclute che si addestrano a Castello Nero sotto ser [[alliser-thorne|Alliser Thorne]]. [[jon-snow|Jon Snow]], cresciuto con un maestro d’armi, lo batte nel cortile e gli fa male. Grenn e altre reclute affrontano Jon nell’armeria, ma qualcuno li ferma. In seguito Jon comincia a insegnare a Grenn a combattere meglio.',
+        en: 'Grenn is one of the recruits training at Castle Black under Ser [[alliser-thorne|Alliser Thorne]]. [[jon-snow|Jon Snow]], who was raised with a master-at-arms, beats him in the yard and hurts him. Grenn and other recruits go after Jon in the armory, but they are stopped. Afterwards Jon starts to teach Grenn how to fight better.',
+      },
+    ),
+    inBoth(
+      [4, 27],
+      { it: 'Piano con Sam', en: 'Easy on Sam' },
+      {
+        it: 'Quando la nuova recluta [[samwell-tarly|Samwell Tarly]] ammette di essere un codardo, Grenn non vuole avere niente a che fare con lui. Accetta comunque il piano di [[jon-snow|Jon Snow]] di andarci piano con Sam durante l’addestramento. Quando [[rast|Rast]] rifiuta, Grenn va con Jon, [[pypar|Pyp]] e [[ghost-direwolf|Spettro]] a spaventarlo di notte. Ser [[alliser-thorne|Alliser Thorne]] è furioso perché le reclute non vogliono più fare del male a Sam.',
+        en: 'When the new recruit [[samwell-tarly|Samwell Tarly]] admits that he is a coward, Grenn wants nothing to do with him. Still, he goes along with the plan of [[jon-snow|Jon Snow]] to go easy on Sam in training. When [[rast|Rast]] refuses, Grenn goes with Jon, [[pypar|Pyp]] and [[ghost-direwolf|Ghost]] to frighten him at night. Ser [[alliser-thorne|Alliser Thorne]] is furious that the recruits will no longer hurt Sam.',
+      },
+    ),
+    inBoth(
+      [10, 71],
+      { it: 'Riportarlo indietro', en: 'Bringing him back' },
+      {
+        it: 'Grenn è stato assegnato ai ranger. Quando [[jon-snow|Jon Snow]] lascia Castello Nero per unirsi alla guerra del fratello [[robb-stark|Robb]], Grenn lo insegue con [[pypar|Pyp]] e altri amici. Raggiungono Jon, lo circondano e recitano il giuramento dei Guardiani della notte, finché Jon non accetta di tornare con loro.',
+        en: 'Grenn has been named to the rangers. When [[jon-snow|Jon Snow]] rides away from Castle Black to join the war of his brother [[robb-stark|Robb]], Grenn rides after him with [[pypar|Pyp]] and other friends. They catch up with Jon, surround him and recite the vows of the Night’s Watch, until Jon agrees to come back with them.',
+      },
+    ),
+  ],
+  'pypar': [
+    inBoth(
+      [3, 20],
+      { it: 'Nel cortile di ser Alliser', en: 'In Ser Alliser’s yard' },
+      {
+        it: 'Pyp è una recluta dei Guardiani della notte e si addestra a Castello Nero sotto il maestro d’armi, ser [[alliser-thorne|Alliser Thorne]], che disprezza tutti i ragazzi a lui affidati. Tra loro c’è [[jon-snow|Jon Snow]], cresciuto in un castello con un maestro d’armi tutto suo, che batte una dopo l’altra le altre reclute nel cortile.',
+        en: 'Pyp is a recruit of the Night’s Watch, training at Castle Black under the master-at-arms, Ser [[alliser-thorne|Alliser Thorne]], who has nothing but contempt for the boys in his charge. Among them is [[jon-snow|Jon Snow]], who grew up in a castle with a master-at-arms of his own and beats the other recruits in the yard one after another.',
+      },
+    ),
+    inBoth(
+      [4, 27],
+      { it: 'Dalla parte di Sam', en: 'On Sam’s side' },
+      {
+        it: 'Quando la nuova recluta [[samwell-tarly|Samwell Tarly]] viene picchiata nel cortile, all’inizio Pyp cerca di impedire a [[jon-snow|Jon Snow]] di intervenire. Poi accetta il piano di Jon di andarci piano con Sam durante l’addestramento, cosa che fa infuriare ser [[alliser-thorne|Alliser Thorne]]. Quando [[rast|Rast]] rifiuta, Pyp va con Jon, [[grenn|Grenn]] e [[ghost-direwolf|Spettro]] a spaventare Rast di notte.',
+        en: 'When the new recruit [[samwell-tarly|Samwell Tarly]] is beaten in the yard, Pyp at first tries to keep [[jon-snow|Jon Snow]] from stepping in. Afterwards he goes along with the plan of Jon to go easy on Sam in training, which angers Ser [[alliser-thorne|Alliser Thorne]]. When [[rast|Rast]] refuses, Pyp joins Jon, [[grenn|Grenn]] and [[ghost-direwolf|Ghost]] to frighten Rast at night.',
+      },
+    ),
+    onScreen(
+      [7, 49],
+      { it: 'La vera ragione', en: 'The real reason' },
+      {
+        it: 'Pyp entra nei Guardiani della notte e viene assegnato agli attendenti, come [[jon-snow|Jon Snow]] e [[samwell-tarly|Sam]]. Irritato dalla presunzione di Jon, Pyp confessa la verità: non è stato mandato alla Barriera per aver rubato una forma di formaggio per la sorella affamata, come aveva raccontato, ma per aver respinto un lord che pretendeva favori sessuali da lui. Sam gli chiede una canzone, ma Pyp è troppo imbarazzato e se ne va.',
+        en: 'Pyp is taken into the Night’s Watch and sent to the stewards, like [[jon-snow|Jon Snow]] and [[samwell-tarly|Sam]]. Annoyed at the sense of entitlement of Jon, Pyp admits the truth: he was not sent to the Wall for stealing a wheel of cheese for his hungry sister, as he once claimed, but for refusing a lord who wanted sexual favors from him. Sam asks him for a song, but Pyp is too embarrassed and walks off.',
+      },
+    ),
+    inBoth(
+      [10, 71],
+      { it: 'Il giuramento recitato', en: 'Reciting the vows' },
+      {
+        it: 'Pyp è ormai un confratello giurato dei Guardiani della notte. Quando [[jon-snow|Jon Snow]] diserta da Castello Nero per unirsi alla guerra del fratello [[robb-stark|Robb]] nel sud, Pyp lo insegue con [[grenn|Grenn]] e altri amici di Jon. Lo raggiungono, lo circondano e recitano il giuramento dei Guardiani della notte, finché Jon non accetta di tornare con loro.',
+        en: 'Pyp is now a sworn brother of the Night’s Watch. When [[jon-snow|Jon Snow]] deserts Castle Black to join the war of his brother [[robb-stark|Robb]] in the south, Pyp rides after him with [[grenn|Grenn]] and other friends of Jon. They catch up with him, surround him and recite the vows of the Night’s Watch, until Jon agrees to come back with them.',
+      },
+    ),
+  ],
+  'rast': [
+    onScreen(
+      [3, 27],
+      { it: 'Battuto da Jon', en: 'Beaten by Jon' },
+      {
+        it: 'Rast è uno dei condannati che si uniscono al gruppo diretto alla Barriera con il reclutatore [[yoren|Yoren]]: è uno stupratore che ha scelto i Guardiani della notte. A Castello Nero [[jon-snow|Jon Snow]] batte lui, [[grenn|Grenn]] e [[pypar|Pyp]] nel cortile. I tre minacciano Jon nell’armeria finché [[tyrion-lannister|Tyrion Lannister]] non li convince ad andarsene. Più tardi Jon comincia ad addestrare le reclute e si guadagna il rispetto di Grenn e Pyp, ma non quello di Rast.',
+        en: 'Rast is one of the convicts who join the party riding north to the Wall with the recruiter [[yoren|Yoren]], a rapist who chose the Night’s Watch. At Castle Black [[jon-snow|Jon Snow]] beats him, [[grenn|Grenn]] and [[pypar|Pyp]] in the yard. The three threaten Jon in the armory until [[tyrion-lannister|Tyrion Lannister]] makes them leave. Jon later starts to train the recruits, and wins the respect of Grenn and Pyp, but not that of Rast.',
+      },
+    ),
+    inBooks(
+      [4, 27],
+      { it: 'Una visita notturna', en: 'A visit in the night' },
+      {
+        it: 'Rast è una recluta di Castello Nero, mandato alla Barriera per stupro. Quando [[jon-snow|Jon Snow]] interviene per proteggere la nuova recluta [[samwell-tarly|Samwell Tarly]] da Halder, ser [[alliser-thorne|Alliser Thorne]] manda Rast e Albett a dare man forte a Halder, ma Jon, aiutato da [[grenn|Grenn]] e [[pypar|Pyp]], li batte. Rast è l’unico che non vuole andarci piano con Sam. Quella notte Jon, Grenn e Pyp entrano nella sua cella con [[ghost-direwolf|Spettro]], che gli morde il collo. Il giorno dopo Rast dice di essersi tagliato radendosi, e lascia in pace Sam.',
+        en: 'Rast is a recruit at Castle Black, sent to the Wall for rape. When [[jon-snow|Jon Snow]] steps in to protect the new recruit [[samwell-tarly|Samwell Tarly]] from Halder, Ser [[alliser-thorne|Alliser Thorne]] sends Rast and Albett to help Halder, but Jon, with [[grenn|Grenn]] and [[pypar|Pyp]] at his side, beats them. Rast alone will not go easy on Sam. That night Jon, Grenn and Pyp break into his cell with [[ghost-direwolf|Ghost]], who nips his neck. The next day Rast says he cut himself shaving, and leaves Sam alone.',
+      },
+    ),
+    onScreen(
+      [4, 27],
+      { it: 'Una fetta di pancetta', en: 'A side of bacon' },
+      {
+        it: 'Rast esegue volentieri gli ordini di ser [[alliser-thorne|Alliser Thorne]] di umiliare la nuova recluta [[samwell-tarly|Samwell Tarly]]. Quando [[jon-snow|Jon Snow]] chiede alle reclute di andarci piano con Sam, Rast rifiuta: se ser Alliser lo metterà contro il ragazzo grasso, dice, se ne ricaverà una fetta di pancetta. Quella notte Rast si sveglia bloccato da Jon, [[grenn|Grenn]] e [[pypar|Pyp]], con [[ghost-direwolf|Spettro]] sul petto che mostra i denti. Da allora non picchia più Sam, qualunque cosa dica ser Alliser.',
+        en: 'Rast gladly carries out the orders of Ser [[alliser-thorne|Alliser Thorne]] to humiliate the new recruit [[samwell-tarly|Samwell Tarly]]. When [[jon-snow|Jon Snow]] asks the recruits to go easy on Sam, Rast refuses: if Ser Alliser sets him on the fat boy, he says, he will cut himself a side of bacon. That night Rast wakes pinned down by Jon, [[grenn|Grenn]] and [[pypar|Pyp]], with [[ghost-direwolf|Ghost]] on his chest baring his teeth. After that he will not beat Sam, whatever Ser Alliser says.',
+      },
+    ),
+  ],
+  'dareon': [
+    inBooks(
+      [7, 20],
+      { it: 'Nel gruppo di Jon', en: 'In Jon’s group' },
+      {
+        it: 'Dareon è una delle reclute dei Guardiani della notte a Castello Nero, nello stesso gruppo di [[jon-snow|Jon Snow]], sotto il maestro d’armi ser [[alliser-thorne|Alliser Thorne]]. Jon, cresciuto in un castello con un maestro d’armi tutto suo, batte uno dopo l’altro i ragazzi del gruppo nel cortile, e si attira il loro risentimento oltre a quello di ser Alliser.',
+        en: 'Dareon is one of the recruits of the Night’s Watch at Castle Black, in the same group as [[jon-snow|Jon Snow]], under the master-at-arms Ser [[alliser-thorne|Alliser Thorne]]. Jon, who grew up in a castle with a master-at-arms of his own, beats the boys of the group one after another in the yard, and earns their resentment as well as Ser Alliser’s.',
+      },
+    ),
+    onScreen(
+      [7, 49],
+      { it: 'Destinazione Forte Orientale', en: 'Bound for Eastwatch' },
+      {
+        it: 'Dareon è tra le reclute schierate davanti al lord comandante [[jeor-mormont|Jeor Mormont]] quando accoglie nei Guardiani della notte il gruppo di [[jon-snow|Jon Snow]] e assegna gli incarichi. Dareon viene destinato agli attendenti. Poi maestro [[aemon|Aemon]] lo manda a Forte Orientale, dove dovrà presentarsi a Borcas.',
+        en: 'Dareon is among the recruits who stand before Lord Commander [[jeor-mormont|Jeor Mormont]] as he takes the group of [[jon-snow|Jon Snow]] into the Night’s Watch and hands out their posts. Dareon is assigned to the stewards. Maester [[aemon|Aemon]] then sends him to Eastwatch, where he is to present himself to Borcas.',
+      },
+    ),
+    inBooks(
+      [7, 49],
+      { it: 'Un’accusa falsa', en: 'A false charge' },
+      {
+        it: 'Dareon entra nei Guardiani della notte con [[jon-snow|Jon Snow]] e viene destinato agli attendenti, come Jon e [[samwell-tarly|Samwell Tarly]]. Bowen Marsh gli comunica che sarà mandato a Forte Orientale a trattare con i mercanti. Quando Jon protesta che è ingiusto farlo attendente, Dareon si arrabbia: dice di essere stato mandato alla Barriera ingiustamente, dopo che la figlia di un lord, nel cui letto era stato trovato, lo aveva falsamente accusato di stupro.',
+        en: 'Dareon is taken into the Night’s Watch with [[jon-snow|Jon Snow]] and named to the stewards, like Jon and [[samwell-tarly|Samwell Tarly]]. Bowen Marsh tells him he will be sent to Eastwatch to deal with the merchants there. When Jon rants that it is unfair to make him a steward, Dareon is angry: he says he himself was sent to the Wall unjustly, after a lord’s daughter falsely named it rape when he was found in her bed.',
+      },
+    ),
+  ],
+  'halder': [
+    inBooks(
+      [7, 20],
+      { it: 'Una recluta di Castello Nero', en: 'A recruit at Castle Black' },
+      {
+        it: 'Halder è una recluta dei Guardiani della notte e si addestra a Castello Nero nel gruppo di [[jon-snow|Jon Snow]], sotto ser [[alliser-thorne|Alliser Thorne]], che tratta con disprezzo tutti i ragazzi nel cortile. Jon, che ha avuto un maestro d’armi per tutta la vita, batte gli altri con facilità, e l’armaiolo [[donal-noye|Donal Noye]] deve fargli capire quanto poco addestramento abbiano mai avuto loro.',
+        en: 'Halder is a recruit of the Night’s Watch, training at Castle Black in the group of [[jon-snow|Jon Snow]] under Ser [[alliser-thorne|Alliser Thorne]], who treats every boy in the yard with contempt. Jon, who has had a master-at-arms all his life, beats the others with ease, and the armorer [[donal-noye|Donal Noye]] has to show him how little training they ever had.',
+      },
+    ),
+    inBooks(
+      [7, 27],
+      { it: 'Contro Sam', en: 'Set against Sam' },
+      {
+        it: 'Ser [[alliser-thorne|Alliser Thorne]] sceglie Halder, un ex apprendista scalpellino, per battersi con la nuova recluta [[samwell-tarly|Samwell Tarly]]. Sam cade subito e si arrende, ma Alliser ordina a Halder di continuare a colpirlo con il piatto della spada. [[jon-snow|Jon Snow]] interviene e, con [[grenn|Grenn]] e [[pypar|Pyp]], batte Halder, [[rast|Rast]] e Albett, anche se Halder riesce a colpire Jon a una spalla. Quella notte, quando Jon chiede alle reclute di andarci piano con Sam, Halder è tra i primi ad accettare.',
+        en: 'Ser [[alliser-thorne|Alliser Thorne]] picks Halder, a former stonemason’s apprentice, to fight the new recruit [[samwell-tarly|Samwell Tarly]]. Sam goes down at once and yields, but Alliser has Halder keep hitting him with the flat of his blade. [[jon-snow|Jon Snow]] steps in, and with [[grenn|Grenn]] and [[pypar|Pyp]] he beats Halder, [[rast|Rast]] and Albett, though Halder lands a good blow on the shoulder of Jon. That night, when Jon asks the recruits to go easy on Sam, Halder is one of the first to agree.',
+      },
+    ),
+    onScreen(
+      [7, 49],
+      { it: 'Ai costruttori', en: 'To the builders' },
+      {
+        it: 'Halder è tra le reclute schierate davanti al lord comandante [[jeor-mormont|Jeor Mormont]] quando accoglie nei Guardiani della notte il gruppo di [[jon-snow|Jon Snow]] e assegna gli incarichi. Halder viene destinato ai costruttori. Jon, il migliore combattente del gruppo, finisce agli attendenti invece che ai ranger.',
+        en: 'Halder is among the recruits who stand before Lord Commander [[jeor-mormont|Jeor Mormont]] as he takes the group of [[jon-snow|Jon Snow]] into the Night’s Watch and gives out their posts. Halder is assigned to the builders. Jon, the best fighter of the group, is sent to the stewards instead of the rangers.',
+      },
+    ),
+    inBooks(
+      [10, 71],
+      { it: 'Un cavallo tra gli alberi', en: 'A horse in the trees' },
+      {
+        it: 'Halder, ormai costruttore dei Guardiani della notte, parte di notte con [[grenn|Grenn]], [[pypar|Pyp]], Todder e Matthar all’inseguimento di [[jon-snow|Jon Snow]], che ha disertato per raggiungere il fratello [[robb-stark|Robb]]. Mentre gli altri discutono, Halder sente sbuffare la giumenta di Jon tra gli alberi e chiede silenzio. Circondano Jon e recitano il giuramento dei Guardiani finché Jon non accetta di tornare, e rientrano prima dell’alba.',
+        en: 'Halder, now a builder of the Night’s Watch, rides out at night with [[grenn|Grenn]], [[pypar|Pyp]], Todder and Matthar after [[jon-snow|Jon Snow]], who has deserted to join his brother [[robb-stark|Robb]]. As the others argue, Halder hears the mare of Jon snort among the trees and tells them to be quiet. They surround Jon and recite the vows of the Watch until he agrees to come back, and they return before dawn.',
+      },
+    ),
+  ],
+  'todder': [
+    inBooks(
+      [30, 20],
+      { it: 'Rospo', en: 'Toad' },
+      {
+        it: 'Todder, che gli altri chiamano Rospo, è una recluta che si addestra a Castello Nero nel gruppo di [[jon-snow|Jon Snow]]. Stanco di essere battuto da Jon nel cortile, lo affronta nell’armeria con [[grenn|Grenn]] e i due stupratori arrivati al nord con Jon. Rospo provoca Jon, che perde la pazienza e lo tiene a terra per la gola, finché l’armaiolo [[donal-noye|Donal Noye]] non interrompe la rissa.',
+        en: 'Todder, whom the others call Toad, is a recruit training at Castle Black in the group of [[jon-snow|Jon Snow]]. Fed up with being beaten by Jon in the yard, he confronts him in the armory with [[grenn|Grenn]] and the two rapers who rode north with Jon. Toad taunts Jon, who loses his temper and pins him to the ground by the throat, until the armorer [[donal-noye|Donal Noye]] breaks up the fight.',
+      },
+    ),
+    inBooks(
+      [30, 71],
+      { it: 'All’inseguimento di Jon', en: 'After Jon' },
+      {
+        it: 'Rospo è stato assegnato ai ranger. Quando [[jon-snow|Jon Snow]] diserta i Guardiani della notte per raggiungere il fratello [[robb-stark|Robb]], Rospo lo insegue con [[grenn|Grenn]], [[pypar|Pyp]], [[halder|Halder]] e Matthar. Trovano Jon sulla strada verso sud, lo circondano e recitano il giuramento finché Jon non accetta di tornare con loro prima dell’alba.',
+        en: 'Toad has been named to the rangers. When [[jon-snow|Jon Snow]] deserts the Night’s Watch to join his brother [[robb-stark|Robb]], Toad rides after him with [[grenn|Grenn]], [[pypar|Pyp]], [[halder|Halder]] and Matthar. They find Jon on the road south, surround him and recite their vows until he agrees to come back with them before dawn.',
+      },
+    ),
+  ],
+  'othell-yarwyck': [
+    inBoth(
+      [7, 49],
+      { it: 'Il Primo Costruttore', en: 'The First Builder' },
+      {
+        it: 'Othell Yarwyck è il Primo Costruttore dei Guardiani della notte. È tra gli ufficiali presenti quando il lord comandante [[jeor-mormont|Jeor Mormont]] accoglie nei Guardiani il gruppo di reclute di [[jon-snow|Jon Snow]], assegna gli incarichi e ascolta il giuramento dei nuovi confratelli. [[halder|Halder]] viene destinato ai costruttori di Othell.',
+        en: 'Othell Yarwyck is the First Builder of the Night’s Watch. He is among the officers present when Lord Commander [[jeor-mormont|Jeor Mormont]] takes the group of recruits of [[jon-snow|Jon Snow]] into the Watch, gives out their posts and hears the new brothers swear their vows. [[halder|Halder]] is sent to the builders under Othell.',
+      },
+    ),
+    onScreen(
+      [8, 53],
+      { it: 'I corpi nel bosco', en: 'The bodies in the woods' },
+      {
+        it: 'Othell accompagna [[jon-snow|Jon Snow]] e [[samwell-tarly|Samwell Tarly]] nella Foresta Stregata come testimone del loro giuramento davanti a un albero del cuore, ed è tra i primi a congratularsi con loro. Il suo gruppo trova i corpi di [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]] e li riporta a Castello Nero. Othell conferma a Sam che i cadaveri non puzzano, anche se sembrano morti da settimane. Come Jon, vorrebbe bruciarli subito, ma il lord comandante [[jeor-mormont|Jeor Mormont]] vuole prima farli esaminare.',
+        en: 'Othell goes with [[jon-snow|Jon Snow]] and [[samwell-tarly|Samwell Tarly]] into the Haunted Forest to witness their vows before a heart tree, and is among the first to congratulate them. His party finds the bodies of [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]] and brings them back to Castle Black. Othell agrees with Sam that the corpses do not smell, though they look weeks dead. Like Jon, he wants them burned at once, but Lord Commander [[jeor-mormont|Jeor Mormont]] wants them examined first.',
+      },
+    ),
+  ],
+  'bowen-marsh': [
+    inBooks(
+      [41, 22],
+      {
+        it: 'Alla tavola del lord comandante',
+        en: 'At the Lord Commander’s table',
+      },
+      {
+        it: 'Bowen Marsh, a capo degli attendenti dei Guardiani della notte, siede tra gli ufficiali alla cena che il lord comandante [[jeor-mormont|Jeor Mormont]] offre nell’ultima sera di [[tyrion-lannister|Tyrion Lannister]] a Castello Nero. Osserva quanto beva Tyrion per essere così piccolo. Quando Tyrion rivolge le sue frecciate contro ser [[alliser-thorne|Alliser Thorne]], Bowen prende le difese del cavaliere. Alla tavola siedono anche maestro [[aemon|Aemon]] e ser [[jaremy-rykker|Jaremy Rykker]].',
+        en: 'Bowen Marsh, who heads the stewards of the Night’s Watch, sits among the officers at the supper Lord Commander [[jeor-mormont|Jeor Mormont]] gives on the last night of [[tyrion-lannister|Tyrion Lannister]] at Castle Black. He remarks on how much Tyrion drinks for so small a man. When Tyrion turns his barbs on Ser [[alliser-thorne|Alliser Thorne]], Bowen speaks up for the knight. Maester [[aemon|Aemon]] and Ser [[jaremy-rykker|Jaremy Rykker]] are at the table too.',
+      },
+    ),
+    inBooks(
+      [41, 49],
+      { it: 'Gli incarichi degli attendenti', en: 'The stewards’ posts' },
+      {
+        it: 'Dopo l’assegnazione degli incarichi, Bowen comunica agli attendenti dove serviranno. [[samwell-tarly|Samwell Tarly]] lavorerà nella biblioteca di maestro [[aemon|Aemon]] e con i suoi corvi, perché [[chett|Chett]] è stato spostato ai canili. [[dareon|Dareon]] andrà a Forte Orientale. [[jon-snow|Jon Snow]] sarà l’attendente personale del lord comandante, su richiesta di Mormont. Nel pomeriggio Bowen apre i tre cancelli sotto la Barriera per Jon e Sam e li accompagna fino a un boschetto di alberi-diga, dove i due pronunciano il giuramento. Quando si rialzano, Bowen li dichiara uomini dei Guardiani della notte.',
+        en: 'After the new brothers are given their posts, Bowen tells the stewards where they will serve. [[samwell-tarly|Samwell Tarly]] will work in the library and rookery of Maester [[aemon|Aemon]], since [[chett|Chett]] has been moved to the kennels. [[dareon|Dareon]] goes to Eastwatch. [[jon-snow|Jon Snow]] will be the Lord Commander’s own steward, at Mormont’s request. That afternoon Bowen unlocks the three gates under the Wall for Jon and Sam and goes with them to a weirwood grove, where they swear their vows. When they rise, he declares them men of the Night’s Watch.',
+      },
+    ),
+  ],
+  'jaremy-rykker': [
+    inBooks(
+      [7, 22],
+      { it: 'La scelta di un lealista', en: 'A loyalist’s choice' },
+      {
+        it: 'Ser Jaremy Rykker è un cavaliere e un ufficiale dei ranger dei Guardiani della notte. Siede alla cena del lord comandante [[jeor-mormont|Jeor Mormont]] nell’ultima sera di [[tyrion-lannister|Tyrion Lannister]] a Castello Nero. Quando le frecciate di Tyrion spingono ser [[alliser-thorne|Alliser Thorne]] a lasciare la sala, Jaremy racconta a Tyrion che lui e Alliser combatterono per re Aerys al sacco di Approdo del Re, e che fu proprio il padre di Tyrion a offrire loro la scelta tra i Guardiani e l’esecuzione.',
+        en: 'Ser Jaremy Rykker is a knight and an officer of the rangers of the Night’s Watch. He sits at the supper of Lord Commander [[jeor-mormont|Jeor Mormont]] on the last night of [[tyrion-lannister|Tyrion Lannister]] at Castle Black. After the taunts of Tyrion drive Ser [[alliser-thorne|Alliser Thorne]] from the room, Jaremy tells Tyrion that Alliser and he fought for King Aerys at the sack of King’s Landing, and that it was Tyrion’s own father who gave them the choice between the Watch and execution.',
+      },
+    ),
+    onScreen(
+      [7, 49],
+      { it: 'La scorta oltre la Barriera', en: 'The escort beyond the Wall' },
+      {
+        it: 'Con [[benjen-stark|Benjen Stark]] disperso, ser Jaremy Rykker fa le veci del Primo Ranger. Quando le nuove reclute entrano nei Guardiani, chiama a sé quelle assegnate ai ranger. Guida la scorta che accompagna [[jon-snow|Jon Snow]] e [[samwell-tarly|Samwell Tarly]] a nord della Barriera a pronunciare il giuramento davanti a un albero del cuore, e abbraccia i nuovi confratelli dopo il giuramento.',
+        en: 'With [[benjen-stark|Benjen Stark]] missing, Ser Jaremy Rykker acts as First Ranger. When the new recruits are taken into the Watch, he calls forward those assigned to the rangers. He leads the escort that takes [[jon-snow|Jon Snow]] and [[samwell-tarly|Samwell Tarly]] north of the Wall to swear their vows before a heart tree, and embraces his new brothers once they have sworn.',
+      },
+    ),
+    inBooks(
+      [8, 53],
+      { it: 'Due uomini di Benjen', en: 'Two of Benjen’s men' },
+      {
+        it: 'Quando [[ghost-direwolf|Spettro]] guida i ranger fino a due corpi oltre la Barriera, ser Jaremy li riconosce: sono [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]], due uomini di [[benjen-stark|Benjen Stark]]. Jaremy lamenta di avere troppo pochi uomini per pattugliare, dà la colpa ai bruti e sostiene che i due siano morti da non più di un giorno. [[samwell-tarly|Samwell Tarly]] fa notare che il loro sangue è secco da tempo, eppure i corpi non si sono decomposti. Il lord comandante [[jeor-mormont|Jeor Mormont]] fa portare i cadaveri a Castello Nero e ordina a Jaremy di perlustrare la zona per dieci leghe intorno.',
+        en: 'When [[ghost-direwolf|Ghost]] leads the rangers to two bodies beyond the Wall, Ser Jaremy names them: [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]], two of the men of [[benjen-stark|Benjen Stark]]. Jaremy complains that he has too few men to patrol, blames wildlings and judges that the two have been dead no more than a day. [[samwell-tarly|Samwell Tarly]] points out that their blood is long dry, yet the bodies have not rotted. Lord Commander [[jeor-mormont|Jeor Mormont]] has the corpses carried to Castle Black and orders Jaremy to search the land for ten leagues around.',
+      },
+    ),
+    inBooks(
+      [8, 61],
+      { it: 'Il pugnale del cavaliere', en: 'The knight’s own dagger' },
+      {
+        it: 'Nella notte i due ranger morti si rianimano a Castello Nero. Mentre [[jon-snow|Jon Snow]] brucia il cadavere di [[othor|Othor]] nelle stanze del lord comandante, il cadavere di [[jafer-flowers|Jafer Flowers]] uccide quattro uomini. Ser Jaremy gli taglia la testa, ma il corpo decapitato estrae il pugnale di Jaremy dal fodero e glielo pianta nel ventre. Jaremy muore, e il cadavere viene fatto a pezzi.',
+        en: 'In the night the two dead rangers rise at Castle Black. While [[jon-snow|Jon Snow]] burns the corpse of [[othor|Othor]] in the Lord Commander’s rooms, the corpse of [[jafer-flowers|Jafer Flowers]] kills four men. Ser Jaremy hacks off its head, but the headless body pulls the dagger of Jaremy from its sheath and buries it in his bowels. Jaremy dies, and the corpse is hacked to pieces.',
+      },
+    ),
+  ],
+  'othor': [
+    inBooks(
+      [8, 20],
+      { it: 'La partenza con Benjen', en: 'Riding out with Benjen' },
+      {
+        it: 'Othor è un ranger dei Guardiani della notte a Castello Nero. Poco dopo l’arrivo di [[jon-snow|Jon Snow]] come recluta, Othor parte verso nord, oltre la Barriera, nel gruppo di [[benjen-stark|Benjen Stark]], che va a cercare ser [[waymar-royce|Waymar Royce]], scomparso. Alla partenza Othor canta canzoni sconce. Benjen si è rifiutato di portare Jon con sé.',
+        en: 'Othor is a ranger of the Night’s Watch at Castle Black. Not long after [[jon-snow|Jon Snow]] arrives there as a recruit, Othor rides north beyond the Wall in the party of [[benjen-stark|Benjen Stark]], who is going to look for the missing Ser [[waymar-royce|Waymar Royce]]. Othor sings bawdy songs as they set out. Benjen has refused to take Jon with him.',
+      },
+    ),
+    inBoth(
+      [8, 53],
+      { it: 'Il morto che si rialza', en: 'The dead man rises' },
+      {
+        it: 'Il corpo di Othor viene trovato oltre la Barriera accanto a quello di [[jafer-flowers|Jafer Flowers]], un altro ranger di [[benjen-stark|Benjen Stark]], ed entrambi vengono riportati a Castello Nero. Il lord comandante [[jeor-mormont|Jeor Mormont]] vuole che li esamini maestro [[aemon|Aemon]]. Quella notte il cadavere di Othor si rianima e attacca Jeor nelle sue stanze. [[jon-snow|Jon Snow]] gli taglia un braccio, ma il morto continua ad avanzare, finché Jon non lo distrugge con il fuoco.',
+        en: 'The body of Othor is found beyond the Wall beside that of [[jafer-flowers|Jafer Flowers]], another of the rangers of [[benjen-stark|Benjen Stark]], and both are carried back to Castle Black. Lord Commander [[jeor-mormont|Jeor Mormont]] wants Maester [[aemon|Aemon]] to examine them. That night the corpse of Othor rises and attacks Jeor in his rooms. [[jon-snow|Jon Snow]] cuts off one of its arms, but it keeps coming until Jon destroys it with fire.',
+      },
+    ),
+  ],
+  'jafer-flowers': [
+    onScreen(
+      [8, 53],
+      { it: 'La mano nel bosco', en: 'The hand in the woods' },
+      {
+        it: 'Jafer Flowers è un ranger del gruppo che [[benjen-stark|Benjen Stark]] ha guidato oltre la Barriera e che non è più tornato. Dopo il giuramento dei nuovi confratelli, [[ghost-direwolf|Spettro]] trova nella Foresta Stregata la mano mozzata di Jafer. Il corpo di Jafer viene trovato oltre la Barriera con quello di [[othor|Othor]], e il gruppo di [[othell-yarwyck|Othell Yarwyck]] li riporta entrambi a Castello Nero. Il lord comandante [[jeor-mormont|Jeor Mormont]] vuole che li esamini maestro [[aemon|Aemon]]. Quella notte i cadaveri si rianimano. Mentre Othor attacca Jeor, Jafer semina il caos altrove, finché non viene abbattuto e bruciato.',
+        en: 'Jafer Flowers is a ranger of the party that [[benjen-stark|Benjen Stark]] led beyond the Wall, which has not come back. After the new brothers swear their vows, [[ghost-direwolf|Ghost]] finds the severed hand of Jafer in the Haunted Forest. The body of Jafer is found beyond the Wall with that of [[othor|Othor]], and the party of [[othell-yarwyck|Othell Yarwyck]] brings both back to Castle Black. Lord Commander [[jeor-mormont|Jeor Mormont]] wants Maester [[aemon|Aemon]] to examine them. That night the corpses rise. While Othor attacks Jeor, Jafer causes trouble elsewhere until he is put down and burned.',
+      },
+    ),
+    inBooks(
+      [8, 53],
+      { it: 'Un colpo d’ascia', en: 'An axe to the neck' },
+      {
+        it: 'Dopo il giuramento di [[jon-snow|Jon Snow]] e [[samwell-tarly|Samwell Tarly]], [[ghost-direwolf|Spettro]] porta a Jon una mano umana. Poi Spettro guida i ranger fino a due corpi, e ser [[jaremy-rykker|Jaremy Rykker]] li riconosce: sono [[othor|Othor]] e Jafer Flowers, due uomini di [[benjen-stark|Benjen Stark]]. La mano era la destra di Jafer. È stato ucciso da un colpo d’ascia al collo, e il vecchio guardaboschi Dywen ricorda che Othor portava un’ascia. Entrambi i cadaveri hanno le mani nere e gli occhi azzurri. Vengono riportati a Castello Nero perché li esamini maestro [[aemon|Aemon]].',
+        en: 'After [[jon-snow|Jon Snow]] and [[samwell-tarly|Samwell Tarly]] swear their vows, [[ghost-direwolf|Ghost]] brings Jon a human hand. Then Ghost leads the rangers to two bodies, and Ser [[jaremy-rykker|Jaremy Rykker]] names them: [[othor|Othor]] and Jafer Flowers, two of the men of [[benjen-stark|Benjen Stark]]. The hand was the right hand of Jafer. He was killed by an axe blow to the neck, and the old forester Dywen remembers that Othor carried an axe. Both corpses have black hands and blue eyes. They are carried back to Castle Black for Maester [[aemon|Aemon]] to examine.',
+      },
+    ),
+    inBooks(
+      [8, 61],
+      { it: 'Cinque uomini', en: 'Five men' },
+      {
+        it: 'Nella notte il cadavere di Jafer si rianima a Castello Nero, come quello di [[othor|Othor]]. Uccide ser [[jaremy-rykker|Jaremy Rykker]] e altri quattro uomini. Jaremy gli taglia la testa, ma il corpo decapitato lo trafigge con il pugnale di Jaremy, e si ferma solo quando viene fatto a pezzi. Il lord comandante manda ser [[alliser-thorne|Alliser Thorne]] ad Approdo del Re con la mano mozzata di Jafer, per mostrare al re che cosa si è rianimato alla Barriera.',
+        en: 'In the night the corpse of Jafer rises at Castle Black, as that of [[othor|Othor]] does. It kills Ser [[jaremy-rykker|Jaremy Rykker]] and four other men. Jaremy takes its head off, but the headless body stabs him with his own dagger, and it stops only when it is hacked to pieces. The Lord Commander sends Ser [[alliser-thorne|Alliser Thorne]] to King’s Landing with the severed hand of Jafer, to show the king what has risen at the Wall.',
+      },
+    ),
+  ],
+  'donal-noye': [
+    inBooks(
+      [3, 20],
+      { it: 'Il fabbro con un braccio solo', en: 'The one-armed smith' },
+      {
+        it: 'Donal Noye è l’armaiolo e fabbro di Castello Nero, con un braccio solo; si dice che sia stato lui a forgiare il martello da guerra di re [[robert-baratheon|Robert]]. Quando [[grenn|Grenn]], Todder e altre due reclute mettono alle strette [[jon-snow|Jon Snow]] nell’armeria, Noye interrompe la rissa e manda via gli altri. Spiega a Jon che Jon è cresciuto in un castello, addestrato da un maestro d’armi, mentre gli altri non avevano mai preso in mano una spada, e che umiliandoli Jon si fa dei nemici. Jon finisce per dargli ragione.',
+        en: 'Donal Noye is the one-armed armorer and smith of Castle Black, and it is said that he forged the warhammer of King [[robert-baratheon|Robert]]. When [[grenn|Grenn]], Todder and two other recruits corner [[jon-snow|Jon Snow]] in the armory, Noye breaks up the fight and sends the others away. He tells Jon that Jon was raised in a castle and trained by a master-at-arms, while the others never held a sword before, and that Jon is making enemies by shaming them. Jon comes to see that Noye is right.',
+      },
+    ),
+  ],
+  'chett': [
+    inBooks(
+      [5, 42],
+      { it: 'Alla porta di Aemon', en: 'At Aemon’s door' },
+      {
+        it: 'Chett è un attendente dei Guardiani della notte che serve maestro [[aemon|Aemon]] insieme a Clydas. Quando [[jon-snow|Jon Snow]] si presenta a notte fonda, Chett dice che il maestro dorme e gli ordina di tornare al mattino, ma Jon mette un piede nella porta. Jon chiede ad Aemon di permettere a [[samwell-tarly|Samwell Tarly]] di pronunciare il giuramento e di servire come attendente. Chett si oppone: ser [[alliser-thorne|Alliser Thorne]] farà di Sam un uomo o lo ucciderà provandoci, e il lavoro di un attendente non è per i codardi.',
+        en: 'Chett is a steward of the Night’s Watch who serves Maester [[aemon|Aemon]] with Clydas. When [[jon-snow|Jon Snow]] comes late at night, Chett says the maester is asleep and tells him to come back in the morning, but Jon puts his foot in the door. Jon asks Aemon to let [[samwell-tarly|Samwell Tarly]] take his vows and serve as a steward. Chett objects: Ser [[alliser-thorne|Alliser Thorne]] will make a man of Sam or kill him trying, and the work of a steward is not for cowards.',
+      },
+    ),
+    inBooks(
+      [8, 53],
+      { it: 'Ai canili', en: 'Sent to the kennels' },
+      {
+        it: '[[samwell-tarly|Sam]] ha preso il posto di Chett accanto a maestro [[aemon|Aemon]], e Bowen Marsh ha spostato Chett ai canili. Quando i corpi di [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]] vengono trovati oltre la Barriera, il lord comandante [[jeor-mormont|Jeor Mormont]] ordina a Chett di avvicinare uno dei cani. Per quanto Chett si sforzi, il cane fa di tutto per restare lontano dai morti.',
+        en: '[[samwell-tarly|Sam]] has taken the place of Chett with Maester [[aemon|Aemon]], and Bowen Marsh has moved Chett to the kennels. When the bodies of [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]] are found beyond the Wall, Lord Commander [[jeor-mormont|Jeor Mormont]] orders Chett to bring one of the hounds closer. However hard Chett tries, the hound fights to stay away from the dead men.',
+      },
+    ),
+  ],
 } satisfies Record<string, Timeline<Story>>
