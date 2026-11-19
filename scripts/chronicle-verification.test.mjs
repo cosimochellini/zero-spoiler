@@ -337,6 +337,13 @@ describe('the Game of Thrones show pins', () => {
       (story) => story.series === 'game-of-thrones',
     ).map((story) => ({ ...story, cited: sourceOf(story) }))
 
+    const checked = stories.filter(
+      ({ cited, medium }) =>
+        medium !== 'chapter' && latestCitedEpisode(cited) !== undefined,
+    )
+
+    // Only notes resting on an episode page or a GOT ref give an episode.
+    expect(checked.length).toBeGreaterThan(20)
     expect(showPinsBeforeTheirCitation(stories)).toStrictEqual([])
   })
 
