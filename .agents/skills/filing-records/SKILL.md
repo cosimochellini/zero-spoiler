@@ -155,11 +155,11 @@ Done when the opened PR's body lists every verifier finding with its fix or reas
 A Game of Thrones record, step or chronicle story is checked against these sources.
 
 - **Book facts**: the Ice and Fire Wiki, through its API: `https://iceandfire.fandom.com/api.php?action=parse&page=<Page>&prop=wikitext&format=json`.
-  - Chapter pages are titled `<POV> <N> - A Game of Thrones` (`Eddard I - A Game of Thrones`), and their `chapter_number` is the site chapter.
+  - Chapter pages are titled by the POV character and the Roman numeral of that character's chapter (`Eddard I - A Game of Thrones`). Their `chapter_number` field is the site chapter.
   - Chapter pages stop around site chapter 33. Past that, read the character pages, and the episode page's list of the chapters it adapts.
 - **Show facts**: the Game of Thrones Wiki, through the same API on `gameofthrones.fandom.com`. A citation `{{Ref|GOT105}}` is season 1, episode 5. Each episode page lists the book chapters it adapts.
-- **A Wiki of Ice and Fire** refuses scripted requests: read the two wikis above, and never retry or route around the block. Firecrawl can read it, but its daily credits run out quickly, so spend them only on a fact neither wiki holds.
-- **Site chapter numbers**: every book's prologue counts, and books 1 to 5 start at site chapters 1, 74, 144, 226 and 272. A Wiki of Ice and Fire's "Chapter N" of a book is that book's start plus N: site N+1 in book 1, site 74+N in book 2.
+- **A Wiki of Ice and Fire** refuses scripted requests: read the two wikis above, and never retry or route around the block with proxies or archive mirrors. Its pages are titled `A_Game_of_Thrones-Chapter_N`. The owner allows one exception: the Firecrawl tool, when the session has it, may read a page for a fact neither wiki holds. Its daily credits run out quickly; when it fails, the pin goes on the unverified list.
+- **Site chapter numbers**: every book's prologue counts, and books 1 to 5 start at site chapters 1, 74, 144, 226 and 272. A Wiki of Ice and Fire's "Chapter N" of a book is that book's start plus N: site N+1 in book 1, site 74+N in book 2. An epilogue is its book's last site chapter (`last` in `src/lib/progress/series.ts`).
 - **Unconfirmed pins**: a pin no source confirms takes the safe later chapter, and goes under `unverified` in `docs/content-provenance/game-of-thrones.json` and in the PR body.
 
 Done when every Game of Thrones pin cites the page that confirms it, or is on the unverified list.
