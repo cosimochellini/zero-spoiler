@@ -1191,7 +1191,7 @@ const LOGS: { en: string; id: string }[] = [
   },
   {
     id: 'haggo',
-    en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. He offers Drogo his help, and Drogo refuses it. Mago comes to him to complain when the khaleesi takes a captive from Mago.',
+    en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. Mago comes to him to complain when the khaleesi takes a captive from Mago.',
   },
   {
     id: 'eroeh',

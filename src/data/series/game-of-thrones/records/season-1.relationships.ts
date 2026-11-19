@@ -1007,8 +1007,8 @@ const links = {
     character: 'daenerys-targaryen',
     type: { en: 'Khal’s bride', it: 'Sposa del khal' },
     summary: {
-      en: 'Drogo’s bride. His wedding gift to her is a dragonbone bow, which goes to Drogo when she refuses it, as custom requires.',
-      it: 'La sposa di Drogo. Il suo dono di nozze per lei è un arco d’osso di drago, che passa a Drogo quando lei lo rifiuta, come vuole l’usanza.',
+      en: 'Drogo’s bride. Qotho’s wedding gift to her is a dragonbone bow, which goes to Drogo when she refuses it, as custom requires.',
+      it: 'La sposa di Drogo. Il dono di nozze di Qotho per lei è un’arma da tiro in osso di drago, che passa a Drogo quando lei la rifiuta, come vuole l’usanza.',
     },
   },
   qotMirri: {

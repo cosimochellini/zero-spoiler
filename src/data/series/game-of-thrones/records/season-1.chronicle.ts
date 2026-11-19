@@ -592,9 +592,9 @@ export const season1Chronicles = {
   'qotho': [
     inBooks(
       [6, 12],
-      { it: 'L’arco d’osso di drago', en: 'The dragonbone bow' },
+      { it: 'L’arma d’osso di drago', en: 'The dragonbone bow' },
       {
-        it: 'Qotho è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]]. Alle nozze di Drogo con [[daenerys-targaryen|Daenerys]], fuori dalle mura di Pentos, i cavalieri di sangue siedono appena sotto il khal e la sposa, e il fratello di lei, [[viserys-targaryen|Viserys]], siede più in basso, cosa che lo fa infuriare. Ogni cavaliere di sangue dona alla sposa un’arma, e il dono di Qotho è un arco a doppia curva d’osso di drago, più alto di lei. Lei rifiuta i doni, come vuole l’usanza, e passano a Drogo.',
+        it: 'Qotho è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]]. Alle nozze di Drogo con [[daenerys-targaryen|Daenerys]], fuori dalle mura di Pentos, i cavalieri di sangue siedono appena sotto il khal e la sposa, e il fratello di lei, [[viserys-targaryen|Viserys]], siede più in basso, cosa che lo fa infuriare. Ogni cavaliere di sangue dona alla sposa un’arma, e il dono di Qotho è un’arma da tiro a doppia curva in osso di drago, più alta di lei. Lei rifiuta i doni, come vuole l’usanza, e passano a Drogo.',
         en: 'Qotho is one of [[drogo|Khal Drogo]]’s three bloodriders. At Drogo’s wedding to [[daenerys-targaryen|Daenerys]] outside the walls of Pentos, the bloodriders sit just below the khal and his bride, and her brother [[viserys-targaryen|Viserys]] sits below them, which angers him. Each bloodrider gives the bride a weapon, and Qotho’s gift is a double-curved dragonbone bow taller than she is. She refuses the gifts, as custom requires, and they go to Drogo.',
       },
     ),

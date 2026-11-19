@@ -303,6 +303,23 @@ describe.each(LOCALES)(
       expect(people('jorah-mormont', ch(12))).toContain('viserys-targaryen')
     })
 
+    it('gives Qotho his books-only wedding card at chapter 12 (#1355)', () => {
+      const bride = locale === 'it' ? 'Sposa del khal' : 'Khal’s bride'
+      const types = (bookmark: Bookmark): string[] =>
+        projected('qotho', bookmark, locale).map(({ type }) => type)
+
+      expect(projected('qotho', ch(11), locale)).toStrictEqual([])
+      expect(people('qotho', ch(12))).toStrictEqual([
+        'drogo',
+        'daenerys-targaryen',
+      ])
+      expect(types(ch(12))).toContain(bride)
+
+      for (const episode of [6, archive.series.episodeCeiling]) {
+        expect(types(ep(episode))).not.toContain(bride)
+      }
+    })
+
     it('keeps Varys a show-only link', () => {
       expect(people('jorah-mormont', ep(4))).not.toContain('varys')
       expect(people('jorah-mormont', ep(5))).toContain('varys')

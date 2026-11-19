@@ -2051,7 +2051,7 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'cohollo', tint: 'ocher' },
     },
-    // Books only: Daenerys VII (site chapter 62), he offers Drogo his help. The show’s rider has the name only by wiki conjecture; episode 8 orders him.
+    // Books only: Daenerys VII (site chapter 62), Mago complains to him. The show’s rider has the name only by wiki conjecture; episode 8 orders him.
     {
       id: 'haggo',
       kind: 'character',
@@ -6528,8 +6528,8 @@ export const season1: ThronesSaga = {
       chronicle: season1Chronicles.haggo,
       role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
       log: {
-        it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco. Offre il suo aiuto a Drogo, che lo rifiuta. Mago va a lamentarsi da lui quando la khaleesi gli toglie una prigioniera.',
-        en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. He offers Drogo his help, and Drogo refuses it. Mago comes to him to complain when the khaleesi takes a captive from Mago.',
+        it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco. Mago va a lamentarsi da lui quando la khaleesi gli toglie una prigioniera.',
+        en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. Mago comes to him to complain when the khaleesi takes a captive from Mago.',
       },
       status: [
         { episode: 8, chapter: 62, value: 'alive' },
