@@ -3,7 +3,10 @@ name: issue-implementer
 description:
   Implement one GitHub issue in an isolated worktree and open a draft PR. Give
   the issue number, owner decisions and the round's focus.
-tools: Read, Glob, Grep, Bash, Edit, Write, Skill, WebFetch, WebSearch
+tools:
+  Read, Glob, Grep, Bash, Edit, Write, Skill, WebFetch, WebSearch,
+  mcp__claude_ai_Firecrawl__firecrawl_scrape,
+  mcp__claude_ai_Firecrawl__firecrawl_search
 model: opus
 ---
 
