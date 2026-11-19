@@ -615,7 +615,11 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_34",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_40",
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown"
+      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
+      "https://gameofthrones.fandom.com/wiki/Differences_in_adaptation/Game_of_Thrones:_Season_1"
+    ],
+    "unverified": [
+      "Log (#1355): GOT105 has Robin nursed and wanting to see “the bad man fly” in episode 5. Neither wiki puts the nursing or the fly line in Catelyn VI (site 35), where Catelyn reaches the Eyrie before Tyrion, so the frozen log keeps to his being Lysa’s son and lord, and the relationship cards date both facts to Tyrion V (site 39) in the books."
     ]
   },
   "bronn": {
@@ -2212,7 +2216,7 @@
     ],
     "unverified": [
       "Show: the Game of Thrones Wiki has no page for this Alyn (its Alyn page is a House of the Dragon character); he is book-only.",
-      "Step order: the affiliation step (ch 44) comes before the role step (ch 46) in the book; both share ordering episode 6.",
+      "Role step (#1355): A Game of Thrones chapter 45 (site 46) has Fat Tom in command of the Hand’s guard, so the step is no longer “Captain of the Hand’s guard”. The Ice and Fire Wiki’s Alyn page has Eddard send twenty of his men under Alyn in Lord Beric’s company; the step sits at site chapter 44 with the affiliation step, the chapter that sends Beric. The chapter text itself was not read.",
       "Death (#1288, #1238): dead after the Mummer's Ford, books only, pinned at site chapter 178 (A Storm of Swords 34, Arya VI). The Ice and Fire Wiki gives no chapter. Tower of the Hand's chapter guides, not an allowed source, have him alive in Arya III (17, site 161), where he leads the survivors of the Ford, and among the dead the outlaws name in Arya VI (34): 178 is the first chapter that tells it. Not read in the book; episode 21 orders it. To check: https://awoiaf.westeros.org/index.php/A_Storm_of_Swords-Chapter_34."
     ]
   },
@@ -2695,11 +2699,16 @@
       "https://gameofthrones.fandom.com/wiki/Qotho",
       "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
       "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://it.wikipedia.org/wiki/Dothraki#Qotho"
+      "https://it.wikipedia.org/wiki/Dothraki#Qotho",
+      "https://iceandfire.fandom.com/wiki/Daenerys_II_-_A_Game_of_Thrones",
+      "https://iceandfire.fandom.com/wiki/Qotho",
+      "https://iceandfire.fandom.com/wiki/Daenerys_I_-_A_Game_of_Thrones",
+      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
+      "https://gameofthrones.fandom.com/wiki/The_Kingsroad"
     ],
     "unverified": [
-      "Books: whether he is named in chapters 3 or 11 (Appearing list, floor site chapter 4). A printed thought quoted on AWOIAF’s Haggo page names him at site chapter 37; the first synopsis naming is site chapter 62.",
-      "Show: Fandom has him in episode 1 by narration and credit only; the spoken name is not checked.",
+      "Books (#1355): gate moved from site chapter 62 to 12. The Ice and Fire Wiki’s Daenerys II synopsis names the bloodriders Cohollo, Haggo and Qotho at the wedding, and its Qotho page gives him the dragonbone bow. Daenerys I (site chapter 4) has him only on the Appearing list, so it stays an owner check. The chapter text was not read.",
+      "Show: the Game of Thrones Wiki names him in episodes 1 and 2 only in narration and in the cast lists; the first synopsis to name him in a scene is GOT106. The spoken name is not checked, so the gate stays at episode 6.",
       "Italian name rests on Italian Wikipedia alone."
     ]
   },
@@ -2724,10 +2733,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
       "https://gameofthrones.fandom.com/wiki/Haggo",
-      "https://it.wikipedia.org/wiki/Dothraki#Haggo"
+      "https://it.wikipedia.org/wiki/Dothraki#Haggo",
+      "https://iceandfire.fandom.com/wiki/Haggo",
+      "https://gameofthrones.fandom.com/wiki/Differences_in_adaptation/Game_of_Thrones:_Season_1"
     ],
     "unverified": [
-      "Books: whether he is named in chapter 3 (Appearing list, floor site chapter 4). A printed thought names him at site chapter 37; the first synopsis naming is site chapter 62.",
+      "Log (#1355): the claim that he breaks Viserys’s arm is dropped. The Ice and Fire Wiki’s Haggo page and the Game of Thrones Wiki’s book notes do not say it, and A Wiki of Ice and Fire was not read. The differences page has Mago complain to Haggo in place of Drogo. The offer of help Drogo refuses is dropped too: no page read places it, and the chronicle review had already moved it toward the fall at site chapter 65. To check: https://awoiaf.westeros.org/index.php/Haggo, https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46.",
+      "Books: whether he is named in chapter 3 (Appearing list, floor site chapter 4). A printed thought names him at site chapter 37, and the Ice and Fire Wiki's Daenerys II synopsis names him among the bloodriders at site chapter 12; his gate stays at 62 until the owner rules on it (#1355).",
       "Show: Fandom marks the name as conjecture from the books (BookConjecture), so the record is the books’ alone. Whether the show ever says it aloud is not checked.",
       "Italian name rests on Italian Wikipedia alone."
     ]
@@ -2807,11 +2819,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
       "https://gameofthrones.fandom.com/wiki/Mago",
-      "https://it.wikipedia.org/wiki/Dothraki#Jhaqo"
+      "https://it.wikipedia.org/wiki/Dothraki#Jhaqo",
+      "https://gameofthrones.fandom.com/wiki/Differences_in_adaptation/Game_of_Thrones:_Season_1"
     ],
     "unverified": [
       "Books: whether she is named in chapters 61 or 64 (Appearing list, floor site chapter 62); the first synopsis naming is site chapter 69.",
-      "Book only: Fandom says she does not appear in the show."
+      "Book only: Fandom says she does not appear in the show.",
+      "Log (#1355): Mago seizes and rapes her, hands her to his new khal, and the khal’s bloodriders kill her, as A Wiki of Ice and Fire’s Eroeh page and the chronicle stories at site chapter 69 have it. The Ice and Fire Wiki has no Eroeh page; the Game of Thrones Wiki’s differences page confirms only that she is not in the show."
     ]
   },
   "street-of-the-sisters": {
