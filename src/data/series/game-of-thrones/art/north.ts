@@ -548,10 +548,9 @@ export const northRedrawn: Redrawings = {
   ],
   'alyn': [
     // The standard fallen whole on the ground, the cloth draped beside its
-    // staff: he is killed at the Mummer's Ford with Beric's men, told in
-    // Arya VI of A Storm of Swords (chapter 178), where the outlaws name him
-    // among their dead; in Arya III (chapter 161) he still leads the men who
-    // lived. The book's alone; episode 21 orders it.
+    // staff: he is killed at the Mummer's Ford with Beric's men, which A Storm
+    // of Swords tells. Chapter 178 (Arya VI) is the safe later pin, unverified
+    // on an allowed source. The book's alone; episode 21 orders it.
     {
       episode: 21,
       chapter: 178,
