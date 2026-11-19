@@ -38,8 +38,8 @@ function inBooks(
  * each filed at the first episode and the first site chapter by whose end the
  * reader knows all of it. The show and the books part over who wounds Drogo
  * and whose whip brings him down, and the show alone names the bloodrider who
- * breaks Viserys’s arm, so most stories come in two versions, one per medium. A book-only story sits at the episode
- * that adapts its chapter, or later when a story links a character the show
+ * breaks Viserys’s arm, so most stories come in two versions, one per medium.
+ * A book-only story sits at the episode that adapts its chapter, or later when a story links a character the show
  * meets later; Aggo’s are all at episode 11, the show’s gate for him.
  * Jaqen H’ghar, Rorge and Biter open at episode 12 and chapter 79, past the
  * stage, and have no chronicle yet.

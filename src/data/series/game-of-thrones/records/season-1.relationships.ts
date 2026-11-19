@@ -1083,8 +1083,8 @@ const links = {
     character: 'drogo',
     type: { en: 'Khal', it: 'Khal' },
     summary: {
-      en: 'The khal he serves as a bloodrider. When Drogo falters, Haggo offers to carry him, and Drogo refuses.',
-      it: 'Il khal che serve come cavaliere di sangue. Quando Drogo vacilla, Haggo si offre di portarlo, e Drogo rifiuta.',
+      en: 'The khal he serves as one of his bloodriders.',
+      it: 'Il khal che serve come uno dei suoi cavalieri di sangue.',
     },
   },
   hagMirri: {
