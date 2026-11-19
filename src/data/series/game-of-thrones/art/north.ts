@@ -547,8 +547,8 @@ export const northRedrawn: Redrawings = {
     },
   ],
   'alyn': [
-    // The standard down on the ground, its staff broken and the stump left
-    // standing: he is killed at the Mummer's Ford with Beric's men, told in
+    // The standard fallen whole on the ground, the cloth draped beside its
+    // staff: he is killed at the Mummer's Ford with Beric's men, told in
     // Arya VI of A Storm of Swords (chapter 178), where the outlaws name him
     // among their dead; in Arya III (chapter 161) he still leads the men who
     // lived. The book's alone; episode 21 orders it.
@@ -556,10 +556,7 @@ export const northRedrawn: Redrawings = {
       episode: 21,
       chapter: 178,
       value: [
-        { d: 'M24 154 V104 l3 -4 l-2 -3 M24 104 l-3 -3' },
-        {
-          d: `M48 150 l-4 -3 M48 150 l-3 4 M48 150 H140 ${circle(144, 150, 4)}`,
-        },
+        { d: `M14 150 H140 ${circle(144, 150, 4)}` },
         {
           d: 'M42 154 Q44 136 56 126 Q64 118 76 122 Q92 114 108 118 L136 116 L118 132 L134 150',
         },
