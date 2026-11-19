@@ -57,6 +57,12 @@ describe('the gh issue create hook', () => {
     ).toStrictEqual([])
   })
 
+  it('keeps the pull request label off issues', () => {
+    expect(problems(FULL.with(2, 'status:review-rounds'), '')).toStrictEqual([
+      'status:review-rounds goes on pull requests, not issues',
+    ])
+  })
+
   it('asks a blocked issue for its Unblocks at line', () => {
     const blocked = FULL.with(2, 'status:blocked')
     expect(problems(blocked, 'Waits.')).toHaveLength(1)

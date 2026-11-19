@@ -1,0 +1,40 @@
+name: Review rounds
+
+# Red while the pull request carries `status:review-rounds`, so a PR whose
+# review rounds are still open cannot merge once this check is required in the
+# branch settings. An agent adds the label when it opens the draft and removes
+# it when a round reports no P0–P2 (landing-prs skill). Kept apart from CI, so
+# adding or removing the label re-runs only this check.
+#
+# Drafts run too, unlike CI: the label goes on while the PR is a draft, and the
+# check has to be red from the start. `synchronize` gives every new head its
+# own result, since a required check is read on the head commit.
+on:
+  pull_request:
+    types: [labeled, unlabeled, opened, synchronize, reopened, ready_for_review]
+
+permissions: {}
+
+jobs:
+  review-rounds:
+    name: review-rounds
+    # A label added and removed in quick succession: the last event decides.
+    concurrency:
+      group: review-rounds-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      # The labels come from the event, as they stood when it fired.
+      - name: Refuse while review rounds are open
+        env:
+          OPEN:
+            ${{ contains(github.event.pull_request.labels.*.name,
+            'status:review-rounds') }}
+        run: |
+          if [ "$OPEN" = true ]; then
+            echo "::error::status:review-rounds is on this PR: its review rounds are open. Remove the label once a round reports no P0-P2."
+            exit 1
+          fi
+          echo "No review rounds open."

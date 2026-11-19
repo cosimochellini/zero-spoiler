@@ -41,6 +41,12 @@ commit-msg:
 # formatting and lint again on the files it sends.
 pre-push:
   jobs:
+    # A push to the branch of a merged PR would recreate the branch GitHub
+    # deleted on merge. Quiet when gh is missing, offline or signed out.
+    - name: merged-branch
+      run: node scripts/push-guard.mjs
+      use_stdin: true
+
     - name: test
       run: npx vitest run
 

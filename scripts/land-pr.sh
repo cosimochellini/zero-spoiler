@@ -16,8 +16,9 @@
 #        the head while it was a draft; one never followed times out
 #      4 the head moved after it was pinned
 #      5 bad arguments, a SHA that does not match the initial head, a PR not
-#        open against main, a title the version bump cannot read, gh or git
-#        failed, or the merge was refused
+#        open against main, a PR still labelled status:review-rounds, a title
+#        the version bump cannot read, gh or git failed, or the merge was
+#        refused
 set -u
 [ $# = 2 ] || { echo "usage: scripts/land-pr.sh <pr> <expected-head-sha>"; exit 5; }
 cd "$(dirname "$0")/.." || exit 5
@@ -76,6 +77,18 @@ IFS=$'\t' read -r state base HEAD_BRANCH HEAD_REPO <<< "$pr"
 [ "$state $base" = "OPEN main" ] || { echo "PR $PR is not open against main: $state $base"; exit 5; }
 [ -n "$HEAD_BRANCH" ] && [ -n "$HEAD_REPO" ] || { echo "PR $PR has no head branch or repository"; exit 5; }
 
+# Exits 5 while the PR carries status:review-rounds: its review rounds are
+# open (landing-prs skill). Read before marking it ready and again before the
+# merge, as the label can go on while CI runs.
+stop_on_rounds() {
+  labels=$(gh pr view "$PR" --json labels -q '.labels[].name') || exit 5
+  if grep -qx 'status:review-rounds' <<< "$labels"; then
+    echo "PR $PR carries status:review-rounds: its review rounds are open. Remove the label once a round reports no P0-P2, then run this again."
+    exit 5
+  fi
+}
+stop_on_rounds
+
 # Pin the full SHA once so every later check and the merge use the same head.
 cur=$(pr_head) || exit 5
 [[ "$cur" =~ ^[0-9a-f]{40}$ && "$cur" = "$H"* ]] || {
@@ -122,6 +135,7 @@ cur=$(pr_head) || exit 5
 [ "$cur" = "$H" ] || { echo "head is no longer $H"; exit 4; }
 [ "$result" = success ] || { echo "CI on $H: $result"; exit 3; }
 stop_on_conflict
+stop_on_rounds
 
 # No --delete-branch: GitHub deletes the remote branch on merge, and the flag
 # would also delete local branches, worktrees of parallel sessions included.
