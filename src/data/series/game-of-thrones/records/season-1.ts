@@ -5609,8 +5609,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 13, value: 'alive' },
-        // Killed at the Mummer's Ford, told in A Storm of Swords: the later
-        // of two candidate chapters, not checked against the book (#1288).
+        // Killed at the Mummer's Ford, told in A Storm of Swords. Chapter 178
+        // (Arya VI) is the safe later pin, unverified on an allowed source
+        // (#1238).
         { episode: 21, chapter: 178, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
