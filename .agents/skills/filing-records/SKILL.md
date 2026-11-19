@@ -149,3 +149,17 @@ A chronicle PR runs this pipeline, in order:
 The PR opens only once the corrections are in, because an open PR reads as finished and can merge before them.
 
 Done when the opened PR's body lists every verifier finding with its fix or reason.
+
+## Game of Thrones research
+
+A Game of Thrones record, step or chronicle story is checked against these sources, the show against the show's wiki and the books against the book wiki. `scripts/chronicle-sources-got.mjs` cites them story by story.
+
+- **Book facts**: the Ice and Fire Wiki, through its API: `https://iceandfire.fandom.com/api.php?action=parse&page=<Page>&prop=wikitext&format=json`.
+  - Chapter pages are titled `<POV> <N> - A Game of Thrones` (`Eddard I - A Game of Thrones`), and their `chapter_number` is the site chapter.
+  - Chapter pages stop around site chapter 33. Past that, read the character pages, and the episode page's list of the chapters it adapts.
+- **Show facts**: the Game of Thrones Wiki, through the same API on `gameofthrones.fandom.com`. A citation `{{Ref|GOT105}}` is season 1, episode 5. Each episode page lists the book chapters it adapts.
+- **A Wiki of Ice and Fire** refuses scripted requests: leave the block in place and read the two wikis above. Firecrawl can read it, but its daily credits run out quickly, so spend them only on a fact neither wiki holds.
+- **Site chapter numbers**: the prologue is chapter 1, and books 2 to 5 start at 74, 144, 226 and 272. A Wiki of Ice and Fire's "Chapter N" is site chapter N+1.
+- **Unconfirmed pins**: a pin no source confirms takes the safe later chapter, and the PR lists it as unverified.
+
+Done when every Game of Thrones pin cites the page that confirms it, or is on the unverified list.

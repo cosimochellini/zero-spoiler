@@ -57,6 +57,9 @@ check covers that window.
 The series' English wiki only, through its MediaWiki API: the `en` endpoint
 (`episodes` for a show with a wiki of its own) of the series in
 `src/data/series/index.ts`. Lawful access only (#725): wiki pages, nothing else.
+Game of Thrones adds the Ice and Fire Wiki for the books: read "Game of Thrones
+research" in `.agents/skills/filing-records/SKILL.md` before checking a Game of
+Thrones story, for its endpoints, chapter numbering and blocked sites.
 
 1. Read the cache `scripts/wiki.mjs` writes first, under `.gate/wiki/<slug>/` in
    the repository root or any worktree (`/usr/bin/git worktree list`); a Game of
