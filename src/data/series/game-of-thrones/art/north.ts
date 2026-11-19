@@ -263,28 +263,6 @@ const SUNBURST: Stroke[] = [
   },
   shadow(80, 150, 40),
 ]
-/** The two halves of Rickard's shield once it is split, along one crack. */
-const KARSTARK_CRACK = 'L83 124 L78 108 L82 92 L78 76 L82 60 Z'
-const KARSTARK_HALF_LEFT: Stroke[] = [
-  { d: `M80 44 A48 48 0 0 0 80 140 ${KARSTARK_CRACK}` },
-  { d: 'M80 49 A43 43 0 0 0 80 135', role: 'soft' },
-  {
-    d: 'M78 80.2 A12 12 0 0 0 78 103.8 M64 92 H44 M69 81 L55 67 M69 103 L55 117',
-    role: 'accent',
-  },
-  { d: 'M65 86 L52 82 M65 98 L52 102 M74 77 L70 64', role: 'soft' },
-  { d: 'M44 64 l6 -3 M38 92 l6 -3 M44 120 l6 -3', role: 'ambient' },
-]
-const KARSTARK_HALF_RIGHT: Stroke[] = [
-  { d: `M80 44 A48 48 0 0 1 80 140 ${KARSTARK_CRACK}` },
-  { d: 'M84 49.2 A43 43 0 0 1 84 134.8', role: 'soft' },
-  {
-    d: 'M86 81.7 A12 12 0 0 1 86 102.3 M96 92 H116 M91 81 L105 67 M91 103 L105 117',
-    role: 'accent',
-  },
-  { d: 'M95 86 L108 82 M95 98 L108 102 M86 107 L90 120', role: 'soft' },
-]
-
 /**
  * The flayed man of House Bolton bound upside down on his X-shaped cross,
  * as the show's banner has him: a silhouette with no face, his feet tied
@@ -571,9 +549,9 @@ export const northRedrawn: Redrawings = {
   'alyn': [
     // The standard down on the ground, its staff broken and the stump left
     // standing: he is killed at the Mummer's Ford with Beric's men, told in
-    // A Storm of Swords. The book's alone; episode 21 orders it. The pin is
-    // the later of the two candidate chapters (34, site 178; 17 is 161),
-    // neither checked against the book (#1288).
+    // Arya VI of A Storm of Swords (chapter 178), where the outlaws name him
+    // among their dead; in Arya III (chapter 161) he still leads the men who
+    // lived. The book's alone; episode 21 orders it.
     {
       episode: 21,
       chapter: 178,
@@ -621,51 +599,41 @@ export const northRedrawn: Redrawings = {
     },
   ],
   'smalljon-umber': [
-    // The Umber banner down on the ground beside a fur, its giant in broken
-    // chains upside down: Tormund kills him in "Battle of the Bastards" (episode 59), and
-    // the Bolton men kill him at the Red Wedding in Catelyn VII of A Storm
-    // of Swords (chapter 195).
+    // The greatsword slid off the fur, its hilt still on it and its point
+    // down on the ground: Tormund kills him in "Battle of the Bastards"
+    // (episode 59), and the Bolton men kill him at the Red Wedding in
+    // Catelyn VII of A Storm of Swords (chapter 195).
     {
       episode: 59,
       chapter: 195,
       value: [
-        { d: 'M70 151 H144' },
-        {
-          d: 'M64 124 Q74 96 98 98 Q116 90 130 94 L150 92 L134 120 L150 148 L138 154',
-        },
-        {
-          d: `${circle(102, 142, 7)} M95 133 V113 H109 V133 Z M97 113 L90 100 M107 113 L114 100 M95 130 L82 142 M109 130 L122 142`,
-        },
-        {
-          d: 'M82 142 l-6 3 M80 138 l-6 -2 M122 142 l6 3 M124 138 l6 -2',
-          role: 'accent',
-        },
-        {
-          d: 'M18 142 Q20 126 34 124 Q46 116 60 122 Q72 126 70 140 Q66 152 50 150 Q34 154 22 150 Q16 148 18 142 Z',
-        },
-        {
-          d: 'M26 134 l3 -4 M40 126 l3 -4 M56 126 l3 -4 M30 148 l3 3 M54 148 l3 3',
-          role: 'soft',
-        },
-        { d: 'M132 104 l5 -3 M136 136 l5 -3', role: 'ambient' },
-        { d: 'M8 156 H152', role: 'ambient', dashed: true },
+        ...moved(
+          GREATSWORD_FUR.slice(0, 2),
+          'translate(6 135) scale(0.66) translate(-14 -116)',
+        ),
+        ...moved(
+          GREATSWORD_FUR.slice(2, 8),
+          'translate(8 12) rotate(22 24 112)',
+        ),
+        { d: 'M8 158 H152', role: 'ambient', dashed: true },
       ],
     },
   ],
   'rickard-karstark': [
-    // The shield split in two, one half still standing and the other down
-    // on the ground: Robb has him beheaded in "Kissed by Fire" (episode 25)
-    // and in Catelyn III of A Storm of Swords (chapter 164).
+    // The shield fallen flat on its back on the ground, the sun still on
+    // it: Robb has him beheaded in "Kissed by Fire" (episode 25) and in
+    // Catelyn III of A Storm of Swords (chapter 164).
     {
       episode: 25,
       chapter: 164,
       value: [
-        ...moved(KARSTARK_HALF_LEFT, 'translate(-20 6) rotate(-6 80 140)'),
         ...moved(
-          KARSTARK_HALF_RIGHT,
-          'translate(30 58) rotate(-90 80 92) scale(0.8)',
+          [...SUNBURST.slice(0, 1), ...SUNBURST.slice(2, 5)],
+          'translate(0 150) scale(1 0.4) translate(0 -140)',
         ),
-        { d: 'M10 152 H150', role: 'ambient', dashed: true },
+        { d: 'M32 130.8 V135 A48 19.2 0 0 0 128 135 V130.8' },
+        { d: 'M116 142 l6 -3 M104 148 l6 -3', role: 'ambient' },
+        { d: 'M10 157 H150', role: 'ambient', dashed: true },
       ],
     },
   ],
@@ -738,21 +706,18 @@ export const northRedrawn: Redrawings = {
     },
   ],
   'dacey-mormont': [
-    // The morningstar down on the ground, its haft broken: Ryman Frey kills
-    // her at the Red Wedding, in Catelyn VII of A Storm of Swords (chapter
-    // 195). The book's alone; episode 29 orders it.
+    // The morningstar fallen on the ground, its head resting on a spike:
+    // Ryman Frey kills her at the Red Wedding, in Catelyn VII of A Storm of
+    // Swords (chapter 195). The book's alone; episode 29 orders it.
     {
       episode: 29,
       chapter: 195,
       value: [
-        { d: 'M14 146 L60 140 l4 -4 M14 152 L61 146 l3 2' },
-        { d: 'M24 144 L25 150 M32 143 L33 149 M40 142 L41 148', role: 'soft' },
-        { d: 'M72 146 l-4 -3 M72 146 l-3 4 M72 146 L98 140 M73 152 L99 146' },
         ...moved(
-          MORNINGSTAR.slice(2, 5),
-          'translate(114 130) rotate(22) translate(-104 -60)',
+          MORNINGSTAR.slice(0, 5),
+          'translate(124 124) rotate(42.3) translate(-104 -60)',
         ),
-        { d: 'M8 156 H152', role: 'ambient', dashed: true },
+        { d: 'M8 154 H152', role: 'ambient', dashed: true },
       ],
     },
   ],
