@@ -1485,9 +1485,12 @@ Gates are episode / site chapter. Book gates are the first chapter synopsis that
 names the character; the Appearing list is only a floor, and each lower point is
 an owner check in `game-of-thrones.json` (owner, 2026-11-07).
 
-- Qotho 6 / 62: narration alone has him in episode 1 and on the Appearing list
-  from site chapter 4. `deceased` at 9 / 65. The show gives him the breaking of
-  Viserys's arm and the book gives it to Haggo, so the shared texts say neither.
+- Qotho 6 / 12: the book gate moved from 62 for #1355, as the Daenerys II
+  synopsis names the three bloodriders at the wedding; the Appearing list has
+  him from site chapter 4. Narration and credits alone have him in episodes 1
+  and 2. `deceased` at 9 / 65. The show gives him the breaking of Viserys's arm;
+  the pages read do not say who breaks it in the book, so the shared texts say
+  neither.
 - Cohollo, chapter 37, and Haggo, chapter 62: book only. The show's riders have
   these names only by wiki conjecture. `deceased` at chapter 65.
 - Jhiqui 2 / 12: same shape as Irri.
