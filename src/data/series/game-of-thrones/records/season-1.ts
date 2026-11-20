@@ -1406,8 +1406,11 @@ export const season1: ThronesSaga = {
       visual: { art: 'lancel-lannister', tint: 'red' },
     },
     // Show: "The North Remembers" (episode 11), he turns up drunk at Joffrey's
-    // nameday tourney and Sansa saves him. Books: Sansa V (site chapter 58), drunk
-    // at court; Sansa saves him and Joffrey makes him a fool.
+    // nameday tourney and Sansa saves him. Books: Sansa V of A Game of Thrones
+    // (site chapter 58), drunk at Joffrey's court, Balon Swann warns him away
+    // from Sansa; she saves him only at the name-day tourney, in Sansa I of
+    // A Clash of Kings (site chapter 76). The summary and log hold at chapter
+    // 58, and the fool's role follows at 76 (#1424).
     {
       id: 'dontos-hollard',
       kind: 'character',
@@ -1415,8 +1418,8 @@ export const season1: ThronesSaga = {
       revealedAtChapter: 58,
       name: { it: 'Dontos Hollard', en: 'Dontos Hollard' },
       summary: {
-        it: 'Un cavaliere ubriacone che Sansa Stark salva dall’ira di re Joffrey.',
-        en: 'A drunken knight whom Sansa Stark saves from King Joffrey’s anger.',
+        it: 'Un cavaliere ubriacone alla corte di re Joffrey.',
+        en: 'A drunken knight at King Joffrey’s court.',
       },
       visual: { art: 'dontos-hollard', tint: 'green' },
     },
@@ -5453,13 +5456,24 @@ export const season1: ThronesSaga = {
     },
     'dontos-hollard': {
       relationships: season1Relationships['dontos-hollard'],
-      role: {
-        it: 'Cavaliere e giullare di corte',
-        en: 'Knight and court fool',
-      },
+      role: [
+        { episode: 11, chapter: 58, value: { it: 'Cavaliere', en: 'Knight' } },
+        // Joffrey makes him his fool at the name-day tourney, in Sansa I of
+        // A Clash of Kings (chapter 76). The show tells it at his gate, but a
+        // timeline takes one entry per episode, so the show's fool waits one
+        // episode, late rather than early.
+        {
+          episode: 12,
+          chapter: 76,
+          value: {
+            it: 'Cavaliere e giullare di corte',
+            en: 'Knight and court fool',
+          },
+        },
+      ],
       log: {
-        it: 'Si presenta ubriaco davanti a re Joffrey, che vuole farlo uccidere. Sansa convince il re a risparmiarlo, e Joffrey ne fa il suo giullare.',
-        en: 'He comes before King Joffrey drunk, and the king wants him killed. Sansa talks the king into sparing him, and Joffrey makes him his fool.',
+        it: 'È un cavaliere alla corte di re Joffrey, dove si presenta ubriaco.',
+        en: 'He is a knight at King Joffrey’s court, where he turns up drunk.',
       },
       status: [
         { episode: 11, chapter: 58, value: 'alive' },
