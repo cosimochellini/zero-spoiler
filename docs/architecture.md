@@ -41,9 +41,20 @@ gates.
   manga thresholds. Records exclusive to the other source are absent, including
   from counts and handles. Facts exclusive to it stay closed
   (`src/data/source.ts`).
-- Without a bookmark, `reveal` opens no records. Onboarding alone receives the
-  series' bounded demo, with every record and dated fact inside both limits.
-  Trial cookies are restricted to that demo and yield to a saved bookmark.
+- Without a bookmark, `reveal` opens no records. Onboarding receives the series'
+  bounded demo, with every record and dated fact inside both limits. Trial
+  cookies are restricted to that demo and yield to a saved bookmark.
+- A record page and a list drawn with no bookmark are the one other exception,
+  and they read no request header but the cookies: a search engine and a person
+  get the same page (#1430). `pageReader`
+  (`src/server/archive/reader.server.ts`) draws a record page at the record's
+  own first appearance, and a list (characters, places, fruits, abilities) at
+  the end of the demo, each with `revealAt` (`src/data/reveal.ts`): what a
+  reader at the point's episode and one at its chapter would both see. The
+  reader keeps the null bookmark and the null-bookmark archive copy, so its
+  handles are the ones “Show anyway” resolves. A bookmark or a trial gets its
+  own reader, unchanged. The leak sweep holds such a page to both of its points
+  (`src/test/visitor.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
@@ -52,10 +63,11 @@ gates.
   both sources tell; a record of one source only is not listed. They hold the
   first drawing and the line every source's reader has at the record's own
   threshold. The name is the one its first source's reader is given (the anime's
-  for a record both tell, which is what a crawler's title prints), so a chapter
-  reader may meet an anime name early: Hagya's card says Leol. No page under fog
+  for a record both tell), so a chapter reader may meet an anime name early:
+  Hagya's card says Leol, while the page with no bookmark, drawn from the
+  null-bookmark copy, is titled with the record's own name. No page under fog
   names them. The fog is an editorial promise kept by the pages, not access
-  control (`src/lib/crawler.ts`).
+  control.
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
@@ -98,9 +110,9 @@ it.
 The archive is never compiled into the client bundle, and `gate:archive` fails
 if any of it gets there. Search, drawings and links follow the same rule. The
 fog is an editorial promise, not access control: the social pictures above, a
-shared link from someone further ahead, “Show anyway” and the crawler bookmark
-can all open an entry early ([Security](#security),
-[Series and routing](#series-and-routing)).
+shared link from someone further ahead, “Show anyway” and a record page opened
+with no bookmark (drawn at the record's own first appearance) can all open an
+entry early ([Security](#security), [Series and routing](#series-and-routing)).
 
 ## Relationship selections
 
@@ -142,9 +154,12 @@ functions use the CSRF middleware in `src/start.ts` and read progress from
 request cookies, never a client-supplied bookmark.
 
 Fog prevents accidental spoilers, not deliberate access: “Show anyway” reveals a
-record by handle. Recognized crawlers without a valid saved/trial bookmark
-receive an end-of-anime bookmark; source filtering still applies. See
-`src/lib/progress/requestBookmark.ts`.
+record by handle, and a record's own page, opened with no saved or trial
+bookmark, shows it as it stands at its first appearance. No request is answered
+by its `User-Agent`: a crawler and a person with no bookmark get the same page,
+because answering a crawler differently is cloaking (#1430). See
+`src/lib/progress/requestBookmark.ts` and `pageReader` in
+`src/server/archive/reader.server.ts`.
 
 ## Series and routing
 
@@ -341,9 +356,10 @@ drawing, never a redrawing, and prints only what a reader standing at the
 record's own threshold reads in every source it is told in: a character's
 epithet, else its role; a fruit's type; an ability's Nen type, else its kind; a
 place's form and region; a ship's kind. The name is the one its first source's
-reader is given: the episode reader's for a record both sources tell, which is
-what a crawler's page title prints (a link preview is fetched as a crawler), and
-the chapter reader's for a record only the manga tells. Re-run the script after
+reader is given: the episode reader's for a record both sources tell, and the
+chapter reader's for a record only the manga tells. A page fetched with no
+bookmark, as a link preview is, prints the record's own name in its title, which
+differs where the anime renames a record (Hagya, Leol). Re-run the script after
 changing a record, a first drawing or the card layout. It draws only what
 changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
 orphaned.

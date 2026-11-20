@@ -135,8 +135,8 @@ const READINGS = { ability, character, fruit, place, ship }
 
 /**
  * What one record's card prints in one locale: the name the first reader is
- * given (the episode one, whose name a crawler's page title prints), and the
- * line every reader at the threshold agrees on.
+ * given (the episode one), and the line every reader at the threshold agrees
+ * on.
  * @param {Entity} entity The record.
  * @param {Reader[]} readers The readers at its threshold.
  * @returns {{ name: string, line?: string }} The words.
