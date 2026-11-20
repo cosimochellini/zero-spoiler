@@ -7,6 +7,7 @@ import { useT } from '~/i18n/LocaleContext'
 import { useBookmark, useThreshold } from '~/lib/progress/BookmarkContext'
 import { dismissIntro } from '~/lib/progress/intro'
 import type { RecordView, Slot } from '~/lib/view/records'
+import { space } from '~/styles/tokens.stylex'
 
 /** The record a page is about, as its banner names it. */
 type Named = Pick<
@@ -41,7 +42,9 @@ export function VisitorBanner({
   }
 
   return (
-    <div {...stylex.props(stripStyles.strip)}>
+    <div
+      {...stylex.props(stripStyles.strip, slot === undefined && styles.list)}
+    >
       <ClosesIntro />
       <p {...stylex.props(stripStyles.words)}>
         {slot === undefined ?
@@ -62,3 +65,8 @@ export function ClosesIntro(): null {
   useEffect(dismissIntro, [])
   return null
 }
+
+const styles = stylex.create({
+  // A record page's bands keep their own gap; a list's content starts flush.
+  list: { marginBlockEnd: space.lg },
+})

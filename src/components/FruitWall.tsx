@@ -203,7 +203,10 @@ function Wall({
           id={headingId}
           {...stylex.props(styles.title)}
         >
-          {t('fruits.wall.title', { count: filed })}
+          {/* The start of the story is open even here (#1430). */}
+          {t('fruits.wall.title', {
+            count: filed - plates.reduce((sum, plate) => sum + plate.opened, 0),
+          })}
         </h2>
         <p {...stylex.props(styles.ask)}>{t('fruits.wall.ask')}</p>
         <EpisodeMark placement="fold" />
