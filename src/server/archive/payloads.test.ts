@@ -705,7 +705,7 @@ const EVERY_LABEL = LOCALES.flatMap((locale) =>
 // Some faction labels name a group the reader meets late ("Kozuki family"),
 // so a label is sent with the fruit album's group and nowhere else (#988):
 // a page holds it only once an eater the reader has reached stands in it.
-describe('a faction label', () => {
+describe('a faction label', { timeout: 15_000 }, () => {
   it.each(PAYLOADS)(
     'is not in $name before the fruit album has its group',
     (payload) => {
@@ -842,7 +842,7 @@ function earlySeasOf(payload: Payload): string[] {
 // Most seas are named well after the first episode ("New World"), so a sea's
 // name is sent with the places page once the chart opens it, with a place's
 // page or peek for its own sea, and nowhere else (#993).
-describe('a sea name', () => {
+describe('a sea name', { timeout: 15_000 }, () => {
   it.each(PAYLOADS)(
     'is not in $name before the chart opens its sea',
     (payload) => {

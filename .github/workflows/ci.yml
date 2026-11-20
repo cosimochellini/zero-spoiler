@@ -139,6 +139,10 @@ jobs:
           path: .vitest/blob/
           include-hidden-files: true
           if-no-files-found: error
+          # A re-run of one failed shard uploads the same name again. Without
+          # this the run holds both blobs and `coverage` merges the stale,
+          # failed one with the new one.
+          overwrite: true
           retention-days: 1
 
   # The merged run writes the same coverage/coverage-final.json `npm test` did,
