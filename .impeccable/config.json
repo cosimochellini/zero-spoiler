@@ -77,7 +77,7 @@
           "http://127.0.0.1:*/en/legal"
         ],
         "createdAt": "2026-11-17T12:52:42.460Z",
-        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px prose runs 87 to 112 characters a line: the footer on the hub, the legal notices, the landing introduction, the stories of a series home, and the summary and dated entries of a character or place page."
+        "reason": "Temporary baseline (#1366), remove in the surface pass that fixes it: at 1440px prose runs 87 to 112 characters a line: the footer on the hub and on the legal page (#1377), the landing introduction, the stories of a series home, and the summary and dated entries of a character or place page."
       }
     ]
   },

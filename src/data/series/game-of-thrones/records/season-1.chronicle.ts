@@ -36,11 +36,12 @@ function inBooks(
 /**
  * Season 1 and *A Game of Thrones*: the stories of the Essos cast (#1360),
  * each filed at the first episode and the first site chapter by whose end the
- * reader knows all of it. The show and the books part over who wounds Drogo,
- * who breaks Viserys’s arm and whose whip brings him down, so most stories
- * come in two versions, one per medium. A book-only story sits at the episode
- * that adapts its chapter, or later when a story links a character the show
- * meets later; Aggo’s are all at episode 11, the show’s gate for him.
+ * reader knows all of it. The show and the books part over who wounds Drogo
+ * and whose whip brings him down, and the wikis read do not name the book’s
+ * bloodrider who breaks Viserys’s arm, so most stories come in two versions,
+ * one per medium. A book-only story sits at the episode that adapts its
+ * chapter, or later when a story links a character the show meets later;
+ * Aggo’s are all at episode 11, the show’s gate for him.
  * Jaqen H’ghar, Rorge and Biter open at episode 12 and chapter 79, past the
  * stage, and have no chronicle yet.
  *
@@ -596,6 +597,14 @@ export const season1Chronicles = {
     ),
   ],
   'qotho': [
+    inBooks(
+      [6, 12],
+      { it: 'L’arma d’osso di drago', en: 'The dragonbone bow' },
+      {
+        it: 'Qotho è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]]. Alle nozze di Drogo con [[daenerys-targaryen|Daenerys]], fuori dalle mura di Pentos, i cavalieri di sangue siedono appena sotto il khal e la sposa, e il fratello di lei, [[viserys-targaryen|Viserys]], siede più in basso, cosa che lo fa infuriare. Ogni cavaliere di sangue dona alla sposa un’arma, e il dono di Qotho è un’arma da tiro a doppia curva in osso di drago, più alta di lei. Lei rifiuta i doni, come vuole l’usanza, e passano a Drogo.',
+        en: 'Qotho is one of [[drogo|Khal Drogo]]’s three bloodriders. At Drogo’s wedding to [[daenerys-targaryen|Daenerys]] outside the walls of Pentos, the bloodriders sit just below the khal and his bride, and her brother [[viserys-targaryen|Viserys]] sits below them, which angers him. Each bloodrider gives the bride a weapon, and Qotho’s gift is a double-curved dragonbone bow taller than she is. She refuses the gifts, as custom requires, and they go to Drogo.',
+      },
+    ),
     onScreen(
       [6, 62],
       { it: 'Il braccio spezzato', en: 'The broken arm' },
@@ -655,8 +664,8 @@ export const season1Chronicles = {
       [8, 62],
       { it: 'Il lamento di Mago', en: 'Mago’s complaint' },
       {
-        it: 'Haggo è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]], un uomo alto, ed è stato lui a spezzare il braccio a [[viserys-targaryen|Viserys]]. Dopo il sacco di una città lhazareen diffida della sacerdotessa [[mirri-maz-duur|Mirri Maz Duur]], che cura le ferite del khal. È a lui che [[mago|Mago]] si lamenta quando la khaleesi toglie a Mago una prigioniera, e Drogo manda a dire a Mago di trovarsene un’altra.',
-        en: 'Haggo is one of [[drogo|Khal Drogo]]’s three bloodriders, a tall man, and the one who broke [[viserys-targaryen|Viserys]]’s arm. After the sack of a Lhazareen town he distrusts the godswife [[mirri-maz-duur|Mirri Maz Duur]], who treats the khal’s wounds. When [[mago|Mago]] complains to him that the khaleesi took a captive, Drogo sends word that Mago should find another.',
+        it: 'Haggo è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]], un uomo alto. Dopo il sacco di una città lhazareen diffida della sacerdotessa [[mirri-maz-duur|Mirri Maz Duur]], che cura le ferite del khal. È a lui che [[mago|Mago]] si lamenta quando la khaleesi toglie a Mago una prigioniera, e Drogo manda a dire a Mago di trovarsene un’altra.',
+        en: 'Haggo is one of [[drogo|Khal Drogo]]’s three bloodriders, a tall man. After the sack of a Lhazareen town he distrusts the godswife [[mirri-maz-duur|Mirri Maz Duur]], who treats the khal’s wounds. When [[mago|Mago]] complains to him that the khaleesi took a captive, Drogo sends word that Mago should find another.',
       },
     ),
     inBooks(

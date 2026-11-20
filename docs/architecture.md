@@ -287,7 +287,7 @@ optional, and an arcless series prints no arc row. Darry and six of #1252's
 places are the book's alone, and the Kingswood the show's. The demo shows the
 places the first ten episodes reach, and covers in its tail the four the show
 first visits in later seasons. Its chronicles cover the Essos cast of the first
-stage (#1360), 88 stories for 18 characters, and the King's Landing, riverlands
+stage (#1360), 89 stories for 18 characters, and the King's Landing, riverlands
 and Vale cast (#1362), 223 stories for 66 characters, in
 `records/season-1.chronicle.ts`: a story both media tell the same way holds at
 an episode and a chapter, and one only a single medium tells, or tells its own
@@ -464,6 +464,6 @@ checks this block.
 | Places            | 60                                                      |
 | Saga modules      | 1                                                       |
 | Line drawings     | 208, one per record, plus 155 redrawings of 114 records |
-| Chronicle stories | 311, for 84 characters                                  |
+| Chronicle stories | 312, for 84 characters                                  |
 
 <!-- End of the generated counts. -->

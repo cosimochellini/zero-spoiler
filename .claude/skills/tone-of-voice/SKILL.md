@@ -100,7 +100,12 @@ and its records `src/data/series/game-of-thrones/records/season-N.ts`;
   "capitolo". A season is "Season N" / "Stagione N". A book is "book N" /
   "libro N", counting the five English books, never the volumes an Italian
   edition splits them into. When prose names a book, it gives the English
-  title in italics (*A Game of Thrones*) in both languages (owner, #851).
+  title in italics (*A Game of Thrones*) in both languages (owner, #851),
+  wherever italics render: the README, `docs/` and code comments. Nothing the
+  site prints does. Summaries, chronicle titles and stories, dictionary
+  strings and meta descriptions are plain text, where a `*` prints as an
+  asterisk, so they name the title bare (`archive.test.ts` fails on a `*` in
+  an entity or arc summary, #1321).
 - **No arcs.** The series files no arcs, so its copy never says "arc",
   "saga" or "arco". A stretch of the story is a season or a book.
 - **No nautical imagery.** The fog is still the one image, and nothing

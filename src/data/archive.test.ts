@@ -721,6 +721,18 @@ describe.each(LOADED_SERIES)('the chronicles of $slug', ({ archive }) => {
   })
 })
 
+describe.each(LOADED_SERIES)('the summaries of $slug', ({ archive }) => {
+  // A summary is plain text, on the page and in the meta description, so a
+  // markdown `*` around a title would print as an asterisk (#1321).
+  it('carry no markdown asterisk in any locale', () => {
+    for (const { id, summary } of [archive.entities, archive.arcs].flat()) {
+      for (const locale of LOCALES) {
+        expect(summary[locale], `${id} ${locale}`).not.toContain('*')
+      }
+    }
+  })
+})
+
 describe.each(LOADED_SERIES)('the shelves of $slug', ({ archive }) => {
   const { bookSections, characters, chart, featuredCharacters } = archive
 

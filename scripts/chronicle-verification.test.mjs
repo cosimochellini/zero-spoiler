@@ -258,6 +258,138 @@ function sourceOf(story) {
   )
 }
 
+/** The Game of Thrones Wiki's season 1 episode pages, in airing order. */
+const THRONES_EPISODE_PAGES = [
+  'Winter_Is_Coming',
+  'The_Kingsroad',
+  'Lord_Snow',
+  'Cripples,_Bastards,_and_Broken_Things',
+  'The_Wolf_and_the_Lion',
+  'A_Golden_Crown',
+  'You_Win_or_You_Die',
+  'The_Pointy_End',
+  'Baelor',
+  'Fire_and_Blood',
+]
+
+/**
+ * A page on the Game of Thrones Wiki.
+ * @param {string} page The page's title, as the URL spells it.
+ * @returns {string} The URL.
+ */
+const thronesPage = (page) => `https://gameofthrones.fandom.com/wiki/${page}`
+
+/** Each episode page's URL, mapped to the episode it is. */
+const THRONES_EPISODE_OF_PAGE = new Map(
+  THRONES_EPISODE_PAGES.map((page, index) => [thronesPage(page), index + 1]),
+)
+
+/** The episodes in each season, to turn a `GOT` ref into an episode number. */
+const THRONES_SEASON_LENGTHS = [10, 10, 10, 10, 10, 10, 7, 6]
+
+/** A Game of Thrones Wiki episode ref, `GOT` + season + two-digit episode. */
+const THRONES_REF = /\bGOT(?<season>\d)(?<episode>\d{2})\b/gu
+
+/**
+ * The latest episode a source and its note cite: the episode page it links,
+ * and any `GOT1xx` ref the note names.
+ * @param {object} cited The source and note.
+ * @param {string} cited.note The note, which may name `GOT1xx` refs.
+ * @param {string} cited.source The page the note rests on.
+ * @returns {number | undefined} The episode, or `undefined` when none is cited.
+ */
+function latestCitedEpisode({ note, source }) {
+  const refs = note
+    .matchAll(THRONES_REF)
+    .map(({ groups }) => {
+      const before = THRONES_SEASON_LENGTHS.slice(0, Number(groups.season) - 1)
+
+      return (
+        before.reduce((sum, length) => sum + length, 0) + Number(groups.episode)
+      )
+    })
+    .toArray()
+  const page = THRONES_EPISODE_OF_PAGE.get(source)
+  const episodes = page === undefined ? refs : [page, ...refs]
+
+  return episodes.length === 0 ? undefined : Math.max(...episodes)
+}
+
+/**
+ * The show-told stories (no `source`, or `source: 'episode'`) filed before the
+ * episode their note cites, as comparable lines.
+ * @param {object[]} stories Stories with the source and note that vouch for them.
+ * @returns {string[]} One line per early story.
+ */
+function showPinsBeforeTheirCitation(stories) {
+  return stories
+    .filter(({ medium }) => medium !== 'chapter')
+    .map((story) => ({ story, cited: latestCitedEpisode(story.cited) }))
+    .filter(({ story, cited }) => cited !== undefined && story.episode < cited)
+    .map(({ story, cited }) => `${asLine(story)} cites episode ${cited}`)
+}
+
+describe('the Game of Thrones show pins', () => {
+  it('files no show-told story before the episode its note cites', () => {
+    // A story pinned at episode 4 that rests on episode 5's page shows it a
+    // week early (#1412).
+    const stories = STORIES.filter(
+      (story) => story.series === 'game-of-thrones',
+    ).map((story) => ({ ...story, cited: sourceOf(story) }))
+
+    const checked = stories.filter(
+      ({ cited, medium }) =>
+        medium !== 'chapter' && latestCitedEpisode(cited) !== undefined,
+    )
+
+    // Only notes resting on an episode page or a GOT ref give an episode.
+    expect(checked.length).toBeGreaterThan(20)
+    expect(showPinsBeforeTheirCitation(stories)).toStrictEqual([])
+  })
+
+  it('catches a story filed before its episode page or its GOT ref', () => {
+    const story = {
+      series: 'game-of-thrones',
+      id: 'jorah-mormont',
+      chapter: 30,
+      dated: '30 both',
+      title: 'Test',
+    }
+    const lines = showPinsBeforeTheirCitation([
+      {
+        ...story,
+        episode: 4,
+        cited: { source: thronesPage('The_Wolf_and_the_Lion'), note: 'n' },
+      },
+      {
+        ...story,
+        episode: 4,
+        medium: 'episode',
+        cited: {
+          source: thronesPage('Varys'),
+          note: 'Varys names him (GOT105).',
+        },
+      },
+      {
+        ...story,
+        episode: 4,
+        medium: 'chapter',
+        cited: { source: thronesPage('The_Wolf_and_the_Lion'), note: 'n' },
+      },
+      {
+        ...story,
+        episode: 5,
+        cited: { source: thronesPage('The_Wolf_and_the_Lion'), note: 'n' },
+      },
+    ])
+
+    expect(lines).toStrictEqual([
+      'game-of-thrones/jorah-mormont @4 / 30 both — Test cites episode 5',
+      'game-of-thrones/jorah-mormont @4 / 30 both — Test cites episode 5',
+    ])
+  })
+})
+
 describe('the chronicle verification log', () => {
   it('vouches for every story, and for no story the archive does not hold', () => {
     // The document is the only record of which episode page settles which

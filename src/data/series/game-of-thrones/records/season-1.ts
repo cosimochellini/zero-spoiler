@@ -19,8 +19,8 @@ export const season1: ThronesSaga = {
   heading: {
     id: 'season-1',
     summary: {
-      it: 'La prima stagione della serie e il primo libro, *A Game of Thrones*.',
-      en: 'The show’s first season and the first book, *A Game of Thrones*.',
+      it: 'La prima stagione della serie e il primo libro, A Game of Thrones.',
+      en: 'The show’s first season and the first book, A Game of Thrones.',
     },
     visual: { art: 'season-1', tint: 'red' },
   },
@@ -584,6 +584,9 @@ export const season1: ThronesSaga = {
     // The books call him Robert Arryn; the show renames him Robin, and the
     // record takes the show’s name. Show: on his mother’s lap at the Eyrie in
     // "The Wolf and the Lion". Books: Catelyn VI, at Lysa’s side in the Eyrie.
+    // The nursing and the wish to see a prisoner fly are the show's at episode
+    // 5 and the books' only at Tyrion V (site chapter 39), so his log leaves
+    // them to the dated relationship cards (#1355).
     {
       id: 'robin-arryn',
       kind: 'character',
@@ -2021,12 +2024,12 @@ export const season1: ThronesSaga = {
       visual: { art: 'chett', tint: 'sand' },
     },
     // Daenerys’s storyline in Essos (#1008).
-    // Show: “A Golden Crown” (episode 6), the synopsis names him when he breaks Viserys’s arm; his earlier scenes are narration. Books: Daenerys VII (site chapter 62), the first synopsis to name him. The two media give that arm to different men, so the texts say neither.
+    // Show: “A Golden Crown” (episode 6), the synopsis names him when he breaks Viserys’s arm; his earlier scenes are narration and credits. Books: Daenerys II (site chapter 12), the wedding, where the synopsis names Drogo’s bloodriders Cohollo, Haggo and Qotho (#1355); Daenerys I has him on the Appearing list only. The books’ breaker of that arm is not on the wikis read, so the shared texts leave it out.
     {
       id: 'qotho',
       kind: 'character',
       revealedAtEpisode: 6,
-      revealedAtChapter: 62,
+      revealedAtChapter: 12,
       name: { it: 'Qotho', en: 'Qotho' },
       summary: {
         it: 'Un cavaliere di sangue di khal Drogo.',
@@ -2048,7 +2051,7 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'cohollo', tint: 'ocher' },
     },
-    // Books only: Daenerys VII (site chapter 62), he offers Drogo his help. The show’s rider has the name only by wiki conjecture; episode 8 orders him.
+    // Books only: Daenerys VII (site chapter 62), Mago complains to him. The show’s rider has the name only by wiki conjecture; episode 8 orders him.
     {
       id: 'haggo',
       kind: 'character',
@@ -4029,8 +4032,8 @@ export const season1: ThronesSaga = {
         },
       ],
       log: {
-        it: 'È l’unico figlio di Lysa, un bambino gracile che lei allatta ancora. Chiede alla madre di far volare un prigioniero.',
-        en: 'He is Lysa’s only son, a frail child she still nurses. He asks his mother to make a prisoner fly.',
+        it: 'È l’unico figlio di Lysa e il giovane lord del Nido dell’Aquila. Sua madre governa la Valle in suo nome.',
+        en: 'He is Lysa’s only son and the young lord of the Eyrie. His mother rules the Vale in his name.',
       },
       role: { it: 'Lord del Nido dell’Aquila', en: 'Lord of the Eyrie' },
       status: [{ episode: 5, chapter: 35, value: 'alive' }],
@@ -5643,13 +5646,15 @@ export const season1: ThronesSaga = {
           chapter: 13,
           value: { it: 'Guardia di Casa Stark', en: 'Guard of House Stark' },
         },
+        // Eddard XI: Eddard sends twenty of his men with Lord Beric, under
+        // Alyn. Fat Tom, not Alyn, commands the Hand's guard after (#1355).
         {
           episode: 6,
-          chapter: 46,
+          chapter: 44,
           source: 'chapter',
           value: {
-            it: 'Capitano della guardia del Primo Cavaliere',
-            en: 'Captain of the Hand’s guard',
+            it: 'A capo di venti uomini di Eddard',
+            en: 'Leader of twenty of Eddard’s men',
           },
         },
       ],
@@ -5659,8 +5664,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 13, value: 'alive' },
-        // Killed at the Mummer's Ford, told in A Storm of Swords: the later
-        // of two candidate chapters, not checked against the book (#1288).
+        // Killed at the Mummer's Ford, told in A Storm of Swords. Chapter 178
+        // (Arya VI) is the safe later pin, unverified on an allowed source
+        // (#1238).
         { episode: 21, chapter: 178, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
@@ -6553,13 +6559,13 @@ export const season1: ThronesSaga = {
         en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side.',
       },
       status: [
-        { episode: 6, chapter: 62, value: 'alive' },
+        { episode: 6, chapter: 12, value: 'alive' },
         { episode: 9, chapter: 65, value: 'deceased' },
       ],
       affiliation: [
         {
           episode: 6,
-          chapter: 62,
+          chapter: 12,
           value: { it: 'Khalasar di Drogo', en: 'Drogo’s khalasar' },
         },
       ],
@@ -6589,8 +6595,8 @@ export const season1: ThronesSaga = {
       chronicle: season1Chronicles.haggo,
       role: { it: 'Cavaliere di sangue di Drogo', en: 'Drogo’s bloodrider' },
       log: {
-        it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco. È lui a spezzare il braccio a Viserys. Offre il suo aiuto a Drogo, che lo rifiuta.',
-        en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. He is the one who breaks Viserys’s arm. He offers Drogo his help, and Drogo refuses it.',
+        it: 'È uno dei cavalieri di sangue di khal Drogo, i guerrieri che cavalcano al suo fianco. Mago va a lamentarsi da lui quando la khaleesi gli toglie una prigioniera.',
+        en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. Mago comes to him to complain when the khaleesi takes a captive from Mago.',
       },
       status: [
         { episode: 8, chapter: 62, value: 'alive' },
@@ -6766,8 +6772,8 @@ export const season1: ThronesSaga = {
       chronicle: season1Chronicles.eroeh,
       role: { it: 'Ragazza lhazareen', en: 'Lhazareen girl' },
       log: {
-        it: 'Daenerys la sottrae a Mago durante l’attacco alla sua città. Quando il khalasar si divide, Mago la violenta e la uccide.',
-        en: 'Daenerys takes her from Mago during the attack on her town. When the khalasar breaks apart, Mago rapes and kills her.',
+        it: 'Daenerys la sottrae a Mago durante l’attacco alla sua città. Quando il khalasar si divide, Mago se la riprende, la violenta e la consegna al suo nuovo khal, i cui cavalieri di sangue la uccidono.',
+        en: 'Daenerys takes her from Mago during the attack on her town. When the khalasar breaks apart, Mago seizes her again, rapes her and gives her to his new khal, whose bloodriders kill her.',
       },
       status: [{ episode: 10, chapter: 69, value: 'deceased' }],
       affiliation: [
