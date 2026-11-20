@@ -17,7 +17,7 @@ import {
   SCALE,
   workOf,
 } from './og-pictures.mjs'
-import { agreed } from './og-words.mjs'
+import { pagedRecords } from './og-words.mjs'
 
 const PALETTE = { paper: '#000', ink: '#fff', muted: '#888', accent: '#ff0' }
 
@@ -25,16 +25,36 @@ const PALETTE = { paper: '#000', ink: '#fff', muted: '#888', accent: '#ff0' }
 const loaded = { pictures: [] }
 
 /**
+ * One drawn picture.
+ * @param {string} file Its path.
+ * @returns {Awaited<ReturnType<typeof picturesOf>>[number]} The picture.
+ */
+function pictureOf(file) {
+  const picture = loaded.pictures.find((candidate) => candidate.file === file)
+  if (picture === undefined) {
+    throw new Error(`no picture ${file}`)
+  }
+  return picture
+}
+
+/**
  * What a card prints under the name, or nothing.
  * @param {string} file The card's path.
  * @returns {string | undefined} The line.
  */
 function lineOf(file) {
-  const picture = loaded.pictures.find((candidate) => candidate.file === file)
-  if (picture === undefined) {
-    throw new Error(`no picture ${file}`)
-  }
-  return /<p class="line">(?<line>[^<]*)<\/p>/u.exec(picture.html)?.groups?.line
+  return /<p class="line">(?<line>[^<]*)<\/p>/u.exec(pictureOf(file).html)
+    ?.groups?.line
+}
+
+/**
+ * The name a card prints.
+ * @param {string} file The card's path.
+ * @returns {string | undefined} The name.
+ */
+function nameOf(file) {
+  return /<h1 class="name">(?<name>[^<]*)<\/h1>/u.exec(pictureOf(file).html)
+    ?.groups?.name
 }
 
 // The first `picturesOf` imports every series' archive through the one Vite
@@ -108,12 +128,76 @@ describe('what a card prints under the name', () => {
       'Village · East Blue',
     )
   })
+})
 
-  it('is only what every source agrees on at the threshold', () => {
-    expect(agreed(['Captain', 'Captain'])).toBe('Captain')
-    expect(agreed(['Captain', 'Admiral'])).toBeUndefined()
-    expect(agreed(['Captain', undefined])).toBeUndefined()
-    expect(agreed([undefined])).toBeUndefined()
+/** The page payload that draws a record of each kind. */
+const LOADERS = {
+  ability: 'loadAbility',
+  character: 'loadCharacter',
+  fruit: 'loadFruit',
+  place: 'loadPlace',
+  ship: 'loadPlace',
+}
+
+/**
+ * Every card of a record the anime names otherwise (`Entity.episodeName`), in
+ * every open series and locale, beside the head of the page a reader with no
+ * bookmark is given.
+ * @returns {Promise<{ file: string, card?: string, page: string, titled: boolean }[]>} One per card.
+ */
+async function renamedCards() {
+  const [
+    { OPEN_SERIES, archiveOf },
+    { hasPage },
+    { LOCALES },
+    { withFeatures },
+    { payloadsFor },
+  ] = await Promise.all(
+    [
+      'data/series/index.ts',
+      'lib/progress/series.ts',
+      'i18n/locales.ts',
+      'data/features.ts',
+      'server/archive/payloads.server.ts',
+    ].map((module) => importArchive(module)),
+  )
+  const cards = []
+  for (const { slug } of OPEN_SERIES) {
+    const archive = await archiveOf(slug)
+    const payloads = payloadsFor(archive)
+    const renamed = pagedRecords(withFeatures(archive), hasPage).filter(
+      ({ episodeName }) => episodeName !== undefined,
+    )
+    for (const entity of renamed) {
+      const load = payloads.find(({ name }) => name === LOADERS[entity.kind])
+      for (const locale of LOCALES) {
+        const file = `/og/${slug}/${locale}/${entity.id}.png`
+        const { head } = load.run(null, locale, entity.id)
+        cards.push({
+          file,
+          card: nameOf(file),
+          page: head.image.alt,
+          titled: head.title.includes(head.image.alt),
+        })
+      }
+    }
+  }
+  return cards
+}
+
+describe('the name on a card', () => {
+  it('is the one the page with no bookmark is titled with, for every record the anime names otherwise', async () => {
+    const cards = await renamedCards()
+
+    expect(cards.map(({ file }) => file)).toContain(
+      '/og/hunter-x-hunter/en/hagya.png',
+    )
+    expect(
+      cards.filter(({ card, page, titled }) => card !== page || !titled),
+    ).toStrictEqual([])
+    expect(cards.find(({ file }) => file.endsWith('/en/hagya.png'))?.card).toBe(
+      'Hagya',
+    )
   })
 })
 
