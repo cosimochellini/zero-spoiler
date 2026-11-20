@@ -1,21 +1,15 @@
 import { screen } from '@testing-library/react'
-import { afterEach, describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
-import { introOwed } from '~/lib/progress/intro'
 import type { RecordView } from '~/lib/view/records'
 import { at, coveredSlot, openSlot, record } from '~/test/fixtures'
 import { ep, renderWithProviders } from '~/test/providers'
 
-import { FirstVisitIntro } from './IntroDialog'
 import { VisitorBanner } from './VisitorBanner'
 
 const NAMI = openSlot(record({ name: 'Nami', ...at(8) }))
 
 describe('VisitorBanner', () => {
-  afterEach(() => {
-    sessionStorage.clear()
-  })
-
   it('names a record page’s record at its first appearance, with the bookmark control', () => {
     renderWithProviders(<VisitorBanner slot={NAMI} />, {
       path: '/one-piece/en/characters/nami',
@@ -71,19 +65,5 @@ describe('VisitorBanner', () => {
     )
 
     expect(screen.queryByText(/first seen/u)).not.toBeInTheDocument()
-    expect(introOwed()).toBe(true)
-  })
-
-  it('closes the intro, so the dialog never opens over it', () => {
-    renderWithProviders(
-      <>
-        <VisitorBanner slot={NAMI} />
-        <FirstVisitIntro />
-      </>,
-      { path: '/one-piece/en/characters/nami' },
-    )
-
-    expect(introOwed()).toBe(false)
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 })

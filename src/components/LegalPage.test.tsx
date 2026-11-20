@@ -79,7 +79,6 @@ describe('LegalPage', () => {
         'zs_game-of-thrones',
         'zs_game-of-thrones_try',
         'opzs_welcome',
-        'opzs_intro',
       ]) {
         expect(main).toHaveTextContent(name)
       }

@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event'
 import type { ReactElement } from 'react'
 import { describe, expect, it } from 'vitest'
 
-import { requestLeadPeek } from '~/lib/progress/intro'
 import type { CharacterView } from '~/lib/view/records'
 import {
   at,
@@ -431,25 +430,6 @@ describe('SpoilerVeil on a page of its own, at block density', () => {
     expect(asked).toStrictEqual(['zz'])
     // No link in it, so the lifted content itself holds the focus.
     expect(screen.getByTestId('secret').parentElement).toHaveFocus()
-  })
-
-  it('leaves the focus alone when the intro lifts it, not its own control', async () => {
-    renderWithProviders(
-      <SpoilerVeil
-        lead
-        peek={peekTo(record)}
-        placeholder={<p>Spoiler</p>}
-        slot={coveredSlot<CharacterView>()}
-      >
-        {body}
-      </SpoilerVeil>,
-    )
-
-    requestLeadPeek()
-    await settle()
-
-    expect(screen.getByTestId('secret')).toBeInTheDocument()
-    expect(document.body).toHaveFocus()
   })
 })
 
