@@ -85,9 +85,11 @@ jobs:
           retention-days: 7
 
   # Typed rules build a TypeScript program, so this is the slowest step of the
-  # gate. `--concurrency=auto` (in the `lint` script) lints files on worker
-  # threads. There is no `--cache`: with typed rules a file's findings can
-  # change when another file's types do, and a cache keyed on the file misses it.
+  # gate. `--concurrency=2` (in the `lint` script) lints files on two worker
+  # threads, each with its own program: 147 s to 80 s on a laptop, and no better
+  # with 4. `auto` was six times slower there, so the number stays pinned. There
+  # is no `--cache`: with typed rules a file's findings can change when another
+  # file's types do, and a cache keyed on the file misses it.
   lint:
     if: github.event_name == 'pull_request' && !github.event.pull_request.draft
     runs-on: ubuntu-latest
