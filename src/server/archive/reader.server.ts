@@ -2,7 +2,7 @@ import { byNumber, byValue } from 'sort-es'
 
 import type { ReaderArchive } from '~/data/features'
 import { orderByMode } from '~/data/order'
-import { type Reveal, reveal, sourceOf } from '~/data/reveal'
+import { type Reveal, reveal, revealAt, sourceOf } from '~/data/reveal'
 import { archiveIn } from '~/data/source'
 import type { Entity, SeriesArchive } from '~/data/types'
 import type { Locale } from '~/i18n/locales'
@@ -81,7 +81,21 @@ export function readerFor(
   bookmark: Bookmark,
   locale: Locale,
 ): Reader {
-  const at = reveal(bookmark, archive.series)
+  return readerSeeing(archive, {
+    at: reveal(bookmark, archive.series),
+    bookmark,
+    locale,
+  })
+}
+
+/**
+ * A reader who sees what `at` sees: the bookmark's own, unless `pageReader`
+ * draws a page for a reader with none.
+ */
+function readerSeeing(
+  archive: SeriesArchive,
+  { at, bookmark, locale }: { at: Reveal; bookmark: Bookmark; locale: Locale },
+): Reader {
   const told = archiveIn(archive, sourceOf(bookmark))
   const order = (entries: Entity[]): Entity[] => orderByMode(entries, at.mode)
 
@@ -127,4 +141,53 @@ export function readerFor(
   }
 
   return reader
+}
+
+/**
+ * The reader a record page or a list is drawn for (#1430).
+ *
+ * With a bookmark (or a trial), the bookmark's own reader, byte for byte.
+ * Without one, a search engine and a person landing from it get the same
+ * page: a record page as the record stands at its own first appearance, a
+ * list (no `id`) open up to the end of the series' demo, both drawn by
+ * `revealAt`. The bookmark stays `null` and the archive is the one a reader
+ * with no bookmark is handed, so a handle this page mints is one "Show anyway"
+ * (`lift*`, always `readerFor`) resolves. An id the visitor's archive does not
+ * have falls back to the plain null reader, under which the page is not found.
+ */
+export function pageReader(
+  archive: SeriesArchive,
+  bookmark: Bookmark,
+  { id, locale }: { id?: string; locale: Locale },
+): Reader {
+  if (bookmark !== null) {
+    return readerFor(archive, bookmark, locale)
+  }
+
+  const { series } = archive
+  const point =
+    id === undefined ?
+      {
+        revealedAtEpisode: series.demoLastEpisode,
+        revealedAtChapter: series.demoLastChapter,
+      }
+    : recordOf(archiveIn(archive, null), id)
+
+  return point === undefined ?
+      readerFor(archive, null, locale)
+    : readerSeeing(archive, {
+        at: revealAt(point, series),
+        bookmark: null,
+        locale,
+      })
+}
+
+/** Any record a page can be about: ships and fruits are kept apart. */
+function recordOf(archive: ReaderArchive, id: string): Entity | undefined {
+  return (
+    archive.getEntity(id)
+    ?? archive.getShip(id)
+    ?? archive.getFruit(id)
+    ?? archive.getAbility(id)
+  )
 }

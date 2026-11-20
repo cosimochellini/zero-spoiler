@@ -291,23 +291,4 @@ describe('isolated series cookies', () => {
     expect(trialForRequest('10', '3', OTHER)).toBeNull()
     expect(trialForRequest(undefined, '3', OTHER)).not.toBeNull()
   })
-
-  it('treats a crawler as having finished the requested series', () => {
-    const jar = new Map<string, string>()
-
-    expect(bookmarkFromCookies(jar, OTHER, 'Googlebot')).toStrictEqual({
-      mode: 'episode',
-      episode: 12,
-    })
-    expect(
-      bookmarkFromCookies(jar, ONE_PIECE_BOOKMARK, 'Googlebot'),
-    ).toStrictEqual({ mode: 'episode', episode: 1300 })
-
-    jar.set(OTHER.cookie, '2')
-
-    expect(bookmarkFromCookies(jar, OTHER, 'Googlebot')).toStrictEqual({
-      mode: 'episode',
-      episode: 2,
-    })
-  })
 })
