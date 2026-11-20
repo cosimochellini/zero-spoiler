@@ -149,11 +149,12 @@
       "https://it.wikipedia.org/wiki/Casa_Stark#Benjen_Stark",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://gameofthrones.fandom.com/wiki/Blood_of_My_Blood",
-      "https://gameofthrones.fandom.com/wiki/Beyond_the_Wall_(episode)"
+      "https://gameofthrones.fandom.com/wiki/Beyond_the_Wall_(episode)",
+      "https://iceandfire.fandom.com/wiki/Bran_IV_-_A_Game_of_Thrones"
     ],
     "unverified": [
       "Role kept as 'Ranger'; both media call him First Ranger, but it is not checked that the title is given at the gate in each.",
-      "Stages (#1285): missing from episode 7, where his horse comes back without him (Fandom ref GOT107; the audit's episode 5 is wrong), and in the books from Jon V (site 42), a chapter from memory, not checked on AWOIAF (the audit's chapter 10 is Tyrion I, before he rides out); back in episode 56 (Fandom ref GOT606) and dead in episode 66 (Fandom ref GOT706), both the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
+      "Stages (#1285): missing from episode 7, where his horse comes back without him (Fandom ref GOT107; the audit's episode 5 is wrong), and in the books from Bran IV (site 25), where Yoren tells Robb and Bran at supper that he has gone missing north of the Wall (Ice and Fire Wiki, Bran IV - A Game of Thrones; moved from Jon V, site 42, in #1361); back in episode 56 (Fandom ref GOT606) and dead in episode 66 (Fandom ref GOT706), both the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
     ]
   },
   "grey-wind": {
@@ -339,11 +340,13 @@
       "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Osha",
-      "https://gameofthrones.fandom.com/wiki/Book_of_the_Stranger"
+      "https://gameofthrones.fandom.com/wiki/Book_of_the_Stranger",
+      "https://iceandfire.fandom.com/wiki/Bran_V_-_A_Game_of_Thrones"
     ],
     "unverified": [
       "Episode 6: the wikis give the first appearance, not who says the name aloud; check that the name is spoken or clearly given in “A Golden Crown”. If her name is first said in episode 7, the gate moves to 7 and the role/affiliation step must move later.",
-      "Stage (#1285): dies in episode 54 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285)."
+      "Stage (#1285): dies in episode 54 (Fandom DeathEp), the show's alone, ordered by chapter 344. Episodes not viewed; AWOIAF could not be read in this session (#1285).",
+      "Status (#1361): captured at her gate, 6/38, in both media: the only outlaw taken alive, brought to Winterfell as a prisoner (Ice and Fire Wiki, Bran V - A Game of Thrones; Game of Thrones Wiki, A Golden Crown). Episode not viewed."
     ]
   },
   "mordane": {
@@ -1704,11 +1707,13 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://it.wikipedia.org/wiki/Casa_Stark",
       "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://awoiaf.westeros.org/index.php/Jeyne_Poole"
+      "https://awoiaf.westeros.org/index.php/Jeyne_Poole",
+      "https://iceandfire.fandom.com/wiki/Jeyne_Poole"
     ],
     "unverified": [
       "The show never names her on screen (identified only in the DVD commentary). Filed book-only (source \"chapter\"), as the owner decided.",
-      "False identity (#1288): passed off as Arya Stark to wed Ramsay Bolton, a books-only stage at site chapter 243 (A Feast for Crows 17, where Cersei tells the council the bride is a \"steward's whelp\" dressed up by Petyr Baelish; A Wiki of Ice and Fire, Jeyne Poole). A Storm of Swords 37 and 72 only say the girl is a fraud, without naming her, so they draw no stage; Jeyne is named in A Dance with Dragons 20. Episode 29 orders it. The cloak's look is not checked against the text."
+      "False identity (#1288): passed off as Arya Stark to wed Ramsay Bolton, a books-only stage at site chapter 243 (A Feast for Crows 17, where Cersei tells the council the bride is a \"steward's whelp\" dressed up by Petyr Baelish; A Wiki of Ice and Fire, Jeyne Poole). A Storm of Swords 37 and 72 only say the girl is a fraud, without naming her, so they draw no stage; Jeyne is named in A Dance with Dragons 20. Episode 29 orders it. The cloak's look is not checked against the text.",
+      "Status (#1361): captured at site chapter 52 (Sansa IV), the book’s alone: after the attack on the Hand’s household she is locked in a tower room with Sansa (Ice and Fire Wiki, Jeyne Poole and Mordane pages). Chapter assumed from the pages; not checked on the chapter text."
     ]
   },
   "mikken": {
