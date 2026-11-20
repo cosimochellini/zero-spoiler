@@ -26,7 +26,7 @@ import {
   ONE_PIECE_LOADED,
   LOADED_SERIES as SERIES,
 } from '~/test/series'
-import { heldTo } from '~/test/visitor'
+import { heldTo, sweptInFull } from '~/test/visitor'
 
 import { entityForHandle } from './handle.server'
 import { hubPageFor } from './hub.server'
@@ -132,6 +132,10 @@ const asksOf = ({
  * at each bookmark, a different seventh each time: every key is still asked
  * for at about fifteen bookmarks, in both locales, and the same ones on
  * every run. Odd, so a key does not land on one locale only.
+ *
+ * Except at `null` for a page drawn at a point (`sweptInFull`): there each
+ * key is its own page, held to its own record's first appearance, and `null`
+ * is one bookmark of the sweep, so it is asked for every key in both locales.
  */
 const STRIDE = 7
 
@@ -140,6 +144,15 @@ function sampled(keys: string[] | undefined, at: number): string[] {
   return keys === undefined ?
       ['']
     : keys.filter((_, index) => (index + at) % STRIDE === 0)
+}
+
+/** The keys a payload is asked for at one ask: a sample, or all of them. */
+function keysAt(
+  payload: Pick<Payload, 'drawnAt' | 'keys'>,
+  { at, bookmark }: { at: number; bookmark: Bookmark },
+): string[] {
+  const all = payload.keys?.()
+  return sweptInFull(payload, bookmark) ? (all ?? ['']) : sampled(all, at)
 }
 
 describe('every payload the server sends', () => {
@@ -164,6 +177,27 @@ describe('every payload the server sends', () => {
 
     expect(sent.toSorted(alphabetically)).toStrictEqual(
       [...PLAIN].toSorted(alphabetically),
+    )
+  })
+
+  it('is drawn at a point exactly when `api.ts` reads it through `pageReaderIn`', () => {
+    // The sweep holds a `drawnAt` page to its point, and reads every key of
+    // it with no bookmark: a page drawn at one in `api.ts` and not marked
+    // here would be swept as if it saw nothing.
+    const drawn = readFileSync(
+      path.join(import.meta.dirname, '..', 'api.ts'),
+      'utf8',
+    )
+      .split('export const ')
+      // The first chunk is the file's head, where `pageReaderIn` is defined.
+      .slice(1)
+      .filter((chunk) => chunk.includes('pageReaderIn('))
+      .map((chunk) => chunk.slice(0, chunk.indexOf(' ')))
+
+    expect(drawn.toSorted(alphabetically)).toStrictEqual(
+      PAYLOADS.filter(({ drawnAt }) => drawnAt !== undefined)
+        .map(({ name }) => name)
+        .toSorted(alphabetically),
     )
   })
 
@@ -223,15 +257,16 @@ describe.each(SERIES)('every payload of $slug', (series) => {
 
   it.each(payloads)(
     '$name names nothing the reader has not reached, nor another series',
-    ({ keys, name, run }) => {
-      const all = keys?.()
+    (asked) => {
+      const { name, run } = asked
       const excuse = byDesign[name] ?? ((): boolean => false)
       const leaks: string[] = []
 
       for (const [at, { bookmark, locale }] of asks.entries()) {
-        for (const key of sampled(all, at)) {
+        const keys = keysAt(asked, { at, bookmark })
+        for (const key of keys) {
           const payload = run(bookmark, locale, key)
-          const held = heldTo(series.archive, { bookmark, key, name })
+          const held = heldTo(series.archive, { bookmark, key, payload: asked })
           for (const fog of held) {
             const leaked = leaksIn(payload, fog, (entity) =>
               excuse(entity, key, fog),
@@ -524,12 +559,8 @@ function withoutSeats(
 function earlyAt(payload: Payload, asked: Grouped, key: string): string[] {
   const { bookmark, locale } = asked
 
-  return heldTo(ONE_PIECE_LOADED.archive, {
-    bookmark,
-    key,
-    name: payload.name,
-  }).flatMap((at) =>
-    earlyAgainst(payload, key, { asked, held: groupedAt(at, locale) }),
+  return heldTo(ONE_PIECE_LOADED.archive, { bookmark, key, payload }).flatMap(
+    (at) => earlyAgainst(payload, key, { asked, held: groupedAt(at, locale) }),
   )
 }
 
@@ -583,10 +614,8 @@ function unseatedLabels(
 
 /** Every label a page sends early at the asks it is sampled at. */
 function earlyLabelsOf(payload: Payload): string[] {
-  const all = payload.keys?.()
-
   return GROUPED.flatMap((ask, at) =>
-    sampled(all, at).flatMap((key) =>
+    keysAt(payload, { at, bookmark: ask.bookmark }).flatMap((key) =>
       earlyAt(payload, ask, key).map(
         (faction) =>
           `${faction} via ${payload.name} '${key}' @ ${JSON.stringify(ask.bookmark)} ${ask.locale}`,
@@ -731,17 +760,17 @@ function openInAll(opened: Set<string>[], region: string): boolean {
 }
 
 /** Every sea name a page sends early at the asks it is sampled at. */
-function earlySeasOf({ keys, name, run }: Payload): string[] {
-  const all = keys?.()
+function earlySeasOf(payload: Payload): string[] {
+  const { name, run } = payload
   const skip = ORIGIN_PROSE.has(name) ? 'origin' : undefined
 
   return OPENED.flatMap(({ bookmark, locale }, at) =>
-    sampled(all, at).flatMap((key) => {
+    keysAt(payload, { at, bookmark }).flatMap((key) => {
       // A page drawn at a point (`heldTo`) names a sea open at both of its.
       const opened = heldTo(ONE_PIECE_LOADED.archive, {
         bookmark,
         key,
-        name,
+        payload,
       }).map((held) => regionsAt(held, locale))
       // A lifted port's own sea is part of what the reader asked for.
       const own =

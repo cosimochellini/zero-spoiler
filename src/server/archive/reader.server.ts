@@ -7,6 +7,7 @@ import { archiveIn } from '~/data/source'
 import type { Entity, SeriesArchive } from '~/data/types'
 import type { Locale } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import type { Gated } from '~/lib/progress/spoiler'
 import type { CoveredRecord, Slot } from '~/lib/view/records'
 
 import { handleOf } from './handle.server'
@@ -164,22 +165,35 @@ export function pageReader(
     return readerFor(archive, bookmark, locale)
   }
 
+  const point = pointOf(archive, id)
+
+  return point === undefined ?
+      readerFor(archive, null, locale)
+    : readerSeeing(archive, {
+        at: revealAt(point, archive.series),
+        bookmark: null,
+        locale,
+      })
+}
+
+/**
+ * The point `pageReader` draws a page at for a reader with no bookmark: a
+ * record page's record (`id`) at its first appearance, a list at the end of
+ * the series' demo. `undefined` for an id the null-bookmark archive does not
+ * have, whose page is then not found.
+ */
+export function pointOf(
+  archive: SeriesArchive,
+  id?: string,
+): Gated | undefined {
   const { series } = archive
-  const point =
-    id === undefined ?
+
+  return id === undefined ?
       {
         revealedAtEpisode: series.demoLastEpisode,
         revealedAtChapter: series.demoLastChapter,
       }
     : recordOf(archiveIn(archive, null), id)
-
-  return point === undefined ?
-      readerFor(archive, null, locale)
-    : readerSeeing(archive, {
-        at: revealAt(point, series),
-        bookmark: null,
-        locale,
-      })
 }
 
 /** Any record a page can be about: ships and fruits are kept apart. */

@@ -53,7 +53,9 @@ gates.
   reader at the point's episode and one at its chapter would both see. The
   reader keeps the null bookmark and the null-bookmark archive copy, so its
   handles are the ones “Show anyway” resolves. A bookmark or a trial gets its
-  own reader, unchanged. The leak sweep holds such a page to both of its points
+  own reader, unchanged. Each such payload says so (`drawnAt` in
+  `src/server/archive/payloads.server.ts`), and the leak sweep reads every key
+  of it with no bookmark, in both locales, held to both of its points
   (`src/test/visitor.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
@@ -74,23 +76,26 @@ gates.
 
 ### Fog on the server
 
-The fog is not a blur over the full page. Ask the live site for a character a
-reader with no bookmark has not met (checked on 2026-11-16):
+The fog is not a blur over the full page. Ask for a character a reader at
+episode 100 has not met (checked on 2026-11-20 against a local build,
+`npm run build && npm start`):
 
 ```sh
-curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+curl -s -b 'zs_one-piece=100' https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
   | grep -c 'Trafalgar Law'
 # 0
 
-curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+curl -s -b 'zs_one-piece=100' https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
   | grep -o '<title>[^<]*</title>'
 # <title>A character under fog | One Piece | Zero Spoiler</title>
 ```
 
 With `Cookie: zs_one-piece=650` the title is
-`Trafalgar Law | One Piece | Zero Spoiler`. The server reads the bookmark before
-it builds the page. An entry the reader has not reached is sent as its kind, two
-thresholds and an opaque handle, with no name, no id and no text:
+`Trafalgar Law | One Piece | Zero Spoiler`. With no cookie at all it is the same
+title: the page shows Law as he stands at his first appearance, episode 392,
+under a banner that says so (`pageReader`, above). The server reads the bookmark
+before it builds the page. An entry the reader has not reached is sent as its
+kind, two thresholds and an opaque handle, with no name, no id and no text:
 
 ```mermaid
 flowchart LR

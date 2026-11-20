@@ -254,7 +254,7 @@ function leaksAcross(p: Payload): string[] {
     const payload = p.run(bookmark, locale, key)
 
     // A page drawn at a point (`heldTo`) is held to both of its bookmarks.
-    return heldTo(ARCHIVE, { bookmark, key, name: p.name }).flatMap((held) =>
+    return heldTo(ARCHIVE, { bookmark, key, payload: p }).flatMap((held) =>
       leaksIn(payload, held, lifted).map(
         (id) => `${id} via '${key}' @ ${JSON.stringify(bookmark)}`,
       ),
