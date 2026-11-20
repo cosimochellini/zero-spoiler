@@ -6595,6 +6595,22 @@ const crown = {
     },
   },
   // Dontos, books only: Sansa V (chapter 58).
+  donSansaAtCourt: {
+    character: 'sansa-stark',
+    type: { en: 'Lady at court', it: 'Dama di corte' },
+    summary: {
+      en: 'Eddard Stark’s daughter, whom he starts to hail, drunk, until Ser Balon Swann warns him away.',
+      it: 'La figlia di Eddard Stark, che lui, ubriaco, comincia a salutare finché ser Balon Swann non lo allontana.',
+    },
+  },
+  donJoffreyAtCourt: {
+    character: 'joffrey-baratheon',
+    type: { en: 'King', it: 'Re' },
+    summary: {
+      en: 'The young king, at whose court he turns up drunk.',
+      it: 'Il giovane re, alla cui corte si presenta ubriaco.',
+    },
+  },
   donSansa: {
     character: 'sansa-stark',
     type: { en: 'Saviour', it: 'Salvatrice' },
@@ -10713,10 +10729,19 @@ export const season1Relationships = {
       value: [crown.lanCersei, crown.lanRobertDead],
     },
   ],
+  // At his book gate, Sansa V (chapter 58), he is only drunk at court; Sansa
+  // saves him at the name-day tourney, in Sansa I of A Clash of Kings
+  // (chapter 76) (#1424).
   'dontos-hollard': [
     {
       episode: 11,
       chapter: 58,
+      source: 'chapter',
+      value: [crown.donSansaAtCourt, crown.donJoffreyAtCourt],
+    },
+    {
+      episode: 11,
+      chapter: 76,
       source: 'chapter',
       value: [crown.donSansa, crown.donJoffrey],
     },
