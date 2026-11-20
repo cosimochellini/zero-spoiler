@@ -95,10 +95,14 @@ export function openUsersOf(users: Eater[], r: Reader): Entity[] {
   return users.flatMap((user) => (r.sees(gatedOf(user)) ? [user.entity] : []))
 }
 
-/** Where a bookmark stands in its own unit: the chapter, or the episode. */
+/**
+ * Where a bookmark stands in its own unit: the chapter, or the episode. With
+ * no bookmark the album is drawn at the end of the demo (`pageReader`, #1432),
+ * in episodes, the unit a reader with no bookmark counts in.
+ */
 function positionOf(bookmark: Bookmark, r: Reader): null | number {
   if (bookmark === null) {
-    return null
+    return r.archive.series.demoLastEpisode
   }
 
   return bookmark.mode === 'chapter' ?
@@ -124,8 +128,8 @@ function marqueeFruitOf(
 /**
  * The marquee: the saga the bookmark falls in, and the open fruits whose
  * reveal falls inside it. A fruit is open only up to the bookmark, so the
- * list stops there and its length is the saga so far. `null` with no
- * bookmark, and with no fruit open at all.
+ * list stops there and its length is the saga so far. `null` with no fruit
+ * open at all.
  *
  * The lead, the latest, draws itself in on arrival, so its drawing comes
  * whole; the rest of the rail's come by id as it scrolls.
@@ -176,8 +180,7 @@ function reachedOf(
  * with the fruits whose reveal falls in it, open by id and covered by handle,
  * in the reader's order. A covered fruit in a saga the bookmark has not
  * reached goes to `later` and nowhere else, so no saga past the bookmark is
- * named or counted. Refs only: the records are the plates' already. Empty
- * with no bookmark, which has the wall and no saga view.
+ * named or counted. Refs only: the records are the plates' already.
  */
 function sagasOf(
   bookmark: Bookmark,
@@ -215,8 +218,7 @@ function sagasOf(
  * to the `null` group, which comes last; the rest by size, then by name in
  * the reader's language. Covered fruits and covered eaters are not here at
  * all, so a faction only a covered eater stands in is never named: its label
- * comes with its group and nowhere else. Refs only, like the saga view's;
- * empty with no bookmark.
+ * comes with its group and nowhere else. Refs only, like the saga view's.
  */
 function factionGroupsOf(r: Reader): FruitFactionView[] {
   const groups = new Map<Faction | null, FruitFactionRef[]>()

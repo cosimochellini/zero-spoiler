@@ -34,6 +34,11 @@ import {
 import { leaksIn, saysNothing } from '~/test/fog'
 import { ONE_PIECE_LOADED as ONE_PIECE } from '~/test/series'
 
+import {
+  fruitAlbum as core_fruitAlbum,
+  fruitSheet as core_fruitSheet,
+} from './fruits.server'
+import { pageReader } from './reader.server'
 import type { SagaStart } from './sagaLabels.server'
 
 /** The drawings by any record's id, as the archive hands them out. */
@@ -730,11 +735,24 @@ describe('the marquee', () => {
 })
 
 describe('the saga view', () => {
-  it('is empty without a bookmark', () => {
-    const sheet = fruitAlbum(null, 'en')
+  it('is drawn at the end of the demo without a bookmark (#1432)', () => {
+    const r = pageReader(ONE_PIECE.archive, null, { locale: 'en' })
+    const album = core_fruitAlbum(r)
+    const [eastBlue] = album.sagas
 
-    expect(sheet.sagas).toStrictEqual([])
-    expect(sheet.later).toStrictEqual([])
+    // East Blue only, its fruits open, every later one under fog unnamed.
+    expect(album.sagas.map(({ saga }) => saga)).toStrictEqual([
+      'East Blue Saga',
+    ])
+    expect(eastBlue?.open.map(({ id }) => id)).toStrictEqual([
+      'gum-gum-fruit',
+      'chop-chop-fruit',
+      'slip-slip-fruit',
+      'smoke-smoke-fruit',
+    ])
+    expect(eastBlue?.covered).toStrictEqual([])
+    expect(album.later).toHaveLength(r.archive.fruits.length - 4)
+    expect(core_fruitSheet(r).marquee?.saga).toBe('East Blue Saga')
   })
 
   it('sets out the eight sagas reached at episode 650, Dressrosa last', () => {
