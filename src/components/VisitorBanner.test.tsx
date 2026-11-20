@@ -39,6 +39,17 @@ describe('VisitorBanner', () => {
     ).toBeInTheDocument()
   })
 
+  it('says so on a list with nothing open at the start of the story', () => {
+    renderWithProviders(<VisitorBanner nothingOpen />, {
+      path: '/one-piece/en/characters',
+    })
+
+    expect(
+      screen.getByText(/Nothing on this page appears that early/u),
+    ).toBeInTheDocument()
+    expect(screen.queryByText(/The rest stays/u)).not.toBeInTheDocument()
+  })
+
   it('says nothing with a bookmark, in a trial or over a page under fog', () => {
     const { unmount } = renderWithProviders(<VisitorBanner slot={NAMI} />, {
       bookmark: ep(100),

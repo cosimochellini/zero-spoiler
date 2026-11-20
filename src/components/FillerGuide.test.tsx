@@ -41,7 +41,7 @@ describe('FillerGuide', () => {
     expect(screen.getByText('Your bookmark')).toBeInTheDocument()
   })
 
-  it('asks for a bookmark, and draws no countdown, without one', () => {
+  it('draws the start of the story under the visitor banner, and no countdown, without one', () => {
     renderWithProviders(
       <FillerGuide
         page={{ ...page, countdown: null }}
@@ -49,7 +49,9 @@ describe('FillerGuide', () => {
       />,
     )
 
-    expect(screen.getByText(/not set a bookmark/u)).toBeVisible()
+    expect(
+      screen.getByText(/only the start of the story is open/u),
+    ).toBeVisible()
     expect(
       screen.queryByRole('heading', { name: /next filler/u }),
     ).not.toBeInTheDocument()
@@ -66,6 +68,6 @@ describe('FillerGuide', () => {
     )
 
     expect(screen.queryByText('Your bookmark')).not.toBeInTheDocument()
-    expect(screen.queryByText(/not set a bookmark/u)).not.toBeInTheDocument()
+    expect(screen.queryByText(/start of the story/u)).not.toBeInTheDocument()
   })
 })

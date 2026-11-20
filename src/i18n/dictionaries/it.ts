@@ -60,6 +60,8 @@ export const itDictionary: Dictionary = {
     'Vedi {name} com’era alla prima apparizione ({at}). Il resto rimane nella nebbia.',
   'visitor.list':
     'Senza segnalibro è visibile solo l’inizio della storia. Il resto rimane nella nebbia.',
+  'visitor.listEmpty':
+    'Senza segnalibro è visibile solo l’inizio della storia. Niente di questa pagina compare così presto, quindi è tutto nella nebbia.',
 
   'status.set': 'Segnalibro impostato: {point}.',
   'status.moved': 'Segnalibro spostato: {point}.',

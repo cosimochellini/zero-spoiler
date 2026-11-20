@@ -70,6 +70,8 @@ export const enDictionary = {
     'You are seeing {name} as first seen ({at}). The rest stays under fog.',
   'visitor.list':
     'Without a bookmark, only the start of the story is open. The rest stays under fog.',
+  'visitor.listEmpty':
+    'Without a bookmark, only the start of the story is open. Nothing on this page appears that early, so all of it stays under fog.',
 
   'status.set': 'Bookmark set: {point}.',
   'status.moved': 'Bookmark moved: {point}.',

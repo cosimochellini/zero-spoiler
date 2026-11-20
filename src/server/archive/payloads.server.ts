@@ -91,6 +91,8 @@ function drawnPage(
 }
 
 function listPayloads(archive: SeriesArchive): Payload[] {
+  const list = (name: string, page: (r: Reader) => unknown): Payload =>
+    drawnPage(archive, { drawnAt: 'list', name, page: (_, r) => page(r) })
   return [
     {
       name: 'loadCredits',
@@ -104,38 +106,14 @@ function listPayloads(archive: SeriesArchive): Payload[] {
       name: 'loadHome',
       run: (b, l) => landingPage(readerFor(archive, b, l), null),
     },
-    drawnPage(archive, {
-      drawnAt: 'list',
-      name: 'loadCharacters',
-      page: (_, r) => charactersPage(r),
-    }),
-    drawnPage(archive, {
-      drawnAt: 'list',
-      name: 'loadShelves',
-      page: (_, r) => shelvesPage(r),
-    }),
-    drawnPage(archive, {
-      drawnAt: 'list',
-      name: 'loadFruits',
-      page: (_, r) => fruitSheet(r),
-    }),
-    drawnPage(archive, {
-      drawnAt: 'list',
-      name: 'loadFruitAlbum',
-      page: (_, r) => fruitAlbum(r),
-    }),
-    drawnPage(archive, {
-      drawnAt: 'list',
-      name: 'loadPlaces',
-      page: (_, r) => placesPage(r),
-    }),
-    { name: 'loadFiller', run: (b, l) => fillerPage(readerFor(archive, b, l)) },
-    { name: 'loadPower', run: (b, l) => powerPage(readerFor(archive, b, l)) },
-    drawnPage(archive, {
-      drawnAt: 'list',
-      name: 'loadAbilities',
-      page: (_, r) => abilitySheet(r),
-    }),
+    list('loadCharacters', charactersPage),
+    list('loadShelves', shelvesPage),
+    list('loadFruits', fruitSheet),
+    list('loadFruitAlbum', fruitAlbum),
+    list('loadPlaces', placesPage),
+    list('loadFiller', fillerPage),
+    list('loadPower', powerPage),
+    list('loadAbilities', abilitySheet),
     { name: 'loadSeriesCopy', run: (_, l) => copyOf(archive.series, l) },
     { name: 'loadSeriesLegal', run: (_, l) => legalOf(archive.series, l) },
     {

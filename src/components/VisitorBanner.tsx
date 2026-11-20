@@ -22,8 +22,14 @@ import { space } from '~/styles/tokens.stylex'
  * under fog, where the intro does the explaining.
  */
 export function VisitorBanner({
+  nothingOpen = false,
   slot,
 }: {
+  /**
+   * A list with no row open at the end of the demo (#1432): the banner says
+   * so rather than that the start of the story is open on it.
+   */
+  nothingOpen?: boolean
   /** The record page's own record, as the banner names it; none on a list. */
   slot?: Slot<
     Pick<RecordView, 'name' | 'revealedAtChapter' | 'revealedAtEpisode'>
@@ -36,6 +42,7 @@ export function VisitorBanner({
   if (bookmark !== null || slot?.open === false) {
     return null
   }
+  const listKey = nothingOpen ? 'visitor.listEmpty' : 'visitor.list'
 
   return (
     <div
@@ -44,7 +51,7 @@ export function VisitorBanner({
       <ClosesIntro />
       <p {...stylex.props(stripStyles.words)}>
         {slot === undefined ?
-          t('visitor.list')
+          t(listKey)
         : t('visitor.record', {
             name: slot.record.name,
             at: threshold('chart.opensAt', slot.record),
