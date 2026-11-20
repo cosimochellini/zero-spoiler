@@ -142,7 +142,7 @@ const EXPECTED: Record<string, Expected> = {
   // relationships (#1346): 588. Chronicles, timelines and statuses counted
   // 2026-11-17, after the Essos cast's stories (#1360): 88 stories, 606
   // timelines and 259 statuses. Chronicles and timelines counted 2026-11-18,
-  // after the King's Landing, riverlands and Vale stories (#1362): 312
+  // after the King's Landing, riverlands and Vale stories (#1362): 318
   // stories and 672 timelines.
   'game-of-thrones': {
     kinds: [
@@ -163,7 +163,7 @@ const EXPECTED: Record<string, Expected> = {
       affiliations: 170,
       arcs: 1,
       characters: 148,
-      chronicles: 312,
+      chronicles: 318,
       linkedOrigins: 0,
       places: 60,
       statuses: 259,

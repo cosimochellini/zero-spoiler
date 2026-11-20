@@ -768,10 +768,17 @@ const STORIES: Row[] = [
   },
   {
     id: 'tyrion-lannister',
-    medium: 'both',
+    medium: 'show',
     episode: 10,
     chapter: 70,
     title: 'Acting Hand of the King',
+  },
+  {
+    id: 'tyrion-lannister',
+    medium: 'books',
+    episode: 10,
+    chapter: 70,
+    title: 'Sent to court',
   },
   {
     id: 'jaime-lannister',
@@ -807,6 +814,13 @@ const STORIES: Row[] = [
     episode: 7,
     chapter: 57,
     title: 'A dynasty or nothing',
+  },
+  {
+    id: 'jaime-lannister',
+    medium: 'books',
+    episode: 8,
+    chapter: 56,
+    title: 'War in the riverlands',
   },
   {
     id: 'jaime-lannister',
@@ -852,6 +866,13 @@ const STORIES: Row[] = [
   },
   {
     id: 'tywin-lannister',
+    medium: 'books',
+    episode: 8,
+    chapter: 58,
+    title: 'Hand from afar',
+  },
+  {
+    id: 'tywin-lannister',
     medium: 'show',
     episode: 9,
     chapter: 63,
@@ -862,14 +883,21 @@ const STORIES: Row[] = [
     medium: 'books',
     episode: 9,
     chapter: 63,
-    title: 'Hoping they would break',
+    title: 'The clans in the vanguard',
   },
   {
     id: 'tywin-lannister',
-    medium: 'both',
+    medium: 'show',
     episode: 10,
     chapter: 70,
     title: 'A Hand in his place',
+  },
+  {
+    id: 'tywin-lannister',
+    medium: 'books',
+    episode: 10,
+    chapter: 70,
+    title: 'The trap that failed',
   },
   {
     id: 'kevan-lannister',
@@ -1600,7 +1628,7 @@ const STORIES: Row[] = [
     medium: 'books',
     episode: 11,
     chapter: 58,
-    title: 'The king’s fool',
+    title: 'A greeting turned away',
   },
   {
     id: 'balon-swann',
@@ -1664,6 +1692,13 @@ const STORIES: Row[] = [
     episode: 4,
     chapter: 29,
     title: 'A nod on the road',
+  },
+  {
+    id: 'jason-mallister',
+    medium: 'books',
+    episode: 9,
+    chapter: 64,
+    title: 'A prisoner in the Whispering Wood',
   },
   {
     id: 'willis-wode',
@@ -1818,6 +1853,13 @@ const STORIES: Row[] = [
     episode: 4,
     chapter: 32,
     title: 'Jyck’s boots',
+  },
+  {
+    id: 'bronn',
+    medium: 'show',
+    episode: 5,
+    chapter: 35,
+    title: 'On the high road',
   },
   {
     id: 'bronn',
