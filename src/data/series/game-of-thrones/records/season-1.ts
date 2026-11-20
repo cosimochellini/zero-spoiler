@@ -3294,7 +3294,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 6, value: 'alive' },
-        { episode: 7, chapter: 42, value: 'missing' },
+        // Show: his horse comes back without him. Books: Yoren tells Robb
+        // and Bran he is missing, in Bran IV (#1361).
+        { episode: 7, chapter: 25, value: 'missing' },
         { episode: 56, chapter: 344, source: 'episode', value: 'alive' },
         { episode: 66, chapter: 344, source: 'episode', value: 'deceased' },
       ],
@@ -5620,9 +5622,10 @@ export const season1: ThronesSaga = {
           chapter: 2,
           value: { it: 'Casa Stark', en: 'House Stark' },
         },
+        // Eddard XI, the dispatch that sends Alyn's twenty (#1355, #1361).
         {
           episode: 6,
-          chapter: 45,
+          chapter: 44,
           source: 'chapter',
           value: {
             it: 'Casa Stark, uomini di Beric Dondarrion',

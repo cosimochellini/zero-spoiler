@@ -634,9 +634,9 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${BOOKS}Harwin`,
       note: 'Books only, chapter 2 (Bran I): he rides to the execution and, when Robb asks to keep the pups, says it would be impossible to keep them.',
     },
-    '6:45': {
+    '6:44': {
       source: `${BOOKS}Harwin`,
-      note: `Books only: dispatched by Eddard under Lord Beric and Thoros of Myr; chapter 45 is the reviewed relationship pin. ${PAST_CHAPTER_PAGES}`,
+      note: `Books only: dispatched by Eddard under Lord Beric and Thoros of Myr. Corrected after review: filed at Eddard XI (chapter 44), the dispatch #1355 puts Alyn’s twenty men in, and his affiliation step moved there with it. ${PAST_CHAPTER_PAGES}`,
     },
   },
   'alyn': {
@@ -796,6 +796,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_3,
       note: 'At Winterfell, and the Old Nan page (GOT103): by Bran’s bed after Catelyn leaves, the offered Duncan the Tall story refused, the Long Night that lasted a generation and the White Walkers coming south. Show only; the chapter is her book gate.',
     },
+    '4:25': {
+      source: `${BOOKS}Bran_IV_-_A_Game_of_Thrones`,
+      note: 'Added after review. Chapter 25: Rickon plays with the direwolves in the yard, Bran says he hates her stories until she tells of the Others, the Long Night and the Last Hero, Luwin comes with Hodor, and she says “stories can wait, but visitors rarely do”.',
+    },
     '3:chapter': {
       source: `${BOOKS}Old_Nan`,
       note: 'A Game of Thrones section: after Catelyn is attacked by the assassin, Old Nan helps her wash away the blood. Catelyn III (chapter 15) has the fight and her being treated for her wounds. Her storytelling is the page’s history section.',
@@ -856,6 +860,10 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'shaggydog': {
+    '10:54': {
+      source: `${AWOIAF}A_Game_of_Thrones-Chapter_53`,
+      note: 'Added after review. Bran VI (chapter 54): Rickon grown wild since he learned Robb was leaving; found in the crypts, he slashes at men with a sword, Shaggydog bites Gage’s arm and takes a chunk out of Mikken’s thigh, Robb and Grey Wind master him, and he is chained in the kennels. Read through Firecrawl’s condensed synopsis.',
+    },
     '10:25': {
       source: `${BOOKS}Bran_IV_-_A_Game_of_Thrones`,
       note: 'Chapter 25: Rickon playing with the direwolves in the yard while Bran watches jealous, and in the hall “the three direwolves” confronting Tyrion until called away by their masters. That Shaggydog is one of the three is inferred from the chapter page; unverified on the chapter text. Filed at episode 10, his show gate.',
@@ -878,6 +886,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Ghost`,
       note: 'Season 1, citing episode 4: Ghost helps Jon threaten Rast at night, standing over him snarling; the synopsis adds that no one will fight Sam the next day. Book side: Jon IV (Ice and Fire Wiki chapter page, chapter 27): Rast visited by Jon, Grenn, Pyp and Ghost, and Sam treated well afterwards.',
     },
+    '7:49': {
+      source: `${SHOW}Ghost`,
+      note: 'Added after review. Season 1, citing episode 7: while Jon and Sam swear their vows before a heart tree north of the Wall, Ghost finds two rangers’ corpses and brings back a severed hand. Book side: Jon VI (chapter 49), the vows in a weirwood grove beyond the Wall; unverified on the chapter text. Othor and Jafer are left unnamed, since both open at episode 8.',
+    },
     '8:53': {
       source: `${SHOW}Ghost`,
       note: 'Season 1, citing episodes 7 and 8: Othor and Jafer Flowers found dead, Ghost whining at Jon’s door at night, the wight in the Lord Commander’s quarters, and fire. Book side: the reviewed relationship pin at 8/53 (Ghost rouses Jon at his door, a dead man risen in Mormont’s rooms) and the Game of Thrones Wiki’s Jon page, In the books (Othor killed by fire to save Mormont). Jon VII is unverified on the chapter text.',
@@ -896,9 +908,9 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Benjen_Stark`,
       note: 'Season 1, citing episode 3: the ranging north of the Wall, Jon asking to come, “he is not ready”. Book side: Jon III (Ice and Fire Wiki chapter page, chapter 20): Benjen left on a ranging a few days after Jon arrived and refused to take him.',
     },
-    '7:42': {
+    '7:25': {
       source: `${SHOW}Benjen_Stark`,
-      note: 'Season 1, citing episode 7: his horse returns to Castle Black without him. Book side: the Ice and Fire Wiki’s Benjen page has him go missing beyond the Wall; the pin follows his status entry at 7/42 (Jon V), unverified on the chapter text. The horse is left out because only the show page states it.',
+      note: 'Season 1, citing episode 7: his horse returns to Castle Black without him. Corrected after review: the book tells it at Bran IV (chapter 25), where Yoren says he has gone missing north of the Wall (Ice and Fire Wiki, Bran IV), so the story and his status moved from 7/42 to 7/25. The horse, Yoren and “a few rangers” are left out, as each is one medium’s alone or unsourced.',
     },
   },
   'catelyn-stark': {
@@ -992,9 +1004,13 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Robb_Stark`,
       note: 'Both media: Catelyn bargaining in his place, Robb’s promised Frey marriage, the split host, the victory and Jaime kept alive as a prisoner (GOT109; Catelyn IX and X on A Wiki of Ice and Fire). The show’s single-combat offer and the book’s Karstark sons are left out.',
     },
-    '10:72': {
+    '10:episode': {
+      source: EPISODE_10,
+      note: 'Split after review. Season 1, citing episode 10: Renly’s claim, Robb holding that Stannis comes first, the Greatjon’s speech about the dragons and the proclamation (GOT110 on the Robb and Greatjon pages). The vengeance line was dropped: in the book Catelyn XI gives it to Edmure. Robb’s role is King in the North from 10/72.',
+    },
+    '10:chapter': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_71`,
-      note: 'Both media: vengeance sworn on the Lannisters, Renly’s claim, Robb holding that Stannis comes first, the Greatjon’s speech about the dragons and the proclamation (Catelyn XI; GOT110 on the Robb and Greatjon pages). Robb’s role is King in the North from 10/72.',
+      note: 'Split after review to add the Battle of the Camps. Catelyn XI (chapter 72): Riverrun freed, Hoster dying, the news of Eddard’s death already received, the council over Renly and Stannis, the Greatjon’s speech about the dragons and the river lords taking up the cry. Read through Firecrawl’s condensed synopsis.',
     },
   },
   'rodrik-cassel': {
@@ -1086,9 +1102,13 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'galbart-glover': {
-    '8:56': {
+    '8:episode': {
       source: `${SHOW}Galbart_Glover`,
-      note: 'Both media: lord of Deepwood Motte, at Robb’s war council when Catelyn arrives and asks to speak with her son alone (GOT108; Catelyn VIII on A Wiki of Ice and Fire, where she sends the bannermen away). The show’s vanguard quarrel is left out.',
+      note: 'Split after review to add the show’s vanguard. Season 1, citing episode 8: Robb gives Galbart the vanguard at the feast, the Greatjon will not march behind a Glover until Grey Wind bites off two fingers, and Galbart sits at the war council cut short when Catelyn asks to speak with her son alone.',
+    },
+    '8:chapter': {
+      source: `${AWOIAF}A_Game_of_Thrones-Chapter_55`,
+      note: 'Books only: lord of Deepwood Motte, at Robb’s war council when Catelyn arrives and sends the bannermen away to speak with her son alone (Catelyn VIII); unverified beyond the condensed synopsis and the reviewed relationship pin at 8/56.',
     },
     '10:72': {
       source: `${SHOW}Galbart_Glover`,
@@ -1118,6 +1138,10 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'wendel-manderly': {
+    '29:64': {
+      source: `${BOOKS}Robb_Stark`,
+      note: `Added after review. Books only: Ser Wendel rides in Robb’s battle guard, among its older men, when the host falls on Jaime’s army in the Whispering Wood, and Robb takes Jaime (Ice and Fire Wiki, Robb Stark’s battle guard; Catelyn X). ${PAST_CHAPTER_PAGES}`,
+    },
     '29:56': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_55`,
       note: 'Books only, Catelyn VIII: Lord Wyman, too fat to sit a horse, keeps White Harbor and sends Ser Wylis and Ser Wendel with fifteen hundred men, riding with Catelyn and Brynden to Moat Cailin.',

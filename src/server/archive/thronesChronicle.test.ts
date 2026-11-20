@@ -967,7 +967,7 @@ const STORIES: Row[] = [
     id: 'harwin',
     medium: 'books',
     episode: 6,
-    chapter: 45,
+    chapter: 44,
     title: 'With Lord Beric',
   },
   {
@@ -1010,7 +1010,7 @@ const STORIES: Row[] = [
     medium: 'show',
     episode: 1,
     chapter: 16,
-    title: 'The gentlest pup',
+    title: 'Sansa’s pup',
   },
   {
     id: 'lady-direwolf',
@@ -1360,7 +1360,7 @@ const STORIES: Row[] = [
     id: 'benjen-stark',
     medium: 'both',
     episode: 7,
-    chapter: 42,
+    chapter: 25,
     title: 'Missing',
   },
   {
@@ -1368,7 +1368,7 @@ const STORIES: Row[] = [
     medium: 'show',
     episode: 1,
     chapter: 3,
-    title: 'Lysa’s letter',
+    title: 'The letter from her sister',
   },
   {
     id: 'catelyn-stark',
@@ -1519,10 +1519,45 @@ const STORIES: Row[] = [
   },
   {
     id: 'robb-stark',
-    medium: 'both',
+    medium: 'show',
     episode: 10,
     chapter: 72,
     title: 'The King in the North',
+  },
+  {
+    id: 'robb-stark',
+    medium: 'books',
+    episode: 10,
+    chapter: 72,
+    title: 'King in the North at Riverrun',
+  },
+  {
+    id: 'ghost-direwolf',
+    medium: 'both',
+    episode: 7,
+    chapter: 49,
+    title: 'The severed hand',
+  },
+  {
+    id: 'old-nan',
+    medium: 'books',
+    episode: 4,
+    chapter: 25,
+    title: 'Stories can wait',
+  },
+  {
+    id: 'shaggydog',
+    medium: 'books',
+    episode: 10,
+    chapter: 54,
+    title: 'In the kennels',
+  },
+  {
+    id: 'wendel-manderly',
+    medium: 'books',
+    episode: 29,
+    chapter: 64,
+    title: 'In Robb’s guard',
   },
   {
     id: 'rodrik-cassel',
@@ -1659,7 +1694,14 @@ const STORIES: Row[] = [
   },
   {
     id: 'galbart-glover',
-    medium: 'both',
+    medium: 'show',
+    episode: 8,
+    chapter: 56,
+    title: 'The vanguard',
+  },
+  {
+    id: 'galbart-glover',
+    medium: 'books',
     episode: 8,
     chapter: 56,
     title: 'At Robb’s war council',

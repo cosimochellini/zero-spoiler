@@ -732,11 +732,12 @@ export const winterfellRedrawn: Redrawings = {
   'benjen-stark': [
     // The empty peg, the cloak gone and only the clasp's chain left hanging:
     // he rides beyond the Wall and does not come back. His horse returns
-    // without him in "You Win or You Die" (episode 7); the book says he is
-    // missing in Jon V of A Game of Thrones (chapter 42).
+    // without him in "You Win or You Die" (episode 7); in the book Yoren
+    // tells Robb and Bran he is missing, in Bran IV of A Game of Thrones
+    // (chapter 25, #1361).
     {
       episode: 7,
-      chapter: 42,
+      chapter: 25,
       value: [
         ...PEG,
         {

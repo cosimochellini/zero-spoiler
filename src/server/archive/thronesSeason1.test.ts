@@ -922,7 +922,7 @@ const STEPS: {
     id: 'maege-mormont',
   },
   {
-    chapter: 45,
+    chapter: 44,
     en: 'House Stark, Beric Dondarrion’s company',
     episode: 6,
     id: 'harwin',
@@ -1483,7 +1483,7 @@ const STAGES: {
   { id: 'robb-stark', episode: 29, chapter: 195, stage: 1 },
   { id: 'bran-stark', episode: 56, chapter: 344, source: 'episode' },
   { id: 'rickon-stark', episode: 59, chapter: 344, source: 'episode' },
-  { id: 'benjen-stark', episode: 7, chapter: 42 },
+  { id: 'benjen-stark', episode: 7, chapter: 25 },
   {
     id: 'benjen-stark',
     episode: 56,
