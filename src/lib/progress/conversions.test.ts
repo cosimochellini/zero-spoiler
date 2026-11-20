@@ -159,7 +159,7 @@ const WITHOUT_SERIES: [string, () => unknown][] = [
   // @ts-expect-error -- every conversion names its series (#793)
   ['trialForRequest', () => trialForRequest(undefined, '12')],
   // @ts-expect-error -- every conversion names its series (#793)
-  ['bookmarkForRequest', () => bookmarkForRequest('12', undefined, {})],
+  ['bookmarkForRequest', () => bookmarkForRequest('12', undefined)],
   [
     'bookmarkFromSearch',
     // @ts-expect-error -- every conversion names its series (#793)

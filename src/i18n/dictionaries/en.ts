@@ -66,6 +66,13 @@ export const enDictionary = {
   'trial.save': 'Save this point',
   'trial.leave': 'Leave the trial',
 
+  'visitor.record':
+    'You are seeing {name} as first seen ({at}). The rest stays under fog.',
+  'visitor.list':
+    'Without a bookmark, only the start of the story is open. The rest stays under fog.',
+  'visitor.listEmpty':
+    'Without a bookmark, only the start of the story is open. Nothing on this page appears that early, so all of it stays under fog.',
+
   'status.set': 'Bookmark set: {point}.',
   'status.moved': 'Bookmark moved: {point}.',
   'status.cleared': 'Bookmark cleared.',
@@ -145,19 +152,6 @@ export const enDictionary = {
   'veil.revealing': 'Loading…',
   'veil.peekFailed': 'Could not load it. Try again.',
   'veil.placeholder': 'Spoiler',
-
-  'intro.context.episode':
-    'This entry first appears in episode {threshold}. Your bookmark is empty, so the page is under fog.',
-  'intro.context.season':
-    'This entry first appears in {threshold}. Your bookmark is empty, so the page is under fog.',
-  'intro.context.chapter':
-    'This entry first appears in chapter {threshold}. Your bookmark is empty, so the page is under fog.',
-  'intro.context.book':
-    'This entry first appears in book {book}, chapter {chapter}. Your bookmark is empty, so the page is under fog.',
-  'intro.step1': 'Set your bookmark to the last episode or chapter you saw.',
-  'intro.step2': 'Entries up to that point are open.',
-  'intro.step3':
-    'Everything after it stays under fog, on every page of the wiki.',
 
   'chart.opensAt.episode': 'Episode {threshold}',
   'chart.opensAt.season': '{threshold}',

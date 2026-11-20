@@ -34,8 +34,7 @@ function Probe({ lift }: { lift: Lift<CharacterView> }): ReactElement {
 }
 
 describe('usePeek', () => {
-  // A record page's drawing and words are two veils on one slot, and the
-  // intro's "Show anyway" lifts both at once (#864).
+  // A record page's drawing and words are two veils on one slot.
   it('shares one request between two asks for the same handle at once', async () => {
     const user = userEvent.setup()
     const lift = vi

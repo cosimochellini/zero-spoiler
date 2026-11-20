@@ -4,6 +4,7 @@ import { useServerFn } from '@tanstack/react-start'
 import { lazy, type ReactElement, Suspense, use, useCallback } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useT } from '~/i18n/LocaleContext'
 import { readPlain } from '~/lib/plain'
 import { useSeriesParams } from '~/lib/progress/BookmarkContext'
@@ -82,6 +83,8 @@ function CharacterPage(): ReactElement {
       <p {...stylex.props(recordStyles.back)}>
         <RecordBackLink section="characters" />
       </p>
+
+      <VisitorBanner slot={detail.slot} />
 
       <DossierDiptych
         detail={detail}

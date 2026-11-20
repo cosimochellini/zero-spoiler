@@ -67,13 +67,6 @@ export interface SpoilerVeilProps<T extends Gated> {
    */
   strength?: 'media' | 'text'
   /**
-   * The page's own record rather than a neighbour of it. A lead veil names
-   * its covered record to the intro a reader with no bookmark gets, and
-   * lifts when that intro's "Show anyway" is pressed (#864). Only the first
-   * band of a record page sets it: the neighbours stay under fog.
-   */
-  lead?: boolean
-  /**
    * The uncovered content, built from the record once there is one.
    *
    * A function rather than a node. Given a node, the caller has already read
@@ -117,13 +110,11 @@ export function SpoilerVeil<T extends Gated>({
   peek,
   density = 'block',
   strength = 'text',
-  lead,
   placeholder,
   children,
 }: SpoilerVeilProps<T>): ReactElement {
   const threshold = useThreshold()
   const { button, shown, state } = useVeilPeek(slot, peek, {
-    lead,
     twoStep: density !== 'block',
   })
   const visible = shown !== null

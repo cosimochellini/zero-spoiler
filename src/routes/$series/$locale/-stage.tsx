@@ -60,7 +60,6 @@ export function RecordStage<T extends RecordView & { summary: string }>({
       <div {...stylex.props(styles.drawing)}>
         <SpoilerVeil
           density="block"
-          lead
           peek={peek}
           placeholder={<FruitFrame />}
           slot={slot}
@@ -77,7 +76,6 @@ export function RecordStage<T extends RecordView & { summary: string }>({
         </p>
 
         <SpoilerVeil
-          lead
           peek={peek}
           placeholder={
             <>

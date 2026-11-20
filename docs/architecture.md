@@ -41,44 +41,61 @@ gates.
   manga thresholds. Records exclusive to the other source are absent, including
   from counts and handles. Facts exclusive to it stay closed
   (`src/data/source.ts`).
-- Without a bookmark, `reveal` opens no records. Onboarding alone receives the
-  series' bounded demo, with every record and dated fact inside both limits.
-  Trial cookies are restricted to that demo and yield to a saved bookmark.
+- Without a bookmark, `reveal` opens no records. Onboarding receives the series'
+  bounded demo, with every record and dated fact inside both limits. Trial
+  cookies are restricted to that demo and yield to a saved bookmark.
+- A record page and a list drawn with no bookmark are the one other exception,
+  and what they open reads no request header but the cookies: a search engine
+  and a person get the same records (#1430). The places chart's orientation is
+  the one thing the `User-Agent` decides (below). `pageReader`
+  (`src/server/archive/reader.server.ts`) draws a record page at the record's
+  own first appearance, and a list (characters, places, fruits, abilities,
+  ranks, the filler guide) at the end of the demo, each with `revealAt`
+  (`src/data/reveal.ts`): what a reader at the point's episode and one at its
+  chapter would both see. The reader keeps the null bookmark and the
+  null-bookmark archive copy, so its handles are the ones “Show anyway”
+  resolves. A bookmark or a trial gets its own reader, unchanged. Each such
+  payload says so (`drawnAt` in `src/server/archive/payloads.server.ts`), and
+  the leak sweep reads every key of it with no bookmark, in both locales, held
+  to both of its points (`src/test/visitor.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
   are the one exception: static files at addresses built from its slug, so
   anyone who asks for one gets it. The sitemap lists the square of every record
   both sources tell; a record of one source only is not listed. They hold the
-  first drawing and the line every source's reader has at the record's own
-  threshold. The name is the one its first source's reader is given (the anime's
-  for a record both tell, which is what a crawler's title prints), so a chapter
-  reader may meet an anime name early: Hagya's card says Leol. No page under fog
-  names them. The fog is an editorial promise kept by the pages, not access
-  control (`src/lib/crawler.ts`).
+  first drawing, and the name and line of the page a link preview fetches with
+  no bookmark: the record at its own first appearance, as both an anime viewer
+  and a manga reader see it (Hagya's card says Hagya, not the anime's Leol). A
+  record of one source only has no page with no bookmark; its card is drawn by
+  that source's own reader at the record's threshold. No page under fog names
+  them. The fog is an editorial promise kept by the pages, not access control.
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
 
 ### Fog on the server
 
-The fog is not a blur over the full page. Ask the live site for a character a
-reader with no bookmark has not met (checked on 2026-11-16):
+The fog is not a blur over the full page. Ask for a character a reader at
+episode 100 has not met (checked on 2026-11-20 against a local build,
+`npm run build && npm start`):
 
 ```sh
-curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+curl -s -b 'zs_one-piece=100' https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
   | grep -c 'Trafalgar Law'
 # 0
 
-curl -s https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
+curl -s -b 'zs_one-piece=100' https://zerospoiler.app/one-piece/en/characters/trafalgar-law \
   | grep -o '<title>[^<]*</title>'
 # <title>A character under fog | One Piece | Zero Spoiler</title>
 ```
 
 With `Cookie: zs_one-piece=650` the title is
-`Trafalgar Law | One Piece | Zero Spoiler`. The server reads the bookmark before
-it builds the page. An entry the reader has not reached is sent as its kind, two
-thresholds and an opaque handle, with no name, no id and no text:
+`Trafalgar Law | One Piece | Zero Spoiler`. With no cookie at all it is the same
+title: the page shows Law as he stands at his first appearance, episode 392,
+under a banner that says so (`pageReader`, above). The server reads the bookmark
+before it builds the page. An entry the reader has not reached is sent as its
+kind, two thresholds and an opaque handle, with no name, no id and no text:
 
 ```mermaid
 flowchart LR
@@ -98,9 +115,9 @@ it.
 The archive is never compiled into the client bundle, and `gate:archive` fails
 if any of it gets there. Search, drawings and links follow the same rule. The
 fog is an editorial promise, not access control: the social pictures above, a
-shared link from someone further ahead, “Show anyway” and the crawler bookmark
-can all open an entry early ([Security](#security),
-[Series and routing](#series-and-routing)).
+shared link from someone further ahead, “Show anyway” and a record page opened
+with no bookmark (drawn at the record's own first appearance) can all open an
+entry early ([Security](#security), [Series and routing](#series-and-routing)).
 
 ## Relationship selections
 
@@ -142,9 +159,15 @@ functions use the CSRF middleware in `src/start.ts` and read progress from
 request cookies, never a client-supplied bookmark.
 
 Fog prevents accidental spoilers, not deliberate access: “Show anyway” reveals a
-record by handle. Recognized crawlers without a valid saved/trial bookmark
-receive an end-of-anime bookmark; source filtering still applies. See
-`src/lib/progress/requestBookmark.ts`.
+record by handle, and a record's own page, opened with no saved or trial
+bookmark, shows it as it stands at its first appearance. No content or fog
+decision reads the `User-Agent`: a crawler and a person with no bookmark are
+sent the same records, because answering a crawler differently is cloaking
+(#1430). The one exception is layout: the places chart is drawn upright for a
+phone (`Mobi` in the `User-Agent`, or `Sec-CH-UA-Mobile`, with a `Vary` header;
+`src/routes/$series/$locale/places/index.tsx`), never with more or less open.
+See `src/lib/progress/requestBookmark.ts` and `pageReader` in
+`src/server/archive/reader.server.ts`.
 
 ## Series and routing
 
@@ -287,13 +310,13 @@ optional, and an arcless series prints no arc row. Darry and six of #1252's
 places are the book's alone, and the Kingswood the show's. The demo shows the
 places the first ten episodes reach, and covers in its tail the four the show
 first visits in later seasons. Its chronicles cover the Essos cast of the first
-stage (#1360), 89 stories for 18 characters, and the King's Landing, riverlands
-and Vale cast (#1362), 229 stories for 66 characters, in
-`records/season-1.chronicle.ts`: a story both media tell the same way holds at
-an episode and a chapter, and one only a single medium tells, or tells its own
-way, carries `source`, so it never reaches a reader of the other. Their notes
-are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
-series' own copy, since a story starts at an episode or a chapter.
+stage (#1360), 89 stories for 18 characters, the Night's Watch cast (#1363), 88
+stories for 22, and the King's Landing, riverlands and Vale cast (#1362), 229
+stories for 66, in `records/season-1.chronicle.ts`: a story both media tell the
+same way holds at an episode and a chapter, and one only a single medium tells,
+or tells its own way, carries `source`, so it never reaches a reader of the
+other. Their notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle
+lede is the series' own copy, since a story starts at an episode or a chapter.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -337,15 +360,17 @@ name). Its JSON-LD and its sitemap entry point at a square icon
 `/og-card.png`. `npm run og:images` draws both pictures in Chrome, on the
 developer's machine. They are committed under `public/og/` and served as static
 assets, so the Worker never draws one. Each picture uses the record's first
-drawing, never a redrawing, and prints only what a reader standing at the
-record's own threshold reads in every source it is told in: a character's
-epithet, else its role; a fruit's type; an ability's Nen type, else its kind; a
-place's form and region; a ship's kind. The name is the one its first source's
-reader is given: the episode reader's for a record both sources tell, which is
-what a crawler's page title prints (a link preview is fetched as a crawler), and
-the chapter reader's for a record only the manga tells. Re-run the script after
-changing a record, a first drawing or the card layout. It draws only what
-changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
+drawing, never a redrawing, and prints the name and one line of the page a link
+preview fetches with no bookmark (`pageReader`, drawn at the record's first
+appearance in both media): a character's epithet, else its role; a fruit's type;
+an ability's Nen type, else its kind; a place's form and region; a ship's kind.
+So a card says what the page's title says, the record's own name where the anime
+names it otherwise (Hagya, not Leol, which the manga gives only at chapter 240),
+and `scripts/og-images.test.mjs` holds the two equal for every such record. A
+record of one source only has no page with no bookmark; its card is its source's
+reader's at the record's threshold. Re-run the script after changing a record, a
+first drawing or the card layout. It draws only what changed.
+`scripts/og-images.test.mjs` fails while a picture is missing, stale or
 orphaned.
 
 ## Localization
@@ -464,6 +489,6 @@ checks this block.
 | Places            | 60                                                      |
 | Saga modules      | 1                                                       |
 | Line drawings     | 208, one per record, plus 155 redrawings of 114 records |
-| Chronicle stories | 318, for 84 characters                                  |
+| Chronicle stories | 406, for 106 characters                                 |
 
 <!-- End of the generated counts. -->

@@ -4,7 +4,7 @@ import type { Bookmark, BookmarkMode } from '~/lib/progress/episode'
 import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
 import type { Gated } from '~/lib/progress/spoiler'
 
-import { reveal, sourceOf } from './reveal'
+import { reveal, revealAt, sourceOf } from './reveal'
 
 const ep = (episode: number): Bookmark => ({ mode: 'episode', episode })
 const ch = (chapter: number): Bookmark => ({ mode: 'chapter', chapter })
@@ -153,5 +153,27 @@ describe('reveal, for a record of one source only', () => {
     expect(reveal(null, ONE_PIECE_BOOKMARK).has(CHAPTER_ONLY)).toBe(false)
     expect(reveal(null, ONE_PIECE_BOOKMARK).has(ROBIN)).toBe(true)
     expect(reveal(ch(1), ONE_PIECE_BOOKMARK).has(ROBIN)).toBe(true)
+  })
+})
+
+describe('revealAt, a page drawn at one point for a reader with no bookmark', () => {
+  const atRobin = revealAt(ROBIN, ONE_PIECE_BOOKMARK)
+
+  it('sees the record itself and what both units reached before it', () => {
+    expect(atRobin.sees(ROBIN)).toBe(true)
+    expect(atRobin.sees(SHANKS)).toBe(true)
+  })
+
+  it('needs both units: one past the point in either stays covered', () => {
+    // Before Robin in episodes, after her in chapters, and the other way round.
+    expect(atRobin.sees(filedAt(100, 219))).toBe(false)
+    expect(atRobin.sees(filedAt(131, 200))).toBe(false)
+  })
+
+  it('has no record of one source only, and counts in episodes', () => {
+    expect(atRobin.sees({ ...SHANKS, source: 'episode' })).toBe(false)
+    expect(atRobin.sees({ ...SHANKS, source: 'chapter' })).toBe(false)
+    expect(atRobin.mode).toBe('episode')
+    expect(atRobin.threshold(ROBIN)).toBe(130)
   })
 })

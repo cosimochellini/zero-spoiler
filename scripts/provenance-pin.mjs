@@ -1,5 +1,5 @@
 // Pins wiki revisions into `docs/content-provenance/sources.json`:
-// `npm run provenance:pin -- --series <slug> "Title" ["Title" …] [--dry-run]`.
+// `npm run provenance:pin -- --series <slug> [--wiki books] "Title" ["Title" …] [--dry-run]`.
 // A title already pinned from the series' wiki keeps its revision; any other
 // is read at its latest revision and appended, never rewriting an entry. Each
 // title prints its key and the cached wikitext to read.
@@ -29,8 +29,28 @@ const QUERY = `?${PARAMETERS.toString()}`
 /** What a series' keys start with, before `en-`. */
 const PREFIX = { 'one-piece': '', 'hunter-x-hunter': 'hxh-' }
 
+/**
+ * Game of Thrones' wikis, by `--wiki`: the Game of Thrones Wiki (the show,
+ * the default) and the Ice and Fire Wiki (the books), each with its key
+ * prefix and a cache folder inside the series' one. Never A Wiki of Ice and
+ * Fire, the series' `wiki.en`: it refuses scripted requests (#1009).
+ */
+const THRONES = {
+  show: {
+    prefix: 'got-',
+    folder: 'episodes',
+    api: 'https://gameofthrones.fandom.com/api.php',
+  },
+  books: {
+    prefix: 'iaf-',
+    folder: 'books',
+    api: 'https://iceandfire.fandom.com/api.php',
+  },
+}
+
 /** @typedef {{ locale: string, title: string, revision: number, revisionDate: string, url: string, revisionUrl: string, apiUrl: string, contentSha256: string }} Source */
 /** @typedef {{ key: string, file: string, source?: Source }} Pin */
+/** @typedef {{ prefix: string, wiki: import('./wiki.mjs').Wiki }} Target */
 /** @typedef {{ title: string, missing?: boolean, revisions?: { revid: number, timestamp: string, slots: { main: { content: string } } }[] }} RevisionPage */
 
 /**
@@ -48,18 +68,19 @@ export function urlTitle(title) {
 }
 
 /**
- * The key of a new entry: `en-<Title>.json` for One Piece, unless another
- * title holds it, and `hxh-en-<Title>-<rev>.json` for Hunter x Hunter.
- * @param {string} slug The series.
+ * The key of a new entry: `en-<Title>.json` for One Piece, whose prefix is
+ * empty, unless another title holds it, and `<prefix>en-<Title>-<rev>.json`
+ * for every other wiki (`hxh-`, `got-`, `iaf-`).
+ * @param {string} prefix The wiki's key prefix.
  * @param {string} title The page title.
  * @param {number} revision Its revision.
  * @param {Record<string, Source>} sources The pinned sources.
  * @returns {string} The key.
  */
-export function keyOf(slug, title, revision, sources) {
-  const name = `${prefixOf(slug)}en-${title.replaceAll(' ', '_')}`
+export function keyOf(prefix, title, revision, sources) {
+  const name = `${prefix}en-${title.replaceAll(' ', '_')}`
   const bare = `${name}.json`
-  if (slug === 'one-piece' && sources[bare] === undefined) {
+  if (prefix === '' && sources[bare] === undefined) {
     return bare
   }
 
@@ -81,16 +102,51 @@ function prefixOf(slug) {
 }
 
 /**
- * How plainly a key names its title: the series' bare form first, then any
- * key of the series' form, then the rest (such as an issue-scoped
+ * The wiki a series pins from, with its key prefix. Game of Thrones picks
+ * one of its two fandom wikis by `--wiki`; any other series has one wiki
+ * and takes no `--wiki`.
+ * @param {import('./archive-loader.mjs').Series} series The series.
+ * @param {string} [name] The `--wiki` asked for.
+ * @returns {Target} The prefix and wiki.
+ */
+export function targetOf(series, name) {
+  const own = wikiOf(series)
+  if (series.slug !== 'game-of-thrones') {
+    if (name !== undefined) {
+      throw new Error(`${series.slug} has one wiki: drop --wiki`)
+    }
+    return { prefix: prefixOf(series.slug), wiki: own }
+  }
+
+  const asked = name ?? 'show'
+  if (!Object.hasOwn(THRONES, asked)) {
+    throw new Error(`--wiki is show or books, not ${asked}`)
+  }
+
+  const thrones = THRONES[asked]
+
+  return {
+    prefix: thrones.prefix,
+    wiki: {
+      ...own,
+      // fallow-ignore-next-line security-sink -- the series' cache folder and a literal
+      cache: path.join(own.cache, thrones.folder),
+      en: thrones.api,
+    },
+  }
+}
+
+/**
+ * How plainly a key names its title: the wiki's bare form first, then any
+ * key of the wiki's form, then the rest (such as an issue-scoped
  * `issue815-en-…` copy of the same revision).
  * @param {string} key The key.
  * @param {string} title Its page title.
- * @param {string} slug The series.
+ * @param {string} prefix The wiki's key prefix.
  * @returns {number} Lower is plainer.
  */
-function plainness(key, title, slug) {
-  const name = `${prefixOf(slug)}en-${title.replaceAll(' ', '_')}`
+function plainness(key, title, prefix) {
+  const name = `${prefix}en-${title.replaceAll(' ', '_')}`
   if (key === `${name}.json`) {
     return 0
   }
@@ -103,10 +159,10 @@ function plainness(key, title, slug) {
  * between equally plain keys, the first in the file.
  * @param {Record<string, Source>} sources The pinned sources.
  * @param {string} api The wiki's English `api.php`.
- * @param {string} slug The series.
+ * @param {string} prefix The wiki's key prefix.
  * @returns {Map<string, string>} Title to key.
  */
-export function pinnedTitles(sources, api, slug) {
+export function pinnedTitles(sources, api, prefix) {
   // The English wiki's pages: One Piece's Italian wiki shares its host.
   const pages = `${api.replace(/api\.php$/u, '')}wiki/`
   /** @type {Map<string, string>} */
@@ -116,7 +172,7 @@ export function pinnedTitles(sources, api, slug) {
     if (
       url.startsWith(pages)
       && (held === undefined
-        || plainness(key, title, slug) < plainness(held, title, slug))
+        || plainness(key, title, prefix) < plainness(held, title, prefix))
     ) {
       pinned.set(title, key)
     }
@@ -181,11 +237,11 @@ async function revisionPage(wiki, title, revision) {
  * series' English wiki has it pinned under that title or the one it
  * redirects to; otherwise the page at its latest revision, with no key.
  * @param {string} title The page title.
- * @param {{ slug: string, wiki: import('./wiki.mjs').Wiki, sources: Record<string, Source> }} pin The series, its wiki and the pinned sources.
+ * @param {Target & { sources: Record<string, Source> }} pin The key prefix, the wiki and the pinned sources.
  * @returns {Promise<{ key?: string, page: RevisionPage }>} The key and page.
  */
-async function pinnedPage(title, { slug, wiki, sources }) {
-  const pinned = pinnedTitles(sources, wiki.en, slug)
+async function pinnedPage(title, { prefix, wiki, sources }) {
+  const pinned = pinnedTitles(sources, wiki.en, prefix)
   const asked = pinned.get(title)
   if (asked !== undefined) {
     return {
@@ -209,12 +265,12 @@ async function pinnedPage(title, { slug, wiki, sources }) {
  * Pins one title and caches its wikitext: the pinned key, or a new key and
  * the entry to append. A missing page throws.
  * @param {string} asked The title as asked, underscores or spaces.
- * @param {{ slug: string, wiki: import('./wiki.mjs').Wiki, sources: Record<string, Source> }} pin The series, its wiki and the pinned sources.
+ * @param {Target & { sources: Record<string, Source> }} pin The key prefix, the wiki and the pinned sources.
  * @returns {Promise<Pin>} The key, the wikitext file and the entry when it is new.
  */
-export async function pinTitle(asked, { slug, wiki, sources }) {
+export async function pinTitle(asked, { prefix, wiki, sources }) {
   const { key, page } = await pinnedPage(asked.replaceAll('_', ' '), {
-    slug,
+    prefix,
     wiki,
     sources,
   })
@@ -234,7 +290,7 @@ export async function pinTitle(asked, { slug, wiki, sources }) {
 
   return key === undefined ?
       {
-        key: keyOf(slug, page.title, revision.revid, sources),
+        key: keyOf(prefix, page.title, revision.revid, sources),
         file,
         source: sourceOf(wiki.en, page),
       }
@@ -260,15 +316,15 @@ async function reported(title, pin) {
  * prints its key and wikitext file; a title that fails is reported and
  * skipped.
  * @param {string[]} titles The titles.
- * @param {{ slug: string, wiki: import('./wiki.mjs').Wiki }} series The series and its wiki.
+ * @param {Target} target The key prefix and the wiki.
  * @param {Record<string, Source>} pinned The pinned sources.
  * @returns {Promise<{ sources: Record<string, Source>, failed: boolean }>} The sources with the new entries, and whether any title failed.
  */
-export async function pinAll(titles, { slug, wiki }, pinned) {
+export async function pinAll(titles, { prefix, wiki }, pinned) {
   const sources = { ...pinned }
   let failed = false
   for (const title of titles) {
-    const pinned = await reported(title, { slug, wiki, sources })
+    const pinned = await reported(title, { prefix, wiki, sources })
     if (pinned === undefined) {
       failed = true
       continue
@@ -348,7 +404,7 @@ function append(file, added) {
 /**
  * The command line, or nothing once its fault is printed.
  * @param {string[]} args The arguments after the script.
- * @returns {{ values: { series: string, 'dry-run': boolean }, positionals: string[] } | undefined} The parsed arguments.
+ * @returns {{ values: { series: string, wiki?: string, 'dry-run': boolean }, positionals: string[] } | undefined} The parsed arguments.
  */
 export function argsOf(args) {
   try {
@@ -357,9 +413,38 @@ export function argsOf(args) {
       allowPositionals: true,
       options: {
         'series': { type: 'string', default: 'one-piece' },
+        'wiki': { type: 'string' },
         'dry-run': { type: 'boolean', default: false },
       },
     })
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+
+/**
+ * The titles to pin, the wiki to pin them from and whether this is a dry
+ * run, or nothing once the fault is printed.
+ * @param {string[]} args The arguments after the script.
+ * @returns {Promise<{ titles: string[], target: Target, dryRun: boolean } | undefined>} The command.
+ */
+async function commandOf(args) {
+  const parsed = argsOf(args)
+  if (parsed === undefined || parsed.positionals.length === 0) {
+    console.error(
+      'Usage: npm run provenance:pin -- --series <slug> [--wiki show|books] "Title" ["Title" …] [--dry-run]',
+    )
+    return
+  }
+
+  const { values, positionals } = parsed
+  const series = await seriesOrExit(['--series', values.series])
+  try {
+    return {
+      titles: positionals,
+      target: targetOf(series, values.wiki),
+      dryRun: values['dry-run'],
+    }
   } catch (error) {
     console.error(error.message)
   }
@@ -370,23 +455,18 @@ export function argsOf(args) {
  * @returns {Promise<number>} Zero, one when a title failed, two on bad usage.
  */
 async function main() {
-  const parsed = argsOf(process.argv.slice(2))
-  if (parsed === undefined || parsed.positionals.length === 0) {
-    console.error(
-      'Usage: npm run provenance:pin -- --series <slug> "Title" ["Title" …] [--dry-run]',
-    )
+  const command = await commandOf(process.argv.slice(2))
+  if (command === undefined) {
     return 2
   }
 
-  const { values, positionals } = parsed
-  const series = await seriesOrExit(['--series', values.series])
   const { sources: pinned } = JSON.parse(readFileSync(MANIFEST, 'utf8'))
   const { sources, failed } = await pinAll(
-    positionals,
-    { slug: series.slug, wiki: wikiOf(series) },
+    command.titles,
+    command.target,
     pinned,
   )
-  save(MANIFEST, pinned, sources, values['dry-run'])
+  save(MANIFEST, pinned, sources, command.dryRun)
 
   return failed ? 1 : 0
 }

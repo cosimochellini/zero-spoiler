@@ -11,8 +11,8 @@ import {
 } from '~/components/chrome/throne'
 import { ART_VIEWBOX, tintOf } from '~/components/drawing'
 import { emblemStyles } from '~/components/emblem.styles'
-import { EpisodeMark } from '~/components/EpisodeMark'
 import { styles } from '~/components/PowerBoard.styles'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { useBookmark, useSeriesParams } from '~/lib/progress/BookmarkContext'
 import {
@@ -29,7 +29,9 @@ import { settleStyles } from '~/styles/settle'
  * seat of. Only a held seat has a drawing and a colour, and the server sends
  * them only for a holder the reader has reached, so the hall is as dark as
  * the reader's bookmark leaves it. Bodies met with every seat under fog are
- * one line at the end, never named, counted or placed.
+ * one line at the end, never named, counted or placed. With no bookmark the
+ * server draws the hall at the end of the demo, under the visitor banner
+ * (#1432).
  *
  * A council's seats stand level; a chain's or a crew's first seat (the top
  * rank, the captain) stands alone above the rest, larger. Each lit throne's
@@ -50,18 +52,13 @@ export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
         <h1 {...stylex.props(styles.title)}>{t('ranks.title')}</h1>
         <p {...stylex.props(styles.lede)}>{t('ranks.lede')}</p>
       </header>
-      {bookmark === null ?
-        <div {...stylex.props(styles.notice)}>
-          <p {...stylex.props(styles.lede)}>{t('ranks.noBookmark')}</p>
-          <EpisodeMark placement="fold" />
-        </div>
-      : page.bodies.length === 0 && (
-          // With every group met under fog, one line says both.
-          <p {...stylex.props(styles.lede)}>
-            {t(page.fogged ? 'ranks.allFogged' : 'ranks.none')}
-          </p>
-        )
-      }
+      <VisitorBanner nothingOpen={page.bodies.length === 0} />
+      {bookmark !== null && page.bodies.length === 0 && (
+        // With every group met under fog, one line says both.
+        <p {...stylex.props(styles.lede)}>
+          {t(page.fogged ? 'ranks.allFogged' : 'ranks.none')}
+        </p>
+      )}
       {page.bodies.map((body, at) => (
         <Body
           key={body.id}

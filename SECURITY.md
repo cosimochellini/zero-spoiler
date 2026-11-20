@@ -16,8 +16,10 @@ control, and two ways around it are deliberate:
 
 - **Show anyway** asks the server for one hidden entry. A script can call it for
   every entry on a page.
-- **Known crawlers** get the whole wiki, so search engines and link previews
-  index real pages. A request that sends a crawler's `User-Agent` gets the same.
+- **A record's own page** opened with no bookmark shows the record as it stands
+  at its first appearance, so search engines and link previews index a real
+  page. Every request with no bookmark is sent the same entries, whatever its
+  `User-Agent`; only the places chart's layout follows a phone's.
 
 [docs/architecture.md](docs/architecture.md#security) explains both. A way to
 read hidden entries without either of them is a real bug. If it is a spoiler

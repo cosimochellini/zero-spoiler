@@ -1,8 +1,11 @@
 // What a record's social card prints: its name, and the line its page prints
 // under it, read through the server's own projections so a card says exactly
-// what the page says. Only what a reader standing at the record's own
-// threshold reads, in every source the record is told in: a shared link
-// reaches people at any point of the story. Used by `og-pictures.mjs`.
+// what the page says. The page is the one a link preview fetches with no
+// bookmark (`pageReader`): the record at its first appearance, as an anime
+// viewer and a manga reader both see it, since a shared link reaches people at
+// any point of the story. A record of one source only has no such page; its
+// card is that source's reader's at the record's threshold. Used by
+// `og-pictures.mjs`.
 import { importArchive } from './archive-loader.mjs'
 
 /** @typedef {import('../src/data/types.ts').Entity} Entity */
@@ -21,34 +24,26 @@ const [{ characterPage }, { portOf }, { translatorOf }] = await Promise.all(
 )
 
 /**
- * The one value every reader agrees on, or nothing: a line two sources tell
- * differently at the record's threshold is not one a shared link may print.
- * @param {(string | undefined)[]} values One value per reader.
- * @returns {string | undefined} The shared value.
- */
-export function agreed(values) {
-  const [first] = values
-  return first !== undefined && values.every((value) => value === first) ?
-      first
-    : undefined
-}
-
-/**
- * The readers standing exactly at a record's threshold, one per source the
- * record is told in.
+ * The reader a record's card is drawn for: the page with no bookmark for a
+ * record both sources tell, the reader at its threshold for one only a single
+ * source tells.
  * @param {Entity} entity The record.
  * @param {(bookmark: Bookmark) => Reader} readerAt A reader at a bookmark.
- * @returns {Reader[]} The readers, the episode one first.
+ * @param {(id: string) => Reader} visitorOf The page's reader with no bookmark.
+ * @returns {Reader} The reader.
  */
-export function readersAt(entity, readerAt) {
-  return [
-    ...(entity.source === 'chapter' ?
-      []
-    : [readerAt({ mode: 'episode', episode: entity.revealedAtEpisode })]),
-    ...(entity.source === 'episode' ?
-      []
-    : [readerAt({ mode: 'chapter', chapter: entity.revealedAtChapter })]),
-  ]
+export function readerOf(entity, readerAt, visitorOf) {
+  switch (entity.source) {
+    case 'chapter': {
+      return readerAt({ mode: 'chapter', chapter: entity.revealedAtChapter })
+    }
+    case 'episode': {
+      return readerAt({ mode: 'episode', episode: entity.revealedAtEpisode })
+    }
+    default: {
+      return visitorOf(entity.id)
+    }
+  }
 }
 
 /**
@@ -134,27 +129,22 @@ function ship(entity, r) {
 const READINGS = { ability, character, fruit, place, ship }
 
 /**
- * What one record's card prints in one locale: the name the first reader is
- * given (the episode one, whose name a crawler's page title prints), and the
- * line every reader at the threshold agrees on.
+ * What one record's card prints in one locale: the name and the line its
+ * reader (`readerOf`) is given.
  * @param {Entity} entity The record.
- * @param {Reader[]} readers The readers at its threshold.
+ * @param {Reader} r Its reader.
  * @returns {{ name: string, line?: string }} The words.
  */
-export function wordsOf(entity, readers) {
+export function wordsOf(entity, r) {
   const read = READINGS[entity.kind]
   if (read === undefined) {
     throw new Error(`${entity.id} is a ${entity.kind}, which has no page`)
   }
-  const seen = readers.map((r) => read(entity, r))
-  const line =
-    entity.kind === 'character' ?
-      (agreed(seen.map((words) => words.epithet))
-      ?? agreed(seen.map((words) => words.role)))
-    : agreed(seen.map((words) => words.line))
+  const { name, line, epithet, role } = read(entity, r)
+  const printed = entity.kind === 'character' ? (epithet ?? role) : line
   return {
-    name: seen[0].name,
-    ...(line !== undefined && line !== '' && { line }),
+    name,
+    ...(printed !== undefined && printed !== '' && { line: printed }),
   }
 }
 

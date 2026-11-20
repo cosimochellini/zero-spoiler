@@ -14,7 +14,7 @@ import { handleOf } from './handle.server'
 import { landingPage } from './home.server'
 import { characterPage, charactersPage } from './pages.server'
 import { type Payload, payloadsFor } from './payloads.server'
-import { readerFor } from './reader.server'
+import { pageReader, readerFor } from './reader.server'
 import { sagaLabels } from './sagaLabels.server'
 
 /**
@@ -164,6 +164,16 @@ describe.each(SOURCES)('a record of the %s alone', (source) => {
     expect(() => handleOf(twin.character.id, reader.archive)).toThrow(
       /no handle/u,
     )
+  })
+
+  it('has no page for a reader with no bookmark, drawn at its own debut or not', () => {
+    const visitor = pageReader(planted.archive, null, {
+      id: twin.character.id,
+      locale: 'en',
+    })
+
+    expect(characterPage(twin.character.id, visitor)).toBeUndefined()
+    expect(visitor.sees(twin.character)).toBe(false)
   })
 
   it('stays out of the demo, even for a reader of its own source on a trial', () => {

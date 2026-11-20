@@ -134,11 +134,7 @@ function shownOf(
 }
 
 /** The album could not be fetched: one line, and a button that asks again. */
-export function AlbumFailed({
-  onRetry,
-}: {
-  onRetry: () => void
-}): ReactElement {
+function AlbumFailed({ onRetry }: { onRetry: () => void }): ReactElement {
   const t = useSeriesOnlyT('one-piece')
   return (
     <LoadFailed<'one-piece'>
@@ -207,7 +203,7 @@ function Plates({
 }
 
 /** One plate: its label, its heading, its open tiles and its fog band. */
-export function Plate({
+function Plate({
   band,
   fieldId,
   index,
