@@ -1614,7 +1614,11 @@
       "sources": [
         "got-en-Dontos_Hollard-734913.json",
         "iaf-en-Dontos_Hollard-27125.json"
-      ]
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": ["https://awoiaf.westeros.org/index.php/Dontos_Hollard"]
+      }
     },
     "hugh-of-the-vale": {
       "sources": [

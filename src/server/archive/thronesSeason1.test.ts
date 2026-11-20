@@ -735,6 +735,13 @@ const STEPS: {
     source: 'chapter',
   },
   { chapter: 54, en: 'Captive servant at Winterfell', episode: 7, id: 'osha' },
+  // Joffrey makes him his fool in Sansa I of A Clash of Kings (#1424).
+  {
+    chapter: 76,
+    en: 'Knight and court fool',
+    episode: 12,
+    id: 'dontos-hollard',
+  },
   { chapter: 54, en: 'Winterfell, captive', episode: 7, id: 'osha' },
   {
     chapter: 49,
@@ -1181,8 +1188,8 @@ describe('the steps one medium alone tells', () => {
 })
 
 /**
- * The frozen logs #1355 corrected, by their English text: each holds at its
- * record's gate in every unit that tells the record.
+ * The frozen logs #1355 and #1424 corrected, by their English text: each
+ * holds at its record's gate in every unit that tells the record.
  */
 const LOGS: { en: string; id: string }[] = [
   {
@@ -1196,6 +1203,10 @@ const LOGS: { en: string; id: string }[] = [
   {
     id: 'eroeh',
     en: 'Daenerys takes her from Mago during the attack on her town. When the khalasar breaks apart, Mago seizes her again, rapes her and gives her to his new khal, whose bloodriders kill her.',
+  },
+  {
+    id: 'dontos-hollard',
+    en: 'He is a knight at King Joffrey’s court, where he turns up drunk.',
   },
 ]
 
@@ -1213,15 +1224,49 @@ describe.each(
   })
 })
 
+/**
+ * The frozen summaries #1424 corrected, by their English text: each holds at
+ * its record's gate in every unit that tells the record. Dontos's summary
+ * once told Sansa's rescue, which the books tell at chapter 76.
+ */
+const SUMMARIES: { en: string; id: string }[] = [
+  { id: 'dontos-hollard', en: 'A drunken knight at King Joffrey’s court.' },
+]
+
+describe.each(
+  SUMMARIES.flatMap((summary) =>
+    GATES.filter(({ id, locale }) => id === summary.id && locale === 'en').map(
+      ({ gate, unit }) => ({ ...summary, gate, unit }),
+    ),
+  ),
+)('$id’s summary by $unit', ({ en, gate, id, unit }) => {
+  it('says what its gate tells', () => {
+    expect(character(id).summary.en).toBe(en)
+    expect(opened(id, reader(unit, gate))).toBe(true)
+  })
+})
+
 describe('the season’s leads', () => {
   // The home page ranks the leads by how often the reached stories name them.
-  // Only the Essos cast has a chronicle yet (#1360): by episode 10 the show’s
-  // stories also name Eddard and Arya, while a reader at chapter 10 has only
-  // the Pentos chapters, which name Daenerys alone. The other leads join as
-  // their storylines’ chronicles land (#1361–#1363).
+  // Only the Essos (#1360) and Night’s Watch (#1363) casts have chronicles
+  // yet: by episode 10 their stories name all five leads, while by chapter 10
+  // the books have not yet named Arya in them. The rest join as the other
+  // storylines’ chronicles land (#1361, #1362).
   it.each<[Unit, string[]]>([
-    ['episode', ['daenerys-targaryen', 'eddard-stark', 'arya-stark']],
-    ['chapter', ['daenerys-targaryen']],
+    [
+      'episode',
+      [
+        'daenerys-targaryen',
+        'jon-snow',
+        'eddard-stark',
+        'tyrion-lannister',
+        'arya-stark',
+      ],
+    ],
+    [
+      'chapter',
+      ['daenerys-targaryen', 'jon-snow', 'eddard-stark', 'tyrion-lannister'],
+    ],
   ])(
     'heads the home page by %s with the leads its stories name',
     (unit, cast) => {
