@@ -540,7 +540,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '5:33': {
       source: EPISODE_5,
-      note: 'The episode and Arya III (chapter 33) share the cats, the dragon skulls, two men plotting about her father and the queen, and her warning not taken seriously. Yoren’s arrival at the end of the book chapter rests on the episode’s adaptation list; unverified on the chapter text.',
+      note: 'The episode and Arya III (chapter 33) share the cats, the dragon skulls, two men plotting about her father and the queen, and her warning not taken seriously. The Ice and Fire Wiki page Arya III - A Game of Thrones (chapter_number 33) lists Yoren and Eddard Stark as appearing, which supports Yoren’s arrival in the chapter; the closing detail is still unverified on the chapter text.',
     },
     '8:51': {
       source: EPISODE_8,
