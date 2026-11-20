@@ -92,8 +92,6 @@ export const onePieceEn = {
   'filler.pageTitle': 'Filler episodes | {series} | Zero Spoiler',
   'filler.pageDescription':
     'Which One Piece episodes are filler, mixed or recaps, the runs you can skip, and where the films and specials fit.',
-  'filler.noBookmark':
-    'You have not set a bookmark yet, so every title and plot is under fog. The runs to skip and the strip are only numbers, so they stay visible.',
   'filler.stripTitle': 'The whole series',
   'filler.stripLede': 'Every episode from 1 to {aired}, a hundred to a row.',
   'filler.stripLabel':
@@ -159,8 +157,6 @@ export const onePieceEn = {
   'ranks.pageTitle': 'Ranks of the world | {series} | Zero Spoiler',
   'ranks.pageDescription':
     'Who holds each rank in the One Piece world, each holder hidden until the chapter or episode that names them.',
-  'ranks.noBookmark':
-    'You have not set a bookmark yet, so every group and every rank is under fog.',
   'ranks.none': 'Nothing on this page is open at your bookmark.',
   'ranks.vacant': 'Vacant',
   'ranks.unknown': 'Under fog',
@@ -194,9 +190,6 @@ export const onePieceEn = {
   'fruits.allOpen': 'Nothing of this type is under fog.',
   'fruits.albumFailed': 'The devil fruits could not be loaded.',
   'fruits.albumRetry': 'Try again',
-  'fruits.wall.title': '{count} devil fruits are under fog',
-  'fruits.wall.ask': 'Which episode are you on?',
-  'fruits.wall.browse': 'Browse anyway',
   'fruits.marquee': '{saga}: {count} fruits so far',
   'fruits.marqueeOne': '{saga}: 1 fruit so far',
   'fruits.marqueeNone': 'No new fruit in this saga yet.',

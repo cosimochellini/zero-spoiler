@@ -275,11 +275,11 @@ export const loadPlace = createServerFn()
 
 export const loadFiller = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => fillerPage(await readerIn(data)))
+  .handler(async ({ data }) => fillerPage(await pageReaderIn(data)))
 
 export const loadPower = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => powerPage(await readerIn(data)))
+  .handler(async ({ data }) => powerPage(await pageReaderIn(data)))
 
 export const loadCredits = createServerFn()
   .validator(located)

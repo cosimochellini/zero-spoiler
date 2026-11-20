@@ -3,16 +3,16 @@ import type { ReactElement } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
 import { CatalogueSection } from '~/components/CatalogueSection'
-import { EpisodeMark } from '~/components/EpisodeMark'
 import { FillerCatalogue } from '~/components/FillerCatalogue'
 import { FillerCountdown } from '~/components/FillerCountdown'
 import { FillerRanges } from '~/components/FillerRanges'
 import { FillerLegend, FillerStrip } from '~/components/FillerStrip'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { useBookmark, useBookmarkSeries } from '~/lib/progress/BookmarkContext'
 import { absoluteEpisodeOf, modeOf } from '~/lib/progress/episode'
 import type { FillerPageView, FillerRowView } from '~/lib/view/filler'
-import { color, leading, space, text } from '~/styles/tokens.stylex'
+import { space } from '~/styles/tokens.stylex'
 
 /**
  * The filler guide, a map of the whole series, reached by its address only: it is not in the bar.
@@ -20,7 +20,8 @@ import { color, leading, space, text } from '~/styles/tokens.stylex'
  * It leads with the countdown, the answer the page is for: how far the next
  * filler is from the reader's episode. The runs to skip come next, by saga,
  * then the strip of the whole series, then the catalogue, one row per entry,
- * under fog past the bookmark like every other page.
+ * under fog past the bookmark like every other page. With no bookmark the
+ * server draws it at the end of the demo, under the visitor banner (#1432).
  */
 export function FillerGuide({
   page,
@@ -39,8 +40,8 @@ export function FillerGuide({
       count={t('filler.count', { episodes: marks.length, unnumbered })}
       title={t('filler.title')}
     >
+      <VisitorBanner />
       <div {...stylex.props(styles.stack)}>
-        {bookmark === null && <Notice />}
         {countdown !== null && (
           <FillerCountdown
             aired={aired}
@@ -109,29 +110,9 @@ function Overview({
   )
 }
 
-/** What a reader with no bookmark is told, with the control to set one. */
-function Notice(): ReactElement {
-  const t = useSeriesOnlyT('one-piece')
-
-  return (
-    <div {...stylex.props(styles.notice)}>
-      <p {...stylex.props(styles.noticeText)}>{t('filler.noBookmark')}</p>
-      <EpisodeMark placement="fold" />
-    </div>
-  )
-}
-
 const styles = stylex.create({
   stack: {
     gap: { 'default': space.xl, '@media (min-width: 40rem)': space.xl2 },
     display: 'grid',
-  },
-  notice: { gap: space.md, display: 'grid', justifyItems: 'start' },
-  noticeText: {
-    margin: 0,
-    color: color.ink2,
-    fontSize: text.base,
-    lineHeight: leading.body,
-    maxWidth: '58ch',
   },
 })

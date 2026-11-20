@@ -2,7 +2,7 @@
 version: 1
 slug: "src-routes-series-locale-fruits-index-tsx"
 primary_target: "src/routes/$series/$locale/fruits/index.tsx"
-related_targets: ["src/routes/$series/$locale/fruits/$id.tsx","src/routes/$series/$locale/abilities/index.tsx","src/routes/$series/$locale/abilities/$id.tsx","src/components/FruitWall.tsx","src/components/FruitTile.tsx","src/components/SagaMarquee.tsx","src/components/AlbumTile.tsx","src/components/AbilityAlbum.tsx"]
+related_targets: ["src/routes/$series/$locale/fruits/$id.tsx","src/routes/$series/$locale/abilities/index.tsx","src/routes/$series/$locale/abilities/$id.tsx","src/components/FruitsAlbum.tsx","src/components/FruitTile.tsx","src/components/SagaMarquee.tsx","src/components/AlbumTile.tsx","src/components/AbilityAlbum.tsx"]
 ---
 
 # Fruits and abilities
@@ -13,7 +13,7 @@ related_targets: ["src/routes/$series/$locale/fruits/$id.tsx","src/routes/$serie
 Hunter) the reader has reached, and reading one in full.
 
 **Where:** `/<series>/<locale>/fruits` and `/fruits/<id>` (`SagaMarquee`,
-`FruitWall`, `AlbumGroups`, `AlbumTile`); `/<series>/<locale>/abilities` and
+`FruitsAlbum`, `AlbumGroups`, `AlbumTile`); `/<series>/<locale>/abilities` and
 `/abilities/<id>` (`AbilityAlbum`).
 
 **Must not break:**

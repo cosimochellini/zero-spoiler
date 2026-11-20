@@ -807,7 +807,7 @@
       {
         "name": "48rem",
         "value": "48rem",
-        "purpose": "The hub, the intro dialog and the legal page's list of parts take their wide layout."
+        "purpose": "The hub and the legal page's list of parts take their wide layout."
       },
       {
         "name": "50rem",

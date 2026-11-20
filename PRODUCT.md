@@ -18,9 +18,9 @@ situations:
 - A visitor with no bookmark, midway through or not started: the landing page
   lets them try the site before saving anything.
 - A reader arriving on a series page from a search result with no bookmark: a
-  record page shows the record at its first appearance and a list the start of
-  the story, under a banner with the bookmark control (#1430); any other page
-  gets a one-time intro with the bookmark form in it (#864).
+  record page shows the record at its first appearance and a list (ranks and the
+  filler guide included) the start of the story, under a banner with the
+  bookmark control (#1430, #1432). There is no intro dialog.
 
 The site is in English and Italian. There is no user research and no analytics.
 Do not invent personas, quotes or usage figures.
@@ -68,9 +68,9 @@ for this project, and no official artwork is used.
   - The filler guide's group names (canon arcs and filler arcs), ranges, strip
     and counts (owner, 2026-10-10, confirmed 2026-11-17).
   - The home's filler warning (owner, 2026-10-12).
-  - The arc named under the bookmark's number, in the dialog, the intro and the
-    dial's "further" form. Its table is sent at any bookmark: where every arc of
-    the unit opens and its name, in both units, and the runs of pure filler. The
+  - The arc named under the bookmark's number, in the dialog and the dial's
+    "further" form. Its table is sent at any bookmark: where every arc of the
+    unit opens and its name, in both units, and the runs of pure filler. The
     line names the arc and marks an episode inside a filler run (owner,
     2026-10-12; the filler mark, 2026-10-10).
   - The landing page's demo stretch, with its covered tail.
@@ -81,6 +81,11 @@ for this project, and no official artwork is used.
   - Social pictures, a record page with no bookmark (drawn at the record's own
     first appearance, #1430), Show anyway and shared links, as the contract
     section has them.
+  - With no bookmark (no cookie, no trial), every list (characters, places,
+    fruits, abilities, ranks, the filler guide) opens the demo stretch, what
+    both its last episode and its last chapter have reached, and every record
+    page opens the record at its own first appearance, in both units (owner,
+    2026-11-20, #1430, #1432).
 
   Anything else that shows, names or hints at an entry past the bookmark is a
   leak. An arc's name is gated everywhere outside this list.

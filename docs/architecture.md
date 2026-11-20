@@ -49,15 +49,15 @@ gates.
   and a person get the same records (#1430). The places chart's orientation is
   the one thing the `User-Agent` decides (below). `pageReader`
   (`src/server/archive/reader.server.ts`) draws a record page at the record's
-  own first appearance, and a list (characters, places, fruits, abilities) at
-  the end of the demo, each with `revealAt` (`src/data/reveal.ts`): what a
-  reader at the point's episode and one at its chapter would both see. The
-  reader keeps the null bookmark and the null-bookmark archive copy, so its
-  handles are the ones “Show anyway” resolves. A bookmark or a trial gets its
-  own reader, unchanged. Each such payload says so (`drawnAt` in
-  `src/server/archive/payloads.server.ts`), and the leak sweep reads every key
-  of it with no bookmark, in both locales, held to both of its points
-  (`src/test/visitor.ts`).
+  own first appearance, and a list (characters, places, fruits, abilities,
+  ranks, the filler guide) at the end of the demo, each with `revealAt`
+  (`src/data/reveal.ts`): what a reader at the point's episode and one at its
+  chapter would both see. The reader keeps the null bookmark and the
+  null-bookmark archive copy, so its handles are the ones “Show anyway”
+  resolves. A bookmark or a trial gets its own reader, unchanged. Each such
+  payload says so (`drawnAt` in `src/server/archive/payloads.server.ts`), and
+  the leak sweep reads every key of it with no bookmark, in both locales, held
+  to both of its points (`src/test/visitor.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))

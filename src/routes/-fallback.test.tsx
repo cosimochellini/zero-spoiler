@@ -11,7 +11,6 @@ import { render, screen } from '@testing-library/react'
 import type { ReactElement } from 'react'
 import { afterEach, describe, expect, it } from 'vitest'
 
-import { FirstVisitIntro } from '~/components/IntroDialog'
 import { isLocale, type Locale, localeOfPath } from '~/i18n/locales'
 import { isMissing } from '~/lib/missing'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
@@ -37,7 +36,7 @@ const SERIES = [
 ]
 
 /**
- * The app's three layouts, around the real shell, intro and fallback pages:
+ * The app's three layouts, around the real shell and fallback pages:
  * the root holds the bookmark of the series the address names, by the rule
  * the real root reads it with.
  */
@@ -108,7 +107,6 @@ const seriesLocale = createRoute({
         series
       >
         <Outlet />
-        <FirstVisitIntro />
       </LocaleShell>
     )
   },
@@ -199,9 +197,8 @@ describe('an address no page answers', () => {
 
   // The bug of #1374: the root read no series from an address no page
   // answers, the series shell rendered all the same, and the first hook to
-  // ask for the series (the intro's, which only a browser opens) threw.
-  it('keeps its series under a series, where the intro stays shut', async () => {
-    // No bookmark and a fresh session: the intro is owed.
+  // ask for the series threw.
+  it('keeps its series under a series', async () => {
     const router = await open('/one-piece/en/nope')
 
     expect(isMissing(router.state.matches)).toBe(true)
@@ -209,7 +206,6 @@ describe('an address no page answers', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'Page not found',
     )
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     // The bar is the series' own, and the way out is the series' home.
     expect(
       screen.getByRole('main').querySelector('a')?.getAttribute('href'),

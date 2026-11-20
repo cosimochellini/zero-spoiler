@@ -43,7 +43,8 @@ function AbilitiesPage(): ReactElement {
       })}
       title={t('abilities.title')}
     >
-      <VisitorBanner />
+      {/* A plate with no open ability is not sent. */}
+      <VisitorBanner nothingOpen={sheet.bands.length === 0} />
       <AbilityAlbum
         onParams={onParams}
         params={params}

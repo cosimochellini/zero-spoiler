@@ -1,6 +1,6 @@
 /**
  * The line the page's one live region holds (`Announcer`), as a small
- * external store for `useSyncExternalStore`, like the intro's.
+ * external store for `useSyncExternalStore`.
  */
 const voice = { line: '' }
 const hearers = new Set<() => void>()

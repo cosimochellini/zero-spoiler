@@ -60,7 +60,7 @@ export function BookmarkDialog({ onClose }: BookmarkDialogProps): ReactElement {
  * The form, or its skeleton while its code is on the way, or a way to ask
  * again when the fetch failed.
  */
-export function FormSlot({ onDone }: { onDone: () => void }): ReactElement {
+function FormSlot({ onDone }: { onDone: () => void }): ReactElement {
   type FormStatus = 'failed' | 'loading' | 'ready'
 
   const t = useT()
