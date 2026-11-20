@@ -26,13 +26,14 @@ import {
   ONE_PIECE_LOADED,
   LOADED_SERIES as SERIES,
 } from '~/test/series'
+import { heldTo } from '~/test/visitor'
 
 import { entityForHandle } from './handle.server'
 import { hubPageFor } from './hub.server'
 import { characterPage } from './pages.server'
 import { type Payload, payloadsFor } from './payloads.server'
 import { powerPage } from './power.server'
-import { readerFor } from './reader.server'
+import { pageReader, readerFor } from './reader.server'
 
 const PAYLOADS = payloadsFor(ONE_PIECE_LOADED.archive)
 
@@ -229,17 +230,19 @@ describe.each(SERIES)('every payload of $slug', (series) => {
 
       for (const [at, { bookmark, locale }] of asks.entries()) {
         for (const key of sampled(all, at)) {
-          const leaked = leaksIn(
-            run(bookmark, locale, key),
-            bookmark,
-            (entity) => excuse(entity, key, bookmark),
-          )
-          leaks.push(
-            ...leaked.map(
-              (id) =>
-                `${id} via '${key}' @ ${JSON.stringify(bookmark)} ${locale}`,
-            ),
-          )
+          const payload = run(bookmark, locale, key)
+          const held = heldTo(series.archive, { bookmark, key, name })
+          for (const fog of held) {
+            const leaked = leaksIn(payload, fog, (entity) =>
+              excuse(entity, key, fog),
+            )
+            leaks.push(
+              ...leaked.map(
+                (id) =>
+                  `${id} via '${key}' @ ${JSON.stringify(bookmark)} as ${JSON.stringify(fog)} ${locale}`,
+              ),
+            )
+          }
         }
       }
 
@@ -444,7 +447,27 @@ function earlyLabels(
  * page, and the rest of a character's, still waits for the album's group,
  * whatever the power page shows.
  */
-const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
+function groupedAt(bookmark: Bookmark, locale: Locale): Grouped {
+  const key = `${JSON.stringify(bookmark)} ${locale}`
+  const known = groupedKnown.get(key) ?? groupOf(bookmark, locale)
+  groupedKnown.set(key, known)
+  return known
+}
+
+/** One ask's groups, bodies and seats; see `groupedAt`. */
+interface Grouped {
+  bookmark: Bookmark
+  factions: ReturnType<typeof fruitAlbum>['factions']
+  groups: Set<null | string>
+  locale: Locale
+  named: Set<null | string>
+  seated: Set<string>
+}
+
+const groupedKnown = new Map<string, Grouped>()
+
+/** Works out one ask's groups for `groupedAt`. */
+function groupOf(bookmark: Bookmark, locale: Locale): Grouped {
   const { factions } = fruitAlbum(bookmark, locale)
   const groups = new Set<null | string>(factions.map(({ faction }) => faction))
   const named = new Set(groups)
@@ -465,9 +488,11 @@ const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) => {
   }
 
   return { bookmark, factions, groups, locale, named, seated }
-})
+}
 
-type Grouped = (typeof GROUPED)[number]
+const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) =>
+  groupedAt(bookmark, locale),
+)
 
 /**
  * A character page as `loadCharacter` sends it, its seats taken out of the
@@ -480,7 +505,7 @@ function withoutSeats(
 ): { page: unknown; seats: SeatLink[] } {
   const page = characterPage(
     id,
-    readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
+    pageReader(ONE_PIECE_LOADED.archive, bookmark, { id, locale }),
   )
   if (page === undefined) {
     return { page: null, seats: [] }
@@ -493,10 +518,29 @@ function withoutSeats(
 /**
  * The factions one page labels early at one ask: on the power page, a body
  * the reader has not met; on a character's page, a seat's body they hold no
- * seat in, or any label elsewhere on the page before the album's group.
+ * seat in, or any label elsewhere on the page before the album's group. A
+ * page drawn at a point (`heldTo`) is held to the groups at both of its.
  */
-function earlyAt({ name, run }: Payload, ask: Grouped, key: string): string[] {
-  const { bookmark, groups, locale, named } = ask
+function earlyAt(payload: Payload, asked: Grouped, key: string): string[] {
+  const { bookmark, locale } = asked
+
+  return heldTo(ONE_PIECE_LOADED.archive, {
+    bookmark,
+    key,
+    name: payload.name,
+  }).flatMap((at) =>
+    earlyAgainst(payload, key, { asked, held: groupedAt(at, locale) }),
+  )
+}
+
+/** `earlyAt`, the page sent at one ask and read against another's groups. */
+function earlyAgainst(
+  { name, run }: Payload,
+  key: string,
+  { asked, held }: { asked: Grouped; held: Grouped },
+): string[] {
+  const { bookmark, locale } = asked
+  const { groups, named } = held
   if (name !== 'loadCharacter') {
     return earlyLabels(run(bookmark, locale, key), {
       groups: name === 'loadPower' ? named : groups,
@@ -505,11 +549,11 @@ function earlyAt({ name, run }: Payload, ask: Grouped, key: string): string[] {
     })
   }
 
-  const { page, seats } = withoutSeats(ask, key)
+  const { page, seats } = withoutSeats(asked, key)
 
   return [
     ...earlyLabels(page, { groups, locale, name }),
-    ...unseatedLabels(seats, ask, key),
+    ...unseatedLabels(seats, held, key),
   ]
 }
 
@@ -667,13 +711,38 @@ function namesOf(
   )
 }
 
+const regionsKnown = new Map<string, Set<string>>()
+
+/** The regions the places page opens at a bookmark, once per bookmark. */
+function regionsAt(bookmark: Bookmark, locale: Locale): Set<string> {
+  const key = `${JSON.stringify(bookmark)} ${locale}`
+  const known =
+    regionsKnown.get(key)
+    ?? new Set<string>(
+      regionsFor(placesPage(bookmark, locale).open.map(({ sea }) => sea)),
+    )
+  regionsKnown.set(key, known)
+  return known
+}
+
+/** Whether every one of these charts has opened the region. */
+function openInAll(opened: Set<string>[], region: string): boolean {
+  return opened.every((regions) => regions.has(region))
+}
+
 /** Every sea name a page sends early at the asks it is sampled at. */
 function earlySeasOf({ keys, name, run }: Payload): string[] {
   const all = keys?.()
   const skip = ORIGIN_PROSE.has(name) ? 'origin' : undefined
 
-  return OPENED.flatMap(({ bookmark, locale, regions }, at) =>
+  return OPENED.flatMap(({ bookmark, locale }, at) =>
     sampled(all, at).flatMap((key) => {
+      // A page drawn at a point (`heldTo`) names a sea open at both of its.
+      const opened = heldTo(ONE_PIECE_LOADED.archive, {
+        bookmark,
+        key,
+        name,
+      }).map((held) => regionsAt(held, locale))
       // A lifted port's own sea is part of what the reader asked for.
       const own =
         name === 'liftPort' ?
@@ -684,7 +753,9 @@ function earlySeasOf({ keys, name, run }: Payload): string[] {
         .map((word) => SEA_OF.get(word))
         .filter(
           (region): region is string =>
-            region !== undefined && !regions.has(region) && region !== own,
+            region !== undefined
+            && !openInAll(opened, region)
+            && region !== own,
         )
         .map(
           (region) =>

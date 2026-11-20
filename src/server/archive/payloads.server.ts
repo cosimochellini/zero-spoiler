@@ -38,7 +38,7 @@ import {
 import { placePage } from './placePage.server'
 import { placesPage } from './places.server'
 import { powerPage } from './power.server'
-import { readerFor } from './reader.server'
+import { pageReader, type Reader, readerFor } from './reader.server'
 import { sagaLabels } from './sagaLabels.server'
 
 /** Every payload served by the compiler-visible server-function wrappers. */
@@ -64,23 +64,29 @@ function listPayloads(archive: SeriesArchive): Payload[] {
     },
     {
       name: 'loadCharacters',
-      run: (b, l) => charactersPage(readerFor(archive, b, l)),
+      run: (b, l) => charactersPage(pageReader(archive, b, { locale: l })),
     },
     {
       name: 'loadShelves',
-      run: (b, l) => shelvesPage(readerFor(archive, b, l)),
+      run: (b, l) => shelvesPage(pageReader(archive, b, { locale: l })),
     },
-    { name: 'loadFruits', run: (b, l) => fruitSheet(readerFor(archive, b, l)) },
+    {
+      name: 'loadFruits',
+      run: (b, l) => fruitSheet(pageReader(archive, b, { locale: l })),
+    },
     {
       name: 'loadFruitAlbum',
-      run: (b, l) => fruitAlbum(readerFor(archive, b, l)),
+      run: (b, l) => fruitAlbum(pageReader(archive, b, { locale: l })),
     },
-    { name: 'loadPlaces', run: (b, l) => placesPage(readerFor(archive, b, l)) },
+    {
+      name: 'loadPlaces',
+      run: (b, l) => placesPage(pageReader(archive, b, { locale: l })),
+    },
     { name: 'loadFiller', run: (b, l) => fillerPage(readerFor(archive, b, l)) },
     { name: 'loadPower', run: (b, l) => powerPage(readerFor(archive, b, l)) },
     {
       name: 'loadAbilities',
-      run: (b, l) => abilitySheet(readerFor(archive, b, l)),
+      run: (b, l) => abilitySheet(pageReader(archive, b, { locale: l })),
     },
     { name: 'loadSeriesCopy', run: (_, l) => copyOf(archive.series, l) },
     { name: 'loadSeriesLegal', run: (_, l) => legalOf(archive.series, l) },
@@ -97,52 +103,56 @@ function recordPayloads(archive: SeriesArchive): Payload[] {
     withFeatures(archive).fruits.map(({ id }) => id)
   const abilityIds = (): string[] =>
     withFeatures(archive).abilities.map(({ id }) => id)
+  // A record page with no bookmark is drawn at the record's first appearance.
+  const at = (b: Bookmark, l: Locale, id: string): Reader =>
+    pageReader(archive, b, { id, locale: l })
   return [
     {
       name: 'loadCharacter',
       keys: characterIds,
-      run: (b, l, id) => characterPage(id, readerFor(archive, b, l)) ?? null,
+      run: (b, l, id) => characterPage(id, at(b, l, id)) ?? null,
     },
     {
       name: 'loadRelationships',
       keys: characterIds,
-      run: (b, l, id) => relationshipsPage(id, readerFor(archive, b, l)),
+      run: (b, l, id) => relationshipsPage(id, at(b, l, id)),
     },
     {
       name: 'loadChronicleRest',
       keys: characterIds,
-      run: (b, l, id) => chronicleRestOf(id, readerFor(archive, b, l)),
+      run: (b, l, id) => chronicleRestOf(id, at(b, l, id)),
     },
     {
       name: 'loadDrawings',
       keys: () => archive.entities.map(({ id }) => id),
-      run: (b, l, id) => drawingsFor([id], readerFor(archive, b, l)),
+      run: (b, l, id) =>
+        drawingsFor([id], pageReader(archive, b, { locale: l })),
     },
     {
       name: 'loadFruit',
       keys: fruitIds,
-      run: (b, l, id) => fruitPage(id, readerFor(archive, b, l)) ?? null,
+      run: (b, l, id) => fruitPage(id, at(b, l, id)) ?? null,
     },
     {
       name: 'loadFruitEaters',
       keys: fruitIds,
-      run: (b, l, id) => fruitEaters(id, readerFor(archive, b, l)),
+      run: (b, l, id) => fruitEaters(id, at(b, l, id)),
     },
     {
       name: 'loadFruitSiblings',
       keys: fruitIds,
-      run: (b, l, id) => fruitSiblings(id, readerFor(archive, b, l)),
+      run: (b, l, id) => fruitSiblings(id, at(b, l, id)),
     },
     {
       name: 'loadPlace',
       keys: () =>
         [...archive.places, ...withFeatures(archive).ships].map(({ id }) => id),
-      run: (b, l, id) => placePage(id, readerFor(archive, b, l)) ?? null,
+      run: (b, l, id) => placePage(id, at(b, l, id)) ?? null,
     },
     {
       name: 'loadAbility',
       keys: abilityIds,
-      run: (b, l, id) => abilityPage(id, readerFor(archive, b, l)) ?? null,
+      run: (b, l, id) => abilityPage(id, at(b, l, id)) ?? null,
     },
   ]
 }
