@@ -734,6 +734,27 @@ describe('the marquee', () => {
   })
 })
 
+/**
+ * The saga names the no-bookmark fruits page sends, the saga view's and the
+ * marquee's, with One Piece's demo ending at this episode and chapter.
+ */
+function sagasAtDemo(episode: number, chapter: number): string[] {
+  const archive = {
+    ...ONE_PIECE.archive,
+    series: {
+      ...ONE_PIECE.archive.series,
+      demoLastEpisode: episode,
+      demoLastChapter: chapter,
+    },
+  }
+  const r = pageReader(archive, null, { locale: 'en' })
+
+  return [
+    ...core_fruitAlbum(r).sagas.map(({ saga }) => saga),
+    core_fruitSheet(r).marquee?.saga ?? '',
+  ]
+}
+
 describe('the saga view', () => {
   it('is drawn at the end of the demo without a bookmark (#1432)', () => {
     const r = pageReader(ONE_PIECE.archive, null, { locale: 'en' })
@@ -753,6 +774,20 @@ describe('the saga view', () => {
     expect(eastBlue?.covered).toStrictEqual([])
     expect(album.later).toHaveLength(r.archive.fruits.length - 4)
     expect(core_fruitSheet(r).marquee?.saga).toBe('East Blue Saga')
+  })
+
+  it('names a saga with no bookmark only once the demo reaches it in both units', () => {
+    // The Alabasta Saga opens at episode 62 and chapter 101: a demo ending
+    // at episode 70 has reached it in episodes, and at chapter 100 not yet.
+    expect(sagasAtDemo(70, 100)).toStrictEqual([
+      'East Blue Saga',
+      'East Blue Saga',
+    ])
+    expect(sagasAtDemo(130, 101)).toStrictEqual([
+      'East Blue Saga',
+      'Alabasta Saga',
+      'Alabasta Saga',
+    ])
   })
 
   it('sets out the eight sagas reached at episode 650, Dressrosa last', () => {
