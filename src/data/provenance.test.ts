@@ -255,7 +255,10 @@ describe('Game of Thrones relationship provenance', () => {
     omitted,
     pending,
   }: {
-    authored: Record<string, string[]>
+    authored: Record<
+      string,
+      { sources: string[]; unpinned?: { reason: string; urls: string[] } }
+    >
     omitted: Record<string, string>
     pending: Record<string, string>
   } = thronesRelationshipEvidence
@@ -269,13 +272,16 @@ describe('Game of Thrones relationship provenance', () => {
       (entity) => (archive?.datedOf(entity, 'relationships') ?? []).length > 0,
     )
     .map(({ id }) => id)
-  // A Wiki of Ice and Fire and the Ice and Fire Wiki for the books, the Game
-  // of Thrones Wiki for the show (#1344; Ice and Fire Wiki, owner 2026-11-16).
-  const hosts = new Set([
-    'awoiaf.westeros.org',
-    'gameofthrones.fandom.com',
-    'iceandfire.fandom.com',
-  ])
+  // The wiki each key prefix pins from: the Game of Thrones Wiki for the
+  // show, the Ice and Fire Wiki for the books (#1344, #1348).
+  const pinnedHosts: Record<string, string> = {
+    got: 'gameofthrones.fandom.com',
+    iaf: 'iceandfire.fandom.com',
+  }
+  const pinnedHostOf = (key: string): string | undefined =>
+    Object.entries(pinnedHosts).find(([prefix]) =>
+      key.startsWith(`${prefix}-en-`),
+    )?.[1]
 
   it('accounts for every archived character exactly once', () => {
     const listed = [
@@ -316,11 +322,35 @@ describe('Game of Thrones relationship provenance', () => {
   )
 
   it.each(Object.entries(authored))(
-    'lists the pages read for %s on the allowed wikis',
-    (id, urls) => {
-      expect(urls.length, id).toBeGreaterThan(0)
+    'pins the wiki revisions read for %s on the wiki its key names',
+    (id, { sources: keys, unpinned }) => {
+      const sources: Partial<Record<string, { url: string }>> = manifest.sources
+
+      expect(keys.length + (unpinned?.urls.length ?? 0), id).toBeGreaterThan(0)
+
+      for (const key of keys) {
+        expect(hostOf(sources[key]?.url ?? 'missing:'), key).toBe(
+          pinnedHostOf(key),
+        )
+      }
+    },
+  )
+
+  // A Wiki of Ice and Fire refuses scripted requests, so its pages cannot be
+  // pinned by revision until #1009 unblocks: they stay URLs, with the reason.
+  it.each(
+    Object.entries(authored).flatMap(([id, { unpinned }]) =>
+      unpinned === undefined ? [] : [[id, unpinned] as const],
+    ),
+  )(
+    'keeps only A Wiki of Ice and Fire unpinned for %s, with why',
+    (_, unpinned) => {
+      expect(unpinned.reason.trim().length).toBeGreaterThan(0)
+      expect(unpinned.urls.length).toBeGreaterThan(0)
       expect(
-        urls.map((url) => hostOf(url)).filter((host) => !hosts.has(host)),
+        unpinned.urls
+          .map((url) => hostOf(url))
+          .filter((host) => host !== 'awoiaf.westeros.org'),
       ).toStrictEqual([])
     },
   )

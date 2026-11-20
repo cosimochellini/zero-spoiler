@@ -150,10 +150,15 @@ title prints its key and the cached wikitext under
 `.gate/wiki/<slug>/revisions/` to read; `--dry-run` writes nothing to
 `sources.json`. New keys are `en-<Title>.json` for One Piece (with `-<revision>`
 when another title already holds that key) and `hxh-en-<Title>-<revision>.json`
-for Hunter x Hunter. The latest revision a title was read at is cached under
-`.gate/wiki/<slug>/latest/`; delete that file to read it afresh. The archive
-gate test holds a floor on the source count, so nothing else needs bumping.
-Beside it:
+for Hunter x Hunter. Game of Thrones pins from two wikis: the Game of Thrones
+Wiki (the show, the default) as `got-en-<Title>-<revision>.json`, and with
+`--wiki books` the Ice and Fire Wiki as `iaf-en-<Title>-<revision>.json`, each
+cached in a folder of its own (`episodes/`, `books/`) under
+`.gate/wiki/game-of-thrones/`. The script never reads A Wiki of Ice and Fire,
+which refuses scripted requests (#1009). The latest revision a title was read at
+is cached under `.gate/wiki/<slug>/latest/`; delete that file to read it afresh.
+The archive gate test holds a floor on the source count, so nothing else needs
+bumping. Beside it:
 
 - `relationships.json` maps each One Piece character with a `relationships`
   timeline to the `sources.json` key of their character revision, or `null`. A
@@ -171,10 +176,13 @@ Beside it:
   Hunter wiki; a One Piece page of the same title is no evidence, and the
   reverse holds too.
 - `game-of-thrones-relationships.json` lists every first-stage Game of Thrones
-  character once: under `authored`, with the URLs of the A Wiki of Ice and Fire
-  or Ice and Fire Wiki (books) and Game of Thrones Wiki (show) pages read, under
-  `omitted`, with the reason, or under `pending`, with the issue that will
-  author it. Revision pinning in `sources.json` is still to come.
+  character once: under `authored`, under `omitted`, with the reason, or under
+  `pending`, with the issue that will author it. An authored entry's `sources`
+  holds the `got-` and `iaf-` keys of the revisions read; each key must be
+  pinned from the wiki its prefix names, so a page of the same title on the
+  other wiki is no evidence. The A Wiki of Ice and Fire pages read stay URLs in
+  the entry's `unpinned`, with its `reason`, until #1009 unblocks: that host
+  alone may appear there.
 
 The wiki is read for facts only; no passages, dialogue, frames or scans enter
 the repository. A decision the data cannot show, such as a gate delayed behind

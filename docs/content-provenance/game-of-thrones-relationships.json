@@ -1,1121 +1,1752 @@
 {
   "authored": {
-    "daenerys-targaryen": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Daenerys_Targaryen"
-    ],
-    "viserys-targaryen": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Viserys_Targaryen"
-    ],
-    "drogo": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Drogo"
-    ],
-    "jorah-mormont": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
-      "https://awoiaf.westeros.org/index.php/Jorah_Mormont",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Jorah_Mormont"
-    ],
-    "illyrio-mopatis": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Illyrio_Mopatis"
-    ],
-    "irri": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Irri"
-    ],
-    "doreah": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Doreah",
-      "https://awoiaf.westeros.org/index.php/Eroeh"
-    ],
-    "rakharo": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
-      "https://awoiaf.westeros.org/index.php/Haggo",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Rakharo"
-    ],
-    "mirri-maz-duur": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Mirri_Maz_Duur"
-    ],
-    "qotho": [
-      "https://iceandfire.fandom.com/wiki/Daenerys_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Qotho",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Qotho"
-    ],
-    "cohollo": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/Cohollo"
-    ],
-    "haggo": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/Haggo"
-    ],
-    "jhiqui": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Jhiqui"
-    ],
-    "aggo": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
-      "https://awoiaf.westeros.org/index.php/Cohollo"
-    ],
-    "jhogo": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
-      "https://awoiaf.westeros.org/index.php/Haggo"
-    ],
-    "quaro": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64"
-    ],
-    "mago": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
-      "https://awoiaf.westeros.org/index.php/Eroeh",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Mago"
-    ],
-    "eroeh": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
-      "https://awoiaf.westeros.org/index.php/Eroeh"
-    ],
-    "jon-snow": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_10",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
-    ],
-    "jeor-mormont": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
-      "https://awoiaf.westeros.org/index.php/Jeor_Mormont",
-      "https://awoiaf.westeros.org/index.php/House_Mormont",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
-    ],
-    "aemon": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_41",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
-      "https://awoiaf.westeros.org/index.php/Aemon_Targaryen_(son_of_Maekar_I)",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Baelor"
-    ],
-    "samwell-tarly": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
-      "https://awoiaf.westeros.org/index.php/Samwell_Tarly",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
-    ],
-    "alliser-thorne": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor"
-    ],
-    "yoren": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
-      "https://awoiaf.westeros.org/index.php/Yoren",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood"
-    ],
-    "will": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
-    ],
-    "gared": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
-    ],
-    "waymar-royce": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming"
-    ],
-    "grenn": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
-      "https://awoiaf.westeros.org/index.php/Grenn",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Grenn"
-    ],
-    "pypar": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
-      "https://awoiaf.westeros.org/index.php/Pypar",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Pypar"
-    ],
-    "rast": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Rast"
-    ],
-    "dareon": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Dareon"
-    ],
-    "halder": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Halder"
-    ],
-    "todder": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70"
-    ],
-    "othell-yarwyck": [
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Othell_Yarwyck"
-    ],
-    "bowen-marsh": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
-      "https://awoiaf.westeros.org/index.php/Bowen_Marsh"
-    ],
-    "jaremy-rykker": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
-      "https://awoiaf.westeros.org/index.php/Jaremy_Rykker",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Jaremy_Rykker"
-    ],
-    "othor": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End"
-    ],
-    "jafer-flowers": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End"
-    ],
-    "donal-noye": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19"
-    ],
-    "chett": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_41",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
-      "https://awoiaf.westeros.org/index.php/Chett"
-    ],
-    "eddard-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Eddard_Stark",
-      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Catelyn_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_Stark"
-    ],
-    "catelyn-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Catelyn_Stark",
-      "https://iceandfire.fandom.com/wiki/Catelyn_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Catelyn_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Catelyn_Stark",
-      "https://iceandfire.fandom.com/wiki/Lysa_Arryn"
-    ],
-    "robb-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Robb_Stark",
-      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Catelyn_Stark",
-      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
-    ],
-    "rickon-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Rickon_Stark",
-      "https://gameofthrones.fandom.com/wiki/Luwin"
-    ],
-    "jory-cassel": [
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Jory_Cassel",
-      "https://iceandfire.fandom.com/wiki/Jory_Cassel"
-    ],
-    "sansa-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_67",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Sansa_Stark",
-      "https://gameofthrones.fandom.com/wiki/Mordane",
-      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
-    ],
-    "arya-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Arya_Stark",
-      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones"
-    ],
-    "bran-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Bran_Stark",
-      "https://gameofthrones.fandom.com/wiki/Luwin",
-      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Bran_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Bran_III_-_A_Game_of_Thrones"
-    ],
-    "benjen-stark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Benjen_Stark",
-      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones"
-    ],
-    "grey-wind": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Grey_Wind",
-      "https://gameofthrones.fandom.com/wiki/Greatjon_Umber",
-      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones"
-    ],
-    "lady-direwolf": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Lady",
-      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
-    ],
-    "nymeria": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Arya_Stark",
-      "https://gameofthrones.fandom.com/wiki/Sansa_Stark",
-      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
-    ],
-    "summer-direwolf": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Summer",
-      "https://iceandfire.fandom.com/wiki/Bran_III_-_A_Game_of_Thrones"
-    ],
-    "shaggydog": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Shaggydog",
-      "https://gameofthrones.fandom.com/wiki/Luwin"
-    ],
-    "ghost-direwolf": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Ghost",
-      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones"
-    ],
-    "theon-greyjoy": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Theon_Greyjoy",
-      "https://iceandfire.fandom.com/wiki/Bran_I_-_A_Game_of_Thrones"
-    ],
-    "luwin": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Luwin",
-      "https://iceandfire.fandom.com/wiki/Catelyn_II_-_A_Game_of_Thrones"
-    ],
-    "rodrik-cassel": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Rodrik_Cassel",
-      "https://gameofthrones.fandom.com/wiki/Jory_Cassel",
-      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Jory_Cassel"
-    ],
-    "old-nan": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Old_Nan",
-      "https://gameofthrones.fandom.com/wiki/Hodor"
-    ],
-    "hodor": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Hodor"
-    ],
-    "osha": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66",
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Osha",
-      "https://gameofthrones.fandom.com/wiki/Luwin"
-    ],
-    "mordane": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_67",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Mordane"
-    ],
-    "hullen": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50",
-      "https://gameofthrones.fandom.com/wiki/Hullen",
-      "https://iceandfire.fandom.com/wiki/Harwin",
-      "https://iceandfire.fandom.com/wiki/Hullen"
-    ],
-    "jeyne-poole": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51",
-      "https://gameofthrones.fandom.com/wiki/Jeyne_Poole",
-      "https://gameofthrones.fandom.com/wiki/Mordane",
-      "https://gameofthrones.fandom.com/wiki/Vayon_Poole"
-    ],
-    "mikken": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Mikken",
-      "https://iceandfire.fandom.com/wiki/Jon_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones"
-    ],
-    "hallis-mollen": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
-      "https://gameofthrones.fandom.com/wiki/Hallis_Mollen"
-    ],
-    "greatjon-umber": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Greatjon_Umber",
-      "https://gameofthrones.fandom.com/wiki/Jon_Umber_(Smalljon)",
-      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
-    ],
-    "smalljon-umber": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/Jon_Umber_(Smalljon)",
-      "https://gameofthrones.fandom.com/wiki/Greatjon_Umber",
-      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
-    ],
-    "rickard-karstark": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/Rickard_Karstark"
-    ],
-    "roose-bolton": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62",
-      "https://gameofthrones.fandom.com/wiki/Roose_Bolton",
-      "https://iceandfire.fandom.com/wiki/Roose_Bolton"
-    ],
-    "galbart-glover": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Galbart_Glover",
-      "https://iceandfire.fandom.com/wiki/Galbart_Glover"
-    ],
-    "robett-glover": [
-      "https://gameofthrones.fandom.com/wiki/Robett_Glover",
-      "https://iceandfire.fandom.com/wiki/Robett_Glover"
-    ],
-    "maege-mormont": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Maege_Mormont",
-      "https://iceandfire.fandom.com/wiki/Dacey_Mormont"
-    ],
-    "dacey-mormont": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
-      "https://gameofthrones.fandom.com/wiki/Maege_Mormont",
-      "https://iceandfire.fandom.com/wiki/Dacey_Mormont",
-      "https://iceandfire.fandom.com/wiki/Robb_Stark%27s_Battle_Guard"
-    ],
-    "wendel-manderly": [
-      "https://gameofthrones.fandom.com/wiki/Wendel_Manderly",
-      "https://iceandfire.fandom.com/wiki/Wendel_Manderly"
-    ],
-    "vayon-poole": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Vayon_Poole"
-    ],
-    "tomard": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://gameofthrones.fandom.com/wiki/Tomard",
-      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Tomard"
-    ],
-    "harwin": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50",
-      "https://gameofthrones.fandom.com/wiki/Hullen",
-      "https://gameofthrones.fandom.com/wiki/Tomard",
-      "https://iceandfire.fandom.com/wiki/Harwin",
-      "https://iceandfire.fandom.com/wiki/Hullen"
-    ],
-    "alyn": [
-      "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45",
-      "https://gameofthrones.fandom.com/wiki/Tomard",
-      "https://iceandfire.fandom.com/wiki/Alyn"
-    ],
-    "cersei-lannister": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Lancel_Lannister",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Bran_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Cersei_Lannister",
-      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_Stark",
-      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon"
-    ],
-    "jaime-lannister": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Jaime_Lannister",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://iceandfire.fandom.com/wiki/Bran_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Jaime_Lannister"
-    ],
-    "tyrion-lannister": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Chella",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Shagga",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Timett",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://iceandfire.fandom.com/wiki/Bronn",
-      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Shae",
-      "https://iceandfire.fandom.com/wiki/Tyrion_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Tyrion_Lannister",
-      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
-    ],
-    "tywin-lannister": [
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Timett",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Shae",
-      "https://iceandfire.fandom.com/wiki/Tywin_Lannister"
-    ],
-    "joffrey-baratheon": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_Stark",
-      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon",
-      "https://iceandfire.fandom.com/wiki/Sandor_Clegane"
-    ],
-    "myrcella-baratheon": [
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Cersei_Lannister",
-      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Myrcella_Baratheon"
-    ],
-    "tommen-baratheon": [
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Cersei_Lannister",
-      "https://iceandfire.fandom.com/wiki/Jon_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Tommen_Baratheon"
-    ],
-    "robert-baratheon": [
-      "https://gameofthrones.fandom.com/wiki/Lancel_Lannister",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Winter_Is_Coming",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
-      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Robert_I_Baratheon",
-      "https://iceandfire.fandom.com/wiki/Varys"
-    ],
-    "renly-baratheon": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Renly_Baratheon"
-    ],
-    "lysa-arryn": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Lysa_Arryn",
-      "https://gameofthrones.fandom.com/wiki/Robin_Arryn",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://iceandfire.fandom.com/wiki/Lysa_Arryn",
-      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
-    ],
-    "robin-arryn": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Robin_Arryn",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://iceandfire.fandom.com/wiki/Robert_Arryn"
-    ],
-    "bronn": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Bronn",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://iceandfire.fandom.com/wiki/Bronn",
-      "https://iceandfire.fandom.com/wiki/Tyrion_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
-    ],
-    "shae": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Shae",
-      "https://iceandfire.fandom.com/wiki/Shae"
-    ],
-    "walder-frey": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Stevron_Frey",
-      "https://gameofthrones.fandom.com/wiki/Walder_Frey",
-      "https://iceandfire.fandom.com/wiki/Walder_Frey"
-    ],
-    "ros": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Ros",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
-    ],
-    "ilyn-payne": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Ilyn_Payne",
-      "https://gameofthrones.fandom.com/wiki/Marillion",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Ilyn_Payne",
-      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
-    ],
-    "barristan-selmy": [
-      "https://gameofthrones.fandom.com/wiki/Barristan_Selmy",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
-      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Hugh_of_the_Vale",
-      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
-    ],
-    "syrio-forel": [
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Syrio_Forel",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://iceandfire.fandom.com/wiki/Arya_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Meryn_Trant",
-      "https://iceandfire.fandom.com/wiki/Syrio_Forel"
-    ],
-    "petyr-baelish": [
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Petyr_Baelish",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Petyr_Baelish"
-    ],
-    "varys": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/Varys",
-      "https://iceandfire.fandom.com/wiki/Catelyn_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Varys"
-    ],
-    "pycelle": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/Pycelle",
-      "https://gameofthrones.fandom.com/wiki/Ros",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Eddard_IV_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Pycelle"
-    ],
-    "sandor-clegane": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Sandor_Clegane",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://iceandfire.fandom.com/wiki/Eddard_I_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon",
-      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
-      "https://iceandfire.fandom.com/wiki/Sandor_Clegane"
-    ],
-    "janos-slynt": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Janos_Slynt",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Janos_Slynt"
-    ],
-    "gendry": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Gendry",
-      "https://gameofthrones.fandom.com/wiki/Hot_Pie",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Gendry"
-    ],
-    "gregor-clegane": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Beric_Dondarrion",
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Gregor_Clegane",
-      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
-      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
-    ],
-    "loras-tyrell": [
-      "https://gameofthrones.fandom.com/wiki/Loras_Tyrell",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
-      "https://iceandfire.fandom.com/wiki/Renly_Baratheon",
-      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
-    ],
-    "mycah": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Mycah",
-      "https://gameofthrones.fandom.com/wiki/The_Kingsroad",
-      "https://iceandfire.fandom.com/wiki/Eddard_III_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Mycah",
-      "https://iceandfire.fandom.com/wiki/Sandor_Clegane",
-      "https://iceandfire.fandom.com/wiki/Sansa_I_-_A_Game_of_Thrones"
-    ],
-    "stiv": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Stiv",
-      "https://iceandfire.fandom.com/wiki/Bran_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Stiv"
-    ],
-    "wallen": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Wallen",
-      "https://iceandfire.fandom.com/wiki/Bran_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Wallen"
-    ],
-    "marillion": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Marillion",
-      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Marillion"
-    ],
-    "willis-wode": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Willis_Wode",
-      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Willis_Wode"
-    ],
-    "donnel-waynwood": [
-      "https://iceandfire.fandom.com/wiki/Catelyn_Stark",
-      "https://iceandfire.fandom.com/wiki/Donnel_Waynwood"
-    ],
-    "nestor-royce": ["https://iceandfire.fandom.com/wiki/Catelyn_Stark"],
-    "mya-stone": ["https://iceandfire.fandom.com/wiki/Mya_Stone"],
-    "vardis-egen": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Vardis_Egen",
-      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
-    ],
-    "mord": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Mord",
-      "https://iceandfire.fandom.com/wiki/Mord"
-    ],
-    "lyn-corbray": [
-      "https://iceandfire.fandom.com/wiki/Lyn_Corbray",
-      "https://iceandfire.fandom.com/wiki/Vardis_Egen"
-    ],
-    "anya-waynwood": [
-      "https://iceandfire.fandom.com/wiki/Anya_Waynwood",
-      "https://iceandfire.fandom.com/wiki/Lyn_Corbray"
-    ],
-    "shagga": [
-      "https://gameofthrones.fandom.com/wiki/Chella",
-      "https://gameofthrones.fandom.com/wiki/Shagga",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Timett"
-    ],
-    "timett": [
-      "https://gameofthrones.fandom.com/wiki/Chella",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Timett"
-    ],
-    "chella": [
-      "https://gameofthrones.fandom.com/wiki/Chella",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://gameofthrones.fandom.com/wiki/Timett"
-    ],
-    "meryn-trant": [
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Meryn_Trant",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://iceandfire.fandom.com/wiki/Joffrey_Baratheon",
-      "https://iceandfire.fandom.com/wiki/Meryn_Trant"
-    ],
-    "boros-blount": [
-      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
-      "https://iceandfire.fandom.com/wiki/Boros_Blount"
-    ],
-    "mandon-moore": [
-      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
-      "https://iceandfire.fandom.com/wiki/Mandon_Moore"
-    ],
-    "arys-oakheart": [
-      "https://iceandfire.fandom.com/wiki/Arys_Oakheart",
-      "https://iceandfire.fandom.com/wiki/Barristan_Selmy"
-    ],
-    "lancel-lannister": [
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Lancel_Lannister",
-      "https://gameofthrones.fandom.com/wiki/Lord_Snow",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Lancel_Lannister",
-      "https://iceandfire.fandom.com/wiki/Robert_I_Baratheon"
-    ],
-    "dontos-hollard": [
-      "https://gameofthrones.fandom.com/wiki/Dontos_Hollard",
-      "https://iceandfire.fandom.com/wiki/Dontos_Hollard"
-    ],
-    "hugh-of-the-vale": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Hugh_of_the_Vale",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
-      "https://iceandfire.fandom.com/wiki/Eddard_VII_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Hugh_of_the_Vale",
-      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
-    ],
-    "tobho-mott": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Gendry",
-      "https://gameofthrones.fandom.com/wiki/Tobho_Mott",
-      "https://iceandfire.fandom.com/wiki/Tobho_Mott"
-    ],
-    "mhaegen": [
-      "https://gameofthrones.fandom.com/wiki/Mhaegen",
-      "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
-      "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die"
-    ],
-    "beric-dondarrion": [
-      "https://gameofthrones.fandom.com/wiki/A_Golden_Crown",
-      "https://gameofthrones.fandom.com/wiki/Beric_Dondarrion",
-      "https://iceandfire.fandom.com/wiki/Beric_Dondarrion"
-    ],
-    "thoros-of-myr": [
-      "https://iceandfire.fandom.com/wiki/Beric_Dondarrion",
-      "https://iceandfire.fandom.com/wiki/Edmure_Tully",
-      "https://iceandfire.fandom.com/wiki/Thoros_of_Myr"
-    ],
-    "balon-swann": [
-      "https://iceandfire.fandom.com/wiki/Balon_Swann",
-      "https://iceandfire.fandom.com/wiki/Gregor_Clegane",
-      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
-    ],
-    "robar-royce": [
-      "https://iceandfire.fandom.com/wiki/Loras_Tyrell",
-      "https://iceandfire.fandom.com/wiki/Robar_Royce",
-      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones"
-    ],
-    "yohn-royce": [
-      "https://iceandfire.fandom.com/wiki/Sansa_II_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Yohn_Royce"
-    ],
-    "jason-mallister": [
-      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Jason_Mallister"
-    ],
-    "masha-heddle": [
-      "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
-      "https://gameofthrones.fandom.com/wiki/Masha_Heddle",
-      "https://iceandfire.fandom.com/wiki/Catelyn_V_-_A_Game_of_Thrones",
-      "https://iceandfire.fandom.com/wiki/Masha_Heddle"
-    ],
-    "kevan-lannister": [
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Kevan_Lannister",
-      "https://gameofthrones.fandom.com/wiki/The_Pointy_End",
-      "https://iceandfire.fandom.com/wiki/Kevan_Lannister"
-    ],
-    "addam-marbrand": [
-      "https://gameofthrones.fandom.com/wiki/Addam_Marbrand",
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://iceandfire.fandom.com/wiki/Addam_Marbrand"
-    ],
-    "podrick-payne": [
-      "https://gameofthrones.fandom.com/wiki/Podrick_Payne",
-      "https://iceandfire.fandom.com/wiki/Bronn"
-    ],
-    "stevron-frey": [
-      "https://gameofthrones.fandom.com/wiki/Baelor",
-      "https://gameofthrones.fandom.com/wiki/Stevron_Frey",
-      "https://iceandfire.fandom.com/wiki/Stevron_Frey"
-    ],
-    "edmure-tully": [
-      "https://iceandfire.fandom.com/wiki/Brynden_Tully",
-      "https://iceandfire.fandom.com/wiki/Edmure_Tully",
-      "https://iceandfire.fandom.com/wiki/Hoster_Tully"
-    ],
-    "hoster-tully": [
-      "https://iceandfire.fandom.com/wiki/Edmure_Tully",
-      "https://iceandfire.fandom.com/wiki/Hoster_Tully"
-    ],
-    "brynden-tully": [
-      "https://iceandfire.fandom.com/wiki/Brynden_Tully",
-      "https://iceandfire.fandom.com/wiki/Catelyn_Stark"
-    ],
-    "hot-pie": [
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Hot_Pie"
-    ],
-    "lommy": [
-      "https://gameofthrones.fandom.com/wiki/Fire_and_Blood",
-      "https://gameofthrones.fandom.com/wiki/Lommy_Greenhands"
-    ]
+    "daenerys-targaryen": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Daenerys_Targaryen-749182.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72"
+        ]
+      }
+    },
+    "viserys-targaryen": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Viserys_Targaryen_(son_of_Aerys_II)-748139.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46"
+        ]
+      }
+    },
+    "drogo": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Drogo-738485.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68"
+        ]
+      }
+    },
+    "jorah-mormont": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Jorah_Mormont-748752.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_46",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
+          "https://awoiaf.westeros.org/index.php/Jorah_Mormont"
+        ]
+      }
+    },
+    "illyrio-mopatis": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Illyrio_Mopatis-728287.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_3",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11"
+        ]
+      }
+    },
+    "irri": {
+      "sources": [
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Irri-728190.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23"
+        ]
+      }
+    },
+    "doreah": {
+      "sources": [
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Doreah-728029.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
+          "https://awoiaf.westeros.org/index.php/Eroeh"
+        ]
+      }
+    },
+    "rakharo": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Rakharo-728374.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
+          "https://awoiaf.westeros.org/index.php/Haggo"
+        ]
+      }
+    },
+    "mirri-maz-duur": {
+      "sources": [
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Mirri_Maz_Duur-748957.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72"
+        ]
+      }
+    },
+    "qotho": {
+      "sources": [
+        "iaf-en-Daenerys_II_-_A_Game_of_Thrones-24358.json",
+        "iaf-en-Qotho-17320.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Qotho-728370.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64"
+        ]
+      }
+    },
+    "cohollo": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_36",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/Cohollo"
+        ]
+      }
+    },
+    "haggo": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/Haggo"
+        ]
+      }
+    },
+    "jhiqui": {
+      "sources": [
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Jhiqui-728193.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_11",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23"
+        ]
+      }
+    },
+    "aggo": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
+          "https://awoiaf.westeros.org/index.php/Cohollo"
+        ]
+      }
+    },
+    "jhogo": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_23",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_54",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_72",
+          "https://awoiaf.westeros.org/index.php/Haggo"
+        ]
+      }
+    },
+    "quaro": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_64"
+        ]
+      }
+    },
+    "mago": {
+      "sources": [
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Mago-736528.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
+          "https://awoiaf.westeros.org/index.php/Eroeh"
+        ]
+      }
+    },
+    "eroeh": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_61",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_68",
+          "https://awoiaf.westeros.org/index.php/Eroeh"
+        ]
+      }
+    },
+    "jon-snow": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_5",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_10",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70"
+        ]
+      }
+    },
+    "jeor-mormont": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+          "https://awoiaf.westeros.org/index.php/Jeor_Mormont",
+          "https://awoiaf.westeros.org/index.php/House_Mormont"
+        ]
+      }
+    },
+    "aemon": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Baelor-734837.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_41",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+          "https://awoiaf.westeros.org/index.php/Aemon_Targaryen_(son_of_Maekar_I)"
+        ]
+      }
+    },
+    "samwell-tarly": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Fire_and_Blood-723065.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+          "https://awoiaf.westeros.org/index.php/Samwell_Tarly"
+        ]
+      }
+    },
+    "alliser-thorne": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60"
+        ]
+      }
+    },
+    "yoren": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+          "https://awoiaf.westeros.org/index.php/Yoren"
+        ]
+      }
+    },
+    "will": {
+      "sources": ["got-en-Winter_Is_Coming-740149.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue"
+        ]
+      }
+    },
+    "gared": {
+      "sources": ["got-en-Winter_Is_Coming-740149.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_1"
+        ]
+      }
+    },
+    "waymar-royce": {
+      "sources": ["got-en-Winter_Is_Coming-740149.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Prologue"
+        ]
+      }
+    },
+    "grenn": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Grenn-728150.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+          "https://awoiaf.westeros.org/index.php/Grenn"
+        ]
+      }
+    },
+    "pypar": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Pypar-728364.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70",
+          "https://awoiaf.westeros.org/index.php/Pypar"
+        ]
+      }
+    },
+    "rast": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Rast-748263.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26"
+        ]
+      }
+    },
+    "dareon": {
+      "sources": [
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Dareon-728021.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48"
+        ]
+      }
+    },
+    "halder": {
+      "sources": [
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Halder-728162.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_26",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70"
+        ]
+      }
+    },
+    "todder": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_70"
+        ]
+      }
+    },
+    "othell-yarwyck": {
+      "sources": [
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Othell_Yarwyck-728549.json"
+      ]
+    },
+    "bowen-marsh": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+          "https://awoiaf.westeros.org/index.php/Bowen_Marsh"
+        ]
+      }
+    },
+    "jaremy-rykker": {
+      "sources": [
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Jaremy_Rykker-728408.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_21",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60",
+          "https://awoiaf.westeros.org/index.php/Jaremy_Rykker"
+        ]
+      }
+    },
+    "othor": {
+      "sources": ["got-en-The_Pointy_End-749071.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52"
+        ]
+      }
+    },
+    "jafer-flowers": {
+      "sources": ["got-en-The_Pointy_End-749071.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_60"
+        ]
+      }
+    },
+    "donal-noye": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_19"
+        ]
+      }
+    },
+    "chett": {
+      "sources": [],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_41",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
+          "https://awoiaf.westeros.org/index.php/Chett"
+        ]
+      }
+    },
+    "eddard-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Eddard_Stark-736432.json",
+        "iaf-en-Bran_I_-_A_Game_of_Thrones-24685.json",
+        "iaf-en-Catelyn_II_-_A_Game_of_Thrones-24322.json",
+        "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
+        "iaf-en-Eddard_Stark-26314.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65"
+        ]
+      }
+    },
+    "catelyn-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Catelyn_Stark-736466.json",
+        "iaf-en-Catelyn_I_-_A_Game_of_Thrones-25451.json",
+        "iaf-en-Catelyn_II_-_A_Game_of_Thrones-24322.json",
+        "iaf-en-Jon_II_-_A_Game_of_Thrones-24347.json",
+        "iaf-en-Catelyn_IV_-_A_Game_of_Thrones-24703.json",
+        "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
+        "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
+        "iaf-en-Catelyn_Stark-26349.json",
+        "iaf-en-Lysa_Arryn-27348.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+        ]
+      }
+    },
+    "robb-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Robb_Stark-749427.json",
+        "iaf-en-Bran_I_-_A_Game_of_Thrones-24685.json",
+        "iaf-en-Jon_II_-_A_Game_of_Thrones-24347.json",
+        "iaf-en-Catelyn_Stark-26349.json",
+        "iaf-en-Robb_Stark's_Battle_Guard-25493.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+        ]
+      }
+    },
+    "rickon-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Rickon_Stark-736322.json",
+        "got-en-Luwin-736973.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66"
+        ]
+      }
+    },
+    "jory-cassel": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Jory_Cassel-727992.json",
+        "iaf-en-Jory_Cassel-25761.json"
+      ]
+    },
+    "sansa-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Sansa_Stark-735757.json",
+        "got-en-Mordane-735770.json",
+        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_67"
+        ]
+      }
+    },
+    "arya-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Arya_Stark-735758.json",
+        "iaf-en-Jon_II_-_A_Game_of_Thrones-24347.json",
+        "iaf-en-Arya_II_-_A_Game_of_Thrones-24775.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_4",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_65"
+        ]
+      }
+    },
+    "bran-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Bran_Stark-748683.json",
+        "got-en-Luwin-736973.json",
+        "iaf-en-Bran_I_-_A_Game_of_Thrones-24685.json",
+        "iaf-en-Bran_II_-_A_Game_of_Thrones-24324.json",
+        "iaf-en-Bran_III_-_A_Game_of_Thrones-24683.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66"
+        ]
+      }
+    },
+    "benjen-stark": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Benjen_Stark-748680.json",
+        "iaf-en-Jon_I_-_A_Game_of_Thrones-25477.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_13"
+        ]
+      }
+    },
+    "grey-wind": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Grey_Wind-728151.json",
+        "got-en-Greatjon_Umber-728516.json",
+        "iaf-en-Jon_II_-_A_Game_of_Thrones-24347.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53"
+        ]
+      }
+    },
+    "lady-direwolf": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Lady-728218.json",
+        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16"
+        ]
+      }
+    },
+    "nymeria": {
+      "sources": [
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Arya_Stark-735758.json",
+        "got-en-Sansa_Stark-735757.json",
+        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16"
+        ]
+      }
+    },
+    "summer-direwolf": {
+      "sources": [
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Summer-745333.json",
+        "iaf-en-Bran_III_-_A_Game_of_Thrones-24683.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14"
+        ]
+      }
+    },
+    "shaggydog": {
+      "sources": [
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Shaggydog-728428.json",
+        "got-en-Luwin-736973.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66"
+        ]
+      }
+    },
+    "ghost-direwolf": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Ghost-728140.json",
+        "iaf-en-Bran_I_-_A_Game_of_Thrones-24685.json",
+        "iaf-en-Jon_I_-_A_Game_of_Thrones-25477.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_52"
+        ]
+      }
+    },
+    "theon-greyjoy": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Theon_Greyjoy-744837.json",
+        "iaf-en-Bran_I_-_A_Game_of_Thrones-24685.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37"
+        ]
+      }
+    },
+    "luwin": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Luwin-736973.json",
+        "iaf-en-Catelyn_II_-_A_Game_of_Thrones-24322.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66"
+        ]
+      }
+    },
+    "rodrik-cassel": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Rodrik_Cassel-727993.json",
+        "got-en-Jory_Cassel-727992.json",
+        "iaf-en-Catelyn_IV_-_A_Game_of_Thrones-24703.json",
+        "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
+        "iaf-en-Jory_Cassel-25761.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14"
+        ]
+      }
+    },
+    "old-nan": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Old_Nan-728331.json",
+        "got-en-Hodor-728180.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24"
+        ]
+      }
+    },
+    "hodor": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Hodor-728180.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_24"
+        ]
+      }
+    },
+    "osha": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Osha-733928.json",
+        "got-en-Luwin-736973.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_37",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_66"
+        ]
+      }
+    },
+    "mordane": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Mordane-735770.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_67"
+        ]
+      }
+    },
+    "hullen": {
+      "sources": [
+        "got-en-Hullen-729431.json",
+        "iaf-en-Harwin-24767.json",
+        "iaf-en-Hullen-24768.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50"
+        ]
+      }
+    },
+    "jeyne-poole": {
+      "sources": [
+        "got-en-Jeyne_Poole-735797.json",
+        "got-en-Mordane-735770.json",
+        "got-en-Vayon_Poole-728358.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_7",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51"
+        ]
+      }
+    },
+    "mikken": {
+      "sources": [
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Mikken-728280.json",
+        "iaf-en-Jon_II_-_A_Game_of_Thrones-24347.json",
+        "iaf-en-Arya_II_-_A_Game_of_Thrones-24775.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53"
+        ]
+      }
+    },
+    "hallis-mollen": {
+      "sources": ["got-en-Hallis_Mollen-728775.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_14"
+        ]
+      }
+    },
+    "greatjon-umber": {
+      "sources": [
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Greatjon_Umber-728516.json",
+        "got-en-Smalljon_Umber-739891.json",
+        "iaf-en-Robb_Stark's_Battle_Guard-25493.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+        ]
+      }
+    },
+    "smalljon-umber": {
+      "sources": [
+        "got-en-Smalljon_Umber-739891.json",
+        "got-en-Greatjon_Umber-728516.json",
+        "iaf-en-Robb_Stark's_Battle_Guard-25493.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+        ]
+      }
+    },
+    "rickard-karstark": {
+      "sources": ["got-en-Rickard_Karstark-734793.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+        ]
+      }
+    },
+    "roose-bolton": {
+      "sources": [
+        "got-en-Roose_Bolton-740312.json",
+        "iaf-en-Roose_Bolton-24975.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_53",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_62"
+        ]
+      }
+    },
+    "galbart-glover": {
+      "sources": [
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Galbart_Glover-728142.json",
+        "iaf-en-Galbart_Glover-22533.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+        ]
+      }
+    },
+    "robett-glover": {
+      "sources": [
+        "got-en-Robett_Glover-728143.json",
+        "iaf-en-Robett_Glover-27280.json"
+      ]
+    },
+    "maege-mormont": {
+      "sources": [
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Maege_Mormont-730693.json",
+        "iaf-en-Dacey_Mormont-26995.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_71"
+        ]
+      }
+    },
+    "dacey-mormont": {
+      "sources": [
+        "got-en-Maege_Mormont-730693.json",
+        "iaf-en-Dacey_Mormont-26995.json",
+        "iaf-en-Robb_Stark's_Battle_Guard-25493.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_63"
+        ]
+      }
+    },
+    "wendel-manderly": {
+      "sources": [
+        "got-en-Wendel_Manderly-728262.json",
+        "iaf-en-Wendel_Manderly-23482.json"
+      ]
+    },
+    "vayon-poole": {
+      "sources": [
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Vayon_Poole-728358.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_16",
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_51"
+        ]
+      }
+    },
+    "tomard": {
+      "sources": [
+        "got-en-You_Win_or_You_Die-748332.json",
+        "got-en-Tomard-728496.json",
+        "iaf-en-Arya_II_-_A_Game_of_Thrones-24775.json",
+        "iaf-en-Tomard-24835.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45"
+        ]
+      }
+    },
+    "harwin": {
+      "sources": [
+        "got-en-Hullen-729431.json",
+        "got-en-Tomard-728496.json",
+        "iaf-en-Harwin-24767.json",
+        "iaf-en-Hullen-24768.json"
+      ],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_50"
+        ]
+      }
+    },
+    "alyn": {
+      "sources": ["got-en-Tomard-728496.json", "iaf-en-Alyn-25300.json"],
+      "unpinned": {
+        "reason": "A Wiki of Ice and Fire refuses scripted requests, so these pages cannot be pinned by revision until #1009 unblocks.",
+        "urls": [
+          "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_45"
+        ]
+      }
+    },
+    "cersei-lannister": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Lancel_Lannister-735768.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Bran_II_-_A_Game_of_Thrones-24324.json",
+        "iaf-en-Cersei_Lannister-27360.json",
+        "iaf-en-Eddard_I_-_A_Game_of_Thrones-24676.json",
+        "iaf-en-Eddard_III_-_A_Game_of_Thrones-24674.json",
+        "iaf-en-Eddard_Stark-26314.json",
+        "iaf-en-Joffrey_I_Baratheon-27368.json"
+      ]
+    },
+    "jaime-lannister": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Jaime_Lannister-736465.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Winter_Is_Coming-740149.json",
+        "iaf-en-Bran_II_-_A_Game_of_Thrones-24324.json",
+        "iaf-en-Eddard_I_-_A_Game_of_Thrones-24676.json",
+        "iaf-en-Jaime_Lannister-27361.json"
+      ]
+    },
+    "tyrion-lannister": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Chella-727997.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Shagga-734067.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Timett-734068.json",
+        "got-en-Winter_Is_Coming-740149.json",
+        "iaf-en-Bronn-26157.json",
+        "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
+        "iaf-en-Eddard_I_-_A_Game_of_Thrones-24676.json",
+        "iaf-en-Jon_I_-_A_Game_of_Thrones-25477.json",
+        "iaf-en-Shae-21871.json",
+        "iaf-en-Tyrion_I_-_A_Game_of_Thrones-24343.json",
+        "iaf-en-Tyrion_Lannister-27362.json",
+        "iaf-en-Vardis_Egen-25295.json"
+      ]
+    },
+    "tywin-lannister": {
+      "sources": [
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Kevan_Lannister-736314.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Timett-734068.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Shae-21871.json",
+        "iaf-en-Tywin_Lannister-25324.json"
+      ]
+    },
+    "joffrey-baratheon": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Eddard_I_-_A_Game_of_Thrones-24676.json",
+        "iaf-en-Eddard_III_-_A_Game_of_Thrones-24674.json",
+        "iaf-en-Eddard_Stark-26314.json",
+        "iaf-en-Joffrey_I_Baratheon-27368.json",
+        "iaf-en-Sandor_Clegane-27045.json"
+      ]
+    },
+    "myrcella-baratheon": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Cersei_Lannister-27360.json",
+        "iaf-en-Jon_I_-_A_Game_of_Thrones-25477.json",
+        "iaf-en-Myrcella_Baratheon-25343.json"
+      ]
+    },
+    "tommen-baratheon": {
+      "sources": [
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Cersei_Lannister-27360.json",
+        "iaf-en-Jon_I_-_A_Game_of_Thrones-25477.json",
+        "iaf-en-Tommen_I_Baratheon-26607.json"
+      ]
+    },
+    "robert-baratheon": {
+      "sources": [
+        "got-en-Lancel_Lannister-735768.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Winter_Is_Coming-740149.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Barristan_Selmy-25348.json",
+        "iaf-en-Eddard_I_-_A_Game_of_Thrones-24676.json",
+        "iaf-en-Robert_I_Baratheon-25338.json",
+        "iaf-en-Varys-25347.json"
+      ]
+    },
+    "renly-baratheon": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
+        "iaf-en-Renly_Baratheon-27340.json"
+      ]
+    },
+    "lysa-arryn": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Lysa_Arryn-731301.json",
+        "got-en-Robin_Arryn-727939.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "iaf-en-Lysa_Arryn-27348.json",
+        "iaf-en-Vardis_Egen-25295.json"
+      ]
+    },
+    "robin-arryn": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Robin_Arryn-727939.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "iaf-en-Robert_Arryn-23206.json"
+      ]
+    },
+    "bronn": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Baelor-734837.json",
+        "got-en-Bronn-742810.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "iaf-en-Bronn-26157.json",
+        "iaf-en-Tyrion_IV_-_A_Game_of_Thrones-23304.json",
+        "iaf-en-Vardis_Egen-25295.json"
+      ]
+    },
+    "shae": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Shae-748046.json",
+        "iaf-en-Shae-21871.json"
+      ]
+    },
+    "walder-frey": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Stevron_Frey-728127.json",
+        "got-en-Walder_Frey-728091.json",
+        "iaf-en-Walder_Frey-26270.json"
+      ]
+    },
+    "ros": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Ros-748119.json",
+        "got-en-You_Win_or_You_Die-748332.json"
+      ]
+    },
+    "ilyn-payne": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Ilyn_Payne-749031.json",
+        "got-en-Marillion-735860.json",
+        "got-en-The_Kingsroad-743072.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Ilyn_Payne-27095.json",
+        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json"
+      ]
+    },
+    "barristan-selmy": {
+      "sources": [
+        "got-en-Barristan_Selmy-736438.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Barristan_Selmy-25348.json",
+        "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
+        "iaf-en-Hugh-24888.json",
+        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json"
+      ]
+    },
+    "syrio-forel": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Syrio_Forel-728063.json",
+        "got-en-The_Pointy_End-749071.json",
+        "iaf-en-Arya_II_-_A_Game_of_Thrones-24775.json",
+        "iaf-en-Meryn_Trant-25362.json",
+        "iaf-en-Syrio_Forel-24965.json"
+      ]
+    },
+    "petyr-baelish": {
+      "sources": [
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Petyr_Baelish-733529.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Catelyn_IV_-_A_Game_of_Thrones-24703.json",
+        "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
+        "iaf-en-Petyr_Baelish-27579.json"
+      ]
+    },
+    "varys": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-Varys-736479.json",
+        "iaf-en-Catelyn_IV_-_A_Game_of_Thrones-24703.json",
+        "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
+        "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
+        "iaf-en-Varys-25347.json"
+      ]
+    },
+    "pycelle": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-Pycelle-744294.json",
+        "got-en-Ros-748119.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Eddard_IV_-_A_Game_of_Thrones-24717.json",
+        "iaf-en-Pycelle-27343.json"
+      ]
+    },
+    "sandor-clegane": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Sandor_Clegane-738871.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "iaf-en-Eddard_I_-_A_Game_of_Thrones-24676.json",
+        "iaf-en-Eddard_III_-_A_Game_of_Thrones-24674.json",
+        "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
+        "iaf-en-Joffrey_I_Baratheon-27368.json",
+        "iaf-en-Loras_Tyrell-27158.json",
+        "iaf-en-Sandor_Clegane-27045.json"
+      ]
+    },
+    "janos-slynt": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Janos_Slynt-735769.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Janos_Slynt-27141.json"
+      ]
+    },
+    "gendry": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Gendry_Baratheon-745079.json",
+        "got-en-Hot_Pie-728184.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Gendry-26242.json"
+      ]
+    },
+    "gregor-clegane": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Beric_Dondarrion-735776.json",
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
+        "iaf-en-Gregor_Clegane-27341.json",
+        "iaf-en-Loras_Tyrell-27158.json",
+        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json"
+      ]
+    },
+    "loras-tyrell": {
+      "sources": [
+        "got-en-Loras_Tyrell-735762.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
+        "iaf-en-Loras_Tyrell-27158.json",
+        "iaf-en-Renly_Baratheon-27340.json",
+        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json"
+      ]
+    },
+    "mycah": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Mycah-728305.json",
+        "got-en-The_Kingsroad-743072.json",
+        "iaf-en-Eddard_III_-_A_Game_of_Thrones-24674.json",
+        "iaf-en-Mycah-27106.json",
+        "iaf-en-Sandor_Clegane-27045.json",
+        "iaf-en-Sansa_I_-_A_Game_of_Thrones-24668.json"
+      ]
+    },
+    "stiv": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Stiv-728455.json",
+        "iaf-en-Bran_V_-_A_Game_of_Thrones-27475.json",
+        "iaf-en-Stiv-22830.json"
+      ]
+    },
+    "wallen": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Wallen-728531.json",
+        "iaf-en-Bran_V_-_A_Game_of_Thrones-27475.json",
+        "iaf-en-Wallen-25284.json"
+      ]
+    },
+    "marillion": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Marillion-735860.json",
+        "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
+        "iaf-en-Marillion-27180.json"
+      ]
+    },
+    "willis-wode": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Willis_Wode-728545.json",
+        "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
+        "iaf-en-Willis_Wode-15180.json"
+      ]
+    },
+    "donnel-waynwood": {
+      "sources": [
+        "iaf-en-Catelyn_Stark-26349.json",
+        "iaf-en-Donnel_Waynwood-21212.json"
+      ]
+    },
+    "nestor-royce": { "sources": ["iaf-en-Catelyn_Stark-26349.json"] },
+    "mya-stone": { "sources": ["iaf-en-Mya_Stone-26574.json"] },
+    "vardis-egen": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Vardis_Egen-728050.json",
+        "iaf-en-Vardis_Egen-25295.json"
+      ]
+    },
+    "mord": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Mord-734811.json",
+        "iaf-en-Mord-27326.json"
+      ]
+    },
+    "lyn-corbray": {
+      "sources": [
+        "iaf-en-Lyn_Corbray-27168.json",
+        "iaf-en-Vardis_Egen-25295.json"
+      ]
+    },
+    "anya-waynwood": {
+      "sources": [
+        "iaf-en-Anya_Waynwood-27091.json",
+        "iaf-en-Lyn_Corbray-27168.json"
+      ]
+    },
+    "shagga": {
+      "sources": [
+        "got-en-Chella-727997.json",
+        "got-en-Shagga-734067.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Timett-734068.json"
+      ]
+    },
+    "timett": {
+      "sources": [
+        "got-en-Chella-727997.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Timett-734068.json"
+      ]
+    },
+    "chella": {
+      "sources": [
+        "got-en-Chella-727997.json",
+        "got-en-The_Pointy_End-749071.json",
+        "got-en-Timett-734068.json"
+      ]
+    },
+    "meryn-trant": {
+      "sources": [
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Meryn_Trant-746536.json",
+        "got-en-The_Pointy_End-749071.json",
+        "iaf-en-Joffrey_I_Baratheon-27368.json",
+        "iaf-en-Meryn_Trant-25362.json"
+      ]
+    },
+    "boros-blount": {
+      "sources": [
+        "iaf-en-Barristan_Selmy-25348.json",
+        "iaf-en-Boros_Blount-27123.json"
+      ]
+    },
+    "mandon-moore": {
+      "sources": [
+        "iaf-en-Barristan_Selmy-25348.json",
+        "iaf-en-Mandon_Moore-25360.json"
+      ]
+    },
+    "arys-oakheart": {
+      "sources": [
+        "iaf-en-Arys_Oakheart-27313.json",
+        "iaf-en-Barristan_Selmy-25348.json"
+      ]
+    },
+    "lancel-lannister": {
+      "sources": [
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Lancel_Lannister-735768.json",
+        "got-en-Lord_Snow-740188.json",
+        "got-en-You_Win_or_You_Die-748332.json",
+        "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
+        "iaf-en-Lancel_Lannister-25358.json",
+        "iaf-en-Robert_I_Baratheon-25338.json"
+      ]
+    },
+    "dontos-hollard": {
+      "sources": [
+        "got-en-Dontos_Hollard-734913.json",
+        "iaf-en-Dontos_Hollard-27125.json"
+      ]
+    },
+    "hugh-of-the-vale": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Hugh_of_the_Vale-735948.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "iaf-en-Barristan_Selmy-25348.json",
+        "iaf-en-Eddard_VII_-_A_Game_of_Thrones-24944.json",
+        "iaf-en-Hugh-24888.json",
+        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json"
+      ]
+    },
+    "tobho-mott": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Gendry_Baratheon-745079.json",
+        "got-en-Tobho_Mott-728303.json",
+        "iaf-en-Tobho_Mott-27057.json"
+      ]
+    },
+    "mhaegen": {
+      "sources": [
+        "got-en-Mhaegen-732970.json",
+        "got-en-The_Wolf_and_the_Lion-740156.json",
+        "got-en-You_Win_or_You_Die-748332.json"
+      ]
+    },
+    "beric-dondarrion": {
+      "sources": [
+        "got-en-A_Golden_Crown-749117.json",
+        "got-en-Beric_Dondarrion-735776.json",
+        "iaf-en-Beric_Dondarrion-24875.json"
+      ]
+    },
+    "thoros-of-myr": {
+      "sources": [
+        "iaf-en-Beric_Dondarrion-24875.json",
+        "iaf-en-Edmure_Tully-24011.json",
+        "iaf-en-Thoros_of_Myr-27065.json"
+      ]
+    },
+    "balon-swann": {
+      "sources": [
+        "iaf-en-Balon_Swann-26981.json",
+        "iaf-en-Gregor_Clegane-27341.json",
+        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json"
+      ]
+    },
+    "robar-royce": {
+      "sources": [
+        "iaf-en-Loras_Tyrell-27158.json",
+        "iaf-en-Robar_Royce-27015.json",
+        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json"
+      ]
+    },
+    "yohn-royce": {
+      "sources": [
+        "iaf-en-Sansa_II_-_A_Game_of_Thrones-24945.json",
+        "iaf-en-Yohn_Royce-27017.json"
+      ]
+    },
+    "jason-mallister": {
+      "sources": [
+        "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
+        "iaf-en-Jason_Mallister-27174.json"
+      ]
+    },
+    "masha-heddle": {
+      "sources": [
+        "got-en-Cripples,_Bastards,_and_Broken_Things-742106.json",
+        "got-en-Masha_Heddle-728167.json",
+        "iaf-en-Catelyn_V_-_A_Game_of_Thrones-24850.json",
+        "iaf-en-Masha_Heddle-26963.json"
+      ]
+    },
+    "kevan-lannister": {
+      "sources": [
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Kevan_Lannister-736314.json",
+        "got-en-The_Pointy_End-749071.json",
+        "iaf-en-Kevan_Lannister-23666.json"
+      ]
+    },
+    "addam-marbrand": {
+      "sources": [
+        "got-en-Addam_Marbrand-728264.json",
+        "got-en-Fire_and_Blood-723065.json",
+        "iaf-en-Addam_Marbrand-26979.json"
+      ]
+    },
+    "podrick-payne": {
+      "sources": ["got-en-Podrick_Payne-728353.json", "iaf-en-Bronn-26157.json"]
+    },
+    "stevron-frey": {
+      "sources": [
+        "got-en-Baelor-734837.json",
+        "got-en-Stevron_Frey-728127.json",
+        "iaf-en-Stevron_Frey-25134.json"
+      ]
+    },
+    "edmure-tully": {
+      "sources": [
+        "iaf-en-Brynden_Tully-27245.json",
+        "iaf-en-Edmure_Tully-24011.json",
+        "iaf-en-Hoster_Tully-22486.json"
+      ]
+    },
+    "hoster-tully": {
+      "sources": [
+        "iaf-en-Edmure_Tully-24011.json",
+        "iaf-en-Hoster_Tully-22486.json"
+      ]
+    },
+    "brynden-tully": {
+      "sources": [
+        "iaf-en-Brynden_Tully-27245.json",
+        "iaf-en-Catelyn_Stark-26349.json"
+      ]
+    },
+    "hot-pie": {
+      "sources": [
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Hot_Pie-728184.json"
+      ]
+    },
+    "lommy": {
+      "sources": [
+        "got-en-Fire_and_Blood-723065.json",
+        "got-en-Lommy-729365.json"
+      ]
+    }
   },
   "omitted": {
     "jaqen-hghar": "Not reached in stage 1 in either medium: the record opens at episode 12 and chapter 79, after season 1 episode 10 and A Game of Thrones (chapter 73).",
