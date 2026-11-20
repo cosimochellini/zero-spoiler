@@ -3,6 +3,7 @@ import { type ReactElement, useEffect } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
 import { CharacterGrid } from '~/components/CharacterGrid'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesT } from '~/i18n/LocaleContext'
 import { seriesPageHead } from '~/routes/$locale/-head'
 import { requirePage } from '~/routes/$series/$locale/-found'
@@ -71,6 +72,7 @@ function CharactersPage(): ReactElement {
       count={t('characters.count', { count: page.filed })}
       title={t('characters.title')}
     >
+      <VisitorBanner />
       <CharacterGrid
         featuredCovered={page.featuredCovered}
         featuredOpen={page.featuredOpen}

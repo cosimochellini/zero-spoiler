@@ -66,6 +66,11 @@ export const enDictionary = {
   'trial.save': 'Save this point',
   'trial.leave': 'Leave the trial',
 
+  'visitor.record':
+    'You are seeing {name} as first seen ({at}). Anything later stays under fog.',
+  'visitor.list':
+    'Without a bookmark, only the start of the story is open. Everything after it stays under fog.',
+
   'status.set': 'Bookmark set: {point}.',
   'status.moved': 'Bookmark moved: {point}.',
   'status.cleared': 'Bookmark cleared.',

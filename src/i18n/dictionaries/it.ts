@@ -56,6 +56,11 @@ export const itDictionary: Dictionary = {
   'trial.save': 'Salva questo punto',
   'trial.leave': 'Esci dalla prova',
 
+  'visitor.record':
+    'Vedi {name} com’era alla prima apparizione ({at}). Quello che viene dopo resta nella nebbia.',
+  'visitor.list':
+    'Senza segnalibro è visibile solo l’inizio della storia. Tutto il resto resta nella nebbia.',
+
   'status.set': 'Segnalibro impostato: {point}.',
   'status.moved': 'Segnalibro spostato: {point}.',
   'status.cleared': 'Segnalibro cancellato.',

@@ -2,6 +2,7 @@ import * as stylex from '@stylexjs/stylex'
 import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesT } from '~/i18n/LocaleContext'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink, SectionNotFound } from '~/routes/$series/$locale/-back'
@@ -46,6 +47,8 @@ function AbilityPage(): ReactElement {
       <p {...stylex.props(recordStyles.back)}>
         <RecordBackLink section="abilities" />
       </p>
+
+      <VisitorBanner slot={detail.slot} />
 
       <div>
         <AbilityStage
