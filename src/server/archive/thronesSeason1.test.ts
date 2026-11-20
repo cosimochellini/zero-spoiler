@@ -1180,13 +1180,32 @@ describe('the steps one medium alone tells', () => {
 
 describe('the season’s leads', () => {
   // The home page ranks the leads by how often the reached stories name them.
-  // Only the Essos cast has a chronicle yet (#1360): by episode 10 the show’s
-  // stories also name Eddard and Arya, while a reader at chapter 10 has only
-  // the Pentos chapters, which name Daenerys alone. The other leads join as
-  // their storylines’ chronicles land (#1361–#1363).
+  // The Essos cast (#1360) and the King’s Landing, riverlands and Vale cast
+  // (#1362) have chronicles: by episode 10 their stories name Eddard most,
+  // and by chapter 10 the Winterfell and Wall chapters of the court’s stories
+  // bring in Eddard, Tyrion, Jon and Arya beside Daenerys. The order changes
+  // again as the North and the Wall land (#1361, #1363).
   it.each<[Unit, string[]]>([
-    ['episode', ['daenerys-targaryen', 'eddard-stark', 'arya-stark']],
-    ['chapter', ['daenerys-targaryen']],
+    [
+      'episode',
+      [
+        'eddard-stark',
+        'daenerys-targaryen',
+        'tyrion-lannister',
+        'arya-stark',
+        'jon-snow',
+      ],
+    ],
+    [
+      'chapter',
+      [
+        'eddard-stark',
+        'tyrion-lannister',
+        'daenerys-targaryen',
+        'jon-snow',
+        'arya-stark',
+      ],
+    ],
   ])(
     'heads the home page by %s with the leads its stories name',
     (unit, cast) => {
