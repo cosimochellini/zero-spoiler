@@ -458,7 +458,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '2:episode': {
       source: EPISODE_2,
-      note: 'Show only, split from the book story after review: the sword for Arya and the pointy end, the farewell kiss for Bran and Catelyn’s cold request, the embrace with Robb, Eddard telling Jon he has his blood if not his name and promising to tell him of his mother, and the ride north with Benjen and Tyrion.',
+      note: 'Show only, split from the book story after review: the sword for Arya and her first lesson, the farewell kiss for Bran and Catelyn’s cold request, the embrace with Robb, Eddard telling Jon he has his blood if not his name and promising to tell him of his mother, and the ride north with Benjen and Tyrion.',
     },
     '2:chapter': {
       source: WALL_JON_II,
@@ -568,7 +568,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '9:61': {
       source: EPISODE_9,
-      note: 'Show only: the brothers fussing over Longclaw while Sam keeps apart, Sam telling Jon that Robb has led an army south to war, and Aemon telling Jon that their duty comes first. Sam’s news is the show’s alone (#1352).',
+      note: 'Show only: the brothers fussing over Longclaw while Sam keeps apart, Sam telling Jon that Robb has led an army south to war, and Aemon, after speaking of the vows, saying he cannot make Jon stay or go (corrected after review to agree with the Aemon and Jon stories). Sam’s news is the show’s alone (#1352).',
     },
     '10:episode': {
       source: EPISODE_10,
@@ -768,7 +768,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'othell-yarwyck': {
     '7:49': {
       source: `${SHOW}Othell_Yarwyck`,
-      note: 'Both media: the First Builder, present at the induction (GOT107) and, in the book, present as First Builder when the new brothers swear (Ice and Fire Wiki, Othell page; Jon VI, site 49). Halder to the builders in both (GOT107; Jon VI).',
+      note: 'Both media: the First Builder, among the officers at the induction (GOT107; the Ice and Fire Wiki’s Othell page for Jon VI, site 49). Halder to the builders in both (GOT107; Jon VI). Corrected after review: the vows are left out, since the Jon VI synopsis on A Wiki of Ice and Fire sends Bowen Marsh, not Othell, to the grove; the show’s Othell at the heart tree is in his 8/53 story.',
     },
     '8:53': {
       source: `${SHOW}Othell_Yarwyck`,

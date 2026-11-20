@@ -842,7 +842,7 @@ export const season1Chronicles = {
       { it: 'Sei uno Stark', en: 'You are a Stark' },
       {
         it: 'Prima di lasciare Grande Inverno per i Guardiani della notte, Jon regala ad [[arya-stark|Arya]] una spada sottile fatta apposta per lei e le dice di colpire con la punta. Bacia [[bran-stark|Bran]], ancora privo di sensi, e se ne va su fredda richiesta di [[catelyn-stark|Catelyn]]. Jon e [[robb-stark|Robb]] si abbracciano e sperano di rivedersi presto. Prima di separarsi, [[eddard-stark|Eddard]] dice a Jon che è uno Stark: non porta il suo nome, ma ha il suo sangue. Gli promette che la prossima volta che si vedranno gli parlerà della madre di Jon. Jon parte verso nord con lo zio [[benjen-stark|Benjen]] e [[tyrion-lannister|Tyrion Lannister]].',
-        en: 'Before Jon leaves Winterfell for the Night’s Watch, he gives [[arya-stark|Arya]] a slim sword made for her and tells her to stick them with the pointy end. He kisses the unconscious [[bran-stark|Bran]] goodbye and leaves at the cold request of [[catelyn-stark|Catelyn]]. He and [[robb-stark|Robb]] embrace and hope to meet again soon. Before they part, [[eddard-stark|Eddard]] tells Jon that he is a Stark: he may not have his name, but he has his blood. He promises that the next time they meet he will tell Jon about his mother. Jon rides north with his uncle [[benjen-stark|Benjen]] and [[tyrion-lannister|Tyrion Lannister]].',
+        en: 'Before Jon leaves Winterfell for the Night’s Watch, he gives [[arya-stark|Arya]] a slim sword made for her and tells her to strike with the point. He kisses the unconscious [[bran-stark|Bran]] goodbye and leaves at the cold request of [[catelyn-stark|Catelyn]]. He and [[robb-stark|Robb]] embrace and hope to meet again soon. Before they part, [[eddard-stark|Eddard]] tells Jon that he is a Stark: he may not have his name, but he has his blood. He promises that the next time they meet he will tell Jon about his mother. Jon rides north with his uncle [[benjen-stark|Benjen]] and [[tyrion-lannister|Tyrion Lannister]].',
       },
     ),
     inBooks(
@@ -850,7 +850,7 @@ export const season1Chronicles = {
       { it: 'Gli addii a Grande Inverno', en: 'Farewells at Winterfell' },
       {
         it: 'Jon sta per lasciare Grande Inverno per unirsi ai Guardiani della notte con lo zio [[benjen-stark|Benjen]]. Prima di partire saluta [[bran-stark|Bran]], che giace privo di sensi dopo la caduta, e al suo capezzale trova [[catelyn-stark|Catelyn]], che non lo vuole lì. Abbraccia [[robb-stark|Robb]], e i due sperano di rivedersi presto. Ad [[arya-stark|Arya]] regala una spada sottile fatta apposta per lei, con la prima lezione: si colpisce con la punta. Poi parte verso nord.',
-        en: 'Jon is leaving Winterfell to join the Night’s Watch with his uncle [[benjen-stark|Benjen]]. Before he goes, he says goodbye to [[bran-stark|Bran]], who lies unconscious after his fall, and finds [[catelyn-stark|Catelyn]] at the bedside. She does not want him there. He embraces [[robb-stark|Robb]], and the two hope to meet again soon. He gives [[arya-stark|Arya]] a slim sword made for her, with her first lesson: stick them with the pointy end. Then he rides north.',
+        en: 'Jon is leaving Winterfell to join the Night’s Watch with his uncle [[benjen-stark|Benjen]]. Before he goes, he says goodbye to [[bran-stark|Bran]], who lies unconscious after his fall, and finds [[catelyn-stark|Catelyn]] at the bedside. She does not want him there. He embraces [[robb-stark|Robb]], and the two hope to meet again soon. He gives [[arya-stark|Arya]] a slim sword made for her, with her first lesson: strike with the point. Then he rides north.',
       },
     ),
     onScreen(
@@ -873,8 +873,8 @@ export const season1Chronicles = {
       [4, 27],
       { it: 'Il protettore di Sam', en: 'Sam’s protector' },
       {
-        it: 'Una nuova recluta, [[samwell-tarly|Samwell Tarly]], arriva a Castello Nero: è grasso e non sa combattere. Ser [[alliser-thorne|Alliser Thorne]] aizza contro Sam gli altri, e Jon si mette in mezzo. Sam ammette di essere un codardo. Sam racconta a Jon che suo padre lo ha costretto a prendere il nero, minacciando di farlo morire in un incidente di caccia se avesse rifiutato. Jon convince le reclute ad andarci piano con Sam. Solo [[rast|Rast]] rifiuta, finché Jon, [[grenn|Grenn]] e [[pypar|Pyp]] non vanno da lui di notte con [[ghost-direwolf|Spettro]].',
-        en: 'A new recruit, [[samwell-tarly|Samwell Tarly]], arrives at Castle Black, fat and unable to fight. Ser [[alliser-thorne|Alliser Thorne]] sets the others on him, and Jon puts himself in their way. Sam admits that he is a coward. He tells Jon that Sam’s own father made him take the black, threatening to have him killed in a hunting accident if he refused. Jon persuades the recruits to go easy on Sam. Only [[rast|Rast]] refuses, until Jon, [[grenn|Grenn]] and [[pypar|Pyp]] visit him at night with [[ghost-direwolf|Ghost]].',
+        it: 'Una nuova recluta, [[samwell-tarly|Samwell Tarly]], arriva a Castello Nero: è grasso e non sa combattere. Ser [[alliser-thorne|Alliser Thorne]] aizza contro Sam gli altri, e Jon si mette in mezzo. Sam ammette di essere un codardo. Sam racconta a Jon che il proprio padre lo ha costretto a prendere il nero, minacciando di farlo morire in un incidente di caccia se avesse rifiutato. Jon convince le reclute ad andarci piano con Sam. Solo [[rast|Rast]] rifiuta, finché Jon, [[grenn|Grenn]] e [[pypar|Pyp]] non vanno da lui di notte con [[ghost-direwolf|Spettro]].',
+        en: 'A new recruit, [[samwell-tarly|Samwell Tarly]], arrives at Castle Black, fat and unable to fight. Ser [[alliser-thorne|Alliser Thorne]] sets the others on him, and Jon puts himself in their way. Sam admits that he is a coward. Sam tells Jon that his father made him take the black, threatening to have him killed in a hunting accident if he refused. Jon persuades the recruits to go easy on Sam. Only [[rast|Rast]] refuses, until Jon, [[grenn|Grenn]] and [[pypar|Pyp]] visit him at night with [[ghost-direwolf|Ghost]].',
       },
     ),
     inBooks(
@@ -1061,8 +1061,8 @@ export const season1Chronicles = {
       [9, 61],
       { it: 'La notizia della guerra', en: 'News of the war' },
       {
-        it: 'Nella sala i confratelli si accalcano intorno a Lungo Artiglio, la spada che il lord comandante ha donato a [[jon-snow|Jon Snow]], ma Sam se ne sta in disparte. Prende Jon da parte e gli dice che [[robb-stark|Robb]] marcia verso sud alla testa di un esercito, per fare la guerra. Jon sente che dovrebbe essere al fianco del fratello. Maestro [[aemon|Aemon]] dice a Jon che il dovere verso i Guardiani della notte viene prima di tutto.',
-        en: 'In the hall the brothers crowd around Longclaw, the sword the Lord Commander has given [[jon-snow|Jon Snow]], but Sam keeps apart. He takes Jon aside and tells him that [[robb-stark|Robb]] has marched south at the head of an army, to war. Jon feels he should be with his brother. Maester [[aemon|Aemon]] tells Jon that his duty to the Night’s Watch comes first.',
+        it: 'Nella sala i confratelli si accalcano intorno a Lungo Artiglio, la spada che il lord comandante ha donato a [[jon-snow|Jon Snow]], ma Sam se ne sta in disparte. Prende Jon da parte e gli dice che [[robb-stark|Robb]] marcia verso sud alla testa di un esercito, per fare la guerra. Jon sente che dovrebbe essere al fianco del fratello. Maestro [[aemon|Aemon]] ricorda a Jon il giuramento dei Guardiani della notte, ma gli dice che la scelta di restare o partire spetta solo a lui.',
+        en: 'In the hall the brothers crowd around Longclaw, the sword the Lord Commander has given [[jon-snow|Jon Snow]], but Sam keeps apart. He takes Jon aside and tells him that [[robb-stark|Robb]] has marched south at the head of an army, to war. Jon feels he should be with his brother. Maester [[aemon|Aemon]] reminds Jon of the vows of the Night’s Watch, but tells him that the choice to stay or go is his alone.',
       },
     ),
     onScreen(
@@ -1111,8 +1111,8 @@ export const season1Chronicles = {
       [8, 53],
       { it: 'Il bastardo di un traditore', en: 'A traitor’s bastard' },
       {
-        it: 'A Castello Nero arriva la notizia che [[eddard-stark|Eddard Stark]] è stato arrestato per tradimento, e il lord comandante [[jeor-mormont|Jeor Mormont]] avverte [[jon-snow|Jon Snow]] di non fare sciocchezze. Alliser schernisce Jon: non è solo un bastardo, è il bastardo di un traditore. Jon gli si scaglia contro con un coltello, ma gli amici di Jon lo trattengono prima che raggiunga Alliser.',
-        en: 'Word reaches Castle Black that [[eddard-stark|Eddard Stark]] has been arrested for treason, and Lord Commander [[jeor-mormont|Jeor Mormont]] warns [[jon-snow|Jon Snow]] not to do anything stupid. Alliser taunts Jon that he is not just a bastard but a traitor’s bastard. Jon goes for him with a knife, but Jon’s friends hold him back before he can reach Alliser.',
+        it: 'A Castello Nero arriva la notizia che [[eddard-stark|Eddard Stark]] è stato arrestato per tradimento, e il lord comandante [[jeor-mormont|Jeor Mormont]] avverte [[jon-snow|Jon Snow]] di non fare sciocchezze. Alliser chiama Jon il bastardo di un traditore. Jon gli si scaglia contro con un coltello, ma gli amici di Jon lo trattengono prima che raggiunga Alliser.',
+        en: 'Word reaches Castle Black that [[eddard-stark|Eddard Stark]] has been arrested for treason, and Lord Commander [[jeor-mormont|Jeor Mormont]] warns [[jon-snow|Jon Snow]] not to do anything stupid. Alliser calls Jon a traitor’s bastard. Jon goes for him with a knife, but Jon’s friends hold him back before he can reach Alliser.',
       },
     ),
     inBoth(
@@ -1440,8 +1440,8 @@ export const season1Chronicles = {
       [7, 49],
       { it: 'Il Primo Costruttore', en: 'The First Builder' },
       {
-        it: 'Othell Yarwyck è il Primo Costruttore dei Guardiani della notte. È tra gli ufficiali presenti quando il lord comandante [[jeor-mormont|Jeor Mormont]] accoglie nei Guardiani il gruppo di reclute di [[jon-snow|Jon Snow]] e assegna gli incarichi, ed è presente quando i nuovi confratelli pronunciano il giuramento. [[halder|Halder]] viene destinato ai costruttori di Othell.',
-        en: 'Othell Yarwyck is the First Builder of the Night’s Watch. He is among the officers present when Lord Commander [[jeor-mormont|Jeor Mormont]] takes the group of recruits of [[jon-snow|Jon Snow]] into the Watch and gives out their posts, and he is there when the new brothers swear their vows. [[halder|Halder]] is sent to the builders under Othell.',
+        it: 'Othell Yarwyck è il Primo Costruttore dei Guardiani della notte. È tra gli ufficiali presenti quando il lord comandante [[jeor-mormont|Jeor Mormont]] accoglie nei Guardiani il gruppo di reclute di [[jon-snow|Jon Snow]] e assegna gli incarichi. [[halder|Halder]] viene destinato ai costruttori di Othell.',
+        en: 'Othell Yarwyck is the First Builder of the Night’s Watch. He is among the officers present when Lord Commander [[jeor-mormont|Jeor Mormont]] takes the group of recruits of [[jon-snow|Jon Snow]] into the Watch and gives out their posts. [[halder|Halder]] is sent to the builders under Othell.',
       },
     ),
     onScreen(
