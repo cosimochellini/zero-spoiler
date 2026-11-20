@@ -64,13 +64,12 @@ gates.
   are the one exception: static files at addresses built from its slug, so
   anyone who asks for one gets it. The sitemap lists the square of every record
   both sources tell; a record of one source only is not listed. They hold the
-  first drawing and the line every source's reader has at the record's own
-  threshold. The name is the one its first source's reader is given (the anime's
-  for a record both tell), so a chapter reader may meet an anime name early:
-  Hagya's card says Leol, while the page with no bookmark, drawn from the
-  null-bookmark copy, is titled with the record's own name. No page under fog
-  names them. The fog is an editorial promise kept by the pages, not access
-  control.
+  first drawing, and the name and line of the page a link preview fetches with
+  no bookmark: the record at its own first appearance, as both an anime viewer
+  and a manga reader see it (Hagya's card says Hagya, not the anime's Leol). A
+  record of one source only has no page with no bookmark; its card is drawn by
+  that source's own reader at the record's threshold. No page under fog names
+  them. The fog is an editorial promise kept by the pages, not access control.
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
@@ -361,16 +360,17 @@ name). Its JSON-LD and its sitemap entry point at a square icon
 `/og-card.png`. `npm run og:images` draws both pictures in Chrome, on the
 developer's machine. They are committed under `public/og/` and served as static
 assets, so the Worker never draws one. Each picture uses the record's first
-drawing, never a redrawing, and prints only what a reader standing at the
-record's own threshold reads in every source it is told in: a character's
-epithet, else its role; a fruit's type; an ability's Nen type, else its kind; a
-place's form and region; a ship's kind. The name is the one its first source's
-reader is given: the episode reader's for a record both sources tell, and the
-chapter reader's for a record only the manga tells. A page fetched with no
-bookmark, as a link preview is, prints the record's own name in its title, which
-differs where the anime renames a record (Hagya, Leol). Re-run the script after
-changing a record, a first drawing or the card layout. It draws only what
-changed. `scripts/og-images.test.mjs` fails while a picture is missing, stale or
+drawing, never a redrawing, and prints the name and one line of the page a link
+preview fetches with no bookmark (`pageReader`, drawn at the record's first
+appearance in both media): a character's epithet, else its role; a fruit's type;
+an ability's Nen type, else its kind; a place's form and region; a ship's kind.
+So a card says what the page's title says, the record's own name where the anime
+names it otherwise (Hagya, not Leol, which the manga gives only at chapter 240),
+and `scripts/og-images.test.mjs` holds the two equal for every such record. A
+record of one source only has no page with no bookmark; its card is its source's
+reader's at the record's threshold. Re-run the script after changing a record, a
+first drawing or the card layout. It draws only what changed.
+`scripts/og-images.test.mjs` fails while a picture is missing, stale or
 orphaned.
 
 ## Localization
