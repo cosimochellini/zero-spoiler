@@ -1023,7 +1023,7 @@ export const season1Chronicles = {
       [7, 57],
       { it: 'Una dinastia o niente', en: 'A dynasty or nothing' },
       {
-        it: 'Jaime raggiunge l’esercito del padre [[tywin-lannister|Tywin]] al confine delle Terre dei Fiumi, mentre Tywin scuoia un cervo nella sua tenda. Tywin gli rimprovera di aver lasciato vivere [[eddard-stark|Eddard Stark]] solo perché la sua vittoria per strada non era stata pulita. La guerra, dice, deciderà se la loro famiglia fonderà una dinastia destinata a durare mille anni o si estinguerà come i Targaryen. Affida a Jaime trentamila uomini e lo manda ad assediare il castello dei Tully, la famiglia di [[catelyn-stark|Catelyn]], che aveva preso prigioniero [[tyrion-lannister|Tyrion]].',
+        it: 'Jaime raggiunge l’esercito del padre [[tywin-lannister|Tywin]] al confine delle Terre dei Fiumi, mentre Tywin scuoia un cervo nella sua tenda. Tywin gli rimprovera di aver lasciato vivere [[eddard-stark|Eddard Stark]] solo perché la sua vittoria per strada non era stata pulita. La guerra, dice, deciderà se la loro famiglia fonderà una dinastia destinata a durare mille anni o si estinguerà come i Targaryen. Affida a Jaime trentamila uomini e lo manda ad assediare il castello dei Tully, la famiglia di [[catelyn-stark|Catelyn]]: è stata Catelyn a prendere prigioniero [[tyrion-lannister|Tyrion]].',
         en: 'Jaime joins the army of his father [[tywin-lannister|Tywin]] at the border of the riverlands, where Tywin is skinning a stag in his tent. Tywin reproaches him for letting [[eddard-stark|Eddard Stark]] live because his victory in the street was not clean. The war, Tywin says, will decide whether their family founds a dynasty to last a thousand years or dies out like the Targaryens. He gives Jaime thirty thousand men and sends him to besiege the castle of the Tullys, the family of [[catelyn-stark|Catelyn]], who took [[tyrion-lannister|Tyrion]] prisoner.',
       },
     ),
@@ -2660,8 +2660,8 @@ export const season1Chronicles = {
       [6, 43],
       { it: 'Giù dalla montagna', en: 'Down the mountain' },
       {
-        it: 'Lady [[lysa-arryn|Lysa]] non sceglie ser Lyn come campione, ma ser [[vardis-egen|Vardis Egen]], e il mercenario [[bronn|Bronn]] lo uccide. Così [[tyrion-lannister|Tyrion Lannister]] è libero. È Lyn a scortare Tyrion e Bronn giù dalla montagna, fino alla Porta Insanguinata, dove li lascia proseguire da soli per la strada alta e ordina loro di non tornare mai più nella Valle.',
-        en: 'Lady [[lysa-arryn|Lysa]] does not choose Ser Lyn as her champion but Ser [[vardis-egen|Vardis Egen]], and the sellsword [[bronn|Bronn]] kills him. So [[tyrion-lannister|Tyrion Lannister]] goes free. It is Lyn who escorts Tyrion and Bronn down the mountain to the Bloody Gate, where he leaves them to go on alone along the high road and orders them never to come back to the Vale.',
+        it: 'Lady [[lysa-arryn|Lysa]] non sceglie ser Lyn come campione, ma ser [[vardis-egen|Vardis Egen]], e il mercenario [[bronn|Bronn]] uccide Vardis. Così [[tyrion-lannister|Tyrion Lannister]] è libero. È Lyn a scortare Tyrion e Bronn giù dalla montagna, fino alla Porta Insanguinata, dove li lascia proseguire da soli per la strada alta e ordina loro di non tornare mai più nella Valle.',
+        en: 'Lady [[lysa-arryn|Lysa]] does not choose Ser Lyn as her champion but Ser [[vardis-egen|Vardis Egen]], and the sellsword [[bronn|Bronn]] kills Vardis. So [[tyrion-lannister|Tyrion Lannister]] goes free. It is Lyn who escorts Tyrion and Bronn down the mountain to the Bloody Gate, where he leaves them to go on alone along the high road and orders them never to come back to the Vale.',
       },
     ),
   ],
