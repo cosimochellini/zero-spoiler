@@ -3220,6 +3220,7 @@ export const season1: ThronesSaga = {
     },
     'jon-snow': {
       relationships: season1Relationships['jon-snow'],
+      chronicle: season1Chronicles['jon-snow'],
       role: [
         {
           episode: 1,
@@ -3605,6 +3606,7 @@ export const season1: ThronesSaga = {
     },
     'jeor-mormont': {
       relationships: season1Relationships['jeor-mormont'],
+      chronicle: season1Chronicles['jeor-mormont'],
       role: {
         it: 'Lord comandante dei Guardiani della notte',
         en: 'Lord Commander of the Night’s Watch',
@@ -3627,6 +3629,7 @@ export const season1: ThronesSaga = {
     },
     'aemon': {
       relationships: season1Relationships.aemon,
+      chronicle: season1Chronicles.aemon,
       role: { it: 'Maestro di Castello Nero', en: 'Maester of Castle Black' },
       log: {
         it: 'È molto anziano e cieco. Siede con il lord comandante quando a Tyrion Lannister viene chiesto di far sapere a corte che la Barriera ha bisogno di uomini.',
@@ -3646,6 +3649,7 @@ export const season1: ThronesSaga = {
     },
     'samwell-tarly': {
       relationships: season1Relationships['samwell-tarly'],
+      chronicle: season1Chronicles['samwell-tarly'],
       role: [
         {
           episode: 4,
@@ -3679,6 +3683,7 @@ export const season1: ThronesSaga = {
     },
     'alliser-thorne': {
       relationships: season1Relationships['alliser-thorne'],
+      chronicle: season1Chronicles['alliser-thorne'],
       role: {
         it: 'Maestro d’armi di Castello Nero',
         en: 'Master-at-arms of Castle Black',
@@ -3701,6 +3706,7 @@ export const season1: ThronesSaga = {
     },
     'yoren': {
       relationships: season1Relationships.yoren,
+      chronicle: season1Chronicles.yoren,
       role: {
         it: 'Reclutatore dei Guardiani della notte',
         en: 'Recruiter for the Night’s Watch',
@@ -6061,6 +6067,7 @@ export const season1: ThronesSaga = {
     },
     'will': {
       relationships: season1Relationships.will,
+      chronicle: season1Chronicles.will,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -6080,6 +6087,7 @@ export const season1: ThronesSaga = {
     },
     'gared': {
       relationships: season1Relationships.gared,
+      chronicle: season1Chronicles.gared,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -6102,6 +6110,7 @@ export const season1: ThronesSaga = {
     },
     'waymar-royce': {
       relationships: season1Relationships['waymar-royce'],
+      chronicle: season1Chronicles['waymar-royce'],
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -6121,6 +6130,7 @@ export const season1: ThronesSaga = {
     },
     'grenn': {
       relationships: season1Relationships.grenn,
+      chronicle: season1Chronicles.grenn,
       role: [
         {
           episode: 3,
@@ -6157,6 +6167,7 @@ export const season1: ThronesSaga = {
     },
     'pypar': {
       relationships: season1Relationships.pypar,
+      chronicle: season1Chronicles.pypar,
       role: [
         {
           episode: 3,
@@ -6193,6 +6204,7 @@ export const season1: ThronesSaga = {
     },
     'rast': {
       relationships: season1Relationships.rast,
+      chronicle: season1Chronicles.rast,
       role: [
         {
           episode: 3,
@@ -6230,6 +6242,7 @@ export const season1: ThronesSaga = {
     },
     'dareon': {
       relationships: season1Relationships.dareon,
+      chronicle: season1Chronicles.dareon,
       role: [
         {
           episode: 7,
@@ -6266,6 +6279,7 @@ export const season1: ThronesSaga = {
     },
     'halder': {
       relationships: season1Relationships.halder,
+      chronicle: season1Chronicles.halder,
       role: [
         {
           episode: 7,
@@ -6299,6 +6313,7 @@ export const season1: ThronesSaga = {
     },
     'todder': {
       relationships: season1Relationships.todder,
+      chronicle: season1Chronicles.todder,
       role: [
         {
           episode: 30,
@@ -6332,6 +6347,7 @@ export const season1: ThronesSaga = {
     },
     'othell-yarwyck': {
       relationships: season1Relationships['othell-yarwyck'],
+      chronicle: season1Chronicles['othell-yarwyck'],
       role: {
         it: 'Primo Costruttore dei Guardiani della notte',
         en: 'First Builder of the Night’s Watch',
@@ -6354,6 +6370,7 @@ export const season1: ThronesSaga = {
     },
     'bowen-marsh': {
       relationships: season1Relationships['bowen-marsh'],
+      chronicle: season1Chronicles['bowen-marsh'],
       role: {
         it: 'Capo degli attendenti dei Guardiani della notte',
         en: 'Head of the stewards of the Night’s Watch',
@@ -6376,6 +6393,7 @@ export const season1: ThronesSaga = {
     },
     'jaremy-rykker': {
       relationships: season1Relationships['jaremy-rykker'],
+      chronicle: season1Chronicles['jaremy-rykker'],
       role: {
         it: 'Ufficiale dei ranger dei Guardiani della notte',
         en: 'Officer of the rangers of the Night’s Watch',
@@ -6398,6 +6416,7 @@ export const season1: ThronesSaga = {
     },
     'othor': {
       relationships: season1Relationships.othor,
+      chronicle: season1Chronicles.othor,
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -6420,6 +6439,7 @@ export const season1: ThronesSaga = {
     },
     'jafer-flowers': {
       relationships: season1Relationships['jafer-flowers'],
+      chronicle: season1Chronicles['jafer-flowers'],
       role: {
         it: 'Ranger dei Guardiani della notte',
         en: 'Ranger of the Night’s Watch',
@@ -6439,6 +6459,7 @@ export const season1: ThronesSaga = {
     },
     'donal-noye': {
       relationships: season1Relationships['donal-noye'],
+      chronicle: season1Chronicles['donal-noye'],
       role: { it: 'Armaiolo di Castello Nero', en: 'Armorer of Castle Black' },
       log: {
         it: 'Ferma le reclute che vogliono picchiare Jon Snow nell’armeria. Poi spiega a Jon che lui è stato addestrato e loro no.',
@@ -6461,6 +6482,7 @@ export const season1: ThronesSaga = {
     },
     'chett': {
       relationships: season1Relationships.chett,
+      chronicle: season1Chronicles.chett,
       role: [
         {
           episode: 5,
