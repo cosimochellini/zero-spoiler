@@ -141,24 +141,25 @@ Evidence is data, not prose files. `docs/content-provenance/sources.json` pins
 every wiki revision read: append entries, never rewrite earlier ones.
 
 `npm run provenance:pin -- --series <slug> "Title" ["Title" …]` does the
-appending. A title already pinned from that series' English wiki, or one that
-redirects to a pinned page, keeps its key and revision; any other title is read
-at its latest revision and appended. A title pinned under several keys reuses
-the plainest (`en-Chapter_433.json` over `issue815-en-Chapter_433.json`). The
-file is re-read just before writing, so another session's appends survive. Each
-title prints its key and the cached wikitext under
-`.gate/wiki/<slug>/revisions/` to read; `--dry-run` writes nothing to
-`sources.json`. New keys are `en-<Title>.json` for One Piece (with `-<revision>`
-when another title already holds that key) and `hxh-en-<Title>-<revision>.json`
-for Hunter x Hunter. Game of Thrones pins from two wikis: the Game of Thrones
-Wiki (the show, the default) as `got-en-<Title>-<revision>.json`, and with
-`--wiki books` the Ice and Fire Wiki as `iaf-en-<Title>-<revision>.json`, each
-cached in a folder of its own (`episodes/`, `books/`) under
-`.gate/wiki/game-of-thrones/`. The script never reads A Wiki of Ice and Fire,
-which refuses scripted requests (#1009). The latest revision a title was read at
-is cached under `.gate/wiki/<slug>/latest/`; delete that file to read it afresh.
-The archive gate test holds a floor on the source count, so nothing else needs
-bumping. Beside it:
+appending. A title already pinned from that wiki, or one that redirects to a
+pinned page, keeps its key and revision; any other title is read at its latest
+revision and appended. A title pinned under several keys reuses the plainest
+(`en-Chapter_433.json` over `issue815-en-Chapter_433.json`). The file is re-read
+just before writing, so another session's appends survive. Each title prints its
+key and the cached wikitext under `.gate/wiki/<slug>/revisions/` to read;
+`--dry-run` writes nothing to `sources.json`. New keys are `en-<Title>.json` for
+One Piece (with `-<revision>` when another title already holds that key) and
+`hxh-en-<Title>-<revision>.json` for Hunter x Hunter. Game of Thrones pins from
+two wikis: the Game of Thrones Wiki (the show, the default) as
+`got-en-<Title>-<revision>.json`, and with `--wiki books` the Ice and Fire Wiki
+as `iaf-en-<Title>-<revision>.json`; a title pinned from one is never reused for
+the other. The script never reads A Wiki of Ice and Fire, which refuses scripted
+requests (#1009). The latest revision a title was read at is cached under
+`.gate/wiki/<slug>/latest/`; delete that file to read it afresh. Game of Thrones
+keeps both cache folders one level deeper, per wiki:
+`.gate/wiki/game-of-thrones/episodes/` for the show and
+`.gate/wiki/game-of-thrones/books/` for the books. The archive gate test holds a
+floor on the source count, so nothing else needs bumping. Beside it:
 
 - `relationships.json` maps each One Piece character with a `relationships`
   timeline to the `sources.json` key of their character revision, or `null`. A

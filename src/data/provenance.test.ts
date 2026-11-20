@@ -329,9 +329,10 @@ describe('Game of Thrones relationship provenance', () => {
       expect(keys.length + (unpinned?.urls.length ?? 0), id).toBeGreaterThan(0)
 
       for (const key of keys) {
-        expect(hostOf(sources[key]?.url ?? 'missing:'), key).toBe(
-          pinnedHostOf(key),
-        )
+        expect(
+          hostOf(sources[key]?.url ?? 'missing:'),
+          `${key}: pinned in sources.json from the wiki its prefix names`,
+        ).toBe(pinnedHostOf(key))
       }
     },
   )
