@@ -38,7 +38,7 @@ import {
 import { placePage } from './archive/placePage.server'
 import { placesPage } from './archive/places.server'
 import { powerPage } from './archive/power.server'
-import { type Reader, readerFor } from './archive/reader.server'
+import { pageReader, type Reader, readerFor } from './archive/reader.server'
 import { sagaLabels } from './archive/sagaLabels.server'
 import { copyOf } from './copy.server'
 import { legalOf } from './sources.server'
@@ -51,6 +51,12 @@ import { legalOf } from './sources.server'
  * is the invariant the whole design rests on: a bookmark that arrived in a request body would make the fog a
  * suggestion, and it would also mean a stale one in the router's context
  * could hand a reader records they have not reached.
+ *
+ * A record page and a list read the request through `pageReaderIn`: with no
+ * bookmark, the page is drawn at a point the page itself picks, the record's
+ * first appearance or the end of the demo (`pageReader`), and never at one
+ * the request names. The id only says which record the page is about. Every
+ * other function, "Show anyway" (`lift*`) included, reads `readerIn`.
  *
  * The decisions live in `./archive/*` as plain functions. These are wrappers
  * and nothing else, which is what makes the decisions testable: under Vitest
@@ -167,6 +173,12 @@ async function readerIn(data: Located): Promise<Reader> {
   return readerFor(archive, readBookmark(archive.series), data.locale)
 }
 
+/** The reader a record page (`id`) or a list is drawn for; see `pageReader`. */
+async function pageReaderIn(data: Located & { id?: string }): Promise<Reader> {
+  const archive = await archiveOf(data.series)
+  return pageReader(archive, readBookmark(archive.series), data)
+}
+
 export const loadHome = createServerFn()
   .validator(located)
   .handler(async ({ data }) => {
@@ -176,35 +188,38 @@ export const loadHome = createServerFn()
 
 export const loadCharacters = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => charactersPage(await readerIn(data)))
+  .handler(async ({ data }) => charactersPage(await pageReaderIn(data)))
 
 // Plain JSON: the browser asks for the shelves once the page is up (#776).
 export const loadShelves = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => plain(shelvesPage(await readerIn(data))))
+  .handler(async ({ data }) => plain(shelvesPage(await pageReaderIn(data))))
 
 export const loadCharacter = createServerFn()
   .validator(addressed)
   .handler(
-    async ({ data }) => characterPage(data.id, await readerIn(data)) ?? null,
+    async ({ data }) =>
+      characterPage(data.id, await pageReaderIn(data)) ?? null,
   )
 
 // Plain JSON: the browser asks for the older stories on the reader's click.
 export const loadChronicleRest = createServerFn()
   .validator(addressed)
   .handler(async ({ data }) =>
-    plain(chronicleRestOf(data.id, await readerIn(data))),
+    plain(chronicleRestOf(data.id, await pageReaderIn(data))),
   )
 
 export const loadRelationships = createServerFn()
   .validator(addressed)
-  .handler(async ({ data }) => relationshipsPage(data.id, await readerIn(data)))
+  .handler(async ({ data }) =>
+    relationshipsPage(data.id, await pageReaderIn(data)),
+  )
 
 // Plain JSON, as the album below (#780).
 export const loadDrawings = createServerFn()
   .validator(listed)
   .handler(async ({ data }) =>
-    plain(drawingsFor(data.ids, await readerIn(data))),
+    plain(drawingsFor(data.ids, await pageReaderIn(data))),
   )
 
 // Public demo only: neither cookies nor request-supplied bookmarks expand it.
@@ -217,50 +232,54 @@ export const loadDemoDrawings = createServerFn()
 
 export const loadFruits = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => fruitSheet(await readerIn(data)))
+  .handler(async ({ data }) => fruitSheet(await pageReaderIn(data)))
 
 // Plain JSON: the browser asks for the plates once the page is up (#780).
 export const loadFruitAlbum = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => plain(fruitAlbum(await readerIn(data))))
+  .handler(async ({ data }) => plain(fruitAlbum(await pageReaderIn(data))))
 
 export const loadFruit = createServerFn()
   .validator(addressed)
-  .handler(async ({ data }) => fruitPage(data.id, await readerIn(data)) ?? null)
+  .handler(
+    async ({ data }) => fruitPage(data.id, await pageReaderIn(data)) ?? null,
+  )
 
 export const loadFruitEaters = createServerFn()
   .validator(addressed)
-  .handler(async ({ data }) => fruitEaters(data.id, await readerIn(data)))
+  .handler(async ({ data }) => fruitEaters(data.id, await pageReaderIn(data)))
 
 export const loadFruitSiblings = createServerFn()
   .validator(addressed)
-  .handler(async ({ data }) => fruitSiblings(data.id, await readerIn(data)))
+  .handler(async ({ data }) => fruitSiblings(data.id, await pageReaderIn(data)))
 
 export const loadAbilities = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => abilitySheet(await readerIn(data)))
+  .handler(async ({ data }) => abilitySheet(await pageReaderIn(data)))
 
 export const loadAbility = createServerFn()
   .validator(addressed)
   .handler(
-    async ({ data }) => abilityPage(data.id, await readerIn(data)) ?? null,
+    async ({ data }) => abilityPage(data.id, await pageReaderIn(data)) ?? null,
   )
 
 export const loadPlaces = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => placesPage(await readerIn(data)))
+  .handler(async ({ data }) => placesPage(await pageReaderIn(data)))
 
 export const loadPlace = createServerFn()
   .validator(addressed)
-  .handler(async ({ data }) => placePage(data.id, await readerIn(data)) ?? null)
+  .handler(
+    async ({ data }) => placePage(data.id, await pageReaderIn(data)) ?? null,
+  )
 
 export const loadFiller = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => fillerPage(await readerIn(data)))
+  .handler(async ({ data }) => fillerPage(await pageReaderIn(data)))
 
 export const loadPower = createServerFn()
   .validator(located)
-  .handler(async ({ data }) => powerPage(await readerIn(data)))
+  .handler(async ({ data }) => powerPage(await pageReaderIn(data)))
 
 export const loadCredits = createServerFn()
   .validator(located)

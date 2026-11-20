@@ -6,8 +6,11 @@ import type { Entity } from '~/data/types'
 import type { Bookmark } from '~/lib/progress/episode'
 import {
   opHandleOf as handleOf,
+  OP_ARCHIVE,
   opReaderFor as readerFor,
 } from '~/test/archive'
+
+import { pageReader } from './reader.server'
 
 /** A record the archive is known to file, or the test is wrong. */
 function must(id: string): Entity {
@@ -133,5 +136,64 @@ describe('readerFor', () => {
       'late',
       'early',
     ])
+  })
+})
+
+describe('pageReader', () => {
+  const robin = must('nico-robin')
+
+  it.each(MARKS.filter((mark) => mark !== null))(
+    'is the bookmark’s own reader at %j',
+    (mark) => {
+      const page = pageReader(OP_ARCHIVE, mark, { id: robin.id, locale: 'en' })
+      const own = readerFor(mark, 'en')
+
+      expect(page.bookmark).toStrictEqual(mark)
+      expect(entities.map((entity) => page.sees(entity))).toStrictEqual(
+        entities.map((entity) => own.sees(entity)),
+      )
+    },
+  )
+
+  it('draws a record page with no bookmark at the record’s first appearance', () => {
+    const r = pageReader(OP_ARCHIVE, null, { id: robin.id, locale: 'en' })
+
+    const seen = entities.filter((entity) => r.sees(entity))
+
+    expect(r.bookmark).toBeNull()
+    expect(seen).toContain(robin)
+    expect(
+      seen.every(
+        (entity) =>
+          entity.revealedAtEpisode <= robin.revealedAtEpisode
+          && entity.revealedAtChapter <= robin.revealedAtChapter,
+      ),
+    ).toBe(true)
+    // The archive a reader with no bookmark lifts from, so the handles match.
+    expect(r.archive).toBe(readerFor(null, 'en').archive)
+    expect(r.slot(must('franky'), () => null).open).toBe(false)
+  })
+
+  it('opens a list with no bookmark up to the end of the demo, in both units', () => {
+    const r = pageReader(OP_ARCHIVE, null, { locale: 'en' })
+    const { demoLastEpisode, demoLastChapter } = OP_ARCHIVE.series
+
+    const seen = entities.filter((entity) => r.sees(entity))
+
+    expect(seen).not.toContain(must('nico-robin'))
+    expect(seen).toContain(must('shanks'))
+    expect(
+      seen.every(
+        (entity) =>
+          entity.revealedAtEpisode <= demoLastEpisode
+          && entity.revealedAtChapter <= demoLastChapter,
+      ),
+    ).toBe(true)
+  })
+
+  it('sees nothing for an id the archive does not file', () => {
+    const r = pageReader(OP_ARCHIVE, null, { id: 'nobody', locale: 'en' })
+
+    expect(entities.some((entity) => r.sees(entity))).toBe(false)
   })
 })

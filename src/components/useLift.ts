@@ -24,8 +24,6 @@ export interface Lift<T> {
     ref: RefObject<HTMLButtonElement | null>
   }
   record: null | T
-  /** Sends for the record at once: the intro's own "Show anyway" (#864). */
-  send: () => void
   state: LiftState
 }
 
@@ -94,7 +92,6 @@ export function useLift<T>(
       ref,
     },
     record,
-    send,
     state,
   }
 }

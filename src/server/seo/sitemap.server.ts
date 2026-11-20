@@ -116,7 +116,7 @@ async function buildSitemap(): Promise<string> {
       entryFor(`/${locale}`),
       entryFor(`/${locale}/legal`),
     ]),
-    // A crawler has no bookmark, so no record of one source only answers it.
+    // A request with no bookmark has no record of one source only.
     ...archives.flatMap((archive) => seriesEntries(archiveIn(archive, null))),
     '</urlset>',
     '',

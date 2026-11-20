@@ -34,6 +34,11 @@ import {
 import { leaksIn, saysNothing } from '~/test/fog'
 import { ONE_PIECE_LOADED as ONE_PIECE } from '~/test/series'
 
+import {
+  fruitAlbum as core_fruitAlbum,
+  fruitSheet as core_fruitSheet,
+} from './fruits.server'
+import { pageReader } from './reader.server'
 import type { SagaStart } from './sagaLabels.server'
 
 /** The drawings by any record's id, as the archive hands them out. */
@@ -729,12 +734,60 @@ describe('the marquee', () => {
   })
 })
 
-describe('the saga view', () => {
-  it('is empty without a bookmark', () => {
-    const sheet = fruitAlbum(null, 'en')
+/**
+ * The saga names the no-bookmark fruits page sends, the saga view's and the
+ * marquee's, with One Piece's demo ending at this episode and chapter.
+ */
+function sagasAtDemo(episode: number, chapter: number): string[] {
+  const archive = {
+    ...ONE_PIECE.archive,
+    series: {
+      ...ONE_PIECE.archive.series,
+      demoLastEpisode: episode,
+      demoLastChapter: chapter,
+    },
+  }
+  const r = pageReader(archive, null, { locale: 'en' })
 
-    expect(sheet.sagas).toStrictEqual([])
-    expect(sheet.later).toStrictEqual([])
+  return [
+    ...core_fruitAlbum(r).sagas.map(({ saga }) => saga),
+    core_fruitSheet(r).marquee?.saga ?? '',
+  ]
+}
+
+describe('the saga view', () => {
+  it('is drawn at the end of the demo without a bookmark (#1432)', () => {
+    const r = pageReader(ONE_PIECE.archive, null, { locale: 'en' })
+    const album = core_fruitAlbum(r)
+    const [eastBlue] = album.sagas
+
+    // East Blue only, its fruits open, every later one under fog unnamed.
+    expect(album.sagas.map(({ saga }) => saga)).toStrictEqual([
+      'East Blue Saga',
+    ])
+    expect(eastBlue?.open.map(({ id }) => id)).toStrictEqual([
+      'gum-gum-fruit',
+      'chop-chop-fruit',
+      'slip-slip-fruit',
+      'smoke-smoke-fruit',
+    ])
+    expect(eastBlue?.covered).toStrictEqual([])
+    expect(album.later).toHaveLength(r.archive.fruits.length - 4)
+    expect(core_fruitSheet(r).marquee?.saga).toBe('East Blue Saga')
+  })
+
+  it('names a saga with no bookmark only once the demo reaches it in both units', () => {
+    // The Alabasta Saga opens at episode 62 and chapter 101: a demo ending
+    // at episode 70 has reached it in episodes, and at chapter 100 not yet.
+    expect(sagasAtDemo(70, 100)).toStrictEqual([
+      'East Blue Saga',
+      'East Blue Saga',
+    ])
+    expect(sagasAtDemo(130, 101)).toStrictEqual([
+      'East Blue Saga',
+      'Alabasta Saga',
+      'Alabasta Saga',
+    ])
   })
 
   it('sets out the eight sagas reached at episode 650, Dressrosa last', () => {

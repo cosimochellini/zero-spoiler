@@ -90,8 +90,6 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'filler.pageTitle': 'Episodi filler | {series} | Zero Spoiler',
   'filler.pageDescription':
     'Quali episodi di One Piece sono filler, misti o riassunti, i gruppi che puoi saltare e dove vanno i film e gli speciali.',
-  'filler.noBookmark':
-    'Non hai ancora impostato un segnalibro, quindi ogni titolo e ogni trama sono nella nebbia. I gruppi da saltare e la striscia sono solo numeri, quindi restano visibili.',
   'filler.stripTitle': 'Tutta la serie',
   'filler.stripLede': 'Ogni episodio da 1 a {aired}, cento per riga.',
   'filler.stripLabel':
@@ -157,8 +155,6 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'ranks.pageTitle': 'Le cariche del mondo | {series} | Zero Spoiler',
   'ranks.pageDescription':
     'Chi ricopre ogni carica nel mondo di One Piece, ognuno nascosto fino al capitolo o all’episodio che lo nomina.',
-  'ranks.noBookmark':
-    'Non hai ancora impostato un segnalibro, quindi ogni gruppo e ogni carica sono nella nebbia.',
   'ranks.none':
     'Niente di questa pagina è visibile al punto del tuo segnalibro.',
   'ranks.vacant': 'Vacante',
@@ -194,9 +190,6 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'fruits.allOpen': 'Nessun frutto di questo tipo è nella nebbia.',
   'fruits.albumFailed': 'Caricamento dei frutti del diavolo non riuscito.',
   'fruits.albumRetry': 'Riprova',
-  'fruits.wall.title': '{count} frutti del diavolo sono nella nebbia',
-  'fruits.wall.ask': 'A che episodio sei?',
-  'fruits.wall.browse': 'Sfoglia comunque',
   'fruits.marquee': '{saga}: {count} frutti finora',
   'fruits.marqueeOne': '{saga}: 1 frutto finora',
   'fruits.marqueeNone': 'Ancora nessun frutto nuovo in questa saga.',

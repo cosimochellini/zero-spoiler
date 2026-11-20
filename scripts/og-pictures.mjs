@@ -8,7 +8,7 @@ import path from 'node:path'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
 import { drawingSvg, seriesPalette } from './art-sheet.mjs'
-import { pagedRecords, readersAt, wordsOf } from './og-words.mjs'
+import { pagedRecords, readerOf, wordsOf } from './og-words.mjs'
 
 /** @typedef {import('./art-sheet.mjs').Palette} Palette */
 /** @typedef {import('../src/lib/view/records.ts').Stroke} Stroke */
@@ -20,7 +20,7 @@ const [
   { OPEN_SERIES, archiveOf },
   { hasPage },
   { LOCALES },
-  { readerFor },
+  { pageReader, readerFor },
   { recordImages },
   { withFeatures },
 ] = await Promise.all(
@@ -206,7 +206,12 @@ async function seriesPictures(slug) {
     }
     const { tint } = entity.visual
     const cards = LOCALES.map((locale) => {
-      const words = wordsOf(entity, readersAt(entity, readers.get(locale)))
+      const words = wordsOf(
+        entity,
+        readerOf(entity, readers.get(locale), (id) =>
+          pageReader(archive, null, { id, locale }),
+        ),
+      )
       const brand = `Zero Spoiler · ${archive.series.name[locale]}`
       return {
         file: recordImages(slug, locale, entity.id).card,

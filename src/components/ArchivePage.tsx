@@ -12,7 +12,7 @@ import { color, font, leading, space, text } from '~/styles/tokens.stylex'
  */
 export interface ArchivePageProps {
   children: ReactNode
-  /** Left out when the listing says its own number, as the fog wall does. */
+  /** Left out when the page has no number to give. */
   count?: string | undefined
   title: string
 }

@@ -96,14 +96,43 @@ export function openUsersOf(users: Eater[], r: Reader): Entity[] {
 }
 
 /** Where a bookmark stands in its own unit: the chapter, or the episode. */
-function positionOf(bookmark: Bookmark, r: Reader): null | number {
-  if (bookmark === null) {
-    return null
-  }
-
+function positionOf(bookmark: NonNullable<Bookmark>, r: Reader): null | number {
   return bookmark.mode === 'chapter' ?
       bookmark.chapter
     : absoluteEpisodeOf(bookmark, r.archive.series)
+}
+
+/**
+ * How many of `starts`, the sagas in the reader's unit in route order, the
+ * reader has reached: those that open by the bookmark. With no bookmark the
+ * album is drawn at the end of the demo (`pageReader`, #1432), which has
+ * reached a saga only once both its last episode and its last chapter have,
+ * as with every record on the page. `null` for a bookmark with no place in
+ * its unit.
+ */
+function sagasReached(
+  bookmark: Bookmark,
+  starts: SagaStart[],
+  r: Reader,
+): null | number {
+  if (bookmark !== null) {
+    const at = positionOf(bookmark, r)
+    return at === null ? null : (
+        starts.filter((start) => start.from <= at).length
+      )
+  }
+
+  const { demoLastChapter, demoLastEpisode } = r.archive.series
+  const chapterFrom = new Map(
+    sagaStarts('chapter', r).map((start) => [start.name, start.from]),
+  )
+  const unreached = starts.findIndex(
+    (start) =>
+      start.from > demoLastEpisode
+      || (chapterFrom.get(start.name) ?? Infinity) > demoLastChapter,
+  )
+
+  return unreached === -1 ? starts.length : unreached
 }
 
 /** A fruit as the marquee draws it, with its strokes or waiting for them. */
@@ -124,17 +153,15 @@ function marqueeFruitOf(
 /**
  * The marquee: the saga the bookmark falls in, and the open fruits whose
  * reveal falls inside it. A fruit is open only up to the bookmark, so the
- * list stops there and its length is the saga so far. `null` with no
- * bookmark, and with no fruit open at all.
+ * list stops there and its length is the saga so far. `null` with no fruit
+ * open at all.
  *
  * The lead, the latest, draws itself in on arrival, so its drawing comes
  * whole; the rest of the rail's come by id as it scrolls.
  */
 function marqueeOf(bookmark: Bookmark, r: Reader): FruitMarqueeView | null {
-  const at = positionOf(bookmark, r)
   const starts = sagaStarts(r.mode === 'chapter' ? 'chapter' : 'episode', r)
-  const group =
-    at === null ? -1 : starts.findLastIndex((start) => start.from <= at)
+  const group = (sagasReached(bookmark, starts, r) ?? 0) - 1
   const saga = starts[group]
   const open = r.order(r.archive.fruits).filter((fruit) => r.sees(fruit))
   const last = open.at(-1)
@@ -155,20 +182,15 @@ function marqueeOf(bookmark: Bookmark, r: Reader): FruitMarqueeView | null {
   }
 }
 
-/** The sagas that open by this point, in route order, each still empty. */
+/** The first `reached` sagas, in route order, each still empty. */
 function reachedOf(
   starts: SagaStart[],
-  at: number,
+  reached: number,
   locale: Locale,
 ): FruitSagaView[] {
-  const sagas: FruitSagaView[] = []
-  for (const saga of starts) {
-    if (saga.from <= at) {
-      sagas.push({ saga: saga.name[locale], open: [], covered: [] })
-    }
-  }
-
-  return sagas
+  return starts
+    .slice(0, reached)
+    .map((saga) => ({ saga: saga.name[locale], open: [], covered: [] }))
 }
 
 /**
@@ -176,20 +198,19 @@ function reachedOf(
  * with the fruits whose reveal falls in it, open by id and covered by handle,
  * in the reader's order. A covered fruit in a saga the bookmark has not
  * reached goes to `later` and nowhere else, so no saga past the bookmark is
- * named or counted. Refs only: the records are the plates' already. Empty
- * with no bookmark, which has the wall and no saga view.
+ * named or counted. Refs only: the records are the plates' already.
  */
 function sagasOf(
   bookmark: Bookmark,
   r: Reader,
 ): Pick<FruitAlbumView, 'later' | 'sagas'> {
-  const at = positionOf(bookmark, r)
-  if (at === null) {
+  const starts = sagaStarts(r.mode === 'chapter' ? 'chapter' : 'episode', r)
+  const reached = sagasReached(bookmark, starts, r)
+  if (reached === null) {
     return { later: [], sagas: [] }
   }
 
-  const starts = sagaStarts(r.mode === 'chapter' ? 'chapter' : 'episode', r)
-  const sagas = reachedOf(starts, at, r.locale)
+  const sagas = reachedOf(starts, reached, r.locale)
   const later: string[] = []
 
   for (const fruit of r.order(r.archive.fruits)) {
@@ -215,8 +236,7 @@ function sagasOf(
  * to the `null` group, which comes last; the rest by size, then by name in
  * the reader's language. Covered fruits and covered eaters are not here at
  * all, so a faction only a covered eater stands in is never named: its label
- * comes with its group and nowhere else. Refs only, like the saga view's;
- * empty with no bookmark.
+ * comes with its group and nowhere else. Refs only, like the saga view's.
  */
 function factionGroupsOf(r: Reader): FruitFactionView[] {
   const groups = new Map<Faction | null, FruitFactionRef[]>()

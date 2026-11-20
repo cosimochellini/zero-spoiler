@@ -23,6 +23,7 @@ import {
   pinTitle,
   save,
   sourceOf,
+  targetOf,
   urlTitle,
 } from './provenance-pin.mjs'
 
@@ -88,29 +89,58 @@ describe('key and URL forms', () => {
   })
 
   it('keys One Piece by title and Hunter x Hunter by title and revision', () => {
-    expect(keyOf('one-piece', 'Lola (Zombie)', 9, {})).toBe(
-      'en-Lola_(Zombie).json',
-    )
-    expect(keyOf('hunter-x-hunter', 'Episode 3 (2011)', 416_001, {})).toBe(
+    expect(keyOf('', 'Lola (Zombie)', 9, {})).toBe('en-Lola_(Zombie).json')
+    expect(keyOf('hxh-', 'Episode 3 (2011)', 416_001, {})).toBe(
       'hxh-en-Episode_3_(2011)-416001.json',
     )
   })
 
-  it('adds the revision to a One Piece key another title holds', () => {
-    expect(keyOf('one-piece', 'Tama', 7, { 'en-Tama.json': {} })).toBe(
-      'en-Tama-7.json',
+  it('pins Game of Thrones from its two fandom wikis, never A Wiki of Ice and Fire', () => {
+    const thrones = {
+      slug: 'game-of-thrones',
+      wiki: {
+        en: 'https://awoiaf.westeros.org/api.php',
+        episodes: 'https://gameofthrones.fandom.com/api.php',
+        it: 'https://it.wikipedia.org/w/api.php',
+      },
+    }
+    const show = targetOf(thrones)
+    const books = targetOf(thrones, 'books')
+
+    expect(show.prefix).toBe('got-')
+    expect(show.wiki.en).toBe('https://gameofthrones.fandom.com/api.php')
+    expect(show.wiki.cache).toMatch(/game-of-thrones[/\\]episodes$/u)
+    expect(targetOf(thrones, 'show')).toStrictEqual(show)
+    expect(books.prefix).toBe('iaf-')
+    expect(books.wiki.en).toBe('https://iceandfire.fandom.com/api.php')
+    expect(books.wiki.cache).toMatch(/game-of-thrones[/\\]books$/u)
+    expect(keyOf(books.prefix, 'Eddard Stark', 26_314, {})).toBe(
+      'iaf-en-Eddard_Stark-26314.json',
     )
+    expect(() => targetOf(thrones, 'awoiaf')).toThrow('show or books')
+    expect(() => targetOf(thrones, 'toString')).toThrow('show or books')
+  })
+
+  it('takes no --wiki for a series with one wiki', () => {
+    const hunter = { slug: 'hunter-x-hunter', wiki: { en: HXH, it: '' } }
+
+    expect(targetOf(hunter)).toMatchObject({
+      prefix: 'hxh-',
+      wiki: { en: HXH },
+    })
+    expect(() => targetOf(hunter, 'books')).toThrow('drop --wiki')
+  })
+
+  it('adds the revision to a One Piece key another title holds', () => {
+    expect(keyOf('', 'Tama', 7, { 'en-Tama.json': {} })).toBe('en-Tama-7.json')
   })
 
   it('refuses a revision key another page already holds', () => {
+    expect(() => keyOf('hxh-', 'Gon', 7, { 'hxh-en-Gon-7.json': {} })).toThrow(
+      'hxh-en-Gon-7.json already pins another page',
+    )
     expect(() =>
-      keyOf('hunter-x-hunter', 'Gon', 7, { 'hxh-en-Gon-7.json': {} }),
-    ).toThrow('hxh-en-Gon-7.json already pins another page')
-    expect(() =>
-      keyOf('one-piece', 'Tama', 7, {
-        'en-Tama.json': {},
-        'en-Tama-7.json': {},
-      }),
+      keyOf('', 'Tama', 7, { 'en-Tama.json': {}, 'en-Tama-7.json': {} }),
     ).toThrow('en-Tama-7.json')
   })
 
@@ -128,19 +158,19 @@ describe('key and URL forms', () => {
       'hxh-en-Gon_Freecss-3.json': gon,
     }
 
-    expect(pinnedTitles(sources, OP, 'one-piece').get('Chapter 433')).toBe(
+    expect(pinnedTitles(sources, OP, '').get('Chapter 433')).toBe(
       'en-Chapter_433.json',
     )
     expect(
       pinnedTitles(
         { 'issue815-en-Chapter_433.json': chapter, 'it-X.json': italian },
         OP,
-        'one-piece',
+        '',
       ).get('Chapter 433'),
     ).toBe('issue815-en-Chapter_433.json')
-    expect(
-      pinnedTitles(sources, HXH, 'hunter-x-hunter').get('Gon Freecss'),
-    ).toBe('hxh-en-Gon_Freecss-2.json')
+    expect(pinnedTitles(sources, HXH, 'hxh-').get('Gon Freecss')).toBe(
+      'hxh-en-Gon_Freecss-2.json',
+    )
   })
 
   it('builds an entry whose hash is over the wikitext', () => {
@@ -187,7 +217,7 @@ describe('pinning a title', () => {
     const fetch = answering({ '&revids=10': page('Gon Freecss', 10) })
 
     const result = await pinTitle('Gon_Freecss', {
-      slug: 'hunter-x-hunter',
+      prefix: 'hxh-',
       wiki: wikiFor(HXH),
       sources,
     })
@@ -200,6 +230,26 @@ describe('pinning a title', () => {
     expect(fetch).toHaveBeenCalledOnce()
   })
 
+  it('pins a book page apart from the show page of the same title', async () => {
+    const GOT = 'https://gameofthrones.fandom.com/api.php'
+    const IAF = 'https://iceandfire.fandom.com/api.php'
+    const sources = {
+      'got-en-Eddard_Stark-5.json': sourceOf(GOT, page('Eddard Stark', 5)),
+    }
+    answering({ '&titles=Eddard%20Stark': page('Eddard Stark', 6) })
+
+    const result = await pinTitle('Eddard Stark', {
+      prefix: 'iaf-',
+      wiki: wikiFor(IAF),
+      sources,
+    })
+
+    expect(result.key).toBe('iaf-en-Eddard_Stark-6.json')
+    expect(result.source?.url).toBe(
+      'https://iceandfire.fandom.com/wiki/Eddard_Stark',
+    )
+  })
+
   it('follows a redirect onto a pinned page', async () => {
     const sources = {
       'en-Monkey_D._Luffy.json': sourceOf(OP, page('Monkey D. Luffy', 3)),
@@ -210,7 +260,7 @@ describe('pinning a title', () => {
     })
 
     const result = await pinTitle('Luffy', {
-      slug: 'one-piece',
+      prefix: '',
       wiki: wikiFor(OP),
       sources,
     })
@@ -226,7 +276,7 @@ describe('pinning a title', () => {
     })
 
     const result = await pinTitle('Episode 3 (2011)', {
-      slug: 'hunter-x-hunter',
+      prefix: 'hxh-',
       wiki: wikiFor(HXH),
       sources,
     })
@@ -241,7 +291,7 @@ describe('pinning a title', () => {
     answering({ '&titles=Nobody': { title: 'Nobody', missing: true } })
 
     await expect(
-      pinTitle('Nobody', { slug: 'one-piece', wiki: wikiFor(OP), sources: {} }),
+      pinTitle('Nobody', { prefix: '', wiki: wikiFor(OP), sources: {} }),
     ).rejects.toThrow('MISSING\tNobody')
   })
 
@@ -257,7 +307,7 @@ describe('pinning a title', () => {
 
     const { sources, failed } = await pinAll(
       ['Den Den Mushi', 'Nobody', 'Den_Den_Mushi'],
-      { slug: 'one-piece', wiki: wikiFor(OP) },
+      { prefix: '', wiki: wikiFor(OP) },
       pinned,
     )
 
