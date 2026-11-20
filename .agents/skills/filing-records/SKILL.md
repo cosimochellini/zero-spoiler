@@ -141,7 +141,7 @@ Done when every finding names the rule it breaks.
 
 A chronicle PR runs this pipeline, in order:
 
-1. **Write** the stories in `src/data/series/<series>/records/<arc>.chronicle.ts`, in the `tone-of-voice` voice, each with its note in `scripts/chronicle-sources*.mjs` (`chronicle-sources.mjs` for One Piece, `chronicle-sources-hxh.mjs` for Hunter x Hunter), and **assemble** them: wiring, tests, `npm run docs:chronicle`.
+1. **Write** the stories in `src/data/series/<series>/records/<arc>.chronicle.ts`, in the `tone-of-voice` voice, each with its note in `scripts/chronicle-sources*.mjs` (`chronicle-sources.mjs` for One Piece, `chronicle-sources-hxh.mjs` for Hunter x Hunter, `chronicle-sources-got.mjs` for Game of Thrones, researched as in [Game of Thrones research](#game-of-thrones-research)), and **assemble** them: wiring, tests, `npm run docs:chronicle`.
 2. **Verify**: one or more `chronicle-verifier` subagents (`.claude/agents/chronicle-verifier.md`), split by cast, each given the pushed branch and its base, the commit SHA, its character ids and the owner's rulings. Its checks and severities live in that file.
 3. **Correct**: apply every finding, or state the reason it stands, and draft an "Independent verifier corrections" section listing each one.
 4. **Open the PR** with that section added to the body (the template lacks it), then run the review rounds of `landing-prs`.
@@ -149,3 +149,17 @@ A chronicle PR runs this pipeline, in order:
 The PR opens only once the corrections are in, because an open PR reads as finished and can merge before them.
 
 Done when the opened PR's body lists every verifier finding with its fix or reason.
+
+## Game of Thrones research
+
+A Game of Thrones record, step or chronicle story is checked against these sources.
+
+- **Book facts**: the Ice and Fire Wiki, through its API: `https://iceandfire.fandom.com/api.php?action=parse&page=<Page>&prop=wikitext&format=json`.
+  - Chapter pages are titled by the POV character and the Roman numeral of that character's chapter (`Eddard I - A Game of Thrones`); a prologue is `Prologue - <Book>`. Their `chapter_number` is the chapter's place in its own book, the prologue first (sometimes as a word, `One`): the site chapter is the book's start plus `chapter_number` minus 1 (`Arya I - A Clash of Kings`, 2, is site 75).
+  - Book 1's chapter pages stop around site chapter 33, and the later books' coverage varies, so ask for the title and read what comes back. Where no chapter page exists, read the character pages and the episode page's list of the chapters it adapts.
+- **Show facts**: the Game of Thrones Wiki, through the same API on `gameofthrones.fandom.com`. A citation `{{Ref|GOT105}}` is season 1, episode 5. Each episode page lists the book chapters it adapts.
+- **A Wiki of Ice and Fire** refuses scripted requests: read the two wikis above, and never retry or route around the block with proxies or archive mirrors. Its pages are titled `A_Game_of_Thrones-Chapter_N`. The owner allows one exception: the Firecrawl tool, when the session has it, may read a page for a fact neither wiki holds. Its daily credits run out quickly; when it fails, the pin goes on the unverified list.
+- **Site chapter numbers**: every book's prologue counts, and books 1 to 5 start at site chapters 1, 74, 144, 226 and 272. A Wiki of Ice and Fire's "Chapter N" of a book is that book's start plus N: site N+1 in book 1, site 74+N in book 2. An epilogue is its book's last site chapter (`last` in `src/lib/progress/series.ts`).
+- **Unconfirmed pins**: a pin no source confirms takes the safe later chapter, and goes under `unverified` in `docs/content-provenance/game-of-thrones.json` and in the PR body.
+
+Done when every Game of Thrones pin cites the page that confirms it, or is on the unverified list.

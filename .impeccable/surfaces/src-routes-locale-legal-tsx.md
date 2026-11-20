@@ -21,6 +21,8 @@ contact, privacy and cookies, sources and licenses.
   one link to the legal page (owner decision; `LegalPage.tsx`,
   `SiteFooter.tsx`).
 - An accent link keeps its underline (`src/styles/themes.test.tsx`).
+- Every section and part has an id the list under the title links to
+  (`SECTIONS` in `LegalPage.tsx`); `/<locale>/privacy` lands on `#privacy`.
 
-**Open points:** the page's measure is 76ch, over the 52 to 66ch rule
-(`LegalNotice.styles.ts`).
+**Measure:** paragraphs and list items are capped at 48ch, about 67 characters a
+line (`LegalNotice.styles.ts`). The list under the title uses the full column.

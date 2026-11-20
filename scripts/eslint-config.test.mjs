@@ -45,11 +45,16 @@ async function lint(source, filePath) {
   return { formatted, messages: result.messages }
 }
 
-// The first typed lint initializes the project's TypeScript service. Keep the
-// cases sequential and allow that startup time even under a full coverage run.
+// The first typed lint builds the project's TypeScript service, which in CI
+// falls on the "production filler helpers" case. It ran out of its old 30 s
+// limit there (#1401). CI runs this file several times slower than a quiet
+// machine (11 s), because the rest of the suite shares its CPUs. The cases run
+// in order on one shared ESLint instance, so one pays for the build and most
+// reuse it. Each case gets 120 s, more than the whole file took in the
+// slowest CI run (97 s).
 describe(
   'the ESLint configuration',
-  { timeout: 30_000, sequential: true },
+  { timeout: 120_000, sequential: true },
   () => {
     it('accepts an object-returning map after Prettier wraps it', async () => {
       const { formatted, messages } = await lint(

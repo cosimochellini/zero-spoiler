@@ -167,8 +167,9 @@ const RECORDS: {
   { id: 'jafer-flowers', episode: 8, chapter: 53 },
   { id: 'donal-noye', episode: 3, chapter: 20, source: 'chapter' },
   { id: 'chett', episode: 5, chapter: 42, source: 'chapter' },
-  // Daenerys's storyline in Essos (#1008).
-  { id: 'qotho', episode: 6, chapter: 62 },
+  // Daenerys's storyline in Essos (#1008); Qotho's book gate moved to the
+  // wedding in Daenerys II (#1355).
+  { id: 'qotho', episode: 6, chapter: 12 },
   { id: 'cohollo', episode: 4, chapter: 37, source: 'chapter' },
   { id: 'haggo', episode: 8, chapter: 62, source: 'chapter' },
   { id: 'jhiqui', episode: 2, chapter: 12 },
@@ -918,9 +919,10 @@ const STEPS: {
     id: 'harwin',
     source: 'chapter',
   },
+  // Eddard XI, not the Hand's guard, which Fat Tom commands (#1355).
   {
-    chapter: 46,
-    en: 'Captain of the Hand’s guard',
+    chapter: 44,
+    en: 'Leader of twenty of Eddard’s men',
     episode: 6,
     id: 'alyn',
     source: 'chapter',
@@ -1176,6 +1178,39 @@ describe('the steps one medium alone tells', () => {
       expect(page).not.toContain(JSON.stringify(en))
     },
   )
+})
+
+/**
+ * The frozen logs #1355 corrected, by their English text: each holds at its
+ * record's gate in every unit that tells the record.
+ */
+const LOGS: { en: string; id: string }[] = [
+  {
+    id: 'robin-arryn',
+    en: 'He is Lysa’s only son and the young lord of the Eyrie. His mother rules the Vale in his name.',
+  },
+  {
+    id: 'haggo',
+    en: 'He is one of Khal Drogo’s bloodriders, the warriors who ride at his side. Mago comes to him to complain when the khaleesi takes a captive from Mago.',
+  },
+  {
+    id: 'eroeh',
+    en: 'Daenerys takes her from Mago during the attack on her town. When the khalasar breaks apart, Mago seizes her again, rapes her and gives her to his new khal, whose bloodriders kill her.',
+  },
+]
+
+describe.each(
+  LOGS.flatMap((log) =>
+    GATES.filter(({ id, locale }) => id === log.id && locale === 'en').map(
+      ({ gate, unit }) => ({ ...log, gate, unit }),
+    ),
+  ),
+)('$id’s log by $unit', ({ en, gate, id, unit }) => {
+  it('says what its gate tells', () => {
+    const page = JSON.stringify(characterPage(id, reader(unit, gate)))
+
+    expect(page).toContain(JSON.stringify(en))
+  })
 })
 
 describe('the season’s leads', () => {

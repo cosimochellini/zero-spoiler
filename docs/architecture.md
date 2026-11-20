@@ -287,7 +287,7 @@ optional, and an arcless series prints no arc row. Darry and six of #1252's
 places are the book's alone, and the Kingswood the show's. The demo shows the
 places the first ten episodes reach, and covers in its tail the four the show
 first visits in later seasons. Its chronicles cover the Essos cast of the first
-stage (#1360), 88 stories for 18 characters, and the Night's Watch cast (#1363),
+stage (#1360), 89 stories for 18 characters, and the Night's Watch cast (#1363),
 83 stories for 22, in `records/season-1.chronicle.ts`: a story both media tell
 the same way holds at an episode and a chapter, and one only a single medium
 tells, or tells its own way, carries `source`, so it never reaches a reader of
@@ -464,6 +464,6 @@ checks this block.
 | Places            | 60                                                      |
 | Saga modules      | 1                                                       |
 | Line drawings     | 208, one per record, plus 155 redrawings of 114 records |
-| Chronicle stories | 171, for 40 characters                                  |
+| Chronicle stories | 172, for 40 characters                                  |
 
 <!-- End of the generated counts. -->

@@ -36,11 +36,12 @@ function inBooks(
 /**
  * Season 1 and *A Game of Thrones*: the stories of the Essos cast (#1360),
  * each filed at the first episode and the first site chapter by whose end the
- * reader knows all of it. The show and the books part over who wounds Drogo,
- * who breaks Viserys’s arm and whose whip brings him down, so most stories
- * come in two versions, one per medium. A book-only story sits at the episode
- * that adapts its chapter, or later when a story links a character the show
- * meets later; Aggo’s are all at episode 11, the show’s gate for him.
+ * reader knows all of it. The show and the books part over who wounds Drogo
+ * and whose whip brings him down, and the wikis read do not name the book’s
+ * bloodrider who breaks Viserys’s arm, so most stories come in two versions,
+ * one per medium. A book-only story sits at the episode that adapts its
+ * chapter, or later when a story links a character the show meets later;
+ * Aggo’s are all at episode 11, the show’s gate for him.
  * Jaqen H’ghar, Rorge and Biter open at episode 12 and chapter 79, past the
  * stage, and have no chronicle yet.
  */
@@ -590,6 +591,14 @@ export const season1Chronicles = {
     ),
   ],
   'qotho': [
+    inBooks(
+      [6, 12],
+      { it: 'L’arma d’osso di drago', en: 'The dragonbone bow' },
+      {
+        it: 'Qotho è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]]. Alle nozze di Drogo con [[daenerys-targaryen|Daenerys]], fuori dalle mura di Pentos, i cavalieri di sangue siedono appena sotto il khal e la sposa, e il fratello di lei, [[viserys-targaryen|Viserys]], siede più in basso, cosa che lo fa infuriare. Ogni cavaliere di sangue dona alla sposa un’arma, e il dono di Qotho è un’arma da tiro a doppia curva in osso di drago, più alta di lei. Lei rifiuta i doni, come vuole l’usanza, e passano a Drogo.',
+        en: 'Qotho is one of [[drogo|Khal Drogo]]’s three bloodriders. At Drogo’s wedding to [[daenerys-targaryen|Daenerys]] outside the walls of Pentos, the bloodriders sit just below the khal and his bride, and her brother [[viserys-targaryen|Viserys]] sits below them, which angers him. Each bloodrider gives the bride a weapon, and Qotho’s gift is a double-curved dragonbone bow taller than she is. She refuses the gifts, as custom requires, and they go to Drogo.',
+      },
+    ),
     onScreen(
       [6, 62],
       { it: 'Il braccio spezzato', en: 'The broken arm' },
@@ -649,8 +658,8 @@ export const season1Chronicles = {
       [8, 62],
       { it: 'Il lamento di Mago', en: 'Mago’s complaint' },
       {
-        it: 'Haggo è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]], un uomo alto, ed è stato lui a spezzare il braccio a [[viserys-targaryen|Viserys]]. Dopo il sacco di una città lhazareen diffida della sacerdotessa [[mirri-maz-duur|Mirri Maz Duur]], che cura le ferite del khal. È a lui che [[mago|Mago]] si lamenta quando la khaleesi toglie a Mago una prigioniera, e Drogo manda a dire a Mago di trovarsene un’altra.',
-        en: 'Haggo is one of [[drogo|Khal Drogo]]’s three bloodriders, a tall man, and the one who broke [[viserys-targaryen|Viserys]]’s arm. After the sack of a Lhazareen town he distrusts the godswife [[mirri-maz-duur|Mirri Maz Duur]], who treats the khal’s wounds. When [[mago|Mago]] complains to him that the khaleesi took a captive, Drogo sends word that Mago should find another.',
+        it: 'Haggo è uno dei tre cavalieri di sangue di [[drogo|khal Drogo]], un uomo alto. Dopo il sacco di una città lhazareen diffida della sacerdotessa [[mirri-maz-duur|Mirri Maz Duur]], che cura le ferite del khal. È a lui che [[mago|Mago]] si lamenta quando la khaleesi toglie a Mago una prigioniera, e Drogo manda a dire a Mago di trovarsene un’altra.',
+        en: 'Haggo is one of [[drogo|Khal Drogo]]’s three bloodriders, a tall man. After the sack of a Lhazareen town he distrusts the godswife [[mirri-maz-duur|Mirri Maz Duur]], who treats the khal’s wounds. When [[mago|Mago]] complains to him that the khaleesi took a captive, Drogo sends word that Mago should find another.',
       },
     ),
     inBooks(
@@ -808,7 +817,7 @@ export const season1Chronicles = {
       [1, 2],
       { it: 'Il disertore e i cuccioli', en: 'The deserter and the pups' },
       {
-        it: 'Jon, il figlio bastardo di lord [[eddard-stark|Eddard Stark]], cavalca con il padre, i fratelli [[robb-stark|Robb]] e [[bran-stark|Bran]] e il pupillo [[theon-greyjoy|Theon Greyjoy]] per assistere alla decapitazione di un disertore dei Guardiani della notte. Jon dice a Bran di non distogliere lo sguardo. Quando Theon allontana la testa con un calcio, Jon gli dà dell’idiota sottovoce. Sulla via del ritorno Jon e Robb trovano una meta-lupa morta con i suoi cuccioli. Jon fa notare che sono cinque, uno per ciascuno dei figli legittimi di Eddard, e il padre li risparmia. Poi Jon trova un sesto cucciolo, albino e con gli occhi rossi, e lo tiene per sé.',
+        it: 'Jon, il figlio bastardo di lord [[eddard-stark|Eddard Stark]], cavalca con il padre, i fratelli [[robb-stark|Robb]] e [[bran-stark|Bran]] e il pupillo [[theon-greyjoy|Theon Greyjoy]] per assistere alla decapitazione di un disertore dei Guardiani della notte. Jon dice a Bran di non distogliere lo sguardo. Quando Theon allontana la testa con un calcio, Jon dà dell’idiota a Theon sottovoce. Sulla via del ritorno Jon e Robb trovano una meta-lupa morta con i suoi cuccioli. Jon fa notare che sono cinque, uno per ciascuno dei figli legittimi di Eddard, e il padre li risparmia. Poi Jon trova un sesto cucciolo, albino e con gli occhi rossi, e lo tiene per sé.',
         en: 'Jon, the bastard son of Lord [[eddard-stark|Eddard Stark]], rides out with his father, his brothers [[robb-stark|Robb]] and [[bran-stark|Bran]] and the ward [[theon-greyjoy|Theon Greyjoy]] to see a deserter of the Night’s Watch beheaded. Jon tells Bran not to look away. When Theon kicks the head aside, Jon calls him an ass under his breath. On the way back Jon and Robb find a dead direwolf and her pups. There are five, Jon points out, one for each of Eddard’s trueborn children, and his father spares them. Then Jon finds a sixth pup, an albino with red eyes, and keeps it.',
       },
     ),
@@ -848,7 +857,7 @@ export const season1Chronicles = {
       [3, 20],
       { it: 'La lezione dell’armaiolo', en: 'The armorer’s lesson' },
       {
-        it: 'A Castello Nero Jon batte facilmente [[grenn|Grenn]] nel cortile, e ser [[alliser-thorne|Alliser Thorne]] lo deride lo stesso. Lo zio [[benjen-stark|Benjen]] è partito in perlustrazione senza di lui. Nell’armeria Grenn, Todder e i due stupratori arrivati al nord con Jon lo affrontano, e Jon tiene Todder a terra per la gola. L’armaiolo [[donal-noye|Donal Noye]] li separa e spiega a Jon che ha avuto un maestro d’armi per tutta la vita, mentre gli altri no. Jon capisce di averli umiliati. Il lord comandante [[jeor-mormont|Mormont]] gli comunica che [[bran-stark|Bran]] si è svegliato, e Jon si offre di aiutare Grenn a migliorare. Una battuta su ser Alliser fa del maestro d’armi un suo nemico.',
+        it: 'A Castello Nero Jon batte facilmente [[grenn|Grenn]] nel cortile, e ser [[alliser-thorne|Alliser Thorne]] lo deride lo stesso. Lo zio [[benjen-stark|Benjen]] è partito in perlustrazione senza di lui. Nell’armeria Grenn, Todder e i due stupratori arrivati al nord con Jon lo affrontano, e Jon tiene Todder a terra per la gola. L’armaiolo [[donal-noye|Donal Noye]] li separa e spiega a Jon che Jon ha avuto un maestro d’armi per tutta la vita, mentre gli altri no. Jon capisce di averli umiliati. Il lord comandante [[jeor-mormont|Mormont]] comunica a Jon che [[bran-stark|Bran]] si è svegliato, e Jon si offre di aiutare Grenn a migliorare. Una battuta su ser Alliser fa del maestro d’armi un suo nemico.',
         en: 'At Castle Black, Jon easily beats [[grenn|Grenn]] in the yard, and Ser [[alliser-thorne|Alliser Thorne]] still mocks him. His uncle [[benjen-stark|Benjen]] has left on a ranging without him. In the armory Grenn, Todder and the two rapers who rode north with Jon confront him, and Jon pins Todder down by the throat. The armorer [[donal-noye|Donal Noye]] breaks it up and tells Jon that he has had a master-at-arms all his life and the others never did. Jon sees that he has been shaming them. Lord Commander [[jeor-mormont|Mormont]] tells him that [[bran-stark|Bran]] has woken, and Jon offers to help Grenn improve. A joke at Ser Alliser’s expense makes the master-at-arms his enemy.',
       },
     ),
@@ -856,7 +865,7 @@ export const season1Chronicles = {
       [4, 27],
       { it: 'Il protettore di Sam', en: 'Sam’s protector' },
       {
-        it: 'Una nuova recluta, [[samwell-tarly|Samwell Tarly]], arriva a Castello Nero: è grasso e non sa combattere. Ser [[alliser-thorne|Alliser Thorne]] gli aizza contro gli altri, e Jon si mette in mezzo. Sam ammette di essere un codardo. Racconta a Jon che il padre di Sam lo ha costretto a prendere il nero, minacciando di farlo morire in un incidente di caccia se avesse rifiutato. Jon convince le reclute ad andarci piano con Sam. Solo [[rast|Rast]] rifiuta, finché Jon, [[grenn|Grenn]] e [[pypar|Pyp]] non vanno da lui di notte con [[ghost-direwolf|Spettro]].',
+        it: 'Una nuova recluta, [[samwell-tarly|Samwell Tarly]], arriva a Castello Nero: è grasso e non sa combattere. Ser [[alliser-thorne|Alliser Thorne]] aizza contro Sam gli altri, e Jon si mette in mezzo. Sam ammette di essere un codardo. Sam racconta a Jon che suo padre lo ha costretto a prendere il nero, minacciando di farlo morire in un incidente di caccia se avesse rifiutato. Jon convince le reclute ad andarci piano con Sam. Solo [[rast|Rast]] rifiuta, finché Jon, [[grenn|Grenn]] e [[pypar|Pyp]] non vanno da lui di notte con [[ghost-direwolf|Spettro]].',
         en: 'A new recruit, [[samwell-tarly|Samwell Tarly]], arrives at Castle Black, fat and unable to fight. Ser [[alliser-thorne|Alliser Thorne]] sets the others on him, and Jon puts himself in their way. Sam admits that he is a coward. He tells Jon that Sam’s own father made him take the black, threatening to have him killed in a hunting accident if he refused. Jon persuades the recruits to go easy on Sam. Only [[rast|Rast]] refuses, until Jon, [[grenn|Grenn]] and [[pypar|Pyp]] visit him at night with [[ghost-direwolf|Ghost]].',
       },
     ),
@@ -886,7 +895,7 @@ export const season1Chronicles = {
         en: 'Fire in the Lord Commander’s rooms',
       },
       {
-        it: 'Il gruppo riporta da oltre la Barriera i corpi di [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]], due ranger di [[benjen-stark|Benjen]]. Alcuni confratelli vogliono bruciarli, ma il lord comandante [[jeor-mormont|Mormont]] vuole che li esamini maestro [[aemon|Aemon]]. Mormont comunica a Jon che il padre di Jon, [[eddard-stark|Eddard Stark]], è stato arrestato per tradimento, e lo avverte di non fare sciocchezze. Quando ser [[alliser-thorne|Alliser Thorne]] lo chiama bastardo di un traditore, Jon gli si scaglia contro con un coltello, e gli amici di Jon lo trattengono. Quella notte [[ghost-direwolf|Spettro]] sveglia Jon, che nelle stanze del lord comandante trova il cadavere di Othor rianimato. Jon lo distrugge con il fuoco.',
+        it: 'Il gruppo riporta da oltre la Barriera i corpi di [[othor|Othor]] e [[jafer-flowers|Jafer Flowers]], due ranger di [[benjen-stark|Benjen]]. Alcuni confratelli vogliono bruciarli, ma il lord comandante [[jeor-mormont|Mormont]] vuole che li esamini maestro [[aemon|Aemon]]. Mormont comunica a Jon che il padre di Jon, [[eddard-stark|Eddard Stark]], è stato arrestato per tradimento, e lo avverte di non fare sciocchezze. Quando ser [[alliser-thorne|Alliser Thorne]] chiama Jon bastardo di un traditore, Jon gli si scaglia contro con un coltello, e gli amici di Jon lo trattengono. Quella notte [[ghost-direwolf|Spettro]] sveglia Jon, che nelle stanze del lord comandante trova il cadavere di Othor rianimato. Jon lo distrugge con il fuoco.',
         en: 'The party brings back from beyond the Wall the bodies of [[othor|Othor]] and [[jafer-flowers|Jafer Flowers]], two of [[benjen-stark|Benjen]]’s rangers. Some of the brothers want them burned, but Lord Commander [[jeor-mormont|Mormont]] wants Maester [[aemon|Aemon]] to examine them. Mormont tells Jon that Jon’s father, [[eddard-stark|Eddard Stark]], has been arrested for treason, and warns him not to do anything stupid. When Ser [[alliser-thorne|Alliser Thorne]] calls him a traitor’s bastard, Jon goes for him with a knife, and his friends hold him back. That night [[ghost-direwolf|Ghost]] wakes Jon, who finds Othor’s corpse risen in the Lord Commander’s rooms. Jon destroys it with fire.',
       },
     ),
@@ -936,7 +945,7 @@ export const season1Chronicles = {
       [7, 49],
       { it: 'Il nuovo attendente', en: 'A new steward' },
       {
-        it: 'Jeor Mormont accoglie nei Guardiani della notte il gruppo di reclute di [[jon-snow|Jon Snow]] e assegna gli incarichi. Jon, il migliore combattente del gruppo, spera di diventare ranger, ma Jeor lo destina agli attendenti, come suo attendente personale. Jon la prende come un affronto. L’amico [[samwell-tarly|Samwell Tarly]] gli fa notare che forse Jeor vuole prepararlo al comando, e Jon e Sam pronunciano il giuramento davanti a un albero del cuore oltre la Barriera.',
+        it: 'Jeor Mormont accoglie nei Guardiani della notte il gruppo di reclute di [[jon-snow|Jon Snow]] e assegna gli incarichi. Jon, il migliore combattente del gruppo, spera di diventare ranger, ma Jeor lo destina agli attendenti, come suo attendente personale. Jon la prende come un affronto. L’amico [[samwell-tarly|Samwell Tarly]] fa notare a Jon che forse Jeor vuole prepararlo al comando, e Jon e Sam pronunciano il giuramento davanti a un albero del cuore oltre la Barriera.',
         en: 'Jeor Mormont takes the group of recruits of [[jon-snow|Jon Snow]] into the Night’s Watch and hands out their posts. Jon, the best fighter of the group, hopes for the rangers, but Jeor has him sent to the stewards, to serve as the Lord Commander’s own steward. Jon takes it as a slight. His friend [[samwell-tarly|Samwell Tarly]] tells him that Jeor may mean to groom him for command, and Jon and Sam swear their vows before a heart tree beyond the Wall.',
       },
     ),
@@ -1154,7 +1163,7 @@ export const season1Chronicles = {
       [1, 1],
       { it: 'Dall’alto dell’albero', en: 'From the sentinel tree' },
       {
-        it: 'Will è un ranger dei Guardiani della notte in ricognizione oltre la Barriera con [[gared|Gared]], agli ordini del giovane ser [[waymar-royce|Waymar Royce]]. Riferisce che i bruti a cui danno la caccia giacciono morti nel loro accampamento, senza traccia di sangue. Quando riporta Waymar sul posto, i corpi sono spariti, e Waymar lo manda in cima a un albero. Da lassù Will vede gli Estranei abbattere Waymar. Quando scende a raccogliere la spada spezzata del cavaliere, Waymar si rialza, con l’occhio azzurro, e gli stringe le mani intorno alla gola.',
+        it: 'Will è un ranger dei Guardiani della notte in ricognizione oltre la Barriera con [[gared|Gared]], agli ordini del giovane ser [[waymar-royce|Waymar Royce]]. Riferisce che i bruti a cui danno la caccia giacciono morti nel loro accampamento, senza traccia di sangue. Quando riporta Waymar sul posto, i corpi sono spariti, e Waymar lo manda in cima a un albero. Da lassù Will vede gli Estranei abbattere Waymar. Quando scende a raccogliere la spada spezzata del cavaliere, Waymar si rialza, con l’occhio azzurro, e stringe le mani intorno alla gola di Will.',
         en: 'Will is a ranger of the Night’s Watch, scouting beyond the Wall with [[gared|Gared]] under the command of young Ser [[waymar-royce|Waymar Royce]]. He reports that the wildlings they have been tracking lie dead in their camp, with no blood on them. When he leads Waymar back, the bodies are gone, and Waymar sends him up a tree. From there Will watches the Others cut Waymar down. When he climbs down to take the knight’s broken sword, Waymar rises, his eye now blue, and closes his hands around Will’s throat.',
       },
     ),
@@ -1446,7 +1455,7 @@ export const season1Chronicles = {
       [8, 61],
       { it: 'Il pugnale del cavaliere', en: 'The knight’s own dagger' },
       {
-        it: 'Nella notte i due ranger morti si rianimano a Castello Nero. Mentre [[jon-snow|Jon Snow]] brucia il cadavere di [[othor|Othor]] nelle stanze del lord comandante, il cadavere di [[jafer-flowers|Jafer Flowers]] uccide quattro uomini. Ser Jaremy gli taglia la testa, ma il corpo decapitato estrae il pugnale di Jaremy dal fodero e glielo pianta nel ventre. Jaremy muore, e il cadavere viene fatto a pezzi.',
+        it: 'Nella notte i due ranger morti si rianimano a Castello Nero. Mentre [[jon-snow|Jon Snow]] brucia il cadavere di [[othor|Othor]] nelle stanze del lord comandante, il cadavere di [[jafer-flowers|Jafer Flowers]] uccide quattro uomini. Ser Jaremy gli taglia la testa, ma il corpo decapitato estrae il pugnale di Jaremy dal fodero e lo pianta nel ventre del cavaliere. Jaremy muore, e il cadavere viene fatto a pezzi.',
         en: 'In the night the two dead rangers rise at Castle Black. While [[jon-snow|Jon Snow]] burns the corpse of [[othor|Othor]] in the Lord Commander’s rooms, the corpse of [[jafer-flowers|Jafer Flowers]] kills four men. Ser Jaremy hacks off its head, but the headless body pulls the dagger of Jaremy from its sheath and buries it in his bowels. Jaremy dies, and the corpse is hacked to pieces.',
       },
     ),
@@ -1474,8 +1483,8 @@ export const season1Chronicles = {
       [8, 53],
       { it: 'La mano nel bosco', en: 'The hand in the woods' },
       {
-        it: 'Jafer Flowers è un ranger del gruppo che [[benjen-stark|Benjen Stark]] ha guidato oltre la Barriera e che non è più tornato. Dopo il giuramento dei nuovi confratelli, [[ghost-direwolf|Spettro]] trova nella Foresta Stregata la mano mozzata di Jafer. Il corpo di Jafer viene trovato oltre la Barriera con quello di [[othor|Othor]], e il gruppo di [[othell-yarwyck|Othell Yarwyck]] li riporta entrambi a Castello Nero. Il lord comandante [[jeor-mormont|Jeor Mormont]] vuole che li esamini maestro [[aemon|Aemon]]. Quella notte i cadaveri si rianimano. Mentre Othor attacca Jeor, Jafer semina il caos altrove, finché non viene abbattuto e bruciato.',
-        en: 'Jafer Flowers is a ranger of the party that [[benjen-stark|Benjen Stark]] led beyond the Wall, which has not come back. After the new brothers swear their vows, [[ghost-direwolf|Ghost]] finds the severed hand of Jafer in the Haunted Forest. The body of Jafer is found beyond the Wall with that of [[othor|Othor]], and the party of [[othell-yarwyck|Othell Yarwyck]] brings both back to Castle Black. Lord Commander [[jeor-mormont|Jeor Mormont]] wants Maester [[aemon|Aemon]] to examine them. That night the corpses rise. While Othor attacks Jeor, Jafer causes trouble elsewhere until he is put down and burned.',
+        it: 'Jafer Flowers era un ranger del gruppo che [[benjen-stark|Benjen Stark]] ha guidato oltre la Barriera e che non è più tornato. Dopo il giuramento dei nuovi confratelli, [[ghost-direwolf|Spettro]] trova nella Foresta Stregata la mano mozzata di Jafer. Il corpo di Jafer viene trovato oltre la Barriera con quello di [[othor|Othor]], e il gruppo di [[othell-yarwyck|Othell Yarwyck]] li riporta entrambi a Castello Nero. Il lord comandante [[jeor-mormont|Jeor Mormont]] vuole che li esamini maestro [[aemon|Aemon]]. Quella notte i cadaveri si rianimano. Mentre Othor attacca Jeor, Jafer semina il caos altrove, finché non viene abbattuto e bruciato.',
+        en: 'Jafer Flowers was a ranger of the party that [[benjen-stark|Benjen Stark]] led beyond the Wall, which has not come back. After the new brothers swear their vows, [[ghost-direwolf|Ghost]] finds the severed hand of Jafer in the Haunted Forest. The body of Jafer is found beyond the Wall with that of [[othor|Othor]], and the party of [[othell-yarwyck|Othell Yarwyck]] brings both back to Castle Black. Lord Commander [[jeor-mormont|Jeor Mormont]] wants Maester [[aemon|Aemon]] to examine them. That night the corpses rise. While Othor attacks Jeor, Jafer causes trouble elsewhere until he is put down and burned.',
       },
     ),
     inBooks(

@@ -486,6 +486,13 @@ const STORIES: Row[] = [
   },
   {
     id: 'qotho',
+    medium: 'books',
+    episode: 6,
+    chapter: 12,
+    title: 'The dragonbone bow',
+  },
+  {
+    id: 'qotho',
     medium: 'show',
     episode: 6,
     chapter: 62,
@@ -1218,7 +1225,7 @@ const FIRST: { chapter: number; episode: number; id: string }[] = [
   { id: 'rakharo', episode: 3, chapter: 24 },
   { id: 'jhogo', episode: 3, chapter: 24 },
   { id: 'cohollo', episode: 4, chapter: 37 },
-  { id: 'qotho', episode: 6, chapter: 62 },
+  { id: 'qotho', episode: 6, chapter: 12 },
   { id: 'mirri-maz-duur', episode: 8, chapter: 62 },
   { id: 'haggo', episode: 8, chapter: 62 },
   { id: 'quaro', episode: 8, chapter: 62 },

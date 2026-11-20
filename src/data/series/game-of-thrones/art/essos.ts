@@ -270,8 +270,8 @@ const KHAS_ARAKH: Stroke[] = [
 
 /**
  * Qotho: his arakh driven point down into the grass, for the bloodrider
- * who favours it, at Drogo's side from episode 6 and Daenerys VII
- * (chapter 62). The accent is the grip.
+ * who favours it, at Drogo's side from episode 6 and Daenerys II
+ * (chapter 12). The accent is the grip.
  */
 const PLANTED_ARAKH: Stroke[] = [
   ...KHAS_ARAKH,

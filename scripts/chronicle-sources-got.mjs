@@ -129,7 +129,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '6:47': {
       source: EPISODE_6,
-      note: `Corrected after review: the egg theft is dropped, as no book source places it. The synopsis has the drawn sword in the sacred city, the threat, “a golden crown that men will tremble to behold”, the broken arm and the molten gold. Book: the Ice and Fire Wiki’s Cohollo page has the bloodriders seizing him, Haggo’s record log the broken arm; the episode adapts Daenerys V. ${PAST_CHAPTER_PAGES}`,
+      note: `Corrected after review: the egg theft is dropped, as no book source places it. The synopsis has the drawn sword in the sacred city, the threat, “a golden crown that men will tremble to behold”, the broken arm and the molten gold. Book: the Ice and Fire Wiki’s Cohollo page has the bloodriders seizing him; which of them breaks the arm is not on the pages read (#1355). The episode adapts Daenerys V. ${PAST_CHAPTER_PAGES}`,
     },
   },
   'drogo': {
@@ -327,9 +327,13 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'qotho': {
+    '6:12': {
+      source: DANY_II,
+      note: 'The synopsis names the bloodriders Cohollo, Haggo and Qotho below the khal at the wedding, Viserys on the level beneath them and upset by it, the bloodriders’ gifts of a whip, an arakh and a double-curved dragonbone bow, refused as custom requires and given to Drogo. The Ice and Fire Wiki’s Qotho page gives him the bow, taller than she is. Books only: the show names him at episode 6 (#1355).',
+    },
     '6:62': {
       source: EPISODE_6,
-      note: 'The synopsis has Qotho seizing Viserys, breaking his arm so he drops the sword, and Drogo pouring the gold. Show only: the books name him at site chapter 62, after Viserys is dead.',
+      note: 'The synopsis has Qotho seizing Viserys, breaking his arm so he drops the sword, and Drogo pouring the gold. Show only: the wikis read do not say which bloodrider breaks the arm in the books.',
     },
     '8:62': {
       source: `${SHOW}Qotho`,
@@ -357,7 +361,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'haggo': {
     '8:62': {
       source: `${BOOKS}Haggo`,
-      note: `A tall bloodrider; the broken arm is his record log, the distrust of Mirri the relationship pin at 8/62. Corrected after review: Mago complains to him, and the offer to carry Drogo is dropped, as it may belong to the fall at site chapter 65. ${PAST_CHAPTER_PAGES}`,
+      note: `A tall bloodrider; the distrust of Mirri is the relationship pin at 8/62. Corrected for #1355: the broken arm is dropped, as no page read gives it to him. Corrected after review: Mago complains to him, and the offer to carry Drogo is dropped, as it may belong to the fall at site chapter 65. ${PAST_CHAPTER_PAGES}`,
     },
     '9:65': {
       source: `${SHOW}Haggo`,
