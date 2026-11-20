@@ -17,7 +17,7 @@ import {
   SCALE,
   workOf,
 } from './og-pictures.mjs'
-import { agreed } from './og-words.mjs'
+import { pagedRecords } from './og-words.mjs'
 
 const PALETTE = { paper: '#000', ink: '#fff', muted: '#888', accent: '#ff0' }
 
@@ -25,16 +25,51 @@ const PALETTE = { paper: '#000', ink: '#fff', muted: '#888', accent: '#ff0' }
 const loaded = { pictures: [] }
 
 /**
+ * One drawn picture.
+ * @param {string} file Its path.
+ * @returns {Awaited<ReturnType<typeof picturesOf>>[number]} The picture.
+ */
+function pictureOf(file) {
+  const picture = loaded.pictures.find((candidate) => candidate.file === file)
+  if (picture === undefined) {
+    throw new Error(`no picture ${file}`)
+  }
+  return picture
+}
+
+/**
  * What a card prints under the name, or nothing.
  * @param {string} file The card's path.
  * @returns {string | undefined} The line.
  */
 function lineOf(file) {
-  const picture = loaded.pictures.find((candidate) => candidate.file === file)
-  if (picture === undefined) {
-    throw new Error(`no picture ${file}`)
-  }
-  return /<p class="line">(?<line>[^<]*)<\/p>/u.exec(picture.html)?.groups?.line
+  const line = /<p class="line">(?<line>[^<]*)<\/p>/u.exec(pictureOf(file).html)
+    ?.groups?.line
+  return line === undefined ? undefined : unescaped(line)
+}
+
+/**
+ * The name a card prints.
+ * @param {string} file The card's path.
+ * @returns {string | undefined} The name.
+ */
+function nameOf(file) {
+  const name = /<h1 class="name">(?<name>[^<]*)<\/h1>/u.exec(
+    pictureOf(file).html,
+  )?.groups?.name
+  return name === undefined ? undefined : unescaped(name)
+}
+
+/** The characters a card page escapes, by their entity (`cardHtml`). */
+const ENTITIES = { '&amp;': '&', '&gt;': '>', '&lt;': '<', '&quot;': '"' }
+
+/**
+ * Text a card page printed, as it was before it was escaped.
+ * @param {string} html The escaped text.
+ * @returns {string} The text.
+ */
+function unescaped(html) {
+  return html.replaceAll(/&(?:amp|gt|lt|quot);/gu, (entity) => ENTITIES[entity])
 }
 
 // The first `picturesOf` imports every series' archive through the one Vite
@@ -108,12 +143,159 @@ describe('what a card prints under the name', () => {
       'Village · East Blue',
     )
   })
+})
 
-  it('is only what every source agrees on at the threshold', () => {
-    expect(agreed(['Captain', 'Captain'])).toBe('Captain')
-    expect(agreed(['Captain', 'Admiral'])).toBeUndefined()
-    expect(agreed(['Captain', undefined])).toBeUndefined()
-    expect(agreed([undefined])).toBeUndefined()
+/** The page payload that draws a record of each kind. */
+const LOADERS = {
+  ability: 'loadAbility',
+  character: 'loadCharacter',
+  fruit: 'loadFruit',
+  place: 'loadPlace',
+  ship: 'loadPlace',
+}
+
+/**
+ * Every card of a record the anime names otherwise (`Entity.episodeName`), in
+ * every open series and locale, beside the head of the page a reader with no
+ * bookmark is given.
+ * @returns {Promise<{ file: string, card?: string, page: string, titled: boolean }[]>} One per card.
+ */
+async function renamedCards() {
+  const [
+    { OPEN_SERIES, archiveOf },
+    { hasPage },
+    { LOCALES },
+    { withFeatures },
+    { payloadsFor },
+  ] = await Promise.all(
+    [
+      'data/series/index.ts',
+      'lib/progress/series.ts',
+      'i18n/locales.ts',
+      'data/features.ts',
+      'server/archive/payloads.server.ts',
+    ].map((module) => importArchive(module)),
+  )
+  const cards = []
+  for (const { slug } of OPEN_SERIES) {
+    const archive = await archiveOf(slug)
+    const payloads = payloadsFor(archive)
+    const renamed = pagedRecords(withFeatures(archive), hasPage).filter(
+      ({ episodeName }) => episodeName !== undefined,
+    )
+    for (const entity of renamed) {
+      const load = payloads.find(({ name }) => name === LOADERS[entity.kind])
+      for (const locale of LOCALES) {
+        const file = `/og/${slug}/${locale}/${entity.id}.png`
+        const { head } = load.run(null, locale, entity.id)
+        cards.push({
+          file,
+          card: nameOf(file),
+          page: head.image.alt,
+          titled: head.title.includes(head.image.alt),
+        })
+      }
+    }
+  }
+  return cards
+}
+
+describe('the name on a card', () => {
+  it('is the one the page with no bookmark is titled with, for every record the anime names otherwise', async () => {
+    const cards = await renamedCards()
+
+    expect(cards.map(({ file }) => file)).toContain(
+      '/og/hunter-x-hunter/en/hagya.png',
+    )
+    expect(
+      cards.filter(({ card, page, titled }) => card !== page || !titled),
+    ).toStrictEqual([])
+    expect(cards.find(({ file }) => file.endsWith('/en/hagya.png'))?.card).toBe(
+      'Hagya',
+    )
+  })
+})
+
+/**
+ * Every character card of a record both sources tell, in every open series and
+ * locale, beside the epithets and roles the reader at the record's episode and
+ * the one at its chapter have each reached.
+ * @returns {Promise<{ file: string, line?: string, episode: string[], chapter: string[] }[]>} One per card.
+ */
+async function sharedCharacterLines() {
+  const [
+    { OPEN_SERIES, archiveOf },
+    { hasPage },
+    { LOCALES },
+    { withFeatures },
+    { readerFor },
+  ] = await Promise.all(
+    [
+      'data/series/index.ts',
+      'lib/progress/series.ts',
+      'i18n/locales.ts',
+      'data/features.ts',
+      'server/archive/reader.server.ts',
+    ].map((module) => importArchive(module)),
+  )
+  const lines = []
+  for (const { slug } of OPEN_SERIES) {
+    const archive = await archiveOf(slug)
+    const told = pagedRecords(withFeatures(archive), hasPage).filter(
+      ({ kind, source }) => kind === 'character' && source === undefined,
+    )
+    for (const locale of LOCALES) {
+      const reached = (entity, bookmark) => {
+        const r = readerFor(archive, bookmark, locale)
+        return [
+          ...[
+            ...r.archive.reachedOf(r, entity, 'epithet'),
+            ...r.archive.reachedOf(r, entity, 'role'),
+          ].map(({ value }) => value[locale]),
+          r.archive.roleOf(r, entity)?.[locale],
+        ]
+      }
+      for (const entity of told) {
+        const file = `/og/${slug}/${locale}/${entity.id}.png`
+        lines.push({
+          file,
+          line: lineOf(file),
+          episode: reached(entity, {
+            mode: 'episode',
+            episode: entity.revealedAtEpisode,
+          }),
+          chapter: reached(entity, {
+            mode: 'chapter',
+            chapter: entity.revealedAtChapter,
+          }),
+        })
+      }
+    }
+  }
+  return lines
+}
+
+describe('the line on a card of a record both sources tell', () => {
+  it('is one the anime viewer and the manga reader at the record’s threshold have both reached', async () => {
+    const lines = await sharedCharacterLines()
+
+    expect(lines.length).toBeGreaterThan(1000)
+    expect(
+      lines.filter(
+        ({ line, episode, chapter }) =>
+          line !== undefined
+          && (!episode.includes(line) || !chapter.includes(line)),
+      ),
+    ).toStrictEqual([])
+  })
+
+  it('is the role where one medium has reached an epithet the other has not', () => {
+    expect(lineOf('/og/one-piece/en/vinsmoke-reiju.png')).toBe(
+      'Daughter of the Vinsmoke family',
+    )
+    expect(lineOf('/og/one-piece/en/vinsmoke-judge.png')).toBe(
+      'King of the Germa Kingdom',
+    )
   })
 })
 

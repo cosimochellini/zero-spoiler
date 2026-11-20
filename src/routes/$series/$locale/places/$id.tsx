@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement, ReactNode } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useT } from '~/i18n/LocaleContext'
 import { recordHead } from '~/routes/$locale/-head'
 import { RecordBackLink } from '~/routes/$series/$locale/-back'
@@ -76,6 +77,10 @@ function PlacePage(): ReactElement {
       <p {...stylex.props(recordStyles.back)}>
         <RecordBackLink section="places" />
       </p>
+
+      <VisitorBanner
+        slot={'ship' in page ? page.ship.slot : page.detail.slot}
+      />
 
       <div>
         {'ship' in page ?

@@ -1,7 +1,4 @@
-/**
- * Reading the router's matches for a 404. Outside the routes because the
- * intro, a component, asks too.
- */
+/** Reading the router's matches for a 404. */
 
 /**
  * Whether the address answers 404: no route matches it past one of these

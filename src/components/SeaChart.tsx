@@ -8,7 +8,6 @@ import {
   type Rect,
   wholeOf,
 } from '~/components/chartGeometry'
-import { EpisodeMark } from '~/components/EpisodeMark'
 import { styles } from '~/components/SeaChart.styles'
 import { Drawing, ZoomButtons } from '~/components/SeaChartLayers'
 import {
@@ -67,10 +66,6 @@ export function SeaChart(props: SeaChartProps): ReactElement {
 
   return (
     <div {...stylex.props(styles.chart)}>
-      {/* With no bookmark the whole chart is fog: the way out comes first. */}
-      {props.bookmark === null ?
-        <EpisodeMark placement="fold" />
-      : null}
       <div {...stylex.props(styles[orientation])}>
         <Chart
           // The other orientation is another chart, its zoom and peek its own.

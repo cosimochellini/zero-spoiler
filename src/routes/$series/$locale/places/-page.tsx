@@ -9,6 +9,7 @@ import type { ReactElement } from 'react'
 import { ArchivePage } from '~/components/ArchivePage'
 import type { Orientation } from '~/components/chartGeometry'
 import { SeaChart } from '~/components/SeaChart'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesT } from '~/i18n/LocaleContext'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { useOpenEntries } from '~/lib/progress/openEntries'
@@ -80,6 +81,7 @@ export function PlacesBody({
       count={t('places.count', { count: filed })}
       title={t('places.title')}
     >
+      <VisitorBanner />
       {served === null ?
         index
       : <>

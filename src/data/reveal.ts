@@ -18,7 +18,9 @@ import { type Gated, type Source, thresholdIn } from '~/lib/progress/spoiler'
  *
  * A `null` bookmark sees nothing. That asymmetry is the product: a reader who
  * has not told the site where they are must not be shown anything, whereas a
- * reader who has is shown exactly as much as they asked for.
+ * reader who has is shown exactly as much as they asked for. A page they land
+ * on is the one exception, and a narrow one: it is drawn at a point the page
+ * picks (`revealAt`), never at one the request names.
  */
 export interface Reveal {
   /**
@@ -89,5 +91,27 @@ export function reveal(bookmark: Bookmark, series: BookmarkSeries): Reveal {
     mode,
     sees: (gated) => has(gated) && isRevealed(gated, bookmark, series),
     threshold: (gated) => thresholdIn(gated, mode),
+  }
+}
+
+/**
+ * A reader with no bookmark, on a page drawn at one point (#1430): a record
+ * page at the record's own first appearance, a list at the end of the demo.
+ *
+ * It sees what a reader at the point's episode and one at its chapter would
+ * both see, so the page is as safe for an anime viewer as for a manga reader.
+ * Everything else is `reveal(null)`'s: it has no record of one source only,
+ * and it counts in episodes, as the browser does for a reader with no
+ * bookmark.
+ */
+export function revealAt(point: Gated, series: BookmarkSeries): Reveal {
+  const visitor = reveal(null, series)
+
+  return {
+    ...visitor,
+    sees: (gated) =>
+      visitor.has(gated)
+      && gated.revealedAtEpisode <= point.revealedAtEpisode
+      && gated.revealedAtChapter <= point.revealedAtChapter,
   }
 }

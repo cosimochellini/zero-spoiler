@@ -52,7 +52,6 @@ export const styles = stylex.create({
     lineHeight: leading.body,
     maxWidth: '58ch',
   },
-  notice: { gap: space.md, display: 'grid', justifyItems: 'start' },
   body: { gap: space.lg, display: 'grid' },
   bodyHead: {
     gap: space.xs,

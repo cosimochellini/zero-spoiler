@@ -31,8 +31,7 @@ export function hubSeries(
 /**
  * The hub, from the request's cookies: every series with its count and the
  * reader's saved bookmark on it. Only the saved one: a trial is a visit to
- * one series' demo, and a crawler has no bookmark to be shown, so neither
- * the trial cookie nor the user agent is read.
+ * one series' demo, so the trial cookie is not read.
  */
 export function hubFor(
   jar: Map<string, string>,

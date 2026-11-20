@@ -2,10 +2,10 @@ import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 import { ArchivePage } from '~/components/ArchivePage'
-import { FruitsAlbum } from '~/components/FruitWall'
+import { FruitsAlbum } from '~/components/FruitsAlbum'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { TranslationKey } from '~/i18n/types'
-import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { type AlbumView, parseFruitParams } from '~/lib/search/fruitParams'
 import { seriesPageHead } from '~/routes/$locale/-head'
 import { requirePage } from '~/routes/$series/$locale/-found'
@@ -70,13 +70,11 @@ const COUNT_KEY: Record<AlbumView, TranslationKey<'one-piece'>> = {
  * text field. A covered tile is a `FogTile`: the same drifting fog for every
  * fruit, lifted by hand in two presses.
  *
- * With no bookmark the album is a wall of fog with the control that sets
- * one, and the wall says the count itself, so the line under the heading
- * goes.
+ * With no bookmark the server draws the page at the end of the demo, under
+ * the visitor banner (#1432).
  */
 function FruitsPage(): ReactElement {
   const t = useSeriesOnlyT('one-piece')
-  const { bookmark } = useBookmark()
   const { filed, marquee, plates } = Route.useLoaderData()
   const { album, retry } = useFruitAlbum()
 
@@ -86,12 +84,12 @@ function FruitsPage(): ReactElement {
 
   return (
     <ArchivePage
-      count={bookmark === null ? undefined : t(countKey, { count: filed })}
+      count={t(countKey, { count: filed })}
       title={t('fruits.title')}
     >
+      <VisitorBanner />
       <FruitsAlbum
         album={album}
-        filed={filed}
         marquee={marquee}
         onParams={onParams}
         onRetry={retry}

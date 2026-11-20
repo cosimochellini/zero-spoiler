@@ -9,7 +9,7 @@ import type { Locale } from '~/i18n/locales'
  */
 const privacyEn = {
   'privacy.title': 'Privacy and cookies',
-  'privacy.updated': 'Last checked: 1 November 2026.',
+  'privacy.updated': 'Last checked: 20 November 2026.',
   'privacy.controllerTitle': 'Who runs the site',
   'privacy.controller':
     'Zero Spoiler is a personal, nonprofit fan project. Its operator and data controller is a private individual based in Italy, reachable as @cosimochellini on GitHub. Use the GitHub contact link below for an initial request.',
@@ -28,7 +28,7 @@ const privacyEn = {
   'privacy.attributes':
     'All seven cookies use Path=/ and SameSite=Lax, with no Domain, Secure or HttpOnly attribute. The site is served over HTTPS. They can be read by this site’s JavaScript and sent on applicable same-site requests and top-level cross-site navigations.',
   'privacy.storage':
-    'opzs_welcome is a sessionStorage flag used to show a welcome once after saving a bookmark. It is removed when the home page reads it, or when the tab session ends; it is not sent to the server. opzs_intro is a sessionStorage flag, value 1, set when you close the introduction a page shows when you arrive with no bookmark, or once a bookmark is in use, so the introduction is not shown in the rest of the tab session; it is not sent to the server. The application does not use localStorage.',
+    'opzs_welcome is a sessionStorage flag used to show a welcome once after saving a bookmark. It is removed when the home page reads it, or when the tab session ends; it is not sent to the server. zs-copy-reloaded: followed by a page’s address is a sessionStorage flag, value 1, set when that page’s text fails to load and the page reloads, so it reloads only once. It is removed once the text loads, or when the tab session ends; it is not sent to the server. The application does not use localStorage.',
   'privacy.controlTitle': 'Your choices',
   'privacy.control':
     'You can clear the bookmark in its dialog and remove cookies and site storage in your browser settings. Blocking them prevents the site from remembering your preferences; without a bookmark you see the introductory view. There are no optional tracking cookies to accept or reject.',
@@ -61,7 +61,7 @@ export type PrivacyKey = keyof typeof privacyEn
 
 const privacyIt: Record<PrivacyKey, string> = {
   'privacy.title': 'Privacy e cookie',
-  'privacy.updated': 'Ultima verifica: 1 novembre 2026.',
+  'privacy.updated': 'Ultima verifica: 20 novembre 2026.',
   'privacy.controllerTitle': 'Chi gestisce il sito',
   'privacy.controller':
     'Zero Spoiler è un progetto amatoriale personale e senza scopo di lucro. Il gestore e titolare del trattamento è una persona privata in Italia, contattabile su GitHub come @cosimochellini. Per una richiesta iniziale usa il link di contatto GitHub qui sotto.',
@@ -80,7 +80,7 @@ const privacyIt: Record<PrivacyKey, string> = {
   'privacy.attributes':
     'Tutti e sette i cookie usano Path=/ e SameSite=Lax, senza attributi Domain, Secure o HttpOnly. Il sito è servito tramite HTTPS. Sono leggibili dal JavaScript del sito e vengono inviati nelle richieste pertinenti allo stesso sito e nelle navigazioni principali da altri siti.',
   'privacy.storage':
-    'opzs_welcome è un indicatore in sessionStorage che mostra un benvenuto una sola volta dopo il salvataggio del segnalibro. Viene rimosso quando la pagina iniziale lo legge o alla fine della sessione della scheda; non viene inviato al server. opzs_intro è un indicatore in sessionStorage, valore 1, impostato quando chiudi l’introduzione che una pagina mostra se arrivi senza segnalibro, o quando un segnalibro è in uso, perché l’introduzione non compaia nel resto della sessione della scheda; non viene inviato al server. L’applicazione non usa localStorage.',
+    'opzs_welcome è un indicatore in sessionStorage che mostra un benvenuto una sola volta dopo il salvataggio del segnalibro. Viene rimosso quando la pagina iniziale lo legge o alla fine della sessione della scheda; non viene inviato al server. zs-copy-reloaded: seguito dall’indirizzo di una pagina è un indicatore in sessionStorage, valore 1, impostato quando il testo di quella pagina non si carica e la pagina si ricarica, così si ricarica una volta sola. Viene rimosso quando il testo si carica o alla fine della sessione della scheda; non viene inviato al server. L’applicazione non usa localStorage.',
   'privacy.controlTitle': 'Le tue scelte',
   'privacy.control':
     'Puoi cancellare il segnalibro dalla sua finestra e rimuovere cookie e memoria del sito dalle impostazioni del browser. Bloccarli impedisce di ricordare le preferenze; senza segnalibro vedi la vista introduttiva. Non ci sono cookie di tracciamento facoltativi da accettare o rifiutare.',

@@ -32,13 +32,30 @@ const page: PowerPageView = {
 }
 
 describe('PowerBoard', () => {
-  it('asks for a bookmark without one', () => {
-    renderWithProviders(<PowerBoard page={{ bodies: [] }} />)
+  it('draws the start of the story under the visitor banner without a bookmark', () => {
+    renderWithProviders(<PowerBoard page={page} />)
 
     expect(
       screen.getByRole('heading', { level: 1, name: 'Ranks of the world' }),
     ).toBeVisible()
-    expect(screen.getByText(/not set a bookmark/u)).toBeVisible()
+    expect(
+      screen.getByText(/only the start of the story is open\. The rest/u),
+    ).toBeVisible()
+    expect(
+      screen.getByRole('button', { name: 'Set your bookmark' }),
+    ).toBeVisible()
+    expect(screen.getByText('Dracule Mihawk')).toBeVisible()
+  })
+
+  it('says in the banner that nothing is open, and only there, when the start of the story reaches no body', () => {
+    renderWithProviders(<PowerBoard page={{ bodies: [] }} />)
+
+    expect(
+      screen.getByText(/Nothing on this page appears that early/u),
+    ).toBeVisible()
+    expect(
+      screen.queryByText('Nothing on this page is open at your bookmark.'),
+    ).not.toBeInTheDocument()
   })
 
   it('says nothing is open when the bookmark reaches no body', () => {
@@ -49,7 +66,7 @@ describe('PowerBoard', () => {
     expect(
       screen.getByText('Nothing on this page is open at your bookmark.'),
     ).toBeVisible()
-    expect(screen.queryByText(/not set a bookmark/u)).not.toBeInTheDocument()
+    expect(screen.queryByText(/start of the story/u)).not.toBeInTheDocument()
   })
 
   it('prints a group’s description under its name', () => {
