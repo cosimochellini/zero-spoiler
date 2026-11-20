@@ -1080,3 +1080,43 @@ describe.each(LOCALES)(
     })
   },
 )
+
+/**
+ * Dontos's book cards, by their English text (#1424): Sansa V (chapter 58)
+ * shows him only drunk at court, and Sansa saves him and Joffrey makes him a
+ * fool in Sansa I of A Clash of Kings (chapter 76).
+ */
+const DONTOS_CARDS: { chapter: number; texts: string[] }[] = [
+  {
+    chapter: 58,
+    texts: [
+      'Noblewoman at court',
+      'Eddard Stark’s daughter, whom he starts to hail, drunk, until Ser Balon Swann warns him away.',
+      'The young king, at whose court he turns up drunk.',
+    ],
+  },
+  {
+    chapter: 76,
+    texts: [
+      'Saviour',
+      'Eddard Stark’s daughter, who talks the king out of killing him.',
+      'The young king, who wants him killed for coming to court drunk, then makes him his fool.',
+    ],
+  },
+]
+
+describe.each(
+  DONTOS_CARDS.flatMap(({ chapter, texts }) =>
+    texts.map((text) => ({ chapter, text })),
+  ),
+)('Dontos’s card “$text”', ({ chapter, text }) => {
+  const shown = (count: number): boolean =>
+    JSON.stringify(projected('dontos-hollard', ch(count), 'en')).includes(
+      JSON.stringify(text),
+    )
+
+  it('opens at its chapter, not one before', () => {
+    expect(shown(chapter - 1)).toBe(false)
+    expect(shown(chapter)).toBe(true)
+  })
+})
