@@ -423,31 +423,50 @@ export function argsOf(args) {
 }
 
 /**
- * Pins every title on the command line and writes the manifest once.
- * @returns {Promise<number>} Zero, one when a title failed, two on bad usage.
+ * The titles to pin, the wiki to pin them from and whether this is a dry
+ * run, or nothing once the fault is printed.
+ * @param {string[]} args The arguments after the script.
+ * @returns {Promise<{ titles: string[], target: Target, dryRun: boolean } | undefined>} The command.
  */
-async function main() {
-  const parsed = argsOf(process.argv.slice(2))
+async function commandOf(args) {
+  const parsed = argsOf(args)
   if (parsed === undefined || parsed.positionals.length === 0) {
     console.error(
       'Usage: npm run provenance:pin -- --series <slug> [--wiki show|books] "Title" ["Title" …] [--dry-run]',
     )
-    return 2
+    return
   }
 
   const { values, positionals } = parsed
   const series = await seriesOrExit(['--series', values.series])
-  let target
   try {
-    target = targetOf(series, values.wiki)
+    return {
+      titles: positionals,
+      target: targetOf(series, values.wiki),
+      dryRun: values['dry-run'],
+    }
   } catch (error) {
     console.error(error.message)
+  }
+}
+
+/**
+ * Pins every title on the command line and writes the manifest once.
+ * @returns {Promise<number>} Zero, one when a title failed, two on bad usage.
+ */
+async function main() {
+  const command = await commandOf(process.argv.slice(2))
+  if (command === undefined) {
     return 2
   }
 
   const { sources: pinned } = JSON.parse(readFileSync(MANIFEST, 'utf8'))
-  const { sources, failed } = await pinAll(positionals, target, pinned)
-  save(MANIFEST, pinned, sources, values['dry-run'])
+  const { sources, failed } = await pinAll(
+    command.titles,
+    command.target,
+    pinned,
+  )
+  save(MANIFEST, pinned, sources, command.dryRun)
 
   return failed ? 1 : 0
 }
