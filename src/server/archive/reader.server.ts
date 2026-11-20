@@ -43,9 +43,13 @@ export interface Reader extends Reveal {
   /** Either the record, projected, or the little that may be said about it. */
   slot: <T>(entity: Entity, open: (entity: Entity, r: Reader) => T) => Slot<T>
   /**
-   * Records in the reader's order, split at the bookmark. The open ones are a
-   * prefix of the order, which is what lets a page draw one horizon between
-   * two runs.
+   * Records in the reader's order, split at the bookmark. For a bookmark's
+   * reader the open ones are a prefix of the order, which is what lets a page
+   * draw one horizon between two runs. Not for a page drawn at a point with
+   * no bookmark (`pageReader`): it orders in episodes but opens only what the
+   * chapter has reached too, so a record early in episodes and late in
+   * chapters is covered among open ones. No page draws a horizon from it;
+   * each run keeps its own order.
    */
   split: <T>(
     entries: Entity[],

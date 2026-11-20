@@ -18,8 +18,8 @@ control, and two ways around it are deliberate:
   every entry on a page.
 - **A record's own page** opened with no bookmark shows the record as it stands
   at its first appearance, so search engines and link previews index a real
-  page. Every request with no bookmark gets the same page, whatever its
-  `User-Agent`.
+  page. Every request with no bookmark is sent the same entries, whatever its
+  `User-Agent`; only the places chart's layout follows a phone's.
 
 [docs/architecture.md](docs/architecture.md#security) explains both. A way to
 read hidden entries without either of them is a real bug. If it is a spoiler

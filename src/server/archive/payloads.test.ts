@@ -31,7 +31,7 @@ import { heldTo, sweptInFull } from '~/test/visitor'
 import { entityForHandle } from './handle.server'
 import { hubPageFor } from './hub.server'
 import { characterPage } from './pages.server'
-import { type Payload, payloadsFor } from './payloads.server'
+import { type DrawnAt, type Payload, payloadsFor } from './payloads.server'
 import { powerPage } from './power.server'
 import { pageReader, readerFor } from './reader.server'
 
@@ -118,6 +118,48 @@ const SWEEPS: Partial<Record<string, Sweep>> = Object.fromEntries(
 
 const alphabetically = (a: string, b: string): number => a.localeCompare(b)
 
+/** One server function as `api.ts` declares it. */
+interface Served {
+  /** Whether it reads a reader drawn at a point (`pageReaderIn`, `pageReader`). */
+  drawn: boolean
+  name: string
+  validator: string
+}
+
+const DECLARED = 'export const '
+const SERVER_FN = ' = createServerFn()'
+const VALIDATOR = '.validator('
+
+/**
+ * Each server function `api.ts` declares. A function's text runs from its
+ * `export const` to the next one, so a call in one is never read as
+ * another's.
+ */
+function servedIn(source: string): Served[] {
+  const served: Served[] = []
+  for (const block of source.split(/^(?=export const )/mu)) {
+    const end = block.indexOf(SERVER_FN)
+    if (end === -1 || !block.startsWith(DECLARED)) {
+      continue
+    }
+    const from = block.indexOf(VALIDATOR) + VALIDATOR.length
+    served.push({
+      drawn: /\bpageReader(?:In)?\(/u.test(block),
+      name: block.slice(DECLARED.length, end),
+      validator: block.slice(from, block.indexOf(')', from)),
+    })
+  }
+
+  return served
+}
+
+/**
+ * The kind of page a validator asks for: one with an id is a record page,
+ * drawn at the record (`addressed`); any other, a list.
+ */
+const kindOf = (validator: string): DrawnAt =>
+  validator === 'addressed' ? 'record' : 'list'
+
 /** Every bookmark of a series' sweep, in every locale. */
 const asksOf = ({
   bookmarks,
@@ -180,23 +222,26 @@ describe('every payload the server sends', () => {
     )
   })
 
-  it('is drawn at a point exactly when `api.ts` reads it through `pageReaderIn`', () => {
+  it('is drawn at a point exactly when `api.ts` reads it through `pageReaderIn`, and as the same kind', () => {
     // The sweep holds a `drawnAt` page to its point, and reads every key of
     // it with no bookmark: a page drawn at one in `api.ts` and not marked
-    // here would be swept as if it saw nothing.
-    const drawn = readFileSync(
-      path.join(import.meta.dirname, '..', 'api.ts'),
-      'utf8',
+    // here would be swept as if it saw nothing, and a record page swept as a
+    // list would be held to the demo instead of its record.
+    const served = servedIn(
+      readFileSync(path.join(import.meta.dirname, '..', 'api.ts'), 'utf8'),
     )
-      .split('export const ')
-      // The first chunk is the file's head, where `pageReaderIn` is defined.
-      .slice(1)
-      .filter((chunk) => chunk.includes('pageReaderIn('))
-      .map((chunk) => chunk.slice(0, chunk.indexOf(' ')))
 
-    expect(drawn.toSorted(alphabetically)).toStrictEqual(
+    expect(
+      served.map(({ name }) => name).toSorted(alphabetically),
+    ).toStrictEqual(Object.keys(api).toSorted(alphabetically))
+    expect(
+      served
+        .filter(({ drawn }) => drawn)
+        .map(({ name, validator }) => `${name} ${kindOf(validator)}`)
+        .toSorted(alphabetically),
+    ).toStrictEqual(
       PAYLOADS.filter(({ drawnAt }) => drawnAt !== undefined)
-        .map(({ name }) => name)
+        .map(({ drawnAt, name }) => `${name} ${String(drawnAt)}`)
         .toSorted(alphabetically),
     )
   })

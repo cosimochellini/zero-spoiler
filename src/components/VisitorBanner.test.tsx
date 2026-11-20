@@ -23,7 +23,7 @@ describe('VisitorBanner', () => {
 
     expect(
       screen.getByText(
-        'You are seeing Nami as first seen (Episode 8). Anything later stays under fog.',
+        'You are seeing Nami as first seen (Episode 8). The rest stays under fog.',
       ),
     ).toBeInTheDocument()
     expect(

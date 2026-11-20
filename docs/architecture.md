@@ -45,8 +45,9 @@ gates.
   bounded demo, with every record and dated fact inside both limits. Trial
   cookies are restricted to that demo and yield to a saved bookmark.
 - A record page and a list drawn with no bookmark are the one other exception,
-  and they read no request header but the cookies: a search engine and a person
-  get the same page (#1430). `pageReader`
+  and what they open reads no request header but the cookies: a search engine
+  and a person get the same records (#1430). The places chart's orientation is
+  the one thing the `User-Agent` decides (below). `pageReader`
   (`src/server/archive/reader.server.ts`) draws a record page at the record's
   own first appearance, and a list (characters, places, fruits, abilities) at
   the end of the demo, each with `revealAt` (`src/data/reveal.ts`): what a
@@ -160,10 +161,13 @@ request cookies, never a client-supplied bookmark.
 
 Fog prevents accidental spoilers, not deliberate access: “Show anyway” reveals a
 record by handle, and a record's own page, opened with no saved or trial
-bookmark, shows it as it stands at its first appearance. No request is answered
-by its `User-Agent`: a crawler and a person with no bookmark get the same page,
-because answering a crawler differently is cloaking (#1430). See
-`src/lib/progress/requestBookmark.ts` and `pageReader` in
+bookmark, shows it as it stands at its first appearance. No content or fog
+decision reads the `User-Agent`: a crawler and a person with no bookmark are
+sent the same records, because answering a crawler differently is cloaking
+(#1430). The one exception is layout: the places chart is drawn upright for a
+phone (`Mobi` in the `User-Agent`, or `Sec-CH-UA-Mobile`, with a `Vary` header;
+`src/routes/$series/$locale/places/index.tsx`), never with more or less open.
+See `src/lib/progress/requestBookmark.ts` and `pageReader` in
 `src/server/archive/reader.server.ts`.
 
 ## Series and routing
