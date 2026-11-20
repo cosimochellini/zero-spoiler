@@ -1248,24 +1248,29 @@ describe.each(
 
 describe('the season’s leads', () => {
   // The home page ranks the leads by how often the reached stories name them.
-  // Only the Essos (#1360) and Night’s Watch (#1363) casts have chronicles
-  // yet: by episode 10 their stories name all five leads, while by chapter 10
-  // the books have not yet named Arya in them. The rest join as the other
-  // storylines’ chronicles land (#1361, #1362).
+  // The Essos (#1360), Night’s Watch (#1363) and King’s Landing, riverlands
+  // and Vale (#1362) casts have chronicles. The order changes again once the
+  // North lands (#1361).
   it.each<[Unit, string[]]>([
     [
       'episode',
       [
-        'daenerys-targaryen',
-        'jon-snow',
         'eddard-stark',
         'tyrion-lannister',
+        'daenerys-targaryen',
+        'jon-snow',
         'arya-stark',
       ],
     ],
     [
       'chapter',
-      ['daenerys-targaryen', 'jon-snow', 'eddard-stark', 'tyrion-lannister'],
+      [
+        'eddard-stark',
+        'tyrion-lannister',
+        'jon-snow',
+        'daenerys-targaryen',
+        'arya-stark',
+      ],
     ],
   ])(
     'heads the home page by %s with the leads its stories name',
