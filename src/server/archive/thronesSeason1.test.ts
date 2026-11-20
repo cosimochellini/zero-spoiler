@@ -285,6 +285,15 @@ const CHANGES: {
     value: 'deceased',
     source: 'chapter',
   },
+  // Statuses the Winterfell and northern chronicles tell (#1361).
+  { id: 'osha', episode: 6, chapter: 38, value: 'captured' },
+  {
+    id: 'jeyne-poole',
+    episode: 8,
+    chapter: 52,
+    value: 'captured',
+    source: 'chapter',
+  },
   // Hoster opens at one pin alive in the book and a corpse on screen; the
   // book kills him in A Storm of Swords (#1242).
   {
@@ -920,7 +929,7 @@ const STEPS: {
     id: 'maege-mormont',
   },
   {
-    chapter: 45,
+    chapter: 44,
     en: 'House Stark, Beric Dondarrion’s company',
     episode: 6,
     id: 'harwin',
@@ -1248,17 +1257,17 @@ describe.each(
 
 describe('the season’s leads', () => {
   // The home page ranks the leads by how often the reached stories name them.
-  // The Essos (#1360), Night’s Watch (#1363) and King’s Landing, riverlands
-  // and Vale (#1362) casts have chronicles. The order changes again once the
-  // North lands (#1361).
+  // The Essos (#1360), Night’s Watch (#1363), King’s Landing, riverlands
+  // and Vale (#1362) and Winterfell and northern (#1361) casts have
+  // chronicles.
   it.each<[Unit, string[]]>([
     [
       'episode',
       [
         'eddard-stark',
         'tyrion-lannister',
-        'daenerys-targaryen',
         'jon-snow',
+        'daenerys-targaryen',
         'arya-stark',
       ],
     ],
@@ -1266,10 +1275,10 @@ describe('the season’s leads', () => {
       'chapter',
       [
         'eddard-stark',
-        'tyrion-lannister',
         'jon-snow',
-        'daenerys-targaryen',
+        'tyrion-lannister',
         'arya-stark',
+        'daenerys-targaryen',
       ],
     ],
   ])(
@@ -1506,7 +1515,7 @@ const STAGES: {
   { id: 'robb-stark', episode: 29, chapter: 195, stage: 1 },
   { id: 'bran-stark', episode: 56, chapter: 344, source: 'episode' },
   { id: 'rickon-stark', episode: 59, chapter: 344, source: 'episode' },
-  { id: 'benjen-stark', episode: 7, chapter: 42 },
+  { id: 'benjen-stark', episode: 7, chapter: 25 },
   {
     id: 'benjen-stark',
     episode: 56,
