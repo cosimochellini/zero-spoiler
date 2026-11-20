@@ -43,8 +43,9 @@ function pictureOf(file) {
  * @returns {string | undefined} The line.
  */
 function lineOf(file) {
-  return /<p class="line">(?<line>[^<]*)<\/p>/u.exec(pictureOf(file).html)
+  const line = /<p class="line">(?<line>[^<]*)<\/p>/u.exec(pictureOf(file).html)
     ?.groups?.line
+  return line === undefined ? undefined : unescaped(line)
 }
 
 /**
@@ -53,8 +54,22 @@ function lineOf(file) {
  * @returns {string | undefined} The name.
  */
 function nameOf(file) {
-  return /<h1 class="name">(?<name>[^<]*)<\/h1>/u.exec(pictureOf(file).html)
-    ?.groups?.name
+  const name = /<h1 class="name">(?<name>[^<]*)<\/h1>/u.exec(
+    pictureOf(file).html,
+  )?.groups?.name
+  return name === undefined ? undefined : unescaped(name)
+}
+
+/** The characters a card page escapes, by their entity (`cardHtml`). */
+const ENTITIES = { '&amp;': '&', '&gt;': '>', '&lt;': '<', '&quot;': '"' }
+
+/**
+ * Text a card page printed, as it was before it was escaped.
+ * @param {string} html The escaped text.
+ * @returns {string} The text.
+ */
+function unescaped(html) {
+  return html.replaceAll(/&(?:amp|gt|lt|quot);/gu, (entity) => ENTITIES[entity])
 }
 
 // The first `picturesOf` imports every series' archive through the one Vite
@@ -197,6 +212,89 @@ describe('the name on a card', () => {
     ).toStrictEqual([])
     expect(cards.find(({ file }) => file.endsWith('/en/hagya.png'))?.card).toBe(
       'Hagya',
+    )
+  })
+})
+
+/**
+ * Every character card of a record both sources tell, in every open series and
+ * locale, beside the epithets and roles the reader at the record's episode and
+ * the one at its chapter have each reached.
+ * @returns {Promise<{ file: string, line?: string, episode: string[], chapter: string[] }[]>} One per card.
+ */
+async function sharedCharacterLines() {
+  const [
+    { OPEN_SERIES, archiveOf },
+    { hasPage },
+    { LOCALES },
+    { withFeatures },
+    { readerFor },
+  ] = await Promise.all(
+    [
+      'data/series/index.ts',
+      'lib/progress/series.ts',
+      'i18n/locales.ts',
+      'data/features.ts',
+      'server/archive/reader.server.ts',
+    ].map((module) => importArchive(module)),
+  )
+  const lines = []
+  for (const { slug } of OPEN_SERIES) {
+    const archive = await archiveOf(slug)
+    const told = pagedRecords(withFeatures(archive), hasPage).filter(
+      ({ kind, source }) => kind === 'character' && source === undefined,
+    )
+    for (const locale of LOCALES) {
+      const reached = (entity, bookmark) => {
+        const r = readerFor(archive, bookmark, locale)
+        return [
+          ...[
+            ...r.archive.reachedOf(r, entity, 'epithet'),
+            ...r.archive.reachedOf(r, entity, 'role'),
+          ].map(({ value }) => value[locale]),
+          r.archive.roleOf(r, entity)?.[locale],
+        ]
+      }
+      for (const entity of told) {
+        const file = `/og/${slug}/${locale}/${entity.id}.png`
+        lines.push({
+          file,
+          line: lineOf(file),
+          episode: reached(entity, {
+            mode: 'episode',
+            episode: entity.revealedAtEpisode,
+          }),
+          chapter: reached(entity, {
+            mode: 'chapter',
+            chapter: entity.revealedAtChapter,
+          }),
+        })
+      }
+    }
+  }
+  return lines
+}
+
+describe('the line on a card of a record both sources tell', () => {
+  it('is one the anime viewer and the manga reader at the record’s threshold have both reached', async () => {
+    const lines = await sharedCharacterLines()
+
+    expect(lines.length).toBeGreaterThan(1000)
+    expect(
+      lines.filter(
+        ({ line, episode, chapter }) =>
+          line !== undefined
+          && (!episode.includes(line) || !chapter.includes(line)),
+      ),
+    ).toStrictEqual([])
+  })
+
+  it('is the role where one medium has reached an epithet the other has not', () => {
+    expect(lineOf('/og/one-piece/en/vinsmoke-reiju.png')).toBe(
+      'Daughter of the Vinsmoke family',
+    )
+    expect(lineOf('/og/one-piece/en/vinsmoke-judge.png')).toBe(
+      'King of the Germa Kingdom',
     )
   })
 })

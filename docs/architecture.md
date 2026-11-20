@@ -66,9 +66,10 @@ gates.
   both sources tell; a record of one source only is not listed. They hold the
   first drawing, and the name and line of the page a link preview fetches with
   no bookmark: the record at its own first appearance, as both an anime viewer
-  and a manga reader see it (Hagya's card says Hagya, not the anime's Leol). No
-  page under fog names them. The fog is an editorial promise kept by the pages,
-  not access control.
+  and a manga reader see it (Hagya's card says Hagya, not the anime's Leol). A
+  record of one source only has no page with no bookmark; its card is drawn by
+  that source's own reader at the record's threshold. No page under fog names
+  them. The fog is an editorial promise kept by the pages, not access control.
 - Personalized HTML and archive responses stay out of shared caches. Deferred
   drawings and lists are filtered server-side too; results belong to the
   bookmark they were fetched for.
