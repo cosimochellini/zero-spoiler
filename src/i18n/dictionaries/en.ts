@@ -192,7 +192,8 @@ export const enDictionary = {
   'legal.projectTitle': 'An unofficial project',
   'legal.unofficial':
     'Zero Spoiler is an unofficial, nonprofit fan project. It is not affiliated with or endorsed by the rights holders of the series in the wiki.',
-  'legal.creditSource': 'Official credit source',
+  'legal.contents': 'On this page',
+  'legal.creditSource': 'Official credit source for {series}',
   'legal.contact': 'Rights inquiries and corrections on GitHub',
   'legal.contactHelp':
     'Include the page URL, the material concerned and the rights inquiry or correction requested. Keep spoilers out of the title. GitHub issues are public and require an account. Do not post confidential information.',

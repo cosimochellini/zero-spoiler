@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { archiveOf } from '~/data/series'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import {
+  GAME_OF_THRONES_SERIES,
   HUNTER_X_HUNTER_SERIES,
   ONE_PIECE_BOOKMARK,
   ONE_PIECE_SERIES,
@@ -107,7 +108,23 @@ describe('LegalPage', () => {
       })
 
       expect(screen.getAllByRole('heading', { level: 4 })).toHaveLength(17)
-      expect(document.querySelectorAll('a[href*="oldid="]')).toHaveLength(32)
+
+      const revisions = document.querySelectorAll('a[href*="oldid="]')
+
+      expect(revisions).toHaveLength(32)
+
+      // The link's text, then its entry's title: a list of links tells them apart.
+      const names = [...revisions].map((link) =>
+        link.getAttribute('aria-label'),
+      )
+
+      expect(names).toStrictEqual(
+        [...revisions].map(
+          (link) =>
+            `${link.textContent}. ${link.closest('ul')?.closest('li')?.querySelector('h4')?.textContent ?? ''}`,
+        ),
+      )
+      expect(new Set(names)).toHaveProperty('size', 32)
       expect(
         document.querySelector(`a[href="${CSS.escape(OFFICIAL)}"]`),
       ).toBeInTheDocument()
@@ -121,6 +138,56 @@ describe('LegalPage', () => {
       }
 
       expect(screen.getByRole('main')).not.toHaveTextContent('Kurozumi')
+    },
+  )
+
+  it.each(LOCALES)(
+    'links every heading of the page from its section list, in order, in %s',
+    (locale) => {
+      renderWithProviders(<LegalPage series={onePiece(locale, [])} />, {
+        locale,
+      })
+      const links = screen
+        .getByRole('navigation', {
+          name: locale === 'en' ? 'On this page' : 'In questa pagina',
+        })
+        .querySelectorAll('a')
+      // A section is reached by the id of its <section>, a part by its own.
+      const headings = [...screen.getByRole('main').querySelectorAll('h2, h3')]
+
+      expect(links).toHaveLength(14)
+      expect([...links].map((link) => link.getAttribute('href'))).toStrictEqual(
+        headings.map(
+          (heading) =>
+            `#${heading.id === '' ? (heading.closest('section')?.id ?? '') : heading.id}`,
+        ),
+      )
+      expect([...links].map((link) => link.textContent)).toStrictEqual(
+        headings.map((heading) => heading.textContent),
+      )
+    },
+  )
+
+  it.each(LOCALES)(
+    'tells the credit link of each series apart in %s',
+    (locale) => {
+      const open = [
+        ONE_PIECE_SERIES,
+        HUNTER_X_HUNTER_SERIES,
+        GAME_OF_THRONES_SERIES,
+      ].map((series) => ({ ...legalOf(series, locale), credits: [] }))
+      renderWithProviders(<LegalPage series={open} />, { locale })
+      const prefix =
+        locale === 'en' ?
+          'Official credit source for'
+        : 'Fonte ufficiale dei crediti:'
+
+      expect(
+        screen
+          .getAllByRole('link')
+          .map((link) => link.textContent)
+          .filter((name) => name.startsWith(prefix)),
+      ).toStrictEqual(open.map(({ copy }) => `${prefix} ${copy.name}`))
     },
   )
 

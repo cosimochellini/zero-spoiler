@@ -984,7 +984,8 @@ const links = {
       it: 'Il khal al cui fianco cavalca come cavaliere di sangue.',
     },
   },
-  // Show only: "A Golden Crown". The books give the arm to Haggo.
+  // Show only: "A Golden Crown". The wikis read do not say which bloodrider
+  // breaks the arm in the books (#1355).
   qotViserys: {
     character: 'viserys-targaryen',
     type: { en: 'Man he seizes', it: 'Uomo afferrato da lui' },
@@ -999,6 +1000,15 @@ const links = {
     summary: {
       en: 'The khaleesi’s brother. When Viserys drew a sword at a feast, Qotho broke his arm and held him while Drogo crowned him with molten gold.',
       it: 'Il fratello della khaleesi. Quando Viserys ha sguainato la spada durante un banchetto, Qotho gli ha spezzato il braccio e lo ha tenuto fermo mentre Drogo lo incoronava con l’oro fuso.',
+    },
+  },
+  // Books only: Daenerys II, the bloodriders' wedding gifts.
+  qotDaenerysBride: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khal’s bride', it: 'Sposa del khal' },
+    summary: {
+      en: 'Drogo’s bride. Qotho’s wedding gift to her is a dragonbone bow, which goes to Drogo when she refuses it, as custom requires.',
+      it: 'La sposa di Drogo. Il dono di nozze di Qotho per lei è un’arma da tiro in osso di drago, che passa a Drogo quando lei la rifiuta, come vuole l’usanza.',
     },
   },
   qotMirri: {
@@ -1073,8 +1083,8 @@ const links = {
     character: 'drogo',
     type: { en: 'Khal', it: 'Khal' },
     summary: {
-      en: 'The khal he serves as a bloodrider. When Drogo falters, Haggo offers to carry him, and Drogo refuses.',
-      it: 'Il khal che serve come cavaliere di sangue. Quando Drogo vacilla, Haggo si offre di portarlo, e Drogo rifiuta.',
+      en: 'The khal he serves as one of his bloodriders.',
+      it: 'Il khal che serve come uno dei suoi cavalieri di sangue.',
     },
   },
   hagMirri: {
@@ -7982,9 +7992,15 @@ export const season1Relationships = {
       value: [links.rakDaenerysPyreChapter, links.rakJhogo, links.rakHaggoDead],
     },
   ],
-  // Show: he breaks Viserys's arm at his gate. The books name him only in
-  // Daenerys VII, after Viserys is dead.
+  // Show: he breaks Viserys's arm at his gate. Books: the synopsis names him
+  // at the wedding in Daenerys II (#1355).
   'qotho': [
+    {
+      episode: 6,
+      chapter: 12,
+      source: 'chapter',
+      value: [links.qotDrogo, links.qotDaenerysBride],
+    },
     {
       episode: 6,
       chapter: 62,
