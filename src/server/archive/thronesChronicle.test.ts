@@ -670,7 +670,14 @@ const STORIES: Row[] = [
   },
   {
     id: 'jon-snow',
-    medium: 'both',
+    medium: 'show',
+    episode: 2,
+    chapter: 11,
+    title: 'You are a Stark',
+  },
+  {
+    id: 'jon-snow',
+    medium: 'books',
     episode: 2,
     chapter: 11,
     title: 'Farewells at Winterfell',
@@ -988,6 +995,13 @@ const STORIES: Row[] = [
   {
     id: 'grenn',
     medium: 'both',
+    episode: 7,
+    chapter: 49,
+    title: 'To the rangers',
+  },
+  {
+    id: 'grenn',
+    medium: 'both',
     episode: 10,
     chapter: 71,
     title: 'Bringing him back',
@@ -1012,6 +1026,13 @@ const STORIES: Row[] = [
     episode: 7,
     chapter: 49,
     title: 'The real reason',
+  },
+  {
+    id: 'pypar',
+    medium: 'books',
+    episode: 7,
+    chapter: 49,
+    title: 'Named to the rangers',
   },
   {
     id: 'pypar',
@@ -1040,6 +1061,13 @@ const STORIES: Row[] = [
     episode: 4,
     chapter: 27,
     title: 'A side of bacon',
+  },
+  {
+    id: 'rast',
+    medium: 'show',
+    episode: 7,
+    chapter: 49,
+    title: 'Assigned to the rangers',
   },
   {
     id: 'dareon',
@@ -1086,11 +1114,25 @@ const STORIES: Row[] = [
   {
     id: 'halder',
     medium: 'books',
+    episode: 7,
+    chapter: 49,
+    title: 'Among the builders',
+  },
+  {
+    id: 'halder',
+    medium: 'books',
     episode: 10,
     chapter: 71,
     title: 'A horse in the trees',
   },
   { id: 'todder', medium: 'books', episode: 30, chapter: 20, title: 'Toad' },
+  {
+    id: 'todder',
+    medium: 'books',
+    episode: 31,
+    chapter: 49,
+    title: 'Named to the rangers',
+  },
   {
     id: 'todder',
     medium: 'books',
@@ -1153,13 +1195,6 @@ const STORIES: Row[] = [
     episode: 8,
     chapter: 61,
     title: 'The knight’s own dagger',
-  },
-  {
-    id: 'othor',
-    medium: 'books',
-    episode: 8,
-    chapter: 20,
-    title: 'Riding out with Benjen',
   },
   {
     id: 'othor',
@@ -1250,8 +1285,9 @@ const FIRST: { chapter: number; episode: number; id: string }[] = [
   { id: 'halder', episode: 7, chapter: 20 },
   { id: 'jaremy-rykker', episode: 7, chapter: 22 },
   { id: 'othell-yarwyck', episode: 7, chapter: 49 },
-  { id: 'othor', episode: 8, chapter: 20 },
   { id: 'jafer-flowers', episode: 8, chapter: 53 },
+  // Othor opens at chapter 20 in the books, but his one story is at 8/53:
+  // no page tells a chapter 20 scene of his (verifier, #1363).
   // Books only: Donal Noye and Chett are not in the show.
   { id: 'donal-noye', episode: 3, chapter: 20 },
   { id: 'chett', episode: 5, chapter: 42 },

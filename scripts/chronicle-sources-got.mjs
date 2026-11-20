@@ -33,6 +33,7 @@ const WALL_AWOIAF =
 const WALL_PROLOGUE = `${BOOKS}Prologue_-_A_Game_of_Thrones`
 const WALL_BRAN_I = `${BOOKS}Bran_I_-_A_Game_of_Thrones`
 const WALL_JON_I = `${BOOKS}Jon_I_-_A_Game_of_Thrones`
+const WALL_JON_II = `${BOOKS}Jon_II_-_A_Game_of_Thrones`
 const WALL_TYRION_II = `${BOOKS}Tyrion_II_-_A_Game_of_Thrones`
 const WALL_JON_III = `${BOOKS}Jon_III_-_A_Game_of_Thrones`
 const WALL_TYRION_III = `${BOOKS}Tyrion_III_-_A_Game_of_Thrones`
@@ -455,9 +456,13 @@ export const GAME_OF_THRONES_SOURCES = {
       source: WALL_JON_I,
       note: 'Site chapter 6: Jon with the squires because Catelyn forbade him the family table, Ghost under the table, Benjen refusing him as too young and telling him to father bastards first, Jon stumbling out amid laughter, and Tyrion in the yard telling him never to forget what he is.',
     },
-    '2:11': {
+    '2:episode': {
       source: EPISODE_2,
-      note: 'Both media, in a different order: the goodbye at Bran’s bedside with Catelyn wanting him gone, the embrace with Robb, the sword for Arya and the pointy end, and the ride north with Benjen. Jon II (site 11) on the Ice and Fire Wiki tells the same four; the relationship pin at 2/11 holds them in both media.',
+      note: 'Show only, split from the book story after review: the sword for Arya and the pointy end, the farewell kiss for Bran and Catelyn’s cold request, the embrace with Robb, Eddard telling Jon he has his blood if not his name and promising to tell him of his mother, and the ride north with Benjen and Tyrion.',
+    },
+    '2:chapter': {
+      source: WALL_JON_II,
+      note: 'Book only, Jon II (site 11): Catelyn at Bran’s bedside, cruel to Jon, the goodbye to Bran, the embrace with Robb, the sword for Arya with her first lesson, and Jon heading north with his uncle.',
     },
     '3:episode': {
       source: EPISODE_3,
@@ -465,7 +470,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '3:chapter': {
       source: WALL_JON_III,
-      note: 'Site chapter 20: Grenn beaten, Alliser’s taunts, Benjen gone on a ranging, Grenn, Todder and the two rapers in the armory, Todder held by the throat, Donal Noye’s lesson, Mormont’s news of Bran, the offer to help Grenn and the joke that makes Alliser an enemy.',
+      note: 'Site chapter 20: Grenn beaten, Alliser’s taunts, Benjen gone on a ranging, Grenn, Todder and the two rapers in the armory, the fight, Donal Noye’s lesson, Mormont’s news of Bran, the offer to help Grenn and the joke that makes Alliser an enemy.',
     },
     '4:27': {
       source: EPISODE_4,
@@ -519,7 +524,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '9:chapter': {
       source: WALL_AGOT_60,
-      note: 'Book only, Jon VIII (site 61): Longclaw, five centuries in House Mormont, the pommel remade as a white wolf’s head after the fire in the tower, Jon’s attempt to refuse, the sword earned by the quick thinking with fire, and Alliser sent with Jafer’s hand, a thousand leagues from Jon.',
+      note: 'Book only, Jon VIII (site 61): Longclaw, five centuries in House Mormont, the pommel remade as a white wolf’s head after the fire in the tower, Jon’s attempt to refuse, the sword earned by the quick thinking with fire, and Alliser sent with a dead man’s hand, a thousand leagues from Jon. Corrected after review: the hand is not named Jafer’s here, since only A Clash of Kings says so.',
     },
     '10:71': {
       source: EPISODE_10,
@@ -559,7 +564,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '8:53': {
       source: EPISODE_8,
-      note: 'Both media: Sam with the party that brings the bodies back, noting they look long dead yet do not stink, Mormont wanting Aemon to examine them, and Othor’s corpse burned by Jon (episode 8 synopsis; Jon VII, site 53, on A Wiki of Ice and Fire, where Sam goes as Aemon’s eyes).',
+      note: 'Both media: Sam with the party that brings the bodies back, noting they look long dead yet have not rotted (corrected after review to what both media tell), Mormont wanting Aemon to examine them, and Othor’s corpse burned by Jon (episode 8 synopsis; Jon VII, site 53, on A Wiki of Ice and Fire, where Sam goes as Aemon’s eyes).',
     },
     '9:61': {
       source: EPISODE_9,
@@ -593,7 +598,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '9:61': {
       source: EPISODE_9,
-      note: 'Both media: Mormont sends Alliser to King’s Landing with the hand of the wight to ask the king for aid (episode 9 synopsis; Jon VIII, site 61, on A Wiki of Ice and Fire, where it is Jafer’s hand).',
+      note: 'Both media: Mormont sends Alliser to King’s Landing with the hand of the wight to ask the king for aid (episode 9 synopsis; Jon VIII, site 61, on A Wiki of Ice and Fire).',
     },
   },
   'yoren': {
@@ -607,7 +612,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '5:33': {
       source: `${SHOW}Yoren`,
-      note: 'Both media: Yoren at the inn when Catelyn takes Tyrion (GOT104) and riding to warn Eddard (GOT105). In the books he is at the inn in Catelyn V (site 29) and tells Eddard in Arya III (site 33), as the Ice and Fire Wiki’s Yoren page and the check for #1352 confirm; he asks Eddard for recruits in both.',
+      note: 'Both media: Yoren at the inn when Catelyn takes Tyrion (GOT104) and riding to warn Eddard (GOT105). In the books he is at the inn in Catelyn V (site 29) and tells Eddard in Arya III (site 33), as the Ice and Fire Wiki’s Yoren page and the check for #1352 confirm; Corrected after review: the request for recruits is dropped, since no page dates it by chapter 33.',
     },
     '9:66': {
       source: `${SHOW}Yoren`,
@@ -665,6 +670,10 @@ export const GAME_OF_THRONES_SOURCES = {
       source: EPISODE_10,
       note: 'Both media: Grenn among the rangers (GOT107; Jon VI), riding after Jon with Pyp, reciting the vows and bringing him back (episode 10 synopsis; Jon IX, site 71, on A Wiki of Ice and Fire).',
     },
+    '7:49': {
+      source: EPISODE_7,
+      note: 'Both media, added after review: the recruits taken in, Grenn to the rangers (GOT107, on his page; Jon VI, site 49, on A Wiki of Ice and Fire) and Jon to the stewards.',
+    },
   },
   'pypar': {
     '3:20': {
@@ -675,13 +684,17 @@ export const GAME_OF_THRONES_SOURCES = {
       source: `${SHOW}Pypar`,
       note: 'Both media: Pyp at first holding Jon back from interfering, going along with the plan, and Rast warned off with Ghost (GOT104; the Ice and Fire Wiki’s Pypar page for Jon IV, site 27).',
     },
-    '7:49': {
+    '7:episode': {
       source: `${SHOW}Pypar`,
       note: 'Show only, citing GOT107: Pyp sent to the stewards with Jon and Sam, his confession about the lord he refused instead of the cheese, Sam’s request for a song and Pyp walking off. In the book he goes to the rangers.',
     },
     '10:71': {
       source: EPISODE_10,
       note: 'Both media: Pyp riding after Jon with Grenn, reciting the vows and bringing him back (episode 10 synopsis; Jon IX, site 71, on A Wiki of Ice and Fire).',
+    },
+    '7:chapter': {
+      source: WALL_AGOT_48,
+      note: 'Book only, added after review: Jon V (site 42) has Alliser passing eight recruits and Pyp squirting the wineskin in Jon’s face; Jon VI (site 49) names him to the rangers with Grenn, Todder and Matthar, and Jon to the stewards (A Wiki of Ice and Fire).',
     },
   },
   'rast': {
@@ -696,6 +709,10 @@ export const GAME_OF_THRONES_SOURCES = {
     '4:episode': {
       source: `${SHOW}Rast`,
       note: 'Show only, citing GOT104: Rast humiliating Sam on Alliser’s orders, the side of bacon, waking pinned down with Ghost on his chest, and refusing to beat Sam afterwards.',
+    },
+    '7:49': {
+      source: `${SHOW}Rast`,
+      note: 'Show only, added after review, citing GOT107: Rast assigned to the rangers. Jon warning him off Sam with Ghost is GOT104.',
     },
   },
   'dareon': {
@@ -721,7 +738,7 @@ export const GAME_OF_THRONES_SOURCES = {
       source: WALL_JON_IV,
       note: 'Book only, site chapter 27: Halder, a stonemason’s apprentice, sent against Sam and told to keep hitting him with the flat of his blade, then beaten with Rast and Albett. The Ice and Fire Wiki’s Halder page has his blow to Jon’s shoulder and his quick agreement to protect Sam.',
     },
-    '7:49': {
+    '7:episode': {
       source: `${SHOW}Halder`,
       note: 'Show only, citing GOT107: present at the speech and assigned to the builders.',
     },
@@ -729,15 +746,23 @@ export const GAME_OF_THRONES_SOURCES = {
       source: WALL_AGOT_70,
       note: 'Book only, Jon IX (site 71): Halder with Grenn, Pyp, Toad and Matthar, hearing the mare and asking the others to be quiet, the vows recited and the return before dawn. He is a builder since Jon VI (site 49).',
     },
+    '7:chapter': {
+      source: WALL_AGOT_48,
+      note: 'Book only, added after review: Jon V (site 42) has Alliser passing eight recruits, Halder among them; Jon VI (site 49) names Halder and Albett to the builders and Jon to the stewards (A Wiki of Ice and Fire).',
+    },
   },
   'todder': {
     '30:20': {
       source: WALL_JON_III,
-      note: 'Book only, at the show gate (episode 30): Toad, Grenn and the two rapers confronting Jon, the taunt, Jon holding him by the throat, and Donal Noye breaking it up. Fed up with being beaten is on the Ice and Fire Wiki’s Todder page.',
+      note: 'Book only, at the show gate (episode 30): Toad, Grenn and the two rapers confronting Jon, the fight and Donal Noye breaking it up. Corrected after review: A Wiki of Ice and Fire tells the fight differently from the Ice and Fire Wiki, so the story no longer says who pins whom. Fed up with being beaten is on the Ice and Fire Wiki’s Todder page.',
     },
     '30:71': {
       source: WALL_AGOT_70,
-      note: 'Book only, Jon IX (site 71): Toad with Grenn, Pyp, Halder and Matthar bringing Jon back. Named to the rangers in Jon VI (site 49), as the Ice and Fire Wiki’s Todder page says.',
+      note: 'Book only, Jon IX (site 71): Toad with Grenn, Pyp, Halder and Matthar bringing Jon back.',
+    },
+    '31:49': {
+      source: WALL_AGOT_48,
+      note: 'Book only, at the episode after his show gate, where his sworn role steps: added after review. Jon V (site 42, A Wiki of Ice and Fire) has Alliser passing eight recruits, Todder and Jon among them; Jon VI (site 49) names Grenn, Pypar, Todder and Matthar to the rangers and Jon to the stewards.',
     },
   },
   'othell-yarwyck': {
@@ -779,13 +804,9 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'othor': {
-    '8:20': {
-      source: `${BOOKS}Othor`,
-      note: 'Book only, site chapter 20, the record gate: Othor rides out in Benjen’s party, which is looking for Waymar Royce, singing bawdy songs. Benjen refusing Jon is in Jon III on the Ice and Fire Wiki.',
-    },
     '8:53': {
       source: EPISODE_8,
-      note: 'Both media: the body found beside Jafer’s and brought back, Mormont wanting Aemon to examine it, the corpse rising and attacking Mormont, the arm cut off without stopping it, and Jon burning it (episode 8 synopsis and the Othor page, GOT108; Jon VII, site 53, on A Wiki of Ice and Fire).',
+      note: 'Both media: one of Benjen’s missing party (the 8/20 book story was dropped after review, since no page places a chapter 20 scene of his, and its bawdy songs are the books’ alone, so they stay out of this story), the body found beside Jafer’s and brought back, Mormont wanting Aemon to examine it, the corpse rising and attacking Mormont, the arm cut off without stopping it, and Jon burning it (episode 8 synopsis and the Othor page, GOT108; Jon VII, site 53, on A Wiki of Ice and Fire).',
     },
   },
   'jafer-flowers': {
@@ -799,7 +820,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '8:61': {
       source: WALL_AGOT_60,
-      note: 'Book only, Jon VIII (site 61): the other wight kills Jaremy and four men before it is hacked apart, and Alliser takes Jafer’s hand to King’s Landing to get the king’s attention. The headless body and the dagger are on the Jafer Flowers page of the Game of Thrones Wiki, In the books.',
+      note: 'Book only, Jon VIII (site 61): the other wight kills Jaremy and four men before it is hacked apart, and Alliser takes a dead man’s hand to King’s Landing to get the king’s attention; corrected after review, the hand is not named Jafer’s here, since only A Clash of Kings says so. The headless body and the dagger are on the Jafer Flowers page of the Game of Thrones Wiki, In the books.',
     },
   },
   'donal-noye': {
