@@ -1,0 +1,30 @@
+name: Set up the project
+description:
+  Node from .nvmrc, the npm that package.json pins, and a clean install.
+
+# A local action needs the repository on disk, so each job runs
+# `actions/checkout` first and passes `fetch-depth` itself.
+runs:
+  using: composite
+  steps:
+    - name: Set up Node
+      uses: actions/setup-node@v7
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+
+    # setup-node pins Node only. package.json pins npm through
+    # `packageManager`, and corepack is what actually enforces it, so
+    # without this step CI runs whichever npm ships with the Node build.
+    - name: Pin npm
+      shell: bash
+      run: |
+        corepack enable npm
+        npm --version
+
+    # Never add --omit=optional: fallow and impeccable (the engine behind
+    # gate:design) each ship their binary through optionalDependencies and
+    # resolve it at runtime.
+    - name: Install
+      shell: bash
+      run: npm ci

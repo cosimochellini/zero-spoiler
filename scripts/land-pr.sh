@@ -28,10 +28,12 @@ H=$2
 # Prints the conclusion of the newest CI workflow run on commit $1, once it has
 # finished. A superseding run can cancel an earlier one, so keep waiting
 # when the latest run is cancelled. A skipped run is the head's draft run, from
-# before `gh pr ready` started the real one, so keep waiting past it too.
+# before `gh pr ready` started the real one, so keep waiting past it too. It
+# polls every 10 s for up to 40 minutes: a run is green in minutes, so a slow
+# poll would be most of the wait that is left.
 wait_check() {
   local runs r
-  for _ in $(seq 80); do
+  for _ in $(seq 240); do
     runs=$(gh api 'repos/{owner}/{repo}/actions/workflows/ci.yml/runs' --method GET \
       -f event=pull_request -f "head_sha=$1" -f "branch=$HEAD_BRANCH") || return 1
     r=$(jq -r --arg repo "$HEAD_REPO" '
@@ -42,7 +44,7 @@ wait_check() {
       "completed cancelled" | "completed skipped") ;;
       "completed "*) echo "${r#completed }"; return ;;
     esac
-    sleep 30
+    sleep 10
   done
   echo timeout
 }
