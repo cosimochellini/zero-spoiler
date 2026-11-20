@@ -510,7 +510,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '9:66': {
       source: EPISODE_9,
-      note: `The episode has Sansa at the Sept as her father confesses and is beheaded despite the mercy Joffrey promised her. The reviewed relationship pin at 9/66 holds it in both media (“before her eyes”). ${PAST_CHAPTER_PAGES}`,
+      note: `The episode has Sansa at the Sept as her father confesses and is beheaded despite the mercy Joffrey promised her. The reviewed relationship pin at 9/66 holds it in both media (“before her eyes”). Corrected after review: on screen she faints before the blow, and the book’s order is unverified, so the story keeps only her scream and the beheading, in no stated order. ${PAST_CHAPTER_PAGES}`,
     },
     '10:68': {
       source: EPISODE_10,
@@ -722,7 +722,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '6:38': {
       source: EPISODE_6,
-      note: 'The synopsis: the ride with Robb and Theon on Tyrion’s saddle, Bran wandering off, the wildlings, a knife to his throat, Theon’s arrow angering Robb, Osha yielding and taken prisoner. Book side: Bran V (Ice and Fire Wiki chapter page): the outlaws, Theon shooting Stiv, Osha taken prisoner; Robb’s anger at the risky shot is the reviewed relationship pin at 6/38. Kept to what both tell: the wolves fight only in the book, and the book page does not say outright that Bran was alone.',
+      note: 'The synopsis: the ride with Robb and Theon on Tyrion’s saddle, Bran wandering off, the wildlings, a knife to his throat, Theon’s arrow angering Robb, Osha yielding and taken prisoner. Book side: Bran V (Ice and Fire Wiki chapter page): the outlaws, Theon shooting Stiv, Osha taken prisoner; corrected after review: the reason for Robb’s anger, the risky shot, is the show’s (the book gives betrayal and his men’s failure), so the story says only that he is furious. Kept to what both tell: the wolves fight only in the book, and the book page does not say outright that Bran was alone.',
     },
     '8:54': {
       source: EPISODE_8,
@@ -766,7 +766,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '6:38': {
       source: EPISODE_6,
-      note: 'The synopsis: the ride with Robb and Bran on the new saddle, the knife at Bran’s throat, Theon’s arrow and Robb’s anger, Osha yielding. Book side: Bran V (Ice and Fire Wiki chapter page): Theon shoots Stiv just in time, Osha surrenders; Robb’s anger at the shot is the reviewed relationship pin at 6/38.',
+      note: 'The synopsis: the ride with Robb and Bran on the new saddle, the knife at Bran’s throat, Theon’s arrow and Robb’s anger, Osha yielding. Book side: Bran V (Ice and Fire Wiki chapter page): Theon shoots Stiv just in time, Osha surrenders; corrected after review: the reason for Robb’s anger is the show’s alone, so the story says only that he is furious.',
     },
     '10:72': {
       source: `${SHOW}Theon_Greyjoy`,
@@ -990,7 +990,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '6:38': {
       source: `${BOOKS}Bran_V_-_A_Game_of_Thrones`,
-      note: 'Both media: the news of Tyrion’s seizure, Jory’s death and Eddard’s injury, the ride with the new saddle, the outlaws, Stiv shot by Theon, Robb’s anger and Osha taken (chapter 38; GOT106 on the Robb page). Stiv’s death is at 6/38. Benjen’s absence, a book detail here, is left out.',
+      note: 'Both media: the news of Tyrion’s seizure, Jory’s death and Eddard’s injury, the ride with the new saddle, the outlaws, Stiv shot by Theon, Robb’s anger and Osha taken (chapter 38; GOT106 on the Robb page). The reason for the anger, a shot that could have hit Bran, is the show’s alone and is left out. Stiv’s death is at 6/38. Benjen’s absence, a book detail here, is left out.',
     },
     '8:54': {
       source: `${AWOIAF}A_Game_of_Thrones-Chapter_53`,

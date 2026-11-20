@@ -820,7 +820,7 @@ export const season1Chronicles = {
         en: 'The man who passes the sentence',
       },
       {
-        it: 'Eddard, lord di Grande Inverno, porta il figlio [[bran-stark|Bran]] ad assistere all’esecuzione di un disertore dei Guardiani della notte e decapita il disertore di persona con Ghiaccio, la sua spada. Sulla via del ritorno spiega a Bran che secondo l’uso dei Primi Uomini chi pronuncia la sentenza deve anche eseguirla. [[robb-stark|Robb]] e [[jon-snow|Jon Snow]] trovano una meta-lupa morta con un pezzo di corno di cervo nella gola. [[theon-greyjoy|Theon Greyjoy]] propone di uccidere i cuccioli, ma Jon fa notare che sono cinque, uno per ogni figlio legittimo di Eddard, ed Eddard li lascia tenere a patto che i ragazzi li allevino da soli.',
+        it: 'Eddard, lord di Grande Inverno, porta il figlio [[bran-stark|Bran]] ad assistere all’esecuzione di un disertore dei Guardiani della notte e decapita il disertore di persona con Ghiaccio, la propria spada. Sulla via del ritorno spiega a Bran che secondo l’uso dei Primi Uomini chi pronuncia la sentenza deve anche eseguirla. [[robb-stark|Robb]] e [[jon-snow|Jon Snow]] trovano una meta-lupa morta con un pezzo di corno di cervo nella gola. [[theon-greyjoy|Theon Greyjoy]] propone di uccidere i cuccioli, ma Jon fa notare che sono cinque, uno per ogni figlio legittimo di Eddard, ed Eddard li lascia tenere a patto che i ragazzi li allevino da soli.',
         en: 'Eddard, the lord of Winterfell, takes his son [[bran-stark|Bran]] to watch the execution of a deserter from the Night’s Watch and beheads the man himself with his sword, Ice. On the way back he explains to Bran that, by the custom of the First Men, the man who passes the sentence should carry it out. [[robb-stark|Robb]] and [[jon-snow|Jon Snow]] find a dead direwolf with a piece of stag antler in her throat. [[theon-greyjoy|Theon Greyjoy]] offers to kill the pups, but Jon points out that there are five, one for each of Eddard’s trueborn children, and Eddard lets them keep the pups if the children raise them themselves.',
       },
     ),
@@ -828,8 +828,8 @@ export const season1Chronicles = {
       [1, 5],
       { it: 'Il re a Grande Inverno', en: 'The king at Winterfell' },
       {
-        it: 'Eddard decapita di persona un disertore dei Guardiani della notte, perché chi pronuncia la sentenza deve brandire la spada. Al ritorno lascia tenere ai figli i cuccioli di una meta-lupa morta. Poi [[catelyn-stark|Catelyn]] gli porta la notizia che Jon Arryn, il Primo Cavaliere del Re, è morto e che il re sta arrivando. Nelle cripte di Grande Inverno [[robert-baratheon|re Robert]] gli offre la carica di Primo Cavaliere e propone di dare in sposa [[sansa-stark|Sansa]] a suo figlio [[joffrey-baratheon|Joffrey]]. Quella notte una lettera della sorella di Catelyn accusa i Lannister di aver ucciso Jon Arryn, ed Eddard accetta la carica.',
-        en: 'Eddard beheads a deserter from the Night’s Watch himself, because the man who passes the sentence should swing the sword. On the way back he lets his children keep the pups of a dead direwolf. Then [[catelyn-stark|Catelyn]] brings him word that Jon Arryn, the Hand of the King, is dead and that the king is on his way. In the crypts of Winterfell [[robert-baratheon|King Robert]] offers him the post of Hand and proposes that [[sansa-stark|Sansa]] marry his son [[joffrey-baratheon|Joffrey]]. That night a letter from Catelyn’s sister accuses the Lannisters of murdering Jon Arryn, and Eddard accepts the post.',
+        it: 'Eddard decapita di persona un disertore dei Guardiani della notte, perché chi pronuncia la sentenza deve brandire la spada. Al ritorno lascia tenere ai figli i cuccioli di una meta-lupa morta. Poi [[catelyn-stark|Catelyn]] gli porta la notizia che Jon Arryn, che era Primo Cavaliere del Re, è morto e che il re sta arrivando. Nelle cripte di Grande Inverno [[robert-baratheon|re Robert]] gli offre la carica di Primo Cavaliere e propone di dare in sposa [[sansa-stark|Sansa]] a suo figlio [[joffrey-baratheon|Joffrey]]. Quella notte una lettera della sorella di Catelyn accusa i Lannister di aver ucciso Jon Arryn, ed Eddard accetta la carica.',
+        en: 'Eddard beheads a deserter from the Night’s Watch himself, because the man who passes the sentence should swing the sword. On the way back he lets his children keep the pups of a dead direwolf. Then [[catelyn-stark|Catelyn]] brings him word that Jon Arryn, who was Hand of the King, is dead and that the king is on his way. In the crypts of Winterfell [[robert-baratheon|King Robert]] offers him the post of Hand and proposes that [[sansa-stark|Sansa]] marry his son [[joffrey-baratheon|Joffrey]]. That night a letter from Catelyn’s sister accuses the Lannisters of murdering Jon Arryn, and Eddard accepts the post.',
       },
     ),
     inBooks(
@@ -844,7 +844,7 @@ export const season1Chronicles = {
       [2, 17],
       { it: 'La meta-lupa di Sansa', en: 'Sansa’s wolf' },
       {
-        it: 'Eddard lascia Grande Inverno mentre [[bran-stark|Bran]] giace privo di sensi dopo la caduta, e parte verso sud con [[robert-baratheon|re Robert]] e le figlie. Lungo la strada [[arya-stark|Arya]] colpisce il principe [[joffrey-baratheon|Joffrey]], che minacciava un ragazzo, e la sua meta-lupa morde il principe. Davanti al re [[sansa-stark|Sansa]] dice di non ricordare cosa sia successo. [[cersei-lannister|Cersei]] pretende la morte della meta-lupa, ma quella di Arya è sparita, e Robert cede quando la regina chiede quella di Sansa. Eddard non lascia il compito a nessun altro e uccide Lady con le sue mani.',
+        it: 'Eddard lascia Grande Inverno mentre [[bran-stark|Bran]] giace privo di sensi dopo la caduta, e parte verso sud con [[robert-baratheon|re Robert]] e le figlie. Lungo la strada [[arya-stark|Arya]] colpisce il principe [[joffrey-baratheon|Joffrey]], che minacciava un ragazzo, e la meta-lupa di Arya morde il principe. Davanti al re [[sansa-stark|Sansa]] dice di non ricordare cosa sia successo. [[cersei-lannister|Cersei]] pretende la morte della meta-lupa, ma quella di Arya è sparita, e Robert cede quando la regina chiede quella di Sansa. Eddard non lascia il compito a nessun altro e uccide Lady con le proprie mani.',
         en: 'Eddard leaves Winterfell while [[bran-stark|Bran]] lies senseless after his fall, and rides south with [[robert-baratheon|King Robert]] and his daughters. On the road [[arya-stark|Arya]] strikes Prince [[joffrey-baratheon|Joffrey]], who was threatening a boy, and her direwolf bites the prince. Before the king, [[sansa-stark|Sansa]] says she does not remember what happened. [[cersei-lannister|Cersei]] demands the direwolf’s death, but Arya’s is gone, and Robert gives way when the queen asks for Sansa’s instead. Eddard leaves the task to no one else and kills Lady with his own hands.',
       },
     ),
@@ -860,7 +860,7 @@ export const season1Chronicles = {
       [4, 30],
       { it: 'Il ragazzo dell’armaiolo', en: 'The armorer’s apprentice' },
       {
-        it: 'Seguendo i passi di Jon Arryn, Eddard va dal maestro armaiolo [[tobho-mott|Tobho Mott]] e conosce il suo apprendista, [[gendry|Gendry]]. Jon Arryn era venuto a vedere il ragazzo, ed Eddard capisce che Gendry è uno dei figli bastardi di re Robert. Eddard non va alla prima giornata del torneo in suo onore, in cui ser [[gregor-clegane|Gregor Clegane]] uccide in giostra ser [[hugh-of-the-vale|Hugh della Valle]], l’ex scudiero di Jon Arryn.',
+        it: 'Seguendo i passi di Jon Arryn, Eddard va dal maestro armaiolo [[tobho-mott|Tobho Mott]] e conosce l’apprendista di Mott, [[gendry|Gendry]]. Jon Arryn era venuto a vedere il ragazzo, ed Eddard capisce che Gendry è uno dei figli bastardi di re Robert. Eddard non va alla prima giornata del torneo in onore del Primo Cavaliere, in cui ser [[gregor-clegane|Gregor Clegane]] uccide in giostra ser [[hugh-of-the-vale|Hugh della Valle]], l’ex scudiero di Jon Arryn.',
         en: 'Retracing Jon Arryn’s steps, Eddard visits the master armorer [[tobho-mott|Tobho Mott]] and meets his apprentice, [[gendry|Gendry]]. Jon Arryn had come to see the boy, and Eddard realizes that Gendry is one of King Robert’s bastard sons. Eddard stays away from the first day of the tourney held in his honour, where Ser [[gregor-clegane|Gregor Clegane]] kills Ser [[hugh-of-the-vale|Hugh of the Vale]], Jon Arryn’s former squire, in the joust.',
       },
     ),
@@ -884,7 +884,7 @@ export const season1Chronicles = {
       [7, 50],
       { it: 'Il trono e il pugnale', en: 'The throne and the dagger' },
       {
-        it: 'Eddard dice a [[cersei-lannister|Cersei]] di sapere che i suoi figli non sono di Robert e le consiglia di fuggire prima che il re torni dalla caccia. Ma [[robert-baratheon|Robert]] torna ferito a morte da un cinghiale, e sul letto di morte nomina Eddard Protettore del Regno fino alla maggiore età del suo erede. Eddard non scrive il nome di [[joffrey-baratheon|Joffrey]] nel documento. Rifiuta l’aiuto di [[renly-baratheon|Renly]] e conta su [[petyr-baelish|Ditocorto]] per assicurarsi la Guardia cittadina. Morto il re, nella sala del trono Cersei strappa il documento. Eddard dichiara che Joffrey non ha diritto al trono, ma le cappe dorate di [[janos-slynt|Janos Slynt]] uccidono i suoi uomini e Ditocorto gli punta un pugnale alla gola: lo aveva avvertito di non fidarsi di lui.',
+        it: 'Eddard dice a [[cersei-lannister|Cersei]] di sapere che i figli di Cersei non sono di Robert e le consiglia di fuggire prima che il re torni dalla caccia. Ma [[robert-baratheon|Robert]] torna ferito a morte da un cinghiale, e sul letto di morte nomina Eddard Protettore del Regno fino alla maggiore età del suo erede. Eddard non scrive il nome di [[joffrey-baratheon|Joffrey]] nel documento. Rifiuta l’aiuto di [[renly-baratheon|Renly]] e conta su [[petyr-baelish|Ditocorto]] per assicurarsi la Guardia cittadina. Morto il re, nella sala del trono Cersei strappa il documento. Eddard dichiara che Joffrey non ha diritto al trono, ma le cappe dorate di [[janos-slynt|Janos Slynt]] uccidono gli uomini di Eddard e Ditocorto gli punta un pugnale alla gola: lo aveva avvertito di non fidarsi di lui.',
         en: 'Eddard tells [[cersei-lannister|Cersei]] that he knows her children are not Robert’s and urges her to flee before the king returns from his hunt. But [[robert-baratheon|Robert]] comes back mortally wounded by a boar, and on his deathbed names Eddard Protector of the Realm until his heir comes of age. Eddard leaves [[joffrey-baratheon|Joffrey]]’s name out of the letter. He refuses [[renly-baratheon|Renly]]’s help and counts on [[petyr-baelish|Littlefinger]] to win him the City Watch. With the king dead, Cersei tears up the letter in the throne room. Eddard declares that Joffrey has no right to the throne, but [[janos-slynt|Janos Slynt]]’s gold cloaks kill his men and Littlefinger holds a dagger to his throat: he did warn him not to trust him.',
       },
     ),
@@ -908,7 +908,7 @@ export const season1Chronicles = {
       [9, 66],
       { it: 'Davanti al Grande Tempio', en: 'Before the Great Sept' },
       {
-        it: 'Per salvare le figlie, Eddard accetta di confessare. Viene condotto sui gradini del Grande Tempio di Baelor e, davanti alla folla, confessa il tradimento e riconosce [[joffrey-baratheon|Joffrey]] come re. Joffrey però ordina la sua morte. [[arya-stark|Arya]] è tra la folla, e [[yoren|Yoren]] dei Guardiani della notte la trattiene. Anche [[sansa-stark|Sansa]] è presente. Ser [[ilyn-payne|Ilyn Payne]] decapita Eddard con Ghiaccio, la sua stessa spada.',
+        it: 'Per salvare le figlie, Eddard accetta di confessare. Viene condotto sui gradini del Grande Tempio di Baelor e, davanti alla folla, confessa il tradimento e riconosce [[joffrey-baratheon|Joffrey]] come re. Joffrey però ordina la morte di Eddard. [[arya-stark|Arya]] è tra la folla, e [[yoren|Yoren]] dei Guardiani della notte la trattiene. Anche [[sansa-stark|Sansa]] è presente. Ser [[ilyn-payne|Ilyn Payne]] decapita Eddard con Ghiaccio, la spada di Eddard.',
         en: 'To save his daughters, Eddard agrees to confess. He is brought to the steps of the Great Sept of Baelor and, before the crowd, confesses to treason and names [[joffrey-baratheon|Joffrey]] king. Joffrey orders his death all the same. [[arya-stark|Arya]] is in the crowd, and [[yoren|Yoren]] of the Night’s Watch holds her back. [[sansa-stark|Sansa]] is there too. Ser [[ilyn-payne|Ilyn Payne]] beheads Eddard with Ice, his own sword.',
       },
     ),
@@ -934,7 +934,7 @@ export const season1Chronicles = {
       [4, 30],
       { it: 'Il torneo del Primo Cavaliere', en: 'The Hand’s tourney' },
       {
-        it: 'Sansa assiste al torneo in onore di suo padre. Nella prima giostra ser [[gregor-clegane|Gregor Clegane]], la Montagna, uccide ser [[hugh-of-the-vale|Hugh della Valle]] con una scheggia di lancia nel collo. [[petyr-baelish|Ditocorto]] si siede accanto a lei e le racconta che da bambino Gregor spinse nel fuoco la faccia del fratello minore, [[sandor-clegane|Sandor]], perché aveva giocato con un suo giocattolo. Le consiglia di non andare in giro a raccontarlo.',
+        it: 'Sansa assiste al torneo in onore di suo padre. Nella prima giostra ser [[gregor-clegane|Gregor Clegane]], la Montagna, uccide ser [[hugh-of-the-vale|Hugh della Valle]] con una scheggia di lancia nel collo. [[petyr-baelish|Ditocorto]] si siede accanto a lei e le racconta che da bambino Gregor spinse nel fuoco la faccia del fratello minore, [[sandor-clegane|Sandor]], perché aveva giocato con un giocattolo di Gregor. Le consiglia di non andare in giro a raccontarlo.',
         en: 'Sansa watches the tourney held in her father’s honour. In the first tilt Ser [[gregor-clegane|Gregor Clegane]], the Mountain, kills Ser [[hugh-of-the-vale|Hugh of the Vale]] with a splinter of lance through the neck. [[petyr-baelish|Littlefinger]] sits beside her and tells her that as a boy Gregor pushed the face of his younger brother, [[sandor-clegane|Sandor]], into a fire for playing with one of his toys. He advises her not to spread the story.',
       },
     ),
@@ -966,7 +966,7 @@ export const season1Chronicles = {
       [8, 58],
       { it: 'La supplica', en: 'The plea' },
       {
-        it: 'Dopo l’arresto del padre, Sansa è trattenuta nella Fortezza Rossa. Davanti alla regina [[cersei-lannister|Cersei]] e al concilio scrive al fratello [[robb-stark|Robb]] una lettera che gli chiede di venire a giurare fedeltà al nuovo re, [[joffrey-baratheon|Joffrey]]. Poi, davanti alla corte, implora Joffrey di avere pietà di suo padre. Joffrey promette di essere clemente, se [[eddard-stark|Eddard]] confesserà il suo tradimento.',
+        it: 'Dopo l’arresto del padre, Sansa è trattenuta nella Fortezza Rossa. Davanti alla regina [[cersei-lannister|Cersei]] e al concilio scrive al fratello [[robb-stark|Robb]] una lettera che gli chiede di venire a giurare fedeltà al nuovo re, [[joffrey-baratheon|Joffrey]]. Poi, davanti alla corte, implora Joffrey di avere pietà di Eddard. Joffrey promette di essere clemente, se [[eddard-stark|Eddard]] confesserà il suo tradimento.',
         en: 'After her father’s arrest Sansa is held in the Red Keep. Before Queen [[cersei-lannister|Cersei]] and the council she writes a letter to her brother [[robb-stark|Robb]], asking him to come and swear fealty to the new king, [[joffrey-baratheon|Joffrey]]. Then, before the court, she begs Joffrey to show her father mercy. Joffrey promises to be merciful if [[eddard-stark|Eddard]] confesses his treason.',
       },
     ),
@@ -974,15 +974,15 @@ export const season1Chronicles = {
       [9, 66],
       { it: 'La promessa infranta', en: 'The broken promise' },
       {
-        it: 'Sansa assiste al giudizio di suo padre sui gradini del Grande Tempio di Baelor. [[eddard-stark|Eddard]] confessa il tradimento e riconosce [[joffrey-baratheon|Joffrey]] come re. Ma Joffrey, nonostante la promessa di clemenza fatta a Sansa, ordina la sua morte. Sansa urla e sviene mentre ser [[ilyn-payne|Ilyn Payne]] decapita il padre.',
-        en: 'Sansa watches her father’s judgment on the steps of the Great Sept of Baelor. [[eddard-stark|Eddard]] confesses to treason and names [[joffrey-baratheon|Joffrey]] king. But Joffrey, despite the mercy he promised Sansa, orders his death. Sansa screams and faints as Ser [[ilyn-payne|Ilyn Payne]] beheads him.',
+        it: 'Sansa assiste al giudizio di suo padre sui gradini del Grande Tempio di Baelor. [[eddard-stark|Eddard]] confessa il tradimento e riconosce [[joffrey-baratheon|Joffrey]] come re. Ma Joffrey, nonostante la promessa di clemenza fatta a Sansa, ordina la morte di Eddard. Sansa urla, e ser [[ilyn-payne|Ilyn Payne]] decapita Eddard.',
+        en: 'Sansa watches her father’s judgment on the steps of the Great Sept of Baelor. [[eddard-stark|Eddard]] confesses to treason and names [[joffrey-baratheon|Joffrey]] king. But Joffrey, despite the mercy he promised Sansa, orders his death. Sansa screams, and Ser [[ilyn-payne|Ilyn Payne]] beheads him.',
       },
     ),
     inBoth(
       [10, 68],
       { it: 'Le teste sulle mura', en: 'The heads on the walls' },
       {
-        it: 'Il re [[joffrey-baratheon|Joffrey]], ancora promesso a Sansa, la porta sulle mura del castello e la costringe a guardare la testa di suo padre, infilzata su una picca. Accanto c’è quella della septa [[mordane|Mordane]]. Joffrey fa colpire Sansa da ser [[meryn-trant|Meryn Trant]]. Sansa sta per spingere il re giù dalle mura, quando [[sandor-clegane|Sandor Clegane]] le tampona il sangue sul labbro con un fazzoletto.',
+        it: 'Il re [[joffrey-baratheon|Joffrey]], ancora promesso a Sansa, la porta sulle mura del castello e la costringe a guardare la testa del padre di Sansa, infilzata su una picca. Accanto c’è quella della septa [[mordane|Mordane]]. Joffrey fa colpire Sansa da ser [[meryn-trant|Meryn Trant]]. Sansa sta per spingere il re giù dalle mura, quando [[sandor-clegane|Sandor Clegane]] le tampona il sangue sul labbro con un fazzoletto.',
         en: 'King [[joffrey-baratheon|Joffrey]], still promised to Sansa, takes her up on the castle walls and makes her look at her father’s head on a spike. Beside it is Septa [[mordane|Mordane]]’s. Joffrey has Ser [[meryn-trant|Meryn Trant]] strike Sansa. Sansa is about to push the king off the walls when [[sandor-clegane|Sandor Clegane]] dabs the blood from her lip with a handkerchief.',
       },
     ),
@@ -1000,7 +1000,7 @@ export const season1Chronicles = {
       [1, 8],
       { it: 'I punti storti', en: 'Crooked stitches' },
       {
-        it: 'Alla lezione di cucito della septa [[mordane|Mordane]] i punti di Arya sono storti, mentre [[sansa-stark|Sansa]] e [[jeyne-poole|Jeyne Poole]] parlano dei complimenti del principe [[joffrey-baratheon|Joffrey]]. Quando la septa la rimprovera, Arya scappa. Ritrova Nymeria, la sua meta-lupa, che non può entrare alla lezione, e insieme a [[jon-snow|Jon Snow]] guarda i ragazzi che si allenano nel cortile. Joffrey provoca [[robb-stark|Robb]] e [[theon-greyjoy|Theon]] deve trattenerlo. Tornata in camera, Arya trova ad aspettarla la septa e sua madre.',
+        it: 'Alla lezione di cucito della septa [[mordane|Mordane]] i punti di Arya sono storti, mentre [[sansa-stark|Sansa]] e [[jeyne-poole|Jeyne Poole]] parlano dei complimenti del principe [[joffrey-baratheon|Joffrey]]. Quando la septa la rimprovera, Arya scappa. Ritrova Nymeria, la sua meta-lupa, che non può entrare alla lezione, e insieme a [[jon-snow|Jon Snow]] guarda i ragazzi che si allenano nel cortile. Joffrey provoca [[robb-stark|Robb]] e [[theon-greyjoy|Theon]] deve trattenere Robb. Tornata in camera, Arya trova ad aspettarla la septa e sua madre.',
         en: 'At Septa [[mordane|Mordane]]’s needlework lesson Arya’s stitches are crooked, while [[sansa-stark|Sansa]] and [[jeyne-poole|Jeyne Poole]] talk about Prince [[joffrey-baratheon|Joffrey]]’s compliments. When the septa scolds her, Arya runs off. She finds Nymeria, her direwolf, who is not allowed at the lesson, and with [[jon-snow|Jon Snow]] she watches the boys training in the yard. Joffrey taunts [[robb-stark|Robb]], and [[theon-greyjoy|Theon]] has to hold him back. Back in her room, Arya finds the septa and her mother waiting for her.',
       },
     ),
@@ -1032,7 +1032,7 @@ export const season1Chronicles = {
       [5, 33],
       { it: 'Nei sotterranei', en: 'Under the castle' },
       {
-        it: 'Per esercitarsi, Arya dà la caccia ai gatti della Fortezza Rossa e ne segue uno nei sotterranei, dove sono custoditi i teschi dei draghi. Al buio sente due uomini che complottano: parlano di suo padre, della regina e di una guerra. Arya trova la via d’uscita e corre ad avvertire [[eddard-stark|Eddard]], ma lui non dà peso al suo racconto confuso. La conversazione viene interrotta dall’arrivo di [[yoren|Yoren]] dei Guardiani della notte, che porta notizie urgenti per il Primo Cavaliere.',
+        it: 'Per esercitarsi, Arya dà la caccia ai gatti della Fortezza Rossa e ne segue uno nei sotterranei, dove sono custoditi i teschi dei draghi. Al buio sente due uomini che complottano: parlano del padre di Arya, della regina e di una guerra. Arya trova la via d’uscita e corre ad avvertire [[eddard-stark|Eddard]], ma lui non dà peso al suo racconto confuso. La conversazione viene interrotta dall’arrivo di [[yoren|Yoren]] dei Guardiani della notte, che porta notizie urgenti per il Primo Cavaliere.',
         en: 'As an exercise, Arya chases the cats of the Red Keep and follows one into the dungeons, where the skulls of the dragons are kept. In the dark she hears two men plotting: they talk of her father, of the queen and of a war. Arya finds her way out and runs to warn [[eddard-stark|Eddard]], but he pays little heed to her muddled tale. They are interrupted when [[yoren|Yoren]] of the Night’s Watch arrives with urgent news for the Hand.',
       },
     ),
@@ -1048,7 +1048,7 @@ export const season1Chronicles = {
       [9, 66],
       { it: 'Sulla statua di Baelor', en: 'On Baelor’s statue' },
       {
-        it: 'Arya vive per le strade di Approdo del Re e si procura il cibo catturando piccioni. Quando la folla corre verso il Grande Tempio di Baelor, dove viene portato il Primo Cavaliere, la segue e si arrampica su una statua per vedere. Suo padre [[eddard-stark|Eddard]] confessa il tradimento, ma [[joffrey-baratheon|Joffrey]] ordina di decapitarlo. Arya cerca di raggiungerlo, ma [[yoren|Yoren]] dei Guardiani della notte la afferra e le impedisce di vedere mentre ser [[ilyn-payne|Ilyn Payne]] uccide suo padre.',
+        it: 'Arya vive per le strade di Approdo del Re e si procura il cibo catturando piccioni. Quando la folla corre verso il Grande Tempio di Baelor, dove viene portato il Primo Cavaliere, la segue e si arrampica su una statua per vedere. Suo padre [[eddard-stark|Eddard]] confessa il tradimento, ma [[joffrey-baratheon|Joffrey]] ordina di decapitarlo. Arya cerca di raggiungerlo, ma [[yoren|Yoren]] dei Guardiani della notte la afferra e le impedisce di vedere mentre ser [[ilyn-payne|Ilyn Payne]] uccide Eddard.',
         en: 'Arya lives on the streets of King’s Landing and gets food by catching pigeons. When the crowd hurries to the Great Sept of Baelor, where the Hand is being brought, she follows it and climbs a statue to see. Her father [[eddard-stark|Eddard]] confesses to treason, but [[joffrey-baratheon|Joffrey]] orders him beheaded. Arya tries to reach him, but [[yoren|Yoren]] of the Night’s Watch grabs her and keeps her from seeing as Ser [[ilyn-payne|Ilyn Payne]] kills her father.',
       },
     ),
@@ -1056,7 +1056,7 @@ export const season1Chronicles = {
       [10, 66],
       { it: 'Arry', en: 'Arry' },
       {
-        it: '[[yoren|Yoren]] trascina Arya via dalla folla chiamandola ragazzo e le taglia i capelli con un coltello. La porterà fuori da Approdo del Re e fino a Grande Inverno, travestita da recluta dei Guardiani della notte, e la avverte di non fidarsi degli altri. Con il nome di Arry si unisce alle reclute, tra cui [[gendry|Gendry]], Frittella e Lommy Maniverdi. Quando Frittella e Lommy cercano di prenderle Ago, lei sguaina la spada, e Gendry si schiera dalla sua parte.',
+        it: '[[yoren|Yoren]] trascina Arya via dalla folla chiamandola ragazzo e le taglia i capelli con un coltello. La porterà fuori da Approdo del Re e fino a Grande Inverno, travestita da recluta dei Guardiani della notte, e la avverte di non fidarsi degli altri. Con il nome di Arry si unisce alle reclute, tra cui [[gendry|Gendry]], Frittella e Lommy Maniverdi. Quando Frittella e Lommy cercano di prenderle Ago, lei sguaina la spada, e Gendry si schiera dalla parte di Arya.',
         en: '[[yoren|Yoren]] drags Arya away from the crowd, calling her boy, and cuts her hair short with a knife. He will take her out of King’s Landing and on to Winterfell disguised as a recruit for the Night’s Watch, and warns her not to trust the others. Under the name Arry she joins the recruits, among them [[gendry|Gendry]], Hot Pie and Lommy Greenhands. When Hot Pie and Lommy try to take Needle from her, she draws the sword, and Gendry takes her side.',
       },
     ),
@@ -1074,7 +1074,7 @@ export const season1Chronicles = {
       [2, 17],
       { it: 'La pelle della meta-lupa', en: 'The direwolf’s pelt' },
       {
-        it: 'Lungo la strada verso sud Jory cerca [[arya-stark|Arya]], scomparsa dopo la lite con il principe [[joffrey-baratheon|Joffrey]], e la trova, ma gli uomini dei Lannister costringono Jory a portarla davanti al re anziché da suo padre. Jory resta accanto ad Arya. Quando la regina pretende la morte della meta-lupa di Sansa, è lui a portare la spada a [[eddard-stark|Eddard]], che poi gli fa riportare il corpo a Grande Inverno perché la regina non ne abbia la pelle.',
+        it: 'Lungo la strada verso sud Jory cerca [[arya-stark|Arya]], scomparsa dopo la lite con il principe [[joffrey-baratheon|Joffrey]], e la trova, ma gli uomini dei Lannister costringono Jory a portarla davanti al re anziché dal padre di Arya. Jory resta accanto ad Arya. Quando la regina pretende la morte della meta-lupa di Sansa, è lui a portare la spada a [[eddard-stark|Eddard]], che poi gli fa riportare il corpo a Grande Inverno perché la regina non ne abbia la pelle.',
         en: 'On the road south Jory searches for [[arya-stark|Arya]], missing after the quarrel with Prince [[joffrey-baratheon|Joffrey]], and finds her, but Lannister men force him to take her before the king rather than her father. Jory stays by Arya. When the queen demands the death of Sansa’s direwolf, he is the one who brings [[eddard-stark|Eddard]] his sword, and Eddard then has him send the body back to Winterfell so that the queen does not get the pelt.',
       },
     ),
@@ -1090,7 +1090,7 @@ export const season1Chronicles = {
       [5, 36],
       { it: 'Una lezione per lord Stark', en: 'A lesson for Lord Stark' },
       {
-        it: 'Jory accompagna [[eddard-stark|Eddard]] in un bordello della città, dove il Primo Cavaliere cerca un’altra figlia bastarda del re. All’uscita [[jaime-lannister|Jaime Lannister]] li aspetta con molti uomini, furioso perché [[catelyn-stark|Catelyn]] ha preso prigioniero suo fratello [[tyrion-lannister|Tyrion]]. Jaime vuole Eddard vivo, ma fa uccidere i suoi uomini. Jory muore nello scontro.',
+        it: 'Jory accompagna [[eddard-stark|Eddard]] in un bordello della città, dove il Primo Cavaliere cerca un’altra figlia bastarda del re. All’uscita [[jaime-lannister|Jaime Lannister]] li aspetta con molti uomini, furioso perché [[catelyn-stark|Catelyn]] ha preso prigioniero suo fratello [[tyrion-lannister|Tyrion]]. Jaime vuole Eddard vivo, ma fa uccidere gli uomini di Eddard. Jory muore nello scontro.',
         en: 'Jory goes with [[eddard-stark|Eddard]] to a brothel in the city, where the Hand is looking for another of the king’s bastard daughters. As they leave, [[jaime-lannister|Jaime Lannister]] is waiting with many men, enraged that [[catelyn-stark|Catelyn]] has taken his brother [[tyrion-lannister|Tyrion]] prisoner. Jaime wants Eddard alive but has his men killed. Jory dies in the fight.',
       },
     ),
@@ -1142,7 +1142,7 @@ export const season1Chronicles = {
       [4, 30],
       { it: 'Il torneo', en: 'The tourney' },
       {
-        it: 'Jeyne segue il padre ad Approdo del Re, dove [[eddard-stark|Eddard Stark]] è il nuovo Primo Cavaliere. Al torneo in suo onore siede con [[sansa-stark|Sansa]] e confessa che vorrebbe sposare lord Beric Dondarrion. Quando ser [[gregor-clegane|Gregor Clegane]] uccide ser [[hugh-of-the-vale|Hugh della Valle]] davanti a loro, Jeyne scoppia in lacrime e la septa [[mordane|Mordane]] deve riaccompagnarla alla Fortezza Rossa.',
+        it: 'Jeyne segue il padre ad Approdo del Re, dove [[eddard-stark|Eddard Stark]] è il nuovo Primo Cavaliere. Al torneo in onore di Eddard siede con [[sansa-stark|Sansa]] e confessa che vorrebbe sposare lord Beric Dondarrion. Quando ser [[gregor-clegane|Gregor Clegane]] uccide ser [[hugh-of-the-vale|Hugh della Valle]] davanti a loro, Jeyne scoppia in lacrime e la septa [[mordane|Mordane]] deve riaccompagnarla alla Fortezza Rossa.',
         en: 'Jeyne follows her father to King’s Landing, where [[eddard-stark|Eddard Stark]] is the new Hand of the King. At the tourney in his honour she sits with [[sansa-stark|Sansa]] and confesses that she would like to marry Lord Beric Dondarrion. When Ser [[gregor-clegane|Gregor Clegane]] kills Ser [[hugh-of-the-vale|Hugh of the Vale]] in front of them, Jeyne bursts into tears, and Septa [[mordane|Mordane]] has to take her back to the Red Keep.',
       },
     ),
@@ -1150,7 +1150,7 @@ export const season1Chronicles = {
       [8, 52],
       { it: 'Portata via', en: 'Taken away' },
       {
-        it: 'Quando i Lannister si abbattono sulla casa di [[eddard-stark|Eddard Stark]], suo padre [[vayon-poole|Vayon Poole]] viene ucciso. Jeyne, che ha visto morire gli uomini degli Stark, viene chiusa in una stanza della torre insieme a [[sansa-stark|Sansa]] e piange senza sosta. Quando Sansa lo dice alla regina [[cersei-lannister|Cersei]], il concilio decide cosa fare di lei, e [[petyr-baelish|Ditocorto]] la porta via, in un luogo che non viene detto.',
+        it: 'Quando i Lannister si abbattono sulla casa di [[eddard-stark|Eddard Stark]], il padre di Jeyne, [[vayon-poole|Vayon Poole]], viene ucciso. Jeyne, che ha visto morire gli uomini degli Stark, viene chiusa in una stanza della torre insieme a [[sansa-stark|Sansa]] e piange senza sosta. Quando Sansa lo dice alla regina [[cersei-lannister|Cersei]], il concilio decide cosa fare di Jeyne, e [[petyr-baelish|Ditocorto]] la porta via, in un luogo che non viene detto.',
         en: 'When the Lannisters fall on [[eddard-stark|Eddard Stark]]’s household, her father [[vayon-poole|Vayon Poole]] is killed. Jeyne, who saw the Stark men die, is locked in a tower room with [[sansa-stark|Sansa]] and weeps without stopping. When Sansa tells Queen [[cersei-lannister|Cersei]] so, the council decides what to do with her, and [[petyr-baelish|Littlefinger]] takes her away to a place no one names.',
       },
     ),
@@ -1178,7 +1178,7 @@ export const season1Chronicles = {
       [7, 23],
       { it: 'La lettera per Stannis', en: 'The letter for Stannis' },
       {
-        it: 'Tomard è una delle guardie che hanno seguito [[eddard-stark|Eddard Stark]] ad Approdo del Re quando è diventato Primo Cavaliere del Re, e di solito lo scorta. È con lui quando [[renly-baratheon|Renly Baratheon]] porta la notizia che il re è stato ferito durante la caccia. Eddard gli affida una lettera da consegnare di persona a Stannis Baratheon, così Tomard non è con il Primo Cavaliere quando le cappe dorate uccidono i suoi uomini.',
+        it: 'Tomard è una delle guardie che hanno seguito [[eddard-stark|Eddard Stark]] ad Approdo del Re quando è diventato Primo Cavaliere del Re, e di solito lo scorta. È con lui quando [[renly-baratheon|Renly Baratheon]] porta la notizia che il re è stato ferito durante la caccia. Eddard gli affida una lettera da consegnare di persona a Stannis Baratheon, così Tomard non è con il Primo Cavaliere quando le cappe dorate uccidono gli uomini di Eddard.',
         en: 'Tomard is one of the guards who followed [[eddard-stark|Eddard Stark]] to King’s Landing when he became Hand of the King, and he usually guards him. He is with Eddard when [[renly-baratheon|Renly Baratheon]] brings word that the king has been wounded on his hunt. Eddard gives him a letter to deliver to Stannis Baratheon by hand, so Tomard is not with the Hand when the gold cloaks kill his men.',
       },
     ),
@@ -1186,7 +1186,7 @@ export const season1Chronicles = {
       [7, 23],
       { it: 'Grasso Tom', en: 'Fat Tom' },
       {
-        it: 'Tomard, detto Grasso Tom, è una delle cinquanta guardie che [[eddard-stark|Eddard Stark]] ha portato con sé ad Approdo del Re. Durante una cena della casa nella Fortezza Rossa è di guardia alla Torre del Primo Cavaliere. Quando [[arya-stark|Arya]] scappa in camera dopo una lite con la septa [[mordane|Mordane]], gli scivola sotto le braccia. Poi Tom bussa alla sua porta, e Arya lo inganna dicendogli che non c’è.',
+        it: 'Tomard, detto Grasso Tom, è una delle cinquanta guardie che [[eddard-stark|Eddard Stark]] ha portato con sé ad Approdo del Re. Durante una cena della casa nella Fortezza Rossa è di guardia alla Torre del Primo Cavaliere. Quando [[arya-stark|Arya]] scappa in camera dopo una lite con la septa [[mordane|Mordane]], gli scivola sotto le braccia. Poi Tom bussa alla porta di Arya, e Arya lo inganna dicendogli che non c’è.',
         en: 'Tomard, called Fat Tom, is one of the fifty guards [[eddard-stark|Eddard Stark]] brought with him to King’s Landing. During a household supper in the Red Keep he stands guard at the Tower of the Hand. When [[arya-stark|Arya]] runs back to her room after a quarrel with Septa [[mordane|Mordane]], she slips under his arms. Then Tom knocks at her door, and Arya fools him by telling him she is not there.',
       },
     ),
@@ -1194,7 +1194,7 @@ export const season1Chronicles = {
       [7, 50],
       { it: 'Una lancia nella schiena', en: 'A spear in the back' },
       {
-        it: 'Tom ha avuto da [[eddard-stark|Eddard Stark]] una lettera per Stannis Baratheon, da consegnare durante il viaggio per mare verso nord con le figlie del Primo Cavaliere. Dopo la morte di [[robert-baratheon|re Robert]] interrompe il concilio per annunciare che il nuovo re lo convoca nella sala del trono, ed Eddard gli fa radunare una scorta. Nella sala del trono, mentre Eddard dice di non volere spargimenti di sangue, una cappa dorata trafigge Tom alla schiena con una lancia. La lettera viene presa dal suo corpo.',
+        it: 'Tom ha avuto da [[eddard-stark|Eddard Stark]] una lettera per Stannis Baratheon, da consegnare durante il viaggio per mare verso nord con le figlie del Primo Cavaliere. Dopo la morte di [[robert-baratheon|re Robert]] interrompe il concilio per annunciare che il nuovo re lo convoca nella sala del trono, ed Eddard gli fa radunare una scorta. Nella sala del trono, mentre Eddard dice di non volere spargimenti di sangue, una cappa dorata trafigge Tom alla schiena con una lancia. La lettera viene presa dal corpo di Tom.',
         en: 'Tom has a letter from [[eddard-stark|Eddard Stark]] for Stannis Baratheon, to deliver during the voyage north by sea with the Hand’s daughters. After [[robert-baratheon|King Robert]]’s death he interrupts the council to announce that the new king summons it to the throne room, and Eddard has him gather an escort. In the throne room, as Eddard says he wants no bloodshed, a gold cloak drives a spear through Tom’s back. The letter is taken from his body.',
       },
     ),
@@ -1266,7 +1266,7 @@ export const season1Chronicles = {
       [1, 16],
       { it: 'La cucciola di Sansa', en: 'Sansa’s pup' },
       {
-        it: 'Lady è uno dei cuccioli che il gruppo di [[eddard-stark|Eddard Stark]] trova accanto alla madre morta sulla via del ritorno a Grande Inverno. [[jon-snow|Jon Snow]] convince Eddard che i cuccioli sono destinati ai suoi figli legittimi, perché il meta-lupo è l’emblema degli Stark. Una delle cucciole va a [[sansa-stark|Sansa]], che la chiama Lady.',
+        it: 'Lady è uno dei cuccioli che il gruppo di [[eddard-stark|Eddard Stark]] trova accanto alla madre morta sulla via del ritorno a Grande Inverno. [[jon-snow|Jon Snow]] convince Eddard che i cuccioli sono destinati ai figli legittimi di Eddard, perché il meta-lupo è l’emblema degli Stark. Una delle cucciole va a [[sansa-stark|Sansa]], che la chiama Lady.',
         en: 'Lady is one of the pups [[eddard-stark|Eddard Stark]]’s party finds beside their dead mother on the way back to Winterfell. [[jon-snow|Jon Snow]] persuades Eddard that the pups are meant for his trueborn children, since the direwolf is the sigil of the Starks. One of them goes to [[sansa-stark|Sansa]], who names her Lady.',
       },
     ),
@@ -1282,7 +1282,7 @@ export const season1Chronicles = {
       [2, 17],
       { it: 'Al posto di un’altra', en: 'In another’s place' },
       {
-        it: 'Lungo la strada verso sud la meta-lupa di [[arya-stark|Arya]] morde il principe [[joffrey-baratheon|Joffrey]], che minacciava Arya, e poi sparisce. La regina [[cersei-lannister|Cersei]] pretende la morte di una meta-lupa e, non trovando quella di Arya, chiede che muoia Lady, che non c’entra niente. [[robert-baratheon|Re Robert]] acconsente. [[eddard-stark|Eddard Stark]] non lascia il compito a nessun altro e uccide Lady con le sue mani.',
+        it: 'Lungo la strada verso sud la meta-lupa di [[arya-stark|Arya]] morde il principe [[joffrey-baratheon|Joffrey]], che minacciava Arya, e poi sparisce. La regina [[cersei-lannister|Cersei]] pretende la morte di una meta-lupa e, non trovando quella di Arya, chiede che muoia Lady, che non c’entra niente. [[robert-baratheon|Re Robert]] acconsente. [[eddard-stark|Eddard Stark]] non lascia il compito a nessun altro e uccide Lady con le proprie mani.',
         en: 'On the road south [[arya-stark|Arya]]’s direwolf bites Prince [[joffrey-baratheon|Joffrey]], who was threatening Arya, and then disappears. Queen [[cersei-lannister|Cersei]] demands a direwolf’s death and, unable to find Arya’s, asks that Lady die instead, though she had no part in it. [[robert-baratheon|King Robert]] agrees. [[eddard-stark|Eddard Stark]] leaves the task to no one else and kills Lady with his own hands.',
       },
     ),
@@ -1318,7 +1318,7 @@ export const season1Chronicles = {
       [1, 2],
       { it: 'La torre in rovina', en: 'The broken tower' },
       {
-        it: 'Bran si esercita con l’arco nel cortile di Grande Inverno sotto gli occhi della famiglia. Poi il padre [[eddard-stark|Eddard]] lo porta con [[robb-stark|Robb]], [[jon-snow|Jon]] e [[theon-greyjoy|Theon]] a vedere l’esecuzione di un disertore dei Guardiani della notte. Bran guarda senza distogliere lo sguardo, e il padre gli spiega che chi pronuncia la condanna deve calare la spada. Sulla via del ritorno trovano una meta-lupa morta e i suoi cuccioli, e Bran ne tiene uno. Più tardi, arrampicandosi su una torre in rovina, vede la regina con suo fratello Jaime Lannister. Jaime lo afferra, gli chiede quanti anni ha e lo spinge giù dalla finestra.',
+        it: 'Bran si esercita con l’arco nel cortile di Grande Inverno sotto gli occhi della famiglia. Poi il padre [[eddard-stark|Eddard]] lo porta con [[robb-stark|Robb]], [[jon-snow|Jon]] e [[theon-greyjoy|Theon]] a vedere l’esecuzione di un disertore dei Guardiani della notte. Bran guarda senza distogliere lo sguardo, e il padre gli spiega che chi pronuncia la condanna deve calare la spada. Sulla via del ritorno trovano una meta-lupa morta e i suoi cuccioli, e Bran ne tiene uno. Più tardi, arrampicandosi su una torre in rovina, vede la regina con il fratello di lei, Jaime Lannister. Jaime lo afferra, gli chiede quanti anni ha e lo spinge giù dalla finestra.',
         en: 'Bran practises archery in the yard of Winterfell while his family watches. Then his father [[eddard-stark|Eddard]] takes him, with [[robb-stark|Robb]], [[jon-snow|Jon]] and [[theon-greyjoy|Theon]], to see a deserter of the Night’s Watch executed. Bran watches without looking away, and his father explains that the man who passes the sentence should swing the sword. On the way home they find a dead direwolf and her pups, and Bran keeps one. Later, climbing a broken tower, he sees the queen with her brother Jaime Lannister. Jaime grabs him, asks how old he is and pushes him out of the window.',
       },
     ),
@@ -1334,7 +1334,7 @@ export const season1Chronicles = {
       [1, 9],
       { it: 'Nella torre in rovina', en: 'In the broken tower' },
       {
-        it: 'Bran dovrebbe partire verso sud con il padre [[eddard-stark|Eddard]], che [[robert-baratheon|re Robert]] ha scelto come Primo Cavaliere. Prima della partenza prova a salutare tutti, poi va ad arrampicarsi, come fa sempre. Vicino alla torre in rovina sente due voci che parlano del re e della sua scelta. Si avvicina, si aggrappa a un gargoyle e guarda dalla finestra: vede la regina [[cersei-lannister|Cersei]] nuda con un uomo, suo fratello [[jaime-lannister|Jaime]]. Bran scivola, e Jaime lo afferra e lo tira dentro. Gli chiede quanti anni ha, poi lo getta dalla finestra.',
+        it: 'Bran dovrebbe partire verso sud con il padre [[eddard-stark|Eddard]], che [[robert-baratheon|re Robert]] ha scelto come Primo Cavaliere. Prima della partenza prova a salutare tutti, poi va ad arrampicarsi, come fa sempre. Vicino alla torre in rovina sente due voci che parlano del re e della sua scelta. Si avvicina, si aggrappa a un gargoyle e guarda dalla finestra: vede la regina [[cersei-lannister|Cersei]] nuda con un uomo, il fratello di lei, [[jaime-lannister|Jaime]]. Bran scivola, e Jaime lo afferra e lo tira dentro. Gli chiede quanti anni ha, poi lo getta dalla finestra.',
         en: 'Bran is to go south with his father [[eddard-stark|Eddard]], whom [[robert-baratheon|King Robert]] has chosen as his Hand. Before leaving, he tries to say goodbye to everyone, then goes climbing, as he always does. Near the broken tower he hears two voices talking about the king and his choice. He creeps closer, hangs from a gargoyle and looks through the window: he sees Queen [[cersei-lannister|Cersei]] naked with a man, her brother [[jaime-lannister|Jaime]]. Bran slips, and Jaime catches him and pulls him in. He asks how old Bran is, then throws him out of the window.',
       },
     ),
@@ -1342,7 +1342,7 @@ export const season1Chronicles = {
       [2, 15],
       { it: 'L’uomo con il pugnale', en: 'The man with the dagger' },
       {
-        it: 'Dopo la caduta Bran giace privo di sensi, e la madre [[catelyn-stark|Catelyn]] non si allontana mai dal suo letto. Il padre [[eddard-stark|Eddard]] è partito per il sud, e del castello si occupano il fratello [[robb-stark|Robb]] e il maestro [[luwin|Luwin]]. Poi nel castello scoppia un incendio. Mentre tutti accorrono, nella stanza di Bran entra un uomo armato di pugnale, venuto a ucciderlo. Catelyn lo affronta a mani nude e lo tiene a bada finché il meta-lupo di Bran non entra e gli squarcia la gola.',
+        it: 'Dopo la caduta Bran giace privo di sensi, e la madre [[catelyn-stark|Catelyn]] non si allontana mai dal letto del figlio. Il padre [[eddard-stark|Eddard]] è partito per il sud, e del castello si occupano il fratello [[robb-stark|Robb]] e il maestro [[luwin|Luwin]]. Poi nel castello scoppia un incendio. Mentre tutti accorrono, nella stanza di Bran entra un uomo armato di pugnale, venuto a ucciderlo. Catelyn lo affronta a mani nude e lo tiene a bada finché il meta-lupo di Bran non entra e squarcia la gola all’uomo.',
         en: 'After his fall Bran lies senseless, and his mother [[catelyn-stark|Catelyn]] never leaves his bed. His father [[eddard-stark|Eddard]] has gone south, and his brother [[robb-stark|Robb]] and Maester [[luwin|Luwin]] see to the castle. Then a fire breaks out in the castle. While everyone runs to it, a man with a dagger comes into Bran’s room to kill him. Catelyn fights him with her bare hands and holds him off until Bran’s direwolf comes in and tears out his throat.',
       },
     ),
@@ -1366,7 +1366,7 @@ export const season1Chronicles = {
       [4, 25],
       { it: 'La sella di Tyrion', en: 'Tyrion’s saddle' },
       {
-        it: 'Bran non può camminare, e [[hodor|Hodor]], un servitore enorme che sa dire soltanto il proprio nome, lo porta in braccio fino alla sala grande. Lì il fratello [[robb-stark|Robb]] riceve con freddezza [[tyrion-lannister|Tyrion Lannister]], di ritorno dalla Barriera. Tyrion ha portato il disegno di una sella con cui Bran potrà andare a cavallo anche senza l’uso delle gambe. Dopo questo gesto Robb gli offre l’ospitalità di Grande Inverno, ma Tyrion la rifiuta.',
+        it: 'Bran non può camminare, e [[hodor|Hodor]], un servitore enorme che sa dire soltanto il proprio nome, lo porta in braccio fino alla sala grande. Lì il fratello [[robb-stark|Robb]] riceve con freddezza [[tyrion-lannister|Tyrion Lannister]], di ritorno dalla Barriera. Tyrion ha portato il disegno di una sella con cui Bran potrà andare a cavallo anche senza l’uso delle gambe. Dopo questo gesto Robb offre a Tyrion l’ospitalità di Grande Inverno, ma Tyrion la rifiuta.',
         en: 'Bran cannot walk, and [[hodor|Hodor]], a huge servant who can say only his own name, carries him down to the great hall. There his brother [[robb-stark|Robb]] is giving a cold welcome to [[tyrion-lannister|Tyrion Lannister]], on his way back from the Wall. Tyrion has brought the design for a saddle that will let Bran ride even without the use of his legs. After this, Robb offers him the hospitality of Winterfell, but Tyrion refuses it.',
       },
     ),
@@ -1432,7 +1432,7 @@ export const season1Chronicles = {
       [10, 67],
       { it: 'Il padre sta tornando', en: 'Father is coming home' },
       {
-        it: 'Rickon sogna il padre [[eddard-stark|Eddard]] nelle cripte e ci scende con [[shaggydog|Cagnaccio]]. Quando il maestro [[luwin|Luwin]] porta lì il fratello [[bran-stark|Bran]], Cagnaccio azzanna il braccio del maestro. Rickon esce dalla tomba preparata per Eddard e dice a Luwin di lasciare stare suo padre: lo ha visto la notte prima, e sta tornando a casa. Rickon non vuole che Cagnaccio stia alla catena. Segue gli altri nella torre del maestro, dove un corvo porta la notizia della morte di Eddard.',
+        it: 'Rickon sogna il padre [[eddard-stark|Eddard]] nelle cripte e ci scende con [[shaggydog|Cagnaccio]]. Quando il maestro [[luwin|Luwin]] porta lì il fratello [[bran-stark|Bran]], Cagnaccio azzanna il braccio del maestro. Rickon esce dalla tomba preparata per Eddard e dice a Luwin di lasciare stare il padre: lo ha visto la notte prima, e sta tornando a casa. Rickon non vuole che Cagnaccio stia alla catena. Segue gli altri nella torre del maestro, dove un corvo porta la notizia della morte di Eddard.',
         en: 'Rickon dreams of his father [[eddard-stark|Eddard]] in the crypts and goes down there with [[shaggydog|Shaggydog]]. When Maester [[luwin|Luwin]] brings his brother [[bran-stark|Bran]] there, Shaggydog savages the maester’s arm. Rickon comes out of the tomb made ready for Eddard and tells Luwin to leave his father alone: he saw him last night, and he is coming home. Rickon does not want Shaggydog chained. He follows the others to the maester’s turret, where a raven brings the news of Eddard’s death.',
       },
     ),
@@ -1442,7 +1442,7 @@ export const season1Chronicles = {
       [1, 2],
       { it: 'Il pupillo', en: 'The ward' },
       {
-        it: 'Theon è il pupillo di lord [[eddard-stark|Eddard Stark]] ed è cresciuto a Grande Inverno con i suoi figli. Cavalca con loro all’esecuzione di un disertore dei Guardiani della notte, che Eddard decapita di persona. Sulla via del ritorno il gruppo trova una meta-lupa morta e i suoi cuccioli, e Eddard li lascia ai figli. Quando [[jon-snow|Jon]] trova un sesto cucciolo, bianco, Theon guarda il cucciolo con disprezzo.',
+        it: 'Theon è il pupillo di lord [[eddard-stark|Eddard Stark]] ed è cresciuto a Grande Inverno con i figli di Eddard. Cavalca con loro all’esecuzione di un disertore dei Guardiani della notte, che Eddard decapita di persona. Sulla via del ritorno il gruppo trova una meta-lupa morta e i suoi cuccioli, e Eddard li lascia ai figli. Quando [[jon-snow|Jon]] trova un sesto cucciolo, bianco, Theon guarda il cucciolo con disprezzo.',
         en: 'Theon is the ward of Lord [[eddard-stark|Eddard Stark]] and has grown up at Winterfell with his sons. He rides with them to the execution of a deserter of the Night’s Watch, whom Eddard beheads himself. On the way back the party finds a dead direwolf and her pups, and Eddard lets his children keep them. When [[jon-snow|Jon]] finds a sixth pup, a white one, Theon is scornful of it.',
       },
     ),
@@ -1450,7 +1450,7 @@ export const season1Chronicles = {
       [4, 25],
       { it: 'Il lacchè degli Stark', en: 'The Starks’ lackey' },
       {
-        it: 'Theon fa chiamare [[hodor|Hodor]] perché porti [[bran-stark|Bran]] nella sala dove [[robb-stark|Robb]] riceve [[tyrion-lannister|Tyrion Lannister]]. Quando Tyrion se ne va per passare la notte al bordello, Theon gli consiglia con sufficienza una delle ragazze. Tyrion gli ricorda la stupida ribellione di suo padre, Balon Greyjoy, e si chiede come si sentirebbe lord Balon a vedere il suo ultimo figlio ridotto a fare da lacchè a chi lo tiene prigioniero. Theon si infuria.',
+        it: 'Theon fa chiamare [[hodor|Hodor]] perché porti [[bran-stark|Bran]] nella sala dove [[robb-stark|Robb]] riceve [[tyrion-lannister|Tyrion Lannister]]. Quando Tyrion se ne va per passare la notte al bordello, Theon gli consiglia con sufficienza una delle ragazze. Tyrion gli ricorda la stupida ribellione del padre di Theon, Balon Greyjoy, e si chiede come si sentirebbe lord Balon a vedere il suo ultimo figlio ridotto a fare da lacchè a chi lo tiene prigioniero. Theon si infuria.',
         en: 'Theon has [[hodor|Hodor]] fetched to carry [[bran-stark|Bran]] to the hall where [[robb-stark|Robb]] is receiving [[tyrion-lannister|Tyrion Lannister]]. When Tyrion leaves to spend the night at the brothel, Theon condescendingly recommends one of the girls. Tyrion reminds him of his father Balon Greyjoy’s stupid rebellion, and wonders how Lord Balon would feel to see his last son reduced to a lackey for the people who hold him. Theon is furious.',
       },
     ),
@@ -1458,7 +1458,7 @@ export const season1Chronicles = {
       [6, 38],
       { it: 'La freccia', en: 'The arrow' },
       {
-        it: 'Theon esce a cavallo con [[robb-stark|Robb]] e [[bran-stark|Bran]], che esce a cavallo con la sua nuova sella. Nella Foresta del Lupo una banda di fuorilegge circonda Bran. Robb li attacca, ma uno degli uomini tiene un coltello alla gola del ragazzo. Theon uccide l’uomo con una freccia, e Robb è furioso. La sola superstite, [[osha|Osha]], si arrende e viene portata a Grande Inverno.',
+        it: 'Theon esce a cavallo con [[robb-stark|Robb]] e [[bran-stark|Bran]], che prova la sua nuova sella. Nella Foresta del Lupo una banda di fuorilegge circonda Bran. Robb li attacca, ma uno degli uomini tiene un coltello alla gola del ragazzo. Theon uccide l’uomo con una freccia, e Robb è furioso. La sola superstite, [[osha|Osha]], si arrende e viene portata a Grande Inverno.',
         en: 'Theon rides out with [[robb-stark|Robb]] and [[bran-stark|Bran]], who is riding out on his new saddle. In the wolfswood a band of outlaws surrounds Bran. Robb attacks them, but one of the men holds a knife to the boy’s throat. Theon kills him with an arrow, and Robb is furious. The only survivor, [[osha|Osha]], yields and is taken back to Winterfell.',
       },
     ),
@@ -1518,7 +1518,7 @@ export const season1Chronicles = {
       [3, 15],
       { it: 'Il sangue lavato', en: 'Washing away the blood' },
       {
-        it: 'La Vecchia Nan è la donna più anziana di Grande Inverno, e da sempre racconta storie ai figli degli Stark. Quando un uomo entra nella stanza di [[bran-stark|Bran]] per ucciderlo, la madre del ragazzo, [[catelyn-stark|Catelyn]], lo affronta a mani nude finché il meta-lupo di Bran non lo sbrana. Ferita, Catelyn viene portata via e curata, e la Vecchia Nan la aiuta a lavarsi via il sangue.',
+        it: 'La Vecchia Nan è la donna più anziana di Grande Inverno, e da sempre racconta storie ai figli degli Stark. Quando un uomo entra nella stanza di [[bran-stark|Bran]] per ucciderlo, la madre del ragazzo, [[catelyn-stark|Catelyn]], lo affronta a mani nude finché il meta-lupo di Bran non sbrana l’uomo. Ferita, Catelyn viene portata via e curata, e la Vecchia Nan la aiuta a lavarsi via il sangue.',
         en: 'Old Nan is the oldest woman at Winterfell, and she has always told stories to the Stark children. When a man comes into [[bran-stark|Bran]]’s room to kill him, the boy’s mother, [[catelyn-stark|Catelyn]], fights him with her bare hands until Bran’s direwolf kills him. Wounded, Catelyn is taken away to be tended, and Old Nan helps her wash away the blood.',
       },
     ),
@@ -1554,7 +1554,7 @@ export const season1Chronicles = {
       [7, 38],
       { it: 'Le cose sotto il ghiaccio', en: 'What sleeps under the ice' },
       {
-        it: 'Osha ora lavora come serva a Grande Inverno. [[theon-greyjoy|Theon]] pretende che lei lo chiami “mio signore”, ma Osha gli fa notare che suo padre è ancora vivo, quindi il titolo non gli spetta. Il maestro [[luwin|Luwin]] manda via Theon e chiede a Osha perché la sua banda sia venuta a sud della Barriera. Lei risponde che le cose che dormivano sotto il ghiaccio non dormono più: gli Estranei si sono svegliati. Luwin non le crede.',
+        it: 'Osha ora lavora come serva a Grande Inverno. [[theon-greyjoy|Theon]] pretende che lei lo chiami “mio signore”, ma Osha gli fa notare che il padre di Theon è ancora vivo, quindi il titolo non gli spetta. Il maestro [[luwin|Luwin]] manda via Theon e chiede a Osha perché la sua banda sia venuta a sud della Barriera. Lei risponde che le cose che dormivano sotto il ghiaccio non dormono più: gli Estranei si sono svegliati. Luwin non le crede.',
         en: 'Osha now works as a servant at Winterfell. [[theon-greyjoy|Theon]] insists that she call him “my lord”, but Osha points out that his father is still alive, so the title is not his. Maester [[luwin|Luwin]] sends Theon away and asks Osha why her band came south of the Wall. She answers that the things that slept under the ice are not sleeping any more: the White Walkers have woken. Luwin does not believe her.',
       },
     ),
@@ -1608,7 +1608,7 @@ export const season1Chronicles = {
       [4, 18],
       { it: 'Il lupo di Bran', en: 'Bran’s wolf' },
       {
-        it: 'Estate è il meta-lupo di [[bran-stark|Bran]], uno dei cuccioli trovati accanto alla madre morta. Mentre Bran giaceva privo di sensi dopo la caduta, un uomo è entrato nella sua stanza con un pugnale per ucciderlo. La madre di Bran, [[catelyn-stark|Catelyn]], lo ha affrontato finché il lupo non è arrivato e gli ha squarciato la gola. Bran lo ha chiamato Estate. Il lupo resta accanto a lui e veglia su di lui.',
+        it: 'Estate è il meta-lupo di [[bran-stark|Bran]], uno dei cuccioli trovati accanto alla madre morta. Mentre Bran giaceva privo di sensi dopo la caduta, un uomo è entrato nella stanza di Bran con un pugnale per ucciderlo. La madre di Bran, [[catelyn-stark|Catelyn]], lo ha affrontato finché il lupo non è arrivato e ha squarciato la gola all’uomo. Bran lo ha chiamato Estate. Il lupo resta accanto a lui e veglia su di lui.',
         en: 'Summer is [[bran-stark|Bran]]’s direwolf, one of the pups found beside their dead mother. While Bran lay senseless after his fall, a man came into his room with a dagger to kill him. Bran’s mother, [[catelyn-stark|Catelyn]], fought him until the wolf came in and tore out his throat. Bran has named him Summer. The wolf stays by his side and keeps watch over him.',
       },
     ),
@@ -1642,8 +1642,8 @@ export const season1Chronicles = {
       [10, 54],
       { it: 'Nei canili', en: 'In the kennels' },
       {
-        it: 'Da quando ha saputo che [[robb-stark|Robb]] parte per la guerra, [[rickon-stark|Rickon]] è diventato selvatico, e Cagnaccio con lui. Una volta Rickon viene trovato nelle cripte e colpisce con una spada gli uomini venuti a prenderlo, mentre Cagnaccio morde Gage a un braccio e strappa un pezzo di coscia a [[mikken|Mikken]]. Servono Robb e [[grey-wind|Vento Grigio]] per tenerlo a bada, e Cagnaccio viene incatenato nei canili.',
-        en: 'Since he learned that [[robb-stark|Robb]] is leaving for the war, [[rickon-stark|Rickon]] has grown wild, and Shaggydog with him. Once Rickon is found in the crypts and slashes with a sword at the men who come for him, while Shaggydog bites Gage on the arm and takes a chunk out of [[mikken|Mikken]]’s thigh. It takes Robb and [[grey-wind|Grey Wind]] to master him, and Shaggydog is chained in the kennels.',
+        it: 'Da quando ha saputo che [[robb-stark|Robb]] parte per la guerra, [[rickon-stark|Rickon]] è diventato selvatico, e Cagnaccio con lui. Una volta Rickon viene trovato nelle cripte e colpisce con una spada gli uomini venuti a prenderlo, mentre Cagnaccio morde Gage a un braccio e strappa un pezzo di coscia a [[mikken|Mikken]]. Servono Robb e [[grey-wind|Vento Grigio]] per tenere a bada Cagnaccio, che viene incatenato nei canili.',
+        en: 'Since he learned that [[robb-stark|Robb]] is leaving for the war, [[rickon-stark|Rickon]] has grown wild, and Shaggydog with him. Once Rickon is found in the crypts and slashes with a sword at the men who come for him, while Shaggydog bites Gage on the arm and takes a chunk out of [[mikken|Mikken]]’s thigh. It takes Robb and [[grey-wind|Grey Wind]] to master Shaggydog, and Shaggydog is chained in the kennels.',
       },
     ),
     onScreen(
@@ -1676,7 +1676,7 @@ export const season1Chronicles = {
       [4, 27],
       { it: 'La visita a Rast', en: 'A visit to Rast' },
       {
-        it: 'Spettro segue [[jon-snow|Jon Snow]] alla Barriera. Al Castello Nero Jon convince le altre reclute ad andarci piano con [[samwell-tarly|Samwell Tarly]] nell’addestramento. Solo [[rast|Rast]] si rifiuta. Di notte Jon va da Rast con Spettro, e il lupo gli si para davanti mentre Jon lo avverte di lasciare stare Sam. Da allora nessuno se la prende più con Sam nel cortile.',
+        it: 'Spettro segue [[jon-snow|Jon Snow]] alla Barriera. Al Castello Nero Jon convince le altre reclute ad andarci piano con [[samwell-tarly|Samwell Tarly]] nell’addestramento. Solo [[rast|Rast]] si rifiuta. Di notte Jon va da Rast con Spettro, e il lupo si para davanti a Rast mentre Jon lo avverte di lasciare stare Sam. Da allora nessuno se la prende più con Sam nel cortile.',
         en: 'Ghost follows [[jon-snow|Jon Snow]] to the Wall. At Castle Black, Jon persuades the other recruits to go easy on [[samwell-tarly|Samwell Tarly]] in training. Only [[rast|Rast]] refuses. At night Jon goes to Rast with Ghost, and the wolf looms over him while Jon warns him to leave Sam alone. From then on no one goes after Sam in the yard.',
       },
     ),
@@ -1736,8 +1736,8 @@ export const season1Chronicles = {
       [1, 3],
       { it: 'Una lettera segreta', en: 'The letter from her sister' },
       {
-        it: 'Un corvo porta a Grande Inverno la notizia che Jon Arryn, Primo Cavaliere del Re, è morto, e Catelyn la riferisce al marito [[eddard-stark|Eddard]]. Re Robert e gran parte della corte stanno venendo a nord. Catelyn sorprende il figlio [[bran-stark|Bran]] ad arrampicarsi sulle mura del castello e gli fa promettere di smettere, pur sapendo che mente. Al banchetto lei e la regina Cersei si scambiano parole cortesi. Quella notte maestro Luwin porta una lettera segreta di sua sorella: Jon Arryn è stato assassinato e i Lannister cospirano contro il re. Catelyn preferirebbe che Eddard restasse, ma lui accetta l’offerta del re di diventare il suo Primo Cavaliere.',
-        en: 'A raven brings word to Winterfell that Jon Arryn, the Hand of the King, is dead, and Catelyn breaks the news to her husband [[eddard-stark|Eddard]]. King Robert and much of his court are riding north. Catelyn catches her son [[bran-stark|Bran]] climbing the castle walls and makes him promise to stop, knowing that he is lying. At the feast she and Queen Cersei exchange polite words. That night Maester Luwin brings a secret letter from her sister: Jon Arryn was murdered, and the Lannisters are plotting against the king. Catelyn would rather Eddard stayed, but he accepts the king’s offer to be his Hand.',
+        it: 'Un corvo porta a Grande Inverno la notizia che Jon Arryn, che era Primo Cavaliere del Re, è morto, e Catelyn la riferisce al marito [[eddard-stark|Eddard]]. Re Robert e gran parte della corte stanno venendo a nord. Catelyn sorprende il figlio [[bran-stark|Bran]] ad arrampicarsi sulle mura del castello e gli fa promettere di smettere, pur sapendo che mente. Al banchetto lei e la regina Cersei si scambiano parole cortesi. Quella notte maestro Luwin porta una lettera segreta della sorella di Catelyn: Jon Arryn è stato assassinato e i Lannister cospirano contro il re. Catelyn preferirebbe che Eddard restasse, ma lui accetta l’offerta del re di diventare il suo Primo Cavaliere.',
+        en: 'A raven brings word to Winterfell that Jon Arryn, who was Hand of the King, is dead, and Catelyn breaks the news to her husband [[eddard-stark|Eddard]]. King Robert and much of his court are riding north. Catelyn catches her son [[bran-stark|Bran]] climbing the castle walls and makes him promise to stop, knowing that he is lying. At the feast she and Queen Cersei exchange polite words. That night Maester Luwin brings a secret letter from her sister: Jon Arryn was murdered, and the Lannisters are plotting against the king. Catelyn would rather Eddard stayed, but he accepts the king’s offer to be his Hand.',
       },
     ),
     inBooks(
@@ -1760,7 +1760,7 @@ export const season1Chronicles = {
       [2, 15],
       { it: 'L’uomo mandato a uccidere Bran', en: 'The man sent to kill Bran' },
       {
-        it: 'Dopo la caduta da una torre [[bran-stark|Bran]] giace privo di sensi, e Catelyn non si allontana dal suo letto. Quando [[jon-snow|Jon]] viene a salutarlo prima di partire per la Barriera, lei lo manda via con freddezza. [[eddard-stark|Eddard]] parte per il sud con il re. Una notte scoppia un incendio nel castello e un uomo si introduce nella stanza di Bran per ucciderlo. Catelyn lo trattiene finché il meta-lupo di Bran non gli squarcia la gola. Convinta che i Lannister vogliano morto Bran perché ha visto qualcosa, annuncia a [[robb-stark|Robb]], a [[theon-greyjoy|Theon]], a maestro [[luwin|Luwin]] e a ser [[rodrik-cassel|Rodrik]] che andrà a sud ad avvertire il marito. Ser Rodrik parte con lei, e Robb resta a governare Grande Inverno.',
+        it: 'Dopo la caduta da una torre [[bran-stark|Bran]] giace privo di sensi, e Catelyn non si allontana dal letto del figlio. Quando [[jon-snow|Jon]] viene a salutarlo prima di partire per la Barriera, lei lo manda via con freddezza. [[eddard-stark|Eddard]] parte per il sud con il re. Una notte scoppia un incendio nel castello e un uomo si introduce nella stanza di Bran per ucciderlo. Catelyn lo trattiene finché il meta-lupo di Bran non squarcia la gola all’uomo. Convinta che i Lannister vogliano morto Bran perché ha visto qualcosa, annuncia a [[robb-stark|Robb]], a [[theon-greyjoy|Theon]], a maestro [[luwin|Luwin]] e a ser [[rodrik-cassel|Rodrik]] che andrà a sud ad avvertire il marito. Ser Rodrik parte con lei, e Robb resta a governare Grande Inverno.',
         en: 'After his fall from a tower, [[bran-stark|Bran]] lies senseless, and Catelyn will not leave his bed. When [[jon-snow|Jon]] comes to say goodbye before leaving for the Wall, she sends him away coldly. [[eddard-stark|Eddard]] rides south with the king. One night a fire breaks out in the castle, and a man slips into Bran’s room to kill him. Catelyn holds him off until Bran’s direwolf tears out his throat. Convinced that the Lannisters want Bran dead because he saw something, she tells [[robb-stark|Robb]], [[theon-greyjoy|Theon]], Maester [[luwin|Luwin]] and Ser [[rodrik-cassel|Rodrik]] that she will go south to warn her husband. Ser Rodrik rides with her, and Robb is left to rule Winterfell.',
       },
     ),
@@ -1792,7 +1792,7 @@ export const season1Chronicles = {
       [5, 35],
       { it: 'Verso il Nido dell’Aquila', en: 'Toward the Eyrie' },
       {
-        it: 'Catelyn annuncia di voler portare [[tyrion-lannister|Tyrion]] a Grande Inverno, ma con ser [[rodrik-cassel|Rodrik]] e gli uomini della locanda conduce invece Tyrion a est, verso il Nido dell’Aquila e sua sorella [[lysa-arryn|Lysa Arryn]]. Quando sulla strada li attaccano gli uomini dei clan delle montagne, lascia che Tyrion combatta, e lui le salva la vita. Catelyn continua a non fidarsi di lui. Al Nido dell’Aquila Lysa prende Tyrion sotto la propria custodia.',
+        it: 'Catelyn annuncia di voler portare [[tyrion-lannister|Tyrion]] a Grande Inverno, ma con ser [[rodrik-cassel|Rodrik]] e gli uomini della locanda conduce invece Tyrion a est, verso il Nido dell’Aquila e la sorella di Catelyn, [[lysa-arryn|Lysa Arryn]]. Quando sulla strada li attaccano gli uomini dei clan delle montagne, lascia che Tyrion combatta, e lui le salva la vita. Catelyn continua a non fidarsi di lui. Al Nido dell’Aquila Lysa prende Tyrion sotto la propria custodia.',
         en: 'Catelyn announces that she is taking [[tyrion-lannister|Tyrion]] to Winterfell, but with Ser [[rodrik-cassel|Rodrik]] and the men from the inn she leads him east instead, toward the Eyrie and her sister [[lysa-arryn|Lysa Arryn]]. When mountain clansmen attack them on the road, she lets Tyrion fight, and he saves her life. She still does not trust him. At the Eyrie, Lysa takes Tyrion into her own custody.',
       },
     ),
@@ -1827,7 +1827,7 @@ export const season1Chronicles = {
         en: 'The crossing and the captive',
       },
       {
-        it: 'Per attraversare il fiume alle Torri Gemelle, Catelyn entra lei stessa nel castello a trattare con lord [[walder-frey|Walder Frey]], che non è ancora sceso in guerra. Walder lascia passare l’esercito di [[robb-stark|Robb]] e vi unisce i suoi uomini, in cambio di alcune promesse: Robb sposerà una delle sue figlie, [[arya-stark|Arya]] uno dei suoi figli, e Robb prenderà come scudiero suo figlio Olyvar. Oltre il fiume Robb manda una parte dell’esercito contro lord [[tywin-lannister|Tywin]] e guida il resto contro l’esercito di [[jaime-lannister|Jaime Lannister]], che assedia il castello del padre di Catelyn. Robb torna vittorioso, con Jaime prigioniero.',
+        it: 'Per attraversare il fiume alle Torri Gemelle, Catelyn entra lei stessa nel castello a trattare con lord [[walder-frey|Walder Frey]], che non è ancora sceso in guerra. Walder lascia passare l’esercito di [[robb-stark|Robb]] e vi unisce i suoi uomini, in cambio di alcune promesse: Robb sposerà una delle figlie di Walder, [[arya-stark|Arya]] uno dei suoi figli, e Robb prenderà come scudiero Olyvar, un figlio di Walder. Oltre il fiume Robb manda una parte dell’esercito contro lord [[tywin-lannister|Tywin]] e guida il resto contro l’esercito di [[jaime-lannister|Jaime Lannister]], che assedia il castello del padre di Catelyn. Robb torna vittorioso, con Jaime prigioniero.',
         en: 'To cross the river at the Twins, Catelyn goes into the castle herself to bargain with Lord [[walder-frey|Walder Frey]], who has not yet joined the war. He lets [[robb-stark|Robb]]’s host cross and adds his own men to it, in return for promises: Robb is to marry one of his daughters, [[arya-stark|Arya]] one of his sons, and Robb is to take his son Olyvar as squire. Across the river Robb sends part of his host against Lord [[tywin-lannister|Tywin]] and leads the rest against [[jaime-lannister|Jaime Lannister]]’s army, which is besieging the castle of Catelyn’s father. Robb comes back victorious, with Jaime as his prisoner.',
       },
     ),
@@ -1861,7 +1861,7 @@ export const season1Chronicles = {
       [2, 15],
       { it: 'A capo del castello', en: 'Running the castle' },
       {
-        it: 'Dopo la caduta di [[bran-stark|Bran]], [[eddard-stark|Eddard]] parte per il sud come Primo Cavaliere del Re, e Robb abbraccia [[jon-snow|Jon]], che va alla Barriera. [[catelyn-stark|Catelyn]] non si allontana dal letto di Bran, così Robb si occupa di mandare avanti Grande Inverno con maestro [[luwin|Luwin]]. Una notte corre via dalla stanza di Bran per un incendio nel castello, e intanto un uomo vi entra per uccidere suo fratello. Quando Catelyn decide di andare a sud ad avvertire Eddard, Robb resta a capo di Grande Inverno.',
+        it: 'Dopo la caduta di [[bran-stark|Bran]], [[eddard-stark|Eddard]] parte per il sud come Primo Cavaliere del Re, e Robb abbraccia [[jon-snow|Jon]], che va alla Barriera. [[catelyn-stark|Catelyn]] non si allontana dal letto di Bran, così Robb si occupa di mandare avanti Grande Inverno con maestro [[luwin|Luwin]]. Una notte corre via dalla stanza di Bran per un incendio nel castello, e intanto un uomo vi entra per uccidere Bran. Quando Catelyn decide di andare a sud ad avvertire Eddard, Robb resta a capo di Grande Inverno.',
         en: 'After [[bran-stark|Bran]]’s fall, [[eddard-stark|Eddard]] goes south as Hand of the King, and Robb embraces [[jon-snow|Jon]], who leaves for the Wall. [[catelyn-stark|Catelyn]] will not leave Bran’s bed, so Robb takes on the running of Winterfell with Maester [[luwin|Luwin]]. One night he runs from Bran’s room to a fire in the castle, and meanwhile a man slips in to kill his brother. When Catelyn decides to go south to warn Eddard, Robb is left in charge of Winterfell.',
       },
     ),
@@ -1888,8 +1888,8 @@ export const season1Chronicles = {
         en: 'Outlaws in the wolfswood',
       },
       {
-        it: 'Dal sud arrivano notizie: [[catelyn-stark|Catelyn]] ha fatto catturare [[tyrion-lannister|Tyrion Lannister]], gli uomini di [[jaime-lannister|Jaime]] hanno ucciso [[jory-cassel|Jory Cassel]] ed [[eddard-stark|Eddard]] è ferito. Robb va a cavallo nella Foresta del Lupo con [[theon-greyjoy|Theon]] e [[bran-stark|Bran]], che prova la sua nuova sella. Alcuni fuorilegge circondano Bran, e Robb li affronta. [[stiv|Stiv]] punta un coltello contro Bran, finché Theon non uccide Stiv con una freccia. Robb se la prende con Theon per un tiro che avrebbe potuto colpire Bran. L’unica fuorilegge presa viva è [[osha|Osha]], e Robb la porta a Grande Inverno come prigioniera.',
-        en: 'News comes from the south: [[catelyn-stark|Catelyn]] has seized [[tyrion-lannister|Tyrion Lannister]], [[jaime-lannister|Jaime]]’s men have killed [[jory-cassel|Jory Cassel]], and [[eddard-stark|Eddard]] is hurt. Robb rides into the wolfswood with [[theon-greyjoy|Theon]] and [[bran-stark|Bran]], who is trying his new saddle. Outlaws surround Bran, and Robb fights them. [[stiv|Stiv]] holds a knife to Bran until Theon kills him with an arrow. Robb is angry with Theon for a shot that could have hit Bran. The only outlaw taken alive is [[osha|Osha]], and Robb brings her back to Winterfell as a prisoner.',
+        it: 'Dal sud arrivano notizie: [[catelyn-stark|Catelyn]] ha fatto catturare [[tyrion-lannister|Tyrion Lannister]], gli uomini di [[jaime-lannister|Jaime]] hanno ucciso [[jory-cassel|Jory Cassel]] ed [[eddard-stark|Eddard]] è ferito. Robb va a cavallo nella Foresta del Lupo con [[theon-greyjoy|Theon]] e [[bran-stark|Bran]], che prova la sua nuova sella. Alcuni fuorilegge circondano Bran, e Robb li affronta. [[stiv|Stiv]] punta un coltello contro Bran, finché Theon non uccide Stiv con una freccia. Robb se la prende con Theon. L’unica fuorilegge presa viva è [[osha|Osha]], e Robb la porta a Grande Inverno come prigioniera.',
+        en: 'News comes from the south: [[catelyn-stark|Catelyn]] has seized [[tyrion-lannister|Tyrion Lannister]], [[jaime-lannister|Jaime]]’s men have killed [[jory-cassel|Jory Cassel]], and [[eddard-stark|Eddard]] is hurt. Robb rides into the wolfswood with [[theon-greyjoy|Theon]] and [[bran-stark|Bran]], who is trying his new saddle. Outlaws surround Bran, and Robb fights them. [[stiv|Stiv]] holds a knife to Bran until Theon kills him with an arrow. Robb is angry with Theon. The only outlaw taken alive is [[osha|Osha]], and Robb brings her back to Winterfell as a prisoner.',
       },
     ),
     inBoth(
@@ -2018,7 +2018,7 @@ export const season1Chronicles = {
         en: 'The wolf in the Whispering Wood',
       },
       {
-        it: 'Vento Grigio segue [[robb-stark|Robb]] come un’ombra quando Robb va a far scattare la trappola contro l’esercito di [[jaime-lannister|Jaime Lannister]] nel Bosco dei Sussurri, dove fa prigioniero Jaime. Quando l’esercito di Robb arriva a Delta delle Acque, [[theon-greyjoy|Theon Greyjoy]] racconta alla guarnigione come, durante i combattimenti, Vento Grigio abbia staccato il braccio a un uomo e fatto impazzire i cavalli dei Lannister.',
+        it: 'Vento Grigio segue [[robb-stark|Robb]] come un’ombra quando Robb va a far scattare la trappola contro l’esercito di [[jaime-lannister|Jaime Lannister]] nel Bosco dei Sussurri, dove Robb fa prigioniero Jaime. Quando l’esercito di Robb arriva a Delta delle Acque, [[theon-greyjoy|Theon Greyjoy]] racconta alla guarnigione come, durante i combattimenti, Vento Grigio abbia staccato il braccio a un uomo e fatto impazzire i cavalli dei Lannister.',
         en: 'Grey Wind shadows [[robb-stark|Robb]] as he rides out to spring his trap on [[jaime-lannister|Jaime Lannister]]’s army in the Whispering Wood, where Robb takes Jaime prisoner. When Robb’s host reaches Riverrun, [[theon-greyjoy|Theon Greyjoy]] tells the garrison how, in the fighting, Grey Wind tore the arm off a man and drove the Lannister horses mad.',
       },
     ),
@@ -2036,7 +2036,7 @@ export const season1Chronicles = {
       [8, 56],
       { it: 'Il comando della fanteria', en: 'Passed over for the foot' },
       {
-        it: 'Il Greatjon diventa il più fedele sostenitore di [[robb-stark|Robb]], e l’esercito raggiunge Moat Cailin. Robb intende affidargli la fanteria che marcerà lungo la strada del re contro lord Tywin. [[catelyn-stark|Catelyn]] gli fa notare che [[eddard-stark|Eddard]] considerava il Greatjon un uomo senza paura, e che non avere paura non è come essere coraggiosi. Robb decide che per la fanteria serve un uomo prudente e astuto, e la affida invece a Roose Bolton.',
+        it: 'Il Greatjon diventa il più fedele sostenitore di [[robb-stark|Robb]], e l’esercito raggiunge Moat Cailin. Robb intende affidargli la fanteria che marcerà lungo la strada del re contro lord Tywin. [[catelyn-stark|Catelyn]] fa notare a Robb che [[eddard-stark|Eddard]] considerava il Greatjon un uomo senza paura, e che non avere paura non è come essere coraggiosi. Robb decide che per la fanteria serve un uomo prudente e astuto, e la affida invece a Roose Bolton.',
         en: 'The Greatjon becomes [[robb-stark|Robb]]’s staunchest supporter, and the host reaches Moat Cailin. Robb means to give him command of the foot that will march down the kingsroad against Lord Tywin. [[catelyn-stark|Catelyn]] points out that [[eddard-stark|Eddard]] thought the Greatjon fearless, and that being fearless is not the same as being brave. Robb decides he needs a man of caution and cunning for the foot, and gives it to Roose Bolton instead.',
       },
     ),
@@ -2108,7 +2108,7 @@ export const season1Chronicles = {
       [8, 56],
       { it: 'L’avanguardia', en: 'The vanguard' },
       {
-        it: 'Galbart Glover è il lord di Deepwood Motte, uno dei lord del Nord che rispondono alla chiamata alle armi di [[robb-stark|Robb Stark]] dopo l’arresto del padre. Al banchetto di Grande Inverno Robb gli affida l’avanguardia. [[greatjon-umber|Greatjon Umber]] non vuole marciare dietro a un Glover e minaccia di tornarsene a casa, finché [[grey-wind|Vento Grigio]] non gli stacca due dita con un morso. Più tardi Galbart siede al consiglio di guerra di Robb, che si interrompe quando arriva [[catelyn-stark|Catelyn]] e chiede di parlare da sola con il figlio.',
+        it: 'Galbart Glover è il lord di Deepwood Motte, uno dei lord del Nord che rispondono alla chiamata alle armi di [[robb-stark|Robb Stark]] dopo l’arresto del padre. Al banchetto di Grande Inverno Robb gli affida l’avanguardia. [[greatjon-umber|Greatjon Umber]] non vuole marciare dietro a un Glover e minaccia di tornarsene a casa, finché [[grey-wind|Vento Grigio]] non stacca due dita al Greatjon con un morso. Più tardi Galbart siede al consiglio di guerra di Robb, che si interrompe quando arriva [[catelyn-stark|Catelyn]] e chiede di parlare da sola con il figlio.',
         en: 'Galbart Glover is the lord of Deepwood Motte, one of the northern lords who answer [[robb-stark|Robb Stark]]’s call to arms after his father’s arrest. At the feast in Winterfell, Robb gives him the vanguard. [[greatjon-umber|Greatjon Umber]] will not march behind a Glover and threatens to go home, until [[grey-wind|Grey Wind]] bites off two of his fingers. Later Galbart sits at Robb’s war council, which breaks up when [[catelyn-stark|Catelyn]] arrives and asks to speak with her son alone.',
       },
     ),
@@ -2162,7 +2162,7 @@ export const season1Chronicles = {
       [9, 64],
       { it: 'Nella guardia di Robb', en: 'In Robb’s guard' },
       {
-        it: 'Dacey Mormont è la figlia maggiore di [[maege-mormont|lady Maege Mormont]] ed erede dell’Isola dell’Orso. Cavalca nella guardia personale di [[robb-stark|Robb Stark]] quando il suo esercito fa scattare la trappola contro le truppe di [[jaime-lannister|Jaime Lannister]] nel Bosco dei Sussurri. Quando Jaime carica il gruppo di Robb, la guardia difende Robb, e Robb fa prigioniero Jaime.',
+        it: 'Dacey Mormont è la figlia maggiore di [[maege-mormont|lady Maege Mormont]] ed erede dell’Isola dell’Orso. Cavalca nella guardia personale di [[robb-stark|Robb Stark]] quando l’esercito di Robb fa scattare la trappola contro le truppe di [[jaime-lannister|Jaime Lannister]] nel Bosco dei Sussurri. Quando Jaime carica il gruppo di Robb, la guardia difende Robb, e Robb fa prigioniero Jaime.',
         en: 'Dacey Mormont is the eldest daughter of [[maege-mormont|Lady Maege Mormont]] and the heir to Bear Island. She rides in [[robb-stark|Robb Stark]]’s personal guard when his host springs its trap on the army of [[jaime-lannister|Jaime Lannister]] in the Whispering Wood. When Jaime charges Robb’s party, the guard defends Robb, and Robb takes Jaime prisoner.',
       },
     ),
@@ -2172,7 +2172,7 @@ export const season1Chronicles = {
       [29, 56],
       { it: 'Da Porto Bianco', en: 'From White Harbor' },
       {
-        it: 'Ser Wendel Manderly è un cavaliere di Porto Bianco, figlio di lord Wyman Manderly. Quando [[catelyn-stark|Catelyn Stark]] sbarca a Porto Bianco, lord Wyman, troppo grasso per stare in sella, resta a difendere la città e manda i suoi due figli, ser Wylis e ser Wendel, con millecinquecento uomini. I due cavalcano con Catelyn e suo zio, ser Brynden Tully, fino a Moat Cailin, dove si uniscono all’esercito di [[robb-stark|Robb]].',
+        it: 'Ser Wendel Manderly è un cavaliere di Porto Bianco, figlio di lord Wyman Manderly. Quando [[catelyn-stark|Catelyn Stark]] sbarca a Porto Bianco, lord Wyman, troppo grasso per stare in sella, resta a difendere la città e manda i suoi due figli, ser Wylis e ser Wendel, con millecinquecento uomini. I due cavalcano con Catelyn e con lo zio di lei, ser Brynden Tully, fino a Moat Cailin, dove si uniscono all’esercito di [[robb-stark|Robb]].',
         en: 'Ser Wendel Manderly is a knight of White Harbor, a son of Lord Wyman Manderly. When [[catelyn-stark|Catelyn Stark]] comes ashore at White Harbor, Lord Wyman, too fat to sit a horse, stays to defend the city and sends his two sons, Ser Wylis and Ser Wendel, with fifteen hundred men. They ride with Catelyn and her uncle Ser Brynden Tully to Moat Cailin, where they join [[robb-stark|Robb]]’s host.',
       },
     ),
@@ -2180,7 +2180,7 @@ export const season1Chronicles = {
       [29, 64],
       { it: 'Nella guardia di Robb', en: 'In Robb’s guard' },
       {
-        it: 'Ser Wendel Manderly marcia a sud nell’esercito di [[robb-stark|Robb]] e cavalca nella sua guardia personale, tra gli uomini più anziani, quando l’esercito piomba sulle truppe di [[jaime-lannister|Jaime Lannister]] nel Bosco dei Sussurri. Quando Jaime carica il gruppo di Robb, la guardia difende Robb, e Robb fa prigioniero Jaime.',
+        it: 'Ser Wendel Manderly marcia a sud nell’esercito di [[robb-stark|Robb]] e cavalca nella guardia personale di Robb, tra gli uomini più anziani, quando l’esercito piomba sulle truppe di [[jaime-lannister|Jaime Lannister]] nel Bosco dei Sussurri. Quando Jaime carica il gruppo di Robb, la guardia difende Robb, e Robb fa prigioniero Jaime.',
         en: 'Ser Wendel Manderly marches south in [[robb-stark|Robb]]’s host and rides in his personal guard, one of its older men, when the host falls on [[jaime-lannister|Jaime Lannister]]’s army in the Whispering Wood. When Jaime charges Robb’s party, the guard defends Robb, and Robb takes Jaime prisoner.',
       },
     ),
