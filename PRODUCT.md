@@ -81,6 +81,11 @@ for this project, and no official artwork is used.
   - Social pictures, a record page with no bookmark (drawn at the record's own
     first appearance, #1430), Show anyway and shared links, as the contract
     section has them.
+  - With no bookmark (no cookie, no trial), every list (characters, places,
+    fruits, abilities, ranks, the filler guide) opens the demo stretch, what
+    both its last episode and its last chapter have reached, and every record
+    page opens the record at its own first appearance, in both units (owner,
+    2026-11-20, #1430, #1432).
 
   Anything else that shows, names or hints at an entry past the bookmark is a
   leak. An arc's name is gated everywhere outside this list.
