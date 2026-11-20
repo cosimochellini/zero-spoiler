@@ -159,8 +159,8 @@ async function readSite(base) {
 
   for (let start = 0; start < paths.length; start += BATCH) {
     const batch = paths.slice(start, start + BATCH).map(async (path) => {
-      // fallow-ignore-next-line security-sink -- a developer tool: the base is the `--base` the developer typed, and it only reads pages.
       // No bookmark, as a search engine asks: every page answers it the same.
+      // fallow-ignore-next-line security-sink -- a developer tool: the base is the `--base` the developer typed, and it only reads pages.
       const response = await fetch(base + path, { redirect: 'manual' })
 
       return {

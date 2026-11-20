@@ -9,12 +9,6 @@ import { dismissIntro } from '~/lib/progress/intro'
 import type { RecordView, Slot } from '~/lib/view/records'
 import { space } from '~/styles/tokens.stylex'
 
-/** The record a page is about, as its banner names it. */
-type Named = Pick<
-  RecordView,
-  'name' | 'revealedAtChapter' | 'revealedAtEpisode'
->
-
 /**
  * What a page drawn for a reader with no bookmark says about itself (#1430):
  * a record page shows the record as it stands at its first appearance, a list
@@ -30,8 +24,10 @@ type Named = Pick<
 export function VisitorBanner({
   slot,
 }: {
-  /** The record page's own record; none on a list. */
-  slot?: Slot<Named>
+  /** The record page's own record, as the banner names it; none on a list. */
+  slot?: Slot<
+    Pick<RecordView, 'name' | 'revealedAtChapter' | 'revealedAtEpisode'>
+  >
 }): null | ReactElement {
   const t = useT()
   const threshold = useThreshold()
