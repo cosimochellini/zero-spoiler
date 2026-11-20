@@ -9,15 +9,16 @@ A pull request lands in two parts: review rounds until no P0–P2 is left, then 
 
 ## 1. Review rounds
 
+- The `status:review-rounds` label goes on when the draft opens (`gh pr create --draft --label status:review-rounds`, or `gh pr edit <pr> --add-label status:review-rounds`). While it is on, the `review-rounds` check is red and `scripts/land-pr.sh` refuses the merge.
 - Each round is a **fresh** reviewer with zero context: the `pr-reviewer` subagent (`.claude/agents/pr-reviewer.md`), which runs `gh-pr-no-checkout-review`. Use `pr-reviewer-structural` (Opus) when the PR changes the engine, the spoiler logic, routing or the data model.
 - The prompt names the PR, lists the owner's decisions so the reviewer does not re-flag them, and asks for the full P0–P3 report as the reviewer's **final message**.
 - A P0, P1 or P2 finding is fixed without asking the owner. Push the fix, then start a new fresh round.
 - A finding marked `Structural: yes` gets one extra review with `pr-reviewer-structural` before the merge.
 - CI does not run on a draft, so run `npm run check` locally before each round; the reviewer sees no CI result.
 - **Content PRs** on a loaded machine: `filing-records` §8.
-- When a round reports **no P0–P2**, the rounds are over. Fixing its P3 findings is your call; a P3 fix, whatever it touches, goes straight to the merge with no further round.
+- When a round reports **no P0–P2**, the rounds are over: `gh pr edit <pr> --remove-label status:review-rounds`. Fixing its P3 findings is your call; a P3 fix, whatever it touches, goes straight to the merge with no further round.
 
-Done when the last round reported no P0–P2 and every fix after it is pushed.
+Done when the last round reported no P0–P2, every fix after it is pushed and the label is off.
 
 ## 2. Merge
 
@@ -35,7 +36,7 @@ Merge only when the owner, or the orchestrator running your loop, told you to la
 4. On the script's other exits:
    - 3, the PR’s CI workflow run failed: fix it, push, and run the script with the new head;
    - 4, the head moved after the review: find out what was pushed, and review it unless it is your own P3 fix;
-   - 5, refused or a bad PR state: read the output before you run anything again.
+   - 5, refused or a bad PR state: read the output before you run anything again. `carries status:review-rounds` means the rounds are not over: finish them (part 1) first.
 5. Check that the issue closed, then remove the worktree.
 
 During a GitHub Actions incident (runs cancelled before any step), a green full local `npm run check` on the branch stands in for CI, and the merge is `gh pr ready <pr>`, then `gh pr merge <pr> --squash --match-head-commit <head-sha>`. The same conflict rule applies: `gh pr view <pr> --json mergeable` reads CONFLICTING when the branch needs main merged in.

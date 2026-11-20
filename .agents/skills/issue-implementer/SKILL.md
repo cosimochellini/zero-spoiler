@@ -35,7 +35,8 @@ in Codex or through Claude's `issue-implementer` subagent.
 6. Use the `pr` skill when available and fill
    `.github/pull_request_template.md`, including sources/rights and AI
    attribution to the actual active model. Commit, push and open a **draft** PR
-   against `main` with `Closes #N` for the supplied issue. Leave it unmerged.
+   against `main` with `Closes #N` for the supplied issue and the
+   `status:review-rounds` label (`landing-prs`). Leave it unmerged.
 
 Return the PR URL, branch, absolute worktree path, changes, check results and
 blocked decisions. Explain skipped parity/browser checks.

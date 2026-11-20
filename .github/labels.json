@@ -95,6 +95,11 @@
     "description": "An agent or a person is on it"
   },
   {
+    "name": "status:review-rounds",
+    "color": "d93f0b",
+    "description": "Pull requests only: review rounds are open, so it must not merge"
+  },
+  {
     "name": "priority:p0",
     "color": "b60205",
     "description": "A spoiler is live, or the site or CI is down"

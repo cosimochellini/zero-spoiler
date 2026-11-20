@@ -42,6 +42,11 @@ case "$1 $2" in
       if [ -f "$d/read" ]; then jq -r "$q" "$d/later.json"; exit; fi
       touch "$d/read"
     fi
+    # The same for the labels: one added while CI runs.
+    if [ "$q" = '.labels[].name' ] && [ -f "$d/labels-later.json" ]; then
+      if [ -f "$d/labels-read" ]; then jq -r "$q" "$d/labels-later.json"; exit; fi
+      touch "$d/labels-read"
+    fi
     jq -r "$q" "$d/pr.json" ;;
   "pr ready") ;;
   "pr merge")
@@ -72,11 +77,18 @@ const run = (id, status, conclusion) => ({
  * @param {string} state - OPEN or MERGED.
  * @param {string} [mergeable] - MERGEABLE or CONFLICTING.
  * @param {string} [title] - The PR title, the squash subject.
+ * @param {string[]} [labels] - The names of the labels on the PR.
  * @returns {object} The PR fields the script reads.
  */
-const pr = (state, mergeable = 'MERGEABLE', title = 'ci: land it') => ({
+const pr = (
+  state,
+  mergeable = 'MERGEABLE',
+  title = 'ci: land it',
+  labels = [],
+) => ({
   state,
   title,
+  labels: labels.map((name) => ({ name })),
   baseRefName: 'main',
   headRefName: 'topic',
   headRepository: { nameWithOwner: headRepositoryName },
@@ -95,8 +107,18 @@ const pr = (state, mergeable = 'MERGEABLE', title = 'ci: land it') => ({
  * @param {string} [later] - What GitHub reports on every later read.
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
  * @param {string} [title] - The PR title.
+ * @param {string[][]} [labels] - The PR's labels on the first read, then on every later one.
  */
-function prepare(bin, runs, refusedThen, mergeable, later, clean, title) {
+function prepare(
+  bin,
+  runs,
+  refusedThen,
+  mergeable,
+  later,
+  clean,
+  title,
+  labels = [],
+) {
   /**
    * Writes an executable fake into the bin directory.
    * @param {string} name - The command it stands in for.
@@ -126,8 +148,14 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
   )
   writeFileSync(
     path.join(bin, 'pr.json'),
-    JSON.stringify(pr('OPEN', mergeable, title)),
+    JSON.stringify(pr('OPEN', mergeable, title, labels[0])),
   )
+  if (labels.length > 1) {
+    writeFileSync(
+      path.join(bin, 'labels-later.json'),
+      JSON.stringify(pr('OPEN', mergeable, title, labels[1])),
+    )
+  }
   if (later) {
     writeFileSync(
       path.join(bin, 'later.json'),
@@ -152,6 +180,7 @@ ${clean ? 'exit 0' : 'echo src/a.ts; exit 1'}
  * @param {boolean} [clean] - Whether a merge with main is free of conflicts.
  * @param {string} [expectedHead] - The full or abbreviated SHA passed by the caller.
  * @param {string} [title] - The PR title.
+ * @param {string[][]} [labels] - The PR's labels on the first read, then on every later one.
  * @returns {{ status: number | null, stdout: string, calls: string }} The exit status, output and the `gh` calls made.
  */
 function land(
@@ -162,10 +191,11 @@ function land(
   clean,
   expectedHead = head,
   title,
+  labels,
 ) {
   const bin = mkdtempSync(path.join(tmpdir(), 'land-pr-'))
   try {
-    prepare(bin, runs, refusedThen, mergeable, later, clean, title)
+    prepare(bin, runs, refusedThen, mergeable, later, clean, title, labels)
     const child = spawnSync('bash', [script, '42', expectedHead], {
       encoding: 'utf8',
       env: {
@@ -255,6 +285,42 @@ describe('land-pr.sh', () => {
     )
 
     expect(calls).not.toContain('pr ready')
+    expect(calls).not.toContain('pr merge')
+    expect(status).toBe(5)
+  })
+
+  it('refuses a PR whose review rounds are open before marking it ready', () => {
+    const { status, stdout, calls } = land(
+      [[run(1, 'completed', 'success')]],
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      head,
+      undefined,
+      [['scope:infrastructure', 'status:review-rounds']],
+    )
+
+    expect(stdout).toContain('PR 42 carries status:review-rounds')
+    expect(calls).not.toContain('pr ready')
+    expect(calls).not.toContain('pr merge')
+    expect(status).toBe(5)
+  })
+
+  it('refuses to merge when the rounds label goes on while CI runs', () => {
+    const { status, stdout, calls } = land(
+      [[run(1, 'completed', 'success')]],
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      head,
+      undefined,
+      [[], ['status:review-rounds']],
+    )
+
+    expect(calls).toContain('actions/workflows/ci.yml/runs')
+    expect(stdout).toContain('PR 42 carries status:review-rounds')
     expect(calls).not.toContain('pr merge')
     expect(status).toBe(5)
   })

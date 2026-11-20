@@ -14,6 +14,9 @@ const GROUPS = ['type', 'area', 'status', 'priority', 'size']
 /** Every label the repository defines. */
 const KNOWN = new Set(labels.map((label) => label.name))
 
+/** Labels for pull requests: `status:review-rounds` blocks a merge. */
+const PR_ONLY = new Set(['status:review-rounds'])
+
 // `gh issue create` run as a command: at the start or after a shell
 // separator, so a grep, a commit message or a PR body that only mentions it
 // goes through.
@@ -90,6 +93,9 @@ export function problems(given, body) {
   const unknown = given
     .filter((label) => !KNOWN.has(label))
     .map((label) => `unknown label "${label}"`)
+  const prOnly = given
+    .filter((label) => PR_ONLY.has(label))
+    .map((label) => `${label} goes on pull requests, not issues`)
   const groups = GROUPS.map((group) => {
     const count = given.filter((label) => label.startsWith(`${group}:`)).length
     if (count > 1) {
@@ -108,7 +114,7 @@ export function problems(given, body) {
       ]
     : []
 
-  return [...unknown, ...groups, ...blocked]
+  return [...unknown, ...prOnly, ...groups, ...blocked]
 }
 
 if (isMain(import.meta)) {
