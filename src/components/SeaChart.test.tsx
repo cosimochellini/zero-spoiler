@@ -173,7 +173,8 @@ describe('SeaChart', () => {
     ).not.toBeInTheDocument()
   })
 
-  it('shows only the origin and fog with no bookmark, and asks for one', () => {
+  // The page's `VisitorBanner` asks for a bookmark, not the chart (#1430).
+  it('shows only the origin and fog with no bookmark', () => {
     const { container } = draw({ bookmark: null, covered: fogged })
 
     expect(within(stops()).queryAllByRole('link')).toHaveLength(0)
@@ -185,8 +186,8 @@ describe('SeaChart', () => {
     ).toHaveLength(1)
     expect(screen.getByText('2 stops under fog')).toBeInTheDocument()
     expect(
-      screen.getByRole('button', { name: 'Set your bookmark' }),
-    ).toBeInTheDocument()
+      screen.queryByRole('button', { name: 'Set your bookmark' }),
+    ).not.toBeInTheDocument()
     // No sea is drawn or named, and nothing in the fog has a name.
     expect(container).not.toHaveTextContent('East Blue')
     expect(container.querySelectorAll('rect[x]')).toHaveLength(0)

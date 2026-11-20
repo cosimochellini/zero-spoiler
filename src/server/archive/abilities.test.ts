@@ -13,6 +13,7 @@ import {
   UNTYPED,
 } from '~/test/abilities'
 import { leaksOf } from '~/test/fog'
+import { heldTo } from '~/test/visitor'
 
 import { abilityPage, abilitySheet } from './abilities.server'
 import { entityForHandle, handleOf } from './handle.server'
@@ -250,8 +251,13 @@ function leaksAcross(p: Payload): string[] {
     const lifted = (entity: Entity): boolean =>
       p.name === 'liftAbility' && idOf(p.name, key, bookmark) === entity.id
 
-    return leaksIn(p.run(bookmark, locale, key), bookmark, lifted).map(
-      (id) => `${id} via '${key}' @ ${JSON.stringify(bookmark)}`,
+    const payload = p.run(bookmark, locale, key)
+
+    // A page drawn at a point (`heldTo`) is held to both of its bookmarks.
+    return heldTo(ARCHIVE, { bookmark, key, payload: p }).flatMap((held) =>
+      leaksIn(payload, held, lifted).map(
+        (id) => `${id} via '${key}' @ ${JSON.stringify(bookmark)}`,
+      ),
     )
   })
 }

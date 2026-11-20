@@ -11,11 +11,7 @@ import type { BookmarkSeries } from './series'
 /** Reads only the selected series, before the first server-rendered byte. */
 function serverBookmark(series: BookmarkSeries | null): Bookmark {
   return series === null ? null : (
-      bookmarkFromCookies(
-        migratedCookies(getRequestHeader('cookie')),
-        series,
-        getRequestHeader('user-agent'),
-      )
+      bookmarkFromCookies(migratedCookies(getRequestHeader('cookie')), series)
     )
 }
 

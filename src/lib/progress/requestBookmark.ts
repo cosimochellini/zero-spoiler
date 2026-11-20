@@ -1,5 +1,3 @@
-import { isCrawlerAgent } from '~/lib/crawler'
-
 import { type Bookmark, parseBookmark } from './episode'
 import type { BookmarkSeries } from './series'
 
@@ -48,45 +46,33 @@ export function trialForRequest(
  * Which bookmark a server request stands at.
  *
  * The decision `readBookmark` makes on the server, written as a plain
- * function of the headers it reads so that it can be held to a test. It
+ * function of the cookies it reads so that it can be held to a test. It
  * is the one branch in the app that decides whether a page is served open or
  * covered, and `npm run check` would stay green through an inverted condition
  * if nothing exercised it.
  *
  * The reader's own cookie wins over everything. Without one, a trial point
- * from the onboarding stands in for it until the session ends. Only when there
- * is neither does the user agent get a say: a crawler sends no bookmark, and a
- * request with no bookmark sees nothing, so several hundred pages would be
- * indexed as the same fogged placeholder. A known crawler is therefore read as
- * a reader at the end of the route.
+ * from the onboarding stands in for it until the session ends. With neither,
+ * the request has no bookmark, whoever sends it: a search engine and a person
+ * get the same page (#1430), each record drawn as it stands at its own first
+ * appearance (`pageReader` in `~/server/archive/reader.server`).
  */
 export function bookmarkForRequest(
   cookie: string | undefined,
   trial: string | undefined,
-  {
-    series,
-    userAgent,
-  }: { series: BookmarkSeries; userAgent?: string | undefined },
+  series: BookmarkSeries,
 ): Bookmark {
-  const bookmark = parseBookmark(cookie, series) ?? parseTrial(trial, series)
-  if (bookmark !== null) {
-    return bookmark
-  }
-
-  return isCrawlerAgent(userAgent) ?
-      { mode: 'episode', episode: series.episodeCeiling }
-    : null
+  return parseBookmark(cookie, series) ?? parseTrial(trial, series)
 }
 
 /** Reads only this series' cookies; migration happens before rendering. */
 export function bookmarkFromCookies(
   jar: Map<string, string>,
   series: BookmarkSeries,
-  userAgent?: string,
 ): Bookmark {
   return bookmarkForRequest(
     jar.get(series.cookie),
     jar.get(series.trialCookie),
-    { series, userAgent },
+    series,
   )
 }

@@ -10,6 +10,7 @@ import {
   SpecimenBands,
   type SpecimenBandsProps,
 } from '~/components/SpecimenBands'
+import { ClosesIntro } from '~/components/VisitorBanner'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { useOpenEntries } from '~/lib/progress/openEntries'
@@ -120,12 +121,13 @@ export function FruitsAlbum({
  * bookmark, and the three counts by kind, all of them public.
  *
  * The fog is `FogTile`'s, two drifting banks, and the same for every fruit
- * because it stands for none of them. Under the wall the covered tiles stay
- * on the page, closed behind a disclosure, so "Show anyway" still works for
- * a reader who does not want a bookmark; they come with the album, once the
- * browser has asked for it. There is no control bar: with no bookmark
- * nothing is open, search only finds open fruits and every chip would read
- * 0. The address's view, kind and query wait for the album.
+ * because it stands for none of them. Under the wall the album stays on the
+ * page, closed behind a disclosure: the fruits of the start of the story,
+ * which a page with no bookmark opens (#1430), and the covered tiles, so
+ * "Show anyway" still works for a reader who does not want a bookmark; they
+ * come with the album, once the browser has asked for it. There is no
+ * control bar: the address's view, kind and query wait for a bookmark. The
+ * wall stands in for the intro dialog, which it closes for the session.
  */
 function FruitWall({
   album,
@@ -139,6 +141,7 @@ function FruitWall({
 
   return (
     <div {...stylex.props(styles.stack)}>
+      <ClosesIntro />
       <Wall
         filed={filed}
         headingId={`${id}-wall`}
@@ -200,7 +203,10 @@ function Wall({
           id={headingId}
           {...stylex.props(styles.title)}
         >
-          {t('fruits.wall.title', { count: filed })}
+          {/* The start of the story is open even here (#1430). */}
+          {t('fruits.wall.title', {
+            count: filed - plates.reduce((sum, plate) => sum + plate.opened, 0),
+          })}
         </h2>
         <p {...stylex.props(styles.ask)}>{t('fruits.wall.ask')}</p>
         <EpisodeMark placement="fold" />

@@ -17,8 +17,10 @@ situations:
   is built for them (`docs/homepage.md`).
 - A visitor with no bookmark, midway through or not started: the landing page
   lets them try the site before saving anything.
-- A reader arriving on a series page from a search result with no bookmark: they
-  get a one-time intro with the bookmark form in it (#864).
+- A reader arriving on a series page from a search result with no bookmark: a
+  record page shows the record at its first appearance and a list the start of
+  the story, under a banner with the bookmark control (#1430); any other page
+  gets a one-time intro with the bookmark form in it (#864).
 
 The site is in English and Italian. There is no user research and no analytics.
 Do not invent personas, quotes or usage figures.
@@ -76,8 +78,9 @@ for this project, and no official artwork is used.
   - The sitemap: the address and square picture of every record both sources
     tell, with no bookmark (`docs/architecture.md`; the code gives no dated
     ruling).
-  - Social pictures, the crawler's bookmark, Show anyway and shared links, as
-    the contract section has them.
+  - Social pictures, a record page with no bookmark (drawn at the record's own
+    first appearance, #1430), Show anyway and shared links, as the contract
+    section has them.
 
   Anything else that shows, names or hints at an entry past the bookmark is a
   leak. An arc's name is gated everywhere outside this list.

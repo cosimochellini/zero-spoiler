@@ -3,6 +3,7 @@ import type { ReactElement } from 'react'
 
 import { AbilityAlbum } from '~/components/AbilityAlbum'
 import { ArchivePage } from '~/components/ArchivePage'
+import { VisitorBanner } from '~/components/VisitorBanner'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import { parseAbilityParams } from '~/lib/search/abilityParams'
 import { seriesPageHead } from '~/routes/$locale/-head'
@@ -42,6 +43,7 @@ function AbilitiesPage(): ReactElement {
       })}
       title={t('abilities.title')}
     >
+      <VisitorBanner />
       <AbilityAlbum
         onParams={onParams}
         params={params}

@@ -38,14 +38,56 @@ import {
 import { placePage } from './placePage.server'
 import { placesPage } from './places.server'
 import { powerPage } from './power.server'
-import { readerFor } from './reader.server'
+import { pageReader, type Reader, readerFor } from './reader.server'
 import { sagaLabels } from './sagaLabels.server'
 
 /** Every payload served by the compiler-visible server-function wrappers. */
 export interface Payload {
+  /**
+   * How `pageReader` draws the page for a reader with no bookmark (#1430): a
+   * record page at its key's first appearance, a list at the end of the demo.
+   * Absent for a page read by the bookmark alone.
+   */
+  drawnAt?: DrawnAt
   keys?: () => string[]
   name: string
   run: (bookmark: Bookmark, locale: Locale, key: string) => unknown
+}
+
+/** The two kinds of page `pageReader` draws at a point. */
+export type DrawnAt = 'list' | 'record'
+
+/**
+ * A page `api.ts` reads through `pageReaderIn`: one place picks both its
+ * reader and its `drawnAt`, so the sweep cannot hold a page to a point it is
+ * not drawn at.
+ */
+function drawnPage(
+  archive: SeriesArchive,
+  {
+    drawnAt,
+    keys,
+    name,
+    page,
+  }: Pick<Payload, 'keys' | 'name'> & {
+    drawnAt: DrawnAt
+    page: (key: string, r: Reader) => unknown
+  },
+): Payload {
+  return {
+    drawnAt,
+    name,
+    ...(keys !== undefined && { keys }),
+    run: (b, l, key) =>
+      page(
+        key,
+        pageReader(
+          archive,
+          b,
+          drawnAt === 'record' ? { id: key, locale: l } : { locale: l },
+        ),
+      ),
+  }
 }
 
 function listPayloads(archive: SeriesArchive): Payload[] {
@@ -62,26 +104,38 @@ function listPayloads(archive: SeriesArchive): Payload[] {
       name: 'loadHome',
       run: (b, l) => landingPage(readerFor(archive, b, l), null),
     },
-    {
+    drawnPage(archive, {
+      drawnAt: 'list',
       name: 'loadCharacters',
-      run: (b, l) => charactersPage(readerFor(archive, b, l)),
-    },
-    {
+      page: (_, r) => charactersPage(r),
+    }),
+    drawnPage(archive, {
+      drawnAt: 'list',
       name: 'loadShelves',
-      run: (b, l) => shelvesPage(readerFor(archive, b, l)),
-    },
-    { name: 'loadFruits', run: (b, l) => fruitSheet(readerFor(archive, b, l)) },
-    {
+      page: (_, r) => shelvesPage(r),
+    }),
+    drawnPage(archive, {
+      drawnAt: 'list',
+      name: 'loadFruits',
+      page: (_, r) => fruitSheet(r),
+    }),
+    drawnPage(archive, {
+      drawnAt: 'list',
       name: 'loadFruitAlbum',
-      run: (b, l) => fruitAlbum(readerFor(archive, b, l)),
-    },
-    { name: 'loadPlaces', run: (b, l) => placesPage(readerFor(archive, b, l)) },
+      page: (_, r) => fruitAlbum(r),
+    }),
+    drawnPage(archive, {
+      drawnAt: 'list',
+      name: 'loadPlaces',
+      page: (_, r) => placesPage(r),
+    }),
     { name: 'loadFiller', run: (b, l) => fillerPage(readerFor(archive, b, l)) },
     { name: 'loadPower', run: (b, l) => powerPage(readerFor(archive, b, l)) },
-    {
+    drawnPage(archive, {
+      drawnAt: 'list',
       name: 'loadAbilities',
-      run: (b, l) => abilitySheet(readerFor(archive, b, l)),
-    },
+      page: (_, r) => abilitySheet(r),
+    }),
     { name: 'loadSeriesCopy', run: (_, l) => copyOf(archive.series, l) },
     { name: 'loadSeriesLegal', run: (_, l) => legalOf(archive.series, l) },
     {
@@ -97,53 +151,39 @@ function recordPayloads(archive: SeriesArchive): Payload[] {
     withFeatures(archive).fruits.map(({ id }) => id)
   const abilityIds = (): string[] =>
     withFeatures(archive).abilities.map(({ id }) => id)
+  const record = (
+    name: string,
+    keys: () => string[],
+    page: (id: string, r: Reader) => unknown,
+  ): Payload => drawnPage(archive, { drawnAt: 'record', name, keys, page })
   return [
-    {
-      name: 'loadCharacter',
-      keys: characterIds,
-      run: (b, l, id) => characterPage(id, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'loadRelationships',
-      keys: characterIds,
-      run: (b, l, id) => relationshipsPage(id, readerFor(archive, b, l)),
-    },
-    {
-      name: 'loadChronicleRest',
-      keys: characterIds,
-      run: (b, l, id) => chronicleRestOf(id, readerFor(archive, b, l)),
-    },
-    {
+    record(
+      'loadCharacter',
+      characterIds,
+      (id, r) => characterPage(id, r) ?? null,
+    ),
+    record('loadRelationships', characterIds, (id, r) =>
+      relationshipsPage(id, r),
+    ),
+    record('loadChronicleRest', characterIds, (id, r) =>
+      chronicleRestOf(id, r),
+    ),
+    drawnPage(archive, {
+      drawnAt: 'list',
       name: 'loadDrawings',
       keys: () => archive.entities.map(({ id }) => id),
-      run: (b, l, id) => drawingsFor([id], readerFor(archive, b, l)),
-    },
-    {
-      name: 'loadFruit',
-      keys: fruitIds,
-      run: (b, l, id) => fruitPage(id, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'loadFruitEaters',
-      keys: fruitIds,
-      run: (b, l, id) => fruitEaters(id, readerFor(archive, b, l)),
-    },
-    {
-      name: 'loadFruitSiblings',
-      keys: fruitIds,
-      run: (b, l, id) => fruitSiblings(id, readerFor(archive, b, l)),
-    },
-    {
-      name: 'loadPlace',
-      keys: () =>
+      page: (id, r) => drawingsFor([id], r),
+    }),
+    record('loadFruit', fruitIds, (id, r) => fruitPage(id, r) ?? null),
+    record('loadFruitEaters', fruitIds, (id, r) => fruitEaters(id, r)),
+    record('loadFruitSiblings', fruitIds, (id, r) => fruitSiblings(id, r)),
+    record(
+      'loadPlace',
+      () =>
         [...archive.places, ...withFeatures(archive).ships].map(({ id }) => id),
-      run: (b, l, id) => placePage(id, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'loadAbility',
-      keys: abilityIds,
-      run: (b, l, id) => abilityPage(id, readerFor(archive, b, l)) ?? null,
-    },
+      (id, r) => placePage(id, r) ?? null,
+    ),
+    record('loadAbility', abilityIds, (id, r) => abilityPage(id, r) ?? null),
   ]
 }
 
