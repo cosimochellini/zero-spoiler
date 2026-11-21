@@ -1,5 +1,3 @@
-import { readFileSync } from 'node:fs'
-import path from 'node:path'
 import { isDeepStrictEqual } from 'node:util'
 import { describe, expect, it } from 'vitest'
 
@@ -31,20 +29,11 @@ import { heldTo, sweptInFull } from '~/test/visitor'
 import { entityForHandle } from './handle.server'
 import { hubPageFor } from './hub.server'
 import { characterPage } from './pages.server'
-import { type DrawnAt, type Payload, payloadsFor } from './payloads.server'
+import { type Payload, payloadsFor } from './payloads.server'
 import { powerPage } from './power.server'
 import { pageReader, readerFor } from './reader.server'
 
 const PAYLOADS = payloadsFor(ONE_PIECE_LOADED.archive)
-
-/** The server functions that answer with `plain` rather than seroval. */
-const PLAIN = new Set([
-  'loadChronicleRest',
-  'loadDemoDrawings',
-  'loadDrawings',
-  'loadFruitAlbum',
-  'loadShelves',
-])
 
 /** A record a page names past the bookmark on purpose. */
 type Excuse = (entity: Entity, key: string, bookmark: Bookmark) => boolean
@@ -118,48 +107,6 @@ const SWEEPS: Partial<Record<string, Sweep>> = Object.fromEntries(
 
 const alphabetically = (a: string, b: string): number => a.localeCompare(b)
 
-/** One server function as `api.ts` declares it. */
-interface Served {
-  /** Whether it reads a reader drawn at a point (`pageReaderIn`, `pageReader`). */
-  drawn: boolean
-  name: string
-  validator: string
-}
-
-const DECLARED = 'export const '
-const SERVER_FN = ' = createServerFn()'
-const VALIDATOR = '.validator('
-
-/**
- * Each server function `api.ts` declares. A function's text runs from its
- * `export const` to the next one, so a call in one is never read as
- * another's.
- */
-function servedIn(source: string): Served[] {
-  const served: Served[] = []
-  for (const block of source.split(/^(?=export const )/mu)) {
-    const end = block.indexOf(SERVER_FN)
-    if (end === -1 || !block.startsWith(DECLARED)) {
-      continue
-    }
-    const from = block.indexOf(VALIDATOR) + VALIDATOR.length
-    served.push({
-      drawn: /\bpageReader(?:In)?\(/u.test(block),
-      name: block.slice(DECLARED.length, end),
-      validator: block.slice(from, block.indexOf(')', from)),
-    })
-  }
-
-  return served
-}
-
-/**
- * The kind of page a validator asks for: one with an id is a record page,
- * drawn at the record (`addressed`); any other, a list.
- */
-const kindOf = (validator: string): DrawnAt =>
-  validator === 'addressed' ? 'record' : 'list'
-
 /** Every bookmark of a series' sweep, in every locale. */
 const asksOf = ({
   bookmarks,
@@ -199,51 +146,11 @@ function keysAt(
 
 describe('every payload the server sends', () => {
   it('is on the list, and the list holds nothing else', () => {
-    // A server function added to `api.ts` without an entry here would ship
-    // without the sweep below.
+    // Each wrapper in `api.ts` serves one entry of `ENDPOINTS`: an export
+    // with no entry would ship without the sweep below.
     expect(
       PAYLOADS.map(({ name }) => name).toSorted(alphabetically),
     ).toStrictEqual(Object.keys(api).toSorted(alphabetically))
-  })
-
-  it('is on the plain list exactly when `api.ts` sends it with `plain`', () => {
-    // One `export const` per server function: the chunk after each names it
-    // and holds its handler.
-    const sent = readFileSync(
-      path.join(import.meta.dirname, '..', 'api.ts'),
-      'utf8',
-    )
-      .split('export const ')
-      .filter((chunk) => chunk.includes('plain('))
-      .map((chunk) => chunk.slice(0, chunk.indexOf(' ')))
-
-    expect(sent.toSorted(alphabetically)).toStrictEqual(
-      [...PLAIN].toSorted(alphabetically),
-    )
-  })
-
-  it('is drawn at a point exactly when `api.ts` reads it through `pageReaderIn`, and as the same kind', () => {
-    // The sweep holds a `drawnAt` page to its point, and reads every key of
-    // it with no bookmark: a page drawn at one in `api.ts` and not marked
-    // here would be swept as if it saw nothing, and a record page swept as a
-    // list would be held to the demo instead of its record.
-    const served = servedIn(
-      readFileSync(path.join(import.meta.dirname, '..', 'api.ts'), 'utf8'),
-    )
-
-    expect(
-      served.map(({ name }) => name).toSorted(alphabetically),
-    ).toStrictEqual(Object.keys(api).toSorted(alphabetically))
-    expect(
-      served
-        .filter(({ drawn }) => drawn)
-        .map(({ name, validator }) => `${name} ${kindOf(validator)}`)
-        .toSorted(alphabetically),
-    ).toStrictEqual(
-      PAYLOADS.filter(({ drawnAt }) => drawnAt !== undefined)
-        .map(({ drawnAt, name }) => `${name} ${String(drawnAt)}`)
-        .toSorted(alphabetically),
-    )
   })
 
   it('is swept for every series listed, and for no other', () => {
@@ -334,7 +241,7 @@ describe.each(SERIES)('every payload of $slug', (series) => {
   // Sent as plain JSON (`~/lib/plain`): what `JSON.stringify` writes has to
   // read back as the very payload, with no `undefined`, `Map` or `Date` lost
   // on the way.
-  it.each(payloads.filter(({ name }) => PLAIN.has(name)))(
+  it.each(payloads.filter(({ plain }) => plain))(
     '$name reads back whole from plain JSON',
     ({ keys, run }) => {
       const all = keys?.()
@@ -358,9 +265,7 @@ describe.each(SERIES)('every payload of $slug', (series) => {
   // unit: one drawing JSON changes cannot hide between the samples.
   const ceilings = series.bookmarks.slice(-2)
 
-  it.each(
-    payloads.filter(({ keys, name }) => PLAIN.has(name) && keys !== undefined),
-  )(
+  it.each(payloads.filter(({ keys, plain }) => plain && keys !== undefined))(
     '$name reads back whole from plain JSON for every key at the ceilings',
     ({ keys, run }) => {
       const all = keys?.() ?? []
