@@ -425,27 +425,23 @@ export const NORTH_DRAWINGS = {
 /** The northern household drawn again later in the story. */
 export const northRedrawn: Redrawings = {
   'tomard': [
-    // The belt cut through on the floor, the letter fallen beside it: he is
-    // cut down in the throne room in Eddard XIV (chapter 50). The book's
-    // alone; episode 7, where the show leaves him, orders it.
+    // The belt fallen whole on the floor, the letter tipped over beside it,
+    // its foot drawn now the belt no longer hides it: he is cut down in the
+    // throne room in Eddard XIV (chapter 50). The book's alone; episode 7,
+    // where the show leaves him, orders it.
     {
       episode: 7,
       chapter: 50,
       source: 'chapter',
       value: [
-        {
-          d: 'M74 132 Q30 132 28 118 Q30 102 64 98 M66 106 Q38 108 36 118 Q40 126 74 124',
-        },
-        {
-          d: 'M94 98 Q132 102 132 118 Q128 134 88 134 M94 106 Q124 110 124 118 Q120 126 88 126',
-        },
-        {
-          d: 'M64 98 L68 104 L66 106 M74 124 L72 128 L74 132 M94 98 L90 102 L94 106 M88 126 L92 130 L88 134',
-          role: 'soft',
-        },
-        { d: 'M102 150 L112 120 L146 130 L136 158 Z' },
-        { d: 'M112 120 L128 142 L146 130', role: 'soft' },
-        { d: circle(127, 146, 4), role: 'accent' },
+        ...moved(
+          BELT_LETTER.slice(3, 7),
+          'translate(-12 156) scale(0.82 0.6) translate(0 -138)',
+        ),
+        ...moved(
+          [{ d: 'M98 100 L56 96' }, ...BELT_LETTER.slice(0, 3)],
+          'translate(124 138) rotate(16) scale(0.75) translate(-80 -78)',
+        ),
         { d: 'M10 158 H150', role: 'ambient', dashed: true },
       ],
     },
