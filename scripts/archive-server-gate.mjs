@@ -11,8 +11,10 @@
  * `//#region <module id>` lines Rolldown writes into the unminified server
  * chunks together with the `sources` of its source map: Rolldown gives some
  * modules no region of their own (`chronicle.server.ts` sits under
- * `markers.ts`'s), and the map names them. A reached chunk with neither leaves
- * the gate unusable, never clean.
+ * `markers.ts`'s), and only the map names them. So every reached chunk needs a
+ * readable map (`environments.ssr.build.sourcemap` in `vite.config.ts`), save
+ * one whose regions are all virtual (`\0…`, Start's resolver and manifest);
+ * without it the gate is unusable, never clean.
  */
 import console from 'node:console'
 import { readFileSync } from 'node:fs'
@@ -39,8 +41,9 @@ const PROVIDER_ONLY = [
 /** How many provider-only modules a problem names before counting the rest. */
 const QUOTED = 3
 
-/** Why a reached chunk proves nothing about the modules it holds. */
-const NO_EVIDENCE = 'no //#region lines and no source map'
+/** What a chunk without a readable source map leaves the gate unable to see. */
+const MAPS_REQUIRED =
+  'the server build must emit source maps (environments.ssr.build.sourcemap in vite.config.ts)'
 
 /** The emitted SSR dependency graph, not a guess from source imports. */
 export const SERVER_MANIFEST = 'dist/server/.vite/manifest.json'
@@ -152,19 +155,20 @@ function providerOnly(id) {
  * lines and its source map.
  * @param {string} key The chunk's manifest key.
  * @param {string} text The chunk's emitted text.
- * @param {string[]} mapped The modules its source map names.
- * @returns {null | string[]} The modules, or null when nothing names any.
+ * @param {string | string[]} mapped The modules its source map names, or why it has none.
+ * @returns {string | string[]} The modules, or why the chunk cannot be read.
  */
-function providerModules(key, text = '', mapped = []) {
-  const ids = [
-    ...text
-      .matchAll(/^\/\/#region (?<id>.+)$/gmu)
-      .map((match) => match.groups.id),
-    ...mapped,
-  ]
-  if (ids.length === 0) {
-    return null
+function providerModules(key, text = '', mapped = 'no source map') {
+  const regions = text
+    .matchAll(/^\/\/#region (?<id>.+)$/gmu)
+    .map((match) => match.groups.id)
+    .toArray()
+  const virtual =
+    regions.length > 0 && regions.every((id) => id.startsWith(String.raw`\0`))
+  if (typeof mapped === 'string' && !virtual) {
+    return `${mapped}; ${MAPS_REQUIRED}`
   }
+  const ids = typeof mapped === 'string' ? regions : [...regions, ...mapped]
   const held = new Set([key, ...ids].filter((id) => providerOnly(id)))
   return held.values().toArray()
 }
@@ -212,7 +216,7 @@ function crossing(root, file, held) {
  * Provider-only modules statically loaded by any runtime root but the split chunks.
  * @param {Record<string, {file: string, imports?: string[], isEntry?: boolean, isDynamicEntry?: boolean}>} manifest The Vite manifest.
  * @param {Record<string, string>} chunks Emitted chunk text, keyed by output file.
- * @param {Record<string, string[]>} sources The modules each chunk's source map names, keyed by output file.
+ * @param {Record<string, string | string[]>} sources The modules each chunk's source map names, or why it has none, keyed by output file.
  * @returns {{problems: string[], unreadable: string[]}} The provider verdict.
  */
 function providerBoundary(manifest, chunks, sources) {
@@ -225,8 +229,8 @@ function providerBoundary(manifest, chunks, sources) {
   for (const [key, root] of firstRoot) {
     const { file } = manifest[key]
     const held = providerModules(key, chunks[file], sources[file])
-    if (held === null) {
-      unreadable.add(`${file} (${NO_EVIDENCE})`)
+    if (typeof held === 'string') {
+      unreadable.add(`${file} (${held})`)
     } else if (held.length > 0) {
       problems.push(crossing(root, file, held))
     }
@@ -239,7 +243,7 @@ function providerBoundary(manifest, chunks, sources) {
  * @param {null | Record<string, {file: string, imports?: string[], dynamicImports?: string[], isEntry?: boolean, isDynamicEntry?: boolean}>} manifest The emitted Vite SSR manifest.
  * @param {{folder: string, canaries: {file: string, phrase: null | string}[]}[]} archives Every row of the single series registry, with its fingerprints.
  * @param {Record<string, string>} chunks Emitted chunk text, keyed by output file.
- * @param {Record<string, string[]>} [sources] The repository-relative modules each chunk's source map names, keyed by output file.
+ * @param {Record<string, string | string[]>} [sources] The repository-relative modules each chunk's source map names, or why it has none, keyed by output file.
  * @returns {{ok: boolean, problems: string[], unreadable: string[]}} The server verdict.
  */
 export function judgeServer(manifest, archives, chunks, sources = {}) {
@@ -263,34 +267,65 @@ export function judgeServer(manifest, archives, chunks, sources = {}) {
 }
 
 /**
+ * JSON text as a value, or null when it does not parse.
+ * @param {string} text The text.
+ * @returns {unknown} The value.
+ */
+function parsed(text) {
+  try {
+    return JSON.parse(text)
+  } catch {
+    return null
+  }
+}
+
+/**
+ * A source map file, or why there is none to read.
+ * @param {string} mapPath The map's absolute path.
+ * @returns {string | {sources: string[], sourceRoot?: string}} The map, or the reason.
+ */
+function readMap(mapPath) {
+  let text
+  try {
+    text = readFileSync(mapPath, 'utf8')
+  } catch {
+    return 'no source map'
+  }
+  const map = parsed(text)
+  return Array.isArray(map?.sources) ? map : 'an unreadable source map'
+}
+
+/**
  * The modules a chunk's source map names, relative to the repository root.
  * @param {string} repositoryRoot The repository root.
  * @param {string} file The chunk's output file.
  * @param {string} text The chunk's emitted text.
- * @returns {string[]} The modules, or none when the chunk has no readable map.
+ * @returns {string | string[]} The modules, or why the chunk has no map to read.
  */
 export function mappedSources(repositoryRoot, file, text) {
   const url =
     /^\/\/# sourceMappingURL=(?<url>\S+)$/mu.exec(text)?.groups.url
     ?? `${path.basename(file)}.map`
+  if (url.startsWith('data:')) {
+    return 'an inline source map'
+  }
+  // fallow-ignore-next-line security-sink -- file comes from Vite's local emitted manifest and the map's name from the chunk it wrote, never a request or CLI argument
   const mapPath = path.resolve(
     repositoryRoot,
     'dist/server',
     path.dirname(file),
     url,
   )
-  let map
-  try {
-    map = JSON.parse(readFileSync(mapPath, 'utf8'))
-  } catch {
-    return []
+  const map = readMap(mapPath)
+  if (typeof map === 'string') {
+    return map
   }
+  // fallow-ignore-next-line security-sink -- sourceRoot comes from the local emitted map, and the result is only compared, never read
   const base = path.resolve(path.dirname(mapPath), map.sourceRoot ?? '')
-  return (map.sources ?? []).map((source) =>
-    path
-      .relative(path.resolve(repositoryRoot), path.resolve(base, source))
-      .split(path.sep)
-      .join('/'),
+  const root = path.resolve(repositoryRoot)
+  return map.sources.map((source) =>
+    // fallow-ignore-next-line security-sink -- the map's own sources, turned into module ids to compare, never read
+    path.relative(root, path.resolve(base, source)).split(path.sep).join('/'),
   )
 }
 
@@ -298,7 +333,7 @@ export function mappedSources(repositoryRoot, file, text) {
  * Reads each script named by the emitted SSR manifest, failing closed, and
  * the modules each one's source map names.
  * @param {string} repositoryRoot The repository root or a test fixture.
- * @returns {{manifest: null | Record<string, object>, chunks: Record<string, string>, sources: Record<string, string[]>}} The server build, or missing evidence.
+ * @returns {{manifest: null | Record<string, object>, chunks: Record<string, string>, sources: Record<string, string | string[]>}} The server build, or missing evidence.
  */
 function readServerBuild(repositoryRoot) {
   try {

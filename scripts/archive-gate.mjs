@@ -53,8 +53,9 @@
  *   0  the archive stayed on the server
  *   1  archive prose in a client chunk, or a server boundary crossed
  *   2  nothing to check: no build, no canary could be read, a reached server
- *      chunk with no module evidence (no `//#region` lines and no source
- *      map), or no `?tss-serverfn-split` chunk in the server build
+ *      chunk without a readable source map (missing, unreadable or inline;
+ *      only a chunk of virtual modules alone may go without), or no
+ *      `?tss-serverfn-split` chunk in the server build
  */
 import console from 'node:console'
 import { readdirSync, readFileSync, realpathSync, statSync } from 'node:fs'

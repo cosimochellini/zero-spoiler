@@ -459,7 +459,9 @@ with the legal page alone. Copy rules live in the
   if one reaches such a chunk, `src/server/archive/`, `serve.server.ts`,
   `copy.server.ts` or `sources.server.ts`. It reads a chunk's modules from its
   `//#region` lines and its source map's `sources`, because Rolldown gives some
-  modules no region of their own; a chunk with neither leaves the gate unusable.
+  modules no region of their own. So every reached chunk but Start's virtual
+  ones needs a readable map (`environments.ssr.build.sourcemap` in
+  `vite.config.ts`); a missing or unreadable one leaves the gate unusable.
 
 For verification commands and delivery rules, use
 [CONTRIBUTING.md](../CONTRIBUTING.md#checks).

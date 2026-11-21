@@ -589,11 +589,12 @@ function region(id, body) {
 
 /**
  * A tiny emitted SSR graph, independent of source-code import syntax.
- * @returns {{manifest: Record<string, object>, chunks: Record<string, string>, archives: {folder: string, canaries: {file: string, phrase: string}[]}[]}} A dynamically isolated archive.
+ * Every chunk but the virtual resolver has a source map naming its regions.
+ * @returns {{manifest: Record<string, object>, chunks: Record<string, string>, sources: Record<string, string | string[]>, archives: {folder: string, canaries: {file: string, phrase: string}[]}[]}} A dynamically isolated archive.
  */
 function serverBuild() {
   const key = 'src/data/series/test-series/archive.ts'
-  return {
+  const build = {
     manifest: {
       server: {
         file: 'server.js',
@@ -641,14 +642,26 @@ function serverBuild() {
       },
     ],
   }
+  const sources = Object.fromEntries(
+    Object.entries(build.chunks)
+      .filter(([file]) => file !== 'resolver.js')
+      .map(([file, text]) => [
+        file,
+        text
+          .matchAll(/^\/\/#region (?<id>.+)$/gmu)
+          .map((match) => match.groups.id)
+          .toArray(),
+      ]),
+  )
+  return { ...build, sources }
 }
 
 describe('emitted server archive boundaries', () => {
   const key = 'src/data/series/test-series/archive.ts'
 
   it('allows a dynamically imported archive with only engine chunks shared', () => {
-    const { manifest, archives, chunks } = serverBuild()
-    expect(judgeServer(manifest, archives, chunks)).toStrictEqual({
+    const { manifest, archives, chunks, sources } = serverBuild()
+    expect(judgeServer(manifest, archives, chunks, sources)).toStrictEqual({
       ok: true,
       problems: [],
       unreadable: [],
@@ -656,36 +669,36 @@ describe('emitted server archive boundaries', () => {
   })
 
   it('rejects a static archive import even when a dynamic import remains', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.server.imports.push(key)
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} has a static runtime import`,
     )
   })
 
   it('walks transitive static dependencies and safely handles cycles', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.registry.imports = ['bridge']
     manifest.bridge = { file: 'bridge.js', imports: ['registry', key] }
     chunks['bridge.js'] = 'bridge'
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} has a static runtime import`,
     )
   })
 
   it('also treats a dynamically loaded API as a runtime entry point', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.api.imports.push(key)
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} has a static runtime import`,
     )
   })
 
   it('rejects eager shared archive data even when the adapter remains dynamic', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.api.imports.push('shared')
     chunks['shared.js'] = 'a sentence held only by the archive'
-    const verdict = judgeServer(manifest, archives, chunks)
+    const verdict = judgeServer(manifest, archives, chunks, sources)
     expect(verdict.ok).toBe(false)
     expect(verdict.problems).toContain(
       'src/data/series/test-series/records/first.ts is statically loaded in shared.js',
@@ -703,23 +716,27 @@ describe('emitted server archive boundaries', () => {
   })
 
   it('refuses to vouch for a missing registered archive entry', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     Reflect.deleteProperty(manifest, key)
-    expect(judgeServer(manifest, archives, chunks).unreadable).toContain(key)
+    expect(
+      judgeServer(manifest, archives, chunks, sources).unreadable,
+    ).toContain(key)
   })
 
   it('rejects a dynamic-entry flag without an actual dynamic graph edge', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.registry.dynamicImports = []
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} is not a dynamically imported archive entry`,
     )
   })
 
   it('keeps provider-only modules and the handler chunk out of every other root', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.api.imports.push('projections')
-    expect(judgeServer(manifest, archives, chunks).problems).toStrictEqual([
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([
       'api statically loads projections.js, which holds src/server/archive/home.server.ts, src/server/serve.server.ts',
     ])
   })
@@ -729,57 +746,72 @@ describe('emitted server archive boundaries', () => {
     'src/server/sources.server.ts',
     'src/server/archive/payloads.server.ts',
   ])('rejects %s in a shared chunk of a route', (id) => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     chunks['shared.js'] = region(id, 'provider')
     manifest.api.imports.push('shared')
-    expect(judgeServer(manifest, archives, chunks).problems).toStrictEqual([
-      `api statically loads shared.js, which holds ${id}`,
-    ])
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([`api statically loads shared.js, which holds ${id}`])
   })
 
   it('rejects a static import of the handler chunk itself', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.server.imports.push(SPLIT)
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `server statically loads split.js, which holds ${SPLIT}`,
     )
   })
 
   it('names the first three modules a chunk holds and counts the rest', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     chunks['shared.js'] = ['a', 'b', 'c', 'd', 'e']
       .map((name) => region(`src/server/archive/${name}.server.ts`, name))
       .join('\n')
     manifest.api.imports.push('shared')
-    expect(judgeServer(manifest, archives, chunks).problems).toStrictEqual([
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([
       'api statically loads shared.js, which holds src/server/archive/a.server.ts, src/server/archive/b.server.ts, src/server/archive/c.server.ts and 2 more',
     ])
   })
 
-  it('refuses to vouch for a reached chunk with no module marked in it', () => {
-    const { manifest, archives, chunks } = serverBuild()
-    chunks['registry.js'] = 'registry, minified'
-    const verdict = judgeServer(manifest, archives, chunks)
-    expect(verdict.problems).toStrictEqual([])
-    expect(verdict.unreadable).toStrictEqual([
-      'registry.js (no //#region lines and no source map)',
-    ])
+  it.each([
+    [undefined, 'no source map'],
+    ['an unreadable source map', 'an unreadable source map'],
+    ['an inline source map', 'an inline source map'],
+  ])(
+    'refuses to vouch for a reached chunk with %s in place of a map',
+    (mapped, reason) => {
+      const { manifest, archives, chunks, sources } = serverBuild()
+      // A region-only reading would miss a module folded into another's region.
+      sources['registry.js'] = mapped
+      const verdict = judgeServer(manifest, archives, chunks, sources)
+      expect(verdict.problems).toStrictEqual([])
+      expect(verdict.unreadable).toStrictEqual([
+        `registry.js (${reason}; the server build must emit source maps (environments.ssr.build.sourcemap in vite.config.ts))`,
+      ])
+    },
+  )
+
+  it('lets a chunk of virtual modules alone go without a map', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    chunks['registry.js'] = region(String.raw`\0virtual:registry`, 'registry')
+    Reflect.deleteProperty(sources, 'registry.js')
+    expect(judgeServer(manifest, archives, chunks, sources).ok).toBe(true)
   })
 
   it('reads the modules a chunk holds from its source map as well', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.api.imports.push('shared')
     // Rolldown can fold a module into another's region and name it only in the map.
     chunks['shared.js'] = region(
       'src/lib/prose/markers.ts',
       'markers + chronicle',
     )
-    const sources = {
-      'shared.js': [
-        'src/lib/prose/markers.ts',
-        'src/server/archive/chronicle.server.ts',
-      ],
-    }
+    sources['shared.js'] = [
+      'src/lib/prose/markers.ts',
+      'src/server/archive/chronicle.server.ts',
+    ]
     expect(
       judgeServer(manifest, archives, chunks, sources).problems,
     ).toStrictEqual([
@@ -788,9 +820,8 @@ describe('emitted server archive boundaries', () => {
   })
 
   it('takes a source map alone as evidence for a chunk with no region lines', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     chunks['registry.js'] = 'registry, minified'
-    const sources = { 'registry.js': ['src/data/series/index.ts'] }
     expect(judgeServer(manifest, archives, chunks, sources)).toStrictEqual({
       ok: true,
       problems: [],
@@ -799,12 +830,12 @@ describe('emitted server archive boundaries', () => {
   })
 
   it('refuses to vouch for a build with no handler chunk to keep apart', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     Reflect.deleteProperty(manifest, SPLIT)
     manifest.resolver.dynamicImports = []
-    expect(judgeServer(manifest, archives, chunks).unreadable).toStrictEqual([
-      'a ?tss-serverfn-split chunk',
-    ])
+    expect(
+      judgeServer(manifest, archives, chunks, sources).unreadable,
+    ).toStrictEqual(['a ?tss-serverfn-split chunk'])
   })
 
   it('reads a chunk source map, named or beside it, relative to the repository', () => {
@@ -815,6 +846,7 @@ describe('emitted server archive boundaries', () => {
       path.join(assets, 'maps/named.js.map'),
       JSON.stringify({ sourceRoot: '../', sources: ['../../../src/a.ts'] }),
     )
+    writeFileSync(path.join(assets, 'corrupt.js.map'), '{"version": 3,')
     writeFileSync(
       path.join(assets, 'beside.js.map'),
       JSON.stringify({ sources: ['../../../src/b.ts?tss-serverfn-split'] }),
@@ -831,18 +863,30 @@ describe('emitted server archive boundaries', () => {
       expect(mappedSources(root, 'assets/beside.js', 'code')).toStrictEqual([
         'src/b.ts?tss-serverfn-split',
       ])
-      expect(mappedSources(root, 'assets/none.js', 'code')).toStrictEqual([])
+      expect(mappedSources(root, 'assets/none.js', 'code')).toBe(
+        'no source map',
+      )
+      expect(mappedSources(root, 'assets/corrupt.js', 'code')).toBe(
+        'an unreadable source map',
+      )
+      expect(
+        mappedSources(
+          root,
+          'assets/inline.js',
+          'code\n//# sourceMappingURL=data:application/json,{}',
+        ),
+      ).toBe('an inline source map')
     } finally {
       rmSync(root, { recursive: true, force: true })
     }
   })
 
   it('refuses incomplete static graph and emitted script evidence', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.registry.imports = ['missing']
     delete chunks['server.js']
     delete chunks['archive.js']
-    const { unreadable } = judgeServer(manifest, archives, chunks)
+    const { unreadable } = judgeServer(manifest, archives, chunks, sources)
     expect(unreadable).toContain('missing')
     expect(unreadable).toContain('server.js')
     expect(unreadable).toContain('archive.js')
