@@ -49,6 +49,22 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
   'abilities.allOpen': 'Nessuna abilità è nella nebbia.',
   'abilities.moreUsers': 'e altri {count} personaggi che la usano',
   'abilities.moreUsersOne': 'e un altro personaggio che la usa',
+  // La pagina delle cariche (#1441), con le parole di One Piece.
+  'nav.ranks': 'Cariche',
+  'character.ranks': 'Cariche',
+  'ranks.title': 'Le cariche del mondo',
+  'ranks.lede':
+    'Le cariche di ogni gruppo che hai raggiunto e chi le ricopre al punto del tuo segnalibro.',
+  'ranks.pageTitle': 'Le cariche del mondo | {series} | Zero Spoiler',
+  'ranks.pageDescription':
+    'Chi ricopre ogni carica nel mondo di Hunter x Hunter, ognuno nascosto fino al capitolo o all’episodio che lo nomina.',
+  'ranks.none':
+    'Niente di questa pagina è visibile al punto del tuo segnalibro.',
+  'ranks.vacant': 'Vacante',
+  'ranks.unknown': 'Nella nebbia',
+  'ranks.ended': 'Questo gruppo è stato sciolto.',
+  'ranks.fogged': 'Altri gruppi nella nebbia',
+  'ranks.allFogged': 'Ogni gruppo che hai raggiunto è nella nebbia.',
   'ability.opensAt.episode':
     'Mostrata per la prima volta nell’episodio {threshold}',
   'ability.opensAt.season': 'Mostrata per la prima volta in {threshold}',

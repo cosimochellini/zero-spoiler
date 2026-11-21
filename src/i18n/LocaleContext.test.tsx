@@ -158,12 +158,21 @@ describe('useSeriesT', () => {
     expectTypeOf<'fruits.title'>().toExtend<TranslationKey<'one-piece'>>()
   })
 
-  it('keeps the series’ own keys apart, but the common ones', () => {
+  it('keeps the series’ own keys apart, but the common ones and the ranks page', () => {
+    // The ranks page is both series' (#1442), worded by each in the same
+    // keys, so `PowerBoard` reads them in either copy.
+    type RanksKey = 'character.ranks' | 'nav.ranks' | `ranks.${string}`
+
     expectTypeOf<
       Exclude<
         keyof SeriesCopies['hunter-x-hunter'] & keyof SeriesCopies['one-piece'],
-        CommonKey
+        CommonKey | RanksKey
       >
     >().toBeNever()
+    expectTypeOf<
+      Extract<keyof SeriesCopies['one-piece'], RanksKey>
+    >().toEqualTypeOf<
+      Extract<keyof SeriesCopies['hunter-x-hunter'], RanksKey>
+    >()
   })
 })

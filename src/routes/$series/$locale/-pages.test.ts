@@ -159,7 +159,7 @@ describe('the pages a series declares', () => {
     },
   )
 
-  it.each(['fruits', 'fruits/any-id', 'filler', 'ranks', 'power'])(
+  it.each(['fruits', 'fruits/any-id', 'filler', 'power'])(
     'answers 404 at /hunter-x-hunter/en/%s with Hunter x Hunter open',
     async (path) => {
       vi.mocked(seriesDescription).mockResolvedValue(HUNTER_X_HUNTER_SERIES)
@@ -180,9 +180,11 @@ describe('the pages a series declares', () => {
     },
   )
 
-  it('gives Hunter x Hunter its characters and places', () => {
+  it('gives Hunter x Hunter its characters, places and ranks', () => {
     expect(hasPage(HUNTER_X_HUNTER_SERIES, 'characters')).toBe(true)
     expect(hasPage(HUNTER_X_HUNTER_SERIES, 'places')).toBe(true)
+    // Open before its first body is filed (#1442).
+    expect(hasPage(HUNTER_X_HUNTER_SERIES, 'ranks')).toBe(true)
   })
 
   it('gives the abilities page to a series that files the kind', () => {

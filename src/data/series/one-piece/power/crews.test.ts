@@ -185,7 +185,9 @@ describe('the Emperors’ crews, first half', () => {
   it.each(EDGES)(
     'seat the $id at $unit $count as told',
     ({ count, id, seats, unit }) => {
-      expect(seatsOf(id, at(unit, count))).toStrictEqual(seats)
+      expect(seatsOf(ONE_PIECE_LOADED, id, at(unit, count))).toStrictEqual(
+        seats,
+      )
     },
   )
 
@@ -193,7 +195,9 @@ describe('the Emperors’ crews, first half', () => {
   it.each(EDGES.filter(({ count }) => count > 1))(
     'seat the $id just before $unit $count as before',
     ({ before, count, id, unit }) => {
-      expect(seatsOf(id, at(unit, count - 1))).toStrictEqual(before)
+      expect(seatsOf(ONE_PIECE_LOADED, id, at(unit, count - 1))).toStrictEqual(
+        before,
+      )
     },
   )
 
@@ -258,9 +262,12 @@ const CREWS: PowerBody[] = [
 
 describe('the Emperors’ crews on either side of their gates', () => {
   it('leak nothing in either locale', () => {
-    expect(powerLeaks(CREWS.flatMap((body) => bodyGates(body)))).toStrictEqual(
-      [],
-    )
+    expect(
+      powerLeaks(
+        ONE_PIECE_LOADED,
+        CREWS.flatMap((body) => bodyGates(ONE_PIECE_LOADED, body)),
+      ),
+    ).toStrictEqual([])
   })
 })
 

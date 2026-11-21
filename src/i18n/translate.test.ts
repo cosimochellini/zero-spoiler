@@ -65,14 +65,19 @@ describe('the dictionaries', () => {
   )
 })
 
+/** A key of the ranks page, which every series that has it words. */
+const isRanksKey = (key: string): boolean =>
+  key === 'nav.ranks' || key === 'character.ranks' || key.startsWith('ranks.')
+
 describe('each series’ own copy', () => {
-  it('shares no key with another series but the common ones', () => {
+  it('shares no key with another series but the common ones and the ranks page', () => {
     // A later copy spread over an earlier one would silently change a key
-    // for the first series.
+    // for the first series. The ranks page's keys are One Piece's and Hunter
+    // x Hunter's, each in its own copy (#1442).
     const owners = new Map<string, string>()
     for (const [slug, copy] of Object.entries(COPIES)) {
       for (const key of Object.keys(copy.en)) {
-        if (COMMON.has(key)) {
+        if (COMMON.has(key) || isRanksKey(key)) {
           continue
         }
 

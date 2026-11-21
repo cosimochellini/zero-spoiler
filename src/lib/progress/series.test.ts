@@ -110,6 +110,7 @@ describe('the series a link parameter sets the bookmark of', () => {
     '/hunter-x-hunter/en/places',
     '/hunter-x-hunter/en/abilities',
     '/hunter-x-hunter/en/abilities/any-ability',
+    '/hunter-x-hunter/it/ranks',
   ])('is Hunter x Hunter on %s, a page it declares', (path) => {
     expect(linkedSeries(path, filed)).toBe(HUNTER_X_HUNTER_SERIES)
   })
@@ -118,7 +119,6 @@ describe('the series a link parameter sets the bookmark of', () => {
     '/hunter-x-hunter/en/fruits',
     '/hunter-x-hunter/en/fruits/gum-gum',
     '/hunter-x-hunter/it/filler',
-    '/hunter-x-hunter/it/ranks',
     '/one-piece/en/abilities',
     '/missing/en/characters',
     '/en/legal',

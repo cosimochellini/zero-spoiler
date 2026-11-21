@@ -19,7 +19,7 @@ describe('HomeWelcome', () => {
     },
     {
       series: HUNTER_X_HUNTER_SERIES,
-      pages: ['characters', 'places', 'abilities'],
+      pages: ['characters', 'places', 'abilities', 'ranks'],
     },
   ])(
     'points only to the pages $series.slug declares',

@@ -390,9 +390,13 @@ so gated names do not belong in it: One Piece's faction labels live in
 `src/i18n/dictionaries/one-piece/factions.ts` and reach a page only with the
 fruit album group an open eater stands in, or, once a body of power is met and
 one of its seats is held or vacant, as that body's name on the ranks page and on
-the seat links of a character who holds one of its seats (`seatsHeldBy`); its
-seas' names live in `src/i18n/dictionaries/one-piece/seas.ts` and reach the
-places page only for the regions its open stops open on the chart (`regionsFor`,
+the seat links of a character who holds one of its seats (`seatsHeldBy`). Hunter
+x Hunter's group names live in `src/i18n/dictionaries/hunter-x-hunter/groups.ts`
+and reach a page only the second way. Both tables are a series' `groups` in the
+registry (`src/data/series/index.ts`), read through `groupLabel`
+(`src/server/archive/printed.server.ts`). One Piece's seas' names live in
+`src/i18n/dictionaries/one-piece/seas.ts` and reach the places page only for the
+regions its open stops open on the chart (`regionsFor`,
 `src/lib/view/chart.ts`), and a place's page or peek for its own sea. The shared
 dictionary is one chunk per locale: the root route awaits the copy of the
 address's language in `beforeLoad` (`localeOfPath`), for a locale route's page
@@ -426,14 +430,18 @@ with the legal page alone. Copy rules live in the
   the page's actual gate.
 - The ranks page (`/{series}/{locale}/ranks`, `/power` until #1194, which
   `movedPageRedirect` in `src/lib/legacyRedirect.ts` answers with a 301 that
-  keeps the query) draws the bodies of power. They live one per module in
-  `src/data/series/<folder>/power/`. Seat titles are a word or two, so
-  `scripts/archive-gate.power.mjs` looks for each module by its longest
-  hyphenated holder id of 9 or more characters, or, when it seats none, by its
-  longest English seat title of 12 or more; a module with neither is refused.
-  `descriptionCanaries` adds a second canary per module, its longest quoted
-  sentence of 60 or more characters, so every body needs a description of that
-  length; `power/` is therefore left out of the prose-module test in
+  keeps the query for every series with the page) draws the bodies of power. One
+  Piece and Hunter x Hunter have it (`Series.features.power`). Hunter x Hunter's
+  is open before its first body is filed (owner, #1442): until #1443 to #1447
+  file them, it says that nothing is open, at every bookmark and with none. The
+  bodies live one per module in `src/data/series/<folder>/power/`, listed in the
+  order of the page in `src/data/series/<folder>/power.ts`. Seat titles are a
+  word or two, so `scripts/archive-gate.power.mjs` looks for each module by its
+  longest hyphenated holder id of 9 or more characters, or, when it seats none,
+  by its longest English seat title of 12 or more; a module with neither is
+  refused. `descriptionCanaries` adds a second canary per module, its longest
+  quoted sentence of 60 or more characters, so every body needs a description of
+  that length; `power/` is therefore left out of the prose-module test in
   `archive-gate.test.mjs`, which asks every other prose module to be an extra.
   `leaks.test.ts` scans each title as kind `seat` at the later of its body's
   gate and its seat's `told`, and each version of a body's `description` (one to
@@ -491,6 +499,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Records                   | 368                                                   |
 | Characters                | 290                                                   |
 | Nen abilities             | 28                                                    |
+| Bodies of power           | 0, with 0 seats                                       |
 | Arcs, places              | 7 · 43                                                |
 | Saga modules              | 7                                                     |
 | Line drawings             | 368, one per record, plus 94 redrawings of 81 records |

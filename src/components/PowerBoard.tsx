@@ -13,7 +13,8 @@ import { ART_VIEWBOX, tintOf } from '~/components/drawing'
 import { emblemStyles } from '~/components/emblem.styles'
 import { styles } from '~/components/PowerBoard.styles'
 import { VisitorBanner } from '~/components/VisitorBanner'
-import { useSeriesOnlyT } from '~/i18n/LocaleContext'
+import { onlyUnder, useSeriesT } from '~/i18n/LocaleContext'
+import type { SeriesTranslate } from '~/i18n/types'
 import { useBookmark, useSeriesParams } from '~/lib/progress/BookmarkContext'
 import {
   type BodyView,
@@ -40,7 +41,7 @@ import { settleStyles } from '~/styles/settle'
  * carries no text.
  */
 export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
-  const t = useSeriesOnlyT('one-piece')
+  const t = useRanksT()
   const { bookmark } = useBookmark()
 
   return (
@@ -73,11 +74,25 @@ export function PowerBoard({ page }: { page: PowerPageView }): ReactElement {
   )
 }
 
+/**
+ * The ranks page's words, in the copy of the series whose page it is: One
+ * Piece's and Hunter x Hunter's both word it, and only a key both define
+ * typechecks, since a call must suit either. Any other series has no ranks
+ * page, so reaching here from one is a routing bug.
+ */
+function useRanksT():
+  SeriesTranslate<'hunter-x-hunter'> | SeriesTranslate<'one-piece'> {
+  const onePiece = useSeriesT('one-piece')
+  const hunter = useSeriesT('hunter-x-hunter')
+
+  return onePiece ?? onlyUnder(hunter, 'hunter-x-hunter')
+}
+
 /** A body's number, `01` on: two digits hold every body the epic lists. */
 const NUMERAL_DIGITS = 2
 
 function Body({ body, at }: { at: number; body: BodyView }): ReactElement {
-  const t = useSeriesOnlyT('one-piece')
+  const t = useRanksT()
   // The section is what a seat on a character's page links to; its heading
   // names it.
   const anchor = powerAnchor(body.id)
@@ -206,7 +221,7 @@ function ThroneArt({ seat }: { seat: SeatView }): ReactElement {
 }
 
 function Holder({ seat }: { seat: SeatView }): ReactElement | string {
-  const t = useSeriesOnlyT('one-piece')
+  const t = useRanksT()
   const { series, locale } = useSeriesParams()
 
   if (seat.state === 'held') {

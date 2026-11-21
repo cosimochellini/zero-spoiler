@@ -9,7 +9,7 @@ import { readerFor } from '~/server/archive/reader.server'
 
 import { leaksOf } from './fog'
 import { recordIn } from './gates'
-import { LOADED_SERIES, ONE_PIECE_LOADED } from './series'
+import { LOADED_SERIES, type LoadedSeries, ONE_PIECE_LOADED } from './series'
 
 /** Who the fixture seats: one met early, one met much later. */
 export const EARLY = recordIn(ONE_PIECE_LOADED.archive, 'dracule-mihawk')
@@ -276,34 +276,39 @@ export function bodyFaults(
  * restates the server's rule (`holderOf` in `power.server.ts`) on purpose,
  * once, for every power test.
  */
-function holdingGates(holding: Holding): Gated[] {
+function holdingGates(holding: Holding, archive: SeriesArchive): Gated[] {
   const own: Gated = {
     revealedAtEpisode: holding.episode,
     revealedAtChapter: holding.chapter,
     ...(holding.source !== undefined && { source: holding.source }),
   }
   const holder =
-    holding.value === null ?
-      undefined
-    : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
+    holding.value === null ? undefined : archive.getCharacter(holding.value)
 
   return holder === undefined ? [own] : [own, holder]
 }
 
-/** Every seat gate of a body: its own, its seats', holdings' and holders'. */
-export function bodyGates(body: PowerBody): Gated[] {
+/**
+ * Every seat gate of a series' body: its own, its seats', holdings' and
+ * holders', the holders read in the series' archive.
+ */
+export function bodyGates(series: LoadedSeries, body: PowerBody): Gated[] {
   return [
     body,
     ...body.seats.flatMap(({ holders, told }) => [
       told,
-      ...holders.flatMap((holding) => holdingGates(holding)),
+      ...holders.flatMap((holding) => holdingGates(holding, series.archive)),
     ]),
   ]
 }
 
-/** A body's seats at a bookmark: holder ids, `vacant` or `unknown`. */
-export function seatsOf(id: string, bookmark: Bookmark): string[] | undefined {
-  const page = powerPage(readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'))
+/** A series' body's seats at a bookmark: holder ids, `vacant` or `unknown`. */
+export function seatsOf(
+  series: LoadedSeries,
+  id: string,
+  bookmark: Bookmark,
+): string[] | undefined {
+  const page = powerPage(readerFor(series.archive, bookmark, 'en'))
 
   return page.bodies
     .find((body) => body.id === id)
@@ -344,12 +349,13 @@ export function edges(steps: Steps): Edge[] {
 }
 
 /**
- * What the power page leaks on both sides of these gates, in each unit that
- * tells each (`aroundGates`) and in either locale, as `bookmark locale: id`.
+ * What a series' power page leaks on both sides of these gates, in each unit
+ * that tells each (`aroundGates`) and in either locale, as
+ * `bookmark locale: id`.
  */
-export function powerLeaks(gates: Gated[]): string[] {
-  const { archive } = ONE_PIECE_LOADED
-  const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
+export function powerLeaks(series: LoadedSeries, gates: Gated[]): string[] {
+  const { archive } = series
+  const leaks = leaksOf(series, LOADED_SERIES)
 
   return aroundGates(gates, archive.series).flatMap((bookmark) =>
     LOCALES.flatMap((locale) =>

@@ -2,10 +2,11 @@ import { describe, expect, it } from 'vitest'
 
 import type { Bookmark } from '~/lib/progress/episode'
 import { seatsOf } from '~/test/power'
+import { ONE_PIECE_LOADED } from '~/test/series'
 
 /** The Emperors' seats at a bookmark: holder ids, `vacant` or `unknown`. */
 const emperorsAt = (bookmark: Bookmark): string[] | undefined =>
-  seatsOf('emperors', bookmark)
+  seatsOf(ONE_PIECE_LOADED, 'emperors', bookmark)
 
 const BEFORE = ['shanks', 'edward-newgate', 'unknown', 'unknown']
 const VACANT = ['shanks', 'vacant', 'unknown', 'unknown']

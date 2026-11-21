@@ -14,7 +14,6 @@ import type { SeatLink } from '~/lib/view/power'
 import * as api from '~/server/api'
 import * as shared from '~/server/series'
 import {
-  opFruitAlbum as fruitAlbum,
   opPeekPort as peekPort,
   opPlacesPage as placesPage,
 } from '~/test/archive'
@@ -26,6 +25,7 @@ import {
 } from '~/test/series'
 import { heldTo, sweptInFull } from '~/test/visitor'
 
+import { fruitAlbum } from './fruits.server'
 import { entityForHandle } from './handle.server'
 import { hubPageFor } from './hub.server'
 import { characterPage } from './pages.server'
@@ -378,19 +378,47 @@ describe('every payload with no series in its address', () => {
   })
 })
 
-/** A locale's faction labels, with the faction each names. */
-function factionsByLabel(locale: Locale): Map<string, string> {
+/**
+ * A series' group labels in one locale, with the group each names, less a
+ * label that is also the name of one of its sagas: every page may print a
+ * saga's name at any bookmark, so such a label says nothing a page could
+ * leak. Hunter x Hunter's Chimera Ants are "Formichimere" in Italian, the
+ * name of their arc too.
+ */
+function groupsByLabel(
+  { archive, groups }: ListedSeries,
+  locale: Locale,
+): Map<string, string> {
+  const sagas = new Set(archive.sagas.map(({ name }) => name[locale]))
+
   return new Map(
-    Object.entries(FACTION_LABELS[locale]).map(([faction, label]) => [
-      label,
-      faction,
-    ]),
+    Object.entries(groups?.[locale] ?? {}).flatMap(([group, label]) =>
+      label === undefined || sagas.has(label) ? [] : [[label, group] as const],
+    ),
   )
 }
 
-const FACTION_OF: Record<Locale, Map<string, string>> = {
-  en: factionsByLabel('en'),
-  it: factionsByLabel('it'),
+/**
+ * The series that label groups (One Piece's factions, Hunter x Hunter's
+ * bodies of power, #1442), each with its labels by locale, as label → group.
+ */
+const LABELLED = SERIES.filter(({ groups }) => groups !== undefined).map(
+  (series) => ({
+    series,
+    slug: series.slug,
+    factionOf: {
+      en: groupsByLabel(series, 'en'),
+      it: groupsByLabel(series, 'it'),
+    } satisfies Record<Locale, Map<string, string>>,
+  }),
+)
+
+/** A series' labels in one locale, as label → group. */
+function factionOf(slug: string, locale: Locale): Map<string, string> {
+  return (
+    LABELLED.find((labelled) => labelled.slug === slug)?.factionOf[locale]
+    ?? new Map<string, string>()
+  )
 }
 
 /**
@@ -411,12 +439,14 @@ function earlyLabels(
     groups,
     locale,
     name,
-  }: { groups: Set<null | string>; locale: Locale; name: string },
+    slug,
+  }: { groups: Set<null | string>; locale: Locale; name: string; slug: string },
 ): string[] {
   const skip = AFFILIATION_PROSE.has(name) ? 'affiliation' : undefined
+  const labels = factionOf(slug, locale)
 
   return stringsIn(payload, skip)
-    .map((word) => FACTION_OF[locale].get(word))
+    .map((word) => labels.get(word))
     .filter(
       (faction): faction is string =>
         faction !== undefined && !groups.has(faction),
@@ -424,17 +454,22 @@ function earlyLabels(
 }
 
 /**
- * Every One Piece ask, with the faction groups its fruit album sends, the
- * bodies its power page names, and who it seats in a body still standing,
- * as `body|holder`. A body's label comes with the body, at the body's own
- * gate, so the power page may print it from there, and so may a character's
- * seat links, for a body they hold a seat in (`withoutSeats`); every other
- * page, and the rest of a character's, still waits for the album's group,
- * whatever the power page shows.
+ * Every ask of a series that labels groups, with the faction groups its
+ * fruit album sends (none for a series with no fruits), the bodies its power
+ * page names, and who it seats in a body still standing, as `body|holder`.
+ * A body's label comes with the body, at the body's own gate, so the power
+ * page may print it from there, and so may a character's seat links, for a
+ * body they hold a seat in (`withoutSeats`); every other page, and the rest
+ * of a character's, still waits for the album's group, whatever the power
+ * page shows.
  */
-function groupedAt(bookmark: Bookmark, locale: Locale): Grouped {
-  const key = `${JSON.stringify(bookmark)} ${locale}`
-  const known = groupedKnown.get(key) ?? groupOf(bookmark, locale)
+function groupedAt(
+  series: ListedSeries,
+  bookmark: Bookmark,
+  locale: Locale,
+): Grouped {
+  const key = `${series.slug} ${JSON.stringify(bookmark)} ${locale}`
+  const known = groupedKnown.get(key) ?? groupOf(series, bookmark, locale)
   groupedKnown.set(key, known)
   return known
 }
@@ -447,19 +482,23 @@ interface Grouped {
   locale: Locale
   named: Set<null | string>
   seated: Set<string>
+  series: ListedSeries
 }
 
 const groupedKnown = new Map<string, Grouped>()
 
 /** Works out one ask's groups for `groupedAt`. */
-function groupOf(bookmark: Bookmark, locale: Locale): Grouped {
-  const { factions } = fruitAlbum(bookmark, locale)
+function groupOf(
+  series: ListedSeries,
+  bookmark: Bookmark,
+  locale: Locale,
+): Grouped {
+  const r = readerFor(series.archive, bookmark, locale)
+  const { factions } = fruitAlbum(r)
   const groups = new Set<null | string>(factions.map(({ faction }) => faction))
   const named = new Set(groups)
   const seated = new Set<string>()
-  const { bodies } = powerPage(
-    readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
-  )
+  const { bodies } = powerPage(r)
   for (const body of bodies) {
     named.add(body.id)
     // A body that has ended seats no one on a character's page.
@@ -472,12 +511,14 @@ function groupOf(bookmark: Bookmark, locale: Locale): Grouped {
     }
   }
 
-  return { bookmark, factions, groups, locale, named, seated }
+  return { bookmark, factions, groups, locale, named, seated, series }
 }
 
-const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) =>
-  groupedAt(bookmark, locale),
-)
+/** Every ask of a series, grouped (`groupedAt`). */
+const groupedOf = (series: ListedSeries): Grouped[] =>
+  asksOf(series).map(({ bookmark, locale }) =>
+    groupedAt(series, bookmark, locale),
+  )
 
 /**
  * A character page as `loadCharacter` sends it, its seats taken out of the
@@ -485,12 +526,12 @@ const GROUPED = asksOf(ONE_PIECE_LOADED).map(({ bookmark, locale }) =>
  * label may come before the album's group.
  */
 function withoutSeats(
-  { bookmark, locale }: Grouped,
+  { bookmark, locale, series }: Grouped,
   id: string,
 ): { page: unknown; seats: SeatLink[] } {
   const page = characterPage(
     id,
-    pageReader(ONE_PIECE_LOADED.archive, bookmark, { id, locale }),
+    pageReader(series.archive, bookmark, { id, locale }),
   )
   if (page === undefined) {
     return { page: null, seats: [] }
@@ -507,10 +548,10 @@ function withoutSeats(
  * page drawn at a point (`heldTo`) is held to the groups at both of its.
  */
 function earlyAt(payload: Payload, asked: Grouped, key: string): string[] {
-  const { bookmark, locale } = asked
+  const { bookmark, locale, series } = asked
 
-  return heldTo(ONE_PIECE_LOADED.archive, { bookmark, key, payload }).flatMap(
-    (at) => earlyAgainst(payload, key, { asked, held: groupedAt(at, locale) }),
+  return heldTo(series.archive, { bookmark, key, payload }).flatMap((at) =>
+    earlyAgainst(payload, key, { asked, held: groupedAt(series, at, locale) }),
   )
 }
 
@@ -520,20 +561,22 @@ function earlyAgainst(
   key: string,
   { asked, held }: { asked: Grouped; held: Grouped },
 ): string[] {
-  const { bookmark, locale } = asked
+  const { bookmark, locale, series } = asked
+  const { slug } = series
   const { groups, named } = held
   if (name !== 'loadCharacter') {
     return earlyLabels(run(bookmark, locale, key), {
       groups: name === 'loadPower' ? named : groups,
       locale,
       name,
+      slug,
     })
   }
 
   const { page, seats } = withoutSeats(asked, key)
 
   return [
-    ...earlyLabels(page, { groups, locale, name }),
+    ...earlyLabels(page, { groups, locale, name, slug }),
     ...unseatedLabels(seats, held, key),
   ]
 }
@@ -544,7 +587,7 @@ function earlyAgainst(
  */
 function unseatedLabels(
   seats: SeatLink[],
-  { locale, seated }: Grouped,
+  { locale, seated, series }: Grouped,
   key: string,
 ): string[] {
   const early: string[] = []
@@ -552,7 +595,7 @@ function unseatedLabels(
     if (body === undefined) {
       continue
     }
-    const faction = FACTION_OF[locale].get(body)
+    const faction = factionOf(series.slug, locale).get(body)
     if (faction !== undefined && seated.has(`${faction}|${key}`)) {
       continue
     }
@@ -563,8 +606,8 @@ function unseatedLabels(
 }
 
 /** Every label a page sends early at the asks it is sampled at. */
-function earlyLabelsOf(payload: Payload): string[] {
-  return GROUPED.flatMap((ask, at) =>
+function earlyLabelsOf(payload: Payload, series: ListedSeries): string[] {
+  return groupedOf(series).flatMap((ask, at) =>
     keysAt(payload, { at, bookmark: ask.bookmark }).flatMap((key) =>
       earlyAt(payload, ask, key).map(
         (faction) =>
@@ -584,7 +627,7 @@ const unitOf = (bookmark: Bookmark): string =>
  */
 function firstGroups(): Map<string, null | string> {
   const first = new Map<string, null | string>()
-  for (const { bookmark, factions, locale } of GROUPED) {
+  for (const { bookmark, factions, locale } of groupedOf(ONE_PIECE_LOADED)) {
     for (const { faction, label } of factions) {
       const at = `${String(faction)} ${unitOf(bookmark)} ${locale}`
       if (faction !== null && !first.has(at)) {
@@ -607,17 +650,25 @@ const EVERY_LABEL = LOCALES.flatMap((locale) =>
   ),
 )
 
-// Some faction labels name a group the reader meets late ("Kozuki family"),
-// so a label is sent with the fruit album's group and nowhere else (#988):
-// a page holds it only once an eater the reader has reached stands in it.
-describe('a faction label', { timeout: 15_000 }, () => {
-  it.each(PAYLOADS)(
-    'is not in $name before the fruit album has its group',
-    (payload) => {
-      expect(earlyLabelsOf(payload)).toStrictEqual([])
-    },
-  )
+// Some group labels name a group the reader meets late ("Kozuki family",
+// "Chimera Ants"), so a label is sent with the fruit album's group and with
+// its body on the ranks page and a holder's seats, and nowhere else (#988,
+// #1442): a page holds it only once an eater the reader has reached stands
+// in it, or the body is listed.
+describe.each(LABELLED)(
+  'a group label of $slug',
+  { timeout: 30_000 },
+  ({ series }) => {
+    it.each(payloadsFor(series.archive))(
+      'is not in $name before the fruit album or the ranks page has its group',
+      (payload) => {
+        expect(earlyLabelsOf(payload, series)).toStrictEqual([])
+      },
+    )
+  },
+)
 
+describe('a faction label', () => {
   it('comes with its group from the first bookmark that has it', () => {
     const first = firstGroups()
     const met = EVERY_LABEL.filter(({ at }) => first.has(at))
