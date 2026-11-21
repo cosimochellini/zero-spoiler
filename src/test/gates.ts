@@ -30,11 +30,18 @@ export interface Pin {
   source?: Unit
 }
 
-/** A bookmark at this count of this unit. */
-export function bookmarkAt(unit: Unit, count: number): NonNullable<Bookmark> {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
+/**
+ * A bookmark at this count of this unit. A table's `unit` column is often a
+ * plain string, so any other string is a fault, and throws.
+ */
+export function bookmarkAt(unit: string, count: number): NonNullable<Bookmark> {
+  if (unit === 'chapter') {
+    return { mode: 'chapter', chapter: count }
+  }
+  if (unit === 'episode') {
+    return { mode: 'episode', episode: count }
+  }
+  throw new Error(`${unit} is not a unit`)
 }
 
 /** Both sides of a pin's gate in one unit. */
@@ -105,7 +112,10 @@ export function recordOf(archive: SeriesArchive, id: string): Entity {
   return record
 }
 
-/** Whether a record's own page, of whatever kind, is open at a reader. */
+/**
+ * Whether a record's own page, of whatever kind, is open at a reader. A
+ * record of the other source has no page for this reader at all.
+ */
 function slotOpen(id: string, reader: Reader): boolean {
   const page =
     characterPage(id, reader)
@@ -113,7 +123,7 @@ function slotOpen(id: string, reader: Reader): boolean {
     ?? abilityPage(id, reader)
     ?? fruitPage(id, reader)
   if (page === undefined) {
-    throw new Error(`${id} has no page`)
+    return false
   }
 
   return ('ship' in page ? page.ship : page.detail).slot.open

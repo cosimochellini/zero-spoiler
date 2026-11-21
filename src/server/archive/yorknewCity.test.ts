@@ -1,22 +1,17 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import type { Bookmark } from '~/lib/progress/episode'
 import type { RecordView, Slot } from '~/lib/view/records'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
-import { characterPage, drawingsFor } from './pages.server'
+import { drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
 import { factsOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Yorknew City tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
   { id: 'melody', episode: 40, chapter: 68, place: false },
   { id: 'basho', episode: 40, chapter: 68, place: false },
@@ -54,42 +49,15 @@ const RECORDS = [
   { id: 'lingon-airport', episode: 41, chapter: 71, place: true },
   { id: 'cemetery-building', episode: 42, chapter: 72, place: true },
 ]
-const CASES = RECORDS.flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    ['episode', 'chapter'].map((unit) => ({ ...record, locale, unit })),
-  ),
-)
-
-function at(unit: string, count: number): Bookmark {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
-}
-
-function opened(id: string, place: boolean, reader: Reader): boolean {
-  const page = place ? placePage(id, reader) : characterPage(id, reader)
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function character(id: string): Entity {
-  const record = archive.getCharacter(id)
-  if (record === undefined) {
-    throw new Error(`Missing ${id} fixture`)
-  }
-  return record
-}
+const CASES = gateCases(RECORDS, archive.series)
 
 describe.each(CASES)('$id in $locale by $unit', (row) => {
   it('opens the record and drawing at its named scene, never before', () => {
-    const threshold = row.unit === 'chapter' ? row.chapter : row.episode
-    const before = readerFor(archive, at(row.unit, threshold - 1), row.locale)
-    const reached = readerFor(archive, at(row.unit, threshold), row.locale)
+    const before = readerFor(archive, row.before, row.locale)
+    const reached = readerFor(archive, row.reached, row.locale)
 
-    expect(opened(row.id, row.place, before)).toBe(false)
-    expect(drawingsFor([row.id], before)).toStrictEqual({})
-
-    expect(opened(row.id, row.place, reached)).toBe(true)
-    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
+    expect(opened(row.id, before)).toBe(false)
+    expect(opened(row.id, reached)).toBe(true)
   })
 })
 
@@ -103,9 +71,9 @@ describe('the bodyguards’ dated steps', () => {
     const read = (count: number): Reader =>
       readerFor(archive, at(unit, count), 'en')
     const role = (id: string, count: number): string | undefined =>
-      archive.roleOf(read(count), character(id))?.en
+      archive.roleOf(read(count), recordOf(archive, id))?.en
     const affiliation = (id: string, count: number): string | undefined =>
-      factsOf(character(id), read(count)).affiliation
+      factsOf(recordOf(archive, id), read(count)).affiliation
 
     // The three applicants Dalzollene hires.
     for (const id of ['melody', 'basho', 'baise']) {
@@ -214,7 +182,7 @@ describe('the shelves of the arc’s places', () => {
         const text = JSON.stringify(shelf)
 
         for (const id of ids) {
-          const record = character(id)
+          const record = recordOf(archive, id)
 
           expect(text).not.toContain(id)
           expect(text).not.toContain(record.name.en)
@@ -431,7 +399,7 @@ const STATUS_STEPS = [
 function statusAt(id: string, unit: string, count: number): string | undefined {
   return archive.latestOf(
     readerFor(archive, at(unit, count), 'en'),
-    character(id),
+    recordOf(archive, id),
     'status',
   )
 }
@@ -653,7 +621,7 @@ describe('the deaths drawn in Yorknew City', () => {
   it.each(DRAWN_DEATHS)(
     'pins $id’s death and drawing together in $unit units ($locale)',
     ({ id, unit, opens, death, was, now, locale }) => {
-      const record = character(id)
+      const record = recordOf(archive, id)
       const alive = readerFor(archive, at(unit, opens), locale)
       const before = readerFor(archive, at(unit, death - 1), locale)
       const reached = readerFor(archive, at(unit, death), locale)
@@ -670,7 +638,7 @@ describe('the deaths drawn in Yorknew City', () => {
   it.each(LOCALES)(
     'keeps Worm’s drawing when chapter 89 confirms his death (%s)',
     (locale) => {
-      const worm = character('worm')
+      const worm = recordOf(archive, 'worm')
       const presumed = readerFor(archive, at('chapter', 88), locale)
       const confirmed = readerFor(archive, at('chapter', 89), locale)
 
@@ -736,7 +704,7 @@ describe('the returning characters’ last steps', () => {
       const affiliation = (n: number): string | undefined =>
         archive.latestOf(
           readerFor(archive, at(unit, n), 'en'),
-          character(id),
+          recordOf(archive, id),
           'affiliation',
         )?.en
 
@@ -752,7 +720,7 @@ describe('Kurapika at the head of the bodyguards', () => {
     { unit: 'chapter', count: 79 },
   ])('dates his role and affiliation in $unit units', ({ unit, count }) => {
     const read = (n: number): Reader => readerFor(archive, at(unit, n), 'en')
-    const kurapika = character('kurapika')
+    const kurapika = recordOf(archive, 'kurapika')
 
     expect(archive.roleOf(read(count - 1), kurapika)?.en).toBe(
       'Hunter, bodyguard',

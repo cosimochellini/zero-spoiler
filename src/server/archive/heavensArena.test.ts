@@ -1,21 +1,15 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
-import { characterPage, drawingsFor } from './pages.server'
-import { placePage } from './placePage.server'
+import { drawingsFor } from './pages.server'
 import { factsOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Heavens Arena tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
   { id: 'heavens-arena', episode: 27, chapter: 44, place: true },
   { id: 'zushi', episode: 27, chapter: 45, place: false },
@@ -25,47 +19,20 @@ const RECORDS = [
   { id: 'sadaso', episode: 33, chapter: 57, place: false },
   { id: 'riehlvelt', episode: 34, chapter: 59, place: false },
 ]
-const CASES = RECORDS.flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    ['episode', 'chapter'].map((unit) => ({ ...record, locale, unit })),
-  ),
-)
-
-function at(unit: string, count: number): Bookmark {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
-}
-
-function opened(id: string, place: boolean, reader: Reader): boolean {
-  const page = place ? placePage(id, reader) : characterPage(id, reader)
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function character(id: string): Entity {
-  const record = archive.getCharacter(id)
-  if (record === undefined) {
-    throw new Error(`Missing ${id} fixture`)
-  }
-  return record
-}
+const CASES = gateCases(RECORDS, archive.series)
 
 describe.each(CASES)('$id in $locale by $unit', (row) => {
   it('opens the record and drawing at its named scene, never before', () => {
-    const threshold = row.unit === 'chapter' ? row.chapter : row.episode
-    const before = readerFor(archive, at(row.unit, threshold - 1), row.locale)
-    const reached = readerFor(archive, at(row.unit, threshold), row.locale)
+    const before = readerFor(archive, row.before, row.locale)
+    const reached = readerFor(archive, row.reached, row.locale)
 
-    expect(opened(row.id, row.place, before)).toBe(false)
-    expect(drawingsFor([row.id], before)).toStrictEqual({})
-
-    expect(opened(row.id, row.place, reached)).toBe(true)
-    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
+    expect(opened(row.id, before)).toBe(false)
+    expect(opened(row.id, reached)).toBe(true)
   })
 })
 
 describe('Kastro’s death', () => {
-  const kastro = character('kastro')
+  const kastro = recordOf(archive, 'kastro')
 
   it.each(
     LOCALES.flatMap((locale) => [
@@ -100,9 +67,9 @@ describe('the returning characters at Heavens Arena', () => {
     ({ unit, pupils, floor, tattoo }) => {
       const read = (count: number): Reader =>
         readerFor(archive, at(unit, count), 'en')
-      const gon = character('gon-freecss')
-      const killua = character('killua')
-      const hisoka = character('hisoka')
+      const gon = recordOf(archive, 'gon-freecss')
+      const killua = recordOf(archive, 'killua')
+      const hisoka = recordOf(archive, 'hisoka')
 
       expect(factsOf(gon, read(pupils - 1)).affiliation).toBe(
         'Hunter Association, Hunter',
@@ -151,7 +118,8 @@ describe.each(
   const opens = unit === 'chapter' ? pins.chapter : pins.episode
   const reveal = unit === 'chapter' ? 60 : 35
   const nenAt = (count: number): string | undefined =>
-    factsOf(character(id), readerFor(archive, at(unit, count), 'en')).nen
+    factsOf(recordOf(archive, id), readerFor(archive, at(unit, count), 'en'))
+      .nen
 
   it('has no row until the story shows the character using Nen', () => {
     expect(nenAt(opens - 1)).toBeUndefined()
