@@ -310,13 +310,14 @@ optional, and an arcless series prints no arc row. Darry and six of #1252's
 places are the book's alone, and the Kingswood the show's. The demo shows the
 places the first ten episodes reach, and covers in its tail the four the show
 first visits in later seasons. Its chronicles cover the Essos cast of the first
-stage (#1360), 89 stories for 18 characters, and the Night's Watch cast (#1363),
-88 stories for 22, in `records/season-1.chronicle.ts`: a story both media tell
-the same way holds at an episode and a chapter, and one only a single medium
-tells, or tells its own way, carries `source`, so it never reaches a reader of
-the other. Their notes are in `scripts/chronicle-sources-got.mjs`, and the
-chronicle lede is the series' own copy, since a story starts at an episode or a
-chapter.
+stage (#1360), 89 stories for 18 characters, the Night's Watch cast (#1363), 88
+stories for 22, the King's Landing, riverlands and Vale cast (#1362), 229
+stories for 66, and the Winterfell and northern cast (#1361), 160 stories for
+39, in `records/season-1.chronicle.ts`: a story both media tell the same way
+holds at an episode and a chapter, and one only a single medium tells, or tells
+its own way, carries `source`, so it never reaches a reader of the other. Their
+notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
+series' own copy, since a story starts at an episode or a chapter.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -489,6 +490,6 @@ checks this block.
 | Places            | 60                                                      |
 | Saga modules      | 1                                                       |
 | Line drawings     | 208, one per record, plus 155 redrawings of 114 records |
-| Chronicle stories | 177, for 40 characters                                  |
+| Chronicle stories | 566, for 145 characters                                 |
 
 <!-- End of the generated counts. -->
