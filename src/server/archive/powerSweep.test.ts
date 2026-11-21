@@ -10,6 +10,7 @@ import type { Gated } from '~/lib/progress/spoiler'
 import type { CharacterFacts } from '~/lib/view/facts'
 import type { PowerPageView } from '~/lib/view/power'
 import { leaksOf } from '~/test/fog'
+import { bodyGates } from '~/test/power'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
 import { characterPage } from './pages.server'
@@ -31,27 +32,9 @@ const { bodies } = withFeatures(archive)
 /** Every gate the power page reads. */
 function powerGates(): Gated[] {
   return bodies.flatMap((body) => [
-    body,
+    ...bodyGates(body),
     ...body.description.map((version) => archive.gateOf(version, body)),
     ...(body.ended === undefined ? [] : [body.ended]),
-    ...body.seats.flatMap((seat) => [
-      seat.told,
-      ...seat.holders.flatMap((holding) => {
-        const holder =
-          holding.value === null ?
-            undefined
-          : archive.getCharacter(holding.value)
-
-        return [
-          {
-            revealedAtEpisode: holding.episode,
-            revealedAtChapter: holding.chapter,
-            ...(holding.source !== undefined && { source: holding.source }),
-          },
-          ...(holder === undefined ? [] : [holder]),
-        ]
-      }),
-    ]),
   ])
 }
 

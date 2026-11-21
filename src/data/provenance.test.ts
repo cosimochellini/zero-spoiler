@@ -2,8 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { eggheadRelationshipOmissions } from '~/data/series/one-piece/records/egghead.relationships'
 import { thrillerBarkRelationshipOmissions } from '~/data/series/one-piece/records/thriller-bark.relationships'
-import type { SeriesArchive } from '~/data/types'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import elbafEvidence from '../../docs/content-provenance/elbaf-relationships.json' with { type: 'json' }
@@ -74,14 +73,6 @@ function titlesOn(hosts: string[]): Set<string> {
       .filter(({ url }) => hosts.includes(hostOf(url)))
       .map(({ title }) => title),
   )
-}
-
-function archiveOf(slug: string): SeriesArchive {
-  const found = LOADED_SERIES.find((series) => series.slug === slug)
-  if (found === undefined) {
-    throw new Error(`${slug} is not registered`)
-  }
-  return found.archive
 }
 
 const PROVENANCE: Provenance[] = [
@@ -167,7 +158,7 @@ describe.each(PROVENANCE)(
   '$name relationship provenance',
   ({ slug, relationships, wikis, uncited, unpinnable, episodePage }) => {
     const { authored, omitted, pending } = relationships
-    const archive = archiveOf(slug)
+    const archive = loadedSeries(slug).archive
     const characters = archive.entities.filter(
       ({ kind }) => kind === 'character',
     )
@@ -286,7 +277,7 @@ describe.each(
     records === undefined ? [] : { name, slug, ...records },
   ),
 )('$name provenance', ({ slug, ledger, hosts }) => {
-  const ids = archiveOf(slug).entities.map(({ id }) => id)
+  const ids = loadedSeries(slug).archive.entities.map(({ id }) => id)
   const filed = Object.entries(ledger).filter(
     ([, { pending }]) => pending !== true,
   )

@@ -6,7 +6,11 @@ import { powerPage } from '~/server/archive/power.server'
 import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { opReaderFor } from '~/test/archive'
+import { recordIn, sidesOf } from '~/test/gates'
+import { edges, type Steps, U, V } from '~/test/power'
 import { ONE_PIECE_LOADED } from '~/test/series'
+
+const { series } = ONE_PIECE_LOADED.archive
 
 /** The Warlords at a bookmark, if the reader has met them. */
 function warlordsAt(bookmark: Bookmark): BodyView | undefined {
@@ -21,9 +25,6 @@ function seatsAt(bookmark: Bookmark): string[] | undefined {
     seat.state === 'held' ? seat.holder.id : seat.state,
   )
 }
-
-const U = 'unknown'
-const V = 'vacant'
 
 /**
  * Every change, in the same order in both media: the chapter and episode
@@ -225,48 +226,38 @@ const STEPS: [number, number, string[]][] = [
   ],
 ]
 
-/** Each step with the seats just before it: none before the body opens. */
-const EDGES = STEPS.map(([chapter, episode, seats], at) => ({
-  chapter,
-  episode,
-  before: STEPS[at - 1]?.[2],
-  seats,
-}))
+const CHAPTERS: Steps = STEPS.map(([chapter, , seats]) => [chapter, seats])
+const EPISODES: Steps = STEPS.map(([, episode, seats]) => [episode, seats])
 
 describe('the Seven Warlords', () => {
-  it.each(EDGES)(
-    'seat at chapter $chapter what the manga has told',
-    ({ before, chapter, seats }) => {
-      expect(seatsAt({ mode: 'chapter', chapter: chapter - 1 })).toStrictEqual(
+  it.each(edges(CHAPTERS))(
+    'seat at chapter $at what the manga has told',
+    ({ at, before, seats }) => {
+      expect(seatsAt({ mode: 'chapter', chapter: at - 1 })).toStrictEqual(
         before,
       )
-      expect(seatsAt({ mode: 'chapter', chapter })).toStrictEqual(seats)
+      expect(seatsAt({ mode: 'chapter', chapter: at })).toStrictEqual(seats)
     },
   )
 
-  it.each(EDGES)(
-    'seat at episode $episode what the anime has told',
-    ({ before, episode, seats }) => {
-      expect(seatsAt({ mode: 'episode', episode: episode - 1 })).toStrictEqual(
+  it.each(edges(EPISODES))(
+    'seat at episode $at what the anime has told',
+    ({ at, before, seats }) => {
+      expect(seatsAt({ mode: 'episode', episode: at - 1 })).toStrictEqual(
         before,
       )
-      expect(seatsAt({ mode: 'episode', episode })).toStrictEqual(seats)
+      expect(seatsAt({ mode: 'episode', episode: at })).toStrictEqual(seats)
     },
   )
 
-  it.each([
-    { mode: 'chapter', chapter: 956 },
-    { mode: 'episode', episode: 957 },
-  ] as const)('ends at $chapter$episode with the seats as they stood', (at) => {
-    const before =
-      at.mode === 'chapter' ?
-        { ...at, chapter: at.chapter - 1 }
-      : { ...at, episode: at.episode - 1 }
-
-    expect(warlordsAt(before)?.ended).toBe(false)
-    expect(warlordsAt(at)?.ended).toBe(true)
-    expect(seatsAt(at)).toStrictEqual(STEPS.at(-1)?.[2])
-  })
+  it.each(sidesOf({ chapter: 956, episode: 957 }, series))(
+    'ends at $unit $gate with the seats as they stood',
+    ({ before, reached }) => {
+      expect(warlordsAt(before)?.ended).toBe(false)
+      expect(warlordsAt(reached)?.ended).toBe(true)
+      expect(seatsAt(reached)).toStrictEqual(STEPS.at(-1)?.[2])
+    },
+  )
 
   it('titles every seat in Italian too', () => {
     const page = powerPage(
@@ -285,12 +276,10 @@ describe('the Seven Warlords', () => {
 
 /** A character's affiliation at a bookmark, as an English reader sees it. */
 function affiliationAt(id: string, bookmark: Bookmark): unknown {
-  const character = ONE_PIECE_LOADED.archive.getCharacter(id)
-  if (character === undefined) {
-    throw new Error(`${id} is not filed`)
-  }
-
-  return factsOf(character, opReaderFor(bookmark, 'en')).affiliation
+  return factsOf(
+    recordIn(ONE_PIECE_LOADED.archive, id),
+    opReaderFor(bookmark, 'en'),
+  ).affiliation
 }
 
 /**
@@ -338,15 +327,11 @@ const MOVES = [
 describe('the Warlords’ character pages', () => {
   it.each(MOVES)(
     'move $id’s affiliation at chapter $chapter and episode $episode',
-    ({ after, before, chapter, episode, id }) => {
-      expect(affiliationAt(id, { mode: 'chapter', chapter: chapter - 1 })).toBe(
-        before,
-      )
-      expect(affiliationAt(id, { mode: 'chapter', chapter })).toBe(after)
-      expect(affiliationAt(id, { mode: 'episode', episode: episode - 1 })).toBe(
-        before,
-      )
-      expect(affiliationAt(id, { mode: 'episode', episode })).toBe(after)
+    (move) => {
+      for (const side of sidesOf(move, series)) {
+        expect(affiliationAt(move.id, side.before)).toBe(move.before)
+        expect(affiliationAt(move.id, side.reached)).toBe(move.after)
+      }
     },
   )
 })

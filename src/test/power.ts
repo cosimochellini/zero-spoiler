@@ -1,21 +1,19 @@
 import type { Description, Holding, PowerBody, Seat } from '~/data/features'
-import type { Entity, SeriesArchive } from '~/data/types'
+import { aroundGates } from '~/data/sweep'
+import type { SeriesArchive } from '~/data/types'
+import { LOCALES } from '~/i18n/locales'
+import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
+import { powerPage } from '~/server/archive/power.server'
+import { readerFor } from '~/server/archive/reader.server'
 
-import { ONE_PIECE_LOADED } from './series'
-
-/** A real One Piece character, so the leak sweep knows their gate. */
-function character(id: string): Entity {
-  const found = ONE_PIECE_LOADED.archive.getCharacter(id)
-  if (found === undefined) {
-    throw new Error(`${id} is not filed`)
-  }
-  return found
-}
+import { leaksOf } from './fog'
+import { recordIn } from './gates'
+import { LOADED_SERIES, ONE_PIECE_LOADED } from './series'
 
 /** Who the fixture seats: one met early, one met much later. */
-export const EARLY = character('dracule-mihawk')
-export const LATE = character('boa-hancock')
+export const EARLY = recordIn(ONE_PIECE_LOADED.archive, 'dracule-mihawk')
+export const LATE = recordIn(ONE_PIECE_LOADED.archive, 'boa-hancock')
 
 /** When the fixture's first seat is vacated and its third one told. */
 export const MIDWAY = { episode: 300, chapter: 390 }
@@ -270,4 +268,94 @@ export function bodyFaults(
       seatFaults(seat, `${body.id} seat ${String(place)}`, { archive, body }),
     ),
   ])
+}
+
+/**
+ * A holding's own gate, and its holder's record when it names one: the page
+ * shows a holding at the later of the two, so both are a boundary. This
+ * restates the server's rule (`holderOf` in `power.server.ts`) on purpose,
+ * once, for every power test.
+ */
+function holdingGates(holding: Holding): Gated[] {
+  const own: Gated = {
+    revealedAtEpisode: holding.episode,
+    revealedAtChapter: holding.chapter,
+    ...(holding.source !== undefined && { source: holding.source }),
+  }
+  const holder =
+    holding.value === null ?
+      undefined
+    : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
+
+  return holder === undefined ? [own] : [own, holder]
+}
+
+/** Every seat gate of a body: its own, its seats', holdings' and holders'. */
+export function bodyGates(body: PowerBody): Gated[] {
+  return [
+    body,
+    ...body.seats.flatMap(({ holders, told }) => [
+      told,
+      ...holders.flatMap((holding) => holdingGates(holding)),
+    ]),
+  ]
+}
+
+/** A body's seats at a bookmark: holder ids, `vacant` or `unknown`. */
+export function seatsOf(id: string, bookmark: Bookmark): string[] | undefined {
+  const page = powerPage(readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'))
+
+  return page.bodies
+    .find((body) => body.id === id)
+    ?.seats.map((seat) => (seat.state === 'held' ? seat.holder.id : seat.state))
+}
+
+export const U = 'unknown'
+export const V = 'vacant'
+
+/**
+ * The seats the page lists for a step: none while every one is under fog,
+ * since a body is listed only once a seat of it is held or vacant (#1194).
+ */
+const listed = (seats: string[] | undefined): string[] | undefined =>
+  seats?.every((seat) => seat === U) === true ? undefined : seats
+
+/**
+ * A body's changes in one medium, in order: the count that tells each and
+ * the seats from there on. A holder named before their record opens is
+ * fogged until it does, so a row that changes nothing checks that wait.
+ */
+export type Steps = [count: number, seats: string[]][]
+
+/** One step with the seats the page lists just before it and from it on. */
+export interface Edge {
+  at: number
+  before: string[] | undefined
+  seats: string[] | undefined
+}
+
+/** Each step with the seats just before it: none before the body opens. */
+export function edges(steps: Steps): Edge[] {
+  return steps.map(([at, seats], place) => ({
+    at,
+    before: listed(steps[place - 1]?.[1]),
+    seats: listed(seats),
+  }))
+}
+
+/**
+ * What the power page leaks on both sides of these gates, in each unit that
+ * tells each (`aroundGates`) and in either locale, as `bookmark locale: id`.
+ */
+export function powerLeaks(gates: Gated[]): string[] {
+  const { archive } = ONE_PIECE_LOADED
+  const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
+
+  return aroundGates(gates, archive.series).flatMap((bookmark) =>
+    LOCALES.flatMap((locale) =>
+      leaks(powerPage(readerFor(archive, bookmark, locale)), bookmark).map(
+        (leak) => `${JSON.stringify(bookmark)} ${locale}: ${leak}`,
+      ),
+    ),
+  )
 }

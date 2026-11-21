@@ -3,24 +3,25 @@ import { describe, expect, it } from 'vitest'
 import { orderByMode } from '~/data/order'
 import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season1 } from '~/data/series/game-of-thrones/records/season-1'
-import type { Entity } from '~/data/types'
-import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { CharacterStatus } from '~/lib/view/records'
-import { LOADED_SERIES } from '~/test/series'
+import {
+  bookmarkAt,
+  gateCases,
+  opened,
+  recordIn,
+  sidesOf,
+  type Unit,
+} from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
 import { onboardingPage } from './onboarding.server'
 import { characterPage } from './pages.server'
-import { placePage } from './placePage.server'
 import { drawingOf } from './project.server'
 import { coveredOf, type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
-if (series === undefined) {
-  throw new Error('Season 1 tests require Game of Thrones')
-}
-const { archive } = series
+const { archive } = loadedSeries('game-of-thrones')
 
 /** Each record's gate in each medium, as filed (#852, #853, #1006, #1007, #1008); `source` for one medium. */
 const RECORDS: {
@@ -1058,56 +1059,17 @@ const STEPS: {
   },
 ]
 
-type Unit = 'chapter' | 'episode'
-const UNITS: Unit[] = ['episode', 'chapter']
-
-function at(unit: Unit, count: number): Bookmark {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
-}
-
-/** A reader at this count of this unit, in this locale. */
-function reader(unit: Unit, count: number, locale: Locale = 'en'): Reader {
-  return readerFor(archive, at(unit, count), locale)
+/** An English reader at this count of this unit. */
+function reader(unit: Unit, count: number): Reader {
+  return readerFor(archive, bookmarkAt(unit, count), 'en')
 }
 
 /** Each record in each locale and in each unit that tells it, at its gate. */
-const GATES = RECORDS.flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    UNITS.filter((unit) => (record.source ?? unit) === unit).map((unit) => ({
-      id: record.id,
-      gate: unit === 'chapter' ? record.chapter : record.episode,
-      locale,
-      unit,
-    })),
-  ),
-)
+const GATES = gateCases(RECORDS, archive.series)
 
 const byText = (a: string, b: string): number => a.localeCompare(b)
 
-function opened(id: string, view: Reader): boolean {
-  const page = characterPage(id, view) ?? placePage(id, view)
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
 /** A redrawn record, character or place. */
-function recordOf(id: string): Entity {
-  const record = archive.getEntity(id)
-  if (record === undefined) {
-    throw new Error(`Missing ${id} fixture`)
-  }
-  return record
-}
-
-function character(id: string): Entity {
-  const record = archive.getCharacter(id)
-  if (record === undefined) {
-    throw new Error(`Missing ${id} fixture`)
-  }
-  return record
-}
-
 describe('the first season’s cast', () => {
   it('files exactly these records', () => {
     // Season 1's own records: a later season files its own beside them.
@@ -1118,16 +1080,16 @@ describe('the first season’s cast', () => {
 
   it.each(GATES)(
     'opens $id at its named scene by $unit in $locale',
-    ({ id, gate, locale, unit }) => {
-      expect(opened(id, reader(unit, gate, locale))).toBe(true)
+    ({ id, locale, reached }) => {
+      expect(opened(id, readerFor(archive, reached, locale))).toBe(true)
     },
   )
 
   // Gate 1 has no bookmark below it: nothing is read before episode 1.
   it.each(GATES.filter(({ gate }) => gate > 1))(
     'keeps $id closed one $unit before it in $locale',
-    ({ id, gate, locale, unit }) => {
-      expect(opened(id, reader(unit, gate - 1, locale))).toBe(false)
+    ({ before, id, locale }) => {
+      expect(opened(id, readerFor(archive, before, locale))).toBe(false)
     },
   )
 
@@ -1146,17 +1108,13 @@ describe('the first season’s cast', () => {
 
 describe.each(
   CHANGES.flatMap((change) =>
-    UNITS.filter((unit) => (change.source ?? unit) === unit).map((unit) => ({
-      ...change,
-      unit,
-    })),
+    sidesOf(change, archive.series).map((side) => ({ ...change, ...side })),
   ),
-)('$id becomes $value by $unit', ({ id, episode, chapter, value, unit }) => {
+)('$id becomes $value by $unit', ({ id, value, ...side }) => {
   it('at its pin, not one before', () => {
-    const pin = unit === 'chapter' ? chapter : episode
-    const owner = character(id)
-    const before = reader(unit, pin - 1)
-    const reached = reader(unit, pin)
+    const owner = recordIn(archive, id)
+    const before = readerFor(archive, side.before, 'en')
+    const reached = readerFor(archive, side.reached, 'en')
 
     expect(archive.latestOf(before, owner, 'status')).not.toBe(value)
     expect(archive.latestOf(reached, owner, 'status')).toBe(value)
@@ -1172,30 +1130,27 @@ describe('the status changes one medium alone tells', () => {
           reader('chapter', archive.series.chapterCeiling)
         : reader('episode', archive.series.episodeCeiling)
 
-      expect(archive.latestOf(last, character(id), 'status')).not.toBe(value)
+      expect(archive.latestOf(last, recordIn(archive, id), 'status')).not.toBe(
+        value,
+      )
     },
   )
 })
 
 describe.each(
   STEPS.flatMap((step) =>
-    UNITS.filter((unit) => (step.source ?? unit) === unit).map((unit) => ({
-      ...step,
-      unit,
-    })),
+    sidesOf(step, archive.series).map((side) => ({ ...step, ...side })),
   ),
-)('$id: “$en” by $unit', ({ id, en, episode, chapter, unit }) => {
+)('$id: “$en” by $unit', ({ id, en, before, reached }) => {
   // A page names a role or an affiliation as a whole string of its own.
-  const shown = (count: number): boolean =>
-    JSON.stringify(characterPage(id, reader(unit, count)) ?? null).includes(
-      JSON.stringify(en),
-    )
+  const shown = (bookmark: Bookmark): boolean =>
+    JSON.stringify(
+      characterPage(id, readerFor(archive, bookmark, 'en')) ?? null,
+    ).includes(JSON.stringify(en))
 
   it('at its pin, not one before', () => {
-    const pin = unit === 'chapter' ? chapter : episode
-
-    expect(shown(pin - 1)).toBe(false)
-    expect(shown(pin)).toBe(true)
+    expect(shown(before)).toBe(false)
+    expect(shown(reached)).toBe(true)
   })
 })
 
@@ -1271,7 +1226,7 @@ describe.each(
   ),
 )('$id’s summary by $unit', ({ en, gate, id, unit }) => {
   it('says what its gate tells', () => {
-    expect(character(id).summary.en).toBe(en)
+    expect(recordIn(archive, id).summary.en).toBe(en)
     expect(opened(id, reader(unit, gate))).toBe(true)
   })
 })
@@ -1428,7 +1383,7 @@ describe.each([
   { unit: 'chapter' as const, pin: 66 },
 ])('Eddard Stark’s death stage by $unit', ({ unit, pin }) => {
   const [stage] = REDRAWINGS['eddard-stark'] ?? []
-  const ned = character('eddard-stark')
+  const ned = recordIn(archive, 'eddard-stark')
 
   it('keeps Ice standing one before the pin', () => {
     expect(drawingOf(ned, reader(unit, pin - 1)).strokes).toStrictEqual(
@@ -1757,15 +1712,11 @@ const STAGES: {
 
 describe.each(
   STAGES.flatMap((stage) =>
-    UNITS.filter((unit) => (stage.source ?? unit) === unit).map((unit) => ({
-      ...stage,
-      unit,
-    })),
+    sidesOf(stage, archive.series).map((side) => ({ ...stage, ...side })),
   ),
 )(
   '$id is redrawn by $unit at $episode/$chapter',
-  ({ id, episode, chapter, source, unit, stage: index = 0 }) => {
-    const pin = unit === 'chapter' ? chapter : episode
+  ({ id, episode, chapter, source, unit, stage: index = 0, ...side }) => {
     const stages = REDRAWINGS[id] ?? []
     const stage = stages[index]
     // The drawing just before is the last earlier stage this unit reads:
@@ -1774,22 +1725,23 @@ describe.each(
       stages
         .slice(0, index)
         .findLast(
-          (earlier) => (recordOf(id).source ?? earlier.source ?? unit) === unit,
+          (earlier) =>
+            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
         )?.value ?? DRAWINGS[id]
 
     it('at its pin, not one before', () => {
-      const owner = recordOf(id)
+      const owner = recordIn(archive, id)
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
       // The row's medium is the one the engine reads for this stage.
       expect(owner.source ?? REDRAWINGS[id]?.[index]?.source).toBe(source)
-      expect(drawingOf(owner, reader(unit, pin - 1)).strokes).toStrictEqual(
-        previous,
-      )
-      expect(drawingOf(owner, reader(unit, pin)).strokes).toStrictEqual(
-        stage?.value,
-      )
+      expect(
+        drawingOf(owner, readerFor(archive, side.before, 'en')).strokes,
+      ).toStrictEqual(previous)
+      expect(
+        drawingOf(owner, readerFor(archive, side.reached, 'en')).strokes,
+      ).toStrictEqual(stage?.value)
     })
   },
 )
@@ -1806,7 +1758,7 @@ function atTheEnd(unit: Unit): Reader {
  * the first drawing when it tells none.
  */
 function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
-  const owner = recordOf(id)
+  const owner = recordIn(archive, id)
   const told = (REDRAWINGS[id] ?? []).filter(
     (stage) => (owner.source ?? stage.source ?? unit) === unit,
   )
@@ -1830,7 +1782,7 @@ function mediumOf(
   id: keyof typeof DRAWINGS,
   index: number,
 ): 'chapter' | 'episode' | undefined {
-  return recordOf(id).source ?? REDRAWINGS[id]?.[index]?.source
+  return recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source
 }
 
 /** Whether these strokes are this stage's drawing. */
@@ -1853,7 +1805,7 @@ describe('the stages one medium alone tells', () => {
     'never redraws $id for a reader of the other medium',
     ({ id, source, stage: index = 0 }) => {
       const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
-      const drawn = drawingOf(recordOf(id), atTheEnd(other)).strokes
+      const drawn = drawingOf(recordIn(archive, id), atTheEnd(other)).strokes
 
       expect(mediumOf(id, index)).toBe(source)
       expect(isNewLook(id, index) && shows(drawn, id, index)).toBe(false)

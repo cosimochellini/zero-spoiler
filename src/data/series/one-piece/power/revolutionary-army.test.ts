@@ -1,42 +1,35 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Holding } from '~/data/features'
-import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { Gated } from '~/lib/progress/spoiler'
-import { characterPage, drawingsFor } from '~/server/archive/pages.server'
+import { characterPage } from '~/server/archive/pages.server'
 import { powerPage } from '~/server/archive/power.server'
 import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { opReaderFor, opRelationshipsPage } from '~/test/archive'
-import { leaksOf } from '~/test/fog'
-import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
+import { gateCases, opened, recordIn, sidesOf } from '~/test/gates'
+import {
+  bodyGates,
+  edges,
+  powerLeaks,
+  seatsOf,
+  type Steps,
+  U,
+} from '~/test/power'
+import { ONE_PIECE_LOADED } from '~/test/series'
 
 import { REVOLUTIONARY_ARMY } from './revolutionary-army'
 
 /** The army's seats at a bookmark: holder ids, or `unknown`. */
-function seatsAt(bookmark: Bookmark): string[] | undefined {
-  const page = powerPage(readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'))
-
-  return page.bodies
-    .find(({ id }) => id === 'revolutionary-army')
-    ?.seats.map((seat) => (seat.state === 'held' ? seat.holder.id : seat.state))
-}
-
-const U = 'unknown'
+const seatsAt = (bookmark: Bookmark): string[] | undefined =>
+  seatsOf('revolutionary-army', bookmark)
 
 const DRAGON = 'monkey-d-dragon'
 const IVANKOV = 'emporio-ivankov'
 const COMMANDERS = ['belo-betty', 'morley', 'karasu', 'lindbergh']
 const DEPUTIES = ['ahiru', 'ushiano', 'jiron', 'gambo']
 
-/**
- * Every change in one medium: where it is told and the seats from there on.
- * A seat told before its holder's record opens stands unnamed until it
- * does, so the two media's steps are not the same list.
- */
-type Steps = [number, string[]][]
-
+// A seat told before its holder's record opens stands unnamed until it
+// does, so the two media's steps are not the same list.
 const CHAPTERS: Steps = [
   [432, [DRAGON]],
   // Ivankov says he is one of its leaders a chapter before his record opens.
@@ -59,55 +52,8 @@ const EPISODES: Steps = [
   [1116, [DRAGON, 'sabo', IVANKOV, ...COMMANDERS, ...DEPUTIES, 'koala']],
 ]
 
-/** Each step with the seats just before it: none before the army opens. */
-function edges(
-  steps: Steps,
-): { at: number; before: string[] | undefined; seats: string[] }[] {
-  return steps.map(([at, seats], place) => ({
-    at,
-    before: steps[place - 1]?.[1],
-    seats,
-  }))
-}
-
 const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
 const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
-
-/** A holding's own gate, and its holder's when it names one. */
-function holdingGates(holding: Holding): Gated[] {
-  const own = {
-    revealedAtEpisode: holding.episode,
-    revealedAtChapter: holding.chapter,
-  }
-  const holder =
-    holding.value === null ?
-      undefined
-    : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
-
-  return holder === undefined ? [own] : [own, holder]
-}
-
-/** Every gate of the army: its own, its seats', holdings' and holders'. */
-const GATES: Gated[] = [
-  REVOLUTIONARY_ARMY,
-  ...REVOLUTIONARY_ARMY.seats.flatMap(({ holders, told }) => [
-    told,
-    ...holders.flatMap((holding) => holdingGates(holding)),
-  ]),
-]
-
-/** A point and the one just before it. */
-const sides = (at: number): number[] => [at - 1, at]
-
-/** Each gate and the point just before it, in both media. */
-const BOOKMARKS: Bookmark[] = [
-  ...[...new Set(GATES.flatMap((g) => sides(g.revealedAtChapter)))].map((at) =>
-    chapter(at),
-  ),
-  ...[...new Set(GATES.flatMap((g) => sides(g.revealedAtEpisode)))].map((at) =>
-    episode(at),
-  ),
-]
 
 describe('the Revolutionary Army', () => {
   it.each(edges(CHAPTERS))(
@@ -161,30 +107,16 @@ describe('the Revolutionary Army', () => {
   })
 
   it('leaks nothing on either side of any of its gates', () => {
-    const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
-
-    for (const bookmark of BOOKMARKS) {
-      for (const locale of LOCALES) {
-        const page = powerPage(
-          readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
-        )
-
-        expect(leaks(page, bookmark), JSON.stringify(bookmark)).toStrictEqual(
-          [],
-        )
-      }
-    }
+    expect(powerLeaks(bodyGates(REVOLUTIONARY_ARMY))).toStrictEqual([])
   })
 })
 
 /** A character's affiliation at a bookmark, as an English reader sees it. */
 function affiliationAt(id: string, bookmark: Bookmark): unknown {
-  const character = ONE_PIECE_LOADED.archive.getCharacter(id)
-  if (character === undefined) {
-    throw new Error(`${id} is not filed`)
-  }
-
-  return factsOf(character, opReaderFor(bookmark, 'en')).affiliation
+  return factsOf(
+    recordIn(ONE_PIECE_LOADED.archive, id),
+    opReaderFor(bookmark, 'en'),
+  ).affiliation
 }
 
 /**
@@ -226,11 +158,11 @@ const MOVES = [
 describe('the Revolutionary Army’s character pages', () => {
   it.each(MOVES)(
     'move $id’s affiliation at chapter $chapter and episode $episode',
-    ({ after, before, chapter: at, episode: ep, id }) => {
-      expect(affiliationAt(id, chapter(at - 1))).toBe(before)
-      expect(affiliationAt(id, chapter(at))).toBe(after)
-      expect(affiliationAt(id, episode(ep - 1))).toBe(before)
-      expect(affiliationAt(id, episode(ep))).toBe(after)
+    (move) => {
+      for (const side of sidesOf(move, ONE_PIECE_LOADED.archive.series)) {
+        expect(affiliationAt(move.id, side.before)).toBe(move.before)
+        expect(affiliationAt(move.id, side.reached)).toBe(move.after)
+      }
     },
   )
 
@@ -277,52 +209,29 @@ const DEPUTY_CARDS = [
   { id: 'ushiano', name: 'Ushiano', commander: 'morley' },
   { id: 'jiron', name: 'Jiron', commander: 'karasu' },
   { id: 'gambo', name: 'Gambo', commander: 'lindbergh' },
-]
+].map((deputy) => ({ ...deputy, chapter: 1082, episode: 1116 }))
 
-const DEPUTY_CASES = DEPUTY_CARDS.flatMap((deputy) =>
-  LOCALES.flatMap((locale) =>
-    [
-      { unit: 'chapter', gate: 1082 },
-      { unit: 'episode', gate: 1116 },
-    ].map((side) => ({ ...deputy, ...side, locale })),
-  ),
+describe.each(gateCases(DEPUTY_CARDS, ONE_PIECE_LOADED.archive.series))(
+  '$id in $locale by $unit',
+  (row) => {
+    it('opens the record, its drawing and its card at its caption, never before', () => {
+      const r = (bookmark: Bookmark): ReturnType<typeof readerFor> =>
+        readerFor(ONE_PIECE_LOADED.archive, bookmark, row.locale)
+
+      const closed = characterPage(row.id, r(row.before))
+
+      expect(opened(row.id, r(row.before))).toBe(false)
+      expect(JSON.stringify(closed)).not.toContain(row.name)
+      expect(opRelationshipsPage(row.id, row.before, row.locale)).toStrictEqual(
+        [],
+      )
+
+      expect(opened(row.id, r(row.reached))).toBe(true)
+      expect(
+        opRelationshipsPage(row.id, row.reached, row.locale).map(
+          ({ person }) => person.id,
+        ),
+      ).toStrictEqual([row.commander])
+    })
+  },
 )
-
-describe.each(DEPUTY_CASES)('$id in $locale by $unit', (row) => {
-  const at = (count: number): Bookmark =>
-    row.unit === 'chapter' ? chapter(count) : episode(count)
-
-  it('opens the record, its drawing and its card at its caption, never before', () => {
-    const before = readerFor(
-      ONE_PIECE_LOADED.archive,
-      at(row.gate - 1),
-      row.locale,
-    )
-    const reached = readerFor(
-      ONE_PIECE_LOADED.archive,
-      at(row.gate),
-      row.locale,
-    )
-    const closed = characterPage(row.id, before)
-    const open = characterPage(row.id, reached)
-
-    expect(
-      closed !== undefined && 'detail' in closed && closed.detail.slot.open,
-    ).toBe(false)
-    expect(JSON.stringify(closed)).not.toContain(row.name)
-    expect(drawingsFor([row.id], before)).toStrictEqual({})
-    expect(
-      opRelationshipsPage(row.id, at(row.gate - 1), row.locale),
-    ).toStrictEqual([])
-
-    expect(
-      open !== undefined && 'detail' in open && open.detail.slot.open,
-    ).toBe(true)
-    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
-    expect(
-      opRelationshipsPage(row.id, at(row.gate), row.locale).map(
-        ({ person }) => person.id,
-      ),
-    ).toStrictEqual([row.commander])
-  })
-})

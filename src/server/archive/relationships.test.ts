@@ -9,7 +9,7 @@ import {
   withoutDrawings,
 } from '~/test/archive'
 import { relationshipArchive } from '~/test/relationships'
-import { LOADED_SERIES } from '~/test/series'
+import { LOADED_SERIES, loadedSeries } from '~/test/series'
 
 import { readerFor } from './reader.server'
 import { relationshipsOf } from './relationships.server'
@@ -129,10 +129,9 @@ describe('the pilot at independently verified relationship thresholds', () => {
     'sends no relationship for a character with no authored selection in %s',
     (locale) => {
       // Whoever is first without one as cohorts land: the page sends none.
-      const onePiece = LOADED_SERIES.find(({ slug }) => slug === 'one-piece')
-      const bare = onePiece?.archive.characters.find(
-        (owner) =>
-          onePiece.archive.datedOf(owner, 'relationships').length === 0,
+      const { archive } = loadedSeries('one-piece')
+      const bare = archive.characters.find(
+        (owner) => archive.datedOf(owner, 'relationships').length === 0,
       )
 
       expect(bare).toBeDefined()

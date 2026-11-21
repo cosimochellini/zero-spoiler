@@ -1,14 +1,12 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Holding } from '~/data/features'
 import { CP9 } from '~/data/series/one-piece/power/cp9'
 import { FIVE_ELDERS } from '~/data/series/one-piece/power/five-elders'
 import { WORLD_GOVERNMENT } from '~/data/series/one-piece/power/world-government'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { Gated } from '~/lib/progress/spoiler'
-import { leaksOf } from '~/test/fog'
-import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
+import { bodyGates, powerLeaks, seatsOf } from '~/test/power'
+import { ONE_PIECE_LOADED } from '~/test/series'
 
 import { powerPage } from './power.server'
 import { readerFor } from './reader.server'
@@ -22,15 +20,6 @@ import { readerFor } from './reader.server'
 const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
 const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
 
-/** One body's seats at a bookmark, each as its holder's id or its state. */
-function seatsOf(id: string, bookmark: Bookmark): string[] | undefined {
-  const page = powerPage(readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'))
-
-  return page.bodies
-    .find((body) => body.id === id)
-    ?.seats.map((seat) => (seat.state === 'held' ? seat.holder.id : seat.state))
-}
-
 const UNKNOWN_ELDERS = Array.from({ length: 5 }, () => 'unknown')
 const ELDERS = [
   'marcus-mars',
@@ -38,35 +27,6 @@ const ELDERS = [
   'ethanbaron-v-nusjuro',
   'shepherd-ju-peter',
 ]
-
-interface Pair {
-  chapter: number
-  episode: number
-}
-
-const pairOf = (gate: Gated): Pair => ({
-  episode: gate.revealedAtEpisode,
-  chapter: gate.revealedAtChapter,
-})
-
-/** A holding's own pair, and its holder's gate when it names one. */
-function holdingGates(holding: Holding): Pair[] {
-  const holder =
-    holding.value === null ?
-      undefined
-    : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
-
-  return holder === undefined ? [holding] : [holding, pairOf(holder)]
-}
-
-/** Every gate of the three bodies: theirs, their seats', their holdings' and their holders'. */
-const GATES: Pair[] = [WORLD_GOVERNMENT, FIVE_ELDERS, CP9].flatMap((body) => [
-  pairOf(body),
-  ...body.seats.flatMap(({ holders, told }) => [
-    pairOf(told),
-    ...holders.flatMap((holding) => holdingGates(holding)),
-  ]),
-])
 
 describe('the World Government on the power page', () => {
   it.each([chapter(233), episode(151), chapter(396), episode(276)])(
@@ -214,28 +174,10 @@ describe('the World Government on the power page', () => {
   })
 
   it('leaks nothing on either side of any of its gates', () => {
-    const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
-    const chapters = new Set<number>()
-    const episodes = new Set<number>()
-    for (const { episode: at, chapter: inChapter } of GATES) {
-      episodes.add(at - 1).add(at)
-      chapters.add(inChapter - 1).add(inChapter)
-    }
-    const bookmarks = [
-      ...[...chapters].map((at) => chapter(at)),
-      ...[...episodes].map((at) => episode(at)),
-    ]
-
-    for (const bookmark of bookmarks) {
-      for (const locale of LOCALES) {
-        const page = powerPage(
-          readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
-        )
-
-        expect(leaks(page, bookmark), JSON.stringify(bookmark)).toStrictEqual(
-          [],
-        )
-      }
-    }
+    expect(
+      powerLeaks(
+        [WORLD_GOVERNMENT, FIVE_ELDERS, CP9].flatMap((body) => bodyGates(body)),
+      ),
+    ).toStrictEqual([])
   })
 })

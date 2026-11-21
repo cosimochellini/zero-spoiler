@@ -1,18 +1,14 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import { opened, recordIn } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Kakin phase 3 tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 
 // Independent expectations from the naming scenes, not the implementation.
 const CHARACTERS = [
@@ -32,18 +28,6 @@ const DEATHS = [
 
 const CASES = CHARACTERS.map(([id, chapter]) => ({ id, chapter }))
 
-function opened(page: ReturnType<typeof characterPage>): boolean {
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function character(id: string): Entity {
-  const owner = archive.getCharacter(id)
-  if (owner === undefined) {
-    throw new Error(`Missing Kakin fixture ${id}`)
-  }
-  return owner
-}
-
 describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   const read = (bookmark: Bookmark): Reader =>
     readerFor(archive, bookmark, locale)
@@ -54,17 +38,15 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
 
-      expect(opened(characterPage(id, before))).toBe(false)
-      expect(drawingsFor([id], before)).toStrictEqual({})
-      expect(opened(characterPage(id, reached))).toBe(true)
-      expect(drawingsFor([id], reached)[id]?.length).toBeGreaterThan(3)
+      expect(opened(id, before)).toBe(false)
+      expect(opened(id, reached)).toBe(true)
     },
   )
 
   it.each(CASES)(
     'opens $id’s dated facts only at its naming gate',
     ({ id, chapter }) => {
-      const owner = character(id)
+      const owner = recordIn(archive, id)
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
       for (const field of ['affiliation', 'status'] as const) {
@@ -87,7 +69,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   })
 
   it('opens Keeney’s escape-plan relationship at chapter 383', () => {
-    const owner = character('keeney')
+    const owner = recordIn(archive, 'keeney')
 
     expect(
       archive.reachedOf(
@@ -106,7 +88,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   })
 
   it('adds Vergei’s Nen teacher only at chapter 375', () => {
-    const owner = character('vergei')
+    const owner = recordIn(archive, 'vergei')
     const before = archive.latestOf(
       read({ mode: 'chapter', chapter: 374 }),
       owner,
@@ -128,7 +110,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   it.each(DEATHS)(
     'files %s as deceased only from chapter %i',
     (id, chapter) => {
-      const owner = character(id)
+      const owner = recordIn(archive, id)
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
 
@@ -138,7 +120,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   )
 
   it('adds Illumi’s Troupe membership only at chapter 377', () => {
-    const owner = character('illumi')
+    const owner = recordIn(archive, 'illumi')
     const before = archive.latestOf(
       read({ mode: 'chapter', chapter: 376 }),
       owner,
