@@ -14,8 +14,8 @@ const CASES = [
 ] as const
 
 const SUMMARIES = {
-  it: 'Gon e Killua lasciano Greed Island per raggiungere un giocatore che sperano sia Ging, e trovano invece Kaito. Altrove, in una grotta, una formica gigante mangia da sola per riprendere le forze.',
-  en: 'Gon and Killua leave Greed Island to meet a player they hope is Ging, and find Kite instead. Elsewhere, a giant ant feeds alone in a cave to regain its strength.',
+  it: 'Gon e Killua lasciano Greed Island per raggiungere un giocatore che sperano sia Ging, e trovano invece Kaito. Altrove, in una grotta, una formica mangia da sola per riprendere le forze.',
+  en: 'Gon and Killua leave Greed Island to meet a player they hope is Ging, and find Kite instead. Elsewhere, an ant feeds alone in a cave to regain its strength.',
 }
 
 describe.each(LOCALES)('owner-verified arc gates in %s (#796)', (locale) => {
