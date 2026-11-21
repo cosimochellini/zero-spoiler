@@ -48,9 +48,11 @@ const WITHDRAWN_340: Seats = VICE_335.with(0, 'cheadle-yorkshire')
   .with(1, V)
   .with(2, V)
   .with(13, V)
-const NEW_346: Seats = WITHDRAWN_340.with(2, 'kurapika')
-  .with(11, 'cluck')
-  .with(13, 'leorio-paradinight')
+// Cluck's record is the anime's alone: the Chicken stays a title in the manga.
+const NEW_346: Seats = WITHDRAWN_340.with(2, 'kurapika').with(
+  13,
+  'leorio-paradinight',
+)
 
 /** Every seat held at the roster, as the anime names all twelve at once. */
 const ROSTER_137: Seats = [

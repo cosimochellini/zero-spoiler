@@ -85,7 +85,7 @@ owner requested.
 | `beans`               | 137/319                                                       |
 | `botobai-gigante`     | 137/319, 144/331                                              |
 | `cheadle-yorkshire`   | 137/319, 144/332, 146/335                                     |
-| `cluck`               | 137/320 (episode only; record 137/346 since #1443)            |
+| `cluck`               | 137/320 (episode only)                                        |
 | `gel`                 | 137/321                                                       |
 | `ginta`               | 137/320                                                       |
 | `kanzai`              | 137/320                                                       |

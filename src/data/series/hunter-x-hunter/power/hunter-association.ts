@@ -39,9 +39,10 @@ const ROSTER_TOLD = {
 
 /**
  * One Zodiac seat, under its sign as the members' epithets spell it, held
- * from the roster. Several holders open later than the roster (Gel, Pariston
- * and Saiyu at chapter 321, Mizaistom and Saccho at 326, Cluck at 346), and
- * their seats stay a title alone until then.
+ * from the roster. Several holders open later than the roster in the manga
+ * (Gel, Pariston and Saiyu at chapter 321, Mizaistom and Saccho at 326), and
+ * their seats stay a title alone until then. Cluck's record is the anime's
+ * alone, so a chapter reader sees the Chicken's seat as a title alone.
  */
 function zodiac(
   sign: { en: string; it: string },
@@ -70,8 +71,8 @@ export const HUNTER_ASSOCIATION: PowerBody<HunterVocabulary> = {
       chapter: 12,
       episode: 6,
       value: {
-        en: 'The organization that runs the Hunter Exam and grants a license to those who pass it. A chairman heads it and has the last word on the exam.',
-        it: 'L’organizzazione che gestisce l’Esame Hunter e concede la licenza a chi lo supera. La guida un presidente, che ha l’ultima parola sull’esame.',
+        en: 'The organization that tests those who want to become Hunters and grants a license to those who pass. A chairman heads it and has the last word on who passes.',
+        it: 'L’organizzazione che mette alla prova chi vuole diventare Hunter e concede la licenza a chi supera la prova. La guida un presidente, che ha l’ultima parola su chi passa.',
       },
     },
     {
