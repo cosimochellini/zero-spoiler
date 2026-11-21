@@ -1345,8 +1345,8 @@ export const season1: ThronesSaga = {
       visual: { art: 'meryn-trant', tint: 'ice' },
     },
     // Show: "Blackwater" (episode 19), Joffrey leaves the wall and orders him
-    // and Ser Mandon, by name, to fight beside Tyrion. Books: Eddard VIII (site chapter 34), at the small council in
-    // his white cloak.
+    // and Ser Mandon, by name, to fight beside Tyrion. Books: Eddard VIII
+    // (site chapter 34), at the small council in his white cloak.
     {
       id: 'boros-blount',
       kind: 'character',
@@ -1360,8 +1360,9 @@ export const season1: ThronesSaga = {
       visual: { art: 'boros-blount', tint: 'sand' },
     },
     // Show: "Blackwater" (episode 19), he reports to Cersei, and Joffrey orders
-    // him and Ser Boros, by name, to fight beside Tyrion. Books: Sansa IV (site chapter 52), he guards the council
-    // chamber doors and walks Sansa back.
+    // him and Ser Boros, by name, to fight beside Tyrion. Books: Sansa IV
+    // (site chapter 52), he guards the council chamber doors and walks Sansa
+    // back.
     {
       id: 'mandon-moore',
       kind: 'character',
@@ -1406,11 +1407,11 @@ export const season1: ThronesSaga = {
       visual: { art: 'lancel-lannister', tint: 'red' },
     },
     // Show: "The North Remembers" (episode 11), his bout is called at Joffrey's
-    // nameday tourney, he turns up drunk and Sansa saves him. Books: Sansa V of A Game of Thrones
-    // (site chapter 58), drunk at Joffrey's court, Balon Swann warns him away
-    // from Sansa; she saves him only at the name-day tourney, in Sansa I of
-    // A Clash of Kings (site chapter 76). The summary and log hold at chapter
-    // 58, and the fool's role follows at 76 (#1424).
+    // nameday tourney, he turns up drunk and Sansa saves him. Books: Sansa V
+    // of A Game of Thrones (site chapter 58), drunk at Joffrey's court, Balon
+    // Swann warns him away from Sansa; she saves him only at the name-day
+    // tourney, in Sansa I of A Clash of Kings (site chapter 76). The summary
+    // and log hold at chapter 58, and the fool's role follows at 76 (#1424).
     {
       id: 'dontos-hollard',
       kind: 'character',
@@ -1743,9 +1744,10 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'brynden-tully', tint: 'ice' },
     },
-    // Show: "Fire and Blood", one of Yoren's recruits who bully Arry. Books: A Clash
-    // of Kings, Arya I (site chapter 75), he tries to take Needle and Arya beats
-    // him.
+    // Show: "Fire and Blood" (episode 10), one of Yoren's recruits who bully
+    // Arry; another recruit tells her, "You'd better give Hot Pie the sword".
+    // Books: A Clash of Kings, Arya I (site chapter 75), he tries to take
+    // Needle and Arya beats him.
     {
       id: 'hot-pie',
       kind: 'character',
@@ -1758,13 +1760,16 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'hot-pie', tint: 'sand' },
     },
-    // Show: "Fire and Blood", one of Yoren's recruits who bully Arry. Books: A Clash
-    // of Kings, Arya I (site chapter 75), he calls Arya Lumpyhead and eggs Hot Pie
-    // on.
+    // Show: "What Is Dead May Never Die" (episode 13), Arya tells Amory Lorch
+    // that the dead Lommy was Gendry, the first time the Game of Thrones Wiki
+    // has his name said; he is on screen unnamed from "Fire and Blood"
+    // (episode 10), bullying Arry with Hot Pie (#1457). Books: A Clash of
+    // Kings, Arya I (site chapter 75), he calls Arya Lumpyhead and eggs Hot
+    // Pie on.
     {
       id: 'lommy',
       kind: 'character',
-      revealedAtEpisode: 10,
+      revealedAtEpisode: 13,
       revealedAtChapter: 75,
       name: { it: 'Lommy Maniverdi', en: 'Lommy Greenhands' },
       summary: {
@@ -6093,8 +6098,8 @@ export const season1: ThronesSaga = {
         en: 'Baker’s boy, Night’s Watch recruit',
       },
       log: {
-        it: 'Viaggia verso la Barriera con le reclute che Yoren porta ai Guardiani della notte. Lui e Lommy prendono di mira Arya, che viaggia travestita da ragazzo.',
-        en: 'He travels to the Wall with the recruits Yoren is taking to the Night’s Watch. He and Lommy pick on Arya, who is travelling disguised as a boy.',
+        it: 'Viaggia verso la Barriera con le reclute che Yoren porta ai Guardiani della notte. Lui e un’altra recluta prendono di mira Arya, che viaggia travestita da ragazzo.',
+        en: 'He travels to the Wall with the recruits Yoren is taking to the Night’s Watch. He and another recruit pick on Arya, who is travelling disguised as a boy.',
       },
       status: [{ episode: 10, chapter: 75, value: 'alive' }],
       affiliation: [
@@ -6107,7 +6112,6 @@ export const season1: ThronesSaga = {
     },
     'lommy': {
       relationships: season1Relationships.lommy,
-      chronicle: season1Chronicles.lommy,
       role: {
         it: 'Apprendista tintore, recluta dei Guardiani della notte',
         en: 'Dyer’s apprentice, Night’s Watch recruit',
@@ -6117,12 +6121,14 @@ export const season1: ThronesSaga = {
         en: 'He travels to the Wall with Yoren’s recruits. He and Hot Pie mock Arya, who is passing as a boy.',
       },
       status: [
-        { episode: 10, chapter: 75, value: 'alive' },
+        { episode: 13, chapter: 75, source: 'chapter', value: 'alive' },
+        // Polliver kills him in "What Is Dead May Never Die" (episode 13),
+        // his show gate, and Raff in Arya V of A Clash of Kings (chapter 93).
         { episode: 13, chapter: 93, value: 'deceased' },
       ],
       affiliation: [
         {
-          episode: 10,
+          episode: 13,
           chapter: 75,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
         },

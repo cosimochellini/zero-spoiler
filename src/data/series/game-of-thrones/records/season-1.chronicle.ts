@@ -44,12 +44,13 @@ function inBooks(
  * Aggo’s are all at episode 11, the show’s gate for him.
  * Jaqen H’ghar opens at episode 12 and chapter 79, and Rorge and Biter, the
  * books’ alone, at chapter 79, past the stage; none has a chronicle yet.
+ * Nor has Lommy, who opens at episode 13 and chapter 75 (#1457).
  *
  * The King’s Landing, riverlands and Vale cast follows (#1362), on the same
  * rules. Boros, Mandon, Dontos, Thoros, Yohn Royce, Podrick, Edmure, Hoster,
  * Brynden, Donnel and Anya open on screen after episode 10, so their stories
- * are the books’; Ros and Mhaegen are the show’s records, and Hot Pie and
- * Lommy open in the books at chapter 75, so theirs are the show’s.
+ * are the books’; Ros and Mhaegen are the show’s records, and Hot Pie opens
+ * in the books at chapter 75, so his is the show’s.
  *
  * The Winterfell and northern cast (#1361) follows the same rules. Hullen,
  * Harwin, Alyn, Jeyne Poole, Hallis Mollen and Dacey Mormont are the books’
@@ -3222,18 +3223,8 @@ export const season1Chronicles = {
       [10, 75],
       { it: 'La spada di Arry', en: 'Arry’s sword' },
       {
-        it: 'Frittella è un ragazzo tra le reclute che [[yoren|Yoren]] porta a nord per i Guardiani della notte. Quando [[arya-stark|Arya]] si unisce a loro travestita da ragazzo, con il nome di Arry, Frittella e [[lommy|Lommy]] la prendono di mira e pretendono la sua spada. Frittella si vanta di aver ucciso un ragazzo a calci. Arya sguaina la spada e gli dice che ha già ucciso un ragazzo grasso. Frittella indietreggia fino a urtare [[gendry|Gendry]], che prende le parti di Arry e mette in fuga i due.',
-        en: 'Hot Pie is a boy among the recruits [[yoren|Yoren]] is taking north to the Night’s Watch. When [[arya-stark|Arya]] joins them disguised as a boy called Arry, Hot Pie and [[lommy|Lommy]] pick on her and demand her sword. Hot Pie boasts that he once kicked a boy to death. Arya draws the sword and tells him she has already killed one fat boy. Hot Pie backs away into [[gendry|Gendry]], who takes Arry’s side and scares the two boys off.',
-      },
-    ),
-  ],
-  'lommy': [
-    onScreen(
-      [10, 75],
-      { it: 'Dalla parte di Frittella', en: 'Backing Hot Pie' },
-      {
-        it: 'Lommy, detto Maniverdi, va a nord con le reclute che [[yoren|Yoren]] ha radunato per i Guardiani della notte. Insieme a [[hot-pie|Frittella]] prende di mira [[arya-stark|Arya]], che si è unita al gruppo travestita da ragazzo con il nome di Arry, e cerca di farle consegnare la spada. Quando Frittella si vanta di aver ucciso un ragazzo a calci, Lommy gli dà subito ragione. Arya sguaina la spada contro Frittella, e [[gendry|Gendry]] prende le sue parti e mette in fuga i due ragazzi.',
-        en: 'Lommy, called Greenhands, is going north with the recruits [[yoren|Yoren]] has gathered for the Night’s Watch. With [[hot-pie|Hot Pie]] he picks on [[arya-stark|Arya]], who has joined the group disguised as a boy named Arry, and tries to make her give up her sword. When Hot Pie boasts of kicking a boy to death, Lommy is quick to back him up. Arya draws on Hot Pie, and [[gendry|Gendry]] takes her side and drives both boys off.',
+        it: 'Frittella è un ragazzo tra le reclute che [[yoren|Yoren]] porta a nord per i Guardiani della notte. Quando [[arya-stark|Arya]] si unisce a loro travestita da ragazzo, con il nome di Arry, Frittella e un’altra recluta la prendono di mira e pretendono la sua spada. Frittella si vanta di aver ucciso un ragazzo a calci. Arya sguaina la spada e gli dice che ha già ucciso un ragazzo grasso. Frittella indietreggia fino a urtare [[gendry|Gendry]], che prende le parti di Arry e mette in fuga i due.',
+        en: 'Hot Pie is a boy among the recruits [[yoren|Yoren]] is taking north to the Night’s Watch. When [[arya-stark|Arya]] joins them disguised as a boy called Arry, Hot Pie and another recruit pick on her and demand her sword. Hot Pie boasts that he once kicked a boy to death. Arya draws the sword and tells him she has already killed one fat boy. Hot Pie backs away into [[gendry|Gendry]], who takes Arry’s side and scares the two boys off.',
       },
     ),
   ],
@@ -3857,8 +3848,8 @@ export const season1Chronicles = {
       [10, 66],
       { it: 'Arry', en: 'Arry' },
       {
-        it: '[[yoren|Yoren]] trascina Arya via dalla folla chiamandola ragazzo e le taglia i capelli con un coltello. La porterà fuori da Approdo del Re e fino a Grande Inverno, travestita da recluta dei Guardiani della notte, e la avverte di non fidarsi degli altri. Con il nome di Arry si unisce alle reclute, tra cui [[gendry|Gendry]], Frittella e Lommy Maniverdi. Quando Frittella e Lommy cercano di prenderle Ago, lei sguaina la spada, e Gendry si schiera dalla parte di Arya.',
-        en: '[[yoren|Yoren]] drags Arya away from the crowd, calling her boy, and cuts her hair short with a knife. He will take her out of King’s Landing and on to Winterfell disguised as a recruit for the Night’s Watch, and warns her not to trust the others. Under the name Arry she joins the recruits, among them [[gendry|Gendry]], Hot Pie and Lommy Greenhands. When Hot Pie and Lommy try to take Needle from her, she draws the sword, and Gendry takes her side.',
+        it: '[[yoren|Yoren]] trascina Arya via dalla folla chiamandola ragazzo e le taglia i capelli con un coltello. La porterà fuori da Approdo del Re e fino a Grande Inverno, travestita da recluta dei Guardiani della notte, e la avverte di non fidarsi degli altri. Con il nome di Arry si unisce alle reclute, tra cui [[gendry|Gendry]] e Frittella. Quando Frittella e un altro ragazzo cercano di prenderle Ago, lei sguaina la spada, e Gendry si schiera dalla parte di Arya.',
+        en: '[[yoren|Yoren]] drags Arya away from the crowd, calling her boy, and cuts her hair short with a knife. He will take her out of King’s Landing and on to Winterfell disguised as a recruit for the Night’s Watch, and warns her not to trust the others. Under the name Arry she joins the recruits, among them [[gendry|Gendry]] and Hot Pie. When Hot Pie and another boy try to take Needle from her, she draws the sword, and Gendry takes her side.',
       },
     ),
   ],

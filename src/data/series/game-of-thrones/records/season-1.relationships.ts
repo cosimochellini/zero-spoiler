@@ -10914,9 +10914,17 @@ export const season1Relationships = {
     },
   ],
   // Their book records open after stage 1 (chapter 75).
+  // Lommy's show record opens at episode 13, where his name is first said
+  // (#1457), so Hot Pie's link to him waits for it.
   'hot-pie': [
     {
       episode: 10,
+      chapter: 75,
+      source: 'episode',
+      value: [crown.hotArya, crown.hotGendry, crown.hotYoren],
+    },
+    {
+      episode: 13,
       chapter: 75,
       source: 'episode',
       value: [crown.hotArya, crown.hotGendry, crown.hotYoren, crown.hotLommy],
@@ -10924,7 +10932,7 @@ export const season1Relationships = {
   ],
   'lommy': [
     {
-      episode: 10,
+      episode: 13,
       chapter: 75,
       source: 'episode',
       value: [crown.lomArya, crown.lomGendry, crown.lomYoren, crown.lomHotPie],

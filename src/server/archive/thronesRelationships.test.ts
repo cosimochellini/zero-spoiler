@@ -845,9 +845,12 @@ describe.each(LOCALES)(
     })
 
     it('keeps the show-only recruits out of book pages', () => {
-      for (const id of ['hot-pie', 'lommy']) {
-        expect(projected(id, ep(9), locale), id).toStrictEqual([])
-        expect(projected(id, ep(10), locale), id).not.toStrictEqual([])
+      for (const [id, gate] of [
+        ['hot-pie', 10],
+        ['lommy', 13],
+      ] as const) {
+        expect(projected(id, ep(gate - 1), locale), id).toStrictEqual([])
+        expect(projected(id, ep(gate), locale), id).not.toStrictEqual([])
         expect(
           projected(id, ch(archive.series.chapterCeiling), locale),
           id,

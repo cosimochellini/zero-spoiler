@@ -2545,13 +2545,6 @@ const STORIES: Row[] = [
     title: 'Arry’s sword',
   },
   {
-    id: 'lommy',
-    medium: 'show',
-    episode: 10,
-    chapter: 75,
-    title: 'Backing Hot Pie',
-  },
-  {
     id: 'lysa-arryn',
     medium: 'show',
     episode: 5,
@@ -4019,7 +4012,6 @@ const FIRST: { chapter: number; episode: number; id: string }[] = [
   { id: 'podrick-payne', episode: 19, chapter: 63 },
   { id: 'addam-marbrand', episode: 10, chapter: 63 },
   { id: 'hot-pie', episode: 10, chapter: 75 },
-  { id: 'lommy', episode: 10, chapter: 75 },
   { id: 'lysa-arryn', episode: 5, chapter: 35 },
   { id: 'robin-arryn', episode: 5, chapter: 35 },
   { id: 'hugh-of-the-vale', episode: 4, chapter: 30 },

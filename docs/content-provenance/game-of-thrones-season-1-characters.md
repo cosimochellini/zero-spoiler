@@ -1397,8 +1397,9 @@ Wikipedia has no entry (owner, 2026-11-03).
 
 ### Hot Pie (`hot-pie`)
 
-- Episode 10: Fire and Blood: one of Yoren's recruits who bully 'Arry'; synopsis
-  names him.
+- Episode 10: Fire and Blood: one of Yoren's recruits who bully 'Arry'; Lommy
+  tells Arya, "You'd better give Hot Pie the sword" (Fandom Hot Pie page,
+  quotes), the naming signal #1457 cites.
 - Chapter 75: A Clash of Kings, Arya I: tries to take Needle and Arya beats him
   (Appearing list; synopsis names him).
 - Italian: Frittella (it.wikipedia
@@ -1406,8 +1407,10 @@ Wikipedia has no entry (owner, 2026-11-03).
 
 ### Lommy Greenhands (`lommy`)
 
-- Episode 10: Fire and Blood: one of Yoren's recruits who bully 'Arry'; synopsis
-  names him ('Lommy Greenhands').
+- Episode 13: What Is Dead May Never Die (S2E3): Arya tells Amory Lorch that the
+  dead Lommy was Gendry (Fandom Lommy page, GOT203), the first time his name is
+  said (#1457). Owner check: he is on screen from Fire and Blood (episode 10),
+  bullying 'Arry', named there only by the synopsis's narration.
 - Chapter 75: A Clash of Kings, Arya I: names Arya 'Lumpyhead' and eggs Hot Pie
   on (Appearing list; synopsis names him).
 - Italian: Lommy Maniverdi (it.wikipedia

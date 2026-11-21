@@ -1704,13 +1704,7 @@ export const GAME_OF_THRONES_SOURCES = {
   'hot-pie': {
     '10:75': {
       source: `${SHOW}Hot_Pie`,
-      note: 'Season 1, citing GOT110: with Lommy he bullies Arry for Needle, claims he kicked a boy to death, Arya threatens him, he backs into Gendry, who scares him off. Show only: in the books Hot Pie opens at chapter 75, so the chapter only orders it.',
-    },
-  },
-  'lommy': {
-    '10:75': {
-      source: `${SHOW}Lommy`,
-      note: 'Season 1, citing GOT110: he and Hot Pie bully Arya for her sword, he backs Hot Pie’s boast, Arya refuses, and both flee from Gendry. Show only: Lommy opens in the books at chapter 75.',
+      note: 'Season 1, citing GOT110: with another recruit he bullies Arry for Needle, claims he kicked a boy to death, Arya threatens him, he backs into Gendry, who scares him off. Show only: in the books Hot Pie opens at chapter 75, so the chapter only orders it.',
     },
   },
   'lysa-arryn': {
@@ -2034,7 +2028,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '10:66': {
       source: EPISODE_10,
-      note: 'Show only: Yoren calls her boy, cuts her hair, plans to take her to Winterfell as a recruit, and she joins Gendry, Hot Pie and Lommy as Arry.',
+      note: 'Show only: Yoren calls her boy, cuts her hair, plans to take her to Winterfell as a recruit, and she joins Gendry, Hot Pie and another boy as Arry (Lommy is named only at episode 13, #1457).',
     },
   },
   'jory-cassel': {

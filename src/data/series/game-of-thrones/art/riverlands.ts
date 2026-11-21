@@ -103,9 +103,9 @@ const BURNING_TREE: Stroke[] = [
 
 /**
  * Podrick Payne: the spear he drives through Ser Mandon Moore's head to save
- * Tyrion on the Blackwater (episode 19), with the wine jug he pours for
- * Tyrion and Janos Slynt in episode 12, where the show brings him in; the
- * book has him from Tyrion VIII (chapter 63) and gives him no spear. The
+ * Tyrion on the Blackwater (episode 19), his show gate, with the wine jug he
+ * pours for Tyrion and Janos Slynt in episode 12, before the show names him;
+ * the book has him from Tyrion VIII (chapter 63) and gives him no spear. The
  * show is the reference. The jug's far side is hatched; the accent is the
  * spear's point.
  */
@@ -257,8 +257,9 @@ const PIE: Stroke[] = [
 
 /**
  * Lommy: a dye vat with a stirring stick and a cloth over its rim, for the
- * dyer's apprentice with green hands among Yoren's recruits in episode 10
- * and in A Clash of Kings (chapter 75). The accent is the dye.
+ * dyer's apprentice with green hands among Yoren's recruits, from episode 10
+ * on screen and named in episode 13, his show gate, and in A Clash of Kings
+ * (chapter 75). The accent is the dye.
  */
 const DYE_VAT: Stroke[] = [
   { d: ellipse(80, 82, 44, 12) },
@@ -301,9 +302,9 @@ const TANKARD_CAGE: Stroke[] = [
   shadow(64, 156, 34),
 ]
 /**
- * Rorge: the cage on its wagon side on, wheels and shaft, for the prisoner
- * who demands beer and threatens Arya in episode 12 and in A Clash of Kings
- * (chapter 79). The accent is the shaft.
+ * Rorge: the cage on its wagon side on, wheels and shaft, for the noseless
+ * prisoner Jaqen introduces in A Clash of Kings (chapter 79), the record the
+ * books' alone. The accent is the shaft.
  */
 const CAGE_WAGON: Stroke[] = [
   { d: 'M24 112 H136 V120 H24 Z' },
@@ -325,8 +326,8 @@ const CAGE_WAGON: Stroke[] = [
 ]
 /**
  * Biter: a corner of the cage seen from below, chains hanging inside it,
- * for the mute prisoner chained there in episode 12 and in A Clash of
- * Kings (chapter 79). The accent is the chains.
+ * for the mute prisoner chained there in A Clash of Kings (chapter 79), the
+ * record the books' alone. The accent is the chains.
  */
 const CAGE_CORNER: Stroke[] = [
   {
@@ -416,12 +417,15 @@ export const RIVERLANDS_DRAWINGS = {
 /** The Riverlands cast drawn again later in the story. */
 export const riverlandsRedrawn: Redrawings = {
   'lommy': [
-    // The vat on its side and the dye run out across the ground: Lannister
-    // men kill him, in episode 13 (Polliver) and in Arya V of A Clash of
-    // Kings (chapter 93, Raff the Sweetling).
+    // The vat on its side and the dye run out across the ground: Raff the
+    // Sweetling kills him in Arya V of A Clash of Kings (chapter 93). The show
+    // kills him (Polliver) in "What Is Dead May Never Die" (episode 13), the
+    // episode his show record opens in, where no stage can sit, so the stage
+    // is the book's (#1457, as Mandon Moore's).
     {
       episode: 13,
       chapter: 93,
+      source: 'chapter',
       value: [
         ...moved(DYE_VAT.slice(0, 2), 'rotate(-90 80 110)'),
         ...moved(DYE_VAT.slice(3, 4), 'rotate(-90 80 110)'),
