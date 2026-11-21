@@ -20,9 +20,10 @@ import type { InputKind, Inputs, Located } from './inputs'
 /** The public description of the open series a call names. */
 function describedBy(data: Located): Series {
   const series = descriptionOf(data.series)
-  // The validator has already refused an unknown slug (`./inputs`); this
-  // module imports nothing of it at run time, so the validators stay in the
-  // route chunk and out of the shared server chunk.
+  // The validator has already refused an unknown slug (`./inputs`). This
+  // module imports `./inputs` for its types alone. What keeps the
+  // projections out of the route chunks is not this, but that the validators
+  // in `./api` read `INPUTS`, never `ENDPOINTS`.
   if (series === null) {
     throw new Error('A known series is required')
   }

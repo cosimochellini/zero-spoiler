@@ -63,6 +63,28 @@ describe('serving an entry', () => {
     expect(readTrial).not.toHaveBeenCalled()
   })
 
+  it('draws a record page with no bookmark at the record itself (#1430)', async () => {
+    vi.mocked(readBookmark).mockReturnValue(null)
+    const { characters, series } = await archiveOf('one-piece')
+    const late = characters.find(
+      ({ revealedAtEpisode }) => revealedAtEpisode > series.demoLastEpisode,
+    )
+    const record = archivePage({
+      input: 'addressed',
+      reads: 'page',
+      page: ({ id }, r) =>
+        r.archive.characters.some(
+          (entity) => entity.id === id && r.sees(entity),
+        ),
+    })
+
+    // Past the demo, so a page drawn as a list, at the demo's end, hides it.
+    expect(late).toBeDefined()
+    await expect(serve(record, { ...DATA, id: late?.id ?? '' })).resolves.toBe(
+      true,
+    )
+  })
+
   it('hands the trial to the landing alone', async () => {
     const trial = { ...seen, reads: 'trial' as const }
 
