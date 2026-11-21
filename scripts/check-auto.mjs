@@ -30,7 +30,9 @@ export function pickCheck(load, cores) {
 }
 
 function main() {
-  // ponytail: Windows reports a load of 0, so it always runs the full check.
+  // ponytail: POSIX only. Windows reports a load of 0, and spawning `npm`
+  // without a shell fails there. Killing this wrapper alone leaves the check
+  // running, since spawnSync blocks any forwarding; Ctrl-C reaches both.
   const { script, env, line } = pickCheck(
     os.loadavg()[0],
     os.availableParallelism(),
