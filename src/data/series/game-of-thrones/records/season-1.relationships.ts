@@ -10875,7 +10875,8 @@ export const season1Relationships = {
   ],
   // Hot Pie's book record opens after stage 1 (chapter 75). Lommy's show
   // record opens at episode 31, past stage 2, where his name is first said
-  // (#1457): his cards, and Hot Pie's card for him, wait for stage 4.
+  // (#1457): his show-side cards, and Hot Pie's card for him, wait for stage 4;
+  // his book-side cards (from chapter 75) belong to stage 2 (#1481).
   'hot-pie': [
     {
       episode: 10,

@@ -2028,7 +2028,7 @@ export const GAME_OF_THRONES_SOURCES = {
     },
     '10:66': {
       source: EPISODE_10,
-      note: 'Show only: Yoren calls her boy, cuts her hair, plans to take her to Winterfell as a recruit, and she joins Gendry, Hot Pie and another boy as Arry (Lommy is named only at episode 13, #1457).',
+      note: 'Show only: Yoren calls her boy, cuts her hair, plans to take her to Winterfell as a recruit, and she joins Gendry, Hot Pie and another boy as Arry (Lommy is first named on screen at episode 31, #1457).',
     },
   },
   'jory-cassel': {
