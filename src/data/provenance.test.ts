@@ -80,17 +80,40 @@ function titlesOn(hosts: string[]): Set<string> {
 /** The provenance folder: every ledger and research note beside `sources.json`. */
 const LEDGERS = path.join(import.meta.dirname, '../../docs/content-provenance')
 
-/** Every wiki revision a ledger or note cites, with the file citing it. */
-const cited = readdirSync(LEDGERS)
+/** A URL a provenance file cites with `?oldid=`, and the file citing it. */
+interface Cited {
+  file: string
+  href: string
+  url: URL
+}
+
+/** The URL a match names, or `undefined` when it is not one. */
+function urlOf(href: string): undefined | URL {
+  try {
+    return new URL(href)
+  } catch {
+    return undefined
+  }
+}
+
+/**
+ * Every `?oldid=` match in a ledger or note. A match stops at whitespace, a
+ * quote, an angle and a square bracket: two adjacent Markdown links stay two,
+ * and a title's parentheses (`Gon_(2011)?oldid=`) hold.
+ */
+const matches = readdirSync(LEDGERS)
   .filter((file) => /\.(?:json|md)$/u.test(file) && file !== 'sources.json')
   .flatMap((file) => {
     // eslint-disable-next-line security/detect-non-literal-fs-filename -- a file listed in the folder above.
     const text = readFileSync(path.join(LEDGERS, file), 'utf8')
     return Array.from(
-      text.matchAll(/https:\/\/[^\s"<>]*?[?&]oldid=\d+/gu),
-      ([url]) => ({ file, url: new URL(url) }),
+      text.matchAll(/https?:\/\/[^\s"<>[\]]*?[?&]oldid=\d+/gu),
+      ([href]) => ({ file, href, url: urlOf(href) }),
     )
   })
+
+/** The matches that are URLs. */
+const cited = matches.filter((match): match is Cited => match.url !== undefined)
 
 /** The pinned revisions' titles, by `<host><path> <revision>`. */
 const revisions = new Map(
@@ -104,9 +127,31 @@ const revisions = new Map(
 function titleIn({ pathname, searchParams }: URL): string | undefined {
   const page =
     pathname.startsWith('/wiki/') ?
-      decodeURIComponent(pathname.slice('/wiki/'.length))
+      pathname.slice('/wiki/'.length)
     : searchParams.get('title')
-  return page?.replaceAll('_', ' ')
+  if (page === null) {
+    return undefined
+  }
+  try {
+    return decodeURIComponent(page).replaceAll('_', ' ')
+  } catch {
+    // A malformed escape names no pinned title, so the check reports it.
+    return page
+  }
+}
+
+/** Why a revision URL is not pinned, or `undefined` when it is. */
+function unpinnedBecause(url: URL): string | undefined {
+  const title = revisions.get(
+    `${url.host}/index.php ${url.searchParams.get('oldid') ?? ''}`,
+  )
+  if (title === undefined) {
+    return 'revision not pinned'
+  }
+  const named = titleIn(url)
+  return named === undefined || named === title ?
+      undefined
+    : `revision pinned as "${title}"`
 }
 
 const PROVENANCE: Provenance[] = [
@@ -187,6 +232,27 @@ const PROVENANCE: Provenance[] = [
     },
   },
 ]
+
+describe('the wiki revisions the provenance files cite', () => {
+  // A broken folder path or pattern would let every series pass on nothing.
+  it('finds some on the series wikis', () => {
+    const hosts = new Set(
+      PROVENANCE.flatMap(({ wikis }) => Object.values(wikis)),
+    )
+
+    expect(
+      cited.filter(({ url }) => hosts.has(url.host)).length,
+    ).toBeGreaterThan(0)
+  })
+
+  it('parses each as a URL', () => {
+    expect(
+      matches
+        .filter(({ url }) => url === undefined)
+        .map(({ file, href }) => `${file}: ${href}`),
+    ).toStrictEqual([])
+  })
+})
 
 describe.each(PROVENANCE)(
   '$name relationship provenance',
@@ -286,23 +352,26 @@ describe.each(PROVENANCE)(
     )
 
     // `npm run provenance:pin` pins only a wiki's English root: a language
-    // path (`/it/wiki/…`) stays a plain URL, as Italian Wikipedia does.
-    it('pins every revision the ledgers and notes cite from its wikis', () => {
-      const hosts = Object.values(wikis)
-      const unpinned = cited
+    // path (`/it/wiki/…`) stays a plain URL, as Italian Wikipedia does. The
+    // count in the title shows a series that cites none.
+    const revisionsCited = cited.filter(
+      ({ url }) =>
+        Object.values(wikis).includes(url.host)
+        && /^\/(?:wiki\/|index\.php$)/u.test(url.pathname),
+    )
+
+    it(`pins all ${String(revisionsCited.length)} revisions the ledgers and notes cite from its wikis`, () => {
+      const unpinned = revisionsCited
+        .map(({ file, href, url }) => ({
+          file,
+          href,
+          why: unpinnedBecause(url),
+        }))
         .filter(
-          ({ url }) =>
-            hosts.includes(url.host)
-            && /^\/(?:wiki\/|index\.php$)/u.test(url.pathname),
+          (entry): entry is { file: string; href: string; why: string } =>
+            entry.why !== undefined,
         )
-        .filter(({ url }) => {
-          const title = revisions.get(
-            `${url.host}/index.php ${url.searchParams.get('oldid') ?? ''}`,
-          )
-          const named = titleIn(url)
-          return title === undefined || (named !== undefined && named !== title)
-        })
-        .map(({ file, url }) => `${file}: ${url.href}`)
+        .map(({ file, href, why }) => `${file}: ${href} (${why})`)
 
       expect(unpinned).toStrictEqual([])
     })
