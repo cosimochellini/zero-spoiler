@@ -55,9 +55,9 @@ gates.
   chapter would both see. The reader keeps the null bookmark and the
   null-bookmark archive copy, so its handles are the ones “Show anyway”
   resolves. A bookmark or a trial gets its own reader, unchanged. Each such
-  payload says so (`drawnAt` in `src/server/archive/payloads.server.ts`), and
-  the leak sweep reads every key of it with no bookmark, in both locales, held
-  to both of its points (`src/test/visitor.ts`).
+  payload says so (`reads: 'page'` in `src/server/archive/payloads.server.ts`,
+  hence its `drawnAt`), and the leak sweep reads every key of it with no
+  bookmark, in both locales, held to both of its points (`src/test/visitor.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
@@ -411,12 +411,16 @@ with the legal page alone. Copy rules live in the
 
 ## Extending the archive boundary
 
-- Register new server functions in `PAYLOADS` in
-  `src/server/archive/payloads.server.ts`, including ids/handles they accept.
-  For `plain()` responses, extend the JSON round-trip checks there too. New
-  payload names go at the end of its `order`, after the deployed ones, so One
-  Piece's sweep and dump stay byte for byte: `loadAbilities`, `loadAbility` and
-  `liftAbility` (#923) are the last.
+- Describe a new server function once, as an entry of `ENDPOINTS` in
+  `src/server/archive/payloads.server.ts`: its input (`src/server/inputs.ts`),
+  the bookmark it reads (`reads`), its projection, whether it answers with
+  `plain`, and the ids or handles the sweep asks it with (`keys`). Then add its
+  wrapper to `src/server/api.ts`: one literal
+  `createServerFn().validator(...).handler(...)` that serves the entry, because
+  Start's compiler needs one per export. The sweep, the dump and the JSON
+  round-trip checks read the same entry. A new entry goes at the end of the
+  table, after the deployed ones, so One Piece's sweep and dump stay byte for
+  byte: `loadAbilities`, `loadAbility` and `liftAbility` (#923) are the last.
 - Register new prose outside a series' `records/` in its `EXTRA.prose` entry in
   `scripts/archive-gate.mjs` and in `textsOf` in `src/data/leaks.test.ts`, using
   the page's actual gate.

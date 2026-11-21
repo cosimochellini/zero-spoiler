@@ -8,6 +8,12 @@ import { legalOf } from '~/server/sources.server'
 import { abilityPage, abilitySheet } from './abilities.server'
 import { chronicleRestOf } from './chronicle.server'
 import { creditsPage } from './credits.server'
+import {
+  archivePage,
+  type DrawnAt,
+  seriesPage,
+  type Swept,
+} from './endpoint.server'
 import { fillerPage, peekFiller } from './filler.server'
 import { fruitPage } from './fruitPage.server'
 import {
@@ -38,224 +44,233 @@ import {
 import { placePage } from './placePage.server'
 import { placesPage } from './places.server'
 import { powerPage } from './power.server'
-import { pageReader, type Reader, readerFor } from './reader.server'
 import { sagaLabels } from './sagaLabels.server'
 
-/** Every payload served by the compiler-visible server-function wrappers. */
+/**
+ * Every server function, described once: `~/server/api` serves each entry
+ * behind one compiler-visible wrapper, and the sweep asks each through
+ * `payloadsFor`.
+ */
+
+const characterIds = (archive: SeriesArchive): string[] =>
+  archive.characters.map(({ id }) => id)
+const fruitIds = (archive: SeriesArchive): string[] =>
+  withFeatures(archive).fruits.map(({ id }) => id)
+const abilityIds = (archive: SeriesArchive): string[] =>
+  withFeatures(archive).abilities.map(({ id }) => id)
+const handles = (archive: SeriesArchive): string[] =>
+  archive.entities.map(({ id }) => handleOf(id, archive))
+
+/**
+ * The table, in the deployed sweep order: One Piece's dump stays byte for
+ * byte only while the order holds, so a new entry goes at the end.
+ */
+export const ENDPOINTS = {
+  loadCredits: archivePage({
+    input: 'located',
+    reads: 'cookie',
+    page: (_, r) => creditsPage(r),
+  }),
+  // The sweep asks with no trial (#1394): a trial gives way to a saved
+  // bookmark and only stands as the demo's `start` beside the null reader.
+  loadHome: archivePage({
+    input: 'located',
+    reads: 'trial',
+    page: (_, r, trial) => landingPage(r, trial),
+  }),
+  loadCharacters: archivePage({
+    input: 'located',
+    reads: 'page',
+    page: (_, r) => charactersPage(r),
+  }),
+  // Plain JSON: the browser asks for the shelves once the page is up (#776).
+  loadShelves: archivePage({
+    input: 'located',
+    reads: 'page',
+    plain: true,
+    page: (_, r) => shelvesPage(r),
+  }),
+  loadCharacter: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    keys: characterIds,
+    page: ({ id }, r) => characterPage(id, r) ?? null,
+  }),
+  loadRelationships: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    keys: characterIds,
+    page: ({ id }, r) => relationshipsPage(id, r),
+  }),
+  // Plain JSON: the browser asks for the older stories on the reader's click.
+  loadChronicleRest: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    plain: true,
+    keys: characterIds,
+    page: ({ id }, r) => chronicleRestOf(id, r),
+  }),
+  // Plain JSON, as the album below (#780).
+  loadDrawings: archivePage({
+    input: 'listed',
+    reads: 'page',
+    plain: true,
+    keys: (archive) => archive.entities.map(({ id }) => id),
+    page: ({ ids }, r) => drawingsFor(ids, r),
+  }),
+  loadFruits: archivePage({
+    input: 'located',
+    reads: 'page',
+    page: (_, r) => fruitSheet(r),
+  }),
+  // Plain JSON: the browser asks for the plates once the page is up (#780).
+  loadFruitAlbum: archivePage({
+    input: 'located',
+    reads: 'page',
+    plain: true,
+    page: (_, r) => fruitAlbum(r),
+  }),
+  loadFruit: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    keys: fruitIds,
+    page: ({ id }, r) => fruitPage(id, r) ?? null,
+  }),
+  loadFruitEaters: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    keys: fruitIds,
+    page: ({ id }, r) => fruitEaters(id, r),
+  }),
+  loadFruitSiblings: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    keys: fruitIds,
+    page: ({ id }, r) => fruitSiblings(id, r),
+  }),
+  loadPlaces: archivePage({
+    input: 'located',
+    reads: 'page',
+    page: (_, r) => placesPage(r),
+  }),
+  loadPlace: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    keys: (archive) =>
+      [...archive.places, ...withFeatures(archive).ships].map(({ id }) => id),
+    page: ({ id }, r) => placePage(id, r) ?? null,
+  }),
+  loadFiller: archivePage({
+    input: 'located',
+    reads: 'page',
+    page: (_, r) => fillerPage(r),
+  }),
+  loadSagaLabels: archivePage({
+    input: 'located',
+    reads: 'cookie',
+    page: (_, r) => sagaLabels(r),
+  }),
+  liftFiller: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: (archive) =>
+      withFeatures(archive).filler.map((_, index) =>
+        indexHandle(index, archive),
+      ),
+    page: ({ handle }, r) => peekFiller(handle, r) ?? null,
+  }),
+  liftCharacter: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: handles,
+    page: ({ handle }, r) => peekCharacter(handle, r) ?? null,
+  }),
+  liftDossier: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: handles,
+    page: ({ handle }, r) => peekDossier(handle, r) ?? null,
+  }),
+  liftFruit: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: handles,
+    page: ({ handle }, r) => peekFruit(handle, r) ?? null,
+  }),
+  liftRecord: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: handles,
+    page: ({ handle }, r) => peekRecord(handle, r) ?? null,
+  }),
+  liftPort: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: handles,
+    page: ({ handle }, r) => peekPort(handle, r) ?? null,
+  }),
+  liftShip: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: handles,
+    page: ({ handle }, r) => peekShip(handle, r) ?? null,
+  }),
+  // A series' own copy in one locale, sent with its pages: its words reach no
+  // client chunk, so a reader of one series never downloads another's.
+  loadSeriesCopy: seriesPage(({ locale }, series) => copyOf(series, locale)),
+  // What the legal page needs of an open series: the lines of its copy the
+  // page prints and its sources, never the whole copy.
+  loadSeriesLegal: seriesPage(({ locale }, series) => legalOf(series, locale)),
+  // Public demo only: neither cookies nor request-supplied bookmarks expand it.
+  loadDemoDrawings: archivePage({
+    input: 'located',
+    reads: 'demo',
+    plain: true,
+    page: (_, r) => demoDrawingsPage(r),
+  }),
+  loadPower: archivePage({
+    input: 'located',
+    reads: 'page',
+    page: (_, r) => powerPage(r),
+  }),
+  // Hunter x Hunter's Nen abilities (#923), after every earlier page.
+  loadAbilities: archivePage({
+    input: 'located',
+    reads: 'page',
+    page: (_, r) => abilitySheet(r),
+  }),
+  loadAbility: archivePage({
+    input: 'addressed',
+    reads: 'page',
+    keys: abilityIds,
+    page: ({ id }, r) => abilityPage(id, r) ?? null,
+  }),
+  liftAbility: archivePage({
+    input: 'handled',
+    reads: 'cookie',
+    keys: handles,
+    page: ({ handle }, r) => peekAbility(handle, r) ?? null,
+  }),
+}
+
+/** One server function's payload, bound to one archive, as the sweep asks it. */
 export interface Payload {
-  /**
-   * How `pageReader` draws the page for a reader with no bookmark (#1430): a
-   * record page at its key's first appearance, a list at the end of the demo.
-   * Absent for a page read by the bookmark alone.
-   */
+  /** See `Swept.drawnAt` in `./endpoint.server`. */
   drawnAt?: DrawnAt
   keys?: () => string[]
   name: string
+  plain: boolean
   run: (bookmark: Bookmark, locale: Locale, key: string) => unknown
-}
-
-/** The two kinds of page `pageReader` draws at a point. */
-export type DrawnAt = 'list' | 'record'
-
-/**
- * A page `api.ts` reads through `pageReaderIn`: one place picks both its
- * reader and its `drawnAt`, so the sweep cannot hold a page to a point it is
- * not drawn at.
- */
-function drawnPage(
-  archive: SeriesArchive,
-  {
-    drawnAt,
-    keys,
-    name,
-    page,
-  }: Pick<Payload, 'keys' | 'name'> & {
-    drawnAt: DrawnAt
-    page: (key: string, r: Reader) => unknown
-  },
-): Payload {
-  return {
-    drawnAt,
-    name,
-    ...(keys !== undefined && { keys }),
-    run: (b, l, key) =>
-      page(
-        key,
-        pageReader(
-          archive,
-          b,
-          drawnAt === 'record' ? { id: key, locale: l } : { locale: l },
-        ),
-      ),
-  }
-}
-
-function listPayloads(archive: SeriesArchive): Payload[] {
-  const list = (name: string, page: (r: Reader) => unknown): Payload =>
-    drawnPage(archive, { drawnAt: 'list', name, page: (_, r) => page(r) })
-  return [
-    {
-      name: 'loadCredits',
-      run: (b, l) => creditsPage(readerFor(archive, b, l)),
-    },
-    {
-      name: 'loadDemoDrawings',
-      run: (_, l) => demoDrawingsPage(readerFor(archive, null, l)),
-    },
-    {
-      name: 'loadHome',
-      run: (b, l) => landingPage(readerFor(archive, b, l), null),
-    },
-    list('loadCharacters', charactersPage),
-    list('loadShelves', shelvesPage),
-    list('loadFruits', fruitSheet),
-    list('loadFruitAlbum', fruitAlbum),
-    list('loadPlaces', placesPage),
-    list('loadFiller', fillerPage),
-    list('loadPower', powerPage),
-    list('loadAbilities', abilitySheet),
-    { name: 'loadSeriesCopy', run: (_, l) => copyOf(archive.series, l) },
-    { name: 'loadSeriesLegal', run: (_, l) => legalOf(archive.series, l) },
-    {
-      name: 'loadSagaLabels',
-      run: (b, l) => sagaLabels(readerFor(archive, b, l)),
-    },
-  ]
-}
-
-function recordPayloads(archive: SeriesArchive): Payload[] {
-  const characterIds = (): string[] => archive.characters.map(({ id }) => id)
-  const fruitIds = (): string[] =>
-    withFeatures(archive).fruits.map(({ id }) => id)
-  const abilityIds = (): string[] =>
-    withFeatures(archive).abilities.map(({ id }) => id)
-  const record = (
-    name: string,
-    keys: () => string[],
-    page: (id: string, r: Reader) => unknown,
-  ): Payload => drawnPage(archive, { drawnAt: 'record', name, keys, page })
-  return [
-    record(
-      'loadCharacter',
-      characterIds,
-      (id, r) => characterPage(id, r) ?? null,
-    ),
-    record('loadRelationships', characterIds, (id, r) =>
-      relationshipsPage(id, r),
-    ),
-    record('loadChronicleRest', characterIds, (id, r) =>
-      chronicleRestOf(id, r),
-    ),
-    drawnPage(archive, {
-      drawnAt: 'list',
-      name: 'loadDrawings',
-      keys: () => archive.entities.map(({ id }) => id),
-      page: (id, r) => drawingsFor([id], r),
-    }),
-    record('loadFruit', fruitIds, (id, r) => fruitPage(id, r) ?? null),
-    record('loadFruitEaters', fruitIds, (id, r) => fruitEaters(id, r)),
-    record('loadFruitSiblings', fruitIds, (id, r) => fruitSiblings(id, r)),
-    record(
-      'loadPlace',
-      () =>
-        [...archive.places, ...withFeatures(archive).ships].map(({ id }) => id),
-      (id, r) => placePage(id, r) ?? null,
-    ),
-    record('loadAbility', abilityIds, (id, r) => abilityPage(id, r) ?? null),
-  ]
-}
-
-function liftedPayloads(archive: SeriesArchive): Payload[] {
-  const keys = (): string[] =>
-    archive.entities.map(({ id }) => handleOf(id, archive))
-  return [
-    {
-      name: 'liftFiller',
-      keys: () =>
-        withFeatures(archive).filler.map((_, index) =>
-          indexHandle(index, archive),
-        ),
-      run: (b, l, h) => peekFiller(h, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'liftCharacter',
-      keys,
-      run: (b, l, h) => peekCharacter(h, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'liftDossier',
-      keys,
-      run: (b, l, h) => peekDossier(h, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'liftFruit',
-      keys,
-      run: (b, l, h) => peekFruit(h, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'liftRecord',
-      keys,
-      run: (b, l, h) => peekRecord(h, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'liftPort',
-      keys,
-      run: (b, l, h) => peekPort(h, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'liftShip',
-      keys,
-      run: (b, l, h) => peekShip(h, readerFor(archive, b, l)) ?? null,
-    },
-    {
-      name: 'liftAbility',
-      keys,
-      run: (b, l, h) => peekAbility(h, readerFor(archive, b, l)) ?? null,
-    },
-  ]
 }
 
 /** Load an archive once; every projection and sweep then stays synchronous. */
 export function payloadsFor(archive: SeriesArchive): Payload[] {
-  const all = [
-    ...listPayloads(archive),
-    ...recordPayloads(archive),
-    ...liftedPayloads(archive),
-  ]
-  // Preserve the deployed sweep order for byte-for-byte One Piece parity.
-  const order = [
-    'loadCredits',
-    'loadHome',
-    'loadCharacters',
-    'loadShelves',
-    'loadCharacter',
-    'loadRelationships',
-    'loadChronicleRest',
-    'loadDrawings',
-    'loadFruits',
-    'loadFruitAlbum',
-    'loadFruit',
-    'loadFruitEaters',
-    'loadFruitSiblings',
-    'loadPlaces',
-    'loadPlace',
-    'loadFiller',
-    'loadSagaLabels',
-    'liftFiller',
-    'liftCharacter',
-    'liftDossier',
-    'liftFruit',
-    'liftRecord',
-    'liftPort',
-    'liftShip',
-    'loadSeriesCopy',
-    'loadSeriesLegal',
-    'loadDemoDrawings',
-    'loadPower',
-    // Hunter x Hunter's Nen abilities (#923), after every earlier page.
-    'loadAbilities',
-    'loadAbility',
-    'liftAbility',
-  ]
-  return order.flatMap((name) => all.filter((payload) => payload.name === name))
+  const entries: [string, Swept][] = Object.entries(ENDPOINTS)
+  return entries.map(([name, { drawnAt, keys, plain, sweep }]) => ({
+    ...(drawnAt !== undefined && { drawnAt }),
+    ...(keys !== undefined && { keys: () => keys(archive) }),
+    name,
+    plain: plain === true,
+    run: sweep(archive),
+  }))
 }
