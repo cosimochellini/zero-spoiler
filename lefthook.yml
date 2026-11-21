@@ -44,11 +44,14 @@ commit-msg:
 pre-push:
   jobs:
     - name: test
-      # Only the tests that the branch's changes reach through imports, or all
-      # of them when a trigger in vitest.config.ts changes (package.json, the
-      # lockfile, tsconfig.json, the Vitest config, the setup file). The full
-      # suite already ran in `npm run check` and runs again in CI. A test that
-      # reads a file with fs, not an import, is not picked up; CI catches it.
+      # Only the tests that the branch's changes reach through imports. All of
+      # them run when a forceRerunTriggers file in vitest.config.ts changes
+      # (package.json, the lockfile, tsconfig.json, the Vite or Vitest config),
+      # and when a change reaches the setup file, an .env file or a config
+      # dependency: the i18n dictionaries reach src/test/setup.ts, so a copy
+      # change runs all of them. A test that reads a file with fs, not an
+      # import, is not picked up. CI runs the full suite on a ready PR, and
+      # that is the gate.
       # The diff starts at the merge base, so a stale origin/main needs no
       # fetch; a missing one stops the push with git's error.
       run: ./node_modules/.bin/vitest run --changed origin/main
