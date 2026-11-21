@@ -13,8 +13,9 @@
  *   2. `fallow security --gate new`, which fails only on a security candidate
  *      that the branch introduces against SECURITY_BASE. The backlog it
  *      already lists is reviewed by hand, not gated;
- *   3. `fallow health --min-score`, which fails when the health score the
- *      README badge shows drops below MIN_SCORE.
+ *   3. `fallow health --min-score`, which fails when the health score drops
+ *      below MIN_SCORE. It leaves out the hotspot penalty that the README
+ *      badge subtracts, so the badge can read lower.
  *
  * Exit codes are fallow's own, forwarded as-is:
  *   0   clean
