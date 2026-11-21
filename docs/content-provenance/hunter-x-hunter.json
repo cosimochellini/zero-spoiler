@@ -1,4 +1,48 @@
 {
+  "hunter-exam-arc": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Hunter_Exam_arc?oldid=423052",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_1?oldid=416129",
+      "https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)?oldid=417858",
+      "https://it.wikipedia.org/wiki/Capitoli_di_Hunter_%C3%97_Hunter?oldid=153336396#Volumi_1-10"
+    ],
+    "unverified": [
+      "Gate at chapter 1 / episode 1: the first chapter and 2011 episode of the arc on its infobox (chapters 1–43, episodes 1–26).",
+      "Summary (Gon leaves Whale Island for the exam and to look for the Hunter father he never met) against the Chapter 1 and Episode 1 (2011) synopses.",
+      "Italian name: Italian Wikipedia says «esame per diventare Hunter»; the short «Esame Hunter» is not checked against the Italian edition or dub.",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
+    ]
+  },
+  "mito-freecss": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Mito_Freecss?oldid=424311",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_1?oldid=416129",
+      "https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)?oldid=417858",
+      "https://hunterxhunter.fandom.com/wiki/Whale_Island?oldid=421735",
+      "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter?oldid=153445438#Myto_Freecss"
+    ],
+    "unverified": [
+      "Gate at chapter 1 / episode 1: her manga and 2011 anime debuts on the wiki page and in both synopses.",
+      "Aunt (role, summary): Gon calls her so (Chapter 1 notes «Aunt Mito», Episode 1 (2011) «aunt», Italian Wikipedia «benché Gon la chiami \"zia\"»); chapter 65 makes her Ging’s cousin, which the record does not file.",
+      "Raised him since he was a baby, the swamp-fish condition and the farewell at the harbour: Chapter 1 and Episode 1 (2011) synopses.",
+      "Italian name Myto: Italian Wikipedia and the wiki’s Italian translation row; the dub’s spoken form not heard.",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
+    ]
+  },
+  "whale-island": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Whale_Island?oldid=421735",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_1?oldid=416129",
+      "https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)?oldid=417858",
+      "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter?oldid=153411257#Isola_Balena"
+    ],
+    "unverified": [
+      "Gate at chapter 1 / episode 1: the manga and 2011 anime debuts on the wiki page.",
+      "Landmark (two mountains with the forest between them): the wiki’s «mountains on each side, mostly forested»; Italian Wikipedia reads the shape as one big mountain and a lower hill. Frames not viewed.",
+      "Log (the whole town at the harbour): Episode 1 (2011) has the inhabitants flock to the harbour; the Chapter 1 synopsis names only a few townspeople. Manga panels not viewed.",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
+    ]
+  },
   "kite": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Kite",
@@ -834,6 +878,21 @@
       "Exact manga page, licensed anime timestamp and 2011 Italian dub form were not directly checked. See the Election coverage inventory for explicit naming evidence."
     ]
   },
+  "heavens-arena-arc": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Heavens_Arena_arc?oldid=423050",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_44?oldid=416150",
+      "https://hunterxhunter.fandom.com/wiki/Episode_27_(2011)?oldid=416399",
+      "https://hunterxhunter.fandom.com/wiki/Heavens_Arena?oldid=423051",
+      "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter?oldid=153411257#Arena_Celeste",
+      "https://it.wikipedia.org/wiki/Capitoli_di_Hunter_%C3%97_Hunter?oldid=153336396#Volumi_1-10"
+    ],
+    "unverified": [
+      "Gate at chapter 44 / episode 27: the first chapter and 2011 episode of the arc on its infobox; episode 27 adapts chapter 44 from page 12.",
+      "Summary: 251 floors (Chapter 44, Episode 27); entry only by beating an opponent (Episode 27: no conditions besides defeating one’s opponent; Chapter 44: a form and a first bout); out of money (both).",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
+    ]
+  },
   "heavens-arena": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Heavens_Arena",
@@ -1317,6 +1376,22 @@
       "#1018: licensed 2011 anime timestamps/frames, manga panels and Italian dub forms not viewed; facts checked through pinned lawful English Wiki narrative synopses.",
       "#1019: manga panels, licensed 2011 anime frames/timestamps and Italian dub forms were not viewed. Facts and inventory were checked through lawful English Wiki MediaWiki API revisions. No disappearance, death or personal-name gate is inferred from appearance metadata or binder-only names.",
       "#1019 final inventory disposition: existing-record. Existing character record shizuku; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof."
+    ]
+  },
+  "yorknew-city-arc": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Yorknew_City_arc?oldid=423056",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_64?oldid=400712",
+      "https://hunterxhunter.fandom.com/wiki/Episode_37_(2011)?oldid=416406",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_44?oldid=416150",
+      "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter?oldid=153411257#York_Shin_City",
+      "https://it.wikipedia.org/wiki/Associazione_Hunter?oldid=153445509"
+    ],
+    "unverified": [
+      "Gate at chapter 64 / episode 37: the first chapter and 2011 episode of the arc on its infobox; episode 37 adapts chapters 64–65.",
+      "Summary: the September 1 meeting in Yorknew during the largest auction in the world is agreed in chapter 44; Gon goes home with Killua in chapter 64 / episode 37.",
+      "Italian name: Italian Wikipedia’s «Saga di York Shin City» (Associazione Hunter, Senritsu).",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
     ]
   },
   "yorknew-city": {
@@ -4425,6 +4500,22 @@
       "Manga panels, licensed episode timestamps and Italian dub audio unviewed. The original drawing is his ringed tail and stinger, from the wiki Appearance section; no head or face."
     ]
   },
+  "chimera-ant-arc": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_arc?oldid=423048",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_185?oldid=416204",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_186?oldid=416206",
+      "https://hunterxhunter.fandom.com/wiki/Episode_76_(2011)?oldid=416441",
+      "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_Queen?oldid=422962",
+      "https://it.wikipedia.org/wiki/Associazione_Hunter?oldid=153445509"
+    ],
+    "unverified": [
+      "Gate at chapter 186 / episode 76: the first chapter and 2011 episode of the arc on its infobox.",
+      "Summary «Where they land, chimera ants are on the move» holds for Episode 76 (2011), where Kite shoots an ant beside a nest as they arrive. In the manga they land beside Kite in Kakin (chapter 185) while the Queen washes ashore on the Balsa Islands’ southern coast and feeds alone in a cave (chapters 185–186). Reported in #1393; the record is unchanged.",
+      "Italian name: Italian Wikipedia’s «saga delle formichimere» (Associazione Hunter).",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
+    ]
+  },
   "neferpitou": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Chapter_198?oldid=416866",
@@ -5257,6 +5348,20 @@
       "Exact manga page, licensed anime timestamp and 2011 Italian dub form were not directly checked. See the Election coverage inventory for explicit naming evidence."
     ]
   },
+  "election-arc": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/13th_Hunter_Chairman_Election_arc?oldid=423047",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_319?oldid=416268",
+      "https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)?oldid=417986",
+      "https://it.wikipedia.org/wiki/Associazione_Hunter?oldid=153445509"
+    ],
+    "unverified": [
+      "Gate at chapter 319 / episode 137: the first chapter and 2011 episode of the arc on its infobox; episode 137 adapts chapters 319–320.",
+      "Summary (the chairman gone, the twelve Zodiacs meet on how to elect the next): Chapter 319 and Episode 137 (2011) synopses.",
+      "Italian name: Italian Wikipedia’s «saga dell’elezione» (Associazione Hunter, Cheadle).",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
+    ]
+  },
   "cheadle-yorkshire": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Cheadle_Yorkshire",
@@ -5538,6 +5643,21 @@
     ],
     "unverified": [
       "Exact manga page, licensed anime timestamp and 2011 Italian dub form were not directly checked. See the Election coverage inventory for explicit naming evidence."
+    ]
+  },
+  "kakin-arc": {
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Succession_Contest_arc?oldid=425681",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_340?oldid=424661",
+      "https://hunterxhunter.fandom.com/wiki/Episode_148_(2011)?oldid=424388",
+      "https://it.wikipedia.org/wiki/Geografia_di_Hunter_%C3%97_Hunter?oldid=153411257#Cakin",
+      "https://it.wikipedia.org/wiki/Capitoli_di_Hunter_%C3%97_Hunter?oldid=153336396#Volumi_31-in_corso"
+    ],
+    "unverified": [
+      "Gate at chapter 340, chapter-only: the arc starts at chapter 340 on its infobox; the 2011 anime ends at episode 148, which adapts chapters 338–339.",
+      "Summary: in chapter 340 King Nasubi announces the voyage to the Dark Continent, which Gel says cannot be found on the world map.",
+      "Italian name Cakin: Italian Wikipedia (Geografia, Capitoli).",
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages not viewed."
     ]
   },
   "beyond-netero": {
