@@ -8,7 +8,7 @@ import { thresholdIn } from '~/lib/progress/spoiler'
 import { foldName, matchFolded } from '~/lib/search/fold'
 import type { RecordView, SearchableCharacter, Slot } from '~/lib/view/records'
 import { leaksOf } from '~/test/fog'
-import { bookmarkAt as bookmark, gateCases, recordOf } from '~/test/gates'
+import { bookmarkAt as bookmark, gateCases, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { onboardingPage } from './onboarding.server'
@@ -96,7 +96,7 @@ const CHARACTERS = CASES.filter(({ kind }) => kind === 'character')
 const FACTS = CHARACTERS.flatMap((row) =>
   (['affiliation', 'epithet', 'origin', 'status'] as const).flatMap((field) =>
     archive
-      .datedOf(recordOf(archive, row.id), field)
+      .datedOf(recordIn(archive, row.id), field)
       .filter((entry) => toldIn(entry.gate, row.mode))
       .filter((entry, index, entries) =>
         lastAtGate(entry, entries.slice(index + 1), row.mode),
@@ -183,7 +183,7 @@ describe('the Hunter Exam’s first two phases', () => {
     'opens $id only at its named scene in $mode ($locale)',
     (row) => {
       const { id, episode, chapter, kind, before, locale } = row
-      const entity = recordOf(archive, id)
+      const entity = recordIn(archive, id)
 
       expect(entity).toMatchObject({
         kind,
@@ -221,7 +221,7 @@ describe('the Hunter Exam’s first two phases', () => {
   it.each(CHARACTERS)(
     'makes $id searchable by either locale’s name in $mode ($locale)',
     ({ id, mode, episode, chapter, locale }) => {
-      const entity = recordOf(archive, id)
+      const entity = recordIn(archive, id)
       const r = readerFor(
         archive,
         bookmark(mode, mode === 'episode' ? episode : chapter),
@@ -237,7 +237,7 @@ describe('the Hunter Exam’s first two phases', () => {
   it.each(FACTS)(
     'gates $id’s $field in $mode ($locale)',
     ({ id, mode, locale, field, entry }) => {
-      const entity = recordOf(archive, id)
+      const entity = recordIn(archive, id)
       const threshold =
         mode === 'episode' ?
           entry.gate.revealedAtEpisode
@@ -379,7 +379,7 @@ const APPLICANT = { en: 'Hunter Exam applicant', it: 'Aspirante Hunter' }
 const IN_YORKNEW: Bookmark = { mode: 'season', season: 3, episode: 9 }
 
 function roleAt(id: string, at: Bookmark, locale: Locale): string | undefined {
-  return characterOf(recordOf(archive, id), readerFor(archive, at, locale)).role
+  return characterOf(recordIn(archive, id), readerFor(archive, at, locale)).role
 }
 
 describe('the roles the Hunter Exam changes', () => {

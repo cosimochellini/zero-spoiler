@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { opened, recordOf } from '~/test/gates'
+import { opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -46,7 +46,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   it.each(CASES)(
     'opens $id’s dated facts only at its naming gate',
     ({ id, chapter }) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
       for (const field of ['affiliation', 'status'] as const) {
@@ -69,7 +69,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   })
 
   it('opens Keeney’s escape-plan relationship at chapter 383', () => {
-    const owner = recordOf(archive, 'keeney')
+    const owner = recordIn(archive, 'keeney')
 
     expect(
       archive.reachedOf(
@@ -88,7 +88,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   })
 
   it('adds Vergei’s Nen teacher only at chapter 375', () => {
-    const owner = recordOf(archive, 'vergei')
+    const owner = recordIn(archive, 'vergei')
     const before = archive.latestOf(
       read({ mode: 'chapter', chapter: 374 }),
       owner,
@@ -110,7 +110,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   it.each(DEATHS)(
     'files %s as deceased only from chapter %i',
     (id, chapter) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
 
@@ -120,7 +120,7 @@ describe.each(LOCALES)('Kakin phase 3 in %s', (locale) => {
   )
 
   it('adds Illumi’s Troupe membership only at chapter 377', () => {
-    const owner = recordOf(archive, 'illumi')
+    const owner = recordIn(archive, 'illumi')
     const before = archive.latestOf(
       read({ mode: 'chapter', chapter: 376 }),
       owner,

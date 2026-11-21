@@ -5,7 +5,7 @@ import { season1Chronicles } from '~/data/series/game-of-thrones/records/season-
 import type { Dated, Entity, Story } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { recordOf } from '~/test/gates'
+import { recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { chronicleOf, chronicleRestOf } from './chronicle.server'
@@ -4141,7 +4141,7 @@ describe('the Essos chronicles of the first stage', () => {
 
   it('files every story on the character the archive holds', () => {
     for (const [id, stories] of Object.entries(season1Chronicles)) {
-      const filed = archive.dossierOf(recordOf(archive, id))?.chronicle
+      const filed = archive.dossierOf(recordIn(archive, id))?.chronicle
 
       expect(filed, id).toStrictEqual(stories)
     }
@@ -4150,7 +4150,7 @@ describe('the Essos chronicles of the first stage', () => {
   it.each(FIRST)(
     'opens $id’s chronicle at episode $episode and chapter $chapter',
     ({ chapter, episode, id }) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const first = archive.dossierOf(owner)?.chronicle?.[0]
 
       expect(first?.episode).toBe(episode)
@@ -4163,7 +4163,7 @@ describe('the Essos chronicles of the first stage', () => {
   it('keeps Jaqen H’ghar, Rorge and Biter out, past the stage', () => {
     for (const id of ['jaqen-hghar', 'rorge', 'biter']) {
       expect(
-        archive.dossierOf(recordOf(archive, id))?.chronicle,
+        archive.dossierOf(recordIn(archive, id))?.chronicle,
         id,
       ).toBeUndefined()
     }
@@ -4187,7 +4187,7 @@ describe.each(LOCALES)('the Essos chronicles in %s', (locale) => {
   it.each(STORIES.filter(({ medium }) => medium !== 'books'))(
     'shows $id’s $medium story “$title” at episode $episode, never before',
     (row) => {
-      const owner = recordOf(archive, row.id)
+      const owner = recordIn(archive, row.id)
       const title = titleIn(row, locale)
 
       expect(at(owner, ep(row.episode - 1))).not.toContain(title)
@@ -4198,7 +4198,7 @@ describe.each(LOCALES)('the Essos chronicles in %s', (locale) => {
   it.each(STORIES.filter(({ medium }) => medium !== 'show'))(
     'shows $id’s $medium story “$title” at chapter $chapter, never before',
     (row) => {
-      const owner = recordOf(archive, row.id)
+      const owner = recordIn(archive, row.id)
       const title = titleIn(row, locale)
 
       expect(at(owner, ch(row.chapter - 1))).not.toContain(title)
@@ -4209,7 +4209,7 @@ describe.each(LOCALES)('the Essos chronicles in %s', (locale) => {
   it.each(STORIES.filter(({ medium }) => medium !== 'both'))(
     'keeps $id’s $medium story “$title” from the other medium',
     (row) => {
-      const owner = recordOf(archive, row.id)
+      const owner = recordIn(archive, row.id)
       const other =
         row.medium === 'show' ?
           ch(archive.series.chapterCeiling)
@@ -4222,7 +4222,7 @@ describe.each(LOCALES)('the Essos chronicles in %s', (locale) => {
   it.each(FIRST)(
     'shows $id no story before the gate in either medium',
     ({ chapter, episode, id }) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
 
       expect(at(owner, ep(episode - 1))).toStrictEqual([])
       expect(at(owner, ch(chapter - 1))).toStrictEqual([])
@@ -4232,7 +4232,7 @@ describe.each(LOCALES)('the Essos chronicles in %s', (locale) => {
   it.each(Object.keys(season1Chronicles))(
     'adds nothing to %s’s chronicle past the stage',
     (id) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const owned = STORIES.filter((row) => row.id === id)
       const shown = titlesOf(
         owned.filter(({ medium }) => medium !== 'books'),

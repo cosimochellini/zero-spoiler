@@ -18,7 +18,7 @@ import type { Reader } from '~/server/archive/reader.server'
  */
 
 export type Unit = Source
-export const UNITS: Unit[] = ['episode', 'chapter']
+const UNITS: Unit[] = ['episode', 'chapter']
 
 /**
  * One row of a hand-written table: the episode and chapter a record or step
@@ -120,7 +120,7 @@ export function gateCases<Row extends Pin>(
 }
 
 /** A filed record of any kind, or the test is wrong. */
-export function recordOf(archive: SeriesArchive, id: string): Entity {
+export function recordIn(archive: SeriesArchive, id: string): Entity {
   const record = archive.getEntity(id)
   if (record === undefined) {
     throw new Error(`${id} is not filed`)

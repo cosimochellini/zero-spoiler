@@ -4,7 +4,7 @@ import { kakinChronicles } from '~/data/series/hunter-x-hunter/records/kakin.chr
 import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { recordOf } from '~/test/gates'
+import { recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { chronicleOf, chronicleRestOf } from './chronicle.server'
@@ -146,7 +146,7 @@ describe('the Kakin chronicles, chapters 340–420', () => {
   it.each(FIRST_STORIES)(
     'opens a chronicle for the new record %s at chapter %i',
     (id, chapter) => {
-      const first = archive.dossierOf(recordOf(archive, id))?.chronicle?.[0]
+      const first = archive.dossierOf(recordIn(archive, id))?.chronicle?.[0]
 
       expect(first?.chapter).toBe(chapter)
     },
@@ -163,7 +163,7 @@ describe('the Kakin chronicles, chapters 340–420', () => {
 
   it('files every story on a character the archive holds', () => {
     for (const [id, stories] of Object.entries(kakinChronicles)) {
-      const filed = archive.dossierOf(recordOf(archive, id))?.chronicle ?? []
+      const filed = archive.dossierOf(recordIn(archive, id))?.chronicle ?? []
 
       expect(filed, id).toStrictEqual(expect.arrayContaining(stories))
     }
@@ -216,7 +216,7 @@ describe('the dated entries of chapters 371–420', () => {
   it.each(PINS)(
     'pins $id’s change to $after at chapter $chapter',
     ({ id, chapter, before, after }) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
 
       expect(archive.latestOf(at(chapter - 1), owner, 'status')).toBe(before)
       expect(archive.latestOf(at(chapter), owner, 'status')).toBe(after)
@@ -224,7 +224,7 @@ describe('the dated entries of chapters 371–420', () => {
   )
 
   it('moves Hanzo to Marayam’s guard at chapter 361', () => {
-    const owner = recordOf(archive, 'hanzo')
+    const owner = recordIn(archive, 'hanzo')
 
     expect(archive.latestOf(at(360), owner, 'affiliation')?.en).toBe(
       'Hunter Association, Hunter; Momoze’s bodyguards',
@@ -242,7 +242,7 @@ describe.each(LOCALES)('Kakin chronicles in %s', (locale) => {
   it.each(Object.entries(kakinChronicles))(
     'shows %s’s stories from their chapter, never before',
     (id, stories) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       for (const { chapter = 0, value } of stories) {
         const title = value.title[locale]
         const before = read({ mode: 'chapter', chapter: chapter - 1 })
@@ -257,7 +257,7 @@ describe.each(LOCALES)('Kakin chronicles in %s', (locale) => {
   it.each(Object.entries(kakinChronicles))(
     'never shows %s’s stories to an anime reader',
     (id, stories) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const titles = chronicleTitles(
         owner,
         read({ mode: 'episode', episode: LAST_EPISODE }),

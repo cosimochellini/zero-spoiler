@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { HUNTER_X_HUNTER_ARCHIVE as archive } from '~/data/series/hunter-x-hunter/archive'
 import { leaksOf } from '~/test/fog'
-import { bookmarkAt as at, gateCases, recordOf } from '~/test/gates'
+import { bookmarkAt as at, gateCases, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import {
@@ -113,7 +113,7 @@ describe('the named characters and place of Trick Tower', () => {
   it.each(['episode', 'chapter'] as const)(
     'dates Killua’s family disclosure in %s',
     (mode) => {
-      const character = recordOf(archive, 'killua')
+      const character = recordIn(archive, 'killua')
       const threshold = mode === 'episode' ? 7 : 13
       const before = factsOf(
         character,
@@ -131,7 +131,7 @@ describe('the named characters and place of Trick Tower', () => {
 
   it('files the deaths at the records’ own opening scenes', () => {
     for (const id of ['johness', 'togari']) {
-      const character = recordOf(archive, id)
+      const character = recordIn(archive, id)
       const atOpening = readerFor(
         archive,
         at('episode', character.revealedAtEpisode),

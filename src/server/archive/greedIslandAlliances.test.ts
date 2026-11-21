@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -10,7 +10,7 @@ import { readerFor } from './reader.server'
 import { relationshipsOf } from './relationships.server'
 
 const { archive } = loadedSeries('hunter-x-hunter')
-const jispa = recordOf(archive, 'jispa')
+const jispa = recordIn(archive, 'jispa')
 const RECORDS = [
   { id: 'genthru', episode: 65, chapter: 144, source: 'chapter', place: false },
   { id: 'jispa', episode: 65, chapter: 144, source: 'chapter', place: false },

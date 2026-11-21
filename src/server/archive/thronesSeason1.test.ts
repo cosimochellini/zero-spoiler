@@ -9,7 +9,7 @@ import {
   bookmarkAt,
   gateCases,
   opened,
-  recordOf,
+  recordIn,
   sidesOf,
   type Unit,
 } from '~/test/gates'
@@ -1112,7 +1112,7 @@ describe.each(
   ),
 )('$id becomes $value by $unit', ({ id, value, ...side }) => {
   it('at its pin, not one before', () => {
-    const owner = recordOf(archive, id)
+    const owner = recordIn(archive, id)
     const before = readerFor(archive, side.before, 'en')
     const reached = readerFor(archive, side.reached, 'en')
 
@@ -1130,7 +1130,7 @@ describe('the status changes one medium alone tells', () => {
           reader('chapter', archive.series.chapterCeiling)
         : reader('episode', archive.series.episodeCeiling)
 
-      expect(archive.latestOf(last, recordOf(archive, id), 'status')).not.toBe(
+      expect(archive.latestOf(last, recordIn(archive, id), 'status')).not.toBe(
         value,
       )
     },
@@ -1226,7 +1226,7 @@ describe.each(
   ),
 )('$id’s summary by $unit', ({ en, gate, id, unit }) => {
   it('says what its gate tells', () => {
-    expect(recordOf(archive, id).summary.en).toBe(en)
+    expect(recordIn(archive, id).summary.en).toBe(en)
     expect(opened(id, reader(unit, gate))).toBe(true)
   })
 })
@@ -1383,7 +1383,7 @@ describe.each([
   { unit: 'chapter' as const, pin: 66 },
 ])('Eddard Stark’s death stage by $unit', ({ unit, pin }) => {
   const [stage] = REDRAWINGS['eddard-stark'] ?? []
-  const ned = recordOf(archive, 'eddard-stark')
+  const ned = recordIn(archive, 'eddard-stark')
 
   it('keeps Ice standing one before the pin', () => {
     expect(drawingOf(ned, reader(unit, pin - 1)).strokes).toStrictEqual(
@@ -1726,11 +1726,11 @@ describe.each(
         .slice(0, index)
         .findLast(
           (earlier) =>
-            (recordOf(archive, id).source ?? earlier.source ?? unit) === unit,
+            (recordIn(archive, id).source ?? earlier.source ?? unit) === unit,
         )?.value ?? DRAWINGS[id]
 
     it('at its pin, not one before', () => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
 
       expect(stage?.episode).toBe(episode)
       expect(stage?.chapter).toBe(chapter)
@@ -1758,7 +1758,7 @@ function atTheEnd(unit: Unit): Reader {
  * the first drawing when it tells none.
  */
 function endsOn(id: keyof typeof DRAWINGS, unit: Unit): unknown {
-  const owner = recordOf(archive, id)
+  const owner = recordIn(archive, id)
   const told = (REDRAWINGS[id] ?? []).filter(
     (stage) => (owner.source ?? stage.source ?? unit) === unit,
   )
@@ -1782,7 +1782,7 @@ function mediumOf(
   id: keyof typeof DRAWINGS,
   index: number,
 ): 'chapter' | 'episode' | undefined {
-  return recordOf(archive, id).source ?? REDRAWINGS[id]?.[index]?.source
+  return recordIn(archive, id).source ?? REDRAWINGS[id]?.[index]?.source
 }
 
 /** Whether these strokes are this stage's drawing. */
@@ -1805,7 +1805,7 @@ describe('the stages one medium alone tells', () => {
     'never redraws $id for a reader of the other medium',
     ({ id, source, stage: index = 0 }) => {
       const other: Unit = source === 'chapter' ? 'episode' : 'chapter'
-      const drawn = drawingOf(recordOf(archive, id), atTheEnd(other)).strokes
+      const drawn = drawingOf(recordIn(archive, id), atTheEnd(other)).strokes
 
       expect(mediumOf(id, index)).toBe(source)
       expect(isNewLook(id, index) && shows(drawn, id, index)).toBe(false)

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -32,7 +32,7 @@ describe.each(CASES)('$id in $locale by $unit', (row) => {
 })
 
 describe('Kastro’s death', () => {
-  const kastro = recordOf(archive, 'kastro')
+  const kastro = recordIn(archive, 'kastro')
 
   it.each(
     LOCALES.flatMap((locale) => [
@@ -67,9 +67,9 @@ describe('the returning characters at Heavens Arena', () => {
     ({ unit, pupils, floor, tattoo }) => {
       const read = (count: number): Reader =>
         readerFor(archive, at(unit, count), 'en')
-      const gon = recordOf(archive, 'gon-freecss')
-      const killua = recordOf(archive, 'killua')
-      const hisoka = recordOf(archive, 'hisoka')
+      const gon = recordIn(archive, 'gon-freecss')
+      const killua = recordIn(archive, 'killua')
+      const hisoka = recordIn(archive, 'hisoka')
 
       expect(factsOf(gon, read(pupils - 1)).affiliation).toBe(
         'Hunter Association, Hunter',
@@ -118,7 +118,7 @@ describe.each(
   const opens = unit === 'chapter' ? pins.chapter : pins.episode
   const reveal = unit === 'chapter' ? 60 : 35
   const nenAt = (count: number): string | undefined =>
-    factsOf(recordOf(archive, id), readerFor(archive, at(unit, count), 'en'))
+    factsOf(recordIn(archive, id), readerFor(archive, at(unit, count), 'en'))
       .nen
 
   it('has no row until the story shows the character using Nen', () => {

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { RecordView, Slot } from '~/lib/view/records'
-import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -71,9 +71,9 @@ describe('the bodyguards’ dated steps', () => {
     const read = (count: number): Reader =>
       readerFor(archive, at(unit, count), 'en')
     const role = (id: string, count: number): string | undefined =>
-      archive.roleOf(read(count), recordOf(archive, id))?.en
+      archive.roleOf(read(count), recordIn(archive, id))?.en
     const affiliation = (id: string, count: number): string | undefined =>
-      factsOf(recordOf(archive, id), read(count)).affiliation
+      factsOf(recordIn(archive, id), read(count)).affiliation
 
     // The three applicants Dalzollene hires.
     for (const id of ['melody', 'basho', 'baise']) {
@@ -182,7 +182,7 @@ describe('the shelves of the arc’s places', () => {
         const text = JSON.stringify(shelf)
 
         for (const id of ids) {
-          const record = recordOf(archive, id)
+          const record = recordIn(archive, id)
 
           expect(text).not.toContain(id)
           expect(text).not.toContain(record.name.en)
@@ -399,7 +399,7 @@ const STATUS_STEPS = [
 function statusAt(id: string, unit: string, count: number): string | undefined {
   return archive.latestOf(
     readerFor(archive, at(unit, count), 'en'),
-    recordOf(archive, id),
+    recordIn(archive, id),
     'status',
   )
 }
@@ -621,7 +621,7 @@ describe('the deaths drawn in Yorknew City', () => {
   it.each(DRAWN_DEATHS)(
     'pins $id’s death and drawing together in $unit units ($locale)',
     ({ id, unit, opens, death, was, now, locale }) => {
-      const record = recordOf(archive, id)
+      const record = recordIn(archive, id)
       const alive = readerFor(archive, at(unit, opens), locale)
       const before = readerFor(archive, at(unit, death - 1), locale)
       const reached = readerFor(archive, at(unit, death), locale)
@@ -638,7 +638,7 @@ describe('the deaths drawn in Yorknew City', () => {
   it.each(LOCALES)(
     'keeps Worm’s drawing when chapter 89 confirms his death (%s)',
     (locale) => {
-      const worm = recordOf(archive, 'worm')
+      const worm = recordIn(archive, 'worm')
       const presumed = readerFor(archive, at('chapter', 88), locale)
       const confirmed = readerFor(archive, at('chapter', 89), locale)
 
@@ -704,7 +704,7 @@ describe('the returning characters’ last steps', () => {
       const affiliation = (n: number): string | undefined =>
         archive.latestOf(
           readerFor(archive, at(unit, n), 'en'),
-          recordOf(archive, id),
+          recordIn(archive, id),
           'affiliation',
         )?.en
 
@@ -720,7 +720,7 @@ describe('Kurapika at the head of the bodyguards', () => {
     { unit: 'chapter', count: 79 },
   ])('dates his role and affiliation in $unit units', ({ unit, count }) => {
     const read = (n: number): Reader => readerFor(archive, at(unit, n), 'en')
-    const kurapika = recordOf(archive, 'kurapika')
+    const kurapika = recordIn(archive, 'kurapika')
 
     expect(archive.roleOf(read(count - 1), kurapika)?.en).toBe(
       'Hunter, bodyguard',

@@ -6,7 +6,7 @@ import { powerPage } from '~/server/archive/power.server'
 import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { opReaderFor } from '~/test/archive'
-import { recordOf, sidesOf } from '~/test/gates'
+import { recordIn, sidesOf } from '~/test/gates'
 import { edges, type Steps, U, V } from '~/test/power'
 import { ONE_PIECE_LOADED } from '~/test/series'
 
@@ -277,7 +277,7 @@ describe('the Seven Warlords', () => {
 /** A character's affiliation at a bookmark, as an English reader sees it. */
 function affiliationAt(id: string, bookmark: Bookmark): unknown {
   return factsOf(
-    recordOf(ONE_PIECE_LOADED.archive, id),
+    recordIn(ONE_PIECE_LOADED.archive, id),
     opReaderFor(bookmark, 'en'),
   ).affiliation
 }

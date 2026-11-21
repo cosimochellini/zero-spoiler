@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { opened, recordOf } from '~/test/gates'
+import { opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor, relationshipsPage } from './pages.server'
@@ -118,7 +118,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
   it.each(STATUSES)(
     'pins $id’s change to $after at chapter $chapter',
     ({ id, chapter: pin, before, after }) => {
-      const entity = recordOf(archive, id)
+      const entity = recordIn(archive, id)
 
       expect(archive.latestOf(chapter(pin - 1, locale), entity, 'status')).toBe(
         before,
@@ -130,7 +130,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
   )
 
   it('pins Borksen’s Heil-Ly membership to chapter 410', () => {
-    const borksen = recordOf(archive, 'borksen')
+    const borksen = recordIn(archive, 'borksen')
 
     expect(
       archive.latestOf(chapter(409, locale), borksen, 'affiliation'),
@@ -144,7 +144,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
     { id: 'risnorth', status: 'deceased' },
     { id: 'kanjidol', status: 'captured' },
   ])('files $id as $status at the opening', ({ id, status }) => {
-    const entity = recordOf(archive, id)
+    const entity = recordIn(archive, id)
 
     expect(
       archive.latestOf(
@@ -194,7 +194,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
         'woble-hui-guo-rou',
       ]) {
         expect(['deceased', 'missing']).not.toContain(
-          archive.latestOf(reader, recordOf(archive, id), 'status'),
+          archive.latestOf(reader, recordIn(archive, id), 'status'),
         )
       }
     },

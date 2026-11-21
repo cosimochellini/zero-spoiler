@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -42,7 +42,7 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
     row.unit === 'chapter' ? chapter : episode
 
   it('opens Puhat’s recruitment, alliance and change of role separately', () => {
-    const puhat = recordOf(archive, 'puhat')
+    const puhat = recordIn(archive, 'puhat')
     const hired = pin(60, 126)
     const alliance = pin(61, 131)
     const player = pin(61, 126)
@@ -70,7 +70,7 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   })
 
   it('changes Puhat’s status and drawing together at his death', () => {
-    const puhat = recordOf(archive, 'puhat')
+    const puhat = recordIn(archive, 'puhat')
     const opening = read(pin(60, 125))
     const death = pin(64, 143)
     const before = read(death - 1)
@@ -89,7 +89,7 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   it.each(['gon-freecss', 'killua'])(
     'dates %s’s recruitment affiliation',
     (id) => {
-      const recruit = recordOf(archive, id)
+      const recruit = recordIn(archive, id)
       const hired = pin(60, 126)
 
       expect(factsOf(recruit, read(hired - 1)).affiliation).not.toContain(
@@ -100,9 +100,9 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   )
 
   it('gates the selected relationships and their changed wording', () => {
-    const battera = recordOf(archive, 'battera')
-    const tsezguerra = recordOf(archive, 'tsezguerra')
-    const puhat = recordOf(archive, 'puhat')
+    const battera = recordIn(archive, 'battera')
+    const tsezguerra = recordIn(archive, 'tsezguerra')
+    const puhat = recordIn(archive, 'puhat')
     const rejection = pin(59, 121)
     const accepted = pin(60, 126)
     const introduced = pin(60, 125)
@@ -267,7 +267,7 @@ describe.each(CASES)(
     it.each(['gon-freecss', 'killua'])(
       'dates %s’s offer, training and later exercises separately',
       (id) => {
-        const pupil = recordOf(archive, id)
+        const pupil = recordIn(archive, id)
         const offer = pin(62, 137)
         const training = pin(63, 138)
         const exercises = pin(64, 141)
@@ -294,7 +294,7 @@ describe.each(CASES)(
     )
 
     it('dates Biscuit’s accepted teaching role after her initial offer', () => {
-      const teacher = recordOf(archive, 'biscuit-krueger')
+      const teacher = recordIn(archive, 'biscuit-krueger')
       const teaching = pin(63, 138)
 
       expect(factsOf(teacher, read(teaching - 1)).affiliation).toContain(
@@ -312,7 +312,7 @@ describe.each(CASES)(
       { id: 'kortopi', episode: 62, chapter: 134 },
       { id: 'shizuku', episode: 62, chapter: 134 },
     ])('dates $id’s entry into the game', ({ id, episode, chapter }) => {
-      const member = recordOf(archive, id)
+      const member = recordIn(archive, id)
       const gate = pin(episode, chapter)
 
       expect(factsOf(member, read(gate - 1)).affiliation).not.toContain(
@@ -330,13 +330,13 @@ describe.each(LOCALES)('Binolt’s source-specific status in %s', (locale) => {
     { unit: 'episode', count: 63, status: 'alive' },
   ])('shows $status at $unit $count', ({ unit, count, status }) => {
     const reader = readerFor(archive, at(unit, count), locale)
-    const binolt = recordOf(archive, 'binolt')
+    const binolt = recordIn(archive, 'binolt')
 
     expect(archive.latestOf(reader, binolt, 'status')).toBe(status)
   })
 
   it('keeps Wing out of Biscuit’s earlier anime introduction', () => {
-    const biscuit = recordOf(archive, 'biscuit-krueger')
+    const biscuit = recordIn(archive, 'biscuit-krueger')
     const before = readerFor(archive, at('episode', 62), locale)
     const reached = readerFor(archive, at('episode', 63), locale)
     const manga = readerFor(archive, at('chapter', 137), locale)
@@ -400,7 +400,7 @@ describe.each(STEP_CASES)(
   '$id’s dated step at $pin in $locale by $unit',
   ({ id, locale, pin, unit }) => {
     it('changes the affiliation only once the step is reached', () => {
-      const entity = recordOf(archive, id)
+      const entity = recordIn(archive, id)
       const before = factsOf(
         entity,
         readerFor(archive, at(unit, pin - 1), locale),

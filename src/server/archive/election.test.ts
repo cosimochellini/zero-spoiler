@@ -4,7 +4,7 @@ import { electionChronicles } from '~/data/series/hunter-x-hunter/records/electi
 import type { Entity, Field } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import type { Gated } from '~/lib/progress/spoiler'
-import { bookmarkAt as at, opened, recordOf, sideIn } from '~/test/gates'
+import { bookmarkAt as at, opened, recordIn, sideIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { chronicleOf, chronicleRestOf } from './chronicle.server'
@@ -180,7 +180,7 @@ describe.each(UNITS)('Election by %s', (unit) => {
         ({ source }) => source === undefined || source === unit,
       ),
     )('pins $id $field at $gate', ({ id, field, gate, pin }) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const side = sideIn(pin, unit, archive.series)
       const before = reachedGates(
         readerFor(archive, side.before, locale),
@@ -198,8 +198,8 @@ describe.each(UNITS)('Election by %s', (unit) => {
     })
 
     it('pins Gotoh’s death and Gon’s recovery', () => {
-      const gotoh = recordOf(archive, 'gotoh')
-      const gon = recordOf(archive, 'gon-freecss')
+      const gotoh = recordIn(archive, 'gotoh')
+      const gon = recordIn(archive, 'gon-freecss')
       const death = unit === 'chapter' ? 327 : 142
       const recovery = unit === 'chapter' ? 334 : 145
 
@@ -246,7 +246,7 @@ describe.each(LOCALES)('Election chronicles in %s', (locale) => {
   )(
     'opens a chronicle with the new record $id',
     ({ id, episode, chapter, source }) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const first = archive.dossierOf(owner)?.chronicle?.[0]
 
       expect(first?.episode).toBe(episode)
@@ -259,7 +259,7 @@ describe.each(LOCALES)('Election chronicles in %s', (locale) => {
     it.each(Object.entries(electionChronicles))(
       `assembles %s behind each ${unit} gate`,
       (id, stories) => {
-        const owner = recordOf(archive, id)
+        const owner = recordIn(archive, id)
         for (const story of stories) {
           const threshold = unit === 'episode' ? story.episode : story.chapter
           const before = readerFor(archive, at(unit, threshold - 1), locale)

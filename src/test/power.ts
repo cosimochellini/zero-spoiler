@@ -8,12 +8,12 @@ import { powerPage } from '~/server/archive/power.server'
 import { readerFor } from '~/server/archive/reader.server'
 
 import { leaksOf } from './fog'
-import { recordOf } from './gates'
+import { recordIn } from './gates'
 import { LOADED_SERIES, ONE_PIECE_LOADED } from './series'
 
 /** Who the fixture seats: one met early, one met much later. */
-export const EARLY = recordOf(ONE_PIECE_LOADED.archive, 'dracule-mihawk')
-export const LATE = recordOf(ONE_PIECE_LOADED.archive, 'boa-hancock')
+export const EARLY = recordIn(ONE_PIECE_LOADED.archive, 'dracule-mihawk')
+export const LATE = recordIn(ONE_PIECE_LOADED.archive, 'boa-hancock')
 
 /** When the fixture's first seat is vacated and its third one told. */
 export const MIDWAY = { episode: 300, chapter: 390 }
@@ -276,7 +276,7 @@ export function bodyFaults(
  * restates the server's rule (`holderOf` in `power.server.ts`) on purpose,
  * once, for every power test.
  */
-export function holdingGates(holding: Holding): Gated[] {
+function holdingGates(holding: Holding): Gated[] {
   const own: Gated = {
     revealedAtEpisode: holding.episode,
     revealedAtChapter: holding.chapter,

@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { leaksOf } from '~/test/fog'
-import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -185,7 +185,7 @@ function statusAt(
 ): string | undefined {
   return archive.latestOf(
     readerFor(archive, bookmark, locale),
-    recordOf(archive, id),
+    recordIn(archive, id),
     'status',
   )
 }
@@ -237,7 +237,7 @@ function stepAt(
   locale: Locale,
 ): string | undefined {
   const reader = readerFor(archive, bookmark, locale)
-  const character = recordOf(archive, id)
+  const character = recordIn(archive, id)
   if (field === 'status') {
     return archive.latestOf(reader, character, field)
   }
@@ -1511,7 +1511,7 @@ describe('Chimera Ant phase four boundary', () => {
   it.each(LOCALES)(
     'keeps the phase five rescue out at the mixed episode in %s',
     (locale) => {
-      const king = recordOf(archive, 'meruem')
+      const king = recordIn(archive, 'meruem')
       const read = (count: number): string => {
         const reader = readerFor(archive, at('episode', count), locale)
         return JSON.stringify({
@@ -1534,7 +1534,7 @@ describe('Chimera Ant dated facts', () => {
   )(
     'opens the relationship with Kite for $id in $locale by $unit',
     ({ id, locale, unit, episode, chapter }) => {
-      const character = recordOf(archive, id)
+      const character = recordIn(archive, id)
       const episodeGate = id === 'neferpitou' ? 85 : episode
       // Neferpitou's row with Kite opens at the kill, chapter 199.
       const chapterGate = id === 'neferpitou' ? 199 : chapter
@@ -1558,7 +1558,7 @@ describe('Chimera Ant dated facts', () => {
   )(
     'dates Kite’s survey affiliation in $locale by $unit',
     ({ locale, unit, gate }) => {
-      const kite = recordOf(archive, 'kite')
+      const kite = recordIn(archive, 'kite')
       const affiliation = (count: number): string | undefined =>
         archive.latestOf(
           readerFor(archive, at(unit, count), locale),
@@ -1577,7 +1577,7 @@ describe('Chimera Ant dated facts', () => {
       { locale, unit: 'chapter', gate: 229 },
     ]),
   )('dates Zazan’s death in $locale by $unit', ({ locale, unit, gate }) => {
-    const zazan = recordOf(archive, 'zazan')
+    const zazan = recordIn(archive, 'zazan')
     const status = (count: number): string | undefined =>
       archive.latestOf(
         readerFor(archive, at(unit, count), locale),
@@ -1666,7 +1666,7 @@ describe('Chimera Ant dated facts', () => {
   ])(
     'reveals the changed role for $id at its scene',
     ({ id, episode, chapter, role }) => {
-      const character = recordOf(archive, id)
+      const character = recordIn(archive, id)
       for (const locale of LOCALES) {
         for (const unit of ['episode', 'chapter'] as const) {
           const gate = unit === 'episode' ? episode : chapter
@@ -1687,7 +1687,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)(
     'changes Pike’s status and art at chapter 228 in %s',
     (locale) => {
-      const pike = recordOf(archive, 'pike')
+      const pike = recordIn(archive, 'pike')
       const before = readerFor(archive, at('chapter', 227), locale)
       const reached = readerFor(archive, at('chapter', 228), locale)
 
@@ -1700,7 +1700,7 @@ describe('Chimera Ant dated facts', () => {
   )
 
   it.each(LOCALES)('dates Leol’s name and death in %s', (locale) => {
-    const hagya = recordOf(archive, 'hagya')
+    const hagya = recordIn(archive, 'hagya')
     const read = (chapter: number): Reader =>
       readerFor(archive, at('chapter', chapter), locale)
     const before = read(253)
@@ -1722,7 +1722,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)('dates Leol’s death in the anime in %s', (locale) => {
     const before = readerFor(archive, at('episode', 106), locale)
     const reached = readerFor(archive, at('episode', 107), locale)
-    const leol = recordOf(archive, 'hagya')
+    const leol = recordIn(archive, 'hagya')
 
     expect(archive.latestOf(before, leol, 'status')).toBe('alive')
     expect(archive.latestOf(reached, leol, 'status')).toBe('deceased')
@@ -1732,7 +1732,7 @@ describe('Chimera Ant dated facts', () => {
   })
 
   it('stores the chapter the manga names Leol, 240', () => {
-    expect(recordOf(archive, 'hagya').episodeName?.chapter).toBe(240)
+    expect(recordIn(archive, 'hagya').episodeName?.chapter).toBe(240)
   })
 
   it('holds Leol as fog in a payload until each reader reaches it', () => {
@@ -1776,7 +1776,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(['gon-freecss', 'killua'])(
     'dates the operation assignment for %s',
     (id) => {
-      const character = recordOf(archive, id)
+      const character = recordIn(archive, id)
       for (const locale of LOCALES) {
         for (const [unit, gate] of [
           ['episode', 95],
@@ -1829,7 +1829,7 @@ describe('Chimera Ant dated facts', () => {
     { id: 'netero', field: 'affiliation', episode: 95, chapter: 223 },
     { id: 'knov', field: 'affiliation', episode: 95, chapter: 223 },
   ] as const)('dates the $field step of $id at its scene', (row) => {
-    const character = recordOf(archive, row.id)
+    const character = recordIn(archive, row.id)
     // A one-source step is asked in its own unit only.
     const gates = (
       [
@@ -1878,7 +1878,7 @@ describe('Chimera Ant dated facts', () => {
   ] as const)(
     'changes the relationships of $id at $episode / $chapter',
     (row) => {
-      const character = recordOf(archive, row.id)
+      const character = recordIn(archive, row.id)
       // A one-source step is asked in its own unit only.
       const gates = (
         [
@@ -1903,7 +1903,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)(
     'adds Peggy to Meleoron’s relationships at chapter 242 in %s',
     (locale) => {
-      const meleoron = recordOf(archive, 'meleoron')
+      const meleoron = recordIn(archive, 'meleoron')
       const read = (chapter: number): string[] =>
         (
           archive.latestOf(
@@ -1921,7 +1921,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)('opens Pell already dead in %s', (locale) => {
     const reader = readerFor(archive, at('episode', 96), locale)
 
-    expect(archive.latestOf(reader, recordOf(archive, 'pell'), 'status')).toBe(
+    expect(archive.latestOf(reader, recordIn(archive, 'pell'), 'status')).toBe(
       'deceased',
     )
   })

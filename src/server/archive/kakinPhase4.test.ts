@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { opened, recordOf } from '~/test/gates'
+import { opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor, relationshipsPage } from './pages.server'
@@ -154,10 +154,10 @@ describe.each(LOCALES)('Kakin phase 4 in %s', (locale) => {
     )
 
     expect(
-      archive.latestOf(before, recordOf(archive, 'sarasa'), 'status'),
+      archive.latestOf(before, recordIn(archive, 'sarasa'), 'status'),
     ).toBe('alive')
     expect(
-      archive.latestOf(reached, recordOf(archive, 'sarasa'), 'status'),
+      archive.latestOf(reached, recordIn(archive, 'sarasa'), 'status'),
     ).toBe('deceased')
   })
 
@@ -170,16 +170,16 @@ describe.each(LOCALES)('Kakin phase 4 in %s', (locale) => {
     )
 
     expect(
-      archive.latestOf(before, recordOf(archive, 'sheila'), 'affiliation'),
+      archive.latestOf(before, recordIn(archive, 'sheila'), 'affiliation'),
     ).not.toStrictEqual(
-      archive.latestOf(reached, recordOf(archive, 'sheila'), 'affiliation'),
+      archive.latestOf(reached, recordIn(archive, 'sheila'), 'affiliation'),
     )
   })
 
   it.each(['padaille', 'misha-hao', 'tassi'])(
     'files $id’s already-known death at its opening',
     (id) => {
-      const entity = recordOf(archive, id)
+      const entity = recordIn(archive, id)
       const reader = readerFor(
         archive,
         { mode: 'chapter', chapter: entity.revealedAtChapter },

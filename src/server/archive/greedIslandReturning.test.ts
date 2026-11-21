@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { recordOf } from '~/test/gates'
+import { recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { factsOf } from './project.server'
@@ -94,9 +94,9 @@ describe.each(CASES)(
     const pin = (episode: number, chapter: number): number =>
       row.unit === 'chapter' ? chapter : episode
     const affiliation = (id: string, count: number): string | undefined =>
-      factsOf(recordOf(archive, id), read(count)).affiliation
+      factsOf(recordIn(archive, id), read(count)).affiliation
     const role = (id: string, count: number): string | undefined =>
-      archive.roleOf(read(count), recordOf(archive, id))?.[row.locale]
+      archive.roleOf(read(count), recordIn(archive, id))?.[row.locale]
     const swept = (gate: number): void => {
       expect(archive.bookmarks).toContainEqual(at(row.unit, gate - 1))
       expect(archive.bookmarks).toContainEqual(at(row.unit, gate))
@@ -179,7 +179,7 @@ describe.each(CASES)(
         const words = row.locale === 'it' ? 'esorcista' : 'Exorcist'
         const reached = row.unit === 'episode' || TROUPE.has(id)
         const selectedSummary = (count: number): string =>
-          relationshipsOf(recordOf(archive, id), read(count)).find(
+          relationshipsOf(recordIn(archive, id), read(count)).find(
             ({ person }) => person.id === 'chrollo',
           )?.summary ?? ''
 
@@ -200,7 +200,7 @@ describe.each(LOCALES)('source-specific training in %s', (locale) => {
     unit: 'chapter' | 'episode',
     count: number,
   ): string | undefined =>
-    factsOf(recordOf(archive, id), readerFor(archive, at(unit, count), locale))
+    factsOf(recordIn(archive, id), readerFor(archive, at(unit, count), locale))
       .affiliation
 
   it.each(['gon-freecss', 'killua'])(

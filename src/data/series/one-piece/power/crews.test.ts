@@ -6,7 +6,7 @@ import { powerPage } from '~/server/archive/power.server'
 import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { opReaderFor } from '~/test/archive'
-import { bookmarkAt as at, recordOf, type Unit } from '~/test/gates'
+import { bookmarkAt as at, recordIn, type Unit } from '~/test/gates'
 import {
   bodyGates,
   type Edge,
@@ -267,7 +267,7 @@ describe('the Emperors’ crews on either side of their gates', () => {
 /** A character's affiliation at a bookmark, as an English reader sees it. */
 function affiliationAt(id: string, bookmark: Bookmark): unknown {
   return factsOf(
-    recordOf(ONE_PIECE_LOADED.archive, id),
+    recordIn(ONE_PIECE_LOADED.archive, id),
     opReaderFor(bookmark, 'en'),
   ).affiliation
 }

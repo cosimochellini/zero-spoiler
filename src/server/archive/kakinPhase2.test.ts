@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { opened, recordOf } from '~/test/gates'
+import { opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -54,7 +54,7 @@ describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
   it.each(CASES)(
     'opens $id’s dated facts only at its naming gate',
     ({ id, chapter }) => {
-      const owner = recordOf(archive, id)
+      const owner = recordIn(archive, id)
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
       for (const field of ['affiliation', 'status', 'relationships'] as const) {
@@ -92,7 +92,7 @@ describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
   })
 
   it('pins Momoze’s death at chapter 368', () => {
-    const owner = recordOf(archive, 'momoze-hui-guo-rou')
+    const owner = recordIn(archive, 'momoze-hui-guo-rou')
     const alive = read({ mode: 'chapter', chapter: 367 })
     const dead = read({ mode: 'chapter', chapter: 368 })
 
@@ -101,7 +101,7 @@ describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
   })
 
   it('pins Vincent’s death at chapter 364', () => {
-    const owner = recordOf(archive, 'vincent')
+    const owner = recordIn(archive, 'vincent')
 
     expect(
       archive.latestOf(

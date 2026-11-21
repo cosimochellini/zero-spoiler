@@ -5,7 +5,7 @@ import {
   bookmarkAt as at,
   gateCases,
   opened,
-  recordOf,
+  recordIn,
   sidesOf,
   type Unit,
 } from '~/test/gates'
@@ -135,7 +135,7 @@ describe('the Fourth Phase and its final bracket', () => {
   it.each(DEATH_CASES)(
     'gates $id’s death and drawing together in $mode ($locale)',
     (row) => {
-      const entity = recordOf(archive, row.id)
+      const entity = recordIn(archive, row.id)
       const before = readerFor(archive, row.before, row.locale)
       const reached = readerFor(archive, row.reached, row.locale)
 

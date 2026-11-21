@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import type { Field } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import { opened, recordOf } from '~/test/gates'
+import { opened, recordIn } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -94,7 +94,7 @@ describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
   })
 
   it.each(PINS)('pins %s %s at chapter %i', (id, field, chapter) => {
-    const owner = recordOf(archive, id)
+    const owner = recordIn(archive, id)
 
     const expected = {
       revealedAtEpisode: 148,
@@ -126,7 +126,7 @@ describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
       expect(homePage(reader).saga.id).toBe('election-arc')
 
       for (const [id, field] of PINS) {
-        const owner = recordOf(archive, id)
+        const owner = recordIn(archive, id)
 
         expect(
           archive

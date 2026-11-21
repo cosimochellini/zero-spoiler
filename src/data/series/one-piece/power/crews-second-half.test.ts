@@ -11,7 +11,7 @@ import { powerPage } from '~/server/archive/power.server'
 import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { opReaderFor } from '~/test/archive'
-import { recordOf } from '~/test/gates'
+import { recordIn } from '~/test/gates'
 import {
   bodyGates,
   edges,
@@ -369,7 +369,7 @@ function affiliationAt(
   locale: Locale,
 ): unknown {
   return factsOf(
-    recordOf(ONE_PIECE_LOADED.archive, id),
+    recordIn(ONE_PIECE_LOADED.archive, id),
     opReaderFor(bookmark, locale),
   ).affiliation
 }
