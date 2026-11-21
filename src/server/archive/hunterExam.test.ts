@@ -8,7 +8,8 @@ import { thresholdIn } from '~/lib/progress/spoiler'
 import { foldName, matchFolded } from '~/lib/search/fold'
 import type { RecordView, SearchableCharacter, Slot } from '~/lib/view/records'
 import { leaksOf } from '~/test/fog'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as bookmark, gateCases, recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { onboardingPage } from './onboarding.server'
 import {
@@ -22,12 +23,7 @@ import { placesPage } from './places.server'
 import { characterOf, factsOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error(
-    'The Hunter Exam tests need the filed Hunter x Hunter archive',
-  )
-}
+const series = loadedSeries('hunter-x-hunter')
 const { archive } = series
 const leaksIn = leaksOf(series)
 
@@ -37,7 +33,13 @@ const RECORDS = [
   { id: 'hisoka', episode: 3, chapter: 5, kind: 'character' },
   { id: 'todo', episode: 3, chapter: 5, kind: 'character' },
   { id: 'geretta', episode: 3, chapter: 5, kind: 'character' },
-  { id: 'cherry', episode: 3, chapter: 5, kind: 'character', unit: 'chapter' },
+  {
+    id: 'cherry',
+    episode: 3,
+    chapter: 5,
+    kind: 'character',
+    source: 'chapter',
+  },
   { id: 'hanzo', episode: 3, chapter: 6, kind: 'character' },
   { id: 'nicholas', episode: 3, chapter: 6, kind: 'character' },
   { id: 'satotz', episode: 3, chapter: 6, kind: 'character' },
@@ -53,20 +55,6 @@ const RECORDS = [
 
 const UNITS = ['episode', 'chapter'] as const
 type Unit = (typeof UNITS)[number]
-
-function bookmark(mode: Unit, count: number): Bookmark {
-  return mode === 'episode' ?
-      { mode, episode: count }
-    : { mode, chapter: count }
-}
-
-function entityOf(id: string): Entity {
-  const entity = archive.getEntity(id)
-  if (entity === undefined) {
-    throw new Error(`Missing Hunter Exam record: ${id}`)
-  }
-  return entity
-}
 
 function pageOf(entity: Entity, r: Reader): unknown {
   return entity.kind === 'character' ?
@@ -100,16 +88,15 @@ function lastAtGate(
 }
 
 // A record one source alone names is read in that unit only (#833).
-const CASES = RECORDS.flatMap((record) =>
-  UNITS.filter((mode) => !('unit' in record) || record.unit === mode).flatMap(
-    (mode) => LOCALES.map((locale) => ({ ...record, mode, locale })),
-  ),
-)
+const CASES = gateCases([...RECORDS], archive.series).map((row) => ({
+  ...row,
+  mode: row.unit,
+}))
 const CHARACTERS = CASES.filter(({ kind }) => kind === 'character')
 const FACTS = CHARACTERS.flatMap((row) =>
   (['affiliation', 'epithet', 'origin', 'status'] as const).flatMap((field) =>
     archive
-      .datedOf(entityOf(row.id), field)
+      .datedOf(recordOf(archive, row.id), field)
       .filter((entry) => toldIn(entry.gate, row.mode))
       .filter((entry, index, entries) =>
         lastAtGate(entry, entries.slice(index + 1), row.mode),
@@ -158,11 +145,11 @@ const FORMS = [
     en: 'Mountain',
     it: 'Montagna',
   },
-].flatMap((place) =>
-  UNITS.flatMap((mode) =>
-    LOCALES.map((locale) => ({ ...place, mode, locale })),
-  ),
-)
+]
+const FORM_CASES = gateCases(FORMS, archive.series).map((row) => ({
+  ...row,
+  mode: row.unit,
+}))
 
 function featuredAt(mode: Unit, count: number, locale: Locale): string[] {
   const r = readerFor(archive, bookmark(mode, count), locale)
@@ -194,8 +181,9 @@ describe('the Hunter Exam’s first two phases', () => {
 
   it.each(CASES)(
     'opens $id only at its named scene in $mode ($locale)',
-    ({ id, episode, chapter, kind, mode, locale }) => {
-      const entity = entityOf(id)
+    (row) => {
+      const { id, episode, chapter, kind, before, locale } = row
+      const entity = recordOf(archive, id)
 
       expect(entity).toMatchObject({
         kind,
@@ -203,11 +191,8 @@ describe('the Hunter Exam’s first two phases', () => {
         revealedAtChapter: chapter,
       })
 
-      const threshold = mode === 'episode' ? episode : chapter
-      const before = bookmark(mode, threshold - 1)
-      const at = bookmark(mode, threshold)
       const hidden = readerFor(archive, before, locale)
-      const reached = readerFor(archive, at, locale)
+      const reached = readerFor(archive, row.reached, locale)
       const covered = pageOf(entity, hidden)
       const opened = pageOf(entity, reached)
 
@@ -236,7 +221,7 @@ describe('the Hunter Exam’s first two phases', () => {
   it.each(CHARACTERS)(
     'makes $id searchable by either locale’s name in $mode ($locale)',
     ({ id, mode, episode, chapter, locale }) => {
-      const entity = entityOf(id)
+      const entity = recordOf(archive, id)
       const r = readerFor(
         archive,
         bookmark(mode, mode === 'episode' ? episode : chapter),
@@ -252,7 +237,7 @@ describe('the Hunter Exam’s first two phases', () => {
   it.each(FACTS)(
     'gates $id’s $field in $mode ($locale)',
     ({ id, mode, locale, field, entry }) => {
-      const entity = entityOf(id)
+      const entity = recordOf(archive, id)
       const threshold =
         mode === 'episode' ?
           entry.gate.revealedAtEpisode
@@ -271,33 +256,31 @@ describe('the Hunter Exam’s first two phases', () => {
     },
   )
 
-  it.each(FORMS)('opens $form’s label with $id in $mode ($locale)', (row) => {
-    const threshold = row.mode === 'episode' ? row.episode : row.chapter
-    const before = readerFor(
-      archive,
-      bookmark(row.mode, threshold - 1),
-      row.locale,
-    )
-    const at = readerFor(archive, bookmark(row.mode, threshold), row.locale)
+  it.each(FORM_CASES)(
+    'opens $form’s label with $id in $mode ($locale)',
+    (row) => {
+      const before = readerFor(archive, row.before, row.locale)
+      const at = readerFor(archive, row.reached, row.locale)
 
-    expect(placesPage(before).words?.forms ?? {}).not.toHaveProperty(row.form)
-    expect(placesPage(at).words?.forms).toHaveProperty(
-      row.form,
-      row[row.locale],
-    )
-    expect(placePage(row.id, before)).toMatchObject({
-      detail: { slot: { open: false } },
-    })
-    expect(placePage(row.id, at)).toMatchObject({
-      detail: {
-        slot: {
-          record: {
-            dossier: { words: { forms: { [row.form]: row[row.locale] } } },
+      expect(placesPage(before).words?.forms ?? {}).not.toHaveProperty(row.form)
+      expect(placesPage(at).words?.forms).toHaveProperty(
+        row.form,
+        row[row.locale],
+      )
+      expect(placePage(row.id, before)).toMatchObject({
+        detail: { slot: { open: false } },
+      })
+      expect(placePage(row.id, at)).toMatchObject({
+        detail: {
+          slot: {
+            record: {
+              dossier: { words: { forms: { [row.form]: row[row.locale] } } },
+            },
           },
         },
-      },
-    })
-  })
+      })
+    },
+  )
 
   it.each(
     [
@@ -396,7 +379,7 @@ const APPLICANT = { en: 'Hunter Exam applicant', it: 'Aspirante Hunter' }
 const IN_YORKNEW: Bookmark = { mode: 'season', season: 3, episode: 9 }
 
 function roleAt(id: string, at: Bookmark, locale: Locale): string | undefined {
-  return characterOf(entityOf(id), readerFor(archive, at, locale)).role
+  return characterOf(recordOf(archive, id), readerFor(archive, at, locale)).role
 }
 
 describe('the roles the Hunter Exam changes', () => {

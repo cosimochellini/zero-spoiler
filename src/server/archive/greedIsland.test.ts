@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest'
 
 import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as at, gateCases, opened, recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
@@ -11,11 +11,7 @@ import { factsOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 import { relationshipsOf } from './relationships.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Greed Island tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
   { id: 'battera', episode: 59, chapter: 120 },
   { id: 'tsezguerra', episode: 59, chapter: 121 },
@@ -25,19 +21,19 @@ const CASES = LOCALES.flatMap((locale) =>
   ['episode', 'chapter'].map((unit) => ({ locale, unit })),
 )
 
-function at(unit: string, count: number): Bookmark {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
-}
-
-function character(id: string): Entity {
-  const record = archive.getCharacter(id)
-  if (record === undefined) {
-    throw new Error(`Missing ${id} fixture`)
-  }
-  return record
-}
+describe.each(gateCases(RECORDS, archive.series))(
+  '$id in $locale by $unit',
+  (row) => {
+    it('opens the record and its drawing at its named scene', () => {
+      expect(opened(row.id, readerFor(archive, row.before, row.locale))).toBe(
+        false,
+      )
+      expect(opened(row.id, readerFor(archive, row.reached, row.locale))).toBe(
+        true,
+      )
+    })
+  },
+)
 
 describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   const read = (count: number): Reader =>
@@ -45,31 +41,8 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   const pin = (episode: number, chapter: number): number =>
     row.unit === 'chapter' ? chapter : episode
 
-  it.each(RECORDS)('opens $id and its drawing at its named scene', (record) => {
-    const threshold = pin(record.episode, record.chapter)
-    const before = read(threshold - 1)
-    const reached = read(threshold)
-    const closedPage = characterPage(record.id, before)
-    const openPage = characterPage(record.id, reached)
-
-    expect(
-      closedPage !== undefined
-        && 'detail' in closedPage
-        && closedPage.detail.slot.open,
-    ).toBe(false)
-    expect(drawingsFor([record.id], before)).toStrictEqual({})
-    expect(
-      openPage !== undefined
-        && 'detail' in openPage
-        && openPage.detail.slot.open,
-    ).toBe(true)
-    expect(
-      drawingsFor([record.id], reached)[record.id]?.length,
-    ).toBeGreaterThan(3)
-  })
-
   it('opens Puhat’s recruitment, alliance and change of role separately', () => {
-    const puhat = character('puhat')
+    const puhat = recordOf(archive, 'puhat')
     const hired = pin(60, 126)
     const alliance = pin(61, 131)
     const player = pin(61, 126)
@@ -97,7 +70,7 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   })
 
   it('changes Puhat’s status and drawing together at his death', () => {
-    const puhat = character('puhat')
+    const puhat = recordOf(archive, 'puhat')
     const opening = read(pin(60, 125))
     const death = pin(64, 143)
     const before = read(death - 1)
@@ -116,7 +89,7 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   it.each(['gon-freecss', 'killua'])(
     'dates %s’s recruitment affiliation',
     (id) => {
-      const recruit = character(id)
+      const recruit = recordOf(archive, id)
       const hired = pin(60, 126)
 
       expect(factsOf(recruit, read(hired - 1)).affiliation).not.toContain(
@@ -127,9 +100,9 @@ describe.each(CASES)('Greed Island recruitment in $locale by $unit', (row) => {
   )
 
   it('gates the selected relationships and their changed wording', () => {
-    const battera = character('battera')
-    const tsezguerra = character('tsezguerra')
-    const puhat = character('puhat')
+    const battera = recordOf(archive, 'battera')
+    const tsezguerra = recordOf(archive, 'tsezguerra')
+    const puhat = recordOf(archive, 'puhat')
     const rejection = pin(59, 121)
     const accepted = pin(60, 126)
     const introduced = pin(60, 125)
@@ -226,45 +199,20 @@ const ARRIVAL = [
   { id: 'elena', episode: 75, chapter: 184, place: false, source: 'chapter' },
 ]
 
-function pageFor(
-  record: (typeof ARRIVAL)[number],
-  reader: Reader,
-): ReturnType<typeof characterPage> | ReturnType<typeof placePage> {
-  return record.place ?
-      placePage(record.id, reader)
-    : characterPage(record.id, reader)
-}
-
-function isOpen(page: ReturnType<typeof pageFor>): boolean {
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-const ARRIVAL_CASES = ARRIVAL.flatMap((record) =>
+const NAMED_CASES = gateCases(ARRIVAL, archive.series)
+const OTHER_SOURCE_CASES = ARRIVAL.flatMap((record) =>
   CASES.map((row) => ({ ...record, ...row })),
-)
-const NAMED_CASES = ARRIVAL_CASES.filter(
-  ({ source, unit }) => source === undefined || source === unit,
-)
-const OTHER_SOURCE_CASES = ARRIVAL_CASES.filter(
-  ({ source, unit }) => source !== undefined && source !== unit,
-)
+).filter(({ source, unit }) => source !== undefined && source !== unit)
 
 describe.each(NAMED_CASES)('$id arrival in $locale by $unit', (record) => {
   it('opens its record and drawing at the naming gate', () => {
-    const gate = record.unit === 'chapter' ? record.chapter : record.episode
-    const before = readerFor(archive, at(record.unit, gate - 1), record.locale)
-    const reached = readerFor(archive, at(record.unit, gate), record.locale)
-    const closedPage = pageFor(record, before)
-    const openPage = pageFor(record, reached)
+    const before = readerFor(archive, record.before, record.locale)
+    const reached = readerFor(archive, record.reached, record.locale)
 
-    expect(isOpen(closedPage)).toBe(false)
-    expect(drawingsFor([record.id], before)).toStrictEqual({})
-    expect(isOpen(openPage)).toBe(true)
-    expect(
-      drawingsFor([record.id], reached)[record.id]?.length,
-    ).toBeGreaterThan(3)
-    expect(archive.bookmarks).toContainEqual(at(record.unit, gate - 1))
-    expect(archive.bookmarks).toContainEqual(at(record.unit, gate))
+    expect(opened(record.id, before)).toBe(false)
+    expect(opened(record.id, reached)).toBe(true)
+    expect(archive.bookmarks).toContainEqual(record.before)
+    expect(archive.bookmarks).toContainEqual(record.reached)
   })
 })
 
@@ -278,7 +226,9 @@ describe.each(OTHER_SOURCE_CASES)(
         : archive.series.episodeCeiling
       const reader = readerFor(archive, at(record.unit, ceiling), record.locale)
 
-      expect(pageFor(record, reader)).toBeUndefined()
+      expect(
+        characterPage(record.id, reader) ?? placePage(record.id, reader),
+      ).toBeUndefined()
       expect(drawingsFor([record.id], reader)).toStrictEqual({})
     })
   },
@@ -300,10 +250,8 @@ describe.each(CASES)(
     ])('keeps %s closed through this phase', (id) => {
       const cutoff = unit === 'chapter' ? 141 : 63
       const reader = readerFor(archive, at(unit, cutoff), locale)
-      const page = characterPage(id, reader)
 
-      expect(isOpen(page)).toBe(false)
-      expect(drawingsFor([id], reader)).toStrictEqual({})
+      expect(opened(id, reader)).toBe(false)
     })
   },
 )
@@ -319,7 +267,7 @@ describe.each(CASES)(
     it.each(['gon-freecss', 'killua'])(
       'dates %s’s offer, training and later exercises separately',
       (id) => {
-        const pupil = character(id)
+        const pupil = recordOf(archive, id)
         const offer = pin(62, 137)
         const training = pin(63, 138)
         const exercises = pin(64, 141)
@@ -346,7 +294,7 @@ describe.each(CASES)(
     )
 
     it('dates Biscuit’s accepted teaching role after her initial offer', () => {
-      const teacher = character('biscuit-krueger')
+      const teacher = recordOf(archive, 'biscuit-krueger')
       const teaching = pin(63, 138)
 
       expect(factsOf(teacher, read(teaching - 1)).affiliation).toContain(
@@ -364,7 +312,7 @@ describe.each(CASES)(
       { id: 'kortopi', episode: 62, chapter: 134 },
       { id: 'shizuku', episode: 62, chapter: 134 },
     ])('dates $id’s entry into the game', ({ id, episode, chapter }) => {
-      const member = character(id)
+      const member = recordOf(archive, id)
       const gate = pin(episode, chapter)
 
       expect(factsOf(member, read(gate - 1)).affiliation).not.toContain(
@@ -382,13 +330,13 @@ describe.each(LOCALES)('Binolt’s source-specific status in %s', (locale) => {
     { unit: 'episode', count: 63, status: 'alive' },
   ])('shows $status at $unit $count', ({ unit, count, status }) => {
     const reader = readerFor(archive, at(unit, count), locale)
-    const binolt = character('binolt')
+    const binolt = recordOf(archive, 'binolt')
 
     expect(archive.latestOf(reader, binolt, 'status')).toBe(status)
   })
 
   it('keeps Wing out of Biscuit’s earlier anime introduction', () => {
-    const biscuit = character('biscuit-krueger')
+    const biscuit = recordOf(archive, 'biscuit-krueger')
     const before = readerFor(archive, at('episode', 62), locale)
     const reached = readerFor(archive, at('episode', 63), locale)
     const manga = readerFor(archive, at('chapter', 137), locale)
@@ -452,7 +400,7 @@ describe.each(STEP_CASES)(
   '$id’s dated step at $pin in $locale by $unit',
   ({ id, locale, pin, unit }) => {
     it('changes the affiliation only once the step is reached', () => {
-      const entity = character(id)
+      const entity = recordOf(archive, id)
       const before = factsOf(
         entity,
         readerFor(archive, at(unit, pin - 1), locale),

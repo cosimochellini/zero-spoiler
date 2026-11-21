@@ -22,26 +22,30 @@ export const UNITS: Unit[] = ['episode', 'chapter']
 
 /**
  * One row of a hand-written table: the episode and chapter a record or step
- * is told at, and the one source that alone tells it.
+ * is told at, and the one source that alone tells it. A table's columns are
+ * often plain strings, so `source` is one, checked when it is read.
  */
 export interface Pin {
   chapter: number
   episode: number
-  source?: Unit
+  source?: string | undefined
 }
 
-/**
- * A bookmark at this count of this unit. A table's `unit` column is often a
- * plain string, so any other string is a fault, and throws.
- */
+/** A unit named in a table, or the table is wrong. */
+function unitOf(name: string): Unit {
+  const unit = UNITS.find((each) => each === name)
+  if (unit === undefined) {
+    throw new Error(`${name} is not a unit`)
+  }
+
+  return unit
+}
+
+/** A bookmark at this count of this unit, named as a table names it. */
 export function bookmarkAt(unit: string, count: number): NonNullable<Bookmark> {
-  if (unit === 'chapter') {
-    return { mode: 'chapter', chapter: count }
-  }
-  if (unit === 'episode') {
-    return { mode: 'episode', episode: count }
-  }
-  throw new Error(`${unit} is not a unit`)
+  return unitOf(unit) === 'chapter' ?
+      { mode: 'chapter', chapter: count }
+    : { mode: 'episode', episode: count }
 }
 
 /** Both sides of a pin's gate in one unit. */
@@ -64,7 +68,7 @@ export function sidesOf(pin: Pin, series: BookmarkSeries): Side[] {
       {
         revealedAtEpisode: pin.episode,
         revealedAtChapter: pin.chapter,
-        ...(pin.source !== undefined && { source: pin.source }),
+        ...(pin.source !== undefined && { source: unitOf(pin.source) }),
       },
     ],
     series,
@@ -88,6 +92,19 @@ export function sidesOf(pin: Pin, series: BookmarkSeries): Side[] {
       reached: bookmarkAt(unit, gate),
     }
   })
+}
+
+/**
+ * Both sides of a pin's gate in one unit, for a test that walks one unit at
+ * a time; the unit not telling the pin is a fault in the table, and throws.
+ */
+export function sideIn(pin: Pin, unit: string, series: BookmarkSeries): Side {
+  const side = sidesOf(pin, series).find((each) => each.unit === unit)
+  if (side === undefined) {
+    throw new Error(`${unit} does not tell this pin`)
+  }
+
+  return side
 }
 
 /** Each row in each locale, at both sides of its gate in each unit (`sidesOf`). */
