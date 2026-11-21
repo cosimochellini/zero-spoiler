@@ -2,7 +2,7 @@
 # decides. These only shorten the loop.
 #
 # The hooks install themselves on `npm install` through the `prepare` script.
-# To reinstall by hand: `npx lefthook install`. To skip them for one command:
+# To reinstall by hand: `./node_modules/.bin/lefthook install`. To skip them for one command:
 # `LEFTHOOK=0 git commit`. CI sets LEFTHOOK=0 for the whole workflow.
 min_version: 2.1.12
 
@@ -16,7 +16,7 @@ pre-commit:
   jobs:
     - name: prettier
       glob: '*.{ts,tsx,js,mjs,cjs,json,jsonc,yml,yaml,md,css,html}'
-      run: npx prettier --write --ignore-unknown {staged_files}
+      run: ./node_modules/.bin/prettier --write --ignore-unknown {staged_files}
       stage_fixed: true
 
     - name: eslint
@@ -24,33 +24,47 @@ pre-commit:
       # --no-warn-ignored: an explicitly passed ignored file, such as
       # src/routeTree.gen.ts, would otherwise count as a warning and fail
       # --max-warnings=0.
-      run: npx eslint --max-warnings=0 --no-warn-ignored {staged_files}
+      run:
+        ./node_modules/.bin/eslint --max-warnings=0 --no-warn-ignored
+        {staged_files}
 
     - name: typecheck
       # The whole project, not the staged files: a changed type breaks files
       # that are not staged. Runs only when TypeScript is part of the commit.
       glob: '*.{ts,tsx}'
-      run: npx tsc --noEmit
+      run: ./node_modules/.bin/tsc --noEmit
 
 commit-msg:
   jobs:
     - name: commitlint
-      run: npx commitlint --edit {1}
+      run: ./node_modules/.bin/commitlint --edit {1}
 
 # A commit made with --no-verify skips everything above, so the push checks
 # formatting and lint again on the files it sends.
 pre-push:
   jobs:
     - name: test
-      run: npx vitest run
+      # Only the tests that the branch's changes reach through imports. All of
+      # them run when a forceRerunTriggers file in vitest.config.ts changes
+      # (package.json, the lockfile, tsconfig.json, the Vite or Vitest config),
+      # and when a change reaches the setup file, an .env file or a config
+      # dependency: the i18n dictionaries reach src/test/setup.ts, so a copy
+      # change runs all of them. A test that reads a file with fs, not an
+      # import, is not picked up. CI runs the full suite on a ready PR, and
+      # that is the gate.
+      # The diff starts at the merge base, so a stale origin/main needs no
+      # fetch; a missing one stops the push with git's error.
+      run: ./node_modules/.bin/vitest run --changed origin/main
 
     - name: prettier
       glob: '*.{ts,tsx,js,mjs,cjs,json,jsonc,yml,yaml,md,css,html}'
       # --check, not --write: the files are already committed, and a push must
       # not change them.
-      run: npx prettier --check --ignore-unknown {push_files}
+      run: ./node_modules/.bin/prettier --check --ignore-unknown {push_files}
 
     - name: eslint
       glob: '*.{ts,tsx,js,mjs,cjs}'
       # The same flags as the pre-commit job, for the same reason.
-      run: npx eslint --max-warnings=0 --no-warn-ignored {push_files}
+      run:
+        ./node_modules/.bin/eslint --max-warnings=0 --no-warn-ignored
+        {push_files}
