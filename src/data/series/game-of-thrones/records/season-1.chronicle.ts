@@ -44,7 +44,7 @@ function inBooks(
  * Aggo’s are all at episode 11, the show’s gate for him.
  * Jaqen H’ghar opens at episode 12 and chapter 79, and Rorge and Biter, the
  * books’ alone, at chapter 79, past the stage; none has a chronicle yet.
- * Nor has Lommy, who opens at episode 13 and chapter 75 (#1457).
+ * Nor has Lommy, who opens at episode 31 and chapter 75 (#1457).
  *
  * The King’s Landing, riverlands and Vale cast follows (#1362), on the same
  * rules. Boros, Mandon, Dontos, Thoros, Yohn Royce, Podrick, Edmure, Hoster,

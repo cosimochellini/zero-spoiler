@@ -151,7 +151,9 @@ const EXPECTED: Record<string, Expected> = {
   // book gate moved to Jon VII, his alive entry and his redrawings went
   // (#1425): 259 statuses and 733 timelines. Chronicles and timelines counted
   // 2026-11-21, after Lommy's show gate moved to episode 13 and his stage-1
-  // story went (#1457): 565 stories and 732 timelines.
+  // story went (#1457): 565 stories and 732 timelines. Timelines counted
+  // 2026-11-21, after Lommy's show gate moved to episode 31 and his
+  // relationship cards went (#1457): 731.
   'game-of-thrones': {
     kinds: [
       'affiliation',
@@ -175,7 +177,7 @@ const EXPECTED: Record<string, Expected> = {
       linkedOrigins: 0,
       places: 60,
       statuses: 259,
-      timelines: 732,
+      timelines: 731,
       visits: 0,
     },
     namesSaidEarly: true,

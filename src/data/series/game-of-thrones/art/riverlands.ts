@@ -257,9 +257,9 @@ const PIE: Stroke[] = [
 
 /**
  * Lommy: a dye vat with a stirring stick and a cloth over its rim, for the
- * dyer's apprentice with green hands among Yoren's recruits, from episode 10
- * on screen and named in episode 13, his show gate, and in A Clash of Kings
- * (chapter 75). The accent is the dye.
+ * dyer's apprentice with green hands among Yoren's recruits, on screen from
+ * episode 10 and named only in episode 31, his show gate, and in A Clash of
+ * Kings (chapter 75). The accent is the dye.
  */
 const DYE_VAT: Stroke[] = [
   { d: ellipse(80, 82, 44, 12) },
@@ -419,11 +419,11 @@ export const riverlandsRedrawn: Redrawings = {
   'lommy': [
     // The vat on its side and the dye run out across the ground: Raff the
     // Sweetling kills him in Arya V of A Clash of Kings (chapter 93). The show
-    // kills him (Polliver) in "What Is Dead May Never Die" (episode 13), the
-    // episode his show record opens in, where no stage can sit, so the stage
-    // is the book's (#1457, as Mandon Moore's).
+    // kills him (Polliver) in "What Is Dead May Never Die" (episode 13),
+    // before it names him at episode 31, where his record opens dead and no
+    // stage can sit, so the stage is the book's (#1457, as Mandon Moore's).
     {
-      episode: 13,
+      episode: 31,
       chapter: 93,
       source: 'chapter',
       value: [

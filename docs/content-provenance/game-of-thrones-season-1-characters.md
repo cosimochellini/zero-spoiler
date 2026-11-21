@@ -1351,9 +1351,10 @@ Wikipedia has no entry (owner, 2026-11-03).
 ### Podrick Payne (`podrick-payne`)
 
 - Episode 19: Blackwater (S2E9): Varys asks Tyrion whether he trusts Podrick,
-  the first time the Fandom pages have his name said (#1457). Owner check: he is
-  on screen unnamed from The Night Lands (S2E2, episode 12), where he spills
-  wine on Janos Slynt (Fandom First), the gate filed before #1457.
+  the first time the Fandom pages have his name said, in reported speech that
+  neither page quotes verbatim (#1457). Owner checks: 19 itself, and he is on
+  screen unnamed from The Night Lands (S2E2, episode 12), where he spills wine
+  on Janos Slynt (Fandom First), the gate filed before #1457.
 - Chapter 63: Tyrion VIII: the squire Kevan gives Tyrion before the battle
   (Appearing list; page cites AGOT 62).
 - Italian: Podrick Payne (it.wikipedia
@@ -1407,10 +1408,12 @@ Wikipedia has no entry (owner, 2026-11-03).
 
 ### Lommy Greenhands (`lommy`)
 
-- Episode 13: What Is Dead May Never Die (S2E3): Arya tells Amory Lorch that the
-  dead Lommy was Gendry (Fandom Lommy page, GOT203), the first time his name is
-  said (#1457). Owner check: he is on screen from Fire and Blood (episode 10),
-  bullying 'Arry', named there only by the synopsis's narration.
+- Episode 31: Two Swords (S4E1): Arya tells the Hound that Polliver killed
+  Lommy, and the Hound asks, "What the fuck's a Lommy?" (Fandom Lommy page,
+  GOT401), the first quoted line with his name (#1457). The record opens dead.
+  Owner checks: he is on screen from Fire and Blood (episode 10), bullying
+  'Arry', and dies in What Is Dead May Never Die (episode 13), where Arya passes
+  his body off as Gendry's; both name him only in narration.
 - Chapter 75: A Clash of Kings, Arya I: names Arya 'Lumpyhead' and eggs Hot Pie
   on (Appearing list; synopsis names him).
 - Italian: Lommy Maniverdi (it.wikipedia

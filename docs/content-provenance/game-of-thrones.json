@@ -2368,7 +2368,7 @@
     "unverified": [
       "Drawing (#1290): the spear he kills Mandon Moore with in episode 19 (Fandom ref GOT209) and the wine he pours in episode 12 (GOT202); the book's Pod pushes Mandon into the river without a spear. Episodes not viewed.",
       "Axe stage (#1290): Bronn brings him Tyrion's axe in episode 34 (Fandom ref GOT404), the show's alone. Chapter 235 (A Feast for Crows 9, Brienne II, where Pod joins Brienne) only orders it; taken from the Game of Thrones Wiki's adaptation list for \"Oathkeeper\". Not checked on A Wiki of Ice and Fire.",
-      "Show gate (#1457): moved from episode 12 to 19. The Game of Thrones Wiki names him only in narration in \"The Night Lands\" (episode 12, where he spills wine on Janos Slynt) and \"The Prince of Winterfell\"; its Podrick page has the first reported speech with his name in \"Blackwater\" (episode 19: Varys asks Tyrion whether he trusts Podrick). Owner check: lower to 12 if the episode says his name on screen; episodes not viewed."
+      "Show gate (#1457): moved from episode 12 to 19. The Game of Thrones Wiki names him only in narration in \"The Night Lands\" (episode 12, where he spills wine on Janos Slynt) and \"The Prince of Winterfell\". In \"Blackwater\" (episode 19) the Podrick page has \"Varys asks Tyrion if he trusts Podrick and Tyrion says that he does\" (GOT209), reported speech; neither the Podrick page nor the episode page quotes the line verbatim. Owner checks: 12 (on screen unnamed) and 19 (reported, not quoted); no later quoted line was looked for past season 2."
     ]
   },
   "stevron-frey": {
@@ -2444,11 +2444,12 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_19",
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
-      "https://iceandfire.fandom.com/wiki/Arya_I_-_A_Clash_of_Kings"
+      "https://iceandfire.fandom.com/wiki/Arya_I_-_A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/wiki/Two_Swords"
     ],
     "unverified": [
       "Death (#1242): Polliver kills him in episode 13 (Fandom ref GOT203) and Raff the Sweetling in Arya V of A Clash of Kings (site chapter 93); episode not viewed, chapter checked against the text.",
-      "Show gate (#1457): moved from episode 10 to 13. The Game of Thrones Wiki names him only in narration in \"Fire and Blood\" and \"The Night Lands\" (its quotes have him speak, not named); the Lommy page has Arya tell Amory Lorch that Lommy was Gendry in \"What Is Dead May Never Die\" (GOT203), the first reported speech with his name. He dies in that episode, so his status opens alive in the books alone (13/75 chapter), dies at 13/93 in both, and his dead-vat stage is the books' alone, as Mandon Moore's. His stage-1 story (\"Backing Hot Pie\") goes: no stage-1 reader reaches him in either medium. Owner check: lower to 10 if \"Fire and Blood\" says his name on screen; episodes not viewed."
+      "Show gate (#1457): moved from episode 10 to 31. The Game of Thrones Wiki names him only in narration while he lives: \"Fire and Blood\" and \"The Night Lands\" quote him, not his name, and in \"What Is Dead May Never Die\" (GOT203) Arya passes his body off as Gendry's, so \"Arya tells him that Lommy was Gendry\" is the writer's label. The Lommy page's first quoted line with his name is the Hound's \"What the fuck's a Lommy?\" in \"Two Swords\" (GOT401, episode 31), after Arya says Polliver killed Lommy. The show record opens dead there: alive is the books' alone (31/75 chapter), deceased opens at 31 on screen and 93 in the books, and the dead-vat stage is the books' alone (31/93 chapter). His relationship cards (show-only) and his stage-1 story (\"Backing Hot Pie\") go; stage 4 adds them. Owner check: lower the gate to 10 or 13 if either episode says his name on screen; episodes not viewed."
     ]
   },
   "jaqen-hghar": {

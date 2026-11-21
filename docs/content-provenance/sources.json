@@ -35271,6 +35271,16 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740196",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740196",
       "contentSha256": "f2f6c56afb5cdc713f6c9ac86d8c9a710b6881dc86a8dbbaef6169e11507300d"
+    },
+    "got-en-Two_Swords-748948.json": {
+      "locale": "en",
+      "title": "Two Swords",
+      "revision": 748948,
+      "revisionDate": "2026-10-02T13:17:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Two_Swords",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748948",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748948",
+      "contentSha256": "56819fb5e45247fc9b39ceedf8733446e158132d15751f16e8fc5f88d28181fe"
     }
   }
 }

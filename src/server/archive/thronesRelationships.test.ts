@@ -845,17 +845,15 @@ describe.each(LOCALES)(
     })
 
     it('keeps the show-only recruits out of book pages', () => {
-      for (const [id, gate] of [
-        ['hot-pie', 10],
-        ['lommy', 13],
-      ] as const) {
-        expect(projected(id, ep(gate - 1), locale), id).toStrictEqual([])
-        expect(projected(id, ep(gate), locale), id).not.toStrictEqual([])
-        expect(
-          projected(id, ch(archive.series.chapterCeiling), locale),
-          id,
-        ).toStrictEqual([])
-      }
+      expect(projected('hot-pie', ep(9), locale)).toStrictEqual([])
+      expect(projected('hot-pie', ep(10), locale)).not.toStrictEqual([])
+      expect(
+        projected('hot-pie', ch(archive.series.chapterCeiling), locale),
+      ).toStrictEqual([])
+      // Lommy's show record opens at episode 31, past stage 2 (#1457).
+      expect(
+        projected('lommy', ep(archive.series.episodeCeiling), locale),
+      ).toStrictEqual([])
     })
 
     it('keeps the riverlands and Vale books-only roster out of show pages', () => {

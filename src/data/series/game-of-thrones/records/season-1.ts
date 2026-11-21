@@ -1760,16 +1760,17 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'hot-pie', tint: 'sand' },
     },
-    // Show: "What Is Dead May Never Die" (episode 13), Arya tells Amory Lorch
-    // that the dead Lommy was Gendry, the first time the Game of Thrones Wiki
-    // has his name said; he is on screen unnamed from "Fire and Blood"
-    // (episode 10), bullying Arry with Hot Pie (#1457). Books: A Clash of
-    // Kings, Arya I (site chapter 75), he calls Arya Lumpyhead and eggs Hot
-    // Pie on.
+    // Show: "Two Swords" (episode 31), Arya tells the Hound that Polliver
+    // killed Lommy, and he asks, "What the fuck's a Lommy?", the first line
+    // the Game of Thrones Wiki quotes with his name. He is on screen unnamed
+    // from "Fire and Blood" (episode 10), bullying Arry with Hot Pie, until
+    // he dies in "What Is Dead May Never Die" (episode 13), where Arya passes
+    // his body off as Gendry's (#1457). Books: A Clash of Kings, Arya I (site
+    // chapter 75), he calls Arya Lumpyhead and eggs Hot Pie on.
     {
       id: 'lommy',
       kind: 'character',
-      revealedAtEpisode: 13,
+      revealedAtEpisode: 31,
       revealedAtChapter: 75,
       name: { it: 'Lommy Maniverdi', en: 'Lommy Greenhands' },
       summary: {
@@ -6111,7 +6112,6 @@ export const season1: ThronesSaga = {
       ],
     },
     'lommy': {
-      relationships: season1Relationships.lommy,
       role: {
         it: 'Apprendista tintore, recluta dei Guardiani della notte',
         en: 'Dyer’s apprentice, Night’s Watch recruit',
@@ -6121,14 +6121,16 @@ export const season1: ThronesSaga = {
         en: 'He travels to the Wall with Yoren’s recruits. He and Hot Pie mock Arya, who is passing as a boy.',
       },
       status: [
-        { episode: 13, chapter: 75, source: 'chapter', value: 'alive' },
+        { episode: 31, chapter: 75, source: 'chapter', value: 'alive' },
         // Polliver kills him in "What Is Dead May Never Die" (episode 13),
-        // his show gate, and Raff in Arya V of A Clash of Kings (chapter 93).
-        { episode: 13, chapter: 93, value: 'deceased' },
+        // before the show names him, so the show record opens dead at its
+        // gate, episode 31; Raff kills him in Arya V of A Clash of Kings
+        // (chapter 93).
+        { episode: 31, chapter: 93, value: 'deceased' },
       ],
       affiliation: [
         {
-          episode: 13,
+          episode: 31,
           chapter: 75,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
         },

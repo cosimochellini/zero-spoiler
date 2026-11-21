@@ -148,9 +148,9 @@ const RECORDS: {
   { id: 'hoster-tully', episode: 23, chapter: 72 },
   { id: 'brynden-tully', episode: 23, chapter: 35 },
   { id: 'hot-pie', episode: 10, chapter: 75 },
-  // Lommy's show gate moved to episode 13, where his name is first said
+  // Lommy's show gate moved to episode 31, where his name is first said
   // (#1457).
-  { id: 'lommy', episode: 13, chapter: 75 },
+  { id: 'lommy', episode: 31, chapter: 75 },
   { id: 'jaqen-hghar', episode: 12, chapter: 79 },
   { id: 'rorge', episode: 12, chapter: 79, source: 'chapter' },
   { id: 'biter', episode: 12, chapter: 79, source: 'chapter' },
@@ -311,8 +311,8 @@ const CHANGES: {
   { id: 'hoster-tully', episode: 23, chapter: 179, value: 'deceased' },
   { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
   // Later deaths (#1242).
-  { id: 'lommy', episode: 13, chapter: 75, value: 'alive', source: 'chapter' },
-  { id: 'lommy', episode: 13, chapter: 93, value: 'deceased' },
+  { id: 'lommy', episode: 31, chapter: 75, value: 'alive', source: 'chapter' },
+  { id: 'lommy', episode: 31, chapter: 93, value: 'deceased' },
   {
     id: 'rorge',
     episode: 37,
@@ -1486,7 +1486,7 @@ const STAGES: {
   },
   { id: 'eastwatch', episode: 67, chapter: 344, source: 'episode' },
   // Later deaths (#1242).
-  { id: 'lommy', episode: 13, chapter: 93, source: 'chapter' },
+  { id: 'lommy', episode: 31, chapter: 93, source: 'chapter' },
   { id: 'stevron-frey', episode: 14, chapter: 109, source: 'chapter' },
   { id: 'hoster-tully', episode: 23, chapter: 179, source: 'chapter' },
   { id: 'rorge', episode: 37, chapter: 263, source: 'chapter' },
