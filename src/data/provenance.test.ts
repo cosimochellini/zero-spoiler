@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from 'node:fs'
+import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 import { eggheadRelationshipOmissions } from '~/data/series/one-piece/records/egghead.relationships'
@@ -73,6 +75,38 @@ function titlesOn(hosts: string[]): Set<string> {
       .filter(({ url }) => hosts.includes(hostOf(url)))
       .map(({ title }) => title),
   )
+}
+
+/** The provenance folder: every ledger and research note beside `sources.json`. */
+const LEDGERS = path.join(import.meta.dirname, '../../docs/content-provenance')
+
+/** Every wiki revision a ledger or note cites, with the file citing it. */
+const cited = readdirSync(LEDGERS)
+  .filter((file) => /\.(?:json|md)$/u.test(file) && file !== 'sources.json')
+  .flatMap((file) => {
+    // eslint-disable-next-line security/detect-non-literal-fs-filename -- a file listed in the folder above.
+    const text = readFileSync(path.join(LEDGERS, file), 'utf8')
+    return Array.from(
+      text.matchAll(/https:\/\/[^\s"<>]*?[?&]oldid=\d+/gu),
+      ([url]) => ({ file, url: new URL(url) }),
+    )
+  })
+
+/** The pinned revisions' titles, by `<host><path> <revision>`. */
+const revisions = new Map(
+  Object.values(manifest.sources).map(({ revision, revisionUrl, title }) => {
+    const { host, pathname } = new URL(revisionUrl)
+    return [`${host}${pathname} ${String(revision)}`, title]
+  }),
+)
+
+/** The page a revision URL names, when it names one: `/wiki/<Title>?oldid=` or `?title=`. */
+function titleIn({ pathname, searchParams }: URL): string | undefined {
+  const page =
+    pathname.startsWith('/wiki/') ?
+      decodeURIComponent(pathname.slice('/wiki/'.length))
+    : searchParams.get('title')
+  return page?.replaceAll('_', ' ')
 }
 
 const PROVENANCE: Provenance[] = [
@@ -250,6 +284,28 @@ describe.each(PROVENANCE)(
         ).toStrictEqual([])
       },
     )
+
+    // `npm run provenance:pin` pins only a wiki's English root: a language
+    // path (`/it/wiki/…`) stays a plain URL, as Italian Wikipedia does.
+    it('pins every revision the ledgers and notes cite from its wikis', () => {
+      const hosts = Object.values(wikis)
+      const unpinned = cited
+        .filter(
+          ({ url }) =>
+            hosts.includes(url.host)
+            && /^\/(?:wiki\/|index\.php$)/u.test(url.pathname),
+        )
+        .filter(({ url }) => {
+          const title = revisions.get(
+            `${url.host}/index.php ${url.searchParams.get('oldid') ?? ''}`,
+          )
+          const named = titleIn(url)
+          return title === undefined || (named !== undefined && named !== title)
+        })
+        .map(({ file, url }) => `${file}: ${url.href}`)
+
+      expect(unpinned).toStrictEqual([])
+    })
 
     const titles = titlesOn(Object.values(wikis))
 
