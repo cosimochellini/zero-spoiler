@@ -1,18 +1,14 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import { LOADED_SERIES } from '~/test/series'
+import { opened, recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor, relationshipsPage } from './pages.server'
 import { placePage } from './placePage.server'
 import { readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Kakin phase 4 tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 // Independent naming-scene expectations, not derived from the filed records.
 const RECORDS = [
   { id: 'tajao', chapter: 384, place: false },
@@ -92,41 +88,19 @@ const RELATIONSHIPS = [
   { id: 'kaiser', chapter: 400, target: 'melody' },
 ]
 
-function character(id: string): Entity {
-  const entity = archive.getCharacter(id)
-  if (entity === undefined) {
-    throw new Error(`Missing Kakin phase 4 character ${id}`)
-  }
-  return entity
-}
-
 describe.each(LOCALES)('Kakin phase 4 in %s', (locale) => {
   it.each(RECORDS)(
     'opens $id and its drawing only at chapter $chapter',
-    ({ id, chapter, place }) => {
+    ({ id, chapter }) => {
       const before = readerFor(
         archive,
         { mode: 'chapter', chapter: chapter - 1 },
         locale,
       )
       const reached = readerFor(archive, { mode: 'chapter', chapter }, locale)
-      const beforePage =
-        place ? placePage(id, before) : characterPage(id, before)
-      const reachedPage =
-        place ? placePage(id, reached) : characterPage(id, reached)
 
-      expect(
-        beforePage !== undefined
-          && 'detail' in beforePage
-          && beforePage.detail.slot.open,
-      ).toBe(false)
-      expect(drawingsFor([id], before)).toStrictEqual({})
-      expect(
-        reachedPage !== undefined
-          && 'detail' in reachedPage
-          && reachedPage.detail.slot.open,
-      ).toBe(true)
-      expect(drawingsFor([id], reached)[id]?.length).toBeGreaterThan(3)
+      expect(opened(id, before)).toBe(false)
+      expect(opened(id, reached)).toBe(true)
     },
   )
 
@@ -179,12 +153,12 @@ describe.each(LOCALES)('Kakin phase 4 in %s', (locale) => {
       locale,
     )
 
-    expect(archive.latestOf(before, character('sarasa'), 'status')).toBe(
-      'alive',
-    )
-    expect(archive.latestOf(reached, character('sarasa'), 'status')).toBe(
-      'deceased',
-    )
+    expect(
+      archive.latestOf(before, recordOf(archive, 'sarasa'), 'status'),
+    ).toBe('alive')
+    expect(
+      archive.latestOf(reached, recordOf(archive, 'sarasa'), 'status'),
+    ).toBe('deceased')
   })
 
   it('pins Sheila’s departure to chapter 397', () => {
@@ -196,16 +170,16 @@ describe.each(LOCALES)('Kakin phase 4 in %s', (locale) => {
     )
 
     expect(
-      archive.latestOf(before, character('sheila'), 'affiliation'),
+      archive.latestOf(before, recordOf(archive, 'sheila'), 'affiliation'),
     ).not.toStrictEqual(
-      archive.latestOf(reached, character('sheila'), 'affiliation'),
+      archive.latestOf(reached, recordOf(archive, 'sheila'), 'affiliation'),
     )
   })
 
   it.each(['padaille', 'misha-hao', 'tassi'])(
     'files $id’s already-known death at its opening',
     (id) => {
-      const entity = character(id)
+      const entity = recordOf(archive, id)
       const reader = readerFor(
         archive,
         { mode: 'chapter', chapter: entity.revealedAtChapter },

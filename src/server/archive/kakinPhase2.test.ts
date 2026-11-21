@@ -1,19 +1,15 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import { opened, recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Kakin phase 2 tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 
 // Independent expectations from the naming scenes, not the implementation.
 const CHARACTERS = [
@@ -40,22 +36,6 @@ const CHARACTERS = [
 
 const CASES = CHARACTERS.map(([id, chapter]) => ({ id, chapter }))
 
-function opened(page: ReturnType<typeof characterPage>): boolean {
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function placeOpened(page: ReturnType<typeof placePage>): boolean {
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function character(id: string): Entity {
-  const owner = archive.getCharacter(id)
-  if (owner === undefined) {
-    throw new Error(`Missing Kakin fixture ${id}`)
-  }
-  return owner
-}
-
 describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
   const read = (bookmark: Bookmark): Reader =>
     readerFor(archive, bookmark, locale)
@@ -66,17 +46,15 @@ describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
 
-      expect(opened(characterPage(id, before))).toBe(false)
-      expect(drawingsFor([id], before)).toStrictEqual({})
-      expect(opened(characterPage(id, reached))).toBe(true)
-      expect(drawingsFor([id], reached)[id]?.length).toBeGreaterThan(3)
+      expect(opened(id, before)).toBe(false)
+      expect(opened(id, reached)).toBe(true)
     },
   )
 
   it.each(CASES)(
     'opens $id’s dated facts only at its naming gate',
     ({ id, chapter }) => {
-      const owner = character(id)
+      const owner = recordOf(archive, id)
       const before = read({ mode: 'chapter', chapter: chapter - 1 })
       const reached = read({ mode: 'chapter', chapter })
       for (const field of ['affiliation', 'status', 'relationships'] as const) {
@@ -99,26 +77,22 @@ describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
   })
 
   it('opens the Black Whale at its chapter 342 naming, for manga readers only', () => {
-    const closed = placePage(
-      'black-whale',
-      read({ mode: 'chapter', chapter: 341 }),
-    )
-    const open = placePage(
-      'black-whale',
-      read({ mode: 'chapter', chapter: 342 }),
-    )
     const anime = placePage(
       'black-whale',
       read({ mode: 'episode', episode: 148 }),
     )
 
-    expect(placeOpened(closed)).toBe(false)
-    expect(placeOpened(open)).toBe(true)
+    expect(opened('black-whale', read({ mode: 'chapter', chapter: 341 }))).toBe(
+      false,
+    )
+    expect(opened('black-whale', read({ mode: 'chapter', chapter: 342 }))).toBe(
+      true,
+    )
     expect(anime).toBeUndefined()
   })
 
   it('pins Momoze’s death at chapter 368', () => {
-    const owner = character('momoze-hui-guo-rou')
+    const owner = recordOf(archive, 'momoze-hui-guo-rou')
     const alive = read({ mode: 'chapter', chapter: 367 })
     const dead = read({ mode: 'chapter', chapter: 368 })
 
@@ -127,7 +101,7 @@ describe.each(LOCALES)('Kakin phase 2 in %s', (locale) => {
   })
 
   it('pins Vincent’s death at chapter 364', () => {
-    const owner = character('vincent')
+    const owner = recordOf(archive, 'vincent')
 
     expect(
       archive.latestOf(

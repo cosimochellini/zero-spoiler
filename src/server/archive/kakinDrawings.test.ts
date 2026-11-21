@@ -2,16 +2,12 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 import { drawingsFor } from './pages.server'
 import { readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Kakin drawing tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 
 // Every stage of chapters 340–420 (#1154, #1156, #1158), at the chapter the
 // wiki gives it.

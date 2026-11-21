@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity, Field } from '~/data/types'
+import type { Field } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import { LOADED_SERIES } from '~/test/series'
+import { opened, recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
 import { characterPage, drawingsFor } from './pages.server'
@@ -10,12 +11,7 @@ import { payloadsFor } from './payloads.server'
 import { placePage } from './placePage.server'
 import { readerFor } from './reader.server'
 
-const archive = LOADED_SERIES.find(
-  ({ slug }) => slug === 'hunter-x-hunter',
-)?.archive
-if (archive === undefined) {
-  throw new Error('Kakin requires Hunter x Hunter')
-}
+const archive = loadedSeries('hunter-x-hunter').archive
 
 // Expected dates come from the named scenes in the phase inventory, not the records.
 const GATES: [string, number][] = [
@@ -93,18 +89,12 @@ describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
     readerFor(archive, { mode: 'chapter', chapter }, locale)
 
   it.each(GATES)('opens %s and its drawing at chapter %i', (id, chapter) => {
-    const before = read(chapter - 1)
-    const reached = read(chapter)
-    const page = characterPage(id, reached)
-
-    expect(characterPage(id, before)?.detail.slot.open).toBe(false)
-    expect(drawingsFor([id], before)).toStrictEqual({})
-    expect(page?.detail.slot.open).toBe(true)
-    expect(drawingsFor([id], reached)[id]?.length).toBeGreaterThanOrEqual(4)
+    expect(opened(id, read(chapter - 1))).toBe(false)
+    expect(opened(id, read(chapter))).toBe(true)
   })
 
   it.each(PINS)('pins %s %s at chapter %i', (id, field, chapter) => {
-    const owner = character(id)
+    const owner = recordOf(archive, id)
 
     const expected = {
       revealedAtEpisode: 148,
@@ -136,7 +126,7 @@ describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
       expect(homePage(reader).saga.id).toBe('election-arc')
 
       for (const [id, field] of PINS) {
-        const owner = character(id)
+        const owner = recordOf(archive, id)
 
         expect(
           archive
@@ -165,11 +155,8 @@ describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
   })
 
   it('opens the named flashback place only for manga readers', () => {
-    const closed = placePage('dark-continent', read(339))
-    const open = placePage('dark-continent', read(340))
-
-    expect(opened(closed)).toBe(false)
-    expect(opened(open)).toBe(true)
+    expect(opened('dark-continent', read(339))).toBe(false)
+    expect(opened('dark-continent', read(340))).toBe(true)
     expect(
       placePage(
         'dark-continent',
@@ -185,15 +172,3 @@ describe.each(LOCALES)('Kakin phase 1 in %s', (locale) => {
     expect(archive.leads['kakin-arc']).toContain('kurapika')
   })
 })
-
-function opened(page: ReturnType<typeof placePage>): boolean {
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function character(id: string): Entity {
-  const entity = archive?.getCharacter(id)
-  if (entity === undefined) {
-    throw new Error(`Missing Kakin fixture ${id}`)
-  }
-  return entity
-}
