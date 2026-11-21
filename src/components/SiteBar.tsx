@@ -28,10 +28,10 @@ import {
  * The wordmark hard-left, the controls hard-right. On a series page the
  * series' short name ("HxH") follows the wordmark, a breadcrumb: the wordmark
  * is the way back to the hub, the name the series' home. Its full name
- * follows, read and not shown, so the link is "HxH Hunter x Hunter". Past them the row is empty. It
- * stays pinned at every width, so the pages and the bookmark are one tap
- * away from anywhere down a long listing. Below `ROOMY` a series bar folds
- * the name and the pages onto a second row.
+ * follows, read and not shown, so the link is "HxH Hunter x Hunter". Past
+ * them the row is empty. It stays pinned at every width, so the pages and
+ * the bookmark are one tap away from anywhere down a long listing. Below
+ * `ROOMY` a series bar folds the name and the pages onto a second row.
  * The right edge carries the series' pages, the reader's bookmark and the
  * language select, and no more. The bookmark is the one control the whole
  * site turns on, so it lives here, on every page, as a single mark that opens
