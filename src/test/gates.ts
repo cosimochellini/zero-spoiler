@@ -60,7 +60,8 @@ export interface Side {
 /**
  * Both sides of a pin's gate in each unit that tells it, through the sweep's
  * own rule (`aroundGates`): none in the unit a source-only pin is not told
- * in, and none past the series' ceiling.
+ * in. A gate past the series' ceiling in a unit that tells it is a fault in
+ * the table, and throws, naming the row.
  */
 export function sidesOf(pin: Pin, series: BookmarkSeries): Side[] {
   const around = aroundGates(
@@ -82,7 +83,15 @@ export function sidesOf(pin: Pin, series: BookmarkSeries): Side[] {
   const gateIn = (unit: Unit): number =>
     unit === 'chapter' ? pin.chapter : pin.episode
 
-  return UNITS.filter((unit) => asked(unit, gateIn(unit))).map((unit) => {
+  const told = UNITS.filter((unit) => (pin.source ?? unit) === unit)
+  const unasked = told.find((unit) => !asked(unit, gateIn(unit)))
+  if (unasked !== undefined) {
+    throw new Error(
+      `${JSON.stringify(pin)} is past the series' ${unasked} ceiling`,
+    )
+  }
+
+  return told.map((unit) => {
     const gate = gateIn(unit)
 
     return {
@@ -151,14 +160,15 @@ const LEAST_STROKES = 4
 
 /**
  * Whether a record of any kind is open on its own page with its drawing sent
- * (true), or covered there with no drawing sent (false). Either half alone
- * is a fault, and throws.
+ * (true), or covered there with no drawing sent at all, not even an empty
+ * one (false). Either half alone is a fault, and throws.
  */
 export function opened(id: string, reader: Reader): boolean {
   const open = slotOpen(id, reader)
-  const strokes = drawingsFor([id], reader)[id]?.length ?? 0
+  const drawing = drawingsFor([id], reader)[id]
+  const strokes = drawing?.length ?? 0
 
-  if (open === strokes >= LEAST_STROKES && (open || strokes === 0)) {
+  if (open ? strokes >= LEAST_STROKES : drawing === undefined) {
     return open
   }
   throw new Error(`${id} is open: ${String(open)}, strokes: ${String(strokes)}`)
