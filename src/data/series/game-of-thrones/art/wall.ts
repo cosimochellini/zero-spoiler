@@ -628,9 +628,6 @@ const SLED: Stroke[] = [
 const DRAPED_CLOAK = {
   d: 'M16 136 Q16 120 32 116 Q50 110 72 114 Q98 116 108 126 Q112 130 112 136',
 }
-const DRAPE_HEM: Stroke = {
-  d: 'M16 136 Q24 142 32 138 Q40 143 48 138 Q56 143 64 138 Q72 143 80 138 Q88 143 96 138 Q104 142 112 136',
-}
 const DRAPE_FOLDS: Stroke = {
   d: 'M34 118 Q48 124 52 138 M76 116 Q90 124 92 138',
   role: 'soft',
@@ -642,21 +639,22 @@ const LAMP: Stroke[] = [
 ]
 
 /**
- * Othor: his black cloak drawn over his body on a sled, an unlit lamp
- * beside it. Both media open him when the rangers bring him back dead, in
- * "The Pointy End" (episode 8) and Jon VII (chapter 53), so the drawing
- * shows what he left. The accent is the clasp.
+ * Othor: his black cloak drawn over his body on a sled, its hem burnt
+ * ragged, the lamp knocked over. Both media open him when the rangers bring
+ * him back dead, and both tell the same night his corpse rising and Jon
+ * burning it in the Lord Commander's rooms: "The Pointy End" (episode 8)
+ * and Jon VII (chapter 53). The drawing shows what that leaves. The accent
+ * is the burnt hem.
  */
-const SLED_BODY: Stroke[] = [
+const BURNT_CLOAK: Stroke[] = [
   ...SLED,
   DRAPED_CLOAK,
-  DRAPE_HEM,
-  DRAPE_FOLDS,
   {
-    d: `${circle(40, 120, 2.5)} ${circle(52, 120, 2.5)} M42.5 121 H49.5`,
+    d: 'M16 136 L20 142 L25 137 L30 144 L36 138 L41 143 L47 137 L54 145 L60 138 L66 143 L72 137 L79 144 L85 138 L91 142 L97 137 L103 143 L108 138 L112 136',
     role: 'accent',
   },
-  ...LAMP,
+  DRAPE_FOLDS,
+  ...moved(LAMP, 'rotate(-35 133 150)'),
   shadow(80, 156, 68),
 ]
 
@@ -682,7 +680,7 @@ export const WALL_DRAWINGS = {
   'othell-yarwyck': MASON_HAMMER,
   'bowen-marsh': LEDGER,
   'jaremy-rykker': SHEATHED_SWORD,
-  'othor': SLED_BODY,
+  'othor': BURNT_CLOAK,
 } satisfies Drawings
 
 /** The Night's Watch drawn again later in the story. */
@@ -938,28 +936,6 @@ export const wallRedrawn: Redrawings = {
         ),
         ...moved(RANGER_SCABBARD, 'translate(-2 40) rotate(-98 80 104)'),
         shadow(80, 156, 64),
-      ],
-    },
-  ],
-  'othor': [
-    // The same cloak, its hem burnt ragged, the lamp knocked over: he rises
-    // as a wight and Jon burns him in the Lord Commander's rooms in Jon VIII
-    // (chapter 61). The show tells it in his threshold episode, so the stage
-    // is the book's alone. The accent moves to the burnt hem.
-    {
-      episode: 8,
-      chapter: 61,
-      source: 'chapter',
-      value: [
-        ...SLED,
-        DRAPED_CLOAK,
-        {
-          d: 'M16 136 L20 142 L25 137 L30 144 L36 138 L41 143 L47 137 L54 145 L60 138 L66 143 L72 137 L79 144 L85 138 L91 142 L97 137 L103 143 L108 138 L112 136',
-          role: 'accent',
-        },
-        DRAPE_FOLDS,
-        ...moved(LAMP, 'rotate(-35 133 150)'),
-        shadow(80, 156, 68),
       ],
     },
   ],

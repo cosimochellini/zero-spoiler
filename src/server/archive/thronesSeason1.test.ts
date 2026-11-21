@@ -1413,7 +1413,7 @@ describe.each([
  * Heddle's the book's alone; and the later deaths of #1242, Stevron Frey's
  * and Hoster Tully's the book's alone; and the Night's Watch's of #1295,
  * Grenn's, Pypar's, Othell Yarwyck's and Bowen Marsh's the show's alone,
- * Gared's, Dareon's, Jaremy Rykker's and Othor's the book's alone, with
+ * Gared's, Dareon's and Jaremy Rykker's the book's alone, with
  * the mutiny against Jon), Barristan's thrown sword, Syrio's snapped
  * blade, and the reveals of Jorah's master, Aemon's house and Mirri's blood
  * magic, the Winterfell audit's deaths, returns, crown, Reek and Needle
@@ -1689,7 +1689,6 @@ const STAGES: {
   { id: 'bowen-marsh', episode: 50, chapter: 341 },
   { id: 'bowen-marsh', episode: 53, chapter: 344, source: 'episode', stage: 1 },
   { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
-  { id: 'othor', episode: 8, chapter: 61, source: 'chapter' },
   // The leads and the Essos cast redrawn from the drawing audit (#1292).
   { id: 'eddard-stark', episode: 31, chapter: 204, stage: 1 },
   { id: 'jon-snow', episode: 50, chapter: 341 },

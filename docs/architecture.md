@@ -289,7 +289,7 @@ cast's are in `art/wall.ts` and `art/essos.ts` (#1052), with twenty, four of
 them the deaths of Jeor, Aemon, Alliser and Yoren from the drawing audit
 (#1290), six from the drawing audit (#1296) and four those of Jorah, Irri,
 Doreah and Rakharo (#1292), and thirteen more of the Watch's in `art/wall.ts`
-(#1295), with twelve, the places' are in `art/places.ts` (#1053), with fourteen
+(#1295), with ten, the places' are in `art/places.ts` (#1053), with fourteen
 stages for the damage and rebuilding later seasons and books give (#1236), the
 northern household's are in `art/north.ts` (#1054), with fifteen, twelve of them
 the deaths, Roose Bolton's allegiance and Jeyne Poole's false identity from the
@@ -489,7 +489,7 @@ checks this block.
 | Characters        | 148                                                     |
 | Places            | 60                                                      |
 | Saga modules      | 1                                                       |
-| Line drawings     | 208, one per record, plus 154 redrawings of 114 records |
+| Line drawings     | 208, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 566, for 145 characters                                 |
 
 <!-- End of the generated counts. -->
