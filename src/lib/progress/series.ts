@@ -66,6 +66,13 @@ export interface Series extends BookmarkSeries {
   }
   kinds: EntityKind[]
   name: Record<Locale, string>
+  /**
+   * The name the bar prints after the wordmark, at every width, the same in
+   * every locale; the link carries the full `name` for assistive tech, and
+   * every other place (the hub, titles, metadata) prints `name` (owner,
+   * 2026-11-21, #1442).
+   */
+  shortName: string
   /** The colours of its pages; a page with no series keeps the site's own. */
   theme: SeriesTheme
   units: BookmarkMode[]
@@ -120,6 +127,7 @@ export const ONE_PIECE_BOOKMARK: BookmarkSeries = {
 export const ONE_PIECE_SERIES: Series = {
   ...ONE_PIECE_BOOKMARK,
   name: { en: 'One Piece', it: 'One Piece' },
+  shortName: 'OP',
   theme: 'one-piece',
   units: ['episode', 'season', 'chapter'],
   kinds: ['arc', 'character', 'fruit', 'place', 'ship'],
@@ -177,6 +185,7 @@ const HUNTER_X_HUNTER_BOOKMARK: BookmarkSeries = {
 export const HUNTER_X_HUNTER_SERIES: Series = {
   ...HUNTER_X_HUNTER_BOOKMARK,
   name: { en: 'Hunter x Hunter', it: 'Hunter x Hunter' },
+  shortName: 'HxH',
   theme: 'hunter-x-hunter',
   units: ['episode', 'season', 'chapter'],
   kinds: ['ability', 'arc', 'character', 'place'],
@@ -231,6 +240,7 @@ const GAME_OF_THRONES_BOOKMARK: BookmarkSeries = {
 export const GAME_OF_THRONES_SERIES: Series = {
   ...GAME_OF_THRONES_BOOKMARK,
   name: { en: 'Game of Thrones', it: 'Il Trono di Spade' },
+  shortName: 'GoT',
   theme: 'game-of-thrones',
   units: ['episode', 'season', 'chapter'],
   kinds: ['character', 'place'],

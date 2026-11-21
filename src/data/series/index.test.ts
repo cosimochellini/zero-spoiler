@@ -575,9 +575,9 @@ describe.each(LOADED_SERIES)(
     it('has a feature slice exactly where its description declares one', () => {
       // `fruit` and `ship`, the bounty, the factions and the filler guide
       // are One Piece's (owner, 2026-10-23); the Nen type is Hunter x
-      // Hunter's (#922); the ranks page is both's (#1441). A series' archive carries a
-      // slice for each it has (`~/data/features`), and its description says
-      // so: the two are one fact, held together here.
+      // Hunter's (#922); the ranks page is both's (#1441). A series'
+      // archive carries a slice for each it has (`~/data/features`), and its
+      // description says so: the two are one fact, held together here.
       const { features, kinds } = archive.series
       const slices = archive.features
       const dossiers = archive.characters.flatMap(

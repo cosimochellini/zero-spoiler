@@ -18,7 +18,7 @@ import { MARINES } from './marines'
 
 /** The Marines' seats at a bookmark: holder ids, `vacant` or `unknown`. */
 const seatsAt = (bookmark: Bookmark): string[] | undefined =>
-  seatsOf('marines', bookmark)
+  seatsOf(ONE_PIECE_LOADED, 'marines', bookmark)
 
 /** Garp's id, in every step from his seat on. */
 const GARP = 'monkey-d-garp'
@@ -412,6 +412,8 @@ describe('the Marines’ chain of command', () => {
   })
 
   it('leaks nothing on either side of any of its gates', () => {
-    expect(powerLeaks(bodyGates(MARINES))).toStrictEqual([])
+    expect(
+      powerLeaks(ONE_PIECE_LOADED, bodyGates(ONE_PIECE_LOADED, MARINES)),
+    ).toStrictEqual([])
   })
 })

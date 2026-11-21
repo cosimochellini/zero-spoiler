@@ -289,32 +289,26 @@ function holdingGates(holding: Holding, archive: SeriesArchive): Gated[] {
 }
 
 /**
- * Every seat gate of a body: its own, its seats', holdings' and holders',
- * the holders read in the series' archive (One Piece's unless given).
+ * Every seat gate of a series' body: its own, its seats', holdings' and
+ * holders', the holders read in the series' archive.
  */
-export function bodyGates(
-  body: PowerBody,
-  archive: SeriesArchive = ONE_PIECE_LOADED.archive,
-): Gated[] {
+export function bodyGates(series: LoadedSeries, body: PowerBody): Gated[] {
   return [
     body,
     ...body.seats.flatMap(({ holders, told }) => [
       told,
-      ...holders.flatMap((holding) => holdingGates(holding, archive)),
+      ...holders.flatMap((holding) => holdingGates(holding, series.archive)),
     ]),
   ]
 }
 
-/**
- * A body's seats at a bookmark: holder ids, `vacant` or `unknown`, in the
- * series' archive (One Piece's unless given).
- */
+/** A series' body's seats at a bookmark: holder ids, `vacant` or `unknown`. */
 export function seatsOf(
+  series: LoadedSeries,
   id: string,
   bookmark: Bookmark,
-  archive: SeriesArchive = ONE_PIECE_LOADED.archive,
 ): string[] | undefined {
-  const page = powerPage(readerFor(archive, bookmark, 'en'))
+  const page = powerPage(readerFor(series.archive, bookmark, 'en'))
 
   return page.bodies
     .find((body) => body.id === id)
@@ -355,14 +349,11 @@ export function edges(steps: Steps): Edge[] {
 }
 
 /**
- * What the power page leaks on both sides of these gates, in each unit that
- * tells each (`aroundGates`) and in either locale, as `bookmark locale: id`,
- * in a series (One Piece unless given).
+ * What a series' power page leaks on both sides of these gates, in each unit
+ * that tells each (`aroundGates`) and in either locale, as
+ * `bookmark locale: id`.
  */
-export function powerLeaks(
-  gates: Gated[],
-  series: LoadedSeries = ONE_PIECE_LOADED,
-): string[] {
+export function powerLeaks(series: LoadedSeries, gates: Gated[]): string[] {
   const { archive } = series
   const leaks = leaksOf(series, LOADED_SERIES)
 

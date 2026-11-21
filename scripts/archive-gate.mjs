@@ -41,8 +41,9 @@
  *      downloads another's (#791); One Piece's faction labels reach the
  *      fruit album's groups and the ranks page only (#988), Hunter x
  *      Hunter's group names the ranks page only (#1442), and One Piece's
- *      seas' names the places that open them (#993). Each word distinct enough to look for, and not also
- *      a word of the shared copy, is looked for in the chunks.
+ *      seas' names the places that open them (#993). Each word distinct
+ *      enough to look for, and not also a word of the shared copy, is
+ *      looked for in the chunks.
  * The SSR manifest also proves that every series archive enters through a
  * dynamic import, with no canary-bearing data in another runtime entry's
  * static dependency closure.

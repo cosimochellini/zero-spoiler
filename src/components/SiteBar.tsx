@@ -26,8 +26,9 @@ import {
  * The bar, edge-aligned.
  *
  * The wordmark hard-left, the controls hard-right. On a series page the
- * series' name follows the wordmark, a breadcrumb: the wordmark is the way
- * back to the hub, the name the series' home. Past them the row is empty. It
+ * series' short name ("HxH") follows the wordmark, a breadcrumb: the wordmark
+ * is the way back to the hub, the name the series' home, its link named in
+ * full for assistive tech. Past them the row is empty. It
  * stays pinned at every width, so the pages and the bookmark are one tap
  * away from anywhere down a long listing. Below `ROOMY` a series bar folds
  * the name and the pages onto a second row.
@@ -41,7 +42,8 @@ export function SiteBar(): ReactElement {
   const { locale } = useLocale()
   const t = useT()
   const { series } = useBookmark()
-  // The public description, for the series' name in the reader's language.
+  // The public description, for the series' short name and, for assistive
+  // tech, its full name in the reader's language.
   const described = useMatch({ from: '/$series', shouldThrow: false })?.context
     .series
 
@@ -69,12 +71,13 @@ export function SiteBar(): ReactElement {
             <Link
               activeOptions={{ exact: true }}
               activeProps={{ 'aria-current': 'page' }}
+              aria-label={described?.name[locale]}
               params={{ locale, series: series.slug }}
               to="/$series/$locale"
               {...stylex.props(styles.seriesName)}
             >
               <span {...stylex.props(styles.seriesText)}>
-                {described?.name[locale] ?? series.slug}
+                {described?.shortName ?? series.slug}
               </span>
             </Link>
             <SeriesNavigation />
@@ -148,12 +151,11 @@ function SeriesNavigation(): ReactElement {
 
 // The site's breakpoint: below it the bar is the phone bar.
 const WIDE = '@media (min-width: 40rem)'
-// A series bar needs more room for one row: the wordmark, the name, its
-// pages, the bookmark and the language fit from `BAR.seriesWide` with One
-// Piece's four pages in Italian. Hunter x Hunter, the longest name, has four
-// too since its ranks page (#1442): in its first 10px or so the name ends in
-// an ellipsis (checked at 896 and 920px in `vite preview`). Below it the name
-// and the pages fold under, as on a phone, where the name gives way first.
+// A series bar needs more room for one row: the wordmark, the short name,
+// its pages, the bookmark and the language fit from `BAR.seriesWide` with the
+// most pages (four, One Piece's and Hunter x Hunter's, in Italian). Below it
+// the name and the pages fold under, as on a phone, where the name gives way
+// first.
 const ROOMY = BAR.seriesWide
 
 const styles = stylex.create({
@@ -240,7 +242,8 @@ const styles = stylex.create({
     outlineWidth: rule.fine,
     paddingInlineEnd: { [ROOMY]: 0, default: space.sm },
     textDecorationLine: 'none',
-    textTransform: 'uppercase',
+    // The short name keeps its own case: "HxH", "GoT".
+    textTransform: 'none',
     whiteSpace: 'nowrap',
     maxWidth: '100%',
     minHeight: '44px',

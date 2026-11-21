@@ -21,7 +21,7 @@ import { REVOLUTIONARY_ARMY } from './revolutionary-army'
 
 /** The army's seats at a bookmark: holder ids, or `unknown`. */
 const seatsAt = (bookmark: Bookmark): string[] | undefined =>
-  seatsOf('revolutionary-army', bookmark)
+  seatsOf(ONE_PIECE_LOADED, 'revolutionary-army', bookmark)
 
 const DRAGON = 'monkey-d-dragon'
 const IVANKOV = 'emporio-ivankov'
@@ -107,7 +107,12 @@ describe('the Revolutionary Army', () => {
   })
 
   it('leaks nothing on either side of any of its gates', () => {
-    expect(powerLeaks(bodyGates(REVOLUTIONARY_ARMY))).toStrictEqual([])
+    expect(
+      powerLeaks(
+        ONE_PIECE_LOADED,
+        bodyGates(ONE_PIECE_LOADED, REVOLUTIONARY_ARMY),
+      ),
+    ).toStrictEqual([])
   })
 })
 

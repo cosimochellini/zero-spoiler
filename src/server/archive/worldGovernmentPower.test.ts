@@ -32,7 +32,7 @@ describe('the World Government on the power page', () => {
   it.each([chapter(233), episode(151), chapter(396), episode(276)])(
     'has no Elders at %j',
     (at) => {
-      expect(seatsOf('five-elders', at)).toBeUndefined()
+      expect(seatsOf(ONE_PIECE_LOADED, 'five-elders', at)).toBeUndefined()
     },
   )
 
@@ -41,7 +41,7 @@ describe('the World Government on the power page', () => {
   it.each([chapter(397), episode(277), chapter(1072), episode(1104)])(
     'keeps the five unnamed Elders in the fog line at %j',
     (at) => {
-      expect(seatsOf('five-elders', at)).toBeUndefined()
+      expect(seatsOf(ONE_PIECE_LOADED, 'five-elders', at)).toBeUndefined()
       expect(
         powerPage(readerFor(ONE_PIECE_LOADED.archive, at, 'en')).fogged,
       ).toBe(true)
@@ -70,7 +70,7 @@ describe('the World Government on the power page', () => {
   )
 
   it.each([chapter(1073), episode(1105)])('names Saturn alone at %j', (at) => {
-    expect(seatsOf('five-elders', at)).toStrictEqual([
+    expect(seatsOf(ONE_PIECE_LOADED, 'five-elders', at)).toStrictEqual([
       'jaygarcia-saturn',
       ...UNKNOWN_ELDERS.slice(1),
     ])
@@ -84,40 +84,45 @@ describe('the World Government on the power page', () => {
     [chapter(1125), 'figarland-garling'],
     [episode(1155), 'figarland-garling'],
   ])('seats all five at %j, the first %s', (at, first) => {
-    expect(seatsOf('five-elders', at)).toStrictEqual([first, ...ELDERS])
+    expect(seatsOf(ONE_PIECE_LOADED, 'five-elders', at)).toStrictEqual([
+      first,
+      ...ELDERS,
+    ])
   })
 
   it.each([chapter(907), episode(888)])(
     'has no throne above them at %j',
     (at) => {
-      expect(seatsOf('world-government', at)).toBeUndefined()
+      expect(seatsOf(ONE_PIECE_LOADED, 'world-government', at)).toBeUndefined()
     },
   )
 
   it.each([chapter(908), episode(889)])(
     'stands Im above Kong from %j',
     (at) => {
-      expect(seatsOf('world-government', at)).toStrictEqual(['im', 'kong'])
+      expect(seatsOf(ONE_PIECE_LOADED, 'world-government', at)).toStrictEqual([
+        'im',
+        'kong',
+      ])
     },
   )
 
   it.each([chapter(357), episode(249)])('has no CP9 at %j', (at) => {
-    expect(seatsOf('cp9', at)).toBeUndefined()
+    expect(seatsOf(ONE_PIECE_LOADED, 'cp9', at)).toBeUndefined()
   })
 
   it('counts CP9 from its chief’s call, and names him at his record', () => {
-    expect(seatsOf('cp9', chapter(358))).toStrictEqual([
+    expect(seatsOf(ONE_PIECE_LOADED, 'cp9', chapter(358))).toStrictEqual([
       'unknown',
       'rob-lucci',
       'kaku',
       'kalifa',
       'blueno',
     ])
-    expect(seatsOf('cp9', episode(250))?.slice(0, 2)).toStrictEqual([
-      'spandam',
-      'rob-lucci',
-    ])
-    expect(seatsOf('cp9', chapter(360))?.[0]).toBe('spandam')
+    expect(
+      seatsOf(ONE_PIECE_LOADED, 'cp9', episode(250))?.slice(0, 2),
+    ).toStrictEqual(['spandam', 'rob-lucci'])
+    expect(seatsOf(ONE_PIECE_LOADED, 'cp9', chapter(360))?.[0]).toBe('spandam')
   })
 
   it.each([
@@ -132,23 +137,19 @@ describe('the World Government on the power page', () => {
     [episode(263), ['vacant']],
     [episode(264), ['vacant', 'jabra', 'kumadori', 'fukurou']],
   ])('seats Nero and the Enies Lobby three at %j', (at, rest) => {
-    expect(seatsOf('cp9', at)?.slice(5)).toStrictEqual(rest)
+    expect(seatsOf(ONE_PIECE_LOADED, 'cp9', at)?.slice(5)).toStrictEqual(rest)
   })
 
   it('throws Nero out, and waits for the Enies Lobby three’s names', () => {
-    expect(seatsOf('cp9', chapter(372))?.slice(5)).toStrictEqual(['nero'])
-    expect(seatsOf('cp9', chapter(375))?.slice(5)).toStrictEqual([
-      'vacant',
-      'unknown',
-      'unknown',
-      'unknown',
-    ])
-    expect(seatsOf('cp9', chapter(385))?.slice(5)).toStrictEqual([
-      'vacant',
-      'jabra',
-      'kumadori',
-      'fukurou',
-    ])
+    expect(
+      seatsOf(ONE_PIECE_LOADED, 'cp9', chapter(372))?.slice(5),
+    ).toStrictEqual(['nero'])
+    expect(
+      seatsOf(ONE_PIECE_LOADED, 'cp9', chapter(375))?.slice(5),
+    ).toStrictEqual(['vacant', 'unknown', 'unknown', 'unknown'])
+    expect(
+      seatsOf(ONE_PIECE_LOADED, 'cp9', chapter(385))?.slice(5),
+    ).toStrictEqual(['vacant', 'jabra', 'kumadori', 'fukurou'])
   })
 
   it.each([
@@ -157,7 +158,7 @@ describe('the World Government on the power page', () => {
     [chapter(1083), ['vacant', 'vacant', 'vacant', 'vacant']],
     [episode(1117), ['vacant', 'vacant', 'vacant', 'vacant']],
   ])('empties the Enies Lobby three’s seats at %j', (at, last) => {
-    expect(seatsOf('cp9', at)?.slice(5)).toStrictEqual(last)
+    expect(seatsOf(ONE_PIECE_LOADED, 'cp9', at)?.slice(5)).toStrictEqual(last)
   })
 
   it.each([
@@ -170,13 +171,18 @@ describe('the World Government on the power page', () => {
     [chapter(907), ['vacant', 'vacant', 'vacant']],
     [episode(886), ['vacant', 'vacant', 'vacant']],
   ])('empties the seats of those who move to CP0 at %j', (at, first) => {
-    expect(seatsOf('cp9', at)?.slice(0, 3)).toStrictEqual(first)
+    expect(seatsOf(ONE_PIECE_LOADED, 'cp9', at)?.slice(0, 3)).toStrictEqual(
+      first,
+    )
   })
 
   it('leaks nothing on either side of any of its gates', () => {
     expect(
       powerLeaks(
-        [WORLD_GOVERNMENT, FIVE_ELDERS, CP9].flatMap((body) => bodyGates(body)),
+        ONE_PIECE_LOADED,
+        [WORLD_GOVERNMENT, FIVE_ELDERS, CP9].flatMap((body) =>
+          bodyGates(ONE_PIECE_LOADED, body),
+        ),
       ),
     ).toStrictEqual([])
   })

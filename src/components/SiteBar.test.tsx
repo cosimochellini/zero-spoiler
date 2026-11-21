@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 
 import { BookmarkContext, useBookmark } from '~/lib/progress/BookmarkContext'
 import {
+  GAME_OF_THRONES_SERIES,
   HUNTER_X_HUNTER_SERIES,
   ONE_PIECE_BOOKMARK,
   ONE_PIECE_SERIES,
@@ -294,6 +295,40 @@ describe('SiteBar', () => {
       ).toStrictEqual(
         pages.map((page) => [page, `/${series.slug}/en/${page.toLowerCase()}`]),
       )
+    },
+  )
+
+  // Owner, 2026-11-21 (#1442): the bar prints the short name at every
+  // width, and its link keeps the full name.
+  it.each([
+    { series: ONE_PIECE_SERIES, locale: 'en', short: 'OP', full: 'One Piece' },
+    {
+      series: HUNTER_X_HUNTER_SERIES,
+      locale: 'it',
+      short: 'HxH',
+      full: 'Hunter x Hunter',
+    },
+    {
+      series: GAME_OF_THRONES_SERIES,
+      locale: 'it',
+      short: 'GoT',
+      full: 'Il Trono di Spade',
+    },
+  ] as const)(
+    'prints $short and names its link $full',
+    async ({ series, locale, short, full }) => {
+      await renderUnderSeries(<SiteBar />, {
+        path: `/${series.slug}/${locale}/characters`,
+        locale,
+        series,
+      })
+
+      const link = within(screen.getByRole('banner')).getByRole('link', {
+        name: full,
+      })
+
+      expect(link).toHaveTextContent(short)
+      expect(link).toHaveAttribute('href', `/${series.slug}/${locale}`)
     },
   )
 

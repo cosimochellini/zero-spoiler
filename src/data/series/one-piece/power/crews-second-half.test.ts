@@ -276,16 +276,24 @@ describe.each(CREWS)('the $body.id', ({ body, chapters, episodes }) => {
   it.each(edges(chapters))(
     'seat at chapter $at what the manga has told',
     ({ at, before, seats }) => {
-      expect(seatsAt(body.id, chapter(at - 1))).toStrictEqual(before)
-      expect(seatsAt(body.id, chapter(at))).toStrictEqual(seats)
+      expect(seatsAt(ONE_PIECE_LOADED, body.id, chapter(at - 1))).toStrictEqual(
+        before,
+      )
+      expect(seatsAt(ONE_PIECE_LOADED, body.id, chapter(at))).toStrictEqual(
+        seats,
+      )
     },
   )
 
   it.each(edges(episodes))(
     'seat at episode $at what the anime has told',
     ({ at, before, seats }) => {
-      expect(seatsAt(body.id, episode(at - 1))).toStrictEqual(before)
-      expect(seatsAt(body.id, episode(at))).toStrictEqual(seats)
+      expect(seatsAt(ONE_PIECE_LOADED, body.id, episode(at - 1))).toStrictEqual(
+        before,
+      )
+      expect(seatsAt(ONE_PIECE_LOADED, body.id, episode(at))).toStrictEqual(
+        seats,
+      )
     },
   )
 
@@ -357,7 +365,10 @@ describe('the crews of the second half', () => {
 
   it('leaks nothing on either side of any of their gates', () => {
     expect(
-      powerLeaks(CREWS.flatMap(({ body }) => bodyGates(body))),
+      powerLeaks(
+        ONE_PIECE_LOADED,
+        CREWS.flatMap(({ body }) => bodyGates(ONE_PIECE_LOADED, body)),
+      ),
     ).toStrictEqual([])
   })
 })

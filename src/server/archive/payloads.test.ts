@@ -551,11 +551,12 @@ function earlyLabels(
 /**
  * Every ask of a series that labels groups, with the faction groups its
  * fruit album sends (none for a series with no fruits), the bodies its power
- * page names, and who it seats in a body still standing, as `body|holder`. A body's label comes with the body, at the body's own
- * gate, so the power page may print it from there, and so may a character's
- * seat links, for a body they hold a seat in (`withoutSeats`); every other
- * page, and the rest of a character's, still waits for the album's group,
- * whatever the power page shows.
+ * page names, and who it seats in a body still standing, as `body|holder`.
+ * A body's label comes with the body, at the body's own gate, so the power
+ * page may print it from there, and so may a character's seat links, for a
+ * body they hold a seat in (`withoutSeats`); every other page, and the rest
+ * of a character's, still waits for the album's group, whatever the power
+ * page shows.
  */
 function groupedAt(
   series: ListedSeries,

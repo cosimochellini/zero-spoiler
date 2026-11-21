@@ -68,7 +68,7 @@ function sweepPower(series: LoadedSeries): void {
   /** Every gate the power page reads. */
   function powerGates(): Gated[] {
     return bodies.flatMap((body) => [
-      ...bodyGates(body, archive),
+      ...bodyGates(series, body),
       ...body.description.map((version) => archive.gateOf(version, body)),
       ...(body.ended === undefined ? [] : [body.ended]),
     ])
