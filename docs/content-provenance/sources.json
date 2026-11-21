@@ -35281,6 +35281,86 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748948",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748948",
       "contentSha256": "56819fb5e45247fc9b39ceedf8733446e158132d15751f16e8fc5f88d28181fe"
+    },
+    "hxh-en-Hunter_Exam_arc-423052.json": {
+      "locale": "en",
+      "title": "Hunter Exam arc",
+      "revision": 423052,
+      "revisionDate": "2026-07-26T14:51:05Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_Exam_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423052",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423052",
+      "contentSha256": "f9909fb70dfb48130eb7075f5a71241f5c82e01f01fe0f7f9000633ca6108ea9"
+    },
+    "hxh-en-Whale_Island-421735.json": {
+      "locale": "en",
+      "title": "Whale Island",
+      "revision": 421735,
+      "revisionDate": "2026-07-07T13:51:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Whale_Island",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421735",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421735",
+      "contentSha256": "c3638e47852f07afc1645d3bcea99a860f18888cbb243446dac6e73ead3c865d"
+    },
+    "hxh-en-Heavens_Arena_arc-423050.json": {
+      "locale": "en",
+      "title": "Heavens Arena arc",
+      "revision": 423050,
+      "revisionDate": "2026-07-26T14:49:19Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423050",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423050",
+      "contentSha256": "fd2654980b734d78b5c326317368a61e88087515372ce67ca4bf8bce6470aa5e"
+    },
+    "hxh-en-Chapter_44-416150.json": {
+      "locale": "en",
+      "title": "Chapter 44",
+      "revision": 416150,
+      "revisionDate": "2025-08-31T20:21:58Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_44",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416150",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416150",
+      "contentSha256": "7de2f9c21c1b9180bceec3ad83c41f25defc20551a38f314502d0834670ea431"
+    },
+    "hxh-en-Heavens_Arena-423051.json": {
+      "locale": "en",
+      "title": "Heavens Arena",
+      "revision": 423051,
+      "revisionDate": "2026-07-26T14:49:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423051",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423051",
+      "contentSha256": "a031b5af93117d18c4daa124d372bbf164fc01e4a5f9588b80fa58fd5edc16bb"
+    },
+    "hxh-en-Chimera_Ant_arc-423048.json": {
+      "locale": "en",
+      "title": "Chimera Ant arc",
+      "revision": 423048,
+      "revisionDate": "2026-07-26T14:38:07Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423048",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423048",
+      "contentSha256": "e6e1cf7d55137db5b56475e3562858fd557316d589910a38b04b7b9bb1c1b19b"
+    },
+    "hxh-en-Succession_Contest_arc-425681.json": {
+      "locale": "en",
+      "title": "Succession Contest arc",
+      "revision": 425681,
+      "revisionDate": "2026-09-30T07:20:14Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Succession_Contest_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425681",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425681",
+      "contentSha256": "37cbba7ca75e13bfcc10d98637529b934cd8a5153c57743984e73d16959fa4ba"
+    },
+    "hxh-en-Mandai_City-421700.json": {
+      "locale": "en",
+      "title": "Mandai City",
+      "revision": 421700,
+      "revisionDate": "2026-07-07T12:31:31Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Mandai_City",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421700",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421700",
+      "contentSha256": "5ca6e81f2d4d87d461e7529b28b05c00e4e9f5775bc22f1a965e47bbdff7a653"
     }
   }
 }
