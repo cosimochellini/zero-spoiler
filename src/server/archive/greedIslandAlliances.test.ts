@@ -12,12 +12,12 @@ import { relationshipsOf } from './relationships.server'
 const { archive } = loadedSeries('hunter-x-hunter')
 const jispa = recordIn(archive, 'jispa')
 const RECORDS = [
-  { id: 'genthru', episode: 65, chapter: 144, source: 'chapter', place: false },
-  { id: 'jispa', episode: 65, chapter: 144, source: 'chapter', place: false },
-  { id: 'razor', episode: 67, chapter: 145, source: undefined, place: false },
-  { id: 'dorias', episode: 66, chapter: 151, source: 'chapter', place: true },
-  { id: 'soufrabi', episode: 67, chapter: 155, source: undefined, place: true },
-  { id: 'aiai', episode: 68, chapter: 159, source: 'episode', place: true },
+  { id: 'genthru', episode: 65, chapter: 144, source: 'chapter' },
+  { id: 'jispa', episode: 65, chapter: 144, source: 'chapter' },
+  { id: 'razor', episode: 67, chapter: 145, source: undefined },
+  { id: 'dorias', episode: 66, chapter: 151, source: 'chapter' },
+  { id: 'soufrabi', episode: 67, chapter: 155, source: undefined },
+  { id: 'aiai', episode: 68, chapter: 159, source: 'episode' },
 ]
 const NAMED = gateCases(RECORDS, archive.series)
 const OTHER = RECORDS.flatMap((record) =>

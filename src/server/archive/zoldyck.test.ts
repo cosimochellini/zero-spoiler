@@ -8,19 +8,19 @@ import { type Reader, readerFor } from './reader.server'
 
 const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
-  { id: 'coco-loo', episode: 22, chapter: 39, place: false },
-  { id: 'zebro', episode: 22, chapter: 39, place: false },
-  { id: 'mike', episode: 22, chapter: 40, place: false },
-  { id: 'seaquant', episode: 23, chapter: 40, place: false },
-  { id: 'canary', episode: 24, chapter: 42, place: false },
-  { id: 'gotoh', episode: 25, chapter: 43, place: false },
-  { id: 'milluki', episode: 23, chapter: 42, place: false },
-  { id: 'zeno', episode: 24, chapter: 42, place: false },
+  { id: 'coco-loo', episode: 22, chapter: 39 },
+  { id: 'zebro', episode: 22, chapter: 39 },
+  { id: 'mike', episode: 22, chapter: 40 },
+  { id: 'seaquant', episode: 23, chapter: 40 },
+  { id: 'canary', episode: 24, chapter: 42 },
+  { id: 'gotoh', episode: 25, chapter: 43 },
+  { id: 'milluki', episode: 23, chapter: 42 },
+  { id: 'zeno', episode: 24, chapter: 42 },
   // Unanchored: Zeno names him in episode 24, the manga only in chapter 95.
-  { id: 'silva', episode: 24, chapter: 95, place: false },
-  { id: 'kalluto', episode: 24, chapter: 42, place: false },
-  { id: 'republic-of-padokea', episode: 22, chapter: 39, place: true },
-  { id: 'kukuroo-mountain', episode: 22, chapter: 39, place: true },
+  { id: 'silva', episode: 24, chapter: 95 },
+  { id: 'kalluto', episode: 24, chapter: 42 },
+  { id: 'republic-of-padokea', episode: 22, chapter: 39 },
+  { id: 'kukuroo-mountain', episode: 22, chapter: 39 },
 ]
 const CASES = gateCases(RECORDS, archive.series)
 

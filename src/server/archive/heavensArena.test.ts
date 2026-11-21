@@ -11,13 +11,13 @@ import { type Reader, readerFor } from './reader.server'
 
 const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
-  { id: 'heavens-arena', episode: 27, chapter: 44, place: true },
-  { id: 'zushi', episode: 27, chapter: 45, place: false },
-  { id: 'wing', episode: 27, chapter: 45, place: false },
-  { id: 'gido', episode: 29, chapter: 49, place: false },
-  { id: 'kastro', episode: 31, chapter: 52, place: false },
-  { id: 'sadaso', episode: 33, chapter: 57, place: false },
-  { id: 'riehlvelt', episode: 34, chapter: 59, place: false },
+  { id: 'heavens-arena', episode: 27, chapter: 44 },
+  { id: 'zushi', episode: 27, chapter: 45 },
+  { id: 'wing', episode: 27, chapter: 45 },
+  { id: 'gido', episode: 29, chapter: 49 },
+  { id: 'kastro', episode: 31, chapter: 52 },
+  { id: 'sadaso', episode: 33, chapter: 57 },
+  { id: 'riehlvelt', episode: 34, chapter: 59 },
 ]
 const CASES = gateCases(RECORDS, archive.series)
 
