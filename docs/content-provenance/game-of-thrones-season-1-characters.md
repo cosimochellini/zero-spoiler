@@ -936,7 +936,10 @@ Wikipedia has no entry (owner, 2026-11-03).
 ### Roose Bolton (`roose-bolton`)
 
 - Episode 14: Garden of Bones (S2E4 = 14): first appearance (Fandom); he reports
-  to Robb after the battle at Oxcross.
+  to Robb after the battle at Oxcross, and Robb, refusing to torture the
+  prisoners, reminds him that the Boltons' flaying is outlawed in the North
+  (Fandom Roose page), the naming signal #1457 cites. Owner check: the episode
+  synopsis names him only in narration.
 - Chapter 54: Bran VI (AGOT ch 53): Lord of the Dreadfort among Robb's bannermen
   at Winterfell; synopsis names him.
 - Italian: Roose Bolton (it.wikipedia
@@ -1347,8 +1350,10 @@ Wikipedia has no entry (owner, 2026-11-03).
 
 ### Podrick Payne (`podrick-payne`)
 
-- Episode 12: The Night Lands (S2E2): Tyrion's squire, spills wine on Janos
-  Slynt (Fandom First).
+- Episode 19: Blackwater (S2E9): Varys asks Tyrion whether he trusts Podrick,
+  the first time the Fandom pages have his name said (#1457). Owner check: he is
+  on screen unnamed from The Night Lands (S2E2, episode 12), where he spills
+  wine on Janos Slynt (Fandom First), the gate filed before #1457.
 - Chapter 63: Tyrion VIII: the squire Kevan gives Tyrion before the battle
   (Appearing list; page cites AGOT 62).
 - Italian: Podrick Payne (it.wikipedia
@@ -1420,8 +1425,11 @@ Wikipedia has no entry (owner, 2026-11-03).
 
 ### Rorge (`rorge`)
 
-- Episode 12: The Night Lands (S2E2): demands beer and threatens 'Arry' from the
-  cage; Fandom's Rorge page names him in this scene.
+- Book only (#1457): no Fandom synopsis has his name said or captioned. He is in
+  the cage unnamed in Fire and Blood (S1E10), threatens 'Arry' from it in The
+  Night Lands (S2E2, episode 12, which orders him) and dies in Mockingbird
+  (S4E7), named only by narration and the credits each time. Owner check: the
+  gate filed before #1457 was episode 12.
 - Chapter 79: A Clash of Kings, Arya II: Jaqen introduces the noseless man as
   Rorge (Appearing list; synopsis names him).
 - Italian: Rorge (it.wikipedia
@@ -1429,8 +1437,11 @@ Wikipedia has no entry (owner, 2026-11-03).
 
 ### Biter (`biter`)
 
-- Episode 12: The Night Lands (S2E2): hisses behind Rorge in the cage; Fandom's
-  Biter page names him in this scene.
+- Book only (#1457): no Fandom synopsis has his name said or captioned. He is in
+  the cage unnamed in Fire and Blood (S1E10), hisses behind Rorge in The Night
+  Lands (S2E2, episode 12, which orders him) and dies in Mockingbird (S4E7),
+  named only by narration and the credits each time. Owner check: the gate filed
+  before #1457 was episode 12.
 - Chapter 79: A Clash of Kings, Arya II: Jaqen explains he calls the mute man
   Biter for his filed teeth (Appearing list; synopsis names him).
 - Italian: Mordente (it.wikipedia

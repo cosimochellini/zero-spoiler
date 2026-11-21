@@ -42,8 +42,8 @@ function inBooks(
  * one per medium. A book-only story sits at the episode that adapts its
  * chapter, or later when a story links a character the show meets later;
  * Aggo’s are all at episode 11, the show’s gate for him.
- * Jaqen H’ghar, Rorge and Biter open at episode 12 and chapter 79, past the
- * stage, and have no chronicle yet.
+ * Jaqen H’ghar opens at episode 12 and chapter 79, and Rorge and Biter, the
+ * books’ alone, at chapter 79, past the stage; none has a chronicle yet.
  *
  * The King’s Landing, riverlands and Vale cast follows (#1362), on the same
  * rules. Boros, Mandon, Dontos, Thoros, Yohn Royce, Podrick, Edmure, Hoster,
@@ -3188,7 +3188,7 @@ export const season1Chronicles = {
   ],
   'podrick-payne': [
     inBooks(
-      [12, 63],
+      [19, 63],
       { it: 'Uno scudiero per Tyrion', en: 'A squire for Tyrion' },
       {
         it: 'Podrick Payne è un ragazzo timido e di poche parole, di un ramo minore di Casa Payne. Nell’accampamento dei Lannister, alla vigilia della battaglia sulla Forca Verde, ser [[kevan-lannister|Kevan Lannister]] lo assegna come scudiero al nipote [[tyrion-lannister|Tyrion]]. Il mattino dopo Tyrion va in battaglia con gli uomini dei clan che ha portato con sé dalle montagne.',

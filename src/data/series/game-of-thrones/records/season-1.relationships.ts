@@ -10852,7 +10852,7 @@ export const season1Relationships = {
   'addam-marbrand': [{ episode: 10, chapter: 63, value: [crown.addTywin] }],
   'podrick-payne': [
     {
-      episode: 12,
+      episode: 19,
       chapter: 63,
       source: 'chapter',
       value: [crown.podTyrion, crown.podKevan],

@@ -1710,7 +1710,11 @@
       ]
     },
     "podrick-payne": {
-      "sources": ["got-en-Podrick_Payne-728353.json", "iaf-en-Bronn-26157.json"]
+      "sources": [
+        "got-en-Podrick_Payne-728353.json",
+        "iaf-en-Bronn-26157.json",
+        "got-en-Blackwater-729787.json"
+      ]
     },
     "stevron-frey": {
       "sources": [
@@ -1753,8 +1757,8 @@
   },
   "omitted": {
     "jaqen-hghar": "Not reached in stage 1 in either medium: the record opens at episode 12 and chapter 79, after season 1 episode 10 and A Game of Thrones (chapter 73).",
-    "rorge": "Not reached in stage 1 in either medium: the record opens at episode 12 and chapter 79, after season 1 episode 10 and A Game of Thrones (chapter 73).",
-    "biter": "Not reached in stage 1 in either medium: the record opens at episode 12 and chapter 79, after season 1 episode 10 and A Game of Thrones (chapter 73)."
+    "rorge": "Not reached in stage 1: the record is the books' alone (#1457) and opens at chapter 79, after A Game of Thrones (chapter 73).",
+    "biter": "Not reached in stage 1: the record is the books' alone (#1457) and opens at chapter 79, after A Game of Thrones (chapter 73)."
   },
   "pending": {}
 }

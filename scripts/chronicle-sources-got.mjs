@@ -1686,9 +1686,9 @@ export const GAME_OF_THRONES_SOURCES = {
     },
   },
   'podrick-payne': {
-    '12:63': {
+    '19:63': {
       source: `${SHOW}Podrick_Payne`,
-      note: `In the books section: a shy member of a cadet branch of House Payne, assigned by Kevan to Tyrion as squire shortly before the battle on the Green Fork. Relationship pin 12/63 chapter. Tyrion going into battle with the clansmen follows Tywin’s agreement in the Bronn page; unverified on the chapter text. ${PAST_CHAPTER_PAGES}`,
+      note: `In the books section: a shy member of a cadet branch of House Payne, assigned by Kevan to Tyrion as squire shortly before the battle on the Green Fork. Relationship pin 19/63 chapter: the show's gate moved to episode 19, where the wiki first has his name said (#1457). Tyrion going into battle with the clansmen follows Tywin’s agreement in the Bronn page; unverified on the chapter text. ${PAST_CHAPTER_PAGES}`,
     },
   },
   'addam-marbrand': {

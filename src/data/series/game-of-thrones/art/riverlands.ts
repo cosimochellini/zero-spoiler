@@ -471,12 +471,13 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'rorge': [
-    // The wagon overturned, wheels up: he is
-    // killed in episode 37 (Arya) and in Brienne VII of A Feast for Crows
-    // (chapter 263, Brienne).
+    // The wagon overturned, wheels up: he is killed in Brienne VII of A Feast
+    // for Crows (chapter 263, Brienne). The record is the book's alone
+    // (#1457), so episode 37, where Arya kills him, only orders it.
     {
       episode: 37,
       chapter: 263,
+      source: 'chapter',
       value: [
         ...moved(CAGE_WAGON.slice(0, 6), 'translate(0 196) scale(1 -1)'),
         { d: 'M10 152 H150', role: 'ambient', dashed: true },
@@ -484,12 +485,14 @@ export const riverlandsRedrawn: Redrawings = {
     },
   ],
   'biter': [
-    // The cage empty, its chains fallen to the floor: he is
-    // killed in episode 37 (the Hound), and his death is told in Brienne VIII
-    // of A Feast for Crows (chapter 268, Gendry's spear).
+    // The cage empty, its chains fallen to the floor: his death is told in
+    // Brienne VIII of A Feast for Crows (chapter 268, Gendry's spear). The
+    // record is the book's alone (#1457), so episode 37, where the Hound
+    // kills him, only orders it.
     {
       episode: 37,
       chapter: 268,
+      source: 'chapter',
       value: [
         ...CAGE_CORNER.slice(0, 2),
         {

@@ -2519,7 +2519,7 @@ const STORIES: Row[] = [
   {
     id: 'podrick-payne',
     medium: 'books',
-    episode: 12,
+    episode: 19,
     chapter: 63,
     title: 'A squire for Tyrion',
   },
@@ -4016,7 +4016,7 @@ const FIRST: { chapter: number; episode: number; id: string }[] = [
   { id: 'brynden-tully', episode: 23, chapter: 35 },
   { id: 'bronn', episode: 4, chapter: 32 },
   { id: 'shae', episode: 9, chapter: 63 },
-  { id: 'podrick-payne', episode: 12, chapter: 63 },
+  { id: 'podrick-payne', episode: 19, chapter: 63 },
   { id: 'addam-marbrand', episode: 10, chapter: 63 },
   { id: 'hot-pie', episode: 10, chapter: 75 },
   { id: 'lommy', episode: 10, chapter: 75 },
