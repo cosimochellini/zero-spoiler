@@ -1972,12 +1972,12 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'jaremy-rykker', tint: 'cyan' },
     },
-    // Show: “The Pointy End” (episode 8), his body is found and identified. Books: Jon III (site chapter 20), he rides out with Benjen Stark’s party, and his body is identified in Jon VII (site chapter 53).
+    // Show: “The Pointy End” (episode 8), his body is found and identified. Books: Jon VII (site chapter 53), the same, when Ser Jaremy Rykker names the two bodies. Jon III (site chapter 20) lists him among its characters, but no synopsis names him there (#1425). He is already dead when he opens, so the log tells it.
     {
       id: 'othor',
       kind: 'character',
       revealedAtEpisode: 8,
-      revealedAtChapter: 20,
+      revealedAtChapter: 53,
       name: { it: 'Othor', en: 'Othor' },
       summary: {
         it: 'Un ranger dei Guardiani della notte, del gruppo di Benjen Stark.',
@@ -6535,17 +6535,14 @@ export const season1: ThronesSaga = {
         en: 'Ranger of the Night’s Watch',
       },
       log: {
-        it: 'È uno degli uomini che partono con Benjen Stark.',
-        en: 'He is one of the men who ride out with Benjen Stark.',
+        it: 'Il suo corpo viene trovato nella Foresta Stregata insieme a quello di Jafer Flowers.',
+        en: 'His body is found in the Haunted Forest together with Jafer Flowers’.',
       },
-      status: [
-        { episode: 8, chapter: 20, source: 'chapter', value: 'alive' },
-        { episode: 8, chapter: 53, value: 'deceased' },
-      ],
+      status: [{ episode: 8, chapter: 53, value: 'deceased' }],
       affiliation: [
         {
           episode: 8,
-          chapter: 20,
+          chapter: 53,
           value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
         },
       ],

@@ -1468,7 +1468,9 @@ Filed, gates as episode / site chapter:
   so his texts say "head of the stewards".
 - Jaremy Rykker 7 / 22: `deceased` at chapter 61, book only, where Jon VIII
   tells it.
-- Othor 8 / 20: alive in the book until his body is identified at chapter 53.
+- Othor 8 / 53: opens `deceased`, as Jafer Flowers does. Jon III (chapter 20)
+  lists him among its characters without naming him, so the book waits for Jon
+  VII, where his body is named (#1425).
 - Jafer Flowers 8 / 53: opens `deceased`. The hand found at chapter 49 and in
   episode 7 is not yet named as his.
 - Donal Noye, chapter 20, and Chett, chapter 42: book only. Chett's role moves

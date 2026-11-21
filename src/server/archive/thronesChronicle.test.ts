@@ -3963,9 +3963,8 @@ const FIRST: { chapter: number; episode: number; id: string }[] = [
   { id: 'halder', episode: 7, chapter: 20 },
   { id: 'jaremy-rykker', episode: 7, chapter: 22 },
   { id: 'othell-yarwyck', episode: 7, chapter: 49 },
+  { id: 'othor', episode: 8, chapter: 53 },
   { id: 'jafer-flowers', episode: 8, chapter: 53 },
-  // Othor opens at chapter 20 in the books, but his one story is at 8/53:
-  // no page tells a chapter 20 scene of his (verifier, #1363).
   // Books only: Donal Noye and Chett are not in the show.
   { id: 'donal-noye', episode: 3, chapter: 20 },
   { id: 'chett', episode: 5, chapter: 42 },
