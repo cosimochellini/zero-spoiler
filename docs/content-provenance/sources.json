@@ -35281,6 +35281,376 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748948",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748948",
       "contentSha256": "56819fb5e45247fc9b39ceedf8733446e158132d15751f16e8fc5f88d28181fe"
+    },
+    "got-en-Daisy-728017.json": {
+      "locale": "en",
+      "title": "Daisy",
+      "revision": 728017,
+      "revisionDate": "2026-02-05T04:48:33Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Daisy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728017",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728017",
+      "contentSha256": "fd9a70cbcd9288f60190c5a1fe4a1a8cfe084c74e8112358778a7667ff7c08b8"
+    },
+    "got-en-Armeca-727936.json": {
+      "locale": "en",
+      "title": "Armeca",
+      "revision": 727936,
+      "revisionDate": "2026-02-05T04:23:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Armeca",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=727936",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=727936",
+      "contentSha256": "c8b1753f22236c6e1cee40868c61f675cefb5fb4f6a7a005f66afea6d314bf29"
+    },
+    "got-en-Marei-728265.json": {
+      "locale": "en",
+      "title": "Marei",
+      "revision": 728265,
+      "revisionDate": "2026-02-05T07:14:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Marei",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728265",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728265",
+      "contentSha256": "d6ea60aba7e1047ce3fbe499453f33f68330bc7e14baab19ad943882235fd91f"
+    },
+    "got-en-Barra-727959.json": {
+      "locale": "en",
+      "title": "Barra",
+      "revision": 727959,
+      "revisionDate": "2026-02-05T04:29:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Barra",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=727959",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=727959",
+      "contentSha256": "5ebca7ac135526e02a9287c031b3627f73058729ab175526d56e13e1b9c141d4"
+    },
+    "got-en-Hallyne-728163.json": {
+      "locale": "en",
+      "title": "Hallyne",
+      "revision": 728163,
+      "revisionDate": "2026-02-05T05:39:34Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Hallyne",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728163",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728163",
+      "contentSha256": "c87257a5e6345c9861820666ed9b501af961b9aa347945a4c632c6583a312576"
+    },
+    "got-en-High_Septon-746332.json": {
+      "locale": "en",
+      "title": "High Septon",
+      "revision": 746332,
+      "revisionDate": "2026-08-04T01:04:21Z",
+      "url": "https://gameofthrones.fandom.com/wiki/High_Septon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746332",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746332",
+      "contentSha256": "a66314783a3af7ffb79c1ea00070d2ed959cd8703b4102c8b87a587e9fcc9665"
+    },
+    "got-en-Lothor_Brune-721540.json": {
+      "locale": "en",
+      "title": "Lothor Brune",
+      "revision": 721540,
+      "revisionDate": "2026-01-08T01:51:17Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lothor_Brune",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=721540",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=721540",
+      "contentSha256": "2ccc149ce077486dabce66ffdbebc2020cdf15af2748f59daed41b5b9a7c8ed9"
+    },
+    "got-en-Eglantine-728051.json": {
+      "locale": "en",
+      "title": "Eglantine",
+      "revision": 728051,
+      "revisionDate": "2026-02-05T04:55:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Eglantine",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728051",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728051",
+      "contentSha256": "dc6f93642e2039e9de290ffb49bdfaed3517dd424f6143e52598dfac61c5e56c"
+    },
+    "got-en-Portan-728359.json": {
+      "locale": "en",
+      "title": "Portan",
+      "revision": 728359,
+      "revisionDate": "2026-02-05T07:33:15Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Portan",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728359",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728359",
+      "contentSha256": "9a1312a31aed02f2af4e3baadbe9ff43a4896ea170bfc96681ffd4d66b3a22b1"
+    },
+    "got-en-Lollys_Stokeworth-748751.json": {
+      "locale": "en",
+      "title": "Lollys Stokeworth",
+      "revision": 748751,
+      "revisionDate": "2026-09-16T08:04:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lollys_Stokeworth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748751",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748751",
+      "contentSha256": "6d38eee6c8c60bd234ee5e8d339ca2905c83bc803fa8848bf4f22adcdda14d2d"
+    },
+    "got-en-Osmund_Kettleblack-728914.json": {
+      "locale": "en",
+      "title": "Osmund Kettleblack",
+      "revision": 728914,
+      "revisionDate": "2026-02-06T11:28:51Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Osmund_Kettleblack",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728914",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728914",
+      "contentSha256": "8130cf9fa028e0ec9245a251c583f597d25ecd3152f04b7c42ef981ff4c7898c"
+    },
+    "got-en-Preston_Greenfield-728149.json": {
+      "locale": "en",
+      "title": "Preston Greenfield",
+      "revision": 728149,
+      "revisionDate": "2026-02-05T05:37:09Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Preston_Greenfield",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728149",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728149",
+      "contentSha256": "7cf03841243b830f34ce8f21c95d466b19947e0ac6a03905cc34f123ed9e62dd"
+    },
+    "got-en-Aron_Santagar-728418.json": {
+      "locale": "en",
+      "title": "Aron Santagar",
+      "revision": 728418,
+      "revisionDate": "2026-02-05T08:38:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Aron_Santagar",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728418",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728418",
+      "contentSha256": "55a2f7da1c5c5febff7e460f5b951c2b4c164dcd0e04f704179a593919f152a7"
+    },
+    "got-en-Garlan_Tyrell-741637.json": {
+      "locale": "en",
+      "title": "Garlan Tyrell",
+      "revision": 741637,
+      "revisionDate": "2026-07-01T11:32:15Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Garlan_Tyrell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=741637",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=741637",
+      "contentSha256": "b93158665b916f0f9901e8cda79f206364923b3cbe0818fa3c3b2151016809bd"
+    },
+    "got-en-Tyrek_Lannister-733226.json": {
+      "locale": "en",
+      "title": "Tyrek Lannister",
+      "revision": 733226,
+      "revisionDate": "2026-03-09T09:00:44Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Tyrek_Lannister",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=733226",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=733226",
+      "contentSha256": "7d0b7aaf7818e1895440c6291201b420363dca354887e08386ced79f29125c3c"
+    },
+    "got-en-Myrcella_Baratheon-748270.json": {
+      "locale": "en",
+      "title": "Myrcella Baratheon",
+      "revision": 748270,
+      "revisionDate": "2026-08-19T12:22:43Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Myrcella_Baratheon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748270",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748270",
+      "contentSha256": "e4cf3c48de3e64a959eb7ff485a208417cd64f101e074937b575e937349570ee"
+    },
+    "got-en-Tyrion_Lannister-748952.json": {
+      "locale": "en",
+      "title": "Tyrion Lannister",
+      "revision": 748952,
+      "revisionDate": "2026-10-03T10:04:40Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Tyrion_Lannister",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748952",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748952",
+      "contentSha256": "dee2612ab2ea9f554eb9d82b905ac80db192044124cf1781e981679848992a01"
+    },
+    "got-en-Balon_Swann-749416.json": {
+      "locale": "en",
+      "title": "Balon Swann",
+      "revision": 749416,
+      "revisionDate": "2026-11-17T10:20:38Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Balon_Swann",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749416",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749416",
+      "contentSha256": "084140d2d400906f760b516767f4cdc290271bbb90ec2d5af8f0a8da646a6896"
+    },
+    "iaf-en-Template:A_Clash_of_Kings-22679.json": {
+      "locale": "en",
+      "title": "Template:A Clash of Kings",
+      "revision": 22679,
+      "revisionDate": "2019-02-17T16:12:03Z",
+      "url": "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22679",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22679",
+      "contentSha256": "d3039f1e47ddf2da4217c257f8b6d8e2d62cc82d1627d8d6a8972f99b1f463cc"
+    },
+    "iaf-en-Jacelyn_Bywater-26530.json": {
+      "locale": "en",
+      "title": "Jacelyn Bywater",
+      "revision": 26530,
+      "revisionDate": "2023-07-21T00:03:52Z",
+      "url": "https://iceandfire.fandom.com/wiki/Jacelyn_Bywater",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26530",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26530",
+      "contentSha256": "ec4348f337b56719078ee6f433f8de7a879a2a4e3ac8559b68e317e7322c4a22"
+    },
+    "iaf-en-Lollys_Stokeworth-20035.json": {
+      "locale": "en",
+      "title": "Lollys Stokeworth",
+      "revision": 20035,
+      "revisionDate": "2018-01-14T09:39:21Z",
+      "url": "https://iceandfire.fandom.com/wiki/Lollys_Stokeworth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20035",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20035",
+      "contentSha256": "1dc116b5258ebf89e6ddbafba99fc24dfae7ce70ac149c5a3598ba4a055ee99a"
+    },
+    "iaf-en-Tanda_Stokeworth-26160.json": {
+      "locale": "en",
+      "title": "Tanda Stokeworth",
+      "revision": 26160,
+      "revisionDate": "2022-10-28T00:19:31Z",
+      "url": "https://iceandfire.fandom.com/wiki/Tanda_Stokeworth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26160",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26160",
+      "contentSha256": "2b92a71e15a48812107b7ebe69d24f94eda5998b3600b588ca821a696f641f68"
+    },
+    "iaf-en-Alayaya-17905.json": {
+      "locale": "en",
+      "title": "Alayaya",
+      "revision": 17905,
+      "revisionDate": "2017-01-06T03:01:14Z",
+      "url": "https://iceandfire.fandom.com/wiki/Alayaya",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=17905",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=17905",
+      "contentSha256": "92d0877c017107c96d4ed0636966e110c9f448c1229f056f86b7bd9237373843"
+    },
+    "iaf-en-Chataya-27249.json": {
+      "locale": "en",
+      "title": "Chataya",
+      "revision": 27249,
+      "revisionDate": "2025-02-13T10:50:28Z",
+      "url": "https://iceandfire.fandom.com/wiki/Chataya",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27249",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27249",
+      "contentSha256": "5de16d7167cb2d6966a7256a5d442dbc6d4bd77f090e236c194bedee8af189e5"
+    },
+    "iaf-en-Hallyne-16400.json": {
+      "locale": "en",
+      "title": "Hallyne",
+      "revision": 16400,
+      "revisionDate": "2016-06-05T08:43:03Z",
+      "url": "https://iceandfire.fandom.com/wiki/Hallyne",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=16400",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=16400",
+      "contentSha256": "cf4d95dfe5a97ec943567acc4e3b1a741d6db45728ff2e91abf4b62c90b94311"
+    },
+    "iaf-en-Osmund_Kettleblack-27193.json": {
+      "locale": "en",
+      "title": "Osmund Kettleblack",
+      "revision": 27193,
+      "revisionDate": "2025-02-11T16:20:02Z",
+      "url": "https://iceandfire.fandom.com/wiki/Osmund_Kettleblack",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27193",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27193",
+      "contentSha256": "828d69f87f858d70a57e61cede170e6043674841085089524307b9edd41f5973"
+    },
+    "iaf-en-Osney_Kettleblack-21612.json": {
+      "locale": "en",
+      "title": "Osney Kettleblack",
+      "revision": 21612,
+      "revisionDate": "2018-03-07T14:45:58Z",
+      "url": "https://iceandfire.fandom.com/wiki/Osney_Kettleblack",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21612",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21612",
+      "contentSha256": "0b70e9e1e6e660bcfd5fde8f548bf447f209426243d59859751bb7d6636e6959"
+    },
+    "iaf-en-Osfryd_Kettleblack-21610.json": {
+      "locale": "en",
+      "title": "Osfryd Kettleblack",
+      "revision": 21610,
+      "revisionDate": "2018-03-07T14:44:37Z",
+      "url": "https://iceandfire.fandom.com/wiki/Osfryd_Kettleblack",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21610",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21610",
+      "contentSha256": "c6be0fe3abeda21663c276e9f978ecbde04f09e39063e039f3c60426f9b1ae98"
+    },
+    "iaf-en-Aron_Santagar-21904.json": {
+      "locale": "en",
+      "title": "Aron Santagar",
+      "revision": 21904,
+      "revisionDate": "2018-03-23T12:35:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Aron_Santagar",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21904",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21904",
+      "contentSha256": "260b621d2d3c2bb553d990176484a00761cca28078a0a310d4bc4c39759a1b50"
+    },
+    "iaf-en-Preston_Greenfield-24948.json": {
+      "locale": "en",
+      "title": "Preston Greenfield",
+      "revision": 24948,
+      "revisionDate": "2021-04-30T12:54:41Z",
+      "url": "https://iceandfire.fandom.com/wiki/Preston_Greenfield",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=24948",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=24948",
+      "contentSha256": "92d2f08fcb237504832e8896f374ab9d6dbb409e4e4d215bfc39c1df2674616c"
+    },
+    "iaf-en-Tyrek_Lannister-25356.json": {
+      "locale": "en",
+      "title": "Tyrek Lannister",
+      "revision": 25356,
+      "revisionDate": "2022-08-20T11:23:58Z",
+      "url": "https://iceandfire.fandom.com/wiki/Tyrek_Lannister",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25356",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25356",
+      "contentSha256": "eaa29235113a115523e80fb677b9f88d9057b1f741c3cac1042280c61e85adb0"
+    },
+    "iaf-en-Garlan_Tyrell-26297.json": {
+      "locale": "en",
+      "title": "Garlan Tyrell",
+      "revision": 26297,
+      "revisionDate": "2023-03-03T11:15:00Z",
+      "url": "https://iceandfire.fandom.com/wiki/Garlan_Tyrell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26297",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26297",
+      "contentSha256": "859fa628d61176b9d9b76e1945576d91bb7f3cc8b32ff195b7a3e6b8f8669f38"
+    },
+    "iaf-en-Allar_Deem-22765.json": {
+      "locale": "en",
+      "title": "Allar Deem",
+      "revision": 22765,
+      "revisionDate": "2019-02-26T23:26:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/Allar_Deem",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22765",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22765",
+      "contentSha256": "6f3d88e3136ec6c2e7420befc19f6e1d3400d6daecd2e94b2e51fd362d5dfe93"
+    },
+    "iaf-en-Barra-21115.json": {
+      "locale": "en",
+      "title": "Barra",
+      "revision": 21115,
+      "revisionDate": "2018-02-05T13:40:13Z",
+      "url": "https://iceandfire.fandom.com/wiki/Barra",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21115",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21115",
+      "contentSha256": "c68507aab72477238b7c4a6459eea293cf6357c11254bf961061f64692be5f57"
+    },
+    "iaf-en-Mace_Tyrell-27170.json": {
+      "locale": "en",
+      "title": "Mace Tyrell",
+      "revision": 27170,
+      "revisionDate": "2025-02-11T15:55:01Z",
+      "url": "https://iceandfire.fandom.com/wiki/Mace_Tyrell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27170",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27170",
+      "contentSha256": "1dbcb61b915493306eba678078979d5911970e00bc342eec152a72f9cc57feff"
+    },
+    "iaf-en-Paxter_Redwyne-20969.json": {
+      "locale": "en",
+      "title": "Paxter Redwyne",
+      "revision": 20969,
+      "revisionDate": "2018-02-01T18:33:49Z",
+      "url": "https://iceandfire.fandom.com/wiki/Paxter_Redwyne",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20969",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20969",
+      "contentSha256": "db7772eacfb892dc8fe3546dd8f0dd4d61ea932749daee83c128e5bc40b02b37"
+    },
+    "iaf-en-Philip_Foote-27268.json": {
+      "locale": "en",
+      "title": "Philip Foote",
+      "revision": 27268,
+      "revisionDate": "2025-02-13T17:04:04Z",
+      "url": "https://iceandfire.fandom.com/wiki/Philip_Foote",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27268",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27268",
+      "contentSha256": "51a120f7d96e02d13325cfc2543901b05047f072024fc798c80eccd8a677f481"
     }
   }
 }

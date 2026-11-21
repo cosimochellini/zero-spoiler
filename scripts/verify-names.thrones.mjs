@@ -180,6 +180,13 @@ export const THRONES_ITALIAN_TITLES = {
   'quaro': 'Dothraki#Quaro',
   'mago': 'Dothraki#Mago',
   'eroeh': 'Dothraki#Jhaqo',
+  // #1463, the second stage's King's Landing and Blackwater cast.
+  'daisy': OTHERS,
+  'hallyne': OTHERS,
+  'lollys-stokeworth': characters('Lollys Stokeworth'),
+  'osmund-kettleblack': characters('Osmund Kettleblack'),
+  'alayaya': characters('Chataya'),
+  'garlan-tyrell': 'Casa Tyrell#Garlan Tyrell',
 }
 
 /**
@@ -236,4 +243,11 @@ export const THRONES_NAMES_KEPT = {
   'jafer-flowers': 'Jafer Flowers',
   // #1008. Italian Wikipedia names her inside Jhaqo’s section, with no heading of her own.
   'eroeh': 'Eroeh',
+  // #1463. Italian Wikipedia names Daisy and Hallyne only in its TV cast
+  // list and Alayaya inside Chataya's section; it has no entry for Jacelyn
+  // Bywater, whose name stays as it is until the Mondadori form is checked.
+  'daisy': 'Daisy',
+  'hallyne': 'Hallyne',
+  'alayaya': 'Alayaya',
+  'jacelyn-bywater': 'Jacelyn Bywater',
 }

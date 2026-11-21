@@ -277,10 +277,14 @@ show has, is `source: 'episode'`. #1006 adds the 60 recurring characters of
 Winterfell, King's Landing, the Vale and the Riverlands, bit parts left out:
 those only one medium names in the stage are `source`-only, and those the other
 medium meets in a later season or book keep that later gate. #1007 adds 16 of
-the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules. The
-series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
-own, with seven stages: Eddard's death and Ice melted, Jon's death, return and
-true name, and Daenerys's fire and death from the drawing audit (#1292), the
+the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules.
+Season 2 and _A Clash of Kings_ (#1455) file by cast group: King's Landing and
+the Blackwater (#1463) adds seven characters, one the show's alone and six the
+books', each showing a placeholder bust until its drawing child, and the stage's
+dated steps of eleven season-1 characters, kept in `season-1.ts`. The series
+opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their own,
+with seven stages: Eddard's death and Ice melted, Jon's death, return and true
+name, and Daenerys's fire and death from the drawing audit (#1292), the
 Winterfell household's are in `art/winterfell.ts` (#854), with 25 stages after
 the drawing audit (#1285), the southern cast's are in `art/south.ts` (#1051),
 with thirty-seven, sixteen of them the later looks and deaths of #1286 and
@@ -489,11 +493,11 @@ checks this block.
 
 | Thing             | Count                                                   |
 | ----------------- | ------------------------------------------------------- |
-| Records           | 208                                                     |
-| Characters        | 148                                                     |
+| Records           | 215                                                     |
+| Characters        | 155                                                     |
 | Places            | 60                                                      |
-| Saga modules      | 1                                                       |
-| Line drawings     | 208, one per record, plus 153 redrawings of 113 records |
+| Saga modules      | 2                                                       |
+| Line drawings     | 215, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 565, for 144 characters                                 |
 
 <!-- End of the generated counts. -->

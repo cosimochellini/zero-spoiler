@@ -622,22 +622,41 @@ describe.each(LOADED_SERIES)(
 
     // A series whose records stop at its first saga (Game of Thrones, #852)
     // has no second one for its demo to end before.
-    it.skipIf(archive.sagas.length < 2)(
+    // A second saga with no arc record (a Game of Thrones season) opens with
+    // its heading instead, tested below.
+    const second =
+      archive.sagas[1]?.entries.filter((entry) => isArc(entry)) ?? []
+    const heading = archive.arcs.filter(
+      ({ id }) => id === archive.sagas[1]?.heading?.id,
+    )
+
+    it.skipIf(second.length === 0)(
       'ends its demo the episode and the chapter before its second saga',
       () => {
         // The demo is the first saga: a visitor with no bookmark is sent all of
         // it and nothing of the next.
-        const second =
-          archive.sagas[1]?.entries.filter((entry) => isArc(entry)) ?? []
-        const opens = (
-          unit: 'revealedAtChapter' | 'revealedAtEpisode',
-        ): number => Math.min(...second.map((arc) => arc[unit]))
-
-        expect(opens('revealedAtEpisode')).toBe(
+        expect(Math.min(...second.map((arc) => arc.revealedAtEpisode))).toBe(
           archive.series.demoLastEpisode + 1,
         )
-        expect(opens('revealedAtChapter')).toBe(
+        expect(Math.min(...second.map((arc) => arc.revealedAtChapter))).toBe(
           archive.series.demoLastChapter + 1,
+        )
+      },
+    )
+
+    // The heading opens at the season's first record in each medium
+    // (`headingOf` in `~/data/shelves`), which a stage still being filed may
+    // hold past the demo's next episode or chapter, never before it.
+    it.skipIf(second.length > 0 || heading.length === 0)(
+      'opens its second season’s heading after its demo',
+      () => {
+        const [first] = heading
+
+        expect(first?.revealedAtEpisode).toBeGreaterThan(
+          archive.series.demoLastEpisode,
+        )
+        expect(first?.revealedAtChapter).toBeGreaterThan(
+          archive.series.demoLastChapter,
         )
       },
     )
