@@ -59,7 +59,6 @@ Done when every gate cites its explicit naming signal in each medium, every cand
 - `src/test/fog.test.ts`, `the place words of a series that labels its own`:
   - the `Terraferma` row lists every mainland place by id; add each new one;
   - add an English and an Italian row for each new form label, as `its tower label` does.
-- `src/test/series.ts`: raise each `least` floor of `'hunter-x-hunter'` to the new count and update the dated comment above it. `files at least what the series is known to file` in `src/data/archive.test.ts` fails a floor above its count or below nine tenths of it, and prints every count to copy in.
 - `scripts/archive-gate.test.mjs`, `reads the shipped dictionaries, keeping only the words they do not hold`: the exact list of HxH place-word canaries. A new region or form id or label goes in, in table order, when it holds a space or a hyphen or has 8+ characters (`DISTINCT_WORD` in `scripts/archive-gate.mjs`) and no shipped dictionary contains it.
 
 Done when `./node_modules/.bin/vitest run src/test scripts/archive-gate.test.mjs` passes.
@@ -105,7 +104,7 @@ Done when the test passes, and moving one gate or pin down by one makes it fail.
 
 ## 8. Docs
 
-- `npm run docs:counts` rewrites the counts block of `docs/architecture.md`; `gate:docs` fails without it.
+- `npm run docs:counts` rewrites the counts block of `docs/architecture.md`, records through dated steps, linked origins and visits; `gate:docs` fails without it. The block is the only record of how much a series files: check that every changed line is one this PR meant to change.
 - Update the Hunter x Hunter coverage paragraph under `## Series and routing` in `docs/architecture.md`.
 - Update the Hunter x Hunter line under "What's inside" in `README.md` when its coverage or a rounded number changes.
 
