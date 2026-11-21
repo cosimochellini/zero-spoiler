@@ -41,14 +41,117 @@ env:
   # generated notes, from being judged by commitlint.
   LEFTHOOK: '0'
 
+# The gate is five jobs side by side, so a pull request is green after the
+# slowest of them rather than after their sum (about 10 minutes in one job).
+# GitHub bills no minutes on a public repository, so the extra installs cost
+# only a few seconds each. Every job carries the same `if`: pull requests only,
+# the gate already ran there, and repeating it on main just to bump the version
+# cost the whole run for nothing. A draft skips every job, so its run concludes
+# `skipped` (scripts/land-pr.sh waits past it); a red job makes the run
+# `failure`, which is the one conclusion land-pr.sh reads.
 jobs:
-  validation:
-    # Pull requests only: the gate already ran there, and repeating it on main
-    # just to bump the version cost the whole run for nothing. Drafts skip it,
-    # so a draft's run concludes `skipped` (scripts/land-pr.sh waits past it).
+  # Everything that needs the sources only: no build, no tests.
+  static:
     if: github.event_name == 'pull_request' && !github.event.pull_request.draft
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up
+        uses: ./.github/actions/setup
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Format
+        run: npm run format:check
+
+      - name: docs counts gate
+        run: npm run gate:docs
+
+      - name: react-doctor gate
+        run: npm run gate:react-doctor
+
+      - name: Upload gate reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: gate-reports-static
+          path: .gate/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # Typed rules build a TypeScript program, so this is the slowest step of the
+  # gate. `--concurrency=2` (in the `lint` script) lints files on two worker
+  # threads, each with its own program: 147 s to 80 s on a laptop, and no better
+  # with 4. `auto` was six times slower there, so the number stays pinned. There
+  # is no `--cache`: with typed rules a file's findings can change when another
+  # file's types do, and a cache keyed on the file misses it.
+  lint:
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up
+        uses: ./.github/actions/setup
+
+      - name: Lint
+        run: npm run lint
+
+  # The suite is split by test file. Each shard writes a blob report and its
+  # coverage data; `coverage` merges them. The default reporter stays on so a
+  # failing test is readable in this job's log.
+  test:
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      # A red shard does not hide the others' failures.
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3]
+        shardTotal: [3]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up
+        uses: ./.github/actions/setup
+
+      - name: Test
+        run: >
+          npx vitest run --coverage --reporter=default --reporter=blob
+          --shard=${{ matrix.shard }}/${{ matrix.shardTotal }}
+
+      - name: Upload blob report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: vitest-blob-${{ matrix.shard }}
+          path: .vitest/blob/
+          include-hidden-files: true
+          if-no-files-found: error
+          # A re-run of one failed shard uploads the same name again. Without
+          # this the run holds both blobs and `coverage` merges the stale,
+          # failed one with the new one.
+          overwrite: true
+          retention-days: 1
+
+  # The merged run writes the same coverage/coverage-final.json `npm test` did,
+  # which fallow reads for its per-function CRAP score.
+  coverage:
+    needs: test
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -58,42 +161,46 @@ jobs:
           # hotspots.
           fetch-depth: 0
 
-      - name: Set up Node
-        uses: actions/setup-node@v7
+      - name: Set up
+        uses: ./.github/actions/setup
+
+      - name: Download blob reports
+        uses: actions/download-artifact@v8
         with:
-          node-version-file: .nvmrc
-          cache: npm
+          pattern: vitest-blob-*
+          merge-multiple: true
+          path: .vitest/blob/
 
-      # setup-node pins Node only. package.json pins npm through
-      # `packageManager`, and corepack is what actually enforces it, so
-      # without this step CI runs whichever npm ships with the Node build.
-      - name: Pin npm
-        run: |
-          corepack enable npm
-          npm --version
+      - name: Merge coverage
+        run: npx vitest --merge-reports --coverage
 
-      # Never add --omit=optional: fallow and impeccable (the engine behind
-      # gate:design) each ship their binary through optionalDependencies and
-      # resolve it at runtime.
-      - name: Install
-        run: npm ci
+      - name: fallow gate
+        run: npm run gate:fallow
 
-      - name: Typecheck
-        run: npm run typecheck
+      - name: Upload gate reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: gate-reports-coverage
+          path: .gate/
+          if-no-files-found: ignore
+          retention-days: 7
 
-      # In this job rather than its own: a second job paid for another
-      # checkout and `npm ci`, and a minute rounded up, on every run.
-      - name: Lint
-        run: npm run lint
+  # Everything that reads the build.
+  build:
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
 
-      - name: Format
-        run: npm run format:check
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          # The client growth budget builds the PR's base commit in a worktree.
+          fetch-depth: 0
 
-      - name: docs counts gate
-        run: npm run gate:docs
-
-      - name: Test
-        run: npm test
+      - name: Set up
+        uses: ./.github/actions/setup
 
       - name: Build
         run: npm run build
@@ -104,12 +211,6 @@ jobs:
       - name: design gate
         run: npm run gate:design
 
-      - name: react-doctor gate
-        run: npm run gate:react-doctor
-
-      - name: fallow gate
-        run: npm run gate:fallow
-
       # Reads the built client chunks, so it has to follow the build.
       - name: archive gate
         run: npm run gate:archive
@@ -117,7 +218,6 @@ jobs:
       # The base build is a pure function of the base commit, so it is cached
       # by SHA: later pushes to the same PR skip a second `npm ci` and build.
       - name: Restore PR base build
-        if: github.event_name == 'pull_request'
         id: base-cache
         uses: actions/cache@v6
         with:
@@ -128,9 +228,7 @@ jobs:
       # A separate worktree leaves the head build intact. Use the event's exact
       # base commit, not today's main, and install its own pinned dependencies.
       - name: Build PR base
-        if:
-          github.event_name == 'pull_request' &&
-          steps.base-cache.outputs.cache-hit != 'true'
+        if: steps.base-cache.outputs.cache-hit != 'true'
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
@@ -141,7 +239,6 @@ jobs:
           cp -r dist/client "$RUNNER_TEMP/client-base"
 
       - name: Client growth budget
-        if: github.event_name == 'pull_request'
         env:
           # PR prose is data, never interpolated into the shell script.
           PR_BODY: ${{ github.event.pull_request.body }}
@@ -152,13 +249,13 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: gate-reports
+          name: gate-reports-build
           path: .gate/
           if-no-files-found: ignore
           retention-days: 7
 
   # Cuts the release for every push to main, which in practice means every
-  # squashed pull request. It does not wait for validation, which only runs on
+  # squashed pull request. It does not wait for the gate, which only runs on
   # pull requests; a merge of two green PRs that break each other still tags.
   #
   # This job is also why `main` carries no branch protection. A ruleset that

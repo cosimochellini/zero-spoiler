@@ -17,6 +17,8 @@ dist
 
 # test and tooling caches
 coverage
+# vitest shard reports, merged by CI
+.vitest
 .eslintcache
 .vite
 
