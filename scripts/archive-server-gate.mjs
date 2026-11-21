@@ -1,4 +1,16 @@
-/** The emitted SSR manifest must keep each series behind its dynamic import. */
+/**
+ * The emitted SSR build must keep each series behind its dynamic import, and
+ * the server-function provider out of every other runtime chunk.
+ *
+ * Start splits each server function's handler into a `?tss-serverfn-split`
+ * chunk that only its resolver imports, dynamically. A route chunk that
+ * statically reaches what that chunk holds loads every projection with the
+ * route: PR #1496's first round did it through one validator reading
+ * `ENDPOINTS`, and the shared chunk it made was named after `src/lib/plain`,
+ * so only the modules inside a chunk can tell. Rolldown writes one
+ * `//#region <module id>` line per module into the unminified server chunks;
+ * a reached chunk without one leaves the gate unusable, never clean.
+ */
 import console from 'node:console'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
@@ -9,6 +21,20 @@ const EXIT_CLEAN = 0
 const EXIT_FOUND = 1
 const EXIT_UNUSABLE = 2
 const SERIES_DIR = 'src/data/series'
+
+/** Start's query on the chunk that holds the server functions' handlers. */
+const SERVER_FN_SPLIT = '?tss-serverfn-split'
+
+/** Server-only modules that belong in a server-function chunk and nowhere else. */
+const PROVIDER_ONLY = [
+  'src/server/archive/',
+  'src/server/serve.server.ts',
+  'src/server/copy.server.ts',
+  'src/server/sources.server.ts',
+]
+
+/** How many provider-only modules a problem names before counting the rest. */
+const QUOTED = 3
 
 /** The emitted SSR dependency graph, not a guess from source imports. */
 export const SERVER_MANIFEST = 'dist/server/.vite/manifest.json'
@@ -104,6 +130,100 @@ function archiveBoundary(manifest, archive, chunks) {
 }
 
 /**
+ * Whether a module or chunk belongs in a server-function chunk only.
+ * @param {string} id A module id or a manifest key.
+ * @returns {boolean} Whether no other runtime chunk may load it.
+ */
+function providerOnly(id) {
+  return (
+    id.includes(SERVER_FN_SPLIT)
+    || PROVIDER_ONLY.some((prefix) => id.startsWith(prefix))
+  )
+}
+
+/**
+ * The provider-only modules one emitted chunk holds, read from its region lines.
+ * @param {string} key The chunk's manifest key.
+ * @param {string | undefined} text The chunk's emitted text.
+ * @returns {null | string[]} The modules, or null when the chunk marks none.
+ */
+function providerModules(key, text = '') {
+  const regions = text
+    .matchAll(/^\/\/#region (?<id>.+)$/gmu)
+    .map((match) => match.groups.id)
+    .toArray()
+  if (regions.length === 0) {
+    return null
+  }
+  const held = new Set([key, ...regions].filter((id) => providerOnly(id)))
+  return held.values().toArray()
+}
+
+/**
+ * Every chunk a runtime root but the split chunks loads statically, with the
+ * first root that loads it.
+ * @param {Record<string, {imports?: string[], isEntry?: boolean, isDynamicEntry?: boolean}>} manifest The Vite manifest.
+ * @returns {{firstRoot: Map<string, string>, missing: string[]}} The static closures.
+ */
+function closuresOf(manifest) {
+  const roots = Object.keys(manifest).filter(
+    (key) =>
+      !key.includes(SERVER_FN_SPLIT)
+      && (manifest[key].isEntry === true
+        || manifest[key].isDynamicEntry === true),
+  )
+  const firstRoot = new Map()
+  const missing = []
+  // Walked last to first, so the first root to reach a chunk is the one kept.
+  for (const root of roots.toReversed()) {
+    const closure = staticClosure(manifest, [root])
+    missing.push(...closure.missing)
+    for (const key of closure.reached) {
+      firstRoot.set(key, root)
+    }
+  }
+  return { firstRoot, missing }
+}
+
+/**
+ * One crossing, naming the first few provider-only modules and counting the rest.
+ * @param {string} root The runtime root that loads the chunk.
+ * @param {string} file The chunk's output file.
+ * @param {string[]} held The provider-only modules it holds.
+ * @returns {string} The problem.
+ */
+function crossing(root, file, held) {
+  const more =
+    held.length > QUOTED ? ` and ${String(held.length - QUOTED)} more` : ''
+  return `${root} statically loads ${file}, which holds ${held.slice(0, QUOTED).join(', ')}${more}`
+}
+
+/**
+ * Provider-only modules statically loaded by any runtime root but the split chunks.
+ * @param {Record<string, {file: string, imports?: string[], isEntry?: boolean, isDynamicEntry?: boolean}>} manifest The Vite manifest.
+ * @param {Record<string, string>} chunks Emitted chunk text, keyed by output file.
+ * @returns {{problems: string[], unreadable: string[]}} The provider verdict.
+ */
+function providerBoundary(manifest, chunks) {
+  if (Object.keys(manifest).every((key) => !key.includes(SERVER_FN_SPLIT))) {
+    return { problems: [], unreadable: [`a ${SERVER_FN_SPLIT} chunk`] }
+  }
+  const { firstRoot, missing } = closuresOf(manifest)
+  const problems = []
+  const unreadable = new Set(missing)
+  for (const [key, root] of firstRoot) {
+    const { file } = manifest[key]
+    const held = providerModules(key, chunks[file])
+    if (held === null) {
+      unreadable.add(file)
+    } else if (held.length > 0) {
+      problems.push(crossing(root, file, held))
+    }
+  }
+  return { problems, unreadable: unreadable.values().toArray() }
+}
+
+/**
  * Pure emitted-graph audit: no source grep can prove a built dynamic boundary.
  * @param {null | Record<string, {file: string, imports?: string[], dynamicImports?: string[], isEntry?: boolean, isDynamicEntry?: boolean}>} manifest The emitted Vite SSR manifest.
  * @param {{folder: string, canaries: {file: string, phrase: null | string}[]}[]} archives Every row of the single series registry, with its fingerprints.
@@ -117,9 +237,10 @@ export function judgeServer(manifest, archives, chunks) {
   ) {
     return { ok: false, problems: [], unreadable: [SERVER_MANIFEST] }
   }
-  const verdicts = archives.map((archive) =>
-    archiveBoundary(manifest, archive, chunks),
-  )
+  const verdicts = [
+    ...archives.map((archive) => archiveBoundary(manifest, archive, chunks)),
+    providerBoundary(manifest, chunks),
+  ]
   const problems = verdicts.flatMap((verdict) => verdict.problems)
   const unreadable = verdicts.flatMap((verdict) => verdict.unreadable)
   return {
@@ -183,7 +304,7 @@ export async function checkServer(repositoryRoot, canaries) {
     return EXIT_FOUND
   }
   console.log(
-    `archive-gate: server archives are dynamically isolated — ${String(archives.length)} series.`,
+    `archive-gate: server archives are dynamically isolated — ${String(archives.length)} series; server functions stay in their own chunks.`,
   )
   return EXIT_CLEAN
 }

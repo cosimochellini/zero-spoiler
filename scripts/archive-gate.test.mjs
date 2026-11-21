@@ -574,6 +574,19 @@ describe('source attribution boundaries', { timeout: 30_000 }, () => {
   })
 })
 
+/** Start's handler chunk for one module of server functions. */
+const SPLIT = 'src/server/api.ts?tss-serverfn-split'
+
+/**
+ * One module of an emitted chunk, as Rolldown marks it.
+ * @param {string} id The module id.
+ * @param {string} body The module's code.
+ * @returns {string} The marked module.
+ */
+function region(id, body) {
+  return `//#region ${id}\n${body}\n//#endregion`
+}
+
 /**
  * A tiny emitted SSR graph, independent of source-code import syntax.
  * @returns {{manifest: Record<string, object>, chunks: Record<string, string>, archives: {folder: string, canaries: {file: string, phrase: string}[]}[]}} A dynamically isolated archive.
@@ -585,20 +598,36 @@ function serverBuild() {
       server: {
         file: 'server.js',
         isEntry: true,
-        imports: ['registry'],
+        imports: ['registry', 'resolver'],
         dynamicImports: ['api'],
       },
       registry: { file: 'registry.js', dynamicImports: [key] },
+      resolver: { file: 'resolver.js', dynamicImports: [SPLIT] },
       api: { file: 'api.js', isDynamicEntry: true, imports: ['registry'] },
+      [SPLIT]: {
+        file: 'split.js',
+        isDynamicEntry: true,
+        imports: ['projections', 'registry'],
+      },
+      projections: { file: 'projections.js' },
       [key]: { file: 'archive.js', isDynamicEntry: true, imports: ['shared'] },
       shared: { file: 'shared.js' },
     },
     chunks: {
-      'server.js': 'server',
-      'registry.js': 'registry',
-      'api.js': 'api',
-      'archive.js': 'a sentence held only by the archive',
-      'shared.js': 'shared engine',
+      'server.js': region('src/server.ts', 'server'),
+      'registry.js': region('src/data/series/index.ts', 'registry'),
+      'resolver.js': region(
+        String.raw`\0#tanstack-start-server-fn-resolver`,
+        'resolver',
+      ),
+      'api.js': region('src/routes/index.tsx?tsr-split=component', 'api'),
+      'split.js': region(SPLIT, 'handlers'),
+      'projections.js': [
+        region('src/server/archive/home.server.ts', 'home'),
+        region('src/server/serve.server.ts', 'serve'),
+      ].join('\n'),
+      'archive.js': region(key, 'a sentence held only by the archive'),
+      'shared.js': region('src/lib/shared.ts', 'shared engine'),
     },
     archives: [
       {
@@ -685,6 +714,63 @@ describe('emitted server archive boundaries', () => {
     expect(judgeServer(manifest, archives, chunks).problems).toContain(
       `${key} is not a dynamically imported archive entry`,
     )
+  })
+
+  it('keeps provider-only modules and the handler chunk out of every other root', () => {
+    const { manifest, archives, chunks } = serverBuild()
+    manifest.api.imports.push('projections')
+    expect(judgeServer(manifest, archives, chunks).problems).toStrictEqual([
+      'api statically loads projections.js, which holds src/server/archive/home.server.ts, src/server/serve.server.ts',
+    ])
+  })
+
+  it.each([
+    'src/server/copy.server.ts',
+    'src/server/sources.server.ts',
+    'src/server/archive/payloads.server.ts',
+  ])('rejects %s in a shared chunk of a route', (id) => {
+    const { manifest, archives, chunks } = serverBuild()
+    chunks['shared.js'] = region(id, 'provider')
+    manifest.api.imports.push('shared')
+    expect(judgeServer(manifest, archives, chunks).problems).toStrictEqual([
+      `api statically loads shared.js, which holds ${id}`,
+    ])
+  })
+
+  it('rejects a static import of the handler chunk itself', () => {
+    const { manifest, archives, chunks } = serverBuild()
+    manifest.server.imports.push(SPLIT)
+    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+      `server statically loads split.js, which holds ${SPLIT}`,
+    )
+  })
+
+  it('names the first three modules a chunk holds and counts the rest', () => {
+    const { manifest, archives, chunks } = serverBuild()
+    chunks['shared.js'] = ['a', 'b', 'c', 'd', 'e']
+      .map((name) => region(`src/server/archive/${name}.server.ts`, name))
+      .join('\n')
+    manifest.api.imports.push('shared')
+    expect(judgeServer(manifest, archives, chunks).problems).toStrictEqual([
+      'api statically loads shared.js, which holds src/server/archive/a.server.ts, src/server/archive/b.server.ts, src/server/archive/c.server.ts and 2 more',
+    ])
+  })
+
+  it('refuses to vouch for a reached chunk with no module marked in it', () => {
+    const { manifest, archives, chunks } = serverBuild()
+    chunks['registry.js'] = 'registry, minified'
+    const verdict = judgeServer(manifest, archives, chunks)
+    expect(verdict.problems).toStrictEqual([])
+    expect(verdict.unreadable).toStrictEqual(['registry.js'])
+  })
+
+  it('refuses to vouch for a build with no handler chunk to keep apart', () => {
+    const { manifest, archives, chunks } = serverBuild()
+    Reflect.deleteProperty(manifest, SPLIT)
+    manifest.resolver.dynamicImports = []
+    expect(judgeServer(manifest, archives, chunks).unreadable).toStrictEqual([
+      'a ?tss-serverfn-split chunk',
+    ])
   })
 
   it('refuses incomplete static graph and emitted script evidence', () => {

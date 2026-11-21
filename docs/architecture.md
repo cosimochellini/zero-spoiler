@@ -453,6 +453,13 @@ with the legal page alone. Copy rules live in the
   Follow an existing series for archive and copy wiring.
 - Client code consumes `src/lib/view` types, never archive modules. ESLint,
   payload sweeps and `gate:archive` protect this boundary; keep all three.
+- A server function's projections load with the function, never with a route.
+  `gate:archive` walks the static imports of every runtime chunk of the server
+  build except Start's server-function chunks (`?tss-serverfn-split`) and fails
+  if one reaches such a chunk, `src/server/archive/`, `serve.server.ts`,
+  `copy.server.ts` or `sources.server.ts`. It reads the modules from the
+  `//#region` lines of the unminified chunks, so a chunk without them leaves it
+  unusable.
 
 For verification commands and delivery rules, use
 [CONTRIBUTING.md](../CONTRIBUTING.md#checks).
