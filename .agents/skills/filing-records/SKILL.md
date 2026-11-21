@@ -104,7 +104,7 @@ Done when the test passes, and moving one gate or pin down by one makes it fail.
 
 ## 8. Docs
 
-- `npm run docs:counts` rewrites the counts block of `docs/architecture.md`, records through dated steps, linked origins and visits; `gate:docs` fails without it. The block is the only record of how much a series files: check that every changed line is one this PR meant to change.
+- `npm run docs:counts` rewrites the counts block of `docs/architecture.md`, records through dated steps, linked origins and visits; `gate:docs` fails without it. Check that every changed line is one this PR meant to change; it does not count role, epithet, bounty or other dated steps one by one.
 - Update the Hunter x Hunter coverage paragraph under `## Series and routing` in `docs/architecture.md`.
 - Update the Hunter x Hunter line under "What's inside" in `README.md` when its coverage or a rounded number changes.
 
