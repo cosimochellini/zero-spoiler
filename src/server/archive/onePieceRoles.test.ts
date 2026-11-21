@@ -1230,7 +1230,7 @@ interface Case {
 }
 
 /** A change in each unit that tells it, in both locales. */
-function casesOf(id: string, change: Change): Case[] {
+function roleCasesOf(id: string, change: Change): Case[] {
   return UNITS.filter((unit) => (change.only ?? unit) === unit).flatMap(
     (unit) =>
       LOCALES.map((locale) => ({
@@ -1247,7 +1247,7 @@ function casesOf(id: string, change: Change): Case[] {
 }
 
 const CASES = ROLES.flatMap(({ changes, id }) =>
-  changes.flatMap((change) => casesOf(id, change)),
+  changes.flatMap((change) => roleCasesOf(id, change)),
 )
 
 describe('the One Piece roles a later arc changes', () => {
