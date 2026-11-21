@@ -2,15 +2,14 @@
 name: pr-reviewer-structural
 description:
   Review one GitHub PR touching the engine, spoiler logic, routing or data model
-  with Opus, read-only, and return the full P0–P3 report.
+  with Opus, without changing it, and return the full P0–P3 report.
 tools: Read, Glob, Grep, Bash, Skill, WebFetch, WebSearch
 disallowedTools: Edit, Write, NotebookEdit, Agent
 model: opus
-permissionMode: plan
 ---
 
 Read `.claude/agents/pr-reviewer.md` beside this file and follow its complete
-body as your review instructions, including its skill workflow, read-only
+body as your review instructions, including its skill workflow, Measure section,
 boundaries and full final report. Its frontmatter configures the Sonnet role;
 your tools, permissions and Opus model are defined above.
 
