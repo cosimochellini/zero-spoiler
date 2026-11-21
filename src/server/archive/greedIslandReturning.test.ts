@@ -1,19 +1,15 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import { recordOf } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { factsOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 import { relationshipsOf } from './relationships.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Returning Greed Island tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 const CASES = LOCALES.flatMap((locale) =>
   (['episode', 'chapter'] as const).map((unit) => ({ locale, unit })),
 )
@@ -22,14 +18,6 @@ function at(unit: 'chapter' | 'episode', count: number): Bookmark {
   return unit === 'chapter' ?
       { mode: 'chapter', chapter: count }
     : { mode: 'episode', episode: count }
-}
-
-function character(id: string): Entity {
-  const record = archive.getCharacter(id)
-  if (record === undefined) {
-    throw new Error(`Missing returning character ${id}`)
-  }
-  return record
 }
 
 const EXAM_FAILURES = [
@@ -106,9 +94,9 @@ describe.each(CASES)(
     const pin = (episode: number, chapter: number): number =>
       row.unit === 'chapter' ? chapter : episode
     const affiliation = (id: string, count: number): string | undefined =>
-      factsOf(character(id), read(count)).affiliation
+      factsOf(recordOf(archive, id), read(count)).affiliation
     const role = (id: string, count: number): string | undefined =>
-      archive.roleOf(read(count), character(id))?.[row.locale]
+      archive.roleOf(read(count), recordOf(archive, id))?.[row.locale]
     const swept = (gate: number): void => {
       expect(archive.bookmarks).toContainEqual(at(row.unit, gate - 1))
       expect(archive.bookmarks).toContainEqual(at(row.unit, gate))
@@ -191,7 +179,7 @@ describe.each(CASES)(
         const words = row.locale === 'it' ? 'esorcista' : 'Exorcist'
         const reached = row.unit === 'episode' || TROUPE.has(id)
         const selectedSummary = (count: number): string =>
-          relationshipsOf(character(id), read(count)).find(
+          relationshipsOf(recordOf(archive, id), read(count)).find(
             ({ person }) => person.id === 'chrollo',
           )?.summary ?? ''
 
@@ -212,7 +200,7 @@ describe.each(LOCALES)('source-specific training in %s', (locale) => {
     unit: 'chapter' | 'episode',
     count: number,
   ): string | undefined =>
-    factsOf(character(id), readerFor(archive, at(unit, count), locale))
+    factsOf(recordOf(archive, id), readerFor(archive, at(unit, count), locale))
       .affiliation
 
   it.each(['gon-freecss', 'killua'])(

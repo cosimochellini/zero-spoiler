@@ -1,16 +1,12 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor, shelvesPage } from './pages.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Chapter-one tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 const IDS = ['kite', 'kon']
 const CASES = LOCALES.flatMap((locale) => IDS.map((id) => ({ id, locale })))
 

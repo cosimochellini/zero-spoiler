@@ -3,16 +3,12 @@ import { describe, expect, it } from 'vitest'
 import type { LocalizedText } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 import { characterOf } from './project.server'
 import { readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'one-piece')
-if (series === undefined) {
-  throw new Error('The role tests need the filed One Piece archive')
-}
-const { archive } = series
+const { archive } = loadedSeries('one-piece')
 
 const UNITS = ['episode', 'chapter'] as const
 type Unit = (typeof UNITS)[number]

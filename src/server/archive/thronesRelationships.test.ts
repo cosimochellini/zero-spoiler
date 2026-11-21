@@ -5,18 +5,14 @@ import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { RelationshipView } from '~/lib/view/relationships'
 import { withoutDrawings } from '~/test/archive'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 // eslint-disable-next-line no-restricted-imports -- The omissions live beside the factual evidence.
 import coverage from '../../../docs/content-provenance/game-of-thrones-relationships.json' with { type: 'json' }
 import { relationshipsPage } from './pages.server'
 import { readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
-if (series === undefined) {
-  throw new Error('Game of Thrones is not registered')
-}
-const { archive } = series
+const { archive } = loadedSeries('game-of-thrones')
 
 const ep = (episode: number): Bookmark => ({ mode: 'episode', episode })
 const ch = (chapter: number): Bookmark => ({ mode: 'chapter', chapter })

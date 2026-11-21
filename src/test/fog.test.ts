@@ -5,7 +5,7 @@ import type { Entity } from '~/data/types'
 import { ONE_PIECE_BOOKMARK } from '~/lib/progress/series'
 import {
   type LoadedSeries as ListedSeries,
-  LOADED_SERIES,
+  loadedSeries,
   ONE_PIECE_LOADED as ONE_PIECE,
 } from '~/test/series'
 
@@ -99,10 +99,7 @@ describe('the leak check of one series against another', () => {
 })
 
 describe('the place words of a series that labels its own', () => {
-  const HUNTER = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-  if (HUNTER === undefined) {
-    throw new Error('Hunter x Hunter is not filed')
-  }
+  const HUNTER = loadedSeries('hunter-x-hunter')
   const leaksIn = leaksOf(HUNTER)
   const FIRST = { mode: 'episode' as const, episode: 1 }
 
