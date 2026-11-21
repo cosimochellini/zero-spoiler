@@ -1091,7 +1091,10 @@ function character(id: string): Entity {
 
 describe('the first season’s cast', () => {
   it('files exactly these records', () => {
-    expect(archive.entities.map(({ id }) => id).toSorted(byText)).toStrictEqual(
+    // Season 1's own records: a later season files its own beside them.
+    const season1 = archive.sagas.find(({ name }) => name.en === 'Season 1')
+
+    expect(season1?.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
       RECORDS.map(({ id }) => id).toSorted(byText),
     )
   })

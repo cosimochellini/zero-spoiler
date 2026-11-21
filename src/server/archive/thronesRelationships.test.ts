@@ -59,6 +59,36 @@ describe('Game of Thrones relationship coverage', () => {
   )
 })
 
+/**
+ * One stage's edge, its last episode and its last chapter, as pairs of
+ * bookmarks: the stage's last number in each unit, and the first past it,
+ * the next season's first episode among them.
+ */
+function edgeBookmarks(edge: {
+  chapter: number
+  episode: number
+}): [Bookmark, Bookmark][] {
+  const season = archive.series.seasons.find(
+    ({ last }) => last === edge.episode,
+  )
+  if (season === undefined) {
+    throw new Error(`No season ends at episode ${String(edge.episode)}`)
+  }
+
+  return [
+    [ep(edge.episode), ep(edge.episode + 1)],
+    [ch(edge.chapter), ch(edge.chapter + 1)],
+    [
+      {
+        mode: 'season',
+        season: season.number,
+        episode: edge.episode - season.first + 1,
+      },
+      { mode: 'season', season: season.number + 1, episode: 1 },
+    ],
+  ]
+}
+
 describe.each(LOCALES)(
   'Game of Thrones verified revelations in %s',
   (locale) => {
@@ -70,30 +100,21 @@ describe.each(LOCALES)(
         ({ person }) => person.id === 'mirri-maz-duur',
       )?.type
 
-    it('keeps the last stage-1 selection across both stage edges', () => {
-      for (const owner of owners) {
-        expect(projected(owner.id, ep(11), locale), owner.id).toStrictEqual(
-          projected(owner.id, ep(10), locale),
-        )
-        expect(projected(owner.id, ch(74), locale), owner.id).toStrictEqual(
-          projected(owner.id, ch(73), locale),
-        )
-        expect(
-          projected(
-            owner.id,
-            { mode: 'season', season: 2, episode: 1 },
-            locale,
-          ),
-          owner.id,
-        ).toStrictEqual(
-          projected(
-            owner.id,
-            { mode: 'season', season: 1, episode: 10 },
-            locale,
-          ),
-        )
-      }
-    })
+    // Each stage's last episode and last chapter. The relationships
+    // children of #1455 add stage 2's edge, episode 20/21 and chapter
+    // 143/144.
+    it.each([{ stage: 1, episode: 10, chapter: 73 }])(
+      'keeps the last stage-$stage selection across both stage edges',
+      (edge) => {
+        for (const owner of owners) {
+          for (const [last, next] of edgeBookmarks(edge)) {
+            expect(projected(owner.id, next, locale), owner.id).toStrictEqual(
+              projected(owner.id, last, locale),
+            )
+          }
+        }
+      },
+    )
 
     it('tells why Jorah fled Eddard in episode 2 and chapter 37', () => {
       expect(people('jorah-mormont', ep(1))).not.toContain('eddard-stark')

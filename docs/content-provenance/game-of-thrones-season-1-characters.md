@@ -9,8 +9,10 @@ is copied from them.
 - **Gates.** A record opens where the character appears and is named, in each
   medium. The site's chapter is absolute: the book's prologue is chapter 1, so
   the wiki's "Chapter N" of _A Game of Thrones_ is site chapter N + 1.
-- **Dated steps** stop at the end of stage 1 (episode 10, chapter 73) and pin
-  both numbers. A step one medium alone tells carries `source`.
+- **Dated steps** pin both numbers. This research filed them up to the end of
+  stage 1 (episode 10, chapter 73); a later stage adds a returning character's
+  steps past it in the same dossier (#1455). A step one medium alone tells
+  carries `source`.
 - **Not viewed.** Neither the episodes nor the books were viewed for this
   research. Every gate or step the wikis leave open is listed under `unverified`
   in `game-of-thrones.json`, for the owner's hand check.

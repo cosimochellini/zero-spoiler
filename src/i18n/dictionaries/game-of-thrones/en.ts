@@ -10,8 +10,10 @@ import type { OwnCopy } from '~/i18n/types'
 export const gameOfThronesEn = {
   'characters.bookLede':
     'Every character in the wiki, grouped by the season they first appear in.',
-  // Blank: season 1 is the only heading, so every later number would
-  // read "Season 1" (#856). The line keeps its height.
+  // Blank: the dialog names the last heading at or below the number, and
+  // only the seasons with records have one, so every number past the last
+  // of them would read its name (#856); a chapter would read a season's
+  // name too (#1456). The line keeps its height.
   'dialog.saga': '',
   'onboarding.arcs': 'Seasons',
   'characters.sectionFogged': 'Season under fog',
