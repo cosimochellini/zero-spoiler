@@ -49,8 +49,9 @@ jobs:
       - name: Install
         run: npm ci
 
-      # `npm test` writes the coverage fallow reads for the CRAP score, so the
-      # grade matches the one the pull request gate sees. A failing test still
+      # `npm test` writes the coverage fallow reads for the CRAP score, the
+      # same coverage the pull request gate reads. The badge also subtracts
+      # the hotspot penalty, which the gate's score leaves out. A failing test still
       # leaves coverage behind, so the badge is published anyway.
       - name: Test
         continue-on-error: true

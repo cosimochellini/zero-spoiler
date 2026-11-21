@@ -209,16 +209,16 @@
     // scripts/fallow-gate.mjs refuses to run without it, so the score is never
     // the estimate fallow falls back to.
     "coverage": "coverage/coverage-final.json",
-    "thresholdOverrides": [
-      {
-        "files": [
-          "src/**/*.test.ts",
-          "src/**/*.test.tsx",
-          "scripts/**/*.test.mjs",
-        ],
-        "maxUnitSize": 200,
-        "reason": "A describe() block is one unit; a test suite is long by design.",
-      },
+    // Test files stay out of the health score and its complexity checks. A
+    // describe() block is one unit and a test suite is long by design, but the
+    // score's unit-size penalty ignores every per-file ceiling, so the tests'
+    // long blocks alone held it at its cap. ESLint still holds tests to
+    // complexity 8 and cognitive complexity 10. The helpers under src/test/
+    // are code, and stay scored.
+    "ignore": [
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx",
+      "scripts/**/*.test.mjs",
     ],
   },
   // `fallow security` runs only the categories listed here once a list is
