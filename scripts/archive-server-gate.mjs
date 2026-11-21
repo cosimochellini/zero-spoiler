@@ -7,9 +7,12 @@
  * statically reaches what that chunk holds loads every projection with the
  * route: PR #1496's first round did it through one validator reading
  * `ENDPOINTS`, and the shared chunk it made was named after `src/lib/plain`,
- * so only the modules inside a chunk can tell. Rolldown writes one
- * `//#region <module id>` line per module into the unminified server chunks;
- * a reached chunk without one leaves the gate unusable, never clean.
+ * so only the modules inside a chunk can tell. A chunk's modules are the
+ * `//#region <module id>` lines Rolldown writes into the unminified server
+ * chunks together with the `sources` of its source map: Rolldown gives some
+ * modules no region of their own (`chronicle.server.ts` sits under
+ * `markers.ts`'s), and the map names them. A reached chunk with neither leaves
+ * the gate unusable, never clean.
  */
 import console from 'node:console'
 import { readFileSync } from 'node:fs'
@@ -35,6 +38,9 @@ const PROVIDER_ONLY = [
 
 /** How many provider-only modules a problem names before counting the rest. */
 const QUOTED = 3
+
+/** Why a reached chunk proves nothing about the modules it holds. */
+const NO_EVIDENCE = 'no //#region lines and no source map'
 
 /** The emitted SSR dependency graph, not a guess from source imports. */
 export const SERVER_MANIFEST = 'dist/server/.vite/manifest.json'
@@ -142,20 +148,24 @@ function providerOnly(id) {
 }
 
 /**
- * The provider-only modules one emitted chunk holds, read from its region lines.
+ * The provider-only modules one emitted chunk holds, read from its region
+ * lines and its source map.
  * @param {string} key The chunk's manifest key.
- * @param {string | undefined} text The chunk's emitted text.
- * @returns {null | string[]} The modules, or null when the chunk marks none.
+ * @param {string} text The chunk's emitted text.
+ * @param {string[]} mapped The modules its source map names.
+ * @returns {null | string[]} The modules, or null when nothing names any.
  */
-function providerModules(key, text = '') {
-  const regions = text
-    .matchAll(/^\/\/#region (?<id>.+)$/gmu)
-    .map((match) => match.groups.id)
-    .toArray()
-  if (regions.length === 0) {
+function providerModules(key, text = '', mapped = []) {
+  const ids = [
+    ...text
+      .matchAll(/^\/\/#region (?<id>.+)$/gmu)
+      .map((match) => match.groups.id),
+    ...mapped,
+  ]
+  if (ids.length === 0) {
     return null
   }
-  const held = new Set([key, ...regions].filter((id) => providerOnly(id)))
+  const held = new Set([key, ...ids].filter((id) => providerOnly(id)))
   return held.values().toArray()
 }
 
@@ -202,9 +212,10 @@ function crossing(root, file, held) {
  * Provider-only modules statically loaded by any runtime root but the split chunks.
  * @param {Record<string, {file: string, imports?: string[], isEntry?: boolean, isDynamicEntry?: boolean}>} manifest The Vite manifest.
  * @param {Record<string, string>} chunks Emitted chunk text, keyed by output file.
+ * @param {Record<string, string[]>} sources The modules each chunk's source map names, keyed by output file.
  * @returns {{problems: string[], unreadable: string[]}} The provider verdict.
  */
-function providerBoundary(manifest, chunks) {
+function providerBoundary(manifest, chunks, sources) {
   if (Object.keys(manifest).every((key) => !key.includes(SERVER_FN_SPLIT))) {
     return { problems: [], unreadable: [`a ${SERVER_FN_SPLIT} chunk`] }
   }
@@ -213,9 +224,9 @@ function providerBoundary(manifest, chunks) {
   const unreadable = new Set(missing)
   for (const [key, root] of firstRoot) {
     const { file } = manifest[key]
-    const held = providerModules(key, chunks[file])
+    const held = providerModules(key, chunks[file], sources[file])
     if (held === null) {
-      unreadable.add(file)
+      unreadable.add(`${file} (${NO_EVIDENCE})`)
     } else if (held.length > 0) {
       problems.push(crossing(root, file, held))
     }
@@ -228,9 +239,10 @@ function providerBoundary(manifest, chunks) {
  * @param {null | Record<string, {file: string, imports?: string[], dynamicImports?: string[], isEntry?: boolean, isDynamicEntry?: boolean}>} manifest The emitted Vite SSR manifest.
  * @param {{folder: string, canaries: {file: string, phrase: null | string}[]}[]} archives Every row of the single series registry, with its fingerprints.
  * @param {Record<string, string>} chunks Emitted chunk text, keyed by output file.
+ * @param {Record<string, string[]>} [sources] The repository-relative modules each chunk's source map names, keyed by output file.
  * @returns {{ok: boolean, problems: string[], unreadable: string[]}} The server verdict.
  */
-export function judgeServer(manifest, archives, chunks) {
+export function judgeServer(manifest, archives, chunks, sources = {}) {
   if (
     manifest === null
     || Object.values(manifest).every((entry) => entry.isEntry !== true)
@@ -239,7 +251,7 @@ export function judgeServer(manifest, archives, chunks) {
   }
   const verdicts = [
     ...archives.map((archive) => archiveBoundary(manifest, archive, chunks)),
-    providerBoundary(manifest, chunks),
+    providerBoundary(manifest, chunks, sources),
   ]
   const problems = verdicts.flatMap((verdict) => verdict.problems)
   const unreadable = verdicts.flatMap((verdict) => verdict.unreadable)
@@ -251,9 +263,43 @@ export function judgeServer(manifest, archives, chunks) {
 }
 
 /**
- * Reads each script named by the emitted SSR manifest, failing closed.
+ * The modules a chunk's source map names, relative to the repository root.
+ * @param {string} repositoryRoot The repository root.
+ * @param {string} file The chunk's output file.
+ * @param {string} text The chunk's emitted text.
+ * @returns {string[]} The modules, or none when the chunk has no readable map.
+ */
+function mappedSources(repositoryRoot, file, text) {
+  const url =
+    /^\/\/# sourceMappingURL=(?<url>\S+)$/mu.exec(text)?.groups.url
+    ?? `${path.basename(file)}.map`
+  const mapPath = path.resolve(
+    repositoryRoot,
+    'dist/server',
+    path.dirname(file),
+    url,
+  )
+  let map
+  try {
+    // fallow-ignore-next-line security-sink -- mapPath is a local emitted build file next to a chunk Vite's manifest names
+    map = JSON.parse(readFileSync(mapPath, 'utf8'))
+  } catch {
+    return []
+  }
+  const base = path.resolve(path.dirname(mapPath), map.sourceRoot ?? '')
+  return (map.sources ?? []).map((source) =>
+    path
+      .relative(path.resolve(repositoryRoot), path.resolve(base, source))
+      .split(path.sep)
+      .join('/'),
+  )
+}
+
+/**
+ * Reads each script named by the emitted SSR manifest, failing closed, and
+ * the modules each one's source map names.
  * @param {string} repositoryRoot The repository root or a test fixture.
- * @returns {{manifest: null | Record<string, object>, chunks: Record<string, string>}} The server build, or missing evidence.
+ * @returns {{manifest: null | Record<string, object>, chunks: Record<string, string>, sources: Record<string, string[]>}} The server build, or missing evidence.
  */
 function readServerBuild(repositoryRoot) {
   try {
@@ -269,9 +315,15 @@ function readServerBuild(repositoryRoot) {
         readFileSync(path.join(repositoryRoot, 'dist/server', file), 'utf8'),
       ]),
     )
-    return { manifest, chunks }
+    const sources = Object.fromEntries(
+      Object.entries(chunks).map(([file, text]) => [
+        file,
+        mappedSources(repositoryRoot, file, text),
+      ]),
+    )
+    return { manifest, chunks, sources }
   } catch {
-    return { manifest: null, chunks: {} }
+    return { manifest: null, chunks: {}, sources: {} }
   }
 }
 
@@ -283,14 +335,14 @@ function readServerBuild(repositoryRoot) {
  */
 export async function checkServer(repositoryRoot, canaries) {
   const { SERIES } = await importArchive('data/series/index.ts')
-  const { manifest, chunks } = readServerBuild(repositoryRoot)
+  const { manifest, chunks, sources } = readServerBuild(repositoryRoot)
   const archives = SERIES.map(({ folder }) => ({
     folder,
     canaries: canaries.filter(({ file }) =>
       file.startsWith(`${SERIES_DIR}/${folder}/`),
     ),
   }))
-  const verdict = judgeServer(manifest, archives, chunks)
+  const verdict = judgeServer(manifest, archives, chunks, sources)
   for (const problem of verdict.problems) {
     console.error(`archive-gate: ${problem}`)
   }

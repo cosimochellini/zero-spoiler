@@ -761,7 +761,41 @@ describe('emitted server archive boundaries', () => {
     chunks['registry.js'] = 'registry, minified'
     const verdict = judgeServer(manifest, archives, chunks)
     expect(verdict.problems).toStrictEqual([])
-    expect(verdict.unreadable).toStrictEqual(['registry.js'])
+    expect(verdict.unreadable).toStrictEqual([
+      'registry.js (no //#region lines and no source map)',
+    ])
+  })
+
+  it('reads the modules a chunk holds from its source map as well', () => {
+    const { manifest, archives, chunks } = serverBuild()
+    manifest.api.imports.push('shared')
+    // Rolldown can fold a module into another's region and name it only in the map.
+    chunks['shared.js'] = region(
+      'src/lib/prose/markers.ts',
+      'markers + chronicle',
+    )
+    const sources = {
+      'shared.js': [
+        'src/lib/prose/markers.ts',
+        'src/server/archive/chronicle.server.ts',
+      ],
+    }
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([
+      'api statically loads shared.js, which holds src/server/archive/chronicle.server.ts',
+    ])
+  })
+
+  it('takes a source map alone as evidence for a chunk with no region lines', () => {
+    const { manifest, archives, chunks } = serverBuild()
+    chunks['registry.js'] = 'registry, minified'
+    const sources = { 'registry.js': ['src/data/series/index.ts'] }
+    expect(judgeServer(manifest, archives, chunks, sources)).toStrictEqual({
+      ok: true,
+      problems: [],
+      unreadable: [],
+    })
   })
 
   it('refuses to vouch for a build with no handler chunk to keep apart', () => {

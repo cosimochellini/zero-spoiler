@@ -457,9 +457,9 @@ with the legal page alone. Copy rules live in the
   `gate:archive` walks the static imports of every runtime chunk of the server
   build except Start's server-function chunks (`?tss-serverfn-split`) and fails
   if one reaches such a chunk, `src/server/archive/`, `serve.server.ts`,
-  `copy.server.ts` or `sources.server.ts`. It reads the modules from the
-  `//#region` lines of the unminified chunks, so a chunk without them leaves it
-  unusable.
+  `copy.server.ts` or `sources.server.ts`. It reads a chunk's modules from its
+  `//#region` lines and its source map's `sources`, because Rolldown gives some
+  modules no region of their own; a chunk with neither leaves the gate unusable.
 
 For verification commands and delivery rules, use
 [CONTRIBUTING.md](../CONTRIBUTING.md#checks).
