@@ -233,8 +233,8 @@ describe('SiteBar', () => {
   })
 
   it.each([
-    ['en', 'Zero Spoiler. All series', 'One Piece'],
-    ['it', 'Zero Spoiler. Tutte le serie', 'One Piece (it)'],
+    ['en', 'Zero Spoiler. All series', 'OP One Piece'],
+    ['it', 'Zero Spoiler. Tutte le serie', 'OP One Piece (it)'],
   ] as const)(
     'names the hub and the series apart, in %s',
     async (locale, wordmark, name) => {
@@ -299,7 +299,7 @@ describe('SiteBar', () => {
   )
 
   // Owner, 2026-11-21 (#1442): the bar prints the short name at every
-  // width, and its link keeps the full name.
+  // width, and the full name follows it, read and not shown.
   it.each([
     { series: ONE_PIECE_SERIES, locale: 'en', short: 'OP', full: 'One Piece' },
     {
@@ -315,7 +315,7 @@ describe('SiteBar', () => {
       full: 'Il Trono di Spade',
     },
   ] as const)(
-    'prints $short and names its link $full',
+    'prints $short and names its link with it, then $full',
     async ({ series, locale, short, full }) => {
       await renderUnderSeries(<SiteBar />, {
         path: `/${series.slug}/${locale}/characters`,
@@ -324,10 +324,10 @@ describe('SiteBar', () => {
       })
 
       const link = within(screen.getByRole('banner')).getByRole('link', {
-        name: full,
+        name: `${short} ${full}`,
       })
 
-      expect(link).toHaveTextContent(short)
+      expect(link.firstElementChild).toHaveTextContent(short)
       expect(link).toHaveAttribute('href', `/${series.slug}/${locale}`)
     },
   )
@@ -338,7 +338,7 @@ describe('SiteBar', () => {
       series: NAMED_APART,
     })
 
-    expect(screen.getByRole('link', { name: 'One Piece' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'OP One Piece' })).toHaveAttribute(
       'aria-current',
       'page',
     )

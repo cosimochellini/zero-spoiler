@@ -27,8 +27,8 @@ import {
  *
  * The wordmark hard-left, the controls hard-right. On a series page the
  * series' short name ("HxH") follows the wordmark, a breadcrumb: the wordmark
- * is the way back to the hub, the name the series' home, its link named in
- * full for assistive tech. Past them the row is empty. It
+ * is the way back to the hub, the name the series' home. Its full name
+ * follows, read and not shown, so the link is "HxH Hunter x Hunter". Past them the row is empty. It
  * stays pinned at every width, so the pages and the bookmark are one tap
  * away from anywhere down a long listing. Below `ROOMY` a series bar folds
  * the name and the pages onto a second row.
@@ -42,10 +42,6 @@ export function SiteBar(): ReactElement {
   const { locale } = useLocale()
   const t = useT()
   const { series } = useBookmark()
-  // The public description, for the series' short name and, for assistive
-  // tech, its full name in the reader's language.
-  const described = useMatch({ from: '/$series', shouldThrow: false })?.context
-    .series
 
   return (
     <header {...stylex.props(styles.bar, series === null && styles.sharedBar)}>
@@ -68,18 +64,7 @@ export function SiteBar(): ReactElement {
             >
               /
             </span>
-            <Link
-              activeOptions={{ exact: true }}
-              activeProps={{ 'aria-current': 'page' }}
-              aria-label={described?.name[locale]}
-              params={{ locale, series: series.slug }}
-              to="/$series/$locale"
-              {...stylex.props(styles.seriesName)}
-            >
-              <span {...stylex.props(styles.seriesText)}>
-                {described?.shortName ?? series.slug}
-              </span>
-            </Link>
+            <SeriesCrumb slug={series.slug} />
             <SeriesNavigation />
           </div>
           <EpisodeMark />
@@ -87,6 +72,38 @@ export function SiteBar(): ReactElement {
       )}
       <LocaleSwitch />
     </header>
+  )
+}
+
+/**
+ * The series' home, after the wordmark: its short name ("HxH"), then its
+ * full name in the reader's language, read and not shown, so the link's name
+ * holds its visible text, "HxH Hunter x Hunter" (WCAG 2.5.3).
+ */
+function SeriesCrumb({ slug }: { slug: string }): ReactElement {
+  const { locale } = useLocale()
+  const described = useMatch({ from: '/$series', shouldThrow: false })?.context
+    .series
+
+  return (
+    <Link
+      activeOptions={{ exact: true }}
+      activeProps={{ 'aria-current': 'page' }}
+      params={{ locale, series: slug }}
+      to="/$series/$locale"
+      {...stylex.props(styles.seriesName)}
+    >
+      <span {...stylex.props(styles.seriesText)}>
+        {described?.shortName ?? slug}
+      </span>
+      {described !== undefined && (
+        // The space is the link's own text, so no span's edge trims it.
+        <>
+          {' '}
+          <span {...stylex.props(styles.hidden)}>{described.name[locale]}</span>
+        </>
+      )}
+    </Link>
   )
 }
 
@@ -250,6 +267,15 @@ const styles = stylex.create({
     minWidth: 0,
   },
   seriesText: { overflow: 'hidden', textOverflow: 'ellipsis' },
+  // Out of sight and still read: the series' full name.
+  hidden: {
+    overflow: 'hidden',
+    clipPath: 'inset(50%)',
+    position: 'absolute',
+    whiteSpace: 'nowrap',
+    height: '1px',
+    width: '1px',
+  },
   // On a series page the series' name is the louder of the two.
   quiet: { color: { 'default': color.ink2, ':hover': color.accent } },
 
