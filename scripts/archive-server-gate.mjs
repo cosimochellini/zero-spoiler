@@ -269,7 +269,7 @@ export function judgeServer(manifest, archives, chunks, sources = {}) {
  * @param {string} text The chunk's emitted text.
  * @returns {string[]} The modules, or none when the chunk has no readable map.
  */
-function mappedSources(repositoryRoot, file, text) {
+export function mappedSources(repositoryRoot, file, text) {
   const url =
     /^\/\/# sourceMappingURL=(?<url>\S+)$/mu.exec(text)?.groups.url
     ?? `${path.basename(file)}.map`
@@ -281,7 +281,6 @@ function mappedSources(repositoryRoot, file, text) {
   )
   let map
   try {
-    // fallow-ignore-next-line security-sink -- mapPath is a local emitted build file next to a chunk Vite's manifest names
     map = JSON.parse(readFileSync(mapPath, 'utf8'))
   } catch {
     return []

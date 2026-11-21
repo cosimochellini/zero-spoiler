@@ -36,7 +36,7 @@ import {
 } from './archive-gate.mjs'
 import { descriptionCanaries, powerCanaries } from './archive-gate.power.mjs'
 import { importArchive } from './archive-loader.mjs'
-import { judgeServer } from './archive-server-gate.mjs'
+import { judgeServer, mappedSources } from './archive-server-gate.mjs'
 
 const repositoryRoot = path.resolve(import.meta.dirname, '..')
 
@@ -805,6 +805,36 @@ describe('emitted server archive boundaries', () => {
     expect(judgeServer(manifest, archives, chunks).unreadable).toStrictEqual([
       'a ?tss-serverfn-split chunk',
     ])
+  })
+
+  it('reads a chunk source map, named or beside it, relative to the repository', () => {
+    const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
+    const assets = path.join(root, 'dist/server/assets')
+    mkdirSync(path.join(assets, 'maps'), { recursive: true })
+    writeFileSync(
+      path.join(assets, 'maps/named.js.map'),
+      JSON.stringify({ sourceRoot: '../', sources: ['../../../src/a.ts'] }),
+    )
+    writeFileSync(
+      path.join(assets, 'beside.js.map'),
+      JSON.stringify({ sources: ['../../../src/b.ts?tss-serverfn-split'] }),
+    )
+
+    try {
+      expect(
+        mappedSources(
+          root,
+          'assets/named.js',
+          'code\n//# sourceMappingURL=maps/named.js.map',
+        ),
+      ).toStrictEqual(['src/a.ts'])
+      expect(mappedSources(root, 'assets/beside.js', 'code')).toStrictEqual([
+        'src/b.ts?tss-serverfn-split',
+      ])
+      expect(mappedSources(root, 'assets/none.js', 'code')).toStrictEqual([])
+    } finally {
+      rmSync(root, { recursive: true, force: true })
+    }
   })
 
   it('refuses incomplete static graph and emitted script evidence', () => {
