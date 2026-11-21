@@ -76,12 +76,15 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       },
       visual: { art: 'cheadle-yorkshire', tint: 'lavender' },
     },
+    // The anime names her in the first count (episode 137). The manga's
+    // first sure print of her name is the table of the Zodiacs' expedition
+    // roles at chapter 346 (#1443), so her chapter pairs with no episode.
     {
       id: 'cluck',
       kind: 'character',
       revealedAtEpisode: 137,
-      revealedAtChapter: 320,
-      source: 'episode',
+      revealedAtChapter: 346,
+      unanchored: true,
       name: { it: 'Clook', en: 'Cluck' },
       summary: {
         it: 'Membro dello Zodiaco. Manda le schede elettorali a tutti gli Hunter.',
@@ -454,22 +457,22 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       chronicle: electionChronicles.cluck,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
       log: {
-        it: 'Contesta l’obbligo di firmare la scheda. Poi usa i suoi uccelli per consegnare le schede.',
-        en: 'She objects to requiring signatures on the ballots. She then has her birds deliver the ballots.',
+        it: 'Usa i suoi uccelli per consegnare le schede a tutti gli Hunter dell’Associazione.',
+        en: 'She has her birds deliver the ballots to every Hunter in the Association.',
       },
       affiliation: [
         {
           episode: 137,
-          chapter: 320,
+          chapter: 346,
           value: {
             it: 'Associazione Hunter, Zodiaco',
             en: 'Hunter Association, Zodiacs',
           },
         },
       ],
-      status: [{ episode: 137, chapter: 320, value: 'alive' }],
+      status: [{ episode: 137, chapter: 346, value: 'alive' }],
       epithet: [
-        { episode: 137, chapter: 320, value: { it: 'Gallo', en: 'Chicken' } },
+        { episode: 137, chapter: 346, value: { it: 'Gallo', en: 'Chicken' } },
       ],
       relationships: [
         {
