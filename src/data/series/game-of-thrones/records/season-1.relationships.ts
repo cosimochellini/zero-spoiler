@@ -2577,14 +2577,6 @@ const links = {
   },
 
   // Othor and Jafer Flowers
-  otrBenjen: {
-    character: 'benjen-stark',
-    type: { en: 'Ranger he rides with', it: 'Ranger al cui seguito parte' },
-    summary: {
-      en: 'The ranger at the head of the party Othor rides out with.',
-      it: 'Il ranger alla guida del gruppo con cui Othor parte in perlustrazione.',
-    },
-  },
   otrBenjenLost: {
     character: 'benjen-stark',
     type: {
@@ -9774,10 +9766,8 @@ export const season1Relationships = {
       value: [links.jarJaferKiller, links.jarOthorDead, links.jarJeorDead],
     },
   ],
-  // Books: he rides out with Benjen in Jon III (chapter 20). Both media
-  // bring him back dead at 8 / 53.
+  // Both media bring him back dead at 8 / 53, where he opens.
   'othor': [
-    { episode: 8, chapter: 20, source: 'chapter', value: [links.otrBenjen] },
     {
       episode: 8,
       chapter: 53,

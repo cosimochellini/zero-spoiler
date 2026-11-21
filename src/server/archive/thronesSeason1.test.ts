@@ -163,7 +163,8 @@ const RECORDS: {
   { id: 'othell-yarwyck', episode: 7, chapter: 49 },
   { id: 'bowen-marsh', episode: 41, chapter: 22 },
   { id: 'jaremy-rykker', episode: 7, chapter: 22 },
-  { id: 'othor', episode: 8, chapter: 20 },
+  // Othor's book gate moved to Jon VII, where he is named (#1425).
+  { id: 'othor', episode: 8, chapter: 53 },
   { id: 'jafer-flowers', episode: 8, chapter: 53 },
   { id: 'donal-noye', episode: 3, chapter: 20, source: 'chapter' },
   { id: 'chett', episode: 5, chapter: 42, source: 'chapter' },
@@ -1688,8 +1689,7 @@ const STAGES: {
   { id: 'bowen-marsh', episode: 50, chapter: 341 },
   { id: 'bowen-marsh', episode: 53, chapter: 344, source: 'episode', stage: 1 },
   { id: 'jaremy-rykker', episode: 8, chapter: 61, source: 'chapter' },
-  { id: 'othor', episode: 8, chapter: 53, source: 'chapter' },
-  { id: 'othor', episode: 8, chapter: 61, source: 'chapter', stage: 1 },
+  { id: 'othor', episode: 8, chapter: 61, source: 'chapter' },
   // The leads and the Essos cast redrawn from the drawing audit (#1292).
   { id: 'eddard-stark', episode: 31, chapter: 204, stage: 1 },
   { id: 'jon-snow', episode: 50, chapter: 341 },

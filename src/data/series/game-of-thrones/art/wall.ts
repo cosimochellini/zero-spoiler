@@ -642,28 +642,22 @@ const LAMP: Stroke[] = [
 ]
 
 /**
- * Othor: his black cloak hung on a pole with its hood, for the ranger who
- * rides out with Benjen Stark in Jon III (chapter 20); the show brings in
- * his body in "The Pointy End" (episode 8). The book has him alive at his
- * threshold, so the drawing shows no death. The far side is hatched; the
- * accent is the clasp.
+ * Othor: his black cloak drawn over his body on a sled, an unlit lamp
+ * beside it. Both media open him when the rangers bring him back dead, in
+ * "The Pointy End" (episode 8) and Jon VII (chapter 53), so the drawing
+ * shows what he left. The accent is the clasp.
  */
-const HOODED_CLOAK: Stroke[] = [
-  { d: 'M80 40 V30 M80 142 V150 M46 56 H114' },
-  { d: 'M64 56 Q62 34 80 28 Q98 34 96 56' },
+const SLED_BODY: Stroke[] = [
+  ...SLED,
+  DRAPED_CLOAK,
+  DRAPE_HEM,
+  DRAPE_FOLDS,
   {
-    d: 'M52 56 Q46 100 40 140 Q60 146 80 142 Q100 146 120 140 Q114 100 108 56',
-  },
-  { d: 'M66 62 Q62 100 62 142 M94 62 Q98 100 98 142', role: 'soft' },
-  {
-    d: `${circle(70, 60, 2.5)} ${circle(90, 60, 2.5)} M72.5 61 Q80 64 87.5 61`,
+    d: `${circle(40, 120, 2.5)} ${circle(52, 120, 2.5)} M42.5 121 H49.5`,
     role: 'accent',
   },
-  {
-    d: 'M104 80 l6 -3 M106 96 l6 -3 M108 112 l6 -3 M110 128 l6 -3',
-    role: 'ambient',
-  },
-  shadow(80, 154, 46),
+  ...LAMP,
+  shadow(80, 156, 68),
 ]
 
 /** The first season's Night's Watch (#1052), keyed by record id. */
@@ -688,7 +682,7 @@ export const WALL_DRAWINGS = {
   'othell-yarwyck': MASON_HAMMER,
   'bowen-marsh': LEDGER,
   'jaremy-rykker': SHEATHED_SWORD,
-  'othor': HOODED_CLOAK,
+  'othor': SLED_BODY,
 } satisfies Drawings
 
 /** The Night's Watch drawn again later in the story. */
@@ -948,27 +942,6 @@ export const wallRedrawn: Redrawings = {
     },
   ],
   'othor': [
-    // The cloak drawn over his body on a sled, an unlit lamp beside it: the
-    // rangers bring him back dead in Jon VII (chapter 53). The show has him
-    // dead at his threshold, so the stage is the book's alone. The accent
-    // is the clasp.
-    {
-      episode: 8,
-      chapter: 53,
-      source: 'chapter',
-      value: [
-        ...SLED,
-        DRAPED_CLOAK,
-        DRAPE_HEM,
-        DRAPE_FOLDS,
-        {
-          d: `${circle(40, 120, 2.5)} ${circle(52, 120, 2.5)} M42.5 121 H49.5`,
-          role: 'accent',
-        },
-        ...LAMP,
-        shadow(80, 156, 68),
-      ],
-    },
     // The same cloak, its hem burnt ragged, the lamp knocked over: he rises
     // as a wight and Jon burns him in the Lord Commander's rooms in Jon VIII
     // (chapter 61). The show tells it in his threshold episode, so the stage

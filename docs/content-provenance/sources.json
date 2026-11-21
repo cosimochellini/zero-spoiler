@@ -34841,6 +34841,36 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748139",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748139",
       "contentSha256": "934042cd64f63b40597ca95af45a4b04573ec78c895f1673859ce119d2606da9"
+    },
+    "got-en-Othor-736807.json": {
+      "locale": "en",
+      "title": "Othor",
+      "revision": 736807,
+      "revisionDate": "2026-06-07T11:54:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Othor",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736807",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736807",
+      "contentSha256": "069536c34f5af7f80443358e51381dc561c98a2d92105a62f129511934f72b78"
+    },
+    "iaf-en-Othor-25307.json": {
+      "locale": "en",
+      "title": "Othor",
+      "revision": 25307,
+      "revisionDate": "2022-07-30T21:38:51Z",
+      "url": "https://iceandfire.fandom.com/wiki/Othor",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25307",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25307",
+      "contentSha256": "3db7807549423c62df7f3b3e2f44e1967a717db548c6e9522cbba915db642120"
+    },
+    "iaf-en-Jon_III_-_A_Game_of_Thrones-24705.json": {
+      "locale": "en",
+      "title": "Jon III - A Game of Thrones",
+      "revision": 24705,
+      "revisionDate": "2021-04-03T17:42:18Z",
+      "url": "https://iceandfire.fandom.com/wiki/Jon_III_-_A_Game_of_Thrones",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=24705",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=24705",
+      "contentSha256": "c4003ef23f0168f0389ba013083feebaace6524860f16093b0073b20068d8573"
     }
   }
 }

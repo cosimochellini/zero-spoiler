@@ -147,7 +147,8 @@ const EXPECTED: Record<string, Expected> = {
   // Landing, riverlands and Vale stories (#1362): 406 stories and 695
   // timelines. Chronicles, timelines and statuses counted 2026-11-20, after
   // the Winterfell and northern stories (#1361): 566 stories, 734 timelines
-  // and 260 statuses.
+  // and 260 statuses. Statuses counted 2026-11-21, after Othor's book gate
+  // moved to Jon VII and his alive entry went (#1425): 259.
   'game-of-thrones': {
     kinds: [
       'affiliation',
@@ -170,7 +171,7 @@ const EXPECTED: Record<string, Expected> = {
       chronicles: 566,
       linkedOrigins: 0,
       places: 60,
-      statuses: 260,
+      statuses: 259,
       timelines: 734,
       visits: 0,
     },
