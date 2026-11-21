@@ -108,13 +108,13 @@ Done when the test passes, and moving one gate or pin down by one makes it fail.
 - Update the Hunter x Hunter coverage paragraph under `## Series and routing` in `docs/architecture.md`.
 - Update the Hunter x Hunter line under "What's inside" in `README.md` when its coverage or a rounded number changes.
 
-**Loaded machine**: when other sessions keep the load average above the core count and the full check times out on unrelated tests, a pure content PR may use the content check instead.
+**Check**: run `npm run check:auto`. When the one-minute load average is below the core count it runs `npm run check`; otherwise `npm run check:content` with two Vitest workers. It ends on a line naming the check, the load and the cores; paste that line in the PR body.
 
-- **Pure content PR**: every PR this skill describes, unless it changes code in `src/components`, `src/routes`, `src/lib`, `src/server` (outside the archive tests) or `scripts/` (beyond the `verify-*.tables.mjs` tables).
-- **Run** `npm run check:content`, then push with `LEFTHOOK_EXCLUDE=test git push`. That skips only the pre-push Vitest job; the other hooks still run.
-- **Skipped**: the build, coverage, `gate:archive`, react-doctor, fallow and the route and component tests outside the selection. The ready PR's CI run is the full gate.
+- **Pure content PR**: every PR this skill describes, unless it changes code in `src/components`, `src/routes`, `src/lib`, `src/server` (outside the archive tests) or `scripts/` (beyond the `verify-*.tables.mjs` tables). Any other PR runs `npm run check`.
+- **After `check:content`**, push with `LEFTHOOK_EXCLUDE=test git push`. That skips only the pre-push Vitest job; the other hooks still run.
+- **Skipped** by `check:content`: the build, coverage, `gate:archive`, react-doctor, fallow and the route and component tests outside the selection. The ready PR's CI run is the full gate.
 
-Done when `npm run check` passes, or `npm run check:content` passes for a pure content PR on a loaded machine; the PR body says which.
+Done when the check passes and the PR body names it: `check:auto`'s last line, or `npm run check`.
 
 ## 9. Probe a built page
 

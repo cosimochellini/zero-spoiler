@@ -13,8 +13,7 @@ A pull request lands in two parts: review rounds until no P0–P2 is left, then 
 - The prompt names the PR, lists the owner's decisions so the reviewer does not re-flag them, and asks for the full P0–P3 report as the reviewer's **final message**.
 - A P0, P1 or P2 finding is fixed without asking the owner. Push the fix, then start a new fresh round.
 - A finding marked `Structural: yes` gets one extra review with `pr-reviewer-structural` before the merge.
-- CI does not run on a draft, so run `npm run check` locally before each round; the reviewer sees no CI result.
-- **Content PRs** on a loaded machine: `filing-records` §8.
+- CI does not run on a draft, so check locally before each round; the reviewer sees no CI result. A pure content PR runs `npm run check:auto` (`filing-records` §8); any other PR runs `npm run check`.
 - When a round reports **no P0–P2**, the rounds are over. Fixing its P3 findings is your call; a P3 fix, whatever it touches, goes straight to the merge with no further round.
 
 Done when the last round reported no P0–P2 and every fix after it is pushed.
