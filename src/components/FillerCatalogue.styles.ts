@@ -64,10 +64,11 @@ export const styles = stylex.create({
     transitionTimingFunction: ease.out,
   },
   groupBody: { gap: space.md, paddingBlock: space.md, display: 'grid' },
-  // The covered rows of one stretch, folded into a line that opens.
+  // The covered rows of one stretch, folded into a line that opens, a
+  // whole tap target tall.
   fold: {
     gap: space.xs,
-    alignItems: 'baseline',
+    alignItems: 'center',
     color: color.muted,
     cursor: 'pointer',
     display: 'flex',
@@ -79,6 +80,7 @@ export const styles = stylex.create({
     outlineStyle: 'solid',
     outlineWidth: rule.fine,
     textTransform: 'uppercase',
+    minHeight: '44px',
   },
   foldRows: { marginBlockStart: space.md },
   // A filler arc: a gold rule down the side, because every row in it can
@@ -110,8 +112,10 @@ export const styles = stylex.create({
     paddingInlineStart: 0,
   },
   // The place and kind in a narrow first column on a wide screen, above the
-  // words on a phone.
+  // words on a phone. While the row is covered (its words `inert` under the
+  // veil) the place sits level with the 44px curtain's verb, centred in it.
   row: {
+    alignItems: { 'default': null, ':has([inert])': 'center' },
     columnGap: space.lg,
     display: 'grid',
     gridTemplateColumns: {
@@ -155,6 +159,10 @@ export const styles = stylex.create({
     overflowWrap: 'anywhere',
     minWidth: 0,
   },
+  // A covered row's line: the curtain over it is the row's control, and it
+  // is as tall as what it covers, so the line is a whole tap target tall,
+  // centred under the curtain's verb.
+  placeholder: { alignItems: 'center', display: 'flex', minHeight: '44px' },
   year: { color: color.muted, fontWeight: 400 },
   summary: {
     margin: 0,

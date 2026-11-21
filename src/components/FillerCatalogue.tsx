@@ -233,7 +233,9 @@ function Row({
         density="inline"
         peek={peek}
         placeholder={
-          <p {...stylex.props(styles.title)}>{t('veil.placeholder')}</p>
+          <p {...stylex.props(styles.title, styles.placeholder)}>
+            {t('veil.placeholder')}
+          </p>
         }
         slot={slot}
       >
