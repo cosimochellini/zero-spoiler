@@ -158,8 +158,9 @@ export const styles = stylex.create({
     minWidth: 0,
   },
   // A covered row's line: the curtain over it is the row's control, and it
-  // is as tall as what it covers, so the line is a whole tap target tall.
-  placeholder: { alignItems: 'center', display: 'flex', minHeight: '44px' },
+  // is as tall as what it covers, so the line is a whole tap target tall. Its
+  // words stay at the top, level with the row's place and kind.
+  placeholder: { minHeight: '44px' },
   year: { color: color.muted, fontWeight: 400 },
   summary: {
     margin: 0,

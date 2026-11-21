@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { renderWithProviders } from '~/test/providers'
+import { HUNTER_X_HUNTER_SERIES, ONE_PIECE_SERIES } from '~/lib/progress/series'
+import { renderUnderSeries, renderWithProviders } from '~/test/providers'
 
 import { SiteFooter } from './SiteFooter'
 
@@ -42,12 +43,25 @@ describe('SiteFooter', () => {
     },
   )
 
-  it('links no filler guide on a series without one', () => {
-    renderWithProviders(<SiteFooter />, { path: '/hunter-x-hunter/en' })
+  it.each([
+    { series: ONE_PIECE_SERIES, filler: ['/one-piece/en/filler'] },
+    { series: HUNTER_X_HUNTER_SERIES, filler: [] },
+  ])(
+    'links the filler guide only where $series.slug declares it',
+    async ({ series, filler }) => {
+      await renderUnderSeries(<SiteFooter />, {
+        path: `/${series.slug}/en`,
+        series,
+      })
 
-    expect(screen.getAllByRole('link')).toHaveLength(2)
-    expect(screen.getByRole('contentinfo')).not.toHaveTextContent('filler')
-  })
+      expect(
+        screen
+          .getAllByRole('link')
+          .map((link) => link.getAttribute('href'))
+          .filter((href) => href?.endsWith('/filler') === true),
+      ).toStrictEqual(filler)
+    },
+  )
 
   it.each([
     {
