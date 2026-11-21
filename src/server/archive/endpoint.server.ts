@@ -23,7 +23,7 @@ import { pageReader, type Reader, readerFor } from './reader.server'
  * (`cookie`) or `pageReader` (`page`), the cookie and the trial (`trial`,
  * the landing alone), or the demo's `null` whatever the cookie (`demo`).
  */
-type Reads = 'cookie' | 'demo' | 'page' | 'trial'
+export type Reads = 'cookie' | 'demo' | 'page' | 'trial'
 
 /** The two kinds of page `pageReader` draws at a point. */
 export type DrawnAt = 'list' | 'record'
@@ -58,7 +58,7 @@ export interface ArchivePage<
 }
 
 /** A page of the series' own words, which loads no archive. */
-export interface SeriesPage<R> extends Swept {
+export interface WordsPage<R> extends Swept {
   input: 'located'
   page: (data: Located, series: Series) => R
   reads: 'none'
@@ -123,9 +123,9 @@ export function archivePage<K extends InputKind, R, P extends boolean = false>({
 }
 
 /** An entry of the series' own words, read with no bookmark at all. */
-export function seriesPage<R>(
+export function wordsPage<R>(
   page: (data: Located, series: Series) => R,
-): SeriesPage<R> {
+): WordsPage<R> {
   return {
     input: 'located',
     page,

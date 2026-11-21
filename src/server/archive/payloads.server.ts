@@ -11,8 +11,8 @@ import { creditsPage } from './credits.server'
 import {
   archivePage,
   type DrawnAt,
-  seriesPage,
   type Swept,
+  wordsPage,
 } from './endpoint.server'
 import { fillerPage, peekFiller } from './filler.server'
 import { fruitPage } from './fruitPage.server'
@@ -217,10 +217,10 @@ export const ENDPOINTS = {
   }),
   // A series' own copy in one locale, sent with its pages: its words reach no
   // client chunk, so a reader of one series never downloads another's.
-  loadSeriesCopy: seriesPage(({ locale }, series) => copyOf(series, locale)),
+  loadSeriesCopy: wordsPage(({ locale }, series) => copyOf(series, locale)),
   // What the legal page needs of an open series: the lines of its copy the
   // page prints and its sources, never the whole copy.
-  loadSeriesLegal: seriesPage(({ locale }, series) => legalOf(series, locale)),
+  loadSeriesLegal: wordsPage(({ locale }, series) => legalOf(series, locale)),
   // Public demo only: neither cookies nor request-supplied bookmarks expand it.
   loadDemoDrawings: archivePage({
     input: 'located',

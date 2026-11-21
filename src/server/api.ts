@@ -1,23 +1,8 @@
 import { createServerFn } from '@tanstack/react-start'
 
-import { archiveOf, descriptionOf } from '~/data/series'
-import { type Plain, plain } from '~/lib/plain'
-import { readBookmark, readTrial } from '~/lib/progress/readBookmark'
-import type { Series } from '~/lib/progress/series'
-
-import {
-  type ArchivePage,
-  inputOf,
-  readerAt,
-  type SeriesPage,
-} from './archive/endpoint.server'
+import { inputOf } from './archive/endpoint.server'
 import { ENDPOINTS } from './archive/payloads.server'
-import {
-  type InputKind,
-  type Inputs,
-  type Located,
-  UNKNOWN_SERIES,
-} from './inputs'
+import { serve } from './serve.server'
 
 /**
  * The archive's only door.
@@ -39,50 +24,10 @@ import {
  *
  * Start's compiler needs one literal `createServerFn().validator(...)
  * .handler(...)` per export, so each is written out below and does nothing
- * but serve its entry. Under Vitest the Start plugin is deliberately absent,
- * so calling one of these directly throws out of `getStartContext()` rather
- * than running.
+ * but hand its entry to `serve` (`./serve.server`), which reads the cookies.
+ * Under Vitest the Start plugin is deliberately absent, so calling one of
+ * these directly throws out of `getStartContext()` rather than running.
  */
-
-/** The public description of the open series a call names. */
-function describedBy(data: Located): Series {
-  const series = descriptionOf(data.series)
-  if (series === null) {
-    throw new Error(UNKNOWN_SERIES)
-  }
-  return series
-}
-
-/** An entry's page, for the bookmark and trial in the request's cookies. */
-async function serve<K extends InputKind, R>(
-  entry: ArchivePage<K, R, true>,
-  data: Inputs[K],
-): Promise<Plain<R>>
-async function serve<K extends InputKind, R>(
-  entry: ArchivePage<K, R, false>,
-  data: Inputs[K],
-): Promise<R>
-async function serve<R>(entry: SeriesPage<R>, data: Located): Promise<R>
-async function serve<K extends InputKind, R>(
-  entry: ArchivePage<K, R, boolean> | SeriesPage<R>,
-  data: Inputs[K],
-): Promise<Plain<R> | R> {
-  if (entry.reads === 'none') {
-    return entry.page(data, describedBy(data))
-  }
-
-  const archive = await archiveOf(data.series)
-  const { series } = archive
-  const bookmark = entry.reads === 'demo' ? null : readBookmark(series)
-  const trial = entry.reads === 'trial' ? readTrial(series) : null
-  const answer = entry.page(
-    data,
-    readerAt(entry.reads, archive, { ...data, bookmark }),
-    trial,
-  )
-
-  return entry.plain === true ? plain(answer) : answer
-}
 
 export const loadCredits = createServerFn()
   .validator(inputOf(ENDPOINTS.loadCredits))
