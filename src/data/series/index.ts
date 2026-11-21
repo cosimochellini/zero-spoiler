@@ -1,4 +1,7 @@
 import type { PlaceWords, SeriesArchive } from '~/data/types'
+import { HUNTER_X_HUNTER_GROUPS } from '~/i18n/dictionaries/hunter-x-hunter/groups'
+import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
+import type { Locale } from '~/i18n/locales'
 import {
   GAME_OF_THRONES_SERIES,
   HUNTER_X_HUNTER_SERIES,
@@ -15,6 +18,13 @@ import { ONE_PIECE_PLACE_WORDS } from './one-piece/placeWords'
 export interface ListedSeries {
   description: Series
   folder: string
+  /**
+   * The names of its groups (`Vocabulary.group`) in each locale, for a series
+   * that files some: One Piece's factions, Hunter x Hunter's bodies of power.
+   * Server-only and off the series' copy, because some name a group met
+   * late: a page is sent a name only with the group it names (#988).
+   */
+  groups?: Record<Locale, Partial<Record<string, string>>>
   /**
    * The last chapter its anime adapts, once the anime has ended and the
    * manga runs on. A record or a dated fact told above it is the manga's
@@ -51,6 +61,7 @@ export const ONE_PIECE: ListedSeries = {
   slug: ONE_PIECE_SERIES.slug,
   folder: 'one-piece',
   open: true,
+  groups: FACTION_LABELS,
   placeWords: ONE_PIECE_PLACE_WORDS,
   wiki: {
     en: 'https://onepiece.fandom.com/api.php',
@@ -77,6 +88,7 @@ const HUNTER_X_HUNTER: ListedSeries = {
   // 137-148 (English Hunter x Hunter Wiki, `13th Hunter Chairman Election
   // arc`, read 2026-10-24).
   lastAdaptedChapter: 339,
+  groups: HUNTER_X_HUNTER_GROUPS,
   placeWords: HUNTER_X_HUNTER_PLACE_WORDS,
   wiki: {
     en: 'https://hunterxhunter.fandom.com/api.php',
@@ -149,11 +161,24 @@ const loaded = new Map<string, Promise<SeriesArchive>>()
  * reaches the server with an open one.
  */
 export function placeWordsOf(slug: string): PlaceWords {
+  return filedEntry(slug).placeWords
+}
+
+/**
+ * A filed series' group names, none for a series with no groups. Filed
+ * rather than open, as `placeWordsOf` is.
+ */
+export function groupsOf(slug: string): ListedSeries['groups'] {
+  return filedEntry(slug).groups
+}
+
+/** A filed series' entry, or a throw for a slug nobody filed. */
+function filedEntry(slug: string): ListedSeries {
   const series = SERIES.find((entry) => entry.slug === slug)
   if (series === undefined) {
     throw new Error(`Unknown series: ${slug}`)
   }
-  return series.placeWords
+  return series
 }
 
 /**
@@ -183,10 +208,7 @@ export async function archiveOf(slug: string): Promise<SeriesArchive> {
  * reaches imports it (ESLint `no-restricted-imports`).
  */
 export async function filedArchiveOf(slug: string): Promise<SeriesArchive> {
-  const series = SERIES.find((entry) => entry.slug === slug)
-  if (series === undefined) {
-    throw new Error(`Unknown series: ${slug}`)
-  }
+  const series = filedEntry(slug)
   const cached = loaded.get(slug)
   if (cached !== undefined) {
     return cached

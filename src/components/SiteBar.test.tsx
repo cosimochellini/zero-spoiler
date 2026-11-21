@@ -277,7 +277,7 @@ describe('SiteBar', () => {
     },
     {
       series: HUNTER_X_HUNTER_SERIES,
-      pages: ['Characters', 'Places', 'Abilities'],
+      pages: ['Characters', 'Places', 'Abilities', 'Ranks'],
     },
   ])(
     'links only the pages $series.slug declares',

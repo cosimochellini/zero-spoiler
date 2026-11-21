@@ -1,6 +1,7 @@
 import { screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
+import { HUNTER_X_HUNTER_SERIES } from '~/lib/progress/series'
 import type { BodyView, PowerPageView } from '~/lib/view/power'
 import { ep, renderWithProviders } from '~/test/providers'
 
@@ -67,6 +68,49 @@ describe('PowerBoard', () => {
       screen.getByText('Nothing on this page is open at your bookmark.'),
     ).toBeVisible()
     expect(screen.queryByText(/start of the story/u)).not.toBeInTheDocument()
+  })
+
+  // Hunter x Hunter's page is open before its first body is filed (#1442):
+  // in its own words, it says nothing is open, with a bookmark or without.
+  it.each([
+    [
+      'en',
+      'Ranks of the world',
+      'Nothing on this page is open at your bookmark.',
+    ],
+    [
+      'it',
+      'Le cariche del mondo',
+      'Niente di questa pagina è visibile al punto del tuo segnalibro.',
+    ],
+  ] as const)(
+    'says on Hunter x Hunter’s page in %s that nothing is open',
+    (locale, title, none) => {
+      renderWithProviders(<PowerBoard page={{ bodies: [] }} />, {
+        bookmark: ep(148),
+        locale,
+        path: `/hunter-x-hunter/${locale}/ranks`,
+        series: HUNTER_X_HUNTER_SERIES,
+      })
+
+      expect(
+        screen.getByRole('heading', { level: 1, name: title }),
+      ).toBeVisible()
+      expect(screen.getByText(none)).toBeVisible()
+      expect(screen.queryByRole('region')).not.toBeInTheDocument()
+    },
+  )
+
+  it('says in the banner on Hunter x Hunter’s page with no bookmark that nothing is open', () => {
+    renderWithProviders(<PowerBoard page={{ bodies: [] }} />, {
+      path: '/hunter-x-hunter/en/ranks',
+      series: HUNTER_X_HUNTER_SERIES,
+    })
+
+    expect(
+      screen.getByText(/Nothing on this page appears that early/u),
+    ).toBeVisible()
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
   })
 
   it('prints a group’s description under its name', () => {

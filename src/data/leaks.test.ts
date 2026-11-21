@@ -8,6 +8,7 @@ import {
   withFeatures,
 } from '~/data/features'
 import { toldIn } from '~/data/reveal'
+import { groupsOf } from '~/data/series'
 import type {
   Entity,
   Field,
@@ -16,7 +17,6 @@ import type {
   PlaceWords,
   Story,
 } from '~/data/types'
-import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import { FIRST_CHAPTER, FIRST_EPISODE } from '~/lib/progress/episode'
 import type { Source } from '~/lib/progress/spoiler'
@@ -133,12 +133,11 @@ function dated(archive: ReaderArchive, owner: Entity, field: Field): Text[] {
   })
 }
 
-/** The label a page prints for a group, or the test is wrong. */
-function groupLabel(locale: Locale, id: string): string {
-  const labels: Partial<Record<string, string>> = FACTION_LABELS[locale]
-  const label = labels[id]
+/** The label a series' pages print for a group, or the test is wrong. */
+function groupLabel(slug: string, locale: Locale, id: string): string {
+  const label = groupsOf(slug)?.[locale][id]
   if (label === undefined) {
-    throw new Error(`no ${locale} label for the group ${id}`)
+    throw new Error(`no ${locale} label for the group ${id} of ${slug}`)
   }
 
   return label
@@ -152,6 +151,7 @@ function groupLabel(locale: Locale, id: string): string {
  */
 function factionTexts(archive: ReaderArchive, owner: Entity): Text[] {
   const filedEntries = archive.dossierOf(owner)?.affiliation ?? []
+  const { slug } = archive.series
 
   return archive.datedOf(owner, 'affiliation').flatMap((entry, index) => {
     const factions = filedEntries[index]?.factions ?? []
@@ -165,8 +165,8 @@ function factionTexts(archive: ReaderArchive, owner: Entity): Text[] {
           owner,
           source: entry.gate.source,
           text: {
-            en: factions.map((id) => groupLabel('en', id)).join('; '),
-            it: factions.map((id) => groupLabel('it', id)).join('; '),
+            en: factions.map((id) => groupLabel(slug, 'en', id)).join('; '),
+            it: factions.map((id) => groupLabel(slug, 'it', id)).join('; '),
           },
         }
   })

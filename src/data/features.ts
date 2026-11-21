@@ -16,8 +16,9 @@ import type {
 
 /**
  * The features only some series have, as optional slices of their archive
- * (`SeriesArchive.features`): One Piece's devil fruits, ships, filler guide,
- * factions and bodies of power. A series' description says which it has
+ * (`SeriesArchive.features`): One Piece's devil fruits, ships, filler guide
+ * and factions, Hunter x Hunter's Nen abilities, and both series' bodies of
+ * power. A series' description says which it has
  * (`Series.features`, and the `fruit` and `ship` kinds), and a data test
  * holds the two together.
  *
@@ -200,9 +201,9 @@ export interface Seat {
 
 /**
  * A group that holds power, gated at the chapter that first names it. Its id
- * is one of the series' groups (One Piece's `Faction`), so a body and an
- * affiliation tag never name the same group twice, and the label printed is
- * the group's own.
+ * is one of the series' groups (One Piece's `Faction`, Hunter x Hunter's
+ * bodies), so a body and an affiliation tag never name the same group twice,
+ * and the label printed is the group's own (`ListedSeries.groups`).
  */
 export interface PowerBody<V extends Vocabulary = Vocabulary> extends Gated {
   /**

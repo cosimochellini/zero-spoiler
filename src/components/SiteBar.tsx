@@ -89,8 +89,9 @@ export function SiteBar(): ReactElement {
 
 /**
  * The bar's pages, in its order; the filler guide is reached from the footer.
- * Labelled by the page's own copy: the fruits, the ranks page and the filler
- * guide are One Piece's, and only a series that declares them links them.
+ * Labelled by the page's own copy: the fruits and the filler guide are One
+ * Piece's, the abilities Hunter x Hunter's, the ranks page both's, and only a
+ * series that declares a page links it.
  */
 const NAV: PageEntry<TranslationKey>[] = [
   {
@@ -114,6 +115,7 @@ const HUNTER_NAV: PageEntry<TranslationKey<'hunter-x-hunter'>>[] = [
     to: '/$series/$locale/abilities',
     label: 'nav.abilities',
   },
+  { page: 'ranks', to: '/$series/$locale/ranks', label: 'nav.ranks' },
 ]
 
 /**

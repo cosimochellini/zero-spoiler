@@ -170,7 +170,9 @@ const HUNTER_X_HUNTER_BOOKMARK: BookmarkSeries = {
  * Hunter x Hunter's public description. No bounty, no factions, no devil
  * fruits and no filler guide: those are One Piece's (owner, 2026-10-23). The
  * kinds are the ones it launches with. Its own feature is the Nen type, a
- * dated field of the character (#922).
+ * dated field of the character (#922). It has the ranks page (#1441), open
+ * before its first body is filed: until then the page has nothing to open at
+ * any bookmark (owner, 2026-11-21, #1442).
  */
 export const HUNTER_X_HUNTER_SERIES: Series = {
   ...HUNTER_X_HUNTER_BOOKMARK,
@@ -184,7 +186,7 @@ export const HUNTER_X_HUNTER_SERIES: Series = {
     filler: false,
     fruits: false,
     nen: true,
-    power: false,
+    power: true,
     worldMap: false,
   },
 }

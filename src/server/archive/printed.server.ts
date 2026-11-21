@@ -1,4 +1,4 @@
-import { placeWordsOf } from '~/data/series'
+import { groupsOf, placeWordsOf } from '~/data/series'
 import type { LocalizedText } from '~/data/types'
 import { SEA_LABELS } from '~/i18n/dictionaries/one-piece/seas'
 import { FACTIONS } from '~/lib/view/factions'
@@ -9,7 +9,7 @@ import type { Reader } from './reader.server'
 /**
  * A series files its places and groups in its own words (`Vocabulary` in
  * `~/data/types`); its pages print the place words the registry holds for it
- * (`placeWordsOf`), and the factions, which are One Piece's. These pass a
+ * (`placeWordsOf`), and the names of its groups (`groupsOf`). These pass a
  * filed word on where a page prints it, and fail on a word the series' pages
  * cannot print: a series filed in other words needs them listed first, and a
  * page that printed nothing in its place would hide that.
@@ -115,4 +115,18 @@ export function printedFaction(group: string): Faction {
     throw new Error(`The pages print no faction called '${group}'`)
   }
   return group
+}
+
+/**
+ * A group's name in the reader's locale, as the series labels it: a body of
+ * power's on the ranks page and a character's seat links.
+ */
+export function groupLabel(group: string, r: Reader): string {
+  const slug = r.archive.series.slug
+  const labels = groupsOf(slug)?.[r.locale] ?? {}
+  const label = Object.hasOwn(labels, group) ? labels[group] : undefined
+  if (label === undefined) {
+    throw unprintable('group', group, slug)
+  }
+  return label
 }

@@ -19,6 +19,7 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { describe, expect, it, vi } from 'vitest'
 
+import { serverCopies } from './archive-gate.copy.mjs'
 import {
   canariesOf,
   canaryFrom,
@@ -29,7 +30,6 @@ import {
   placeWordCanaries,
   placeWordCanariesOf,
   proseCanaries,
-  serverCopies,
   slugCanaries,
   slugsFrom,
   sourceCanaries,
@@ -481,9 +481,12 @@ describe('series copy canaries', () => {
     ])
     const phrases = canaries.map(({ phrase }) => phrase)
 
-    // One Piece's factions and seas and Hunter x Hunter's demo, in both
-    // languages.
+    // One Piece's factions and seas, Hunter x Hunter's groups and its demo,
+    // in both languages.
     expect(phrases).toContain('Nine Red Scabbards')
+    expect(phrases).toStrictEqual(
+      expect.arrayContaining(['Phantom Troupe', 'Formichimere']),
+    )
     expect(phrases).toContain('Kozuki alliance')
     expect(phrases).toContain('New World')
     expect(phrases).toContain('Fascia di Bonaccia')

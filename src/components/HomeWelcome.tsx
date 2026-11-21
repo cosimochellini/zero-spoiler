@@ -46,6 +46,7 @@ const HUNTER_PAGES: PageEntry<TranslationKey<'hunter-x-hunter'>>[] = [
     to: '/$series/$locale/abilities',
     label: 'abilities.title',
   },
+  { page: 'ranks', to: '/$series/$locale/ranks', label: 'ranks.title' },
 ]
 
 /**

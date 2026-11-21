@@ -7,6 +7,7 @@ import type {
   Visual,
   Vocabulary,
 } from '~/data/types'
+import type { HunterGroup } from '~/i18n/dictionaries/hunter-x-hunter/groups'
 
 /**
  * A Hunter x Hunter record, drawn by one of its own drawings: `art` is the id
@@ -19,8 +20,10 @@ export interface HunterEntity extends Entity {
 /**
  * Hunter x Hunter's words, labelled in `../placeWords`: what kind of place a
  * place is, and whether it lies on an island or on the mainland, the one
- * piece of geography the Hunter Exam tells. It has no groups: an
- * affiliation is prose alone, and the pages sort no one by faction (#760).
+ * piece of geography the Hunter Exam tells. Its groups are the bodies of the
+ * ranks page alone (#1441), labelled in
+ * `~/i18n/dictionaries/hunter-x-hunter/groups`: an affiliation is still prose
+ * alone, tagged with no group, and no page sorts anyone by faction (#760).
  */
 export interface HunterVocabulary extends Vocabulary {
   form:
@@ -39,7 +42,7 @@ export interface HunterVocabulary extends Vocabulary {
     | 'tree'
     | 'vessel'
     | 'wetland'
-  group: never
+  group: HunterGroup
   region: 'islands' | 'mainland'
 }
 

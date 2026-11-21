@@ -5,6 +5,7 @@ import { HUNTER_X_HUNTER_SERIES as SERIES } from '~/lib/progress/series'
 
 import { DRAWINGS, REDRAWINGS } from './art'
 import { PLACE_DOSSIERS } from './places'
+import { BODIES } from './power'
 import { NEN_ABILITIES } from './records/nen-abilities'
 import { sagas } from './sagas'
 
@@ -46,6 +47,8 @@ export const HUNTER_X_HUNTER_ARCHIVE: SeriesArchive = {
   ]),
   drawings: DRAWINGS,
   ...core,
+  // The ranks page's bodies, empty until #1443–#1447 file them (#1442).
+  features: { ...core.features, power: { bodies: BODIES } },
   leads: {
     'kakin-arc': [
       'beyond-netero',

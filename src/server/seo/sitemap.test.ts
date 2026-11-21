@@ -33,6 +33,7 @@ describe('the sitemap', () => {
         '/characters',
         '/places',
         '/abilities',
+        '/ranks',
         '/characters/gon-freecss',
         '/characters/ging-freecss',
       ]) {
@@ -40,7 +41,7 @@ describe('the sitemap', () => {
           `${SITE_ORIGIN}/hunter-x-hunter/${locale}${path}`,
         )
       }
-      for (const path of ['fruits', 'filler', 'ranks']) {
+      for (const path of ['fruits', 'filler']) {
         expect(locations()).not.toContain(
           `${SITE_ORIGIN}/hunter-x-hunter/${locale}/${path}`,
         )
