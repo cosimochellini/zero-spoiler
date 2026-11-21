@@ -33,9 +33,10 @@ function entriesOf(
 }
 
 /**
- * The keys a copy leaves blank on purpose, by copy name. Game of Thrones'
- * only heading is season 1, so the bookmark dialog's saga line would read
- * "Season 1" at every later number (#856).
+ * The keys a copy leaves blank on purpose, by copy name. Only Game of
+ * Thrones' seasons with records have a heading, so the bookmark dialog's saga
+ * line would name the last of them at every later number (#856), and a
+ * season at a book's chapter (#1456).
  */
 const BLANK = new Set(['game-of-thrones dialog.saga'])
 

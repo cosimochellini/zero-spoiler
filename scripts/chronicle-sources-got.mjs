@@ -7,7 +7,9 @@
  * book notes on the Game of Thrones Wiki. The Ice and Fire Wiki has chapter
  * pages only up to site chapter 33, so a book pin past it rests on the
  * episode page's list of the chapters it adapts and on the reviewed pins of
- * `season-1.relationships.ts`; the note says so.
+ * `season-1.relationships.ts`; the note says so. Of *A Clash of Kings* it has
+ * a few chapter pages (the prologue, Arya I and Sansa I among them, #1456);
+ * the rest are A Wiki of Ice and Fire's, read only through the Firecrawl tool.
  */
 
 const SHOW = 'https://gameofthrones.fandom.com/wiki/'
@@ -24,6 +26,20 @@ const EPISODE_7 = `${SHOW}You_Win_or_You_Die`
 const EPISODE_8 = `${SHOW}The_Pointy_End`
 const EPISODE_9 = `${SHOW}Baelor`
 const EPISODE_10 = `${SHOW}Fire_and_Blood`
+// Season 2 (#1456). Episode 14's page carries "(episode)": the bare title is
+// the place outside Qarth.
+/* eslint-disable @typescript-eslint/no-unused-vars -- cited by the season-2 chronicles of #1462 */
+const EPISODE_11 = `${SHOW}The_North_Remembers`
+const EPISODE_12 = `${SHOW}The_Night_Lands`
+const EPISODE_13 = `${SHOW}What_Is_Dead_May_Never_Die`
+const EPISODE_14 = `${SHOW}Garden_of_Bones_(episode)`
+const EPISODE_15 = `${SHOW}The_Ghost_of_Harrenhal`
+const EPISODE_16 = `${SHOW}The_Old_Gods_and_the_New`
+const EPISODE_17 = `${SHOW}A_Man_Without_Honor`
+const EPISODE_18 = `${SHOW}The_Prince_of_Winterfell`
+const EPISODE_19 = `${SHOW}Blackwater`
+const EPISODE_20 = `${SHOW}Valar_Morghulis`
+/* eslint-enable @typescript-eslint/no-unused-vars -- back on after the season-2 episodes */
 const DANY_I = `${BOOKS}Daenerys_I_-_A_Game_of_Thrones`
 const DANY_II = `${BOOKS}Daenerys_II_-_A_Game_of_Thrones`
 const DANY_III = `${BOOKS}Daenerys_III_-_A_Game_of_Thrones`
@@ -64,6 +80,16 @@ const WALL_AGOT_48 = `${WALL_AWOIAF}48`
 const WALL_AGOT_52 = `${WALL_AWOIAF}52`
 const WALL_AGOT_60 = `${WALL_AWOIAF}60`
 const WALL_AGOT_70 = `${WALL_AWOIAF}70`
+
+// A Clash of Kings (#1456). An Ice and Fire Wiki chapter page is
+// `${BOOKS}<POV>_<numeral>_-_A_Clash_of_Kings`, its `chapter_number` counting
+// the prologue as 1, so the site chapter is 73 + chapter_number. A Wiki of Ice
+// and Fire's page is `${ACOK_AWOIAF}N`, N counting from the chapter after the
+// prologue, so the site chapter is 74 + N; the prologue is site chapter 74.
+/* eslint-disable @typescript-eslint/no-unused-vars -- cited by the season-2 chronicles of #1462 */
+const ACOK_PROLOGUE = `${BOOKS}Prologue_-_A_Clash_of_Kings`
+const ACOK_AWOIAF = `${AWOIAF}A_Clash_of_Kings-Chapter_`
+/* eslint-enable @typescript-eslint/no-unused-vars -- back on after the A Clash of Kings pattern */
 
 /** The note on a book pin past the Ice and Fire Wiki's chapter pages. */
 const PAST_CHAPTER_PAGES =

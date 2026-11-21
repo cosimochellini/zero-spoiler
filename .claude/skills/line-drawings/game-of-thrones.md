@@ -4,7 +4,9 @@ What Game of Thrones adds to the [line-drawings](SKILL.md) rules. Its two
 media are the HBO show and the five books. Its records are filed by show
 season in `src/data/series/game-of-thrones/records/season-N.ts` (no arcs), and
 its drawings are `DRAWINGS` in `src/data/series/game-of-thrones/art/index.ts`,
-spread from `winterfell.ts`, `south.ts`, `wall.ts`, `essos.ts` and `places.ts`.
+spread from the files beside it: one per cast group (`winterfell.ts`,
+`court.ts`, …) and `places.ts`. A new cast group adds its own file and spreads
+it there.
 Every character has its own drawing; there is no shared placeholder. Render
 them with
 `npm run art:sheet -- --series game-of-thrones <id>` (or `--kind
@@ -93,11 +95,14 @@ itself here:
   the books' alone (`'chapter'`) needs a distinct chapter above the
   record's and an episode at or after the record's, and its episode is left
   out of the episode checks. Every other stage needs a distinct, ascending
-  episode strictly after the record's. `src/server/archive/thronesSeason1.test.ts`
-  walks the stages in its `STAGES` table and holds that a one-medium stage
-  never reaches the other medium's reader. `REDRAWINGS` in `art/index.ts` is
-  already passed to `sagaArchive` in `game-of-thrones/archive.ts`, so a stage
-  needs only its entry there and its row in `STAGES`.
+  episode strictly after the record's. The server test of the season that
+  filed the record walks its stages in a `STAGES` table and holds that a
+  one-medium stage never reaches the other medium's reader:
+  `src/server/archive/thronesSeason1.test.ts` for a season-1 record, whatever
+  season the stage falls in, and the later season's own test for its records.
+  `REDRAWINGS` in `art/index.ts` is already passed to `sagaArchive` in
+  `game-of-thrones/archive.ts`, so a stage needs only its entry there and its
+  row in `STAGES`.
 
 ## Research and verification
 

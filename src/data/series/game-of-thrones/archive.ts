@@ -5,6 +5,7 @@ import { GAME_OF_THRONES_SERIES as SERIES } from '~/lib/progress/series'
 
 import { DRAWINGS, REDRAWINGS } from './art'
 import { SEASON_1_PLACES } from './records/season-1'
+import { SEASON_2_PLACES } from './records/season-2'
 import { sagas as seasons } from './sagas'
 
 /**
@@ -23,9 +24,21 @@ const LEADS = [
   'arya-stark',
 ]
 
+/**
+ * Each season's cast row, by its heading's id. An empty row stays out of the
+ * archive: a season with no record yet has no heading to key it. A filled
+ * row is kept whatever its key, so the leads test catches a wrong one.
+ */
+const LEADS_BY_SEASON: Record<string, string[]> = {
+  'season-1': LEADS,
+  // The second stage's cast row (#1455): its filing children add each lead
+  // as they file it.
+  'season-2': [],
+}
+
 const { core } = sagaArchive({
   featured: LEADS,
-  placeDossiers: SEASON_1_PLACES,
+  placeDossiers: { ...SEASON_1_PLACES, ...SEASON_2_PLACES },
   redrawings: REDRAWINGS,
   sagas,
   series: SERIES,
@@ -43,5 +56,7 @@ export const GAME_OF_THRONES_ARCHIVE: SeriesArchive = {
   ]),
   drawings: DRAWINGS,
   ...core,
-  leads: { 'season-1': LEADS },
+  leads: Object.fromEntries(
+    Object.entries(LEADS_BY_SEASON).filter(([, ids]) => ids.length > 0),
+  ),
 }

@@ -136,7 +136,7 @@ Piece and every archived Hunter x Hunter character through authored selections
 or documented deliberate omissions; Hunter x Hunter characters filed later wait
 under `pending` with the issue that will author them
 (`docs/content-provenance/hunter-x-hunter-relationships.json`). The Game of
-Thrones inventory accounts for every first-stage character through authored
+Thrones inventory accounts for every archived character through authored
 selections or documented deliberate omissions; a character filed later waits
 under `pending` with the issue that will author it
 (`docs/content-provenance/game-of-thrones-relationships.json`). No relationships
@@ -317,7 +317,11 @@ stories for 66, and the Winterfell and northern cast (#1361), 160 stories for
 holds at an episode and a chapter, and one only a single medium tells, or tells
 its own way, carries `source`, so it never reaches a reader of the other. Their
 notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
-series' own copy, since a story starts at an episode or a chapter.
+series' own copy, since a story starts at an episode or a chapter. The second
+stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
+is being filed under #1455. So far `records/season-2.ts` holds only its heading
+and an empty `SEASON_2_PLACES`; a character season 1 filed takes its new dated
+steps in `records/season-1.ts`, and the demo stays at stage 1.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
