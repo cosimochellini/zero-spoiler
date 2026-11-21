@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
+import { season1 } from '~/data/series/game-of-thrones/records/season-1'
 import type { Entity } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
@@ -1092,9 +1093,7 @@ function character(id: string): Entity {
 describe('the first season’s cast', () => {
   it('files exactly these records', () => {
     // Season 1's own records: a later season files its own beside them.
-    const season1 = archive.sagas.find(({ name }) => name.en === 'Season 1')
-
-    expect(season1?.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
+    expect(season1.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
       RECORDS.map(({ id }) => id).toSorted(byText),
     )
   })
@@ -1370,15 +1369,33 @@ describe('the first season’s demo', () => {
       'red-fork',
       'gods-eye',
     ])
-    // Past the demo, only the four places later seasons first show, covered.
+
+    // Past the demo, the next records along the route, covered and in
+    // episode order. A later season's records come first, so season 1's own
+    // past the demo are checked where it files them: the four places later
+    // seasons first show.
+    const { demoLastChapter, demoLastEpisode } = archive.series
+    const episodes = demo.tail.map(({ revealedAtEpisode }) => revealedAtEpisode)
+
+    expect(demo.tail.length).toBeGreaterThan(0)
+    expect(episodes).toStrictEqual(episodes.toSorted((a, b) => a - b))
+
+    for (const record of demo.tail) {
+      expect(record).not.toHaveProperty('name')
+      expect(
+        record.revealedAtEpisode > demoLastEpisode
+          || record.revealedAtChapter > demoLastChapter,
+      ).toBe(true)
+    }
+
     expect(
-      demo.tail.map(({ kind, revealedAtEpisode }) => [kind, revealedAtEpisode]),
-    ).toStrictEqual([
-      ['place', 23],
-      ['place', 33],
-      ['place', 35],
-      ['place', 38],
-    ])
+      season1.entries
+        .filter(
+          ({ kind, revealedAtEpisode }) =>
+            kind === 'place' && revealedAtEpisode > demoLastEpisode,
+        )
+        .map(({ revealedAtEpisode }) => revealedAtEpisode),
+    ).toStrictEqual([23, 33, 35, 38])
     // Ros is the show's alone, so the two-unit demo cannot carry her.
     expect(JSON.stringify(demo)).not.toContain('"ros"')
   })
