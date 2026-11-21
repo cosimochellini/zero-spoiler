@@ -800,6 +800,38 @@ describe('emitted server archive boundaries', () => {
     expect(judgeServer(manifest, archives, chunks, sources).ok).toBe(true)
   })
 
+  it.each([
+    [
+      'mixed virtual and real regions with no map',
+      [String.raw`\0virtual:registry`, 'src/data/series/index.ts'],
+      undefined,
+      'no source map',
+    ],
+    ['no regions and no map', [], undefined, 'no source map'],
+    [
+      'virtual regions alone with a corrupt map',
+      [String.raw`\0virtual:registry`],
+      'an unreadable source map',
+      'an unreadable source map',
+    ],
+    [
+      'virtual regions alone with an inline map',
+      [String.raw`\0virtual:registry`],
+      'an inline source map',
+      'an inline source map',
+    ],
+  ])('excuses no chunk with %s', (_case, ids, mapped, reason) => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    chunks['registry.js'] =
+      ids.map((id) => region(id, 'registry')).join('\n') || 'registry'
+    sources['registry.js'] = mapped
+    expect(
+      judgeServer(manifest, archives, chunks, sources).unreadable,
+    ).toStrictEqual([
+      `registry.js (${reason}; the server build must emit source maps (environments.ssr.build.sourcemap in vite.config.ts))`,
+    ])
+  })
+
   it('reads the modules a chunk holds from its source map as well', () => {
     const { manifest, archives, chunks, sources } = serverBuild()
     manifest.api.imports.push('shared')

@@ -41,6 +41,9 @@ const PROVIDER_ONLY = [
 /** How many provider-only modules a problem names before counting the rest. */
 const QUOTED = 3
 
+/** Why a chunk has no map: the one case a chunk of virtual modules alone may be in. */
+const NO_MAP = 'no source map'
+
 /** What a chunk without a readable source map leaves the gate unable to see. */
 const MAPS_REQUIRED =
   'the server build must emit source maps (environments.ssr.build.sourcemap in vite.config.ts)'
@@ -158,14 +161,18 @@ function providerOnly(id) {
  * @param {string | string[]} mapped The modules its source map names, or why it has none.
  * @returns {string | string[]} The modules, or why the chunk cannot be read.
  */
-function providerModules(key, text = '', mapped = 'no source map') {
+function providerModules(key, text = '', mapped = NO_MAP) {
   const regions = text
     .matchAll(/^\/\/#region (?<id>.+)$/gmu)
     .map((match) => match.groups.id)
     .toArray()
-  const virtual =
-    regions.length > 0 && regions.every((id) => id.startsWith(String.raw`\0`))
-  if (typeof mapped === 'string' && !virtual) {
+  // Start's resolver and manifest chunks hold no source to map; a map that is
+  // there but cannot be read is never excused.
+  const exempt =
+    mapped === NO_MAP
+    && regions.length > 0
+    && regions.every((id) => id.startsWith(String.raw`\0`))
+  if (typeof mapped === 'string' && !exempt) {
     return `${mapped}; ${MAPS_REQUIRED}`
   }
   const ids = typeof mapped === 'string' ? regions : [...regions, ...mapped]
@@ -289,7 +296,7 @@ function readMap(mapPath) {
   try {
     text = readFileSync(mapPath, 'utf8')
   } catch {
-    return 'no source map'
+    return NO_MAP
   }
   const map = parsed(text)
   return Array.isArray(map?.sources) ? map : 'an unreadable source map'
