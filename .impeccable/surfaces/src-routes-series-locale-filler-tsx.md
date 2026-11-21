@@ -14,7 +14,8 @@ to skip. The ranks page shows who holds each seat of the groups the reader has
 met. Both are One Piece's only.
 
 **Where:** `/<series>/<locale>/filler` (`FillerGuide`, `FillerCountdown`,
-`FillerRanges`, `FillerStrip`, `FillerCatalogue`), which is not in the bar;
+`FillerRanges`, `FillerStrip`, `FillerCatalogue`), which is not in the bar
+but is linked from the footer of every One Piece page (`SiteFooter`);
 `/<series>/<locale>/ranks` (`PowerBoard`).
 
 **Must not break:**

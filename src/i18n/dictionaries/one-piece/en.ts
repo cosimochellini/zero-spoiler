@@ -66,6 +66,9 @@ export const onePieceEn = {
   'home.filler.title': 'Watch out for filler',
   'home.filler.link': 'See all filler',
 
+  'footer.filler': 'Watching the anime?',
+  'footer.fillerLink': 'See which episodes are filler',
+
   'dialog.filler': 'Filler',
 
   'character.ranks': 'Ranks',

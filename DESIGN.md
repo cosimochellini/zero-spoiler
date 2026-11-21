@@ -359,8 +359,8 @@ Under `prefers-reduced-motion` spatial motion becomes a crossfade.
   of the inks in every set, so colour alone cannot.
 - **Do** space siblings with `gap` in new work; see Layout for today's state.
 - **Do** keep controls at least 44px tall. Under it today, for the surface
-  passes (#1375 to #1383) to fix: the wordmark link, back links, relationship
-  rows and the filler catalogue's rows.
+  passes (#1375 to #1383) to fix: the wordmark link, back links and relationship
+  rows.
 - **Do** keep running text to a measure of 52 to 66ch. Wider today, for the same
   passes: the footer (72ch). In Instrument Sans a line holds about 1.4
   characters per `ch`, so the 60 to 75 characters a line the impeccable skill

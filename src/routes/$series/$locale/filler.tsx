@@ -21,7 +21,7 @@ export const Route = createFileRoute('/$series/$locale/filler')({
   component: FillerPage,
 })
 
-/** The filler guide, reached by its address only: it is not in the bar. */
+/** The filler guide: not in the bar, linked from every One Piece footer. */
 function FillerPage(): ReactElement {
   return (
     <FillerGuide

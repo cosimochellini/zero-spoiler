@@ -64,6 +64,9 @@ export const onePieceIt: SeriesWords<'one-piece'> = {
   'home.filler.title': 'Occhio ai filler',
   'home.filler.link': 'Vedi tutti i filler',
 
+  'footer.filler': 'Guardi l’anime?',
+  'footer.fillerLink': 'Vedi quali episodi sono filler',
+
   'dialog.filler': 'Filler',
 
   'character.ranks': 'Cariche',

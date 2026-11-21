@@ -2,7 +2,10 @@ import * as stylex from '@stylexjs/stylex'
 import { Link } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
-import { useLocale, useT } from '~/i18n/LocaleContext'
+import { type PageEntry, usePageLinks } from '~/components/usePageLinks'
+import { useLocale, useSeriesT, useT } from '~/i18n/LocaleContext'
+import type { TranslationKey } from '~/i18n/types'
+import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 
 export const REPOSITORY = 'https://github.com/cosimochellini/zero-spoiler'
@@ -15,7 +18,9 @@ export const REPOSITORY = 'https://github.com/cosimochellini/zero-spoiler'
  * social icons is the footer every generated page ships, and this site has
  * nothing to put in them. The lead sentence is the one the whole page argues.
  * A series page names its series, its 404s included; a `shared` page (the
- * hub, the legal notices) speaks for every series at once.
+ * hub, the legal notices) speaks for every series at once. One Piece's
+ * footer also points to its filler guide, which is not in the bar, so every
+ * page of the series links to it at any bookmark (#1382).
  */
 export function SiteFooter({
   shared = false,
@@ -33,6 +38,7 @@ export function SiteFooter({
         </b>{' '}
         {t(shared ? 'footer.sharedColophon' : 'footer.colophon')}
       </p>
+      {!shared && <FillerLine />}
       <p {...stylex.props(styles.colophon)}>
         {t(shared ? 'footer.sharedUnofficial' : 'footer.unofficial')}{' '}
         <Link
@@ -54,6 +60,37 @@ export function SiteFooter({
         .
       </p>
     </footer>
+  )
+}
+
+/** The filler guide, for a series that declares it: One Piece's alone. */
+const FILLER: PageEntry<TranslationKey<'one-piece'>>[] = [
+  { page: 'filler', to: '/$series/$locale/filler', label: 'footer.fillerLink' },
+]
+
+/** A line that links the filler guide, or nothing on a series without one. */
+function FillerLine(): null | ReactElement {
+  const { locale } = useLocale()
+  const onePiece = useSeriesT('one-piece')
+  const { series } = useBookmark()
+  const [filler] = usePageLinks([], FILLER, [])
+
+  if (filler === undefined || onePiece === undefined || series === null) {
+    return null
+  }
+
+  return (
+    <p {...stylex.props(styles.colophon)}>
+      {onePiece('footer.filler')}{' '}
+      <Link
+        params={{ locale, series: series.slug }}
+        to={filler.to}
+        {...stylex.props(styles.link)}
+      >
+        {filler.label}
+      </Link>
+      .
+    </p>
   )
 }
 
