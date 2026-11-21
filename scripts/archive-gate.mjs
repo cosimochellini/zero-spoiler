@@ -46,12 +46,18 @@
  *      looked for in the chunks.
  * The SSR manifest also proves that every series archive enters through a
  * dynamic import, with no canary-bearing data in another runtime entry's
- * static dependency closure.
+ * static dependency closure, and that no runtime chunk but Start's
+ * server-function chunks statically loads one of those chunks, a projection
+ * (`src/server/archive/`), `serve.server.ts`, `copy.server.ts` or
+ * `sources.server.ts` (`./archive-server-gate.mjs`).
  *
  * Exit codes:
  *   0  the archive stayed on the server
- *   1  archive prose in a client chunk
- *   2  nothing to check: no build, or no canary could be read
+ *   1  archive prose in a client chunk, or a server boundary crossed
+ *   2  nothing to check: no build, no canary could be read, a reached server
+ *      chunk without a readable source map (missing, unreadable or inline;
+ *      only a chunk of virtual modules alone may go without), or no
+ *      `?tss-serverfn-split` chunk in the server build
  */
 import console from 'node:console'
 import { readdirSync, readFileSync, realpathSync, statSync } from 'node:fs'
