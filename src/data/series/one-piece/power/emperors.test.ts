@@ -1,18 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
 import type { Bookmark } from '~/lib/progress/episode'
-import { powerPage } from '~/server/archive/power.server'
-import { readerFor } from '~/server/archive/reader.server'
-import { ONE_PIECE_LOADED } from '~/test/series'
+import { seatsOf } from '~/test/power'
 
 /** The Emperors' seats at a bookmark: holder ids, `vacant` or `unknown`. */
-function emperorsAt(bookmark: Bookmark): string[] | undefined {
-  const page = powerPage(readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'))
-
-  return page.bodies
-    .find(({ id }) => id === 'emperors')
-    ?.seats.map((seat) => (seat.state === 'held' ? seat.holder.id : seat.state))
-}
+const emperorsAt = (bookmark: Bookmark): string[] | undefined =>
+  seatsOf('emperors', bookmark)
 
 const BEFORE = ['shanks', 'edward-newgate', 'unknown', 'unknown']
 const VACANT = ['shanks', 'vacant', 'unknown', 'unknown']

@@ -1,15 +1,23 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Holding, PowerBody } from '~/data/features'
-import { LOCALES } from '~/i18n/locales'
+import type { PowerBody } from '~/data/features'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { Gated } from '~/lib/progress/spoiler'
 import { powerPage } from '~/server/archive/power.server'
 import { factsOf } from '~/server/archive/project.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { opReaderFor } from '~/test/archive'
-import { leaksOf } from '~/test/fog'
-import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
+import { bookmarkAt as at, recordOf, type Unit } from '~/test/gates'
+import {
+  bodyGates,
+  type Edge,
+  edges,
+  powerLeaks,
+  seatsOf,
+  type Steps,
+  U,
+  V,
+} from '~/test/power'
+import { ONE_PIECE_LOADED } from '~/test/series'
 
 import { BLACKBEARD_PIRATES } from './blackbeard-pirates'
 import { RED_HAIR_PIRATES } from './red-hair-pirates'
@@ -22,55 +30,16 @@ import { WHITEBEARD_PIRATES } from './whitebeard-pirates'
  * nothing leaking around any gate.
  */
 
-type Unit = 'chapter' | 'episode'
-
-const at = (unit: Unit, count: number): Bookmark =>
-  unit === 'chapter' ?
-    { mode: 'chapter', chapter: count }
-  : { mode: 'episode', episode: count }
-
-/** A crew's seats at a bookmark: holder ids, `vacant` or `unknown`. */
-function seatsOf(id: string, bookmark: Bookmark): string[] | undefined {
-  const page = powerPage(readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'))
-
-  return page.bodies
-    .find((body) => body.id === id)
-    ?.seats.map((seat) => (seat.state === 'held' ? seat.holder.id : seat.state))
-}
-
-const U = 'unknown'
-const V = 'vacant'
-
-/**
- * The seats the page lists for a step: none while every one is under fog,
- * since a body is listed only once a seat of it is held or vacant (#1194).
- */
-const listed = (seats: string[] | undefined): string[] | undefined =>
-  seats?.every((seat) => seat === U) === true ? undefined : seats
-
-/**
- * One crew's changes in one medium, in order: the count that tells each and
- * the seats from there on. The seats just before the first are none.
- */
-type Steps = [count: number, seats: string[]][]
-
 /** One step of one crew, with the seats just before it. */
-interface Edge {
-  before: string[] | undefined
-  count: number
-  id: string
-  seats: string[] | undefined
-  unit: Unit
-}
+type CrewEdge = Omit<Edge, 'at'> & { count: number; id: string; unit: Unit }
 
-/** Each step with the seats just before it, for `it.each`. */
-function edgesOf(id: string, unit: Unit, steps: Steps): Edge[] {
-  return steps.map(([count, seats], index) => ({
+/** Each step of one crew with the seats just before it, for `it.each`. */
+function edgesOf(id: string, unit: Unit, steps: Steps): CrewEdge[] {
+  return edges(steps).map(({ at: count, ...edge }) => ({
+    ...edge,
+    count,
     id,
     unit,
-    count,
-    before: listed(steps[index - 1]?.[1]),
-    seats: listed(seats),
   }))
 }
 
@@ -280,26 +249,6 @@ describe('the Emperors’ crews, first half', () => {
   })
 })
 
-interface Pair {
-  chapter: number
-  episode: number
-}
-
-const pairOf = (gate: Gated): Pair => ({
-  episode: gate.revealedAtEpisode,
-  chapter: gate.revealedAtChapter,
-})
-
-/** A holding's own pair, and its holder's gate when it names one. */
-function holdingGates(holding: Holding): Pair[] {
-  const holder =
-    holding.value === null ?
-      undefined
-    : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
-
-  return holder === undefined ? [holding] : [holding, pairOf(holder)]
-}
-
 const CREWS: PowerBody[] = [
   RED_HAIR_PIRATES,
   STRAW_HAT_PIRATES,
@@ -307,51 +256,20 @@ const CREWS: PowerBody[] = [
   BLACKBEARD_PIRATES,
 ]
 
-/** Every gate of the crews: theirs, their seats', their holdings' and their holders'. */
-const GATES: Pair[] = CREWS.flatMap((body) => [
-  pairOf(body),
-  ...body.seats.flatMap(({ holders, told }) => [
-    pairOf(told),
-    ...holders.flatMap((holding) => holdingGates(holding)),
-  ]),
-])
-
 describe('the Emperors’ crews on either side of their gates', () => {
   it('leak nothing in either locale', () => {
-    const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
-    const chapters = new Set<number>()
-    const episodes = new Set<number>()
-    for (const { chapter, episode } of GATES) {
-      episodes.add(Math.max(episode - 1, 1)).add(episode)
-      chapters.add(Math.max(chapter - 1, 1)).add(chapter)
-    }
-    const bookmarks = [
-      ...[...chapters].map((count) => at('chapter', count)),
-      ...[...episodes].map((count) => at('episode', count)),
-    ]
-
-    for (const bookmark of bookmarks) {
-      for (const locale of LOCALES) {
-        const page = powerPage(
-          readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
-        )
-
-        expect(leaks(page, bookmark), JSON.stringify(bookmark)).toStrictEqual(
-          [],
-        )
-      }
-    }
+    expect(powerLeaks(CREWS.flatMap((body) => bodyGates(body)))).toStrictEqual(
+      [],
+    )
   })
 })
 
 /** A character's affiliation at a bookmark, as an English reader sees it. */
 function affiliationAt(id: string, bookmark: Bookmark): unknown {
-  const character = ONE_PIECE_LOADED.archive.getCharacter(id)
-  if (character === undefined) {
-    throw new Error(`${id} is not filed`)
-  }
-
-  return factsOf(character, opReaderFor(bookmark, 'en')).affiliation
+  return factsOf(
+    recordOf(ONE_PIECE_LOADED.archive, id),
+    opReaderFor(bookmark, 'en'),
+  ).affiliation
 }
 
 /**

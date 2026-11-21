@@ -15,14 +15,15 @@ export const LOADED_SERIES: LoadedSeries[] = await Promise.all(
   }),
 )
 
-function onePiece(): LoadedSeries {
-  const found = LOADED_SERIES.find(({ slug }) => slug === 'one-piece')
+/** A loaded series by slug, or the test is wrong: it is not registered. */
+export function loadedSeries(slug: string): LoadedSeries {
+  const found = LOADED_SERIES.find((entry) => entry.slug === slug)
   if (found === undefined) {
-    throw new Error('One Piece fixture is not registered')
+    throw new Error(`${slug} is not registered`)
   }
   return found
 }
-export const ONE_PIECE_LOADED = onePiece()
+export const ONE_PIECE_LOADED = loadedSeries('one-piece')
 
 /**
  * What a filed series is known to hold: the kinds of text its leak scan
