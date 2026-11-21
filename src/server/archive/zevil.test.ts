@@ -1,21 +1,20 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import type { Bookmark } from '~/lib/progress/episode'
-import { LOADED_SERIES } from '~/test/series'
+import {
+  bookmarkAt as at,
+  gateCases,
+  opened,
+  recordOf,
+  sidesOf,
+  type Unit,
+} from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor, shelvesPage } from './pages.server'
-import { placePage } from './placePage.server'
 import { readerFor } from './reader.server'
 
-const loaded = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (loaded === undefined) {
-  throw new Error('Zevil requires the Hunter x Hunter archive')
-}
-const { archive } = loaded
-const UNITS = ['episode', 'chapter'] as const
-type Unit = (typeof UNITS)[number]
+const { archive } = loadedSeries('hunter-x-hunter')
 
 // A record one source alone names is read in that unit only (#833).
 interface Row {
@@ -44,15 +43,10 @@ const RECORDS: Row[] = [
   { id: 'pokkle', episode: 18, chapter: 23 },
   { id: 'bodoro', episode: 3, chapter: 33 },
 ]
-const CASES = RECORDS.flatMap((row) =>
-  LOCALES.flatMap((locale) =>
-    UNITS.filter((mode) => (row.source ?? mode) === mode).map((mode) => ({
-      ...row,
-      locale,
-      mode,
-    })),
-  ),
-)
+const CASES = gateCases(RECORDS, archive.series).map((row) => ({
+  ...row,
+  mode: row.unit,
+}))
 
 // Every applicant who dies after his record opens, and the pair the death
 // is told at; the manga's own records die in chapters only.
@@ -65,29 +59,10 @@ const DEATHS: Row[] = [
   { id: 'bourbon', episode: 17, chapter: 30 },
   { id: 'bodoro', episode: 20, chapter: 36 },
 ]
-const DEATH_CASES = DEATHS.flatMap((row) =>
-  LOCALES.flatMap((locale) =>
-    UNITS.filter((mode) => (row.source ?? mode) === mode).map((mode) => ({
-      ...row,
-      locale,
-      mode,
-    })),
-  ),
-)
-
-function characterOf(id: string): Entity {
-  const entity = archive.getCharacter(id)
-  if (entity === undefined) {
-    throw new Error(`Missing character ${id}`)
-  }
-  return entity
-}
-
-function at(mode: Unit, count: number): Bookmark {
-  return mode === 'episode' ?
-      { mode, episode: count }
-    : { mode, chapter: count }
-}
+const DEATH_CASES = gateCases(DEATHS, archive.series).map((row) => ({
+  ...row,
+  mode: row.unit,
+}))
 
 describe('the Fourth Phase and its final bracket', () => {
   it.each(CASES)('gates $id in $mode ($locale)', (row) => {
@@ -96,19 +71,15 @@ describe('the Fourth Phase and its final bracket', () => {
     expect(entity?.revealedAtEpisode).toBe(row.episode)
     expect(entity?.revealedAtChapter).toBe(row.chapter)
 
-    const before = readerFor(
-      archive,
-      at(row.mode, row[row.mode] - 1),
-      row.locale,
-    )
-    const reached = readerFor(archive, at(row.mode, row[row.mode]), row.locale)
+    const before = readerFor(archive, row.before, row.locale)
+    const reached = readerFor(archive, row.reached, row.locale)
     const listedBefore = shelvesPage(before).flatMap((shelf) => shelf.open)
     const listedAt = shelvesPage(reached).flatMap((shelf) => shelf.open)
 
     expect(listedBefore.some(({ id }) => id === row.id)).toBe(false)
     expect(listedAt.some(({ id }) => id === row.id)).toBe(true)
-    expect(drawingsFor([row.id], before)).not.toHaveProperty(row.id)
-    expect(drawingsFor([row.id], reached)).toHaveProperty(row.id)
+    expect(opened(row.id, before)).toBe(false)
+    expect(opened(row.id, reached)).toBe(true)
   })
 
   it.each(
@@ -141,25 +112,13 @@ describe('the Fourth Phase and its final bracket', () => {
   it.each(LOCALES)(
     'opens Zevil on arrival, with a safe dossier (%s)',
     (locale) => {
-      for (const mode of ['episode', 'chapter'] as const) {
-        const threshold = mode === 'episode' ? 14 : 23
-        const before = placePage(
-          'zevil-island',
-          readerFor(archive, at(mode, threshold - 1), locale),
-        )
-        const reached = placePage(
-          'zevil-island',
-          readerFor(archive, at(mode, threshold), locale),
-        )
+      const arrival = sidesOf({ episode: 14, chapter: 23 }, archive.series)
+      for (const side of arrival) {
+        const before = readerFor(archive, side.before, locale)
+        const reached = readerFor(archive, side.reached, locale)
 
-        expect(
-          before !== undefined && 'detail' in before && before.detail.slot.open,
-        ).toBe(false)
-        expect(
-          reached !== undefined
-            && 'detail' in reached
-            && reached.detail.slot.open,
-        ).toBe(true)
+        expect(opened('zevil-island', before)).toBe(false)
+        expect(opened('zevil-island', reached)).toBe(true)
       }
     },
   )
@@ -176,10 +135,9 @@ describe('the Fourth Phase and its final bracket', () => {
   it.each(DEATH_CASES)(
     'gates $id’s death and drawing together in $mode ($locale)',
     (row) => {
-      const entity = characterOf(row.id)
-      const threshold = row[row.mode]
-      const before = readerFor(archive, at(row.mode, threshold - 1), row.locale)
-      const reached = readerFor(archive, at(row.mode, threshold), row.locale)
+      const entity = recordOf(archive, row.id)
+      const before = readerFor(archive, row.before, row.locale)
+      const reached = readerFor(archive, row.reached, row.locale)
 
       expect(archive.latestOf(before, entity, 'status')).toBe('alive')
       expect(archive.latestOf(reached, entity, 'status')).toBe('deceased')
