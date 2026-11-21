@@ -10,10 +10,10 @@ A pull request lands in two parts: review rounds until no P0–P2 is left, then 
 ## 1. Review rounds
 
 - Each round is a **fresh** reviewer with zero context: the `pr-reviewer` subagent (`.claude/agents/pr-reviewer.md`), which runs `gh-pr-no-checkout-review`. Use `pr-reviewer-structural` (Opus) when the PR changes the engine, the spoiler logic, routing or the data model.
-- The prompt names the PR, lists the owner's decisions so the reviewer does not re-flag them, and asks for the full P0–P3 report as the reviewer's **final message**.
+- The prompt names the PR, lists the owner's decisions so the reviewer does not re-flag them, authorizes the Measure commands of `pr-reviewer.md` for this review, and asks for the full P0–P3 report as the reviewer's **final message**.
 - A P0, P1 or P2 finding is fixed without asking the owner. Push the fix, then start a new fresh round.
 - A finding marked `Structural: yes` gets one extra review with `pr-reviewer-structural` before the merge.
-- CI does not run on a draft, so check locally before each round; the reviewer sees no CI result and runs no tests, lint or typecheck: it only builds and measures. A pure content PR runs `npm run check:auto` (`filing-records` §8); any other PR runs `npm run check`.
+- CI does not run on a draft, so check locally before each round; the reviewer sees no CI result, and builds only to measure a risk its review raises (Measure in `pr-reviewer.md`). A pure content PR runs `npm run check:auto` (`filing-records` §8); any other PR runs `npm run check`.
 - When a round reports **no P0–P2**, the rounds are over. Fixing its P3 findings is your call; a P3 fix, whatever it touches, goes straight to the merge with no further round.
 
 Done when the last round reported no P0–P2 and every fix after it is pushed.

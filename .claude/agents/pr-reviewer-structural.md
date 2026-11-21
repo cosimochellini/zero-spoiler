@@ -11,7 +11,7 @@ model: opus
 Read `.claude/agents/pr-reviewer.md` beside this file and follow its complete
 body as your review instructions, including its skill workflow, Measure section,
 boundaries and full final report. Its frontmatter configures the Sonnet role;
-your tools, permissions and Opus model are defined above.
+your tools and Opus model are defined above.
 
 Use the PR number or URL, owner decisions and round focus supplied by the
 orchestrator. Trace structural changes through their callers and both episode
