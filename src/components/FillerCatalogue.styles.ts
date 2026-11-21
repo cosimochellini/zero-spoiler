@@ -112,8 +112,10 @@ export const styles = stylex.create({
     paddingInlineStart: 0,
   },
   // The place and kind in a narrow first column on a wide screen, above the
-  // words on a phone.
+  // words on a phone. While the row is covered (its words `inert` under the
+  // veil) the place sits level with the 44px curtain's verb, centred in it.
   row: {
+    alignItems: { 'default': null, ':has([inert])': 'center' },
     columnGap: space.lg,
     display: 'grid',
     gridTemplateColumns: {
@@ -158,9 +160,9 @@ export const styles = stylex.create({
     minWidth: 0,
   },
   // A covered row's line: the curtain over it is the row's control, and it
-  // is as tall as what it covers, so the line is a whole tap target tall. Its
-  // words stay at the top, level with the row's place and kind.
-  placeholder: { minHeight: '44px' },
+  // is as tall as what it covers, so the line is a whole tap target tall,
+  // centred under the curtain's verb.
+  placeholder: { alignItems: 'center', display: 'flex', minHeight: '44px' },
   year: { color: color.muted, fontWeight: 400 },
   summary: {
     margin: 0,
