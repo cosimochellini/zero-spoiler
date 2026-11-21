@@ -40,10 +40,7 @@ function main() {
     stdio: 'inherit',
     env: { ...process.env, ...env },
   })
-  if (result.error) {
-    process.stderr.write(`check:auto: ${result.error.message}\n`)
-    process.exit(1)
-  }
+  // npm failing to start leaves status and signal null: `exit null`, then 1.
   const outcome = result.signal ?? `exit ${String(result.status)}`
   process.stdout.write(`${line}, ${outcome}\n`)
   if (result.signal) {
