@@ -190,6 +190,15 @@ once and runs the same checks over all of them:
   the entry's `unpinned`, with its `reason`, until #1009 unblocks: that host
   alone may appear there.
 
+The same test reads every other file in `docs/content-provenance/` and fails on
+a `?oldid=` URL from a series' wiki that `sources.json` does not pin at that
+revision, under that title when the URL names a page; a language path such as
+`/it/wiki/` stays a plain URL, as Italian Wikipedia does.
+`npm run provenance:pin` pins only a page's latest revision, or keeps one
+already pinned, so an older revision you read needs its `sources.json` entry
+added by hand in the same shape; cite the pinned revision instead only if you
+read that one.
+
 The wiki is read for facts only; no passages, dialogue, frames or scans enter
 the repository. A decision the data cannot show, such as a gate delayed behind
 an endpoint, a source-only entry or a deliberate omission, is a short comment
