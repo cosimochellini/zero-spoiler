@@ -7,16 +7,19 @@
  * class it was, so a red step says whether to fix the code, the config, or
  * the analyzer.
  *
- * Two runs, in order:
+ * Three runs, in order, each only when the one before passed:
  *   1. the full analysis (dead code, duplication, health), over the coverage
  *      `npm test` writes, so the CRAP score is measured rather than estimated;
  *   2. `fallow security --gate new`, which fails only on a security candidate
  *      that the branch introduces against SECURITY_BASE. The backlog it
- *      already lists is reviewed by hand, not gated.
+ *      already lists is reviewed by hand, not gated;
+ *   3. `fallow health --min-score`, which fails when the health score the
+ *      README badge shows drops below MIN_SCORE.
  *
  * Exit codes are fallow's own, forwarded as-is:
  *   0   clean
- *   1   error-severity findings (severity policy lives in .fallowrc.jsonc)
+ *   1   error-severity findings (severity policy lives in .fallowrc.jsonc),
+ *       or a health score below MIN_SCORE
  *   2   invalid config or input, not a code finding (also: no coverage file)
  *   3+  analyzer failure, see `fallow schema.exit_codes`
  *   8   the branch introduces a new security candidate
@@ -34,6 +37,11 @@ const repositoryRoot = path.resolve(import.meta.dirname, '..')
 // The ref a pull request merges into. CI checks out the full history, so it
 // is there; on `main` itself the diff is empty and the security run passes.
 const SECURITY_BASE = 'origin/main'
+
+// The floor for the health score. The badge also subtracts a hotspot penalty,
+// which this run leaves out: it reads six months of churn, so it would move
+// with no change to the code and fail an unrelated branch.
+const MIN_SCORE = 90
 
 // bin/fallow is a Node shim that require.resolve()s the platform package from
 // optionalDependencies, so never install with --omit=optional.
@@ -138,7 +146,7 @@ const analysis = fallow([
   sarifPath,
 ])
 
-const status =
+const findings =
   analysis === 0 ?
     fallow([
       'security',
@@ -152,18 +160,38 @@ const status =
     ])
   : analysis
 
-const label = {
-  0: 'fallow gate: PASSED',
-  1:
-    'fallow gate: FAILED with error-severity findings, listed above. '
-    + 'Severity policy lives in .fallowrc.jsonc.',
-  2:
-    'fallow gate: exit 2, invalid config or input. This is NOT a code '
-    + `finding: check .fallowrc.jsonc, and that ${SECURITY_BASE} exists.`,
-  8:
-    'fallow gate: FAILED, the branch introduces a security candidate, listed '
-    + `above against ${SECURITY_BASE}. Remove the sink or prove it safe.`,
-}[status]
+const status =
+  findings === 0 ?
+    fallow([
+      'health',
+      '--quiet',
+      '--format',
+      'human',
+      '--min-score',
+      String(MIN_SCORE),
+    ])
+  : findings
+
+// The score run exits 1 like a findings run, so it gets its own label.
+const scoreLabel =
+  `fallow gate: FAILED, the health score is below ${MIN_SCORE}. The `
+  + 'deductions above name what costs points.'
+
+const label =
+  findings === 0 && status === 1 ?
+    scoreLabel
+  : {
+      0: 'fallow gate: PASSED',
+      1:
+        'fallow gate: FAILED with error-severity findings, listed above. '
+        + 'Severity policy lives in .fallowrc.jsonc.',
+      2:
+        'fallow gate: exit 2, invalid config or input. This is NOT a code '
+        + `finding: check .fallowrc.jsonc, and that ${SECURITY_BASE} exists.`,
+      8:
+        'fallow gate: FAILED, the branch introduces a security candidate, listed '
+        + `above against ${SECURITY_BASE}. Remove the sink or prove it safe.`,
+    }[status]
 
 const message =
   label
