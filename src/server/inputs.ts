@@ -29,7 +29,7 @@ export const MAX_FIELD_LENGTH = 200
 // One screen of a long list asks at once; more than that is not a page.
 export const MAX_IDS = 64
 
-export const UNKNOWN_SERIES = 'A known series is required'
+const UNKNOWN_SERIES = 'A known series is required'
 
 /** One field of a request body, read without trusting the body's shape. */
 function field(input: unknown, name: string): unknown {

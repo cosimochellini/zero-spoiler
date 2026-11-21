@@ -1,7 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
 
-import { inputOf } from './archive/endpoint.server'
 import { ENDPOINTS } from './archive/payloads.server'
+import { INPUTS } from './inputs'
 import { serve } from './serve.server'
 
 /**
@@ -25,130 +25,134 @@ import { serve } from './serve.server'
  * Start's compiler needs one literal `createServerFn().validator(...)
  * .handler(...)` per export, so each is written out below and does nothing
  * but hand its entry to `serve` (`./serve.server`), which reads the cookies.
+ * The validator names its entry's input shape from `./inputs` rather than
+ * reading the entry: the validator stays in the server build's route chunks,
+ * and reading `ENDPOINTS` there would load every projection with the route,
+ * not only with the server function (`api.test.ts` holds the two equal).
  * Under Vitest the Start plugin is deliberately absent, so calling one of
  * these directly throws out of `getStartContext()` rather than running.
  */
 
 export const loadCredits = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadCredits))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadCredits, data))
 
 export const loadHome = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadHome))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadHome, data))
 
 export const loadCharacters = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadCharacters))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadCharacters, data))
 
 export const loadShelves = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadShelves))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadShelves, data))
 
 export const loadCharacter = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadCharacter))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadCharacter, data))
 
 export const loadRelationships = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadRelationships))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadRelationships, data))
 
 export const loadChronicleRest = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadChronicleRest))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadChronicleRest, data))
 
 export const loadDrawings = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadDrawings))
+  .validator(INPUTS.listed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadDrawings, data))
 
 export const loadFruits = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadFruits))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadFruits, data))
 
 export const loadFruitAlbum = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadFruitAlbum))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadFruitAlbum, data))
 
 export const loadFruit = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadFruit))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadFruit, data))
 
 export const loadFruitEaters = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadFruitEaters))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadFruitEaters, data))
 
 export const loadFruitSiblings = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadFruitSiblings))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadFruitSiblings, data))
 
 export const loadPlaces = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadPlaces))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadPlaces, data))
 
 export const loadPlace = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadPlace))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadPlace, data))
 
 export const loadFiller = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadFiller))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadFiller, data))
 
 export const loadSagaLabels = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadSagaLabels))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadSagaLabels, data))
 
 export const liftFiller = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftFiller))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftFiller, data))
 
 export const liftCharacter = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftCharacter))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftCharacter, data))
 
 export const liftDossier = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftDossier))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftDossier, data))
 
 export const liftFruit = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftFruit))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftFruit, data))
 
 export const liftRecord = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftRecord))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftRecord, data))
 
 export const liftPort = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftPort))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftPort, data))
 
 export const liftShip = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftShip))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftShip, data))
 
 export const loadSeriesCopy = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadSeriesCopy))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadSeriesCopy, data))
 
 export const loadSeriesLegal = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadSeriesLegal))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadSeriesLegal, data))
 
 export const loadDemoDrawings = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadDemoDrawings))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadDemoDrawings, data))
 
 export const loadPower = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadPower))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadPower, data))
 
 export const loadAbilities = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadAbilities))
+  .validator(INPUTS.located)
   .handler(async ({ data }) => serve(ENDPOINTS.loadAbilities, data))
 
 export const loadAbility = createServerFn()
-  .validator(inputOf(ENDPOINTS.loadAbility))
+  .validator(INPUTS.addressed)
   .handler(async ({ data }) => serve(ENDPOINTS.loadAbility, data))
 
 export const liftAbility = createServerFn()
-  .validator(inputOf(ENDPOINTS.liftAbility))
+  .validator(INPUTS.handled)
   .handler(async ({ data }) => serve(ENDPOINTS.liftAbility, data))

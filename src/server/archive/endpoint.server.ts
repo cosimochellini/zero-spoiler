@@ -2,12 +2,7 @@ import type { SeriesArchive } from '~/data/types'
 import type { Locale } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Series } from '~/lib/progress/series'
-import {
-  type InputKind,
-  type Inputs,
-  INPUTS,
-  type Located,
-} from '~/server/inputs'
+import type { InputKind, Inputs, Located } from '~/server/inputs'
 
 import { pageReader, type Reader, readerFor } from './reader.server'
 
@@ -133,13 +128,4 @@ export function wordsPage<R>(
     sweep: (archive) => (_, locale) =>
       page({ locale, series: archive.series.slug }, archive.series),
   }
-}
-
-/** The validator of an entry's input, for its wrapper in `~/server/api`. */
-export function inputOf<K extends InputKind>({
-  input,
-}: {
-  input: K
-}): (input: unknown) => Inputs[K] {
-  return INPUTS[input]
 }

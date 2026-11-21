@@ -8,12 +8,7 @@ import {
   readerAt,
   type WordsPage,
 } from './archive/endpoint.server'
-import {
-  type InputKind,
-  type Inputs,
-  type Located,
-  UNKNOWN_SERIES,
-} from './inputs'
+import type { InputKind, Inputs, Located } from './inputs'
 
 /**
  * Where a server function meets the request: the one place that reads the
@@ -25,8 +20,11 @@ import {
 /** The public description of the open series a call names. */
 function describedBy(data: Located): Series {
   const series = descriptionOf(data.series)
+  // The validator has already refused an unknown slug (`./inputs`); this
+  // module imports nothing of it at run time, so the validators stay in the
+  // route chunk and out of the shared server chunk.
   if (series === null) {
-    throw new Error(UNKNOWN_SERIES)
+    throw new Error('A known series is required')
   }
   return series
 }
