@@ -322,10 +322,12 @@ export function mappedSources(repositoryRoot, file, text) {
   }
   // fallow-ignore-next-line security-sink -- sourceRoot comes from the local emitted map, and the result is only compared, never read
   const base = path.resolve(path.dirname(mapPath), map.sourceRoot ?? '')
-  const root = path.resolve(repositoryRoot)
   return map.sources.map((source) =>
-    // fallow-ignore-next-line security-sink -- the map's own sources, turned into module ids to compare, never read
-    path.relative(root, path.resolve(base, source)).split(path.sep).join('/'),
+    path
+      // fallow-ignore-next-line security-sink -- the map's own sources, turned into module ids to compare, never read
+      .relative(repositoryRoot, path.resolve(base, source))
+      .split(path.sep)
+      .join('/'),
   )
 }
 
