@@ -176,7 +176,7 @@ floor on the source count, so nothing else needs bumping. Beside it:
   `Episode N (2011)` and `Chapter N` page must be pinned from the Hunter x
   Hunter wiki; a One Piece page of the same title is no evidence, and the
   reverse holds too.
-- `game-of-thrones-relationships.json` lists every first-stage Game of Thrones
+- `game-of-thrones-relationships.json` lists every archived Game of Thrones
   character once: under `authored`, under `omitted`, with the reason, or under
   `pending`, with the issue that will author it. An authored entry's `sources`
   holds the `got-` and `iaf-` keys of the revisions read; each key must be

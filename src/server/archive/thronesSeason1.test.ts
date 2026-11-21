@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
+import { orderByMode } from '~/data/order'
 import { DRAWINGS, REDRAWINGS } from '~/data/series/game-of-thrones/art'
 import { season1 } from '~/data/series/game-of-thrones/records/season-1'
 import type { Entity } from '~/data/types'
@@ -13,7 +14,7 @@ import { onboardingPage } from './onboarding.server'
 import { characterPage } from './pages.server'
 import { placePage } from './placePage.server'
 import { drawingOf } from './project.server'
-import { type Reader, readerFor } from './reader.server'
+import { coveredOf, type Reader, readerFor } from './reader.server'
 
 const series = LOADED_SERIES.find(({ slug }) => slug === 'game-of-thrones')
 if (series === undefined) {
@@ -1312,7 +1313,8 @@ const CAST = [
 
 describe('the first season’s demo', () => {
   it('gives a new visitor the season, its five leads and its places, and covers the rest', () => {
-    const demo = onboardingPage(null, readerFor(archive, null, 'en'))
+    const visitor = readerFor(archive, null, 'en')
+    const demo = onboardingPage(null, visitor)
 
     expect(demo.arcs.map(({ id }) => id)).toStrictEqual(['season-1'])
     expect(demo.cast.map(({ id }) => id)).toStrictEqual(CAST)
@@ -1370,32 +1372,34 @@ describe('the first season’s demo', () => {
       'gods-eye',
     ])
 
-    // Past the demo, the next records along the route, covered and in
-    // episode order. A later season's records come first, so season 1's own
-    // past the demo are checked where it files them: the four places later
-    // seasons first show.
+    // Past the demo, the next six charted records along the route, covered
+    // and in episode order; a later season's records join them in that
+    // order. Season 1's own past the demo are the four places later seasons
+    // first show.
     const { demoLastChapter, demoLastEpisode } = archive.series
-    const episodes = demo.tail.map(({ revealedAtEpisode }) => revealedAtEpisode)
+    // The chart a visitor with no bookmark is read from.
+    const pastDemo = orderByMode(visitor.archive.chart, 'episode').filter(
+      (entity) =>
+        entity.source !== undefined
+        || entity.revealedAtEpisode > demoLastEpisode
+        || entity.revealedAtChapter > demoLastChapter,
+    )
+    const season1Ids = new Set(season1.entries.map(({ id }) => id))
 
-    expect(demo.tail.length).toBeGreaterThan(0)
-    expect(episodes).toStrictEqual(episodes.toSorted((a, b) => a - b))
-
-    for (const record of demo.tail) {
-      expect(record).not.toHaveProperty('name')
-      expect(
-        record.revealedAtEpisode > demoLastEpisode
-          || record.revealedAtChapter > demoLastChapter,
-      ).toBe(true)
-    }
-
+    expect(demo.tail).toStrictEqual(
+      pastDemo.slice(0, 6).map((entity) => coveredOf(entity, visitor.archive)),
+    )
     expect(
-      season1.entries
-        .filter(
-          ({ kind, revealedAtEpisode }) =>
-            kind === 'place' && revealedAtEpisode > demoLastEpisode,
-        )
-        .map(({ revealedAtEpisode }) => revealedAtEpisode),
-    ).toStrictEqual([23, 33, 35, 38])
+      pastDemo.flatMap(({ id, kind, revealedAtEpisode }) =>
+        season1Ids.has(id) ? [[kind, revealedAtEpisode]] : [],
+      ),
+    ).toStrictEqual([
+      ['place', 23],
+      ['place', 33],
+      ['place', 35],
+      ['place', 38],
+    ])
+
     // Ros is the show's alone, so the two-unit demo cannot carry her.
     expect(JSON.stringify(demo)).not.toContain('"ros"')
   })

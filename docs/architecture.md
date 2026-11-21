@@ -319,9 +319,9 @@ its own way, carries `source`, so it never reaches a reader of the other. Their
 notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
 series' own copy, since a story starts at an episode or a chapter. The second
 stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
-is filed under #1455: `records/season-2.ts` holds its heading and its places, a
-character season 1 filed keeps its new dated steps in `records/season-1.ts`, and
-the demo stays at stage 1.
+is being filed under #1455. So far `records/season-2.ts` holds only its heading
+and an empty `SEASON_2_PLACES`; a character season 1 filed takes its new dated
+steps in `records/season-1.ts`, and the demo stays at stage 1.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to

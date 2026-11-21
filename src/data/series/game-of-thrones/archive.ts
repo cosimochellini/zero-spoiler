@@ -25,9 +25,9 @@ const LEADS = [
 ]
 
 /**
- * Each season's cast row, by its heading's id. A season with no record yet
- * has no heading on the shelves, so its row waits out of the archive until
- * the season files one.
+ * Each season's cast row, by its heading's id. An empty row stays out of the
+ * archive: a season with no record yet has no heading to key it. A filled
+ * row is kept whatever its key, so the leads test catches a wrong one.
  */
 const LEADS_BY_SEASON: Record<string, string[]> = {
   'season-1': LEADS,
@@ -57,8 +57,6 @@ export const GAME_OF_THRONES_ARCHIVE: SeriesArchive = {
   drawings: DRAWINGS,
   ...core,
   leads: Object.fromEntries(
-    Object.entries(LEADS_BY_SEASON).filter(([id]) =>
-      sagas.some(({ heading }) => heading?.id === id),
-    ),
+    Object.entries(LEADS_BY_SEASON).filter(([, ids]) => ids.length > 0),
   ),
 }
