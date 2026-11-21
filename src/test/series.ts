@@ -149,7 +149,11 @@ const EXPECTED: Record<string, Expected> = {
   // the Winterfell and northern stories (#1361): 566 stories, 734 timelines
   // and 260 statuses. Statuses and timelines counted 2026-11-21, after Othor's
   // book gate moved to Jon VII, his alive entry and his redrawings went
-  // (#1425): 259 statuses and 733 timelines.
+  // (#1425): 259 statuses and 733 timelines. Chronicles and timelines counted
+  // 2026-11-21, after Lommy's show gate moved to episode 13 and his stage-1
+  // story went (#1457): 565 stories and 732 timelines. Timelines counted
+  // 2026-11-21, after Lommy's show gate moved to episode 31 and his
+  // relationship cards went (#1457): 731.
   'game-of-thrones': {
     kinds: [
       'affiliation',
@@ -169,11 +173,11 @@ const EXPECTED: Record<string, Expected> = {
       affiliations: 170,
       arcs: 1,
       characters: 148,
-      chronicles: 566,
+      chronicles: 565,
       linkedOrigins: 0,
       places: 60,
       statuses: 259,
-      timelines: 733,
+      timelines: 731,
       visits: 0,
     },
     namesSaidEarly: true,

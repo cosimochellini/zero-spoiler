@@ -142,16 +142,20 @@ const RECORDS: {
   { id: 'masha-heddle', episode: 4, chapter: 29 },
   { id: 'kevan-lannister', episode: 8, chapter: 57 },
   { id: 'addam-marbrand', episode: 10, chapter: 63 },
-  { id: 'podrick-payne', episode: 12, chapter: 63 },
+  // Pod's show gate moved to Blackwater, where his name is first said, and
+  // Rorge and Biter, never named on screen, became the books' alone (#1457).
+  { id: 'podrick-payne', episode: 19, chapter: 63 },
   { id: 'stevron-frey', episode: 9, chapter: 60 },
   { id: 'edmure-tully', episode: 23, chapter: 72 },
   { id: 'hoster-tully', episode: 23, chapter: 72 },
   { id: 'brynden-tully', episode: 23, chapter: 35 },
   { id: 'hot-pie', episode: 10, chapter: 75 },
-  { id: 'lommy', episode: 10, chapter: 75 },
+  // Lommy's show gate moved to episode 31, where his name is first said
+  // (#1457).
+  { id: 'lommy', episode: 31, chapter: 75 },
   { id: 'jaqen-hghar', episode: 12, chapter: 79 },
-  { id: 'rorge', episode: 12, chapter: 79 },
-  { id: 'biter', episode: 12, chapter: 79 },
+  { id: 'rorge', episode: 12, chapter: 79, source: 'chapter' },
+  { id: 'biter', episode: 12, chapter: 79, source: 'chapter' },
   // The Night's Watch (#1007).
   { id: 'will', episode: 1, chapter: 1 },
   { id: 'gared', episode: 1, chapter: 1 },
@@ -309,9 +313,22 @@ const CHANGES: {
   { id: 'hoster-tully', episode: 23, chapter: 179, value: 'deceased' },
   { id: 'mycah', episode: 2, chapter: 17, value: 'deceased' },
   // Later deaths (#1242).
-  { id: 'lommy', episode: 13, chapter: 93, value: 'deceased' },
-  { id: 'rorge', episode: 37, chapter: 263, value: 'deceased' },
-  { id: 'biter', episode: 37, chapter: 268, value: 'deceased' },
+  { id: 'lommy', episode: 31, chapter: 75, value: 'alive', source: 'chapter' },
+  { id: 'lommy', episode: 31, chapter: 93, value: 'deceased' },
+  {
+    id: 'rorge',
+    episode: 37,
+    chapter: 263,
+    value: 'deceased',
+    source: 'chapter',
+  },
+  {
+    id: 'biter',
+    episode: 37,
+    chapter: 268,
+    value: 'deceased',
+    source: 'chapter',
+  },
   { id: 'kevan-lannister', episode: 60, chapter: 344, value: 'deceased' },
   // The southern cast's later deaths (#1286).
   {
@@ -1493,11 +1510,11 @@ const STAGES: {
   },
   { id: 'eastwatch', episode: 67, chapter: 344, source: 'episode' },
   // Later deaths (#1242).
-  { id: 'lommy', episode: 13, chapter: 93 },
+  { id: 'lommy', episode: 31, chapter: 93, source: 'chapter' },
   { id: 'stevron-frey', episode: 14, chapter: 109, source: 'chapter' },
   { id: 'hoster-tully', episode: 23, chapter: 179, source: 'chapter' },
-  { id: 'rorge', episode: 37, chapter: 263 },
-  { id: 'biter', episode: 37, chapter: 268 },
+  { id: 'rorge', episode: 37, chapter: 263, source: 'chapter' },
+  { id: 'biter', episode: 37, chapter: 268, source: 'chapter' },
   { id: 'kevan-lannister', episode: 60, chapter: 344 },
   // The Vale, Riverlands and Night's Watch stages of the drawing audit
   // (#1290): deaths, Jaqen's coin and Pod's axe.

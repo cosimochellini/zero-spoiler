@@ -311,8 +311,8 @@ places are the book's alone, and the Kingswood the show's. The demo shows the
 places the first ten episodes reach, and covers in its tail the four the show
 first visits in later seasons. Its chronicles cover the Essos cast of the first
 stage (#1360), 89 stories for 18 characters, the Night's Watch cast (#1363), 88
-stories for 22, the King's Landing, riverlands and Vale cast (#1362), 229
-stories for 66, and the Winterfell and northern cast (#1361), 160 stories for
+stories for 22, the King's Landing, riverlands and Vale cast (#1362), 228
+stories for 65, and the Winterfell and northern cast (#1361), 160 stories for
 39, in `records/season-1.chronicle.ts`: a story both media tell the same way
 holds at an episode and a chapter, and one only a single medium tells, or tells
 its own way, carries `source`, so it never reaches a reader of the other. Their
@@ -494,6 +494,6 @@ checks this block.
 | Places            | 60                                                      |
 | Saga modules      | 1                                                       |
 | Line drawings     | 208, one per record, plus 153 redrawings of 113 records |
-| Chronicle stories | 566, for 145 characters                                 |
+| Chronicle stories | 565, for 144 characters                                 |
 
 <!-- End of the generated counts. -->

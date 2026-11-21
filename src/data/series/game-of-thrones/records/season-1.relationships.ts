@@ -7095,8 +7095,8 @@ const crown = {
       it: 'Sua nipote, la signora del Nido dell’Aquila, che rifiuta di mandare gli uomini della Valle nelle Terre dei Fiumi. Lui lascia il suo incarico.',
     },
   },
-  // Hot Pie and Lommy: their book records open after stage 1, so their
-  // links are the show's ("Fire and Blood").
+  // Hot Pie: his book record opens after stage 1, so his links are the
+  // show's ("Fire and Blood").
   hotArya: {
     character: 'arya-stark',
     type: { en: 'Fellow recruit', it: 'Recluta come lui' },
@@ -7119,46 +7119,6 @@ const crown = {
     summary: {
       en: 'The man of the Night’s Watch who takes the recruits north.',
       it: 'L’uomo dei Guardiani della notte che porta le reclute a nord.',
-    },
-  },
-  hotLommy: {
-    character: 'lommy',
-    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
-    summary: {
-      en: 'Another recruit, who picks on Arry with him.',
-      it: 'Un’altra recluta, che prende di mira Arry insieme a lui.',
-    },
-  },
-  lomArya: {
-    character: 'arya-stark',
-    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
-    summary: {
-      en: 'Eddard Stark’s daughter, travelling as a boy called Arry. Lommy backs Hot Pie when he tries to take her sword.',
-      it: 'La figlia di Eddard Stark, che viaggia travestita da ragazzo con il nome di Arry. Lommy spalleggia Frittella quando lui prova a prenderle la spada.',
-    },
-  },
-  lomGendry: {
-    character: 'gendry',
-    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
-    summary: {
-      en: 'Another recruit, who takes Arry’s side and threatens him.',
-      it: 'Un’altra recluta, che si schiera con Arry e lo minaccia.',
-    },
-  },
-  lomYoren: {
-    character: 'yoren',
-    type: { en: 'Recruiter', it: 'Reclutatore' },
-    summary: {
-      en: 'The man of the Night’s Watch who takes the recruits north.',
-      it: 'L’uomo dei Guardiani della notte che porta le reclute a nord.',
-    },
-  },
-  lomHotPie: {
-    character: 'hot-pie',
-    type: { en: 'Fellow recruit', it: 'Recluta come lui' },
-    summary: {
-      en: 'Another recruit, who picks on Arry with him.',
-      it: 'Un’altra recluta, che prende di mira Arry insieme a lui.',
     },
   },
   // Marillion
@@ -10852,7 +10812,7 @@ export const season1Relationships = {
   'addam-marbrand': [{ episode: 10, chapter: 63, value: [crown.addTywin] }],
   'podrick-payne': [
     {
-      episode: 12,
+      episode: 19,
       chapter: 63,
       source: 'chapter',
       value: [crown.podTyrion, crown.podKevan],
@@ -10913,21 +10873,16 @@ export const season1Relationships = {
       value: [crown.bryRobb, crown.bryCatelynLeaves, crown.bryLysaRefuses],
     },
   ],
-  // Their book records open after stage 1 (chapter 75).
+  // Hot Pie's book record opens after stage 1 (chapter 75). Lommy's show
+  // record opens at episode 31, past stage 2, where his name is first said
+  // (#1457): his show-side cards, and Hot Pie's card for him, wait for stage 4;
+  // his book-side cards (from chapter 75) belong to stage 2 (#1481).
   'hot-pie': [
     {
       episode: 10,
       chapter: 75,
       source: 'episode',
-      value: [crown.hotArya, crown.hotGendry, crown.hotYoren, crown.hotLommy],
-    },
-  ],
-  'lommy': [
-    {
-      episode: 10,
-      chapter: 75,
-      source: 'episode',
-      value: [crown.lomArya, crown.lomGendry, crown.lomYoren, crown.lomHotPie],
+      value: [crown.hotArya, crown.hotGendry, crown.hotYoren],
     },
   ],
   'marillion': [

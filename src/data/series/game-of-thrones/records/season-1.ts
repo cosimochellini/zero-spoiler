@@ -1091,7 +1091,7 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'rickard-karstark', tint: 'cyan' },
     },
-    // Show: “Garden of Bones” (episode 14), his first appearance, reporting to Robb after the battle at Oxcross. Books: Bran VI (site chapter 54), among Robb’s bannermen at Winterfell.
+    // Show: “Garden of Bones” (episode 14), his first appearance, reporting to Robb after the battle at Oxcross; Robb reminds him that the Boltons’ flaying is outlawed in the North, the naming signal (#1457). Books: Bran VI (site chapter 54), among Robb’s bannermen at Winterfell.
     {
       id: 'roose-bolton',
       kind: 'character',
@@ -1344,9 +1344,9 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'meryn-trant', tint: 'ice' },
     },
-    // Show: "Blackwater" (episode 19), Joffrey leaves him and Ser Mandon to fight
-    // beside Tyrion. Books: Eddard VIII (site chapter 34), at the small council in
-    // his white cloak.
+    // Show: "Blackwater" (episode 19), Joffrey leaves the wall and orders him
+    // and Ser Mandon, by name, to fight beside Tyrion. Books: Eddard VIII
+    // (site chapter 34), at the small council in his white cloak.
     {
       id: 'boros-blount',
       kind: 'character',
@@ -1359,9 +1359,10 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'boros-blount', tint: 'sand' },
     },
-    // Show: "Blackwater" (episode 19), he reports to Cersei and is sent to fight
-    // beside Tyrion. Books: Sansa IV (site chapter 52), he guards the council
-    // chamber doors and walks Sansa back.
+    // Show: "Blackwater" (episode 19), he reports to Cersei, and Joffrey orders
+    // him and Ser Boros, by name, to fight beside Tyrion. Books: Sansa IV
+    // (site chapter 52), he guards the council chamber doors and walks Sansa
+    // back.
     {
       id: 'mandon-moore',
       kind: 'character',
@@ -1405,12 +1406,12 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'lancel-lannister', tint: 'red' },
     },
-    // Show: "The North Remembers" (episode 11), he turns up drunk at Joffrey's
-    // nameday tourney and Sansa saves him. Books: Sansa V of A Game of Thrones
-    // (site chapter 58), drunk at Joffrey's court, Balon Swann warns him away
-    // from Sansa; she saves him only at the name-day tourney, in Sansa I of
-    // A Clash of Kings (site chapter 76). The summary and log hold at chapter
-    // 58, and the fool's role follows at 76 (#1424).
+    // Show: "The North Remembers" (episode 11), his bout is called at Joffrey's
+    // nameday tourney, he turns up drunk and Sansa saves him. Books: Sansa V
+    // of A Game of Thrones (site chapter 58), drunk at Joffrey's court, Balon
+    // Swann warns him away from Sansa; she saves him only at the name-day
+    // tourney, in Sansa I of A Clash of Kings (site chapter 76). The summary
+    // and log hold at chapter 58, and the fool's role follows at 76 (#1424).
     {
       id: 'dontos-hollard',
       kind: 'character',
@@ -1667,13 +1668,15 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'addam-marbrand', tint: 'ocher' },
     },
-    // Show: "The Night Lands" (episode 12), Tyrion's squire, he spills wine on
-    // Janos Slynt. Books: Tyrion VIII (site chapter 63), the squire Kevan gives
-    // Tyrion before the battle.
+    // Show: "Blackwater" (episode 19), Varys asks Tyrion whether he trusts
+    // Podrick, the first time the Game of Thrones Wiki has his name said; he
+    // is on screen unnamed from "The Night Lands" (episode 12), where he
+    // spills wine on Janos Slynt (#1457). Books: Tyrion VIII (site chapter
+    // 63), the squire Kevan gives Tyrion before the battle.
     {
       id: 'podrick-payne',
       kind: 'character',
-      revealedAtEpisode: 12,
+      revealedAtEpisode: 19,
       revealedAtChapter: 63,
       name: { it: 'Podrick Payne', en: 'Podrick Payne' },
       summary: {
@@ -1741,9 +1744,10 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'brynden-tully', tint: 'ice' },
     },
-    // Show: "Fire and Blood", one of Yoren's recruits who bully Arry. Books: A Clash
-    // of Kings, Arya I (site chapter 75), he tries to take Needle and Arya beats
-    // him.
+    // Show: "Fire and Blood" (episode 10), one of Yoren's recruits who bully
+    // Arry; another recruit tells her, "You'd better give Hot Pie the sword".
+    // Books: A Clash of Kings, Arya I (site chapter 75), he tries to take
+    // Needle and Arya beats him.
     {
       id: 'hot-pie',
       kind: 'character',
@@ -1756,13 +1760,17 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'hot-pie', tint: 'sand' },
     },
-    // Show: "Fire and Blood", one of Yoren's recruits who bully Arry. Books: A Clash
-    // of Kings, Arya I (site chapter 75), he calls Arya Lumpyhead and eggs Hot Pie
-    // on.
+    // Show: "Two Swords" (episode 31), Arya tells the Hound that Polliver
+    // killed Lommy, and he asks, "What the fuck's a Lommy?", the first line
+    // the Game of Thrones Wiki quotes with his name. He is on screen unnamed
+    // from "Fire and Blood" (episode 10), bullying Arry with Hot Pie, until
+    // he dies in "What Is Dead May Never Die" (episode 13), where Arya passes
+    // his body off as Gendry's (#1457). Books: A Clash of Kings, Arya I (site
+    // chapter 75), he calls Arya Lumpyhead and eggs Hot Pie on.
     {
       id: 'lommy',
       kind: 'character',
-      revealedAtEpisode: 10,
+      revealedAtEpisode: 31,
       revealedAtChapter: 75,
       name: { it: 'Lommy Maniverdi', en: 'Lommy Greenhands' },
       summary: {
@@ -1786,12 +1794,15 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'jaqen-hghar', tint: 'magenta' },
     },
-    // Show: "The Night Lands" (episode 12), he demands beer and threatens Arry
-    // from the cage. Books: A Clash of Kings, Arya II (site chapter 79), Jaqen
-    // introduces the noseless man.
+    // Book only (#1457). Books: A Clash of Kings, Arya II (site chapter 79),
+    // Jaqen introduces the noseless man; Arya I (chapter 75) shows him in the
+    // cage unnamed. The show never names him: the Game of Thrones Wiki has
+    // him only in narration and credits, in the cage in "The Night Lands"
+    // (episode 12), which orders him, and at his death in "Mockingbird".
     {
       id: 'rorge',
       kind: 'character',
+      source: 'chapter',
       revealedAtEpisode: 12,
       revealedAtChapter: 79,
       name: { it: 'Rorge', en: 'Rorge' },
@@ -1801,12 +1812,16 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'rorge', tint: 'acid' },
     },
-    // Show: "The Night Lands" (episode 12), he hisses behind Rorge in the cage.
-    // Books: A Clash of Kings, Arya II (site chapter 79), Jaqen explains the name
-    // by his filed teeth.
+    // Book only (#1457). Books: A Clash of Kings, Arya II (site chapter 79),
+    // Jaqen explains the name by his filed teeth; Arya I (chapter 75) shows
+    // him in the cage unnamed. The show never names him: the Game of Thrones
+    // Wiki has him only in narration and credits, hissing behind Rorge in
+    // "The Night Lands" (episode 12), which orders him, and at his death in
+    // "Mockingbird".
     {
       id: 'biter',
       kind: 'character',
+      source: 'chapter',
       revealedAtEpisode: 12,
       revealedAtChapter: 79,
       name: { it: 'Mordente', en: 'Biter' },
@@ -5482,8 +5497,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 19, chapter: 52, source: 'chapter', value: 'alive' },
-        // Drowned in the Blackwater: on screen in "Blackwater" (episode 19),
-        // his threshold, and confirmed by A Clash of Kings 67 (chapter 141).
+        // Killed in the battle: Podrick spears him in "Blackwater" (episode
+        // 19), his threshold, and A Clash of Kings 67, Tyrion XV (chapter
+        // 141), confirms the book's drowning in the Blackwater.
         { episode: 19, chapter: 141, value: 'deceased' },
       ],
       affiliation: [
@@ -5972,10 +5988,10 @@ export const season1: ThronesSaga = {
         it: 'È un ragazzo timido e di poche parole, assegnato a Tyrion Lannister come scudiero.',
         en: 'He is a shy boy of few words, given to Tyrion Lannister as his squire.',
       },
-      status: [{ episode: 12, chapter: 63, value: 'alive' }],
+      status: [{ episode: 19, chapter: 63, value: 'alive' }],
       affiliation: [
         {
-          episode: 12,
+          episode: 19,
           chapter: 63,
           value: {
             it: 'Casa Payne, al servizio di Casa Lannister',
@@ -6083,8 +6099,8 @@ export const season1: ThronesSaga = {
         en: 'Baker’s boy, Night’s Watch recruit',
       },
       log: {
-        it: 'Viaggia verso la Barriera con le reclute che Yoren porta ai Guardiani della notte. Lui e Lommy prendono di mira Arya, che viaggia travestita da ragazzo.',
-        en: 'He travels to the Wall with the recruits Yoren is taking to the Night’s Watch. He and Lommy pick on Arya, who is travelling disguised as a boy.',
+        it: 'Viaggia verso la Barriera con le reclute che Yoren porta ai Guardiani della notte. Lui e un’altra recluta prendono di mira Arya, che viaggia travestita da ragazzo.',
+        en: 'He travels to the Wall with the recruits Yoren is taking to the Night’s Watch. He and another recruit pick on Arya, who is travelling disguised as a boy.',
       },
       status: [{ episode: 10, chapter: 75, value: 'alive' }],
       affiliation: [
@@ -6096,8 +6112,6 @@ export const season1: ThronesSaga = {
       ],
     },
     'lommy': {
-      relationships: season1Relationships.lommy,
-      chronicle: season1Chronicles.lommy,
       role: {
         it: 'Apprendista tintore, recluta dei Guardiani della notte',
         en: 'Dyer’s apprentice, Night’s Watch recruit',
@@ -6107,12 +6121,16 @@ export const season1: ThronesSaga = {
         en: 'He travels to the Wall with Yoren’s recruits. He and Hot Pie mock Arya, who is passing as a boy.',
       },
       status: [
-        { episode: 10, chapter: 75, value: 'alive' },
-        { episode: 13, chapter: 93, value: 'deceased' },
+        { episode: 31, chapter: 75, source: 'chapter', value: 'alive' },
+        // Polliver kills him in "What Is Dead May Never Die" (episode 13),
+        // before the show names him, so the show record opens dead at its
+        // gate, episode 31; Raff kills him in Arya V of A Clash of Kings
+        // (chapter 93).
+        { episode: 31, chapter: 93, value: 'deceased' },
       ],
       affiliation: [
         {
-          episode: 10,
+          episode: 31,
           chapter: 75,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
         },
@@ -6147,7 +6165,9 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 12, chapter: 79, value: 'alive' },
-        { episode: 37, chapter: 263, value: 'deceased' },
+        // Brienne kills him in Brienne VII of A Feast for Crows (chapter
+        // 263). The record is the book's alone, so episode 37 only orders it.
+        { episode: 37, chapter: 263, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
@@ -6168,7 +6188,10 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 12, chapter: 79, value: 'alive' },
-        { episode: 37, chapter: 268, value: 'deceased' },
+        // Gendry kills him, told in Brienne VIII of A Feast for Crows
+        // (chapter 268). The record is the book's alone, so episode 37 only
+        // orders it.
+        { episode: 37, chapter: 268, source: 'chapter', value: 'deceased' },
       ],
       affiliation: [
         {
