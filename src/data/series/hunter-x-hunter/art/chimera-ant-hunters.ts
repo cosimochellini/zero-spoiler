@@ -286,7 +286,7 @@ export const CHIMERA_ANT_HUNTERS_DRAWINGS = {
     {
       d: SMOKE_RABBIT,
       role: 'ambient',
-      transform: 'translate(136 40) scale(1.5)',
+      transform: 'translate(136 46) scale(1.5)',
     },
   ],
   // Knuckle's white overcoat standing as if worn, the golden rings on it in

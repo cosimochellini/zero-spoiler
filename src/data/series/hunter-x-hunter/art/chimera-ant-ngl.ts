@@ -215,8 +215,8 @@ export const chimeraAntNglRedrawn: Redrawings = {
       chapter: 215,
       source: 'episode',
       value: [
-        ...moved(KURT_VEST, 'translate(-12 18) scale(0.82)'),
-        ...moved(softened(COLT_FLAG), 'translate(52 36) scale(0.72)'),
+        ...moved(KURT_VEST, 'translate(-12 31.5) scale(0.82)'),
+        ...moved(softened(COLT_FLAG), 'translate(52 56.6) scale(0.72)'),
         { d: 'M4 166 H156', role: 'ambient' },
         shadow(84, 172, 54),
       ],

@@ -721,6 +721,34 @@ const PHASE_TWO_STEPS: Step[] = [
     value: 'deceased',
   },
   {
+    id: 'kurt',
+    field: 'role',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'Fratello maggiore', en: 'Older brother' },
+  },
+  // Back as Colt, in the anime alone (#1326).
+  {
+    id: 'kurt',
+    field: 'role',
+    episode: 92,
+    chapter: 215,
+    only: 'episode',
+    value: {
+      it: 'Rinato come formichimera, chiamato Coluto',
+      en: 'Reborn as a Chimera Ant called Colt',
+    },
+  },
+  {
+    id: 'kurt',
+    field: 'status',
+    episode: 92,
+    chapter: 215,
+    only: 'episode',
+    value: 'alive',
+  },
+  {
     id: 'reina',
     field: 'affiliation',
     episode: 80,
@@ -1553,13 +1581,15 @@ describe('the first Chimera Ant redraw stages (#1326)', () => {
     expect(drawnAt('palm-siberia', at('chapter', 293), locale)).toStrictEqual(
       drawnAt('palm-siberia', at('episode', 124), locale),
     )
-    // Gyro's coat is the manga's alone; Kurt's return is the anime's alone.
+    // Gyro's coat is the manga's alone.
     expect(drawnAt('gyro', at('episode', 148), locale)).toStrictEqual(
       drawnAt('gyro', at('episode', 78), locale),
     )
-    expect(drawnAt('kurt', at('chapter', 215), locale)).toStrictEqual(
-      drawnAt('kurt', at('chapter', 214), locale),
-    )
+
+    // Kurt's record is the anime's alone: no manga reader opens it.
+    const mangaReader = readerFor(archive, at('chapter', 340), locale)
+
+    expect(opened('kurt', mangaReader)).toBe(false)
   })
 })
 
