@@ -3,8 +3,11 @@
 // not text that mentions one. Quotes are removed and never split, heredoc
 // bodies and comments are skipped, each `$(…)` or backquote is a command of
 // its own, and variables assigned earlier in the call are expanded. Where it
-// cannot be sure (a loop variable, `cd -`, `pushd`) a word or the directory
-// is unknown, never a wrong concrete value.
+// knows it cannot be sure (a loop variable, `cd -`, `pushd`) a word or the
+// directory is unknown. Known divergences that can still yield a wrong value:
+// a variable kept after `for`, `read` or `unset` changes it, `~user`,
+// combined `cd` options (`-PL`), a `cd` before `|` or `&` (a subshell in
+// Bash), and a line continuation in the middle of a word.
 // ponytail: a lexer, not a parser; `case` patterns, `bash -c "…"` and
 // aliases are misread. Swap in a real parser if a hook ever needs them.
 import path from 'node:path'
@@ -49,7 +52,7 @@ const CD_OPTIONS = new Set(['-P', '-L', '-e', '-@', '--'])
 
 // Each token the lexer knows and the method that handles it, tried in order.
 const DOLLAR = [
-  [/\$\(\(/uy, 'arithmetic'],
+  [/\$\(\(|(?<bracket>\$\[)/uy, 'arithmetic'],
   [/\$\(/uy, 'openSubstitution'],
   [/\$\{(?<braced>\w+)\}|\$(?<name>[A-Z_a-z]\w*)/uy, 'variable'],
   [/\$\{[^}]*\}|\$[\d!#$*?@-]/uy, 'opaque'],
@@ -69,17 +72,18 @@ const PLAIN = [
   [/\$'(?<text>(?:\\[\s\S]|[^'\\])*)'?/uy, 'ansi'],
   [/"/uy, 'openQuote'],
   ...DOLLAR,
-  [/<<</uy, 'read'],
+  [/[<>]\(/uy, 'openSubstitution'],
+  [/<<</uy, 'redirect'],
   [
     /<<(?<tabs>-?)[\t ]*(?:'(?<single>[^']*)'|"(?<double>[^"]*)"|\\?(?<bare>[^\s"&'();<>|-][^\s"&'();<>|]*))/uy,
     'heredoc',
   ],
   [/<<-?/uy, 'heredoc'],
-  [/<&|>&|</uy, 'read'],
-  [/&>>?|>>|>\||>/uy, 'write'],
+  [/<&|>&|<|(?<write>&>>?|>>|>\||>)/uy, 'redirect'],
   [/\n/uy, 'newline'],
   [/[\t ]+/uy, 'endWord'],
   [/&&|\|\||[&;|]/uy, 'endCommand'],
+  [/\(\(/uy, 'arithmetic'],
   [/\(/uy, 'openParen'],
   [/\)/uy, 'closeParen'],
   [/#/uy, 'hash'],
@@ -238,10 +242,14 @@ class Lexer {
     this.append('', false)
   }
 
-  /** `$((…))`: a number, never a command or a heredoc. */
-  arithmetic() {
-    const end = this.text.indexOf('))', this.i)
-    this.i = end === -1 ? this.text.length : end + 2
+  /**
+   * `$((…))`, `((…))` or `$[…]`: a number, never a command or a heredoc.
+   * @param {{ bracket?: string }} groups Which form it is.
+   */
+  arithmetic({ bracket }) {
+    const close = bracket === undefined ? '))' : ']'
+    const end = this.text.indexOf(close, this.i)
+    this.i = end === -1 ? this.text.length : end + close.length
     this.opaque()
   }
 
@@ -327,24 +335,14 @@ class Lexer {
     this.i = end === -1 ? this.text.length : end
   }
 
-  /** The next word is a file the command reads, or a descriptor. */
-  read() {
-    this.redirect('read')
-  }
-
-  /** The next word is a file the command writes. */
-  write() {
-    this.redirect('write')
-  }
-
-  /** @param {string} target What the next word is. */
-  redirect(target) {
+  /** @param {{ write?: string }} groups Whether the next word is a file the command writes, or one it reads or a descriptor. */
+  redirect({ write }) {
     const { top } = this
     if (top.word !== null && /^\d+$/u.test(top.word.text)) {
       top.word = null
     }
     this.endWord()
-    top.target = target
+    top.target = write === undefined ? 'read' : 'write'
   }
 
   /**

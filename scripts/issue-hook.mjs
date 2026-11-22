@@ -20,6 +20,32 @@ const GROUPS = ['type', 'area', 'status', 'priority', 'size']
 const KNOWN = new Set(labels.map((label) => label.name))
 
 const LABEL = new Set(['--label', '-l'])
+// The flags of `gh issue create` that take a value, except `--label`: a value
+// the hook cannot expand after one of these can't hold a label.
+const VALUE_FLAGS = new Set([
+  '-a',
+  '--assignee',
+  '--attach',
+  '--blocked-by',
+  '--blocking',
+  '-b',
+  '--body',
+  '-F',
+  '--body-file',
+  '-m',
+  '--milestone',
+  '--parent',
+  '-p',
+  '--project',
+  '--recover',
+  '-R',
+  '--repo',
+  '-T',
+  '--template',
+  '-t',
+  '--title',
+  '--type',
+])
 const BODY_FILE = new Set(['--body-file', '-F'])
 const HELP = new Set(['--help', '-h'])
 
@@ -61,6 +87,16 @@ function options(words) {
 }
 
 /**
+ * Whether the call itself holds the body: a device (`/dev/stdin`,
+ * `/dev/fd/3`) or a file the call writes.
+ * @param {string} where The body file.
+ * @param {(string | undefined)[]} writes The files the call writes.
+ * @returns {boolean} Whether to read the call instead of the file.
+ */
+const fromCall = (where, writes) =>
+  /^\/dev\//u.test(where) || writes.includes(where)
+
+/**
  * The text that holds the body: the whole call when it carries the body (an
  * inline `--body`, a heredoc, or the text written into a file this same call
  * creates, which wins over a stale copy on disk) or when the hook cannot
@@ -75,17 +111,29 @@ function options(words) {
 function bodyOf(file, cwd, call) {
   const where =
     file === undefined || file.text === '-' ? undefined : resolved(file, cwd)
-  if (
-    where === undefined
-    || call.writes.includes(where)
-    || call.writes.includes(undefined)
-  ) {
+  if (where === undefined || fromCall(where, call.writes)) {
     return call.text
   }
+  if (statSync(where, { throwIfNoEntry: false })?.isFile()) {
+    return readFileSync(where, 'utf8')
+  }
 
-  return statSync(where, { throwIfNoEntry: false })?.isFile() ?
-      readFileSync(where, 'utf8')
-    : undefined
+  return call.writes.includes(undefined) ? call.text : undefined
+}
+
+/**
+ * Whether a word the hook cannot expand may carry a label: a `--label` value,
+ * or a word that is no flag's value (`$ARGS`, `"$@"`).
+ * @param {Word[]} words The arguments of `gh issue create`.
+ * @returns {boolean} Whether the label checks must be skipped.
+ */
+function unsure(words) {
+  return words.some(
+    ({ exact, text }, index) =>
+      !exact
+      && !VALUE_FLAGS.has(text.split('=', 1)[0] ?? '')
+      && !VALUE_FLAGS.has(words[index - 1]?.text ?? ''),
+  )
 }
 
 /**
@@ -125,7 +173,7 @@ export function problems(given, body) {
 
 /**
  * Why one `gh issue create` is refused; asking for help creates none. Labels
- * held in a variable the hook cannot expand go unchecked.
+ * the hook cannot be sure of go unchecked.
  * @param {Word[]} words Its arguments.
  * @param {string | undefined} cwd The directory it runs in.
  * @param {{ text: string, writes: (string | undefined)[] }} call The whole
@@ -137,11 +185,9 @@ function refusals(words, cwd, call) {
   if (pairs.some(([flag]) => HELP.has(flag))) {
     return []
   }
-  const values = pairs
+  const given = pairs
     .filter(([flag]) => LABEL.has(flag))
-    .map(([, value]) => value ?? { text: '', exact: true })
-  const given = values
-    .flatMap(({ text }) => text.split(','))
+    .flatMap(([, value]) => (value?.text ?? '').split(','))
     .map((label) => label.trim())
     .filter((label) => label !== '')
   const file = pairs.findLast(([flag]) => BODY_FILE.has(flag))?.[1]
@@ -151,9 +197,7 @@ function refusals(words, cwd, call) {
       [`body file not found: ${resolved(file, cwd) ?? file.text}`]
     : []
 
-  return values.every(({ exact }) => exact) ?
-      [...missing, ...problems(given, body)]
-    : missing
+  return unsure(words) ? missing : [...missing, ...problems(given, body)]
 }
 
 /**

@@ -192,6 +192,47 @@ describe('the gh issue create hook', () => {
     expect(check('gh issue \\\n  create', '/')).toStrictEqual(NO_LABELS)
   })
 
+  it('weighs a write it cannot expand only when the body file is missing', () => {
+    expect(
+      check(`gh issue create -F body.md ${BLOCKED} 2>"$ERR"`, dir),
+    ).toStrictEqual([])
+    expect(
+      check(`echo x > "$OUT"; gh issue create -F gone.md ${LABELS}`, dir),
+    ).toStrictEqual([])
+  })
+
+  it('skips the label checks when a word it cannot expand may hold one', () => {
+    expect(check('gh issue create -t x $LBL', '/')).toStrictEqual([])
+    expect(check('gh issue create -t x "$@"', '/')).toStrictEqual([])
+    expect(check('gh issue create -t "$t" --title="$t"', '/')).toStrictEqual(
+      NO_LABELS,
+    )
+  })
+
+  it('reads (( … )) and $[ … ] as arithmetic', () => {
+    expect(check('(( n = 1 << 2 ))\ngh issue create\n2', '/')).toStrictEqual(
+      NO_LABELS,
+    )
+    expect(check('echo $[1 << 2]\ngh issue create\n2', '/')).toStrictEqual(
+      NO_LABELS,
+    )
+  })
+
+  it('reads a process substitution or a device as an unknown body', () => {
+    expect(check(`gh issue create -F <(cat x) ${LABELS}`, dir)).toStrictEqual(
+      [],
+    )
+    expect(check(`gh issue create -F <(cat x) ${BLOCKED}`, dir)).toStrictEqual([
+      UNBLOCKS,
+    ])
+    expect(
+      check(`gh issue create -F /dev/stdin ${LABELS} < body.md`, dir),
+    ).toStrictEqual([])
+    expect(check(`gh issue create -F /dev/fd/3 ${LABELS}`, dir)).toStrictEqual(
+      [],
+    )
+  })
+
   it('ends on unterminated input', () => {
     for (const command of [
       '',
