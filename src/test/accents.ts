@@ -353,7 +353,6 @@ export const ACCENT_EXCEPTIONS: Record<
   'hunter-x-hunter/republic-of-rokario@first': [2, OLD],
   'hunter-x-hunter/flutter@first': [2, OLD],
   'hunter-x-hunter/bihorn@first': [2, OLD],
-  'hunter-x-hunter/podungo-lapoy@first': [3, OLD],
   'hunter-x-hunter/shaiapouf@first': [2, OLD],
   'hunter-x-hunter/kenmi@first': [2, OLD],
   'hunter-x-hunter/ginta@first': [2, OLD],

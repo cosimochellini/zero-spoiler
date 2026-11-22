@@ -100,6 +100,26 @@ const QUEEN_BODY: Stroke[] = [
 ]
 const NEST_FLOOR: Stroke = { d: 'M6 158 H156', role: 'ambient' }
 
+/**
+ * Colt's white flag on its stick: the stick, its cap, the cloth in tint
+ * with its folds, the far side hatched, and the ties. Kurt's return as Colt
+ * draws it beside his vest.
+ */
+export const COLT_FLAG: Stroke[] = [
+  { d: 'M56 152 L66 24 M61 152 L71 25' },
+  { d: 'M66 24 Q68.5 19 71 25', role: 'soft' },
+  {
+    d: 'M70 30 C88 22 106 42 132 30 C130 48 134 66 140 82 C116 92 96 72 67 84',
+    role: 'accent',
+  },
+  { d: 'M88 30 Q94 52 88 80 M112 38 Q118 60 114 84', role: 'soft' },
+  {
+    d: 'M92 52 l5 -3 M92 64 l5 -3 M116 58 l5 -3 M116 70 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M69 34 l5 2 M66.8 76 l5 2', role: 'soft' },
+]
+
 /** The King, the Royal Guards and the Squadron Leaders closest to the Queen (#1021). */
 export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // The Queen in profile on the floor of her nest, her abdomen swollen with
@@ -202,18 +222,7 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // the Queen, the scene where Morel asks his name, chapter 214 / episode
   // 91–92. No wings or face of his.
   'colt': [
-    { d: 'M56 152 L66 24 M61 152 L71 25' },
-    { d: 'M66 24 Q68.5 19 71 25', role: 'soft' },
-    {
-      d: 'M70 30 C88 22 106 42 132 30 C130 48 134 66 140 82 C116 92 96 72 67 84',
-      role: 'accent',
-    },
-    { d: 'M88 30 Q94 52 88 80 M112 38 Q118 60 114 84', role: 'soft' },
-    {
-      d: 'M92 52 l5 -3 M92 64 l5 -3 M116 58 l5 -3 M116 70 l5 -3',
-      role: 'ambient',
-    },
-    { d: 'M69 34 l5 2 M66.8 76 l5 2', role: 'soft' },
+    ...COLT_FLAG,
     {
       d: 'M42 154 Q58 144 76 154 M36 154 l4 -3 l4 3 M80 154 l3 -2 l3 2',
       role: 'soft',
