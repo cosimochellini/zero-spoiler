@@ -721,6 +721,34 @@ const PHASE_TWO_STEPS: Step[] = [
     value: 'deceased',
   },
   {
+    id: 'kurt',
+    field: 'role',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'Fratello maggiore', en: 'Older brother' },
+  },
+  // Back as Colt, in the anime alone (#1326).
+  {
+    id: 'kurt',
+    field: 'role',
+    episode: 92,
+    chapter: 215,
+    only: 'episode',
+    value: {
+      it: 'Rinato come formichimera, chiamato Coluto',
+      en: 'Reborn as a Chimera Ant called Colt',
+    },
+  },
+  {
+    id: 'kurt',
+    field: 'status',
+    episode: 92,
+    chapter: 215,
+    only: 'episode',
+    value: 'alive',
+  },
+  {
     id: 'reina',
     field: 'affiliation',
     episode: 80,
@@ -1494,6 +1522,74 @@ describe('the palace’s damage drawing', () => {
       expect(read(gate)[id]).toBeDefined()
       expect(read(gate)).not.toStrictEqual(read(gate - 1))
     }
+  })
+})
+
+// The stages #1326 adds, each where its medium tells it: the drawing at the
+// gate differs from the one a unit before.
+const REDRAWN = [
+  { id: 'palm-siberia', unit: 'episode', gate: 94, change: 'crystal ball' },
+  { id: 'palm-siberia', unit: 'chapter', gate: 220, change: 'crystal ball' },
+  { id: 'palm-siberia', unit: 'episode', gate: 123, change: 'reborn' },
+  { id: 'palm-siberia', unit: 'episode', gate: 124, change: 'Black Widow' },
+  { id: 'palm-siberia', unit: 'chapter', gate: 293, change: 'Black Widow' },
+  { id: 'knuckle-bine', unit: 'episode', gate: 90, change: 'A.P.R.' },
+  { id: 'knuckle-bine', unit: 'chapter', gate: 210, change: 'A.P.R.' },
+  { id: 'shoot-mcmahon', unit: 'episode', gate: 90, change: 'hands' },
+  { id: 'shoot-mcmahon', unit: 'chapter', gate: 211, change: 'hands' },
+  { id: 'gyro', unit: 'chapter', gate: 204, change: 'hooded coat' },
+  { id: 'kurt', unit: 'episode', gate: 92, change: 'back as Colt' },
+  {
+    id: 'republic-of-east-gorteau',
+    unit: 'episode',
+    gate: 117,
+    change: 'broken tower',
+  },
+  {
+    id: 'republic-of-east-gorteau',
+    unit: 'chapter',
+    gate: 278,
+    change: 'broken tower',
+  },
+] as const
+
+/** A record's drawing as a reader at the bookmark sees it. */
+function drawnAt(
+  id: string,
+  bookmark: Bookmark,
+  locale: Locale,
+): ReturnType<typeof drawingsFor>[string] | undefined {
+  return drawingsFor([id], readerFor(archive, bookmark, locale))[id]
+}
+
+describe('the first Chimera Ant redraw stages (#1326)', () => {
+  it.each(REDRAWN)(
+    'redraws $id at $unit $gate: $change',
+    ({ id, unit, gate }) => {
+      for (const locale of LOCALES) {
+        expect(drawnAt(id, at(unit, gate), locale)).toBeDefined()
+        expect(drawnAt(id, at(unit, gate), locale)).not.toStrictEqual(
+          drawnAt(id, at(unit, gate - 1), locale),
+        )
+      }
+    },
+  )
+
+  it.each(LOCALES)('keeps each stage to its medium in %s', (locale) => {
+    // Chapter 293 shows the rebirth and Black Widow both: it reads Black
+    // Widow, as episode 124 does.
+    expect(drawnAt('palm-siberia', at('chapter', 293), locale)).toStrictEqual(
+      drawnAt('palm-siberia', at('episode', 124), locale),
+    )
+    // Gyro's coat is the manga's alone.
+    expect(drawnAt('gyro', at('episode', 148), locale)).toStrictEqual(
+      drawnAt('gyro', at('episode', 78), locale),
+    )
+
+    // Kurt's record is the anime's alone: no manga reader opens it.
+    const mangaReader = readerFor(archive, at('chapter', 340), locale)
+
+    expect(opened('kurt', mangaReader)).toBe(false)
   })
 })
 

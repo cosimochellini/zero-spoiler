@@ -462,7 +462,7 @@ describe.each(LOADED_SERIES)(
     })
 
     it('allows only confirmed reincarnations after death', () => {
-      // Reina and Kite return as Chimera Ants. Each retains the earlier death
+      // Reina, Kurt and Kite return as Chimera Ants. Each retains the earlier death
       // and starts a new life only when the story identifies the reincarnation.
       // Catelyn Stark returns as Lady Stoneheart in the books alone (#1285).
       const rebirths: Record<
@@ -476,6 +476,9 @@ describe.each(LOADED_SERIES)(
         },
         'hunter-x-hunter': {
           kite: { chapter: 316, episode: 136 },
+          // Colt remembers his mother and sister as Kurt in the anime alone
+          // (#1326).
+          kurt: { chapter: 215, episode: 92, source: 'episode' },
           reina: { chapter: 315, episode: 136 },
         },
       }
