@@ -7,6 +7,8 @@ import {
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
+import { NEN_NEEDLE } from './arena-abilities'
+
 /**
  * Baise's lipstick standing open: both her drawings keep it, and so does
  * Instant Lover's.
@@ -191,18 +193,25 @@ export const UVOGIN_VEST: Stroke[] = [
   },
 ]
 
-/** Rabid Dog's high-necked shirt, the neck in tint. */
+/**
+ * Rabid Dog's long-sleeved shirt in 3/4, its high neck a tube seen from a
+ * little above, in tint, the far sleeve turning away and the far side
+ * hatched.
+ */
 const RABID_DOG_SHIRT: Stroke[] = [
-  { d: 'M64 38 C64 30 96 30 96 38 V50 C96 56 64 56 64 50 Z', role: 'accent' },
-  { d: 'M64 42 C70 46 90 46 96 42', role: 'soft' },
   {
-    d: 'M64 48 L38 58 L28 134 M42 138 L50 88 L50 170 H110 L110 88 L118 138 M132 134 L122 58 L96 48',
+    d: `${ellipse(80, 28, 14, 4.5)} M66 28 V46 C70 52 90 52 94 46 V28`,
+    role: 'accent',
   },
-  { d: 'M28 134 A7 3 12 1 0 42 138 A7 3 12 1 0 28 134', role: 'soft' },
-  { d: 'M132 134 A7 3 -12 1 1 118 138 A7 3 -12 1 1 132 134', role: 'soft' },
-  { d: 'M40 80 l5 10 M120 80 l-5 10 M70 120 Q72 146 68 168', role: 'soft' },
+  { d: 'M66 36 C70 41 90 41 94 36', role: 'soft' },
   {
-    d: 'M96 82 l8 -6 M96 104 l8 -6 M96 126 l8 -6 M96 148 l8 -6',
+    d: 'M66 46 L40 56 L28 130 M42 134 L50 90 L50 172 H106 L106 90 L110 126 M120 124 L112 56 L94 46',
+  },
+  { d: 'M28 130 A7 3 12 1 0 42 134 A7 3 12 1 0 28 130', role: 'soft' },
+  { d: 'M120 124 A5 2.5 -12 1 1 110 126 A5 2.5 -12 1 1 120 124', role: 'soft' },
+  { d: 'M94 52 V172 M38 82 l5 10 M68 120 Q70 146 66 168', role: 'soft' },
+  {
+    d: 'M96 92 l8 -6 M96 114 l8 -6 M96 136 l8 -6 M96 158 l8 -6 M112 72 l4 -3 M113 90 l4 -3 M114 108 l4 -3',
     role: 'ambient',
   },
 ]
@@ -224,26 +233,139 @@ const WORM_MOUND: Stroke[] = [
   { d: 'M112 112 l6 -3 M124 122 l6 -3 M134 134 l6 -3', role: 'ambient' },
 ]
 
-/** Pakunoda's long suit jacket, cut low, the lapels in tint. */
+/**
+ * Pakunoda's long suit jacket in 3/4, cut low, the lapels in tint, the far
+ * sleeve turning away and the far side hatched.
+ */
 const PAKUNODA_JACKET: Stroke[] = [
   {
-    d: 'M64 36 L40 46 L30 128 M44 132 L50 84 L50 172 H110 L110 84 L116 132 M130 128 L120 46 L96 36',
+    d: 'M66 36 L40 46 L28 128 M42 132 L48 86 C44 120 46 150 50 172 H108 C110 150 110 120 106 86 L108 120 M118 118 L112 46 L94 36',
   },
   {
-    d: 'M64 36 L80 96 L96 36 M64 36 L72 74 L80 96 M96 36 L88 74 L80 96',
+    d: 'M66 36 L78 100 L94 36 M66 36 L72 70 L78 100 M94 36 L86 70 L78 100',
     role: 'accent',
   },
-  { d: 'M30 128 A7 3 12 1 0 44 132 A7 3 12 1 0 30 128', role: 'soft' },
-  { d: 'M130 128 A7 3 -12 1 1 116 132 A7 3 -12 1 1 130 128', role: 'soft' },
+  { d: 'M28 128 A7 3 12 1 0 42 132 A7 3 12 1 0 28 128', role: 'soft' },
+  { d: 'M118 118 A5 2.5 -12 1 1 108 120 A5 2.5 -12 1 1 118 118', role: 'soft' },
   {
-    d: `M80 96 V172 ${dots([
+    d: `M78 100 C82 126 84 150 82 172 ${dots([
       [76, 118],
-      [76, 138],
+      [77, 138],
     ])}`,
     role: 'soft',
   },
-  { d: 'M40 76 l5 9 M120 76 l-5 9', role: 'soft' },
-  { d: 'M96 110 l8 -6 M96 132 l8 -6 M96 154 l8 -6', role: 'ambient' },
+  { d: 'M38 78 l5 9 M62 130 Q64 150 60 170', role: 'soft' },
+  {
+    d: 'M94 104 l8 -6 M96 126 l8 -6 M97 148 l8 -6 M109 64 l4 -3 M110 82 l4 -3 M111 100 l4 -3',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Open rings of aura round the jacket's near cuff, where her hand reads a
+ * memory by touch: her first Hatsu has no object of its own, so it is
+ * drawn as open lines, never the accent.
+ */
+const PAKUNODA_READING: Stroke = {
+  d: 'M24 140 A12 12 0 0 0 46 140 M18 144 A18 18 0 0 0 52 144 M12 148 A24 24 0 0 0 58 148',
+  role: 'ambient',
+}
+
+/**
+ * Pakunoda's six-shot revolver from the side in 3/4, the cylinder's face
+ * turned to the reader with its chambers and the grip's far side hatched:
+ * Memory Bomb and both her later stages draw it.
+ */
+export const PAKUNODA_REVOLVER: Stroke[] = [
+  {
+    d: 'M64 80 H52 L46 84 L40 78 L36 80 L42 90 L48 100 H64 M48 100 L36 146 Q35 152 41 152 H52 Q57 152 58 147 L64 104',
+  },
+  { d: 'M64 80 H90 V104 H64 Z M95 86 H126 V95 H95 M120 86 V82 H124 V86' },
+  { d: 'M64 88 H90 M64 96 H90', role: 'soft' },
+  {
+    d: `${ellipse(91, 92, 5, 12)} ${dots([
+      [91, 84],
+      [93.5, 88],
+      [93.5, 96],
+      [91, 100],
+      [88.5, 96],
+      [88.5, 88],
+    ])} ${ellipse(126, 90.5, 2, 4.5)}`,
+    role: 'soft',
+  },
+  {
+    d: 'M64 104 C64 118 82 118 84 104 M70 104 C70 110 72 112 74 112',
+    role: 'soft',
+  },
+  { d: 'M44 116 l8 -4 M42 128 l8 -4 M40 140 l8 -4', role: 'ambient' },
+]
+
+/** A conjured Memory Bomb in tint, leaving the revolver's muzzle. */
+export const MEMORY_BOMB_SHOT: Stroke[] = [
+  {
+    d: 'M132 86 H144 C150 86 154 90.5 154 90.5 C154 90.5 150 95 144 95 H132 Z',
+    role: 'accent',
+  },
+  { d: 'M130 80 l4 -4 M130 101 l4 4', role: 'ambient' },
+]
+
+/**
+ * The open mouth of Kortopi's vase seen from above and the round of its
+ * foot: the vase's depth, kept apart so a copy in tint stays one stroke.
+ */
+const VASE_DEPTH: Stroke = {
+  d: `${ellipse(48, 66.6, 6.5, 1.7)} M38 150 C42 154 54 154 58 150`,
+  role: 'soft',
+}
+
+/**
+ * One of Bonolenov's boxing gloves lying on its side, its thumb and cuff:
+ * his first drawing and his Battle Cantabile stage keep it.
+ */
+export const BONOLENOV_GLOVE: Stroke[] = [
+  {
+    d: 'M18 154 C18 144 28 140 40 140 C54 140 60 150 60 160 C60 170 54 176 40 176 C28 176 18 172 18 166 Z M18 152 H6 V170 H18',
+    role: 'soft',
+  },
+  { d: 'M30 166 C26 158 32 152 40 154', role: 'soft' },
+]
+
+/** The canister of Blinky, the vacuum cleaner Shizuku conjures, in 3/4. */
+export const BLINKY_CANISTER: Stroke[] = [
+  { d: 'M28 152 V112 C28 92 44 84 64 84 C84 84 100 92 100 112 V152 Z' },
+  { d: 'M56 85 C62 77 70 74 78 74 C98 74 114 82 114 102 V142 L100 152' },
+  { d: 'M100 112 L114 102', role: 'soft' },
+]
+
+/**
+ * Blinky's side hatched, its hose curling to the nozzle on the floor and
+ * the air drawn in by it. Blinky's own drawing puts a face on the canister;
+ * Shizuku's stage leaves it out.
+ */
+export const BLINKY_HOSE: Stroke[] = [
+  { d: 'M104 140 l7 -6 M104 126 l7 -6 M104 112 l7 -6', role: 'ambient' },
+  {
+    d: 'M92 76 C100 48 138 40 144 68 C148 88 140 116 140 140 M100 80 C106 60 132 54 136 72 C140 90 132 116 132 140',
+  },
+  { d: 'M124 140 H148 L154 154 H120 Z' },
+  { d: 'M104 156 h10 M108 150 h8 M106 162 h10', role: 'ambient' },
+]
+
+/**
+ * Shizuku's black-framed glasses folded and standing in 3/4, the frames in
+ * tint, the folded arms crossing behind the clear lenses.
+ */
+const SHIZUKU_GLASSES: Stroke[] = [
+  {
+    d: 'M34 96 Q34 86 44 86 H66 Q74 86 74 96 V108 Q74 118 64 118 H44 Q34 118 34 108 Z M88 92 Q88 84 95 84 H112 Q118 84 118 92 V104 Q118 112 111 112 H95 Q88 112 88 104 Z',
+    role: 'accent',
+  },
+  { d: 'M74 96 Q81 89 88 93' },
+  {
+    d: 'M34 94 L100 98 Q104 98 104 102 M118 90 L56 94 Q52 94 52 98',
+    role: 'soft',
+  },
+  { d: 'M40 112 l10 -10 M94 108 l8 -8', role: 'ambient' },
 ]
 
 /** One of the vases Kortopi copies, standing, its mouth seen from above. */
@@ -265,21 +387,46 @@ export const BASHO_BRUSH: Stroke[] = [
 ]
 
 /**
- * Owl's cloth knotted into a bundle, the two ends of its knot in tint: his
- * drawing and Fun Fun Cloth's keep it.
+ * Owl's cloth knotted into a bundle, seen in 3/4 a little from above: the
+ * knot on top with its two ends lying over in tint, the folds gathered up
+ * into it and the far side hatched. His drawing and Fun Fun Cloth's keep it.
  */
 export const OWL_BUNDLE: Stroke[] = [
-  { d: 'M28 150 C18 112 46 84 80 86 C114 84 142 112 132 150 Z' },
   {
-    d: 'M64 88 C58 70 52 60 58 52 C66 54 72 70 76 84 M96 88 C102 70 108 60 102 52 C94 54 88 70 84 84',
+    d: 'M24 146 C14 118 36 92 66 88 M94 88 C124 92 146 118 136 146 C120 158 40 158 24 146',
+  },
+  { d: ellipse(80, 86, 14, 7) },
+  {
+    d: 'M68 82 C58 74 44 74 34 84 C44 86 56 90 67 90 M92 82 C104 72 120 74 128 86 C118 88 104 90 93 90',
     role: 'accent',
   },
-  { d: ellipse(80, 88, 10, 5), role: 'soft' },
   {
-    d: 'M44 140 C50 120 62 106 76 100 M116 140 C110 120 98 106 86 100 M80 98 V146',
+    d: 'M70 92 C56 106 46 124 44 148 M80 93 V154 M90 92 C104 106 114 124 116 150 M66 90 C50 98 36 112 30 128',
     role: 'soft',
   },
-  { d: 'M104 110 l8 -6 M110 124 l8 -6 M114 138 l8 -6', role: 'ambient' },
+  {
+    d: 'M118 110 l8 -6 M122 124 l9 -7 M124 138 l9 -7 M110 98 l6 -5',
+    role: 'ambient',
+  },
+]
+
+/**
+ * The same cloth lying open and flat on the ground, the knot undone and
+ * its two ends loose in tint: Owl's presumed death for a chapter reader.
+ */
+const OWL_CLOTH_OPEN: Stroke[] = [
+  {
+    d: 'M12 164 C26 146 52 140 74 144 C96 138 130 142 150 158 C134 174 98 178 76 174 C50 178 26 174 12 164 Z',
+  },
+  {
+    d: 'M74 144 C70 132 60 126 46 128 C54 134 62 140 70 146 M98 141 C106 128 120 124 134 128 C124 134 114 140 106 143',
+    role: 'accent',
+  },
+  {
+    d: 'M34 166 C50 158 64 160 80 166 M94 156 C110 162 124 162 138 158 M60 152 C72 156 84 154 94 150',
+    role: 'soft',
+  },
+  { d: 'M110 170 l8 -5 M124 168 l8 -5 M136 164 l7 -5', role: 'ambient' },
 ]
 
 /**
@@ -627,44 +774,43 @@ export const YORKNEW_CITY_DRAWINGS = {
   // to look up the Nostrade family on the Hunter website, episode 46 /
   // chapter 79. The computer's shape is not checked against a frame.
   'shalnark': [...LAPTOP, shadow(84, 178, 60)],
-  // A mobile phone standing in 3/4, its blank screen in tint, the keys
-  // below and its side hatched: Light speaks to his daughter's bodyguards
-  // by phone, episode 46 / chapter 79. The phone's shape is not checked
-  // against a frame.
+  // A mobile phone standing in 3/4 and seen a little from above, its top
+  // and its side turned away, the side hatched, its blank screen in tint
+  // with the glare across it, the keys below: Light speaks to his
+  // daughter's bodyguards by phone, episode 46 / chapter 79. The wiki gives
+  // the phone no shape, so it has no antenna or hinge, and it is not
+  // checked against a frame.
   'light-nostrade': [
     {
-      d: 'M56 40 H100 Q106 40 106 46 V154 Q106 160 100 160 H56 Q50 160 50 154 V46 Q50 40 56 40 Z',
+      d: 'M54 50 H98 Q104 50 104 56 V160 Q104 166 98 166 H54 Q48 166 48 160 V56 Q48 50 54 50 Z',
     },
-    {
-      d: 'M106 46 L116 52 V158 Q116 164 110 164 H60 Q54 164 54 160',
-      role: 'soft',
-    },
-    { d: 'M58 54 H98 V96 H58 Z', role: 'accent' },
+    { d: 'M50 52 L64 40 H110 Q116 40 116 46 V152 L102 164 M102 52 L114 42' },
+    { d: 'M56 62 H96 V104 H56 Z', role: 'accent' },
+    { d: 'M62 98 L90 68 M72 100 L94 77', role: 'ambient' },
     {
       d: dots([
-        [66, 112],
-        [78, 112],
-        [90, 112],
-        [66, 124],
-        [78, 124],
-        [90, 124],
-        [66, 136],
-        [78, 136],
-        [90, 136],
+        [64, 120],
+        [76, 120],
+        [88, 120],
+        [64, 132],
+        [76, 132],
+        [88, 132],
+        [64, 144],
+        [76, 144],
+        [88, 144],
       ]),
     },
-    { d: 'M64 90 L92 60 M74 92 L96 68', role: 'ambient' },
     {
-      d: 'M110 70 l4 -3 M110 90 l4 -3 M110 110 l4 -3 M110 130 l4 -3 M110 150 l4 -3',
+      d: 'M107 68 l6 -5 M107 88 l6 -5 M107 108 l6 -5 M107 128 l6 -5 M107 148 l6 -5',
       role: 'ambient',
     },
-    shadow(84, 180, 40),
+    shadow(84, 180, 44),
   ],
-  // A large cloth knotted into a bundle, the two ends of its knot in tint,
-  // its folds and the far side hatched: Owl's Fun Fun Cloth wraps the
-  // Troupe's car, and he holds the tiny cloth with Nobunaga shrunk inside,
-  // episode 45 / chapter 77.
-  'owl': [...OWL_BUNDLE, shadow(80, 158, 56)],
+  // A large cloth knotted into a bundle in 3/4, the two ends of its knot
+  // lying over in tint, its folds gathered into the knot and the far side
+  // hatched: Owl's Fun Fun Cloth wraps the Troupe's car, and he holds the
+  // tiny cloth with Nobunaga shrunk inside, episode 45 / chapter 77.
+  'owl': [...OWL_BUNDLE, shadow(80, 162, 58)],
   // A mound of earth with the open mouth of a burrow, its rim in tint and
   // the inside hatched: Worm tunnels out of the ground and introduces
   // himself, episode 43 / chapter 75.
@@ -675,45 +821,57 @@ export const YORKNEW_CITY_DRAWINGS = {
     { d: 'M64 118 l4 4 M72 116 l4 5 M82 116 l3 6', role: 'ambient' },
     shadow(80, 158, 70),
   ],
-  // Rabid Dog's long-sleeved shirt with its high neck from the front, the
-  // neck in tint, the sleeves' folds and the far half hatched: one of the
-  // Shadow Beasts sent after the Troupe, episode 43 / chapter 75.
-  'rabid-dog': [...RABID_DOG_SHIRT, shadow(80, 186, 48)],
-  // A round mass bristling with needles, the outer needles in tint and the
-  // far side hatched: Porcupine's body hair turns into needles that catch
-  // Uvogin's fist, episode 44 / chapter 76.
+  // Rabid Dog's long-sleeved shirt in 3/4, its high neck a tube seen from
+  // a little above, in tint, the far sleeve turning away and the far side
+  // hatched: one of the Shadow Beasts sent after the Troupe, episode 43 /
+  // chapter 75. No face, so not his filed teeth.
+  'rabid-dog': [...RABID_DOG_SHIRT, shadow(78, 186, 48)],
+  // A round mass in 3/4 bristling with needles, the near row long and in
+  // tint, the far row shorter behind it, the far side hatched: Porcupine's
+  // body hair turns into needles that catch Uvogin's fist, episode 44 /
+  // chapter 76. No face and no fist.
   'porcupine': [
-    { d: 'M30 150 C30 112 52 92 80 92 C108 92 130 112 130 150' },
+    { d: 'M26 150 C26 112 50 90 80 90 C110 90 134 112 134 150' },
+    { d: 'M26 150 C40 160 120 160 134 150', role: 'soft' },
     {
-      d: 'M40 124 L20 108 M48 110 L34 86 M60 100 L52 72 M74 94 L72 62 M88 94 L94 62 M102 100 L114 74 M114 110 L132 90 M122 126 L144 114',
+      d: 'M32 132 L12 124 M38 116 L18 100 M48 104 L34 80 M62 95 L54 66 M80 90 V58 M98 95 L106 66 M112 104 L126 80 M122 116 L142 100 M128 132 L148 124',
       role: 'accent',
     },
     {
-      d: 'M46 140 L36 132 M60 132 L54 118 M74 126 L72 112 M88 126 L92 112 M102 132 L110 120 M114 142 L124 134',
+      d: 'M42 110 L32 92 M56 99 L48 78 M71 93 L67 70 M89 93 L93 70 M104 99 L112 78 M118 110 L128 92 M48 138 L42 126 M64 132 L60 118 M80 130 V116 M96 132 L100 118 M112 138 L118 126',
       role: 'soft',
     },
-    { d: 'M104 112 l6 -4 M112 126 l6 -4 M118 140 l6 -4', role: 'ambient' },
-    { d: 'M4 150 H156', role: 'ambient' },
-    shadow(80, 158, 58),
+    {
+      d: 'M104 120 l7 -5 M110 132 l7 -5 M116 144 l7 -5 M98 108 l6 -4',
+      role: 'ambient',
+    },
+    shadow(80, 166, 60),
   ],
-  // A spotted leech curled on the ground, the rings of its body drawn
-  // across it and its spots in tint: Leech fills Uvogin with his Spotted
-  // Leeches, episode 44 / chapter 76.
+  // One spotted leech on the ground, arched as it moves, its broad sucker
+  // at one end and the narrow head at the other, its rings soft, its spots
+  // in tint and its underside hatched: Leech fills Uvogin with his Spotted
+  // Leeches, episode 44 / chapter 76. No face, so not Leech himself.
   'leech': [
     {
-      d: 'M24 134 C22 106 60 88 94 96 C126 104 132 136 108 146 C86 154 70 136 84 126 C96 118 108 128 100 136',
+      d: 'M18 146 C16 102 46 72 74 72 C102 72 116 100 124 124 C128 136 136 144 148 146 M40 146 C40 116 56 94 74 94 C92 94 104 112 110 128 C114 138 122 146 134 148',
     },
-    { d: 'M24 134 C30 150 60 156 84 152', role: 'soft' },
     {
-      d: 'M44 106 C42 116 44 126 50 134 M62 98 C60 110 62 124 68 138 M80 96 C80 106 82 116 86 124 M104 100 C104 106 106 112 110 118',
+      d: `${ellipse(29, 146, 11, 4)} ${ellipse(141, 147, 7, 2.4)}`,
       role: 'soft',
     },
     {
-      d: `${circle(38, 120, 3)} ${circle(54, 110, 3)} ${circle(72, 104, 3)} ${circle(94, 106, 3)} ${circle(116, 120, 3)} ${circle(112, 136, 2.5)}`,
+      d: 'M20 122 L41 128 M32 94 L50 108 M54 77 L62 96 M80 72 L79 94 M102 84 L94 102 M116 104 L106 118 M124 126 L113 133',
+      role: 'soft',
+    },
+    {
+      d: `${circle(30, 106, 2.4)} ${circle(44, 86, 2.4)} ${circle(66, 75, 2.4)} ${circle(92, 77, 2.2)} ${circle(110, 94, 2)} ${circle(122, 116, 1.8)} ${circle(134, 138, 1.6)}`,
       role: 'accent',
     },
-    { d: 'M30 138 l4 -6 M44 146 l4 -6 M60 150 l4 -6', role: 'ambient' },
-    shadow(78, 170, 58),
+    {
+      d: 'M42 128 l6 -3 M48 108 l6 -2 M62 92 l6 -1 M90 92 l5 2 M100 106 l5 3 M108 124 l5 3',
+      role: 'ambient',
+    },
+    shadow(82, 154, 64),
   ],
   // A round-bellied vase with a narrow neck seen a little from above, its
   // mouth open, its foot ring, the band round its shoulder in tint and the
@@ -736,122 +894,147 @@ export const YORKNEW_CITY_DRAWINGS = {
     { d: 'M104 110 l8 -6 M108 126 l8 -6 M104 142 l8 -6', role: 'ambient' },
     shadow(80, 176, 44),
   ],
-  // Pakunoda's long dark suit jacket from the front, cut low, its lapels
-  // in tint, the sleeves' folds and the far half hatched: she corners Gon
-  // and Killua with Phinks, episode 49 / chapter 90. No gun, which comes
-  // later.
-  'pakunoda': [...PAKUNODA_JACKET, shadow(80, 186, 48)],
-  // Zenji's small round sunglasses seen from the front, the lenses in tint
-  // and hatched dark, the arms folded back: he wears them at the
-  // assassins' meeting, episode 51 / chapter 95. Front on, unlike
-  // Shizuku's folded frames. No face behind them.
+  // Pakunoda's long dark suit jacket in 3/4, cut low, its lapels in tint,
+  // the far sleeve turning away and the far side hatched: she corners Gon
+  // and Killua with Phinks, episode 49 / chapter 90. No gun and no aura,
+  // which come later.
+  'pakunoda': [...PAKUNODA_JACKET, shadow(78, 186, 48)],
+  // Zenji's small round sunglasses in 3/4, standing open on a table, the
+  // far lens foreshortened, the lenses in tint and hatched dark, both arms
+  // reaching back: he wears them at the assassins' meeting, episode 51 /
+  // chapter 95. Round and dark, unlike Shizuku's folded black frames. No
+  // face behind them.
   'zenji': [
     {
-      d: `${ellipse(56, 96, 18, 18)} ${ellipse(104, 96, 18, 18)}`,
+      d: `${ellipse(56, 104, 18, 17)} ${ellipse(108, 98, 11, 15)}`,
       role: 'accent',
     },
-    { d: 'M74 94 C78 88 82 88 86 94' },
-    { d: 'M38 92 L26 88 L30 112 M122 92 L134 88 L130 112' },
+    { d: 'M74 102 C82 94 90 94 97 98' },
+    { d: 'M38 100 L84 74 Q90 71 92 77 M119 96 L146 80 Q151 77 152 83' },
     {
-      d: 'M46 104 l14 -14 M50 110 l14 -14 M94 104 l14 -14 M98 110 l14 -14',
+      d: 'M44 114 l20 -20 M50 120 l16 -16 M46 102 l10 -10 M101 108 l12 -14 M104 113 l9 -10',
       role: 'ambient',
     },
-    shadow(80, 126, 50),
+    shadow(82, 132, 52),
   ],
-  // Two identical vases standing side by side, the second, the copy, in
-  // tint, their far sides hatched: Kortopi makes exact copies of the
-  // auction items, a porcelain vase among them, episode 53 / chapter 100.
+  // Two identical porcelain vases standing side by side, their mouths
+  // open and seen from above, the round of each foot and the far side of
+  // each hatched, the second, the copy, in tint: Kortopi makes exact
+  // copies of the auction items, a porcelain vase among them, episode 53 /
+  // chapter 100. The vase is Gallery Fake's own.
   'kortopi': [
     ...KORTOPI_VASE,
     ...moved(
       KORTOPI_VASE.map((stroke) => ({ ...stroke, role: 'accent' as const })),
       'translate(64 0)',
     ),
+    VASE_DEPTH,
+    { ...VASE_DEPTH, transform: 'translate(64 0)' },
     {
       d: 'M30 100 C42 106 54 106 66 100 M94 100 C106 106 118 106 130 100',
       role: 'soft',
     },
     {
-      d: 'M58 116 l6 -4 M58 132 l6 -4 M122 116 l6 -4 M122 132 l6 -4',
+      d: 'M56 86 l6 -4 M60 104 l6 -4 M60 120 l7 -5 M59 136 l6 -4 M120 86 l6 -4 M124 104 l6 -4 M124 120 l7 -5 M123 136 l6 -4',
       role: 'ambient',
     },
-    { d: 'M4 150 H156', role: 'ambient' },
-    shadow(80, 158, 66),
+    shadow(80, 160, 66),
   ],
-  // A roll of bandage on its side, its turns drawn round the core, the
-  // loose end in tint unwinding down onto the floor, the far side
-  // hatched: Bonolenov, covered in bandages, named when the Troupe splits
-  // into groups, episode 55 / chapter 108.
+  // A roll of bandage lying on its side in 3/4, its turns drawn round the
+  // core on the near face, the loose end in tint unwinding down onto the
+  // floor, the underside hatched, and one of his boxing gloves beside it:
+  // Bonolenov, covered in bandages, named when the Troupe splits into
+  // groups, episode 55 / chapter 108.
   'bonolenov': [
+    { d: ellipse(56, 104, 22, 30) },
+    { d: ellipse(56, 104, 15.5, 21), role: 'soft' },
+    { d: ellipse(56, 104, 7, 10) },
     {
-      d: 'M38 110 C38 86 50 74 64 74 C78 74 90 86 90 110 C90 134 78 146 64 146 C50 146 38 134 38 110 Z',
-    },
-    { d: ellipse(64, 110, 10, 14), role: 'soft' },
-    {
-      d: 'M44 92 C52 84 60 82 66 82 M42 126 C48 136 56 140 64 140 M46 104 C52 96 60 94 66 94',
-      role: 'soft',
+      d: 'M56 74 L96 66 C106 66 116 80 116 96 C116 112 106 126 96 126 L56 134',
     },
     {
-      d: 'M88 118 C100 124 104 138 98 150 C94 160 110 164 142 158 L144 166 C108 174 82 168 86 150 C90 138 88 128 82 124',
+      d: 'M98 125 C106 136 106 148 98 156 C94 162 108 166 142 160 L144 168 C104 176 82 168 90 152 C96 144 96 134 92 127',
       role: 'accent',
     },
-    { d: 'M76 84 l6 -4 M82 100 l6 -4 M82 118 l6 -4', role: 'ambient' },
-    shadow(84, 172, 62),
+    {
+      d: 'M68 129 l6 -5 M80 127 l6 -5 M92 124 l6 -5 M106 116 l6 -5',
+      role: 'ambient',
+    },
+    ...BONOLENOV_GLOVE,
+    shadow(82, 180, 66),
   ],
-  // Eliza's dark kimono from the front, its long sleeves hanging, the
-  // collar crossed wearer's left over right, a 'y' seen from the front, the
-  // obi in tint and the far half hatched: she always wears one, and is
-  // named in Squala's memories, episode 56 / chapter 112. No face.
+  // Eliza's dark kimono in 3/4, its near sleeve hanging long and the far
+  // one swinging back, the collar crossed wearer's left over right, the
+  // obi round the waist in tint, the far side hatched: she always wears
+  // one, and is named in Squala's memories, episode 56 / chapter 112. No
+  // face, and no bow on the obi, which the wiki does not give.
   'eliza': [
     {
-      d: 'M66 34 L40 44 L16 54 V124 Q16 132 24 132 H44 L48 172 H112 L116 132 H136 Q144 132 144 124 V54 L120 44 L94 34',
+      d: 'M64 34 L40 44 L14 52 V122 Q14 130 22 130 H42 L46 174 H108 L110 128 L122 126 Q132 122 133 112 L134 56 L114 44 L94 34',
     },
-    { d: 'M94 34 L64 112 M66 34 L80 70', role: 'soft' },
-    { d: 'M66 34 Q80 40 94 34', role: 'soft' },
-    { d: 'M46 108 H114 V128 H46 Z', role: 'accent' },
-    { d: 'M44 132 V80 M116 132 V80 M22 64 V120', role: 'soft' },
+    { d: 'M94 34 L64 110 M64 34 L77 70', role: 'soft' },
+    { d: 'M64 34 Q79 40 94 34', role: 'soft' },
     {
-      d: 'M100 136 l8 -6 M100 152 l8 -6 M100 166 l8 -6 M102 60 l8 -6 M104 80 l8 -6 M124 64 l8 -6 M126 84 l8 -6 M128 100 l8 -6',
-      role: 'ambient',
-    },
-    shadow(80, 184, 50),
-  ],
-  // Chrollo's long coat from the front, open, its fur collar and cuffs in
-  // tint, the folds of the sleeves and the far half hatched: the leader of
-  // the Troupe at its gathering, episode 54 / chapter 71. No mark on its
-  // back, and nothing of the looks he takes later in the arc.
-  'chrollo': [
-    {
-      d: 'M58 40 L36 52 L26 132 M42 136 L48 84 L46 176 H74 L78 60 M102 40 L124 52 L134 132 M118 136 L112 84 L114 176 H86 L82 60',
-    },
-    {
-      d: 'M58 40 C62 52 72 58 78 60 C74 46 66 38 58 40 Z M102 40 C98 52 88 58 82 60 C86 46 94 38 102 40 Z M26 132 C30 140 40 140 42 136 M134 132 C130 140 120 140 118 136',
+      d: 'M44 106 C64 111 92 110 110 104 V126 C92 132 64 133 44 128 Z',
       role: 'accent',
     },
-    { d: 'M60 46 c2 4 6 8 10 10 M100 46 c-2 4 -6 8 -10 10', role: 'soft' },
-    { d: 'M60 60 L62 170 M98 60 L96 170', role: 'soft' },
-    { d: 'M38 74 l5 10 M122 74 l-5 10 M56 120 Q58 146 56 170', role: 'soft' },
+    { d: 'M42 130 V80 M110 104 V82 M20 62 V118', role: 'soft' },
     {
-      d: 'M90 90 l8 -6 M92 116 l8 -6 M94 142 l8 -6 M92 166 l8 -6',
+      d: 'M96 140 l8 -6 M98 156 l8 -6 M98 170 l8 -6 M100 60 l8 -6 M102 80 l8 -6 M118 70 l8 -6 M120 88 l8 -6 M120 106 l8 -6',
       role: 'ambient',
     },
-    shadow(80, 188, 52),
+    shadow(78, 186, 50),
   ],
-  // The auction house's catalog, a big thick book lying closed, its pages
-  // in layers along two sides, the trim round its cover in tint and the
-  // dark cover hatched at the far corner: Gon, Killua and Leorio buy it
-  // there as their admission ticket, episode 48 / chapter 85. No words on
-  // the cover.
-  'southernpiece-auction-house': [
-    { d: 'M20 100 L96 82 L140 108 L64 128 Z' },
-    { d: 'M20 100 V130 L64 158 L140 138 V108' },
+  // Chrollo's long coat seen from the back in 3/4, its white fur collar
+  // and cuffs soft, the far side hatched, and on its back the St. Peter's
+  // Cross with two horns in tint, as a symbol: the leader of the Troupe at
+  // its gathering, episode 54 / chapter 71. The wiki gives the cross on
+  // the back; which scene first shows the back is not frame-checked.
+  'chrollo': [
     {
-      d: 'M24 108 L64 134 L136 115 M24 116 L64 142 L136 123 M24 124 L64 150 L136 131',
+      d: 'M58 44 L36 54 L26 134 M42 138 L48 86 L46 178 H110 L110 86 L114 132 M126 128 L118 54 L100 44',
+    },
+    {
+      d: 'M58 44 C58 36 70 33 79 34 C88 33 100 36 100 44 C92 50 66 50 58 44 Z M60 47 q3 3 6 1 q3 3 6 1 q3 3 6 1 q3 3 6 1 q3 3 6 1 q3 2 6 0',
       role: 'soft',
     },
-    { d: 'M32 100 L96 86 L128 106 L64 122 Z', role: 'accent' },
-    { d: 'M100 92 l7 -3 M110 98 l7 -3 M120 104 l6 -3', role: 'ambient' },
-    shadow(82, 174, 62),
+    {
+      d: 'M26 134 C24 142 40 145 42 138 M126 128 C126 136 114 137 114 132',
+      role: 'soft',
+    },
+    {
+      d: 'M76 64 H80 V92 H90 V96 H80 V110 H76 V96 H66 V92 H76 Z M76 64 C68 64 62 58 62 50 C66 56 72 58 77 59 M80 64 C88 64 94 58 94 50 C90 56 84 58 79 59',
+      role: 'accent',
+    },
+    { d: 'M78 120 V178 M36 78 l5 10 M58 130 Q60 154 56 176', role: 'soft' },
+    {
+      d: 'M98 74 l8 -6 M100 98 l8 -6 M100 122 l8 -6 M100 146 l8 -6 M100 168 l8 -6',
+      role: 'ambient',
+    },
+    shadow(78, 190, 50),
+  ],
+  // The auction house's catalog, a thick hardback lying closed in 3/4: its
+  // rounded spine, the page block between the covers, the light trim round
+  // its dark cover in tint and the far corner hatched, and beside it the
+  // admission card that comes with it: Gon, Killua and Leorio buy it there
+  // as their ticket in, episode 48 / chapter 85. No words on the cover.
+  'southernpiece-auction-house': [
+    { d: 'M22 98 L98 80 L142 104 L66 124 Z' },
+    {
+      d: 'M22 98 C12 106 12 124 22 132 L66 158 C58 150 58 132 66 124 M66 158 L142 138 V104',
+    },
+    {
+      d: 'M70 130 L138 112 M70 138 L138 120 M70 146 L138 128 M66 128 L142 108 M66 154 L142 134',
+      role: 'soft',
+    },
+    { d: 'M34 98 L98 84 L130 104 L66 119 Z', role: 'accent' },
+    { d: 'M18 110 L62 136 M18 122 L62 148', role: 'soft' },
+    {
+      d: 'M102 88 l7 -3 M112 94 l7 -3 M122 100 l6 -3 M106 96 l6 -2',
+      role: 'ambient',
+    },
+    { d: 'M108 162 L134 154 L148 163 L122 172 Z', role: 'soft' },
+    shadow(80, 178, 64),
   ],
   // A tall hotel seen from a corner, its rows of windows, the side hatched
   // and the doors of the lobby in tint: the Troupe waits in its lobby,
@@ -898,9 +1081,11 @@ export const YORKNEW_CITY_DRAWINGS = {
     shadow(80, 158, 62),
   ],
   // Machi's fingerless glove from the back, the finger ends open, with the
-  // pincushion on it in tint and three needles stuck in it: the Troupe
-  // member named on the way to the gathering, episode 41 / chapter 71. The
-  // wiki gives the pincushion on her gloves. No thread, which is her Nen.
+  // pincushion on it in tint and three needles stuck in it, and one more
+  // drawn out above, Nen Stitches' own needle, its thread running off in a
+  // loose curve: the Troupe member named on the way to the gathering,
+  // episode 41 / chapter 71, whose threads are filed from the same pair.
+  // The wiki gives the pincushion on her gloves.
   'machi': [
     {
       d: 'M52 166 L52 126 C46 114 46 100 52 90 L52 70 H64 L65 84 M74 82 L74 60 H86 L86 82 M95 84 L96 68 H108 L108 92 C114 104 112 118 106 128 L106 166 C94 172 64 172 52 166',
@@ -922,32 +1107,20 @@ export const YORKNEW_CITY_DRAWINGS = {
         [98, 86],
       ]),
     },
+    ...moved([{ ...NEN_NEEDLE, role: 'soft' }], 'translate(56 4) scale(0.62)'),
+    {
+      d: 'M122 40 C112 50 116 62 128 68 C142 76 150 92 140 108 C134 118 138 128 148 134',
+      role: 'soft',
+    },
     { d: 'M96 136 l8 -6 M96 150 l8 -6 M96 166 l8 -6', role: 'ambient' },
     shadow(80, 186, 40),
   ],
-  // Black-framed glasses folded on a table, seen low and from the side, the
-  // frames in tint and the folded arms behind them: Shizuku wears them when
-  // she takes on Gon at arm wrestling, episode 42 / chapter 72. No vacuum
+  // Shizuku's black-framed glasses folded and standing on a table in 3/4,
+  // the far lens foreshortened, the frames in tint, the folded arms seen
+  // through the clear lenses and a glint on each: she wears them when she
+  // takes on Gon at arm wrestling, episode 42 / chapter 72. No vacuum
   // cleaner, which she conjures later.
-  'shizuku': [
-    {
-      d: 'M34 150 C36 140 62 134 68 142 C72 152 40 158 34 150 Z M84 136 C88 126 114 120 118 128 C122 138 90 144 84 136 Z',
-      role: 'accent',
-    },
-    {
-      d: 'M38 149 C40 143 60 139 64 144 M88 135 C91 129 110 125 114 129',
-      role: 'soft',
-    },
-    { d: 'M68 142 Q74 134 84 136' },
-    {
-      d: 'M34 146 L40 140 L70 118 L126 104 L128 108 L74 122 M118 126 L124 120 L134 112 L140 98 L142 102 L136 116',
-    },
-    {
-      d: 'M44 156 l6 -4 M58 156 l6 -4 M96 142 l6 -4 M108 140 l6 -4',
-      role: 'ambient',
-    },
-    shadow(84, 170, 56),
-  ],
+  'shizuku': [...SHIZUKU_GLASSES, shadow(78, 132, 50)],
   // A fountain in a plaza with tall buildings behind, their sides turned
   // away hatched, the water in tint: Gon and Killua sell their way into
   // the night and reach a fountain in a crowded plaza, episode 41 /
@@ -1227,6 +1400,31 @@ export const yorknewCityRedrawn: Redrawings = {
       ],
     },
   ],
+  'porcupine': [
+    // The same mass sunk low on the ground, its needles fallen and lying
+    // scattered round it, the fallen ones in tint: episode 45 shows the
+    // Shadow Beasts killed. Chapter 76 kills him in the scene his record
+    // opens with, so a chapter reader meets him alive in the drawing until
+    // chapter 78 reports them all dead: the first pair both media hold.
+    {
+      episode: 45,
+      chapter: 78,
+      value: [
+        { d: 'M32 160 C36 146 56 140 80 140 C104 140 124 146 128 160' },
+        { d: 'M32 160 C46 168 114 168 128 160', role: 'soft' },
+        {
+          d: 'M10 170 l16 2 M22 182 l14 -4 M48 180 l12 5 M100 182 l14 -3 M120 176 l16 2 M134 166 l16 5 M64 186 l14 1',
+          role: 'accent',
+        },
+        {
+          d: 'M48 150 L42 156 M62 145 L58 152 M80 143 V150 M98 145 L102 152 M112 150 L118 156',
+          role: 'soft',
+        },
+        { d: 'M106 152 l7 -5 M114 158 l7 -5', role: 'ambient' },
+        { d: 'M4 190 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
   'worm': [
     // The same mound with the mouth of the burrow fallen in, no one in it:
     // episode 45 shows the Shadow Beasts killed. Chapter 78 reports them all
@@ -1252,6 +1450,48 @@ export const yorknewCityRedrawn: Redrawings = {
           role: 'soft',
         },
       ],
+    },
+  ],
+  'shizuku': [
+    // The same glasses made smaller in front, the frames still in tint, and
+    // behind them Blinky, the vacuum cleaner she conjures, with its hose and
+    // nozzle, shared with the ability but with no face on it: she cleans up
+    // the auction hall with it, episode 43 / chapter 73.
+    {
+      episode: 43,
+      chapter: 73,
+      value: [
+        ...moved(
+          [...BLINKY_CANISTER, ...BLINKY_HOSE],
+          'translate(30 -4) scale(0.8)',
+        ),
+        ...moved(SHIZUKU_GLASSES, 'translate(-4 96) scale(0.6)'),
+        shadow(84, 176, 64),
+      ],
+    },
+  ],
+  'owl': [
+    // The same cloth lying open and flat on the ground, the knot undone and
+    // its two ends loose in tint: chapter 78 reports the Shadow Beasts all
+    // dead, so a chapter reader holds him presumed dead from here, as Worm
+    // (owner, 2026-10-10). Episode 45 shows him held instead, so this stage
+    // and the next are the manga's alone.
+    {
+      episode: 148,
+      chapter: 78,
+      source: 'chapter',
+      value: [
+        ...OWL_CLOTH_OPEN,
+        { d: 'M4 184 H156', role: 'ambient', dashed: true },
+      ],
+    },
+    // His first drawing again: chapter 84 shows him alive, held at the
+    // Troupe's hideout. Being held is a state, so the bundle is unchanged.
+    {
+      episode: 148,
+      chapter: 84,
+      source: 'chapter',
+      value: YORKNEW_CITY_DRAWINGS.owl,
     },
   ],
   'uvogin': [
@@ -1291,9 +1531,37 @@ export const yorknewCityRedrawn: Redrawings = {
     },
   ],
   'pakunoda': [
-    // The same jacket laid flat on the floor, empty, and her six-shot
-    // revolver beside it: she fires her memories into the others and dies
-    // of the chain in her heart, episode 58 / chapter 119.
+    // The same jacket, with open rings of aura round its near cuff: her
+    // first Hatsu reads a memory by touch, and Killua works it out from her
+    // arm round his shoulders, episode 50 / chapter 92. The rings are the
+    // house's way to draw a power with no object.
+    {
+      episode: 50,
+      chapter: 92,
+      value: [...PAKUNODA_JACKET, PAKUNODA_READING, shadow(78, 186, 48)],
+    },
+    // The same jacket and rings made smaller, their lapels softened, and
+    // beside them her revolver with a conjured Memory Bomb in tint leaving
+    // the muzzle, shared with the ability: she shoots Squala's memories
+    // into Nobunaga, episode 56 / chapter 112.
+    {
+      episode: 56,
+      chapter: 112,
+      value: [
+        ...moved(
+          softened([...PAKUNODA_JACKET, PAKUNODA_READING]),
+          'translate(2 44) scale(0.6)',
+        ),
+        ...moved(
+          [...PAKUNODA_REVOLVER, ...MEMORY_BOMB_SHOT],
+          'translate(52 38) scale(0.66)',
+        ),
+        shadow(84, 170, 64),
+      ],
+    },
+    // The same jacket laid flat on the floor, empty, and her revolver lying
+    // beside it: she fires her memories into the others and dies of the
+    // chain in her heart, episode 58 / chapter 119. A death drops the aura.
     {
       episode: 58,
       chapter: 119,
@@ -1302,14 +1570,11 @@ export const yorknewCityRedrawn: Redrawings = {
           PAKUNODA_JACKET,
           'translate(66 153) rotate(-4) scale(1 0.4) translate(-80 -104)',
         ),
-        {
-          d: 'M138 164 H156 V169 H138 M124 160 H138 V172 H124 Z M124 162 L116 163 L108 179 L116 182 L122 172 H124',
-        },
-        {
-          d: 'M124 164 H138 M124 168 H138 M156 164 v-3 M126 172 C126 179 134 179 134 172',
-          role: 'soft',
-        },
-        { d: 'M4 182 H156', role: 'ambient', dashed: true },
+        ...moved(
+          PAKUNODA_REVOLVER,
+          'translate(100 128) rotate(-6) scale(0.42)',
+        ),
+        { d: 'M4 192 H156', role: 'ambient', dashed: true },
       ],
     },
   ],

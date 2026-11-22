@@ -5,19 +5,23 @@ import {
   softened,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 
 import {
   BASHO_BRUSH,
   BIG_BANG_IMPACT,
   BLACK_VOICE_ARCS,
+  BLINKY_CANISTER,
+  BLINKY_HOSE,
   KISS,
   KORTOPI_VASE,
   LIPSTICK,
   MACHINE_GUN_HAND,
+  MEMORY_BOMB_SHOT,
   NEON_PEN,
   NEON_SHEETS,
   OWL_BUNDLE,
+  PAKUNODA_REVOLVER,
   SHALNARK_PHONE,
   TOCINO_ROBE,
   TOCINO_ROBE_OUTLINE,
@@ -122,6 +126,30 @@ const BONE_FISH: Stroke[] = [
   { d: 'M124 109 L144 94 L139 109 L144 124 Z', role: 'soft' },
 ]
 
+/**
+ * Bandit's Secret, the book of Chrollo's Skill Hunter, standing half open,
+ * its spine to the reader in tint, the page block's top and the far cover
+ * hatched. His own stages draw it beside his coat.
+ */
+export const BANDITS_SECRET: Stroke[] = [
+  { d: 'M76 56 L30 40 V150 L76 170' },
+  { d: 'M84 56 L128 42 V152 L84 170' },
+  {
+    d: 'M76 56 C76 50 84 50 84 56 V170 C84 176 76 176 76 170 Z',
+    role: 'accent',
+  },
+  { d: 'M36 46 Q80 30 122 46 M76 56 L36 46 M84 56 L122 46', role: 'soft' },
+  {
+    d: 'M48 46 L78 52 M60 42 L80 50 M100 42 L82 50 M112 44 L84 52',
+    role: 'ambient',
+  },
+  { d: 'M38 60 V140 M44 62 V142', role: 'soft' },
+  {
+    d: 'M94 66 l26 -8 M94 86 l26 -8 M94 106 l26 -8 M94 126 l26 -8 M94 146 l26 -8',
+    role: 'ambient',
+  },
+]
+
 export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // Three of the hooded figures in black who ambush the applicants, the
   // front one raising a sword with the guard in tint, each robe's far half
@@ -182,19 +210,12 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // by it. She cleans up the auction hall with it in episode 43 / chapter
   // 73. The canister's shape is not checked against a frame.
   'blinky': [
-    { d: 'M28 152 V112 C28 92 44 84 64 84 C84 84 100 92 100 112 V152 Z' },
-    { d: 'M56 85 C62 77 70 74 78 74 C98 74 114 82 114 102 V142 L100 152' },
-    { d: 'M100 112 L114 102', role: 'soft' },
+    ...BLINKY_CANISTER,
     {
       d: `${circle(50, 106, 8)} ${circle(52, 107, 3)} ${circle(78, 106, 8)} ${circle(80, 107, 3)} M40 126 C52 136 76 136 88 126 C80 144 48 144 40 126 Z`,
       role: 'accent',
     },
-    { d: 'M104 140 l7 -6 M104 126 l7 -6 M104 112 l7 -6', role: 'ambient' },
-    {
-      d: 'M92 76 C100 48 138 40 144 68 C148 88 140 116 140 140 M100 80 C106 60 132 54 136 72 C140 90 132 116 132 140',
-    },
-    { d: 'M124 140 H148 L154 154 H120 Z' },
-    { d: 'M104 156 h10 M108 150 h8 M106 162 h10', role: 'ambient' },
+    ...BLINKY_HOSE,
     shadow(70, 164, 46),
   ],
   // The chain wound round and round Uvogin's bearskin vest, its links drawn
@@ -244,25 +265,7 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // the front cover turned towards them, the page block's top and the far
   // cover hatched: Chrollo holds it as his Indoor Fish devour an assassin,
   // episode 51 / chapter 97. Nothing on the cover.
-  'skill-hunter': [
-    { d: 'M76 56 L30 40 V150 L76 170' },
-    { d: 'M84 56 L128 42 V152 L84 170' },
-    {
-      d: 'M76 56 C76 50 84 50 84 56 V170 C84 176 76 176 76 170 Z',
-      role: 'accent',
-    },
-    { d: 'M36 46 Q80 30 122 46 M76 56 L36 46 M84 56 L122 46', role: 'soft' },
-    {
-      d: 'M48 46 L78 52 M60 42 L80 50 M100 42 L82 50 M112 44 L84 52',
-      role: 'ambient',
-    },
-    { d: 'M38 60 V140 M44 62 V142', role: 'soft' },
-    {
-      d: 'M94 66 l26 -8 M94 86 l26 -8 M94 106 l26 -8 M94 126 l26 -8 M94 146 l26 -8',
-      role: 'ambient',
-    },
-    shadow(80, 184, 52),
-  ],
+  'skill-hunter': [...BANDITS_SECRET, shadow(80, 184, 52)],
   // A chair in 3/4 wrapped in flames in tint, its far side hatched, and
   // beside it Basho's brush lying on a blank strip of paper: the haiku he
   // writes makes the chair he punches catch fire, episode 40 / chapter 68.
@@ -465,32 +468,8 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // and a conjured bullet in tint leaving the muzzle: Memory Bomb shoots
   // Squala's memories into Nobunaga, episode 56 / chapter 112.
   'memory-bomb': [
-    {
-      d: 'M64 80 H52 L46 84 L40 78 L36 80 L42 90 L48 100 H64 M48 100 L36 146 Q35 152 41 152 H52 Q57 152 58 147 L64 104',
-    },
-    { d: 'M64 80 H90 V104 H64 Z M95 86 H126 V95 H95 M120 86 V82 H124 V86' },
-    { d: 'M64 88 H90 M64 96 H90', role: 'soft' },
-    {
-      d: `${ellipse(91, 92, 5, 12)} ${dots([
-        [91, 84],
-        [93.5, 88],
-        [93.5, 96],
-        [91, 100],
-        [88.5, 96],
-        [88.5, 88],
-      ])} ${ellipse(126, 90.5, 2, 4.5)}`,
-      role: 'soft',
-    },
-    {
-      d: 'M64 104 C64 118 82 118 84 104 M70 104 C70 110 72 112 74 112',
-      role: 'soft',
-    },
-    {
-      d: 'M132 86 H144 C150 86 154 90.5 154 90.5 C154 90.5 150 95 144 95 H132 Z',
-      role: 'accent',
-    },
-    { d: 'M130 80 l4 -4 M130 101 l4 4', role: 'ambient' },
-    { d: 'M44 116 l8 -4 M42 128 l8 -4 M40 140 l8 -4', role: 'ambient' },
+    ...PAKUNODA_REVOLVER,
+    ...MEMORY_BOMB_SHOT,
     shadow(80, 172, 50),
   ],
 }

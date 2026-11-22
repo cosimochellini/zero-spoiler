@@ -37032,6 +37032,16 @@
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425228",
       "contentSha256": "75f528ded37fd1f9a3149cf1f6e5f5c18132eb8bf65d7d9a767e4bc2e98ab464"
     },
+    "hxh-en-Southernpiece_Catalog-425352.json": {
+      "locale": "en",
+      "title": "Southernpiece Catalog",
+      "revision": 425352,
+      "revisionDate": "2026-08-29T19:05:13Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Southernpiece_Catalog",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425352",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425352",
+      "contentSha256": "2c0e41a1dc5f88fa032c2d447377de79aacd750996f775716651442d3ca3da95"
+    },
     "hxh-en-Blue_Planet-425306.json": {
       "locale": "en",
       "title": "Blue Planet",
