@@ -81,22 +81,19 @@ const WELFIN_MISSILEMAN: Stroke[] = [
 const WELFIN_SHADOW = shadow(74, 184, 50)
 
 /**
- * Flutter's wings folded together and lying flat: the hind wing and the
- * veins. His death and Ikalgo's disguise in his body both draw them, each
- * with its own fore wing.
+ * Flutter's wings folded together and lying flat: the fore wing, the hind
+ * wing under it and their veins. His death draws all three; Ikalgo's
+ * disguise in his body draws the two outlines alone, so they stay open at
+ * tile size over the rifle.
  */
-const FLUTTER_FOLDED_WINGS: Stroke[] = [
-  {
-    d: 'M20 140 C42 136 96 136 136 144 C142 148 136 152 128 151 C94 150 48 146 20 140 Z',
-  },
-  {
-    d: 'M22 139 C50 132 96 128 112 129 M22 141 C50 141 96 142 130 147 M56 132 L54 138 M84 129 L82 136 M64 141 L62 146 M96 143 L94 148',
-    role: 'soft',
-  },
-]
-/** The fore wing whole, as it lies over Ikalgo's rifle. */
 const FLUTTER_FORE_WING =
   'M20 140 C40 128 96 124 140 130 C146 134 142 138 134 138 C96 140 48 142 20 140 Z'
+const FLUTTER_HIND_WING =
+  'M20 140 C42 136 96 136 136 144 C142 148 136 152 128 151 C94 150 48 146 20 140 Z'
+const FLUTTER_WING_VEINS: Stroke = {
+  d: 'M22 139 C50 132 96 128 132 132 M22 141 C50 141 96 142 130 147 M56 132 L54 138 M84 129 L82 136 M64 141 L62 146 M96 143 L94 148',
+  role: 'soft',
+}
 
 /**
  * The branch Meleoron's tail hangs in front of, with its leafy twig and
@@ -122,6 +119,56 @@ const MELEORON_BRANCH: Stroke[] = [
 ]
 const MELEORON_TAIL = 'M60 4 C60 34 62 64 66 96 M76 4 C76 34 78 62 82 92'
 const MELEORON_SHADOW = shadow(84, 180, 32)
+
+/**
+ * Ikalgo's air rifle, the Fleadom, aimed up and to the right: barrel,
+ * muzzle, sight, trigger guard and stock, the stock's far side hatched.
+ * His first drawing and his disguise in Flutter's body both draw it.
+ */
+const IKALGO_RIFLE: Stroke[] = [
+  { d: 'M70.1 87.8 L124.9 46 M74.3 93.3 L129.1 51.5' },
+  { d: 'M124.9 46 A1.6 3 -37.3 1 1 129.1 51.5 A1.6 3 -37.3 1 1 124.9 46' },
+  { d: 'M114 54.4 L110.5 49.8 L114.1 47 L117.6 51.6', role: 'soft' },
+  { d: 'M74.3 93.3 L78.5 98.8 L111.4 73.7 Q115 70.9 110.8 65.4' },
+  {
+    d: 'M70.1 87.8 L50.8 96.7 L6.5 133.4 L23.9 156.3 C34.9 147.9 44.5 137.7 49 128.5 Q55.4 117.9 64.1 114.1 L78.5 98.8',
+  },
+  {
+    d: 'M65.2 111.8 Q73.3 118.6 79.9 112.1 Q82.2 107.5 75.5 102.5 M69.8 108.3 L74.2 112.2',
+    role: 'soft',
+  },
+  {
+    d: 'M16.9 135.6 Q31.1 127.7 42.5 116.1 M24.3 141.6 Q34.8 136.4 42.6 127.6 M85.5 89.1 L103.8 75.1',
+    role: 'soft',
+  },
+  {
+    d: 'M24.6 145.7 L31 146.6 M31.9 140.1 L38.3 141 M39.2 134.5 L45.6 135.4 M85.2 84.9 L91.7 85.8 M96.2 76.6 L102.7 77.4',
+    role: 'ambient',
+  },
+]
+/** The octopus tentacle wound twice round the stock, and its suckers. */
+const IKALGO_TENTACLE: Stroke[] = [
+  {
+    d: 'M147.1 143.3 C115.9 144 85.4 138.3 60 120.1 M149.7 124 C118 127.9 89 124 69.6 109.9 M60 120.1 L38 106.5 M69.6 109.9 L48.3 97.2 M51.1 131.2 L27.8 115.8 M59.6 123.3 L36.2 107.9 M36.2 107.9 C25.3 97.4 4.7 104.5 4.8 116 C4.9 127.5 17.7 129.2 19.1 119.5 C18.1 114.5 13 115.4 14 120.5 M27.8 115.8 C21.7 111.7 14.9 114 14 120.5',
+    role: 'accent',
+  },
+  {
+    d: 'M145.2 133.2 a2.2 2.2 0 1 0 4.4 0 a2.2 2.2 0 1 0 -4.4 0 M125.9 130.6 a2.2 2.2 0 1 0 4.4 0 a2.2 2.2 0 1 0 -4.4 0 M105.1 126.2 a2.2 2.2 0 1 0 4.4 0 a2.2 2.2 0 1 0 -4.4 0',
+    role: 'soft',
+  },
+]
+/** The bullet-shaped flea leaving the muzzle, with its motion lines. */
+const IKALGO_FLEA: Stroke[] = [
+  {
+    d: 'M138 40.4 Q140 31.6 152.6 29.2 Q147 40.7 138 40.4 Z M143.8 40.3 L145.4 46.3 M148.3 36.8 L152.7 40.7',
+    role: 'soft',
+  },
+  { d: 'M128.8 35.8 L117.8 44.2 M139.9 50.5 L132.6 56', role: 'ambient' },
+]
+const IKALGO_GROUND: Stroke[] = [
+  { d: 'M4 166 H156', role: 'ambient', dashed: true },
+  shadow(72, 176, 54),
+]
 
 export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
   // An apartment block in 3/4 on its street, its windows soft, one
@@ -437,40 +484,10 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
   // bullet leaves the muzzle. He shoots Killua from a cliff in chapter 236
   // and points the same rifle at him in the cave, chapter 238.
   'ikalgo': [
-    { d: 'M70.1 87.8 L124.9 46 M74.3 93.3 L129.1 51.5' },
-    { d: 'M124.9 46 A1.6 3 -37.3 1 1 129.1 51.5 A1.6 3 -37.3 1 1 124.9 46' },
-    { d: 'M114 54.4 L110.5 49.8 L114.1 47 L117.6 51.6', role: 'soft' },
-    { d: 'M74.3 93.3 L78.5 98.8 L111.4 73.7 Q115 70.9 110.8 65.4' },
-    {
-      d: 'M70.1 87.8 L50.8 96.7 L6.5 133.4 L23.9 156.3 C34.9 147.9 44.5 137.7 49 128.5 Q55.4 117.9 64.1 114.1 L78.5 98.8',
-    },
-    {
-      d: 'M65.2 111.8 Q73.3 118.6 79.9 112.1 Q82.2 107.5 75.5 102.5 M69.8 108.3 L74.2 112.2',
-      role: 'soft',
-    },
-    {
-      d: 'M16.9 135.6 Q31.1 127.7 42.5 116.1 M24.3 141.6 Q34.8 136.4 42.6 127.6 M85.5 89.1 L103.8 75.1',
-      role: 'soft',
-    },
-    {
-      d: 'M24.6 145.7 L31 146.6 M31.9 140.1 L38.3 141 M39.2 134.5 L45.6 135.4 M85.2 84.9 L91.7 85.8 M96.2 76.6 L102.7 77.4',
-      role: 'ambient',
-    },
-    {
-      d: 'M147.1 143.3 C115.9 144 85.4 138.3 60 120.1 M149.7 124 C118 127.9 89 124 69.6 109.9 M60 120.1 L38 106.5 M69.6 109.9 L48.3 97.2 M51.1 131.2 L27.8 115.8 M59.6 123.3 L36.2 107.9 M36.2 107.9 C25.3 97.4 4.7 104.5 4.8 116 C4.9 127.5 17.7 129.2 19.1 119.5 C18.1 114.5 13 115.4 14 120.5 M27.8 115.8 C21.7 111.7 14.9 114 14 120.5',
-      role: 'accent',
-    },
-    {
-      d: 'M145.2 133.2 a2.2 2.2 0 1 0 4.4 0 a2.2 2.2 0 1 0 -4.4 0 M125.9 130.6 a2.2 2.2 0 1 0 4.4 0 a2.2 2.2 0 1 0 -4.4 0 M105.1 126.2 a2.2 2.2 0 1 0 4.4 0 a2.2 2.2 0 1 0 -4.4 0',
-      role: 'soft',
-    },
-    {
-      d: 'M138 40.4 Q140 31.6 152.6 29.2 Q147 40.7 138 40.4 Z M143.8 40.3 L145.4 46.3 M148.3 36.8 L152.7 40.7',
-      role: 'soft',
-    },
-    { d: 'M128.8 35.8 L117.8 44.2 M139.9 50.5 L132.6 56', role: 'ambient' },
-    { d: 'M4 166 H156', role: 'ambient', dashed: true },
-    shadow(72, 176, 54),
+    ...IKALGO_RIFLE,
+    ...IKALGO_TENTACLE,
+    ...IKALGO_FLEA,
+    ...IKALGO_GROUND,
   ],
   // Welfin's blue shirt from behind, his long blond hair falling over the
   // collar and the shoulders in tint, the shirt's far side hatched: the
@@ -535,8 +552,8 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
 /** The phase's drawings that change with the story. */
 export const chimeraAntPhaseThreeRedrawn: Redrawings = {
   flutter: [
-    // His wings folded and still on the ground, the fore wing torn at the
-    // tip in tint, no body: after Knov's ambush his corpse first shows among
+    // His wings folded and still on the ground, the fore wing in tint, no
+    // body: after Knov's ambush his corpse first shows among
     // the Extermination Team in Knov's dimension, chapter 262 and episode
     // 110.
     {
@@ -545,11 +562,9 @@ export const chimeraAntPhaseThreeRedrawn: Redrawings = {
       value: [
         ...moved(
           [
-            {
-              d: 'M20 140 C40 128 90 124 118 126 L112 131 L120 134 L114 139 C88 140 48 142 20 140 Z',
-              role: 'accent',
-            },
-            ...FLUTTER_FOLDED_WINGS,
+            { d: FLUTTER_FORE_WING, role: 'accent' },
+            { d: FLUTTER_HIND_WING },
+            FLUTTER_WING_VEINS,
           ],
           'translate(80 132) scale(1.1 2) translate(-80 -140)',
         ),
@@ -566,16 +581,17 @@ export const chimeraAntPhaseThreeRedrawn: Redrawings = {
       episode: 111,
       chapter: 263,
       value: [
-        ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.ikalgo.slice(0, 8),
+        ...IKALGO_RIFLE,
         ...moved(
-          [{ d: FLUTTER_FORE_WING }, ...FLUTTER_FOLDED_WINGS],
+          [{ d: FLUTTER_FORE_WING }, { d: FLUTTER_HIND_WING }],
           'translate(60 116) rotate(-37) scale(0.8 1.5) translate(-80 -137)',
         ),
         {
           d: 'M30 140 C18 144 12 158 20 164 C28 168 32 158 26 156',
           role: 'accent',
         },
-        ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.ikalgo.slice(10),
+        ...IKALGO_FLEA,
+        ...IKALGO_GROUND,
       ],
     },
     // The rifle and its tentacle again: Bloster blows Flutter's body apart
