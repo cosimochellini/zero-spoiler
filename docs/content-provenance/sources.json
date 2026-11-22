@@ -35382,6 +35382,26 @@
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425887",
       "contentSha256": "d6772f1f9a48c84a3abe39f8ce9aca2548c87fc891eedbccda167817e4a905e2"
     },
+    "hxh-en-Ten_Dons-423032.json": {
+      "locale": "en",
+      "title": "Ten Dons",
+      "revision": 423032,
+      "revisionDate": "2026-07-26T13:58:38Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Ten_Dons",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423032",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423032",
+      "contentSha256": "c78b4afc370dfe99ad518e0142eef1fac30215674a2138282d8f74ca8c2e2685"
+    },
+    "hxh-en-Mafia_Community-423009.json": {
+      "locale": "en",
+      "title": "Mafia Community",
+      "revision": 423009,
+      "revisionDate": "2026-07-26T12:51:42Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Mafia_Community",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423009",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423009",
+      "contentSha256": "dccab5d7b093db516fc21185bc65af180f54ae87e48ffd8fbc5d90fa02212015"
+    },
     "hxh-en-Phantom_Troupe-426123.json": {
       "locale": "en",
       "title": "Phantom Troupe",
