@@ -57,7 +57,8 @@ export function AlbumControls({
   const pick: FormPick = params.form ?? 'all'
   const view: AlbumView = params.view ?? 'type'
   const choices = formChoices(t, plates)
-  const empty = trimmed !== '' && count === 0
+  // Settled with the words, so the line never grows before it says why.
+  const noMatch = useSettled(trimmed !== '' && count === 0, ANNOUNCE_DELAY_MS)
   const status = useSettled(
     statusOf(t, { choices, count, pick, query: trimmed }),
     ANNOUNCE_DELAY_MS,
@@ -83,7 +84,7 @@ export function AlbumControls({
             aria-live="polite"
             {...stylex.props(
               searchStyles.status,
-              empty && searchStyles.statusEmpty,
+              noMatch && searchStyles.statusNoMatch,
             )}
           >
             {status}

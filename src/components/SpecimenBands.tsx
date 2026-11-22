@@ -5,12 +5,14 @@ import {
   AlbumControls,
   type AlbumControlsProps,
 } from '~/components/AlbumControls'
-import { groupingOf } from '~/components/albumGrouping'
+import { FRUIT_FOG, groupingOf } from '~/components/albumGrouping'
 import { AlbumGroups } from '~/components/AlbumGroups'
+import { AlbumNoMatch } from '~/components/AlbumNoMatch'
 import { LoadFailed } from '~/components/BookmarkSkeleton'
-import { FogBand, type FogTitles } from '~/components/FogBand'
+import { FogBand } from '~/components/FogBand'
 import { FruitTile, OpenTiles } from '~/components/FruitTile'
 import { matchesIn } from '~/components/recordMatches'
+import { SearchResults } from '~/components/SearchField'
 import { styles } from '~/components/SpecimenBands.styles'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { Translate, TranslationKey } from '~/i18n/types'
@@ -28,21 +30,6 @@ function countOf(t: Translate<'one-piece'>, count: number): string {
   return count === 1 ?
       t('fruits.bandCountOne')
     : t('fruits.bandCount', { count })
-}
-
-/** What a plate's fog band calls itself at each count. */
-const FRUIT_FOG: FogTitles<'one-piece'> = {
-  allOpen: 'fruits.allOpen',
-  hint: 'fruits.foggedHint',
-  hintUnset: 'fruits.foggedHintUnset',
-  many: 'fruits.foggedTitle',
-  one: 'fruits.foggedTitleOne',
-}
-
-const TITLE_KEY: Record<FruitForm, TranslationKey<'one-piece'>> = {
-  logia: 'fruitForm.logia',
-  paramecia: 'fruitForm.paramecia',
-  zoan: 'fruitForm.zoan',
 }
 
 const LEDE_KEY: Record<FruitForm, TranslationKey<'one-piece'>> = {
@@ -78,7 +65,12 @@ export interface SpecimenBandsProps {
  * covered fruit is not on the page to be searched, so typing filters the open
  * tiles and leaves every fogged one exactly where it was. A kind chip keeps
  * one plate on the page. The count under the field is over the plates on the
- * page, so its total is the picked chip's number.
+ * page, so its total is the picked chip's number. A query with no match
+ * folds the plates away behind one line and a button that clears it: that
+ * depends on open names only, so it says nothing of a covered fruit.
+ *
+ * With no fruit open there is nothing to search or to pick, so the bar is
+ * left out and the plates' fog bands lead the page (#1376).
  *
  * The bar is in the page the server sends; the plates come after, once the
  * browser has asked for the album, and until then the count is the chip's.
@@ -94,35 +86,79 @@ export function SpecimenBands({
   const fieldId = useId()
   // The field is never deferred; the plates behind it are.
   const needle = useDeferredValue(foldName((params.q ?? '').trim()))
+  const count = foundIn(album, plates, { form: params.form, needle })
+  const searchable = openIn(plates, undefined) > 0
 
   return (
     <div {...stylex.props(styles.sheet)}>
-      <AlbumControls
-        count={
-          album === null ?
-            openIn(plates, params.form)
-          : matchesIn(
-              shownOf(album.bands, params.form).flatMap((band) => band.open),
-              needle,
-            ).length
-        }
-        fieldId={fieldId}
-        onParams={onParams}
-        params={params}
-        plates={plates}
-      />
+      {searchable ?
+        <AlbumControls
+          count={count}
+          fieldId={fieldId}
+          onParams={onParams}
+          params={params}
+          plates={plates}
+        />
+      : null}
 
       {album === null ?
         onRetry !== undefined && <AlbumFailed onRetry={onRetry} />
-      : <Plates
+      : <AlbumResults
           album={album}
           fieldId={fieldId}
           needle={needle}
+          noMatch={searchable && needle !== '' && count === 0}
+          onParams={onParams}
           params={params}
           peek={peek}
         />
       }
     </div>
+  )
+}
+
+/** The open fruits the picks find: the chip's own number until the album. */
+function foundIn(
+  album: Album | null,
+  plates: FruitPlateCount[],
+  { form, needle }: { form: FruitForm | undefined; needle: string },
+): number {
+  return album === null ?
+      openIn(plates, form)
+    : matchesIn(
+        shownOf(album.bands, form).flatMap((band) => band.open),
+        needle,
+      ).length
+}
+
+/**
+ * The plates or the groups, folded away while the query has no match. Hidden
+ * rather than unmounted, so a lifted tile is still lifted once it is cleared.
+ */
+function AlbumResults({
+  noMatch,
+  onParams,
+  ...shown
+}: Pick<SpecimenBandsProps, 'onParams' | 'params' | 'peek'> & {
+  album: Album
+  fieldId: string
+  needle: string
+  noMatch: boolean
+}): ReactElement {
+  return (
+    <>
+      {noMatch ?
+        <AlbumNoMatch
+          bands={shownOf(shown.album.bands, shown.params.form)}
+          fieldId={shown.fieldId}
+          onParams={onParams}
+          params={shown.params}
+        />
+      : null}
+      <SearchResults folded={noMatch}>
+        <Plates {...shown} />
+      </SearchResults>
+    </>
   )
 }
 
@@ -232,7 +268,7 @@ function Plate({
           index: String(index + 1).padStart(NUMBER_WIDTH, '0'),
         })} · ${countOf(t, band.total)}`}
         lede={t(LEDE_KEY[band.form])}
-        title={t(TITLE_KEY[band.form])}
+        title={t(`fruitForm.${band.form}`)}
       />
 
       {matches.length === 0 ? null : (

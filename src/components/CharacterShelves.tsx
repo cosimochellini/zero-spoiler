@@ -52,10 +52,12 @@ export interface CharacterShelvesProps {
  * Everyone the archive has filed, one shelf per arc, in the order the reader's
  * own unit reaches those arcs.
  *
- * Nothing here ever moves under a search. The open tiles are filtered, the
- * covered ones stay where they are, and a shelf leaves the page only when it
- * has neither left to show — otherwise a shelf appearing or vanishing would
- * itself answer the question the fog refuses to answer.
+ * Nothing here moves under a search that has a match. The open tiles are
+ * filtered, the covered ones stay where they are, and a shelf leaves the
+ * page only when it has neither left to show — otherwise a shelf appearing
+ * or vanishing would itself answer the question the fog refuses to answer.
+ * A search with no match at all folds the whole section away
+ * (`CharacterGrid`), which depends on open names only.
  */
 export function CharacterShelves({
   featured,

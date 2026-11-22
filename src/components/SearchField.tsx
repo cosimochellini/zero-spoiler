@@ -75,6 +75,71 @@ export function SearchField({
 }
 
 /**
+ * What stands in for a listing's groups while a query has no match: the
+ * way back, and what the listing still holds under fog. The line saying so
+ * is the field's own status. The groups are folded away rather than left as
+ * a page of empty headings to scroll.
+ */
+export function SearchNoMatch({
+  clearLabel,
+  fieldId,
+  note,
+  onClear,
+}: {
+  clearLabel: string
+  /** The search field's id: where focus goes once the query is cleared. */
+  fieldId: string
+  /** What is under fog and why the search does not find it, if anything. */
+  note?: string | undefined
+  onClear: () => void
+}): ReactElement {
+  return (
+    <div {...stylex.props(styles.noMatch)}>
+      <Button
+        onClick={() => {
+          onClear()
+          // This button leaves with the query. Focus goes to the field, not
+          // to the top of the page.
+          document
+            .querySelector<HTMLElement>(`#${CSS.escape(fieldId)}`)
+            ?.focus()
+        }}
+      >
+        {clearLabel}
+      </Button>
+      {note === undefined ? null : (
+        <p {...stylex.props(styles.noMatchNote)}>{note}</p>
+      )}
+    </div>
+  )
+}
+
+/**
+ * A listing's groups, folded away while a query has no match. Hidden, not
+ * unmounted: a lifted tile and a drawing already loaded are still there when
+ * the query is cleared. It has no box of its own, so the groups keep their
+ * place in the page's grid.
+ */
+export function SearchResults({
+  children,
+  folded,
+}: {
+  children: ReactNode
+  folded: boolean
+}): ReactElement {
+  return (
+    <div
+      // The attribute says it to assistive technology; the class is what
+      // hides it, because `display: contents` wins over `[hidden]`.
+      hidden={folded}
+      {...stylex.props(styles.results, folded && styles.folded)}
+    >
+      {children}
+    </div>
+  )
+}
+
+/**
  * The × that empties the field, and the space it keeps whether or not there is
  * anything to clear.
  *

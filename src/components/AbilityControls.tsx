@@ -9,7 +9,6 @@ import { styles } from '~/components/SpecimenBands.styles'
 import { useSettled } from '~/components/useSettled'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { Translate } from '~/i18n/types'
-import { useOpenEntries } from '~/lib/progress/openEntries'
 import {
   type AbilityParams,
   type AbilityType,
@@ -80,7 +79,6 @@ export function AbilityControls({
   const pick: Pick = params.type ?? 'all'
   const choices = typeChoices(t, bands)
   const total = choices.find((choice) => choice.value === pick)?.count ?? 0
-  useOpenEntries(bands.reduce((sum, band) => sum + band.open.length, 0))
   // Every pick goes through the parser, so a default ("all", a blank
   // query) is left out of the address rather than written into it.
   const move = (next: Record<string, unknown>, replace: boolean): void => {
@@ -139,6 +137,8 @@ function AbilitySearch({
   const t = useSeriesOnlyT(SERIES)
   const trimmed = query.trim()
   const empty = trimmed !== '' && count === 0
+  // Settled with the words, so the line never grows before it says why.
+  const noMatch = useSettled(empty, ANNOUNCE_DELAY_MS)
   const status = useSettled(
     empty ?
       t('abilities.noMatch', { query: trimmed })
@@ -159,7 +159,7 @@ function AbilitySearch({
           aria-live="polite"
           {...stylex.props(
             searchStyles.status,
-            empty && searchStyles.statusEmpty,
+            noMatch && searchStyles.statusNoMatch,
           )}
         >
           {status}
