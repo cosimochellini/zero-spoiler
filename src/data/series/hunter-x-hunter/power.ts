@@ -1,6 +1,7 @@
 import type { PowerBody } from '~/data/features'
 
 import { HUNTER_ASSOCIATION } from './power/hunter-association'
+import { TEN_DONS } from './power/ten-dons'
 import type { HunterVocabulary } from './records/saga'
 
 /**
@@ -9,4 +10,7 @@ import type { HunterVocabulary } from './records/saga'
  * (#1445), the Ten Dons (#1446) and the Chimera Ants (#1447). Each is filed
  * by its own issue, one module each under `power/`.
  */
-export const BODIES: PowerBody<HunterVocabulary>[] = [HUNTER_ASSOCIATION]
+export const BODIES: PowerBody<HunterVocabulary>[] = [
+  HUNTER_ASSOCIATION,
+  TEN_DONS,
+]

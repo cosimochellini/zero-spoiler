@@ -400,6 +400,26 @@ describe('the bodies of power the gate looks for', () => {
     }
   })
 
+  it('looks for a body that seats no one by its description', () => {
+    const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
+    const dir = path.join(root, 'src/data/series/empty/power')
+    mkdirSync(dir, { recursive: true })
+    const text =
+      'A fixture council of short seats, every one of them vacant from the start.'
+    writeFileSync(
+      path.join(dir, 'council.ts'),
+      `export const C = { about: '${text}', seats: [{ title: { en: 'Don' }, value: null }] }\n`,
+    )
+
+    try {
+      expect(powerCanaries(root, 'empty')).toStrictEqual([
+        { file: 'src/data/series/empty/power/council.ts', phrase: text },
+      ])
+    } finally {
+      rmSync(root, { recursive: true })
+    }
+  })
+
   it('refuses a body seating no id it can trust, and skips a series with none', () => {
     // A body whose holders are all short ids or words, and whose seat titles
     // are a word or two, has nothing the gate could tell from the client's
