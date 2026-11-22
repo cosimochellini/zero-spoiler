@@ -187,6 +187,18 @@ export const THRONES_ITALIAN_TITLES = {
   'osmund-kettleblack': characters('Osmund Kettleblack'),
   'alayaya': characters('Chataya'),
   'garlan-tyrell': 'Casa Tyrell#Garlan Tyrell',
+  // #1464, Stannis, Renly and the stormlands.
+  'stannis-baratheon': 'Casa Baratheon#Stannis Baratheon',
+  'melisandre': characters('Melisandre di Asshai'),
+  'davos-seaworth': characters('Davos Seaworth'),
+  'cressen': characters('Maestro Cressen'),
+  'matthos-seaworth': OTHERS,
+  'salladhor-saan': characters('Salladhor Saan'),
+  'selyse-baratheon': characters('Selyse Florent'),
+  'shireen-baratheon': 'Casa Baratheon#Shireen Baratheon',
+  'brienne-of-tarth': characters('Brienne di Tarth'),
+  'margaery-tyrell': 'Casa Tyrell#Margaery Tyrell',
+  'mace-tyrell': 'Casa Tyrell#Mace Tyrell',
 }
 
 /**
@@ -250,4 +262,11 @@ export const THRONES_NAMES_KEPT = {
   'hallyne': 'Hallyne',
   'alayaya': 'Alayaya',
   'jacelyn-bywater': 'Jacelyn Bywater',
+  // #1464. Italian Wikipedia files Selyse under her maiden name, Florent,
+  // and the record keeps the show's; it names Matthos only in the TV cast
+  // list and has no entry for Cortnay Penrose, whose name stays as it is
+  // until the Mondadori form is checked.
+  'selyse-baratheon': 'Selyse Baratheon',
+  'matthos-seaworth': 'Matthos Seaworth',
+  'cortnay-penrose': 'Cortnay Penrose',
 }

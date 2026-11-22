@@ -35811,6 +35811,356 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27268",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27268",
       "contentSha256": "51a120f7d96e02d13325cfc2543901b05047f072024fc798c80eccd8a677f481"
+    },
+    "got-en-Stannis_Baratheon-745076.json": {
+      "locale": "en",
+      "title": "Stannis Baratheon",
+      "revision": 745076,
+      "revisionDate": "2026-07-27T09:49:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stannis_Baratheon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=745076",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=745076",
+      "contentSha256": "d3f5d952c6b646046ef5bc5364a235a83b251c8fb537618b9f21f31b0492948e"
+    },
+    "got-en-Melisandre-728276.json": {
+      "locale": "en",
+      "title": "Melisandre",
+      "revision": 728276,
+      "revisionDate": "2026-02-05T07:16:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Melisandre",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728276",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728276",
+      "contentSha256": "a47afb455a4d19822f1a7853bf064b7261ea055a0dd940ff1de8770a2a8be900"
+    },
+    "got-en-Davos_Seaworth-736903.json": {
+      "locale": "en",
+      "title": "Davos Seaworth",
+      "revision": 736903,
+      "revisionDate": "2026-06-16T10:32:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Davos_Seaworth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736903",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736903",
+      "contentSha256": "18854ae47a746feffe21b17cdc684ab4a829f881ad27b7dfdaf2cfb556ccdc83"
+    },
+    "got-en-Cressen-736923.json": {
+      "locale": "en",
+      "title": "Cressen",
+      "revision": 736923,
+      "revisionDate": "2026-06-16T11:31:40Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Cressen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736923",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736923",
+      "contentSha256": "6d57f30ad2beb6eeb9f42e7fea71eacf220d88dc06b3e227016521df5596a1de"
+    },
+    "got-en-Matthos_Seaworth-728423.json": {
+      "locale": "en",
+      "title": "Matthos Seaworth",
+      "revision": 728423,
+      "revisionDate": "2026-02-05T08:38:51Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Matthos_Seaworth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728423",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728423",
+      "contentSha256": "16b16cc00a88805192ae270607c525a2fd28d31c65b6e9046b7b3db3488fc5f3"
+    },
+    "got-en-Salladhor_Saan-728409.json": {
+      "locale": "en",
+      "title": "Salladhor Saan",
+      "revision": 728409,
+      "revisionDate": "2026-02-05T08:35:43Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Salladhor_Saan",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728409",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728409",
+      "contentSha256": "4cc21bf7aec7e9d3b144ef5529319b180bfbb0460588d938eac994a71324daae"
+    },
+    "got-en-Brienne_of_Tarth-748929.json": {
+      "locale": "en",
+      "title": "Brienne of Tarth",
+      "revision": 748929,
+      "revisionDate": "2026-10-01T04:46:20Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Brienne_of_Tarth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748929",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748929",
+      "contentSha256": "2b4b5db3e12274bc8fca023bd4fb2be541ef6845772317890607271f2c97b289"
+    },
+    "got-en-Margaery_Tyrell-749409.json": {
+      "locale": "en",
+      "title": "Margaery Tyrell",
+      "revision": 749409,
+      "revisionDate": "2026-11-15T13:35:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Margaery_Tyrell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749409",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749409",
+      "contentSha256": "78ad7ff6df89debbf87f78b55ac1caaddfb62ae4aa0ee15fccd2de24e28e36f9"
+    },
+    "got-en-Selyse_Baratheon-719683.json": {
+      "locale": "en",
+      "title": "Selyse Baratheon",
+      "revision": 719683,
+      "revisionDate": "2026-01-05T07:45:21Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Selyse_Baratheon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=719683",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=719683",
+      "contentSha256": "85f9ffc2ef7494789331622cd06ef5a3c2da870fbeb60d5813b9e4d18aa5eb24"
+    },
+    "got-en-Shireen_Baratheon-734920.json": {
+      "locale": "en",
+      "title": "Shireen Baratheon",
+      "revision": 734920,
+      "revisionDate": "2026-05-12T02:23:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Shireen_Baratheon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=734920",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=734920",
+      "contentSha256": "3cf2e6474d9367d81b12a3c2c56f1a7b74696997ee90c9513903875280191747"
+    },
+    "got-en-Imry_Florent-728060.json": {
+      "locale": "en",
+      "title": "Imry Florent",
+      "revision": 728060,
+      "revisionDate": "2026-02-05T04:58:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Imry_Florent",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728060",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728060",
+      "contentSha256": "50738958d7db0f5ecc0e65dc2b88a178d17d4a799fd295fbd3716cd17ff4280b"
+    },
+    "got-en-Mace_Tyrell-728509.json": {
+      "locale": "en",
+      "title": "Mace Tyrell",
+      "revision": 728509,
+      "revisionDate": "2026-02-05T08:58:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mace_Tyrell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728509",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728509",
+      "contentSha256": "47df1f4a1a71244eef32980719b245c0a392d153528f8be1f7e27cd0f46755b9"
+    },
+    "got-en-Robar_Royce_(son_of_Yohn)-728405.json": {
+      "locale": "en",
+      "title": "Robar Royce (son of Yohn)",
+      "revision": 728405,
+      "revisionDate": "2026-02-05T08:34:35Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Robar_Royce_%28son_of_Yohn%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728405",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728405",
+      "contentSha256": "075ff7b97dd39c404c4b773032d2d73c5f08eef868f6f125301d912978f80164"
+    },
+    "got-en-Emmon_Cuy-732145.json": {
+      "locale": "en",
+      "title": "Emmon Cuy",
+      "revision": 732145,
+      "revisionDate": "2026-02-25T07:24:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Emmon_Cuy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732145",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732145",
+      "contentSha256": "632f2678838c74d0bb9263171ed83322cc8f12c8f4b7eb4f43e1bad9f9b6734f"
+    },
+    "got-en-Colen_of_Greenpools-728006.json": {
+      "locale": "en",
+      "title": "Colen of Greenpools",
+      "revision": 728006,
+      "revisionDate": "2026-02-05T04:46:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Colen_of_Greenpools",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728006",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728006",
+      "contentSha256": "576ed30de6216fe73950ca9a8a0762d847ac4978f182e73b6bd47572cac8b4d0"
+    },
+    "got-en-Randyll_Tarly-731311.json": {
+      "locale": "en",
+      "title": "Randyll Tarly",
+      "revision": 731311,
+      "revisionDate": "2026-02-22T16:58:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Randyll_Tarly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=731311",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=731311",
+      "contentSha256": "50979879960495cf2126f160e00dba1b4f15d7f158ba1e85e461e06051bd666e"
+    },
+    "iaf-en-Prologue_-_A_Clash_of_Kings-23175.json": {
+      "locale": "en",
+      "title": "Prologue - A Clash of Kings",
+      "revision": 23175,
+      "revisionDate": "2019-05-09T11:09:30Z",
+      "url": "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23175",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23175",
+      "contentSha256": "e9bfbd10fe85ea99e705f7104252efe38387f1936a799dd1666c1dbe55a9efa0"
+    },
+    "iaf-en-Stannis_Baratheon-25119.json": {
+      "locale": "en",
+      "title": "Stannis Baratheon",
+      "revision": 25119,
+      "revisionDate": "2022-02-06T14:51:08Z",
+      "url": "https://iceandfire.fandom.com/wiki/Stannis_Baratheon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25119",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25119",
+      "contentSha256": "ca00fb83261957c3aed5a25f9717ff5d823231093c1c905921c415b9cdb9c585"
+    },
+    "iaf-en-Melisandre-26257.json": {
+      "locale": "en",
+      "title": "Melisandre",
+      "revision": 26257,
+      "revisionDate": "2022-12-30T09:57:12Z",
+      "url": "https://iceandfire.fandom.com/wiki/Melisandre",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26257",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26257",
+      "contentSha256": "41a1b2e80735fa96426aee360786e6dacdbfc225f85f47b8f81d9790a81c5f4c"
+    },
+    "iaf-en-Davos_Seaworth-26618.json": {
+      "locale": "en",
+      "title": "Davos Seaworth",
+      "revision": 26618,
+      "revisionDate": "2024-04-15T15:15:23Z",
+      "url": "https://iceandfire.fandom.com/wiki/Davos_Seaworth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26618",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26618",
+      "contentSha256": "90e71dbc0d88d7313b6bcf1b9f1fcc138bd2dad5318463e473e7436f7139dde5"
+    },
+    "iaf-en-Cressen-25047.json": {
+      "locale": "en",
+      "title": "Cressen",
+      "revision": 25047,
+      "revisionDate": "2021-09-07T10:04:34Z",
+      "url": "https://iceandfire.fandom.com/wiki/Cressen",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25047",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25047",
+      "contentSha256": "4425cb5df337963152984630294ba628b404b831db8966814a4025032a236637"
+    },
+    "iaf-en-Salladhor_Saan-27043.json": {
+      "locale": "en",
+      "title": "Salladhor Saan",
+      "revision": 27043,
+      "revisionDate": "2025-01-28T09:46:35Z",
+      "url": "https://iceandfire.fandom.com/wiki/Salladhor_Saan",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27043",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27043",
+      "contentSha256": "377a182e97a2190a5426305cd28b87c1ead44b448a219bae7ea23b9b6f2bd100"
+    },
+    "iaf-en-Brienne_Tarth-25252.json": {
+      "locale": "en",
+      "title": "Brienne Tarth",
+      "revision": 25252,
+      "revisionDate": "2022-06-01T03:27:27Z",
+      "url": "https://iceandfire.fandom.com/wiki/Brienne_Tarth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25252",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25252",
+      "contentSha256": "513640c52cd6c4a469e93b7941b8c84cbd8cf811eedb69da225509122f1b64b4"
+    },
+    "iaf-en-Margaery_Tyrell-26234.json": {
+      "locale": "en",
+      "title": "Margaery Tyrell",
+      "revision": 26234,
+      "revisionDate": "2022-11-23T00:03:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/Margaery_Tyrell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26234",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26234",
+      "contentSha256": "7761bc688cd5df0e9aef20cb70df511d89c2ea5fab4cef5a3c960a2c7dc914b1"
+    },
+    "iaf-en-Selyse_Florent-23324.json": {
+      "locale": "en",
+      "title": "Selyse Florent",
+      "revision": 23324,
+      "revisionDate": "2019-05-27T01:57:30Z",
+      "url": "https://iceandfire.fandom.com/wiki/Selyse_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23324",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23324",
+      "contentSha256": "b4a573b86dfc58579bd241d2d444aa8ccd1f6e717d258a4753e257064be486ff"
+    },
+    "iaf-en-Shireen_Baratheon-27446.json": {
+      "locale": "en",
+      "title": "Shireen Baratheon",
+      "revision": 27446,
+      "revisionDate": "2025-05-19T03:53:43Z",
+      "url": "https://iceandfire.fandom.com/wiki/Shireen_Baratheon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27446",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27446",
+      "contentSha256": "96ec985eb1fb50c627ba5fc77fb72c2ce34f0c27f5cf04f6eacdeac725939727"
+    },
+    "iaf-en-Imry_Florent-18054.json": {
+      "locale": "en",
+      "title": "Imry Florent",
+      "revision": 18054,
+      "revisionDate": "2017-01-20T05:21:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Imry_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=18054",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=18054",
+      "contentSha256": "db37b27eb831fcbfc2f594ba18f3b61f7b9ab05fb619c4d271a03d0d224ca9a6"
+    },
+    "iaf-en-Patchface-25927.json": {
+      "locale": "en",
+      "title": "Patchface",
+      "revision": 25927,
+      "revisionDate": "2022-09-24T22:39:22Z",
+      "url": "https://iceandfire.fandom.com/wiki/Patchface",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25927",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25927",
+      "contentSha256": "0da2dcf0d0e334830c374d2aa7fe7df61b8fa9bfb0c3b18513d5e82fb6856ada"
+    },
+    "iaf-en-Cortnay_Penrose-27501.json": {
+      "locale": "en",
+      "title": "Cortnay Penrose",
+      "revision": 27501,
+      "revisionDate": "2026-01-09T03:34:24Z",
+      "url": "https://iceandfire.fandom.com/wiki/Cortnay_Penrose",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27501",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27501",
+      "contentSha256": "64f321071f81c5e85b2ffd0e8045007dffe22abf33bb70190027f637183c9fa7"
+    },
+    "iaf-en-Randyll_Tarly-27053.json": {
+      "locale": "en",
+      "title": "Randyll Tarly",
+      "revision": 27053,
+      "revisionDate": "2025-01-28T09:57:03Z",
+      "url": "https://iceandfire.fandom.com/wiki/Randyll_Tarly",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27053",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27053",
+      "contentSha256": "9f7faa0600b41e8e0d2240b88943f7c1a421359a5925795364a9024870870406"
+    },
+    "iaf-en-Devan_Seaworth-7408.json": {
+      "locale": "en",
+      "title": "Devan Seaworth",
+      "revision": 7408,
+      "revisionDate": "2013-01-13T05:21:45Z",
+      "url": "https://iceandfire.fandom.com/wiki/Devan_Seaworth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=7408",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=7408",
+      "contentSha256": "5e8b1d57539cb5245b8e882139d41a7b874f8880046f1646f0e6a35d58d5750b"
+    },
+    "iaf-en-Axell_Florent-18066.json": {
+      "locale": "en",
+      "title": "Axell Florent",
+      "revision": 18066,
+      "revisionDate": "2017-01-22T03:43:07Z",
+      "url": "https://iceandfire.fandom.com/wiki/Axell_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=18066",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=18066",
+      "contentSha256": "a0755d9bea841f73dc84b98241e090008cfe538840578b49ae39f776b48bf95a"
+    },
+    "iaf-en-Alester_Florent-21862.json": {
+      "locale": "en",
+      "title": "Alester Florent",
+      "revision": 21862,
+      "revisionDate": "2018-03-15T16:28:17Z",
+      "url": "https://iceandfire.fandom.com/wiki/Alester_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21862",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21862",
+      "contentSha256": "ae6c72e38368de429cc29871b97db5067b6f04c32d765a180757b9ca24db6928"
+    },
+    "got-en-Kissed_by_Fire-740183.json": {
+      "locale": "en",
+      "title": "Kissed by Fire",
+      "revision": 740183,
+      "revisionDate": "2026-06-27T12:18:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740183",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740183",
+      "contentSha256": "81ff2925e37b59e83d1c0c7a2e4ccefe9818dbd6e043aeea1ad9ab31db25fb16"
+    },
+    "got-en-The_Lion_and_the_Rose-740191.json": {
+      "locale": "en",
+      "title": "The Lion and the Rose",
+      "revision": 740191,
+      "revisionDate": "2026-06-27T12:23:02Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Lion_and_the_Rose",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740191",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740191",
+      "contentSha256": "e56b00d25cf1ec2524baa3f58f2753d22177d78a8ff3930f670d8d853c61abfe"
     }
   }
 }
