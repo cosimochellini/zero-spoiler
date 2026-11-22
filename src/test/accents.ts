@@ -364,7 +364,6 @@ export const ACCENT_EXCEPTIONS: Record<
   'hunter-x-hunter/ken-i-wang@first': [2, OLD],
   'hunter-x-hunter/zushi@first': [2, OLD],
   'hunter-x-hunter/feitan@first': [2, OLD],
-  'hunter-x-hunter/list@first': [2, OLD],
   'hunter-x-hunter/binolt@first': [2, OLD],
   'hunter-x-hunter/heavens-arena-arc@first': [2, OLD],
   'hunter-x-hunter/election-arc@first': [2, OLD],
