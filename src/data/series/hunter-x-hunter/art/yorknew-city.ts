@@ -6,8 +6,11 @@ import {
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
-/** Baise's lipstick standing open: both her drawings keep it. */
-const LIPSTICK: Stroke[] = [
+/**
+ * Baise's lipstick standing open: both her drawings keep it, and so does
+ * Instant Lover's.
+ */
+export const LIPSTICK: Stroke[] = [
   { d: 'M62 150 V96 M98 96 V150' },
   { d: ellipse(80, 150, 18, 5) },
   { d: ellipse(80, 96, 18, 5) },
@@ -26,6 +29,18 @@ const LIPSTICK_CAP: Stroke[] = [
     d: 'M112 152 C107 153 110 163 115 162 C120 161 117 151 112 152',
     role: 'soft',
   },
+]
+
+/**
+ * A pair of lips in tint, the sign of Baise's kiss: drawn as a symbol, never
+ * as part of a face (owner, 2026-11-16). Instant Lover draws it.
+ */
+export const KISS: Stroke[] = [
+  {
+    d: 'M98 98 C102 93 106 88 110 88 C113 88 115 90 116 91 C117 90 119 88 122 88 C126 88 130 93 134 98 C128 106 122 110 116 110 C110 110 104 106 98 98 Z',
+    role: 'accent',
+  },
+  { d: 'M98 98 C108 100 124 100 134 98', role: 'soft' },
 ]
 
 /**
@@ -53,12 +68,20 @@ const DOG: Stroke[] = [
   { d: 'M108 104 l7 -5 M112 116 l7 -5 M114 130 l7 -5', role: 'ambient' },
 ]
 
-/** One of Tocino's figures in black: an empty robe, its far half hatched. */
-const TOCINO_ROBE: Stroke[] = [
+/**
+ * The outline of one of Tocino's figures in black: the robe's collar, body
+ * and sleeves. Eleven Black Children draws the figures behind with it.
+ */
+export const TOCINO_ROBE_OUTLINE: Stroke[] = [
   { d: ellipse(80, 40, 13, 4) },
   {
     d: 'M67 40 L46 50 L32 112 M47 117 L54 82 L44 172 H116 L106 82 L113 117 M128 112 L114 50 L93 40',
   },
+]
+
+/** One of Tocino's figures in black: an empty robe, its far half hatched. */
+export const TOCINO_ROBE: Stroke[] = [
+  ...TOCINO_ROBE_OUTLINE,
   { d: 'M32 112 A8 3.5 12 1 0 47 117 A8 3.5 12 1 0 32 112', role: 'soft' },
   { d: 'M128 112 A8 3.5 -12 1 1 113 117 A8 3.5 -12 1 1 128 112', role: 'soft' },
   { d: 'M80 44 V172 M62 100 Q58 136 56 170', role: 'soft' },
@@ -69,7 +92,7 @@ const TOCINO_ROBE: Stroke[] = [
 ]
 
 /** The figure's sword, the guard in tint. */
-const TOCINO_SWORD: Stroke[] = [
+export const TOCINO_SWORD: Stroke[] = [
   { d: 'M117 104 L148 30 L152 34 L124 106' },
   { d: 'M110 100 L130 110', role: 'accent' },
   { d: 'M118 108 L114 118 M124 110 L120 120', role: 'soft' },
@@ -135,7 +158,7 @@ const CEMETERY_BUILDING: Stroke[] = [
 ]
 
 /** Uvogin's bearskin vest, open at the front, the fur edging in tint. */
-const UVOGIN_VEST: Stroke[] = [
+export const UVOGIN_VEST: Stroke[] = [
   { d: 'M58 34 L34 48 L30 152 H70 L72 64 M102 34 L126 48 L130 152 H90 L88 64' },
   { d: 'M58 34 Q80 42 102 34', role: 'soft' },
   {
@@ -218,6 +241,35 @@ const KORTOPI_VASE: Stroke[] = [
   },
 ]
 
+/** Basho's writing brush, its tip in tint and the handle's shade hatched. */
+export const BASHO_BRUSH: Stroke[] = [
+  { d: 'M34 58 L42 50 L100 108 L92 116 Z' },
+  { d: 'M92 116 L100 108 L107 115 L99 123 Z', role: 'soft' },
+  {
+    d: 'M99 123 C102 132 110 138 120 138 C119 129 113 121 107 115',
+    role: 'accent',
+  },
+  { d: 'M48 68 l4 -4 M60 80 l4 -4 M72 92 l4 -4', role: 'ambient' },
+]
+
+/**
+ * Owl's cloth knotted into a bundle, the two ends of its knot in tint: his
+ * drawing and Fun Fun Cloth's keep it.
+ */
+export const OWL_BUNDLE: Stroke[] = [
+  { d: 'M28 150 C18 112 46 84 80 86 C114 84 142 112 132 150 Z' },
+  {
+    d: 'M64 88 C58 70 52 60 58 52 C66 54 72 70 76 84 M96 88 C102 70 108 60 102 52 C94 54 88 70 84 84',
+    role: 'accent',
+  },
+  { d: ellipse(80, 88, 10, 5), role: 'soft' },
+  {
+    d: 'M44 140 C50 120 62 106 76 100 M116 140 C110 120 98 106 86 100 M80 98 V146',
+    role: 'soft',
+  },
+  { d: 'M104 110 l8 -6 M110 124 l8 -6 M114 138 l8 -6', role: 'ambient' },
+]
+
 /**
  * The Yorknew City records (#900), each at its named scene: first-pass
  * drawings, graded and redrawn in #901.
@@ -273,13 +325,7 @@ export const YORKNEW_CITY_DRAWINGS = {
       d: 'M78 155 l3 -5 M96 150 l3 -5 M114 144 l3 -5 M130 140 l3 -5',
       role: 'ambient',
     },
-    { d: 'M34 58 L42 50 L100 108 L92 116 Z' },
-    { d: 'M92 116 L100 108 L107 115 L99 123 Z', role: 'soft' },
-    {
-      d: 'M99 123 C102 132 110 138 120 138 C119 129 113 121 107 115',
-      role: 'accent',
-    },
-    { d: 'M48 68 l4 -4 M60 80 l4 -4 M72 92 l4 -4', role: 'ambient' },
+    ...BASHO_BRUSH,
     shadow(82, 176, 58),
   ],
   // A lipstick standing open, its slanted tip in tint, the cap lying on its
@@ -473,20 +519,7 @@ export const YORKNEW_CITY_DRAWINGS = {
   // its folds and the far side hatched: Owl's Fun Fun Cloth wraps the
   // Troupe's car, and he holds the tiny cloth with Nobunaga shrunk inside,
   // episode 45 / chapter 77.
-  'owl': [
-    { d: 'M28 150 C18 112 46 84 80 86 C114 84 142 112 132 150 Z' },
-    {
-      d: 'M64 88 C58 70 52 60 58 52 C66 54 72 70 76 84 M96 88 C102 70 108 60 102 52 C94 54 88 70 84 84',
-      role: 'accent',
-    },
-    { d: ellipse(80, 88, 10, 5), role: 'soft' },
-    {
-      d: 'M44 140 C50 120 62 106 76 100 M116 140 C110 120 98 106 86 100 M80 98 V146',
-      role: 'soft',
-    },
-    { d: 'M104 110 l8 -6 M110 124 l8 -6 M114 138 l8 -6', role: 'ambient' },
-    shadow(80, 158, 56),
-  ],
+  'owl': [...OWL_BUNDLE, shadow(80, 158, 56)],
   // A mound of earth with the open mouth of a burrow, its rim in tint and
   // the inside hatched: Worm tunnels out of the ground and introduces
   // himself, episode 43 / chapter 75.
