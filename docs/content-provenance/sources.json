@@ -37041,6 +37041,16 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425352",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425352",
       "contentSha256": "2c0e41a1dc5f88fa032c2d447377de79aacd750996f775716651442d3ca3da95"
+    },
+    "hxh-en-Nen-425749.json": {
+      "locale": "en",
+      "title": "Nen",
+      "revision": 425749,
+      "revisionDate": "2026-10-08T14:17:10Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Nen",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425749",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425749",
+      "contentSha256": "974bcbf72fa360c07734d0766d3eb2e397bf9a6163fb9d173d8e01d03b74f9d9"
     }
   }
 }
