@@ -37031,6 +37031,36 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425228",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425228",
       "contentSha256": "75f528ded37fd1f9a3149cf1f6e5f5c18132eb8bf65d7d9a767e4bc2e98ab464"
+    },
+    "hxh-en-Blue_Planet-425306.json": {
+      "locale": "en",
+      "title": "Blue Planet",
+      "revision": 425306,
+      "revisionDate": "2026-08-29T19:02:09Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Blue_Planet",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425306",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425306",
+      "contentSha256": "c5acfdcc0ff98a8e5ee189a6ce9d78516da4d28a674b45127725b33c6dc8df23"
+    },
+    "hxh-en-Greed_Island-425927.json": {
+      "locale": "en",
+      "title": "Greed Island",
+      "revision": 425927,
+      "revisionDate": "2026-11-11T00:42:05Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Greed_Island",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425927",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425927",
+      "contentSha256": "a50be09722524f08da686bdd8655565bdf453adbd6ecf4f5b1b07f1cb7bf8325"
+    },
+    "hxh-en-Nickes'_Alliance-305464.json": {
+      "locale": "en",
+      "title": "Nickes' Alliance",
+      "revision": 305464,
+      "revisionDate": "2022-06-08T14:31:30Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Nickes'_Alliance",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=305464",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=305464",
+      "contentSha256": "833b12313ec36aec1bc42d06bfef313a424beb77beb63ec2a5c2cf475e3480ae"
     }
   }
 }
