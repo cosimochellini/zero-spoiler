@@ -17,7 +17,7 @@ import {
 } from '~/lib/svg/primitives'
 import type { Stroke } from '~/lib/view/records'
 
-import { ARENA_ABILITY_DRAWINGS } from './arena-abilities'
+import { ARENA_ABILITY_DRAWINGS, GUM_BANDS } from './arena-abilities'
 import { CHAPTER_ONE_DRAWINGS } from './chapter-one'
 import {
   CHIMERA_ANT_HUNTERS_DRAWINGS,
@@ -1348,10 +1348,7 @@ const hunterExamRedrawn: Redrawings = {
       chapter: 55,
       value: [
         ...moved(HISOKA_FAN, 'translate(0 -14)'),
-        {
-          d: 'M56.9 151.7 C58.9 163.9 57.5 167.9 57.9 169.9 C57.9 173.9 50.1 180 49.1 184 M64.9 151.7 C62.9 163.9 59.5 167.9 59.1 169.9 C59.1 173.9 62.1 180 63.1 184 M76 141 C78 158.5 79 162.5 79.4 164.5 C79.4 168.5 74 180 73 184 M84 141 C82 158.5 81 162.5 80.6 164.5 C80.6 168.5 86 180 87 184 M95.1 151.7 C97.1 163.9 100.5 167.9 100.9 169.9 C100.9 173.9 97.9 180 96.9 184 M103.1 151.7 C101.1 163.9 102.5 167.9 102.1 169.9 C102.1 173.9 109.9 180 110.9 184',
-          role: 'ambient',
-        },
+        GUM_BANDS,
         { d: 'M14 184 H146', role: 'ambient', dashed: true },
         {
           d: 'M116 20 L148 14 L152 44 Q144 42 140 50 L122 52 Z M152 44 Q150 52 140 50',
