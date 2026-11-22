@@ -199,6 +199,13 @@ export const THRONES_ITALIAN_TITLES = {
   'brienne-of-tarth': characters('Brienne di Tarth'),
   'margaery-tyrell': 'Casa Tyrell#Margaery Tyrell',
   'mace-tyrell': 'Casa Tyrell#Mace Tyrell',
+  // #1465, the second stage's Riverlands, Harrenhal and Robb's war cast.
+  'alton-lannister': characters('Alton Lannister'),
+  'talisa-maegyr': characters('Talisa Maegyr'),
+  'vargo-hoat': characters('Vargo Hoat'),
+  'amory-lorch': OTHERS,
+  'polliver': OTHERS,
+  'cleos-frey': 'Casa Lannister#Genna Lannister',
 }
 
 /**
@@ -269,4 +276,14 @@ export const THRONES_NAMES_KEPT = {
   'selyse-baratheon': 'Selyse Baratheon',
   'matthos-seaworth': 'Matthos Seaworth',
   'cortnay-penrose': 'Cortnay Penrose',
+  // #1465. Italian Wikipedia names Amory Lorch and Polliver only in its TV
+  // cast list and Cleos Frey inside Genna Lannister's section; it has no
+  // entry for the Tickler, Chiswyck or Weese, whose names stay as they are
+  // until the dub and Mondadori forms are checked.
+  'amory-lorch': 'Amory Lorch',
+  'polliver': 'Polliver',
+  'cleos-frey': 'Cleos Frey',
+  'tickler': 'Tickler',
+  'chiswyck': 'Chiswyck',
+  'weese': 'Weese',
 }

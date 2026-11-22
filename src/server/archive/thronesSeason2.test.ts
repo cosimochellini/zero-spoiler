@@ -202,6 +202,8 @@ function character(id: string): Entity {
 }
 
 describe('the second season’s King’s Landing cast', () => {
+  // The other cast groups file their own records in the same module, each
+  // pinned in its own test (#1465 in `thronesSeason2Riverlands.test.ts`).
   it('files these records', () => {
     // Each cast group's test lists its own records; the season holds them
     // all (#1468).
@@ -314,8 +316,9 @@ describe('the second season’s heading', () => {
   it('opens with its first record in each medium', () => {
     const heading = archive.arcs.find(({ id }) => id === 'season-2')
 
-    // Episode 11 (Daisy, and Stannis's cast); chapter 74, the prologue of
-    // A Clash of Kings, since the stormlands cast (#1464).
+    // Episode 11 (Daisy, Alton Lannister and Stannis's cast); chapter 74,
+    // the prologue of A Clash of Kings, since the stormlands cast (#1464);
+    // Cleos Frey (Catelyn I, #1465) opens at chapter 81 in the books.
     expect(heading?.revealedAtEpisode).toBe(11)
     expect(heading?.revealedAtChapter).toBe(74)
   })
