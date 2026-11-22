@@ -8,9 +8,6 @@ import { circle, ellipse, SEA, shadow, star } from '~/lib/svg/primitives'
 
 import { BESIDE_THE_BEAST, TURNED_BODY, TURNED_COLLAR } from './kakin-phase-2'
 
-/** The second of a pair: the first, mirrored about x 80. */
-const MIRRORED = 'matrix(-1 0 0 1 160 0)'
-
 /**
  * Benjamin's military puffer jacket from the front, the quilted channels
  * across it, the stand collar and the zip, the dark belt hatched and its
@@ -39,48 +36,60 @@ const BENJAMIN_JACKET: Stroke[] = [
 ]
 
 /**
- * Camilla's hair from behind: the elaborate updo with its tiara-shaped
- * ornament in tint, and the locks falling down her back.
+ * Camilla's hair from behind, the head turned a little to her left: the
+ * elaborate updo piled on top, the tiara's points rising beyond it in tint
+ * (the far ones smaller), the locks tied above the nape and falling down
+ * her back, the side turned away hatched, her shoulders beneath.
  */
 const CAMILLA_UPDO: Stroke[] = [
-  { d: 'M52 104 C48 70 60 50 80 50 C100 50 112 70 108 104' },
-  { d: 'M60 58 C52 40 66 30 80 36 C94 30 108 40 100 58' },
-  { d: 'M70 40 C74 46 74 52 70 58 M90 40 C86 46 86 52 90 58', role: 'soft' },
+  { d: 'M50 106 C44 76 54 54 76 50 C98 48 112 68 108 102' },
+  { d: 'M56 62 C46 44 58 30 74 34 C84 26 100 30 104 44 C110 52 106 60 100 62' },
   {
-    d: 'M60 42 L64 26 L72 36 L80 18 L88 36 L96 26 L100 42 Q80 50 60 42 Z',
+    d: 'M64 50 C70 42 80 42 84 50 M84 40 C92 36 100 42 98 50 M60 58 C68 54 78 56 82 62',
+    role: 'soft',
+  },
+  {
+    d: 'M54 40 L54 18 L64 32 L72 10 L80 28 L88 14 L94 28 L100 20 L104 36',
     role: 'accent',
   },
   {
-    d: 'M64 100 C62 122 68 140 62 160 M80 104 C80 128 84 144 78 166 M96 100 C98 122 92 140 98 160',
+    d: 'M62 104 C60 126 66 142 60 162 M78 106 C78 130 82 146 76 168 M94 102 C96 124 90 142 96 160',
     role: 'soft',
   },
-  { d: 'M30 172 C34 136 50 118 64 112 M130 172 C126 136 110 118 96 112' },
-  { d: 'M70 66 C72 80 72 92 70 104 M90 66 C88 80 88 92 90 104', role: 'soft' },
+  { d: 'M66 66 C70 80 70 92 68 106 M90 66 C88 80 88 92 90 104', role: 'soft' },
+  {
+    d: 'M100 72 l7 -4 M102 86 l7 -4 M100 100 l6 -4 M96 126 l5 -3 M98 140 l5 -3',
+    role: 'ambient',
+  },
+  { d: 'M28 174 C32 138 48 120 62 114 M130 172 C126 138 112 120 98 114' },
 ]
 
 /**
- * Zhang Lei's hands joined inside the large sleeves of his robe, the
- * crossed collar above them and the cuffs where the sleeves meet in tint:
- * how he stands at the eve festival.
+ * Zhang Lei's hands joined inside the large sleeves of his robe, seen in
+ * 3/4: the near sleeve full, the far one smaller and hatched, the monk-like
+ * crossed collar above them and the two cuffs where the sleeves meet in
+ * tint: how he stands at the eve festival.
  */
-const ZHANG_LEI_SLEEVE: Stroke[] = [
-  { d: 'M18 132 C20 102 40 84 66 88 L80 118 C60 134 34 142 18 132 Z' },
+const ZHANG_LEI: Stroke[] = [
+  { d: 'M12 138 C10 104 30 82 60 86 L82 120 C62 140 30 150 12 138 Z' },
+  { d: 'M82 120 L100 90 C122 86 140 102 142 128 C128 138 104 136 82 120 Z' },
   {
-    d: 'M30 112 C40 104 52 100 62 100 M26 124 C38 118 52 114 66 114',
+    d: 'M24 114 C36 106 48 102 62 102 M20 128 C34 122 50 118 70 118',
     role: 'soft',
   },
-]
-const ZHANG_LEI: Stroke[] = [
-  ...ZHANG_LEI_SLEEVE,
-  ...moved(ZHANG_LEI_SLEEVE, MIRRORED),
-  { d: 'M30 92 C36 62 52 44 64 38 L80 70 L96 38 C108 44 124 62 130 92' },
-  { d: 'M64 38 C70 34 90 34 96 38 M80 70 V88', role: 'soft' },
+  { d: 'M104 102 C116 102 126 108 134 118', role: 'soft' },
+  { d: 'M116 110 l6 -4 M124 116 l6 -4 M110 122 l6 -4', role: 'ambient' },
   {
-    d: `${ellipse(72, 118, 9, 13)} ${ellipse(88, 118, 9, 13)}`,
+    d: `${ellipse(74, 118, 9, 13)} ${ellipse(91, 117, 7, 11)}`,
     role: 'accent',
   },
-  { d: 'M128 104 l6 -4 M132 116 l6 -4 M134 128 l5 -3', role: 'ambient' },
-  shadow(80, 160, 54),
+  { d: 'M28 90 C34 60 50 42 66 36 L86 70 L100 36 C112 42 122 58 126 88' },
+  {
+    d: 'M66 36 C74 30 92 30 100 36 M58 46 L86 84 M108 46 L92 72',
+    role: 'soft',
+  },
+  { d: 'M18 146 L22 188 M136 134 L134 188 M60 140 L58 188', role: 'soft' },
+  shadow(78, 192, 60),
 ]
 
 /**
@@ -102,20 +111,26 @@ const SCARLET_EYES_JAR: Stroke[] = [
 ]
 
 /**
- * Tubeppa's eyeglasses folded in 3/4, the rims in tint, and one of her
- * earrings beside them.
+ * Tubeppa's eyeglasses folded and lying in 3/4, the rims in tint with their
+ * thickness inside them, the bridge, the arms folded behind,
+ * the far lens hatched where it turns away, and one of her earrings beside
+ * them.
  */
 const TUBEPPA_GLASSES: Stroke[] = [
   {
-    d: `${ellipse(56, 104, 22, 17)} ${ellipse(106, 100, 19, 15)}`,
+    d: `${ellipse(52, 108, 24, 18)} ${ellipse(104, 100, 18, 13)}`,
     role: 'accent',
   },
-  { d: 'M78 102 Q82 95 87 99' },
-  { d: 'M34 102 L26 92 L72 82 M125 98 L128 90 L84 80' },
-  { d: 'M44 96 Q50 92 56 93 M96 92 Q102 89 108 90', role: 'soft' },
-  { d: `${circle(132, 118, 7)} M132 111 V102 Q136 100 136 96`, role: 'soft' },
-  { d: 'M62 116 l6 -4 M110 110 l5 -3', role: 'ambient' },
-  shadow(78, 130, 50),
+  {
+    d: `${ellipse(52, 108, 20, 14)} ${ellipse(104, 100, 15, 10)}`,
+    role: 'soft',
+  },
+  { d: 'M76 104 Q82 94 87 98' },
+  { d: 'M28 104 L20 92 L76 80 M122 98 L128 88 L84 78' },
+  { d: 'M38 100 Q44 96 50 96', role: 'soft' },
+  { d: 'M96 104 l8 -8 M102 108 l10 -10 M110 108 l6 -6', role: 'ambient' },
+  { d: `${circle(136, 122, 7)} M136 115 V106 Q140 104 140 100`, role: 'soft' },
+  shadow(80, 136, 56),
 ]
 
 /** One copy of the Book of Tyson, closed, in 3/4: the cover, spine and pages. */
@@ -139,97 +154,137 @@ const TYSON_BOOKS: Stroke[] = [
 ]
 
 /**
- * Luzurus's head from behind: the blond hair combed back in rows, the two
- * large puffs at the sides in tint, the collar beneath.
+ * Luzurus's head from behind, turned a little to his left: the hair combed
+ * back in rows that follow the skull, the near puff at his side in tint and
+ * the far one half hidden and hatched, his neck and collar beneath.
  */
 const LUZURUS_HAIR: Stroke[] = [
-  { d: 'M54 104 C52 70 62 46 80 46 C98 46 108 70 106 104' },
+  { d: 'M54 106 C48 72 60 46 82 46 C102 46 112 68 108 104' },
   {
-    d: 'M68 50 C64 66 64 86 66 104 M80 46 V106 M92 50 C96 66 96 86 94 104',
+    d: 'M66 52 C58 70 60 90 64 108 M80 46 C74 68 76 90 80 110 M94 48 C94 70 96 88 96 106',
     role: 'soft',
   },
-  { d: `${circle(46, 94, 13)} ${circle(114, 94, 13)}`, role: 'accent' },
-  { d: 'M41 88 Q46 84 51 88 M109 88 Q114 84 119 88', role: 'soft' },
-  { d: 'M66 104 V122 M94 104 V122' },
-  { d: 'M26 166 C30 136 48 124 66 122 M134 166 C130 136 112 124 94 122' },
-  { d: 'M66 122 Q80 130 94 122', role: 'soft' },
+  {
+    d: `${circle(44, 96, 15)} M106 82 C120 80 124 100 110 108`,
+    role: 'accent',
+  },
+  { d: 'M36 90 Q44 84 52 90 M34 100 Q44 95 54 101', role: 'soft' },
+  { d: 'M114 88 l5 -3 M116 96 l5 -3', role: 'ambient' },
+  { d: 'M66 108 V124 M98 106 V122' },
+  { d: 'M24 168 C28 138 46 126 66 124 M136 168 C132 138 116 124 98 122' },
+  { d: 'M66 124 Q82 132 98 122', role: 'soft' },
 ]
 
 /**
- * Salé-salé's right ear with its circular piercings in tint, the short
- * blond hair above it.
+ * Salé-salé's right ear with its circular piercings in tint: the rim and
+ * its fold, the bowl and the flap before it, the short blond hair above,
+ * and the side of the head behind the ear hatched.
  */
 const SALE_SALE_EAR: Stroke[] = [
   {
     d: 'M74 56 C100 44 124 62 120 92 C118 110 106 116 102 132 C98 148 84 152 76 142',
   },
   { d: 'M84 70 C100 64 110 76 106 92 C104 102 96 106 94 116', role: 'soft' },
-  { d: 'M90 86 C96 84 98 92 94 96', role: 'soft' },
+  { d: 'M88 86 C96 82 100 92 94 98 C90 102 84 100 82 106', role: 'soft' },
+  { d: 'M76 102 C70 104 70 114 76 118', role: 'soft' },
   {
     d: `${circle(112, 64, 6)} ${circle(122, 82, 6)} ${circle(84, 154, 7)}`,
     role: 'accent',
   },
   { d: 'M58 34 C66 30 76 30 84 34 M54 46 C62 40 72 40 80 44', role: 'soft' },
-  { d: 'M60 60 l-6 6 M60 80 l-6 6 M62 100 l-6 6', role: 'ambient' },
+  {
+    d: 'M126 70 l8 -5 M128 88 l8 -5 M126 106 l8 -5 M120 124 l8 -5',
+    role: 'ambient',
+  },
 ]
 
-/** Salé-salé's first drawing: the ear and its shadow. */
-const SALE_SALE: Stroke[] = [...SALE_SALE_EAR, shadow(88, 172, 36)]
+/**
+ * Salé-salé's first drawing: the ear, the line of his jaw below it, his
+ * neck and the collar of his light robe.
+ */
+const SALE_SALE: Stroke[] = [
+  ...SALE_SALE_EAR,
+  { d: 'M70 134 C64 152 52 164 34 170 M104 142 C108 156 110 166 112 176' },
+  { d: 'M22 184 C46 172 82 172 124 186 M60 176 L74 192', role: 'soft' },
+]
 
 /**
- * Momoze's knitting in her rocking chair: the seat and back, the curved
- * rockers, the two needles crossed through the piece in tint and the ball
- * of wool on the seat.
+ * Momoze's rocking chair in 3/4: the back's two posts and top rail, its
+ * slats drawn plain (a frame check), the seat
+ * with its front edge, the legs and the two rockers curving away, the far
+ * side hatched.
  */
 const MOMOZE_CHAIR: Stroke[] = [
-  { d: 'M44 50 V118 M104 50 V118 M44 56 H104 M44 74 H104' },
-  { d: 'M40 118 H112 L108 128 H44 Z' },
-  { d: 'M48 128 L44 158 M104 128 L110 158' },
-  { d: 'M22 154 Q78 172 134 150', role: 'soft' },
-  { d: 'M108 60 l5 -3 M108 76 l5 -3 M108 92 l5 -3', role: 'ambient' },
-  shadow(78, 168, 50),
+  { d: 'M42 46 V122 M94 36 V112 M42 46 Q68 34 94 36' },
+  { d: 'M56 46 V120 M68 42 V118 M80 40 V116', role: 'soft' },
+  {
+    d: 'M38 122 L94 112 L122 118 L66 130 Z M38 122 V128 L66 136 L122 124 V118',
+  },
+  { d: 'M42 128 L40 150 M66 136 V158 M118 124 L122 144' },
+  { d: 'M14 144 Q44 160 84 154 M84 150 Q112 156 144 138', role: 'soft' },
+  { d: 'M98 44 l5 -3 M98 62 l5 -3 M98 80 l5 -3 M98 98 l5 -3', role: 'ambient' },
+  shadow(80, 166, 58),
 ]
+
+/**
+ * The same chair with her knitting on it: the piece on its two needles in
+ * tint, and the ball of wool on the seat with its yarn trailing up to it.
+ */
 const MOMOZE_KNITTING: Stroke[] = [
   ...MOMOZE_CHAIR,
-  { d: 'M60 86 V112 M88 86 V112 M60 99 H88', role: 'soft' },
-  { d: 'M52 82 L96 116 M96 82 L52 116', role: 'accent' },
   {
-    d: `${circle(98, 108, 9)} M92 104 Q98 100 104 106 M91 110 Q98 106 105 112`,
+    d: 'M58 88 L88 84 L90 108 L60 112 Z M64 96 L86 93 M65 104 L87 101',
+    role: 'soft',
+  },
+  { d: 'M44 92 L100 80 M46 82 L102 92', role: 'accent' },
+  {
+    d: `${circle(102, 112, 8)} M96 108 Q102 104 108 110 M98 104 C96 96 90 100 86 98`,
     role: 'soft',
   },
 ]
 
 /**
- * Marayam's hamster cage, which he carries even to formal events: the
- * domed top and its handle in tint, the bars, the tray, and the round
- * hamster inside, seen from behind.
+ * Marayam's hamster cage in 3/4, which he carries even to formal events:
+ * the domed top and its handle in tint, the bars bending round it, the
+ * round tray with its depth, and inside the three hamsters he watches,
+ * seen from behind, the far side hatched.
  */
 const MARAYAM_CAGE: Stroke[] = [
-  { d: 'M36 150 V92 C36 60 124 60 124 92 V150' },
-  { d: 'M30 150 H130 V158 H30 Z' },
-  { d: 'M70 52 C70 40 90 40 90 52', role: 'accent' },
+  { d: 'M30 146 V96 C30 52 130 52 130 96 V146' },
   {
-    d: 'M52 150 V74 M68 150 V66 M80 150 V64 M92 150 V66 M108 150 V74 M36 112 H124',
+    d: `${ellipse(80, 146, 52, 10)} M28 146 V154 C28 168 132 168 132 154 V146`,
+  },
+  { d: 'M70 56 C70 42 90 42 90 56', role: 'accent' },
+  {
+    d: 'M46 152 V76 M62 155 V64 M80 156 V60 M98 155 V64 M114 152 V76 M30 110 C30 120 130 120 130 110',
     role: 'soft',
   },
-  { d: 'M72 148 C70 132 76 124 86 124 C96 124 100 134 98 148 Z' },
-  { d: 'M78 126 Q78 120 82 122 M90 124 Q92 118 94 123', role: 'soft' },
-  { d: 'M118 88 l5 -3 M118 104 l5 -3 M118 124 l5 -3', role: 'ambient' },
-  shadow(80, 166, 52),
+  {
+    d: 'M44 148 C42 136 48 130 55 130 C62 130 68 136 66 148 M70 152 C68 138 74 132 81 132 C88 132 94 138 92 152 M96 148 C94 136 100 130 107 130 C114 130 120 136 118 148',
+  },
+  {
+    d: 'M49 132 q0 -4 3 -2 M58 130 q2 -3 4 0 M75 134 q0 -4 3 -2 M84 132 q2 -3 4 0 M101 132 q0 -4 3 -2 M110 130 q2 -3 4 0',
+    role: 'soft',
+  },
+  { d: 'M122 84 l5 -3 M124 100 l5 -3 M124 120 l5 -3', role: 'ambient' },
+  shadow(80, 172, 56),
 ]
 
 /**
- * A pistol in 3/4, the trigger guard in tint and the grip hatched: the gun
- * Halkenburg holds on friendly soldiers to stop his siblings dying.
+ * A pistol in 3/4 from slightly above: the slide's side and top, the
+ * muzzle's face, the grip with its far face, the trigger guard in tint and
+ * the grip hatched: the gun Halkenburg holds on friendly soldiers to stop
+ * his siblings dying.
  */
 const HALKENBURG_GUN: Stroke[] = [
-  { d: 'M28 92 H126 L132 98 V112 H28 Z' },
-  { d: 'M28 104 H122 M34 92 V112', role: 'soft' },
-  { d: 'M92 112 L88 160 H116 L118 112' },
-  { d: 'M72 112 Q70 130 84 130 H90', role: 'accent' },
+  { d: 'M28 96 H128 V112 H28 Z' },
+  { d: 'M28 96 L36 88 H136 L128 96 M136 88 V104 L128 112' },
+  { d: 'M28 104 H124 M34 96 V112', role: 'soft' },
+  { d: 'M94 112 L88 160 H114 L120 112 M114 160 L122 154 L128 112' },
+  { d: 'M72 112 Q70 130 84 130 H92', role: 'accent' },
   { d: 'M78 112 V122', role: 'soft' },
-  { d: 'M94 124 l18 -8 M93 136 l20 -9 M92 148 l22 -10', role: 'ambient' },
-  { d: 'M108 86 V92 M118 88 V92', role: 'soft' },
+  { d: 'M96 124 l18 -8 M94 136 l20 -9 M92 148 l22 -10', role: 'ambient' },
+  { d: `M44 88 V84 M126 88 V84 ${circle(132, 100, 1.5)}`, role: 'soft' },
 ]
 const HALKENBURG_PISTOL: Stroke[] = [...HALKENBURG_GUN, shadow(84, 172, 44)]
 
@@ -258,8 +313,8 @@ const WOBLE_ROCKERS: Stroke[] = [
 
 /**
  * A queen's portrait in its frame, as the overview of the princes with
- * their mothers shows Unma and Tang Zhao Li: the frame and its inner edge,
- * the hanging cord in tint. Each queen's own outline sits inside it.
+ * their mothers shows Unma: the frame and its inner edge, the hanging cord
+ * in tint. Her own outline sits inside it.
  */
 const PORTRAIT: Stroke[] = [
   { d: 'M36 40 H124 V160 H36 Z' },
@@ -271,84 +326,215 @@ const PORTRAIT: Stroke[] = [
   },
 ]
 
+/**
+ * Kacho's headphones in 3/4: the band in tint, the near cup's
+ * shell and depth, the far cup showing its cushion, hatched.
+ */
+const KACHO_HEADPHONES: Stroke[] = [
+  { d: 'M34 120 C28 56 132 56 126 120', role: 'accent' },
+  { d: 'M42 120 C38 68 122 68 118 120' },
+  { d: 'M58 76 Q80 68 102 76 M56 82 Q80 74 104 82', role: 'soft' },
+  {
+    d: `${ellipse(36, 132, 13, 20)} M36 112 C50 114 54 148 38 152 M30 120 V108 H42 V114`,
+  },
+  { d: `${ellipse(124, 130, 10, 17)} M118 118 V110 H128 V116` },
+  { d: ellipse(124, 130, 5, 10), role: 'soft' },
+  { d: 'M130 120 l5 -3 M132 132 l5 -3 M130 144 l5 -3', role: 'ambient' },
+]
+
+/**
+ * Fugetsu's glass harp in 3/4 on its table: three wine glasses, their rims
+ * true ellipses and the water in each at its own height, the rim she plays
+ * in tint with open lines where it rings, the table's top seen from above.
+ */
+const FUGETSU_HARP: Stroke[] = [
+  {
+    d: 'M6 156 L28 134 H154 L134 156 Z M6 156 V162 H134 V156 M134 162 L154 140 V134',
+  },
+  {
+    d: 'M18 98 C18 124 42 124 42 98 M30 120 V146 M68 92 C68 120 94 120 94 92 M81 116 V142 M114 96 C114 122 138 122 138 96 M126 118 V140',
+  },
+  {
+    d: `${ellipse(30, 98, 12, 3.5)} ${ellipse(126, 96, 12, 3.5)} ${ellipse(30, 147, 8, 2.5)} ${ellipse(81, 143, 8, 2.5)} ${ellipse(126, 141, 8, 2.5)}`,
+  },
+  { d: ellipse(81, 92, 13, 4), role: 'accent' },
+  {
+    d: 'M20 108 Q30 112 40 108 M70 100 Q81 104 92 100 M116 112 Q126 116 136 112',
+    role: 'soft',
+  },
+  {
+    d: 'M64 84 q-4 -6 0 -12 M98 84 q4 -6 0 -12 M58 88 q-6 -10 0 -20',
+    role: 'ambient',
+  },
+  { d: 'M140 142 l6 -4 M132 150 l6 -4', role: 'ambient' },
+]
+
+/**
+ * Tang Zhao Li's portrait frame, empty, oval and seen a little from the
+ * side: the frame's outer edge and its thickness turned away and hatched,
+ * the inner moulding in tint, the bare canvas, the cord on its nail.
+ */
+const TANG_FRAME: Stroke[] = [
+  { d: ellipse(76, 104, 44, 58) },
+  { d: 'M76 46 C106 46 126 72 126 104 C126 136 106 162 76 162' },
+  {
+    d: 'M121 80 l5 -3 M123 98 l4 -3 M123 116 l4 -3 M120 134 l5 -3',
+    role: 'ambient',
+  },
+  { d: ellipse(76, 104, 34, 47), role: 'accent' },
+  { d: ellipse(76, 104, 30, 42), role: 'soft' },
+  { d: 'M68 52 Q76 44 84 52 M68 156 Q76 164 84 156', role: 'soft' },
+  { d: `M56 52 L76 24 L96 52 ${circle(76, 22, 2)}`, role: 'soft' },
+  { d: 'M132 78 C138 96 138 120 130 142', role: 'ambient', dashed: true },
+]
+
+/**
+ * Beyond from behind in 3/4: his long black hair hatched, bound by a band
+ * in tint at the nape and falling down his back, the collar either side of
+ * it, the robe of an ancient commander with its sleeves ending at the
+ * elbows, the far side hatched. No scar: it is on his face.
+ */
+const BEYOND_BACK: Stroke[] = [
+  {
+    d: 'M66 60 C64 40 74 28 86 28 C98 28 106 40 104 60 C104 68 100 74 96 78 H74 C70 74 66 68 66 60 Z',
+  },
+  { d: 'M74 78 Q85 84 96 78 L95 88 Q85 93 75 88 Z', role: 'accent' },
+  { d: 'M74 90 C66 114 70 140 84 166 C98 140 102 114 94 90' },
+  {
+    d: 'M72 46 l14 -10 M70 58 l22 -16 M72 70 l26 -20 M76 104 l14 -8 M76 118 l16 -9 M78 132 l14 -8 M82 146 l8 -5',
+    role: 'ambient',
+  },
+  { d: 'M66 84 Q70 92 75 92 M95 92 Q100 92 104 84', role: 'soft' },
+  {
+    d: 'M74 84 C52 88 34 98 26 116 L14 154 Q28 162 42 156 L46 122 M96 84 C112 88 124 98 128 114 L136 148 Q126 154 116 150 L114 122',
+  },
+  { d: 'M46 122 C48 144 48 164 46 186 H114 C112 164 112 144 114 122' },
+  { d: 'M60 110 Q64 144 62 182 M102 110 Q100 144 100 182', role: 'soft' },
+  {
+    d: 'M24 158 L26 190 M40 158 L38 190 M120 152 L122 186 M132 150 L134 182',
+    role: 'soft',
+  },
+  {
+    d: 'M116 102 l7 -4 M122 120 l7 -4 M124 136 l7 -4 M106 160 l6 -4',
+    role: 'ambient',
+  },
+  shadow(80, 192, 60),
+]
+
+/**
+ * Izunavi from the collar down in 3/4, tall and broad: the shoulders and
+ * arms, the hem, the legs beneath, the far side hatched.
+ */
+const IZUNAVI_FIGURE: Stroke[] = [
+  {
+    d: 'M74 42 C52 46 36 54 30 70 C24 96 20 124 20 150 M104 40 C118 44 128 52 132 66 C136 92 138 120 138 146',
+  },
+  { d: 'M38 74 L36 150 H128 L126 70' },
+  { d: 'M40 150 L38 192 M80 156 V192 M124 150 L126 192', role: 'soft' },
+  shadow(80, 194, 58),
+]
+
+/**
+ * Izunavi's light jacket, open over his undershirt, as he is seen before
+ * boarding among the Hunters Kurapika recruits in chapter 350: the
+ * jacket's collar and open front in tint, the undershirt's neck.
+ */
+const IZUNAVI_JACKET: Stroke[] = [
+  ...IZUNAVI_FIGURE,
+  {
+    d: 'M74 42 L64 66 L80 84 L76 150 M104 40 L112 62 L98 84 L104 150',
+    role: 'accent',
+  },
+  { d: 'M78 44 Q90 54 100 44', role: 'soft' },
+  { d: 'M126 84 l6 -4 M128 102 l6 -4 M128 120 l6 -4', role: 'ambient' },
+]
+
+/**
+ * Izunavi as a Royal Bodyguard, from chapter 362: the same figure in the
+ * black suit, its lapels, the shirt collar, and the tie in tint,
+ * the suit hatched dark.
+ */
+const IZUNAVI_SUIT: Stroke[] = [
+  ...IZUNAVI_FIGURE,
+  {
+    d: 'M74 42 L60 100 L74 106 L88 150 L100 104 L112 98 L104 40',
+    role: 'soft',
+  },
+  { d: 'M74 42 L80 62 L88 54 L96 62 L104 40', role: 'soft' },
+  {
+    d: 'M84 56 H94 L92 68 H86 Z M86 68 L82 128 L89 138 L96 128 L92 68',
+    role: 'accent',
+  },
+  {
+    d: 'M42 90 l10 -6 M40 110 l12 -7 M40 130 l12 -7 M114 92 l10 -6 M116 112 l10 -6 M116 132 l10 -6 M104 120 l6 -4 M70 124 l-6 -4',
+    role: 'ambient',
+  },
+]
+
 export const KAKIN_PHASE_ONE_DRAWINGS = {
-  // The world as the Dark Continent holds it: the vast land in a ring round
-  // Lake Mobius, its coast in tint and its land hatched, and in the middle
-  // of the lake the small islands of the known world. The king announces
-  // the voyage there in chapter 340.
+  // The map the king's video shows in chapter 340: the Dark Continent in a
+  // ring round Lake Mobius, its outer coast in tint and its land hatched,
+  // water lines on the lake, and in the middle of the lake the small
+  // landmasses of the known world. It is a map, so it has no shadow.
   'dark-continent': [
     {
-      d: 'M10 100 C8 56 44 20 82 18 C122 18 154 50 152 98 C150 146 116 180 78 180 C38 180 12 146 10 100 Z',
+      d: 'M14 96 C10 70 22 46 40 36 C48 22 66 14 84 18 C100 12 122 20 132 34 C148 44 154 66 150 88 C156 108 150 130 136 146 C128 164 108 178 86 176 C70 184 48 178 36 164 C20 152 10 132 16 114 C12 108 12 102 14 96 Z',
       role: 'accent',
     },
     {
-      d: 'M34 100 C34 70 54 46 82 46 C110 46 128 70 126 100 C124 128 104 152 80 152 C54 152 34 130 34 100 Z',
+      d: 'M36 100 C34 80 46 60 62 54 C72 46 90 46 100 52 C116 56 128 72 126 90 C130 104 126 122 114 132 C104 146 84 150 70 144 C54 142 40 130 38 116 C34 110 34 106 36 100 Z',
     },
     {
-      d: 'M18 84 l14 -10 M20 112 l12 -8 M26 138 l16 -12 M42 166 l16 -12 M100 170 l20 -14 M128 150 l16 -12 M138 116 l10 -8 M136 78 l10 -8 M112 34 l14 -10 M66 26 l18 -12 M36 50 l14 -10',
+      d: 'M20 86 l12 -8 M22 116 l12 -8 M28 140 l14 -10 M50 164 l14 -10 M98 166 l16 -12 M122 150 l14 -10 M136 116 l10 -8 M134 72 l10 -8 M110 34 l12 -8 M62 32 l14 -10 M34 60 l12 -8',
       role: 'ambient',
     },
     {
-      d: 'M60 94 C58 80 70 72 78 78 C84 70 96 74 96 84 C104 88 102 100 94 102 C92 112 78 114 74 106 C64 108 58 102 60 94 Z M100 110 C104 106 110 108 108 114 C106 118 100 116 100 110 Z',
+      d: 'M66 94 C64 84 72 78 80 82 C86 76 96 80 96 88 C102 92 100 102 92 104 C88 110 78 110 74 104 C66 104 64 100 66 94 Z',
     },
     {
-      d: 'M44 74 q6 -4 12 0 M106 128 q6 -4 12 0 M48 124 q6 -4 12 0 M104 62 q6 -4 12 0',
-      role: 'ambient',
-    },
-  ],
-
-  // Beyond from behind: his long black hair tied with a band in tint and
-  // hatched dark, down the back of the robe of an ancient commander, the
-  // armour plates he wears beneath it showing at the shoulders. He is
-  // shown in the king's video in chapter 340. No scar: it is on his face.
-  'beyond-netero': [
-    { d: 'M62 82 C58 62 66 44 80 44 C94 44 102 62 98 82' },
-    { d: 'M70 82 C68 106 72 132 78 156 M90 82 C92 106 88 132 82 156' },
-    { d: 'M71 94 Q80 98 89 94 M71 100 Q80 104 89 100', role: 'accent' },
-    {
-      d: 'M68 54 l10 -6 M66 66 l16 -10 M66 78 l20 -12 M74 112 l8 -5 M75 126 l8 -5 M77 140 l6 -4',
-      role: 'ambient',
-    },
-    { d: 'M28 172 C28 128 40 100 62 90 M132 172 C132 128 120 100 98 90' },
-    {
-      d: 'M36 120 Q48 108 62 106 M34 134 Q46 122 62 120 M124 120 Q112 108 98 106 M126 134 Q114 122 98 120',
+      d: 'M100 114 C104 110 110 112 108 118 C106 122 100 120 100 114 Z M56 110 C58 106 64 108 62 112 C60 116 54 114 56 110 Z M84 68 C86 64 92 66 90 70 C88 74 82 72 84 68 Z',
       role: 'soft',
     },
-    { d: 'M28 172 H132', role: 'soft' },
-    { d: 'M44 150 V172 M116 150 V172', role: 'soft' },
-    shadow(80, 182, 56),
+    {
+      d: 'M46 82 q5 -3 10 0 M104 128 q5 -3 10 0 M48 124 q5 -3 10 0 M106 68 q5 -3 10 0 M74 134 q5 -3 10 0',
+      role: 'ambient',
+    },
   ],
 
-  // Golem's machine from the front: the boxy body with its small black
-  // window hatched, the seat at its shoulder, the right arm, and in tint
-  // the heavy gun that stands for its left arm, which Golem conjures. It is
-  // introduced to Ging in chapter 347. Nobody inside is drawn.
+  // Beyond from behind, his hair bound by a band in tint, in the robe of an
+  // ancient commander, as the king's video shows him in chapter 340.
+  'beyond-netero': BEYOND_BACK,
+
+  // Golem's machine in 3/4: the boxy body with its front, side and top, the
+  // small black window in front hatched, the seat at its shoulder, the
+  // right arm, and in tint the heavy gun that stands for its left arm,
+  // which Golem conjures, its barrel running forward. It is introduced to
+  // Ging in chapter 347. Nobody inside is drawn.
   'golem': [
+    { d: 'M40 62 H96 V134 H40 Z' },
+    { d: 'M40 62 L58 50 H114 L96 62 M114 50 V122 L96 134' },
+    { d: 'M56 72 H78 V86 H56 Z' },
+    { d: 'M58 84 l8 -10 M64 86 l10 -12 M72 86 l6 -8', role: 'ambient' },
+    { d: 'M44 58 V42 H58 V52', role: 'soft' },
     {
-      d: 'M44 72 Q44 50 64 48 H96 Q116 50 116 72 V128 Q116 136 108 136 H52 Q44 136 44 128 Z',
+      d: 'M40 74 C28 78 22 94 24 112 M40 88 C36 92 34 100 36 112 M22 112 H38 V124 H22 Z',
     },
-    { d: 'M70 62 H90 V76 H70 Z' },
-    { d: 'M72 74 l6 -10 M78 76 l8 -14 M84 76 l6 -10', role: 'ambient' },
-    { d: 'M46 48 V38 H60 V48', role: 'soft' },
-    {
-      d: 'M44 80 C32 84 28 100 30 118 M44 94 C40 98 38 106 40 118 M28 118 H42 V130 H28 Z',
-    },
-    { d: 'M112 82 H152 V100 H112 M120 100 V112 H132 V100', role: 'accent' },
-    { d: ellipse(152, 91, 3, 9), role: 'soft' },
-    { d: 'M44 104 H116 M80 104 V136', role: 'soft' },
-    { d: 'M56 136 V164 H74 V136 M86 136 V164 H104 V136' },
-    { d: 'M52 164 H78 M82 164 H108', role: 'soft' },
-    { d: 'M108 112 l5 -4 M108 124 l5 -4 M98 156 l5 -4', role: 'ambient' },
-    shadow(80, 172, 50),
+    { d: 'M104 70 L144 82 M104 98 L140 110', role: 'accent' },
+    { d: `${ellipse(142, 96, 5, 14)} M112 102 V116 H124 V106`, role: 'soft' },
+    { d: 'M40 106 H96 M68 106 V134', role: 'soft' },
+    { d: 'M50 134 V164 H66 V134 M74 134 V164 H90 V134' },
+    { d: 'M46 164 H70 M70 164 H94', role: 'soft' },
+    { d: 'M100 72 l9 -5 M100 108 l9 -5 M100 124 l9 -5', role: 'ambient' },
+    shadow(80, 172, 52),
   ],
 
   // Benjamin's military puffer jacket, belt and buckle: the outfit of his
   // private army, which he is most often seen in from chapter 358.
   'benjamin-hui-guo-rou': [...BENJAMIN_JACKET, shadow(80, 162, 54)],
 
-  // Camilla's elaborate updo and its tiara-shaped ornament, as the roster of
-  // princes shows her in chapter 349.
-  'camilla-hui-guo-rou': [...CAMILLA_UPDO, shadow(80, 182, 50)],
+  // Camilla's elaborate updo and her tiara, as the roster of princes shows
+  // her in chapter 349.
+  'camilla-hui-guo-rou': [...CAMILLA_UPDO, shadow(80, 184, 50)],
 
   // Zhang Lei's hands joined in the large sleeves of his robe, as he stands
   // with his siblings at the eve festival, chapter 358.
@@ -358,8 +544,8 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
   // Prince owns a collection of them, chapter 343. Two orbs, no iris.
   'tserriednich-hui-guo-rou': [...SCARLET_EYES_JAR, shadow(80, 166, 40)],
 
-  // Tubeppa's eyeglasses and an earring, which she wears from the roster,
-  // chapter 349.
+  // Tubeppa's eyeglasses and one of her earrings, which she wears from the
+  // roster, chapter 349.
   'tubeppa-hui-guo-rou': TUBEPPA_GLASSES,
 
   // The Book of Tyson, the book of love she hands to her guards on the
@@ -368,56 +554,31 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
 
   // Luzurus's combed-back rows and the two puffs at his sides, as he stands
   // with his siblings from chapter 349.
-  'luzurus-hui-guo-rou': [...LUZURUS_HAIR, shadow(80, 176, 50)],
+  'luzurus-hui-guo-rou': [...LUZURUS_HAIR, shadow(80, 176, 52)],
 
-  // Salé-salé's right ear and its circular piercings, from the roster of
-  // chapter 349.
+  // Salé-salé's right ear and its circular piercings above his jaw and the
+  // collar of his robe, from the roster of chapter 349.
   'sale-sale-hui-guo-rou': SALE_SALE,
 
   // A pistol in 3/4, the trigger guard in tint and the grip hatched: the
-  // gun Halkenburg holds on friendly soldiers to stop his siblings dying,
-  // later in the arc. His bow is not drawn: it is his ability.
+  // gun Halkenburg draws at the VVIP gate in chapter 382, holding friendly
+  // soldiers at gunpoint. His bow is not drawn: it is his ability.
   'halkenburg-hui-guo-rou': HALKENBURG_PISTOL,
 
-  // Kacho's headphones in 3/4, the band and its cushion in tint: she reads
-  // with music in her ears while her mother is questioned.
-  'kacho-hui-guo-rou': [
-    { d: 'M38 116 C34 60 126 60 122 116', role: 'accent' },
-    { d: 'M46 116 C44 72 116 72 114 116' },
-    { d: 'M62 78 Q80 72 98 78', role: 'soft' },
-    { d: `${ellipse(40, 124, 12, 18)} ${ellipse(120, 124, 10, 17)}` },
-    {
-      d: `${ellipse(40, 124, 6, 11)} ${ellipse(120, 124, 5, 10)}`,
-      role: 'soft',
-    },
-    { d: 'M30 112 l-4 4 M30 124 l-4 4 M30 136 l-4 4', role: 'ambient' },
-    shadow(80, 156, 50),
-  ],
+  // Kacho's headphones: she reads a book with music in her ears while her
+  // mother is questioned, chapter 372. No cable.
+  'kacho-hui-guo-rou': [...KACHO_HEADPHONES, shadow(80, 162, 52)],
 
-  // Fugetsu's glass harp: four wine glasses filled to different heights,
-  // the rim of the one she plays in tint. She practises it for the banquet
-  // later in the arc.
-  'fugetsu-hui-guo-rou': [
-    {
-      d: 'M24 90 C24 116 48 116 48 90 M36 114 V140 M28 142 H44 M56 84 C56 114 82 114 82 84 M69 112 V140 M61 142 H77 M90 84 C90 114 116 114 116 84 M103 112 V140 M95 142 H111',
-    },
-    { d: `${ellipse(36, 90, 12, 3)} ${ellipse(69, 84, 13, 3)}` },
-    { d: ellipse(103, 84, 13, 3), role: 'accent' },
-    { d: 'M126 96 C126 114 146 114 146 96 M136 112 V140 M129 142 H143' },
-    { d: ellipse(136, 96, 10, 2.5) },
-    {
-      d: 'M27 104 Q36 108 45 104 M58 96 Q69 101 80 96 M92 100 Q103 105 114 100 M128 106 Q136 110 144 106',
-      role: 'soft',
-    },
-    { d: 'M14 144 H156', role: 'ambient' },
-    shadow(84, 152, 70),
-  ],
+  // Fugetsu's glass harp: kept apart from her sister, she practises it for
+  // the twins' performance at the banquet, chapter 381.
+  'fugetsu-hui-guo-rou': FUGETSU_HARP,
 
-  // Momoze's knitting in her rocking chair, where she sits while her mother
+  // Momoze knitting in her rocking chair, where she sits while her mother
   // talks to the guards, chapter 361.
   'momoze-hui-guo-rou': MOMOZE_KNITTING,
 
-  // Marayam's hamster cage: he carries his pet even to formal events.
+  // Marayam's hamster cage with its three hamsters, as he watches them in
+  // the roster of chapter 349: he carries it even to formal events.
   'marayam-hui-guo-rou': MARAYAM_CAGE,
 
   // Woble's cradle, the canopy over its head end hatched and its blanket in
@@ -425,21 +586,10 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
   // 358. No baby is drawn.
   'woble-hui-guo-rou': [...WOBLE_CRADLE, ...WOBLE_BLANKET, ...WOBLE_ROCKERS],
 
-  // Izunavi's keikogi from the front, the crossed lapels and the black rope
-  // knotted at the waist in tint: Kurapika's Nen teacher, whom he hires for
-  // the voyage in chapter 350.
-  'izunavi': [
-    { d: 'M42 52 Q60 44 70 42 L80 86 L90 42 Q100 44 118 52 L126 160 H34 Z' },
-    { d: 'M70 42 L96 120 M90 42 L64 120', role: 'soft' },
-    { d: 'M34 116 Q80 126 126 116 M34 124 Q80 134 126 124' },
-    {
-      d: 'M74 122 C70 132 66 144 64 154 M84 124 C88 134 92 146 96 156 M74 122 Q80 116 86 124 Q80 130 74 122 Z',
-      role: 'accent',
-    },
-    { d: 'M42 52 C32 64 26 84 24 104 M118 52 C128 64 134 84 136 104' },
-    { d: 'M112 70 l6 -4 M116 92 l6 -4 M118 140 l6 -4', role: 'ambient' },
-    shadow(80, 170, 54),
-  ],
+  // Izunavi's light jacket over his undershirt, as he is seen before the
+  // voyage in chapter 350. His keikogi belongs to Yorknew, outside the arc
+  // his record opens in.
+  'izunavi': IZUNAVI_JACKET,
 
   // The First Queen's portrait, a woman with short hair, as the overview of
   // the princes with their mothers shows her.
@@ -467,16 +617,11 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
     shadow(80, 184, 52),
   ],
 
-  // The Third Queen's portrait, a woman with short curly hair, as the
-  // overview of the princes with their mothers shows her.
-  'tang-zhao-li-hui-guo-rou': [
-    ...PORTRAIT,
-    {
-      d: 'M62 94 C56 90 58 82 62 80 C58 72 64 64 70 66 C72 58 82 58 84 64 C90 60 98 66 96 72 C102 76 102 86 98 90 C102 96 96 102 92 98',
-    },
-    { d: 'M66 98 Q80 106 92 98 V112 M66 98 V112', role: 'soft' },
-    { d: 'M52 152 C54 128 66 118 80 118 C94 118 106 128 108 152' },
-  ],
+  // The Third Queen's portrait frame, empty: she never appears in person,
+  // and her portrait in the overview of the princes with their mothers
+  // (chapter 374) would show a face. The frame's shape and cord are a
+  // frame check.
+  'tang-zhao-li-hui-guo-rou': TANG_FRAME,
 
   // The eight queens as silhouettes, the roster that introduces the king's
   // legal wives in chapter 349, Katrono's in tint: the second shortest. It
@@ -495,18 +640,25 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
     shadow(80, 158, 70),
   ],
 
-  // Swinko-swinko's thin vest with its sharp shoulders over a turtleneck,
-  // the sash around her waist in tint: she wears a shirt and trousers where
-  // the other queens wear dresses, from chapter 366.
+  // Swinko-swinko's thin vest in 3/4, a sharp shoulder pointing toward the
+  // viewer, over a turtleneck, the sash around her waist in tint, the
+  // trousers she wears where the other queens wear dresses, from chapter
+  // 366. The side turned away is hatched.
   'swinko-swinko-hui-guo-rou': [
-    { d: 'M64 46 Q80 40 96 46 V60 Q80 66 64 60 Z' },
-    { d: 'M66 52 Q80 57 94 52', role: 'soft' },
-    { d: 'M64 60 L30 66 L44 74 L50 124 H110 L116 74 L130 66 L96 60' },
-    { d: 'M64 60 L80 120 L96 60', role: 'soft' },
-    { d: 'M50 124 Q80 132 110 124 L112 138 Q80 146 48 138 Z', role: 'accent' },
-    { d: 'M56 138 L44 172 M104 138 L116 172 M80 144 V172' },
-    { d: 'M104 80 l6 -4 M106 98 l6 -4 M106 114 l6 -4', role: 'ambient' },
-    shadow(80, 180, 46),
+    { d: 'M68 44 Q82 38 96 44 V58 Q82 64 68 58 Z' },
+    { d: 'M70 50 Q82 55 94 50', role: 'soft' },
+    { d: 'M68 58 L20 62 L40 76 L46 126 H114 L116 76 L128 66 L96 58' },
+    { d: 'M68 58 L80 120 L96 58', role: 'soft' },
+    {
+      d: 'M20 62 L40 76 L34 70 Z M40 76 C34 98 32 118 34 140 M116 76 C122 96 122 116 120 136',
+    },
+    { d: 'M46 126 Q80 134 114 126 L116 140 Q80 148 44 140 Z', role: 'accent' },
+    { d: 'M54 140 L42 184 M108 140 L116 182 M80 146 V184' },
+    {
+      d: 'M100 80 l7 -4 M104 96 l7 -4 M104 112 l7 -4 M110 154 l6 -4 M112 170 l6 -4',
+      role: 'ambient',
+    },
+    shadow(80, 188, 48),
   ],
 
   // Seiko's short fair hair curling sideways, from behind and a little to
@@ -611,17 +763,35 @@ const DHARMACHAKRA: Stroke[] = [
 /** A manga-only stage of a Kakin record. */
 const KAKIN = { episode: 148, source: 'chapter' } as const
 
-/** Kacho's headphones, her first drawing without its shadow. */
-const KACHO_HEADPHONES = KAKIN_PHASE_ONE_DRAWINGS['kacho-hui-guo-rou'].slice(
-  0,
-  -1,
-)
-
-/** Fugetsu's glass harp, her first drawing. */
-const FUGETSU_HARP = KAKIN_PHASE_ONE_DRAWINGS['fugetsu-hui-guo-rou']
-
-/** The Kakin records of phase 1 whose drawing changes in chapters 340–400 (#1154, #1156). */
+/** The Kakin records of phase 1 whose drawing changes in chapters 340–412 (#1154, #1156, #1333). */
 export const kakinPhaseOneRedrawn: Redrawings = {
+  'beyond-netero': [
+    // The same back view with open lines rising round it: Longhi tells
+    // Kurapika that Beyond marked the children he fathered through sham
+    // marriages with a Nen curse that made them curse sacrifices, chapter
+    // 401. The curse has no object of its own, so it takes no tint.
+    {
+      ...KAKIN,
+      chapter: 401,
+      value: [
+        ...BEYOND_BACK,
+        {
+          d: 'M10 112 q-4 -8 0 -16 q4 -8 0 -16 q-4 -8 0 -16 M150 108 q4 -8 0 -16 q-4 -8 0 -16 q4 -8 0 -16',
+          role: 'ambient',
+        },
+        {
+          d: 'M44 32 q-3 -6 0 -12 q3 -6 0 -12 M120 30 q3 -6 0 -12 q-3 -6 0 -12 M24 50 q-3 -5 0 -10 M138 48 q3 -5 0 -10',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'izunavi': [
+    // The black suit and tie he wears as Tyson's Royal Bodyguard, from
+    // chapter 362: the same figure, the suit hatched dark, the shirt collar
+    // and the tie in tint.
+    { ...KAKIN, chapter: 362, value: IZUNAVI_SUIT },
+  ],
   'woble-hui-guo-rou': [
     // The same cradle, empty, its blanket in tint thrown over the side:
     // Oito admits that the baby in Room 1014 is her sister's son and that
@@ -689,10 +859,10 @@ export const kakinPhaseOneRedrawn: Redrawings = {
     },
   ],
   'kacho-hui-guo-rou': [
-    // Her headphones lying in the lifeboat as it drifts out to sea, and the
-    // same headphones above it in the muted ink, a likeness: she dies in the
-    // escape, and her Guardian Spirit Beast takes her form to stay by
-    // Fugetsu, chapter 383, the chapter both are shown.
+    // Her headphones, which stand for her, lying in the lifeboat as it
+    // drifts out to sea, and the same headphones above it in the muted ink, a
+    // likeness: she dies in the escape, and her Guardian Spirit Beast takes
+    // her form to stay by Fugetsu, chapter 383, the chapter both are shown.
     {
       ...KAKIN,
       chapter: 383,
