@@ -4466,11 +4466,13 @@ export const season1: ThronesSaga = {
             en: 'Member of the Kingsguard',
           },
         },
-        // He refuses to go out again and leaves the battle and the white
-        // cloak: "Blackwater" (episode 19) and Tyrion XIII (chapter 133).
+        // He leaves the battle and the white cloak: "Blackwater" (episode 19)
+        // and Sansa VII (chapter 136), where he leaves the cloak in Sansa's
+        // chamber. Tyrion XIII (133) has him refuse the sortie, not the
+        // Kingsguard (A Wiki of Ice and Fire).
         {
           episode: 19,
-          chapter: 133,
+          chapter: 136,
           value: {
             it: 'Disertore della Guardia Reale',
             en: 'Deserter from the Kingsguard',
@@ -4500,7 +4502,7 @@ export const season1: ThronesSaga = {
         },
         {
           episode: 19,
-          chapter: 133,
+          chapter: 136,
           value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
         },
       ],
@@ -4546,12 +4548,6 @@ export const season1: ThronesSaga = {
           episode: 4,
           chapter: 28,
           value: { it: 'Guardia cittadina', en: 'City Watch' },
-        },
-        // Given to the Night's Watch with his exile, at the same pin.
-        {
-          episode: 12,
-          chapter: 82,
-          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
         },
       ],
     },

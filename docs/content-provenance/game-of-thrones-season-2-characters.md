@@ -51,9 +51,10 @@ order them.
 
 - Daisy: role prostitute, Littlefinger's brothel, alive. Italian "Daisy"
   (Italian Wikipedia's TV cast list).
-- Jacelyn Bywater: role commander of the City Watch; deceased at chapter 135
-  (Tyrion XIV), the safe later pin for his death on the Blackwater. Tyrion XIII
-  (133) is likely. Italian kept as "Jacelyn Bywater"; no Italian page.
+- Jacelyn Bywater: role commander of the City Watch, alive. His death on the
+  Blackwater is told only in _A Storm of Swords_ (Tyrion I, A Wiki of Ice and
+  Fire), past the stage, so it is not filed here. Italian kept as "Jacelyn
+  Bywater"; no Italian page.
 - Hallyne: role pyromancer of the Alchemists' Guild, alive. Owner check: the
   show's episode 15 is narration only. Italian "Hallyne" (TV cast list).
 - Lollys Stokeworth: role daughter of Lady Tanda Stokeworth, House Stokeworth,
@@ -77,14 +78,16 @@ Steps in `season-1.ts`, as episode / site chapter.
   Morghulis"; Tyrion XV).
 - Bronn, show only: commander of the City Watch, 12 ("The Night Lands"); former
   commander, 20 ("Valar Morghulis"). Chapters 82 and 141 order them.
-- Janos Slynt: role exiled to the Wall and affiliation Night's Watch, 12 / 82
-  ("The Night Lands"; Tyrion II).
+- Janos Slynt: role exiled to the Wall, 12 / 82 ("The Night Lands"; Tyrion II).
+  His affiliation stays City Watch: that he takes the black is told at 31 / 213,
+  where his drawing already shows it.
 - Lancel Lannister: role knight in the queen's service, 14 / 103 ("Garden of
   Bones", Tyrion asks when he was knighted; Tyrion VII, the same visit). That
   Tyrion VII calls him a knight is unconfirmed.
 - Sandor Clegane: role deserter from the Kingsguard and affiliation no
-  allegiance, 19 / 133 ("Blackwater"; Tyrion XIII, "the Hound flees the
-  battle").
+  allegiance, 19 / 136 ("Blackwater"; Sansa VII, where he leaves his white cloak
+  in Sansa's chamber). Tyrion XIII (133) has him refuse the sortie only (A Wiki
+  of Ice and Fire).
 - Pycelle: `imprisoned` 13 / 99 ("What Is Dead May Never Die"; Tyrion VI);
   `alive` 14 in the show alone ("Garden of Bones", Tyrion agrees to free him),
   103 ordering it. The books free him past the stage.
@@ -122,8 +125,9 @@ for a check of their chapters.
 - **Only mentioned:** Allar Deem, Tyrek Lannister (vanishes in the riot off the
   page), Barra (an infant, killed at the start of season 2; only mentioned in
   the books' stage).
-- **Not placed in the stage by any page read:** Osney and Osfryd Kettleblack
-  (both Ice and Fire Wiki pages begin in _A Feast for Crows_).
+- **Bit parts:** Osney and Osfryd Kettleblack. They serve the queen beside
+  Osmund, but no page read gives either a scene of his own in the stage (Osney's
+  one moment is Alayaya's arrest, told in her record).
 - **Titles and descriptors:** the High Septon (named only by his office), the
   tourney herald, the Lannister captain, the singing Lannister soldier, the
   captain of the archers, the protester, the gold cloaks.

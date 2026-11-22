@@ -155,7 +155,7 @@ const EXPECTED: Record<string, Expected> = {
   // 2026-11-21, after Lommy's show gate moved to episode 31 and his
   // relationship cards went (#1457): 731. Counted 2026-11-21, after the
   // second stage's King's Landing and Blackwater cast (#1463): 155
-  // characters, 180 affiliations, 271 statuses, 750 timelines and the second
+  // characters, 179 affiliations, 270 statuses, 750 timelines and the second
   // season's heading.
   'game-of-thrones': {
     kinds: [
@@ -173,13 +173,13 @@ const EXPECTED: Record<string, Expected> = {
       'summary',
     ],
     least: {
-      affiliations: 180,
+      affiliations: 179,
       arcs: 2,
       characters: 155,
       chronicles: 565,
       linkedOrigins: 0,
       places: 60,
-      statuses: 271,
+      statuses: 270,
       timelines: 750,
       visits: 0,
     },

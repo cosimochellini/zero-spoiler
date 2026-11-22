@@ -47,13 +47,6 @@ const CHANGES: {
   source?: 'chapter' | 'episode'
   value: CharacterStatus
 }[] = [
-  {
-    id: 'jacelyn-bywater',
-    episode: 19,
-    chapter: 135,
-    source: 'chapter',
-    value: 'deceased',
-  },
   { id: 'pycelle', episode: 13, chapter: 99, value: 'imprisoned' },
   {
     id: 'pycelle',
@@ -105,7 +98,6 @@ const STEPS: {
     source: 'episode',
   },
   { id: 'janos-slynt', en: 'Exiled to the Wall', episode: 12, chapter: 82 },
-  { id: 'janos-slynt', en: 'Night’s Watch', episode: 12, chapter: 82 },
   {
     id: 'lancel-lannister',
     en: 'Knight in the queen’s service',
@@ -116,9 +108,9 @@ const STEPS: {
     id: 'sandor-clegane',
     en: 'Deserter from the Kingsguard',
     episode: 19,
-    chapter: 133,
+    chapter: 136,
   },
-  { id: 'sandor-clegane', en: 'No allegiance', episode: 19, chapter: 133 },
+  { id: 'sandor-clegane', en: 'No allegiance', episode: 19, chapter: 136 },
   {
     id: 'myrcella-baratheon',
     en: 'Princess sent to Dorne',

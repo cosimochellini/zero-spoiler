@@ -51,14 +51,15 @@ site.
 - **Hunter x Hunter**, from the Hunter Exam to Kakin, up to its latest chapter:
   about 290 characters, 30 Nen abilities and 40 places. The abilities page
   groups the Nen abilities by Nen type.
-- **Game of Thrones**, the first season and the first book: about 150 characters
-  and 60 places.
+- **Game of Thrones**, the first season and the first book, with the second
+  season and book being filed: about 150 characters and 60 places.
 
-Every entry has its own line drawing, made for this project; there is no
-official artwork. Some are redrawn from the episode or chapter in which the
-story changes them. Search finds only the entries you have reached. Each series
-counts in its own units (episodes, seasons, chapters or books), and the wiki is
-in English and Italian.
+Every entry has its own line drawing, made for this project, except the newest
+Game of Thrones characters, which show a placeholder until theirs is drawn;
+there is no official artwork. Some are redrawn from the episode or chapter in
+which the story changes them. Search finds only the entries you have reached.
+Each series counts in its own units (episodes, seasons, chapters or books), and
+the wiki is in English and Italian.
 
 |                                                                                                                                                                                                                                               |                                                                                                                                                                                                      |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

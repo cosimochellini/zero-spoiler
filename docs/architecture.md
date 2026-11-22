@@ -302,8 +302,9 @@ the King's Landing cast's are in `art/court.ts` (#1056), with thirteen, twelve
 of them from the drawing audit (#1289), and the Riverlands cast's are in
 `art/riverlands.ts` (#1057), with ten: six of them the deaths later seasons and
 books give (#1242), and the Blackfish's death, Jaqen's coin and Pod's axe from
-the drawing audit (#1290). Every character has its own drawing; there is no
-shared placeholder, and the drawing tests hold the series like any other. Its
+the drawing audit (#1290). Every stage-1 character has its own drawing; the
+stage-2 characters show the shared `PERSON` placeholder until their drawing
+children (#1460), and the drawing tests hold the series like any other. Its
 places are the 23 a scene of the season or the book is set in (#853) and those
 both name without visiting it (#1035: the North's five in #1248, nine of the
 Riverlands, the Westerlands and the Vale in #1249, five of the south and the
@@ -323,9 +324,10 @@ its own way, carries `source`, so it never reaches a reader of the other. Their
 notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
 series' own copy, since a story starts at an episode or a chapter. The second
 stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
-is being filed under #1455. So far `records/season-2.ts` holds only its heading
-and an empty `SEASON_2_PLACES`; a character season 1 filed takes its new dated
-steps in `records/season-1.ts`, and the demo stays at stage 1.
+is being filed under #1455. So far `records/season-2.ts` holds its heading, the
+characters filed by cast group above and an empty `SEASON_2_PLACES`; a character
+season 1 filed takes its new dated steps in `records/season-1.ts`, and the demo
+stays at stage 1.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to

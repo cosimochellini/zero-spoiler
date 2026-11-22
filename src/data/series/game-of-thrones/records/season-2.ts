@@ -174,14 +174,7 @@ export const season2: ThronesSaga = {
         it: 'Tyrion Lannister lo mette a capo della Guardia cittadina al posto di Janos Slynt.',
         en: 'Tyrion Lannister gives him command of the City Watch in Janos Slynt’s place.',
       },
-      status: [
-        { episode: 12, chapter: 82, source: 'chapter', value: 'alive' },
-        // Killed on the Blackwater, rallying the gold cloaks after the king
-        // leaves the walls. The chapter that tells it is unconfirmed (Tyrion
-        // XIII, chapter 133, is likely): the pin takes Tyrion XIV, the
-        // battle's later Tyrion chapter.
-        { episode: 19, chapter: 135, source: 'chapter', value: 'deceased' },
-      ],
+      status: [{ episode: 12, chapter: 82, source: 'chapter', value: 'alive' }],
       affiliation: [
         {
           episode: 12,
