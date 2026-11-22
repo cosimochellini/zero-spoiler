@@ -26,34 +26,34 @@ export const CHAPTER_ONE_DRAWINGS = {
     { d: 'M124 84 l6 4 M126 96 l6 4 M122 106 l6 4', role: 'ambient' },
     shadow(76, 150, 54),
   ],
-  // The cub's furred forepaw, side on, its claws in the record's tint: the
-  // fox-bear cub that stands behind its mother when Kite stops her claw over
-  // Gon in chapter 1, which the 2011 anime first shows in episode 76's
-  // flashback. No face. Reference not viewed directly.
-  // Graded B (owner ruling): true, spoiler-free and on style, not yet an A.
+  // The foxbear cub sitting, seen from behind: the stocky bear body with a
+  // few tufts of fur, the pointed fox ears on its head and the claws of its
+  // hind paws in the record's tint. Gon takes him in after Kite kills his
+  // mother in chapter 1, which the 2011 anime first shows in episode 76's
+  // flashback. No face.
   kon: [
     {
-      d: 'M34 30 L40 46 L34 52 L44 66 L38 72 L48 88 L42 94 L50 110 C52 126 48 140 42 150 H130 C142 150 146 142 142 136 C148 130 146 120 140 118 C144 110 138 102 130 102 C120 92 104 86 88 84 C82 64 80 46 82 30',
+      d: 'M66 68 C46 66 32 84 32 112 C32 134 40 148 52 152 H108 C120 148 128 134 128 112 C128 84 114 66 94 68',
     },
-    { d: 'M88 84 C104 80 120 86 130 102', role: 'soft' },
     {
-      d: 'M131 103 C138 94 148 94 152 100 M141 118 C149 112 157 114 158 121 M143 136 C151 132 158 136 157 144',
+      d: 'M64 74 C60 62 62 52 66 46 L64 24 L77 38 Q80 37 83 38 L96 24 L94 46 C98 52 100 62 96 74 C88 80 72 80 64 74 Z',
+    },
+    { d: 'M68 42 L67 31 L73 38 M92 42 L93 31 L87 38', role: 'soft' },
+    {
+      d: 'M50 150 C38 148 28 152 26 160 H56 M110 150 C122 148 132 152 134 160 H104',
+    },
+    {
+      d: 'M26 160 l-4 3 M31 160 l-3 4 M36 160 l-2 4 M134 160 l4 3 M129 160 l3 4 M124 160 l2 4',
       role: 'accent',
     },
     {
-      d: 'M130 102 C122 106 118 112 116 120 M140 118 C130 120 124 126 122 134',
-      role: 'soft',
-    },
-    { d: 'M76 40 l-6 4 M77 56 l-7 4 M80 72 l-7 4', role: 'ambient' },
-    { d: 'M50 110 C64 114 78 104 88 84', role: 'soft' },
-    {
-      d: 'M84 98 l-3 -6 M100 92 l-1 -7 M86 66 l6 -3 M84 48 l6 -3',
+      d: 'M36 96 l-4 3 M34 120 l-4 2 M62 84 Q70 90 80 90 Q90 90 98 84',
       role: 'soft',
     },
     {
-      d: 'M60 146 l6 -5 M76 146 l6 -5 M92 146 l6 -5 M108 146 l6 -5',
+      d: 'M112 90 l6 -4 M116 106 l6 -4 M118 122 l6 -4 M116 138 l5 -4',
       role: 'ambient',
     },
-    shadow(92, 156, 56),
+    shadow(80, 170, 58),
   ],
 } satisfies Drawings

@@ -1,3 +1,5 @@
+import { isDeepStrictEqual } from 'node:util'
+
 import { aroundGates } from '~/data/sweep'
 import type { Entity, SeriesArchive } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
@@ -8,7 +10,7 @@ import { abilityPage } from '~/server/archive/abilities.server'
 import { fruitPage } from '~/server/archive/fruitPage.server'
 import { characterPage, drawingsFor } from '~/server/archive/pages.server'
 import { placePage } from '~/server/archive/placePage.server'
-import type { Reader } from '~/server/archive/reader.server'
+import { type Reader, readerFor } from '~/server/archive/reader.server'
 
 /**
  * The gate-boundary kit of the per-arc tests: a test writes a table of the
@@ -172,4 +174,30 @@ export function opened(id: string, reader: Reader): boolean {
     return open
   }
   throw new Error(`${id} is open: ${String(open)}, strokes: ${String(strokes)}`)
+}
+
+/**
+ * Where a stage fails to show: each `locale unit` whose drawing of the record
+ * at the pin is missing or the same as one step before. A stage that lands
+ * at its true pair in both media gives an empty list.
+ */
+export function stageMissedAt(
+  archive: SeriesArchive,
+  id: string,
+  pin: Pin,
+): string[] {
+  return LOCALES.flatMap((locale) => {
+    return UNITS.filter((unit) => {
+      const draw = (count: number): ReturnType<typeof drawingsFor> => {
+        return drawingsFor(
+          [id],
+          readerFor(archive, bookmarkAt(unit, count), locale),
+        )
+      }
+      const at = draw(pin[unit])
+      return at[id] === undefined || isDeepStrictEqual(at, draw(pin[unit] - 1))
+    }).map((unit) => {
+      return `${locale} ${unit}`
+    })
+  })
 }

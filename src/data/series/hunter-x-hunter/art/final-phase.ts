@@ -1,12 +1,8 @@
-import {
-  type Drawings,
-  moved,
-  type Redrawings,
-  type Stroke,
-} from '~/data/art/stroke'
+import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 
 import { zevilArt } from './zevil'
+import { TROUPE_SPIDER } from './zoldyck'
 
 export const FINAL_PHASE_DRAWINGS = {
   // Masta’s black sunglasses, seen with the referee’s suit in episode 19 /
@@ -44,18 +40,6 @@ export const FINAL_PHASE_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/**
- * The Phantom Troupe's spider as its members wear it, a symbol with no
- * number: the round head, the long body, and its twelve legs, six to a
- * side, each bent once. Centred on the origin.
- */
-const SPIDER: Stroke[] = [
-  { d: `${circle(0, -8, 4)} ${ellipse(0, 5, 5.5, 8.5)}` },
-  {
-    d: 'M-3 -10 L-9 -19 L-8 -27 M-4 -8 L-13 -14 L-18 -21 M-4 -6 L-15 -8 L-22 -12 M-4 -2 L-15 0 L-22 3 M-4 1 L-13 7 L-18 14 M-3 4 L-9 13 L-10 21 M3 -10 L9 -19 L8 -27 M4 -8 L13 -14 L18 -21 M4 -6 L15 -8 L22 -12 M4 -2 L15 0 L22 3 M4 1 L13 7 L18 14 M3 4 L9 13 L10 21',
-  },
-]
-
 /** Illumi's later stages: the disguise worn again, and the Troupe. */
 export const finalPhaseRedrawn: Redrawings = {
   illumi: [
@@ -75,7 +59,7 @@ export const finalPhaseRedrawn: Redrawings = {
       source: 'chapter',
       value: [
         ...FINAL_PHASE_DRAWINGS.illumi,
-        ...moved(SPIDER, 'translate(36 100) scale(1.6)'),
+        ...moved(TROUPE_SPIDER, 'translate(36 100) scale(1.6)'),
       ],
     },
   ],

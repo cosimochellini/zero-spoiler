@@ -349,7 +349,6 @@ export const ACCENT_EXCEPTIONS: Record<
   'one-piece/jaygarcia-saturn@1128': [2, HORNS],
   'one-piece/loki@1171': [4, OLD],
   'one-piece/scopper-gaban@1179': [2, OLD],
-  'hunter-x-hunter/silva@first': [4, OLD],
   'hunter-x-hunter/ngl@first': [2, OLD],
   'hunter-x-hunter/republic-of-rokario@first': [2, OLD],
   'hunter-x-hunter/flutter@first': [2, OLD],
