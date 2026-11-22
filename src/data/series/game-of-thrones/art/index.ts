@@ -196,11 +196,12 @@ const PERSON: Stroke[] = [
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
- * own drawing; the season-2 King's Landing cast (#1463), stormlands
- * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
- * Iron Islands cast (#1466), Wall cast (#1467) and Essos cast (#1468) show
- * `PERSON` until their drawing children draw them. `satisfies`
- * rather than an annotation, so `ArtId` below stays the literal keys.
+ * own drawing, and so does the season-2 King's Landing cast, in `court.ts`
+ * (#1470); the season-2 stormlands cast (#1464), Riverlands and Harrenhal
+ * cast (#1465), Winterfell and Iron Islands cast (#1466), Wall cast (#1467)
+ * and Essos cast (#1468) show `PERSON` until their drawing children draw
+ * them. `satisfies` rather than an annotation, so `ArtId` below stays the
+ * literal keys.
  */
 export const DRAWINGS = {
   ...WINTERFELL_DRAWINGS,
@@ -216,13 +217,6 @@ export const DRAWINGS = {
   'jon-snow': RUNT,
   'tyrion-lannister': GOBLET,
   'daenerys-targaryen': DRAGON_EGG,
-  'daisy': PERSON,
-  'jacelyn-bywater': PERSON,
-  'hallyne': PERSON,
-  'lollys-stokeworth': PERSON,
-  'osmund-kettleblack': PERSON,
-  'alayaya': PERSON,
-  'garlan-tyrell': PERSON,
   // #1464, Stannis, Renly and the stormlands.
   'stannis-baratheon': PERSON,
   'melisandre': PERSON,

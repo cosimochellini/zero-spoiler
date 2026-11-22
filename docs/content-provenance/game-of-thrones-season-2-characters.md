@@ -53,9 +53,10 @@ order them.
 - Daisy: role prostitute, Littlefinger's brothel, alive. Italian "Daisy"
   (Italian Wikipedia's TV cast list).
 - Jacelyn Bywater: role commander of the City Watch, alive. His death on the
-  Blackwater is told only in _A Storm of Swords_ (Tyrion I, A Wiki of Ice and
-  Fire), past the stage, so it is not filed here. Italian kept as "Jacelyn
-  Bywater"; no Italian page.
+  Blackwater is told only in _A Storm of Swords_ (Tyrion I, site chapter 148, A
+  Wiki of Ice and Fire): #1470 files it there, `deceased` with his drawing's
+  stage, as later deaths go in at the chapter that tells them (#1238). Italian
+  kept as "Jacelyn Bywater"; no Italian page.
 - Hallyne: role pyromancer of the Alchemists' Guild, alive. Owner check: the
   show's episode 15 is narration only. Books: Tyrion IV (91), where he walks the
   walls in the queen's retinue, is the lower candidate to check. Italian

@@ -2,11 +2,12 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
-import { STAG } from './south'
+import { GLOVE, STAG } from './south'
 
 /**
  * Meryn Trant: the white enamelled helm of the Kingsguard with its visor
@@ -398,6 +399,268 @@ const WATER: Stroke = {
 /** Ground, as a dashed line. */
 const GROUND: Stroke = { d: 'M10 154 H150', role: 'ambient', dashed: true }
 
+/**
+ * Daisy: a leather belt dropped in a loose S on the floor, its buckle in the
+ * accent, the belt Joffrey makes Ros beat her with in "Garden of Bones"
+ * (episode 14). The show's alone. The underside is hatched where the
+ * leather turns over.
+ */
+const BELT: Stroke[] = [
+  {
+    d: 'M46 66 C84 60 130 70 120 92 C112 108 56 104 50 118 C46 132 100 138 130 140',
+  },
+  {
+    d: 'M46 78 C82 72 112 80 108 92 C102 100 44 96 38 116 C34 140 96 150 128 152',
+  },
+  { d: 'M130 140 Q140 146 128 152' },
+  {
+    d: dots([
+      [104, 146],
+      [112, 147],
+      [120, 148],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M48 72 C84 66 120 74 114 92', role: 'soft' },
+  { d: 'M32 60 H48 V84 H32 Z M40 72 H56', role: 'accent' },
+  {
+    d: 'M114 98 l5 -3 M108 102 l5 -3 M40 110 l5 -3 M38 120 l5 -3',
+    role: 'ambient',
+  },
+  shadow(82, 160, 54),
+]
+
+/**
+ * Jacelyn Bywater's iron hand, stood upright on its cuff: four rigid fingers
+ * jointed in plates, the thumb, the back of the hand with its far face
+ * hatched, and the leather straps that hold the cuff to his wrist, in the
+ * accent. His first drawing and his death share it.
+ */
+const IRON_HAND: Stroke[] = [
+  {
+    d: 'M62 80 V50 Q62 44 66.5 44 Q71 44 71 50 V80 M71 50 V44 Q71 38 75.5 38 Q80 38 80 44 V80 M80 46 Q80 40 84.5 40 Q89 40 89 46 V80 M89 54 Q89 48 93.5 48 Q98 48 98 54 V80',
+  },
+  {
+    d: 'M62 56 H71 M62 68 H71 M71 52 H80 M71 66 H80 M80 54 H89 M80 67 H89 M89 61 H98 M89 71 H98',
+    role: 'soft',
+  },
+  { d: 'M62 80 Q60 96 62 112 M98 80 Q100 96 98 112' },
+  { d: 'M62 82 Q80 88 98 80', role: 'soft' },
+  { d: 'M62 102 L48 88 Q44 84 48 80 Q52 77 56 81 L63 88' },
+  { d: 'M98 54 L104 58 V84 Q105 100 103 116 L98 112' },
+  {
+    d: 'M100 66 l3 -2 M100 80 l3 -2 M100 94 l3 -2 M100 108 l3 -2',
+    role: 'ambient',
+  },
+  { d: 'M60 112 Q80 118 100 112 M60 112 V142 Q80 150 100 142 V112' },
+  {
+    d: 'M60 122 Q80 128 100 122 M60 134 Q80 140 100 134 M68 121 h6 v8 h-6 Z M68 133 h6 v8 h-6 Z',
+    role: 'accent',
+  },
+]
+
+/**
+ * Jacelyn Bywater: his iron hand stood on its cuff, the hand strapped to the
+ * wrist he lost his own at, as Tyrion first sees it in Tyrion II (chapter
+ * 82). The books' alone.
+ */
+const STANDING_IRON_HAND: Stroke[] = [...IRON_HAND, shadow(80, 152, 30)]
+
+/**
+ * Hallyne: a jar of wildfire bedded in sand with another behind it, round
+ * and short-necked, its clay roughened and pebbled for the grip, as the
+ * pyromancers store it in the guild's vaults he shows Tyrion in Tyrion V
+ * (chapter 94). The books' alone. The far side is hatched; the accent is
+ * the liquid in its mouth.
+ */
+const WILDFIRE_JAR: Stroke[] = [
+  {
+    d: 'M68 74 Q48 82 46 106 Q46 122 54 132 M92 74 Q112 82 114 106 Q114 122 106 132',
+  },
+  { d: 'M68 74 V64 M92 74 V64' },
+  { d: ellipse(80, 62, 14, 4) },
+  { d: ellipse(80, 63, 9, 2.2), role: 'accent' },
+  { d: 'M68 74 Q80 78 92 74', role: 'soft' },
+  {
+    d: dots([
+      [60, 96],
+      [70, 90],
+      [84, 94],
+      [96, 90],
+      [58, 112],
+      [72, 108],
+      [88, 110],
+      [66, 124],
+      [80, 124],
+      [94, 122],
+    ]),
+    role: 'soft',
+  },
+  { d: 'M102 94 l6 -3 M104 108 l6 -3 M100 122 l6 -3', role: 'ambient' },
+  {
+    d: 'M18 140 Q36 130 54 132 Q80 136 106 132 Q126 130 142 140',
+    role: 'ambient',
+  },
+  {
+    d: `M126 134 Q120 122 126 114 Q132 110 138 114 Q144 122 138 136 M129 113 V108 M135 113 V108 ${ellipse(132, 107, 4.5, 1.6)}`,
+    role: 'soft',
+  },
+  { d: 'M12 150 H148', role: 'ambient', dashed: true },
+]
+
+/**
+ * Lollys Stokeworth: a jewelled necklace laid out in its curve, a stone set
+ * here and there along the chain and a pendant at its foot, and a ring
+ * beside it: the jewels her maid steals from her in Tyrion X (chapter 118),
+ * which opens her household to Shae. The books' alone. The accent is the
+ * pendant.
+ */
+const JEWELS: Stroke[] = [
+  { d: 'M38 46 Q80 150 122 46' },
+  {
+    d: 'M38 46 q-5 -2 -4 -7 M122 46 q5 -2 4 -7 m0 0 q-3 -3 -6 0',
+    role: 'soft',
+  },
+  {
+    d: `${circle(53.8, 77.7, 3.5)} ${circle(64.3, 90.7, 3.5)} ${circle(95.8, 90.7, 3.5)} ${circle(106.3, 77.7, 3.5)}`,
+    role: 'soft',
+  },
+  { d: circle(80, 101, 3) },
+  { d: 'M80 104 L68 120 L80 142 L92 120 Z', role: 'accent' },
+  { d: 'M68 120 L80 126 L92 120 M80 104 V126 V142', role: 'soft' },
+  { d: 'M84 130 l4 -2.4 M83 136 l3 -1.8', role: 'ambient' },
+  { d: `${ellipse(124, 144, 13, 5)} ${ellipse(124, 143.5, 9.5, 3.2)}` },
+  { d: 'M119 139 L124 132 L129 139', role: 'soft' },
+  shadow(96, 156, 44),
+]
+
+/**
+ * A white cloak of the Kingsguard folded in a stack, seen in 3/4: its top
+ * face in the accent, the front and the end with their folds. It is white,
+ * so nothing on it is hatched. Osmund Kettleblack's drawings share it.
+ */
+const FOLDED_WHITE_CLOAK: Stroke[] = [
+  {
+    d: 'M40 100 Q32 98 38 92 L62 80 H122 Q130 82 124 88 L102 99 Q99 100 96 100 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M40 100 Q30 104 36 110 Q30 116 36 122 Q32 128 40 128 H96 Q102 128 102 122 V100 M102 122 L122 112 Q126 110 126 104 V88',
+  },
+  {
+    d: 'M36 110 Q68 113 102 110 M36 122 Q68 124 102 120 M102 110 L126 98 M50 84 Q80 88 112 84',
+    role: 'soft',
+  },
+]
+
+/** A plain longsword lying on the ground, point to the right. */
+const LYING_SWORD: Stroke[] = [
+  { d: circle(24, 140, 4) },
+  { d: 'M28 138 H42 V142 H28 Z' },
+  { d: 'M42 131 H46 V149 H42 Z' },
+  { d: 'M46 137 H128 L138 140 L128 143 H46' },
+  { d: 'M48 140 H132', role: 'soft' },
+  { d: 'M60 143 l3 3 M80 143 l3 3 M100 143 l3 3', role: 'ambient' },
+]
+
+/**
+ * Osmund Kettleblack: a white cloak of the Kingsguard folded new, with a
+ * plain longsword lying before it, for the sellsword the queen names to the
+ * Kingsguard in Boros Blount's place in Tyrion XI (chapter 123). The books'
+ * alone.
+ */
+const SWORN_CLOAK: Stroke[] = [
+  ...FOLDED_WHITE_CLOAK,
+  ...LYING_SWORD,
+  shadow(80, 154, 62),
+]
+
+/**
+ * Alayaya: a gown of flowing silk standing empty, cinched at the waist by a
+ * beaded belt whose tails hang down the skirt, as Tyrion first sees her at
+ * Chataya's in Tyrion III of A Clash of Kings (chapter 89). The books' alone.
+ * The far side of the skirt is hatched; the accent is the beads.
+ */
+const BEADED_GOWN: Stroke[] = [
+  { d: 'M64 36 L67 54 M96 36 L93 54', role: 'soft' },
+  { d: 'M67 54 Q80 62 93 54 Q91 72 94 88 M67 54 Q69 72 66 88' },
+  { d: ellipse(80, 88, 15, 4) },
+  {
+    d: `${circle(67, 90, 1.8)} ${circle(71.3, 91.3, 1.8)} ${circle(75.6, 91.8, 1.8)} ${circle(80, 92, 1.8)} ${circle(84.2, 91.8, 1.8)} ${circle(88.5, 91.3, 1.8)} ${circle(92.8, 90.1, 1.8)} ${circle(73, 120, 1.8)} ${circle(78, 126, 1.8)}`,
+    role: 'accent',
+  },
+  { d: 'M74 94 Q71 106 73 118 M79 94 Q81 110 78 124', role: 'soft' },
+  { d: 'M66 90 Q52 120 34 150 Q58 158 80 154 Q104 158 128 150 Q108 120 94 90' },
+  { d: 'M68 98 Q60 126 54 154 M90 98 Q98 126 104 156', role: 'soft' },
+  { d: 'M104 118 l5 -3 M110 130 l5 -3 M116 142 l5 -3', role: 'ambient' },
+  shadow(80, 160, 50),
+]
+
+/** The golden rose of House Tyrell, its petals and the curl at its heart. */
+const ROSE_BLOOM: Stroke[] = [
+  {
+    d: 'M80 66 Q90 64 92 74 Q102 78 96 88 Q98 98 86 98 Q80 104 74 98 Q62 98 64 88 Q58 78 68 74 Q70 64 80 66 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M80 76 Q86 76 86 82 Q86 88 80 88 Q74 88 74 82 Q75 79 79 79',
+    role: 'soft',
+  },
+  {
+    d: 'M80 98 V126 M80 110 Q70 110 66 102 Q76 102 80 110 M80 118 Q90 118 94 110 Q84 110 80 118',
+  },
+]
+
+/**
+ * Garlan Tyrell: a shield with the golden rose of his house on it, for the
+ * Tyrell son who asks the king to wed his sister at the court of rewards in
+ * Sansa VIII (chapter 139). The books' alone: the show has no Garlan.
+ * Nothing of his own reads before the story says what he wore in the
+ * battle, so the house's rose stands in. The shield's far face is hatched;
+ * the accent is the bloom.
+ */
+const ROSE_SHIELD: Stroke[] = [
+  ...HEATER,
+  { d: 'M50 46 H110 V80 Q110 120 80 141 Q50 120 50 80 Z', role: 'soft' },
+  {
+    d: 'M117 58 l4 -3 M117 78 l4 -3 M116 98 l4 -3 M111 118 l4 -3',
+    role: 'ambient',
+  },
+  ...ROSE_BLOOM,
+  shadow(82, 156, 30),
+]
+
+/**
+ * Renly Baratheon's great helm with its golden antlers, the far side
+ * hatched and the antlers in the accent: the armour Garlan Tyrell wears as
+ * Renly's ghost on the Blackwater.
+ */
+const ANTLERED_HELM: Stroke[] = [
+  { d: 'M54 132 V84 Q54 54 80 52 Q106 54 106 84 V132 Q80 140 54 132 Z' },
+  { d: 'M88 53 Q94 92 90 136', role: 'soft' },
+  { d: 'M58 86 Q72 82 86 86 L86 92 Q72 88 58 92 Z' },
+  {
+    d: dots([
+      [64, 106],
+      [72, 106],
+      [80, 106],
+      [64, 114],
+      [72, 114],
+      [80, 114],
+    ]),
+    role: 'soft',
+  },
+  {
+    d: 'M62 62 Q50 46 40 26 M50 44 L36 42 M44 34 L48 20 M98 62 Q110 46 120 26 M110 44 L124 42 M116 34 L112 20',
+    role: 'accent',
+  },
+  { d: 'M54 132 L46 146 Q80 156 114 146 L106 132' },
+  {
+    d: 'M96 76 l6 -3 M98 92 l6 -3 M98 108 l6 -3 M96 124 l6 -3',
+    role: 'ambient',
+  },
+]
+
 /** The first season's King's Landing guard and tourney cast (#1056), keyed by record id. */
 export const COURT_DRAWINGS = {
   'meryn-trant': WHITE_HELM,
@@ -415,6 +678,13 @@ export const COURT_DRAWINGS = {
   'robar-royce': TILTING_HELM,
   'yohn-royce': BRONZE_GORGET,
   'mycah': MYCAH,
+  'daisy': BELT,
+  'jacelyn-bywater': STANDING_IRON_HAND,
+  'hallyne': WILDFIRE_JAR,
+  'lollys-stokeworth': JEWELS,
+  'osmund-kettleblack': SWORN_CLOAK,
+  'alayaya': BEADED_GOWN,
+  'garlan-tyrell': ROSE_SHIELD,
 } satisfies Drawings
 
 /** The King's Landing cast drawn again later in the story. */
@@ -687,6 +957,59 @@ export const courtRedrawn: Redrawings = {
           d: 'M10 166 q8 -4 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0',
           role: 'ambient',
         },
+      ],
+    },
+  ],
+  'jacelyn-bywater': [
+    // The iron hand fallen on its side: half the gold cloaks run when the
+    // king leaves the walls, and they kill him trying to rally them, as
+    // Bronn tells Tyrion in Tyrion I of A Storm of Swords (chapter 148). The
+    // books' alone; episode 20, where Tyrion wakes after the battle, orders
+    // it.
+    {
+      episode: 20,
+      chapter: 148,
+      value: [...moved(IRON_HAND, 'translate(0 26) rotate(90 80 100)'), GROUND],
+    },
+  ],
+  'osmund-kettleblack': [
+    // Petyr Baelish's glove laid by the folded cloak: Petyr tells Sansa that
+    // he sent the Kettleblacks to King's Landing and has had them in his pay
+    // all along, in Sansa VI of A Storm of Swords (chapter 212). The books'
+    // alone; episode 35, where Petyr brings Sansa to the Eyrie, orders it.
+    // The glove's little finger takes the accent from the cloak.
+    {
+      episode: 35,
+      chapter: 212,
+      value: [
+        ...moved(
+          FOLDED_WHITE_CLOAK.map((stroke, index) =>
+            index === 0 ? { d: stroke.d } : stroke,
+          ),
+          'translate(-14 0)',
+        ),
+        ...moved(GLOVE.slice(0, 7), 'translate(98 62) scale(0.5)'),
+        ...LYING_SWORD,
+        shadow(80, 154, 62),
+      ],
+    },
+  ],
+  'garlan-tyrell': [
+    // Renly's antlered helm with the rose shield set by it: Garlan rode into
+    // the battle in Renly's armour, the ghost that turned Renly's old
+    // bannermen from Stannis, as Tyrion XV of A Clash of Kings (chapter 141)
+    // tells. The books' alone;
+    // episode 20, his record's, orders it.
+    {
+      episode: 20,
+      chapter: 141,
+      value: [
+        ...moved(ANTLERED_HELM, 'translate(-22 0)'),
+        ...moved(
+          [...HEATER, ...softened(ROSE_BLOOM)],
+          'translate(98 94) scale(0.5) translate(-44 -40)',
+        ),
+        shadow(80, 156, 60),
       ],
     },
   ],

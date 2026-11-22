@@ -1146,7 +1146,14 @@ export const season2: ThronesSaga = {
         it: 'Tyrion Lannister lo mette a capo della Guardia cittadina al posto di Janos Slynt.',
         en: 'Tyrion Lannister gives him command of the City Watch in Janos Slynt’s place.',
       },
-      status: [{ episode: 12, chapter: 82, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 12, chapter: 82, source: 'chapter', value: 'alive' },
+        // Bronn tells Tyrion that the gold cloaks killed him on the walls
+        // when the king left them, in Tyrion I of A Storm of Swords (site
+        // chapter 148). The books' alone; episode 20, where Tyrion wakes
+        // after the battle, orders it.
+        { episode: 20, chapter: 148, source: 'chapter', value: 'deceased' },
+      ],
       affiliation: [
         {
           episode: 12,
