@@ -557,8 +557,9 @@ const GITTARACKUR_UNMASKED: Stroke[] = [
 
 /**
  * The drawings that change with the story. A pin comes out of Gittarackur's
- * disguise at the final phase and again after the election vote, Bodoro's gi is left empty when he dies, and
- * the object of each applicant who dies on Zevil Island is laid down.
+ * disguise at the final phase and again after the election vote, Bodoro's
+ * gi is left empty when he dies, and the object of each applicant who dies
+ * on Zevil Island is laid down.
  */
 export const zevilRedrawn: Redrawings = {
   gittarackur: [

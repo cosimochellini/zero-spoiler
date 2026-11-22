@@ -1518,6 +1518,15 @@ describe('Pokkle’s Rainbow and death drawings', () => {
       )
     },
   )
+
+  it.each(LOCALES)(
+    'leaves an episode reader with him captured, in %s',
+    (locale) => {
+      // His death is the manga's alone: no episode files it.
+      expect(statusAt('pokkle', at('episode', 148), locale)).toBe('captured')
+      expect(statusAt('pokkle', at('chapter', 198), locale)).toBe('deceased')
+    },
+  )
 })
 
 describe('the palace’s damage drawing', () => {
