@@ -2,7 +2,13 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
 import type { RecordView, Slot } from '~/lib/view/records'
-import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
+import {
+  bookmarkAt as at,
+  gateCases,
+  opened,
+  recordIn,
+  stageMissedAt,
+} from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -695,6 +701,19 @@ describe('Kurapika’s Dowsing Chain', () => {
       )
     },
   )
+})
+
+// The figures in black are shown empty at Tocino's surrender, never one
+// step before, in both media (#1332).
+describe('the Eleven Black Children revealed', () => {
+  it('empties the robes at episode 40 / chapter 68', () => {
+    expect(
+      stageMissedAt(archive, 'eleven-black-children', {
+        episode: 40,
+        chapter: 68,
+      }),
+    ).toStrictEqual([])
+  })
 })
 
 describe('the returning characters’ last steps', () => {
