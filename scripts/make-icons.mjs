@@ -3,7 +3,9 @@
 // web app manifests the head links point at (#1517), and scripts/og-card.svg
 // into the social card the Open Graph tags point at. Run by hand after
 // editing either SVG, an emblem, a theme or a series' name:
-// `node scripts/make-icons.mjs`; `make-icons.test.mjs` fails until then. Needs
+// `node scripts/make-icons.mjs`; `make-icons.test.mjs` fails until then on
+// the manifests and on each series' tab SVG, the text its bitmaps are drawn
+// from. Needs
 // `rsvg-convert` (librsvg) on PATH; the outputs are committed, so the build
 // never depends on it. A record's own card and square icon are drawn by
 // scripts/og-images.mjs instead.
@@ -234,9 +236,22 @@ function manifestOf(series, locale, names, theme) {
   }
 }
 
-// The hub's tile, read off public/icon.svg so the two never disagree.
-const HUB_TILE = /fill="(?<tile>#[\da-f]{6})"/u.exec(readFileSync(svg, 'utf8'))
-  ?.groups?.tile
+/**
+ * The hub's tile, read off public/icon.svg so the two never disagree.
+ * @returns {string} The colour, as hex.
+ */
+function hubTile() {
+  const tile = /fill="(?<tile>#[\da-f]{6})"/u.exec(readFileSync(svg, 'utf8'))
+    ?.groups?.tile
+  if (tile === undefined) {
+    throw new Error(
+      'public/icon.svg has no lowercase #rrggbb fill for its tile',
+    )
+  }
+  return tile
+}
+
+const HUB_TILE = hubTile()
 
 /**
  * Every manifest file, by its name in public/icons, as the head links name
@@ -316,27 +331,35 @@ const BITMAPS = [
 ]
 
 /**
- * Every icon of one open series.
+ * What draws one open series' icons, from its hub emblem and its theme.
  * @param {string} slug The series.
  * @param {{ d: string, role?: string }[] | undefined} emblem Its hub emblem.
+ * @returns {(variant: 'small' | 'large' | 'touch' | 'maskable') => string} The drawer.
  */
-function seriesIcons(slug, emblem) {
+export function seriesDrawer(slug, emblem) {
   const cut = CUTS[slug]
   if (cut === undefined || emblem === undefined) {
     throw new Error(`${slug} has no hub emblem or no cut in CUTS`)
   }
   const palette = seriesPalette(slug)
-  const tab = iconSvg(emblem, palette, cut, 'small')
+  return (variant) => iconSvg(emblem, palette, cut, variant)
+}
+
+/**
+ * Every icon of one open series.
+ * @param {string} slug The series.
+ * @param {{ d: string, role?: string }[] | undefined} emblem Its hub emblem.
+ */
+function seriesIcons(slug, emblem) {
+  const draw = seriesDrawer(slug, emblem)
+  const tab = draw('small')
   writeFileSync(iconFile(`${slug}.svg`), tab)
   writeFileSync(
     iconFile(`${slug}.ico`),
     ico(SIZES.map((size) => ({ size, data: renderText(tab, size) }))),
   )
   for (const [suffix, variant, size] of BITMAPS) {
-    writeFileSync(
-      iconFile(`${slug}${suffix}`),
-      renderText(iconSvg(emblem, palette, cut, variant), size),
-    )
+    writeFileSync(iconFile(`${slug}${suffix}`), renderText(draw(variant), size))
   }
 }
 

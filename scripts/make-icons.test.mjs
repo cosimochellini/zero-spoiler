@@ -9,7 +9,12 @@ import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 import { importArchive, ROOT } from './archive-loader.mjs'
-import { iconSvg, manifests, manifestText } from './make-icons.mjs'
+import {
+  iconSvg,
+  manifests,
+  manifestText,
+  seriesDrawer,
+} from './make-icons.mjs'
 
 const PUBLIC = path.join(ROOT, 'public')
 
@@ -52,6 +57,17 @@ describe('make-icons', () => {
         readFileSync(path.join(PUBLIC, 'icons', file), 'utf8'),
         `public/icons/${file}: run node scripts/make-icons.mjs`,
       ).toBe(manifestText(manifest))
+    }
+  })
+
+  it('has run since the last change to an emblem, a cut or a theme', async () => {
+    const { OPEN_SERIES } = await importArchive('data/series/index.ts')
+    const { EMBLEMS } = await importArchive('components/seriesEmblems.ts')
+    for (const { slug } of OPEN_SERIES) {
+      expect(
+        readFileSync(path.join(PUBLIC, 'icons', `${slug}.svg`), 'utf8'),
+        `public/icons/${slug}.svg: run node scripts/make-icons.mjs`,
+      ).toBe(seriesDrawer(slug, EMBLEMS[slug])('small'))
     }
   })
 
