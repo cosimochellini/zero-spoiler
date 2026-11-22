@@ -424,8 +424,9 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   ],
   // Shalnark's demon-shaped phone in 3/4, a horned head on top with a bat's
   // wings in tint, the blank screen and keys on the front and its side
-  // hatched, with the open arcs of the control it gives him: he steers the
-  // auctioneer through it, episode 53 / chapter 98. No antenna, whose shape
+  // hatched, with the open arcs of the control it gives him: he steers a
+  // Mafia man through it in chapter 98 and the auctioneer in episode 53. No
+  // antenna, whose shape
   // the wiki cites only from chapter 227.
   'black-voice': [...SHALNARK_PHONE, BLACK_VOICE_ARCS, shadow(74, 176, 40)],
   // Kortopi's vase on the floor with a left hand resting on its mouth, and
