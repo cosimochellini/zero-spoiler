@@ -1159,7 +1159,18 @@ const earlyExam: HunterSaga = {
         it: 'Tonpa lo indica a Gon come un aspirante da evitare: l’anno prima è stato squalificato per aver attaccato un esaminatore. Si presenta di nuovo all’esame e punisce un uomo che gli va addosso senza chiedere scusa.',
         en: 'Tonpa points him out to Gon as an applicant to avoid: the previous year he was disqualified for attacking an examiner. He returns to the exam and punishes a man who bumps into him without apologizing.',
       },
-      status: [{ episode: 3, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 3, chapter: 5, value: 'alive' },
+        // Caught in the blast of Chrollo's puppets, prepared for his death,
+        // chapter 356; Bungee Gum restarts his heart in chapter 357.
+        {
+          episode: 148,
+          chapter: 356,
+          source: 'chapter',
+          value: 'presumed-dead',
+        },
+        { episode: 148, chapter: 357, source: 'chapter', value: 'alive' },
+      ],
       nen: [
         // His aura bars the 200th-floor hallway, chapter 47 and episode 28.
         { episode: 28, chapter: 47, value: 'unknown' },

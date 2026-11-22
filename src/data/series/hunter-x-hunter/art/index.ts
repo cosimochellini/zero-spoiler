@@ -1,4 +1,9 @@
-import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  softened,
+} from '~/data/art/stroke'
 import {
   circle,
   dot,
@@ -29,6 +34,7 @@ import {
 import {
   CHIMERA_ANT_PHASE_FOUR_DRAWINGS,
   chimeraAntPhaseFourRedrawn,
+  NETERO_GETA,
 } from './chimera-ant-phase-four'
 import {
   CHIMERA_ANT_PHASE_THREE_DRAWINGS,
@@ -72,7 +78,7 @@ import {
   yorknewCityRedrawn,
 } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
-import { ZOLDYCK_DRAWINGS, zoldyckRedrawn } from './zoldyck'
+import { TROUPE_SPIDER, ZOLDYCK_DRAWINGS, zoldyckRedrawn } from './zoldyck'
 
 /**
  * One of Kurapika's two wooden swords, grip down to the left and point up
@@ -125,23 +131,33 @@ const GERETTA_HAT: Stroke[] = [
 ]
 
 /**
- * One of Cherry's cloth martial-arts shoes side on, toe to the left: the
- * flat sole, the low upper with its toe seam, the opening in tint and the
- * heel hatched. The pair is this shoe twice.
+ * One of Cherry's cloth martial-arts shoes in three-quarter view, toe to the
+ * front and left: the flat sole with its thickness, the low upper with its
+ * toe seam, the opening in tint with the far side of the upper inside it,
+ * and the heel hatched.
  */
 const CHERRY_SHOE: Stroke[] = [
   {
-    d: 'M28 142 H114 C119 142 122 144 122 147 C122 150 119 152 114 152 H28 C20 152 15 150 15 147 C15 144 20 142 28 142 Z',
+    d: 'M24 146 C17 141 19 132 30 130 L116 110 C128 108 137 113 136 121 C135 127 129 129 123 130 L38 151 C32 153 27 151 24 146 Z',
   },
   {
-    d: 'M17 143 C17 134 26 128 42 124 L72 116 M119 142 C122 132 122 122 119 112',
+    d: 'M21 141 C19 149 26 157 37 156 L123 136 C131 134 137 130 137 124',
+    role: 'soft',
   },
-  {
-    d: 'M72 116 C78 106 112 104 119 112 C112 120 80 124 72 116 Z',
-    role: 'accent',
-  },
-  { d: 'M24 137 C34 131 50 126 68 121', role: 'soft' },
-  { d: 'M106 128 l7 -5 M108 137 l8 -6', role: 'ambient' },
+  { d: 'M28 131 C24 116 42 106 62 101 M124 82 C130 90 134 102 133 114' },
+  { d: 'M62 101 C68 87 110 73 124 82 C120 94 76 108 62 101 Z', role: 'accent' },
+  { d: 'M71 98 C82 90 106 82 119 84', role: 'soft' },
+  { d: 'M32 127 C42 118 52 110 62 104', role: 'soft' },
+  { d: 'M120 98 l8 -5 M121 108 l9 -5 M124 118 l7 -4', role: 'ambient' },
+]
+
+/**
+ * The pair: the shoe in front, and the second set behind and above it, its
+ * opening plain so the one accent stays on the front shoe.
+ */
+const CHERRY_PAIR: Stroke[] = [
+  ...moved(softened(CHERRY_SHOE), 'translate(14 -54)'),
+  ...moved(CHERRY_SHOE, 'translate(0 16)'),
 ]
 
 /**
@@ -213,6 +229,38 @@ const HISOKA_FAN: Stroke[] = [
 ]
 
 /**
+ * One of the wrestler's tall laced boots side on, toe to the left, the laces
+ * crossed down its shaft and its far side hatched.
+ */
+const TODO_BOOT: Stroke[] = [
+  { d: ellipse(62, 40, 18, 5) },
+  {
+    d: 'M44 40 V116 C32 118 18 124 13 134 C10 142 12 150 20 150 H82 C84 138 82 124 80 110 V40',
+  },
+  { d: 'M12 144 H83', role: 'soft' },
+  {
+    d: 'M45 50 L52 58 M52 50 L45 58 M45 66 L52 74 M52 66 L45 74 M45 82 L52 90 M52 82 L45 90 M45 98 L52 106 M52 98 L45 106',
+    role: 'soft',
+  },
+  {
+    d: 'M72 60 l6 -3 M72 76 l6 -3 M72 92 l6 -3 M73 108 l6 -3',
+    role: 'ambient',
+  },
+]
+
+/**
+ * One of Menchi's kitchen knives, blade to the right, centred on the
+ * blade's heel: the handle with its two rivets, the spine and heel, and the
+ * edge, which the knife in front draws in the record's tint.
+ */
+const MENCHI_KNIFE: Stroke[] = [
+  { d: 'M-30 2 H0 V12 H-30 Q-34 7 -30 2 Z' },
+  { d: 'M0 0 H44 C52 0 58 2 62 6 M0 0 V14' },
+  { d: 'M0 14 H34 C48 14 56 11 62 6' },
+  { d: 'M-22 7 h0.01 M-10 7 h0.01', role: 'soft' },
+]
+
+/**
  * Every Hunter x Hunter line drawing, one per record, keyed by the record's
  * id, in the house style of One Piece's (`~/data/series/one-piece/art`): the
  * same box, pen and rules. The arcs, and the characters and places of the
@@ -238,6 +286,30 @@ const HANZO_BANDANA: Stroke[] = [
   },
   { d: 'M72 124 L52 144 M98 126 L118 148', role: 'soft' },
   { d: 'M80 101 l8 8', role: 'soft' },
+]
+
+/**
+ * Hanzo's Kakin look in three-quarter view, from the collar down: the black
+ * suit's shoulders and notched lapels, the shirt collar, and the tie in the
+ * record's tint, the far side of the suit hatched. No bandana: the wiki
+ * gives the bodyguard's look as the suit and tie alone.
+ */
+const HANZO_SUIT: Stroke[] = [
+  {
+    d: 'M58 30 C38 36 20 46 14 62 L6 192 M86 30 C104 34 124 42 132 58 L140 192',
+  },
+  { d: 'M60 36 L42 100 L56 106 L72 168 L90 104 L102 98 L84 36' },
+  { d: 'M58 30 L64 56 L72 46 L80 56 L86 30', role: 'soft' },
+  {
+    d: 'M66 50 L78 50 L76 62 L68 62 Z M68 62 L63 126 L72 138 L81 125 L76 62',
+    role: 'accent',
+  },
+  { d: 'M42 100 L48 84 M102 98 L98 84', role: 'soft' },
+  {
+    d: 'M116 70 l10 -6 M118 90 l12 -7 M120 110 l12 -7 M122 130 l12 -7 M124 150 l12 -7 M96 118 l6 -6 M92 138 l6 -6',
+    role: 'ambient',
+  },
+  { d: 'M22 70 L18 192', role: 'soft' },
 ]
 
 export const DRAWINGS = {
@@ -266,28 +338,25 @@ export const DRAWINGS = {
   ...YORKNEW_ABILITY_DRAWINGS,
   ...YORKNEW_CITY_DRAWINGS,
   ...GREED_ISLAND_DRAWINGS,
-  // A small sailing ship side on in a storm, the bolt of lightning over her
-  // in yellow: the ship that takes Gon away from his island to the exam,
-  // through a storm, in episode 1 and chapter 1.
+  // A Hunter licence lying tilted, seen from its back: a card like a credit
+  // card but a little thicker, its edge hatched, and the magnetic strip in
+  // the record's tint. Gon finds the one Kite dropped in chapter 1, and the
+  // licence is what every applicant sits the exam for. No number, no
+  // lettering.
   'hunter-exam-arc': [
-    { d: 'M30 128 H130 L118 148 H44 Z' },
-    { d: 'M36 136 H124', role: 'soft' },
     {
-      d: 'M48 142 l4 6 M60 142 l4 6 M72 142 l4 6 M84 142 l4 6 M96 142 l4 6 M108 142 l4 6',
+      d: 'M24 91 L112 65 Q117 64 119 68 L141 108 Q143 112 138 114 L50 140 Q45 141 43 137 L21 97 Q19 92 24 91 Z',
+    },
+    {
+      d: 'M21 97 V102 L43 142 Q45 146 50 145 L138 119 Q143 117 141 113 V108',
+      role: 'soft',
+    },
+    {
+      d: 'M48 141 l3 4 M64 136 l3 4 M80 131 l3 4 M96 127 l3 4 M112 122 l3 4 M128 117 l3 4',
       role: 'ambient',
     },
-    { d: 'M130 128 L140 120 M30 128 L24 122' },
-    { d: 'M82 128 V44' },
-    { d: 'M84 50 C110 64 112 98 84 116 Z' },
-    { d: 'M80 52 L50 118 H80', role: 'soft' },
-    { d: 'M82 44 L140 120 M82 44 L24 122', role: 'ambient' },
-    {
-      d: 'M14 44 C8 34 20 24 30 30 C34 16 54 16 58 28 C68 22 80 30 74 42 C70 48 60 48 56 44 C50 50 38 50 34 44 C26 50 16 50 14 44 Z',
-    },
-    { d: 'M40 48 L30 70 H42 L32 94', role: 'accent' },
-    { d: 'M62 52 l-5 10 M70 50 l-5 10 M20 54 l-5 10', role: 'ambient' },
-    { d: 'M18 150 q8 -8 16 0 M126 150 q8 -8 16 0', role: 'soft' },
-    ...SEA,
+    { d: 'M25 102 L119 74 L124 83 L30 111 Z', role: 'accent' },
+    shadow(82, 162, 58),
   ],
 
   // A tower of many floors rising out of a city, its top storeys in the
@@ -749,33 +818,32 @@ export const DRAWINGS = {
     shadow(80, 182, 36),
   ],
 
-  // One of the wrestler's tall laced boots side on, the far side hatched,
-  // and one of his knee pads standing beside it, its padded cap in tint:
-  // Tonpa points him out in episode 3 and chapter 5. No face.
+  // One of the wrestler's knee pads in three-quarter view, the padded cap
+  // in the record's tint bulging from the front of its sleeve, the far side
+  // hatched, and one of his tall laced boots small beside it: Tonpa points
+  // him out in episode 3 and chapter 5. No face.
   'todo': [
-    { d: ellipse(62, 40, 18, 5) },
+    ...moved(TODO_BOOT, 'translate(2 70) scale(0.55)'),
+    { d: ellipse(98, 50, 30, 8) },
     {
-      d: 'M44 40 V116 C32 118 18 124 13 134 C10 142 12 150 20 150 H82 C84 138 82 124 80 110 V40',
+      d: 'M68 50 C66 64 60 76 56 92 C52 110 54 130 64 146 C66 152 70 156 74 158 C90 164 116 162 124 154 C128 120 130 84 128 50',
     },
-    { d: 'M12 144 H83', role: 'soft' },
     {
-      d: 'M45 50 L52 58 M52 50 L45 58 M45 66 L52 74 M52 66 L45 74 M45 82 L52 90 M52 82 L45 90 M45 98 L52 106 M52 98 L45 106',
+      d: 'M70 62 C82 69 116 69 127 61 M70 150 C84 156 112 156 124 148',
       role: 'soft',
     },
     {
-      d: 'M72 60 l6 -3 M72 76 l6 -3 M72 92 l6 -3 M73 108 l6 -3',
+      d: 'M58 104 C58 82 72 72 88 74 C106 76 112 96 108 116 C104 134 88 142 74 138 C62 134 58 120 58 104 Z',
+      role: 'accent',
+    },
+    {
+      d: 'M66 98 C68 88 76 82 86 82 M64 118 C70 128 84 132 98 126',
+      role: 'soft',
+    },
+    {
+      d: 'M116 74 l8 -4 M116 92 l9 -4 M116 110 l9 -4 M116 128 l9 -4',
       role: 'ambient',
     },
-    {
-      d: 'M98 100 C110 96 134 96 146 100 C142 118 142 148 146 166 C134 170 110 170 98 166 C102 148 102 118 98 100 Z',
-    },
-    {
-      d: 'M100 110 C112 106 132 106 144 110 M100 156 C112 160 132 160 144 156',
-      role: 'soft',
-    },
-    { d: ellipse(122, 133, 14, 16), role: 'accent' },
-    { d: 'M113 128 C114 123 118 120 122 120', role: 'soft' },
-    { d: 'M140 118 l4 -2 M139 132 l4 -2 M140 146 l4 -2', role: 'ambient' },
     shadow(84, 172, 66),
   ],
 
@@ -784,13 +852,10 @@ export const DRAWINGS = {
   // he uses it at Trick Tower, so the death redrawing owns it.
   'geretta': [...GERETTA_HAT, shadow(80, 168, 56)],
 
-  // Cherry's pair of martial-arts shoes side by side: Tonpa points out the
-  // martial artist in chapter 5. No cards from chapter 10.
-  'cherry': [
-    ...moved(CHERRY_SHOE, 'translate(18 -40)'),
-    ...CHERRY_SHOE,
-    shadow(72, 164, 54),
-  ],
+  // Cherry's pair of martial-arts shoes, one in front in three-quarter view
+  // and the other behind it: Tonpa points out the martial artist in chapter
+  // 5. No cards from chapter 10.
+  'cherry': [...CHERRY_PAIR, shadow(80, 184, 58)],
 
   // Hisoka's four playing cards fanned, the suits in the record's tint and
   // the spade card in front: the applicant who wounds a man for bumping
@@ -827,39 +892,34 @@ export const DRAWINGS = {
     shadow(78, 186, 49),
   ],
 
-  // Satotz's red tie, knotted at the collar of his dark coat: what he wears
-  // through the whole exam from episode 3 and chapter 6. Neither his face
-  // nor his moustache is part of the drawing.
+  // Satotz's red tie, knotted at the collar of his dark coat, turned three
+  // quarters so the near shoulder is the wider and the far side of the coat
+  // shows, hatched: what he wears through the whole exam from episode 3 and
+  // chapter 6. Neither his face nor his moustache is part of the drawing.
   'satotz': [
-    { d: ellipse(80, 46, 16, 5) },
-    { d: 'M64 47 L70 70 L80 60 L90 70 L96 47', role: 'soft' },
+    { d: ellipse(88, 46, 14, 5) },
+    { d: 'M74 47 L80 68 L88 60 L96 68 L102 47', role: 'soft' },
     {
-      d: 'M64 48 C48 52 34 58 29 70 L25 150 H135 L131 70 C126 58 112 52 96 48',
+      d: 'M74 48 C54 52 36 60 30 74 L26 152 H128 L132 76 C128 62 116 54 102 48',
     },
-    { d: 'M65 52 L52 86 L64 90 L80 132 L96 90 L108 86 L95 52' },
+    { d: 'M75 52 L60 88 L72 92 L88 134 L102 92 L110 88 L101 52' },
     {
-      d: 'M72 63 L88 63 L85 78 L75 78 Z M88 63 L92 67 L89 77 L85 78',
+      d: 'M80 63 L95 63 L92 77 L83 77 Z M83 77 L77 114 L87 126 L97 112 L92 77',
       role: 'accent',
     },
-    { d: 'M75 78 L68 116 L78 128 L90 114 L85 78', role: 'accent' },
-    { d: 'M85 78 L89 80 L94 110 L90 114', role: 'soft' },
-    { d: 'M38 68 L41 150 M122 68 L119 150', role: 'soft' },
+    { d: 'M118 68 L120 152 M40 70 L42 152', role: 'soft' },
     {
-      d: 'M98 96 l5 -6 M101 106 l6 -7 M104 116 l6 -7 M108 125 l6 -6',
-      role: 'ambient',
-    },
-    {
-      d: 'M123 86 l6 -5 M122 102 l7 -5 M122 118 l7 -5 M121 134 l7 -5',
+      d: 'M122 84 l7 -5 M122 100 l7 -5 M122 116 l7 -5 M122 132 l7 -5 M104 100 l5 -6 M107 112 l5 -6',
       role: 'ambient',
     },
     {
       d: dots([
-        [80, 140],
-        [80, 147],
+        [88, 140],
+        [88, 147],
       ]),
       role: 'soft',
     },
-    shadow(80, 158, 54),
+    shadow(80, 160, 54),
   ],
 
   // Hanzo's red bandana, knotted into a loop as he wears it at his neck,
@@ -890,40 +950,25 @@ export const DRAWINGS = {
     shadow(83, 177, 56),
   ],
 
-  // The top knots on the crown of Menchi's head, seen from behind, each tied
-  // with pink rope, the middle one's loose end hanging: her look at the
-  // Second Phase gate in episode 6 and chapter 10. No face, and none of the
-  // knives she draws in chapter 12.
+  // Three of Menchi's kitchen knives spinning in the air, open arcs of their
+  // turn around them, the front knife's edge in the record's tint: she
+  // shows the applicants her skill with her knives, juggling and spinning
+  // them, in episode 6 and chapter 12. No face, no sushi (the 2011 anime
+  // drops the sushi test).
   'menchi': [
-    { d: 'M8 168 C20 124 50 104 80 102 C112 104 142 124 152 168' },
+    ...moved(
+      MENCHI_KNIFE.map((stroke, index) =>
+        index === 2 ? { ...stroke, role: 'accent' as const } : stroke,
+      ),
+      'translate(76 52) rotate(-24)',
+    ),
+    ...moved(MENCHI_KNIFE, 'translate(50 118) rotate(-150) scale(0.85)'),
+    ...moved(MENCHI_KNIFE, 'translate(118 116) rotate(70) scale(0.85)'),
     {
-      d: 'M70 96 C62 80 62 60 74 46 C80 38 92 34 102 36 C94 42 90 50 92 56 C102 50 114 50 122 56 C110 60 102 68 98 76 C102 82 96 92 90 96',
+      d: 'M30 46 A54 54 0 0 1 128 30 M140 70 A54 54 0 0 1 132 150 M28 142 A54 54 0 0 1 20 84',
+      role: 'ambient',
     },
-    { d: 'M76 94 C72 78 76 62 88 50 M86 94 C88 84 94 74 104 66', role: 'soft' },
-    {
-      d: `${ellipse(80, 96, 11, 3.3)} ${ellipse(80, 102.6, 11.3, 3.5)} ${ellipse(80, 109.2, 11.7, 3.6)}`,
-      role: 'accent',
-    },
-    {
-      d: 'M91 108 C100 112 104 122 100 132 M91 110 C96 118 95 126 90 134',
-      role: 'accent',
-    },
-    {
-      d: 'M24 130 C14 118 12 100 20 88 C26 96 30 102 30 110 C32 98 38 90 46 86 C46 98 42 110 36 120',
-    },
-    {
-      d: `${ellipse(31, 124, 8, 2.4)} ${ellipse(31, 129, 8.3, 2.5)}`,
-      role: 'accent',
-    },
-    {
-      d: 'M128 116 C130 102 138 92 148 86 C148 96 144 104 140 110 C148 104 154 104 158 106 C154 114 148 120 142 124',
-    },
-    {
-      d: `${ellipse(135, 121, 7, 2.2)} ${ellipse(135, 125.5, 7.3, 2.3)}`,
-      role: 'accent',
-    },
-    { d: 'M100 150 C98 136 94 124 90 116', role: 'soft' },
-    { d: 'M136 140 l7 -4 M140 152 l8 -4 M143 163 l7 -4', role: 'ambient' },
+    shadow(80, 182, 46),
   ],
 
   // A whole roast pig lying on its platter, the crackled back in the
@@ -956,24 +1001,7 @@ export const DRAWINGS = {
   // the Second Phase in episode 6 and chapter 12. No ball from the next
   // episode.
   // Graded B (owner ruling): true, spoiler-free and on style, not yet an A.
-  'netero': [
-    { d: 'M28 100 L110 70 L136 92 L54 122 Z' },
-    { d: 'M28 100 V110 L54 132 L136 102 V92 M54 122 V132' },
-    { d: 'M62.4 128.9 V137.4 L88.4 159.4 V119.4' },
-    { d: 'M88.4 159.4 L101.6 154.6 V114.6', role: 'soft' },
-    { d: 'M66 136 l14 -10 M68 145 l18 -13 M76 150 l11 -8', role: 'ambient' },
-    {
-      d: 'M61.8 88.9 Q86.7 75 111.5 85.2 M85.8 109.1 Q98.7 85 111.5 85.2',
-      role: 'accent',
-    },
-    {
-      d: 'M64 92.5 Q87 80 108.5 88 M90 108.5 Q100 90 109.5 88.2',
-      role: 'soft',
-    },
-    { d: `M41.2 106.2 L56 100.8 ${dot(111.5, 85.2)}`, role: 'soft' },
-    { d: 'M34 109 l6 4 M118 104 l8 -3', role: 'ambient' },
-    shadow(82, 163, 44),
-  ],
+  'netero': [...NETERO_GETA, shadow(82, 163, 44)],
 
   // Zaban's small exam-site restaurant beside the much taller building:
   // the Kiriko points out the real entrance in episode 3 and chapter 5.
@@ -999,37 +1027,41 @@ export const DRAWINGS = {
     shadow(80, 158, 62),
   ],
 
-  // The tunnel's exit cut in the rock and the wetland's trees in the fog
-  // beyond: what the applicants see when they climb out to daylight in
-  // episode 4 and chapter 7. None of the creatures met on the run is drawn.
+  // The tunnel's exit cut in the rock, its arch in the record's tint seen
+  // three quarters so the depth of the passage shows, hatched, and beyond it
+  // the wetland: bare trees standing in water under banks of fog. What the
+  // applicants see when they climb out to daylight in episode 4 and chapter
+  // 7. None of the creatures met on the run is drawn.
   'milsy-wetlands': [
     {
-      d: 'M4 150 V76 L12 62 L24 60 L32 48 L46 46 L56 56 L64 60 L66 78 L72 150',
+      d: 'M4 150 V76 L12 62 L24 60 L32 48 L46 46 L56 56 L64 60 L66 78 L70 150',
     },
-    { d: 'M20 150 V112 C20 100 46 100 46 112 V150', role: 'accent' },
-    { d: 'M46 112 C44 108 40 107 38 108 V150', role: 'soft' },
-    { d: 'M24 120 l8 -6 M24 134 l12 -10 M24 148 l14 -12', role: 'ambient' },
+    { d: 'M16 148 V110 C16 94 46 92 48 108 V146', role: 'accent' },
+    { d: 'M48 108 C46 102 40 100 36 102 V140 L48 146', role: 'soft' },
+    { d: 'M18 120 l10 -8 M18 134 l14 -12 M20 146 l12 -10', role: 'ambient' },
     { d: 'M54 66 l7 7 M57 84 l8 8 M58 102 l9 9 M60 120 l8 8', role: 'ambient' },
     {
-      d: 'M98 150 C102 128 94 110 100 90 C104 76 98 62 104 48 M110 150 C110 128 108 110 114 92 C118 78 114 64 118 50',
+      d: 'M100 156 C102 128 94 110 100 90 C104 76 98 62 104 48 M112 156 C112 128 110 110 116 92 C120 78 116 64 120 50',
     },
     {
-      d: 'M100 90 C90 82 82 78 76 86 M114 92 L130 78 C136 72 142 74 144 82',
+      d: 'M100 90 C90 82 82 78 76 86 M116 92 L132 78 C138 72 144 74 146 82',
       role: 'soft',
     },
-    { d: 'M84 150 L85 120 L82 110 M142 150 L143 132', role: 'ambient' },
+    { d: 'M140 156 L141 130 L138 120', role: 'soft' },
     {
-      d: 'M118 106 C128 102 140 106 156 102 M120 126 C132 122 144 126 156 122 M70 108 C78 104 86 106 94 104 M72 128 C78 124 86 128 94 126',
+      d: 'M76 106 C90 100 104 106 118 102 C132 98 144 104 156 100 M74 128 C88 122 104 128 120 124 C134 120 146 126 156 122',
       role: 'ambient',
     },
-    { d: 'M76 150 L74 138 M90 150 L91 136 M124 150 L127 140', role: 'soft' },
-    { d: 'M4 150 H156', role: 'ambient' },
+    { d: 'M4 150 H70', role: 'ambient' },
     {
-      d: 'M78 162 Q98 157 118 162 M112 171 Q130 166 150 171',
+      d: 'M60 166 Q72 162 84 166 T108 166 T132 166 T156 166 M70 178 Q82 174 94 178 T118 178 T142 178 M4 172 Q14 168 24 172 T48 172',
+      role: 'ambient',
+    },
+    {
+      d: 'M66 156 C74 160 92 154 104 158 C120 162 138 154 156 158',
       role: 'ambient',
       dashed: true,
     },
-    shadow(36, 154, 34),
   ],
 
   // The cooking mansion and forest at Visca, its open gate in the record's
@@ -1144,12 +1176,50 @@ const HISOKA_FAN_HELD: Stroke[] = [
 ]
 
 /**
+ * Gon's clenched right fist from the knuckles, its fingers curled over and
+ * the thumb across them, with open rays of aura around it in the muted ink:
+ * Rock, the first part of his Jajanken to work. It sits beside the rod, off
+ * the object.
+ */
+const GON_FIST: Stroke[] = [
+  {
+    d: 'M10 112 Q13 100 20 102 Q24 96 30 100 Q35 95 40 100 Q46 98 47 106 L46 124 C45 134 38 138 29 138 C18 138 11 132 10 122 Z',
+  },
+  {
+    d: 'M20 102 Q19 110 21 114 M30 100 Q29 108 31 113 M40 100 Q39 108 41 113 M11 120 C20 112 32 114 38 122',
+    role: 'soft',
+  },
+  { d: 'M17 137 L16 150 M41 133 L42 146', role: 'soft' },
+  {
+    d: 'M6 96 l-4 -6 M18 90 l-2 -8 M32 88 V79 M46 90 l4 -7 M56 104 l8 -3 M4 132 l-3 5',
+    role: 'ambient',
+  },
+]
+
+/** Gon's rod with Rock beside it: his drawing from Jajanken on. */
+const GON_ROCK: Stroke[] = [...DRAWINGS['gon-freecss'], ...GON_FIST]
+
+/**
+ * A small spark crackling off the left edge of Killua's deck, open lines
+ * in the muted ink: his aura turned to electricity.
+ */
+const KILLUA_SPARK: Stroke[] = [
+  { d: 'M58 72 L50 69 L54 64 L45 60 L49 55', role: 'ambient' },
+  { d: 'M62 64 l-4 -7 M64 78 l-9 3', role: 'ambient' },
+]
+
+/** One of Hisoka's cards alone, centred on the origin, corners rounded. */
+const HISOKA_CARD =
+  'M-14 -22 Q-16 -22 -16 -20 V20 Q-16 22 -14 22 H14 Q16 22 16 20 V-20 Q16 -22 14 -22 Z'
+
+/**
  * The early-exam drawings that change with the story: the applicants Tonpa
  * points out who die later in the exam, Kurapika's wooden swords, which his
- * chain replaces, and every later stage of Hisoka's cards, Kakin's included.
+ * chain replaces, every later stage of Hisoka's cards, Kakin's included, and the powers of
+ * Gon and Killua.
  */
 const hunterExamRedrawn: Redrawings = {
-  kurapika: [
+  'kurapika': [
     // The Dowsing Chain hanging from its ring, the weight at its end in
     // tint: Kurapika shows the chains on his right hand and stops the
     // bullets with the one on his ring finger, then swings its ball to find
@@ -1177,7 +1247,7 @@ const hunterExamRedrawn: Redrawings = {
       ],
     },
   ],
-  geretta: [
+  'geretta': [
     // The same hat tipped over on its side, and his blowgun dropped on the
     // ground with a dart beside it: Hisoka kills him off the page, just
     // after his ambush on Gon, in episode 16 / chapter 28.
@@ -1196,7 +1266,7 @@ const hunterExamRedrawn: Redrawings = {
       ],
     },
   ],
-  cherry: [
+  'cherry': [
     // The same pair of shoes upside down, hung from the branch of a tree in
     // the wetlands: his body is found hanging upside down there, Hisoka's
     // cards in it (not drawn), in chapter 10. Episode 5 shows him fall,
@@ -1207,22 +1277,79 @@ const hunterExamRedrawn: Redrawings = {
       source: 'chapter',
       value: [
         {
-          d: 'M14 152 C18 116 18 70 18 28 M32 152 C30 120 30 98 34 80 C70 74 110 74 158 70 M34 28 C32 42 32 56 32 66 C70 62 110 62 158 58',
+          d: 'M14 176 C18 130 18 70 18 28 M32 176 C30 130 30 98 34 80 C70 74 110 74 140 70 M34 28 C32 42 32 56 32 66 C70 62 110 62 140 58',
         },
-        { d: 'M98 62 C104 52 114 46 126 44', role: 'soft' },
+        { d: 'M140 58 Q146 64 140 70', role: 'soft' },
         { d: 'M20 96 l8 -4 M20 112 l8 -4 M21 128 l8 -4', role: 'ambient' },
-        ...moved(CHERRY_SHOE, 'translate(36 153) scale(0.52 -0.52)'),
-        ...moved(CHERRY_SHOE, 'translate(94 150) scale(0.52 -0.52)'),
-        { d: 'M4 152 H156', role: 'ambient', dashed: true },
+        ...moved(CHERRY_PAIR, 'translate(33.5 181) scale(0.62 -0.62)'),
+        { d: 'M4 176 H156', role: 'ambient', dashed: true },
       ],
     },
   ],
-  hisoka: [
+  'gon-freecss': [
+    // The same rod and reel, and beside them his clenched fist with open
+    // rays of aura: Jajanken's Rock, his Hatsu, shatters a boulder in the
+    // badlands, episode 65 / chapter 145. Paper and Scissors are later
+    // techniques of the same Hatsu and keep the drawing.
+    { episode: 65, chapter: 145, value: GON_ROCK },
+    // The same, overrun by long open lines streaming from behind the rod,
+    // his hair and aura: grief over Kite turns him into an adult with long
+    // hair flowing endlessly, his figure first transforming in chapter 305,
+    // episode 131.
+    {
+      episode: 131,
+      chapter: 305,
+      value: [
+        ...GON_ROCK,
+        {
+          d: 'M92 112 C72 98 56 86 30 80 C18 78 8 70 2 60 M96 104 C80 80 70 62 44 52 C28 46 16 32 10 12',
+          role: 'ambient',
+        },
+        {
+          d: 'M100 96 C90 70 82 50 62 34 C48 24 42 12 40 2 M104 88 C100 66 96 44 84 26 C76 16 74 8 74 0',
+          role: 'ambient',
+        },
+      ],
+    },
+    // The exit: the rod with Rock again once he is back in his own body.
+    // Chapter 309 still shows him long-haired in Killua's arms, and he is
+    // next seen in hospital, chapter 316 / episode 136, a twelve-year-old
+    // on life support.
+    { episode: 136, chapter: 316, value: GON_ROCK },
+  ],
+  'killua': [
+    // The same skateboard with a small spark crackling off one edge of the
+    // deck: he shocks himself with a taser and turns his aura into
+    // electricity, a spark between his fingers, episode 59 / chapter 122.
+    // No bolts.
+    { episode: 59, chapter: 122, value: [...DRAWINGS.killua, ...KILLUA_SPARK] },
+    // The same board and spark, with long speed lines trailing it and a
+    // bolt running its length: Godspeed electrifies his whole body and
+    // moves him faster than his limits allow, chapter 281. Episode 119 is
+    // the first the wiki shows it in.
+    {
+      episode: 119,
+      chapter: 281,
+      value: [
+        ...DRAWINGS.killua,
+        ...KILLUA_SPARK,
+        { d: 'M6 150 L44 102 M10 172 L30 147 M40 72 L62 44', role: 'ambient' },
+        {
+          d: 'M84 164 L94 154 L90 150 L102 140 L98 136 L110 125 L106 121 L118 110 L114 106 L126 95 L122 91 L134 81 L130 77 L142 66',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'hisoka': [
     // The same fan lifted a little, and under it bands of his aura
     // stretched like pulled gum from the cards to the ground: Bungee Gum is
     // named, with Texture Surprise, after the Kastro match, episode 32 /
     // chapter 55, which tells how he held his cards to the floor with it.
-    // The bands are open lines in the muted ink, no glow.
+    // The bands are open lines in the muted ink, no glow. Above the fan, the
+    // fake spider tattoo he peels off his back in the same chapter, made with
+    // Texture Surprise: a square of cloth curling at one corner, the Troupe's
+    // spider on it without its number, all in the muted ink.
     {
       episode: 32,
       chapter: 55,
@@ -1233,15 +1360,49 @@ const hunterExamRedrawn: Redrawings = {
           role: 'ambient',
         },
         { d: 'M14 184 H146', role: 'ambient', dashed: true },
+        {
+          d: 'M116 20 L148 14 L152 44 Q144 42 140 50 L122 52 Z M152 44 Q150 52 140 50',
+          role: 'ambient',
+        },
+        ...moved(
+          TROUPE_SPIDER.map((stroke) => ({
+            ...stroke,
+            role: 'ambient' as const,
+          })),
+          'translate(134 33) scale(0.42)',
+        ),
+      ],
+    },
+    // The same four cards fallen apart: the fan upside down on the floor
+    // and two cards still tumbling above it. Chrollo's puppets explode
+    // around him and he is caught in the blast, prepared for his death,
+    // chapter 356. No body.
+    {
+      episode: 148,
+      source: 'chapter',
+      chapter: 356,
+      value: [
+        ...moved(
+          HISOKA_FAN,
+          'translate(84 150) rotate(166) scale(0.62) translate(-80 -120)',
+        ),
+        ...moved(
+          [{ d: HISOKA_CARD }, { d: 'M-11 -17 H11 V17 H-11 Z', role: 'soft' }],
+          'translate(38 46) rotate(-28)',
+        ),
+        ...moved(
+          [{ d: HISOKA_CARD }],
+          'translate(122 64) rotate(38) scale(0.9)',
+        ),
+        { d: 'M4 174 H156', role: 'ambient', dashed: true },
       ],
     },
     // The same fan in his left hand, seen from the back: back from the
-    // dead, he makes rubber prostheses with Texture Surprise for the four
-    // fingers the blast took (chapters 355, 357). The rebuilt fingers and
-    // their nails are drawn in the muted ink, an imitation over the real
-    // palm; the wiki does not say which digit was spared, so that is a
-    // frame check. He dies and returns in the same chapter, so the return
-    // is the only Kakin stage.
+    // dead, he makes rubber prostheses with Texture Surprise for his left
+    // hand and right leg, chapter 357. The rebuilt fingers and their nails
+    // are drawn in the muted ink, an imitation over the hand; how much of
+    // the hand the prosthesis replaces is a frame check. The leg is not
+    // drawn. It follows his presumed death at chapter 356.
     {
       episode: 148,
       source: 'chapter',
@@ -1465,7 +1626,11 @@ const kakinReturningRedrawn: Redrawings = {
     { ...KAKIN, chapter: 357, value: YORKNEW_CITY_DRAWINGS.chrollo },
   ],
   'hanzo': [
-    // The same bandana twice, the second in the muted ink above the first:
+    // His Kakin look: the black suit and tie of a prince's bodyguard, the
+    // tie in tint, from chapter 361, where the wiki first describes it. It
+    // stays for the rest of the voyage, so there is no exit.
+    { ...KAKIN, chapter: 361, value: HANZO_SUIT },
+    // The same suit, and a smaller copy of it in the muted ink beside it:
     // Hanzo Skill 4, the double of himself he sends out while his body
     // sleeps, the first ability he shows, chapter 372.
     {
@@ -1473,13 +1638,13 @@ const kakinReturningRedrawn: Redrawings = {
       chapter: 372,
       value: [
         ...moved(
-          HANZO_BANDANA.map((stroke) => ({
+          HANZO_SUIT.slice(0, 4).map((stroke) => ({
             ...stroke,
             role: 'ambient' as const,
           })),
-          'translate(16 -34)',
+          'translate(92 4) scale(0.42)',
         ),
-        ...moved(DRAWINGS.hanzo, 'translate(-12 14)'),
+        ...moved(HANZO_SUIT, 'translate(-2 20) scale(0.88)'),
       ],
     },
   ],

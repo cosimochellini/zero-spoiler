@@ -36931,6 +36931,46 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26571",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26571",
       "contentSha256": "39b848a2479ec42807b8935ef063675f09d4b5141d3117655b53b1d4e66c5b77"
+    },
+    "hxh-en-Hunter_License-405166.json": {
+      "locale": "en",
+      "title": "Hunter License",
+      "revision": 405166,
+      "revisionDate": "2024-09-29T18:57:03Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_License",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=405166",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=405166",
+      "contentSha256": "a89b70d05fc2cdadc488702f86b37daa2b126d9910e595d0e5db574cebd9c8c7"
+    },
+    "hxh-en-Hunter_License/Image_Gallery-420574.json": {
+      "locale": "en",
+      "title": "Hunter License/Image Gallery",
+      "revision": 420574,
+      "revisionDate": "2026-06-19T01:18:15Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_License/Image_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=420574",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=420574",
+      "contentSha256": "1d13caae120b1d64c83ab83a87d2ef4aaf129f6d0efe07a02cdf428c532d7495"
+    },
+    "hxh-en-Hunter_Exam-425760.json": {
+      "locale": "en",
+      "title": "Hunter Exam",
+      "revision": 425760,
+      "revisionDate": "2026-10-12T08:36:27Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_Exam",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425760",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425760",
+      "contentSha256": "307c300d7c0016ddfa0803cb6744ed98c0428c87af64e54199a8a0542b7d3d11"
+    },
+    "hxh-en-Milsy_Wetlands-421721.json": {
+      "locale": "en",
+      "title": "Milsy Wetlands",
+      "revision": 421721,
+      "revisionDate": "2026-07-07T13:25:45Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Milsy_Wetlands",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421721",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421721",
+      "contentSha256": "a174e96188a668deaf6316d8de867dc44251729d3687f631ff1db9f80c141b69"
     }
   }
 }
