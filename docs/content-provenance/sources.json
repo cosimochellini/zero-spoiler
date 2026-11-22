@@ -35361,6 +35361,26 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421700",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421700",
       "contentSha256": "5ca6e81f2d4d87d461e7529b28b05c00e4e9f5775bc22f1a965e47bbdff7a653"
+    },
+    "hxh-en-Phantom_Troupe-426123.json": {
+      "locale": "en",
+      "title": "Phantom Troupe",
+      "revision": 426123,
+      "revisionDate": "2026-11-21T22:21:03Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426123",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426123",
+      "contentSha256": "591fbb46925c4e1f598426469f35888c9c0340cfb640356f1cfc3dcb079dfcf0"
+    },
+    "hxh-en-Template:Phantom_Troupe_Gallery-426125.json": {
+      "locale": "en",
+      "title": "Template:Phantom Troupe Gallery",
+      "revision": 426125,
+      "revisionDate": "2026-11-21T22:23:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Template:Phantom_Troupe_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426125",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426125",
+      "contentSha256": "7795fc04713d81fc6bbe564381ff85760e1e9ba4db483bdf17c50130fc2b7264"
     }
   }
 }
