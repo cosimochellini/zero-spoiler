@@ -512,7 +512,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Records                   | 368                                                   |
 | Characters                | 290                                                   |
 | Nen abilities             | 28                                                    |
-| Bodies of power           | 3, with 36 seats                                      |
+| Bodies of power           | 4, with 49 seats                                      |
 | Arcs, places              | 7 · 43                                                |
 | Saga modules              | 7                                                     |
 | Line drawings             | 368, one per record, plus 94 redrawings of 81 records |
