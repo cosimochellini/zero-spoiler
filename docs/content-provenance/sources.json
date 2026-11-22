@@ -35381,6 +35381,26 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425887",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425887",
       "contentSha256": "d6772f1f9a48c84a3abe39f8ce9aca2548c87fc891eedbccda167817e4a905e2"
+    },
+    "hxh-en-Squadron_Leaders-423029.json": {
+      "locale": "en",
+      "title": "Squadron Leaders",
+      "revision": 423029,
+      "revisionDate": "2026-07-26T13:51:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Squadron_Leaders",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423029",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423029",
+      "contentSha256": "db8a8eace2f6d8db4c83ac7ae8972cf15ca5e531e0b88fc839823e1a1a025173"
+    },
+    "hxh-en-Royal_Guards-423026.json": {
+      "locale": "en",
+      "title": "Royal Guards",
+      "revision": 423026,
+      "revisionDate": "2026-07-26T13:43:45Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Royal_Guards",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423026",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423026",
+      "contentSha256": "1926fb0ad4ac728f0f7d1b8286914f55a40b14005935af2e40577e8d5ca8ebcc"
     }
   }
 }

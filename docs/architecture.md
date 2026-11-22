@@ -202,38 +202,40 @@ the anime, which never says his manga name, opens it as Leol at episode 106
 Phase 4 (#1023) covers the palace assault through chapter 298, adds Taragetter
 in the manga, and opens Peijin in the anime at episode 116. Phase 5 (#1024)
 files the finale through chapter 318 and episode 136, with the full cast
-reconciliation in the phase 5 inventory. Chimera Ant chronicles (#910) cover all
-46 newly filed characters and 17 returning characters through episode 136 /
-chapter 318, with 255 bilingual timeline entries and source-specific versions.
-Election (#912) files named characters and visited places through chapter 339
-and episode 148, drawn in #913 with five stages (three deaths, two ability
-reveals). Election chronicles (#914) add 91 bilingual stories for all 28 new
-characters and 15 returning characters, with separate source restrictions for
-anime-only records and scenes, and a manga-only item trade. Kakin (#916) is
-manga-only and files in five phases; phase 1 (#1134) covers chapters 340–357 and
-phase 2 (#1135) chapters 358–370 and phase 3 (#1136) chapters 371–383, phase 4
-(#1137) chapters 384–400 and phase 5 (#1138) chapters 401–420, the last
-published. Phases 1 and 2 are drawn in #1154, with 22 manga-only stages through
-chapter 370 (eleven princes' Guardian Spirit Beasts, four deaths, four returning
-records' reveals, Hisoka's return, and Chrollo's disguise and its end); phases 3
-and 4 are drawn in #1156, with 14 more stages through chapter 400 (eight
-abilities first shown, five deaths or presumed deaths, Kacho's with her beast
-taking her form, and Salé-salé's lost beast); phase 5 is drawn in #1158, with 9
-more stages through chapter 420 (four reveals of identity or allegiance, two
-abilities first shown, and three deaths). Kakin chronicles for chapters 340–370
-(#1155) add 99 manga-only stories for the 45 characters filed there and 20
-returning characters; all sit at episode 148, so the home ledger and the
-uniqueness test key a story by its chapter as well. Chapters 371–400 (#1157) add
-120 more for the 40 characters filed there and 44 returning ones, and chapters
-401–420 (#1159) 84 for the 22 filed there and 37 returning ones. Candidates
-whose naming stays unverified are deferred to #1141–#1145. Gyro is unanchored at
-78 / 203. Silva, Killua's father, is named in episode 24 but in chapter 95 in
-the manga, so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown
-from chapter 71 but named in the episodes only from 53 and filed at 54 / 71
-(#900); Kikyo is named only in credits and supplements, and Hishita only in
-chapter 329 (#912). Every Hunter Exam character has a chronicle (#762); the
-Heavens Arena characters get theirs in #898. Records are not added from unnamed
-appearances or supplemental names.
+reconciliation in the phase 5 inventory. The Chimera Ant Queen, left out of the
+phases as a title, is filed for the ranks page (#1447), where she holds the
+Chimera Ants' top seat. Chimera Ant chronicles (#910) cover all 46 newly filed
+characters and 17 returning characters through episode 136 / chapter 318, with
+255 bilingual timeline entries and source-specific versions. Election (#912)
+files named characters and visited places through chapter 339 and episode 148,
+drawn in #913 with five stages (three deaths, two ability reveals). Election
+chronicles (#914) add 91 bilingual stories for all 28 new characters and 15
+returning characters, with separate source restrictions for anime-only records
+and scenes, and a manga-only item trade. Kakin (#916) is manga-only and files in
+five phases; phase 1 (#1134) covers chapters 340–357 and phase 2 (#1135)
+chapters 358–370 and phase 3 (#1136) chapters 371–383, phase 4 (#1137) chapters
+384–400 and phase 5 (#1138) chapters 401–420, the last published. Phases 1 and 2
+are drawn in #1154, with 22 manga-only stages through chapter 370 (eleven
+princes' Guardian Spirit Beasts, four deaths, four returning records' reveals,
+Hisoka's return, and Chrollo's disguise and its end); phases 3 and 4 are drawn
+in #1156, with 14 more stages through chapter 400 (eight abilities first shown,
+five deaths or presumed deaths, Kacho's with her beast taking her form, and
+Salé-salé's lost beast); phase 5 is drawn in #1158, with 9 more stages through
+chapter 420 (four reveals of identity or allegiance, two abilities first shown,
+and three deaths). Kakin chronicles for chapters 340–370 (#1155) add 99
+manga-only stories for the 45 characters filed there and 20 returning
+characters; all sit at episode 148, so the home ledger and the uniqueness test
+key a story by its chapter as well. Chapters 371–400 (#1157) add 120 more for
+the 40 characters filed there and 44 returning ones, and chapters 401–420
+(#1159) 84 for the 22 filed there and 37 returning ones. Candidates whose naming
+stays unverified are deferred to #1141–#1145. Gyro is unanchored at 78 / 203.
+Silva, Killua's father, is named in episode 24 but in chapter 95 in the manga,
+so his record is unanchored at 24 / 95 (#834), as is Chrollo, shown from chapter
+71 but named in the episodes only from 53 and filed at 54 / 71 (#900); Kikyo is
+named only in credits and supplements, and Hishita only in chapter 329 (#912).
+Every Hunter Exam character has a chronicle (#762); the Heavens Arena characters
+get theirs in #898. Records are not added from unnamed appearances or
+supplemental names.
 
 A Hunter x Hunter character's Nen type is a dated field of its own (`nen`,
 `Series.features.nen`, #922), shown as a row of the character's facts in the
@@ -507,17 +509,17 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                     | Count                                                 |
 | ------------------------- | ----------------------------------------------------- |
-| Records                   | 368                                                   |
-| Characters                | 290                                                   |
+| Records                   | 369                                                   |
+| Characters                | 291                                                   |
 | Nen abilities             | 28                                                    |
-| Bodies of power           | 2, with 26 seats                                      |
+| Bodies of power           | 3, with 38 seats                                      |
 | Arcs, places              | 7 · 43                                                |
 | Saga modules              | 7                                                     |
-| Line drawings             | 368, one per record, plus 94 redrawings of 81 records |
+| Line drawings             | 369, one per record, plus 95 redrawings of 82 records |
 | Chronicle stories         | 1001, for 289 characters                              |
-| Dated timelines           | 1333                                                  |
-| Affiliation steps         | 464                                                   |
-| Status steps              | 388                                                   |
+| Dated timelines           | 1338                                                  |
+| Affiliation steps         | 465                                                   |
+| Status steps              | 390                                                   |
 | Origins that link a place | 10                                                    |
 
 ### `game-of-thrones`
