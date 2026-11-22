@@ -37001,6 +37001,16 @@
       "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421721",
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421721",
       "contentSha256": "a174e96188a668deaf6316d8de867dc44251729d3687f631ff1db9f80c141b69"
+    },
+    "hxh-en-Lake_Mobius-421623.json": {
+      "locale": "en",
+      "title": "Lake Mobius",
+      "revision": 421623,
+      "revisionDate": "2026-07-06T22:18:18Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Lake_Mobius",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421623",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421623",
+      "contentSha256": "db63f928b2f554ea2e9146a637ed1a326449ec0f66089db2cdcf77a948e4ec6a"
     }
   }
 }
