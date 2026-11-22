@@ -1005,8 +1005,8 @@ export const GREED_ISLAND_PLACES: Record<
     region: 'islands',
     arc: 'greed-island-arc',
     landmark: {
-      it: 'Il castello sopra la città',
-      en: 'The castle above the city',
+      it: 'Il castello, simbolo della città',
+      en: "The castle, the city's symbol",
     },
     log: {
       it: 'Gon riceve un invito per ritirare l’ultima carta nel castello. Killua raggiunge la città con una carta di viaggio, poi torna dagli altri per condurli lì insieme.',
