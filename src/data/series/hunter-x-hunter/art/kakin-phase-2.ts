@@ -432,15 +432,15 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
   'myuhan': [MYUHAN_TAPE, ...MYUHAN_SHOE, ...MYUHAN_ROLL, shadow(96, 168, 48)],
 
   // Satobi's short fair hair from behind and a little to his left, styled
-  // into a point at either side, the points in tint, the far one smaller,
-  // over the collar of his black suit: Luzurus's guard at the class,
+  // into a point at either side above the ears, the points in tint, the far
+  // one smaller, over the collar of his black suit: Luzurus's guard at the class,
   // chapter 369.
   'satobi': [
     { d: TURNED_SKULL },
-    { d: 'M47 70 L26 74 L49 88 M109 72 L124 76 L109 86', role: 'accent' },
+    { d: 'M53 54 L30 54 L48 70 M104 56 L120 56 L108 70', role: 'accent' },
     { d: TURNED_EAR },
     { d: 'M62 54 C68 66 70 80 68 98 M90 50 C94 64 94 82 92 100', role: 'soft' },
-    { d: 'M100 60 l6 -5 M102 96 l6 -5', role: 'ambient' },
+    { d: 'M103 80 l6 -5 M102 96 l6 -5', role: 'ambient' },
     { d: TURNED_COLLAR, role: 'soft' },
     ...TURNED_BODY,
   ],

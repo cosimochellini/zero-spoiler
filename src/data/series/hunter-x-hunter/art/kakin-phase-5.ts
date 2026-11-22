@@ -173,7 +173,9 @@ export const KAKIN_PHASE_5_DRAWINGS = {
   // The small box Balsamilco opens with a sequence of buttons, in 3/4: its
   // walls with their thickness, the lid up with the keypad on it, and the
   // three vials of TSK-17 inside in tint, chapter 402 (named in 403). The
-  // box's shape and where its buttons sit are a frame check.
+  // box's shape and where its buttons sit are a frame check. No stage for
+  // Halkenburg possessing him: the Chapter 403 synopsis already shows it,
+  // in his own opening chapter, so there is no entry or exit to draw.
   'balsamilco': [
     { d: 'M28 110 L96 96 L132 112 L64 128 Z' },
     { d: 'M34 110 L96 98.5 L126 112 L64 125', role: 'soft' },
@@ -479,23 +481,20 @@ export const KAKIN_PHASE_5_DRAWINGS = {
 /** The phase 5 records whose drawing changes in Kakin's chapters (#1158). */
 export const kakinPhaseFiveRedrawn: Redrawings = {
   musse: [
-    // The same jacket crushed flat on the floor, the owl gone, and his
-    // handgun beside it in tint: Camilla's Cat's Name crushes the life out
-    // of him and Benjamin inherits Secret Window, chapter 373. Camilla picks
-    // the gun up after his death.
+    // The same jacket shoulder, empty, the owl gone, and his handgun dropped
+    // below it in tint: Camilla's Cat's Name crushes the life out of him and
+    // Benjamin inherits Secret Window, chapter 373. Camilla picks the gun up
+    // after his death.
     {
       ...KAKIN,
       chapter: 373,
       value: [
-        ...moved(
-          MUSSE_JACKET,
-          'translate(90 186) scale(0.8 0.4) translate(-80 -186)',
-        ),
+        ...moved(MUSSE_JACKET, 'translate(0 -30)'),
         {
-          d: 'M8 176 H54 L56 170 H12 Z M34 176 L30 186 H38 L42 176',
+          d: 'M52 176 H104 L106 168 H56 Z M84 176 L80 188 H90 L94 176',
           role: 'accent',
         },
-        { d: 'M2 188 H158', role: 'ambient', dashed: true },
+        { d: 'M2 192 H158', role: 'ambient', dashed: true },
       ],
     },
   ],
