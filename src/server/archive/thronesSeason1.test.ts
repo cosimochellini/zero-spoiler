@@ -1036,13 +1036,7 @@ const STEPS: {
     id: 'chett',
     source: 'chapter',
   },
-  {
-    chapter: 73,
-    en: 'Daenerys’s bloodrider',
-    episode: 12,
-    id: 'aggo',
-    source: 'chapter',
-  },
+  { chapter: 73, en: 'Daenerys’s bloodrider', episode: 12, id: 'aggo' },
   {
     chapter: 73,
     en: 'Daenerys’s bloodrider',

@@ -65,6 +65,7 @@ export const TITLES = {
   'game-of-thrones': {
     'nymeria': 'Nymeria (direwolf)',
     'robin-arryn': 'Robert Arryn',
+    'strong-belwas': 'Belwas',
   },
 }
 

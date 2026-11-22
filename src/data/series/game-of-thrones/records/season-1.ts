@@ -6905,7 +6905,7 @@ export const season1: ThronesSaga = {
         },
       ],
     },
-    // His opening step and the show’s gate share episode 11, so the bloodrider step takes the next one, as Dareon’s does.
+    // His opening step and the show’s gate share episode 11, so the bloodrider step takes the next one, as Dareon’s does. The show makes him a bloodrider at episode 11 (#1468), so the step is both media’s: one episode late in the show, never early.
     'aggo': {
       relationships: season1Relationships.aggo,
       chronicle: season1Chronicles.aggo,
@@ -6918,7 +6918,6 @@ export const season1: ThronesSaga = {
         {
           episode: 12,
           chapter: 73,
-          source: 'chapter',
           value: {
             it: 'Cavaliere di sangue di Daenerys',
             en: 'Daenerys’s bloodrider',

@@ -35282,166 +35282,6 @@
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748948",
       "contentSha256": "56819fb5e45247fc9b39ceedf8733446e158132d15751f16e8fc5f88d28181fe"
     },
-    "hxh-en-Hunter_Exam_arc-423052.json": {
-      "locale": "en",
-      "title": "Hunter Exam arc",
-      "revision": 423052,
-      "revisionDate": "2026-07-26T14:51:05Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_Exam_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423052",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423052",
-      "contentSha256": "f9909fb70dfb48130eb7075f5a71241f5c82e01f01fe0f7f9000633ca6108ea9"
-    },
-    "hxh-en-Whale_Island-421735.json": {
-      "locale": "en",
-      "title": "Whale Island",
-      "revision": 421735,
-      "revisionDate": "2026-07-07T13:51:29Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Whale_Island",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421735",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421735",
-      "contentSha256": "c3638e47852f07afc1645d3bcea99a860f18888cbb243446dac6e73ead3c865d"
-    },
-    "hxh-en-Heavens_Arena_arc-423050.json": {
-      "locale": "en",
-      "title": "Heavens Arena arc",
-      "revision": 423050,
-      "revisionDate": "2026-07-26T14:49:19Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423050",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423050",
-      "contentSha256": "fd2654980b734d78b5c326317368a61e88087515372ce67ca4bf8bce6470aa5e"
-    },
-    "hxh-en-Chapter_44-416150.json": {
-      "locale": "en",
-      "title": "Chapter 44",
-      "revision": 416150,
-      "revisionDate": "2025-08-31T20:21:58Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_44",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416150",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416150",
-      "contentSha256": "7de2f9c21c1b9180bceec3ad83c41f25defc20551a38f314502d0834670ea431"
-    },
-    "hxh-en-Heavens_Arena-423051.json": {
-      "locale": "en",
-      "title": "Heavens Arena",
-      "revision": 423051,
-      "revisionDate": "2026-07-26T14:49:29Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423051",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423051",
-      "contentSha256": "a031b5af93117d18c4daa124d372bbf164fc01e4a5f9588b80fa58fd5edc16bb"
-    },
-    "hxh-en-Chimera_Ant_arc-423048.json": {
-      "locale": "en",
-      "title": "Chimera Ant arc",
-      "revision": 423048,
-      "revisionDate": "2026-07-26T14:38:07Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423048",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423048",
-      "contentSha256": "e6e1cf7d55137db5b56475e3562858fd557316d589910a38b04b7b9bb1c1b19b"
-    },
-    "hxh-en-Succession_Contest_arc-425681.json": {
-      "locale": "en",
-      "title": "Succession Contest arc",
-      "revision": 425681,
-      "revisionDate": "2026-09-30T07:20:14Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Succession_Contest_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425681",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425681",
-      "contentSha256": "37cbba7ca75e13bfcc10d98637529b934cd8a5153c57743984e73d16959fa4ba"
-    },
-    "hxh-en-Mandai_City-421700.json": {
-      "locale": "en",
-      "title": "Mandai City",
-      "revision": 421700,
-      "revisionDate": "2026-07-07T12:31:31Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Mandai_City",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421700",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421700",
-      "contentSha256": "5ca6e81f2d4d87d461e7529b28b05c00e4e9f5775bc22f1a965e47bbdff7a653"
-    },
-    "hxh-en-Template:Zodiacs_Gallery-387229.json": {
-      "locale": "en",
-      "title": "Template:Zodiacs Gallery",
-      "revision": 387229,
-      "revisionDate": "2024-03-17T04:48:33Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Template:Zodiacs_Gallery",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=387229",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=387229",
-      "contentSha256": "e183cd28a03bc08d4ca57dfc8e7963d4c475bf2fa10ea19ed3f0920cabdfffda"
-    },
-    "hxh-en-Zoldyck_Family-425887.json": {
-      "locale": "en",
-      "title": "Zoldyck Family",
-      "revision": 425887,
-      "revisionDate": "2026-11-04T21:03:37Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Zoldyck_Family",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425887",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425887",
-      "contentSha256": "d6772f1f9a48c84a3abe39f8ce9aca2548c87fc891eedbccda167817e4a905e2"
-    },
-    "hxh-en-Squadron_Leaders-423029.json": {
-      "locale": "en",
-      "title": "Squadron Leaders",
-      "revision": 423029,
-      "revisionDate": "2026-07-26T13:51:29Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Squadron_Leaders",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423029",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423029",
-      "contentSha256": "db8a8eace2f6d8db4c83ac7ae8972cf15ca5e531e0b88fc839823e1a1a025173"
-    },
-    "hxh-en-Royal_Guards-423026.json": {
-      "locale": "en",
-      "title": "Royal Guards",
-      "revision": 423026,
-      "revisionDate": "2026-07-26T13:43:45Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Royal_Guards",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423026",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423026",
-      "contentSha256": "1926fb0ad4ac728f0f7d1b8286914f55a40b14005935af2e40577e8d5ca8ebcc"
-    },
-    "hxh-en-Ten_Dons-423032.json": {
-      "locale": "en",
-      "title": "Ten Dons",
-      "revision": 423032,
-      "revisionDate": "2026-07-26T13:58:38Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Ten_Dons",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423032",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423032",
-      "contentSha256": "c78b4afc370dfe99ad518e0142eef1fac30215674a2138282d8f74ca8c2e2685"
-    },
-    "hxh-en-Mafia_Community-423009.json": {
-      "locale": "en",
-      "title": "Mafia Community",
-      "revision": 423009,
-      "revisionDate": "2026-07-26T12:51:42Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Mafia_Community",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423009",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423009",
-      "contentSha256": "dccab5d7b093db516fc21185bc65af180f54ae87e48ffd8fbc5d90fa02212015"
-    },
-    "hxh-en-Phantom_Troupe-426123.json": {
-      "locale": "en",
-      "title": "Phantom Troupe",
-      "revision": 426123,
-      "revisionDate": "2026-11-21T22:21:03Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426123",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426123",
-      "contentSha256": "591fbb46925c4e1f598426469f35888c9c0340cfb640356f1cfc3dcb079dfcf0"
-    },
-    "hxh-en-Template:Phantom_Troupe_Gallery-426125.json": {
-      "locale": "en",
-      "title": "Template:Phantom Troupe Gallery",
-      "revision": 426125,
-      "revisionDate": "2026-11-21T22:23:37Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Template:Phantom_Troupe_Gallery",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426125",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426125",
-      "contentSha256": "7795fc04713d81fc6bbe564381ff85760e1e9ba4db483bdf17c50130fc2b7264"
-    },
     "got-en-Daisy-728017.json": {
       "locale": "en",
       "title": "Daisy",
@@ -35811,6 +35651,376 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27268",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27268",
       "contentSha256": "51a120f7d96e02d13325cfc2543901b05047f072024fc798c80eccd8a677f481"
+    },
+    "got-en-Kovarro-689005.json": {
+      "locale": "en",
+      "title": "Kovarro",
+      "revision": 689005,
+      "revisionDate": "2024-06-20T13:05:32Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kovarro",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=689005",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=689005",
+      "contentSha256": "92990693153928233f11624a8d6fc8f7f2a1d97cf399694a141395e3a980af65"
+    },
+    "got-en-Malakho-728257.json": {
+      "locale": "en",
+      "title": "Malakho",
+      "revision": 728257,
+      "revisionDate": "2026-02-05T07:12:32Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Malakho",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728257",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728257",
+      "contentSha256": "18d8dc40b9066b6b150df8ba2c78a4bcb7e89cb95e28190d592ee34208f6985f"
+    },
+    "got-en-Xaro_Xhoan_Daxos-735973.json": {
+      "locale": "en",
+      "title": "Xaro Xhoan Daxos",
+      "revision": 735973,
+      "revisionDate": "2026-05-17T11:42:23Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Xaro_Xhoan_Daxos",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735973",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735973",
+      "contentSha256": "9e75598a8f19b82ce7ce28fc60b6e71d9fb94b98286ac1c24822d169fed66d3f"
+    },
+    "got-en-Pyat_Pree-732483.json": {
+      "locale": "en",
+      "title": "Pyat Pree",
+      "revision": 732483,
+      "revisionDate": "2026-02-26T09:46:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Pyat_Pree",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732483",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732483",
+      "contentSha256": "f88c32604e56fcacdc4e01e4d5ff645149c9f312e6e0261f4e103f373ef74848"
+    },
+    "got-en-Quaithe-728371.json": {
+      "locale": "en",
+      "title": "Quaithe",
+      "revision": 728371,
+      "revisionDate": "2026-02-05T07:35:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Quaithe",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728371",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728371",
+      "contentSha256": "e8f1f26fa3d443ea166b5b32831457aea9eaf58b697282a9400181b33708508e"
+    },
+    "got-en-House_of_the_Undying-732491.json": {
+      "locale": "en",
+      "title": "House of the Undying",
+      "revision": 732491,
+      "revisionDate": "2026-02-26T09:49:26Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_of_the_Undying",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732491",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732491",
+      "contentSha256": "43817d56ef1170b4803088cbbe10251b51a7e6cb875993464a2caf13b0c26692"
+    },
+    "got-en-Spice_King-732486.json": {
+      "locale": "en",
+      "title": "Spice King",
+      "revision": 732486,
+      "revisionDate": "2026-02-26T09:47:08Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Spice_King",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732486",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732486",
+      "contentSha256": "afaedee327f8019d059320f98c4ceed2c09d13965b4bcc7b5c9d78878b63aed1"
+    },
+    "got-en-Silk_King-732485.json": {
+      "locale": "en",
+      "title": "Silk King",
+      "revision": 732485,
+      "revisionDate": "2026-02-26T09:47:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Silk_King",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732485",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732485",
+      "contentSha256": "3473d7d11804894f3801e9a94043f00fccff223acb1e65596b0671de65c0fb0d"
+    },
+    "got-en-Sumai-665772.json": {
+      "locale": "en",
+      "title": "Sumai",
+      "revision": 665772,
+      "revisionDate": "2024-02-18T05:45:47Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Sumai",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=665772",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=665772",
+      "contentSha256": "3a32679a243b1ba05b578b2d56fedb87f60a9dbf13144960fecadbe6c6dd0329"
+    },
+    "got-en-Thirteen-732489.json": {
+      "locale": "en",
+      "title": "Thirteen",
+      "revision": 732489,
+      "revisionDate": "2026-02-26T09:47:57Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Thirteen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732489",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732489",
+      "contentSha256": "83a0cbd01facd65944397940066176c4ed8bc04f13d7a574184e77a0aa0588b4"
+    },
+    "got-en-Warlocks-732490.json": {
+      "locale": "en",
+      "title": "Warlocks",
+      "revision": 732490,
+      "revisionDate": "2026-02-26T09:48:01Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Warlocks",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732490",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732490",
+      "contentSha256": "50072e8552bed444b3e3234cfa134231ab861a47cd3e5bd9eb2ff9cfc45b4dd2"
+    },
+    "got-en-Drogon-748699.json": {
+      "locale": "en",
+      "title": "Drogon",
+      "revision": 748699,
+      "revisionDate": "2026-09-12T14:53:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Drogon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748699",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748699",
+      "contentSha256": "ad9b28ae17f3c5cc30fd74ade67a0e14902ec2e9e817c7d9c2c2919ca242476c"
+    },
+    "got-en-Rhaegal-748039.json": {
+      "locale": "en",
+      "title": "Rhaegal",
+      "revision": 748039,
+      "revisionDate": "2026-08-15T12:56:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Rhaegal",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748039",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748039",
+      "contentSha256": "1d3fa88012924a8cb71147ef54225d0c57e84d25b23014633e016a3942cadf98"
+    },
+    "got-en-Viserion-748037.json": {
+      "locale": "en",
+      "title": "Viserion",
+      "revision": 748037,
+      "revisionDate": "2026-08-15T12:55:44Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Viserion",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748037",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748037",
+      "contentSha256": "7c34638df2fe010b278a65a856061891d987a200da97ccda402cdf545616b307"
+    },
+    "got-en-Rhaego-728394.json": {
+      "locale": "en",
+      "title": "Rhaego",
+      "revision": 728394,
+      "revisionDate": "2026-02-05T08:32:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Rhaego",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728394",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728394",
+      "contentSha256": "a0c2c91710054541a2edae0c7e8eb5586769069c472e8269466dc21a769f93a1"
+    },
+    "iaf-en-Xaro_Xhoan_Daxos-23687.json": {
+      "locale": "en",
+      "title": "Xaro Xhoan Daxos",
+      "revision": 23687,
+      "revisionDate": "2020-03-17T23:40:09Z",
+      "url": "https://iceandfire.fandom.com/wiki/Xaro_Xhoan_Daxos",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23687",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23687",
+      "contentSha256": "d9b21f3ab97dc98ca88517d91a00d9a1b33c0ec75d83bcfd47659b4ad3413663"
+    },
+    "iaf-en-Pyat_Pree-11816.json": {
+      "locale": "en",
+      "title": "Pyat Pree",
+      "revision": 11816,
+      "revisionDate": "2014-11-14T00:50:01Z",
+      "url": "https://iceandfire.fandom.com/wiki/Pyat_Pree",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=11816",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=11816",
+      "contentSha256": "c953f4bb74be30091b0a791567d5961be4b5b50e3b2f790558e5c89724ccd97e"
+    },
+    "iaf-en-Quaithe-24968.json": {
+      "locale": "en",
+      "title": "Quaithe",
+      "revision": 24968,
+      "revisionDate": "2021-05-26T21:55:25Z",
+      "url": "https://iceandfire.fandom.com/wiki/Quaithe",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=24968",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=24968",
+      "contentSha256": "465ae9613a464442209533d23a4176e077653ad6e576e167a0ad9affd20b5c6b"
+    },
+    "iaf-en-Drogon-22196.json": {
+      "locale": "en",
+      "title": "Drogon",
+      "revision": 22196,
+      "revisionDate": "2018-08-01T07:16:14Z",
+      "url": "https://iceandfire.fandom.com/wiki/Drogon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22196",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22196",
+      "contentSha256": "7e1b004f7c72fe5092db56f3c71d459cb974d8830ca077f7ca53e64cad634589"
+    },
+    "iaf-en-Viserion-13434.json": {
+      "locale": "en",
+      "title": "Viserion",
+      "revision": 13434,
+      "revisionDate": "2015-05-20T22:40:08Z",
+      "url": "https://iceandfire.fandom.com/wiki/Viserion",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=13434",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=13434",
+      "contentSha256": "7f188cf98937647edb517f894c571d5425cbb0bc1a301e3d085787cabfa12cf4"
+    },
+    "iaf-en-Rhaego-26571.json": {
+      "locale": "en",
+      "title": "Rhaego",
+      "revision": 26571,
+      "revisionDate": "2023-11-12T00:30:32Z",
+      "url": "https://iceandfire.fandom.com/wiki/Rhaego",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26571",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26571",
+      "contentSha256": "39b848a2479ec42807b8935ef063675f09d4b5141d3117655b53b1d4e66c5b77"
+    },
+    "hxh-en-Hunter_Exam_arc-423052.json": {
+      "locale": "en",
+      "title": "Hunter Exam arc",
+      "revision": 423052,
+      "revisionDate": "2026-07-26T14:51:05Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_Exam_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423052",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423052",
+      "contentSha256": "f9909fb70dfb48130eb7075f5a71241f5c82e01f01fe0f7f9000633ca6108ea9"
+    },
+    "hxh-en-Whale_Island-421735.json": {
+      "locale": "en",
+      "title": "Whale Island",
+      "revision": 421735,
+      "revisionDate": "2026-07-07T13:51:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Whale_Island",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421735",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421735",
+      "contentSha256": "c3638e47852f07afc1645d3bcea99a860f18888cbb243446dac6e73ead3c865d"
+    },
+    "hxh-en-Heavens_Arena_arc-423050.json": {
+      "locale": "en",
+      "title": "Heavens Arena arc",
+      "revision": 423050,
+      "revisionDate": "2026-07-26T14:49:19Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423050",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423050",
+      "contentSha256": "fd2654980b734d78b5c326317368a61e88087515372ce67ca4bf8bce6470aa5e"
+    },
+    "hxh-en-Chapter_44-416150.json": {
+      "locale": "en",
+      "title": "Chapter 44",
+      "revision": 416150,
+      "revisionDate": "2025-08-31T20:21:58Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_44",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416150",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416150",
+      "contentSha256": "7de2f9c21c1b9180bceec3ad83c41f25defc20551a38f314502d0834670ea431"
+    },
+    "hxh-en-Heavens_Arena-423051.json": {
+      "locale": "en",
+      "title": "Heavens Arena",
+      "revision": 423051,
+      "revisionDate": "2026-07-26T14:49:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423051",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423051",
+      "contentSha256": "a031b5af93117d18c4daa124d372bbf164fc01e4a5f9588b80fa58fd5edc16bb"
+    },
+    "hxh-en-Chimera_Ant_arc-423048.json": {
+      "locale": "en",
+      "title": "Chimera Ant arc",
+      "revision": 423048,
+      "revisionDate": "2026-07-26T14:38:07Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423048",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423048",
+      "contentSha256": "e6e1cf7d55137db5b56475e3562858fd557316d589910a38b04b7b9bb1c1b19b"
+    },
+    "hxh-en-Succession_Contest_arc-425681.json": {
+      "locale": "en",
+      "title": "Succession Contest arc",
+      "revision": 425681,
+      "revisionDate": "2026-09-30T07:20:14Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Succession_Contest_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425681",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425681",
+      "contentSha256": "37cbba7ca75e13bfcc10d98637529b934cd8a5153c57743984e73d16959fa4ba"
+    },
+    "hxh-en-Mandai_City-421700.json": {
+      "locale": "en",
+      "title": "Mandai City",
+      "revision": 421700,
+      "revisionDate": "2026-07-07T12:31:31Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Mandai_City",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421700",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421700",
+      "contentSha256": "5ca6e81f2d4d87d461e7529b28b05c00e4e9f5775bc22f1a965e47bbdff7a653"
+    },
+    "hxh-en-Template:Zodiacs_Gallery-387229.json": {
+      "locale": "en",
+      "title": "Template:Zodiacs Gallery",
+      "revision": 387229,
+      "revisionDate": "2024-03-17T04:48:33Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Template:Zodiacs_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=387229",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=387229",
+      "contentSha256": "e183cd28a03bc08d4ca57dfc8e7963d4c475bf2fa10ea19ed3f0920cabdfffda"
+    },
+    "hxh-en-Zoldyck_Family-425887.json": {
+      "locale": "en",
+      "title": "Zoldyck Family",
+      "revision": 425887,
+      "revisionDate": "2026-11-04T21:03:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Zoldyck_Family",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425887",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425887",
+      "contentSha256": "d6772f1f9a48c84a3abe39f8ce9aca2548c87fc891eedbccda167817e4a905e2"
+    },
+    "hxh-en-Squadron_Leaders-423029.json": {
+      "locale": "en",
+      "title": "Squadron Leaders",
+      "revision": 423029,
+      "revisionDate": "2026-07-26T13:51:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Squadron_Leaders",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423029",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423029",
+      "contentSha256": "db8a8eace2f6d8db4c83ac7ae8972cf15ca5e531e0b88fc839823e1a1a025173"
+    },
+    "hxh-en-Royal_Guards-423026.json": {
+      "locale": "en",
+      "title": "Royal Guards",
+      "revision": 423026,
+      "revisionDate": "2026-07-26T13:43:45Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Royal_Guards",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423026",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423026",
+      "contentSha256": "1926fb0ad4ac728f0f7d1b8286914f55a40b14005935af2e40577e8d5ca8ebcc"
+    },
+    "hxh-en-Ten_Dons-423032.json": {
+      "locale": "en",
+      "title": "Ten Dons",
+      "revision": 423032,
+      "revisionDate": "2026-07-26T13:58:38Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Ten_Dons",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423032",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423032",
+      "contentSha256": "c78b4afc370dfe99ad518e0142eef1fac30215674a2138282d8f74ca8c2e2685"
+    },
+    "hxh-en-Mafia_Community-423009.json": {
+      "locale": "en",
+      "title": "Mafia Community",
+      "revision": 423009,
+      "revisionDate": "2026-07-26T12:51:42Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Mafia_Community",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423009",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423009",
+      "contentSha256": "dccab5d7b093db516fc21185bc65af180f54ae87e48ffd8fbc5d90fa02212015"
+    },
+    "hxh-en-Phantom_Troupe-426123.json": {
+      "locale": "en",
+      "title": "Phantom Troupe",
+      "revision": 426123,
+      "revisionDate": "2026-11-21T22:21:03Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426123",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426123",
+      "contentSha256": "591fbb46925c4e1f598426469f35888c9c0340cfb640356f1cfc3dcb079dfcf0"
+    },
+    "hxh-en-Template:Phantom_Troupe_Gallery-426125.json": {
+      "locale": "en",
+      "title": "Template:Phantom Troupe Gallery",
+      "revision": 426125,
+      "revisionDate": "2026-11-21T22:23:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Template:Phantom_Troupe_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426125",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426125",
+      "contentSha256": "7795fc04713d81fc6bbe564381ff85760e1e9ba4db483bdf17c50130fc2b7264"
     },
     "hxh-it-Associazione_Hunter-153445509.json": {
       "locale": "it",

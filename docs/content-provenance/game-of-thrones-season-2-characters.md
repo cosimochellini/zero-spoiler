@@ -138,3 +138,98 @@ for a check of their chapters.
   Ser Imry Florent and Matthos Seaworth (Stannis's side, #1464), Alton Lannister
   and Cleos Frey (first seen at Robb's camp, #1465), Kevan Lannister (with Tywin
   at Harrenhal, #1465).
+
+## Essos and Qarth (#1468)
+
+Daenerys's road through the Red Waste to Qarth. Candidates come from the Game of
+Thrones Wiki's season-2 episode pages (Essos synopses, Firsts, "In the books"),
+its character pages and quotes, and A Wiki of Ice and Fire's synopses and
+Appearing lists of _A Clash of Kings_ chapters 12, 27, 40, 48 and 63 (Daenerys I
+to V, site chapters 86, 101, 114, 122 and 137), read through the Firecrawl tool.
+The show's names are taken only from lines the Game of Thrones Wiki quotes; its
+synopses name Xaro, Pyat Pree, Quaithe and the dragons in narration.
+
+Counts: 9 filed, 0 pending, 30 omitted, 1 open for an owner ruling (Arstan
+Whitebeard); 1 stage-1 record stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                       | Show                                                                                                                                                   | Books                                                                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `kovarro` (show only)        | 11, "The North Remembers": Daenerys sends out her bloodriders, "Zhey Rakharo, zhey Aggo, zhey Kovarro" (quoted on the Aggo (The North Remembers) page) | none: no book has the name, its rider is Jhogo; 86 orders him                                                              |
+| `xaro-xhoan-daxos`           | 15, "The Ghost of Harrenhal": Pyat Pree, "Should you grow weary of Xaro's baubles" (quoted on the House of the Undying page)                           | 86, Daenerys I: Jhogo brings "the merchant prince Xaro Xhoan Daxos of the Thirteen" from Qarth, with Pyat Pree and Quaithe |
+| `pyat-pree` (books only)     | none: episodes 14–20 name him in narration and the credits only; 14 orders him                                                                         | 86, Daenerys I: "the great warlock Pyat Pree", in the same introduction                                                    |
+| `quaithe` (books only)       | none: episodes 15 and 17 name her in narration only ("I am no one"); 15 orders her                                                                     | 86, Daenerys I: "Quaithe of the Shadow", in the same introduction                                                          |
+| `malakho` (show only)        | 15, "The Ghost of Harrenhal": Jorah, "Malakho says the statue is too heavy to carry" (quoted on the Malakho and Kovarro pages)                         | none: "there is no character named Malakho"; 101 orders him                                                                |
+| `drogon`                     | 40, "The Children": the name's first on-screen use (Drogon page), past the stage (#852)                                                                | 86, Daenerys I: she names the black-and-scarlet one Drogon                                                                 |
+| `rhaegal`                    | 41, "The Wars to Come": first said on screen with Viserion's (Rhaegal page), past the stage                                                            | 86, Daenerys I: she names the green-and-bronze one Rhaegal                                                                 |
+| `viserion`                   | 41, "The Wars to Come" (Viserion page), past the stage                                                                                                 | 86, Daenerys I: she names the cream-and-gold one Viserion                                                                  |
+| `strong-belwas` (books only) | none: the show has no Belwas; 20 orders him                                                                                                            | 137, Daenerys V: Daenerys learns the eunuch who saved her at the port is the pit fighter Strong Belwas, sent by Illyrio    |
+
+- Kovarro: role Daenerys's bloodrider, her khalasar, alive. Italian "Kovarro"
+  (Italian Wikipedia, its own section of the characters' list).
+- Xaro Xhoan Daxos: role merchant prince of the Thirteen; the show alone makes
+  him self-proclaimed King of Qarth at 17 ("A Man Without Honor", 114 ordering
+  it) and `deceased` at 20 ("Valar Morghulis", locked in his vault and counted
+  among the episode's deaths; 137 ordering it). Owner check: episode 14, where
+  he invokes Sumai, names him in narration only. Italian "Xaro Xhoan Daxos".
+- Pyat Pree: role warlock of Qarth, alive. Owner check: if the show says his
+  name, the record becomes both media's and his show death at 20 follows.
+  Italian "Pyat Pree" (TV cast list).
+- Quaithe: role woman of the Shadow, no allegiance, alive. Owner check: episodes
+  15 and 17. Italian "Quaithe" (TV cast list).
+- Malakho: role Dothraki warrior, Daenerys's khalasar, alive. His unnamed
+  background scenes in episodes 11 and 14 are floors. Italian kept as "Malakho";
+  no Italian page.
+- Drogon, Rhaegal and Viserion: role Daenerys's dragon, House Targaryen, alive.
+  The texts leave out whom each is named for, which the show never says. Owner
+  check: the season-2 synopses name them in narration (Drogon in "The Ghost of
+  Harrenhal" and "Valar Morghulis"). Italian names from Italian Wikipedia's
+  Daenerys Targaryen page.
+- Strong Belwas: role former pit fighter, in Illyrio's service, alive. Italian
+  "Belwas il Forte" (Italian Wikipedia, Barristan Selmy's section).
+- The book gates of Xaro, Pyat Pree and Quaithe read the synopsis's "Jhogo ...
+  bringing three queerly garbed strangers ...: the great warlock Pyat Pree, the
+  merchant prince Xaro Xhoan Daxos of the Thirteen, and Quaithe of the Shadow"
+  as their introduction. Chapter 27 (101) is where each speaks in Qarth.
+
+### Stage-1 records stepped
+
+- Aggo: his bloodrider step at 12 / 73 is now both media's. The show makes him a
+  bloodrider at episode 11 (infobox, GOT201), his own gate, so the step is one
+  episode late in the show, never early (#1457's note on this issue).
+
+Not stepped: Daenerys and Jorah (no field changes in the stage), Rakharo, Irri
+and Doreah (their show deaths at 12, 16 and 20 are filed already; the books keep
+Rakharo and Irri alive and end Doreah at 86), Jhogo and Jhiqui (no change).
+
+### Open for an owner ruling
+
+- **Arstan Whitebeard**, Daenerys V (137): Strong Belwas's old squire, who saves
+  Daenerys from the manticore. He is Barristan Selmy under a false name, which
+  the books reveal only in _A Storm of Swords_; the show has Barristan arrive
+  openly in season 3. A step on Barristan's dossier at 137 would tell a book
+  reader who Arstan is, and a record of his own would make two records of one
+  man. Left out until the owner rules.
+
+### Omitted
+
+- **Seen only in a vision, or dead before the story:** Rhaego (the show's vision
+  at 20 names him in narration only, his name having been said in episode 6; the
+  books only mention him in the stage), and the House of the Undying's book
+  visions of Rhaegar Targaryen, Elia Martell, the infant Aegon, Aerys II and
+  Willem Darry (chapter 122).
+- **Titles and descriptors:** the Spice King (he will not give his name), the
+  Silk King and the Copper King, the Sorrowful Man and his manticore, the
+  firemage, the House of the Undying's dwarf, the brass-seller and the brother
+  captains, Daenerys's silver mare.
+- **Collectives:** the Thirteen, the Pureborn, the warlocks and the Undying
+  Ones, the Tourmaline Brotherhood.
+- **Bit parts, one scene in the stage:** Quhuru Mo, the Summer Islander captain
+  who brings the news of Robert's death (chapter 101).
+- **Only mentioned:** Mathos Mallarawan, Wendello Qar Deeth and Egon Emeros
+  (chapter 114), Lynesse Hightower, Jorah's first wife, Tregar Ormollen, Pono
+  and Jhaqo (chapter 86).

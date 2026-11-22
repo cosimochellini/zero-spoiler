@@ -196,8 +196,8 @@ const PERSON: Stroke[] = [
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
- * own drawing; the season-2 King's Landing cast (#1463) shows `PERSON`
- * until its drawing child draws it. `satisfies`
+ * own drawing; the season-2 King's Landing (#1463) and Essos (#1468) casts
+ * show `PERSON` until their drawing child draws them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -221,6 +221,15 @@ export const DRAWINGS = {
   'osmund-kettleblack': PERSON,
   'alayaya': PERSON,
   'garlan-tyrell': PERSON,
+  'kovarro': PERSON,
+  'xaro-xhoan-daxos': PERSON,
+  'pyat-pree': PERSON,
+  'quaithe': PERSON,
+  'malakho': PERSON,
+  'drogon': PERSON,
+  'rhaegal': PERSON,
+  'viserion': PERSON,
+  'strong-belwas': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

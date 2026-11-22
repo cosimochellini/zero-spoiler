@@ -27,6 +27,9 @@ function watch(section) {
   return `Guardiani della notte#${section}`
 }
 
+/** Daenerys's own page, which also names her three dragons. */
+const DAENERYS = 'Daenerys Targaryen'
+
 /** The list's TV cast table, which names its rows only in the table. */
 const OTHERS = characters('Altri personaggi')
 
@@ -89,7 +92,7 @@ export const THRONES_ITALIAN_TITLES = {
   'gendry': 'Casa Baratheon#Gendry',
   'gregor-clegane': characters('Gregor Clegane'),
   'loras-tyrell': 'Casa Tyrell#Loras Tyrell',
-  'daenerys-targaryen': 'Daenerys Targaryen',
+  'daenerys-targaryen': DAENERYS,
   'viserys-targaryen':
     'Casa Targaryen#Re Viserys III Targaryen "Il Re Mendicante"',
   'drogo': 'Dothraki#Drogo',
@@ -187,6 +190,15 @@ export const THRONES_ITALIAN_TITLES = {
   'osmund-kettleblack': characters('Osmund Kettleblack'),
   'alayaya': characters('Chataya'),
   'garlan-tyrell': 'Casa Tyrell#Garlan Tyrell',
+  // #1468, the second stage's Essos and Qarth cast.
+  'kovarro': characters('Kovarro'),
+  'xaro-xhoan-daxos': characters('Xaro Xhoan Daxos'),
+  'pyat-pree': OTHERS,
+  'quaithe': OTHERS,
+  'drogon': DAENERYS,
+  'rhaegal': DAENERYS,
+  'viserion': DAENERYS,
+  'strong-belwas': characters('Barristan Selmy'),
 }
 
 /**
@@ -250,4 +262,15 @@ export const THRONES_NAMES_KEPT = {
   'hallyne': 'Hallyne',
   'alayaya': 'Alayaya',
   'jacelyn-bywater': 'Jacelyn Bywater',
+  // #1468. Italian Wikipedia has no entry for Malakho, a rider of the show
+  // alone; it names Pyat Pree and Quaithe only in its TV cast list, the
+  // dragons in Daenerys's page and Belwas il Forte in Barristan Selmy's
+  // section, with no heading of their own.
+  'malakho': 'Malakho',
+  'pyat-pree': 'Pyat Pree',
+  'quaithe': 'Quaithe',
+  'drogon': 'Drogon',
+  'rhaegal': 'Rhaegal',
+  'viserion': 'Viserion',
+  'strong-belwas': 'Belwas il Forte',
 }
