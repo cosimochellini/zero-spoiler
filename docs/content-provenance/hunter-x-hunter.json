@@ -4,13 +4,17 @@
       "https://hunterxhunter.fandom.com/wiki/Hunter_Exam_arc?oldid=423052",
       "https://hunterxhunter.fandom.com/wiki/Chapter_1?oldid=416129",
       "https://hunterxhunter.fandom.com/wiki/Episode_1_(2011)?oldid=417858",
-      "https://it.wikipedia.org/wiki/Capitoli_di_Hunter_%C3%97_Hunter?oldid=153336396#Volumi_1-10"
+      "https://it.wikipedia.org/wiki/Capitoli_di_Hunter_%C3%97_Hunter?oldid=153336396#Volumi_1-10",
+      "https://hunterxhunter.fandom.com/wiki/Hunter_License?oldid=405166",
+      "https://hunterxhunter.fandom.com/wiki/Hunter_License/Image_Gallery?oldid=420574",
+      "https://hunterxhunter.fandom.com/wiki/Hunter_Exam?oldid=425760"
     ],
     "unverified": [
       "Gate at chapter 1 / episode 1: the first chapter and 2011 episode of the arc on its infobox (chapters 1–43, episodes 1–26).",
       "Summary (Gon leaves Whale Island for the exam and to look for the Hunter father he never met) against the Chapter 1 and Episode 1 (2011) synopses.",
       "Italian name: Italian Wikipedia says «esame per diventare Hunter»; the short «Esame Hunter» is not checked against the Italian edition or dub.",
-      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed."
+      "#1393: facts checked on the pinned English Wiki revisions (MediaWiki API) and Italian Wikipedia; manga pages, licensed 2011 anime frames/timestamps and Italian dub forms not viewed.",
+      "#1329: first drawing is the Hunter licence seen from its back (a credit-card-like card, a little thicker, with a magnetic strip), from the Hunter License page's Appearance; the card's front design is not described in the wiki text, so no emblem is drawn. Chapter 1 (Kite's dropped card) and episode 20 (2011, the card's anime debut) not viewed."
     ]
   },
   "mito-freecss": {
@@ -130,7 +134,9 @@
       "https://hunterxhunter.fandom.com/index.php?oldid=369312",
       "https://hunterxhunter.fandom.com/wiki/Chapter_60",
       "https://hunterxhunter.fandom.com/wiki/Episode_35_(2011)",
-      "https://hunterxhunter.fandom.com/wiki/Chapter_54"
+      "https://hunterxhunter.fandom.com/wiki/Chapter_54",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_356?oldid=409377",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_357?oldid=369312"
     ],
     "unverified": [
       "Manga chapter 5 cuff not viewed",
@@ -141,17 +147,21 @@
       "#1019 final inventory disposition: existing-record. Existing character record hisoka; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof.",
       "#912 Election dated facts: exact manga pages and anime timestamps were not directly checked.",
       "#1134: Kakin dated facts checked on the pinned chapter synopses; licensed manga pages were not viewed.",
-      "#922 Nen type: dated from the chapter and episode synopses; manga pages and 2011 anime frames/timestamps not viewed"
+      "#922 Nen type: dated from the chapter and episode synopses; manga pages and 2011 anime frames/timestamps not viewed",
+      "#1329: presumed death at chapter 356 (caught in the puppets' explosion; owner ruling 2026-11-16), status presumed-dead at 356 and alive at 357, manga-only; the fake spider tattoo is added to the 32/55 stage (chapter 55). Frames not viewed."
     ]
   },
   "hanzo": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Hanzo",
-      "https://it.wikipedia.org/wiki/Associazione_Hunter"
+      "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_361?oldid=421596",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_372?oldid=421904"
     ],
     "unverified": [
       "Hanzo's name in Tonpa's recalled encounter",
-      "Precise page of the name"
+      "Precise page of the name",
+      "#1329: Kakin suit-and-tie stage at chapter 361, where Appearance first cites it; whether the suit starts at chapter 350 and whether he still wears the red bandana is a frame check. The chapter 372 double is redrawn on the suit."
     ]
   },
   "nicholas": {
@@ -167,7 +177,11 @@
   "satotz": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Satotz",
-      "https://it.wikipedia.org/wiki/Associazione_Hunter"
+      "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "https://hunterxhunter.fandom.com/wiki/Satotz?oldid=424054"
+    ],
+    "unverified": [
+      "#1329: dark coat with red tie turned three quarters (Appearance: 'Throughout the whole Hunter Exam, Satotz wears a dark coat adorned with a red tie'); chapter 6 / episode 3 frames not viewed."
     ]
   },
   "killua": {
@@ -284,7 +298,11 @@
       "https://hunterxhunter.fandom.com/wiki/Episode_147_%282011%29",
       "https://hunterxhunter.fandom.com/wiki/Chapter_338",
       "https://hunterxhunter.fandom.com/wiki/Chapter_60",
-      "https://hunterxhunter.fandom.com/wiki/Episode_35_(2011)"
+      "https://hunterxhunter.fandom.com/wiki/Episode_35_(2011)",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_122?oldid=322181",
+      "https://hunterxhunter.fandom.com/wiki/Episode_59_(2011)?oldid=416427",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_281?oldid=384546",
+      "https://hunterxhunter.fandom.com/wiki/Episode_119_(2011)?oldid=419173"
     ],
     "unverified": [
       "Heavens Arena pupil step pinned at chapter 48 / episode 29, where Wing opens their aura; his offer in chapter 47 / episode 28 is left below the pin (#896)",
@@ -296,13 +314,20 @@
       "#1019 final inventory disposition: existing-record. Existing character record killua; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof.",
       "Manga panels, licensed episode timestamps and Italian dub audio unviewed.",
       "#912 Election dated facts: exact manga pages and anime timestamps were not directly checked.",
-      "#922 Nen type: dated from the chapter and episode synopses; manga pages and 2011 anime frames/timestamps not viewed"
+      "#922 Nen type: dated from the chapter and episode synopses; manga pages and 2011 anime frames/timestamps not viewed",
+      "#1329: stages at 59/122 (first spark after the taser) and 119/281 (Godspeed; episode 118 adapts chapter 281 to page 8 and ends with him in his lightning aura, so which of 118–119 first shows Godspeed is a frame check). Frames not viewed."
     ]
   },
   "menchi": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Menchi",
-      "https://it.wikipedia.org/wiki/Associazione_Hunter"
+      "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "https://hunterxhunter.fandom.com/wiki/Menchi?oldid=424332",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_12?oldid=415985",
+      "https://hunterxhunter.fandom.com/wiki/Episode_6_(2011)?oldid=416391"
+    ],
+    "unverified": [
+      "#1329: first drawing is three of her kitchen knives spinning (Knife Mastery, chapter 12; she displays her knife skills in episode 6 (2011), which drops the sushi test); the knives' exact shape is not described and frames were not viewed."
     ]
   },
   "buhara": {
@@ -328,12 +353,15 @@
       "https://hunterxhunter.fandom.com/wiki/Chapter_298?oldid=362267",
       "https://hunterxhunter.fandom.com/wiki/Episode_126_(2011)?oldid=416474",
       "https://hunterxhunter.fandom.com/index.php?oldid=385339",
-      "https://hunterxhunter.fandom.com/index.php?oldid=416478"
+      "https://hunterxhunter.fandom.com/index.php?oldid=416478",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_264?oldid=416245",
+      "https://hunterxhunter.fandom.com/wiki/Episode_111_(2011)?oldid=417583"
     ],
     "unverified": [
       "#1019: manga panels, licensed 2011 anime frames/timestamps and Italian dub forms were not viewed. Facts and inventory were checked through lawful English Wiki MediaWiki API revisions. No disappearance, death or personal-name gate is inferred from appearance metadata or binder-only names.",
       "#1019 final inventory disposition: existing-record. Existing character record netero; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof.",
-      "Manga panels, licensed episode timestamps and Italian dub audio unviewed."
+      "Manga panels, licensed episode timestamps and Italian dub audio unviewed.",
+      "#1329: power stage at 111/264, the bodhisattva's palm striking Pitou away (Isaac Netero/Nen desc1, Chapter 264; Episode 111 (2011) adapts chapter 264 from page 3). Frames not viewed."
     ]
   },
   "zaban-city": {
@@ -343,8 +371,16 @@
     ]
   },
   "milsy-wetlands": {
-    "sources": ["https://hunterxhunter.fandom.com/wiki/Milsy_Wetlands"],
-    "unverified": ["Tunnel mouth against the frame"]
+    "sources": [
+      "https://hunterxhunter.fandom.com/wiki/Milsy_Wetlands",
+      "https://hunterxhunter.fandom.com/wiki/Milsy_Wetlands?oldid=421721",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_7?oldid=416133",
+      "https://hunterxhunter.fandom.com/wiki/Episode_4_(2011)?oldid=421367"
+    ],
+    "unverified": [
+      "Tunnel mouth against the frame",
+      "#1329: tunnel mouth in three-quarter view over the wetland, with water and fog (chapter 8: 'A thick fog continually covers the area'); the trees and the shape of the exit are not checked against chapter 7 / episode 4 frames."
+    ]
   },
   "visca-forest-preserve": {
     "sources": ["https://hunterxhunter.fandom.com/wiki/Visca_Forest_Preserve"]
@@ -828,7 +864,8 @@
       "Owner-accepted scene research (#833, 2026-10-29); exact VIZ page, Netflix timestamp and Italian dub name not viewed",
       "Named in Tonpa's chapter 5 introductions; the 2011 anime never says the name (episodes 3 and 5), so the record is manga-only",
       "Chapter 10 shows his body; the episode 5 attack is not dated as his death",
-      "Drawing motif against the threshold page/frame"
+      "Drawing motif against the threshold page/frame",
+      "#1329: martial-arts shoes redrawn in three-quarter view (Appearance: martial arts-style clothing and shoes, chapter 5); the chapter 10 hanging stage keeps its pair and is redrawn larger; frames not viewed."
     ]
   },
   "todo": {
@@ -849,7 +886,8 @@
       "Drawing motif against the threshold page/frame",
       "#1018: licensed 2011 anime timestamps/frames, manga panels and Italian dub forms not viewed; facts checked through pinned lawful English Wiki narrative synopses.",
       "#1019: manga panels, licensed 2011 anime frames/timestamps and Italian dub forms were not viewed. Facts and inventory were checked through lawful English Wiki MediaWiki API revisions. No disappearance, death or personal-name gate is inferred from appearance metadata or binder-only names.",
-      "#1019 final inventory disposition: existing-record. Existing character record todo; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof."
+      "#1019 final inventory disposition: existing-record. Existing character record todo; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof.",
+      "#1329: first drawing is a knee pad with its padded cap and a small laced boot (Appearance: jumper, boots, trousers and knee pads, chapter 5); chapter 5 / episode 3 frames not viewed."
     ]
   },
   "silva": {
@@ -1146,7 +1184,14 @@
       "https://hunterxhunter.fandom.com/index.php?oldid=416290",
       "https://hunterxhunter.fandom.com/index.php?oldid=416291",
       "https://hunterxhunter.fandom.com/wiki/Chapter_60",
-      "https://hunterxhunter.fandom.com/wiki/Episode_35_(2011)"
+      "https://hunterxhunter.fandom.com/wiki/Episode_35_(2011)",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_145?oldid=421581",
+      "https://hunterxhunter.fandom.com/wiki/Episode_65_(2011)?oldid=417945",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_305?oldid=385008",
+      "https://hunterxhunter.fandom.com/wiki/Episode_131_(2011)?oldid=416476",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_309?oldid=410921",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_316?oldid=416021",
+      "https://hunterxhunter.fandom.com/wiki/Episode_136_(2011)?oldid=419174"
     ],
     "unverified": [
       "Heavens Arena pupil step pinned at chapter 48 / episode 29, where Wing opens their aura; his offer in chapter 47 / episode 28 is left below the pin (#896)",
@@ -1159,7 +1204,8 @@
       "Manga panels, licensed episode timestamps and Italian dub audio unviewed.",
       "#912 Election dated facts: exact manga pages and anime timestamps were not directly checked.",
       "#1134: Kakin dated facts checked on the pinned chapter synopses; licensed manga pages were not viewed.",
-      "#922 Nen type: dated from the chapter and episode synopses; manga pages and 2011 anime frames/timestamps not viewed"
+      "#922 Nen type: dated from the chapter and episode synopses; manga pages and 2011 anime frames/timestamps not viewed",
+      "#1329: stages at 65/145 (Rock shatters the boulder), 131/305 (the adult transformation starts) and 136/316 (exit: next seen in hospital; chapter 309 still shows him long-haired, so the page where his body is his own again is a frame check). Frames not viewed."
     ]
   },
   "melody": {

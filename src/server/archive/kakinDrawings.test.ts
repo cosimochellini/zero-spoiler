@@ -24,10 +24,12 @@ const STAGES = [
   { id: 'ging-freecss', chapter: 347, change: 'remote punch' },
   { id: 'saiyu', chapter: 348, change: 'spy for Beyond' },
   { id: 'chrollo', chapter: 353, change: 'disguise' },
+  { id: 'hisoka', chapter: 356, change: 'presumed death' },
   { id: 'hisoka', chapter: 357, change: 'return' },
   { id: 'shalnark', chapter: 357, change: 'death' },
   { id: 'kortopi', chapter: 357, change: 'death' },
   { id: 'momoze-hui-guo-rou', chapter: 361, change: 'beast' },
+  { id: 'hanzo', chapter: 361, change: 'bodyguard’s suit' },
   { id: 'halkenburg-hui-guo-rou', chapter: 361, change: 'beast' },
   { id: 'benjamin-hui-guo-rou', chapter: 362, change: 'beast' },
   { id: 'camilla-hui-guo-rou', chapter: 362, change: 'beast' },
@@ -66,14 +68,15 @@ const STAGES = [
   { id: 'fukataki', chapter: 416, change: 'death' },
 ]
 
-/** Neon's status as a reader at a bookmark sees it. */
-function neonStatusAt(
+/** A character's status as a reader at a bookmark sees it. */
+function statusAt(
+  id: string,
   bookmark: Bookmark,
   locale: (typeof LOCALES)[number],
 ): string | undefined {
-  const character = archive.getCharacter('neon-nostrade')
+  const character = archive.getCharacter(id)
   if (character === undefined) {
-    throw new Error('Missing character neon-nostrade')
+    throw new Error(`Missing character ${id}`)
   }
   return archive.latestOf(
     readerFor(archive, bookmark, locale),
@@ -121,11 +124,22 @@ describe('Salé-salé’s beast', () => {
   })
 })
 
+describe('Hisoka’s presumed death', () => {
+  it.each(LOCALES)('is filed at its stage’s chapter, in %s', (locale) => {
+    expect(statusAt('hisoka', inChapter(355), locale)).toBe('alive')
+    expect(statusAt('hisoka', inChapter(356), locale)).toBe('presumed-dead')
+    expect(statusAt('hisoka', inChapter(357), locale)).toBe('alive')
+    expect(statusAt('hisoka', inEpisode(148), locale)).toBe('alive')
+  })
+})
+
 describe('Neon’s presumed death', () => {
   it.each(LOCALES)('is filed at its stage’s chapter, in %s', (locale) => {
-    expect(neonStatusAt(inChapter(376), locale)).toBe('alive')
-    expect(neonStatusAt(inChapter(377), locale)).toBe('presumed-dead')
-    expect(neonStatusAt(inEpisode(148), locale)).toBe('alive')
+    expect(statusAt('neon-nostrade', inChapter(376), locale)).toBe('alive')
+    expect(statusAt('neon-nostrade', inChapter(377), locale)).toBe(
+      'presumed-dead',
+    )
+    expect(statusAt('neon-nostrade', inEpisode(148), locale)).toBe('alive')
   })
 })
 

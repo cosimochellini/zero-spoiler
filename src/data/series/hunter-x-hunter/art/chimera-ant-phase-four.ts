@@ -4,7 +4,7 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { ellipse, shadow } from '~/lib/svg/primitives'
+import { dot, ellipse, shadow } from '~/lib/svg/primitives'
 
 import {
   CHEETU_SHORTS,
@@ -36,6 +36,25 @@ const TARAGETTER_VEINS: Stroke[] = [
   },
 ]
 const NEAR_WING = 'matrix(-1.1 0 0 1 182.4 0)'
+
+/**
+ * One of Netero's single-tooth geta, without its shadow: his first drawing
+ * (`'netero'` in `./index`) and the stage of his bodhisattva share it.
+ */
+export const NETERO_GETA: Stroke[] = [
+  { d: 'M28 100 L110 70 L136 92 L54 122 Z' },
+  { d: 'M28 100 V110 L54 132 L136 102 V92 M54 122 V132' },
+  { d: 'M62.4 128.9 V137.4 L88.4 159.4 V119.4' },
+  { d: 'M88.4 159.4 L101.6 154.6 V114.6', role: 'soft' },
+  { d: 'M66 136 l14 -10 M68 145 l18 -13 M76 150 l11 -8', role: 'ambient' },
+  {
+    d: 'M61.8 88.9 Q86.7 75 111.5 85.2 M85.8 109.1 Q98.7 85 111.5 85.2',
+    role: 'accent',
+  },
+  { d: 'M64 92.5 Q87 80 108.5 88 M90 108.5 Q100 90 109.5 88.2', role: 'soft' },
+  { d: `M41.2 106.2 L56 100.8 ${dot(111.5, 85.2)}`, role: 'soft' },
+  { d: 'M34 109 l6 4 M118 104 l8 -3', role: 'ambient' },
+]
 
 export const CHIMERA_ANT_PHASE_FOUR_DRAWINGS = {
   // Taragetter's two dark forewings lying over his shoulders and down his
@@ -121,12 +140,29 @@ export const chimeraAntPhaseFourRedrawn: Redrawings = {
       ],
     },
   ],
-  // His own object at rest, not a scene from the show: one single-tooth
-  // geta, his object since the Hunter Exam, upturned on broken ground, its
-  // tooth in the air and the thong loose in tint. The Poor Man's Rose goes
-  // off when his heart stops, episode 126 / chapter 298. No cloud, no bomb
-  // and no body.
   netero: [
+    // The same geta, and rising behind it the open palm of the bodhisattva in
+    // the muted ink: 100-Type Guanyin Bodhisattva, his Hatsu, strikes Pitou
+    // away from the sky over the palace with a single palm, episode 111 /
+    // chapter 264. Open lines, no glow; the thong keeps the accent.
+    {
+      episode: 111,
+      chapter: 264,
+      value: [
+        {
+          d: 'M70 84 L67 56 C62 52 56 45 51 38 C48 33 53 29 57 32 L67 42 L69 18 C69 13 76 13 76 18 L77 40 M77 40 L78 11 C78 6 85 6 85 11 L86 40 M86 40 L88 15 C88 10 95 10 95 15 L93 43 M93 43 L98 25 C99 20 105 21 104 26 L98 52 L97 75',
+          role: 'ambient',
+        },
+        { d: 'M71 60 C78 55 86 57 93 52', role: 'ambient' },
+        ...NETERO_GETA,
+        shadow(82, 163, 44),
+      ],
+    },
+    // His own object at rest, not a scene from the show: one single-tooth
+    // geta, his object since the Hunter Exam, upturned on broken ground, its
+    // tooth in the air and the thong loose in tint. The Poor Man's Rose goes
+    // off when his heart stops, episode 126 / chapter 298. No cloud, no bomb
+    // and no body.
     {
       episode: 126,
       chapter: 298,
