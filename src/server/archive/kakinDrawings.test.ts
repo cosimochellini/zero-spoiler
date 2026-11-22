@@ -49,6 +49,7 @@ const STAGES = [
   { id: 'zhang-lei-hui-guo-rou', chapter: 374, change: 'coin' },
   { id: 'myuhan', chapter: 376, change: 'death' },
   { id: 'neon-nostrade', chapter: 377, change: 'presumed death' },
+  { id: 'illumi', chapter: 377, change: 'Phantom Troupe' },
   { id: 'sale-sale-hui-guo-rou', chapter: 381, change: 'beast eaten' },
   { id: 'sale-sale-hui-guo-rou', chapter: 382, change: 'death' },
   { id: 'halkenburg-hui-guo-rou', chapter: 382, change: 'bow' },

@@ -345,7 +345,13 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           en: 'Warns an ally of danger.',
         },
         affiliation: [{ episode: 100, chapter: 235, value: CHIMERA_ANTS }],
-        status: [{ episode: 100, chapter: 235, value: 'alive' }],
+        // Knov leaves him unconscious in his dimension, chapter 248 /
+        // episode 104; the first sign he is dead is his corpse among the
+        // Extermination Team, chapter 262 / episode 110.
+        status: [
+          { episode: 100, chapter: 235, value: 'alive' },
+          { episode: 110, chapter: 262, value: 'deceased' },
+        ],
       },
       pell: {
         chronicle: chimeraAntPhase3Chronicles.pell,

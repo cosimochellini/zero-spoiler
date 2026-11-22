@@ -57,7 +57,7 @@ import {
   chimeraAntSquadsRedrawn,
 } from './chimera-ant-squads'
 import { ELECTION_DRAWINGS, electionRedrawn } from './election'
-import { FINAL_PHASE_DRAWINGS } from './final-phase'
+import { FINAL_PHASE_DRAWINGS, finalPhaseRedrawn } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
 import {
@@ -1667,6 +1667,7 @@ export const REDRAWINGS: Redrawings = {
   ...hunterExamRedrawn,
   ...zoldyckRedrawn,
   ...zevilRedrawn,
+  ...finalPhaseRedrawn,
   ...heavensArenaRedrawn,
   ...yorknewCityRedrawn,
   ...greedIslandRedrawn,

@@ -676,9 +676,9 @@ export const zevil: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         // Zazan's sting takes him for the Queen, chapter 190 and episode 80.
         { episode: 80, chapter: 190, value: 'captured' },
         // The Ants butcher him in chapter 198. The 2011 anime leaves the
-        // scene out, so episode readers keep him captured; episode 84, his
-        // last, only orders the entry.
-        { episode: 84, chapter: 198, source: 'chapter', value: 'deceased' },
+        // scene out, so episode readers keep him captured and the entry is
+        // filed at episode 148, as his drawing's stage is.
+        { episode: 148, chapter: 198, source: 'chapter', value: 'deceased' },
       ],
     },
     bodoro: {

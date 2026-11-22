@@ -79,6 +79,7 @@ const KALLUTO_FURISODE: Stroke[] = [
 /**
  * The Troupe's twelve-legged spider as a symbol, its abdomen and head and
  * six legs a side, centred on the origin. The member's number is left off.
+ * Kalluto's and Illumi's Troupe stages both draw it.
  */
 export const TROUPE_SPIDER: Stroke[] = [
   { d: `${ellipse(0, 5, 5.5, 7.5)} ${circle(0, -6, 3.5)}` },

@@ -1,5 +1,8 @@
-import type { Drawings } from '~/data/art/stroke'
+import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+
+import { zevilArt } from './zevil'
+import { TROUPE_SPIDER } from './zoldyck'
 
 export const FINAL_PHASE_DRAWINGS = {
   // Masta’s black sunglasses, seen with the referee’s suit in episode 19 /
@@ -36,3 +39,28 @@ export const FINAL_PHASE_DRAWINGS = {
     shadow(80, 186, 30),
   ],
 } satisfies Drawings
+
+/** Illumi's later stages: the disguise worn again, and the Troupe. */
+export const finalPhaseRedrawn: Redrawings = {
+  illumi: [
+    // Gittarackur's four pins fanned, the disguise's own drawing: he comes
+    // to the vote for the next chairman as Gittarackur, episode 137 /
+    // chapter 320.
+    { episode: 137, chapter: 320, value: zevilArt.gittarackur },
+    // The single needle again, his first drawing: he sits with Hisoka in an
+    // airship bar as himself, episode 139 / chapter 323.
+    { episode: 139, chapter: 323, value: FINAL_PHASE_DRAWINGS.illumi },
+    // The same needle, and beside it the Troupe's spider as a symbol with
+    // no number on it: at Hisoka's request he joins the Phantom Troupe and
+    // introduces himself at its table, chapter 377. The anime ends before.
+    {
+      episode: 148,
+      chapter: 377,
+      source: 'chapter',
+      value: [
+        ...FINAL_PHASE_DRAWINGS.illumi,
+        ...moved(TROUPE_SPIDER, 'translate(36 100) scale(1.6)'),
+      ],
+    },
+  ],
+}
