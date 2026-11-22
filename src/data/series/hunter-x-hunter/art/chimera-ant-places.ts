@@ -32,13 +32,17 @@ const PALACE_TOWER_TOP: Stroke[] = [
   { d: 'M74 68 V80 M86 68 V80', role: 'soft' },
 ]
 
+/** The low rise East Gorteau's palace stands on. */
+const GORTEAU_RISE: Stroke = {
+  d: 'M2 132 Q30 112 60 110 H100 Q130 112 158 132',
+}
+
 /**
- * East Gorteau's open country: the rise, the dirt road up it, the walls of
- * the palace's courtyard, the far hills, the scrub and the ground. Both the
- * country's drawings keep them around the small palace.
+ * East Gorteau's open country around the rise: the dirt road up it, the
+ * walls of the palace's courtyard, the far hills, the scrub and the ground.
+ * Both the country's drawings keep them around the small palace.
  */
 const GORTEAU_COUNTRY: Stroke[] = [
-  { d: 'M2 132 Q30 112 60 110 H100 Q130 112 158 132' },
   { d: 'M52 110 V106 H72 M88 106 H108 V110', role: 'soft' },
   { d: 'M54 150 Q70 132 76 110 M106 150 Q90 132 84 110' },
   { d: 'M2 98 Q24 82 46 96 M112 94 Q134 78 158 92', role: 'ambient' },
@@ -221,11 +225,12 @@ export const CHIMERA_ANT_PLACE_DRAWINGS = {
   // palace in its walled courtyard, far hills behind. The palace, small
   // with distance, is the tint: episode 92 / chapter 216.
   'republic-of-east-gorteau': [
-    ...GORTEAU_COUNTRY,
+    GORTEAU_RISE,
     {
       d: 'M58 110 V98 H72 M88 98 H102 V110 M72 110 V82 H88 V110 M69 82 L80 72 L91 82 Z',
       role: 'accent',
     },
+    ...GORTEAU_COUNTRY,
   ],
   // The palace the King lands at: a wing either side of the central tower,
   // whose ground floor holds the door to the central stair. The tower's roof
@@ -277,6 +282,7 @@ export const chimeraAntPlacesRedrawn: Redrawings = {
       episode: 117,
       chapter: 278,
       value: [
+        GORTEAU_RISE,
         ...GORTEAU_COUNTRY,
         {
           d: 'M58 110 V98 H72 M88 98 H102 V110 M72 94 V82 H88 V94 L85 98 L82 93 L79 99 L76 94 L72 96 Z M69 82 L80 72 L91 82 Z',

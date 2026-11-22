@@ -524,20 +524,20 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 ### `hunter-x-hunter`
 
-| Thing                     | Count                                                 |
-| ------------------------- | ----------------------------------------------------- |
-| Records                   | 369                                                   |
-| Characters                | 291                                                   |
-| Nen abilities             | 28                                                    |
-| Bodies of power           | 5, with 61 seats                                      |
-| Arcs, places              | 7 · 43                                                |
-| Saga modules              | 7                                                     |
-| Line drawings             | 369, one per record, plus 95 redrawings of 82 records |
-| Chronicle stories         | 1001, for 289 characters                              |
-| Dated timelines           | 1338                                                  |
-| Affiliation steps         | 466                                                   |
-| Status steps              | 390                                                   |
-| Origins that link a place | 10                                                    |
+| Thing                     | Count                                                  |
+| ------------------------- | ------------------------------------------------------ |
+| Records                   | 369                                                    |
+| Characters                | 291                                                    |
+| Nen abilities             | 28                                                     |
+| Bodies of power           | 5, with 61 seats                                       |
+| Arcs, places              | 7 · 43                                                 |
+| Saga modules              | 7                                                      |
+| Line drawings             | 369, one per record, plus 102 redrawings of 87 records |
+| Chronicle stories         | 1001, for 289 characters                               |
+| Dated timelines           | 1344                                                   |
+| Affiliation steps         | 466                                                    |
+| Status steps              | 391                                                    |
+| Origins that link a place | 10                                                     |
 
 ### `game-of-thrones`
 
