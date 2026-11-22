@@ -61,6 +61,21 @@ const BOURBON_TURBAN: Stroke[] = [
 ]
 
 /**
+ * One of Bourbon's snakes coiled on the ground with its neck raised and
+ * the head turned out, no eyes drawn: the coil, its inner turn, the neck
+ * with both its edges, and the head.
+ */
+const BOURBON_SNAKE: Stroke[] = [
+  { d: ellipse(120, 164, 24, 7.5) },
+  { d: ellipse(120, 162.5, 13, 3.6), role: 'soft' },
+  { d: 'M105 159 C98 142 105 126 120 120 M113 157 C107 144 111 132 122 127' },
+  {
+    d: 'M120 120 C124 112 138 110 144 114 C147 118 140 124 132 126 C128 127 124 127 122 127',
+    role: 'soft',
+  },
+]
+
+/**
  * Goz's spear on the slant, butt down to the left: the shaft with its two
  * edges and its shaded side ticked, the socket, and the leaf-shaped head in
  * tint with its rib. His death lays this same spear on the ground.
@@ -82,39 +97,66 @@ const GOZ_SPEAR: Stroke[] = [
 ]
 
 /**
- * The upper piece of Agon's two-piece cloak, in tint: the cape over the
- * shoulders, split down the front, with its standing collar. His death lays
- * this same cape flat.
+ * The upper piece of Agon's two-piece cloak in 3/4, in tint: the cape over
+ * the shoulders with its hem turning round to the far side, split down the
+ * front a little off centre, its standing collar seen as a ring. His death
+ * lays this same cape flat.
  */
 const AGON_CAPE: Stroke[] = [
   {
-    d: 'M64 46 C52 50 38 58 30 72 C24 82 22 92 24 100 C40 108 62 110 78 108 M82 108 C98 110 120 108 136 100 C138 92 136 82 130 72 C122 58 108 50 96 46',
+    d: 'M66 46 C50 50 34 60 26 76 C20 88 20 100 24 108 C42 118 66 120 84 116 M92 115 C108 113 122 108 130 102 C134 92 132 80 124 68 C116 56 104 50 96 46',
     role: 'accent',
   },
+  { d: `${ellipse(81, 40, 15, 4.5)} M66 40 V46 C72 51 90 51 96 46 V40` },
   {
-    d: 'M64 46 C70 42 90 42 96 46 C90 50 70 50 64 46 Z M64 46 V40 C70 36 90 36 96 40 V46',
-  },
-  {
-    d: 'M80 50 V108 M44 70 C46 84 46 96 44 104 M116 70 C114 84 114 96 116 104',
+    d: 'M24 108 C26 114 32 118 40 120 M130 102 C129 107 126 110 121 112 M84 116 L83 52 M92 115 L91 52',
     role: 'soft',
   },
+  {
+    d: 'M42 72 C44 86 44 98 42 110 M110 66 C112 80 112 92 110 106',
+    role: 'soft',
+  },
+  { d: 'M118 74 l7 -4 M120 86 l7 -4 M121 98 l6 -3', role: 'ambient' },
 ]
 
 /**
- * Siper's square sunglasses from the front: the two frames in tint, the
- * bridge and the brow of each frame, and the dark lenses hatched. Her death
- * lays these same glasses down.
+ * Siper's square sunglasses from the front, plain: the two frames, the
+ * bridge and the brow of each frame, and the dark lenses hatched. Both her
+ * drawings set them small beside the rifle.
  */
 const SIPER_LENSES: Stroke[] = [
   {
     d: 'M24 98 C24 94 26 92 30 92 L64 90 C68 90 70 92 70 96 L69 124 C69 128 67 130 63 130 L32 132 C28 132 26 130 26 126 Z M88 95 C88 91 90 89 94 89 L128 87 C132 87 134 89 134 93 L131 120 C131 124 129 126 125 126 L94 128 C90 128 88 126 88 122 Z',
-    role: 'accent',
   },
   { d: 'M70 99 C76 93 82 93 88 98 M27 97 L67 95 M91 94 L131 92', role: 'soft' },
   {
     d: 'M34 112 L48 98 M34 124 L60 100 M46 127 L64 110 M98 108 L112 94 M98 120 L124 95 M110 123 L128 106',
     role: 'ambient',
   },
+]
+
+/**
+ * Siper's sniper rifle side on, muzzle to the right, seen a little from
+ * above: the stock with its butt and its lit top face, the receiver, the
+ * grip and trigger guard, the barrel, and the scope in tint on its two
+ * mounts, its eyepiece and objective drawn as rings. The underside of the
+ * stock is hatched. Both her drawings place this same rifle.
+ */
+const SIPER_RIFLE: Stroke[] = [
+  { d: 'M10 98 L48 104 V116 L12 126 Z' },
+  { d: 'M14 99 V125 M12 102 L48 107', role: 'soft' },
+  { d: 'M48 104 H112 V114 H48' },
+  {
+    d: 'M64 114 L58 130 H66 L72 114 M74 114 C74 124 84 124 84 114',
+    role: 'soft',
+  },
+  { d: 'M112 106 H152 V111 H112' },
+  {
+    d: `M60 88 H100 M60 96 H100 ${ellipse(58, 92, 3, 6)} ${ellipse(102, 92, 4, 8)}`,
+    role: 'accent',
+  },
+  { d: 'M68 96 V104 M92 96 V104', role: 'soft' },
+  { d: 'M18 122 l4 -6 M27 120 l4 -6 M36 118 l4 -6', role: 'ambient' },
 ]
 
 /**
@@ -246,9 +288,15 @@ export const zevilArt = {
     { d: 'M51 145 Q80 152 108 145', role: 'soft' },
     shadow(80, 184, 63),
   ],
-  // Bourbon's turban, standing: Tonpa points him out as a snake charmer in
-  // episode 3 and chapter 5. No snake and no cave: those come with his death.
-  'bourbon': [...BOURBON_TURBAN, shadow(80, 188, 60)],
+  // Bourbon's turban, standing, and one of his snakes coiled at its foot
+  // with its head raised: Tonpa points him out as a snake charmer in
+  // episode 3 and chapter 5, and his snakes guard the cave he hides in on
+  // Zevil Island, episode 17 / chapter 30. No cave and no bees.
+  'bourbon': [
+    ...moved(BOURBON_TURBAN, 'translate(-8 34) scale(0.78)'),
+    ...BOURBON_SNAKE,
+    shadow(80, 184, 66),
+  ],
   // Pokkle's bow and quiver of ordinary arrows: the roll call names him at
   // the end of the Fourth Phase in episode 18, the roster of chapter 23
   // prints his name. No poisoned arrow and no later Nen arrows.
@@ -291,34 +339,36 @@ export const zevilArt = {
   // Goz's spear, head up, its leaf-shaped blade in tint: the spearman in the
   // roster of chapter 23. Nothing of the trees he fells in chapter 26.
   'goz': [...GOZ_SPEAR, shadow(56, 184, 36)],
-  // Agon's two-piece cloak standing in 3/4 as he wears it, the cape over the
-  // shoulders in tint, the long piece below split down the front and its
-  // far side hatched: the cloaked applicant in the roster of chapter 23. No
-  // sword: he draws it from under the cloak only in chapter 28.
+  // Agon's two-piece cloak standing in 3/4 as he wears it, the cape over
+  // the shoulders in tint with its hem turning away, the long piece below
+  // split down the front and falling open a little, its far side hatched:
+  // the cloaked applicant in the roster of chapter 23. No sword: he draws
+  // it from under the cloak only in chapter 28.
   'agon': [
     ...AGON_CAPE,
     {
-      d: 'M30 96 C28 122 24 148 20 170 C34 176 60 178 78 176 M82 176 C100 178 126 176 140 170 C136 148 132 122 130 96',
+      d: 'M32 114 C28 136 24 156 20 176 C36 182 60 184 78 182 M98 182 C112 182 128 178 140 172 C136 152 132 128 128 106',
     },
-    { d: 'M78 108 L78 176 M82 108 L82 176' },
+    { d: 'M84 117 C82 140 80 160 78 182 M92 116 C94 140 96 160 98 182' },
     {
-      d: 'M50 112 C48 136 46 156 44 176 M108 112 C112 136 114 156 116 176',
+      d: 'M52 122 C50 144 48 162 46 180 M112 118 C115 140 117 158 118 178',
       role: 'soft',
     },
     {
-      d: 'M122 116 l8 -4 M124 132 l8 -4 M126 148 l8 -4 M128 164 l8 -4',
+      d: 'M124 124 l8 -4 M126 140 l8 -4 M128 156 l8 -4 M130 170 l7 -4 M82 166 l10 -4 M80 178 l14 -5',
       role: 'ambient',
     },
-    shadow(80, 188, 60),
+    shadow(80, 192, 62),
   ],
-  // Siper's square sunglasses standing open, the arms running back: her look
-  // in the roster of chapter 23. No rifle: she is called a sniper only after
-  // her death, in chapter 26.
+  // Siper's sniper rifle in 3/4 on the slant, the scope in tint, and her
+  // square sunglasses small and standing open beside it: the rifle is her
+  // weapon from her first chapter, 22, and the 2011 anime shows her taking
+  // aim through its scope in episode 15. She opens on the roster of chapter
+  // 23. No needle and no body.
   'siper': [
-    ...SIPER_LENSES,
-    { d: 'M24 96 L19 93 L38 66 L44 70 M134 90 L139 87 L126 62 L120 64' },
-    { d: 'M19 93 L21 99 M139 87 L138 93', role: 'soft' },
-    shadow(80, 150, 56),
+    ...moved(SIPER_RIFLE, 'translate(4 22) rotate(-26 80 110)'),
+    ...moved(SIPER_LENSES, 'translate(122 162) scale(0.4) translate(-80 -110)'),
+    shadow(84, 186, 66),
   ],
   // Ryu's broadsword in its scabbard, hung on the slant from the loop of his
   // belt, the crossguard in tint and the far face of the scabbard hatched:
@@ -360,55 +410,62 @@ export const zevilArt = {
     },
     shadow(80, 190, 40),
   ],
-  // Kyu's sheathed saber, its hilt wound in bandages in tint with a loose
-  // end, and his satchel with its flap and buckle beside it: the applicant
+  // Kyu's sheathed saber on the slant as the hero, the curved scabbard
+  // with its top face lit, its chape and mouth fittings and its underside
+  // hatched, the hilt wound in bandages in tint with a loose end; under its
+  // curve and smaller, his satchel with its flap and buckle: the applicant
   // in the roster of chapter 23.
   'kyu': [
-    { d: 'M38 146 C70 126 108 90 146 42 M42 152 C74 132 112 96 150 47' },
-    { d: 'M146 42 C150 40 152 44 150 47' },
     {
-      d: 'M30 144 C34 138 42 142 44 148 C46 154 40 160 34 156 C30 154 28 148 30 144 Z',
+      d: 'M98 136 H134 V164 H98 Z M98 136 L103 131 H139 L134 136 M134 164 L139 159 V131',
     },
-    { d: 'M34 150 L14 168 M38 154 L18 172 M14 168 Q12 173 18 172' },
     {
-      d: 'M33 147 L36 158 M28 153 L31 164 M23 158 L26 169 M18 162 L21 172',
-      role: 'accent',
-    },
-    { d: 'M16 170 C10 176 12 184 6 190', role: 'accent' },
-    {
-      d: 'M60 136 l3 4 M84 118 l3 4 M108 96 l3 4 M130 70 l3 4',
-      role: 'ambient',
-    },
-    { d: 'M90 132 H138 V170 H90 Z' },
-    { d: 'M90 132 L98 124 H146 L138 132 M138 170 L146 162 V124', role: 'soft' },
-    {
-      d: 'M90 132 V150 C90 154 94 156 98 156 H130 C134 156 138 154 138 150 V132',
-    },
-    { d: 'M110 152 H118 V160 H110 Z', role: 'soft' },
-    { d: 'M140 140 l4 -3 M140 152 l4 -3', role: 'ambient' },
-    shadow(84, 184, 60),
-  ],
-  // Shishito's vest standing in 3/4 as he wears it, open down the front,
-  // its badge pinned at the chest in tint with no number on it, and the far
-  // side hatched: the applicant in the roster of chapter 23.
-  'shishito': [
-    {
-      d: 'M60 46 L42 54 C46 74 40 90 32 100 V160 H78 V124 L60 46 M100 46 L118 54 C114 74 120 90 128 100 V160 H82 V124 L100 46',
-    },
-    { d: 'M60 46 C68 42 92 42 100 46', role: 'soft' },
-    { d: 'M128 100 L134 96 V156 L128 160', role: 'soft' },
-    {
-      d: 'M44 58 C52 68 54 80 48 92 M116 58 C108 68 106 80 112 92',
+      d: 'M98 136 V146 C98 149 100 150 103 150 H129 C132 150 134 149 134 146 V136',
       role: 'soft',
     },
-    { d: circle(58, 104, 8), role: 'accent' },
-    { d: circle(58, 104, 4.5), role: 'soft' },
-    { d: 'M38 146 H74 M86 146 H122', role: 'soft' },
+    { d: 'M113 147 h6 v5 h-6 Z', role: 'soft' },
+    { d: 'M136 142 l3 -2 M136 152 l3 -2', role: 'ambient' },
+    { d: 'M44 144 C76 124 112 88 140 40 M52 152 C84 132 120 96 148 46' },
+    { d: 'M48 148 C80 128 116 92 144 43', role: 'soft' },
+    { d: 'M140 40 C143 33 152 38 148 46 M134 50 L143 56 M56 138 L64 148' },
     {
-      d: 'M130 108 l4 -3 M130 122 l4 -3 M130 136 l4 -3 M130 150 l4 -3 M110 120 l8 -5 M110 134 l8 -5',
+      d: 'M70 134 l3 5 M92 116 l3 5 M112 96 l3 5 M128 74 l3 5',
       role: 'ambient',
     },
-    shadow(82, 178, 56),
+    {
+      d: 'M36 140 C40 134 50 136 52 144 C54 152 46 158 40 154 C35 151 33 145 36 140 Z',
+    },
+    { d: 'M40 148 L18 168 M44 152 L22 172 M18 168 Q14 174 22 172' },
+    {
+      d: 'M37 145 L41 156 M32 150 L36 161 M27 155 L31 166 M22 160 L26 170 M18 168 C10 176 14 184 6 192',
+      role: 'accent',
+    },
+    shadow(82, 190, 64),
+  ],
+  // Shishito's vest standing in 3/4 as he wears it, turned to the right:
+  // the near front wide and the far one narrow, the lapels folded back on
+  // each side of the opening, the armholes, the badge pinned at the chest in
+  // tint with no number on it, and the far side hatched: the applicant in
+  // the roster of chapter 23.
+  'shishito': [
+    {
+      d: 'M58 44 L36 54 C40 74 34 92 26 104 V166 H82 L72 46 M102 44 L118 52 C114 72 118 90 126 100 V162 L88 166 L94 46',
+    },
+    { d: 'M58 44 C66 38 90 38 102 44', role: 'soft' },
+    { d: 'M126 100 L134 94 V156 L126 162', role: 'soft' },
+    { d: 'M72 46 L60 70 L70 76 L78 104 M94 46 L104 66 L96 72 L90 100' },
+    {
+      d: 'M38 58 C46 70 48 84 42 96 M116 56 C110 68 108 80 112 92',
+      role: 'soft',
+    },
+    { d: circle(52, 110, 8), role: 'accent' },
+    { d: circle(52, 110, 4.5), role: 'soft' },
+    { d: 'M30 150 H80 M90 150 H124', role: 'soft' },
+    {
+      d: 'M128 108 l4 -3 M128 122 l4 -3 M128 136 l4 -3 M128 150 l4 -3 M108 112 l8 -5 M108 126 l8 -5 M108 140 l8 -5',
+      role: 'ambient',
+    },
+    shadow(80, 182, 58),
   ],
   // Kenmi's two arm braces, one standing on its wide end and one lying in
   // front of it, the bands in tint: the applicant in the roster of chapter
@@ -421,27 +478,40 @@ export const zevilArt = {
     ),
     shadow(70, 172, 60),
   ],
-  // Sommy's long-sleeved shirt standing in 3/4 as he wears it, the neckband
-  // in tint and the dark cloth hatched on the side turning away: the
-  // applicant in the roster of chapter 23. No monkey: it first shows in
-  // chapter 25.
+  // Sommy's long-sleeved shirt seen from behind as he wears it, the dark
+  // cloth hatched, and his monkey clinging to its shoulder, seen from behind
+  // with no face, holding out the badge it grabs from Leorio's open
+  // briefcase, plain and in tint: chapter 25, episode 15. He climbs a tree
+  // with the monkey on his back.
   'sommy': [
     {
-      d: 'M64 42 C52 46 40 52 34 58 L16 132 L32 136 L46 86 V164 H114 V86 L128 136 L144 132 L126 58 C120 52 108 46 96 42',
+      d: 'M54 76 C44 80 34 86 28 92 L12 160 L28 164 L40 116 V180 H96 V116 L108 164 L124 160 L108 92 M89 79.4 C86.5 78 84 77 82 76',
+    },
+    { d: 'M54 76 C62 81 74 81 82 76', role: 'soft' },
+    {
+      d: 'M12 160 L10 168 L26 172 L28 164 M124 160 L126 168 L110 172 L108 164',
+      role: 'soft',
     },
     {
-      d: 'M64 42 C70 50 90 50 96 42 M62 40 C68 54 92 54 98 40',
-      role: 'accent',
-    },
-    { d: 'M16 132 L14 140 L30 144 L32 136', role: 'soft' },
-    { d: 'M144 132 L146 140 L130 144 L128 136', role: 'soft' },
-    { d: 'M46 156 H114', role: 'soft' },
-    { d: 'M62 70 C66 96 64 130 62 160', role: 'soft' },
-    {
-      d: 'M100 80 l10 -6 M98 96 l12 -7 M98 112 l12 -7 M98 128 l12 -7 M98 144 l12 -7 M128 84 l6 -3 M131 100 l6 -3 M134 116 l6 -3',
+      d: 'M44 132 l8 -5 M44 146 l10 -6 M44 160 l10 -6 M44 174 l10 -6 M30 122 l5 -3 M27 136 l5 -3 M110 68 l4 -3 M110 80 l4 -3',
       role: 'ambient',
     },
-    shadow(80, 178, 56),
+    { d: ellipse(102, 74, 12, 16) },
+    { d: circle(104, 48, 11) },
+    {
+      d: 'M93.5 44 C88 42 87 51 93 52 M114.5 44 C120 42 121 51 115 52',
+      role: 'soft',
+    },
+    { d: 'M92 70 C84 78 84 88 90 94' },
+    { d: 'M112 66 C122 60 128 50 131 40' },
+    {
+      d: 'M94 86 C90 92 94 98 100 96 M110 86 C114 92 110 98 104 98',
+      role: 'soft',
+    },
+    { d: 'M106 90 C118 104 122 118 116 132 C112 140 104 136 108 130' },
+    { d: circle(136, 32, 9), role: 'accent' },
+    { d: circle(136, 32, 5), role: 'soft' },
+    shadow(70, 190, 52),
   ],
   // Zevil Island seen from the arriving boat: two wooded hills joined by the
   // low isthmus, the canopy in rows of crowns, the cliff under the right hill
@@ -474,9 +544,22 @@ export const zevilArt = {
 } satisfies Drawings
 
 /**
+ * The same pins with the one in tint drawn up and out of the fan: the
+ * disguise coming off. His stages show it each time he is Illumi again.
+ */
+const GITTARACKUR_UNMASKED: Stroke[] = [
+  ...moved(PIN, 'translate(80 176) rotate(-34)'),
+  ...moved(PIN, 'translate(80 176) rotate(-14)'),
+  ...moved(TINTED_PIN, 'translate(87 112) rotate(6)'),
+  ...moved(PIN, 'translate(80 176) rotate(26)'),
+  shadow(80, 186, 40),
+]
+
+/**
  * The drawings that change with the story. A pin comes out of Gittarackur's
- * disguise at the final phase, Bodoro's gi is left empty when he dies, and
- * the object of each applicant who dies on Zevil Island is laid down.
+ * disguise at the final phase and again after the election vote, Bodoro's
+ * gi is left empty when he dies, and the object of each applicant who dies
+ * on Zevil Island is laid down.
  */
 export const zevilRedrawn: Redrawings = {
   gittarackur: [
@@ -484,17 +567,14 @@ export const zevilRedrawn: Redrawings = {
     // and the one in tint drawn up and out of them: he takes a needle from
     // his ear and shows Killua his true appearance in episode 20 / chapter
     // 35. No face, only the pins.
-    {
-      episode: 20,
-      chapter: 35,
-      value: [
-        ...moved(PIN, 'translate(80 176) rotate(-34)'),
-        ...moved(PIN, 'translate(80 176) rotate(-14)'),
-        ...moved(TINTED_PIN, 'translate(87 112) rotate(6)'),
-        ...moved(PIN, 'translate(80 176) rotate(26)'),
-        shadow(80, 186, 40),
-      ],
-    },
+    { episode: 20, chapter: 35, value: GITTARACKUR_UNMASKED },
+    // The four pins fanned again, his first drawing: he comes to the vote
+    // for the next chairman in the Gittarackur disguise, episode 137 /
+    // chapter 320.
+    { episode: 137, chapter: 320, value: zevilArt.gittarackur },
+    // The pin drawn out of the fan again: he next sits with Hisoka in an
+    // airship bar as Illumi, episode 139 / chapter 323.
+    { episode: 139, chapter: 323, value: GITTARACKUR_UNMASKED },
   ],
   bodoro: [
     // The same gi empty and folded square on the floor, the same collar on
@@ -519,25 +599,31 @@ export const zevilRedrawn: Redrawings = {
     },
   ],
   bourbon: [
-    // The same turban tipped over on the cave floor, and one of his snakes
-    // coiled beside it with its head raised, no eyes drawn: his body is
-    // found in the cave, dead of Ponzu's bees, in episode 17 / chapter 30.
+    // The same turban fallen on its side on the cave floor, the cloth
+    // unwound from it and trailing on the ground, and his snakes loose and
+    // spread away from it, no eyes drawn: his body is found in the cave,
+    // dead of Ponzu's bees, in episode 17 / chapter 30.
     {
       episode: 17,
       chapter: 30,
       value: [
         ...moved(
           BOURBON_TURBAN,
-          'translate(58 128) rotate(-30) scale(0.66) translate(-80 -112)',
+          'translate(44 136) rotate(-90) scale(0.55) translate(-80 -112)',
         ),
-        { d: ellipse(120, 164, 26, 8) },
-        { d: ellipse(120, 162, 14, 4), role: 'soft' },
         {
-          d: 'M104 160 C96 142 104 126 120 120 M113 158 C106 144 110 132 122 127',
+          d: 'M72 126 C88 132 90 158 106 162 C120 166 134 160 148 162 L152 168 M74 146 C82 152 88 168 104 170 C120 172 134 166 148 168',
+        },
+        { d: 'M90 146 C94 154 98 160 104 162 M126 164 l2 6', role: 'soft' },
+        ...moved(
+          BOURBON_SNAKE,
+          'translate(126 128) scale(0.55) translate(-120 -150)',
+        ),
+        {
+          d: 'M18 186 C26 178 36 192 46 184 C52 180 58 178 64 180 C68 176 76 178 74 182 C72 186 66 185 64 180',
         },
         {
-          d: 'M120 120 C124 112 138 110 144 114 C147 118 140 124 132 126 C128 127 124 127 122 127',
-          role: 'soft',
+          d: 'M96 190 C104 184 116 196 126 188 C132 184 138 182 144 184 C148 180 156 182 154 186 C152 190 146 189 144 184',
         },
         { d: 'M4 172 H156', role: 'ambient', dashed: true },
       ],
@@ -595,20 +681,21 @@ export const zevilRedrawn: Redrawings = {
     },
   ],
   siper: [
-    // The same sunglasses lying on the ground, folded shut and askew, with
-    // no one near them: Gittarackur hands Hisoka her badge and reports
-    // killing its owner, a sniper, in chapter 26. Episode 15 tells it too;
-    // neither shows the body.
+    // The same rifle laid flat on the ground, and the same sunglasses
+    // folded shut beside it, with no one near them: Gittarackur hands Hisoka
+    // her badge and reports killing its owner in chapter 26. Episode 15
+    // tells it too; neither is drawn here as a body.
     {
       episode: 15,
       chapter: 26,
       source: 'chapter',
       value: [
+        ...moved(SIPER_RIFLE, 'translate(0 42)'),
         ...moved(
           [...SIPER_LENSES, { d: 'M30 108 L126 102', role: 'soft' }],
-          'translate(80 150) rotate(-8) scale(0.85 0.55) translate(-80 -110)',
+          'translate(128 166) rotate(-6) scale(0.4 0.22) translate(-80 -110)',
         ),
-        { d: 'M4 162 H156', role: 'ambient', dashed: true },
+        { d: 'M4 172 H156', role: 'ambient', dashed: true },
       ],
     },
   ],

@@ -215,6 +215,7 @@ const DEATHS = [
   { id: 'meruem', episode: 135, chapter: 318 },
   { id: 'netero', episode: 126, chapter: 298 },
   { id: 'komugi', episode: 148, chapter: 339 },
+  { id: 'flutter', episode: 110, chapter: 262 },
 ].flatMap(({ id, episode, chapter }) =>
   [
     { unit: 'episode' as const, gate: episode },
@@ -725,6 +726,34 @@ const PHASE_TWO_STEPS: Step[] = [
     chapter: 187,
     only: 'episode',
     value: 'deceased',
+  },
+  {
+    id: 'kurt',
+    field: 'role',
+    episode: 77,
+    chapter: 187,
+    only: 'episode',
+    value: { it: 'Fratello maggiore', en: 'Older brother' },
+  },
+  // Back as Colt, in the anime alone (#1326).
+  {
+    id: 'kurt',
+    field: 'role',
+    episode: 92,
+    chapter: 215,
+    only: 'episode',
+    value: {
+      it: 'Rinato come formichimera, chiamato Coluto',
+      en: 'Reborn as a Chimera Ant called Colt',
+    },
+  },
+  {
+    id: 'kurt',
+    field: 'status',
+    episode: 92,
+    chapter: 215,
+    only: 'episode',
+    value: 'alive',
   },
   {
     id: 'reina',
@@ -1473,6 +1502,7 @@ describe.each([
   { id: 'cheetu', episode: 117, chapter: 278 },
   { id: 'netero', episode: 126, chapter: 298 },
   { id: 'komugi', episode: 148, chapter: 339 },
+  { id: 'flutter', episode: 110, chapter: 262 },
 ])('$id’s death drawing', ({ id, episode, chapter }) => {
   it.each(LOCALES)('changes at the death in %s', (locale) => {
     for (const unit of UNITS) {
@@ -1484,6 +1514,80 @@ describe.each([
       expect(read(gate)).not.toStrictEqual(read(gate - 1))
     }
   })
+})
+
+describe.each([
+  { id: 'welfin', episode: 115, chapter: 276 },
+  { id: 'welfin', episode: 134, chapter: 313 },
+  { id: 'meleoron', episode: 102, chapter: 242 },
+  { id: 'cheetu', episode: 103, chapter: 245 },
+  { id: 'ikalgo', episode: 111, chapter: 263 },
+  { id: 'ikalgo', episode: 118, chapter: 279 },
+  { id: 'bloster', episode: 118, chapter: 279 },
+])(
+  '$id’s drawing at episode $episode / chapter $chapter',
+  ({ id, episode, chapter }) => {
+    // Powers, Welfin's lost hair and Ikalgo's disguise in Flutter's body (#1328).
+    it.each(LOCALES)('changes at its stage in %s', (locale) => {
+      for (const unit of UNITS) {
+        const gate = unit === 'episode' ? episode : chapter
+        const read = (count: number): ReturnType<typeof drawingsFor> =>
+          drawingsFor([id], readerFor(archive, at(unit, count), locale))
+
+        expect(read(gate)[id]).toBeDefined()
+        expect(read(gate)).not.toStrictEqual(read(gate - 1))
+      }
+    })
+  },
+)
+
+/** Pokkle's drawing at a bookmark. */
+function pokkleAt(
+  unit: 'chapter' | 'episode',
+  count: number,
+  locale: Locale,
+): ReturnType<typeof drawingsFor> {
+  return drawingsFor(['pokkle'], readerFor(archive, at(unit, count), locale))
+}
+
+describe('Pokkle’s Rainbow and death drawings', () => {
+  it.each(LOCALES)(
+    'shows Rainbow at its pin, never before, in %s',
+    (locale) => {
+      // Episode 79 shows his aura arrows; the manga first does in chapter 190.
+      for (const [unit, gate] of [
+        ['episode', 79],
+        ['chapter', 190],
+      ] as const) {
+        expect(pokkleAt(unit, gate, locale)).toHaveProperty('pokkle')
+        expect(pokkleAt(unit, gate, locale)).not.toStrictEqual(
+          pokkleAt(unit, gate - 1, locale),
+        )
+      }
+    },
+  )
+
+  it.each(LOCALES)(
+    'lays the arrow down in chapter 198 only, in %s',
+    (locale) => {
+      // The 2011 anime leaves his death out: an episode reader keeps Rainbow.
+      expect(pokkleAt('chapter', 198, locale)).not.toStrictEqual(
+        pokkleAt('chapter', 197, locale),
+      )
+      expect(pokkleAt('episode', 148, locale)).toStrictEqual(
+        pokkleAt('episode', 79, locale),
+      )
+    },
+  )
+
+  it.each(LOCALES)(
+    'leaves an episode reader with him captured, in %s',
+    (locale) => {
+      // His death is the manga's alone: no episode files it.
+      expect(statusAt('pokkle', at('episode', 148), locale)).toBe('captured')
+      expect(statusAt('pokkle', at('chapter', 198), locale)).toBe('deceased')
+    },
+  )
 })
 
 describe('the palace’s damage drawing', () => {
@@ -1500,6 +1604,74 @@ describe('the palace’s damage drawing', () => {
       expect(read(gate)[id]).toBeDefined()
       expect(read(gate)).not.toStrictEqual(read(gate - 1))
     }
+  })
+})
+
+// The stages #1326 adds, each where its medium tells it: the drawing at the
+// gate differs from the one a unit before.
+const REDRAWN = [
+  { id: 'palm-siberia', unit: 'episode', gate: 94, change: 'crystal ball' },
+  { id: 'palm-siberia', unit: 'chapter', gate: 220, change: 'crystal ball' },
+  { id: 'palm-siberia', unit: 'episode', gate: 123, change: 'reborn' },
+  { id: 'palm-siberia', unit: 'episode', gate: 124, change: 'Black Widow' },
+  { id: 'palm-siberia', unit: 'chapter', gate: 293, change: 'Black Widow' },
+  { id: 'knuckle-bine', unit: 'episode', gate: 90, change: 'A.P.R.' },
+  { id: 'knuckle-bine', unit: 'chapter', gate: 210, change: 'A.P.R.' },
+  { id: 'shoot-mcmahon', unit: 'episode', gate: 90, change: 'hands' },
+  { id: 'shoot-mcmahon', unit: 'chapter', gate: 211, change: 'hands' },
+  { id: 'gyro', unit: 'chapter', gate: 204, change: 'hooded coat' },
+  { id: 'kurt', unit: 'episode', gate: 92, change: 'back as Colt' },
+  {
+    id: 'republic-of-east-gorteau',
+    unit: 'episode',
+    gate: 117,
+    change: 'broken tower',
+  },
+  {
+    id: 'republic-of-east-gorteau',
+    unit: 'chapter',
+    gate: 278,
+    change: 'broken tower',
+  },
+] as const
+
+/** A record's drawing as a reader at the bookmark sees it. */
+function drawnAt(
+  id: string,
+  bookmark: Bookmark,
+  locale: Locale,
+): ReturnType<typeof drawingsFor>[string] | undefined {
+  return drawingsFor([id], readerFor(archive, bookmark, locale))[id]
+}
+
+describe('the first Chimera Ant redraw stages (#1326)', () => {
+  it.each(REDRAWN)(
+    'redraws $id at $unit $gate: $change',
+    ({ id, unit, gate }) => {
+      for (const locale of LOCALES) {
+        expect(drawnAt(id, at(unit, gate), locale)).toBeDefined()
+        expect(drawnAt(id, at(unit, gate), locale)).not.toStrictEqual(
+          drawnAt(id, at(unit, gate - 1), locale),
+        )
+      }
+    },
+  )
+
+  it.each(LOCALES)('keeps each stage to its medium in %s', (locale) => {
+    // Chapter 293 shows the rebirth and Black Widow both: it reads Black
+    // Widow, as episode 124 does.
+    expect(drawnAt('palm-siberia', at('chapter', 293), locale)).toStrictEqual(
+      drawnAt('palm-siberia', at('episode', 124), locale),
+    )
+    // Gyro's coat is the manga's alone.
+    expect(drawnAt('gyro', at('episode', 148), locale)).toStrictEqual(
+      drawnAt('gyro', at('episode', 78), locale),
+    )
+
+    // Kurt's record is the anime's alone: no manga reader opens it.
+    const mangaReader = readerFor(archive, at('chapter', 340), locale)
+
+    expect(opened('kurt', mangaReader)).toBe(false)
   })
 })
 
