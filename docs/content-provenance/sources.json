@@ -35372,6 +35372,16 @@
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=387229",
       "contentSha256": "e183cd28a03bc08d4ca57dfc8e7963d4c475bf2fa10ea19ed3f0920cabdfffda"
     },
+    "hxh-en-Zoldyck_Family-425887.json": {
+      "locale": "en",
+      "title": "Zoldyck Family",
+      "revision": 425887,
+      "revisionDate": "2026-11-04T21:03:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Zoldyck_Family",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425887",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425887",
+      "contentSha256": "d6772f1f9a48c84a3abe39f8ce9aca2548c87fc891eedbccda167817e4a905e2"
+    },
     "hxh-en-Ten_Dons-423032.json": {
       "locale": "en",
       "title": "Ten Dons",

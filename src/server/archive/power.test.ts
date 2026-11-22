@@ -520,9 +520,10 @@ describe('the power page', () => {
   )(
     'is empty for $slug, which has none, at every bookmark and with none',
     ({ archive }) => {
-      // Hunter x Hunter's page is open before its first body (#1442): it
-      // says nothing is open, wherever the reader stands, and with no
-      // bookmark, drawn at the end of the demo (`pageReader`).
+      // A series with the page and no body yet (as Hunter x Hunter was
+      // until #1443, #1442) says nothing is open, wherever the reader
+      // stands, and with no bookmark, drawn at the end of the demo
+      // (`pageReader`).
       for (const locale of LOCALES) {
         for (const bookmark of [chapter(1000), ...archive.bookmarks]) {
           expect(powerPage(readerFor(archive, bookmark, locale))).toStrictEqual(
