@@ -168,10 +168,11 @@ export const chimeraAntPhaseFiveRedrawn: Redrawings = {
       chapter: 200,
       value: [...moved(PITOU_HEAD, PITOU_SMALL), ...DOCTOR_BLYTHE],
     },
-    // The same, with the puppeteer's strings beside the ears: Kite, worked
-    // as a puppet, attacks Gon, episode 95 / chapter 222.
+    // The same, with the puppeteer's strings beside the ears: Kite's body,
+    // worked as a puppet, fights the soldier Ants in the nest, episode 88,
+    // and the puppeteer shows over him when Gon touches him, chapter 222.
     {
-      episode: 95,
+      episode: 88,
       chapter: 222,
       value: [
         ...moved(PITOU_HEAD, PITOU_SMALL),

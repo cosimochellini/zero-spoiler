@@ -3,7 +3,13 @@ import { describe, expect, it } from 'vitest'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { leaksOf } from '~/test/fog'
-import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
+import {
+  bookmarkAt as at,
+  gateCases,
+  opened,
+  recordIn,
+  stageMissedAt,
+} from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -1968,5 +1974,28 @@ describe('Chimera Ant dated facts', () => {
       'shaiapouf',
       'menthuthuyoupi',
     ])
+  })
+})
+
+// The stages #1330 adds or redraws, each at its true pair: the drawing there
+// differs from the one a unit before, in both media and each locale.
+describe.each([
+  { id: 'neferpitou', episode: 86, chapter: 200, change: 'Doctor Blythe' },
+  { id: 'neferpitou', episode: 88, chapter: 222, change: 'puppeteer' },
+  { id: 'neferpitou', episode: 111, chapter: 264, change: 'Terpsichora' },
+  { id: 'neferpitou', episode: 131, chapter: 307, change: 'death' },
+  { id: 'shaiapouf', episode: 104, chapter: 246, change: 'cocoon' },
+  { id: 'shaiapouf', episode: 109, chapter: 259, change: 'scales' },
+  { id: 'shaiapouf', episode: 120, chapter: 284, change: 'Beelzebub' },
+  { id: 'shaiapouf', episode: 135, chapter: 314, change: 'death' },
+  { id: 'menthuthuyoupi', episode: 91, chapter: 213, change: 'wings' },
+  { id: 'menthuthuyoupi', episode: 117, chapter: 278, change: 'rage blast' },
+  { id: 'meruem', episode: 128, chapter: 301, change: 'wings' },
+  { id: 'zazan', episode: 97, chapter: 229, change: 'torn tail' },
+  { id: 'hagya', episode: 107, chapter: 254, change: 'death' },
+  { id: 'yunju', episode: 82, chapter: 193, change: 'death' },
+])('$id at episode $episode / chapter $chapter', ({ change, ...pin }) => {
+  it(`shows the ${change} stage at its pin, never before`, () => {
+    expect(stageMissedAt(archive, pin.id, pin)).toStrictEqual([])
   })
 })
