@@ -18,3 +18,6 @@ package-lock.json
 # and the related targets stop matching.
 .impeccable/surfaces
 src/routeTree.gen.ts
+# Written by scripts/make-icons.mjs as JSON.stringify prints it, which
+# make-icons.test.mjs compares byte for byte.
+public/icons

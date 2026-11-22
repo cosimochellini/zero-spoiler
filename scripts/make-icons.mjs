@@ -101,7 +101,7 @@ function ico(images) {
  * Owner, 2026-11-22: the emblem on a tile of the theme's `paper3`.
  * @type {Record<string, { box: [number, number, number], omit?: number[], omitSmall?: number[], pen?: number }>}
  */
-export const CUTS = {
+const CUTS = {
   'one-piece': { box: [10, 72, 140] },
   // The compass alone: the folded map under it turns to a smudge at 16px.
   'hunter-x-hunter': { box: [26, 32, 108], omit: [0, 1, 2] },
@@ -193,17 +193,17 @@ export function iconSvg(emblem, palette, cut, variant) {
  * addresses, and one `id` per series keeps the two languages one app.
  * @param {{ slug: string, name: Record<string, string> } | null} series The series.
  * @param {string} locale The language it opens in.
- * @param {string} shortName The name under its icon.
+ * @param {{ name: string, short: string }} names Its install dialog's name and the one under its icon.
  * @param {string} theme Its tile colour, as hex.
  * @returns {object} The manifest.
  */
-export function manifestOf(series, locale, shortName, theme) {
+function manifestOf(series, locale, names, theme) {
   const scope = series === null ? '/' : `/${series.slug}/`
   const icon = series === null ? '/icons/hub' : `/icons/${series.slug}`
   return {
     id: scope,
-    name: series === null ? shortName : `${series.name[locale]} · ${HUB}`,
-    short_name: shortName,
+    name: names.name,
+    short_name: names.short,
     lang: locale,
     start_url: series === null ? `/${locale}` : `/${series.slug}/${locale}`,
     scope,
@@ -223,9 +223,9 @@ export function manifestOf(series, locale, shortName, theme) {
   }
 }
 
-const HUB = 'Zero Spoiler'
 // The hub's tile, read off public/icon.svg so the two never disagree.
-const HUB_TILE = '#101c28'
+const HUB_TILE = /fill="(?<tile>#[\da-f]{6})"/u.exec(readFileSync(svg, 'utf8'))
+  ?.groups?.tile
 
 /**
  * Every manifest file, by its name in public/icons, as the head links name
@@ -235,12 +235,13 @@ const HUB_TILE = '#101c28'
 export async function manifests() {
   const { OPEN_SERIES } = await importArchive('data/series/index.ts')
   const { LOCALES } = await importArchive('i18n/locales.ts')
-  const { appShortName, HUB_NAME } = await importArchive('lib/appIcons.ts')
+  const { appShortName } = await importArchive('lib/appIcons.ts')
   const files = new Map()
   for (const locale of LOCALES) {
+    const hub = appShortName(null, locale)
     files.set(
       `hub.${locale}.webmanifest`,
-      manifestOf(null, locale, HUB_NAME, HUB_TILE),
+      manifestOf(null, locale, { name: hub, short: hub }, HUB_TILE),
     )
     for (const { description } of OPEN_SERIES) {
       files.set(
@@ -248,7 +249,10 @@ export async function manifests() {
         manifestOf(
           description,
           locale,
-          appShortName(description, locale),
+          {
+            name: `${description.name[locale]} · ${hub}`,
+            short: appShortName(description, locale),
+          },
           seriesPalette(description.slug).paper3,
         ),
       )

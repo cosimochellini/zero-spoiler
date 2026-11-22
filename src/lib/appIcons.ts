@@ -2,7 +2,7 @@ import type { Locale } from '~/i18n/locales'
 import type { Series } from '~/lib/progress/series'
 
 /** The hub's name, under its icon and in its install dialog. */
-export const HUB_NAME = 'Zero Spoiler'
+const HUB_NAME = 'Zero Spoiler'
 
 /**
  * The name under a series' icon on a home screen, where launchers cut it
@@ -15,12 +15,15 @@ const SHORT_NAMES: Partial<Record<string, Record<Locale, string>>> = {
 }
 
 /**
- * The name a series' installed app goes by on a home screen.
- * @param series Whose app it is.
+ * The name an installed app goes by on a home screen.
+ * @param series Whose app it is, `null` for the hub's.
  * @param locale The language the app was installed in.
  * @returns The short name, or the series' own when it fits.
  */
-export function appShortName(series: Series, locale: Locale): string {
+export function appShortName(series: null | Series, locale: Locale): string {
+  if (series === null) {
+    return HUB_NAME
+  }
   return SHORT_NAMES[series.slug]?.[locale] ?? series.name[locale]
 }
 
@@ -65,7 +68,7 @@ export function appHead(
     meta: [
       {
         name: 'apple-mobile-web-app-title',
-        content: series === null ? HUB_NAME : appShortName(series, locale),
+        content: appShortName(series, locale),
       },
     ],
   }
