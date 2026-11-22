@@ -3188,7 +3188,16 @@ export const season1: ThronesSaga = {
         it: 'Accoglie il re nel cortile di Grande Inverno con il resto della famiglia. Come i suoi fratelli, tiene uno dei cuccioli di meta-lupo.',
         en: 'She greets the king in the yard of Winterfell with the rest of her family. Like her brothers and sister, she keeps one of the direwolf pups.',
       },
-      status: [{ episode: 1, chapter: 5, value: 'alive' }],
+      status: [
+        { episode: 1, chapter: 5, value: 'alive' },
+        // Taken by the Lannister soldiers after the fight at the holdfast in
+        // "What Is Dead May Never Die" (episode 13), by Ser Gregor Clegane's
+        // men in Arya V (chapter 93); she walks out of Harrenhal with Gendry
+        // and Hot Pie in "The Prince of Winterfell" (episode 18) and Arya X
+        // (chapter 138, #1465).
+        { episode: 13, chapter: 93, value: 'captured' },
+        { episode: 18, chapter: 138, value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 1,
@@ -4646,10 +4655,12 @@ export const season1: ThronesSaga = {
           chapter: 28,
           value: { it: 'Apprendista armaiolo', en: 'Armorer’s apprentice' },
         },
+        // The show has him among Yoren's recruits in "Fire and Blood"
+        // (episode 10); the books first in Arya I of A Clash of Kings
+        // (chapter 75, #1465).
         {
           episode: 10,
-          chapter: 66,
-          source: 'episode',
+          chapter: 75,
           value: {
             it: 'Recluta dei Guardiani della notte',
             en: 'Night’s Watch recruit',
@@ -4660,7 +4671,15 @@ export const season1: ThronesSaga = {
         it: 'Lavora nella bottega di un armaiolo di Approdo del Re. Eddard Stark va a trovarlo seguendo le tracce del precedente Primo Cavaliere e ammira un elmo che il ragazzo si è forgiato da solo. Guardandolo in viso, ci riconosce i tratti del re.',
         en: 'He works at an armorer’s forge in King’s Landing. Eddard Stark comes to see him, following the trail of the previous Hand, and admires a helm the boy made for himself. Looking at his face, he sees the king’s features in it.',
       },
-      status: [{ episode: 4, chapter: 28, value: 'alive' }],
+      status: [
+        { episode: 4, chapter: 28, value: 'alive' },
+        // Taken by the Lannister soldiers after the fight at the holdfast in
+        // "What Is Dead May Never Die" (episode 13), by Ser Gregor Clegane's
+        // men in Arya V (chapter 93); out of Harrenhal with Arya and Hot Pie
+        // in "The Prince of Winterfell" (episode 18) and Arya X (chapter 138).
+        { episode: 13, chapter: 93, value: 'captured' },
+        { episode: 18, chapter: 138, value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 4,
@@ -4672,8 +4691,7 @@ export const season1: ThronesSaga = {
         },
         {
           episode: 10,
-          chapter: 66,
-          source: 'episode',
+          chapter: 75,
           value: {
             it: 'Reclute dei Guardiani della notte',
             en: 'Night’s Watch recruits',
@@ -4692,6 +4710,18 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Cavaliere privato di terre e titoli dal Primo Cavaliere',
             en: 'Knight stripped of his lands and titles by the Hand',
+          },
+        },
+        // Show only: Tywin leaves him castellan of Harrenhal in "The Prince of
+        // Winterfell" (episode 18). The books leave the castle to Amory Lorch
+        // in Arya VIII (chapter 112), which only orders this step (#1465).
+        {
+          episode: 18,
+          chapter: 112,
+          source: 'episode',
+          value: {
+            it: 'Castellano di Harrenhal',
+            en: 'Castellan of Harrenhal',
           },
         },
       ],
@@ -4723,7 +4753,39 @@ export const season1: ThronesSaga = {
     'loras-tyrell': {
       relationships: season1Relationships['loras-tyrell'],
       chronicle: season1Chronicles['loras-tyrell'],
-      role: { it: 'Cavaliere', en: 'Knight' },
+      role: [
+        { episode: 5, chapter: 30, value: { it: 'Cavaliere', en: 'Knight' } },
+        // Stage 2 (#1464): one of King Renly's guard, unhorsed by Brienne
+        // in "What Is Dead May Never Die" (episode 13) and Catelyn II of A
+        // Clash of Kings (chapter 96).
+        {
+          episode: 13,
+          chapter: 96,
+          value: { it: 'Guardia di re Renly', en: 'Guard of King Renly' },
+        },
+        // Renly is killed: "The Ghost of Harrenhal" (episode 15) and
+        // Catelyn IV (chapter 107).
+        {
+          episode: 15,
+          chapter: 107,
+          value: {
+            it: 'Ex guardia di re Renly',
+            en: 'Former guard of King Renly',
+          },
+        },
+        // Books only: named to Joffrey's Kingsguard at the court after the
+        // battle, Sansa VIII (chapter 139). The show's "Valar Morghulis"
+        // (episode 20) has him at that court but names him to no guard.
+        {
+          episode: 20,
+          chapter: 139,
+          source: 'chapter',
+          value: {
+            it: 'Cavaliere della Guardia reale',
+            en: 'Knight of the Kingsguard',
+          },
+        },
+      ],
       log: {
         it: 'È un giovane giostratore molto ammirato, detto il Cavaliere dei Fiori. Al torneo in onore del nuovo Primo Cavaliere regala una rosa a Sansa Stark davanti alla folla.',
         en: 'He is a young and much admired jouster, called the Knight of Flowers. At the tourney for the new Hand, he gives Sansa Stark a rose in front of the crowd.',
@@ -5257,6 +5319,18 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Comandante della fanteria del Nord',
             en: 'Commander of the northern foot',
+          },
+        },
+        // Books only: Vargo Hoat hands him Harrenhal and he takes his seat
+        // there, in Arya IX (chapter 121). The show keeps him in Robb's camp;
+        // episode 18 only orders the step (#1465).
+        {
+          episode: 18,
+          chapter: 121,
+          source: 'chapter',
+          value: {
+            it: 'Comandante degli uomini del Nord a Harrenhal',
+            en: 'Commander of the northmen at Harrenhal',
           },
         },
       ],
@@ -6363,7 +6437,14 @@ export const season1: ThronesSaga = {
         it: 'Viaggia verso la Barriera con le reclute che Yoren porta ai Guardiani della notte. Lui e un’altra recluta prendono di mira Arya, che viaggia travestita da ragazzo.',
         en: 'He travels to the Wall with the recruits Yoren is taking to the Night’s Watch. He and another recruit pick on Arya, who is travelling disguised as a boy.',
       },
-      status: [{ episode: 10, chapter: 75, value: 'alive' }],
+      status: [
+        { episode: 10, chapter: 75, value: 'alive' },
+        // Taken with Arya and Gendry in "What Is Dead May Never Die"
+        // (episode 13) and Arya V (chapter 93); out of Harrenhal with them in
+        // "The Prince of Winterfell" (episode 18) and Arya X (chapter 138).
+        { episode: 13, chapter: 93, value: 'captured' },
+        { episode: 18, chapter: 138, value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 10,
@@ -6413,6 +6494,14 @@ export const season1: ThronesSaga = {
           chapter: 79,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
         },
+        // At Harrenhal among the Lannister men-at-arms in "The Ghost of
+        // Harrenhal" (episode 15); with Ser Amory Lorch's men when they ride
+        // in, in Arya VII (chapter 104, #1465).
+        {
+          episode: 15,
+          chapter: 104,
+          value: { it: 'Uomini d’arme Lannister', en: 'Lannister men-at-arms' },
+        },
       ],
     },
     'rorge': {
@@ -6435,6 +6524,18 @@ export const season1: ThronesSaga = {
           episode: 12,
           chapter: 79,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+        // With Jaqen H'ghar among Ser Amory Lorch's men when they ride into
+        // Harrenhal, in Arya VII (chapter 104), and still one of them in Arya
+        // VIII (chapter 112). Episode 15 only orders it (#1465).
+        {
+          episode: 15,
+          chapter: 104,
+          source: 'chapter',
+          value: {
+            it: 'Uomini di ser Amory Lorch',
+            en: 'Ser Amory Lorch’s men',
+          },
         },
       ],
     },
@@ -6459,6 +6560,18 @@ export const season1: ThronesSaga = {
           episode: 12,
           chapter: 79,
           value: { it: 'Reclute di Yoren', en: 'Yoren’s recruits' },
+        },
+        // With Jaqen H'ghar among Ser Amory Lorch's men when they ride into
+        // Harrenhal, in Arya VII (chapter 104), and still one of them in Arya
+        // VIII (chapter 112). Episode 15 only orders it (#1465).
+        {
+          episode: 15,
+          chapter: 104,
+          source: 'chapter',
+          value: {
+            it: 'Uomini di ser Amory Lorch',
+            en: 'Ser Amory Lorch’s men',
+          },
         },
       ],
     },

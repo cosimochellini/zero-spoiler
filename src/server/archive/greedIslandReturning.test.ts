@@ -84,6 +84,13 @@ const AFFILIATIONS = [
     it: 'aiuta Gon e Killua',
     en: 'helping Gon and Killua',
   },
+  {
+    id: 'kalluto',
+    episode: 72,
+    chapter: 170,
+    it: 'Brigata Fantasma',
+    en: 'Phantom Troupe',
+  },
 ]
 
 describe.each(CASES)(

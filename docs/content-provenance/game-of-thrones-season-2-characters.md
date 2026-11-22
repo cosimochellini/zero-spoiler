@@ -139,6 +139,238 @@ for a check of their chapters.
   and Cleos Frey (first seen at Robb's camp, #1465), Kevan Lannister (with Tywin
   at Harrenhal, #1465).
 
+## Stannis, Renly and the stormlands (#1464)
+
+Dragonstone, Renly's camp at Bitterbridge and Storm's End, Catelyn's embassy and
+the Blackwater from Stannis's side. Candidates come from the Game of Thrones
+Wiki's season-2 episode pages (Firsts, cast lists, synopses) and character
+pages, the Ice and Fire Wiki's prologue page, and A Wiki of Ice and Fire's
+summaries of the prologue, Davos I–III, Catelyn II–V and Sansa VIII, read
+through the Firecrawl tool (the bullet "Not viewed" above predates it). Bit
+parts are omitted as in season 1.
+
+Counts: 12 filed, 0 pending, 42 omitted; 1 stage-1 record stepped (Loras
+Tyrell).
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                    | Show                                                                                                                                  | Books                                                                                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `stannis-baratheon`       | 11, "The North Remembers": Jaime tells Robb "Stannis is the rightful King" (quoted on the episode page); Stannis's Dragonstone scenes | 74, prologue: Selyse tells him Renly's army would join him if Renly died; the synopsis has his name in narration only (owner check)               |
+| `melisandre`              | 11, "The North Remembers": the burning of the Seven and Cressen's poison; no quote has her name (owner check)                         | 74, prologue: Selyse says Melisandre has seen Renly dead in the flames                                                                            |
+| `davos-seaworth`          | 11, "The North Remembers": Cressen asks him for help against Melisandre; the line with his name is not quoted (owner check)           | 74, prologue: Pylos tells Cressen that Ser Davos Seaworth came back in the night                                                                  |
+| `cressen`                 | 11, "The North Remembers": he interrupts the burning and dies of his own poison; narration only in the pages read (owner check)       | 74, prologue (his chapter): Stannis gives Cressen's duties to Pylos; the synopsis has his name in narration only (owner check, and he dies in it) |
+| `matthos-seaworth`        | 11, "The North Remembers": he reads Stannis's letter at the Painted Table; no quote has his name (owner check)                        | 132, Davos III: on the Black Betha, where he dies; Davos I (84) mentions him in narration only (owner check)                                      |
+| `salladhor-saan`          | 12, "The Night Lands": Davos reports to Stannis that he has won Salladhor's thirty ships                                              | 84, Davos I: Davos meets him at an inn; the prologue's feast (74) lists him in narration only (owner check)                                       |
+| `selyse-baratheon`        | 25, "Kissed by Fire": Stannis visits her; episode 11 has her silent and uncredited, episode 12 only "a wife"                          | 74, prologue: she argues with Stannis in front of Cressen; her name is in narration only in the pages read (owner check)                          |
+| `shireen-baratheon`       | 25, "Kissed by Fire": her father visits her                                                                                           | 74, prologue: Pylos tells Cressen that Princess Shireen wants to see the white raven                                                              |
+| `brienne-of-tarth`        | 13, "What Is Dead May Never Die": she tells Catelyn to call her just "Brienne"                                                        | 96, Catelyn II: Colen tells Catelyn the champion is Brienne of Tarth                                                                              |
+| `margaery-tyrell`         | 13, "What Is Dead May Never Die": Renly introduces his new wife to Catelyn                                                            | 96, Catelyn II: the same introduction at Bitterbridge                                                                                             |
+| `mace-tyrell`             | 32, "The Lion and the Rose": at Joffrey's wedding, toasting the king and his daughter; only mentioned in season 2                     | 139, Sansa VIII: presented to Joffrey with his sons among the heroes of the Blackwater; earlier chapters only mention him                         |
+| `cortnay-penrose` (books) | none: the show skips the siege of Storm's End; 14 orders him                                                                          | 116, Davos II: he parleys with Stannis; Catelyn II (96) and III (105) only mention him                                                            |
+
+- Stannis: role claimant to the Iron Throne, House Baratheon, alive.
+  `nameSaidAt: 7`: season 1's Tomard and Kevan Lannister texts name him from
+  "You Win or You Die", where Eddard sends him a letter.
+- Melisandre: role red priestess, the red priests, alive. Italian "Melisandre"
+  (Italian Wikipedia, "Melisandre di Asshai").
+- Davos: role knight in King Stannis's service, House Seaworth. Show only:
+  commander of King Stannis's fleet, 15 ("The Ghost of Harrenhal"; the books
+  give the fleet to Imry Florent, 107 orders it). `missing` at 19 / 132: his
+  ship burns on the Blackwater and he goes into the water; neither stage tells
+  his rescue.
+- Cressen: role maester of Dragonstone; opens `deceased` in both media, as Will
+  does. Italian "Cressen" (Italian Wikipedia, "Maestro Cressen").
+- Matthos: role son of Davos Seaworth, House Seaworth; `deceased` at 19 / 132
+  ("Blackwater"; Davos III, per A Wiki of Ice and Fire's Matthos page). His book
+  gate and death share chapter 132.
+- Salladhor: role pirate from Lys, affiliation Stannis Baratheon's fleet.
+- Selyse: role queen, wife of Stannis Baratheon. Italian Wikipedia files her as
+  Selyse Florent; the record keeps the show's name in both languages.
+- Shireen: role princess, daughter of Stannis Baratheon.
+- Brienne: role guard of King Renly at the gate; sworn sword of Catelyn Stark at
+  15 / 113 ("The Ghost of Harrenhal"; Catelyn V, where Catelyn takes her as her
+  sworn sword). Catelyn IV (107) has her flee with Catelyn but swear nothing:
+  former guard of King Renly there, books only (episode 15 orders it). Italian
+  "Brienne di Tarth".
+- Margaery: role queen, wife of King Renly; widow of King Renly at 15 / 107
+  ("The Ghost of Harrenhal"; Catelyn IV, Renly's death); betrothed to King
+  Joffrey at 20 / 139 ("Valar Morghulis"; Sansa VIII, where Garlan asks it of
+  the king).
+- Mace: role Lord of Highgarden, House Tyrell. His seat on the small council
+  (Sansa VIII) is not filed: the show gives it later.
+- Cortnay Penrose: role castellan of Storm's End, held after Renly's death;
+  `deceased` at 118, books only (Tyrion X, which A Wiki of Ice and Fire cites
+  for his death; episode 16 orders it). Italian kept as "Cortnay Penrose".
+
+### Stage-1 records stepped
+
+- Loras Tyrell: role guard of King Renly, 13 / 96 ("What Is Dead May Never Die";
+  Catelyn II); former guard of King Renly, 15 / 107 ("The Ghost of Harrenhal";
+  Catelyn IV, Renly's death); knight of the Kingsguard, books only, 139 (Sansa
+  VIII). The show's "Valar Morghulis" has him at court but in no guard.
+
+Not stepped: Renly (claimant since season 1; his death is already filed at 15 /
+107), Catelyn (her embassy changes no field), Robar Royce (the show's Ser Robar
+of "The Ghost of Harrenhal" is named only in the credits, so the record stays
+the books'), Petyr Baelish (his visit to Renly's camp is stepped by #1463),
+Hallis Mollen and Wendel Manderly (in Catelyn's party; no field changes).
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Pylos and Patchface (the prologue and
+  Davos I), Axell Florent (the prologue's feast and one exchange in Davos I),
+  Alester Florent (mocked at the parley, Davos II), Imry Florent (one line in
+  "Blackwater"; commands the fleet in Davos III, named in narration only), Devan
+  Seaworth (Stannis's squire in Davos I; the show has no Devan), Allard and Dale
+  Seaworth (Davos I and III; the show folds Davos's sons into Matthos), Bryen
+  Farring, Randyll Tarly (one line in Catelyn II and counsel in Catelyn III–IV;
+  the show has him from season 6), Mathis Rowan, Colen of Greenpools, Emmon Cuy
+  (killed in "The Ghost of Harrenhal"; Rainbow Guard in Catelyn IV), Parmen
+  Crane, Bryce Caron, Jon and Tanton Fossoway, Guyard Morrigen, Ronnet
+  Connington, Eldon Estermont, Arwyn Oakheart, Mark Mullendore, Josua and Elyas
+  Willum, Steffon Varner.
+- **Background lords on Dragonstone:** Ardrian Celtigar, Monford Velaryon, Duram
+  Bar Emmon, Guncer Sunglass.
+- **Catelyn's escort:** Perwyn Frey, Lucas Blackwood, Robin Flint, Shadd.
+- **Only mentioned:** Edric Storm, Marya, Maric, Stannis and Steffon Seaworth,
+  Selwyn Tarth, Hubard Rambton, Septon Barre.
+- **Not a character:** the shadow that kills Renly and Cortnay.
+
+## Robb's war, the Riverlands and Harrenhal (#1465)
+
+Robb's campaign in the westerlands and the riverlands, Catelyn and Jaime at his
+camp or at Riverrun, Arya's road with Yoren's recruits and her months at
+Harrenhal. Candidates come from the Game of Thrones Wiki's season-2 episode
+pages (synopses, Firsts, "In the books") and character pages, the Ice and Fire
+Wiki's character pages, and A Wiki of Ice and Fire, read through the Firecrawl
+tool, for the A Clash of Kings chapter pages of Arya IV to X (site chapters 88,
+93, 100, 104, 112, 121, 138) and the pages of Amory Lorch, Cleos Frey and Vargo
+Hoat. Its footnote lists came back through a summarising reader, so a pin rests
+on a chapter page wherever one was read. Bit parts and background figures are
+omitted, as for #1463.
+
+Counts: 9 filed, 2 pending, 44 omitted, 1 left to another group; 8 stage-1
+records stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                   | Show                                                                                                                                                      | Books                                                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `alton-lannister` (show) | 11, "The North Remembers": Robb sends him off with his terms, "You'll ride at daybreak, Ser Alton" (fan transcript; the wiki names him only in narration) | none: the books give his part to Cleos Frey (Alton Lannister page, "In the books"); 81 orders him                                                 |
+| `cleos-frey` (books)     | none: the Game of Thrones Wiki redirects him to Alton Lannister; 11 orders him                                                                            | 81, Catelyn I: Robb sends him from Riverrun to King's Landing with his peace terms, and Grey Wind alarms him (A Wiki of Ice and Fire, Cleos Frey) |
+| `talisa-maegyr` (show)   | 16, "The Old Gods and the New": she tells Robb her family's name is Maegyr; 14, "Garden of Bones", has only "Talisa of Volantis" (owner check)            | none: no such character; 100 orders her                                                                                                           |
+| `amory-lorch`            | 16, "The Old Gods and the New": Arya gives Jaqen his name (Arya Stark page); he dies in the same episode, so the show record opens dead                   | 88, Arya IV: he rides up to the holdfast and introduces himself (A Wiki of Ice and Fire, chapter 14)                                              |
+| `polliver`               | 14, "Garden of Bones": Arya adds him to the names she recites each night (Arya Stark page)                                                                | 100, Arya VI: "a black-bearded, balding man called Polliver" wears Needle, and Arya hates him for it (chapter 26)                                 |
+| `tickler`                | 15, "The Ghost of Harrenhal": the first name Arya gives Jaqen; he dies in the same episode, so the show record opens dead                                 | 100, Arya VI: "They call the ordinary-looking man who did the questioning, the Tickler" (chapter 26)                                              |
+| `chiswyck` (books)       | none: no such character; 14 orders him                                                                                                                    | 100, Arya VI: he assists the Tickler, and Arya hates him for thinking he is funny (chapter 26)                                                    |
+| `weese` (books)          | none: no such character; 14 orders him                                                                                                                    | 104, Arya VII: the understeward of the Wailing Tower who works Arya (chapter 30); Arya VI (100) names him first (owner check)                     |
+| `vargo-hoat` (books)     | none: the show gives his later part to Locke; 15 orders him                                                                                               | 104, Arya VII: listed as appearing at Harrenhal (A Wiki of Ice and Fire, chapter 30; Ice and Fire Wiki: Arya sees him)                            |
+
+- Alton Lannister: role Robb Stark's prisoner, House Lannister, `captured` from
+  11; deceased at 17 ("A Man Without Honor": Jaime kills him to escape). Italian
+  "Alton Lannister" (Italian Wikipedia, Personaggi). Owner check: the naming
+  line is from a fan transcript, outside the lawful sources; no synopsis or wiki
+  quote names him.
+- Cleos Frey: role Robb Stark's prisoner, House Frey, `captured`. His return
+  with Tyrion's terms (Tyrion VI, 99), the failed rescue and his new cell
+  (Catelyn V, 113) change no field. Italian "Cleos Frey" (Genna Lannister's
+  section of Casa Lannister).
+- Talisa Maegyr: roles healer from Volantis (16), Robb Stark's wife (20, "Valar
+  Morghulis", married before a septon). The record opens at 16, where her family
+  name is first said; episode 14 has only "Talisa of Volantis" (owner check).
+  Italian "Talisa Maegyr".
+- Amory Lorch: role knight in the Lannisters' service; castellan of Harrenhal at
+  112 (Arya VIII), books only. Affiliation Lannister army. Status: alive in the
+  books from 88, deceased at 16 and 121 (Arya IX, the bear pit). Owner check:
+  episode 13 names him only in narration. Italian "Amory Lorch" (TV cast list).
+- Polliver: role man-at-arms of the Lannister army, alive; both deaths are past
+  the stage ("Two Swords", A Storm of Swords). Owner check: episode 13, where he
+  takes Needle and kills Lommy, names him only in narration. Italian "Polliver"
+  (TV cast list).
+- Tickler: role Gregor Clegane's torturer, Gregor Clegane's men. Show: opens
+  dead at 15 (Jaqen breaks his neck). Books: alive; his death in A Storm of
+  Swords is past the stage. Owner check: episode 14 calls him "one known as the
+  Tickler" in narration. Italian kept as "Tickler": no Italian page.
+- Chiswyck: Gregor Clegane's man, deceased at 104 (Arya VII, a fall from a wall,
+  Jaqen's first death). Italian kept as "Chiswyck".
+- Weese: understeward at Harrenhal from his gate at 104 (Arya VII; Arya VI, 100,
+  names him first, owner check), deceased at 112 (Arya VIII, found with his dog
+  on his chest, Jaqen's second). Italian kept as "Weese".
+- Vargo Hoat: leader of the Brave Companions, in the Lannisters' pay; in Roose
+  Bolton's service at 121 (Arya IX, he hands him Harrenhal). Italian "Vargo
+  Hoat", "Bravi Camerati" (Italian Wikipedia, Personaggi).
+
+### Pending
+
+- Jeyne Westerling: Robb's bride in the books, first met in A Storm of Swords
+  (Robb returns married in Catelyn II); A Clash of Kings tells only that he took
+  the Crag. The show has Talisa instead.
+- Qyburn: listed among the Brave Companions in Arya VII and Arya X (104, 138)
+  with no scene of his own; the Ice and Fire Wiki's page starts in A Storm of
+  Swords, and the show's Qyburn in season 3.
+
+### Stage-1 records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Gendry: the Night's Watch recruit role and affiliation, show-only at 10 / 66
+  since #1457, become shared at 10 / 75 (Arya I), as the #1457 note asked.
+  `captured` 13 / 93 ("What Is Dead May Never Die"; Arya V), `alive` 18 / 138
+  ("The Prince of Winterfell", the three walk out of Harrenhal; Arya X).
+- Hot Pie and Arya Stark: `captured` 13 / 93, `alive` 18 / 138, as Gendry.
+  Arya's service as Tywin's cupbearer (show) and Roose Bolton's (books) is not
+  filed as a role: she stays a prisoner in disguise.
+- Jaqen H'ghar: affiliation Lannister men-at-arms, 15 / 104 ("The Ghost of
+  Harrenhal", "now a Lannister man-at-arms"; Arya VII, he rides in with Ser
+  Amory Lorch's men).
+- Rorge and Biter, books only: affiliation Ser Amory Lorch's men, 104 (Arya VII;
+  Rorge is "one of Amory's men" in Arya VIII). Their joining the Brave
+  Companions in Arya IX rests on A Wiki of Ice and Fire's Vargo Hoat page alone,
+  not the chapter page, and waits.
+- Gregor Clegane, show only: castellan of Harrenhal, 18 ("The Prince of
+  Winterfell"); 112 orders it.
+- Roose Bolton, books only: commander of the northmen at Harrenhal, 121 (Arya
+  IX); 18 orders it.
+
+Not stepped: Robb Stark (his marriage to Talisa and the Crag change no field),
+Catelyn Stark (her mission to Renly is #1464's; the show has Robb keep her under
+guard in episode 18, the books imprison her in A Storm of Swords), Jaime
+Lannister (still `captured` from stage 1: Brienne takes him south in chains,
+episode 18 and Catelyn VII, 129), Tywin and Kevan Lannister (at Harrenhal, no
+field changes), Rickard Karstark (his son's death changes no field of his),
+Edmure, Hoster and Brynden Tully, Yoren (death filed by #1290) and Lommy (his
+book-side cards are #1481's and his chronicle #1486's). Brienne's escort of
+Jaime belongs to her record, filed by #1464.
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Torrhen Karstark (killed by Jaime in "A
+  Man Without Honor"), Rennick (Oxcross), Reginald Lannister (one war council),
+  the show's Weasel (the boy who heats the Tickler's bucket), the tortured
+  prisoner, Raff the Sweetling (the spearman who kills Lommy in Arya V, named in
+  Arya VI), Dunsen (wears Gendry's helm), Shitmouth, Lucan, the books' Weasel
+  (the crying girl), Harra and Amabel, Pia, Mebble, Cadwyn.
+- **Background at Harrenhal:** Ser Harys Swyft and his squire, Lord Lewys
+  Lydden's archer, the Brave Companions Urswyck, Septon Utt, Shagwell and Ronel
+  Rivers, the Frey and northern captives Aenys and Elmar Frey, Medger Cerwyn,
+  Harrion Karstark and the Haighs, Steelshanks Walton (named in the books only
+  in A Storm of Swords).
+- **Yoren's recruits with no scene of their own:** Kurz, Cutjack, Koss, Dobber,
+  Tarber, Woth, Reysen, Gerren, Qyle, Urreg.
+- **Riverrun's household:** Utherydes Wayn, Ser Desmond Grell, Ser Robin Ryger
+  and Maester Vyman, each with a line or two in Catelyn's chapters.
+- **Only mentioned:** Ser Stafford Lannister (killed at Oxcross off screen),
+  Ganes the butcher.
+- **Other groups:** Brienne of Tarth (#1464), who escorts Jaime from episode 18
+  and Catelyn VII.
+
 ## Winterfell and the Iron Islands (#1466)
 
 Theon's return to Pyke and his taking of Winterfell, Bran's court and its

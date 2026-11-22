@@ -528,7 +528,7 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       kind: 'character',
       revealedAtEpisode: 79,
       revealedAtChapter: 192,
-      name: { it: 'Rammot', en: 'Rammot' },
+      name: { it: 'Lamot', en: 'Rammot' },
       summary: {
         it: 'Un capitano delle formichimere dall’aspetto di coniglio, con le piume sulle braccia.',
         en: 'A rabbit-like officer of the Chimera Ants, with feathers on his arms.',

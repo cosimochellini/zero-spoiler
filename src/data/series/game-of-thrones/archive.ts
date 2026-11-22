@@ -34,7 +34,12 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
   // The second stage's cast row (#1455): its filing children add each lead
   // as they file it. King's Landing and the Blackwater (#1463): the acting
   // Hand and the queen regent.
-  'season-2': ['tyrion-lannister', 'cersei-lannister'],
+  'season-2': [
+    'tyrion-lannister',
+    'cersei-lannister',
+    'stannis-baratheon',
+    'davos-seaworth',
+  ],
 }
 
 const { core } = sagaArchive({

@@ -65,6 +65,8 @@ export const TITLES = {
   'game-of-thrones': {
     'nymeria': 'Nymeria (direwolf)',
     'robin-arryn': 'Robert Arryn',
+    'brienne-of-tarth': 'Brienne Tarth',
+    'selyse-baratheon': 'Selyse Florent',
     'dagmer': 'Dagmer Cleftjaw',
     'ramsay-snow': 'Ramsay Bolton',
     'big-walder-frey': 'Walder Frey (son of Jammos)',
