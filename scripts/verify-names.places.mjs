@@ -187,8 +187,8 @@ export const PLACE_NAMES_KEPT = {
   // scontro dei re page; Vaes Tolorro and the House of the Undying ("Casa
   // degli Eterni") are in its Jorah Mormont and Daenerys Targaryen pages;
   // Lordsport, the Stony Shore, Bitterbridge and Oxcross are the Italian Game
-  // of Thrones Wiki's pages. Whitetree, the Acorn Water and the Garden of
-  // Bones are assumed, the dub's or the books' form unconfirmed.
+  // of Thrones Wiki's pages. Whitetree and the Garden of Bones are
+  // assumed, the dub's or the books' form unconfirmed.
   'crasters-keep': 'Fortezza di Craster',
   'skirling-pass': 'Passo Skirling',
   'vaes-tolorro': 'Vaes Tolorro',
@@ -198,6 +198,5 @@ export const PLACE_NAMES_KEPT = {
   'bitterbridge': 'Ponte Amaro',
   'oxcross': 'Oxcross',
   'whitetree': 'Albero Bianco',
-  'acorn-water': 'Acqua della Ghianda',
   'garden-of-bones': 'Giardino delle Ossa',
 }

@@ -340,8 +340,8 @@ notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
 series' own copy, since a story starts at an episode or a chapter. The second
 stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
 is being filed under #1455. So far `records/season-2.ts` holds its heading, the
-characters filed by cast group above and, in `SEASON_2_PLACES`, the 16 places a
-scene of the stage is set in (#1469), five of them the book's alone and the
+characters filed by cast group above and, in `SEASON_2_PLACES`, the 15 places a
+scene of the stage is set in (#1469), three of them the book's alone and the
 Garden of Bones the show's; the five places season 1 filed as named only and the
 stage visits (Dragonstone, Pyke, the Gods Eye, Harrenhal, Qarth) keep their
 records and take the visit as a dated `visits` entry. A character season 1 filed
@@ -551,11 +551,11 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing                  | Count                                                   |
 | ---------------------- | ------------------------------------------------------- |
-| Records                | 289                                                     |
+| Records                | 288                                                     |
 | Characters             | 213                                                     |
-| Places                 | 76                                                      |
+| Places                 | 75                                                      |
 | Saga modules           | 2                                                       |
-| Line drawings          | 289, one per record, plus 153 redrawings of 113 records |
+| Line drawings          | 288, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories      | 565, for 144 characters                                 |
 | Dated timelines        | 876                                                     |
 | Affiliation steps      | 243                                                     |

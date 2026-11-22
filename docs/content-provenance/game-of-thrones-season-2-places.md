@@ -43,17 +43,16 @@ season 1 ones (`game-of-thrones-season-1-places.md`), restated for the stage:
 | `lordsport`                   | 12      | 85      | both media                            |
 | `stony-shore`                 | 13      | 111     | the show names it; the book visits it |
 | `bitterbridge`                | 13      | 96      | book only; the episode orders it      |
-| `storms-end`                  | 14      | 105     | book only; the episode orders it      |
 | `oxcross`                     | 14      | 106     | the show visits it; the book names it |
 | `garden-of-bones`             | 14      | 101     | show only; the chapter orders it      |
 | `guildhall-of-the-alchemists` | 15      | 94      | both media                            |
 | `fist-of-the-first-men`       | 15      | 108     | both media                            |
 | `skirling-pass`               | 16      | 125     | both media                            |
-| `acorn-water`                 | 16      | 130     | book only; the episode orders it      |
+| `storms-end`                  | 18      | 105     | the show names it; the book visits it |
 | `blackwater-bay`              | 18      | 132     | both media                            |
 | `house-of-the-undying`        | 20      | 122     | both media                            |
 
-Sixteen places, under the issue's split point of about 25.
+Fifteen places, under the issue's split point of about 25.
 
 ### Visits to named-only places
 
@@ -90,8 +89,9 @@ Sixteen places, under the issue's split point of about 25.
 
 - Show 11: Jorah tells Daenerys he has not been as far east as the Red Waste
   (the Red Waste page, reported speech). Book 86, Daenerys I. A Game of Thrones
-  ends with the khalasar at the waste's margins (Ice and Fire Wiki); the first
-  book's chapters were not checked for the name (owner check).
+  ends with the khalasar at the waste's margins (Ice and Fire Wiki), and A Wiki
+  of Ice and Fire says its chapter 72 (site 73) already names the waste. The
+  gate stays 86, the first scene set there.
 - Italian "Desolazione Rossa", Italian Wikipedia's places page.
 - Filed here: Kovarro (show only), sent out from the waste in episode 11.
 
@@ -140,11 +140,15 @@ Sixteen places, under the issue's split point of about 25.
 
 #### `storms-end`
 
-- Book only: Catelyn III (105) is set in Renly's camp under the castle, and
-  Davos II (116) at its walls and in the cave beneath them. The show's "What Is
-  Dead May Never Die" notes say Storm's End "wasn't introduced"; the Storm's End
-  page sets the episode 14 parley "near Storm's End" (owner check). Episode 14
-  orders it. A later season's naming of the castle is not checked.
+- The show names it in episode 18, "The Prince of Winterfell": the Storm's End
+  page cites that episode (GOT208) for the castle's name, and the episode's
+  notes say Stannis relates the siege of Storm's End (the line is not quoted).
+  The show sets no scene there in season 2: the "What Is Dead May Never Die"
+  notes say Storm's End "wasn't introduced", and the episode 14 parley is only
+  "near" it. The book sets Catelyn III (105) in Renly's camp under the castle,
+  and Davos II (116) at its walls. Gate 18 / 105 (#1252).
+- Its log tells what both media tell by the gate: Stannis's old siege and the
+  smuggler's onions (Davos I, 84, in the books).
 - Italian "Capo Tempesta", Italian Wikipedia's places page.
 - Filed here: Cortnay Penrose, books only.
 
@@ -195,19 +199,12 @@ Sixteen places, under the issue's split point of about 25.
 - Italian "Passo Skirling", Italian Wikipedia's Lo scontro dei re page.
 - Filed here: Ygritte, Ebben, Dalbridge and the Lord of Bones.
 
-#### `acorn-water`
-
-- Book only: Theon V (130) is set at the mill on the Acorn Water, which Theon IV
-  (124) names. The show's farm in episode 16 is never named. Episode 16 orders
-  it.
-- Italian "Acqua della Ghianda" is assumed, not checked against the Mondadori
-  edition.
-
 #### `blackwater-bay`
 
 - Show: Salladhor names it in episode 12 ("the bottom of Blackwater Bay",
   quoted); Stannis's fleet sails into it in episode 18. Book 132, Davos III.
-  Gate 18 / 132.
+  Gate 18 / 132. Tyrion IX (115) was considered: it is a scene at the King's
+  Landing harbour, not on the bay.
 - The Blackwater Rush, where the river meets the bay and the chain is raised, is
   folded into the bay. The battle on it is the stage's battlefield, filed as the
   water it is fought on, as the Whispering Wood was.
@@ -255,6 +252,10 @@ Sixteen places, under the issue's split point of about 25.
 - Torrhen's Square, Deepwood Motte, the Crag: the stage names them, but its
   scenes there are off the page and off screen; #1476 decides them as named
   places.
+- The Acorn Water: named only (Bran VI, 120), never visited; the show never
+  names it, so #1476's both-media rule leaves it out too. Theon IV (124) has
+  Reek mention the mill, and Theon V (130), set in Winterfell, has Theon
+  remember the night there (A Wiki of Ice and Fire, chapters 50 and 56).
 - The Kingsroad: roads are not filed.
 - Mance Rayder's camp: the show's episode 20 marches Jon towards it; the book
   reaches it in the third book.

@@ -1518,7 +1518,7 @@ const LORDSPORT: Stroke[] = [
 
 /**
  * The Stony Shore: fishing huts on a beach of stones under a rocky
- * headland, with a boat drawn up and a longship's sail on the sea, for the
+ * headland, with a boat drawn up and a longship on the sea, for the
  * villages Balon sends Theon to raid in episode 13 and that Theon raids in
  * Theon III (chapter 111). The huts' sides are hatched; the accent is the
  * raider's sail.
@@ -1531,8 +1531,9 @@ const STONY_SHORE: Stroke[] = [
   { d: 'M10 138 Q80 132 150 140' },
   { d: 'M24 146 q4 -4 8 0 M46 148 q4 -4 8 0 M118 148 q4 -4 8 0', role: 'soft' },
   { d: 'M26 134 Q40 140 56 132', role: 'soft' },
-  { d: 'M120 74 H140 V92 H120 Z M130 98 V70', role: 'accent' },
-  { d: 'M100 98 H150', role: 'ambient' },
+  { d: 'M116 64 H144 Q146 78 144 92 H116 Q114 78 116 64 Z', role: 'accent' },
+  { d: 'M108 98 Q130 106 152 98 L154 92 M108 98 L106 92 M130 100 V60' },
+  { d: 'M84 100 H150', role: 'ambient' },
   { d: 'M92 122 l4 -2 M118 126 l4 -2', role: 'ambient' },
   ...SEA,
 ]
@@ -1685,27 +1686,6 @@ const SKIRLING_PASS: Stroke[] = [
 ]
 
 /**
- * The Acorn Water: the mill on the small river, its wheel in the stream,
- * for the mill Theon comes to in Theon V (chapter 130); the show's farm is
- * unnamed. The mill's side is hatched; the accent is the wheel.
- */
-const ACORN_WATER: Stroke[] = [
-  { d: 'M60 132 V92 L84 76 L108 92 V132' },
-  {
-    d: `${circle(50, 124, 18)} M50 106 V142 M32 124 H68 M37 111 L63 137 M63 111 L37 137`,
-    role: 'accent',
-  },
-  { d: 'M88 132 V116 H98 V132', role: 'soft' },
-  {
-    d: 'M10 146 q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0',
-    role: 'ambient',
-    dashed: true,
-  },
-  { d: 'M102 96 l5 -3 M102 110 l5 -3 M102 124 l5 -3', role: 'ambient' },
-  { d: 'M124 132 L134 98 L144 132 M134 132 V140', role: 'soft' },
-]
-
-/**
  * Blackwater Bay: the city's walled hill over the river's mouth, with
  * Stannis's fleet on the bay, as it sails in in episode 18 and in Davos
  * III (chapter 132). The hill is hatched; the accent is the lead ship's
@@ -1828,7 +1808,6 @@ export const PLACE_DRAWINGS = {
   'guildhall-of-the-alchemists': GUILDHALL_OF_THE_ALCHEMISTS,
   'fist-of-the-first-men': FIST_OF_THE_FIRST_MEN,
   'skirling-pass': SKIRLING_PASS,
-  'acorn-water': ACORN_WATER,
   'blackwater-bay': BLACKWATER_BAY,
   'house-of-the-undying': HOUSE_OF_THE_UNDYING,
 } satisfies Drawings

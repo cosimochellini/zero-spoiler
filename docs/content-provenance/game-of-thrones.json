@@ -4151,7 +4151,8 @@
     ],
     "unverified": [
       "Show gate 11: Jorah tells Daenerys he has not been as far east as the Red Waste (reported on the Red Waste page, GOT201). Neither the episodes nor the books were viewed.",
-      "Book gate 86 (Daenerys I). The Ice and Fire Wiki puts the end of A Game of Thrones at the waste's margins; the first book was not checked for the name."
+      "Book gate 86 (Daenerys I). The Ice and Fire Wiki puts the end of A Game of Thrones at the waste's margins; the first book was not checked for the name.",
+      "A Wiki of Ice and Fire says A Game of Thrones chapter 72 (site 73) already names the Red Waste; the gate stays 86, the first scene set there."
     ]
   },
   "whitetree": {
@@ -4218,11 +4219,13 @@
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://iceandfire.fandom.com/wiki/Storm's_End",
       "https://awoiaf.westeros.org/index.php/Storm's_End",
-      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Capo_Tempesta"
+      "https://it.wikipedia.org/wiki/Luoghi_delle_Cronache_del_ghiaccio_e_del_fuoco#Capo_Tempesta",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell"
     ],
     "unverified": [
-      "Book only: Catelyn III (105), Renly's camp below the castle Stannis besieges; Davos II (116) at its walls (A Wiki of Ice and Fire, through Firecrawl). Neither the episodes nor the books were viewed.",
-      "Show: \"What Is Dead May Never Die\"'s notes say Storm's End was not introduced; the Storm's End page sets the episode 14 parley \"near Storm's End\". A later season's naming is not checked; owner check. Episode 14 orders it."
+      "Book gate 105 (Catelyn III), Renly's camp below the castle Stannis besieges; Davos II (116) at its walls (A Wiki of Ice and Fire, through Firecrawl). Neither the episodes nor the books were viewed.",
+      "Show gate 18: the Storm's End page cites \"The Prince of Winterfell\" (GOT208) for the castle's name, and the episode's notes say Stannis relates the siege of Storm's End; the show sets no scene there in season 2 (its episode 13 notes: Storm's End \"wasn't introduced\"), so the record opens at the naming (#1252). The line itself is not quoted.",
+      "Log: the old siege and the onion smuggler, which Davos I (84) and the prologue already tell in the books."
     ]
   },
   "oxcross": {
@@ -4286,13 +4289,6 @@
       "Italian: \"Passo Skirling\", Italian Wikipedia's Lo scontro dei re page."
     ]
   },
-  "acorn-water": {
-    "sources": ["https://awoiaf.westeros.org/index.php/Acorn_Water"],
-    "unverified": [
-      "Book only: Theon V (130) is set at the mill on the Acorn Water, which Theon IV (124) names (A Wiki of Ice and Fire, through Firecrawl). The show's farm in episode 16 is unnamed; episode 16 orders it. Neither the episodes nor the books were viewed.",
-      "Italian: \"Acqua della Ghianda\" assumed, not checked against the Mondadori edition."
-    ]
-  },
   "blackwater-bay": {
     "sources": [
       "https://gameofthrones.fandom.com/wiki/Blackwater_Bay",
@@ -4305,7 +4301,8 @@
     ],
     "unverified": [
       "Show gate 18: Stannis's fleet in the bay (\"The Prince of Winterfell\", \"In Blackwater Bay\"); Salladhor names it in episode 12 (quoted). Neither the episodes nor the books were viewed.",
-      "Book gate 132 (Davos III): the fleet sails in (A Wiki of Ice and Fire, Blackwater Bay, through Firecrawl)."
+      "Book gate 132 (Davos III): the fleet sails in (A Wiki of Ice and Fire, Blackwater Bay, through Firecrawl).",
+      "Tyrion IX (site 115) was considered: it is a scene at the King's Landing harbour, not on the bay."
     ]
   },
   "house-of-the-undying": {

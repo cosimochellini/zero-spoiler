@@ -1163,7 +1163,7 @@ export const season2: ThronesSaga = {
         it: 'Un villaggio di bruti abbandonato oltre la Barriera, sotto un grande albero del cuore.',
         en: 'An empty wildling village beyond the Wall, under a great heart tree.',
       },
-      visual: { art: 'whitetree', tint: 'red' },
+      visual: { art: 'whitetree', tint: 'ivory' },
     },
     // Book only. Daenerys I (site chapter 86), her people find the ruined
     // city and she names it. The show has no ruined city; episode 11 orders
@@ -1225,22 +1225,6 @@ export const season2: ThronesSaga = {
         en: 'A castle by a bridge, in the Reach.',
       },
       visual: { art: 'bitterbridge', tint: 'green' },
-    },
-    // Book only. Catelyn III (site chapter 105), Renly's camp below the
-    // castle Stannis besieges. The show never introduces the castle in
-    // season 2; episode 14, the brothers' parley, orders it.
-    {
-      id: 'storms-end',
-      kind: 'place',
-      source: 'chapter',
-      revealedAtEpisode: 14,
-      revealedAtChapter: 105,
-      name: { it: 'Capo Tempesta', en: 'Storm’s End' },
-      summary: {
-        it: 'Il grande castello di Casa Baratheon, sulla costa delle Terre della Tempesta.',
-        en: 'The great castle of House Baratheon, on the coast of the Stormlands.',
-      },
-      visual: { art: 'storms-end', tint: 'yellow' },
     },
     // Show: "Garden of Bones" opens on the field after Robb's night attack.
     // Books: never visited; Sansa III (site chapter 106) names the battle
@@ -1319,21 +1303,20 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'skirling-pass', tint: 'cyan' },
     },
-    // Book only. Theon V (site chapter 130), the mill on the Acorn Water,
-    // which Theon IV (124) names. The show's farm in episode 16 is never
-    // named; episode 16 orders it.
+    // Show: "The Prince of Winterfell", Stannis tells Davos of his siege
+    // in the castle; the show sets no scene there (#1252). Books: Catelyn III
+    // (site chapter 105), Renly's camp below the castle Stannis besieges.
     {
-      id: 'acorn-water',
+      id: 'storms-end',
       kind: 'place',
-      source: 'chapter',
-      revealedAtEpisode: 16,
-      revealedAtChapter: 130,
-      name: { it: 'Acqua della Ghianda', en: 'the Acorn Water' },
+      revealedAtEpisode: 18,
+      revealedAtChapter: 105,
+      name: { it: 'Capo Tempesta', en: 'Storm’s End' },
       summary: {
-        it: 'Un piccolo fiume vicino a Grande Inverno, con un mulino sulla riva.',
-        en: 'A small river near Winterfell, with a mill on its bank.',
+        it: 'Il grande castello di Casa Baratheon, sulla costa delle Terre della Tempesta.',
+        en: 'The great castle of House Baratheon, on the coast of the Stormlands.',
       },
-      visual: { art: 'acorn-water', tint: 'teal' },
+      visual: { art: 'storms-end', tint: 'yellow' },
     },
     // Show: "The Prince of Winterfell", Stannis's fleet in the bay Salladhor
     // names in episode 12. Books: Davos III (site chapter 132), the fleet
@@ -2867,8 +2850,8 @@ export const SEASON_2_PLACES: Record<
       en: 'One huge round tower behind a high curtain wall',
     },
     log: {
-      it: 'Stannis Baratheon assedia il castello, che resiste in nome di suo fratello Renly. L’esercito di Renly si accampa sotto le mura, e i due fratelli si incontrano lì per trattare.',
-      en: 'Stannis Baratheon besieges the castle, which holds for his brother Renly. Renly’s army camps below it, and the two brothers meet there to parley.',
+      it: 'È la sede di Casa Baratheon. Durante la ribellione di Robert, Stannis Baratheon lo tenne per un lungo assedio, finché un contrabbandiere non portò dentro cipolle e pesce salato.',
+      en: 'It is the seat of House Baratheon. In Robert’s Rebellion, Stannis Baratheon held it through a long siege, until a smuggler brought in onions and salt fish.',
     },
     filedHere: ['cortnay-penrose'],
   },
@@ -2936,19 +2919,6 @@ export const SEASON_2_PLACES: Record<
       en: 'A small party of the Night’s Watch climbs into the pass to kill the wildlings’ lookouts. Jon Snow takes the last of them alive, a young woman named Ygritte.',
     },
     filedHere: ['ygritte', 'ebben', 'dalbridge', 'lord-of-bones'],
-  },
-  'acorn-water': {
-    form: 'river',
-    region: 'the-north',
-    landmark: {
-      it: 'La ruota di un mulino su un piccolo fiume',
-      en: 'A mill wheel on a small river',
-    },
-    log: {
-      it: 'Theon Greyjoy arriva al mulino su questo fiume cercando i ragazzi Stark fuggiti. I suoi uomini uccidono i due figli del mugnaio e la loro madre.',
-      en: 'Theon Greyjoy comes to the mill on this river looking for the escaped Stark boys. His men kill the miller’s two sons and their mother.',
-    },
-    filedHere: [],
   },
   'blackwater-bay': {
     form: 'bay',
