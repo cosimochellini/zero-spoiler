@@ -50,24 +50,26 @@ export const SKULL = 'M58 106 C54 74 64 56 80 56 C96 56 106 74 102 106'
 export const TURNED_SKULL = 'M50 104 C44 70 58 46 80 46 C102 46 112 66 108 104'
 
 /** The near ear of the same head, from behind. */
-const TURNED_EAR = 'M49 78 C40 74 36 90 47 96'
+export const TURNED_EAR = 'M49 78 C40 74 36 90 47 96'
 
 /**
  * The neck and shoulders under the same head: the near shoulder wider, the
- * far one hatched where it turns away, and the shadow they throw.
+ * far one hatched where it turns away.
  */
-export const TURNED_BODY: Stroke[] = [
+export const TURNED_BACK: Stroke[] = [
   { d: 'M58 104 L58 122 M98 108 L100 124' },
   { d: 'M16 180 C18 146 36 128 58 122 M138 180 C138 150 124 132 100 124' },
   { d: 'M118 148 l8 -6 M124 162 l8 -6 M128 176 l7 -5', role: 'ambient' },
-  shadow(78, 188, 58),
 ]
+
+/** The same neck and shoulders standing, with the shadow they throw. */
+export const TURNED_BODY: Stroke[] = [...TURNED_BACK, shadow(78, 188, 58)]
 
 /** A suit's collar round the back of the same neck. */
 export const TURNED_COLLAR = 'M58 122 Q78 132 100 124'
 
 /** The collar of a servant's robe round the back of the same neck. */
-const ROBE_COLLAR =
+export const ROBE_COLLAR =
   'M56 122 C64 134 94 134 102 124 L98 116 C90 126 68 126 60 116 Z'
 
 /**

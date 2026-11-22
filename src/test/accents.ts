@@ -373,7 +373,6 @@ export const ACCENT_EXCEPTIONS: Record<
   'hunter-x-hunter/benjamin-hui-guo-rou@c373': [2, OLD],
   'hunter-x-hunter/zhang-lei-hui-guo-rou@c374': [2, OLD],
   'hunter-x-hunter/borksen@c410': [2, OLD],
-  'hunter-x-hunter/morena@c408': [2, OLD],
   'game-of-thrones/janos-slynt@first': [3, OLD],
   'game-of-thrones/loras-tyrell@first': [3, OLD],
   'game-of-thrones/mirri-maz-duur@first': [2, OLD],

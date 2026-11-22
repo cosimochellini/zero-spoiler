@@ -37022,6 +37022,16 @@
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=422998",
       "contentSha256": "561c64f69c5f029ea526c4625ca2ed1da57e1d6e54ac43c792bc9c540c414b4b"
     },
+    "hxh-en-Kakin_Military-425228.json": {
+      "locale": "en",
+      "title": "Kakin Military",
+      "revision": 425228,
+      "revisionDate": "2026-08-27T15:25:23Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Kakin_Military",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425228",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425228",
+      "contentSha256": "75f528ded37fd1f9a3149cf1f6e5f5c18132eb8bf65d7d9a767e4bc2e98ab464"
+    },
     "hxh-en-Southernpiece_Catalog-425352.json": {
       "locale": "en",
       "title": "Southernpiece Catalog",
