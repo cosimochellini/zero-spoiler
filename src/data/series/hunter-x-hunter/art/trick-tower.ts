@@ -79,35 +79,25 @@ export const TRICK_TOWER_DRAWINGS = {
     shadow(82, 164, 46),
   ],
 
-  // Majtani's respirator, the cup worn in place of his right ear seen
-  // from the side, its rim in the record's tint, the ribbed hose arching
-  // to a small canister: episode 9 and chapter 18. No tattoos.
-  // Graded B (owner ruling): true, spoiler-free and on style, not yet an A.
+  // Majtani's respirator, the cup worn in place of his right ear as the
+  // hero, in 3/4: its rim in the record's tint, the inner wall and the
+  // opening at its back showing its depth, the cone narrowing to its
+  // collar with the underside hatched, and a short ribbed hose to a small
+  // canister behind it: episode 9 and chapter 18. No tattoos.
   'majtani': [
+    { d: ellipse(54, 104, 24, 40), role: 'accent' },
+    { d: ellipse(57, 104, 18, 32), role: 'soft' },
+    { d: ellipse(66, 104, 5, 10), role: 'soft' },
+    { d: 'M54 64 L100 88 M54 144 L100 120 M100 88 A8 16 0 0 1 100 120' },
+    { d: 'M66 136 l5 -7 M77 130 l5 -7 M88 125 l4 -6', role: 'ambient' },
+    { d: 'M104 92 H112 V116 H104' },
+    { d: 'M112 98 C134 90 148 104 140 126 M112 110 C124 106 132 112 130 126' },
+    { d: 'M120 94 l2 8 M130 94 l-2 8 M138 102 l-6 5', role: 'soft' },
     {
-      d: 'M26.6 140 a15.6 31.2 0 1 0 31.2 0 a15.6 31.2 0 1 0 -31.2 0',
-      role: 'accent',
+      d: `${ellipse(135, 130, 11, 4.5)} M124 130 V158 A11 4.5 0 0 0 146 158 V130`,
     },
-    {
-      d: 'M42.2 108.8 L70.8 124.4 M42.2 171.2 L70.8 155.6 M70.8 124.4 A7.8 15.6 0 0 1 70.8 155.6',
-    },
-    {
-      d: 'M33.1 140 a9.1 19.5 0 1 0 18.2 0 a9.1 19.5 0 1 0 -18.2 0 M38.9 140 a3.3 7.8 0 1 0 6.5 0 a3.3 7.8 0 1 0 -6.5 0',
-      role: 'soft',
-    },
-    { d: 'M52.6 163.4 l5.2 -7.8 M60.4 159.5 l5.2 -6.5', role: 'ambient' },
-    { d: 'M76 134.8 V145.2 H83.8 V134.8 Z' },
-    {
-      d: 'M81.2 134.8 C83.8 75 138.4 75 133.2 129.6 M83.8 145.2 C94.2 98.4 128 88 125.4 129.6',
-    },
-    {
-      d: 'M86.4 111.4 l7.8 3.9 M95.5 95.8 l3.9 7.8 M111.1 89.3 l-1.3 9.1 M125.4 97.1 l-5.2 6.5 M130.6 114 l-6.5 1.3',
-      role: 'soft',
-    },
-    { d: 'M113.7 137.4 a15.6 6.5 0 1 0 31.2 0 a15.6 6.5 0 1 0 -31.2 0' },
-    { d: 'M113.7 137.4 V171.2 A15.6 6.5 0 0 0 144.9 171.2 V137.4' },
-    { d: 'M138.4 147.8 l6.5 -3.9 M138.4 158.2 l6.5 -3.9', role: 'ambient' },
-    shadow(91.6, 181.6, 67.6),
+    { d: 'M140 138 l6 -3 M140 148 l6 -3', role: 'ambient' },
+    shadow(88, 182, 62),
   ],
 
   // Leroute's hair ribbon, tied in the bow that holds her ponytail, seen

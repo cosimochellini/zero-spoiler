@@ -1508,6 +1508,55 @@ describe.each([
   })
 })
 
+/** Pokkle's drawing at a bookmark. */
+function pokkleAt(
+  unit: 'chapter' | 'episode',
+  count: number,
+  locale: Locale,
+): ReturnType<typeof drawingsFor> {
+  return drawingsFor(['pokkle'], readerFor(archive, at(unit, count), locale))
+}
+
+describe('Pokkle’s Rainbow and death drawings', () => {
+  it.each(LOCALES)(
+    'shows Rainbow at its pin, never before, in %s',
+    (locale) => {
+      // Episode 79 shows his aura arrows; the manga first does in chapter 190.
+      for (const [unit, gate] of [
+        ['episode', 79],
+        ['chapter', 190],
+      ] as const) {
+        expect(pokkleAt(unit, gate, locale)).toHaveProperty('pokkle')
+        expect(pokkleAt(unit, gate, locale)).not.toStrictEqual(
+          pokkleAt(unit, gate - 1, locale),
+        )
+      }
+    },
+  )
+
+  it.each(LOCALES)(
+    'lays the arrow down in chapter 198 only, in %s',
+    (locale) => {
+      // The 2011 anime leaves his death out: an episode reader keeps Rainbow.
+      expect(pokkleAt('chapter', 198, locale)).not.toStrictEqual(
+        pokkleAt('chapter', 197, locale),
+      )
+      expect(pokkleAt('episode', 148, locale)).toStrictEqual(
+        pokkleAt('episode', 79, locale),
+      )
+    },
+  )
+
+  it.each(LOCALES)(
+    'leaves an episode reader with him captured, in %s',
+    (locale) => {
+      // His death is the manga's alone: no episode files it.
+      expect(statusAt('pokkle', at('episode', 148), locale)).toBe('captured')
+      expect(statusAt('pokkle', at('chapter', 198), locale)).toBe('deceased')
+    },
+  )
+})
+
 describe('the palace’s damage drawing', () => {
   // Youpi's blast takes out the foot of the central tower: ch 278, ep 117.
   it.each(LOCALES)('changes at the blast in %s', (locale) => {
