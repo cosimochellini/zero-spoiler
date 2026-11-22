@@ -850,20 +850,10 @@ const STEPS: {
     episode: 8,
     id: 'janos-slynt',
   },
-  {
-    chapter: 66,
-    en: 'Night’s Watch recruit',
-    episode: 10,
-    id: 'gendry',
-    source: 'episode',
-  },
-  {
-    chapter: 66,
-    en: 'Night’s Watch recruits',
-    episode: 10,
-    id: 'gendry',
-    source: 'episode',
-  },
+  // The books' side of the step, Arya I of A Clash of Kings, is #1465's.
+  { chapter: 75, en: 'Night’s Watch recruit', episode: 10, id: 'gendry' },
+  // The books' side of the step, Arya I of A Clash of Kings, is #1465's.
+  { chapter: 75, en: 'Night’s Watch recruits', episode: 10, id: 'gendry' },
   {
     chapter: 44,
     en: 'Knight stripped of his lands and titles by the Hand',

@@ -112,7 +112,7 @@ const links = {
       en: 'Player whose contract he ends',
     },
     summary: {
-      it: 'Battera interrompe il contratto mentre Tsezugera e la sua squadra sono vicini a completare il gioco.',
+      it: 'Battera interrompe il contratto mentre Tsezgerah e la sua squadra sono vicini a completare il gioco.',
       en: 'Battera ends the contract while Tsezguerra and his team are close to completing the game.',
     },
   },
@@ -123,7 +123,7 @@ const links = {
       en: 'Hunter he explains his withdrawal to',
     },
     summary: {
-      it: 'Battera racconta a Tsezugera che cercava una carta per curare la donna amata, morta prima che il gioco fosse completato.',
+      it: 'Battera racconta a Tsezgerah che cercava una carta per curare la donna amata, morta prima che il gioco fosse completato.',
       en: 'Battera tells Tsezguerra that he wanted a card to heal the woman he loved, who died before the game was completed.',
     },
   },
@@ -131,7 +131,7 @@ const links = {
     character: 'gon-freecss',
     type: { it: 'Alleato contro i pirati', en: 'Ally against the pirates' },
     summary: {
-      it: 'Tsezugera accetta di unire la sua squadra a quella di Gon per affrontare i pirati e ottenere una carta rara.',
+      it: 'Tsezgerah accetta di unire la sua squadra a quella di Gon per affrontare i pirati e ottenere una carta rara.',
       en: 'Tsezguerra agrees to join his team with Gon’s to challenge the pirates and obtain a rare card.',
     },
   },
@@ -139,7 +139,7 @@ const links = {
     character: 'killua',
     type: { it: 'Alleato contro i pirati', en: 'Ally against the pirates' },
     summary: {
-      it: 'Tsezugera collabora con Killua durante la sfida contro Razer.',
+      it: 'Tsezgerah collabora con Killua durante la sfida contro Razer.',
       en: 'Tsezguerra works with Killua during the challenge against Razor.',
     },
   },
@@ -150,7 +150,7 @@ const links = {
       en: 'Ally he gives time to prepare',
     },
     summary: {
-      it: 'Tsezugera si impegna a tenere occupato il Boomer per tre settimane mentre Gon si prepara ad affrontarlo.',
+      it: 'Tsezgerah si impegna a tenere occupato il Boomer per tre settimane mentre Gon si prepara ad affrontarlo.',
       en: 'Tsezguerra agrees to keep the Bomber occupied for three weeks while Gon prepares to fight him.',
     },
   },
@@ -158,7 +158,7 @@ const links = {
     character: 'killua',
     type: { it: 'Alleato nella preparazione', en: 'Ally preparing for battle' },
     summary: {
-      it: 'Tsezugera tiene occupato il Boomer mentre Killua e i suoi compagni preparano il combattimento.',
+      it: 'Tsezgerah tiene occupato il Boomer mentre Killua e i suoi compagni preparano il combattimento.',
       en: 'Tsezguerra keeps the Bomber occupied while Killua and his companions prepare for battle.',
     },
   },
@@ -169,7 +169,7 @@ const links = {
       en: 'Employer who abandons the game',
     },
     summary: {
-      it: 'Tsezugera lascia il gioco con la squadra e Battera, che gli racconta della morte della donna che voleva curare.',
+      it: 'Tsezgerah lascia il gioco con la squadra e Battera, che gli racconta della morte della donna che voleva curare.',
       en: 'Tsezguerra leaves the game with his team and Battera, who tells him about the death of the woman he wanted to heal.',
     },
   },
@@ -285,7 +285,7 @@ const links = {
     character: 'tsezguerra',
     type: { it: 'Esaminatore al suo servizio', en: 'Examiner in his service' },
     summary: {
-      it: 'Battera chiede a Tsezugera di valutare il Ren di Gon e Killua prima di ammetterli a Greed Island.',
+      it: 'Battera chiede a Tsezgerah di valutare il Ren di Gon e Killua prima di ammetterli a Greed Island.',
       en: 'Battera asks Tsezguerra to assess Gon and Killua’s Ren before letting them play Greed Island.',
     },
   },
@@ -293,7 +293,7 @@ const links = {
     character: 'battera',
     type: { it: 'Committente', en: 'Employer' },
     summary: {
-      it: 'Tsezugera accompagna Battera all’asta ed esamina per lui chi si offre di giocare a Greed Island.',
+      it: 'Tsezgerah accompagna Battera all’asta ed esamina per lui chi si offre di giocare a Greed Island.',
       en: 'Tsezguerra accompanies Battera to the auction and assesses the people who offer to play Greed Island for him.',
     },
   },
@@ -301,7 +301,7 @@ const links = {
     character: 'gon-freecss',
     type: { it: 'Candidato respinto', en: 'Applicant he rejects' },
     summary: {
-      it: 'Tsezugera osserva il Ren di Gon e lo respinge perché ritiene che morirebbe nel gioco.',
+      it: 'Tsezgerah osserva il Ren di Gon e lo respinge perché ritiene che morirebbe nel gioco.',
       en: 'Tsezguerra watches Gon’s Ren and rejects him because he thinks he would die in the game.',
     },
   },
@@ -309,7 +309,7 @@ const links = {
     character: 'killua',
     type: { it: 'Candidato respinto', en: 'Applicant he rejects' },
     summary: {
-      it: 'Tsezugera esamina il Ren di Killua insieme a quello di Gon e non li ammette al gioco.',
+      it: 'Tsezgerah esamina il Ren di Killua insieme a quello di Gon e non li ammette al gioco.',
       en: 'Tsezguerra assesses Killua’s Ren alongside Gon’s and refuses to let them play.',
     },
   },
@@ -317,7 +317,7 @@ const links = {
     character: 'gon-freecss',
     type: { it: 'Giocatore selezionato', en: 'Player he selects' },
     summary: {
-      it: 'Dopo quattro giorni Gon torna alla selezione e rompe il muro con un pugno. Tsezugera lo ammette tra i giocatori e si preoccupa per quanto potrebbe diventare forte.',
+      it: 'Dopo quattro giorni Gon torna alla selezione e rompe il muro con un pugno. Tsezgerah lo ammette tra i giocatori e si preoccupa per quanto potrebbe diventare forte.',
       en: 'Gon returns to the tryouts after four days and cracks the wall with a punch. Tsezguerra selects him as a player and worries about how strong he could become.',
     },
   },
@@ -325,7 +325,7 @@ const links = {
     character: 'killua',
     type: { it: 'Giocatore selezionato', en: 'Player he selects' },
     summary: {
-      it: 'Killua torna alla selezione e mostra di saper trasformare l’aura in elettricità. Tsezugera lo ammette, sorpreso che abbia imparato in quattro giorni.',
+      it: 'Killua torna alla selezione e mostra di saper trasformare l’aura in elettricità. Tsezgerah lo ammette, sorpreso che abbia imparato in quattro giorni.',
       en: 'Killua returns to the tryouts and shows that he can turn his aura into electricity. Tsezguerra selects him, surprised that he learned it in four days.',
     },
   },

@@ -196,8 +196,10 @@ const PERSON: Stroke[] = [
  * in `vale.ts` (#1055), the King's Landing cast's in `court.ts` (#1056) and
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
- * own drawing; the season-2 King's Landing cast (#1463) and Wall cast
- * (#1467) show `PERSON` until their drawing children draw them. `satisfies`
+ * own drawing; the season-2 King's Landing cast (#1463), stormlands
+ * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
+ * Iron Islands cast (#1466) and Wall cast (#1467) show `PERSON` until
+ * their drawing children draw them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -221,6 +223,45 @@ export const DRAWINGS = {
   'osmund-kettleblack': PERSON,
   'alayaya': PERSON,
   'garlan-tyrell': PERSON,
+  // #1464, Stannis, Renly and the stormlands.
+  'stannis-baratheon': PERSON,
+  'melisandre': PERSON,
+  'davos-seaworth': PERSON,
+  'cressen': PERSON,
+  'matthos-seaworth': PERSON,
+  'salladhor-saan': PERSON,
+  'selyse-baratheon': PERSON,
+  'shireen-baratheon': PERSON,
+  'brienne-of-tarth': PERSON,
+  'margaery-tyrell': PERSON,
+  'mace-tyrell': PERSON,
+  'cortnay-penrose': PERSON,
+  // #1465, Robb's war, the Riverlands and Harrenhal.
+  'alton-lannister': PERSON,
+  'cleos-frey': PERSON,
+  'talisa-maegyr': PERSON,
+  'amory-lorch': PERSON,
+  'polliver': PERSON,
+  'tickler': PERSON,
+  'chiswyck': PERSON,
+  'weese': PERSON,
+  'vargo-hoat': PERSON,
+  // #1466: Winterfell and the Iron Islands.
+  'balon-greyjoy': PERSON,
+  'asha-greyjoy': PERSON,
+  'aeron-greyjoy': PERSON,
+  'victarion-greyjoy': PERSON,
+  'dagmer': PERSON,
+  'black-lorren': PERSON,
+  'wex-pyke': PERSON,
+  'farlen': PERSON,
+  'meera-reed': PERSON,
+  'jojen-reed': PERSON,
+  'ramsay-snow': PERSON,
+  'big-walder-frey': PERSON,
+  'little-walder-frey': PERSON,
+  'wyman-manderly': PERSON,
+  'donella-hornwood': PERSON,
   // #1467: the Wall and beyond, until its drawing child draws it.
   'thoren-smallwood': PERSON,
   'eddison-tollett': PERSON,

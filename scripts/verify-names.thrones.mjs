@@ -187,6 +187,37 @@ export const THRONES_ITALIAN_TITLES = {
   'osmund-kettleblack': characters('Osmund Kettleblack'),
   'alayaya': characters('Chataya'),
   'garlan-tyrell': 'Casa Tyrell#Garlan Tyrell',
+  // #1464, Stannis, Renly and the stormlands.
+  'stannis-baratheon': 'Casa Baratheon#Stannis Baratheon',
+  'melisandre': characters('Melisandre di Asshai'),
+  'davos-seaworth': characters('Davos Seaworth'),
+  'cressen': characters('Maestro Cressen'),
+  'matthos-seaworth': OTHERS,
+  'salladhor-saan': characters('Salladhor Saan'),
+  'selyse-baratheon': characters('Selyse Florent'),
+  'shireen-baratheon': 'Casa Baratheon#Shireen Baratheon',
+  'brienne-of-tarth': characters('Brienne di Tarth'),
+  'margaery-tyrell': 'Casa Tyrell#Margaery Tyrell',
+  'mace-tyrell': 'Casa Tyrell#Mace Tyrell',
+  // #1465, the second stage's Riverlands, Harrenhal and Robb's war cast.
+  'alton-lannister': characters('Alton Lannister'),
+  'talisa-maegyr': characters('Talisa Maegyr'),
+  'vargo-hoat': characters('Vargo Hoat'),
+  'amory-lorch': OTHERS,
+  'polliver': OTHERS,
+  'cleos-frey': 'Casa Lannister#Genna Lannister',
+  // #1466, the second stage's Winterfell and Iron Islands cast.
+  'balon-greyjoy': 'Casa Greyjoy#Balon Greyjoy',
+  'asha-greyjoy': 'Casa Greyjoy#Asha Greyjoy',
+  'aeron-greyjoy': 'Casa Greyjoy#Aeron Greyjoy',
+  'victarion-greyjoy': 'Casa Greyjoy#Victarion Greyjoy',
+  'dagmer': OTHERS,
+  'black-lorren': OTHERS,
+  'farlen': STARK_SERVANTS,
+  'meera-reed': characters('Meera Reed'),
+  'jojen-reed': characters('Jojen Reed'),
+  'ramsay-snow': characters('Ramsay Bolton'),
+  'wyman-manderly': characters('Wyman Manderly'),
   // #1467, the second stage's Wall and beyond-the-Wall cast.
   'eddison-tollett': watch('Eddison Tollett'),
   'craster': characters('Craster'),
@@ -256,6 +287,36 @@ export const THRONES_NAMES_KEPT = {
   'hallyne': 'Hallyne',
   'alayaya': 'Alayaya',
   'jacelyn-bywater': 'Jacelyn Bywater',
+  // #1464. Italian Wikipedia files Selyse under her maiden name, Florent,
+  // and the record keeps the show's; it names Matthos only in the TV cast
+  // list and has no entry for Cortnay Penrose, whose name stays as it is
+  // until the Mondadori form is checked.
+  'selyse-baratheon': 'Selyse Baratheon',
+  'matthos-seaworth': 'Matthos Seaworth',
+  'cortnay-penrose': 'Cortnay Penrose',
+  // #1465. Italian Wikipedia names Amory Lorch and Polliver only in its TV
+  // cast list and Cleos Frey inside Genna Lannister's section; it has no
+  // entry for the Tickler, Chiswyck or Weese, whose names stay as they are
+  // until the dub and Mondadori forms are checked.
+  'amory-lorch': 'Amory Lorch',
+  'polliver': 'Polliver',
+  'cleos-frey': 'Cleos Frey',
+  'tickler': 'Tickler',
+  'chiswyck': 'Chiswyck',
+  'weese': 'Weese',
+  // #1466. Italian Wikipedia names Dagmer and Lorren only in its TV cast
+  // list, Farlen inside the Starks' servants and Ramsay under his later name
+  // (Ramsay Bolton, "nato Snow"); it has no entry for the book-only Wex
+  // Pyke, the two Walder Freys and Donella Hornwood, whose names stay as
+  // they are until the Mondadori forms are checked.
+  'dagmer': 'Dagmer',
+  'black-lorren': 'Black Lorren',
+  'farlen': 'Farlen',
+  'ramsay-snow': 'Ramsay Snow',
+  'wex-pyke': 'Wex Pyke',
+  'big-walder-frey': 'Big Walder Frey',
+  'little-walder-frey': 'Little Walder Frey',
+  'donella-hornwood': 'Donella Hornwood',
   // #1467. No Italian Wikipedia entry: the Italian Game of Thrones Wiki's
   // Qhorin page keeps Stonesnake, Ebben and Dalbridge as they are, and the
   // other three book-only rangers' names stay as they are until the
