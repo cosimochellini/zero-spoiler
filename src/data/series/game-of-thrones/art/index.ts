@@ -221,6 +221,22 @@ export const DRAWINGS = {
   'osmund-kettleblack': PERSON,
   'alayaya': PERSON,
   'garlan-tyrell': PERSON,
+  // #1466: Winterfell and the Iron Islands.
+  'balon-greyjoy': PERSON,
+  'asha-greyjoy': PERSON,
+  'aeron-greyjoy': PERSON,
+  'victarion-greyjoy': PERSON,
+  'dagmer': PERSON,
+  'black-lorren': PERSON,
+  'wex-pyke': PERSON,
+  'farlen': PERSON,
+  'meera-reed': PERSON,
+  'jojen-reed': PERSON,
+  'ramsay-snow': PERSON,
+  'big-walder-frey': PERSON,
+  'little-walder-frey': PERSON,
+  'wyman-manderly': PERSON,
+  'donella-hornwood': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

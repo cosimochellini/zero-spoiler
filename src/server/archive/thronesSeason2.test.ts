@@ -186,8 +186,6 @@ const GATES = RECORDS.flatMap((record) =>
   ),
 )
 
-const byText = (a: string, b: string): number => a.localeCompare(b)
-
 function opened(id: string, view: Reader): boolean {
   const page = characterPage(id, view)
   return page !== undefined && 'detail' in page && page.detail.slot.open
@@ -202,9 +200,10 @@ function character(id: string): Entity {
 }
 
 describe('the second season’s King’s Landing cast', () => {
-  it('files exactly these records', () => {
-    expect(season2.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
-      RECORDS.map(({ id }) => id).toSorted(byText),
+  // The other cast groups add their records to the same season (#1466).
+  it('files these records', () => {
+    expect(season2.entries.map(({ id }) => id)).toStrictEqual(
+      expect.arrayContaining(RECORDS.map(({ id }) => id)),
     )
   })
 
