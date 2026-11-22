@@ -192,7 +192,10 @@ function unitsOf(entry: { source?: Unit }): Unit[] {
   return UNITS.filter((unit) => (entry.source ?? unit) === unit)
 }
 
-function pinOf(entry: { chapter: number; episode: number }, unit: Unit) {
+function pinOf(
+  entry: { chapter: number; episode: number },
+  unit: Unit,
+): number {
   return unit === 'chapter' ? entry.chapter : entry.episode
 }
 
