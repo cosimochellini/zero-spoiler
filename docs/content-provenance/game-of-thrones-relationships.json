@@ -1755,5 +1755,13 @@
     "biter": "Not reached in stage 1: the record is the books' alone (#1457) and opens at chapter 79, after A Game of Thrones (chapter 73).",
     "lommy": "Not authored in stage 1: the show record opens at episode 31, where his name is first said (#1457), and the book record at chapter 75, inside stage 2. His book-side cards belong to the stage-2 relationships child (#1481); his show-side cards wait for stage 4."
   },
-  "pending": {}
+  "pending": {
+    "daisy": "#1479",
+    "jacelyn-bywater": "#1479",
+    "hallyne": "#1479",
+    "lollys-stokeworth": "#1479",
+    "osmund-kettleblack": "#1479",
+    "alayaya": "#1479",
+    "garlan-tyrell": "#1479"
+  }
 }

@@ -3873,6 +3873,17 @@ export const season1: ThronesSaga = {
             en: 'Acting Hand of the King',
           },
         },
+        // Wounded on the Blackwater, he wakes to learn his father has come
+        // to rule as Hand: "Valar Morghulis" (episode 20) and Tyrion XV
+        // (chapter 141).
+        {
+          episode: 20,
+          chapter: 141,
+          value: {
+            it: 'Ex Primo Cavaliere in vece del padre',
+            en: 'Former acting Hand of the King',
+          },
+        },
       ],
       status: [
         { episode: 1, chapter: 5, value: 'alive' },
@@ -3959,7 +3970,24 @@ export const season1: ThronesSaga = {
         it: 'È la figlia del re e della regina, ancora bambina. Viaggia verso nord con i genitori e i fratelli.',
         en: 'She is the young daughter of the king and queen. She travels north with her parents and brothers.',
       },
-      role: { it: 'Principessa', en: 'Princess' },
+      role: [
+        {
+          episode: 1,
+          chapter: 6,
+          value: { it: 'Principessa', en: 'Princess' },
+        },
+        // Sent to Dorne to be raised by the Martells, her betrothed's house:
+        // "The Old Gods and the New" (episode 16) and Tyrion IX (chapter
+        // 115).
+        {
+          episode: 16,
+          chapter: 115,
+          value: {
+            it: 'Principessa mandata a Dorne',
+            en: 'Princess sent to Dorne',
+          },
+        },
+      ],
       status: [
         { episode: 1, chapter: 6, value: 'alive' },
         { episode: 50, chapter: 344, source: 'episode', value: 'deceased' },
@@ -4117,6 +4145,28 @@ export const season1: ThronesSaga = {
           chapter: 41,
           value: { it: 'Il mercenario di Tyrion', en: 'Tyrion’s sellsword' },
         },
+        // The show's alone: Tyrion gives him the City Watch in "The Night
+        // Lands" (episode 12) and his father takes it back in "Valar
+        // Morghulis" (episode 20). The books give the command to Jacelyn
+        // Bywater; chapters 82 and 141 only order the steps.
+        {
+          episode: 12,
+          chapter: 82,
+          source: 'episode',
+          value: {
+            it: 'Comandante della Guardia cittadina',
+            en: 'Commander of the City Watch',
+          },
+        },
+        {
+          episode: 20,
+          chapter: 141,
+          source: 'episode',
+          value: {
+            it: 'Ex comandante della Guardia cittadina',
+            en: 'Former commander of the City Watch',
+          },
+        },
       ],
       status: [{ episode: 4, chapter: 32, value: 'alive' }],
     },
@@ -4134,7 +4184,41 @@ export const season1: ThronesSaga = {
         it: 'È una giovane che segue l’accampamento dei Lannister. Bronn la trova per Tyrion e lei passa con lui la notte prima della battaglia.',
         en: 'She is a young woman who follows the Lannister camp. Bronn finds her for Tyrion, and she spends the night before the battle with him.',
       },
-      role: { it: 'Prostituta al seguito dell’esercito', en: 'Camp follower' },
+      role: [
+        {
+          episode: 9,
+          chapter: 63,
+          value: {
+            it: 'Prostituta al seguito dell’esercito',
+            en: 'Camp follower',
+          },
+        },
+        // Hidden at court as a maid, in each medium to a different lady. The
+        // show makes her Sansa's handmaiden in "What Is Dead May Never Die"
+        // (episode 13); chapter 99 only orders it.
+        {
+          episode: 13,
+          chapter: 99,
+          source: 'episode',
+          value: {
+            it: 'Ancella di Sansa Stark',
+            en: 'Sansa Stark’s handmaiden',
+          },
+        },
+        // The books place her with Lollys Stokeworth. Varys proposes it in
+        // Tyrion X (chapter 118); the pin takes Sansa V (chapter 131), where
+        // Sansa sees her with Lollys, the first chapter that surely tells it.
+        // Episode 19 only orders it.
+        {
+          episode: 19,
+          chapter: 131,
+          source: 'chapter',
+          value: {
+            it: 'Cameriera di Lollys Stokeworth',
+            en: 'Lollys Stokeworth’s maid',
+          },
+        },
+      ],
       status: [
         { episode: 9, chapter: 63, value: 'alive' },
         { episode: 40, chapter: 221, value: 'deceased' },
@@ -4183,6 +4267,12 @@ export const season1: ThronesSaga = {
       role: { it: 'Prostituta', en: 'Prostitute' },
       status: [
         { episode: 4, chapter: 25, value: 'alive' },
+        // The queen seizes her, taking her for Tyrion's lover, in "The
+        // Prince of Winterfell" (episode 18), and she is back at the brothel
+        // when Varys calls on her in "Valar Morghulis" (episode 20).
+        // Chapters 128 and 141 only order the changes.
+        { episode: 18, chapter: 128, source: 'episode', value: 'captured' },
+        { episode: 20, chapter: 141, source: 'episode', value: 'alive' },
         { episode: 26, chapter: 175, source: 'episode', value: 'deceased' },
       ],
     },
@@ -4274,7 +4364,24 @@ export const season1: ThronesSaga = {
     'petyr-baelish': {
       relationships: season1Relationships['petyr-baelish'],
       chronicle: season1Chronicles['petyr-baelish'],
-      role: { it: 'Maestro del conio', en: 'Master of coin' },
+      role: [
+        {
+          episode: 3,
+          chapter: 19,
+          value: { it: 'Maestro del conio', en: 'Master of coin' },
+        },
+        // The king rewards him with Harrenhal for the Tyrell alliance:
+        // "Valar Morghulis" (episode 20) and, unconfirmed, Sansa VIII
+        // (chapter 139), the court of rewards.
+        {
+          episode: 20,
+          chapter: 139,
+          value: {
+            it: 'Maestro del conio e lord di Harrenhal',
+            en: 'Master of coin and Lord of Harrenhal',
+          },
+        },
+      ],
       log: {
         it: 'Siede nel Concilio ristretto come maestro del conio, ed è chiamato Ditocorto. Quando Catelyn arriva in segreto ad Approdo del Re, i suoi uomini la portano da lui. Le dice che il pugnale usato contro suo figlio era suo e che lo perse in una scommessa con Tyrion Lannister, poi le offre il suo aiuto.',
         en: 'He sits on the small council as master of coin, and is called Littlefinger. When Catelyn comes to King’s Landing in secret, his men bring her to him. He tells her the dagger used against her son was his, lost in a wager to Tyrion Lannister, and offers her his help.',
@@ -4321,6 +4428,14 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 3, chapter: 21, value: 'alive' },
+        // Tyrion has him thrown in a cell for carrying his plan to the queen:
+        // "What Is Dead May Never Die" (episode 13) and Tyrion VI (chapter
+        // 99).
+        { episode: 13, chapter: 99, value: 'imprisoned' },
+        // The show frees him at the queen's demand in "Garden of Bones"
+        // (episode 14); chapter 103 only orders it. The books keep him in
+        // the cells past the stage.
+        { episode: 14, chapter: 103, source: 'episode', value: 'alive' },
         { episode: 60, chapter: 344, source: 'episode', value: 'deceased' },
       ],
       affiliation: [
@@ -4351,6 +4466,18 @@ export const season1: ThronesSaga = {
             en: 'Member of the Kingsguard',
           },
         },
+        // He leaves the battle and the white cloak: "Blackwater" (episode 19)
+        // and Sansa VII (chapter 136), where he leaves the cloak in Sansa's
+        // chamber. Tyrion XIII (133) has him refuse the sortie, not the
+        // Kingsguard (A Wiki of Ice and Fire).
+        {
+          episode: 19,
+          chapter: 136,
+          value: {
+            it: 'Disertore della Guardia Reale',
+            en: 'Deserter from the Kingsguard',
+          },
+        },
       ],
       log: {
         it: 'Arriva a Grande Inverno con il seguito del re. È un uomo enorme, al servizio del principe Joffrey.',
@@ -4373,6 +4500,11 @@ export const season1: ThronesSaga = {
           chapter: 58,
           value: { it: 'Guardia Reale', en: 'Kingsguard' },
         },
+        {
+          episode: 19,
+          chapter: 136,
+          value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
+        },
       ],
     },
     'janos-slynt': {
@@ -4394,6 +4526,13 @@ export const season1: ThronesSaga = {
             it: 'Lord di Harrenhal, comandante della Guardia cittadina',
             en: 'Lord of Harrenhal, commander of the City Watch',
           },
+        },
+        // Tyrion has him arrested and sent to the Wall: "The Night Lands"
+        // (episode 12) and Tyrion II (chapter 82).
+        {
+          episode: 12,
+          chapter: 82,
+          value: { it: 'Esiliato alla Barriera', en: 'Exiled to the Wall' },
         },
       ],
       log: {
@@ -5538,7 +5677,24 @@ export const season1: ThronesSaga = {
     'lancel-lannister': {
       relationships: season1Relationships['lancel-lannister'],
       chronicle: season1Chronicles['lancel-lannister'],
-      role: { it: 'Scudiero di re Robert', en: 'Squire to King Robert' },
+      role: [
+        {
+          episode: 3,
+          chapter: 31,
+          value: { it: 'Scudiero di re Robert', en: 'Squire to King Robert' },
+        },
+        // Knighted after the king's death, he carries the queen's orders:
+        // Tyrion asks when he was knighted in "Garden of Bones" (episode
+        // 14) and in Tyrion VII (chapter 103).
+        {
+          episode: 14,
+          chapter: 103,
+          value: {
+            it: 'Cavaliere al servizio della regina',
+            en: 'Knight in the queen’s service',
+          },
+        },
+      ],
       log: {
         it: 'È uno degli scudieri di re Robert Baratheon e lo serve da vicino. Il re lo tratta con poca pazienza.',
         en: 'He is one of King Robert Baratheon’s squires and waits on him closely. The king has little patience with him.',
@@ -5841,7 +5997,20 @@ export const season1: ThronesSaga = {
     'balon-swann': {
       relationships: season1Relationships['balon-swann'],
       chronicle: season1Chronicles['balon-swann'],
-      role: { it: 'Cavaliere', en: 'Knight' },
+      role: [
+        { episode: 4, chapter: 30, value: { it: 'Cavaliere', en: 'Knight' } },
+        // The queen names him to the Kingsguard in Preston Greenfield's
+        // place: Tyrion XI (chapter 123). Episode 18 only orders it.
+        {
+          episode: 18,
+          chapter: 123,
+          source: 'chapter',
+          value: {
+            it: 'Cavaliere della Guardia reale',
+            en: 'Knight of the Kingsguard',
+          },
+        },
+      ],
       log: {
         it: 'È un cavaliere di Casa Swann, nelle Terre della Tempesta. Partecipa alla giostra nel torneo del Primo Cavaliere ad Approdo del Re.',
         en: 'He is a knight of House Swann, in the stormlands. He rides in the joust at the Hand’s tourney in King’s Landing.',
@@ -5852,6 +6021,12 @@ export const season1: ThronesSaga = {
           episode: 4,
           chapter: 30,
           value: { it: 'Casa Swann', en: 'House Swann' },
+        },
+        {
+          episode: 18,
+          chapter: 123,
+          source: 'chapter',
+          value: { it: 'Guardia reale', en: 'Kingsguard' },
         },
       ],
     },

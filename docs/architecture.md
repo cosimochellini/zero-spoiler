@@ -279,10 +279,14 @@ show has, is `source: 'episode'`. #1006 adds the 60 recurring characters of
 Winterfell, King's Landing, the Vale and the Riverlands, bit parts left out:
 those only one medium names in the stage are `source`-only, and those the other
 medium meets in a later season or book keep that later gate. #1007 adds 16 of
-the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules. The
-series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
-own, with seven stages: Eddard's death and Ice melted, Jon's death, return and
-true name, and Daenerys's fire and death from the drawing audit (#1292), the
+the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules.
+Season 2 and _A Clash of Kings_ (#1455) file by cast group: King's Landing and
+the Blackwater (#1463) adds seven characters, one the show's alone and six the
+books', each showing a placeholder bust until its drawing child, and the stage's
+dated steps of eleven season-1 characters, kept in `season-1.ts`. The series
+opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their own,
+with seven stages: Eddard's death and Ice melted, Jon's death, return and true
+name, and Daenerys's fire and death from the drawing audit (#1292), the
 Winterfell household's are in `art/winterfell.ts` (#854), with 25 stages after
 the drawing audit (#1285), the southern cast's are in `art/south.ts` (#1051),
 with thirty-seven, sixteen of them the later looks and deaths of #1286 and
@@ -300,8 +304,9 @@ the King's Landing cast's are in `art/court.ts` (#1056), with thirteen, twelve
 of them from the drawing audit (#1289), and the Riverlands cast's are in
 `art/riverlands.ts` (#1057), with ten: six of them the deaths later seasons and
 books give (#1242), and the Blackfish's death, Jaqen's coin and Pod's axe from
-the drawing audit (#1290). Every character has its own drawing; there is no
-shared placeholder, and the drawing tests hold the series like any other. Its
+the drawing audit (#1290). Every stage-1 character has its own drawing; the
+stage-2 characters show the shared `PERSON` placeholder until their drawing
+children (#1460), and the drawing tests hold the series like any other. Its
 places are the 23 a scene of the season or the book is set in (#853) and those
 both name without visiting it (#1035: the North's five in #1248, nine of the
 Riverlands, the Westerlands and the Vale in #1249, five of the south and the
@@ -321,9 +326,10 @@ its own way, carries `source`, so it never reaches a reader of the other. Their
 notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
 series' own copy, since a story starts at an episode or a chapter. The second
 stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
-is being filed under #1455. So far `records/season-2.ts` holds only its heading
-and an empty `SEASON_2_PLACES`; a character season 1 filed takes its new dated
-steps in `records/season-1.ts`, and the demo stays at stage 1.
+is being filed under #1455. So far `records/season-2.ts` holds its heading, the
+characters filed by cast group above and an empty `SEASON_2_PLACES`; a character
+season 1 filed takes its new dated steps in `records/season-1.ts`, and the demo
+stays at stage 1.
 
 Public metadata in `src/lib/progress/series.ts` holds cookies, ranges, seasons,
 demo bounds, features and themes, without archive records. Pass the series to
@@ -528,14 +534,14 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing             | Count                                                   |
 | ----------------- | ------------------------------------------------------- |
-| Records           | 208                                                     |
-| Characters        | 148                                                     |
+| Records           | 215                                                     |
+| Characters        | 155                                                     |
 | Places            | 60                                                      |
-| Saga modules      | 1                                                       |
-| Line drawings     | 208, one per record, plus 153 redrawings of 113 records |
+| Saga modules      | 2                                                       |
+| Line drawings     | 215, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 565, for 144 characters                                 |
-| Dated timelines   | 731                                                     |
-| Affiliation steps | 170                                                     |
-| Status steps      | 259                                                     |
+| Dated timelines   | 750                                                     |
+| Affiliation steps | 179                                                     |
+| Status steps      | 270                                                     |
 
 <!-- End of the generated counts. -->
