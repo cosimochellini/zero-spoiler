@@ -83,6 +83,11 @@ const HOOD: Stroke[] = [
   { d: 'M73 33 L85 22 M74 38 L88 26 M81 39 L88 33', role: 'ambient' },
 ]
 
+/** A few open lines over a far figure's robe: it is black. */
+const FAR_ROBE_HATCH: Stroke[] = [
+  { d: 'M90 80 l14 -10 M90 118 l16 -11 M90 156 l17 -12', role: 'ambient' },
+]
+
 /**
  * A bony fish swimming left: a skull with no eyes, its spine in tint, the
  * ribs above and below and the rays of its tail.
@@ -130,17 +135,17 @@ const MACHINE_GUN_HAND: Stroke[] = [
 
 export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // Three of the hooded figures in black who ambush the applicants, the
-  // front one raising a sword with the guard in tint, the robes hatched
-  // because they are black: they burst into the room in chapter 67 and
+  // front one raising a sword with the guard in tint, each robe's far half
+  // hatched because they are black: they burst into the room in chapter 67 and
   // attack with swords in episode 39. The front figure is Tocino's own robe
   // and sword. No faces, and nothing that says who sends them.
   'eleven-black-children': [
     ...moved(
-      [...TOCINO_ROBE_OUTLINE, ...HOOD],
+      [...TOCINO_ROBE_OUTLINE, ...HOOD, ...FAR_ROBE_HATCH],
       'translate(92 66) scale(0.3) translate(-80 -100)',
     ),
     ...moved(
-      [...TOCINO_ROBE_OUTLINE, ...HOOD],
+      [...TOCINO_ROBE_OUTLINE, ...HOOD, ...FAR_ROBE_HATCH],
       'translate(120 102) scale(0.42) translate(-80 -100)',
     ),
     ...moved(
@@ -223,30 +228,26 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
     },
     ...moved(CHAIN_JAIL_HOOK, 'translate(138 146)'),
   ],
-  // A scarlet eye as a symbol in tint, over the Dowsing Chain's ball and
-  // Chain Jail's hook hanging from their rings, both bristling with open
-  // lines of aura: Kurapika's eyes turn scarlet and every type of Nen is his
-  // at full strength, episode 47 / chapter 83. Only the chains that scene
-  // shows. No hand and no face.
+  // A scarlet eye as a symbol in tint, over Chain Jail's hook hanging from
+  // its ring and bristling with open lines of aura: Kurapika's eyes turn
+  // scarlet and every type of Nen is his at full strength while Chain Jail
+  // holds Uvogin, episode 47 / chapter 83. Only the chain that scene shows.
+  // No hand and no face.
   'emperor-time': [
     {
       d: `M56 26 Q80 6 104 26 Q80 46 56 26 Z ${circle(80, 26, 7)}`,
       role: 'accent',
     },
     ...moved(
-      softened(DOWSING_CHAIN),
-      'translate(50 58) scale(0.85) translate(-80 -40)',
-    ),
-    ...moved(
       [
         ...CHAIN_RING,
         ...CHAIN_LINKS,
         ...moved(softened(CHAIN_JAIL_HOOK), 'translate(93.5 136)'),
       ],
-      'translate(108 58) scale(0.85) translate(-80 -40)',
+      'translate(74 58) scale(0.9) translate(-80 -40)',
     ),
     {
-      d: 'M30 72 l-12 -6 M26 102 h-14 M30 132 l-12 6 M134 72 l12 -6 M138 102 h14 M136 132 l12 6',
+      d: 'M56 76 l-12 -6 M52 108 h-14 M58 140 l-12 6 M108 76 l12 -6 M114 108 h14 M116 140 l12 6',
       role: 'ambient',
     },
   ],
