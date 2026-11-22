@@ -33,6 +33,9 @@ const DAENERYS = 'Daenerys Targaryen'
 /** The list's TV cast table, which names its rows only in the table. */
 const OTHERS = characters('Altri personaggi')
 
+/** Barristan Selmy's section, which also names Belwas and Arstan in its prose. */
+const SELMY = characters('Barristan Selmy')
+
 /**
  * Each character's Italian Wikipedia page, as `Page#Section` for a section.
  * @type {Record<string, string>}
@@ -82,7 +85,7 @@ export const THRONES_ITALIAN_TITLES = {
   'walder-frey': characters('Walder Frey'),
   'ros': characters('Ros'),
   'ilyn-payne': characters('Ilyn Payne'),
-  'barristan-selmy': characters('Barristan Selmy'),
+  'barristan-selmy': SELMY,
   'syrio-forel': characters('Syrio Forel'),
   'petyr-baelish': 'Petyr Baelish',
   'varys': 'Varys',
@@ -235,7 +238,9 @@ export const THRONES_ITALIAN_TITLES = {
   'drogon': DAENERYS,
   'rhaegal': DAENERYS,
   'viserion': DAENERYS,
-  'strong-belwas': characters('Barristan Selmy'),
+  'strong-belwas': SELMY,
+  // The owner's rulings of 2026-11-22: Arstan Barbabianca, named in prose.
+  'arstan-whitebeard': SELMY,
 }
 
 /**
@@ -354,4 +359,6 @@ export const THRONES_NAMES_KEPT = {
   'rhaegal': 'Rhaegal',
   'viserion': 'Viserion',
   'strong-belwas': 'Belwas il Forte',
+  // Named in the same section's prose, with no heading of his own.
+  'arstan-whitebeard': 'Arstan Barbabianca',
 }

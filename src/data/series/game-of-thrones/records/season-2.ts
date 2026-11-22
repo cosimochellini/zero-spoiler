@@ -963,13 +963,17 @@ export const season2: ThronesSaga = {
     // Daenerys to the House of the Undying, "should you grow weary of Xaro's
     // baubles". "Garden of Bones" (episode 14), where he vouches for her at
     // the gates, names him in narration only (an owner check). Books:
-    // Daenerys I (chapter 86), Jhogo brings him from Qarth with Pyat Pree
-    // and Quaithe, introduced as the merchant prince of the Thirteen.
+    // Daenerys III (chapter 114), Daenerys asks him to come with her to the
+    // Arbor, "Come with me to the Arbor, Xaro", and he answers that "Xaro
+    // Xhoan Daxos is a man of peace" (quoted on A Wiki of Ice and Fire's
+    // Xaro page). Jhogo's line bringing him from Qarth in Daenerys I
+    // (chapter 86) counts as narration (owner, 2026-11-22), and Daenerys II
+    // (chapter 101) names him in narration only.
     {
       id: 'xaro-xhoan-daxos',
       kind: 'character',
       revealedAtEpisode: 15,
-      revealedAtChapter: 86,
+      revealedAtChapter: 114,
       name: { it: 'Xaro Xhoan Daxos', en: 'Xaro Xhoan Daxos' },
       summary: {
         it: 'Un ricco principe mercante di Qarth, membro dei Tredici.',
@@ -977,32 +981,41 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'xaro-xhoan-daxos', tint: 'yellow' },
     },
-    // Books: Daenerys I (chapter 86), Jhogo brings "the great warlock Pyat
-    // Pree" from Qarth. The show has him from "Garden of Bones" (episode
-    // 14), but no synopsis or quote on the Game of Thrones Wiki has his name
-    // said: narration and the credits only, so he is the books' alone (an
-    // owner check). Episode 14 only orders him.
+    // Books: Daenerys III (chapter 114), Jorah urges Daenerys to go to Pyat
+    // Pree for help (reported speech in A Wiki of Ice and Fire's synopsis).
+    // Jhogo's line bringing "the great warlock Pyat Pree" from Qarth in
+    // Daenerys I (chapter 86) counts as narration (owner, 2026-11-22), and
+    // Daenerys II (chapter 101) names him in narration only. The show has
+    // him from "Garden of Bones" (episode 14), but no synopsis or quote on
+    // the Game of Thrones Wiki has his name said: narration and the credits
+    // only, so he is the books' alone (an owner check). Episode 14 only
+    // orders him.
     {
       id: 'pyat-pree',
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 14,
-      revealedAtChapter: 86,
+      revealedAtChapter: 114,
       name: { it: 'Pyat Pree', en: 'Pyat Pree' },
       summary: { it: 'Uno stregone di Qarth.', en: 'A warlock of Qarth.' },
       visual: { art: 'pyat-pree', tint: 'blue' },
     },
-    // Books: Daenerys I (chapter 86), Jhogo brings "Quaithe of the Shadow"
-    // from Qarth. The show has her in "The Ghost of Harrenhal" (episode 15)
-    // and "A Man Without Honor", where she tells Jorah "I am no one"; no
-    // synopsis or quote has her name said, so she is the books' alone (an
-    // owner check). Episode 15 only orders her.
+    // Books: Daenerys III (chapter 114), the safe later pin: she finds
+    // Daenerys at the firemage in the bazaar and tells her to leave Qarth.
+    // No synopsis read has her name said: Jhogo's line bringing "Quaithe of
+    // the Shadow" in Daenerys I (chapter 86) counts as narration (owner,
+    // 2026-11-22), and Daenerys II (chapter 101) has only "a shadowbinder
+    // named Quaithe". Chapter 114 is the last chapter of the stage where
+    // she speaks with Daenerys (an open point). The show has her in "The
+    // Ghost of Harrenhal" (episode 15) and "A Man Without Honor", where she
+    // tells Jorah "I am no one"; no synopsis or quote has her name said, so
+    // she is the books' alone (an owner check). Episode 15 only orders her.
     {
       id: 'quaithe',
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 15,
-      revealedAtChapter: 86,
+      revealedAtChapter: 114,
       name: { it: 'Quaithe', en: 'Quaithe' },
       summary: {
         it: 'Una donna dell’Ombra che raggiunge Daenerys da Qarth.',
@@ -1085,6 +1098,26 @@ export const season2: ThronesSaga = {
         en: 'A eunuch and former pit fighter, sent to Qarth by Magister Illyrio.',
       },
       visual: { art: 'strong-belwas', tint: 'orange' },
+    },
+    // Books only: Daenerys V (chapter 137), at the port of Qarth the old man
+    // who knocked the manticore from Daenerys's hands introduces himself
+    // as Arstan Whitebeard, Strong Belwas's squire (A Wiki of Ice and Fire,
+    // Chapter 63 and the Belwas page). Filed under the name he has in the
+    // stage (owner, 2026-11-22); the stage that reaches the books' later
+    // reveal of who he is folds this record into that character's. The
+    // show has no such character; episode 20 only orders him.
+    {
+      id: 'arstan-whitebeard',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 20,
+      revealedAtChapter: 137,
+      name: { it: 'Arstan Barbabianca', en: 'Arstan Whitebeard' },
+      summary: {
+        it: 'Un vecchio dei Sette Regni, scudiero di Belwas il Forte.',
+        en: 'An old man from the Seven Kingdoms, squire to Strong Belwas.',
+      },
+      visual: { art: 'arstan-whitebeard', tint: 'ivory' },
     },
   ],
   dossiers: {
@@ -2299,7 +2332,7 @@ export const season2: ThronesSaga = {
       role: [
         {
           episode: 15,
-          chapter: 86,
+          chapter: 114,
           value: {
             it: 'Principe mercante dei Tredici',
             en: 'Merchant prince of the Thirteen',
@@ -2325,7 +2358,7 @@ export const season2: ThronesSaga = {
         en: 'He is one of the Thirteen, the merchant princes of Qarth. He wants to see Daenerys’s dragons, and offers her the welcome of his city.',
       },
       status: [
-        { episode: 15, chapter: 86, value: 'alive' },
+        { episode: 15, chapter: 114, value: 'alive' },
         // "Valar Morghulis" (episode 20): Daenerys has him locked in his
         // empty vault with Doreah, and the Game of Thrones Wiki counts him
         // among the episode's deaths. The books keep him alive; Daenerys V
@@ -2335,7 +2368,7 @@ export const season2: ThronesSaga = {
       affiliation: [
         {
           episode: 15,
-          chapter: 86,
+          chapter: 114,
           value: { it: 'I Tredici', en: 'The Thirteen' },
         },
       ],
@@ -2343,14 +2376,16 @@ export const season2: ThronesSaga = {
     'pyat-pree': {
       role: { it: 'Stregone di Qarth', en: 'Warlock of Qarth' },
       log: {
-        it: 'Arriva da Qarth con Xaro Xhoan Daxos e Quaithe per vedere i draghi di Daenerys.',
-        en: 'He comes from Qarth with Xaro Xhoan Daxos and Quaithe to see Daenerys’s dragons.',
+        it: 'È venuto da Qarth con Xaro Xhoan Daxos e Quaithe per vedere i draghi di Daenerys. Jorah le consiglia di chiedere aiuto a lui.',
+        en: 'He came from Qarth with Xaro Xhoan Daxos and Quaithe to see Daenerys’s dragons. Jorah urges her to go to him for help.',
       },
-      status: [{ episode: 14, chapter: 86, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 14, chapter: 114, source: 'chapter', value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 14,
-          chapter: 86,
+          chapter: 114,
           source: 'chapter',
           value: { it: 'Stregoni di Qarth', en: 'Warlocks of Qarth' },
         },
@@ -2359,14 +2394,16 @@ export const season2: ThronesSaga = {
     'quaithe': {
       role: { it: 'Donna dell’Ombra', en: 'Woman of the Shadow' },
       log: {
-        it: 'Arriva da Qarth con Pyat Pree e Xaro Xhoan Daxos per vedere i draghi di Daenerys.',
-        en: 'She comes from Qarth with Pyat Pree and Xaro Xhoan Daxos to see Daenerys’s dragons.',
+        it: 'È venuta da Qarth con Pyat Pree e Xaro Xhoan Daxos per vedere i draghi di Daenerys. Le dice che tutti vorranno i draghi, e che deve lasciare presto la città e andare ad Asshai.',
+        en: 'She came from Qarth with Pyat Pree and Xaro Xhoan Daxos to see Daenerys’s dragons. She tells her that everyone will covet them, and that she must leave the city soon and go to Asshai.',
       },
-      status: [{ episode: 15, chapter: 86, source: 'chapter', value: 'alive' }],
+      status: [
+        { episode: 15, chapter: 114, source: 'chapter', value: 'alive' },
+      ],
       affiliation: [
         {
           episode: 15,
-          chapter: 86,
+          chapter: 114,
           source: 'chapter',
           value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
         },
@@ -2440,6 +2477,24 @@ export const season2: ThronesSaga = {
       log: {
         it: 'Al porto di Qarth, lui e il suo scudiero salvano Daenerys da un assassino. Dice che li manda il magistro Illyrio, per riportarla a Pentos.',
         en: 'At the port of Qarth he and his squire save Daenerys from an assassin. He says Magister Illyrio has sent them to bring her back to Pentos.',
+      },
+      status: [
+        { episode: 20, chapter: 137, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 20,
+          chapter: 137,
+          source: 'chapter',
+          value: { it: 'Al servizio di Illyrio', en: 'Illyrio’s service' },
+        },
+      ],
+    },
+    'arstan-whitebeard': {
+      role: { it: 'Scudiero di Belwas il Forte', en: 'Strong Belwas’s squire' },
+      log: {
+        it: 'Al porto di Qarth fa cadere dalle mani di Daenerys la scatola con la manticora. Dice di venire dai Sette Regni e che il magistro Illyrio ha mandato lui e Belwas a riportarla a Pentos.',
+        en: 'At the port of Qarth he knocks the box with the manticore out of Daenerys’s hands. He says he comes from the Seven Kingdoms, and that Magister Illyrio has sent him and Belwas to bring her back to Pentos.',
       },
       status: [
         { episode: 20, chapter: 137, source: 'chapter', value: 'alive' },

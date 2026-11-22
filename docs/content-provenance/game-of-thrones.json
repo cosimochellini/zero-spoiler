@@ -3209,7 +3209,7 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Alton_Lannister"
     ],
     "unverified": [
-      "Show gate 11: the Game of Thrones Wiki names him only in narration in \"The North Remembers\", \"The Night Lands\" and \"A Man Without Honor\", and its quotes never say his name. The naming line, Robb's \"You'll ride at daybreak, Ser Alton\", comes from a fan transcript (gameofthronesscripts.wordpress.com, S02E01), outside the lawful sources; \"A Man Without Honor\" has Robb and Rickard Karstark say \"Ser Alton\" in the genius.com script. Episode not viewed. Owner check: keep 11, or treat him as never named and drop the record.",
+      "Show gate 11: the Game of Thrones Wiki names him only in narration in \"The North Remembers\", \"The Night Lands\" and \"A Man Without Honor\", and its quotes never say his name. The naming line, Robb's \"You'll ride at daybreak, Ser Alton\", comes from a fan transcript (gameofthronesscripts.wordpress.com, S02E01), outside the lawful sources; \"A Man Without Honor\" has Robb and Rickard Karstark say \"Ser Alton\" in the genius.com script. Episode not viewed. Owner ruling (2026-11-22): keep the show gate at 11.",
       "Books: no such character; the Game of Thrones Wiki says Cleos Frey has his part (chapter 81 only orders him). Death: Jaime kills him in \"A Man Without Honor\" (episode 17, Fandom DeathEp), show only.",
       "Italian: Alton Lannister (Italian Wikipedia, Personaggi, \"Alton Lannister\"); the dub form is assumed."
     ]
@@ -3557,7 +3557,7 @@
     ],
     "unverified": [
       "Show gate 12: the Game of Thrones Wiki's Balon page has Balon greet her and say that Yara has only been off the Iron Islands on a ship. Book gate 98 (Theon II): Esgred turns out to be his sister Asha. Theon I (85) only mentions her. Neither the episodes nor the books were viewed; book chapters are from A Wiki of Ice and Fire's chapter summaries and character lists, read through Firecrawl, which do not say whether a name is said in speech or narration.",
-      "Name (owner check): one record under the books' name, with the show's Yara as `episodeName` at chapter 345, past the books, as Hunter x Hunter's Hagya has Leol. Robin Arryn, the only earlier renamed record, takes the show's name instead.",
+      "Name: one record under the books' name, with the show's Yara as `episodeName` at chapter 345, past the books, as Hunter x Hunter's Hagya has Leol. Robin Arryn, the only earlier renamed record, takes the show's name instead. Owner ruling (2026-11-22): acceptable as filed.",
       "Italian: Asha Greyjoy (Italian Wikipedia, Casa Greyjoy, which says the show calls her Yara Greyjoy)."
     ]
   },
@@ -3984,11 +3984,13 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Xaro_Xhoan_Daxos",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_40",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63",
+      "https://awoiaf.westeros.org/index.php/Xaro_Xhoan_Daxos"
     ],
     "unverified": [
       "Show gate 15: Pyat Pree's line \"Should you grow weary of Xaro's baubles\", quoted on the Game of Thrones Wiki's House of the Undying page (\"The Ghost of Harrenhal\"). Owner check: \"Garden of Bones\" (episode 14), where he invokes Sumai, names him in narration only; the line quoted there does not say his name.",
-      "Book gate 86: A Wiki of Ice and Fire's Chapter 12 synopsis (read through Firecrawl) has Jhogo bring him, a merchant prince of the Thirteen, with Pyat Pree and Quaithe, taken as their introduction. Chapter 27 (site 101) is where he speaks to her in Qarth.",
+      "Book gate 114 (Daenerys III, Chapter 40): Daenerys says \"Come with me to the Arbor, Xaro\" and he answers \"Xaro Xhoan Daxos is a man of peace\", both quoted on A Wiki of Ice and Fire's Xaro page (read through Firecrawl). Owner ruling (2026-11-22): Jhogo's line bringing him from Qarth in Daenerys I (Chapter 12, site 86) counts as narration, so the gate moved off 86. Chapter 27 (site 101), where he meets her at the gates of Qarth, names him in narration only in the synopsis read. Only the chapter side moved; the show gate stays at 15.",
       "Show-only steps: proclaimed King of Qarth in \"A Man Without Honor\" (episode 17), ordered at chapter 114; locked in his vault and counted among the deaths of \"Valar Morghulis\" (episode 20), ordered at chapter 137. The books keep him alive through A Clash of Kings. Neither the episodes nor the books were viewed."
     ]
   },
@@ -4004,10 +4006,12 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri_personaggi",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_40",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48",
+      "https://awoiaf.westeros.org/index.php/Pyat_Pree"
     ],
     "unverified": [
-      "Books only: A Wiki of Ice and Fire's Chapter 12 synopsis has Jhogo bring \"the great warlock Pyat Pree\" from Qarth (site chapter 86).",
+      "Books only, gate 114 (Daenerys III, Chapter 40): A Wiki of Ice and Fire's synopsis has Jorah urge Daenerys to go to Pyat Pree for help, his name in reported speech. Owner ruling (2026-11-22): Jhogo's line bringing \"the great warlock Pyat Pree\" from Qarth in Daenerys I (Chapter 12, site 86) counts as narration, so the gate moved off 86. Chapter 27 (site 101) names him in narration only, and his page quotes no line of that chapter with his name.",
       "Owner check: the show has him in episodes 14, 15, 17 and 20, but no Game of Thrones Wiki synopsis or quote has his name said, so the record is the books' alone, ordered at episode 14. If the show says his name, the record becomes both media's at that episode, and his show death at 20 follows.",
       "Italian: Pyat Pree, from Italian Wikipedia's TV cast list (\"Altri personaggi\")."
     ]
@@ -4022,10 +4026,11 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri_personaggi",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_40"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_40",
+      "https://awoiaf.westeros.org/index.php/Quaithe"
     ],
     "unverified": [
-      "Books only: A Wiki of Ice and Fire's Chapter 12 synopsis has Jhogo bring \"Quaithe of the Shadow\" from Qarth (site chapter 86); Chapter 27 calls her \"a shadowbinder named Quaithe\".",
+      "Books only, gate 114 (Daenerys III, Chapter 40), the safe later pin: she finds Daenerys at the firemage in the bazaar and tells her to leave Qarth and seek Asshai. No synopsis or quote read has her name said in speech: Chapter 27 (site 101) has only \"a shadowbinder named Quaithe\" and Daenerys admitting she does not understand her, and Chapter 40 names her in narration. Chapter 114 is the last chapter in the stage where she speaks with Daenerys. Owner ruling (2026-11-22): Jhogo's line bringing \"Quaithe of the Shadow\" in Daenerys I (Chapter 12, site 86) counts as narration, so the gate moved off 86. Open point: A Wiki of Ice and Fire's Quaithe page says she introduces herself in Chapter 12; that would be an explicit signal at 86, below the ruling's pin, so 114 stays safe, never early.",
       "Owner check: the show has her in \"The Ghost of Harrenhal\" (episode 15) and \"A Man Without Honor\" (episode 17), named in narration only, so the record is the books' alone, ordered at episode 15.",
       "Role \"Woman of the Shadow\" / \"Donna dell'Ombra\" follows \"Quaithe of the Shadow\"; the Mondadori form is not checked. Affiliation \"No allegiance\" is a placeholder: no page gives her one, and it means only that none is told by chapter 143 (owner check)."
     ]
@@ -4098,6 +4103,19 @@
     "unverified": [
       "Books only: A Wiki of Ice and Fire's Chapter 63 synopsis, has Daenerys learn that the eunuch who saved her is the pit fighter Strong Belwas, sent by Illyrio (site chapter 137). The show has no such character; episode 20 only orders him.",
       "Italian: \"Belwas il Forte\", from Italian Wikipedia (Barristan Selmy's section and the Daenerys Targaryen page); the Mondadori form is assumed to match."
+    ]
+  },
+  "arstan-whitebeard": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63",
+      "https://awoiaf.westeros.org/index.php/Belwas",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barristan_Selmy"
+    ],
+    "unverified": [
+      "Books only, gate 137 (Daenerys V, Chapter 63): A Wiki of Ice and Fire's synopsis has Daenerys learn that the old man with the staff, who knocked the manticore out of her hands, is Strong Belwas's squire Arstan Whitebeard, and its Belwas page says Arstan introduces himself and Belwas to her. No earlier chapter of the stage names him. The book was not viewed. The show has no such character; episode 20 only orders him.",
+      "Owner ruling (2026-11-22): filed as a record of his own, under the name and id he has inside the stage, with nothing in his texts that hints at who he is. Plan: when the books reveal that he is Barristan Selmy (A Storm of Swords, a later stage), the stage that reaches the reveal folds this record into Barristan's.",
+      "Italian: \"Arstan Barbabianca\", from Italian Wikipedia's prose (Barristan Selmy's section of Personaggi); the Mondadori form is assumed to match."
     ]
   }
 }
