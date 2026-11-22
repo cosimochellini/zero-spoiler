@@ -3308,9 +3308,9 @@ held to: every story below has a row, and every row below has a story.
 
 ## Cluck (`cluck`, threshold ep 137)
 
-| Entry (en title)        | Episode | Fandom page that settles it                              | Note                                                                                                                              |
-| ----------------------- | ------: | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Ballots for the Hunters |     137 | https://hunterxhunter.fandom.com/wiki/Episode_137_(2011) | Chapter 320; Episode 137 (2011). Episode-only record. Episode 137 shows the objection and distribution; chapter is ordering only. |
+| Entry (en title)        | Episode | Fandom page that settles it                              | Note                                                                                                                                                                                          |
+| ----------------------- | ------: | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ballots for the Hunters |     137 | https://hunterxhunter.fandom.com/wiki/Episode_137_(2011) | Chapter 320; Episode 137 (2011). The record opens in both media at 320 (#1443); this story alone is episode-only. Episode 137 shows the objection and distribution; chapter is ordering only. |
 
 ## Ginta (`ginta`, threshold ep 137)
 

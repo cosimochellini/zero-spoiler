@@ -432,14 +432,16 @@ with the legal page alone. Copy rules live in the
   `movedPageRedirect` in `src/lib/legacyRedirect.ts` answers with a 301 that
   keeps the query for every series with the page) draws the bodies of power. One
   Piece and Hunter x Hunter have it (`Series.features.power`). Hunter x Hunter's
-  opened before its first body was filed (owner, #1442); #1443 to #1447 file
-  them, and before the earliest one's gate the page says that nothing is open.
-  The bodies live one per module in `src/data/series/<folder>/power/`, listed in
-  the order of the page in `src/data/series/<folder>/power.ts`. Seat titles are
-  a word or two, so `scripts/archive-gate.power.mjs` looks for each module by
-  its longest hyphenated holder id of 9 or more characters, or, when it seats
-  none, by its longest English seat title of 12 or more; a module with neither
-  is refused. `descriptionCanaries` adds a second canary per module, its longest
+  opened before its first body was filed (owner, #1442), and #1443 to #1447 file
+  its bodies one by one: a reader sees a body once a seat of it is held or
+  vacant, so with no bookmark the demo's end shows the Hunter Association's
+  Chairman (#1443), and before a body opens the page says nothing is open. The
+  bodies live one per module in `src/data/series/<folder>/power/`, listed in the
+  order of the page in `src/data/series/<folder>/power.ts`. Seat titles are a
+  word or two, so `scripts/archive-gate.power.mjs` looks for each module by its
+  longest hyphenated holder id of 9 or more characters, or, when it seats none,
+  by its longest English seat title of 12 or more; a module with neither is
+  refused. `descriptionCanaries` adds a second canary per module, its longest
   quoted sentence of 60 or more characters, so every body needs a description of
   that length; `power/` is therefore left out of the prose-module test in
   `archive-gate.test.mjs`, which asks every other prose module to be an extra.
@@ -461,6 +463,15 @@ with the legal page alone. Copy rules live in the
   Follow an existing series for archive and copy wiring.
 - Client code consumes `src/lib/view` types, never archive modules. ESLint,
   payload sweeps and `gate:archive` protect this boundary; keep all three.
+- A server function's projections load with the function, never with a route.
+  `gate:archive` walks the static imports of every runtime chunk of the server
+  build except Start's server-function chunks (`?tss-serverfn-split`) and fails
+  if one reaches such a chunk, `src/server/archive/`, `serve.server.ts`,
+  `copy.server.ts` or `sources.server.ts`. It reads a chunk's modules from its
+  `//#region` lines and its source map's `sources`, because Rolldown gives some
+  modules no region of their own. So every reached chunk but Start's virtual
+  ones needs a readable map (`environments.ssr.build.sourcemap` in
+  `vite.config.ts`); a missing or unreadable one leaves the gate unusable.
 
 For verification commands and delivery rules, use
 [CONTRIBUTING.md](../CONTRIBUTING.md#checks).
@@ -499,7 +510,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Records                   | 368                                                   |
 | Characters                | 290                                                   |
 | Nen abilities             | 28                                                    |
-| Bodies of power           | 1, with 12 seats                                      |
+| Bodies of power           | 2, with 26 seats                                      |
 | Arcs, places              | 7 · 43                                                |
 | Saga modules              | 7                                                     |
 | Line drawings             | 368, one per record, plus 94 redrawings of 81 records |

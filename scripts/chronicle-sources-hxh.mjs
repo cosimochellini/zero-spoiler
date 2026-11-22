@@ -3443,7 +3443,7 @@ export const HUNTER_X_HUNTER_SOURCES = {
   'cluck': {
     '137:episode': {
       source: 'https://hunterxhunter.fandom.com/wiki/Episode_137_(2011)',
-      note: 'Chapter 320; Episode 137 (2011). Episode-only record. Episode 137 shows the objection and distribution; chapter is ordering only.',
+      note: 'Chapter 320; Episode 137 (2011). The record opens in both media at 320 (#1443); this story alone is episode-only. Episode 137 shows the objection and distribution; chapter is ordering only.',
     },
   },
   'cheadle-yorkshire': {

@@ -14,6 +14,10 @@ const stylexVite: (options?: Partial<UserOptions>) => Plugin = stylex.vite
 const config = defineConfig(({ command }) => ({
   server: { port: 3000 },
   build: { manifest: true },
+  // The Cloudflare plugin already emits the Worker's source maps by default;
+  // asked for here because gate:archive reads each server chunk's modules from
+  // its map (scripts/archive-server-gate.mjs) and fails without one.
+  environments: { ssr: { build: { sourcemap: true } } },
   resolve: {
     // Native Vite 8 option (ResolveOptions.tsconfigPaths).
     // vite-tsconfig-paths is not needed.
