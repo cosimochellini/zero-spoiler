@@ -3147,7 +3147,8 @@
     ],
     "unverified": [
       "Show gate 11: Jaime's line \"Stannis is the rightful King\" is quoted on the episode page. Book gate 74: the prologue summary has Selyse say that Renly's army would join Stannis if Renly died. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
-      "nameSaidAt 7: season 1's Tomard and Kevan Lannister texts name him at episode 7, where Eddard sends him a letter (\"You Win or You Die\"); the episode was not viewed."
+      "nameSaidAt 7: season 1's Tomard and Kevan Lannister texts name him at episode 7, where Eddard sends him a letter (\"You Win or You Die\"); the episode was not viewed.",
+      "Owner check (#1464 review): the prologue's synopsis on A Wiki of Ice and Fire has his name in narration only; the chapter is his first in the books, so the gate stays 74."
     ]
   },
   "melisandre": {
@@ -3194,7 +3195,8 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
-      "Owner check, show gate 11: narration names him (\"Maester Cressen is outraged\"); no quote has his name said. Book gate 74: Stannis hands Cressen's duties to Pylos (prologue summary). Opens deceased in both media, as Will does. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool."
+      "Owner check, show gate 11: narration names him (\"Maester Cressen is outraged\"); no quote has his name said. Book gate 74: Stannis hands Cressen's duties to Pylos (prologue summary). Opens deceased in both media, as Will does. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Owner check (#1464 review): the prologue, his own chapter, has his name in narration only in A Wiki of Ice and Fire's synopsis; he dies in it, so there is no later chapter to move to."
     ]
   },
   "matthos-seaworth": {

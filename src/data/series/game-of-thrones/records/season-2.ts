@@ -571,8 +571,8 @@ export const season2: ThronesSaga = {
     'matthos-seaworth': {
       role: { it: 'Figlio di Davos Seaworth', en: 'Son of Davos Seaworth' },
       log: {
-        it: 'Serve re Stannis accanto al padre, Davos Seaworth.',
-        en: 'He serves King Stannis alongside his father, Davos Seaworth.',
+        it: 'Figlio di Davos Seaworth, al servizio di re Stannis.',
+        en: 'The son of Davos Seaworth, in King Stannis’s service.',
       },
       status: [
         { episode: 11, chapter: 132, value: 'alive' },
