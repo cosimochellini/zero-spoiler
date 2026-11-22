@@ -1533,8 +1533,8 @@ export const YORKNEW_CITY_PLACES: Record<
     region: 'mainland',
     arc: 'yorknew-city-arc',
     landmark: {
-      it: 'L’ingresso della casa d’aste',
-      en: 'The auction house’s entrance',
+      it: 'Il catalogo della casa d’aste',
+      en: 'The auction house’s catalogue',
     },
     log: {
       it: 'Qui verrà messo all’asta il gioco della scheda di memoria di Ging. Per raccogliere i soldi, Gon usa la sua licenza Hunter.',
