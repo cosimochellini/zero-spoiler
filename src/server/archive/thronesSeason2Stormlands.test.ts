@@ -84,6 +84,13 @@ const STEPS: {
   },
   {
     id: 'brienne-of-tarth',
+    en: 'Former guard of King Renly',
+    episode: 15,
+    chapter: 107,
+    source: 'chapter',
+  },
+  {
+    id: 'brienne-of-tarth',
     en: 'Sworn sword of Catelyn Stark',
     episode: 15,
     chapter: 113,

@@ -193,21 +193,25 @@ order them.
 - Shireen: role princess, daughter of Stannis Baratheon.
 - Brienne: role guard of King Renly at the gate; sworn sword of Catelyn Stark at
   15 / 113 ("The Ghost of Harrenhal"; Catelyn V, where Catelyn takes her as her
-  sworn sword). Catelyn IV (107) has her flee with Catelyn but swear nothing.
-  Italian "Brienne di Tarth".
-- Margaery: role queen, wife of King Renly; betrothed to King Joffrey at 20 /
-  139 ("Valar Morghulis"; Sansa VIII, where Garlan asks it of the king).
+  sworn sword). Catelyn IV (107) has her flee with Catelyn but swear nothing:
+  former guard of King Renly there, books only (episode 15 orders it). Italian
+  "Brienne di Tarth".
+- Margaery: role queen, wife of King Renly; widow of King Renly at 15 / 107
+  ("The Ghost of Harrenhal"; Catelyn IV, Renly's death); betrothed to King
+  Joffrey at 20 / 139 ("Valar Morghulis"; Sansa VIII, where Garlan asks it of
+  the king).
 - Mace: role Lord of Highgarden, House Tyrell. His seat on the small council
   (Sansa VIII) is not filed: the show gives it later.
-- Cortnay Penrose: role castellan of Storm's End, held for Renly; `deceased` at
-  118, books only (Tyrion X, which A Wiki of Ice and Fire cites for his death;
-  episode 16 orders it). Italian kept as "Cortnay Penrose".
+- Cortnay Penrose: role castellan of Storm's End, held after Renly's death;
+  `deceased` at 118, books only (Tyrion X, which A Wiki of Ice and Fire cites
+  for his death; episode 16 orders it). Italian kept as "Cortnay Penrose".
 
 ### Stage-1 records stepped
 
 - Loras Tyrell: role guard of King Renly, 13 / 96 ("What Is Dead May Never Die";
-  Catelyn II); knight of the Kingsguard, books only, 139 (Sansa VIII). The
-  show's "Valar Morghulis" has him at court but in no guard.
+  Catelyn II); former guard of King Renly, 15 / 107 ("The Ghost of Harrenhal";
+  Catelyn IV, Renly's death); knight of the Kingsguard, books only, 139 (Sansa
+  VIII). The show's "Valar Morghulis" has him at court but in no guard.
 
 Not stepped: Renly (claimant since season 1; his death is already filed at 15 /
 107), Catelyn (her embassy changes no field), Robar Royce (the show's Ser Robar

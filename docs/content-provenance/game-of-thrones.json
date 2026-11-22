@@ -902,11 +902,14 @@
       "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
       "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33"
     ],
     "unverified": [
       "Death (#1287): \"The Winds of Winter\" (episode 60, GOT610), show only; episode not viewed.",
-      "Stage-2 role steps (#1464): one of Renly's guard at 13 / 96 (\"What Is Dead May Never Die\"; Catelyn II); named to the Kingsguard at Sansa VIII (139), books only, from A Wiki of Ice and Fire's summary. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool."
+      "Stage-2 role steps (#1464): one of Renly's guard at 13 / 96 (\"What Is Dead May Never Die\"; Catelyn II); named to the Kingsguard at Sansa VIII (139), books only, from A Wiki of Ice and Fire's summary. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Former guard of King Renly at 15 / 107 (#1464 review): Renly is killed in \"The Ghost of Harrenhal\" (episode 15) and Catelyn IV (A Clash of Kings 33, site 107)."
     ]
   },
   "daenerys-targaryen": {
@@ -3272,7 +3275,8 @@
       "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
     ],
     "unverified": [
-      "Show gate 13: she tells Catelyn to call her just \"Brienne\" (Brienne page). Book gate 96 (Catelyn II): Colen tells Catelyn the champion is Brienne of Tarth. Sworn sword of Catelyn: episode 15 (she swears fealty) and Catelyn V (113), where Catelyn takes her as her sworn sword. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool."
+      "Show gate 13: she tells Catelyn to call her just \"Brienne\" (Brienne page). Book gate 96 (Catelyn II): Colen tells Catelyn the champion is Brienne of Tarth. Sworn sword of Catelyn: episode 15 (she swears fealty) and Catelyn V (113), where Catelyn takes her as her sworn sword. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Former guard of King Renly at 107, books only (#1464 review): Catelyn IV has her flee with Catelyn after Renly's death without swearing yet; the show's oath falls in the same episode, 15."
     ]
   },
   "margaery-tyrell": {
@@ -3284,10 +3288,13 @@
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
       "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
       "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
-      "https://it.wikipedia.org/wiki/Casa_Tyrell#Margaery_Tyrell"
+      "https://it.wikipedia.org/wiki/Casa_Tyrell#Margaery_Tyrell",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33"
     ],
     "unverified": [
-      "Gate 13 / 96: Renly introduces her to Catelyn (\"What Is Dead May Never Die\"; Catelyn II). Betrothal 20 / 139: Joffrey agrees to wed her in \"Valar Morghulis\"; Sansa VIII has Garlan ask it, and that the king agrees in the same chapter is taken from the summary. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool."
+      "Gate 13 / 96: Renly introduces her to Catelyn (\"What Is Dead May Never Die\"; Catelyn II). Betrothal 20 / 139: Joffrey agrees to wed her in \"Valar Morghulis\"; Sansa VIII has Garlan ask it, and that the king agrees in the same chapter is taken from the summary. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Widow of King Renly at 15 / 107 (#1464 review): Renly is killed in \"The Ghost of Harrenhal\" (episode 15) and Catelyn IV (A Clash of Kings 33, site 107)."
     ]
   },
   "mace-tyrell": {

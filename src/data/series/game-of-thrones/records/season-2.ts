@@ -650,6 +650,18 @@ export const season2: ThronesSaga = {
           chapter: 96,
           value: { it: 'Guardia di re Renly', en: 'Guard of King Renly' },
         },
+        // Books only: Renly is killed in Catelyn IV (chapter 107), and she
+        // flees with Catelyn without swearing anything yet. The show has her
+        // swear in the same episode, 15, which only orders this step.
+        {
+          episode: 15,
+          chapter: 107,
+          source: 'chapter',
+          value: {
+            it: 'Ex guardia di re Renly',
+            en: 'Former guard of King Renly',
+          },
+        },
         // After Renly's death she swears herself to Catelyn: "The Ghost of
         // Harrenhal" (episode 15), and Catelyn V (chapter 113), where
         // Catelyn takes her as her sworn sword.
