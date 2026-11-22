@@ -12,6 +12,11 @@ import {
   FROM_BEHIND,
   FROM_BEHIND_BODY,
   SKULL,
+  TURNED_BACK,
+  TURNED_BODY,
+  TURNED_COLLAR,
+  TURNED_EAR,
+  TURNED_SKULL,
 } from './kakin-phase-2'
 
 /**
@@ -19,7 +24,7 @@ import {
  * the sleeves down to the hem, the far side hatched. Each record draws its
  * own collar and fastening over it.
  */
-export const TOP: Stroke[] = [
+const TOP: Stroke[] = [
   {
     d: 'M42 62 Q56 52 66 50 M94 50 Q104 52 118 62 C130 76 134 104 134 150 H120 L116 100 M42 62 C30 76 26 104 26 150 H40 L44 100',
   },
@@ -53,18 +58,29 @@ const TRACKSUIT: Stroke[] = [
 ]
 
 /**
- * Fukataki's hair pulled back into a bun at the back of her head, held in
- * a hairnet with the pin through it in tint.
+ * Fukataki's head from behind and a little to her left: the hair pulled
+ * back into a bun at the back of her head, the bun held in a hairnet and
+ * the pin through it in tint, over the collar of her maid's black dress,
+ * hatched.
  */
-const FUKATAKI_HEAD: Stroke[] = [
-  { d: SKULL },
-  { d: 'M66 64 C72 70 74 76 74 80 M94 64 C88 70 86 76 86 80', role: 'soft' },
-  { d: circle(80, 90, 15) },
+const FUKATAKI: Stroke[] = [
+  { d: TURNED_SKULL },
   {
-    d: 'M68 82 L92 98 M66 92 L84 104 M74 78 L94 90 M92 82 L68 98 M94 92 L76 104 M86 78 L66 90',
+    d: 'M56 62 C64 70 68 76 70 82 M78 47 C78 58 78 66 79 73 M104 64 C100 70 98 74 97 79',
     role: 'soft',
   },
-  { d: `M58 80 L102 100 ${circle(56, 79, 3)}`, role: 'accent' },
+  { d: circle(84, 88, 15) },
+  {
+    d: 'M84 73 L98.8 85.4 M75.9 75.4 L97.9 93.8 M71.1 80.4 L93.7 99.4 M69 87.8 L86.8 102.7 M69.2 85.4 L84 73 M70.1 93.8 L92.1 75.4 M74.3 99.4 L96.9 80.4 M81.2 102.7 L99 87.8',
+    role: 'soft',
+  },
+  { d: `M64 78 L108 100 ${circle(60.6, 76.3, 3.5)}`, role: 'accent' },
+  { d: TURNED_EAR },
+  { d: TURNED_COLLAR },
+  {
+    d: 'M24 168 l10 -8 M30 178 l12 -9 M36 150 l10 -8 M108 136 l8 -6 M110 160 l8 -6',
+    role: 'ambient',
+  },
 ]
 
 /**
@@ -105,38 +121,50 @@ const FLOOR: Stroke[] = [
 ]
 
 export const KAKIN_PHASE_4_DRAWINGS = {
-  // Tajao's head from behind: the curtain haircut parted in the middle, its
-  // dyed hair in tint, and the shorter dark hair of his nape, its natural
-  // colour, hatched: the Cha-R vice boss, chapter 384.
+  // Tajao's head from behind and a little to his left: the curtain
+  // haircut parted in the middle, its dyed lengths in tint, and below them
+  // the shorter hair of his nape in its natural dark colour, hatched: the
+  // Cha-R vice boss, chapter 384.
   'tajao': [
-    { d: 'M54 98 C50 66 62 50 80 50 C98 50 110 66 106 98', role: 'accent' },
     {
-      d: 'M80 50 V62 M68 56 C62 70 60 84 60 96 M92 56 C98 70 100 84 100 96',
-      role: 'soft',
-    },
-    { d: 'M60 98 Q80 104 100 98 L98 110 Q80 116 62 110 Z' },
-    { d: 'M66 110 l6 -8 M76 112 l6 -8 M86 112 l6 -8', role: 'ambient' },
-    ...FROM_BEHIND,
-  ],
-
-  // Famule's short permed hair from behind, its curly outline in tint, over
-  // the collar of his black suit: one of Queen Duazul's guards, chapter 389.
-  'famule': [
-    {
-      d: 'M58 104 q-8 -6 -4 -12 q-6 -6 0 -12 q-4 -8 4 -12 q0 -8 8 -8 q4 -6 14 -4 q8 -4 12 2 q8 0 8 8 q8 4 4 12 q6 6 0 12 q4 6 -4 12',
+      d: 'M50 98 C42 64 58 44 80 44 C104 44 114 64 108 100 C96 94 88 94 80 97 C70 94 60 94 50 98 Z',
       role: 'accent',
     },
     {
-      d: 'M66 70 q4 -4 8 0 M84 66 q4 -4 8 0 M62 86 q4 -4 8 0 M78 82 q4 -4 8 0 M92 86 q4 -4 8 0 M70 98 q4 -4 8 0 M86 98 q4 -4 8 0',
+      d: 'M82 44 C78 52 78 58 80 64 M66 50 C58 64 56 80 58 94 M80 64 C76 74 74 86 74 95 M96 52 C102 66 104 82 102 96',
       role: 'soft',
     },
-    ...FROM_BEHIND,
+    { d: 'M56 97 L58 108 Q80 116 99 110 L102 97' },
+    {
+      d: 'M62 106 l6 -8 M72 110 l6 -9 M82 110 l6 -9 M92 108 l6 -8',
+      role: 'ambient',
+    },
+    ...TURNED_BODY,
+  ],
+
+  // Famule's short permed hair from behind and a little to his left, its
+  // curly outline in tint, the far side of the curls hatched, over the
+  // collar of his black suit: one of Queen Duazul's guards, first seen in
+  // chapter 386 (named in 389).
+  'famule': [
+    {
+      d: 'M50 100 Q45.3 92.4 48.6 84.2 Q45.4 77.1 50.2 70.9 Q48.6 64.1 54.5 60.2 Q54.8 53.8 61.1 52.4 Q63.5 46.5 69.7 47.6 Q74.2 42.9 80 46 Q85.6 42.9 90 47.6 Q96 46.6 97.9 52.4 Q104 54 103.8 60.2 Q109.4 64.3 107.4 70.9 Q112.1 77.1 108.8 84.2 Q112.4 92.3 108 100',
+      role: 'accent',
+    },
+    {
+      d: 'M58 66 q4 -4 8 0 M74 58 q4 -4 8 0 M62 82 q4 -4 8 0 M78 74 q4 -4 8 0 M66 96 q4 -4 8 0 M80 90 q4 -4 8 0',
+      role: 'soft',
+    },
+    { d: 'M96 66 l7 -5 M98 80 l7 -5 M96 94 l8 -6', role: 'ambient' },
+    { d: 'M50 100 Q78 108 108 100', role: 'soft' },
+    { d: TURNED_COLLAR, role: 'soft' },
+    ...TURNED_BODY,
   ],
 
   // Fukataki's hair pulled back into a bun at the back of her head, the bun
-  // held in a hairnet and the pin through it in tint, over the black
-  // dress of her maid's uniform: Camilla's majordomo, chapter 389.
-  'fukataki': [...FUKATAKI_HEAD, ...FROM_BEHIND],
+  // held in a hairnet and the pin through it in tint, over the black dress
+  // of her maid's uniform: Camilla's majordomo, chapter 389.
+  'fukataki': [...FUKATAKI, ...TURNED_BODY],
 
   // The curse a Have-Not like Taler carries out: an object connected to the
   // target, drawn as a photograph face down, its back's border in tint,
@@ -706,10 +734,7 @@ export const kakinPhaseFourRedrawn: Redrawings = {
       episode: 148,
       chapter: 416,
       source: 'chapter',
-      value: [
-        ...moved([...FUKATAKI_HEAD, ...FROM_BEHIND_BODY], FALLEN),
-        ...FLOOR,
-      ],
+      value: [...moved([...FUKATAKI, ...TURNED_BACK], FALLEN), ...FLOOR],
     },
   ],
   'sarasa': [
