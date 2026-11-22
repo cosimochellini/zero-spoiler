@@ -18,11 +18,15 @@ export interface ThronesEntity extends Entity {
  */
 export interface ThronesVocabulary extends Vocabulary {
   form:
+    | 'bay'
     | 'camp'
     | 'castle'
     | 'city'
+    | 'coast'
+    | 'desert'
     | 'forest'
     | 'fortress'
+    | 'hill'
     | 'inn'
     | 'island'
     | 'lake'
@@ -32,6 +36,7 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'mountains'
     | 'open-sea'
     | 'order'
+    | 'pass'
     | 'peninsula'
     | 'plain'
     | 'river'
@@ -49,6 +54,7 @@ export interface ThronesVocabulary extends Vocabulary {
     | 'the-reach'
     | 'the-riverlands'
     | 'the-seas'
+    | 'the-stormlands'
     | 'the-vale'
     | 'the-westerlands'
 }

@@ -7710,7 +7710,24 @@ export const SEASON_1_PLACES: Record<
       it: 'È la sede della Casa Greyjoy. Quando i Greyjoy si ribellarono, l’esercito del re lo assediò e ne prese le mura.',
       en: 'It is the seat of House Greyjoy. When the Greyjoys rebelled, the king’s army besieged it and took its walls.',
     },
-    filedHere: [],
+    // Season 2 visits it (#1469): "The Night Lands" and Theon I (site
+    // chapter 85), Theon comes home.
+    filedHere: [
+      'balon-greyjoy',
+      'asha-greyjoy',
+      'victarion-greyjoy',
+      'wex-pyke',
+    ],
+    visits: [
+      {
+        episode: 12,
+        chapter: 85,
+        value: {
+          it: 'Theon Greyjoy torna a casa dopo anni di lontananza, e suo padre lo accoglie con freddezza.',
+          en: 'Theon Greyjoy comes home after years away, and his father receives him coldly.',
+        },
+      },
+    ],
   },
   'white-harbor': {
     form: 'city',
@@ -7775,7 +7792,19 @@ export const SEASON_1_PLACES: Record<
       it: 'È la sede di Casa Whent, nelle Terre dei Fiumi. I suoi cavalieri portano il pipistrello nero del suo stemma.',
       en: 'It is the seat of House Whent, in the Riverlands. Its knights wear the black bat of its arms.',
     },
-    filedHere: [],
+    // Season 2 visits it (#1469): "Garden of Bones" and Arya VI (site
+    // chapter 100), the captives brought to the castle.
+    filedHere: ['tickler', 'chiswyck', 'weese', 'vargo-hoat'],
+    visits: [
+      {
+        episode: 14,
+        chapter: 100,
+        value: {
+          it: 'Soldati Lannister portano nel castello mezzo in rovina i prigionieri presi nelle Terre dei Fiumi, tra cui Arya, Gendry e Frittella. Ogni giorno uno dei prigionieri viene torturato per avere informazioni.',
+          en: 'Lannister soldiers bring captives from the Riverlands to the half-ruined castle, Arya, Gendry and Hot Pie among them. Every day one of the prisoners is tortured for information.',
+        },
+      },
+    ],
   },
   'the-fingers': {
     form: 'peninsula',
@@ -7854,6 +7883,20 @@ export const SEASON_1_PLACES: Record<
       en: 'It is a great lake in the Riverlands.',
     },
     filedHere: [],
+    // A Clash of Kings visits it (#1469): Arya IV (site chapter 88), Yoren's
+    // band in an abandoned town on its southern shore. The show's holdfast
+    // in episode 13 is not tied to the lake; episode 13 orders the visit.
+    visits: [
+      {
+        episode: 13,
+        chapter: 88,
+        source: 'chapter',
+        value: {
+          it: 'Il gruppo di reclute per i Guardiani della Notte guidato da Yoren si ripara in un villaggio abbandonato sulla riva meridionale del lago. Lì vengono attaccati da soldati Lannister.',
+          en: 'Yoren’s band of recruits for the Night’s Watch shelters in an empty town on the lake’s southern shore. Lannister soldiers attack them there.',
+        },
+      },
+    ],
   },
   'asshai': {
     form: 'city',
@@ -7955,7 +7998,26 @@ export const SEASON_1_PLACES: Record<
       it: 'È una città lontana, a oriente. Un suo mercante racconta che i draghi vennero dalla luna.',
       en: 'It is a far city, to the east. One of its traders tells that dragons came from the moon.',
     },
-    filedHere: [],
+    // Season 2 visits it (#1469): "Garden of Bones" and Daenerys II (site
+    // chapter 101), Daenerys let into the city.
+    filedHere: [
+      'xaro-xhoan-daxos',
+      'pyat-pree',
+      'quaithe',
+      'malakho',
+      'strong-belwas',
+      'arstan-whitebeard',
+    ],
+    visits: [
+      {
+        episode: 14,
+        chapter: 101,
+        value: {
+          it: 'Daenerys raggiunge la città alla fine della traversata del deserto, e viene fatta entrare.',
+          en: 'Daenerys reaches the city at the end of her crossing of the desert, and is let in.',
+        },
+      },
+    ],
   },
   'mother-of-mountains': {
     form: 'mountain',
@@ -8020,7 +8082,28 @@ export const SEASON_1_PLACES: Record<
       it: 'È un castello su un’isola nel mare, a est della capitale.',
       en: 'It is a castle on an island in the sea, east of the capital.',
     },
-    filedHere: [],
+    // Season 2 visits it (#1469): "The North Remembers" and the prologue of
+    // A Clash of Kings (site chapter 74) open on Stannis's court.
+    filedHere: [
+      'stannis-baratheon',
+      'melisandre',
+      'davos-seaworth',
+      'cressen',
+      'matthos-seaworth',
+      'salladhor-saan',
+      'selyse-baratheon',
+      'shireen-baratheon',
+    ],
+    visits: [
+      {
+        episode: 11,
+        chapter: 74,
+        value: {
+          it: 'Stannis Baratheon tiene qui la sua corte e rivendica il trono del fratello morto. Il suo vecchio maestro muore cercando di avvelenare la sacerdotessa rossa al fianco di Stannis.',
+          en: 'Stannis Baratheon holds court here and claims his dead brother’s throne. His old maester dies trying to poison the red priestess at Stannis’s side.',
+        },
+      },
+    ],
   },
   'the-arbor': {
     form: 'island',
