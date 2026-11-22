@@ -286,8 +286,8 @@ export const HEAVENS_ARENA_PLACES: Record<
     region: 'mainland',
     arc: 'heavens-arena-arc',
     landmark: {
-      it: 'La grande sala dei sedici ring dove combattono i nuovi iscritti',
-      en: 'The great hall of sixteen platforms where newcomers fight',
+      it: 'Il ring del 200º piano, lastricato di pietra',
+      en: 'The stone-tiled ring of the 200th floor',
     },
     log: {
       it: 'Gon e Killua si mettono nella lunga fila di chi aspetta di combattere: per entrare basta battere un avversario, e più si sale di piano più si guadagna. I nuovi iscritti combattono su sedici piccoli ring in un’unica grande sala. Killua c’è già stato: suo padre ce lo ha lasciato a sei anni senza soldi, e gli ci sono voluti due anni per arrivare al 200º piano.',
