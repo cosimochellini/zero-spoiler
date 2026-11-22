@@ -4,15 +4,11 @@ import { factionsOf } from '~/data/series/one-piece/dated'
 import type { Entity } from '~/data/types'
 import type { Bookmark } from '~/lib/progress/episode'
 import type { Faction } from '~/lib/view/records'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 import { readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'one-piece')
-if (series === undefined) {
-  throw new Error('The affiliation tests need the filed One Piece archive')
-}
-const { archive } = series
+const { archive } = loadedSeries('one-piece')
 
 const UNITS = ['episode', 'chapter'] as const
 

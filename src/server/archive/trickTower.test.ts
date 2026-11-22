@@ -1,10 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
 import { HUNTER_X_HUNTER_ARCHIVE as archive } from '~/data/series/hunter-x-hunter/archive'
-import type { Entity } from '~/data/types'
-import type { Bookmark } from '~/lib/progress/episode'
 import { leaksOf } from '~/test/fog'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as at, gateCases, recordIn } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import {
   characterPage,
@@ -17,11 +16,7 @@ import { placesPage } from './places.server'
 import { factsOf } from './project.server'
 import { readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Hunter x Hunter is not filed')
-}
-const scan = leaksOf(series)
+const scan = leaksOf(loadedSeries('hunter-x-hunter'))
 
 const NAMED = [
   { id: 'trick-tower', episode: 8, chapter: 14, kind: 'place' },
@@ -33,36 +28,16 @@ const NAMED = [
   { id: 'johness', episode: 11, chapter: 21, kind: 'character' },
 ] as const
 
-const CASES = NAMED.flatMap((entry) =>
-  (['en', 'it'] as const).flatMap((locale) =>
-    (['episode', 'chapter'] as const).map((mode) => ({
-      ...entry,
-      locale,
-      mode,
-    })),
-  ),
-)
-
-function at(mode: 'chapter' | 'episode', count: number): Bookmark {
-  return mode === 'episode' ?
-      { mode, episode: count }
-    : { mode, chapter: count }
-}
-
-function characterOf(id: string): Entity {
-  const character = archive.getCharacter(id)
-  if (character === undefined) {
-    throw new Error(`${id} is not filed`)
-  }
-  return character
-}
+const CASES = gateCases([...NAMED], archive.series).map((entry) => ({
+  ...entry,
+  mode: entry.unit,
+}))
 
 describe('the named characters and place of Trick Tower', () => {
   it.each(CASES)('opens $id at its named $mode scene ($locale)', (entry) => {
-    const threshold = entry[entry.mode]
-    const before = at(entry.mode, threshold - 1)
+    const { before } = entry
     const hidden = readerFor(archive, before, entry.locale)
-    const reached = readerFor(archive, at(entry.mode, threshold), entry.locale)
+    const reached = readerFor(archive, entry.reached, entry.locale)
     const page = entry.kind === 'place' ? placePage : characterPage
 
     expect(page(entry.id, hidden)).toMatchObject({
@@ -138,7 +113,7 @@ describe('the named characters and place of Trick Tower', () => {
   it.each(['episode', 'chapter'] as const)(
     'dates Killua’s family disclosure in %s',
     (mode) => {
-      const character = characterOf('killua')
+      const character = recordIn(archive, 'killua')
       const threshold = mode === 'episode' ? 7 : 13
       const before = factsOf(
         character,
@@ -156,7 +131,7 @@ describe('the named characters and place of Trick Tower', () => {
 
   it('files the deaths at the records’ own opening scenes', () => {
     for (const id of ['johness', 'togari']) {
-      const character = characterOf(id)
+      const character = recordIn(archive, id)
       const atOpening = readerFor(
         archive,
         at('episode', character.revealedAtEpisode),

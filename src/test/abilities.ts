@@ -6,7 +6,7 @@ import type { Entity, SeriesArchive, Timeline } from '~/data/types'
 import type { Bookmark } from '~/lib/progress/episode'
 import { HUNTER_X_HUNTER_SERIES } from '~/lib/progress/series'
 import type { Stroke } from '~/lib/view/records'
-import { LOADED_SERIES, type LoadedSeries } from '~/test/series'
+import { type LoadedSeries, loadedSeries } from '~/test/series'
 
 /**
  * Hunter x Hunter with two synthetic abilities for testing typed and untyped
@@ -116,10 +116,7 @@ export const ABILITY_ARCHIVE: SeriesArchive = {
   leads: {},
 }
 
-const hunter = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (hunter === undefined) {
-  throw new Error('Hunter x Hunter is not registered')
-}
+const hunter = loadedSeries('hunter-x-hunter')
 
 /** The fixture as the leak scan reads a series (`leaksOf`). */
 export const ABILITY_LOADED: LoadedSeries = {

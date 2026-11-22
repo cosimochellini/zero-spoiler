@@ -9,7 +9,7 @@ import { relationshipsPage } from '~/server/archive/pages.server'
 import { readerFor } from '~/server/archive/reader.server'
 import { opRelationshipsPage } from '~/test/archive'
 import { ep, renderWithProviders } from '~/test/providers'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 import { RelationshipBand } from './-$id.relationships'
 
@@ -411,14 +411,12 @@ describe.each(['en', 'it'] as const)(
 describe.each(['en', 'it'] as const)(
   'Hunter x Hunter authored cards in %s',
   (locale) => {
-    const hunter = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
+    const hunter = loadedSeries('hunter-x-hunter')
     const page = (bookmark: Bookmark): RelationshipView[] =>
-      hunter === undefined ?
-        []
-      : relationshipsPage(
-          'gon-freecss',
-          readerFor(hunter.archive, bookmark, locale),
-        )
+      relationshipsPage(
+        'gon-freecss',
+        readerFor(hunter.archive, bookmark, locale),
+      )
 
     it('opens Gon’s father only with his record and dates its history', () => {
       const path = `/hunter-x-hunter/${locale}`

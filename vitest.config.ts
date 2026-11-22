@@ -2,7 +2,7 @@ import stylex, { type UserOptions } from '@stylexjs/unplugin'
 import viteReact from '@vitejs/plugin-react'
 import path from 'node:path'
 import type { Plugin } from 'vite'
-import { defineConfig } from 'vitest/config'
+import { configDefaults, defineConfig } from 'vitest/config'
 
 // NOTE: this config intentionally does NOT include tanstackStart().
 // That plugin unconditionally sets `optimizeDeps.include` for react and
@@ -64,6 +64,15 @@ const config = defineConfig({
     // program. They still need tests, so the glob covers them too.
     include: ['src/**/*.{test,spec}.{ts,tsx}', 'scripts/**/*.{test,spec}.mjs'],
     restoreMocks: true,
+    // `vitest run --changed`, the pre-push test job, follows imports, so a
+    // change that reaches every test without being imported would select
+    // none. Vitest's defaults cover package.json and this file; the lockfile
+    // and tsconfig.json (whose `paths` resolve `~/`) join them.
+    forceRerunTriggers: [
+      ...configDefaults.forceRerunTriggers,
+      '**/package-lock.json',
+      '**/tsconfig.json',
+    ],
     coverage: {
       provider: 'v8',
       // `json` writes coverage-final.json, which the fallow gate reads for

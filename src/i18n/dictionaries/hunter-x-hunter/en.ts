@@ -2,7 +2,8 @@ import type { OwnCopy } from '~/i18n/types'
 
 /**
  * Hunter x Hunter's own copy, in English: the keys every series words for
- * itself (`CommonKey`), and none of One Piece's features. It stays on the
+ * itself (`CommonKey`), its own features and the ranks page, which it
+ * shares with One Piece in the same words. It stays on the
  * server and reaches a reader with Hunter x Hunter's pages only. Its sources
  * are the English Hunter x Hunter Wiki and Italian Wikipedia (#725).
  */
@@ -52,6 +53,22 @@ export const hunterXHunterEn = {
   'abilities.allOpen': 'No ability is under fog.',
   'abilities.moreUsers': 'and {count} more characters who use it',
   'abilities.moreUsersOne': 'and 1 more character who uses it',
+  // The ranks page (#1441), worded as One Piece's. No group's name is here:
+  // they are in `./groups`, sent with their bodies only.
+  'nav.ranks': 'Ranks',
+  'character.ranks': 'Ranks',
+  'ranks.title': 'Ranks of the world',
+  'ranks.lede':
+    'The ranks of each group you have reached, and who holds them at your bookmark.',
+  'ranks.pageTitle': 'Ranks of the world | {series} | Zero Spoiler',
+  'ranks.pageDescription':
+    'Who holds each rank in the Hunter x Hunter world, each holder hidden until the chapter or episode that names them.',
+  'ranks.none': 'Nothing on this page is open at your bookmark.',
+  'ranks.vacant': 'Vacant',
+  'ranks.unknown': 'Under fog',
+  'ranks.ended': 'This group has been dissolved.',
+  'ranks.fogged': 'Other groups under fog',
+  'ranks.allFogged': 'Every group you have reached is under fog.',
   'ability.opensAt.episode': 'First shown in episode {threshold}',
   'ability.opensAt.season': 'First shown in {threshold}',
   'ability.opensAt.chapter': 'First shown in chapter {threshold}',

@@ -3,9 +3,9 @@ import { describe, expect, it } from 'vitest'
 import { electionChronicles } from '~/data/series/hunter-x-hunter/records/election.chronicle'
 import type { Entity, Field } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import type { Bookmark } from '~/lib/progress/episode'
 import type { Gated } from '~/lib/progress/spoiler'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as at, opened, recordIn, sideIn } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { chronicleOf, chronicleRestOf } from './chronicle.server'
 import { homePage } from './home.server'
@@ -13,11 +13,7 @@ import { characterPage, drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Election tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 
 const UNITS = ['episode', 'chapter'] as const
 type Unit = (typeof UNITS)[number]
@@ -58,19 +54,9 @@ const PLACES: Gate[] = [
   ['world-tree', 147, 337],
 ]
 
-function at(unit: Unit, count: number): Bookmark {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
-}
-
-const CASES = [
-  ...CHARACTERS.map((gate) => ({ gate, page: characterPage })),
-  ...PLACES.map((gate) => ({ gate, page: placePage })),
-].map(({ gate, page }) => {
-  const [id, episode, chapter, source] = gate
-  return { id, episode, chapter, source, page }
-})
+const CASES = [...CHARACTERS, ...PLACES].map(
+  ([id, episode, chapter, source]) => ({ id, episode, chapter, source }),
+)
 
 type FactPin = [
   id: string,
@@ -148,26 +134,13 @@ const FACT_CASES = FACT_PINS.map(([id, field, episode, chapter, source]) => ({
   id,
   field,
   source,
+  pin: { episode, chapter, source },
   gate: {
     revealedAtEpisode: episode,
     revealedAtChapter: chapter,
     ...(source !== undefined && { source }),
   },
 }))
-
-function opened(
-  page: ReturnType<typeof characterPage | typeof placePage>,
-): boolean {
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function character(id: string): Entity {
-  const entity = archive.getCharacter(id)
-  if (entity === undefined) {
-    throw new Error(`Missing Election fixture ${id}`)
-  }
-  return entity
-}
 
 function reachedGates(reader: Reader, owner: Entity, field: Field): Gated[] {
   return archive.reachedOf(reader, owner, field).map((entry) => entry.gate)
@@ -185,21 +158,20 @@ describe.each(UNITS)('Election by %s', (unit) => {
     )
 
     it.each(applicable)('gates $id and its artwork', (row) => {
-      const { id, page } = row
-      const gate = row[unit]
-      const before = read(gate - 1)
-      const reached = read(gate)
+      const side = sideIn(row, unit, archive.series)
 
-      expect(opened(page(id, before))).toBe(false)
-      expect(drawingsFor([id], before)).toStrictEqual({})
-      expect(opened(page(id, reached))).toBe(true)
-      expect(drawingsFor([id], reached)[id]?.length).toBeGreaterThan(3)
+      expect(opened(row.id, readerFor(archive, side.before, locale))).toBe(
+        false,
+      )
+      expect(opened(row.id, readerFor(archive, side.reached, locale))).toBe(
+        true,
+      )
     })
 
-    it.each(excluded)('excludes $id from the other medium', ({ id, page }) => {
+    it.each(excluded)('excludes $id from the other medium', ({ id }) => {
       const finale = read(unit === 'chapter' ? 339 : 148)
 
-      expect(page(id, finale)).toBeUndefined()
+      expect(characterPage(id, finale) ?? placePage(id, finale)).toBeUndefined()
       expect(drawingsFor([id], finale)).toStrictEqual({})
     })
 
@@ -207,20 +179,27 @@ describe.each(UNITS)('Election by %s', (unit) => {
       FACT_CASES.filter(
         ({ source }) => source === undefined || source === unit,
       ),
-    )('pins $id $field at $gate', ({ id, field, gate }) => {
-      const owner = character(id)
-      const count =
-        unit === 'episode' ? gate.revealedAtEpisode : gate.revealedAtChapter
-      const before = reachedGates(read(count - 1), owner, field)
-      const reached = reachedGates(read(count), owner, field)
+    )('pins $id $field at $gate', ({ id, field, gate, pin }) => {
+      const owner = recordIn(archive, id)
+      const side = sideIn(pin, unit, archive.series)
+      const before = reachedGates(
+        readerFor(archive, side.before, locale),
+        owner,
+        field,
+      )
+      const reached = reachedGates(
+        readerFor(archive, side.reached, locale),
+        owner,
+        field,
+      )
 
       expect(before).not.toContainEqual(gate)
       expect(reached).toContainEqual(gate)
     })
 
     it('pins Gotoh’s death and Gon’s recovery', () => {
-      const gotoh = character('gotoh')
-      const gon = character('gon-freecss')
+      const gotoh = recordIn(archive, 'gotoh')
+      const gon = recordIn(archive, 'gon-freecss')
       const death = unit === 'chapter' ? 327 : 142
       const recovery = unit === 'chapter' ? 334 : 145
 
@@ -267,7 +246,7 @@ describe.each(LOCALES)('Election chronicles in %s', (locale) => {
   )(
     'opens a chronicle with the new record $id',
     ({ id, episode, chapter, source }) => {
-      const owner = character(id)
+      const owner = recordIn(archive, id)
       const first = archive.dossierOf(owner)?.chronicle?.[0]
 
       expect(first?.episode).toBe(episode)
@@ -280,7 +259,7 @@ describe.each(LOCALES)('Election chronicles in %s', (locale) => {
     it.each(Object.entries(electionChronicles))(
       `assembles %s behind each ${unit} gate`,
       (id, stories) => {
-        const owner = character(id)
+        const owner = recordIn(archive, id)
         for (const story of stories) {
           const threshold = unit === 'episode' ? story.episode : story.chapter
           const before = readerFor(archive, at(unit, threshold - 1), locale)

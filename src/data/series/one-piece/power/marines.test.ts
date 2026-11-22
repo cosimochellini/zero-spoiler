@@ -1,37 +1,30 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Holding } from '~/data/features'
-import { LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
-import type { Gated } from '~/lib/progress/spoiler'
 import { powerPage } from '~/server/archive/power.server'
 import { readerFor } from '~/server/archive/reader.server'
-import { leaksOf } from '~/test/fog'
-import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
+import {
+  bodyGates,
+  edges,
+  powerLeaks,
+  seatsOf,
+  type Steps,
+  U,
+  V,
+} from '~/test/power'
+import { ONE_PIECE_LOADED } from '~/test/series'
 
 import { MARINES } from './marines'
 
 /** The Marines' seats at a bookmark: holder ids, `vacant` or `unknown`. */
-function seatsAt(bookmark: Bookmark): string[] | undefined {
-  const page = powerPage(readerFor(ONE_PIECE_LOADED.archive, bookmark, 'en'))
-
-  return page.bodies
-    .find(({ id }) => id === 'marines')
-    ?.seats.map((seat) => (seat.state === 'held' ? seat.holder.id : seat.state))
-}
-
-const U = 'unknown'
-const V = 'vacant'
+const seatsAt = (bookmark: Bookmark): string[] | undefined =>
+  seatsOf(ONE_PIECE_LOADED, 'marines', bookmark)
 
 /** Garp's id, in every step from his seat on. */
 const GARP = 'monkey-d-garp'
 
-/**
- * Every change in one medium: where it is told and the seats from there on.
- * A holder named before their record opens is fogged until it does, so the
- * two media's steps are not the same list.
- */
-type Steps = [number, string[]][]
+// A holder named before their record opens is fogged until it does, so the
+// two media's steps are not the same list.
 
 const CHAPTERS: Steps = [
   [234, ['sengoku']],
@@ -382,55 +375,8 @@ const EPISODES: Steps = [
   ],
 ]
 
-/** Each step with the seats just before it: none before the body opens. */
-function edges(
-  steps: Steps,
-): { at: number; before: string[] | undefined; seats: string[] }[] {
-  return steps.map(([at, seats], place) => ({
-    at,
-    before: steps[place - 1]?.[1],
-    seats,
-  }))
-}
-
 const chapter = (at: number): Bookmark => ({ mode: 'chapter', chapter: at })
 const episode = (at: number): Bookmark => ({ mode: 'episode', episode: at })
-
-/** A holding's own gate, and its holder's when it names one. */
-function holdingGates(holding: Holding): Gated[] {
-  const own = {
-    revealedAtEpisode: holding.episode,
-    revealedAtChapter: holding.chapter,
-  }
-  const holder =
-    holding.value === null ?
-      undefined
-    : ONE_PIECE_LOADED.archive.getCharacter(holding.value)
-
-  return holder === undefined ? [own] : [own, holder]
-}
-
-/** Every gate of the body: its own, its seats', holdings' and holders'. */
-const GATES: Gated[] = [
-  MARINES,
-  ...MARINES.seats.flatMap(({ holders, told }) => [
-    told,
-    ...holders.flatMap((holding) => holdingGates(holding)),
-  ]),
-]
-
-/** A point and the one just before it. */
-const sides = (at: number): number[] => [at - 1, at]
-
-/** Each gate and the point just before it, in both media. */
-const BOOKMARKS: Bookmark[] = [
-  ...[...new Set(GATES.flatMap((g) => sides(g.revealedAtChapter)))].map((at) =>
-    chapter(at),
-  ),
-  ...[...new Set(GATES.flatMap((g) => sides(g.revealedAtEpisode)))].map((at) =>
-    episode(at),
-  ),
-]
 
 describe('the Marines’ chain of command', () => {
   it.each(edges(CHAPTERS))(
@@ -466,18 +412,8 @@ describe('the Marines’ chain of command', () => {
   })
 
   it('leaks nothing on either side of any of its gates', () => {
-    const leaks = leaksOf(ONE_PIECE_LOADED, LOADED_SERIES)
-
-    for (const bookmark of BOOKMARKS) {
-      for (const locale of LOCALES) {
-        const page = powerPage(
-          readerFor(ONE_PIECE_LOADED.archive, bookmark, locale),
-        )
-
-        expect(leaks(page, bookmark), JSON.stringify(bookmark)).toStrictEqual(
-          [],
-        )
-      }
-    }
+    expect(
+      powerLeaks(ONE_PIECE_LOADED, bodyGates(ONE_PIECE_LOADED, MARINES)),
+    ).toStrictEqual([])
   })
 })

@@ -19,6 +19,7 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { describe, expect, it, vi } from 'vitest'
 
+import { serverCopies } from './archive-gate.copy.mjs'
 import {
   canariesOf,
   canaryFrom,
@@ -29,14 +30,13 @@ import {
   placeWordCanaries,
   placeWordCanariesOf,
   proseCanaries,
-  serverCopies,
   slugCanaries,
   slugsFrom,
   sourceCanaries,
 } from './archive-gate.mjs'
 import { descriptionCanaries, powerCanaries } from './archive-gate.power.mjs'
 import { importArchive } from './archive-loader.mjs'
-import { judgeServer } from './archive-server-gate.mjs'
+import { judgeServer, mappedSources } from './archive-server-gate.mjs'
 
 const repositoryRoot = path.resolve(import.meta.dirname, '..')
 
@@ -481,9 +481,12 @@ describe('series copy canaries', () => {
     ])
     const phrases = canaries.map(({ phrase }) => phrase)
 
-    // One Piece's factions and seas and Hunter x Hunter's demo, in both
-    // languages.
+    // One Piece's factions and seas, Hunter x Hunter's groups and its demo,
+    // in both languages.
     expect(phrases).toContain('Nine Red Scabbards')
+    expect(phrases).toStrictEqual(
+      expect.arrayContaining(['Phantom Troupe', 'Formichimere']),
+    )
     expect(phrases).toContain('Kozuki alliance')
     expect(phrases).toContain('New World')
     expect(phrases).toContain('Fascia di Bonaccia')
@@ -574,31 +577,61 @@ describe('source attribution boundaries', { timeout: 30_000 }, () => {
   })
 })
 
+/** Start's handler chunk for one module of server functions. */
+const SPLIT = 'src/server/api.ts?tss-serverfn-split'
+
+/**
+ * One module of an emitted chunk, as Rolldown marks it.
+ * @param {string} id The module id.
+ * @param {string} body The module's code.
+ * @returns {string} The marked module.
+ */
+function region(id, body) {
+  return `//#region ${id}\n${body}\n//#endregion`
+}
+
 /**
  * A tiny emitted SSR graph, independent of source-code import syntax.
- * @returns {{manifest: Record<string, object>, chunks: Record<string, string>, archives: {folder: string, canaries: {file: string, phrase: string}[]}[]}} A dynamically isolated archive.
+ * Every chunk but the virtual resolver has a source map naming its regions.
+ * @returns {{manifest: Record<string, object>, chunks: Record<string, string>, sources: Record<string, string | string[]>, archives: {folder: string, canaries: {file: string, phrase: string}[]}[]}} A dynamically isolated archive.
  */
 function serverBuild() {
   const key = 'src/data/series/test-series/archive.ts'
-  return {
+  const build = {
     manifest: {
       server: {
         file: 'server.js',
         isEntry: true,
-        imports: ['registry'],
+        imports: ['registry', 'resolver'],
         dynamicImports: ['api'],
       },
       registry: { file: 'registry.js', dynamicImports: [key] },
+      resolver: { file: 'resolver.js', dynamicImports: [SPLIT] },
       api: { file: 'api.js', isDynamicEntry: true, imports: ['registry'] },
+      [SPLIT]: {
+        file: 'split.js',
+        isDynamicEntry: true,
+        imports: ['projections', 'registry'],
+      },
+      projections: { file: 'projections.js' },
       [key]: { file: 'archive.js', isDynamicEntry: true, imports: ['shared'] },
       shared: { file: 'shared.js' },
     },
     chunks: {
-      'server.js': 'server',
-      'registry.js': 'registry',
-      'api.js': 'api',
-      'archive.js': 'a sentence held only by the archive',
-      'shared.js': 'shared engine',
+      'server.js': region('src/server.ts', 'server'),
+      'registry.js': region('src/data/series/index.ts', 'registry'),
+      'resolver.js': region(
+        String.raw`\0#tanstack-start-server-fn-resolver`,
+        'resolver',
+      ),
+      'api.js': region('src/routes/index.tsx?tsr-split=component', 'api'),
+      'split.js': region(SPLIT, 'handlers'),
+      'projections.js': [
+        region('src/server/archive/home.server.ts', 'home'),
+        region('src/server/serve.server.ts', 'serve'),
+      ].join('\n'),
+      'archive.js': region(key, 'a sentence held only by the archive'),
+      'shared.js': region('src/lib/shared.ts', 'shared engine'),
     },
     archives: [
       {
@@ -612,14 +645,26 @@ function serverBuild() {
       },
     ],
   }
+  const sources = Object.fromEntries(
+    Object.entries(build.chunks)
+      .filter(([file]) => file !== 'resolver.js')
+      .map(([file, text]) => [
+        file,
+        text
+          .matchAll(/^\/\/#region (?<id>.+)$/gmu)
+          .map((match) => match.groups.id)
+          .toArray(),
+      ]),
+  )
+  return { ...build, sources }
 }
 
 describe('emitted server archive boundaries', () => {
   const key = 'src/data/series/test-series/archive.ts'
 
   it('allows a dynamically imported archive with only engine chunks shared', () => {
-    const { manifest, archives, chunks } = serverBuild()
-    expect(judgeServer(manifest, archives, chunks)).toStrictEqual({
+    const { manifest, archives, chunks, sources } = serverBuild()
+    expect(judgeServer(manifest, archives, chunks, sources)).toStrictEqual({
       ok: true,
       problems: [],
       unreadable: [],
@@ -627,36 +672,36 @@ describe('emitted server archive boundaries', () => {
   })
 
   it('rejects a static archive import even when a dynamic import remains', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.server.imports.push(key)
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} has a static runtime import`,
     )
   })
 
   it('walks transitive static dependencies and safely handles cycles', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.registry.imports = ['bridge']
     manifest.bridge = { file: 'bridge.js', imports: ['registry', key] }
     chunks['bridge.js'] = 'bridge'
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} has a static runtime import`,
     )
   })
 
   it('also treats a dynamically loaded API as a runtime entry point', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.api.imports.push(key)
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} has a static runtime import`,
     )
   })
 
   it('rejects eager shared archive data even when the adapter remains dynamic', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.api.imports.push('shared')
     chunks['shared.js'] = 'a sentence held only by the archive'
-    const verdict = judgeServer(manifest, archives, chunks)
+    const verdict = judgeServer(manifest, archives, chunks, sources)
     expect(verdict.ok).toBe(false)
     expect(verdict.problems).toContain(
       'src/data/series/test-series/records/first.ts is statically loaded in shared.js',
@@ -674,25 +719,209 @@ describe('emitted server archive boundaries', () => {
   })
 
   it('refuses to vouch for a missing registered archive entry', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     Reflect.deleteProperty(manifest, key)
-    expect(judgeServer(manifest, archives, chunks).unreadable).toContain(key)
+    expect(
+      judgeServer(manifest, archives, chunks, sources).unreadable,
+    ).toContain(key)
   })
 
   it('rejects a dynamic-entry flag without an actual dynamic graph edge', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.registry.dynamicImports = []
-    expect(judgeServer(manifest, archives, chunks).problems).toContain(
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
       `${key} is not a dynamically imported archive entry`,
     )
   })
 
+  it('keeps provider-only modules and the handler chunk out of every other root', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    manifest.api.imports.push('projections')
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([
+      'api statically loads projections.js, which holds src/server/archive/home.server.ts, src/server/serve.server.ts',
+    ])
+  })
+
+  it.each([
+    'src/server/copy.server.ts',
+    'src/server/sources.server.ts',
+    'src/server/archive/payloads.server.ts',
+  ])('rejects %s in a shared chunk of a route', (id) => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    chunks['shared.js'] = region(id, 'provider')
+    manifest.api.imports.push('shared')
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([`api statically loads shared.js, which holds ${id}`])
+  })
+
+  it('rejects a static import of the handler chunk itself', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    manifest.server.imports.push(SPLIT)
+    expect(judgeServer(manifest, archives, chunks, sources).problems).toContain(
+      `server statically loads split.js, which holds ${SPLIT}`,
+    )
+  })
+
+  it('names the first three modules a chunk holds and counts the rest', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    chunks['shared.js'] = ['a', 'b', 'c', 'd', 'e']
+      .map((name) => region(`src/server/archive/${name}.server.ts`, name))
+      .join('\n')
+    manifest.api.imports.push('shared')
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([
+      'api statically loads shared.js, which holds src/server/archive/a.server.ts, src/server/archive/b.server.ts, src/server/archive/c.server.ts and 2 more',
+    ])
+  })
+
+  it.each([
+    [undefined, 'no source map'],
+    ['an unreadable source map', 'an unreadable source map'],
+    ['an inline source map', 'an inline source map'],
+  ])(
+    'refuses to vouch for a reached chunk with %s in place of a map',
+    (mapped, reason) => {
+      const { manifest, archives, chunks, sources } = serverBuild()
+      // A region-only reading would miss a module folded into another's region.
+      sources['registry.js'] = mapped
+      const verdict = judgeServer(manifest, archives, chunks, sources)
+      expect(verdict.problems).toStrictEqual([])
+      expect(verdict.unreadable).toStrictEqual([
+        `registry.js (${reason}; the server build must emit source maps (environments.ssr.build.sourcemap in vite.config.ts))`,
+      ])
+    },
+  )
+
+  it('lets a chunk of virtual modules alone go without a map', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    chunks['registry.js'] = region(String.raw`\0virtual:registry`, 'registry')
+    Reflect.deleteProperty(sources, 'registry.js')
+    expect(judgeServer(manifest, archives, chunks, sources).ok).toBe(true)
+  })
+
+  it.each([
+    [
+      'mixed virtual and real regions with no map',
+      [String.raw`\0virtual:registry`, 'src/data/series/index.ts'],
+      undefined,
+      'no source map',
+    ],
+    ['no regions and no map', [], undefined, 'no source map'],
+    [
+      'virtual regions alone with a corrupt map',
+      [String.raw`\0virtual:registry`],
+      'an unreadable source map',
+      'an unreadable source map',
+    ],
+    [
+      'virtual regions alone with an inline map',
+      [String.raw`\0virtual:registry`],
+      'an inline source map',
+      'an inline source map',
+    ],
+  ])('excuses no chunk with %s', (_case, ids, mapped, reason) => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    chunks['registry.js'] =
+      ids.map((id) => region(id, 'registry')).join('\n') || 'registry'
+    sources['registry.js'] = mapped
+    expect(
+      judgeServer(manifest, archives, chunks, sources).unreadable,
+    ).toStrictEqual([
+      `registry.js (${reason}; the server build must emit source maps (environments.ssr.build.sourcemap in vite.config.ts))`,
+    ])
+  })
+
+  it('reads the modules a chunk holds from its source map as well', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    manifest.api.imports.push('shared')
+    // Rolldown can fold a module into another's region and name it only in the map.
+    chunks['shared.js'] = region(
+      'src/lib/prose/markers.ts',
+      'markers + chronicle',
+    )
+    sources['shared.js'] = [
+      'src/lib/prose/markers.ts',
+      'src/server/archive/chronicle.server.ts',
+    ]
+    expect(
+      judgeServer(manifest, archives, chunks, sources).problems,
+    ).toStrictEqual([
+      'api statically loads shared.js, which holds src/server/archive/chronicle.server.ts',
+    ])
+  })
+
+  it('takes a source map alone as evidence for a chunk with no region lines', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    chunks['registry.js'] = 'registry, minified'
+    expect(judgeServer(manifest, archives, chunks, sources)).toStrictEqual({
+      ok: true,
+      problems: [],
+      unreadable: [],
+    })
+  })
+
+  it('refuses to vouch for a build with no handler chunk to keep apart', () => {
+    const { manifest, archives, chunks, sources } = serverBuild()
+    Reflect.deleteProperty(manifest, SPLIT)
+    manifest.resolver.dynamicImports = []
+    expect(
+      judgeServer(manifest, archives, chunks, sources).unreadable,
+    ).toStrictEqual(['a ?tss-serverfn-split chunk'])
+  })
+
+  it('reads a chunk source map, named or beside it, relative to the repository', () => {
+    const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
+    const assets = path.join(root, 'dist/server/assets')
+    mkdirSync(path.join(assets, 'maps'), { recursive: true })
+    writeFileSync(
+      path.join(assets, 'maps/named.js.map'),
+      JSON.stringify({ sourceRoot: '../', sources: ['../../../src/a.ts'] }),
+    )
+    writeFileSync(path.join(assets, 'corrupt.js.map'), '{"version": 3,')
+    writeFileSync(
+      path.join(assets, 'beside.js.map'),
+      JSON.stringify({ sources: ['../../../src/b.ts?tss-serverfn-split'] }),
+    )
+
+    try {
+      expect(
+        mappedSources(
+          root,
+          'assets/named.js',
+          'code\n//# sourceMappingURL=maps/named.js.map',
+        ),
+      ).toStrictEqual(['src/a.ts'])
+      expect(mappedSources(root, 'assets/beside.js', 'code')).toStrictEqual([
+        'src/b.ts?tss-serverfn-split',
+      ])
+      expect(mappedSources(root, 'assets/none.js', 'code')).toBe(
+        'no source map',
+      )
+      expect(mappedSources(root, 'assets/corrupt.js', 'code')).toBe(
+        'an unreadable source map',
+      )
+      expect(
+        mappedSources(
+          root,
+          'assets/inline.js',
+          'code\n//# sourceMappingURL=data:application/json,{}',
+        ),
+      ).toBe('an inline source map')
+    } finally {
+      rmSync(root, { recursive: true, force: true })
+    }
+  })
+
   it('refuses incomplete static graph and emitted script evidence', () => {
-    const { manifest, archives, chunks } = serverBuild()
+    const { manifest, archives, chunks, sources } = serverBuild()
     manifest.registry.imports = ['missing']
     delete chunks['server.js']
     delete chunks['archive.js']
-    const { unreadable } = judgeServer(manifest, archives, chunks)
+    const { unreadable } = judgeServer(manifest, archives, chunks, sources)
     expect(unreadable).toContain('missing')
     expect(unreadable).toContain('server.js')
     expect(unreadable).toContain('archive.js')

@@ -101,6 +101,7 @@ const SAMPLES = {
     characters: 'gon-freecss',
     places: 'heavens-arena',
     abilities: 'battle-waltz',
+    indexes: ['ranks'],
   },
   'game-of-thrones': { ep: 35, characters: 'jon-snow', places: 'winterfell' },
 }

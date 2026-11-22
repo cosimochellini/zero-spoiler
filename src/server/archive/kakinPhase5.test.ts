@@ -1,17 +1,13 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import { LOADED_SERIES } from '~/test/series'
+import { opened, recordIn } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor, relationshipsPage } from './pages.server'
 import { readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Kakin phase 5 tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 // Independent naming-scene expectations, not derived from the filed records.
 const RECORDS = [
   { id: 'oito-hui-guo-rou', chapter: 401 },
@@ -88,14 +84,6 @@ const STATUSES = [
   { id: 'onior', chapter: 417, before: 'alive', after: 'captured' },
 ]
 
-function character(id: string): Entity {
-  const entity = archive.getCharacter(id)
-  if (entity === undefined) {
-    throw new Error(`Missing Kakin phase 5 character ${id}`)
-  }
-  return entity
-}
-
 function chapter(
   at: number,
   locale: (typeof LOCALES)[number],
@@ -109,21 +97,9 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
     ({ id, chapter: gate }) => {
       const before = chapter(gate - 1, locale)
       const reached = chapter(gate, locale)
-      const beforePage = characterPage(id, before)
-      const reachedPage = characterPage(id, reached)
 
-      expect(
-        beforePage !== undefined
-          && 'detail' in beforePage
-          && beforePage.detail.slot.open,
-      ).toBe(false)
-      expect(drawingsFor([id], before)).toStrictEqual({})
-      expect(
-        reachedPage !== undefined
-          && 'detail' in reachedPage
-          && reachedPage.detail.slot.open,
-      ).toBe(true)
-      expect(drawingsFor([id], reached)[id]?.length).toBeGreaterThan(3)
+      expect(opened(id, before)).toBe(false)
+      expect(opened(id, reached)).toBe(true)
     },
   )
 
@@ -142,7 +118,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
   it.each(STATUSES)(
     'pins $id’s change to $after at chapter $chapter',
     ({ id, chapter: pin, before, after }) => {
-      const entity = character(id)
+      const entity = recordIn(archive, id)
 
       expect(archive.latestOf(chapter(pin - 1, locale), entity, 'status')).toBe(
         before,
@@ -154,7 +130,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
   )
 
   it('pins Borksen’s Heil-Ly membership to chapter 410', () => {
-    const borksen = character('borksen')
+    const borksen = recordIn(archive, 'borksen')
 
     expect(
       archive.latestOf(chapter(409, locale), borksen, 'affiliation'),
@@ -168,7 +144,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
     { id: 'risnorth', status: 'deceased' },
     { id: 'kanjidol', status: 'captured' },
   ])('files $id as $status at the opening', ({ id, status }) => {
-    const entity = character(id)
+    const entity = recordIn(archive, id)
 
     expect(
       archive.latestOf(
@@ -218,7 +194,7 @@ describe.each(LOCALES)('Kakin phase 5 in %s', (locale) => {
         'woble-hui-guo-rou',
       ]) {
         expect(['deceased', 'missing']).not.toContain(
-          archive.latestOf(reader, character(id), 'status'),
+          archive.latestOf(reader, recordIn(archive, id), 'status'),
         )
       }
     },

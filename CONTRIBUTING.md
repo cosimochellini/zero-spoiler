@@ -159,16 +159,21 @@ requests (#1009). The latest revision a title was read at is cached under
 keeps both cache folders one level deeper, per wiki:
 `.gate/wiki/game-of-thrones/episodes/` for the show and
 `.gate/wiki/game-of-thrones/books/` for the books. The archive gate test holds a
-floor on the source count, so nothing else needs bumping. Beside it:
+floor on the source count, so nothing else needs bumping. Beside it, each ledger
+below is checked by `src/data/provenance.test.ts`, which describes every series
+once and runs the same checks over all of them:
 
 - `relationships.json` maps each One Piece character with a `relationships`
   timeline to the `sources.json` key of their character revision, or `null`. A
   test fails when a timeline has no key, a key is stale, or an entry's episode
   or chapter page is not pinned. A one-source entry's other number only orders
   it and needs no page.
-- `hunter-x-hunter.json` lists, per record id, the pages read (`sources`) and
-  the checks nobody has made yet (`unverified`). Episode and chapter pages
-  follow from the record's gates and are not listed.
+- `hunter-x-hunter.json` and `game-of-thrones.json` list, per record id, the
+  pages read (`sources`) and the checks nobody has made yet (`unverified`).
+  Every archived record has an entry; one marked `pending: true` is research for
+  a record not filed yet. Episode and chapter pages follow from the record's
+  gates and are not listed. Each series' allowed hosts sit in
+  `src/data/provenance.test.ts`, beside the rulings that allow them.
 - `hunter-x-hunter-relationships.json` lists every archived Hunter x Hunter
   character once: under `authored`, with the `hxh-` keys of the wiki revisions
   read, under `omitted`, with the reason, or under `pending`, with the issue
@@ -184,6 +189,15 @@ floor on the source count, so nothing else needs bumping. Beside it:
   other wiki is no evidence. The A Wiki of Ice and Fire pages read stay URLs in
   the entry's `unpinned`, with its `reason`, until #1009 unblocks: that host
   alone may appear there.
+
+The same test reads every other file in `docs/content-provenance/` and fails on
+a `?oldid=` URL from a series' wiki that `sources.json` does not pin at that
+revision, under that title when the URL names a page; a language path such as
+`/it/wiki/` stays a plain URL, as Italian Wikipedia does.
+`npm run provenance:pin` pins only a page's latest revision, or keeps one
+already pinned, so an older revision you read needs its `sources.json` entry
+added by hand in the same shape; cite the pinned revision instead only if you
+read that one.
 
 The wiki is read for facts only; no passages, dialogue, frames or scans enter
 the repository. A decision the data cannot show, such as a gate delayed behind

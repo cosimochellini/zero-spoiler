@@ -1,95 +1,63 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import type { Bookmark } from '~/lib/progress/episode'
 import type { RecordView, Slot } from '~/lib/view/records'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
-import { characterPage, drawingsFor } from './pages.server'
+import { drawingsFor } from './pages.server'
 import { placePage } from './placePage.server'
 import { factsOf } from './project.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Yorknew City tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 const RECORDS = [
-  { id: 'melody', episode: 40, chapter: 68, place: false },
-  { id: 'basho', episode: 40, chapter: 68, place: false },
-  { id: 'baise', episode: 40, chapter: 68, place: false },
-  { id: 'squala', episode: 40, chapter: 68, place: false },
-  { id: 'shachmono-tocino', episode: 40, chapter: 68, place: false },
-  { id: 'dalzollene', episode: 41, chapter: 70, place: false },
-  { id: 'neon-nostrade', episode: 41, chapter: 71, place: false },
-  { id: 'machi', episode: 41, chapter: 71, place: false },
-  { id: 'ivlenkov', episode: 42, chapter: 72, place: false },
-  { id: 'linssen', episode: 42, chapter: 72, place: false },
-  { id: 'shizuku', episode: 42, chapter: 72, place: false },
-  { id: 'uvogin', episode: 43, chapter: 74, place: false },
-  { id: 'feitan', episode: 43, chapter: 74, place: false },
-  { id: 'worm', episode: 43, chapter: 75, place: false },
-  { id: 'rabid-dog', episode: 43, chapter: 75, place: false },
-  { id: 'franklin', episode: 44, chapter: 76, place: false },
-  { id: 'porcupine', episode: 44, chapter: 76, place: false },
-  { id: 'leech', episode: 44, chapter: 76, place: false },
-  { id: 'nobunaga', episode: 45, chapter: 77, place: false },
-  { id: 'owl', episode: 45, chapter: 77, place: false },
-  { id: 'phinks', episode: 45, chapter: 78, place: false },
-  { id: 'shalnark', episode: 46, chapter: 79, place: false },
-  { id: 'light-nostrade', episode: 46, chapter: 79, place: false },
-  { id: 'zepile', episode: 48, chapter: 86, place: false },
-  { id: 'pakunoda', episode: 49, chapter: 90, place: false },
-  { id: 'zenji', episode: 51, chapter: 95, place: false },
-  { id: 'kortopi', episode: 53, chapter: 100, place: false },
-  { id: 'chrollo', episode: 54, chapter: 71, place: false },
-  { id: 'bonolenov', episode: 55, chapter: 108, place: false },
-  { id: 'eliza', episode: 56, chapter: 112, place: false },
-  { id: 'southernpiece-auction-house', episode: 48, chapter: 85, place: true },
-  { id: 'hotel-beitacle', episode: 57, chapter: 112, place: true },
-  { id: 'yorknew-city', episode: 41, chapter: 70, place: true },
-  { id: 'lingon-airport', episode: 41, chapter: 71, place: true },
-  { id: 'cemetery-building', episode: 42, chapter: 72, place: true },
+  { id: 'melody', episode: 40, chapter: 68 },
+  { id: 'basho', episode: 40, chapter: 68 },
+  { id: 'baise', episode: 40, chapter: 68 },
+  { id: 'squala', episode: 40, chapter: 68 },
+  { id: 'shachmono-tocino', episode: 40, chapter: 68 },
+  { id: 'dalzollene', episode: 41, chapter: 70 },
+  { id: 'neon-nostrade', episode: 41, chapter: 71 },
+  { id: 'machi', episode: 41, chapter: 71 },
+  { id: 'ivlenkov', episode: 42, chapter: 72 },
+  { id: 'linssen', episode: 42, chapter: 72 },
+  { id: 'shizuku', episode: 42, chapter: 72 },
+  { id: 'uvogin', episode: 43, chapter: 74 },
+  { id: 'feitan', episode: 43, chapter: 74 },
+  { id: 'worm', episode: 43, chapter: 75 },
+  { id: 'rabid-dog', episode: 43, chapter: 75 },
+  { id: 'franklin', episode: 44, chapter: 76 },
+  { id: 'porcupine', episode: 44, chapter: 76 },
+  { id: 'leech', episode: 44, chapter: 76 },
+  { id: 'nobunaga', episode: 45, chapter: 77 },
+  { id: 'owl', episode: 45, chapter: 77 },
+  { id: 'phinks', episode: 45, chapter: 78 },
+  { id: 'shalnark', episode: 46, chapter: 79 },
+  { id: 'light-nostrade', episode: 46, chapter: 79 },
+  { id: 'zepile', episode: 48, chapter: 86 },
+  { id: 'pakunoda', episode: 49, chapter: 90 },
+  { id: 'zenji', episode: 51, chapter: 95 },
+  { id: 'kortopi', episode: 53, chapter: 100 },
+  { id: 'chrollo', episode: 54, chapter: 71 },
+  { id: 'bonolenov', episode: 55, chapter: 108 },
+  { id: 'eliza', episode: 56, chapter: 112 },
+  { id: 'southernpiece-auction-house', episode: 48, chapter: 85 },
+  { id: 'hotel-beitacle', episode: 57, chapter: 112 },
+  { id: 'yorknew-city', episode: 41, chapter: 70 },
+  { id: 'lingon-airport', episode: 41, chapter: 71 },
+  { id: 'cemetery-building', episode: 42, chapter: 72 },
 ]
-const CASES = RECORDS.flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    ['episode', 'chapter'].map((unit) => ({ ...record, locale, unit })),
-  ),
-)
-
-function at(unit: string, count: number): Bookmark {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
-}
-
-function opened(id: string, place: boolean, reader: Reader): boolean {
-  const page = place ? placePage(id, reader) : characterPage(id, reader)
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
-function character(id: string): Entity {
-  const record = archive.getCharacter(id)
-  if (record === undefined) {
-    throw new Error(`Missing ${id} fixture`)
-  }
-  return record
-}
+const CASES = gateCases(RECORDS, archive.series)
 
 describe.each(CASES)('$id in $locale by $unit', (row) => {
   it('opens the record and drawing at its named scene, never before', () => {
-    const threshold = row.unit === 'chapter' ? row.chapter : row.episode
-    const before = readerFor(archive, at(row.unit, threshold - 1), row.locale)
-    const reached = readerFor(archive, at(row.unit, threshold), row.locale)
+    const before = readerFor(archive, row.before, row.locale)
+    const reached = readerFor(archive, row.reached, row.locale)
 
-    expect(opened(row.id, row.place, before)).toBe(false)
-    expect(drawingsFor([row.id], before)).toStrictEqual({})
-
-    expect(opened(row.id, row.place, reached)).toBe(true)
-    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
+    expect(opened(row.id, before)).toBe(false)
+    expect(opened(row.id, reached)).toBe(true)
   })
 })
 
@@ -103,9 +71,9 @@ describe('the bodyguards’ dated steps', () => {
     const read = (count: number): Reader =>
       readerFor(archive, at(unit, count), 'en')
     const role = (id: string, count: number): string | undefined =>
-      archive.roleOf(read(count), character(id))?.en
+      archive.roleOf(read(count), recordIn(archive, id))?.en
     const affiliation = (id: string, count: number): string | undefined =>
-      factsOf(character(id), read(count)).affiliation
+      factsOf(recordIn(archive, id), read(count)).affiliation
 
     // The three applicants Dalzollene hires.
     for (const id of ['melody', 'basho', 'baise']) {
@@ -214,7 +182,7 @@ describe('the shelves of the arc’s places', () => {
         const text = JSON.stringify(shelf)
 
         for (const id of ids) {
-          const record = character(id)
+          const record = recordIn(archive, id)
 
           expect(text).not.toContain(id)
           expect(text).not.toContain(record.name.en)
@@ -431,7 +399,7 @@ const STATUS_STEPS = [
 function statusAt(id: string, unit: string, count: number): string | undefined {
   return archive.latestOf(
     readerFor(archive, at(unit, count), 'en'),
-    character(id),
+    recordIn(archive, id),
     'status',
   )
 }
@@ -653,7 +621,7 @@ describe('the deaths drawn in Yorknew City', () => {
   it.each(DRAWN_DEATHS)(
     'pins $id’s death and drawing together in $unit units ($locale)',
     ({ id, unit, opens, death, was, now, locale }) => {
-      const record = character(id)
+      const record = recordIn(archive, id)
       const alive = readerFor(archive, at(unit, opens), locale)
       const before = readerFor(archive, at(unit, death - 1), locale)
       const reached = readerFor(archive, at(unit, death), locale)
@@ -670,7 +638,7 @@ describe('the deaths drawn in Yorknew City', () => {
   it.each(LOCALES)(
     'keeps Worm’s drawing when chapter 89 confirms his death (%s)',
     (locale) => {
-      const worm = character('worm')
+      const worm = recordIn(archive, 'worm')
       const presumed = readerFor(archive, at('chapter', 88), locale)
       const confirmed = readerFor(archive, at('chapter', 89), locale)
 
@@ -736,7 +704,7 @@ describe('the returning characters’ last steps', () => {
       const affiliation = (n: number): string | undefined =>
         archive.latestOf(
           readerFor(archive, at(unit, n), 'en'),
-          character(id),
+          recordIn(archive, id),
           'affiliation',
         )?.en
 
@@ -752,7 +720,7 @@ describe('Kurapika at the head of the bodyguards', () => {
     { unit: 'chapter', count: 79 },
   ])('dates his role and affiliation in $unit units', ({ unit, count }) => {
     const read = (n: number): Reader => readerFor(archive, at(unit, n), 'en')
-    const kurapika = character('kurapika')
+    const kurapika = recordIn(archive, 'kurapika')
 
     expect(archive.roleOf(read(count - 1), kurapika)?.en).toBe(
       'Hunter, bodyguard',

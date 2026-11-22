@@ -23,7 +23,7 @@ import { LOADED_SERIES, ONE_PIECE_LOADED } from '~/test/series'
 
 import { powerPage, seatsHeldBy } from './power.server'
 import { drawingOf } from './project.server'
-import { readerFor } from './reader.server'
+import { pageReader, readerFor } from './reader.server'
 
 /** The fixture's page at one bookmark. */
 function pageAt(bookmark: Bookmark, locale: Locale = 'en'): PowerPageView {
@@ -513,12 +513,27 @@ describe('the power page', () => {
     ).toHaveLength(1)
   })
 
-  it.each(LOADED_SERIES.filter(({ slug }) => slug !== 'one-piece'))(
-    'is empty for $slug, which has none',
+  it.each(
+    LOADED_SERIES.filter(
+      ({ archive }) => (archive.features.power?.bodies.length ?? 0) === 0,
+    ),
+  )(
+    'is empty for $slug, which has none, at every bookmark and with none',
     ({ archive }) => {
-      const page = powerPage(readerFor(archive, chapter(1000), 'en'))
+      // Hunter x Hunter's page is open before its first body (#1442): it
+      // says nothing is open, wherever the reader stands, and with no
+      // bookmark, drawn at the end of the demo (`pageReader`).
+      for (const locale of LOCALES) {
+        for (const bookmark of [chapter(1000), ...archive.bookmarks]) {
+          expect(powerPage(readerFor(archive, bookmark, locale))).toStrictEqual(
+            { bodies: [] },
+          )
+        }
 
-      expect(page).toStrictEqual({ bodies: [] })
+        expect(powerPage(pageReader(archive, null, { locale }))).toStrictEqual({
+          bodies: [],
+        })
+      }
     },
   )
 })
@@ -614,14 +629,15 @@ describe('a character’s seats', () => {
     },
   )
 
-  it.each(LOADED_SERIES.filter(({ slug }) => slug !== 'one-piece'))(
-    'are none in $slug, which has no bodies',
-    ({ archive }) => {
-      for (const holder of archive.characters.slice(0, 20)) {
-        expect(heldAt(holder, chapter(1000), { archive })).toStrictEqual([])
-      }
-    },
-  )
+  it.each(
+    LOADED_SERIES.filter(
+      ({ archive }) => (archive.features.power?.bodies.length ?? 0) === 0,
+    ),
+  )('are none in $slug, which has no bodies', ({ archive }) => {
+    for (const holder of archive.characters.slice(0, 20)) {
+      expect(heldAt(holder, chapter(1000), { archive })).toStrictEqual([])
+    }
+  })
 })
 
 /** What is wrong with the fixture body given these description versions. */

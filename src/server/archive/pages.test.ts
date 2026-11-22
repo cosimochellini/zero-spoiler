@@ -38,7 +38,7 @@ function underFog(
 }
 
 /** The same the other way round: a page the reader has already reached. */
-function opened(
+function openDetail(
   id: string,
   bookmark: Bookmark,
   locale: Locale,
@@ -144,7 +144,7 @@ describe('the character page a bookmark sees', () => {
   it('answers in whichever locale the route asks for', () => {
     expect(isLocale('it')).toBe(true)
 
-    const { detail, record } = opened('nico-robin', ep(130), 'it')
+    const { detail, record } = openDetail('nico-robin', ep(130), 'it')
 
     expect(record.name).toBe('Nico Robin')
     expect(JSON.stringify(detail)).not.toContain('"it"')

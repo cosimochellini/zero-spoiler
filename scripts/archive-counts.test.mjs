@@ -33,6 +33,7 @@ describe('the table of one series', () => {
         drawings: { a: [], b: [] },
         entities: [owner, { kind: 'fruit' }],
         features: { power: { bodies: [{ seats: [{}, {}] }, { seats: [{}] }] } },
+        places: [],
         sagas: [{}],
         series: {
           features: { fruits: true, power: true },
@@ -62,6 +63,7 @@ describe('the table of one series', () => {
       archive: {
         drawings: { a: [] },
         entities: [{ kind: 'arc' }],
+        places: [],
         sagas: [{}],
         series: {
           features: { fruits: false },
@@ -83,6 +85,7 @@ describe('the table of one series', () => {
       archive: {
         drawings: {},
         entities: [{ kind: 'character' }, { kind: 'ability' }],
+        places: [],
         sagas: [{}],
         series: {
           features: { fruits: false },
@@ -100,6 +103,7 @@ describe('the table of one series', () => {
       archive: {
         drawings: {},
         entities: [],
+        places: [],
         sagas: [],
         series: { features: { fruits: false }, kinds: ['character', 'place'] },
         timelines: [],
@@ -107,5 +111,48 @@ describe('the table of one series', () => {
     })
 
     expect(table).toContain('| Places | 0 |')
+  })
+
+  it('counts the dated steps, linked origins and visits it files', () => {
+    const table = countTable({
+      archive: {
+        drawings: {},
+        entities: [{ kind: 'character' }, { kind: 'place' }],
+        placeDossierOf: (place) => place,
+        places: [{ visits: [{}, {}] }, {}],
+        sagas: [],
+        series: { features: { fruits: false }, kinds: ['character', 'place'] },
+        timelines: [
+          { field: 'affiliation', timeline: [{}, {}] },
+          { field: 'status', timeline: [{}] },
+          { field: 'origin', timeline: [{ place: 'a' }, {}] },
+        ],
+      },
+    })
+
+    expect(table).toContain('| Dated timelines | 3 |')
+    expect(table).toContain('| Affiliation steps | 2 |')
+    expect(table).toContain('| Status steps | 1 |')
+    expect(table).toContain('| Origins that link a place | 1 |')
+    expect(table).toContain('| Later visits to places | 2 |')
+  })
+
+  it('leaves out a row of steps the series does not file', () => {
+    const table = countTable({
+      archive: {
+        drawings: {},
+        entities: [],
+        places: [],
+        sagas: [],
+        series: { features: { fruits: false }, kinds: ['character', 'place'] },
+        timelines: [{ field: 'origin', timeline: [{}] }],
+      },
+    })
+
+    expect(table).toContain('| Dated timelines | 1 |')
+    expect(table).not.toContain('Affiliation steps')
+    expect(table).not.toContain('Status steps')
+    expect(table).not.toContain('Origins that link a place')
+    expect(table).not.toContain('Later visits to places')
   })
 })

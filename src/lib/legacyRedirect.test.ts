@@ -99,6 +99,9 @@ describe('the permanent hop from the power page to the ranks page (#1194)', () =
       '/one-piece/it/power?ep=%37%36%34&x=a+b',
       '/one-piece/it/ranks?ep=%37%36%34&x=a+b',
     ],
+    // Hunter x Hunter never had `/power`, but it has the ranks page now
+    // (#1442), and the hop follows `hasPage`.
+    ['/hunter-x-hunter/en/power?ep=26', '/hunter-x-hunter/en/ranks?ep=26'],
   ])('sends %s to %s', (path, location) => {
     for (const method of ['GET', 'HEAD']) {
       const response = moved(path, method)
@@ -110,7 +113,6 @@ describe('the permanent hop from the power page to the ranks page (#1194)', () =
   })
 
   it.each([
-    '/hunter-x-hunter/en/power',
     '/game-of-thrones/it/power?ep=3',
     '/nobody/en/power',
     '/one-piece/fr/power',

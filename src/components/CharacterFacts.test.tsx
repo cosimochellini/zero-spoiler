@@ -142,6 +142,37 @@ describe('CharacterFacts', () => {
   )
 
   it.each([
+    ['en', 'Ranks', { title: 'Member no. 4', body: 'Phantom Troupe' }],
+    ['it', 'Cariche', { title: 'Membro n. 4', body: 'Brigata Fantasma' }],
+  ] as const)(
+    'links Hunter x Hunter’s seats in %s under %s, before the Nen type',
+    async (locale, label, { title, body }) => {
+      const link = `${title}, ${body}`
+      await renderUnderSeries(
+        <CharacterFacts
+          facts={facts({
+            nen: 'specialist',
+            seats: [{ id: 'phantom-troupe', title, body }],
+          })}
+        />,
+        {
+          locale,
+          path: `/hunter-x-hunter/${locale}/characters/test`,
+          series: HUNTER_X_HUNTER_SERIES,
+        },
+      )
+
+      expect(
+        screen.getAllByRole('term').map((term) => term.textContent),
+      ).toStrictEqual([label, locale === 'it' ? 'Tipo di Nen' : 'Nen type'])
+      expect(screen.getByRole('link', { name: link })).toHaveAttribute(
+        'href',
+        `/hunter-x-hunter/${locale}/ranks#ranks-phantom-troupe`,
+      )
+    },
+  )
+
+  it.each([
     ['en', 'Abilities'],
     ['it', 'Abilità'],
   ] as const)(

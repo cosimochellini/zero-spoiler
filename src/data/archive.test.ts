@@ -16,7 +16,7 @@ import type {
 import { type Locale, LOCALES } from '~/i18n/locales'
 import { type Source, thresholdIn } from '~/lib/progress/spoiler'
 import { markedIds, tokenize } from '~/lib/prose/markers'
-import { expectedOf, type Least, LOADED_SERIES } from '~/test/series'
+import { expectedOf, LOADED_SERIES } from '~/test/series'
 
 /**
  * The data rules that keep a series' dated facts spoiler-safe, run for every
@@ -207,8 +207,22 @@ function dossierIds(archive: SeriesArchive): string[] {
   return archive.sagas.flatMap((saga) => Object.keys(saga.dossiers))
 }
 
-/** What each count of `Least` counts in an archive. */
-function countsOf(archive: SeriesArchive): Least {
+/**
+ * What a series files of each thing a kind of text is printed from. The
+ * table in `docs/architecture.md` holds the exact counts (`gate:docs`).
+ */
+interface Counts {
+  affiliations: number
+  arcs: number
+  characters: number
+  chronicles: number
+  linkedOrigins: number
+  places: number
+  visits: number
+}
+
+/** Each count of `Counts`, in an archive. */
+function countsOf(archive: SeriesArchive): Counts {
   const dossiers = archive.characters.flatMap(
     (character) => archive.dossierOf(character) ?? [],
   )
@@ -220,29 +234,12 @@ function countsOf(archive: SeriesArchive): Least {
     chronicles: archive.stories.length,
     linkedOrigins: linkedOrigins(archive).length,
     places: archive.places.length,
-    statuses: dossiers.flatMap((dossier) => dossier.status ?? []).length,
-    timelines: archive.timelines.length,
     visits: visitsOf(archive).flatMap(({ visits }) => visits).length,
   }
 }
 
-/** Whether a key is one of `Least`'s. */
-function isLeastKey(key: string): key is keyof Least {
-  return [
-    'affiliations',
-    'arcs',
-    'characters',
-    'chronicles',
-    'linkedOrigins',
-    'places',
-    'statuses',
-    'timelines',
-    'visits',
-  ].includes(key)
-}
-
-/** The floor that holds up each kind of text the leak scan reads. */
-const KIND_FLOORS: Partial<Record<string, (keyof Least)[]>> = {
+/** The count that holds up each kind of text the leak scan reads. */
+const KIND_FLOORS: Partial<Record<string, (keyof Counts)[]>> = {
   affiliation: ['affiliations'],
   chronicle: ['chronicles'],
   form: ['places'],
@@ -297,34 +294,15 @@ describe.each(LOADED_SERIES)(
       return Array.isArray(role) ? role : undefined
     })
 
-    it('files at least what the series is known to file', () => {
-      // The rules below pass on nothing, so a series that files content must
-      // be seen filing it: a reader that lost its characters or its timelines
-      // would otherwise leave every rule here green. A floor below nine
-      // tenths of its count, rounded down, is stale: it no longer guards.
-      // The message prints every count, ready to copy into the floors.
-      const { least } = expectedOf(slug)
-      const counts = countsOf(archive)
-
-      const keys = Object.keys(least).filter(isLeastKey)
-      const short = keys.filter((key) => counts[key] < least[key])
-      const stale = keys.filter(
-        (key) => least[key] < Math.floor(counts[key] * 0.9),
-      )
-
-      expect({ short, stale }, `files ${JSON.stringify(counts)}`).toStrictEqual(
-        { short: [], stale: [] },
-      )
-    })
-
     // A series with no record yet (Game of Thrones, #849) prints only its
     // place words' headers, and has no floor to hold them to.
     it.skipIf(archive.entities.length === 0)(
       'holds every kind of text it prints to a floor above zero',
       () => {
-        // A kind the leak scan expects next to a floor of 0 would let the
-        // records behind it vanish with every rule here still green.
-        const { kinds, least } = expectedOf(slug)
+        // The rules below pass on nothing: a kind the leak scan expects
+        // with nothing filed behind it would leave every rule here green.
+        const { kinds } = expectedOf(slug)
+        const counts = countsOf(archive)
         // Region headers print before a series files its first place (Game
         // of Thrones until #853): only a series with places floors them.
         const floored = kinds
@@ -332,7 +310,7 @@ describe.each(LOADED_SERIES)(
           .filter((key) => key !== 'places' || archive.places.length > 0)
 
         for (const key of floored) {
-          expect(least[key], key).toBeGreaterThan(0)
+          expect(counts[key], key).toBeGreaterThan(0)
         }
       },
     )

@@ -1,9 +1,10 @@
+import { readdirSync, readFileSync } from 'node:fs'
+import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 import { eggheadRelationshipOmissions } from '~/data/series/one-piece/records/egghead.relationships'
 import { thrillerBarkRelationshipOmissions } from '~/data/series/one-piece/records/thriller-bark.relationships'
-import { CHARACTER_DOSSIERS, sagas } from '~/data/series/one-piece/sagas'
-import { LOADED_SERIES } from '~/test/series'
+import { loadedSeries } from '~/test/series'
 
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import elbafEvidence from '../../docs/content-provenance/elbaf-relationships.json' with { type: 'json' }
@@ -20,6 +21,43 @@ import relationshipEvidence from '../../docs/content-provenance/relationships.js
 // eslint-disable-next-line no-restricted-imports -- The evidence lives in docs, beside the audit manifest.
 import manifest from '../../docs/content-provenance/sources.json' with { type: 'json' }
 
+/** What an authored character cites: `sources.json` keys, and URLs it cannot pin. */
+interface Authored {
+  sources: string[]
+  unpinned?: { reason: string; urls: string[] }
+}
+
+/** One record's research: the pages read and the checks still open. */
+interface Research {
+  pending?: boolean
+  sources?: string[]
+  unverified?: string[]
+}
+
+/** Every character of a series, once: authored, omitted with a reason, or pending an issue. */
+interface Ledger {
+  authored: Record<string, Authored>
+  omitted: Record<string, string>
+  pending: Record<string, string>
+}
+
+/** What the checks below read of one series. */
+interface Provenance {
+  name: string
+  relationships: Ledger
+  slug: string
+  /** The wiki each `sources.json` key prefix is pinned from. */
+  wikis: Record<string, string>
+  /** Whether an authored character may cite no key at all. */
+  uncited?: true
+  /** The one host an authored character may cite by bare URL, unpinned. */
+  unpinnable?: string
+  /** How the series' wiki titles an episode's page; chapters are `Chapter N`. */
+  episodePage?: (episode: number) => string
+  /** The per-record research ledger and the hosts it may cite. */
+  records?: { hosts: string[]; ledger: Record<string, Research> }
+}
+
 const byId = (a: string, b: string): number => a.localeCompare(b)
 
 function hostOf(url: string): string {
@@ -27,332 +65,376 @@ function hostOf(url: string): string {
   return parsed.host
 }
 
-/** The page titles pinned from one series' wiki: a same-titled page elsewhere is no evidence. */
-function titlesOn(host: string): Set<string> {
+const sources: Partial<Record<string, { title: string; url: string }>> =
+  manifest.sources
+
+/** The page titles pinned from these hosts: a same-titled page elsewhere is no evidence. */
+function titlesOn(hosts: string[]): Set<string> {
   return new Set(
     Object.values(manifest.sources)
-      .filter(({ url }) => hostOf(url) === host)
+      .filter(({ url }) => hosts.includes(hostOf(url)))
       .map(({ title }) => title),
   )
 }
 
-const titles = titlesOn('onepiece.fandom.com')
-const hunterTitles = titlesOn('hunterxhunter.fandom.com')
-const characters: Partial<Record<string, null | string>> = relationshipEvidence
-const hunter: Record<
-  string,
-  { pending?: boolean; sources?: string[]; unverified?: string[] }
-> = hunterEvidence
-const hunterArchive = LOADED_SERIES.find(
-  ({ slug }) => slug === 'hunter-x-hunter',
-)?.archive
-const hunterIds = hunterArchive?.entities.map(({ id }) => id)
-const hunterRelationships: {
-  authored: Record<string, string[]>
-  omitted: Record<string, string>
-  pending: Record<string, string>
-} = hunterRelationshipEvidence
-const hunterCharacters =
-  hunterArchive?.entities.filter(({ kind }) => kind === 'character') ?? []
-const hunterOwners = hunterCharacters
-  .map((entity) => ({
-    id: entity.id,
-    relationships: hunterArchive?.datedOf(entity, 'relationships') ?? [],
-  }))
-  .filter(({ relationships }) => relationships.length > 0)
+/** The provenance folder: every ledger and research note beside `sources.json`. */
+const LEDGERS = path.join(import.meta.dirname, '../../docs/content-provenance')
 
-const owners = Object.entries(CHARACTER_DOSSIERS)
-  .filter(([, { relationships }]) => relationships !== undefined)
-  .map(([id, { relationships = [] }]) => ({ id, relationships }))
+/** A URL a provenance file cites with `?oldid=`, and the file citing it. */
+interface Cited {
+  file: string
+  href: string
+  url: URL
+}
 
-const cohortIds = sagas.flatMap(({ entries }) =>
-  entries.filter(({ kind }) => kind === 'character').map(({ id }) => id),
+/** The URL a match names, or `undefined` when it is not one. */
+function urlOf(href: string): undefined | URL {
+  try {
+    return new URL(href)
+  } catch {
+    return undefined
+  }
+}
+
+/**
+ * Every `?oldid=` match in a ledger or note. A match stops at whitespace, a
+ * quote, an angle and a square bracket: two adjacent Markdown links stay two,
+ * and a title's parentheses (`Gon_(2011)?oldid=`) hold.
+ */
+const matches = readdirSync(LEDGERS)
+  .filter((file) => /\.(?:json|md)$/u.test(file) && file !== 'sources.json')
+  .flatMap((file) => {
+    // eslint-disable-next-line security/detect-non-literal-fs-filename -- a file listed in the folder above.
+    const text = readFileSync(path.join(LEDGERS, file), 'utf8')
+    return Array.from(
+      text.matchAll(/https?:\/\/[^\s"<>[\]]*?[?&]oldid=\d+/gu),
+      ([href]) => ({ file, href, url: urlOf(href) }),
+    )
+  })
+
+/** The matches that are URLs. */
+const cited = matches.filter((match): match is Cited => match.url !== undefined)
+
+/** The pinned revisions' titles, by `<host><path> <revision>`. */
+const revisions = new Map(
+  Object.values(manifest.sources).map(({ revision, revisionUrl, title }) => {
+    const { host, pathname } = new URL(revisionUrl)
+    return [`${host}${pathname} ${String(revision)}`, title]
+  }),
 )
 
-describe('relationship provenance', () => {
-  it('accounts for every debut cohort with authored selections or explicit omissions', () => {
-    const authored = new Set(owners.map(({ id }) => id))
-    const omitted: Record<string, string> = {
-      ...elbafEvidence.omitted,
-      ...eggheadRelationshipOmissions,
-      ...thrillerBarkRelationshipOmissions,
-    }
+/** The page a revision URL names, when it names one: `/wiki/<Title>?oldid=` or `?title=`. */
+function titleIn({ pathname, searchParams }: URL): string | undefined {
+  const page =
+    pathname.startsWith('/wiki/') ?
+      pathname.slice('/wiki/'.length)
+    : searchParams.get('title')
+  if (page === null) {
+    return undefined
+  }
+  try {
+    return decodeURIComponent(page).replaceAll('_', ' ')
+  } catch {
+    // A malformed escape names no pinned title, so the check reports it.
+    return page
+  }
+}
 
-    expect([...authored, ...Object.keys(omitted)].toSorted(byId)).toStrictEqual(
-      cohortIds.toSorted(byId),
+/** Why a revision URL is not pinned, or `undefined` when it is. */
+function unpinnedBecause(url: URL): string | undefined {
+  const title = revisions.get(
+    `${url.host}/index.php ${url.searchParams.get('oldid') ?? ''}`,
+  )
+  if (title === undefined) {
+    return 'revision not pinned'
+  }
+  const named = titleIn(url)
+  return named === undefined || named === title ?
+      undefined
+    : `revision pinned as "${title}"`
+}
+
+const PROVENANCE: Provenance[] = [
+  {
+    name: 'One Piece',
+    slug: 'one-piece',
+    // Its ledger keeps its own files: `relationships.json` maps a character
+    // to the key of their character revision or `null`, and the omissions
+    // are spread over Elbaf's evidence and two arc modules. Nothing pends.
+    relationships: {
+      authored: Object.fromEntries(
+        Object.entries(relationshipEvidence).map(([id, key]) => [
+          id,
+          { sources: key === null ? [] : [key] },
+        ]),
+      ),
+      omitted: {
+        ...elbafEvidence.omitted,
+        ...eggheadRelationshipOmissions,
+        ...thrillerBarkRelationshipOmissions,
+      },
+      pending: {},
+    },
+    // Every key, `en-` or issue-scoped (`issue815-en-`), names this wiki.
+    wikis: { '': 'onepiece.fandom.com' },
+    // `null` in `relationships.json`: the timeline's episode and chapter
+    // pages are its evidence, and they are pinned like everyone else's.
+    uncited: true,
+    episodePage: (episode) => `Episode ${String(episode)}`,
+  },
+  {
+    name: 'Hunter x Hunter',
+    slug: 'hunter-x-hunter',
+    // An authored entry is its list of keys.
+    relationships: {
+      ...hunterRelationshipEvidence,
+      authored: Object.fromEntries(
+        Object.entries(hunterRelationshipEvidence.authored).map(
+          ([id, keys]) => [id, { sources: keys }],
+        ),
+      ),
+    },
+    wikis: { 'hxh-': 'hunterxhunter.fandom.com' },
+    episodePage: (episode) => `Episode ${String(episode)} (2011)`,
+    records: {
+      ledger: hunterEvidence,
+      // The lawful sources of #725: the series wiki, Italian Wikipedia and
+      // the 2011 anime broadcaster's official page (owner, 2026-11-21).
+      hosts: ['hunterxhunter.fandom.com', 'it.wikipedia.org', 'www.ntv.co.jp'],
+    },
+  },
+  {
+    name: 'Game of Thrones',
+    slug: 'game-of-thrones',
+    relationships: thronesRelationshipEvidence,
+    // The Game of Thrones Wiki for the show, the Ice and Fire Wiki for the
+    // books (#1344, #1348).
+    wikis: {
+      'got-': 'gameofthrones.fandom.com',
+      'iaf-': 'iceandfire.fandom.com',
+    },
+    // A Wiki of Ice and Fire refuses scripted requests, so its pages cannot
+    // be pinned by revision until #1009 unblocks: they stay URLs, with why.
+    unpinnable: 'awoiaf.westeros.org',
+    // No episode pages: the wiki titles them by name ("Winter Is Coming"),
+    // and the book chapters live on A Wiki of Ice and Fire.
+    records: {
+      ledger: thronesEvidence,
+      // The lawful sources of #725: the two wikis and Italian Wikipedia, and
+      // the Ice and Fire Wiki for the books where A Wiki of Ice and Fire
+      // cannot be read (owner, 2026-11-16).
+      hosts: [
+        'awoiaf.westeros.org',
+        'gameofthrones.fandom.com',
+        'iceandfire.fandom.com',
+        'it.wikipedia.org',
+      ],
+    },
+  },
+]
+
+describe('the wiki revisions the provenance files cite', () => {
+  // A broken folder path or pattern would let every series pass on nothing.
+  it('finds some on the series wikis', () => {
+    const hosts = new Set(
+      PROVENANCE.flatMap(({ wikis }) => Object.values(wikis)),
     )
 
-    for (const [id, reason] of Object.entries(omitted)) {
-      expect(authored.has(id), id).toBe(false)
-      expect(reason.trim().length, id).toBeGreaterThan(0)
-    }
-    for (const { id, relationships } of owners) {
-      expect(
-        relationships.some(({ value }) => value.length > 0),
-        id,
-      ).toBe(true)
-    }
-  })
-
-  it('lists exactly the characters that have relationships', () => {
-    expect(Object.keys(characters).toSorted(byId)).toStrictEqual(
-      owners.map(({ id }) => id).toSorted(byId),
-    )
-  })
-
-  it.each(owners)('pins the character revision of $id', ({ id }) => {
-    expect([null, ...Object.keys(manifest.sources)]).toContain(characters[id])
-  })
-
-  it.each(owners)(
-    'pins every episode and chapter gate of $id',
-    ({ relationships }) => {
-      // A one-source entry's other number only orders it: nothing to cite.
-      const pages = relationships.flatMap(({ episode, chapter, source }) => [
-        ...(source === 'chapter' ? [] : [`Episode ${String(episode)}`]),
-        ...(source === 'episode' ? [] : [`Chapter ${String(chapter)}`]),
-      ])
-
-      expect(pages.filter((page) => !titles.has(page))).toStrictEqual([])
-    },
-  )
-})
-
-describe('Hunter x Hunter provenance', () => {
-  it.each(Object.entries(hunter))(
-    'records what was read or is still open for %s',
-    (id, { sources: read = [], unverified = [] }) => {
-      expect(read.length + unverified.length, id).toBeGreaterThan(0)
-    },
-  )
-
-  it.each(Object.entries(hunter).filter(([, { pending }]) => pending !== true))(
-    'keeps filed research attached to the archive for %s',
-    (id) => {
-      expect(hunterIds).toContain(id)
-    },
-  )
-
-  it.each(Object.entries(hunter).filter(([, { pending }]) => pending === true))(
-    'keeps pending research outside the archive with open checks for %s',
-    (id, { unverified = [] }) => {
-      expect(hunterIds).not.toContain(id)
-      expect(unverified.length).toBeGreaterThan(0)
-    },
-  )
-})
-
-describe('Hunter x Hunter relationship provenance', () => {
-  const { authored, omitted, pending } = hunterRelationships
-
-  it('accounts for every archived character exactly once', () => {
     expect(
-      [
+      cited.filter(({ url }) => hosts.has(url.host)).length,
+    ).toBeGreaterThan(0)
+  })
+
+  it('parses each as a URL', () => {
+    expect(
+      matches
+        .filter(({ url }) => url === undefined)
+        .map(({ file, href }) => `${file}: ${href}`),
+    ).toStrictEqual([])
+  })
+})
+
+describe.each(PROVENANCE)(
+  '$name relationship provenance',
+  ({ slug, relationships, wikis, uncited, unpinnable, episodePage }) => {
+    const { authored, omitted, pending } = relationships
+    const archive = loadedSeries(slug).archive
+    const characters = archive.entities.filter(
+      ({ kind }) => kind === 'character',
+    )
+    const owners = characters
+      .map((entity) => ({
+        id: entity.id,
+        relationships: archive.datedOf(entity, 'relationships'),
+      }))
+      .filter((owner) => owner.relationships.length > 0)
+    const ownerIds = owners.map(({ id }) => id)
+    const wikiOf = (key: string): string | undefined =>
+      Object.entries(wikis).find(([prefix]) => key.startsWith(prefix))?.[1]
+
+    it('accounts for every archived character exactly once', () => {
+      const listed = [
         ...Object.keys(authored),
         ...Object.keys(omitted),
         ...Object.keys(pending),
-      ].toSorted(byId),
-    ).toStrictEqual(hunterCharacters.map(({ id }) => id).toSorted(byId))
-  })
+      ]
 
-  // Filed after this cohort: not authored yet, which is no deliberate omission.
-  it.each(Object.entries(pending))(
-    'names the issue that will author %s',
-    (id, issue) => {
-      expect(hunterOwners.map((owner) => owner.id)).not.toContain(id)
-      expect(issue).toMatch(/^#\d+$/u)
-    },
-  )
+      const distinct = new Set(listed)
 
-  it('lists as authored exactly the characters that have relationships', () => {
-    expect(Object.keys(authored).toSorted(byId)).toStrictEqual(
-      hunterOwners.map(({ id }) => id).toSorted(byId),
+      expect(distinct.size).toBe(listed.length)
+      expect(listed.toSorted(byId)).toStrictEqual(
+        characters.map(({ id }) => id).toSorted(byId),
+      )
+    })
+
+    it('lists as authored exactly the characters that have relationships', () => {
+      expect(Object.keys(authored).toSorted(byId)).toStrictEqual(
+        ownerIds.toSorted(byId),
+      )
+
+      for (const owner of owners) {
+        expect(
+          owner.relationships.some(({ value }) => value.length > 0),
+          owner.id,
+        ).toBe(true)
+      }
+    })
+
+    // Filed after the cohort that authored the rest: no deliberate omission.
+    it.each(Object.entries(pending))(
+      'names the issue that will author %s',
+      (id, issue) => {
+        expect(ownerIds).not.toContain(id)
+        expect(issue).toMatch(/^#\d+$/u)
+      },
     )
 
-    for (const { id, relationships } of hunterOwners) {
-      expect(
-        relationships.some(({ value }) => value.length > 0),
-        id,
-      ).toBe(true)
-    }
-  })
+    it.each(Object.entries(omitted))(
+      'gives a reason to omit %s',
+      (id, reason) => {
+        expect(ownerIds).not.toContain(id)
+        expect(reason.trim().length).toBeGreaterThan(0)
+      },
+    )
 
-  it.each(Object.entries(omitted))(
-    'gives a reason to omit %s',
-    (id, reason) => {
-      expect(hunterOwners.map((owner) => owner.id)).not.toContain(id)
-      expect(reason.trim().length).toBeGreaterThan(0)
-    },
-  )
+    it.each(Object.entries(authored))(
+      'pins the wiki revisions read for %s on the wiki its key names',
+      (id, { sources: keys, unpinned }) => {
+        expect(
+          keys.length + (unpinned?.urls.length ?? 0),
+          id,
+        ).toBeGreaterThanOrEqual(uncited === true ? 0 : 1)
 
-  it.each(Object.entries(authored))(
-    'pins the wiki revisions read for %s on the series wiki',
-    (id, keys) => {
-      const sources: Partial<Record<string, { url: string }>> = manifest.sources
+        for (const key of keys) {
+          expect(
+            hostOf(sources[key]?.url ?? 'missing:'),
+            `${key}: pinned in sources.json from the wiki its prefix names`,
+          ).toBe(wikiOf(key))
+        }
+      },
+    )
 
-      expect(keys.length, id).toBeGreaterThan(0)
+    it.each(
+      Object.entries(authored).flatMap(([id, { unpinned }]) =>
+        unpinned === undefined ? [] : [[id, unpinned] as const],
+      ),
+    )(
+      'keeps only the unpinnable wiki unpinned for %s, with why',
+      (_, unpinned) => {
+        expect(unpinned.reason.trim().length).toBeGreaterThan(0)
+        expect(unpinned.urls.length).toBeGreaterThan(0)
+        expect(
+          unpinned.urls
+            .map((url) => hostOf(url))
+            .filter((host) => host !== unpinnable),
+        ).toStrictEqual([])
+      },
+    )
 
-      for (const key of keys) {
-        expect(key, id).toMatch(/^hxh-/u)
-        expect(hostOf(sources[key]?.url ?? 'missing:'), key).toBe(
-          'hunterxhunter.fandom.com',
+    // `npm run provenance:pin` pins only a wiki's English root: a language
+    // path (`/it/wiki/…`) stays a plain URL, as Italian Wikipedia does. The
+    // count in the title shows a series that cites none.
+    const revisionsCited = cited.filter(
+      ({ url }) =>
+        Object.values(wikis).includes(url.host)
+        && /^\/(?:wiki\/|index\.php$)/u.test(url.pathname),
+    )
+
+    it(`pins all ${String(revisionsCited.length)} revisions the ledgers and notes cite from its wikis`, () => {
+      const unpinned = revisionsCited
+        .map(({ file, href, url }) => ({
+          file,
+          href,
+          why: unpinnedBecause(url),
+        }))
+        .filter(
+          (entry): entry is { file: string; href: string; why: string } =>
+            entry.why !== undefined,
         )
-      }
-    },
+        .map(({ file, href, why }) => `${file}: ${href} (${why})`)
+
+      expect(unpinned).toStrictEqual([])
+    })
+
+    const titles = titlesOn(Object.values(wikis))
+
+    it.each(
+      episodePage === undefined ?
+        []
+      : owners.map((owner) => ({ ...owner, episodePage })),
+    )(
+      'pins every episode and chapter gate of $id on the series wiki',
+      ({ relationships: timeline, episodePage: titleOf }) => {
+        // A one-source entry's other number only orders it: nothing to cite.
+        const pages = timeline.flatMap(({ episode, chapter, source }) => [
+          ...(source === 'chapter' ? [] : [titleOf(episode)]),
+          ...(source === 'episode' ? [] : [`Chapter ${String(chapter)}`]),
+        ])
+
+        expect(pages.filter((page) => !titles.has(page))).toStrictEqual([])
+      },
+    )
+  },
+)
+
+describe.each(
+  PROVENANCE.flatMap(({ name, slug, records }) =>
+    records === undefined ? [] : { name, slug, ...records },
+  ),
+)('$name provenance', ({ slug, ledger, hosts }) => {
+  const ids = loadedSeries(slug).archive.entities.map(({ id }) => id)
+  const filed = Object.entries(ledger).filter(
+    ([, { pending }]) => pending !== true,
   )
-
-  it.each(hunterOwners)(
-    'pins every episode and chapter gate of $id on the series wiki',
-    ({ relationships }) => {
-      // A one-source entry's other number only orders it: nothing to cite.
-      const pages = relationships.flatMap(({ episode, chapter, source }) => [
-        ...(source === 'chapter' ? [] : [`Episode ${String(episode)} (2011)`]),
-        ...(source === 'episode' ? [] : [`Chapter ${String(chapter)}`]),
-      ])
-
-      expect(pages.filter((page) => !hunterTitles.has(page))).toStrictEqual([])
-    },
-  )
-})
-
-describe('Game of Thrones provenance', () => {
-  const thrones: Record<string, { sources?: string[]; unverified?: string[] }> =
-    thronesEvidence
-  const ids =
-    LOADED_SERIES.find(
-      ({ slug }) => slug === 'game-of-thrones',
-    )?.archive.entities.map(({ id }) => id) ?? []
-  // The lawful sources of #725: the two wikis and Italian Wikipedia, and the
-  // Ice and Fire Wiki for the books where A Wiki of Ice and Fire cannot be read
-  // (owner, 2026-11-16).
-  const hosts = new Set([
-    'awoiaf.westeros.org',
-    'gameofthrones.fandom.com',
-    'iceandfire.fandom.com',
-    'it.wikipedia.org',
-  ])
 
   it('keeps research for exactly the records filed', () => {
-    expect(Object.keys(thrones).toSorted(byId)).toStrictEqual(
+    expect(filed.map(([id]) => id).toSorted(byId)).toStrictEqual(
       ids.toSorted(byId),
     )
   })
 
-  it.each(Object.entries(thrones))(
+  it.each(Object.entries(ledger))(
     'records what was read or is still open for %s',
     (id, { sources: read = [], unverified = [] }) => {
       expect(read.length + unverified.length, id).toBeGreaterThan(0)
       expect(
-        read.map((url) => hostOf(url)).filter((host) => !hosts.has(host)),
+        read.map((url) => hostOf(url)).filter((host) => !hosts.includes(host)),
       ).toStrictEqual([])
     },
   )
-})
 
-describe('Game of Thrones relationship provenance', () => {
-  const {
-    authored,
-    omitted,
-    pending,
-  }: {
-    authored: Record<
-      string,
-      { sources: string[]; unpinned?: { reason: string; urls: string[] } }
-    >
-    omitted: Record<string, string>
-    pending: Record<string, string>
-  } = thronesRelationshipEvidence
-  const archive = LOADED_SERIES.find(
-    ({ slug }) => slug === 'game-of-thrones',
-  )?.archive
-  const thronesCharacters =
-    archive?.entities.filter(({ kind }) => kind === 'character') ?? []
-  const thronesOwners = thronesCharacters
-    .filter(
-      (entity) => (archive?.datedOf(entity, 'relationships') ?? []).length > 0,
-    )
-    .map(({ id }) => id)
-  // The wiki each key prefix pins from: the Game of Thrones Wiki for the
-  // show, the Ice and Fire Wiki for the books (#1344, #1348).
-  const pinnedHosts: Record<string, string> = {
-    got: 'gameofthrones.fandom.com',
-    iaf: 'iceandfire.fandom.com',
-  }
-  const pinnedHostOf = (key: string): string | undefined =>
-    Object.entries(pinnedHosts).find(([prefix]) =>
-      key.startsWith(`${prefix}-en-`),
-    )?.[1]
-
-  it('accounts for every archived character exactly once', () => {
-    const listed = [
-      ...Object.keys(authored),
-      ...Object.keys(omitted),
-      ...Object.keys(pending),
-    ]
-
-    const distinct = new Set(listed)
-
-    expect(distinct.size).toBe(listed.length)
-    expect(listed.toSorted(byId)).toStrictEqual(
-      thronesCharacters.map(({ id }) => id).toSorted(byId),
-    )
-  })
-
-  it('lists as authored exactly the characters that have relationships', () => {
-    expect(Object.keys(authored).toSorted(byId)).toStrictEqual(
-      thronesOwners.toSorted(byId),
-    )
-  })
-
-  // Waiting for the child issue that authors them: no deliberate omission.
-  it.each(Object.entries(pending))(
-    'names the issue that will author %s',
-    (id, issue) => {
-      expect(thronesOwners).not.toContain(id)
-      expect(issue).toMatch(/^#\d+$/u)
+  it.each(filed)(
+    'keeps filed research attached to the archive for %s',
+    (id) => {
+      expect(ids).toContain(id)
     },
   )
 
-  it.each(Object.entries(omitted))(
-    'gives a reason to omit %s',
-    (id, reason) => {
-      expect(thronesOwners).not.toContain(id)
-      expect(reason.trim().length).toBeGreaterThan(0)
-    },
-  )
-
-  it.each(Object.entries(authored))(
-    'pins the wiki revisions read for %s on the wiki its key names',
-    (id, { sources: keys, unpinned }) => {
-      const sources: Partial<Record<string, { url: string }>> = manifest.sources
-
-      expect(keys.length + (unpinned?.urls.length ?? 0), id).toBeGreaterThan(0)
-
-      for (const key of keys) {
-        expect(
-          hostOf(sources[key]?.url ?? 'missing:'),
-          `${key}: pinned in sources.json from the wiki its prefix names`,
-        ).toBe(pinnedHostOf(key))
-      }
-    },
-  )
-
-  // A Wiki of Ice and Fire refuses scripted requests, so its pages cannot be
-  // pinned by revision until #1009 unblocks: they stay URLs, with the reason.
-  it.each(
-    Object.entries(authored).flatMap(([id, { unpinned }]) =>
-      unpinned === undefined ? [] : [[id, unpinned] as const],
-    ),
-  )(
-    'keeps only A Wiki of Ice and Fire unpinned for %s, with why',
-    (_, unpinned) => {
-      expect(unpinned.reason.trim().length).toBeGreaterThan(0)
-      expect(unpinned.urls.length).toBeGreaterThan(0)
-      expect(
-        unpinned.urls
-          .map((url) => hostOf(url))
-          .filter((host) => host !== 'awoiaf.westeros.org'),
-      ).toStrictEqual([])
+  it.each(Object.entries(ledger).filter(([, { pending }]) => pending === true))(
+    'keeps pending research outside the archive with open checks for %s',
+    (id, { unverified = [] }) => {
+      expect(ids).not.toContain(id)
+      expect(unverified.length).toBeGreaterThan(0)
     },
   )
 })

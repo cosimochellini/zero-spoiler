@@ -160,11 +160,20 @@ describe('every page that is not a record’s own', () => {
       ),
     ).toStrictEqual({})
     expect(
-      headOf(RanksRoute, '/hunter-x-hunter/en/ranks', HUNTER_X_HUNTER_SERIES),
-    ).toStrictEqual({})
-    expect(
       headOf(AbilitiesRoute, '/one-piece/en/abilities/', ONE_PIECE_SERIES),
     ).toStrictEqual({})
+  })
+
+  it('titles Hunter x Hunter’s ranks page, open before its first body (#1442)', () => {
+    const head = headOf(
+      RanksRoute,
+      '/hunter-x-hunter/en/ranks',
+      HUNTER_X_HUNTER_SERIES,
+    )
+
+    expect(head.meta?.[0]?.title).toBe(
+      'Ranks of the world | Hunter x Hunter | Zero Spoiler',
+    )
   })
 
   it('titles the abilities page once the series files the kind', () => {

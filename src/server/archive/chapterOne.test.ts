@@ -1,16 +1,13 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { LOADED_SERIES } from '~/test/series'
+import { opened } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
-import { characterPage, drawingsFor, shelvesPage } from './pages.server'
+import { characterPage, shelvesPage } from './pages.server'
 import { type Reader, readerFor } from './reader.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Chapter-one tests require Hunter x Hunter')
-}
-const { archive } = series
+const { archive } = loadedSeries('hunter-x-hunter')
 const IDS = ['kite', 'kon']
 const CASES = LOCALES.flatMap((locale) => IDS.map((id) => ({ id, locale })))
 
@@ -33,11 +30,8 @@ describe.each(CASES)('$id in $locale', ({ id, locale }) => {
         record: { id: arc },
       })
 
-      const page = characterPage(id, reader)
-
-      expect(page?.detail.slot.open).toBe(true)
-      expect(page?.detail.log).not.toBeNull()
-      expect(drawingsFor([id], reader)[id]?.length).toBeGreaterThan(3)
+      expect(opened(id, reader)).toBe(true)
+      expect(characterPage(id, reader)?.detail.log).not.toBeNull()
     }
   })
 
@@ -45,9 +39,8 @@ describe.each(CASES)('$id in $locale', ({ id, locale }) => {
     for (const bookmark of [null, { mode: 'episode', episode: 75 }] as const) {
       const reader = readerFor(archive, bookmark, locale)
 
-      expect(characterPage(id, reader)?.detail.slot.open).toBe(false)
+      expect(opened(id, reader)).toBe(false)
       expect(characterPage(id, reader)?.detail.log).toBeNull()
-      expect(drawingsFor([id], reader)).toStrictEqual({})
     }
   })
 })

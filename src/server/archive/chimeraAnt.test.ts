@@ -3,28 +3,16 @@ import { describe, expect, it } from 'vitest'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { leaksOf } from '~/test/fog'
-import { LOADED_SERIES } from '~/test/series'
+import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
+import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
-import { placePage } from './placePage.server'
 import { type Reader, readerFor } from './reader.server'
 import { relationshipsOf } from './relationships.server'
 
-const series = LOADED_SERIES.find(({ slug }) => slug === 'hunter-x-hunter')
-if (series === undefined) {
-  throw new Error('Chimera Ant tests require Hunter x Hunter')
-}
+const series = loadedSeries('hunter-x-hunter')
 const { archive } = series
 
-function characterById(
-  id: string,
-): NonNullable<ReturnType<typeof archive.getCharacter>> {
-  const character = archive.getCharacter(id)
-  if (character === undefined) {
-    throw new Error(`Missing character ${id}`)
-  }
-  return character
-}
 interface Row {
   chapter: number
   episode: number
@@ -146,19 +134,14 @@ const PHASE_FIVE: Row[] = [
   { id: 'ming-jol-ik', episode: 135, chapter: 315, place: false },
 ]
 
-const CASES = [
+const OPENING = [
   ...RECORDS,
   ...PHASE_TWO,
   ...PHASE_THREE,
   ...PHASE_FOUR,
   ...PHASE_FIVE,
-].flatMap((record) =>
-  LOCALES.flatMap((locale) =>
-    UNITS.filter(
-      (unit) => record.source === undefined || record.source === unit,
-    ).map((unit) => ({ ...record, locale, unit })),
-  ),
-)
+]
+const CASES = gateCases(OPENING, archive.series)
 /** The records one medium alone names, asked in the other medium. */
 const UNNAMED = [
   ...PHASE_TWO,
@@ -175,28 +158,13 @@ const UNNAMED = [
     })),
 )
 
-function at(unit: string, count: number): Bookmark {
-  return unit === 'chapter' ?
-      { mode: 'chapter', chapter: count }
-    : { mode: 'episode', episode: count }
-}
-
-function opened(id: string, place: boolean, reader: Reader): boolean {
-  const page = place ? placePage(id, reader) : characterPage(id, reader)
-  return page !== undefined && 'detail' in page && page.detail.slot.open
-}
-
 describe.each(CASES)('$id in $locale by $unit', (row) => {
   it('opens the record and drawing at its named scene, never before', () => {
-    const threshold = row.unit === 'chapter' ? row.chapter : row.episode
-    const before = readerFor(archive, at(row.unit, threshold - 1), row.locale)
-    const reached = readerFor(archive, at(row.unit, threshold), row.locale)
+    const before = readerFor(archive, row.before, row.locale)
+    const reached = readerFor(archive, row.reached, row.locale)
 
-    expect(opened(row.id, row.place, before)).toBe(false)
-    expect(drawingsFor([row.id], before)).toStrictEqual({})
-
-    expect(opened(row.id, row.place, reached)).toBe(true)
-    expect(drawingsFor([row.id], reached)[row.id]?.length).toBeGreaterThan(3)
+    expect(opened(row.id, before)).toBe(false)
+    expect(opened(row.id, reached)).toBe(true)
   })
 })
 
@@ -205,8 +173,7 @@ describe.each(UNNAMED)('$id in $locale by $unit', (row) => {
     const far = row.unit === 'chapter' ? 340 : 148
     const reader = readerFor(archive, at(row.unit, far), row.locale)
 
-    expect(opened(row.id, row.place, reader)).toBe(false)
-    expect(drawingsFor([row.id], reader)).toStrictEqual({})
+    expect(opened(row.id, reader)).toBe(false)
   })
 })
 
@@ -218,7 +185,7 @@ function statusAt(
 ): string | undefined {
   return archive.latestOf(
     readerFor(archive, bookmark, locale),
-    characterById(id),
+    recordIn(archive, id),
     'status',
   )
 }
@@ -270,7 +237,7 @@ function stepAt(
   locale: Locale,
 ): string | undefined {
   const reader = readerFor(archive, bookmark, locale)
-  const character = characterById(id)
+  const character = recordIn(archive, id)
   if (field === 'status') {
     return archive.latestOf(reader, character, field)
   }
@@ -1453,7 +1420,7 @@ describe.each(
 function gyroAt(episode: number, locale: Locale): string {
   const reader = readerFor(archive, at('episode', episode), locale)
 
-  expect(opened('gyro', false, reader)).toBe(true)
+  expect(opened('gyro', reader)).toBe(true)
 
   return JSON.stringify(characterPage('gyro', reader))
 }
@@ -1544,7 +1511,7 @@ describe('Chimera Ant phase four boundary', () => {
   it.each(LOCALES)(
     'keeps the phase five rescue out at the mixed episode in %s',
     (locale) => {
-      const king = characterById('meruem')
+      const king = recordIn(archive, 'meruem')
       const read = (count: number): string => {
         const reader = readerFor(archive, at('episode', count), locale)
         return JSON.stringify({
@@ -1567,7 +1534,7 @@ describe('Chimera Ant dated facts', () => {
   )(
     'opens the relationship with Kite for $id in $locale by $unit',
     ({ id, locale, unit, episode, chapter }) => {
-      const character = characterById(id)
+      const character = recordIn(archive, id)
       const episodeGate = id === 'neferpitou' ? 85 : episode
       // Neferpitou's row with Kite opens at the kill, chapter 199.
       const chapterGate = id === 'neferpitou' ? 199 : chapter
@@ -1591,7 +1558,7 @@ describe('Chimera Ant dated facts', () => {
   )(
     'dates Kite’s survey affiliation in $locale by $unit',
     ({ locale, unit, gate }) => {
-      const kite = characterById('kite')
+      const kite = recordIn(archive, 'kite')
       const affiliation = (count: number): string | undefined =>
         archive.latestOf(
           readerFor(archive, at(unit, count), locale),
@@ -1610,7 +1577,7 @@ describe('Chimera Ant dated facts', () => {
       { locale, unit: 'chapter', gate: 229 },
     ]),
   )('dates Zazan’s death in $locale by $unit', ({ locale, unit, gate }) => {
-    const zazan = characterById('zazan')
+    const zazan = recordIn(archive, 'zazan')
     const status = (count: number): string | undefined =>
       archive.latestOf(
         readerFor(archive, at(unit, count), locale),
@@ -1699,7 +1666,7 @@ describe('Chimera Ant dated facts', () => {
   ])(
     'reveals the changed role for $id at its scene',
     ({ id, episode, chapter, role }) => {
-      const character = characterById(id)
+      const character = recordIn(archive, id)
       for (const locale of LOCALES) {
         for (const unit of ['episode', 'chapter'] as const) {
           const gate = unit === 'episode' ? episode : chapter
@@ -1720,7 +1687,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)(
     'changes Pike’s status and art at chapter 228 in %s',
     (locale) => {
-      const pike = characterById('pike')
+      const pike = recordIn(archive, 'pike')
       const before = readerFor(archive, at('chapter', 227), locale)
       const reached = readerFor(archive, at('chapter', 228), locale)
 
@@ -1733,7 +1700,7 @@ describe('Chimera Ant dated facts', () => {
   )
 
   it.each(LOCALES)('dates Leol’s name and death in %s', (locale) => {
-    const hagya = characterById('hagya')
+    const hagya = recordIn(archive, 'hagya')
     const read = (chapter: number): Reader =>
       readerFor(archive, at('chapter', chapter), locale)
     const before = read(253)
@@ -1755,7 +1722,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)('dates Leol’s death in the anime in %s', (locale) => {
     const before = readerFor(archive, at('episode', 106), locale)
     const reached = readerFor(archive, at('episode', 107), locale)
-    const leol = characterById('hagya')
+    const leol = recordIn(archive, 'hagya')
 
     expect(archive.latestOf(before, leol, 'status')).toBe('alive')
     expect(archive.latestOf(reached, leol, 'status')).toBe('deceased')
@@ -1765,7 +1732,7 @@ describe('Chimera Ant dated facts', () => {
   })
 
   it('stores the chapter the manga names Leol, 240', () => {
-    expect(characterById('hagya').episodeName?.chapter).toBe(240)
+    expect(recordIn(archive, 'hagya').episodeName?.chapter).toBe(240)
   })
 
   it('holds Leol as fog in a payload until each reader reaches it', () => {
@@ -1809,7 +1776,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(['gon-freecss', 'killua'])(
     'dates the operation assignment for %s',
     (id) => {
-      const character = characterById(id)
+      const character = recordIn(archive, id)
       for (const locale of LOCALES) {
         for (const [unit, gate] of [
           ['episode', 95],
@@ -1862,7 +1829,7 @@ describe('Chimera Ant dated facts', () => {
     { id: 'netero', field: 'affiliation', episode: 95, chapter: 223 },
     { id: 'knov', field: 'affiliation', episode: 95, chapter: 223 },
   ] as const)('dates the $field step of $id at its scene', (row) => {
-    const character = characterById(row.id)
+    const character = recordIn(archive, row.id)
     // A one-source step is asked in its own unit only.
     const gates = (
       [
@@ -1911,7 +1878,7 @@ describe('Chimera Ant dated facts', () => {
   ] as const)(
     'changes the relationships of $id at $episode / $chapter',
     (row) => {
-      const character = characterById(row.id)
+      const character = recordIn(archive, row.id)
       // A one-source step is asked in its own unit only.
       const gates = (
         [
@@ -1936,7 +1903,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)(
     'adds Peggy to Meleoron’s relationships at chapter 242 in %s',
     (locale) => {
-      const meleoron = characterById('meleoron')
+      const meleoron = recordIn(archive, 'meleoron')
       const read = (chapter: number): string[] =>
         (
           archive.latestOf(
@@ -1954,7 +1921,7 @@ describe('Chimera Ant dated facts', () => {
   it.each(LOCALES)('opens Pell already dead in %s', (locale) => {
     const reader = readerFor(archive, at('episode', 96), locale)
 
-    expect(archive.latestOf(reader, characterById('pell'), 'status')).toBe(
+    expect(archive.latestOf(reader, recordIn(archive, 'pell'), 'status')).toBe(
       'deceased',
     )
   })

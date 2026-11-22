@@ -573,11 +573,11 @@ describe.each(LOADED_SERIES)(
     })
 
     it('has a feature slice exactly where its description declares one', () => {
-      // `fruit` and `ship`, the bounty, the factions, the filler guide and
-      // the power page are One Piece's (owner, 2026-10-23); the Nen type is
-      // Hunter x Hunter's (#922). A series' archive carries a
-      // slice for each it has (`~/data/features`), and its description says
-      // so: the two are one fact, held together here.
+      // `fruit` and `ship`, the bounty, the factions and the filler guide
+      // are One Piece's (owner, 2026-10-23); the Nen type is Hunter x
+      // Hunter's (#922); the ranks page is both's (#1441). A series'
+      // archive carries a slice for each it has (`~/data/features`), and its
+      // description says so: the two are one fact, held together here.
       const { features, kinds } = archive.series
       const slices = archive.features
       const dossiers = archive.characters.flatMap(
@@ -588,6 +588,11 @@ describe.each(LOADED_SERIES)(
         ({ devilFruit }) => devilFruit !== undefined,
       )
       const nenUsers = dossiers.filter(({ nen }) => nen !== undefined)
+      // A series with groups but no factions feature (Hunter x Hunter, whose
+      // groups are the ranks page's alone, #1441) tags no affiliation.
+      const tagged = dossiers
+        .flatMap(({ affiliation }) => affiliation)
+        .filter(({ factions }) => (factions?.length ?? 0) > 0)
 
       expect(
         entities.filter((entity) => !kinds.includes(entity.kind)),
@@ -602,6 +607,7 @@ describe.each(LOADED_SERIES)(
       expect(bounties.length > 0).toBe(features.bounty)
       expect(eaters.length > 0).toBe(features.fruits)
       expect(nenUsers.length > 0).toBe(features.nen)
+      expect(tagged.length > 0).toBe(features.factions)
     })
 
     it('groups its chapters into books without a gap, inside its ceiling', () => {

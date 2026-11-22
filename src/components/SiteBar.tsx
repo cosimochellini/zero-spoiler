@@ -26,11 +26,12 @@ import {
  * The bar, edge-aligned.
  *
  * The wordmark hard-left, the controls hard-right. On a series page the
- * series' name follows the wordmark, a breadcrumb: the wordmark is the way
- * back to the hub, the name the series' home. Past them the row is empty. It
- * stays pinned at every width, so the pages and the bookmark are one tap
- * away from anywhere down a long listing. Below `ROOMY` a series bar folds
- * the name and the pages onto a second row.
+ * series' short name ("HxH") follows the wordmark, a breadcrumb: the wordmark
+ * is the way back to the hub, the name the series' home. Its full name
+ * follows, read and not shown, so the link is "HxH Hunter x Hunter". Past
+ * them the row is empty. It stays pinned at every width, so the pages and
+ * the bookmark are one tap away from anywhere down a long listing. Below
+ * `ROOMY` a series bar folds the name and the pages onto a second row.
  * The right edge carries the series' pages, the reader's bookmark and the
  * language select, and no more. The bookmark is the one control the whole
  * site turns on, so it lives here, on every page, as a single mark that opens
@@ -41,9 +42,6 @@ export function SiteBar(): ReactElement {
   const { locale } = useLocale()
   const t = useT()
   const { series } = useBookmark()
-  // The public description, for the series' name in the reader's language.
-  const described = useMatch({ from: '/$series', shouldThrow: false })?.context
-    .series
 
   return (
     <header {...stylex.props(styles.bar, series === null && styles.sharedBar)}>
@@ -66,17 +64,7 @@ export function SiteBar(): ReactElement {
             >
               /
             </span>
-            <Link
-              activeOptions={{ exact: true }}
-              activeProps={{ 'aria-current': 'page' }}
-              params={{ locale, series: series.slug }}
-              to="/$series/$locale"
-              {...stylex.props(styles.seriesName)}
-            >
-              <span {...stylex.props(styles.seriesText)}>
-                {described?.name[locale] ?? series.slug}
-              </span>
-            </Link>
+            <SeriesCrumb slug={series.slug} />
             <SeriesNavigation />
           </div>
           <EpisodeMark />
@@ -88,9 +76,42 @@ export function SiteBar(): ReactElement {
 }
 
 /**
+ * The series' home, after the wordmark: its short name ("HxH"), then its
+ * full name in the reader's language, read and not shown, so the link's name
+ * holds its visible text, "HxH Hunter x Hunter" (WCAG 2.5.3).
+ */
+function SeriesCrumb({ slug }: { slug: string }): ReactElement {
+  const { locale } = useLocale()
+  const described = useMatch({ from: '/$series', shouldThrow: false })?.context
+    .series
+
+  return (
+    <Link
+      activeOptions={{ exact: true }}
+      activeProps={{ 'aria-current': 'page' }}
+      params={{ locale, series: slug }}
+      to="/$series/$locale"
+      {...stylex.props(styles.seriesName)}
+    >
+      <span {...stylex.props(styles.seriesText)}>
+        {described?.shortName ?? slug}
+      </span>
+      {described !== undefined && (
+        // The space is the link's own text, so no span's edge trims it.
+        <>
+          {' '}
+          <span {...stylex.props(styles.hidden)}>{described.name[locale]}</span>
+        </>
+      )}
+    </Link>
+  )
+}
+
+/**
  * The bar's pages, in its order; the filler guide is reached from the footer.
- * Labelled by the page's own copy: the fruits, the ranks page and the filler
- * guide are One Piece's, and only a series that declares them links them.
+ * Labelled by the page's own copy: the fruits and the filler guide are One
+ * Piece's, the abilities Hunter x Hunter's, the ranks page both's, and only a
+ * series that declares a page links it.
  */
 const NAV: PageEntry<TranslationKey>[] = [
   {
@@ -114,6 +135,7 @@ const HUNTER_NAV: PageEntry<TranslationKey<'hunter-x-hunter'>>[] = [
     to: '/$series/$locale/abilities',
     label: 'nav.abilities',
   },
+  { page: 'ranks', to: '/$series/$locale/ranks', label: 'nav.ranks' },
 ]
 
 /**
@@ -146,11 +168,11 @@ function SeriesNavigation(): ReactElement {
 
 // The site's breakpoint: below it the bar is the phone bar.
 const WIDE = '@media (min-width: 40rem)'
-// A series bar needs more room for one row: the wordmark, the name, its
-// pages, the bookmark and the language fit from `BAR.seriesWide` with the
-// longest name (Hunter x Hunter, in Italian) and with the most pages (One
-// Piece's four, in Italian). Below it the name and the pages fold under, as
-// on a phone, where the name gives way first.
+// A series bar needs more room for one row: the wordmark, the short name,
+// its pages, the bookmark and the language fit from `BAR.seriesWide` with the
+// most pages (four, One Piece's and Hunter x Hunter's, in Italian). Below it
+// the name and the pages fold under, as on a phone, where the name gives way
+// first.
 const ROOMY = BAR.seriesWide
 
 const styles = stylex.create({
@@ -237,13 +259,23 @@ const styles = stylex.create({
     outlineWidth: rule.fine,
     paddingInlineEnd: { [ROOMY]: 0, default: space.sm },
     textDecorationLine: 'none',
-    textTransform: 'uppercase',
+    // The short name keeps its own case: "HxH", "GoT".
+    textTransform: 'none',
     whiteSpace: 'nowrap',
     maxWidth: '100%',
     minHeight: '44px',
     minWidth: 0,
   },
   seriesText: { overflow: 'hidden', textOverflow: 'ellipsis' },
+  // Out of sight and still read: the series' full name.
+  hidden: {
+    overflow: 'hidden',
+    clipPath: 'inset(50%)',
+    position: 'absolute',
+    whiteSpace: 'nowrap',
+    height: '1px',
+    width: '1px',
+  },
   // On a series page the series' name is the louder of the two.
   quiet: { color: { 'default': color.ink2, ':hover': color.accent } },
 

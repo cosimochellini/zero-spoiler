@@ -15,44 +15,29 @@ export const LOADED_SERIES: LoadedSeries[] = await Promise.all(
   }),
 )
 
-function onePiece(): LoadedSeries {
-  const found = LOADED_SERIES.find(({ slug }) => slug === 'one-piece')
+/** A loaded series by slug, or the test is wrong: it is not registered. */
+export function loadedSeries(slug: string): LoadedSeries {
+  const found = LOADED_SERIES.find((entry) => entry.slug === slug)
   if (found === undefined) {
-    throw new Error('One Piece fixture is not registered')
+    throw new Error(`${slug} is not registered`)
   }
   return found
 }
-export const ONE_PIECE_LOADED = onePiece()
+export const ONE_PIECE_LOADED = loadedSeries('one-piece')
 
 /**
  * What a filed series is known to hold: the kinds of text its leak scan
- * reads (`~/data/leaks.test.ts`), whether a record says its name before it
- * opens, and the least it files of what the shared data rules read
- * (`~/data/archive.test.ts`), within nine tenths of the real counts, so a
- * rule over a series that files content cannot pass on nothing or on a
- * reader that lost some of it. A new series needs a row here.
+ * reads (`~/data/leaks.test.ts`) and whether a record says its name before it
+ * opens. How much it files is the generated count table in
+ * `docs/architecture.md` (`npm run docs:counts`, checked by `gate:docs`).
+ * A new series needs a row here.
  */
 export interface Expected {
   kinds: string[]
-  least: Least
   namesSaidEarly: boolean
 }
 
-/** The least a series files of each thing the shared rules read. */
-export interface Least {
-  affiliations: number
-  arcs: number
-  characters: number
-  chronicles: number
-  linkedOrigins: number
-  places: number
-  statuses: number
-  timelines: number
-  visits: number
-}
-
 const EXPECTED: Record<string, Expected> = {
-  // What it files on 2026-11-01 (#980 dropped Spandam's unsourced step).
   'one-piece': {
     kinds: [
       'about',
@@ -74,38 +59,8 @@ const EXPECTED: Record<string, Expected> = {
       'title',
       'visit',
     ],
-    least: {
-      affiliations: 807,
-      arcs: 34,
-      characters: 534,
-      chronicles: 757,
-      linkedOrigins: 118,
-      places: 39,
-      statuses: 799,
-      timelines: 2591,
-      visits: 13,
-    },
     namesSaidEarly: true,
   },
-  // What it files on 2026-11-06: the arcs, the Hunter Exam’s road to the
-  // exam through the visit to Killua's home, chapter-one characters (#760),
-  // the Heavens Arena characters and place (#896), Silva (#834), Yorknew
-  // City (#900), Greed Island through the finale (#1016–#1019) and Michael
-  // (#1032), and chronicles for the characters filed through #1019 and the
-  // returning cast (#906). Chimera Ant phase 1 (#1020) adds five characters
-  // and one place, phase 2 (#1021) 27 characters and eight places, and
-  // phase 3 (#1022) 11 characters and four places. Phase 4 (#1023) adds
-  // one character and opens an existing place in the anime. Phase 5 (#1024)
-  // adds one character and files the finale. Election (#912) covers episode
-  // 137–148 and chapter 319–339; #914 adds 91 chronicles for its new and returning cast.
-  // Kakin phase 1 (#1134) adds 26 manga-only characters and one place, chapter 340–357.
-  // Phase 2 (#1135) adds 19 characters and the Black Whale, chapter 358–370.
-  // Phase 3 (#1136) adds four characters, chapter 371–383.
-  // Phase 4 (#1137) adds 36 characters and two places, chapter 384–400.
-  // Phase 5 (#1138) adds 22 characters, chapter 401–420 (counted 2026-11-06).
-  // #1155 adds 99 manga-only chronicles for chapters 340–370 (2026-11-07).
-  // #1157 adds 120 for chapters 371–400, four manga-only statuses and one affiliation; statuses and affiliations are exact (2026-11-07).
-  // #1159 adds 84 for chapters 401–420 and two manga-only statuses; chronicles and statuses are exact, timelines a floor within 90% (2026-11-07).
   'hunter-x-hunter': {
     kinds: [
       'affiliation',
@@ -123,40 +78,8 @@ const EXPECTED: Record<string, Expected> = {
       'role',
       'summary',
     ],
-    least: {
-      affiliations: 464,
-      arcs: 7,
-      characters: 290,
-      chronicles: 994,
-      linkedOrigins: 10,
-      places: 43,
-      statuses: 383,
-      timelines: 1274,
-      visits: 0,
-    },
     namesSaidEarly: true,
   },
-  // Counted 2026-11-15, after the southern cast's later looks and deaths
-  // (#1286): 148 characters, 60 places and the season's heading. Timelines
-  // counted 2026-11-16, after the King's Landing, riverlands and Vale
-  // relationships (#1346): 588. Chronicles, timelines and statuses counted
-  // 2026-11-17, after the Essos cast's stories (#1360): 88 stories, 606
-  // timelines and 259 statuses. Chronicles and timelines counted 2026-11-18,
-  // after the Night's Watch cast's stories (#1363): 177 stories and 628
-  // timelines. Chronicles and timelines counted 2026-11-20, after the King's
-  // Landing, riverlands and Vale stories (#1362): 406 stories and 695
-  // timelines. Chronicles, timelines and statuses counted 2026-11-20, after
-  // the Winterfell and northern stories (#1361): 566 stories, 734 timelines
-  // and 260 statuses. Statuses and timelines counted 2026-11-21, after Othor's
-  // book gate moved to Jon VII, his alive entry and his redrawings went
-  // (#1425): 259 statuses and 733 timelines. Chronicles and timelines counted
-  // 2026-11-21, after Lommy's show gate moved to episode 13 and his stage-1
-  // story went (#1457): 565 stories and 732 timelines. Timelines counted
-  // 2026-11-21, after Lommy's show gate moved to episode 31 and his
-  // relationship cards went (#1457): 731. Counted 2026-11-21, after the
-  // second stage's King's Landing and Blackwater cast (#1463): 155
-  // characters, 179 affiliations, 270 statuses, 750 timelines and the second
-  // season's heading.
   'game-of-thrones': {
     kinds: [
       'affiliation',
@@ -172,17 +95,6 @@ const EXPECTED: Record<string, Expected> = {
       'role',
       'summary',
     ],
-    least: {
-      affiliations: 179,
-      arcs: 2,
-      characters: 155,
-      chronicles: 565,
-      linkedOrigins: 0,
-      places: 60,
-      statuses: 270,
-      timelines: 750,
-      visits: 0,
-    },
     namesSaidEarly: true,
   },
 }

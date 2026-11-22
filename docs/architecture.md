@@ -55,9 +55,9 @@ gates.
   chapter would both see. The reader keeps the null bookmark and the
   null-bookmark archive copy, so its handles are the ones “Show anyway”
   resolves. A bookmark or a trial gets its own reader, unchanged. Each such
-  payload says so (`drawnAt` in `src/server/archive/payloads.server.ts`), and
-  the leak sweep reads every key of it with no bookmark, in both locales, held
-  to both of its points (`src/test/visitor.ts`).
+  payload says so (`reads: 'page'` in `src/server/archive/payloads.server.ts`,
+  hence its `drawnAt`), and the leak sweep reads every key of it with no
+  bookmark, in both locales, held to both of its points (`src/test/visitor.ts`).
 - Drawings, search aliases, relationships, place labels and source credits use
   the same gates as prose. Later information belongs in dated entries.
 - A record's social pictures (`public/og/`, [Social pictures](#social-pictures))
@@ -396,9 +396,13 @@ so gated names do not belong in it: One Piece's faction labels live in
 `src/i18n/dictionaries/one-piece/factions.ts` and reach a page only with the
 fruit album group an open eater stands in, or, once a body of power is met and
 one of its seats is held or vacant, as that body's name on the ranks page and on
-the seat links of a character who holds one of its seats (`seatsHeldBy`); its
-seas' names live in `src/i18n/dictionaries/one-piece/seas.ts` and reach the
-places page only for the regions its open stops open on the chart (`regionsFor`,
+the seat links of a character who holds one of its seats (`seatsHeldBy`). Hunter
+x Hunter's group names live in `src/i18n/dictionaries/hunter-x-hunter/groups.ts`
+and reach a page only the second way. Both tables are a series' `groups` in the
+registry (`src/data/series/index.ts`), read through `groupLabel`
+(`src/server/archive/printed.server.ts`). One Piece's seas' names live in
+`src/i18n/dictionaries/one-piece/seas.ts` and reach the places page only for the
+regions its open stops open on the chart (`regionsFor`,
 `src/lib/view/chart.ts`), and a place's page or peek for its own sea. The shared
 dictionary is one chunk per locale: the root route awaits the copy of the
 address's language in `beforeLoad` (`localeOfPath`), for a locale route's page
@@ -417,25 +421,33 @@ with the legal page alone. Copy rules live in the
 
 ## Extending the archive boundary
 
-- Register new server functions in `PAYLOADS` in
-  `src/server/archive/payloads.server.ts`, including ids/handles they accept.
-  For `plain()` responses, extend the JSON round-trip checks there too. New
-  payload names go at the end of its `order`, after the deployed ones, so One
-  Piece's sweep and dump stay byte for byte: `loadAbilities`, `loadAbility` and
-  `liftAbility` (#923) are the last.
+- Describe a new server function once, as an entry of `ENDPOINTS` in
+  `src/server/archive/payloads.server.ts`: its input (`src/server/inputs.ts`),
+  the bookmark it reads (`reads`), its projection, whether it answers with
+  `plain`, and the ids or handles the sweep asks it with (`keys`). Then add its
+  wrapper to `src/server/api.ts`: one literal
+  `createServerFn().validator(...).handler(...)` that serves the entry, because
+  Start's compiler needs one per export. The sweep, the dump and the JSON
+  round-trip checks read the same entry. A new entry goes at the end of the
+  table, after the deployed ones, so One Piece's sweep and dump stay byte for
+  byte: `loadAbilities`, `loadAbility` and `liftAbility` (#923) are the last.
 - Register new prose outside a series' `records/` in its `EXTRA.prose` entry in
   `scripts/archive-gate.mjs` and in `textsOf` in `src/data/leaks.test.ts`, using
   the page's actual gate.
 - The ranks page (`/{series}/{locale}/ranks`, `/power` until #1194, which
   `movedPageRedirect` in `src/lib/legacyRedirect.ts` answers with a 301 that
-  keeps the query) draws the bodies of power. They live one per module in
-  `src/data/series/<folder>/power/`. Seat titles are a word or two, so
-  `scripts/archive-gate.power.mjs` looks for each module by its longest
-  hyphenated holder id of 9 or more characters, or, when it seats none, by its
-  longest English seat title of 12 or more; a module with neither is refused.
-  `descriptionCanaries` adds a second canary per module, its longest quoted
-  sentence of 60 or more characters, so every body needs a description of that
-  length; `power/` is therefore left out of the prose-module test in
+  keeps the query for every series with the page) draws the bodies of power. One
+  Piece and Hunter x Hunter have it (`Series.features.power`). Hunter x Hunter's
+  is open before its first body is filed (owner, #1442): until #1443 to #1447
+  file them, it says that nothing is open, at every bookmark and with none. The
+  bodies live one per module in `src/data/series/<folder>/power/`, listed in the
+  order of the page in `src/data/series/<folder>/power.ts`. Seat titles are a
+  word or two, so `scripts/archive-gate.power.mjs` looks for each module by its
+  longest hyphenated holder id of 9 or more characters, or, when it seats none,
+  by its longest English seat title of 12 or more; a module with neither is
+  refused. `descriptionCanaries` adds a second canary per module, its longest
+  quoted sentence of 60 or more characters, so every body needs a description of
+  that length; `power/` is therefore left out of the prose-module test in
   `archive-gate.test.mjs`, which asks every other prose module to be an extra.
   `leaks.test.ts` scans each title as kind `seat` at the later of its body's
   gate and its seat's `told`, and each version of a body's `description` (one to
@@ -451,10 +463,19 @@ with the legal page alone. Copy rules live in the
   no count and no place in the order. `powerSweep.test.ts` runs the leak sweep
   over both, and holds the two equal, at both sides of every dated change of
   every body.
-- New series need a registry entry and coverage floors/text kinds in
-  `src/test/series.ts`. Follow an existing series for archive and copy wiring.
+- New series need a registry entry and text kinds in `src/test/series.ts`.
+  Follow an existing series for archive and copy wiring.
 - Client code consumes `src/lib/view` types, never archive modules. ESLint,
   payload sweeps and `gate:archive` protect this boundary; keep all three.
+- A server function's projections load with the function, never with a route.
+  `gate:archive` walks the static imports of every runtime chunk of the server
+  build except Start's server-function chunks (`?tss-serverfn-split`) and fails
+  if one reaches such a chunk, `src/server/archive/`, `serve.server.ts`,
+  `copy.server.ts` or `sources.server.ts`. It reads a chunk's modules from its
+  `//#region` lines and its source map's `sources`, because Rolldown gives some
+  modules no region of their own. So every reached chunk but Start's virtual
+  ones needs a readable map (`environments.ssr.build.sourcemap` in
+  `vite.config.ts`); a missing or unreadable one leaves the gate unusable.
 
 For verification commands and delivery rules, use
 [CONTRIBUTING.md](../CONTRIBUTING.md#checks).
@@ -462,34 +483,46 @@ For verification commands and delivery rules, use
 ## The archive in numbers
 
 Regenerate with `npm run docs:counts` after changing archive counts. `gate:docs`
-checks this block.
+checks this block, so a lost record, chronicle, redrawing, affiliation or status
+step, linked origin or visit shows as a changed line. Other dated fields (role,
+epithet, bounty and the like) are counted only as part of the timelines row.
 
 <!-- Generated by `npm run docs:counts` from the archive. Do not edit by hand. -->
 
 ### `one-piece`
 
-| Thing               | Count                                                   |
-| ------------------- | ------------------------------------------------------- |
-| Records             | 742                                                     |
-| Characters          | 539                                                     |
-| Devil fruits        | 128                                                     |
-| Bodies of power     | 15, with 119 seats                                      |
-| Arcs, places, ships | 34 · 39 · 2                                             |
-| Saga modules        | 12, plus one for the devil fruits                       |
-| Line drawings       | 742, one per record, plus 433 redrawings of 240 records |
-| Chronicle stories   | 792, for 189 characters                                 |
+| Thing                     | Count                                                   |
+| ------------------------- | ------------------------------------------------------- |
+| Records                   | 742                                                     |
+| Characters                | 539                                                     |
+| Devil fruits              | 128                                                     |
+| Bodies of power           | 15, with 119 seats                                      |
+| Arcs, places, ships       | 34 · 39 · 2                                             |
+| Saga modules              | 12, plus one for the devil fruits                       |
+| Line drawings             | 742, one per record, plus 433 redrawings of 240 records |
+| Chronicle stories         | 792, for 189 characters                                 |
+| Dated timelines           | 2755                                                    |
+| Affiliation steps         | 830                                                     |
+| Status steps              | 804                                                     |
+| Origins that link a place | 118                                                     |
+| Later visits to places    | 13                                                      |
 
 ### `hunter-x-hunter`
 
-| Thing             | Count                                                 |
-| ----------------- | ----------------------------------------------------- |
-| Records           | 368                                                   |
-| Characters        | 290                                                   |
-| Nen abilities     | 28                                                    |
-| Arcs, places      | 7 · 43                                                |
-| Saga modules      | 7                                                     |
-| Line drawings     | 368, one per record, plus 94 redrawings of 81 records |
-| Chronicle stories | 1001, for 289 characters                              |
+| Thing                     | Count                                                 |
+| ------------------------- | ----------------------------------------------------- |
+| Records                   | 368                                                   |
+| Characters                | 290                                                   |
+| Nen abilities             | 28                                                    |
+| Bodies of power           | 0, with 0 seats                                       |
+| Arcs, places              | 7 · 43                                                |
+| Saga modules              | 7                                                     |
+| Line drawings             | 368, one per record, plus 94 redrawings of 81 records |
+| Chronicle stories         | 1001, for 289 characters                              |
+| Dated timelines           | 1333                                                  |
+| Affiliation steps         | 464                                                   |
+| Status steps              | 388                                                   |
+| Origins that link a place | 10                                                    |
 
 ### `game-of-thrones`
 
@@ -501,5 +534,8 @@ checks this block.
 | Saga modules      | 2                                                       |
 | Line drawings     | 215, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 565, for 144 characters                                 |
+| Dated timelines   | 750                                                     |
+| Affiliation steps | 179                                                     |
+| Status steps      | 270                                                     |
 
 <!-- End of the generated counts. -->

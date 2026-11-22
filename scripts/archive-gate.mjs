@@ -39,17 +39,25 @@
  *      demo, its sources) stay on the server and reach a page with its
  *      series only (`loadSeriesCopy`), so a reader of one series never
  *      downloads another's (#791); One Piece's faction labels reach the
- *      fruit album's groups only (#988), and its seas' names the places that
- *      open them (#993). Each word distinct enough to look for, and not also
- *      a word of the shared copy, is looked for in the chunks.
+ *      fruit album's groups and the ranks page only (#988), Hunter x
+ *      Hunter's group names the ranks page only (#1442), and One Piece's
+ *      seas' names the places that open them (#993). Each word distinct
+ *      enough to look for, and not also a word of the shared copy, is
+ *      looked for in the chunks.
  * The SSR manifest also proves that every series archive enters through a
  * dynamic import, with no canary-bearing data in another runtime entry's
- * static dependency closure.
+ * static dependency closure, and that no runtime chunk but Start's
+ * server-function chunks statically loads one of those chunks, a projection
+ * (`src/server/archive/`), `serve.server.ts`, `copy.server.ts` or
+ * `sources.server.ts` (`./archive-server-gate.mjs`).
  *
  * Exit codes:
  *   0  the archive stayed on the server
- *   1  archive prose in a client chunk
- *   2  nothing to check: no build, or no canary could be read
+ *   1  archive prose in a client chunk, or a server boundary crossed
+ *   2  nothing to check: no build, no canary could be read, a reached server
+ *      chunk without a readable source map (missing, unreadable or inline;
+ *      only a chunk of virtual modules alone may go without), or no
+ *      `?tss-serverfn-split` chunk in the server build
  */
 import console from 'node:console'
 import { readdirSync, readFileSync, realpathSync, statSync } from 'node:fs'
@@ -57,6 +65,7 @@ import path from 'node:path'
 import process from 'node:process'
 import { byNumber, byValue } from 'sort-es'
 
+import { serverCopies } from './archive-gate.copy.mjs'
 import { descriptionCanaries, powerCanaries } from './archive-gate.power.mjs'
 import { importArchive } from './archive-loader.mjs'
 import { checkServer } from './archive-server-gate.mjs'
@@ -436,24 +445,6 @@ async function shippedCopy() {
     importArchive('i18n/dictionaries/privacy.ts'),
   ])
   return [enDictionary, itDictionary, ...Object.values(PRIVACY)]
-}
-
-/**
- * The words that stay on the server, under the folder or file that holds
- * them: every series' own copy, and One Piece's faction labels and seas.
- * @returns {Promise<Record<string, Record<string, Record<string, string>>>>} Each one's words, by locale.
- */
-export async function serverCopies() {
-  const [{ COPIES }, { FACTION_LABELS }, { SEA_LABELS }] = await Promise.all([
-    importArchive('server/copy.server.ts'),
-    importArchive('i18n/dictionaries/one-piece/factions.ts'),
-    importArchive('i18n/dictionaries/one-piece/seas.ts'),
-  ])
-  return {
-    ...COPIES,
-    'one-piece/factions': FACTION_LABELS,
-    'one-piece/seas': SEA_LABELS,
-  }
 }
 
 /**

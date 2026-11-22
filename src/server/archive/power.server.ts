@@ -1,6 +1,5 @@
 import type { PowerBody, Seat } from '~/data/features'
 import type { Entity } from '~/data/types'
-import { FACTION_LABELS } from '~/i18n/dictionaries/one-piece/factions'
 import type {
   BodyView,
   PowerPageView,
@@ -8,7 +7,7 @@ import type {
   SeatView,
 } from '~/lib/view/power'
 
-import { printedFaction } from './printed.server'
+import { groupLabel } from './printed.server'
 import { drawingOf } from './project.server'
 import type { Reader } from './reader.server'
 
@@ -175,5 +174,5 @@ function nameIfUntold(body: PowerBody, r: Reader): { body?: string } {
 
 /** A body's name as the pages print it. */
 function labelOf(body: PowerBody, r: Reader): string {
-  return FACTION_LABELS[r.locale][printedFaction(body.id)]
+  return groupLabel(body.id, r)
 }

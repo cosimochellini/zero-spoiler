@@ -46,10 +46,49 @@ export function withTable(document, table) {
 }
 
 /**
+ * Every entry of a field's timelines that hold some, one array per owner.
+ * @param {{ field: string, timeline: { place?: string }[] }[]} timelines The archive's timelines.
+ * @param {string} field The field.
+ * @returns {{ place?: string }[][]} The timelines of that field.
+ */
+function filedIn(timelines, field) {
+  return timelines
+    .filter((owned) => owned.field === field)
+    .map(({ timeline }) => timeline)
+    .filter((timeline) => timeline.length > 0)
+}
+
+/**
+ * The rows of dated steps, linked origins and later visits, each only where
+ * the series files some. The table is what catches the archive losing
+ * content (#1390): a drop of one shows as a changed line and fails
+ * `gate:docs`.
+ * @param {{ placeDossierOf: (place: unknown) => { visits?: unknown[] } | undefined, places: unknown[], timelines: { field: string, timeline: { place?: string }[] }[] }} archive The series' archive.
+ * @returns {[string, number][]} The rows.
+ */
+function stepRows({ placeDossierOf, places, timelines }) {
+  const steps = (field) => filedIn(timelines, field).flat()
+
+  return [
+    ['Dated timelines', timelines.length],
+    ['Affiliation steps', steps('affiliation').length],
+    ['Status steps', steps('status').length],
+    [
+      'Origins that link a place',
+      steps('origin').filter((entry) => entry.place !== undefined).length,
+    ],
+    [
+      'Later visits to places',
+      places.flatMap((place) => placeDossierOf(place)?.visits ?? []).length,
+    ],
+  ].filter(([, count]) => count > 0)
+}
+
+/**
  * One series' table, counted from its archive, with a row for the devil
  * fruits, the ships and the bodies of power only where its description has
  * them.
- * @param {{ archive: { drawings: Record<string, unknown>, entities: { kind: string }[], features?: { power?: { bodies: { seats: unknown[] }[] } }, sagas: unknown[], series: { features: { fruits: boolean, power?: boolean }, kinds: string[] }, timelines: { field: string, timeline: unknown[] }[] } }} series The series, from the list.
+ * @param {{ archive: { drawings: Record<string, unknown>, entities: { kind: string }[], features?: { power?: { bodies: { seats: unknown[] }[] } }, placeDossierOf: (place: unknown) => { visits?: unknown[] } | undefined, places: unknown[], sagas: unknown[], series: { features: { fruits: boolean, power?: boolean }, kinds: string[] }, timelines: { field: string, timeline: { place?: string }[] }[] } }} series The series, from the list.
  * @returns {string} The markdown table, not yet padded.
  */
 export function countTable({ archive }) {
@@ -59,13 +98,8 @@ export function countTable({ archive }) {
   const lands = Object.keys(LANDS).filter((kind) => series.kinds.includes(kind))
   const ofKind = (kind) =>
     entities.filter((entity) => entity.kind === kind).length
-  const filed = (field) =>
-    timelines
-      .filter((owned) => owned.field === field)
-      .map(({ timeline }) => timeline)
-      .filter((timeline) => timeline.length > 0)
-  const redrawings = filed('redrawing')
-  const chronicles = filed('chronicle')
+  const redrawings = filedIn(timelines, 'redrawing')
+  const chronicles = filedIn(timelines, 'chronicle')
 
   const rows = [
     ['Records', entities.length],
@@ -102,6 +136,7 @@ export function countTable({ archive }) {
       'Chronicle stories',
       `${chronicles.flat().length}, for ${chronicles.length} characters`,
     ],
+    ...stepRows(archive),
   ]
 
   return [

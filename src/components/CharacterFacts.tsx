@@ -49,7 +49,8 @@ export function CharacterFacts({
   // The devil fruit and the bounty are One Piece's facts, in its words: on
   // another series' page there is no such row.
   const onePiece = useSeriesT('one-piece')
-  // So are the Nen type and the abilities Hunter x Hunter's.
+  // So are the Nen type and the abilities Hunter x Hunter's; the seats of
+  // power are both series' rows, in each one's words.
   const hunter = useSeriesT('hunter-x-hunter')
 
   const rows: [string, ReactNode][] = [
@@ -86,7 +87,7 @@ export function CharacterFacts({
   )
 }
 
-/** The facts only One Piece files: seats of power, a devil fruit, a bounty. */
+/** One Piece's rows: seats of power, a devil fruit, a bounty. */
 function onePieceRows(
   facts: Facts,
   locale: Locale,
@@ -100,15 +101,16 @@ function onePieceRows(
 }
 
 /**
- * The Nen type row and the abilities row, Hunter x Hunter's own. The type's
- * key is built from the value, like the status's, so a type with no label
- * fails `typecheck`.
+ * Hunter x Hunter's rows: seats of power, the Nen type and the abilities.
+ * The type's key is built from the value, like the status's, so a type with
+ * no label fails `typecheck`.
  */
 function hunterRows(
   facts: Facts,
   t: SeriesTranslate<'hunter-x-hunter'>,
 ): [string, ReactNode][] {
   return [
+    [t('character.ranks'), seatRow(facts.seats)],
     [
       t('character.nen'),
       facts.nen === undefined ? undefined : t(`nen.${facts.nen}`),
