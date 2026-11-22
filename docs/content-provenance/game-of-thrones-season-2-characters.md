@@ -149,8 +149,8 @@ to V, site chapters 86, 101, 114, 122 and 137), read through the Firecrawl tool.
 The show's names are taken only from lines the Game of Thrones Wiki quotes; its
 synopses name Xaro, Pyat Pree, Quaithe and the dragons in narration.
 
-Counts: 9 filed, 0 pending, 30 omitted, 1 open for an owner ruling (Arstan
-Whitebeard); 1 stage-1 record stepped.
+Counts: 9 filed, 0 pending, 30 omitted, 2 open for an owner ruling (Arstan
+Whitebeard, Rhaego); 1 stage-1 record stepped.
 
 ### Filed
 
@@ -216,8 +216,9 @@ Rakharo and Irri alive and end Doreah at 86), Jhogo and Jhiqui (no change).
 
 ### Omitted
 
-- **Seen only in a vision, or dead before the story:** Rhaego (the show's vision
-  at 20 names him in narration only, his name having been said in episode 6; the
+- **Seen only in a vision, or dead before the story:** Rhaego, left open for an
+  owner ruling (the show's vision at 20 shows him, his name already said in
+  episode 6; whether a vision counts as being seen is the owner's call; the
   books only mention him in the stage), and the House of the Undying's book
   visions of Rhaegar Targaryen, Elia Martell, the infant Aegon, Aerys II and
   Willem Darry (chapter 122).

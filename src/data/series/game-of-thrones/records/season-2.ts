@@ -459,8 +459,9 @@ export const season2: ThronesSaga = {
             en: 'Merchant prince of the Thirteen',
           },
         },
-        // "A Man Without Honor" (episode 17): he declares himself King of
-        // Qarth after Pyat Pree kills the rest of the Thirteen. The show's alone;
+        // "A Man Without Honor" (episode 17): Pyat Pree proclaims him King
+        // of Qarth, then kills the rest of the Thirteen; the step reads
+        // "Self-proclaimed", as the Game of Thrones Wiki's infobox has it. The show's alone;
         // Daenerys III (chapter 114), the chapter the episode adapts, orders
         // it.
         {
