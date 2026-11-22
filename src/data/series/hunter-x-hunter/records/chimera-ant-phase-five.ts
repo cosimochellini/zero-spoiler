@@ -9,7 +9,7 @@ export const CHIMERA_ANT_PHASE_FIVE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         kind: 'character',
         revealedAtEpisode: 135,
         revealedAtChapter: 315,
-        name: { it: 'Digo Masadoru', en: 'Ming Jol-ik' },
+        name: { it: 'Digo Matador', en: 'Ming Jol-ik' },
         summary: {
           it: 'Ex capo del Golt Orientale. Ha lasciato il governo a un sosia e vive in campagna.',
           en: 'The former leader of East Gorteau. He left his double in charge and lives on a farm.',

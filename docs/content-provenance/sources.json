@@ -35811,6 +35811,76 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27268",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27268",
       "contentSha256": "51a120f7d96e02d13325cfc2543901b05047f072024fc798c80eccd8a677f481"
+    },
+    "hxh-it-Associazione_Hunter-153445509.json": {
+      "locale": "it",
+      "title": "Associazione Hunter",
+      "revision": 153445509,
+      "revisionDate": "2026-11-19T18:44:22Z",
+      "url": "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153445509",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153445509",
+      "contentSha256": "22c279780be3406eb199f89c7c602aaf9957ab148ed570384ac303d78dd3a51f"
+    },
+    "hxh-it-Formichimere-153421611.json": {
+      "locale": "it",
+      "title": "Formichimere",
+      "revision": 153421611,
+      "revisionDate": "2026-11-18T06:46:03Z",
+      "url": "https://it.wikipedia.org/wiki/Formichimere",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153421611",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153421611",
+      "contentSha256": "529af73eea2da3354e1d2bf8b17e5f05a14e0c83b34ed27018cd494ef51cdf5c"
+    },
+    "hxh-it-Personaggi_di_Hunter_×_Hunter-153445438.json": {
+      "locale": "it",
+      "title": "Personaggi di Hunter × Hunter",
+      "revision": 153445438,
+      "revisionDate": "2026-11-19T18:39:41Z",
+      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153445438",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153445438",
+      "contentSha256": "77bf562abba012e73d27ebe7468ee1f0b7c02136cf2ccc81e596eacf3ddd41a1"
+    },
+    "hxh-it-Famiglia_Zoldick-153390427.json": {
+      "locale": "it",
+      "title": "Famiglia Zoldick",
+      "revision": 153390427,
+      "revisionDate": "2026-11-16T09:44:09Z",
+      "url": "https://it.wikipedia.org/wiki/Famiglia_Zoldick",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153390427",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153390427",
+      "contentSha256": "40312550bca3adbf72750fdaaca50072f46fc5e8b2f5a5741bb95be08b0c5314"
+    },
+    "hxh-it-Famiglia_Zoldick-153355822.json": {
+      "locale": "it",
+      "title": "Famiglia Zoldick",
+      "revision": 153355822,
+      "revisionDate": "2026-11-13T20:12:49Z",
+      "url": "https://it.wikipedia.org/wiki/Famiglia_Zoldick",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153355822",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153355822",
+      "contentSha256": "dd95bf6fba2a278a80d686ae70cdf4f1b30b6fe999f9d03a77459339a7a31cc1"
+    },
+    "hxh-it-Associazione_Hunter-153389144.json": {
+      "locale": "it",
+      "title": "Associazione Hunter",
+      "revision": 153389144,
+      "revisionDate": "2026-11-16T07:31:16Z",
+      "url": "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153389144",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153389144",
+      "contentSha256": "6d08a34b8fea05f6d33c598af631996f77252864a4abe03a1861082fe0bd7d7c"
+    },
+    "hxh-it-Personaggi_di_Hunter_×_Hunter-153397064.json": {
+      "locale": "it",
+      "title": "Personaggi di Hunter × Hunter",
+      "revision": 153397064,
+      "revisionDate": "2026-11-16T14:51:08Z",
+      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153397064",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153397064",
+      "contentSha256": "57559301d8dc190c262b081056bf9e7c07bbd41eaf544c8bf765e9b5cddff208"
     }
   }
 }
