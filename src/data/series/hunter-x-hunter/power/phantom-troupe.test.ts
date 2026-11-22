@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
+import { BODIES } from '~/data/series/hunter-x-hunter/power'
 import type { Bookmark } from '~/lib/progress/episode'
 import { powerPage } from '~/server/archive/power.server'
 import { readerFor } from '~/server/archive/reader.server'
@@ -126,6 +127,54 @@ describe('the Phantom Troupe', () => {
     'describe the body at episode %i with version 0',
     (episode) => {
       expect(versionAt({ mode: 'episode', episode })).toBe(0)
+    },
+  )
+
+  it('stands right after the Zoldyck family, in the list and on the page', () => {
+    const page = powerPage(
+      readerFor(
+        HUNTER_X_HUNTER.archive,
+        { mode: 'chapter', chapter: 430 },
+        'en',
+      ),
+    ).bodies.map(({ id }) => id)
+
+    for (const ids of [BODIES.map(({ id }) => id), page]) {
+      expect(ids.indexOf('phantom-troupe')).toBe(
+        ids.indexOf('zoldyck-family') + 1,
+      )
+    }
+  })
+
+  it.each([
+    {
+      locale: 'en',
+      name: 'Phantom Troupe',
+      leader: 'Leader',
+      member: 'Member no.',
+    },
+    {
+      locale: 'it',
+      name: 'Brigata Fantasma',
+      leader: 'Capo',
+      member: 'Membro n.',
+    },
+  ] as const)(
+    'names the body and titles every seat in $locale',
+    ({ locale, name, leader, member }) => {
+      const body = powerPage(
+        readerFor(
+          HUNTER_X_HUNTER.archive,
+          { mode: 'chapter', chapter: 430 },
+          locale,
+        ),
+      ).bodies.find(({ id }) => id === 'phantom-troupe')
+
+      expect(body?.name).toBe(name)
+      expect(body?.seats.map(({ title }) => title)).toStrictEqual([
+        leader,
+        ...Array.from({ length: 12 }, (_, at) => `${member} ${String(at + 1)}`),
+      ])
     },
   )
 })
