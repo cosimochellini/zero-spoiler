@@ -1,6 +1,7 @@
 import type { PowerBody } from '~/data/features'
 
 import { HUNTER_ASSOCIATION } from './power/hunter-association'
+import { TEN_DONS } from './power/ten-dons'
 import { ZOLDYCK_FAMILY } from './power/zoldyck-family'
 import type { HunterVocabulary } from './records/saga'
 
@@ -13,4 +14,5 @@ import type { HunterVocabulary } from './records/saga'
 export const BODIES: PowerBody<HunterVocabulary>[] = [
   HUNTER_ASSOCIATION,
   ZOLDYCK_FAMILY,
+  TEN_DONS,
 ]
