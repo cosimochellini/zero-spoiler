@@ -2939,12 +2939,13 @@
       "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
       "https://it.wikipedia.org/wiki/Dothraki#Aggo",
       "https://gameofthrones.fandom.com/wiki/Aggo",
-      "https://iceandfire.fandom.com/wiki/Aggo"
+      "https://iceandfire.fandom.com/wiki/Aggo",
+      "https://gameofthrones.fandom.com/wiki/Kovarro"
     ],
     "unverified": [
       "Books: whether he is named in chapter 23 (Appearing list, floor site chapter 24); the first synopsis naming is site chapter 62.",
       "Show: Daenerys’s line is taken from Fandom’s quote; the episode is not viewed.",
-      "Show role (#1457): the Game of Thrones Wiki makes him a bloodrider at episode 11 (infobox Titles, GOT201); the bloodrider step stays the books' alone (12/73 chapter), so the show reader keeps \"Daenerys's guard\". Late, not early: left for the stage-2 steps (#1458)."
+      "Show role (#1457, #1468): the Game of Thrones Wiki makes him a bloodrider at episode 11 (infobox Titles, GOT201; Daenerys addresses \"her three bloodriders\" by name). The bloodrider step at 12 / 73 is now both media's: one episode late in the show, since his gate is episode 11."
     ]
   },
   "jhogo": {
@@ -3952,6 +3953,151 @@
       "Book gate 142 (Jon VIII): his band overtakes Jon and Qhorin, \"the Lord of Bones their leader\"; the Watch calls him Rattleshirt. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
       "Log (books): his band overtakes Jon and Qhorin, and he orders Jon to kill Qhorin to prove himself (A Wiki of Ice and Fire, Jon VIII). The show's capture of Qhorin is not told.",
       "Italian: \"Lord delle Ossa\" (Italian Wikipedia, Rattleshirt; Italian Game of Thrones Wiki)."
+    ]
+  },
+  "kovarro": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Kovarro",
+      "https://gameofthrones.fandom.com/wiki/Aggo_(The_North_Remembers)",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Kovarro"
+    ],
+    "unverified": [
+      "Show gate 11: Daenerys addresses her three bloodriders, \"Zhey Rakharo, zhey Aggo, zhey Kovarro\", a line the Game of Thrones Wiki quotes on the Aggo (The North Remembers) page. Neither the episodes nor the books were viewed.",
+      "Chapter 86 (Daenerys I, the chapter \"The North Remembers\" adapts) only orders the show-only record."
+    ]
+  },
+  "xaro-xhoan-daxos": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Xaro_Xhoan_Daxos",
+      "https://gameofthrones.fandom.com/wiki/House_of_the_Undying",
+      "https://gameofthrones.fandom.com/wiki/Sumai",
+      "https://gameofthrones.fandom.com/wiki/Spice_King",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Xaro_Xhoan_Daxos",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Xaro_Xhoan_Daxos",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63"
+    ],
+    "unverified": [
+      "Show gate 15: Pyat Pree's line \"Should you grow weary of Xaro's baubles\", quoted on the Game of Thrones Wiki's House of the Undying page (\"The Ghost of Harrenhal\"). Owner check: \"Garden of Bones\" (episode 14), where he invokes Sumai, names him in narration only; the line quoted there does not say his name.",
+      "Book gate 86: A Wiki of Ice and Fire's Chapter 12 synopsis (read through Firecrawl) has Jhogo bring him, a merchant prince of the Thirteen, with Pyat Pree and Quaithe, taken as their introduction. Chapter 27 (site 101) is where he speaks to her in Qarth.",
+      "Show-only steps: proclaimed King of Qarth in \"A Man Without Honor\" (episode 17), ordered at chapter 114; locked in his vault and counted among the deaths of \"Valar Morghulis\" (episode 20), ordered at chapter 137. The books keep him alive through A Clash of Kings. Neither the episodes nor the books were viewed."
+    ]
+  },
+  "pyat-pree": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Pyat_Pree",
+      "https://gameofthrones.fandom.com/wiki/Warlocks",
+      "https://gameofthrones.fandom.com/wiki/Thirteen",
+      "https://gameofthrones.fandom.com/wiki/Garden_of_Bones_(episode)",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://iceandfire.fandom.com/wiki/Pyat_Pree",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri_personaggi",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_48"
+    ],
+    "unverified": [
+      "Books only: A Wiki of Ice and Fire's Chapter 12 synopsis has Jhogo bring \"the great warlock Pyat Pree\" from Qarth (site chapter 86).",
+      "Owner check: the show has him in episodes 14, 15, 17 and 20, but no Game of Thrones Wiki synopsis or quote has his name said, so the record is the books' alone, ordered at episode 14. If the show says his name, the record becomes both media's at that episode, and his show death at 20 follows.",
+      "Italian: Pyat Pree, from Italian Wikipedia's TV cast list (\"Altri personaggi\")."
+    ]
+  },
+  "quaithe": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Quaithe",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://iceandfire.fandom.com/wiki/Quaithe",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Altri_personaggi",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_27",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_40"
+    ],
+    "unverified": [
+      "Books only: A Wiki of Ice and Fire's Chapter 12 synopsis has Jhogo bring \"Quaithe of the Shadow\" from Qarth (site chapter 86); Chapter 27 calls her \"a shadowbinder named Quaithe\".",
+      "Owner check: the show has her in \"The Ghost of Harrenhal\" (episode 15) and \"A Man Without Honor\" (episode 17), named in narration only, so the record is the books' alone, ordered at episode 15.",
+      "Role \"Woman of the Shadow\" / \"Donna dell'Ombra\" follows \"Quaithe of the Shadow\"; the Mondadori form is not checked. Affiliation \"No allegiance\" is a placeholder: no page gives her one, and it means only that none is told by chapter 143 (owner check)."
+    ]
+  },
+  "malakho": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Malakho",
+      "https://gameofthrones.fandom.com/wiki/Kovarro",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+    ],
+    "unverified": [
+      "Show gate 15: Jorah tells Daenerys \"Malakho says the statue is too heavy to carry\", quoted on the Game of Thrones Wiki's Malakho and Kovarro pages (\"The Ghost of Harrenhal\"). His scenes in episodes 11 and 14 are unnamed background. Neither the episodes nor the books were viewed.",
+      "Chapter 101 (Daenerys II, the chapter the episode adapts) only orders the show-only record. Italian Wikipedia has no entry; the name is kept as it is."
+    ]
+  },
+  "drogon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Drogon",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Daenerys_Targaryen",
+      "https://iceandfire.fandom.com/wiki/Drogon",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12"
+    ],
+    "unverified": [
+      "Book gate 86: A Wiki of Ice and Fire's Chapter 12 synopsis has Daenerys name all three dragons, each by its colours.",
+      "Show gate 40: the Game of Thrones Wiki says the name is first said on screen in \"The Children\" (episode 40). The season-2 synopses name the dragons in narration only (owner check). The later show gate stands past the stage (#852)."
+    ]
+  },
+  "rhaegal": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Rhaegal",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Daenerys_Targaryen",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12"
+    ],
+    "unverified": [
+      "Book gate 86: A Wiki of Ice and Fire's Chapter 12 synopsis has Daenerys name all three dragons, each by its colours.",
+      "Show gate 41: the Game of Thrones Wiki says the name is first said on screen in \"The Wars to Come\" (episode 41), with Viserion's. The season-2 synopses name the dragons in narration only (owner check). The later show gate stands past the stage (#852)."
+    ]
+  },
+  "viserion": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Viserion",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Daenerys_Targaryen",
+      "https://iceandfire.fandom.com/wiki/Viserion",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_12"
+    ],
+    "unverified": [
+      "Book gate 86: A Wiki of Ice and Fire's Chapter 12 synopsis has Daenerys name all three dragons, each by its colours.",
+      "Show gate 41: the Game of Thrones Wiki says the name is first said on screen in \"The Wars to Come\" (episode 41), with Rhaegal's. The season-2 synopses name the dragons in narration only (owner check). The later show gate stands past the stage (#852)."
+    ]
+  },
+  "strong-belwas": {
+    "sources": [
+      "https://iceandfire.fandom.com/wiki/Barristan_Selmy",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Barristan_Selmy",
+      "https://it.wikipedia.org/wiki/Daenerys_Targaryen",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_63"
+    ],
+    "unverified": [
+      "Books only: A Wiki of Ice and Fire's Chapter 63 synopsis, has Daenerys learn that the eunuch who saved her is the pit fighter Strong Belwas, sent by Illyrio (site chapter 137). The show has no such character; episode 20 only orders him.",
+      "Italian: \"Belwas il Forte\", from Italian Wikipedia (Barristan Selmy's section and the Daenerys Targaryen page); the Mondadori form is assumed to match."
     ]
   }
 }

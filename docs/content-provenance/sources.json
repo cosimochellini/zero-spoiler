@@ -36681,6 +36681,216 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23858",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23858",
       "contentSha256": "fc1deb8b4df440541bbed5f19e414ee58e40315027df3c294f742d8812151d68"
+    },
+    "got-en-Kovarro-689005.json": {
+      "locale": "en",
+      "title": "Kovarro",
+      "revision": 689005,
+      "revisionDate": "2024-06-20T13:05:32Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kovarro",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=689005",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=689005",
+      "contentSha256": "92990693153928233f11624a8d6fc8f7f2a1d97cf399694a141395e3a980af65"
+    },
+    "got-en-Malakho-728257.json": {
+      "locale": "en",
+      "title": "Malakho",
+      "revision": 728257,
+      "revisionDate": "2026-02-05T07:12:32Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Malakho",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728257",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728257",
+      "contentSha256": "18d8dc40b9066b6b150df8ba2c78a4bcb7e89cb95e28190d592ee34208f6985f"
+    },
+    "got-en-Xaro_Xhoan_Daxos-735973.json": {
+      "locale": "en",
+      "title": "Xaro Xhoan Daxos",
+      "revision": 735973,
+      "revisionDate": "2026-05-17T11:42:23Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Xaro_Xhoan_Daxos",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=735973",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=735973",
+      "contentSha256": "9e75598a8f19b82ce7ce28fc60b6e71d9fb94b98286ac1c24822d169fed66d3f"
+    },
+    "got-en-Pyat_Pree-732483.json": {
+      "locale": "en",
+      "title": "Pyat Pree",
+      "revision": 732483,
+      "revisionDate": "2026-02-26T09:46:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Pyat_Pree",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732483",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732483",
+      "contentSha256": "f88c32604e56fcacdc4e01e4d5ff645149c9f312e6e0261f4e103f373ef74848"
+    },
+    "got-en-Quaithe-728371.json": {
+      "locale": "en",
+      "title": "Quaithe",
+      "revision": 728371,
+      "revisionDate": "2026-02-05T07:35:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Quaithe",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728371",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728371",
+      "contentSha256": "e8f1f26fa3d443ea166b5b32831457aea9eaf58b697282a9400181b33708508e"
+    },
+    "got-en-House_of_the_Undying-732491.json": {
+      "locale": "en",
+      "title": "House of the Undying",
+      "revision": 732491,
+      "revisionDate": "2026-02-26T09:49:26Z",
+      "url": "https://gameofthrones.fandom.com/wiki/House_of_the_Undying",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732491",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732491",
+      "contentSha256": "43817d56ef1170b4803088cbbe10251b51a7e6cb875993464a2caf13b0c26692"
+    },
+    "got-en-Spice_King-732486.json": {
+      "locale": "en",
+      "title": "Spice King",
+      "revision": 732486,
+      "revisionDate": "2026-02-26T09:47:08Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Spice_King",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732486",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732486",
+      "contentSha256": "afaedee327f8019d059320f98c4ceed2c09d13965b4bcc7b5c9d78878b63aed1"
+    },
+    "got-en-Silk_King-732485.json": {
+      "locale": "en",
+      "title": "Silk King",
+      "revision": 732485,
+      "revisionDate": "2026-02-26T09:47:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Silk_King",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732485",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732485",
+      "contentSha256": "3473d7d11804894f3801e9a94043f00fccff223acb1e65596b0671de65c0fb0d"
+    },
+    "got-en-Sumai-665772.json": {
+      "locale": "en",
+      "title": "Sumai",
+      "revision": 665772,
+      "revisionDate": "2024-02-18T05:45:47Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Sumai",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=665772",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=665772",
+      "contentSha256": "3a32679a243b1ba05b578b2d56fedb87f60a9dbf13144960fecadbe6c6dd0329"
+    },
+    "got-en-Thirteen-732489.json": {
+      "locale": "en",
+      "title": "Thirteen",
+      "revision": 732489,
+      "revisionDate": "2026-02-26T09:47:57Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Thirteen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732489",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732489",
+      "contentSha256": "83a0cbd01facd65944397940066176c4ed8bc04f13d7a574184e77a0aa0588b4"
+    },
+    "got-en-Warlocks-732490.json": {
+      "locale": "en",
+      "title": "Warlocks",
+      "revision": 732490,
+      "revisionDate": "2026-02-26T09:48:01Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Warlocks",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732490",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732490",
+      "contentSha256": "50072e8552bed444b3e3234cfa134231ab861a47cd3e5bd9eb2ff9cfc45b4dd2"
+    },
+    "got-en-Drogon-748699.json": {
+      "locale": "en",
+      "title": "Drogon",
+      "revision": 748699,
+      "revisionDate": "2026-09-12T14:53:11Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Drogon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748699",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748699",
+      "contentSha256": "ad9b28ae17f3c5cc30fd74ade67a0e14902ec2e9e817c7d9c2c2919ca242476c"
+    },
+    "got-en-Rhaegal-748039.json": {
+      "locale": "en",
+      "title": "Rhaegal",
+      "revision": 748039,
+      "revisionDate": "2026-08-15T12:56:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Rhaegal",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748039",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748039",
+      "contentSha256": "1d3fa88012924a8cb71147ef54225d0c57e84d25b23014633e016a3942cadf98"
+    },
+    "got-en-Viserion-748037.json": {
+      "locale": "en",
+      "title": "Viserion",
+      "revision": 748037,
+      "revisionDate": "2026-08-15T12:55:44Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Viserion",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748037",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748037",
+      "contentSha256": "7c34638df2fe010b278a65a856061891d987a200da97ccda402cdf545616b307"
+    },
+    "got-en-Rhaego-728394.json": {
+      "locale": "en",
+      "title": "Rhaego",
+      "revision": 728394,
+      "revisionDate": "2026-02-05T08:32:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Rhaego",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728394",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728394",
+      "contentSha256": "a0c2c91710054541a2edae0c7e8eb5586769069c472e8269466dc21a769f93a1"
+    },
+    "iaf-en-Xaro_Xhoan_Daxos-23687.json": {
+      "locale": "en",
+      "title": "Xaro Xhoan Daxos",
+      "revision": 23687,
+      "revisionDate": "2020-03-17T23:40:09Z",
+      "url": "https://iceandfire.fandom.com/wiki/Xaro_Xhoan_Daxos",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23687",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23687",
+      "contentSha256": "d9b21f3ab97dc98ca88517d91a00d9a1b33c0ec75d83bcfd47659b4ad3413663"
+    },
+    "iaf-en-Pyat_Pree-11816.json": {
+      "locale": "en",
+      "title": "Pyat Pree",
+      "revision": 11816,
+      "revisionDate": "2014-11-14T00:50:01Z",
+      "url": "https://iceandfire.fandom.com/wiki/Pyat_Pree",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=11816",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=11816",
+      "contentSha256": "c953f4bb74be30091b0a791567d5961be4b5b50e3b2f790558e5c89724ccd97e"
+    },
+    "iaf-en-Quaithe-24968.json": {
+      "locale": "en",
+      "title": "Quaithe",
+      "revision": 24968,
+      "revisionDate": "2021-05-26T21:55:25Z",
+      "url": "https://iceandfire.fandom.com/wiki/Quaithe",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=24968",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=24968",
+      "contentSha256": "465ae9613a464442209533d23a4176e077653ad6e576e167a0ad9affd20b5c6b"
+    },
+    "iaf-en-Drogon-22196.json": {
+      "locale": "en",
+      "title": "Drogon",
+      "revision": 22196,
+      "revisionDate": "2018-08-01T07:16:14Z",
+      "url": "https://iceandfire.fandom.com/wiki/Drogon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22196",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22196",
+      "contentSha256": "7e1b004f7c72fe5092db56f3c71d459cb974d8830ca077f7ca53e64cad634589"
+    },
+    "iaf-en-Viserion-13434.json": {
+      "locale": "en",
+      "title": "Viserion",
+      "revision": 13434,
+      "revisionDate": "2015-05-20T22:40:08Z",
+      "url": "https://iceandfire.fandom.com/wiki/Viserion",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=13434",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=13434",
+      "contentSha256": "7f188cf98937647edb517f894c571d5425cbb0bc1a301e3d085787cabfa12cf4"
+    },
+    "iaf-en-Rhaego-26571.json": {
+      "locale": "en",
+      "title": "Rhaego",
+      "revision": 26571,
+      "revisionDate": "2023-11-12T00:30:32Z",
+      "url": "https://iceandfire.fandom.com/wiki/Rhaego",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26571",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26571",
+      "contentSha256": "39b848a2479ec42807b8935ef063675f09d4b5141d3117655b53b1d4e66c5b77"
     }
   }
 }
