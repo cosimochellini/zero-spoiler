@@ -7,11 +7,12 @@
  * hyphenated id among its holders, as a drawing module is by its keys, or,
  * when it seats none long enough (the World Government's `im` and `kong`),
  * by its longest seat title of twelve characters or more ("The Empty
- * Throne"). A body that seats no one at all, every holding a vacancy (the
- * Ten Dons, #1446), has no holder to look for and is looked for by its
- * description instead. Every `.ts` module in `power/` but a `.test.ts` is a
- * body, and must hold one of these: a body with none is an unreadable canary,
- * and the gate refuses to vouch for it rather than passing it unchecked.
+ * Throne"). A module with no `value: '` anywhere, so no holder at all
+ * (the Ten Dons, every holding a vacancy, #1446), is looked for by its
+ * longest description instead, the same string its description canary
+ * reads. Every `.ts` module in `power/` but a `.test.ts` is a body, and must
+ * hold one of these: a body with none is an unreadable canary, and the gate
+ * refuses to vouch for it rather than passing it unchecked.
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'

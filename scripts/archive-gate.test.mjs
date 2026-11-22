@@ -423,13 +423,13 @@ describe('the bodies of power the gate looks for', () => {
   it('refuses a body seating no id it can trust, and skips a series with none', () => {
     // A body whose holders are all short ids or words, and whose seat titles
     // are a word or two, has nothing the gate could tell from the client's
-    // own code.
+    // own code. It seats someone, so its description does not stand in.
     const root = mkdtempSync(path.join(tmpdir(), 'archive-gate-'))
     const dir = path.join(root, 'src/data/series/short/power')
     mkdirSync(dir, { recursive: true })
     writeFileSync(
       path.join(dir, 'crew.ts'),
-      "export const CREW = [{ title: { en: 'Captain' }, value: 'kaido' }, { value: 'charlotteling' }]\n",
+      "export const CREW = { about: 'A fixture crew whose description runs well past sixty characters.', seats: [{ title: { en: 'Captain' }, value: 'kaido' }, { value: 'charlotteling' }] }\n",
     )
 
     try {
