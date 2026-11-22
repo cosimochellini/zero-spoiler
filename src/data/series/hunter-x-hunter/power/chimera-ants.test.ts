@@ -137,6 +137,15 @@ describe('the Chimera Ants', () => {
     expect(versionAt(at)).toBe(version)
   })
 
+  // Until the Queen's record opens no seat of the colony is held, and a
+  // body met with every seat under fog would set the page's fog line.
+  it.each([chapter(186), episode(76)])(
+    'is not met at all at %o, one unit before its gate',
+    (at) => {
+      expect(powerPage(readerFor(HXH.archive, at, 'en')).fogged).toBeUndefined()
+    },
+  )
+
   it('stands last, after the Zoldyck family', () => {
     const ids = powerPage(
       readerFor(HXH.archive, episode(148), 'en'),
