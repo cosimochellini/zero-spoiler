@@ -164,12 +164,12 @@ order them.
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `alton-lannister` (show) | 11, "The North Remembers": Robb sends him off with his terms, "You'll ride at daybreak, Ser Alton" (fan transcript; the wiki names him only in narration) | none: the books give his part to Cleos Frey (Alton Lannister page, "In the books"); 81 orders him                                                 |
 | `cleos-frey` (books)     | none: the Game of Thrones Wiki redirects him to Alton Lannister; 11 orders him                                                                            | 81, Catelyn I: Robb sends him from Riverrun to King's Landing with his peace terms, and Grey Wind alarms him (A Wiki of Ice and Fire, Cleos Frey) |
-| `talisa-maegyr` (show)   | 14, "Garden of Bones": after Oxcross she introduces herself to Robb as Talisa of Volantis (synopsis and notes)                                            | none: no such character; 100 orders her                                                                                                           |
+| `talisa-maegyr` (show)   | 16, "The Old Gods and the New": she tells Robb her family's name is Maegyr; 14, "Garden of Bones", has only "Talisa of Volantis" (owner check)            | none: no such character; 100 orders her                                                                                                           |
 | `amory-lorch`            | 16, "The Old Gods and the New": Arya gives Jaqen his name (Arya Stark page); he dies in the same episode, so the show record opens dead                   | 88, Arya IV: he rides up to the holdfast and introduces himself (A Wiki of Ice and Fire, chapter 14)                                              |
 | `polliver`               | 14, "Garden of Bones": Arya adds him to the names she recites each night (Arya Stark page)                                                                | 100, Arya VI: "a black-bearded, balding man called Polliver" wears Needle, and Arya hates him for it (chapter 26)                                 |
 | `tickler`                | 15, "The Ghost of Harrenhal": the first name Arya gives Jaqen; he dies in the same episode, so the show record opens dead                                 | 100, Arya VI: "They call the ordinary-looking man who did the questioning, the Tickler" (chapter 26)                                              |
 | `chiswyck` (books)       | none: no such character; 14 orders him                                                                                                                    | 100, Arya VI: he assists the Tickler, and Arya hates him for thinking he is funny (chapter 26)                                                    |
-| `weese` (books)          | none: no such character; 14 orders him                                                                                                                    | 100, Arya VI: named at Harrenhal, where he puts the captives to work (chapter 26; understeward of the Wailing Tower in Arya VII)                  |
+| `weese` (books)          | none: no such character; 14 orders him                                                                                                                    | 104, Arya VII: the understeward of the Wailing Tower who works Arya (chapter 30); Arya VI (100) names him first (owner check)                     |
 | `vargo-hoat` (books)     | none: the show gives his later part to Locke; 15 orders him                                                                                               | 104, Arya VII: listed as appearing at Harrenhal (A Wiki of Ice and Fire, chapter 30; Ice and Fire Wiki: Arya sees him)                            |
 
 - Alton Lannister: role Robb Stark's prisoner, House Lannister, `captured` from
@@ -181,9 +181,10 @@ order them.
   with Tyrion's terms (Tyrion VI, 99), the failed rescue and his new cell
   (Catelyn V, 113) change no field. Italian "Cleos Frey" (Genna Lannister's
   section of Casa Lannister).
-- Talisa Maegyr: roles healer from Volantis (14), Robb Stark's wife (20, "Valar
-  Morghulis", married before a septon). Her family name is first said in episode
-  16; the record carries it from 14 (owner check). Italian "Talisa Maegyr".
+- Talisa Maegyr: roles healer from Volantis (16), Robb Stark's wife (20, "Valar
+  Morghulis", married before a septon). The record opens at 16, where her family
+  name is first said; episode 14 has only "Talisa of Volantis" (owner check).
+  Italian "Talisa Maegyr".
 - Amory Lorch: role knight in the Lannisters' service; castellan of Harrenhal at
   112 (Arya VIII), books only. Affiliation Lannister army. Status: alive in the
   books from 88, deceased at 16 and 121 (Arya IX, the bear pit). Owner check:
@@ -198,8 +199,9 @@ order them.
   Tickler" in narration. Italian kept as "Tickler": no Italian page.
 - Chiswyck: Gregor Clegane's man, deceased at 104 (Arya VII, a fall from a wall,
   Jaqen's first death). Italian kept as "Chiswyck".
-- Weese: understeward at Harrenhal, deceased at 112 (Arya VIII, found with his
-  dog on his chest, Jaqen's second). Italian kept as "Weese".
+- Weese: understeward at Harrenhal from his gate at 104 (Arya VII; Arya VI, 100,
+  names him first, owner check), deceased at 112 (Arya VIII, found with his dog
+  on his chest, Jaqen's second). Italian kept as "Weese".
 - Vargo Hoat: leader of the Brave Companions, in the Lannisters' pay; in Roose
   Bolton's service at 121 (Arya IX, he hands him Harrenhal). Italian "Vargo
   Hoat", "Bravi Camerati" (Italian Wikipedia, Personaggi).

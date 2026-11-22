@@ -29,12 +29,12 @@ const RECORDS: {
 }[] = [
   { id: 'alton-lannister', episode: 11, chapter: 81, source: 'episode' },
   { id: 'cleos-frey', episode: 11, chapter: 81, source: 'chapter' },
-  { id: 'talisa-maegyr', episode: 14, chapter: 100, source: 'episode' },
+  { id: 'talisa-maegyr', episode: 16, chapter: 100, source: 'episode' },
   { id: 'amory-lorch', episode: 16, chapter: 88 },
   { id: 'polliver', episode: 14, chapter: 100 },
   { id: 'tickler', episode: 15, chapter: 100 },
   { id: 'chiswyck', episode: 14, chapter: 100, source: 'chapter' },
-  { id: 'weese', episode: 14, chapter: 100, source: 'chapter' },
+  { id: 'weese', episode: 14, chapter: 104, source: 'chapter' },
   { id: 'vargo-hoat', episode: 15, chapter: 104, source: 'chapter' },
 ]
 
@@ -58,13 +58,7 @@ const CHANGES: {
     source: 'episode',
     value: 'deceased',
   },
-  {
-    id: 'amory-lorch',
-    episode: 16,
-    chapter: 121,
-    source: 'chapter',
-    value: 'deceased',
-  },
+  { id: 'amory-lorch', episode: 16, chapter: 121, value: 'deceased' },
   {
     id: 'chiswyck',
     episode: 15,
@@ -275,11 +269,7 @@ describe.each(
 })
 
 describe('the status changes one medium alone tells', () => {
-  it.each(
-    CHANGES.filter(
-      ({ id, source }) => source !== undefined && !DEAD_AT_GATE.includes(id),
-    ),
-  )(
+  it.each(CHANGES.filter(({ source }) => source !== undefined))(
     'never makes $id $value for a reader of the other medium',
     ({ id, source = 'episode', value }) => {
       const last = otherAtTheEnd(source)

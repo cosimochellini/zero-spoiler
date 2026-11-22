@@ -183,14 +183,17 @@ export const season2: ThronesSaga = {
       visual: { art: 'cleos-frey', tint: 'azure' },
     },
     // Show: "Garden of Bones" (episode 14), she introduces herself to Robb as
-    // Talisa of Volantis after the battle at Oxcross; her family name,
-    // Maegyr, follows in episode 16. The books have no such character (Robb
+    // Show: "The Old Gods and the New" (episode 16), Talisa tells Robb her
+    // family's name is Maegyr. "Garden of Bones" (episode 14) has her
+    // introduce herself only as Talisa of Volantis, so the record, filed
+    // under the full name and its id, opens where the full name is said
+    // (owner check: 14). The books have no such character (Robb
     // marries Jeyne Westerling, past the stage); chapter 100 only orders her.
     {
       id: 'talisa-maegyr',
       kind: 'character',
       source: 'episode',
-      revealedAtEpisode: 14,
+      revealedAtEpisode: 16,
       revealedAtChapter: 100,
       name: { it: 'Talisa Maegyr', en: 'Talisa Maegyr' },
       summary: {
@@ -262,15 +265,16 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'chiswyck', tint: 'wine' },
     },
-    // Books only: Arya VI (site chapter 100), the understeward who puts Arya
-    // to work at Harrenhal. The show has no Weese; episode 14 only orders
-    // him.
+    // Books only: Arya VII (site chapter 104), where he is the understeward
+    // of the Wailing Tower who works Arya at Harrenhal. Arya VI (100) names
+    // him first, before that title is told (owner check). The show has no
+    // Weese; episode 14 only orders him.
     {
       id: 'weese',
       kind: 'character',
       source: 'chapter',
       revealedAtEpisode: 14,
-      revealedAtChapter: 100,
+      revealedAtChapter: 104,
       name: { it: 'Weese', en: 'Weese' },
       summary: {
         it: 'Un sottointendente di Harrenhal, che fa lavorare i servi a bastonate.',
@@ -475,7 +479,7 @@ export const season2: ThronesSaga = {
     'talisa-maegyr': {
       role: [
         {
-          episode: 14,
+          episode: 16,
           chapter: 100,
           source: 'episode',
           value: { it: 'Guaritrice di Volantis', en: 'Healer from Volantis' },
@@ -494,13 +498,13 @@ export const season2: ThronesSaga = {
         en: 'After the battle at Oxcross she takes off a wounded Lannister soldier’s leg, and Robb Stark helps hold him down. She points out to Robb that the men he beat were conscripted boys.',
       },
       status: [
-        { episode: 14, chapter: 100, source: 'episode', value: 'alive' },
+        { episode: 16, chapter: 100, source: 'episode', value: 'alive' },
       ],
       // She tends Lannister and Stark wounded alike and tells Robb she takes
       // no side in his war ("Garden of Bones").
       affiliation: [
         {
-          episode: 14,
+          episode: 16,
           chapter: 100,
           source: 'episode',
           value: { it: 'Nessuna fedeltà', en: 'No allegiance' },
@@ -623,11 +627,11 @@ export const season2: ThronesSaga = {
         en: 'Understeward at Harrenhal',
       },
       log: {
-        it: 'Mette Arya a lavorare nella torre di cui si occupa, a Harrenhal. Picchia chi non obbedisce e tiene con sé un cane maculato.',
-        en: 'He puts Arya to work in the tower he keeps at Harrenhal. He beats anyone who does not obey, and keeps a spotted dog.',
+        it: 'Mette Arya a lavorare nella Torre del Lamento, a Harrenhal. Picchia chi non obbedisce.',
+        en: 'He puts Arya to work in the Wailing Tower at Harrenhal. He beats anyone who does not obey.',
       },
       status: [
-        { episode: 14, chapter: 100, source: 'chapter', value: 'alive' },
+        { episode: 14, chapter: 104, source: 'chapter', value: 'alive' },
         // Arya gives Jaqen H'ghar his name, and he is found dead with his own
         // dog on his chest, in Arya VIII (chapter 112).
         { episode: 16, chapter: 112, source: 'chapter', value: 'deceased' },
@@ -635,7 +639,7 @@ export const season2: ThronesSaga = {
       affiliation: [
         {
           episode: 14,
-          chapter: 100,
+          chapter: 104,
           source: 'chapter',
           value: { it: 'Servitù di Harrenhal', en: 'Harrenhal’s servants' },
         },
