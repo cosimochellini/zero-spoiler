@@ -7,7 +7,7 @@ tools:
   Read, Glob, Grep, Bash, Edit, Write, Skill, WebFetch, WebSearch,
   mcp__claude_ai_Firecrawl__firecrawl_scrape,
   mcp__claude_ai_Firecrawl__firecrawl_search
-model: opus
+model: inherit
 ---
 
 Read `.agents/skills/issue-implementer/SKILL.md` from the repository root and
