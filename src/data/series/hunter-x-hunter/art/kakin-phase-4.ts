@@ -10,7 +10,6 @@ import {
   BESIDE_THE_BEAST,
   FALLEN,
   FROM_BEHIND,
-  FROM_BEHIND_BODY,
   SKULL,
   TURNED_BACK,
   TURNED_BODY,
@@ -20,17 +19,43 @@ import {
 } from './kakin-phase-2'
 
 /**
- * A front of clothes with no one in it, below the collar: the shoulders,
- * the sleeves down to the hem, the far side hatched. Each record draws its
- * own collar and fastening over it.
+ * The shoulders and sleeves of a top with no one in it, turned a little to
+ * its left so the near side is the wider: the sleeves down to their cuffs
+ * and back up the inside of the arms. Each record draws its own collar,
+ * fastening and body below.
  */
-const TOP: Stroke[] = [
+const TURNED_SLEEVES =
+  'M60 50 Q44 54 34 64 C24 80 22 108 22 148 H38 L42 102 M100 48 Q112 52 120 60 C128 76 132 104 132 144 H120 L118 102'
+
+/**
+ * The same top down to its hem, the hem curving round the body, the seam
+ * on the far side and the far sleeve and side hatched where they turn away.
+ */
+const TURNED_TOP: Stroke[] = [
+  { d: TURNED_SLEEVES },
+  { d: 'M42 102 L40 166 Q80 176 118 166 L118 102' },
+  { d: 'M108 104 L110 168', role: 'soft' },
   {
-    d: 'M42 62 Q56 52 66 50 M94 50 Q104 52 118 62 C130 76 134 104 134 150 H120 L116 100 M42 62 C30 76 26 104 26 150 H40 L44 100',
+    d: 'M123 112 l6 -4 M125 126 l6 -4 M125 140 l6 -4 M110 150 l6 -4',
+    role: 'ambient',
   },
-  { d: 'M44 100 L42 168 H118 L116 100' },
-  { d: 'M120 112 l6 -4 M122 128 l6 -4 M122 144 l6 -4', role: 'ambient' },
-  shadow(80, 182, 54),
+  shadow(80, 184, 56),
+]
+
+/** The far side of a turned head (`TURNED_SKULL`), hatched where it turns away. */
+const TURNED_FAR_SIDE: Stroke = {
+  d: 'M104 66 l5 -4 M106 80 l5 -4 M106 94 l5 -4',
+  role: 'ambient',
+}
+
+/**
+ * The front door of Room 3101 in 3/4, seen from the corridor: the frame,
+ * its inner edge, and the door swung open into the room.
+ */
+const ROOM_3101_DOOR: Stroke[] = [
+  { d: 'M40 30 H112 V160 H40 Z' },
+  { d: 'M48 38 H104 V160', role: 'soft' },
+  { d: 'M48 38 L78 46 V166 L48 160 Z' },
 ]
 
 /** Sarasa's heart-shaped purse, its strap and its seam: she always has it. */
@@ -48,13 +73,15 @@ const SARASA_PURSE: Stroke[] = [
   { d: 'M104 110 l6 -4 M100 122 l6 -4', role: 'ambient' },
 ]
 
-/** Terebellum's tracksuit top: the stand collar, the zip in tint, the cuffs. */
+/**
+ * Terebellum's tracksuit top in 3/4: the stand collar, the zip down the
+ * front in tint with its pull, the cuffs and the waistband.
+ */
 const TRACKSUIT: Stroke[] = [
-  ...TOP,
-  { d: 'M66 50 L66 36 Q80 30 94 36 L94 50 Q80 56 66 50 Z' },
-  { d: 'M80 52 V168 M80 60 H84 V68 H80', role: 'accent' },
-  { d: 'M26 142 H40 M120 142 H134 M42 158 H118', role: 'soft' },
-  { d: 'M56 112 H72 M88 112 H104', role: 'soft' },
+  ...TURNED_TOP,
+  { d: 'M60 50 L60 36 Q80 28 100 34 L100 48 Q80 56 60 50 Z' },
+  { d: 'M84 40 L86 172 M86 66 H90 V74 H86', role: 'accent' },
+  { d: 'M22 140 H38 M120 136 H132 M40 158 Q80 168 118 158', role: 'soft' },
 ]
 
 /**
@@ -84,21 +111,45 @@ const FUKATAKI: Stroke[] = [
 ]
 
 /**
- * Lynch's fair hair from behind, gathered into a tube that spirals down
- * the back of her head, in tint, the locks from her forehead falling to
- * her shoulders.
+ * Lynch's head from behind and a little to her left: the fair hair
+ * gathered into a tube that spirals down the back of her head, in tint,
+ * its turns wrapping round it, the locks from her forehead falling to her
+ * shoulders, and the high collar of her sleeveless top round her neck.
  */
-const LYNCH_HAIR: Stroke[] = [
-  { d: SKULL },
+const LYNCH: Stroke[] = [
+  { d: TURNED_SKULL },
   {
-    d: 'M70 66 C70 58 90 58 90 66 V106 C90 116 70 116 70 106 Z',
+    d: 'M72 60 C72 50 94 50 94 60 V104 C94 114 72 114 72 104 Z',
     role: 'accent',
   },
   {
-    d: 'M70 76 Q80 82 90 74 M70 86 Q80 92 90 84 M70 96 Q80 102 90 94',
+    d: 'M72 66 C78 74 88 72 94 64 M72 78 C78 86 88 84 94 76 M72 90 C78 98 88 96 94 88 M72 102 C78 110 88 108 94 100',
     role: 'soft',
   },
-  { d: 'M58 94 C56 106 58 116 52 128 M102 94 C104 106 102 116 108 128' },
+  { d: 'M50 98 C48 110 50 120 44 130 M108 98 C110 110 108 118 112 128' },
+  { d: 'M58 110 Q78 120 99 112', role: 'soft' },
+  { d: TURNED_COLLAR },
+  TURNED_FAR_SIDE,
+]
+
+/**
+ * Quorolle's long black trench coat in 3/4, hatched, open on the black
+ * round-neck top under it, the coat's collar in tint.
+ */
+const QUOROLLE_COAT: Stroke[] = [
+  { d: TURNED_SLEEVES },
+  { d: 'M42 102 L38 176 Q80 186 120 176 L118 102' },
+  {
+    d: 'M60 50 L44 60 L62 88 L70 72 L76 76 M100 48 L114 56 L100 86 L94 70 L88 74',
+    role: 'accent',
+  },
+  { d: 'M76 76 L81 180 M88 74 L88 182' },
+  { d: 'M66 50 Q80 64 96 48 M76 76 Q82 80 88 74', role: 'soft' },
+  {
+    d: 'M48 116 l10 -8 M46 132 l14 -11 M46 150 l16 -12 M46 164 l18 -14 M96 120 l14 -11 M96 140 l18 -14 M98 160 l16 -12 M124 110 l6 -4 M126 124 l6 -4 M126 138 l6 -4',
+    role: 'ambient',
+  },
+  shadow(80, 190, 56),
 ]
 
 /**
@@ -166,20 +217,23 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   // of her maid's uniform: Camilla's majordomo, chapter 389.
   'fukataki': [...FUKATAKI, ...TURNED_BODY],
 
-  // The curse a Have-Not like Taler carries out: an object connected to the
-  // target, drawn as a photograph face down, its back's border in tint,
-  // and the dagger beside it. Taler is sent to curse Marayam, chapter 389.
-  // The wiki gives a photograph only as the example, so the object is a
-  // frame check.
+  // Taler's head from behind and a little to their left: the straight fair
+  // hair down to the neck, combed behind the ear, the line where it tucks
+  // behind the ear in tint, over the collar of the uniform of Camilla's
+  // private guards: sent to curse Marayam, chapter 389. The curse is never
+  // cast on the page, so it is not drawn; the collar's shape is a convention.
   'taler': [
-    { d: 'M30 74 L100 60 L114 124 L44 138 Z', role: 'accent' },
-    { d: 'M38 78 L96 66 L106 118 L48 130 Z', role: 'soft' },
-    { d: 'M60 152 L132 104 L138 110 L66 158 Z' },
-    { d: 'M66 158 L136 108', role: 'soft' },
-    { d: 'M54 140 L64 160 M48 150 L60 146 L52 160' },
-    { d: 'M40 160 L54 148 L60 154 L46 166 Z' },
-    { d: 'M44 156 l6 -5 M48 160 l6 -5', role: 'ambient' },
-    shadow(84, 176, 56),
+    { d: TURNED_SKULL },
+    { d: 'M50 104 Q79 113 108 104' },
+    {
+      d: 'M66 50 C62 68 62 88 64 108 M80 47 C79 70 79 90 80 111 M95 51 C99 70 99 88 97 108',
+      role: 'soft',
+    },
+    { d: TURNED_EAR },
+    { d: 'M50 60 C62 66 62 92 52 104', role: 'accent' },
+    TURNED_FAR_SIDE,
+    { d: TURNED_COLLAR },
+    ...TURNED_BODY,
   ],
 
   // The infusion set Zakuro always carries, two bags of blood in tint
@@ -205,171 +259,199 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     shadow(80, 184, 54),
   ],
 
-  // Lynch's fair hair from behind, gathered into a tube that spirals down
-  // the back of her head, in tint, the locks from her forehead falling to
-  // her shoulders: a Xi-Yu member, chapter 390.
-  'lynch-fullbokko': [...LYNCH_HAIR, ...FROM_BEHIND],
-
-  // Tevelares's hair from behind, slicked back in long strands that fall
-  // past his ears, the ends in tint, over his jacket: a Heil-Ly member,
-  // chapter 391.
-  'tevelares': [
-    { d: SKULL },
+  // Lynch's spiralled tube of fair hair in 3/4, in tint, the locks falling
+  // to her shoulders and the high collar of her sleeveless top, and beside
+  // her head two open lines for Body and Soul, the voice her punches make
+  // answer, which only she and her target hear: a Xi-Yu member, chapter
+  // 390. The ability has no object, so the lines are a convention.
+  'lynch-fullbokko': [
+    ...LYNCH,
     {
-      d: 'M66 60 C64 78 66 94 64 108 M74 57 C72 76 74 94 72 110 M86 57 C88 76 86 94 88 110 M94 60 C96 78 94 94 96 108',
+      d: 'M32 62 C24 72 24 90 32 100 M20 54 C10 68 10 94 20 108',
+      role: 'ambient',
+    },
+    ...TURNED_BODY,
+  ],
+
+  // Tevelares's head from behind and a little to his left: the hair
+  // slicked back, its long ends falling past his ears in tint, over the
+  // collar of his jacket: a Heil-Ly member, chapter 391. The Nen ability he
+  // gains at level 51 in chapter 405 is never shown, so it is not drawn.
+  'tevelares': [
+    { d: 'M50 98 C44 68 58 46 80 46 C102 46 112 66 108 98' },
+    {
+      d: 'M54 66 C62 78 64 94 62 110 M68 52 C74 70 76 92 74 114 M86 48 C90 68 90 92 87 116 M102 58 C104 74 103 92 101 110',
       role: 'soft',
     },
     {
-      d: 'M58 104 C54 112 48 114 44 112 M102 104 C106 112 112 114 116 112',
+      d: 'M50 98 C50 112 46 122 40 130 M50 98 C56 110 58 122 56 132 M108 98 C108 112 112 122 118 128 M108 98 C102 110 100 122 102 132',
       role: 'accent',
     },
-    ...FROM_BEHIND,
+    TURNED_FAR_SIDE,
+    { d: TURNED_COLLAR },
+    ...TURNED_BODY,
   ],
 
-  // Quorolle's jacket from the front, its high collar in tint and the
-  // front open down his chest: a Heil-Ly member, chapter 391.
+  // Quorolle's high-collared jacket in 3/4, the collar in tint with its
+  // inner face showing, the front open down his chest with the inside of
+  // its edges showing: a Heil-Ly member, chapter 391. The Nen ability he
+  // gains at level 51 in chapter 405 is never shown, so it is not drawn.
   'quorolle': [
-    ...TOP,
-    { d: 'M66 50 L62 30 Q80 24 98 30 L94 50', role: 'accent' },
-    { d: 'M68 48 L66 34 Q80 30 94 34 L92 48', role: 'soft' },
-    { d: 'M66 50 L80 118 L94 50' },
-    { d: 'M74 70 Q80 76 86 70', role: 'soft' },
+    ...TURNED_TOP,
+    { d: 'M60 50 L56 28 Q80 20 102 26 L100 48', role: 'accent' },
+    { d: 'M62 46 L60 32 Q80 26 98 30 L97 44', role: 'soft' },
+    { d: 'M60 50 L84 118 M100 48 L88 118' },
+    { d: 'M66 52 L84 102 M95 52 L88 100', role: 'soft' },
   ],
 
   // Padaille's right hand turned into a hammer, out of the plain sleeve of
-  // his shirt, the head in tint: his ability, shown as he attacks Hinrigh
-  // in chapter 391, the chapter he is named and dies in.
+  // his shirt, its cuff seen end on with its seam, the head a block in 3/4,
+  // its front face in tint and the far face hatched: his ability, shown as
+  // he attacks Hinrigh in chapter 391. He dies in that chapter, the one his
+  // record opens in, so his death has no stage (owner, #1324).
   'padaille': [
-    { d: 'M8 128 L64 110 L72 134 L16 152 Z' },
-    { d: 'M58 112 L66 136', role: 'soft' },
-    { d: 'M68 116 L110 104 L114 116 L72 128' },
-    { d: 'M106 72 L128 66 L144 122 L122 128 Z', role: 'accent' },
-    { d: 'M128 66 L134 62 L150 118 L144 122', role: 'soft' },
-    { d: 'M20 146 l8 -6 M32 142 l8 -6 M44 138 l8 -6', role: 'ambient' },
-    shadow(80, 170, 60),
+    { d: 'M4 118 L54 102 M12 150 L62 132' },
+    { d: 'M54 102 A7 16 -18 0 1 62 132 A7 16 -18 0 1 54 102', role: 'soft' },
+    { d: 'M46 105 A7 15 -18 0 0 54 135', role: 'soft' },
+    { d: 'M60 112 L102 98 M64 124 L106 110' },
+    { d: 'M98 74 L122 68 L134 120 L110 126 Z', role: 'accent' },
+    { d: 'M98 74 L108 66 L132 60 L122 68 M132 60 L144 112 L134 120' },
+    { d: 'M126 76 l6 -5 M129 90 l6 -5 M132 104 l6 -5', role: 'ambient' },
+    { d: 'M16 144 l8 -6 M28 140 l8 -6 M40 136 l8 -6', role: 'ambient' },
+    shadow(80, 172, 60),
   ],
 
-  // Misha Hao's cropped leather jacket from the front, the zips down its
-  // sleeves in tint, and her belt below: the dead Xi-Yu undertaker, riding
-  // on Padaille's back, chapter 392.
+  // Misha Hao's cropped leather jacket in 3/4, the zips down its sleeves in
+  // tint, her belt below, and round it open lines for La Vie en rose, the
+  // post-mortem Nen that keeps her working: the dead Xi-Yu undertaker,
+  // riding on Padaille's back, chapter 392. She is already dead when her
+  // record opens, so there is no death stage. Her thigh-high boots are left
+  // out: they would need her legs, and the drawing is the jacket.
   'misha-hao': [
-    { d: 'M42 62 Q56 52 66 50 L80 60 L94 50 Q104 52 118 62 L120 112 H40 Z' },
+    { d: TURNED_SLEEVES },
+    { d: 'M42 102 L42 112 Q80 120 118 110 L118 102' },
     {
-      d: 'M42 62 C30 78 26 106 26 150 H40 L44 100 M118 62 C130 78 134 106 134 150 H120 L116 100',
-    },
-    { d: 'M33 84 L31 146 M127 84 L129 146', role: 'accent' },
-    {
-      d: 'M66 50 L56 72 L66 78 L80 60 M94 50 L104 72 L94 78 L80 60',
+      d: 'M60 50 L54 70 L66 74 L80 58 M100 48 L106 68 L94 72 L84 58',
       role: 'soft',
     },
-    { d: 'M44 112 V124 M116 112 V124', role: 'soft' },
-    { d: 'M42 124 H118 V134 H42 Z M74 124 V134 H86 V124' },
+    { d: 'M80 58 L84 114' },
+    { d: 'M29 84 L27 144 M126 82 L128 140', role: 'accent' },
     {
-      d: 'M100 80 l8 -6 M102 94 l10 -7 M90 104 l10 -7 M50 90 l8 -6',
+      d: 'M42 114 Q80 122 118 112 V120 Q80 130 42 122 Z M74 119 V128 M88 117 V126',
+    },
+    { d: 'M108 70 l8 -6 M110 86 l8 -6 M106 100 l8 -6', role: 'ambient' },
+    {
+      d: 'M14 40 C8 60 8 80 12 96 M146 40 C152 60 152 80 148 96 M60 22 Q80 14 100 22',
       role: 'ambient',
     },
-    shadow(80, 172, 52),
+    shadow(80, 160, 50),
   ],
 
-  // Maizan's dark soldier's helmet in 3/4, hatched, its chin strap in tint:
-  // the corporal who sells the Mafia the hidden room, chapter 393.
+  // Maizan's head from behind and a little to his left under the black
+  // round helmet of a Kakin corporal, hatched, its rim in tint, over the
+  // collar of his army jacket: the corporal who sells the Mafia the hidden
+  // room, chapter 393. He walks into Room 3101 and vanishes in that same
+  // chapter, the one his record opens in, and his fate is not told, so it
+  // has no stage.
   'maizan': [
-    { d: 'M34 112 C34 52 126 52 126 112' },
-    { d: 'M26 112 H134 Q132 122 124 122 H36 Q28 122 26 112 Z' },
+    { d: 'M44 94 C42 60 60 40 80 40 C102 40 116 60 114 92' },
+    { d: 'M40 94 Q78 106 118 92 L118 99 Q78 113 40 101 Z', role: 'accent' },
     {
-      d: 'M46 122 C52 134 70 138 80 138 C90 138 108 134 114 122',
-      role: 'accent',
-    },
-    {
-      d: 'M96 76 l10 -6 M104 88 l12 -8 M108 102 l12 -8 M44 94 l8 -6',
+      d: 'M56 62 l10 -8 M56 80 l18 -14 M70 86 l22 -17 M90 86 l18 -14 M102 70 l8 -6',
       role: 'ambient',
     },
-    { d: 'M48 82 Q80 68 112 82', role: 'soft' },
-    shadow(80, 166, 52),
+    { d: 'M54 106 V112 M100 106 V112' },
+    { d: 'M56 112 C66 124 92 126 102 114' },
+    { d: TURNED_COLLAR },
+    ...TURNED_BODY,
   ],
 
-  // Daemon's long hair from behind, slicked back to his shoulders, its
-  // outline in tint, over his black shirt, hatched: a Heil-Ly member,
-  // chapter 393.
+  // Daemon's head from behind and a little to his left: the long hair
+  // slicked back, its swept-back line from the brow in tint, over the
+  // collar of his long-sleeved black shirt, hatched: a Heil-Ly member,
+  // chapter 393. The Nen ability he gains at level 51 in chapter 405 is
+  // never shown, so it is not drawn.
   'daemon': [
     {
-      d: 'M56 112 C50 74 62 52 80 52 C98 52 110 74 104 112 Q80 120 56 112',
-      role: 'accent',
+      d: 'M50 100 C44 66 58 46 80 46 C102 46 112 66 108 100 C108 112 106 120 104 128 Q80 134 56 128 C52 120 50 112 50 100',
     },
+    { d: 'M48 70 C60 54 84 52 96 66 C104 78 104 100 100 126', role: 'accent' },
     {
-      d: 'M68 56 C66 78 68 98 66 114 M80 52 V118 M92 56 C94 78 92 98 94 114',
+      d: 'M58 64 C68 76 70 100 68 130 M76 56 C84 72 86 100 84 132',
       role: 'soft',
     },
-    ...FROM_BEHIND,
-  ],
-
-  // Gelato's hair from behind: dark and short on her right, hatched, and on
-  // her left a light lock in tint over the rest, dark and longer: a
-  // Heil-Ly member, chapter 393.
-  'gelato': [
-    { d: 'M80 54 C96 54 106 72 102 102 H80' },
-    { d: 'M84 64 l12 -8 M84 78 l16 -11 M84 92 l16 -11', role: 'ambient' },
+    TURNED_FAR_SIDE,
+    { d: TURNED_COLLAR, role: 'soft' },
     {
-      d: 'M80 54 C64 54 54 72 56 96 C56 108 52 118 50 128 H66 L62 96',
-      role: 'soft',
-    },
-    { d: 'M80 54 C70 60 66 72 66 88 L80 92 Z', role: 'accent' },
-    { d: 'M58 110 l6 -5 M56 122 l8 -6', role: 'ambient' },
-    ...FROM_BEHIND,
-  ],
-
-  // A burger in its paper wrapper on a tray, the wrapper in tint: Perigord
-  // is eating in a burger joint on Tier 3 when he spots the Xi-Yu, and goes
-  // on eating after he kicks Lynch, chapter 390 (named in 393).
-  'perigord': [
-    { d: 'M14 128 L110 112 L148 136 L52 154 Z' },
-    { d: 'M14 128 V134 L52 160 L148 142 V136', role: 'soft' },
-    { d: 'M48 104 C46 78 62 66 82 64 C102 64 118 76 118 98' },
-    {
-      d: 'M46 106 Q82 96 120 100 Q120 108 116 110 Q82 106 50 116 Q46 112 46 106 Z',
-    },
-    { d: 'M50 116 Q84 110 116 110 L114 120 Q84 124 54 128 Z', role: 'soft' },
-    {
-      d: 'M40 112 L52 92 M124 104 L112 86 M40 112 Q46 132 58 134 L110 126 Q122 122 124 104',
-      role: 'accent',
-    },
-    {
-      d: dots([
-        [66, 76],
-        [80, 72],
-        [94, 74],
-        [72, 84],
-        [88, 82],
-      ]),
-      role: 'soft',
-    },
-    { d: 'M126 132 l8 -4 M110 140 l8 -4', role: 'ambient' },
-    shadow(80, 172, 64),
-  ],
-
-  // Bille's bushy hair from behind, its outline in tint, the shaved sides
-  // hatched: a Heil-Ly member, chapter 393.
-  'bille': [
-    { d: SKULL },
-    {
-      d: 'M64 74 C58 58 62 40 72 38 C76 30 86 30 90 38 C100 40 102 58 96 74 Z',
-      role: 'accent',
-    },
-    { d: 'M72 48 q4 -4 8 0 M80 56 q4 -4 8 0 M68 62 q4 -4 8 0', role: 'soft' },
-    {
-      d: 'M60 82 l6 -5 M58 94 l8 -6 M62 104 l8 -6 M94 82 l6 -5 M92 94 l8 -6 M92 104 l8 -6',
+      d: 'M24 150 l8 -6 M28 164 l10 -7 M34 176 l10 -7 M42 140 l8 -6',
       role: 'ambient',
     },
-    ...FROM_BEHIND,
+    ...TURNED_BODY,
+  ],
+
+  // Gelato's head from behind and a little to her left: her hair dark and
+  // short on her right, hatched, and on her left a light lock in tint over
+  // the rest, dark and longer: a Heil-Ly member, chapter 393.
+  'gelato': [
+    { d: 'M82 46 C102 46 112 66 108 100 H82' },
+    { d: 'M88 62 l12 -8 M88 76 l16 -11 M88 90 l16 -11', role: 'ambient' },
+    { d: 'M82 46 C60 46 44 68 50 104 C50 116 48 124 44 134 H64 L62 104' },
+    {
+      d: 'M82 46 C66 50 56 62 56 82 L74 88 C74 70 76 58 82 46 Z',
+      role: 'accent',
+    },
+    { d: 'M82 46 V100', role: 'soft' },
+    { d: 'M52 110 l6 -5 M50 122 l8 -6 M54 132 l8 -6', role: 'ambient' },
+    ...TURNED_BODY,
+  ],
+
+  // A burger in 3/4, the top bun, the filling and the bottom bun, with a
+  // bite out of it in tint: Perigord is eating in a burger joint on Tier 3
+  // when he spots the Xi-Yu, and goes on eating after he kicks Lynch,
+  // chapter 390 (named in 393). What is in the burger is not drawn.
+  'perigord': [
+    { d: 'M38 98 C36 62 104 58 116 76' },
+    {
+      d: 'M116 76 Q108 80 112 86 Q106 92 114 98 Q110 104 120 108',
+      role: 'accent',
+    },
+    { d: 'M38 98 Q60 106 96 104' },
+    { d: 'M36 104 Q60 114 96 110 L118 108 M36 104 V112 Q70 124 120 116 V108' },
+    { d: 'M38 118 Q80 132 120 120 L118 130 Q80 146 42 130 Z' },
+    { d: 'M58 76 Q64 70 72 70', role: 'soft' },
+    { d: 'M100 122 l8 -5 M96 134 l8 -5', role: 'ambient' },
+    shadow(80, 160, 58),
+  ],
+
+  // Bille's head from behind and a little to his left: the bushy hair on
+  // top, its outline in tint, the shaved sides below it hatched where they
+  // turn away, the ear showing, over the collar of his jacket: a Heil-Ly
+  // member, chapter 393. The ability he gains at level 21 in chapter 394 is
+  // never shown, so it is not drawn.
+  'bille': [
+    { d: 'M50 104 C46 88 48 78 53 70 M108 104 C110 90 110 80 107 70' },
+    {
+      d: 'M54 72 Q44 62 50 52 Q46 40 58 36 Q60 24 72 24 Q80 16 90 22 Q102 20 106 32 Q116 38 112 50 Q118 60 108 68 Q102 78 92 74 Q82 80 72 76 Q60 82 54 72 Z',
+      role: 'accent',
+    },
+    {
+      d: 'M58 52 q3 -5 8 -4 M70 36 q4 -4 9 -2 M94 30 q5 0 7 5 M104 52 q-1 6 -6 8',
+      role: 'soft',
+    },
+    {
+      d: 'M100 80 l6 -5 M102 92 l6 -5 M102 104 l5 -4 M52 92 l4 -3 M53 102 l4 -3',
+      role: 'ambient',
+    },
+    { d: TURNED_EAR },
+    { d: TURNED_COLLAR },
+    ...TURNED_BODY,
   ],
 
   // The front door of Room 3101 in 3/4, ajar on the dark beyond it,
   // hatched, the handle in tint: the trap Voconte connects to the
   // Heil-Ly's hideout, chapters 393 and 394. No number on the door.
   'voconte': [
-    { d: 'M40 30 H112 V160 H40 Z' },
-    { d: 'M48 38 H104 V160', role: 'soft' },
-    { d: 'M48 38 L78 46 V166 L48 160 Z' },
+    ...ROOM_3101_DOOR,
     { d: circle(72, 104, 3), role: 'accent' },
     {
       d: 'M84 50 l14 -10 M84 70 l18 -13 M84 90 l18 -13 M84 110 l18 -13 M84 130 l18 -13 M84 150 l18 -13',
@@ -379,69 +461,82 @@ export const KAKIN_PHASE_4_DRAWINGS = {
     shadow(80, 172, 50),
   ],
 
-  // A glass of water in 3/4 with a leaf floating on it, the leaf in tint:
-  // Matvere hands Bille the cup for his Water Divination, chapter 394.
+  // The cup of water for Water Divination in 3/4, taller than it is wide,
+  // the water line round it and the leaf floating on it in tint, the far
+  // wall hatched: Matvere hands Bille the cup, chapter 394.
   'matvere': [
-    { d: 'M50 70 L58 150 Q58 156 66 156 H94 Q102 156 102 150 L110 70' },
-    { d: ellipse(80, 70, 30, 6) },
-    { d: ellipse(80, 90, 27, 5), role: 'soft' },
+    { d: ellipse(80, 50, 28, 7) },
+    { d: 'M52 50 L58 150 Q80 160 102 150 L108 50' },
+    { d: ellipse(80, 70, 26, 6), role: 'soft' },
     {
-      d: 'M70 90 C74 82 88 82 92 90 C88 96 74 96 70 90 Z M70 90 H92',
+      d: 'M66 70 C70 62 86 62 94 68 C88 76 72 78 66 70 Z M66 70 L94 68',
       role: 'accent',
     },
-    { d: 'M98 104 l4 -3 M98 120 l4 -3 M96 136 l4 -3', role: 'ambient' },
-    shadow(80, 168, 40),
-  ],
-
-  // Hinrigh's knife lying on the floor inside the open door of Room 3101,
-  // its grip in tint: Tassi goes in to fetch it, chapter 394, the chapter
-  // he is named and dies in.
-  'tassi': [
-    { d: 'M30 20 V150 M130 20 V150 M30 20 H130' },
-    { d: 'M38 28 H122 V150', role: 'soft' },
-    { d: 'M4 150 H156' },
     {
-      d: 'M44 136 l8 -6 M60 136 l8 -6 M92 136 l8 -6 M108 136 l8 -6',
+      d: 'M98 84 l5 -3 M99 100 l5 -3 M99 116 l5 -3 M100 132 l4 -3',
       role: 'ambient',
     },
-    { d: 'M54 156 L96 146 L98 150 L58 160 Z' },
-    { d: 'M96 144 L120 138 L122 146 L98 152 Z', role: 'accent' },
-    { d: 'M94 142 L96 154', role: 'soft' },
-    shadow(88, 172, 44),
+    shadow(80, 168, 38),
   ],
 
-  // Terebellum's tracksuit top, its zip in tint: a Heil-Ly member, chapter
-  // 394. His ability is first shown in chapter 399, so it is not drawn.
+  // The same open door of Room 3101 (`ROOM_3101_DOOR`), and Hinrigh's knife
+  // lying on the floor just inside it, its grip in tint: Tassi walks in to
+  // fetch it and vanishes, chapter 394. He is killed in that chapter, the
+  // one his record opens in, so his death has no stage (owner, #1324).
+  'tassi': [
+    ...ROOM_3101_DOOR,
+    { d: circle(72, 104, 3), role: 'soft' },
+    {
+      d: 'M84 50 l14 -10 M84 70 l18 -13 M84 90 l18 -13 M84 110 l18 -13',
+      role: 'ambient',
+    },
+    { d: 'M80 156 L98 148 L100 152 L82 158 Z' },
+    { d: 'M98 146 L110 141 L112 146 L100 152 Z', role: 'accent' },
+    { d: 'M8 160 H152', role: 'ambient', dashed: true },
+    shadow(80, 172, 50),
+  ],
+
+  // Terebellum's tracksuit top in 3/4, its zip in tint: a Heil-Ly member,
+  // chapter 394. His ability is first shown in chapter 399, so it is not
+  // drawn. The collar and the zip are conventions: the wiki says only a
+  // full-body tracksuit.
   'terebellum': TRACKSUIT,
 
-  // Chiffon Toto's fair hair from behind, falling just below her face, its
-  // outline in tint: a Heil-Ly seamstress, chapter 394.
+  // Chiffon Toto's head from behind and a little to her left: the fair
+  // hair falling just below her face, and the blunt edge of her bangs
+  // showing at the side in tint: a Heil-Ly seamstress, chapter 394.
   'chiffon-toto': [
+    { d: 'M50 108 C42 70 58 46 80 46 C102 46 114 68 108 108 Q79 116 50 108' },
+    { d: 'M50 58 C42 60 38 68 38 80 H52', role: 'accent' },
     {
-      d: 'M54 110 C50 72 62 54 80 54 C98 54 110 72 106 110 Q80 116 54 110',
-      role: 'accent',
-    },
-    {
-      d: 'M66 60 C62 78 62 94 62 110 M94 60 C98 78 98 94 98 110',
+      d: 'M64 52 C58 70 58 90 60 110 M80 47 V113 M96 52 C102 70 102 90 99 110',
       role: 'soft',
     },
-    ...FROM_BEHIND,
+    TURNED_FAR_SIDE,
+    ...TURNED_BODY,
   ],
 
-  // Montblanc Toto's two pigtails from behind, tied with a dark fabric, the
-  // ties in tint: a Heil-Ly member, chapter 394.
+  // Montblanc Toto's head from behind and a little to her left: the fair
+  // hair parted and tied into two pigtails that hang down to her neck, the
+  // dark fabric ties hatched, their edges in tint: a Heil-Ly member,
+  // chapter 394.
   'montblanc-toto': [
-    { d: SKULL },
-    { d: 'M80 58 V104', role: 'soft' },
+    { d: TURNED_SKULL },
+    { d: 'M82 47 V100', role: 'soft' },
     {
-      d: 'M58 92 C48 98 46 110 50 124 M66 96 C60 104 58 114 60 124 M102 92 C112 98 114 110 110 124 M94 96 C100 104 102 114 100 124',
+      d: 'M60 56 C62 68 60 78 56 86 M100 56 C100 68 102 78 104 86',
+      role: 'soft',
     },
     {
-      d: 'M54 86 L66 90 L62 98 L52 94 Z M106 86 L94 90 L98 98 L108 94 Z',
+      d: 'M50 92 C42 100 40 110 44 122 L50 126 L56 120 C54 112 56 102 60 96 M106 90 C114 98 116 108 112 120 L106 124 L102 118 C104 110 104 100 102 94',
+    },
+    {
+      d: 'M48 82 L60 86 L58 96 L46 92 Z M102 84 L110 80 L112 90 L104 94 Z',
       role: 'accent',
     },
-    { d: 'M64 70 l6 -4 M90 70 l6 -4', role: 'soft' },
-    ...FROM_BEHIND,
+    { d: 'M50 90 l6 -6 M104 92 l6 -6', role: 'ambient' },
+    TURNED_FAR_SIDE,
+    ...TURNED_BODY,
   ],
 
   // Sodom's unkempt hair from behind, its ragged outline in tint: a
@@ -693,15 +788,23 @@ export const KAKIN_PHASE_4_DRAWINGS = {
 /** The Kakin records of phase 4 whose drawing changes in chapters 371–420 (#1156, #1158). */
 export const kakinPhaseFourRedrawn: Redrawings = {
   'lynch-fullbokko': [
-    // The same head and shoulders from behind, fallen to the floor:
-    // Bonolenov, whom her punch unmasked as a fake Hisoka, recalls killing
-    // her, chapter 405.
+    // The same head and shoulders (`LYNCH`), fallen to the floor, without
+    // Body and Soul's lines: Bonolenov, whom her punch unmasked as a fake
+    // Hisoka, recalls killing her, chapter 405.
     {
       episode: 148,
       chapter: 405,
       source: 'chapter',
-      value: [...moved([...LYNCH_HAIR, ...FROM_BEHIND_BODY], FALLEN), ...FLOOR],
+      value: [...moved([...LYNCH, ...TURNED_BACK], FALLEN), ...FLOOR],
     },
+  ],
+  'quorolle': [
+    // A costume: his long black trench coat in 3/4 (`QUOROLLE_COAT`),
+    // hatched, open on the black round-neck top under it, the coat's collar
+    // in tint. He wears it on the twelfth day, level 51 with Tevelares and
+    // Daemon, chapter 405. The wiki places him in no later chapter, so the
+    // coat has no exit yet.
+    { episode: 148, chapter: 405, source: 'chapter', value: QUOROLLE_COAT },
   ],
   'borksen': [
     // The cards of Morena's game over the same hair made small, the one she
@@ -772,10 +875,7 @@ export const kakinPhaseFourRedrawn: Redrawings = {
       chapter: 399,
       source: 'chapter',
       value: [
-        ...moved(
-          TRACKSUIT,
-          'translate(80 196) scale(0.56) translate(-80 -196)',
-        ),
+        ...moved(TRACKSUIT, BESIDE_THE_BEAST),
         {
           d: `M56 30 V86 Q56 92 70 92 Q84 92 84 86 V30 ${ellipse(70, 30, 14, 4)}`,
         },
