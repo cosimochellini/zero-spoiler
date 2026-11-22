@@ -7372,6 +7372,728 @@ const crown = {
   },
 } satisfies Record<string, Relationship>
 
+/**
+ * Stage 2's Essos and Qarth cards for the season-1 cast (#1477): season 2
+ * and A Clash of Kings, episodes 11 to 20 and chapters 74 to 143. The new
+ * characters' own cards are in `season-2.relationships.ts`.
+ */
+const essos2 = {
+  // Daenerys, the books
+  daeJorahLynesse: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'The exiled knight who leads her into the Red Waste. In the ruined city he tells her about the wife who left him, and says she looked like Daenerys; she realizes he loves her.',
+      it: 'Il cavaliere in esilio che la guida nel Deserto Rosso. Nella città in rovina le parla della moglie che lo ha lasciato, e dice che somigliava a lei; Daenerys capisce che lui la ama.',
+    },
+  },
+  daeDrogon: {
+    character: 'drogon',
+    type: { en: 'Dragon', it: 'Drago' },
+    summary: {
+      en: 'The black and red dragon she hatched in Drogo’s pyre. She names him for her husband.',
+      it: 'Il drago nero e rosso che ha fatto schiudere nella pira di Drogo. Gli dà il nome del marito.',
+    },
+  },
+  daeRhaegal: {
+    character: 'rhaegal',
+    type: { en: 'Dragon', it: 'Drago' },
+    summary: {
+      en: 'The green and bronze dragon she hatched in Drogo’s pyre. She names him for her brother Rhaegar.',
+      it: 'Il drago verde e bronzo che ha fatto schiudere nella pira di Drogo. Gli dà il nome di suo fratello Rhaegar.',
+    },
+  },
+  daeViserion: {
+    character: 'viserion',
+    type: { en: 'Dragon', it: 'Drago' },
+    summary: {
+      en: 'The cream and gold dragon she hatched in Drogo’s pyre. She names him for her brother Viserys.',
+      it: 'Il drago color crema e oro che ha fatto schiudere nella pira di Drogo. Gli dà il nome di suo fratello Viserys.',
+    },
+  },
+  daeDoreahDead: {
+    character: 'doreah',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'The handmaiden who taught her how to please Drogo. She fell ill in the Red Waste, and Daenerys held her hand until she died.',
+      it: 'L’ancella che le aveva insegnato a compiacere Drogo. Si è ammalata nel Deserto Rosso, e Daenerys le ha tenuto la mano finché è morta.',
+    },
+  },
+  daeXaroChapter: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The merchant prince who hosts her in his palace in Qarth. He asks her to marry him, and she refuses; he says he has no warships to give her.',
+      it: 'Il principe mercante che la ospita nel suo palazzo a Qarth. Le chiede di sposarlo e lei rifiuta; lui dice di non avere navi da guerra da darle.',
+    },
+  },
+  daePyatPree: {
+    character: 'pyat-pree',
+    type: { en: 'Warlock', it: 'Stregone' },
+    summary: {
+      en: 'The warlock who invites her to the House of the Undying. Xaro warns her against him, but Jorah urges her to ask him for help.',
+      it: 'Lo stregone che la invita alla Casa degli Eterni. Xaro la mette in guardia, ma Jorah le consiglia di chiedere aiuto a lui.',
+    },
+  },
+  daeQuaithe: {
+    character: 'quaithe',
+    type: { en: 'Masked stranger', it: 'Straniera mascherata' },
+    summary: {
+      en: 'The masked woman of the Shadow who came looking for her dragons. She tells her to leave Qarth soon and to seek the truth in Asshai.',
+      it: 'La donna mascherata dell’Ombra venuta a cercare i suoi draghi. Le dice di lasciare presto Qarth e di cercare la verità ad Asshai.',
+    },
+  },
+  daeJorahQarth: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'The exiled knight who advises her. He tells her she will find no help in Qarth, and that Illyrio cares only for himself.',
+      it: 'Il cavaliere in esilio che la consiglia. Le dice che a Qarth non troverà aiuto, e che Illyrio pensa solo a se stesso.',
+    },
+  },
+  daePyatPreeHouse: {
+    character: 'pyat-pree',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The warlock who led her into the House of the Undying, where the Undying tried to consume her. When she escaped, he went at her with a dagger.',
+      it: 'Lo stregone che l’ha condotta nella Casa degli Eterni, dove gli Eterni hanno tentato di divorarla. Quando è fuggita, l’ha aggredita con un pugnale.',
+    },
+  },
+  daeDrogonHouse: {
+    character: 'drogon',
+    type: { en: 'Dragon', it: 'Drago' },
+    summary: {
+      en: 'The black dragon she named for Drogo. He went with her into the House of the Undying and tore the Undying’s heart apart.',
+      it: 'Il drago nero a cui ha dato il nome di Drogo. È entrato con lei nella Casa degli Eterni e ha fatto a pezzi il cuore degli Eterni.',
+    },
+  },
+  daeJorahComfort: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'The exiled knight who advises her. Outside the House of the Undying he holds her and comforts her.',
+      it: 'Il cavaliere in esilio che la consiglia. Fuori dalla Casa degli Eterni la stringe a sé e la consola.',
+    },
+  },
+  daeJhogoKnife: {
+    character: 'jhogo',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'One of her bloodriders. He knocks the warlock’s dagger aside with his whip.',
+      it: 'Uno dei suoi cavalieri di sangue. Con la frusta fa volare via il pugnale dello stregone.',
+    },
+  },
+  daeBelwas: {
+    character: 'strong-belwas',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'A eunuch pit fighter who saves her from an assassin at the port of Qarth. He says Illyrio sent him to bring her back to Pentos.',
+      it: 'Un eunuco, combattente delle arene, che la salva da un assassino al porto di Qarth. Dice che lo manda Illyrio, per riportarla a Pentos.',
+    },
+  },
+  daeArstan: {
+    character: 'arstan-whitebeard',
+    type: { en: 'Protector', it: 'Protettore' },
+    summary: {
+      en: 'An old man, Belwas’s squire, who knocks a box with a manticore out of her hands.',
+      it: 'Un vecchio, scudiero di Belwas, che le fa cadere dalle mani una scatola con dentro una manticora.',
+    },
+  },
+  daeXaroShips: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The merchant prince who hosts her. He asks again to marry her, and offers ten ships for one of her dragons; she refuses.',
+      it: 'Il principe mercante che la ospita. Le chiede ancora di sposarlo, e le offre dieci navi in cambio di uno dei suoi draghi; lei rifiuta.',
+    },
+  },
+  // Daenerys, the show
+  daeJorahWaste: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'The exiled knight who advises her. He tells her the khals around her will kill her for her dragons, so she leads her people into the Red Waste.',
+      it: 'Il cavaliere in esilio che la consiglia. Le dice che i khal intorno a lei la ucciderebbero per i draghi, così lei guida la sua gente nel Deserto Rosso.',
+    },
+  },
+  daeRakharoScout: {
+    character: 'rakharo',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'One of her bloodriders. She sends him to scout the Red Waste and tells him he has never failed her.',
+      it: 'Uno dei suoi cavalieri di sangue. Lo manda in esplorazione nel Deserto Rosso e gli dice che non l’ha mai delusa.',
+    },
+  },
+  daeKovarro: {
+    character: 'kovarro',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'One of her bloodriders. She sends him to scout the Red Waste in another direction.',
+      it: 'Uno dei suoi cavalieri di sangue. Lo manda in esplorazione nel Deserto Rosso in un’altra direzione.',
+    },
+  },
+  daeAggo: {
+    character: 'aggo',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'One of her bloodriders. She sends him to scout the Red Waste in another direction.',
+      it: 'Uno dei suoi cavalieri di sangue. Lo manda in esplorazione nel Deserto Rosso in un’altra direzione.',
+    },
+  },
+  daeRakharoDead: {
+    character: 'rakharo',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'One of her bloodriders, sent to scout the Red Waste. His horse came back with his head, and she promised him a funeral.',
+      it: 'Uno dei suoi cavalieri di sangue, mandato in esplorazione nel Deserto Rosso. Il suo cavallo è tornato con la sua testa, e lei gli ha promesso un funerale.',
+    },
+  },
+  daeIrriMourns: {
+    character: 'irri',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Her Dothraki handmaiden. Daenerys comforts her when Rakharo’s head comes back.',
+      it: 'La sua ancella dothraki. Daenerys la consola quando torna la testa di Rakharo.',
+    },
+  },
+  daeXaroEpisode: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The merchant prince who vouched for her so Qarth would let her in, and hosts her in his house. He offers her his fortune if she marries him.',
+      it: 'Il principe mercante che si è fatto garante per lei perché Qarth la lasciasse entrare, e la ospita nella sua casa. Le offre la sua fortuna se lo sposerà.',
+    },
+  },
+  daeJorahFeelings: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'The exiled knight who advises her not to take Xaro’s money. He tells her what he feels for her, and she does not return it.',
+      it: 'Il cavaliere in esilio che le consiglia di non accettare il denaro di Xaro. Le dice ciò che prova per lei, e lei non lo ricambia.',
+    },
+  },
+  daeKovarroStatue: {
+    character: 'kovarro',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'The bloodrider who found Qarth for her. At Xaro’s feast she forbids him to steal from their host.',
+      it: 'Il cavaliere di sangue che ha trovato Qarth per lei. Alla festa di Xaro gli vieta di derubare il loro ospite.',
+    },
+  },
+  daeIrriFriend: {
+    character: 'irri',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Her Dothraki handmaiden, whom she calls her friend. Irri insists she is a khaleesi, not a princess.',
+      it: 'La sua ancella dothraki, che chiama amica. Irri insiste che lei è una khaleesi, non una principessa.',
+    },
+  },
+  daeDoreahQarth: {
+    character: 'doreah',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Her handmaiden. In Qarth Daenerys asks her to win over Xaro’s friends and learn what they say about him.',
+      it: 'La sua ancella. A Qarth Daenerys le chiede di conquistare gli amici di Xaro e scoprire cosa dicono di lui.',
+    },
+  },
+  daeIrriDead: {
+    character: 'irri',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Her Dothraki handmaiden. She was strangled in Xaro’s house when the dragons were stolen.',
+      it: 'La sua ancella dothraki. È stata strangolata nella casa di Xaro quando hanno rubato i draghi.',
+    },
+  },
+  daeDoreahMissing: {
+    character: 'doreah',
+    type: { en: 'Handmaiden', it: 'Ancella' },
+    summary: {
+      en: 'Her handmaiden. She is gone from Xaro’s house after the dragons are stolen, and Daenerys believes she is dead.',
+      it: 'La sua ancella. Dopo il furto dei draghi è sparita dalla casa di Xaro, e Daenerys la crede morta.',
+    },
+  },
+  daeXaroStolen: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Host', it: 'Padrone di casa' },
+    summary: {
+      en: 'The merchant prince who hosts her and swore to protect her. Her dragons are stolen from his house.',
+      it: 'Il principe mercante che la ospita e aveva giurato di proteggerla. I suoi draghi vengono rubati dalla sua casa.',
+    },
+  },
+  daeXaroVault: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Traitor', it: 'Traditore' },
+    summary: {
+      en: 'The merchant prince who betrayed her. She takes his key, finds his vault empty, and has him locked inside it.',
+      it: 'Il principe mercante che l’ha tradita. Gli prende la chiave, trova vuota la sua camera blindata e ce lo fa chiudere dentro.',
+    },
+  },
+  daeDoreahVault: {
+    character: 'doreah',
+    type: { en: 'Traitor', it: 'Traditrice' },
+    summary: {
+      en: 'The handmaiden who betrayed her. Daenerys finds her in Xaro’s bed and has her locked in the vault with him.',
+      it: 'L’ancella che l’ha tradita. Daenerys la trova nel letto di Xaro e la fa chiudere con lui nella camera blindata.',
+    },
+  },
+  daeJorahHouse: {
+    character: 'jorah-mormont',
+    type: { en: 'Adviser', it: 'Consigliere' },
+    summary: {
+      en: 'The exiled knight who goes with her to the House of the Undying to take back her dragons, and has the Dothraki seize Xaro’s gold.',
+      it: 'Il cavaliere in esilio che la accompagna alla Casa degli Eterni a riprendersi i draghi, e fa prendere ai dothraki l’oro di Xaro.',
+    },
+  },
+  daeKovarroHouse: {
+    character: 'kovarro',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'The bloodrider who found Qarth for her. He guards her at the House of the Undying and when she punishes Xaro.',
+      it: 'Il cavaliere di sangue che ha trovato Qarth per lei. La protegge alla Casa degli Eterni e quando punisce Xaro.',
+    },
+  },
+
+  // Jorah
+  jorDaenerysQarth: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he followed across the Red Waste. In Qarth he tells her she will find no help there, and urges her to go to the warlock Pyat Pree.',
+      it: 'La khaleesi che ha seguito attraverso il Deserto Rosso. A Qarth le dice che lì non troverà aiuto, e la esorta ad andare dallo stregone Pyat Pree.',
+    },
+  },
+  jorXaroChapter: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Suitor', it: 'Pretendente' },
+    summary: {
+      en: 'The merchant prince who wants to marry Daenerys. Jorah tells her Xaro means to win one of her dragons through the marriage.',
+      it: 'Il principe mercante che vuole sposare Daenerys. Jorah le dice che Xaro vuole ottenere uno dei suoi draghi con il matrimonio.',
+    },
+  },
+  jorPyatPree: {
+    character: 'pyat-pree',
+    type: { en: 'Warlock', it: 'Stregone' },
+    summary: {
+      en: 'The warlock of Qarth. Jorah first tells Daenerys to avoid him and Xaro alike, then urges her to ask him for help.',
+      it: 'Lo stregone di Qarth. All’inizio Jorah dice a Daenerys di stare lontana sia da lui sia da Xaro, poi la esorta a chiedergli aiuto.',
+    },
+  },
+  jorIllyrioSelf: {
+    character: 'illyrio-mopatis',
+    type: { en: 'Magister', it: 'Magistro' },
+    summary: {
+      en: 'The magister of Pentos. When Daenerys thinks of going back to him, Jorah warns her that Illyrio cares only for himself.',
+      it: 'Il magistro di Pentos. Quando Daenerys pensa di tornare da lui, Jorah la avverte che Illyrio pensa solo a se stesso.',
+    },
+  },
+  jorDaenerysPort: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he serves. He comforts her after the House of the Undying, and at the port of Qarth he warns her that two men are following her.',
+      it: 'La khaleesi che serve. La consola dopo la Casa degli Eterni, e al porto di Qarth la avverte che due uomini la stanno seguendo.',
+    },
+  },
+  jorBelwas: {
+    character: 'strong-belwas',
+    type: { en: 'Stranger', it: 'Sconosciuto' },
+    summary: {
+      en: 'The huge, scarred man Jorah sees following Daenerys through the port. He says Illyrio sent him.',
+      it: 'L’uomo enorme e pieno di cicatrici che Jorah vede seguire Daenerys per il porto. Dice che lo manda Illyrio.',
+    },
+  },
+  jorArstan: {
+    character: 'arstan-whitebeard',
+    type: { en: 'Stranger', it: 'Sconosciuto' },
+    summary: {
+      en: 'The old man with a staff Jorah sees following Daenerys through the port. He saves her from a manticore.',
+      it: 'Il vecchio con il bastone che Jorah vede seguire Daenerys per il porto. La salva da una manticora.',
+    },
+  },
+  jorDaenerysFeelings: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he followed across the Red Waste. He advises her against Xaro’s offer and tells her what he feels for her; she does not return it.',
+      it: 'La khaleesi che ha seguito attraverso il Deserto Rosso. Le sconsiglia l’offerta di Xaro e le dice ciò che prova per lei; lei non lo ricambia.',
+    },
+  },
+  jorXaroEpisode: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Suitor', it: 'Pretendente' },
+    summary: {
+      en: 'The merchant prince who offers Daenerys his fortune to marry him. Jorah warns her that men like him always want something back.',
+      it: 'Il principe mercante che offre a Daenerys la sua fortuna perché lo sposi. Jorah la avverte che quelli come lui vogliono sempre qualcosa in cambio.',
+    },
+  },
+  jorKovarro: {
+    character: 'kovarro',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'One of the khaleesi’s bloodriders. At Xaro’s feast Jorah explains to Daenerys that he and Malakho mean to steal a statue.',
+      it: 'Uno dei cavalieri di sangue della khaleesi. Alla festa di Xaro, Jorah spiega a Daenerys che lui e Malakho vogliono rubare una statua.',
+    },
+  },
+  jorMalakho: {
+    character: 'malakho',
+    type: { en: 'Dothraki warrior', it: 'Guerriero dothraki' },
+    summary: {
+      en: 'An old warrior of the khalasar. Jorah reports his words: the statue is too heavy to carry.',
+      it: 'Un vecchio guerriero del khalasar. Jorah riferisce le sue parole: la statua è troppo pesante da portare via.',
+    },
+  },
+  jorDaenerysHouse: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he serves. He wants her to leave Qarth without her dragons, but goes with her to the House of the Undying to take them back.',
+      it: 'La khaleesi che serve. Vorrebbe che lasciasse Qarth senza i draghi, ma la accompagna alla Casa degli Eterni a riprenderli.',
+    },
+  },
+  jorXaroVault: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Traitor', it: 'Traditore' },
+    summary: {
+      en: 'The merchant prince who betrayed Daenerys. She locks him in his empty vault, and Jorah has the Dothraki seize his gold.',
+      it: 'Il principe mercante che ha tradito Daenerys. Lei lo chiude nella sua camera blindata vuota, e Jorah fa prendere ai dothraki il suo oro.',
+    },
+  },
+  jorDoreahVault: {
+    character: 'doreah',
+    type: { en: 'Traitor', it: 'Traditrice' },
+    summary: {
+      en: 'The khaleesi’s handmaiden, found in Xaro’s bed. She betrayed Daenerys and is locked in the vault with him.',
+      it: 'L’ancella della khaleesi, trovata nel letto di Xaro. Ha tradito Daenerys e viene chiusa con lui nella camera blindata.',
+    },
+  },
+
+  // Illyrio, the books
+  ilyDaenerysBelwas: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Former guest', it: 'Ex ospite' },
+    summary: {
+      en: 'The queen he once kept in his house. He sends two men to Qarth to bring her and her dragons back to Pentos.',
+      it: 'La regina che un tempo ospitava nella sua casa. Manda due uomini a Qarth a riportare lei e i suoi draghi a Pentos.',
+    },
+  },
+  ilyBelwas: {
+    character: 'strong-belwas',
+    type: { en: 'His man', it: 'Suo uomo' },
+    summary: {
+      en: 'A eunuch pit fighter he sends to Qarth to bring Daenerys back.',
+      it: 'Un eunuco, combattente delle arene, che manda a Qarth a riportare indietro Daenerys.',
+    },
+  },
+  ilyArstan: {
+    character: 'arstan-whitebeard',
+    type: { en: 'His man', it: 'Suo uomo' },
+    summary: {
+      en: 'An old man, Belwas’s squire, he sends to Qarth with him.',
+      it: 'Un vecchio, scudiero di Belwas, che manda a Qarth con lui.',
+    },
+  },
+
+  // Irri
+  irrDaenerysComfort: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she serves in the Red Waste. When Rakharo’s head comes back, Daenerys comforts her and promises him a funeral.',
+      it: 'La khaleesi che serve nel Deserto Rosso. Quando torna la testa di Rakharo, Daenerys la consola e gli promette un funerale.',
+    },
+  },
+  irrRakharoDead: {
+    character: 'rakharo',
+    type: { en: 'Bloodrider', it: 'Cavaliere di sangue' },
+    summary: {
+      en: 'One of the khaleesi’s bloodriders. His horse came back with his head, and Irri fears he cannot reach the night lands.',
+      it: 'Uno dei cavalieri di sangue della khaleesi. Il suo cavallo è tornato con la sua testa, e Irri teme che non possa raggiungere le terre della notte.',
+    },
+  },
+  irrDaenerysFriend: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she serves, who calls her a friend. In Qarth Irri urges her to wear the gown Xaro gave her.',
+      it: 'La khaleesi che serve, che la chiama amica. A Qarth Irri la convince a indossare l’abito regalato da Xaro.',
+    },
+  },
+  irrDoreahPrincess: {
+    character: 'doreah',
+    type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
+    summary: {
+      en: 'Another handmaiden of Daenerys. When Doreah calls Daenerys a princess, Irri corrects her: she is a khaleesi.',
+      it: 'Un’altra ancella di Daenerys. Quando Doreah chiama Daenerys principessa, Irri la corregge: è una khaleesi.',
+    },
+  },
+  irrXaro: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Khaleesi’s host', it: 'Ospite della khaleesi' },
+    summary: {
+      en: 'The merchant prince who hosts the khaleesi in Qarth, said to be the richest man in the city.',
+      it: 'Il principe mercante che ospita la khaleesi a Qarth, che si dice sia l’uomo più ricco della città.',
+    },
+  },
+  irrDaenerysDragons: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she follows into the Red Waste. Irri and Jhiqui carry two of her dragons in a cage between their horses.',
+      it: 'La khaleesi che segue nel Deserto Rosso. Irri e Jhiqui portano due dei suoi draghi in una gabbia appesa tra i loro cavalli.',
+    },
+  },
+  irrDoreahDead: {
+    character: 'doreah',
+    type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
+    summary: {
+      en: 'Another handmaiden of Daenerys. She fell ill in the Red Waste and died.',
+      it: 'Un’altra ancella di Daenerys. Si è ammalata nel Deserto Rosso ed è morta.',
+    },
+  },
+
+  // Jhiqui, the books
+  jhiDaenerysDragons: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she follows into the Red Waste. Jhiqui and Irri carry two of her dragons in a cage between their horses.',
+      it: 'La khaleesi che segue nel Deserto Rosso. Jhiqui e Irri portano due dei suoi draghi in una gabbia appesa tra i loro cavalli.',
+    },
+  },
+  jhiDoreahDead: {
+    character: 'doreah',
+    type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
+    summary: {
+      en: 'Another handmaiden of Daenerys. She fell ill in the Red Waste and died.',
+      it: 'Un’altra ancella di Daenerys. Si è ammalata nel Deserto Rosso ed è morta.',
+    },
+  },
+
+  // Doreah
+  dorDaenerysDeath: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she taught to please Drogo. When Doreah falls ill with fever in the Red Waste, Daenerys stops the khalasar and holds her hand until she dies.',
+      it: 'La khaleesi a cui ha insegnato a compiacere Drogo. Quando Doreah si ammala di febbre nel Deserto Rosso, Daenerys ferma il khalasar e le tiene la mano finché muore.',
+    },
+  },
+  dorDaenerysQarth: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she serves. In Qarth Daenerys asks her to win over Xaro’s friends and learn what they say about him.',
+      it: 'La khaleesi che serve. A Qarth Daenerys le chiede di conquistare gli amici di Xaro e scoprire cosa dicono di lui.',
+    },
+  },
+  dorIrriKhaleesi: {
+    character: 'irri',
+    type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
+    summary: {
+      en: 'Another of Daenerys’s handmaidens. When Doreah calls Daenerys a princess, Irri corrects her.',
+      it: 'Un’altra ancella di Daenerys. Quando Doreah chiama Daenerys principessa, Irri la corregge.',
+    },
+  },
+  dorXaro: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Khaleesi’s host', it: 'Ospite della khaleesi' },
+    summary: {
+      en: 'The merchant prince who hosts the khaleesi. Doreah has heard he is the richest man in Qarth, and admires the gown he had made for her.',
+      it: 'Il principe mercante che ospita la khaleesi. Doreah ha sentito dire che è l’uomo più ricco di Qarth, e ammira l’abito che ha fatto fare per lei.',
+    },
+  },
+  dorDaenerysVault: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi she betrayed', it: 'Khaleesi tradita' },
+    summary: {
+      en: 'The khaleesi she betrayed over the dragons. Daenerys finds her in Xaro’s bed and, deaf to her pleas, has her locked in his vault.',
+      it: 'La khaleesi che ha tradito per i draghi. Daenerys la trova nel letto di Xaro e, sorda alle sue suppliche, la fa chiudere nella sua camera blindata.',
+    },
+  },
+  dorXaroVault: {
+    character: 'xaro-xhoan-daxos',
+    type: { en: 'Accomplice', it: 'Complice' },
+    summary: {
+      en: 'The merchant prince she betrayed the khaleesi for. She is found in his bed, and they are locked in his empty vault together.',
+      it: 'Il principe mercante per cui ha tradito la khaleesi. Viene trovata nel suo letto, e vengono chiusi insieme nella sua camera blindata vuota.',
+    },
+  },
+  dorIrriDead: {
+    character: 'irri',
+    type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
+    summary: {
+      en: 'Another of Daenerys’s handmaidens. She was strangled in Xaro’s house when the dragons were stolen.',
+      it: 'Un’altra ancella di Daenerys. È stata strangolata nella casa di Xaro quando hanno rubato i draghi.',
+    },
+  },
+
+  // Rakharo
+  rakDaenerysScout: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he rides for as a bloodrider. She sends him to scout the Red Waste and tells him he has never failed her.',
+      it: 'La khaleesi per cui cavalca come cavaliere di sangue. Lo manda in esplorazione nel Deserto Rosso e gli dice che non l’ha mai delusa.',
+    },
+  },
+  rakKovarro: {
+    character: 'kovarro',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, sent out to scout in another direction at the same time.',
+      it: 'Un altro cavaliere di sangue della khaleesi, mandato in esplorazione nello stesso momento in un’altra direzione.',
+    },
+  },
+  rakAggo: {
+    character: 'aggo',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, sent out to scout in another direction at the same time.',
+      it: 'Un altro cavaliere di sangue della khaleesi, mandato in esplorazione nello stesso momento in un’altra direzione.',
+    },
+  },
+  rakDaenerysWaste: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he rides for as a bloodrider. She sends him south from the ruined city, and when he comes back she has him clear the plaza for grass.',
+      it: 'La khaleesi per cui cavalca come cavaliere di sangue. Lo manda a sud dalla città in rovina, e quando torna gli fa liberare la piazza perché cresca l’erba.',
+    },
+  },
+  rakAggoChapter: {
+    character: 'aggo',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, sent to scout in another direction from the ruined city.',
+      it: 'Un altro cavaliere di sangue della khaleesi, mandato in esplorazione in un’altra direzione dalla città in rovina.',
+    },
+  },
+  rakJhogoChapter: {
+    character: 'jhogo',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders. Sent out to scout with him, he comes back last, bringing three strangers from Qarth.',
+      it: 'Un altro cavaliere di sangue della khaleesi. Mandato in esplorazione con lui, torna per ultimo, con tre stranieri di Qarth.',
+    },
+  },
+  rakDaenerysHouse: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he rides for. He waits for her outside the House of the Undying, and protects her when the warlock attacks.',
+      it: 'La khaleesi per cui cavalca. La aspetta fuori dalla Casa degli Eterni, e la protegge quando lo stregone la aggredisce.',
+    },
+  },
+  rakPyatPree: {
+    character: 'pyat-pree',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The warlock who goes at the khaleesi with a dagger outside the House of the Undying. Rakharo knocks him to the ground.',
+      it: 'Lo stregone che aggredisce la khaleesi con un pugnale fuori dalla Casa degli Eterni. Rakharo lo butta a terra con uno schiaffo.',
+    },
+  },
+
+  // Jhogo, the books
+  jhoDaenerysWaste: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he rides for as a bloodrider. She sends him southeast from the ruined city, and he comes back with three strangers from Qarth.',
+      it: 'La khaleesi per cui cavalca come cavaliere di sangue. Lo manda a sud-est dalla città in rovina, e lui torna con tre stranieri di Qarth.',
+    },
+  },
+  jhoQuaithe: {
+    character: 'quaithe',
+    type: { en: 'Stranger', it: 'Straniera' },
+    summary: {
+      en: 'The masked woman of the Shadow, one of the strangers he brings back from the Red Waste. She came looking for dragons.',
+      it: 'La donna mascherata dell’Ombra, una degli stranieri che riporta dal Deserto Rosso. È venuta a cercare i draghi.',
+    },
+  },
+  jhoRakharo: {
+    character: 'rakharo',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, sent to scout in another direction from the ruined city.',
+      it: 'Un altro cavaliere di sangue della khaleesi, mandato in esplorazione in un’altra direzione dalla città in rovina.',
+    },
+  },
+  jhoAggo: {
+    character: 'aggo',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, sent to scout in another direction from the ruined city.',
+      it: 'Un altro cavaliere di sangue della khaleesi, mandato in esplorazione in un’altra direzione dalla città in rovina.',
+    },
+  },
+  jhoDaenerysHouse: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he guards in Qarth. He waits for her outside the House of the Undying, and protects her when the warlock attacks.',
+      it: 'La khaleesi che protegge a Qarth. La aspetta fuori dalla Casa degli Eterni, e la difende quando lo stregone la aggredisce.',
+    },
+  },
+  jhoPyatPree: {
+    character: 'pyat-pree',
+    type: { en: 'Enemy', it: 'Nemico' },
+    summary: {
+      en: 'The warlock who goes at the khaleesi with a dagger outside the House of the Undying. Jhogo knocks the knife aside with his whip.',
+      it: 'Lo stregone che aggredisce la khaleesi con un pugnale fuori dalla Casa degli Eterni. Jhogo gli fa volare via il pugnale con la frusta.',
+    },
+  },
+  jhoQuaitheWary: {
+    character: 'quaithe',
+    type: { en: 'Stranger', it: 'Straniera' },
+    summary: {
+      en: 'The masked woman he brought back from the Red Waste. When she tells the khaleesi to go to Asshai, he and the other bloodriders tell her not to trust her.',
+      it: 'La donna mascherata che ha riportato dal Deserto Rosso. Quando dice alla khaleesi di andare ad Asshai, lui e gli altri cavalieri di sangue le dicono di non fidarsi.',
+    },
+  },
+
+  // Aggo
+  aggDaenerysScout: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he rides for as a bloodrider. In the Red Waste she sends him to scout in one direction, and the others in two more.',
+      it: 'La khaleesi per cui cavalca come cavaliere di sangue. Nel Deserto Rosso lo manda in esplorazione in una direzione, e gli altri in altre due.',
+    },
+  },
+  aggRakharo: {
+    character: 'rakharo',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, sent out to scout in another direction at the same time.',
+      it: 'Un altro cavaliere di sangue della khaleesi, mandato in esplorazione nello stesso momento in un’altra direzione.',
+    },
+  },
+  aggKovarro: {
+    character: 'kovarro',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, sent out to scout in another direction at the same time.',
+      it: 'Un altro cavaliere di sangue della khaleesi, mandato in esplorazione nello stesso momento in un’altra direzione.',
+    },
+  },
+  aggDaenerysWaste: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he rides for as a bloodrider. She sends him southwest from the ruined city, and when he comes back she has him repair its gates.',
+      it: 'La khaleesi per cui cavalca come cavaliere di sangue. Lo manda a sud-ovest dalla città in rovina, e quando torna gli fa riparare le porte.',
+    },
+  },
+  aggDrogon: {
+    character: 'drogon',
+    type: { en: 'Khaleesi’s dragon', it: 'Drago della khaleesi' },
+    summary: {
+      en: 'The khaleesi’s black dragon. Aggo says he is Balerion reborn.',
+      it: 'Il drago nero della khaleesi. Aggo dice che è Balerion rinato.',
+    },
+  },
+} satisfies Record<string, Relationship>
+
 export const season1Relationships = {
   // The show weds her in episode 1; its wedding entry waits for episode 2,
   // the book's pair, which is later and so safe.
@@ -7440,6 +8162,123 @@ export const season1Relationships = {
         links.daeMirriPyre,
         links.daeRakharo,
         links.daeViserysDead,
+      ],
+    },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // The show: the Red Waste ("The North Remembers").
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'episode',
+      value: [
+        essos2.daeJorahWaste,
+        essos2.daeRakharoScout,
+        essos2.daeKovarro,
+        essos2.daeAggo,
+      ],
+    },
+    // Rakharo's head comes back in "The Night Lands".
+    {
+      episode: 12,
+      chapter: 86,
+      source: 'episode',
+      value: [
+        essos2.daeJorahWaste,
+        essos2.daeRakharoDead,
+        essos2.daeIrriMourns,
+        essos2.daeKovarro,
+        essos2.daeAggo,
+      ],
+    },
+    // Xaro's feast and offer, "The Ghost of Harrenhal".
+    {
+      episode: 15,
+      chapter: 101,
+      source: 'episode',
+      value: [
+        essos2.daeXaroEpisode,
+        essos2.daeJorahFeelings,
+        essos2.daeKovarroStatue,
+        essos2.daeIrriFriend,
+        essos2.daeDoreahQarth,
+      ],
+    },
+    // The dragons stolen, Irri killed, "The Old Gods and the New".
+    {
+      episode: 16,
+      chapter: 114,
+      source: 'episode',
+      value: [
+        essos2.daeXaroStolen,
+        essos2.daeJorahFeelings,
+        essos2.daeIrriDead,
+        essos2.daeDoreahMissing,
+        essos2.daeKovarroStatue,
+      ],
+    },
+    // "Valar Morghulis".
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [
+        essos2.daeXaroVault,
+        essos2.daeDoreahVault,
+        essos2.daeJorahHouse,
+        essos2.daeKovarroHouse,
+        essos2.daeIrriDead,
+      ],
+    },
+    // The books: Daenerys I names the dragons, and Doreah dies.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'chapter',
+      value: [
+        essos2.daeJorahLynesse,
+        essos2.daeDrogon,
+        essos2.daeRhaegal,
+        essos2.daeViserion,
+        essos2.daeDoreahDead,
+      ],
+    },
+    // Daenerys III: Xaro and Pyat Pree are named (#1468).
+    {
+      episode: 16,
+      chapter: 114,
+      source: 'chapter',
+      value: [
+        essos2.daeXaroChapter,
+        essos2.daePyatPree,
+        essos2.daeQuaithe,
+        essos2.daeJorahQarth,
+        essos2.daeDrogon,
+      ],
+    },
+    // Daenerys IV: the House of the Undying.
+    {
+      episode: 18,
+      chapter: 122,
+      source: 'chapter',
+      value: [
+        essos2.daePyatPreeHouse,
+        essos2.daeDrogonHouse,
+        essos2.daeJorahComfort,
+        essos2.daeJhogoKnife,
+        essos2.daeXaroChapter,
+      ],
+    },
+    // Daenerys V: the port of Qarth.
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'chapter',
+      value: [
+        essos2.daeBelwas,
+        essos2.daeArstan,
+        essos2.daeXaroShips,
+        essos2.daeJorahComfort,
+        essos2.daeDrogonHouse,
       ],
     },
   ],
@@ -7741,6 +8580,53 @@ export const season1Relationships = {
         links.jorViserysDead,
       ],
     },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    {
+      episode: 15,
+      chapter: 101,
+      source: 'episode',
+      value: [
+        essos2.jorDaenerysFeelings,
+        essos2.jorXaroEpisode,
+        essos2.jorKovarro,
+        essos2.jorMalakho,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [
+        essos2.jorDaenerysHouse,
+        essos2.jorXaroVault,
+        essos2.jorDoreahVault,
+        essos2.jorKovarro,
+        essos2.jorMalakho,
+      ],
+    },
+    {
+      episode: 16,
+      chapter: 114,
+      source: 'chapter',
+      value: [
+        essos2.jorDaenerysQarth,
+        essos2.jorXaroChapter,
+        essos2.jorPyatPree,
+        essos2.jorIllyrioSelf,
+      ],
+    },
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'chapter',
+      value: [
+        essos2.jorDaenerysPort,
+        essos2.jorBelwas,
+        essos2.jorArstan,
+        essos2.jorXaroChapter,
+        essos2.jorIllyrioSelf,
+      ],
+    },
   ],
   // Varys is the show's alone: the book never names the man Arya overhears.
   'illyrio-mopatis': [
@@ -7799,6 +8685,14 @@ export const season1Relationships = {
       source: 'chapter',
       value: [links.ilyDaenerysEggs, links.ilyViserysDead, links.ilyDrogoDead],
     },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // Daenerys V: Belwas and Arstan say he sent them.
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'chapter',
+      value: [essos2.ilyDaenerysBelwas, essos2.ilyBelwas, essos2.ilyArstan],
+    },
   ],
   'irri': [
     {
@@ -7830,6 +8724,32 @@ export const season1Relationships = {
       source: 'chapter',
       value: [links.irrDaenerysChapter, links.irrJhiqui, links.irrDoreahStory],
     },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // The show; she dies at 16, as her status has it.
+    {
+      episode: 12,
+      chapter: 86,
+      source: 'episode',
+      value: [essos2.irrDaenerysComfort, essos2.irrRakharoDead],
+    },
+    {
+      episode: 15,
+      chapter: 101,
+      source: 'episode',
+      value: [
+        essos2.irrDaenerysFriend,
+        essos2.irrDoreahPrincess,
+        essos2.irrXaro,
+        essos2.irrRakharoDead,
+      ],
+    },
+    // The books: Daenerys I.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'chapter',
+      value: [essos2.irrDaenerysDragons, links.irrJhiqui, essos2.irrDoreahDead],
+    },
   ],
   'jhiqui': [
     {
@@ -7853,6 +8773,14 @@ export const season1Relationships = {
         links.jhiIrriStory,
         links.jhiDoreahStory,
       ],
+    },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // The books: Daenerys I. The show has no season-2 Jhiqui.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'chapter',
+      value: [essos2.jhiDaenerysDragons, links.jhiIrri, essos2.jhiDoreahDead],
     },
   ],
   'doreah': [
@@ -7904,6 +8832,40 @@ export const season1Relationships = {
         links.dorIrri,
         links.dorJhiqui,
       ],
+    },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // The books: she dies in Daenerys I.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'chapter',
+      value: [
+        essos2.dorDaenerysDeath,
+        links.dorIrri,
+        links.dorJhiqui,
+        links.dorEroeh,
+      ],
+    },
+    // The show: Qarth, "The Ghost of Harrenhal".
+    {
+      episode: 15,
+      chapter: 101,
+      source: 'episode',
+      value: [essos2.dorDaenerysQarth, essos2.dorIrriKhaleesi, essos2.dorXaro],
+    },
+    // Irri is killed in "The Old Gods and the New".
+    {
+      episode: 16,
+      chapter: 114,
+      source: 'episode',
+      value: [essos2.dorDaenerysQarth, essos2.dorIrriDead, essos2.dorXaro],
+    },
+    // "Valar Morghulis".
+    {
+      episode: 20,
+      chapter: 137,
+      source: 'episode',
+      value: [essos2.dorDaenerysVault, essos2.dorXaroVault, essos2.dorIrriDead],
     },
   ],
   // The show's Rakharo does what the book gives Jhogo; the book's fights the
@@ -7959,6 +8921,44 @@ export const season1Relationships = {
       chapter: 73,
       source: 'chapter',
       value: [links.rakDaenerysPyreChapter, links.rakJhogo, links.rakHaggoDead],
+    },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // The show: sent out at 11; he dies at 12.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'episode',
+      value: [
+        essos2.rakDaenerysScout,
+        links.rakJorah,
+        links.rakIrri,
+        essos2.rakKovarro,
+        essos2.rakAggo,
+      ],
+    },
+    // The books: Daenerys I.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'chapter',
+      value: [
+        essos2.rakDaenerysWaste,
+        essos2.rakJhogoChapter,
+        essos2.rakAggoChapter,
+        links.rakHaggoDead,
+      ],
+    },
+    // Daenerys IV.
+    {
+      episode: 18,
+      chapter: 122,
+      source: 'chapter',
+      value: [
+        essos2.rakDaenerysHouse,
+        essos2.rakPyatPree,
+        essos2.rakJhogoChapter,
+        essos2.rakAggoChapter,
+      ],
     },
   ],
   // Show: he breaks Viserys's arm at his gate. Books: the synopsis names him
@@ -8089,6 +9089,33 @@ export const season1Relationships = {
         links.jhoHaggoDead,
       ],
     },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // Daenerys I: he brings back the strangers from Qarth.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'chapter',
+      value: [
+        essos2.jhoDaenerysWaste,
+        essos2.jhoQuaithe,
+        essos2.jhoRakharo,
+        essos2.jhoAggo,
+        links.jhoDrogoDead,
+      ],
+    },
+    // Daenerys IV.
+    {
+      episode: 18,
+      chapter: 122,
+      source: 'chapter',
+      value: [
+        essos2.jhoDaenerysHouse,
+        essos2.jhoPyatPree,
+        essos2.jhoQuaitheWary,
+        essos2.jhoRakharo,
+        essos2.jhoAggo,
+      ],
+    },
   ],
   'quaro': [
     {
@@ -8124,6 +9151,27 @@ export const season1Relationships = {
       chapter: 73,
       source: 'chapter',
       value: [links.aggDaenerysPyre, links.aggCoholloDead],
+    },
+    // Stage 2 (#1477): season 2 and A Clash of Kings.
+    // The show names him at 11, sent out to scout.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'episode',
+      value: [essos2.aggDaenerysScout, essos2.aggRakharo, essos2.aggKovarro],
+    },
+    // The books: Daenerys I.
+    {
+      episode: 11,
+      chapter: 86,
+      source: 'chapter',
+      value: [
+        essos2.aggDaenerysWaste,
+        essos2.aggDrogon,
+        essos2.jhoRakharo,
+        essos2.rakJhogoChapter,
+        links.aggCoholloDead,
+      ],
     },
   ],
   // The show's Mago dies at his gate; the book's lives to kill Eroeh.

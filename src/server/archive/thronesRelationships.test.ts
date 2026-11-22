@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
 import { toldIn } from '~/data/reveal'
+import type { Dated, Entity, Relationship } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
+import type { Source } from '~/lib/progress/spoiler'
 import type { RelationshipView } from '~/lib/view/relationships'
 import { withoutDrawings } from '~/test/archive'
 import { loadedSeries } from '~/test/series'
@@ -60,10 +62,7 @@ describe('Game of Thrones relationship coverage', () => {
  * bookmarks: the stage's last number in each unit, and the first past it,
  * the next season's first episode among them.
  */
-function edgeBookmarks(edge: {
-  chapter: number
-  episode: number
-}): [Bookmark, Bookmark][] {
+function edgeBookmarks(edge: Edge): [Bookmark, Bookmark][] {
   const season = archive.series.seasons.find(
     ({ last }) => last === edge.episode,
   )
@@ -85,6 +84,191 @@ function edgeBookmarks(edge: {
   ]
 }
 
+/** A stage's last episode and last chapter. */
+interface Edge {
+  chapter: number
+  episode: number
+}
+
+/** Each stage's edge, oldest first. */
+const STAGES: (Edge & { stage: number })[] = [
+  { stage: 1, episode: 10, chapter: 73 },
+  { stage: 2, episode: 20, chapter: 143 },
+]
+
+/**
+ * The owners each stage-2 relationships child authors (#1461), one row per
+ * cast group: its new characters and the season-1 characters it gives a
+ * stage-2 snapshot. Each later child (#1479–#1483) adds its row.
+ */
+const STAGE_2_GROUPS: { group: string; issue: string; owners: string[] }[] = [
+  {
+    group: 'Essos and Qarth',
+    issue: '#1477',
+    owners: [
+      'kovarro',
+      'xaro-xhoan-daxos',
+      'pyat-pree',
+      'quaithe',
+      'malakho',
+      'drogon',
+      'rhaegal',
+      'viserion',
+      'strong-belwas',
+      'arstan-whitebeard',
+      'daenerys-targaryen',
+      'jorah-mormont',
+      'illyrio-mopatis',
+      'irri',
+      'jhiqui',
+      'doreah',
+      'rakharo',
+      'jhogo',
+      'aggo',
+    ],
+  },
+]
+
+/**
+ * Season-1 owners with a stage-2 card filed before the stage-2 children, by
+ * the issue that filed it: each leaves this list for its group's row.
+ */
+const STAGE_2_EARLY: Record<string, string> = { 'dontos-hollard': '#1434' }
+
+/** Ids in alphabetical order. */
+function byId(a: string, b: string): number {
+  return a.localeCompare(b)
+}
+
+/** A snapshot's number in one unit; a chapter left unpinned counts as none. */
+function dateIn(
+  entry: { chapter?: number; episode: number },
+  unit: Source,
+): number {
+  return unit === 'episode' ? entry.episode : (entry.chapter ?? 0)
+}
+
+/** The unit a bookmark counts in and its number there, seasons as episodes. */
+function unitAt(bookmark: Bookmark): { at: number; unit: Source } {
+  if (bookmark === null) {
+    throw new Error('An edge bookmark is never empty')
+  }
+  if (bookmark.mode === 'chapter') {
+    return { unit: 'chapter', at: bookmark.chapter }
+  }
+  if (bookmark.mode === 'episode') {
+    return { unit: 'episode', at: bookmark.episode }
+  }
+  const { season, episode } = bookmark
+  const first =
+    archive.series.seasons.find(({ number }) => number === season)?.first ?? 1
+
+  return { unit: 'episode', at: first + episode - 1 }
+}
+
+/**
+ * Whether one of the owner's snapshots told in the bookmark's unit is pinned
+ * at exactly its number: the one bookmark where a selection may change.
+ */
+function pinnedAt(owner: string, bookmark: Bookmark): boolean {
+  const entity = archive.getCharacter(owner)
+  if (entity === undefined) {
+    return false
+  }
+  const { unit, at } = unitAt(bookmark)
+
+  return archive
+    .datedOf(entity, 'relationships')
+    .some((entry) => toldIn(entry, unit) && dateIn(entry, unit) === at)
+}
+
+/** One stage's edge. */
+function stageEdge(number: number): Edge {
+  const edge = STAGES.find(({ stage }) => stage === number)
+  if (edge === undefined) {
+    throw new Error(`No stage-${String(number)} edge`)
+  }
+  return edge
+}
+
+/** The edge's bookmark pairs at whose far side the owner pins nothing. */
+function unpinnedEdges(owner: string, edge: Edge): [Bookmark, Bookmark][] {
+  return edgeBookmarks(edge).filter(([, next]) => !pinnedAt(owner, next))
+}
+
+/** The owners with a snapshot told inside stage 2, in either medium. */
+function stage2Owners(): string[] {
+  return owners
+    .filter((owner) =>
+      archive.datedOf(owner, 'relationships').some((entry) => inStage2(entry)),
+    )
+    .map(({ id }) => id)
+}
+
+/** Whether a snapshot is told, in some medium, inside stage 2. */
+function inStage2(entry: Dated<Relationship[]>): boolean {
+  const [first, second] = STAGES
+  if (first === undefined || second === undefined) {
+    throw new Error('Stage 2 needs stage 1 before it')
+  }
+  const units: Source[] = ['episode', 'chapter']
+
+  return units.some(
+    (unit) =>
+      toldIn(entry, unit)
+      && dateIn(entry, unit) > first[unit]
+      && dateIn(entry, unit) <= second[unit],
+  )
+}
+
+/** An owner's snapshots pinned past the last stage in a medium that tells them, as labels. */
+function lateEntries(owner: Entity): string[] {
+  const last = STAGES.at(-1)
+  if (last === undefined) {
+    return []
+  }
+  const units: Source[] = ['episode', 'chapter']
+  const late = (entry: Dated<Relationship[]>): boolean =>
+    units.some(
+      (unit) => toldIn(entry, unit) && dateIn(entry, unit) > last[unit],
+    )
+
+  return archive
+    .datedOf(owner, 'relationships')
+    .filter((entry) => late(entry))
+    .map(
+      (entry) =>
+        `${owner.id} ${String(entry.episode)}/${String(entry.chapter)}`,
+    )
+}
+
+describe('Game of Thrones relationship stages', () => {
+  it('pins no snapshot past the last stage in the medium that tells it', () => {
+    const late = owners.flatMap((owner) => lateEntries(owner))
+
+    expect(late).toStrictEqual([])
+  })
+
+  it('files every stage-2 owner in exactly one group row', () => {
+    const grouped = [
+      ...STAGE_2_GROUPS.flatMap(({ owners: ids }) => ids),
+      ...Object.keys(STAGE_2_EARLY),
+    ]
+
+    expect(new Set(grouped)).toHaveProperty('size', grouped.length)
+    expect(stage2Owners().toSorted(byId)).toStrictEqual(grouped.toSorted(byId))
+  })
+
+  it.each(STAGE_2_GROUPS)(
+    'moves the $group group ($issue) out of pending',
+    ({ owners: ids }) => {
+      for (const id of ids) {
+        expect(Object.keys(coverage.authored), id).toContain(id)
+      }
+    },
+  )
+})
+
 describe.each(LOCALES)(
   'Game of Thrones verified revelations in %s',
   (locale) => {
@@ -96,16 +280,37 @@ describe.each(LOCALES)(
         ({ person }) => person.id === 'mirri-maz-duur',
       )?.type
 
-    // Each stage's last episode and last chapter. The relationships
-    // children of #1455 add stage 2's edge, episode 20/21 and chapter
-    // 143/144.
-    it.each([{ stage: 1, episode: 10, chapter: 73 }])(
+    // A selection crosses a stage's edge unchanged, unless the next stage
+    // pins a snapshot at the first number past it.
+    it.each(STAGES)(
       'keeps the last stage-$stage selection across both stage edges',
       (edge) => {
         for (const owner of owners) {
-          for (const [last, next] of edgeBookmarks(edge)) {
+          for (const [last, next] of unpinnedEdges(owner.id, edge)) {
             expect(projected(owner.id, next, locale), owner.id).toStrictEqual(
               projected(owner.id, last, locale),
+            )
+          }
+        }
+      },
+    )
+
+    // Each stage-2 group shows its reached selection at the stage's last
+    // episode or chapter, and keeps it past the edge.
+    it.each(STAGE_2_GROUPS)(
+      'holds the $group selections at the stage-2 edge',
+      ({ owners: ids }) => {
+        const edge = stageEdge(2)
+        for (const id of ids) {
+          const shown = [ep(edge.episode), ch(edge.chapter)].some(
+            (bookmark) => projected(id, bookmark, locale).length > 0,
+          )
+
+          expect(shown, id).toBe(true)
+
+          for (const [last, next] of edgeBookmarks(edge)) {
+            expect(projected(id, next, locale), id).toStrictEqual(
+              projected(id, last, locale),
             )
           }
         }
@@ -179,19 +384,18 @@ describe.each(LOCALES)(
     })
 
     it('keeps the books-only roster out of show pages', () => {
-      for (const id of [
-        'cohollo',
-        'haggo',
-        'jhogo',
-        'quaro',
-        'eroeh',
-        'aggo',
-      ]) {
+      for (const id of ['cohollo', 'haggo', 'jhogo', 'quaro', 'eroeh']) {
         expect(
           projected(id, ep(archive.series.episodeCeiling), locale),
         ).toStrictEqual([])
         expect(projected(id, ch(73), locale)).not.toStrictEqual([])
       }
+
+      // The show names Aggo only in season 2, where his show cards open
+      // (#1477).
+      expect(projected('aggo', ep(10), locale)).toStrictEqual([])
+      expect(projected('aggo', ep(11), locale)).not.toStrictEqual([])
+      expect(projected('aggo', ch(73), locale)).not.toStrictEqual([])
     })
 
     it('opens Mirri’s revenge at chapter 69 and the pyre at chapter 73', () => {
@@ -943,3 +1147,114 @@ describe.each(
     expect(shown(chapter)).toBe(true)
   })
 })
+
+// Essos and Qarth in stage 2 (#1477): each link the two media time or tell
+// apart, checked just before its pin and at it.
+describe.each(LOCALES)(
+  'Game of Thrones stage-2 Essos revelations in %s',
+  (locale) => {
+    const people = (owner: string, bookmark: Bookmark): string[] =>
+      projected(owner, bookmark, locale).map(({ person }) => person.id)
+    const typed = (
+      owner: string,
+      person: string,
+      bookmark: Bookmark,
+    ): string | undefined => wordsOf([owner, person], bookmark, locale)?.type
+    // What Daenerys's card says of Rakharo at a bookmark.
+    const rakharoWords = (bookmark: Bookmark): string | undefined =>
+      wordsOf(['daenerys-targaryen', 'rakharo'], bookmark, locale)?.summary
+
+    it('opens Quaithe’s cards at chapter 86, where she introduces herself', () => {
+      expect(projected('quaithe', ch(85), locale)).toStrictEqual([])
+      expect(people('quaithe', ch(86))).toStrictEqual([
+        'daenerys-targaryen',
+        'jhogo',
+      ])
+      expect(people('jhogo', ch(85))).not.toContain('quaithe')
+      expect(people('jhogo', ch(86))).toContain('quaithe')
+      expect(
+        projected('quaithe', ep(archive.series.episodeCeiling), locale),
+      ).toStrictEqual([])
+    })
+
+    it('names the dragons on Daenerys’s book page at chapter 86 alone', () => {
+      for (const dragon of ['drogon', 'rhaegal', 'viserion']) {
+        expect(people('daenerys-targaryen', ch(85))).not.toContain(dragon)
+        expect(people('daenerys-targaryen', ch(86))).toContain(dragon)
+        expect(projected(dragon, ch(86), locale)).not.toStrictEqual([])
+        expect(
+          projected(dragon, ep(archive.series.episodeCeiling), locale),
+        ).toStrictEqual([])
+      }
+    })
+
+    it('ends Doreah in the Red Waste at chapter 86 but in Xaro’s vault at episode 20', () => {
+      expect(typed('daenerys-targaryen', 'doreah', ch(86))).toBeDefined()
+      expect(people('daenerys-targaryen', ch(86))).not.toContain(
+        'xaro-xhoan-daxos',
+      )
+      expect(people('doreah', ep(14))).not.toContain('xaro-xhoan-daxos')
+      expect(people('doreah', ep(15))).toContain('xaro-xhoan-daxos')
+      expect(typed('doreah', 'xaro-xhoan-daxos', ep(19))).not.toBe(
+        typed('doreah', 'xaro-xhoan-daxos', ep(20)),
+      )
+      expect(people('doreah', ch(archive.series.chapterCeiling))).not.toContain(
+        'xaro-xhoan-daxos',
+      )
+    })
+
+    it('kills Rakharo on Daenerys’s show page at episode 12', () => {
+      expect(people('daenerys-targaryen', ep(10))).not.toContain('kovarro')
+      expect(people('daenerys-targaryen', ep(11))).toContain('kovarro')
+      expect(rakharoWords(ep(11))).toBeDefined()
+      expect(rakharoWords(ep(12))).not.toBe(rakharoWords(ep(11)))
+    })
+
+    it('gives Xaro his show and book cards at their own gates', () => {
+      expect(projected('xaro-xhoan-daxos', ep(14), locale)).toStrictEqual([])
+      expect(people('xaro-xhoan-daxos', ep(15))).toContain('kovarro')
+      expect(projected('xaro-xhoan-daxos', ch(113), locale)).toStrictEqual([])
+      expect(people('xaro-xhoan-daxos', ch(114))).toContain('pyat-pree')
+      expect(people('xaro-xhoan-daxos', ch(114))).not.toContain('kovarro')
+      expect(people('xaro-xhoan-daxos', ep(19))).not.toContain('malakho')
+      expect(people('xaro-xhoan-daxos', ep(20))).toContain('malakho')
+      expect(people('xaro-xhoan-daxos', ch(137))).not.toContain('doreah')
+    })
+
+    it('keeps Pyat Pree, Quaithe and the books’ rescuers off show pages', () => {
+      for (const owner of ['daenerys-targaryen', 'jorah-mormont']) {
+        const shown = people(owner, ep(20))
+        for (const id of [
+          'pyat-pree',
+          'quaithe',
+          'strong-belwas',
+          'arstan-whitebeard',
+          'drogon',
+        ]) {
+          expect(shown, `${owner} ${id}`).not.toContain(id)
+        }
+      }
+
+      expect(people('daenerys-targaryen', ch(136))).not.toContain(
+        'strong-belwas',
+      )
+      expect(people('daenerys-targaryen', ch(137))).toContain('strong-belwas')
+    })
+
+    it('has Jhogo and Rakharo stop Pyat Pree in chapter 122', () => {
+      for (const owner of ['jhogo', 'rakharo']) {
+        expect(people(owner, ch(121))).not.toContain('pyat-pree')
+        expect(people(owner, ch(122))).toContain('pyat-pree')
+      }
+    })
+
+    it('keeps Kovarro and Malakho out of book pages', () => {
+      for (const id of ['kovarro', 'malakho']) {
+        expect(
+          projected(id, ch(archive.series.chapterCeiling), locale),
+        ).toStrictEqual([])
+        expect(people('daenerys-targaryen', ch(143))).not.toContain(id)
+      }
+    })
+  },
+)
