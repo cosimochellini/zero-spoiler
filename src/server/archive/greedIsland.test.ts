@@ -2,7 +2,13 @@ import { describe, expect, it } from 'vitest'
 
 import type { Entity } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
-import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
+import {
+  bookmarkAt as at,
+  gateCases,
+  opened,
+  recordIn,
+  stageMissedAt,
+} from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -382,3 +388,14 @@ describe.each(STEP_CASES)(
     })
   },
 )
+
+describe('the powers Gon and Killua first show in Greed Island', () => {
+  it.each([
+    // Killua's first spark, after the taser (#1329).
+    { id: 'killua', episode: 59, chapter: 122 },
+    // Gon's Rock shatters the boulder (#1329).
+    { id: 'gon-freecss', episode: 65, chapter: 145 },
+  ])('changes $id’s drawing at $episode / $chapter', (stage) => {
+    expect(stageMissedAt(archive, stage.id, stage)).toStrictEqual([])
+  })
+})

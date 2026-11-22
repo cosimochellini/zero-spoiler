@@ -3,7 +3,13 @@ import { describe, expect, it } from 'vitest'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
 import { leaksOf } from '~/test/fog'
-import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
+import {
+  bookmarkAt as at,
+  gateCases,
+  opened,
+  recordIn,
+  stageMissedAt,
+} from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, drawingsFor } from './pages.server'
@@ -1478,6 +1484,37 @@ describe.each([
       expect(read(gate)).not.toStrictEqual(read(gate - 1))
     }
   })
+})
+
+describe('the Chimera Ant stages of the Hunter Exam records', () => {
+  it.each([
+    // Netero's bodhisattva strikes Pitou away (#1329).
+    { id: 'netero', episode: 111, chapter: 264 },
+    // Killua's Godspeed (#1329).
+    { id: 'killua', episode: 119, chapter: 281 },
+    // Gon's adult form, and its end when he is next seen (#1329).
+    { id: 'gon-freecss', episode: 131, chapter: 305 },
+    { id: 'gon-freecss', episode: 136, chapter: 316 },
+  ])('changes $id’s drawing at $episode / $chapter', (stage) => {
+    expect(stageMissedAt(archive, stage.id, stage)).toStrictEqual([])
+  })
+
+  it.each(LOCALES)(
+    'gives Gon back his Rock drawing after the adult form, in %s',
+    (locale) => {
+      for (const unit of UNITS) {
+        const read = (count: number): ReturnType<typeof drawingsFor> =>
+          drawingsFor(
+            ['gon-freecss'],
+            readerFor(archive, at(unit, count), locale),
+          )
+
+        expect(read(unit === 'episode' ? 136 : 316)).toStrictEqual(
+          read(unit === 'episode' ? 65 : 145),
+        )
+      }
+    },
+  )
 })
 
 describe('the palace’s damage drawing', () => {
