@@ -76,6 +76,9 @@ const CHRONICLE_CHAPTERS: Record<number, number> = {
   147: 337,
 }
 
+/** Kite's later stages: Crazy Slots, his death and his return (#1325). */
+const STAGE_CHAPTERS: Record<number, number> = { 82: 193, 85: 199, 136: 316 }
+
 function expectedChapter(
   field: Parameters<typeof waitsForGing>[0],
   entry: Parameters<typeof waitsForGing>[1] & { episode: number },
@@ -88,13 +91,7 @@ function expectedChapter(
   if (field === 'role' && entry.episode === 93) {
     return 217
   }
-  if (entry.episode === 85) {
-    return 199
-  }
-  if (entry.episode === 136) {
-    return 316
-  }
-  return waitsForGing(field, entry) ? 66 : 1
+  return STAGE_CHAPTERS[entry.episode] ?? (waitsForGing(field, entry) ? 66 : 1)
 }
 
 describe('chapter-one pins', () => {
