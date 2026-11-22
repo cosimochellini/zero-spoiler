@@ -236,7 +236,7 @@ const essos = {
     type: { en: 'Guest', it: 'Ospite' },
     summary: {
       en: 'The queen he hosts. He warns her the warlocks are coming for her and asks again to marry her; for a ship he wants one of her dragons.',
-      it: 'La regina che ospita. La avverte che gli stregoni vogliono vendicarsi e le chiede ancora di sposarlo; in cambio delle navi vuole uno dei suoi draghi.',
+      it: 'La regina che ospita. La avverte che gli stregoni stanno radunando il loro potere contro di lei e le chiede ancora di sposarlo; in cambio delle navi vuole uno dei suoi draghi.',
     },
   },
 

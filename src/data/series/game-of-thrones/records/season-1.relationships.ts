@@ -7608,8 +7608,8 @@ const essos2 = {
     character: 'doreah',
     type: { en: 'Handmaiden', it: 'Ancella' },
     summary: {
-      en: 'Her handmaiden. She is gone from Xaro’s house after the dragons are stolen, and Daenerys believes she is dead.',
-      it: 'La sua ancella. Dopo il furto dei draghi è sparita dalla casa di Xaro, e Daenerys la crede morta.',
+      en: 'Her handmaiden. She is gone from Xaro’s house after the dragons are stolen.',
+      it: 'La sua ancella. Dopo il furto dei draghi è sparita dalla casa di Xaro.',
     },
   },
   daeXaroStolen: {
