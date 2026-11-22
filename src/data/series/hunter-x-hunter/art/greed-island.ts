@@ -31,148 +31,221 @@ const PUHAT_JACKET: Stroke[] = [
   },
 ]
 
+/**
+ * The ball of Razor's dodgeball match, seen 3/4: seams in soft, one seam band
+ * in tint, the far side hatched. Shared by his first drawing and his 14 Devils
+ * stage.
+ */
+const RAZOR_BALL: Stroke[] = [
+  { d: circle(80, 120, 32) },
+  { d: 'M49 112 Q71 118 73 151 M53 101 Q82 112 84 152', role: 'accent' },
+  { d: 'M61 94 Q97 98 110 130', role: 'soft' },
+  { d: 'M84 88 Q107 97 112 116', role: 'soft' },
+  { d: 'M95 145 l6 -5 M103 138 l6 -5 M108 129 l5 -5', role: 'ambient' },
+]
+
+/** Open aura lines round the ball and speed lines behind it: the aura ball. */
+const RAZOR_AURA_BALL: Stroke[] = [
+  {
+    d: 'M118 136 Q114 156 98 162 M84 166 Q66 168 52 158 M124 116 Q126 104 122 94',
+    role: 'ambient',
+  },
+  { d: 'M10 54 L32 76 M6 82 L24 94 M28 36 L46 58', role: 'ambient' },
+]
+
 export const GREED_ISLAND_DRAWINGS = {
-  // Jitonoda is named in chapter 129's TV news report. A plain set with a
-  // blank screen and rabbit ears; no portrait, lettering or copied page.
+  // Jitonoda is named in chapter 129's news report, which neither anime
+  // adapts. The set stands for the report: a deep cabinet in 3/4, its far
+  // side hatched, and a blank screen; no portrait, podium or lettering.
   'jitonoda': [
-    { d: 'M30 62 H128 L132 142 H34 Z' },
-    { d: 'M30 62 L24 69 L28 149 L34 142 M28 149 H126 L132 142', role: 'soft' },
-    { d: 'M42 73 H117 L120 130 H45 Z', role: 'accent' },
-    { d: 'M49 82 Q66 78 78 84 M55 118 Q76 112 108 120', role: 'soft' },
-    { d: 'M52 62 L36 34 M106 62 L122 34', role: 'soft' },
-    { d: 'M60 142 V152 M100 142 V152', role: 'soft' },
-    { d: 'M126 96 l4 0 M126 106 l4 0', role: 'ambient' },
-    { d: 'M20 84 l5 -3 M18 100 l5 -3 M20 116 l5 -3', role: 'ambient' },
-    shadow(80, 166, 48),
+    { d: 'M24 66 H112 V146 H24 Z' },
+    { d: 'M112 66 L136 54 V132 L112 146 M24 66 L48 54 H136', role: 'soft' },
+    {
+      d: 'M118 80 l12 -6 M118 96 l12 -6 M118 112 l12 -6 M118 128 l12 -6',
+      role: 'ambient',
+    },
+    {
+      d: 'M36 80 Q36 76 40 76 H96 Q100 76 100 80 V128 Q100 132 96 132 H40 Q36 132 36 128 Z',
+      role: 'accent',
+    },
+    { d: 'M42 82 H94 V126 H42 Z', role: 'soft' },
+    { d: 'M46 90 Q54 85 62 87', role: 'soft' },
+    { d: 'M36 146 V154 M100 146 V154', role: 'soft' },
+    shadow(80, 162, 52),
   ],
-  // Dwun's cigarette, from his chapter 184 appearance description, viewed
-  // obliquely. Plain paper and an ash tip; no face, logo or invented ashtray.
+  // The case for three cards Dwun digs out of his rubbish for Gon in
+  // chapter 184 / episode 75, open on its three slots, with the cigarette
+  // he always has resting on it, its ash tip in tint. Scraps lie around it.
   'dwun': [
-    { d: 'M31 131 L114 61 M39 143 L124 74' },
-    { d: 'M31 131 C25 137 34 148 39 143 M114 61 C120 57 130 68 124 74' },
-    { d: 'M111 64 Q120 63 121 76', role: 'accent' },
-    { d: 'M106 69 L115 80 M101 73 L111 84', role: 'soft' },
-    { d: 'M38 133 L103 78 M42 137 L105 83', role: 'soft' },
-    { d: 'M115 65 l5 7 M118 63 l6 7', role: 'ambient' },
-    { d: 'M46 125 l4 4 M59 114 l4 4 M72 103 l4 4', role: 'ambient' },
-    shadow(78, 166, 45),
+    { d: 'M26 124 L98 106 L134 126 L62 144 Z' },
+    { d: 'M26 124 V136 L62 156 L134 138 V126 M62 144 V156' },
+    { d: 'M26 124 L16 80 L88 62 L98 106 M20 84 L86 68', role: 'soft' },
+    {
+      d: 'M36.4 125.7 L55.2 121.1 L75 132.1 L56.2 136.7 Z M58.8 120.2 L77.5 115.5 L97.3 126.5 L78.6 131.2 Z M81.1 114.6 L99.8 109.9 L119.6 120.9 L100.9 125.6 Z',
+      role: 'soft',
+    },
+    {
+      d: 'M64 140 L128 124 M66 145 L130 129 M64 140 Q62 143 66 145 M76 137 L78 142',
+      role: 'soft',
+    },
+    { d: 'M128 124 L138 121 Q141 124 140 127 L130 129', role: 'accent' },
+    { d: 'M142 118 Q136 110 144 102 Q152 94 146 86', role: 'ambient' },
+    {
+      d: 'M70 150 l5 -3 M86 146 l5 -3 M102 142 l5 -3 M118 138 l5 -3',
+      role: 'ambient',
+    },
+    {
+      d: 'M6 166 L14 156 L24 160 L20 170 Z M136 160 L146 152 L156 158 L150 168 Z M30 172 L44 166',
+      role: 'ambient',
+    },
+    shadow(80, 170, 56),
   ],
-  // List's small tie and overall straps, chapter 184's named introduction.
-  // The bow-free knot and the two buckles carry the object's volume.
+  // List's dress shirt at the castle in chapter 183 / episode 75: the
+  // collar with the small tie knotted under it, in tint, and the overall
+  // straps down to their buckles. The turned side is hatched.
   'list': [
-    { d: 'M65 45 L91 45 L97 57 L83 72 L67 60 Z', role: 'accent' },
-    { d: 'M91 45 L99 49 L104 60 L90 74 L83 72', role: 'soft' },
-    { d: 'M72 64 L56 130 L77 154 L101 132 L86 68', role: 'accent' },
+    { d: 'M58 44 L32 56 L28 172 Q80 182 132 172 L128 56 L102 44' },
+    { d: 'M58 44 Q80 54 102 44', role: 'soft' },
+    { d: 'M58 44 L64 74 L79 60 M102 44 L96 74 L81 60' },
     {
-      d: 'M86 68 L94 71 L108 130 L101 132 M77 154 L85 157 L108 130',
-      role: 'soft',
+      d: 'M75 60 H85 L83 70 H77 Z M77 70 L71 120 L80 130 L89 120 L83 70',
+      role: 'accent',
     },
-    { d: 'M78 75 L69 124 M67 133 L77 143', role: 'soft' },
-    { d: 'M31 44 L37 138 H50 L44 44 M114 42 L120 136 H133 L127 42' },
-    { d: 'M33 111 H51 V132 H34 Z M116 109 H134 V130 H117 Z', role: 'soft' },
-    { d: 'M38 117 H46 V126 H39 Z M121 115 H129 V124 H122 Z', role: 'soft' },
-    { d: 'M97 102 l4 -3 M99 114 l5 -3 M101 126 l4 -3', role: 'ambient' },
-    shadow(81, 181, 51),
+    { d: 'M42 53 L46 140 M54 49 L58 140 M106 49 L102 140 M118 53 L114 140' },
+    { d: 'M42 140 H60 V156 H42 Z M100 140 H118 V156 H100 Z', role: 'soft' },
+    { d: 'M47 144 H55 V152 H47 Z M105 144 H113 V152 H105 Z', role: 'soft' },
+    {
+      d: 'M122 70 l5 -3 M122 86 l5 -3 M122 102 l5 -3 M122 118 l5 -3 M122 134 l5 -3 M122 150 l5 -3',
+      role: 'ambient',
+    },
+    { d: 'M34 60 L38 110 M126 60 L122 110', role: 'soft' },
+    shadow(80, 190, 50),
   ],
-  // Eeta's sleeveless robe, chapter 184 identifies the entrance attendant
-  // seen in 127. The eye motifs are omitted, as are helmet and face.
+  // Eta's helmet in 3/4, as she greets Gon in chapter 127 / episode 60:
+  // her two long ponytails fall from it, and one of its eye motifs, outline
+  // and iris only, is in tint. The far side is hatched; no face.
   'eta': [
+    { d: 'M38 130 C36 84 56 60 82 60 C108 60 126 84 124 130' },
     {
-      d: 'M58 39 L68 39 Q80 52 92 39 H102 L106 77 L96 90 L115 159 Q80 171 43 159 L62 90 L53 77 Z',
-    },
-    { d: 'M58 39 Q56 63 62 76 M102 39 Q104 63 98 76', role: 'soft' },
-    { d: 'M68 39 Q80 52 92 39 M70 45 Q80 54 90 45', role: 'accent' },
-    { d: 'M43 159 L47 168 Q82 181 121 166 L115 159', role: 'soft' },
-    { d: 'M64 94 L56 154 M96 94 L107 156 M80 105 V163', role: 'soft' },
-    {
-      d: 'M108 130 l5 -3 M111 141 l5 -3 M114 152 l5 -3 M111 168 l6 -3',
-      role: 'ambient',
-    },
-    { d: 'M59 116 l4 -4 M56 133 l4 -4', role: 'ambient' },
-    shadow(81, 187, 49),
-  ],
-  // Elena's square-necked robe and thin choker from her appearance
-  // description, named in chapter 184. No helmet motifs or face.
-  'elena': [
-    {
-      d: 'M58 58 H69 V78 H94 V58 H105 L111 98 L98 108 L117 166 H43 L61 108 L51 98 Z',
-    },
-    { d: 'M105 58 L111 62 L117 100 L105 113 L124 171 L117 166', role: 'soft' },
-    { d: 'M43 166 L48 172 H124 V171', role: 'soft' },
-    { d: ellipse(81, 40, 23, 5), role: 'accent' },
-    { d: 'M58 40 V45 C60 52 102 52 104 45 V40', role: 'soft' },
-    {
-      d: 'M70 79 H93 V84 H70 Z M64 110 L56 158 M97 111 L108 158',
+      d: 'M38 130 Q81 148 124 130 M38 130 V137 Q81 156 124 137 V130',
       role: 'soft',
     },
-    { d: 'M80 100 V164 M61 145 Q71 139 78 146', role: 'soft' },
-    { d: 'M112 130 l5 -3 M116 143 l5 -3 M119 156 l5 -3', role: 'ambient' },
-    shadow(82, 187, 49),
-  ],
-  // The envelope delivered by the owl in chapter 183 / episode 75,
-  // inviting Gon to Limeiro's castle. No seal, text or copied architecture.
-  'limeiro': [
-    { d: 'M24 78 L113 60 L137 125 L46 146 Z' },
-    { d: 'M24 78 L78 104 L113 60', role: 'accent' },
-    { d: 'M46 146 L67 101 M137 125 L91 96', role: 'soft' },
-    { d: 'M46 146 V153 L138 132 L137 125 M24 78 V85 L46 153', role: 'soft' },
-    { d: 'M31 81 L77 103 L107 67', role: 'soft' },
     {
-      d: 'M54 146 l6 -3 M71 142 l6 -3 M88 138 l6 -3 M105 134 l6 -3 M122 130 l6 -3',
+      d: `M50 108 Q70 92 90 108 Q70 122 50 108 Z ${circle(70, 107, 6)}`,
+      role: 'accent',
+    },
+    {
+      d: 'M66 64 C60 38 40 26 26 38 C14 50 16 84 22 104 C26 122 22 142 12 158 M68 70 C62 52 46 44 36 50 C28 58 30 82 34 100 C38 120 32 142 12 158',
+      role: 'soft',
+    },
+    {
+      d: 'M98 62 C104 36 124 24 138 36 C150 48 148 82 142 102 C138 120 142 140 150 156 M96 68 C102 50 118 42 128 48 C136 56 134 80 130 98 C126 118 132 140 150 156',
+      role: 'soft',
+    },
+    {
+      d: 'M30 52 C24 74 30 96 28 116 M134 50 C140 72 134 94 136 114',
+      role: 'soft',
+    },
+    { d: 'M110 90 l7 -4 M114 104 l7 -4 M116 118 l7 -4', role: 'ambient' },
+    shadow(81, 174, 46),
+  ],
+  // Elena's helmet in 3/4, as she sends Killua out of the game in chapter
+  // 146 / episode 65: two ponytails on top, two thick braids below and her
+  // thin choker between them. The rim is in tint; no face.
+  'elena': [
+    { d: 'M36 118 C36 76 58 54 84 54 C110 54 126 78 124 118' },
+    { d: 'M36 118 Q82 136 124 118', role: 'accent' },
+    { d: 'M36 118 V124 Q82 143 124 124 V118', role: 'soft' },
+    {
+      d: 'M66 58 C64 40 54 30 42 30 C32 30 26 40 28 52 M66 58 C62 46 54 40 46 42 C38 44 36 52 38 60 M66 58 C66 44 62 36 54 34',
+      role: 'soft',
+    },
+    {
+      d: 'M100 58 C102 40 112 30 124 30 C134 30 140 40 138 52 M100 58 C104 46 112 40 120 42 C128 44 130 52 128 60 M100 58 C100 44 104 36 112 34',
+      role: 'soft',
+    },
+    {
+      d: 'M42 128 L44 180 M56 132 L56 180 M42 138 L49 144 L56 138 M43 150 L49 156 L56 150 M43 162 L49 168 L56 162 M44 174 L50 180 L56 174',
+      role: 'soft',
+    },
+    {
+      d: 'M106 132 L106 178 M120 128 L118 178 M106 138 L113 144 L120 136 M106 150 L112 156 L119 148 M106 162 L112 168 L119 160 M106 174 L112 178 L118 172',
+      role: 'soft',
+    },
+    { d: 'M58 146 Q81 156 104 146 M58 150 Q81 160 104 150', role: 'soft' },
+    { d: 'M108 80 l7 -4 M112 94 l7 -4 M114 108 l7 -4', role: 'ambient' },
+    shadow(81, 192, 44),
+  ],
+  // Limeiro's castle, the city's symbol, which Gon enters in chapter 183 /
+  // episode 75: the keep in 3/4 with its far side hatched, two towers and a
+  // few roofs of the town beside it. The gate he walks in by is in tint.
+  'limeiro': [
+    { d: 'M4 150 H156', role: 'ambient' },
+    { d: 'M60 150 V74 H100 V150' },
+    { d: 'M100 74 L110 68 V146 L100 150', role: 'soft' },
+    {
+      d: 'M102 90 l6 -3 M102 104 l6 -3 M102 118 l6 -3 M102 132 l6 -3',
       role: 'ambient',
     },
-    { d: 'M8 150 H35 M140 150 H154', role: 'ambient' },
-    shadow(81, 158, 55),
+    { d: 'M56 74 L80 46 L104 74 Z M80 46 L90 41 L114 69 L104 74' },
+    { d: 'M70 150 V128 Q80 116 90 128 V150', role: 'accent' },
+    { d: 'M76 88 V100 M84 88 V100', role: 'soft' },
+    { d: 'M30 150 V88 H50 V150 M26 88 L40 60 L54 88 Z' },
+    { d: 'M116 150 V92 H134 V150 M112 92 L125 64 L138 92 Z' },
+    { d: 'M134 92 L140 88 V146 L134 150 M138 92 L141 89', role: 'soft' },
+    { d: 'M40 102 V112 M125 106 V116', role: 'soft' },
+    {
+      d: 'M6 150 V134 L15 124 L24 134 V150 M142 150 V136 L149 128 L156 136 V150',
+      role: 'soft',
+    },
+    shadow(80, 158, 62),
   ],
 
-  // Genthru's angular spectacles, folded in three-quarter view. Chapter
-  // 144 names him; the appearance description cites the glasses at 130.
+  // Genthru's open hand with a Little Flower blast in its palm, the power
+  // he turns on Jispa in chapter 142 / episode 64. A cross-shaped symbol on
+  // the cuff of his white cloak is in tint; the blast is open lines.
   'genthru': [
-    { d: 'M22 100 L63 91 L69 119 L28 130 Z' },
-    { d: 'M82 87 L123 78 L130 106 L89 116 Z' },
-    { d: 'M63 96 Q72 88 83 92', role: 'accent' },
-    { d: 'M25 104 L60 96 L65 115 L31 124 Z', role: 'soft' },
-    { d: 'M86 91 L120 84 L125 102 L92 111 Z', role: 'soft' },
-    { d: 'M22 100 L40 65 L49 62 M123 78 L139 52 L146 54', role: 'soft' },
+    { d: 'M2 170 L34 128 M28 188 L58 150' },
+    { d: 'M34 128 Q52 132 58 150 Q42 148 34 128', role: 'soft' },
     {
-      d: 'M28 130 L31 134 L72 123 L69 119 M89 116 L92 120 L133 109 L130 106',
-      role: 'soft',
+      d: 'M23 152 H29 V157 H34 V163 H29 V168 H23 V163 H18 V157 H23 Z',
+      role: 'accent',
     },
-    { d: 'M40 65 L45 68 L27 103 M139 52 L143 56 L127 82', role: 'soft' },
-    { d: 'M36 115 L48 104 M96 101 L107 91', role: 'ambient' },
-    { d: 'M52 124 l6 -2 M107 111 l6 -2', role: 'ambient' },
-    shadow(82, 159, 57),
-  ],
-  // Jispa's plain tank top, chapter 131 appearance, folded after the death
-  // reported by name in chapter 144. He is already dead when filed.
-  'jispa': [
-    { d: 'M29 108 L104 97 L135 123 L61 137 Z' },
-    { d: 'M29 108 V121 L61 151 L135 136 V123 M61 137 V151' },
-    { d: 'M49 105 L57 116 Q72 125 88 111 L96 99', role: 'accent' },
-    { d: 'M55 105 L62 114 Q72 119 81 111 L87 101', role: 'soft' },
-    { d: 'M36 110 L53 126 L44 130 M110 101 L116 115 L128 120', role: 'soft' },
-    { d: 'M61 143 L129 130 M36 118 L60 143', role: 'soft' },
-    { d: 'M68 130 L107 122 M75 134 L115 126', role: 'soft' },
     {
-      d: 'M69 145 l6 -3 M85 142 l6 -3 M101 139 l6 -3 M117 136 l6 -3',
+      d: 'M40 136 C44 128 46 126 48 126 C44 112 50 98 60 90 Q65 86 69 91 C66 100 66 108 72 110 L92 100',
+    },
+    {
+      d: 'M92 100 L128 76 Q134 74 135 80 L100 106 L140 88 Q146 87 146 93 L106 114 L142 104 Q147 104 146 109 L108 122 L136 120 Q140 121 138 125 L108 128',
+    },
+    { d: 'M56 148 Q86 140 108 128' },
+    { d: 'M70 128 Q84 120 98 112 M62 120 Q70 112 78 112', role: 'soft' },
+    {
+      d: 'M84 102 V80 M95 103 L107 86 M73 104 L61 88 M101 111 L119 104 M67 112 L51 106',
       role: 'ambient',
     },
-    shadow(82, 173, 55),
+    { d: 'M90 92 l3 -4 M78 93 l-3 -4', role: 'ambient' },
+    { d: 'M10 176 l6 3 M18 166 l6 3', role: 'ambient' },
   ],
-  // Razor's red shorts from his first encounter with the Troupe, chapter
-  // 145; no ball, numbered uniform or later Nen construct is shown.
-  'razor': [
-    { d: 'M39 62 Q80 74 121 62 L132 153 L94 159 L79 114 L66 159 L28 153 Z' },
-    { d: 'M39 62 Q80 51 121 62 L120 72 Q80 83 38 72 Z', role: 'accent' },
-    { d: 'M44 78 L37 148 M116 78 L124 148', role: 'soft' },
-    { d: 'M28 153 L29 161 L68 166 L66 159 M94 159 L96 166 L133 160 L132 153' },
-    { d: 'M79 114 L81 82 M75 86 L72 109 M87 86 L93 111', role: 'soft' },
-    { d: 'M42 88 Q49 107 43 123 M117 87 Q109 108 119 125', role: 'soft' },
-    { d: 'M78 75 L74 94 M83 75 L89 94', role: 'soft' },
-    { d: 'M111 129 l7 -4 M113 140 l8 -4 M116 151 l8 -4', role: 'ambient' },
-    { d: 'M39 142 L57 145 M103 146 L121 142', role: 'soft' },
-    shadow(81, 183, 51),
+  // Jispa's black tank top, from his appearance in chapter 131, laid out
+  // with its thickness and folds. It is really dark, so its front is
+  // hatched; the neckline is in tint.
+  'jispa': [
+    {
+      d: 'M52 72 L60 70 Q66 84 82 82 Q94 80 96 66 L104 64 Q104 80 118 88 L132 128 L46 144 L40 104 Q54 92 52 72 Z',
+    },
+    { d: 'M60 70 Q66 84 82 82 Q94 80 96 66', role: 'accent' },
+    { d: 'M46 144 L48 150 L134 134 L132 128', role: 'soft' },
+    { d: 'M64 100 Q80 110 96 96 M60 122 Q84 118 112 112', role: 'soft' },
+    {
+      d: 'M58 132 l6 -4 M74 130 l6 -4 M90 127 l6 -4 M106 124 l6 -4 M50 112 l6 -4 M112 100 l6 -4 M100 108 l6 -4 M70 114 l6 -4',
+      role: 'ambient',
+    },
+    { d: 'M8 158 H152', role: 'ambient', dashed: true },
+    shadow(88, 164, 52),
   ],
+  // The ball of Razor's dodgeball match, wrapped in open aura lines for the
+  // aura ball he spikes into the Troupe's boat in chapter 145 / episode 65.
+  'razor': [...RAZOR_BALL, ...RAZOR_AURA_BALL, shadow(80, 182, 32)],
   // Dorias's casino slot machine, chapter 151: blank reels and a lever.
   // The cabinet is an original construction, with no letters or logo.
   'dorias': [
@@ -447,6 +520,31 @@ export const GREED_ISLAND_DRAWINGS = {
 } satisfies Drawings
 
 export const greedIslandRedrawn: Redrawings = {
+  razor: [
+    {
+      episode: 69,
+      chapter: 161,
+      // Episode 69 / chapter 161: one of the 14 Devils he summons for the
+      // dodgeball match holds the same ball: a domed head set with small
+      // balls, shoulders and two white hands. No number and no face.
+      value: [
+        ...RAZOR_BALL,
+        ...RAZOR_AURA_BALL,
+        { d: 'M60 62 C60 34 100 34 100 62 Q80 70 60 62' },
+        {
+          d: `${circle(64, 42, 4)} ${circle(80, 33, 4)} ${circle(96, 42, 4)}`,
+          role: 'soft',
+        },
+        { d: 'M70 66 L68 76 L38 84 L36 110 M90 66 L92 76 L122 84 L124 110' },
+        {
+          d: 'M36 110 Q44 102 52 106 L56 114 M124 110 Q116 102 108 106 L104 114',
+          role: 'soft',
+        },
+        { d: 'M36 110 Q38 124 50 128 M124 110 Q122 124 110 128', role: 'soft' },
+        shadow(80, 176, 40),
+      ],
+    },
+  ],
   puhat: [
     {
       episode: 64,
