@@ -7,20 +7,22 @@ import {
 } from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 
+/** The outline of Kastro's cloak, in tint. */
+const KASTRO_CLOAK_EDGE: Stroke = {
+  d: 'M64 32 C46 36 30 44 24 58 L12 166 C30 172 48 172 60 166 L62 40 M96 32 C114 36 130 44 136 58 L148 166 C130 172 112 172 100 166 L98 40',
+  role: 'accent',
+}
+/** The long folds of Kastro's cloak. */
+const KASTRO_CLOAK_FOLDS: Stroke = {
+  d: 'M36 72 C34 104 30 136 26 166 M124 72 C126 104 130 136 134 166',
+  role: 'soft',
+}
 /**
  * Kastro's yellow cloak, hoodless and open down the front, falling from
  * both shoulders to below the knee: the outline in tint, its long folds,
  * and the inside of the far half hatched. His death lays this same cloak
  * on the floor of the ring.
  */
-const KASTRO_CLOAK_EDGE: Stroke = {
-  d: 'M64 32 C46 36 30 44 24 58 L12 166 C30 172 48 172 60 166 L62 40 M96 32 C114 36 130 44 136 58 L148 166 C130 172 112 172 100 166 L98 40',
-  role: 'accent',
-}
-const KASTRO_CLOAK_FOLDS: Stroke = {
-  d: 'M36 72 C34 104 30 136 26 166 M124 72 C126 104 130 136 134 166',
-  role: 'soft',
-}
 const KASTRO_CLOAK: Stroke[] = [
   KASTRO_CLOAK_EDGE,
   KASTRO_CLOAK_FOLDS,
@@ -339,7 +341,10 @@ export const HEAVENS_ARENA_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/** The Heavens Arena drawings that change with the story: Kastro's death. */
+/**
+ * The Heavens Arena drawings that change with the story: Gido's Tornado Top
+ * and Kastro's death.
+ */
 export const heavensArenaRedrawn: Redrawings = {
   gido: [
     // The same top and cane, and behind them Gido himself spinning on his
