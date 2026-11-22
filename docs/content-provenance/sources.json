@@ -35651,6 +35651,126 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27268",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27268",
       "contentSha256": "51a120f7d96e02d13325cfc2543901b05047f072024fc798c80eccd8a677f481"
+    },
+    "got-en-Balon_Greyjoy-728154.json": {
+      "locale": "en",
+      "title": "Balon Greyjoy",
+      "revision": 728154,
+      "revisionDate": "2026-02-05T05:38:07Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Balon_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728154",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728154",
+      "contentSha256": "9b8ce276df3d3e485c37d72ad8b142f67bd94fc43faa3a61569fd31669dbf5ee"
+    },
+    "got-en-Yara_Greyjoy-732245.json": {
+      "locale": "en",
+      "title": "Yara Greyjoy",
+      "revision": 732245,
+      "revisionDate": "2026-02-25T23:55:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Yara_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732245",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732245",
+      "contentSha256": "e90d6a988d61beaf9d3a54602df208a092fe5849c5ff0058627a86ff3887c52d"
+    },
+    "got-en-Aeron_Greyjoy-728164.json": {
+      "locale": "en",
+      "title": "Aeron Greyjoy",
+      "revision": 728164,
+      "revisionDate": "2026-02-05T05:40:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Aeron_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728164",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728164",
+      "contentSha256": "e98ef17b4c7613fde355885ec890e1a60cae1076a39603b7d7a920b81a5b1784"
+    },
+    "got-en-Victarion_Greyjoy-741636.json": {
+      "locale": "en",
+      "title": "Victarion Greyjoy",
+      "revision": 741636,
+      "revisionDate": "2026-07-01T11:31:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Victarion_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=741636",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=741636",
+      "contentSha256": "bfc96b75b79f86ee6b0e75dc097ef8a9d156877ce63d3ac9c684061e303c880a"
+    },
+    "got-en-Dagmer-728016.json": {
+      "locale": "en",
+      "title": "Dagmer",
+      "revision": 728016,
+      "revisionDate": "2026-02-05T04:48:26Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Dagmer",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728016",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728016",
+      "contentSha256": "02fca41660e0ffa061f68d0cdb88dcb37b228abc19d5a6ac71c4ef4eaa508d7a"
+    },
+    "got-en-Black_Lorren-727965.json": {
+      "locale": "en",
+      "title": "Black Lorren",
+      "revision": 727965,
+      "revisionDate": "2026-02-05T04:32:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Black_Lorren",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=727965",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=727965",
+      "contentSha256": "3122bf79927ce48378ac2730a2828ac7f0779ea49c6e0043a52df23c78092962"
+    },
+    "got-en-Wex_Pyke-748784.json": {
+      "locale": "en",
+      "title": "Wex Pyke",
+      "revision": 748784,
+      "revisionDate": "2026-09-19T18:47:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Wex_Pyke",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748784",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748784",
+      "contentSha256": "1dbcdfe90de24046fc49cf9254af60e8186824307a0b0d7a9e05211b48c8e6af"
+    },
+    "got-en-Farlen-728055.json": {
+      "locale": "en",
+      "title": "Farlen",
+      "revision": 728055,
+      "revisionDate": "2026-02-05T04:57:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Farlen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728055",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728055",
+      "contentSha256": "b34b18c4a256b0b116c9465fa71ac7a6db7bdc6c91bec945492e8472a8765451"
+    },
+    "got-en-Meera_Reed-731981.json": {
+      "locale": "en",
+      "title": "Meera Reed",
+      "revision": 731981,
+      "revisionDate": "2026-02-24T02:47:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Meera_Reed",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=731981",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=731981",
+      "contentSha256": "4e5d936911ee81e2dc9e37547869bed3a820b256745e44a2e14e461997295f51"
+    },
+    "got-en-Jojen_Reed-728390.json": {
+      "locale": "en",
+      "title": "Jojen Reed",
+      "revision": 728390,
+      "revisionDate": "2026-02-05T08:32:17Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Jojen_Reed",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728390",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728390",
+      "contentSha256": "21fcfd128e2ad5ed0a6372762a9f322b7d5b5c089cd3a1341161dc42dbd42532"
+    },
+    "got-en-Ramsay_Bolton-749437.json": {
+      "locale": "en",
+      "title": "Ramsay Bolton",
+      "revision": 749437,
+      "revisionDate": "2026-11-21T10:32:17Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Ramsay_Bolton",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749437",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749437",
+      "contentSha256": "59063795de13b58698be8b7f47228742fe19378629d278a647d0e69a978c5893"
+    },
+    "got-en-Wyman_Manderly-739879.json": {
+      "locale": "en",
+      "title": "Wyman Manderly",
+      "revision": 739879,
+      "revisionDate": "2026-06-26T12:54:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Wyman_Manderly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=739879",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=739879",
+      "contentSha256": "27f1391eb142873e8e657d93dea9515fa315773fe60660ac6f6b439468bc5642"
     }
   }
 }
