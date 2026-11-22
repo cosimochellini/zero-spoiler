@@ -1471,7 +1471,7 @@ const BONOLENOV_BANDAGE_LOOSE: Stroke[] = [
     d: 'M30 160 C38 158 46 162 52 166 M116 160 C122 158 130 158 136 160',
     role: 'soft',
   },
-  ...moved(BONOLENOV_GLOVE, 'translate(6 -26)'),
+  ...moved(BONOLENOV_GLOVE, 'translate(12 -32)'),
   shadow(80, 186, 72),
 ]
 
@@ -1480,8 +1480,9 @@ const KAKIN = { episode: 148, source: 'chapter' } as const
 
 /**
  * Returning records whose drawing changes in Kakin, chapters 340–420 (#1154,
- * #1156, #1158). Hisoka's chapter 357 stage lives with his other stages, in
- * `hunterExamRedrawn`.
+ * #1156, #1158). Bonolenov's and Chrollo's earlier Hatsu stages live here
+ * with their Kakin ones (#1337). Hisoka's chapter 357 stage lives with his
+ * other stages, in `hunterExamRedrawn`.
  */
 const kakinReturningRedrawn: Redrawings = {
   'bonolenov': [

@@ -324,10 +324,10 @@ const VASE_DEPTH: Stroke = {
  */
 export const BONOLENOV_GLOVE: Stroke[] = [
   {
-    d: 'M24 148 C24 138 34 134 46 134 C60 134 66 144 66 154 C66 164 60 170 46 170 C34 170 24 166 24 160 Z M24 146 H12 V164 H24',
+    d: 'M18 154 C18 144 28 140 40 140 C54 140 60 150 60 160 C60 170 54 176 40 176 C28 176 18 172 18 166 Z M18 152 H6 V170 H18',
     role: 'soft',
   },
-  { d: 'M36 160 C32 152 38 146 46 148', role: 'soft' },
+  { d: 'M30 166 C26 158 32 152 40 154', role: 'soft' },
 ]
 
 /** The canister of Blinky, the vacuum cleaner Shizuku conjures, in 3/4. */
