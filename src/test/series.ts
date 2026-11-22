@@ -63,6 +63,7 @@ const EXPECTED: Record<string, Expected> = {
   },
   'hunter-x-hunter': {
     kinds: [
+      'about',
       'affiliation',
       'allRegions',
       'chronicle',
@@ -76,6 +77,7 @@ const EXPECTED: Record<string, Expected> = {
       'relationships[].summary',
       'relationships[].type',
       'role',
+      'seat',
       'summary',
     ],
     namesSaidEarly: true,
