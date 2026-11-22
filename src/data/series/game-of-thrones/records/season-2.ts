@@ -182,7 +182,6 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'cleos-frey', tint: 'azure' },
     },
-    // Show: "Garden of Bones" (episode 14), she introduces herself to Robb as
     // Show: "The Old Gods and the New" (episode 16), Talisa tells Robb her
     // family's name is Maegyr. "Garden of Bones" (episode 14) has her
     // introduce herself only as Talisa of Volantis, so the record, filed

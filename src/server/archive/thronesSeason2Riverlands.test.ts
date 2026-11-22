@@ -79,6 +79,13 @@ const CHANGES: {
   { id: 'gendry', episode: 18, chapter: 138, value: 'alive' },
   { id: 'hot-pie', episode: 13, chapter: 93, value: 'captured' },
   { id: 'hot-pie', episode: 18, chapter: 138, value: 'alive' },
+  {
+    id: 'tickler',
+    episode: 15,
+    chapter: 104,
+    source: 'episode',
+    value: 'deceased',
+  },
 ]
 
 /**
