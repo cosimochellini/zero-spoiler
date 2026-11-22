@@ -622,7 +622,8 @@ synopses name Xaro, Pyat Pree, Quaithe and the dragons in narration.
 
 Counts: 10 filed, 0 pending, 31 omitted; 1 stage-1 record stepped. The owner's
 rulings of 2026-11-22 file Arstan Whitebeard, omit Rhaego and move the book
-gates of Xaro, Pyat Pree and Quaithe off chapter 86.
+gates of Xaro and Pyat Pree off chapter 86; a later ruling the same day keeps
+Quaithe at 86, where she introduces herself (#1477).
 
 ### Filed
 
@@ -634,7 +635,7 @@ order them.
 | `kovarro` (show only)            | 11, "The North Remembers": Daenerys sends out her bloodriders, "Zhey Rakharo, zhey Aggo, zhey Kovarro" (quoted on the Aggo (The North Remembers) page) | none: no book has the name, its rider is Jhogo; 86 orders him                                                                                                |
 | `xaro-xhoan-daxos`               | 15, "The Ghost of Harrenhal": Pyat Pree, "Should you grow weary of Xaro's baubles" (quoted on the House of the Undying page)                           | 114, Daenerys III: "Come with me to the Arbor, Xaro", and his "Xaro Xhoan Daxos is a man of peace" (quoted on A Wiki of Ice and Fire's Xaro page)            |
 | `pyat-pree` (books only)         | none: episodes 14–20 name him in narration and the credits only; 14 orders him                                                                         | 114, Daenerys III: Jorah urges Daenerys to go to Pyat Pree for help (reported speech)                                                                        |
-| `quaithe` (books only)           | none: episodes 15 and 17 name her in narration only ("I am no one"); 15 orders her                                                                     | 114, Daenerys III, the safe later pin (unverified): she warns Daenerys at the firemage to leave Qarth; no synopsis read has her name said                    |
+| `quaithe` (books only)           | none: episodes 15 and 17 name her in narration only ("I am no one"); 15 orders her                                                                     | 86, Daenerys I: she introduces herself to Daenerys (A Wiki of Ice and Fire's Quaithe page, citing Chapter 12)                                                |
 | `malakho` (show only)            | 15, "The Ghost of Harrenhal": Jorah, "Malakho says the statue is too heavy to carry" (quoted on the Malakho and Kovarro pages)                         | none: "there is no character named Malakho"; 101 orders him                                                                                                  |
 | `drogon`                         | 40, "The Children": the name's first on-screen use (Drogon page), past the stage (#852)                                                                | 86, Daenerys I: she names the black-and-scarlet one Drogon                                                                                                   |
 | `rhaegal`                        | 41, "The Wars to Come": first said on screen with Viserion's (Rhaegal page), past the stage                                                            | 86, Daenerys I: she names the green-and-bronze one Rhaegal                                                                                                   |
@@ -652,8 +653,8 @@ order them.
 - Pyat Pree: role warlock of Qarth, alive. Owner check: if the show says his
   name, the record becomes both media's and his show death at 20 follows.
   Italian "Pyat Pree" (TV cast list).
-- Quaithe: role woman of the Shadow, no allegiance, alive. Owner check: episodes
-  15 and 17. Italian "Quaithe" (TV cast list).
+- Quaithe: role woman of the Shadow, no allegiance, alive, from 86. Owner check:
+  episodes 15 and 17. Italian "Quaithe" (TV cast list).
 - Malakho: role Dothraki warrior, Daenerys's khalasar, alive. His unnamed
   background scenes in episodes 11 and 14 are floors. Italian kept as "Malakho";
   no Italian page.
@@ -672,13 +673,14 @@ order them.
   "Arstan Barbabianca" (Italian Wikipedia, Barristan Selmy's section).
 - The book gates of Xaro, Pyat Pree and Quaithe: Jhogo's line bringing the three
   strangers from Qarth in Daenerys I (86) counts as narration (owner,
-  2026-11-22), and Daenerys II (101) names them in narration only, Quaithe as "a
-  shadowbinder named Quaithe". Xaro's and Pyat Pree's gates are Daenerys III
-  (114), with the quotes and the reported speech above; Xaro's show gate stays
-  at 15. Quaithe's 114 is the safe later pin, the last chapter of the stage
-  where she speaks with Daenerys, under `unverified`. A Wiki of Ice and Fire's
-  Quaithe page says she introduces herself in Daenerys I; that would be a signal
-  at 86, below the pin, so 114 is late, never early.
+  2026-11-22), and Daenerys II (101) names them in narration only. Xaro's and
+  Pyat Pree's gates are Daenerys III (114), with the quotes and the reported
+  speech above; Xaro's show gate stays at 15. Quaithe's gate is 86: A Wiki of
+  Ice and Fire's Quaithe page says she introduces herself in Daenerys I (Chapter
+  12), an explicit signal of her own, and the owner moved her there from the
+  safe later pin of 114 (2026-11-22, applied in #1477 after reading the page
+  again through the Firecrawl tool). Her log holds at 86; her warnings at 101
+  and 114 are her relationship cards.
 
 ### Stage-1 records stepped
 

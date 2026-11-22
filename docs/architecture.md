@@ -296,47 +296,48 @@ placeholder busts too, and stage-2 steps on Jon Snow and Samwell Tarly. Essos
 and Qarth (#1468) adds ten: two the show's alone, four the books', and Xaro and
 the three dragons in both, the dragons' show gates past the stage (#852). The
 owner's rulings of 2026-11-22 add Arstan Whitebeard, books only, and move the
-book gates of Xaro, Pyat Pree and Quaithe from chapter 86 to 114. The series
-opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their own,
-with seven stages: Eddard's death and Ice melted, Jon's death, return and true
-name, and Daenerys's fire and death from the drawing audit (#1292), the
-Winterfell household's are in `art/winterfell.ts` (#854), with 25 stages after
-the drawing audit (#1285), the southern cast's are in `art/south.ts` (#1051),
-with thirty-seven, sixteen of them the later looks and deaths of #1286 and
-eighteen from the drawing audit (#1287), and the Night's Watch's and Essos
-cast's are in `art/wall.ts` and `art/essos.ts` (#1052), with twenty, four of
-them the deaths of Jeor, Aemon, Alliser and Yoren from the drawing audit
-(#1290), six from the drawing audit (#1296) and four those of Jorah, Irri,
-Doreah and Rakharo (#1292), and thirteen more of the Watch's in `art/wall.ts`
-(#1295), with ten, the places' are in `art/places.ts` (#1053), with fourteen
-stages for the damage and rebuilding later seasons and books give (#1236), the
-northern household's are in `art/north.ts` (#1054), with fifteen, twelve of them
-the deaths, Roose Bolton's allegiance and Jeyne Poole's false identity from the
-drawing audit (#1288), the Vale cast's are in `art/vale.ts` (#1055), with two,
-the King's Landing cast's are in `art/court.ts` (#1056), with thirteen, twelve
-of them from the drawing audit (#1289), and the Riverlands cast's are in
-`art/riverlands.ts` (#1057), with ten: six of them the deaths later seasons and
-books give (#1242), and the Blackfish's death, Jaqen's coin and Pod's axe from
-the drawing audit (#1290). Every stage-1 character has its own drawing; the
-stage-2 characters show the shared `PERSON` placeholder until their drawing
-children (#1460), and the drawing tests hold the series like any other. Its
-places are the 23 a scene of the season or the book is set in (#853) and those
-both name without visiting it (#1035: the North's five in #1248, nine of the
-Riverlands, the Westerlands and the Vale in #1249, five of the south and the
-seas in #1250, Essos's ten in #1251), and eight visited places #853 left out
-(#1252), each filed in one of the realms, the Iron Islands, the Reach and the
-seas among them, beyond the Wall or Essos, with no arc: `PlaceDossier.arc` is
-optional, and an arcless series prints no arc row. Darry and six of #1252's
-places are the book's alone, and the Kingswood the show's. The demo shows the
-places the first ten episodes reach, and covers in its tail the four the show
-first visits in later seasons. Its chronicles cover the Essos cast of the first
-stage (#1360), 89 stories for 18 characters, the Night's Watch cast (#1363), 88
-stories for 22, the King's Landing, riverlands and Vale cast (#1362), 228
-stories for 65, and the Winterfell and northern cast (#1361), 160 stories for
-39, in `records/season-1.chronicle.ts`: a story both media tell the same way
-holds at an episode and a chapter, and one only a single medium tells, or tells
-its own way, carries `source`, so it never reaches a reader of the other. Their
-notes are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
+book gates of Xaro and Pyat Pree from chapter 86 to 114; Quaithe opens at 86,
+where she introduces herself (#1477). The series opened before its drawings:
+Eddard, Jon, Daenerys and Tyrion have their own, with seven stages: Eddard's
+death and Ice melted, Jon's death, return and true name, and Daenerys's fire and
+death from the drawing audit (#1292), the Winterfell household's are in
+`art/winterfell.ts` (#854), with 25 stages after the drawing audit (#1285), the
+southern cast's are in `art/south.ts` (#1051), with thirty-seven, sixteen of
+them the later looks and deaths of #1286 and eighteen from the drawing audit
+(#1287), and the Night's Watch's and Essos cast's are in `art/wall.ts` and
+`art/essos.ts` (#1052), with twenty, four of them the deaths of Jeor, Aemon,
+Alliser and Yoren from the drawing audit (#1290), six from the drawing audit
+(#1296) and four those of Jorah, Irri, Doreah and Rakharo (#1292), and thirteen
+more of the Watch's in `art/wall.ts` (#1295), with ten, the places' are in
+`art/places.ts` (#1053), with fourteen stages for the damage and rebuilding
+later seasons and books give (#1236), the northern household's are in
+`art/north.ts` (#1054), with fifteen, twelve of them the deaths, Roose Bolton's
+allegiance and Jeyne Poole's false identity from the drawing audit (#1288), the
+Vale cast's are in `art/vale.ts` (#1055), with two, the King's Landing cast's
+are in `art/court.ts` (#1056), with thirteen, twelve of them from the drawing
+audit (#1289), and the Riverlands cast's are in `art/riverlands.ts` (#1057),
+with ten: six of them the deaths later seasons and books give (#1242), and the
+Blackfish's death, Jaqen's coin and Pod's axe from the drawing audit (#1290).
+Every stage-1 character has its own drawing; the stage-2 characters show the
+shared `PERSON` placeholder until their drawing children (#1460), and the
+drawing tests hold the series like any other. Its places are the 23 a scene of
+the season or the book is set in (#853) and those both name without visiting it
+(#1035: the North's five in #1248, nine of the Riverlands, the Westerlands and
+the Vale in #1249, five of the south and the seas in #1250, Essos's ten in
+#1251), and eight visited places #853 left out (#1252), each filed in one of the
+realms, the Iron Islands, the Reach and the seas among them, beyond the Wall or
+Essos, with no arc: `PlaceDossier.arc` is optional, and an arcless series prints
+no arc row. Darry and six of #1252's places are the book's alone, and the
+Kingswood the show's. The demo shows the places the first ten episodes reach,
+and covers in its tail the four the show first visits in later seasons. Its
+chronicles cover the Essos cast of the first stage (#1360), 89 stories for 18
+characters, the Night's Watch cast (#1363), 88 stories for 22, the King's
+Landing, riverlands and Vale cast (#1362), 228 stories for 65, and the
+Winterfell and northern cast (#1361), 160 stories for 39, in
+`records/season-1.chronicle.ts`: a story both media tell the same way holds at
+an episode and a chapter, and one only a single medium tells, or tells its own
+way, carries `source`, so it never reaches a reader of the other. Their notes
+are in `scripts/chronicle-sources-got.mjs`, and the chronicle lede is the
 series' own copy, since a story starts at an episode or a chapter. The second
 stage, season 2 and _A Clash of Kings_ (episodes 11–20, site chapters 74–143),
 is being filed under #1455. So far `records/season-2.ts` holds its heading, the
@@ -553,7 +554,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Saga modules      | 2                                                       |
 | Line drawings     | 273, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 565, for 144 characters                                 |
-| Dated timelines   | 876                                                     |
+| Dated timelines   | 886                                                     |
 | Affiliation steps | 243                                                     |
 | Status steps      | 358                                                     |
 

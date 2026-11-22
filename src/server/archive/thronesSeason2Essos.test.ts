@@ -32,7 +32,8 @@ const RECORDS: {
   // 2026-11-22).
   { id: 'xaro-xhoan-daxos', episode: 15, chapter: 114 },
   { id: 'pyat-pree', episode: 14, chapter: 114, source: 'chapter' },
-  { id: 'quaithe', episode: 15, chapter: 114, source: 'chapter' },
+  // Daenerys I (86): she introduces herself (owner, 2026-11-22; #1477).
+  { id: 'quaithe', episode: 15, chapter: 86, source: 'chapter' },
   { id: 'malakho', episode: 15, chapter: 101, source: 'episode' },
   { id: 'drogon', episode: 40, chapter: 86 },
   { id: 'rhaegal', episode: 41, chapter: 86 },
