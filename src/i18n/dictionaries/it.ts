@@ -242,6 +242,8 @@ export const itDictionary: Dictionary = {
   'characters.foggedTitle': '{count} nella nebbia',
   'characters.foggedHint':
     'I loro nomi sono nascosti, quindi la ricerca non li trova. Sposta avanti il segnalibro per vederli.',
+  'characters.foggedHintUnset':
+    'I loro nomi sono nascosti, quindi la ricerca non li trova. Imposta il segnalibro per vederli.',
   'characters.foggedTitleOne': '1 nella nebbia',
   'characters.allOpen': 'Non c’è niente nella nebbia: vedi tutti i personaggi.',
   'characters.pageTitle': 'Personaggi | {series} | Zero Spoiler',

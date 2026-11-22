@@ -7,7 +7,7 @@ import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
 import { FruitFrame } from '~/components/FruitFrame'
-import { SpoilerVeil } from '~/components/SpoilerVeil'
+import { useStageVeil } from '~/components/useStageVeil'
 import type { RecordView, Slot } from '~/lib/view/records'
 import { morphPart } from '~/styles/morph'
 
@@ -43,7 +43,7 @@ export interface RecordStageProps<T extends RecordView> {
  *
  * The meta line sits outside the veil on purpose: "a devil fruit, episode
  * 462" is the promise the page makes to a reader who has not got there yet.
- * Under fog the rest is veiled and the frame is empty.
+ * Under fog the rest is behind one curtain and the frame is empty.
  */
 export function RecordStage<T extends RecordView & { summary: string }>({
   art,
@@ -55,18 +55,12 @@ export function RecordStage<T extends RecordView & { summary: string }>({
   peek,
   slot,
 }: RecordStageProps<T>): ReactElement {
+  const veil = useStageVeil(slot, peek)
+
   return (
-    <section {...stylex.props(styles.stage)}>
+    <section {...stylex.props(styles.stage, veil.stage)}>
       <div {...stylex.props(styles.drawing)}>
-        <SpoilerVeil
-          density="block"
-          peek={peek}
-          placeholder={<FruitFrame />}
-          slot={slot}
-          strength="media"
-        >
-          {art}
-        </SpoilerVeil>
+        {veil.drawing(<FruitFrame />, art)}
       </div>
 
       <div {...stylex.props(styles.words)}>
@@ -75,17 +69,12 @@ export function RecordStage<T extends RecordView & { summary: string }>({
           <span {...stylex.props(styles.episode)}>{opensAt}</span>
         </p>
 
-        <SpoilerVeil
-          peek={peek}
-          placeholder={
-            <>
-              <h1 {...stylex.props(styles.name)}>{fogged.name}</h1>
-              <p {...stylex.props(styles.summary)}>{fogged.description}</p>
-            </>
-          }
-          slot={slot}
-        >
-          {(record) => {
+        {veil.words(
+          <>
+            <h1 {...stylex.props(styles.name)}>{fogged.name}</h1>
+            <p {...stylex.props(styles.summary)}>{fogged.description}</p>
+          </>,
+          (record) => {
             return (
               <StageWords
                 chips={chips(record)}
@@ -93,8 +82,8 @@ export function RecordStage<T extends RecordView & { summary: string }>({
                 record={record}
               />
             )
-          }}
-        </SpoilerVeil>
+          },
+        )}
       </div>
     </section>
   )

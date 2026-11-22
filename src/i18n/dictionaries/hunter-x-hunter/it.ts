@@ -46,6 +46,8 @@ export const hunterXHunterIt: SeriesWords<'hunter-x-hunter'> = {
   'abilities.foggedTitleOne': '1 nella nebbia',
   'abilities.foggedHint':
     'I loro nomi e i tipi di Nen sono nascosti, quindi la ricerca non le trova. Sposta avanti il segnalibro per vederle.',
+  'abilities.foggedHintUnset':
+    'I loro nomi e i tipi di Nen sono nascosti, quindi la ricerca non le trova. Imposta il segnalibro per vederle.',
   'abilities.allOpen': 'Nessuna abilità è nella nebbia.',
   'abilities.moreUsers': 'e altri {count} personaggi che la usano',
   'abilities.moreUsersOne': 'e un altro personaggio che la usa',

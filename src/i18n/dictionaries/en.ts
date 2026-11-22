@@ -248,6 +248,8 @@ export const enDictionary = {
   'characters.foggedTitle': '{count} under fog',
   'characters.foggedHint':
     'Their names are hidden, so search does not find them. Move your bookmark forward to see them.',
+  'characters.foggedHintUnset':
+    'Their names are hidden, so search does not find them. Set your bookmark to see them.',
   'characters.foggedTitleOne': '1 under fog',
   'characters.allOpen': 'Nothing is under fog. You can see every character.',
   'characters.pageTitle': 'Characters | {series} | Zero Spoiler',

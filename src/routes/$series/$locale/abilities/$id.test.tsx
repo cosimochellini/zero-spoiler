@@ -78,6 +78,11 @@ describe('an ability’s page', () => {
     expect(screen.queryByText('Rock Fist')).not.toBeInTheDocument()
     expect(screen.getByText(/First shown in episode 44/u)).toBeInTheDocument()
     expect(
+      screen.getByRole('button', {
+        name: 'Under fog until episode 44. Show anyway',
+      }),
+    ).toHaveTextContent(/^Show anyway$/u)
+    expect(
       screen.queryByRole('region', { name: 'Who uses it' }),
     ).not.toBeInTheDocument()
   })

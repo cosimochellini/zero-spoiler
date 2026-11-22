@@ -19,7 +19,9 @@ has told about them so far.
 **Must not break:**
 
 - Typing in the search filters the open characters only; covered cards and
-  tiles do not move (`CharacterGrid.tsx`, `CharacterShelves.tsx`).
+  tiles do not move while a query has matches; with none, the groups fold
+  away behind one line and a Clear search button (`CharacterGrid.tsx`,
+  `CharacterShelves.tsx`).
 - A covered shelf puts no arc id in the markup (`CharacterShelves.tsx`).
 - With no story reached the chronicle draws nothing, not a heading over an
   empty list (`characters/-$id.chronicle.tsx`).

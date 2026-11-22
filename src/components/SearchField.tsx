@@ -3,6 +3,11 @@ import type { ReactElement, ReactNode } from 'react'
 
 import { searchStyles as styles } from '~/components/SearchField.styles'
 import { Button } from '~/components/ui/Button'
+import { useSettled } from '~/components/useSettled'
+
+// Long enough that a reader typing "Nami" hears one count and not four, short
+// enough that the count still arrives while the query is under their hands.
+const ANNOUNCE_DELAY_MS = 250
 
 /**
  * The one control an archive listing has: a field, the × that empties it, and
@@ -71,6 +76,96 @@ export function SearchField({
       </div>
       {status}
     </search>
+  )
+}
+
+/**
+ * What stands in for a listing's groups while a query has no match: the
+ * way back, and what the listing still holds under fog. The line saying so
+ * is the field's own status. The groups are folded away rather than left as
+ * a page of empty headings to scroll.
+ */
+export function SearchNoMatch({
+  clearLabel,
+  fieldId,
+  note,
+  onClear,
+}: {
+  clearLabel: string
+  /** The search field's id: where focus goes once the query is cleared. */
+  fieldId: string
+  /** What is under fog and why the search does not find it, if anything. */
+  note?: string | undefined
+  onClear: () => void
+}): ReactElement {
+  return (
+    <div {...stylex.props(styles.noMatch)}>
+      <Button
+        onClick={() => {
+          onClear()
+          // This button leaves with the query. Focus goes to the field, not
+          // to the top of the page.
+          document
+            .querySelector<HTMLElement>(`#${CSS.escape(fieldId)}`)
+            ?.focus()
+        }}
+      >
+        {clearLabel}
+      </Button>
+      {note === undefined ? null : (
+        <p {...stylex.props(styles.noMatchNote)}>{note}</p>
+      )}
+    </div>
+  )
+}
+
+/**
+ * The `aria-live` line under the field: how many open records the query
+ * finds, or that it finds none. It settles before it is announced. With no
+ * match it is the one thing left to read, so it is set as a heading; that
+ * settles with the words, so the line never grows before it says why.
+ */
+export function SearchStatus({
+  noMatch,
+  words,
+}: {
+  noMatch: boolean
+  words: string
+}): ReactElement {
+  const large = useSettled(noMatch, ANNOUNCE_DELAY_MS)
+
+  return (
+    <p
+      aria-live="polite"
+      {...stylex.props(styles.status, large && styles.statusNoMatch)}
+    >
+      {useSettled(words, ANNOUNCE_DELAY_MS)}
+    </p>
+  )
+}
+
+/**
+ * A listing's groups, folded away while a query has no match. Hidden, not
+ * unmounted: a lifted tile and a drawing already loaded are still there when
+ * the query is cleared. It has no box of its own, so the groups keep their
+ * place in the page's grid.
+ */
+export function SearchResults({
+  children,
+  folded,
+}: {
+  children: ReactNode
+  folded: boolean
+}): ReactElement {
+  return (
+    <div
+      // The attribute says it to assistive technology; the class is what
+      // hides it, because `display: contents` wins over `[hidden]`.
+      hidden={folded}
+      {...stylex.props(styles.results, folded && styles.folded)}
+    >
+      {children}
+    </div>
   )
 }
 

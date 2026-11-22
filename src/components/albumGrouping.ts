@@ -12,20 +12,28 @@ import type {
  * draws them both: the saga view and the faction view.
  */
 
+/** What a plate's fog band calls itself at each count. */
+export const FRUIT_FOG: FogTitles<'one-piece'> = {
+  allOpen: 'fruits.allOpen',
+  hint: 'fruits.foggedHint',
+  hintUnset: 'fruits.foggedHintUnset',
+  many: 'fruits.foggedTitle',
+  one: 'fruits.foggedTitleOne',
+}
+
 /** What the later sagas' band calls itself at each count. */
 const LATER_FOG: FogTitles<'one-piece'> = {
   allOpen: 'fruits.laterAllOpen',
   hint: 'fruits.foggedHint',
+  hintUnset: 'fruits.foggedHintUnset',
   many: 'fruits.later',
   one: 'fruits.laterOne',
 }
 
 /** What the faction view's band of every covered fruit calls itself. */
 const COVERED_FOG: FogTitles<'one-piece'> = {
+  ...FRUIT_FOG,
   allOpen: 'fruits.noneFogged',
-  hint: 'fruits.foggedHint',
-  many: 'fruits.foggedTitle',
-  one: 'fruits.foggedTitleOne',
 }
 
 /**

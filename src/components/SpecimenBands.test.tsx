@@ -469,6 +469,94 @@ describe('SpecimenBands', () => {
   })
 })
 
+describe('SpecimenBands with nothing open', () => {
+  it('leaves out the bar, and leads with the plates and their fog', () => {
+    renderWithProviders(
+      <Album
+        bands={[
+          fruitBand({
+            form: 'paramecia',
+            open: [],
+            covered: [coveredRecord({ kind: 'fruit' })],
+            total: 1,
+          }),
+        ]}
+        initial={{ q: 'gum' }}
+        peek={peekPending()}
+      />,
+      { bookmark: ep(1) },
+    )
+
+    expect(screen.queryByRole('searchbox')).not.toBeInTheDocument()
+    expect(screen.queryByRole('radio')).not.toBeInTheDocument()
+    expect(screen.queryByText(/Showing 0/u)).not.toBeInTheDocument()
+    // A query left in the address folds nothing: there is no field to clear.
+    expect(screen.getByRole('region', { name: '1 under fog' })).toBeVisible()
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+})
+
+describe('SpecimenBands with a query that matches nothing', () => {
+  it('folds the plates behind one line and a way back', async () => {
+    renderWithProviders(
+      <Album
+        bands={BANDS}
+        peek={peekPending()}
+      />,
+      { bookmark: ep(650) },
+    )
+
+    await userEvent.type(screen.getByRole('searchbox'), 'zzz')
+
+    const line = await screen.findByText('No open fruit matches “zzz”.')
+
+    expect(line).toBeVisible()
+    // Folded, not unmounted: still in the page, and out of every reader's way.
+    expect(screen.getByText('1 under fog')).not.toBeVisible()
+    expect(
+      screen.queryByRole('heading', { name: 'Paramecia' }),
+    ).not.toBeInTheDocument()
+    expect(screen.getByText('Clear search')).toBeVisible()
+    expect(
+      screen.getByText(
+        '1 under fog. Their names are hidden, so search does not find them. Move your bookmark forward to see them.',
+      ),
+    ).toBeVisible()
+  })
+
+  it('unfolds them and returns to the field when the query is cleared', async () => {
+    const onParams = vi.fn<SpecimenBandsProps['onParams']>()
+    renderWithProviders(
+      <Album
+        bands={BANDS}
+        initial={{ form: 'logia', view: 'saga' }}
+        onParams={onParams}
+        peek={peekPending()}
+      />,
+      { bookmark: ep(650) },
+    )
+
+    await userEvent.type(screen.getByRole('searchbox'), 'zzz')
+    await userEvent.click(screen.getByText('Clear search'))
+
+    expect(screen.getByRole('searchbox')).toHaveValue('')
+    expect(screen.getByRole('searchbox')).toHaveFocus()
+    // The view and the kind are kept; only the query goes, with no new
+    // history entry.
+    expect(onParams).toHaveBeenLastCalledWith(
+      { form: 'logia', view: 'saga' },
+      true,
+    )
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+
+  it('does not fold before the album is here', () => {
+    renderWithProviders(<Late initial={{ q: 'zzz' }} />, { bookmark: ep(650) })
+
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+})
+
 describe('the saga view', () => {
   const NEAR = coveredRecord({ kind: 'fruit', ...at(700) })
   const FAR = coveredRecord({ kind: 'fruit', ...at(900) })
