@@ -33,8 +33,17 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
   'season-1': LEADS,
   // The second stage's cast row (#1455): its filing children add each lead
   // as they file it. King's Landing and the Blackwater (#1463): the acting
-  // Hand and the queen regent. Essos and Qarth (#1468): Daenerys.
-  'season-2': ['tyrion-lannister', 'cersei-lannister', 'daenerys-targaryen'],
+  // Hand and the queen regent. The Wall and beyond (#1467): Jon Snow. Essos
+  // and Qarth (#1468): Daenerys.
+  'season-2': [
+    'tyrion-lannister',
+    'cersei-lannister',
+    'stannis-baratheon',
+    'davos-seaworth',
+    'theon-greyjoy',
+    'jon-snow',
+    'daenerys-targaryen',
+  ],
 }
 
 const { core } = sagaArchive({

@@ -139,6 +139,476 @@ for a check of their chapters.
   and Cleos Frey (first seen at Robb's camp, #1465), Kevan Lannister (with Tywin
   at Harrenhal, #1465).
 
+## Stannis, Renly and the stormlands (#1464)
+
+Dragonstone, Renly's camp at Bitterbridge and Storm's End, Catelyn's embassy and
+the Blackwater from Stannis's side. Candidates come from the Game of Thrones
+Wiki's season-2 episode pages (Firsts, cast lists, synopses) and character
+pages, the Ice and Fire Wiki's prologue page, and A Wiki of Ice and Fire's
+summaries of the prologue, Davos I–III, Catelyn II–V and Sansa VIII, read
+through the Firecrawl tool (the bullet "Not viewed" above predates it). Bit
+parts are omitted as in season 1.
+
+Counts: 12 filed, 0 pending, 42 omitted; 1 stage-1 record stepped (Loras
+Tyrell).
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                    | Show                                                                                                                                  | Books                                                                                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `stannis-baratheon`       | 11, "The North Remembers": Jaime tells Robb "Stannis is the rightful King" (quoted on the episode page); Stannis's Dragonstone scenes | 74, prologue: Selyse tells him Renly's army would join him if Renly died; the synopsis has his name in narration only (owner check)               |
+| `melisandre`              | 11, "The North Remembers": the burning of the Seven and Cressen's poison; no quote has her name (owner check)                         | 74, prologue: Selyse says Melisandre has seen Renly dead in the flames                                                                            |
+| `davos-seaworth`          | 11, "The North Remembers": Cressen asks him for help against Melisandre; the line with his name is not quoted (owner check)           | 74, prologue: Pylos tells Cressen that Ser Davos Seaworth came back in the night                                                                  |
+| `cressen`                 | 11, "The North Remembers": he interrupts the burning and dies of his own poison; narration only in the pages read (owner check)       | 74, prologue (his chapter): Stannis gives Cressen's duties to Pylos; the synopsis has his name in narration only (owner check, and he dies in it) |
+| `matthos-seaworth`        | 11, "The North Remembers": he reads Stannis's letter at the Painted Table; no quote has his name (owner check)                        | 132, Davos III: on the Black Betha, where he dies; Davos I (84) mentions him in narration only (owner check)                                      |
+| `salladhor-saan`          | 12, "The Night Lands": Davos reports to Stannis that he has won Salladhor's thirty ships                                              | 84, Davos I: Davos meets him at an inn; the prologue's feast (74) lists him in narration only (owner check)                                       |
+| `selyse-baratheon`        | 25, "Kissed by Fire": Stannis visits her; episode 11 has her silent and uncredited, episode 12 only "a wife"                          | 74, prologue: she argues with Stannis in front of Cressen; her name is in narration only in the pages read (owner check)                          |
+| `shireen-baratheon`       | 25, "Kissed by Fire": her father visits her                                                                                           | 74, prologue: Pylos tells Cressen that Princess Shireen wants to see the white raven                                                              |
+| `brienne-of-tarth`        | 13, "What Is Dead May Never Die": she tells Catelyn to call her just "Brienne"                                                        | 96, Catelyn II: Colen tells Catelyn the champion is Brienne of Tarth                                                                              |
+| `margaery-tyrell`         | 13, "What Is Dead May Never Die": Renly introduces his new wife to Catelyn                                                            | 96, Catelyn II: the same introduction at Bitterbridge                                                                                             |
+| `mace-tyrell`             | 32, "The Lion and the Rose": at Joffrey's wedding, toasting the king and his daughter; only mentioned in season 2                     | 139, Sansa VIII: presented to Joffrey with his sons among the heroes of the Blackwater; earlier chapters only mention him                         |
+| `cortnay-penrose` (books) | none: the show skips the siege of Storm's End; 14 orders him                                                                          | 116, Davos II: he parleys with Stannis; Catelyn II (96) and III (105) only mention him                                                            |
+
+- Stannis: role claimant to the Iron Throne, House Baratheon, alive.
+  `nameSaidAt: 7`: season 1's Tomard and Kevan Lannister texts name him from
+  "You Win or You Die", where Eddard sends him a letter.
+- Melisandre: role red priestess, the red priests, alive. Italian "Melisandre"
+  (Italian Wikipedia, "Melisandre di Asshai").
+- Davos: role knight in King Stannis's service, House Seaworth. Show only:
+  commander of King Stannis's fleet, 15 ("The Ghost of Harrenhal"; the books
+  give the fleet to Imry Florent, 107 orders it). `missing` at 19 / 132: his
+  ship burns on the Blackwater and he goes into the water; neither stage tells
+  his rescue.
+- Cressen: role maester of Dragonstone; opens `deceased` in both media, as Will
+  does. Italian "Cressen" (Italian Wikipedia, "Maestro Cressen").
+- Matthos: role son of Davos Seaworth, House Seaworth; `deceased` at 19 / 132
+  ("Blackwater"; Davos III, per A Wiki of Ice and Fire's Matthos page). His book
+  gate and death share chapter 132.
+- Salladhor: role pirate from Lys, affiliation Stannis Baratheon's fleet.
+- Selyse: role queen, wife of Stannis Baratheon. Italian Wikipedia files her as
+  Selyse Florent; the record keeps the show's name in both languages.
+- Shireen: role princess, daughter of Stannis Baratheon.
+- Brienne: role guard of King Renly at the gate; sworn sword of Catelyn Stark at
+  15 / 113 ("The Ghost of Harrenhal"; Catelyn V, where Catelyn takes her as her
+  sworn sword). Catelyn IV (107) has her flee with Catelyn but swear nothing:
+  former guard of King Renly there, books only (episode 15 orders it). Italian
+  "Brienne di Tarth".
+- Margaery: role queen, wife of King Renly; widow of King Renly at 15 / 107
+  ("The Ghost of Harrenhal"; Catelyn IV, Renly's death); betrothed to King
+  Joffrey at 20 / 139 ("Valar Morghulis"; Sansa VIII, where Garlan asks it of
+  the king).
+- Mace: role Lord of Highgarden, House Tyrell. His seat on the small council
+  (Sansa VIII) is not filed: the show gives it later.
+- Cortnay Penrose: role castellan of Storm's End, held after Renly's death;
+  `deceased` at 118, books only (Tyrion X, which A Wiki of Ice and Fire cites
+  for his death; episode 16 orders it). Italian kept as "Cortnay Penrose".
+
+### Stage-1 records stepped
+
+- Loras Tyrell: role guard of King Renly, 13 / 96 ("What Is Dead May Never Die";
+  Catelyn II); former guard of King Renly, 15 / 107 ("The Ghost of Harrenhal";
+  Catelyn IV, Renly's death); knight of the Kingsguard, books only, 139 (Sansa
+  VIII). The show's "Valar Morghulis" has him at court but in no guard.
+
+Not stepped: Renly (claimant since season 1; his death is already filed at 15 /
+107), Catelyn (her embassy changes no field), Robar Royce (the show's Ser Robar
+of "The Ghost of Harrenhal" is named only in the credits, so the record stays
+the books'), Petyr Baelish (his visit to Renly's camp is stepped by #1463),
+Hallis Mollen and Wendel Manderly (in Catelyn's party; no field changes).
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Pylos and Patchface (the prologue and
+  Davos I), Axell Florent (the prologue's feast and one exchange in Davos I),
+  Alester Florent (mocked at the parley, Davos II), Imry Florent (one line in
+  "Blackwater"; commands the fleet in Davos III, named in narration only), Devan
+  Seaworth (Stannis's squire in Davos I; the show has no Devan), Allard and Dale
+  Seaworth (Davos I and III; the show folds Davos's sons into Matthos), Bryen
+  Farring, Randyll Tarly (one line in Catelyn II and counsel in Catelyn III–IV;
+  the show has him from season 6), Mathis Rowan, Colen of Greenpools, Emmon Cuy
+  (killed in "The Ghost of Harrenhal"; Rainbow Guard in Catelyn IV), Parmen
+  Crane, Bryce Caron, Jon and Tanton Fossoway, Guyard Morrigen, Ronnet
+  Connington, Eldon Estermont, Arwyn Oakheart, Mark Mullendore, Josua and Elyas
+  Willum, Steffon Varner.
+- **Background lords on Dragonstone:** Ardrian Celtigar, Monford Velaryon, Duram
+  Bar Emmon, Guncer Sunglass.
+- **Catelyn's escort:** Perwyn Frey, Lucas Blackwood, Robin Flint, Shadd.
+- **Only mentioned:** Edric Storm, Marya, Maric, Stannis and Steffon Seaworth,
+  Selwyn Tarth, Hubard Rambton, Septon Barre.
+- **Not a character:** the shadow that kills Renly and Cortnay.
+
+## Robb's war, the Riverlands and Harrenhal (#1465)
+
+Robb's campaign in the westerlands and the riverlands, Catelyn and Jaime at his
+camp or at Riverrun, Arya's road with Yoren's recruits and her months at
+Harrenhal. Candidates come from the Game of Thrones Wiki's season-2 episode
+pages (synopses, Firsts, "In the books") and character pages, the Ice and Fire
+Wiki's character pages, and A Wiki of Ice and Fire, read through the Firecrawl
+tool, for the A Clash of Kings chapter pages of Arya IV to X (site chapters 88,
+93, 100, 104, 112, 121, 138) and the pages of Amory Lorch, Cleos Frey and Vargo
+Hoat. Its footnote lists came back through a summarising reader, so a pin rests
+on a chapter page wherever one was read. Bit parts and background figures are
+omitted, as for #1463.
+
+Counts: 9 filed, 2 pending, 44 omitted, 1 left to another group; 8 stage-1
+records stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                   | Show                                                                                                                                                      | Books                                                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `alton-lannister` (show) | 11, "The North Remembers": Robb sends him off with his terms, "You'll ride at daybreak, Ser Alton" (fan transcript; the wiki names him only in narration) | none: the books give his part to Cleos Frey (Alton Lannister page, "In the books"); 81 orders him                                                 |
+| `cleos-frey` (books)     | none: the Game of Thrones Wiki redirects him to Alton Lannister; 11 orders him                                                                            | 81, Catelyn I: Robb sends him from Riverrun to King's Landing with his peace terms, and Grey Wind alarms him (A Wiki of Ice and Fire, Cleos Frey) |
+| `talisa-maegyr` (show)   | 16, "The Old Gods and the New": she tells Robb her family's name is Maegyr; 14, "Garden of Bones", has only "Talisa of Volantis" (owner check)            | none: no such character; 100 orders her                                                                                                           |
+| `amory-lorch`            | 16, "The Old Gods and the New": Arya gives Jaqen his name (Arya Stark page); he dies in the same episode, so the show record opens dead                   | 88, Arya IV: he rides up to the holdfast and introduces himself (A Wiki of Ice and Fire, chapter 14)                                              |
+| `polliver`               | 14, "Garden of Bones": Arya adds him to the names she recites each night (Arya Stark page)                                                                | 100, Arya VI: "a black-bearded, balding man called Polliver" wears Needle, and Arya hates him for it (chapter 26)                                 |
+| `tickler`                | 15, "The Ghost of Harrenhal": the first name Arya gives Jaqen; he dies in the same episode, so the show record opens dead                                 | 100, Arya VI: "They call the ordinary-looking man who did the questioning, the Tickler" (chapter 26)                                              |
+| `chiswyck` (books)       | none: no such character; 14 orders him                                                                                                                    | 100, Arya VI: he assists the Tickler, and Arya hates him for thinking he is funny (chapter 26)                                                    |
+| `weese` (books)          | none: no such character; 14 orders him                                                                                                                    | 104, Arya VII: the understeward of the Wailing Tower who works Arya (chapter 30); Arya VI (100) names him first (owner check)                     |
+| `vargo-hoat` (books)     | none: the show gives his later part to Locke; 15 orders him                                                                                               | 104, Arya VII: listed as appearing at Harrenhal (A Wiki of Ice and Fire, chapter 30; Ice and Fire Wiki: Arya sees him)                            |
+
+- Alton Lannister: role Robb Stark's prisoner, House Lannister, `captured` from
+  11; deceased at 17 ("A Man Without Honor": Jaime kills him to escape). Italian
+  "Alton Lannister" (Italian Wikipedia, Personaggi). Owner check: the naming
+  line is from a fan transcript, outside the lawful sources; no synopsis or wiki
+  quote names him.
+- Cleos Frey: role Robb Stark's prisoner, House Frey, `captured`. His return
+  with Tyrion's terms (Tyrion VI, 99), the failed rescue and his new cell
+  (Catelyn V, 113) change no field. Italian "Cleos Frey" (Genna Lannister's
+  section of Casa Lannister).
+- Talisa Maegyr: roles healer from Volantis (16), Robb Stark's wife (20, "Valar
+  Morghulis", married before a septon). The record opens at 16, where her family
+  name is first said; episode 14 has only "Talisa of Volantis" (owner check).
+  Italian "Talisa Maegyr".
+- Amory Lorch: role knight in the Lannisters' service; castellan of Harrenhal at
+  112 (Arya VIII), books only. Affiliation Lannister army. Status: alive in the
+  books from 88, deceased at 16 and 121 (Arya IX, the bear pit). Owner check:
+  episode 13 names him only in narration. Italian "Amory Lorch" (TV cast list).
+- Polliver: role man-at-arms of the Lannister army, alive; both deaths are past
+  the stage ("Two Swords", A Storm of Swords). Owner check: episode 13, where he
+  takes Needle and kills Lommy, names him only in narration. Italian "Polliver"
+  (TV cast list).
+- Tickler: role Gregor Clegane's torturer, Gregor Clegane's men. Show: opens
+  dead at 15 (Jaqen breaks his neck). Books: alive; his death in A Storm of
+  Swords is past the stage. Owner check: episode 14 calls him "one known as the
+  Tickler" in narration. Italian kept as "Tickler": no Italian page.
+- Chiswyck: Gregor Clegane's man, deceased at 104 (Arya VII, a fall from a wall,
+  Jaqen's first death). Italian kept as "Chiswyck".
+- Weese: understeward at Harrenhal from his gate at 104 (Arya VII; Arya VI, 100,
+  names him first, owner check), deceased at 112 (Arya VIII, found with his dog
+  on his chest, Jaqen's second). Italian kept as "Weese".
+- Vargo Hoat: leader of the Brave Companions, in the Lannisters' pay; in Roose
+  Bolton's service at 121 (Arya IX, he hands him Harrenhal). Italian "Vargo
+  Hoat", "Bravi Camerati" (Italian Wikipedia, Personaggi).
+
+### Pending
+
+- Jeyne Westerling: Robb's bride in the books, first met in A Storm of Swords
+  (Robb returns married in Catelyn II); A Clash of Kings tells only that he took
+  the Crag. The show has Talisa instead.
+- Qyburn: listed among the Brave Companions in Arya VII and Arya X (104, 138)
+  with no scene of his own; the Ice and Fire Wiki's page starts in A Storm of
+  Swords, and the show's Qyburn in season 3.
+
+### Stage-1 records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Gendry: the Night's Watch recruit role and affiliation, show-only at 10 / 66
+  since #1457, become shared at 10 / 75 (Arya I), as the #1457 note asked.
+  `captured` 13 / 93 ("What Is Dead May Never Die"; Arya V), `alive` 18 / 138
+  ("The Prince of Winterfell", the three walk out of Harrenhal; Arya X).
+- Hot Pie and Arya Stark: `captured` 13 / 93, `alive` 18 / 138, as Gendry.
+  Arya's service as Tywin's cupbearer (show) and Roose Bolton's (books) is not
+  filed as a role: she stays a prisoner in disguise.
+- Jaqen H'ghar: affiliation Lannister men-at-arms, 15 / 104 ("The Ghost of
+  Harrenhal", "now a Lannister man-at-arms"; Arya VII, he rides in with Ser
+  Amory Lorch's men).
+- Rorge and Biter, books only: affiliation Ser Amory Lorch's men, 104 (Arya VII;
+  Rorge is "one of Amory's men" in Arya VIII). Their joining the Brave
+  Companions in Arya IX rests on A Wiki of Ice and Fire's Vargo Hoat page alone,
+  not the chapter page, and waits.
+- Gregor Clegane, show only: castellan of Harrenhal, 18 ("The Prince of
+  Winterfell"); 112 orders it.
+- Roose Bolton, books only: commander of the northmen at Harrenhal, 121 (Arya
+  IX); 18 orders it.
+
+Not stepped: Robb Stark (his marriage to Talisa and the Crag change no field),
+Catelyn Stark (her mission to Renly is #1464's; the show has Robb keep her under
+guard in episode 18, the books imprison her in A Storm of Swords), Jaime
+Lannister (still `captured` from stage 1: Brienne takes him south in chains,
+episode 18 and Catelyn VII, 129), Tywin and Kevan Lannister (at Harrenhal, no
+field changes), Rickard Karstark (his son's death changes no field of his),
+Edmure, Hoster and Brynden Tully, Yoren (death filed by #1290) and Lommy (his
+book-side cards are #1481's and his chronicle #1486's). Brienne's escort of
+Jaime belongs to her record, filed by #1464.
+
+### Omitted
+
+- **Bit parts, one scene in the stage:** Torrhen Karstark (killed by Jaime in "A
+  Man Without Honor"), Rennick (Oxcross), Reginald Lannister (one war council),
+  the show's Weasel (the boy who heats the Tickler's bucket), the tortured
+  prisoner, Raff the Sweetling (the spearman who kills Lommy in Arya V, named in
+  Arya VI), Dunsen (wears Gendry's helm), Shitmouth, Lucan, the books' Weasel
+  (the crying girl), Harra and Amabel, Pia, Mebble, Cadwyn.
+- **Background at Harrenhal:** Ser Harys Swyft and his squire, Lord Lewys
+  Lydden's archer, the Brave Companions Urswyck, Septon Utt, Shagwell and Ronel
+  Rivers, the Frey and northern captives Aenys and Elmar Frey, Medger Cerwyn,
+  Harrion Karstark and the Haighs, Steelshanks Walton (named in the books only
+  in A Storm of Swords).
+- **Yoren's recruits with no scene of their own:** Kurz, Cutjack, Koss, Dobber,
+  Tarber, Woth, Reysen, Gerren, Qyle, Urreg.
+- **Riverrun's household:** Utherydes Wayn, Ser Desmond Grell, Ser Robin Ryger
+  and Maester Vyman, each with a line or two in Catelyn's chapters.
+- **Only mentioned:** Ser Stafford Lannister (killed at Oxcross off screen),
+  Ganes the butcher.
+- **Other groups:** Brienne of Tarth (#1464), who escorts Jaime from episode 18
+  and Catelyn VII.
+
+## Winterfell and the Iron Islands (#1466)
+
+Theon's return to Pyke and his taking of Winterfell, Bran's court and its
+household, the Reeds and the Bolton bastard. Candidates come from the Game of
+Thrones Wiki's ten season-2 episode pages (Firsts, cast lists, Winterfell and
+Iron Islands synopses, "In the books") and its character pages, and from A Wiki
+of Ice and Fire's chapter pages for Theon I–VI (site chapters 85, 98, 111, 124,
+130, 140) and Bran I–VII (78, 90, 95, 102, 109, 120, 143), read through
+Firecrawl. Each gives a synopsis and the characters appearing and mentioned, but
+does not say whether a name is said in speech or narration, so every book gate
+below is an open point under `unverified`, and the lower chapters where a
+character first appears are owner checks.
+
+Counts: 15 filed, 0 pending, 58 omitted; 4 stage-1 records stepped.
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                       | Show                                                                                                                                     | Books                                                                                                                          |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `balon-greyjoy`              | 12, "The Night Lands": Theon meets him at Pyke; Catelyn names him in episode 11 (Theon page, GOT201). `nameSaidAt` 4                     | 85, Theon I: Aeron brings Theon to Balon's castle and Balon receives him                                                       |
+| `asha-greyjoy`               | 12, "The Night Lands": Balon greets her and says Yara has only left the islands by ship (Balon page). Shown as Yara (`episodeName`)      | 98, Theon II: Esgred is his sister Asha; Theon I (85) only mentions her                                                        |
+| `aeron-greyjoy`              | 55, "The Door", the safe later pin; "Home" (52) is his first appearance, but no line read names him. The priest of episode 13 is unnamed | 85, Theon I: the priest at Lordsport is his uncle Aeron                                                                        |
+| `victarion-greyjoy` (books)  | none: "did not appear in the series"; 13 orders him                                                                                      | 98, Theon II: in Balon's solar when Balon reveals his plan                                                                     |
+| `dagmer`                     | 15, "The Ghost of Harrenhal": Theon asks who he is and he introduces himself as the first mate (Dagmer page)                             | 111, Theon III: Theon lays out his plan to him aboard Foamdrinker; Theon I and II only mention him                             |
+| `black-lorren` (books)       | none: episodes 15–20 give him lines, but no quote has his name said (owner check); 17 orders him                                         | 124, Theon IV: he and Urzen show Theon the dead guards, the safe pin; Bran VI (120) lists him (owner check)                    |
+| `wex-pyke` (books)           | none: a Wex stands at Theon's speech in episode 20, never named aloud; 13 orders him                                                     | 98, Theon II: Theon takes him as squire in a horse bargain (Wex page, ACOK 24)                                                 |
+| `farlen` (books)             | none: episode 16 has him defy Theon, but no source read quotes his name said (owner check, as Hallyne); 16 orders him                    | 124, Theon IV: Theon asks him whether the dogs follow the wrong wolves; Bran III (95) and Bran VI (120) list him (owner check) |
+| `meera-reed`                 | 22, "Dark Wings, Dark Words": she and Jojen find Bran; no quote has her name                                                             | 95, Bran III: greeted at the harvest feast in her father's name                                                                |
+| `jojen-reed`                 | 22, "Dark Wings, Dark Words": a dream, then the woods; no quote has his name                                                             | 95, Bran III: as Meera                                                                                                         |
+| `ramsay-snow`                | 32, "The Lion and the Rose": the Game of Thrones Wiki's first citation of his name (GOT402); unnamed in season 3                         | 140, Theon VI: he takes off his helm and names himself Ramsay Snow; at Winterfell as "Reek" from Bran V (109), an owner check  |
+| `big-walder-frey` (books)    | none: the show has no Frey wards; 13 orders him                                                                                          | 90, Bran II: at Bran's audiences; Bran I (78) only tells of the Walders' coming                                                |
+| `little-walder-frey` (books) | none: as Big Walder                                                                                                                      | 90, Bran II: as Big Walder                                                                                                     |
+| `wyman-manderly`             | 60, "The Winds of Winter", his one appearance; no quote has his name. `nameSaidAt` 29, for Wendel's books-only story                     | 90, Bran II: at Winterfell for the harvest feast, with business for Bran                                                       |
+| `donella-hornwood` (books)   | none: no page; 13 orders her                                                                                                             | 90, Bran II: widowed, she fears the Bolton bastard means to seize her lands                                                    |
+
+- Balon Greyjoy: Lord of the Iron Islands, then King of the Iron Islands at 16 /
+  120 (Theon tells Winterfell his father is crowned; Bran VI, the safe pin).
+  Italian "Balon Greyjoy" (Casa Greyjoy).
+- Asha Greyjoy: ironborn captain, alive. One record under the books' name, with
+  `episodeName` Yara at chapter 345, past the books (owner check: Robin Arryn,
+  the only earlier renamed record, takes the show's name instead). Italian "Asha
+  Greyjoy" / "Yara Greyjoy" (Casa Greyjoy).
+- Aeron Greyjoy: priest of the Drowned God. Italian "Aeron Greyjoy".
+- Victarion Greyjoy: ironborn captain. Italian kept; Mondadori not checked.
+- Dagmer: ironborn raider. The show's betrayal of Theon and spearing of Luwin
+  (20) and the books' defeat at Torrhen's Square (told at 130) change no field.
+  Italian "Dagmer" (TV cast list).
+- Black Lorren: ironborn raider; deceased at 143 (Bran VII, his body among the
+  dead), episode 20 ordering it. Italian kept as "Black Lorren" (the TV cast
+  list has "Lorren").
+- Wex Pyke: Theon's squire. Italian kept.
+- Farlen: kennelmaster of Winterfell; deceased at 130 (Theon V: Theon beheads
+  him as the scapegoat for three ironmen), episode 18 ordering it. Italian
+  "Farlen" (Casa Stark's servants).
+- Meera and Jojen Reed: children of Howland Reed, House Reed. Jojen's greensight
+  (told from Bran IV, 102) waits for a later step. Italian "Meera Reed", "Jojen
+  Reed".
+- Ramsay Snow: bastard of Roose Bolton, House Bolton; filed under his name
+  inside the stage, not the later Bolton. Italian kept as "Ramsay Snow" (Italian
+  Wikipedia heads him Ramsay Bolton, "nato Snow").
+- Big and Little Walder Frey: wards at Winterfell, House Frey. Italian kept.
+- Wyman Manderly: Lord of White Harbor. Italian "Wyman Manderly".
+- Donella Hornwood: Lady of the Hornwood; `captured` at 102 (Bran IV, taken to
+  wife by force), deceased at 109 (Bran V, Ser Rodrik returns with a prisoner
+  held for her murder), episodes 14 and 15 ordering them. Italian kept.
+
+### Stage-1 records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Theon Greyjoy: role Robb Stark's envoy to the Iron Islands, 11 / 81 ("The
+  North Remembers"; Catelyn I); affiliation House Greyjoy, 13 / 98 (his baptism;
+  Theon II); role Prince of Winterfell, 16 / 120 ("The Old Gods and the New";
+  Bran VI); `captured` at 20 in the show alone (his men knock him out for the
+  Boltons), 140 ordering it. The books leave him struck down in the sack.
+- Bran Stark: role lord of Winterfell in his brother's absence, 11 / 90 ("The
+  North Remembers"; Bran II); `captured` at 120 and `alive` at 124 in the books
+  alone (Bran VI, Theon IV). The show has him yield and escape in episode 16, so
+  episodes 16 and 17 only order the book steps.
+- Rickon Stark: `captured` at 120 and `alive` at 124, the books alone, as Bran.
+- Osha: role on the run with Bran and Rickon Stark, `alive`, and affiliation
+  House Stark, 16 / 124 ("The Old Gods and the New"; Theon IV).
+
+Not stepped: Luwin (death at 20 / 143 already filed), Rodrik Cassel (death at 16
+/ 140 already filed), Mikken (the books' death at 120 already filed), Hodor, Old
+Nan, Summer and Shaggydog (no field changes in the stage).
+
+### Omitted
+
+- **Ironborn bit parts:** Drennan (show: killed by Osha in his second episode;
+  books: found dead at 124), Stygg (books: kills Mikken, sent to Asha; show: an
+  unnamed face at the speech), Gelmarr (show: a face at the speech; books: dies
+  off the page), and the books' background raiders Urzen, Werlag, Kromm, Aggar,
+  Gynir Rednose, Todric, Maron Botley, Tymor, Red Rolfe, Kenned the Whale, Ulf
+  the Ill, Harrag Sharp, Dykk Harlaw, Endehar, Gariss, Murch and Squint.
+- **Descriptors:** the captain of the _Myraham_ and his daughter, the Lordsport
+  dockhand, the Drowned Man of episode 13, the Winterfell shepherd and his wife
+  Bernadette, Theon's master of hounds, the miller's wife and sons.
+- **Bit parts at Winterfell:** Palla (the kennelmaster's daughter, background in
+  both media), Kyra (books: Theon's bedmate), Beth Cassel (books: a hostage
+  shown at the parley), Septon Chayle (books: one scene before his death), Gage,
+  Hayhead, Joseth, Alebelly, Poxy Tym; Jack and Billy (show: the orphans named
+  in episode 17, seen only as burned bodies).
+- **Northern lords with no scene of their own:** Leobald Tallhart and Cley
+  Cerwyn (books: at the harvest feast; their bodies are shown to Theon at 140),
+  Hother and Mors Umber (books: background at the feast), Benfred Tallhart
+  (books: one scene, captured and drowned in Theon III).
+- **Only mentioned:** Howland Reed, Euron Greyjoy, Alannys Harlaw, Sawane and
+  Sargon Botley, Sigrin, Otter Gimpknee, Andrik the Unsmiling, Qarl the Maid,
+  Dunstan Drumm, the real Reek (killed in Ramsay's place inside the stage, but
+  never named or seen as himself); Helya (one scene as a servant at Pyke).
+- **Other groups:** Torrhen Karstark (Robb's camp, #1465).
+
+## The Wall and beyond (#1467)
+
+The great ranging under Jeor Mormont, Craster's Keep, the Fist of the First Men
+and Qhorin Halfhand's scouting party in the mountains. Candidates come from the
+Game of Thrones Wiki's season-2 episode pages (Firsts, cast lists, the synopses
+beyond the Wall) and the character pages they link, and from A Wiki of Ice and
+Fire's pages for the eight Jon chapters of _A Clash of Kings_ (chapters 6, 13,
+23, 34, 43, 51, 53 and 68 there; site chapters 80, 87, 97, 108, 117, 125, 127
+and 142), read through the Firecrawl tool: their synopses and Appearing lists.
+Show gates take the first said naming the wiki pages report (a quote, reported
+speech, "named"); book gates the first chapter whose synopsis names the
+character in a scene of their own, with the naming line itself unquoted, as
+#1463 did. Bit parts with one scene of their own, collectives and descriptors
+are omitted (owner, 2026-11-07).
+
+Counts: 12 filed, 1 pending, 23 omitted; 2 stage-1 records stepped.
+
+Jon Snow joins the season's cast row (`leads['season-2']`).
+
+### Filed
+
+Gates as episode / site chapter. `source` records give the other number only to
+order them.
+
+| Record                     | Show                                                                                                                        | Books                                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `thoren-smallwood` (books) | none: no Game of Thrones Wiki page; 11 orders him                                                                           | 80, Jon I: the Lord Commander complains that Smallwood called him too old for the ranging                             |
+| `eddison-tollett`          | 20, "Valar Morghulis": Sam says what he finds interesting about Edd (Eddison Tollett page; reported speech, an owner check) | 87, Jon II: at Whitetree Jon is paired with "Eddison Tollett, nicknamed Dolorous Edd"                                 |
+| `jarman-buckwell` (books)  | none; 11 orders him                                                                                                         | 87, Jon II: he answers Smallwood at Whitetree, and his scouts ride out first                                          |
+| `mallador-locke` (books)   | none; 11 orders him                                                                                                         | 87, Jon II: he speaks at Whitetree and leads the baggage train                                                        |
+| `craster`                  | 11, "The North Remembers": Grenn and Edd talk of Craster's daughters and say Craster is still here (Eddison Tollett page)   | 97, Jon III: the ranging reaches Craster's Keep                                                                       |
+| `gilly`                    | 15, "The Ghost of Harrenhal": Sam says Gilly would love it there (Eddison Tollett page)                                     | 97, Jon III: Jon meets her when Ghost raids her rabbit hutch (Ice and Fire Wiki, Gilly)                               |
+| `qhorin-halfhand`          | 15, "The Ghost of Harrenhal": Jon announces it is the Halfhand coming up to the Fist (Eddison Tollett page)                 | 117, Jon V: he arrives at the Fist with a hundred men from the Shadow Tower                                           |
+| `stonesnake` (books)       | none: "The Ghost of Harrenhal" reports Qhorin selecting him in narration only (an owner check); 15 orders him               | 125, Jon VI: he and Jon volunteer to climb to the wildling watchers                                                   |
+| `ygritte`                  | 16, "The Old Gods and the New": "a red-haired young woman named Ygritte"                                                    | 125, Jon VI: the sleeping watcher "turns out to be a spearwife, Ygritte"                                              |
+| `ebben` (books)            | none; 17 orders him                                                                                                         | 127, Jon VII: Qhorin says he would have had Ebben kill the girl                                                       |
+| `dalbridge` (books)        | none; 17 orders him                                                                                                         | 127, Jon VII: Squire Dalbridge stays behind in the pass with the arrows                                               |
+| `lord-of-bones` (books)    | none: "The Prince of Winterfell" names him in narration only (an owner check); 18 orders him                                | 142, Jon VIII: the hunters overtake Jon and Qhorin, "the Lord of Bones their leader"; the Watch calls him Rattleshirt |
+
+- Thoren Smallwood: role acting commander of the rangers, alive. Italian kept as
+  "Thoren Smallwood".
+- Eddison Tollett: role brother of the Night's Watch (a squire in the books
+  only), alive. Owner check: episodes 11, 12, 15 and 18 name him only in
+  narration and the credits; and the gate at 20 rests on the Eddison Tollett
+  page's report that Sam says "what he finds interesting about Edd is absolutely
+  nothing", likely a paraphrase, so whether the line says Edd's name is
+  unconfirmed. Italian "Eddison Tollett" (Italian Wikipedia, Guardiani della
+  notte).
+- Jarman Buckwell: role ranger in command of the scouts; Mallador Locke: role
+  knight of the Night's Watch. Both alive, Italian kept.
+- Craster: role master of a holdfast beyond the Wall, Wildlings, alive. Italian
+  "Craster".
+- Gilly: role Craster's daughter and wife, alive. Owner check: episodes 11 and
+  12 name her only in narration; episode 12, where Sam brings her to Jon, is the
+  likely earlier naming. Italian "Gilly".
+- Qhorin Halfhand: role ranger of the Shadow Tower. `captured` at 18, the show's
+  alone; `deceased` at 20 / 142, killed by Jon on his own orders. Italian
+  "Qhorin il Monco" (Italian Wikipedia, Guardiani della notte).
+- Stonesnake, books only: role ranger, alive. In the books he is sent on alone
+  on foot, his fate untold in the stage. The show's death at 18 (Game of Thrones
+  Wiki, fate confirmed in "The Prince of Winterfell") is not filed: a book-only
+  record carries no show-only status. Owner check: episode 15, where the
+  Stonesnake page and the episode page report Qhorin selecting him, in
+  narration; no page read quotes or reports his name said on screen in season 2
+  (review round 1). Italian kept (the Italian Game of Thrones Wiki's Qhorin
+  page).
+- Ygritte: role wildling lookout, Wildlings, alive. Italian "Ygritte".
+- Ebben: role ranger; `deceased` at 142, the books' alone (the wildlings carry
+  his head). Owner check: Jon VI (125) lists him as appearing, unnamed in the
+  synopsis. Italian kept.
+- Dalbridge: role ranger, alive: A Clash of Kings does not tell his death. Owner
+  check as for Ebben. Italian kept.
+- Lord of Bones, books only: role leader of a wildling war band, Wildlings,
+  alive. His log tells the books' version: his band overtakes Jon and Qhorin,
+  and he orders Jon to kill Qhorin. Owner check: episode 18, where the Lord of
+  Bones page and "The Prince of Winterfell" have Ygritte bring Jon to him in
+  narration; the one season-2 quote of his on the page ("He's not yours to
+  kill... crow!") does not name him, and no page read reports his name said on
+  screen in season 2 (review round 1). Italian "Lord delle Ossa" (Italian
+  Wikipedia, Rattleshirt; Italian Game of Thrones Wiki).
+
+### Stage-1 records stepped
+
+Steps in `season-1.ts`, as episode / site chapter.
+
+- Jon Snow: `captured` 17 and `alive` 20, show only ("A Man Without Honor",
+  "Valar Morghulis"; chapters 127 and 142 order them); role sworn brother
+  ranging with Qhorin Halfhand, 15, show only ("The Ghost of Harrenhal", where
+  Sam takes his place as the Lord Commander's steward; 117 orders it); role
+  sworn brother posing as a deserter among the wildlings, 20 / 142 ("Valar
+  Morghulis"; Jon VIII).
+- Samwell Tarly: role steward keeping the ravens beyond the Wall, 80, books only
+  (Jon I; 11 orders it); steward to the Lord Commander, 15, show only ("The
+  Ghost of Harrenhal", where he takes Jon's duties; 117 orders it).
+
+Not stepped: Jeor Mormont, Grenn, Ghost (wounded by the eagle in Jon VII, no
+field for it), Chett, Donal Noye, Pypar and Todder (stay at Castle Black in Jon
+I), Alliser Thorne (his errand to King's Landing changes no field).
+
+### Pending
+
+- Orell: the man Jon kills among the watchers in Jon VI (125) is on its
+  Appearing list, but no synopsis read names him in the stage; the show's Orell
+  is named in season 3 ("Dark Wings, Dark Words", episode 22, his first). The
+  book naming, perhaps by Ygritte in Jon VIII, is an open check.
+
+### Omitted
+
+- **Bit parts, one scene of their own:** Bedwyck "Giant" (reports the lake at
+  Whitetree), Hake (on the Appearing lists only), Lark the Sisterman (one line
+  of dissent in Jon V), Dywen (left out in stage 1 too; a line about the smell
+  of cold in Jon IV), Ottyn Wythers (leads the rear guard, on the Appearing
+  lists only), Harker and Borba (the show's, named only in Qhorin's roll call
+  and dead off screen by episode 18), Ragwyle (one of the hunters in Jon VIII).
+- **Castle Black, Jon I only:** Endrew Tarth, the recruits Satin, Hop-Robin,
+  Arron and Emrick.
+- **Only mentioned:** Mance Rayder (both media in the stage; he appears in
+  season 3 and _A Storm of Swords_), Alfyn Crowkiller, Conwy, Arnell, Redwyn.
+- **Collectives and descriptors:** Craster's wives and daughters, Craster's
+  sons, the White Walker who leads the wights at the Fist (episode 20), the
+  Night's Watch officer, Mormont's raven.
+
 ## Essos and Qarth (#1468)
 
 Daenerys's road through the Red Waste to Qarth. Candidates come from the Game of

@@ -202,6 +202,9 @@ function character(id: string): Entity {
 }
 
 describe('the second season’s King’s Landing cast', () => {
+  // The other cast groups file their own records in the same module, each
+  // pinned in its own test (#1465 in `thronesSeason2Riverlands.test.ts`,
+  // #1466 in `thronesSeason2Winterfell.test.ts`).
   it('files these records', () => {
     // Each cast group's test lists its own records; the season holds them
     // all (#1468).
@@ -298,9 +301,17 @@ describe('the steps one medium alone tells', () => {
 })
 
 describe('the season’s leads', () => {
-  it('lists the King’s Landing leads', () => {
+  it('lists the King’s Landing, stormlands, Iron Islands, Wall and Essos leads', () => {
     expect(archive.leads['season-2']).toStrictEqual(
-      expect.arrayContaining(['tyrion-lannister', 'cersei-lannister']),
+      expect.arrayContaining([
+        'tyrion-lannister',
+        'cersei-lannister',
+        'stannis-baratheon',
+        'davos-seaworth',
+        'theon-greyjoy',
+        'jon-snow',
+        'daenerys-targaryen',
+      ]),
     )
   })
 })
@@ -309,7 +320,11 @@ describe('the second season’s heading', () => {
   it('opens with its first record in each medium', () => {
     const heading = archive.arcs.find(({ id }) => id === 'season-2')
 
+    // Episode 11 (Daisy, Alton Lannister and Stannis's cast); chapter 74,
+    // the prologue of A Clash of Kings, since the stormlands cast (#1464);
+    // Cleos Frey (Catelyn I, #1465) opens at chapter 81 and Thoren Smallwood
+    // (Jon I, the Wall cast #1467) at chapter 80 in the books.
     expect(heading?.revealedAtEpisode).toBe(11)
-    expect(heading?.revealedAtChapter).toBe(82)
+    expect(heading?.revealedAtChapter).toBe(74)
   })
 })

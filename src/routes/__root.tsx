@@ -17,6 +17,7 @@ import {
   loadDictionaryOrReload,
   translate,
 } from '~/i18n/translate'
+import { appHead } from '~/lib/appIcons'
 import { isMissing } from '~/lib/missing'
 import { BookmarkProvider } from '~/lib/progress/BookmarkProvider'
 import { readBookmark, readTrial } from '~/lib/progress/readBookmark'
@@ -67,80 +68,80 @@ export const Route = createRootRoute({
       locale,
     }
   },
-  head: ({ match, matches }) => ({
-    meta: [
-      // A 404: on any other page a deeper route's title wins.
-      ...(isMissing(matches) ?
-        [
-          {
-            title: translate(
-              getDictionary(match.context.locale),
-              'notFound.pageTitle',
-            ),
-          },
-        ]
-      : []),
-      // eslint-disable-next-line unicorn/text-encoding-identifier-case -- HTML requires this attribute to be an ASCII case-insensitive match for "utf-8"; `utf8` is a valid encoding label everywhere else, but not here.
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      // Proves ownership of the property to Google Search Console. The tag
-      // has to stay on every document: Search Console re-checks it, and a
-      // page that drops it fails verification.
-      {
-        name: 'google-site-verification',
-        // eslint-disable-next-line no-secrets/no-secrets -- the token is a public ownership proof Google hands out to be served in the HTML of every page; it grants nothing and is meant to be read by anyone.
-        content: 'h5qpGoxTYVlSKZU1U4-E74deg8MRRDnKdRa3Wb-kkPI',
-      },
-      // Proves ownership of the property to Bing Webmaster Tools. Same rule as
-      // the Google tag above: it has to stay on every document.
-      { name: 'msvalidate.01', content: '9711E0529A53A545FFEC16864511D537' },
-    ],
-    links: [
-      // The .ico comes first so Safari, which ignores SVG icons, still finds
-      // a bitmap; Chromium and Firefox prefer the SVG that follows. All three
-      // are generated from public/icon.svg by scripts/make-icons.mjs.
-      { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
-      { rel: 'icon', href: '/icon.svg', type: 'image/svg+xml' },
-      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-      // The display face at 800 and the body face are needed by the wordmark
-      // and the first paragraph, so they are fetched in parallel with the
-      // stylesheet rather than after it. Only the Latin subsets: no first
-      // view in either locale sets Latin Extended text. Not preloaded: the
-      // lighter display weights, which paint a few words on a few pages (a
-      // wide bar's slash, the sea chart, the legal page) and would compete
-      // with the two faces every page needs; and the mono face, which sets
-      // episode numerals and the horizon label, never the largest paint, and
-      // whose metric-matched fallback keeps the swap from moving anything.
-      // `type` and `crossOrigin` match the `@font-face` rules (woff2, and a
-      // font is always fetched with CORS), so the browser reuses the preload
-      // instead of fetching the file twice. Firefox logs these two as
-      // "preloaded but not used" even when its network panel shows one
-      // request per font, served from the preload; Chromium does not, so the
-      // warning is noise, not a mismatch.
-      {
-        rel: 'preload',
-        href: '/fonts/bricolage-grotesque-800-latin.woff2',
-        as: 'font',
-        type: 'font/woff2',
-        crossOrigin: 'anonymous',
-      },
-      {
-        rel: 'preload',
-        href: '/fonts/instrument-sans-latin.woff2',
-        as: 'font',
-        type: 'font/woff2',
-        crossOrigin: 'anonymous',
-      },
-      // Dev only. In a production build the compiled StyleX CSS lives inside
-      // the hashed asset imported above and needs no link of its own, and
-      // `import.meta.env.DEV` is replaced with `false` so this entry is dead
-      // code. In dev the plugin serves the aggregated sheet from an in-memory
-      // middleware instead, because nothing has been emitted to disk yet.
-      ...(import.meta.env.DEV ?
-        [{ rel: 'stylesheet', href: '/virtual:stylex.css' }]
-      : []),
-    ],
-  }),
+  head: ({ match, matches }) => {
+    const app = appHead(match.context.series, match.context.locale)
+    return {
+      meta: [
+        // A 404: on any other page a deeper route's title wins.
+        ...(isMissing(matches) ?
+          [
+            {
+              title: translate(
+                getDictionary(match.context.locale),
+                'notFound.pageTitle',
+              ),
+            },
+          ]
+        : []),
+        // eslint-disable-next-line unicorn/text-encoding-identifier-case -- HTML requires this attribute to be an ASCII case-insensitive match for "utf-8"; `utf8` is a valid encoding label everywhere else, but not here.
+        { charSet: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        // Proves ownership of the property to Google Search Console. The tag
+        // has to stay on every document: Search Console re-checks it, and a
+        // page that drops it fails verification.
+        {
+          name: 'google-site-verification',
+          // eslint-disable-next-line no-secrets/no-secrets -- the token is a public ownership proof Google hands out to be served in the HTML of every page; it grants nothing and is meant to be read by anyone.
+          content: 'h5qpGoxTYVlSKZU1U4-E74deg8MRRDnKdRa3Wb-kkPI',
+        },
+        // Proves ownership of the property to Bing Webmaster Tools. Same rule as
+        // the Google tag above: it has to stay on every document.
+        { name: 'msvalidate.01', content: '9711E0529A53A545FFEC16864511D537' },
+        ...app.meta,
+      ],
+      links: [
+        // The page's tab icons and installable app (#1517).
+        ...app.links,
+        // The display face at 800 and the body face are needed by the wordmark
+        // and the first paragraph, so they are fetched in parallel with the
+        // stylesheet rather than after it. Only the Latin subsets: no first
+        // view in either locale sets Latin Extended text. Not preloaded: the
+        // lighter display weights, which paint a few words on a few pages (a
+        // wide bar's slash, the sea chart, the legal page) and would compete
+        // with the two faces every page needs; and the mono face, which sets
+        // episode numerals and the horizon label, never the largest paint, and
+        // whose metric-matched fallback keeps the swap from moving anything.
+        // `type` and `crossOrigin` match the `@font-face` rules (woff2, and a
+        // font is always fetched with CORS), so the browser reuses the preload
+        // instead of fetching the file twice. Firefox logs these two as
+        // "preloaded but not used" even when its network panel shows one
+        // request per font, served from the preload; Chromium does not, so the
+        // warning is noise, not a mismatch.
+        {
+          rel: 'preload',
+          href: '/fonts/bricolage-grotesque-800-latin.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossOrigin: 'anonymous',
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/instrument-sans-latin.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossOrigin: 'anonymous',
+        },
+        // Dev only. In a production build the compiled StyleX CSS lives inside
+        // the hashed asset imported above and needs no link of its own, and
+        // `import.meta.env.DEV` is replaced with `false` so this entry is dead
+        // code. In dev the plugin serves the aggregated sheet from an in-memory
+        // middleware instead, because nothing has been emitted to disk yet.
+        ...(import.meta.env.DEV ?
+          [{ rel: 'stylesheet', href: '/virtual:stylex.css' }]
+        : []),
+      ],
+    }
+  },
   // public/_headers reaches static files only, and every document here is
   // rendered by the server, so the security headers have to be part of the
   // response the app itself returns.

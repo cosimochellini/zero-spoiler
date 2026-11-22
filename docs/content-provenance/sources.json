@@ -35282,6 +35282,166 @@
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748948",
       "contentSha256": "56819fb5e45247fc9b39ceedf8733446e158132d15751f16e8fc5f88d28181fe"
     },
+    "hxh-en-Hunter_Exam_arc-423052.json": {
+      "locale": "en",
+      "title": "Hunter Exam arc",
+      "revision": 423052,
+      "revisionDate": "2026-07-26T14:51:05Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_Exam_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423052",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423052",
+      "contentSha256": "f9909fb70dfb48130eb7075f5a71241f5c82e01f01fe0f7f9000633ca6108ea9"
+    },
+    "hxh-en-Whale_Island-421735.json": {
+      "locale": "en",
+      "title": "Whale Island",
+      "revision": 421735,
+      "revisionDate": "2026-07-07T13:51:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Whale_Island",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421735",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421735",
+      "contentSha256": "c3638e47852f07afc1645d3bcea99a860f18888cbb243446dac6e73ead3c865d"
+    },
+    "hxh-en-Heavens_Arena_arc-423050.json": {
+      "locale": "en",
+      "title": "Heavens Arena arc",
+      "revision": 423050,
+      "revisionDate": "2026-07-26T14:49:19Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423050",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423050",
+      "contentSha256": "fd2654980b734d78b5c326317368a61e88087515372ce67ca4bf8bce6470aa5e"
+    },
+    "hxh-en-Chapter_44-416150.json": {
+      "locale": "en",
+      "title": "Chapter 44",
+      "revision": 416150,
+      "revisionDate": "2025-08-31T20:21:58Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_44",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416150",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416150",
+      "contentSha256": "7de2f9c21c1b9180bceec3ad83c41f25defc20551a38f314502d0834670ea431"
+    },
+    "hxh-en-Heavens_Arena-423051.json": {
+      "locale": "en",
+      "title": "Heavens Arena",
+      "revision": 423051,
+      "revisionDate": "2026-07-26T14:49:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423051",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423051",
+      "contentSha256": "a031b5af93117d18c4daa124d372bbf164fc01e4a5f9588b80fa58fd5edc16bb"
+    },
+    "hxh-en-Chimera_Ant_arc-423048.json": {
+      "locale": "en",
+      "title": "Chimera Ant arc",
+      "revision": 423048,
+      "revisionDate": "2026-07-26T14:38:07Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423048",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423048",
+      "contentSha256": "e6e1cf7d55137db5b56475e3562858fd557316d589910a38b04b7b9bb1c1b19b"
+    },
+    "hxh-en-Succession_Contest_arc-425681.json": {
+      "locale": "en",
+      "title": "Succession Contest arc",
+      "revision": 425681,
+      "revisionDate": "2026-09-30T07:20:14Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Succession_Contest_arc",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425681",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425681",
+      "contentSha256": "37cbba7ca75e13bfcc10d98637529b934cd8a5153c57743984e73d16959fa4ba"
+    },
+    "hxh-en-Mandai_City-421700.json": {
+      "locale": "en",
+      "title": "Mandai City",
+      "revision": 421700,
+      "revisionDate": "2026-07-07T12:31:31Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Mandai_City",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421700",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421700",
+      "contentSha256": "5ca6e81f2d4d87d461e7529b28b05c00e4e9f5775bc22f1a965e47bbdff7a653"
+    },
+    "hxh-en-Template:Zodiacs_Gallery-387229.json": {
+      "locale": "en",
+      "title": "Template:Zodiacs Gallery",
+      "revision": 387229,
+      "revisionDate": "2024-03-17T04:48:33Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Template:Zodiacs_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=387229",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=387229",
+      "contentSha256": "e183cd28a03bc08d4ca57dfc8e7963d4c475bf2fa10ea19ed3f0920cabdfffda"
+    },
+    "hxh-en-Zoldyck_Family-425887.json": {
+      "locale": "en",
+      "title": "Zoldyck Family",
+      "revision": 425887,
+      "revisionDate": "2026-11-04T21:03:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Zoldyck_Family",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425887",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425887",
+      "contentSha256": "d6772f1f9a48c84a3abe39f8ce9aca2548c87fc891eedbccda167817e4a905e2"
+    },
+    "hxh-en-Squadron_Leaders-423029.json": {
+      "locale": "en",
+      "title": "Squadron Leaders",
+      "revision": 423029,
+      "revisionDate": "2026-07-26T13:51:29Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Squadron_Leaders",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423029",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423029",
+      "contentSha256": "db8a8eace2f6d8db4c83ac7ae8972cf15ca5e531e0b88fc839823e1a1a025173"
+    },
+    "hxh-en-Royal_Guards-423026.json": {
+      "locale": "en",
+      "title": "Royal Guards",
+      "revision": 423026,
+      "revisionDate": "2026-07-26T13:43:45Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Royal_Guards",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423026",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423026",
+      "contentSha256": "1926fb0ad4ac728f0f7d1b8286914f55a40b14005935af2e40577e8d5ca8ebcc"
+    },
+    "hxh-en-Ten_Dons-423032.json": {
+      "locale": "en",
+      "title": "Ten Dons",
+      "revision": 423032,
+      "revisionDate": "2026-07-26T13:58:38Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Ten_Dons",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423032",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423032",
+      "contentSha256": "c78b4afc370dfe99ad518e0142eef1fac30215674a2138282d8f74ca8c2e2685"
+    },
+    "hxh-en-Mafia_Community-423009.json": {
+      "locale": "en",
+      "title": "Mafia Community",
+      "revision": 423009,
+      "revisionDate": "2026-07-26T12:51:42Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Mafia_Community",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423009",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423009",
+      "contentSha256": "dccab5d7b093db516fc21185bc65af180f54ae87e48ffd8fbc5d90fa02212015"
+    },
+    "hxh-en-Phantom_Troupe-426123.json": {
+      "locale": "en",
+      "title": "Phantom Troupe",
+      "revision": 426123,
+      "revisionDate": "2026-11-21T22:21:03Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426123",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426123",
+      "contentSha256": "591fbb46925c4e1f598426469f35888c9c0340cfb640356f1cfc3dcb079dfcf0"
+    },
+    "hxh-en-Template:Phantom_Troupe_Gallery-426125.json": {
+      "locale": "en",
+      "title": "Template:Phantom Troupe Gallery",
+      "revision": 426125,
+      "revisionDate": "2026-11-21T22:23:37Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Template:Phantom_Troupe_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426125",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426125",
+      "contentSha256": "7795fc04713d81fc6bbe564381ff85760e1e9ba4db483bdf17c50130fc2b7264"
+    },
     "got-en-Daisy-728017.json": {
       "locale": "en",
       "title": "Daisy",
@@ -35652,6 +35812,876 @@
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27268",
       "contentSha256": "51a120f7d96e02d13325cfc2543901b05047f072024fc798c80eccd8a677f481"
     },
+    "got-en-Talisa_Stark-728450.json": {
+      "locale": "en",
+      "title": "Talisa Stark",
+      "revision": 728450,
+      "revisionDate": "2026-02-05T08:46:48Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Talisa_Stark",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728450",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728450",
+      "contentSha256": "0cffab6b5061220a10b90d7e6df411c70718f9ee30a8b334b4a4c9ce05a533f3"
+    },
+    "got-en-Alton_Lannister-748547.json": {
+      "locale": "en",
+      "title": "Alton Lannister",
+      "revision": 748547,
+      "revisionDate": "2026-08-31T19:18:59Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Alton_Lannister",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748547",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748547",
+      "contentSha256": "10a48e4fac2f3f78b295d43426a53c1f021a9d7577ebda24bcc0d3ea8bb43f82"
+    },
+    "got-en-Amory_Lorch-728245.json": {
+      "locale": "en",
+      "title": "Amory Lorch",
+      "revision": 728245,
+      "revisionDate": "2026-02-05T07:08:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Amory_Lorch",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728245",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728245",
+      "contentSha256": "0505b2e4de6465a83bb07e27395d8afb2543ecfe1b5097812234a8f74e72f9c9"
+    },
+    "got-en-Polliver-728356.json": {
+      "locale": "en",
+      "title": "Polliver",
+      "revision": 728356,
+      "revisionDate": "2026-02-05T07:32:53Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Polliver",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728356",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728356",
+      "contentSha256": "0a370293bf382d2cb8fb91f9638671452b8f6724744a8384392630a673c6679b"
+    },
+    "got-en-Torrhen_Karstark-728204.json": {
+      "locale": "en",
+      "title": "Torrhen Karstark",
+      "revision": 728204,
+      "revisionDate": "2026-02-05T06:58:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Torrhen_Karstark",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728204",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728204",
+      "contentSha256": "235d61740da287ea32ef9921fdded7ab13a1868d16126674b061a2dd26a82910"
+    },
+    "got-en-Weasel-728535.json": {
+      "locale": "en",
+      "title": "Weasel",
+      "revision": 728535,
+      "revisionDate": "2026-02-05T09:04:12Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Weasel",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728535",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728535",
+      "contentSha256": "b3cb6ffef43bf31048538af256559dd9fa5ac54fc4f0d6c35940cb3508ef161b"
+    },
+    "got-en-Rennick-728392.json": {
+      "locale": "en",
+      "title": "Rennick",
+      "revision": 728392,
+      "revisionDate": "2026-02-05T08:32:31Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Rennick",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728392",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728392",
+      "contentSha256": "f552e531334bbe52de85c64609d52c4d3842fe698e09e42c0e7b9c3c0670e124"
+    },
+    "got-en-Reginald_Lannister-728226.json": {
+      "locale": "en",
+      "title": "Reginald Lannister",
+      "revision": 728226,
+      "revisionDate": "2026-02-05T07:04:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Reginald_Lannister",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728226",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728226",
+      "contentSha256": "f92ebdc8e92d387aa0dfec97ac0011197637167e87ee62e9863df019b0c9f2dc"
+    },
+    "got-en-Tickler-728490.json": {
+      "locale": "en",
+      "title": "Tickler",
+      "revision": 728490,
+      "revisionDate": "2026-02-05T08:55:00Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Tickler",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728490",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728490",
+      "contentSha256": "6887a3024d1afc3b1ef47bdc58c54067007916a7191d1e7cb761860c55dde90d"
+    },
+    "got-en-Tywin_Lannister-748203.json": {
+      "locale": "en",
+      "title": "Tywin Lannister",
+      "revision": 748203,
+      "revisionDate": "2026-08-18T03:21:28Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Tywin_Lannister",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748203",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748203",
+      "contentSha256": "c59035805e742376394d34798d4f3a53e51ad31cf6ed5536afdb9ca13e68be67"
+    },
+    "got-en-Gregor_Clegane-746272.json": {
+      "locale": "en",
+      "title": "Gregor Clegane",
+      "revision": 746272,
+      "revisionDate": "2026-08-03T20:20:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Gregor_Clegane",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=746272",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=746272",
+      "contentSha256": "c67424ec59d9d373d7e710bdbfda93bb67a9d4ba4ca4df31e1f00f6d7570c81a"
+    },
+    "iaf-en-Cleos_Frey-21833.json": {
+      "locale": "en",
+      "title": "Cleos Frey",
+      "revision": 21833,
+      "revisionDate": "2018-03-14T16:48:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/Cleos_Frey",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21833",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21833",
+      "contentSha256": "e537fcdeb61262fa88aa5f1225f1f7fc566712da1ed0d209f0a27511d7f02bf6"
+    },
+    "iaf-en-Amory_Lorch-27117.json": {
+      "locale": "en",
+      "title": "Amory Lorch",
+      "revision": 27117,
+      "revisionDate": "2025-02-11T14:38:44Z",
+      "url": "https://iceandfire.fandom.com/wiki/Amory_Lorch",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27117",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27117",
+      "contentSha256": "f85a07f882d3aa492797d1bab9c452fadcc3ded9be63825afb2784f554a8b9d6"
+    },
+    "iaf-en-Polliver-15135.json": {
+      "locale": "en",
+      "title": "Polliver",
+      "revision": 15135,
+      "revisionDate": "2016-03-30T22:21:37Z",
+      "url": "https://iceandfire.fandom.com/wiki/Polliver",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15135",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15135",
+      "contentSha256": "81d2e52037933ff12aa55f8a9b7ad60ead556fe223d4d9e2eab569ba2d29ae7b"
+    },
+    "iaf-en-Vargo_Hoat-27311.json": {
+      "locale": "en",
+      "title": "Vargo Hoat",
+      "revision": 27311,
+      "revisionDate": "2025-03-25T23:39:22Z",
+      "url": "https://iceandfire.fandom.com/wiki/Vargo_Hoat",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27311",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27311",
+      "contentSha256": "6021b857be7ddf2ad1b9bb114fc1f826f00f8a16fd553013ce9a7a5bb49043a9"
+    },
+    "iaf-en-Qyburn-27013.json": {
+      "locale": "en",
+      "title": "Qyburn",
+      "revision": 27013,
+      "revisionDate": "2025-01-27T23:27:23Z",
+      "url": "https://iceandfire.fandom.com/wiki/Qyburn",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27013",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27013",
+      "contentSha256": "f335e6d6670a62fc052dc543c8cd9df37f85382c160a4fa3fc1c6dfa9bd5e1dd"
+    },
+    "iaf-en-Jeyne_Westerling-20116.json": {
+      "locale": "en",
+      "title": "Jeyne Westerling",
+      "revision": 20116,
+      "revisionDate": "2018-01-17T13:47:12Z",
+      "url": "https://iceandfire.fandom.com/wiki/Jeyne_Westerling",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=20116",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=20116",
+      "contentSha256": "a5b3f64d19fd3c796a8fd054b8b755c26f641255c5485b02159c6841bbf20bab"
+    },
+    "iaf-en-Utherydes_Wayn-15086.json": {
+      "locale": "en",
+      "title": "Utherydes Wayn",
+      "revision": 15086,
+      "revisionDate": "2016-03-27T11:21:13Z",
+      "url": "https://iceandfire.fandom.com/wiki/Utherydes_Wayn",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15086",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15086",
+      "contentSha256": "5c3d29a9310561daed2924a4aa08317a45f312f7354591abed2ef1f622f0f170"
+    },
+    "iaf-en-Robin_Ryger-15091.json": {
+      "locale": "en",
+      "title": "Robin Ryger",
+      "revision": 15091,
+      "revisionDate": "2016-03-27T13:15:53Z",
+      "url": "https://iceandfire.fandom.com/wiki/Robin_Ryger",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15091",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15091",
+      "contentSha256": "fd4a712d0f4bfa2fcc8a5e99bc4115e475bbc853a58cdba3ac1db3bb0658326e"
+    },
+    "iaf-en-Desmond_Grell-15089.json": {
+      "locale": "en",
+      "title": "Desmond Grell",
+      "revision": 15089,
+      "revisionDate": "2016-03-27T12:36:15Z",
+      "url": "https://iceandfire.fandom.com/wiki/Desmond_Grell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=15089",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=15089",
+      "contentSha256": "e56c5ea74542dcbe45dd859397b6c26f44499350e1e34bc6da5955676b7f2696"
+    },
+    "iaf-en-Arya_Stark-26492.json": {
+      "locale": "en",
+      "title": "Arya Stark",
+      "revision": 26492,
+      "revisionDate": "2023-06-28T14:26:27Z",
+      "url": "https://iceandfire.fandom.com/wiki/Arya_Stark",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26492",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26492",
+      "contentSha256": "212859107fcbc93769ad8207b1ef018bc68020e4f7017edf36e55fef9dfd099e"
+    },
+    "hxh-it-Associazione_Hunter-153445509.json": {
+      "locale": "it",
+      "title": "Associazione Hunter",
+      "revision": 153445509,
+      "revisionDate": "2026-11-19T18:44:22Z",
+      "url": "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153445509",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153445509",
+      "contentSha256": "22c279780be3406eb199f89c7c602aaf9957ab148ed570384ac303d78dd3a51f"
+    },
+    "hxh-it-Formichimere-153421611.json": {
+      "locale": "it",
+      "title": "Formichimere",
+      "revision": 153421611,
+      "revisionDate": "2026-11-18T06:46:03Z",
+      "url": "https://it.wikipedia.org/wiki/Formichimere",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153421611",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153421611",
+      "contentSha256": "529af73eea2da3354e1d2bf8b17e5f05a14e0c83b34ed27018cd494ef51cdf5c"
+    },
+    "hxh-it-Personaggi_di_Hunter_×_Hunter-153445438.json": {
+      "locale": "it",
+      "title": "Personaggi di Hunter × Hunter",
+      "revision": 153445438,
+      "revisionDate": "2026-11-19T18:39:41Z",
+      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153445438",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153445438",
+      "contentSha256": "77bf562abba012e73d27ebe7468ee1f0b7c02136cf2ccc81e596eacf3ddd41a1"
+    },
+    "hxh-it-Famiglia_Zoldick-153390427.json": {
+      "locale": "it",
+      "title": "Famiglia Zoldick",
+      "revision": 153390427,
+      "revisionDate": "2026-11-16T09:44:09Z",
+      "url": "https://it.wikipedia.org/wiki/Famiglia_Zoldick",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153390427",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153390427",
+      "contentSha256": "40312550bca3adbf72750fdaaca50072f46fc5e8b2f5a5741bb95be08b0c5314"
+    },
+    "hxh-it-Famiglia_Zoldick-153355822.json": {
+      "locale": "it",
+      "title": "Famiglia Zoldick",
+      "revision": 153355822,
+      "revisionDate": "2026-11-13T20:12:49Z",
+      "url": "https://it.wikipedia.org/wiki/Famiglia_Zoldick",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153355822",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153355822",
+      "contentSha256": "dd95bf6fba2a278a80d686ae70cdf4f1b30b6fe999f9d03a77459339a7a31cc1"
+    },
+    "hxh-it-Associazione_Hunter-153389144.json": {
+      "locale": "it",
+      "title": "Associazione Hunter",
+      "revision": 153389144,
+      "revisionDate": "2026-11-16T07:31:16Z",
+      "url": "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153389144",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153389144",
+      "contentSha256": "6d08a34b8fea05f6d33c598af631996f77252864a4abe03a1861082fe0bd7d7c"
+    },
+    "hxh-it-Personaggi_di_Hunter_×_Hunter-153397064.json": {
+      "locale": "it",
+      "title": "Personaggi di Hunter × Hunter",
+      "revision": 153397064,
+      "revisionDate": "2026-11-16T14:51:08Z",
+      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153397064",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153397064",
+      "contentSha256": "57559301d8dc190c262b081056bf9e7c07bbd41eaf544c8bf765e9b5cddff208"
+    },
+    "got-en-Stannis_Baratheon-745076.json": {
+      "locale": "en",
+      "title": "Stannis Baratheon",
+      "revision": 745076,
+      "revisionDate": "2026-07-27T09:49:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stannis_Baratheon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=745076",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=745076",
+      "contentSha256": "d3f5d952c6b646046ef5bc5364a235a83b251c8fb537618b9f21f31b0492948e"
+    },
+    "got-en-Melisandre-728276.json": {
+      "locale": "en",
+      "title": "Melisandre",
+      "revision": 728276,
+      "revisionDate": "2026-02-05T07:16:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Melisandre",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728276",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728276",
+      "contentSha256": "a47afb455a4d19822f1a7853bf064b7261ea055a0dd940ff1de8770a2a8be900"
+    },
+    "got-en-Davos_Seaworth-736903.json": {
+      "locale": "en",
+      "title": "Davos Seaworth",
+      "revision": 736903,
+      "revisionDate": "2026-06-16T10:32:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Davos_Seaworth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736903",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736903",
+      "contentSha256": "18854ae47a746feffe21b17cdc684ab4a829f881ad27b7dfdaf2cfb556ccdc83"
+    },
+    "got-en-Cressen-736923.json": {
+      "locale": "en",
+      "title": "Cressen",
+      "revision": 736923,
+      "revisionDate": "2026-06-16T11:31:40Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Cressen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=736923",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=736923",
+      "contentSha256": "6d57f30ad2beb6eeb9f42e7fea71eacf220d88dc06b3e227016521df5596a1de"
+    },
+    "got-en-Matthos_Seaworth-728423.json": {
+      "locale": "en",
+      "title": "Matthos Seaworth",
+      "revision": 728423,
+      "revisionDate": "2026-02-05T08:38:51Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Matthos_Seaworth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728423",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728423",
+      "contentSha256": "16b16cc00a88805192ae270607c525a2fd28d31c65b6e9046b7b3db3488fc5f3"
+    },
+    "got-en-Salladhor_Saan-728409.json": {
+      "locale": "en",
+      "title": "Salladhor Saan",
+      "revision": 728409,
+      "revisionDate": "2026-02-05T08:35:43Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Salladhor_Saan",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728409",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728409",
+      "contentSha256": "4cc21bf7aec7e9d3b144ef5529319b180bfbb0460588d938eac994a71324daae"
+    },
+    "got-en-Brienne_of_Tarth-748929.json": {
+      "locale": "en",
+      "title": "Brienne of Tarth",
+      "revision": 748929,
+      "revisionDate": "2026-10-01T04:46:20Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Brienne_of_Tarth",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748929",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748929",
+      "contentSha256": "2b4b5db3e12274bc8fca023bd4fb2be541ef6845772317890607271f2c97b289"
+    },
+    "got-en-Margaery_Tyrell-749409.json": {
+      "locale": "en",
+      "title": "Margaery Tyrell",
+      "revision": 749409,
+      "revisionDate": "2026-11-15T13:35:46Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Margaery_Tyrell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749409",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749409",
+      "contentSha256": "78ad7ff6df89debbf87f78b55ac1caaddfb62ae4aa0ee15fccd2de24e28e36f9"
+    },
+    "got-en-Selyse_Baratheon-719683.json": {
+      "locale": "en",
+      "title": "Selyse Baratheon",
+      "revision": 719683,
+      "revisionDate": "2026-01-05T07:45:21Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Selyse_Baratheon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=719683",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=719683",
+      "contentSha256": "85f9ffc2ef7494789331622cd06ef5a3c2da870fbeb60d5813b9e4d18aa5eb24"
+    },
+    "got-en-Shireen_Baratheon-734920.json": {
+      "locale": "en",
+      "title": "Shireen Baratheon",
+      "revision": 734920,
+      "revisionDate": "2026-05-12T02:23:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Shireen_Baratheon",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=734920",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=734920",
+      "contentSha256": "3cf2e6474d9367d81b12a3c2c56f1a7b74696997ee90c9513903875280191747"
+    },
+    "got-en-Imry_Florent-728060.json": {
+      "locale": "en",
+      "title": "Imry Florent",
+      "revision": 728060,
+      "revisionDate": "2026-02-05T04:58:03Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Imry_Florent",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728060",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728060",
+      "contentSha256": "50738958d7db0f5ecc0e65dc2b88a178d17d4a799fd295fbd3716cd17ff4280b"
+    },
+    "got-en-Mace_Tyrell-728509.json": {
+      "locale": "en",
+      "title": "Mace Tyrell",
+      "revision": 728509,
+      "revisionDate": "2026-02-05T08:58:22Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Mace_Tyrell",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728509",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728509",
+      "contentSha256": "47df1f4a1a71244eef32980719b245c0a392d153528f8be1f7e27cd0f46755b9"
+    },
+    "got-en-Robar_Royce_(son_of_Yohn)-728405.json": {
+      "locale": "en",
+      "title": "Robar Royce (son of Yohn)",
+      "revision": 728405,
+      "revisionDate": "2026-02-05T08:34:35Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Robar_Royce_%28son_of_Yohn%29",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728405",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728405",
+      "contentSha256": "075ff7b97dd39c404c4b773032d2d73c5f08eef868f6f125301d912978f80164"
+    },
+    "got-en-Emmon_Cuy-732145.json": {
+      "locale": "en",
+      "title": "Emmon Cuy",
+      "revision": 732145,
+      "revisionDate": "2026-02-25T07:24:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Emmon_Cuy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732145",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732145",
+      "contentSha256": "632f2678838c74d0bb9263171ed83322cc8f12c8f4b7eb4f43e1bad9f9b6734f"
+    },
+    "got-en-Colen_of_Greenpools-728006.json": {
+      "locale": "en",
+      "title": "Colen of Greenpools",
+      "revision": 728006,
+      "revisionDate": "2026-02-05T04:46:27Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Colen_of_Greenpools",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728006",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728006",
+      "contentSha256": "576ed30de6216fe73950ca9a8a0762d847ac4978f182e73b6bd47572cac8b4d0"
+    },
+    "got-en-Randyll_Tarly-731311.json": {
+      "locale": "en",
+      "title": "Randyll Tarly",
+      "revision": 731311,
+      "revisionDate": "2026-02-22T16:58:58Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Randyll_Tarly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=731311",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=731311",
+      "contentSha256": "50979879960495cf2126f160e00dba1b4f15d7f158ba1e85e461e06051bd666e"
+    },
+    "iaf-en-Prologue_-_A_Clash_of_Kings-23175.json": {
+      "locale": "en",
+      "title": "Prologue - A Clash of Kings",
+      "revision": 23175,
+      "revisionDate": "2019-05-09T11:09:30Z",
+      "url": "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23175",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23175",
+      "contentSha256": "e9bfbd10fe85ea99e705f7104252efe38387f1936a799dd1666c1dbe55a9efa0"
+    },
+    "iaf-en-Stannis_Baratheon-25119.json": {
+      "locale": "en",
+      "title": "Stannis Baratheon",
+      "revision": 25119,
+      "revisionDate": "2022-02-06T14:51:08Z",
+      "url": "https://iceandfire.fandom.com/wiki/Stannis_Baratheon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25119",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25119",
+      "contentSha256": "ca00fb83261957c3aed5a25f9717ff5d823231093c1c905921c415b9cdb9c585"
+    },
+    "iaf-en-Melisandre-26257.json": {
+      "locale": "en",
+      "title": "Melisandre",
+      "revision": 26257,
+      "revisionDate": "2022-12-30T09:57:12Z",
+      "url": "https://iceandfire.fandom.com/wiki/Melisandre",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26257",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26257",
+      "contentSha256": "41a1b2e80735fa96426aee360786e6dacdbfc225f85f47b8f81d9790a81c5f4c"
+    },
+    "iaf-en-Davos_Seaworth-26618.json": {
+      "locale": "en",
+      "title": "Davos Seaworth",
+      "revision": 26618,
+      "revisionDate": "2024-04-15T15:15:23Z",
+      "url": "https://iceandfire.fandom.com/wiki/Davos_Seaworth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26618",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26618",
+      "contentSha256": "90e71dbc0d88d7313b6bcf1b9f1fcc138bd2dad5318463e473e7436f7139dde5"
+    },
+    "iaf-en-Cressen-25047.json": {
+      "locale": "en",
+      "title": "Cressen",
+      "revision": 25047,
+      "revisionDate": "2021-09-07T10:04:34Z",
+      "url": "https://iceandfire.fandom.com/wiki/Cressen",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25047",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25047",
+      "contentSha256": "4425cb5df337963152984630294ba628b404b831db8966814a4025032a236637"
+    },
+    "iaf-en-Salladhor_Saan-27043.json": {
+      "locale": "en",
+      "title": "Salladhor Saan",
+      "revision": 27043,
+      "revisionDate": "2025-01-28T09:46:35Z",
+      "url": "https://iceandfire.fandom.com/wiki/Salladhor_Saan",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27043",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27043",
+      "contentSha256": "377a182e97a2190a5426305cd28b87c1ead44b448a219bae7ea23b9b6f2bd100"
+    },
+    "iaf-en-Brienne_Tarth-25252.json": {
+      "locale": "en",
+      "title": "Brienne Tarth",
+      "revision": 25252,
+      "revisionDate": "2022-06-01T03:27:27Z",
+      "url": "https://iceandfire.fandom.com/wiki/Brienne_Tarth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25252",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25252",
+      "contentSha256": "513640c52cd6c4a469e93b7941b8c84cbd8cf811eedb69da225509122f1b64b4"
+    },
+    "iaf-en-Margaery_Tyrell-26234.json": {
+      "locale": "en",
+      "title": "Margaery Tyrell",
+      "revision": 26234,
+      "revisionDate": "2022-11-23T00:03:39Z",
+      "url": "https://iceandfire.fandom.com/wiki/Margaery_Tyrell",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26234",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26234",
+      "contentSha256": "7761bc688cd5df0e9aef20cb70df511d89c2ea5fab4cef5a3c960a2c7dc914b1"
+    },
+    "iaf-en-Selyse_Florent-23324.json": {
+      "locale": "en",
+      "title": "Selyse Florent",
+      "revision": 23324,
+      "revisionDate": "2019-05-27T01:57:30Z",
+      "url": "https://iceandfire.fandom.com/wiki/Selyse_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23324",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23324",
+      "contentSha256": "b4a573b86dfc58579bd241d2d444aa8ccd1f6e717d258a4753e257064be486ff"
+    },
+    "iaf-en-Shireen_Baratheon-27446.json": {
+      "locale": "en",
+      "title": "Shireen Baratheon",
+      "revision": 27446,
+      "revisionDate": "2025-05-19T03:53:43Z",
+      "url": "https://iceandfire.fandom.com/wiki/Shireen_Baratheon",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27446",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27446",
+      "contentSha256": "96ec985eb1fb50c627ba5fc77fb72c2ce34f0c27f5cf04f6eacdeac725939727"
+    },
+    "iaf-en-Imry_Florent-18054.json": {
+      "locale": "en",
+      "title": "Imry Florent",
+      "revision": 18054,
+      "revisionDate": "2017-01-20T05:21:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Imry_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=18054",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=18054",
+      "contentSha256": "db37b27eb831fcbfc2f594ba18f3b61f7b9ab05fb619c4d271a03d0d224ca9a6"
+    },
+    "iaf-en-Patchface-25927.json": {
+      "locale": "en",
+      "title": "Patchface",
+      "revision": 25927,
+      "revisionDate": "2022-09-24T22:39:22Z",
+      "url": "https://iceandfire.fandom.com/wiki/Patchface",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=25927",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=25927",
+      "contentSha256": "0da2dcf0d0e334830c374d2aa7fe7df61b8fa9bfb0c3b18513d5e82fb6856ada"
+    },
+    "iaf-en-Cortnay_Penrose-27501.json": {
+      "locale": "en",
+      "title": "Cortnay Penrose",
+      "revision": 27501,
+      "revisionDate": "2026-01-09T03:34:24Z",
+      "url": "https://iceandfire.fandom.com/wiki/Cortnay_Penrose",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27501",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27501",
+      "contentSha256": "64f321071f81c5e85b2ffd0e8045007dffe22abf33bb70190027f637183c9fa7"
+    },
+    "iaf-en-Randyll_Tarly-27053.json": {
+      "locale": "en",
+      "title": "Randyll Tarly",
+      "revision": 27053,
+      "revisionDate": "2025-01-28T09:57:03Z",
+      "url": "https://iceandfire.fandom.com/wiki/Randyll_Tarly",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27053",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27053",
+      "contentSha256": "9f7faa0600b41e8e0d2240b88943f7c1a421359a5925795364a9024870870406"
+    },
+    "iaf-en-Devan_Seaworth-7408.json": {
+      "locale": "en",
+      "title": "Devan Seaworth",
+      "revision": 7408,
+      "revisionDate": "2013-01-13T05:21:45Z",
+      "url": "https://iceandfire.fandom.com/wiki/Devan_Seaworth",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=7408",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=7408",
+      "contentSha256": "5e8b1d57539cb5245b8e882139d41a7b874f8880046f1646f0e6a35d58d5750b"
+    },
+    "iaf-en-Axell_Florent-18066.json": {
+      "locale": "en",
+      "title": "Axell Florent",
+      "revision": 18066,
+      "revisionDate": "2017-01-22T03:43:07Z",
+      "url": "https://iceandfire.fandom.com/wiki/Axell_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=18066",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=18066",
+      "contentSha256": "a0755d9bea841f73dc84b98241e090008cfe538840578b49ae39f776b48bf95a"
+    },
+    "iaf-en-Alester_Florent-21862.json": {
+      "locale": "en",
+      "title": "Alester Florent",
+      "revision": 21862,
+      "revisionDate": "2018-03-15T16:28:17Z",
+      "url": "https://iceandfire.fandom.com/wiki/Alester_Florent",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21862",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21862",
+      "contentSha256": "ae6c72e38368de429cc29871b97db5067b6f04c32d765a180757b9ca24db6928"
+    },
+    "got-en-Kissed_by_Fire-740183.json": {
+      "locale": "en",
+      "title": "Kissed by Fire",
+      "revision": 740183,
+      "revisionDate": "2026-06-27T12:18:41Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740183",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740183",
+      "contentSha256": "81ff2925e37b59e83d1c0c7a2e4ccefe9818dbd6e043aeea1ad9ab31db25fb16"
+    },
+    "got-en-The_Lion_and_the_Rose-740191.json": {
+      "locale": "en",
+      "title": "The Lion and the Rose",
+      "revision": 740191,
+      "revisionDate": "2026-06-27T12:23:02Z",
+      "url": "https://gameofthrones.fandom.com/wiki/The_Lion_and_the_Rose",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=740191",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=740191",
+      "contentSha256": "e56b00d25cf1ec2524baa3f58f2753d22177d78a8ff3930f670d8d853c61abfe"
+    },
+    "got-en-Balon_Greyjoy-728154.json": {
+      "locale": "en",
+      "title": "Balon Greyjoy",
+      "revision": 728154,
+      "revisionDate": "2026-02-05T05:38:07Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Balon_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728154",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728154",
+      "contentSha256": "9b8ce276df3d3e485c37d72ad8b142f67bd94fc43faa3a61569fd31669dbf5ee"
+    },
+    "got-en-Yara_Greyjoy-732245.json": {
+      "locale": "en",
+      "title": "Yara Greyjoy",
+      "revision": 732245,
+      "revisionDate": "2026-02-25T23:55:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Yara_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=732245",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=732245",
+      "contentSha256": "e90d6a988d61beaf9d3a54602df208a092fe5849c5ff0058627a86ff3887c52d"
+    },
+    "got-en-Aeron_Greyjoy-728164.json": {
+      "locale": "en",
+      "title": "Aeron Greyjoy",
+      "revision": 728164,
+      "revisionDate": "2026-02-05T05:40:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Aeron_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728164",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728164",
+      "contentSha256": "e98ef17b4c7613fde355885ec890e1a60cae1076a39603b7d7a920b81a5b1784"
+    },
+    "got-en-Victarion_Greyjoy-741636.json": {
+      "locale": "en",
+      "title": "Victarion Greyjoy",
+      "revision": 741636,
+      "revisionDate": "2026-07-01T11:31:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Victarion_Greyjoy",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=741636",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=741636",
+      "contentSha256": "bfc96b75b79f86ee6b0e75dc097ef8a9d156877ce63d3ac9c684061e303c880a"
+    },
+    "got-en-Dagmer-728016.json": {
+      "locale": "en",
+      "title": "Dagmer",
+      "revision": 728016,
+      "revisionDate": "2026-02-05T04:48:26Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Dagmer",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728016",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728016",
+      "contentSha256": "02fca41660e0ffa061f68d0cdb88dcb37b228abc19d5a6ac71c4ef4eaa508d7a"
+    },
+    "got-en-Black_Lorren-727965.json": {
+      "locale": "en",
+      "title": "Black Lorren",
+      "revision": 727965,
+      "revisionDate": "2026-02-05T04:32:49Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Black_Lorren",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=727965",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=727965",
+      "contentSha256": "3122bf79927ce48378ac2730a2828ac7f0779ea49c6e0043a52df23c78092962"
+    },
+    "got-en-Wex_Pyke-748784.json": {
+      "locale": "en",
+      "title": "Wex Pyke",
+      "revision": 748784,
+      "revisionDate": "2026-09-19T18:47:05Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Wex_Pyke",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=748784",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=748784",
+      "contentSha256": "1dbcdfe90de24046fc49cf9254af60e8186824307a0b0d7a9e05211b48c8e6af"
+    },
+    "got-en-Farlen-728055.json": {
+      "locale": "en",
+      "title": "Farlen",
+      "revision": 728055,
+      "revisionDate": "2026-02-05T04:57:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Farlen",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728055",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728055",
+      "contentSha256": "b34b18c4a256b0b116c9465fa71ac7a6db7bdc6c91bec945492e8472a8765451"
+    },
+    "got-en-Meera_Reed-731981.json": {
+      "locale": "en",
+      "title": "Meera Reed",
+      "revision": 731981,
+      "revisionDate": "2026-02-24T02:47:19Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Meera_Reed",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=731981",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=731981",
+      "contentSha256": "4e5d936911ee81e2dc9e37547869bed3a820b256745e44a2e14e461997295f51"
+    },
+    "got-en-Jojen_Reed-728390.json": {
+      "locale": "en",
+      "title": "Jojen Reed",
+      "revision": 728390,
+      "revisionDate": "2026-02-05T08:32:17Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Jojen_Reed",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728390",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728390",
+      "contentSha256": "21fcfd128e2ad5ed0a6372762a9f322b7d5b5c089cd3a1341161dc42dbd42532"
+    },
+    "got-en-Ramsay_Bolton-749437.json": {
+      "locale": "en",
+      "title": "Ramsay Bolton",
+      "revision": 749437,
+      "revisionDate": "2026-11-21T10:32:17Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Ramsay_Bolton",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749437",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749437",
+      "contentSha256": "59063795de13b58698be8b7f47228742fe19378629d278a647d0e69a978c5893"
+    },
+    "got-en-Wyman_Manderly-739879.json": {
+      "locale": "en",
+      "title": "Wyman Manderly",
+      "revision": 739879,
+      "revisionDate": "2026-06-26T12:54:42Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Wyman_Manderly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=739879",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=739879",
+      "contentSha256": "27f1391eb142873e8e657d93dea9515fa315773fe60660ac6f6b439468bc5642"
+    },
+    "got-en-Eddison_Tollett-728493.json": {
+      "locale": "en",
+      "title": "Eddison Tollett",
+      "revision": 728493,
+      "revisionDate": "2026-02-05T08:55:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Eddison_Tollett",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728493",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728493",
+      "contentSha256": "89493119a288f7932d2cbe1b5055afc050e8741ffeb2cd78ae45f85d62f9428b"
+    },
+    "got-en-Craster-728011.json": {
+      "locale": "en",
+      "title": "Craster",
+      "revision": 728011,
+      "revisionDate": "2026-02-05T04:47:35Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Craster",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728011",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728011",
+      "contentSha256": "b1cbf64b4093ed00858038bf0238d94cfc3e8c34214598053ac3e97e592406d2"
+    },
+    "got-en-Gilly-728141.json": {
+      "locale": "en",
+      "title": "Gilly",
+      "revision": 728141,
+      "revisionDate": "2026-02-05T05:35:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Gilly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728141",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728141",
+      "contentSha256": "15160d3382b92b516142ce19d5eef44cb3b45416572d5e62ec4b237f196e571f"
+    },
+    "got-en-Qhorin-728368.json": {
+      "locale": "en",
+      "title": "Qhorin",
+      "revision": 728368,
+      "revisionDate": "2026-02-05T07:34:50Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Qhorin",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728368",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728368",
+      "contentSha256": "56215452d42d651499944a39a524989eb83c7290a0490383c39aa78aaae57770"
+    },
+    "got-en-Stonesnake-728458.json": {
+      "locale": "en",
+      "title": "Stonesnake",
+      "revision": 728458,
+      "revisionDate": "2026-02-05T08:49:01Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stonesnake",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728458",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728458",
+      "contentSha256": "c771ab48520efb17fdb39f0b16dcf7887565cc287ab9b3ee087dcc3a9bf5c9d8"
+    },
+    "got-en-Ygritte-749215.json": {
+      "locale": "en",
+      "title": "Ygritte",
+      "revision": 749215,
+      "revisionDate": "2026-10-28T04:35:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Ygritte",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749215",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749215",
+      "contentSha256": "5e3ece2bb0d24a2c73abe2d445006f57a95d339e6ba399a3d353f3e0b8572720"
+    },
+    "got-en-Lord_of_Bones-749203.json": {
+      "locale": "en",
+      "title": "Lord of Bones",
+      "revision": 749203,
+      "revisionDate": "2026-10-27T18:07:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lord_of_Bones",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749203",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749203",
+      "contentSha256": "4f074dc71a9fbbd8a20e94bcba7b5e88897beabbbdb0307828d7b2a48a6af565"
+    },
+    "iaf-en-Eddison_Tollett-21342.json": {
+      "locale": "en",
+      "title": "Eddison Tollett",
+      "revision": 21342,
+      "revisionDate": "2018-02-21T18:53:25Z",
+      "url": "https://iceandfire.fandom.com/wiki/Eddison_Tollett",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21342",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21342",
+      "contentSha256": "7dbd01f0d5b94cfe8b82110cd877d7cf64d926699df749218f43a9699c9f0a24"
+    },
+    "iaf-en-Gilly-22219.json": {
+      "locale": "en",
+      "title": "Gilly",
+      "revision": 22219,
+      "revisionDate": "2018-08-16T08:25:46Z",
+      "url": "https://iceandfire.fandom.com/wiki/Gilly",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22219",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22219",
+      "contentSha256": "9290c7578e1c16f553eea21c95ff283ca39ecc26adbd6b928112421d3da542b8"
+    },
+    "iaf-en-Qhorin-27261.json": {
+      "locale": "en",
+      "title": "Qhorin",
+      "revision": 27261,
+      "revisionDate": "2025-02-13T12:36:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Qhorin",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27261",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27261",
+      "contentSha256": "8036e49c02e704eb05583e48b382c5d03e54af528301ff98276acb9b1db014ad"
+    },
+    "iaf-en-Ygritte-23787.json": {
+      "locale": "en",
+      "title": "Ygritte",
+      "revision": 23787,
+      "revisionDate": "2020-05-26T19:27:48Z",
+      "url": "https://iceandfire.fandom.com/wiki/Ygritte",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23787",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23787",
+      "contentSha256": "187313b2e5d5e89fee95655680a61862cd5cd48cbc3a134a89d9d89c7d071284"
+    },
+    "iaf-en-Thoren_Smallwood-23858.json": {
+      "locale": "en",
+      "title": "Thoren Smallwood",
+      "revision": 23858,
+      "revisionDate": "2020-06-24T13:18:41Z",
+      "url": "https://iceandfire.fandom.com/wiki/Thoren_Smallwood",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23858",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23858",
+      "contentSha256": "fc1deb8b4df440541bbed5f19e414ee58e40315027df3c294f742d8812151d68"
+    },
     "got-en-Kovarro-689005.json": {
       "locale": "en",
       "title": "Kovarro",
@@ -35861,236 +36891,6 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=26571",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26571",
       "contentSha256": "39b848a2479ec42807b8935ef063675f09d4b5141d3117655b53b1d4e66c5b77"
-    },
-    "hxh-en-Hunter_Exam_arc-423052.json": {
-      "locale": "en",
-      "title": "Hunter Exam arc",
-      "revision": 423052,
-      "revisionDate": "2026-07-26T14:51:05Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Hunter_Exam_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423052",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423052",
-      "contentSha256": "f9909fb70dfb48130eb7075f5a71241f5c82e01f01fe0f7f9000633ca6108ea9"
-    },
-    "hxh-en-Whale_Island-421735.json": {
-      "locale": "en",
-      "title": "Whale Island",
-      "revision": 421735,
-      "revisionDate": "2026-07-07T13:51:29Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Whale_Island",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421735",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421735",
-      "contentSha256": "c3638e47852f07afc1645d3bcea99a860f18888cbb243446dac6e73ead3c865d"
-    },
-    "hxh-en-Heavens_Arena_arc-423050.json": {
-      "locale": "en",
-      "title": "Heavens Arena arc",
-      "revision": 423050,
-      "revisionDate": "2026-07-26T14:49:19Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423050",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423050",
-      "contentSha256": "fd2654980b734d78b5c326317368a61e88087515372ce67ca4bf8bce6470aa5e"
-    },
-    "hxh-en-Chapter_44-416150.json": {
-      "locale": "en",
-      "title": "Chapter 44",
-      "revision": 416150,
-      "revisionDate": "2025-08-31T20:21:58Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Chapter_44",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=416150",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=416150",
-      "contentSha256": "7de2f9c21c1b9180bceec3ad83c41f25defc20551a38f314502d0834670ea431"
-    },
-    "hxh-en-Heavens_Arena-423051.json": {
-      "locale": "en",
-      "title": "Heavens Arena",
-      "revision": 423051,
-      "revisionDate": "2026-07-26T14:49:29Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Heavens_Arena",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423051",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423051",
-      "contentSha256": "a031b5af93117d18c4daa124d372bbf164fc01e4a5f9588b80fa58fd5edc16bb"
-    },
-    "hxh-en-Chimera_Ant_arc-423048.json": {
-      "locale": "en",
-      "title": "Chimera Ant arc",
-      "revision": 423048,
-      "revisionDate": "2026-07-26T14:38:07Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423048",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423048",
-      "contentSha256": "e6e1cf7d55137db5b56475e3562858fd557316d589910a38b04b7b9bb1c1b19b"
-    },
-    "hxh-en-Succession_Contest_arc-425681.json": {
-      "locale": "en",
-      "title": "Succession Contest arc",
-      "revision": 425681,
-      "revisionDate": "2026-09-30T07:20:14Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Succession_Contest_arc",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425681",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425681",
-      "contentSha256": "37cbba7ca75e13bfcc10d98637529b934cd8a5153c57743984e73d16959fa4ba"
-    },
-    "hxh-en-Mandai_City-421700.json": {
-      "locale": "en",
-      "title": "Mandai City",
-      "revision": 421700,
-      "revisionDate": "2026-07-07T12:31:31Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Mandai_City",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421700",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421700",
-      "contentSha256": "5ca6e81f2d4d87d461e7529b28b05c00e4e9f5775bc22f1a965e47bbdff7a653"
-    },
-    "hxh-en-Template:Zodiacs_Gallery-387229.json": {
-      "locale": "en",
-      "title": "Template:Zodiacs Gallery",
-      "revision": 387229,
-      "revisionDate": "2024-03-17T04:48:33Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Template:Zodiacs_Gallery",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=387229",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=387229",
-      "contentSha256": "e183cd28a03bc08d4ca57dfc8e7963d4c475bf2fa10ea19ed3f0920cabdfffda"
-    },
-    "hxh-en-Zoldyck_Family-425887.json": {
-      "locale": "en",
-      "title": "Zoldyck Family",
-      "revision": 425887,
-      "revisionDate": "2026-11-04T21:03:37Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Zoldyck_Family",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425887",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425887",
-      "contentSha256": "d6772f1f9a48c84a3abe39f8ce9aca2548c87fc891eedbccda167817e4a905e2"
-    },
-    "hxh-en-Squadron_Leaders-423029.json": {
-      "locale": "en",
-      "title": "Squadron Leaders",
-      "revision": 423029,
-      "revisionDate": "2026-07-26T13:51:29Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Squadron_Leaders",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423029",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423029",
-      "contentSha256": "db8a8eace2f6d8db4c83ac7ae8972cf15ca5e531e0b88fc839823e1a1a025173"
-    },
-    "hxh-en-Royal_Guards-423026.json": {
-      "locale": "en",
-      "title": "Royal Guards",
-      "revision": 423026,
-      "revisionDate": "2026-07-26T13:43:45Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Royal_Guards",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423026",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423026",
-      "contentSha256": "1926fb0ad4ac728f0f7d1b8286914f55a40b14005935af2e40577e8d5ca8ebcc"
-    },
-    "hxh-en-Ten_Dons-423032.json": {
-      "locale": "en",
-      "title": "Ten Dons",
-      "revision": 423032,
-      "revisionDate": "2026-07-26T13:58:38Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Ten_Dons",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423032",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423032",
-      "contentSha256": "c78b4afc370dfe99ad518e0142eef1fac30215674a2138282d8f74ca8c2e2685"
-    },
-    "hxh-en-Mafia_Community-423009.json": {
-      "locale": "en",
-      "title": "Mafia Community",
-      "revision": 423009,
-      "revisionDate": "2026-07-26T12:51:42Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Mafia_Community",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423009",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423009",
-      "contentSha256": "dccab5d7b093db516fc21185bc65af180f54ae87e48ffd8fbc5d90fa02212015"
-    },
-    "hxh-en-Phantom_Troupe-426123.json": {
-      "locale": "en",
-      "title": "Phantom Troupe",
-      "revision": 426123,
-      "revisionDate": "2026-11-21T22:21:03Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Phantom_Troupe",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426123",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426123",
-      "contentSha256": "591fbb46925c4e1f598426469f35888c9c0340cfb640356f1cfc3dcb079dfcf0"
-    },
-    "hxh-en-Template:Phantom_Troupe_Gallery-426125.json": {
-      "locale": "en",
-      "title": "Template:Phantom Troupe Gallery",
-      "revision": 426125,
-      "revisionDate": "2026-11-21T22:23:37Z",
-      "url": "https://hunterxhunter.fandom.com/wiki/Template:Phantom_Troupe_Gallery",
-      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=426125",
-      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=426125",
-      "contentSha256": "7795fc04713d81fc6bbe564381ff85760e1e9ba4db483bdf17c50130fc2b7264"
-    },
-    "hxh-it-Associazione_Hunter-153445509.json": {
-      "locale": "it",
-      "title": "Associazione Hunter",
-      "revision": 153445509,
-      "revisionDate": "2026-11-19T18:44:22Z",
-      "url": "https://it.wikipedia.org/wiki/Associazione_Hunter",
-      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153445509",
-      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153445509",
-      "contentSha256": "22c279780be3406eb199f89c7c602aaf9957ab148ed570384ac303d78dd3a51f"
-    },
-    "hxh-it-Formichimere-153421611.json": {
-      "locale": "it",
-      "title": "Formichimere",
-      "revision": 153421611,
-      "revisionDate": "2026-11-18T06:46:03Z",
-      "url": "https://it.wikipedia.org/wiki/Formichimere",
-      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153421611",
-      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153421611",
-      "contentSha256": "529af73eea2da3354e1d2bf8b17e5f05a14e0c83b34ed27018cd494ef51cdf5c"
-    },
-    "hxh-it-Personaggi_di_Hunter_×_Hunter-153445438.json": {
-      "locale": "it",
-      "title": "Personaggi di Hunter × Hunter",
-      "revision": 153445438,
-      "revisionDate": "2026-11-19T18:39:41Z",
-      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
-      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153445438",
-      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153445438",
-      "contentSha256": "77bf562abba012e73d27ebe7468ee1f0b7c02136cf2ccc81e596eacf3ddd41a1"
-    },
-    "hxh-it-Famiglia_Zoldick-153390427.json": {
-      "locale": "it",
-      "title": "Famiglia Zoldick",
-      "revision": 153390427,
-      "revisionDate": "2026-11-16T09:44:09Z",
-      "url": "https://it.wikipedia.org/wiki/Famiglia_Zoldick",
-      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153390427",
-      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153390427",
-      "contentSha256": "40312550bca3adbf72750fdaaca50072f46fc5e8b2f5a5741bb95be08b0c5314"
-    },
-    "hxh-it-Famiglia_Zoldick-153355822.json": {
-      "locale": "it",
-      "title": "Famiglia Zoldick",
-      "revision": 153355822,
-      "revisionDate": "2026-11-13T20:12:49Z",
-      "url": "https://it.wikipedia.org/wiki/Famiglia_Zoldick",
-      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153355822",
-      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153355822",
-      "contentSha256": "dd95bf6fba2a278a80d686ae70cdf4f1b30b6fe999f9d03a77459339a7a31cc1"
-    },
-    "hxh-it-Associazione_Hunter-153389144.json": {
-      "locale": "it",
-      "title": "Associazione Hunter",
-      "revision": 153389144,
-      "revisionDate": "2026-11-16T07:31:16Z",
-      "url": "https://it.wikipedia.org/wiki/Associazione_Hunter",
-      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153389144",
-      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153389144",
-      "contentSha256": "6d08a34b8fea05f6d33c598af631996f77252864a4abe03a1861082fe0bd7d7c"
-    },
-    "hxh-it-Personaggi_di_Hunter_×_Hunter-153397064.json": {
-      "locale": "it",
-      "title": "Personaggi di Hunter × Hunter",
-      "revision": 153397064,
-      "revisionDate": "2026-11-16T14:51:08Z",
-      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
-      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153397064",
-      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153397064",
-      "contentSha256": "57559301d8dc190c262b081056bf9e7c07bbd41eaf544c8bf765e9b5cddff208"
     }
   }
 }

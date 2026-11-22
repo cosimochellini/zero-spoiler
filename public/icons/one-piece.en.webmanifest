@@ -1,0 +1,29 @@
+{
+  "id": "/one-piece/",
+  "name": "One Piece · Zero Spoiler",
+  "short_name": "One Piece",
+  "lang": "en",
+  "start_url": "/one-piece/en",
+  "scope": "/one-piece/",
+  "display": "standalone",
+  "background_color": "#101c28",
+  "theme_color": "#101c28",
+  "icons": [
+    {
+      "src": "/icons/one-piece-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/one-piece-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/one-piece-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
