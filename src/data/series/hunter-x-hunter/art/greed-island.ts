@@ -53,6 +53,65 @@ const RAZOR_AURA_BALL: Stroke[] = [
   { d: 'M10 54 L32 76 M6 82 L24 94 M28 36 L46 58', role: 'ambient' },
 ]
 
+/**
+ * The Blue Planet, Biscuit's gem: a completely spherical stone, its far side
+ * hatched. The bands stand for the light it reflects like a planet's moving
+ * atmosphere; the highlight is in tint. The glint is a convention.
+ */
+const BISCUIT_GEM: Stroke[] = [
+  { d: circle(80, 100, 36) },
+  { d: 'M52 80 Q68 62 96 66 Q70 70 58 90 Z', role: 'accent' },
+  { d: 'M45 104 C58 96 70 112 84 104 C96 97 106 102 116 98', role: 'soft' },
+  { d: 'M50 122 C62 116 74 126 88 120 C98 116 106 118 111 116', role: 'soft' },
+  { d: 'M98 69 Q124 100 98 131', role: 'soft' },
+  { d: 'M108 112 l6 -4 M103 123 l6 -4 M95 131 l6 -4', role: 'ambient' },
+  { d: 'M36 54 V68 M29 61 H43', role: 'soft' },
+]
+
+/**
+ * Magical Esthetician, chapter 171 / episode 72: one plain hand of Cookie,
+ * the masseuse Biscuit forms out of aura, with drops of her aura lotion as
+ * open lines. No figure and no face.
+ */
+const BISCUIT_COOKIE: Stroke[] = [
+  {
+    d: 'M126 14 V40 Q116 44 112 54 Q111 59 116 57 L125 50 V66 Q128 72 131 66 V70 Q134 76 137 70 V69 Q140 75 143 69 V66 Q146 71 149 65 V40 L152 14',
+  },
+  { d: 'M131 52 V66 M137 53 V69 M143 52 V68', role: 'soft' },
+  {
+    d: 'M128 84 Q125 90 128 92 Q131 90 128 84 M140 88 Q137 94 140 96 Q143 94 140 88 M134 102 Q131 108 134 110 Q137 108 134 102',
+    role: 'ambient',
+  },
+]
+
+/** The gem with Cookie beside it: her stage, and her look again after it. */
+const BISCUIT_WITH_COOKIE: Stroke[] = [
+  ...BISCUIT_GEM,
+  ...BISCUIT_COOKIE,
+  shadow(80, 152, 30),
+]
+
+/** Kosofftro's broad-brimmed hat, the arrow motifs on its crown in tint. */
+const KOSOFFTRO_HAT: Stroke[] = [
+  { d: ellipse(80, 132, 59, 17) },
+  { d: 'M21 132 V137 C42 159 118 159 139 137 V132', role: 'soft' },
+  { d: 'M44 130 L48 70 Q80 53 110 70 L116 130' },
+  { d: 'M48 70 Q80 87 110 70 M46 112 Q80 129 114 112', role: 'soft' },
+  { d: 'M44 130 Q80 148 116 130 M104 76 L110 124', role: 'soft' },
+  {
+    d: 'M59 86 V108 M53 101 L59 108 L65 103 M80 91 V114 M74 107 L80 114 L86 107 M99 86 V108 M93 103 L99 108 L105 101',
+    role: 'accent',
+  },
+  {
+    d: 'M112 84 l4 -2 M113 96 l5 -3 M115 108 l5 -3 M117 120 l5 -3',
+    role: 'ambient',
+  },
+  {
+    d: 'M30 135 l7 -3 M44 143 l7 -3 M60 148 l7 -3 M116 143 l7 -3',
+    role: 'ambient',
+  },
+]
+
 export const GREED_ISLAND_DRAWINGS = {
   // Jitonoda is named in chapter 129's news report, which neither anime
   // adapts. The set stands for the report: a deep cabinet in 3/4, its far
@@ -327,48 +386,61 @@ export const GREED_ISLAND_DRAWINGS = {
     { d: 'M88 164 L104 159', role: 'soft' },
     shadow(81, 186, 43),
   ],
-  // Tsezguerra's flight-style suit, chapter 121 / episode 59: the collar,
-  // front zip and pair of pockets, with the turned right side hatched.
+  // The upper half of Tsezguerra's Air Force-style combat suit, chapter
+  // 121 / episode 59, turned 3/4: the collar in tint, the zip and two chest
+  // pockets, the far shoulder and sleeve hatched as they turn away. The
+  // wiki names only the style; zip and pockets are a flight suit's usual.
   'tsezguerra': [
     {
-      d: 'M64 40 L42 52 L26 122 L42 128 L54 86 L52 144 L60 178 H78 L82 150 L86 178 H104 L112 144 L110 86 L122 128 L138 122 L122 52 L100 40',
+      d: 'M62 46 L34 58 Q22 64 20 80 L14 150 L32 154 L40 96 L42 168 H112 L114 100 L120 140 L134 136 L128 76 Q126 62 116 56 L100 46',
     },
-    { d: 'M64 40 Q82 30 100 40 L94 58 L82 50 L70 58 Z', role: 'accent' },
-    { d: 'M82 50 V144 M78 60 V130', role: 'soft' },
-    { d: 'M56 70 H72 V92 H54 M92 70 H108 L110 92 H92 Z', role: 'soft' },
-    { d: 'M56 76 H72 M92 76 H108', role: 'soft' },
-    { d: 'M54 110 L70 114 M94 114 L110 110', role: 'soft' },
-    { d: 'M52 138 H112 M62 144 H76 M88 144 H102', role: 'soft' },
-    { d: 'M28 114 L44 120 M120 120 L136 114', role: 'soft' },
-    { d: 'M64 156 V170 M96 156 V170', role: 'soft' },
     {
-      d: 'M111 94 l4 -3 M112 106 l5 -3 M112 118 l5 -3 M112 130 l5 -3',
+      d: 'M62 46 L56 66 L76 76 L82 58 M100 46 L106 64 L92 72 L82 58 M62 46 Q82 38 100 46',
+      role: 'accent',
+    },
+    { d: 'M86 70 V168 M82 76 H86 M82 90 H86', role: 'soft' },
+    { d: 'M48 88 H72 V114 H48 Z M48 94 H72', role: 'soft' },
+    { d: 'M96 88 H110 L109 112 H96 Z M96 94 H110', role: 'soft' },
+    { d: 'M16 140 L34 144 M120 132 L133 128', role: 'soft' },
+    { d: 'M40 96 Q41 84 38 72 M114 100 Q114 86 116 74', role: 'soft' },
+    {
+      d: 'M114 112 l5 -3 M114 124 l5 -3 M114 136 l5 -3 M114 148 l5 -3 M114 160 l5 -3',
       role: 'ambient',
     },
-    { d: 'M102 152 l5 -3 M100 164 l5 -3 M98 176 l5 -3', role: 'ambient' },
-    shadow(82, 188, 48),
+    { d: 'M122 92 l5 -3 M123 104 l5 -3 M124 116 l5 -3', role: 'ambient' },
+    { d: 'M42 150 Q78 156 112 150', role: 'soft' },
+    shadow(78, 184, 46),
   ],
-  // Jeitsari's seven game copies, entrusted to the auction in chapter 121.
-  // Plain cases keep the stack free of lettering, logos and later clothing.
+  // Jeitsari's seven Greed Island cartridges, entrusted to the auction in
+  // chapter 121, stacked a little askew so each shows its edge. The top one
+  // has its label recess in tint and its connector edge; both are a
+  // cartridge's usual shape, with no lettering or logo.
   'jeitsari': [
-    { d: 'M31 66 L82 36 L130 69 L79 100 Z', role: 'accent' },
-    { d: 'M31 66 V76 L79 110 L130 79 V69 M79 100 V110', role: 'soft' },
-    { d: 'M31 78 V88 L79 122 L130 91 V81', role: 'soft' },
-    { d: 'M31 90 V100 L79 134 L130 103 V93', role: 'soft' },
-    { d: 'M31 102 V112 L79 146 L130 115 V105', role: 'soft' },
-    { d: 'M31 114 V124 L79 158 L130 127 V117', role: 'soft' },
-    { d: 'M31 126 V136 L79 170 L130 139 V129', role: 'soft' },
-    { d: 'M31 138 V148 L79 182 L130 151 V141', role: 'soft' },
     {
-      d: 'M79 112 V120 M79 124 V132 M79 136 V144 M79 148 V156 M79 160 V168 M79 172 V180',
+      d: 'M36 80 L90 56 L128 74 L74 98 Z M36 80 V88 L74 106 L128 82 V74 M74 98 V106',
+    },
+    { d: 'M86.1 86.4 L116.8 72.7 L92.5 61.2 L61.7 74.8 Z', role: 'accent' },
+    {
+      d: 'M67.7 97 V102 M61.3 94 V99 M55 91 V96 M48.7 88 V93 M42.3 85 V90',
       role: 'soft',
     },
-    { d: 'M44 66 L82 44 L116 68 L79 90 Z', role: 'soft' },
     {
-      d: 'M103 88 l6 -4 M103 100 l6 -4 M103 112 l6 -4 M103 124 l6 -4 M103 136 l6 -4 M103 148 l6 -4 M103 160 l6 -4',
+      d: 'M128 78.5 L130.8 79.6 L128 81 M112.6 88.8 L78.1 106.4 L75.5 105.3 M53.2 96.2 L39.2 90.4 V98.4 M78.1 106.4 V114.4 M130.8 79.6 V87.6 M39.2 98.4 L78.1 114.4 L130.8 87.6 M33.9 94.4 L39.2 92.3 M124.5 90.8 L126.1 91.6 L110.7 97.8 M73.9 112.7 L71.3 113.7 L51.2 103.3 M39.2 97.1 L33.9 94.4 V102.4 M71.3 113.7 V121.7 M126.1 91.6 V99.6 M33.9 102.4 L71.3 121.7 L126.1 99.6',
+      role: 'soft',
+    },
+    {
+      d: 'M126.1 94.8 L129.9 96.4 L126.1 98.2 M109.8 106.2 L76.7 122.3 L73.4 120.8 M50.2 110.8 L38.1 105.6 V113.6 M76.7 122.3 V130.3 M129.9 96.4 V104.4 M38.1 113.6 L76.7 130.3 L129.9 104.4 M32.9 109.6 L38.1 107.6 M123.4 107.5 L125.1 108.4 L108.8 114.7 M72.7 128.5 L69.9 129.6 L49.2 118.4 M38.1 112.4 L32.9 109.6 V117.6 M69.9 129.6 V137.6 M125.1 108.4 V116.4 M32.9 117.6 L69.9 137.6 L125.1 116.4',
+      role: 'soft',
+    },
+    {
+      d: 'M125.1 111.5 L128.9 113.2 L125.1 115 M107.8 123 L75.4 138.1 L72.2 136.7 M48.2 125.9 L37.1 120.8 V128.8 M75.4 138.1 V146.1 M128.9 113.2 V121.2 M37.1 128.8 L75.4 146.1 L128.9 121.2 M34.9 126.4 L37.1 125.5 M125.5 122.8 L127.1 123.6 L102.3 133.6 M73.4 145.2 L72.3 145.7 L57.2 137.9 M37.1 127.5 L34.9 126.4 V134.4 M72.3 145.7 V153.7 M127.1 123.6 V131.6 M34.9 134.4 L72.3 153.7 L127.1 131.6',
+      role: 'soft',
+    },
+    {
+      d: 'M106.4 85.6 l3 4 M112.9 82.7 l3 4 M119.4 79.8 l3 4',
       role: 'ambient',
     },
-    shadow(80, 191, 53),
+    shadow(80, 176, 52),
   ],
   // The card Michael hands Killua in chapter 148, held out from the plain
   // sweater of his appearance. A blank card: no stripe, chip or lettering.
@@ -389,28 +461,10 @@ export const GREED_ISLAND_DRAWINGS = {
     { d: 'M12 168 l6 3 M18 156 l6 3 M24 144 l4 2', role: 'ambient' },
     { d: 'M36 160 Q30 170 34 182', role: 'soft' },
   ],
-  // Biscuit's sleeveless dress at her introduction, chapter 137 / episode
-  // 62. The skirt turns away on the right; no later form or Nen is shown.
-  'biscuit-krueger': [
-    {
-      d: 'M60 38 L69 38 Q80 50 91 38 H100 L108 70 L98 90 L116 154 Q80 172 42 154 L62 90 L52 70 Z',
-    },
-    { d: 'M60 38 Q54 58 62 70 M100 38 Q106 58 98 70', role: 'soft' },
-    { d: 'M62 90 Q80 98 98 90 L100 98 Q80 106 60 98 Z', role: 'soft' },
-    { d: 'M42 154 L44 164 Q82 180 122 162 L116 154', role: 'accent' },
-    { d: 'M100 98 Q113 124 122 162 M116 154 Q102 162 82 164', role: 'soft' },
-    {
-      d: 'M66 102 Q60 126 58 156 M80 106 V162 M94 104 Q98 130 102 160',
-      role: 'soft',
-    },
-    { d: 'M68 54 Q80 60 92 54 M68 76 Q80 82 92 76', role: 'soft' },
-    {
-      d: 'M108 126 l5 -3 M112 138 l5 -3 M116 150 l5 -3 M108 164 l7 -4',
-      role: 'ambient',
-    },
-    { d: 'M63 114 l4 -4 M60 130 l4 -4 M57 146 l4 -4', role: 'ambient' },
-    shadow(82, 186, 48),
-  ],
+  // The Blue Planet, the gem Biscuit tells Gon in chapter 138 / episode 63
+  // she came to Greed Island for, and turns from its card into the stone in
+  // chapter 185 / episode 75. No Nen and no later form are shown.
+  'biscuit-krueger': [...BISCUIT_GEM, shadow(80, 152, 30)],
   // Binolt's scissors from chapter 138 / episode 63: open steel blades,
   // rounded grips and a narrow far edge. No hair or Nen is drawn.
   'binolt': [
@@ -433,36 +487,30 @@ export const GREED_ISLAND_DRAWINGS = {
   // Kosofftro's broad-brimmed hat, described with arrow-patterned clothes
   // in chapter 132. The original arrow marks carry the hat's accent.
   'kosofftro': [
-    { d: ellipse(80, 132, 59, 17) },
-    { d: 'M21 132 V137 C42 159 118 159 139 137 V132', role: 'soft' },
-    { d: 'M44 130 L48 70 Q80 53 110 70 L116 130' },
-    { d: 'M48 70 Q80 87 110 70 M46 112 Q80 129 114 112', role: 'soft' },
-    { d: 'M44 130 Q80 148 116 130 M104 76 L110 124', role: 'soft' },
-    {
-      d: 'M59 86 V108 M53 101 L59 108 L65 103 M80 91 V114 M74 107 L80 114 L86 107 M99 86 V108 M93 103 L99 108 L105 101',
-      role: 'accent',
-    },
-    {
-      d: 'M112 84 l4 -2 M113 96 l5 -3 M115 108 l5 -3 M117 120 l5 -3',
-      role: 'ambient',
-    },
-    {
-      d: 'M30 135 l7 -3 M44 143 l7 -3 M60 148 l7 -3 M116 143 l7 -3',
-      role: 'ambient',
-    },
+    ...KOSOFFTRO_HAT,
     { d: 'M48 156 Q80 166 112 156', role: 'soft' },
     shadow(80, 182, 52),
   ],
-  // Antokiba's posted reward notices, described on arrival in episode 61.
-  // Blank sheets avoid copying lettering, card images or official marks.
+  // The reward posters Gon and Killua find on reaching Antokiba in chapter
+  // 129 / episode 61, on a board seen 3/4, and the monthly contest list where
+  // Gon reads that September is rock-paper-scissors. The scissors hand in
+  // tint stands for that contest: a convention, not the list's own artwork.
   'antokiba': [
     { d: 'M34 46 L116 36 L127 43 V144 L45 154 L34 146 Z' },
     { d: 'M34 46 L45 53 L127 43 M45 53 V154', role: 'soft' },
-    { d: 'M55 67 L91 63 V100 L55 104 Z', role: 'accent' },
-    { d: 'M96 62 L117 59 V86 L96 89 Z', role: 'soft' },
-    { d: 'M55 112 L79 109 V137 L55 140 Z', role: 'soft' },
-    { d: 'M86 103 L117 99 V132 L86 136 Z', role: 'soft' },
-    { d: 'M56 104 L60 100 M91 63 L87 67 M86 136 L91 131', role: 'soft' },
+    { d: 'M54 64.9 L96 59.8 L96 111.8 L54 116.9 Z', role: 'soft' },
+    {
+      d: 'M68 94.2 L62 73.9 Q61 70 65 68.6 Q68 68.2 69 72.1 L73 90.6 L78 69 Q79 64.9 83 65.4 Q86 66 85 70.1 L80 91.7 Q86 90 87 94.9 Q91 96.4 88 101.8 Q90 106.5 84 108.2 L69 111.1 Q64 110.7 65 103.6 Q64 96.7 68 94.2 Z',
+      role: 'accent',
+    },
+    {
+      d: 'M65 103.6 Q72 104.7 80 98.7 M80 91.7 Q82 94.5 87 94.9',
+      role: 'soft',
+    },
+    {
+      d: 'M101 55.2 L120 52.9 L120 78.9 L101 81.2 Z M101 89.2 L120 86.9 L120 110.9 L101 113.2 Z M54 124.9 L84 121.2 L84 139.2 L54 142.9 Z M90 122.5 L120 118.9 L120 132.9 L90 136.5 Z',
+      role: 'soft',
+    },
     {
       d: 'M34 70 l7 4 M34 88 l7 4 M34 106 l7 4 M34 124 l7 4 M34 140 l7 4',
       role: 'ambient',
@@ -474,53 +522,64 @@ export const GREED_ISLAND_DRAWINGS = {
     { d: 'M28 177 H129', role: 'ambient' },
     shadow(80, 186, 56),
   ],
-  // Three spell cards bought on the first Masadora visit, chapter 140 /
-  // episode 63. Plain cards stand for its shop without copying card artwork.
+  // Three spell cards, as Masadora's card shop sells them, chapter 140 /
+  // episode 63, fanned from one corner like a hand of cards, each with its
+  // thin edge. The front card's inner frame is in tint; the frames are a
+  // card's usual border, not G.I card artwork.
   'masadora': [
-    { d: 'M50 52 L96 30 L139 130 L124 138' },
-    { d: 'M96 30 L99 33 L142 132 L127 141', role: 'soft' },
-    { d: 'M38 60 L82 44 L124 147 L106 154' },
-    { d: 'M82 44 L85 46 L127 149 L109 157', role: 'soft' },
-    { d: 'M24 71 L73 60 L101 169 L52 181 Z', role: 'accent' },
     {
-      d: 'M73 60 L77 63 L105 172 L56 184 L52 181 M101 169 L105 172',
+      d: 'M14.6 92.2 L41 79.3 M53.4 73.2 L65 67.6 L67.2 72.3 M70.2 163 L53.2 171.3 L49.9 164.4 M49.2 162.9 L48.6 161.8 M46.4 157.4 L14.6 92.2 M40.6 74.1 L69.9 72.1 M83.7 71.1 L96.5 70.2 L96.9 75.4 M68.5 160.4 L46.8 161.9 L46 151.4 M45.7 146.5 L40.6 74.1',
+    },
+    { d: 'M71.5 67.2 L124.7 84.5 L97.5 168.2 L44.3 150.9 L71.5 67.2' },
+    {
+      d: 'M75.3 74.7 L117.2 88.3 L93.7 160.6 L51.8 147 L75.3 74.7',
+      role: 'accent',
+    },
+    {
+      d: 'M22.7 94.9 L41.4 85.8 M45.3 141.4 L22.7 94.9 M47 79.7 L67.9 78.3 M50.6 131.3 L47 79.7',
       role: 'soft',
     },
-    { d: 'M35 79 L67 72 L90 161 L57 169 Z', role: 'soft' },
-    { d: 'M102 148 l4 -1 M105 160 l4 -1 M108 172 l4 -1', role: 'ambient' },
-    { d: 'M122 121 l4 -1 M127 133 l4 -1 M131 145 l4 -1', role: 'ambient' },
-    { d: 'M54 56 L92 38 M43 65 L78 53', role: 'soft' },
-    shadow(80, 192, 58),
+    {
+      d: 'M67.5 70.1 L68.5 72.2 M77.3 163.3 L55.7 173.8 M65 67.6 L67.5 70.1 M53.2 171.3 L55.7 173.8 M99 72.7 L99.2 76.2 M104.8 156 L105.1 160.5 L103.3 160.7 M75.3 162.6 L49.3 164.4 M96.5 70.2 L99 72.7 M46.8 161.9 L49.3 164.4 M127.2 87 L100 170.7 L46.8 153.4 M124.7 84.5 L127.2 87 M44.3 150.9 L46.8 153.4',
+      role: 'soft',
+    },
+    { d: 'M120 96 l5 -2 M115 112 l5 -2 M110 128 l5 -2', role: 'ambient' },
+    shadow(78, 184, 48),
   ],
-  // The reception tower already visited in chapter 127, named Shiso Tree
-  // on chapter 134's map: a straw roof, central pillar and descending stairs.
+  // The Starting Point's tower, where Gon enters the game in chapter 127 /
+  // episode 60, named Shiso Tree on chapter 134's map. Its outside of wood,
+  // stone and straw: the roof and upper room in 3/4, the far side hatched,
+  // the stair winding down round the large central pillar (in tint) and the
+  // two front pillars of the four smaller ones.
   'shiso-tree': [
-    { d: 'M48 68 L80 35 L114 68 L106 79 H54 Z' },
+    { d: 'M42 68 L82 24 L122 62 L74 80 Z' },
     {
-      d: 'M48 68 Q80 81 114 68 M55 62 L62 72 M65 51 L74 75 M80 35 V77 M94 49 L88 75 M105 59 L99 73',
+      d: 'M82 24 L74 80 M60 50 L56 74 M70 38 L64 77 M90 40 L92 74 M102 50 L106 70',
       role: 'soft',
     },
-    { d: 'M55 79 V106 L64 112 H101 L107 106 V79', role: 'soft' },
-    { d: 'M71 109 V145 M88 110 V145', role: 'accent' },
-    { d: 'M59 110 V144 M102 110 V144 M65 112 V147 M97 112 V147', role: 'soft' },
-    { d: 'M66 88 Q79 79 94 88 V101 H66 Z M81 84 V101', role: 'soft' },
+    { d: 'M100 52 l6 -2 M104 60 l8 -3 M108 68 l7 -3', role: 'ambient' },
+    { d: 'M48 72 V98 L74 106 L116 92 V66 M74 80 V106' },
+    { d: 'M100 80 l6 -3 M106 84 l6 -3 M100 92 l6 -3', role: 'ambient' },
     {
-      d: 'M90 115 L105 119 L94 124 L72 126 L60 132 L73 136 L91 137 L101 143',
-      role: 'soft',
+      d: 'M76 105 V132.1 M76 137.1 V150 M86 102 V130.5 M86 135.5 V150',
+      role: 'accent',
+    },
+    { d: 'M52 99 V150 M112 94 V150', role: 'soft' },
+    {
+      d: 'M107 112 C107 116.5 104.2 121 99.4 124.4 C94.6 127.9 87.8 130.4 81 131.5 C74.2 132.6 67.4 132.3 62.6 130.9 C57.8 129.6 55 127.3 55 125 M55 125 C55 123 57.1 120.9 60.9 119.6 C64.7 118.2 70.1 117.6 76 117.9 M86 119.5 C91.9 121.1 97.3 123.6 101.1 126.9 C104.9 130.1 107 134.1 107 138 C107 140.7 106 143.4 104.2 145.8 M107 112 V117 M104.2 145.8 V150.8',
     },
     {
-      d: 'M90 119 L105 123 L94 128 M60 132 V136 L73 140 L91 141 L101 147',
+      d: 'M107 117 C107 121.5 104.2 126 99.4 129.4 C94.6 132.9 87.8 135.4 81 136.5 C74.2 137.6 67.4 137.3 62.6 135.9 C57.8 134.6 55 132.3 55 130 M55 130 C55 128 57.1 125.9 60.9 124.6 C64.7 123.2 70.1 122.6 76 122.9 M86 124.5 C91.9 126.1 97.3 128.6 101.1 131.9 C104.9 135.1 107 139.1 107 143 C107 145.7 106 148.4 104.2 150.8',
       role: 'soft',
     },
-    { d: 'M98 86 l5 -3 M98 94 l5 -3 M98 102 l5 -3', role: 'ambient' },
-    { d: 'M49 145 H112 M26 150 H134', role: 'ambient' },
-    shadow(80, 159, 49),
+    { d: 'M20 152 H140', role: 'ambient' },
+    shadow(80, 162, 50),
   ],
   'puhat': [...PUHAT_JACKET, shadow(82, 186, 51)],
 } satisfies Drawings
 
 export const greedIslandRedrawn: Redrawings = {
-  razor: [
+  'razor': [
     {
       episode: 69,
       chapter: 161,
@@ -545,18 +604,84 @@ export const greedIslandRedrawn: Redrawings = {
       ],
     },
   ],
-  puhat: [
+  'puhat': [
     {
       episode: 64,
       chapter: 143,
-      // The same open jacket laid on its side for the death reported in
-      // episode 64 and chapter 143. The empty collar and pockets remain.
+      // Episode 64 / chapter 143, his death: the same open jacket, empty,
+      // dropped on the ground and tipped a little; the lapels still read.
       value: [
         ...moved(
           PUHAT_JACKET,
-          'translate(80 125) rotate(-70) scale(0.85 0.65) translate(-82 -105)',
+          'translate(84 148) rotate(-16) scale(0.72) translate(-82 -172)',
         ),
-        shadow(80, 185, 52),
+        { d: 'M8 150 H152', role: 'ambient' },
+        shadow(78, 160, 50),
+      ],
+    },
+  ],
+  'biscuit-krueger': [
+    {
+      episode: 72,
+      chapter: 171,
+      // Episode 72 / chapter 171: she shows Killua her Hatsu, Magical
+      // Esthetician, and Cookie joins the gem.
+      value: BISCUIT_WITH_COOKIE,
+    },
+    {
+      episode: 73,
+      chapter: 177,
+      // Episode 73 / chapter 177: she reverts to her true form, a massive,
+      // muscular woman, and knocks Bara out with one punch. Her huge bare
+      // fist, knuckles soft and far side hatched, now carries the gem;
+      // Cookie stays. Gloves go only with her younger form, so none here.
+      value: [
+        ...moved(
+          BISCUIT_GEM,
+          'translate(78 80) scale(0.75) translate(-80 -100)',
+        ),
+        ...BISCUIT_COOKIE,
+        {
+          d: 'M30 196 V156 Q22 144 28 132 Q30 118 44 118 Q50 110 60 114 Q68 108 78 113 Q88 108 98 114 Q108 110 116 118 Q130 118 132 132 L134 160 Q132 176 120 182 V196',
+        },
+        {
+          d: 'M60 114 Q58 126 60 136 M78 113 V136 M98 114 Q100 126 98 136 M44 118 Q42 128 46 138',
+          role: 'soft',
+        },
+        {
+          d: 'M28 140 Q30 136 40 138 Q70 142 96 136 Q110 134 112 142 Q112 150 100 152 Q70 156 34 152',
+          role: 'soft',
+        },
+        {
+          d: 'M122 132 l7 -4 M122 146 l8 -4 M122 160 l8 -4 M116 176 l6 -4',
+          role: 'ambient',
+        },
+      ],
+    },
+    {
+      episode: 74,
+      chapter: 181,
+      // Episode 74 / chapter 181, her next scene after the fight with Bara,
+      // with Killua and the captured Bombers: the true form was only for the
+      // fight, so the drawing goes back to the gem with Cookie. The wiki
+      // never says when she turns small again; this is her first scene after.
+      value: BISCUIT_WITH_COOKIE,
+    },
+  ],
+  // Kosofftro is absent from the 2011 anime, so the stage is the manga's
+  // alone (chapter 144, filed at episode 148).
+  'kosofftro': [
+    {
+      episode: 148,
+      chapter: 144,
+      source: 'chapter',
+      // Chapter 144: the Bombers set off every bomb planted on the
+      // alliance, and he is presumed dead with it. His hat lies dropped and
+      // empty, tipped on its brim on the ground of the forest where he sat.
+      value: [
+        ...moved(KOSOFFTRO_HAT, 'translate(2 -15.7) rotate(-28 80 132)'),
+        { d: 'M8 150 H152', role: 'ambient' },
+        shadow(82, 158, 54),
       ],
     },
   ],
