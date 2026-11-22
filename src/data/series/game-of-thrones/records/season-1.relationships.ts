@@ -8006,8 +8006,8 @@ const essos2 = {
     character: 'quaithe',
     type: { en: 'Stranger', it: 'Straniera' },
     summary: {
-      en: 'The masked woman of the Shadow, one of the strangers he brings back from the Red Waste. She came looking for dragons.',
-      it: 'La donna mascherata dell’Ombra, una degli stranieri che riporta dal Deserto Rosso. È venuta a cercare i draghi.',
+      en: 'The woman of the Shadow, one of the strangers he brings back from the Red Waste. She came looking for dragons.',
+      it: 'La donna dell’Ombra, una degli stranieri che riporta dal Deserto Rosso. È venuta a cercare i draghi.',
     },
   },
   jhoRakharo: {

@@ -61,7 +61,7 @@ const essos = {
   },
   kovXaro: {
     character: 'xaro-xhoan-daxos',
-    type: { en: 'Host', it: 'Ospite' },
+    type: { en: 'Host', it: 'Padrone di casa' },
     summary: {
       en: 'The merchant prince who let the khalasar into Qarth and keeps them in his house. Kovarro eyes his treasures.',
       it: 'Il principe mercante che ha fatto entrare il khalasar a Qarth e lo ospita nella sua casa. Kovarro ne adocchia i tesori.',
@@ -111,7 +111,7 @@ const essos = {
   },
   malXaro: {
     character: 'xaro-xhoan-daxos',
-    type: { en: 'Host', it: 'Ospite' },
+    type: { en: 'Host', it: 'Padrone di casa' },
     summary: {
       en: 'The merchant prince who keeps the khalasar in his house, and owns the statue.',
       it: 'Il principe mercante che ospita il khalasar nella sua casa, e a cui appartiene la statua.',
@@ -243,7 +243,7 @@ const essos = {
   // Pyat Pree (books only)
   pyaDaenerys: {
     character: 'daenerys-targaryen',
-    type: { en: 'Queen he courts', it: 'Regina che corteggia' },
+    type: { en: 'Queen he seeks', it: 'Regina che cerca' },
     summary: {
       en: 'The mother of dragons he crossed the Red Waste to find. He urges her to come to the House of the Undying, and Jorah tells her to ask him for help.',
       it: 'La madre dei draghi che ha attraversato il Deserto Rosso per trovare. La invita alla Casa degli Eterni, e Jorah le consiglia di chiedere aiuto a lui.',
