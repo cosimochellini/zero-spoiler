@@ -301,7 +301,7 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         // the ranks page seats him from here (#1447).
         role: { it: 'Comandante di divisione', en: 'Squadron Leader' },
         log: {
-          it: 'Pike lo cita durante uno scontro: nemmeno lui, il più forte dei comandanti di divisione, saprebbe spezzare la sua tela.',
+          it: 'Pike lo cita durante uno scontro: nemmeno lui, il più forte dei comandanti di divisione, saprebbe spezzare la tela di Pike.',
           en: 'Pike mentions him during a fight: not even he, the strongest of the Squadron Leaders, could break Pike’s web.',
         },
         affiliation: [{ episode: 97, chapter: 227, value: CHIMERA_ANTS }],

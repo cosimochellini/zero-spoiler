@@ -245,7 +245,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
               character: 'meruem',
               type: { it: 'Figlio', en: 'Son' },
               summary: {
-                it: 'Il re che vive per mettere al mondo. Nasce prima del tempo squarciandole il ventre; morendo, lei rivela il nome che ha scelto per lui.',
+                it: 'Il re che lei vive per mettere al mondo. Nasce prima del tempo squarciandole il ventre; morendo, lei rivela il nome che ha scelto per lui.',
                 en: 'The King she lives to bring into the world. He is born early, tearing his way out of her womb; dying, she gives the name she chose for him.',
               },
             },

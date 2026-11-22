@@ -193,7 +193,7 @@ window. The gate evidence is above.
 | Captain                                | — / ep. 148                    | Unnamed role in the closing montage.                                                                                                  |
 | Cheadle Yorkshire                      | ch. 319 / ep. 137              | Filed as `cheadle-yorkshire`. See naming evidence above.                                                                              |
 | Cheetu                                 | — / ep. 148                    | Existing record `cheetu`.                                                                                                             |
-| Chimera Ant Queen                      | ch. 337 / ep. 147              | Title in the flashback, with no personal name.                                                                                        |
+| Chimera Ant Queen                      | ch. 337 / ep. 147              | Existing record `chimera-ant-queen`, filed later for the ranks page (#1447).                                                          |
 | Chrollo Lucilfer                       | ch. 320 / ep. 137              | Existing record `chrollo`.                                                                                                            |
 | Cluck                                  | ch. 319 / ep. 137              | Filed as `cluck`. See naming evidence above.                                                                                          |
 | Colt                                   | — / ep. 147                    | Existing record `colt`.                                                                                                               |
