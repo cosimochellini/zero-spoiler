@@ -260,12 +260,15 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'qhorin-halfhand', tint: 'teal' },
     },
-    // Show: "The Ghost of Harrenhal" (episode 15), Qhorin picks Harker,
-    // Stonesnake and Borba for his scouting party. Books: Jon VI (site
-    // chapter 125), he climbs to the wildling watchers with Jon.
+    // Books: Jon VI (site chapter 125), he climbs to the wildling watchers
+    // with Jon. The show names him only in narration: "The Ghost of
+    // Harrenhal" (episode 15) reports Qhorin picking him for his party, with
+    // no line that says his name (an owner check). Episode 15 only orders
+    // him.
     {
       id: 'stonesnake',
       kind: 'character',
+      source: 'chapter',
       revealedAtEpisode: 15,
       revealedAtChapter: 125,
       name: { it: 'Stonesnake', en: 'Stonesnake' },
@@ -322,13 +325,15 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'dalbridge', tint: 'blue' },
     },
-    // Show: "The Prince of Winterfell" (episode 18), Ygritte brings Jon to
-    // him as "a present". Books: Jon VIII (site chapter 142), his band
-    // overtakes Jon and Qhorin; the Watch calls him Rattleshirt, and both
-    // media call him the Lord of Bones.
+    // Books: Jon VIII (site chapter 142), his band overtakes Jon and Qhorin,
+    // "the Lord of Bones their leader"; the Watch calls him Rattleshirt. The
+    // show names him only in narration: in "The Prince of Winterfell"
+    // (episode 18) Ygritte brings Jon to him as "a present", with no line
+    // that says his name (an owner check). Episode 18 only orders him.
     {
       id: 'lord-of-bones',
       kind: 'character',
+      source: 'chapter',
       revealedAtEpisode: 18,
       revealedAtChapter: 142,
       name: { it: 'Lord delle Ossa', en: 'Lord of Bones' },
@@ -571,8 +576,8 @@ export const season2: ThronesSaga = {
         en: 'Craster’s daughter and wife',
       },
       log: {
-        it: 'È incinta e ha paura di cosa farà Craster se nascerà un maschio. Chiede ai Guardiani della notte di portarla via, e Samwell Tarly le promette che tornerà a prenderla.',
-        en: 'She is pregnant and afraid of what Craster will do if the child is a boy. She asks the Night’s Watch to take her away, and Samwell Tarly promises to come back for her.',
+        it: 'È incinta e ha paura di cosa farà Craster se nascerà un maschio. Chiede ai Guardiani della notte di portarla via, ma la spedizione riparte senza di lei.',
+        en: 'She is pregnant and afraid of what Craster will do if the child is a boy. She asks the Night’s Watch to take her away, but the ranging leaves without her.',
       },
       status: [{ episode: 15, chapter: 97, value: 'alive' }],
       affiliation: [
@@ -616,18 +621,17 @@ export const season2: ThronesSaga = {
         it: 'Qhorin il Monco lo sceglie per il piccolo gruppo che va in avanscoperta tra le montagne.',
         en: 'Qhorin Halfhand picks him for the small party that scouts the mountains.',
       },
+      // The show's death at episode 18 ("The Prince of Winterfell") is not
+      // filed: the record is the books', where Qhorin sends him on alone, on
+      // foot, and his fate is not told in the stage.
       status: [
-        { episode: 15, chapter: 125, value: 'alive' },
-        // The show's alone: the wildlings kill him with the rest of Qhorin's
-        // party, as "The Prince of Winterfell" (episode 18) confirms. In
-        // the books Qhorin sends him on alone, on foot, and his fate is not
-        // told in the stage: chapter 142 only orders it.
-        { episode: 18, chapter: 142, source: 'episode', value: 'deceased' },
+        { episode: 15, chapter: 125, source: 'chapter', value: 'alive' },
       ],
       affiliation: [
         {
           episode: 15,
           chapter: 125,
+          source: 'chapter',
           value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
         },
       ],
@@ -697,12 +701,19 @@ export const season2: ThronesSaga = {
         en: 'Leader of a wildling war band',
       },
       log: {
-        it: 'La sua banda cattura Jon Snow e Qhorin il Monco sulle montagne. È pronto a uccidere Jon, ma lo lascia vivere.',
-        en: 'His war band takes Jon Snow and Qhorin Halfhand in the mountains. He is ready to kill Jon, but lets him live.',
+        it: 'La sua banda raggiunge Jon Snow e Qhorin il Monco sulle montagne. Quando Jon si arrende, gli ordina di uccidere Qhorin per dimostrare da che parte sta.',
+        en: 'His war band overtakes Jon Snow and Qhorin Halfhand in the mountains. When Jon yields, he orders him to kill Qhorin to prove himself.',
       },
-      status: [{ episode: 18, chapter: 142, value: 'alive' }],
+      status: [
+        { episode: 18, chapter: 142, source: 'chapter', value: 'alive' },
+      ],
       affiliation: [
-        { episode: 18, chapter: 142, value: { it: 'Bruti', en: 'Wildlings' } },
+        {
+          episode: 18,
+          chapter: 142,
+          source: 'chapter',
+          value: { it: 'Bruti', en: 'Wildlings' },
+        },
       ],
     },
   },

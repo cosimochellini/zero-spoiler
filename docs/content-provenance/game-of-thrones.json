@@ -138,11 +138,12 @@
       "https://gameofthrones.fandom.com/wiki/Ghost",
       "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
       "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
-      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_68"
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_68",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal"
     ],
     "unverified": [
       "Stages and statuses (#1292, owner 2026-11-15): killed in episode 50 (Fandom DeathEp, Ghost howls in mourning per Fandom \"Ghost\") and left for dead in Jon XIII, ADWD chapter 69 (site 341), from the chapter list on Fandom's \"Mother's Mercy\" page; back in episode 52 (GOT602, the show's alone); named Aegon Targaryen in episode 67 (GOT707, the show's alone). Both one-medium stages ordered at chapter 344. The ADWD chapter is not checked on AWOIAF (unreachable in this session). Episodes not viewed.",
-      "Stage-2 steps (#1467): captured at episode 17 and alive at 20, the show's alone (\"A Man Without Honor\", \"Valar Morghulis\"); posing as a deserter among the wildlings at 20 / 142 (\"Valar Morghulis\"; Jon VIII on A Wiki of Ice and Fire)."
+      "Stage-2 steps (#1467): captured at episode 17 and alive at 20, the show's alone (\"A Man Without Honor\", \"Valar Morghulis\"); posing as a deserter among the wildlings at 20 / 142 (\"Valar Morghulis\"; Jon VIII on A Wiki of Ice and Fire); ranging with Qhorin Halfhand at episode 15, the show's alone (\"The Ghost of Harrenhal\", where Sam takes his place as the Lord Commander's steward; chapter 117 orders it)."
     ]
   },
   "benjen-stark": {
@@ -3161,7 +3162,7 @@
     ],
     "unverified": [
       "Book gate 87 (Jon II): Jon is paired with \"Eddison Tollett, nicknamed Dolorous Edd\" at Whitetree. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
-      "Show gate 20 (\"Valar Morghulis\"): the Game of Thrones Wiki's Eddison Tollett page reports Sam saying that what he finds interesting about Edd is nothing. Owner check: episodes 11, 12, 15 and 18 name him only in narration and the credits.",
+      "Show gate 20 (\"Valar Morghulis\"): the Game of Thrones Wiki's Eddison Tollett page reports that \"Sam counters that what he finds interesting about Edd is absolutely nothing\", reported speech that is likely a paraphrase; whether the line says his name is an owner check. Episodes 11, 12, 15 and 18 name him only in narration and the credits (owner check).",
       "Role: the books make him a squire on the ranging; the show leaves him a brother, so the role says only that."
     ]
   },
@@ -3218,7 +3219,8 @@
     ],
     "unverified": [
       "Show gate 15 (\"The Ghost of Harrenhal\"): the Game of Thrones Wiki's Eddison Tollett page reports Sam saying Gilly would love it there, the first said naming any page read gives. Owner check: episode 11 (she serves wine to Mormont) and episode 12 (Sam brings her to Jon) name her only in narration; a likely earlier naming is episode 12.",
-      "Book gate 97 (Jon III): Jon meets her at Craster's Keep (A Wiki of Ice and Fire; the Ice and Fire Wiki's Gilly page). Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there."
+      "Book gate 97 (Jon III): Jon meets her at Craster's Keep (A Wiki of Ice and Fire; the Ice and Fire Wiki's Gilly page). Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Log: shared text says only that she asks the Night's Watch to take her away and the ranging leaves without her. Sam's promise to come back for her is the show's; in Jon III (97) Jon tells her it is for the Lord Commander to decide (A Wiki of Ice and Fire)."
     ]
   },
   "qhorin-halfhand": {
@@ -3252,9 +3254,9 @@
       "https://gameofthrones.fandom.com/it/wiki/Qhorin"
     ],
     "unverified": [
-      "Show gate 15: the Game of Thrones Wiki has Qhorin select Stonesnake, Harker and Borba for his party, the choice made aloud on screen; owner check that the selection counts as the naming signal.",
+      "Books only since review round 1 (#1516): the Game of Thrones Wiki's Stonesnake page reports Qhorin selecting Stonesnake, Harker and Borba in narration, and \"The Ghost of Harrenhal\" lists him only among its Firsts; no page read reports his name said on screen in season 2. Owner check: episode 15. Episode 15 only orders the record.",
       "Book gate 125 (Jon VI): he and Jon volunteer to climb to the watchers. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
-      "Deceased at episode 18, the show's alone (Game of Thrones Wiki, DeathEp \"The Prince of Winterfell\", fate confirmed). In Jon VIII (142) Qhorin sends him on alone and the books do not tell his fate in the stage.",
+      "Not filed: his death at episode 18, the show's alone (Game of Thrones Wiki, DeathEp \"The Prince of Winterfell\", fate confirmed), since a book-only record carries no show-only status. In Jon VIII (142) Qhorin sends him on alone and the books do not tell his fate in the stage.",
       "Italian: no Italian Wikipedia entry; the Italian Game of Thrones Wiki's Qhorin page keeps the name as it is. The Mondadori form was not checked."
     ]
   },
@@ -3310,8 +3312,9 @@
       "https://gameofthrones.fandom.com/it/wiki/Rattleshirt"
     ],
     "unverified": [
-      "Show gate 18: the Game of Thrones Wiki's Lord of Bones page has Ygritte introduce Jon to the Lord of Bones as \"a present\".",
+      "Books only since review round 1 (#1516): the show names him only in narration in season 2. The Game of Thrones Wiki's Lord of Bones page and \"The Prince of Winterfell\" have Ygritte bring Jon to him as \"a present\"; the page's one season-2 quote of his (\"He's not yours to kill... crow!\") does not name him, and no page read reports his name said on screen. Owner check: episode 18. Episode 18 only orders the record.",
       "Book gate 142 (Jon VIII): his band overtakes Jon and Qhorin, \"the Lord of Bones their leader\"; the Watch calls him Rattleshirt. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Log (books): his band overtakes Jon and Qhorin, and he orders Jon to kill Qhorin to prove himself (A Wiki of Ice and Fire, Jon VIII). The show's capture of Qhorin is not told.",
       "Italian: \"Lord delle Ossa\" (Italian Wikipedia, Rattleshirt; Italian Game of Thrones Wiki)."
     ]
   }

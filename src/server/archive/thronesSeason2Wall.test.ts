@@ -34,11 +34,11 @@ const RECORDS: {
   { id: 'craster', episode: 11, chapter: 97 },
   { id: 'gilly', episode: 15, chapter: 97 },
   { id: 'qhorin-halfhand', episode: 15, chapter: 117 },
-  { id: 'stonesnake', episode: 15, chapter: 125 },
+  { id: 'stonesnake', episode: 15, chapter: 125, source: 'chapter' },
   { id: 'ygritte', episode: 16, chapter: 125 },
   { id: 'ebben', episode: 17, chapter: 127, source: 'chapter' },
   { id: 'dalbridge', episode: 17, chapter: 127, source: 'chapter' },
-  { id: 'lord-of-bones', episode: 18, chapter: 142 },
+  { id: 'lord-of-bones', episode: 18, chapter: 142, source: 'chapter' },
 ]
 
 /**
@@ -61,13 +61,6 @@ const CHANGES: {
     value: 'captured',
   },
   { id: 'qhorin-halfhand', episode: 20, chapter: 142, value: 'deceased' },
-  {
-    id: 'stonesnake',
-    episode: 18,
-    chapter: 142,
-    source: 'episode',
-    value: 'deceased',
-  },
   {
     id: 'ebben',
     episode: 20,
@@ -95,6 +88,13 @@ const STEPS: {
   id: string
   source?: 'chapter' | 'episode'
 }[] = [
+  {
+    id: 'jon-snow',
+    en: 'Sworn brother of the Night’s Watch, ranging with Qhorin Halfhand',
+    episode: 15,
+    chapter: 117,
+    source: 'episode',
+  },
   {
     id: 'jon-snow',
     en: 'Sworn brother of the Night’s Watch, posing as a deserter among the wildlings',
@@ -228,6 +228,14 @@ describe('the status changes one medium alone tells', () => {
       'captured',
     )
     expect(archive.latestOf(reader('episode', 20), jon, 'status')).toBe('alive')
+  })
+
+  it('never files Stonesnake’s show death on his book record', () => {
+    const stonesnake = character('stonesnake')
+
+    expect(archive.latestOf(reader('chapter', 143), stonesnake, 'status')).toBe(
+      'alive',
+    )
   })
 
   it('keeps Jon alive throughout A Clash of Kings', () => {

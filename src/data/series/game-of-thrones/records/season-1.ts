@@ -3268,6 +3268,20 @@ export const season1: ThronesSaga = {
             en: 'Sworn brother of the Night’s Watch, steward to the Lord Commander',
           },
         },
+        // The show's alone: he leaves the Lord Commander's service to scout
+        // the mountains with Qhorin Halfhand, and Samwell Tarly takes his
+        // place, in "The Ghost of Harrenhal" (episode 15). In the books he
+        // stays Mormont's steward, lent to Qhorin; chapter 117 only orders
+        // it.
+        {
+          episode: 15,
+          chapter: 117,
+          source: 'episode',
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, in avanscoperta con Qhorin il Monco',
+            en: 'Sworn brother of the Night’s Watch, ranging with Qhorin Halfhand',
+          },
+        },
         // On Qhorin Halfhand's orders he kills him, so that the wildlings
         // take him for a deserter: "Valar Morghulis" (episode 20) and Jon
         // VIII (chapter 142).

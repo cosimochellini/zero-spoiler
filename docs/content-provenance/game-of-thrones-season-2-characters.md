@@ -156,32 +156,37 @@ are omitted (owner, 2026-11-07).
 
 Counts: 12 filed, 1 pending, 23 omitted; 2 stage-1 records stepped.
 
+Jon Snow joins the season's cast row (`leads['season-2']`).
+
 ### Filed
 
 Gates as episode / site chapter. `source` records give the other number only to
 order them.
 
-| Record                     | Show                                                                                                                      | Books                                                                                                                 |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `thoren-smallwood` (books) | none: no Game of Thrones Wiki page; 11 orders him                                                                         | 80, Jon I: the Lord Commander complains that Smallwood called him too old for the ranging                             |
-| `eddison-tollett`          | 20, "Valar Morghulis": Sam says what he finds interesting about Edd (Eddison Tollett page)                                | 87, Jon II: at Whitetree Jon is paired with "Eddison Tollett, nicknamed Dolorous Edd"                                 |
-| `jarman-buckwell` (books)  | none; 11 orders him                                                                                                       | 87, Jon II: he answers Smallwood at Whitetree, and his scouts ride out first                                          |
-| `mallador-locke` (books)   | none; 11 orders him                                                                                                       | 87, Jon II: he speaks at Whitetree and leads the baggage train                                                        |
-| `craster`                  | 11, "The North Remembers": Grenn and Edd talk of Craster's daughters and say Craster is still here (Eddison Tollett page) | 97, Jon III: the ranging reaches Craster's Keep                                                                       |
-| `gilly`                    | 15, "The Ghost of Harrenhal": Sam says Gilly would love it there (Eddison Tollett page)                                   | 97, Jon III: Jon meets her when Ghost raids her rabbit hutch (Ice and Fire Wiki, Gilly)                               |
-| `qhorin-halfhand`          | 15, "The Ghost of Harrenhal": Jon announces it is the Halfhand coming up to the Fist (Eddison Tollett page)               | 117, Jon V: he arrives at the Fist with a hundred men from the Shadow Tower                                           |
-| `stonesnake`               | 15, "The Ghost of Harrenhal": Qhorin picks Harker, Stonesnake and Borba for his party (Stonesnake page)                   | 125, Jon VI: he and Jon volunteer to climb to the wildling watchers                                                   |
-| `ygritte`                  | 16, "The Old Gods and the New": "a red-haired young woman named Ygritte"                                                  | 125, Jon VI: the sleeping watcher "turns out to be a spearwife, Ygritte"                                              |
-| `ebben` (books)            | none; 17 orders him                                                                                                       | 127, Jon VII: Qhorin says he would have had Ebben kill the girl                                                       |
-| `dalbridge` (books)        | none; 17 orders him                                                                                                       | 127, Jon VII: Squire Dalbridge stays behind in the pass with the arrows                                               |
-| `lord-of-bones`            | 18, "The Prince of Winterfell": Ygritte brings Jon to the Lord of Bones as "a present" (Lord of Bones page)               | 142, Jon VIII: the hunters overtake Jon and Qhorin, "the Lord of Bones their leader"; the Watch calls him Rattleshirt |
+| Record                     | Show                                                                                                                        | Books                                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `thoren-smallwood` (books) | none: no Game of Thrones Wiki page; 11 orders him                                                                           | 80, Jon I: the Lord Commander complains that Smallwood called him too old for the ranging                             |
+| `eddison-tollett`          | 20, "Valar Morghulis": Sam says what he finds interesting about Edd (Eddison Tollett page; reported speech, an owner check) | 87, Jon II: at Whitetree Jon is paired with "Eddison Tollett, nicknamed Dolorous Edd"                                 |
+| `jarman-buckwell` (books)  | none; 11 orders him                                                                                                         | 87, Jon II: he answers Smallwood at Whitetree, and his scouts ride out first                                          |
+| `mallador-locke` (books)   | none; 11 orders him                                                                                                         | 87, Jon II: he speaks at Whitetree and leads the baggage train                                                        |
+| `craster`                  | 11, "The North Remembers": Grenn and Edd talk of Craster's daughters and say Craster is still here (Eddison Tollett page)   | 97, Jon III: the ranging reaches Craster's Keep                                                                       |
+| `gilly`                    | 15, "The Ghost of Harrenhal": Sam says Gilly would love it there (Eddison Tollett page)                                     | 97, Jon III: Jon meets her when Ghost raids her rabbit hutch (Ice and Fire Wiki, Gilly)                               |
+| `qhorin-halfhand`          | 15, "The Ghost of Harrenhal": Jon announces it is the Halfhand coming up to the Fist (Eddison Tollett page)                 | 117, Jon V: he arrives at the Fist with a hundred men from the Shadow Tower                                           |
+| `stonesnake` (books)       | none: "The Ghost of Harrenhal" reports Qhorin selecting him in narration only (an owner check); 15 orders him               | 125, Jon VI: he and Jon volunteer to climb to the wildling watchers                                                   |
+| `ygritte`                  | 16, "The Old Gods and the New": "a red-haired young woman named Ygritte"                                                    | 125, Jon VI: the sleeping watcher "turns out to be a spearwife, Ygritte"                                              |
+| `ebben` (books)            | none; 17 orders him                                                                                                         | 127, Jon VII: Qhorin says he would have had Ebben kill the girl                                                       |
+| `dalbridge` (books)        | none; 17 orders him                                                                                                         | 127, Jon VII: Squire Dalbridge stays behind in the pass with the arrows                                               |
+| `lord-of-bones` (books)    | none: "The Prince of Winterfell" names him in narration only (an owner check); 18 orders him                                | 142, Jon VIII: the hunters overtake Jon and Qhorin, "the Lord of Bones their leader"; the Watch calls him Rattleshirt |
 
 - Thoren Smallwood: role acting commander of the rangers, alive. Italian kept as
   "Thoren Smallwood".
 - Eddison Tollett: role brother of the Night's Watch (a squire in the books
   only), alive. Owner check: episodes 11, 12, 15 and 18 name him only in
-  narration and the credits. Italian "Eddison Tollett" (Italian Wikipedia,
-  Guardiani della notte).
+  narration and the credits; and the gate at 20 rests on the Eddison Tollett
+  page's report that Sam says "what he finds interesting about Edd is absolutely
+  nothing", likely a paraphrase, so whether the line says Edd's name is
+  unconfirmed. Italian "Eddison Tollett" (Italian Wikipedia, Guardiani della
+  notte).
 - Jarman Buckwell: role ranger in command of the scouts; Mallador Locke: role
   knight of the Night's Watch. Both alive, Italian kept.
 - Craster: role master of a holdfast beyond the Wall, Wildlings, alive. Italian
@@ -192,28 +197,39 @@ order them.
 - Qhorin Halfhand: role ranger of the Shadow Tower. `captured` at 18, the show's
   alone; `deceased` at 20 / 142, killed by Jon on his own orders. Italian
   "Qhorin il Monco" (Italian Wikipedia, Guardiani della notte).
-- Stonesnake: role ranger. `deceased` at 18, the show's alone (Game of Thrones
-  Wiki, fate confirmed in "The Prince of Winterfell"); in the books he is sent
-  on alone on foot, his fate untold in the stage. Owner check: the show's naming
-  is the roll call of Qhorin's party, which the wiki reports as a selection.
-  Italian kept (the Italian Game of Thrones Wiki's Qhorin page).
+- Stonesnake, books only: role ranger, alive. In the books he is sent on alone
+  on foot, his fate untold in the stage. The show's death at 18 (Game of Thrones
+  Wiki, fate confirmed in "The Prince of Winterfell") is not filed: a book-only
+  record carries no show-only status. Owner check: episode 15, where the
+  Stonesnake page and the episode page report Qhorin selecting him, in
+  narration; no page read quotes or reports his name said on screen in season 2
+  (review round 1). Italian kept (the Italian Game of Thrones Wiki's Qhorin
+  page).
 - Ygritte: role wildling lookout, Wildlings, alive. Italian "Ygritte".
 - Ebben: role ranger; `deceased` at 142, the books' alone (the wildlings carry
   his head). Owner check: Jon VI (125) lists him as appearing, unnamed in the
   synopsis. Italian kept.
 - Dalbridge: role ranger, alive: A Clash of Kings does not tell his death. Owner
   check as for Ebben. Italian kept.
-- Lord of Bones: role leader of a wildling war band, Wildlings, alive. Italian
-  "Lord delle Ossa" (Italian Wikipedia, Rattleshirt; Italian Game of Thrones
-  Wiki).
+- Lord of Bones, books only: role leader of a wildling war band, Wildlings,
+  alive. His log tells the books' version: his band overtakes Jon and Qhorin,
+  and he orders Jon to kill Qhorin. Owner check: episode 18, where the Lord of
+  Bones page and "The Prince of Winterfell" have Ygritte bring Jon to him in
+  narration; the one season-2 quote of his on the page ("He's not yours to
+  kill... crow!") does not name him, and no page read reports his name said on
+  screen in season 2 (review round 1). Italian "Lord delle Ossa" (Italian
+  Wikipedia, Rattleshirt; Italian Game of Thrones Wiki).
 
 ### Stage-1 records stepped
 
 Steps in `season-1.ts`, as episode / site chapter.
 
 - Jon Snow: `captured` 17 and `alive` 20, show only ("A Man Without Honor",
-  "Valar Morghulis"; chapters 127 and 142 order them); role sworn brother posing
-  as a deserter among the wildlings, 20 / 142 ("Valar Morghulis"; Jon VIII).
+  "Valar Morghulis"; chapters 127 and 142 order them); role sworn brother
+  ranging with Qhorin Halfhand, 15, show only ("The Ghost of Harrenhal", where
+  Sam takes his place as the Lord Commander's steward; 117 orders it); role
+  sworn brother posing as a deserter among the wildlings, 20 / 142 ("Valar
+  Morghulis"; Jon VIII).
 - Samwell Tarly: role steward keeping the ravens beyond the Wall, 80, books only
   (Jon I; 11 orders it); steward to the Lord Commander, 15, show only ("The
   Ghost of Harrenhal", where he takes Jon's duties; 117 orders it).

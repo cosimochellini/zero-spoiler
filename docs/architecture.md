@@ -284,7 +284,7 @@ Season 2 and _A Clash of Kings_ (#1455) file by cast group: King's Landing and
 the Blackwater (#1463) adds seven characters, one the show's alone and six the
 books', each showing a placeholder bust until its drawing child, and the stage's
 dated steps of eleven season-1 characters, kept in `season-1.ts`. The Wall and
-beyond (#1467) adds twelve, five of them the books' alone, with placeholder
+beyond (#1467) adds twelve, seven of them the books' alone, with placeholder
 busts too, and stage-2 steps on Jon Snow and Samwell Tarly. The series opened
 before its drawings: Eddard, Jon, Daenerys and Tyrion have their own, with seven
 stages: Eddard's death and Ice melted, Jon's death, return and true name, and
@@ -544,6 +544,6 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Chronicle stories | 565, for 144 characters                                 |
 | Dated timelines   | 774                                                     |
 | Affiliation steps | 191                                                     |
-| Status steps      | 288                                                     |
+| Status steps      | 287                                                     |
 
 <!-- End of the generated counts. -->

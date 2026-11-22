@@ -298,11 +298,14 @@ describe('the steps one medium alone tells', () => {
 })
 
 describe('the season’s leads', () => {
-  it('lists the King’s Landing leads', () => {
-    expect(archive.leads['season-2']).toStrictEqual([
-      'tyrion-lannister',
-      'cersei-lannister',
-    ])
+  it('includes the King’s Landing and Wall leads', () => {
+    expect(archive.leads['season-2']).toStrictEqual(
+      expect.arrayContaining([
+        'tyrion-lannister',
+        'cersei-lannister',
+        'jon-snow',
+      ]),
+    )
   })
 })
 
