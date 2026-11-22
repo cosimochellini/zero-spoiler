@@ -1,97 +1,119 @@
-import type { Drawings, Redrawings } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  softened,
+  type Stroke,
+} from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
+
+import { COLT_FLAG } from './chimera-ant-royals'
+
+/**
+ * Kurt's dark blue vest seen from the back in 3/4, standing as if worn
+ * over the long sleeves of his shirt: the cross on its back in tint, the
+ * far side and its sleeve turning away hatched. Both his drawings keep it.
+ */
+const KURT_VEST: Stroke[] = [
+  {
+    d: 'M60 58 Q78 64 94 58 L104 66 Q99 86 104 102 L106 128 L78 134 L48 128 L50 102 Q56 86 50 66 Z',
+  },
+  { d: 'M60 58 Q78 50 94 58', role: 'soft' },
+  { d: 'M77 82 V124 M62 98 H92', role: 'accent' },
+  { d: 'M50 66 Q34 70 32 92 L28 140 H40 L48 104' },
+  { d: 'M104 66 Q116 70 118 92 L120 138 H112 L106 104' },
+  { d: 'M28 132 H40 M112 130 H120', role: 'soft' },
+  { d: 'M50 102 Q56 108 54 120', role: 'soft' },
+  {
+    d: 'M94 96 l7 -5 M94 110 l8 -6 M94 124 l8 -6 M110 100 l6 -4 M111 116 l6 -4',
+    role: 'ambient',
+  },
+  { d: 'M48 128 L50 146 H104 L106 128' },
+  { d: 'M50 140 H104 M64 146 L62 164 M90 146 L92 164', role: 'soft' },
+]
+
+/** Kurt's fishing rod standing beside his vest, its line hanging slack. */
+const KURT_ROD: Stroke[] = [
+  { d: 'M124 172 L150 22' },
+  { d: 'M150 22 Q158 70 148 110', role: 'soft' },
+  { d: 'M121 170 L127 140 M126 172 L131 141', role: 'soft' },
+]
 
 /** The people of NGL and the survey team, Chimera Ant phase 2 (#1021). */
 export const CHIMERA_ANT_NGL_DRAWINGS = {
-  // Lin's plain dress shirt with its two buttons, tucked into his trousers,
-  // as he introduces himself to Gon and Killua in chapter 186 and sits with
-  // the team in episode 77. The buttons are the accent; the far side is
-  // hatched.
+  // Lin's plain two-button dress shirt in 3/4, tucked into his dress
+  // trousers, the far side turning away hatched and the buttons in tint, as
+  // he introduces himself to Gon and Killua in chapter 186 and sits with the
+  // team in episode 77.
   'lin-koshi': [
+    { d: 'M64 56 L44 62 Q34 66 32 78 L26 132 L40 135 L46 94 L46 150 H92' },
     {
-      d: 'M62 58 L44 64 Q34 68 32 80 L28 132 L40 134 L46 94 L46 150 H114 L114 94 L120 134 L132 132 L128 80 Q126 68 116 64 L98 58',
+      d: 'M98 56 L114 62 Q122 66 124 78 L128 128 L118 130 L112 94 L112 146 L92 150',
     },
-    { d: 'M62 58 L71 76 L80 64 L89 76 L98 58' },
-    { d: 'M62 58 Q80 52 98 58', role: 'soft' },
-    { d: 'M80 64 V150', role: 'soft' },
-    { d: `${circle(80, 90, 2.6)} ${circle(80, 114, 2.6)}`, role: 'accent' },
-    { d: 'M28 124 L40 126 M132 124 L120 126', role: 'soft' },
-    { d: 'M46 94 Q44 80 46 70 M114 94 Q116 80 114 70', role: 'soft' },
-    { d: 'M58 140 Q62 146 60 150 M100 140 Q98 146 100 150', role: 'soft' },
-    { d: 'M46 150 V160 H114 V150' },
-    { d: 'M64 160 L62 178 M96 160 L98 178 M80 160 V170', role: 'soft' },
+    { d: 'M64 56 L74 74 L84 62 L92 72 L98 56' },
+    { d: 'M64 56 Q82 50 98 56', role: 'soft' },
+    { d: 'M84 62 L88 150', role: 'soft' },
+    { d: `${circle(85, 90, 2.6)} ${circle(86, 114, 2.6)}`, role: 'accent' },
+    { d: 'M26 124 L40 127 M46 94 Q44 80 46 70', role: 'soft' },
+    { d: 'M58 140 Q62 146 60 150', role: 'soft' },
+    { d: 'M46 150 V160 H112 V146' },
+    { d: 'M62 160 L60 180 M100 160 L102 180 M86 160 V172', role: 'soft' },
     {
-      d: 'M104 100 l8 -6 M104 116 l8 -6 M104 132 l8 -6 M122 92 l4 -3',
+      d: 'M96 100 l9 -7 M96 116 l9 -7 M96 132 l9 -7 M114 90 l6 -4 M116 106 l6 -4',
       role: 'ambient',
     },
-    shadow(80, 184, 40),
+    shadow(80, 186, 40),
   ],
-  // Podungo's navy cape, open down the front and closed at the throat, its
-  // white fur trim along the edges and the hem in tint, as she meets Gon
-  // and Killua in chapter 186 and episode 77. The dark cape turns away
-  // hatched on the far side; her matching trousers show below.
+  // Podungo's navy cape in 3/4, open down the front and closed at the
+  // throat, its white fur trim along the edges and the hem in tint, the near
+  // edge turned back to show the cloth's thickness, as she meets Gon and
+  // Killua in chapter 186 and episode 77. The dark cape turns away hatched
+  // on the far side; her matching trousers show below.
   'podungo-lapoy': [
-    { d: 'M70 62 Q48 66 42 90 L30 144 M90 62 Q112 66 118 90 L130 144' },
-    { d: 'M70 62 Q80 58 90 62 L82 72 H78 Z' },
+    { d: 'M78 62 Q50 66 42 92 L28 146 M92 62 Q108 66 114 90 L124 142' },
+    { d: 'M78 62 Q85 58 92 62 L87 72 H83 Z' },
     {
-      d: 'M78 72 Q72.8 76.8 75.4 83.4 Q70.2 88.3 72.9 94.9 Q67.7 99.7 70.3 106.3 Q65.1 111.1 67.7 117.7 Q62.5 122.6 65.1 129.1 Q60 134 62.6 140.6 Q57.4 145.4 60 152',
+      d: 'M83 72 Q77 75.9 80.8 82 Q74.7 85.9 78.5 92 Q72.5 95.9 76.2 102 Q70.2 105.9 74 112 Q68 115.9 71.8 122 Q65.7 125.9 69.5 132 Q63.5 135.9 67.2 142 Q61.2 145.9 65 152 M87 72 Q92.8 76 88.8 81.8 Q94.5 85.7 90.5 91.5 Q96.3 95.5 92.2 101.2 Q98 105.2 94 111 Q99.8 115 95.8 120.8 Q101.5 124.7 97.5 130.5 Q103.3 134.5 99.2 140.2 Q105 144.2 101 150 M28 146 Q33.2 142.8 37 147.5 Q42.2 144.3 46 149 Q51.2 145.8 55 150.5 Q60.2 147.3 65 152 M101 150 Q103.7 144.9 109 147.3 Q111.7 142.2 117 144.7 Q119.7 139.5 124 142',
       role: 'accent',
     },
+    { d: 'M71 120 L56 136 L62 150', role: 'soft' },
+    { d: circle(85, 76, 2.4) },
+    { d: 'M74 152 L72 176 H80 L82 154 M90 151 L92 174 H84' },
+    { d: 'M50 98 Q44 120 40 146 M60 92 Q56 112 54 132', role: 'soft' },
     {
-      d: 'M82 72 Q87.2 76.8 84.6 83.4 Q89.8 88.3 87.1 94.9 Q92.3 99.7 89.7 106.3 Q94.9 111.1 92.3 117.7 Q97.5 122.6 94.9 129.1 Q100 134 97.4 140.6 Q102.6 145.4 100 152',
-      role: 'accent',
-    },
-    {
-      d: 'M30 144 Q30.7 149.6 36.4 149 Q38.4 154.2 43.5 152 Q46.9 156.5 51.4 153 Q56.1 156.5 60 152 M100 152 Q103.9 156.5 108.6 153 Q113.1 156.5 116.5 152 Q121.6 154.2 123.6 149 Q129.3 149.6 130 144',
-      role: 'accent',
-    },
-    { d: circle(80, 75, 2.4) },
-    { d: 'M72 152 L70 176 H78 L80 154 M88 152 L90 176 H82' },
-    { d: 'M50 96 Q44 120 42 146 M60 92 Q56 116 54 150', role: 'soft' },
-    {
-      d: 'M104 102 l8 -6 M106 116 l10 -8 M108 130 l12 -9 M112 142 l10 -7',
+      d: 'M100 100 l8 -6 M102 114 l10 -8 M106 128 l10 -8 M110 140 l8 -6',
       role: 'ambient',
     },
-    shadow(80, 182, 40),
+    shadow(80, 182, 44),
   ],
-  // The contract on Wong's desk, its corner turned up, and the pen beside
-  // it: he hires Kite's team in episode 77. The sheet is the accent; no
-  // lettering, only ruled lines. The desk's front face is hatched.
+  // The contract Wong has Kite sign, lying in 3/4 at the edge of his desk
+  // with its corner turned up and the pen beside it: he hires Kite's team in
+  // episode 77. The sheet is the accent; no lettering, only ruled lines and
+  // a signature's squiggle. The underside of the turned corner is hatched.
   'wong': [
-    { d: 'M8 132 L42 96 H152 L130 132 Z', role: 'ambient' },
-    { d: 'M8 132 V146 H130 V132 M130 146 L152 110 V96', role: 'ambient' },
+    { d: 'M18 146 L48 66 H138 L122 146 Z', role: 'accent' },
+    { d: 'M98 146 L108 122 L126 126', role: 'soft' },
+    { d: 'M104 142 l4 -6 M110 140 l4 -6 M116 138 l3 -5', role: 'ambient' },
     {
-      d: 'M20 146 l6 -12 M44 146 l6 -12 M68 146 l6 -12 M92 146 l6 -12 M116 146 l6 -12',
+      d: 'M54 80 H128 M50 92 H124 M46 104 H120 M42 116 H118 M38 128 H72',
+      role: 'soft',
+    },
+    { d: 'M66 136 Q70 128 74 133 Q78 125 84 131 Q88 126 92 130', role: 'soft' },
+    { d: 'M122 56 L150 90 L145 94 L117 60 Z' },
+    { d: 'M150 90 L154 100 L145 94 M117 60 L114 52 L122 56' },
+    { d: 'M130 70 L134 66', role: 'soft' },
+    { d: 'M4 154 H156 M4 160 H156', role: 'ambient' },
+    {
+      d: 'M24 160 l6 -6 M52 160 l6 -6 M80 160 l6 -6 M108 160 l6 -6 M136 160 l6 -6',
       role: 'ambient',
     },
-    { d: 'M38 124 L58 100 H112 L100 124 Z', role: 'accent' },
-    { d: 'M100 124 L96 116 L104 116 Z', role: 'soft' },
-    { d: 'M58 106 H102 M54 111 H98 M50 116 H86', role: 'soft' },
-    { d: 'M72 120 Q76 116 80 119 Q84 115 88 118', role: 'soft' },
-    { d: 'M112 90 L140 116 L136 120 L108 94 Z' },
-    { d: 'M140 116 L146 124 L136 120 M108 94 L104 88 L112 90' },
-    { d: 'M120 101 L124 97', role: 'soft' },
-    shadow(80, 158, 66),
   ],
-  // Kurt's dark vest seen from the back, the cross on it in tint, over the
-  // long sleeves of his shirt: the boy who fights the ant soldier in
-  // episode 77. The vest's far side is hatched.
-  'kurt': [
-    {
-      d: 'M62 58 Q80 64 98 58 L110 66 Q104 86 110 102 L112 128 L80 134 L48 128 L50 102 Q56 86 50 66 Z',
-    },
-    { d: 'M62 58 Q80 50 98 58', role: 'soft' },
-    { d: 'M80 82 V124 M64 98 H96', role: 'accent' },
-    { d: 'M50 66 Q36 70 34 92 L30 140 H40 L48 104' },
-    { d: 'M110 66 Q124 70 126 92 L130 140 H120 L112 104' },
-    { d: 'M30 132 H40 M120 132 H130', role: 'soft' },
-    { d: 'M50 102 Q56 108 54 120 M110 102 Q104 108 106 120', role: 'soft' },
-    { d: 'M100 98 l8 -6 M100 112 l10 -8 M100 126 l8 -6', role: 'ambient' },
-    { d: 'M50 128 L50 146 H110 L110 128' },
-    { d: 'M50 140 H110', role: 'soft' },
-    { d: 'M66 146 L64 164 M94 146 L96 164', role: 'soft' },
-    shadow(80, 172, 40),
-  ],
+  // Kurt's dark blue vest in 3/4, seen from the back and standing as worn
+  // over the long sleeves of his shirt, the cross on its back in tint and
+  // the far side hatched, with his fishing rod beside it: the rod he tries
+  // to fight the ant soldier off with in episode 77. His death in that
+  // episode stays out of the drawing.
+  'kurt': [...KURT_VEST, ...KURT_ROD, shadow(84, 172, 48)],
   // Reina's hair bow, the two loops in tint, as she walks home from the
   // river with her brother in chapter 187 and episode 77. The far loop
   // turns away hatched.
@@ -127,24 +149,28 @@ export const CHIMERA_ANT_NGL_DRAWINGS = {
     { d: 'M88 86 Q82 74 92 64 Q98 56 92 46', role: 'ambient' },
     shadow(80, 164, 40),
   ],
-  // Pekuba's pink-purple scarf, wound once and knotted over the collar of
-  // his green shirt, its two tails hanging, as he rides into NGL with
-  // Pokkle and Ponzu in episode 79. The wrap is the accent; its back turns
-  // away hatched.
+  // Pekuba's pink-purple scarf in 3/4, wound twice and knotted over the
+  // collar of his green shirt, its two tails hanging, as he rides into NGL
+  // with Pokkle and Ponzu in episode 79. The near turn is the accent; the
+  // far turn rises behind it, hatched.
   'pekuba': [
+    { d: 'M48 84 Q80 94 112 84 V98 Q80 110 48 98 Z', role: 'accent' },
+    { d: 'M48 84 Q50 66 80 64 Q110 66 112 84' },
+    { d: 'M54 82 Q56 72 80 71 Q104 72 106 82', role: 'soft' },
     {
-      d: 'M50 84 Q50 70 80 68 Q110 70 110 84 Q110 98 80 100 Q50 98 50 84 Z',
-      role: 'accent',
+      d: 'M58 78 l5 -5 M70 74 l5 -4 M90 74 l5 -4 M100 78 l5 -5',
+      role: 'ambient',
     },
-    { d: 'M54 78 Q80 86 106 78', role: 'soft' },
-    { d: 'M58 76 l5 -5 M96 72 l5 -4 M84 70 l4 -3', role: 'ambient' },
-    { d: ellipse(84, 100, 7, 5) },
-    { d: 'M74 98 L68 112 L64 146 L78 148 L82 112 L84 100' },
-    { d: 'M88 98 L94 114 L104 140 L116 134 L100 110 L94 98' },
-    { d: 'M66 136 L78 138 M104 130 L114 126', role: 'soft' },
-    { d: 'M72 112 L70 140 M98 114 L106 132', role: 'soft' },
-    { d: 'M56 94 L48 108 L62 106 M104 94 L112 108 L98 106' },
-    shadow(84, 162, 36),
+    { d: 'M56 92 Q80 100 104 92', role: 'soft' },
+    { d: ellipse(88, 106, 11, 8) },
+    { d: 'M78 112 L68 124 L62 152 L78 154 L84 118' },
+    { d: 'M96 112 L104 124 L114 148 L126 142 L106 116' },
+    {
+      d: 'M64 142 L78 144 M110 138 L122 134 M72 126 L70 146 M104 124 L114 140',
+      role: 'soft',
+    },
+    { d: 'M52 100 L44 114 L60 112 M108 100 L116 114 L100 112' },
+    shadow(84, 166, 40),
   ],
   // Balda's white short-sleeved shirt in 3/4, standing as if worn, the
   // sleeves seen open at the elbow and the light blue long sleeves
@@ -182,6 +208,23 @@ export const CHIMERA_ANT_NGL_DRAWINGS = {
 
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntNglRedrawn: Redrawings = {
+  kurt: [
+    // Back as Colt: his vest, its cross still in tint, beside the white flag
+    // Colt carries. Holding the Queen's newborn, Colt thinks back to his
+    // mother and sister, and an ant explains he still remembers his human
+    // life, episode 92 (chapter 215). Anime-only, as his record.
+    {
+      episode: 92,
+      chapter: 215,
+      source: 'episode',
+      value: [
+        ...moved(KURT_VEST, 'translate(-12 31.5) scale(0.82)'),
+        ...moved(softened(COLT_FLAG), 'translate(52 56.6) scale(0.72)'),
+        { d: 'M4 166 H156', role: 'ambient' },
+        shadow(84, 172, 54),
+      ],
+    },
+  ],
   pekuba: [
     // The same scarf slack on the ground, its knot loose and no one in it:
     // an ant kills him as the party turns to leave NGL, episode 80 (the

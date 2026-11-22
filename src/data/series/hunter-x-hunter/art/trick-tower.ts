@@ -1,5 +1,5 @@
 import type { Drawings } from '~/data/art/stroke'
-import { shadow } from '~/lib/svg/primitives'
+import { circle, ellipse, shadow } from '~/lib/svg/primitives'
 
 /** Original object drawings; the cited manga/anime scenes await direct viewing. */
 export const TRICK_TOWER_DRAWINGS = {
@@ -38,102 +38,66 @@ export const TRICK_TOWER_DRAWINGS = {
   ],
 
   // Bendot's pair of heavy wrist cuffs where they fall when the warden
-  // unlocks them, the near one's sprung jaw in the record's tint, a short
-  // chain between them: episode 8 and chapter 16, the scene before his
-  // record opens at chapter 17.
+  // unlocks them: the near cuff sprung open on its hinge, its jaw in the
+  // record's tint, the far one still closed, and a short chain between
+  // them. Episode 8 and chapter 16, the scene before his record opens at
+  // chapter 17.
   'bendot': [
+    { d: 'M50 136 A30 12 0 0 0 50 160 M20 148 V156 A30 12 0 0 0 50 168 V160' },
+    { d: 'M50 141 A23 7.5 0 0 0 50 155 M50 136 V141', role: 'soft' },
     {
-      d: 'M76.1 140.9 A32.5 16.3 0 1 0 64.3 163.1 M76.1 140.9 L68.6 144 A23.8 10 0 1 0 59.9 157.6 L64.3 163.1',
-    },
-    { d: 'M15.5 149 V160.3 A32.5 16.3 0 0 0 64.3 174.4 V163.1' },
-    {
-      d: 'M64.3 163.1 C85.5 169 104.3 156.5 100.5 139 L91.8 140.3 C94.3 151.5 81.8 159 61.1 158.4',
+      d: 'M50 160 C60 178 84 180 92 166 L86 163 C80 172 62 172 54 157 Z',
       role: 'accent',
     },
-    {
-      d: 'M20.5 164 l6.3 -7.5 M30.5 169 l6.3 -7.5 M41.8 172.8 l6.3 -7.5',
-      role: 'ambient',
-    },
-    {
-      d: 'M55.5 126.5 a7.5 4.4 0 1 0 15 0 a7.5 4.4 0 1 0 -15 0 M69.9 121.5 a3.1 6.9 0 1 0 6.3 0 a3.1 6.9 0 1 0 -6.2 0 M75.5 116.5 a7.5 4.4 0 1 0 15 0 a7.5 4.4 0 1 0 -15 0 M89.9 111.5 a3.1 6.9 0 1 0 6.3 0 a3.1 6.9 0 1 0 -6.2 0',
-    },
-    { d: 'M96.8 104 a26.3 12.5 0 1 0 52.5 0 a26.3 12.5 0 1 0 -52.5 0' },
-    {
-      d: 'M104.3 104 a18.8 7.5 0 1 0 37.5 0 a18.8 7.5 0 1 0 -37.5 0',
-      role: 'soft',
-    },
-    { d: 'M96.8 104 V114 A26.3 12.5 0 0 0 149.3 114 V104' },
-    { d: 'M135.5 119 l6.3 -7.5 M144.3 115.3 l5 -6.2', role: 'ambient' },
-    { d: 'M61.8 163.1 a2.5 2.5 0 1 0 5 0 a2.5 2.5 0 1 0 -5 0', role: 'soft' },
-    shadow(73, 182.8, 70),
+    { d: circle(50, 163, 2.2), role: 'soft' },
+    { d: 'M25 158 l5 -5 M33 163 l5 -5 M41 166 l5 -5', role: 'ambient' },
+    { d: `${ellipse(78, 124, 6, 3.2)} ${ellipse(68, 130, 2.6, 5.5)}` },
+    { d: ellipse(110, 110, 24, 10) },
+    { d: 'M86 110 V118 A24 10 0 0 0 134 118 V110' },
+    { d: ellipse(110, 110, 16, 5.5), role: 'soft' },
+    { d: 'M122 124 l6 -6 M130 120 l4 -5', role: 'ambient' },
+    shadow(78, 186, 64),
   ],
 
-  // Sedokan's prison shroud, dropped in a heap on the floor with its hood
-  // fallen on its side, the hood's open rim in the record's tint: he takes
-  // it off in episode 8 and chapter 17. His candles come in the next
-  // episode and are not drawn.
-  // Graded B (owner ruling): true, spoiler-free and on style, not yet an A.
+  // The two candles of Sedokan's game, standing side by side, one long and
+  // one short, the long one's wick in the record's tint and neither lit:
+  // he holds them out to Gon on the stone platform in episode 9 / chapter
+  // 17, the next episode after his record opens.
   'sedokan': [
+    { d: ellipse(62, 52, 11, 4) },
+    { d: 'M51 52 V150 A11 4 0 0 0 73 150 V52' },
+    { d: 'M62 51 L61 44 Q61 40 64 37', role: 'accent' },
+    { d: ellipse(102, 112, 11, 4) },
+    { d: 'M91 112 V150 A11 4 0 0 0 113 150 V112' },
+    { d: 'M102 111 L101 105 Q101 102 104 100' },
+    { d: 'M56 60 V142 M96 120 V144', role: 'soft' },
     {
-      d: 'M7.6 180 C10 165.6 22 156 36.4 158.4 M106 141.6 C122.8 139.2 139.6 148.8 146.8 163.2 C154 165.6 158.8 172.8 158.8 180',
-    },
-    { d: 'M7.6 180 Q41.2 189.6 79.6 182.4 Q118 192 158.8 180' },
-    {
-      d: 'M32.3 123 A14.4 20.4 15 1 0 42.9 162.6 A14.4 20.4 15 1 0 32.3 123',
-      role: 'accent',
-    },
-    {
-      d: 'M32.8 122.4 C38.8 105.6 60.4 96 82 98.4 L113.2 86.4 C108.4 100.8 108.4 115.2 115.6 127.2 C98.8 139.2 72.4 153.6 44.8 162',
-    },
-    {
-      d: 'M30.4 132 l7.2 -4.8 M29.2 141.6 l13.2 -8.4 M31.6 151.2 l14.4 -9.6 M38.8 156 l9.6 -6',
+      d: 'M68 70 l4 -3 M68 92 l4 -3 M68 114 l4 -3 M68 136 l4 -3 M108 126 l4 -3 M108 142 l4 -3',
       role: 'ambient',
     },
-    {
-      d: 'M82 98.4 C91.6 108 101.2 112.8 113.2 115.2 M62.8 156 C79.6 144 96.4 136.8 110.8 134.4',
-      role: 'soft',
-    },
-    {
-      d: 'M50.8 163.2 C65.2 168 74.8 175.2 77.2 184.8 M96.4 148.8 C110.8 156 118 168 115.6 187.2 M122.8 134.4 C132.4 146.4 142 156 144.4 170.4',
-      role: 'soft',
-    },
-    {
-      d: 'M12.4 182.4 Q41.2 193.2 79.6 187.2 Q118 196.8 154 183.6',
-      role: 'soft',
-    },
-    { d: 'M144.4 168 l9.6 -4.8 M139.6 177.6 l12 -6', role: 'ambient' },
-    shadow(83.2, 192, 76.8),
+    { d: 'M14 154 H146', role: 'ambient' },
+    shadow(82, 164, 46),
   ],
 
-  // Majtani's respirator, the cup worn in place of his right ear seen
-  // from the side, its rim in the record's tint, the ribbed hose arching
-  // to a small canister: episode 9 and chapter 18. No tattoos.
-  // Graded B (owner ruling): true, spoiler-free and on style, not yet an A.
+  // Majtani's respirator, the cup worn in place of his right ear as the
+  // hero, in 3/4: its rim in the record's tint, the inner wall and the
+  // opening at its back showing its depth, the cone narrowing to its
+  // collar with the underside hatched, and a short ribbed hose to a small
+  // canister behind it: episode 9 and chapter 18. No tattoos.
   'majtani': [
+    { d: ellipse(54, 104, 24, 40), role: 'accent' },
+    { d: ellipse(57, 104, 18, 32), role: 'soft' },
+    { d: ellipse(66, 104, 5, 10), role: 'soft' },
+    { d: 'M54 64 L100 88 M54 144 L100 120 M100 88 A8 16 0 0 1 100 120' },
+    { d: 'M66 136 l5 -7 M77 130 l5 -7 M88 125 l4 -6', role: 'ambient' },
+    { d: 'M104 92 H112 V116 H104' },
+    { d: 'M112 98 C134 90 148 104 140 126 M112 110 C124 106 132 112 130 126' },
+    { d: 'M120 94 l2 8 M130 94 l-2 8 M138 102 l-6 5', role: 'soft' },
     {
-      d: 'M26.6 140 a15.6 31.2 0 1 0 31.2 0 a15.6 31.2 0 1 0 -31.2 0',
-      role: 'accent',
+      d: `${ellipse(135, 130, 11, 4.5)} M124 130 V158 A11 4.5 0 0 0 146 158 V130`,
     },
-    {
-      d: 'M42.2 108.8 L70.8 124.4 M42.2 171.2 L70.8 155.6 M70.8 124.4 A7.8 15.6 0 0 1 70.8 155.6',
-    },
-    {
-      d: 'M33.1 140 a9.1 19.5 0 1 0 18.2 0 a9.1 19.5 0 1 0 -18.2 0 M38.9 140 a3.3 7.8 0 1 0 6.5 0 a3.3 7.8 0 1 0 -6.5 0',
-      role: 'soft',
-    },
-    { d: 'M52.6 163.4 l5.2 -7.8 M60.4 159.5 l5.2 -6.5', role: 'ambient' },
-    { d: 'M76 134.8 V145.2 H83.8 V134.8 Z' },
-    {
-      d: 'M81.2 134.8 C83.8 75 138.4 75 133.2 129.6 M83.8 145.2 C94.2 98.4 128 88 125.4 129.6',
-    },
-    {
-      d: 'M86.4 111.4 l7.8 3.9 M95.5 95.8 l3.9 7.8 M111.1 89.3 l-1.3 9.1 M125.4 97.1 l-5.2 6.5 M130.6 114 l-6.5 1.3',
-      role: 'soft',
-    },
-    { d: 'M113.7 137.4 a15.6 6.5 0 1 0 31.2 0 a15.6 6.5 0 1 0 -31.2 0' },
-    { d: 'M113.7 137.4 V171.2 A15.6 6.5 0 0 0 144.9 171.2 V137.4' },
-    { d: 'M138.4 147.8 l6.5 -3.9 M138.4 158.2 l6.5 -3.9', role: 'ambient' },
-    shadow(91.6, 181.6, 67.6),
+    { d: 'M140 138 l6 -3 M140 148 l6 -3', role: 'ambient' },
+    shadow(88, 182, 62),
   ],
 
   // Leroute's hair ribbon, tied in the bow that holds her ponytail, seen

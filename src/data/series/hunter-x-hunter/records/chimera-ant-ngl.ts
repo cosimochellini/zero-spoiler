@@ -199,13 +199,32 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           value: [links.kurtHaruna, links.kurtReina],
         },
       ],
-      role: { it: 'Fratello maggiore', en: 'Older brother' },
+      role: [
+        {
+          episode: 77,
+          chapter: 187,
+          source: 'episode',
+          value: { it: 'Fratello maggiore', en: 'Older brother' },
+        },
+        // Reborn as Colt: holding the Queen's newborn, Colt thinks back to
+        // his mother and sister, episode 92.
+        {
+          episode: 92,
+          chapter: 215,
+          source: 'episode',
+          value: {
+            it: 'Rinato come formichimera, chiamato Coluto',
+            en: 'Reborn as a Chimera Ant called Colt',
+          },
+        },
+      ],
       log: {
         it: 'Allontana un serpente dalla sorellina e promette di proteggere lei e la madre. Mentre tornano dal fiume con i pesci che hanno preso, i due incontrano una formica soldato. Lui prova ad affrontarla, e la regina li mangia entrambi.',
         en: 'He drives a snake away from his little sister and promises to keep her and their mother safe. Coming home from the river with the fish they caught, the two meet an ant soldier. He tries to fight it, and the Queen eats them both.',
       },
       status: [
         { episode: 77, chapter: 187, source: 'episode', value: 'deceased' },
+        { episode: 92, chapter: 215, source: 'episode', value: 'alive' },
       ],
       affiliation: [
         { episode: 77, chapter: 187, source: 'episode', value: HIS_FAMILY },
@@ -405,8 +424,8 @@ export const CHIMERA_ANT_NGL: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       },
       visual: { art: 'wong', tint: 'sand' },
     },
-    // Named in episode 77 alone, and killed in the same episode: one
-    // drawing, no death redrawing.
+    // Named in episode 77 alone, and killed in the same episode: no death
+    // redrawing. He comes back as Colt in episode 92, a second drawing.
     {
       id: 'kurt',
       kind: 'character',

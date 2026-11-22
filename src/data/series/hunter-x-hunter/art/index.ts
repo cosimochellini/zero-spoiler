@@ -51,7 +51,7 @@ import {
   chimeraAntSquadsRedrawn,
 } from './chimera-ant-squads'
 import { ELECTION_DRAWINGS, electionRedrawn } from './election'
-import { FINAL_PHASE_DRAWINGS } from './final-phase'
+import { FINAL_PHASE_DRAWINGS, finalPhaseRedrawn } from './final-phase'
 import { GREED_ISLAND_DRAWINGS, greedIslandRedrawn } from './greed-island'
 import { HEAVENS_ARENA_DRAWINGS, heavensArenaRedrawn } from './heavens-arena'
 import {
@@ -72,7 +72,7 @@ import {
   yorknewCityRedrawn,
 } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
-import { ZOLDYCK_DRAWINGS } from './zoldyck'
+import { ZOLDYCK_DRAWINGS, zoldyckRedrawn } from './zoldyck'
 
 /**
  * One of Kurapika's two wooden swords, grip down to the left and point up
@@ -1500,7 +1500,9 @@ const kakinReturningRedrawn: Redrawings = {
 
 export const REDRAWINGS: Redrawings = {
   ...hunterExamRedrawn,
+  ...zoldyckRedrawn,
   ...zevilRedrawn,
+  ...finalPhaseRedrawn,
   ...heavensArenaRedrawn,
   ...yorknewCityRedrawn,
   ...greedIslandRedrawn,

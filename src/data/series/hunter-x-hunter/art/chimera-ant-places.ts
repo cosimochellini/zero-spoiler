@@ -32,6 +32,32 @@ const PALACE_TOWER_TOP: Stroke[] = [
   { d: 'M74 68 V80 M86 68 V80', role: 'soft' },
 ]
 
+/** The low rise East Gorteau's palace stands on. */
+const GORTEAU_RISE: Stroke = {
+  d: 'M2 132 Q30 112 60 110 H100 Q130 112 158 132',
+}
+
+/**
+ * East Gorteau's open country around the rise: the dirt road up it, the
+ * walls of the palace's courtyard, the far hills, the scrub and the ground.
+ * Both the country's drawings keep them around the small palace.
+ */
+const GORTEAU_COUNTRY: Stroke[] = [
+  { d: 'M52 110 V106 H72 M88 106 H108 V110', role: 'soft' },
+  { d: 'M54 150 Q70 132 76 110 M106 150 Q90 132 84 110' },
+  { d: 'M2 98 Q24 82 46 96 M112 94 Q134 78 158 92', role: 'ambient' },
+  {
+    d: 'M118 120 l7 -3 M128 126 l7 -3 M138 132 l7 -3 M146 138 l7 -3',
+    role: 'ambient',
+  },
+  {
+    d: 'M24 142 Q28 134 32 142 M30 142 Q34 136 38 142 M126 144 Q130 136 134 144 M132 144 Q136 138 140 144',
+    role: 'soft',
+  },
+  { d: 'M2 150 H158', role: 'ambient' },
+  shadow(80, 156, 70),
+]
+
 export const CHIMERA_ANT_PLACE_DRAWINGS = {
   // The two great hollow trees that hold the border stop, a doorway cut
   // into each trunk, the far sides hatched, the crowns in tint: the driver
@@ -199,24 +225,12 @@ export const CHIMERA_ANT_PLACE_DRAWINGS = {
   // palace in its walled courtyard, far hills behind. The palace, small
   // with distance, is the tint: episode 92 / chapter 216.
   'republic-of-east-gorteau': [
-    { d: 'M2 132 Q30 112 60 110 H100 Q130 112 158 132' },
+    GORTEAU_RISE,
     {
       d: 'M58 110 V98 H72 M88 98 H102 V110 M72 110 V82 H88 V110 M69 82 L80 72 L91 82 Z',
       role: 'accent',
     },
-    { d: 'M52 110 V106 H72 M88 106 H108 V110', role: 'soft' },
-    { d: 'M54 150 Q70 132 76 110 M106 150 Q90 132 84 110' },
-    { d: 'M2 98 Q24 82 46 96 M112 94 Q134 78 158 92', role: 'ambient' },
-    {
-      d: 'M118 120 l7 -3 M128 126 l7 -3 M138 132 l7 -3 M146 138 l7 -3',
-      role: 'ambient',
-    },
-    {
-      d: 'M24 142 Q28 134 32 142 M30 142 Q34 136 38 142 M126 144 Q130 136 134 144 M132 144 Q136 138 140 144',
-      role: 'soft',
-    },
-    { d: 'M2 150 H158', role: 'ambient' },
-    shadow(80, 156, 70),
+    ...GORTEAU_COUNTRY,
   ],
   // The palace the King lands at: a wing either side of the central tower,
   // whose ground floor holds the door to the central stair. The tower's roof
@@ -259,6 +273,32 @@ export const CHIMERA_ANT_PLACE_DRAWINGS = {
 
 /** The Chimera Ant places that change with the story: the palace's damage. */
 export const chimeraAntPlacesRedrawn: Redrawings = {
+  'republic-of-east-gorteau': [
+    // The same rise and road, the small palace's central tower broken off
+    // at its base, its top in tint over a jagged gap and a heap of rubble:
+    // Youpi's rage blast destroys the bottom of the central tower, episode
+    // 117 / chapter 278, as the palace's own drawing shows.
+    {
+      episode: 117,
+      chapter: 278,
+      value: [
+        GORTEAU_RISE,
+        ...GORTEAU_COUNTRY,
+        {
+          d: 'M58 110 V98 H72 M88 98 H102 V110 M72 90 V82 H88 V90 L84 94 L81 88 L77 95 L74 89 Z M69 82 L80 72 L91 82 Z',
+          role: 'accent',
+        },
+        {
+          d: 'M60 110 L64 104 L68 106 L72 100 L78 102 L83 98 L88 103 L92 101 L96 106 L100 110',
+          role: 'soft',
+        },
+        {
+          d: 'M66 116 l4 -4 l4 4 M88 117 l4 -3 l4 3 M78 98 l3 -3 M84 97 l3 -3',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
   'royal-palace-of-east-gorteau': [
     // The same wings and tower top over a base blown open, its walls broken
     // off above a heap of rubble: Youpi's rage blast destroys the bottom of
