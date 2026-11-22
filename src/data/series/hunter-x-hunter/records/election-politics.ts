@@ -81,7 +81,6 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       kind: 'character',
       revealedAtEpisode: 137,
       revealedAtChapter: 320,
-      source: 'episode',
       name: { it: 'Clook', en: 'Cluck' },
       summary: {
         it: 'Membro dello Zodiaco. Manda le schede elettorali a tutti gli Hunter.',
@@ -453,9 +452,11 @@ export const ELECTION_POLITICS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     'cluck': {
       chronicle: electionChronicles.cluck,
       role: { it: 'Membro dello Zodiaco', en: 'Member of the Zodiacs' },
+      // Her objection to signed ballots is the anime's alone (her chronicle
+      // and relationship keep it), so the log both media read leaves it out.
       log: {
-        it: 'Contesta l’obbligo di firmare la scheda. Poi usa i suoi uccelli per consegnare le schede.',
-        en: 'She objects to requiring signatures on the ballots. She then has her birds deliver the ballots.',
+        it: 'Usa i suoi uccelli per consegnare le schede a tutti gli Hunter dell’Associazione.',
+        en: 'She has her birds deliver the ballots to every Hunter in the Association.',
       },
       affiliation: [
         {

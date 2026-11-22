@@ -31,7 +31,7 @@ const CHARACTERS: Gate[] = [
   ['beans', 137, 319],
   ['botobai-gigante', 137, 319],
   ['cheadle-yorkshire', 137, 319],
-  ['cluck', 137, 320, 'episode'],
+  ['cluck', 137, 320],
   ['gel', 137, 321],
   ['ginta', 137, 320],
   ['kanzai', 137, 320],
@@ -235,14 +235,22 @@ describe('the Election home', () => {
   })
 })
 
+/**
+ * A chronicle that opens apart from its record: Cluck's first story is the
+ * anime's alone (her objection to signed ballots), while her record opens in
+ * the manga too (#1443).
+ */
+const CHRONICLE_OPENS: Partial<Record<string, Gate>> = {
+  cluck: ['cluck', 137, 320, 'episode'],
+}
+
 describe.each(LOCALES)('Election chronicles in %s', (locale) => {
   it.each(
-    CHARACTERS.map(([id, episode, chapter, source]) => ({
-      id,
-      episode,
-      chapter,
-      source,
-    })),
+    CHARACTERS.map((gate) => {
+      const [id, episode, chapter, source] = CHRONICLE_OPENS[gate[0]] ?? gate
+
+      return { id, episode, chapter, source }
+    }),
   )(
     'opens a chronicle with the new record $id',
     ({ id, episode, chapter, source }) => {
