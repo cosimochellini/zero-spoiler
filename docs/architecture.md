@@ -295,11 +295,11 @@ Wall and beyond (#1467) adds twelve, seven of them the books' alone, with
 placeholder busts too, and stage-2 steps on Jon Snow and Samwell Tarly. Essos
 and Qarth (#1468) adds ten: two the show's alone, four the books', and Xaro and
 the three dragons in both, the dragons' show gates past the stage (#852). The
-owner's rulings of 2026-11-22 add Arstan Whitebeard under his stage name and
-move the book gates of Xaro, Pyat Pree and Quaithe from chapter 86 to 114. The
-series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
-own, with seven stages: Eddard's death and Ice melted, Jon's death, return and
-true name, and Daenerys's fire and death from the drawing audit (#1292), the
+owner's rulings of 2026-11-22 add Arstan Whitebeard, books only, and move the
+book gates of Xaro, Pyat Pree and Quaithe from chapter 86 to 114. The series
+opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their own,
+with seven stages: Eddard's death and Ice melted, Jon's death, return and true
+name, and Daenerys's fire and death from the drawing audit (#1292), the
 Winterfell household's are in `art/winterfell.ts` (#854), with 25 stages after
 the drawing audit (#1285), the southern cast's are in `art/south.ts` (#1051),
 with thirty-seven, sixteen of them the later looks and deaths of #1286 and
