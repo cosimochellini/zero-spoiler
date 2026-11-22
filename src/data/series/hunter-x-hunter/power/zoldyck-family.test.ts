@@ -25,8 +25,9 @@ const seatsAt = (bookmark: Bookmark): string[] | undefined =>
 
 const FAMILY = ['zeno', 'illumi', 'milluki', 'killua']
 
-// The manga names Silva only at chapter 95, so the head's seat stands
-// unnamed from chapter 42 until then; the anime names him in episode 24.
+// The head's seat is told with the body at chapter 39, and the manga names
+// Silva only at chapter 95, so it stands unnamed until then; the anime names
+// him in episode 24.
 const CHAPTERS: Steps = [
   [39, [U, 'illumi', 'killua']],
   [42, [U, ...FAMILY, 'kalluto', 'canary']],

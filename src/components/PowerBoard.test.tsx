@@ -70,8 +70,8 @@ describe('PowerBoard', () => {
     expect(screen.queryByText(/start of the story/u)).not.toBeInTheDocument()
   })
 
-  // Hunter x Hunter's page is open before its first body is filed (#1442):
-  // in its own words, it says nothing is open, with a bookmark or without.
+  // Before the bookmark reaches a body, Hunter x Hunter's page says in its
+  // own words that nothing is open (#1442).
   it.each([
     [
       'en',
@@ -101,7 +101,7 @@ describe('PowerBoard', () => {
     },
   )
 
-  it('says in the banner on Hunter x Hunter’s page with no bookmark that nothing is open', () => {
+  it('says in the banner on Hunter x Hunter’s page that nothing is open when the start of the story reaches no body', () => {
     renderWithProviders(<PowerBoard page={{ bodies: [] }} />, {
       path: '/hunter-x-hunter/en/ranks',
       series: HUNTER_X_HUNTER_SERIES,
