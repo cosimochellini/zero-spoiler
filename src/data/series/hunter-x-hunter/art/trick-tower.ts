@@ -49,7 +49,6 @@ export const TRICK_TOWER_DRAWINGS = {
       d: 'M50 160 C60 178 84 180 92 166 L86 163 C80 172 62 172 54 157 Z',
       role: 'accent',
     },
-    { d: 'M62 171 l1 -4 M70 173 V169 M78 172 l-1 -4', role: 'soft' },
     { d: circle(50, 163, 2.2), role: 'soft' },
     { d: 'M25 158 l5 -5 M33 163 l5 -5 M41 166 l5 -5', role: 'ambient' },
     { d: `${ellipse(78, 124, 6, 3.2)} ${ellipse(68, 130, 2.6, 5.5)}` },
