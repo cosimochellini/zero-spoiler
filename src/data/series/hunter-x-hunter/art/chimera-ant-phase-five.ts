@@ -278,10 +278,28 @@ export const chimeraAntPhaseFiveRedrawn: Redrawings = {
       ],
     },
   ],
-  // The same tail lowered to the floor, flat, the stinger in tint resting
-  // at its end: he dies holding Komugi's hand over the Gungi board, episode
-  // 135 / chapter 318. The board is Komugi's drawing, so it is not here.
   meruem: [
+    // The same tail with a pair of insect wings opened above it where it
+    // rises, the wings soft: reborn after eating parts of Shaiapouf and
+    // Menthuthuyoupi, he grows wings to fly back to the palace, episode 128
+    // / chapter 301.
+    {
+      episode: 128,
+      chapter: 301,
+      value: [
+        ...CHIMERA_ANT_ROYALS_DRAWINGS.meruem.slice(0, -1),
+        {
+          d: 'M116 70 C124 42 142 16 154 14 C160 18 154 48 118 80 M118 92 C134 80 152 74 157 82 C160 94 140 102 118 100',
+          role: 'soft',
+        },
+        { d: 'M118 76 Q134 46 152 20 M120 96 Q138 88 154 84', role: 'soft' },
+        shadow(70, 168, 60),
+      ],
+    },
+    // The same tail lowered to the floor, flat, the stinger in tint resting
+    // at its end: he dies holding Komugi's hand over the Gungi board,
+    // episode 135 / chapter 318. The board is Komugi's drawing, so it is
+    // not here; nor are the wings, which he grows only to fly.
     {
       episode: 135,
       chapter: 318,
