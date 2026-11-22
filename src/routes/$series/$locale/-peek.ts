@@ -25,8 +25,8 @@ export type Lift<T> = (input: {
 /**
  * The peek a page hands to every veil on it.
  *
- * Two veils asking for the same handle at once share one request: a record
- * page's drawing and words are two veils on one slot.
+ * Two veils asking for the same handle at once share one request: a fruit
+ * rail's crest and name are two veils on one slot.
  */
 export function usePeek<T>(lift: Lift<T>): (handle: string) => Promise<T> {
   const { locale, series } = useSeriesParams()

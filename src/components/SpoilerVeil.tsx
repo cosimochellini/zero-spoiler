@@ -47,8 +47,9 @@ export interface SpoilerVeilProps<T extends Gated> {
    * It also decides how the fog lifts (#1376). `inline` and `compact` sit in
    * lists, where a tap can be a slip of the thumb while scrolling, so they
    * ask first, as a fog tile does: "Show it anyway? Yes, show". `block` is
-   * a record's own page or a panel the reader opened, and its control says
-   * "Show anyway" in full, so one press lifts it.
+   * a panel the reader opened, and its control says "Show anyway" in full,
+   * so one press lifts it. A record's own page has one curtain over both its
+   * halves instead (`useStageVeil`).
    */
   density?: 'block' | 'compact' | 'inline'
   /**

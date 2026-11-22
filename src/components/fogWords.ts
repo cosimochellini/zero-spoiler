@@ -40,7 +40,9 @@ export function fogHint<S extends SeriesSlug>(
 /**
  * The band in one line, for a search with no match: how many records are
  * under fog and why the search does not find them. `undefined` with nothing
- * covered. The count is the one the band's heading already prints.
+ * covered. The count is every covered record in the listing, which can be
+ * more than one band's heading prints (the characters' band counts the main
+ * ones only).
  */
 export function fogNote<S extends SeriesSlug>(
   t: Translate<S>,

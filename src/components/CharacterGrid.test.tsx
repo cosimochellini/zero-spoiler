@@ -464,6 +464,42 @@ describe('CharacterGrid', () => {
     expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
   })
 
+  it('folds once the shelves it was waiting for land', async () => {
+    const user = userEvent.setup()
+    // Lands on cue, so the query is in before the shelves are.
+    const landing = new EventTarget()
+    const shelves = new Promise<ShelfView[]>((resolve) => {
+      landing.addEventListener(
+        'land',
+        () => {
+          resolve([eastBlue, alabasta])
+        },
+        { once: true },
+      )
+    })
+    renderWithProviders(
+      <CharacterGrid
+        featuredCovered={[robinCovered]}
+        featuredOpen={[luffy, nami]}
+        onRetry={vi.fn<() => void>()}
+        peek={peekPending()}
+        shelfCount={2}
+        // The page's own path: a promise, not an array.
+        shelves={shelves}
+      />,
+    )
+
+    await user.type(screen.getByRole('searchbox'), 'zzz')
+
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+
+    landing.dispatchEvent(new Event('land'))
+    await screen.findByText('Clear search')
+
+    expect(screen.getByText('Clear search')).toBeVisible()
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
+  })
+
   it('announces the count once the typing has settled', async () => {
     const user = userEvent.setup()
     book()
