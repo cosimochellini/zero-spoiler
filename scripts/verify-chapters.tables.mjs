@@ -71,6 +71,7 @@ export const TITLES = {
     'ramsay-snow': 'Ramsay Bolton',
     'big-walder-frey': 'Walder Frey (son of Jammos)',
     'little-walder-frey': 'Walder Frey (son of Merrett)',
+    'lord-of-bones': 'Rattleshirt',
   },
 }
 
@@ -84,6 +85,7 @@ export const SHOW_TITLES = {
   'viserys-targaryen': 'Viserys Targaryen (son of Aerys II)',
   'asha-greyjoy': 'Yara Greyjoy',
   'ramsay-snow': 'Ramsay Bolton',
+  'qhorin-halfhand': 'Qhorin',
 }
 
 // The reviewed first-use pins. See the scene evidence in the Nen inventory.

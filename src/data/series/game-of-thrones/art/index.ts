@@ -197,9 +197,9 @@ const PERSON: Stroke[] = [
  * the Riverlands cast's in `riverlands.ts` (#1057), with the four leads
  * drawn for the launch here (owner, #856). Every season-1 character has its
  * own drawing; the season-2 King's Landing cast (#1463), stormlands
- * cast (#1464), Riverlands and Harrenhal cast (#1465) and Winterfell and
- * Iron Islands cast (#1466) show `PERSON` until their drawing child draws
- * them. `satisfies`
+ * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
+ * Iron Islands cast (#1466) and Wall cast (#1467) show `PERSON` until
+ * their drawing children draw them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -262,6 +262,19 @@ export const DRAWINGS = {
   'little-walder-frey': PERSON,
   'wyman-manderly': PERSON,
   'donella-hornwood': PERSON,
+  // #1467: the Wall and beyond, until its drawing child draws it.
+  'thoren-smallwood': PERSON,
+  'eddison-tollett': PERSON,
+  'jarman-buckwell': PERSON,
+  'mallador-locke': PERSON,
+  'craster': PERSON,
+  'gilly': PERSON,
+  'qhorin-halfhand': PERSON,
+  'stonesnake': PERSON,
+  'ygritte': PERSON,
+  'ebben': PERSON,
+  'dalbridge': PERSON,
+  'lord-of-bones': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

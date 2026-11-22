@@ -301,7 +301,7 @@ describe('the steps one medium alone tells', () => {
 })
 
 describe('the season’s leads', () => {
-  it('lists the King’s Landing, stormlands and Iron Islands leads', () => {
+  it('lists the King’s Landing, stormlands, Iron Islands and Wall leads', () => {
     expect(archive.leads['season-2']).toStrictEqual(
       expect.arrayContaining([
         'tyrion-lannister',
@@ -309,6 +309,7 @@ describe('the season’s leads', () => {
         'stannis-baratheon',
         'davos-seaworth',
         'theon-greyjoy',
+        'jon-snow',
       ]),
     )
   })
@@ -320,7 +321,8 @@ describe('the second season’s heading', () => {
 
     // Episode 11 (Daisy, Alton Lannister and Stannis's cast); chapter 74,
     // the prologue of A Clash of Kings, since the stormlands cast (#1464);
-    // Cleos Frey (Catelyn I, #1465) opens at chapter 81 in the books.
+    // Cleos Frey (Catelyn I, #1465) opens at chapter 81 and Thoren Smallwood
+    // (Jon I, the Wall cast #1467) at chapter 80 in the books.
     expect(heading?.revealedAtEpisode).toBe(11)
     expect(heading?.revealedAtChapter).toBe(74)
   })

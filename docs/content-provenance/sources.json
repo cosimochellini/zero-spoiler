@@ -36561,6 +36561,126 @@
       "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=739879",
       "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=739879",
       "contentSha256": "27f1391eb142873e8e657d93dea9515fa315773fe60660ac6f6b439468bc5642"
+    },
+    "got-en-Eddison_Tollett-728493.json": {
+      "locale": "en",
+      "title": "Eddison Tollett",
+      "revision": 728493,
+      "revisionDate": "2026-02-05T08:55:25Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Eddison_Tollett",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728493",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728493",
+      "contentSha256": "89493119a288f7932d2cbe1b5055afc050e8741ffeb2cd78ae45f85d62f9428b"
+    },
+    "got-en-Craster-728011.json": {
+      "locale": "en",
+      "title": "Craster",
+      "revision": 728011,
+      "revisionDate": "2026-02-05T04:47:35Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Craster",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728011",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728011",
+      "contentSha256": "b1cbf64b4093ed00858038bf0238d94cfc3e8c34214598053ac3e97e592406d2"
+    },
+    "got-en-Gilly-728141.json": {
+      "locale": "en",
+      "title": "Gilly",
+      "revision": 728141,
+      "revisionDate": "2026-02-05T05:35:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Gilly",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728141",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728141",
+      "contentSha256": "15160d3382b92b516142ce19d5eef44cb3b45416572d5e62ec4b237f196e571f"
+    },
+    "got-en-Qhorin-728368.json": {
+      "locale": "en",
+      "title": "Qhorin",
+      "revision": 728368,
+      "revisionDate": "2026-02-05T07:34:50Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Qhorin",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728368",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728368",
+      "contentSha256": "56215452d42d651499944a39a524989eb83c7290a0490383c39aa78aaae57770"
+    },
+    "got-en-Stonesnake-728458.json": {
+      "locale": "en",
+      "title": "Stonesnake",
+      "revision": 728458,
+      "revisionDate": "2026-02-05T08:49:01Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Stonesnake",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=728458",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=728458",
+      "contentSha256": "c771ab48520efb17fdb39f0b16dcf7887565cc287ab9b3ee087dcc3a9bf5c9d8"
+    },
+    "got-en-Ygritte-749215.json": {
+      "locale": "en",
+      "title": "Ygritte",
+      "revision": 749215,
+      "revisionDate": "2026-10-28T04:35:37Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Ygritte",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749215",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749215",
+      "contentSha256": "5e3ece2bb0d24a2c73abe2d445006f57a95d339e6ba399a3d353f3e0b8572720"
+    },
+    "got-en-Lord_of_Bones-749203.json": {
+      "locale": "en",
+      "title": "Lord of Bones",
+      "revision": 749203,
+      "revisionDate": "2026-10-27T18:07:55Z",
+      "url": "https://gameofthrones.fandom.com/wiki/Lord_of_Bones",
+      "revisionUrl": "https://gameofthrones.fandom.com/index.php?oldid=749203",
+      "apiUrl": "https://gameofthrones.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=749203",
+      "contentSha256": "4f074dc71a9fbbd8a20e94bcba7b5e88897beabbbdb0307828d7b2a48a6af565"
+    },
+    "iaf-en-Eddison_Tollett-21342.json": {
+      "locale": "en",
+      "title": "Eddison Tollett",
+      "revision": 21342,
+      "revisionDate": "2018-02-21T18:53:25Z",
+      "url": "https://iceandfire.fandom.com/wiki/Eddison_Tollett",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=21342",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=21342",
+      "contentSha256": "7dbd01f0d5b94cfe8b82110cd877d7cf64d926699df749218f43a9699c9f0a24"
+    },
+    "iaf-en-Gilly-22219.json": {
+      "locale": "en",
+      "title": "Gilly",
+      "revision": 22219,
+      "revisionDate": "2018-08-16T08:25:46Z",
+      "url": "https://iceandfire.fandom.com/wiki/Gilly",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=22219",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=22219",
+      "contentSha256": "9290c7578e1c16f553eea21c95ff283ca39ecc26adbd6b928112421d3da542b8"
+    },
+    "iaf-en-Qhorin-27261.json": {
+      "locale": "en",
+      "title": "Qhorin",
+      "revision": 27261,
+      "revisionDate": "2025-02-13T12:36:36Z",
+      "url": "https://iceandfire.fandom.com/wiki/Qhorin",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=27261",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=27261",
+      "contentSha256": "8036e49c02e704eb05583e48b382c5d03e54af528301ff98276acb9b1db014ad"
+    },
+    "iaf-en-Ygritte-23787.json": {
+      "locale": "en",
+      "title": "Ygritte",
+      "revision": 23787,
+      "revisionDate": "2020-05-26T19:27:48Z",
+      "url": "https://iceandfire.fandom.com/wiki/Ygritte",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23787",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23787",
+      "contentSha256": "187313b2e5d5e89fee95655680a61862cd5cd48cbc3a134a89d9d89c7d071284"
+    },
+    "iaf-en-Thoren_Smallwood-23858.json": {
+      "locale": "en",
+      "title": "Thoren Smallwood",
+      "revision": 23858,
+      "revisionDate": "2020-06-24T13:18:41Z",
+      "url": "https://iceandfire.fandom.com/wiki/Thoren_Smallwood",
+      "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23858",
+      "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23858",
+      "contentSha256": "fc1deb8b4df440541bbed5f19e414ee58e40315027df3c294f742d8812151d68"
     }
   }
 }

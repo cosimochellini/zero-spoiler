@@ -291,6 +291,8 @@ books' and three both media's, with the stage's steps of eight season-1
 characters. Winterfell and the Iron Islands (#1466) adds fifteen, seven the
 books' alone, Asha Greyjoy filed under the books' name with the show's Yara as
 her `episodeName`, and the stage's steps of Theon, Bran, Rickon and Osha. The
+Wall and beyond (#1467) adds twelve, seven of them the books' alone, with
+placeholder busts too, and stage-2 steps on Jon Snow and Samwell Tarly. The
 series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
 own, with seven stages: Eddard's death and Ice melted, Jon's death, return and
 true name, and Daenerys's fire and death from the drawing audit (#1292), the
@@ -541,14 +543,14 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing             | Count                                                   |
 | ----------------- | ------------------------------------------------------- |
-| Records           | 251                                                     |
-| Characters        | 191                                                     |
+| Records           | 263                                                     |
+| Characters        | 203                                                     |
 | Places            | 60                                                      |
 | Saga modules      | 2                                                       |
-| Line drawings     | 251, one per record, plus 153 redrawings of 113 records |
+| Line drawings     | 263, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 565, for 144 characters                                 |
-| Dated timelines   | 831                                                     |
-| Affiliation steps | 221                                                     |
-| Status steps      | 330                                                     |
+| Dated timelines   | 855                                                     |
+| Affiliation steps | 233                                                     |
+| Status steps      | 347                                                     |
 
 <!-- End of the generated counts. -->

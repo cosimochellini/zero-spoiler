@@ -151,10 +151,15 @@
       "https://gameofthrones.fandom.com/wiki/Mother%27s_Mercy",
       "https://gameofthrones.fandom.com/wiki/Home",
       "https://gameofthrones.fandom.com/wiki/The_Dragon_and_the_Wolf",
-      "https://gameofthrones.fandom.com/wiki/Ghost"
+      "https://gameofthrones.fandom.com/wiki/Ghost",
+      "https://gameofthrones.fandom.com/wiki/A_Man_Without_Honor",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_68",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal"
     ],
     "unverified": [
-      "Stages and statuses (#1292, owner 2026-11-15): killed in episode 50 (Fandom DeathEp, Ghost howls in mourning per Fandom \"Ghost\") and left for dead in Jon XIII, ADWD chapter 69 (site 341), from the chapter list on Fandom's \"Mother's Mercy\" page; back in episode 52 (GOT602, the show's alone); named Aegon Targaryen in episode 67 (GOT707, the show's alone). Both one-medium stages ordered at chapter 344. The ADWD chapter is not checked on AWOIAF (unreachable in this session). Episodes not viewed."
+      "Stages and statuses (#1292, owner 2026-11-15): killed in episode 50 (Fandom DeathEp, Ghost howls in mourning per Fandom \"Ghost\") and left for dead in Jon XIII, ADWD chapter 69 (site 341), from the chapter list on Fandom's \"Mother's Mercy\" page; back in episode 52 (GOT602, the show's alone); named Aegon Targaryen in episode 67 (GOT707, the show's alone). Both one-medium stages ordered at chapter 344. The ADWD chapter is not checked on AWOIAF (unreachable in this session). Episodes not viewed.",
+      "Stage-2 steps (#1467): captured at episode 17 and alive at 20, the show's alone (\"A Man Without Honor\", \"Valar Morghulis\"); posing as a deserter among the wildlings at 20 / 142 (\"Valar Morghulis\"; Jon VIII on A Wiki of Ice and Fire); ranging with Qhorin Halfhand at episode 15, the show's alone (\"The Ghost of Harrenhal\", where Sam takes his place as the Lord Commander's steward; chapter 117 orders it)."
     ]
   },
   "benjen-stark": {
@@ -450,7 +455,13 @@
       "https://awoiaf.westeros.org/index.php/A_Game_of_Thrones-Chapter_48",
       "https://gameofthrones.fandom.com/wiki/Cripples,_Bastards,_and_Broken_Things",
       "https://gameofthrones.fandom.com/wiki/You_Win_or_You_Die",
-      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Samwell_Tarly"
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Samwell_Tarly",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_6",
+      "https://gameofthrones.fandom.com/wiki/Qhorin",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal"
+    ],
+    "unverified": [
+      "Stage-2 steps (#1467): keeps the ravens beyond the Wall at chapter 80 (Jon I on A Wiki of Ice and Fire), the books' alone; the Lord Commander's steward at episode 15 (the Game of Thrones Wiki's Qhorin page: Sam offers to take on Jon's duties), the show's alone."
     ]
   },
   "alliser-thorne": {
@@ -3760,6 +3771,187 @@
       "Captured at 102 (Bran IV): the Bastard of Bolton has taken her as his wife by force. Deceased at 109 (Bran V): Ser Rodrik returns with a prisoner held for her murder. Episodes 14 and 15 only order them.",
       "Show: no Game of Thrones Wiki page; the record is the books' alone.",
       "Italian: Donella Hornwood kept until the Mondadori form is checked."
+    ]
+  },
+  "thoren-smallwood": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_6",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_13",
+      "https://iceandfire.fandom.com/wiki/Thoren_Smallwood",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+    ],
+    "unverified": [
+      "Book gate 80 (Jon I): the synopsis has the Lord Commander complain that Smallwood called him too old for the ranging. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Show: no Game of Thrones Wiki page; episode 11 only orders the record.",
+      "Italian: no Italian Wikipedia entry; the name stays as it is. The Mondadori form was not checked."
+    ]
+  },
+  "eddison-tollett": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_13",
+      "https://gameofthrones.fandom.com/wiki/Eddison_Tollett",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Eddison_Tollett",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Eddison_Tollett"
+    ],
+    "unverified": [
+      "Book gate 87 (Jon II): Jon is paired with \"Eddison Tollett, nicknamed Dolorous Edd\" at Whitetree. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Show gate 20 (\"Valar Morghulis\"): the Game of Thrones Wiki's Eddison Tollett page reports that \"Sam counters that what he finds interesting about Edd is absolutely nothing\", reported speech that is likely a paraphrase; whether the line says his name is an owner check. Episodes 11, 12, 15 and 18 name him only in narration and the credits (owner check).",
+      "Role: the books make him a squire on the ranging; the show leaves him a brother, so the role says only that."
+    ]
+  },
+  "jarman-buckwell": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_34",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_43",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+    ],
+    "unverified": [
+      "Book gate 87 (Jon II): he speaks at Whitetree and his scouts ride out first, named in the synopsis's narration; Jon V (117) has the Lord Commander send him up the Giant's Stair. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "No Ice and Fire Wiki or Game of Thrones Wiki page: he has no show counterpart; episode 11 only orders him.",
+      "Italian: no Italian Wikipedia entry; the name stays as it is. The Mondadori form was not checked."
+    ]
+  },
+  "mallador-locke": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_13",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_34",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+    ],
+    "unverified": [
+      "Book gate 87 (Jon II): he speaks at Whitetree and leads the baggage train, named in the synopsis's narration. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "No Ice and Fire Wiki or Game of Thrones Wiki page: he has no show counterpart; episode 11 only orders him.",
+      "Italian: no Italian Wikipedia entry; the name stays as it is. The Mondadori form was not checked."
+    ]
+  },
+  "craster": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_23",
+      "https://gameofthrones.fandom.com/wiki/Craster",
+      "https://gameofthrones.fandom.com/wiki/Eddison_Tollett",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Craster"
+    ],
+    "unverified": [
+      "Show gate 11: the Game of Thrones Wiki's Eddison Tollett page reports Grenn and Edd talking of Craster's daughters and saying Craster is still here.",
+      "Book gate 97 (Jon III): the ranging reaches Craster's Keep. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there."
+    ]
+  },
+  "gilly": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_23",
+      "https://gameofthrones.fandom.com/wiki/Gilly",
+      "https://gameofthrones.fandom.com/wiki/Eddison_Tollett",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://iceandfire.fandom.com/wiki/Gilly",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Gilly"
+    ],
+    "unverified": [
+      "Show gate 15 (\"The Ghost of Harrenhal\"): the Game of Thrones Wiki's Eddison Tollett page reports Sam saying Gilly would love it there, the first said naming any page read gives. Owner check: episode 11 (she serves wine to Mormont) and episode 12 (Sam brings her to Jon) name her only in narration; a likely earlier naming is episode 12.",
+      "Book gate 97 (Jon III): Jon meets her at Craster's Keep (A Wiki of Ice and Fire; the Ice and Fire Wiki's Gilly page). Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Log: shared text says only that she asks the Night's Watch to take her away and the ranging leaves without her. The media tell Sam's part differently: the show has him promise to come back for her; the Ice and Fire Wiki has him say he will help if they come back the same way, and A Wiki of Ice and Fire's Jon III (97) has Jon say it is for the Lord Commander to decide."
+    ]
+  },
+  "qhorin-halfhand": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_6",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_43",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_68",
+      "https://gameofthrones.fandom.com/wiki/Qhorin",
+      "https://gameofthrones.fandom.com/wiki/Eddison_Tollett",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Qhorin",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Guardiani_della_notte#Qhorin_il_monco"
+    ],
+    "unverified": [
+      "Show gate 15: the Game of Thrones Wiki's Eddison Tollett page reports Jon announcing it is the Halfhand coming up to the Fist.",
+      "Book gate 117 (Jon V): he arrives at the Fist. Jon I (80) only mentions him. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Statuses: captured at episode 18, the show's alone (the Lord of Bones holds him); deceased at 20 / 142 (\"Valar Morghulis\"; Jon VIII)."
+    ]
+  },
+  "stonesnake": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_51",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_68",
+      "https://gameofthrones.fandom.com/wiki/Stonesnake",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/it/wiki/Qhorin"
+    ],
+    "unverified": [
+      "Books only since review round 1 (#1516): the Game of Thrones Wiki's Stonesnake page reports Qhorin selecting Stonesnake, Harker and Borba in narration, and \"The Ghost of Harrenhal\" lists him only among its Firsts; no page read reports his name said on screen in season 2. Owner check: episode 15. Episode 15 only orders the record.",
+      "Book gate 125 (Jon VI): he and Jon volunteer to climb to the watchers. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Not filed: his death at episode 18, the show's alone (Game of Thrones Wiki, DeathEp \"The Prince of Winterfell\", fate confirmed), since a book-only record carries no show-only status. In Jon VIII (142) Qhorin sends him on alone and the books do not tell his fate in the stage.",
+      "Italian: no Italian Wikipedia entry; the Italian Game of Thrones Wiki's Qhorin page keeps the name as it is. The Mondadori form was not checked."
+    ]
+  },
+  "ygritte": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_51",
+      "https://gameofthrones.fandom.com/wiki/Ygritte",
+      "https://gameofthrones.fandom.com/wiki/The_Old_Gods_and_the_New",
+      "https://iceandfire.fandom.com/wiki/Ygritte",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Ygritte"
+    ],
+    "unverified": [
+      "Show gate 16: \"The Old Gods and the New\" synopsis, \"a red-haired young woman named Ygritte\".",
+      "Book gate 125 (Jon VI): the sleeping watcher \"turns out to be a spearwife, Ygritte\". Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there."
+    ]
+  },
+  "ebben": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_51",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_53",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_68",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/it/wiki/Qhorin"
+    ],
+    "unverified": [
+      "Book gate 127 (Jon VII): Qhorin says he would have had Ebben kill the girl. Owner check: Jon VI (125) has him on the Appearing list, unnamed in the synopsis. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Deceased at chapter 142 (Jon VIII): the wildlings carry his head. No show counterpart; episodes 17 and 20 only order him.",
+      "Italian: no Italian Wikipedia entry; the Italian Game of Thrones Wiki's Qhorin page keeps the name as it is. The Mondadori form was not checked."
+    ]
+  },
+  "dalbridge": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_51",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_53",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://gameofthrones.fandom.com/it/wiki/Qhorin"
+    ],
+    "unverified": [
+      "Book gate 127 (Jon VII): Squire Dalbridge stays behind in the pass with the arrows, named in the synopsis's narration. Owner check: Jon VI (125) has him on the Appearing list, unnamed in the synopsis. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "His death is not told in A Clash of Kings, so no deceased entry. No show counterpart; episode 17 only orders him.",
+      "Italian: no Italian Wikipedia entry; the Italian Game of Thrones Wiki's Qhorin page keeps the name as it is. The Mondadori form was not checked."
+    ]
+  },
+  "lord-of-bones": {
+    "sources": [
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_68",
+      "https://gameofthrones.fandom.com/wiki/Lord_of_Bones",
+      "https://gameofthrones.fandom.com/wiki/The_Prince_of_Winterfell",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco#Rattleshirt",
+      "https://gameofthrones.fandom.com/it/wiki/Rattleshirt"
+    ],
+    "unverified": [
+      "Books only since review round 1 (#1516): the show names him only in narration in season 2. The Game of Thrones Wiki's Lord of Bones page and \"The Prince of Winterfell\" have Ygritte bring Jon to him as \"a present\"; the page's one season-2 quote of his (\"He's not yours to kill... crow!\") does not name him, and no page read reports his name said on screen. Owner check: episode 18. Episode 18 only orders the record.",
+      "Book gate 142 (Jon VIII): his band overtakes Jon and Qhorin, \"the Lord of Bones their leader\"; the Watch calls him Rattleshirt. Neither the episodes nor the books were viewed. Book gates follow each A Wiki of Ice and Fire chapter page's Appearing list and synopsis, read through the Firecrawl tool; the line that says the name is not quoted there.",
+      "Log (books): his band overtakes Jon and Qhorin, and he orders Jon to kill Qhorin to prove himself (A Wiki of Ice and Fire, Jon VIII). The show's capture of Qhorin is not told.",
+      "Italian: \"Lord delle Ossa\" (Italian Wikipedia, Rattleshirt; Italian Game of Thrones Wiki)."
     ]
   }
 }
