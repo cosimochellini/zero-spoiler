@@ -1,5 +1,10 @@
-import { type Drawings, moved, type Redrawings } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  type Stroke,
+} from '~/data/art/stroke'
+import { circle, shadow } from '~/lib/svg/primitives'
 
 import { chimeraAntReturningRedrawn } from './chimera-ant-returning'
 import {
@@ -13,7 +18,86 @@ import {
 /** How a drawing is laid on the floor, flattened as a cloth lies. */
 const LAID = 'translate(80 132) rotate(-6) scale(0.95 0.42) translate(-80 -110)'
 
+/**
+ * Neferpitou's head from behind: the mop of wavy white hair, the two cat
+ * ears rising from it in tint with their fur soft, the far side of the
+ * hair hatched, and the collar of the blue overcoat below. No face. Every
+ * stage keeps it.
+ */
+const PITOU_HEAD: Stroke[] = [
+  {
+    d: 'M80 44 C98 44 112 52 118 64 Q128 72 124 84 Q132 94 126 106 Q130 118 120 122 Q112 130 104 122 Q96 132 88 124 Q80 132 72 124 Q64 132 56 122 Q48 130 40 122 Q30 118 34 106 Q28 94 36 84 Q32 72 42 64 C48 52 62 44 80 44 Z',
+  },
+  {
+    d: 'M47 60 C43 46 41 32 43 18 C53 24 63 34 69 47 M91 47 C97 34 107 24 117 18 C119 32 117 46 113 60',
+    role: 'accent',
+  },
+  {
+    d: 'M49 50 Q48 38 49 28 Q57 34 62 42 M98 42 Q103 34 111 28 Q112 38 111 50',
+    role: 'soft',
+  },
+  {
+    d: 'M78 54 Q64 70 66 92 Q68 106 60 116 M86 56 Q98 74 96 94 Q94 106 100 114 M56 66 Q46 82 48 100',
+    role: 'soft',
+  },
+  {
+    d: 'M112 78 l7 -5 M116 92 l7 -5 M116 106 l6 -4 M110 118 l6 -4',
+    role: 'ambient',
+  },
+  { d: 'M70 127 V140 M90 127 V140' },
+  {
+    d: 'M70 140 Q80 145 90 140 M70 140 C54 142 38 150 28 168 M90 140 C106 142 122 150 132 168',
+  },
+  { d: 'M96 146 l6 -4 M106 150 l6 -4 M116 156 l6 -4', role: 'ambient' },
+]
+
+/** Neferpitou's head made smaller and set low on the right, for the powers. */
+const PITOU_SMALL = 'translate(96 120) scale(0.7) translate(-80 -104)'
+
+/**
+ * Doctor Blythe, the giant doll Neferpitou conjures to operate, sitting
+ * low on the left with no face, and the cord that ties it to Neferpitou's
+ * tail running to it from below.
+ */
+const DOCTOR_BLYTHE: Stroke[] = [
+  { d: circle(30, 112, 19) },
+  { d: 'M20 129 C14 140 14 152 18 160 H42 C46 152 46 140 40 129' },
+  {
+    d: 'M18 138 Q8 144 8 154 M42 138 Q52 144 52 152 M22 160 L18 172 M38 160 L42 172',
+    role: 'soft',
+  },
+  { d: 'M96 172 C90 188 62 190 44 152', role: 'soft' },
+]
+
+/**
+ * The clownesque puppeteer's strings hanging beside the ears from a
+ * control above, in open lines: Neferpitou's puppets.
+ */
+const PITOU_PUPPETEER: Stroke = {
+  d: 'M118 14 H152 M135 6 V24 M120 14 L118 56 M150 14 L148 62 M135 24 L134 52',
+  role: 'ambient',
+}
+
+/**
+ * Terpsichora: the fingertips of the monstrous ballerina above, and the
+ * strings that join them to Neferpitou's body.
+ */
+const TERPSICHORA: Stroke[] = [
+  {
+    d: 'M22 2 C20 12 16 18 10 26 C8 30 12 32 15 29 L22 22 C20 30 18 38 20 44 C22 48 26 46 26 42 L29 30 C30 38 32 44 36 48 C39 50 42 47 40 43 L36 30 C40 36 44 40 49 41 C53 42 53 38 50 36 L40 24 C44 18 48 10 48 2',
+  },
+  {
+    d: 'M12 30 L86 82 M23 46 L90 80 M38 49 L96 78 M51 40 L102 79',
+    role: 'ambient',
+  },
+]
+
 export const CHIMERA_ANT_PHASE_FIVE_DRAWINGS = {
+  // Neferpitou's head from behind, the cat ears in tint over the mop of
+  // wavy white hair: the newborn Royal Guard the reader knows by the ears
+  // from the first scene, episode 84 / chapter 198. No face, which would
+  // show the ruby-red eyes.
+  'neferpitou': PITOU_HEAD,
   // The light brown Panama hat from a little above, the crown pinched at
   // the front and dented on top, the band in tint, the brim's far side
   // hatched: the real Ming Jol-ik on his farm, episode 135 / chapter 315.
@@ -44,25 +128,51 @@ export const CHIMERA_ANT_PHASE_FIVE_DRAWINGS = {
 } satisfies Drawings
 
 export const chimeraAntPhaseFiveRedrawn: Redrawings = {
-  // The cup of the Water Divination knocked on its side, the open rim to
-  // the right, the water run out and the leaf in tint lying in it: Gon
-  // shatters Pitou's skull, episode 131 / chapter 307. No body.
   neferpitou: [
+    // The same head, smaller, with Doctor Blythe sitting beside it on the
+    // cord from Neferpitou's tail: Neferpitou decides to fix Kite's body
+    // and an aura with a face starts to form, episode 86 / chapter 200.
+    {
+      episode: 86,
+      chapter: 200,
+      value: [...moved(PITOU_HEAD, PITOU_SMALL), ...DOCTOR_BLYTHE],
+    },
+    // The same, with the puppeteer's strings beside the ears: Kite, worked
+    // as a puppet, attacks Gon, episode 95 / chapter 222.
+    {
+      episode: 95,
+      chapter: 222,
+      value: [
+        ...moved(PITOU_HEAD, PITOU_SMALL),
+        ...DOCTOR_BLYTHE,
+        PITOU_PUPPETEER,
+      ],
+    },
+    // The same, with Terpsichora's fingertips and strings above: Neferpitou
+    // leaps at Netero on the palace roof, episode 111 / chapter 264.
+    {
+      episode: 111,
+      chapter: 264,
+      value: [
+        ...moved(PITOU_HEAD, PITOU_SMALL),
+        ...DOCTOR_BLYTHE,
+        PITOU_PUPPETEER,
+        ...TERPSICHORA,
+      ],
+    },
+    // The same head laid on its side on the ground, ears and hair, with no
+    // body and no wound: Gon shatters Neferpitou's skull, episode 131 /
+    // chapter 307.
     {
       episode: 131,
       chapter: 307,
       value: [
-        { d: ellipse(114, 118, 10, 34) },
-        { d: 'M44 92 L114 84 M44 144 L114 152' },
-        { d: 'M44 92 A7 26 0 0 0 44 144', role: 'soft' },
-        { d: 'M53 96 Q48 118 53 142', role: 'soft' },
-        { d: ellipse(114, 118, 6, 29), role: 'soft' },
-        { d: 'M58 98 l7 -5 M74 96 l7 -5 M90 94 l7 -5', role: 'ambient' },
-        { d: 'M122 152 Q138 146 156 152 Q142 161 116 158', role: 'ambient' },
-        { d: 'M120 150 Q128 136 154 142 Q146 156 120 150 Z', role: 'accent' },
-        { d: 'M122 150 Q138 147 152 143', role: 'soft' },
-        { d: 'M4 156 H108', role: 'ambient' },
-        shadow(74, 164, 46),
+        ...moved(
+          PITOU_HEAD.slice(0, 5),
+          'translate(80 140) rotate(-76) scale(0.74) translate(-80 -86)',
+        ),
+        { d: 'M4 166 H156', role: 'ambient' },
+        shadow(80, 174, 56),
       ],
     },
   ],

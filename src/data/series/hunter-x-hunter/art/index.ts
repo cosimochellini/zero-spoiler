@@ -435,23 +435,6 @@ export const DRAWINGS = {
     },
     shadow(80, 168, 48),
   ],
-  // The cup of water with a leaf floating on it, the leaf in tint, the
-  // water's surface inside the rim and the far side hatched: the Water
-  // Divination Pitou tries after Rammot, episode 84 / chapter 198. The leaf
-  // is drawn whole, before it reacts: it breaks apart in the manga and
-  // wilts in the anime.
-  'neferpitou': [
-    { d: ellipse(80, 76, 34, 10) },
-    { d: 'M46 76 L54 146 Q80 156 106 146 L114 76' },
-    { d: 'M55 138 Q80 146 105 138', role: 'soft' },
-    { d: ellipse(80, 90, 32, 8), role: 'soft' },
-    { d: 'M54 92 Q66 72 106 84 Q92 102 54 92 Z', role: 'accent' },
-    { d: 'M56 92 Q80 90 104 84 M54 92 l-5 2', role: 'soft' },
-    { d: 'M70 91 l4 -7 M84 89 l4 -7', role: 'soft' },
-    { d: 'M52 102 L57 130', role: 'soft' },
-    { d: 'M100 108 l8 -6 M101 120 l8 -6 M102 132 l7 -5', role: 'ambient' },
-    shadow(80, 164, 40),
-  ],
   // A chimera ant side on, the abdomen in vermilion, with its elbowed
   // feelers and six jointed legs: the aggressive insect under quarantine
   // that Gon and Killua first see in episode 76, and the queen of chapter
