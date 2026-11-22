@@ -424,6 +424,17 @@ export const zoldyck: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           chapter: 42,
           value: { it: 'Famiglia Zoldick', en: 'Zoldyck family' },
         },
+        // Nobunaga introduces him to Hisoka as Hisoka's replacement in the
+        // Troupe, chapter 170 (pp. 9–15), episode 72: the Troupe's seat no. 4
+        // holds him from here (#1505).
+        {
+          episode: 72,
+          chapter: 170,
+          value: {
+            it: 'Famiglia Zoldick; Brigata Fantasma',
+            en: 'Zoldyck family; Phantom Troupe',
+          },
+        },
       ],
     },
   },
