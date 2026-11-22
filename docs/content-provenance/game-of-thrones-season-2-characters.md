@@ -275,9 +275,9 @@ order them.
 
 - Alton Lannister: role Robb Stark's prisoner, House Lannister, `captured` from
   11; deceased at 17 ("A Man Without Honor": Jaime kills him to escape). Italian
-  "Alton Lannister" (Italian Wikipedia, Personaggi). Owner check: the naming
-  line is from a fan transcript, outside the lawful sources; no synopsis or wiki
-  quote names him.
+  "Alton Lannister" (Italian Wikipedia, Personaggi). The naming line is from a
+  fan transcript, outside the lawful sources; no synopsis or wiki quote names
+  him. Ruled: keep the show gate at 11 (owner, 2026-11-22).
 - Cleos Frey: role Robb Stark's prisoner, House Frey, `captured`. His return
   with Tyrion's terms (Tyrion VI, 99), the failed rescue and his new cell
   (Catelyn V, 113) change no field. Italian "Cleos Frey" (Genna Lannister's
@@ -413,9 +413,10 @@ order them.
   120 (Theon tells Winterfell his father is crowned; Bran VI, the safe pin).
   Italian "Balon Greyjoy" (Casa Greyjoy).
 - Asha Greyjoy: ironborn captain, alive. One record under the books' name, with
-  `episodeName` Yara at chapter 345, past the books (owner check: Robin Arryn,
-  the only earlier renamed record, takes the show's name instead). Italian "Asha
-  Greyjoy" / "Yara Greyjoy" (Casa Greyjoy).
+  `episodeName` Yara at chapter 345, past the books; Robin Arryn, the only
+  earlier renamed record, takes the show's name instead. Ruled: acceptable as
+  filed (owner, 2026-11-22). Italian "Asha Greyjoy" / "Yara Greyjoy" (Casa
+  Greyjoy).
 - Aeron Greyjoy: priest of the Drowned God. Italian "Aeron Greyjoy".
 - Victarion Greyjoy: ironborn captain. Italian kept; Mondadori not checked.
 - Dagmer: ironborn raider. The show's betrayal of Theon and spearing of Luwin
@@ -619,25 +620,27 @@ to V, site chapters 86, 101, 114, 122 and 137), read through the Firecrawl tool.
 The show's names are taken only from lines the Game of Thrones Wiki quotes; its
 synopses name Xaro, Pyat Pree, Quaithe and the dragons in narration.
 
-Counts: 9 filed, 0 pending, 30 omitted, 2 open for an owner ruling (Arstan
-Whitebeard, Rhaego); 1 stage-1 record stepped.
+Counts: 10 filed, 0 pending, 31 omitted; 1 stage-1 record stepped. The owner's
+rulings of 2026-11-22 file Arstan Whitebeard, omit Rhaego and move the book
+gates of Xaro, Pyat Pree and Quaithe off chapter 86.
 
 ### Filed
 
 Gates as episode / site chapter. `source` records give the other number only to
 order them.
 
-| Record                       | Show                                                                                                                                                   | Books                                                                                                                      |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `kovarro` (show only)        | 11, "The North Remembers": Daenerys sends out her bloodriders, "Zhey Rakharo, zhey Aggo, zhey Kovarro" (quoted on the Aggo (The North Remembers) page) | none: no book has the name, its rider is Jhogo; 86 orders him                                                              |
-| `xaro-xhoan-daxos`           | 15, "The Ghost of Harrenhal": Pyat Pree, "Should you grow weary of Xaro's baubles" (quoted on the House of the Undying page)                           | 86, Daenerys I: Jhogo brings "the merchant prince Xaro Xhoan Daxos of the Thirteen" from Qarth, with Pyat Pree and Quaithe |
-| `pyat-pree` (books only)     | none: episodes 14–20 name him in narration and the credits only; 14 orders him                                                                         | 86, Daenerys I: "the great warlock Pyat Pree", in the same introduction                                                    |
-| `quaithe` (books only)       | none: episodes 15 and 17 name her in narration only ("I am no one"); 15 orders her                                                                     | 86, Daenerys I: "Quaithe of the Shadow", in the same introduction                                                          |
-| `malakho` (show only)        | 15, "The Ghost of Harrenhal": Jorah, "Malakho says the statue is too heavy to carry" (quoted on the Malakho and Kovarro pages)                         | none: "there is no character named Malakho"; 101 orders him                                                                |
-| `drogon`                     | 40, "The Children": the name's first on-screen use (Drogon page), past the stage (#852)                                                                | 86, Daenerys I: she names the black-and-scarlet one Drogon                                                                 |
-| `rhaegal`                    | 41, "The Wars to Come": first said on screen with Viserion's (Rhaegal page), past the stage                                                            | 86, Daenerys I: she names the green-and-bronze one Rhaegal                                                                 |
-| `viserion`                   | 41, "The Wars to Come" (Viserion page), past the stage                                                                                                 | 86, Daenerys I: she names the cream-and-gold one Viserion                                                                  |
-| `strong-belwas` (books only) | none: the show has no Belwas; 20 orders him                                                                                                            | 137, Daenerys V: Daenerys learns the eunuch who saved her at the port is the pit fighter Strong Belwas, sent by Illyrio    |
+| Record                           | Show                                                                                                                                                   | Books                                                                                                                                                        |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `kovarro` (show only)            | 11, "The North Remembers": Daenerys sends out her bloodriders, "Zhey Rakharo, zhey Aggo, zhey Kovarro" (quoted on the Aggo (The North Remembers) page) | none: no book has the name, its rider is Jhogo; 86 orders him                                                                                                |
+| `xaro-xhoan-daxos`               | 15, "The Ghost of Harrenhal": Pyat Pree, "Should you grow weary of Xaro's baubles" (quoted on the House of the Undying page)                           | 114, Daenerys III: "Come with me to the Arbor, Xaro", and his "Xaro Xhoan Daxos is a man of peace" (quoted on A Wiki of Ice and Fire's Xaro page)            |
+| `pyat-pree` (books only)         | none: episodes 14–20 name him in narration and the credits only; 14 orders him                                                                         | 114, Daenerys III: Jorah urges Daenerys to go to Pyat Pree for help (reported speech)                                                                        |
+| `quaithe` (books only)           | none: episodes 15 and 17 name her in narration only ("I am no one"); 15 orders her                                                                     | 114, Daenerys III, the safe later pin (unverified): she warns Daenerys at the firemage to leave Qarth; no synopsis read has her name said                    |
+| `malakho` (show only)            | 15, "The Ghost of Harrenhal": Jorah, "Malakho says the statue is too heavy to carry" (quoted on the Malakho and Kovarro pages)                         | none: "there is no character named Malakho"; 101 orders him                                                                                                  |
+| `drogon`                         | 40, "The Children": the name's first on-screen use (Drogon page), past the stage (#852)                                                                | 86, Daenerys I: she names the black-and-scarlet one Drogon                                                                                                   |
+| `rhaegal`                        | 41, "The Wars to Come": first said on screen with Viserion's (Rhaegal page), past the stage                                                            | 86, Daenerys I: she names the green-and-bronze one Rhaegal                                                                                                   |
+| `viserion`                       | 41, "The Wars to Come" (Viserion page), past the stage                                                                                                 | 86, Daenerys I: she names the cream-and-gold one Viserion                                                                                                    |
+| `strong-belwas` (books only)     | none: the show has no Belwas; 20 orders him                                                                                                            | 137, Daenerys V: Daenerys learns the eunuch who saved her at the port is the pit fighter Strong Belwas, sent by Illyrio                                      |
+| `arstan-whitebeard` (books only) | none: the show has no such character; 20 orders him                                                                                                    | 137, Daenerys V: after he knocks the manticore from her hands, he introduces himself as Belwas's squire Arstan Whitebeard (Chapter 63 synopsis; Belwas page) |
 
 - Kovarro: role Daenerys's bloodrider, her khalasar, alive. Italian "Kovarro"
   (Italian Wikipedia, its own section of the characters' list).
@@ -661,9 +664,21 @@ order them.
   Daenerys Targaryen page.
 - Strong Belwas: role former pit fighter, in Illyrio's service, alive. Italian
   "Belwas il Forte" (Italian Wikipedia, Barristan Selmy's section).
-- The book gates of Xaro, Pyat Pree and Quaithe read the synopsis's line where
-  Jhogo brings the three strangers from Qarth, each given name and title, as
-  their introduction. Chapter 27 (101) is where each speaks in Qarth.
+- Arstan Whitebeard: role Strong Belwas's squire, in Illyrio's service, alive.
+  Filed under the name and id he has inside the stage (owner, 2026-11-22), books
+  only, and nothing in his texts hints at who he is. The owner's plan: when the
+  books reveal that he is Barristan Selmy (_A Storm of Swords_, a later stage),
+  the stage that reaches the reveal folds this record into Barristan's. Italian
+  "Arstan Barbabianca" (Italian Wikipedia, Barristan Selmy's section).
+- The book gates of Xaro, Pyat Pree and Quaithe: Jhogo's line bringing the three
+  strangers from Qarth in Daenerys I (86) counts as narration (owner,
+  2026-11-22), and Daenerys II (101) names them in narration only, Quaithe as "a
+  shadowbinder named Quaithe". Xaro's and Pyat Pree's gates are Daenerys III
+  (114), with the quotes and the reported speech above; Xaro's show gate stays
+  at 15. Quaithe's 114 is the safe later pin, the last chapter of the stage
+  where she speaks with Daenerys, under `unverified`. A Wiki of Ice and Fire's
+  Quaithe page says she introduces herself in Daenerys I; that would be a signal
+  at 86, below the pin, so 114 is late, never early.
 
 ### Stage-1 records stepped
 
@@ -675,23 +690,13 @@ Not stepped: Daenerys and Jorah (no field changes in the stage), Rakharo, Irri
 and Doreah (their show deaths at 12, 16 and 20 are filed already; the books keep
 Rakharo and Irri alive and end Doreah at 86), Jhogo and Jhiqui (no change).
 
-### Open for an owner ruling
-
-- **Arstan Whitebeard**, Daenerys V (137): Strong Belwas's old squire, who saves
-  Daenerys from the manticore. He is Barristan Selmy under a false name, which
-  the books reveal only in _A Storm of Swords_; the show has Barristan arrive
-  openly in season 3. A step on Barristan's dossier at 137 would tell a book
-  reader who Arstan is, and a record of his own would make two records of one
-  man. Left out until the owner rules.
-
 ### Omitted
 
-- **Seen only in a vision, or dead before the story:** Rhaego, left open for an
-  owner ruling (the show's vision at 20 shows him, his name already said in
-  episode 6; whether a vision counts as being seen is the owner's call; the
-  books only mention him in the stage), and the House of the Undying's book
-  visions of Rhaegar Targaryen, Elia Martell, the infant Aegon, Aerys II and
-  Willem Darry (chapter 122).
+- **Seen only in a vision, or dead before the story:** Rhaego (the show's vision
+  at 20 shows him, his name already said in episode 6, and a vision counts as
+  narration (owner, 2026-11-22); the books only mention him in the stage), and
+  the House of the Undying's book visions of Rhaegar Targaryen, Elia Martell,
+  the infant Aegon, Aerys II and Willem Darry (chapter 122).
 - **Titles and descriptors:** the Spice King (he will not give his name), the
   Silk King and the Copper King, the Sorrowful Man and his manticore, the
   firemage, the House of the Undying's dwarf, the brass-seller and the brother

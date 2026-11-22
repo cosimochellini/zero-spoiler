@@ -17,7 +17,8 @@ if (series === undefined) {
 const { archive } = series
 
 /**
- * Each Essos and Qarth record's gate in each medium, as filed (#1468);
+ * Each Essos and Qarth record's gate in each medium, as filed (#1468) and
+ * moved by the owner's rulings of 2026-11-22;
  * `source` for one medium, whose other number only orders the record.
  */
 const RECORDS: {
@@ -27,14 +28,18 @@ const RECORDS: {
   source?: 'chapter' | 'episode'
 }[] = [
   { id: 'kovarro', episode: 11, chapter: 86, source: 'episode' },
-  { id: 'xaro-xhoan-daxos', episode: 15, chapter: 86 },
-  { id: 'pyat-pree', episode: 14, chapter: 86, source: 'chapter' },
-  { id: 'quaithe', episode: 15, chapter: 86, source: 'chapter' },
+  // Off Daenerys I (86): Jhogo's line counts as narration (owner,
+  // 2026-11-22).
+  { id: 'xaro-xhoan-daxos', episode: 15, chapter: 114 },
+  { id: 'pyat-pree', episode: 14, chapter: 114, source: 'chapter' },
+  { id: 'quaithe', episode: 15, chapter: 114, source: 'chapter' },
   { id: 'malakho', episode: 15, chapter: 101, source: 'episode' },
   { id: 'drogon', episode: 40, chapter: 86 },
   { id: 'rhaegal', episode: 41, chapter: 86 },
   { id: 'viserion', episode: 41, chapter: 86 },
   { id: 'strong-belwas', episode: 20, chapter: 137, source: 'chapter' },
+  // Filed under the name he has in the stage (owner, 2026-11-22).
+  { id: 'arstan-whitebeard', episode: 20, chapter: 137, source: 'chapter' },
 ]
 
 /** Every status change the group files, pinned in both media. */

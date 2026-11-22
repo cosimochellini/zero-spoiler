@@ -284,6 +284,7 @@ export const DRAWINGS = {
   'rhaegal': PERSON,
   'viserion': PERSON,
   'strong-belwas': PERSON,
+  'arstan-whitebeard': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */
