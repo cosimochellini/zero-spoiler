@@ -131,11 +131,13 @@ function reader(unit: Unit, count: number, locale: Locale = 'en'): Reader {
   return readerFor(archive, at(unit, count), locale)
 }
 
-/** The reader of the other medium at its last count. */
+/**
+ * The reader of the other medium at the stage's last count, episode 20 or
+ * chapter 143. The series ceiling would be too late: later stages replace
+ * these statuses and roles, so a leak there could never show.
+ */
 function otherAtTheEnd(source: Unit): Reader {
-  return source === 'episode' ?
-      reader('chapter', archive.series.chapterCeiling)
-    : reader('episode', archive.series.episodeCeiling)
+  return source === 'episode' ? reader('chapter', 143) : reader('episode', 20)
 }
 
 /** Each record in each locale and in each unit that tells it, at its gate. */
