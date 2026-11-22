@@ -343,7 +343,7 @@ const KACHO_HEADPHONES: Stroke[] = [
 ]
 
 /**
- * Fugetsu's glass harp in 3/4 on its table: four wine glasses, their rims
+ * Fugetsu's glass harp in 3/4 on its table: three wine glasses, their rims
  * true ellipses and the water in each at its own height, the rim she plays
  * in tint with open lines where it rings, the table's top seen from above.
  */
@@ -457,7 +457,7 @@ const IZUNAVI_JACKET: Stroke[] = [
 const IZUNAVI_SUIT: Stroke[] = [
   ...IZUNAVI_FIGURE,
   {
-    d: 'M74 42 L60 100 L74 106 L88 160 L100 104 L112 98 L104 40',
+    d: 'M74 42 L60 100 L74 106 L88 150 L100 104 L112 98 L104 40',
     role: 'soft',
   },
   { d: 'M74 42 L80 62 L88 54 L96 62 L104 40', role: 'soft' },
@@ -751,7 +751,7 @@ const DHARMACHAKRA: Stroke[] = [
 /** A manga-only stage of a Kakin record. */
 const KAKIN = { episode: 148, source: 'chapter' } as const
 
-/** The Kakin records of phase 1 whose drawing changes in chapters 340–400 (#1154, #1156). */
+/** The Kakin records of phase 1 whose drawing changes in chapters 340–412 (#1154, #1156, #1333). */
 export const kakinPhaseOneRedrawn: Redrawings = {
   'beyond-netero': [
     // The same back view with open lines rising round it: Longhi tells
