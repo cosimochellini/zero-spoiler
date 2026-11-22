@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { afterAll, describe, expect, it } from 'vitest'
 
-import { check, problems } from './issue-hook.mjs'
+import { check, problems, refusal } from './issue-hook.mjs'
 
 const FULL = ['type:bug', 'area:ui', 'status:ready', 'priority:p2', 'size:s']
 const LABELS = `--label ${FULL.join(',')}`
@@ -237,5 +237,13 @@ describe('the gh issue create hook', () => {
     expect(problems(blocked, 'Waits.\nUnblocks at: ch. 1178\n')).toStrictEqual(
       [],
     )
+  })
+
+  it('tells the agent why a call is refused', () => {
+    expect(
+      refusal({ tool_input: { command: 'gh issue create -t x' }, cwd: '/' }),
+    ).toMatch(/^gh issue create refused:\n- no type: label\n/u)
+    expect(refusal({ tool_input: { command: 'ls' } })).toBeUndefined()
+    expect(refusal({})).toBeUndefined()
   })
 })

@@ -180,30 +180,42 @@ export function check(text, cwd) {
 }
 
 /**
- * Refuses the call when a create breaks the rules.
+ * What the hook tells the agent about a Bash call.
  * @param {{ tool_input?: { command?: unknown }, cwd?: string }} input The
  *   hook input.
+ * @returns {string | undefined} Why the call is refused, or undefined when
+ *   it may run.
  */
-function report(input) {
+export function refusal(input) {
   const found = check(
     String(input.tool_input?.command ?? ''),
     input.cwd ?? process.cwd(),
   )
-  if (found.length === 0) {
+
+  return found.length === 0 ?
+      undefined
+    : `gh issue create refused:\n- ${found.join('\n- ')}\nEvery issue takes one type:, area:, status:, priority: and size: label (no size: on a type:epic). Load the issues skill for what each one means.\n`
+}
+
+/**
+ * The refusal for the input on stdin. A bug in the hook lets the call
+ * through, with a note, rather than block every Bash call.
+ * @returns {string | undefined} The refusal, if any.
+ */
+function fromStdin() {
+  try {
+    return refusal(JSON.parse(readFileSync(process.stdin.fd, 'utf8')))
+  } catch (error) {
+    process.stderr.write(`issue hook skipped its check: ${String(error)}\n`)
+
     return
   }
-  process.stderr.write(
-    `gh issue create refused:\n- ${found.join('\n- ')}\nEvery issue takes one type:, area:, status:, priority: and size: label (no size: on a type:epic). Load the issues skill for what each one means.\n`,
-  )
-  process.exitCode = 2
 }
 
 if (isMain(import.meta)) {
-  // A bug in the hook lets the call through, with a note, rather than block
-  // every Bash call.
-  try {
-    report(JSON.parse(readFileSync(process.stdin.fd, 'utf8')))
-  } catch (error) {
-    process.stderr.write(`issue hook skipped its check: ${String(error)}\n`)
+  const message = fromStdin()
+  if (message !== undefined) {
+    process.stderr.write(message)
+    process.exitCode = 2
   }
 }

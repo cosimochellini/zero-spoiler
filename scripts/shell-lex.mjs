@@ -12,7 +12,7 @@ import process from 'node:process'
 
 const HOME = process.env.HOME ?? '/'
 /** A `NAME=value` word. */
-export const ASSIGNMENT = /^[A-Z_a-z]\w*=/u
+const ASSIGNMENT = /^[A-Z_a-z]\w*=/u
 const ESCAPES = new Map(Object.entries({ n: '\n', r: '\r', t: '\t' }))
 /** Words that can stand before the command name without being it. */
 const PREFIXES = new Set(
