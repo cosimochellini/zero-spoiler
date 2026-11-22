@@ -284,7 +284,7 @@ Season 2 and _A Clash of Kings_ (#1455) file by cast group: King's Landing and
 the Blackwater (#1463) adds seven characters, one the show's alone and six the
 books', each showing a placeholder bust until its drawing child, and the stage's
 dated steps of eleven season-1 characters, kept in `season-1.ts`. Winterfell and
-the Iron Islands (#1466) adds fifteen, eight the books' alone, Asha Greyjoy
+the Iron Islands (#1466) adds fifteen, seven the books' alone, Asha Greyjoy
 filed under the books' name with the show's Yara as her `episodeName`, and the
 stage's steps of Theon, Bran, Rickon and Osha. The series opened before its
 drawings: Eddard, Jon, Daenerys and Tyrion have their own, with seven stages:
