@@ -100,6 +100,7 @@ export function resolved(word, cwd) {
     return
   }
 
+  // fallow-ignore-next-line security-sink -- a path the agent's own command names; following `..` is the point, and the hook only checks whether the file exists and reads it for its own label check
   return path.resolve(cwd ?? '/', word.text)
 }
 
