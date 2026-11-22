@@ -2,6 +2,7 @@ import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
 import { Words } from '~/components/FogTile'
+import { veilStyles as styles } from '~/components/SpoilerVeil.styles'
 import {
   followFocus,
   type Lift,
@@ -12,16 +13,6 @@ import { useVeilPeek, type VeilSlot } from '~/components/useVeilPeek'
 import { useT } from '~/i18n/LocaleContext'
 import { useThreshold } from '~/lib/progress/BookmarkContext'
 import type { Gated } from '~/lib/progress/spoiler'
-import {
-  color,
-  dur,
-  ease,
-  font,
-  radius,
-  rule,
-  space,
-  text,
-} from '~/styles/tokens.stylex'
 
 /** Everything the curtain needs to decide what it covers and how thickly. */
 export interface SpoilerVeilProps<T extends Gated> {
@@ -150,10 +141,11 @@ export function SpoilerVeil<T extends Gated>({
  * cannot see — and what is mounted there is the placeholder, because the
  * record itself is not in the browser to mount.
  */
-function Covered({
+export function Covered({
   control,
   density,
   strength,
+  sx,
   visible,
   children,
 }: {
@@ -162,6 +154,8 @@ function Covered({
   control: Lift<unknown>['button']['ref'] | undefined
   density: Density
   strength: Strength
+  /** Where the content sits in its caller's frame. */
+  sx?: stylex.StyleXStyles
   visible: boolean
 }): ReactElement {
   return (
@@ -178,7 +172,11 @@ function Covered({
             followFocus(node, control)
           }
       }
-      {...stylex.props(styles.content, !visible && fogFor(density, strength))}
+      {...stylex.props(
+        styles.content,
+        sx,
+        !visible && fogFor(density, strength),
+      )}
     >
       {children}
     </div>
@@ -195,7 +193,7 @@ function Covered({
  * so there is nothing to fade, and a hidden button on every open card was a
  * fifth of a list page's HTML and of the time spent rendering it (#621).
  */
-function Curtain({
+export function Curtain({
   button,
   density,
   lifted,
@@ -203,7 +201,7 @@ function Curtain({
   state,
 }: {
   button: Lift<unknown>['button']
-  density: Density
+  density: 'stage' | Density
   lifted: boolean
   notice: string
   state: LiftState
@@ -235,13 +233,14 @@ function Curtain({
         lifted && styles.curtainLifted,
       )}
     >
-      {verbOnly ?
-        <Verb
-          inline={density === 'inline'}
+      {density === 'block' || density === 'stage' ?
+        <Sign
+          // A stage prints the threshold in its meta line, once.
+          notice={density === 'stage' ? undefined : notice}
           state={state}
         />
-      : <Sign
-          notice={notice}
+      : <Verb
+          inline={density === 'inline'}
           state={state}
         />
       }
@@ -249,19 +248,24 @@ function Curtain({
   )
 }
 
-/** What a block curtain says: the threshold, then the verb or the state. */
+/**
+ * What a one-press curtain says: the threshold, unless the page already
+ * prints it, then the verb or the state.
+ */
 function Sign({
   notice,
   state,
 }: {
-  notice: string
+  notice: string | undefined
   state: LiftState
 }): ReactElement {
   const t = useT()
 
   return (
     <>
-      <span {...stylex.props(styles.notice)}>{notice}</span>
+      {notice === undefined ? null : (
+        <span {...stylex.props(styles.notice)}>{notice}</span>
+      )}
       <span {...stylex.props(styles.action)}>
         {t(state === 'resting' ? 'veil.reveal' : SAYS[state])}
       </span>
@@ -317,7 +321,10 @@ function fogFor(density: Density, strength: Strength): stylex.StyleXStyles {
 }
 
 /** The curtain's layout per density; `block` adds nothing to the base. */
-function curtainFor(density: Density): stylex.StyleXStyles {
+function curtainFor(density: 'stage' | Density): stylex.StyleXStyles {
+  if (density === 'stage') {
+    return styles.curtainStage
+  }
   if (density === 'inline') {
     return styles.curtainInline
   }
@@ -326,120 +333,3 @@ function curtainFor(density: Density): stylex.StyleXStyles {
   }
   return null
 }
-
-const styles = stylex.create({
-  frame: { display: 'grid', position: 'relative' },
-
-  content: {
-    // The blur is dropped in one frame. It is never transitioned: `filter` is
-    // not a compositor-only property and animating it drops frames on a large
-    // block of text.
-    filter: 'none',
-    // Lifted content that holds no link takes the focus itself. It is not a
-    // control: no ring around it.
-    outlineStyle: 'none',
-    userSelect: 'auto',
-  },
-  covered: {
-    filter: 'blur(0.55rem)',
-    // Without this the covered words can still be swept up by a drag-select
-    // and pasted somewhere legible.
-    userSelect: 'none',
-  },
-  // A block with a photograph in it. The radius is set by what it takes to
-  // make a face unreadable at card size, and the content is clipped by the
-  // frame so the blur cannot bleed a halo past the card edge.
-  coveredMedia: { filter: 'blur(1.4rem)', userSelect: 'none' },
-  // A table cell is one line tall, so the blur radius drops with it: 0.55rem
-  // on a single line smears into the rows above and below.
-  coveredTight: { filter: 'blur(0.3rem)', userSelect: 'none' },
-  // A crest on a card is a drawing and a name at once, so the fog is thick
-  // enough for a drawing, and the card is clipped by its own frame.
-  coveredCompact: { filter: 'blur(1rem)', userSelect: 'none' },
-
-  curtain: {
-    inset: 0,
-    padding: space.md,
-    borderRadius: radius.card,
-    borderStyle: 'none',
-    gap: space.xs,
-    alignContent: 'center',
-    backgroundColor: 'transparent',
-    color: color.ink2,
-    cursor: 'pointer',
-    display: 'grid',
-    // Explicit rather than the implicit `minmax(auto, 1fr)`, whose floor is
-    // the notice's min-content and can push the curtain past its frame.
-    gridTemplateColumns: 'minmax(0, 1fr)',
-    justifyItems: 'start',
-    opacity: 1,
-    outlineColor: { 'default': 'transparent', ':focus-visible': color.focus },
-    outlineOffset: space.xs3,
-    outlineStyle: 'solid',
-    outlineWidth: rule.fine,
-    pointerEvents: 'auto',
-    position: 'absolute',
-    textAlign: 'start',
-    transitionDuration: dur.short,
-    transitionProperty: 'opacity, visibility',
-    transitionTimingFunction: ease.out,
-    visibility: 'visible',
-    width: '100%',
-  },
-  curtainInline: {
-    gap: space.xs,
-    paddingBlock: 0,
-    paddingInline: 0,
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'start',
-  },
-  curtainCompact: {
-    padding: space.xs,
-    alignContent: 'center',
-    justifyItems: 'center',
-    // A question that wraps on a narrow card stays centred over it.
-    textAlign: 'center',
-  },
-  curtainLifted: {
-    opacity: 0,
-    pointerEvents: 'none',
-    // Hidden rather than `display: none` so the fade can run, and unlike
-    // opacity alone it removes the button from the tab order and from the
-    // accessibility tree once the fade is over.
-    visibility: 'hidden',
-  },
-
-  notice: {
-    borderColor: color.rule2,
-    borderStyle: 'solid',
-    borderWidth: rule.hair,
-    paddingBlock: space.xs3,
-    paddingInline: space.xs,
-    backgroundColor: color.paper,
-    fontFamily: font.mono,
-    fontSize: text.xs,
-    fontWeight: 500,
-    letterSpacing: '0.08em',
-    overflowWrap: 'anywhere',
-    textTransform: 'uppercase',
-    minWidth: 0,
-  },
-  actionInline: { overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0 },
-  action: {
-    paddingInline: space.xs2,
-    backgroundColor: color.paper,
-    color: {
-      'default': color.accent,
-      ':is(button:active) > &': color.ink,
-      ':is(button:hover) > &': color.ink,
-    },
-    fontFamily: font.body,
-    fontSize: text.base,
-    fontWeight: 700,
-    textDecorationLine: 'underline',
-    textUnderlineOffset: '2px',
-    // A verb in a table cell is one line or it is broken.
-    whiteSpace: 'nowrap',
-  },
-})

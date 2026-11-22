@@ -178,8 +178,12 @@ describe('a place’s entry', () => {
     expect(container.querySelectorAll(':scope svg svg')).toHaveLength(0)
     expect(screen.getByText('First seen in episode 144')).toBeVisible()
 
-    // The words have their own veil, after the plate's.
-    await user.click(screen.getAllByRole('button').at(-1) ?? document.body)
+    // One curtain over the plate and the words.
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Under fog until episode 144. Show anyway',
+      }),
+    )
     await settle()
 
     expect(
@@ -227,7 +231,11 @@ describe('a ship’s entry', () => {
     expect(screen.getByText('A ship under fog')).toBeInTheDocument()
     expect(screen.getByText('Episode 18')).toBeVisible()
 
-    await user.click(screen.getAllByRole('button').at(-1) ?? document.body)
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Under fog until episode 18. Show anyway',
+      }),
+    )
     await settle()
 
     expect(
