@@ -35,9 +35,20 @@ function render(source, width, height = width) {
   ])
 }
 
+/**
+ * A file in public/icons.
+ * @param {string} name Its name: a series slug from the repository's own
+ * list, or a literal, with a literal suffix.
+ * @returns {string} Its path.
+ */
+function iconFile(name) {
+  // fallow-ignore-next-line security-sink -- the name is built from the repository's own series list and literals, never outside input
+  return path.join(icons, name)
+}
+
 // rsvg-convert reads a file, so an icon drawn here is written out first.
 function renderText(text, size) {
-  const file = path.join(icons, '.render.svg')
+  const file = iconFile('.render.svg')
   writeFileSync(file, text)
   return render(file, size)
 }
@@ -282,13 +293,13 @@ function hubIcons() {
     path.join(root, 'public', 'apple-touch-icon.png'),
     render(svg, 180),
   )
-  writeFileSync(path.join(icons, 'hub-192.png'), render(svg, 192))
-  writeFileSync(path.join(icons, 'hub-512.png'), render(svg, 512))
+  writeFileSync(iconFile('hub-192.png'), render(svg, 192))
+  writeFileSync(iconFile('hub-512.png'), render(svg, 512))
   // The compass shrunk into the safe circle, on a square of its own tile.
   const hub = readFileSync(svg, 'utf8')
   const inner = hub.slice(hub.indexOf('>') + 1, hub.lastIndexOf('</svg>'))
   writeFileSync(
-    path.join(icons, 'hub-maskable-512.png'),
+    iconFile('hub-maskable-512.png'),
     renderText(
       `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="${HUB_TILE}"/><g transform="translate(5 5) scale(0.6875)">${inner}</g></svg>`,
       512,
@@ -316,14 +327,14 @@ function seriesIcons(slug, emblem) {
   }
   const palette = seriesPalette(slug)
   const tab = iconSvg(emblem, palette, cut, 'small')
-  writeFileSync(path.join(icons, `${slug}.svg`), tab)
+  writeFileSync(iconFile(`${slug}.svg`), tab)
   writeFileSync(
-    path.join(icons, `${slug}.ico`),
+    iconFile(`${slug}.ico`),
     ico(SIZES.map((size) => ({ size, data: renderText(tab, size) }))),
   )
   for (const [suffix, variant, size] of BITMAPS) {
     writeFileSync(
-      path.join(icons, `${slug}${suffix}`),
+      iconFile(`${slug}${suffix}`),
       renderText(iconSvg(emblem, palette, cut, variant), size),
     )
   }
@@ -337,10 +348,10 @@ async function main() {
   for (const { slug } of OPEN_SERIES) {
     seriesIcons(slug, EMBLEMS[slug])
   }
-  rmSync(path.join(icons, '.render.svg'))
+  rmSync(iconFile('.render.svg'))
   const files = await manifests()
   for (const [file, manifest] of files) {
-    writeFileSync(path.join(icons, file), manifestText(manifest))
+    writeFileSync(iconFile(file), manifestText(manifest))
   }
 
   // The size every platform crops its link preview from: 1.91:1, and large
