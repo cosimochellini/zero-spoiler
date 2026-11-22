@@ -144,6 +144,13 @@ const STEPS: {
     chapter: 123,
     source: 'chapter',
   },
+  {
+    id: 'balon-swann',
+    en: 'Kingsguard',
+    episode: 18,
+    chapter: 123,
+    source: 'chapter',
+  },
 ]
 
 type Unit = 'chapter' | 'episode'

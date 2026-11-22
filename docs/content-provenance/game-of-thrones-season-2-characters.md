@@ -15,10 +15,11 @@ Research for #1458, the characters of the second stage: HBO season 2 (episodes
 - **Dated steps** pin both numbers and stop at episode 20 / chapter 143. A step
   one medium alone tells carries `source`.
 - **Not viewed.** Neither the episodes nor the books were viewed. A Wiki of Ice
-  and Fire was not read (no Firecrawl tool in the session), and the Ice and Fire
-  Wiki has chapter pages for none of the _A Clash of Kings_ chapters cited below
-  but Sansa I. Book chapters come from the Game of Thrones Wiki's episode pages
-  ("In the books") and its character pages' `Bookref` citations, matched to the
+  and Fire was read through Firecrawl only in review round 1, for the pins it
+  names (Jacelyn, Hallyne, Osmund, Alayaya, Sandor), and the Ice and Fire Wiki
+  has chapter pages for none of the _A Clash of Kings_ chapters cited below but
+  Sansa I. Book chapters come from the Game of Thrones Wiki's episode pages ("In
+  the books") and its character pages' `Bookref` citations, matched to the
   chapter navigation. Every open point is under `unverified` in
   `game-of-thrones.json`.
 
@@ -56,7 +57,9 @@ order them.
   Fire), past the stage, so it is not filed here. Italian kept as "Jacelyn
   Bywater"; no Italian page.
 - Hallyne: role pyromancer of the Alchemists' Guild, alive. Owner check: the
-  show's episode 15 is narration only. Italian "Hallyne" (TV cast list).
+  show's episode 15 is narration only. Books: Tyrion IV (91), where he walks the
+  walls in the queen's retinue, is the lower candidate to check. Italian
+  "Hallyne" (TV cast list).
 - Lollys Stokeworth: role daughter of Lady Tanda Stokeworth, House Stokeworth,
   alive. Lower points to check: Sansa I (76) and the riot of Tyrion IX (115).
   Italian "Lollys Stokeworth".
