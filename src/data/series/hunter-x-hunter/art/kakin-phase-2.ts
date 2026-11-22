@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
@@ -43,6 +44,33 @@ export const BESIDE_THE_BEAST =
 export const SKULL = 'M58 106 C54 74 64 56 80 56 C96 56 106 74 102 106'
 
 /**
+ * The back of a head seen a little from its left, down to the nape: the
+ * near side fuller, the far side turning away.
+ */
+export const TURNED_SKULL = 'M50 104 C44 70 58 46 80 46 C102 46 112 66 108 104'
+
+/** The near ear of the same head, from behind. */
+const TURNED_EAR = 'M49 78 C40 74 36 90 47 96'
+
+/**
+ * The neck and shoulders under the same head: the near shoulder wider, the
+ * far one hatched where it turns away, and the shadow they throw.
+ */
+export const TURNED_BODY: Stroke[] = [
+  { d: 'M58 104 L58 122 M98 108 L100 124' },
+  { d: 'M16 180 C18 146 36 128 58 122 M138 180 C138 150 124 132 100 124' },
+  { d: 'M118 148 l8 -6 M124 162 l8 -6 M128 176 l7 -5', role: 'ambient' },
+  shadow(78, 188, 58),
+]
+
+/** A suit's collar round the back of the same neck. */
+export const TURNED_COLLAR = 'M58 122 Q78 132 100 124'
+
+/** The collar of a servant's robe round the back of the same neck. */
+const ROBE_COLLAR =
+  'M56 122 C64 134 94 134 102 124 L98 116 C90 126 68 126 60 116 Z'
+
+/**
  * A left hand from the back, fingers together, the pinion marked on it in
  * tint: the mark Halkenburg's guards find on the back of their left hands.
  */
@@ -62,55 +90,73 @@ export const PINION_HAND: Stroke[] = [
 ]
 
 /**
- * Longhi's long fair ponytail down the back of her black suit, the tie that
- * holds it in tint.
+ * Longhi's head from behind and a little to her left: the fair hair combed
+ * back to the tie at her nape, in tint, and the long ponytail falling from
+ * it over her shoulder blade, down the back of her black suit.
  */
 const LONGHI: Stroke[] = [
-  { d: SKULL },
-  { d: 'M64 66 C70 60 90 60 96 66', role: 'soft' },
+  { d: TURNED_SKULL },
   {
-    d: 'M74 82 C70 112 72 146 78 172 M86 82 C90 112 88 146 82 172 M78 172 L80 178 L82 172',
+    d: 'M58 62 C68 76 74 88 76 96 M80 48 C80 70 82 84 84 96 M104 64 C98 78 94 88 90 96',
+    role: 'soft',
   },
-  { d: 'M74 80 Q80 84 86 80 M74 86 Q80 90 86 86', role: 'accent' },
-  { d: 'M80 92 V166', role: 'soft' },
-  ...FROM_BEHIND,
+  { d: 'M74 96 Q83 102 92 96 M74 103 Q83 109 92 103', role: 'accent' },
+  {
+    d: 'M76 106 C70 128 62 150 58 172 M90 106 C90 130 82 154 70 176 M58 172 L62 182 L70 176',
+  },
+  { d: 'M83 110 C80 132 74 152 64 174', role: 'soft' },
+  { d: 'M104 70 l5 -4 M106 84 l5 -4 M104 98 l5 -4', role: 'ambient' },
+  { d: TURNED_COLLAR, role: 'soft' },
+  ...TURNED_BODY,
 ]
 
 /**
- * A combat boot of Benjamin's private army side on, the laces in tint and
- * the heavy sole hatched.
+ * Furykov's head from behind and a little to his left: the short fair hair,
+ * its outline in tint, the dark beard along his jaw just showing below the
+ * ear, over the collar of his Kakin army zipper jacket.
  */
-const FURYKOV_BOOT: Stroke[] = [
-  { d: 'M58 40 H94 V112 C110 116 128 122 134 134 V146 H40 V40' },
-  { d: 'M40 146 V156 H136 V146' },
+const FURYKOV: Stroke[] = [
+  { d: 'M50 94 C44 62 58 44 80 44 C102 44 112 64 108 98', role: 'accent' },
   {
-    d: 'M46 154 l6 -6 M58 154 l8 -8 M74 154 l8 -8 M90 154 l8 -8 M106 154 l8 -8 M122 154 l8 -8',
-    role: 'ambient',
+    d: 'M50 94 L56 99 L62 96 L68 101 L74 98 L80 102 L86 99 L92 102 L98 99 L104 101 L108 98',
+    role: 'soft',
   },
   {
-    d: 'M64 50 L88 58 M88 50 L64 58 M64 66 L88 74 M88 66 L64 74 M64 82 L88 90 M88 82 L64 90 M64 98 L88 106 M88 98 L64 106',
+    d: 'M60 62 l4 -5 M70 54 l4 -5 M82 52 l4 -5 M94 56 l4 -5 M64 78 l4 -5 M78 72 l4 -5 M92 74 l4 -5',
+    role: 'soft',
+  },
+  { d: 'M50 76 C41 72 37 88 48 94' },
+  { d: 'M48 94 C44 106 48 116 58 120' },
+  { d: 'M47 100 l4 -3 M48 108 l5 -3 M52 115 l5 -3', role: 'ambient' },
+  { d: 'M104 72 l5 -4 M106 86 l5 -4', role: 'ambient' },
+  { d: 'M56 114 C66 126 92 128 102 116 M56 122 C66 134 92 136 102 124' },
+  ...TURNED_BODY,
+]
+
+/**
+ * Vincent's knife lying in 3/4: the blade with its two faces, the guard,
+ * and the grip in tint.
+ */
+const VINCENT_KNIFE: Stroke[] = [
+  { d: 'M10 150 L80 124 L84 136 L20 156 Q8 158 10 150 Z' },
+  { d: 'M14 152 L82 130', role: 'soft' },
+  { d: 'M78 118 L86 115 L92 137 L84 140 Z M86 115 L90 113 L96 135 L92 137' },
+  {
+    d: 'M90 121 L116 112 Q124 110 125 116 Q126 122 118 124 L94 132',
     role: 'accent',
   },
-  { d: 'M58 40 V112 M94 112 C90 120 82 126 70 128', role: 'soft' },
-  { d: 'M40 52 H46 M40 64 H46', role: 'soft' },
-  shadow(88, 170, 52),
+  { d: 'M100 120 l2 6 M108 117 l2 6', role: 'soft' },
 ]
 
-/** Vincent's knife, its grip in tint. */
-const VINCENT_KNIFE: Stroke[] = [
-  { d: 'M18 132 L92 112 L96 120 L24 140 Q16 140 18 132 Z' },
-  { d: 'M26 134 L90 117', role: 'soft' },
-  { d: 'M92 108 L98 106 L102 124 L96 126 Z' },
-  { d: 'M100 114 L136 104 L140 112 L104 122', role: 'accent' },
-  { d: 'M112 112 l4 -1 M122 109 l4 -1', role: 'soft' },
-]
-
-/** The vial of poison Vincent shows to frame the attendant he killed. */
+/**
+ * The stoppered vial of poison Vincent shows to frame the attendant he
+ * killed, standing.
+ */
 const VINCENT_VIAL: Stroke[] = [
-  { d: 'M110 52 H128 V60 H110 Z' },
-  { d: 'M113 60 V88 Q119 96 125 88 V60' },
-  { d: 'M113 74 Q119 77 125 74', role: 'soft' },
-  { d: 'M121 78 l3 -2 M121 86 l3 -2', role: 'ambient' },
+  { d: `${ellipse(138, 98, 7, 2.5)} M131 98 V106 Q138 110 145 106 V98` },
+  { d: 'M133 107 V138 Q138 148 143 138 V107' },
+  { d: 'M133 124 Q138 127 143 124', role: 'soft' },
+  { d: 'M140 128 l3 -2 M140 136 l3 -2', role: 'ambient' },
 ]
 
 /** Kurapika's tape line across the floor of the Nen class. */
@@ -138,46 +184,62 @@ const MYUHAN_ROLL: Stroke[] = [
   { d: 'M16 164 V170 C16 176 44 176 44 170 V164', role: 'soft' },
 ]
 
+/**
+ * The Black Whale 1 in 3/4 from the bow: the hull and its deck, the five
+ * tiers stepped up the ship with a row of windows each, the dome on top in
+ * tint, on the water.
+ */
+const BLACK_WHALE: Stroke[] = [
+  { d: 'M4 120 L28 130 H150 L134 114 H16 Z' },
+  { d: 'M4 120 C8 138 16 148 32 152 H144 L150 130' },
+  {
+    d: 'M40 126 H132 V115 H40 Z M40 126 l-12 -12 v-11 l12 12 M45 112 H119 V101 H45 Z M45 112 l-7.8 -7.8 v-11 l7.8 7.8 M51 99 H107 V88 H51 Z M51 99 l-5 -5 v-11 l5 5 M58 87 H96 V76 H58 Z M58 87 l-3.3 -3.3 v-11 l3.3 3.3 M65 75 H85 V64 H65 Z M65 75 l-2.1 -2.1 v-11 l2.1 2.1',
+  },
+  {
+    d: 'M28 103 H120 L132 115 M37 93 H111 L119 101 M46 83 H102 L107 88 M55 73 H93 L96 76 M62.9 61.9 H82.9 L85 64',
+    role: 'soft',
+  },
+  { d: 'M64 64 C64 44 86 44 86 64', role: 'accent' },
+  { d: 'M64 64 C68 67 82 67 86 64 M75 46 V66', role: 'soft' },
+  {
+    d: 'M44 120.5 H128 M49 106.5 H115 M55 93.5 H103 M62 81.5 H92 M69 69.5 H81',
+    role: 'soft',
+    dashed: true,
+  },
+  {
+    d: 'M40 150 l8 -14 M60 150 l8 -14 M80 150 l8 -14 M100 150 l8 -14 M120 150 l8 -14',
+    role: 'ambient',
+  },
+  ...SEA,
+]
+
 export const KAKIN_PHASE_TWO_DRAWINGS = {
-  // The Black Whale side on in the water: the long hull hatched below the
-  // waterline, the five tiers stepped up the ship with their rows of
-  // windows, and the dome over the top in tint. It is presented to the
-  // public in chapter 342.
-  'black-whale': [
-    { d: 'M8 122 L20 146 H140 L154 122 Z' },
-    { d: 'M24 122 V104 H136 V122 M34 104 V88 H126 V104 M44 88 V74 H116 V88' },
-    { d: 'M54 74 C56 46 104 46 106 74', role: 'accent' },
-    { d: 'M62 62 H98 M70 52 V74 M90 52 V74', role: 'soft' },
-    {
-      d: 'M30 113 H130 M40 96 H120 M50 81 H110 M14 132 H146',
-      role: 'soft',
-      dashed: true,
-    },
-    {
-      d: 'M30 144 l6 -8 M48 144 l6 -8 M66 144 l6 -8 M84 144 l6 -8 M102 144 l6 -8 M120 144 l6 -8',
-      role: 'ambient',
-    },
-    ...SEA,
-  ],
+  // The Black Whale 1 in 3/4 from the bow, on the water: the hull, the
+  // five tiers its habitable areas are split into stepped up the ship with
+  // their rows of windows, and the top dome in tint. Kakin presents it in
+  // chapter 342.
+  'black-whale': BLACK_WHALE,
 
-  // Tokarine's dark bob from behind, the top dyed lighter in tint, the two
-  // locks pointing out to the sides and the earring under one of them: the
-  // transport Hunter of chapter 359.
+  // Tokarine's dark bob from behind and a little to her left, the top dyed
+  // lighter in tint, the two locks pointing out to the sides and the earring
+  // under the near one: the transport Hunter of chapter 359.
   'tokarine': [
-    { d: 'M54 104 C50 70 62 50 80 50 C98 50 110 70 106 104 Z' },
-    { d: 'M62 60 C70 50 90 50 98 60 C90 66 70 66 62 60 Z', role: 'accent' },
-    { d: 'M54 102 L38 108 M106 102 L122 108' },
-    { d: circle(52, 114, 4), role: 'soft' },
+    { d: 'M48 104 C42 68 58 44 80 44 C104 44 114 66 110 104 Z' },
+    { d: 'M58 62 C66 46 98 46 106 62 C96 70 68 70 58 62 Z', role: 'accent' },
+    { d: 'M48 102 L30 112 M110 102 L122 106' },
+    { d: circle(44, 114, 4), role: 'soft' },
     {
-      d: 'M60 78 l8 -6 M58 92 l12 -9 M64 102 l14 -11 M80 102 l14 -11 M92 102 l10 -8',
+      d: 'M56 82 l8 -6 M54 96 l12 -9 M62 104 l14 -11 M80 104 l14 -11 M96 102 l12 -9 M100 86 l8 -6',
       role: 'ambient',
     },
-    ...FROM_BEHIND,
+    { d: TURNED_COLLAR, role: 'soft' },
+    ...TURNED_BODY,
   ],
 
-  // Vincent's knife and his vial of poison: he kills an attendant with the
-  // knife and shows the vial to frame her, chapter 363.
-  'vincent': [...VINCENT_KNIFE, ...VINCENT_VIAL, shadow(80, 156, 60)],
+  // Vincent's knife and the stoppered vial of poison standing beside it: he
+  // kills an attendant with the knife and shows the vial to frame her,
+  // chapter 363.
+  'vincent': [...VINCENT_KNIFE, ...VINCENT_VIAL, shadow(80, 166, 64)],
 
   // Barrigen's shirt collar and tie under his black suit, a white snake
   // coiled round the collar: the snakes that drain his blood in the Nen
@@ -201,91 +263,114 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
     shadow(80, 170, 50),
   ],
 
-  // Belerainte's raised hand in the sleeve of his black suit, the shirt
-  // cuff in tint: he raises it when Kurapika asks who already uses Nen,
-  // chapter 370.
+  // The chest of Belerainte's black suit in 3/4, the capital H on its top
+  // left in tint, the lapels and collar, the far side hatched: the Hunter
+  // guard who tells Kurapika's class he already uses Nen, chapter 370.
   'belerainte': [
     {
-      d: 'M62 112 V58 Q62 52 67 52 Q72 52 72 58 V96 M72 94 V46 Q72 40 77 40 Q82 40 82 46 V94 M82 94 V50 Q82 44 87 44 Q92 44 92 50 V98 M92 100 V62 Q92 56 97 56 Q102 56 102 62 V114',
+      d: 'M58 40 L30 54 C22 90 20 140 22 184 M96 38 L136 56 C144 96 146 140 146 184',
+    },
+    { d: 'M58 40 Q76 32 96 38', role: 'soft' },
+    {
+      d: 'M58 40 L48 62 L58 70 L50 82 L76 150 M96 38 L104 60 L94 70 L104 84 L76 150',
     },
     {
-      d: 'M62 112 C52 104 44 96 42 86 Q40 80 46 80 Q50 80 52 86 C54 94 58 98 62 100',
-    },
-    { d: 'M60 116 H104 V128 H60 Z', role: 'accent' },
-    { d: 'M56 128 H108 L114 184 H50 Z' },
-    { d: 'M98 140 l8 -5 M100 156 l8 -5 M102 172 l8 -5', role: 'ambient' },
-    { d: 'M64 66 h8 M72 56 h10 M82 60 h10 M92 72 h10', role: 'soft' },
-  ],
-
-  // Danjin's head from behind, shaved but for the tall tuft on top, in tint,
-  // over the collar of his black suit: Tserriednich's guard at the Nen
-  // class, chapter 370.
-  'danjin': [
-    { d: SKULL },
-    { d: 'M72 58 V34 M88 58 V34', role: 'accent' },
-    { d: ellipse(80, 34, 8, 3), role: 'accent' },
-    { d: 'M74 44 l6 -4 M74 52 l12 -8 M80 56 l8 -6', role: 'ambient' },
-    {
-      d: 'M54 86 C48 84 46 92 50 98 M106 86 C112 84 114 92 110 98',
-      role: 'soft',
-    },
-    ...FROM_BEHIND,
-  ],
-
-  // A combat boot of Benjamin's private army side on, the laces in tint and
-  // the heavy sole hatched: Furykov is one of his soldiers, chapter 363.
-  'furykov': FURYKOV_BOOT,
-
-  // Illardia's ear-length fair hair from behind, parted in the middle, over
-  // the collar of a servant's robe in tint: Fugetsu's maid at the class,
-  // chapter 370.
-  'illardia': [
-    { d: 'M54 104 C50 70 62 52 80 52 C98 52 110 70 106 104' },
-    { d: 'M80 52 V70', role: 'soft' },
-    {
-      d: 'M54 104 Q58 98 62 104 Q66 98 70 104 M90 104 Q94 98 98 104 Q102 98 106 104',
-      role: 'soft',
-    },
-    {
-      d: 'M62 64 C60 78 62 92 60 104 M98 64 C100 78 98 92 100 104',
-      role: 'soft',
-    },
-    {
-      d: 'M60 124 C68 132 92 132 100 124 L96 116 C88 122 72 122 64 116 Z',
+      d: 'M108 94 L110 120 M126 92 L128 118 M109 107 L127 105',
       role: 'accent',
     },
-    ...FROM_BEHIND,
-  ],
-
-  // Ladiolus's dark hair from behind, gathered in two buns at the nape, the
-  // buns in tint: Fugetsu's other maid at the class, chapter 370.
-  'ladiolus': [
-    { d: SKULL },
-    { d: `${circle(68, 104, 9)} ${circle(92, 104, 9)}`, role: 'accent' },
-    { d: 'M64 64 C70 80 70 92 68 96 M96 64 C90 80 90 92 92 96', role: 'soft' },
+    { d: 'M48 62 L58 70 M104 60 L94 70', role: 'soft' },
     {
-      d: 'M66 66 l10 -7 M64 80 l18 -13 M70 90 l20 -14 M86 92 l12 -9',
+      d: 'M28 80 l10 -7 M26 100 l12 -8 M24 120 l14 -9 M24 140 l14 -9 M24 160 l14 -9',
       role: 'ambient',
     },
-    ...FROM_BEHIND,
   ],
 
-  // Loberry's hand pointing out of the sleeve of her servant's robe, the
-  // cuff in tint: she points the whole class at a woman nobody else can
+  // Danjin's shaved head from behind and a little to his left, the tall
+  // cylindrical tuft on top in tint, the mutton chop down his jaw below the
+  // ear, over the collar of his black suit: Tserriednich's guard, named at
+  // the Nen class in chapter 369.
+  'danjin': [
+    { d: TURNED_SKULL },
+    { d: `M74 50 V32 M90 50 V32 ${ellipse(82, 32, 8, 3)}`, role: 'accent' },
+    { d: TURNED_EAR },
+    { d: 'M47 96 C44 108 48 116 56 120 M53 96 C52 106 54 112 58 116' },
+    { d: 'M48 104 l4 -3 M50 112 l5 -3', role: 'ambient' },
+    { d: 'M104 66 l5 -4 M106 80 l5 -4 M106 94 l5 -4', role: 'ambient' },
+    { d: TURNED_COLLAR, role: 'soft' },
+    ...TURNED_BODY,
+  ],
+
+  // Furykov's short fair hair from behind, the dark beard along his jaw just
+  // showing, over the collar of his Kakin army zipper jacket: one of
+  // Benjamin's soldiers, chapter 363.
+  'furykov': FURYKOV,
+
+  // Illardia's ear-length fair hair from behind and a little to her left,
+  // parted in the middle, over the collar of her maid's robe in tint:
+  // Fugetsu's maid at the class, chapter 369.
+  'illardia': [
+    { d: 'M48 94 C42 64 58 44 80 44 C102 44 114 64 110 96' },
+    { d: 'M82 44 C80 50 80 56 81 60', role: 'soft' },
+    {
+      d: 'M48 94 Q53 88 58 94 Q63 88 68 94 M98 96 Q102 90 106 96 Q108 92 110 96',
+      role: 'soft',
+    },
+    {
+      d: 'M60 58 C56 72 58 84 58 94 M100 60 C102 72 100 84 100 96',
+      role: 'soft',
+    },
+    { d: 'M58 94 C60 100 60 104 58 108 M98 96 C98 102 98 106 98 110' },
+    { d: 'M104 70 l5 -4 M106 84 l5 -4', role: 'ambient' },
+    { d: ROBE_COLLAR, role: 'accent' },
+    ...TURNED_BODY,
+  ],
+
+  // Ladiolus's dark hair from behind and a little to her left, gathered in
+  // two buns at the nape, the buns in tint, over the collar of her maid's
+  // robe: Fugetsu's other maid at the class, chapter 369.
+  'ladiolus': [
+    { d: TURNED_SKULL },
+    {
+      d: `${circle(70, 108, 9)} M76.9 102.3 A8 8 0 1 1 78.3 111.6`,
+      role: 'accent',
+    },
+    { d: 'M64 104 Q70 101 76 104', role: 'soft' },
+    { d: 'M56 62 C62 76 66 88 68 99', role: 'soft' },
+    {
+      d: 'M54 78 l8 -6 M52 92 l10 -8 M68 66 l12 -10 M70 82 l8 -6 M92 62 l10 -8 M96 76 l10 -8 M98 90 l8 -6',
+      role: 'ambient',
+    },
+    { d: ROBE_COLLAR, role: 'soft' },
+    ...TURNED_BODY,
+  ],
+
+  // Loberry's hand pointing out of the sleeve of her maid's robe, in 3/4,
+  // the cuff in tint: she points at a doll nobody else in the class can
   // see, chapter 370.
   'loberry': [
-    { d: 'M14 120 L62 104 L68 128 L20 144 Z' },
-    { d: 'M62 104 L72 100 L78 124 L68 128', role: 'accent' },
+    { d: 'M55 100 L5 155 M81 124 L31 179' },
     {
-      d: 'M76 102 C86 98 96 98 100 102 L140 94 Q146 94 146 100 Q146 104 140 106 L104 114 M104 114 C104 120 98 124 92 124 M90 124 C96 126 98 132 92 134 H80 L78 124',
+      d: ellipse(68, 112, 18, 7),
+      role: 'accent',
+      transform: 'rotate(42 68 112)',
     },
-    { d: 'M98 112 Q94 116 96 120 M90 124 Q88 120 90 116', role: 'soft' },
-    { d: 'M24 136 l8 -4 M36 134 l8 -4 M46 130 l8 -4', role: 'ambient' },
-    shadow(76, 160, 56),
+    {
+      d: 'M66 104 C78 98 92 94 102 96 L136 92 Q142 92 142 97 Q142 102 136 102 L106 104 C110 106 110 112 104 113 C108 116 107 121 101 121 C104 125 101 129 95 128 L76 124',
+    },
+    {
+      d: 'M80 112 C88 110 96 112 100 116 M102 96 C100 100 102 103 106 104',
+      role: 'soft',
+    },
+    { d: 'M30 132 C36 142 38 152 36 162', role: 'soft' },
+    {
+      d: 'M44 154 l8 -8 M36 164 l8 -8 M54 142 l8 -8 M62 132 l6 -6',
+      role: 'ambient',
+    },
   ],
 
-  // Longhi's long fair ponytail down the back of her black suit, the tie
-  // that holds it in tint: Tubeppa's guard at the class, chapter 370.
+  // Longhi's long fair ponytail from behind, the tie that holds it in tint,
+  // down the back of her black suit: Tubeppa's guard at the class, chapter
+  // 369.
   'longhi': LONGHI,
 
   // A sealed letter in 3/4, its flap and seal, the seal in tint: Maor
@@ -442,18 +527,15 @@ export const kakinPhaseTwoRedrawn: Redrawings = {
   ],
   furykov: [
     // An open laptop seen from behind, the great tree on the back of its
-    // screen in tint, over the same boot made small: Combo Master, which he
-    // conjures in the flashback of chapter 415. The tree is the Kakin tree
-    // the wiki names; its drawing is a frame check.
+    // screen in tint, over the same head made small, its hair now soft:
+    // Combo Master, which he conjures in the flashback of chapter 415. The
+    // tree is the Kakin tree the wiki names; its drawing is a frame check.
     {
       episode: 148,
       chapter: 415,
       source: 'chapter',
       value: [
-        ...moved(
-          FURYKOV_BOOT,
-          'translate(80 196) scale(0.5) translate(-80 -196)',
-        ),
+        ...moved(softened(FURYKOV), BESIDE_THE_BEAST),
         { d: 'M34 20 L126 20 L122 92 L38 92 Z' },
         { d: 'M30 96 H130 L126 102 H34 Z', role: 'soft' },
         {
@@ -465,17 +547,18 @@ export const kakinPhaseTwoRedrawn: Redrawings = {
     },
   ],
   vincent: [
-    // The dropped knife and vial, the vial tipped on its side: caught by
-    // Kurapika and Bill, he swallows the poison pill hidden in his molar,
-    // chapter 364. The vial is not what kills him.
+    // The same knife dropped on the floor at a sharp angle, the vial still
+    // standing stoppered beside it: caught by Kurapika and Bill, he uses the
+    // suicide pill hidden in one of his molars, chapter 364. The vial was
+    // only his frame-up, so it stays shut.
     {
       episode: 148,
       chapter: 364,
       source: 'chapter',
       value: [
-        ...moved(VINCENT_KNIFE, 'translate(0 20)'),
-        ...moved(VINCENT_VIAL, 'rotate(-90 119 74) translate(-80 -20)'),
-        { d: 'M4 162 H156', role: 'ambient', dashed: true },
+        ...moved(VINCENT_KNIFE, 'rotate(-14 96 140) matrix(-1 0 0 1 164 8)'),
+        ...moved(VINCENT_VIAL, 'translate(-112 14)'),
+        { d: 'M4 158 H156', role: 'ambient', dashed: true },
       ],
     },
   ],
