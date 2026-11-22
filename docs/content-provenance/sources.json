@@ -35851,6 +35851,36 @@
       "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153390427",
       "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153390427",
       "contentSha256": "40312550bca3adbf72750fdaaca50072f46fc5e8b2f5a5741bb95be08b0c5314"
+    },
+    "hxh-it-Famiglia_Zoldick-153355822.json": {
+      "locale": "it",
+      "title": "Famiglia Zoldick",
+      "revision": 153355822,
+      "revisionDate": "2026-11-13T20:12:49Z",
+      "url": "https://it.wikipedia.org/wiki/Famiglia_Zoldick",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153355822",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153355822",
+      "contentSha256": "dd95bf6fba2a278a80d686ae70cdf4f1b30b6fe999f9d03a77459339a7a31cc1"
+    },
+    "hxh-it-Associazione_Hunter-153389144.json": {
+      "locale": "it",
+      "title": "Associazione Hunter",
+      "revision": 153389144,
+      "revisionDate": "2026-11-16T07:31:16Z",
+      "url": "https://it.wikipedia.org/wiki/Associazione_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153389144",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153389144",
+      "contentSha256": "6d08a34b8fea05f6d33c598af631996f77252864a4abe03a1861082fe0bd7d7c"
+    },
+    "hxh-it-Personaggi_di_Hunter_×_Hunter-153397064.json": {
+      "locale": "it",
+      "title": "Personaggi di Hunter × Hunter",
+      "revision": 153397064,
+      "revisionDate": "2026-11-16T14:51:08Z",
+      "url": "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter",
+      "revisionUrl": "https://it.wikipedia.org/w/index.php?oldid=153397064",
+      "apiUrl": "https://it.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=153397064",
+      "contentSha256": "57559301d8dc190c262b081056bf9e7c07bbd41eaf544c8bf765e9b5cddff208"
     }
   }
 }
