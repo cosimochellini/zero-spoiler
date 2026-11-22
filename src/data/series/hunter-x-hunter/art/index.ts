@@ -79,6 +79,7 @@ import {
   yorknewAbilitiesRedrawn,
 } from './yorknew-abilities'
 import {
+  KORTOPI_VASE,
   NEON_PEN,
   NEON_SHEETS,
   YORKNEW_CITY_DRAWINGS,
@@ -1418,9 +1419,6 @@ const electionReturningRedrawn: Redrawings = {
 /** A manga-only stage of a returning record, told in Kakin's chapters. */
 const KAKIN = { episode: 148, source: 'chapter' } as const
 
-/** Kortopi's vase, the first stroke of his drawing. */
-const KORTOPI_VASE = YORKNEW_CITY_DRAWINGS.kortopi.slice(0, 1)
-
 /**
  * Returning records whose drawing changes in Kakin, chapters 340–420 (#1154,
  * #1156, #1158). Hisoka's chapter 357 stage lives with his other stages, in
@@ -1532,24 +1530,6 @@ const kakinReturningRedrawn: Redrawings = {
           d: 'M52 96 Q80 82 108 96 M40 84 Q80 62 120 84 M30 70 Q80 42 130 70 M22 54 Q80 22 138 54',
           role: 'ambient',
         },
-      ],
-    },
-  ],
-  'shalnark': [
-    // The same laptop, shut, on the ground under an empty swing: Hisoka
-    // kills him and leaves him tied to a swing, chapter 357. No body is
-    // drawn.
-    {
-      ...KAKIN,
-      chapter: 357,
-      value: [
-        { d: 'M30 160 L44 136 L138 136 L124 160 Z' },
-        { d: 'M30 160 V166 H124 L138 142 V136', role: 'soft' },
-        { d: 'M32 156 L45 133 L136 133 L123 156', role: 'accent' },
-        { d: 'M20 18 H140 M28 18 L16 150 M132 18 L144 150' },
-        { d: 'M50 18 V92 M110 18 V92', role: 'soft' },
-        { d: 'M44 92 H116 V100 H44 Z' },
-        { d: 'M4 172 H156', role: 'ambient', dashed: true },
       ],
     },
   ],
