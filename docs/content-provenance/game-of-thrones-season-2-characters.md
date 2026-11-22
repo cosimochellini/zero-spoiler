@@ -483,6 +483,6 @@ Nan, Summer and Shaggydog (no field changes in the stage).
   (books: one scene, captured and drowned in Theon III).
 - **Only mentioned:** Howland Reed, Euron Greyjoy, Alannys Harlaw, Sawane and
   Sargon Botley, Sigrin, Otter Gimpknee, Andrik the Unsmiling, Qarl the Maid,
-  Dunstan Drumm, the real Reek (dead before the stage); Helya (one scene as a
-  servant at Pyke).
+  Dunstan Drumm, the real Reek (killed in Ramsay's place inside the stage, but
+  never named or seen as himself); Helya (one scene as a servant at Pyke).
 - **Other groups:** Torrhen Karstark (Robb's camp, #1465).

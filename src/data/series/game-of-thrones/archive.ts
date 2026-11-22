@@ -39,6 +39,7 @@ const LEADS_BY_SEASON: Record<string, string[]> = {
     'cersei-lannister',
     'stannis-baratheon',
     'davos-seaworth',
+    'theon-greyjoy',
   ],
 }
 
