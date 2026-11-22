@@ -69,21 +69,16 @@ export function AbilityAlbum({
   peek,
   sheet: { bands, covered },
 }: AbilityAlbumProps): ReactElement {
-  const t = useSeriesOnlyT(SERIES)
-  const { bookmark } = useBookmark()
   const fieldId = useId()
   const params = reachedAbilityParams(address, bands)
   // The field is never deferred; the plates behind it are.
   const needle = useDeferredValue(foldName((params.q ?? '').trim()))
-  const shown = bands.filter(
-    (band) => params.type === undefined || typeOf(band) === params.type,
-  )
+  const shown = shownOf(bands, params.type)
   const count = matchesIn(
     shown.flatMap((band) => band.open),
     needle,
   ).length
   const searchable = bands.length > 0
-  const noMatch = searchable && needle !== '' && count === 0
   // Reported here and not by the bar, which an empty listing leaves out.
   useOpenEntries(bands.reduce((sum, band) => sum + band.open.length, 0))
 
@@ -99,22 +94,14 @@ export function AbilityAlbum({
         />
       : null}
 
-      {noMatch ?
-        <SearchNoMatch
-          clearLabel={t('abilities.searchClear')}
-          fieldId={fieldId}
-          note={fogNote(t, ABILITY_FOG, { bookmark, count: covered.length })}
-          onClear={() => {
-            onParams(parseAbilityParams({ ...params, q: '' }), true)
-          }}
-        />
-      : null}
-
       <AbilityResults
         covered={covered}
         fieldId={fieldId}
-        folded={noMatch}
         needle={needle}
+        noMatch={searchable && needle !== '' && count === 0}
+        onClear={() => {
+          onParams(parseAbilityParams({ ...params, q: '' }), true)
+        }}
         peek={peek}
         shown={shown}
       />
@@ -122,12 +109,63 @@ export function AbilityAlbum({
   )
 }
 
+/** The plates a type chip keeps on the page: all of them, or its own. */
+function shownOf(
+  bands: AbilityBandView[],
+  type: AbilityParams['type'],
+): AbilityBandView[] {
+  return bands.filter((band) => type === undefined || typeOf(band) === type)
+}
+
 /**
- * The plates and the fog band, folded away while the query has no match.
- * Hidden rather than unmounted, so a lifted tile is still lifted once the
+ * The plates and the fog band. While the query has no match they are folded
+ * away behind the button that clears it and a line on what is under fog:
+ * hidden rather than unmounted, so a lifted tile is still lifted once the
  * query is cleared.
  */
 function AbilityResults({
+  covered,
+  fieldId,
+  needle,
+  noMatch,
+  onClear,
+  peek,
+  shown,
+}: Pick<AbilityAlbumProps, 'peek'> & {
+  covered: AbilitySheetView['covered']
+  fieldId: string
+  needle: string
+  noMatch: boolean
+  onClear: () => void
+  shown: AbilityBandView[]
+}): ReactElement {
+  const t = useSeriesOnlyT(SERIES)
+  const { bookmark } = useBookmark()
+
+  return (
+    <>
+      {noMatch ?
+        <SearchNoMatch
+          clearLabel={t('abilities.searchClear')}
+          fieldId={fieldId}
+          note={fogNote(t, ABILITY_FOG, { bookmark, count: covered.length })}
+          onClear={onClear}
+        />
+      : null}
+      <AbilityFolded
+        covered={covered}
+        fieldId={fieldId}
+        folded={noMatch}
+        needle={needle}
+        peek={peek}
+        shown={shown}
+      />
+    </>
+  )
+}
+
+/** The plates and the fog band themselves. */
+function AbilityFolded({
   covered,
   fieldId,
   folded,

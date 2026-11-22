@@ -24,10 +24,10 @@ import {
   SearchField,
   SearchNoMatch,
   SearchResults,
+  SearchStatus as StatusLine,
 } from '~/components/SearchField'
 import { searchStyles } from '~/components/SearchField.styles'
 import { useLandedShelves } from '~/components/useLandedShelves'
-import { useSettled } from '~/components/useSettled'
 import { useSeriesT, useT } from '~/i18n/LocaleContext'
 import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { useOpenEntries } from '~/lib/progress/openEntries'
@@ -38,10 +38,6 @@ import type {
   SearchableCharacter,
   ShelfView,
 } from '~/lib/view/records'
-
-// Long enough that a reader typing "Nami" hears one count and not four, short
-// enough that the count still arrives while the query is under their hands.
-const ANNOUNCE_DELAY_MS = 250
 
 /** What the signal book's fog band calls itself at each count. */
 const CHARACTER_FOG: FogTitles = {
@@ -275,23 +271,16 @@ function SearchCount({
   useOpenEntries(open.length)
   const count = matchesIn(open, needle).length
   const empty = query !== '' && count === 0
-  const status =
-    empty ?
-      t('characters.noMatch', { query })
-    : t('characters.shown', { count, total: open.length })
-  // Settled with the words, so the line never grows before it says why.
-  const noMatch = useSettled(empty, ANNOUNCE_DELAY_MS)
 
   return (
-    <p
-      aria-live="polite"
-      {...stylex.props(
-        searchStyles.status,
-        noMatch && searchStyles.statusNoMatch,
-      )}
-    >
-      {useSettled(status, ANNOUNCE_DELAY_MS)}
-    </p>
+    <StatusLine
+      noMatch={empty}
+      words={
+        empty ?
+          t('characters.noMatch', { query })
+        : t('characters.shown', { count, total: open.length })
+      }
+    />
   )
 }
 

@@ -201,7 +201,7 @@ export function Curtain({
   state,
 }: {
   button: Lift<unknown>['button']
-  density: 'stage' | Density
+  density: CurtainDensity
   lifted: boolean
   notice: string
   state: LiftState
@@ -233,18 +233,48 @@ export function Curtain({
         lifted && styles.curtainLifted,
       )}
     >
-      {density === 'block' || density === 'stage' ?
-        <Sign
-          // A stage prints the threshold in its meta line, once.
-          notice={density === 'stage' ? undefined : notice}
-          state={state}
-        />
-      : <Verb
-          inline={density === 'inline'}
-          state={state}
-        />
-      }
+      <Face
+        density={density}
+        notice={notice}
+        state={state}
+      />
     </button>
+  )
+}
+
+/** What the control shows, per density. */
+function Face({
+  density,
+  notice,
+  state,
+}: {
+  density: CurtainDensity
+  notice: string
+  state: LiftState
+}): ReactElement {
+  if (density === 'stage') {
+    // A stage prints the threshold in its meta line, once.
+    return (
+      <Sign
+        notice={undefined}
+        state={state}
+      />
+    )
+  }
+  if (density === 'block') {
+    return (
+      <Sign
+        notice={notice}
+        state={state}
+      />
+    )
+  }
+
+  return (
+    <Verb
+      inline={density === 'inline'}
+      state={state}
+    />
   )
 }
 
@@ -302,8 +332,12 @@ function Verb({
   )
 }
 
-type Density = NonNullable<SpoilerVeilProps<Gated>['density']>
-type Strength = NonNullable<SpoilerVeilProps<Gated>['strength']>
+/** How a veil lays out its control. */
+export type Density = NonNullable<SpoilerVeilProps<Gated>['density']>
+/** How hard a veil blurs. */
+export type Strength = NonNullable<SpoilerVeilProps<Gated>['strength']>
+/** A curtain's: a veil's own, or a record page's stage (`useStageVeil`). */
+export type CurtainDensity = 'stage' | Density
 
 /**
  * How thick the fog is. A table cell is one line tall, so its blur is the
@@ -321,7 +355,7 @@ function fogFor(density: Density, strength: Strength): stylex.StyleXStyles {
 }
 
 /** The curtain's layout per density; `block` adds nothing to the base. */
-function curtainFor(density: 'stage' | Density): stylex.StyleXStyles {
+function curtainFor(density: CurtainDensity): stylex.StyleXStyles {
   if (density === 'stage') {
     return styles.curtainStage
   }

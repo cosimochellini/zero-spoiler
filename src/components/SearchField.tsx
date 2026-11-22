@@ -3,6 +3,11 @@ import type { ReactElement, ReactNode } from 'react'
 
 import { searchStyles as styles } from '~/components/SearchField.styles'
 import { Button } from '~/components/ui/Button'
+import { useSettled } from '~/components/useSettled'
+
+// Long enough that a reader typing "Nami" hears one count and not four, short
+// enough that the count still arrives while the query is under their hands.
+const ANNOUNCE_DELAY_MS = 250
 
 /**
  * The one control an archive listing has: a field, the × that empties it, and
@@ -111,6 +116,31 @@ export function SearchNoMatch({
         <p {...stylex.props(styles.noMatchNote)}>{note}</p>
       )}
     </div>
+  )
+}
+
+/**
+ * The `aria-live` line under the field: how many open records the query
+ * finds, or that it finds none. It settles before it is announced. With no
+ * match it is the one thing left to read, so it is set as a heading; that
+ * settles with the words, so the line never grows before it says why.
+ */
+export function SearchStatus({
+  noMatch,
+  words,
+}: {
+  noMatch: boolean
+  words: string
+}): ReactElement {
+  const large = useSettled(noMatch, ANNOUNCE_DELAY_MS)
+
+  return (
+    <p
+      aria-live="polite"
+      {...stylex.props(styles.status, large && styles.statusNoMatch)}
+    >
+      {useSettled(words, ANNOUNCE_DELAY_MS)}
+    </p>
   )
 }
 

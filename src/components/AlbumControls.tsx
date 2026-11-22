@@ -3,10 +3,8 @@ import type { ReactElement } from 'react'
 
 import { type Choice, ChoiceGroup } from '~/components/ChoiceGroup'
 import { ControlBar } from '~/components/ControlBar'
-import { SearchField } from '~/components/SearchField'
-import { searchStyles } from '~/components/SearchField.styles'
+import { SearchField, SearchStatus } from '~/components/SearchField'
 import { styles } from '~/components/SpecimenBands.styles'
-import { useSettled } from '~/components/useSettled'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { Translate } from '~/i18n/types'
 import {
@@ -16,9 +14,6 @@ import {
 } from '~/lib/search/fruitParams'
 import type { FruitPlateCount } from '~/lib/view/fruits'
 import type { FruitForm } from '~/lib/view/records'
-
-// The same delay the signal book announces its own count with.
-const ANNOUNCE_DELAY_MS = 250
 
 /** Every kind a chip can pick, with "all" first. */
 type FormPick = 'all' | FruitForm
@@ -57,12 +52,6 @@ export function AlbumControls({
   const pick: FormPick = params.form ?? 'all'
   const view: AlbumView = params.view ?? 'type'
   const choices = formChoices(t, plates)
-  // Settled with the words, so the line never grows before it says why.
-  const noMatch = useSettled(trimmed !== '' && count === 0, ANNOUNCE_DELAY_MS)
-  const status = useSettled(
-    statusOf(t, { choices, count, pick, query: trimmed }),
-    ANNOUNCE_DELAY_MS,
-  )
 
   return (
     <ControlBar
@@ -80,15 +69,10 @@ export function AlbumControls({
         placeholder={t('fruits.searchPlaceholder')}
         query={query}
         status={
-          <p
-            aria-live="polite"
-            {...stylex.props(
-              searchStyles.status,
-              noMatch && searchStyles.statusNoMatch,
-            )}
-          >
-            {status}
-          </p>
+          <SearchStatus
+            noMatch={trimmed !== '' && count === 0}
+            words={statusOf(t, { choices, count, pick, query: trimmed })}
+          />
         }
       />
       <AlbumChoices

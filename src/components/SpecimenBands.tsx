@@ -106,11 +106,12 @@ export function SpecimenBands({
       : <AlbumResults
           album={album}
           fieldId={fieldId}
+          found={count}
           needle={needle}
-          noMatch={searchable && needle !== '' && count === 0}
           onParams={onParams}
           params={params}
           peek={peek}
+          searchable={searchable}
         />
       }
     </div>
@@ -136,15 +137,21 @@ function foundIn(
  * rather than unmounted, so a lifted tile is still lifted once it is cleared.
  */
 function AlbumResults({
-  noMatch,
+  found,
   onParams,
+  searchable,
   ...shown
 }: Pick<SpecimenBandsProps, 'onParams' | 'params' | 'peek'> & {
   album: Album
   fieldId: string
+  /** The open fruits the query finds. */
+  found: number
   needle: string
-  noMatch: boolean
+  /** False with no fruit open: no bar, so no query to clear. */
+  searchable: boolean
 }): ReactElement {
+  const noMatch = searchable && shown.needle !== '' && found === 0
+
   return (
     <>
       {noMatch ?

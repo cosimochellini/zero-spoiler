@@ -3,10 +3,8 @@ import type { ReactElement } from 'react'
 
 import { type Choice, ChoiceGroup } from '~/components/ChoiceGroup'
 import { ControlBar } from '~/components/ControlBar'
-import { SearchField } from '~/components/SearchField'
-import { searchStyles } from '~/components/SearchField.styles'
+import { SearchField, SearchStatus } from '~/components/SearchField'
 import { styles } from '~/components/SpecimenBands.styles'
-import { useSettled } from '~/components/useSettled'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { Translate } from '~/i18n/types'
 import {
@@ -19,9 +17,6 @@ import {
 import type { AbilityBandView } from '~/lib/view/abilities'
 
 const SERIES = 'hunter-x-hunter'
-
-// The same delay the other listings announce their count with.
-const ANNOUNCE_DELAY_MS = 250
 
 /** A chip: a plate's type, or every plate. */
 type Pick = 'all' | AbilityType
@@ -137,14 +132,6 @@ function AbilitySearch({
   const t = useSeriesOnlyT(SERIES)
   const trimmed = query.trim()
   const empty = trimmed !== '' && count === 0
-  // Settled with the words, so the line never grows before it says why.
-  const noMatch = useSettled(empty, ANNOUNCE_DELAY_MS)
-  const status = useSettled(
-    empty ?
-      t('abilities.noMatch', { query: trimmed })
-    : t('abilities.shown', { count, total }),
-    ANNOUNCE_DELAY_MS,
-  )
 
   return (
     <SearchField
@@ -155,15 +142,14 @@ function AbilitySearch({
       placeholder={t('abilities.searchPlaceholder')}
       query={query}
       status={
-        <p
-          aria-live="polite"
-          {...stylex.props(
-            searchStyles.status,
-            noMatch && searchStyles.statusNoMatch,
-          )}
-        >
-          {status}
-        </p>
+        <SearchStatus
+          noMatch={empty}
+          words={
+            empty ?
+              t('abilities.noMatch', { query: trimmed })
+            : t('abilities.shown', { count, total })
+          }
+        />
       }
     />
   )
