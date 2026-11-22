@@ -198,8 +198,8 @@ const PERSON: Stroke[] = [
  * drawn for the launch here (owner, #856). Every season-1 character has its
  * own drawing; the season-2 King's Landing cast (#1463), stormlands
  * cast (#1464), Riverlands and Harrenhal cast (#1465), Winterfell and
- * Iron Islands cast (#1466) and Wall cast (#1467) show `PERSON` until
- * their drawing children draw them. `satisfies`
+ * Iron Islands cast (#1466), Wall cast (#1467) and Essos cast (#1468) show
+ * `PERSON` until their drawing children draw them. `satisfies`
  * rather than an annotation, so `ArtId` below stays the literal keys.
  */
 export const DRAWINGS = {
@@ -275,6 +275,16 @@ export const DRAWINGS = {
   'ebben': PERSON,
   'dalbridge': PERSON,
   'lord-of-bones': PERSON,
+  'kovarro': PERSON,
+  'xaro-xhoan-daxos': PERSON,
+  'pyat-pree': PERSON,
+  'quaithe': PERSON,
+  'malakho': PERSON,
+  'drogon': PERSON,
+  'rhaegal': PERSON,
+  'viserion': PERSON,
+  'strong-belwas': PERSON,
+  'arstan-whitebeard': PERSON,
 } satisfies Drawings
 
 /** The drawing a record names, by its own id. */

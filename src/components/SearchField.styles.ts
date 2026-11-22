@@ -17,7 +17,9 @@ import {
  *
  * The status pair lives here rather than beside either page, because both
  * pages write the same `aria-live` line and two copies of nine declarations
- * is how the two pages come to disagree about a half-step of height.
+ * is how the two pages come to disagree about a half-step of height. The
+ * no-match state is here for the same reason: three listings fold the same
+ * way.
  */
 export const searchStyles = stylex.create({
   search: { gap: space.xs, display: 'grid', justifyItems: 'start' },
@@ -71,4 +73,22 @@ export const searchStyles = stylex.create({
     minHeight: '1lh',
   },
   statusEmpty: { color: color.ink2 },
+  // A query with no match: the line is the one thing left to read, so it is
+  // set as a heading.
+  statusNoMatch: {
+    color: color.ink,
+    fontFamily: font.display,
+    fontSize: text.lg,
+    fontWeight: 800,
+    lineHeight: leading.heading,
+  },
+  results: { display: 'contents' },
+  folded: { display: 'none' },
+  noMatch: { gap: space.sm, display: 'grid', justifyItems: 'start' },
+  noMatchNote: {
+    color: color.muted,
+    fontSize: text.base,
+    lineHeight: leading.body,
+    maxWidth: '58ch',
+  },
 })

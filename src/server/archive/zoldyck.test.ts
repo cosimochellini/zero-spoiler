@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
-import { bookmarkAt as at, gateCases, opened } from '~/test/gates'
+import {
+  bookmarkAt as at,
+  gateCases,
+  opened,
+  stageMissedAt,
+} from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { factsOf } from './project.server'
@@ -96,4 +101,17 @@ describe('Illumi’s family home', () => {
       })
     },
   )
+})
+
+// Each later stage changes the drawing at its pair, never one step before,
+// in both media (#1325).
+describe('the Zoldycks’ later stages', () => {
+  it.each([
+    { id: 'zeno', episode: 52, chapter: 99 },
+    { id: 'silva', episode: 52, chapter: 99 },
+    { id: 'kalluto', episode: 72, chapter: 170 },
+    { id: 'kalluto', episode: 96, chapter: 226 },
+  ])('changes $id’s drawing at $episode / $chapter', (stage) => {
+    expect(stageMissedAt(archive, stage.id, stage)).toStrictEqual([])
+  })
 })

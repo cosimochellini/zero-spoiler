@@ -292,10 +292,14 @@ characters. Winterfell and the Iron Islands (#1466) adds fifteen, seven the
 books' alone, Asha Greyjoy filed under the books' name with the show's Yara as
 her `episodeName`, and the stage's steps of Theon, Bran, Rickon and Osha. The
 Wall and beyond (#1467) adds twelve, seven of them the books' alone, with
-placeholder busts too, and stage-2 steps on Jon Snow and Samwell Tarly. The
-series opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their
-own, with seven stages: Eddard's death and Ice melted, Jon's death, return and
-true name, and Daenerys's fire and death from the drawing audit (#1292), the
+placeholder busts too, and stage-2 steps on Jon Snow and Samwell Tarly. Essos
+and Qarth (#1468) adds ten: two the show's alone, four the books', and Xaro and
+the three dragons in both, the dragons' show gates past the stage (#852). The
+owner's rulings of 2026-11-22 add Arstan Whitebeard, books only, and move the
+book gates of Xaro, Pyat Pree and Quaithe from chapter 86 to 114. The series
+opened before its drawings: Eddard, Jon, Daenerys and Tyrion have their own,
+with seven stages: Eddard's death and Ice melted, Jon's death, return and true
+name, and Daenerys's fire and death from the drawing audit (#1292), the
 Winterfell household's are in `art/winterfell.ts` (#854), with 25 stages after
 the drawing audit (#1285), the southern cast's are in `art/south.ts` (#1051),
 with thirty-seven, sixteen of them the later looks and deaths of #1286 and
@@ -532,9 +536,9 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Bodies of power           | 5, with 61 seats                                       |
 | Arcs, places              | 7 · 43                                                 |
 | Saga modules              | 7                                                      |
-| Line drawings             | 369, one per record, plus 102 redrawings of 87 records |
+| Line drawings             | 369, one per record, plus 107 redrawings of 90 records |
 | Chronicle stories         | 1001, for 289 characters                               |
-| Dated timelines           | 1344                                                   |
+| Dated timelines           | 1347                                                   |
 | Affiliation steps         | 466                                                    |
 | Status steps              | 391                                                    |
 | Origins that link a place | 10                                                     |
@@ -543,14 +547,14 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing             | Count                                                   |
 | ----------------- | ------------------------------------------------------- |
-| Records           | 263                                                     |
-| Characters        | 203                                                     |
+| Records           | 273                                                     |
+| Characters        | 213                                                     |
 | Places            | 60                                                      |
 | Saga modules      | 2                                                       |
-| Line drawings     | 263, one per record, plus 153 redrawings of 113 records |
+| Line drawings     | 273, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 565, for 144 characters                                 |
-| Dated timelines   | 855                                                     |
-| Affiliation steps | 233                                                     |
-| Status steps      | 347                                                     |
+| Dated timelines   | 876                                                     |
+| Affiliation steps | 243                                                     |
+| Status steps      | 358                                                     |
 
 <!-- End of the generated counts. -->

@@ -156,6 +156,12 @@ describe('the stage', () => {
     // screen reader cannot walk into it and neither can a role query.
     expect(screen.getByText('A fruit under fog')).toBeInTheDocument()
     expect(container.querySelectorAll('path')).toHaveLength(0)
+    // One control for the drawing and the words. The threshold is in its
+    // name and printed once, in the meta line.
+    expect(screen.getByRole('button')).toHaveAccessibleName(
+      'Under fog until episode 462. Show anyway',
+    )
+    expect(screen.getByRole('button')).toHaveTextContent(/^Show anyway$/u)
   })
 })
 

@@ -389,19 +389,115 @@ describe('CharacterGrid', () => {
 
     await user.type(screen.getByRole('searchbox'), 'robin')
 
-    // The covered card and the covered shelf are still there and unchanged;
-    // the open results are empty, and the page says so in the reader's words.
-    expect(fogBand()).toHaveTextContent('1 under fog')
-    expect(shelf(/Arc under fog/u)).toBeInTheDocument()
-    // The East Blue shelf has nothing open that matches and nothing covered,
-    // so during a search it is left out rather than shown empty.
-    expect(
-      screen.queryByRole('region', { name: /East Blue Saga/u }),
-    ).not.toBeInTheDocument()
-
+    // A covered character's name finds nothing, exactly as a name nobody
+    // has would: the open results are empty, the crests and the shelves fold
+    // away, and the page says so in the reader's words.
     const none = await screen.findByText('No open character matches “robin”.')
 
-    expect(none).toBeInTheDocument()
+    expect(none).toBeVisible()
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
+    // Folded, not unmounted, and the covered card is as it was.
+    expect(screen.getByText('1 under fog')).not.toBeVisible()
+    expect(screen.queryByText(/Robin/u)).not.toBeInTheDocument()
+  })
+
+  it('folds the same way for a name nobody has', async () => {
+    const user = userEvent.setup()
+    book()
+
+    await user.type(screen.getByRole('searchbox'), 'zzz')
+
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
+    expect(screen.getByText('Clear search')).toBeVisible()
+    // The shelves' covered characters, counted; no bookmark here, so: set one.
+    expect(
+      screen.getByText(
+        '1 under fog. Their names are hidden, so search does not find them. Set your bookmark to see them.',
+      ),
+    ).toBeVisible()
+  })
+
+  it('keeps the fog where it was while the query has a match', async () => {
+    const user = userEvent.setup()
+    book()
+
+    await user.type(screen.getByRole('searchbox'), 'nami')
+
+    expect(fogBand()).toHaveTextContent('1 under fog')
+    expect(shelf(/Arc under fog/u)).toBeVisible()
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+
+  it('unfolds the crests and the shelves when the query is cleared', async () => {
+    const user = userEvent.setup()
+    book()
+
+    const field = screen.getByRole('searchbox')
+    await user.type(field, 'zzz')
+    await user.click(screen.getByText('Clear search'))
+
+    expect(field).toHaveValue('')
+    expect(field).toHaveFocus()
+    expect(fogBand()).toBeVisible()
+    expect(shelf(/East Blue Saga/u)).toBeVisible()
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+
+  it('does not fold while the shelves are still on their way', async () => {
+    const user = userEvent.setup()
+    renderWithProviders(
+      <CharacterGrid
+        featuredCovered={[robinCovered]}
+        featuredOpen={[luffy, nami]}
+        onRetry={vi.fn<() => void>()}
+        peek={peekPending()}
+        shelfCount={2}
+        shelves={onTheirWay()}
+      />,
+    )
+
+    await user.type(screen.getByRole('searchbox'), 'zzz')
+
+    // The shelves hold every open character: until they land, nothing says
+    // the query has no match.
+    expect(fogBand()).toBeVisible()
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+
+  it('folds once the shelves it was waiting for land', async () => {
+    const user = userEvent.setup()
+    // Lands on cue, so the query is in before the shelves are.
+    const landing = new EventTarget()
+    const shelves = new Promise<ShelfView[]>((resolve) => {
+      landing.addEventListener(
+        'land',
+        () => {
+          resolve([eastBlue, alabasta])
+        },
+        { once: true },
+      )
+    })
+    renderWithProviders(
+      <CharacterGrid
+        featuredCovered={[robinCovered]}
+        featuredOpen={[luffy, nami]}
+        onRetry={vi.fn<() => void>()}
+        peek={peekPending()}
+        shelfCount={2}
+        // The page's own path: a promise, not an array.
+        shelves={shelves}
+      />,
+    )
+
+    await user.type(screen.getByRole('searchbox'), 'zzz')
+
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+
+    landing.dispatchEvent(new Event('land'))
+    await screen.findByText('Clear search')
+
+    expect(screen.getByText('Clear search')).toBeVisible()
+    expect(screen.queryByRole('region')).not.toBeInTheDocument()
   })
 
   it('announces the count once the typing has settled', async () => {

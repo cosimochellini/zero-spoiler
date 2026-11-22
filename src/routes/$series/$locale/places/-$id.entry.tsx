@@ -14,7 +14,7 @@ import { FiledHere } from '~/components/FiledHere'
 import { PortFacts, ShipFacts } from '~/components/PortFacts'
 import { OpenPortPlate, PortPlate } from '~/components/PortPlate'
 import { styles as bandStyles } from '~/components/SpecimenBands.styles'
-import { SpoilerVeil } from '~/components/SpoilerVeil'
+import { type StageVeil, useStageVeil } from '~/components/useStageVeil'
 import {
   onlyUnder,
   useSeriesOnlyT,
@@ -94,37 +94,36 @@ export interface EntryProps<T extends Entry> {
 }
 
 /**
- * The plate beside the entry. The two halves are veiled separately but on
- * the same slot, because a covered page must carry neither the drawing nor
- * the words in its HTML: blurring either one would leave the answer in the
- * page source.
+ * The plate beside the entry. The two halves sit under one curtain on the
+ * same slot, because a covered page must carry neither the drawing nor the
+ * words in its HTML: blurring either one would leave the answer in the page
+ * source.
  */
 export function EntryDiptych<T extends Entry>(
   props: EntryProps<T>,
 ): ReactElement {
+  const veil = useStageVeil(props.slot, props.peek)
+
   return (
-    <section {...stylex.props(styles.diptych)}>
-      <SpoilerVeil
-        peek={props.peek}
+    <section {...stylex.props(styles.diptych, veil.stage)}>
+      {veil.drawing(
         // A bare plate under fog: the drawing and its colour stay out of the
         // served HTML along with the name.
-        placeholder={
-          <div {...stylex.props(styles.plate)}>
-            <PortPlate />
-          </div>
-        }
-        slot={props.slot}
-        strength="media"
-      >
-        {(record) => {
+        <div {...stylex.props(styles.plate)}>
+          <PortPlate />
+        </div>,
+        (record) => {
           return (
             <div {...stylex.props(styles.plate)}>
               <OpenPortPlate port={record} />
             </div>
           )
-        }}
-      </SpoilerVeil>
-      <EntryColumn {...props} />
+        },
+      )}
+      <EntryColumn
+        {...props}
+        veil={veil}
+      />
     </section>
   )
 }
@@ -138,10 +137,10 @@ function EntryColumn<T extends Entry>({
   after,
   Body,
   kind,
-  peek,
   peekRecord,
   slot,
-}: EntryProps<T>): ReactElement {
+  veil,
+}: EntryProps<T> & { veil: StageVeil<T> }): ReactElement {
   const gate = slot.open ? slot.record : slot.covered
   const words = useEntryWords(kind, gate)
 
@@ -152,17 +151,12 @@ function EntryColumn<T extends Entry>({
         <span {...stylex.props(bandStyles.episode)}>{words.opens}</span>
       </p>
 
-      <SpoilerVeil
-        peek={peek}
-        placeholder={
-          <div {...stylex.props(styles.words)}>
-            <h1 {...stylex.props(styles.name)}>{words.name}</h1>
-            <p {...stylex.props(styles.summary)}>{words.description}</p>
-          </div>
-        }
-        slot={slot}
-      >
-        {(record) => {
+      {veil.words(
+        <div {...stylex.props(styles.words)}>
+          <h1 {...stylex.props(styles.name)}>{words.name}</h1>
+          <p {...stylex.props(styles.summary)}>{words.description}</p>
+        </div>,
+        (record) => {
           return (
             <div {...stylex.props(styles.words)}>
               <h1 {...stylex.props(styles.name)}>{record.name}</h1>
@@ -174,8 +168,8 @@ function EntryColumn<T extends Entry>({
               {after}
             </div>
           )
-        }}
-      </SpoilerVeil>
+        },
+      )}
     </div>
   )
 }

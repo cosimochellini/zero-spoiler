@@ -123,15 +123,15 @@ export const chimeraAntPhaseFiveRedrawn: Redrawings = {
   ],
   // A child's wooden toy sword, the blunt blade in tint, the block guard and
   // the wrapped grip: the girl Colt looks after plays with it and says her
-  // name is Kite, episode 136 / chapter 316. No face or tail. The anime's
-  // frame is not viewed.
+  // name is Kite, episode 136 / chapter 316. Both media show the return:
+  // episode 136 adapts chapter 316's pages 5-18, and the wiki's gallery has
+  // her swinging the sword in it. No face or tail. The anime's frame is not
+  // viewed.
   kite: [
     ...(chimeraAntReturningRedrawn['kite'] ?? []),
     {
       episode: 136,
       chapter: 316,
-      // Chapter 316 names the toy sword; the episode 136 synopsis does not.
-      source: 'chapter',
       value: [
         {
           d: 'M50 120 L106 50 Q112 44 120 42 Q120 50 114 58 L60 128',

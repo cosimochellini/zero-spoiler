@@ -3,13 +3,10 @@ import type { ReactElement } from 'react'
 
 import { type Choice, ChoiceGroup } from '~/components/ChoiceGroup'
 import { ControlBar } from '~/components/ControlBar'
-import { SearchField } from '~/components/SearchField'
-import { searchStyles } from '~/components/SearchField.styles'
+import { SearchField, SearchStatus } from '~/components/SearchField'
 import { styles } from '~/components/SpecimenBands.styles'
-import { useSettled } from '~/components/useSettled'
 import { useSeriesOnlyT } from '~/i18n/LocaleContext'
 import type { Translate } from '~/i18n/types'
-import { useOpenEntries } from '~/lib/progress/openEntries'
 import {
   type AbilityParams,
   type AbilityType,
@@ -20,9 +17,6 @@ import {
 import type { AbilityBandView } from '~/lib/view/abilities'
 
 const SERIES = 'hunter-x-hunter'
-
-// The same delay the other listings announce their count with.
-const ANNOUNCE_DELAY_MS = 250
 
 /** A chip: a plate's type, or every plate. */
 type Pick = 'all' | AbilityType
@@ -80,7 +74,6 @@ export function AbilityControls({
   const pick: Pick = params.type ?? 'all'
   const choices = typeChoices(t, bands)
   const total = choices.find((choice) => choice.value === pick)?.count ?? 0
-  useOpenEntries(bands.reduce((sum, band) => sum + band.open.length, 0))
   // Every pick goes through the parser, so a default ("all", a blank
   // query) is left out of the address rather than written into it.
   const move = (next: Record<string, unknown>, replace: boolean): void => {
@@ -139,12 +132,6 @@ function AbilitySearch({
   const t = useSeriesOnlyT(SERIES)
   const trimmed = query.trim()
   const empty = trimmed !== '' && count === 0
-  const status = useSettled(
-    empty ?
-      t('abilities.noMatch', { query: trimmed })
-    : t('abilities.shown', { count, total }),
-    ANNOUNCE_DELAY_MS,
-  )
 
   return (
     <SearchField
@@ -155,15 +142,14 @@ function AbilitySearch({
       placeholder={t('abilities.searchPlaceholder')}
       query={query}
       status={
-        <p
-          aria-live="polite"
-          {...stylex.props(
-            searchStyles.status,
-            empty && searchStyles.statusEmpty,
-          )}
-        >
-          {status}
-        </p>
+        <SearchStatus
+          noMatch={empty}
+          words={
+            empty ?
+              t('abilities.noMatch', { query: trimmed })
+            : t('abilities.shown', { count, total })
+          }
+        />
       }
     />
   )

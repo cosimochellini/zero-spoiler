@@ -12,8 +12,8 @@ import type { ReactElement } from 'react'
 import { CharacterCrest } from '~/components/CharacterCrest'
 import { CharacterFacts } from '~/components/CharacterFacts'
 import { styles as bandStyles } from '~/components/SpecimenBands.styles'
-import { SpoilerVeil } from '~/components/SpoilerVeil'
 import { useKindLabel } from '~/components/useKindLabel'
+import { type StageVeil, useStageVeil } from '~/components/useStageVeil'
 import { useT } from '~/i18n/LocaleContext'
 import { useThreshold } from '~/lib/progress/BookmarkContext'
 import type { CharacterDetail, Slot } from '~/lib/view/records'
@@ -28,9 +28,9 @@ export type DossierRecord =
 /**
  * The crest beside the dossier: the page's first diptych.
  *
- * The two halves are veiled separately but on the same slot, because a
- * covered page must carry neither the drawing nor the words in its HTML –
- * blurring either one would leave the answer in the page source.
+ * The two halves sit under one curtain on the same slot, because a covered
+ * page must carry neither the drawing nor the words in its HTML – blurring
+ * either one would leave the answer in the page source.
  */
 export function DossierDiptych({
   detail,
@@ -39,15 +39,14 @@ export function DossierDiptych({
   detail: CharacterDetail
   peek: (handle: string) => Promise<DossierRecord>
 }): ReactElement {
+  const veil = useStageVeil(detail.slot, peek)
+
   return (
-    <section {...stylex.props(styles.diptych)}>
-      <CrestPlate
-        peek={peek}
-        slot={detail.slot}
-      />
+    <section {...stylex.props(styles.diptych, veil.stage)}>
+      <CrestPlate veil={veil} />
       <DossierColumn
         detail={detail}
-        peek={peek}
+        veil={veil}
       />
     </section>
   )
@@ -55,38 +54,28 @@ export function DossierDiptych({
 
 /** The seal, framed. Under fog it is drawn empty rather than blurred. */
 function CrestPlate({
-  slot,
-  peek,
+  veil,
 }: {
-  peek: (handle: string) => Promise<DossierRecord>
-  slot: CharacterDetail['slot']
+  veil: StageVeil<DossierRecord>
 }): ReactElement {
-  return (
-    <SpoilerVeil
-      peek={peek}
-      // A bare seal under fog: the drawing and its colour stay out of the
-      // served HTML along with the name.
-      placeholder={
-        <div {...stylex.props(styles.plate)}>
-          <CharacterCrest />
+  return veil.drawing(
+    // A bare seal under fog: the drawing and its colour stay out of the
+    // served HTML along with the name.
+    <div {...stylex.props(styles.plate)}>
+      <CharacterCrest />
+    </div>,
+    (record) => {
+      return (
+        <div
+          {...stylex.props(
+            styles.plate,
+            morphPart('character', record.id, 'art'),
+          )}
+        >
+          <CharacterCrest visual={record.visual} />
         </div>
-      }
-      slot={slot}
-      strength="media"
-    >
-      {(record) => {
-        return (
-          <div
-            {...stylex.props(
-              styles.plate,
-              morphPart('character', record.id, 'art'),
-            )}
-          >
-            <CharacterCrest visual={record.visual} />
-          </div>
-        )
-      }}
-    </SpoilerVeil>
+      )
+    },
   )
 }
 
@@ -100,10 +89,10 @@ function CrestPlate({
  */
 function DossierColumn({
   detail,
-  peek,
+  veil,
 }: {
   detail: CharacterDetail
-  peek: (handle: string) => Promise<DossierRecord>
+  veil: StageVeil<DossierRecord>
 }): ReactElement {
   const t = useT()
   const threshold = useThreshold()
@@ -119,27 +108,22 @@ function DossierColumn({
         </span>
       </p>
 
-      <SpoilerVeil
-        peek={peek}
-        placeholder={
-          <div {...stylex.props(styles.words)}>
-            <h1 {...stylex.props(styles.name)}>{t('character.foggedName')}</h1>
-            <p {...stylex.props(styles.summary)}>
-              {threshold('character.foggedDescription', filed)}
-            </p>
-          </div>
-        }
-        slot={detail.slot}
-      >
-        {(record) => {
+      {veil.words(
+        <div {...stylex.props(styles.words)}>
+          <h1 {...stylex.props(styles.name)}>{t('character.foggedName')}</h1>
+          <p {...stylex.props(styles.summary)}>
+            {threshold('character.foggedDescription', filed)}
+          </p>
+        </div>,
+        (record) => {
           return (
             <DossierWords
               detail={detail}
               record={record}
             />
           )
-        }}
-      </SpoilerVeil>
+        },
+      )}
     </div>
   )
 }

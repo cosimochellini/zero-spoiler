@@ -27,8 +27,14 @@ function watch(section) {
   return `Guardiani della notte#${section}`
 }
 
+/** Daenerys's own page, which also names her three dragons. */
+const DAENERYS = 'Daenerys Targaryen'
+
 /** The list's TV cast table, which names its rows only in the table. */
 const OTHERS = characters('Altri personaggi')
+
+/** Barristan Selmy's section, which also names Belwas and Arstan in its prose. */
+const SELMY = characters('Barristan Selmy')
 
 /**
  * Each character's Italian Wikipedia page, as `Page#Section` for a section.
@@ -79,7 +85,7 @@ export const THRONES_ITALIAN_TITLES = {
   'walder-frey': characters('Walder Frey'),
   'ros': characters('Ros'),
   'ilyn-payne': characters('Ilyn Payne'),
-  'barristan-selmy': characters('Barristan Selmy'),
+  'barristan-selmy': SELMY,
   'syrio-forel': characters('Syrio Forel'),
   'petyr-baelish': 'Petyr Baelish',
   'varys': 'Varys',
@@ -89,7 +95,7 @@ export const THRONES_ITALIAN_TITLES = {
   'gendry': 'Casa Baratheon#Gendry',
   'gregor-clegane': characters('Gregor Clegane'),
   'loras-tyrell': 'Casa Tyrell#Loras Tyrell',
-  'daenerys-targaryen': 'Daenerys Targaryen',
+  'daenerys-targaryen': DAENERYS,
   'viserys-targaryen':
     'Casa Targaryen#Re Viserys III Targaryen "Il Re Mendicante"',
   'drogo': 'Dothraki#Drogo',
@@ -224,6 +230,17 @@ export const THRONES_ITALIAN_TITLES = {
   'gilly': characters('Gilly'),
   'qhorin-halfhand': watch('Qhorin il monco'),
   'ygritte': characters('Ygritte'),
+  // #1468, the second stage's Essos and Qarth cast.
+  'kovarro': characters('Kovarro'),
+  'xaro-xhoan-daxos': characters('Xaro Xhoan Daxos'),
+  'pyat-pree': OTHERS,
+  'quaithe': OTHERS,
+  'drogon': DAENERYS,
+  'rhaegal': DAENERYS,
+  'viserion': DAENERYS,
+  'strong-belwas': SELMY,
+  // The owner's rulings of 2026-11-22: Arstan Barbabianca, named in prose.
+  'arstan-whitebeard': SELMY,
 }
 
 /**
@@ -331,4 +348,17 @@ export const THRONES_NAMES_KEPT = {
   // names him "Lord delle Ossa" only in its prose; both media call him the
   // Lord of Bones, and the Italian Game of Thrones Wiki opens his page so.
   'lord-of-bones': 'Lord delle Ossa',
+  // #1468. Italian Wikipedia has no entry for Malakho, a rider of the show
+  // alone; it names Pyat Pree and Quaithe only in its TV cast list, the
+  // dragons in Daenerys's page and Belwas il Forte in Barristan Selmy's
+  // section, with no heading of their own.
+  'malakho': 'Malakho',
+  'pyat-pree': 'Pyat Pree',
+  'quaithe': 'Quaithe',
+  'drogon': 'Drogon',
+  'rhaegal': 'Rhaegal',
+  'viserion': 'Viserion',
+  'strong-belwas': 'Belwas il Forte',
+  // Named in the same section's prose, with no heading of his own.
+  'arstan-whitebeard': 'Arstan Barbabianca',
 }
