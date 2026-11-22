@@ -285,15 +285,20 @@ class Lexer {
   /** Ends the line, then skips the heredoc bodies opened on it. */
   newline() {
     this.endCommand()
-    for (const { delimiter, tabs } of this.heredocs.splice(0)) {
-      let line = ''
-      while (line !== delimiter && this.i < this.text.length) {
-        const end = this.text.indexOf('\n', this.i)
-        const stop = end === -1 ? this.text.length : end
-        line = this.text.slice(this.i, stop)
-        line = tabs ? line.replace(/^\t+/u, '') : line
-        this.i = stop + 1
-      }
+    for (const heredoc of this.heredocs.splice(0)) {
+      this.skipHeredoc(heredoc)
+    }
+  }
+
+  /** @param {{ delimiter: string, tabs: boolean }} heredoc Its last line. */
+  skipHeredoc({ delimiter, tabs }) {
+    let line = ''
+    while (line !== delimiter && this.i < this.text.length) {
+      const end = this.text.indexOf('\n', this.i)
+      const stop = end === -1 ? this.text.length : end
+      line = this.text.slice(this.i, stop)
+      line = tabs ? line.replace(/^\t+/u, '') : line
+      this.i = stop + 1
     }
   }
 
