@@ -913,10 +913,18 @@
       "https://gameofthrones.fandom.com/wiki/Loras_Tyrell",
       "https://gameofthrones.fandom.com/wiki/The_Wolf_and_the_Lion",
       "https://it.wikipedia.org/wiki/Casa_Tyrell#Loras_Tyrell",
-      "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter"
+      "https://gameofthrones.fandom.com/wiki/The_Winds_of_Winter",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33"
     ],
     "unverified": [
-      "Death (#1287): \"The Winds of Winter\" (episode 60, GOT610), show only; episode not viewed."
+      "Death (#1287): \"The Winds of Winter\" (episode 60, GOT610), show only; episode not viewed.",
+      "Stage-2 role steps (#1464): one of Renly's guard at 13 / 96 (\"What Is Dead May Never Die\"; Catelyn II); named to the Kingsguard at Sansa VIII (139), books only, from A Wiki of Ice and Fire's summary. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Former guard of King Renly at 15 / 107 (#1464 review): Renly is killed in \"The Ghost of Harrenhal\" (episode 15) and Catelyn IV (A Clash of Kings 33, site 107)."
     ]
   },
   "daenerys-targaryen": {
@@ -3288,6 +3296,199 @@
       "Book gate 104: A Wiki of Ice and Fire lists him as appearing in Arya VII (A Clash of Kings 30), and the Ice and Fire Wiki has Arya see him at Harrenhal; A Game of Thrones names him only in Tywin's orders. Which line of the chapter names him was not seen. Turns his cloak and hands Harrenhal to Roose Bolton in Arya IX (121). Neither the episodes nor the books were viewed.",
       "Show: no such character; Italian Wikipedia and A Wiki of Ice and Fire say the show gives his later part to Locke.",
       "Italian: Vargo Hoat (Italian Wikipedia, Personaggi, \"Vargo Hoat\"); \"Bravi Camerati\" from the same section."
+    ]
+  },
+  "stannis-baratheon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Stannis_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://iceandfire.fandom.com/wiki/Stannis_Baratheon",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Stannis_Baratheon"
+    ],
+    "unverified": [
+      "Show gate 11: Jaime's line \"Stannis is the rightful King\" is quoted on the episode page. Book gate 74: the prologue summary has Selyse say that Renly's army would join Stannis if Renly died. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "nameSaidAt 7: season 1's Tomard and Kevan Lannister texts name him at episode 7, where Eddard sends him a letter (\"You Win or You Die\"); the episode was not viewed.",
+      "Owner check (#1464 review): the prologue's synopsis on A Wiki of Ice and Fire has his name in narration only; the chapter is his first in the books, so the gate stays 74."
+    ]
+  },
+  "melisandre": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Melisandre",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://iceandfire.fandom.com/wiki/Melisandre",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Owner check, show gate 11: \"The North Remembers\" shows her burning the Seven and Cressen's poison, but no quote on the wiki has her name said aloud; a later naming episode would move the gate. Book gate 74: Selyse says Melisandre has seen Renly dead in the flames (prologue summary). Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Italian: Melisandre, from Italian Wikipedia's \"Melisandre di Asshai\"."
+    ]
+  },
+  "davos-seaworth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Davos_Seaworth",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://iceandfire.fandom.com/wiki/Davos_Seaworth",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_58",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Owner check, show gate 11: the synopsis has Cressen ask Davos for help; the line with his name is not quoted. Book gate 74: Pylos tells Cressen that Ser Davos Seaworth came back in the night (prologue summary). Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Fleet command, show only, episode 15 (\"The Ghost of Harrenhal\"); chapter 107 orders it. Missing at 19 / 132: his ship burns and he goes into the water (\"Blackwater\"; Davos III); neither stage tells his rescue."
+    ]
+  },
+  "cressen": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Cressen",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://iceandfire.fandom.com/wiki/Cressen",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Owner check, show gate 11: narration names him (\"Maester Cressen is outraged\"); no quote has his name said. Book gate 74: Stannis hands Cressen's duties to Pylos (prologue summary). Opens deceased in both media, as Will does. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Owner check (#1464 review): the prologue, his own chapter, has his name in narration only in A Wiki of Ice and Fire's synopsis; he dies in it, so there is no later chapter to move to."
+    ]
+  },
+  "matthos-seaworth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Matthos_Seaworth",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/Blackwater",
+      "https://awoiaf.westeros.org/index.php/Matthos_Seaworth",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_58",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Owner check, show gate 11: he reads Stannis's letter in \"The North Remembers\"; the quotes read have no line with his name said. Book gate 132 (Davos III): A Wiki of Ice and Fire's Matthos page cites Davos III for his place on the Black Betha and his death; Davos I (84) only mentions him, in narration. Whether Davos III says his name in speech is not confirmed. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Italian: Matthos Seaworth kept; Italian Wikipedia has no section for him."
+    ]
+  },
+  "salladhor-saan": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Salladhor_Saan",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://iceandfire.fandom.com/wiki/Salladhor_Saan",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate 12: Davos reports recruiting Salladhor to Stannis (\"The Night Lands\", Matthos page). Book gate 84 (Davos I): Davos meets him at an inn; owner check: the prologue (74) names him only in the narration of the feast. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool."
+    ]
+  },
+  "selyse-baratheon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Selyse_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/The_North_Remembers",
+      "https://gameofthrones.fandom.com/wiki/The_Night_Lands",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://iceandfire.fandom.com/wiki/Selyse_Florent",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_10",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Selyse_Florent"
+    ],
+    "unverified": [
+      "Owner check, book gate 74: the prologue summary names her as she comes in and argues with Stannis; no line read has her name said or printed in thought. Davos I (84) also names her in narration only.",
+      "Show gate 25 (\"Kissed by Fire\"): episode 11 has her uncredited and unnamed, and episode 12 only mentions \"a wife\"; that the name is said in episode 25 is not confirmed. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Italian: Selyse Baratheon, the show's name; Italian Wikipedia files her under \"Selyse Florent\"."
+    ]
+  },
+  "shireen-baratheon": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Shireen_Baratheon",
+      "https://gameofthrones.fandom.com/wiki/Kissed_by_Fire",
+      "https://iceandfire.fandom.com/wiki/Shireen_Baratheon",
+      "https://iceandfire.fandom.com/wiki/Prologue_-_A_Clash_of_Kings",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Prologue",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Casa_Baratheon#Shireen_Baratheon"
+    ],
+    "unverified": [
+      "Book gate 74: Pylos tells Cressen that Princess Shireen wants to see the white raven (prologue summary). Show gate 25 (\"Kissed by Fire\"), her first appearance; the naming line is not confirmed. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool."
+    ]
+  },
+  "brienne-of-tarth": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Brienne_of_Tarth",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://iceandfire.fandom.com/wiki/Brienne_Tarth",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_39",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Personaggi_delle_Cronache_del_ghiaccio_e_del_fuoco"
+    ],
+    "unverified": [
+      "Show gate 13: she tells Catelyn to call her just \"Brienne\" (Brienne page). Book gate 96 (Catelyn II): Colen tells Catelyn the champion is Brienne of Tarth. Sworn sword of Catelyn: episode 15 (she swears fealty) and Catelyn V (113), where Catelyn takes her as her sworn sword. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Former guard of King Renly at 107, books only (#1464 review): Catelyn IV has her flee with Catelyn after Renly's death without swearing yet; the show's oath falls in the same episode, 15."
+    ]
+  },
+  "margaery-tyrell": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Margaery_Tyrell",
+      "https://gameofthrones.fandom.com/wiki/What_Is_Dead_May_Never_Die",
+      "https://gameofthrones.fandom.com/wiki/Valar_Morghulis",
+      "https://iceandfire.fandom.com/wiki/Margaery_Tyrell",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Casa_Tyrell#Margaery_Tyrell",
+      "https://gameofthrones.fandom.com/wiki/The_Ghost_of_Harrenhal",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_33"
+    ],
+    "unverified": [
+      "Gate 13 / 96: Renly introduces her to Catelyn (\"What Is Dead May Never Die\"; Catelyn II). Betrothal 20 / 139: Joffrey agrees to wed her in \"Valar Morghulis\"; Sansa VIII has Garlan ask it, and that the king agrees in the same chapter is taken from the summary. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Widow of King Renly at 15 / 107 (#1464 review): Renly is killed in \"The Ghost of Harrenhal\" (episode 15) and Catelyn IV (A Clash of Kings 33, site 107)."
+    ]
+  },
+  "mace-tyrell": {
+    "sources": [
+      "https://gameofthrones.fandom.com/wiki/Mace_Tyrell",
+      "https://gameofthrones.fandom.com/wiki/The_Lion_and_the_Rose",
+      "https://iceandfire.fandom.com/wiki/Mace_Tyrell",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_65",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings",
+      "https://it.wikipedia.org/wiki/Casa_Tyrell#Mace_Tyrell"
+    ],
+    "unverified": [
+      "Book gate 139 (Sansa VIII): he is presented to Joffrey with his sons among the heroes of the Blackwater; Catelyn II to IV and the prologue only mention him. Show gate 32 (\"The Lion and the Rose\"), his first appearance, where he toasts Joffrey and his daughter; that his name is said there is not confirmed. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool."
+    ]
+  },
+  "cortnay-penrose": {
+    "sources": [
+      "https://iceandfire.fandom.com/wiki/Cortnay_Penrose",
+      "https://awoiaf.westeros.org/index.php/Cortnay_Penrose",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_22",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_31",
+      "https://awoiaf.westeros.org/index.php/A_Clash_of_Kings-Chapter_42",
+      "https://iceandfire.fandom.com/wiki/Template:A_Clash_of_Kings"
+    ],
+    "unverified": [
+      "Book gate 116 (Davos II): he parleys with Stannis; Catelyn II (96) and III (105) only mention him. Death at 118: A Wiki of Ice and Fire's Cortnay page cites Tyrion X for the assassination, and Catelyn VI (119) for the castle's surrender after it. The show has no Cortnay; episodes 14 and 16 only order him. Neither the episodes nor the books were viewed; book chapters come from A Wiki of Ice and Fire chapter summaries read through the Firecrawl tool.",
+      "Italian: Cortnay Penrose kept; Italian Wikipedia has no section for him and the Mondadori form was not checked."
     ]
   }
 }

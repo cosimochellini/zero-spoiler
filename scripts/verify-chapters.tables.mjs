@@ -65,6 +65,8 @@ export const TITLES = {
   'game-of-thrones': {
     'nymeria': 'Nymeria (direwolf)',
     'robin-arryn': 'Robert Arryn',
+    'brienne-of-tarth': 'Brienne Tarth',
+    'selyse-baratheon': 'Selyse Florent',
   },
 }
 

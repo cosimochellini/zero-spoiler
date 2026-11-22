@@ -9,7 +9,7 @@ export const greedIslandReturningChronicles = {
       value: {
         title: { it: 'La selezione per il gioco', en: 'The game tryouts' },
         body: {
-          it: 'Gon e [[killua|Killua]] chiedono a [[battera|Battera]] di giocare a Greed Island per lui. [[tsezguerra|Tsezugera]] esamina il loro Ren e li respinge. Su consiglio di [[kurapika|Kurapika]], Gon chiama [[wing|Wing]] e riprende ad allenarsi. Concentra l’aura nel pugno combinando ciò che ha imparato finora, e continua a esercitarsi per riuscire a mantenerla. Vuole presentarsi di nuovo alla selezione.',
+          it: 'Gon e [[killua|Killua]] chiedono a [[battera|Battera]] di giocare a Greed Island per lui. [[tsezguerra|Tsezgerah]] esamina il loro Ren e li respinge. Su consiglio di [[kurapika|Kurapika]], Gon chiama [[wing|Wing]] e riprende ad allenarsi. Concentra l’aura nel pugno combinando ciò che ha imparato finora, e continua a esercitarsi per riuscire a mantenerla. Vuole presentarsi di nuovo alla selezione.',
           en: 'Gon and [[killua|Killua]] ask [[battera|Battera]] to play Greed Island for him. [[tsezguerra|Tsezguerra]] examines their Ren and rejects them. Following [[kurapika|Kurapika]]’s advice, Gon calls [[wing|Wing]] and resumes his training. He concentrates aura in his fist by combining what he has learned so far, and keeps practicing until he can sustain it. He intends to try the selection again.',
         },
       },
@@ -20,7 +20,7 @@ export const greedIslandReturningChronicles = {
       value: {
         title: { it: 'Il messaggio di Ging', en: 'Ging’s message' },
         body: {
-          it: 'Gon supera la selezione di [[tsezguerra|Tsezugera]] e raggiunge la villa di [[battera|Battera]] con [[killua|Killua]]. Vince a morra cinese ed entra per primo a Greed Island con la scheda e l’anello lasciati da [[ging-freecss|Ging]]. All’ingresso ascolta un messaggio di suo padre: ha creato il gioco con i suoi amici e vuole che Gon si diverta. Gon scende verso l’isola.',
+          it: 'Gon supera la selezione di [[tsezguerra|Tsezgerah]] e raggiunge la villa di [[battera|Battera]] con [[killua|Killua]]. Vince a morra cinese ed entra per primo a Greed Island con la scheda e l’anello lasciati da [[ging-freecss|Ging]]. All’ingresso ascolta un messaggio di suo padre: ha creato il gioco con i suoi amici e vuole che Gon si diverta. Gon scende verso l’isola.',
           en: 'Gon passes [[tsezguerra|Tsezguerra]]’s selection and reaches [[battera|Battera]]’s mansion with [[killua|Killua]]. He wins at rock-paper-scissors and enters Greed Island first, using the memory card and ring [[ging-freecss|Ging]] left him. At the entrance he hears his father’s message: Ging created the game with his friends and wants Gon to enjoy it. Gon heads down onto the island.',
         },
       },
@@ -108,7 +108,7 @@ export const greedIslandReturningChronicles = {
       value: {
         title: { it: 'L’aura elettrica', en: 'Electrical aura' },
         body: {
-          it: 'Dopo il rifiuto di [[tsezguerra|Tsezugera]], Killua allena una tecnica che trasforma la sua aura in elettricità. Alla nuova selezione chiede di mostrare il suo Hatsu invece del Ren. Tsezugera resta sorpreso quando scopre che ha imparato la tecnica in quattro giorni e lo ammette al gioco. Anche [[gon-freecss|Gon]] supera la prova e i due possono partire insieme.',
+          it: 'Dopo il rifiuto di [[tsezguerra|Tsezgerah]], Killua allena una tecnica che trasforma la sua aura in elettricità. Alla nuova selezione chiede di mostrare il suo Hatsu invece del Ren. Tsezgerah resta sorpreso quando scopre che ha imparato la tecnica in quattro giorni e lo ammette al gioco. Anche [[gon-freecss|Gon]] supera la prova e i due possono partire insieme.',
           en: 'After [[tsezguerra|Tsezguerra]] rejects him, Killua trains a technique that turns his aura into electricity. At the next selection he asks to demonstrate his Hatsu instead of Ren. Tsezguerra is surprised to learn that he developed the technique in four days and admits him to the game. [[gon-freecss|Gon]] also passes the test, allowing the two to leave together.',
         },
       },
@@ -225,7 +225,7 @@ export const greedIslandReturningChronicles = {
           en: 'A teammate for the group',
         },
         body: {
-          it: '[[gon-freecss|Gon]] e [[killua|Killua]] raggiungono Hisoka seguendo il nome di [[chrollo|Quoll]] nel loro libro. Hisoka nasconde i contatti con la Brigata e accetta di aiutarli a cercare compagni per una sfida del gioco. Quando Gon gli chiede di usare il libro per contattare [[tsezguerra|Tsezugera]], Hisoka cambia i nomi visibili con la sua tecnica, evitando che Killua scopra la bugia.',
+          it: '[[gon-freecss|Gon]] e [[killua|Killua]] raggiungono Hisoka seguendo il nome di [[chrollo|Quoll]] nel loro libro. Hisoka nasconde i contatti con la Brigata e accetta di aiutarli a cercare compagni per una sfida del gioco. Quando Gon gli chiede di usare il libro per contattare [[tsezguerra|Tsezgerah]], Hisoka cambia i nomi visibili con la sua tecnica, evitando che Killua scopra la bugia.',
           en: '[[gon-freecss|Gon]] and [[killua|Killua]] reach Hisoka by following [[chrollo|Chrollo]]’s name in their book. Hisoka conceals his contact with the Troupe and agrees to help them find teammates for a game challenge. When Gon asks to use his book to contact [[tsezguerra|Tsezguerra]], Hisoka changes the visible names with his technique, keeping Killua from discovering the lie.',
         },
       },

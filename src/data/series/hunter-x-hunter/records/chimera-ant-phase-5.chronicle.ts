@@ -441,7 +441,7 @@ export const chimeraAntPhase5Chronicles = {
           en: 'The man far from the palace',
         },
         body: {
-          it: 'Un notiziario annuncia il ritrovamento del corpo del capo del Golt Orientale tra le macerie del palazzo. Quell’uomo è però un sosia. Il vero Digo Masadoru vive da trent’anni lontano dal governo, in una fattoria. Mentre il paese affronta le conseguenze della selezione, lui continua la sua vita in campagna, leggendo un libro.',
+          it: 'Un notiziario annuncia il ritrovamento del corpo del capo del Golt Orientale tra le macerie del palazzo. Quell’uomo è però un sosia. Il vero Digo Matador vive da trent’anni lontano dal governo, in una fattoria. Mentre il paese affronta le conseguenze della selezione, lui continua la sua vita in campagna, leggendo un libro.',
           en: 'A news report announces that East Gorteau’s leader has been found dead among the palace ruins. That man is a double. The real Ming Jol-ik has lived away from the government for thirty years, on a farm. While the country faces the consequences of the selection, he continues his rural life and reads a book.',
         },
       },

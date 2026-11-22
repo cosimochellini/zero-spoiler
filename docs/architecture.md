@@ -283,8 +283,10 @@ the Night's Watch and #1008 nine of Daenerys's storyline, by the same rules.
 Season 2 and _A Clash of Kings_ (#1455) file by cast group: King's Landing and
 the Blackwater (#1463) adds seven characters, one the show's alone and six the
 books', each showing a placeholder bust until its drawing child, and the stage's
-dated steps of eleven season-1 characters, kept in `season-1.ts`. Robb's war,
-the Riverlands and Harrenhal (#1465) adds nine, two the show's alone, four the
+dated steps of eleven season-1 characters, kept in `season-1.ts`. Stannis, Renly
+and the stormlands (#1464) add twelve, one the books' alone, three with the
+show's later gate, and Loras Tyrell's stage-2 role steps. Robb's war, the
+Riverlands and Harrenhal (#1465) adds nine, two the show's alone, four the
 books' and three both media's, with the stage's steps of eight season-1
 characters. The series opened before its drawings: Eddard, Jon, Daenerys and
 Tyrion have their own, with seven stages: Eddard's death and Ice melted, Jon's
@@ -528,7 +530,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Line drawings             | 369, one per record, plus 95 redrawings of 82 records |
 | Chronicle stories         | 1001, for 289 characters                              |
 | Dated timelines           | 1338                                                  |
-| Affiliation steps         | 465                                                   |
+| Affiliation steps         | 466                                                   |
 | Status steps              | 390                                                   |
 | Origins that link a place | 10                                                    |
 
@@ -536,14 +538,14 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 
 | Thing             | Count                                                   |
 | ----------------- | ------------------------------------------------------- |
-| Records           | 224                                                     |
-| Characters        | 164                                                     |
+| Records           | 236                                                     |
+| Characters        | 176                                                     |
 | Places            | 60                                                      |
 | Saga modules      | 2                                                       |
-| Line drawings     | 224, one per record, plus 153 redrawings of 113 records |
+| Line drawings     | 236, one per record, plus 153 redrawings of 113 records |
 | Chronicle stories | 565, for 144 characters                                 |
-| Dated timelines   | 770                                                     |
-| Affiliation steps | 192                                                     |
-| Status steps      | 290                                                     |
+| Dated timelines   | 798                                                     |
+| Affiliation steps | 204                                                     |
+| Status steps      | 305                                                     |
 
 <!-- End of the generated counts. -->
