@@ -528,7 +528,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Line drawings             | 369, one per record, plus 95 redrawings of 82 records |
 | Chronicle stories         | 1001, for 289 characters                              |
 | Dated timelines           | 1338                                                  |
-| Affiliation steps         | 465                                                   |
+| Affiliation steps         | 466                                                   |
 | Status steps              | 390                                                   |
 | Origins that link a place | 10                                                    |
 

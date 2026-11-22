@@ -22,7 +22,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'L’acquisto di Greed Island', en: 'Buying Greed Island' },
         body: {
-          it: 'Battera partecipa all’asta di York Shin City e compra una copia di Greed Island. [[gon-freecss|Gon]] e [[killua|Killua]] gli chiedono di poter giocare. Il miliardario si interessa a loro quando scopre che hanno già un anello e una scheda di memoria del gioco. Chiama [[tsezguerra|Tsezugera]] per esaminare il loro Ren.',
+          it: 'Battera partecipa all’asta di York Shin City e compra una copia di Greed Island. [[gon-freecss|Gon]] e [[killua|Killua]] gli chiedono di poter giocare. Il miliardario si interessa a loro quando scopre che hanno già un anello e una scheda di memoria del gioco. Chiama [[tsezguerra|Tsezgerah]] per esaminare il loro Ren.',
           en: 'Battera attends the Yorknew auction and buys a copy of Greed Island. [[gon-freecss|Gon]] and [[killua|Killua]] ask him to let them play. The billionaire becomes interested when he learns that they already have a ring and a memory card for the game. He calls [[tsezguerra|Tsezguerra]] to examine their Ren.',
         },
       },
@@ -34,7 +34,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'I giocatori assunti', en: 'The hired players' },
         body: {
-          it: 'Battera compra le copie di Greed Island messe all’asta e affida a [[tsezguerra|Tsezugera]] la selezione dei giocatori. [[gon-freecss|Gon]] e [[killua|Killua]], respinti al primo tentativo, superano la nuova prova. Chi completa il gioco riceverà cinquanta miliardi di jeni. Le console sono custodite nella villa di Battera, dove i candidati ammessi entrano nel gioco uno alla volta.',
+          it: 'Battera compra le copie di Greed Island messe all’asta e affida a [[tsezguerra|Tsezgerah]] la selezione dei giocatori. [[gon-freecss|Gon]] e [[killua|Killua]], respinti al primo tentativo, superano la nuova prova. Chi completa il gioco riceverà cinquanta miliardi di jeni. Le console sono custodite nella villa di Battera, dove i candidati ammessi entrano nel gioco uno alla volta.',
           en: 'Battera buys the copies of Greed Island offered at auction and has [[tsezguerra|Tsezguerra]] select the players. [[gon-freecss|Gon]] and [[killua|Killua]], rejected on their first attempt, pass the new test. Whoever clears the game will receive fifty billion Jenny. The consoles are kept in Battera’s mansion, where the successful applicants enter the game one at a time.',
         },
       },
@@ -45,7 +45,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'La ragione del premio', en: 'The reason for the reward' },
         body: {
-          it: 'Quando [[tsezguerra|Tsezugera]] torna dal gioco, Battera ha interrotto il finanziamento e vuole restare solo. Una fotografia spinge l’Hunter a chiedergli della giovane donna ritratta. Battera racconta che era la sua compagna, rimasta in coma dopo un incidente. Cercava nel gioco una carta capace di guarirla. La donna è morta e completare Greed Island non gli interessa più.',
+          it: 'Quando [[tsezguerra|Tsezgerah]] torna dal gioco, Battera ha interrotto il finanziamento e vuole restare solo. Una fotografia spinge l’Hunter a chiedergli della giovane donna ritratta. Battera racconta che era la sua compagna, rimasta in coma dopo un incidente. Cercava nel gioco una carta capace di guarirla. La donna è morta e completare Greed Island non gli interessa più.',
           en: 'When [[tsezguerra|Tsezguerra]] returns from the game, Battera has withdrawn his support and wants to be alone. A photograph prompts the Hunter to ask about the young woman in it. Battera explains that she was his lover, left in a coma after an accident. He sought a card in the game that could heal her. She has died, and clearing Greed Island no longer matters to him.',
         },
       },
@@ -58,7 +58,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'La prova del Ren', en: 'The Ren test' },
         body: {
-          it: '[[battera|Battera]] chiama Tsezugera quando [[gon-freecss|Gon]] e [[killua|Killua]] si offrono di completare Greed Island. I ragazzi mostrano il loro Ren, ma Tsezugera li respinge. Non basta saper usare il Nen per sopravvivere nel gioco. Il suo giudizio costringe i due a prepararsi prima di poter entrare.',
+          it: '[[battera|Battera]] chiama Tsezgerah quando [[gon-freecss|Gon]] e [[killua|Killua]] si offrono di completare Greed Island. I ragazzi mostrano il loro Ren, ma Tsezgerah li respinge. Non basta saper usare il Nen per sopravvivere nel gioco. Il suo giudizio costringe i due a prepararsi prima di poter entrare.',
           en: '[[battera|Battera]] calls Tsezguerra when [[gon-freecss|Gon]] and [[killua|Killua]] offer to clear Greed Island. The boys demonstrate their Ren, but Tsezguerra rejects them. Being able to use Nen is not enough to survive in the game. His assessment forces the two to prepare before they can enter.',
         },
       },
@@ -69,7 +69,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'La seconda selezione', en: 'The second screening' },
         body: {
-          it: 'Alla nuova selezione [[killua|Killua]] mostra a Tsezugera l’elettricità prodotta con il Nen. [[gon-freecss|Gon]] concentra invece l’aura nel pugno e danneggia il muro. Tsezugera ammette entrambi e spiega ai candidati il contratto di [[battera|Battera]]. Nella villa accompagna il gruppo alle console, poi lascia che siano i giocatori a decidere l’ordine d’ingresso.',
+          it: 'Alla nuova selezione [[killua|Killua]] mostra a Tsezgerah l’elettricità prodotta con il Nen. [[gon-freecss|Gon]] concentra invece l’aura nel pugno e danneggia il muro. Tsezgerah ammette entrambi e spiega ai candidati il contratto di [[battera|Battera]]. Nella villa accompagna il gruppo alle console, poi lascia che siano i giocatori a decidere l’ordine d’ingresso.',
           en: 'At the new screening, [[killua|Killua]] shows Tsezguerra the electricity he produces with Nen. [[gon-freecss|Gon]] instead gathers aura in his fist and damages the wall. Tsezguerra accepts both and explains [[battera|Battera]]’s contract to the successful applicants. At the mansion he takes the group to the consoles, then lets the players decide their order of entry.',
         },
       },
@@ -80,7 +80,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'Lo scambio e il furto', en: 'The trade and the theft' },
         body: {
-          it: 'Tsezugera organizza uno scambio di carte con il Boomer. Dopo lo scambio l’avversario protesta per le condizioni, mentre i suoi complici si avvicinano senza farsi notare. Usano un incantesimo per sottrarre altre carte alla squadra di Tsezugera e fuggono. Gli Hunter capiscono di essere stati ingannati e cercano un modo per impedirgli di completare il gioco.',
+          it: 'Tsezgerah organizza uno scambio di carte con il Boomer. Dopo lo scambio l’avversario protesta per le condizioni, mentre i suoi complici si avvicinano senza farsi notare. Usano un incantesimo per sottrarre altre carte alla squadra di Tsezgerah e fuggono. Gli Hunter capiscono di essere stati ingannati e cercano un modo per impedirgli di completare il gioco.',
           en: 'Tsezguerra arranges a card trade with the Bomber. After the exchange, his opponent complains about the terms while his accomplices approach unnoticed. They cast a spell to take more cards from Tsezguerra’s team and escape. The Hunters realize that they have been tricked and look for a way to keep them from clearing the game.',
         },
       },
@@ -94,7 +94,7 @@ export const greedIslandChronicles = {
           en: 'The team against the pirates',
         },
         body: {
-          it: 'Tsezugera e i suoi compagni si uniscono a [[gon-freecss|Gon]], [[killua|Killua]] e [[biscuit-krueger|Biscuit]] per affrontare i pirati. Per ottenere una carta rara serve un gruppo di quindici persone. La forza dei ragazzi lo sorprende: quando si confrontano saltando con il Nen, superano la sua altezza. La nuova squadra torna a sfidare i pirati.',
+          it: 'Tsezgerah e i suoi compagni si uniscono a [[gon-freecss|Gon]], [[killua|Killua]] e [[biscuit-krueger|Biscuit]] per affrontare i pirati. Per ottenere una carta rara serve un gruppo di quindici persone. La forza dei ragazzi lo sorprende: quando si confrontano saltando con il Nen, superano la sua altezza. La nuova squadra torna a sfidare i pirati.',
           en: 'Tsezguerra and his companions join [[gon-freecss|Gon]], [[killua|Killua]] and [[biscuit-krueger|Biscuit]] to challenge the pirates. Obtaining a rare card requires a group of fifteen people. The boys’ strength surprises him: when they compare their Nen-powered jumps, they exceed his height. The new team returns to challenge the pirates.',
         },
       },
@@ -108,7 +108,7 @@ export const greedIslandChronicles = {
           en: 'The dodgeball victory',
         },
         body: {
-          it: 'Tsezugera partecipa alla partita di palla avvelenata contro [[razor|Razer]]. I colpi del creatore del gioco mettono fuori combattimento diversi partecipanti, ma [[gon-freecss|Gon]], [[killua|Killua]] e [[hisoka|Hisoka]] continuano a giocare. La squadra riesce a vincere. Tsezugera vede quanto siano cresciuti i ragazzi che aveva respinto alla prima selezione per Greed Island.',
+          it: 'Tsezgerah partecipa alla partita di palla avvelenata contro [[razor|Razer]]. I colpi del creatore del gioco mettono fuori combattimento diversi partecipanti, ma [[gon-freecss|Gon]], [[killua|Killua]] e [[hisoka|Hisoka]] continuano a giocare. La squadra riesce a vincere. Tsezgerah vede quanto siano cresciuti i ragazzi che aveva respinto alla prima selezione per Greed Island.',
           en: 'Tsezguerra takes part in the dodgeball match against [[razor|Razor]]. The game creator’s throws put several players out of action, but [[gon-freecss|Gon]], [[killua|Killua]] and [[hisoka|Hisoka]] keep playing. Their team wins. Tsezguerra sees how far the boys have come since he rejected them at the first Greed Island screening.',
         },
       },
@@ -119,7 +119,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'Guadagnare tempo', en: 'Buying time' },
         body: {
-          it: 'Tsezugera tiene occupato il Boomer per dare a [[gon-freecss|Gon]] il tempo di prepararsi. La sua squadra colpisce e fugge con le carte di viaggio, mentre gli avversari consumano le proprie per inseguirla. Alla fine gli Hunter escono dal gioco. Nella villa scoprono che [[battera|Battera]] ha rinunciato a completarlo, ma Tsezugera pretende una spiegazione.',
+          it: 'Tsezgerah tiene occupato il Boomer per dare a [[gon-freecss|Gon]] il tempo di prepararsi. La sua squadra colpisce e fugge con le carte di viaggio, mentre gli avversari consumano le proprie per inseguirla. Alla fine gli Hunter escono dal gioco. Nella villa scoprono che [[battera|Battera]] ha rinunciato a completarlo, ma Tsezgerah pretende una spiegazione.',
           en: 'Tsezguerra keeps the Bomber occupied to give [[gon-freecss|Gon]] time to prepare. His team attacks and escapes with travel cards, making their opponents spend their own cards in pursuit. The Hunters eventually leave the game. At the mansion they discover that [[battera|Battera]] has given up on clearing it, but Tsezguerra demands an explanation.',
         },
       },
@@ -130,7 +130,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'Fuori dal gioco', en: 'Outside the game' },
         body: {
-          it: 'Tsezugera rimane fuori da Greed Island con i suoi compagni. Il Boomer aspetta il loro ritorno, ma la squadra non rientra entro il limite previsto dal gioco. [[battera|Battera]] racconta a Tsezugera della donna che voleva guarire con una carta. La sua morte ha tolto al miliardario ogni ragione per continuare.',
+          it: 'Tsezgerah rimane fuori da Greed Island con i suoi compagni. Il Boomer aspetta il loro ritorno, ma la squadra non rientra entro il limite previsto dal gioco. [[battera|Battera]] racconta a Tsezgerah della donna che voleva guarire con una carta. La sua morte ha tolto al miliardario ogni ragione per continuare.',
           en: 'Tsezguerra stays outside Greed Island with his companions. The Bomber waits for their return, but the team does not come back within the game’s time limit. [[battera|Battera]] tells Tsezguerra about the woman he hoped to heal with a card. Her death has taken away the billionaire’s reason to continue.',
         },
       },
@@ -234,7 +234,7 @@ export const greedIslandChronicles = {
           en: 'The team against the pirates',
         },
         body: {
-          it: 'Biscuit accompagna [[gon-freecss|Gon]] e [[killua|Killua]] nella ricerca di una squadra capace di affrontare i pirati. Il gruppo trova [[hisoka|Hisoka]] e recluta [[tsezguerra|Tsezugera]] con i suoi compagni. Dopo una settimana di preparazione torna alla base dei pirati. Le prime vittorie convincono [[razor|Razer]] a cambiare la sfida: propone una partita di palla avvelenata.',
+          it: 'Biscuit accompagna [[gon-freecss|Gon]] e [[killua|Killua]] nella ricerca di una squadra capace di affrontare i pirati. Il gruppo trova [[hisoka|Hisoka]] e recluta [[tsezguerra|Tsezgerah]] con i suoi compagni. Dopo una settimana di preparazione torna alla base dei pirati. Le prime vittorie convincono [[razor|Razer]] a cambiare la sfida: propone una partita di palla avvelenata.',
           en: 'Biscuit accompanies [[gon-freecss|Gon]] and [[killua|Killua]] as they seek a team capable of challenging the pirates. The group finds [[hisoka|Hisoka]] and recruits [[tsezguerra|Tsezguerra]] with his companions. After a week of preparation they return to the pirates’ base. Their early victories prompt [[razor|Razor]] to change the challenge: he proposes a dodgeball match.',
         },
       },
@@ -361,7 +361,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'Lo scambio truccato', en: 'The rigged trade' },
         body: {
-          it: 'Gensul accetta uno scambio con la squadra di [[tsezguerra|Tsezugera]], poi protesta sostenendo che l’accordo non è equo. Mentre distrae gli Hunter, i suoi complici usano i Dadi del Rischio e un incantesimo per sottrarre altre carte al gruppo. I tre fuggono subito dopo il furto, avvicinandosi ancora al completamento di Greed Island.',
+          it: 'Gensul accetta uno scambio con la squadra di [[tsezguerra|Tsezgerah]], poi protesta sostenendo che l’accordo non è equo. Mentre distrae gli Hunter, i suoi complici usano i Dadi del Rischio e un incantesimo per sottrarre altre carte al gruppo. I tre fuggono subito dopo il furto, avvicinandosi ancora al completamento di Greed Island.',
           en: 'Genthru accepts a trade with [[tsezguerra|Tsezguerra]]’s team, then complains that the agreement is unfair. While he distracts the Hunters, his accomplices use Risky Dice and cast a spell to take more cards from the group. The three escape immediately after the theft, moving closer to completing Greed Island.',
         },
       },
@@ -376,7 +376,7 @@ export const greedIslandChronicles = {
           en: 'The threat after the match',
         },
         body: {
-          it: 'Dopo la vittoria contro [[razor|Razer]], la squadra di [[gon-freecss|Gon]] ottiene la carta della spiaggia. Gensul contatta [[tsezguerra|Tsezugera]] e pretende che gliela consegni. Rivela di aver ucciso i membri della precedente squadra che aveva cercato di affrontare i pirati. Gon lo sfida, ma Tsezugera vuole allontanare il Boomer per lasciare ai ragazzi il tempo di prepararsi.',
+          it: 'Dopo la vittoria contro [[razor|Razer]], la squadra di [[gon-freecss|Gon]] ottiene la carta della spiaggia. Gensul contatta [[tsezguerra|Tsezgerah]] e pretende che gliela consegni. Rivela di aver ucciso i membri della precedente squadra che aveva cercato di affrontare i pirati. Gon lo sfida, ma Tsezgerah vuole allontanare il Boomer per lasciare ai ragazzi il tempo di prepararsi.',
           en: 'After defeating [[razor|Razor]], [[gon-freecss|Gon]]’s team obtains the beach card. Genthru contacts [[tsezguerra|Tsezguerra]] and demands that he hand it over. He reveals that he killed the members of the earlier team that tried to challenge the pirates. Gon challenges him, but Tsezguerra wants to draw the Bomber away and give the boys time to prepare.',
         },
       },
@@ -388,7 +388,7 @@ export const greedIslandChronicles = {
       value: {
         title: { it: 'L’inseguimento', en: 'The pursuit' },
         body: {
-          it: 'Gensul e i suoi due complici inseguono la squadra di [[tsezguerra|Tsezugera]], che li attacca e fugge con le carte di viaggio. Per continuare la caccia costringono altri giocatori a procurargli nuovi incantesimi. Tsezugera finisce per uscire dal gioco. Il Boomer lo segue fino alla villa di [[battera|Battera]], per affrontarlo fuori dal gioco.',
+          it: 'Gensul e i suoi due complici inseguono la squadra di [[tsezguerra|Tsezgerah]], che li attacca e fugge con le carte di viaggio. Per continuare la caccia costringono altri giocatori a procurargli nuovi incantesimi. Tsezgerah finisce per uscire dal gioco. Il Boomer lo segue fino alla villa di [[battera|Battera]], per affrontarlo fuori dal gioco.',
           en: 'Genthru and his two accomplices pursue [[tsezguerra|Tsezguerra]]’s team, which attacks them and escapes with travel cards. To continue the chase, they force other players to obtain new spells for them. Tsezguerra eventually leaves the game. The Bomber follows him to [[battera|Battera]]’s mansion, to confront him outside the game.',
         },
       },
