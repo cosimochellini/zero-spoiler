@@ -518,7 +518,8 @@ export const KAKIN_PHASE_5_DRAWINGS = {
   // Saquelle's head from behind and a little to his left, the short fair
   // hair in tint, and his thick neck in the stand-up collar of his Kakin
   // army jacket: one of Benjamin's soldiers, first seen in chapter 358
-  // (named in 413), posted with Marayam.
+  // (named in 413), posted with Marayam. The collar's shape is a
+  // convention: the wiki gives the army only a jacket, pants and boots.
   'saquelle': [
     { d: 'M50 84 C49 92 50 98 52 104 M109 86 C109 94 109 100 108 104' },
     {
