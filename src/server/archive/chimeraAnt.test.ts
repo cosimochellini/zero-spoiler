@@ -62,6 +62,8 @@ const PHASE_TWO: Row[] = [
   { id: 'baital', episode: 88, chapter: 205, place: false, source: 'chapter' },
   { id: 'colt', episode: 92, chapter: 214, place: false },
   { id: 'meruem', episode: 92, chapter: 215, place: false },
+  // Filed for the ranks page (#1447).
+  { id: 'chimera-ant-queen', episode: 77, chapter: 187, place: false },
   { id: 'dr-lee', episode: 92, chapter: 215, place: false, source: 'chapter' },
   { id: 'chimera-ant-nest', episode: 78, chapter: 188, place: true },
   { id: 'd2-manufacturing-plant', episode: 82, chapter: 192, place: true },
@@ -198,6 +200,7 @@ const DEATHS = [
   { id: 'pekuba', episode: 80, chapter: undefined },
   { id: 'yunju', episode: 82, chapter: undefined },
   { id: 'peggy', episode: undefined, chapter: 213 },
+  { id: 'chimera-ant-queen', episode: 92, chapter: 215 },
   { id: 'rammot', episode: 94, chapter: 219 },
   { id: 'cheetu', episode: 117, chapter: 278 },
   { id: 'neferpitou', episode: 131, chapter: 307 },
@@ -262,7 +265,8 @@ interface Step {
 
 /**
  * Every dated relationship, affiliation, status and role step of the
- * records Chimera Ant phase 2 filed (#1043, #1047), and of Neferpitou (phase 1),
+ * records Chimera Ant phase 2 filed (#1043, #1047), of Neferpitou (phase 1)
+ * and of the Queen and Zazan's turn to queen (#1447),
  * each pinned by hand to the episode and chapter that tell it, so moving one
  * later by a unit fails (#1230). A step that sits on its record's own gate
  * cannot show an earlier move, because a record never opens before its gate;
@@ -273,6 +277,23 @@ interface Step {
  * dated roles, affiliations and relationships below) are left out.
  */
 const PHASE_TWO_STEPS: Step[] = [
+  {
+    id: 'chimera-ant-queen',
+    field: 'relationships',
+    episode: 92,
+    chapter: 215,
+    value: {
+      it: 'colt: Comandante di divisione, meruem: Figlio',
+      en: 'colt: Squadron Leader, meruem: Son',
+    },
+  },
+  {
+    id: 'zazan',
+    field: 'role',
+    episode: 96,
+    chapter: 224,
+    value: { it: 'Regina autoproclamata', en: 'Self-proclaimed queen' },
+  },
   {
     id: 'palm-siberia',
     field: 'affiliation',
@@ -1439,6 +1460,7 @@ describe('Gyro before the anime ties him to NGL', () => {
 })
 
 describe.each([
+  { id: 'chimera-ant-queen', episode: 92, chapter: 215 },
   { id: 'neferpitou', episode: 131, chapter: 307 },
   { id: 'menthuthuyoupi', episode: 133, chapter: 310 },
   { id: 'meruem', episode: 135, chapter: 318 },

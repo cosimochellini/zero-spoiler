@@ -66,7 +66,16 @@ export const CHIMERA_ANT_SQUADS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
           ],
         },
       ],
-      role: SQUADRON_LEADER,
+      role: [
+        { episode: 84, chapter: 189, value: SQUADRON_LEADER },
+        // Away from the nest she rules Meteor City as its queen, and the
+        // Troupe sets out to kill this "Queen": chapter 224, episode 96.
+        {
+          episode: 96,
+          chapter: 224,
+          value: { it: 'Regina autoproclamata', en: 'Self-proclaimed queen' },
+        },
+      ],
       log: {
         it: 'Guida una delle divisioni della colonia. Alcuni dei suoi soldati vengono uccisi da umani.',
         en: 'She leads one of the colony’s squads. Some of its soldiers are killed by humans.',
