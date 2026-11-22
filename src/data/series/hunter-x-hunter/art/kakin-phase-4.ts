@@ -305,7 +305,7 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   ],
 
   // Padaille's right hand turned into a hammer, out of the plain sleeve of
-  // his shirt, its cuff seen end on with its seam, the head a block in 3/4,
+  // his shirt, its open cuff seen end on, the head a block in 3/4,
   // its front face in tint and the far face hatched: his ability, shown as
   // he attacks Hinrigh in chapter 391. He dies in that chapter, the one his
   // record opens in, so his death has no stage (owner, #1324).
@@ -517,7 +517,7 @@ export const KAKIN_PHASE_4_DRAWINGS = {
   ],
 
   // Montblanc Toto's head from behind and a little to her left: the fair
-  // hair parted and tied into two pigtails that hang down to her neck, the
+  // hair divided and tied into two pigtails that hang down to her neck, the
   // dark fabric ties hatched, their edges in tint: a Heil-Ly member,
   // chapter 394.
   'montblanc-toto': [
