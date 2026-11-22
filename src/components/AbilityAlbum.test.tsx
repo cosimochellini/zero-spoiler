@@ -1,5 +1,6 @@
 import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { type ReactElement, useState } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 
 import type { Locale } from '~/i18n/locales'
@@ -68,6 +69,27 @@ async function renderAlbum(
   )
 
   return { onParams }
+}
+
+/** The album with its picks held in state, as the route holds them. */
+function Held({ sheet }: { sheet: AbilitySheetView }): ReactElement {
+  const [params, setParams] = useState<AbilityParams>({})
+
+  return (
+    <AbilityAlbum
+      onParams={setParams}
+      params={params}
+      peek={peekPending()}
+      sheet={sheet}
+    />
+  )
+}
+
+async function renderHeld(sheet: AbilitySheetView = SHEET): Promise<void> {
+  await renderUnderSeries(<Held sheet={sheet} />, {
+    path: '/hunter-x-hunter/en/abilities',
+    series: HUNTER_X_HUNTER_SERIES,
+  })
 }
 
 /** The headings of the plates and the fog band, in order. */
@@ -169,5 +191,90 @@ describe('AbilityAlbum', () => {
 
     expect(openEntryLinks('abilities')).toBe(2)
     expect(readOpenEntries()).toBe(openEntryLinks('abilities'))
+  })
+})
+
+describe('AbilityAlbum with nothing open', () => {
+  const NONE_OPEN: AbilitySheetView = { ...SHEET, bands: [] }
+
+  it('leaves out the search and the chips, and leads with the fog band', async () => {
+    await renderHeld(NONE_OPEN)
+
+    expect(screen.queryByRole('searchbox')).not.toBeInTheDocument()
+    expect(screen.queryByRole('radio')).not.toBeInTheDocument()
+    expect(screen.queryByText(/Showing 0/u)).not.toBeInTheDocument()
+    expect(screen.getAllByRole('heading')[0]).toHaveTextContent('2 under fog')
+  })
+
+  it('still reports that no entry is open', async () => {
+    await renderHeld(NONE_OPEN)
+
+    expect(readOpenEntries()).toBe(0)
+  })
+
+  it('folds nothing for a query left in the address', async () => {
+    await renderUnderSeries(
+      <AbilityAlbum
+        onParams={vi.fn<(next: AbilityParams, replace: boolean) => void>()}
+        params={{ q: 'rock' }}
+        peek={peekPending()}
+        sheet={NONE_OPEN}
+      />,
+      { path: '/hunter-x-hunter/en/abilities', series: HUNTER_X_HUNTER_SERIES },
+    )
+
+    expect(screen.getByRole('region', { name: '2 under fog' })).toBeVisible()
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+})
+
+describe('AbilityAlbum with a query that matches nothing', () => {
+  it('folds the plates and the fog band behind one line and a way back', async () => {
+    const user = userEvent.setup()
+    await renderHeld()
+
+    await user.type(screen.getByRole('searchbox'), 'zzz')
+
+    const line = await screen.findByText('No open ability matches “zzz”.')
+
+    expect(line).toBeVisible()
+    // Folded, not unmounted: still in the page, and out of every reader's way.
+    expect(screen.getByText('Enhancer', { selector: 'h2' })).not.toBeVisible()
+    expect(screen.getByText('2 under fog')).not.toBeVisible()
+    expect(
+      screen.queryByRole('region', { name: '2 under fog' }),
+    ).not.toBeInTheDocument()
+    expect(screen.getByText('Clear search')).toBeVisible()
+    // What the fold hides is still said: how many are under fog, and why
+    // the search does not find them. No bookmark here, so: set one.
+    expect(
+      screen.getByText(
+        '2 under fog. Their names and Nen types are hidden, so search does not find them. Set your bookmark to see them.',
+      ),
+    ).toBeVisible()
+  })
+
+  it('unfolds them and returns to the field when the query is cleared', async () => {
+    const user = userEvent.setup()
+    await renderHeld()
+
+    await user.type(screen.getByRole('searchbox'), 'zzz')
+    await user.click(screen.getByText('Clear search'))
+
+    expect(screen.getByRole('searchbox')).toHaveValue('')
+    expect(screen.getByRole('searchbox')).toHaveFocus()
+    expect(screen.getByRole('link', { name: /Rock Fist/u })).toBeVisible()
+    expect(screen.getByRole('region', { name: '2 under fog' })).toBeVisible()
+    expect(screen.queryByText('Clear search')).not.toBeInTheDocument()
+  })
+
+  it('says nothing of the fog when nothing is under it', async () => {
+    const user = userEvent.setup()
+    await renderHeld({ ...SHEET, covered: [] })
+
+    await user.type(screen.getByRole('searchbox'), 'zzz')
+
+    expect(screen.getByText('Clear search')).toBeVisible()
+    expect(screen.queryByText(/Their names/u)).not.toBeInTheDocument()
   })
 })
