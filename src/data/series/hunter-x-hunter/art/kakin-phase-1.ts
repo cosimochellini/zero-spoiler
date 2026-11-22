@@ -6,7 +6,7 @@ import {
 } from '~/data/art/stroke'
 import { circle, ellipse, SEA, shadow, star } from '~/lib/svg/primitives'
 
-import { BESIDE_THE_BEAST } from './kakin-phase-2'
+import { BESIDE_THE_BEAST, TURNED_BODY, TURNED_COLLAR } from './kakin-phase-2'
 
 /** The second of a pair: the first, mirrored about x 80. */
 const MIRRORED = 'matrix(-1 0 0 1 160 0)'
@@ -509,49 +509,61 @@ export const KAKIN_PHASE_ONE_DRAWINGS = {
     shadow(80, 180, 46),
   ],
 
-  // Seiko's short fair hair curling sideways, from behind, over the collar
-  // of her light long-sleeved dress, the curls in tint.
+  // Seiko's short fair hair curling sideways, from behind and a little to
+  // her left so the near curl turns toward the viewer, the curls in tint,
+  // over the shoulders of her light long-sleeved dress: the Sixth Queen as
+  // she first appears, chapter 372.
   'seiko-hui-guo-rou': [
-    { d: 'M56 98 C52 66 62 48 80 48 C98 48 108 66 104 98' },
+    { d: 'M48 98 C42 64 58 44 80 44 C102 44 114 64 110 100' },
     {
-      d: 'M56 98 C46 98 40 90 44 84 C48 80 54 84 52 90 M104 98 C114 98 120 90 116 84 C112 80 106 84 108 90',
+      d: 'M48 98 C36 100 30 90 36 82 C42 76 50 82 46 90 M110 100 C118 100 122 94 118 90 C115 87 111 90 113 94',
       role: 'accent',
     },
-    { d: 'M64 58 C62 72 64 86 62 98 M96 58 C98 72 96 86 98 98', role: 'soft' },
-    { d: 'M68 98 V116 M92 98 V116' },
-    { d: 'M24 176 C28 138 48 124 68 116 M136 176 C132 138 112 124 92 116' },
-    { d: 'M68 116 Q80 124 92 116 M68 120 Q80 128 92 120', role: 'soft' },
-    shadow(80, 184, 52),
+    {
+      d: 'M62 56 C58 70 60 84 58 96 M80 46 C78 64 80 82 78 98 M98 58 C100 72 100 86 100 98',
+      role: 'soft',
+    },
+    { d: 'M104 70 l5 -4 M106 84 l5 -4', role: 'ambient' },
+    { d: TURNED_COLLAR, role: 'soft' },
+    ...TURNED_BODY,
   ],
 
-  // Zigg's spiky white hair from behind, sticking out in every direction
-  // like Killua's, in tint, over a high collar: the young Zoldyck of
-  // Netero's expedition, as Ging tells of it in chapter 344.
+  // Zigg's spiky white hair from behind and a little to his left, sticking
+  // out in every direction like Killua's, its outline in tint and the spikes
+  // behind it soft, the nape in its shade: the young Zoldyck of Netero's
+  // expedition, as Ging tells of it in chapter 344.
   'zigg-zoldyck': [
     {
-      d: 'M54 100 L40 92 L50 84 L32 74 L50 70 L38 52 L58 58 L56 36 L70 50 L78 26 L86 48 L100 32 L102 56 L120 46 L112 66 L130 70 L112 82 L122 94 L106 100',
+      d: 'M50 102 L32 96 L46 86 L24 76 L46 68 L32 50 L54 56 L52 32 L68 48 L76 24 L86 46 L100 30 L102 52 L118 44 L112 64 L126 68 L112 80 L120 92 L106 102',
       role: 'accent',
     },
-    { d: 'M62 60 L70 76 M80 52 L82 74 M98 60 L92 78', role: 'soft' },
-    { d: 'M58 100 C60 110 66 116 70 118 M102 100 C100 110 94 116 90 118' },
-    { d: 'M64 114 L62 130 Q80 136 98 130 L96 114', role: 'soft' },
-    { d: 'M26 176 C30 146 44 134 62 130 M134 176 C130 146 116 134 98 130' },
-    { d: 'M118 150 l6 -4 M122 164 l6 -4 M36 150 l-6 -4', role: 'ambient' },
-    shadow(80, 184, 54),
+    {
+      d: 'M54 70 L64 82 M68 56 L74 76 M86 54 L86 76 M102 64 L96 80 M58 88 L68 94',
+      role: 'soft',
+    },
+    {
+      d: 'M60 110 l8 -6 M64 118 l10 -8 M84 116 l10 -8 M92 108 l6 -5',
+      role: 'ambient',
+    },
+    { d: TURNED_COLLAR, role: 'soft' },
+    ...TURNED_BODY,
   ],
 
-  // Curly's glasses from the front, the swirls on their lenses in tint:
-  // the glasses that hide his eyes when he challenges Ging in chapter 346.
+  // Curly's glasses in 3/4, the near lens full and the far one turned away,
+  // the arms running back from the hinges and the swirls on their lenses in
+  // tint: the glasses that hide his eyes when he challenges Ging in chapter
+  // 346.
   'curly': [
-    { d: `${circle(54, 100, 24)} ${circle(106, 100, 24)}` },
+    { d: `${ellipse(58, 110, 26, 24)} ${ellipse(116, 104, 17, 22)}` },
     {
-      d: 'M54 100 m0 -2 a2 2 0 1 1 -2 2 a5 5 0 1 1 6 4 a9 9 0 1 1 -12 -8 a14 14 0 1 1 18 14 M106 100 m0 -2 a2 2 0 1 1 -2 2 a5 5 0 1 1 6 4 a9 9 0 1 1 -12 -8 a14 14 0 1 1 18 14',
+      d: 'M58 110 m0 -2 a2 2 0 1 1 -2 2 a5 5 0 1 1 6 4 a9 9 0 1 1 -12 -8 a14 14 0 1 1 18 14 M116 104 m0 -2 a1.4 2 0 1 1 -1.4 2 a3.5 5 0 1 1 4.2 4 a6.3 9 0 1 1 -8.4 -8 a9.8 14 0 1 1 12.6 14',
       role: 'accent',
     },
-    { d: 'M78 98 Q80 92 82 98' },
-    { d: 'M30 96 L18 90 L22 120 M130 96 L142 90 L138 120' },
-    { d: 'M38 82 Q46 78 54 78 M90 82 Q98 78 106 78', role: 'soft' },
-    shadow(80, 140, 56),
+    { d: ellipse(58, 110, 22, 20), role: 'soft' },
+    { d: 'M84 106 Q91 98 99 102' },
+    { d: 'M32 104 L36 92 L102 62 L108 74 M133 100 L138 92 L152 70 L154 80' },
+    { d: 'M100 116 l8 -6 M104 124 l8 -6', role: 'ambient' },
+    shadow(84, 152, 60),
   ],
 
   // Mark's tuxedo cuff and his wristwatch, the watch face in tint, the

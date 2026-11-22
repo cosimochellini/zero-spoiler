@@ -66,7 +66,10 @@ import {
   kakinPhaseOneRedrawn,
 } from './kakin-phase-1'
 import { KAKIN_PHASE_TWO_DRAWINGS, kakinPhaseTwoRedrawn } from './kakin-phase-2'
-import { KAKIN_PHASE_THREE_DRAWINGS } from './kakin-phase-3'
+import {
+  KAKIN_PHASE_THREE_DRAWINGS,
+  kakinPhaseThreeRedrawn,
+} from './kakin-phase-3'
 import { KAKIN_PHASE_4_DRAWINGS, kakinPhaseFourRedrawn } from './kakin-phase-4'
 import { KAKIN_PHASE_5_DRAWINGS, kakinPhaseFiveRedrawn } from './kakin-phase-5'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
@@ -1675,6 +1678,7 @@ export const REDRAWINGS: Redrawings = {
   ...kakinPhaseOneRedrawn,
   ...kakinPhaseOneBeasts,
   ...kakinPhaseTwoRedrawn,
+  ...kakinPhaseThreeRedrawn,
   ...kakinReturningRedrawn,
   ...kakinPhaseFourRedrawn,
   ...kakinPhaseFiveRedrawn,
