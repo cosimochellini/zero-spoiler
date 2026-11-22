@@ -50,6 +50,8 @@ export const hunterXHunterEn = {
   'abilities.foggedTitleOne': '1 under fog',
   'abilities.foggedHint':
     'Their names and Nen types are hidden, so search does not find them. Move your bookmark forward to see them.',
+  'abilities.foggedHintUnset':
+    'Their names and Nen types are hidden, so search does not find them. Set your bookmark to see them.',
   'abilities.allOpen': 'No ability is under fog.',
   'abilities.moreUsers': 'and {count} more characters who use it',
   'abilities.moreUsersOne': 'and 1 more character who uses it',

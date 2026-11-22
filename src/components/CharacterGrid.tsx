@@ -40,6 +40,7 @@ const ANNOUNCE_DELAY_MS = 250
 const CHARACTER_FOG: FogTitles = {
   allOpen: 'characters.allOpen',
   hint: 'characters.foggedHint',
+  hintUnset: 'characters.foggedHintUnset',
   many: 'characters.foggedTitle',
   one: 'characters.foggedTitleOne',
 }

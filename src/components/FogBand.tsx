@@ -1,7 +1,10 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ReactElement, ReactNode } from 'react'
 
+import { EpisodeMark } from '~/components/EpisodeMark'
+import { fogHint, fogTitle } from '~/components/fogWords'
 import type { SeriesSlug, Translate, TranslationKey } from '~/i18n/types'
+import { useBookmark } from '~/lib/progress/BookmarkContext'
 import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 
 /**
@@ -12,6 +15,10 @@ import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
  * shows nothing. What it calls itself is three different sentences and not one
  * with a count wedged into it, because none, one and many read differently in
  * both languages the site publishes in.
+ *
+ * Its hint tells the reader how to see what it covers. A reader with no
+ * bookmark has none to move forward, so they are told to set one and handed
+ * the control that does it (#1376).
  */
 
 /**
@@ -21,6 +28,8 @@ import { color, font, leading, rule, space, text } from '~/styles/tokens.stylex'
 export interface FogTitles<S extends SeriesSlug = never> {
   allOpen: TranslationKey<S>
   hint: TranslationKey<S>
+  /** The hint for a reader with no bookmark: there is none to move. */
+  hintUnset: TranslationKey<S>
   many: TranslationKey<S>
   one: TranslationKey<S>
 }
@@ -49,6 +58,8 @@ export function FogBand<S extends SeriesSlug = never>({
   t,
   words,
 }: FogBandProps<S>): ReactElement {
+  const { bookmark } = useBookmark()
+
   return (
     <section
       aria-labelledby={headingId}
@@ -58,32 +69,21 @@ export function FogBand<S extends SeriesSlug = never>({
         id={headingId}
         {...stylex.props(styles.fogTitle)}
       >
-        {title(t, count, words)}
+        {fogTitle(t, count, words)}
       </Heading>
       {count === 0 ? null : (
         <>
-          <p {...stylex.props(styles.fogHint)}>{t(words.hint)}</p>
+          <p {...stylex.props(styles.fogHint)}>{fogHint(t, words, bookmark)}</p>
+          {bookmark === null ?
+            <div {...stylex.props(styles.fogSet)}>
+              <EpisodeMark placement="fold" />
+            </div>
+          : null}
           {children}
         </>
       )}
     </section>
   )
-}
-
-/** None, one and many are three sentences rather than one with a hole in it. */
-function title<S extends SeriesSlug>(
-  t: Translate<S>,
-  count: number,
-  words: FogTitles<S>,
-): string {
-  if (count === 0) {
-    return t(words.allOpen)
-  }
-  if (count === 1) {
-    return t(words.one)
-  }
-
-  return t(words.many, { count })
 }
 
 const styles = stylex.create({
@@ -112,4 +112,6 @@ const styles = stylex.create({
     marginBlockStart: `calc(-1 * ${space.xs})`,
     maxWidth: '58ch',
   },
+  // A row, so the chip keeps its own width in the band's one-column grid.
+  fogSet: { display: 'flex' },
 })

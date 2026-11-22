@@ -16,6 +16,7 @@ import type {
 const LATER_FOG: FogTitles<'one-piece'> = {
   allOpen: 'fruits.laterAllOpen',
   hint: 'fruits.foggedHint',
+  hintUnset: 'fruits.foggedHintUnset',
   many: 'fruits.later',
   one: 'fruits.laterOne',
 }
@@ -24,6 +25,7 @@ const LATER_FOG: FogTitles<'one-piece'> = {
 const COVERED_FOG: FogTitles<'one-piece'> = {
   allOpen: 'fruits.noneFogged',
   hint: 'fruits.foggedHint',
+  hintUnset: 'fruits.foggedHintUnset',
   many: 'fruits.foggedTitle',
   one: 'fruits.foggedTitleOne',
 }

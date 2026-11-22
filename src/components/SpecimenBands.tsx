@@ -34,6 +34,7 @@ function countOf(t: Translate<'one-piece'>, count: number): string {
 const FRUIT_FOG: FogTitles<'one-piece'> = {
   allOpen: 'fruits.allOpen',
   hint: 'fruits.foggedHint',
+  hintUnset: 'fruits.foggedHintUnset',
   many: 'fruits.foggedTitle',
   one: 'fruits.foggedTitleOne',
 }

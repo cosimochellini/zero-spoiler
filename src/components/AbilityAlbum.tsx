@@ -28,6 +28,7 @@ const SERIES = 'hunter-x-hunter'
 const ABILITY_FOG: FogTitles<typeof SERIES> = {
   allOpen: 'abilities.allOpen',
   hint: 'abilities.foggedHint',
+  hintUnset: 'abilities.foggedHintUnset',
   many: 'abilities.foggedTitle',
   one: 'abilities.foggedTitleOne',
 }
