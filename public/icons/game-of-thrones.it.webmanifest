@@ -1,0 +1,29 @@
+{
+  "id": "/game-of-thrones/",
+  "name": "Il Trono di Spade · Zero Spoiler",
+  "short_name": "Trono di Spade",
+  "lang": "it",
+  "start_url": "/game-of-thrones/it",
+  "scope": "/game-of-thrones/",
+  "display": "standalone",
+  "background_color": "#261515",
+  "theme_color": "#261515",
+  "icons": [
+    {
+      "src": "/icons/game-of-thrones-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/game-of-thrones-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/game-of-thrones-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
