@@ -6,7 +6,13 @@ import {
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
-import { FROM_BEHIND, PINION_HAND, SKULL } from './kakin-phase-2'
+import {
+  FROM_BEHIND,
+  PINION_HAND,
+  SKULL,
+  TURNED_BODY,
+  TURNED_COLLAR,
+} from './kakin-phase-2'
 import { TOP } from './kakin-phase-4'
 
 /** A manga-only stage of a phase 5 record, told in Kakin's chapters. */
@@ -93,16 +99,22 @@ export const KAKIN_PHASE_5_DRAWINGS = {
     shadow(80, 184, 54),
   ],
 
-  // Hashito's voluminous fair hair from behind, neatly combed, its outline
-  // in tint, over his black suit: a guard Zhang Lei lends to Room 1014,
-  // chapter 402.
+  // Hashito's voluminous fair hair from behind and a little to his left,
+  // neatly combed back, its outline in tint, the side turning away hatched,
+  // over the collar of his black suit: a guard Zhang Lei lends to Room
+  // 1014, chapter 366 (named in 402).
   'hashito': [
-    { d: 'M52 104 C44 70 56 44 80 44 C104 44 116 70 108 104', role: 'accent' },
     {
-      d: 'M64 50 C58 68 58 88 60 102 M74 46 C70 66 70 88 72 104 M86 46 C90 66 90 88 88 104 M96 50 C102 68 102 88 100 102',
+      d: 'M48 100 C34 66 50 32 80 30 C110 30 124 58 112 102 M48 100 Q80 112 112 102',
+      role: 'accent',
+    },
+    {
+      d: 'M54 50 C50 66 52 84 58 102 M66 38 C60 58 62 82 70 106 M82 32 C78 56 80 82 86 108 M98 36 C100 58 100 82 100 106',
       role: 'soft',
     },
-    ...FROM_BEHIND,
+    { d: 'M106 56 l6 -4 M110 72 l6 -4 M110 88 l5 -4', role: 'ambient' },
+    { d: TURNED_COLLAR, role: 'soft' },
+    ...TURNED_BODY,
   ],
 
   // Sakata's 9mm pistol in 3/4 in his hand, the slide in tint, out of the

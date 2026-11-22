@@ -56,6 +56,7 @@ const STAGES = [
   { id: 'sale-sale-hui-guo-rou', chapter: 382, change: 'death' },
   { id: 'halkenburg-hui-guo-rou', chapter: 382, change: 'bow' },
   { id: 'kacho-hui-guo-rou', chapter: 383, change: 'death and beast' },
+  { id: 'keeney', chapter: 383, change: 'death' },
   { id: 'tserriednich-hui-guo-rou', chapter: 385, change: 'Laplace Devil' },
   { id: 'sarasa', chapter: 397, change: 'death' },
   { id: 'terebellum', chapter: 399, change: 'Sweet Home' },
