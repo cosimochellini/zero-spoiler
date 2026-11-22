@@ -1,14 +1,27 @@
 import { describe, expect, it } from 'vitest'
 
 import type { Bookmark } from '~/lib/progress/episode'
+import { powerPage } from '~/server/archive/power.server'
+import { readerFor } from '~/server/archive/reader.server'
 import { seatsOf, U, V } from '~/test/power'
 import { loadedSeries } from '~/test/series'
+
+import { PHANTOM_TROUPE } from './phantom-troupe'
 
 const HUNTER_X_HUNTER = loadedSeries('hunter-x-hunter')
 
 /** The Troupe's seats at a bookmark: holder ids, `vacant` or `unknown`. */
 const troupeAt = (bookmark: Bookmark): string[] | undefined =>
   seatsOf(HUNTER_X_HUNTER, 'phantom-troupe', bookmark)
+
+/** Which description version (its index) the page sends at a bookmark. */
+function versionAt(bookmark: Bookmark): number {
+  const sent = powerPage(
+    readerFor(HUNTER_X_HUNTER.archive, bookmark, 'en'),
+  ).bodies.find(({ id }) => id === 'phantom-troupe')?.description
+
+  return PHANTOM_TROUPE.description.findIndex(({ value }) => value.en === sent)
+}
 
 /** The leader and no. 4, told before the count: the leader not yet met. */
 const CALLED = [U, 'hisoka']
@@ -56,10 +69,14 @@ describe('the Phantom Troupe', () => {
     [71, MET],
     [75, MET],
     [76, UVOGIN],
+    [83, UVOGIN],
     [84, NO_UVOGIN],
+    [118, NO_UVOGIN],
     // The manga never says Pakunoda's number, so her death empties nothing.
     [119, NO_HISOKA],
+    [169, NO_HISOKA],
     [170, KALLUTO],
+    [226, KALLUTO],
     [227, SHIZUKU],
     // Shalnark's and Kortopi's deaths empty no seat the manga gave them.
     [357, SHIZUKU],
@@ -77,9 +94,11 @@ describe('the Phantom Troupe', () => {
     [41, CALLED],
     [43, CALLED],
     [44, UVOGIN_EP],
+    [46, UVOGIN_EP],
     [47, UVOGIN_EP.with(2, V)],
     [53, UVOGIN_EP.with(2, V)],
     [54, FORTUNES],
+    [57, FORTUNES],
     // Hisoka keeps no. 4 in the anime until Kalluto takes it.
     [58, NO_PAKUNODA],
     [71, NO_PAKUNODA],
@@ -91,4 +110,22 @@ describe('the Phantom Troupe', () => {
   ])('seat at episode %i what the anime has told', (episode, seats) => {
     expect(troupeAt({ mode: 'episode', episode })).toStrictEqual(seats)
   })
+
+  it.each([
+    [70, 0],
+    [71, 1],
+    [376, 1],
+    [377, 2],
+    [430, 2],
+  ])('describe the body at chapter %i with version %i', (chapter, version) => {
+    expect(versionAt({ mode: 'chapter', chapter })).toBe(version)
+  })
+
+  // The count's version and the roster's are the manga's alone.
+  it.each([32, 41, 148])(
+    'describe the body at episode %i with version 0',
+    (episode) => {
+      expect(versionAt({ mode: 'episode', episode })).toBe(0)
+    },
+  )
 })

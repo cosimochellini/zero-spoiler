@@ -110,6 +110,8 @@ export const PHANTOM_TROUPE: PowerBody<HunterVocabulary> = {
     member(3, [{ ...ROSTER, value: 'machi' }]),
     {
       told: CALLED,
+      // This literal is the module's archive-gate canary (twelve characters,
+      // no hyphenated holder id): keep it, or give the gate another one.
       title: { en: 'Member no. 4', it: 'Membro n. 4' },
       holders: [
         // His tattoo shows a 4 as he showers, chapter 55, episode 32.
