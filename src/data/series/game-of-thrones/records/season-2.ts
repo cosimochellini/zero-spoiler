@@ -685,6 +685,13 @@ export const season2: ThronesSaga = {
             en: 'Queen, wife of King Renly',
           },
         },
+        // Widowed when Renly is killed: "The Ghost of Harrenhal" (episode
+        // 15) and Catelyn IV (chapter 107).
+        {
+          episode: 15,
+          chapter: 107,
+          value: { it: 'Vedova di re Renly', en: 'Widow of King Renly' },
+        },
         // Joffrey agrees to marry her at his court after the battle:
         // "Valar Morghulis" (episode 20), and Sansa VIII (chapter 139),
         // where Garlan asks it of the king.
@@ -731,8 +738,8 @@ export const season2: ThronesSaga = {
         en: 'Castellan of Storm’s End',
       },
       log: {
-        it: 'Tiene Capo Tempesta per Renly Baratheon. Si rifiuta di consegnare il castello a Stannis e lo sfida a duello.',
-        en: 'He holds Storm’s End for Renly Baratheon. He refuses to yield the castle to Stannis and challenges him to single combat.',
+        it: 'Tiene Capo Tempesta dopo la morte di Renly Baratheon. Si rifiuta di consegnare il castello a Stannis e lo sfida a duello.',
+        en: 'He holds Storm’s End after Renly Baratheon’s death. He refuses to yield the castle to Stannis and challenges him to single combat.',
       },
       status: [
         { episode: 14, chapter: 116, source: 'chapter', value: 'alive' },

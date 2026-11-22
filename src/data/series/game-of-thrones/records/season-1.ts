@@ -4647,6 +4647,16 @@ export const season1: ThronesSaga = {
           chapter: 96,
           value: { it: 'Guardia di re Renly', en: 'Guard of King Renly' },
         },
+        // Renly is killed: "The Ghost of Harrenhal" (episode 15) and
+        // Catelyn IV (chapter 107).
+        {
+          episode: 15,
+          chapter: 107,
+          value: {
+            it: 'Ex guardia di re Renly',
+            en: 'Former guard of King Renly',
+          },
+        },
         // Books only: named to Joffrey's Kingsguard at the court after the
         // battle, Sansa VIII (chapter 139). The show's "Valar Morghulis"
         // (episode 20) has him at that court but names him to no guard.

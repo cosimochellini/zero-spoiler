@@ -90,11 +90,23 @@ const STEPS: {
   },
   {
     id: 'margaery-tyrell',
+    en: 'Widow of King Renly',
+    episode: 15,
+    chapter: 107,
+  },
+  {
+    id: 'margaery-tyrell',
     en: 'Betrothed to King Joffrey',
     episode: 20,
     chapter: 139,
   },
   { id: 'loras-tyrell', en: 'Guard of King Renly', episode: 13, chapter: 96 },
+  {
+    id: 'loras-tyrell',
+    en: 'Former guard of King Renly',
+    episode: 15,
+    chapter: 107,
+  },
   {
     id: 'loras-tyrell',
     en: 'Knight of the Kingsguard',
