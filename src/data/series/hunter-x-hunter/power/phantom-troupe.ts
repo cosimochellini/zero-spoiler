@@ -59,9 +59,8 @@ function member(number: number, holders: Holding[], aired?: number): Seat {
  * Uvogin to no. 11 and Shizuku to no. 8; the anime adds Shalnark's no. 6
  * and Pakunoda's no. 9 in episode 54. In the manga the rest stay seats with
  * no one named; in the anime they never open (owner, #1445). Shalnark's and
- * Kortopi's deaths at
- * chapter 357 empty no seat the manga had tied to them; the roster of
- * chapter 377 shows nos. 6, 9 and 12 empty.
+ * Kortopi's deaths at chapter 357 empty no seat the manga had tied to them;
+ * the roster of chapter 377 shows nos. 6, 9 and 12 empty.
  */
 export const PHANTOM_TROUPE: PowerBody<HunterVocabulary> = {
   ...NAMED,
