@@ -459,8 +459,8 @@ export const season2: ThronesSaga = {
             en: 'Merchant prince of the Thirteen',
           },
         },
-        // "A Man Without Honor" (episode 17): Pyat Pree proclaims him King
-        // of Qarth and kills the rest of the Thirteen. The show's alone;
+        // "A Man Without Honor" (episode 17): he declares himself King of
+        // Qarth after Pyat Pree kills the rest of the Thirteen. The show's alone;
         // Daenerys III (chapter 114), the chapter the episode adapts, orders
         // it.
         {
@@ -546,8 +546,8 @@ export const season2: ThronesSaga = {
     'drogon': {
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
-        it: 'È uno dei tre draghi nati nella pira funeraria di Drogo, e resta vicino a Daenerys.',
-        en: 'He is one of the three dragons born in Drogo’s funeral pyre, and he stays close to Daenerys.',
+        it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
+        en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
       status: [{ episode: 40, chapter: 86, value: 'alive' }],
       affiliation: [
@@ -561,8 +561,8 @@ export const season2: ThronesSaga = {
     'rhaegal': {
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
-        it: 'È uno dei tre draghi nati nella pira funeraria di Drogo, e resta vicino a Daenerys.',
-        en: 'He is one of the three dragons born in Drogo’s funeral pyre, and he stays close to Daenerys.',
+        it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
+        en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
       status: [{ episode: 41, chapter: 86, value: 'alive' }],
       affiliation: [
@@ -576,8 +576,8 @@ export const season2: ThronesSaga = {
     'viserion': {
       role: { it: 'Drago di Daenerys', en: 'Daenerys’s dragon' },
       log: {
-        it: 'È uno dei tre draghi nati nella pira funeraria di Drogo, e resta vicino a Daenerys.',
-        en: 'He is one of the three dragons born in Drogo’s funeral pyre, and he stays close to Daenerys.',
+        it: 'È uno dei tre draghi nati dalle uova di Daenerys nella pira funeraria di Drogo.',
+        en: 'He is one of the three dragons hatched from Daenerys’s eggs in Drogo’s funeral pyre.',
       },
       status: [{ episode: 41, chapter: 86, value: 'alive' }],
       affiliation: [

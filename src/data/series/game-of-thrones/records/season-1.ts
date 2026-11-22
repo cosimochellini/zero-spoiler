@@ -2109,7 +2109,7 @@ export const season1: ThronesSaga = {
       },
       visual: { art: 'aggo', tint: 'acid' },
     },
-    // Books only: Daenerys III (site chapter 24), his whip brings Viserys down. The show gives that scene to Rakharo and has no Jhogo; its Kovarro, who opens at episode 11, is not filed yet. Episode 3 orders him.
+    // Books only: Daenerys III (site chapter 24), his whip brings Viserys down. The show gives that scene to Rakharo and has no Jhogo; its Kovarro opens at episode 11 in `season-2.ts` (#1468). Episode 3 orders him.
     {
       id: 'jhogo',
       kind: 'character',

@@ -191,10 +191,9 @@ order them.
   Daenerys Targaryen page.
 - Strong Belwas: role former pit fighter, in Illyrio's service, alive. Italian
   "Belwas il Forte" (Italian Wikipedia, Barristan Selmy's section).
-- The book gates of Xaro, Pyat Pree and Quaithe read the synopsis's "Jhogo ...
-  bringing three queerly garbed strangers ...: the great warlock Pyat Pree, the
-  merchant prince Xaro Xhoan Daxos of the Thirteen, and Quaithe of the Shadow"
-  as their introduction. Chapter 27 (101) is where each speaks in Qarth.
+- The book gates of Xaro, Pyat Pree and Quaithe read the synopsis's line where
+  Jhogo brings the three strangers from Qarth, each given name and title, as
+  their introduction. Chapter 27 (101) is where each speaks in Qarth.
 
 ### Stage-1 records stepped
 
