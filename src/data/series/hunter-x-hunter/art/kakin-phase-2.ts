@@ -12,7 +12,7 @@ import { circle, ellipse, SEA, shadow } from '~/lib/svg/primitives'
  * drawn by: the neck, the shoulders of the black suit or the robe, its
  * collar, and the shade across the back hatched.
  */
-export const FROM_BEHIND_BODY: Stroke[] = [
+const FROM_BEHIND_BODY: Stroke[] = [
   { d: 'M66 106 V122 M94 106 V122' },
   { d: 'M24 176 C28 140 46 126 66 122 M136 176 C132 140 114 126 94 122' },
   { d: 'M66 122 Q80 130 94 122', role: 'soft' },
