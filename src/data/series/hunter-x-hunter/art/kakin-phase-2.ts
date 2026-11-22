@@ -43,22 +43,27 @@ export const BESIDE_THE_BEAST =
 export const SKULL = 'M58 106 C54 74 64 56 80 56 C96 56 106 74 102 106'
 
 /**
- * A left hand from the back, fingers together, the pinion marked on it in
- * tint: the mark Halkenburg's guards find on the back of their left hands.
+ * The back of a left hand held up in 3/4, fingers together, the thumb's
+ * side of the hand turning away and hatched, and the pinion marked on it in
+ * tint: the mark Halkenburg's guards find on the backs of their hands.
  */
 export const PINION_HAND: Stroke[] = [
   {
-    d: 'M56 168 L58 112 C58 104 62 100 66 100 V60 Q66 54 71 54 Q76 54 76 60 V96 M76 92 V50 Q76 44 81 44 Q86 44 86 50 V94 M86 94 V54 Q86 48 91 48 Q96 48 96 54 V98 M96 100 V66 Q96 60 101 60 Q106 60 106 66 V116 C106 132 100 144 98 168',
+    d: 'M62 172 C58 152 56 132 56 112 V74 Q56 68 61.5 68 Q67 68 67 74 M67 74 V56 Q67 50 73 50 Q79 50 79 56 M79 56 V48 Q79 42 85 42 Q91 42 91 48 V56 Q91 50 97 50 Q103 50 103 56 V104',
   },
   {
-    d: 'M58 124 C48 118 40 108 36 98 Q34 92 40 92 Q44 92 46 98 C50 106 54 110 58 112',
+    d: 'M103 56 Q108 56 108 62 V108 C116 108 124 102 128 96 Q132 90 136 94 Q139 98 134 106 C126 122 114 140 104 152 L100 172',
   },
   {
-    d: 'M70 140 C74 128 84 118 96 112 M76 128 l-4 -6 M82 122 l-3 -7 M88 117 l-2 -7 M80 128 l6 2 M86 122 l6 1',
+    d: 'M68 148 C72 136 82 124 94 116 M74 136 l-5 -5 M79 130 l-4 -6 M85 124 l-2 -6 M77 136 l6 2 M83 129 l6 1 M89 123 l5 0',
     role: 'accent',
   },
-  { d: 'M66 64 h10 M76 54 h10 M86 58 h10 M96 70 h10', role: 'soft' },
-  { d: 'M100 120 l5 -4 M100 134 l5 -4 M98 148 l5 -4', role: 'ambient' },
+  { d: 'M67 74 V100 M79 56 V98 M91 56 V98', role: 'soft' },
+  {
+    d: 'M58 106 q4 -3 9 0 M68 104 q5 -3 10 0 M80 102 q5 -3 10 0 M92 104 q5 -3 10 0',
+    role: 'soft',
+  },
+  { d: 'M103 70 l5 -4 M103 84 l5 -4 M103 98 l5 -4', role: 'ambient' },
 ]
 
 /**
@@ -113,29 +118,41 @@ const VINCENT_VIAL: Stroke[] = [
   { d: 'M121 78 l3 -2 M121 86 l3 -2', role: 'ambient' },
 ]
 
-/** Kurapika's tape line across the floor of the Nen class. */
+/**
+ * Kurapika's white tape line across the floor of the Nen class, its two
+ * edges, broken where Myuhan's shoe stands on it.
+ */
 const MYUHAN_TAPE: Stroke = {
-  d: 'M4 140 L156 128 M4 148 L156 136',
+  d: 'M4 150 L44 147 M140 140 L156 139 M4 160 L40 157 M144 149 L156 148',
   role: 'soft',
 }
 
-/** Myuhan's black shoe side on, its toe in tint and its side hatched. */
+/**
+ * Myuhan's shoe in 3/4, toe to the right: the opening, the laces, the sole
+ * and heel under it, the side turning away hatched, and the seam of the toe
+ * in tint.
+ */
 const MYUHAN_SHOE: Stroke[] = [
   {
-    d: 'M54 150 C52 132 60 122 76 120 L104 118 C122 118 134 126 134 140 H58 Z',
+    d: 'M46 140 V124 C46 116 50 110 58 110 L84 114 C100 118 122 124 134 130 C144 135 146 146 136 148 L60 146 C52 146 46 144 46 140 Z',
   },
-  { d: 'M100 118 C110 118 124 124 128 132', role: 'accent' },
-  { d: 'M54 150 H136 V144', role: 'soft' },
   {
-    d: 'M62 132 l10 -8 M66 140 l14 -12 M78 140 l14 -12 M90 140 l12 -10',
+    d: 'M44 140 C44 150 50 154 58 154 L136 156 C146 156 150 150 146 144 M46 148 V158 H62 V154',
+    role: 'soft',
+  },
+  { d: 'M50 116 C56 108 78 110 86 118 C76 122 58 122 50 116 Z', role: 'soft' },
+  { d: 'M116 124 C112 132 114 142 120 147', role: 'accent' },
+  { d: 'M90 118 l3 6 M96 120 l3 6 M102 122 l3 6', role: 'soft' },
+  {
+    d: 'M54 140 l10 -8 M66 144 l14 -12 M80 146 l14 -12 M94 146 l12 -10',
     role: 'ambient',
   },
 ]
 
-/** The roll of tape, lying on the floor. */
+/** The roll of tape Kurapika drops, lying on the floor. */
 const MYUHAN_ROLL: Stroke[] = [
-  { d: `${ellipse(30, 164, 14, 6)} ${ellipse(30, 164, 6, 3)}` },
-  { d: 'M16 164 V170 C16 176 44 176 44 170 V164', role: 'soft' },
+  { d: `${ellipse(28, 176, 14, 6)} ${ellipse(28, 176, 6, 3)}` },
+  { d: 'M14 176 V182 C14 188 42 188 42 182 V176', role: 'soft' },
 ]
 
 export const KAKIN_PHASE_TWO_DRAWINGS = {
@@ -288,17 +305,18 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
   // that holds it in tint: Tubeppa's guard at the class, chapter 370.
   'longhi': LONGHI,
 
-  // A sealed letter in 3/4, its flap and seal, the seal in tint: Maor
-  // agrees with Longhi that a letter is the way to deal with the teacher in
-  // secret, chapter 369.
+  // A letter folded in three, lying in 3/4 with its top fold lifted, that
+  // fold in tint: Maor and Longhi agree that a letter is the way to deal
+  // with the teacher in secret, chapter 369. The wiki shows no letter, so
+  // it is drawn plain, with no seal and nothing written on it.
   'maor': [
-    { d: 'M24 84 L120 70 L136 132 L40 146 Z' },
-    { d: 'M24 84 L82 112 L120 70', role: 'soft' },
-    { d: 'M40 146 L72 110 M136 132 L92 106', role: 'soft' },
-    { d: circle(82, 112, 8), role: 'accent' },
-    { d: 'M136 132 V140 L40 154 V146', role: 'soft' },
-    { d: 'M100 136 l6 -4 M114 134 l6 -4 M84 140 l6 -4', role: 'ambient' },
-    shadow(82, 168, 54),
+    {
+      d: 'M35 124 L46 136 L126 116 L115 104 M46 136 L56 148 L136 128 L126 116',
+    },
+    { d: 'M35 124 L115 104', role: 'accent' },
+    { d: 'M35 124 L28 98 L108 78 L115 104' },
+    { d: 'M46 136 L126 116', role: 'soft' },
+    shadow(84, 162, 56),
   ],
 
   // Mushaho's head from behind: short fair hair over a broad, high crown,
@@ -317,16 +335,10 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
     ...FROM_BEHIND,
   ],
 
-  // Kurapika's white tape line across the floor and Myuhan's black shoe
-  // stepping over it, the shoe's toe in tint, the roll of tape beside it:
-  // he crosses it on purpose to provoke the teacher, chapter 370.
-  'myuhan': [
-    MYUHAN_TAPE,
-    ...MYUHAN_SHOE,
-    { d: 'M60 120 V96 H80 V118', role: 'soft' },
-    ...MYUHAN_ROLL,
-    shadow(96, 160, 48),
-  ],
+  // Myuhan's shoe planted across Kurapika's white tape line, the seam of
+  // its toe in tint, and the roll of tape Kurapika drops beside it: he steps
+  // over the line on purpose to provoke the teacher, chapter 370.
+  'myuhan': [MYUHAN_TAPE, ...MYUHAN_SHOE, ...MYUHAN_ROLL, shadow(96, 168, 48)],
 
   // Satobi's short fair hair from behind, styled into a point at either
   // side, the points in tint: Luzurus's guard at the class, chapter 370.
@@ -341,13 +353,18 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
     ...FROM_BEHIND,
   ],
 
-  // The back of Shedule's left hand and the pinion marked on it, his
-  // glasses folded beside it: he looks at the mark in chapter 369.
+  // Shedule's left hand held up, the pinion on its back in tint, and his
+  // glasses folded on the table beside it, the far lens hatched: he looks at
+  // the mark in chapter 369.
   'shedule': [
-    ...moved(PINION_HAND, 'translate(-14 0)'),
-    { d: `${ellipse(124, 150, 12, 9)} ${ellipse(146, 148, 10, 8)}` },
-    { d: 'M136 150 Q137 146 138 148 M112 148 L108 140 L132 136', role: 'soft' },
-    shadow(80, 178, 56),
+    ...moved(PINION_HAND, 'translate(-20 14) scale(0.86)'),
+    { d: `${ellipse(118, 166, 12, 7)} ${ellipse(142, 162, 9, 6)}` },
+    {
+      d: 'M130 165 Q131 160 133 162 M106 164 L102 156 L146 150 L152 156',
+      role: 'soft',
+    },
+    { d: 'M136 164 l4 -3', role: 'ambient' },
+    shadow(96, 182, 60),
   ],
 
   // Tenftory's head from behind: the light Mohawk down the middle in tint,
@@ -367,17 +384,21 @@ export const KAKIN_PHASE_TWO_DRAWINGS = {
     ...FROM_BEHIND,
   ],
 
-  // The back of Yuhirai's left hand laid across the box, the black cuff of
-  // his suit at the wrist and the same pinion on it: he calls it the mark
-  // of the resolve Halkenburg always espoused, chapter 369.
+  // The back of Yuhirai's hand reaching up out of the sleeve of his black
+  // suit, the same pinion on it in tint, the sleeve's opening an ellipse at
+  // the wrist and the sleeve hatched: he calls the mark the resolve
+  // Halkenburg always espoused, chapter 369.
   'yuhirai': [
-    ...moved(PINION_HAND, 'translate(184 26) rotate(90)'),
-    { d: 'M6 80 H34 V132 H6 Z', role: 'soft' },
+    ...moved(
+      PINION_HAND,
+      'translate(-16 -32) rotate(60 80 172) translate(80 172) scale(0.8) translate(-80 -172)',
+    ),
+    { d: ellipse(64, 140, 17, 6), transform: 'rotate(60 64 140)' },
+    { d: 'M72 154 L4 194 M56 126 L0 158' },
     {
-      d: 'M10 88 l8 -6 M10 102 l14 -10 M10 116 l20 -14 M14 128 l18 -13',
+      d: 'M12 176 l-4 -8 M24 168 l-4 -8 M36 162 l-4 -8 M48 154 l-4 -8',
       role: 'ambient',
     },
-    shadow(90, 156, 62),
   ],
 
   // Yuri's dark bob from behind, hatched, over the collar of her servant's
@@ -480,16 +501,16 @@ export const kakinPhaseTwoRedrawn: Redrawings = {
     },
   ],
   myuhan: [
-    // The same shoe knocked over, sole up, at the tape line, the roll of
-    // tape beside it, and no one in it: the Silent Majority user kills him
-    // during the Nen class, chapter 376.
+    // The same shoe tipped over, sole up, beside the tape line and the roll,
+    // and no one in it: Silent Majority kills him in the toilet during the
+    // Nen class, chapter 376.
     {
       episode: 148,
       chapter: 376,
       source: 'chapter',
       value: [
         MYUHAN_TAPE,
-        ...moved(MYUHAN_SHOE, 'translate(6 24) matrix(1 0 0 -1 0 270)'),
+        ...moved(MYUHAN_SHOE, 'translate(10 30) matrix(1 0 0 -1 0 270)'),
         ...MYUHAN_ROLL,
       ],
     },

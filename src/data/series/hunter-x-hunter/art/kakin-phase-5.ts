@@ -33,30 +33,45 @@ const MORENA_CROWN: Stroke[] = [
   shadow(80, 160, 58),
 ]
 
+/**
+ * The shoulder of Musse's Kakin army zipper jacket in 3/4, its stand-up
+ * collar, the zip down the front, the far side hatched.
+ */
+const MUSSE_JACKET: Stroke[] = [
+  { d: 'M6 186 C10 152 32 134 58 128 H96 C120 134 144 152 150 186' },
+  { d: 'M58 128 V112 Q78 104 98 110 V128' },
+  { d: 'M78 106 V186', role: 'soft' },
+  { d: 'M24 168 Q40 160 56 160 M102 160 Q118 160 134 168', role: 'soft' },
+  { d: 'M122 156 l8 -6 M130 170 l8 -6 M136 182 l8 -6', role: 'ambient' },
+]
+
 export const KAKIN_PHASE_5_DRAWINGS = {
-  // Queen Oito's light kimono from the front, the collar crossed and the
-  // obi in tint, holding the swaddled baby she carries everywhere: Room
-  // 1014, chapter 401. No face, and nothing on who the baby is.
+  // Queen Oito's light kimono in 3/4, the collar crossed and the obi wound
+  // round her, and in her arms the baby, a bundle in tint: she holds her from
+  // her first scenes, chapter 350. No face, and nothing on who the baby is;
+  // the wrap is a convention.
   'oito-hui-guo-rou': [
     {
-      d: 'M66 34 L42 44 Q30 50 28 64 L22 128 Q22 134 28 134 H46 L50 176 H110 L114 134 H132 Q138 134 138 128 L132 64 Q130 50 118 44 L94 34',
+      d: 'M66 28 C48 32 34 40 30 54 L24 128 Q24 136 32 136 H46 M94 28 C110 32 122 42 126 56 L130 124 Q130 130 124 130 H114',
     },
-    { d: 'M66 34 Q80 40 94 34 M66 34 L80 72 M94 34 L74 80', role: 'soft' },
+    { d: 'M66 28 Q80 34 94 28 M66 28 L86 72 M94 28 L78 76', role: 'soft' },
     {
-      d: 'M44 100 C44 86 58 80 78 80 H96 C112 78 122 88 120 100 C118 112 106 118 90 118 H70 C54 118 44 112 44 100 Z',
+      d: 'M42 96 C40 82 56 74 78 76 H100 C116 76 126 86 122 100 C118 112 106 116 88 116 H64 C52 116 44 108 42 96 Z',
+      role: 'accent',
     },
     {
-      d: 'M100 82 C112 84 118 94 114 104 C112 110 106 114 98 114 M54 94 Q74 88 94 96 M56 108 Q74 104 92 110',
+      d: 'M102 78 C114 82 118 94 112 106 C108 112 102 114 96 114 M52 90 Q72 84 94 94 M54 106 Q72 100 92 108',
       role: 'soft',
     },
-    { d: 'M34 72 C38 90 42 100 46 104 M126 72 C122 88 118 98 116 104' },
-    { d: 'M48 120 H112 V136 H48 Z', role: 'accent' },
-    { d: 'M48 128 H112', role: 'soft' },
     {
-      d: 'M122 70 l8 -6 M124 90 l8 -6 M126 110 l8 -6 M100 150 l8 -6 M100 164 l8 -6',
+      d: 'M46 116 V124 Q80 130 114 122 V114 M46 124 V138 Q80 144 114 136 V122',
+      role: 'soft',
+    },
+    { d: 'M48 138 L50 198 M112 136 L110 198 M90 141 L86 198' },
+    {
+      d: 'M118 70 l8 -6 M122 90 l6 -5 M124 108 l6 -5 M98 156 l8 -6 M98 172 l8 -6 M98 188 l8 -6',
       role: 'ambient',
     },
-    shadow(80, 186, 50),
   ],
 
   // Makaha as the flashback shows her, a dark silhouette from behind,
@@ -90,73 +105,86 @@ export const KAKIN_PHASE_5_DRAWINGS = {
     ...FROM_BEHIND,
   ],
 
-  // Sakata's fist knocking on the double doors of Room 1014's master
-  // bedroom, his shirt cuff in tint out of the black sleeve: he knocks when
-  // the talk with Longhi runs long, chapter 401 (named in 402).
+  // Sakata's 9mm pistol in 3/4 in his hand, the slide in tint, out of the
+  // sleeve of his black suit, fired down at one of the white snakes, drawn
+  // plain: he shoots the snakes on Barrigen's body at the Nen class,
+  // chapter 370 (named in 402). The body is not drawn.
   'sakata': [
-    { d: 'M18 14 H122 V178 H18 Z' },
+    ...moved(
+      [
+        {
+          d: 'M40 70 H112 V84 H40 Z M40 70 L46 64 H118 L112 70 M118 64 V78 L112 84',
+          role: 'accent',
+        },
+        { d: `${circle(43, 77, 2)} M72 84 C72 98 84 100 90 94`, role: 'soft' },
+        { d: 'M92 84 L86 122 H106 L112 84' },
+        {
+          d: 'M84 90 C76 94 76 100 84 102 C76 106 76 112 84 114 C78 118 80 124 88 124 M104 88 C114 92 118 104 112 120',
+        },
+        { d: 'M112 98 L136 86 M110 120 L138 108' },
+        { d: ellipse(137, 97, 4, 12), role: 'soft' },
+        { d: 'M136 86 L160 74 M138 108 L160 98' },
+        { d: 'M144 92 l6 -7 M148 102 l8 -8', role: 'ambient' },
+        { d: 'M30 78 h-8 M32 86 l-7 4 M32 70 l-7 -4', role: 'ambient' },
+      ],
+      'rotate(-30 80 90) translate(10 -10)',
+    ),
+    { d: 'M8 190 C20 170 34 192 48 176 C58 164 54 152 66 148' },
     {
-      d: 'M70 14 V178 M28 26 H60 V90 H28 Z M80 26 H112 V90 H80 Z M28 102 H60 V166 H28 Z M80 102 H112 V166 H80 Z',
-      role: 'soft',
+      d: 'M8 190 C20 170 34 192 48 176 C58 164 54 152 66 148',
+      transform: 'translate(5 6)',
     },
-    { d: 'M160 90 L132 84 L128 120 L160 128' },
-    { d: 'M132 84 L124 82 L120 118 L128 120 Z', role: 'accent' },
-    {
-      d: 'M124 82 C116 78 104 80 100 86 C96 94 96 106 100 112 C104 118 114 120 120 118',
-    },
-    {
-      d: 'M100 94 Q106 92 112 96 M99 102 Q105 100 112 104 M100 110 Q106 108 112 112',
-      role: 'soft',
-    },
-    { d: 'M92 88 q-6 10 0 22 M84 84 q-8 16 0 30', role: 'ambient' },
-    { d: 'M136 98 l8 2 M136 112 l8 2', role: 'ambient' },
-    shadow(70, 190, 56),
+    { d: `${ellipse(70, 151, 8, 6)} M8 190 L13 196`, role: 'soft' },
   ],
 
-  // An owl-shaped bird of Secret Window perched on the shoulder of a Kakin
-  // army zipper jacket, in tint: Musse uses the owl while eavesdropping in
-  // chapter 366. No eyes, no beak.
+  // An owl-shaped bird of Secret Window perched on the shoulder of Musse's
+  // Kakin army zipper jacket, in tint, its wings folded: Musse uses it to
+  // eavesdrop in chapter 366. No eyes, no beak.
   'musse': [
-    { d: 'M8 186 C12 150 36 132 62 128 H98 C124 132 148 150 152 186' },
-    { d: 'M62 128 V114 Q80 108 98 114 V128' },
-    { d: 'M80 112 V186 M76 122 H84 V130 H76', role: 'soft' },
-    { d: 'M24 168 Q40 160 56 160 M104 160 Q120 160 136 168', role: 'soft' },
+    ...MUSSE_JACKET,
     {
-      d: 'M102 134 C92 118 94 100 104 92 L96 86 L112 88 H128 L144 86 L136 92 C146 100 148 118 138 134 L130 144 H110 Z',
+      d: 'M100 128 C90 114 90 96 96 86 C92 74 102 62 115 62 C128 62 138 74 134 86 C140 96 140 114 130 128 Z',
       role: 'accent',
     },
     {
-      d: 'M104 104 C100 118 104 130 114 140 M136 104 C140 118 136 130 126 140',
+      d: 'M96 92 C90 104 94 120 104 130 M134 92 C140 104 136 120 126 130',
       role: 'soft',
     },
-    { d: 'M114 144 l-2 6 M118 144 v6 M122 144 v6 M126 144 l2 6' },
-    { d: 'M128 160 l8 -6 M132 174 l8 -6 M110 152 l8 -6', role: 'ambient' },
+    {
+      d: 'M108 96 l3 3 l3 -3 M116 96 l3 3 l3 -3 M110 106 l3 3 l3 -3 M118 106 l3 3 l3 -3 M114 116 l3 3 l3 -3',
+      role: 'soft',
+    },
+    { d: 'M108 128 l-2 6 M112 128 v6 M118 128 v6 M122 128 l2 6' },
+    { d: 'M128 70 l4 -3 M132 100 l4 -3 M132 112 l4 -3', role: 'ambient' },
   ],
 
-  // The small box Balsamilco opens with a sequence of buttons, its lid up
-  // with the keypad on it, and the three vials of TSK-17 inside in tint:
-  // he loads one into his shoe to kill Halkenburg, chapter 402 (named in
-  // 403). The box's shape is a frame check.
+  // The small box Balsamilco opens with a sequence of buttons, in 3/4: its
+  // walls with their thickness, the lid up with the keypad on it, and the
+  // three vials of TSK-17 inside in tint, chapter 402 (named in 403). The
+  // box's shape and where its buttons sit are a frame check.
   'balsamilco': [
-    { d: 'M30 112 L96 98 L130 114 L64 130 Z' },
-    { d: 'M30 112 V134 L64 152 V130 M64 152 L130 136 V114' },
+    { d: 'M28 110 L96 96 L132 112 L64 128 Z' },
+    { d: 'M34 110 L96 98.5 L126 112 L64 125', role: 'soft' },
+    { d: 'M28 110 V134 L64 152 V128 M64 152 L132 136 V112' },
     {
       d: 'M49 117.3 L95.2 107.5 A3 3 0 0 0 94 101.7 L47.8 111.5 A3 3 0 0 0 49 117.3 Z M57.5 121.8 L103.7 112 A3 3 0 0 0 102.5 106.2 L56.3 116 A3 3 0 0 0 57.5 121.8 Z M66 126.3 L112.2 116.5 A3 3 0 0 0 111 110.7 L64.8 120.5 A3 3 0 0 0 66 126.3 Z',
       role: 'accent',
     },
-    { d: 'M96 98 L98 52 L132 68 L130 114' },
-    { d: 'M102 62 L128 74 L126 104 L100 92 Z', role: 'soft' },
+    {
+      d: 'M96 96 L98 50 L134 66 L132 112 M98 50 L102 47 L138 63 L134 66 M138 63 L136 108 L132 112',
+    },
+    { d: 'M104 62 L128 73 L126 102 L102 91 Z', role: 'soft' },
     {
       d: dots([
-        [107, 72],
-        [114, 75],
-        [121, 78],
-        [107, 80],
-        [114, 83],
-        [121, 86],
-        [107, 88],
-        [114, 91],
-        [121, 94],
+        [109, 72],
+        [116, 75],
+        [123, 78],
+        [109, 80],
+        [116, 83],
+        [123, 86],
+        [109, 88],
+        [116, 91],
+        [123, 94],
       ]),
       role: 'soft',
     },
@@ -164,35 +192,37 @@ export const KAKIN_PHASE_5_DRAWINGS = {
       d: 'M72 144 l8 -4 M88 140 l8 -4 M104 136 l8 -4 M118 132 l8 -4',
       role: 'ambient',
     },
-    shadow(80, 168, 56),
+    shadow(80, 168, 58),
   ],
 
-  // Worio Bay's left hand held up out of his suit sleeve, the pinion on its
-  // back in tint: he shows Kaiser the mark Halkenburg left on him, chapter
-  // 403.
+  // Worio Bay's left hand held up to Kaiser, back out, the pinion on it in
+  // tint, out of the sleeve of his suit, its opening an ellipse at the
+  // wrist: he shows Kaiser the mark Halkenburg left on him, chapter 403.
   'worio-bay': [
-    ...moved(PINION_HAND, 'translate(0 -14)'),
-    { d: 'M52 154 H104 V166 H52 Z', role: 'soft' },
-    { d: 'M48 166 H108 L112 200 M48 166 L44 200' },
-    { d: 'M96 174 l8 -6 M98 188 l8 -6', role: 'ambient' },
+    ...moved(PINION_HAND, 'translate(0 -10)'),
+    { d: ellipse(80, 164, 24, 7) },
+    { d: 'M56 164 L52 200 M104 164 L108 200' },
+    { d: 'M92 176 l8 -6 M94 190 l8 -6', role: 'ambient' },
   ],
 
-  // Vict's right hand raised out of the quilted sleeve of his puffer jacket,
-  // the cuff in tint: he talks to Balsamilco in military sign language,
+  // Vict's hand raised, palm out, fingers together, out of the quilted
+  // sleeve of his light puffer jacket, the quilting seen round the sleeve
+  // and the cuff in tint: he talks to Balsamilco in military sign language,
   // chapter 403 (named in 404). Which sign he makes is a frame check.
   'vict': [
-    { d: 'M50 200 L54 150 Q80 144 106 150 L110 200' },
-    { d: 'M52 172 Q80 166 108 172 M51 188 Q80 182 109 188', role: 'soft' },
-    { d: 'M54 150 Q80 144 106 150 L104 138 Q80 132 56 138 Z', role: 'accent' },
     {
       d: 'M58 138 L56 92 Q56 86 61 86 Q66 86 66 92 L68 120 M68 120 L68 56 Q68 50 73 50 Q78 50 78 56 V118 M78 118 V48 Q78 42 83 42 Q88 42 88 48 V118 M88 118 L90 54 Q90 48 95 48 Q100 48 100 54 L100 136',
     },
     {
       d: 'M100 112 C110 104 120 96 126 90 Q130 86 134 90 Q137 94 132 100 C124 112 112 126 104 138',
     },
-    { d: 'M60 104 h6 M70 72 h8 M80 66 h8 M91 70 h8', role: 'soft' },
-    { d: 'M90 124 l6 -4 M92 132 l6 -4', role: 'ambient' },
-    { d: 'M40 70 q-6 10 0 20 M146 60 q6 10 0 20', role: 'ambient' },
+    { d: 'M62 112 C70 118 86 118 96 110', role: 'soft' },
+    { d: ellipse(80, 142, 26, 8), role: 'accent' },
+    {
+      d: 'M54 142 C48 150 52 158 50 164 C46 172 50 178 48 184 C46 190 48 196 48 200 M106 142 C112 150 108 158 110 164 C114 172 110 178 112 184 C114 190 112 196 112 200',
+    },
+    { d: 'M51 164 Q80 174 109 164 M48 184 Q80 194 112 184', role: 'soft' },
+    { d: 'M100 150 l6 -4 M102 172 l6 -4 M102 192 l6 -4', role: 'ambient' },
   ],
 
   // Culdcept: Shikaku's two hands framing a rectangle with thumb and index
@@ -434,8 +464,29 @@ export const KAKIN_PHASE_5_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/** The phase 5 records whose drawing changes in chapters 401–420 (#1158). */
+/** The phase 5 records whose drawing changes in Kakin's chapters (#1158). */
 export const kakinPhaseFiveRedrawn: Redrawings = {
+  musse: [
+    // The same jacket crushed flat on the floor, the owl gone, and his
+    // handgun beside it in tint: Camilla's Cat's Name crushes the life out
+    // of him and Benjamin inherits Secret Window, chapter 373. Camilla picks
+    // the gun up after his death.
+    {
+      ...KAKIN,
+      chapter: 373,
+      value: [
+        ...moved(
+          MUSSE_JACKET,
+          'translate(90 186) scale(0.8 0.4) translate(-80 -186)',
+        ),
+        {
+          d: 'M8 176 H54 L56 170 H12 Z M34 176 L30 186 H38 L42 176',
+          role: 'accent',
+        },
+        { d: 'M2 188 H158', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
   morena: [
     // The same crown of thorns, and above it two parallel scars in tint:
     // the mark every Carnival Orphan is given at birth, which she bears on
