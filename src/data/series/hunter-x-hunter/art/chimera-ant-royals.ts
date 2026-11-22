@@ -69,14 +69,57 @@ const PEGGY_COAT: Stroke[] = [
   { d: 'M118 64 l5 -3 M120 80 l5 -3 M122 96 l5 -3', role: 'ambient' },
 ]
 
+/**
+ * The Queen's swollen abdomen in tint, its bands soft and its underside
+ * hatched; her body rising from its front, one antenna and the stump of the
+ * other, the right arm and the stump of the left forearm, and two legs. Her
+ * first drawing and her death share it.
+ */
+const QUEEN_ABDOMEN: Stroke[] = [
+  {
+    d: 'M66 100 C70 72 108 60 134 74 C156 88 158 134 136 150 C114 164 80 160 68 138 C62 126 62 112 66 100 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M84 70 Q72 112 86 156 M106 64 Q94 112 108 159 M128 72 Q118 112 130 154',
+    role: 'soft',
+  },
+  {
+    d: 'M96 156 l6 -6 M108 158 l8 -8 M120 156 l8 -8 M132 150 l8 -8 M143 138 l6 -6',
+    role: 'ambient',
+  },
+]
+const QUEEN_BODY: Stroke[] = [
+  {
+    d: 'M70 94 C64 88 60 76 58 64 C56 52 44 50 42 60 C40 72 48 88 58 100 C62 104 68 100 70 94 Z',
+  },
+  { d: 'M60 58 l5 -3 M62 70 l6 -4 M65 82 l5 -3', role: 'ambient' },
+  { d: 'M44 52 C36 50 30 42 34 35 C38 28 50 30 53 38 C55 45 51 51 44 52 Z' },
+  { d: 'M48 31 Q52 16 66 10 M39 31 l-3 -5', role: 'soft' },
+  { d: 'M58 72 L68 82 M65 85 l6 -5', role: 'soft' },
+]
+const NEST_FLOOR: Stroke = { d: 'M6 158 H156', role: 'ambient' }
+
 /** The King, the Royal Guards and the Squadron Leaders closest to the Queen (#1021). */
 export const CHIMERA_ANT_ROYALS_DRAWINGS = {
+  // The Queen in profile on the floor of her nest, her abdomen swollen with
+  // the King: the giant ant whose leg the surveyors identify, episode 77 /
+  // chapter 187. Her left forearm and an antenna are gone; the abdomen
+  // swells later in the arc.
+  'chimera-ant-queen': [
+    ...QUEEN_ABDOMEN,
+    ...QUEEN_BODY,
+    { d: 'M50 68 L34 92 L28 120 M28 120 l-5 4 M28 120 l1 6' },
+    { d: 'M58 100 L44 126 L50 157 M66 102 L68 130 L62 157' },
+    NEST_FLOOR,
+    shadow(94, 170, 62),
+  ],
   // Cheetu's cut-off shorts in mid-stride, one leg thrown forward and one
   // back, seen a little from above into the waist, the frayed hems in tint
   // and the inside of the waist and the legs hatched: the
   // only thing the cheetah-like Squadron Leader wears, named in episode 79 /
   // chapter 192.
-  cheetu: [
+  'cheetu': [
     { d: 'M48 58 Q80 50 112 58 V70 Q80 62 48 70 Z' },
     { d: 'M48 58 Q80 66 112 58', role: 'soft' },
     {
@@ -101,13 +144,13 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // Peggy's coat over the turtleneck, standing empty: the analyst named in
   // chapter 189 while he examines the dead soldiers. No book, which only
   // the anime is known to give him.
-  peggy: [...PEGGY_COAT, shadow(80, 184, 44)],
+  'peggy': [...PEGGY_COAT, shadow(80, 184, 44)],
   // Shaiapouf's frilly white shirt from the front, the cascade of ruffles
   // down its chest in tint, ruffled cuffs and the black trousers hatched:
   // the Royal Guard who steps out of the shadows beside Neferpitou, episode
   // 86 / chapter 202. No wings, which he first opens in chapter 213, and no
   // violin, first played in chapter 206.
-  shaiapouf: [
+  'shaiapouf': [
     { d: 'M66 28 L64 40 Q80 47 96 40 L94 28 M66 28 Q80 34 94 28' },
     {
       d: 'M64 38 C50 42 40 46 36 52 L22 114 M38 118 L46 80 L48 142 H112 L114 80 L122 118 M138 114 L124 52 C120 46 110 42 96 38',
@@ -142,7 +185,7 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // the nest by its stalk, its silk soft and its far side hatched: Shaiapouf
   // says he will soon awaken, episode 86 / chapter 202. Nothing of him is
   // drawn.
-  menthuthuyoupi: [
+  'menthuthuyoupi': [
     YOUPI_ROCK,
     YOUPI_STALK,
     ...YOUPI_SHELL,
@@ -158,7 +201,7 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // its folds: the flag Colt carries to Morel and Knov to beg them to save
   // the Queen, the scene where Morel asks his name, chapter 214 / episode
   // 91–92. No wings or face of his.
-  colt: [
+  'colt': [
     { d: 'M56 152 L66 24 M61 152 L71 25' },
     { d: 'M66 24 Q68.5 19 71 25', role: 'soft' },
     {
@@ -182,7 +225,7 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // drawn soft, the dark ones hatched on the inner side, and the needle in
   // tint, the weapon he is born with. Named by the dying Queen, episode 92 /
   // chapter 215. No head, no face.
-  meruem: [
+  'meruem': [
     {
       d: 'M-8.7 157 L8.8 157.6 L26 157.5 L42.6 156.6 L58.3 154.5 L72.9 151.2 L86.2 146.2 L97.8 139.3 L107.3 130.1 L114 118.6 L117.4 105.2 L118.2 92.6 L117.6 80.8 L115.7 69.9 L112.4 60 L108 51.2 L102.5 43.7 L96 37.7 L88.6 33.2 L80.6 30.6 L72.1 30',
     },
@@ -207,7 +250,30 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
 
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntRoyalsRedrawn: Redrawings = {
-  menthuthuyoupi: [
+  // The same Queen fallen: her body lies on the floor, her abdomen sags,
+  // torn open at the front where the King came out, and her arm and legs
+  // lie limp. She dies after naming him, episode 92 / chapter 215.
+  'chimera-ant-queen': [
+    {
+      episode: 92,
+      chapter: 215,
+      value: [
+        ...moved(
+          QUEEN_ABDOMEN,
+          'translate(110 158) scale(1 0.74) translate(-110 -158)',
+        ),
+        ...moved(QUEEN_BODY, 'translate(12 50) rotate(-62 70 94)'),
+        {
+          d: 'M64 140 l6 -12 l4 10 l6 -14 l5 13 l6 -11 l4 10 l5 -8',
+          role: 'soft',
+        },
+        { d: 'M44 153 L30 157 L16 152 M58 151 L68 157' },
+        NEST_FLOOR,
+        shadow(88, 170, 70),
+      ],
+    },
+  ],
+  'menthuthuyoupi': [
     // The same cocoon split open down its front, empty, with bits of shell
     // on the floor: he hatches, episode 88 / chapter 206.
     {
@@ -227,7 +293,7 @@ export const chimeraAntRoyalsRedrawn: Redrawings = {
       ],
     },
   ],
-  peggy: [
+  'peggy': [
     // The same coat laid on the floor of the nest, empty: the newborn King
     // kills him with his tail, chapter 213. The manga's alone, as Peggy is.
     {

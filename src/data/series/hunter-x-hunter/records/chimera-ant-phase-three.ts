@@ -113,7 +113,10 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
         revealedAtChapter: 227,
         source: 'chapter',
         name: { it: 'Bihorn', en: 'Bihorn' },
-        summary: { it: 'Formichimera.', en: 'Chimera Ant.' },
+        summary: {
+          it: 'Un comandante di divisione delle formichimere.',
+          en: 'A Squadron Leader of the Chimera Ants.',
+        },
         visual: { art: 'bihorn', tint: 'ocher' },
       },
       {
@@ -294,10 +297,12 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
       },
       bihorn: {
         chronicle: chimeraAntPhase3Chronicles.bihorn,
-        role: { it: 'Formichimera', en: 'Chimera Ant' },
+        // Pike calls him the strongest of the Squadron Leaders, chapter 227:
+        // the ranks page seats him from here (#1447).
+        role: { it: 'Comandante di divisione', en: 'Squadron Leader' },
         log: {
-          it: 'Pike lo cita durante uno scontro.',
-          en: 'Pike mentions him during a fight.',
+          it: 'Pike lo cita durante uno scontro: nemmeno lui, il più forte dei comandanti di divisione, saprebbe spezzare la sua tela.',
+          en: 'Pike mentions him during a fight: not even he, the strongest of the Squadron Leaders, could break Pike’s web.',
         },
         affiliation: [{ episode: 97, chapter: 227, value: CHIMERA_ANTS }],
         status: [{ episode: 97, chapter: 227, value: 'alive' }],
