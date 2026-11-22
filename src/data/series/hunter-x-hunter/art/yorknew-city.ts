@@ -2,6 +2,7 @@ import {
   type Drawings,
   moved,
   type Redrawings,
+  softened,
   type Stroke,
 } from '~/data/art/stroke'
 import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
@@ -69,17 +70,24 @@ const DOG: Stroke[] = [
 ]
 
 /**
- * The outline of one of Tocino's figures in black: the robe's collar, body
- * and sleeves. Eleven Black Children draws the figures behind with it.
+ * The outline of one of Tocino's figures in black: the hood up with its
+ * opening dark and empty, the robe's collar, body and sleeves. Eleven Black
+ * Children draws the figures behind with it.
  */
 export const TOCINO_ROBE_OUTLINE: Stroke[] = [
+  { d: 'M67 40 C62 26 68 10 80 8 C92 10 98 26 93 40' },
+  { d: 'M72 39 C70 28 74 18 80 17 C86 18 90 28 88 39', role: 'soft' },
+  { d: 'M73 33 L85 22 M74 38 L88 26 M81 39 L88 33', role: 'ambient' },
   { d: ellipse(80, 40, 13, 4) },
   {
     d: 'M67 40 L46 50 L32 112 M47 117 L54 82 L44 172 H116 L106 82 L113 117 M128 112 L114 50 L93 40',
   },
 ]
 
-/** One of Tocino's figures in black: an empty robe, its far half hatched. */
+/**
+ * One of Tocino's figures in black: an empty hooded robe, its far half
+ * hatched.
+ */
 export const TOCINO_ROBE: Stroke[] = [
   ...TOCINO_ROBE_OUTLINE,
   { d: 'M32 112 A8 3.5 12 1 0 47 117 A8 3.5 12 1 0 32 112', role: 'soft' },
@@ -111,27 +119,30 @@ const DALZOLLENE_SCREEN: Stroke[] = [
   { d: ellipse(79, 152, 28, 6) },
 ]
 
-/** Ivlenkov's black suit jacket, buttoned, the tie in tint. */
+/**
+ * Ivlenkov's black suit jacket in 3/4, buttoned over a round front, the far
+ * sleeve turning away and hatched, the tie in tint.
+ */
 const IVLENKOV_JACKET: Stroke[] = [
   {
-    d: 'M66 38 L40 50 L28 124 M42 128 L47 86 C40 118 44 148 54 168 H106 C116 148 120 118 113 86 L118 128 M132 124 L120 50 L94 38',
+    d: 'M66 38 L38 50 L24 124 M38 128 L46 86 C34 118 38 150 52 170 H102 C110 150 112 120 106 86 L108 120 M118 118 L110 46 L92 38',
   },
-  { d: 'M28 124 A7 3 12 1 0 42 128 A7 3 12 1 0 28 124', role: 'soft' },
-  { d: 'M132 124 A7 3 -12 1 1 118 128 A7 3 -12 1 1 132 124', role: 'soft' },
-  { d: 'M66 38 L80 90 L94 38 M66 38 Q80 46 94 38', role: 'soft' },
+  { d: 'M24 124 A7 3 12 1 0 38 128 A7 3 12 1 0 24 124', role: 'soft' },
+  { d: 'M118 118 A5 2.5 -12 1 1 108 120 A5 2.5 -12 1 1 118 118', role: 'soft' },
+  { d: 'M66 38 L76 88 L92 38 M66 38 Q79 46 92 38', role: 'soft' },
   {
-    d: 'M77 46 H83 L85 52 L82 80 L80 84 L78 80 L75 52 Z M75 52 H85',
+    d: 'M75 46 H81 L83 52 L80 80 L78 84 L76 80 L73 52 Z M73 52 H83',
     role: 'accent',
   },
   {
-    d: `M80 90 V168 ${dots([
-      [86, 104],
-      [86, 124],
+    d: `M76 88 C90 108 94 140 84 170 ${dots([
+      [88, 108],
+      [91, 130],
     ])}`,
     role: 'soft',
   },
   {
-    d: 'M96 78 l9 -7 M98 100 l10 -7 M100 122 l10 -7 M100 144 l10 -7 M98 164 l8 -6',
+    d: 'M96 92 l8 -6 M98 112 l8 -6 M98 134 l8 -6 M96 156 l8 -6 M110 70 l4 -3 M112 90 l4 -3 M113 108 l4 -3',
     role: 'ambient',
   },
 ]
@@ -157,24 +168,25 @@ const CEMETERY_BUILDING: Stroke[] = [
   { d: 'M4 150 H156', role: 'ambient' },
 ]
 
-/** Uvogin's bearskin vest, open at the front, the fur edging in tint. */
+/**
+ * Uvogin's bearskin vest in 3/4, open at the front: shaggy fur at the collar
+ * and armholes, the fur edging in tint, the far panel turning away hatched.
+ */
 export const UVOGIN_VEST: Stroke[] = [
-  { d: 'M58 34 L34 48 L30 152 H70 L72 64 M102 34 L126 48 L130 152 H90 L88 64' },
-  { d: 'M58 34 Q80 42 102 34', role: 'soft' },
+  { d: 'M62 32 L34 42 C44 54 44 72 36 82 L32 152 H76 L78 66 Z' },
+  { d: 'M96 32 L114 40 C106 52 106 70 112 80 L116 150 L92 152 L90 66 Z' },
+  { d: 'M62 32 Q79 40 96 32 M76 148 C80 146 88 146 92 148', role: 'soft' },
   {
-    d: 'M58 34 l-3 7 l5 2 l-3 7 l5 2 l-3 7 l5 2 l-2 6 M102 34 l3 7 l-5 2 l3 7 l-5 2 l3 7 l-5 2 l2 6 M30 152 l4 6 l4 -6 l4 6 l4 -6 l4 6 l4 -6 l4 6 l4 -6 l4 6 M130 152 l-4 6 l-4 -6 l-4 6 l-4 -6 l-4 6 l-4 -6 l-4 6 l-4 -6 l-4 6',
+    d: 'M62 32 L67.6 34.5 L66 40.5 L71.6 43 L70 49 L75.6 51.5 L74 57.5 L79.6 60 L78 66 M32 152 L35.4 157.2 L39.3 152.3 L42.8 157.5 L46.7 152.7 L50.1 157.8 L54 153 L57.4 158.2 L61.3 153.3 L64.8 158.5 L68.7 153.7 L72.1 158.8 L76 154 M96 32 L91.3 35.6 L94.5 40.5 L89.8 44.1 L93 49 L88.3 52.6 L91.5 57.5 L86.8 61.1 L90 66 M92 152 L95.4 156.7 L98 151.5 L101.4 156.2 L104 151 L107.4 155.7 L110 150.5 L113.4 155.2 L116 150',
     role: 'accent',
   },
   {
-    d: 'M34 48 C42 54 48 56 56 56 M126 48 C118 54 112 56 104 56',
+    d: 'M34 42 l-4 -4 M39.6 51.9 l-5 -1 M41.8 62.8 l-5 0 M40.5 73.2 l-5 1 M114 40 l4 -4 M109.5 49.9 l5 -1 M107.8 60.8 l5 0 M108.7 71.2 l5 1 M68 30 l-1 -5 M79 36 v-5 M90 30 l1 -5',
     role: 'soft',
   },
+  { d: 'M46 98 l5 4 M42 120 l5 4 M48 140 l5 4 M58 86 l5 4', role: 'soft' },
   {
-    d: 'M42 76 l5 4 M40 98 l5 4 M42 120 l5 4 M38 140 l5 4 M118 76 l-5 4 M120 98 l-5 4',
-    role: 'soft',
-  },
-  {
-    d: 'M96 80 l9 -6 M96 100 l10 -7 M96 120 l10 -7 M96 140 l10 -7',
+    d: 'M95 88 l9 -6 M95 108 l10 -7 M96 128 l10 -7 M97 146 l9 -6',
     role: 'ambient',
   },
 ]
@@ -235,7 +247,7 @@ const PAKUNODA_JACKET: Stroke[] = [
 ]
 
 /** One of the vases Kortopi copies, standing, its mouth seen from above. */
-const KORTOPI_VASE: Stroke[] = [
+export const KORTOPI_VASE: Stroke[] = [
   {
     d: `${ellipse(48, 66, 10, 3)} M38 66 H58 M40 66 C40 80 28 90 28 112 C28 134 34 146 38 150 H58 C62 146 68 134 68 112 C68 90 56 80 56 66`,
   },
@@ -295,24 +307,201 @@ export const NEON_PEN: Stroke[] = [
   { d: 'M70 76 l4 -4 M80 88 l4 -4 M90 100 l4 -4', role: 'ambient' },
 ]
 
+/**
+ * One of Franklin's hands from the little finger's side, pointing to the
+ * right with its four fingers spread and cut at the last joint, each tip
+ * hanging below its finger on a short chain, in tint, and a streak of aura
+ * flying on from each. Drawn about the origin. Franklin's drawing and
+ * Double Machine Gun's keep it.
+ */
+export const MACHINE_GUN_HAND: Stroke[] = [
+  { d: 'M12.4 -16.3 C2 -20 -12 -14 -50 -10 M13.5 15.4 C2 20 -12 18 -50 16' },
+  {
+    d: 'M12.4 -16.3 L40 -39.4 M18.2 -9.4 L45.8 -32.5 M18.3 -9.2 L57.1 -18.9 M20.5 -0.5 L59.3 -10.1 M20.5 -0.6 L57.8 6.6 M18.8 8.2 L56.1 15.5 M18.8 8.1 L43.1 25.7 M13.5 15.4 L37.8 33',
+  },
+  {
+    d: 'M40 -39.4 A4.5 2.2 50 1 0 45.8 -32.5 A4.5 2.2 50 1 0 40 -39.4 M57.1 -18.9 A4.5 2.2 76 1 0 59.3 -10.1 A4.5 2.2 76 1 0 57.1 -18.9 M57.8 6.6 A4.5 2.2 101 1 0 56.1 15.5 A4.5 2.2 101 1 0 57.8 6.6 M43.1 25.7 A4.5 2.2 126 1 0 37.8 33 A4.5 2.2 126 1 0 43.1 25.7',
+    role: 'soft',
+  },
+  {
+    d: 'M23.2 -25.3 L28.9 -18.4 M31.9 -12.6 L34.1 -3.9 M34.2 2.1 L32.5 10.9 M30.2 16.3 L24.9 23.6 M-6 -6 C0 -2 2 6 -2 12',
+    role: 'soft',
+  },
+  {
+    d: 'M42.9 -32.5 V-27.5 M39.9 -27.5 H45.9 V-23.5 C45.9 -20.5 39.9 -20.5 39.9 -23.5 Z M58.2 -10.1 V-5.1 M55.2 -5.1 H61.2 V-1.1 C61.2 1.9 55.2 1.9 55.2 -1.1 Z M56.9 15.5 V20.5 M53.9 20.5 H59.9 V24.5 C59.9 27.5 53.9 27.5 53.9 24.5 Z M40.5 33 V38 M37.5 38 H43.5 V42 C43.5 45 37.5 45 37.5 42 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M49 -41.1 L62.8 -52.7 M66 -16.5 L83.4 -20.8 M64.8 12.6 L82.5 16 M46.9 34.1 L61.5 44.7',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Uvogin's right fist driven down into the ground, the knuckles in tint,
+ * and the crater it blasts open: Big Bang Impact's drawing and Uvogin's
+ * stage keep it.
+ */
+export const BIG_BANG_IMPACT: Stroke[] = [
+  { d: 'M68 6 L70 64 M104 6 L102 66' },
+  { d: 'M58 100 C56 88 58 74 64 66 C68 60 102 60 106 68 L110 98 L106 122' },
+  { d: 'M70 104 V124 M82 104 V124 M94 104 V124', role: 'soft' },
+  {
+    d: 'M58 100 C70 94 90 94 100 98 C107 101 106 109 99 110 C88 112 72 109 59 106',
+  },
+  { d: 'M94 100 C97 100 99 102 99 105', role: 'soft' },
+  {
+    d: 'M58 106 V124 C58 132 70 132 70 124 C70 132 82 132 82 124 C82 132 94 132 94 124 C94 132 106 132 106 122',
+    role: 'accent',
+  },
+  {
+    d: 'M54 132 C30 132 10 138 8 146 C8 156 40 164 80 164 C120 164 152 156 152 146 C150 138 130 132 112 132',
+  },
+  { d: 'M26 146 C40 160 120 160 134 146', role: 'soft' },
+  {
+    d: 'M20 142 l8 -6 M34 140 l8 -6 M118 140 l8 -6 M132 142 l8 -6',
+    role: 'ambient',
+  },
+  {
+    d: 'M12 128 l-8 -6 M28 120 l-6 -8 M132 120 l6 -8 M148 128 l8 -6 M10 168 l-6 6 M150 168 l6 6',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Shalnark's demon-shaped phone standing in 3/4: a horned head on top with
+ * a bat's wings spread in tint, the blank screen and keys on the front and
+ * the side hatched. Black Voice's drawing and his own stage keep it.
+ */
+export const SHALNARK_PHONE: Stroke[] = [
+  {
+    d: 'M56 78 H86 Q90 78 90 82 V150 Q90 154 86 154 H56 Q52 154 52 150 V82 Q52 78 56 78 Z',
+  },
+  { d: 'M56 78 L62 72 H92 Q96 72 96 76 V146 L90 152 M90 82 L95 75' },
+  { d: 'M58 86 H84 V114 H58 Z', role: 'soft' },
+  {
+    d: 'M60 124 h6 M69 124 h6 M78 124 h6 M60 133 h6 M69 133 h6 M78 133 h6 M60 142 h6 M69 142 h6 M78 142 h6',
+    role: 'soft',
+  },
+  { d: 'M70 72 C68 62 86 62 84 72 M71 66 L66 56 L74 63 M83 66 L88 56 L80 63' },
+  {
+    d: 'M70 68 C62 58 48 54 36 58 C40 62 40 66 37 70 C43 69 47 71 49 75 C54 71 60 71 64 73 M84 68 C92 58 106 54 118 58 C114 62 114 66 117 70 C111 69 107 71 105 75 C100 71 94 71 90 73',
+    role: 'accent',
+  },
+  {
+    d: 'M91 96 l5 -4 M91 112 l5 -4 M91 128 l5 -4 M91 144 l4 -3',
+    role: 'ambient',
+  },
+]
+
+/** The open arcs of Black Voice's control, going out from the phone. */
+export const BLACK_VOICE_ARCS: Stroke = {
+  d: 'M104 98 Q112 106 104 114 M112 90 Q124 106 112 122 M120 82 Q136 106 120 130',
+  role: 'ambient',
+}
+
+/** The base of Shalnark's laptop in 3/4, its rows of keys. */
+const LAPTOP_BASE: Stroke[] = [
+  { d: 'M24 140 L96 156 L140 128 L70 114 Z' },
+  { d: 'M24 140 V146 L96 162 L140 134 V128', role: 'soft' },
+  {
+    d: 'M45.5 135.7 L52.7 137.2 M55.8 137.9 L63 139.5 M66.1 140.1 L73.3 141.7 M76.4 142.4 L83.6 143.9 M86.7 144.6 L93.9 146.2 M54.7 130.4 L61.8 131.9 M64.9 132.6 L72.1 134.1 M75.1 134.8 L82.3 136.3 M85.4 136.9 L92.5 138.5 M95.6 139.1 L102.8 140.6 M63.8 125.2 L70.9 126.6 M74 127.3 L81.1 128.8 M84.2 129.4 L91.3 130.9 M94.3 131.5 L101.5 133 M104.5 133.6 L111.6 135.1',
+    role: 'soft',
+  },
+]
+
+/** The same laptop open, the lid's frame in tint and the screen blank. */
+const LAPTOP: Stroke[] = [
+  ...LAPTOP_BASE,
+  { d: 'M70 114 L80 44 L148 60 L140 128', role: 'accent' },
+  { d: 'M77 108 L85 52 L141 65 L134 121 Z', role: 'soft' },
+  { d: 'M92 106 l10 -40 M104 110 l8 -32', role: 'ambient' },
+]
+
+/**
+ * Shalnark's laptop made smaller, its frame softened, and his phone with
+ * Black Voice's arcs standing beside it on the same floor: his two stages
+ * keep them.
+ */
+const SHALNARK_GEAR: Stroke[] = [
+  ...moved(softened(LAPTOP), 'translate(4 80) scale(0.55)'),
+  ...moved(
+    [...SHALNARK_PHONE, BLACK_VOICE_ARCS],
+    'translate(62 58) scale(0.7)',
+  ),
+]
+
+/**
+ * Melody's brimmed hat in 3/4, the band in tint, the crown's far side
+ * hatched.
+ */
+const MELODY_HAT: Stroke[] = [
+  { d: ellipse(80, 130, 58, 16) },
+  { d: 'M22 130 V134 C40 150 120 150 138 134 V130', role: 'soft' },
+  { d: 'M44 128 C40 96 50 66 80 64 C110 66 120 96 116 128' },
+  { d: 'M44 128 C58 138 102 138 116 128' },
+  {
+    d: 'M45 116 C60 126 100 126 115 116 M44 106 C60 116 100 116 116 106',
+    role: 'accent',
+  },
+  { d: 'M66 68 C72 76 88 76 94 68', role: 'soft' },
+  { d: 'M104 78 l6 -4 M108 90 l6 -4 M110 100 l5 -3', role: 'ambient' },
+]
+
+/**
+ * Feitan's bandana in 3/4, worn over the lower face and tied behind, its
+ * underside hatched and the skull crest on it in tint, as a symbol.
+ */
+const FEITAN_BANDANA: Stroke[] = [
+  {
+    d: 'M118 80 C96 74 64 70 46 76 C40 80 34 88 36 94 C38 104 40 116 44 126 C58 134 74 136 88 130 C100 120 110 104 118 98 Z',
+  },
+  {
+    d: 'M42 110 C56 112 74 114 92 112 M46 122 C60 126 76 126 90 122',
+    role: 'soft',
+  },
+  {
+    d: `M66 92 C66 82 82 82 82 92 C82 96 80 98 78 99 V103 H70 V99 C68 98 66 96 66 92 Z ${circle(71, 92, 1.8)} ${circle(77, 92, 1.8)}`,
+    role: 'accent',
+  },
+  {
+    d: 'M118 82 C126 78 132 84 128 90 C124 96 118 94 118 88 M126 92 L146 122 L138 126 L122 96 M128 86 L152 100 L148 108 L124 92',
+    role: 'soft',
+  },
+  {
+    d: 'M56 130 l5 -6 M68 132 l5 -6 M80 130 l5 -6 M92 124 l5 -6',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Phinks's pharaoh headdress in 3/4: the cloth falling to its lappets over
+ * the broad collar of his necklace, the far side hatched, the golden cobra
+ * raised at its brow in tint.
+ */
+const PHINKS_NEMES: Stroke[] = [
+  {
+    d: 'M50 52 C52 30 102 28 108 48 L116 104 L106 114 L100 108 L96 68 H64 L60 110 L52 120 L38 108 Z',
+  },
+  { d: 'M54 62 C66 56 92 56 104 60', role: 'soft' },
+  { d: 'M52 118 L54 136 H64 L62 110 M100 108 L100 132 H107 L107 114' },
+  {
+    d: 'M80 56 C74 50 73 38 80 32 C87 38 86 50 80 56 Z M75 60 C70 64 76 70 82 66 C88 62 86 58 82 57',
+    role: 'accent',
+  },
+  {
+    d: 'M34 122 C50 146 106 146 122 122 M44 126 C58 140 98 140 112 126',
+    role: 'soft',
+  },
+  { d: 'M100 80 l8 -5 M101 94 l8 -5 M103 106 l6 -4', role: 'ambient' },
+]
+
 export const YORKNEW_CITY_DRAWINGS = {
   // Melody's brimmed hat in 3/4, the band in tint and the crown's far side
   // hatched: she wears a hat in public, and is one of the six applicants
   // in the mansion's test, episode 40 / chapter 68. No flute, which she
   // plays later.
-  'melody': [
-    { d: ellipse(80, 130, 58, 16) },
-    { d: 'M22 130 V134 C40 150 120 150 138 134 V130', role: 'soft' },
-    { d: 'M44 128 C40 96 50 66 80 64 C110 66 120 96 116 128' },
-    { d: 'M44 128 C58 138 102 138 116 128' },
-    {
-      d: 'M45 116 C60 126 100 126 115 116 M44 106 C60 116 100 116 116 106',
-      role: 'accent',
-    },
-    { d: 'M66 68 C72 76 88 76 94 68', role: 'soft' },
-    { d: 'M104 78 l6 -4 M108 90 l6 -4 M110 100 l5 -3', role: 'ambient' },
-    shadow(80, 182, 50),
-  ],
+  'melody': [...MELODY_HAT, shadow(80, 182, 50)],
   // A writing brush across a stack of blank paper, the brush's tip in tint,
   // the far edge of the stack hatched: Basho carries a brush and paper and
   // writes the haiku that come true in the mansion's test, episode 40 /
@@ -328,19 +517,26 @@ export const YORKNEW_CITY_DRAWINGS = {
     ...BASHO_BRUSH,
     shadow(82, 176, 58),
   ],
-  // A lipstick standing open, its slanted tip in tint, the cap lying on its
-  // side beside it: Baise's kiss makes Squala her servant in the mansion's
-  // test, episode 40 / chapter 68.
-  'baise': [...LIPSTICK, ...LIPSTICK_CAP, shadow(86, 174, 52)],
+  // Baise's lipstick standing open, its cap lying on its side beside it,
+  // and her kiss drawn as a symbol in tint, a pair of lips with no face:
+  // the kiss makes Squala her servant in the mansion's test, episode 40 /
+  // chapter 68 (owner, 2026-11-16). The wiki gives her pink lipstick.
+  'baise': [
+    ...softened(LIPSTICK),
+    ...LIPSTICK_CAP,
+    ...moved(KISS, 'translate(2 -36)'),
+    shadow(86, 174, 52),
+  ],
   // One of Squala's dogs sitting side on, in silhouette, its drop ear
   // in tint: he places dogs round the mansion that all follow his orders,
   // episode 40 / chapter 68 (episode 39 shows him among them). No face, no
   // collar and no leash, which neither medium shows.
   'squala': [...DOG, shadow(86, 160, 54)],
-  // One of Tocino's figures in black: an empty robe standing with no hood
-  // and no face, its far half hatched, a sword raised in its sleeve with
-  // the guard in tint. His figures attack the applicants with swords in
-  // episode 40 / chapter 68.
+  // One of Tocino's figures in black: an empty robe standing with its hood
+  // up, the hood's opening dark and no face in it, its far half hatched, a
+  // sword raised in its sleeve with the guard in tint. His hooded figures
+  // ambush the applicants with guns and swords, episode 39 / chapter 67,
+  // and he owns them in episode 40 / chapter 68.
   'shachmono-tocino': [...TOCINO_ROBE, ...TOCINO_SWORD, shadow(80, 186, 56)],
   // A large screen on its stand, blank but for the glare, the frame in tint
   // and its side hatched: Dalzollene sets the applicants their test from a
@@ -355,79 +551,55 @@ export const YORKNEW_CITY_DRAWINGS = {
   // edge hatched: Neon writes her fortunes with a hand her power guides,
   // episode 41 / chapter 71. No words on the sheets.
   'neon-nostrade': [...NEON_SHEETS, ...NEON_PEN, shadow(84, 184, 58)],
-  // Ivlenkov's black suit jacket from the front, buttoned over a round
-  // front, its far half hatched and the tie in tint: the plump bodyguard
-  // Dalzollene sends to bid at the Underground Auction, episode 42 /
-  // chapter 72. No number and no face.
-  'ivlenkov': [...IVLENKOV_JACKET, shadow(80, 186, 50)],
-  // Linssen's high-collared Chinese jacket from the front, the standing
-  // collar, the folds of the sleeves and the far half hatched, the frog
-  // fastenings down the side in tint: the bodyguard Dalzollene posts at the
-  // back entrance, episode 42 / chapter 72. No face.
+  // Ivlenkov's black suit jacket in 3/4, buttoned over a round front, the
+  // far sleeve turning away and the far side hatched, the tie in tint: the
+  // plump bodyguard Dalzollene sends to bid at the Underground Auction,
+  // episode 42 / chapter 72. No number and no face.
+  'ivlenkov': [...IVLENKOV_JACKET, shadow(78, 186, 50)],
+  // Linssen's Chinese jacket in 3/4, its standing collar seen from a
+  // little above, the opening running across to the far side and down,
+  // the frog fastenings along it in tint and the far side hatched: the
+  // bodyguard Dalzollene posts at the back entrance, episode 42 / chapter
+  // 72. No face.
   'linssen': [
-    { d: 'M68 34 C68 26 92 26 92 34 V42 C92 46 68 46 68 42 Z' },
+    { d: ellipse(78, 34, 12, 4) },
+    { d: 'M66 34 V42 C70 47 86 47 90 42 V34' },
     {
-      d: 'M68 40 L42 50 L30 126 M44 130 L50 82 L50 172 H110 L110 82 L116 130 M130 126 L118 50 L92 40',
+      d: 'M66 42 L40 52 L26 126 M40 130 L48 84 L48 172 H104 L104 84 L108 122 M118 120 L110 52 L90 42',
     },
-    { d: 'M30 126 A7 3 12 1 0 44 130 A7 3 12 1 0 30 126', role: 'soft' },
-    { d: 'M130 126 A7 3 -12 1 1 116 130 A7 3 -12 1 1 130 126', role: 'soft' },
-    { d: 'M68 42 C72 54 84 58 96 54 L96 172', role: 'soft' },
-    { d: 'M90 66 H102 M90 84 H102 M90 102 H102 M90 120 H102', role: 'accent' },
-    { d: 'M38 74 l6 10 M122 74 l-6 10 M60 140 Q62 156 60 170', role: 'soft' },
+    { d: 'M26 126 A7 3 12 1 0 40 130 A7 3 12 1 0 26 126', role: 'soft' },
     {
-      d: 'M54 96 l6 -5 M54 116 l6 -5 M54 136 l6 -5 M54 156 l6 -5 M118 92 l4 -3 M120 108 l4 -3',
-      role: 'ambient',
-    },
-    shadow(80, 186, 46),
-  ],
-  // Uvogin's bearskin vest from the front, open down the middle, the shaggy
-  // fur edging in tint and the far half hatched: the Troupe member named on
-  // the phone as they flee the auction, episode 43 / chapter 74. The wiki
-  // gives bearskin clothing and seldom a shirt.
-  'uvogin': [...UVOGIN_VEST, shadow(80, 182, 56)],
-  // A dark bandana tied into a band, seen from the side, the inside of its
-  // far edge hatched and the knot with its two tails in tint: Feitan wears
-  // it over his mouth, named after the attack on the auction, episode 43 /
-  // chapter 74. No crest on it.
-  'feitan': [
-    { d: 'M20 92 C20 76 112 72 116 90 V110 C112 128 20 124 20 108 Z' },
-    { d: 'M24 94 C30 84 108 82 112 92', role: 'soft' },
-    {
-      d: 'M30 88 l6 -4 M48 84 l6 -4 M66 82 l6 -4 M84 82 l6 -4 M100 84 l6 -4',
-      role: 'ambient',
-    },
-    {
-      d: 'M40 118 C52 108 54 100 52 92 M60 120 C68 112 70 104 68 94',
+      d: 'M118 120 A5 2.5 -12 1 1 108 122 A5 2.5 -12 1 1 118 120',
       role: 'soft',
     },
+    { d: 'M67 46 C72 56 82 58 92 54 L92 172', role: 'soft' },
+    { d: 'M86 66 H98 M86 84 H98 M86 102 H98 M86 120 H98', role: 'accent' },
+    { d: 'M36 76 l6 10 M60 140 Q62 156 60 170', role: 'soft' },
     {
-      d: 'M116 96 C124 92 130 98 126 104 C122 110 116 106 116 100',
-      role: 'accent',
-    },
-    {
-      d: 'M124 104 L146 136 L136 140 L122 108 M126 100 L152 116 L146 124 L124 106',
-      role: 'accent',
-    },
-    shadow(76, 160, 56),
-  ],
-  // Franklin's pair of golden earrings, two plain rings, the nearer one in
-  // tint and their far sides hatched: they hang from his long earlobes,
-  // episode 44 / chapter 76. The rings' shape is not checked against a
-  // frame.
-  'franklin': [
-    {
-      d: 'M70 78 C89 78 104 93 104 112 C104 131 89 146 70 146 C51 146 36 131 36 112 C36 93 51 78 70 78 Z M70 87 C84 87 95 98 95 112 C95 126 84 137 70 137 C56 137 45 126 45 112 C45 98 56 87 70 87 Z',
-      role: 'accent',
-    },
-    { d: 'M98 92 C108 104 108 122 98 134', role: 'soft' },
-    {
-      d: 'M124 104 C133 104 140 111 140 120 C140 129 133 136 124 136 C115 136 108 129 108 120 C108 111 115 104 124 104 Z M124 109 C130 109 135 114 135 120 C135 126 130 131 124 131 C118 131 113 126 113 120 C113 114 118 109 124 109 Z',
-    },
-    {
-      d: 'M86 96 l5 -4 M92 110 l5 -4 M90 126 l5 -4 M132 112 l4 -3 M134 124 l4 -3',
+      d: 'M95 140 l6 -5 M95 156 l6 -5 M95 170 l6 -5 M110 76 l4 -3 M111 92 l4 -3 M112 108 l4 -3',
       role: 'ambient',
     },
-    shadow(90, 168, 54),
+    shadow(76, 186, 46),
+  ],
+  // Uvogin's bearskin vest in 3/4, open down the middle, shaggy fur at the
+  // collar and armholes, the fur edging in tint and the far panel hatched:
+  // the Troupe member named on the phone as they flee the auction, episode
+  // 43 / chapter 74. The wiki gives bearskin clothing and seldom a shirt.
+  'uvogin': [...UVOGIN_VEST, shadow(76, 182, 56)],
+  // Feitan's dark bandana in 3/4, worn over the lower face and tied
+  // behind, its underside hatched, its skull crest in tint as a symbol: he
+  // wears it over his mouth, named after the attack on the auction, episode
+  // 43 / chapter 74. No face.
+  'feitan': [...FEITAN_BANDANA, shadow(80, 160, 54)],
+  // Franklin's hand from the side, pointing ahead with its fingers spread,
+  // the tips separated at the last joint and hanging below on small chains
+  // in tint, bullets of aura streaking on from the cut ends, and one of his
+  // golden earrings beside it: the Double Machine Gun he massacres the
+  // auction hall with, episode 43 / chapter 73, the night before he is
+  // named. No face.
+  'franklin': [
+    ...moved(MACHINE_GUN_HAND, 'translate(70 112) scale(1.05)'),
+    { d: `${circle(32, 50, 11)} ${circle(32, 50, 7)}`, role: 'soft' },
   ],
   // Nobunaga's sheathed sword lying across the frame in 3/4, the round
   // guard seen at an angle and the grip's wrapping in tint, the underside
@@ -443,45 +615,18 @@ export const YORKNEW_CITY_DRAWINGS = {
     { d: 'M36 146 l6 6 M54 131 l6 6 M72 116 l6 6', role: 'ambient' },
     shadow(80, 176, 60),
   ],
-  // Phinks's pharaoh headdress from the front, its cloth falling to two
-  // short lappets over the broad collar of his necklace, the far side
-  // hatched, the golden snake at its brow in tint: the look he is
-  // introduced in, as the Troupe frees Uvogin, episode 45 / chapter 78
-  // (owner, #901). No face, and no tracksuit, which is later.
-  'phinks': [
-    {
-      d: 'M54 50 C54 30 106 30 106 50 L116 112 L102 118 L96 112 L92 70 H68 L64 112 L58 118 L44 112 Z',
-    },
-    { d: 'M54 50 C64 44 96 44 106 50', role: 'soft' },
-    { d: 'M58 62 H102', role: 'soft' },
-    { d: 'M80 44 C76 36 84 30 82 22 C88 26 88 34 84 40', role: 'accent' },
-    { d: 'M48 96 H62 M98 96 H112', role: 'soft' },
-    {
-      d: 'M36 120 C52 146 108 146 124 120 M46 124 C60 138 100 138 114 124',
-      role: 'soft',
-    },
-    { d: 'M100 78 l8 -5 M102 96 l8 -5 M104 110 l6 -4', role: 'ambient' },
-    shadow(80, 164, 44),
-  ],
-  // A laptop open on its hinge seen from its right side, the lid's frame in
-  // tint, the rows of keys on the base and the shade by the hinge hatched:
-  // Shalnark looks up the Nostrade family on the Hunter website, episode
-  // 46 / chapter 79. Seen side on, unlike Nicholas's, and with nothing on
-  // the screen.
-  'shalnark': [
-    { d: 'M30 150 L44 126 L138 126 L124 150 Z' },
-    { d: 'M30 150 V158 H124 L138 134 V126', role: 'soft' },
-    { d: 'M30 150 L44 126 L34 40 L20 64 Z', role: 'accent' },
-    { d: 'M36 140 L46 124 L38 54 L28 70 Z', role: 'soft' },
-    {
-      d: 'M58 132 h8 M72 132 h8 M86 132 h8 M100 132 h8 M114 132 h6 M54 139 h8 M68 139 h8 M82 139 h8 M96 139 h8 M110 139 h6',
-      role: 'soft',
-    },
-    { d: 'M64 146 h28', role: 'soft' },
-    { d: 'M22 120 l6 -6 M22 134 l6 -6 M24 146 l5 -5', role: 'ambient' },
-    { d: 'M60 158 l4 -6 M84 158 l4 -6 M108 158 l4 -6', role: 'ambient' },
-    shadow(84, 172, 58),
-  ],
+  // Phinks's pharaoh headdress (nemes) in 3/4, its cloth falling to two
+  // lappets over the broad collar of his necklace, the far side hatched,
+  // the golden cobra raised at its brow in tint: the look he is introduced
+  // in, as the Troupe frees Uvogin, episode 45 / chapter 78 (owner, #901).
+  // No face, no stripes, which the wiki does not give, and no tracksuit,
+  // which is later.
+  'phinks': [...PHINKS_NEMES, shadow(80, 164, 44)],
+  // A laptop open in 3/4, the lid's frame in tint, the screen blank but for
+  // the glare and the rows of keys on the base: Shalnark uses the computer
+  // to look up the Nostrade family on the Hunter website, episode 46 /
+  // chapter 79. The computer's shape is not checked against a frame.
+  'shalnark': [...LAPTOP, shadow(84, 178, 60)],
   // A mobile phone standing in 3/4, its blank screen in tint, the keys
   // below and its side hatched: Light speaks to his daughter's bodyguards
   // by phone, episode 46 / chapter 79. The phone's shape is not checked
@@ -861,10 +1006,161 @@ export const YORKNEW_CITY_DRAWINGS = {
 } satisfies Drawings
 
 /**
- * The Yorknew City drawings that change with the story: the deaths, each
- * pinned with its status entry.
+ * The Yorknew City drawings that change with the story: each Hatsu as it is
+ * first shown, and the deaths, each pinned with its status entry. Shalnark's
+ * chapter 357 stage lives here with his first one.
  */
 export const yorknewCityRedrawn: Redrawings = {
+  'melody': [
+    // The same hat made smaller and set down, her flute laid across its
+    // brim in tint, keys on it, and open lines for the music: she plays it
+    // to calm Kurapika and the other bodyguards before Uvogin is taken,
+    // episode 44 / chapter 77. Her flute is the medium of her power.
+    {
+      episode: 44,
+      chapter: 77,
+      value: [
+        ...moved(
+          softened(MELODY_HAT),
+          'translate(80 150) scale(0.72) translate(-80 -130)',
+        ),
+        {
+          d: 'M18 160 L140 134 C143.5 133.3 145.5 139.3 142 140 L20 166 C16.5 166.7 14.5 160.7 18 160 Z',
+          role: 'accent',
+        },
+        {
+          d: dots([
+            [40, 158],
+            [84, 149],
+            [96, 146.4],
+            [108, 143.9],
+            [120, 141.3],
+          ]),
+          role: 'soft',
+        },
+        {
+          d: 'M96 80 q8 -8 16 0 M106 64 q10 -10 20 0 M116 48 q12 -12 24 0',
+          role: 'ambient',
+        },
+        shadow(80, 182, 56),
+      ],
+    },
+  ],
+  'shalnark': [
+    // The same laptop made smaller, its frame softened, and standing beside
+    // it his demon-shaped phone with its wings in tint and the open arcs of
+    // Black Voice: he controls a Mafia man and the auctioneer with it,
+    // episode 53 / chapter 98. The antenna stays out: its shape is cited
+    // only from chapter 227.
+    {
+      episode: 53,
+      chapter: 98,
+      value: [...SHALNARK_GEAR, shadow(86, 178, 66)],
+    },
+    // The same laptop and phone, and above them one of his antennas, tip
+    // down, a demon's head with spread wings at its top, soft, with open
+    // lines of aura bursting round it: he stabs it into his own leg and
+    // turns Autopilot on, his second Hatsu, against Pell, episode 96 /
+    // chapter 227. No body is drawn.
+    {
+      episode: 96,
+      chapter: 227,
+      value: [
+        ...SHALNARK_GEAR,
+        ...moved(
+          [
+            { d: 'M0 0 L-2 -40 H2 Z' },
+            {
+              d: 'M-5 -40 C-6 -48 6 -48 5 -40 M-4 -46 L-7 -52 L-2 -48 M4 -46 L7 -52 L2 -48 M-4 -44 C-10 -50 -18 -50 -22 -46 C-18 -44 -16 -42 -16 -40 C-12 -42 -8 -42 -5 -41 M4 -44 C10 -50 18 -50 22 -46 C18 -44 16 -42 16 -40 C12 -42 8 -42 5 -41',
+              role: 'soft',
+            },
+          ],
+          'translate(44 96) scale(1.3)',
+        ),
+        {
+          d: 'M18 34 l-8 -6 M70 34 l8 -6 M14 62 h-10 M74 62 h10 M24 86 l-8 6 M64 86 l8 6 M44 14 v-10',
+          role: 'ambient',
+        },
+        shadow(86, 178, 66),
+      ],
+    },
+    // The same laptop, shut, on the ground under an empty swing: Hisoka
+    // kills him and leaves him tied to a swing, chapter 357. No body is
+    // drawn, and no phone: he had lent it to Chrollo (chapter 351).
+    {
+      episode: 148,
+      chapter: 357,
+      source: 'chapter',
+      value: [
+        ...moved(
+          [
+            ...LAPTOP_BASE,
+            { d: 'M24 136 L96 152 L140 124 L70 110 Z', role: 'accent' },
+            { d: 'M24 136 V140 M96 152 V156 M140 124 V128', role: 'soft' },
+          ],
+          'translate(82 148) scale(0.8) translate(-82 -136)',
+        ),
+        { d: 'M20 18 H140 M28 18 L14 172 M132 18 L146 172' },
+        { d: 'M50 18 V92 M110 18 V92', role: 'soft' },
+        { d: 'M44 92 H116 V100 H44 Z' },
+        { d: 'M4 172 H156', role: 'ambient', dashed: true },
+      ],
+    },
+  ],
+  'phinks': [
+    // The same headdress made smaller, and beside it a fist with the open
+    // lines of his arm's rotations wound round it: Ripper Cyclotron, his
+    // Hatsu, kills a Chimera Ant in Meteor City, episode 96 / chapter 226.
+    // The accent stays on the cobra.
+    {
+      episode: 96,
+      chapter: 226,
+      value: [
+        ...moved(
+          PHINKS_NEMES,
+          'translate(46 70) scale(0.55) translate(-80 -88)',
+        ),
+        {
+          d: 'M94 112 C94 104 106 104 106 112 C106 104 118 104 118 112 C118 104 130 104 130 112 C130 104 142 104 142 112 V134 C142 144 132 148 118 148 C104 148 94 144 94 134 Z',
+        },
+        {
+          d: 'M106 112 V122 M118 112 V122 M130 112 V122 M94 128 C104 124 114 126 120 132',
+          role: 'soft',
+        },
+        { d: 'M104 147 L100 176 M132 147 L136 176' },
+        {
+          d: 'M84 104 C78 80 122 66 148 86 M154 104 C160 126 154 148 144 158 M86 152 C78 142 76 132 78 120',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  'feitan': [
+    // The same bandana made smaller, and above it the sun of Rising Sun in
+    // open lines, no glow and no fill, with the three inverted crosses of
+    // the Pain Packer suit beside it as a symbol: he burns Zazan to death,
+    // episode 97 / chapter 229. Rising Sun is a form of Pain Packer, his
+    // one Hatsu, so one stage.
+    {
+      episode: 97,
+      chapter: 229,
+      value: [
+        ...moved(
+          FEITAN_BANDANA,
+          'translate(80 130) scale(0.62) translate(-94 -103)',
+        ),
+        {
+          d: `${circle(76, 50, 16)} M76 24 V16 M76 76 V84 M50 50 H42 M102 50 H110 M58 32 l-6 -6 M94 32 l6 -6 M58 68 l-6 6 M94 68 l6 6`,
+          role: 'ambient',
+        },
+        {
+          d: 'M118 14 V48 M112 40 H124 M134 14 V48 M128 40 H140 M150 14 V48 M144 40 H156',
+          role: 'soft',
+        },
+        shadow(80, 166, 36),
+      ],
+    },
+  ],
   'baise': [
     // The same lipstick lying on its side on the floor, its cap rolled away:
     // Shizuku kills her outside the auction hall, episode 43 / chapter 73.
@@ -959,6 +1255,17 @@ export const yorknewCityRedrawn: Redrawings = {
     },
   ],
   'uvogin': [
+    // The same vest made smaller beside Big Bang Impact, his one Hatsu: the
+    // fist driven into the ground and the crater it blasts open, the accent
+    // still on the vest's fur. He uses it on Worm, episode 44 / chapter 76.
+    {
+      episode: 44,
+      chapter: 76,
+      value: [
+        ...moved(UVOGIN_VEST, 'translate(4 24) scale(0.5)'),
+        ...moved(softened(BIG_BANG_IMPACT), 'translate(50 50) scale(0.68)'),
+      ],
+    },
     // The same vest laid over a low mound of earth: Kurapika kills him and
     // buries him in a shallow grave, episode 47 / chapter 84.
     {

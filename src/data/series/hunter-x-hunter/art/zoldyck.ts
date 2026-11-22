@@ -335,7 +335,7 @@ export const zoldyckRedrawn: Redrawings = {
           DRAGON_HEAD.map((stroke) => {
             return { ...stroke, role: 'ambient' as const }
           }),
-          'translate(58 -22) scale(0.75)',
+          'translate(72 -10) scale(0.55)',
         ),
         shadow(78, 186, 44),
       ],
