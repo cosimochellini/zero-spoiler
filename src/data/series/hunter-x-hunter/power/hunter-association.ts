@@ -71,7 +71,7 @@ export const HUNTER_ASSOCIATION: PowerBody<HunterVocabulary> = {
       chapter: 12,
       episode: 6,
       value: {
-        en: 'The organization that tests those who want to become Hunters and grants a license to those who pass. A chairman heads it and has the last word on who passes.',
+        en: 'The organisation that tests those who want to become Hunters and grants a license to those who pass. A chairman heads it and has the last word on who passes.',
         it: 'L’organizzazione che mette alla prova chi vuole diventare Hunter e concede la licenza a chi supera la prova. La guida un presidente, che ha l’ultima parola su chi passa.',
       },
     },
