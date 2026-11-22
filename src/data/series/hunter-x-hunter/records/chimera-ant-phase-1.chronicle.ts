@@ -473,7 +473,7 @@ export const chimeraAntPhase1Chronicles = {
       value: {
         title: { it: 'Il bambino catturato', en: 'The captured child' },
         body: {
-          it: 'Rammot partecipa alla cattura degli abitanti di NGL per nutrire la regina. Durante un’incursione tiene un bambino che piange e minaccia di mangiarlo. Il suo comandante gli ordina di lasciarlo andare: i piccoli non sono prede adatte e la quantità richiesta è già stata raggiunta. Rammot obbedisce e si allontana.',
+          it: 'Lamot partecipa alla cattura degli abitanti di NGL per nutrire la regina. Durante un’incursione tiene un bambino che piange e minaccia di mangiarlo. Il suo comandante gli ordina di lasciarlo andare: i piccoli non sono prede adatte e la quantità richiesta è già stata raggiunta. Lamot obbedisce e si allontana.',
           en: 'Rammot takes part in capturing NGL’s inhabitants to feed the Queen. During a raid, he holds a crying child and threatens to eat him. His commander orders him to let the child go: children are unsuitable prey, and their quota has already been met. Rammot obeys and walks away.',
         },
       },
@@ -485,7 +485,7 @@ export const chimeraAntPhase1Chronicles = {
       value: {
         title: { it: 'Il ritorno al nido', en: 'Returning to the nest' },
         body: {
-          it: 'Rammot torna al nido ferito dopo aver combattuto contro [[gon-freecss|Gon]] e [[killua|Killua]]. I ragazzi lo hanno colpito con l’elettricità e con un pugno carico di aura. Lui pretende di poterli uccidere e mangiare. Quando il comandante glielo vieta, protesta e minaccia di passare a una divisione che lasci più libertà ai soldati.',
+          it: 'Lamot torna al nido ferito dopo aver combattuto contro [[gon-freecss|Gon]] e [[killua|Killua]]. I ragazzi lo hanno colpito con l’elettricità e con un pugno carico di aura. Lui pretende di poterli uccidere e mangiare. Quando il comandante glielo vieta, protesta e minaccia di passare a una divisione che lasci più libertà ai soldati.',
           en: 'Rammot returns to the nest injured after fighting [[gon-freecss|Gon]] and [[killua|Killua]]. The boys struck him with electricity and an aura-charged punch. He demands the right to kill and eat them. When his commander refuses, Rammot protests and threatens to join a squad that allows its soldiers more freedom.',
         },
       },
@@ -500,7 +500,7 @@ export const chimeraAntPhase1Chronicles = {
           en: 'Fighting the two boys',
         },
         body: {
-          it: 'Rammot sorprende [[gon-freecss|Gon]] e [[killua|Killua]] vicino ai cavalli che ha ucciso. [[kite|Kaito]] lascia ai ragazzi il compito di affrontarlo. L’elettricità di Killua lo immobilizza e Gon lo colpisce con il pugno. Un comandante lo porta in salvo. Tornato al nido, Rammot pretende vendetta e vuole mangiare i due avversari.',
+          it: 'Lamot sorprende [[gon-freecss|Gon]] e [[killua|Killua]] vicino ai cavalli che ha ucciso. [[kite|Kaito]] lascia ai ragazzi il compito di affrontarlo. L’elettricità di Killua lo immobilizza e Gon lo colpisce con il pugno. Un comandante lo porta in salvo. Tornato al nido, Lamot pretende vendetta e vuole mangiare i due avversari.',
           en: 'Rammot surprises [[gon-freecss|Gon]] and [[killua|Killua]] near the horses he killed. [[kite|Kite]] leaves the boys to face him. Killua’s electricity immobilizes him, and Gon strikes him with his fist. A commander carries Rammot to safety. Back at the nest, he demands revenge and wants to eat both opponents.',
         },
       },
@@ -515,7 +515,7 @@ export const chimeraAntPhase1Chronicles = {
           en: 'Nen and the Royal Guard',
         },
         body: {
-          it: 'I colpi ricevuti da [[gon-freecss|Gon]] e [[killua|Killua]] risvegliano l’aura di Rammot. La nuova forza gli fa pensare di poter diventare re. Quando nasce [[neferpitou|Neferpito]], però, ne sente l’enorme potere e si sottomette. La guardia reale gli fa provare la divinazione dell’acqua, che lo identifica come appartenente al potenziamento.',
+          it: 'I colpi ricevuti da [[gon-freecss|Gon]] e [[killua|Killua]] risvegliano l’aura di Lamot. La nuova forza gli fa pensare di poter diventare re. Quando nasce [[neferpitou|Neferpito]], però, ne sente l’enorme potere e si sottomette. La guardia reale gli fa provare la divinazione dell’acqua, che lo identifica come appartenente al potenziamento.',
           en: 'The blows from [[gon-freecss|Gon]] and [[killua|Killua]] awaken Rammot’s aura. His new strength makes him imagine becoming king. When [[neferpitou|Neferpitou]] is born, however, he senses their overwhelming power and submits. The Royal Guard has him try Water Divination, which identifies him as an Enhancer.',
         },
       },

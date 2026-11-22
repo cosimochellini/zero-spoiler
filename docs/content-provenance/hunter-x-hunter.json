@@ -616,7 +616,7 @@
   "milluki": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Milluki_Zoldyck",
-      "https://it.wikipedia.org/wiki/Famiglia_Zoldick#Milki",
+      "https://it.wikipedia.org/wiki/Famiglia_Zoldick?oldid=153390427",
       "https://hunterxhunter.fandom.com/wiki/Chapter_121",
       "https://hunterxhunter.fandom.com/wiki/Chapter_124",
       "https://hunterxhunter.fandom.com/wiki/Chapter_178",
@@ -627,7 +627,8 @@
     "unverified": [
       "Exact name speech",
       "#1019: manga panels, licensed 2011 anime frames/timestamps and Italian dub forms were not viewed. Facts and inventory were checked through lawful English Wiki MediaWiki API revisions. No disappearance, death or personal-name gate is inferred from appearance metadata or binder-only names.",
-      "#1019 final inventory disposition: existing-record. Existing character record milluki; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof."
+      "#1019 final inventory disposition: existing-record. Existing character record milluki; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof.",
+      "Italian name Milki kept (#1503): Italian Wikipedia's text and intro link write him Milki; anonymous revision 153355822 (2026-11-13) renamed only the heading (Millukii) and the bold name (Milluki Zoldick). The 2011 Italian dub was not viewed."
     ]
   },
   "zeno": {
@@ -2050,7 +2051,7 @@
   "tsezguerra": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Tsezguerra",
-      "https://it.wikipedia.org/wiki/Associazione_Hunter#Tsezgerah",
+      "https://it.wikipedia.org/wiki/Associazione_Hunter?oldid=153445509",
       "https://hunterxhunter.fandom.com/wiki/Chapter_121",
       "https://hunterxhunter.fandom.com/wiki/Chapter_122",
       "https://hunterxhunter.fandom.com/wiki/Chapter_123",
@@ -2096,7 +2097,7 @@
     "unverified": [
       "Manga pages and licensed 2011 anime timestamps not viewed; gates checked on pinned wiki narrative synopses, not debut metadata alone",
       "Drawing object checked against the character page description; licensed scene reference not viewed",
-      "Italian Wikipedia heads the section Tsezgerah but gives Tsezugera as its bold name; exact 2011 dub pronunciation/spelling not viewed",
+      "Italian name Tsezgerah: Italian Wikipedia heads the section and sets the bold name so since revision 153389144 (2026-11-16); the 2011 Italian dub was not viewed (#1503)",
       "#1019: manga panels, licensed 2011 anime frames/timestamps and Italian dub forms were not viewed. Facts and inventory were checked through lawful English Wiki MediaWiki API revisions. No disappearance, death or personal-name gate is inferred from appearance metadata or binder-only names.",
       "#1019 final inventory disposition: existing-record. Existing character record tsezguerra; retain its current gate and medium restriction. Appearance metadata supplies no alternate-medium naming proof."
     ]
@@ -5066,10 +5067,12 @@
       "https://hunterxhunter.fandom.com/wiki/Episode_81_(2011)?oldid=410846",
       "https://hunterxhunter.fandom.com/wiki/Episode_84_(2011)?oldid=416447",
       "https://hunterxhunter.fandom.com/wiki/Episode_94_(2011)?oldid=410870",
-      "https://hunterxhunter.fandom.com/wiki/Rammot?oldid=424144"
+      "https://hunterxhunter.fandom.com/wiki/Rammot?oldid=424144",
+      "https://it.wikipedia.org/wiki/Formichimere?oldid=153421611"
     ],
     "unverified": [
-      "Manga panels, licensed episode timestamps and Italian dub audio unviewed."
+      "Manga panels, licensed episode timestamps and Italian dub audio unviewed.",
+      "Italian name Lamot (#1503): Italian Wikipedia renamed the section from Rammot in revision 153421611 (2026-11-18). The 2011 Italian dub was not viewed."
     ]
   },
   "yunju": {
@@ -5340,10 +5343,12 @@
     "sources": [
       "https://hunterxhunter.fandom.com/index.php?oldid=416267",
       "https://hunterxhunter.fandom.com/index.php?oldid=416478",
-      "https://hunterxhunter.fandom.com/index.php?oldid=424313"
+      "https://hunterxhunter.fandom.com/index.php?oldid=424313",
+      "https://it.wikipedia.org/wiki/Personaggi_di_Hunter_%C3%97_Hunter?oldid=153445438"
     ],
     "unverified": [
-      "Manga pages, episode timestamps and 2011 Italian dub audio unviewed."
+      "Manga pages, episode timestamps and 2011 Italian dub audio unviewed.",
+      "Italian name Digo Matador (#1503): Italian Wikipedia renamed the entry from Digo Masadoru in revision 153397064 (2026-11-16). The 2011 Italian dub was not viewed."
     ]
   },
   "beans": {

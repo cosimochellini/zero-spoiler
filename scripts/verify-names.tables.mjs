@@ -102,7 +102,7 @@ export const ITALIAN_TITLES = {
     'saiyu': 'Associazione Hunter#Saiyu',
     'teradein-neutral': 'Associazione Hunter#Teradain Neutral',
     'tsubone': 'Famiglia Zoldick#Tsubone',
-    'ming-jol-ik': 'Personaggi di Hunter × Hunter#Digo Masadoru',
+    'ming-jol-ik': 'Personaggi di Hunter × Hunter#Digo Matador',
     'palm-siberia': 'Associazione Hunter#Pahm Sibelia',
     'knov': 'Associazione Hunter#Nobu',
     'morel-mackernasey': 'Associazione Hunter#Morau McCarnathy',
@@ -119,7 +119,7 @@ export const ITALIAN_TITLES = {
     'cheetu': 'Formichimere#Jeedo',
     'zazan': 'Formichimere#Zazan',
     'pike': 'Formichimere#Pike',
-    'rammot': 'Formichimere#Rammot',
+    'rammot': 'Formichimere#Lamot',
     'meleoron': 'Formichimere#Meleolon',
     'flutter': 'Formichimere#Flatta',
     'ikalgo': 'Formichimere#Calamaro',
@@ -155,7 +155,7 @@ export const ITALIAN_TITLES = {
     'seaquant': 'Famiglia Zoldick#Shikant',
     'canary': 'Famiglia Zoldick#Canaria',
     'gotoh': 'Famiglia Zoldick#Goto',
-    'milluki': 'Famiglia Zoldick#Milki',
+    'milluki': 'Famiglia Zoldick#Millukii',
     'zeno': 'Famiglia Zoldick#Zeno',
     'silva': 'Famiglia Zoldick#Silva',
     'kalluto': 'Famiglia Zoldick#Carte',
@@ -337,4 +337,8 @@ export const NAMES_KEPT = {
   'coco-loo': 'Coco Loo',
   // No Italian Wikipedia entry names the foxbear; retain the English name.
   'kon': 'Kon',
+  // Famiglia Zoldick writes him Milki in its text and its own intro link. An
+  // anonymous edit of 2026-11-13 (revision 153355822) changed only the
+  // section's heading, misspelt "Millukii", and its bold name (#1503).
+  'milluki': 'Milki',
 }

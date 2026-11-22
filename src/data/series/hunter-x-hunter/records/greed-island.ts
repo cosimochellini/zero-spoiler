@@ -80,7 +80,7 @@ export const greedIsland: HunterSaga = {
       kind: 'character',
       revealedAtEpisode: 59,
       revealedAtChapter: 121,
-      name: { it: 'Tsezugera', en: 'Tsezguerra' },
+      name: { it: 'Tsezgerah', en: 'Tsezguerra' },
       summary: {
         it: 'L’uomo che Battera incarica di esaminare il Ren di Gon e Killua prima di ammetterli al gioco.',
         en: 'The man Battera asks to assess Gon and Killua’s Ren before letting them play the game.',

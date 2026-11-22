@@ -666,7 +666,7 @@ export const chimeraAntPhase2Chronicles = {
       value: {
         title: { it: 'L’ago di Illumi', en: 'Illumi’s needle' },
         body: {
-          it: 'Killua porta [[rammot|Rammot]] lontano da [[gon-freecss|Gon]], ancora incapace di usare il Nen. La voce di [[illumi|Illumi]] gli ordina di fuggire e la paura lo paralizza. Per proteggere l’amico, Killua si ferisce alla fronte ed estrae l’ago che il fratello ha nascosto nel suo cervello. Libero dal controllo, uccide Rammot e ne distrugge la testa.',
+          it: 'Killua porta [[rammot|Lamot]] lontano da [[gon-freecss|Gon]], ancora incapace di usare il Nen. La voce di [[illumi|Illumi]] gli ordina di fuggire e la paura lo paralizza. Per proteggere l’amico, Killua si ferisce alla fronte ed estrae l’ago che il fratello ha nascosto nel suo cervello. Libero dal controllo, uccide Lamot e ne distrugge la testa.',
           en: 'Killua draws [[rammot|Rammot]] away from [[gon-freecss|Gon]], who still cannot use Nen. [[illumi|Illumi]]’s voice orders him to flee, and fear paralyzes him. To protect his friend, Killua wounds his forehead and removes the needle his brother hid inside his brain. Freed from its control, he kills Rammot and destroys his head.',
         },
       },
@@ -860,7 +860,7 @@ export const chimeraAntPhase2Chronicles = {
           en: 'The needle Killua removes',
         },
         body: {
-          it: 'Durante lo scontro con [[rammot|Rammot]], [[killua|Killua]] sente la voce di Illumi che gli ordina di evitare una battaglia troppo rischiosa. Il ragazzo si ferisce alla fronte e trova un ago nel proprio cervello. Capisce che il fratello lo ha condizionato con quel mezzo. Dopo averlo estratto riesce a combattere senza il precedente impulso alla fuga.',
+          it: 'Durante lo scontro con [[rammot|Lamot]], [[killua|Killua]] sente la voce di Illumi che gli ordina di evitare una battaglia troppo rischiosa. Il ragazzo si ferisce alla fronte e trova un ago nel proprio cervello. Capisce che il fratello lo ha condizionato con quel mezzo. Dopo averlo estratto riesce a combattere senza il precedente impulso alla fuga.',
           en: 'During the fight with [[rammot|Rammot]], [[killua|Killua]] hears Illumi’s voice ordering him to avoid a dangerous battle. The boy wounds his forehead and finds a needle inside his brain. He realizes that his brother used it to condition him. After removing it, he can fight without the previous compulsion to flee.',
         },
       },
@@ -873,7 +873,7 @@ export const chimeraAntPhase2Chronicles = {
       value: {
         title: { it: 'La vendetta fallita', en: 'The failed revenge' },
         body: {
-          it: 'Rammot ritrova [[killua|Killua]] e vuole vendicarsi di lui e di [[gon-freecss|Gon]]. La paura blocca inizialmente il ragazzo, permettendo alla formica di colpirlo più volte. Killua estrae però un ago dalla fronte e cambia atteggiamento. Rammot prova ancora ad attaccarlo, ma viene decapitato. Killua ne schiaccia la testa prima che il corpo cada.',
+          it: 'Lamot ritrova [[killua|Killua]] e vuole vendicarsi di lui e di [[gon-freecss|Gon]]. La paura blocca inizialmente il ragazzo, permettendo alla formica di colpirlo più volte. Killua estrae però un ago dalla fronte e cambia atteggiamento. Lamot prova ancora ad attaccarlo, ma viene decapitato. Killua ne schiaccia la testa prima che il corpo cada.',
           en: 'Rammot finds [[killua|Killua]] again and seeks revenge against him and [[gon-freecss|Gon]]. Fear initially freezes the boy, allowing the ant to strike him repeatedly. Killua then removes a needle from his forehead and changes his manner. Rammot tries another attack but is beheaded. Killua crushes his head before the body falls.',
         },
       },
