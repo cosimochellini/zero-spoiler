@@ -724,6 +724,7 @@ describe('the Hatsu drawn for the Yorknew City records', () => {
     { id: 'uvogin', power: 'Big Bang Impact', episode: 44, chapter: 76 },
     { id: 'melody', power: 'her flute', episode: 44, chapter: 77 },
     { id: 'shalnark', power: 'Black Voice', episode: 53, chapter: 98 },
+    { id: 'shalnark', power: 'Autopilot', episode: 96, chapter: 227 },
     { id: 'phinks', power: 'Ripper Cyclotron', episode: 96, chapter: 226 },
     { id: 'feitan', power: 'Pain Packer', episode: 97, chapter: 229 },
   ])(

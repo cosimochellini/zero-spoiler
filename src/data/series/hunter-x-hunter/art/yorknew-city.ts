@@ -419,6 +419,19 @@ const LAPTOP: Stroke[] = [
 ]
 
 /**
+ * Shalnark's laptop made smaller, its frame softened, and his phone with
+ * Black Voice's arcs standing beside it on the same floor: his two stages
+ * keep them.
+ */
+const SHALNARK_GEAR: Stroke[] = [
+  ...moved(softened(LAPTOP), 'translate(4 80) scale(0.55)'),
+  ...moved(
+    [...SHALNARK_PHONE, BLACK_VOICE_ARCS],
+    'translate(62 58) scale(0.7)',
+  ),
+]
+
+/**
  * Melody's brimmed hat in 3/4, the band in tint, the crown's far side
  * hatched.
  */
@@ -1034,21 +1047,41 @@ export const yorknewCityRedrawn: Redrawings = {
     },
   ],
   'shalnark': [
-    // The same laptop made smaller, its frame softened, and beside it his
-    // demon-shaped phone with its wings in tint and the open arcs of Black
-    // Voice: he controls a Mafia man and the auctioneer with it, episode
-    // 53 / chapter 98. The antenna stays out: its shape is cited only from
-    // chapter 227.
+    // The same laptop made smaller, its frame softened, and standing beside
+    // it his demon-shaped phone with its wings in tint and the open arcs of
+    // Black Voice: he controls a Mafia man and the auctioneer with it,
+    // episode 53 / chapter 98. The antenna stays out: its shape is cited
+    // only from chapter 227.
     {
       episode: 53,
       chapter: 98,
+      value: [...SHALNARK_GEAR, shadow(86, 178, 66)],
+    },
+    // The same laptop and phone, and above them one of his antennas, tip
+    // down, a demon's head with spread wings at its top, soft, with open
+    // lines of aura bursting round it: he stabs it into his own leg and
+    // turns Autopilot on, his second Hatsu, against Pell, episode 96 /
+    // chapter 227. No body is drawn.
+    {
+      episode: 96,
+      chapter: 227,
       value: [
-        ...moved(softened(LAPTOP), 'translate(10 100) scale(0.55)'),
+        ...SHALNARK_GEAR,
         ...moved(
-          [...SHALNARK_PHONE, BLACK_VOICE_ARCS],
-          'translate(57 20) scale(0.7)',
+          [
+            { d: 'M0 0 L-2 -40 H2 Z' },
+            {
+              d: 'M-5 -40 C-6 -48 6 -48 5 -40 M-4 -46 L-7 -52 L-2 -48 M4 -46 L7 -52 L2 -48 M-4 -44 C-10 -50 -18 -50 -22 -46 C-18 -44 -16 -42 -16 -40 C-12 -42 -8 -42 -5 -41 M4 -44 C10 -50 18 -50 22 -46 C18 -44 16 -42 16 -40 C12 -42 8 -42 5 -41',
+              role: 'soft',
+            },
+          ],
+          'translate(44 96) scale(1.3)',
         ),
-        shadow(110, 150, 30),
+        {
+          d: 'M18 34 l-8 -6 M70 34 l8 -6 M14 62 h-10 M74 62 h10 M24 86 l-8 6 M64 86 l8 6 M44 14 v-10',
+          role: 'ambient',
+        },
+        shadow(86, 178, 66),
       ],
     },
     // The same laptop, shut, on the ground under an empty swing: Hisoka
