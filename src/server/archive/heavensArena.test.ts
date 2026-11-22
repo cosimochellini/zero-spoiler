@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { bookmarkAt as at, gateCases, opened, recordIn } from '~/test/gates'
+import {
+  bookmarkAt as at,
+  gateCases,
+  opened,
+  recordIn,
+  stageMissedAt,
+} from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { homePage } from './home.server'
@@ -56,6 +62,16 @@ describe('Kastro’s death', () => {
       )
     },
   )
+})
+
+// Gido's Tornado Top changes his drawing at its pair, never one step
+// before, in both media and each locale (#1331).
+describe('Gido’s Tornado Top stage', () => {
+  it('changes his drawing at episode 30 / chapter 50', () => {
+    expect(
+      stageMissedAt(archive, 'gido', { episode: 30, chapter: 50 }),
+    ).toStrictEqual([])
+  })
 })
 
 describe('the returning characters at Heavens Arena', () => {

@@ -1,4 +1,4 @@
-import { type Drawings, moved, softened } from '~/data/art/stroke'
+import { type Drawings, moved, softened, type Stroke } from '~/data/art/stroke'
 import { shadow } from '~/lib/svg/primitives'
 
 import {
@@ -10,7 +10,31 @@ import {
   TIGER_BITE_HANDS,
 } from './heavens-arena'
 
-export const ARENA_ABILITY_DRAWINGS: Drawings = {
+/**
+ * One of Hisoka's playing cards, centred on the origin: its corners
+ * rounded and, along its right and lower edges, its thickness.
+ */
+const CARD: Stroke[] = [
+  {
+    d: 'M-12 -20 Q-14 -20 -14 -18 V18 Q-14 20 -12 20 H12 Q14 20 14 18 V-18 Q14 -20 12 -20 Z',
+  },
+  { d: 'M14 -16 L17 -13 V21 Q17 23 15 23 H-9 L-12 20', role: 'soft' },
+]
+
+/** The pip in the middle of a card, a diamond. */
+const PIP = 'M0 -7 L5 0 L0 7 L-5 0 Z'
+
+/**
+ * Bungee Gum: three bands of Hisoka's aura stretched like pulled gum from
+ * the foot of his cards down to the floor, open lines in the muted ink.
+ * His chapter 55 stage and the ability's drawing share them.
+ */
+export const GUM_BANDS: Stroke = {
+  d: 'M56.9 151.7 C58.9 163.9 57.5 167.9 57.9 169.9 C57.9 173.9 50.1 180 49.1 184 M64.9 151.7 C62.9 163.9 59.5 167.9 59.1 169.9 C59.1 173.9 62.1 180 63.1 184 M76 141 C78 158.5 79 162.5 79.4 164.5 C79.4 168.5 74 180 73 184 M84 141 C82 158.5 81 162.5 80.6 164.5 C80.6 168.5 86 180 87 184 M95.1 151.7 C97.1 163.9 100.5 167.9 100.9 169.9 C100.9 173.9 97.9 180 96.9 184 M103.1 151.7 C101.1 163.9 102.5 167.9 102.1 169.9 C102.1 173.9 109.9 180 110.9 184',
+  role: 'ambient',
+}
+
+export const ARENA_ABILITY_DRAWINGS = {
   // Three of Gido's tops loose on the ring's stone tiles at different
   // tilts, the nearest with its band in tint, and the open lines of their
   // bounces between them: Battle Waltz, the tops he sends spinning round Gon
@@ -95,32 +119,62 @@ export const ARENA_ABILITY_DRAWINGS: Drawings = {
     { d: 'M4 140 H44 M10 148 H60 M2 156 H36', role: 'ambient' },
     shadow(88, 156, 60),
   ],
+  // A forearm in 3/4, its far end turned away and hatched, ringed by a seam of
+  // cross-stitches, and the needle in tint drawing the thread of aura out
+  // of it in an open curve: the woman at Heavens Arena sews Hisoka's arms
+  // back on, episode 32 / chapter 55. No hand or face of hers.
   'nen-stitches': [
+    { d: 'M0 130 C40 108 80 86 112 72 M0 178 C44 152 92 120 126 102' },
     {
-      d: 'M31 125 Q63 99 80 99 L121 99 M30 151 Q64 126 81 125 L124 124 M75 99 L81 125',
+      d: 'M112 72 C126 68 134 90 126 102 M118 76 l6 5 M122 86 l6 4',
+      role: 'ambient',
     },
-    { d: 'M74 102 L84 107 L75 111 L86 116 L78 121', role: 'soft' },
-    { d: 'M114 99 Q126 106 129 121', role: 'ambient' },
     {
-      d: 'M81 106 Q104 58 122 68 Q140 82 116 97 M85 107 Q107 84 124 90',
+      d: 'M54 98 Q46 122 66 142 M47 100 l12 4 M45 110 l12 2 M46 121 l12 -1 M50 131 l11 -4 M56 139 l10 -6',
+      role: 'soft',
+    },
+    {
+      d: 'M106 58 Q110 52 116 50 L152 20 L120 56 Q114 60 106 58 Z M111 55 l5 -3',
       role: 'accent',
     },
+    { d: 'M54 98 C56 70 84 50 108 56', role: 'soft' },
   ],
+  // Three of Hisoka's playing cards flying up off the ring at angles, each
+  // with its thickness, the near card's pip in tint, and under each a band
+  // of his aura stretched like pulled gum down to the floor: the cards he
+  // throws at Kastro, held to the floor with Bungee Gum, episode 32 /
+  // chapter 54. His own Bungee Gum stage, chapter 55, shares the bands.
   'bungee-gum': [
-    { d: 'M30 114 L53 83 L75 111 L52 142Z M93 93 L116 64 L137 92 L115 120Z' },
-    { d: 'M44 113 L53 103 L59 114 L50 124Z', role: 'soft' },
-    { d: 'M107 92 L116 82 L122 93 L113 103Z', role: 'ambient' },
-    { d: 'M24 132 L35 117 M79 121 L89 107 M131 65 L140 54', role: 'accent' },
+    ...moved(CARD, 'translate(38 102) rotate(-22)'),
+    ...moved(CARD, 'translate(122 104) rotate(20)'),
+    ...moved(
+      [...CARD, { d: PIP, role: 'accent' }],
+      'translate(80 80) rotate(6) scale(1.2)',
+    ),
+    { d: PIP, role: 'soft', transform: 'translate(38 102) rotate(-22)' },
+    { d: PIP, role: 'soft', transform: 'translate(122 104) rotate(20)' },
+    ...moved([GUM_BANDS], 'translate(80 184) scale(2 1.5) translate(-80 -184)'),
+    { d: 'M14 184 H146', role: 'ambient', dashed: true },
   ],
+  // A square handkerchief draped over the end of a forearm, its corners
+  // hanging in soft folds, its hem in tint and the underside hatched where
+  // it turns away: the cloth Hisoka throws over his severed arm in the
+  // Kastro match, episode 32 / chapter 54, given the texture of skin with
+  // Texture Surprise.
   'texture-surprise': [
+    { d: 'M4 150 C30 128 52 110 74 98 M18 178 C44 158 70 140 92 128' },
     {
-      d: 'M27 136 Q51 115 79 116 L123 111 Q137 112 139 125 Q140 138 123 145 L83 151 Q59 150 38 164',
-    },
-    {
-      d: 'M51 117 Q62 95 60 75 Q86 88 111 62 Q105 94 132 105 Q92 106 73 126Z',
+      d: 'M70 96 Q90 60 122 64 Q144 70 142 96 L150 128 Q132 120 120 138 L110 164 Q98 146 82 148 L62 134 Q76 118 70 96 Z',
       role: 'accent',
     },
-    { d: 'M73 115 Q82 96 103 91 M63 103 Q76 98 84 89', role: 'soft' },
-    { d: 'M110 62 Q122 52 130 53 M115 72 Q129 64 137 65', role: 'ambient' },
+    {
+      d: 'M96 72 Q104 100 100 140 M120 66 Q126 96 132 122 M84 86 Q88 112 84 140',
+      role: 'soft',
+    },
+    {
+      d: 'M114 140 l6 -8 M106 150 l6 -8 M138 118 l6 -6 M66 128 l6 -6',
+      role: 'ambient',
+    },
+    shadow(84, 188, 50),
   ],
-}
+} satisfies Drawings

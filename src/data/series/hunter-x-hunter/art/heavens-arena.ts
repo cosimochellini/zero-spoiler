@@ -217,38 +217,38 @@ export const HEAVENS_ARENA_DRAWINGS = {
     },
     shadow(80, 176, 46),
   ],
-  // Wing's shirt with its tail hanging out over the belt on one side, the
-  // loose tail in tint, the other side tucked in: Zushi points out the
-  // shirttail as his teacher arrives and gives his name, episode 27 /
-  // chapter 45. No glasses or face.
+  // Wing's light shirt in a 3/4 view, cropped at the hips: the far sleeve
+  // turning away and hatched, the near cuff seen open, the belt buckle a
+  // small block, and on the near side the shirttail hanging out over the
+  // belt in tint while the far side is tucked in. Zushi points the shirttail
+  // out as his teacher arrives and gives his name, episode 27 / chapter 45.
+  // No glasses or face.
   'wing': [
-    { d: 'M64 34 L72 50 L80 42 L88 50 L96 34 Q80 40 64 34' },
+    { d: 'M60 34 L68 50 L84 42 L92 50 L102 32 Q82 40 60 34' },
     {
-      d: 'M64 34 L34 46 L22 112 M36 116 L44 74 L46 114 M96 34 L126 46 L138 112 M124 116 L116 74 L114 120',
+      d: 'M60 34 L30 46 L18 112 M34 118 L42 74 L44 122 M102 32 L122 42 L132 106 M120 110 L116 74 L114 120',
     },
+    { d: 'M18 112 A9 4 20 1 0 34 118 A9 4 20 1 0 18 112', role: 'soft' },
     {
-      d: 'M22 112 L36 116 L37 122 L23 118 Z M138 112 L124 116 L123 122 L137 118 Z',
+      d: 'M84 42 Q86 84 86 124 M85 58 h0.01 M85.6 74 h0.01 M86 90 h0.01 M86 106 h0.01',
       role: 'soft',
     },
     {
-      d: 'M80 42 V114 M80 56 h0.01 M80 72 h0.01 M80 88 h0.01 M80 104 h0.01',
-      role: 'soft',
+      d: 'M120 110 L132 106 L133 112 L121 116 Z M122 50 l6 4 M124 62 l7 4 M126 74 l7 4 M128 86 l6 4 M129 98 l5 3',
+      role: 'ambient',
     },
-    { d: 'M80 120 H114 V130 H80 M84 118 h10 v14 h-10' },
     {
-      d: 'M46 112 C42 130 44 146 48 158 C58 152 70 154 80 160 V114',
+      d: 'M86 126 L114 122 M86 136 L114 132 M90 122 h10 v15 h-10 Z M100 122 l3 -2 v15 l-3 2',
+    },
+    {
+      d: 'M44 120 C40 134 36 148 38 160 C54 154 72 158 88 164 V126',
       role: 'accent',
     },
     {
-      d: 'M90 108 l3 10 M102 106 l2 12 M58 124 l-3 24 M68 122 l-1 26',
+      d: 'M56 128 l-4 26 M70 128 l-1 28 M48 60 l4 10 M98 60 l3 14',
       role: 'soft',
     },
-    { d: 'M48 158 L46 186 M114 130 L116 186 M82 160 L82 186' },
-    {
-      d: 'M100 140 l8 -5 M102 152 l8 -5 M104 164 l8 -5 M106 64 l7 -5 M106 80 l7 -5',
-      role: 'ambient',
-    },
-    shadow(82, 192, 40),
+    { d: 'M42 160 L43 170 M88 164 V170 M114 132 L115 170', role: 'soft' },
   ],
   // One of Gido's spinning tops on its point, seen a little from above, the
   // band round its widest part in tint and the turn drawn as open lines; his
