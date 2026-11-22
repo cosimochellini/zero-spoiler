@@ -432,8 +432,10 @@ with the legal page alone. Copy rules live in the
   `movedPageRedirect` in `src/lib/legacyRedirect.ts` answers with a 301 that
   keeps the query for every series with the page) draws the bodies of power. One
   Piece and Hunter x Hunter have it (`Series.features.power`). Hunter x Hunter's
-  is open before its first body is filed (owner, #1442): until #1443 to #1447
-  file them, it says that nothing is open, at every bookmark and with none. The
+  opened before its first body was filed (owner, #1442), and #1443 to #1447 file
+  its bodies one by one: a reader sees a body once a seat of it is held or
+  vacant, so with no bookmark the demo's end shows the Hunter Association's
+  Chairman (#1443), and before a body opens the page says nothing is open. The
   bodies live one per module in `src/data/series/<folder>/power/`, listed in the
   order of the page in `src/data/series/<folder>/power.ts`. Seat titles are a
   word or two, so `scripts/archive-gate.power.mjs` looks for each module by its
@@ -508,7 +510,7 @@ epithet, bounty and the like) are counted only as part of the timelines row.
 | Records                   | 368                                                   |
 | Characters                | 290                                                   |
 | Nen abilities             | 28                                                    |
-| Bodies of power           | 1, with 13 seats                                      |
+| Bodies of power           | 2, with 27 seats                                      |
 | Arcs, places              | 7 · 43                                                |
 | Saga modules              | 7                                                     |
 | Line drawings             | 368, one per record, plus 94 redrawings of 81 records |

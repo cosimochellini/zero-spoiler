@@ -38,10 +38,15 @@ const ROSTER = [
   V,
 ]
 
-/** The anime ties nos. 6 and 9 in episode 54, where the leader is named. */
-const FORTUNES = UVOGIN.with(11, V).with(6, 'shalnark').with(9, 'pakunoda')
-const EP_NO_HISOKA = FORTUNES.with(4, V).with(9, V)
-const EP_KALLUTO = EP_NO_HISOKA.with(4, 'kalluto')
+/**
+ * In the anime each numbered seat opens with its holder, no count told: the
+ * leader, then nos. 4, 6, 8, 9 and 11 as they open.
+ */
+const UVOGIN_EP = [...CALLED, 'uvogin']
+const FORTUNES = ['chrollo', 'hisoka', 'shalnark', 'pakunoda', V]
+const NO_PAKUNODA = FORTUNES.with(3, V)
+const EP_KALLUTO = NO_PAKUNODA.with(1, 'kalluto')
+const EP_SHIZUKU = EP_KALLUTO.toSpliced(3, 0, 'shizuku')
 
 describe('the Phantom Troupe', () => {
   it.each([
@@ -68,17 +73,21 @@ describe('the Phantom Troupe', () => {
   it.each([
     [31, undefined],
     [32, CALLED],
-    [40, CALLED],
-    [41, COUNTED],
-    [44, COUNTED.with(11, 'uvogin')],
-    [47, COUNTED.with(11, V)],
-    [53, COUNTED.with(11, V)],
+    // No source confirms episode 41 says thirteen: no seat opens with it.
+    [41, CALLED],
+    [43, CALLED],
+    [44, UVOGIN_EP],
+    [47, UVOGIN_EP.with(2, V)],
+    [53, UVOGIN_EP.with(2, V)],
     [54, FORTUNES],
-    [58, EP_NO_HISOKA],
+    // Hisoka keeps no. 4 in the anime until Kalluto takes it.
+    [58, NO_PAKUNODA],
+    [71, NO_PAKUNODA],
     [72, EP_KALLUTO],
-    [97, EP_KALLUTO.with(8, 'shizuku')],
+    [96, EP_KALLUTO],
+    [97, EP_SHIZUKU],
     // The manga-only roster of chapter 377 never reaches the anime.
-    [148, EP_KALLUTO.with(8, 'shizuku')],
+    [148, EP_SHIZUKU],
   ])('seat at episode %i what the anime has told', (episode, seats) => {
     expect(troupeAt({ mode: 'episode', episode })).toStrictEqual(seats)
   })

@@ -35362,6 +35362,16 @@
       "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421700",
       "contentSha256": "5ca6e81f2d4d87d461e7529b28b05c00e4e9f5775bc22f1a965e47bbdff7a653"
     },
+    "hxh-en-Template:Zodiacs_Gallery-387229.json": {
+      "locale": "en",
+      "title": "Template:Zodiacs Gallery",
+      "revision": 387229,
+      "revisionDate": "2024-03-17T04:48:33Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Template:Zodiacs_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=387229",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=387229",
+      "contentSha256": "e183cd28a03bc08d4ca57dfc8e7963d4c475bf2fa10ea19ed3f0920cabdfffda"
+    },
     "hxh-en-Phantom_Troupe-426123.json": {
       "locale": "en",
       "title": "Phantom Troupe",

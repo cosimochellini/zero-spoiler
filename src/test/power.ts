@@ -118,6 +118,22 @@ function noEarlier(later: Gated, earlier: Gated): boolean {
   )
 }
 
+/**
+ * Whether a holding comes after the one before it: a later episode, or the
+ * same one for a change the manga alone tells at a later chapter, since the
+ * manga's changes after the anime has ended share its last episode
+ * (Kurapika's Rat seat, #1443). Never an earlier chapter.
+ */
+function follows(holding: Holding, previous: Holding): boolean {
+  const later =
+    holding.episode > previous.episode
+    || (holding.episode === previous.episode
+      && holding.source === 'chapter'
+      && holding.chapter > previous.chapter)
+
+  return later && holding.chapter >= previous.chapter
+}
+
 /** What is wrong with one holding of a seat, after the one before it. */
 function holdingFaults(
   holding: Holding,
@@ -136,10 +152,7 @@ function holdingFaults(
     revealedAtEpisode: holding.episode,
     revealedAtChapter: holding.chapter,
   }
-  const outOfOrder =
-    previous !== undefined
-    && (holding.episode <= previous.episode
-      || holding.chapter < previous.chapter)
+  const outOfOrder = previous !== undefined && !follows(holding, previous)
   const unfiled =
     holding.value !== null && archive.getCharacter(holding.value) === undefined
 
