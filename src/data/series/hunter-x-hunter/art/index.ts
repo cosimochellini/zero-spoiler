@@ -1398,12 +1398,11 @@ const hunterExamRedrawn: Redrawings = {
       ],
     },
     // The same fan in his left hand, seen from the back: back from the
-    // dead, he makes rubber prostheses with Texture Surprise for the four
-    // fingers the blast took (chapters 355, 357). The rebuilt fingers and
-    // their nails are drawn in the muted ink, an imitation over the real
-    // palm; the wiki does not say which digit was spared, so that is a
-    // frame check. He dies and returns in the same chapter, so the return
-    // is the only Kakin stage.
+    // dead, he makes rubber prostheses with Texture Surprise for his left
+    // hand and right leg, chapter 357. The rebuilt fingers and their nails
+    // are drawn in the muted ink, an imitation over the hand; how much of
+    // the hand the prosthesis replaces is a frame check. The leg is not
+    // drawn. It follows his presumed death at chapter 356.
     {
       episode: 148,
       source: 'chapter',
