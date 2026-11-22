@@ -633,8 +633,9 @@ export const greedIslandRedrawn: Redrawings = {
       chapter: 177,
       // Episode 73 / chapter 177: she reverts to her true form, a massive,
       // muscular woman, and knocks Bara out with one punch. Her huge bare
-      // fist, knuckles soft and far side hatched, now carries the gem;
-      // Cookie stays. Gloves go only with her younger form, so none here.
+      // fist, knuckles soft and far side hatched, drawn under the gem as a
+      // composition: she never holds the gem in this form. Cookie stays.
+      // Gloves go only with her younger form, so none here.
       value: [
         ...moved(
           BISCUIT_GEM,
