@@ -100,6 +100,61 @@ const QUEEN_BODY: Stroke[] = [
 ]
 const NEST_FLOOR: Stroke = { d: 'M6 158 H156', role: 'ambient' }
 
+/**
+ * Shaiapouf's frilly white shirt from the front, the cascade of ruffles
+ * down its chest in tint, ruffled cuffs and the black trousers hatched. His
+ * death lays it on the ground.
+ */
+export const POUF_SHIRT: Stroke[] = [
+  { d: 'M66 28 L64 40 Q80 47 96 40 L94 28 M66 28 Q80 34 94 28' },
+  {
+    d: 'M64 38 C50 42 40 46 36 52 L22 114 M38 118 L46 80 L48 142 H112 L114 80 L122 118 M138 114 L124 52 C120 46 110 42 96 38',
+  },
+  { d: 'M22 114 q4 7 8 2 q3 7 8 2 M122 118 q4 6 8 0 q3 6 8 -4', role: 'soft' },
+  {
+    d: 'M72 44 q2.7 8 5.3 0 q2.7 8 5.3 0 q2.7 8 5.3 0 M68 58 q3 8 6 0 q3 8 6 0 q3 8 6 0 q3 8 6 0 M64 73 q3.2 8 6.4 0 q3.2 8 6.4 0 q3.2 8 6.4 0 q3.2 8 6.4 0 q3.2 8 6.4 0 M60 89 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0',
+    role: 'accent',
+  },
+  {
+    d: 'M72 44 L68 58 L64 73 L60 89 M88 44 L92 58 L96 73 L100 89',
+    role: 'soft',
+  },
+  { d: 'M80 98 V142 M80 112 h0.01 M80 128 h0.01', role: 'soft' },
+  {
+    d: 'M54 100 Q58 122 56 140 M106 100 Q102 122 104 140 M42 66 Q44 84 40 98 M118 66 Q116 84 120 98',
+    role: 'soft',
+  },
+  {
+    d: 'M48 142 V152 H112 V142 M48 152 L46 186 M112 152 L114 186 M80 156 V186',
+  },
+  {
+    d: 'M100 160 l8 -5 M100 172 l8 -5 M100 184 l8 -5 M102 147 l6 -4',
+    role: 'ambient',
+  },
+]
+
+/** The shirt turned a little and set back between the wings. */
+const POUF_TURNED =
+  'translate(78 110) scale(0.66 0.66) skewY(-4) translate(-80 -110)'
+
+/**
+ * His butterfly wings opened behind the shirt: the near pair with a vein
+ * each, the far pair smaller and hatched.
+ */
+const POUF_WINGS: Stroke[] = [
+  {
+    d: 'M56 69 C44 42 22 22 8 28 C0 34 6 58 22 74 C30 82 38 88 45 90 M57 128 C40 122 18 124 16 140 C16 154 36 152 57 138',
+  },
+  { d: 'M54 72 Q34 50 14 36 M54 132 Q32 134 22 146', role: 'soft' },
+  {
+    d: 'M98 66 C112 42 132 30 146 34 C156 38 150 58 136 70 C128 78 120 84 111 86 M100 124 C116 120 136 122 138 134 C140 146 124 144 100 134',
+  },
+  {
+    d: 'M128 42 l6 -4 M136 50 l6 -4 M128 62 l6 -4 M124 128 l5 -4 M130 136 l5 -4',
+    role: 'ambient',
+  },
+]
+
 /** The King, the Royal Guards and the Squadron Leaders closest to the Queen (#1021). */
 export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // The Queen in profile on the floor of her nest, her abdomen swollen with
@@ -145,41 +200,15 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // chapter 189 while he examines the dead soldiers. No book, which only
   // the anime is known to give him.
   'peggy': [...PEGGY_COAT, shadow(80, 184, 44)],
-  // Shaiapouf's frilly white shirt from the front, the cascade of ruffles
-  // down its chest in tint, ruffled cuffs and the black trousers hatched:
-  // the Royal Guard who steps out of the shadows beside Neferpitou, episode
-  // 86 / chapter 202. No wings, which he first opens in chapter 213, and no
-  // violin, first played in chapter 206.
+  // Shaiapouf's frilly white shirt and black trousers in 3/4, the cascade
+  // of ruffles in tint, with his butterfly wings opened behind it, the far
+  // wings hatched: the Royal Guard who steps out of the shadows beside
+  // Neferpitou, episode 86 / chapter 202, and flies up the nest on those
+  // wings in chapter 213. No antennae or face, and no violin.
   'shaiapouf': [
-    { d: 'M66 28 L64 40 Q80 47 96 40 L94 28 M66 28 Q80 34 94 28' },
-    {
-      d: 'M64 38 C50 42 40 46 36 52 L22 114 M38 118 L46 80 L48 142 H112 L114 80 L122 118 M138 114 L124 52 C120 46 110 42 96 38',
-    },
-    {
-      d: 'M22 114 q4 7 8 2 q3 7 8 2 M122 118 q4 6 8 0 q3 6 8 -4',
-      role: 'soft',
-    },
-    {
-      d: 'M72 44 q2.7 8 5.3 0 q2.7 8 5.3 0 q2.7 8 5.3 0 M68 58 q3 8 6 0 q3 8 6 0 q3 8 6 0 q3 8 6 0 M64 73 q3.2 8 6.4 0 q3.2 8 6.4 0 q3.2 8 6.4 0 q3.2 8 6.4 0 q3.2 8 6.4 0 M60 89 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0 q3.3 8 6.7 0',
-      role: 'accent',
-    },
-    {
-      d: 'M72 44 L68 58 L64 73 L60 89 M88 44 L92 58 L96 73 L100 89',
-      role: 'accent',
-    },
-    { d: 'M80 98 V142 M80 112 h0.01 M80 128 h0.01', role: 'soft' },
-    {
-      d: 'M54 100 Q58 122 56 140 M106 100 Q102 122 104 140 M42 66 Q44 84 40 98 M118 66 Q116 84 120 98',
-      role: 'soft',
-    },
-    {
-      d: 'M48 142 V152 H112 V142 M48 152 L46 186 M112 152 L114 186 M80 156 V186',
-    },
-    {
-      d: 'M100 160 l8 -5 M100 172 l8 -5 M100 184 l8 -5 M102 147 l6 -4',
-      role: 'ambient',
-    },
-    shadow(80, 192, 40),
+    ...moved(POUF_SHIRT, POUF_TURNED),
+    ...POUF_WINGS,
+    shadow(80, 172, 40),
   ],
   // The cocoon Menthuthuyoupi has not yet left, hanging from the ceiling of
   // the nest by its stalk, its silk soft and its far side hatched: Shaiapouf

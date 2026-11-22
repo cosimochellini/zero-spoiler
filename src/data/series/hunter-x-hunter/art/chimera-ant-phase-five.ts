@@ -4,12 +4,13 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, shadow } from '~/lib/svg/primitives'
+import { circle, dots, shadow } from '~/lib/svg/primitives'
 
 import { chimeraAntReturningRedrawn } from './chimera-ant-returning'
 import {
   CHIMERA_ANT_ROYALS_DRAWINGS,
   chimeraAntRoyalsRedrawn,
+  POUF_SHIRT,
   YOUPI_ROCK,
   YOUPI_SHELL,
   YOUPI_SPLIT,
@@ -17,6 +18,36 @@ import {
 
 /** How a drawing is laid on the floor, flattened as a cloth lies. */
 const LAID = 'translate(80 132) rotate(-6) scale(0.95 0.42) translate(-80 -110)'
+
+/** Shaiapouf with his wings, as he first appears, without the shadow. */
+const POUF = CHIMERA_ANT_ROYALS_DRAWINGS.shaiapouf.slice(0, -1)
+
+/**
+ * A cocoon of his hanging from a branch beside him, its silk soft: the
+ * cocoons he puts the chosen humans in to give them Nen.
+ */
+const POUF_COCOON: Stroke[] = [
+  { d: 'M158 148 Q148 144 136 150 M146 146 V153' },
+  { d: 'M146 153 C156 153 156 184 146 186 C136 184 136 153 146 153 Z' },
+  { d: 'M139 164 Q146 168 153 164 M138 175 Q146 179 154 175', role: 'soft' },
+]
+
+/** The scales of his wings scattered round him, in open dots. */
+const POUF_SCALES: Stroke = {
+  d: dots([
+    [30, 96],
+    [20, 110],
+    [134, 96],
+    [146, 106],
+    [62, 40],
+    [98, 42],
+    [36, 164],
+    [118, 172],
+    [24, 180],
+    [152, 86],
+  ]),
+  role: 'ambient',
+}
 
 /**
  * Neferpitou's head from behind: the mop of wavy white hair, the two cat
@@ -200,15 +231,48 @@ export const chimeraAntPhaseFiveRedrawn: Redrawings = {
       ],
     },
   ],
-  // The same frilly shirt and trousers laid on the ground, empty: Shaiapouf
-  // lies dead among the hypnotised crowd, episode 135 / chapter 314. No
-  // wings, cape or body.
   shaiapouf: [
+    // The same, with one of his cocoons hanging from a branch beside him:
+    // the trees before the palace hold the five thousand he has made,
+    // episode 104 / chapter 246.
+    {
+      episode: 104,
+      chapter: 246,
+      value: [...POUF, ...POUF_COCOON, shadow(80, 172, 40)],
+    },
+    // The same, with the scales of his wings scattered round him: he
+    // hypnotises the crowd gathered at the palace, episode 109 / chapter
+    // 259.
+    {
+      episode: 109,
+      chapter: 259,
+      value: [...POUF, ...POUF_COCOON, POUF_SCALES, shadow(80, 172, 40)],
+    },
+    // The same, with a swarm of small winged copies of him: Beelzebub, he
+    // breaks his body into tiny clones to leave Morel's smoke, episode 120
+    // / chapter 284. Wings only, no faces.
+    {
+      episode: 120,
+      chapter: 284,
+      value: [
+        ...POUF,
+        ...POUF_COCOON,
+        POUF_SCALES,
+        {
+          d: 'M14 10 v9 M14 12 q-8 -7 -9 1 q3 4 9 -1 q8 -7 9 1 q-3 4 -9 -1 M36 4 v9 M36 6 q-8 -7 -9 1 q3 4 9 -1 q8 -7 9 1 q-3 4 -9 -1 M124 8 v9 M124 10 q-8 -7 -9 1 q3 4 9 -1 q8 -7 9 1 q-3 4 -9 -1 M148 18 v9 M148 20 q-8 -7 -9 1 q3 4 9 -1 q8 -7 9 1 q-3 4 -9 -1 M58 180 v9 M58 182 q-8 -7 -9 1 q3 4 9 -1 q8 -7 9 1 q-3 4 -9 -1 M106 184 v9 M106 186 q-8 -7 -9 1 q3 4 9 -1 q8 -7 9 1 q-3 4 -9 -1',
+          role: 'soft',
+        },
+        shadow(80, 172, 40),
+      ],
+    },
+    // The same frilly shirt and trousers laid on the ground, empty:
+    // Shaiapouf lies dead among the hypnotised crowd, episode 135 / chapter
+    // 314. No wings, cape or body.
     {
       episode: 135,
       chapter: 314,
       value: [
-        ...moved(CHIMERA_ANT_ROYALS_DRAWINGS.shaiapouf.slice(0, -1), LAID),
+        ...moved(POUF_SHIRT, LAID),
         { d: 'M4 170 H156', role: 'ambient' },
         shadow(80, 178, 64),
       ],
