@@ -1,34 +1,124 @@
-import type { Drawings } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  softened,
+  type Stroke,
+} from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+
+import { DRAGON_HEAD } from './yorknew-abilities'
+
+/**
+ * Zeno's robe in 3/4 under its standing collar: the near sleeve and side,
+ * the far side narrower, the long panel down the front in tint with its
+ * edge turned and its hem turning away, the far side hatched.
+ */
+const ZENO_ROBE: Stroke[] = [
+  { d: 'M64 40 Q76 46 90 40 V33 Q76 39 64 33 Z' },
+  { d: 'M90 33 L95 36 V42 L90 40', role: 'soft' },
+  { d: 'M64 40 Q46 44 28 56 L20 96 L32 98 L38 72 L40 170 Q54 175 66 172' },
+  { d: 'M90 40 Q102 44 114 52 L120 90 L112 92 L110 72 L108 160' },
+  {
+    d: 'M64 44 L92 44 C96 80 98 120 104 156 L66 162 C62 124 60 84 64 44 Z',
+    role: 'accent',
+  },
+  { d: 'M92 44 L96 46 C100 82 102 120 108 154 L104 156' },
+  { d: 'M66 162 C68 168 78 170 90 166 L108 160 L104 156' },
+  { d: 'M73 58 C74 90 74 124 77 154', role: 'soft' },
+  {
+    d: 'M99 66 L104 62 M100 88 L106 84 M102 110 L107 106 M104 132 L108 129 M78 167 L82 164 M88 167 L92 164',
+    role: 'ambient',
+  },
+]
+
+/**
+ * Silva's sleeveless shinobi top in 3/4, the crossed collar turning round
+ * the neck and the far side hatched, and the far wristband lying below it.
+ * The near wristband, in tint, is `SILVA_BAND`.
+ */
+const SILVA_TOP: Stroke[] = [
+  {
+    d: 'M62 30 L44 40 Q36 62 46 78 L48 142 Q76 150 104 144 L106 80 Q114 64 110 42 L96 30',
+  },
+  { d: 'M62 30 Q78 36 96 30', role: 'soft' },
+  { d: 'M62 30 C66 56 80 86 104 116' },
+  { d: 'M70 31 C74 54 86 80 105 106', role: 'soft' },
+  { d: 'M96 30 C92 44 86 54 78 64', role: 'soft' },
+  { d: 'M60 98 Q62 120 58 140 M72 110 Q74 126 72 146', role: 'soft' },
+  {
+    d: 'M96 56 L102 52 M97 76 L103 72 M98 128 L103 124 M99 138 L103 135',
+    role: 'ambient',
+  },
+  {
+    d: `${ellipse(108, 168, 13, 4.5)} M95 168 V174 A13 4.5 0 0 0 121 174 V168`,
+  },
+]
+const SILVA_BAND = `${ellipse(54, 166, 16, 5.5)} M38 166 V174 A16 5.5 0 0 0 70 174 V166`
+
+/**
+ * Kalluto's dark furisode in 3/4: the near sleeve swung forward with its
+ * second face, the far sleeve narrower and hatched, and the broad obi in
+ * tint wrapping round the waist.
+ */
+const KALLUTO_FURISODE: Stroke[] = [
+  { d: 'M68 34 L42 44 L16 58 L12 134 Q14 142 24 142 L42 140 L46 84' },
+  { d: 'M16 58 L8 66 L6 128 Q6 136 12 134' },
+  { d: 'M88 34 L108 42 L122 50 L124 122 Q124 128 118 128 L106 126 L104 84' },
+  { d: 'M46 112 L48 172 Q74 178 102 172 L104 112' },
+  { d: 'M68 34 L84 70 M75 34 L88 62 M88 34 L80 50', role: 'soft' },
+  { d: 'M46 84 Q75 92 104 84 V110 Q75 118 46 110 Z', role: 'accent' },
+  { d: 'M104 84 Q110 97 104 110 M46 84 L42 44 M104 84 L108 42', role: 'soft' },
+  { d: 'M84 116 L88 174 M26 70 Q30 100 26 128', role: 'soft' },
+  {
+    d: 'M110 60 L118 55 M110 76 L119 70 M110 92 L119 86 M110 108 L119 102',
+    role: 'ambient',
+  },
+]
+
+/**
+ * The Troupe's twelve-legged spider as a symbol, its abdomen and head and
+ * six legs a side, centred on the origin. The member's number is left off.
+ */
+const TROUPE_SPIDER: Stroke[] = [
+  { d: `${ellipse(0, 5, 5.5, 7.5)} ${circle(0, -6, 3.5)}` },
+  {
+    d: 'M-4 -5 L-8.3 -17.7 L-9.9 -16.5 M-4 -2.8 L-12.4 -13.2 L-16.6 -10.4 M-4 -0.6 L-14.7 -6.9 L-20.5 -1.5 M-4 1.6 L-14.7 -0.1 L-20.5 8.5 M-4 3.8 L-12.4 6.2 L-16.6 17.4 M-4 6 L-8.3 10.7 L-9.9 23.5 M4 -5 L8.3 -17.7 L9.9 -16.5 M4 -2.8 L12.4 -13.2 L16.6 -10.4 M4 -0.6 L14.7 -6.9 L20.5 -1.5 M4 1.6 L14.7 -0.1 L20.5 8.5 M4 3.8 L12.4 6.2 L16.6 17.4 M4 6 L8.3 10.7 L9.9 23.5',
+  },
+]
+
+/** The spider set beside Kalluto's far sleeve, off the garment. */
+const KALLUTO_SPIDER = moved(TROUPE_SPIDER, 'translate(142 26) scale(0.8)')
 
 /** Original objects; the cited episode/chapter references await direct viewing. */
 export const ZOLDYCK_DRAWINGS = {
-  // Coco Loo's small tour-guide hat, worn tilted, its round crown and the
-  // band at its rim: she welcomes the bus tour in episode 22 / chapter 39.
-  // No badge, no lettering.
-  // Graded B (owner ruling): true, spoiler-free and on style, not yet an A.
+  // Coco Loo's small tour-guide hat, tilted and seen a little from below:
+  // the round crown with a fold, the band in tint at its rim and the open
+  // underside showing, its inside hatched. She welcomes the bus tour in
+  // episode 22 / chapter 39. No badge, no lettering.
   'coco-loo': [
-    {
-      d: 'M40 108 C38 80 54 64 80 64 C106 64 122 80 120 108',
-      transform: 'rotate(-14 80 100)',
-    },
-    {
-      d: 'M40 108 V117 A40 13 0 0 0 120 117 V108 A40 13 0 0 1 40 108',
-      role: 'accent',
-      transform: 'rotate(-14 80 100)',
-    },
-    { d: 'M50 88 Q56 74 72 69', role: 'soft', transform: 'rotate(-14 80 100)' },
-    {
-      d: 'M106 78 L111 74 M108 86 L115 81 M110 94 L117 89 M111 101 L118 97',
-      role: 'ambient',
-      transform: 'rotate(-14 80 100)',
-    },
-    {
-      d: 'M46 113 Q80 122 114 113',
-      role: 'soft',
-      transform: 'rotate(-14 80 100)',
-    },
-    shadow(80, 180, 40),
+    ...moved(
+      [
+        { d: 'M42 106 C40 76 56 58 80 58 C104 58 120 76 118 106' },
+        {
+          d: 'M41 96 C54 88 106 88 119 96 L118 106 C106 98 54 98 42 106 Z',
+          role: 'accent',
+        },
+        { d: 'M42 106 C54 121 106 121 118 106' },
+        {
+          d: 'M56 108 l6 5 M70 107 l8 7 M86 107 l8 7 M102 108 l6 5',
+          role: 'ambient',
+        },
+        { d: 'M54 82 Q60 68 74 62', role: 'soft' },
+        { d: 'M80 59 C74 70 72 80 74 92', role: 'soft' },
+        {
+          d: 'M106 70 L111 66 M109 78 L115 74 M111 86 L117 82',
+          role: 'ambient',
+        },
+      ],
+      'rotate(-14 80 100)',
+    ),
+    shadow(80, 172, 40),
   ],
   // Zebro's key to the service door, seen from its corner: the guard keeps
   // it at the gate for intruders, in episode 22 / chapter 39.
@@ -81,21 +171,29 @@ export const ZOLDYCK_DRAWINGS = {
     },
     shadow(80, 167, 54),
   ],
-  // Seaquant's white headband, off and still in its loop, the knot pulled
-  // tight and the two tails trailing: the groundskeeper at the servants'
-  // quarters in episode 23 / chapter 40.
+  // Seaquant's white headband, off and still in its loop, seen from a little
+  // above: the knot pulled tight in tint, the cloth gathered where it is
+  // tied and the two long tails trailing to the ground. The groundskeeper
+  // wears it at the servants' quarters in episode 23 / chapter 40.
   'seaquant': [
-    { d: ellipse(76, 112, 46, 17) },
-    { d: 'M30 112 V119 A46 17 0 0 0 122 119 V112' },
-    { d: 'M34 117 A42 13 0 0 1 118 117', role: 'soft' },
-    { d: 'M50 105 L53 101 M62 103 L65 99 M76 102 L79 98', role: 'ambient' },
-    { d: 'M52 124 Q56 128 62 128 M88 129 Q96 128 100 125', role: 'soft' },
-    { d: 'M104 122 L112 116 L122 120 L118 130 L108 131 Z', role: 'accent' },
+    { d: ellipse(70, 104, 48, 17) },
+    { d: 'M22 104 V114 A48 17 0 0 0 118 114 V104' },
+    { d: 'M28 110 A42 12 0 0 1 112 110', role: 'soft' },
     {
-      d: 'M118 128 C126 136 130 148 126 160 L134 158 C138 146 132 132 122 124',
+      d: 'M40 98 L44 93 M54 93 L57 88 M70 91 L72 86 M86 92 L88 87',
+      role: 'ambient',
     },
-    { d: 'M110 131 C108 142 100 152 92 158 L99 162 C107 155 114 144 116 132' },
-    shadow(80, 178, 52),
+    {
+      d: 'M106 112 C108 102 124 100 130 108 C136 116 130 128 120 130 C110 131 104 122 106 112 Z',
+      role: 'accent',
+    },
+    { d: 'M112 108 L117 116 M124 106 L121 115', role: 'soft' },
+    {
+      d: 'M124 128 C134 140 140 158 134 176 L144 174 C150 156 142 136 130 125',
+    },
+    { d: 'M114 131 C112 148 102 164 90 174 L98 180 C112 168 121 150 121 132' },
+    { d: 'M128 150 l-2 10 M106 160 l-4 6', role: 'soft' },
+    shadow(84, 186, 56),
   ],
   // Canary's staff, its foot on the line she draws across the path:
   // she stops anyone who crosses it in episode 23 / chapter 41, ahead of
@@ -153,86 +251,39 @@ export const ZOLDYCK_DRAWINGS = {
     { d: 'M60 100 L64 98 M66 82 L70 81 M78 66 L81 66', role: 'ambient' },
     shadow(84, 186, 50),
   ],
-  // The long panel hanging down the front of Zeno's robe from under its
-  // standing collar, its back turned at the hem: Killua's grandfather in
-  // episode 24 / chapter 42. The words on it are left off.
-  'zeno': [
-    { d: 'M66 40 Q80 46 94 40 V34 Q80 40 66 34 Z' },
-    {
-      d: 'M66 40 Q50 44 34 54 L26 92 M94 40 Q110 44 126 54 L134 92',
-      role: 'soft',
-    },
-    { d: 'M40 72 L44 168 M120 72 L116 168', role: 'soft' },
-    {
-      d: 'M66 44 L96 44 C100 80 102 120 108 156 L68 162 C64 124 62 84 66 44 Z',
-      role: 'accent',
-    },
-    { d: 'M96 44 L100 46 C104 82 106 120 112 154 L108 156' },
-    { d: 'M68 162 C70 168 80 170 92 166 L110 160 L108 156' },
-    { d: 'M75 58 C76 90 76 124 79 154', role: 'soft' },
-    {
-      d: 'M101 66 L103 64 M102 88 L104 86 M103 110 L105 108 M105 132 L107 130 M78 164 L82 161 M88 165 L92 162',
-      role: 'ambient',
-    },
-    shadow(80, 184, 40),
-  ],
-  // Silva's sleeveless top with its crossed collar, and the pair of
-  // wristbands he wears with it: Killua's father talks with his son in
-  // episode 24 / chapter 42, named there in the anime and in chapter 95 in
-  // the manga. No face.
+  // Zeno's robe in 3/4 from under its standing collar, the long panel
+  // hanging down its front in tint, its edge turned to show a second face
+  // and the hem turning away, the far side hatched: Killua's grandfather
+  // in episode 24 / chapter 42. The words on the panel are left off.
+  'zeno': [...ZENO_ROBE, shadow(78, 186, 44)],
+  // Silva's sleeveless shinobi top in 3/4, the crossed collar turning
+  // round the neck and the far side hatched, with the pair of wristbands he
+  // wears below it, the near one in tint: Killua's father talks with his
+  // son in episode 24 / chapter 42, named there in the anime and in chapter
+  // 95 in the manga. No face.
   'silva': [
-    {
-      d: 'M60 34 L40 44 Q34 66 44 80 L46 146 Q80 152 114 146 L116 80 Q126 66 120 44 L100 34',
-    },
-    { d: 'M60 34 Q80 40 100 34', role: 'soft' },
-    { d: 'M60 34 C64 60 78 90 104 120' },
-    { d: 'M68 35 C72 58 84 84 106 110', role: 'soft' },
-    { d: 'M100 34 C96 48 90 58 82 68', role: 'soft' },
-    { d: 'M60 100 Q62 122 58 142 M74 112 Q76 128 74 146', role: 'soft' },
-    {
-      d: 'M108 58 L112 55 M109 92 L113 89 M109 110 L113 107 M109 128 L113 125',
-      role: 'ambient',
-    },
-    { d: ellipse(56, 164, 15, 5), role: 'accent' },
-    { d: 'M41 164 V172 A15 5 0 0 0 71 172 V164', role: 'accent' },
-    { d: ellipse(104, 166, 15, 5), role: 'accent' },
-    { d: 'M89 166 V174 A15 5 0 0 0 119 174 V166', role: 'accent' },
-    shadow(80, 188, 50),
+    ...SILVA_TOP,
+    { d: SILVA_BAND, role: 'accent' },
+    shadow(80, 190, 50),
   ],
-  // Kalluto's furisode, the long sleeves hanging and the broad obi across
-  // it: he follows his mother to the gate in episode 24 / chapter 42.
-  // No fan, no paper.
-  // The wiki gives a dark furisode with a yellow obi, so the whole garment.
-  'kalluto': [
-    {
-      d: 'M70 34 L46 42 L24 50 L22 128 Q22 136 32 136 L44 134 L48 80 M90 34 L114 42 L134 50 L136 126 Q136 132 128 132 L116 130 L112 80',
-    },
-    { d: 'M48 110 L50 170 Q80 175 110 170 L112 110' },
-    { d: 'M70 34 L86 72 M77 34 L90 64 M92 34 L82 52', role: 'soft' },
-    { d: 'M48 82 Q80 88 112 82 V108 Q80 114 48 108 Z', role: 'accent' },
-    { d: 'M84 112 L88 171', role: 'soft' },
-    { d: 'M48 80 L46 42 M112 80 L114 42', role: 'soft' },
-    {
-      d: 'M120 60 L130 54 M120 76 L132 69 M120 92 L132 85 M120 108 L132 101',
-      role: 'ambient',
-    },
-    { d: 'M30 70 Q34 100 30 126', role: 'soft' },
-    shadow(80, 186, 44),
-  ],
+  // Kalluto's dark furisode in 3/4, the near sleeve swinging forward to
+  // show its depth, the broad obi in tint wrapping round it and the far
+  // side hatched: he follows his mother to the gate in episode 24 / chapter
+  // 42. No fan, no paper.
+  'kalluto': [...KALLUTO_FURISODE, shadow(72, 186, 46)],
   // The tour bus that takes the three from town towards Kukuroo Mountain,
-  // its summit over the roof: the arrival in Padokea in episode 22 /
-  // chapter 39. No route board, no company name.
+  // its summit over the roof and the windscreen in tint: the arrival in
+  // Padokea in episode 22 / chapter 39. No route board, no company name.
   // A bus, not a train: episode 22 and chapter 39 both have the bus tour,
   // the train is in the chapter alone.
   'republic-of-padokea': [
     { d: 'M64 81.6 L90 46 L100 51 L110 44 L160 98', role: 'soft' },
     { d: 'M24 90 L50 80 V142 L24 138 Z' },
     { d: 'M50 80 L138 90 V136 L50 142' },
-    { d: 'M28 94 L46 87 V110 L28 114 Z', role: 'soft' },
+    { d: 'M28 94 L46 87 V110 L28 114 Z', role: 'accent' },
     { d: 'M24 130 L50 134 M50 128 L138 124', role: 'soft' },
     {
       d: 'M58 88.9 L73 90.6 V112.6 L58 110.9 Z M77 91.1 L92 92.8 V114.8 L77 113.1 Z M96 93.2 L111 94.9 V116.9 L96 115.2 Z M115 95.4 L130 97.1 V119.1 L115 117.4 Z',
-      role: 'accent',
     },
     {
       d: 'M58.5 140.8 A9.5 9.5 0 0 0 77.5 140.8 M111.5 137.6 A9 9 0 0 0 128.5 137.6',
@@ -242,18 +293,110 @@ export const ZOLDYCK_DRAWINGS = {
     { d: 'M6 150 H154', role: 'ambient' },
     shadow(84, 151, 58),
   ],
-  // Kukuroo's dormant summit and the walls around the estate:
-  // episode22 / chapter39. No lettering, faces or gate emblems.
+  // The Testing Gate in 3/4, set in the stone wall round the estate: its
+  // tall double doors in tint, the smaller doors nested inside them marked
+  // without their numbers, the jamb showing its depth and the dormant
+  // summit behind. Zebro opens it and the three train to push it in
+  // episode 22 / chapter 39 onwards.
   'kukuroo-mountain': [
-    { d: 'M18 132 L58 48 L70 44 L87 49 L98 43 L145 132' },
-    { d: 'M58 48 Q77 65 98 43', role: 'accent' },
-    { d: 'M58 48 L72 80 L57 111 M98 43 L88 81 L111 119', role: 'soft' },
-    { d: 'M48 85 L39 117 M113 79 L128 115', role: 'ambient' },
-    { d: 'M14 150 V132 H59 M103 132 H146 V150', role: 'soft' },
-    { d: 'M59 150 V117 Q80 104 103 117 V150 Z' },
-    { d: 'M64 150 V121 Q81 111 98 121 V150 M81 115 V150', role: 'soft' },
-    { d: 'M66 129 H77 M85 129 H96 M66 140 H77 M85 140 H96', role: 'soft' },
-    { d: 'M8 150 H152', role: 'ambient' },
-    shadow(80, 159, 49),
+    { d: 'M8 69 L40 22 L54 16 L66 20 L80 14 L150 77', role: 'soft' },
+    { d: 'M4 70 L44 64 M4 156 L44 154 M104 70 L156 78 M104 148 L156 144' },
+    { d: 'M44 54 L50 50 V152 L44 156 Z', role: 'soft' },
+    { d: 'M50 50 L104 58 V148 L50 152 Z', role: 'accent' },
+    { d: 'M77 54 V150' },
+    {
+      d: 'M73.1 150.3 V136.4 L80.9 136.1 V149.7 M69.3 150.6 V122.7 L84.7 122.5 V149.4 M65.4 150.9 V108.6 L88.6 109.1 V149.1 M61.6 151.1 V94.3 L92.4 96 V148.9 M57.7 151.4 V79.8 L96.3 83.1 V148.6 M53.9 151.7 V65 L100.1 70.4 V148.3',
+      role: 'soft',
+    },
+    {
+      d: 'M114 84 l6 -4 M126 90 l6 -4 M138 96 l6 -4 M114 116 l6 -4 M126 120 l6 -4 M138 124 l6 -4',
+      role: 'ambient',
+    },
+    { d: 'M14 96 l8 -2 M12 120 l10 -2', role: 'ambient' },
+    { d: 'M2 158 H158', role: 'ambient' },
+    shadow(78, 166, 48),
   ],
 } satisfies Drawings
+
+/** The Zoldycks' later stages: each power, and Kalluto's place in the Troupe. */
+export const zoldyckRedrawn: Redrawings = {
+  zeno: [
+    // The same robe with the aura dragon of Dragon Head rising over its far
+    // shoulder in open lines, the accent still on the panel: Zeno sends the
+    // dragon at Chrollo, episode 52 / chapter 99. Dragon Lance in the same
+    // fight and the later Dragon Dive are the same dragon and keep this.
+    {
+      episode: 52,
+      chapter: 99,
+      value: [
+        ...ZENO_ROBE,
+        ...moved(
+          DRAGON_HEAD.map((stroke) => {
+            return { ...stroke, role: 'ambient' as const }
+          }),
+          'translate(58 -22) scale(0.75)',
+        ),
+        shadow(78, 186, 44),
+      ],
+    },
+  ],
+  silva: [
+    // The same top and wristbands with a large orb of aura round each
+    // band, open lines with no accent: Silva throws the two orbs at Chrollo,
+    // episode 52 / chapter 99.
+    {
+      episode: 52,
+      chapter: 99,
+      value: [
+        ...SILVA_TOP,
+        { d: SILVA_BAND, role: 'accent' },
+        {
+          d: `${circle(54, 170, 22)} ${circle(108, 171, 19)}`,
+          role: 'ambient',
+        },
+        shadow(80, 194, 50),
+      ],
+    },
+  ],
+  kalluto: [
+    // The same furisode with the Troupe's spider beside it as a symbol, not
+    // on the garment, since his tattoo is never shown, and with no number:
+    // Nobunaga introduces him as Hisoka's replacement in the Troupe,
+    // episode 72 / chapter 170.
+    {
+      episode: 72,
+      chapter: 170,
+      value: [...KALLUTO_FURISODE, ...KALLUTO_SPIDER, shadow(72, 186, 46)],
+    },
+    // The same furisode and spider, with his paper fan held open in tint
+    // and a stream of confetti swirling up from it: he cuts the Ant's steel
+    // rope with the fan and dismembers it with Dance of the Serpent's Bite,
+    // episode 96 / chapter 226. The obi turns soft.
+    {
+      episode: 96,
+      chapter: 226,
+      value: [
+        ...softened(KALLUTO_FURISODE),
+        ...KALLUTO_SPIDER,
+        {
+          d: 'M110.2 174.3 L84.5 169.7 A36 36 0 0 1 126.3 140.5 L121.7 166.2 Z',
+          role: 'accent',
+        },
+        {
+          d: 'M110.9 171.8 L87.4 160.8 M112.3 169.6 L92.4 152.9 M114.3 167.8 L99.4 146.5 M116.6 166.6 L107.7 142.2 M119.1 166 L116.9 140.1',
+          role: 'soft',
+        },
+        { d: 'M120 176 L110.2 174.3 M120 176 L121.7 166.2' },
+        {
+          d: 'M130 138 C150 126 154 104 138 92 C126 84 132 66 150 60',
+          role: 'soft',
+        },
+        {
+          d: 'M134 128 l4 2 M146 116 l3 3 M148 100 l4 -1 M136 94 l3 3 M132 76 l4 -1 M142 64 l3 3 M152 70 l4 1 M126 108 l3 2',
+          role: 'ambient',
+        },
+        shadow(72, 186, 46),
+      ],
+    },
+  ],
+}

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { opened } from '~/test/gates'
+import { opened, stageMissedAt } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
 import { characterPage, shelvesPage } from './pages.server'
@@ -76,6 +76,9 @@ const CHRONICLE_CHAPTERS: Record<number, number> = {
   147: 337,
 }
 
+/** Kite's later stages: Crazy Slots, his death and his return (#1325). */
+const STAGE_CHAPTERS: Record<number, number> = { 82: 193, 85: 199, 136: 316 }
+
 function expectedChapter(
   field: Parameters<typeof waitsForGing>[0],
   entry: Parameters<typeof waitsForGing>[1] & { episode: number },
@@ -88,13 +91,7 @@ function expectedChapter(
   if (field === 'role' && entry.episode === 93) {
     return 217
   }
-  if (entry.episode === 85) {
-    return 199
-  }
-  if (entry.episode === 136) {
-    return 316
-  }
-  return waitsForGing(field, entry) ? 66 : 1
+  return STAGE_CHAPTERS[entry.episode] ?? (waitsForGing(field, entry) ? 66 : 1)
 }
 
 describe('chapter-one pins', () => {
@@ -153,5 +150,16 @@ describe('a reordered character beside a source-only arc', () => {
     expect(reader.archive.bookSections).toStrictEqual([
       { arc: first, characters: [character] },
     ])
+  })
+})
+
+// Crazy Slots' carbine, then the return, which both media show: each changes
+// the drawing at its pair, never one step before (#1325).
+describe('Kite’s later stages', () => {
+  it.each([
+    { episode: 82, chapter: 193 },
+    { episode: 136, chapter: 316 },
+  ])('changes Kite’s drawing at $episode / $chapter', (stage) => {
+    expect(stageMissedAt(archive, 'kite', stage)).toStrictEqual([])
   })
 })

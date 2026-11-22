@@ -1,4 +1,21 @@
-import type { Drawings } from '~/data/art/stroke'
+import type { Drawings, Stroke } from '~/data/art/stroke'
+
+/**
+ * Zeno's aura dragon of Dragon Head, its body rising from the lower left to
+ * the head at the upper right. Zeno's own stage lays it over his
+ * robe.
+ */
+export const DRAGON_HEAD: Stroke[] = [
+  {
+    d: 'M31 143 C42 98 70 111 89 84 L84 65 L99 73 L110 58 L111 78 L129 88 L119 104 L102 107 Q90 128 66 129 L47 148',
+  },
+  {
+    d: 'M111 86 L121 91 M113 98 L125 94 M62 121 L66 129 M76 111 L81 121',
+    role: 'soft',
+  },
+  { d: 'M88 103 L94 112', role: 'ambient' },
+  { d: 'M25 153 Q46 109 62 108 M92 56 L93 45 M114 57 L122 45', role: 'accent' },
+]
 
 export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   'eleven-black-children': [
@@ -167,20 +184,7 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
     { d: 'M82 139 L86 139', role: 'ambient' },
     { d: 'M30 63 L128 63 L128 115 M32 118 L32 155 L132 155', role: 'accent' },
   ],
-  'dragon-head': [
-    {
-      d: 'M31 143 C42 98 70 111 89 84 L84 65 L99 73 L110 58 L111 78 L129 88 L119 104 L102 107 Q90 128 66 129 L47 148',
-    },
-    {
-      d: 'M111 86 L121 91 M113 98 L125 94 M62 121 L66 129 M76 111 L81 121',
-      role: 'soft',
-    },
-    { d: 'M88 103 L94 112', role: 'ambient' },
-    {
-      d: 'M25 153 Q46 109 62 108 M92 56 L93 45 M114 57 L122 45',
-      role: 'accent',
-    },
-  ],
+  'dragon-head': DRAGON_HEAD,
   'dragon-lance': [
     {
       d: 'M31 140 C38 89 68 79 81 104 C95 126 114 98 121 82 L115 65 L126 72 L138 62 L136 77 L146 83 L141 97 L126 100 C110 131 90 139 73 114 C62 97 46 114 42 142',

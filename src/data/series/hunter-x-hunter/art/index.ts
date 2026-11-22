@@ -72,7 +72,7 @@ import {
   yorknewCityRedrawn,
 } from './yorknew-city'
 import { zevilArt, zevilRedrawn } from './zevil'
-import { ZOLDYCK_DRAWINGS } from './zoldyck'
+import { ZOLDYCK_DRAWINGS, zoldyckRedrawn } from './zoldyck'
 
 /**
  * One of Kurapika's two wooden swords, grip down to the left and point up
@@ -1500,6 +1500,7 @@ const kakinReturningRedrawn: Redrawings = {
 
 export const REDRAWINGS: Redrawings = {
   ...hunterExamRedrawn,
+  ...zoldyckRedrawn,
   ...zevilRedrawn,
   ...heavensArenaRedrawn,
   ...yorknewCityRedrawn,
