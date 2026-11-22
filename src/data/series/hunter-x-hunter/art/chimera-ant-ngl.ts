@@ -172,34 +172,37 @@ export const CHIMERA_ANT_NGL_DRAWINGS = {
     { d: 'M52 100 L44 114 L60 112 M108 100 L116 114 L100 112' },
     shadow(84, 166, 40),
   ],
-  // Balda's white short-sleeved shirt, the sleeves seen open at the elbow
-  // and the light blue long sleeves underneath in tint, down to the cuffs,
-  // the far side hatched: one of Pokkle's companions, named as Pokkle tells
-  // him to run in chapter 190 and episode 80, the scene he dies in (#1046).
-  // No figure and no web.
+  // Balda's white short-sleeved shirt in 3/4, standing as if worn, the
+  // sleeves seen open at the elbow and the light blue long sleeves
+  // underneath in tint, down to the cuffs, the far side hatched: one of
+  // Pokkle's companions, named as Pokkle tells him to run in chapter 190
+  // and episode 80, the scene he dies in (#1046). No figure and no web.
   'balda': [
     {
-      d: 'M58 50 L38 58 L28 96 M48 102 L50 82 L50 150 H110 L110 82 L112 102 M132 96 L122 58 L102 50',
+      d: 'M58 50 L38 58 L28 96 M48 102 L50 82 V150 Q78 156 104 150 V82 L106 100 M120 96 L113 58 L96 50',
     },
     { d: 'M28 96 A10.4 4 15 1 0 48 102 A10.4 4 15 1 0 28 96' },
-    { d: 'M132 96 A10.4 4 -15 1 1 112 102 A10.4 4 -15 1 1 132 96' },
+    { d: 'M120 96 A7.4 3.4 -15 1 1 106 100 A7.4 3.4 -15 1 1 120 96' },
     {
-      d: 'M31 100 L24 144 H38 L45 102 M129 100 L136 144 H122 L115 102',
+      d: 'M31 100 L24 144 H38 L45 102 M118 99 L123 140 H113 L108 101',
       role: 'accent',
     },
-    { d: 'M25 138 H38 M122 138 H135', role: 'soft' },
-    { d: 'M58 50 L68 68 L80 58 L92 68 L102 50 Q80 60 58 50' },
-    { d: 'M80 60 V150', role: 'soft' },
+    { d: 'M25 138 H38 M113 134 H122', role: 'soft' },
+    { d: 'M58 50 L67 68 L78 58 L88 68 L96 50 Q77 60 58 50' },
+    { d: 'M78 60 V152', role: 'soft' },
     {
       d: dots([
-        [85, 82],
-        [85, 102],
-        [85, 122],
+        [83, 82],
+        [83, 102],
+        [83, 122],
       ]),
     },
-    { d: 'M60 112 Q63 130 59 146', role: 'soft' },
-    { d: 'M98 110 l7 -5 M98 124 l7 -5 M98 138 l7 -5', role: 'ambient' },
-    shadow(80, 166, 56),
+    { d: 'M60 112 Q63 130 59 146 M54 66 Q58 76 52 88', role: 'soft' },
+    {
+      d: 'M92 110 l7 -5 M92 124 l7 -5 M92 138 l7 -5 M108 66 l5 -3 M110 80 l5 -3',
+      role: 'ambient',
+    },
+    shadow(76, 166, 52),
   ],
 } satisfies Drawings
 

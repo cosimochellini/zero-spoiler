@@ -351,8 +351,6 @@ export const ACCENT_EXCEPTIONS: Record<
   'one-piece/scopper-gaban@1179': [2, OLD],
   'hunter-x-hunter/ngl@first': [2, OLD],
   'hunter-x-hunter/republic-of-rokario@first': [2, OLD],
-  'hunter-x-hunter/flutter@first': [2, OLD],
-  'hunter-x-hunter/bihorn@first': [2, OLD],
   'hunter-x-hunter/shaiapouf@first': [2, OLD],
   'hunter-x-hunter/kenmi@first': [2, OLD],
   'hunter-x-hunter/ginta@first': [2, OLD],

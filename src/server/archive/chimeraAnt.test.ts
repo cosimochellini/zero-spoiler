@@ -209,6 +209,7 @@ const DEATHS = [
   { id: 'meruem', episode: 135, chapter: 318 },
   { id: 'netero', episode: 126, chapter: 298 },
   { id: 'komugi', episode: 148, chapter: 339 },
+  { id: 'flutter', episode: 110, chapter: 262 },
 ].flatMap(({ id, episode, chapter }) =>
   [
     { unit: 'episode' as const, gate: episode },
@@ -1495,6 +1496,7 @@ describe.each([
   { id: 'cheetu', episode: 117, chapter: 278 },
   { id: 'netero', episode: 126, chapter: 298 },
   { id: 'komugi', episode: 148, chapter: 339 },
+  { id: 'flutter', episode: 110, chapter: 262 },
 ])('$id’s death drawing', ({ id, episode, chapter }) => {
   it.each(LOCALES)('changes at the death in %s', (locale) => {
     for (const unit of UNITS) {
@@ -1507,6 +1509,31 @@ describe.each([
     }
   })
 })
+
+describe.each([
+  { id: 'welfin', episode: 115, chapter: 276 },
+  { id: 'welfin', episode: 134, chapter: 313 },
+  { id: 'meleoron', episode: 102, chapter: 242 },
+  { id: 'cheetu', episode: 103, chapter: 245 },
+  { id: 'ikalgo', episode: 111, chapter: 263 },
+  { id: 'ikalgo', episode: 118, chapter: 279 },
+  { id: 'bloster', episode: 118, chapter: 279 },
+])(
+  '$id’s drawing at episode $episode / chapter $chapter',
+  ({ id, episode, chapter }) => {
+    // Powers, Welfin's lost hair and Ikalgo's disguise in Flutter's body (#1328).
+    it.each(LOCALES)('changes at its stage in %s', (locale) => {
+      for (const unit of UNITS) {
+        const gate = unit === 'episode' ? episode : chapter
+        const read = (count: number): ReturnType<typeof drawingsFor> =>
+          drawingsFor([id], readerFor(archive, at(unit, count), locale))
+
+        expect(read(gate)[id]).toBeDefined()
+        expect(read(gate)).not.toStrictEqual(read(gate - 1))
+      }
+    })
+  },
+)
 
 /** Pokkle's drawing at a bookmark. */
 function pokkleAt(
