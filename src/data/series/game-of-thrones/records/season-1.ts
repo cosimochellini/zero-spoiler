@@ -4637,7 +4637,39 @@ export const season1: ThronesSaga = {
     'loras-tyrell': {
       relationships: season1Relationships['loras-tyrell'],
       chronicle: season1Chronicles['loras-tyrell'],
-      role: { it: 'Cavaliere', en: 'Knight' },
+      role: [
+        { episode: 5, chapter: 30, value: { it: 'Cavaliere', en: 'Knight' } },
+        // Stage 2 (#1464): one of King Renly's guard, unhorsed by Brienne
+        // in "What Is Dead May Never Die" (episode 13) and Catelyn II of A
+        // Clash of Kings (chapter 96).
+        {
+          episode: 13,
+          chapter: 96,
+          value: { it: 'Guardia di re Renly', en: 'Guard of King Renly' },
+        },
+        // Renly is killed: "The Ghost of Harrenhal" (episode 15) and
+        // Catelyn IV (chapter 107).
+        {
+          episode: 15,
+          chapter: 107,
+          value: {
+            it: 'Ex guardia di re Renly',
+            en: 'Former guard of King Renly',
+          },
+        },
+        // Books only: named to Joffrey's Kingsguard at the court after the
+        // battle, Sansa VIII (chapter 139). The show's "Valar Morghulis"
+        // (episode 20) has him at that court but names him to no guard.
+        {
+          episode: 20,
+          chapter: 139,
+          source: 'chapter',
+          value: {
+            it: 'Cavaliere della Guardia reale',
+            en: 'Knight of the Kingsguard',
+          },
+        },
+      ],
       log: {
         it: 'È un giovane giostratore molto ammirato, detto il Cavaliere dei Fiori. Al torneo in onore del nuovo Primo Cavaliere regala una rosa a Sansa Stark davanti alla folla.',
         en: 'He is a young and much admired jouster, called the Knight of Flowers. At the tourney for the new Hand, he gives Sansa Stark a rose in front of the crowd.',

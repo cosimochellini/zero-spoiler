@@ -202,9 +202,11 @@ function character(id: string): Entity {
 }
 
 describe('the second season’s King’s Landing cast', () => {
-  it('files exactly these records', () => {
+  it('files these records', () => {
+    // Each cast group's test lists its own records; the season holds them
+    // all (#1468).
     expect(season2.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
-      RECORDS.map(({ id }) => id).toSorted(byText),
+      expect.arrayContaining(RECORDS.map(({ id }) => id).toSorted(byText)),
     )
   })
 
@@ -296,11 +298,15 @@ describe('the steps one medium alone tells', () => {
 })
 
 describe('the season’s leads', () => {
-  it('lists the King’s Landing leads', () => {
-    expect(archive.leads['season-2']).toStrictEqual([
-      'tyrion-lannister',
-      'cersei-lannister',
-    ])
+  it('lists the King’s Landing and stormlands leads', () => {
+    expect(archive.leads['season-2']).toStrictEqual(
+      expect.arrayContaining([
+        'tyrion-lannister',
+        'cersei-lannister',
+        'stannis-baratheon',
+        'davos-seaworth',
+      ]),
+    )
   })
 })
 
@@ -308,7 +314,9 @@ describe('the second season’s heading', () => {
   it('opens with its first record in each medium', () => {
     const heading = archive.arcs.find(({ id }) => id === 'season-2')
 
+    // Episode 11 (Daisy, and Stannis's cast); chapter 74, the prologue of
+    // A Clash of Kings, since the stormlands cast (#1464).
     expect(heading?.revealedAtEpisode).toBe(11)
-    expect(heading?.revealedAtChapter).toBe(82)
+    expect(heading?.revealedAtChapter).toBe(74)
   })
 })
