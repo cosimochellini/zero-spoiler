@@ -402,12 +402,12 @@ export const chimeraAntHuntersRedrawn: Redrawings = {
       chapter: 210,
       value: [
         ...KNUCKLE_COAT,
-        { d: ellipse(142, 26, 11, 10) },
+        { d: ellipse(136, 26, 11, 10) },
         {
-          d: 'M132 22 Q122 12 118 20 Q124 22 132 28 M152 22 Q162 12 166 20 Q160 22 152 28',
+          d: 'M126 22 Q116 12 112 20 Q118 22 126 28 M146 22 Q156 12 158 20 Q154 22 146 28',
           role: 'soft',
         },
-        { d: 'M138 38 l-2 6 M146 38 l2 6', role: 'ambient' },
+        { d: 'M132 38 l-2 6 M140 38 l2 6', role: 'ambient' },
       ],
     },
   ],
@@ -422,7 +422,7 @@ export const chimeraAntHuntersRedrawn: Redrawings = {
         ...SHOOT_ROBE,
         { d: 'M106 52 Q114 54 112 66 L106 70', role: 'soft' },
         { d: SHOOT_HAND, transform: 'translate(130 40) scale(1.4)' },
-        { d: SHOOT_HAND, transform: 'translate(146 76) rotate(20) scale(1.4)' },
+        { d: SHOOT_HAND, transform: 'translate(140 76) rotate(20) scale(1.4)' },
         {
           d: SHOOT_HAND,
           transform: 'translate(130 102) rotate(180) scale(1.4)',

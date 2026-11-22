@@ -274,10 +274,10 @@ export const CHIMERA_ANT_PLACE_DRAWINGS = {
 /** The Chimera Ant places that change with the story: the palace's damage. */
 export const chimeraAntPlacesRedrawn: Redrawings = {
   'republic-of-east-gorteau': [
-    // The same rise and road, the small palace's central tower broken at
-    // its base, a jagged gap under its roof and a little rubble beneath it,
-    // in tint: Youpi's rage blast destroys the bottom of the central tower,
-    // episode 117 / chapter 278, as the palace's own drawing shows.
+    // The same rise and road, the small palace's central tower broken off
+    // at its base, its top in tint over a jagged gap and a heap of rubble:
+    // Youpi's rage blast destroys the bottom of the central tower, episode
+    // 117 / chapter 278, as the palace's own drawing shows.
     {
       episode: 117,
       chapter: 278,
@@ -285,12 +285,16 @@ export const chimeraAntPlacesRedrawn: Redrawings = {
         GORTEAU_RISE,
         ...GORTEAU_COUNTRY,
         {
-          d: 'M58 110 V98 H72 M88 98 H102 V110 M72 94 V82 H88 V94 L85 98 L82 93 L79 99 L76 94 L72 96 Z M69 82 L80 72 L91 82 Z',
+          d: 'M58 110 V98 H72 M88 98 H102 V110 M72 90 V82 H88 V90 L84 94 L81 88 L77 95 L74 89 Z M69 82 L80 72 L91 82 Z',
           role: 'accent',
         },
         {
-          d: 'M72 110 L75 106 L78 110 M80 110 L84 105 L88 110 M76 104 h0.01',
+          d: 'M60 110 L64 104 L68 106 L72 100 L78 102 L83 98 L88 103 L92 101 L96 106 L100 110',
           role: 'soft',
+        },
+        {
+          d: 'M66 116 l4 -4 l4 4 M88 117 l4 -3 l4 3 M78 98 l3 -3 M84 97 l3 -3',
+          role: 'ambient',
         },
       ],
     },
