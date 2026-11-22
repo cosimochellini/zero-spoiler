@@ -4229,14 +4229,22 @@
   },
   "chimera-ant-queen": {
     "sources": [
-      "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_Queen",
-      "https://hunterxhunter.fandom.com/wiki/Chapter_185"
+      "https://hunterxhunter.fandom.com/wiki/Chimera_Ant_Queen?oldid=422962",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_186?oldid=416206",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_187?oldid=383204",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_188?oldid=416207",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_213?oldid=416219",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_215?oldid=418691",
+      "https://hunterxhunter.fandom.com/wiki/Episode_76_(2011)?oldid=416441",
+      "https://hunterxhunter.fandom.com/wiki/Episode_77_(2011)?oldid=416442",
+      "https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)?oldid=416454"
     ],
     "unverified": [
-      "#1019: manga panels, licensed 2011 anime frames/timestamps and Italian dub forms were not viewed. Facts and inventory were checked through lawful English Wiki MediaWiki API revisions. No disappearance, death or personal-name gate is inferred from appearance metadata or binder-only names.",
-      "#1019 final inventory disposition: excluded-unnamed. Descriptive role, species, generic NPC, card or object rather than a positively named individual. Appearance-list or card-description labels do not create a personal name."
-    ],
-    "pending": true
+      "#1447: manga panels, 2011 anime frames and timestamps and the Italian dub were not viewed; facts checked through the English wiki's MediaWiki API revisions above.",
+      "#1447 gate: chapter 187 (Monta and Podungo say the leg is like a Chimera Ant Queen's) and episode 77 (Monta shows Kite a Chimera Ant Queen's claw). Owner checks for a lower gate: chapter 186 and episode 76 name her only in narration.",
+      "#1447 Italian name: Regina, the section Formichimere#Regina of Italian Wikipedia; dub form not heard.",
+      "#1447 drawings: the first shows the swollen abdomen the arc gives her later (Chapter 197) and the left forearm and antenna missing (Chimera Ant Queen page, Appearance); the death drawing dates from chapter 215 / episode 92. Grade B, not checked against frames."
+    ]
   },
   "dolle-harbor": {
     "sources": [
@@ -5006,10 +5014,13 @@
       "https://hunterxhunter.fandom.com/wiki/Episode_92_(2011)?oldid=416454",
       "https://hunterxhunter.fandom.com/wiki/Zazan?oldid=423889",
       "https://hunterxhunter.fandom.com/wiki/Chapter_229?oldid=416226",
-      "https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)?oldid=418091"
+      "https://hunterxhunter.fandom.com/wiki/Episode_97_(2011)?oldid=418091",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_224?oldid=383536",
+      "https://hunterxhunter.fandom.com/wiki/Episode_96_(2011)?oldid=418152"
     ],
     "unverified": [
-      "Manga panels, licensed episode timestamps and Italian dub audio unviewed."
+      "Manga panels, licensed episode timestamps and Italian dub audio unviewed.",
+      "#1447: her turn to self-proclaimed queen is dated chapter 224 / episode 96, where the Troupe sets out to kill the \"Queen\" of Meteor City (Zazan page, Chapter 224 citation); frames not viewed."
     ]
   },
   "pike": {
@@ -5182,10 +5193,12 @@
   },
   "bihorn": {
     "sources": [
-      "https://hunterxhunter.fandom.com/wiki/Chapter_227?oldid=418151"
+      "https://hunterxhunter.fandom.com/wiki/Chapter_227?oldid=418151",
+      "https://hunterxhunter.fandom.com/wiki/Bihorn?oldid=424990"
     ],
     "unverified": [
-      "Manga panels, episode timestamps and Italian dub audio unviewed."
+      "Manga panels, episode timestamps and Italian dub audio unviewed.",
+      "#1447: his role is Squadron Leader from his gate, where Pike calls him the strongest of the Squadron Leaders (Bihorn page, Chapter 227 citation); the ranks page seats him there."
     ]
   },
   "mandai-city": {
@@ -5382,7 +5395,9 @@
   "cluck": {
     "sources": [
       "https://hunterxhunter.fandom.com/wiki/Cluck",
-      "https://hunterxhunter.fandom.com/wiki/Episode_137_%282011%29"
+      "https://hunterxhunter.fandom.com/wiki/Episode_137_%282011%29",
+      "https://hunterxhunter.fandom.com/wiki/Chapter_319",
+      "https://hunterxhunter.fandom.com/wiki/Zodiacs"
     ],
     "unverified": [
       "Exact manga page, licensed anime timestamp and 2011 Italian dub form were not directly checked. See the Election coverage inventory for explicit naming evidence."

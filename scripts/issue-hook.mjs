@@ -2,11 +2,16 @@
 // `gh issue create` without one label per group in `.github/labels.json` is
 // refused, so every issue an agent opens can be queried by the next one.
 // Exit 2 blocks the call and hands stderr back to the agent.
-import { existsSync, readFileSync } from 'node:fs'
+import { readFileSync, statSync } from 'node:fs'
+import path from 'node:path'
 import process from 'node:process'
 
 import labels from '../.github/labels.json' with { type: 'json' }
 import { isMain } from './is-main.mjs'
+import { commandStart, lex, resolved } from './shell-lex.mjs'
+
+/** @typedef {import('./shell-lex.mjs').Word} Word */
+/** @typedef {import('./shell-lex.mjs').Command} Command */
 
 /** The groups every issue carries exactly one label of. */
 const GROUPS = ['type', 'area', 'status', 'priority', 'size']
@@ -14,76 +19,127 @@ const GROUPS = ['type', 'area', 'status', 'priority', 'size']
 /** Every label the repository defines. */
 const KNOWN = new Set(labels.map((label) => label.name))
 
-// `gh issue create` run as a command: at the start or after a shell
-// separator, so a grep, a commit message or a PR body that only mentions it
-// goes through.
-const CREATE = /(?:^|[;&|(\n]) *(?:rtk )?gh issue create\b/u
-const HELP = /\s(?:--help|-h)\b/u
-
-// ponytail: regexes over the command, not a shell parser; a label held in a
-// variable, or the command quoted after a separator ("x; gh issue create"),
-// is misread. Parse with a real shell lexer if agents write those.
-const LABEL =
-  /(?:^|\s)(?:--label|-l)(?:=|\s+)(?:"(?<double>[^"]*)"|'(?<single>[^']*)'|(?<bare>\S+))/gu
-const BODY_FILE =
-  /(?:^|\s)(?:--body-file|-F)(?:=|\s+)(?:"(?<double>[^"]*)"|'(?<single>[^']*)'|(?<bare>\S+))/gu
+const LABEL = new Set(['--label', '-l'])
+// The flags of `gh issue create` that take a value, except `--label`: a value
+// the hook cannot expand after one of these can't hold a label.
+const VALUE_FLAGS = new Set([
+  '-a',
+  '--assignee',
+  '--attach',
+  '--blocked-by',
+  '--blocking',
+  '-b',
+  '--body',
+  '-F',
+  '--body-file',
+  '-m',
+  '--milestone',
+  '--parent',
+  '-p',
+  '--project',
+  '--recover',
+  '-R',
+  '--repo',
+  '-T',
+  '--template',
+  '-t',
+  '--title',
+  '--type',
+])
+const BODY_FILE = new Set(['--body-file', '-F'])
+const HELP = new Set(['--help', '-h'])
 
 /**
- * Every value given to a flag.
- * @param {string} command The shell command.
- * @param {RegExp} flag {@link LABEL} or {@link BODY_FILE}.
- * @returns {string[]} The values, in order.
+ * The arguments after `gh issue create`, when the command is one; `gh` may be
+ * a full path or follow `rtk`, a keyword or a variable assignment.
+ * @param {Command} command A simple command.
+ * @returns {Word[] | undefined} The arguments, or undefined for any other
+ *   command.
  */
-function values(command, flag) {
-  return command
-    .matchAll(flag)
-    .map(({ groups }) => groups?.double ?? groups?.single ?? groups?.bare ?? '')
-    .toArray()
+function createArguments({ words }) {
+  const start = commandStart(words)
+  const [gh = '', issue, create] = words
+    .slice(start, start + 3)
+    .map(({ text }) => text)
+
+  return (
+      issue === 'issue' && create === 'create' && path.basename(gh) === 'gh'
+    ) ?
+      words.slice(start + 3)
+    : undefined
 }
 
 /**
- * Whether the command creates an issue; asking for help creates none.
- * @param {string} command The shell command.
- * @returns {boolean} Whether the hook has to check it.
+ * Every flag with its value: the next word, or the text after `=`.
+ * @param {Word[]} words The arguments of `gh issue create`.
+ * @returns {[string, Word | undefined][]} Flag and value pairs, in order.
  */
-export function createsIssue(command) {
-  const start = command.search(CREATE)
+function options(words) {
+  return words.map((word, index) => {
+    const [flag = '', ...rest] = word.text.split('=')
+    const value =
+      rest.length > 0 ?
+        { text: rest.join('='), exact: word.exact }
+      : words[index + 1]
 
-  return start !== -1 && !HELP.test(command.slice(start))
+    return [flag, value]
+  })
 }
 
 /**
- * The labels a `gh issue create` command sets.
- * @param {string} command The shell command.
- * @returns {string[]} The labels, comma lists split.
+ * Whether the call itself holds the body: a device (`/dev/stdin`,
+ * `/dev/fd/3`) or a file the call writes.
+ * @param {string} where The body file.
+ * @param {(string | undefined)[]} writes The files the call writes.
+ * @returns {boolean} Whether to read the call instead of the file.
  */
-export function labelsOf(command) {
-  const start = Math.max(0, command.search(CREATE))
+const fromCall = (where, writes) =>
+  /^\/dev\//u.test(where) || writes.includes(where)
 
-  return values(command.slice(start), LABEL)
-    .flatMap((value) => value.split(','))
-    .map((label) => label.trim())
-    .filter((label) => label !== '')
+/**
+ * The text that holds the body: the whole call when it carries the body (an
+ * inline `--body`, a heredoc, or the text written into a file this same call
+ * creates, which wins over a stale copy on disk) or when the hook cannot
+ * expand the path (a loop variable); else the `--body-file`.
+ * @param {Word | undefined} file The `--body-file` value.
+ * @param {string | undefined} cwd The directory `gh` runs in.
+ * @param {{ text: string, writes: (string | undefined)[] }} call The whole
+ *   call and the files it writes.
+ * @returns {string | undefined} The text, or undefined when the file is
+ *   missing (or a directory) and nothing in the call writes it.
+ */
+function bodyOf(file, cwd, call) {
+  const where =
+    file === undefined || file.text === '-' ? undefined : resolved(file, cwd)
+  if (where === undefined || fromCall(where, call.writes)) {
+    return call.text
+  }
+  if (statSync(where, { throwIfNoEntry: false })?.isFile()) {
+    return readFileSync(where, 'utf8')
+  }
+
+  return call.writes.includes(undefined) ? call.text : undefined
 }
 
 /**
- * The text that holds the body: the `--body-file` when there is one, else the
- * command itself, which carries an inline `--body` or heredoc.
- * @param {string} command The shell command.
- * @returns {string} Text to look for the body's lines in.
+ * Whether a word the hook cannot expand may carry a label: a `--label` value,
+ * or a word that is no flag's value (`$ARGS`, `"$@"`).
+ * @param {Word[]} words The arguments of `gh issue create`.
+ * @returns {boolean} Whether the label checks must be skipped.
  */
-function bodyOf(command) {
-  const file = values(command, BODY_FILE)[0]
-
-  return file !== undefined && existsSync(file) ?
-      readFileSync(file, 'utf8')
-    : command
+function unsure(words) {
+  return words.some(
+    ({ exact, text }, index) =>
+      !exact
+      && !VALUE_FLAGS.has(text.split('=', 1)[0] ?? '')
+      && !VALUE_FLAGS.has(words[index - 1]?.text ?? ''),
+  )
 }
 
 /**
  * Why a set of labels is refused; empty when it is accepted.
  * @param {string[]} given The labels on the new issue.
- * @param {string} body The issue body.
+ * @param {string | undefined} body The issue body, undefined when unknown.
  * @returns {string[]} One line per problem.
  */
 export function problems(given, body) {
@@ -102,7 +158,11 @@ export function problems(given, body) {
     return ''
   }).filter((problem) => problem !== '')
   const blocked =
-    given.includes('status:blocked') && !/^Unblocks at:/mu.test(body) ?
+    (
+      body !== undefined
+      && given.includes('status:blocked')
+      && !/^Unblocks at:/mu.test(body)
+    ) ?
       [
         'status:blocked needs an "Unblocks at: ch. N" or "Unblocks at: #N" line in the body',
       ]
@@ -111,15 +171,95 @@ export function problems(given, body) {
   return [...unknown, ...groups, ...blocked]
 }
 
+/**
+ * Why one `gh issue create` is refused; asking for help creates none. Labels
+ * the hook cannot be sure of go unchecked.
+ * @param {Word[]} words Its arguments.
+ * @param {string | undefined} cwd The directory it runs in.
+ * @param {{ text: string, writes: (string | undefined)[] }} call The whole
+ *   call and the files it writes.
+ * @returns {string[]} One line per problem.
+ */
+function refusals(words, cwd, call) {
+  const pairs = options(words)
+  if (pairs.some(([flag]) => HELP.has(flag))) {
+    return []
+  }
+  const given = pairs
+    .filter(([flag]) => LABEL.has(flag))
+    .flatMap(([, value]) => (value?.text ?? '').split(','))
+    .map((label) => label.trim())
+    .filter((label) => label !== '')
+  const file = pairs.findLast(([flag]) => BODY_FILE.has(flag))?.[1]
+  const body = bodyOf(file, cwd, call)
+  const missing =
+    body === undefined && file !== undefined ?
+      [`body file not found: ${resolved(file, cwd) ?? file.text}`]
+    : []
+
+  return unsure(words) ? missing : [...missing, ...problems(given, body)]
+}
+
+/**
+ * Why each `gh issue create` the shell would run is refused. Text that only
+ * mentions the command (a quoted string, a heredoc body, a comment) runs
+ * nothing, and each create is read on its own.
+ * @param {string} text The shell command.
+ * @param {string | undefined} cwd The directory it starts in.
+ * @returns {string[]} One line per problem, empty when every create passes.
+ */
+export function check(text, cwd) {
+  if (!/issue(?:\s|\\\n)+create/u.test(text)) {
+    return []
+  }
+  const { commands, writes } = lex(text, cwd)
+
+  return commands.flatMap((command) => {
+    const words = createArguments(command)
+
+    return words === undefined ?
+        []
+      : refusals(words, command.cwd, { text, writes })
+  })
+}
+
+/**
+ * What the hook tells the agent about a Bash call.
+ * @param {{ tool_input?: { command?: unknown }, cwd?: string }} input The
+ *   hook input.
+ * @returns {string | undefined} Why the call is refused, or undefined when
+ *   it may run.
+ */
+export function refusal(input) {
+  const found = check(
+    String(input.tool_input?.command ?? ''),
+    input.cwd ?? process.cwd(),
+  )
+
+  return found.length === 0 ?
+      undefined
+    : `gh issue create refused:\n- ${found.join('\n- ')}\nEvery issue takes one type:, area:, status:, priority: and size: label (no size: on a type:epic). Load the issues skill for what each one means.\n`
+}
+
+/**
+ * The refusal for the input on stdin. A bug in the hook lets the call
+ * through, with a note, rather than block every Bash call.
+ * @returns {string | undefined} The refusal, if any.
+ */
+function fromStdin() {
+  try {
+    return refusal(JSON.parse(readFileSync(process.stdin.fd, 'utf8')))
+  } catch (error) {
+    process.stderr.write(`issue hook skipped its check: ${String(error)}\n`)
+
+    return
+  }
+}
+
 if (isMain(import.meta)) {
-  const input = JSON.parse(readFileSync(process.stdin.fd, 'utf8'))
-  const command = String(input.tool_input?.command ?? '')
-  const found =
-    createsIssue(command) ? problems(labelsOf(command), bodyOf(command)) : []
-  if (found.length > 0) {
-    process.stderr.write(
-      `gh issue create refused:\n- ${found.join('\n- ')}\nEvery issue takes one type:, area:, status:, priority: and size: label (no size: on a type:epic). Load the issues skill for what each one means.\n`,
-    )
+  const message = fromStdin()
+  if (message !== undefined) {
+    process.stderr.write(message)
     process.exitCode = 2
   }
 }

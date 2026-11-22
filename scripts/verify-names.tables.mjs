@@ -111,6 +111,7 @@ export const ITALIAN_TITLES = {
     'gyro': 'Formichimere#Giairo',
     'neferpitou': 'Formichimere#Neferpito',
     'meruem': 'Formichimere#Meruem',
+    'chimera-ant-queen': 'Formichimere#Regina',
     'shaiapouf': 'Formichimere#Shawapf',
     'menthuthuyoupi': 'Formichimere#Montowtoyupih',
     'colt': 'Formichimere#Coluto',

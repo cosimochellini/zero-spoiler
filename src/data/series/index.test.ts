@@ -3,6 +3,7 @@ import { byNumber, byString } from 'sort-es'
 import { describe, expect, it, vi } from 'vitest'
 
 import type { Redrawings } from '~/data/art/stroke'
+import type { PowerBody } from '~/data/features'
 import { toldIn } from '~/data/reveal'
 import type { Dated, Entity, SeriesArchive } from '~/data/types'
 import { LOCALES } from '~/i18n/locales'
@@ -102,7 +103,32 @@ interface Told {
   owner: Gated
 }
 
-/** Every timeline's entries and every place's later visits, with their records. */
+/**
+ * Every description and holding of these bodies, with its body: a seat
+ * changing hands past the anime's last chapter is the manga's as much as a
+ * dossier's fact is (#1443).
+ */
+function powerToldOf(bodies: PowerBody[]): Told[] {
+  return bodies.flatMap((owner) => [
+    ...owner.description.map((entry, at) => ({
+      entry,
+      label: `${owner.id}.description ${String(at)}`,
+      owner,
+    })),
+    ...owner.seats.flatMap(({ holders }, place) =>
+      holders.map((entry) => ({
+        entry,
+        label: `${owner.id} seat ${String(place)} @${String(entry.episode)}`,
+        owner,
+      })),
+    ),
+  ])
+}
+
+/**
+ * Every timeline's entries, every place's later visits and every body's
+ * descriptions and holdings, with their records.
+ */
 function toldOf(archive: SeriesArchive): Told[] {
   const facts = archive.timelines.flatMap(({ label, owner, timeline }) =>
     timeline.map((entry) => ({
@@ -119,7 +145,11 @@ function toldOf(archive: SeriesArchive): Told[] {
     })),
   )
 
-  return [...facts, ...visits]
+  return [
+    ...facts,
+    ...visits,
+    ...powerToldOf(archive.features.power?.bodies ?? []),
+  ]
 }
 
 /** How a series gates a fact, and where its anime ends. */
@@ -285,6 +315,35 @@ describe('the manga-only rules', () => {
       "unpinned: the manga's, with no chapter",
       "off: the manga's, with no chapter",
       "owned: the manga's, with no chapter",
+    ])
+  })
+
+  it('names a holding or a description past the anime that is not the manga’s', () => {
+    const body: PowerBody = {
+      ...both,
+      id: 'fixture',
+      kind: 'council',
+      description: [
+        { episode: 1, chapter: 1, value: { en: '', it: '' } },
+        { episode: 9, chapter: 7, value: { en: '', it: '' } },
+      ],
+      seats: [
+        {
+          told: both,
+          title: { en: '', it: '' },
+          holders: [
+            { episode: 1, chapter: 1, value: 'early' },
+            { episode: 10, chapter: 7, value: null },
+            { episode: 10, chapter: 8, source: 'chapter', value: 'clean' },
+          ],
+        },
+      ],
+    }
+
+    expect(mangaOnlyBreaches(powerToldOf([body]), rules)).toStrictEqual([
+      "fixture.description 1: past the anime, not the manga's",
+      'fixture.description 1: past the anime, not at its last episode',
+      "fixture seat 0 @10: past the anime, not the manga's",
     ])
   })
 

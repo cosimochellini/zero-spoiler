@@ -583,7 +583,9 @@ function earlyAgainst(
 
 /**
  * The bodies a character's seats name that they hold no seat in at this ask.
- * A council's seat sends no body's name: its title says it.
+ * A council's seat sends no body's name: its title says it. A body whose
+ * label is also a saga's name (`groupsByLabel`) leaks nothing by it, so its
+ * seats are not asked here: the Chimera Ants' Italian label (#1447).
  */
 function unseatedLabels(
   seats: SeatLink[],
@@ -596,10 +598,10 @@ function unseatedLabels(
       continue
     }
     const faction = factionOf(series.slug, locale).get(body)
-    if (faction !== undefined && seated.has(`${faction}|${key}`)) {
+    if (faction === undefined || seated.has(`${faction}|${key}`)) {
       continue
     }
-    early.push(faction ?? body)
+    early.push(faction)
   }
 
   return early

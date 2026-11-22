@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import type { PowerBody, Seat } from '~/data/features'
+import type { Holding, PowerBody, Seat } from '~/data/features'
 import type { Entity, SeriesArchive } from '~/data/types'
 import { type Locale, LOCALES } from '~/i18n/locales'
 import type { Bookmark } from '~/lib/progress/episode'
@@ -520,9 +520,10 @@ describe('the power page', () => {
   )(
     'is empty for $slug, which has none, at every bookmark and with none',
     ({ archive }) => {
-      // Hunter x Hunter's page is open before its first body (#1442): it
-      // says nothing is open, wherever the reader stands, and with no
-      // bookmark, drawn at the end of the demo (`pageReader`).
+      // A series with the page and no body yet (as Hunter x Hunter was
+      // until #1443, #1442) says nothing is open, wherever the reader
+      // stands, and with no bookmark, drawn at the end of the demo
+      // (`pageReader`).
       for (const locale of LOCALES) {
         for (const bookmark of [chapter(1000), ...archive.bookmarks]) {
           expect(powerPage(readerFor(archive, bookmark, locale))).toStrictEqual(
@@ -704,6 +705,43 @@ describe('the bodies of power', () => {
     expect(
       faults([first, { ...second, episode: first.episode }]),
     ).toStrictEqual(['warlords description 1 is out of order'])
+  })
+
+  it('let a manga-only holding share the episode before it, and only that', () => {
+    const [, crown = THRONE] = FIXTURE_BODY.seats
+    const last = crown.holders.at(-1) ?? MIDWAY
+    const withNext = (next: Holding): string[] =>
+      bodyFaults(
+        [
+          {
+            ...FIXTURE_BODY,
+            seats: [THRONE, { ...crown, holders: [...crown.holders, next] }],
+          },
+        ],
+        POWER_ARCHIVE,
+      )
+    const sameEpisode = { episode: last.episode, value: null }
+
+    expect(
+      withNext({
+        ...sameEpisode,
+        chapter: last.chapter + 1,
+        source: 'chapter',
+      }),
+    ).toStrictEqual([])
+    expect(
+      withNext({ ...sameEpisode, chapter: last.chapter, source: 'chapter' }),
+    ).toStrictEqual(['warlords seat 1 holders are out of order'])
+    expect(
+      withNext({ ...sameEpisode, chapter: last.chapter + 1 }),
+    ).toStrictEqual(['warlords seat 1 holders are out of order'])
+    expect(
+      withNext({
+        ...sameEpisode,
+        chapter: last.chapter + 1,
+        source: 'episode',
+      }),
+    ).toStrictEqual(['warlords seat 1 holders are out of order'])
   })
 
   it('hold the fixture, and catch a body broken against them', () => {

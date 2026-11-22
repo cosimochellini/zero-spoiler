@@ -211,6 +211,9 @@ const links = {
  * Menthuthuyoupi opens on Shaiapouf's mention, still in his cocoon, and
  * hatches in chapter 206 / episode 88. Colt's past as a human boy opens with
  * the scene that shows it, chapter 215 / episode 92, and never names him.
+ *
+ * The Queen is filed for the ranks page (#1447), where she holds its top
+ * seat. The phase inventories had left her out as a title.
  */
 const KING_KOMUGI_GUEST: Relationship = {
   ...links.kingKomugi,
@@ -222,7 +225,56 @@ const KING_KOMUGI_GUEST: Relationship = {
 
 export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
   dossiers: {
-    cheetu: {
+    'chimera-ant-queen': {
+      relationships: [
+        // Colt is named at chapter 214 and Meruem at 215, both in episode
+        // 92; she dies in the chapter that names her son.
+        {
+          episode: 92,
+          chapter: 215,
+          value: [
+            {
+              character: 'colt',
+              type: { it: 'Comandante di divisione', en: 'Squadron Leader' },
+              summary: {
+                it: 'Guida i soldati che le portano gli umani. Quando lei sta morendo resta al suo fianco e le mente: le dice che suo figlio sta bene ed è andato a cercare erbe per curarla.',
+                en: 'He leads the soldiers who bring her humans. As she lies dying he stays at her side and lies to her: he says her son is well and has gone to find herbs to heal her.',
+              },
+            },
+            {
+              character: 'meruem',
+              type: { it: 'Figlio', en: 'Son' },
+              summary: {
+                it: 'Il re che lei vive per mettere al mondo. Nasce prima del tempo squarciandole il ventre; morendo, lei rivela il nome che ha scelto per lui.',
+                en: 'The King she lives to bring into the world. He is born early, tearing his way out of her womb; dying, she gives the name she chose for him.',
+              },
+            },
+          ],
+        },
+      ],
+      role: {
+        it: 'Regina delle formichimere',
+        en: 'Queen of the Chimera Ants',
+      },
+      log: {
+        it: 'Ferita, mangia da sola in una grotta per riprendere le forze. Poi depone le uova, manda i primi soldati a cercare cibo e scopre che gli esseri umani sono la preda più nutriente.',
+        en: 'Hurt, she feeds alone in a cave to get her strength back. Then she lays eggs, sends her first soldiers out for food and finds that humans are the most nourishing prey.',
+      },
+      status: [
+        { episode: 77, chapter: 187, value: 'alive' },
+        // Her organs give out after the King's birth, and she dies once she
+        // has named him, chapter 215 and episode 92.
+        { episode: 92, chapter: 215, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 77,
+          chapter: 187,
+          value: { it: 'Formichimere', en: 'Chimera Ants' },
+        },
+      ],
+    },
+    'cheetu': {
       chronicle: [
         ...chimeraAntPhase1Chronicles.cheetu,
         ...chimeraAntPhase2Chronicles.cheetu,
@@ -301,7 +353,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    peggy: {
+    'peggy': {
       chronicle: [
         ...chimeraAntPhase1Chronicles.peggy,
         ...chimeraAntPhase2Chronicles.peggy,
@@ -327,7 +379,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
       ],
       affiliation: [{ episode: 79, chapter: 189, value: SERVING_THE_QUEEN }],
     },
-    shaiapouf: {
+    'shaiapouf': {
       chronicle: [
         ...chimeraAntPhase2Chronicles.shaiapouf,
         ...chimeraAntPhase3Chronicles.shaiapouf,
@@ -365,7 +417,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         { episode: 91, chapter: 213, value: KINGS_GUARD },
       ],
     },
-    menthuthuyoupi: {
+    'menthuthuyoupi': {
       chronicle: [
         ...chimeraAntPhase2Chronicles.menthuthuyoupi,
         ...chimeraAntPhase4Chronicles.menthuthuyoupi,
@@ -418,7 +470,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         { episode: 91, chapter: 213, value: KINGS_GUARD },
       ],
     },
-    colt: {
+    'colt': {
       chronicle: [
         ...chimeraAntPhase2Chronicles.colt,
         ...chimeraAntPhase5Chronicles.colt,
@@ -483,7 +535,7 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
         },
       ],
     },
-    meruem: {
+    'meruem': {
       chronicle: [
         ...chimeraAntPhase2Chronicles.meruem,
         ...chimeraAntPhase3Chronicles.meruem,
@@ -619,6 +671,21 @@ export const CHIMERA_ANT_ROYALS: Pick<HunterSaga, 'dossiers' | 'entries'> = {
     },
   },
   entries: [
+    // Chapter 187: Monta and Podungo say the leg is like a Chimera Ant
+    // Queen's. Episode 77: Monta shows Kite a Chimera Ant Queen's claw. The
+    // lower points, chapter 186 and episode 76, name her only in narration.
+    {
+      id: 'chimera-ant-queen',
+      kind: 'character',
+      revealedAtEpisode: 77,
+      revealedAtChapter: 187,
+      name: { it: 'Regina', en: 'Chimera Ant Queen' },
+      summary: {
+        it: 'La regina delle formichimere, molto più grande di qualsiasi altra conosciuta.',
+        en: 'The queen of the Chimera Ants, far larger than any known before.',
+      },
+      visual: { art: 'chimera-ant-queen', tint: 'magenta' },
+    },
     // Rammot names his squad in chapter 192; Peggy names him in episode 79.
     {
       id: 'cheetu',

@@ -26,8 +26,15 @@ const AUTHORED = PHASES.flatMap((phase) => Object.entries(phase))
 const STORIES = new Set(
   AUTHORED.flatMap(([, stories]) => stories.map((row) => row.value)),
 )
+/**
+ * The Queen is filed later, for the ranks page (#1447), with no chronicle
+ * (owner, 2026-11-22), so she has no opening story to ask for.
+ */
 const CAST = chimeraAnt.entries.filter(
-  (entry) => entry.kind === 'character' && entry.revealedAtChapter <= 318,
+  (entry) =>
+    entry.kind === 'character'
+    && entry.revealedAtChapter <= 318
+    && entry.id !== 'chimera-ant-queen',
 )
 
 const GYRO_REBIRTH = chimeraAntPhase2Chronicles.gyro.find(
