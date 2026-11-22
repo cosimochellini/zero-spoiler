@@ -536,11 +536,12 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
 export const chimeraAntPhaseThreeRedrawn: Redrawings = {
   flutter: [
     // His wings folded and still on the ground, the fore wing torn at the
-    // tip in tint, no body: Knov ambushes him in Peijin and leaves him
-    // lying in his dimension, chapter 248 and episode 104.
+    // tip in tint, no body: after Knov's ambush his corpse first shows among
+    // the Extermination Team in Knov's dimension, chapter 262 and episode
+    // 110.
     {
-      episode: 104,
-      chapter: 248,
+      episode: 110,
+      chapter: 262,
       value: [
         ...moved(
           [
@@ -560,10 +561,10 @@ export const chimeraAntPhaseThreeRedrawn: Redrawings = {
   ikalgo: [
     // Flutter's folded wings over the same rifle, the tip of a tentacle
     // showing from under them in tint: Ikalgo moves inside Flutter's body
-    // with Living Dead Dolls from the raid, chapter 262 and episode 111.
+    // with Living Dead Dolls from the raid, chapter 263 and episode 111.
     {
       episode: 111,
-      chapter: 262,
+      chapter: 263,
       value: [
         ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.ikalgo.slice(0, 8),
         ...moved(

@@ -345,11 +345,12 @@ export const CHIMERA_ANT_PHASE_THREE: Pick<HunterSaga, 'dossiers' | 'entries'> =
           en: 'Warns an ally of danger.',
         },
         affiliation: [{ episode: 100, chapter: 235, value: CHIMERA_ANTS }],
-        // Knov ambushes him in Peijin; chapter 248 shows him lying in Knov's
-        // dimension, and episode 104 says he has been taken out.
+        // Knov leaves him unconscious in his dimension, chapter 248 /
+        // episode 104; the first sign he is dead is his corpse among the
+        // Extermination Team, chapter 262 / episode 110.
         status: [
           { episode: 100, chapter: 235, value: 'alive' },
-          { episode: 104, chapter: 248, value: 'deceased' },
+          { episode: 110, chapter: 262, value: 'deceased' },
         ],
       },
       pell: {
