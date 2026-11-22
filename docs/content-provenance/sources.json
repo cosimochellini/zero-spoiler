@@ -36681,6 +36681,46 @@
       "revisionUrl": "https://iceandfire.fandom.com/index.php?oldid=23858",
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=23858",
       "contentSha256": "fc1deb8b4df440541bbed5f19e414ee58e40315027df3c294f742d8812151d68"
+    },
+    "hxh-en-Kukuroo_Mountain-421728.json": {
+      "locale": "en",
+      "title": "Kukuroo Mountain",
+      "revision": 421728,
+      "revisionDate": "2026-07-07T13:39:48Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Kukuroo_Mountain",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421728",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421728",
+      "contentSha256": "1c6565da5dd8f2c2f808bc1ba664a3b397048062dc21b30b8cea7449a6790478"
+    },
+    "hxh-en-Testing_Gate-421729.json": {
+      "locale": "en",
+      "title": "Testing Gate",
+      "revision": 421729,
+      "revisionDate": "2026-07-07T13:41:39Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Testing_Gate",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=421729",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=421729",
+      "contentSha256": "ece3105eb73cc07cb1e1f7d67dca395c225f9883de1a13ceb48e4ff5ac4f6d09"
+    },
+    "hxh-en-Lamentation_Tours-423042.json": {
+      "locale": "en",
+      "title": "Lamentation Tours",
+      "revision": 423042,
+      "revisionDate": "2026-07-26T14:16:21Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Lamentation_Tours",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=423042",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=423042",
+      "contentSha256": "4ffd48c2897c911adad57e4e2b508bfa46d2aa64ac2f676cac57b1d59fe79f5d"
+    },
+    "hxh-en-Kite/Image_Gallery-425859.json": {
+      "locale": "en",
+      "title": "Kite/Image Gallery",
+      "revision": 425859,
+      "revisionDate": "2026-11-01T23:19:15Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Kite/Image_Gallery",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425859",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425859",
+      "contentSha256": "0772cb8590baeb76f8fa0fe6d63010a14af996404f1912a0291e7b9443884c4d"
     }
   }
 }

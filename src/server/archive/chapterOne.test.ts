@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { opened } from '~/test/gates'
+import { bookmarkAt as at, opened } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
-import { characterPage, shelvesPage } from './pages.server'
+import { characterPage, drawingsFor, shelvesPage } from './pages.server'
 import { type Reader, readerFor } from './reader.server'
 
 const { archive } = loadedSeries('hunter-x-hunter')
@@ -150,5 +150,21 @@ describe('a reordered character beside a source-only arc', () => {
     expect(reader.archive.bookSections).toStrictEqual([
       { arc: first, characters: [character] },
     ])
+  })
+})
+
+describe('Kite’s Crazy Slots stage', () => {
+  // The carbine lies beside the cap from 82 / 193, never one step before.
+  it.each(LOCALES)('changes the drawing at the pair in %s', (locale) => {
+    for (const [unit, gate] of [
+      ['episode', 82],
+      ['chapter', 193],
+    ] as const) {
+      const read = (count: number): ReturnType<typeof drawingsFor> =>
+        drawingsFor(['kite'], readerFor(archive, at(unit, count), locale))
+
+      expect(read(gate)['kite']).toBeDefined()
+      expect(read(gate)).not.toStrictEqual(read(gate - 1))
+    }
   })
 })
