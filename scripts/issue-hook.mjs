@@ -2,13 +2,13 @@
 // `gh issue create` without one label per group in `.github/labels.json` is
 // refused, so every issue an agent opens can be queried by the next one.
 // Exit 2 blocks the call and hands stderr back to the agent.
-import { existsSync, readFileSync } from 'node:fs'
+import { readFileSync, statSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 
 import labels from '../.github/labels.json' with { type: 'json' }
 import { isMain } from './is-main.mjs'
-import { lex, resolved } from './shell-lex.mjs'
+import { commandStart, lex, resolved } from './shell-lex.mjs'
 
 /** @typedef {import('./shell-lex.mjs').Word} Word */
 /** @typedef {import('./shell-lex.mjs').Command} Command */
@@ -19,24 +19,6 @@ const GROUPS = ['type', 'area', 'status', 'priority', 'size']
 /** Every label the repository defines. */
 const KNOWN = new Set(labels.map((label) => label.name))
 
-/** Words that can stand before the command name without being it. */
-const PREFIXES = new Set([
-  '!',
-  'command',
-  'do',
-  'elif',
-  'else',
-  'exec',
-  'if',
-  'proxy',
-  'rtk',
-  'then',
-  'time',
-  'until',
-  'while',
-  '{',
-])
-const ASSIGNMENT = /^[A-Z_a-z]\w*=/u
 const LABEL = new Set(['--label', '-l'])
 const BODY_FILE = new Set(['--body-file', '-F'])
 const HELP = new Set(['--help', '-h'])
@@ -49,9 +31,7 @@ const HELP = new Set(['--help', '-h'])
  *   command.
  */
 function createArguments({ words }) {
-  const start = words.findIndex(
-    ({ text }) => !PREFIXES.has(text) && !ASSIGNMENT.test(text),
-  )
+  const start = commandStart(words)
   const [gh = '', issue, create] = words
     .slice(start, start + 3)
     .map(({ text }) => text)
@@ -81,29 +61,30 @@ function options(words) {
 }
 
 /**
- * The text that holds the body: the `--body-file` when the hook can find it,
- * else the whole call, which carries an inline `--body`, a heredoc, or the
- * text written into a file this same call creates. A path the hook cannot
- * expand (a loop variable) reads the call too.
+ * The text that holds the body: the whole call when it carries the body (an
+ * inline `--body`, a heredoc, or the text written into a file this same call
+ * creates, which wins over a stale copy on disk) or when the hook cannot
+ * expand the path (a loop variable); else the `--body-file`.
  * @param {Word | undefined} file The `--body-file` value.
  * @param {string | undefined} cwd The directory `gh` runs in.
  * @param {{ text: string, writes: (string | undefined)[] }} call The whole
  *   call and the files it writes.
  * @returns {string | undefined} The text, or undefined when the file is
- *   missing and nothing in the call writes it.
+ *   missing (or a directory) and nothing in the call writes it.
  */
 function bodyOf(file, cwd, call) {
   const where =
     file === undefined || file.text === '-' ? undefined : resolved(file, cwd)
-  if (where === undefined) {
+  if (
+    where === undefined
+    || call.writes.includes(where)
+    || call.writes.includes(undefined)
+  ) {
     return call.text
   }
-  if (existsSync(where)) {
-    return readFileSync(where, 'utf8')
-  }
 
-  return call.writes.includes(where) || call.writes.includes(undefined) ?
-      call.text
+  return statSync(where, { throwIfNoEntry: false })?.isFile() ?
+      readFileSync(where, 'utf8')
     : undefined
 }
 
@@ -143,7 +124,8 @@ export function problems(given, body) {
 }
 
 /**
- * Why one `gh issue create` is refused; asking for help creates none.
+ * Why one `gh issue create` is refused; asking for help creates none. Labels
+ * held in a variable the hook cannot expand go unchecked.
  * @param {Word[]} words Its arguments.
  * @param {string | undefined} cwd The directory it runs in.
  * @param {{ text: string, writes: (string | undefined)[] }} call The whole
@@ -155,9 +137,11 @@ function refusals(words, cwd, call) {
   if (pairs.some(([flag]) => HELP.has(flag))) {
     return []
   }
-  const given = pairs
+  const values = pairs
     .filter(([flag]) => LABEL.has(flag))
-    .flatMap(([, value]) => (value?.text ?? '').split(','))
+    .map(([, value]) => value ?? { text: '', exact: true })
+  const given = values
+    .flatMap(({ text }) => text.split(','))
     .map((label) => label.trim())
     .filter((label) => label !== '')
   const file = pairs.findLast(([flag]) => BODY_FILE.has(flag))?.[1]
@@ -167,7 +151,9 @@ function refusals(words, cwd, call) {
       [`body file not found: ${resolved(file, cwd) ?? file.text}`]
     : []
 
-  return [...missing, ...problems(given, body)]
+  return values.every(({ exact }) => exact) ?
+      [...missing, ...problems(given, body)]
+    : missing
 }
 
 /**
@@ -179,7 +165,7 @@ function refusals(words, cwd, call) {
  * @returns {string[]} One line per problem, empty when every create passes.
  */
 export function check(text, cwd) {
-  if (!/issue\s+create/u.test(text)) {
+  if (!/issue(?:\s|\\\n)+create/u.test(text)) {
     return []
   }
   const { commands, writes } = lex(text, cwd)
@@ -193,16 +179,31 @@ export function check(text, cwd) {
   })
 }
 
-if (isMain(import.meta)) {
-  const input = JSON.parse(readFileSync(process.stdin.fd, 'utf8'))
+/**
+ * Refuses the call when a create breaks the rules.
+ * @param {{ tool_input?: { command?: unknown }, cwd?: string }} input The
+ *   hook input.
+ */
+function report(input) {
   const found = check(
     String(input.tool_input?.command ?? ''),
     input.cwd ?? process.cwd(),
   )
-  if (found.length > 0) {
-    process.stderr.write(
-      `gh issue create refused:\n- ${found.join('\n- ')}\nEvery issue takes one type:, area:, status:, priority: and size: label (no size: on a type:epic). Load the issues skill for what each one means.\n`,
-    )
-    process.exitCode = 2
+  if (found.length === 0) {
+    return
+  }
+  process.stderr.write(
+    `gh issue create refused:\n- ${found.join('\n- ')}\nEvery issue takes one type:, area:, status:, priority: and size: label (no size: on a type:epic). Load the issues skill for what each one means.\n`,
+  )
+  process.exitCode = 2
+}
+
+if (isMain(import.meta)) {
+  // A bug in the hook lets the call through, with a note, rather than block
+  // every Bash call.
+  try {
+    report(JSON.parse(readFileSync(process.stdin.fd, 'utf8')))
+  } catch (error) {
+    process.stderr.write(`issue hook skipped its check: ${String(error)}\n`)
   }
 }

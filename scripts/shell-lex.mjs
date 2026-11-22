@@ -2,14 +2,23 @@
 // commands the shell would run, so a hook reads only a real invocation and
 // not text that mentions one. Quotes are removed and never split, heredoc
 // bodies and comments are skipped, each `$(…)` or backquote is a command of
-// its own, and variables assigned earlier in the call are expanded.
+// its own, and variables assigned earlier in the call are expanded. Where it
+// cannot be sure (a loop variable, `cd -`, `pushd`) a word or the directory
+// is unknown, never a wrong concrete value.
 // ponytail: a lexer, not a parser; `case` patterns, `bash -c "…"` and
 // aliases are misread. Swap in a real parser if a hook ever needs them.
 import path from 'node:path'
 import process from 'node:process'
 
 const HOME = process.env.HOME ?? '/'
-const ASSIGNMENT = /^[A-Z_a-z]\w*=/u
+/** A `NAME=value` word. */
+export const ASSIGNMENT = /^[A-Z_a-z]\w*=/u
+const ESCAPES = new Map(Object.entries({ n: '\n', r: '\r', t: '\t' }))
+/** Words that can stand before the command name without being it. */
+const PREFIXES = new Set(
+  '! command do elif else exec if proxy rtk then time until while {'.split(' '),
+)
+const CD_OPTIONS = new Set(['-P', '-L', '-e', '-@', '--'])
 
 /**
  * A shell word with its quotes removed.
@@ -40,6 +49,7 @@ const ASSIGNMENT = /^[A-Z_a-z]\w*=/u
 
 // Each token the lexer knows and the method that handles it, tried in order.
 const DOLLAR = [
+  [/\$\(\(/uy, 'arithmetic'],
   [/\$\(/uy, 'openSubstitution'],
   [/\$\{(?<braced>\w+)\}|\$(?<name>[A-Z_a-z]\w*)/uy, 'variable'],
   [/\$\{[^}]*\}|\$[\d!#$*?@-]/uy, 'opaque'],
@@ -56,13 +66,15 @@ const PLAIN = [
   [/\\\n/uy, 'endWord'],
   [/\\(?<text>.)/uy, 'literal'],
   [/'(?<text>[^']*)'?/uy, 'literal'],
+  [/\$'(?<text>(?:\\[\s\S]|[^'\\])*)'?/uy, 'ansi'],
   [/"/uy, 'openQuote'],
   ...DOLLAR,
   [/<<</uy, 'read'],
   [
-    /<<(?<tabs>-?)[\t ]*\\?(?<quote>["']?)(?<delimiter>\w[\w.@-]*)\k<quote>/uy,
+    /<<(?<tabs>-?)[\t ]*(?:'(?<single>[^']*)'|"(?<double>[^"]*)"|\\?(?<bare>[^\s"&'();<>|-][^\s"&'();<>|]*))/uy,
     'heredoc',
   ],
+  [/<<-?/uy, 'heredoc'],
   [/<&|>&|</uy, 'read'],
   [/&>>?|>>|>\||>/uy, 'write'],
   [/\n/uy, 'newline'],
@@ -104,15 +116,25 @@ export function resolved(word, cwd) {
   return path.resolve(cwd ?? '/', word.text)
 }
 
+/**
+ * Where the command name starts, past keywords, `rtk` and assignments.
+ * @param {Word[]} words A simple command.
+ * @returns {number} Its index, or -1 when every word is one of those.
+ */
+export const commandStart = (words) =>
+  words.findIndex(({ text }) => !PREFIXES.has(text) && !ASSIGNMENT.test(text))
+
 /** Reads one call, token by token. */
 class Lexer {
   /** @type {Command[]} */
   commands = []
   /** @type {Frame[]} */
   frames = [level('')]
-  /** @type {{ delimiter: string, tabs: boolean }[]} */
+  /** @type {{ delimiter: string | undefined, tabs: boolean }[]} */
   heredocs = []
   i = 0
+  /** @type {{ cwd: string | undefined, vars: Map<string, string> }[]} */
+  scopes = []
   /** @type {(string | undefined)[]} */
   writes = []
 
@@ -126,7 +148,9 @@ class Lexer {
     this.cwd = cwd
     /** @type {Map<string, string>} */
     this.vars = new Map(
-      Object.entries(process.env).filter(([, value]) => value !== undefined),
+      Object.entries(process.env).filter(
+        ([key, value]) => value !== undefined && !key.endsWith('PWD'),
+      ),
     )
   }
 
@@ -178,22 +202,47 @@ class Lexer {
     this.append(text)
   }
 
+  /** @param {{ text?: string }} groups `$'…'`, its escapes decoded. */
+  ansi({ text = '' }) {
+    this.append(
+      text.replaceAll(
+        /\\(?<char>[\s\S])/gu,
+        (_, char) => ESCAPES.get(char) ?? char,
+      ),
+    )
+  }
+
   /** @param {{ text?: string }} groups An unquoted run, `~` expanded. */
   bare({ text = '' }) {
-    const home = this.top.word === null && /^~(?:\/|$)/u.test(text)
-    this.append(home ? HOME + text.slice(1) : text)
+    if (this.top.word !== null) {
+      this.append(text)
+
+      return
+    }
+    const name = ASSIGNMENT.exec(text)?.[0] ?? ''
+    const value = text.slice(name.length)
+    this.append(
+      /^~(?:\/|$)/u.test(value) ? `${name}${HOME}${value.slice(1)}` : text,
+    )
   }
 
   /** @param {{ braced?: string, name?: string }} groups The variable. */
   variable({ braced, name }) {
     const key = braced ?? name ?? ''
-    const value = this.vars.get(key)
+    const value = key === 'PWD' ? this.cwd : this.vars.get(key)
     this.append(value ?? `$${key}`, value !== undefined)
   }
 
   /** A special parameter or an expansion with an operator. */
   opaque() {
     this.append('', false)
+  }
+
+  /** `$((…))`: a number, never a command or a heredoc. */
+  arithmetic() {
+    const end = this.text.indexOf('))', this.i)
+    this.i = end === -1 ? this.text.length : end + 2
+    this.opaque()
   }
 
   /** Enters a double-quoted string. */
@@ -207,10 +256,23 @@ class Lexer {
     this.top.quoted = false
   }
 
+  /** Saves the directory and variables a subshell may change. */
+  enter() {
+    this.scopes.push({ cwd: this.cwd, vars: new Map(this.vars) })
+  }
+
+  /** Restores the directory and variables from before the subshell. */
+  leave() {
+    const { cwd, vars } = this.scopes.pop() ?? this
+    this.cwd = cwd
+    this.vars = vars
+  }
+
   /** `$(`: the word holds the output of a command of its own. */
   openSubstitution() {
     this.append('', false)
     this.frames.push(level(')'))
+    this.enter()
   }
 
   /** A backquote opens a substitution or closes the one it opened. */
@@ -220,6 +282,7 @@ class Lexer {
     } else {
       this.append('', false)
       this.frames.push(level('`'))
+      this.enter()
     }
   }
 
@@ -227,12 +290,14 @@ class Lexer {
   closeSubstitution() {
     this.endCommand()
     this.frames.pop()
+    this.leave()
   }
 
   /** A bare `(` starts a subshell. */
   openParen() {
-    this.top.depth += 1
     this.endCommand()
+    this.top.depth += 1
+    this.enter()
   }
 
   /** A bare `)` ends a subshell or the substitution. */
@@ -243,8 +308,12 @@ class Lexer {
 
       return
     }
-    top.depth = Math.max(0, top.depth - 1)
     this.endCommand()
+    if (top.depth === 0) {
+      return
+    }
+    top.depth -= 1
+    this.leave()
   }
 
   /** A comment at the start of a word runs to the end of the line. */
@@ -278,8 +347,13 @@ class Lexer {
     top.target = target
   }
 
-  /** @param {{ tabs?: string, delimiter?: string }} groups The delimiter. */
-  heredoc({ tabs, delimiter = '' }) {
+  /**
+   * A heredoc's delimiter is taken literally, as Bash does. Without one, its
+   * body runs to the end of the call, so it is never read as commands.
+   * @param {{ tabs?: string, single?: string, double?: string, bare?: string }} groups The delimiter.
+   */
+  heredoc({ tabs, single, double, bare }) {
+    const delimiter = single ?? double ?? bare
     this.heredocs.push({ delimiter, tabs: tabs === '-' })
   }
 
@@ -291,7 +365,7 @@ class Lexer {
     }
   }
 
-  /** @param {{ delimiter: string, tabs: boolean }} heredoc Its last line. */
+  /** @param {{ delimiter: string | undefined, tabs: boolean }} heredoc Its last line. */
   skipHeredoc({ delimiter, tabs }) {
     let line = ''
     while (line !== delimiter && this.i < this.text.length) {
@@ -335,36 +409,41 @@ class Lexer {
 
   /** @param {Word[]} words A command that may change the directory or a variable. */
   follow(words) {
-    const [name, where] = words
-    if (name?.text === 'cd') {
-      this.cd(where)
-
-      return
+    const start = commandStart(words)
+    const [name, ...rest] = start === -1 ? [] : words.slice(start)
+    if (name === undefined || name.text === 'export') {
+      this.assign(name === undefined ? words : rest)
+    } else if (['cd', 'popd', 'pushd'].includes(name.text)) {
+      this.cd(name.text, rest)
     }
-    const assigned = name?.text === 'export' ? words.slice(1) : words
-    if (assigned.every(({ text }) => ASSIGNMENT.test(text))) {
-      for (const word of assigned) {
-        this.assign(word)
+  }
+
+  /** @param {Word[]} words Words, the `NAME=value` ones among them assigned. */
+  assign(words) {
+    for (const { exact, text } of words) {
+      const [key = ''] = text.split('=', 1)
+      if (!ASSIGNMENT.test(text)) {
+        continue
+      }
+      if (exact) {
+        this.vars.set(key, text.slice(key.length + 1))
+      } else {
+        this.vars.delete(key)
       }
     }
   }
 
-  /** @param {Word} word A `NAME=value` word. */
-  assign({ exact, text }) {
-    const [key = ''] = text.split('=', 1)
-    if (exact) {
-      this.vars.set(key, text.slice(key.length + 1))
+  /**
+   * Follows `cd`; `cd -`, `pushd` and `popd` leave the directory unknown.
+   * @param {string} name The command.
+   * @param {Word[]} args Its arguments.
+   */
+  cd(name, args) {
+    const where = args.find(({ text }) => !CD_OPTIONS.has(text))
+    if (name !== 'cd' || where?.text === '-') {
+      this.cwd = undefined
     } else {
-      this.vars.delete(key)
-    }
-  }
-
-  /** @param {Word | undefined} where Where `cd` goes. */
-  cd(where) {
-    if (where === undefined) {
-      this.cwd = HOME
-    } else {
-      this.cwd = where.text === '-' ? undefined : resolved(where, this.cwd)
+      this.cwd = where === undefined ? HOME : resolved(where, this.cwd)
     }
   }
 }

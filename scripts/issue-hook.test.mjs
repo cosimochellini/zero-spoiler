@@ -107,13 +107,30 @@ describe('the gh issue create hook', () => {
     ])
   })
 
+  it('refuses a directory or an empty path as a body file', () => {
+    expect(check(`gh issue create -F ${dir} ${LABELS}`, '/')).toStrictEqual([
+      `body file not found: ${dir}`,
+    ])
+    expect(check(`gh issue create -F "" ${LABELS}`, dir)).toStrictEqual([
+      `body file not found: ${dir}`,
+    ])
+  })
+
   it('expands a variable assigned earlier in the call', () => {
     expect(
-      check(`D=${dir}; gh issue create -F $D/plain.md ${BLOCKED}`, '/'),
-    ).toStrictEqual([UNBLOCKS])
+      check(`D=${dir}; gh issue create -F $D/gone.md ${LABELS}`, '/'),
+    ).toStrictEqual([`body file not found: ${path.join(dir, 'gone.md')}`])
     expect(
       check(`D=${dir} && gh issue create -F "\${D}/body.md" ${BLOCKED}`, '/'),
     ).toStrictEqual([])
+    expect(
+      check(`cd ${dir} && gh issue create -F "$PWD/body.md" ${BLOCKED}`, '/'),
+    ).toStrictEqual([])
+    expect(
+      check(`D=~/issue-hook-gone; gh issue create -F $D/b.md ${LABELS}`, '/'),
+    ).toStrictEqual([
+      `body file not found: ${process.env.HOME}/issue-hook-gone/b.md`,
+    ])
   })
 
   it('reads a body file the same call writes from the call', () => {
@@ -127,11 +144,66 @@ describe('the gh issue create hook', () => {
         '/',
       ),
     ).toStrictEqual([UNBLOCKS])
+    expect(
+      check(
+        `cat > plain.md <<'EOF'\nUnblocks at: #1\nEOF\ngh issue create -F plain.md ${BLOCKED}`,
+        dir,
+      ),
+    ).toStrictEqual([])
   })
 
-  it('lets a body path it cannot expand through', () => {
+  it('lets a body path or a label it cannot expand through', () => {
     expect(check(loop(LABELS), '/')).toStrictEqual([])
     expect(check(loop(BLOCKED), '/')).toStrictEqual([UNBLOCKS])
+    expect(
+      check(
+        `for t in type:bug type:docs; do gh issue create --label "$t,area:ui,status:ready,priority:p2,size:s"; done`,
+        '/',
+      ),
+    ).toStrictEqual([])
+  })
+
+  it('follows cd the way the shell does', () => {
+    const body = `gh issue create -F body.md ${BLOCKED}`
+    expect(check(`(cd /) && ${body}`, dir)).toStrictEqual([])
+    expect(check(`x=$(cd / && pwd); ${body}`, dir)).toStrictEqual([])
+    expect(check(`if true; then cd ${dir}; fi; ${body}`, '/')).toStrictEqual([])
+    expect(check(`{ cd ${dir}; }; ${body}`, '/')).toStrictEqual([])
+    expect(check(`cd -P ${dir} && ${body}`, '/')).toStrictEqual([])
+    expect(check(`cd -- ${dir} && ${body}`, '/')).toStrictEqual([])
+  })
+
+  it('treats the directory as unknown after cd -, pushd or popd', () => {
+    const gone = `gh issue create -F gone.md ${LABELS}`
+    expect(check(`pushd /tmp && ${gone}`, dir)).toStrictEqual([])
+    expect(check(`popd && ${gone}`, dir)).toStrictEqual([])
+    expect(check(`cd - && ${gone}`, dir)).toStrictEqual([])
+  })
+
+  it('reads arithmetic, odd heredocs and ANSI-C quotes as the shell does', () => {
+    expect(check('echo $((1 << 2))\ngh issue create\n2', '/')).toStrictEqual(
+      NO_LABELS,
+    )
+    expect(check('cat <<$X\ngh issue create\n', '/')).toStrictEqual([])
+    expect(check('cat <<\ngh issue create\n', '/')).toStrictEqual([])
+    expect(
+      check(String.raw`echo $'it\'s; gh issue create'`, '/'),
+    ).toStrictEqual([])
+    expect(check('gh issue \\\n  create', '/')).toStrictEqual(NO_LABELS)
+  })
+
+  it('ends on unterminated input', () => {
+    for (const command of [
+      '',
+      'gh issue create "status:ready',
+      "gh issue create 'x",
+      'gh issue create $(echo',
+      'gh issue create `echo',
+      'gh issue create ${X',
+      'cat <<EOF\ngh issue create',
+    ]) {
+      expect(check(command, '/')).toBeInstanceOf(Array)
+    }
   })
 
   it('accepts one label per group', () => {
