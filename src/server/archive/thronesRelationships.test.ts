@@ -1163,6 +1163,9 @@ describe.each(LOCALES)(
     // What Daenerys's card says of Rakharo at a bookmark.
     const rakharoWords = (bookmark: Bookmark): string | undefined =>
       wordsOf(['daenerys-targaryen', 'rakharo'], bookmark, locale)?.summary
+    // What an owner's own card says of Daenerys at a bookmark.
+    const ownWords = (owner: string, bookmark: Bookmark): string | undefined =>
+      wordsOf([owner, 'daenerys-targaryen'], bookmark, locale)?.summary
 
     it('opens Quaithe’s cards at chapter 86, where she introduces herself', () => {
       expect(projected('quaithe', ch(85), locale)).toStrictEqual([])
@@ -1186,6 +1189,16 @@ describe.each(LOCALES)(
           projected(dragon, ep(archive.series.episodeCeiling), locale),
         ).toStrictEqual([])
       }
+    })
+
+    it('turns Rakharo’s and Irri’s own show cards to the past where each dies', () => {
+      expect(ownWords('rakharo', ep(12))).not.toBe(ownWords('rakharo', ep(11)))
+      expect(ownWords('irri', ep(16))).not.toBe(ownWords('irri', ep(15)))
+
+      expect(people('irri', ep(16))).toStrictEqual([
+        'daenerys-targaryen',
+        'doreah',
+      ])
     })
 
     it('ends Doreah in the Red Waste at chapter 86 but in Xaro’s vault at episode 20', () => {

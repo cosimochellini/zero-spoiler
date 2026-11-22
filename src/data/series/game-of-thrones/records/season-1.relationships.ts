@@ -7512,8 +7512,8 @@ const essos2 = {
     character: 'jorah-mormont',
     type: { en: 'Adviser', it: 'Consigliere' },
     summary: {
-      en: 'The exiled knight who advises her. He tells her the khals around her will kill her for her dragons, so she leads her people into the Red Waste.',
-      it: 'Il cavaliere in esilio che la consiglia. Le dice che i khal intorno a lei la ucciderebbero per i draghi, così lei guida la sua gente nel Deserto Rosso.',
+      en: 'The exiled knight who advises her. He tells her the powerful men around her will kill her for her dragons, so she leads her people into the Red Waste.',
+      it: 'Il cavaliere in esilio che la consiglia. Le dice che gli uomini potenti intorno a lei la ucciderebbero per i draghi, così lei guida la sua gente nel Deserto Rosso.',
     },
   },
   daeRakharoScout: {
@@ -7818,6 +7818,22 @@ const essos2 = {
       it: 'La khaleesi che serve, che la chiama amica. A Qarth Irri la convince a indossare l’abito regalato da Xaro.',
     },
   },
+  irrDaenerysDead: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi she served, who called her a friend. Irri was strangled in Xaro’s house the night the dragons were stolen.',
+      it: 'La khaleesi che serviva e che la chiamava amica. Irri è stata strangolata nella casa di Xaro la notte del furto dei draghi.',
+    },
+  },
+  irrDoreahGone: {
+    character: 'doreah',
+    type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
+    summary: {
+      en: 'Another handmaiden of Daenerys. She was gone from Xaro’s house the night Irri was killed.',
+      it: 'Un’altra ancella di Daenerys. La notte in cui Irri è stata uccisa era sparita dalla casa di Xaro.',
+    },
+  },
   irrDoreahPrincess: {
     character: 'doreah',
     type: { en: 'Fellow handmaiden', it: 'Altra ancella' },
@@ -7958,6 +7974,30 @@ const essos2 = {
     summary: {
       en: 'The khaleesi he rides for as a bloodrider. She sends him south from the ruined city, and when he comes back she has him clear the plaza for grass.',
       it: 'La khaleesi per cui cavalca come cavaliere di sangue. Lo manda a sud dalla città in rovina, e quando torna gli fa liberare la piazza perché cresca l’erba.',
+    },
+  },
+  rakDaenerysDead: {
+    character: 'daenerys-targaryen',
+    type: { en: 'Khaleesi', it: 'Khaleesi' },
+    summary: {
+      en: 'The khaleesi he rode for as a bloodrider. She sent him to scout the Red Waste, and only his horse came back, carrying his head.',
+      it: 'La khaleesi per cui cavalcava come cavaliere di sangue. Lo ha mandato in esplorazione nel Deserto Rosso, ed è tornato solo il suo cavallo, con la sua testa.',
+    },
+  },
+  rakKovarroDead: {
+    character: 'kovarro',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, who rode out to scout in another direction when he did.',
+      it: 'Un altro cavaliere di sangue della khaleesi, partito in esplorazione in un’altra direzione insieme a lui.',
+    },
+  },
+  rakAggoDead: {
+    character: 'aggo',
+    type: { en: 'Fellow bloodrider', it: 'Altro cavaliere di sangue' },
+    summary: {
+      en: 'Another of the khaleesi’s bloodriders, who rode out to scout in another direction when he did.',
+      it: 'Un altro cavaliere di sangue della khaleesi, partito in esplorazione in un’altra direzione insieme a lui.',
     },
   },
   rakAggoChapter: {
@@ -8743,6 +8783,13 @@ export const season1Relationships = {
         essos2.irrRakharoDead,
       ],
     },
+    // Strangled in Xaro's house, "The Old Gods and the New".
+    {
+      episode: 16,
+      chapter: 114,
+      source: 'episode',
+      value: [essos2.irrDaenerysDead, essos2.irrDoreahGone],
+    },
     // The books: Daenerys I.
     {
       episode: 11,
@@ -8934,6 +8981,17 @@ export const season1Relationships = {
         links.rakIrri,
         essos2.rakKovarro,
         essos2.rakAggo,
+      ],
+    },
+    // Killed in the Red Waste, "The Night Lands".
+    {
+      episode: 12,
+      chapter: 86,
+      source: 'episode',
+      value: [
+        essos2.rakDaenerysDead,
+        essos2.rakKovarroDead,
+        essos2.rakAggoDead,
       ],
     },
     // The books: Daenerys I.

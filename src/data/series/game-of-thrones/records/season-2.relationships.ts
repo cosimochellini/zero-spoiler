@@ -87,8 +87,8 @@ const essos = {
     character: 'jorah-mormont',
     type: { en: 'Exiled knight', it: 'Cavaliere in esilio' },
     summary: {
-      en: 'The khaleesi’s knight. They go with her to the House of the Undying together.',
-      it: 'Il cavaliere della khaleesi. La accompagnano insieme alla Casa degli Eterni.',
+      en: 'The khaleesi’s knight. Both of them go with her to the House of the Undying.',
+      it: 'Il cavaliere della khaleesi. Entrambi la accompagnano alla Casa degli Eterni.',
     },
   },
 
@@ -235,8 +235,8 @@ const essos = {
     character: 'daenerys-targaryen',
     type: { en: 'Guest', it: 'Ospite' },
     summary: {
-      en: 'The queen he hosts. He warns her the warlocks are coming for her and asks again to marry her; for a ship he wants one of her dragons.',
-      it: 'La regina che ospita. La avverte che gli stregoni stanno radunando il loro potere contro di lei e le chiede ancora di sposarlo; in cambio delle navi vuole uno dei suoi draghi.',
+      en: 'The queen he hosts. He warns her the warlocks are coming for her and asks again to marry her; he offers ten ships for one of her dragons.',
+      it: 'La regina che ospita. La avverte che gli stregoni stanno radunando il loro potere contro di lei e le chiede ancora di sposarlo; le offre dieci navi in cambio di uno dei suoi draghi.',
     },
   },
 
