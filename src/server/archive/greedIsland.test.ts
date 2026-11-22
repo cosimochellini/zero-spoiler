@@ -389,12 +389,14 @@ describe.each(STEP_CASES)(
   },
 )
 
-describe('the powers Gon and Killua first show in Greed Island', () => {
+describe('the powers first shown in Greed Island', () => {
   it.each([
     // Killua's first spark, after the taser (#1329).
     { id: 'killua', episode: 59, chapter: 122 },
     // Gon's Rock shatters the boulder (#1329).
     { id: 'gon-freecss', episode: 65, chapter: 145 },
+    // Razor summons his 14 Devils for the dodgeball match (#1338).
+    { id: 'razor', episode: 69, chapter: 161 },
   ])('changes $id’s drawing at $episode / $chapter', (stage) => {
     expect(stageMissedAt(archive, stage.id, stage)).toStrictEqual([])
   })
