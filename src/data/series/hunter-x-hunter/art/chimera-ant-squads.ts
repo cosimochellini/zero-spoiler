@@ -7,24 +7,34 @@ import {
 import { ellipse, shadow } from '~/lib/svg/primitives'
 
 /**
- * Yunju's near foreleg standing, side on and facing left, the horse half of
- * the centaur: the knee, the fetlock bulging behind, the pastern sloping to
- * the hoof, the hoof's wall in tint, and the back of the leg hatched. His
- * death lays this same leg on its side.
+ * Yunju's near foreleg standing, side on and facing left: the knee, the
+ * fetlock bulging behind, the pastern sloping to the hoof, the hoof's wall
+ * in tint, and the back of the leg hatched. His death lays this same leg
+ * on its side.
  */
 const YUNJU_LEG: Stroke[] = [
-  { d: 'M70 14 C66 34 66 46 70 58 C68 80 68 100 70 116 C70 122 68 126 64 132' },
+  { d: 'M54 76 C58 92 60 104 62 116 C62 124 60 130 58 136' },
+  { d: 'M84 86 C82 98 80 108 82 116 C88 124 86 132 80 140' },
+  { d: 'M58 136 L46 158 H84 L80 140', role: 'accent' },
+  { d: 'M58 136 Q70 142 80 140 M50 151 Q66 154 82 152', role: 'soft' },
+  { d: 'M60 100 Q70 104 81 100 M82 116 Q88 120 86 126', role: 'soft' },
+  { d: 'M72 106 l6 -4 M72 122 l6 -4', role: 'ambient' },
+]
+
+/**
+ * The rest of his horse half in 3/4 above and behind the leg: the curve of
+ * the chest, the belly running back out of the frame, hatched beneath, and
+ * the far foreleg.
+ */
+const YUNJU_BODY: Stroke[] = [
+  { d: 'M156 26 C118 18 80 20 60 34 C46 44 44 62 54 76' },
+  { d: 'M156 86 C138 92 110 92 84 86' },
   {
-    d: 'M96 14 C98 36 94 58 94 80 C94 96 96 108 100 116 C106 124 104 132 96 138',
+    d: 'M98 90 C98 108 100 124 104 138 L98 152 H120 L116 138 C114 124 112 108 112 91',
+    role: 'soft',
   },
-  { d: 'M64 132 L46 158 H100 L96 138', role: 'accent' },
-  { d: 'M64 132 Q80 140 96 138 M52 150 Q74 154 98 152', role: 'soft' },
-  { d: 'M70 58 Q82 62 94 58 M100 116 Q108 122 104 128', role: 'soft' },
-  {
-    d: 'M88 26 l6 -4 M88 42 l6 -4 M88 66 l6 -4 M88 84 l6 -4 M90 102 l6 -4',
-    role: 'ambient',
-  },
-  { d: 'M90 144 l5 -4 M84 146 l5 -4', role: 'ambient' },
+  { d: 'M110 86 l6 -5 M126 88 l6 -5 M142 86 l6 -5', role: 'ambient' },
+  { d: 'M102 106 l6 -4 M104 122 l6 -4', role: 'ambient' },
 ]
 
 /**
@@ -51,6 +61,34 @@ const RAMMOT_ARM: Stroke[] = [
   },
   { d: 'M61 111 L34 128 M57 131 L30 148 M53 151 L30 166', role: 'soft' },
   { d: 'M90 118 l6 -4 M88 134 l6 -4 M86 150 l6 -4', role: 'ambient' },
+]
+
+/**
+ * Hagya's foot in its sandal, side on and facing left: the leg with its
+ * tiger stripes soft and its far side hatched, the foot and its toes on the
+ * sole, the sole's edge, and the strap over the instep in tint. His death
+ * lays it on its side.
+ */
+const HAGYA_FOOT: Stroke[] = [
+  { d: 'M60 18 C58 54 58 90 62 118 M100 18 C104 54 104 92 102 124' },
+  {
+    d: 'M62 118 C50 124 36 132 26 140 Q20 146 26 152 H108 Q114 146 110 134 Q108 128 102 124',
+  },
+  { d: 'M20 152 Q18 160 26 160 H110 Q118 160 114 152', role: 'soft' },
+  {
+    d: 'M40 136 C52 132 62 136 68 152 M52 129 C66 128 76 134 80 152',
+    role: 'accent',
+  },
+  { d: 'M30 142 q-3 5 0 10 M37 138 q-3 6 0 13', role: 'soft' },
+  {
+    d: 'M60 36 Q72 41 84 35 M59 58 Q70 63 82 57 M60 80 Q70 85 84 79 M62 102 Q72 106 82 101',
+    role: 'soft',
+  },
+  {
+    d: 'M92 30 l7 -4 M94 50 l7 -4 M95 70 l7 -4 M95 90 l7 -4 M96 110 l6 -4',
+    role: 'ambient',
+  },
+  { d: 'M96 138 l6 -4 M100 146 l6 -4', role: 'ambient' },
 ]
 
 /** The colony’s squad leaders and officers (#1021). */
@@ -103,13 +141,14 @@ export const CHIMERA_ANT_SQUADS_DRAWINGS = {
     { d: 'M90 66 l6 -4 M92 82 l7 -4 M90 98 l6 -4', role: 'ambient' },
     shadow(80, 186, 34),
   ],
-  // Yunju's foreleg, the horse half of the centaur Squadron Leader who
-  // hunts humans to keep as pets, episode 79, and whose body Kite stands
-  // over, chapter 193.
+  // Yunju's horse half in 3/4, the near foreleg with its hoof in tint under
+  // the curve of the chest: the centaur Squadron Leader who hunts humans to
+  // keep as pets, episode 79, and whose body Kite stands over, chapter 193.
   yunju: [
+    ...YUNJU_BODY,
     ...YUNJU_LEG,
     { d: 'M4 158 H156', role: 'ambient', dashed: true },
-    shadow(74, 168, 40),
+    shadow(84, 168, 56),
   ],
   // Baro rolled into his armadillo ball for the charge he aims at Gon, the
   // bands of the shell in soft lines with their plates, the widest band in
@@ -138,75 +177,61 @@ export const CHIMERA_ANT_SQUADS_DRAWINGS = {
   // Killua over his kill, the officer named at the nest, chapter 192, and
   // told by his Squadron Leader not to eat a child, episode 79.
   rammot: [...RAMMOT_ARM, shadow(70, 186, 32)],
-  // Baital's tail lifting out of a bank of smoke, the tuft of hair at its
-  // tip in tint and the smoke in drifting open lines: the Squadron Leader
-  // who loses touch with the other squads in Morel's smoke, chapter 205.
+  // Baital's tail lifting out of a bank of smoke and turning toward the
+  // viewer at its end, so its underside shows, hatched; the plume of hair
+  // at its tip one tuft in tint, its strands soft; the smoke in open curls:
+  // the Squadron Leader who loses touch with the other squads in Morel's
+  // smoke, chapter 205.
   baital: [
-    { d: 'M10 132 C40 120 60 92 86 76 C104 66 120 66 128 76' },
-    { d: 'M14 142 C44 130 64 104 88 88 C104 78 116 78 122 84' },
+    { d: 'M10 136 C38 122 60 92 86 72 C102 60 120 58 130 66' },
+    { d: 'M20 148 C48 132 70 104 94 86 C104 79 112 78 118 82' },
+    { d: 'M118 82 C120 74 126 68 130 66', role: 'soft' },
     {
-      d: 'M128 76 C138 82 146 96 148 112 M126 80 C132 92 134 106 132 120 M122 84 C124 96 122 108 116 118 M128 76 C140 74 150 82 154 92',
+      d: 'M118 82 L114 98 L122 93 L121 110 L129 101 L133 118 L137 104 L147 113 L145 98 L157 101 L149 89 L158 80 L146 79 L150 68 L138 72 L130 66',
       role: 'accent',
     },
-    { d: 'M122 84 Q126 80 128 76', role: 'soft' },
-    { d: 'M60 104 l5 -5 M70 96 l5 -5 M80 90 l5 -5', role: 'ambient' },
+    { d: 'M124 86 L128 102 M130 80 L140 98 M136 74 L150 86', role: 'soft' },
     {
-      d: 'M6 158 C2 144 14 134 26 140 C30 128 48 126 54 138 C60 128 78 130 80 142 C84 134 98 134 102 144 C108 136 124 138 126 150 C132 144 148 146 150 158',
+      d: 'M34 138 l4 -9 M48 126 l5 -9 M62 112 l5 -9 M76 98 l5 -8 M92 86 l4 -7',
       role: 'ambient',
     },
     {
-      d: 'M30 116 C22 112 22 100 32 98 C40 96 44 106 38 110 M100 118 C92 114 94 102 104 102 C112 102 114 112 108 114 M140 132 C132 128 134 118 142 118 C150 118 150 128 144 128',
+      d: 'M6 160 C2 146 14 136 26 142 C30 130 48 128 54 140 C60 130 78 132 80 144 C84 136 98 136 102 146 C108 138 124 140 126 152 C132 146 148 148 150 160',
       role: 'ambient',
     },
-    { d: 'M40 158 Q46 150 56 152 M92 158 Q100 150 110 154', role: 'ambient' },
+    {
+      d: 'M30 112 C22 108 22 96 32 94 C40 92 44 102 38 106 M98 124 C90 120 92 108 102 108 C110 108 112 118 106 120 M142 138 C134 134 136 124 144 124 C152 124 152 134 146 134',
+      role: 'ambient',
+    },
+    { d: 'M40 160 Q46 152 56 154 M92 160 Q100 152 110 156', role: 'ambient' },
     shadow(80, 176, 56),
   ],
-  // A lion's forepaw planted on the ground, the hooked claws out in tint,
-  // the stripes of his hide across the leg in soft lines and the far side
-  // hatched: the lion-like Squadron Leader who tells another that his squad
-  // kills humans for fun, chapter 192. No face.
+  // His foot in its sandal, side on with the toes to the left, the striped
+  // leg rising from it, the sandal's strap in tint, the sole's edge showing
+  // its thickness and the far side hatched: the lion-like Squadron Leader,
+  // one of the few Ants who wear clothes, who tells another that his squad
+  // kills humans for fun, chapter 192. No face, and no skull necklace.
   hagya: [
-    { d: 'M54 108 C50 80 52 46 60 20 M108 106 C112 80 110 46 102 20' },
-    { d: 'M40 148 C34 126 42 110 56 106 L108 106 C122 110 128 128 120 148' },
-    {
-      d: 'M40 148 Q49 158 59 148 Q69 158 79 148 Q89 158 99 148 Q110 158 120 148',
-    },
-    {
-      d: 'M59 148 Q58 136 62 126 M79 148 V124 M99 148 Q100 136 96 126',
-      role: 'soft',
-    },
-    {
-      d: 'M48 154 C48 164 42 170 32 170 M68 154 C68 164 62 170 52 170 M88 154 C88 164 82 170 72 170 M108 154 C108 164 102 170 92 170',
-      role: 'accent',
-    },
-    {
-      d: 'M57 40 Q70 46 82 40 M57 62 Q72 68 90 60 M56 84 Q68 90 80 86',
-      role: 'soft',
-    },
-    {
-      d: 'M96 34 l7 -4 M96 52 l7 -4 M96 72 l7 -4 M98 92 l7 -4',
-      role: 'ambient',
-    },
-    { d: 'M112 124 l6 -4 M114 136 l6 -4', role: 'ambient' },
-    { d: 'M4 172 H156', role: 'ambient', dashed: true },
-    shadow(80, 182, 52),
+    ...HAGYA_FOOT,
+    { d: 'M4 163 H156', role: 'ambient', dashed: true },
+    shadow(70, 173, 54),
   ],
 } satisfies Drawings
 
 /** Their later stages, each with its true chapter pin. */
 export const chimeraAntSquadsRedrawn: Redrawings = {
   hagya: [
-    // The same forepaw laid on its side on the stone floor, the claws
-    // slack: Morel's smoke fills Leol's lungs and he sinks and drowns,
-    // episode 107 / chapter 254. The wave he rides is his borrowed Nen, so
-    // it is not drawn.
+    // The same foot in its sandal laid on its side on the stone floor:
+    // Morel's smoke fills Leol's lungs and he sinks and drowns, episode 107
+    // / chapter 254. The wave he rides is his borrowed Nen, so it is not
+    // drawn.
     {
       episode: 107,
       chapter: 254,
       value: [
         ...moved(
-          CHIMERA_ANT_SQUADS_DRAWINGS.hagya.slice(0, 8),
-          'translate(80 136) rotate(-90) scale(0.72) translate(-80 -96)',
+          HAGYA_FOOT,
+          'translate(80 132) rotate(90) scale(0.72) translate(-80 -96)',
         ),
         { d: 'M4 158 H156', role: 'ambient', dashed: true },
         shadow(80, 168, 62),
@@ -247,24 +272,27 @@ export const chimeraAntSquadsRedrawn: Redrawings = {
     },
   ],
   zazan: [
-    // The same tail laid flat along the ground, the stinger resting at its
-    // end and the shell hatched where it is burnt: Feitan's Rising Sun
-    // burns her to death, episode 97 / chapter 229. The sun is his Nen, so
-    // it is not drawn.
+    // The tail she tears off herself, lying alone on the ground, the
+    // stinger in tint at its end and the torn root ragged: she rips it out
+    // in her rage before she transforms, and Feitan's Rising Sun burns her
+    // to death, episode 97 / chapter 229. She dies without it, so the tail
+    // is not burnt; the sun is his Nen, so it is not drawn.
     {
       episode: 97,
       chapter: 229,
       value: [
         ...moved(
-          CHIMERA_ANT_SQUADS_DRAWINGS.zazan.slice(0, 7),
-          'translate(84 150) scale(1 0.42) translate(-80 -150)',
+          [
+            ...CHIMERA_ANT_SQUADS_DRAWINGS.zazan.slice(0, 7),
+            {
+              d: 'M26 146 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 l4 6 l3 -5',
+              role: 'soft',
+            },
+          ],
+          'translate(80 134) scale(1 0.5) rotate(100) scale(0.8) translate(-84 -96)',
         ),
-        {
-          d: 'M30 146 l4 -4 M44 140 l4 -4 M62 132 l4 -4 M84 128 l4 -4 M104 130 l4 -4',
-          role: 'ambient',
-        },
-        { d: 'M4 156 H156', role: 'ambient', dashed: true },
-        shadow(84, 166, 62),
+        { d: 'M4 158 H156', role: 'ambient', dashed: true },
+        shadow(84, 168, 62),
       ],
     },
   ],
@@ -278,7 +306,7 @@ export const chimeraAntSquadsRedrawn: Redrawings = {
       value: [
         ...moved(
           YUNJU_LEG,
-          'translate(80 136) rotate(-84) scale(0.62) translate(-80 -90)',
+          'translate(80 135) rotate(-84) scale(1.1) translate(-70 -118)',
         ),
         { d: 'M4 162 H156', role: 'ambient', dashed: true },
         shadow(80, 172, 60),

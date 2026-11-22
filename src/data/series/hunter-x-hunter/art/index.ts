@@ -444,23 +444,23 @@ export const DRAWINGS = {
     },
     shadow(78, 158, 50),
   ],
-  // Banana's fanny pack, the pouch in tint on its belt, the zip across the
-  // top and the buckle on the strap, its underside hatched: she wears it
-  // round her waist over her baggy overalls, chapter 186 / episode 77. Her
-  // dog comes out of her backpack only in chapter 187.
+  // Banana's fanny pack in 3/4 from a little above, so the pouch shows its
+  // top and its right side, on its belt with the buckle in tint; the zip
+  // and its pull soft and the underside hatched: she wears it round her
+  // waist over her baggy overalls, chapter 186 / episode 77. Her dog comes
+  // out of her backpack only in chapter 187.
   'banana-kavaro': [
+    { d: 'M36 100 C34 120 40 134 60 136 H98 C112 134 116 122 116 100 Z' },
+    { d: 'M36 100 C40 86 48 80 58 80 H126 C132 80 134 84 132 92 L116 100' },
+    { d: 'M132 92 C134 112 130 126 112 134' },
+    { d: 'M44 92 Q82 86 120 87', role: 'soft' },
+    { d: 'M116 86 L119 95 L124 94 L121 85 Z', role: 'soft' },
+    { d: 'M48 112 Q76 118 106 112', role: 'soft' },
+    { d: 'M6 92 Q20 90 38 94 M6 104 Q20 102 35 106' },
+    { d: 'M133 98 Q142 96 156 98 M132 110 Q142 108 156 110' },
+    { d: 'M140 92 H151 V118 H140 Z M145.5 96 V114', role: 'accent' },
     {
-      d: 'M38 104 Q36 84 60 82 H102 Q126 84 124 104 Q122 130 100 134 H62 Q40 130 38 104 Z',
-      role: 'accent',
-    },
-    { d: 'M8 94 Q22 90 38 94 M8 106 Q22 102 38 106' },
-    { d: 'M124 94 Q140 90 152 94 M124 106 Q140 102 152 106' },
-    { d: 'M136 88 H146 V110 H136 Z M141 92 V106', role: 'soft' },
-    { d: 'M46 96 Q80 88 116 96', role: 'soft' },
-    { d: `M110 96 l3 10 ${dot(113, 108)}`, role: 'soft' },
-    { d: 'M50 114 Q80 122 112 114', role: 'soft' },
-    {
-      d: 'M56 128 l6 -5 M70 132 l6 -5 M86 133 l6 -5 M100 130 l6 -5',
+      d: 'M54 132 l6 -5 M68 134 l6 -5 M84 134 l6 -5 M100 130 l6 -5 M120 114 l6 -4 M118 124 l5 -4',
       role: 'ambient',
     },
     shadow(80, 150, 50),
@@ -482,69 +482,59 @@ export const DRAWINGS = {
     },
     shadow(84, 156, 50),
   ],
-  // Stick's trousers from the front, the waistband seen open from above,
-  // the stars down the side in tint and the far leg hatched: the red pants
-  // with a row of stars down the sides he wears at the camp, chapter 186 /
+  // Stick's trousers turned 3/4, so the side seam of the near leg faces
+  // the viewer with the row of stars down it in tint, the waistband seen
+  // open from above and the far leg behind, hatched: the red pants with a
+  // pattern of stars down the sides he wears at the camp, chapter 186 /
   // episode 77.
   'stick-dinner': [
-    { d: ellipse(80, 50, 30, 6) },
-    { d: 'M50 50 V58 Q80 64 110 58 V50' },
-    { d: 'M50 58 L38 154 M110 58 L122 154 M66 154 L80 96 L94 154' },
-    { d: `${ellipse(52, 154, 14, 4)} ${ellipse(108, 154, 14, 4)}` },
-    { d: `M80 64 V92 ${dot(80, 61)}`, role: 'soft' },
+    { d: ellipse(80, 46, 30, 8) },
+    { d: 'M50 46 V54 Q80 62 110 54 V46' },
+    { d: 'M50 54 C46 90 42 122 38 152 M96 98 C92 118 90 136 88 154' },
+    { d: ellipse(63, 154, 25, 5) },
+    { d: 'M110 54 C114 90 118 120 120 144 M100 106 C102 122 104 134 106 146' },
+    { d: ellipse(113, 145, 7, 3) },
     {
-      d: `${star(48, 74, 5, 2.2)} ${star(46, 94, 5, 2.2)} ${star(44, 114, 5, 2.2)} ${star(42, 134, 5, 2.2)}`,
+      d: 'M64 58 V67 M64 81 V89 M63 103 V111 M63 125 V133 M62 147 V151',
+      role: 'soft',
+    },
+    {
+      d: `${star(64, 74, 6.5, 2.8)} ${star(63, 96, 6.5, 2.8)} ${star(63, 118, 6.5, 2.8)} ${star(62, 140, 6.5, 2.8)}`,
       role: 'accent',
     },
-    { d: 'M56 66 Q62 72 64 82 M104 66 Q98 72 96 82', role: 'soft' },
-    { d: 'M58 118 Q62 130 58 142 M100 112 Q96 124 100 136', role: 'soft' },
+    { d: `M96 60 V90 ${dot(96, 57)}`, role: 'soft' },
     {
-      d: 'M106 92 l6 -5 M108 108 l6 -5 M110 124 l6 -5 M112 140 l6 -5',
+      d: 'M108 82 l6 -4 M110 98 l6 -4 M112 114 l6 -4 M114 130 l5 -4',
       role: 'ambient',
     },
-    shadow(80, 168, 48),
+    { d: 'M60 50 Q80 56 104 50', role: 'ambient' },
+    shadow(80, 168, 50),
   ],
-  // The cup of water with a leaf floating on it, the leaf in tint, the
-  // water's surface inside the rim and the far side hatched: the Water
-  // Divination Pitou tries after Rammot, episode 84 / chapter 198. The leaf
-  // is drawn whole, before it reacts: it breaks apart in the manga and
-  // wilts in the anime.
-  'neferpitou': [
-    { d: ellipse(80, 76, 34, 10) },
-    { d: 'M46 76 L54 146 Q80 156 106 146 L114 76' },
-    { d: 'M55 138 Q80 146 105 138', role: 'soft' },
-    { d: ellipse(80, 90, 32, 8), role: 'soft' },
-    { d: 'M54 92 Q66 72 106 84 Q92 102 54 92 Z', role: 'accent' },
-    { d: 'M56 92 Q80 90 104 84 M54 92 l-5 2', role: 'soft' },
-    { d: 'M70 91 l4 -7 M84 89 l4 -7', role: 'soft' },
-    { d: 'M52 102 L57 130', role: 'soft' },
-    { d: 'M100 108 l8 -6 M101 120 l8 -6 M102 132 l7 -5', role: 'ambient' },
-    shadow(80, 164, 40),
-  ],
-  // A chimera ant side on, the abdomen in vermilion, with its elbowed
-  // feelers and six jointed legs: the aggressive insect under quarantine
-  // that Gon and Killua first see in episode 76, and the queen of chapter
-  // 186. No eyes and no jaws.
+  // A chimera ant in 3/4 from above, the head, thorax and abdomen as three
+  // solid segments, the abdomen in vermilion with its underside hatched,
+  // the elbowed feelers, the three near legs reaching to the ground and the
+  // far ones short behind: the aggressive insect under quarantine that Gon
+  // and Killua first see in episode 76, and the queen of chapter 186. No
+  // eyes and no jaws.
   'chimera-ant-arc': [
-    { d: ellipse(114, 104, 26, 18), role: 'accent' },
+    { d: ellipse(110, 112, 30, 22), role: 'accent' },
+    { d: 'M92 100 Q108 92 126 96 M88 114 Q108 106 134 110', role: 'soft' },
     {
-      d: 'M98 96 C106 100 116 100 124 94 M100 110 C110 114 122 112 132 104',
-      role: 'soft',
+      d: 'M96 130 l6 -5 M108 133 l6 -5 M120 131 l6 -5 M131 124 l5 -4',
+      role: 'ambient',
     },
-    { d: ellipse(70, 102, 18, 10) },
-    { d: 'M86 104 L90 104' },
-    { d: circle(38, 96, 11) },
-    { d: 'M34 86 L26 64 L10 58 M42 86 L44 62 L32 46', role: 'soft' },
+    { d: 'M78 100 L82 104' },
+    { d: ellipse(64, 96, 16, 10) },
+    { d: 'M52 92 Q64 88 76 92', role: 'soft' },
+    { d: 'M50 92 L46 88' },
+    { d: circle(36, 80, 12) },
+    { d: 'M30 70 L24 50 L8 46 M42 69 L48 50 L36 34', role: 'soft' },
     {
-      d: 'M62 110 L46 128 L30 150 M72 112 L70 132 L62 150 M80 110 L96 128 L110 150',
+      d: 'M56 104 L42 124 L30 150 M66 106 L68 128 L62 150 M74 102 L84 126 L90 150',
     },
-    {
-      d: 'M66 106 L56 122 L46 138 M76 108 L82 124 L84 140 M84 104 L104 118 L122 134',
-      role: 'soft',
-    },
-    { d: 'M104 120 l6 -4 M114 122 l6 -4 M124 118 l6 -4', role: 'ambient' },
-    { d: 'M4 150 H156', role: 'ambient' },
-    shadow(80, 158, 50),
+    { d: 'M58 88 L50 74 M68 86 L72 72 M74 90 L88 80', role: 'soft' },
+    { d: 'M72 92 l5 -3 M74 98 l5 -3', role: 'ambient' },
+    shadow(80, 156, 54),
   ],
 
   // A ballot box seen from above and to the side, a folded ballot in

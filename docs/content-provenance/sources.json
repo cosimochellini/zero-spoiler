@@ -36932,6 +36932,36 @@
       "apiUrl": "https://iceandfire.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=26571",
       "contentSha256": "39b848a2479ec42807b8935ef063675f09d4b5141d3117655b53b1d4e66c5b77"
     },
+    "hxh-en-Banana_Kavaro-425024.json": {
+      "locale": "en",
+      "title": "Banana Kavaro",
+      "revision": 425024,
+      "revisionDate": "2026-08-23T15:54:34Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Banana_Kavaro",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=425024",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=425024",
+      "contentSha256": "66823bc50bad1a939db86676a41717597c63269640e53625bb8e225021f50363"
+    },
+    "hxh-en-Monta_Yuras-424302.json": {
+      "locale": "en",
+      "title": "Monta Yuras",
+      "revision": 424302,
+      "revisionDate": "2026-08-11T11:25:23Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Monta_Yuras",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424302",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424302",
+      "contentSha256": "d79f417f94439ba3bd6cdca1cfbd6e3aba869e9462bcc56b36435c2f13e073f7"
+    },
+    "hxh-en-Stick_Dinner-424014.json": {
+      "locale": "en",
+      "title": "Stick Dinner",
+      "revision": 424014,
+      "revisionDate": "2026-08-10T09:59:45Z",
+      "url": "https://hunterxhunter.fandom.com/wiki/Stick_Dinner",
+      "revisionUrl": "https://hunterxhunter.fandom.com/index.php?oldid=424014",
+      "apiUrl": "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&format=json&formatversion=2&revids=424014",
+      "contentSha256": "49e2b280db986f2b7df71a7ab181df057fd7dbdb60ef0083a7c15a8432206e71"
+    },
     "hxh-en-Hunter_License-405166.json": {
       "locale": "en",
       "title": "Hunter License",
