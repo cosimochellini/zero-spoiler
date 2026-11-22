@@ -1,8 +1,11 @@
-import type { Drawings, Redrawings, Stroke } from '~/data/art/stroke'
+import {
+  type Drawings,
+  moved,
+  type Redrawings,
+  softened,
+  type Stroke,
+} from '~/data/art/stroke'
 import { circle, ellipse, shadow } from '~/lib/svg/primitives'
-
-/** Flips a stroke about the box's centre line, for a pair. */
-const MIRROR = 'matrix(-1 0 0 1 160 0)'
 
 /**
  * Komugi's gungi board in 3/4: its top, its thickness and the hatched
@@ -28,6 +31,97 @@ const KOMUGI_PIECES: Stroke[] = [
     role: 'soft',
   },
 ]
+
+/**
+ * Welfin's blue shirt from behind, a little turned, its sleeves, the folds
+ * down the back and the far side hatched; his hair covers the collar and the
+ * tops of the shoulders. All three of his drawings keep it.
+ */
+const WELFIN_SHIRT: Stroke[] = [
+  {
+    d: 'M46 55 Q38 58 32 62 L16 102 L32 110 L42 86 L44 170 H110 L112 88 L118 106 L132 100 L122 62 Q118 59 114 57',
+  },
+  { d: 'M16 102 Q22 108 32 110 M118 106 Q126 104 132 100', role: 'soft' },
+  { d: 'M66 116 Q70 140 64 166 M90 112 Q88 140 94 166', role: 'soft' },
+  {
+    d: 'M100 116 l8 -5 M100 132 l9 -6 M100 148 l9 -6 M100 164 l8 -5 M120 74 l5 -3 M124 88 l5 -3',
+    role: 'ambient',
+  },
+]
+/** His long blond hair, the crown of his head and the locks over the collar. */
+const WELFIN_HAIR: Stroke[] = [
+  {
+    d: 'M60 36 C56 12 104 12 100 36 C104 52 116 62 124 78 C120 84 114 82 110 88 C104 84 100 92 94 90 C88 96 84 92 80 98 C76 92 72 96 66 90 C60 92 56 84 50 88 C46 82 40 84 36 78 C44 62 56 52 60 36 Z',
+    role: 'accent',
+  },
+  {
+    d: 'M70 22 Q64 56 52 84 M80 18 Q80 60 80 94 M90 22 Q96 56 108 84',
+    role: 'soft',
+  },
+]
+/**
+ * Missileman on his back: the launcher, its shrunken head drawn as a knob,
+ * and its four limbs, each holding a missile, the tips in tint.
+ */
+const WELFIN_MISSILEMAN: Stroke[] = [
+  { d: `${ellipse(80, 130, 15, 19)} ${circle(80, 106, 5)}` },
+  { d: 'M68 124 Q80 129 92 124 M69 140 Q80 145 91 140', role: 'soft' },
+  {
+    d: 'M66 122 L53 110 M94 122 L107 110 M66 140 L51 150 M94 140 L109 150',
+    role: 'soft',
+  },
+  {
+    d: 'M47 114 V104 M53 114 V104 M47 114 H53 M107 114 V104 M113 114 V104 M107 114 H113 M45 156 V146 M51 156 V146 M45 156 H51 M109 156 V146 M115 156 V146 M109 156 H115',
+  },
+  {
+    d: 'M47 104 L50 98 L53 104 M107 104 L110 98 L113 104 M45 146 L48 140 L51 146 M109 146 L112 140 L115 146',
+    role: 'accent',
+  },
+]
+const WELFIN_SHADOW = shadow(74, 184, 50)
+
+/**
+ * Flutter's wings folded together and lying flat: the hind wing and the
+ * veins. His death and Ikalgo's disguise in his body both draw them, each
+ * with its own fore wing.
+ */
+const FLUTTER_FOLDED_WINGS: Stroke[] = [
+  {
+    d: 'M20 140 C42 136 96 136 136 144 C142 148 136 152 128 151 C94 150 48 146 20 140 Z',
+  },
+  {
+    d: 'M22 139 C50 132 96 128 112 129 M22 141 C50 141 96 142 130 147 M56 132 L54 138 M84 129 L82 136 M64 141 L62 146 M96 143 L94 148',
+    role: 'soft',
+  },
+]
+/** The fore wing whole, as it lies over Ikalgo's rifle. */
+const FLUTTER_FORE_WING =
+  'M20 140 C40 128 96 124 140 130 C146 134 142 138 134 138 C96 140 48 142 20 140 Z'
+
+/**
+ * The branch Meleoron's tail hangs in front of, with its leafy twig and
+ * the hatching under it; the tail's upper half with its rings. His drawings
+ * keep them.
+ */
+const MELEORON_BRANCH: Stroke[] = [
+  {
+    d: 'M2 92 Q34 88 63 81.5 M81.5 78 Q118 70 158 62 M2 104 Q36 100 65 93 M82.5 90 Q122 82 158 74',
+  },
+  {
+    d: 'M126 70 C134 58 144 50 154 44 M144 50 C146 40 156 38 156 44 C154 50 148 52 144 50 Z M136 58 C134 48 140 42 146 44 C146 52 140 56 136 58 Z',
+    role: 'soft',
+  },
+  {
+    d: 'M20 101 l5 -4 M40 99 l5 -4 M96 89 l5 -4 M114 86 l5 -4 M144 78 l5 -4 M78 20 l5 -3 M79 44 l5 -3 M81 68 l5 -3',
+    role: 'ambient',
+  },
+  {
+    d: 'M26 96 Q32 98 38 96 M104 82 Q110 83 116 80 M61 30 Q67 33 75 30 M62 56 Q69 59 77 56 M65 84 Q72 87 81 82',
+    role: 'soft',
+  },
+]
+const MELEORON_TAIL = 'M60 4 C60 34 62 64 66 96 M76 4 C76 34 78 62 82 92'
+const MELEORON_SHADOW = shadow(84, 180, 32)
 
 export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
   // An apartment block in 3/4 on its street, its windows soft, one
@@ -75,34 +169,30 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     ...KOMUGI_PIECES,
     shadow(80, 166, 62),
   ],
-  // Remora's tail, a lizard's ending in a fish's forked fin, the fin in
-  // tint with its rays soft and the underside hatched, and beside it on
-  // the ground the badge he pins to Killua's back in chapter 238 and
-  // episode 101. No lettering on the badge.
+  // Remora's tail, a lizard's ending in a fish's forked fin, curving up
+  // toward the viewer so its underside shows as a second face, hatched,
+  // the fin in tint with its rays soft, and beside it on the ground the
+  // round badge he pins to Killua's back in chapter 238 and episode 101,
+  // in 3/4. No lettering on the badge.
   'remora': [
     {
-      d: 'M8 132 C36 124 66 116 92 100 C104 92 112 82 116 72 M10 144 C40 140 72 130 98 114 C108 106 116 96 120 86',
+      d: 'M4 112 C34 100 62 96 88 84 C104 76 114 64 118 52 M6 140 C40 140 74 130 100 112 C112 102 120 90 124 72',
     },
+    { d: 'M5 128 C40 124 70 116 94 100 C108 90 116 78 120 64', role: 'soft' },
     {
-      d: 'M116 72 C120 56 128 40 142 28 C138 46 134 62 130 76 C138 84 148 92 154 104 C142 102 130 96 120 86',
+      d: 'M118 52 C122 38 130 24 144 14 C140 32 136 46 132 60 C142 66 152 72 158 84 C146 84 132 80 124 72',
       role: 'accent',
     },
-    { d: 'M120 76 L136 38 M123 80 L146 98 M122 78 L140 62', role: 'soft' },
+    { d: 'M124 58 L138 26 M128 68 L150 80', role: 'soft' },
+    { d: 'M36 104 Q38 114 36 126 M64 97 Q66 106 64 118', role: 'soft' },
     {
-      d: 'M36 126 Q40 133 40 141 M62 118 Q66 126 66 134 M86 104 Q92 112 92 120',
-      role: 'soft',
-    },
-    {
-      d: 'M26 140 l5 -4 M50 134 l5 -4 M76 124 l5 -4 M100 108 l5 -4',
+      d: 'M20 138 l4 -8 M40 136 l4 -8 M60 130 l4 -8 M80 122 l4 -8 M98 110 l4 -7 M110 98 l4 -6',
       role: 'ambient',
     },
-    {
-      d: `${ellipse(118, 152, 16, 6)} M102 152 V155 C102 160 134 160 134 155 V152`,
-      role: 'soft',
-    },
-    { d: `M106 151 L128 150 ${circle(104, 151, 2)}`, role: 'soft' },
-    { d: 'M4 162 H156', role: 'ambient', dashed: true },
-    shadow(80, 172, 60),
+    { d: `${ellipse(110, 156, 14, 6)} ${ellipse(110, 156, 8, 3.4)}` },
+    { d: 'M96 156 V160 C96 166 124 166 124 160 V156', role: 'soft' },
+    { d: 'M4 170 H156', role: 'ambient', dashed: true },
+    shadow(80, 180, 60),
   ],
   // A television in 3/4 on its legs, the screen showing a reporter's
   // microphone held out for the interview, the microphone in tint and the
@@ -114,9 +204,13 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     {
       d: 'M34 64 H86 Q94 64 94 72 V118 Q94 126 86 126 H34 Q26 126 26 118 V72 Q26 64 34 64 Z',
     },
-    { d: 'M94 112 L70 100 M94 116 L72 104', role: 'soft' },
-    { d: circle(64, 98, 7), role: 'accent' },
-    { d: 'M60 92 l8 8 M58 98 l10 0', role: 'soft' },
+    { d: circle(56, 88, 9), role: 'accent' },
+    {
+      d: 'M50 82 L62 94 M48 88 L56 96 M56 80 L64 88 M50 94 L62 82',
+      role: 'soft',
+    },
+    { d: 'M61 95 L76 112 M55 99 L70 116 L76 112' },
+    { d: 'M73 115 Q78 124 94 120', role: 'soft' },
     { d: `${circle(104, 76, 3)} ${circle(104, 90, 3)}`, role: 'soft' },
     { d: 'M100 104 h8 M100 110 h8 M100 116 h8', role: 'soft' },
     { d: 'M32 74 Q30 86 32 96', role: 'soft' },
@@ -129,109 +223,104 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M4 150 H156', role: 'ambient', dashed: true },
     shadow(80, 158, 56),
   ],
-  // Pell's shell seen from the front, round as a ladybug's and parted
-  // down the middle where it opens, in tint, with the four spiked arms and
-  // a round head under it, and the joystick that steers him on the ground
-  // beside: Shalnark crushes both in episode 96, so this drawing stays.
+  // Pell's shell in 3/4, round as a ladybug's and parted where it opens,
+  // in tint, its far side hatched, his round head under it and the four
+  // spiked arms reaching forward, and the joystick that steers him small
+  // on the ground beside: Shalnark crushes both in episode 96, so this
+  // drawing stays.
   'pell': [
     {
-      d: 'M28 108 C28 58 132 58 132 108 C120 126 40 126 28 108 Z',
+      d: 'M24 112 C24 60 120 50 136 100 C132 120 44 132 24 112 Z',
       role: 'accent',
     },
-    { d: 'M77 66 Q80 94 76 122 M83 66 Q86 94 84 122', role: 'soft' },
-    { d: 'M40 88 Q58 78 74 78 M86 78 Q104 78 120 88', role: 'soft' },
+    { d: 'M86 57 Q70 90 76 125 M24 112 C46 102 110 96 136 100', role: 'soft' },
     {
-      d: 'M108 90 l10 -6 M112 102 l12 -7 M104 112 l12 -7 M116 112 l8 -5',
+      d: 'M104 66 l8 -5 M114 78 l9 -6 M120 92 l10 -6 M110 104 l9 -6',
       role: 'ambient',
     },
-    { d: ellipse(80, 126, 12, 6) },
+    { d: ellipse(58, 128, 12, 6) },
     {
-      d: 'M54 120 L34 134 L14 118 M34 134 l-4 6 M26 128 l-4 6 M14 118 l-4 -8 M14 118 l-8 -2',
+      d: 'M40 122 L22 138 L10 130 M22 138 l-3 6 M16 134 l-4 4 M10 130 l-6 -2 M50 130 L40 150 L26 154 M40 150 l2 6 M33 152 l0 6 M26 154 l-6 2',
     },
     {
-      d: 'M54 120 L34 134 L14 118 M34 134 l-4 6 M26 128 l-4 6 M14 118 l-4 -8 M14 118 l-8 -2',
-      transform: MIRROR,
+      d: 'M98 122 L114 142 L128 140 M114 142 l0 6 M121 141 l2 6 M128 140 l6 -2 M120 114 L138 124 L148 116 M138 124 l4 5 M143 120 l5 3 M148 116 l2 -6',
     },
+    { d: 'M68 132 L64 150 M88 130 L92 150', role: 'soft' },
     {
-      d: 'M60 122 L52 146 M100 122 L108 146 M52 146 l-6 2 M108 146 l6 2',
+      d: 'M122 172 L136 166 L150 172 L136 178 Z M122 172 V175 L136 181 L150 175 V172 M136 178 V181',
       role: 'soft',
     },
-    {
-      d: 'M114 170 L134 164 L150 170 L130 176 Z M114 170 V174 L130 180 L150 174 V170 M130 176 V180',
-      role: 'soft',
-    },
-    { d: `M132 170 V156 ${circle(132, 154, 3)}`, role: 'soft' },
-    { d: 'M4 150 H156', role: 'ambient', dashed: true },
-    shadow(80, 158, 50),
+    { d: `M136 172 V160 ${circle(136, 158, 2.5)}`, role: 'soft' },
+    { d: 'M4 158 H156', role: 'ambient', dashed: true },
+    shadow(80, 166, 52),
   ],
-  // Flutter's two pairs of dragonfly wings spread from his back, the
-  // veins soft, the fore pair in tint and the far hind wing hatched: the
-  // Ant who watches Killua from high above in chapter 235 and episode 100.
-  // No eyes and no dragonflies of his ability.
+  // Flutter's two pairs of transparent wings spread from his back over the
+  // Korean collar and the baggy shoulders of his loose top, seen from
+  // behind, the fore pair in tint, the veins soft and the far side of the
+  // top hatched, and three of his Satellite Dragonflies flying out: the
+  // Ant who watches Killua from high above in chapter 235 and sends the
+  // dragonflies after him in episode 100. No face.
   'flutter': [
-    { d: ellipse(80, 98, 6, 16) },
-    { d: 'M80 82 V114 M76 90 H84 M76 104 H84', role: 'soft' },
     {
-      d: 'M75 90 C58 72 30 64 10 66 C4 72 14 80 30 84 C46 88 62 92 75 96',
-      role: 'accent',
+      d: 'M68 60 C52 62 36 70 28 84 C20 102 20 128 24 152 L40 154 C42 136 44 120 46 108 V166 H114 V108 C116 120 118 136 120 154 L136 152 C140 128 140 102 132 84 C124 70 108 62 92 60',
     },
+    { d: 'M68 62 V54 Q80 50 92 54 V62 Q80 58 68 62 Z' },
     {
-      d: 'M75 90 C58 72 30 64 10 66 C4 72 14 80 30 84 C46 88 62 92 75 96',
-      role: 'accent',
-      transform: MIRROR,
-    },
-    {
-      d: 'M75 102 C58 106 30 114 14 126 C10 134 26 134 40 128 C54 120 66 112 75 106',
-    },
-    {
-      d: 'M75 102 C58 106 30 114 14 126 C10 134 26 134 40 128 C54 120 66 112 75 106',
-      transform: MIRROR,
-    },
-    {
-      d: 'M74 93 C54 80 30 72 12 69 M56 80 L50 87 M40 74 L36 82 M26 70 L22 78 M74 104 C54 112 32 120 16 127 M56 112 L52 122 M40 118 L38 128',
+      d: 'M58 68 Q54 90 58 112 M102 68 Q106 90 102 112 M30 120 Q34 136 32 150 M130 120 Q126 136 128 150',
       role: 'soft',
     },
     {
-      d: 'M74 93 C54 80 30 72 12 69 M56 80 L50 87 M40 74 L36 82 M26 70 L22 78 M74 104 C54 112 32 120 16 127 M56 112 L52 122 M40 118 L38 128',
-      role: 'soft',
-      transform: MIRROR,
-    },
-    { d: 'M110 118 l6 -4 M120 122 l6 -4 M130 126 l5 -4', role: 'ambient' },
-    shadow(80, 170, 30),
-  ],
-  // A bull's two horns on the poll of a head, thick at the base with
-  // their rings soft, the horns in tint and their undersides hatched, a
-  // few curls of hair between them: the bull-like Ant whose super strength
-  // Pike names in chapter 227. No face.
-  'bihorn': [
-    {
-      d: 'M48 118 C22 116 6 92 14 44 M62 100 C40 96 26 80 17 48 M14 44 Q15 47 17 48',
-      role: 'accent',
-    },
-    {
-      d: 'M48 118 C22 116 6 92 14 44 M62 100 C40 96 26 80 17 48 M14 44 Q15 47 17 48',
-      role: 'accent',
-      transform: MIRROR,
-    },
-    {
-      d: 'M48 118 Q44 108 60 102 M41 115 Q37 103 53 98 M34 110 Q30 98 46 93',
-      role: 'soft',
-    },
-    {
-      d: 'M112 118 Q116 108 100 102 M119 115 Q123 103 107 98 M126 110 Q130 98 114 93',
-      role: 'soft',
-    },
-    {
-      d: 'M14 84 l6 -4 M18 96 l6 -4 M26 106 l6 -4 M128 106 l6 -4 M136 96 l6 -4',
+      d: 'M120 98 l8 -5 M122 114 l9 -6 M124 130 l9 -6 M104 142 l8 -5 M104 158 l8 -5',
       role: 'ambient',
     },
-    { d: 'M62 100 C72 94 88 94 98 100 M48 118 C62 130 98 130 112 118' },
     {
-      d: 'M64 106 C60 96 68 90 74 94 M78 102 C76 90 86 86 90 92 M70 116 C68 108 74 104 80 108 M88 112 C90 104 98 102 100 108',
+      d: 'M74 84 C60 64 34 48 10 46 C4 52 14 60 30 66 C46 72 62 80 74 90 M86 84 C100 64 126 48 150 46 C156 52 146 60 130 66 C114 72 98 80 86 90',
+      role: 'accent',
+    },
+    {
+      d: 'M74 94 C58 98 32 108 14 122 C10 130 26 130 40 124 C54 116 66 106 74 100 M86 94 C102 98 128 108 146 122 C150 130 134 130 120 124 C106 116 94 106 86 100',
+    },
+    {
+      d: 'M73 87 C54 66 32 54 12 49 M50 64 L46 71 M32 55 L28 62 M87 87 C106 66 128 54 148 49 M110 64 L114 71 M128 55 L132 62 M73 97 C54 104 34 114 16 124 M50 106 L48 115 M87 97 C106 104 126 114 144 124 M110 106 L112 115',
       role: 'soft',
     },
-    { d: 'M96 124 l6 -4 M104 120 l6 -4', role: 'ambient' },
-    shadow(80, 150, 46),
+    {
+      d: 'M14 30 l14 -7 M19 27.5 q-4 -6 -8 -3 M19 27.5 q2 -7 6 -6 M98 24 l14 -7 M103 21.5 q-4 -6 -8 -3 M103 21.5 q2 -7 6 -6 M120 36 l14 -7 M125 33.5 q-4 -6 -8 -3 M125 33.5 q2 -7 6 -6',
+      role: 'ambient',
+    },
+    shadow(80, 182, 50),
+  ],
+  // A bull's two horns on the poll of his head in 3/4, thick at the base
+  // with their rings soft, the near horn's tip in tint and the far horn,
+  // turning away, hatched beneath, a few curls of hair between them: the
+  // bull-like Ant whose super strength Pike names in chapter 227. No face.
+  'bihorn': [
+    { d: 'M50 118 C26 116 12 98 14 74 M62 102 C42 98 30 86 24 70' },
+    {
+      d: 'M14 74 C13 62 13 52 16 42 Q17 45 19 46 C20 54 21 62 24 70',
+      role: 'accent',
+    },
+    {
+      d: 'M50 118 Q46 108 62 102 M41 114 Q37 102 53 98 M33 108 Q29 96 45 92',
+      role: 'soft',
+    },
+    {
+      d: 'M108 104 C126 102 136 84 132 52 Q131 54 129 56 C124 78 114 92 100 96',
+    },
+    { d: 'M100 96 Q104 100 108 104 M112 101 Q108 95 106 94', role: 'soft' },
+    {
+      d: 'M118 101 l5 -5 M126 94 l5 -5 M131 82 l4 -4 M20 100 l6 -4 M28 110 l6 -4',
+      role: 'ambient',
+    },
+    {
+      d: 'M62 102 C74 94 90 94 100 96 M50 118 C64 130 100 128 114 112 C116 108 112 104 108 104',
+    },
+    {
+      d: 'M66 106 C62 96 70 92 76 96 M80 104 C78 92 88 88 92 94 M70 116 C68 108 74 104 80 108 M88 114 C90 106 98 104 100 110',
+      role: 'soft',
+    },
+    { d: 'M92 126 l6 -4 M102 122 l6 -4', role: 'ambient' },
+    shadow(70, 150, 50),
   ],
   // The road into a low city, the buildings small with distance, and a
   // blank road sign beside it in tint: the city Knuckle names as the
@@ -319,37 +408,28 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M2 150 H156', role: 'ambient' },
     shadow(80, 156, 66),
   ],
-  // Meleoron's chameleon tail hanging in front of a branch and curled at
-  // the tip, in tint, its rings soft, a leafy twig at the branch's end and
-  // the underside hatched: the hidden Ant who watches Gon from the trees,
-  // episode 98, and follows him into the desert, chapter 241. Nothing
-  // else of him is drawn.
+  // Meleoron's chameleon tail hanging in front of a branch, its rings
+  // soft and its far side hatched, the curl at its tip turned toward the
+  // viewer so the coil shows its underside, the curl alone in tint: the
+  // hidden Ant who watches Gon from the trees, episode 98, and follows him
+  // into the desert, chapter 241. Nothing else of him is drawn.
   'meleoron': [
+    ...MELEORON_BRANCH,
+    { d: MELEORON_TAIL },
+    { d: 'M66 96 C70 108 76 118 80 128 M82 92 C90 106 96 120 96 136' },
     {
-      d: 'M2 92 Q34 88 63 81 M78 77.6 Q118 70 158 62 M2 104 Q36 100 68 91.5 M85 88 Q122 82 158 74',
-    },
-    {
-      d: 'M126 70 C134 58 144 50 154 44 M144 50 C146 40 156 38 156 44 C154 50 148 52 144 50 Z M136 58 C134 48 140 42 146 44 C146 52 140 56 136 58 Z',
-      role: 'soft',
-    },
-    {
-      d: 'M60 4 C60 30 62 56 64 82 C66 90 68 94 70 97 C72 108 78 118 82 128 M74 4 C74 30 76 54 78 80 C80 88 82 92 84 95 C92 110 98 124 96 140 C94 156 76 162 66 152 C56 142 62 126 76 126 C86 126 90 136 84 142 C80 146 74 142 76 138',
+      d: 'M96 136 C96 156 76 162 66 152 C56 142 62 126 76 126 C86 126 90 136 84 142 C80 146 74 142 76 138',
       role: 'accent',
     },
     {
-      d: 'M61 30 Q67 33 74 30 M62 56 Q69 59 76 56 M65 86 Q72 88 79 84 M73 108 Q80 110 87 105 M78 118 Q86 120 93 115',
+      d: 'M90 142 C90 152 78 156 70 149 M70 108 Q78 110 88 105 M75 119 Q84 121 93 116',
       role: 'soft',
     },
     {
-      d: 'M20 101 l5 -4 M40 99 l5 -4 M96 89 l5 -4 M114 86 l5 -4 M144 78 l5 -4',
+      d: 'M90 116 l5 -4 M93 128 l4 -4 M92 146 l4 -4 M86 154 l4 -4',
       role: 'ambient',
     },
-    {
-      d: 'M92 128 l4 -4 M90 142 l4 -4 M68 20 l5 -3 M69 44 l5 -3',
-      role: 'ambient',
-    },
-    { d: 'M26 96 Q32 98 38 96 M104 82 Q110 83 116 80', role: 'soft' },
-    shadow(84, 180, 32),
+    MELEORON_SHADOW,
   ],
   // Ikalgo's air rifle, the Fleadom, aimed up and to the right, with an
   // octopus tentacle wound twice round the stock, suckers on its underside
@@ -392,37 +472,11 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
     { d: 'M4 166 H156', role: 'ambient', dashed: true },
     shadow(72, 176, 54),
   ],
-  // Welfin's hind pawfoot planted on its toes, side on and facing left,
-  // the heel raised behind, fur along the back of the leg, the claws in
-  // tint and the back hatched. He walks the palace grounds with Bloster
-  // in chapter 246 and episode 104. No hair, shirt or face.
-  'welfin': [
-    {
-      d: 'M70 4 C68 40 62 72 56 104 M110 4 C112 30 116 60 112 84 C110 98 108 108 108 118',
-    },
-    {
-      d: 'M56 104 C40 106 24 118 22 132 C20 140 26 144 34 142 C36 148 46 148 48 142 C52 148 62 148 64 142 C68 148 78 148 82 142 C90 146 104 142 110 132 C114 126 112 120 108 118',
-    },
-    {
-      d: 'M34 142 Q34 132 42 126 M48 142 Q50 132 56 126 M64 142 Q66 132 72 126',
-      role: 'soft',
-    },
-    {
-      d: 'M24 134 Q14 136 12 146 M36 143 Q28 146 28 154 M50 144 Q42 147 42 155 M66 144 Q58 147 58 155',
-      role: 'accent',
-    },
-    {
-      d: 'M112 20 l8 3 l-6 4 l8 3 M116 50 l8 3 l-6 4 l8 3 M113 88 l8 2 l-6 4 l7 3',
-      role: 'soft',
-    },
-    { d: 'M64 30 l-6 4 l6 2 M60 64 l-6 4 l6 2', role: 'soft' },
-    {
-      d: 'M100 24 l7 -4 M100 44 l7 -4 M100 64 l7 -4 M98 84 l7 -4 M96 104 l7 -4 M98 130 l6 -4',
-      role: 'ambient',
-    },
-    { d: 'M4 158 H156', role: 'ambient', dashed: true },
-    shadow(66, 168, 52),
-  ],
+  // Welfin's blue shirt from behind, his long blond hair falling over the
+  // collar and the shoulders in tint, the shirt's far side hatched: the
+  // wolf-like Ant who walks the palace grounds with Bloster in chapter 246
+  // and episode 104. No face and no Missileman.
+  'welfin': [...WELFIN_SHIRT, ...WELFIN_HAIR, WELFIN_SHADOW],
   // Bloster's lobster claw raised open on its forearm, the two fingers
   // in tint with their teeth soft, bumps on the shell and its underside
   // hatched: the lobster Squadron Leader seen on the news in chapter 224,
@@ -478,25 +532,143 @@ export const CHIMERA_ANT_PHASE_THREE_DRAWINGS = {
   ],
 } satisfies Drawings
 
-/** The phase's drawings that change with the story: Komugi's death. */
+/** The phase's drawings that change with the story. */
 export const chimeraAntPhaseThreeRedrawn: Redrawings = {
+  flutter: [
+    // His wings folded and still on the ground, the fore wing torn at the
+    // tip in tint, no body: Knov ambushes him in Peijin and leaves him
+    // lying in his dimension, chapter 248 and episode 104.
+    {
+      episode: 104,
+      chapter: 248,
+      value: [
+        ...moved(
+          [
+            {
+              d: 'M20 140 C40 128 90 124 118 126 L112 131 L120 134 L114 139 C88 140 48 142 20 140 Z',
+              role: 'accent',
+            },
+            ...FLUTTER_FOLDED_WINGS,
+          ],
+          'translate(80 132) scale(1.1 2) translate(-80 -140)',
+        ),
+        { d: 'M4 156 H156', role: 'ambient' },
+        shadow(80, 166, 60),
+      ],
+    },
+  ],
+  ikalgo: [
+    // Flutter's folded wings over the same rifle, the tip of a tentacle
+    // showing from under them in tint: Ikalgo moves inside Flutter's body
+    // with Living Dead Dolls from the raid, chapter 262 and episode 111.
+    {
+      episode: 111,
+      chapter: 262,
+      value: [
+        ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.ikalgo.slice(0, 8),
+        ...moved(
+          [{ d: FLUTTER_FORE_WING }, ...FLUTTER_FOLDED_WINGS],
+          'translate(60 116) rotate(-37) scale(0.8 1.5) translate(-80 -137)',
+        ),
+        {
+          d: 'M30 140 C18 144 12 158 20 164 C28 168 32 158 26 156',
+          role: 'accent',
+        },
+        ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.ikalgo.slice(10),
+      ],
+    },
+    // The rifle and its tentacle again: Bloster blows Flutter's body apart
+    // and Ikalgo gets out of it first, chapter 279 and episode 118.
+    {
+      episode: 118,
+      chapter: 279,
+      value: CHIMERA_ANT_PHASE_THREE_DRAWINGS.ikalgo,
+    },
+  ],
+  meleoron: [
+    // The same tail fading out, its lower half broken open lines that stop
+    // short and the curl gone, the half still seen in tint: Perfect Plan,
+    // which hides him from every sense while he holds his breath, shown to
+    // Gon in chapter 242 and episode 102.
+    {
+      episode: 102,
+      chapter: 242,
+      value: [
+        ...MELEORON_BRANCH,
+        { d: MELEORON_TAIL, role: 'accent' },
+        {
+          d: 'M66 96 L67.5 101 M70 107 L72 112 M82 92 L84.5 97 M88 104 L90 110 M93 117 L94 122',
+          role: 'ambient',
+        },
+        MELEORON_SHADOW,
+      ],
+    },
+  ],
+  bloster: [
+    // The same claw with his aura bullets streaming from between its
+    // fingers as open lines: he first fires them at Flutter's body,
+    // chapter 279 and episode 118.
+    {
+      episode: 118,
+      chapter: 279,
+      value: [
+        ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.bloster,
+        {
+          d: 'M128 62 L140 55 M146 51.6 L158 44.6 M124 67 L134 62 M140 59 L152 53 M158 49 L166 45 M134 55 L142 50 M150 46 L160 40 M136 66 L146 61 M152 58 L162 53',
+          role: 'ambient',
+        },
+      ],
+    },
+  ],
+  welfin: [
+    // Missileman on the shirt's back, the hair turned plain: he first
+    // conjures it in the courtyard when he senses Meleoron, chapter 276
+    // and episode 115.
+    {
+      episode: 115,
+      chapter: 276,
+      value: [
+        ...WELFIN_SHIRT,
+        ...softened(WELFIN_HAIR),
+        ...WELFIN_MISSILEMAN,
+        WELFIN_SHADOW,
+      ],
+    },
+    // The hair gone and the collar bare in tint, the launcher kept plain:
+    // facing the King, his terror makes him lose his hair and age at once,
+    // chapter 313 and episode 134.
+    {
+      episode: 134,
+      chapter: 313,
+      value: [
+        ...WELFIN_SHIRT,
+        {
+          d: 'M64 46 C58 10 102 10 96 46 M62 50 Q54 52 46 55 M96 50 Q105 53 114 57',
+        },
+        {
+          d: 'M62 50 L60 44 Q79 38 98 44 L96 50 Q79 44 62 50 Z',
+          role: 'accent',
+        },
+        ...softened(WELFIN_MISSILEMAN),
+        WELFIN_SHADOW,
+      ],
+    },
+  ],
   komugi: [
-    // The same board with the game left as it was, and two pieces lying
-    // on the floor beside it: chapter 339 shows her dead beside the King
-    // with two gungi pieces by them, and episode 148 adapts it. No body
-    // and no hands are drawn.
+    // The same board with the game left as it was, the stack's top piece
+    // turned plain, and the two gungi pieces beside it now in tint: chapter
+    // 339 shows her dead beside the King with two pieces by them, and
+    // episode 148 adapts it. No body and no hands are drawn.
     {
       episode: 148,
       chapter: 339,
       value: [
-        ...CHIMERA_ANT_PHASE_THREE_DRAWINGS.komugi.slice(0, -1),
+        ...softened(CHIMERA_ANT_PHASE_THREE_DRAWINGS.komugi.slice(0, -1)),
         {
-          d: 'M46 157.8 L39 154.6 L29 154.6 L22 157.8 L22 162.2 L29 165.4 L39 165.4 L46 162.2 Z M22 162.2 V168.2 L29 171.4 H39 L46 168.2 V162.2 M29 165.4 V171.4 M39 165.4 V171.4',
+          d: 'M50 161.8 L43 158.6 L33 158.6 L26 161.8 L26 166.2 L33 169.4 L43 169.4 L50 166.2 Z M26 166.2 V172.2 L33 175.4 H43 L50 172.2 V166.2 M33 169.4 V175.4 M43 169.4 V175.4 M136 162.8 L129 159.6 L119 159.6 L112 162.8 L112 167.2 L119 170.4 L129 170.4 L136 167.2 Z M112 167.2 V173.2 L119 176.4 H129 L136 173.2 V167.2 M119 170.4 V176.4 M129 170.4 V176.4',
+          role: 'accent',
         },
-        {
-          d: 'M140 158.8 L133 155.6 L123 155.6 L116 158.8 L116 163.2 L123 166.4 L133 166.4 L140 163.2 Z M116 163.2 V169.2 L123 172.4 H133 L140 169.2 V163.2 M123 166.4 V172.4 M133 166.4 V172.4',
-        },
-        shadow(80, 180, 66),
+        shadow(80, 186, 66),
       ],
     },
   ],

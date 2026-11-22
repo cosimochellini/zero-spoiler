@@ -45,28 +45,31 @@ export const YOUPI_SPLIT: Stroke[] = [
 ]
 
 /**
- * Peggy's black coat, open over his yellow turtleneck: the rolled collar in
- * tint, the coat's far half hatched, the hands hidden in the sleeves. His
- * death lays this same coat on the floor of the nest.
+ * Peggy's black coat in 3/4, open over his yellow turtleneck: the rolled
+ * collar in tint, the coat's far half hatched, the sleeves closing round
+ * like flippers over the four-fingered hands hidden in them, the fingers
+ * only a soft hint. His death lays this same coat on the floor of the nest.
  */
 const PEGGY_COAT: Stroke[] = [
-  { d: 'M66 30 V40 Q80 47 94 40 V30 Q80 37 66 30 Z', role: 'accent' },
-  { d: 'M66 35 Q80 42 94 35', role: 'soft' },
+  { d: 'M64 30 V40 Q78 47 92 41 V31 Q78 37 64 30 Z', role: 'accent' },
+  { d: 'M64 35 Q78 42 92 36', role: 'soft' },
   {
-    d: 'M66 38 L38 50 L26 124 M44 128 L50 82 L50 172 H110 L110 82 L116 128 M134 124 L122 50 L94 38',
+    d: 'M64 38 L36 50 L24 118 Q22 134 32 140 Q42 136 44 120 L48 82 V172 H106 V84 L110 118 Q112 130 120 134 Q128 130 126 116 L116 52 L92 40',
   },
-  { d: 'M26 124 A9 4 15 1 0 44 128 A9 4 15 1 0 26 124' },
-  { d: 'M134 124 A9 4 -15 1 1 116 128 A9 4 -15 1 1 134 124' },
   {
-    d: 'M68 42 L76 98 L64 108 M92 42 L84 98 L96 108 M76 98 L80 172',
+    d: 'M27 126 Q30 133 34 136 M32 122 Q36 129 40 131 M114 120 Q117 126 121 128',
     role: 'soft',
   },
-  { d: 'M84 98 L82 172 M72 120 h0.01 M72 142 h0.01', role: 'soft' },
   {
-    d: 'M100 60 l7 -5 M100 76 l8 -6 M98 118 l9 -6 M98 134 l9 -6 M98 150 l9 -6 M98 164 l8 -5',
+    d: 'M66 42 L74 98 L62 108 M90 42 L82 98 L94 108 M74 98 L78 172',
+    role: 'soft',
+  },
+  { d: 'M82 98 L80 172 M70 120 h0.01 M70 142 h0.01', role: 'soft' },
+  {
+    d: 'M94 60 l7 -5 M94 76 l8 -6 M92 118 l9 -6 M92 134 l9 -6 M92 150 l9 -6 M92 164 l8 -5',
     role: 'ambient',
   },
-  { d: 'M118 64 l5 -3 M120 80 l5 -3 M122 96 l5 -3', role: 'ambient' },
+  { d: 'M112 66 l5 -3 M114 82 l5 -3 M116 98 l5 -3', role: 'ambient' },
 ]
 
 /**
@@ -100,6 +103,31 @@ const QUEEN_BODY: Stroke[] = [
 ]
 const NEST_FLOOR: Stroke = { d: 'M6 158 H156', role: 'ambient' }
 
+/**
+ * Cheetu's cut-off shorts in mid-stride, one leg thrown forward and one
+ * back, seen a little from above into the waist, the frayed hems in tint
+ * and the inside of the waist and the legs hatched. All his drawings keep
+ * them.
+ */
+export const CHEETU_SHORTS: Stroke[] = [
+  { d: 'M48 58 Q80 50 112 58 V70 Q80 62 48 70 Z' },
+  { d: 'M48 58 Q80 66 112 58', role: 'soft' },
+  { d: 'M60 60 l6 -4 M70 61 l8 -6 M84 61 l8 -6 M98 60 l5 -3', role: 'ambient' },
+  { d: 'M48 70 L22 120 M112 70 L136 128 M58 134 L80 96 L100 138' },
+  {
+    d: 'M22 120 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 M100 138 l4 4 l4 -6 l4 5 l4 -6 l4 5 l4 -6 l4 4 l4 -5 l4 1',
+    role: 'accent',
+  },
+  { d: 'M22 120 Q40 110 58 134 M100 138 Q118 122 136 128', role: 'soft' },
+  { d: 'M80 66 V96 M62 76 Q66 88 56 94 M98 76 Q94 88 104 94', role: 'soft' },
+  {
+    d: 'M34 118 l8 -6 M42 122 l10 -8 M108 132 l8 -6 M116 130 l10 -8',
+    role: 'ambient',
+  },
+  { d: 'M106 82 l6 -4 M110 96 l6 -4 M114 110 l6 -4', role: 'ambient' },
+  { d: 'M62 63 V70 M98 63 V70', role: 'soft' },
+]
+
 /** The King, the Royal Guards and the Squadron Leaders closest to the Queen (#1021). */
 export const CHIMERA_ANT_ROYALS_DRAWINGS = {
   // The Queen in profile on the floor of her nest, her abdomen swollen with
@@ -114,34 +142,17 @@ export const CHIMERA_ANT_ROYALS_DRAWINGS = {
     NEST_FLOOR,
     shadow(94, 170, 62),
   ],
-  // Cheetu's cut-off shorts in mid-stride, one leg thrown forward and one
-  // back, seen a little from above into the waist, the frayed hems in tint
-  // and the inside of the waist and the legs hatched: the
-  // only thing the cheetah-like Squadron Leader wears, named in episode 79 /
-  // chapter 192.
+  // Cheetu's cut-off shorts in mid-stride, with open speed lines streaming
+  // behind the back leg: the only thing the cheetah-like Squadron Leader
+  // wears, and his speed, both his from his first scene, named in episode
+  // 79 / chapter 192. No Nen.
   'cheetu': [
-    { d: 'M48 58 Q80 50 112 58 V70 Q80 62 48 70 Z' },
-    { d: 'M48 58 Q80 66 112 58', role: 'soft' },
-    {
-      d: 'M60 60 l6 -4 M70 61 l8 -6 M84 61 l8 -6 M98 60 l5 -3',
-      role: 'ambient',
-    },
-    { d: 'M48 70 L22 120 M112 70 L136 128 M58 134 L80 96 L100 138' },
-    {
-      d: 'M22 120 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 l4 6 l4 -5 M100 138 l4 4 l4 -6 l4 5 l4 -6 l4 5 l4 -6 l4 4 l4 -5 l4 1',
-      role: 'accent',
-    },
-    { d: 'M22 120 Q40 110 58 134 M100 138 Q118 122 136 128', role: 'soft' },
-    { d: 'M80 66 V96 M62 76 Q66 88 56 94 M98 76 Q94 88 104 94', role: 'soft' },
-    {
-      d: 'M34 118 l8 -6 M42 122 l10 -8 M108 132 l8 -6 M116 130 l10 -8',
-      role: 'ambient',
-    },
-    { d: 'M106 82 l6 -4 M110 96 l6 -4 M114 110 l6 -4', role: 'ambient' },
-    { d: 'M62 63 V70 M98 63 V70', role: 'soft' },
+    ...CHEETU_SHORTS,
+    { d: 'M10 84 H36 M2 98 H28 M8 112 H20', role: 'ambient' },
     shadow(80, 176, 50),
   ],
-  // Peggy's coat over the turtleneck, standing empty: the analyst named in
+  // Peggy's coat in 3/4 over the turtleneck, standing empty, his hands half
+  // hidden in the sleeves like a penguin's flippers: the analyst named in
   // chapter 189 while he examines the dead soldiers. No book, which only
   // the anime is known to give him.
   'peggy': [...PEGGY_COAT, shadow(80, 184, 44)],

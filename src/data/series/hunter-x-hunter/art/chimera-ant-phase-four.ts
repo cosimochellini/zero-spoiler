@@ -4,17 +4,23 @@ import {
   type Redrawings,
   type Stroke,
 } from '~/data/art/stroke'
-import { shadow } from '~/lib/svg/primitives'
+import { ellipse, shadow } from '~/lib/svg/primitives'
 
-import { CHIMERA_ANT_ROYALS_DRAWINGS } from './chimera-ant-royals'
+import {
+  CHEETU_SHORTS,
+  CHIMERA_ANT_ROYALS_DRAWINGS,
+} from './chimera-ant-royals'
 
 /**
  * One of Taragetter's dark forewings, the right one, from behind: its
- * outline, the long veins and the cross veins between them, and the dark
- * hatched toward the tip. The left wing is the same one mirrored.
+ * leading edge, the trailing edge, the long veins and the cross veins
+ * between them, and the dark hatched toward the tip. The near wing is the
+ * same one mirrored; the far one is narrowed as it turns away.
  */
-const TARAGETTER_WING_EDGE =
-  'M84 46 C96 50 112 72 124 106 C136 140 136 166 126 174 C114 180 100 160 94 130 C88 100 84 72 84 46 Z'
+const TARAGETTER_LEADING_EDGE =
+  'M84 46 C96 50 112 72 124 106 C136 140 136 166 126 174'
+const TARAGETTER_TRAILING_EDGE =
+  'M126 174 C114 180 100 160 94 130 C88 100 84 72 84 46'
 const TARAGETTER_VEINS: Stroke[] = [
   {
     d: 'M87 54 C102 80 118 116 127 166 M90 72 C96 102 100 136 110 170',
@@ -29,21 +35,35 @@ const TARAGETTER_VEINS: Stroke[] = [
     role: 'ambient',
   },
 ]
+const NEAR_WING = 'matrix(-1.1 0 0 1 182.4 0)'
 
 export const CHIMERA_ANT_PHASE_FOUR_DRAWINGS = {
-  // Taragetter's two dark forewings folded down his back from the shoulders,
-  // the right one's edge in tint, veined and hatched: the soldier Knov kills
-  // in chapter 251, named in chapter 261 when Welfin finds his blood. No
-  // head, face or blood.
+  // Taragetter's two dark forewings lying over his shoulders and down his
+  // spine to the small of his back, seen from behind and a little to the
+  // side: the near wing's leading edge in tint, the far wing narrowed and
+  // hatched dark, the line of the shoulders and the back soft. The soldier
+  // Knov kills in chapter 251, named in chapter 261 when Welfin finds his
+  // blood. No head, face or blood.
   taragetter: [
-    { d: TARAGETTER_WING_EDGE, role: 'accent' },
-    ...TARAGETTER_VEINS,
+    {
+      d: 'M22 64 Q50 44 90 44 Q114 46 132 58 M22 64 C20 102 26 146 36 184 M132 58 C136 98 134 146 128 184',
+      role: 'soft',
+    },
+    { d: TARAGETTER_LEADING_EDGE, role: 'accent', transform: NEAR_WING },
+    { d: TARAGETTER_TRAILING_EDGE, transform: NEAR_WING },
+    ...moved(TARAGETTER_VEINS, NEAR_WING),
     ...moved(
-      [{ d: TARAGETTER_WING_EDGE }, ...TARAGETTER_VEINS],
-      'matrix(-1 0 0 1 160 0)',
+      [
+        { d: `${TARAGETTER_LEADING_EDGE} ${TARAGETTER_TRAILING_EDGE}` },
+        ...TARAGETTER_VEINS,
+        {
+          d: 'M92 92 l8 -5 M94 108 l10 -6 M98 124 l10 -6 M104 140 l10 -6',
+          role: 'ambient',
+        },
+      ],
+      'translate(92 0) scale(0.7 1) translate(-84 0)',
     ),
-    { d: 'M76 46 Q80 38 84 46', role: 'soft' },
-    shadow(80, 188, 44),
+    shadow(80, 192, 48),
   ],
 } satisfies Drawings
 
@@ -52,12 +72,42 @@ export const chimeraAntPhaseFourRedrawn: Redrawings = {
   // crushes Cheetu with one blow from above, episode 117 / chapter 278. No
   // body is drawn.
   cheetu: [
+    // The same shorts, smaller, beside the giant hourglass that stands in
+    // the middle of the savanna his first ability conjures, the hourglass
+    // in 3/4 with its sand soft: a touch takes him and Morel into it for a
+    // game of tag, chapter 245 and episode 103.
+    {
+      episode: 103,
+      chapter: 245,
+      value: [
+        ...moved(
+          CHIMERA_ANT_ROYALS_DRAWINGS.cheetu.slice(0, -1),
+          'translate(48 112) scale(0.6) translate(-80 -100)',
+        ),
+        {
+          d: `${ellipse(122, 40, 26, 6)} M96 40 V44 C96 52 148 52 148 44 V40 ${ellipse(122, 168, 26, 6)} M96 168 V172 C96 180 148 180 148 172 V168`,
+        },
+        { d: 'M100 48 V164 M144 48 V164' },
+        {
+          d: 'M108 50 C108 80 119 96 119 106 C119 116 108 132 108 164 M136 50 C136 80 125 96 125 106 C125 116 136 132 136 164',
+        },
+        {
+          d: 'M112 72 Q122 77 132 72 M122 108 V150 M110 164 Q122 144 134 164',
+          role: 'soft',
+        },
+        {
+          d: 'M138 64 l4 -3 M136 82 l5 -3 M136 128 l5 -3 M138 146 l4 -3',
+          role: 'ambient',
+        },
+        shadow(80, 188, 66),
+      ],
+    },
     {
       episode: 117,
       chapter: 278,
       value: [
         ...moved(
-          CHIMERA_ANT_ROYALS_DRAWINGS.cheetu.slice(0, -1),
+          CHEETU_SHORTS,
           'translate(80 121) rotate(-76) scale(0.67) translate(-80 -100)',
         ),
         {
