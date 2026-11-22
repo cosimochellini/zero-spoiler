@@ -5,36 +5,61 @@ import {
   softened,
   type Stroke,
 } from '~/data/art/stroke'
-import { circle, ellipse, shadow } from '~/lib/svg/primitives'
+import { circle, dots, ellipse, shadow } from '~/lib/svg/primitives'
 
 import {
   BASHO_BRUSH,
+  BIG_BANG_IMPACT,
+  BLACK_VOICE_ARCS,
   KISS,
+  KORTOPI_VASE,
   LIPSTICK,
+  MACHINE_GUN_HAND,
   NEON_PEN,
   NEON_SHEETS,
   OWL_BUNDLE,
+  SHALNARK_PHONE,
   TOCINO_ROBE,
   TOCINO_ROBE_OUTLINE,
   TOCINO_SWORD,
   UVOGIN_VEST,
 } from './yorknew-city'
 
+/** The outline of the head of Zeno's aura dragon, facing right. */
+const DRAGON_SKULL: Stroke = {
+  d: 'M-20 -10 C-12 -20 4 -20 14 -12 L30 -8 M20 18 C6 16 -6 14 -14 10',
+}
+
+/** Its open jaws. */
+const DRAGON_JAWS: Stroke = { d: 'M30 -8 L28 -1 L4 2 L24 14 L20 18' }
+
+/** Its two horns, swept back, and a line down the cheek. */
+const DRAGON_HORNS: Stroke = {
+  d: 'M-8 -15 L-32 -28 L-2 -18 M0 -17 L-14 -40 L6 -16',
+}
+const DRAGON_CHEEK: Stroke = { d: 'M-16 2 C-8 4 -2 4 4 2', role: 'soft' }
+
 /**
- * Zeno's aura dragon of Dragon Head, its body rising from the lower left to
- * the head at the upper right. Zeno's own stage lays it over his
- * robe.
+ * Zeno's aura dragon of Dragon Head thrown as a straight shot: the head in
+ * 3/4 at the upper right, horns in tint and jaws open, no eye, the body
+ * trailing behind it in a straight line to the lower left. Zeno's own stage
+ * lays it over his robe.
  */
 export const DRAGON_HEAD: Stroke[] = [
+  ...moved(
+    [
+      DRAGON_SKULL,
+      { ...DRAGON_JAWS, role: 'soft' },
+      { ...DRAGON_HORNS, role: 'accent' },
+      DRAGON_CHEEK,
+    ],
+    'translate(110 62) rotate(-38) scale(1.5)',
+  ),
   {
-    d: 'M31 143 C42 98 70 111 89 84 L84 65 L99 73 L110 58 L111 78 L129 88 L119 104 L102 107 Q90 128 66 129 L47 148',
+    d: 'M77 69 C64 72 58 86 46 96 C34 106 30 120 22 132 L12 156 M103 87 C90 92 82 106 68 114 C54 122 48 134 38 142 L12 156',
   },
-  {
-    d: 'M111 86 L121 91 M113 98 L125 94 M62 121 L66 129 M76 111 L81 121',
-    role: 'soft',
-  },
-  { d: 'M88 103 L94 112', role: 'ambient' },
-  { d: 'M25 153 Q46 109 62 108 M92 56 L93 45 M114 57 L122 45', role: 'accent' },
+  { d: 'M70 82 L82 98 M52 100 L60 116 M32 124 L42 136', role: 'soft' },
+  { d: 'M66 64 L36 92 M122 98 L92 126 M92 134 L68 154', role: 'ambient' },
 ]
 
 /** The ring a chain of Kurapika's hangs from, seen a little from above. */
@@ -76,13 +101,6 @@ const CHAIN_JAIL_HOOK: Stroke[] = [
   },
 ]
 
-/** The hood of one of Tocino's figures over its robe, its opening dark. */
-const HOOD: Stroke[] = [
-  { d: 'M67 40 C62 26 68 10 80 8 C92 10 98 26 93 40' },
-  { d: 'M72 39 C70 28 74 18 80 17 C86 18 90 28 88 39', role: 'soft' },
-  { d: 'M73 33 L85 22 M74 38 L88 26 M81 39 L88 33', role: 'ambient' },
-]
-
 /** A few open lines over a far figure's robe: it is black. */
 const FAR_ROBE_HATCH: Stroke[] = [
   { d: 'M90 80 l14 -10 M90 118 l16 -11 M90 156 l17 -12', role: 'ambient' },
@@ -104,35 +122,6 @@ const BONE_FISH: Stroke[] = [
   { d: 'M124 109 L144 94 L139 109 L144 124 Z', role: 'soft' },
 ]
 
-/**
- * One of Franklin's hands from the little finger's side, pointing to the
- * right with its four fingers spread and cut at the last joint, each tip
- * hanging below its finger on a short chain, in tint, and a streak of aura
- * flying on from each. Drawn about the origin.
- */
-const MACHINE_GUN_HAND: Stroke[] = [
-  { d: 'M12.4 -16.3 C2 -20 -12 -14 -50 -10 M13.5 15.4 C2 20 -12 18 -50 16' },
-  {
-    d: 'M12.4 -16.3 L40 -39.4 M18.2 -9.4 L45.8 -32.5 M18.3 -9.2 L57.1 -18.9 M20.5 -0.5 L59.3 -10.1 M20.5 -0.6 L57.8 6.6 M18.8 8.2 L56.1 15.5 M18.8 8.1 L43.1 25.7 M13.5 15.4 L37.8 33',
-  },
-  {
-    d: 'M40 -39.4 A4.5 2.2 50 1 0 45.8 -32.5 A4.5 2.2 50 1 0 40 -39.4 M57.1 -18.9 A4.5 2.2 76 1 0 59.3 -10.1 A4.5 2.2 76 1 0 57.1 -18.9 M57.8 6.6 A4.5 2.2 101 1 0 56.1 15.5 A4.5 2.2 101 1 0 57.8 6.6 M43.1 25.7 A4.5 2.2 126 1 0 37.8 33 A4.5 2.2 126 1 0 43.1 25.7',
-    role: 'soft',
-  },
-  {
-    d: 'M23.2 -25.3 L28.9 -18.4 M31.9 -12.6 L34.1 -3.9 M34.2 2.1 L32.5 10.9 M30.2 16.3 L24.9 23.6 M-6 -6 C0 -2 2 6 -2 12',
-    role: 'soft',
-  },
-  {
-    d: 'M42.9 -32.5 V-27.5 M39.9 -27.5 H45.9 V-23.5 C45.9 -20.5 39.9 -20.5 39.9 -23.5 Z M58.2 -10.1 V-5.1 M55.2 -5.1 H61.2 V-1.1 C61.2 1.9 55.2 1.9 55.2 -1.1 Z M56.9 15.5 V20.5 M53.9 20.5 H59.9 V24.5 C59.9 27.5 53.9 27.5 53.9 24.5 Z M40.5 33 V38 M37.5 38 H43.5 V42 C43.5 45 37.5 45 37.5 42 Z',
-    role: 'accent',
-  },
-  {
-    d: 'M49 -41.1 L62.8 -52.7 M66 -16.5 L83.4 -20.8 M64.8 12.6 L82.5 16 M46.9 34.1 L61.5 44.7',
-    role: 'ambient',
-  },
-]
-
 export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // Three of the hooded figures in black who ambush the applicants, the
   // front one raising a sword with the guard in tint, each robe's far half
@@ -141,15 +130,15 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // and sword. No faces, and nothing that says who sends them.
   'eleven-black-children': [
     ...moved(
-      [...TOCINO_ROBE_OUTLINE, ...HOOD, ...FAR_ROBE_HATCH],
+      [...TOCINO_ROBE_OUTLINE, ...FAR_ROBE_HATCH],
       'translate(92 66) scale(0.3) translate(-80 -100)',
     ),
     ...moved(
-      [...TOCINO_ROBE_OUTLINE, ...HOOD, ...FAR_ROBE_HATCH],
+      [...TOCINO_ROBE_OUTLINE, ...FAR_ROBE_HATCH],
       'translate(120 102) scale(0.42) translate(-80 -100)',
     ),
     ...moved(
-      [...TOCINO_ROBE, ...HOOD, ...TOCINO_SWORD],
+      [...TOCINO_ROBE, ...TOCINO_SWORD],
       'translate(56 112) scale(-0.6 0.6) translate(-80 -100)',
     ),
     shadow(56, 170, 34),
@@ -323,31 +312,7 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
   // the curled fingers with the thumb across them and the knuckles in tint,
   // the crater it blasts open around it with the far wall hatched and lines
   // of the blast flying off: Big Bang Impact, episode 44 / chapter 76.
-  'big-bang-impact': [
-    { d: 'M68 6 L70 64 M104 6 L102 66' },
-    { d: 'M58 100 C56 88 58 74 64 66 C68 60 102 60 106 68 L110 98 L106 122' },
-    { d: 'M70 104 V124 M82 104 V124 M94 104 V124', role: 'soft' },
-    {
-      d: 'M58 100 C70 94 90 94 100 98 C107 101 106 109 99 110 C88 112 72 109 59 106',
-    },
-    { d: 'M94 100 C97 100 99 102 99 105', role: 'soft' },
-    {
-      d: 'M58 106 V124 C58 132 70 132 70 124 C70 132 82 132 82 124 C82 132 94 132 94 124 C94 132 106 132 106 122',
-      role: 'accent',
-    },
-    {
-      d: 'M54 132 C30 132 10 138 8 146 C8 156 40 164 80 164 C120 164 152 156 152 146 C150 138 130 132 112 132',
-    },
-    { d: 'M26 146 C40 160 120 160 134 146', role: 'soft' },
-    {
-      d: 'M20 142 l8 -6 M34 140 l8 -6 M118 140 l8 -6 M132 142 l8 -6',
-      role: 'ambient',
-    },
-    {
-      d: 'M12 128 l-8 -6 M28 120 l-6 -8 M132 120 l6 -8 M148 128 l8 -6 M10 168 l-6 6 M150 168 l6 6',
-      role: 'ambient',
-    },
-  ],
+  'big-bang-impact': BIG_BANG_IMPACT,
   // Owl's knotted bundle shrunk small on an open palm, the two ends of its
   // knot in tint: he holds the tiny cloth with Nobunaga shrunk inside,
   // episode 45 / chapter 77. No face.
@@ -426,56 +391,106 @@ export const YORKNEW_ABILITY_DRAWINGS: Drawings = {
       'translate(86 60) scale(-0.6 0.6) translate(-88 -108)',
     ),
   ],
+  // Zeno's aura dragon thrown as a straight shot, the head in 3/4 with its
+  // horns in tint and jaws open, no eye, the body trailing behind it in a
+  // straight line: Dragon Head, which he hurls at Chrollo, episode 52 /
+  // chapter 99.
   'dragon-head': DRAGON_HEAD,
+  // The same dragon's head at the end of a body that bends back to Zeno's
+  // outstretched hand, the jaws in tint: Dragon Lance keeps the dragon
+  // joined to him and steers it with his hand until it grips Chrollo,
+  // episode 52 / chapter 99. No face.
   'dragon-lance': [
+    ...moved(
+      [
+        DRAGON_SKULL,
+        { ...DRAGON_JAWS, role: 'accent' },
+        { ...DRAGON_HORNS, role: 'soft' },
+        DRAGON_CHEEK,
+      ],
+      'translate(116 100) rotate(40) scale(1.3)',
+    ),
     {
-      d: 'M31 140 C38 89 68 79 81 104 C95 126 114 98 121 82 L115 65 L126 72 L138 62 L136 77 L146 83 L141 97 L126 100 C110 131 90 139 73 114 C62 97 46 114 42 142',
+      d: 'M40 130 C30 70 64 28 92 40 C102 46 106 58 104 73 M54 136 C46 86 70 56 86 60 C92 64 94 80 94 98',
     },
     {
-      d: 'M128 85 L135 85 M132 94 L142 89 M58 98 L62 108 M83 113 L89 121',
+      d: 'M8 196 L34 150 C32 142 34 136 40 130 M26 200 L50 158 C54 150 56 142 54 136 M40 146 L46 134 M46 151 L51 139',
       role: 'soft',
     },
-    { d: 'M111 104 L118 112', role: 'ambient' },
     {
-      d: 'M27 126 Q31 103 43 94 M68 84 Q84 84 92 99 M98 139 Q118 134 128 117',
-      role: 'accent',
+      d: 'M30 100 C30 76 46 50 70 38 M70 94 C76 80 84 72 94 72',
+      role: 'ambient',
     },
   ],
-  'black-voice': [
-    {
-      d: 'M45 75 L78 75 L78 141 L45 141Z M49 82 L74 82 L74 108 L49 108Z M56 73 L54 63',
-    },
-    {
-      d: 'M50 116 L57 116 M63 116 L71 116 M50 126 L57 126 M63 126 L71 126',
-      role: 'soft',
-    },
-    { d: 'M58 134 L66 134', role: 'ambient' },
-    {
-      d: 'M89 97 Q100 88 107 92 M87 86 Q101 76 114 81 M85 75 Q105 64 122 70',
-      role: 'accent',
-    },
-  ],
+  // Shalnark's demon-shaped phone in 3/4, a horned head on top with a bat's
+  // wings in tint, the blank screen and keys on the front and its side
+  // hatched, with the open arcs of the control it gives him: he steers the
+  // auctioneer through it, episode 53 / chapter 98. No antenna, whose shape
+  // the wiki cites only from chapter 227.
+  'black-voice': [...SHALNARK_PHONE, BLACK_VOICE_ARCS, shadow(74, 176, 40)],
+  // Kortopi's vase on the floor with a left hand resting on its mouth, and
+  // its copy in tint standing on an open right hand: he touches an object
+  // with his left hand and conjures the copy with his right, as with the
+  // porcelain vase at the auction, episode 53 / chapter 100. No face.
   'gallery-fake': [
+    ...KORTOPI_VASE,
+    ...moved(
+      KORTOPI_VASE.map((stroke) => ({ ...stroke, role: 'accent' as const })),
+      'translate(64 -12)',
+    ),
     {
-      d: 'M50 79 L65 79 L63 91 Q79 113 71 138 Q58 145 43 137 Q35 116 51 91Z M98 79 L114 79 L112 91 Q127 113 120 138 Q107 145 92 137 Q84 116 100 91Z',
-    },
-    {
-      d: 'M46 117 Q58 125 70 117 M94 117 Q106 125 118 117 M48 132 Q58 138 67 132',
+      d: 'M30 100 C42 106 54 106 66 100 M94 88 C106 94 118 94 130 88',
       role: 'soft',
     },
-    { d: 'M97 132 Q107 138 115 132', role: 'ambient' },
-    { d: 'M80 89 L86 89 M82 82 L82 96 M78 151 L86 151', role: 'accent' },
+    {
+      d: 'M4 34 L24 52 C26 58 30 63 34 66 C35 70 40 70 41 66 C42 70 47 70 48 65 C49 69 54 69 55 64 C56 68 61 67 62 62 C62 54 56 46 50 42 L22 14',
+    },
+    {
+      d: 'M41 66 L40 56 M48 65 L47 54 M55 64 L53 52 M26 54 C22 60 24 66 30 68',
+      role: 'soft',
+    },
+    {
+      d: 'M152 192 L132 156 M134 198 L116 162 M116 162 C104 156 96 148 100 140 H128 C132 144 134 150 132 156 M100 140 C95 136 97 131 102 133',
+    },
+    {
+      d: 'M58 116 l6 -4 M58 132 l6 -4 M122 104 l6 -4 M122 120 l6 -4',
+      role: 'ambient',
+    },
+    { d: 'M4 150 H92', role: 'ambient' },
+    shadow(48, 158, 26),
   ],
+  // Pakunoda's six-shot revolver from the side in 3/4, the cylinder's face
+  // turned to the reader with its chambers, the grip's far side hatched,
+  // and a conjured bullet in tint leaving the muzzle: Memory Bomb shoots
+  // Squala's memories into Nobunaga, episode 56 / chapter 112.
   'memory-bomb': [
     {
-      d: 'M36 108 L78 108 L88 115 L88 130 L65 130 L58 151 L45 146 L50 127 L36 127Z M62 130 Q67 145 74 131',
+      d: 'M64 80 H52 L46 84 L40 78 L36 80 L42 90 L48 100 H64 M48 100 L36 146 Q35 152 41 152 H52 Q57 152 58 147 L64 104',
     },
-    { d: 'M40 115 L76 115 M74 119 L82 119', role: 'soft' },
-    { d: 'M46 121 L56 121', role: 'ambient' },
+    { d: 'M64 80 H90 V104 H64 Z M95 86 H126 V95 H95 M120 86 V82 H124 V86' },
+    { d: 'M64 88 H90 M64 96 H90', role: 'soft' },
     {
-      d: 'M108 119 L118 119 L124 124 L118 129 L108 129Z M94 118 L102 118 M94 129 L103 129',
+      d: `${ellipse(91, 92, 5, 12)} ${dots([
+        [91, 84],
+        [93.5, 88],
+        [93.5, 96],
+        [91, 100],
+        [88.5, 96],
+        [88.5, 88],
+      ])} ${ellipse(126, 90.5, 2, 4.5)}`,
+      role: 'soft',
+    },
+    {
+      d: 'M64 104 C64 118 82 118 84 104 M70 104 C70 110 72 112 74 112',
+      role: 'soft',
+    },
+    {
+      d: 'M132 86 H144 C150 86 154 90.5 154 90.5 C154 90.5 150 95 144 95 H132 Z',
       role: 'accent',
     },
+    { d: 'M130 80 l4 -4 M130 101 l4 4', role: 'ambient' },
+    { d: 'M44 116 l8 -4 M42 128 l8 -4 M40 140 l8 -4', role: 'ambient' },
+    shadow(80, 172, 50),
   ],
 }
 
@@ -491,7 +506,7 @@ export const yorknewAbilitiesRedrawn: Redrawings = {
       chapter: 68,
       value: [
         ...moved(
-          [...TOCINO_ROBE_OUTLINE, ...HOOD],
+          TOCINO_ROBE_OUTLINE,
           'translate(118 138) rotate(6) scale(0.42 0.2) translate(-80 -100)',
         ),
         ...moved(
@@ -499,7 +514,7 @@ export const yorknewAbilitiesRedrawn: Redrawings = {
           'translate(14 160) rotate(60) scale(0.5) translate(-120 -108)',
         ),
         ...moved(
-          [...TOCINO_ROBE, ...HOOD],
+          TOCINO_ROBE,
           'translate(64 150) rotate(-4) scale(0.62 0.26) translate(-80 -100)',
         ),
         ...moved(

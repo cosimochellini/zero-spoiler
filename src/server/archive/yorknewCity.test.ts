@@ -603,11 +603,12 @@ const DRAWN_DEATHS = [
     chapter: { opens: 90, death: 119 },
   },
   // Captured again in chapter 82 alone, so a chapter reader meets the
-  // grave from a capture.
+  // grave from a capture. His drawing before the grave is his Big Bang
+  // Impact stage (44 / 76), so that is the one it is held to.
   {
     id: 'uvogin',
-    episode: { opens: 43, death: 47 },
-    chapter: { opens: 74, death: 84, was: 'captured' },
+    episode: { opens: 44, death: 47 },
+    chapter: { opens: 76, death: 84, was: 'captured' },
   },
   // One stage serves both readers: deceased at episode 45, presumed dead at
   // chapter 78 (and confirmed at 89, below).
@@ -714,6 +715,23 @@ describe('the Eleven Black Children revealed', () => {
       }),
     ).toStrictEqual([])
   })
+})
+
+// Each Hatsu is a stage from the pair that first shows it, never one step
+// before, in both media (#1335).
+describe('the Hatsu drawn for the Yorknew City records', () => {
+  it.each([
+    { id: 'uvogin', power: 'Big Bang Impact', episode: 44, chapter: 76 },
+    { id: 'melody', power: 'her flute', episode: 44, chapter: 77 },
+    { id: 'shalnark', power: 'Black Voice', episode: 53, chapter: 98 },
+    { id: 'phinks', power: 'Ripper Cyclotron', episode: 96, chapter: 226 },
+    { id: 'feitan', power: 'Pain Packer', episode: 97, chapter: 229 },
+  ])(
+    'draws $id’s $power at episode $episode / chapter $chapter',
+    ({ id, episode, chapter }) => {
+      expect(stageMissedAt(archive, id, { episode, chapter })).toStrictEqual([])
+    },
+  )
 })
 
 describe('the returning characters’ last steps', () => {
