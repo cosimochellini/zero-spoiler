@@ -74,11 +74,13 @@ import { KAKIN_PHASE_4_DRAWINGS, kakinPhaseFourRedrawn } from './kakin-phase-4'
 import { KAKIN_PHASE_5_DRAWINGS, kakinPhaseFiveRedrawn } from './kakin-phase-5'
 import { TRICK_TOWER_DRAWINGS } from './trick-tower'
 import {
+  BANDITS_SECRET,
   DOWSING_CHAIN,
   YORKNEW_ABILITY_DRAWINGS,
   yorknewAbilitiesRedrawn,
 } from './yorknew-abilities'
 import {
+  BONOLENOV_GLOVE,
   KORTOPI_VASE,
   NEON_PEN,
   NEON_SHEETS,
@@ -1416,6 +1418,63 @@ const electionReturningRedrawn: Redrawings = {
   ],
 }
 
+/** Where Chrollo's coat stands in his stages, made smaller. */
+const CHROLLO_COAT_AT = 'translate(2 34) scale(0.62)'
+
+/** Where Bandit's Secret stands beside it. */
+const CHROLLO_BOOK_AT = 'translate(76 56) scale(0.56)'
+
+/**
+ * Chrollo's coat made smaller beside Bandit's Secret, the book of his
+ * Skill Hunter, its spine in tint: his stage from chapter 97 and the
+ * drawing he comes back to after his disguise.
+ */
+const CHROLLO_SKILL_HUNTER: Stroke[] = [
+  ...moved(softened(YORKNEW_CITY_DRAWINGS.chrollo), CHROLLO_COAT_AT),
+  ...moved(BANDITS_SECRET, CHROLLO_BOOK_AT),
+  shadow(118, 160, 30),
+]
+
+/** The plain jacket of Chrollo's disguise, its collar in tint. */
+const CHROLLO_DISGUISE: Stroke[] = [
+  {
+    d: 'M60 42 L36 54 L28 134 H42 L48 86 L48 176 H112 L112 86 L118 134 H132 L124 54 L100 42',
+  },
+  { d: 'M60 42 L80 96 L100 42 M70 44 L80 70 L90 44', role: 'accent' },
+  { d: 'M80 96 V176 M86 112 h0.01 M86 132 h0.01 M86 152 h0.01', role: 'soft' },
+  { d: 'M38 76 l5 10 M122 76 l-5 10', role: 'soft' },
+  { d: 'M96 112 l8 -6 M98 136 l8 -6 M98 160 l8 -6', role: 'ambient' },
+  shadow(80, 188, 52),
+]
+
+/**
+ * The long spear Bonolenov conjures with Battle Cantabile: Prologue,
+ * standing upright, its blade and shaft in tint.
+ */
+const BONOLENOV_SPEAR: Stroke[] = [
+  {
+    d: 'M101 46 L106 178 M100 46 C93 38 93 20 101 6 C109 20 109 38 102 46 Z',
+    role: 'accent',
+  },
+  { d: 'M101 12 V40 M97 52 H105 M97 57 H106', role: 'soft' },
+]
+
+/**
+ * His bandage fully unwound and lying loose along the floor, and one of
+ * his boxing gloves dropped beside it.
+ */
+const BONOLENOV_BANDAGE_LOOSE: Stroke[] = [
+  {
+    d: 'M8 160 C26 150 44 166 64 158 C84 150 104 166 124 156 C136 150 148 154 154 160 V168 C148 162 136 158 128 164 C108 174 88 158 68 166 C48 174 30 158 12 168 Z',
+  },
+  {
+    d: 'M30 160 C38 158 46 162 52 166 M116 160 C122 158 130 158 136 160',
+    role: 'soft',
+  },
+  ...moved(BONOLENOV_GLOVE, 'translate(6 -26)'),
+  shadow(80, 186, 72),
+]
+
 /** A manga-only stage of a returning record, told in Kakin's chapters. */
 const KAKIN = { episode: 148, source: 'chapter' } as const
 
@@ -1426,15 +1485,32 @@ const KAKIN = { episode: 148, source: 'chapter' } as const
  */
 const kakinReturningRedrawn: Redrawings = {
   'bonolenov': [
-    // The same roll of bandage made small, and above it Hisoka's cards in
-    // the muted ink, a likeness: the "Hisoka" the Mafia met was Bonolenov
-    // transformed with Metamorphosen, and he takes another form again,
-    // chapter 405.
+    // His bandage fully unwound and lying loose along the floor, one of his
+    // boxing gloves dropped beside it, and standing over it the long spear
+    // of Battle Cantabile: Prologue in tint, which he conjures with warrior
+    // attire as he dances: his Hatsu, first shown against a Chimera Ant,
+    // episode 96 / chapter 225. Jupiter, chapter 227, is a later piece of
+    // the same Hatsu, so it keeps this drawing. No mask and no body.
+    {
+      episode: 96,
+      chapter: 225,
+      value: [...BONOLENOV_BANDAGE_LOOSE, ...BONOLENOV_SPEAR],
+    },
+    // The same roll of bandage made small, its loose end softened, with the
+    // spear beside it, and above them Hisoka's cards in the muted ink, a
+    // likeness: the "Hisoka" the Mafia met was Bonolenov transformed with
+    // Metamorphosen, and he takes another form again, chapter 405.
     {
       ...KAKIN,
       chapter: 405,
       value: [
-        ...moved(DRAWINGS.bonolenov, 'translate(-3 76) scale(0.6)'),
+        ...moved(
+          [
+            ...softened(DRAWINGS.bonolenov),
+            ...moved(BONOLENOV_SPEAR, 'translate(48 0) scale(0.7)'),
+          ],
+          'translate(-3 76) scale(0.6)',
+        ),
         ...moved(
           DRAWINGS.hisoka.map((stroke) => ({
             ...stroke,
@@ -1557,32 +1633,34 @@ const kakinReturningRedrawn: Redrawings = {
     },
   ],
   'chrollo': [
-    // Another person's clothes in place of his coat: a plain jacket with
-    // no fur at the collar or cuffs, its collar in tint. He disguises
-    // himself in the Heavens Arena crowd, chapter 353; the wiki does not
-    // describe the clothes, so nothing on them is drawn.
+    // The same coat made smaller, its cross softened, and beside it Bandit's
+    // Secret, the book of Skill Hunter, its spine in tint: his own Hatsu,
+    // shown against an assassin in chapter 97 and episodes 51 and 52, before
+    // the episodes open his record at 54. A stage cannot sit on the record's
+    // own episode, so it is pinned at 55: late for a viewer, never early.
+    // The abilities he steals with it keep this drawing (owner, 2026-11-16),
+    // and so does Double Face, a bookmark the wiki says belongs to the book
+    // itself (chapter 351).
+    { episode: 55, chapter: 97, value: CHROLLO_SKILL_HUNTER },
+    // Another person's clothes in place of his coat: a plain jacket with no
+    // fur at the collar or cuffs, softened like the coat, beside the same
+    // book. He hides in the Heavens Arena crowd in chapter 352, and chapter
+    // 353 first shows him in another's clothes; the wiki does not describe
+    // them, so nothing on them is drawn.
     {
       ...KAKIN,
       chapter: 353,
       value: [
-        {
-          d: 'M60 42 L36 54 L28 134 H42 L48 86 L48 176 H112 L112 86 L118 134 H132 L124 54 L100 42',
-        },
-        { d: 'M60 42 L80 96 L100 42 M70 44 L80 70 L90 44', role: 'accent' },
-        {
-          d: 'M80 96 V176 M86 112 h0.01 M86 132 h0.01 M86 152 h0.01',
-          role: 'soft',
-        },
-        { d: 'M38 76 l5 10 M122 76 l-5 10', role: 'soft' },
-        { d: 'M96 112 l8 -6 M98 136 l8 -6 M98 160 l8 -6', role: 'ambient' },
-        shadow(80, 188, 52),
+        ...moved(softened(CHROLLO_DISGUISE), CHROLLO_COAT_AT),
+        ...moved(BANDITS_SECRET, CHROLLO_BOOK_AT),
+        shadow(118, 160, 30),
       ],
     },
-    // The exit, by the house convention for a temporary costume: his first
-    // drawing again from chapter 357, the next time he is shown, away from
+    // The exit, by the house convention for a temporary costume: the coat
+    // and book again from chapter 357, the next time he is shown, away from
     // the arena on the phone to Shalnark. What he wears there is not in the
     // wiki, so it is a frame check.
-    { ...KAKIN, chapter: 357, value: YORKNEW_CITY_DRAWINGS.chrollo },
+    { ...KAKIN, chapter: 357, value: CHROLLO_SKILL_HUNTER },
   ],
   'hanzo': [
     // His Kakin look: the black suit and tie of a prince's bodyguard, the
