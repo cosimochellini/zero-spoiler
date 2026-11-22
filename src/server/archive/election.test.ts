@@ -310,6 +310,22 @@ function chronicleTitles(owner: Entity, reader: Reader): string[] {
   ].map((entry) => entry.title)
 }
 
+describe.each(['gittarackur', 'illumi'])('%s’s election disguise', (id) => {
+  // A temporary costume: the vote in the disguise, then the drawing he had
+  // before it from the airship bar on.
+  it.each(LOCALES)('returns to the drawing before it, in %s', (locale) => {
+    for (const [unit, before, after] of [
+      ['episode', 136, 139],
+      ['chapter', 319, 323],
+    ] as const) {
+      const read = (count: number): ReturnType<typeof drawingsFor> =>
+        drawingsFor([id], readerFor(archive, at(unit, count), locale))
+
+      expect(read(after)).toStrictEqual(read(before))
+    }
+  })
+})
+
 describe('Election copy', () => {
   it('keeps the established Italian dub names in titles and prose', () => {
     for (const stories of Object.values(electionChronicles)) {
@@ -328,6 +344,10 @@ describe.each([
   { id: 'teradein-neutral', episode: 143, chapter: 330, change: 'death' },
   { id: 'tsubone', episode: 142, chapter: 328, change: 'Rider’s High' },
   { id: 'leorio-paradinight', episode: 140, chapter: 325, change: 'Nen punch' },
+  { id: 'gittarackur', episode: 137, chapter: 320, change: 'disguise' },
+  { id: 'gittarackur', episode: 139, chapter: 323, change: 'disguise off' },
+  { id: 'illumi', episode: 137, chapter: 320, change: 'disguise' },
+  { id: 'illumi', episode: 139, chapter: 323, change: 'disguise off' },
 ])('$id’s $change drawing', ({ id, episode, chapter }) => {
   it.each(LOCALES)('changes at its pin, never before, in %s', (locale) => {
     for (const unit of UNITS) {
