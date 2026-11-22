@@ -44,6 +44,27 @@ export const YOUPI_SPLIT: Stroke[] = [
   },
 ]
 
+/** The cocoon once he has hatched: split open, with bits of shell on the floor. */
+const YOUPI_HATCHED: Stroke[] = [
+  YOUPI_ROCK,
+  YOUPI_STALK,
+  ...YOUPI_SHELL,
+  ...YOUPI_SPLIT,
+  { d: 'M47 76 Q54 86 64 90 M104 90 Q110 86 115 80', role: 'soft' },
+  {
+    d: 'M34 182 l10 -6 l4 7 Z M112 184 l12 -2 l-4 -7 Z M60 186 l6 -3 l1 4 Z',
+    role: 'soft',
+  },
+]
+
+/** The pair of wings he grows, beside the cocoon, each with a vein. */
+const YOUPI_WINGS: Stroke[] = [
+  {
+    d: 'M44 96 C32 78 12 70 6 78 C0 88 14 104 43 112 M116 96 C128 78 148 70 154 78 C160 88 146 104 117 112',
+  },
+  { d: 'M42 102 Q22 90 10 82 M118 102 Q138 90 150 82', role: 'soft' },
+]
+
 /**
  * Peggy's black coat, open over his yellow turtleneck: the rolled collar in
  * tint, the coat's far half hatched, the hands hidden in the sleeves. His
@@ -308,14 +329,32 @@ export const chimeraAntRoyalsRedrawn: Redrawings = {
     {
       episode: 88,
       chapter: 206,
+      value: [...YOUPI_HATCHED, shadow(80, 184, 34)],
+    },
+    // The same, with a pair of wings sprouting beside it in open lines:
+    // Metamorphosis, he wills wings out of his back to follow the King up
+    // the nest and crashes into the wall, episode 91 / chapter 213. The
+    // extra arms of chapter 266 are the same power, so they keep this.
+    {
+      episode: 91,
+      chapter: 213,
+      value: [...YOUPI_HATCHED, ...YOUPI_WINGS, shadow(80, 184, 34)],
+    },
+    // The same, with open blast lines round it and rubble on the floor: his
+    // rage bursts out in his first explosion, against Knuckle, episode 117
+    // / chapter 278.
+    {
+      episode: 117,
+      chapter: 278,
       value: [
-        YOUPI_ROCK,
-        YOUPI_STALK,
-        ...YOUPI_SHELL,
-        ...YOUPI_SPLIT,
-        { d: 'M47 76 Q54 86 64 90 M104 90 Q110 86 115 80', role: 'soft' },
+        ...YOUPI_HATCHED,
+        ...YOUPI_WINGS,
         {
-          d: 'M34 182 l10 -6 l4 7 Z M112 184 l12 -2 l-4 -7 Z M60 186 l6 -3 l1 4 Z',
+          d: 'M24 46 l-14 -10 M136 46 l14 -10 M30 124 H10 M130 124 H150 M34 158 l-14 10 M126 158 l14 10',
+          role: 'ambient',
+        },
+        {
+          d: 'M10 186 l8 -8 l6 7 Z M146 186 l-8 -8 l-6 7 Z M84 194 l6 -6 l6 6 Z',
           role: 'soft',
         },
         shadow(80, 184, 34),
