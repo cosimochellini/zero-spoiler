@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
 import { LOCALES } from '~/i18n/locales'
-import { bookmarkAt as at, opened } from '~/test/gates'
+import { opened, stageMissedAt } from '~/test/gates'
 import { loadedSeries } from '~/test/series'
 
-import { characterPage, drawingsFor, shelvesPage } from './pages.server'
+import { characterPage, shelvesPage } from './pages.server'
 import { type Reader, readerFor } from './reader.server'
 
 const { archive } = loadedSeries('hunter-x-hunter')
@@ -153,18 +153,13 @@ describe('a reordered character beside a source-only arc', () => {
   })
 })
 
-describe('Kite’s Crazy Slots stage', () => {
-  // The carbine lies beside the cap from 82 / 193, never one step before.
-  it.each(LOCALES)('changes the drawing at the pair in %s', (locale) => {
-    for (const [unit, gate] of [
-      ['episode', 82],
-      ['chapter', 193],
-    ] as const) {
-      const read = (count: number): ReturnType<typeof drawingsFor> =>
-        drawingsFor(['kite'], readerFor(archive, at(unit, count), locale))
-
-      expect(read(gate)['kite']).toBeDefined()
-      expect(read(gate)).not.toStrictEqual(read(gate - 1))
-    }
+// Crazy Slots' carbine, then the return, which both media show: each changes
+// the drawing at its pair, never one step before (#1325).
+describe('Kite’s later stages', () => {
+  it.each([
+    { episode: 82, chapter: 193 },
+    { episode: 136, chapter: 316 },
+  ])('changes Kite’s drawing at $episode / $chapter', (stage) => {
+    expect(stageMissedAt(archive, 'kite', stage)).toStrictEqual([])
   })
 })
