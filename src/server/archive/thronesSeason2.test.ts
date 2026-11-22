@@ -202,9 +202,11 @@ function character(id: string): Entity {
 }
 
 describe('the second season’s King’s Landing cast', () => {
-  it('files exactly these records', () => {
+  it('files these records', () => {
+    // Each cast group's test lists its own records; the season holds them
+    // all (#1468).
     expect(season2.entries.map(({ id }) => id).toSorted(byText)).toStrictEqual(
-      RECORDS.map(({ id }) => id).toSorted(byText),
+      expect.arrayContaining(RECORDS.map(({ id }) => id).toSorted(byText)),
     )
   })
 
@@ -308,7 +310,9 @@ describe('the second season’s heading', () => {
   it('opens with its first record in each medium', () => {
     const heading = archive.arcs.find(({ id }) => id === 'season-2')
 
+    // Episode 11 (Daisy); chapter 80, Thoren Smallwood in Jon I, since the
+    // Wall cast (#1467).
     expect(heading?.revealedAtEpisode).toBe(11)
-    expect(heading?.revealedAtChapter).toBe(82)
+    expect(heading?.revealedAtChapter).toBe(80)
   })
 })

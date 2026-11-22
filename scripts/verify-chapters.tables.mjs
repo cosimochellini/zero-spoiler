@@ -65,6 +65,7 @@ export const TITLES = {
   'game-of-thrones': {
     'nymeria': 'Nymeria (direwolf)',
     'robin-arryn': 'Robert Arryn',
+    'lord-of-bones': 'Rattleshirt',
   },
 }
 
@@ -76,6 +77,7 @@ export const TITLES = {
 export const SHOW_TITLES = {
   'nymeria': 'Nymeria (direwolf)',
   'viserys-targaryen': 'Viserys Targaryen (son of Aerys II)',
+  'qhorin-halfhand': 'Qhorin',
 }
 
 // The reviewed first-use pins. See the scene evidence in the Nen inventory.

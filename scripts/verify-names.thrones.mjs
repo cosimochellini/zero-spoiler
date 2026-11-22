@@ -187,6 +187,12 @@ export const THRONES_ITALIAN_TITLES = {
   'osmund-kettleblack': characters('Osmund Kettleblack'),
   'alayaya': characters('Chataya'),
   'garlan-tyrell': 'Casa Tyrell#Garlan Tyrell',
+  // #1467, the second stage's Wall and beyond-the-Wall cast.
+  'eddison-tollett': watch('Eddison Tollett'),
+  'craster': characters('Craster'),
+  'gilly': characters('Gilly'),
+  'qhorin-halfhand': watch('Qhorin il monco'),
+  'ygritte': characters('Ygritte'),
 }
 
 /**
@@ -250,4 +256,18 @@ export const THRONES_NAMES_KEPT = {
   'hallyne': 'Hallyne',
   'alayaya': 'Alayaya',
   'jacelyn-bywater': 'Jacelyn Bywater',
+  // #1467. No Italian Wikipedia entry: the Italian Game of Thrones Wiki's
+  // Qhorin page keeps Stonesnake, Ebben and Dalbridge as they are, and the
+  // other three book-only rangers' names stay as they are until the
+  // Mondadori forms are checked.
+  'stonesnake': 'Stonesnake',
+  'ebben': 'Ebben',
+  'dalbridge': 'Dalbridge',
+  'thoren-smallwood': 'Thoren Smallwood',
+  'jarman-buckwell': 'Jarman Buckwell',
+  'mallador-locke': 'Mallador Locke',
+  // Italian Wikipedia heads his entry "Rattleshirt", the books' nickname, and
+  // names him "Lord delle Ossa" only in its prose; both media call him the
+  // Lord of Bones, and the Italian Game of Thrones Wiki opens his page so.
+  'lord-of-bones': 'Lord delle Ossa',
 }

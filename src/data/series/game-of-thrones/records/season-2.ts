@@ -147,6 +147,197 @@ export const season2: ThronesSaga = {
       },
       visual: { art: 'garlan-tyrell', tint: 'green' },
     },
+    // #1467: the Wall and beyond. The great ranging, Craster's Keep, the
+    // Fist of the First Men and Qhorin Halfhand's scouting party.
+    //
+    // Books: Jon I (site chapter 80), the Lord Commander complains that
+    // Smallwood called him too old for the ranging. The show never has him:
+    // episode 11 only orders him.
+    {
+      id: 'thoren-smallwood',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 80,
+      name: { it: 'Thoren Smallwood', en: 'Thoren Smallwood' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte, a capo dei ranger mentre il Primo Ranger è disperso.',
+        en: 'A ranger of the Night’s Watch, in command of the rangers while the First Ranger is missing.',
+      },
+      visual: { art: 'thoren-smallwood', tint: 'sand' },
+    },
+    // Books: Jon II (site chapter 87), at Whitetree Jon is paired with
+    // Eddison Tollett, "nicknamed Dolorous Edd". Show: "Valar Morghulis"
+    // (episode 20), where Sam says what he finds interesting about Edd.
+    // Episodes 11 to 18 name him only in narration and the credits (an
+    // owner check).
+    {
+      id: 'eddison-tollett',
+      kind: 'character',
+      revealedAtEpisode: 20,
+      revealedAtChapter: 87,
+      name: { it: 'Eddison Tollett', en: 'Eddison Tollett' },
+      summary: {
+        it: 'Un confratello dei Guardiani della notte, nella spedizione del lord comandante oltre la Barriera.',
+        en: 'A brother of the Night’s Watch, on the Lord Commander’s ranging beyond the Wall.',
+      },
+      visual: { art: 'eddison-tollett', tint: 'ice' },
+    },
+    // Books: Jon II (site chapter 87), he answers Thoren Smallwood at
+    // Whitetree and his scouts ride out first. The show never has him:
+    // episode 11 only orders him.
+    {
+      id: 'jarman-buckwell',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 87,
+      name: { it: 'Jarman Buckwell', en: 'Jarman Buckwell' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte, a capo degli esploratori della spedizione oltre la Barriera.',
+        en: 'A ranger of the Night’s Watch who leads the scouts of the ranging beyond the Wall.',
+      },
+      visual: { art: 'jarman-buckwell', tint: 'ocher' },
+    },
+    // Books: Jon II (site chapter 87), he speaks at Whitetree and leads the
+    // baggage train. The show never has him: episode 11 only orders him.
+    {
+      id: 'mallador-locke',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 87,
+      name: { it: 'Mallador Locke', en: 'Mallador Locke' },
+      summary: {
+        it: 'Un cavaliere dei Guardiani della notte, nella spedizione del lord comandante oltre la Barriera.',
+        en: 'A knight of the Night’s Watch, on the Lord Commander’s ranging beyond the Wall.',
+      },
+      visual: { art: 'mallador-locke', tint: 'azure' },
+    },
+    // Show: "The North Remembers" (episode 11), Edd and Grenn talk of
+    // Craster's daughters and say Craster is still here. Books: Jon III
+    // (site chapter 97), the ranging reaches Craster's Keep.
+    {
+      id: 'craster',
+      kind: 'character',
+      revealedAtEpisode: 11,
+      revealedAtChapter: 97,
+      name: { it: 'Craster', en: 'Craster' },
+      summary: {
+        it: 'Un bruto che vive in un fortino oltre la Barriera e dà riparo ai Guardiani della notte.',
+        en: 'A wildling who lives in a holdfast beyond the Wall and gives the Night’s Watch shelter.',
+      },
+      visual: { art: 'craster', tint: 'orange' },
+    },
+    // Books: Jon III (site chapter 97), Jon meets her at Craster's Keep.
+    // Show: "The Ghost of Harrenhal" (episode 15), Sam says Gilly would love
+    // the Fist. Episodes 11 to 13 name her only in narration (an owner
+    // check).
+    {
+      id: 'gilly',
+      kind: 'character',
+      revealedAtEpisode: 15,
+      revealedAtChapter: 97,
+      name: { it: 'Gilly', en: 'Gilly' },
+      summary: {
+        it: 'Una delle figlie di Craster, e una delle sue mogli.',
+        en: 'One of Craster’s daughters, and one of his wives.',
+      },
+      visual: { art: 'gilly', tint: 'lavender' },
+    },
+    // Show: "The Ghost of Harrenhal" (episode 15), Jon says it is the
+    // Halfhand coming up to the Fist. Books: Jon V (site chapter 117), he
+    // arrives at the Fist from the Shadow Tower.
+    {
+      id: 'qhorin-halfhand',
+      kind: 'character',
+      revealedAtEpisode: 15,
+      revealedAtChapter: 117,
+      name: { it: 'Qhorin il Monco', en: 'Qhorin Halfhand' },
+      summary: {
+        it: 'Un ranger famoso dei Guardiani della notte, della Torre delle Ombre.',
+        en: 'A famous ranger of the Night’s Watch, from the Shadow Tower.',
+      },
+      visual: { art: 'qhorin-halfhand', tint: 'teal' },
+    },
+    // Show: "The Ghost of Harrenhal" (episode 15), Qhorin picks Harker,
+    // Stonesnake and Borba for his scouting party. Books: Jon VI (site
+    // chapter 125), he climbs to the wildling watchers with Jon.
+    {
+      id: 'stonesnake',
+      kind: 'character',
+      revealedAtEpisode: 15,
+      revealedAtChapter: 125,
+      name: { it: 'Stonesnake', en: 'Stonesnake' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte al seguito di Qhorin il Monco.',
+        en: 'A ranger of the Night’s Watch who rides with Qhorin Halfhand.',
+      },
+      visual: { art: 'stonesnake', tint: 'green' },
+    },
+    // Show: "The Old Gods and the New" (episode 16), the wildling scout "a
+    // red-haired young woman named Ygritte". Books: Jon VI (site chapter
+    // 125), the sleeping watcher turns out to be a spearwife, Ygritte.
+    {
+      id: 'ygritte',
+      kind: 'character',
+      revealedAtEpisode: 16,
+      revealedAtChapter: 125,
+      name: { it: 'Ygritte', en: 'Ygritte' },
+      summary: {
+        it: 'Una giovane donna dei Bruti, dai capelli rossi.',
+        en: 'A young wildling woman with red hair.',
+      },
+      visual: { art: 'ygritte', tint: 'red' },
+    },
+    // Books: Jon VII (site chapter 127), Qhorin says he would have had Ebben
+    // kill the wildling girl. Jon VI (125) has him in the party, unnamed in
+    // the synopsis. The show never has him: episode 17 only orders him.
+    {
+      id: 'ebben',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 17,
+      revealedAtChapter: 127,
+      name: { it: 'Ebben', en: 'Ebben' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte al seguito di Qhorin il Monco.',
+        en: 'A ranger of the Night’s Watch who rides with Qhorin Halfhand.',
+      },
+      visual: { art: 'ebben', tint: 'yellow' },
+    },
+    // Books: Jon VII (site chapter 127), Squire Dalbridge stays behind in the
+    // pass. Jon VI (125) has him in the party, unnamed in the synopsis. The
+    // show never has him: episode 17 only orders him.
+    {
+      id: 'dalbridge',
+      kind: 'character',
+      source: 'chapter',
+      revealedAtEpisode: 17,
+      revealedAtChapter: 127,
+      name: { it: 'Dalbridge', en: 'Dalbridge' },
+      summary: {
+        it: 'Un ranger dei Guardiani della notte al seguito di Qhorin il Monco.',
+        en: 'A ranger of the Night’s Watch who rides with Qhorin Halfhand.',
+      },
+      visual: { art: 'dalbridge', tint: 'blue' },
+    },
+    // Show: "The Prince of Winterfell" (episode 18), Ygritte brings Jon to
+    // him as "a present". Books: Jon VIII (site chapter 142), his band
+    // overtakes Jon and Qhorin; the Watch calls him Rattleshirt, and both
+    // media call him the Lord of Bones.
+    {
+      id: 'lord-of-bones',
+      kind: 'character',
+      revealedAtEpisode: 18,
+      revealedAtChapter: 142,
+      name: { it: 'Lord delle Ossa', en: 'Lord of Bones' },
+      summary: {
+        it: 'Un razziatore dei Bruti che porta un’armatura fatta di ossa.',
+        en: 'A wildling raider who wears armour made of bones.',
+      },
+      visual: { art: 'lord-of-bones', tint: 'ivory' },
+    },
   ],
   dossiers: {
     'daisy': {
@@ -282,6 +473,236 @@ export const season2: ThronesSaga = {
           source: 'chapter',
           value: { it: 'Casa Tyrell', en: 'House Tyrell' },
         },
+      ],
+    },
+    // #1467: the Wall and beyond.
+    'thoren-smallwood': {
+      role: {
+        it: 'Comandante dei ranger in assenza del Primo Ranger',
+        en: 'Acting commander of the rangers',
+      },
+      log: {
+        it: 'Sostiene che il lord comandante dovrebbe restare a Castello Nero e lasciare a lui la spedizione oltre la Barriera. Jeor Mormont rifiuta.',
+        en: 'He argues that the Lord Commander should stay at Castle Black and leave the ranging beyond the Wall to him. Jeor Mormont refuses.',
+      },
+      status: [{ episode: 11, chapter: 80, source: 'chapter', value: 'alive' }],
+      affiliation: [
+        {
+          episode: 11,
+          chapter: 80,
+          source: 'chapter',
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'eddison-tollett': {
+      role: {
+        it: 'Confratello dei Guardiani della notte',
+        en: 'Brother of the Night’s Watch',
+      },
+      log: {
+        it: 'Cavalca con i Guardiani della notte oltre la Barriera, insieme a Jon Snow e ai suoi amici, e accoglie ogni disagio con una battuta cupa.',
+        en: 'He rides beyond the Wall with the Night’s Watch, alongside Jon Snow and his friends, and meets every hardship with a gloomy joke.',
+      },
+      status: [{ episode: 20, chapter: 87, value: 'alive' }],
+      affiliation: [
+        {
+          episode: 20,
+          chapter: 87,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'jarman-buckwell': {
+      role: {
+        it: 'Ranger a capo degli esploratori',
+        en: 'Ranger in command of the scouts',
+      },
+      log: {
+        it: 'I suoi esploratori cavalcano davanti alla colonna del lord comandante, nella foresta oltre la Barriera.',
+        en: 'His scouts ride ahead of the Lord Commander’s column, in the forest beyond the Wall.',
+      },
+      status: [{ episode: 11, chapter: 87, source: 'chapter', value: 'alive' }],
+      affiliation: [
+        {
+          episode: 11,
+          chapter: 87,
+          source: 'chapter',
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'mallador-locke': {
+      role: {
+        it: 'Cavaliere dei Guardiani della notte',
+        en: 'Knight of the Night’s Watch',
+      },
+      log: {
+        it: 'Cavalca con la spedizione del lord comandante e ne guida le salmerie.',
+        en: 'He rides with the Lord Commander’s ranging and leads its baggage train.',
+      },
+      status: [{ episode: 11, chapter: 87, source: 'chapter', value: 'alive' }],
+      affiliation: [
+        {
+          episode: 11,
+          chapter: 87,
+          source: 'chapter',
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'craster': {
+      role: {
+        it: 'Padrone di un fortino oltre la Barriera',
+        en: 'Master of a holdfast beyond the Wall',
+      },
+      log: {
+        it: 'La spedizione del lord comandante si ferma al suo fortino. Ha sposato le sue stesse figlie, e dice ai Guardiani della notte che i bruti si radunano attorno a Mance Rayder.',
+        en: 'The Lord Commander’s ranging stops at his keep. He has married his own daughters, and he tells the Night’s Watch that the wildlings are gathering around Mance Rayder.',
+      },
+      status: [{ episode: 11, chapter: 97, value: 'alive' }],
+      affiliation: [
+        { episode: 11, chapter: 97, value: { it: 'Bruti', en: 'Wildlings' } },
+      ],
+    },
+    'gilly': {
+      role: {
+        it: 'Figlia e moglie di Craster',
+        en: 'Craster’s daughter and wife',
+      },
+      log: {
+        it: 'È incinta e ha paura di cosa farà Craster se nascerà un maschio. Chiede ai Guardiani della notte di portarla via, e Samwell Tarly le promette che tornerà a prenderla.',
+        en: 'She is pregnant and afraid of what Craster will do if the child is a boy. She asks the Night’s Watch to take her away, and Samwell Tarly promises to come back for her.',
+      },
+      status: [{ episode: 15, chapter: 97, value: 'alive' }],
+      affiliation: [
+        { episode: 15, chapter: 97, value: { it: 'Bruti', en: 'Wildlings' } },
+      ],
+    },
+    'qhorin-halfhand': {
+      role: {
+        it: 'Ranger della Torre delle Ombre',
+        en: 'Ranger of the Shadow Tower',
+      },
+      log: {
+        it: 'Raggiunge la spedizione del lord comandante al Pugno dei Primi Uomini. Lo avverte che i bruti si stanno radunando, e porta Jon Snow con sé in un piccolo gruppo che va in avanscoperta tra le montagne.',
+        en: 'He joins the Lord Commander’s ranging at the Fist of the First Men. He warns him that the wildlings are gathering, and takes Jon Snow with him in a small party that scouts the mountains.',
+      },
+      status: [
+        { episode: 15, chapter: 117, value: 'alive' },
+        // The show's alone: the Lord of Bones holds him captive in "The
+        // Prince of Winterfell" (episode 18). The books have no capture:
+        // chapter 142 only orders it.
+        { episode: 18, chapter: 142, source: 'episode', value: 'captured' },
+        // Jon kills him on his own orders, so the wildlings will take Jon
+        // for a deserter: "Valar Morghulis" (episode 20) and Jon VIII
+        // (chapter 142).
+        { episode: 20, chapter: 142, value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 15,
+          chapter: 117,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'stonesnake': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'Qhorin il Monco lo sceglie per il piccolo gruppo che va in avanscoperta tra le montagne.',
+        en: 'Qhorin Halfhand picks him for the small party that scouts the mountains.',
+      },
+      status: [
+        { episode: 15, chapter: 125, value: 'alive' },
+        // The show's alone: the wildlings kill him with the rest of Qhorin's
+        // party, as "The Prince of Winterfell" (episode 18) confirms. In
+        // the books Qhorin sends him on alone, on foot, and his fate is not
+        // told in the stage: chapter 142 only orders it.
+        { episode: 18, chapter: 142, source: 'episode', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 15,
+          chapter: 125,
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'ygritte': {
+      role: { it: 'Vedetta dei Bruti', en: 'Wildling lookout' },
+      log: {
+        it: 'È tra le vedette dei bruti sulle montagne. I ranger di Qhorin il Monco uccidono i suoi compagni, e Jon Snow resta solo con lei per giustiziarla, ma non ci riesce.',
+        en: 'She is one of the wildling lookouts in the mountains. Qhorin Halfhand’s rangers kill her companions, and Jon Snow is left to put her to death, but he cannot do it.',
+      },
+      status: [{ episode: 16, chapter: 125, value: 'alive' }],
+      affiliation: [
+        { episode: 16, chapter: 125, value: { it: 'Bruti', en: 'Wildlings' } },
+      ],
+    },
+    'ebben': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'Va con Qhorin il Monco e Jon Snow tra le montagne, in avanscoperta oltre la Barriera.',
+        en: 'He scouts the mountains beyond the Wall with Qhorin Halfhand and Jon Snow.',
+      },
+      status: [
+        { episode: 17, chapter: 127, source: 'chapter', value: 'alive' },
+        // Sent ahead to warn the Lord Commander, he is caught: the wildlings
+        // who overtake Qhorin carry his head, in Jon VIII (chapter 142).
+        // Episode 20 only orders it.
+        { episode: 20, chapter: 142, source: 'chapter', value: 'deceased' },
+      ],
+      affiliation: [
+        {
+          episode: 17,
+          chapter: 127,
+          source: 'chapter',
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'dalbridge': {
+      role: {
+        it: 'Ranger dei Guardiani della notte',
+        en: 'Ranger of the Night’s Watch',
+      },
+      log: {
+        it: 'Quando i bruti inseguono il gruppo di Qhorin il Monco, resta indietro con tutte le frecce per sbarrare loro il passo.',
+        en: 'When the wildlings give chase to Qhorin Halfhand’s party, he stays behind with all the arrows to hold the pass against them.',
+      },
+      // He is not seen again in the stage; A Clash of Kings does not tell
+      // his death, so his status stays as it opens.
+      status: [
+        { episode: 17, chapter: 127, source: 'chapter', value: 'alive' },
+      ],
+      affiliation: [
+        {
+          episode: 17,
+          chapter: 127,
+          source: 'chapter',
+          value: { it: 'Guardiani della notte', en: 'Night’s Watch' },
+        },
+      ],
+    },
+    'lord-of-bones': {
+      role: {
+        it: 'Capo di una banda di Bruti',
+        en: 'Leader of a wildling war band',
+      },
+      log: {
+        it: 'La sua banda cattura Jon Snow e Qhorin il Monco sulle montagne. È pronto a uccidere Jon, ma lo lascia vivere.',
+        en: 'His war band takes Jon Snow and Qhorin Halfhand in the mountains. He is ready to kill Jon, but lets him live.',
+      },
+      status: [{ episode: 18, chapter: 142, value: 'alive' }],
+      affiliation: [
+        { episode: 18, chapter: 142, value: { it: 'Bruti', en: 'Wildlings' } },
       ],
     },
   },

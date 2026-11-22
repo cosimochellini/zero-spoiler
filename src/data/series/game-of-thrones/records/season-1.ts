@@ -3268,6 +3268,17 @@ export const season1: ThronesSaga = {
             en: 'Sworn brother of the Night’s Watch, steward to the Lord Commander',
           },
         },
+        // On Qhorin Halfhand's orders he kills him, so that the wildlings
+        // take him for a deserter: "Valar Morghulis" (episode 20) and Jon
+        // VIII (chapter 142).
+        {
+          episode: 20,
+          chapter: 142,
+          value: {
+            it: 'Confratello giurato dei Guardiani della notte, finto disertore tra i bruti',
+            en: 'Sworn brother of the Night’s Watch, posing as a deserter among the wildlings',
+          },
+        },
       ],
       log: {
         it: 'All’esecuzione di un disertore dice a Bran di non distogliere lo sguardo. Quando trovano i cuccioli di meta-lupo convince il padre a risparmiarli, uno per ciascuno dei figli legittimi. Poi trova un sesto cucciolo, bianco, e lo tiene per sé.',
@@ -3275,6 +3286,13 @@ export const season1: ThronesSaga = {
       },
       status: [
         { episode: 1, chapter: 2, value: 'alive' },
+        // The show's alone: Ygritte leads him into a wildling ambush in "A
+        // Man Without Honor" (episode 17), and the Lord of Bones cuts him
+        // free in "Valar Morghulis" (episode 20). In the books he yields and
+        // is accepted in the same chapter; chapters 127 and 142 only order
+        // the changes.
+        { episode: 17, chapter: 127, source: 'episode', value: 'captured' },
+        { episode: 20, chapter: 142, source: 'episode', value: 'alive' },
         // Stabbed at Castle Black: dead in "Mother's Mercy" (episode 50), left
         // for dead in Jon XIII of A Dance with Dragons (owner, #1292). The
         // show alone brings him back, in "Home" (episode 52).
@@ -3705,6 +3723,30 @@ export const season1: ThronesSaga = {
           value: {
             it: 'Attendente di maestro Aemon',
             en: 'Steward to Maester Aemon',
+          },
+        },
+        // The books send him beyond the Wall in Maester Aemon's place, to
+        // keep the ranging's ravens: Jon I (chapter 80). Episode 11 only
+        // orders it.
+        {
+          episode: 11,
+          chapter: 80,
+          source: 'chapter',
+          value: {
+            it: 'Attendente che porta i corvi oltre la Barriera',
+            en: 'Steward keeping the ravens beyond the Wall',
+          },
+        },
+        // The show has him take Jon's place as the Lord Commander's steward
+        // when Jon leaves with Qhorin Halfhand: "The Ghost of Harrenhal"
+        // (episode 15). Chapter 117 only orders it.
+        {
+          episode: 15,
+          chapter: 117,
+          source: 'episode',
+          value: {
+            it: 'Attendente del lord comandante',
+            en: 'Steward to the Lord Commander',
           },
         },
       ],
